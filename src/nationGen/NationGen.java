@@ -520,30 +520,20 @@ public class NationGen {
 	private void hideVanillaNations(PrintWriter tw, int nationcount)
 	{
 
-		int era = (int)Math.round(settings.get("era"));
-		
 		System.out.print("Hiding vanilla nations... ");
 		
 		tw.println("-- Hiding vanilla nations");
 		tw.println("-----------------------------------");
 		
-		tw.println("#disableoldnations");
-		tw.println();
-
-		/*for(int i = 0; i <= 100; i++)
+		
+		if(nationcount > 1)
 		{
-			if(nations.GetInteger(i + "", "era", 0) > 0 && nations.GetInteger(i + "", "era", 0) < 4 &&  (nations.GetInteger(i + "", "era", 0) != era || nationcount > 1))
-			{
-				System.out.print(".");
-				tw.println("#selectnation " + i);
-				tw.println("#era 0");
-				tw.println("#end");
-				tw.println();
-
-			}
-		}*/
-		System.out.println(" Done!");
-
+			tw.println("#disableoldnations");
+			tw.println();
+			System.out.println(" Done!");
+		}
+		else
+			System.out.println("Unable to hide vanilla nations with only one random nation!");
 		
 	}
 	
