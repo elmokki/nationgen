@@ -1,0 +1,86 @@
+
+-------- Normal
+
+#newpose
+#name "standard inf"
+#role "infantry"
+#sacred
+
+#renderorder "shadow weapon cloakb basesprite shirt legs armor cloakf quiver bonusweapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/avvim/normal/bases.txt
+#load shadow /data/items/avvim/normal/shadow.txt
+
+#load hands /data/items/avvim/normal/hands.txt
+
+#load cloakf /data/items/avvim/normal/cloakf.txt
+#load cloakb /data/items/avvim/normal/cloakb.txt
+#load shirt /data/items/avvim/normal/shirt.txt
+
+#load armor /data/items/avvim/normal/armor.txt
+#load armor /data/items/avvim/normal/armor_elite.txt
+#load helmet /data/items/avvim/normal/helmet.txt
+
+#load weapon /data/items/avvim/normal/weapon.txt
+#load bonusweapon /data/items/avvim/normal/bonusranged.txt
+#load bonusweapon /data/items/avvim/normal/avvite_sacredbonusweapons.txt
+
+#load offhand /data/items/avvim/normal/offhand.txt
+#load offhand /data/items/avvim/normal/shields.txt
+
+#endpose
+
+
+
+-------- 2h infantry
+
+#newpose
+#basechance 0.2
+#name "2h inf"
+#role "infantry"
+#sacred
+
+#load basesprite /data/items/avvim/2h/bases.txt
+#load shadow /data/items/avvim/normal/shadow.txt
+
+#load hands /data/items/avvim/2h/hands.txt
+
+#load cloakf /data/items/avvim/normal/cloakf.txt
+#load cloakb /data/items/avvim/normal/cloakb.txt
+#load shirt /data/items/avvim/2h/shirt.txt
+
+#load armor /data/items/avvim/normal/armor.txt
+#load armor /data/items/avvim/normal/armor_elite.txt
+#load helmet /data/items/avvim/normal/helmet.txt
+
+#load weapon /data/items/avvim/2h/weapon.txt
+#load bonusweapon /data/items/avvim/2h/bonusranged.txt
+
+#maxvarieties 1
+#endpose
+
+
+------------- scout
+
+#newpose
+#role "scout"
+
+#renderorder "shadow weapon cloakb basesprite shirt legs armor cloakf quiver bonusweapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/avvim/normal/bases.txt
+#load shadow /data/items/avvim/normal/shadow.txt
+
+#load hands /data/items/avvim/normal/hands.txt
+
+#load cloakf /data/items/avvim/normal/cloakf.txt
+#load cloakb /data/items/avvim/normal/cloakb.txt
+#load shirt /data/items/avvim/normal/shirt.txt
+
+#load armor /data/items/avvim/normal/armor.txt
+#load helmet /data/items/avvim/scout/helmet.txt
+
+#load weapon /data/items/avvim/normal/weapon.txt
+#load bonusweapon /data/items/avvim/normal/bonusranged.txt
+
+#load offhand /data/items/avvim/normal/offhand.txt
+#endpose

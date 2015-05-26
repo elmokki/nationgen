@@ -1,56 +1,79 @@
---- Weapons
+-- 1h weapons
 
 #newitem
-#id offhandaxe
-#gameid 17
-#sprite /graphics/offhand/standard/axe.png
-#theme "primitive"
-#enditem
-
-#newitem
-#id offhandbroadsword
-#gameid 8
-#sprite /graphics/offhand/standard/broadsword.png
-#enditem
-
-#newitem
-#id offhandhammer
-#gameid 13
-#sprite /graphics/offhand/standard/hammer.png
-#enditem
-
-#newitem
-#id offhandmace
-#gameid 12
-#sprite /graphics/offhand/standard/mace.png
-#theme "primitive"
-#enditem
-
-#newitem
-#id offhandmorningstar
-#gameid 15
-#sprite /graphics/offhand/standard/morningstar.png
-#enditem
-
-#newitem
-#id offhandshortsword
-#gameid 6
-#sprite /graphics/offhand/standard/shortsword.png
-#enditem
-
-
-#newitem
-#id offhandfalchion
-#gameid 10
-#sprite /graphics/offhand/standard/falchion.png
-#enditem
-
-
-
-#newitem
-#id offhanddagger
+#id oh_dagger
 #gameid 9
-#sprite /graphics/offhand/standard/dagger.png
+#sprite /graphics/advancedhuman/weapons/oh_dagger.png
+#tag "eliteversion oh_dagger_elite"
 #enditem
 
+#newitem
+#id oh_dagger_elite
+#gameid 9
+#sprite /graphics/advancedhuman/weapons/oh_dagger_elite.png
+#theme "elite"
+#enditem
 
+#newitem
+#id oh_shortsword
+#gameid 6
+#sprite /graphics/advancedhuman/weapons/oh_shortsword.png
+#tag "eliteversion oh_shortsword_elite"
+#enditem
+
+#newitem
+#id oh_shortsword_elite
+#gameid 6
+#sprite /graphics/advancedhuman/weapons/oh_shortsword_elite.png
+#theme "elite"
+#enditem
+
+#newitem
+#id oh_broadsword
+#gameid 8
+#sprite /graphics/advancedhuman/weapons/oh_broadsword.png
+#tag "eliteversion oh_broadsword_elite"
+#enditem
+
+#newitem
+#id oh_broadsword_elite
+#gameid 8
+#sprite /graphics/advancedhuman/weapons/oh_broadsword_elite.png
+#theme "elite"
+#enditem
+
+#newitem
+#id oh_falchion
+#gameid 10
+#sprite /graphics/advancedhuman/weapons/oh_falchion.png
+#tag "eliteversion oh_falchion_elite"
+#enditem
+
+#newitem
+#id oh_falchion_elite
+#gameid 10
+#sprite /graphics/advancedhuman/weapons/oh_falchion_elite.png
+#theme "elite"
+#enditem
+
+#newitem
+#id oh_morningstar
+#gameid 15
+#sprite /graphics/advancedhuman/weapons/oh_morningstar.png
+#enditem
+
+#newitem
+#id oh_mace
+#gameid 12
+#sprite /graphics/advancedhuman/weapons/oh_mace.png
+#theme "primitive"
+#maxprot 15
+#chanceinc unittag irregular 8
+#enditem
+
+#newitem
+#id oh_hammer
+#gameid 13
+#sprite /graphics/advancedhuman/weapons/oh_hammer.png
+#chanceinc unittag irregular 8
+#enditem

@@ -233,7 +233,7 @@
 #define "#weapon 56 --- Hoof"
 #define "#gcost +30"
 #define "#ressize 2"
-#define "#enc 3"¨
+#define "#enc 3"
 #theme "animal horse"
 #theme "heavy"
 #tag "minprot 6"
@@ -310,11 +310,11 @@
 #define "#mapmove 4"
 #define "#ap 25"
 #define "#mounted"
-#define "#weapon 56 --- Hoof"
+#define "#weapon 615 --- Heavy Hoof"
 #define "#secondtmpshape nightmare"
 #define "#gcost +40"
 #define "#ressize 2"
-#define "#enc 4"¨
+#define "#enc 4"
 #theme "animal nightmare"
 #description "Leaves a nightmare behind when the rider dies"
 #basechance 0.25
@@ -336,7 +336,7 @@
 #define "#secondtmpshape bearmount"
 #define "#gcost +35"
 #define "#ressize 2"
-#define "#enc 4"¨
+#define "#enc 4"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety -2
 #offsetx -1
@@ -360,7 +360,7 @@
 #define "#secondtmpshape lionmount"
 #define "#gcost +35"
 #define "#ressize 2"
-#define "#enc 4"¨
+#define "#enc 4"
 #description "If the rider dies, the lion will carry on fighting until the end of the battle."
 #offsety 5
 #offsetx -1
@@ -459,4 +459,28 @@
 #theme "animal 'cave cow'"
 #tag "guaranteedprefix 'cave cow'"
 #chanceinc primaryrace agarthan *100
+#enditem
+
+#newitem
+#name "dire wolf"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#needs overlay direwolf1_overlay
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 22"
+#define "#mounted"
+#define "#weapon 237 --- bite"
+#define "#secondtmpshape direwolf1mount"
+#define "#gcost +25"
+#define "#ressize 2"
+#define "#enc 4"
+#theme "animal wolf"
+#theme "light"
+#tag "maxprot 11"
+#tag "guaranteedprefix wolf"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#offsety 2
+#offsetx -7
 #enditem

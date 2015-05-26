@@ -1,0 +1,32 @@
+#newitem
+#name "smallbow"
+#gameid 361
+#sprite /graphics/hoburg/weapon/crossbow/tinybow.png
+#offsetx -1
+#offsety -4
+#needs quiver quiver
+#tag "name Archer"
+#enditem
+
+#newitem
+#name "shortbow"
+#gameid 23
+#sprite /graphics/hoburg/weapon/crossbow/shortbow.png
+#offsetx -1
+#offsety -4
+#needs quiver quiver
+#tag "name Archer"
+#enditem
+
+#newitem
+#name "composite bow"
+#gameid 264
+#sprite /graphics/weapon/bowman/compositebow.png
+#offsetx 4
+#offsety 3
+#needs quiver quiver
+#tag "name Longbowman"
+#basechance 0.5
+#theme "advanced"
+#enditem
+

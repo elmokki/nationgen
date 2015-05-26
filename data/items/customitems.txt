@@ -80,6 +80,20 @@
 #command "#name 'Spray Poison'"
 #end
 
+--- Nostr version of 573
+#new customweapon
+#name nostr_poisongore
+#command "#att -1"
+#command "#def -1"
+#command "#dmg 15"
+#command "#len 0"
+#command "#nostr"
+#command "#secondaryeffect 51"
+#command "#bonus"
+#command "#name 'Poisonous Gore'"
+#command "#slash"
+#end
+
 --- Hoburg nostr greatclub for caveman cavalry
 
 #new customweapon
@@ -148,8 +162,32 @@
 #command "#nostr"
 #command "#armorpiercing"
 #command "#flyspr 109 1"
+#command "#sound 13"
 #command "#name 'Light Crossbow'"
 #command "#pierce"
+#command "#ironweapon"
+#end
+
+--- Steel Crossbow
+
+#new customweapon
+#name steel_crossbow
+#command "#att 2"
+#command "#def -2"
+#command "#prec 2"
+#command "#nratt -2"
+#command "#dmg 13"
+#command "#range 35"
+#command "#ammo 12"
+#command "#twohanded"
+#command "#rcost 5"
+#command "#nostr"
+#command "#armorpiercing"
+#command "#flyspr 109 1"
+#command "#sound 13"
+#command "#name 'Steel Crossbow'"
+#command "#pierce"
+#command "#ironweapon"
 #end
 
 --- Heavy sling
@@ -163,12 +201,13 @@
 #command "#twohanded"
 #command "#rcost 2"
 #command "#nostr"
-#command "#flyspr 100 1"
+#command "#flyspr 111 1"
+#command "#sound 15"
 #command "#name 'Heavy Sling'"
 #command "#blunt"
 #end
 
---- Bardiche
+--- Bardiche (should be unused currently in favor of in-game weapon #257)
 
 #new customweapon
 #name bardiche
@@ -609,6 +648,18 @@
 #command "#att 0"
 #command "#def -1"
 #command "#dmg 10"
+#command "#len 0"
+#command "#nostr"
+#command "#bonus"
+#command "#name 'Bite'"
+#command "#slash"
+#end
+
+#new customweapon
+#name "nostr_bite_15"
+#command "#att +1"
+#command "#def 0"
+#command "#dmg 15"
 #command "#len 0"
 #command "#nostr"
 #command "#bonus"

@@ -21,6 +21,7 @@ import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
 import nationGen.nation.Nation;
+import nationGen.rostergeneration.CommanderGenerator;
 import nationGen.rostergeneration.TroopGenerator;
 //import nationGen.rostergeneration.TroopGenerator.Template;
 import nationGen.units.Unit;
@@ -1103,16 +1104,20 @@ public class MageGenerator extends TroopGenerator {
 				else
 					u.commands.add(new Command("#poorleader"));
 				
+				List<String> body = new ArrayList<String>();	// Set a temporary null description for priests
+				(new CommanderGenerator(this.nationGen, this.nation)).generateDescription(u, false, false, false);
+				//body.add();					
+		
+				//body.add("\"No description\"");
+				//u.commands.add(new Command("#descr", body));
 
 				priests.add(0, u);
 
-			}
-
+			}	
 			currentStrength--;
 		}
 		
-
-		
+	
 		if(sacredMageTiers > 0)
 		{
 			for(int i = 0; i < 3; i++)

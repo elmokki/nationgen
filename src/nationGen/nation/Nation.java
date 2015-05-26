@@ -21,6 +21,7 @@ import java.util.Map.Entry;
 
 
 
+
 import com.elmokki.Drawing;
 import com.elmokki.Generic;
 
@@ -862,7 +863,7 @@ public class Nation {
 	{
 	
         tw.println("");
-        tw.println("--- Unit definitions for " + this.name);
+        tw.println("--- Unit definitions for " + this.name);	
         tw.println("");
         
     	List<Unit> units = new ArrayList<Unit>();
@@ -894,9 +895,16 @@ public class Nation {
         			u.color = colors[0];
 	
         		//if(nationGen.settings.get("skipSprites") == 0)
-        			
-        		u.draw(spritedir);
-        		u.write(tw, spritedir);
+        		
+				if(!u.invariantMonster)
+				{
+	        		u.draw(spritedir);
+	        		u.write(tw, spritedir);
+				}
+				else  // The monster uses in-game graphics and stats; just print out name, ID, and costs
+				{
+					tw.println("--- " + u.name + " (Unit ID " + u.id + "), Gold: " + u.getGoldCost() + ", Resources: " + u.getResCost(true) + "\n");
+				}
         	}
 	    }
 

@@ -1,0 +1,78 @@
+--- Base offsets are applied to everything except base and overlay
+
+
+#newitem
+#basechance 9
+#name "draft horse"
+#gameid -1
+#sprite /graphics/mounts/standard/drafthorse.png
+#recolormask /graphics/mounts/standard/drafthorse_recolormask.png
+#armor
+#offsetx 1
+#offsety 8
+#needs overlay drafthorse_overlay
+#define "#size 4"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 615 --- Heavy Hoof"
+#define "#ressize 3"
+#define "#enc 5"
+#define "#gcost +15"
+#theme "animal horse"
+#theme "light"
+#tag "maxprot 12"
+#epicness 0.25
+#enditem
+
+#newitem
+#basechance 3
+#name "moose"
+#gameid -1
+#sprite /graphics/mounts/standard/moose.png
+#armor
+#offsetx 30
+#offsety 57
+#define "#size 4"
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 353"
+#define "#weapon 354"
+#define "#gcost +25"
+#define "#ressize 3"
+#define "#rcost +4"
+#define "#enc 4"
+#define "#secondtmpshape moose"
+#theme "animal moose"
+#tag "minprot 0"
+#tag "maxprot 16"
+#tag "guaranteedprefix moose"
+#description "Leaves a moose behind when the rider dies"
+#enditem
+
+
+#newitem
+#basechance 6
+#name "bear"
+#gameid -1
+#sprite /graphics/mounts/standard/bear.png
+#armor
+#define "#size 4"
+#define "#mapmove 2"
+#define "#ap 16"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape bearmount"
+#define "#gcost +35"
+#define "#ressize 3"
+#define "#enc 4"¨
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#offsetx 1
+#offsety 8
+#theme "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#enditem

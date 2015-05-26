@@ -30,6 +30,9 @@
 #name "twohanded"
 #role "sacred infantry"
 #role "elite infantry"
+
+#renderorder "shadow cloakb basesprite mount shirt legs armor spaulder cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
 #load basesprite /data/items/oriental/2h/bases.txt
 #load shadow /data/items/oriental/normal/shadow.txt
 #load hands /data/items/oriental/2h/hands.txt
@@ -37,6 +40,7 @@
 #load legs /data/items/oriental/normal/legs.txt
 
 #load armor /data/items/oriental/2h/armor.txt
+#load spaulder /data/items/oriental/2h/spaulder.txt 
 
 #load weapon /data/items/oriental/2h/weapon.txt
 

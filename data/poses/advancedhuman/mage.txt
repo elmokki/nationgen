@@ -1,26 +1,57 @@
----------- Mages and Priests 1
+---------- Priests
+--- No legs, so do not use this pose for non-robe armors.
+
+#newpose
+#role "priest"
+
+#tier 1
+#tier 2
+#tier 3
+
+#load basesprite /data/items/advancedhuman/caster/bases.txt
+#load shadow /data/items/human/normal/shadow.txt 1 0
+
+#load hands /data/items/advancedhuman/caster/hands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt 3 -2
+#load cloakb /data/items/human/normal/humancloakb.txt 3 -2
+
+#load hair /data/items/advancedhuman/caster/hair.txt 3 -1
+#load helmet /data/items/human/caster/helmet.txt 3 -1
+#load helmet /data/items/advancedhuman/caster/priesthelmet.txt 3 -1
+#load armor /data/items/advancedhuman/caster/priestrobes.txt
+
+
+#load weapon /data/items/human/caster/weapon.txt 1 2
+#load offhand /data/items/human/caster/offhands.txt 2 0
+
+#endpose
+
+---------- Mages
 --- No legs, so do not use this pose for non-robe armors.
 
 #newpose
 #role "mage"
-#role "priest"
 
-#load basesprite /data/items/human/normal/humanbases.txt
-#load shadow /data/items/human/normal/shadow.txt
+#tier 1
+#tier 2
+#tier 3
 
-#load hands /data/items/human/normal/humanhands.txt
+#load basesprite /data/items/advancedhuman/caster/bases.txt
+#load shadow /data/items/advancedhuman/normal/shadow.txt 1 0
 
-#load cloakf /data/items/human/normal/humancloakf.txt
-#load cloakb /data/items/human/normal/humancloakb.txt
-#load shirt /data/items/human/normal/humanshirt.txt
+#load hands /data/items/advancedhuman/caster/hands.txt
 
-#load hair /data/items/human/caster/hair.txt
-#load armor /data/items/human/caster/robes.txt
-#load armor /data/items/human/caster/whitespecific_robes.txt
-#load armor /data/items/human/caster/humanspecific_robes.txt
-#load weapon /data/items/human/caster/weapon.txt
-#load helmet /data/items/human/caster/helmet.txt
-#load helmet /data/items/human/caster/humanspecific_helmet.txt
-#load offhand /data/items/human/caster/offhands.txt
+#load cloakf /data/items/human/normal/humancloakf.txt 3 -2
+#load cloakb /data/items/human/normal/humancloakb.txt 3 -2
+
+#load hair /data/items/advancedhuman/caster/hair.txt  3 -1
+#load helmet /data/items/human/caster/helmet.txt 3 -1
+#load helmet /data/items/advancedhuman/caster/magehelmet.txt 3 -1
+#load helmet /data/items/advancedhuman/caster/priesthelmet.txt 3 -1
+#load armor /data/items/advancedhuman/caster/magerobes.txt
+
+#load weapon /data/items/human/caster/weapon.txt 1 2
+#load offhand /data/items/human/caster/offhands.txt 2 0
 
 #endpose

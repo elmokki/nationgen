@@ -80,6 +80,7 @@
 #chanceinc "command #stealthy 2"
 #chanceinc "personalcommand #stealthy -10"
 #chanceinc "race vanir -20"
+#chanceinc "race sidhe -20"
 #chanceinc "pose mounted *0.25"
 #power 2
 #end
@@ -153,6 +154,26 @@
 #name "patrol"
 #basechance 2
 #command "#patrolbonus 3"
+#end
+
+#new
+#name "bodyguardlow"
+#type "bodyguard"
+#basechance 1
+#command "#bodyguard +1"
+#chanceinc "command #undisciplined *0"
+#tag "nopose chariot"
+#tag "nopose mounted"
+#end
+
+#new
+#name "bodyguardhigh"
+#type "bodyguard"
+#basechance 0.5
+#command "#bodyguard +3"
+#chanceinc "command #undisciplined *0"
+#tag "nopose chariot"
+#tag "nopose mounted"
 #end
 
 #new

@@ -1,0 +1,69 @@
+#newitem
+#id greataxe
+#gameid 18
+#sprite /graphics/avvim/weapon/battleaxe.png
+#theme "primitive"
+#tag "name infantry axeman"
+#tag "name commander warlord"
+#tag "name commander warchief"
+#chanceinc unittag irregular 8
+#enditem
+
+#newitem
+#id halberd
+#gameid 5
+#sprite /graphics/avvim/weapon/halberd.png
+#tag "name infantry halberdier"
+#tag "name commander captain"
+#theme "advanced"
+#minprot 8
+#enditem
+
+#newitem
+#id bardiche
+#gameid bardiche
+#sprite /graphics/avvim/weapon/bardiche.png
+#tag "name commander warchief"
+#tag "name commander warlord"
+#enditem
+
+#newitem
+#id flail
+#gameid 16
+#sprite /graphics/avvim/weapon/flail.png
+#enditem
+
+#newitem
+#id maul
+#gameid 14
+#sprite /graphics/weapon/standard/maul.png
+#offsetx -3
+#offsety -9
+#enditem
+
+#newitem
+#id greatclub
+#gameid 165
+#sprite /graphics/avvim/weapon/greatclub.png
+#tag "name infantry clubber"
+#theme "primitive"
+#enditem
+
+#newitem
+#id claymore
+#gameid 258
+#sprite /graphics/avvim/weapon/claymore.png
+#tag "name infantry swordsman"
+#tag "name commander swordsmaster"
+#enditem
+
+
+#newitem
+#id greatsword
+#gameid 11
+#sprite /graphics/avvim/weapon/claymore.png
+#tag "name infantry swordsman"
+#tag "name commander swordsmaster"
+#basechance 0.25
+#theme "advanced"
+#enditem

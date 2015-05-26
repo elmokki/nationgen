@@ -2,8 +2,14 @@
 ------ Mage priest
 
 #newpose
+#name young_caster
 #role "mage"
 #role "priest"
+
+#unitcommand "#coldblood"
+
+#renderorder "shadow weapon cloakb basesprite legs armor cloakf offhandw hands hair helmet offhanda overlay"
+
 #load basesprite /data/items/agarthan/generic/bases.txt
 #load shadow /data/items/agarthan/generic/shadow.txt
 #load hands /data/items/agarthan/generic/hands.txt
@@ -23,8 +29,14 @@
 ------ Mage priest - big
 
 #newpose
+#name ancient_caster
 #role "mage"
 #role "priest"
+
+#unitcommand "#coldblood"
+
+#renderorder "shadow weapon cloakb basesprite legs armor cloakf offhandw hands hair helmet offhanda overlay"
+
 #load basesprite /data/items/agarthan/generic_big/bases.txt
 #load shadow /data/items/agarthan/generic_big/shadow.txt
 #load hands /data/items/agarthan/generic_big/hands.txt
@@ -36,5 +48,84 @@
 
 #load cloakf /data/items/agarthan/generic_big/cloakf.txt
 #load cloakb /data/items/agarthan/generic_big/cloakb.txt
+#tier 3
+#endpose
+
+
+--------  Warrior-mage (Olmspawn)
+
+#newpose
+#name olmspawn_warriormage
+#basechance 0.1
+#role "mage"
+#role "priest"
+
+#command "#prot +2"
+#command "#gcost +20"
+#command "#hp +6"
+#command "#att +1"
+#command "#def +1"
+#command "#prec +1"
+#command "#ap 7"
+#command "#mr +2"
+#command "#mor +2"
+#command "#coldres 5"
+#command "#poisonres 15"
+#command "#sacred"
+
+#load basesprite /data/items/agarthan/generic/bases.txt
+#load shadow /data/items/agarthan/olmspawn/shadow.txt
+#load hands /data/items/agarthan/generic/hands.txt
+#load legs /data/items/agarthan/olmspawn/legs.txt
+
+#load armor /data/items/agarthan/normal_steel/armor.txt
+#load helmet /data/items/agarthan/normal_steel/helmets.txt
+#load offhand /data/items/agarthan/normal_steel/shields.txt
+
+#load weapon /data/items/agarthan/generic/weapons.txt
+
+#load cloakf /data/items/agarthan/generic/cloakf.txt
+#load cloakb /data/items/agarthan/generic/cloakb.txt
+
+#tier 2
+#endpose
+
+
+--------  Mage/priest (Olmspawn)
+
+#newpose
+#name olmspawn_caster
+#basechance 0.2
+#role "mage"
+#role "priest"
+
+#command "#prot +2"
+#command "#gcost +20"
+#command "#hp +6"
+#command "#att +1"
+#command "#def +1"
+#command "#prec +1"
+#command "#ap 7"
+#command "#mr +2"
+#command "#mor +2"
+#command "#coldres 5"
+#command "#poisonres 15"
+#command "#sacred"
+
+#renderorder "shadow weapon cloakb basesprite legs armor cloakf offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/agarthan/generic/bases.txt
+#load shadow /data/items/agarthan/olmspawn/shadow.txt
+#load hands /data/items/agarthan/generic/hands.txt
+#load legs /data/items/agarthan/olmspawn/legs.txt
+
+#load armor /data/items/agarthan/olmspawn/robes.txt
+#load helmet /data/items/agarthan/mage/helmets.txt
+#load weapon /data/items/agarthan/mage/weapons.txt
+
+#load cloakf /data/items/agarthan/generic/cloakf.txt
+#load cloakb /data/items/agarthan/generic/cloakb.txt
+
+#tier 2
 #tier 3
 #endpose

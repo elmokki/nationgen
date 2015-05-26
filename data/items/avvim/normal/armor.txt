@@ -1,0 +1,166 @@
+-- Unarmored
+
+#newitem
+#name "starkers"
+#basechance 0.1
+#gameid -1
+#needs shirt noshirt
+#armor
+#theme "naked"
+#theme "primitive"
+#tag "name infantry savage"
+#tag "prefix tribal"
+#enditem
+
+#newitem
+#name "unarmored"
+#basechance 0.2
+#gameid -1
+#armor
+#theme "naked"
+#tag "name infantry levy"
+#tag "prefix levied"
+#enditem
+
+
+--- Leather
+
+#newitem
+#name "leather cuirass"
+#gameid 5
+#sprite /graphics/avvim/armor/leather_cuirass.png
+#armor
+#theme "primitive"
+#enditem
+
+#newitem
+#name "leather hauberk"
+#gameid 10
+#sprite /graphics/avvim/armor/leather_hauberk.png
+#armor
+#theme "primitive"
+#enditem
+
+#newitem -- full leather
+#newitem
+#name "full leather"
+#gameid 15
+#sprite /graphics/avvim/armor/leather_full.png
+#armor
+#theme "primitive"
+#enditem
+
+
+--- Ring
+
+#newitem
+#name "ring cuirass"
+#gameid 6
+#sprite /graphics/avvim/armor/ring_cuirass.png
+#armor
+#basechance 2
+#enditem
+
+#newitem
+#name "ring hauberk"
+#gameid 11
+#sprite /graphics/avvim/armor/ring_hauberk.png
+#armor
+#enditem
+
+#newitem -- full ring
+#name "full ring"
+#gameid 16
+#sprite /graphics/avvim/armor/ring_full.png
+#armor
+#enditem
+
+
+--- Scale
+
+#newitem
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/avvim/armor/scale_cuirass.png
+#tag "eliteversion 'scale cuirass elite'"
+#armor
+#enditem
+
+#newitem
+#name "scale hauberk"
+#gameid 12
+#sprite /graphics/avvim/armor/scale_hauberk.png
+#tag "eliteversion 'scale hauberk elite'"
+#armor
+#enditem
+
+#newitem -- full scale
+#name "full scale"
+#gameid 17
+#sprite /graphics/avvim/armor/scale_full.png
+#tag "eliteversion 'full scale elite'"
+#armor
+#tag "name mounted cataphract"
+#enditem
+
+
+--- Chain Mail
+
+#newitem
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/avvim/armor/chain_cuirass.png
+#tag "eliteversion 'chain cuirass elite'"
+#armor
+#enditem
+
+#newitem
+#name "chain hauberk"
+#gameid 13
+#sprite /graphics/avvim/armor/chain_hauberk.png
+#tag "eliteversion 'chain hauberk elite'"
+#armor
+#enditem
+
+#newitem -- full chain
+#name "full chain"
+#gameid 18
+#sprite /graphics/avvim/armor/chain_full.png
+#tag "eliteversion 'full chain elite'"
+#armor
+#theme "advanced"
+#tag "name mounted cataphract"
+#enditem
+
+
+--- Plate
+
+#newitem
+#name "plate cuirass"
+#gameid 9
+#sprite /graphics/avvim/armor/plate_cuirass.png
+#tag "eliteversion 'plate cuirass elite'"
+#armor
+#theme "advanced"
+#enditem
+
+#newitem
+#name "plate hauberk"
+#gameid 14
+#sprite /graphics/avvim/armor/plate_hauberk.png
+#tag "eliteversion 'plate hauberk elite'"
+#armor
+#theme "advanced"
+#tag "name mounted cataphract"
+#enditem
+
+#newitem -- full plate
+#name "full plate"
+#gameid 19
+#sprite /graphics/avvim/armor/plate_full.png
+#tag "eliteversion 'full plate elite'"
+#armor
+#theme "advanced"
+#tag "name mounted cataphract"
+#maxvarieties 1
+#enditem

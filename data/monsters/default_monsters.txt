@@ -33,6 +33,28 @@
 #command "#copyspr 1147"
 #end
 
+-- #new
+-- #name "elephant_avvite_1"
+-- #basechance 0
+-- #chanceinc primaryrace avvite 4
+-- #command "#copystats 2261"
+-- #command "#spr1 ./graphics/monsters/elephant_avvite.png"
+-- #command "#spr2 shift"
+-- #command "#recolormask /graphics/monsters/elephant_avvite_recolormask.png"
+-- #end
+
+-- #new
+-- #name "elephant_avvite_2"
+-- #basechance 0
+-- #chanceinc primaryrace avvite 1
+-- #chanceinc era 2 *4
+-- #chanceinc era 3 *6
+-- #command "#copystats 1555"
+-- #command "#spr1 ./graphics/monsters/elephant_avvite2.png"
+-- #command "#spr2 shift"
+-- #command "#recolormask /graphics/monsters/elephant_avvite2_recolormask.png"
+-- #end
+
 #new
 #name "mammoth_caelian"
 #basechance 0
@@ -43,10 +65,54 @@
 
 #new
 #name "hydra"
+#basechance 0.25
+#chanceinc primaryrace lizard 9.75
+-- #command "#copystats 1831"
+-- #command "#copyspr 1831"
+#command "invariantid 1831"
+#command "#gcost 250" -- Specified for documentation generation
+#command "#rcost 1"
+#end
+
+#new
+#name "hydra hatchling"
+#basechance 0.25
+#chanceinc primaryrace lizard 9.5
+-- #command "#copystats 1831"
+-- #command "#copyspr 1831"
+#command "invariantid 1840"
+#command "#gcost 35" -- Specified for documentation generation
+#command "#rcost 1"
+#end
+
+#new
+#name "troglodyte"
 #basechance 0.5
-#chanceinc primaryrace lizard 14.5
-#command "#copystats 1831"
-#command "#copyspr 1831"
+#chanceinc primaryrace agarthan 9.5
+#chanceinc primaryrace zotz 5.5
+#command "#copystats 447"
+#command "#copyspr 447"
+#end
+
+#new
+#name "olm"
+#basechance 0
+#chanceinc primaryrace agarthan 6
+#chanceinc primaryrace zotz 4
+#command "#copystats 447"
+#command "#copyspr 447"
+#caponlychance 0.85
+#end
+
+#new
+#name "olm"
+#basechance 0
+#chanceinc primaryrace agarthan 4
+#chanceinc primaryrace zotz 6
+#chanceinc primaryrace abysian 5
+#command "#copystats 447"
+#command "#copyspr 447"
+#caponlychance 1
 #end
 
 #new
@@ -65,4 +131,14 @@
 #command "#copystats 1347"
 #command "#copyspr 1347"
 #caponlychance 1
+#end
+
+
+#new
+#name "moose riders"
+#basechance 0
+#chanceinc primaryrace vaetti 10
+#command "#copystats 1085"
+#command "#copyspr 1085"
+#caponlychance 0.5
 #end

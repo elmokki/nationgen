@@ -1,6 +1,6 @@
 --- Shields
 
-- Bucklers
+-- Bucklers
 
 #newitem
 #id bronzebuckler
@@ -8,6 +8,7 @@
 #sprite /graphics/offhand/standard/bronzebuckler.png
 #armor
 #theme "bronze"
+#bascechance 2
 #enditem
 
 #newitem
@@ -15,9 +16,10 @@
 #gameid 1
 #sprite /graphics/offhand/standard/buckler.png
 #armor
+#bascechance 2
 #enditem
 
-- Kite shields
+-- Kite shields
 
 #newitem
 #id kite1
@@ -39,11 +41,6 @@
 #basechance 0.5
 #enditem
 
-
-
-
-
-
 #newitem
 #id kite3
 #gameid 3
@@ -54,9 +51,56 @@
 #basechance 0.5
 #enditem
 
+#newitem
+#id kite4
+#gameid 3
+#sprite /graphics/offhand/standard/kite4.png
+#recolormask self
+#armor
+#theme "advanced"
+#basechance 0.5
+#enditem
 
+#newitem
+#id kite5
+#gameid 3
+#sprite /graphics/offhand/standard/kite5.png
+#recolormask /graphics/offhand/standard/kite5_recolormask.png
+#armor
+#theme "advanced"
+#basechance 0.5
+#enditem
 
+#newitem
+#id kite6
+#gameid 3
+#sprite /graphics/offhand/standard/kite6.png
+#armor
+#theme "advanced"
+#basechance 0.5
+#enditem
 
+#newitem
+#id kite6_colored
+#gameid 3
+#sprite /graphics/offhand/standard/kite6.png
+#recolormask self
+#armor
+#theme "advanced"
+#basechance 0.5
+#enditem
+
+#newitem
+#id kite7
+#gameid 3
+#sprite /graphics/offhand/standard/kite7.png
+#recolormask self
+#armor
+#theme "advanced"
+#basechance 0.5
+#enditem
+
+-- Normal shields
 #newitem
 #id shield2
 #gameid 2
@@ -64,8 +108,6 @@
 #armor
 #basechance 0.5
 #enditem
-
-
 
 #newitem
 #id shield4
@@ -81,11 +123,52 @@
 #armor
 #enditem
 
-
 #newitem
 #id shield6
+#gameid 2
+#sprite /graphics/offhand/standard/shield6.png
+#recolormask /graphics/offhand/standard/shield6_recolormask.png
+#armor
+#enditem
+
+#newitem
+#id shield8
+#gameid 2
+#sprite /graphics/offhand/standard/shield8.png
+#armor
+#enditem
+
+#newitem
+#id shield10
+#gameid 2
+#sprite /graphics/offhand/standard/shield10.png
+#armor
+#enditem
+
+#newitem
+#id shield11
 #gameid 2
 #sprite /graphics/offhand/standard/coe-metalshield.png
 #armor
 #enditem
 
+#newitem
+#id abysian_shield1
+#gameid 2
+#sprite /graphics/abysian/demonbred/offhand_shield.png
+#offsetx -31
+#offsety -64
+#armor
+#basechance 0.4
+#enditem
+
+#newitem
+#id abysian_shield2
+#gameid 2
+#sprite /graphics/abysian/demonbred/offhand_shield.png
+#recolormask /graphics/abysian/demonbred/offhand_shield_recolormask.png
+#offsetx -31
+#offsety -64
+#armor
+#basechance 1.6
+#enditem

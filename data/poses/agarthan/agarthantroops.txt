@@ -2,9 +2,13 @@
 -------- normal (Bronze)
 
 #newpose
+#name infantry_bronze
 #basechance 0.125
 #role "infantry"
 #role "scout"
+
+#command "#coldblood"
+
 #load basesprite /data/items/agarthan/generic/bases.txt
 #load shadow /data/items/agarthan/generic/shadow.txt
 #load hands /data/items/agarthan/generic/hands.txt
@@ -15,6 +19,7 @@
 #load offhand /data/items/agarthan/normal_bronze/shields.txt
 
 #load weapon /data/items/agarthan/generic/weapons.txt
+#load weapon /data/items/agarthan/normal_bronze/swords.txt
 #load bonusweapon /data/items/agarthan/generic/bonusweapons.txt
 
 #load cloakf /data/items/agarthan/generic/cloakf.txt
@@ -25,9 +30,13 @@
 -------- normal (Steel)
 
 #newpose
+#name infantry_steel
 #basechance 0.125
 #role "infantry"
 #role "sacred"
+
+#command "#coldblood"
+
 #load basesprite /data/items/agarthan/generic/bases.txt
 #load shadow /data/items/agarthan/generic/shadow.txt
 #load hands /data/items/agarthan/generic/hands.txt
@@ -38,6 +47,7 @@
 #load offhand /data/items/agarthan/normal_steel/shields.txt
 
 #load weapon /data/items/agarthan/generic/weapons.txt
+#load weapon /data/items/agarthan/normal_steel/swords.txt
 #load bonusweapon /data/items/agarthan/generic/bonusweapons.txt
 
 #load cloakf /data/items/agarthan/generic/cloakf.txt
@@ -48,9 +58,14 @@
 ------ Ranged (bronze)
 
 #newpose
+#name ranged_bronze
 #basechance 0.125
 #role "ranged"
+
+#command "#coldblood"
+
 #renderorder "shadow cloakb mount bag basesprite shirt legs armor strap cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
 #load basesprite /data/items/agarthan/generic/rangedbases.txt
 #load shadow /data/items/agarthan/generic/shadow.txt
 #load hands /data/items/agarthan/generic/hands.txt
@@ -75,9 +90,13 @@
 ------ Ranged (steel)
 
 #newpose
+#name ranged_steel
 #basechance 0.125
 #role "sacred"
 #role "ranged"
+
+#command "#coldblood"
+
 #renderorder "shadow cloakb mount bag basesprite shirt legs armor strap cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 #load basesprite /data/items/agarthan/generic/rangedbases.txt
 #load shadow /data/items/agarthan/generic/shadow.txt
@@ -105,7 +124,11 @@
 -------- sacred (Bronze)
 
 #newpose
+#name ancient_melee
 #role "sacred infantry"
+
+#command "#coldblood"
+
 #load basesprite /data/items/agarthan/generic_big/bases.txt
 #load shadow /data/items/agarthan/generic_big/shadow.txt
 #load hands /data/items/agarthan/generic_big/hands.txt
@@ -120,15 +143,17 @@
 #load cloakf /data/items/agarthan/generic_big/cloakf.txt
 #load cloakb /data/items/agarthan/generic_big/cloakb.txt
 
-
-
 #endpose
 
 
 ------ Sacred ranged (bronze)
 
 #newpose
+#name ancient_ranged
 #role "sacred ranged"
+
+#command "#coldblood"
+
 #renderorder "shadow cloakb mount bag basesprite shirt legs armor strap cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 #load basesprite /data/items/agarthan/generic_big/rangedbases.txt
 #load shadow /data/items/agarthan/generic_big/shadow.txt
@@ -150,7 +175,82 @@
 
 #generateitem 1 bonusweapon
 
+#endpose
 
+
+-------- Olmspawn (Bronze)
+
+#newpose
+#name olmspawn_bronze
+#basechance 0.25
+#role "sacred infantry"
+
+#command "#prot +2"
+#command "#gcost +20"
+#command "#hp +6"
+#command "#att +1"
+#command "#def +1"
+#command "#prec +1"
+#command "#ap 7"
+#command "#mr +2"
+#command "#mor +2"
+#command "#coldres 5"
+#command "#poisonres 15"
+#command "#sacred"
+
+#load basesprite /data/items/agarthan/generic/bases.txt
+#load shadow /data/items/agarthan/olmspawn/shadow.txt
+#load hands /data/items/agarthan/generic/hands.txt
+#load legs /data/items/agarthan/olmspawn/legs.txt
+
+#load armor /data/items/agarthan/normal_bronze/armor.txt
+#load helmet /data/items/agarthan/normal_bronze/helmets.txt
+#load offhand /data/items/agarthan/normal_bronze/shields.txt
+
+#load weapon /data/items/agarthan/generic/weapons.txt
+#load weapon /data/items/agarthan/normal_bronze/swords.txt
+#load bonusweapon /data/items/agarthan/generic/bonusweapons.txt
+
+#load cloakf /data/items/agarthan/generic/cloakf.txt
+#load cloakb /data/items/agarthan/generic/cloakb.txt
+
+#endpose
+
+-------- Olmspawn (Steel)
+
+#newpose
+#name olmspawn_steel
+#basechance 0.25
+#role "sacred infantry"
+
+#command "#prot +2"
+#command "#gcost +20"
+#command "#hp +6"
+#command "#att +1"
+#command "#def +1"
+#command "#prec +1"
+#command "#ap 7"
+#command "#mr +2"
+#command "#mor +2"
+#command "#coldres 5"
+#command "#poisonres 15"
+#command "#sacred"
+
+#load basesprite /data/items/agarthan/generic/bases.txt
+#load shadow /data/items/agarthan/olmspawn/shadow.txt
+#load hands /data/items/agarthan/generic/hands.txt
+#load legs /data/items/agarthan/olmspawn/legs.txt
+
+#load armor /data/items/agarthan/normal_steel/armor.txt
+#load helmet /data/items/agarthan/normal_steel/helmets.txt
+#load offhand /data/items/agarthan/normal_steel/shields.txt
+
+#load weapon /data/items/agarthan/generic/weapons.txt
+#load weapon /data/items/agarthan/normal_steel/swords.txt
+#load bonusweapon /data/items/agarthan/generic/bonusweapons.txt
+
+#load cloakf /data/items/agarthan/generic/cloakf.txt
+#load cloakb /data/items/agarthan/generic/cloakb.txt
 #endpose
 
 -------------- Mounted
@@ -159,8 +259,12 @@
 -------- normal (Bronze)
 
 #newpose
+#name mounted_bronze
 #basechance 0.1
 #role "mounted"
+
+#command "#coldblood"
+
 #load basesprite /data/items/agarthan/generic/bases.txt
 #load hands /data/items/agarthan/generic/hands.txt
 #load legs /data/items/agarthan/mounted/legs.txt
@@ -179,12 +283,15 @@
 
 #endpose
 
-
 -------- normal (Steel)
 
 #newpose
+#name mounted_steel
 #basechance 0.1
 #role "mounted"
+
+#command "#coldblood"
+
 #load basesprite /data/items/agarthan/generic/bases.txt
 
 #load hands /data/items/agarthan/generic/hands.txt
@@ -201,3 +308,39 @@
 #load cloakb /data/items/agarthan/generic/cloakb.txt
 #endpose
 
+-------- Olmspawn (scout)
+
+#newpose
+#name olmspawn_scout
+#basechance 0.01
+#role "scout"
+
+#command "#prot +2"
+#command "#gcost +20"
+#command "#hp +6"
+#command "#att +1"
+#command "#def +1"
+#command "#prec +1"
+#command "#ap 7"
+#command "#mr +2"
+#command "#mor +2"
+#command "#coldres 5"
+#command "#poisonres 15"
+#command "#sacred"
+
+#load basesprite /data/items/agarthan/generic/bases.txt
+#load shadow /data/items/agarthan/olmspawn/shadow.txt
+#load hands /data/items/agarthan/generic/hands.txt
+#load legs /data/items/agarthan/olmspawn/legs.txt
+
+#load armor /data/items/agarthan/olmspawn/scoutarmor.txt
+#load helmet /data/items/agarthan/normal_bronze/helmets.txt
+
+#load weapon /data/items/agarthan/generic/weapons.txt
+#load weapon /data/items/agarthan/normal_bronze/swords.txt
+#load bonusweapon /data/items/agarthan/generic/bonusweapons.txt
+
+#load cloakf /data/items/agarthan/generic/cloakf.txt
+#load cloakb /data/items/agarthan/generic/cloakb.txt
+
+#endpose

@@ -1,0 +1,68 @@
+------- Mounted
+
+#newpose
+#role "mounted"
+#sacred
+#basechance 0.125
+
+#renderorder "shadow weapon bonusweapon cloakb mount basesprite shirt legs armor offhandw cloakf hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/avvim/mounted/bases.txt
+#load mount /data/items/avvim/mounted/mounts.txt  offsetx 5 offsety -15
+
+#load hands /data/items/avvim/2h/hands.txt 
+
+#load cloakf /data/items/avvim/normal/cloakf.txt
+#load cloakb /data/items/avvim/normal/cloakb.txt
+#load shirt /data/items/avvim/mounted/shirt.txt
+
+#load armor /data/items/avvim/mounted/armor.txt
+#load helmet /data/items/avvim/normal/helmet.txt
+#load legs /data/items/avvim/mounted/legs.txt
+
+#load weapon /data/items/avvim/mounted/weapon.txt offsetx -1 offsety -10
+#load weapon /data/items/avvim/mounted/cavalryweapons.txt offsetx -1 offsety -10
+#load bonusweapon /data/items/avvim/normal/bonusranged.txt
+#load lanceslot /data/items/avvim/mounted/lance.txt offsetx -2 offsety 8
+#load lance_overlay /data/items/avvim/mounted/lance_overlay.txt offsetx -2 offsety 8
+
+#load offhand /data/items/avvim/normal/shields.txt
+#load offhand /data/items/avvim/mounted/offhand_mounted.txt  
+
+
+#load overlay /data/items/avvim/mounted/mountedoverlay.txt
+
+#writeslot lanceslot
+#writeslot lance_overlay
+#endpose
+
+----------- Charioteers
+
+#renderorder "shadow mount weapon bonusweapon cloakb basesprite shirt legs armor cloakf offhandw hands hair helmet offhanda overlay"
+
+#newpose
+#race 0
+#role "chariot"
+#sacred
+#basechance 0.25
+
+#load basesprite /data/items/avvim/2h/bases.txt
+#load mount /data/items/avvim/mounted/bases_chariot.txt
+
+#load hands /data/items/avvim/2h/hands.txt
+
+#load cloakf /data/items/avvim/normal/cloakf.txt
+#load cloakb /data/items/avvim/normal/cloakb.txt
+#load shirt /data/items/avvim/2h/shirt.txt
+
+#load armor /data/items/avvim/mounted/armor_chariot.txt
+#load helmet /data/items/avvim/normal/helmet.txt
+
+#load weapon /data/items/avvim/mounted/weapon_chariot.txt
+#load bonusweapon /data/items/avvim/normal/bonusranged.txt
+
+#load offhand /data/items/avvim/normal/shields.txt
+#load offhand /data/items/avvim/mounted/offhand_mounted.txt  
+
+#load overlay /data/items/avvim/mounted/mountedoverlay.txt
+#endpose

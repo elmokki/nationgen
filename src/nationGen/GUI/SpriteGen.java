@@ -190,14 +190,14 @@ public class SpriteGen extends JFrame implements ActionListener, ItemListener{
         colorpanel.add(new JLabel("Red"));
         redf.addActionListener(this);
         colorpanel.add(redf);
-        
+       
         colorpanel.add(new JLabel("Green"));
-        greenf.addActionListener(this);
-        colorpanel.add(greenf);
-
-        colorpanel.add(new JLabel("Blue"));
         bluef.addActionListener(this);
         colorpanel.add(bluef);
+
+        colorpanel.add(new JLabel("Blue"));
+        greenf.addActionListener(this);
+        colorpanel.add(greenf);
         
 
         

@@ -1,0 +1,105 @@
+-- standard 1h weapons
+
+#newitem
+#id kopesh
+#gameid 513
+#sprite /graphics/sobek/weapon/kopesh.png
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#sprite /graphics/sobek/weapon/falchion.png
+#enditem
+
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/sobek/weapon/axe.png
+#theme "primitive"
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/sobek/weapon/mace.png
+#theme "primitive"
+#maxprot 15
+#basechance 0.5
+#enditem
+
+#newitem
+#id broadsword
+#gameid 8
+#sprite /graphics/sobek/weapon/broadsword.png
+#enditem
+
+-- polearms
+
+#newitem
+#id longspear
+#gameid 28
+#sprite /graphics/weapon/standard/longspear.png
+#offsetx -6
+#enditem
+
+#newitem
+#id spear
+#gameid 1
+#sprite /graphics/weapon/standard/spear.png
+#offsetx -6
+#enditem
+
+#newitem
+#id trident
+#gameid 3
+#sprite /graphics/weapon/standard/trident.png
+#offsetx -6
+#basechance 0.5
+#enditem
+
+-- 2h weapons
+
+#newitem
+#id flail
+#gameid 16
+#sprite /graphics/weapon/standard/flail.png
+#offsetx -6
+#needs offhand no_offhand
+#enditem
+
+#newitem
+#id greataxe
+#gameid 18
+#sprite /graphics/weapon/standard/greataxe.png
+#offsetx -6
+#theme "primitive"
+#needs offhand no_offhand
+#enditem
+
+#newitem
+#id halberd
+#gameid 5
+#sprite /graphics/weapon/standard/halberd.png
+#offsetx -6
+#theme "advanced"
+#minprot 8
+#needs offhand no_offhand
+#enditem
+
+#newitem
+#id bardiche
+#gameid bardiche
+#sprite /graphics/weapon/standard/bardiche.png
+#offsetx -6
+#needs offhand no_offhand
+#enditem
+
+#newitem
+#id maul
+#gameid 14
+#sprite /graphics/weapon/standard/maul.png
+#offsetx -6
+#basechance 0.5
+#needs offhand no_offhand
+#enditem

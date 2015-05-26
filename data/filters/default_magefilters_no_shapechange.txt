@@ -147,6 +147,14 @@
 #chanceinc "command #chaospower 25"
 #end
 
+#new
+#name "deathrec"
+#basechance 0.01
+#command "#deathrec %cost10"
+#chanceinc "command #deathrec 100"
+#chanceinc "command #deathpower 100"
+#chanceinc "magic death 5"
+#end
 
 #new magefilter
 #name "shockres"
@@ -294,184 +302,110 @@
 
 
 #new magefilter
-
 #name "forestsurvival"
-
 #basechance 0.0
-
 #command "#forestsurvival"
-
 #chanceinc "magic nature 0.5"
-
 #tag "notfortier 3"
-
 #end
 
 
 
 #new magefilter
-
 #name "mountainsurvival"
-
 #basechance 0.0
-
-#command "#forestsurvival"
-
+#command "#mountainsurvival"
 #chanceinc "magic nature 0.25"
-
 #chanceinc "magic earth 0.25"
-
 #tag "notfortier 3"
-
 #end
 
 
 
 #new magefilter
-
 #name "swampsurvival"
-
 #basechance 0.0
-
-#command "#forestsurvival"
-
+#command "#swampsurvival"
 #chanceinc "magic nature 0.25"
-
 #chanceinc "magic water 0.25"
-
 #tag "notfortier 3"
-
 #end
 
 
 
 #new magefilter
-
 #name "wastesurvival"
-
 #basechance 0.0
-
-#command "#forestsurvival"
-
+#command "#wastesurvival"
 #chanceinc "magic nature 0.25"
-
 #chanceinc "magic fire 0.25"
-
 #tag "notfortier 3"
-
 #end
 
 
 
 #new magefilter
-
 #name "forestsurvival all"
-
 #basechance 0.0
-
 #command "#forestsurvival"
-
 #chanceinc "magic nature 0.25"
-
 #end
 
 
 
 #new magefilter
-
 #name "mountainsurvival all"
-
 #basechance 0.0
-
-#command "#forestsurvival"
-
+#command "#mountainsurvival"
 #chanceinc "magic nature 0.125"
-
 #chanceinc "magic earth 0.125"
-
 #end
 
 
 
 #new magefilter
-
 #name "swampsurvival all"
-
 #basechance 0.0
-
-#command "#forestsurvival"
-
+#command "#swampsurvival"
 #chanceinc "magic nature 0.125"
-
 #chanceinc "magic water 0.125"
-
 #end
 
-
-
 #new magefilter
-
 #name "wastesurvival all"
-
 #basechance 0.0
-
-#command "#forestsurvival"
-
+#command "#wastesurvival"
 #chanceinc "magic nature 0.125"
-
 #chanceinc "magic fire 0.125"
-
 #end
 
-
-
 #new magefilter
-
 #name "stealthy"
-
 #basechance 0.3
-
 #command "#stealthy +10"
-
 #command "#gcost +20"
-
 #tag "notfortier 3"
 #chanceinc "race vanir -20"
+#chanceinc "race sidhe -20"
 #power 2
-
 #end
 
-
-
 #new magefilter
-
 #name "stealthy all"
-
 #basechance 0.15
-
 #command "#stealthy +10"
-
 #command "#gcost +10"
 #chanceinc "race vanir -20"
+#chanceinc "race sidhe -20"
 #power 2
 #end
 
-
-
-
-
 #new magefilter
-
 #name "spy"
-
 #basechance 0.20
-
 #command "#stealthy +10"
-
 #command "#spy"
-
 #command "#gcost +20"
-
 #tag "notfortier 3"
 #power 2
 #end
@@ -479,20 +413,13 @@
 
 
 #new magefilter
-
 #name "assassin"
-
 #basechance 0.2
-
 #command "#stealthy +25"
-
 #command "#assassin"
-
 #command "#gcost +20"
-
 #primarycommand #assassin
 #tag "notfortier 2"
-
 #tag "notfortier 3"
 #power 2
 #end
@@ -500,19 +427,13 @@
 
 
 #new magefilter
-
 #name "assassin2"
-
 #basechance 0.2
-
 #command "#stealthy +25"
-
 #command "#assassin"
-
 #command "#gcost +20"
 #primarycommand #assassin
 #tag "notfortier 3"
-
 #tag "notfortier 1"
 #power 2
 #end
@@ -522,15 +443,10 @@
 
 
 #new magefilter
-
 #name "ethereal"
-
 #basechance 0.1
-
 #command "#ethereal"
-
 #command "#gcost +20"
-
 #chanceinc "magic astral 0.5"
 #primarycommand #ethereal
 #tag "personalmagic astral"
@@ -540,23 +456,15 @@
 
 
 #new magefilter
-
 #name "ethereal2"
-
 #basechance 0.33
-
 #command "#ethereal"
-
 #command "#gcost +20"
 #primarycommand #ethereal
 #chanceinc "magic astral 1"
-
 #tag "personalmagic astral"
-
 #tag "notfortier 2"
-
 #tag "notfortier 1"
-
 #power 3
 #end
 
@@ -565,37 +473,23 @@
 
 
 #new magefilter
-
 #name "awe"
-
 #basechance 0.4
-
 #command "#awe +1"
-
 #chanceinc "magic astral 0.4"
-
 #chanceinc "magic holy 0.4"
-
 #chanceinc "magic death -0.4"
-
 #chanceinc "magic blood -0.4"
-
 #power 2
 #end
 
 
 
 #new magefilter
-
 #name "fear"
-
 #basechance 0.2
-
 #command "#fear +0"
-
 #chanceinc "magic death 0.8"
-
-
 #tag "notfortier 1"
 #tag "notfortier 2"
 #end
@@ -605,106 +499,69 @@
 
 
 #new magefilter
-
 #name "regeneration"
-
 #basechance 0.1
-
 #command "#regeneration 10"
-
 #chanceinc "magic nature 1"
-
 #tag "notfortier 1"
-
 #tag "personalmagic nature"
-
 #end
 
 
 
 #new magefilter
-
 #name "fireshield"
-
 #basechance 0
-
 #command "#fireshield 8"
-
+#command "#speciallook 1"
 #chanceinc "magic fire 2"
-
 #tag "notfortier 1"
-
 #tag "personalmagic fire"
-
 #end
 
 
 
 #new magefilter
-
 #name "poisonarmor"
-
 #basechance 0
-
 #command "#poisonarmor"
-
 #chanceinc "magic nature 2"
-
 #tag "notfortier 1"
-
 #end
 
 
 
 #new magefilter
-
 #name "nobadevents1"
-
 #basechance 0.2
-
 #command "#nobadevents +%value%"
-
 #basevalue -4
-
 #valuemulti 4
-
 #tag "notfortier 1"
-
 #chanceinc "magic astral 0.8"
-
 #end
 
 
 
 #new magefilter
-
 #name "nobadevents2"
-
 #basechance 0.05
-
 #command "#nobadevents +%value%"
-
 #basevalue 0
-
 #valuemulti 4
-
 #chanceinc "magic astral 0.45"
 #tag "notfortier 3"
-
 #end
 
 
 
 #new magefilter
-
 #name "nobadevents3"
 #basechance 0.025
 #command "#nobadevents +6"
 #chanceinc "magic astral 0.2"
-
 #tag "notfortier 1"
 #tag "notfortier 3"
-
 #end
 
 
@@ -756,17 +613,12 @@
 #new magefilter
 #type "healer"
 #name "healerscaling 2"
-
 #basechance 0.05
-
 #chanceinc "magic nature 0.1"
-
 #chanceinc "magic holy 0.1"
 #chanceinc "command startaff 0.8"
 #command "#healer +%value%"
-
 #basevalue -25
-
 #valuemulti 35
 #power 3
 #end
@@ -776,18 +628,12 @@
 #new magefilter
 #type "healer"
 #name "autohealer1"
-
 #basechance 0.1
-
 #chanceinc "magic nature 0.3"
-
 #chanceinc "magic holy 0.3"
 #chanceinc "command startaff 1.5"
-
 #command "#autohealer +1"
-
 #tag "notfortier 1"
-
 #tag "notfortier 2"
 #power 2
 #end
@@ -797,21 +643,14 @@
 #new magefilter
 #type "healer"
 #name "autohealer 3"
-
 #basechance 0.1
-
 #chanceinc "magic nature 0.3"
-
 #chanceinc "magic holy 0.3"
-
 #command "#autohealer 3"
-
 #tag "notfortier 1"
-
 #tag "notfortier 2"
 #chanceinc "command startaff 1.5"
 #power 2
-
 #end
 
 
@@ -819,17 +658,11 @@
 #new magefilter
 #type "healer"
 #name "autodishealer2"
-
 #basechance 0.05
-
 #chanceinc "magic holy 0.5"
-
 #chanceinc "magic nature 0.5"
-
 #command "#autodishealer 2"
-
 #tag "notfortier 1"
-
 #tag "notfortier 2"
 #power 3
 #end
@@ -838,31 +671,20 @@
 
 #new magefilter
 #name "recuperation"
-
 #basechance 0.1
-
 #chanceinc "magic nature 1"
 #chanceinc "personalcommand startaff 1.5"
 #command "#heal"
-
 #end
-
-
-
-
 
 
 
 #new magefilter
 #type "darkvision"
 #name "darkvision50"
-
 #basechance 0.075
-
 #chanceinc "magic earth 0.15"
-
 #command "#darkvision +50"
-
 #end
 
 
@@ -870,20 +692,10 @@
 #new magefilter
 #type "darkvision"
 #name "darkvision100"
-
 #basechance 0.05
-
 #chanceinc "magic earth 0.15"
-
 #command "#darkvision 100"
-
 #end
-
-
-
-
-
-
 
 
 
@@ -1004,6 +816,27 @@
 #end
 
 
+#new magefilter
+#name "imp_primary"
+#type "familiar"
+#basechance 0.05
+#command "#batstartsum1 2287"
+#chanceinc "magic blood 1"
+#tag "notfortier 1"
+#tag "notfortier 2"
+#description "has bound an imp to serve as a familiar"
+#end
+
+#new magefilter
+#name "imp"
+#type "familiar"
+#basechance 0.05
+#command "#batstartsum1 2287"
+#chanceinc "magic blood 1"
+#tag "notfortier 1"
+#description "has bound an imp to serve as a familiar"
+#end
+
 
 #new magefilter
 #name "blackdog_primary"
@@ -1038,6 +871,18 @@
 #description "followed by a small swarm of bugs"
 #tag "notfortier 1"
 #tag "notfortier 2"
+#end
+
+#new magefilter
+#name "illearth"
+#type "familiar"
+#basechance 0
+#command "#batstartsum1 2283"
+#chanceinc "magic blood earth 1"
+#description "protected by tainted earth"
+#tag "notfortier 1"
+#tag "notfortier 2"
+#power 2
 #end
 
 #new magefilter
@@ -1100,4 +945,3 @@
 #tag "notfortier 2"
 #power 2
 #end
-

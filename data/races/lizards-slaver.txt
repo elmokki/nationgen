@@ -1,0 +1,61 @@
+#newrace
+#name "Lizard slavers"
+#visiblename "Lizard"
+#poses /races/lizard/poses.txt
+
+#basechance 0.1
+
+#longsyllables /data/names/nations/lizard/longsyllables.txt
+#shortsyllables /data/names/nations/lizard/shortsyllables.txt
+#suffixes /data/names/nations/lizard/suffixes.txt
+#unitcommand "#prot 5"
+#unitcommand "#coldblooded"
+#unitcommand "#gcost 10"
+#unitcommand "#hp 11"
+#unitcommand "#mr 12"
+#unitcommand "#mor 9"
+#unitcommand "#enc 4"
+#unitcommand "#poisonres 5"
+#unitcommand "#swampsurvival"
+#unitcommand "#ap 10"
+#unitcommand "#nametype 113"
+#unitcommand "#maxage 75"
+#nationcommand "#idealcold -1"
+#tag "preferredmount serpent"
+#tag "preferredmount lizard"
+
+#chanceinc era 1 *4
+
+--- Does not occur as a secondary race
+#chanceinc "hasprimaryrace *0"
+
+#secondaryracecommand "#slave"
+#secondaryracecommand "#mor -2"
+#secondaryracetroopmod 100
+#secondaryracemagemod -100
+#secondaryracetertiarymagemod 25
+
+#generationchance chariot 0.25
+#generationchance ranged 0.125
+#generationchance cavalry 0.125
+
+#sacredchariotchance 0.25
+
+#magicpatterns defaultprimary
+#magicpatterns defaultsecondary
+#magicpatterns defaulttertiary
+
+#pose lizardinfantry
+#pose lizardchariots
+#pose lizardranged
+#pose predatorlizards
+#pose lizardmage
+#pose predatormages
+
+#gods lizardgods
+
+#magicpriority death 6
+#magicpriority nature 4
+#magicpriority water 2
+
+#endrace

@@ -68,23 +68,74 @@ public class CommanderGenerator extends TroopGenerator {
 			allFeatures.add("#holy");
 		}
 		
+		// Check to see if #secondaryracecommand is going to add #magicbeing, etc. to secondary race troops when they're finalized
+		
+		List<Command> all = new ArrayList<Command>();
+		Boolean secondaryMagicBeings = false;
+		Boolean secondaryDemons = false;
+		Boolean secondaryUndead = false;
+		Boolean secondarySlaves = false;
+		
+		for(String tag : nation.races.get(0).tags)
+		{
+			List<String> args = Generic.parseArgs(tag);
+			if(args.get(0).equals("secondaryracecommand") || args.get(0).equals("secondaryracecommand_conditional"))
+			{
 
+				Command c = Command.parseCommand(args.get(1));
+				secondaryMagicBeings = (c.command.equals("#magicbeing") || secondaryMagicBeings);
+				secondaryDemons = (c.command.equals("#demon") || secondaryDemons);
+				secondaryUndead = (c.command.equals("#undead") || secondaryUndead);
+				secondarySlaves = (c.command.equals("#slave") || secondarySlaves);
+			}
+		}
+
+		
 		// Get all commands that at least one commander has to fulfill.
 		
 		int magicbeings = 0;
 		int demons = 0;
 		for(Unit u : possibleComs)
 		{
+			if(u.race.equals(nation.races.get(1)) && secondaryMagicBeings)
+			{
+				magicbeings++;
+				if(!features.contains("#magicbeing"))
+				{
+					features.add("#magicbeing");
+				}
+			}
+			if(u.race.equals(nation.races.get(1)) && secondaryDemons)
+			{
+				demons++;
+				if(!features.contains("#demon"))
+				{
+					features.add("#demon");
+				}
+			}
+			if((u.race.equals(nation.races.get(1)) && secondaryUndead))
+			{
+				if(!secondaryDemons)  // Make sure we don't double-count
+					demons++;
+				if(!features.contains("#undead"))
+				{
+					features.add("#undead");
+				}
+			}
+			if(u.race.equals(nation.races.get(1)) && secondarySlaves)
+			{
+				hasSlaves = true;
+			}
 			for(Command c : u.getCommands())
 			{
-				if(c.command.equals("#magicbeing"))
+				if(c.command.equals("#magicbeing") && !(u.race.equals(nation.races.get(1)) || secondaryMagicBeings))  // Make sure we don't double-count
 					magicbeings++;
-				if(c.command.equals("#demon"))
+				if(c.command.equals("#demon") && !(u.race.equals(nation.races.get(1)) || secondaryDemons))  // Make sure we don't double-count
 					demons++;
-				if(c.command.equals("#undead"))
+				if(c.command.equals("#undead")&& !(u.race.equals(nation.races.get(1)) || secondaryUndead))  // Make sure we don't double-count
 					demons++;
 				
-				if(c.command.equals("#slave"))
+				if(c.command.equals("#slave") || (u.race.equals(nation.races.get(1)) && secondarySlaves))
 					hasSlaves = true;
 				
 				if(allFeatures.contains(c.command) && !features.contains(c.command))
@@ -301,15 +352,19 @@ public class CommanderGenerator extends TroopGenerator {
 			boolean demonud = false;
 			
 			for(Command c : com.getCommands())
+			{
 				if(c.command.equals("#magicbeing"))
 					magicbeing = true;
 				else if(c.command.equals("#demon"))
 					demonud = true;
 				else if(c.command.equals("#undead"))
 					demonud = true;
+			}
 				
 			assignMagicUDLeadership(com, power, magicbeing, magicshare, "magic");
 			assignMagicUDLeadership(com, power, demonud, udshare, "undead");
+			
+			generateDescription(com, magicbeing, demonud, hasSlaves);  // Kludge to provide basic madlib commander descriptions
 
 		}
 		
@@ -319,6 +374,7 @@ public class CommanderGenerator extends TroopGenerator {
 		nation.comlists.get("commanders").addAll(tempComs);
 	}
 	
+
 
 	private void assignMagicUDLeadership(Unit com, int power, boolean being, double magicshare, String str)
 	{
@@ -345,9 +401,9 @@ public class CommanderGenerator extends TroopGenerator {
 			power = origpower;
 			
 		if(power >= 3)
-			com.commands.add(new Command("#expert" + str + "leader"));
-		else if(power >= 2)
 			com.commands.add(new Command("#good" + str + "leader"));
+		else if(power >= 2)
+			com.commands.add(new Command("#ok" + str + "leader"));
 		else if(power >= 1)
 			com.commands.add(new Command("#poor" + str + "leader"));
 		
@@ -601,6 +657,221 @@ public class CommanderGenerator extends TroopGenerator {
 		
 		if(helmet != null)
 			u.setSlot(slot, helmet);
+		
+	}
+	
+	public void generateDescription(Unit com, boolean magicbeing,	boolean demonud, boolean hasSlaves)
+	{
+		String desc = new String("");
+		List<String> normalLd = new ArrayList<String>();
+		int leader = 1;
+		int magicLd = 0;
+		int demonUDLd = 0;
+		int holyRank = 0;
+
+		boolean awe = false;
+		boolean fear = false;
+		boolean inspiring = false;
+		boolean taskmaster = false;
+		boolean beastmaster = false;
+		
+		normalLd.add(pickRandomSubstring("unexceptional adequate undistinguished unremarkable"));
+		normalLd.add(pickRandomSubstring("willingly obediently dutifully freely heedfully carefully"));
+		
+		for(Command c : com.getCommands())
+		{
+			if(c.command.equals("#expertleader"))
+			{
+				normalLd.set(0, pickRandomSubstring("calculating masterful adroit deft wiley cunning expert consummate veteran"));
+				normalLd.set(1, pickRandomSubstring("unquestioningly fearlessly unhesitatingly zealously fanatically dauntlessly"));
+				leader = 3;
+			}
+			else if(c.command.equals("#goodleader"))
+			{
+				normalLd.set(0, pickRandomSubstring("competent decisive skilled able experienced clever adept skillful practiced capable effective"));
+				normalLd.set(1, pickRandomSubstring("confidently boldly loyally cheerfully courageously stalwartly swiftly"));
+				leader = 2;
+			}
+			else if(c.command.equals("#poorleader"))
+			{
+				normalLd.set(0, pickRandomSubstring("incompetent rash short-sighted inexperienced indecisive craven foolish"));
+				normalLd.set(1, pickRandomSubstring("grudgingly skittishly anxiously apprehensively spiritlessly confusedly recklessly wildly"));
+				leader = 0;
+			}
+			else if(c.command.equals("#goodmagicleader"))
+			{
+				magicLd = 3;
+			}
+			else if(c.command.equals("#okmagicleader"))
+			{
+				magicLd = 2;
+			}
+			else if(c.command.equals("#poormagicleader"))
+			{
+				magicLd = 1;
+			}
+			else if(c.command.equals("#goodundeadleader"))
+			{
+				demonUDLd = 3;
+			}
+			else if(c.command.equals("#okundeadleader"))
+			{
+				demonUDLd = 2;
+			}
+			else if(c.command.equals("#poorundeadleader"))
+			{
+				demonUDLd = 1;
+			}
+			else if(c.command.equals("#awe"))
+				awe = true;
+			else if(c.command.equals("#fear"))
+				fear = true;
+			else if(c.command.equals("#inspirational"))
+				inspiring = true;
+			else if(c.command.equals("#taskmaster"))
+				taskmaster = true;
+			else if(c.command.equals("#magicskill"))
+			{
+				String tmp = null;
+				
+				if(c.args.get(0) != null)
+					tmp = c.args.get(0);
+		
+				if(tmp != null)			// We only care about pure priests here
+					if(tmp.startsWith("8") && tmp.length() > 2)
+					{
+						holyRank = Integer.parseInt(tmp.substring(2,3));
+					}
+				}
+			else if(c.command.equals("#holy"))
+			{
+				if(holyRank < 1) 
+					holyRank = 1;
+			}
+		}
+		
+		desc = "The %unitname_plural% of %nation% are ";
+		
+		if(awe && fear)
+		{
+			desc += pickRandomSubstring("cruel brutal terrifying savage vicious ruthless bloodthirsty") + " yet " + pickRandomSubstring("beloved adored revered venerated exalted") 
+					+ " figures whose " + normalLd.get(0);
+		}
+		else if(awe)
+		{
+			desc += pickRandomSubstring("daunting aloof unapproachable glorious venerated formidible lofty")
+					+ " figures whose " + normalLd.get(0);
+		}
+		else if(fear)
+		{
+			desc += pickRandomSubstring("cruel brutal terrifying savage vicious ruthless dreaded")
+					+ " leaders whose " + normalLd.get(0);
+			if(inspiring && leader <= 1)
+				desc += " yet";
+			else if(taskmaster && leader > 1)
+				desc += " but";
+			else if(inspiring || taskmaster)
+				desc += " and";
+		}
+		else 
+			desc += normalLd.get(0) + " leaders whose";
+		
+		if(inspiring && taskmaster)
+			desc += " " + pickRandomSubstring("compelling forceful ardent vehement fierce gruff arresting");
+		else if(inspiring)
+			desc += " " + pickRandomSubstring("inspiring rousing stirring earnest fiery impassioned");
+		else if(taskmaster)
+			desc += " " + pickRandomSubstring("harsh demanding exacting stern dour stringent");
+		
+		desc += " " + pickRandomSubstring("orders commands decrees mandates instructions plans") 
+				+ " are " + normalLd.get(1) + " " + pickRandomSubstring("carried out,executed,obeyed,enacted", ",") 
+				+ " by ";
+		
+		if(beastmaster)
+			desc += "man and beast alike.";
+		else if(hasSlaves && taskmaster)
+			desc += "their subordinates and slaves.";
+		else if(holyRank > 0)
+			desc += "their " + pickRandomSubstring("followers flock juniors disciples minions guardians subordinates attendants companions escorts lackeys assistants") + ".";
+		else
+			desc += "their " + pickRandomSubstring("troops soldiers warriors minions followers forces") + ".";
+		
+		if(magicLd > 0 || demonUDLd > 0)
+		{
+			desc += " The %unitname_plural% are also charged with " + pickRandomSubstring("commanding leading overseeing deploying overseeing");  
+			
+			if(magicLd == 0)
+				desc += " the unholy servants of %nation%, but its magical forces are beyond their " 
+						+ pickRandomSubstring("power ability ken understanding expertise") + ".";
+			else if(demonUDLd == 0)
+				desc += " the magical servants of %nation%, but its darker forces are beyond their " 
+						+ pickRandomSubstring("power ability ken understanding expertise") + ".";
+			else
+			{
+				if(magicbeing || demonud)
+					desc += " the enchanted and unholy warriors of %nation%";
+				else
+					desc += " any supernatural entity that the %mages_plural% of %nation% might " + pickRandomSubstring("conjur,summon,raise,bind into service", ",");
+				
+				if(magicLd < 2 && demonUDLd < 2)
+					desc += ", although they can only control a handful of these beings.";
+				else
+					desc += ".";
+			}
+		}
+		else if(magicbeing || demonud)
+		{
+			if(magicbeing && demonud)
+				desc += " However, leading the magical and unholy servants ";
+			else if(magicbeing)
+				desc += " However, leading the enchanted servitors ";
+			else if(demonud)
+				desc += " However, leading the darkest forces ";
+			
+			desc += "of %nation% is beyond their " + pickRandomSubstring("power ability ken understanding expertise") + ".";
+		}
+		
+		if(holyRank > 0)
+		{
+			if(holyRank == 1)
+				desc += " The %unitname_plural% hold a very minor place in %nation%'s heirarchy, with " 
+						+ pickRandomSubstring("little,hardly,almost no,barely", ",") + " more " 
+						+ pickRandomSubstring("power insight numina understanding standing status prestige respect dignity training authority") + " than a %sacredname%.";
+			else if(holyRank == 2)
+				desc += " The %unitname_plural% make up the " 
+						+ pickRandomSubstring("core,backbone,heart,rank and file,foundation,body,majority", ",") + " of %nation%'s "
+						+ pickRandomSubstring("clergy,priests,faith,religion,temple,cult,priesthood", ",") +", playing a crucial role in all almost matters of faith.";
+			else
+				desc += " At the  " + pickRandomSubstring("pinnacle top head peak summit") + " of %nation%'s religious heirarchy, the %unitname_plural% are the "
+					+ pickRandomSubstring("foremost,most exalted,greatest,most powerful,most prestigious,wisest", ",") +" of their faith.";
+		}
+		
+		List<String> body = new ArrayList<String>();
+		body.add(desc);
+		com.commands.add(new Command("#descr", body));
+	}
+
+
+
+	private String pickRandomSubstring(String string)
+	{
+		Random r = nation.random;
+		String[] words = null;
+		
+		words = string.split(" ");
+		
+		return words[r.nextInt(words.length)];
+
+	}
+
+	private String pickRandomSubstring(String string, String token) {
+
+		Random r = nation.random;
+		String[] words = null;
+		
+		words = string.split(token);
+		
+		return words[r.nextInt(words.length)];
 		
 	}
 	

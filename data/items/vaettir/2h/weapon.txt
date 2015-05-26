@@ -1,0 +1,85 @@
+#newitem
+#id greatclub
+#gameid 165
+#sprite /graphics/weapon/2h/greatclub.png
+#offsetx 6
+#offsety 6
+#tag "name infantry clubber"
+#theme "primitive"
+#basechance 1
+#enditem
+
+#newitem
+#id broadsword
+#gameid 8
+#sprite /graphics/vaettir/weapon/broadsword_2h.png
+#tag "eliteversion longsword_elite"
+#tag "name infantry swordsman"
+#tag "name commander captain"
+#tag "name commander swordsmaster"
+#basechance 2
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#sprite /graphics/vaettir/weapon/falchion_2h.png
+#tag "eliteversion longsword_elite"
+#tag "name infantry falchioneer"
+#tag "name commander swordsmaster"
+#basechance 2
+#enditem
+
+#newitem
+#id longsword
+#gameid 268
+#sprite /graphics/vaettir/weapon/longsword_2h.png
+#tag "eliteversion longsword_elite"
+#tag "eliteversion claymore"
+#tag "eliteversion greatsword"
+#tag "name infantry hirdman"
+#tag "name infantry swordsman"
+#tag "name commander swordsmaster"
+#tag "name commander jarl"
+#basechance 1
+#enditem
+
+#newitem
+#id longsword_elite
+#gameid 268
+#sprite /graphics/vaettir/weapon/longsword_2h.png
+#tag "eliteversion claymore"
+#tag "eliteversion greatsword"
+#tag "name infantry hirdman"
+#tag "name infantry swordsman"
+#tag "name commander swordsmaster"
+#tag "name commander jarl"
+#theme "elite"
+#basechance 4
+#enditem
+
+#newitem
+#id claymore
+#gameid 258
+#sprite /graphics/vaettir/weapon/longsword_2h.png
+#tag "name infantry hirdman"
+#tag "name infantry swordsman"
+#tag "name commander swordsmaster"
+#tag "name commander jarl"
+#theme "elite"
+#basechance 2
+#enditem
+
+#newitem
+#id greatsword
+#gameid 11
+#sprite /graphics/vaettir/weapon/greatsword_2h.png
+#tag "name infantry hirdman"
+#tag "name infantry swordsman"
+#tag "name commander swordsmaster"
+#tag "name commander jarl"
+#theme "elite"
+#theme "advanced"
+#basechance 0.5
+#enditem
+

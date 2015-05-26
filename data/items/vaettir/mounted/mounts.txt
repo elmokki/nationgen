@@ -1,0 +1,179 @@
+--- Base offsets are applied to everything except base and overlay
+
+#newitem
+#name "wolf"
+#gameid -1
+#sprite /graphics/hoburg/mounts/wolf.png
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 22"
+#define "#mounted"
+#define "#weapon nostr_bite_10 --- bite"
+#define "#secondshape wolfmount"
+#define "#gcost +20"
+#define "#ressize 1"
+#define "#enc 3"
+#define "#rcost +4"
+#define "#stealthy +0"
+#theme "animal wolf"
+#tag "maxprot 14"
+#tag "guaranteedprefix wolf"
+#description "If the rider dies, the wolf will continue to fight alongside its Vaetti companions."
+#offsety -7
+#offsetx -5
+#enditem
+
+#newitem
+#name "dire wolf"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf2.png
+#armor
+#needs overlay direwolf2_overlay
+#define "#size 2"
+#define "#mapmove 3"
+#define "#ap 26"
+#define "#mounted"
+#define "#weapon 237 --- bite"
+#define "#secondshape direwolf2mount"
+#define "#gcost +35"
+#define "#ressize 1"
+#define "#enc 3"
+#define "#rcost +6"
+#define "#stealthy +0"
+#theme "heavy"
+#theme "animal wolf"
+#tag "minprot 9"
+#tag "maxprot 18"
+#tag "guaranteedprefix wolf"
+#description "If the rider dies, the wolf will continue to fight alongside its Vaetti companions."
+#offsety -20
+#offsetx -3
+#enditem
+
+#newitem
+#name "boar"
+#gameid -1
+#sprite /graphics/mounts/standard/boarcavalry.png
+#armor
+#offsetx -2
+#offsety -18
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 352 --- Nostr Gore"
+#define "#gcost +20"
+#define "#rcost +6"
+#define "#ressize 1"
+#define "#enc 3"
+#theme "heavy"
+#theme "animal boar"
+#tag "guaranteedprefix boar"
+#tag "name commander boarmaster"
+#tag "minprot 9"
+#tag "maxprot 18"
+#basechance 0.5
+#enditem
+
+#newitem
+#name "deer"
+#gameid -1
+#sprite /graphics/hoburg/mounts/deer.png
+#armor
+#define "#size 2"
+#define "#mapmove 3"
+#define "#ap 22"
+#define "#mounted"
+#define "#weapon 354 --- antlers"
+#define "#gcost +15"
+#define "#ressize 1"
+#define "#enc 3"
+#define "#rcost +4"
+#theme "animal deer"
+#tag "maxprot 14"
+#tag "guaranteedprefix deer"
+#define "#stealthy +0"
+#basechance 0.5
+#offsety -13
+#offsetx -1
+#enditem
+
+#newitem
+#name "hawk"
+#gameid -1
+#sprite /graphics/hoburg/mounts/hawk.png
+#armor
+#needs overlay hawkoverlay
+#define "#size 2"
+#define "#mapmove 3"
+#define "#ap 6"
+#define "#flying"
+#define "#mounted"
+#define "#weapon 236 --- claw"
+#define "#gcost +27"
+#define "#ressize 1"
+#define "#enc 4"
+#define "#rcost +4"
+#theme "specialmount"
+#theme "animal hawk"
+#tag "maxprot 16"
+#tag "guaranteedprefix hawk"
+#basechance 0.5
+#offsety 30
+#offsetx 25
+#enditem
+
+#newitem
+#name "forest spider"
+#gameid -1
+#sprite /graphics/mounts/standard/spider2.png
+#armor
+#offsetx 3
+#offsety -2
+#needs overlay spider2_overlay
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 12"
+#define "#mounted"
+#define "#weapon 313 --- Fangs"
+#define "#secondtmpshape forestspider"
+#description "If the rider dies, the spider will carry on fighting until the end of the battle."
+#define "#gcost +20"
+#define "#rcost +6"
+#define "#ressize 1"
+#define "#enc 4"
+#theme "specialmount"
+#theme "animal spider"
+#tag "guaranteedprefix spider"
+#tag "maxprot 12"
+#basechance 0.25
+#enditem
+
+#newitem
+#name "bear"
+#gameid -1
+#sprite /graphics/mounts/standard/bear.png
+#armor
+#define "#size 4"
+#define "#mapmove 2"
+#define "#ap 16"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape bearmount"
+#define "#gcost +35"
+#define "#rcost +10"
+#define "#ressize 1"
+#define "#enc 4"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#offsety -24
+#offsetx -1
+#theme "specialmount"
+#theme "heavy"
+#theme "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#basechance 0.25
+#enditem

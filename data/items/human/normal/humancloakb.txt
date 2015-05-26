@@ -58,36 +58,60 @@
 
 #newitem
 #name "cloak 5a dark"
-#basechance 0.875
+#basechance 0.5
 #gameid -1
 #sprite /graphics/cloaks/standard/high_dark_nocollar_b.png
 #recolormask self
+#tag "eliteversion 'cloak 5b dark'"
 #needs cloakf "cloak 5a dark"
 #enditem
 
 #newitem
 #name "cloak 5a light"
-#basechance 0.875
+#basechance 0.5
 #gameid -1
 #sprite /graphics/cloaks/standard/high_light_nocollar_b.png
 #recolormask self
+#tag "eliteversion 'cloak 5b light'"
 #needs cloakf "cloak 5a light"
 #enditem
 
 #newitem
 #name "cloak 5b dark"
-#basechance 0.125
+#basechance 0.5
 #gameid -1
 #sprite /graphics/cloaks/standard/high_dark_collar_b.png
 #recolormask self
 #needs cloakf "cloak 5b dark"
+#theme "elite"
 #enditem
 
 #newitem
 #name "cloak 5b light"
-#basechance 0.125
+#basechance 0.5
 #gameid -1
 #sprite /graphics/cloaks/standard/high_light_collar_b.png
 #recolormask self
 #needs cloakf "cloak 5b light"
+#theme "elite"
+#enditem
+
+#newitem
+#name "cloak 6"
+#basechance 1
+#gameid -1
+#sprite /graphics/cloaks/standard/cloak6_b.png
+#recolormask self
+#tag "eliteversion 'cloak 6 elite'"
+#needs cloakf "cloak 6"
+#enditem
+
+#newitem
+#name "cloak 6 elite"
+#basechance 1
+#gameid -1
+#sprite /graphics/cloaks/standard/cloak6_b.png
+#recolormask self
+#needs cloakf "cloak 6 elite"
+#theme "elite"
 #enditem

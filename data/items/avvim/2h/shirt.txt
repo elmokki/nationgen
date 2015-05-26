@@ -1,0 +1,83 @@
+#newitem
+#id noshirt
+#basechance 0
+#gameid -1
+#enditem
+
+#newitem
+#id tunic1
+#basechance 2
+#gameid -1
+#sprite /graphics/avvim/shirt/shirt.png
+#recolormask self
+#tag "eliteversion 'fancy gold tunic'"
+#enditem
+
+#newitem
+#id tunic2
+#basechance 2
+#gameid -1
+#sprite /graphics/avvim/shirt/shirt.png
+#recolormask self
+#tag "eliteversion 'ornate gold tunic'"
+#enditem
+
+#newitem
+#id "fancy silver tunic"
+#basechance 1
+#gameid -1
+#sprite /graphics/avvim/shirt/shirt_fancy_silver.png
+#recolormask /graphics/avvim/shirt/shirt_fancy_recolormask.png
+#tag "eliteversion 'ornate silver tunic'"
+#enditem
+
+#newitem
+#id "ornate silver tunic"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/avvim/shirt/shirt_ornate_silver.png
+#recolormask /graphics/avvim/shirt/shirt_ornate_recolormask.png
+#tag "eliteversion 'gawdy silver tunic'"
+#theme "elite"
+#enditem
+
+
+#newitem
+#id "gawdy silver tunic"
+#basechance 0.25
+#gameid -1
+#sprite /graphics/avvim/shirt/2h_gawdy_silver.png
+#recolormask /graphics/avvim/shirt/shirt_ornate_recolormask.png
+#tag "eliteversion 'gawdy gold tunic'"
+#theme "elite"
+#enditem
+
+#newitem
+#id "fancy gold tunic"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/avvim/shirt/shirt_fancy_gold.png
+#recolormask /graphics/avvim/shirt/shirt_fancy_recolormask.png
+#tag "eliteversion 'ornate gold tunic'"
+#theme "elite"
+#enditem
+
+#newitem
+#id "ornate gold tunic"
+#basechance 0.125
+#gameid -1
+#sprite /graphics/avvim/shirt/shirt_ornate_gold.png
+#recolormask /graphics/avvim/shirt/shirt_ornate_recolormask.png
+#tag "eliteversion 'gawdy gold tunic'"
+#theme "elite"
+#enditem
+
+
+#newitem
+#id "gawdy tunic gold"
+#basechance 0.125
+#gameid -1
+#sprite /graphics/avvim/shirt/2h_gawdy_gold.png
+#recolormask /graphics/avvim/shirt/shirt_ornate_recolormask.png
+#theme "elite"
+#enditem

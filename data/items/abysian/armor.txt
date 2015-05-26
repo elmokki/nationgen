@@ -3,7 +3,7 @@
 #newitem
 #name "naked"
 #gameid -1
-#sprite /graphics/abysian/naked.png
+-- #sprite /graphics/abysian/naked.png
 #needs legs naked
 #armor
 #enditem
@@ -14,25 +14,15 @@
 #newitem
 #name "chain cuirass"
 #gameid 8
-#sprite /graphics/bodyarmor/standard/mailcuirass.png
+#sprite /graphics/abysian/armor/chain_cuirass.png
 #armor
 #enditem
 
 
 #newitem
-#name "chain hauberk short"
+#name "chain hauberk"
 #gameid 13
-#sprite /graphics/bodyarmor/standard/mailhauberk1.png
-#basechance 0.5
-#armor
-#enditem
-
-
-#newitem
-#name "chain hauberk long"
-#gameid 13
-#basechance 0.5
-#sprite /graphics/bodyarmor/standard/mailhauberk2.png
+#sprite /graphics/abysian/armor/chain_hauberk.png
 #armor
 #enditem
 
@@ -40,7 +30,7 @@
 #newitem -- full chain
 #name "full chain"
 #gameid 18
-#sprite /graphics/bodyarmor/standard/mailhauberk1.png
+#sprite /graphics/abysian/armor/chain_hauberk.png
 #armor
 #needs legs 6
 #theme "advanced"
@@ -53,33 +43,22 @@
 #newitem
 #name "scale cuirass"
 #gameid 7
-#sprite /graphics/bodyarmor/standard/mailcuirass.png
+#sprite /graphics/abysian/armor/scale_cuirass.png
 #armor
 #enditem
 
 
 #newitem
-#name "scale hauberk short"
+#name "scale hauberk"
 #gameid 12
-#sprite /graphics/bodyarmor/standard/mailhauberk1.png
+#sprite /graphics/abysian/armor/scale_hauberk.png
 #armor
-#basechance 0.5
 #enditem
-
-
-#newitem
-#name "scale hauberk long"
-#gameid 12
-#sprite /graphics/bodyarmor/standard/mailhauberk2.png
-#armor
-#basechance 0.5
-#enditem
-
 
 #newitem -- full scale
 #name "full scale"
 #gameid 17
-#sprite /graphics/bodyarmor/standard/mailhauberk1.png
+#sprite /graphics/abysian/armor/scale_hauberk.png
 #armor
 #theme "advanced"
 #needs legs 6
@@ -92,7 +71,7 @@
 #newitem
 #name "plate cuirass"
 #gameid 9
-#sprite /graphics/bodyarmor/standard/platecuirass.png
+#sprite /graphics/abysian/armor/plate_cuirass.png
 #armor
 #theme "advanced"
 #enditem
@@ -101,7 +80,7 @@
 #newitem
 #name "plate hauberk"
 #gameid 14
-#sprite /graphics/bodyarmor/standard/platehauberk.png
+#sprite /graphics/abysian/armor/plate_hauberk.png
 #armor
 #theme "advanced"
 #tag "name mounted knight"
@@ -111,7 +90,7 @@
 #newitem -- full plate
 #name "full plate"
 #gameid 19
-#sprite /graphics/bodyarmor/standard/platehauberk.png
+#sprite /graphics/abysian/armor/plate_hauberk.png
 #armor
 #needs legs 7
 #theme "advanced"

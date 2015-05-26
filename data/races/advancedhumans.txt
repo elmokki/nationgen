@@ -1,17 +1,17 @@
 #newrace
 #name "Human (advanced)"
 #visiblename "Human"
-#basechance 0 -- 0.075
+#basechance 0.25
 
 #all_troops_sacred
 #all_troops_elite
 
 #pose advancedinfantry
--- #pose advancedcavalry
--- #pose advancedranged
+#pose advancedranged
+#pose advancedcavalry
+#pose advancedmage
 
--- #pose advancedmage
-
+-- Placeholders
 #longsyllables /data/names/nations/human/longsyllables.txt
 #shortsyllables /data/names/nations/human/shortsyllables.txt
 #suffixes /data/names/nations/human/suffixes.txt
@@ -33,7 +33,7 @@
 
 #gods europegods
 
-#chanceinc era 2 *4
-#chanceinc era 3 *8
+#chanceinc era 1 *0.2
+#chanceinc era 3 *2
 
 #endrace

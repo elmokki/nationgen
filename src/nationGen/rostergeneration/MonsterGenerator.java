@@ -28,7 +28,6 @@ public class MonsterGenerator {
 		r.unitcommands.clear();
 		r.name = "Monster";
 		r.visiblename = "Monster";
-
 		ChanceIncHandler chandler = new ChanceIncHandler(n);
 		
 		List<Pose> poses = ChanceIncHandler.retrieveFilters("monsters", "default_monsters", ng.monsters, null, n.races.get(0));
@@ -49,9 +48,15 @@ public class MonsterGenerator {
 		
 		if(n.random.nextDouble() < chance)
 			u.caponly = true;
+
+		if(Generic.containsTag(p.tags, "invariantid"))
+		{
+			u.id = Integer.parseInt(Generic.getTagValue(p.tags, "invariantid"));
+			u.invariantMonster = true;
+			u.name.setType(p.name);  // Give the unit the same name as the pose for documentation purposes
+		}
 		
 		return u;
-		
 		
 	}
 }

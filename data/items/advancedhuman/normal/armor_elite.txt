@@ -1,0 +1,116 @@
+
+--- Leather
+
+--- Ring
+
+--- Scale Mail
+
+#newitem
+#name "scale cuirass elite"
+#gameid 7
+#sprite /graphics/advancedhuman/armor/scale_cuirass_elite.png
+#armor
+#tag "elite"
+#enditem
+
+#newitem
+#name "scale hauberk elite"
+#gameid 12
+#sprite /graphics/advancedhuman/armor/scale_hauberk_elite.png
+#armor
+#needs shirt mailsleeves_pants
+#tag "elite"
+#enditem
+
+#newitem -- full scale
+#name "full scale elite"
+#gameid 17
+#sprite /graphics/advancedhuman/armor/scale_full_elite.png
+#armor
+#needs shirt mailsleeves_pants
+#tag "elite"
+#enditem
+
+
+--- Chain Mail
+
+#newitem
+#name "chain cuirass elite"
+#gameid 8
+#sprite /graphics/advancedhuman/armor/chain_cuirass_elite.png
+#armor
+#tag "elite"
+#enditem
+
+#newitem
+#name "chain hauberk elite"
+#gameid 13
+#sprite /graphics/advancedhuman/armor/chain_hauberk_elite.png
+#armor
+#needs shirt mailsleeves_pants
+#tag "elite"
+#enditem
+
+#newitem -- full chain
+#name "full chain elite"
+#gameid 18
+#sprite /graphics/advancedhuman/armor/chain_full_elite.png
+#armor
+#tag "name mounted knight"
+#needs shirt mailsleeves_pants
+#tag "elite"
+#enditem
+
+
+--- Plate
+
+#newitem
+#name "plate cuirass elite"
+#gameid 9
+#basechance 0.75
+#sprite /graphics/advancedhuman/armor/plate_cuirass_elite.png
+#armor
+#tag "elite"
+#enditem
+
+#newitem
+#name "plate cuirass gilt"
+#gameid 9
+#basechance 0.25
+#sprite /graphics/advancedhuman/armor/plate_cuirass_elite2.png
+#armor
+#tag "elite"
+#enditem
+
+#newitem
+#name "plate hauberk gilt1"
+#gameid 14
+#basechance 0.25
+#sprite /graphics/advancedhuman/armor/plate_hauberk_elite.png
+#armor
+#tag "elite"
+#tag "name mounted knight"
+#enditem
+
+#newitem
+#name "plate hauberk gilt2"
+#gameid 14
+#basechance 0.25
+#sprite /graphics/advancedhuman/armor/plate_hauberk_elite2.png
+#armor
+#tag "elite"
+#tag "name mounted knight"
+#enditem
+
+#newitem -- gilt full plate
+#name "full plate gilt"
+#gameid 19
+#sprite /graphics/advancedhuman/armor/plate_full_elite.png
+#armor
+#tag "elite"
+#tag "name mounted knight"
+#maxvarieties 1
+#needs shirt noshirt_nopants
+#enditem
+
+

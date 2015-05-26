@@ -1,7 +1,50 @@
 #newitem
 #name "cloak 1"
+#basechance 4
 #gameid -1
 #sprite /graphics/hoburg/cloak/cloakback.png
 #recolormask self
 #needs cloakf "cloak 1"
+#enditem
+
+#newitem
+#name "cloak 2"
+#basechance 4
+#gameid -1
+#sprite /graphics/hoburg/cloak/cloak2_b.png
+#recolormask self
+#tag "eliteversion 'cloak 2 elite'"
+#needs cloakf "cloak 2"
+#enditem
+
+#newitem
+#name "cloak 2 elite"
+#basechance 4
+#gameid -1
+#sprite /graphics/hoburg/cloak/cloak2_b.png
+#recolormask self
+#needs cloakf "cloak 2 elite"
+#theme "elite"
+#enditem
+
+#newitem
+#name "boar cloak"
+#basechance 1
+#gameid -1
+#sprite /graphics/hoburg/cloak/bearcloak_b.png
+#needs cloakf "boar cloak"
+#theme "primitive"
+#theme "elite"
+#tag "boar"
+#enditem
+
+#newitem
+#name "wolf cloak"
+#basechance 1
+#gameid -1
+#sprite /graphics/hoburg/cloak/wolfcloak_b.png
+#needs cloakf "wolf cloak"
+#theme "primitive"
+#theme "elite"
+#tag "wolf"
 #enditem

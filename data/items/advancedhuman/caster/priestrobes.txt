@@ -1,0 +1,296 @@
+
+--- Robes
+
+#newitem
+#id monkrobes
+#gameid 158
+#sprite /graphics/advancedhuman/armor/robes/monkrobes1.png
+#recolormask self
+#tag "eliteversion monkrobes2"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id monkrobes2
+#gameid 158
+#sprite /graphics/advancedhuman/armor/robes/monkrobes2.png
+#recolormask self
+#tag "eliteversion monkrobes3"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id monkrobes3
+#gameid 158
+#sprite /graphics/advancedhuman/armor/robes/monkrobes1.png
+#recolormask self
+#needs helmet cowl
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id gathrobes1
+#gameid 158
+#sprite /graphics/advancedhuman/armor/robes/gathrobe.png
+#recolormask /graphics/advancedhuman/armor/robes/gathrobe_recolormask1.png
+#tag "eliteversion gathrobes2"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id gathrobes2
+#gameid 158
+#sprite /graphics/advancedhuman/armor/robes/gathrobe.png
+#recolormask /graphics/advancedhuman/armor/robes/gathrobe_recolormask2.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id cultistrobes1
+#gameid 158
+#sprite /graphics/advancedhuman/armor/robes/cultistrobe1.png
+#recolormask /graphics/advancedhuman/armor/robes/cultistrobe1_recolormask1.png
+#tag "eliteversion cultistrobes2"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id cultistrobes2
+#gameid 158
+#sprite /graphics/advancedhuman/armor/robes/cultistrobe1.png
+#recolormask /graphics/advancedhuman/armor/robes/cultistrobe1_recolormask2.png
+#tag "eliteversion cultistrobes3"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id cultistrobes3
+#gameid 158
+#sprite /graphics/advancedhuman/armor/robes/cultistrobe2.png
+#recolormask /graphics/advancedhuman/armor/robes/cultistrobe2_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+-- Doublets and jerkins 
+
+#newitem
+#id greydoublet_whitejerkin
+#gameid 5
+#sprite /graphics/advancedhuman/armor/robes/greydoublet_lightjerkin_fringed.png
+#tag "eliteversion greydoublet_lightjerkin"
+#tag "eliteversion whitejerkin_dyedfringe"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id greydoublet_lightjerkin
+#gameid 5
+#sprite /graphics/advancedhuman/armor/robes/greydoublet_lightjerkin_fringed.png
+#recolormask /graphics/advancedhuman/armor/robes/lightjerkin_fringed_recolormask1.png
+#tag "eliteversion whitejerkin_dyedfringe"
+#tag "eliteversion lightjerkin_dyedfringe"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id whitejerkin_dyedfringe
+#gameid 5
+#sprite /graphics/advancedhuman/armor/robes/greydoublet_lightjerkin_fringed.png
+#recolormask /graphics/advancedhuman/armor/robes/fringe_recolormask.png
+#tag "eliteversion lightjerkin_dyedfringe"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id lightjerkin_dyedfringe
+#gameid 5
+#sprite /graphics/advancedhuman/armor/robes/greydoublet_lightjerkin_fringed.png
+#recolormask /graphics/advancedhuman/armor/robes/lightjerkin_fringed_recolormask2.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id greydoublet_greyjerkin
+#gameid 5
+#sprite /graphics/advancedhuman/armor/robes/greydoublet_greyjerkin_fringed.png
+#tag "eliteversion greydoublet_mediumjerkin"
+#tag "eliteversion greyjerkin_dyedfringe"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id greydoublet_mediumjerkin
+#gameid 5
+#sprite /graphics/advancedhuman/armor/robes/greydoublet_greyjerkin_fringed.png
+#recolormask /graphics/advancedhuman/armor/robes/greyjerkin_fringed_recolormask1.png
+#tag "eliteversion greyjerkin_dyedfringe"
+#tag "eliteversion mediumjerkin_dyedfringe"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id greyjerkin_dyedfringe
+#gameid 5
+#sprite /graphics/advancedhuman/armor/robes/greydoublet_greyjerkin_fringed.png
+#recolormask /graphics/advancedhuman/armor/robes/fringe_recolormask.png
+#tag "eliteversion mediumjerkin_dyedfringe"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id mediumjerkin_dyedfringe
+#gameid 5
+#sprite /graphics/advancedhuman/armor/robes/greydoublet_greyjerkin_fringed.png
+#recolormask /graphics/advancedhuman/armor/robes/greyjerkin_fringed_recolormask2.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id greydoublet_blackjerkin
+#gameid 5
+#sprite /graphics/advancedhuman/armor/robes/greydoublet_darkjerkin_fringed.png
+#tag "eliteversion greydoublet_darkjerkin"
+#tag "eliteversion blackjerkin_dyedfringe"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id greydoublet_darkjerkin
+#gameid 5
+#sprite /graphics/advancedhuman/armor/robes/greydoublet_darkjerkin_fringed.png
+#recolormask /graphics/advancedhuman/armor/robes/darkjerkin_fringed_recolormask1.png
+#tag "eliteversion blackjerkin_dyedfringe"
+#tag "eliteversion darkjerkin_dyedfringe"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id blackjerkin_dyedfringe
+#gameid 5
+#sprite /graphics/advancedhuman/armor/robes/greydoublet_darkjerkin_fringed.png
+#recolormask /graphics/advancedhuman/armor/robes/fringe_recolormask.png
+#tag "eliteversion darkjerkin_dyedfringe"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id darkjerkin_dyedfringe
+#gameid 5
+#sprite /graphics/advancedhuman/armor/robes/greydoublet_darkjerkin_fringed.png
+#recolormask /graphics/advancedhuman/armor/robes/darkjerkin_fringed_recolormask2.png
+#armor
+#tag "tier 3"
+#enditem
+
+
+#newitem
+#id whitedoublet_whitejerkin
+#gameid 5
+#sprite /graphics/advancedhuman/armor/robes/lightdoublet_whitejerkin_plain.png
+#tag "eliteversion lightdoublet_whitejerkin"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id lightdoublet_whitejerkin
+#gameid 5
+#sprite /graphics/advancedhuman/armor/robes/lightdoublet_whitejerkin_plain.png
+#recolormask /graphics/advancedhuman/armor/robes/lightdoublet_recolormask.png
+#tag "eliteversion lightdoublet_lightjerkin"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id lightdoublet_lightjerkin
+#gameid 5
+#sprite /graphics/advancedhuman/armor/robes/lightdoublet_whitejerkin_plain.png
+#recolormask /graphics/advancedhuman/armor/robes/lightdoublet_whitejerkin_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id greydoublet_greyjerkin
+#gameid 5
+#sprite /graphics/advancedhuman/armor/robes/greydoublet_greyjerkin_plain.png
+#tag "eliteversion mediumdoublet_greyjerkin"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id mediumdoublet_greyjerkin
+#gameid 5
+#sprite /graphics/advancedhuman/armor/robes/greydoublet_greyjerkin_plain.png
+#recolormask /graphics/advancedhuman/armor/robes/greydoublet_recolormask.png
+#tag "eliteversion mediumdoublet_mediumjerkin"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id mediumdoublet_mediumjerkin
+#gameid 5
+#sprite /graphics/advancedhuman/armor/robes/greydoublet_greyjerkin_plain.png
+#recolormask /graphics/advancedhuman/armor/robes/greydoublet_greyjerkin_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id blackdoublet_blackjerkin
+#gameid 5
+#sprite /graphics/advancedhuman/armor/robes/darkdoublet_blackjerkin_plain.png
+#tag "eliteversion darkdoublet_blackjerkin"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id darkdoublet_blackjerkin
+#gameid 5
+#sprite /graphics/advancedhuman/armor/robes/darkdoublet_blackjerkin_plain.png
+#recolormask /graphics/advancedhuman/armor/robes/darkdoublet_recolormask.png
+#tag "eliteversion darkdoublet_darkjerkin"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id darkdoublet_darkjerkin
+#gameid 5
+#sprite /graphics/advancedhuman/armor/robes/darkdoublet_blackjerkin_plain.png
+#recolormask /graphics/advancedhuman/armor/robes/darkdoublet_blackjerkin_recolormask.png
+#armor
+#tag "tier 3"
+#enditem

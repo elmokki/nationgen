@@ -1,0 +1,61 @@
+#newrace
+#name "Abysian slavers"
+#visiblename "Abysian"
+#basechance 0.1
+
+#pose abysiantroops
+#pose abysianmages
+#pose demonbred
+#pose burningones
+
+#all_troops_sacred
+#all_troops_elite
+
+#longsyllables /data/names/nations/abysian/longsyllables.txt
+#shortsyllables /data/names/nations/abysian/shortsyllables.txt
+#suffixes /data/names/nations/abysian/suffixes.txt
+
+
+#nationcommand "#idealcold -3"
+#nationcommand "#spreadheat +1"
+#secondaryracecommand_conditional "#fireres 5"
+
+#unitcommand "#def 9"
+#unitcommand "#mor 11"
+#unitcommand "#mr 12"
+#unitcommand "#gcost 20"
+#unitcommand "#prec 7"
+#unitcommand "#enc 2"
+#unitcommand "#hp 15"
+#unitcommand "#str 13"
+#unitcommand "#ap 11"
+#unitcommand "#heat 3"
+#unitcommand "#fireres 25"
+#unitcommand "#wastesurvival"
+#unitcommand "#darkvision 50"
+#unitcommand "#nametype 101"
+#unitcommand "#maxage 35"
+
+--- Does not occur as a secondary race
+#chanceinc "hasprimaryrace *0"
+
+#chanceinc era 1 *0
+#chanceinc era 3 *3
+
+#secondaryracecommand "#slave"
+#secondaryracecommand "#mor -2"
+#secondaryracetroopmod 100
+#secondaryracemagemod -100
+#secondaryracetertiarymagemod 25
+
+#generationchance cavalry 0.2
+
+#magicpriority fire 12
+#magicpriority water 0.1
+#magicpriority nature 0.1
+#magicpriority blood 6
+
+#monsterchance 0.025
+
+#description "The Abysians are a race of hellish humanoids with magma bodies. They radiate a furnace-like heat and are impervious to all forms of fire, but are vulnerable to cold."
+#endrace

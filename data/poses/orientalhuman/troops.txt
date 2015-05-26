@@ -29,12 +29,16 @@
 
 #newpose
 #role "infantry"
+
+#renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver spaulder bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
 #load basesprite /data/items/human/2h/humanbases.txt
 #load shadow /data/items/human/normal/shadow.txt
 #load hands /data/items/human/2h/humanhands.txt
-#load legs /data/items/oriental/normal/legs.txt 2 0
+#load legs /data/items/oriental/normal/legs.txt 1 0
 
-#load armor /data/items/oriental/2h/armor.txt
+#load armor /data/items/oriental/2h/armor.txt 1 0
+#load spaulder /data/items/oriental/2h/spaulder.txt 1 0  -- to resolve cloak clipping with samurai armor
 
 #load weapon /data/items/oriental/2h/weapon.txt
 
@@ -50,16 +54,15 @@
 
 #newpose
 #role "ranged"
-#renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver spaulder bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/human/2h/humanbases.txt
 #load shadow /data/items/human/normal/shadow.txt
 #load hands /data/items/human/2h/humanhands.txt
-#load legs /data/items/oriental/normal/legs.txt 2 0
+#load legs /data/items/oriental/normal/legs.txt 1 0
 
-#load armor /data/items/oriental/2h/armor.txt
-
-
+#load armor /data/items/oriental/2h/armor.txt 1 0
+#load spaulder /data/items/oriental/2h/spaulder.txt 1 0  -- to resolve cloak clipping with samurai armor
 
 #load weapon /data/items/human/archer/bows.txt 1 -2
 #load quiver /data/items/human/archer/humanbonusranged.txt

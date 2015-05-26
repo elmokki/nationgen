@@ -53,8 +53,8 @@ import nationGen.units.Unit;
 
 
 public class NationGen {
-	public static String version = "0.5.0.08E";
-	public static String date = "26th of March 2015";
+	public static String version = "0.5.0.09E";
+	public static String date = "24th of May 2015";
 	
 	public ResourceStorage<MagicPattern> patterns = new ResourceStorage<MagicPattern>(MagicPattern.class, this);
 	public ResourceStorage<Pose> poses = new ResourceStorage<Pose>(Pose.class, this);
@@ -220,7 +220,11 @@ public class NationGen {
 			for(List<Unit> ul : n.unitlists.values())
 				for(Unit u : ul)
 				{
-					u.id = idHandler.nextUnitId();
+					if(!u.invariantMonster)
+					{
+						u.id = idHandler.nextUnitId();
+					}
+					// Else the monster's ID was set in MonsterGen
 				}	
 			
 			for(List<Unit> ul : n.comlists.values())
@@ -520,20 +524,30 @@ public class NationGen {
 	private void hideVanillaNations(PrintWriter tw, int nationcount)
 	{
 
+		int era = (int)Math.round(settings.get("era"));
+		
 		System.out.print("Hiding vanilla nations... ");
 		
 		tw.println("-- Hiding vanilla nations");
 		tw.println("-----------------------------------");
 		
-		
-		if(nationcount > 1)
+		tw.println("#disableoldnations");
+		tw.println();
+
+		/*for(int i = 0; i <= 100; i++)
 		{
-			tw.println("#disableoldnations");
-			tw.println();
-			System.out.println(" Done!");
-		}
-		else
-			System.out.println("Unable to hide vanilla nations with only one random nation!");
+			if(nations.GetInteger(i + "", "era", 0) > 0 && nations.GetInteger(i + "", "era", 0) < 4 &&  (nations.GetInteger(i + "", "era", 0) != era || nationcount > 1))
+			{
+				System.out.print(".");
+				tw.println("#selectnation " + i);
+				tw.println("#era 0");
+				tw.println("#end");
+				tw.println();
+
+			}
+		}*/
+		System.out.println(" Done!");
+
 		
 	}
 	

@@ -1,10 +1,40 @@
 #newitem
-#name "cultistrobe"
-#gameid 158
-#sprite /graphics/agarthan/magearmor/body/cultistrobe.png
-#recolormask /graphics/agarthan/magearmor/body/cultistrobe_recolormask.png
+#name "none"
+#gameid -1
+#sprite /graphics/agarthan/armor/naked.png
 #armor
 #tag "tier 3"
+#tag "tier 2"
+#tag "tier 1"
+#basechance 3.5
+#eliteversion plainloincloth
+#eliteversion loincloth
+#eliteversion toga
+#eliteversion cultistrobe
+#eliteversion simplecultistrobe
+#eliteversion plainlankarobe
+#enditem
+
+#newitem
+#name "plainloincloth"
+#gameid -1
+#sprite /graphics/agarthan/magearmor/body/loincloth_plain.png
+#recolormask self
+#armor
+#tag "tier 1"
+#eliteversion loincloth
+#eliteversion plainlankarobe
+#enditem
+
+#newitem
+#name "loincloth"
+#gameid -1
+#sprite /graphics/agarthan/magearmor/body/loincloth.png
+#recolormask /graphics/agarthan/magearmor/body/loincloth_recolormask.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#eliteversion lankarobe
 #enditem
 
 #newitem
@@ -19,24 +49,10 @@
 #enditem
 
 #newitem
-#name "none"
-#gameid -1
-#sprite /graphics/agarthan/armor/naked.png
-#armor
-#tag "tier 3"
-#tag "tier 2"
-#tag "tier 1"
-#basechance 2
-#eliteversion cultistrobe
-#eliteversion simplecultistrobe
-#eliteversion plainlankarobe
-#enditem
-
-#newitem
-#name "lankarobe"
+#name "cultistrobe"
 #gameid 158
-#sprite /graphics/agarthan/magearmor/body/lankarobe.png
-#recolormask /graphics/agarthan/magearmor/body/lankarobe_recolormask.png
+#sprite /graphics/agarthan/magearmor/body/cultistrobe.png
+#recolormask /graphics/agarthan/magearmor/body/cultistrobe_recolormask.png
 #armor
 #tag "tier 3"
 #enditem
@@ -49,4 +65,25 @@
 #armor
 #tag "tier 2"
 #tag "tier 1"
+#eliteversion lankarobe
+#eliteversion toga
+#enditem
+
+#newitem
+#name "lankarobe"
+#gameid 158
+#sprite /graphics/agarthan/magearmor/body/lankarobe.png
+#recolormask /graphics/agarthan/magearmor/body/lankarobe_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#name "toga"
+#gameid 158
+#sprite /graphics/agarthan/magearmor/body/toga.png
+#recolormask self
+#armor
+#tag "tier 2"
+#tag "tier 3"
 #enditem

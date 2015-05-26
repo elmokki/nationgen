@@ -84,3 +84,47 @@
 #tag "minprot 10"
 #tag "maxprot 100"
 #enditem
+
+#newitem
+#name "gloso"
+#gameid -1
+#sprite /graphics/mounts/standard/gloso.png
+#armor
+#offsetx -2
+#offsety 2
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon nostr_poisongore"
+#define "#secondtmpshape gloso"
+#define "#gcost +40"
+#define "#ressize 2"
+#define "#enc 3"
+#theme "animal gloso"
+#description "Leaves a burning black sow behind when the rider dies"
+#basechance 0.5
+#tag "minprot 0"
+#tag "maxprot 15"
+#enditem
+
+#newitem
+#name "nightmare"
+#gameid -1
+#sprite /graphics/mounts/standard/nightmare.png
+#armor
+#offsety -2
+#define "#size 3"
+#define "#mapmove 4"
+#define "#ap 25"
+#define "#mounted"
+#define "#weapon 615 --- Heavy Hoof"
+#define "#secondtmpshape nightmare"
+#define "#gcost +40"
+#define "#ressize 2"
+#define "#enc 4"
+#theme "animal nightmare"
+#description "Leaves a nightmare behind when the rider dies"
+#basechance 0.25
+#tag "minprot 10"
+#enditem

@@ -1,0 +1,49 @@
+-- 1h weapons
+
+#newitem
+#id shortsword
+#gameid 6
+#sprite /graphics/advancedhuman/weapons/shortsword.png
+#enditem
+
+#newitem
+#id broadsword
+#gameid 8
+#sprite /graphics/advancedhuman/weapons/broadsword.png
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#sprite /graphics/advancedhuman/weapons/falchion.png
+#enditem
+
+#newitem
+#id morningstar
+#gameid 15
+#sprite /graphics/advancedhuman/weapons/morningstar.png
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/advancedhuman/weapons/mace.png
+#theme "primitive"
+#tag "name infantry maceman"
+#maxprot 15
+#chanceinc unittag irregular 8
+#enditem
+
+#newitem
+#id hammer
+#gameid 13
+#sprite /graphics/advancedhuman/weapons/hammer.png
+#chanceinc unittag irregular 8
+#enditem
+
+#newitem
+#id trident
+#gameid 3
+#sprite /graphics/advancedhuman/weapons/trident.png
+#basechance 0.25
+#enditem

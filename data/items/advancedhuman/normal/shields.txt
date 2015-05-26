@@ -3,19 +3,36 @@
 - Bucklers
 
 #newitem
-#id bronzebuckler
+#id wood_buckler
 #gameid 1
-#sprite /graphics/offhand/standard/bronzebuckler.png
+#sprite /graphics/offhand/standard/woodbuckler.png
+#offsetx 3
+#offsety 0
 #armor
-#theme "bronze"
+#basechance 2
 #enditem
 
 #newitem
-#id buckler
+#id painted_buckler
+#gameid 1
+#sprite /graphics/offhand/standard/woodbuckler.png
+#recolormask /graphics/offhand/standard/woodbuckler_recolormask.png
+#offsetx 3
+#offsety 0
+#armor
+#basechance 2
+#enditem
+
+#newitem
+#id iron_buckler
 #gameid 1
 #sprite /graphics/offhand/standard/buckler.png
+#offsetx 3
+#offsety 1
 #armor
+#basechance 2
 #enditem
+
 
 - Kite shields
 
@@ -23,46 +40,97 @@
 #id kite1
 #gameid 3
 #sprite /graphics/offhand/standard/kite1.png
+#recolormask /graphics/offhand/standard/kite1_recolormask.png
+#offsetx 3
+#offsety 2
 #armor
 #theme "advanced"
-#recolormask /graphics/offhand/standard/kite1_recolormask.png
 #enditem
 
 #newitem
 #id kite2
 #gameid 3
 #sprite /graphics/offhand/standard/kite2.png
+#recolormask /graphics/offhand/standard/kite2_recolormask.png
+#offsetx 3
+#offsety 2
 #armor
 #theme "advanced"
-#recolormask /graphics/offhand/standard/kite2_recolormask.png
 #enditem
-
-
-#newitem
-#id shield6
-#gameid 2
-#sprite /graphics/offhand/standard/shield6.png
-#recolormask /graphics/offhand/standard/shield6_recolormask.png
-#armor
-#enditem
-
-
 
 #newitem
 #id kite3
 #gameid 3
 #sprite /graphics/offhand/standard/kite3.png
-#armor
 #recolormask /graphics/offhand/standard/kite3_recolormask.png
+#offsetx 3
+#offsety 2
+#armor
 #theme "advanced"
 #enditem
 
+#newitem
+#id kite4
+#gameid 3
+#sprite /graphics/offhand/standard/kite4.png
+#recolormask self
+#offsetx 3
+#offsety 0
+#armor
+#theme "advanced"
+#enditem
 
+#newitem
+#id kite5
+#gameid 3
+#sprite /graphics/offhand/standard/kite5.png
+#recolormask /graphics/offhand/standard/kite5_recolormask.png
+#offsetx 3
+#offsety 0
+#armor
+#theme "advanced"
+#enditem
+
+#newitem
+#id kite6
+#gameid 3
+#sprite /graphics/offhand/standard/kite6.png
+#offsetx 3
+#offsety 0
+#armor
+#theme "advanced"
+#enditem
+
+#newitem
+#id kite6_colored
+#gameid 3
+#sprite /graphics/offhand/standard/kite6.png
+#offsetx 3
+#offsety 0
+#recolormask self
+#armor
+#theme "advanced"
+#enditem
+
+#newitem
+#id kite7
+#gameid 3
+#sprite /graphics/offhand/standard/kite7.png
+#recolormask self
+#offsetx 3
+#offsety 0
+#armor
+#theme "advanced"
+#enditem
+
+-- Standard shields
 
 #newitem
 #id shield1
 #gameid 2
 #sprite /graphics/offhand/standard/shield1.png
+#offsetx 3
+#offsety 2
 #armor
 #enditem
 
@@ -70,6 +138,8 @@
 #id shield2
 #gameid 2
 #sprite /graphics/offhand/standard/shield2.png
+#offsetx 3
+#offsety 2
 #armor
 #enditem
 
@@ -77,35 +147,63 @@
 #id shield3
 #gameid 2
 #sprite /graphics/offhand/standard/shield3.png
-#armor
-#enditem
-
-#newitem
-#id shield4
-#gameid 2
-#sprite /graphics/offhand/standard/shield4.png
-#armor
-#enditem
-
-#newitem
-#id shield4yellow
-#gameid 2
-#sprite /graphics/offhand/standard/shield4-yellow.png
-#armor
-#enditem
-
-
-#newitem
-#id shield5
-#gameid 2
-#sprite /graphics/offhand/standard/shield5.png
+#offsetx 3
+#offsety 2
 #armor
 #enditem
 
 #newitem
 #id shield6
 #gameid 2
-#sprite /graphics/offhand/standard/coe-metalshield.png
+#sprite /graphics/offhand/standard/shield6.png
+#recolormask /graphics/offhand/standard/shield6_recolormask.png
+#offsetx 3
+#offsety 2
 #armor
 #enditem
 
+#newitem
+#id shield8
+#gameid 2
+#sprite /graphics/offhand/standard/shield8.png
+#offsetx 3
+#offsety 2
+#armor
+#enditem
+
+#newitem
+#id shield9
+#gameid 2
+#sprite /graphics/offhand/standard/shield9.png
+#offsetx 3
+#offsety 2
+#armor
+#enditem
+
+#newitem
+#id shield10
+#gameid 2
+#sprite /graphics/offhand/standard/shield10.png
+#offsetx 3
+#offsety 2
+#armor
+#enditem
+
+#newitem
+#id shield10_painted
+#gameid 2
+#sprite /graphics/offhand/standard/shield10_painted.png
+#recolormask /graphics/offhand/standard/shield10_painted_recolormask.png
+#offsetx 3
+#offsety 2
+#armor
+#enditem
+
+#newitem
+#id shield11
+#gameid 2
+#sprite /graphics/offhand/standard/coe-metalshield.png
+#offsetx 3
+#offsety 2
+#armor
+#enditem

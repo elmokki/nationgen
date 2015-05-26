@@ -1,0 +1,808 @@
+--- Unarmored
+
+#newitem
+#id loincloth_fur
+#gameid -1
+#sprite /graphics/vaettir/armor/robes/loincloth_fur.png
+#tag "eliteversion loincloth_dyed"
+#armor
+#tag "tier 1"
+#theme "primitive"
+#enditem
+
+#newitem
+#id loincloth
+#gameid -1
+#sprite /graphics/vaettir/armor/robes/loincloth.png
+#tag "eliteversion loincloth_dyed"
+#armor
+#tag "tier 1"
+#theme "primitive"
+#enditem
+
+#newitem
+#id loincloth_dyed
+#gameid -1
+#sprite /graphics/vaettir/armor/robes/loincloth.png
+#recolormask /graphics/vaettir/armor/robes/loincloth_recolormask.png
+#tag "eliteversion loincloth_ornate"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "primitive"
+#enditem
+
+#newitem
+#id loincloth_ornate
+#gameid -1
+#sprite /graphics/vaettir/armor/robes/loincloth_ornate.png
+#recolormask /graphics/vaettir/armor/robes/loincloth_recolormask.png
+#tag "eliteversion robe_ur_dyed"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "primitive"
+#enditem
+
+--- Furs
+
+#newitem
+#id furs_crude
+#gameid 44
+#sprite /graphics/vaettir/armor/robes/furs_crude1.png
+#tag "eliteversion furs_rough"
+#tag "eliteversion leather_bulky"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "primitive"
+#basechance 2
+#enditem
+
+#newitem
+#id furs_rough
+#gameid 44
+#sprite /graphics/vaettir/armor/robes/furs_crude2.png
+#recolormask /graphics/vaettir/armor/robes/furs_crude2_recolormask.png
+#tag "eliteversion leather_sleek"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "primitive"
+#basechance 2
+#enditem
+
+#newitem
+#id furs_bear
+#gameid 44
+#sprite /graphics/vaettir/armor/robes/furs_bear.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "primitive"
+#theme "bear"
+#basechance 2
+#enditem
+
+#newitem
+#id furs_deer1
+#gameid 44
+#sprite /graphics/vaettir/armor/robes/furs_deer1.png
+#tag "eliteversion furs_deer2"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "primitive"
+#theme "deer"
+#basechance 2
+#enditem
+
+#newitem
+#id furs_deer2
+#gameid 44
+#sprite /graphics/vaettir/armor/robes/furs_deer2.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "primitive"
+#theme "deer"
+#basechance 2
+#enditem
+
+#newitem
+#id furs_wolf
+#gameid 44
+#sprite /graphics/vaettir/armor/robes/furs_wolf.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "primitive"
+#theme "wolf"
+#basechance 2
+#enditem
+
+
+--- Armor
+
+#newitem
+#id leather_sleek
+#gameid 15
+#sprite /graphics/vaettir/armor/robes/fullleather1.png
+#recolormask /graphics/vaettir/armor/robes/fullleather1_recolormask1.png
+#tag "eliteversion leather_sleek_dyed"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#basechance 3
+#enditem
+
+#newitem
+#id leather_sleek_dyed
+#gameid 15
+#sprite /graphics/vaettir/armor/robes/fullleather1.png
+#recolormask /graphics/vaettir/armor/robes/fullleather1_recolormask2.png
+#tag "eliteversion leather_sleek_trimmed"
+#tag "eliteversion leather_bulky_dyed"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#basechance 3
+#enditem
+
+#newitem
+#id leather_sleek_trimmed
+#gameid 15
+#sprite /graphics/vaettir/armor/robes/fullleather1.png
+#recolormask /graphics/vaettir/armor/robes/fullleather1_recolormask3.png
+#tag "eliteversion leather_bulky_trimmed"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#basechance 3
+#enditem
+
+#newitem
+#id leather_bulky
+#gameid 15
+#sprite /graphics/vaettir/armor/robes/fullleather2.png
+#recolormask /graphics/vaettir/armor/robes/fullleather2_recolormask1.png
+#tag "eliteversion leather_bulky_dyed"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#basechance 3
+#enditem
+
+#newitem
+#id leather_bulky_dyed
+#gameid 15
+#sprite /graphics/vaettir/armor/robes/fullleather2.png
+#recolormask /graphics/vaettir/armor/robes/fullleather2_recolormask2.png
+#tag "eliteversion leather_bulky_trimmed"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#basechance 3
+#enditem
+
+#newitem
+#id leather_bulky_trimmed
+#gameid 15
+#sprite /graphics/vaettir/armor/robes/fullleather2.png
+#recolormask /graphics/vaettir/armor/robes/fullleather2_recolormask3.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#basechance 3
+#enditem
+
+
+--- Robes
+
+#newitem
+#id robe_druid_white
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/druidrobe_light.png
+#tag "eliteversion robe_druid_light1"
+#armor
+#tag "tier 1"
+#basechance 0.7
+#enditem
+
+#newitem
+#id robe_druid_black
+#sprite /graphics/vaettir/armor/robes/druidrobe_dark.png
+#tag "eliteversion robe_druid_dark1"
+#armor
+#tag "tier 1"
+#basechance 0.7
+#enditem
+
+#newitem
+#id robe_druid_light1
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/druidrobe_light.png
+#recolormask /graphics/vaettir/armor/robes/druidrobe_recolormask2.png
+#tag "eliteversion robe_druid_light2"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#basechance 0.7
+#enditem
+
+#newitem
+#id robe_druid_dark1
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/druidrobe_dark.png
+#recolormask /graphics/vaettir/armor/robes/druidrobe_recolormask2.png
+#tag "eliteversion robe_druid_dark2"
+#armor
+#tag "tier 2"
+#basechance 0.7
+#enditem
+
+#newitem
+#id robe_druid_light2
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/druidrobe_light.png
+#recolormask /graphics/vaettir/armor/robes/druidrobe_recolormask1.png
+#tag "eliteversion robe_toga_light"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#basechance 0.7
+#enditem
+
+#newitem
+#id robe_druid_dark2
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/druidrobe_dark.png
+#recolormask /graphics/vaettir/armor/robes/druidrobe_recolormask3.png
+#tag "eliteversion robe_toga_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#basechance 0.7
+#enditem
+
+#newitem
+#id robe_druid_bright
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/druidrobe_light.png
+#recolormask self
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#basechance 0.7
+#enditem
+
+#newitem
+#id robe_druid_dull
+#sprite /graphics/vaettir/armor/robes/druidrobe_dark.png
+#recolormask self
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#basechance 0.7
+#enditem
+
+#newitem
+#id robe_toga_white
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/toga.png
+#tag "eliteversion robe_toga_light"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id robe_toga_light
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/toga.png
+#recolormask /graphics/vaettir/armor/robes/toga_recolormask1.png
+#tag "eliteversion robe_druid_light2"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id robe_toga_dark
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/toga.png
+#recolormask /graphics/vaettir/armor/robes/toga_recolormask2.png
+#tag "eliteversion robe_druid_dark2"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id robe_ur_white
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_ur.png
+#tag "eliteversion robe_ur_ornate"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_ur_ornate
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_ur.png
+#recolormask /graphics/vaettir/armor/robes/robe_ur_recolormask1.png
+#tag "eliteversion robe_ur_dyed"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id robe_ur_dyed
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_ur.png
+#recolormask /graphics/vaettir/armor/robes/robe_ur_recolormask2.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id robe_spenta_white
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_spenta_light.png
+#tag "eliteversion robe_spenta_light1"
+#armor
+#tag "tier 1"
+#basechance 0.5
+#enditem
+
+#newitem
+#id robe_spenta_black
+#sprite /graphics/vaettir/armor/robes/robe_spenta_dark.png
+#tag "eliteversion robe_spenta_dark1"
+#armor
+#tag "tier 1"
+#basechance 0.5
+#enditem
+
+#newitem
+#id robe_spenta_light1
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_spenta_light.png
+#recolormask /graphics/vaettir/armor/robes/robe_spenta_recolormask2.png
+#tag "eliteversion robe_spenta_light2"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#basechance 0.5
+#enditem
+
+#newitem
+#id robe_spenta_dark1
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_spenta_dark.png
+#recolormask /graphics/vaettir/armor/robes/robe_spenta_recolormask2.png
+#tag "eliteversion robe_spenta_dark2"
+#armor
+#tag "tier 2"
+#basechance 0.5
+#enditem
+
+#newitem
+#id robe_spenta_light2
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_spenta_light.png
+#recolormask /graphics/vaettir/armor/robes/robe_spenta_recolormask1.png
+#tag "eliteversion robe_spenta_bright"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#basechance 0.5
+#enditem
+
+#newitem
+#id robe_spenta_dark2
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_spenta_dark.png
+#recolormask /graphics/vaettir/armor/robes/robe_spenta_recolormask3.png
+#tag "eliteversion robe_spenta_dull"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#basechance 0.5
+#enditem
+
+#newitem
+#id robe_spenta_bright
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_spenta_light.png
+#recolormask self
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#basechance 0.5
+#enditem
+
+#newitem
+#id robe_spenta_dull
+#sprite /graphics/vaettir/armor/robes/robe_spenta_dark.png
+#recolormask self
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#basechance 0.5
+#enditem
+
+#newitem
+#id robe_pontifix_white
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_pontifix1.png
+#tag "eliteversion robe_pontifix_grey"
+#tag "eliteversion robe_pontifix_light1"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_pontifix_grey
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_pontifix2.png
+#tag "eliteversion robe_pontifix_black"
+#tag "eliteversion robe_pontifix_medium1a"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_pontifix_black
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_pontifix3.png
+#tag "eliteversion robe_pontifix_white"
+#tag "eliteversion robe_pontifix_dark1"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_pontifix_light1
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_pontifix1.png
+#recolormask /graphics/vaettir/armor/robes/robe_pontifix_recolormask3.png
+#tag "eliteversion robe_pontifix_medium1a"
+#tag "eliteversion robe_pontifix_light2"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_pontifix_medium1a
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_pontifix2.png
+#recolormask /graphics/vaettir/armor/robes/robe_pontifix_recolormask1.png
+#tag "eliteversion robe_pontifix_light1"
+#tag "eliteversion robe_pontifix_medium2a"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_pontifix_medium1b
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_pontifix2.png
+#recolormask /graphics/vaettir/armor/robes/robe_pontifix_recolormask3.png
+#tag "eliteversion robe_pontifix_dark1"
+#tag "eliteversion robe_pontifix_medium2b"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_pontifix_dark1
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_pontifix3.png
+#recolormask /graphics/vaettir/armor/robes/robe_pontifix_recolormask1.png
+#tag "eliteversion robe_pontifix_medium1b"
+#tag "eliteversion robe_pontifix_dark2"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_pontifix_light2
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_pontifix1.png
+#recolormask /graphics/vaettir/armor/robes/robe_pontifix_recolormask2.png
+#tag "eliteversion robe_pontifix_medium2a"
+#tag "eliteversion robe_pontifix_light3"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_pontifix_medium2a
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_pontifix2.png
+#recolormask /graphics/vaettir/armor/robes/robe_pontifix_recolormask2.png
+#tag "eliteversion robe_pontifix_light2"
+#tag "eliteversion robe_pontifix_medium3a"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_pontifix_medium2b
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_pontifix2.png
+#recolormask /graphics/vaettir/armor/robes/robe_pontifix_recolormask2.png
+#tag "eliteversion robe_pontifix_dark2"
+#tag "eliteversion robe_pontifix_medium3b"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_pontifix_dark2
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_pontifix3.png
+#recolormask /graphics/vaettir/armor/robes/robe_pontifix_recolormask2.png
+#tag "eliteversion robe_pontifix_medium2b"
+#tag "eliteversion robe_pontifix_dark3"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_pontifix_light3
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_pontifix1.png
+#recolormask /graphics/vaettir/armor/robes/robe_pontifix_recolormask1.png
+#tag "eliteversion robe_pontifix_medium3a"
+#armor
+#tag "tier 3"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_pontifix_medium3a
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_pontifix2.png
+#recolormask /graphics/vaettir/armor/robes/robe_pontifix_recolormask3.png
+#tag "eliteversion robe_pontifix_light3"
+#tag "eliteversion robe_pontifix_dark3"
+#armor
+#tag "tier 3"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_pontifix_medium3b
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_pontifix2.png
+#recolormask /graphics/vaettir/armor/robes/robe_pontifix_recolormask1.png
+#tag "eliteversion robe_pontifix_dark3"
+#tag "eliteversion robe_pontifix_light3"
+#armor
+#tag "tier 3"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_pontifix_dark3
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_pontifix3.png
+#recolormask /graphics/vaettir/armor/robes/robe_pontifix_recolormask3.png
+#tag "eliteversion robe_pontifix_medium3b"
+#armor
+#tag "tier 3"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_avalon_green
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_avalon1.png
+#tag "eliteversion robe_avalon_green_brown"
+#tag "eliteversion robe_avalon_green_corset_dyed"
+#tag "eliteversion robe_avalon_green_dyed"
+#armor
+#tag "tier 1"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_avalon_green_dyed
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_avalon1.png
+#recolormask /graphics/vaettir/armor/robes/robe_avalon_recolormask1.png
+#tag "eliteversion robe_avalon_green_dyed_brown"
+#tag "eliteversion robe_avalon_green_mix"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_avalon_green_mix
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_avalon1.png
+#recolormask /graphics/vaettir/armor/robes/robe_avalon_recolormask4.png
+#tag "eliteversion robe_avalon_green_dyed_brown"
+#tag "eliteversion robe_avalon_mix_light"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_avalon_mix
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_avalon3.png
+#tag "eliteversion robe_avalon_mix_corset_grey"
+#tag "eliteversion robe_avalon_mix_corset_dyed"
+#armor
+#tag "tier 1"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_avalon_mix_corset_grey
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_avalon3.png
+#recolormask /graphics/vaettir/armor/robes/robe_avalon_recolormask6.png
+#tag "eliteversion robe_avalon_mix_corset_dyed"
+#tag "eliteversion robe_avalon_mix_dark"
+#tag "eliteversion robe_avalon_mix_light"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_avalon_mix_corset_dyed
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_avalon3.png
+#recolormask /graphics/vaettir/armor/robes/robe_avalon_recolormask5.png
+#tag "eliteversion robe_avalon_mix_corset_grey"
+#tag "eliteversion robe_avalon_mix_dark"
+#tag "eliteversion robe_avalon_mix_light"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_avalon_mix_light
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_avalon3.png
+#recolormask /graphics/vaettir/armor/robes/robe_avalon_recolormask4.png
+#tag "eliteversion robe_avalon_mix_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_avalon_mix_dark
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_avalon3.png
+#recolormask /graphics/vaettir/armor/robes/robe_avalon_recolormask7.png
+#tag "eliteversion robe_avalon_mix_light"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_avalon_green_brown
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_avalon2.png
+#tag "eliteversion robe_avalon_green_brown"
+#tag "eliteversion robe_avalon_green_corset_dyed"
+#tag "eliteversion robe_avalon_green_dyed"
+#armor
+#tag "tier 1"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_avalon_green_corset_dyed
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_avalon2.png
+#recolormask /graphics/vaettir/armor/robes/robe_avalon_recolormask3.png
+#tag "eliteversion robe_avalon_green_dyed_brown"
+#tag "eliteversion robe_avalon_green_corset_dark"
+#tag "eliteversion robe_avalon_light_mix"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_avalon_green_dyed_brown
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_avalon2.png
+#recolormask /graphics/vaettir/armor/robes/robe_avalon_recolormask2.png
+#tag "eliteversion robe_avalon_green_corset_dyed"
+#tag "eliteversion robe_avalon_dark_brown"
+#tag "eliteversion robe_avalon_dark_mix"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_avalon_green_corset_dark
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_avalon2.png
+#recolormask /graphics/vaettir/armor/robes/robe_avalon_recolormask5.png
+#tag "eliteversion robe_avalon_dark_mix"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_avalon_dark_brown
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_avalon2.png
+#recolormask /graphics/vaettir/armor/robes/robe_avalon_recolormask6.png
+#tag "eliteversion robe_avalon_dark_mix"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_avalon_light_mix
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_avalon2.png
+#recolormask /graphics/vaettir/armor/robes/robe_avalon_recolormask4.png
+#tag "eliteversion robe_avalon_dark_mix"
+#armor
+#tag "tier 3"
+#basechance 0.3
+#enditem
+
+#newitem
+#id robe_avalon_dark_mix
+#gameid 158
+#sprite /graphics/vaettir/armor/robes/robe_avalon2.png
+#recolormask /graphics/vaettir/armor/robes/robe_avalon_recolormask7.png
+#tag "eliteversion robe_avalon_light_mix"
+#armor
+#tag "tier 3"
+#basechance 0.3
+#enditem

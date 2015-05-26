@@ -22,6 +22,7 @@ public class DescriptionReplacer {
 		descs.put("%primaryrace%", n.races.get(0).toString());
 		descs.put("%primaryrace_plural%", Generic.capitalizeFirst(n.races.get(0).toString()));
 		descs.put("%mages%", MageDescriber.getCommonName(n).toString());
+		descs.put("%mages_plural%", Generic.plural(MageDescriber.getCommonName(n).toString()));
 		descs.put("%magenoun%", MageDescriber.getCommonNoun(n).toString());
 		descs.put("%sacredname%", n.unitlists.get("sacreds").get(0).name.toString());
 		descs.put("%sacredname_plural%", Generic.capitalizeFirst(n.unitlists.get("sacreds").get(0).name.toString()));
@@ -40,6 +41,7 @@ public class DescriptionReplacer {
 	public void calibrate(Unit u)
 	{
 		descs.put("%unitname%", u.name.toString());
+		descs.put("%unitname_plural%", Generic.plural(u.name.toString()));
 		descs.put("%race%", u.race.toString().toLowerCase());
 		descs.put("%race_plural%", Generic.plural(u.race.toString().toLowerCase()));
 		if(u.getSlot("mount") != null && !Generic.getTagValue(u.getSlot("mount").tags, "animal").equals(""))
@@ -151,8 +153,12 @@ public class DescriptionReplacer {
 			{
 				prot = n.nationGen.armordb.GetInteger(i.id, "prot", 0);
 
-				if(!n.nationGen.weapondb.GetValue(i.id, "armorname").equals("") && !weapons.contains(n.nationGen.weapondb.GetValue(i.id, "armorname")))
+				/*if(!n.nationGen.weapondb.GetValue(i.id, "armorname").equals("") && !weapons.contains(n.nationGen.weapondb.GetValue(i.id, "armorname")))
 					weapons.add(n.nationGen.weapondb.GetValue(i.id, "armorname"));
+				else
+					weapons.add("NOT IN ARMORDB: " + i.name + " in " + i.slot);	*/
+				if(!n.nationGen.armordb.GetValue(i.id, "armorname").equals("") && !weapons.contains(n.nationGen.armordb.GetValue(i.id, "armorname")))
+					weapons.add(n.nationGen.armordb.GetValue(i.id, "armorname"));
 				else
 					weapons.add("NOT IN ARMORDB: " + i.name + " in " + i.slot);	
 			}

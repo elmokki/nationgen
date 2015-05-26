@@ -1,0 +1,120 @@
+#newitem
+#id hatchet
+#gameid 253
+#sprite /graphics/vaettir/weapon/hatchet.png
+#theme "primitive"
+#tag "name infantry axeman"
+#enditem
+
+#newitem
+#id hammer
+#gameid 13
+#sprite /graphics/vaettir/weapon/hammer.png
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/vaettir/weapon/mace.png
+#theme "primitive"
+#tag "name infantry maceman"
+#enditem
+
+#newitem
+#id morningstar
+#gameid 15
+#sprite /graphics/vaettir/weapon/morningstar.png
+#theme "advanced"
+#enditem
+
+#newitem
+#id shortsword
+#gameid 6
+#sprite /graphics/vaettir/weapon/shortsword.png
+#enditem
+
+#newitem
+#id spear
+#gameid 1
+#sprite /graphics/vaettir/weapon/spear.png
+#renderprio 7
+#renderslot "quiver"
+#tag "name infantry spearman"
+#enditem
+
+#newitem
+#id quarterstaff
+#gameid 7
+#sprite /graphics/vaettir/weapon/quarterstaff.png
+#renderprio 7
+#renderslot "quiver"
+#maxprot 10
+#enditem
+
+#newitem
+#id longspear
+#gameid 28
+#sprite /graphics/vaettir/weapon/pike.png
+#renderslot "quiver"
+#tag "eliteversion pike"
+#needs offhand no_offhand
+#tag "name infantry pikeman"
+#theme "advanced"
+#enditem
+
+#newitem
+#id pike
+#gameid 590
+#sprite /graphics/vaettir/weapon/pike.png
+#renderslot "quiver"
+#tag "name infantry pikeman"
+#basechance 0
+#theme "advanced"
+#enditem
+
+#newitem
+#id axe
+#gameid 66
+#sprite /graphics/vaettir/weapon/greataxe.png
+#tag "eliteversion greataxe"
+#needs offhand no_offhand
+#tag "name infantry axeman"
+#enditem
+
+#newitem
+#id greataxe
+#gameid 18
+#sprite /graphics/vaettir/weapon/greataxe.png
+#basechance 0
+#tag "name infantry axeman"
+#enditem
+
+#newitem
+#id maul
+#gameid 14
+#sprite /graphics/vaettir/weapon/maul.png
+#enditem
+
+#newitem
+#id flail
+#gameid 16
+#sprite /graphics/vaettir/weapon/flail.png
+#theme "advanced"
+#enditem
+
+#newitem
+#id halberd
+#gameid 5
+#sprite /graphics/vaettir/weapon/halberd.png
+#renderslot "quiver"
+#tag "name infantry halberdier"
+#theme "advanced"
+#enditem
+
+#newitem
+#id bardiche
+#gameid 257
+#sprite /graphics/vaettir/weapon/bardiche.png
+#renderslot "quiver"
+#theme "advanced"
+#enditem

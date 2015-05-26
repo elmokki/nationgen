@@ -1,0 +1,52 @@
+#newrace
+#name "Humanbred"
+#visiblename "Abysian"
+#basechance 0.1
+
+#pose humanbredtroops
+#pose humanbredmages
+#pose warbred
+
+#all_troops_sacred
+#all_troops_elite
+
+#longsyllables /data/names/nations/abysian/longsyllables.txt
+#shortsyllables /data/names/nations/abysian/shortsyllables.txt
+#suffixes /data/names/nations/abysian/suffixes.txt
+
+
+#nationcommand "#idealcold -2"
+
+#unitcommand "#gcost 12"
+#unitcommand "#rcost 1"
+#unitcommand "#hp 12"
+#unitcommand "#mr 11"
+#unitcommand "#mor 10"
+#unitcommand "#str 11"
+#unitcommand "#def 9"
+#unitcommand "#prec 8"
+#unitcommand "#enc 3"
+#unitcommand "#ap 11"
+#unitcommand "#fireres 15"
+#unitcommand "#wastesurvival"
+#unitcommand "#nametype 101"
+#unitcommand "#maxage 45"
+
+#generationchance cavalry 0.2
+
+#generateitem 1 shirt
+
+#magicpriority fire 7
+#magicpriority blood 7
+#magicpriority water 0.25
+#magicpriority nature 0.25
+
+#chanceinc era 1 *0.5
+#chanceinc era 3 *2
+
+#chanceinc "primaryrace van *0.25"
+#chanceinc "primaryrace 'Van slavers' *0.125"
+#chanceinc "primaryrace Abysian *3"
+
+#description "Humanbred Abysians are the result of sinister crossbreeding experiments aiming to combine the best traits of the two races. They breed and grow quickly while sharing the Abysian resistance to heat; however, their flesh is far cooler than their hellish ancestors."
+#endrace

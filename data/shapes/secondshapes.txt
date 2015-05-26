@@ -412,6 +412,36 @@
 #end
 
 #new secondshape
+#name "forestspider"
+#command "#copyspr 782"
+#command "#magicboost 53 -5"
+#command "#name 'Forest Spider'"
+#command "#weapon 65"
+#command "#size 3"
+#command "#hp 12"
+#command "#prot 8"
+#command "#mor 10"
+#command "#mr 5"
+#command "#enc 2"
+#command "#str 8"
+#command "#att 12"
+#command "#def 10"
+#command "#prec 5"
+#command "#mapmove 2"
+#command "#ap 14"
+#command "#enc 2"
+#command "#animal"
+#command "#undisciplined"
+#command "#resistpoison 15"
+#command "#forestsurvival"
+#command "#itemslots 12288"
+#nowayback
+#nogcost
+#mount
+#end
+
+
+#new secondshape
 #name "amphiptere"
 #command "#copystats 1412"
 #command "#copyspr 1412"
@@ -542,7 +572,7 @@
 #command "#magicboost 53 -5"
 #command "#name 'Nightmare'"
 #command "#fear 0"
-#command "#enc 50"
+#command "#enc 5"
 #command "#ap 25"
 #command "#str 14"
 #command "#mr 12"
@@ -554,8 +584,41 @@
 #command "#prot 5"
 #command "#size 3"
 #command "#mapmove 4"
-#command "#weapon 56 --- Hoof"
+#command "#weapon 615 --- Hoof"
 #command "#demon"
+#command "#itemslots 12288"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "gloso"
+#command "#copyspr 2363"
+#command "#magicboost 53 -5"
+#command "#name 'Gloso'"
+#command "#enc 2"
+#command "#ap 18"
+#command "#str 15"
+#command "#mr 13"
+#command "#mor 14"
+#command "#att 13"
+#command "#def 10"
+#command "#hp 28"
+#command "#prec 5"
+#command "#prot 8"
+#command "#size 3"
+#command "#mapmove 3"
+#command "#weapon 573 --- Poisonous Gore"
+#command "#animal"
+#command "#forestsurvival"
+#command "#trample"
+#command "#maxage 45"
+#command "#fireres 25"
+#command "#darkvision 100"
+#command "#stealthy 50"
+#command "#heat 3"
+#command "#nametype 116"
 #command "#itemslots 12288"
 #nowayback
 #nogcost
@@ -772,6 +835,39 @@
 #command "#spr2 shift"
 #command "#armor 172 --- Mail Barding"
 #command "#magicboost 53 -5"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "wolfmount"
+#command "#copystats 284"
+#command "#copyspr 284"
+#command "#magicboost 53 -5"
+#command "#itemslots 12288"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "direwolf1mount"
+#command "#copystats 1224"
+#command "#copyspr 1224"
+#command "#magicboost 53 -5"
+#command "#itemslots 12288"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "direwolf2mount"
+#command "#copystats 1224"
+#command "#copyspr 2474"
+#command "#magicboost 53 -5"
+#command "#itemslots 12288"
 #nowayback
 #nogcost
 #mount

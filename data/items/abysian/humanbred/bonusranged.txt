@@ -1,0 +1,32 @@
+#newitem
+#name "short bow"
+#gameid 23
+#sprite /graphics/weapon/standard/bonusshortbow.png
+#tag "name Ranger"
+#enditem
+
+#newitem
+#name "composite bow"
+#gameid 264
+#sprite /graphics/weapon/standard/bonusshortbow.png
+#tag "name Ranger"
+#enditem
+
+#newitem
+#name "light crossbow"
+#gameid light_crossbow
+#sprite /graphics/weapon/standard/bonuscrossbow.png
+#tag "name Crossbowman"
+#theme "advanced"
+#basechance 0.75
+#define "#gcost +2"
+#enditem
+
+#newitem
+#name "steel crossbow"
+#gameid steel_crossbow
+#sprite /graphics/weapon/standard/bonuscrossbow.png
+#tag "name Crossbowman"
+#theme "advanced"
+#basechance 0.75
+#enditem

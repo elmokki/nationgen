@@ -1,0 +1,53 @@
+#newitem
+#name "cultistrobe"
+#gameid 158
+#sprite /graphics/agarthan/magearmor/body/cultistrobe.png
+#recolormask /graphics/agarthan/magearmor/body/cultistrobe_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#name "simplecultistrobe"
+#gameid 158
+#sprite /graphics/agarthan/magearmor/body/cultistrobe_plain.png
+#recolormask self
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#eliteversion cultistrobe
+#enditem
+
+#newitem
+#name "none"
+#gameid -1
+#sprite /graphics/agarthan/armor/naked.png
+#armor
+#tag "tier 3"
+#tag "tier 2"
+#tag "tier 1"
+#basechance 2
+#eliteversion cultistrobe
+#eliteversion simplecultistrobe
+#eliteversion plaintunic
+#enditem
+
+#newitem
+#name "tunic"
+#gameid 158
+#sprite /graphics/agarthan/magearmor/body/olmspawntunic.png
+#recolormask /graphics/agarthan/magearmor/body/olmspawntunic_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#name "plaintunic"
+#gameid 158
+#sprite /graphics/agarthan/magearmor/body/olmspawntunic_plain.png
+#recolormask self
+#eliteversion tunic
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem

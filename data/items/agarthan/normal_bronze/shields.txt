@@ -2,15 +2,49 @@
 #newitem
 #id bronzebuckler
 #gameid 1
+#basechance 2
 #sprite /graphics/agarthan/offhand/bronzebuckler.png
 #armor
+#theme "bronze"
 #enditem
 
 #newitem
 #id bronzeshield
 #gameid 2
+#basechance 2
 #sprite /graphics/agarthan/offhand/bronzeshield.png
 #armor
+#theme "bronze"
 #enditem
 
+#newitem
+#id bronzekite
+#gameid 3
+#basechance 0.5
+#sprite /graphics/agarthan/offhand/bronzekite.png
+#armor
+#theme "bronze"
+#theme "advanced"
+#enditem
 
+#newitem
+#id darkkite
+#gameid 3
+#basechance 0.25
+#sprite /graphics/agarthan/offhand/bronzekite.png
+#recolormask /graphics/agarthan/offhand/kite_recolormask1.png
+#armor
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+#newitem
+#id lightkite
+#gameid 3
+#basechance 0.25
+#sprite /graphics/agarthan/offhand/bronzekite.png
+#recolormask /graphics/agarthan/offhand/kite_recolormask2.png
+#armor
+#theme "bronze"
+#theme "advanced"
+#enditem

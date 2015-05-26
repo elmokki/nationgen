@@ -1,0 +1,56 @@
+#newitem
+#name "javelin"
+#gameid 21
+#sprite /graphics/avvim/weapon/javelin.png
+#tag "name infantry 'Javelineer'"
+#basechance 2
+#enditem
+
+#newitem -- Throwing axe
+#name "throwing axe"
+#gameid 260
+#theme "primitive"
+#tag "name infantry 'Axe Thrower'"
+#basechance 2
+#chanceinc unittag irregular 4
+#enditem
+
+#newitem
+#name "chakram"
+#gameid 362
+#tag "name infantry 'Chakram Thrower'"
+#tag "tierunique"
+#basechance 0.25
+#enditem
+
+#newitem
+#name "sticksandstones"
+#gameid 360
+#basechance 0.25
+#theme "primitive"
+#tag "maxprot 12"
+#tag "notepic"
+#enditem
+
+
+#newitem
+#name "net"
+#gameid 263
+#sprite /graphics/avvim/offhand/net.png
+#tag "maxprot 12"
+#tag "tierunique"
+#tag "noslot offhand"
+#tag "name infantry 'Trapper'"
+#basechance 0.5
+#chanceinc unittag irregular 1.5
+#enditem
+
+#newitem
+#name "heavy sling"
+#gameid heavy_sling
+#tag "name infantry 'Slinger'"
+#tag "maxprot 12"
+#tag "tierunique"
+#theme "primitive"
+#basechance 1
+#enditem

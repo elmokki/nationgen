@@ -1,0 +1,54 @@
+
+--- Leather
+
+#newitem
+#name "leather cuirass"
+#gameid 5
+#sprite /graphics/abysian/armor/leather_cuirass.png
+#armor
+#basechance 0.5
+#enditem
+
+#newitem
+#name "leather hauberk"
+#gameid 10
+#sprite /graphics/abysian/armor/leather_hauberk.png
+#armor
+#basechance 0.5
+#enditem
+
+#newitem -- full leather
+#newitem
+#name "full leather"
+#gameid 15
+#sprite /graphics/abysian/armor/leather_hauberk.png
+#needs legs leatherpants
+#armor
+#basechance 0.5
+#enditem
+
+
+--- Ring
+
+#newitem
+#name "ring cuirass"
+#gameid 6
+#sprite /graphics/abysian/armor/ring_cuirass.png
+#armor
+#enditem
+
+#newitem
+#name "ring hauberk"
+#gameid 11
+#sprite /graphics/abysian/armor/ring_hauberk.png
+#armor
+#enditem
+
+#newitem -- full ring
+#name "full ring"
+#gameid 16
+#sprite /graphics/abysian/armor/ring_hauberk.png
+#armor
+#needs legs leatherpants
+#enditem
+

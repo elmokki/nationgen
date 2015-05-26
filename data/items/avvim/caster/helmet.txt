@@ -1,0 +1,337 @@
+
+--- "Standard" caster hats
+
+#newitem
+#id laurel
+#gameid -1
+#sprite /graphics/avvim/helmet/caster/laurel.png
+#armor
+#tag "tier 3"
+#theme "nature"
+#enditem
+
+#newitem
+#id wizardhat1
+#gameid -1
+#sprite /graphics/avvim/helmet/caster/wizard_cone1.png
+#recolormask self
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+
+#newitem
+#id wizardhat2
+#gameid -1
+#sprite /graphics/avvim/helmet/caster/wizard_cone2.png
+#recolormask /graphics/avvim/helmet/caster/wizard_cone_recolormask.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id headscarf_small_colored
+#gameid -1
+#sprite /graphics/avvim/helmet/caster/headscarf_small.png
+#recolormask self
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id headscarf_small_white
+#gameid -1
+#sprite /graphics/avvim/helmet/caster/headscarf_small.png
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id magistercap
+#gameid -1
+#sprite /graphics/avvim/helmet/caster/magistercap.png
+#recolormask self
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id secondtierhat
+#gameid -1
+#sprite /graphics/avvim/helmet/caster/2ndtier.png
+#recolormask /graphics/avvim/helmet/caster/2ndtier_recolormask.png
+#armor
+#tag "tier 2"
+#tag "eliteversion thirdtierhat"
+#enditem
+
+#newitem
+#id thirdtierhat
+#gameid -1
+#sprite /graphics/avvim/helmet/caster/3rdtier.png
+#recolormask /graphics/avvim/helmet/caster/3rdtier_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id demonjester
+#gameid -1
+#sprite /graphics/avvim/helmet/caster/demonjester.png
+#recolormask /graphics/avvim/helmet/caster/demonjester_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id demonjester_nobell
+#gameid -1
+#sprite /graphics/avvim/helmet/caster/demonjester_recolormask.png
+#recolormask self
+#armor
+#tag "eliteversion demonjester"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id headdress
+#gameid -1
+#sprite /graphics/helmet/caster/headdress.png
+#recolormask self
+#armor
+#offsetx 1
+#offsety -19
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id headdress-nomask
+#gameid -1
+#sprite /graphics/helmet/caster/headdress.png
+#armor
+#offsetx 1
+#offsety -19
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id hood
+#gameid -1
+#sprite /graphics/avvim/helmet/caster/hood.png
+#recolormask /graphics/avvim/helmet/caster/hood_recolormask.png
+#armor
+#tag "tier 2"
+#enditem
+
+-- Headscarves
+#newitem
+#id headscarf_black
+#gameid -1
+#sprite /graphics/avvim/helmet/caster/headscarf_black.png
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id headscarf_dark
+#gameid -1
+#sprite /graphics/avvim/helmet/caster/headscarf_black.png
+#recolormask /graphics/avvim/helmet/caster/headscarf_black_recolormask.png
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id headscarf_white
+#gameid -1
+#sprite /graphics/avvim/helmet/caster/headscarf_white.png
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id headscarf_light
+#gameid -1
+#sprite /graphics/avvim/helmet/caster/headscarf_white.png
+#recolormask /graphics/avvim/helmet/caster/headscarf_white_recolormask.png
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+-- Turbans
+
+#newitem
+#id turban_white
+#gameid 148
+#sprite /graphics/avvim/helmet/caster/turban_white_plain.png
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#tag "eliteversion turban_white_fancy"
+#tag "eliteversion turban_light"
+#enditem
+
+#newitem
+#id turban_light
+#gameid -1
+#sprite /graphics/avvim/helmet/caster/turban_white_plain.png
+#recolormask self
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#tag "eliteversion turban_light_ornate"
+#enditem
+
+#newitem
+#id turban_white_fancy
+#gameid 148
+#sprite /graphics/avvim/helmet/caster/turban_white_fancy.png
+#recolormask /graphics/avvim/helmet/caster/turban_fancy_recolormask.png
+#armor
+#tag "tier 2"
+#tag "eliteversion turban_white_ornate"
+#tag "eliteversion turban_light_ornate"
+#enditem
+
+#newitem
+#id turban_white_ornate
+#gameid -1
+#sprite /graphics/avvim/helmet/caster/turban_white_ornate.png
+#armor
+#tag "tier 3"
+#tag "eliteversion turban_light_ornate"
+#enditem
+
+#newitem
+#id turban_light_ornate
+#gameid -1
+#sprite /graphics/avvim/helmet/caster/turban_white_ornate.png
+#recolormask /graphics/avvim/helmet/caster/turban_white_ornate_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id turban_black
+#gameid 148
+#sprite /graphics/avvim/helmet/caster/turban_black_plain.png
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#tag "eliteversion turban_black_fancy"
+#tag "eliteversion turban_dark"
+#enditem
+
+#newitem
+#id turban_dark
+#gameid -1
+#sprite /graphics/avvim/helmet/caster/turban_black_plain.png
+#recolormask self
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#tag "eliteversion turban_dark_ornate"
+#enditem
+
+#newitem
+#id turban_black_fancy
+#gameid 148
+#sprite /graphics/avvim/helmet/caster/turban_black_fancy.png
+#recolormask /graphics/avvim/helmet/caster/turban_fancy_recolormask.png
+#armor
+#tag "tier 2"
+#tag "eliteversion turban_black_ornate"
+#tag "eliteversion turban_dark_ornate"
+#enditem
+
+#newitem
+#id turban_black_ornate
+#gameid -1
+#sprite /graphics/avvim/helmet/caster/turban_black_ornate.png
+#armor
+#tag "tier 3"
+#tag "eliteversion turban_dark_ornate"
+#enditem
+
+#newitem
+#id turban_dark_ornate
+#gameid -1
+#sprite /graphics/avvim/helmet/caster/turban_black_ornate.png
+#recolormask /graphics/avvim/helmet/caster/turban_black_ornate_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+
+-- Crowns
+
+#newitem
+#id crown_bronze
+#gameid 148
+#sprite /graphics/avvim/helmet/caster/crown_bronze.png
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#tag "eliteversion crown_silver"
+#tag "eliteversion crown_bronze_bejeweled"
+#enditem
+
+#newitem
+#id crown_bronze_bejeweled
+#gameid 148
+#sprite /graphics/avvim/helmet/caster/crown_bronze_bejeweled.png
+#recolormask /graphics/avvim/helmet/caster/crown_bejeweled_recolormask.png
+#armor
+#tag "tier 2"
+#tag "eliteversion crown_silver_bejeweled"
+#enditem
+
+#newitem
+#id crown_silver
+#gameid 148
+#sprite /graphics/avvim/helmet/caster/crown_silver.png
+#armor
+#tag "tier 2"
+#tag "eliteversion crown_gold"
+#tag "eliteversion crown_silver_bejeweled"
+#enditem
+
+#newitem
+#id crown_silver_bejeweled
+#gameid 148
+#sprite /graphics/avvim/helmet/caster/crown_silver_bejeweled.png
+#recolormask /graphics/avvim/helmet/caster/crown_bejeweled_recolormask.png
+#armor
+#tag "tier 3"
+#tag "eliteversion crown_gold_bejeweled"
+#enditem
+
+#newitem
+#id crown_gold
+#gameid 148
+#sprite /graphics/avvim/helmet/caster/crown_gold.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#tag "eliteversion crown_gold_bejeweled"
+#enditem
+
+#newitem
+#id crown_gold_bejeweled
+#gameid 148
+#sprite /graphics/avvim/helmet/caster/crown_gold_bejeweled.png
+#recolormask /graphics/avvim/helmet/caster/crown_bejeweled_recolormask.png
+#armor
+#tag "tier 3"
+#enditem

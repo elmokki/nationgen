@@ -2,7 +2,7 @@
 #basechance 2
 #role "sacred infantry"
 #role "elite infantry"
-#name "heavy infantry"
+#name "sobek infantry"
 #sacred
 
 #renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
@@ -20,5 +20,37 @@
 
 -- #load offhand /data/items/sobek/sobek/offhand.txt
 #load offhand /data/items/sobek/sobek/shields.txt
+
+#endpose
+
+----------- Charioteers
+
+#newpose
+#role "chariot"
+#role "elite"
+#role "sacred"
+#name "sobek chariot"
+#sacred
+#basechance 0.2
+
+#renderorder "shadow mount weapon bonusweapon cloakb basesprite shirt legs armor cloakf offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/sobek/sobek/bases.txt
+
+#load mount /data/items/sobek/sobek/bases_chariot.txt
+
+#load hands /data/items/sobek/sobek/hands.txt
+
+#load armor /data/items/sobek/sobek/armor_chariot.txt
+#load helmet /data/items/sobek/sobek/helmet.txt
+
+#load weapon /data/items/sobek/sobek/weapon_chariot.txt
+
+#load offhand /data/items/sobek/sobek/shields.txt
+#load offhand /data/items/sobek/sobek/offhand_mounted.txt  
+
+#load overlay /data/items/sobek/sobek/mountedoverlay.txt
+
+-- #maxvarieties 1
 
 #endpose

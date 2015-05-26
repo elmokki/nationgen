@@ -1,0 +1,57 @@
+
+--- Caster hats
+
+#newitem
+#id fancyhat
+#gameid 120
+#sprite /graphics/helmet/special/fancyhat.png
+#recolormask /graphics/helmet/special/fancyhat_recolormask.png
+#tag "eliteversion fancyhat3a"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id fancyhat2
+#gameid 120
+#sprite /graphics/helmet/special/fancyhat2.png
+#recolormask /graphics/helmet/special/fancyhat2_recolormask.png
+#tag "eliteversion fancyhat"
+#tag "eliteversion fancyhat3a"
+#tag "eliteversion fancyhat3b"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id fancyhat3a
+#gameid 120
+#sprite /graphics/helmet/special/fancyhat3.png
+#recolormask /graphics/helmet/special/fancyhat3_recolormask1.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id fancyhat3b
+#gameid 120
+#sprite /graphics/helmet/special/fancyhat3.png
+#recolormask /graphics/helmet/special/fancyhat3_recolormask2.png
+#tag "eliteversion fancyhat3a"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id cowl
+#gameid 121
+#sprite /graphics/advancedhuman/helmets/cowl.png
+#recolormask self
+#offsetx -3
+#offsety 1
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem

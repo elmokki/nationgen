@@ -6,26 +6,31 @@
 #role "infantry"
 #sacred
 
+#renderorder "shadow cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon cloakf offhandw hands helmet offhanda overlay"
+
 #load basesprite /data/items/advancedhuman/normal/bases.txt
 #load shadow /data/items/human/normal/shadow.txt 2 0
 
 #load hands /data/items/advancedhuman/normal/hands.txt
 
-#load cloakf /data/items/advancedhuman/normal/cloakf.txt
-#load cloakb /data/items/advancedhuman/normal/cloakb.txt
+#load cloakf /data/items/human/normal/humancloakf.txt 2 0
+#load cloakb /data/items/human/normal/humancloakb.txt 2 0
 #load shirt /data/items/advancedhuman/normal/shirt.txt
-#load hair /data/items/advancedhuman/normal/hair.txt
+#load hair /data/items/human/normal/humanhair.txt 2 1
 
 #load armor /data/items/advancedhuman/normal/armor.txt
+#load armor /data/items/advancedhuman/normal/armor_elite.txt
+#load armor /data/items/advancedhuman/normal/orientalarmor.txt
 #load helmet /data/items/advancedhuman/normal/helmet.txt
 #load legs /data/items/advancedhuman/normal/legs.txt
 
 #load weapon /data/items/advancedhuman/normal/weapon.txt
-#load bonusweapon /data/items/advancedhuman/normal/standards.txt
-#load bonusweapon /data/items/advancedhuman/normal/bonusranged.txt
+#load weapon /data/items/human/normal/standards.txt 5 0
+#load bonusweapon /data/items/advancedhuman/normal/bonusranged.txt 2 1
 
 #load offhand /data/items/advancedhuman/normal/offhand.txt
 #load offhand /data/items/advancedhuman/normal/shields.txt
+#load offhand /data/items/human/sacredstuff/sacredoffhand.txt 3 1
 #load offhand /data/items/advancedhuman/normal/towershields.txt
 
 #endpose
@@ -63,24 +68,28 @@
 
 ------------- scout
 
--- #newpose
--- #role "scout"
--- #load basesprite /data/items/advancedhuman/normal/bases.txt
--- #load shadow /data/items/advancedhuman/normal/shadow.txt
+#newpose
+#role "scout"
 
--- #load hands /data/items/advancedhuman/normal/hands.txt
+#renderorder "shadow cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon cloakf helmet offhandw hands offhanda overlay"
 
--- #load cloakf /data/items/advancedhuman/normal/cloakf.txt
--- #load cloakb /data/items/advancedhuman/normal/cloakb.txt
--- #load shirt /data/items/advancedhuman/normal/shirt.txt
--- #load hair /data/items/advancedhuman/normal/hair.txt
+#load basesprite /data/items/advancedhuman/normal/bases.txt
+#load shadow /data/items/human/normal/shadow.txt 2 0
 
--- #load armor /data/items/advancedhuman/normal/armor.txt
--- #load helmet /data/items/advancedhuman/scout/helmet.txt
--- #load legs /data/items/advancedhuman/normal/legs.txt
+#load hands /data/items/advancedhuman/normal/hands.txt
 
--- #load weapon /data/items/advancedhuman/normal/weapon.txt
--- #load bonusweapon /data/items/advancedhuman/normal/bonusranged.txt
+#load cloakf /data/items/human/normal/humancloakf.txt 2 0
+#load cloakb /data/items/human/normal/humancloakb.txt 2 0
+#load shirt /data/items/advancedhuman/normal/shirt.txt
+#load hair /data/items/human/normal/humanhair.txt 2 1
 
--- #load offhand /data/items/advancedhuman/normal/offhand.txt
--- #endpose
+#load armor /data/items/advancedhuman/normal/armor.txt
+#load helmet /data/items/advancedhuman/scout/helmet.txt
+#load legs /data/items/advancedhuman/normal/legs.txt
+
+#load weapon /data/items/advancedhuman/normal/weapon.txt
+#load bonusweapon /data/items/advancedhuman/normal/bonusranged.txt 2 1
+
+#load offhand /data/items/advancedhuman/normal/offhand.txt
+
+#endpose

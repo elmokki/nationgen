@@ -1,0 +1,120 @@
+
+-------- Normal
+
+#newpose
+#role "infantry"
+#role "scout"
+
+#load basesprite /data/items/abysian/humanbred/bases.txt
+#load shadow /data/items/human/normal/shadow.txt
+
+#load hands /data/items/abysian/humanbred/hands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+
+#load armor /data/items/abysian/humanbred/lightarmor.txt
+#load armor /data/items/abysian/armor.txt
+
+#load helmet /data/items/human/normal/humanhelmet.txt
+#load helmet /data/items/abysian/abysian_helmet.txt
+#load legs /data/items/abysian/humanbred/legs.txt
+
+#load weapon /data/items/abysian/weapon.txt
+#load bonusweapon /data/items/abysian/bonusranged.txt
+
+#load offhand /data/items/abysian/offhand.txt
+#load offhand /data/items/abysian/shields.txt
+#load offhand /data/items/abysian/towershields.txt
+
+#load offhand /data/items/human/sacredstuff/sacredoffhand.txt
+#load helmet /data/items/human/sacredstuff/sacredhelmet.txt
+#load bonusweapon /data/items/human/sacredstuff/human_sacredbonusweapons.txt
+#load weapon /data/items/human/sacredstuff/sacredweapon.txt
+#load weapon /data/items/human/sacredstuff/sacredweapon-infantry.txt
+#load bonusweapon /data/items/human/sacredstuff/sacredbonusweapons.txt
+
+#endpose
+
+
+
+-------- Ranged: normal infantry with a bow or crossbow
+
+#newpose
+#role "ranged"
+
+#command "#enc +1"
+
+#load basesprite /data/items/abysian/humanbred/bases.txt
+#load shadow /data/items/human/normal/shadow.txt
+
+#load hands /data/items/abysian/humanbred/hands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+
+#load armor /data/items/abysian/humanbred/lightarmor.txt
+#load armor /data/items/abysian/armor.txt
+
+#load helmet /data/items/human/normal/humanhelmet.txt
+#load helmet /data/items/abysian/abysian_helmet.txt
+#load legs /data/items/abysian/humanbred/legs.txt
+
+#load weapon /data/items/abysian/weapon.txt
+#load bonusweapon /data/items/abysian/humanbred/bonusranged.txt
+
+#load offhand /data/items/abysian/offhand.txt
+#load offhand /data/items/abysian/shields.txt
+#load offhand /data/items/abysian/towershields.txt
+
+#load offhand /data/items/human/sacredstuff/sacredoffhand.txt
+#load helmet /data/items/human/sacredstuff/sacredhelmet.txt
+
+#generateitem 1 bonusweapon
+
+#maxvarieties 1
+#maxunits 1
+
+#endpose
+
+
+---------- Low Mounted
+
+
+
+#newpose
+#race 0
+#role "mounted"
+#load basesprite /data/items/abysian/humanbred/bases.txt 5 -15
+#load mount /data/items/abysian/humanbred/mounts.txt
+
+#load hands /data/items/abysian/humanbred/hands.txt 5 -15
+
+#load cloakf /data/items/human/normal/humancloakf.txt 5 -15
+#load cloakb /data/items/human/normal/humancloakb.txt 5 -15
+
+#load armor /data/items/abysian/humanbred/lightarmor.txt 5 -15
+#load armor /data/items/abysian/armor.txt 5 -15
+#load helmet /data/items/human/normal/humanhelmet.txt 5 -15
+#load helmet /data/items/abysian/abysian_helmet.txt 5 -15
+#load legs /data/items/abysian/humanbred/mountedlegs.txt 6 -16
+
+#load weapon /data/items/abysian/mountedweapon.txt 5 -15
+#load weapon /data/items/human/human_mounted/cavalryweapons.txt 5 -15
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt 5 -15
+#load lanceslot /data/items/human/human_mounted/lance.txt 5 -15
+
+
+#load offhand /data/items/abysian/offhand.txt 5 -15
+#load offhand /data/items/abysian/shields.txt 5 -15
+
+#load offhand /data/items/human/sacredstuff/sacredoffhand.txt 5 -15
+#load helmet /data/items/human/sacredstuff/sacredhelmet.txt 5 -15
+#load helmet /data/items/human/sacredstuff/humanspecific_sacredhelmet.txt 5 -15
+#load weapon /data/items/human/sacredstuff/sacredweapon.txt 5 -15
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+
+#writeslot lanceslot
+
+#endpose

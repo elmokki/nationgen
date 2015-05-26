@@ -1,0 +1,75 @@
+#newitem
+#id lightlance
+#gameid 357
+#sprite /graphics/vaettir/weapon/lance.png
+#renderprio 7
+#renderslot "offhandw"
+#tag "name lancer"
+#basechance 2
+#enditem
+
+#newitem
+#id spear
+#gameid 1
+#sprite /graphics/vaettir/weapon/spear.png
+#renderprio 7
+#renderslot "offhandw"
+#basechance 2
+#enditem
+
+#newitem
+#id hatchet
+#gameid 253
+#sprite /graphics/vaettir/weapon/hatchet.png
+#theme "primitive"
+#enditem
+
+#newitem
+#id hammer
+#gameid 13
+#sprite /graphics/vaettir/weapon/hammer.png
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/vaettir/weapon/mace.png
+#theme "primitive"
+#enditem
+
+#newitem
+#id morningstar
+#gameid 15
+#sprite /graphics/vaettir/weapon/morningstar.png
+#theme "advanced"
+#enditem
+
+#newitem
+#id shortsword
+#gameid 6
+#sprite /graphics/vaettir/weapon/shortsword.png
+#enditem
+
+#newitem
+#id axe
+#gameid 66
+#sprite /graphics/vaettir/weapon/greataxe.png
+#tag "eliteversion greataxe"
+#needs offhand no_offhand
+#enditem
+
+#newitem
+#id greataxe
+#gameid 18
+#sprite /graphics/vaettir/weapon/greataxe.png
+#needs offhand no_offhand
+#basechance 0
+#enditem
+
+#newitem
+#id flail
+#gameid 16
+#sprite /graphics/vaettir/weapon/flail.png
+#needs offhand no_offhand
+#theme "advanced"
+#enditem

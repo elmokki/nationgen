@@ -1,0 +1,392 @@
+-- Vaetti helms
+
+#newitem
+#id sealhunter_hood
+#gameid 121
+#sprite /graphics/vaettir/helmet/fur_hood.png
+#tag "eliteversion sealhunter_hood_elite"
+#armor
+#theme "primitive"
+#basechance 2
+#minprot 7
+#maxprot 11
+#enditem
+
+#newitem
+#id vaetti_leathercap
+#gameid 120
+#sprite /graphics/vaettir/helmet/leather_cap.png
+#tag "eliteversion vaetti_leathercap_elite1"
+#tag "eliteversion vaetti_leathercap_elite2"
+#armor
+#basechance 5
+#enditem
+
+#newitem
+#id vaetti_reinforcedcap
+#gameid 119
+#sprite /graphics/vaettir/helmet/reinforced_cap.png
+#tag "eliteversion vaetti_reinforcedcap_elite"
+#armor
+#basechance 4
+#enditem
+
+#newitem
+#id vaetti_ironcap
+#gameid 20
+#sprite /graphics/vaettir/helmet/iron_cap.png
+#tag "eliteversion vaetti_ironcap_elite"
+#armor
+#basechance 3
+#enditem
+
+#newitem
+#id sealhunter_hood_elite
+#gameid 121
+#sprite /graphics/vaettir/helmet/fur_hood.png
+#recolormask /graphics/vaettir/helmet/fur_hood_recolormask.png
+#armor
+#theme "primitive"
+#theme "elite"
+#enditem
+
+#newitem
+#id vaetti_leathercap_elite1
+#gameid 120
+#sprite /graphics/vaettir/helmet/leather_cap.png
+#recolormask /graphics/vaettir/helmet/cap_trim_recolormask.png
+#armor
+#basechance 2
+#theme "elite"
+#enditem
+
+#newitem
+#id vaetti_leathercap_elite2
+#gameid 120
+#sprite /graphics/vaettir/helmet/leather_cap.png
+#recolormask /graphics/vaettir/helmet/cap_body_recolormask.png
+#armor
+#basechance 2
+#theme "elite"
+#enditem
+
+#newitem
+#id vaetti_reinforcedcap_elite
+#gameid 119
+#sprite /graphics/vaettir/helmet/reinforced_cap.png
+#recolormask /graphics/vaettir/helmet/cap_body_recolormask.png
+#armor
+#basechance 2
+#theme "elite"
+#enditem
+
+#newitem
+#id vaetti_ironcap_elite
+#gameid 20
+#sprite /graphics/vaettir/helmet/iron_cap.png
+#recolormask /graphics/vaettir/helmet/cap_trim_recolormask.png
+#armor
+#basechance 4
+#theme "elite"
+#enditem
+
+
+-- Hoburg helms
+
+#newitem
+#id fullhelmet
+#gameid 21
+#sprite /graphics/hoburg/helmet/fullhelmet.png
+#offsetx -1
+#offsety -6
+#armor
+#tag "eliteversion fullhelmet-elite"
+#theme "advanced"
+#basechance 0.25
+#minprot 15
+#enditem
+
+#newitem
+#id hoburg_halfhelmet
+#gameid 118
+#sprite /graphics/hoburg/helmet/halfhelmet.png
+#offsetx -1
+#offsety -6
+#tag "eliteversion hoburg_halfhelmet-elite"
+#armor
+#theme "advanced"
+#basechance 0.5
+#minprot 12
+#enditem
+
+#newitem
+#id ironcap
+#gameid 20
+#sprite /graphics/hoburg/helmet/ironcap.png
+#offsetx -1
+#offsety -6
+#theme "advanced"
+#tag "eliteversion ironcap-elite"
+#armor
+#enditem
+
+#newitem
+#id ironcap
+#gameid 20
+#sprite /graphics/hoburg/helmet/ironcap2.png
+#offsetx -1
+#offsety -6
+#theme "advanced"
+#tag "eliteversion ironcap-elite"
+#armor
+#enditem
+
+#newitem
+#id leathercap
+#gameid 120
+#sprite /graphics/hoburg/helmet/leathercap.png
+#offsetx -1
+#offsety -6
+#tag "eliteversion leathercap-elite"
+#armor
+#enditem
+
+#newitem
+#id leatherhat
+#gameid 120
+#sprite /graphics/hoburg/helmet/coe-leatherhat.png
+#offsetx -1
+#offsety -6
+#tag "eliteversion leatherhat-elite"
+#armor
+#enditem
+
+
+--- Elite hoburg helms
+
+#newitem
+#id fullhelmet-elite
+#gameid 21
+#sprite /graphics/hoburg/helmet/fullhelmet.png
+#recolormask /graphics/hoburg/helmet/featherrecolor.png
+#offsetx -1
+#offsety -6
+#armor
+#theme "advanced"
+#theme "elite"
+#basechance 0.25
+#minprot 15
+#enditem
+
+#newitem
+#id hoburg_halfhelmet-elite
+#gameid 118
+#sprite /graphics/hoburg/helmet/halfhelmet.png
+#recolormask /graphics/hoburg/helmet/featherrecolor.png
+#offsetx -1
+#offsety -6
+#armor
+#theme "elite"
+#theme "advanced"
+#basechance 0.5
+#minprot 12
+#enditem
+
+#newitem
+#id ironcap-elite
+#gameid 20
+#sprite /graphics/hoburg/helmet/ironcap.png
+#recolormask /graphics/hoburg/helmet/featherrecolor.png
+#offsetx -1
+#offsety -6
+#theme "advanced"
+#armor
+#theme "elite"
+#enditem
+
+
+#newitem
+#id leathercap-elite
+#gameid 120
+#sprite /graphics/hoburg/helmet/leathercap.png
+#recolormask /graphics/hoburg/helmet/featherrecolor.png
+#offsetx -1
+#offsety -6
+#armor
+#theme "elite"
+#enditem
+
+#newitem
+#id leatherhat-elite
+#gameid 120
+#sprite /graphics/hoburg/helmet/coe-leatherhat.png
+#recolormask /graphics/hoburg/helmet/featherrecolor.png
+#offsetx -1
+#offsety -6
+#armor
+#theme "elite"
+#enditem
+
+
+-- Standard helms
+
+#newitem
+#id halfhelmet
+#gameid 118
+#sprite /graphics/helmet/standard/halfhelmet.png
+#offsetx 1
+#offsety 9
+#armor
+#theme "advanced"
+#basechance 0.5
+#minprot 12
+#enditem
+
+#newitem -- Iron cap
+#id halfhelmet-ironcap
+#gameid 20
+#sprite /graphics/helmet/standard/halfhelmet.png
+#offsetx 1
+#offsety 9
+#armor
+#enditem
+
+#newitem
+#id savaran_halfhelmet
+#gameid 118
+#sprite /graphics/helmet/standard/halfhelmet5.png
+#tag "eliteversion savaran_halfhelmet_elite"
+#offsetx 1
+#offsety 8
+#armor
+#theme "advanced"
+#basechance 0.5
+#minprot 12
+#enditem
+
+#newitem
+#id savaran_halfhelmet_elite
+#gameid 118
+#sprite /graphics/helmet/standard/halfhelmet5.png
+#recolormask /graphics/helmet/standard/halfhelmet5_elite_recolormask.png
+#offsetx 1
+#offsety 8
+#theme "elite"
+#armor
+#theme "advanced"
+#basechance 0.5
+#minprot 12
+#enditem
+
+#newitem
+#id savaran_ironcap
+#gameid 20
+#sprite /graphics/helmet/standard/halfhelmet5.png
+#offsetx 1
+#offsety 8
+#armor
+#enditem
+
+#newitem
+#id cavalry_halfhelmet
+#gameid 118
+#sprite /graphics/helmet/standard/halfhelmet7.png
+#offsetx 1
+#offsety 8
+#armor
+#theme "advanced"
+#basechance 0.5
+#minprot 12
+#enditem
+
+#newitem
+#id cavalry_ironcap
+#gameid 20
+#sprite /graphics/helmet/standard/halfhelmet7.png
+#offsetx 1
+#offsety 8
+#armor
+#enditem
+
+#newitem
+#id reinforcedcap2
+#gameid 119
+#sprite /graphics/helmet/standard/reinforcedcap2.png
+#offsetx 1
+#offsety 8
+#armor
+#enditem
+
+#newitem
+#id reinforcedcap3a
+#basechance 0.5
+#gameid 119
+#sprite /graphics/helmet/standard/reinforcedcap3.png
+#recolormask /graphics/helmet/standard/reinforcedcap3_recolormask1.png
+#offsetx 1
+#offsety 9
+#armor
+#tag "eliteversion crestedhelm1a"
+#enditem
+
+#newitem
+#id reinforcedcap3b
+#basechance 0.5
+#gameid 119
+#sprite /graphics/helmet/standard/reinforcedcap3.png
+#recolormask /graphics/helmet/standard/reinforcedcap3_recolormask2.png
+#offsetx 1
+#offsety 9
+#armor
+#tag "eliteversion crestedhelm1b"
+#enditem
+
+#newitem
+#id crestedhelm1a
+#gameid 162
+#sprite /graphics/helmet/special/crestedhelmet.png
+#recolormask /graphics/helmet/special/crestedhelmet_recolormask1.png
+#offsetx 1
+#offsety 9
+#armor
+#theme "elite"
+#enditem
+
+#newitem
+#id crestedhelm1b
+#gameid 162
+#sprite /graphics/helmet/special/crestedhelmet.png
+#recolormask /graphics/helmet/special/crestedhelmet_recolormask2.png
+#offsetx 1
+#offsety 9
+#armor
+#theme "elite"
+#enditem
+
+#newitem -- Iron cap
+#id bearskin-elite
+#gameid 20
+#sprite /graphics/helmet/special/bearskin.png
+#offsetx 1
+#offsety 9
+#armor
+#theme "primitive"
+#theme "elite"
+#tag "name infantry boarkin"
+#tag "prefix infantry boar"
+#basechance 2
+#enditem
+
+#newitem -- Iron cap
+#id wolfskin-elite
+#gameid 20
+#sprite /graphics/helmet/special/wolfskin.png
+#offsetx 1
+#offsety 9
+#armor
+#theme "primitive"
+#theme "elite"
+#tag "name infantry wolfkin"
+#tag "prefix infantry wolf"
+#basechance 4
+#enditem

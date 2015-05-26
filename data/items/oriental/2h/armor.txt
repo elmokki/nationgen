@@ -16,6 +16,29 @@
 #name "samurai armor"
 #gameid 129
 #sprite /graphics/tengu/armor/2h/samuraiarmor.png
+#needs spaulder normal
+#tag "eliteversion 'samurai armor elite'"
+#tag "eliteversion 'samurai armor elite2'"
+#armor
+#enditem
+
+#newitem
+#name "samurai armor elite"
+#gameid 129
+#sprite /graphics/tengu/armor/2h/samuraiarmor_elite.png
+#recolormask /graphics/tengu/armor/2h/samuraiarmor_elite_recolormask.png
+#needs spaulder normal
+#theme "elite"
+#armor
+#enditem
+
+#newitem
+#name "samurai armor elite2"
+#gameid 129
+#sprite /graphics/tengu/armor/2h/samuraiarmor_elite2.png
+#recolormask /graphics/tengu/armor/2h/samuraiarmor_elite2_recolormask.png
+#needs spaulder normal
+#theme "elite"
 #armor
 #enditem
 
@@ -23,6 +46,29 @@
 #name "heavy samurai armor"
 #gameid 130
 #sprite /graphics/tengu/armor/2h/heavysamuraiarmor.png
+#needs spaulder heavy
+#tag "eliteversion 'heavy samurai armor elite'"
+#tag "eliteversion 'heavy samurai armor elite2'"
+#armor
+#enditem
+
+#newitem
+#name "heavy samurai armor elite"
+#gameid 130
+#sprite /graphics/tengu/armor/2h/heavysamuraiarmor_elite.png
+#recolormask /graphics/tengu/armor/2h/samuraiarmor_elite_recolormask.png
+#needs spaulder heavy
+#theme "elite"
+#armor
+#enditem
+
+#newitem
+#name "heavy samurai armor elite2"
+#gameid 130
+#sprite /graphics/tengu/armor/2h/heavysamuraiarmor_elite2.png
+#recolormask /graphics/tengu/armor/2h/heavysamuraiarmor_elite2_recolormask.png
+#needs spaulder heavy
+#theme "elite"
 #armor
 #enditem
 
@@ -50,6 +96,14 @@
 #gameid 7
 #sprite /graphics/tengu/armor/2h/scale.png
 #recolormask /graphics/tengu/armor/2h/tc_recolormask.png
+#armor
+#enditem
+
+#newitem
+#name "ashigaru armor"
+#gameid 128
+#sprite /graphics/tengu/armor/2h/ashigaruarmor.png
+#recolormask /graphics/tengu/armor/2h/ashigaruarmor_recolormask.png
 #armor
 #enditem
 

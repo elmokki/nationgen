@@ -168,18 +168,22 @@
 --- Japanese
 
 #newitem
-#id 20
+#id samurai_armor
 #gameid 129
 #sprite /graphics/bodyarmor/crossbow/samuraiarmor2.png
 #recolormask /graphics/bodyarmor/crossbow/samuraiarmor2_recolormask.png
+#theme "oriental"
+#basechance 0.5
 #armor
 #enditem
 
 #newitem -- Ashigaru armor
-#id 21
+#id ashigaru_armor
 #gameid 128
-#sprite /graphics/bodyarmor/crossbow/samuraiarmor2.png
-#recolormask /graphics/bodyarmor/crossbow/samuraiarmor2_recolormask.png
+#sprite /graphics/bodyarmor/crossbow/ashigaruarmor.png
+#recolormask /graphics/bodyarmor/crossbow/ashigaruarmor_recolormask.png
+#theme "oriental"
+#basechance 0.5
 #armor
 #enditem
 

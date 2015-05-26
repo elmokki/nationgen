@@ -1,0 +1,22 @@
+
+--- Pants belonging to an armor set should be given id of the lowest prot armor they go with if you want to avoid naked people with plate pants.
+
+#newitem
+#id naked
+#gameid -1
+#sprite /graphics/agarthan/feet/olmspawn.png
+#enditem
+
+#newitem
+#id bronzepants
+#gameid -1
+#sprite /graphics/agarthan/feet/olmspawn_bronze.png
+#basechance 0
+#enditem
+
+#newitem
+#id steelpants
+#gameid -1
+#sprite /graphics/agarthan/feet/olmspawn_steel.png
+#basechance 0
+#enditem

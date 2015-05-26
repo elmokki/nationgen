@@ -54,6 +54,7 @@ public class Unit {
 	public List<String> tags = new ArrayList<String>();
 	public List<Filter> appliedFilters = new ArrayList<Filter>();
 	private boolean polished = false;
+	public boolean invariantMonster = false;  // Is the unit a monster that must be used as-is instead of copying? (E.g., hydras)
 	
 	public Unit(NationGen nationGen, Race race, Pose pose)
 	{
@@ -1074,6 +1075,18 @@ public class Unit {
 				value = Integer.parseInt(c.args.get(0));
 		}
 		return value;
+	}
+	
+	// 20150522EA : my OOP prof back in undergrad would probably shoot me for this method...
+	public void setCommandValue(String command, int argIndex, String newValue)
+	{
+		for(int x = 0; x < this.commands.size(); x++)
+		{
+			if(this.commands.get(x).toString().startsWith("#descr") && this.commands.get(x).args.size() > argIndex)
+			{
+				this.commands.get(x).args.set(argIndex, newValue);
+			}
+		}
 	}
 	
 	private void writeCommands(PrintWriter tw)

@@ -1,0 +1,20 @@
+--- Used to resolve clipping issues with samurai armor and cloaks
+
+#newitem
+#id no_overlay
+#gameid -1
+#enditem
+
+#newitem
+#id normal
+#gameid -1
+#sprite /graphics/tengu/armor/2h/overlay_samuraiarmor.png
+#armor
+#enditem
+
+#newitem
+#id heavy
+#gameid -1
+#sprite /graphics/tengu/armor/2h/overlay_heavysamuraiarmor.png
+#armor
+#enditem

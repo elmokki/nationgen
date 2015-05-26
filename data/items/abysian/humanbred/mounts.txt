@@ -1,0 +1,384 @@
+--- Abysian mounts
+
+
+#newitem
+#name "scorpion"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 15
+#offsety 42
+#define "#size 5"
+#define "#mapmove 2"
+#define "#ap 8"
+#define "#mounted"
+#define "#weapon nostr_pincer"
+
+#define "#weapon nostr_scorpiontail"
+#define "#secondshape scorpionmount"
+#define "#gcost +50"
+#define "#ressize 2"
+#define "#enc 3"
+#define "#rcost +5"
+#theme "animal scorpion"
+#theme "heavy"
+#description "Leaves a giant scorpion behind when the rider dies"
+#tag "guaranteedprefix scorpion"
+
+#tag "minprot 10"
+#tag "maxprot 100"
+#enditem
+
+
+#newitem
+#name "fossil"
+#gameid -1
+#sprite /graphics/abysian/mounts/fossil.png
+#armor
+#needs overlay fossil_overlay
+#offsetx 34
+#offsety 31
+#define "#size 4"
+#define "#mapmove 3"
+#define "#ap 8"
+#define "#mounted"
+
+#define "#prot 5"
+
+#define "#okundeadleader"
+#define "#weapon nostr_fossilsword"
+#define "#secondshape fossilmount"
+#define "#gcost +50"
+#define "#ressize 2"
+#define "#enc 5"
+#define "#rcost +5"
+#theme "animal fossil"
+#theme "heavy"
+#description "Leaves a fossilized giant behind when the rider dies"
+#tag "guaranteedprefix fossil"
+
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 0.25
+#enditem
+
+#newitem
+#name "gloso"
+#gameid -1
+#sprite /graphics/mounts/standard/gloso.png
+#armor
+#offsetx -2
+#offsety 2
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon nostr_poisongore"
+#define "#secondtmpshape gloso"
+#define "#gcost +40"
+#define "#ressize 2"
+#define "#enc 3"
+#theme "animal gloso"
+#description "Leaves a burning black sow behind when the rider dies"
+#basechance 0.25
+#tag "minprot 0"
+#tag "maxprot 15"
+#enditem
+
+#newitem
+#name "nightmare"
+#gameid -1
+#sprite /graphics/mounts/standard/nightmare.png
+#armor
+#offsety -2
+#define "#size 3"
+#define "#mapmove 4"
+#define "#ap 25"
+#define "#mounted"
+#define "#weapon 615 --- Heavy Hoof"
+#define "#secondtmpshape nightmare"
+#define "#gcost +40"
+#define "#ressize 2"
+#define "#enc 4"
+#theme "specialmount"
+#theme "animal nightmare"
+#description "Leaves a nightmare behind when the rider dies"
+#basechance 0.5
+#tag "minprot 10"
+#enditem
+
+--- Exotic mounts
+
+#newitem
+#name "lion"
+#gameid -1
+#sprite /graphics/mounts/standard/lion.png
+#armor
+#define "#size 4"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape lionmount"
+#define "#gcost +35"
+#define "#ressize 2"
+#define "#enc 4"
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#offsety 5
+#offsetx -1
+#theme "animal lion"
+#tag "guaranteedprefix lion"
+#theme "light"
+#tag "maxprot 12"
+#basechance 0.25
+#enditem
+
+#newitem
+#name "dire wolf"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#needs overlay direwolf1_overlay
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 22"
+#define "#mounted"
+#define "#weapon 237 --- bite"
+#define "#secondtmpshape direwolf1mount"
+#define "#gcost +25"
+#define "#ressize 2"
+#define "#enc 4"
+#theme "animal wolf"
+#theme "light"
+#tag "maxprot 12"
+#tag "guaranteedprefix wolf"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#offsety 2
+#offsetx -7
+#basechance 0.25
+#enditem
+
+#newitem
+#name "gryphon"
+#gameid -1
+#sprite /graphics/amazon/mounts/gryphon.png
+#armor
+#offsetx 23
+#offsety 64
+#needs overlay gryphon_overlay
+#define "#size 5"
+#define "#mapmove 2"
+#define "#ap 15"
+#define "#mounted"
+#define "#flying"
+#define "#weapon 236 -- Claw"
+#define "#weapon 237 -- Bite"
+#define "#secondtmpshape gryphonmount"
+#define "#gcost +100"
+#define "#ressize 2"
+#define "#enc 4"
+#description "If the rider dies, the gryphon will carry on fighting until the end of the battle."
+#theme "flying"
+#theme "specialmount"
+#theme "animal gryphon"
+#tag "guaranteedprefix gryphon"
+#basechance 0.125
+#enditem
+
+#newitem
+#name "leogryph"
+#gameid -1
+#sprite /graphics/amazon/mounts/leogryph.png
+#armor
+#define "#size 4"
+#define "#mapmove 2"
+#define "#ap 20"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape leogryphmount"
+#define "#gcost +40"
+#define "#ressize 2"
+#define "#enc 4"¨
+#description "If the rider dies, the leogryph will carry on fighting until the end of the battle."
+#basechance 0.125
+#offsety 6
+#offsetx -4
+#theme "specialmount"
+#theme "animal leogryph"
+#tag "guaranteedprefix leogryph"
+#enditem
+
+
+--- Demonbred horses
+
+#newitem
+#name "armored demonbred horse"
+#basechance 1
+#gameid -1
+#sprite /graphics/mounts/standard/demonbred_barded.png
+#armor
+#needs overlay demonbred_barded
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 22"
+#define "#mounted"
+#define "#weapon 615 --- Heavy Hoof"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +5"
+#theme "animal horse"
+#theme "heavy"
+#tag "minprot 14"
+#define "#gcost +25"
+#tag "name commander 'knight'"
+#tag "name mounted knight"
+#enditem
+
+#newitem
+#basechance 1
+#name "cataphract demonbred horse"
+#gameid -1
+#sprite /graphics/mounts/standard/demonbred_cataphract.png
+#recolormask /graphics/mounts/standard/demonbred_cataphract_recolormask.png
+#armor
+#offsetx -3
+#needs overlay demonbred_cataphract
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 24"
+#define "#mounted"
+#define "#weapon 615 --- Heavy Hoof"
+#define "#gcost +25"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +5"
+#theme "animal horse"
+#theme "heavy"
+#tag "minprot 12"
+#tag "name commander 'cataphract commander'"
+#tag "name mounted cataphract"
+#enditem
+
+
+--- Ordinary horses
+
+#newitem
+#basechance 0.25
+#name "brown horse"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#armor
+#needs overlay 1
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 24"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#enc 3"
+#define "#gcost +15"
+#theme "animal horse"
+#theme "light"
+#tag "maxprot 11"
+#epicness 0.25
+#enditem
+
+#newitem
+#name "armored horse"
+#basechance 1
+#gameid -1
+#sprite /graphics/mounts/standard/armoredhorse1.png
+#armor
+#needs overlay 2
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 20"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +5"
+#theme "animal horse"
+#theme "heavy"
+#tag "minprot 14"
+#define "#gcost +25"
+#epicness 0.25
+#tag "name commander 'knight'"
+#tag "name mounted knight"
+#enditem
+
+#newitem
+#basechance 0.75
+#name "armored horse 2"
+#gameid -1
+#sprite /graphics/mounts/standard/armoredhorse2.png
+#armor
+#needs overlay armoredhorse2overlay
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 20"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +5"
+#theme "animal horse"
+#theme "heavy"
+#tag "minprot 12"
+#tag "maxprot 16"
+#define "#gcost +20"
+#epicness 0.25
+#tag "name commander 'knight'"
+#tag "name mounted knight"
+#enditem
+
+#newitem
+#basechance 0.5
+#name "cataphract horse"
+#gameid -1
+#sprite /graphics/mounts/standard/catapracthorse1.png
+#armor
+#offsetx -3
+#needs overlay 4
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 22"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#gcost +25"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +5"
+#theme "animal horse"
+#theme "heavy"
+#tag "minprot 12"
+#epicness 0.25
+#tag "name commander 'cataphract commander'"
+#tag "name mounted cataphract"
+#enditem
+
+#newitem
+#basechance 0.5
+#name "light cataphract horse"
+#gameid -1
+#sprite /graphics/mounts/standard/lightcatapract1.png
+#armor
+#offsetx -3
+#needs overlay 5
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 24"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#gcost +20"
+#define "#ressize 2"
+#define "#enc 3"
+#theme "animal horse"
+#tag "minprot 10"
+#tag "maxprot 14"
+#tag "name commander 'cataphract commander'"
+#tag "name mounted cataphract"
+#epicness 0.25
+#enditem

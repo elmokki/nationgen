@@ -1,10 +1,29 @@
+version 0.5.0.09E (24th of May 2015)
+- basic, ugly, sloppy temporary word-soup/madlib version of mundane commander and priest descriptions
+- added slave-keeping variants of herbivore lizards, Abysians, Vanir, and Avvim
+- fixed error with #hasprimaryrace chanceincs not processing
+- commander generation now correctly considers #secondaryracecommand(_conditional) when considering existing troops for special leadership types
+- added Avvim, Vaettir, "advanced" humans, and Humanbred Abysians as full races [TODO: finish advanced human nation names; source changes involving mage hair, #needs tags, and non-standard monster images]
+- Abysian graphics updated; distinct armor graphics added
+- added dire wolves as standard mounts
+- added nightmares and glosos as lower-probability Abysian mounts
+- added Olms as monsters for subterranean races
+- Olmspawn plus a couple of new weapons, shields, and robes for Agarthans
+- added hydra hatchlings as monsters; they show up half the time instead of full-grown hydras
+- added "#invariantid <id>" tag to monster definitions to allow for existing monster ids to be recruited by NG nations - this is primarily to fix the "hydra problem"
+- lizard chariots now have a (str10) bite; added two-lizard Sobek chariots
+- some new Jomon/TC armor and helmets (including generic-human ashiguri armor graphics); tweaked 2h samurai armor to work better with cloaks
+- some new shields, helmets, and cloaks for the "generic" size-2 itemsets
+- deprecated references to customweapon id "bardiche" in favor of standard weapon id 257 (Bardiche); this is effectively a nerf
+- some filter fixes, additions
+- fixed RGB -> rbg bug in SpriteGen
+
 version 0.5.0.08E (26th of March 2015)
 - better support for mounted mages
 - added support for mounted scouts
 - temporarily disabled T2 mounted casters for Sidhe; this is a temporary workaround for the overlay issue
 - data fixes for Sidhe
 - re-enabled Sidhe
-
 version 0.5.0.07E (16th of March 2015)
 - two more cloaks
 - started very restrained code cleanup based on mmilleder's list

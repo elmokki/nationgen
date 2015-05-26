@@ -1,0 +1,39 @@
+#newitem
+#name "crossbow"
+#gameid 25
+#sprite /graphics/advancedhuman/weapons/crossbow.png
+#tag "name Crossbowman"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "steel crossbow"
+#gameid steel_crossbow
+#sprite /graphics/weapon/crossbow/steelcrossbow.png
+#offsetx 3
+#offsety 4
+#tag "name Crossbowman"
+#theme "advanced"
+#basechance 0.75
+#enditem
+
+#newitem
+#name "arbalest"
+#gameid 26
+#sprite /graphics/advancedhuman/weapons/arbalest.png
+#tag "name 'Heavy Crossbowman'"
+#theme "advanced"
+#basechance 0.75
+#enditem
+
+#newitem
+#name "light crossbow"
+#gameid light_crossbow
+#sprite /graphics/weapon/crossbow/lightcrossbow.png
+#offsetx 3
+#offsety 4
+#tag "name Crossbowman"
+#theme "advanced"
+#basechance 0.75
+#define "#gcost +2"
+#enditem

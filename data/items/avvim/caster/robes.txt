@@ -1,0 +1,606 @@
+-- Furs
+
+#newitem
+#basechance 0.2
+#id half-furs
+#gameid 44
+#sprite /graphics/avvim/armor/robes/furs1.png
+#armor
+#tag "tier 1"
+#theme "primitive"
+#enditem
+
+#newitem
+#basechance 0.2
+#id full_furs
+#gameid 44
+#sprite /graphics/avvim/armor/robes/furs2.png
+#armor
+#tag "tier 1"
+#theme "primitive"
+#enditem
+
+-- Brown robes 
+
+#newitem
+#id brown_plain
+#gameid 158
+#sprite /graphics/avvim/armor/robes/brown_plainbelt.png
+#recolormask /graphics/avvim/armor/robes/darkbelt_recolormask.png
+#tag "eliteversion brown_fancy"
+#tag "eliteversion medium_fancy"
+#tag "eliteversion twotone_brown"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id brown_fancy
+#gameid 158
+#sprite /graphics/avvim/armor/robes/brown_fancybelt.png
+#recolormask /graphics/avvim/armor/robes/lightbelt_recolormask.png
+#tag "eliteversion brown_ornate"
+#tag "eliteversion medium_ornate"
+#tag "eliteversion twotone_brown"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id brown_ornate
+#gameid 158
+#sprite /graphics/avvim/armor/robes/brown_ornate.png
+#recolormask /graphics/avvim/armor/robes/lightbelt_recolormask.png
+#tag "eliteversion medium_ornate"
+#tag "eliteversion twotone_brown_ornate"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+
+-- White Robes
+
+#newitem
+#id white_plain
+#gameid 158
+#sprite /graphics/avvim/armor/robes/white_plainbelt.png
+#recolormask /graphics/avvim/armor/robes/lightbelt_recolormask.png
+#tag "eliteversion white_fancy"
+#tag "eliteversion light_plain"
+#tag "eliteversion light_fancy"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id white_fancy
+#gameid 158
+#sprite /graphics/avvim/armor/robes/white_fancybelt.png
+#recolormask /graphics/avvim/armor/robes/darkbelt_recolormask.png
+#tag "eliteversion white_ornate"
+#tag "eliteversion light_ornate"
+#tag "eliteversion twotone_light_whitesleeve"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id white_ornate
+#gameid 158
+#sprite /graphics/avvim/armor/robes/white_ornate.png
+#recolormask /graphics/avvim/armor/robes/darkbelt_recolormask.png
+#tag "eliteversion light_ornate"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+
+-- Gray Robes
+
+#newitem
+#id gray_plain
+#gameid 158
+#sprite /graphics/avvim/armor/robes/gray_plainbelt.png
+#recolormask /graphics/avvim/armor/robes/lightbelt_recolormask.png
+#tag "eliteversion gray_fancy"
+#tag "eliteversion medium_plain"
+#tag "eliteversion medium_fancy"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id gray_fancy
+#gameid 158
+#sprite /graphics/avvim/armor/robes/gray_fancybelt.png
+#recolormask /graphics/avvim/armor/robes/darkbelt_recolormask.png
+#tag "eliteversion gray_ornate"
+#tag "eliteversion medium_ornate"
+#tag "eliteversion twotone_medium_graysleeve"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id gray_ornate
+#gameid 158
+#sprite /graphics/avvim/armor/robes/gray_ornate.png
+#recolormask /graphics/avvim/armor/robes/darkbelt_recolormask.png
+#tag "eliteversion medium_ornate"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+
+-- Black Robes
+
+#newitem
+#id black_plain
+#gameid 158
+#sprite /graphics/avvim/armor/robes/black_plainbelt.png
+#recolormask /graphics/avvim/armor/robes/darkbelt_recolormask.png
+#tag "eliteversion black_fancy"
+#tag "eliteversion dark_plain"
+#tag "eliteversion dark_fancy"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id black_fancy
+#gameid 158
+#sprite /graphics/avvim/armor/robes/black_fancybelt.png
+#recolormask /graphics/avvim/armor/robes/lightbelt_recolormask.png
+#tag "eliteversion black_ornate"
+#tag "eliteversion dark_ornate"
+#tag "eliteversion twotone_dark_blacksleeve"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id black_ornate
+#gameid 158
+#sprite /graphics/avvim/armor/robes/black_ornate.png
+#recolormask /graphics/avvim/armor/robes/lightbelt_recolormask.png
+#tag "eliteversion light_ornate"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+
+-- Light Robes
+
+#newitem
+#id light_plain
+#gameid 158
+#sprite /graphics/avvim/armor/robes/white_plainbelt.png
+#recolormask /graphics/avvim/armor/robes/monochrome_recolormask1.png
+#tag "eliteversion light_fancy"
+#tag "eliteversion medium_plain"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id light_fancy
+#gameid 158
+#sprite /graphics/avvim/armor/robes/white_fancybelt.png
+#recolormask /graphics/avvim/armor/robes/monochrome_recolormask1.png
+#tag "eliteversion light_ornate"
+#tag "eliteversion medium_ornate"
+#tag "eliteversion twotone_light_redbelt"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id light_ornate
+#gameid 158
+#sprite /graphics/avvim/armor/robes/white_ornate.png
+#recolormask /graphics/avvim/armor/robes/monochrome_ornate_recolormask1.png
+#armor
+#tag "tier 3"
+#enditem
+
+
+-- Medium Robes
+
+#newitem
+#id medium_plain
+#gameid 158
+#sprite /graphics/avvim/armor/robes/gray_plainbelt.png
+#recolormask /graphics/avvim/armor/robes/monochrome_recolormask2.png
+#tag "eliteversion medium_fancy"
+#tag "eliteversion dark_plain"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id medium_fancy
+#gameid 158
+#sprite /graphics/avvim/armor/robes/gray_fancybelt.png
+#recolormask /graphics/avvim/armor/robes/monochrome_recolormask2.png
+#tag "eliteversion dark_ornate"
+#tag "eliteversion medium_ornate"
+#tag "eliteversion twotone_medium_redbelt"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id medium_ornate
+#gameid 158
+#sprite /graphics/avvim/armor/robes/gray_ornate.png
+#recolormask /graphics/avvim/armor/robes/monochrome_ornate_recolormask2.png
+#armor
+#tag "tier 3"
+#enditem
+
+
+-- Dark Robes
+
+#newitem
+#id dark_plain
+#gameid 158
+#sprite /graphics/avvim/armor/robes/black_plainbelt.png
+#recolormask /graphics/avvim/armor/robes/monochrome_recolormask3.png
+#tag "eliteversion dark_fancy"
+#tag "eliteversion light_plain"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id dark_fancy
+#gameid 158
+#sprite /graphics/avvim/armor/robes/black_fancybelt.png
+#recolormask /graphics/avvim/armor/robes/monochrome_recolormask3.png
+#tag "eliteversion light_ornate"
+#tag "eliteversion dark_ornate"
+#tag "eliteversion twotone_dark_redbelt"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id dark_ornate
+#gameid 158
+#sprite /graphics/avvim/armor/robes/black_ornate.png
+#recolormask /graphics/avvim/armor/robes/monochrome_ornate_recolormask3.png
+#armor
+#tag "tier 3"
+#enditem
+
+-- Twotone Light Robes
+
+#newitem
+#id twotone_light_whitesleeve
+#gameid 158
+#sprite /graphics/avvim/armor/robes/twotone_white.png
+#recolormask /graphics/avvim/armor/robes/twotone_light_recolormask1.png
+#tag "eliteversion twotone_light_redbelt"
+#tag "eliteversion twotone_medium_graysleeve"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id twotone_light_redbelt
+#gameid 158
+#sprite /graphics/avvim/armor/robes/twotone_white.png
+#recolormask /graphics/avvim/armor/robes/twotone_light_recolormask2.png
+#tag "eliteversion twotone_light_full"
+#tag "eliteversion twotone_medium_redbelt"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id twotone_light_full
+#gameid 158
+#sprite /graphics/avvim/armor/robes/twotone_white.png
+#recolormask /graphics/avvim/armor/robes/twotone_light_recolormask3.png
+#armor
+#tag "tier 3"
+#enditem
+
+-- Twotone Medium Robes
+
+#newitem
+#id twotone_medium_graysleeve
+#gameid 158
+#sprite /graphics/avvim/armor/robes/twotone_gray.png
+#recolormask /graphics/avvim/armor/robes/twotone_medium_recolormask1.png
+#tag "eliteversion twotone_medium_redbelt"
+#tag "eliteversion twotone_dark_blacksleeve"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id twotone_medium_redbelt
+#gameid 158
+#sprite /graphics/avvim/armor/robes/twotone_gray.png
+#recolormask /graphics/avvim/armor/robes/twotone_medium_recolormask2.png
+#tag "eliteversion twotone_medium_full"
+#tag "eliteversion twotone_dark_redbelt"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id twotone_medium_full
+#gameid 158
+#sprite /graphics/avvim/armor/robes/twotone_gray.png
+#recolormask /graphics/avvim/armor/robes/twotone_medium_recolormask3.png
+#armor
+#tag "tier 3"
+#enditem
+
+-- Twotone Dark Robes
+
+#newitem
+#id twotone_dark_blacksleeve
+#gameid 158
+#sprite /graphics/avvim/armor/robes/twotone_black.png
+#recolormask /graphics/avvim/armor/robes/twotone_dark_recolormask1.png
+#tag "eliteversion twotone_dark_redbelt"
+#tag "eliteversion twotone_light_blacksleeve"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id twotone_dark_redbelt
+#gameid 158
+#sprite /graphics/avvim/armor/robes/twotone_black.png
+#recolormask /graphics/avvim/armor/robes/twotone_dark_recolormask2.png
+#tag "eliteversion twotone_dark_full"
+#tag "eliteversion twotone_light_redbelt"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id twotone_dark_full
+#gameid 158
+#sprite /graphics/avvim/armor/robes/twotone_black.png
+#recolormask /graphics/avvim/armor/robes/twotone_dark_recolormask3.png
+#armor
+#tag "tier 3"
+#enditem
+
+-- Misc Twotone Robes
+
+#newitem
+#id twotone_brown
+#gameid 158
+#sprite /graphics/avvim/armor/robes/brown_fancybelt.png
+#recolormask /graphics/avvim/armor/robes/sleeves_medium_recolormask.png
+#tag "eliteversion twotone_brown_ornate"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id twotone_brown_ornate
+#gameid 158
+#sprite /graphics/avvim/armor/robes/brown_ornate.png
+#recolormask /graphics/avvim/armor/robes/sleeves_medium_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id twotone_lightsleeve_white
+#gameid 158
+#sprite /graphics/avvim/armor/robes/white_fancybelt.png
+#recolormask /graphics/avvim/armor/robes/sleeves_light_recolormask.png
+#tag "eliteversion twotone_lightsleeve_ornate"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id twotone_lightsleeve_ornate
+#gameid 158
+#sprite /graphics/avvim/armor/robes/white_ornate.png
+#recolormask /graphics/avvim/armor/robes/sleeves_light_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id twotone_mediumsleeve_gray
+#gameid 158
+#sprite /graphics/avvim/armor/robes/gray_fancybelt.png
+#recolormask /graphics/avvim/armor/robes/sleeves_medium_recolormask.png
+#tag "eliteversion twotone_mediumsleeve_ornate"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id twotone_mediumsleeve_ornate
+#gameid 158
+#sprite /graphics/avvim/armor/robes/gray_ornate.png
+#recolormask /graphics/avvim/armor/robes/sleeves_medium_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id twotone_darksleeve_black
+#gameid 158
+#sprite /graphics/avvim/armor/robes/black_fancybelt.png
+#recolormask /graphics/avvim/armor/robes/sleeves_dark_recolormask.png
+#tag "eliteversion twotone_darksleeve_ornate"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id twotone_darksleeve_ornate
+#gameid 158
+#sprite /graphics/avvim/armor/robes/black_ornate.png
+#recolormask /graphics/avvim/armor/robes/sleeves_dark_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+
+-- Imperial Robes
+
+#newitem
+#id imperial_simple
+#gameid 159
+#sprite /graphics/avvim/armor/robes/imperial1.png
+#tag "eliteversion imperial_simple_greybottom"
+#tag "eliteversion imperial_simple_greytop"
+#tag "eliteversion imperial_grey"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id imperial_simple_greybottom
+#gameid 159
+#sprite /graphics/avvim/armor/robes/imperial1.png
+#recolormask /graphics/avvim/armor/robes/imperial1_recolormask1.png
+#tag "eliteversion imperial_simple_bright"
+#tag "eliteversion imperial_simple_dull"
+#tag "eliteversion imperial_bright_greybottom"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id imperial_simple_greytop
+#gameid 159
+#sprite /graphics/avvim/armor/robes/imperial1.png
+#recolormask /graphics/avvim/armor/robes/imperial1_recolormask2.png
+#tag "eliteversion imperial_simple_bright"
+#tag "eliteversion imperial_simple_dull"
+#tag "eliteversion imperial_bright_greytop"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id imperial_simple_bright
+#gameid 159
+#sprite /graphics/avvim/armor/robes/imperial1.png
+#recolormask self
+#tag "eliteversion imperial_bright_twotone"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id imperial_simple_dull
+#gameid 159
+#sprite /graphics/avvim/armor/robes/imperial1.png
+#recolormask /graphics/avvim/armor/robes/imperial1_recolormask3.png
+#tag "eliteversion imperial_dull_twotone"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id imperial_grey
+#gameid 159
+#sprite /graphics/avvim/armor/robes/imperial2.png
+#tag "eliteversion imperial_bright_greybottom"
+#tag "eliteversion imperial_bright_greytop"
+#tag "eliteversion imperial_dull_greybottom"
+#tag "eliteversion imperial_dull_greytop"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id imperial_bright_greybottom
+#gameid 159
+#sprite /graphics/avvim/armor/robes/imperial2.png
+#recolormask /graphics/avvim/armor/robes/imperial2_recolormask1.png
+#tag "eliteversion imperial_bright_twotone"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id imperial_bright_greytop
+#gameid 159
+#sprite /graphics/avvim/armor/robes/imperial2.png
+#recolormask /graphics/avvim/armor/robes/imperial2_recolormask2.png
+#tag "eliteversion imperial_bright_twotone"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id imperial_dull_greybottom
+#gameid 159
+#sprite /graphics/avvim/armor/robes/imperial2.png
+#recolormask /graphics/avvim/armor/robes/imperial2_recolormask4.png
+#tag "eliteversion imperial_bright_twotone"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id imperial_dull_greytop
+#gameid 159
+#sprite /graphics/avvim/armor/robes/imperial2.png
+#recolormask /graphics/avvim/armor/robes/imperial2_recolormask5.png
+#tag "eliteversion imperial_bright_twotone"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id imperial_bright_twotone
+#gameid 159
+#sprite /graphics/avvim/armor/robes/imperial2.png
+#recolormask /graphics/avvim/armor/robes/imperial2_recolormask3.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id imperial_dull_twotone
+#gameid 159
+#sprite /graphics/avvim/armor/robes/imperial2.png
+#recolormask /graphics/avvim/armor/robes/imperial2_recolormask6.png
+#armor
+#tag "tier 3"
+#enditem

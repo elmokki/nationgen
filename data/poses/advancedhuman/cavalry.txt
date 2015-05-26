@@ -3,68 +3,27 @@
 #newpose
 #role "mounted"
 #sacred
-#basechance 0.25
+#basechance 0.375
 
-#renderorder "shadow cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow  weapon cloakb mount basesprite shirt legs armor cloakf bonusweapon offhandw hands hair helmet offhanda overlay"
 
-#load basesprite /data/items/human/normal/humanbases.txt offsetx 5 offsety -15
+#load basesprite /data/items/advancedhuman/mounted/bases.txt 1 -4
 #load mount /data/items/human/human_mounted/humanmounts.txt
-
-#load hands /data/items/human/normal/humanhands.txt offsetx 5 offsety -15
-
-#load cloakf /data/items/human/normal/humancloakf.txt offsetx 5 offsety -15
-#load cloakb /data/items/human/normal/humancloakb.txt offsetx 5 offsety -15
-#load shirt /data/items/human/normal/humanshirt.txt offsetx 5 offsety -15
-#load hair /data/items/human/normal/humanhair.txt offsetx 5 offsety -15
-
-#load armor /data/items/human/normal/humanarmor.txt offsetx 5 offsety -15
-#load armor /data/items/human/normal/naked.txt offsetx 5 offsety -15
-#load helmet /data/items/human/normal/humanhelmet.txt offsetx 5 offsety -15
-#load legs /data/items/human/human_mounted/humanlegs.txt offsetx 4 offsety -15
-
-#load weapon /data/items/human/human_mounted/humanweapon.txt offsetx 5 offsety -15
-#load weapon /data/items/human/human_mounted/cavalryweapons.txt offsetx 5 offsety -15
-#load bonusweapon /data/items/human/normal/humanbonusranged.txt offsetx 5 offsety -15
-#load lanceslot /data/items/human/human_mounted/lance.txt offsetx 5 offsety -15
-
-#load offhand /data/items/human/normal/shields.txt offsetx 5 offsety -15
-
-
-#load overlay /data/items/human/human_mounted/mountedoverlay.txt
-
-#writeslot lanceslot
-#endpose
-
-------- Low mounted
-
-#newpose
-#basechance 0.125
-#role "mounted"
-#sacred
-
-#load basesprite /data/items/human/normal/humanbases.txt offsetx 5 offsety -15
 #load mount /data/items/human/human_mounted/humanmounts_low.txt
 
-#load hands /data/items/human/normal/humanhands.txt offsetx 5 offsety -15
+#load cloakf /data/items/advancedhuman/mounted/cloakf.txt 1 -3
+#load cloakb /data/items/advancedhuman/mounted/cloakb.txt 1 -3
+#load hair /data/items/advancedhuman/normal/hair.txt 6 -16
 
-#load cloakf /data/items/human/normal/humancloakf.txt offsetx 5 offsety -15
-#load cloakb /data/items/human/normal/humancloakb.txt offsetx 5 offsety -15
-#load shirt /data/items/human/normal/humanshirt.txt offsetx 5 offsety -15
-#load hair /data/items/human/normal/humanhair.txt offsetx 5 offsety -15
+#load armor /data/items/advancedhuman/mounted/armor.txt 1 -4
+#load helmet /data/items/advancedhuman/normal/helmet.txt 4 -16
 
-#load armor /data/items/human/normal/humanarmor.txt offsetx 5 offsety -15
-#load armor /data/items/human/normal/naked.txt offsetx 5 offsety -15
-#load helmet /data/items/human/normal/humanhelmet.txt offsetx 5 offsety -15
-#load legs /data/items/human/human_mounted/humanlegs.txt offsetx 5 offsety -18
+#load weapon /data/items/advancedhuman/mounted/weapon.txt 4 -21
+#load weapon /data/items/human/human_mounted/cavalryweapons.txt  5 -13
+#load bonusweapon /data/items/advancedhuman/mounted/bonusranged.txt 4 -16
+#load lanceslot /data/items/human/human_mounted/lance.txt 5 -13
 
-#load weapon /data/items/human/human_mounted/humanweapon.txt offsetx 5 offsety -15
-#load weapon /data/items/human/human_mounted/cavalryweapons.txt offsetx 5 offsety -15
-#load bonusweapon /data/items/human/normal/humanbonusranged.txt offsetx 5 offsety -15
-#load lanceslot /data/items/human/human_mounted/lance.txt offsetx 5 offsety -15
-
-
-#load offhand /data/items/human/normal/shields.txt offsetx 5 offsety -15
-
+#load offhand /data/items/advancedhuman/normal/shields.txt -2 -18
 
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
 

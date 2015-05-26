@@ -19,6 +19,7 @@ public class NationDescriber {
 	{
 		this.n = n;
 		describeTroops();
+		describeCommanders();
 	}
 	
 	
@@ -107,15 +108,66 @@ public class NationDescriber {
 			}
 			
 			describeUnits(dr, units, descf);
-
-
-			
-			
-
 			
 		}
 		
 	}
+
+	private void describeCommanders()
+	{
+		String[] roles = {"commanders", "priests"};
+		
+		ChanceIncHandler chandler = new ChanceIncHandler(n);
+		List<Filter> descs = ChanceIncHandler.retrieveFilters("troopdescriptions", "troopdescs", n.nationGen.descriptions, null, n.races.get(0));
+
+		DescriptionReplacer dr = new DescriptionReplacer(n);
+		
+		for(String role : roles)
+		{
+			List<Unit> units = n.generateComList(role);
 	
+			dr.calibrate(units);
+			for(Unit u : units)
+			{
+				dr.calibrate(u);
+				
+				String desc = "";
+				if(Generic.getTagValue(u.race.tags, "description") != null)
+					desc = Generic.getTagValue(u.race.tags, "description") + " ";
+				
+	
+				for(Filter f : u.appliedFilters)
+				{
+					if(f != null && Generic.getTagValue(f.tags, "description") != null)
+					{
+						desc = desc + Generic.getTagValue(f.tags, "description") + " ";
+					}
+				}
+				
+				Command tmpDesc = null;
+				
+				for(Command c : u.getCommands())
+				{
+					if(c.command.equals("#descr"))
+						tmpDesc = c;
+				}
+				
+				if(tmpDesc != null)
+				{
+					desc += tmpDesc.args.get(0);	
+				}
+			
+				desc = dr.replace(desc);
+	
+				if(tmpDesc != null)
+					u.setCommandValue("#descr", 0, "\"" + desc + "\"");
+		
+				else
+					u.commands.add(new Command("#descr", "\"" + desc + "\""));
+			}
+		}
+		
+	}
+
 	
 }

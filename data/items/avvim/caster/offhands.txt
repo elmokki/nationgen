@@ -1,0 +1,127 @@
+#newitem
+#id bowl
+#gameid -1
+#sprite /graphics/avvim/offhand/caster/bowl.png
+#armor
+#needs hands bowl
+#enditem
+
+#newitem
+#id bowl_banefire
+#basechance 0
+#chanceinc "personalmagic death 1 fire 1 4"
+#gameid -1
+#sprite /graphics/avvim/offhand/caster/bowl_banefire.png
+#armor
+#needs hands bowl
+#theme "fire"
+#theme "death"
+#enditem
+
+#newitem
+#id bowl_bones
+#basechance 0.5
+#chanceinc "personalmagic death 1 1.5"
+#gameid -1
+#sprite /graphics/avvim/offhand/caster/bowl_bones.png
+#armor
+#needs hands bowl
+#theme "death"
+#enditem
+
+#newitem
+#id bowl_coal
+#basechance 1
+#chanceinc "personalmagic fire 1 1"
+#gameid -1
+#sprite /graphics/avvim/offhand/caster/bowl_coal.png
+#armor
+#needs hands bowl
+#theme "fire"
+#enditem
+
+#newitem
+#id bowl_fire
+#basechance 05
+#chanceinc "personalmagic fire 1 1.5"
+#gameid -1
+#sprite /graphics/avvim/offhand/caster/bowl_fire.png
+#armor
+#needs hands bowl
+#theme "fire"
+#enditem
+
+#newitem
+#id bowl_gore
+#basechance 0.5
+#chanceinc "personalmagic blood 1 1.5"
+#gameid -1
+#sprite /graphics/avvim/offhand/caster/bowl_gore.png
+#armor
+#needs hands bowl
+#theme "blood"
+#enditem
+
+#newitem
+#id bowl_plant
+#basechance 0.5
+#chanceinc "personalmagic nature 1 1.5"
+#gameid -1
+#sprite /graphics/avvim/offhand/caster/bowl_plant.png
+#armor
+#needs hands bowl
+#theme "nature"
+#enditem
+
+#newitem
+#id bowl_rock
+#basechance 0.5
+#chanceinc "personalmagic earth 1 1.5"
+#gameid -1
+#sprite /graphics/avvim/offhand/caster/bowl_rock.png
+#armor
+#needs hands bowl
+#theme "earth"
+#enditem
+
+#newitem
+#id orb
+#gameid -1
+#sprite /graphics/offhand/mage/orb.png
+#recolormask self
+#offsetx -2
+#offsety -12
+#armor
+#needs hands bowl
+#enditem
+
+#newitem
+#id skull
+#gameid -1
+#sprite /graphics/offhand/mage/skull.png
+#offsetx -2
+#offsety -13
+#armor
+#needs hands bowl
+#enditem
+
+#newitem
+#id pitcher
+#gameid 496
+#sprite /graphics/offhand/mage/pitcher.png
+#offsetx -3
+#offsety -11
+#enditem
+
+#newitem
+#id sutra
+#gameid 459
+#enditem
+
+#newitem
+#id tablet
+#basechance 0.5
+#chanceinc "personalmagic holy 1 1.5"
+#gameid -1
+#sprite /graphics/avvim/offhand/caster/tablet.png
+#enditem

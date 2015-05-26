@@ -3,7 +3,35 @@
 #id kabuto
 #gameid 132
 #sprite /graphics/helmet/standard/kabuto.png
+#tag "eliteversion kabuto"
+#tag "eliteversion kabuto_elite"
 #theme "oriental"
+#tag "name samurai"
+#offsetx -1
+#armor
+#enditem
+
+#newitem
+#id kabuto_elite
+#basechance 0
+#gameid 132
+#sprite /graphics/helmet/standard/kabuto_elite1.png
+#tag "eliteversion kabuto_elite"
+#tag "eliteversion kabuto_elitest"
+#theme "oriental"
+-- #tag "elite"
+#tag "name samurai"
+#offsetx -1
+#armor
+#enditem
+
+#newitem
+#id kabuto_elitest
+#basechance 0
+#gameid 132
+#sprite /graphics/helmet/standard/kabuto_elite2.png
+#theme "oriental"
+-- #tag "elite"
 #tag "name samurai"
 #offsetx -1
 #armor
@@ -20,9 +48,28 @@
 #enditem
 
 #newitem
+#id leathercap
+#gameid 20
+#sprite /graphics/tengu/helmet/reinforcedcap.png
+#tag "eliteversion ironcap"
+#theme "oriental"
+#armor
+#enditem
+
+#newitem
+#id reinforcedcap
+#gameid 119
+#sprite /graphics/tengu/helmet/reinforcedcap.png
+#tag "eliteversion halfhelm"
+#theme "oriental"
+#armor
+#enditem
+
+#newitem
 #id halfhelmet
 #gameid 118
 #sprite /graphics/tengu/helmet/tienchihelmet.png
+#tag "eliteversion halfhelm_elite"
 #theme "oriental"
 #armor
 #enditem
@@ -31,6 +78,29 @@
 #id ironcap
 #gameid 20
 #sprite /graphics/tengu/helmet/tienchihelmet.png
+#tag "eliteversion ironcap_elite"
+#theme "oriental"
+#armor
+#enditem
+
+#newitem
+#id halfhelmet_elite
+#basechance 0
+#gameid 118
+#sprite /graphics/tengu/helmet/tienchihelmet_elite.png
+#recolormask /graphics/tengu/helmet/tienchihelmet_elite_recolormask.png
+#theme "oriental"
+#armor
+#enditem
+
+#newitem
+#id ironcap_elite
+#basechance 0
+#gameid 20
+#sprite /graphics/tengu/helmet/tienchihelmet_fancy.png
+#recolormask /graphics/tengu/helmet/tienchihelmet_fancy_recolormask.png
+#tag "eliteversion halfhelm_elite"
+#tag "eliteversion ironcap_elite"
 #theme "oriental"
 #armor
 #enditem

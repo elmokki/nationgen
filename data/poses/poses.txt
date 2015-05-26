@@ -26,10 +26,10 @@
 #load meticranged ./data/poses/amazon/meticranged.txt
 
 ---- "Advanced" humans
--- #load advancedinfantry ./data/poses/advancedhuman/infantry.txt
--- #load advancedranged ./data/poses/advancedhuman/ranged.txt
--- #load advancedcavalry ./data/poses/advancedhuman/cavalry.txt
--- #load advancedmage ./data/poses/advanced/mage.txt
+#load advancedinfantry ./data/poses/advancedhuman/infantry.txt
+#load advancedranged ./data/poses/advancedhuman/ranged.txt
+#load advancedcavalry ./data/poses/advancedhuman/cavalry.txt
+#load advancedmage ./data/poses/advancedhuman/mage.txt
 
 ---- Assorted "high men" - old, big humanish races like cavemen and sleepers
 #load cavemantroops ./data/poses/highmen/cavemantroops.txt
@@ -67,6 +67,11 @@
 #load abysianmages ./data/poses/abysian/mages.txt
 #load demonbred ./data/poses/abysian/demonbred.txt
 #load burningones ./data/poses/abysian/burningones.txt
+
+---- Humanbred
+#load humanbredtroops ./data/poses/abysian/humanbred/troops.txt
+#load humanbredmages ./data/poses/abysian/humanbred/mages.txt
+#load warbred ./data/poses/abysian/humanbred/warbred.txt
 
 ---- Caelians
 #load caeliantroops ./data/poses/caelian/troops.txt
@@ -106,3 +111,14 @@
 ---- Ichtyids
 #load ichtyidtroops ./data/poses/ichtyid/troops.txt
 #load ichtyidmages ./data/poses/ichtyid/mages.txt
+
+---- Avvim
+#load avviteinfantry ./data/poses/avvim/avviteinfantry.txt
+#load avviteranged ./data/poses/avvim/avviteranged.txt
+#load avvitecavalry ./data/poses/avvim/avvitecavalry.txt
+#load avvitemage ./data/poses/avvim/avvitemage.txt
+
+---- Vaettir
+#load vaettitroops ./data/poses/vaettir/troops.txt
+#load vaetticavalry ./data/poses/vaettir/cavalry.txt
+#load vaettimages ./data/poses/vaettir/mages.txt

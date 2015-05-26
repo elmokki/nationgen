@@ -168,19 +168,23 @@
 --- Japanese
 
 #newitem
-#id 20
+#id ashigaruarmor
+#gameid 128
+#sprite /graphics/bodyarmor/archer/ashigaruarmor.png
+#recolormask /graphics/bodyarmor/archer/ashigaruarmor_recolormask.png
+#armor
+#theme "oriental"
+#basechance 0.5
+#enditem
+
+#newitem
+#id samuraiarmor
 #gameid 129
 #sprite /graphics/bodyarmor/archer/samuraiarmor2.png
 #recolormask /graphics/bodyarmor/archer/samuraiarmor2_recolormask.png
 #armor
-#enditem
-
-#newitem -- Ashigaru armor
-#id 21
-#gameid 128
-#sprite /graphics/bodyarmor/archer/samuraiarmor2.png
-#recolormask /graphics/bodyarmor/archer/samuraiarmor2_recolormask.png
-#armor
+#theme "oriental"
+#basechance 0.5
 #enditem
 
 

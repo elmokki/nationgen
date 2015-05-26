@@ -1,0 +1,96 @@
+#newitem
+#name "cloak 1"
+#gameid -1
+#sprite /graphics/avvim/cloak/caster/cloak1_b.png
+#recolormask self
+#needs cloakf "cloak 1"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name "cloak 2"
+#gameid -1
+#sprite /graphics/avvim/cloak/caster/cloak2_b.png
+#recolormask self
+#needs cloakf "cloak 2"
+#enditem
+
+#newitem
+#name "cloak 3"
+#gameid -1
+#sprite /graphics/avvim/cloak/caster/cloak3_b.png
+#recolormask self
+#needs cloakf "cloak 3"
+#enditem
+
+#newitem
+#name "cloak 4"
+#gameid -1
+#sprite /graphics/avvim/cloak/caster/cloak4_b.png
+#recolormask self
+#needs cloakf "cloak 4"
+#enditem
+
+#newitem
+#name "simple tabard dark"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/avvim/cloak/caster/tabard_simple_b.png
+#armor
+#recolormask self
+#needs cloakf "simple tabard dark"
+#tag "tier 2"
+#tag "eliteversion 'ornate tabard 1'"
+#tag "eliteversion 'ornate tabard 2'"
+#chanceinc "personalmagic holy 1 1.5"
+#enditem
+
+#newitem
+#name "simple tabard medium"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/avvim/cloak/caster/tabard_simple_b.png
+#armor
+#recolormask /graphics/avvim/cloak/caster/tabard_simple_b_recolormask1.png
+#needs cloakf "simple tabard medium"
+#tag "tier 2"
+#tag "eliteversion 'ornate tabard 1'"
+#tag "eliteversion 'ornate tabard 2'"
+#chanceinc "personalmagic holy 1 1.5"
+#enditem
+
+#newitem
+#name "simple tabard light"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/avvim/cloak/caster/tabard_simple_b.png
+#armor
+#recolormask /graphics/avvim/cloak/caster/tabard_simple_b_recolormask2.png
+#needs cloakf "simple tabard light"
+#tag "tier 2"
+#tag "eliteversion 'ornate tabard 1'"
+#tag "eliteversion 'ornate tabard 2'"
+#chanceinc "personalmagic holy 1 1.5"
+#enditem
+
+#newitem
+#name "ornate tabard 1"
+#gameid -1
+#sprite /graphics/avvim/cloak/caster/tabard_ornate_b.png
+#armor
+#recolormask /graphics/avvim/cloak/caster/tabard_ornate_b_recolormask1.png
+#needs cloakf "ornate tabard 1"
+#tag "tier 3"
+#chanceinc "personalmagic holy 1 2"
+#enditem
+
+#newitem
+#name "ornate tabard 2"
+#gameid -1
+#sprite /graphics/avvim/cloak/caster/tabard_ornate_b.png
+#armor
+#recolormask /graphics/avvim/cloak/caster/tabard_ornate_b_recolormask2.png
+#needs cloakf "ornate tabard 2"
+#tag "tier 3"
+#chanceinc "personalmagic holy 1 2"
+#enditem

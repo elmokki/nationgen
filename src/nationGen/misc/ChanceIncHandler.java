@@ -8,7 +8,9 @@ import java.util.List;
 
 
 
+
 import com.elmokki.Generic;
+
 
 
 
@@ -301,7 +303,6 @@ public class ChanceIncHandler {
 	
 	private double applyMod(double value, String modifier)
 	{
-		
 		if(modifier.startsWith("+"))
 		{
 			modifier = modifier.substring(1);
@@ -403,8 +404,6 @@ public class ChanceIncHandler {
 		double avggold = totalgold / unitCount;
 		
 		
-
-		
 		// Do chanceincs!
 		for(T f : filters.keySet())
 		{
@@ -412,7 +411,7 @@ public class ChanceIncHandler {
 			{
 				
 				List<String> args = Generic.parseArgs(str);
-				
+	
 				// Magic paths
 				boolean canIncrease = true;
 				if(args.get(0).equals("magic") && args.size() >= 3)
@@ -455,7 +454,7 @@ public class ChanceIncHandler {
 				}
 				// Primary race
 				canIncrease = false;
-				if(args.get(0).equals("hasprimaryrace") && args.size() >= 3)
+				if(args.get(0).equals("hasprimaryrace") && args.size() >= 2)
 				{
 					if(n.races.size() > 0)
 						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));

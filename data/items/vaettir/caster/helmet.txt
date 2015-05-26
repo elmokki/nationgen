@@ -1,0 +1,603 @@
+--- Primitive headgear
+
+#newitem
+#id leathercap
+#gameid 120
+#sprite /graphics/vaettir/helmet/caster/leathercap.png
+#tag "eliteversion coif_leather"
+#tag "eliteversion hood_bear"
+#tag "eliteversion hood_deer"
+#tag "eliteversion hood_wolf"
+#armor
+#tag "primitive"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id coif_leather
+#gameid 121
+#sprite /graphics/vaettir/helmet/caster/coif_leather.png
+#tag "eliteversion coif_antlers"
+#tag "eliteversion hood_bear"
+#tag "eliteversion hood_deer"
+#tag "eliteversion hood_wolf"
+#armor
+#tag "primitive"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id coif_antlers
+#gameid 120
+#sprite /graphics/vaettir/helmet/caster/coif_antlers1.png
+#tag "eliteversion coif_antlers_big"
+#armor
+#tag "primitive"
+#tag "deer"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id coif_antlers_big
+#gameid 120
+#sprite /graphics/vaettir/helmet/caster/coif_antlers2.png
+#tag "eliteversion coif_antlers_big"
+#armor
+#tag "primitive"
+#tag "deer"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id hood_bear
+#gameid 121
+#sprite /graphics/vaettir/helmet/caster/hood_bear.png
+#tag "eliteversion mask_bear"
+#armor
+#tag "primitive"
+#tag "bear"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id mask_bear
+#gameid 145
+#sprite /graphics/vaettir/helmet/caster/mask_bear.png
+#armor
+#tag "primitive"
+#tag "wolf"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id hood_deer
+#gameid 121
+#sprite /graphics/vaettir/helmet/caster/hood_deer.png
+#tag "eliteversion mask_deer"
+#armor
+#tag "primitive"
+#tag "deer"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id mask_deer
+#gameid 145
+#sprite /graphics/vaettir/helmet/caster/mask_deer.png
+#armor
+#tag "primitive"
+#tag "deer"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id hood_wolf
+#gameid 121
+#sprite /graphics/vaettir/helmet/caster/hood_wolf.png
+#tag "eliteversion mask_wolf"
+#armor
+#tag "primitive"
+#tag "wolf"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id mask_wolf
+#gameid 145
+#sprite /graphics/vaettir/helmet/caster/mask_wolf.png
+#armor
+#tag "primitive"
+#tag "wolf"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id cowl_witch_brown
+#gameid 121
+#sprite /graphics/vaettir/helmet/caster/cowl_witch.png
+#tag "eliteversion cowl_witch_dyed"
+#armor
+#tag "primitive"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id cowl_witch_dyed
+#gameid 121
+#sprite /graphics/vaettir/helmet/caster/cowl_witch.png
+#recolormask /graphics/vaettir/helmet/caster/cowl_witch_recolormask1.png
+#tag "eliteversion cowl_witch_vivid"
+#armor
+#tag "primitive"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id cowl_witch_vivid
+#gameid 121
+#sprite /graphics/vaettir/helmet/caster/cowl_witch.png
+#recolormask /graphics/vaettir/helmet/caster/cowl_witch_recolormask2.png
+#armor
+#tag "primitive"
+#tag "tier 3"
+#enditem
+
+
+--- Imported headgear
+
+#newitem
+#id hat_gnome
+#gameid -1
+#sprite /graphics/vaettir/helmet/caster/hat_gnome.png
+#recolormask self
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id hat_hedgemage_plain
+#gameid 120
+#sprite /graphics/vaettir/helmet/caster/hat_hedgemage.png
+#tag "eliteversion hat_hedgemage_dyed"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id hat_hedgemage_dyed
+#gameid 120
+#sprite /graphics/vaettir/helmet/caster/hat_hedgemage.png
+#recolormask /graphics/vaettir/helmet/caster/hat_hedgemage_recolormask.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id hat_conical
+#gameid 120
+#sprite /graphics/vaettir/helmet/caster/hat_conical.png
+#tag "eliteversion hat_conical_dyed"
+#armor
+#tag "tier 1"
+#theme "oriental"
+#enditem
+
+#newitem
+#id hat_conical_dyed
+#gameid 120
+#sprite /graphics/vaettir/helmet/caster/hat_conical.png
+#recolormask /graphics/vaettir/helmet/caster/hat_conical_recolormask.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "oriental"
+#enditem
+
+#newitem
+#id hat_ragha1_black
+#gameid -1
+#sprite /graphics/vaettir/helmet/caster/hat_ragha1.png
+#tag "eliteversion hat_ragha2_black"
+#tag "eliteversion hat_ragha1_dyed"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id hat_ragha1_dyed
+#gameid -1
+#sprite /graphics/vaettir/helmet/caster/hat_ragha1.png
+#recolormask self
+#tag "eliteversion hat_ragha2_dyed"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id hat_ragha2_black
+#gameid -1
+#sprite /graphics/vaettir/helmet/caster/hat_ragha2.png
+#tag "eliteversion hat_ragha2_dyed"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id hat_ragha2_dyed
+#gameid -1
+#sprite /graphics/vaettir/helmet/caster/hat_ragha2.png
+#recolormask /graphics/vaettir/helmet/caster/hat_ragha2_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id turban_white
+#gameid -1
+#sprite /graphics/vaettir/helmet/caster/turban1.png
+#tag "eliteversion turban_dyed"
+#tag "eliteversion turban_jeweled"
+#tag "eliteversion turban_big_white"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id turban_dyed
+#gameid -1
+#sprite /graphics/vaettir/helmet/caster/turban1.png
+#recolormask /graphics/vaettir/helmet/caster/turban1_recolormask.png
+#tag "eliteversion turban_big_dyed"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id turban_jeweled
+#gameid -1
+#sprite /graphics/vaettir/helmet/caster/turban1.png
+#recolormask /graphics/vaettir/helmet/caster/turban_recolormask.png
+#tag "eliteversion turban_big_jeweled"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id turban_big_white
+#gameid -1
+#sprite /graphics/vaettir/helmet/caster/turban2.png
+#tag "eliteversion turban_big_dyed"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id turban_big_dyed
+#gameid -1
+#sprite /graphics/vaettir/helmet/caster/turban2.png
+#recolormask /graphics/vaettir/helmet/caster/turban2_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id turban_big_jeweled
+#gameid -1
+#sprite /graphics/vaettir/helmet/caster/turban2.png
+#recolormask /graphics/vaettir/helmet/caster/turban_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+
+--- Oversized fancy hats
+
+#newitem
+#id fancyhat
+#gameid 120
+#sprite /graphics/helmet/special/fancyhat.png
+#recolormask /graphics/helmet/special/fancyhat_recolormask.png
+#offsetx 1
+#offsety 9
+#tag "tier 2"
+#tag "tier 3"
+#theme "advanced"
+#armor
+#enditem
+
+#newitem
+#id fancyhat2
+#gameid 120
+#sprite /graphics/helmet/special/fancyhat2.png
+#recolormask /graphics/helmet/special/fancyhat2_recolormask.png
+#offsetx 2
+#offsety 10
+#tag "tier 2"
+#tag "tier 3"
+#theme "advanced"
+#armor
+#enditem
+
+#newitem
+#id fancyhat3a
+#gameid 120
+#sprite /graphics/helmet/special/fancyhat3.png
+#recolormask /graphics/helmet/special/fancyhat3_recolormask1.png
+#offsetx 2
+#offsety 10
+#tag "tier 2"
+#tag "tier 3"
+#theme "advanced"
+#armor
+#enditem
+
+#newitem
+#id fancyhat3b
+#gameid 120
+#sprite /graphics/helmet/special/fancyhat3.png
+#recolormask /graphics/helmet/special/fancyhat3_recolormask2.png
+#offsetx 2
+#offsety 10
+#tag "tier 2"
+#tag "tier 3"
+#theme "advanced"
+#armor
+#enditem
+
+
+--- Standard headgear
+
+#newitem
+#id hood1
+#gameid -1
+#sprite /graphics/helmet/caster/hood1.png
+#recolormask /graphics/helmet/caster/hood1_recolormask.png
+#offsetx 1
+#offsety 8
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id hood2
+#gameid -1
+#sprite /graphics/helmet/caster/hood2.png
+#recolormask self
+#offsetx 1
+#offsety 8
+#armor
+#tag "tier 2"
+#tag "eliteversion hood1"
+#enditem
+
+#newitem
+#id greenthing
+#gameid -1
+#sprite /graphics/helmet/caster/green.png
+#offsetx 1
+#offsety 9
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id wizardhat1
+#gameid -1
+#sprite /graphics/helmet/caster/wizardhat1.png
+#recolormask /graphics/helmet/caster/wizardhat1_recolormask.png
+#offsetx 1
+#offsety 9
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id gatthat-recolorable
+#gameid -1
+#sprite /graphics/helmet/caster/gathhat.png
+#recolormask self
+#offsetx 1
+#offsety 9
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id gathhat
+#gameid -1
+#sprite /graphics/helmet/caster/gathhat.png
+#offsetx 1
+#offsety 9
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id cap
+#gameid -1
+#sprite /graphics/helmet/caster/cap.png
+#recolormask self
+#offsetx 1
+#offsety 9
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id crown
+#gameid 148
+#sprite /graphics/helmet/caster/crown.png
+#armor
+#offsetx 1
+#offsety 9
+#tag "superior"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id antleredcap
+#gameid 120
+#sprite /graphics/helmet/caster/antlercap.png
+#armor
+#offsetx 1
+#offsety 9
+#tag "primitive"
+#tag "deer"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id feathercap
+#gameid 120
+#sprite /graphics/helmet/caster/feathercap.png
+#recolormask /graphics/helmet/caster/feathercap_recolormask.png
+#armor
+#offsetx 1
+#offsety 9
+#tag "primitive"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id bishophat
+#gameid -1
+#sprite /graphics/helmet/caster/bishophat.png
+#recolormask /graphics/helmet/caster/bishophat_recolormask.png
+#offsetx 1
+#offsety 9
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id bishophat2
+#gameid -1
+#sprite /graphics/helmet/caster/bishophat.png
+#recolormask /graphics/helmet/caster/bishophat2_recolormask.png
+#offsetx 1
+#offsety 9
+#armor
+#tag "eliteversion bishophat"
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+
+#newitem
+#id magistercap
+#gameid -1
+#sprite /graphics/helmet/caster/magistercap.png
+#recolormask self
+#offsetx 1
+#offsety 9
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id blackpriesthat
+#gameid -1
+#sprite /graphics/helmet/caster/blackpriesthat.png
+#recolormask self
+#offsetx 1
+#offsety 8
+#armor
+#tag "tier 3"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id goeticmasterhat
+#gameid -1
+#sprite /graphics/helmet/caster/goeticmasterhat.png
+#recolormask self
+#offsetx 1
+#offsety 8
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id goeticapprenticerhat
+#gameid -1
+#sprite /graphics/helmet/caster/goeticapprenticehat.png
+#recolormask self
+#offsetx 1
+#offsety 8
+#armor
+#tag "eliteversion goeticmasterhat"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id demonjester
+#gameid -1
+#sprite /graphics/helmet/caster/demonjester.png
+#recolormask /graphics/helmet/caster/demonjester_recolormask.png
+#offsetx 1
+#offsety 8
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id demonjester_nobell
+#gameid -1
+#sprite /graphics/helmet/caster/demonjester_recolormask.png
+#recolormask /graphics/helmet/caster/demonjester_recolormask.png
+#offsetx 1
+#offsety 8
+#armor
+#tag "eliteversion demonjester"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id lizardcrown1
+#gameid 148
+#sprite /graphics/helmet/caster/lizardcrown.png
+#offsetx 1
+#offsety 9
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id lizardcrown2
+#gameid 148
+#sprite /graphics/helmet/caster/lizardcrown.png
+#recolormask /graphics/helmet/caster/lizardcrown_recolormask.png
+#offsetx 1
+#offsety 9
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id wizardhat2
+#gameid -1
+#sprite /graphics/helmet/caster/wizardhat2.png
+#recolormask self
+#offsetx 1
+#offsety 9
+#armor
+#tag "tier 3"
+#tag "tier 2"
+#tag "tier 1"
+#enditem
