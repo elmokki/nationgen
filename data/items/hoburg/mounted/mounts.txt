@@ -1,0 +1,314 @@
+--- Base offsets are applied to everything except base and overlay
+
+
+#newitem
+#name "hog"
+#gameid -1
+#sprite /graphics/hoburg/mounts/boar.png
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 14"
+#define "#mounted"
+#define "#weapon 352 --- Gore"
+#define "#gcost +17"
+#define "#ressize 1"
+#define "#rcost +4"
+#define "#enc 4"
+#theme "animal boar"
+#tag "guaranteedprefix hog"
+#offsety -12
+#offsetx 1
+#enditem
+
+#newitem
+#name "wolf"
+#gameid -1
+#sprite /graphics/hoburg/mounts/wolf.png
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 22"
+#define "#mounted"
+#define "#weapon 20 --- bite"
+#define "#gcost +17"
+#define "#ressize 1"
+#define "#enc 3"
+#define "#rcost +4"
+#theme "animal wolf"
+#tag "maxprot 14"
+#tag "guaranteedprefix wolf"
+#offsety -8
+#offsetx -2
+#enditem
+
+#newitem
+#name "goat"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat.png
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 10"
+#define "#mounted"
+#define "#weapon 352 --- gore"
+#define "#gcost +12"
+#define "#ressize 1"
+#define "#mountainsurvival"
+#define "#enc 3"
+#define "#rcost +4"
+#theme "animal goat"
+#tag "maxprot 12"
+#tag "guaranteedprefix goat"
+#offsety -7
+#offsetx 0
+#basechance 0.5
+#enditem
+
+#newitem
+#name "hawk"
+#gameid -1
+#sprite /graphics/hoburg/mounts/hawk.png
+#armor
+#needs overlay hawkoverlay
+#define "#size 2"
+#define "#mapmove 3"
+#define "#ap 6"
+#define "#flying"
+#define "#mounted"
+#define "#weapon 236 --- claw"
+#define "#gcost +27"
+#define "#ressize 1"
+#define "#enc 4"
+#define "#rcost +4"
+#theme "animal hawk"
+#tag "maxprot 16"
+#tag "guaranteedprefix hawk"
+#basechance 0.5
+#offsety 30
+#offsetx 26
+#enditem
+
+
+#newitem
+#name "ozelotl"
+#gameid -1
+#sprite /graphics/hoburg/mounts/ozelotl.png
+#armor
+#offsety 32
+#offsetx 30
+#needs overlay ozelotl_overlay
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 10"
+#define "#flying"
+#define "#mounted"
+#define "#weapon 19"
+#define "#weapon 236"
+#define "#gcost +45"
+#define "#hp +2"
+#define "#ressize 1"
+#define "#rcost +4"
+#define "#enc 3"
+#define "#secondtmpshape ozelotl"
+#theme "animal ozelotl"
+#description "The ozelotl fight until the end of the battle if the rider perishes"
+#tag "maxprot 14"
+#tag "guaranteedprefix ozelotl"
+#basechance 0.33
+#enditem
+
+#newitem
+#name "giant bat"
+#gameid -1
+#sprite /graphics/hoburg/mounts/giant_bat.png
+#armor
+#offsety 34
+#offsetx 30
+#needs overlay giant_bat_overlay
+#needs legs pants2
+#define "#size 2"
+#define "#mapmove 3"
+#define "#ap 10"
+#define "#flying"
+#define "#mounted"
+#define "#weapon 20"
+#define "#gcost +35"
+#define "#hp +2"
+#define "#secondtmpshape beastbat_nerfed"
+#define "#ressize 1"
+#define "#rcost +4"
+#define "#enc 3"
+#theme "animal bat"
+#tag "maxprot 16"
+#tag "guaranteedprefix giant bat"
+#description "The giant bat fight until the end of the battle if the rider perishes"
+#basechance 0.5
+#enditem
+
+#newitem
+#name "giant macaw"
+#gameid -1
+#sprite /graphics/hoburg/mounts/giant_parrot.png
+#needs overlay giant_macaw_overlay
+#armor
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 6"
+#define "#flying"
+#define "#mounted"
+#define "#weapon nostr_talons_10"
+#define "#weapon nostr_beak_10"
+#define "#gcost +25"
+#define "#ressize 1"
+#define "#enc 4"
+#define "#rcost +4"
+#theme "animal parrot"
+#tag "maxprot 14"
+#tag "guaranteedprefix parrot"
+#basechance 0.22
+#offsetx -1
+#offsety -30
+#enditem
+
+#newitem
+#name "colorful giant macaw"
+#gameid -1
+#sprite /graphics/hoburg/mounts/giant_parrot.png
+#recolormask /graphics/hoburg/mounts/giant_parrot_recolormask.png
+#needs overlay colorful_macaw_overlay
+#armor
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 6"
+#define "#flying"
+#define "#mounted"
+#define "#weapon nostr_talons_10"
+#define "#weapon nostr_beak_10"
+#define "#gcost +25"
+#define "#ressize 1"
+#define "#enc 4"
+#define "#rcost +4"
+#theme "animal parrot"
+#tag "maxprot 14"
+#tag "guaranteedprefix parrot"
+#basechance 0.11
+#offsetx -1
+#offsety -30
+#enditem
+
+#newitem
+#name "caveman"
+#gameid -1
+#sprite /graphics/hoburg/mounts/caveman.png
+#armor
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 14"
+#define "#mounted"
+#define "#gcost +45"
+#define "#ressize 1"
+#define "#rcost +8"
+#define "#secondshape caveman"
+#define "#enc 4"
+#description "The caveman is fiercely loyal and will follow the hoburg army even if it's rider dies"
+#basechance 0.33
+#needs overlay caveman_overlay
+#define "#weapon nostr_greatclub"
+#theme "animal caveman"
+#tag "guaranteedprefix 'cave man'"
+#offsety 29
+#offsetx 6
+#enditem
+
+
+#newitem
+#name "mechant"
+#gameid -1
+#sprite /graphics/hoburg/mounts/mech_ant.png
+#armor
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 14"
+#define "#mounted"
+#define "#gcost +28"
+#define "#ressize 1"
+#define "#rcost +12"
+#define "#enc 3"
+#define "#weapon mechant_bite"
+#basechance 0.33
+#theme "animal 'mechanical ant'"
+#tag "guaranteedprefix 'mechanized'"
+#offsety -18
+#offsetx -3
+#minprot 10
+#enditem
+
+#newitem
+#name "mechspider"
+#gameid -1
+#sprite /graphics/hoburg/mounts/mech_spider.png
+#armor
+#basechance 0.33
+#theme "animal 'mechanical spider'"
+#tag "guaranteedprefix 'mechanized'"
+#needs overlay "mechspider_overlay"
+#define "#size 2"
+#define "#mapmove 3"
+#define "#ap 12"
+#define "#mounted"
+#define "#gcost +32"
+#define "#ressize 1"
+#define "#rcost +12"
+#define "#enc 3"
+#define "#weapon mechspider_fangs"
+#define "#weapon mechspider_spit"
+#offsety -5
+#offsetx 5
+#minprot 10
+#enditem
+
+#newitem
+#name "mechmosquito"
+#gameid -1
+#sprite /graphics/hoburg/mounts/mech_mosquito.png
+#armor
+#theme "animal 'mechanical mosquito'"
+#tag "guaranteedprefix 'mechanized'"
+#needs overlay "mechmosquito_overlay"
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 12"
+#define "#flying"
+#define "#mounted"
+#define "#gcost +34"
+#define "#ressize 1"
+#define "#rcost +12"
+#define "#enc 3"
+#define "#weapon mechmosquito_bite"
+#offsety -15
+#offsetx -14
+#minprot 10
+#enditem
+
+#newitem
+#name "deer"
+#gameid -1
+#sprite /graphics/hoburg/mounts/deer.png
+#armor
+#define "#size 2"
+#define "#mapmove 3"
+#define "#ap 22"
+#define "#mounted"
+#define "#weapon 354 --- antlers"
+#define "#gcost +15"
+#define "#ressize 1"
+#define "#enc 3"
+#define "#rcost +4"
+#theme "animal deer"
+#tag "maxprot 14"
+#tag "guaranteedprefix deer"
+#offsety -14
+#offsetx 0
+#enditem
+

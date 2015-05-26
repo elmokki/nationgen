@@ -1,0 +1,47 @@
+#newitem
+#name "sharkskinarmor-s"
+#gameid 151
+#sprite /graphics/atlantian/armor/sharkskinarmor-s.png
+#armor
+#theme "primitive"
+#basechance 1
+#enditem
+
+#newitem
+#name "coralhauberk-s"
+#gameid 23
+#sprite /graphics/atlantian/armor/coralhauberk-s.png
+#armor
+#basechance 0.75
+#needs helmet coralcap-s
+#define "#poisonarmor"
+#enditem
+
+#newitem
+#name "coralhauberk-s-elite"
+#gameid 23
+#sprite /graphics/atlantian/armor/coralhauberk-s-elite.png
+#armor
+#theme "elite" 
+#define "#poisonarmor"
+#enditem
+
+#newitem
+#name "basaltarmor-s"
+#gameid 153
+#sprite /graphics/atlantian/armor/basaltarmor.png
+#armor
+#theme "advanced"
+#needs helmet atl_basaltcap-s
+#basechance 0.3
+#enditem
+
+#newitem
+#name "meteoritearmor-s"
+#gameid 53
+#sprite /graphics/atlantian/armor/meteoritearmor-s.png
+#armor
+#theme "advanced"
+#basechance 0.3
+#needs helmet atl_meteoritecap-s
+#enditem

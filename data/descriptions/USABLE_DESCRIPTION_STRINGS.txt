@@ -1,0 +1,18 @@
+DONE:
+%role%: Unit's role. Ranged/cavalry/infantry/chariot/mage. Should be pluralized by default.
+%nation%: Nation name
+%primaryrace%, %primaryrace_plural%: Name of nation's primary race
+%mages%: Mage order name
+%magenoun%: A noun related to mages if there is one. 
+%sacredname%, %sacredname_plural%: Name of the first sacred of the nation and it's plural
+%weapons%, %weapons_plural%: List of weapons of given pile of units being described, pluralized. Resets to "various weapons" if there are more than 3 options. Non-plural is "derp, hurp or herp", plural is "derps, hurps and herps".
+%armors%: Same, but for armor and will not reset to anything
+%armortypes%: Results in a combination of "light", "heavy" and "medium" in a list or as "all kinds of"
+%unitname%, %unitname_plural%: Name of the unit
+%mount%, %mount_plural%: Name of the animal the unit is riding if it's mounted
+%race%, %race_plural%: Race of unit
+
+TODO:
+%specificmagic%: The specialty path or paths of this mage compared to other mages of it's tier.
+%strongmagic%: Lists strong magic paths of the nation
+%weakmagic%: Lists weak magic paths of the nation

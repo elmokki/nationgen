@@ -1,0 +1,50 @@
+#newrace
+#name "Sobek"
+#visiblename "Lizard"
+#poses /races/sobek/poses.txt
+#basechance 0.2
+
+-- As a "lizard subnation", sobeks share lizard names
+#longsyllables /data/names/nations/lizard/longsyllables.txt
+#shortsyllables /data/names/nations/lizard/shortsyllables.txt
+#suffixes /data/names/nations/lizard/suffixes.txt
+
+-- Basic national stats are as for predator lizards
+#unitcommand "#prot 3"
+#unitcommand "#coldblooded"
+#unitcommand "#gcost 13"
+#unitcommand "#hp 13"
+#unitcommand "#mr 11"
+#unitcommand "#mor 11"
+#unitcommand "#str 11"
+#unitcommand "#att 11"
+#unitcommand "#def 9"
+#unitcommand "#enc 4"
+#unitcommand "#poisonres 5"
+#unitcommand "#swampsurvival"
+#unitcommand "#ap 11"
+#unitcommand "#nametype 113"
+#unitcommand "#maxage 75"
+#unitcommand "#weapon 20 --- Bite"
+#nationcommand "#idealcold -2"
+
+#magicpatterns defaultprimary
+#magicpatterns defaultsecondary
+#magicpatterns defaulttertiary
+
+#pose sobekpredators
+#pose sobekshamans
+#pose sobeks
+#pose sobekmages
+
+#gods lizardgods
+
+#magicpriority death 6
+#magicpriority nature 4
+#magicpriority water 2
+
+#chanceinc "primaryrace van *0.1"
+#chanceinc primaryrace "Lizard" *3
+#chanceinc primaryrace "human (black)" *3
+
+#endrace

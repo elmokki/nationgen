@@ -1,0 +1,281 @@
+#newitem
+#id none
+#gameid -1
+#tag "tier 1"
+#enditem
+
+-- Crests alone
+
+#newitem
+#id boney_crest
+#gameid 120
+#sprite /graphics/ichtyid/helmet/caster_crest_boney.png
+#recolormask /graphics/ichtyid/helmet/boney_crest_recolormask.png
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id fin_crest
+#gameid 120
+#sprite /graphics/ichtyid/helmet/caster_crest_fin.png
+#recolormask /graphics/ichtyid/helmet/fin_crest_recolormask.png
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id high_crest
+#gameid 120
+#sprite /graphics/ichtyid/helmet/caster_crest_high.png
+#recolormask /graphics/ichtyid/helmet/high_crest_recolormask.png
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id feathery_crest
+#gameid 120
+#sprite /graphics/ichtyid/helmet/caster_crest_feathery.png
+#recolormask /graphics/ichtyid/helmet/feathery_crest_recolormask.png
+#tag "tier 3"
+#enditem
+
+-- Caps
+
+#newitem
+#id skullcap
+#gameid 120
+#sprite /graphics/ichtyid/helmet/skullcap.png
+#tag "eliteversion skullcap_colored"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id skullcap_colored
+#gameid 120
+#sprite /graphics/ichtyid/helmet/skullcap.png
+#recolormask self
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id sharkskin_cap
+#gameid 152
+#sprite /graphics/ichtyid/helmet/sharkskin_cap.png
+#tag "eliteversion sharkskin_cap_boney"
+#tag "tier 1"
+#theme "primative"
+#enditem
+
+#newitem
+#id sharkskin_cap_boney
+#gameid 152
+#sprite /graphics/ichtyid/helmet/sharkskin_cap.png
+#recolormask /graphics/ichtyid/helmet/boney_crest_recolormask.png
+#tag "tier 2"
+#theme "primative"
+#enditem
+
+#newitem
+#id coral_cap
+#gameid 24
+#sprite /graphics/ichtyid/helmet/coral_cap.png
+#tag "eliteversion coral_cap_high"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id coral_cap_high
+#gameid 24
+#sprite /graphics/ichtyid/helmet/coral_cap.png
+#recolormask /graphics/ichtyid/helmet/high_crest_recolormask.png
+#tag "eliteversion coral_cap_feathery"
+#tag "eliteversion coral_crown"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id coral_cap_feathery
+#gameid 24
+#sprite /graphics/ichtyid/helmet/coral_cap.png
+#recolormask /graphics/ichtyid/helmet/feathery_crest_recolormask.png
+#tag "tier 3"
+#enditem
+
+#newitem
+#id bronze_cap
+#gameid 135
+#sprite /graphics/ichtyid/helmet/bronze_cap.png
+#tag "eliteversion bronze_cap_high"
+#tag "tier 1"
+#tag "tier 2"
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+#newitem
+#id bronze_cap_high
+#gameid 135
+#sprite /graphics/ichtyid/helmet/bronze_cap.png
+#recolormask /graphics/ichtyid/helmet/high_crest_recolormask.png
+#tag "eliteversion bronze_cap_feathery"
+#tag "eliteversion bronze_crown"
+#tag "tier 2"
+#tag "tier 3"
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+#newitem
+#id bronze_cap_feathery
+#gameid 135
+#sprite /graphics/ichtyid/helmet/bronze_cap.png
+#recolormask /graphics/ichtyid/helmet/feathery_crest_recolormask.png
+#tag "tier 3"
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+-- Crowns
+
+#newitem
+#id laurel
+#gameid -1
+#sprite /graphics/ichtyid/helmet/laurel.png
+#chanceinc "personalmagic nature 1 10"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id bronze_crown
+#gameid 148
+#sprite /graphics/ichtyid/helmet/bronze_crown.png
+#basechance 0.25
+#chanceinc "personalmagic earth 1 2.75"
+#chanceinc "personalmagic earth 1 water 1 -2"
+#tag "tier 3"
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+#newitem
+#id coral_crown
+#gameid 148
+#sprite /graphics/ichtyid/helmet/coral_crown.png
+#basechance 0.25
+#chanceinc "personalmagic water 1 *4"
+#chanceinc "personalmagic nature 1 *4"
+#chanceinc "personalmagic water 1 nature 1 6"
+#chanceinc "personalmagic earth 1 *0.1"
+#tag "tier 3"
+#enditem
+
+-- Cowls
+
+#newitem
+#id cowl_light
+#gameid -1
+#sprite /graphics/ichtyid/helmet/cowl_light.png
+#recolormask self
+#needs armor robe_full_light
+#tag "eliteversion cowl_medium"
+#tag "tier 1"
+#tag "tier 2"
+#armor
+#basechance 0.4
+#enditem
+
+#newitem
+#id cowl_medium
+#gameid -1
+#sprite /graphics/ichtyid/helmet/cowl_grey.png
+#recolormask self
+#needs armor robe_full_medium
+#tag "eliteversion cowl_dark"
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#basechance 0.4
+#enditem
+
+#newitem
+#id cowl_dark
+#gameid -1
+#sprite /graphics/ichtyid/helmet/cowl_dark.png
+#recolormask self
+#needs armor robe_full_dark
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#basechance 0.4
+#enditem
+
+#newitem
+#id cowl_white
+#gameid -1
+#sprite /graphics/ichtyid/helmet/cowl_light.png
+#needs armor robe_full_white
+#tag "eliteversion cowl_grey"
+#tag "tier 1"
+#armor
+#basechance 0.1
+#enditem
+
+#newitem
+#id cowl_grey
+#gameid -1
+#sprite /graphics/ichtyid/helmet/cowl_grey.png
+#needs armor robe_full_grey
+#tag "eliteversion cowl_black"
+#tag "tier 1"
+#tag "tier 2"
+#armor
+#basechance 0.1
+#enditem
+
+#newitem
+#id cowl_black
+#gameid -1
+#sprite /graphics/ichtyid/helmet/cowl_dark.png
+#needs armor robe_full_black
+#tag "eliteversion cowl_dark"
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#basechance 0.1
+#enditem
+
+-- Masks
+
+#newitem
+#name shark_mask
+#gameid 145
+#basechance 0
+#chanceinc "personalmagic blood 1 5"
+#sprite /graphics/ichtyid/helmet/mask_shark.png
+#tag "tier 2"
+#tag "tier 3"
+#theme "primative"
+#theme "blood"
+#armor
+#enditem
+
+#newitem
+#name "octopus_mask"
+#gameid 145
+#basechance 0
+#chanceinc "personalmagic astral 1 5"
+#sprite /graphics/ichtyid/helmet/mask_octopus.png
+#tag "tier 2"
+#tag "tier 3"
+#theme "primative"
+#theme "astral"
+#armor
+#enditem

@@ -1,0 +1,49 @@
+
+--- Pants belonging to an armor set should be given id of the lowest prot armor they go with if you want to avoid naked people with plate pants.
+
+#newitem
+#id specialpants
+#gameid -1
+#sprite /graphics/tengu/legs/leatherpants.png
+#basechance 0
+#enditem
+
+#newitem
+#id pants
+#gameid -1
+#sprite /graphics/tengu/legs/pants.png
+#recolormask /graphics/tengu/legs/pants_recolormask.png
+#enditem
+
+#newitem
+#id leatherpants
+#gameid -1
+#sprite /graphics/tengu/legs/pants.png
+#recolormask /graphics/tengu/legs/pants_recolormask.png
+#theme "primitive"
+#basechance 0.25
+#enditem
+
+#newitem
+#id ringpants
+#gameid -1
+#sprite /graphics/tengu/legs/pants.png
+#recolormask /graphics/tengu/legs/pants_recolormask.png
+#basechance 0
+#enditem
+
+#newitem
+#id mailpants
+#gameid -1
+#sprite /graphics/tengu/legs/pants.png
+#recolormask /graphics/tengu/legs/pants_recolormask.png
+#basechance 0
+#enditem
+
+#newitem
+#id platepants
+#gameid -1
+#sprite /graphics/tengu/legs/pants.png
+#recolormask /graphics/tengu/legs/pants_recolormask.png
+#basechance 0
+#enditem

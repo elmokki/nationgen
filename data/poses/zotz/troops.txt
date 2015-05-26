@@ -1,0 +1,148 @@
+
+-------- Normal
+
+#newpose
+#role "infantry"
+#name "light infantry"
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs armor strap cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/zotz/bases.txt
+#load shadow /data/items/zotz/shadow.txt
+#load hands /data/items/zotz/hands.txt
+#load wings /data/items/zotz/wings.txt
+
+#load armor /data/items/zotz/armor_light.txt
+
+#load weapon /data/items/zotz/weapon.txt
+#load offhand /data/items/zotz/offhands.txt
+#load offhand /data/items/zotz/shields.txt
+#load bonusweapon /data/items/zotz/bonusranged.txt -12 -23
+
+
+#load cloakf /data/items/zotz/cloakf.txt
+#load cloakb /data/items/zotz/cloakb.txt
+
+#generateitem 1 wings
+
+#command "#stealthy +40"
+#command "#flying"
+
+#endpose
+
+
+#newpose
+#role "infantry"
+#name "heavy infantry"
+#basechance 0.25
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs armor strap cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/zotz/bases.txt
+#load shadow /data/items/zotz/shadow.txt
+#load hands /data/items/zotz/hands.txt
+#load wings /data/items/zotz/wings.txt
+
+#load armor /data/items/zotz/armor_heavy.txt
+
+#load weapon /data/items/zotz/weapon.txt
+#load offhand /data/items/zotz/offhands.txt
+#load offhand /data/items/zotz/shields.txt
+#load bonusweapon /data/items/zotz/bonusranged.txt -12 -23
+
+
+#load cloakf /data/items/zotz/cloakf.txt
+#load cloakb /data/items/zotz/cloakb.txt
+
+#generateitem 1 wings
+
+#command "#flying"
+
+#endpose
+
+
+
+
+-------- 2h
+
+#newpose 
+#role "infantry"
+#name "light 2h infantry"
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs armor strap cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/zotz/bases_2h.txt
+#load shadow /data/items/zotz/shadow.txt
+#load hands /data/items/zotz/hands_2h.txt
+#load wings /data/items/zotz/wings.txt
+
+
+#load armor /data/items/zotz/armor_light_2h.txt
+
+#load weapon /data/items/zotz/weapon_2h.txt -1 0
+#load bonusweapon /data/items/zotz/bonusranged_2h.txt -12 -23
+
+
+#load cloakf /data/items/zotz/cloakf.txt
+#load cloakb /data/items/zotz/cloakb.txt
+
+#generateitem 1 wings
+
+#command "#stealthy +40"
+#command "#flying"
+
+#endpose
+
+#newpose
+#role "infantry"
+#name "heavy 2h infantry"
+#basechance 0.25
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs armor strap cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/zotz/bases_2h.txt
+#load shadow /data/items/zotz/shadow.txt
+#load hands /data/items/zotz/hands_2h.txt
+#load wings /data/items/zotz/wings.txt
+
+
+#load armor /data/items/zotz/armor_heavy_2h.txt
+
+#load weapon /data/items/zotz/weapon_2h.txt -1 0
+#load bonusweapon /data/items/zotz/bonusranged_2h.txt -12 -23
+
+
+#load cloakf /data/items/zotz/cloakf.txt
+#load cloakb /data/items/zotz/cloakb.txt
+
+#generateitem 1 wings
+
+#command "#flying"
+
+#endpose
+
+-- Scouts
+
+#newpose
+#role "scout"
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs armor strap cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/zotz/bases.txt
+#load shadow /data/items/zotz/shadow.txt
+#load hands /data/items/zotz/hands.txt
+#load wings /data/items/zotz/wings.txt
+
+#load armor /data/items/zotz/armor.txt
+
+#load weapon /data/items/zotz/weapon.txt
+#load offhand /data/items/zotz/offhands.txt
+#load offhand /data/items/zotz/shields.txt
+#load bonusweapon /data/items/zotz/bonusranged.txt -12 -23
+
+
+#load cloakf /data/items/zotz/cloakf.txt
+#load cloakb /data/items/zotz/cloakb.txt
+
+#generateitem 1 wings
+
+#command "#stealthy +40"
+#command "#flying"
+
+#endpose
+

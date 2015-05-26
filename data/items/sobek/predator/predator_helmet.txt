@@ -1,0 +1,75 @@
+#newitem 
+#id "nothing"
+#basechance 1.5
+#gameid -1
+#theme "primitive"
+#tag "eliteversion cap"
+#armor
+#enditem
+
+#newitem 
+#id "nothing"
+#basechance 1.5
+#gameid -1
+#theme "primitive"
+#tag "eliteversion feathercap"
+#tag "eliteversion headdress_dark"
+#tag "eliteversion headdress_bright"
+#armor
+#enditem
+
+#newitem -- Iron cap
+#id "cap"
+#basechance 0.5
+#gameid 20
+#sprite /graphics/sobek/helmet/predator_cap.png
+#tag "eliteversion elite_cap"
+#armor
+#enditem
+
+#newitem -- Simple dark headdress
+#id headdress_dark
+#basechance 0.25
+#gameid -1
+#sprite /graphics/helmet/caster/headdress.png
+#recolormask self
+#tag "eliteversion feathercap"
+#offsetx -7
+#armor
+#tag "primitive"
+#enditem
+
+#newitem -- Simple bright headdress
+#id headdress_bright
+#basechance 0.25
+#gameid -1
+#sprite /graphics/helmet/caster/headdress.png
+#recolormask /graphics/sobek/helmet/headdress_recolormask.png
+#tag "eliteversion feathercap"
+#offsetx -7
+#armor
+#tag "primitive"
+#enditem
+
+#newitem -- Fancy headdress
+#id feathercap
+#basechance 0
+#gameid 120
+#sprite /graphics/helmet/caster/feathercap.png
+#recolormask /graphics/helmet/caster/feathercap_recolormask.png
+#offsetx -8
+#armor
+#tag "primitive"
+#tag "elite"
+#enditem
+
+#newitem -- Fancy iron cap
+#id "elite_cap"
+#basechance 0
+#gameid 20
+#sprite /graphics/sobek/helmet/predator_cap_elite.png
+#recolormask /graphics/sobek/helmet/predator_cap_elite_recolormask.png
+#armor
+#tag "elite"
+#enditem
+

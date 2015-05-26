@@ -1,0 +1,49 @@
+--- Base offsets are applied to everything except base and overlay
+
+#newitem
+#name "serpent"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 494 --- Poisonous Bite"
+#define "#secondtmpshape serpent1"
+ -- 1179
+#define "#gcost +30"
+#define "#ressize 2"
+#define "#enc 3"
+#theme "animal serpent"
+#theme "light"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 13"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#enditem
+
+#newitem
+#name "amazon_lizard"
+#gameid -1
+#sprite /graphics/amazon/mounts/lizard_dom4.png
+#armor
+#offsetx -5
+#offsety 3
+-- #needs overlay 3
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#gcost +20"
+#define "#ressize 2"
+#define "#enc 3"
+#theme "animal lizard"
+#theme "light"
+#theme "specialmount"
+#tag "guaranteedprefix lizard"
+#tag "maxprot 15"
+#enditem

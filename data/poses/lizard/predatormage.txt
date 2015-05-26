@@ -1,0 +1,44 @@
+---------- Mages and Priests
+
+
+#newpose
+#name "predator mage"
+#role "mage"
+#role "priest"
+#basechance 0.05
+
+#load basesprite /data/items/lizard/predator/magebases.txt
+#load shadow /data/items/lizard/predator/mageshadow.txt
+
+#load hands /data/items/lizard/predator/magehands.txt
+#load armor /data/items/lizard/predator/robes.txt
+
+#load weapon /data/items/lizard/predator/casterweapons.txt offsetx -3 offsety 1
+#load helmet /data/items/human/caster/helmet.txt offsetx -4 offsety -6
+#load helmet /data/items/lizard/caster/helmet.txt offsetx -3 offsety -6
+
+#notfortier 3
+#notfortier 2
+#tier 1
+#endpose
+
+
+#newpose
+#name "predator mage"
+#role "mage"
+#basechance 0.025
+
+#load basesprite /data/items/lizard/predator/magebases.txt
+
+#load shadow /data/items/lizard/predator/mageshadow.txt
+#load hands /data/items/lizard/predator/magehands.txt
+#load armor /data/items/lizard/predator/robes.txt
+
+#load weapon /data/items/lizard/predator/casterweapons.txt offsetx -4 offsety 1
+#load helmet /data/items/human/caster/helmet.txt offsetx -4 offsety -6
+#load helmet /data/items/lizard/caster/helmet.txt offsetx -3 offsety -6
+
+#notfortier 3
+#notfortier 1
+#tier 2
+#endpose

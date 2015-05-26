@@ -1,0 +1,59 @@
+
+#newitem
+#id epicgoldenstaff
+#gameid 7
+#sprite /graphics/agarthan/weapons/mage/epicgoldenstaff.png
+#tag "tier 3"
+#enditem
+
+
+#newitem
+#id goldenstaff
+#gameid 7
+#sprite /graphics/agarthan/weapons/mage/goldenstaff.png
+#tag "tier 2"
+#tag "tier 1"
+#eliteversion epicgoldenstaff
+#eliteversion waraxe
+#eliteversion epicbaubledstaff
+#eliteversion othersceptre
+#eliteversion woodenorbstaff
+#enditem
+
+
+
+
+#newitem
+#id woodenstaff
+#gameid 7
+#sprite /graphics/agarthan/weapons/mage/woodenstaff.png
+#tag "tier 2"
+#tag "tier 1"
+#eliteversion goldenstaff
+#eliteversion woodenstaff_bauble
+#eliteversion obsidianglaive
+#eliteversion woodenorbstaff
+#eliteversion waraxe
+#enditem
+
+
+#newitem
+#id woodenstaff_bauble
+#gameid 7
+#tag "tier 2"
+#tag "tier 3"
+#sprite /graphics/agarthan/weapons/mage/woodenstaff_bauble.png
+#eliteversion obsidianglaive
+#eliteversion epicbaubledstaff
+#enditem
+
+#newitem
+#id hammer
+#gameid 13
+#sprite /graphics/agarthan/weapons/hammer.png
+#tag "tier 3"
+#tag "tier 2"
+#tag "tier 1"
+#eliteversion waraxe
+#eliteversion othersceptre
+#enditem

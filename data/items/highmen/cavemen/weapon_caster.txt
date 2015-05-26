@@ -1,0 +1,115 @@
+-- Primative weapons
+
+#newitem
+#id club
+#gameid 252
+#sprite /graphics/highmen/weapons/club.png
+#offsetx -2
+#offsety 3
+#theme "primitive"
+#basechance 1
+#enditem
+
+#newitem
+#id spiked_club
+#gameid 593
+#sprite /graphics/highmen/weapons/spikedclub.png
+#offsetx -2
+#offsety 3
+#theme "primitive"
+#basechance 1
+#enditem
+
+#newitem
+#id great_club
+#gameid 165
+#sprite /graphics/highmen/weapons/greatclub.png
+#offsetx 0
+#offsety 3
+#needs hands hands_2h
+#theme "primitive"
+#basechance 1
+#enditem
+
+#newitem
+#id stone_club
+#gameid 429
+#sprite /graphics/highmen/weapons/greatclub_stone.png
+#offsetx 0
+#offsety 3
+#needs hands hands_2h
+#theme "primitive"
+#basechance 1
+#enditem
+
+#newitem
+#id stone_spear
+#gameid 373
+#sprite /graphics/highmen/weapons/spear.png
+#offsetx -2
+#offsety 2
+#needs hands hands_2h
+#theme "primitive"
+#basechance 1
+#enditem
+
+#newitem
+#id stone_hatchet
+#gameid 253
+#sprite /graphics/highmen/weapons/axe.png
+#offsetx -3
+#offsety 3
+#theme "primitive"
+#basechance 1
+#enditem
+
+#newitem
+#id rocks
+#gameid 553
+#sprite /graphics/highmen/weapons/rock.png
+#offsetx -1
+#offsety 0
+#theme "primitive"
+#theme "earth"
+#basechance 1
+#enditem
+
+#newitem
+#id quarterstaff
+#gameid 7
+#sprite /graphics/highmen/weapons/quarterstaff.png
+#offsetx -2
+#offsety 2
+#needs hands hands_2h
+#basechance 1
+#enditem
+
+#newitem
+#id skull_staff
+#gameid 7
+#sprite /graphics/highmen/weapons/caster/staff_skull.png
+#renderprio 2
+#renderslot "bonusweapon"
+#tag "tier 3"
+#basechance 1
+#enditem
+
+#newitem
+#id trinket_staff
+#gameid 7
+#sprite /graphics/highmen/weapons/caster/staff_trinkets.png
+#renderprio 2
+#renderslot "bonusweapon"
+#tag "tier 3"
+#basechance 1
+#enditem
+
+#newitem
+#id bone_staff
+#gameid 7
+#sprite /graphics/highmen/weapons/caster/staff_bones.png
+#renderprio 2
+#renderslot "bonusweapon"
+#tag "tier 3"
+#basechance 1
+#enditem

@@ -1,0 +1,30 @@
+
+-------- Normal
+
+#newpose
+#role "mage"
+#role "priest"
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs armor strap cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/zotz/bases_caster.txt
+#load shadow /data/items/zotz/shadow.txt
+#load hands /data/items/zotz/hands.txt
+#load wings /data/items/zotz/wings.txt
+
+#load armor /data/items/zotz/armor_caster.txt
+
+#load weapon /data/items/zotz/weapon_caster.txt -7 -19
+#load helmet /data/items/zotz/helmet_caster.txt
+
+#load cloakf /data/items/zotz/cloakf.txt
+#load cloakb /data/items/zotz/cloakb.txt
+
+#define "#flying"
+#define "#stealthy +40"
+
+#dontvaryhat
+#endpose
+
+
+

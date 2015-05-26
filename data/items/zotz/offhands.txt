@@ -1,0 +1,58 @@
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/zotz/weapon/axe.png
+#tag "name infantry axeman"
+#offsetx 7
+#offsety 2
+#enditem
+
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/zotz/weapon/mace.png
+#tag "name infantry maceman"
+#offsetx 7
+#offsety 2
+#enditem
+
+
+
+#newitem
+#id dagger
+#basechance 0.25
+#gameid 9
+#sprite /graphics/zotz/weapon/dagger.png
+#offsetx 7
+#offsety 2
+#chanceinc "personalcommand #mounted *0"
+#enditem
+
+
+#newitem
+#id clubsword
+#gameid 451
+#sprite /graphics/zotz/weapon/clubsword.png
+#offsetx 7
+#offsety 2
+#enditem
+
+
+#newitem
+#id hatchet
+#gameid 253
+#sprite /graphics/zotz/offhand/hatchet.png
+#enditem
+
+#newitem
+#id net
+#gameid 263
+#sprite /graphics/zotz/offhand/net.png
+#tag "name infantry slaver"
+#tag "maxprot 12"
+#basechance 0.5
+#tag "tierunique"
+#chanceinc "personalcommand #mounted *0"
+#enditem
+

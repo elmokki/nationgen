@@ -1,0 +1,161 @@
+
+#newitem -- Iron cap
+#id halfhelmet-ironcap
+#gameid 20
+#offsety 1
+#sprite /graphics/helmet/standard/halfhelmet.png
+#armor
+#enditem
+
+#newitem
+#id leathercap
+#gameid 120
+#offsety 1
+#sprite /graphics/helmet/standard/leathercap.png
+#armor
+#tag "eliteversion fancyhat"
+#enditem
+
+#newitem -- Iron cap
+#id halfhelmet2-ironcap
+#gameid 20
+#offsety 1
+#sprite /graphics/helmet/standard/halfhelmet2.png
+#armor
+#enditem
+
+#newitem
+#id ironcap-sprite4
+#gameid 20
+#offsety 1
+#sprite /graphics/helmet/standard/halfhelmet4.png
+#theme "advanced"
+#tag "eliteversion ironcap-sprite4-elite"
+#armor
+#enditem
+
+#newitem
+#id ironcap-sprite4-elite
+#gameid 20
+#offsety 1
+#sprite /graphics/helmet/special/elitehalfhelmet1.png
+#recolormask /graphics/helmet/special/elitehalfhelmet1_recolormask.png
+#armor
+#theme "elite"
+#enditem
+
+#newitem -- std amazon helm
+#id amazoncap-iron
+#gameid 20
+#sprite /graphics/amazon/helmet/amazoncap_iron.png
+#armor
+#enditem
+
+#newitem -- bronze amazon helm
+#id amazoncap-bronze
+#gameid 135
+#sprite /graphics/amazon/helmet/amazoncap_bronze.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem -- leather amazon cap
+#id amazoncap-leather
+#gameid 120
+#sprite /graphics/amazon/helmet/amazoncap_leather.png
+#armor
+#recolormask self
+#enditem
+
+#newitem
+#id longcap-bronze
+#gameid 135
+#sprite /graphics/amazon/helmet/dryadcap_bronze.png
+#tag "eliteversion longcap-bronze-elite"
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id longcap-bronze-elite
+#gameid 135
+#sprite /graphics/amazon/helmet/dryadcap_bronze_elite.png
+#recolormask /graphics/amazon/helmet/dryadcap_elite_recolormask.png
+#armor
+#theme "elite"
+#theme "bronze"
+#enditem
+
+#newitem
+#id longcap-iron
+#gameid 20
+#sprite /graphics/amazon/helmet/dryadcap_iron.png
+#tag "eliteversion longcap-iron-elite"
+#armor
+#enditem
+
+#newitem
+#id longcap-iron-elite
+#gameid 20
+#sprite /graphics/amazon/helmet/dryadcap_iron_elite.png
+#recolormask /graphics/amazon/helmet/dryadcap_elite_recolormask.png
+#armor
+#theme "elite"
+#enditem
+
+#newitem -- hoplite helms
+#id hoplitehelm-bronze
+#basechance 0.25
+#gameid 123
+#sprite /graphics/amazon/helmet/hoplitehelm_bronze.png
+#tag "eliteversion hoplitehelm-elite1"
+#armor
+#theme "bronze"
+#enditem
+
+#newitem -- hoplite helms
+#id hoplitehelm-iron
+#basechance 0.25
+#gameid 123
+#sprite /graphics/amazon/helmet/hoplitehelm_iron.png
+#tag "eliteversion hoplitehelm-elite3"
+#armor
+#enditem
+
+#newitem -- hoplite helms
+#id hoplitehelm-elite1
+#basechance 0.25
+#gameid 123
+#sprite /graphics/amazon/helmet/hoplitehelm_elite1.png
+#armor
+#theme "elite"
+#theme "bronze"
+#enditem
+
+#newitem -- hoplite helms
+#id hoplitehelm-elite2
+#basechance 0.25
+#gameid 123
+#sprite /graphics/amazon/helmet/hoplitehelm_elite2.png
+#armor
+#theme "elite"
+#theme "bronze"
+#enditem
+
+#newitem -- hoplite helms
+#id hoplitehelm-elite3
+#basechance 0.25
+#gameid 123
+#sprite /graphics/amazon/helmet/hoplitehelm_elite3.png
+#armor
+#theme "elite"
+#enditem
+
+#newitem -- hoplite helms
+#id hoplitehelm-elite4
+#basechance 0.25
+#gameid 123
+#sprite /graphics/amazon/helmet/hoplitehelm_elite4.png
+#armor
+#theme "elite"
+#enditem

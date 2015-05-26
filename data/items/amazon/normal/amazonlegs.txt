@@ -1,0 +1,56 @@
+
+--- Pants belonging to an armor set should be given id of the lowest prot armor they go with if you want to avoid naked people with plate pants.
+
+#newitem
+#id pants
+#gameid -1
+#sprite /graphics/amazon/legs/standard/pants.png
+#recolormask /graphics/amazon/legs/standard/pants_recolormask.png
+#enditem
+
+#newitem
+#id nopants
+#gameid -1
+#sprite /graphics/amazon/legs/standard/nopants.png
+#recolormask /graphics/amazon/legs/standard/nopants_recolormask.png
+#basechance 0
+#enditem
+
+#newitem
+#id leatherpants
+#gameid -1
+#sprite /graphics/amazon/legs/standard/leatherpants.png
+#theme "primitive"
+#basechance 0.5
+#enditem
+
+#newitem
+#id chainpants
+#gameid -1
+#sprite /graphics/amazon/legs/standard/chainpants.png
+#tag "minprot 12"
+#enditem
+
+
+#newitem
+#id chainpants_greaves
+#gameid -1
+#sprite /graphics/amazon/legs/standard/chainpants_greaves.png
+#basechance 0
+#enditem
+
+
+#newitem
+#id chainpants_greaves_bronze
+#gameid -1
+#sprite /graphics/amazon/legs/standard/chainpants_greaves_bronze.png
+#basechance 0
+#enditem
+
+#newitem
+#id chainpants_greaves_elite
+#gameid -1
+#sprite /graphics/amazon/legs/standard/chainpants_greaves_elite.png
+#basechance 0
+#theme "elite"
+#enditem

@@ -1,0 +1,105 @@
+#newitem 
+#id "nothing"
+#basechance 1
+#gameid -1
+#theme "primitive"
+#tag "eliteversion headdress_brighter"
+#armor
+#enditem
+
+#newitem 
+#id "nothing"
+#basechance 0.5
+#gameid -1
+#theme "primitive"
+#tag "eliteversion featherheaddress"
+#armor
+#enditem
+
+#newitem -- Darker headdress
+#id headdress_darker
+#basechance 0.75
+#gameid 120
+#gameid -1
+#sprite /graphics/helmet/caster/headdress.png
+#recolormask self
+#offsetx 17
+#offsety 4
+#armor
+#tag "primitive"
+#enditem
+
+#newitem -- Brighter headdress
+#id headdress_brighter
+#basechance 0.75
+#gameid 120
+#gameid -1
+#sprite /graphics/helmet/caster/headdress.png
+#recolormask /graphics/sobek/helmet/headdress_recolormask.png
+#offsetx 17
+#offsety 4
+#armor
+#tag "primitive"
+#enditem
+
+#newitem -- Fancy headdress
+#id featherheaddress
+#basechance 0.75
+#gameid 120
+#gameid -1
+#sprite /graphics/sobek/helmet/predator_cap_elite_recolormask.png
+#recolormask self
+#offsetx 21
+#offsety 5
+#armor
+#tag "primitive"
+#enditem
+
+#newitem -- Large fancy headdress (dark)
+#id feathercap_dark
+#basechance 0.5
+#gameid 120
+#sprite /graphics/helmet/caster/feathercap.png
+#recolormask /graphics/helmet/caster/feathercap_recolormask.png
+#offsetx 15
+#offsety 4
+#armor
+#tag "primitive"
+#enditem
+
+#newitem -- Large fancy headdress (bright)
+#id feathercap_bright
+#basechance 0.5
+#gameid 120
+#sprite /graphics/helmet/caster/feathercap.png
+#recolormask /graphics/sobek/helmet/feathercap_recolormask2.png
+#offsetx 15
+#offsety 4
+#armor
+#tag "primitive"
+#enditem
+
+#newitem -- Iron cap
+#id "cap"
+#basechance 0.2
+#gameid 20
+#sprite /graphics/sobek/helmet/predator_cap.png
+#tag "eliteversion elite_cap"
+#tag "eliteversion cap"
+#offsetx 22
+#offsety 3
+#armor
+#tag "advanced"
+#enditem
+
+#newitem -- Fancy iron cap
+#id "elite_cap"
+#basechance 0
+#gameid 20
+#sprite /graphics/sobek/helmet/predator_cap_elite.png
+#recolormask /graphics/sobek/helmet/predator_cap_elite_recolormask.png
+#offsetx 22
+#offsety 3
+#armor
+#tag "advanced"
+#enditem

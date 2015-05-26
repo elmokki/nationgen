@@ -1,0 +1,88 @@
+--- Base offsets are applied to everything except base and overlay
+#newitem
+#name "horse"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse.png
+#armor
+#needs overlay 10
+#offsetx 51
+#offsety -7
+#define "#trample"
+#define "#size 4"
+#define "#prot +4"
+#define "#mounted"
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#gcost +20"
+#define "#rcost +10"
+#define "#ressize 2"
+#theme "animal 'horse'"
+#basechance 0.25
+#tag chariot
+#enditem
+
+#newitem
+#name "bronze horse"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse_bronze.png
+#armor
+#theme "bronze"
+#needs overlay 11
+#offsetx 52
+#offsety -6
+#define "#trample"
+#define "#size 4"
+#define "#prot +4"
+#define "#mounted"
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#gcost +20"
+#define "#rcost +10"
+#define "#ressize 2"
+#theme "animal 'horse'"
+#basechance 0.25
+#tag chariot
+#enditem
+
+#newitem
+#name "lizard"
+#gameid -1
+#sprite /graphics/mounts/chariots/lizard.png
+#armor
+#needs overlay 12
+#offsetx 53
+#offsety -7
+#define "#trample"
+#define "#size 4"
+#define "#prot +4"
+#define "#mapmove 3"
+#define "#mounted"
+#define "#ap 16"
+#define "#gcost +20"
+#define "#rcost +10"
+#theme "animal 'lizard'"
+#basechance 8
+#tag chariot
+#enditem
+
+
+#newitem
+#name "boar chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar.png
+#armor
+#needs overlay 10
+#offsetx 51
+#offsety -7
+#define "#trample"
+#define "#size 4"
+#define "#prot +4"
+#define "#mapmove 3"
+#define "#mounted"
+#define "#ap 18"
+#define "#gcost +20"
+#define "#rcost +10"
+#theme "animal 'boar'"
+#basechance 0.05
+#tag chariot
+#enditem

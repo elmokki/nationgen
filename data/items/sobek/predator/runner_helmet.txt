@@ -1,0 +1,82 @@
+#newitem 
+#id "nothing"
+#basechance 1.25
+#gameid -1
+#theme "primitive"
+#tag "eliteversion headdress_brighter"
+#armor
+#enditem
+
+#newitem 
+#id "nothing"
+#basechance 0.75
+#gameid -1
+#theme "primitive"
+#tag "eliteversion featherheaddress"
+#armor
+#enditem
+
+#newitem -- Darker headdress
+#id headdress_darker
+#basechance 0.25
+#gameid -1
+#sprite /graphics/helmet/caster/headdress.png
+#recolormask self
+#offsetx -10
+#offsety 3
+#armor
+#tag "primitive"
+#enditem
+
+#newitem -- Brighter headdress
+#id headdress_brighter
+#basechance 0.25
+#gameid -1
+#sprite /graphics/helmet/caster/headdress.png
+#recolormask /graphics/sobek/helmet/headdress_recolormask.png
+#offsetx -10
+#offsety 3
+#armor
+#tag "primitive"
+#tag "elite"
+#enditem
+
+#newitem -- Fancy headdress
+#id featherheaddress
+#basechance 0.25
+#gameid -1
+#sprite /graphics/sobek/helmet/predator_cap_elite_recolormask.png
+#recolormask self
+#offsetx -6
+#offsety 4
+#armor
+#tag "primitive"
+#tag "elite"
+#enditem
+
+#newitem -- Large fancy headdress (dark) - only for "feathered warrior" types
+#id feathercap_dark
+#basechance 0
+#gameid 120
+#sprite /graphics/helmet/caster/feathercap.png
+#recolormask /graphics/helmet/caster/feathercap_recolormask.png
+#offsetx -12
+#offsety 3
+#armor
+#tag "primitive"
+#tag "elite"
+#enditem
+
+#newitem -- Large fancy headdress (bright) - only for "feathered warrior" types
+#id feathercap_bright
+#basechance 0
+#gameid 120
+#sprite /graphics/helmet/caster/feathercap.png
+#recolormask /graphics/sobek/helmet/feathercap_recolormask2.png
+#offsetx -12
+#offsety 3
+#armor
+#tag "primitive"
+#tag "elite"
+#enditem
+

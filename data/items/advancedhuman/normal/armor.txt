@@ -1,0 +1,120 @@
+
+--- Leather
+
+
+#newitem
+#name "leather cuirass"
+#gameid 5
+#sprite /graphics/advancedhuman/armor/leather_cuirass.png
+#armor
+#enditem
+
+#newitem
+#name "leather hauberk"
+#gameid 10
+#sprite /graphics/advancedhuman/armor/leather_hauberk.png
+#armor
+#enditem
+
+
+#newitem -- full leather
+#newitem
+#name "full leather"
+#gameid 15
+#sprite /graphics/advancedhuman/armor/leather_hauberk.png
+#needs shirt noshirt_leatherpants
+#armor
+#enditem
+
+
+--- Ring
+
+#newitem
+#name "ring cuirass"
+#gameid 6
+#sprite /graphics/advancedhuman/armor/ring_cuirass.png
+#armor
+#enditem
+
+
+#newitem
+#name "ring hauberk"
+#gameid 11
+#sprite /graphics/advancedhuman/armor/ring_hauberk.png
+#armor
+#enditem
+
+
+#newitem -- full ring
+#name "full ring"
+#gameid 16
+#sprite /graphics/advancedhuman/armor/ring_hauberk.png
+#armor
+#needs shirt noshirt_leatherpants
+#enditem
+
+
+
+--- Chain Mail
+
+
+#newitem
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/advancedhuman/armor/chain_cuirass.png
+#armor
+#enditem
+
+
+#newitem
+#name "chain hauberk"
+#gameid 13
+#sprite /graphics/advancedhuman/armor/chain_hauberk.png
+#armor
+#needs shirt noshirt_pants
+#enditem
+
+
+#newitem -- full chain
+#name "full chain"
+#gameid 18
+#sprite /graphics/advancedhuman/armor/chain_full.png
+#armor
+#tag "name mounted knight"
+#needs shirt noshirt_pants
+#enditem
+
+
+
+--- Plate
+
+
+#newitem
+#name "plate cuirass"
+#gameid 9
+#sprite /graphics/advancedhuman/armor/plate_cuirass.png
+#armor
+#enditem
+
+
+#newitem
+#name "plate hauberk"
+#gameid 14
+#sprite /graphics/advancedhuman/armor/plate_hauberk.png
+#armor
+#tag "name mounted knight"
+#enditem
+
+
+#newitem -- full plate
+#name "full plate"
+#gameid 19
+#sprite /graphics/advancedhuman/armor/plate_full.png
+#armor
+#tag "name mounted knight"
+#maxvarieties 1
+#needs shirt noshirt_nopants
+#enditem
+
+
+

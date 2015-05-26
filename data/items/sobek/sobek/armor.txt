@@ -1,0 +1,213 @@
+--- None
+
+#newitem
+#name "shendyt-white"
+#gameid -1
+#sprite /graphics/sobek/armor/standard/sobek_shendyt.png
+#tag "eliteversion shendyt-colored"
+#theme "primative"
+#tag "name infantry savage"
+#tag "prefix savage"
+#armor
+#basechance 0.125
+#end
+
+#newitem
+#name "shendyt-colored"
+#gameid -1
+#sprite /graphics/sobek/armor/standard/sobek_shendyt.png
+#recolormask self
+#theme "primative"
+#tag "name infantry savage"
+#tag "prefix savage"
+#armor
+#basechance 0.125
+#end
+
+--- Chain Mail
+
+
+#newitem
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/sobek/armor/standard/sobek_cuirass.png
+#armor
+#basechance 0.75
+#enditem
+
+
+#newitem
+#name "chain hauberk"
+#gameid 13
+#sprite /graphics/sobek/armor/standard/sobek_hauberk.png
+#tag "eliteversion elite-chain-hauberk"
+#basechance 0.5
+#armor
+#enditem
+
+
+
+#newitem -- full chain
+#name "full chain"
+#gameid 18
+#sprite /graphics/sobek/armor/standard/sobek_full.png
+#tag "eliteversion elite-full-chain"
+#armor
+#basechance 0.25
+#theme "advanced"
+#enditem
+
+
+--- Scale
+
+#newitem
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/sobek/armor/standard/sobek_cuirass.png
+#armor
+#enditem
+
+
+#newitem
+#name "scale hauberk"
+#gameid 12
+#sprite /graphics/sobek/armor/standard/sobek_hauberk.png
+#tag "eliteversion elite-scale-hauberk"
+#armor
+#basechance 1.5
+#enditem
+
+
+
+#newitem -- full scale
+#name "full scale"
+#gameid 17
+#sprite /graphics/sobek/armor/standard/sobek_full.png
+#tag "eliteversion elite-full-scale"
+#armor
+#enditem
+
+
+-- Plate armor
+
+
+#newitem
+#name "plate cuirass"
+#gameid 9
+#sprite /graphics/sobek/armor/standard/sobek_platecuirass.png
+#recolormask /graphics/sobek/armor/standard/sobek_platecuirass_recolormask.png
+#tag "eliteversion 'plate cuirass'"
+#tag "eliteversion 'plate hauberk'"
+#tag "eliteversion elite-plate-cuirass"
+#armor
+#basechance 0.375
+#theme "advanced"
+#enditem
+
+
+#newitem
+#name "plate hauberk"
+#gameid 14
+#sprite /graphics/sobek/armor/standard/sobek_platehauberk.png
+#recolormask /graphics/sobek/armor/standard/sobek_platehauberk_recolormask.png
+#tag "eliteversion 'plate hauberk'"
+#tag "eliteversion 'full plate'"
+#tag "eliteversion elite-plate-hauberk"
+#basechance 0.25
+#armor
+#theme "advanced"
+#enditem
+
+
+#newitem -- full plate
+#name "full plate"
+#gameid 19
+#sprite /graphics/sobek/armor/standard/sobek_fullplate.png
+#recolormask /graphics/sobek/armor/standard/sobek_fullplate_recolormask.png
+#tag "eliteversion 'full plate'"
+#tag "eliteversion elite-full-plate"
+#armor
+#basechance 0.125
+#theme "advanced"
+#enditem
+
+-- Elite versions
+
+#newitem
+#name "elite-chain-hauberk"
+#gameid 13
+#sprite /graphics/sobek/armor/standard/sobek_hauberk_elite.png
+#theme "elite"
+#armor
+#basechance 0
+#enditem
+
+
+
+#newitem -- full chain
+#name "elite-full-chain"
+#gameid 18
+#sprite /graphics/sobek/armor/standard/sobek_full_elite.png
+#theme "elite"
+#armor
+#basechance 0
+#theme "advanced"
+#enditem
+
+
+
+#newitem
+#name "elite-scale-hauberk"
+#gameid 12
+#sprite /graphics/sobek/armor/standard/sobek_hauberk_elite.png
+#theme "elite"
+#armor
+#basechance 0
+#enditem
+
+
+
+#newitem -- full scale
+#name "elite-full-scale"
+#gameid 17
+#sprite /graphics/sobek/armor/standard/sobek_full_elite.png
+#theme "elite"
+#armor
+#basechance 0
+#enditem
+
+
+#newitem
+#name "elite-plate-cuirass"
+#gameid 9
+#sprite /graphics/sobek/armor/standard/sobek_platecuirass_elite.png
+#recolormask /graphics/sobek/armor/standard/sobek_platecuirass_recolormask.png
+#armor
+#basechance 0
+#theme "advanced"
+#theme "elite"
+#enditem
+
+
+#newitem
+#name "elite-plate-hauberk"
+#gameid 14
+#sprite /graphics/sobek/armor/standard/sobek_platehauberk_elite.png
+#recolormask /graphics/sobek/armor/standard/sobek_platehauberk_recolormask.png
+#basechance 0
+#armor
+#theme "advanced"
+#theme "elite"
+#enditem
+
+
+#newitem -- full plate
+#name "elite-full-plate"
+#gameid 19
+#sprite /graphics/sobek/armor/standard/sobek_fullplate_elite.png
+#recolormask /graphics/sobek/armor/standard/sobek_fullplate_recolormask.png
+#armor
+#basechance 0
+#theme "advanced"
+#theme "elite"
+#enditem

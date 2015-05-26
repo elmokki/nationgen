@@ -1,0 +1,528 @@
+-- No armor
+
+#newitem
+#id nekkid
+#gameid -1
+#tag "eliteversion jewelry_gold"
+#tag "eliteversion jewelry_coral"
+#tag "tier 1"
+#armor
+#basechance 2
+#enditem
+
+#newitem
+#id jewelry_gold
+#gameid -1
+#sprite /graphics/ichtyid/armor/robes/jewelry_gold.png
+#tag "tier 1"
+#tag "tier 2"
+#armor
+#enditem
+
+#newitem
+#id jewelry_coral
+#gameid -1
+#sprite /graphics/ichtyid/armor/robes/jewelry_coral.png
+#tag "tier 1"
+#tag "tier 2"
+#armor
+#enditem
+
+#newitem
+#id shendyt_plain
+#gameid -1
+#sprite /graphics/ichtyid/armor/robes/shendyt_plain.png
+#tag "eliteversion shendyt_colored"
+#tag "eliteversion shendyt_belt_gold"
+#tag "tier 1"
+#armor
+#enditem
+
+#newitem
+#id shendyt_colored
+#gameid -1
+#sprite /graphics/ichtyid/armor/robes/shendyt_plain.png
+#recolormask self
+#tag "eliteversion shendyt_colored_belt"
+#tag "tier 1"
+#tag "tier 2"
+#armor
+#enditem
+
+#newitem
+#id shendyt_belt_gold
+#gameid -1
+#sprite /graphics/ichtyid/armor/robes/shendyt_belt.png
+#tag "eliteversion shendyt_colored_belt"
+#tag "eliteversion shendyt_belt_colored"
+#tag "tier 2"
+#armor
+#enditem
+
+#newitem
+#id shendyt_colored_belt
+#gameid -1
+#sprite /graphics/ichtyid/armor/robes/shendyt_belt.png
+#recolormask /graphics/ichtyid/armor/robes/shendyt_recolormask1.png
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id shendyt_belt_colored
+#gameid -1
+#sprite /graphics/ichtyid/armor/robes/shendyt_belt.png
+#recolormask /graphics/ichtyid/armor/robes/shendyt_recolormask2.png
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+
+-- Assorted robes
+
+#newitem
+#id robe_white_plain
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_light.png
+#tag "eliteversion robe_white_bronze"
+#tag "tier 1"
+#armor
+#basechance 0.1
+#enditem
+
+#newitem
+#id robe_grey_plain
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_grey.png
+#tag "eliteversion robe_grey_bronze"
+#tag "tier 1"
+#armor
+#basechance 0.1
+#enditem
+
+#newitem
+#id robe_black_plain
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_dark.png
+#tag "eliteversion robe_dark_bronze"
+#tag "tier 1"
+#armor
+#basechance 0.1
+#enditem
+
+#newitem
+#id robe_white_bronze
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_light_bronze.png
+#tag "eliteversion robe_white_gold"
+#tag "tier 2"
+#armor
+#basechance 0.1
+#enditem
+
+#newitem
+#id robe_grey_bronze
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_grey_bronze.png
+#tag "eliteversion robe_grey_bronze_gold"
+#tag "tier 2"
+#armor
+#basechance 0.1
+#enditem
+
+#newitem
+#id robe_black_bronze
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_dark_bronze.png
+#tag "eliteversion robe_dark_bronze_gold"
+#tag "tier 2"
+#armor
+#basechance 0.1
+#enditem
+
+#newitem
+#id robe_white_gold
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_light_gold.png
+#tag "eliteversion robe_white_colored"
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#basechance 0.1
+#enditem
+
+#newitem
+#id robe_grey_gold
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_grey_gold.png
+#tag "eliteversion robe_grey_bronze_colored"
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#basechance 0.1
+#enditem
+
+#newitem
+#id robe_black_gold
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_dark_gold.png
+#tag "eliteversion robe_dark_bronze_colored"
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#basechance 0.1
+#enditem
+
+#newitem
+#id robe_white_colored
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_light_gold.png
+#recolormask /graphics/ichtyid/armor/robes/robes_trim_recolormask.png
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#basechance 0.1
+#enditem
+
+#newitem
+#id robe_grey_colored
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_grey_gold.png
+#recolormask /graphics/ichtyid/armor/robes/robes_trim_recolormask.png
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#basechance 0.1
+#enditem
+
+#newitem
+#id robe_black_colored
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_dark_gold.png
+#recolormask /graphics/ichtyid/armor/robes/robes_trim_recolormask.png
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#basechance 0.1
+#enditem
+
+#newitem
+#id robe_light
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_light.png
+#recolormask self
+#tag "eliteversion robe_medium"
+#tag "eliteversion robe_light_bronze"
+#tag "tier 1"
+#armor
+#enditem
+
+#newitem
+#id robe_medium
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_grey.png
+#recolormask self
+#tag "eliteversion robe_dark"
+#tag "tier 2"
+#armor
+#enditem
+
+#newitem
+#id robe_dark
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_dark.png
+#recolormask self
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id robe_light_bronze
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_light_bronze.png
+#recolormask /graphics/ichtyid/armor/robes/robes_light_recolormask.png
+#tag "eliteversion robe_light_gold"
+#tag "eliteversion robe_light_colored"
+#tag "tier 2"
+#armor
+#enditem
+
+#newitem
+#id robe_light_gold
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_light_gold.png
+#recolormask /graphics/ichtyid/armor/robes/robes_light_recolormask.png
+#tag "eliteversion robe_light_colored"
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id robe_light_colored
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_light_bronze.png
+#recolormask self
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id robe_medium2
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_grey.png
+#recolormask self
+#tag "eliteversion robe_medium_bronze"
+#tag "tier 1"
+#armor
+#enditem
+
+#newitem
+#id robe_medium_bronze
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_grey_bronze.png
+#recolormask /graphics/ichtyid/armor/robes/robes_grey_recolormask.png
+#tag "eliteversion robe_medium_gold"
+#tag "eliteversion robe_medium_colored"
+#tag "tier 2"
+#armor
+#enditem
+
+#newitem
+#id robe_medium_gold
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_grey_gold.png
+#recolormask /graphics/ichtyid/armor/robes/robes_grey_recolormask.png
+#tag "eliteversion robe_medium_colored"
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id robe_medium_colored
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_grey_gold.png
+#recolormask self
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id robe_dark2
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_dark.png
+#recolormask self
+#tag "eliteversion robe_dark_bronze"
+#tag "tier 1"
+#armor
+#enditem
+
+#newitem
+#id robe_dark_bronze
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_dark_bronze.png
+#recolormask /graphics/ichtyid/armor/robes/robes_dark_recolormask.png
+#tag "eliteversion robe_dark_gold"
+#tag "eliteversion robe_dark_colored"
+#tag "tier 2"
+#armor
+#enditem
+
+#newitem
+#id robe_dark_gold
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_dark_gold.png
+#recolormask /graphics/ichtyid/armor/robes/robes_dark_recolormask.png
+#tag "eliteversion robe_dark_colored"
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id robe_dark_colored
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_dark_gold.png
+#recolormask self
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id robe_long_grey
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_long_plain.png
+#tag "eliteversion robe_long_colored"
+#tag "tier 1"
+#armor
+#enditem
+
+#newitem
+#id robe_long_colored
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_long_plain.png
+#recolormask self
+#tag "eliteversion long_colored_gold"
+#tag "tier 2"
+#armor
+#enditem
+
+#newitem
+#id robe_long_colored_gold
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_long_trim.png
+#recolormask /graphics/ichtyid/armor/robes/robes_long_trim_recolormask1.png
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id robe_long_grey2
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_long_plain.png
+#tag "eliteversion robe_long_grey_gold"
+#tag "tier 1"
+#armor
+#basechance 0.1
+#enditem
+
+#newitem
+#id robe_long_grey_gold
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_long_trim.png
+#tag "eliteversion robe_long_grey_colored"
+#tag "tier 2"
+#armor
+#basechance 0.1
+#enditem
+
+#newitem
+#id robe_long_grey_colored
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_long_trim.png
+#recolormask /graphics/ichtyid/armor/robes/robes_long_trim_recolormask2.png
+#tag "tier 3"
+#armor
+#basechance 0.1
+#enditem
+
+#newitem
+#id robe_full_light
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_full_light.png
+#recolormask self
+#tag "eliteversion robe_full_medium"
+#tag "tier 1"
+#tag "tier 2"
+#armor
+#enditem
+
+#newitem
+#id robe_full_medium
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_full_grey.png
+#recolormask self
+#tag "eliteversion robe_full_dark"
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id robe_full_dark
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_full_dark.png
+#recolormask self
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id robe_full_white
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_full_light.png
+#tag "eliteversion robe_full_grey"
+#tag "tier 1"
+#armor
+#basechance 0.1
+#enditem
+
+#newitem
+#id robe_full_grey
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_full_grey.png
+#tag "eliteversion robe_full_black"
+#tag "tier 1"
+#tag "tier 2"
+#armor
+#basechance 0.1
+#enditem
+
+#newitem
+#id robe_full_black
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_full_dark.png
+#tag "eliteversion robe_full_dark"
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#basechance 0.1
+#enditem
+
+-- Shark armor
+
+#newitem
+#id sharkmask_only
+#gameid -1
+#tag "eliteversion sharkskin_cuirass"
+#tag "tier 1"
+#armor
+#needs helmet shark_mask
+#theme "primitive"
+#theme "blood"
+#basechance 0.25
+#enditem
+
+#newitem
+#name sharkskin_cuirass
+#gameid 188
+#sprite /graphics/ichtyid/armor/sharkskin_cuirass.png
+#tag "eliteversion sharkskin_armor_T2"
+#tag "eliteversion sharkskin_armor_T3"
+#armor
+#needs helmet shark_mask
+#theme "primitive"
+#theme "blood"
+#tag "tier 1"
+#tag "tier 2"
+#basechance 0.75
+#enditem
+
+#newitem
+#name sharkskin_armor_T2
+#gameid 151
+#sprite /graphics/ichtyid/armor/sharkskin_armor.png
+#armor
+#needs helmet shark_mask
+#theme "primitive"
+#theme "blood"
+#tag "tier 2"
+#basechance 0.5
+#enditem
+
+#newitem
+#name sharkskin_armor_T3
+#gameid 151
+#sprite /graphics/ichtyid/armor/sharkskin_armor.png
+#armor
+#needs helmet shark_mask
+#theme "primitive"
+#theme "blood"
+#tag "tier 3"
+#basechance 0.25
+#enditem
+

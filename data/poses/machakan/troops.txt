@@ -1,0 +1,139 @@
+
+-------- Normal
+
+#newpose
+#role "infantry"
+#role "sacred"
+#role "scout"
+
+#load basesprite /data/items/machakans/standard/bases.txt
+#load shadow /data/items/human/normal/shadow.txt
+
+#load hands /data/items/machakans/standard/hands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load hair /data/items/human/normal/humanhair.txt
+
+#load armor /data/items/machakans/standard/armor.txt
+#load helmet /data/items/machakans/standard/helmet.txt
+#load legs /data/items/machakans/standard/legs.txt
+
+#load weapon /data/items/machakans/standard/weapon.txt
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt
+
+#load offhand /data/items/human/normal/humanoffhand.txt
+#load offhand /data/items/machakans/standard/shields.txt
+
+
+#load offhand /data/items/human/sacredstuff/sacredoffhand.txt
+#load bonusweapon /data/items/human/sacredstuff/human_sacredbonusweapons.txt
+#load bonusweapon /data/items/human/sacredstuff/sacredbonusweapons.txt
+#endpose
+
+-------- 2h infantry
+
+
+
+------- Mounted
+
+#newpose
+#role "mounted"
+#role "sacred"
+
+#load basesprite /data/items/machakans/standard/bases.txt 5 -15
+#load mount /data/items/machakans/mounted/mounts.txt
+
+#load hands /data/items/machakans/standard/hands.txt 5 -15
+
+#load cloakf /data/items/human/normal/humancloakf.txt 5 -15
+#load cloakb /data/items/human/normal/humancloakb.txt 5 -15
+#load hair /data/items/human/normal/humanhair.txt 5 -15
+
+#load armor /data/items/machakans/standard/armor.txt 5 -15
+#load helmet /data/items/machakans/standard/helmet.txt 5 -15
+#load legs /data/items/machakans/mounted/legs.txt 4 -15
+
+#load weapon /data/items/machakans/mounted/weapon.txt 5 -15
+
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt 5 -15
+#load bonusweapon /data/items/human/human_mounted/lance.txt 5 -15
+#load bonusweapon /data/items/human/sacredstuff/sacredbonusweapons.txt 5 -15
+
+#load offhand /data/items/machakans/standard/shields.txt 5 -15
+
+#load helmet /data/items/human/sacredstuff/humanspecific_sacredhelmet.txt 5 -15
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+
+#writeslot lanceslot
+#endpose
+
+------- Low mounted
+
+#newpose
+#race 0
+#role "mounted"
+#role "sacred"
+
+#load basesprite /data/items/machakans/standard/bases.txt 5 -15
+#load mount /data/items/machakans/mounted/mounts_low.txt
+
+#load hands /data/items/machakans/standard/hands.txt 5 -15
+
+#load cloakf /data/items/human/normal/humancloakf.txt 5 -15
+#load cloakb /data/items/human/normal/humancloakb.txt 5 -15
+#load hair /data/items/human/normal/humanhair.txt 5 -15
+
+#load armor /data/items/machakans/standard/armor.txt 5 -15
+#load helmet /data/items/machakans/standard/helmet.txt 5 -15
+#load legs /data/items/machakans/mounted/legs.txt 4 -15
+
+#load weapon /data/items/machakans/mounted/weapon.txt 5 -15
+
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt 5 -15
+#load bonusweapon /data/items/human/human_mounted/lance.txt 5 -15
+#load bonusweapon /data/items/human/sacredstuff/sacredbonusweapons.txt 5 -15
+
+#load offhand /data/items/machakans/standard/shields.txt 5 -15
+
+#load helmet /data/items/human/sacredstuff/humanspecific_sacredhelmet.txt 5 -15
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+
+#writeslot lanceslot
+#endpose
+
+
+------- Archer
+
+#newpose
+#race 0
+#role "ranged"
+#role "sacred"
+
+#renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/machakans/archer/bases.txt
+#load shadow /data/items/human/normal/shadow.txt
+
+#load hands /data/items/machakans/archer/hands.txt
+
+#load armor /data/items/machakans/archer/armor.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load hair /data/items/human/normal/humanhair.txt
+
+#load helmet /data/items/machakans/standard/helmet.txt
+#load legs /data/items/machakans/standard/legs.txt
+
+#load weapon /data/items/human/archer/bows.txt
+
+#load quiver /data/items/human/archer/humanbonusranged.txt
+#load bonusweapon /data/items/human/archer/archerweapon.txt
+
+#load helmet /data/items/human/sacredstuff/sacredhelmet.txt
+
+#generateitem 1 bonusweapon
+#endpose

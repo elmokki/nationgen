@@ -1,0 +1,363 @@
+#new
+#name "poisonres5"
+#command "#poisonres +5"
+#description "Poison resistant"
+#end
+
+#new
+#name "shockres5"
+#command "#shockres +5"
+#description "Shock resistant"
+#end
+
+#new
+#name "fireres5"
+#command "#fireres +5"
+#description "Fire resistant"
+#end
+
+#new
+#name "coldres5"
+#description "Cold resistant"
+#command "#coldres +5"
+#end
+
+#new
+#name "darkvision 50"
+#primarycommand "#darkvision"
+#description "Dark vision (50)"
+#chance 0.5
+#command "#darkvision +50"
+#end
+
+#new
+#name "forestsurvival"
+#primarycommand "#forestsurvival"
+#description "Forest survival"
+#chance 0.5
+#command "#forestsurvival"
+#end
+
+#new
+#name "swampsurvival"
+#primarycommand "#swampsurvival"
+#description "Swamp survival"
+#chance 0.5
+#command "#swampsurvival"
+#end
+
+#new
+#name "wastesurvival"
+#primarycommand "#wastesurvival"
+#description "Waste survival"
+#chance 0.5
+#command "#wastesurvival"
+#end
+
+#new
+#name "mountainsurvival"
+#primarycommand "#mountainsurvival"
+#description "Mountain survival"
+#chance 0.5
+#command "#mountainsurvival"
+#end
+
+#new
+#name "faeblood"
+#tag "faeblood"
+#description "Fae blood"
+#chance 0.3
+#command "#mr +1"
+#end
+
+
+#new
+#name "strong"
+#tag "strong"
+#chance 0.3
+#command "#str +1"
+#description "Strong"
+#end
+
+#new
+#name "weak"
+#tag "weak"
+#chance 0.15
+#command "#str -1"
+#description "Weak"
+#end
+
+
+#new
+#name "weak"
+#tag "weak"
+#chance 0.15
+#command "#str -1"
+#description "Weak"
+#end
+
+#new
+#name "stocky"
+#tag "stocky"
+#chance 0.3
+#command "#mr -1"
+#command "#enc -1"
+#command "#hp +2"
+#command "#str +1"
+#description "Stocky"
+#end
+
+#new
+#name "clumsy"
+#tag "clumsy"
+#chance 0.15
+#command "#att -1"
+#command "#def -1"
+#command "#str +1"
+#command "#hp +2"
+#description "Clumsy"
+#end
+
+#new
+#name "Myopic"
+#chance 0.3
+#command "#prec -1"
+#description "Myopic"
+#end
+
+
+#new
+#name "Keen eyed"
+#chance 0.3
+#command "#prec +1"
+#description "Keen eyed"
+#end
+
+#new
+#name "Aggressive"
+#chance 0.3
+#command "#att +1"
+#command "#def -1"
+#description "Aggressive"
+#end
+
+#new
+#name "Gluttonous"
+#chance 0.1
+#command "#supplybonus -1"
+#description "Gluttonous"
+#end
+
+
+
+#new
+#name "Cowardly"
+#chance 0.3
+#command "#mor -1"
+#command "#def +1"
+#description "Cowardly"
+#end
+
+#new
+#name "Brave"
+#chance 0.3
+#command "#mor +1"
+#description "Brave"
+#end
+
+#new
+#name "Quick"
+#chance 0.1
+#command "#ap +4"
+#description "Quick"
+#end
+
+#new
+#name "Sick"
+#chance 0.015
+#command "#startaff +10"
+#description "Sick"
+#end
+
+
+#new
+#name "coldvuln"
+#chance 0.05
+#command "#coldres -3"
+#command "#fireres +3"
+#chanceinc nationcommand #idealcold below 0 *0
+#description "Vulnerable to cold"
+#end
+
+
+#new
+#name "firevuln"
+#chance 0.05
+#command "#coldres +3"
+#command "#fireres -3"
+#chanceinc nationcommand #idealcold above 0 *0
+#description "Vulnerable to fire"
+#end
+
+#new
+#name "blind"
+#chance 0.025
+#primarycommand "#darkvision"
+#primarycommand "#blind"
+#command "#blind"
+#description "Blind"
+#end
+
+#new
+#name "magicbeing"
+#chance 0.0125
+#primarycommand "#magicbeing"
+#command "#magicbeing"
+#command "#mr +2"
+#description "Magical"
+#end
+
+
+#new
+#name "demonblood"
+#chance 0.0125
+#primarycommand "#demon"
+#command "#demon"
+#command "#mr +1"
+#command "#gcost +4"
+#command "#str +2"
+#command "#hp +1"
+#description "Demon blood"
+#end
+
+#new
+#name "pooramphibian"
+#chance 0.0
+#chanceinc "magic water 0.006125"
+#nocommand #amphibian
+#primarycommand "#pooramphibian"
+#primarycommand "#amphibian"
+#command "#pooramphibian"
+#description "Poor amphibian"
+#end
+
+#new
+#name "levy"
+#chance 0.0125
+#trooponly
+#command "#gcost *0.9"
+#command "#rcost +3"
+#description "Levy"
+#end
+
+#new
+#name "warriorculture"
+#chance 0.0125
+#trooponly
+#command "#gcost *1.1"
+#command "#rcost -3"
+#description "Warrior culture"
+#end
+
+
+#new
+#name "professional"
+#chance 0.03
+#commanderonly
+#command "#gcost *1.2"
+#command "#rcost +4"
+#command "#mor +1"
+#command "#def +1"
+#command "#att +1"
+#command "#prec +1"
+#description "Skilled warrior"
+#end
+
+
+#new
+#name "professional"
+#chance 0.03
+#commanderonly
+#command "#gcost *1.2"
+#command "#rcost +4"
+#command "#mor +1"
+#command "#def +1"
+#command "#att +1"
+#command "#prec +1"
+#description "Skilled warrior"
+#end
+
+
+#new
+#name "Hardy"
+#chance 0.05
+#command "#woundfend 25"
+#description "Hardy"
+#end
+
+
+
+#new
+#name "thickskin"
+#chance 0.025
+#command "#prot +2"
+#description "Thick skinned"
+#end
+
+
+#new
+#name "golem"
+#chance 0.00625
+#command "#stonebeing"
+#command "#ap -4"
+#command "#prot +4"
+#description "Stone skinned"
+#end
+
+
+#new
+#name "golem"
+#chance 0.00625
+#command "#stonebeing"
+#command "#ap -2"
+#command "#prot +2"
+#description "Stone skinned"
+#end
+
+#new
+#name "maritime"
+#chance 0.05
+#commanderonly
+#primarycommand "#sailing"
+#command "#sailing 999 3"
+#command "#gcost *1.1"
+#description "Sailing"
+#end
+
+#new
+#name "stealthy"
+#basechance 0.05
+#trooponly
+#primarycommand "#stealthy"
+#lowenccommand "#stealthy +0"
+#lowenctreshold 2
+#description "Stealthy"
+#end
+
+#new
+#basechance 0.025
+#name "deathrec10"
+#command "#deathrec %cost10"
+#chanceinc magic death 0.075
+#description "Death rec 10%"
+#end
+
+#new
+#basechance 0.05
+#name "chaosrec10"
+#command "#chaosrec %cost10"
+#description "Chaos rec 10%"
+#end
+
+
+

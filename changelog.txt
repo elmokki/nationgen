@@ -1,0 +1,52 @@
+version 0.5.0.08E (26th of March 2015)
+- better support for mounted mages
+- added support for mounted scouts
+- temporarily disabled T2 mounted casters for Sidhe; this is a temporary workaround for the overlay issue
+- data fixes for Sidhe
+- re-enabled Sidhe
+
+version 0.5.0.07E (16th of March 2015)
+- two more cloaks
+- started very restrained code cleanup based on mmilleder's list
+- changed weapon offset for predator mages 
+- data/graphics tweaks to Cavemen and Sleepers
+- fixed data name error causing herbivore lizard nations to use Sobek predator poses instead of slave predators
+- fixed rare data error with "Sick" filter
+version 0.5.0.06E (9th of March 2015)
+- changed "Disable vanilla nations" option to use #disableoldnations mod command
+version 0.5.0.05E (9th of March 2015)
+- added "Sleeper" troops to generic humans (TODO: add barbarians and move sleepers there)
+- added Collossi troops to Machakans
+- added Cavemen as secondary-only race
+- added Burning One troops to Abysians
+- added giant parrot (macaw) cavalry to hoburgs
+- Updated nations.csv to include the most recently-added 5 nations (this will make them get hidden if that option is selected)
+- Dom4 Wyverns
+- Eliminated legacy Dom3 CBM hooves for cavalry in favor of Dom4 Hooves
+- Fixed fatal graphic error with armored croc mount second forms 
+version 0.5.0.04E (19th of December 2014)
+- added pygmy cavalry to Machakan humans (hyenas, giant parrots)
+- added "clockwork armor" to hoburgs - functional and "complete" but probably only 80% done vs. design plans
+- added ichtyid race - functional and "complete" but probably only 80% done vs. design plans
+- added crocodile cavalry to sobeks
+- added plate armor to sobeks - only for sobek troops, not predator lizards or runners
+version 0.5.0.03E (12th of November 2014)
+- replaced spears with light lances for Caelian infantry
+- fixed range and damage for amphiptere mount intrinsic weapons
+- updated light spider, jaguar graphics
+- added scorpion, jaguar, cave grub, and cave spider cavalry to zotz
+- added new zotz arms and armor from the 4.14 patch
+- revised vanir stats in keeping with a bugfix from the 4.14 patch: enc 4 -> enc 3
+- revised zotz stats in keeping with changes from the 4.14 patch: numerous changes
+- reduced base stats for Amazon "metics": -1 to Att/Def/Mor/Gold - still better than militia, but no longer just "normal human" soldiers
+version 0.5.0.02E (5th of October 2014)
+- added predator/sobek lizard race
+- added #primaryraceonly to Amazon "metic" units, Machakan pygmies, markata, and predator lizard slaves
+- fixed typo with #makepearls in ./data/filters/
+- added #primaryraceonly command to exclude poses from generating as auxiliaries (there may still be bugs with commanders, but I think I got them all)
+- re-enabled Amazons (with stopgap mage hair solutions and mounted casters temporarily disabled)
+version 0.5.0.01E (25th of September 2014)
+- fixed bug allowing for #fortera 4 to be assigned to nations
+- added additional naming data
+- added Amazons (functional w/in the limits of the current version, but limited and not enabled by default)
+- disabled Sidhe in keeping with latest official release version, as overlay issues remain unresolved

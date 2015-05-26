@@ -1,0 +1,35 @@
+#newitem
+#id lance
+#basechance 1
+#gameid 357
+#sprite /graphics/hoburg/weapon/clockwork_lance.png
+#tag "name infantry lancer"
+#needs handslot one_hand
+-- #theme "sacred"
+#enditem
+
+#newitem
+#id shocklance
+#basechance 0.1
+#gameid 357
+#sprite /graphics/hoburg/weapon/clockwork_lance.png
+#tag "name infantry lancer"
+#needs lanceslot shocklance
+#needs handslot one_hand
+#needs headslot normal_helm
+#needs specialslot no_special
+#theme "sacred"
+#enditem
+
+#newitem
+#id firelance
+#basechance 0.1
+#gameid 357
+#sprite /graphics/hoburg/weapon/clockwork_lance.png
+#tag "name infantry lancer"
+#needs lanceslot firelance
+#needs handslot one_hand
+#needs headslot normal_helm
+#needs specialslot no_special
+#theme "sacred"
+#enditem

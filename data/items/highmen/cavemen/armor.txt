@@ -1,0 +1,212 @@
+--- Unarmored
+
+#newitem
+#name "starkers"
+#gameid -1
+#needs shirt noshirt
+#armor
+#basechance 0.2
+#theme "primative"
+#enditem
+
+#newitem
+#name "loincloth"
+#gameid -1
+#needs shirt loincloth
+#armor
+#basechance 1.8
+#theme "primative"
+#enditem
+
+
+--- Furs
+
+#newitem
+#name "tight furs"
+#gameid 44
+#sprite /graphics/highmen/armor/furs.png
+#needs shirt noshirt
+#armor
+#basechance 2
+#theme "primative"
+#enditem
+
+#newitem
+#name "bulky furs"
+#gameid 44
+#sprite /graphics/highmen/armor/furs2.png
+#needs shirt noshirt
+#armor
+#basechance 2
+#theme "primative"
+#enditem
+
+#newitem
+#name "bear furs"
+#gameid 44
+#sprite /graphics/highmen/armor/furs_bear.png
+#needs shirt noshirt
+#needs helmet leatherhood
+#armor
+#basechance 0.2
+#theme "primative"
+#tag "bear"
+#enditem
+
+#newitem
+#name "lion furs"
+#gameid 44
+#sprite /graphics/highmen/armor/furs_lion.png
+#needs shirt noshirt
+#needs helmet leatherhood
+#armor
+#basechance 0.2
+#theme "primative"
+#tag "lion"
+#enditem
+
+#newitem
+#name "wolf furs"
+#gameid 44
+#sprite /graphics/highmen/armor/furs_wolf.png
+#needs shirt noshirt
+#needs helmet leatherhood
+#armor
+#basechance 0.2
+#theme "primative"
+#tag "wolf"
+#enditem
+
+#newitem
+#name "boar furs"
+#gameid 44
+#sprite /graphics/highmen/armor/furs_boar.png
+#needs shirt noshirt
+#needs helmet leatherhood
+#armor
+#basechance 0.2
+#theme "primative"
+#tag "boar"
+#enditem
+
+#newitem
+#name "firedrake pelt"
+#gameid 44
+#define "#fireres +2"
+#sprite /graphics/highmen/armor/furs_firedrake.png
+#needs shirt noshirt
+#needs helmet leatherhood
+#armor
+#basechance 0.05
+#theme "primative"
+#theme "fire"
+#tag "drake"
+#enditem
+
+#newitem
+#name "icedrake pelt"
+#gameid 44
+#define "#coldres +2"
+#sprite /graphics/highmen/armor/furs_icedrake.png
+#needs shirt noshirt
+#needs helmet leatherhood
+#armor
+#basechance 0.05
+#theme "primative"
+#theme "water"
+#tag "drake"
+#enditem
+
+#newitem
+#name "swampdrake pelt"
+#gameid 44
+#define "#poisonres +2"
+#sprite /graphics/highmen/armor/furs_swampdrake.png
+#needs shirt noshirt
+#needs helmet leatherhood
+#armor
+#basechance 0.05
+#theme "primative"
+#theme "nature"
+#tag "drake"
+#enditem
+
+#newitem
+#name "cavedrake pelt"
+#gameid 44
+#define "#prot +2"
+#sprite /graphics/highmen/armor/furs_cavedrake.png
+#needs shirt noshirt
+#needs helmet leatherhood
+#armor
+#basechance 0.05
+#theme "primative"
+#theme "earth"
+#tag "drake"
+#enditem
+
+--- Leather
+
+#newitem
+#name "leather cuirass"
+#gameid 5
+#sprite /graphics/highmen/armor/leather2_cuirass.png
+#needs shirt loincloth
+#armor
+#basechance 0.15
+#theme "advanced"
+#enditem
+
+#newitem
+#name "leather hauberk"
+#gameid 10
+#sprite /graphics/highmen/armor/leather2_hauberk3.png
+#needs shirt noshirt
+#armor
+#basechance 0.15
+#theme "advanced"
+#enditem
+
+--- Ring
+
+#newitem
+#name "ring cuirass"
+#gameid 6
+#sprite /graphics/highmen/armor/ring2_cuirass.png
+#needs shirt loincloth
+#armor
+#basechance 0.1
+#theme "advanced"
+#enditem
+
+#newitem
+#name "ring hauberk"
+#gameid 11
+#sprite /graphics/highmen/armor/ring2_hauberk.png
+#needs shirt noshirt
+#armor
+#basechance 0.1
+#theme "advanced"
+#enditem
+
+--- Bronze Scale
+
+#newitem
+#name "bronze scale cuirass"
+#gameid 142
+#sprite /graphics/highmen/armor/scale_cuirass1_bronze.png
+#needs shirt leather
+#armor
+#basechance 0.05
+#theme "advanced"
+#enditem
+
+#newitem
+#name "bronze scale hauberk"
+#gameid 136
+#sprite /graphics/highmen/armor/scale_hauberk_bronze.png
+#needs shirt leather
+#armor
+#basechance 0.05
+#theme "advanced"
+#enditem

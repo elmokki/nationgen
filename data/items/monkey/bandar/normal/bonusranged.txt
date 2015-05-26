@@ -1,0 +1,54 @@
+#newitem
+#name "javelin 1"
+#gameid 21
+#sprite /graphics/weapon/standard/javelin1.png
+#tag "name infantry 'Javelineer'"
+#enditem
+
+#newitem
+#name "javelin 2"
+#gameid 21
+#sprite /graphics/weapon/standard/javelin2.png
+#tag "name infantry 'Javelineer'"
+#enditem
+
+#newitem -- Throwing axe
+#name "throwing axe"
+#gameid 260
+#theme "primitive"
+#tag "name infantry 'Axe Thrower'"
+#enditem
+
+
+#newitem
+#basechance 6
+#name "chakram"
+#gameid 362
+#sprite /graphics/weapon/standard/chakram.png
+#renderprio 7
+#renderslot "weapon"
+#tag "name infantry 'Chakram Thrower'"
+#tag "tierunique"
+#offsetx -4
+#offsety 14
+#enditem
+
+#newitem
+#basechance 6
+#name "sticksandstones"
+#gameid 360
+#basechance 0.5
+#theme "primitive"
+#tag "maxprot 8"
+#tag "notepic"
+#enditem
+
+#newitem
+#name "harpoon"
+#gameid 452
+#sprite /graphics/weapon/standard/javelin1.png
+#tag "name infantry 'Harponeer'"
+#tag "maxprot 12"
+#tag "tierunique"
+#basechance 0.5
+#enditem

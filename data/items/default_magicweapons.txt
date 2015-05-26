@@ -1,0 +1,375 @@
+---- #tag "gcost <any/ranged/melee/lowshots> <price>" gives price increases.
+---- Multiple such lines per item are fine.
+---- #magictagmulti <value>
+---- #magictagchance <value>
+---- 
+---- The magic weapon tag is applied at the chance:
+---- effects * magictagmulti + magictagchance
+---- Effects is 1 if weapon has magic weapon or stat boosts, otherwise 2
+---- Magictagmulti is 0.25  by default
+---- Magictagchance is 0.0 by default
+
+--- 50: Weak poison
+#new magicweapon
+#name "weakpoison"
+#unitname "prefix poisoned"
+#basechance 0.25
+#chanceinc "magic death 0.5"
+#chanceinc "magic nature 1"
+#tag "gcost ranged +10"
+#tag "gcost melee +5"
+#eff 50
+#end
+
+-- 51: Strong poison
+#new magicweapon
+#name "strongpoison"
+#unitname "prefix poisoned"
+#basechance 0
+#chanceinc "magic death 0.25"
+#chanceinc "magic nature 0.5"
+#tag "no ranged"
+#tag "gcost melee +5"
+#power 2
+#eff 51
+#end
+
+-- 515: corrosion
+#new magicweapon
+#name "corrosion"
+#unitname "prefix corroding"
+#unitname "suffix 'of corrosion'"
+#basechance 0.1
+#chanceinc "magic nature 0.1"
+#chanceinc "magic water 0.1"
+#chanceinc "magic fire water 1"
+#tag "gcost ranged +15"
+#tag "gcost melee +5"
+#power 3
+#eff 515
+#end
+
+-- 53: Debilitative Poison
+#new magicweapon
+#name "debipoison"
+#unitname "prefix poisoned"
+#unitname "prefix debilitative"
+#basechance 0
+#chanceinc "magic death 0.25"
+#chanceinc "magic nature 0.5"
+#eff 53
+#tag "gcost ranged +10"
+#tag "gcost melee +5"
+#tag "weapon 8 banebroadsword"
+#tag "weapon 16 awesomeflail"
+#end
+
+-- 54: Paralyzing poison
+#new magicweapon
+#name "parapoison"
+#unitname "prefix poisoned"
+#unitname "prefix paralyzing"
+#unitname "suffix 'of stiffness'"
+#basechance 0
+#chanceinc "magic death 0.25"
+#chanceinc "magic nature 0.5"
+#tag "no ranged"
+#tag "no melee"
+#tag "gcost ranged +10"
+#tag "gcost melee +5"
+#tag "weapon 8 banebroadsword"
+#tag "weapon 16 awesomeflail"
+#eff 54
+#end
+
+-- 64: decay
+#new magicweapon
+#name "decay"
+#unitname "prefix decaying"
+#unitname "prefix bane"
+#unitname "suffix 'of decay'"
+#unitname "prefix warping"
+#unitname "suffix 'of warp'"
+#basechance 0
+#chanceinc "magic death 0.4"
+#chanceinc "magic death astral 0.8"
+#chanceinc "magic blood 0.1"
+#tag "path death"
+#tag "gcost ranged +5"
+#tag "gcost melee +5"
+#tag "weapon 8 banebroadsword"
+#tag "weapon 16 awesomeflail"
+#power 2
+#eff 64
+#end
+
+
+-- 118: curse
+#new magicweapon
+#name "curse"
+#unitname "prefix cursed"
+#unitname "prefix cursing"
+#unitname "suffix 'of curses'"
+#unitname "prefix black"
+#unitname "suffix 'of misfortune'"
+#basechance 0.5
+#chanceinc "magic death 0.2"
+#chanceinc "magic death astral 0.4"
+#chanceinc "magic atral nature 0.4"
+#chanceinc "magic blood 0.1"
+#tag "path death"
+#no ranged
+#tag "gcost melee +5"
+#tag "weapon 8 banebroadsword"
+#tag "weapon 16 awesomeflail"
+#power 2
+#eff 64
+#end
+
+-- 432: small area decay
+#new magicweapon
+#name "aoedecay"
+#unitname "prefix decaying"
+#unitname "prefix bane"
+#unitname "suffix 'of greater decay'"
+#unitname "prefix banefire"
+#basechance 0
+#chanceinc "magic death 0.4"
+#chanceinc "magic death fire 0.8"
+#chanceinc "magic blood 0.1"
+#tag "path death"
+#tag "no ranged"
+#tag "no melee"
+#tag "gcost lowshots +3"
+#eff 432
+#end
+
+-- 160: Cold
+#new magicweapon
+#name "cold"
+#unitname "prefix freezing"
+#unitname "prefix icy"
+#unitname "suffix 'of frost'"
+#unitname "suffix 'of ice'"
+#basechance 0.1
+#chanceinc "magic water 0.75"
+#tag "gcost ranged +5"
+#tag "gcost melee +2"
+#eff 160
+#tag "path water"
+#power 3
+#end
+
+-- 216: Fire
+#new magicweapon
+#name "fire"
+#unitname "prefix fiery"
+#unitname "prefix smoldering"
+#unitname "suffix 'of flame'"
+#basechance 0.1
+#chanceinc "magic fire 0.75"
+#tag "path fire"
+#tag "gcost ranged +10"
+#tag "gcost melee +5"
+#tag "weapon 6 fieryshortsword"
+#tag "weapon 1 fieryspear"
+#tag "weapon 4 fierylance"
+#tag "weapon 2 fierylongspear"
+#tag "weapon 28 fierypike"
+#eff 216
+#power 3
+#end
+
+-- 285: Additional weakness
+#new magicweapon
+#name "weakness"
+#unitname "prefix weakening"
+#unitname "prefix lifestealing"
+#unitname "suffix 'of weakness'"
+#basechance 0
+#chanceinc "magic death 1"
+#eff 285
+#tag "path death"
+#tag "gcost ranged +10"
+#tag "gcost melee +5"
+#tag "weapon 8 banebroadsword"
+#tag "weapon 16 awesomeflail"
+#end
+
+-- 261: Web
+#new magicweapon
+#name "web"
+#unitname "prefix webbed"
+#unitname "prefix entangling"
+#unitname "prefix spidery"
+#basechance 0
+#chanceinc "magic nature 1"
+#tag "no melee"
+#tag "no ranged"
+#tag "path nature"
+#eff 261
+#end
+
+-- 302 fire bonds
+#name "firebonds"
+#new magicweapon
+#unitname "prefix imprisoning"
+#unitname "prefix burning"
+#basechance 0
+#chanceinc "magic fire 1"
+#tag "no melee"
+#tag "no ranged"
+#tag "path fire"
+#eff 302
+#end
+
+-- 440 lesser fear
+#new magicweapon
+#name "lesserfear"
+#unitname "prefix howling"
+#unitname "prefix frightening"
+#unitname "prefix horrible"
+#unitname "suffix 'of fear'"
+#basechance 0
+#chanceinc "magic death 1"
+#chanceinc "magic blood 0.25"
+#tag "path death"
+#tag "gcost ranged +10"
+#tag "gcost melee +10"
+#tag "weapon 8 banebroadsword"
+#tag "weapon 16 awesomeflail"
+#eff 440
+#end
+
+-- 421 limp
+#new magicweapon
+#name "limp"
+#unitname "prefix severing"
+#unitname "prefix slaughtering"
+#basechance 0.15
+#tag "gcost ranged +6"
+#tag "gcost melee +3"
+#eff 421
+#power 2
+#end
+
+-- 468 halt demon
+#new magicweapon
+#name "haltdemon"
+#unitname "prefix divine"
+#unitname "prefix sacred"
+#basechance 0.75
+#tag "gcost ranged +2"
+#tag "gcost melee +1"
+#eff 468
+#end
+
+-- 480 halt sacred
+#new magicweapon
+#name "haltsacred"
+#unitname "prefix black"
+#unitname "prefix cursed"
+#unitname "prefix dark"
+#basechance 1
+#tag "gcost ranged +2"
+#tag "gcost melee +1"
+#eff 480
+#power 2
+#tag "weapon 8 banebroadsword"
+#tag "weapon 16 awesomeflail"
+#end
+
+-- armor piercing
+#new magicweapon
+#name "ap"
+#unitname "prefix planeshifting"
+#unitname "prefix sharp"
+#unitname "prefix piercing"
+#unitname "suffix 'of planeshift'"
+#basechance 0.1
+#command "#armorpiercing"
+#tag "gcost ranged +15"
+#tag "gcost melee +15"
+#power 3
+#end
+
+-- antidemon
+#new magicweapon
+#name "antidemon"
+#unitname "prefix sacred"
+#unitname "prefix divine"
+#unitname "prefix smiting"
+#basechance 0.75
+#command "#dt_demon"
+#tag "gcost ranged +2"
+#tag "gcost melee +1"
+#end
+
+-- holy
+#new magicweapon
+#name "holy"
+#unitname "prefix sacred"
+#unitname "prefix divine"
+#unitname "prefix just"
+#unitname "prefix smiting"
+#basechance 0.75
+#command "#dt_holy"
+#tag "gcost ranged +2"
+#tag "gcost melee +1"
+#end
+
+-- antimagic
+#new magicweapon
+#name "antimagic"
+#unitname "prefix antimagical"
+#unitname "prefix banishing"
+#unitname "prefix moon"
+#basechance 0.5
+#command "#dt_magic"
+#tag "gcost ranged +2"
+#tag "gcost melee +1"
+#power 2
+#end
+
+-- raising
+#new magicweapon
+#name "raising"
+#unitname "prefix life-giving"
+#unitname "suffix 'of reanimation'"
+#unitname "prefix reanimating"
+#unitname "suffix 'of soul-control'"
+#unitname "prefix absorbing"
+#basechance 0.025
+#chanceinc "magic death 2"
+#command "#dt_raise"
+#tag "path death"
+#tag "gcost melee +10"
+#tag "gcost ranged +15"
+#tag "weapon 8 banebroadsword"
+#tag "weapon 16 awesomeflail"
+#power 2
+#end
+
+-- shieldbonus
+#new magicweapon
+#name "flail"
+#basechance 0.75
+#command "#flail"
+#tag "gcost ranged +5"
+#end
+
+
+--- acid
+#new magicweapon
+#name "acid"
+#unitname "prefix Acidic"
+#unitname "suffix of Acid"
+#unitname "prefix Suplhuric"
+#basechance 0.25
+#chanceinc "magic water 0.05"
+#chanceinc "magic fire 0.05"
+#chanceinc "magic water fire 1.5"
+#nopose ranged
+#tag "gcost melee +5"
+#power 2
+#end

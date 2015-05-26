@@ -1,0 +1,56 @@
+----------- Archer
+
+#newpose
+#race 0
+#role "ranged"
+#role "sacred"
+#role "elite"
+#sacred
+#renderorder "shadow cloakb basesprite mount shirt legs armor cloakf bonusweapon quiver weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/lizard/archer/bases.txt
+#load shadow /data/items/lizard/normal/shadow.txt
+
+#load hands /data/items/lizard/archer/hands.txt
+
+#load armor /data/items/lizard/archer/armor.txt offsetx -1 offsety -2
+#load cloakf /data/items/human/normal/humancloakf.txt offsetx -1 offsety -2
+#load cloakb /data/items/human/normal/humancloakb.txt offsetx -1 offsety -2
+
+#load helmet /data/items/lizard/normal/lizardhelmet.txt
+#load legs /data/items/lizard/normal/lizardlegs.txt
+#load weapon /data/items/human/archer/bows.txt offsetx -1 offsety -2
+
+#load quiver /data/items/human/archer/humanbonusranged.txt offsetx -1 offsety -2
+#load bonusweapon /data/items/human/archer/archerweapon.txt offsetx -1 offsety -2
+
+#generateitem 1 bonusweapon
+#endpose
+
+----------- Crossbowman
+
+#newpose
+#basechance 0.5
+#race 0
+#role "ranged"
+#role "sacred"
+#role "elite"
+#sacred
+
+#load basesprite /data/items/lizard/crossbow/bases.txt
+#load shadow /data/items/lizard/normal/shadow.txt
+
+#load hands /data/items/lizard/crossbow/hands.txt
+
+#load armor /data/items/lizard/crossbow/armor.txt offsetx -1 offsety -2
+#load cloakf /data/items/human/normal/humancloakf.txt offsetx -1 offsety -2
+#load cloakb /data/items/human/normal/humancloakb.txt offsetx -1 offsety -2
+
+#load helmet /data/items/lizard/normal/lizardhelmet.txt
+#load legs /data/items/lizard/normal/lizardlegs.txt
+#load weapon /data/items/human/crossbow/crossbows.txt offsetx -1 offsety -2
+
+#load bonusweapon /data/items/human/archer/archerweapon.txt offsetx -1 offsety -2
+
+#generateitem 1 bonusweapon
+#endpose

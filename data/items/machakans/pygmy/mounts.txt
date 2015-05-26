@@ -1,0 +1,76 @@
+--- Base offsets are applied to everything except base and overlay
+
+#newitem
+#name "hyena"
+#gameid -1
+#sprite /graphics/mounts/standard/hyena.png
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 20"
+#define "#mounted"
+#define "#weapon 237 --- bite"
+#define "#gcost +15"
+#define "#ressize 1"
+#define "#enc 3"
+#define "#rcost +4"
+#define "#mor +2"
+#theme "animal hyena"
+#tag "maxprot 14"
+#tag "guaranteedprefix hyena"
+#define "#secondtmpshape hyenamount"
+#description "If the rider dies, the hyena will carry on fighting until the end of the battle."
+#offsetx -3
+#offsety -20
+#enditem
+
+#newitem
+#name "grey parrot"
+#gameid -1
+#sprite /graphics/machakans/mounts/giant_parrot.png
+#needs overlay giant_parrot_overlay
+#armor
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 6"
+#define "#flying"
+#define "#mounted"
+#define "#weapon nostr_talons_10"
+#define "#weapon nostr_beak_10"
+#define "#gcost +25"
+#define "#ressize 1"
+#define "#enc 4"
+#define "#rcost +4"
+#theme "animal parrot"
+#tag "maxprot 16"
+#tag "guaranteedprefix parrot"
+#basechance 0.3
+#offsetx -3
+#offsety -28
+#enditem
+
+#newitem
+#name "colorful parrot"
+#gameid -1
+#sprite /graphics/machakans/mounts/giant_parrot.png
+#recolormask /graphics/machakans/mounts/giant_parrot_recolormask.png
+#needs overlay giant_parrot_overlay
+#armor
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 6"
+#define "#flying"
+#define "#mounted"
+#define "#weapon nostr_talons_10"
+#define "#weapon nostr_beak_10"
+#define "#gcost +25"
+#define "#ressize 1"
+#define "#enc 4"
+#define "#rcost +4"
+#theme "animal parrot"
+#tag "maxprot 16"
+#tag "guaranteedprefix parrot"
+#basechance 0.2
+#offsetx -3
+#offsety -28
+#enditem

@@ -1,0 +1,617 @@
+--- #new initializes both armors and weapons
+--- #armor will indicate that the item is armor
+--- Use exact syntax you'd use for dom3 except for #newweapon, #newarmor and #end
+--- Remember #type for armor.
+
+--- Siddhe Golden Axe
+
+#new customweapon
+#name "goldenaxe"
+#command "#att 1"
+#command "#def -1"
+#command "#dmg 9"
+#command "#len 1"
+#command "#rcost 5"
+#command "#name 'Golden Axe'"
+#command "#slash"
+#command "#magic"
+#command "#sound 10"
+#end
+
+
+--- CBM warhorse hoof (should be unused currently)
+
+#new customweapon
+#name "warhorse_hoof"
+#command "#att 2"
+#command "#def 0"
+#command "#dmg 13"
+#command "#len 0"
+#command "#nostr"
+#command "#bonus"
+#command "#name 'Warhorse Hoof'"
+#command "#blunt"
+#end
+
+--- CBM boulder
+
+#new customweapon
+#name "boulder"
+#command "#ammo 5"
+#command "#range -3"
+#command "#dmg 1"
+#command "#dt_cap"
+#command "#secondaryeffectalways 27"
+#command "#flyspr 100 1"
+#command "#name 'Boulder'"
+#command "#blunt"
+#end
+
+--- Amphiptere nostr weapons
+
+#new customweapon
+#name nostr_venfangs
+#command "#att 0"
+#command "#def 0"
+#command "#dmg 15"
+#command "#len 0"
+#command "#nostr"
+#command "#secondaryeffect 52"
+#command "#bonus"
+#command "#name 'Venomous Fangs'"
+#command "#pierce"
+#end
+
+#new customweapon
+#name nostr_spraypoison
+#command "#dmg 15"
+#command "#range 17"
+#command "#nratt 1"
+#command "#ammo 5"
+#command "#aoe 1"
+#command "#nostr"
+#command "#bonus"
+#command "#armornegating"
+#command "#magic"
+#command "#poison"
+#command "#dt_poison"
+#command "#flyspr 404 3"
+#command "#explspr 10121"
+#command "#name 'Spray Poison'"
+#end
+
+--- Hoburg nostr greatclub for caveman cavalry
+
+#new customweapon
+#name "nostr_greatclub"
+#command "#att -1"
+#command "#def -1"
+#command "#dmg 24"
+#command "#len 3"
+#command "#nostr"
+#command "#bonus"
+#command "#name 'Great Club'"
+#command "#blunt"
+#end
+
+-- Hoburg clockwork armor special weapons
+
+#new customweapon
+#name "shocklance"
+#command "#rcost 4"
+#command "#dmg 8"
+#command "#ammo 1"
+#command "#norepel"
+#command "#len 4"
+#command "#nratt 1"
+#command "#nostr"
+#command "#bonus"
+#command "#shock"
+#command "#armornegating"
+#command "#magic"
+#command "#explspr 10229"
+#command "#sound 24"
+#command "#name 'Shock Lance'"
+#end
+
+#new customweapon
+#name "firelance"
+#command "#rcost 4"
+#command "#dmg 8"
+#command "#ammo 1"
+#command "#unrepel"
+#command "#norepel"
+#command "#len 4"
+#command "#nratt 1"
+#command "#aoe 1"
+#command "#nostr"
+#command "#bonus"
+#command "#fire"
+#command "#armorpiercing"
+#command "#magic"
+#command "#explspr 10103"
+#command "#sound 16"
+#command "#name 'Fire Lance'"
+#end
+
+
+--- Light Crossbow
+
+#new customweapon
+#name light_crossbow
+#command "#att 1"
+#command "#dmg 8"
+#command "#range 25"
+#command "#ammo 12"
+#command "#twohanded"
+#command "#rcost 2"
+#command "#nostr"
+#command "#armorpiercing"
+#command "#flyspr 109 1"
+#command "#name 'Light Crossbow'"
+#command "#pierce"
+#end
+
+--- Heavy sling
+#new customweapon
+#name heavy_sling
+#command "#att 1"
+#command "#dmg 11"
+#command "#range 30"
+#command "#prec -2"
+#command "#ammo 15"
+#command "#twohanded"
+#command "#rcost 2"
+#command "#nostr"
+#command "#flyspr 100 1"
+#command "#name 'Heavy Sling'"
+#command "#blunt"
+#end
+
+--- Bardiche
+
+#new customweapon
+#name bardiche
+#command "#name 'Bardiche'"
+#command "#att 1"
+#command "#dmg 10"
+#command "#twohanded"
+#command "#rcost 4"
+#command "#def -1"
+#command "#len 4"
+#command "#slash"
+#end
+
+--- Markata tailwhip
+
+#new customweapon
+#name markata_tailwhip
+#command "#name 'Tail Whip'"
+#command "#dmg 1"
+#command "#dt_cap"
+#command "#bonus"
+#command "#len 0"
+#command "#blunt"
+#end
+--- Hoburg nerfed crossbows
+
+#new customweapon
+#name hoburg_crossbow
+#command "#att 2"
+#command "#dmg 8"
+#command "#nratt -2"
+#command "#range 30"
+#command "#ammo 12"
+#command "#twohanded"
+#command "#rcost 2"
+#command "#nostr"
+#command "#armorpiercing"
+#command "#flyspr 109 1"
+#command "#name 'Small Crossbow'"
+#command "#pierce"
+#end
+
+#new customweapon
+#name hoburg_arbalest
+#command "#att 1"
+#command "#dmg 12"
+#command "#nratt -3"
+#command "#range 40"
+#command "#ammo 12"
+#command "#twohanded"
+#command "#rcost 3"
+#command "#nostr"
+#command "#armorpiercing"
+#command "#flyspr 109 1"
+#command "#name 'Small Arbalest'"
+#command "#pierce"
+#end
+
+--- Hoburg mechanical mount weapons
+
+#new customweapon
+#name mechant_bite
+#command "#att 0"
+#command "#dmg 16"
+#command "#len 0"
+#command "#def -1"
+#command "#bonus"
+#command "#nostr"
+#command "#secondaryeffect 515"
+#command "#name 'Corrosive Bite'"
+#command "#slash"
+#end
+
+#new customweapon
+#name mechspider_spit
+#command "#att 0"
+#command "#range 20"
+#command "#ammo 6"
+#command "#bonus"
+#command "#nostr"
+#command "#aoe 1"
+#command "#flyspr 313 1"
+#command "#secondaryeffectalways 329"
+#command "#name 'Oil Spit'"
+#end
+
+#new customweapon
+#name mechspider_fangs
+#command "#att 0"
+#command "#dmg 16"
+#command "#len 0"
+#command "#def -1"
+#command "#bonus"
+#command "#nostr"
+#command "#name 'Mechanical Fangs'"
+#command "#slash"
+#end
+
+#new customweapon
+#name mechmosquito_bite
+#command "#att 0"
+#command "#dmg 8"
+#command "#len 0"
+#command "#def -1"
+#command "#bonus"
+#command "#nostr"
+#command "#armorpiercing"
+#command "#name 'Mechanized Mosquito Bite'"
+#command "#secondaryeffect mechmosquito_fatigue"
+#command "#slash"
+#end
+
+#new customweapon
+#name mechmosquito_fatigue
+#command "#att 0"
+#command "#dmg 10"
+#command "#len 0"
+#command "#bonus"
+#command "#nostr"
+#command "#dt_stun"
+#command "#armornegating"
+#command "#name 'Fatigue Damage'"
+#end
+
+
+--- Abysian mount weapons by kianduatha
+
+#new customweapon
+#name nostr_fossilsword
+#command "#att 0"
+#command "#def 1"
+#command "#dmg 20"
+#command "#len 1"
+#command "#nostr"
+#command "#bonus"
+#command "#name 'Fossilized Sword'"
+#command "#slash"
+#command "#blunt"
+#end
+
+#new customweapon
+#name nostr_pincer
+#command "#att 0"
+#command "#def 0"
+#command "#dmg 17"
+#command "#len 0"
+#command "#nostr"
+#command "#bonus"
+#command "#name 'Pincer'"
+#command "#slash"
+#end
+
+#new customweapon
+#name nostr_scorpiontail
+#command "#att -2"
+#command "#def 0"
+#command "#dmg 16"
+#command "#armorpiercing"
+#command "#secondaryeffect 52"
+#command "#len 3"
+#command "#nostr"
+#command "#bonus"
+#command "#name 'Scorpion Tail'"
+#command "#pierce"
+#end
+
+------ ATLANTIAN things by RagnarokX
+
+#new customweapon
+#name quarterstaff-m3
+#command "#att 2"
+#command "#def 4"
+#command "#dmg 3"
+#command "#len 3"
+#command "#rcost 5"
+#command "#name 'Coral Staff'"
+#command "#blunt"
+#end
+
+#new customweapon
+#name corallongspear
+#command "#att 0"
+#command "#def -1"
+#command "#dmg 3"
+#command "#len 5"
+#command "#rcost 3"
+#command "#secondaryeffect 50"
+#command "#name 'Coral Long Spear'"
+#command "#pierce"
+#end
+
+#new customweapon
+#name coralbroadsword
+#command "#att 0"
+#command "#def 1"
+#command "#dmg 6"
+#command "#len 2"
+#command "#rcost 4"
+#command "#secondaryeffect 50"
+#command "#name 'Coral Broad Sword'"
+#command "#slash"
+#end
+
+#new customweapon
+#name coralshortsword
+#command "#att 0"
+#command "#def 1"
+#command "#dmg 5"
+#command "#len 1"
+#command "#rcost 2"
+#command "#secondaryeffect 50"
+#command "#name 'Coral Short Sword'"
+#command "#slash"
+#end
+
+#new customweapon
+#name meteoriteglaive
+#command "#att -1"
+#command "#def -1"
+#command "#dmg 11"
+#command "#len 4"
+#command "#rcost 5"
+#command "#name 'Meteorite Glaive'"
+#command "#slash"
+#command "#pierce"
+#end
+
+
+#new customweapon
+#name atl_poisonfish
+#command "#att 0"
+#command "#def 0"
+#command "#dmg 1"
+#command "#range -1"
+#command "#ammo 3"
+#command "#rcost 2"
+#command "#nostr"
+#command "#flyspr 337 1"
+#command "#secondaryeffect 54"
+#command "#name 'Poison Fish'"
+#end
+
+
+#new customarmor
+#name atl_icecuirass
+#armor
+#command "#type 5"
+#command "#prot 12"
+#command "#def -1"
+#command "#enc 2"
+#command "#rcost 12"
+#command "#name 'Ice Cuirass'"
+#end
+
+#new customarmor
+#name atl_icehauberk
+#armor
+#command "#type 5"
+#command "#prot 16"
+#command "#def -2"
+#command "#enc 3"
+#command "#rcost 18"
+#command "#name 'Ice Hauberk'"
+#end
+
+#new customarmor
+#name atl_iceaegis
+#armor
+#command "#type 4"
+#command "#prot 17"
+#command "#def 6"
+#command "#enc 1"
+#command "#rcost 6"
+#command "#name 'Ice Aegis'"
+#end
+
+#new customarmor
+#name atl_conchshield
+#armor
+#command "#type 4"
+#command "#prot 13"
+#command "#def 2"
+#command "#enc 0"
+#command "#rcost 1"
+#command "#name 'Conch Shield'"
+#end
+ 
+#new customarmor
+#armor
+#command "#type 4"
+#name atl_carapaceshield
+#command "#prot 20"
+#command "#def 4"
+#command "#enc 2"
+#command "#rcost 3"
+#command "#name 'Lobster Carapace Shield'"
+#end
+
+#new customarmor
+#armor
+#name atl_basaltcap-s
+#command "#type 6"
+#command "#prot 17"
+#command "#def 0"
+#command "#enc 0"
+#command "#rcost 2"
+#command "#name 'Basalt Cap'"
+#end
+
+#new customarmor
+#armor
+#name atl_meteoritecap-s
+#command "#type 6"
+#command "#prot 16"
+#command "#def 0"
+#command "#enc 0"
+#command "#rcost 2"
+#command "#name 'Meteorite Cap'"
+#end
+
+--- Agarthan primary weapon javelin and rock
+
+#new customweapon
+#name agarthan_javelin
+#command "#att -1"
+#command "#def 0"
+#command "#dmg 3"
+#command "#range -1"
+#command "#ammo 12"
+#command "#rcost 1"
+#command "#flyspr 110 1"
+#command "#name 'Agarthan Javelin'"
+#command "#twohanded"
+#command "#pierce"
+#end
+
+
+#new customweapon
+#name "large_rock"
+#command "#ammo 5"¨
+#command "#att -2"
+#command "#range -2"
+#command "#dmg 10"
+#command "#flyspr 100 1"
+#command "#name 'Large Rock'"
+#command "#twohanded"
+#command "#blunt"
+#end
+
+-- Zotz custom items
+
+
+#new customarmor -- renamed Mictlan Armor
+#name zotz_mictlanarmor
+#armor
+#command "#type 5"
+#command "#prot 11"
+#command "#def -1"
+#command "#enc 2"
+#command "#rcost 4"
+#command "#name 'Reinforced Leather Armor'"
+#end
+
+#new customarmor -- renamed Xibalba Sun Cuirass
+#name zotz_goldcuirass
+#armor
+#command "#type 5"
+#command "#prot 13"
+#command "#def -1"
+#command "#enc 2"
+#command "#rcost 14"
+#command "#name 'Golden Cuirass'"
+#end
+
+#new customarmor -- renamed Xibalba Armor of the Sun
+#name zotz_goldarmor
+#armor
+#command "#type 5"
+#command "#prot 16"
+#command "#def -2"
+#command "#enc 3"
+#command "#rcost 20"
+#command "#name 'Golden Armor'"
+#end
+
+#new customarmor
+#name zotz_obsarmor
+#armor
+#command "#type 5"
+#command "#prot 18"
+#command "#def -3"
+#command "#enc 4"
+#command "#rcost 26"
+#command "#name 'Obsidian Armor'"
+#end
+
+
+--- NOSTR mount attacks
+
+#new customweapon
+#name "nostr_talons_10"
+#command "#att 0"
+#command "#def 0"
+#command "#dmg 10"
+#command "#len 0"
+#command "#nostr"
+#command "#bonus"
+#command "#name 'Talons'"
+#command "#slash"
+#end
+
+#new customweapon
+#name "nostr_beak_10"
+#command "#att 0"
+#command "#def -1"
+#command "#dmg 10"
+#command "#len 0"
+#command "#nostr"
+#command "#bonus"
+#command "#name 'Beak'"
+#command "#slash"
+#end
+
+#new customweapon
+#name "nostr_claws_10"
+#command "#att 0"
+#command "#def 0"
+#command "#dmg 10"
+#command "#len 0"
+#command "#nostr"
+#command "#bonus"
+#command "#name 'Claws'"
+#command "#slash"
+#end
+
+#new customweapon
+#name "nostr_bite_10"
+#command "#att 0"
+#command "#def -1"
+#command "#dmg 10"
+#command "#len 0"
+#command "#nostr"
+#command "#bonus"
+#command "#name 'Bite'"
+#command "#slash"
+#end

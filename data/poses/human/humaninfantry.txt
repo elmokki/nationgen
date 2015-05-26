@@ -1,0 +1,90 @@
+
+-------- Normal
+
+#newpose
+#name "standard inf"
+#role "infantry"
+#sacred
+
+#load basesprite /data/items/human/normal/humanbases.txt
+#load shadow /data/items/human/normal/shadow.txt
+
+#load hands /data/items/human/normal/humanhands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load shirt /data/items/human/normal/humanshirt.txt
+#load hair /data/items/human/normal/humanhair.txt
+
+#load armor /data/items/human/normal/humanarmor.txt
+#load armor /data/items/human/normal/orientalarmor.txt
+#load armor /data/items/human/normal/naked.txt
+#load helmet /data/items/human/normal/humanhelmet.txt
+#load legs /data/items/human/normal/humanlegs.txt
+
+#load weapon /data/items/human/normal/humanweapon.txt
+#load bonusweapon /data/items/human/normal/standards.txt
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt
+
+#load offhand /data/items/human/normal/humanoffhand.txt
+#load offhand /data/items/human/normal/shields.txt
+#load offhand /data/items/human/normal/towershields.txt
+
+#endpose
+
+
+
+-------- 2h infantry
+
+#newpose
+#basechance 0.2
+#name "2h inf"
+#role "infantry"
+#sacred
+
+#load basesprite /data/items/human/2h/humanbases.txt
+#load shadow /data/items/human/normal/shadow.txt
+
+#load hands /data/items/human/2h/humanhands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load shirt /data/items/human/2h/humanshirt.txt
+#load hair /data/items/human/normal/humanhair.txt
+
+#load armor /data/items/human/2h/humanarmor.txt
+#load armor /data/items/human/2h/naked.txt
+#load helmet /data/items/human/normal/humanhelmet.txt
+#load legs /data/items/human/normal/humanlegs.txt
+
+#load weapon /data/items/human/2h/humanweapon.txt
+#load bonusweapon /data/items/human/2h/humanbonusranged.txt offsetx -1 offsety 0
+
+#maxvarieties 1
+#endpose
+
+
+------------- scout
+
+#newpose
+#role "scout"
+#load basesprite /data/items/human/normal/humanbases.txt
+#load shadow /data/items/human/normal/shadow.txt
+
+#load hands /data/items/human/normal/humanhands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load shirt /data/items/human/normal/humanshirt.txt
+#load hair /data/items/human/normal/humanhair.txt
+
+#load armor /data/items/human/normal/humanarmor.txt
+#load armor /data/items/human/normal/naked.txt
+#load helmet /data/items/human/scout/humanhelmet.txt
+#load legs /data/items/human/normal/humanlegs.txt
+
+#load weapon /data/items/human/normal/humanweapon.txt
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt
+
+#load offhand /data/items/human/normal/humanoffhand.txt
+#endpose

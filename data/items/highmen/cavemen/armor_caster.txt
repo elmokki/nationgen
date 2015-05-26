@@ -1,0 +1,123 @@
+--- Unarmored
+
+#newitem
+#name "starkers"
+#gameid -1
+#needs shirt noshirt
+#armor
+#basechance 0.5
+#theme "primative"
+#tag "tier 1"
+#enditem
+
+#newitem
+#name "loincloth"
+#gameid -1
+#needs shirt loincloth
+#armor
+#basechance 1
+#theme "primative"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+--- Furs
+
+#newitem
+#name "tight furs"
+#gameid 44
+#sprite /graphics/highmen/armor/furs.png
+#needs shirt noshirt
+#armor
+#basechance 1
+#theme "primative"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#name "bulky furs"
+#gameid 44
+#sprite /graphics/highmen/armor/furs2.png
+#needs shirt noshirt
+#armor
+#basechance 1
+#theme "primative"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#name "fur toga"
+#gameid 44
+#sprite /graphics/highmen/armor/robes/furs_shaman.png
+#tag "eliteversion 'fur toga - bones'"
+#needs shirt noshirt
+#armor
+#basechance 1
+#theme "primative"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name "fur toga"
+#gameid 44
+#sprite /graphics/highmen/armor/robes/furs_shaman.png
+#tag "eliteversion 'fur toga - beads'"
+#needs shirt noshirt
+#armor
+#basechance 1
+#theme "primative"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name "fur toga - bones"
+#gameid 44
+#sprite /graphics/highmen/armor/robes/furs_shaman_bones.png
+#needs shirt noshirt
+#armor
+#basechance 1
+#theme "primative"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name "fur toga - beads"
+#gameid 44
+#sprite /graphics/highmen/armor/robes/furs_shaman_beads.png
+#recolormask /graphics/highmen/armor/robes/furs_shaman_beads_recolormask.png
+#needs shirt noshirt
+#armor
+#basechance 1
+#theme "primative"
+#tag "tier 3"
+#enditem
+
+-- Advanced armor
+
+#newitem
+#name "leather cuirass"
+#gameid 5
+#sprite /graphics/highmen/armor/leather2_cuirass.png
+#tag "eliteversion 'leather hauberk'"
+#armor
+#basechance 0.2
+#theme "advanced"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name "leather hauberk"
+#gameid 10
+#sprite /graphics/highmen/armor/leather2_hauberk3.png
+#needs shirt noshirt
+#armor
+#basechance 0.1
+#theme "advanced"
+#tag "tier 2"
+#tag "tier 3"
+#enditem

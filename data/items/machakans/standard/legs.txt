@@ -1,0 +1,17 @@
+
+--- Pants belonging to an armor set should be given id of the lowest prot armor they go with if you want to avoid naked people with plate pants.
+
+#newitem
+#id pants
+#gameid -1
+#sprite /graphics/machakans/legs/nakedblacklegs.png
+#recolormask /graphics/machakans/legs/nakedblacklegs_recolormask.png
+#enditem
+
+
+#newitem
+#id platepants
+#gameid -1
+#sprite /graphics/machakans/legs/platedblacklegs.png
+#basechance 0
+#enditem

@@ -1,0 +1,105 @@
+------- Mounted
+
+#newpose
+#role "mounted"
+#sacred
+#basechance 0.25
+
+#renderorder "shadow cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/human/normal/humanbases.txt offsetx 5 offsety -15
+#load mount /data/items/human/human_mounted/humanmounts.txt
+
+#load hands /data/items/human/normal/humanhands.txt offsetx 5 offsety -15
+
+#load cloakf /data/items/human/normal/humancloakf.txt offsetx 5 offsety -15
+#load cloakb /data/items/human/normal/humancloakb.txt offsetx 5 offsety -15
+#load shirt /data/items/human/normal/humanshirt.txt offsetx 5 offsety -15
+#load hair /data/items/human/normal/humanhair.txt offsetx 5 offsety -15
+
+#load armor /data/items/human/normal/humanarmor.txt offsetx 5 offsety -15
+#load armor /data/items/human/normal/naked.txt offsetx 5 offsety -15
+#load helmet /data/items/human/normal/humanhelmet.txt offsetx 5 offsety -15
+#load legs /data/items/human/human_mounted/humanlegs.txt offsetx 4 offsety -15
+
+#load weapon /data/items/human/human_mounted/humanweapon.txt offsetx 5 offsety -15
+#load weapon /data/items/human/human_mounted/cavalryweapons.txt offsetx 5 offsety -15
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt offsetx 5 offsety -15
+#load lanceslot /data/items/human/human_mounted/lance.txt offsetx 5 offsety -15
+
+#load offhand /data/items/human/normal/shields.txt offsetx 5 offsety -15
+
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+
+#writeslot lanceslot
+#endpose
+
+------- Low mounted
+
+#newpose
+#basechance 0.125
+#role "mounted"
+#sacred
+
+#load basesprite /data/items/human/normal/humanbases.txt offsetx 5 offsety -15
+#load mount /data/items/human/human_mounted/humanmounts_low.txt
+
+#load hands /data/items/human/normal/humanhands.txt offsetx 5 offsety -15
+
+#load cloakf /data/items/human/normal/humancloakf.txt offsetx 5 offsety -15
+#load cloakb /data/items/human/normal/humancloakb.txt offsetx 5 offsety -15
+#load shirt /data/items/human/normal/humanshirt.txt offsetx 5 offsety -15
+#load hair /data/items/human/normal/humanhair.txt offsetx 5 offsety -15
+
+#load armor /data/items/human/normal/humanarmor.txt offsetx 5 offsety -15
+#load armor /data/items/human/normal/naked.txt offsetx 5 offsety -15
+#load helmet /data/items/human/normal/humanhelmet.txt offsetx 5 offsety -15
+#load legs /data/items/human/human_mounted/humanlegs.txt offsetx 5 offsety -18
+
+#load weapon /data/items/human/human_mounted/humanweapon.txt offsetx 5 offsety -15
+#load weapon /data/items/human/human_mounted/cavalryweapons.txt offsetx 5 offsety -15
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt offsetx 5 offsety -15
+#load lanceslot /data/items/human/human_mounted/lance.txt offsetx 5 offsety -15
+
+
+#load offhand /data/items/human/normal/shields.txt offsetx 5 offsety -15
+
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+
+#writeslot lanceslot
+#endpose
+
+----------- Charioteers
+
+#newpose
+#race 0
+#role "chariot"
+#sacred
+#basechance 0.125
+
+#load basesprite /data/items/human/normal/humanbases.txt
+#load mount /data/items/human/human_mounted/humanbases_chariot.txt
+
+#load hands /data/items/human/normal/humanhands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load shirt /data/items/human/normal/humanshirt.txt
+#load hair /data/items/human/normal/humanhair.txt
+
+#load armor /data/items/human/human_mounted/humanarmor_chariot.txt
+#load armor /data/items/human/normal/naked.txt
+#load armor /data/items/human/normal/orientalarmor.txt
+#load helmet /data/items/human/normal/humanhelmet.txt
+#load legs /data/items/human/normal/humanlegs.txt
+
+#load weapon /data/items/human/normal/humanweapon.txt
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt
+
+#load offhand /data/items/human/human_mounted/humanoffhand.txt
+#load offhand /data/items/human/normal/shields.txt
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+#endpose

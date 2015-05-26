@@ -1,0 +1,39 @@
+#newrace
+#name "Hoburg"
+#basechance 0.4
+#all_troops_sacred
+#all_troops_elite
+
+
+#pose hoburgtroops
+#pose hoburgmages
+
+
+#longsyllables /data/names/nations/hoburg/longsyllables.txt
+#shortsyllables /data/names/nations/hoburg/shortsyllables.txt
+#suffixes /data/names/nations/hoburg/suffixes.txt
+#tag "preferredmount hog"
+#unitcommand "#gcost 8"
+#unitcommand "#size 1"
+#unitcommand "#hp 5"
+#unitcommand "#mr 14"
+#unitcommand "#enc 3"
+#unitcommand "#def 12"
+#unitcommand "#str 6"
+#unitcommand "#prec 11"
+#unitcommand "#supplybonus -1"
+#unitcommand "#mapmove 1"
+#unitcommand "#ap 8"
+#unitcommand "#nametype 104"
+#unitcommand "#maxage 80"
+#unitcommand "#enc 4"
+#unitcommand "#mor 9"
+
+#magicpriority nature 5
+#magicpriority water 2
+#magicpriority earth 2
+
+#strongmagicpatterns
+
+#monsterchance 0.1
+#endrace

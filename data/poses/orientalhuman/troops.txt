@@ -1,0 +1,74 @@
+
+-------- Normal
+
+#newpose
+#role "infantry"
+#role "scout"
+#load basesprite /data/items/human/normal/humanbases.txt
+#load shadow /data/items/human/normal/shadow.txt
+#load hands /data/items/human/normal/humanhands.txt
+#load legs /data/items/oriental/normal/legs.txt 2 0
+
+
+#load armor /data/items/oriental/normal/armor.txt 2 0
+
+#load weapon /data/items/oriental/normal/weapon.txt 2 0
+#load offhand /data/items/oriental/normal/shields.txt 2 0
+#load offhand /data/items/oriental/normal/offhand.txt 2 0
+
+#load helmet /data/items/oriental/normal/helmet.txt 1 0
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+
+#load bonusweapon /data/items/human/sacredstuff/sacredbonusweapons.txt
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt
+#endpose
+
+-------- 2h
+
+#newpose
+#role "infantry"
+#load basesprite /data/items/human/2h/humanbases.txt
+#load shadow /data/items/human/normal/shadow.txt
+#load hands /data/items/human/2h/humanhands.txt
+#load legs /data/items/oriental/normal/legs.txt 2 0
+
+#load armor /data/items/oriental/2h/armor.txt
+
+#load weapon /data/items/oriental/2h/weapon.txt
+
+#load helmet /data/items/oriental/normal/helmet.txt 1 0
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+
+
+#endpose
+
+-------- ranged
+
+#newpose
+#role "ranged"
+#renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/human/2h/humanbases.txt
+#load shadow /data/items/human/normal/shadow.txt
+#load hands /data/items/human/2h/humanhands.txt
+#load legs /data/items/oriental/normal/legs.txt 2 0
+
+#load armor /data/items/oriental/2h/armor.txt
+
+
+
+#load weapon /data/items/human/archer/bows.txt 1 -2
+#load quiver /data/items/human/archer/humanbonusranged.txt
+#load bonusweapon /data/items/oriental/archer/archerweapon.txt
+
+#load helmet /data/items/oriental/normal/helmet.txt 1 0
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#generateitem 1 bonusweapon
+#endpose
+

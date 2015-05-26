@@ -1,0 +1,113 @@
+#newitem -- Hubris
+#id "hubris"
+#basechance 0.25
+#gameid -1
+#tag "eliteversion simple_crown"
+#tag "maxprot 14"
+#theme "primitive"
+#armor
+#enditem
+
+
+#newitem -- Iron cap
+#id "cap"
+#basechance 2
+#gameid 20
+#sprite /graphics/sobek/helmet/sobek_cap.png
+#tag "eliteversion elite_cap"
+#tag "eliteversion gold_cap"
+#armor
+#enditem
+
+#newitem -- Fancy iron cap
+#id "elite_cap"
+#basechance 0.5
+#gameid 20
+#sprite /graphics/sobek/helmet/sobek_cap_elite.png
+#recolormask /graphics/sobek/helmet/sobek_plume_recolormask.png
+#tag "eliteversion elite_halfhelm"
+#theme "elite"
+#armor
+#enditem
+
+#newitem -- Gilt iron cap
+#id "gold_cap"
+#basechance 0.25
+#gameid 20
+#sprite /graphics/sobek/helmet/sobek_gold_cap.png
+#tag "eliteversion elite_gold_cap"
+#theme "elite"
+#armor
+#enditem
+
+#newitem -- Fancy gilt iron cap
+#id "elite_gold_cap"
+#basechance 0
+#gameid 20
+#sprite /graphics/sobek/helmet/sobek_gold_cap_elite.png
+#recolormask /graphics/sobek/helmet/sobek_plume_recolormask.png
+#theme "elite"
+#armor
+#enditem
+
+#newitem -- Halfhelm
+#id "halfhelm"
+#basechance 0.5
+#gameid 118
+#sprite /graphics/sobek/helmet/sobek_halfhelm.png
+#tag "eliteversion elite_halfhelm"
+#tag "eliteversion gold_halfhelm"
+#tag "minprot 15"
+#theme "elite"
+#theme "advanced"
+#armor
+#enditem
+
+#newitem -- Fancy halfhelm
+#id "elite_halfhelm"
+#basechance 0
+#gameid 118
+#sprite /graphics/sobek/helmet/sobek_halfhelm.png
+#recolormask /graphics/sobek/helmet/sobek_plume_recolormask.png
+#tag "eliteversion elite_halfhelm"
+#tag "eliteversion elite_gold_halfhelm"
+#tag "minprot 15"
+#theme "elite"
+#theme "advanced"
+#armor
+#enditem
+
+#newitem -- Gilt halfhelm
+#id "gold_halfhelm"
+#basechance 0.25
+#gameid 118
+#sprite /graphics/sobek/helmet/sobek_halfhelm_gilt.png
+#tag "eliteversion elite_gold_halfhelm"
+#tag "minprot 15"
+#theme "elite"
+#theme "advanced"
+#armor
+#enditem
+
+#newitem -- Fancy gilt halfhelm
+#id "elite_gold_halfhelm"
+#basechance 0
+#gameid 118
+#sprite /graphics/sobek/helmet/sobek_halfhelm_gilt.png
+#recolormask /graphics/sobek/helmet/sobek_plume_recolormask.png
+#tag "minprot 15"
+#theme "elite"
+#theme "advanced"
+#armor
+#enditem
+
+
+#newitem
+#id "simple_crown"
+#basechance 0
+#gameid 148
+#sprite /graphics/sobek/helmet/lizard_hedjet.png
+#recolormask /graphics/sobek/helmet/lizard_hedjet_recolormask.png
+#armor
+#theme "elite"
+#enditem

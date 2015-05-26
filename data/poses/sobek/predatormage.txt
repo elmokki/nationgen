@@ -1,0 +1,41 @@
+---------- Mages and Priests
+-- Predator priests and mages are most of the T1 and T2 casters; mages are very rarely T3, but priests never are
+
+#newpose
+#name "predator mage"
+#role "mage"
+#role "priest"
+
+#load basesprite /data/items/sobek/predator/magebases.txt
+#load shadow /data/items/sobek/predator/mageshadow.txt
+
+#load hands /data/items/sobek/predator/magehands.txt
+#load armor /data/items/sobek/predator/magerobes.txt
+
+#load weapon /data/items/sobek/predator/casterweapons.txt offsetx -3 offsety 1
+#load helmet /data/items/sobek/predator/magehelmet.txt
+
+#notfortier 3
+#tier 2
+#tier 1
+#endpose
+
+
+#newpose
+#name "predator mage"
+#role "mage"
+#basechance 0.0625
+
+#load basesprite /data/items/sobek/predator/magebases.txt
+
+#load shadow /data/items/sobek/predator/mageshadow.txt
+#load hands /data/items/sobek/predator/magehands.txt
+#load armor /data/items/sobek/predator/magerobes.txt
+
+#load weapon /data/items/sobek/predator/casterweapons.txt offsetx -3 offsety 1
+#load helmet /data/items/sobek/predator/magehelmet.txt
+
+#notfortier 2
+#notfortier 1
+#tier 3
+#endpose

@@ -1,0 +1,263 @@
+#new
+#name "berserklowest"
+#type "berserk"
+#basechance 1
+#command "#berserk +1"
+#chanceinc "magic nature 1"
+#tag "nopose ranged"
+#tag "nopose mounted"
+#end
+
+#new
+#name "berserklow"
+#type "berserk"
+#basechance 0.5
+#command "#berserk +1"
+#chanceinc "magic nature 1"
+#chanceinc "command #berserk 10"
+#tag "nopose ranged"
+#tag "nopose mounted"
+#command "#gcost +1"
+#description "can enter berserker rage"
+#end
+
+#new
+#name "berserkhigh"
+#type "berserk"
+#basechance 0.125
+#command "#berserk +3"
+#chanceinc "magic nature 0.5"
+#chanceinc "command #berserk 5"
+#chanceinc "ranged -100"
+#chanceinc "mounted -100"
+#tag "nopose ranged"
+#tag "nopose mounted"
+#command "#gcost +2"
+#power 2
+#description "can enter berserker rage"
+#end
+
+#new
+#type "unrest"
+#name "incunrest_low"
+#basechance 0.1
+#command "#incunrest 1"
+#power 0
+#description "causes unrest"
+#end
+
+#new
+#type "unrest"
+#name "incunrest_high"
+#basechance 0.05
+#command "#incunrest 2"
+#power 0
+#description "causes unrest"
+#end
+
+
+#new
+#name "chaosrec"
+#basechance 0.1
+#command "#chaosrec %cost 10"
+#chanceinc "command #chaosrec 100"
+#chanceinc "command #chaospower 100"
+#end
+
+
+#new
+#name "chaosrec_high"
+#basechance 0.05
+#command "#chaosrec %cost 20"
+#chanceinc "command #chaosrec 25"
+#chanceinc "command #chaospower 25"
+#end
+
+#new
+#name "stealthlow"
+#basechance 0.5
+#command "#stealthy +0"
+#chanceinc "command #stealthy 2"
+#chanceinc "personalcommand #stealthy -10"
+#chanceinc "race vanir -20"
+#chanceinc "pose mounted *0.25"
+#power 2
+#end
+
+#new
+#name "extrastats"
+#basechance 0.5
+#command "#str +1"
+#command "#def +1"
+#command "#att +1"
+#command "#prec +1"
+#command "#hp +1"
+#command "#gcost +2"
+#end
+
+#new
+#name "strong"
+#basechance 0.5
+#command "#str +3"
+#command "#hp +4"
+#command "#gcost +3"
+#chanceinc "ranged -100"
+#chanceinc "personalcommand #berserk 0.5"
+#end
+
+#new
+#name "resistances"
+#basechance 0.0
+#chanceinc "magic air 0.1"
+#chanceinc "magic fire 0.1"
+#chanceinc "magic earth 0.1"
+#chanceinc "magic water 0.1"
+#chanceinc "command #fireres 0.1"
+#chanceinc "command #coldres 0.1"
+#chanceinc "command #poisonres 0.1"
+#chanceinc "command #shockres 0.1"
+#command "#fireres +3"
+#command "#coldres +3"
+#command "#poisonres +3"
+#command "#shockres +3"
+#command "#gcost +5"
+#power 2
+#end
+
+
+#new
+#name "regen10"
+#basechance 0.1
+#chanceinc "magic nature 0.7"
+#chanceinc "command #regeneration 6"
+#command "#regeneration 10"
+#command "#gcost +5"
+#tag "path nature"
+#end
+
+
+#new
+#name "castlemaster"
+#basechance 2
+#command "#siegebonus 3"
+#command "#castledef 3"
+#end
+
+#new
+#name "sieger"
+#basechance 2
+#command "#siegebonus 5"
+#end
+
+#new
+#name "patrol"
+#basechance 2
+#command "#patrolbonus 3"
+#end
+
+#new
+#name "pillage"
+#basechance 1
+#command "#pillagebonus 3"
+#end
+
+#new
+#name "werewolf"
+#type "shapeshift"
+#basechance 0.075
+#chanceinc "magic nature 0.6"
+#chanceinc "shape werewolf 20"
+#command "#secondshape werewolf"
+#command "#gcost +10"
+#power 3
+#description "can shapeshift into a werewolf"
+#end
+
+#new
+#name "ghoul"
+#type "shapeshift"
+#basechance 0.1
+#chanceinc "magic death 1"
+#chanceinc "shape ghoul 20"
+#command "#secondshape ghoul"
+#command "#gcost +5"
+#tag "path death"
+#power 2
+#description "has a pact with death, allowing it to live an another life as a ghoul after death"
+#end
+
+#new
+#name "hornedserpent"
+#type "shapeshift"
+#basechance 0.075
+#chanceinc "magic nature 1"
+#chanceinc "shape hornedserpent 20"
+#command "#secondshape hornedserpent"
+#command "#gcost +8"
+#tag "path nature"
+#power 2
+#description "can shapeshift into a horned serpent"
+#end
+
+
+
+#new
+#name "metalman"
+#type "shapeshift"
+#basechance 0.025
+#chanceinc "magic earth 0.5"
+#chanceinc "shape metalman 10"
+#command "#secondshape metalman"
+#command "#hp -5"
+#command "#gcost +7"
+#tag "path earth"
+#description "reveals its true shape of a metal man upon death"
+#power 3
+#end
+
+
+
+
+#new magefilter
+#type "shapeshift"
+#name "hawk"
+#basechance 0.1
+#chanceinc "magic nature 0.25"
+#chanceinc "magic air 0.75"
+#chanceinc "magic nature air 1"
+#chanceinc "command flying 1"
+#chanceinc "personalcommand flying -10"
+#command "#shapechange hawk"
+#command "#gcost +10"
+#tag "notfortier 1"
+#tag "notfortier 2"
+#description "can shapeshift into a hawk"
+#end
+
+#new magefilter
+#type "shapeshift"
+#name "toad"
+#basechance 0.1
+#chanceinc "magic water 0.25"
+#chanceinc "magic nature 0.25"
+#chanceinc "magic nature water 1"
+#chanceinc "command swampsurvival 1"
+#command "#shapechange toad"
+#command "#gcost +10"
+#tag "notfortier 1"
+#tag "notfortier 2"
+#description "can shapeshift into a giant toad"
+#end
+
+#new magefilter
+#type "shapeshift"
+#name "greatboar"
+#basechance 0.1
+#chanceinc "magic nature 1"
+#command "#shapechange greatboar"
+#command "#gcost +10"
+#tag "notfortier 1"
+#tag "notfortier 2"
+#description "can shapeshift into a great boar"
+#end
+

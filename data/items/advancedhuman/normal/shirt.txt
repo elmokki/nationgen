@@ -1,0 +1,164 @@
+-- No doublet or breeches, just whatever shirt + hose the basesprite has; intended for full plate (always) or other armor (sometimes)
+
+#newitem
+#id noshirt_nopants
+#gameid -1
+#needs legs nopants
+#enditem
+
+-- No doublet, just whatever shirt the basesprite has, with any pants; intended for non-cuirass mail
+
+#newitem
+#id noshirt_pants
+#basechance 0
+#gameid -1
+#enditem
+
+-- No doublet, just whatever shirt the basesprite has, with leather breeches; intended for full leather/ring
+
+#newitem
+#basechance 0
+#id noshirt_leatherpants
+#gameid -1
+#needs legs leather_breeches
+#enditem
+
+-- Basic doublets
+
+#newitem
+#id dark_doublet
+#gameid -1
+#sprite /graphics/advancedhuman/shirts/doublet_dark.png
+#recolormask self
+#needs legs dark_breeches
+#tag "eliteversion dark_doublet_elite"
+#theme "advanced"
+#enditem
+
+#newitem
+#id medium_doublet
+#gameid -1
+#sprite /graphics/advancedhuman/shirts/doublet_medium.png
+#recolormask self
+#needs legs medium_breeches
+#tag "eliteversion medium_doublet_elite"
+#theme "advanced"
+#enditem
+
+#newitem
+#id light_doublet
+#gameid -1
+#sprite /graphics/advancedhuman/shirts/doublet_light.png
+#recolormask self
+#needs legs light_breeches
+#tag "eliteversion light_doublet_elite"
+#theme "advanced"
+#enditem
+
+#newitem
+#id khaki_doublet
+#gameid -1
+#sprite /graphics/advancedhuman/shirts/doublet_khaki.png
+#needs legs khaki_breeches
+#theme "advanced"
+#enditem
+
+#newitem
+#id black_doublet
+#gameid -1
+#sprite /graphics/advancedhuman/shirts/doublet_black.png
+#needs legs black_breeches
+#tag "eliteversion black_doublet_elite"
+#theme "advanced"
+#enditem
+
+-- Elite doublets with colored trim
+
+#newitem
+#id dark_doublet_elite
+#gameid -1
+#sprite /graphics/advancedhuman/shirts/doublet_dark_elite.png
+#recolormask self
+#needs legs dark_breeches_elite
+#tag "eliteversion dark_doublet_fancy"
+#theme "elite"
+#theme "advanced"
+#enditem
+
+#newitem
+#id medium_doublet_elite
+#gameid -1
+#sprite /graphics/advancedhuman/shirts/doublet_medium_elite.png
+#recolormask self
+#needs legs medium_breeches_elite
+#tag "eliteversion medium_doublet_fancy"
+#theme "elite"
+#theme "advanced"
+#enditem
+
+#newitem
+#id light_doublet_elite
+#gameid -1
+#sprite /graphics/advancedhuman/shirts/doublet_light_elite.png
+#recolormask self
+#needs legs light_breeches_elite
+#tag "eliteversion light_doublet_fancy"
+#theme "elite"
+#theme "advanced"
+#enditem
+
+#newitem
+#id black_doublet_elite
+#gameid -1
+#sprite /graphics/advancedhuman/shirts/doublet_black_elite.png
+#recolormask /graphics/advancedhuman/shirts/doublet_black_elite_recolormask.png
+#needs legs black_breeches_elite
+#tag "eliteversion black_doublet_fancy"
+#theme "elite"
+#theme "advanced"
+#enditem
+
+-- Fancy doublets with gold trim
+
+#newitem
+#id dark_doublet_fancy
+#gameid -1
+#sprite /graphics/advancedhuman/shirts/doublet_dark_fancy.png
+#recolormask /graphics/advancedhuman/shirts/doublet_dark_fancy_recolormask.png
+#needs legs dark_breeches_fancy
+#tag "eliteversion dark_doublet_elite"
+#theme "elite"
+#theme "advanced"
+#enditem
+
+#newitem
+#id medium_doublet_fancy
+#gameid -1
+#sprite /graphics/advancedhuman/shirts/doublet_medium_fancy.png
+#recolormask /graphics/advancedhuman/shirts/doublet_medium_fancy_recolormask.png
+#needs legs medium_breeches_fancy
+#tag "eliteversion medium_doublet_fancy_elite"
+#theme "elite"
+#theme "advanced"
+#enditem
+
+#newitem
+#id light_doublet_fancy
+#gameid -1
+#sprite /graphics/advancedhuman/shirts/doublet_light_fancy.png
+#recolormask /graphics/advancedhuman/shirts/doublet_light_fancy_recolormask.png
+#needs legs light_breeches_fancy
+#tag "eliteversion light_doublet_elite"
+#theme "elite"
+#theme "advanced"
+#enditem
+
+#newitem
+#id black_doublet_fancy
+#gameid -1
+#sprite /graphics/advancedhuman/shirts/doublet_black_fancy.png
+#needs legs black_breeches_fancy
+#tag "eliteversion black_doublet_elite"
+#theme "elite"
+#theme "advanced"
+#enditem

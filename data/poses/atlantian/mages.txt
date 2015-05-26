@@ -1,0 +1,31 @@
+
+
+
+--- priest
+
+#newpose
+#role "priest"
+#load basesprite /data/items/atlantian/shamblerpriestbases.txt
+#load shadow /data/items/atlantian/shamblershadow.txt
+#load armor /data/items/atlantian/priestnaked.txt
+#load armor /data/items/atlantian/priestrobe.txt
+#load armor /data/items/atlantian/prieststuff.txt
+#load helmet /data/items/atlantian/priesthelmet.txt
+#load legs /data/items/atlantian/shamblerpriestlegs.txt
+#load weapon /data/items/atlantian/priestweapon.txt
+#endpose
+
+
+--- mage 
+
+#newpose
+#role "mage"
+#renderorder "shadow basesprite legs armor helmet weapon"
+#load basesprite /data/items/atlantian/base-m.txt
+#load shadow /data/items/atlantian/shadow.txt
+#load armor /data/items/atlantian/magenaked.txt
+#load armor /data/items/atlantian/magerobe.txt
+#load legs /data/items/atlantian/legs-m.txt
+#load helmet /data/items/atlantian/magehelmet.txt
+#load weapon /data/items/atlantian/mageweapon.txt
+#endpose

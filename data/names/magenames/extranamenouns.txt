@@ -1,0 +1,988 @@
+-- Completely generic nouns - these have no prereqs or conditional modifiers
+
+#new
+#name "order"
+#basechance 25
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "circle"
+#basechance 25
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "league"
+#basechance 20
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "council"
+#basechance 25
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "society"
+#basechance 20
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "legion"
+#basechance 10
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "company"
+#basechance 10
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "chamber"
+#basechance 20
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "sanctum"
+#basechance 20
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "vault"
+#basechance 20
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "gate"
+#basechance 10
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "convocation"
+#basechance 10
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "assembly"
+#basechance 10
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "moot"
+#basechance 5
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "forum"
+#basechance 5
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "gathering"
+#basechance 5
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "court"
+#basechance 15
+#definitesuffix
+#pluralsuffix
+#noprefix
+#end
+
+#new
+#name "court"
+#basechance 25
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "host"
+#basechance 15
+#definitesuffix
+#pluralsuffix
+#noprefix
+#end
+
+#new
+#name "host"
+#basechance 25
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "multitude"
+#basechance 20
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "throne"
+#basechance 20
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "throne"
+#basechance 20
+#definitesuffix
+#pluralsuffix
+#noprefix
+#end
+
+#new
+#name "banner"
+#basechance 10
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "pact"
+#basechance 20
+#definitesuffix
+#noprefix
+#end
+
+
+#new
+#name "pattern"
+#basechance 10
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "rune"
+#basechance 5
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "rune"
+#basechance 5
+#definitesuffix
+#pluralsuffix
+#noprefix
+#end
+
+#new
+#name "sign"
+#basechance 10
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "icon"
+#basechance 10
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "emblem"
+#basechance 5
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "oath"
+#basechance 20
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "oath"
+#basechance 20
+#pluralsuffix
+#noprefix
+#end
+
+#new
+#name "covenant"
+#basechance 20
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "legacy"
+#basechance 20
+#definitesuffix
+#end
+
+#new
+#name "legacy"
+#basechance 10
+#definitesuffix
+#pluralsuffix
+#noprefix
+#end
+
+#new
+#name "accord"
+#basechance 15
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "reformation"
+#basechance 10
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "mandate"
+#basechance 15
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "mandate"
+#basechance 10
+#definitesuffix
+#pluralsuffix
+#noprefix
+#end
+
+#new
+#name "word"
+#basechance 20
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "name"
+#basechance 20
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "retinue"
+#basechance 10
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "congress"
+#basechance 5
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "rite"
+#basechance 10
+#definitesuffix
+#pluralsuffix
+#noprefix
+#end
+
+#new
+#name "rite"
+#basechance 10
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "rite"
+#basechance 10
+#pluralsuffix
+#noprefix
+#end
+
+#new
+#name "truth"
+#basechance 15
+#definitesuffix
+#pluralsuffix
+#noprefix
+#end
+
+#new
+#name "truth"
+#basechance 15
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "truth"
+#basechance 15
+#pluralsuffix
+#noprefix
+#end
+
+#new
+#name "art"
+#basechance 20
+#definitesuffix
+#end
+
+#new
+#name "art"
+#basechance 20
+#pluralsuffix
+#definitesuffix
+#end
+
+#new
+#name "science"
+#basechance 10
+#definitesuffix
+#end
+
+#new
+#name "science"
+#basechance 10
+#pluralsuffix
+#definitesuffix
+#end
+
+#new
+#name "frontier"
+#basechance 10
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "marches"
+#basechance 10
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "valley"
+#basechance 10
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "vale"
+#basechance 10
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "basin"
+#basechance 10
+#definitesuffix
+#noprefix
+#end
+
+-- Nouns with modifiers based on unit attributes but not paths
+
+#new
+#name "sword"
+#basechance 5
+#chanceinc "filter warriormage 10"
+#chanceinc "filter thug-tier2 15"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "fist"
+#basechance 5
+#chanceinc "filter warriormage 10"
+#chanceinc "filter thug-tier2 15"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "lance"
+#basechance 2.5
+#chanceinc "filter warriormage 2.5"
+#chanceinc "filter thug-tier2 7.5"
+#chanceinc "personalcommand #mounted 2.5"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "hammer"
+#basechance 2.5
+#chanceinc "filter warriormage 2.5"
+#chanceinc "filter thug-tier2 7.5"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "shield"
+#basechance 5
+#chanceinc "filter warriormage 5"
+#chanceinc "filter thug-tier2 5"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "dagger"
+#basechance 5
+#chanceinc "filter spy 5"
+#chanceinc "filter assassin 15"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "academy"
+#basechance 20
+#chanceinc "personalcommand #researchbonus 30"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "college"
+#basechance 20
+#chanceinc "personalcommand #researchbonus 30"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "library"
+#basechance 20
+#chanceinc "personalcommand #researchbonus 30"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "fraternity"
+#basechance 15
+#commandvariant #female sorority
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "fraternity"
+#basechance 3
+#commandvariant #female sorority
+#definitesuffix
+#pluralsuffix
+#noprefix
+#end
+
+#new
+#name "brotherhood"
+#basechance 25
+#commandvariant #female sisterhood
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "fellowship"
+#basechance 20
+#chanceinc "personalcommand #female *0"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "conclave"
+#basechance 20
+#chanceinc "personalcommand #spy 20"
+#chanceinc "personalcommand #assassin 20"
+#chanceinc "personalcommand #stealthy 10"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "cabal"
+#basechance 20
+#chanceinc "personalcommand #spy 20"
+#chanceinc "personalcommand #assassin 20"
+#chanceinc "personalcommand #stealthy 10"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "cabal"
+#basechance 20
+#chanceinc "personalcommand #spy 20"
+#chanceinc "personalcommand #assassin 20"
+#chanceinc "personalcommand #stealthy 10"
+#definitesuffix
+#pluralsuffix
+#noprefix
+#end
+
+#new
+#name "book"
+#basechance 20
+#chanceinc "personalcommand #researchbonus 20"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "tome"
+#basechance 20
+#chanceinc "personalcommand #researchbonus 10"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "tome"
+#basechance 10
+#chanceinc "personalcommand #researchbonus 10"
+#definitesuffix
+#pluralsuffix
+#noprefix
+#end
+
+#new
+#name "lore"
+#basechance 20
+#chanceinc "personalcommand #researchbonus 20"
+#definitesuffix
+#end
+
+#new
+#name "lore"
+#basechance 20
+#chanceinc "personalcommand #researchbonus 20"
+#end
+
+#new
+#name "cycle"
+#basechance 10
+#chanceinc "personalcommand #researchbonus 10"
+#chanceinc "personalcommand #elegist 30"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "tradition"
+#basechance 5
+#chanceinc "personalcommand #forestsurvival 15"
+#chanceinc "personalcommand #mountainsurvival 15"
+#chanceinc "personalcommand #swampsurvival 15"
+#chanceinc "personalcommand #wastesurvival 15"
+#chanceinc "personalcommand #researchbonus *2"
+#pluralsuffix
+#noprefix
+#end
+
+#new
+#name "tradition"
+#basechance 5
+#chanceinc "personalcommand #forestsurvival 15"
+#chanceinc "personalcommand #mountainsurvival 15"
+#chanceinc "personalcommand #swampsurvival 15"
+#chanceinc "personalcommand #wastesurvival 15"
+#chanceinc "personalcommand #researchbonus *2"
+#definitesuffix
+#pluralsuffix
+#noprefix
+#end
+
+#new
+#name "tribe"
+#basechance 5
+#chanceinc "personalcommand #forestsurvival 5"
+#chanceinc "personalcommand #mountainsurvival 5"
+#chanceinc "personalcommand #swampsurvival 5"
+#chanceinc "personalcommand #wastesurvival 5"
+#definitesuffix
+#pluralsuffix
+#noprefix
+#end
+
+#new
+#name "tribe"
+#basechance 10
+#chanceinc "personalcommand #forestsurvival 7.5"
+#chanceinc "personalcommand #mountainsurvival 7.5"
+#chanceinc "personalcommand #swampsurvival 7.5"
+#chanceinc "personalcommand #wastesurvival 7.5"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "clan"
+#basechance 5
+#chanceinc "personalcommand #forestsurvival 5"
+#chanceinc "personalcommand #mountainsurvival 5"
+#chanceinc "personalcommand #swampsurvival 5"
+#chanceinc "personalcommand #wastesurvival 5"
+#definitesuffix
+#pluralsuffix
+#noprefix
+#end
+
+#new
+#name "clan"
+#basechance 10
+#chanceinc "personalcommand #forestsurvival 7.5"
+#chanceinc "personalcommand #mountainsurvival 7.5"
+#chanceinc "personalcommand #swampsurvival 7.5"
+#chanceinc "personalcommand #wastesurvival 7.5"
+#definitesuffix
+#noprefix
+#end
+
+-- Nouns with path-based modifiers
+
+#new
+#name "full moon"
+#basechance 5
+#chanceinc "personalmagic astral 2 5"
+#chanceinc "personalshape werewolf 5"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "crescent moon"
+#basechance 5
+#chanceinc "personalmagic water 1 astral 1 5"
+#chanceinc "personalmagic water 2 astral 2 5"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "new moon"
+#basechance 5
+#chanceinc "personalmagic death 1 astral 1 5"
+#chanceinc "personalcommand #darkpower 5"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "mystery"
+#basechance 20
+#chanceinc "personalmagic astral 1 10"
+#chanceinc "personalcommand #stealthy 20"
+#chanceinc "personalcommand #illusion 20"
+#chanceinc "personalcommand #ethereal 20"
+#end
+
+#new
+#name "mystery"
+#basechance 20
+#chanceinc "personalmagic astral 1 10"
+#chanceinc "personalcommand #stealthy 20"
+#chanceinc "personalcommand #illusion 20"
+#chanceinc "personalcommand #ethereal 20"
+#pluralsuffix
+#end
+
+#new
+#name "mystery"
+#basechance 20
+#chanceinc "personalmagic astral 1 10"
+#chanceinc "personalcommand #stealthy 20"
+#chanceinc "personalcommand #illusion 20"
+#chanceinc "personalcommand #ethereal 20"
+#pluralsuffix
+#definitesuffix
+#end
+
+#new
+#name "tower"
+#basechance 20
+#chanceinc "personalmagic air 1 10"
+#chanceinc "personalmagic air 1 earth 1 10"
+#chanceinc "comparemagic earth above air -10"
+#pluralsuffix
+#definitesuffix
+#end
+
+#new
+#name "tower"
+#basechance 20
+#chanceinc "personalmagic air 1 10"
+#chanceinc "personalmagic air 1 earth 1 10"
+#chanceinc "comparemagic earth above air -10"
+#definitesuffix
+#end
+
+#new
+#name "spire"
+#basechance 20
+#chanceinc "personalmagic air 1 20"
+#chanceinc "personalmagic air 1 earth 1 10"
+#chanceinc "comparemagic earth above air -20"
+#pluralsuffix
+#definitesuffix
+#end
+
+#new
+#name "spire"
+#basechance 20
+#chanceinc "personalmagic air 1 20"
+#chanceinc "personalmagic air 1 earth 1 10"
+#chanceinc "comparemagic earth above air -20"
+#definitesuffix
+#end
+
+#new
+#name "keep"
+#basechance 20
+#chanceinc "personalmagic earth 1 10"
+#chanceinc "personalmagic fire 1 10"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "keep"
+#basechance 20
+#chanceinc "personalmagic earth 1 10"
+#chanceinc "personalmagic fire 1 10"
+#definitesuffix
+#end
+
+#new
+#name "citadel"
+#basechance 20
+#chanceinc "personalmagic earth 1 10"
+#chanceinc "personalmagic fire 1 10"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "citadel"
+#basechance 20
+#chanceinc "personalmagic earth 1 10"
+#chanceinc "personalmagic fire 1 10"
+#definitesuffix
+#end
+
+#new
+#name "bastion"
+#basechance 15
+#chanceinc "personalmagic earth 1 10"
+#chanceinc "personalmagic fire 1 10"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "bastion"
+#basechance 15
+#chanceinc "personalmagic earth 1 10"
+#chanceinc "personalmagic fire 1 10"
+#definitesuffix
+#end
+
+#new
+#name "labyrinth"
+#basechance 5
+#chanceinc "personalmagic astral 1 5"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "maze"
+#basechance 5
+#chanceinc "personalmagic astral 1 5"
+#definitesuffix
+#pluralsuffix
+#noprefix
+#end
+
+#new
+#name "maze"
+#basechance 5
+#chanceinc "personalmagic astral 1 5"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "spiral"
+#basechance 10
+#chanceinc "personalmagic astral 1 5"
+#definitesuffix
+#pluralsuffix
+#end
+
+#new
+#name "spiral"
+#basechance 10
+#chanceinc "personalmagic astral 1 5"
+#definitesuffix
+#end
+
+#new
+#name "sect"
+#basechance 20
+#chanceinc "personalmagic holy 1 10"
+#chanceinc "personalmagic holy 2 -15"
+#chanceinc "personalcommand #heretic *2"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "schism"
+#basechance 10
+#chanceinc "personalmagic holy 2 -5"
+#chanceinc "personalcommand #heretic 15"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "heresy"
+#basechance 10
+#chanceinc "personalmagic holy 2 -10"
+#chanceinc "personalcommand #heretic 40"
+#definitesuffix
+#end
+
+#new
+#name "apostasy"
+#basechance 1
+#chanceinc "personalcommand #heretic 9"
+#chanceinc "personalcommand #holy *0"
+#definitesuffix
+#end
+
+#new
+#name "prophecy"
+#basechance 20
+#chanceinc "personalmagic holy 1 10"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "prophecy"
+#basechance 20
+#chanceinc "personalmagic holy 1 10"
+#definitesuffix
+#pluralsuffix
+#noprefix
+#end
+
+#new
+#name "relic"
+#basechance 5
+#chanceinc "personalmagic holy 1 5"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "relic"
+#basechance 5
+#chanceinc "personalmagic holy 1 5"
+#definitesuffix
+#pluralsuffix
+#noprefix
+#end
+
+#new
+#name "monastery"
+#basechance 5
+#chanceinc "personalmagic holy 1 15"
+#commandvariant #female convent
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "pilgrimage"
+#basechance 5
+#chanceinc "personalmagic holy 1 5"
+#definitesuffix
+#noprefix
+#end
+
+-- Nouns with path-based modifiers that also have (effectively higher-probability) path-exclusive versions in nouns.txt 
+
+#new
+#name "crusade"
+#basechance 5
+#chanceinc "personalmagic holy 1 2.5"
+#chanceinc "personalcommand #inquisitor *2"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "choir"
+#basechance 5
+#chanceinc "personalmagic astral 1 2.5"
+#chanceinc "personalmagic holy 1 2.5"
+#chanceinc "personalcommand #elegist *2"
+#definitesuffix
+#noprefix
+#end
+
+#new
+#name "coven"
+#basechance 5
+#chanceinc "personalmagic nature 1 1"
+#chanceinc "personalmagic death 1 2"
+#chanceinc "personalmagic blood 1 2"
+#definitesuffix
+#noprefix
+#end

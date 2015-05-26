@@ -1,0 +1,44 @@
+--- Secondary-only race - they mostly work with hoburgs, but sometimes with subterranean races
+
+
+#newrace
+#name "Caveman"
+#basechance 0.1
+#pose cavemantroops
+#pose cavemanmages
+
+#unitcommand "#gcost 25"
+#unitcommand "#size 3"
+#unitcommand "#hp 23"
+#unitcommand "#prot 2"
+#unitcommand "#str 17"
+#unitcommand "#att 10"
+#unitcommand "#def 10"
+#unitcommand "#mr 8"
+#unitcommand "#enc 3"
+#unitcommand "#prec 9"
+#unitcommand "#mapmove 2"
+#unitcommand "#ap 14"
+#unitcommand "#fireres 5"
+#unitcommand "#coldres 5"
+#unitcommand "#darkvision 50"
+#unitcommand "#wastesurvival"
+#unitcommand "#mountainsurvival"
+
+#secondary
+#chanceinc "primaryrace hoburg *20"
+#chanceinc "primaryrace Agarthan *7.5"
+#chanceinc "primaryrace Zotz *7.5"
+#chanceinc "primaryrace Abysian *7.5"
+
+#weakmagicpatterns
+
+#magicpriority earth 6
+#magicpriority air 0.1
+#magicpriority astral 0.1
+
+#all_troops_sacred
+#all_troops_elite
+
+#description "Cavemen are overgrown humans of dubious mental faculties. They might be predecessors of the human race or just the result of a not so successful experiment of a curious divinity."
+#endrace

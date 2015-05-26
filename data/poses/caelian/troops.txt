@@ -1,0 +1,88 @@
+
+-------- Normal
+
+#newpose
+#role "infantry"
+#role "scout"
+
+#load basesprite /data/items/caelian/normal/bases.txt
+#load shadow /data/items/caelian/normal/shadow.txt
+#load hands /data/items/caelian/normal/hands.txt
+#load overlay /data/items/caelian/normal/overlay.txt
+#load legs /data/items/caelian/normal/legs.txt
+
+#load armor /data/items/caelian/normal/armor.txt
+
+#load weapon /data/items/caelian/normal/weapon.txt 2 7
+#load offhand /data/items/human/normal/humanoffhand.txt -3 2
+#load offhand /data/items/human/normal/shields.txt 0 2
+
+#load helmet /data/items/human/normal/humanhelmet.txt 0 4
+
+#load cloakf /data/items/human/normal/humancloakf.txt 0 4
+#load cloakb /data/items/human/normal/humancloakb.txt 0 4
+
+#load offhand /data/items/human/sacredstuff/sacredoffhand.txt 0 2
+#load helmet /data/items/human/sacredstuff/sacredhelmet.txt 0 4
+#load weapon /data/items/human/sacredstuff/sacredweapon.txt 2 7
+#load weapon /data/items/human/sacredstuff/sacredweapon-infantry.txt 2 7
+#endpose
+
+
+--- archer
+
+#newpose
+#role "ranged"
+
+
+#renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+#load basesprite /data/items/caelian/archer/bases.txt
+#load shadow /data/items/caelian/normal/shadow.txt
+#load hands /data/items/caelian/archer/hands.txt
+#load overlay /data/items/caelian/normal/overlay.txt
+#load legs /data/items/caelian/normal/legs.txt
+
+#load armor /data/items/caelian/archer/armor.txt
+
+
+#load weapon /data/items/human/archer/bows.txt 3 3
+#load quiver /data/items/human/archer/humanbonusranged.txt -1 3
+#load bonusweapon /data/items/human/archer/archerweapon.txt
+
+#load helmet /data/items/human/normal/humanhelmet.txt 0 4
+
+#load cloakf /data/items/human/normal/humancloakf.txt 0 4
+#load cloakb /data/items/human/normal/humancloakb.txt 0 4
+
+#load helmet /data/items/human/sacredstuff/sacredhelmet.txt 0 4
+
+#generateitem 1 bonusweapon
+#endpose
+
+--- crossbow
+
+#newpose
+#role "ranged"
+#basechance 0.33
+#renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+#load basesprite /data/items/caelian/crossbow/bases.txt
+#load shadow /data/items/caelian/normal/shadow.txt
+#load hands /data/items/caelian/crossbow/hands.txt
+#load overlay /data/items/caelian/normal/overlay.txt
+#load legs /data/items/caelian/normal/legs.txt
+
+#load armor /data/items/caelian/crossbow/armor.txt
+
+
+#load weapon /data/items/human/crossbow/crossbows.txt 0 4
+#load bonusweapon /data/items/human/archer/archerweapon.txt
+
+#load helmet /data/items/human/normal/humanhelmet.txt 0 4
+
+#load cloakf /data/items/human/normal/humancloakf.txt 0 4
+#load cloakb /data/items/human/normal/humancloakb.txt 0 4
+
+#load helmet /data/items/human/sacredstuff/sacredhelmet.txt 0 4
+
+#generateitem 1 bonusweapon
+#endpose

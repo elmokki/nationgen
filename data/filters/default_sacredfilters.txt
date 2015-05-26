@@ -1,0 +1,822 @@
+#new
+#name "reinvig"
+#basechance 0.05
+#command "#reinvigoration +2"
+#chanceinc "magic earth 0.95"
+#chanceinc "enc 8 1"
+#chanceinc "enc 9 2"
+#chanceinc "enc 10 3"
+#tag "nopose ranged"
+#tag "nopose mounted"
+#end
+
+
+#new
+#name "berserklowest"
+#type "berserk"
+#basechance 0.5
+#command "#berserk +1"
+#chanceinc "magic nature 1"
+#tag "nopose ranged"
+#tag "nopose mounted"
+#end
+
+#new
+#name "berserklow"
+#type "berserk"
+#basechance 0.5
+#command "#berserk +3"
+#chanceinc "magic nature 1"
+#chanceinc "command #berserk 10"
+#chanceinc "race vanir 5"
+#chanceinc "prot below 12 *2"
+#chanceinc "prot below 8 *2"
+#tag "nopose ranged"
+#tag "nopose mounted"
+#command "#gcost +5"
+#power 2
+#end
+
+#new
+#name "berserkhigh"
+#type "berserk"
+#basechance 0.25
+#command "#berserk +5"
+#chanceinc "magic nature 0.5"
+#chanceinc "command #berserk 5"
+#chanceinc "prot below 12 *2"
+#chanceinc "prot below 8 *2"
+#chanceinc "race vanir 5"
+#chanceinc "pose ranged -100"
+#chanceinc "pose mounted -100"
+#tag "nopose ranged"
+#tag "nopose mounted"
+#command "#gcost +10"
+#power 3
+#end
+
+#new
+#name "stealthlow"
+#type "stealth"
+#basechance 0.5
+#command "#stealthy +0"
+#chanceinc "command #stealthy 2"
+#chanceinc "personalcommand #stealthy -10"
+#chanceinc "race vanir -20"
+#chanceinc "pose mounted *0.25"
+#power 2
+#end
+
+#new
+#name "chaosrec"
+#type "chaosrec"
+#basechance 0.1
+#command "#chaosrec %cost10"
+#chanceinc "command #chaosrec 100"
+#chanceinc "command #chaospower 100"
+#end
+
+
+#new
+#name "deathrec"
+#type "chaosrec"
+#basechance 0.01
+#command "#deathrec %cost10"
+#chanceinc "command #deathrec 100"
+#chanceinc "command #deathpower 100"
+#chanceinc "magic death 5"
+#end
+
+
+#new
+#name "chaosrec_high"
+#type "chaosrec"
+#basechance 0.05
+#command "#chaosrec %cost20"
+#chanceinc "command #chaosrec 25"
+#chanceinc "command #chaospower 25"
+#end
+
+
+#new
+#name "chaospower"
+#basechance 0.1
+#command "#chaospower 1"
+#chanceinc "command #chaosrec 100"
+#chanceinc "command #chaospower 100"
+#end
+
+
+#new
+#name "deathpower"
+#basechance 0.1
+#command "#deathpower 1"
+#chanceinc "command #deathrec 100"
+#chanceinc "command #deathpower 100"
+#chanceinc "magic death 5"
+#end
+
+
+#new
+#name "fireshield2"
+#type "fireshield"
+#basechance 0.0
+#command "#fireshield 2"
+#chanceinc "command #fireshield 2"
+#chanceinc "magic fire 1"
+#power 1
+#end
+
+#new
+#name "fireshield4"
+#type "fireshield"
+#basechance 0.0
+#command "#fireshield 4"
+#chanceinc "command #fireshield 1"
+#chanceinc "command fire 1"
+#power 2
+#end
+
+#new
+#name "fireshield6"
+#type "fireshield"
+#basechance 0.0
+#command "#fireshield 6"
+#chanceinc "command #fireshield 0.5"
+#chanceinc "command fire 0.5"
+#chanceinc "prot 8 *0.5"
+#chanceinc "prot 10 *0.25"
+#chanceinc "prot 12 *0.125"
+#chanceinc "prot 15 *0"
+#power 3
+#end
+
+
+#new
+#name "stealthhigh"
+#type "stealth"
+#basechance 0.25
+#primarycommand "#stealthy"
+#command "#stealthy +20"
+#command "#gcost +5"
+#chanceinc "personalcommand #stealthy -10"
+#chanceinc "race vanir -20"
+#chanceinc "pose mounted *0.25"
+#power 2
+#end
+
+#new
+#name "extrastats"
+#basechance 0.5
+#command "#str +1"
+#command "#def +1"
+#command "#att +1"
+#command "#prec +1"
+#command "#hp +2"
+#command "#gcost +5"
+#end
+
+#new
+#name "strong"
+#basechance 0.5
+#command "#str +3"
+#command "#hp +4"
+#command "#gcost +5"
+#chanceinc "ranged -100"
+#power 2
+#end
+
+#new
+#name "glamour"
+#type "strong defensive"
+#type "stealth"
+#primarycommand "#illusion"
+#basechance 0.0
+#chanceinc "magic air 2"
+#chanceinc "command #illusion 10"
+#command "#illusion"
+#command "#stealthy +0"
+#command "#gcost +10"
+#tag "path air"
+#chanceinc "personalcommand #illusion -20"
+#chanceinc "race van -20"
+#chanceinc "race abysian *0.5"
+#chanceinc "prot 15 *0.5"
+#chanceinc "pose mounted *0.5"
+#power 3
+#end
+
+
+#new
+#name "resistances_fire"
+#basechance 0.2
+#chanceinc "magic fire 2"
+#chanceinc "command #poisonres *0.5"
+#chanceinc "command #fireres *0.5"
+#chanceinc "command #coldres *0.5"
+#chanceinc "command #shockres *0.5"
+#command "#fireres +5"
+#command "#gcost +1"
+#end
+
+#new
+#name "resistances_poison"
+#basechance 0.2
+#chanceinc "magic nature 2"
+#chanceinc "command #poisonres *0.5"
+#chanceinc "command #fireres *0.5"
+#chanceinc "command #coldres *0.5"
+#chanceinc "command #shockres *0.5"
+#command "#poisonres +5"
+#command "#gcost +1"
+#end
+
+#new
+#name "resistances_cold"
+#basechance 0.2
+#chanceinc "magic water 2"
+#chanceinc "command #poisonres *0.5"
+#chanceinc "command #fireres *0.5"
+#chanceinc "command #coldres *0.5"
+#chanceinc "command #shockres *0.5"
+#command "#coldres +5"
+#command "#gcost +1"
+#end
+
+#new
+#name "resistances_shock"
+#basechance 0.2
+#chanceinc "magic water 2"
+#chanceinc "command #poisonres *0.5"
+#chanceinc "command #fireres *0.5"
+#chanceinc "command #coldres *0.5"
+#chanceinc "command #shockres *0.5"
+#command "#shockres +5"
+#command "#gcost +1"
+#end
+
+
+#new
+#type "allres"
+#name "resistances_high"
+#basechance 0.0
+#chanceinc "magic air 0.5"
+#chanceinc "magic fire 0.5"
+#chanceinc "magic earth 0.5"
+#chanceinc "magic water 0.5"
+#chanceinc "command #fireres 0.5"
+#chanceinc "command #coldres 0.5"
+#chanceinc "command #poisonres 0.5"
+#chanceinc "command #shockres 0.5"
+#command "#fireres +5"
+#command "#coldres +5"
+#command "#poisonres +5"
+#command "#shockres +5"
+#command "#gcost +10"
+#power 3
+#end
+
+#new
+#type "allres"
+#name "resistances_low"
+#basechance 0.0
+#chanceinc "magic air 0.5"
+#chanceinc "magic fire 0.5"
+#chanceinc "magic earth 0.5"
+#chanceinc "magic water 0.5"
+#chanceinc "command #fireres 0.5"
+#chanceinc "command #coldres 0.5"
+#chanceinc "command #poisonres 0.5"
+#chanceinc "command #shockres 0.5"
+#command "#fireres +3"
+#command "#coldres +3"
+#command "#poisonres +3"
+#command "#shockres +3"
+#command "#gcost +5"
+#power 2
+#end
+
+
+#new
+#name "recup"
+#basechance 0.0
+#chanceinc "magic nature 1"
+#chanceinc "command #heal 10"
+#command "#heal"
+#command "#gcost +5"
+#end
+
+
+#new
+#type "scalepower"
+#name "coldpower"
+#basechance 0.0
+#chanceinc "magic water 0.25"
+#chanceinc "command #coldres 0.125"
+#chanceinc "command #fireres -0.25"
+#chanceinc "command #coldblooded -5"
+#chanceinc "command #coldblood -5"
+#chanceinc "nationcommand #idealcold below 0 -5"
+#command "#coldpower +1"
+#command "#gcost +5"
+#tag "path water"
+#end
+
+#new
+#type "scalepower"
+#name "firepower"
+#basechance 0.0
+#chanceinc "magic fire 0.25"
+#chanceinc "command #fireres 0.125"
+#chanceinc "command #coldres -0.25"
+#chanceinc "nationcommand #idealcold above 0 -5"
+#command "#firepower +1"
+#command "#gcost +5"
+#tag "path fire"
+#end
+
+
+#new
+#name "stormpower"
+#type "stormpower"
+#basechance 0.0
+#chanceinc "magic air 1"
+#chanceinc "command #shockres 0.3"
+#chanceinc "command #flying 0.2"
+#chanceinc "personalcommand #flying 3"
+#command "#stormpower +2"
+#command "#gcost +5"
+#tag "path air"
+#end
+
+#new
+#name "stormpower"
+#type "stormpower"
+#basechance 0.0
+#chanceinc "magic air 1"
+#chanceinc "command #shockres 0.3"
+#chanceinc "command #flying 0.2"
+#chanceinc "personalcommand #flying 3"
+#command "#stormpower +4"
+#command "#gcost +10"
+#power 2
+#tag "path air"
+#end
+
+#new
+#type "seasonpower"
+#name "springpower"
+#basechance 0.2
+#chanceinc "magic water 0.5"
+#chanceinc "magic nature 0.5"
+#chanceinc "magic water nature 2.5"
+#command "#springpower +1"
+#tag "path nature"
+#end
+
+#new
+#type "seasonpower"
+#name "summerpower"
+#basechance 0.2
+#chanceinc "magic fire 0.5"
+#chanceinc "magic nature 0.5"
+#chanceinc "magic fire nature 2.5"
+#chanceinc "command #fireres 0.1"
+#command "#summerpower +1"
+#tag "path fire"
+#end
+
+#new
+#type "seasonpower"
+#name "fallpower"
+#basechance 0.2
+#chanceinc "magic earth 1"
+#chanceinc "magic nature 0.1"
+#chanceinc "magic earth nature 3"
+#command "#fallpower +1"
+#tag "path earth"
+#end
+
+#new
+#type "seasonpower"
+#name "winterpower"
+#basechance 0.0
+#chanceinc "magic water 0.5"
+#chanceinc "magic nature 0.05"
+#chanceinc "magic death 0.5"
+#chanceinc "magic death water 3"
+#chanceinc "command #frostres 0.1"
+#command "#winterpower +1"
+#tag "path water"
+#end
+
+#new
+#name "darkpower"
+#basechance 0.0
+#chanceinc "command #darkvision 0.05"
+#chanceinc "magic death 1"
+#primarycommand "#blind"
+#command "#darkpower +2"
+#command "#darkvision 100"
+#command "#gcost +3"
+#tag "path death"
+#end
+
+#new
+#name "darkpower2"
+#basechance 0.0
+#chanceinc "command #darkvision 4"
+#chanceinc "magic death 0.5"
+#primarycommand "#blind"
+#command "#darkpower +4"
+#command "#darkvision 100"
+#command "#gcost +8"
+#power 2
+#tag "path death"
+#end
+
+#new
+#name "darkpower-blind"
+#basechance 0.0
+#chanceinc "personalcommand #blind 5"
+#chanceinc "magic death *2"
+#command "#darkpower +2"
+#command "#gcost +3"
+#tag "path death"
+#end
+
+#new
+#name "darkpower2-blind"
+#basechance 0.0
+#chanceinc "personalcommand #blind 3"
+#chanceinc "magic death *2"
+#command "#darkpower +4"
+#command "#gcost +8"
+#power 2
+#tag "path death"
+#end
+
+
+
+#new
+#type "strong defensive"
+#name "awe"
+#basechance 0.1
+#chanceinc "magic astral 0.1"
+#chanceinc "command #awe +1"
+#command "#awe 0"
+#command "#gcost +20"
+#command "#gcost *1.5"
+#chanceinc "prot 15 *0.0625"
+#chanceinc "prot 12 *0.0625"
+#chanceinc "prot 8 *0.125"
+#power 3
+#end
+
+#new
+#name "regen10"
+#basechance 0.2
+#chanceinc "magic nature 0.8"
+#chanceinc "command #regeneration 6"
+#command "#regeneration 10"
+#command "#gcost +15"
+#tag "path nature"
+#power 2
+#end
+
+#new
+#name "heat"
+#basechance 0.0
+#chanceinc "command #fireres 0.2"
+#chanceinc "magic water 0.25"
+#command "#heat 3"
+#command "#fireres 5"
+#command "#gcost +10"
+#chanceinc "nationcommand #idealcold above 0 -5"
+#tag "nopose chariot"
+#tag "nopose ranged"
+#tag "path fire"
+#chanceinc "pose mounted *0.025"
+#power 2
+#end
+
+#new
+#name "cold"
+#basechance 0.0
+#chanceinc "command #coldres 2"
+#chanceinc "magic water 0.25"
+#command "#cold 3"
+#command "#coldres 5"
+#command "#gcost +10"
+#chanceinc "command #coldblooded -5"
+#chanceinc "command #coldblood -5"
+#chanceinc "nationcommand #idealcold below 0 -5"
+#tag "nopose chariot"
+#tag "nopose ranged"
+#tag "path water"
+#chanceinc "pose mounted *0.025"
+#power 2
+#end
+
+#new
+#name "poisoncloud"
+#basechance 0.0
+#chanceinc "command #poisonres 4"
+#chanceinc "magic nature 0.2"
+#command "#poisoncloud 3"
+#command "#poisonres 5"
+#command "#gcost +20"
+#chanceinc "pose mounted *0.025"
+#tag "nopose chariot"
+#tag "nopose ranged"
+#tag "path nature"
+#power 2
+#end
+
+
+
+#new
+#type "resist"
+#name "bluntres"
+#basechance 0.1
+#command "#bluntres"
+#command "#gcost +5"
+#end
+
+#new
+#type "resist"
+#name "pierceres"
+#basechance 0.1
+#command "#pierceres"
+#command "#gcost +5"
+#end
+
+
+#new
+#type "resist"
+#name "slashres"
+#basechance 0.1
+#command "#slashres"
+#command "#gcost +5"
+#end
+
+
+#new
+#type "invuln"
+#name "invulnerable (5)"
+#basechance 0.2
+#primarycommand "#prot"
+#command "#invulnerable 5"
+#command "#gcost +8"
+#power 1
+#end
+
+#new
+#type "invuln"
+#name "invulnerable (10)"
+#basechance 0.2
+#primarycommand "#prot"
+#command "#invulnerable 10"
+#command "#gcost +10"
+#power 2
+#end
+
+
+
+#new
+#name "incunrest_low"
+#basechance 0.1
+#command "#incunrest +1"
+#power -1
+#end
+
+#new
+#name "incunrest_high"
+#basechance 0.05
+#command "#incunrest +2"
+#power -1
+#end
+
+
+
+#new
+#name "magicpower"
+#basechance 0.3
+#command "#magicpower 1"
+#chanceinc "magic astral 0.3"
+#end
+
+#new
+#name "poisonarmor"
+#basechance 0.0
+#chanceinc "magic nature 2"
+#command "#poisonarmor"
+#command "#gcost +5"
+#tag "path nature"
+#end
+
+#new
+#name "castlemaster"
+#type "siege"
+#basechance 0.5
+#command "#siegebonus +3"
+#command "#castledef +3"
+#end
+
+#new
+#name "sieger"
+#type "siege"
+#basechance 0.25
+#command "#siegebonus +5"
+#end
+
+#new
+#name "patrol"
+#basechance 0.25
+#command "#patrolbonus +3"
+#end
+
+#new
+#name "pillage"
+#basechance 0.25
+#command "#pillagebonus +3"
+#end
+
+#new
+#name "werewolf"
+#type "shapeshift"
+#basechance 0.1
+#chanceinc "magic nature 1"
+#chanceinc "shape werewolf 20"
+#command "#secondshape werewolf"
+#command "#gcost +10"
+#chanceinc "pose mounted *0"
+#power 3
+#end
+
+#new
+#name "ghoul"
+#type "shapeshift"
+#basechance 0.1
+#chanceinc "magic death 2"
+#chanceinc "shape ghoul 20"
+#command "#secondshape ghoul"
+#command "#gcost +5"
+#tag "path death"
+#chanceinc "pose mounted *0.25"
+#power 1
+#end
+
+#new
+#name "hornedserpent"
+#type "shapeshift"
+#basechance 0.05
+#chanceinc "magic nature 2"
+#chanceinc "shape hornedserpent 20"
+#command "#secondshape hornedserpent"
+#command "#gcost +8"
+#chanceinc "pose mounted *0.25"
+#tag "path nature"
+#power 3
+#end
+
+#new
+#name "minorfelemental"
+#type "shapeshift"
+#basechance 0.0
+#chanceinc "magic fire 1"
+#chanceinc "magic water -0.5"
+#chanceinc "shape felemental 20"
+#command "#secondtmpshape minorfelemental"
+#command "#gcost +8"
+#tag "path fire"
+#power 3
+#end
+
+#new
+#name "minoreelemental"
+#type "shapeshift"
+#basechance 0.0
+#chanceinc "magic earth 1"
+#chanceinc "magic air -0.5"
+#chanceinc "command #flying -0.5"
+#chanceinc "shape eelemental 20"
+#command "#secondtmpshape minoreelemental"
+#command "#gcost +10"
+#tag "path earth"
+#power 3
+#end
+
+#new
+#name "minoraelemental"
+#type "shapeshift"
+#basechance 0.0
+#chanceinc "magic air 1"
+#chanceinc "magic earth -0.5"
+#chanceinc "shape aelemental 20"
+#chanceinc "command #flying 0.5"
+#command "#secondtmpshape minoraelemental"
+#command "#gcost +12"
+#tag "path air"
+#power 3
+#end
+
+#new
+#name "minorwelemental"
+#type "shapeshift"
+#basechance 0.0
+#chanceinc "magic water 1"
+#chanceinc "magic fire -0.5"
+#chanceinc "shape welemental 20"
+#command "#secondtmpshape minorwelemental"
+#command "#gcost +8"
+#tag "path water"
+#power 3
+#end
+
+#new
+#name "metalman"
+#type "shapeshift"
+#basechance 0.05
+#chanceinc "magic earth 1"
+#chanceinc "shape metalman 20"
+#command "#secondshape metalman"
+#command "#hp -5"
+#command "#gcost +15"
+#tag "path earth"
+#power 3
+#end
+
+#new
+#name "vineman"
+#type "shapeshift"
+#basechance 0
+#chanceinc "magic nature 1"
+#chanceinc "shape vineman 20"
+#command "#secondshape vineman"
+#command "#gcost +20"
+#tag "path nature"
+#power 2
+#end
+
+
+#new
+#name "amphibian"
+#basechance 0
+#command "#amphibian"
+#chanceinc "command #amphibian 10"
+#chanceinc "command #pooramphibian 3"
+#chanceinc "race atlantian -100"
+#chanceinc "nopose mounted"
+#chanceinc "magic water 2"
+#power 2
+#end
+
+#new
+#name "ethereal"
+#type "strong defensive"
+#command "#ethereal"
+#command "#gcost +30"
+#basechance 0.05
+#chanceinc "astral 0.95"
+#chanceinc "prot 15 *0.05"
+#chanceinc "pose mounted *0.25"
+#chanceinc "pose chariot *0.1"
+#power 3
+#end
+
+#new magefilter
+#type "shapeshift"
+#name "greatboar"
+#basechance 0.1
+#chanceinc "magic nature 1"
+#command "#shapechange greatboar"
+#command "#gcost +15"
+#description "can shapeshift into a great boar"
+#power 2
+#end
+
+#new magefilter
+#type "shapeshift"
+#name "toad"
+#basechance 0.01
+#chanceinc "magic water 0.25"
+#chanceinc "magic nature 0.25"
+#chanceinc "magic nature water 0.5"
+#command "#shapechange toad"
+#command "#gcost +15"
+#tag "notfortier 1"
+#tag "notfortier 2"
+#description "can shapeshift into a giant toad"
+#power 2
+#end
+
+
+#new
+#name "cultist"
+#chance 0.05
+#primarycommand "#horrormark"
+#command "#horrormark"
+#command "#startaff +20"
+#description "cultist"
+#end

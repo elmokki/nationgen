@@ -1,0 +1,265 @@
+#new
+#name "colder 1"
+#type "weather"
+#basechance 0.5
+#command "#idealcold +1"
+#chanceinc "magic water 0.5"
+#chanceinc "command #frostres 0.5"
+#chanceinc "command #coldblooded -200"
+#chanceinc "command #heat -3"
+#chanceinc "command #firepower -3"
+#chanceinc "command #cold 3"
+#chanceinc "command #coldpower 3"
+#chanceinc "command #fireres above 0 -1"
+#chanceinc "command #iceprot *10"
+#desc "Prefers slightly colder climate than usual for the race"
+#end
+
+
+#new
+#name "colder 2"
+#type "weather"
+#basechance 0.125
+#command "#idealcold +2"
+#chanceinc "magic water 0.125"
+#chanceinc "command #frostres 0.125"
+#chanceinc "command #coldblooded -200"
+#chanceinc "command #heat -1.5"
+#chanceinc "command #firepower -1.5"
+#chanceinc "command #cold 1.5"
+#chanceinc "command #coldpower 1.5"
+#chanceinc "command #fireres above 0 -0.5"
+#chanceinc "command #iceprot *10"
+#desc "Prefers one considerably colder climate than usual for the race"
+#end
+
+#new
+#name "colder 3"
+#type "weather"
+#basechance 0.05
+#command "#idealcold +3"
+#chanceinc "magic water 0.05"
+#chanceinc "command #frostres 0.05"
+#chanceinc "command #coldblooded -200"
+#chanceinc "command #heat -0.75"
+#chanceinc "command #firepower -0.75"
+#chanceinc "command #cold 0.75"
+#chanceinc "command #coldpower 0.75"
+#chanceinc "command #fireres above 0 -0.5"
+#chanceinc "command #iceprot *10"
+#desc "Prefers extremely colder climate than usual for the race"
+#end
+
+
+#new
+#name "hotter 1"
+#type "weather"
+#basechance 0.5
+#command "#idealcold -1"
+#chanceinc "magic fire 0.5"
+#chanceinc "command #fireres 0.5"
+#chanceinc "command #coldblooded 8"
+#chanceinc "command #heat 3"
+#chanceinc "command #firepower 3"
+#chanceinc "command #cold -3"
+#chanceinc "command #coldpower -3"
+#chanceinc "command #frostres above 0 -0.5"
+#chanceinc "command #iceprot *0.25"
+#desc "Prefers slightly warmer climate than usual for the race"
+#end
+
+
+#new
+#name "hotter 2"
+#type "weather"
+#basechance 0.125
+#command "#idealcold -2"
+#chanceinc "magic fire 0.125"
+#chanceinc "command #fireres 0.125"
+#chanceinc "command #coldblooded 4"
+#chanceinc "command #heat 1.5"
+#chanceinc "command #firepower 1.5"
+#chanceinc "command #cold -1.5"
+#chanceinc "command #coldpower -1.5"
+#chanceinc "command #frostres above 0 -0.5"
+#chanceinc "command #iceprot *0.25"
+#desc "Prefers considerably warmer climate than usual for the race"
+#end
+
+#new
+#name "hotter 3"
+#type "weather"
+#basechance 0.05
+#command "#idealcold -3"
+#chanceinc "magic fire 0.05"
+#chanceinc "command #fireres 0.05"
+#chanceinc "command #coldblooded 2"
+#chanceinc "command #heat 0.75"
+#chanceinc "command #firepower 0.75"
+#chanceinc "command #cold -0.5"
+#chanceinc "command #coldpower -0.5"
+#chanceinc "command #frostres above 0 -0.5"
+#chanceinc "command #iceprot *0.25"
+#desc "Prefers extremely warmer climate than usual for the race"
+#end
+
+#new
+#name "nopreach"
+#type "bloodsac"
+#basechance 0
+#command "#nopreach"
+#command "#sacrificedom"
+#chanceinc "magic blood holy 0.25"
+#desc "Priests are unable to preach but may commit blood sacrifices"
+#end
+
+
+#new
+#name "bloodsac"
+#type "bloodsac"
+#basechance 0.5
+#command "#sacrificedom"
+#chanceinc "magic blood holy 3"
+#chanceinc "magic blood 3"
+#desc "Priests may commit blood sacrifices"
+#end
+
+#new
+#name "nodeathsupply"
+#basechance 0.05
+#command "#nodeathsupply"
+#chanceinc "magic death 2"
+#desc "Death dominion does not reduce supplies"
+#end
+
+#new
+#name "zombiereanim"
+#type "reanim"
+#basechance 0.0
+#command "#zombiereanim"
+#chanceinc "magic death 1"
+#desc "Priests can reanimate the dead"
+#end
+
+#new
+#name "godrebirth"
+#basechance 0.05
+#command "#godrebirth"
+#desc "The pretender god of this nation does not lose magical skill upon death"
+#end
+
+#new
+#name "tradecoast-10"
+#basechance 0.05
+#command "#tradecoast +10"
+#desc "10 percent higher gold income in coastal provinces"
+#end
+
+
+#new
+#type "castleprod"
+#name "castleprod 10"
+#basechance 0.05
+#command "#castleprod +10"
+#chanceinc avgres 12 0.20
+#chanceinc avgres 15 1
+#chanceinc avgres 20 1
+#chanceinc avgres 25 1
+#desc "10 percent higher resource production in castles"
+#end
+
+#new
+#type "castleprod"
+#name "castleprod 25"
+#basechance 0.05
+#command "#castleprod +25"
+#chanceinc avgres 12 0.20
+#chanceinc avgres 15 1
+#chanceinc avgres 20 1
+#chanceinc avgres 25 1
+#desc "25 percent higher resource production in castles"
+#end
+
+#new
+#name "cheaplabs"
+#type "lab"
+#basechance 0.05
+#command "#labcost 400"
+#desc "Laboratories cost 400 gold"
+#end
+
+#new
+#name "expensivelabs"
+#type "lab"
+#basechance 0.05
+#command "#labcost 600"
+#desc "Laboratories cost 600 gold"
+#end
+
+#new
+#name "cheaptemple"
+#type "temple"
+#basechance 0.1
+#command "#templecost 300"
+#desc "Temples cost 300 gold"
+#end
+
+#new
+#name "cheaptemple2"
+#type "temple"
+#basechance 0.1
+#command "#templecost 200"
+#desc "Temples cost 200 gold"
+#end
+
+#new
+#name "expensivetemple"
+#type "temple"
+#basechance 0.15
+#command "#templecost 500"
+#desc "Temples cost 500 gold"
+#end
+
+#new
+#name "expensivetemple2"
+#type "temple"
+#basechance 0.05
+#command "#templecost 600"
+#desc "Temples cost 600 gold"
+#end
+
+#new
+#name "cheapforts"
+#type "fort"
+#basechance 0.05
+#command "#fortcost -10"
+#desc "Fortifications are 10 percent cheaper"
+#end
+
+#new
+#name "cheapforts2"
+#type "fort"
+#basechance 0.025
+#command "#fortcost -20"
+#desc "Fortifications are 20 percent cheaper"
+#end
+
+
+
+#new
+#name "expensiveforts"
+#type "fort"
+#basechance 0.05
+#command "#fortcost 10"
+#desc "Fortifications are 10 percent more expensive"
+#end
+
+#new
+#name "expensiveforts2"
+#type "fort"
+#basechance 0.025
+#command "#fortcost 20"
+#desc "Fortifications are 20 percent more expensive"
+#end
+
+

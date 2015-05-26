@@ -1,0 +1,60 @@
+------- Archer
+
+#newpose
+#role "ranged"
+#sacred
+#renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/human/archer/humanbases.txt
+#load shadow /data/items/human/normal/shadow.txt
+
+#load hands /data/items/human/archer/humanhands.txt
+
+#load armor /data/items/human/archer/armor.txt
+#load armor /data/items/human/archer/naked.txt
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load hair /data/items/human/normal/humanhair.txt
+
+#load helmet /data/items/human/normal/humanhelmet.txt
+#load legs /data/items/human/normal/humanlegs.txt
+#load shirt /data/items/human/archer/humanshirt.txt
+#load weapon /data/items/human/archer/bows.txt
+
+#load quiver /data/items/human/archer/humanbonusranged.txt
+#load bonusweapon /data/items/human/archer/archerweapon.txt
+
+#load helmet /data/items/human/sacredstuff/humanspecific_sacredhelmet.txt
+#load helmet /data/items/human/sacredstuff/sacredhelmet.txt
+
+#generateitem 1 bonusweapon
+#endpose
+
+------- crossbowman
+
+#newpose
+#role "ranged"
+#sacred
+#load basesprite /data/items/human/crossbow/humanbases.txt
+#load shadow /data/items/human/normal/shadow.txt
+
+#load hands /data/items/human/crossbow/humanhands.txt
+
+#load armor /data/items/human/crossbow/armor.txt
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load hair /data/items/human/normal/humanhair.txt
+
+#load helmet /data/items/human/normal/humanhelmet.txt
+#load legs /data/items/human/normal/humanlegs.txt
+#load shirt /data/items/human/crossbow/humanshirt.txt
+#load weapon /data/items/human/crossbow/crossbows.txt
+
+#load bonusweapon /data/items/human/archer/archerweapon.txt
+
+#load helmet /data/items/human/sacredstuff/humanspecific_sacredhelmet.txt
+#load helmet /data/items/human/sacredstuff/sacredhelmet.txt
+
+#generateitem 1 bonusweapon
+#endpose
+

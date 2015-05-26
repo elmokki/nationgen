@@ -1,0 +1,33 @@
+
+-- Heavy clockwork armor
+
+#newitem 
+#name "clockwork armor"
+#gameid 14
+#sprite /graphics/hoburg/bodyarmor/clockwork_armor1.png
+#armor
+#theme "advanced"
+
+#define "#gcost +25"
+#define "#rcost +20"
+#define "#size 2"
+#define "#ressize 2"
+#define "#enc 2"
+#define "#reinvigoration -1"
+#define "#hp +2"
+#define "#str +5"
+#define "#def -5"
+#define "#mor +3"
+#define "#mapmove 3"
+#define "#ap +2"
+#define "#prec -3"
+#define "#fireres +5"
+#define "#coldres +5"
+#define "#shockres +5"
+#define "#poisonres +5"
+#define "#mounted"
+#description "Their heavy armor is driven by complex clockwork mechanisms that increase their strength and speed, but gradually run down and need rewound"
+
+#tag "guaranteedprefix clockwork"
+#enditem
+

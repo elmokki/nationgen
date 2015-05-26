@@ -1,0 +1,39 @@
+#newrace
+#name "Human (advanced)"
+#visiblename "Human"
+#basechance 0 -- 0.075
+
+#all_troops_sacred
+#all_troops_elite
+
+#pose advancedinfantry
+-- #pose advancedcavalry
+-- #pose advancedranged
+
+-- #pose advancedmage
+
+#longsyllables /data/names/nations/human/longsyllables.txt
+#shortsyllables /data/names/nations/human/shortsyllables.txt
+#suffixes /data/names/nations/human/suffixes.txt
+
+-- Always have shirt, 5% chance for hair
+#generateitem 1 shirt
+#generateitem 0.05 hair
+
+#preferredmount horse
+
+#magicpatterns defaultprimary
+#magicpatterns defaultsecondary
+#magicpatterns defaulttertiary
+
+#magicpriority earth 4
+#magicpriority nature 0.075
+
+#unitcommand "#nametype 114"
+
+#gods europegods
+
+#chanceinc era 2 *4
+#chanceinc era 3 *8
+
+#endrace

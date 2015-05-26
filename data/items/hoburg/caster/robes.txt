@@ -1,0 +1,108 @@
+
+--- Robes
+
+#newitem
+#id simplerobe
+#gameid 158
+#sprite /graphics/hoburg/bodyarmor/robes/simplerobe.png
+#recolormask self
+#tag "eliteversion simplerobe2"
+#tag "eliteversion toga"
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id simplerobe2
+#gameid 158
+#sprite /graphics/hoburg/bodyarmor/robes/simplerobe2.png
+#recolormask self
+#tag "tier 3"
+#tag "tier 2"
+#tag "tier 1"
+#armor
+#enditem
+
+#newitem
+#id toga
+#gameid 158
+#sprite /graphics/hoburg/bodyarmor/robes/toga.png
+#recolormask self
+#armor
+#tag "tier 3"
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+
+#newitem
+#id evilrobe1a
+#gameid 158
+#sprite /graphics/hoburg/bodyarmor/robes/evilrobe1.png
+#recolormask /graphics/hoburg/bodyarmor/robes/evilrobe1_recolormask1.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id evilrobe1b
+#gameid 158
+#sprite /graphics/hoburg/bodyarmor/robes/evilrobe1.png
+#recolormask /graphics/hoburg/bodyarmor/robes/evilrobe1_recolormask2.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id evilrobe2a
+#gameid 158
+#sprite /graphics/hoburg/bodyarmor/robes/evilrobe1_recolormask1.png
+#recolormask self
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#tag "eliteversion evilrobe1a"
+#enditem
+
+#newitem
+#id evilrobe2b
+#gameid 158
+#sprite /graphics/hoburg/bodyarmor/robes/evilrobe1_recolormask1.png
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#tag "eliteversion evilrobe1b"
+#enditem
+
+#newitem
+#id imperialrobe1
+#gameid 158
+#sprite /graphics/hoburg/bodyarmor/robes/imperialrobe-mid.png
+#recolormask /graphics/hoburg/bodyarmor/robes/imperialrobe-mid_recolormask.png
+#armor
+#tag "tier 3"
+#tag "eliteversion imperialrobe3"
+#tag "eliteversion imperialrobe2"
+#enditem
+
+#newitem
+#id imperialrobe2
+#gameid 158
+#sprite /graphics/hoburg/bodyarmor/robes/imperialrobe-low.png
+#recolormask /graphics/hoburg/bodyarmor/robes/imperialrobe-low_recolormask.png
+#armor
+#tag "eliteversion imperialrobe1"
+#tag "eliteversion imperialrobe3"
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id imperialrobe3
+#gameid 158
+#sprite /graphics/hoburg/bodyarmor/robes/imperialrobe-high.png
+#recolormask /graphics/hoburg/bodyarmor/robes/imperialrobe-high_recolormask.png
+#armor
+#tag "tier 3"
+#enditem

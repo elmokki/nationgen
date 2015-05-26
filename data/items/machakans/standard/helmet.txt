@@ -1,0 +1,50 @@
+#newitem
+#id ironcap
+#gameid 20
+#sprite /graphics/machakans/helmets/ironhelmet.png
+#tag "eliteversion ironcap-elite"
+#armor
+#enditem
+
+#newitem
+#id ironcap-elite
+#gameid 20
+#sprite /graphics/machakans/helmets/elitehelmet_metal.png
+#elite
+#armor
+#enditem
+
+#newitem
+#id nohelmet
+#gameid -1
+#armor
+#tag "eliteversion leathercap-elite"
+#enditem
+
+
+#newitem
+#id leathercap-elite
+#gameid 120
+#sprite /graphics/machakans/helmets/elitehelmet.png
+#recolormask /graphics/machakans/helmets/elitehelmet_recolormask.png
+#armor
+#theme "elite"
+#enditem
+
+
+#newitem
+#id leathercap
+#gameid 120
+#sprite /graphics/helmet/standard/leathercap.png
+#armor
+#tag "eliteversion leathercap-elite"
+#enditem
+
+#newitem
+#id jingasa
+#gameid 131
+#sprite /graphics/helmet/standard/jingasa2.png
+#recolormask /graphics/helmet/standard/jingasa2_recolormask.png
+#armor
+#basechance 0.1
+#enditem

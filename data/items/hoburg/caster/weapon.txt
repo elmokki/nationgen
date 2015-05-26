@@ -1,0 +1,91 @@
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/weapon/standard/axe.png
+#theme "primitive"
+#offsetx 5
+#offsety 12
+#enditem
+
+
+#newitem
+#id shortsword
+#gameid 6
+#sprite /graphics/weapon/standard/shortsword.png
+#offsetx 5
+#offsety 12
+#enditem
+
+
+#newitem
+#id falchion
+#gameid 10
+#sprite /graphics/weapon/standard/falchion.png
+#tag "name infantry falchioneer"
+#offsetx 5
+#offsety 12
+#enditem
+
+#newitem
+#id orb
+#gameid -1
+#sprite /graphics/weapon/mage/orb.png
+#recolormask self
+#tag "tier 3"
+#offsetx 5
+#offsety 12
+#enditem
+
+#newitem
+#id sceptre
+#gameid 446
+#sprite /graphics/weapon/mage/sceptre.png
+#tag "tier 2"
+#tag "tier 3"
+#tag "eliteversion orbsceptre"
+#offsetx 5
+#offsety 12
+#enditem
+
+#newitem
+#id orbsceptre
+#gameid 446
+#sprite /graphics/weapon/mage/sceptre_orb.png
+#recolormask /graphics/weapon/mage/sceptre_orb_recolormask.png
+#theme "superior"
+#tag "tier 3"
+#offsetx 5
+#offsety 12
+#enditem
+
+#newitem
+#id pestle
+#gameid 499
+#needs offhand mortar
+#sprite /graphics/weapon/mage/pestle.png
+#tag "tier 1"
+#offsetx 5
+#offsety 12
+#enditem
+
+#newitem
+#id dagger
+#gameid 9
+#sprite /graphics/weapon/mage/dagger.png
+#tag "tier 1"
+#offsetx 5
+#offsety 12
+#enditem
+
+#newitem
+#id stick
+#gameid 153
+#sprite /graphics/hoburg/weapon/stick.png
+#theme "primitive"
+#enditem
+
+#newitem
+#id stickstaff
+#gameid 7
+#sprite /graphics/hoburg/weapon/stick.png
+#enditem

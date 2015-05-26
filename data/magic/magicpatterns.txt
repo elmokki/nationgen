@@ -1,0 +1,7 @@
+--- Loads magic patterns to NationGen
+--- Nations or poses (poses override nations) can be defined to use these with #magicpatterns <name>
+--- Anything with default in it's name is loaded if nothing else is defined.
+
+#load defaultprimary ./data/magic/standard_primary.txt
+#load defaultsecondary ./data/magic/standard_secondary.txt
+#load defaulttertiary ./data/magic/standard_tertiary.txt

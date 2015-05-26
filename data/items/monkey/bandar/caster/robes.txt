@@ -1,0 +1,69 @@
+
+--- Robes
+
+#newitem
+#id great_toga
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/great_toga.png
+#recolormask /graphics/monkey/armor/bandar_mage/great_toga_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id toga
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/toga.png
+#recolormask /graphics/monkey/armor/bandar_mage/toga_recolormask.png
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#eliteversion "great_toga"
+#enditem
+
+
+#newitem
+#id lesser_toga
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/lessertoga.png
+#recolormask self
+#armor
+#tag "tier 1"
+#eliteversion "toga"
+#enditem
+
+#newitem
+#id great_loincloth
+#gameid -1
+#sprite /graphics/monkey/armor/bandar_mage/loincloth_gold_best.png
+#recolormask /graphics/monkey/armor/bandar_mage/loincloth_gold_recolormask.png
+#armor
+#tag "tier 2"
+#eliteversion "great_toga"
+#enditem
+
+#newitem
+#id gold_loincloth
+#gameid -1
+#sprite /graphics/monkey/armor/bandar_mage/loincloth_gold.png
+#recolormask /graphics/monkey/armor/bandar_mage/loincloth_gold_recolormask.png
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#eliteversion "great_toga"
+#eliteversion "great_loincloth"
+#eliteversion "toga"
+#enditem
+
+#newitem
+#id loincloth
+#gameid -1
+#sprite /graphics/monkey/armor/bandar_mage/loincloth.png
+#recolormask self
+#armor
+#tag "tier 1"
+#eliteversion "gold_loincloth"
+#eliteversion "great_loincloth"
+#eliteversion "toga"
+#eliteversion "great_toga"
+#enditem

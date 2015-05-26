@@ -1,0 +1,96 @@
+
+--- "fancy" chainmail and plate for elite-eligable units
+
+--- Chain Mail
+
+#newitem
+#name "gold chain cuirass"
+#gameid 8
+#sprite /graphics/amazon/armor/2h/chaincuirass_elite.png
+#armor
+#basechance 0.25
+#enditem
+
+
+#newitem
+#name "gold chain hauberk"
+#gameid 13
+#sprite /graphics/amazon/armor/2h/chainhauberk_elite.png
+#recolormask /graphics/amazon/armor/2h/mailhauberk_recolormask.png
+#basechance 0.25
+#armor
+#enditem
+
+
+#newitem -- gilt full chain
+#name "gold full chain"
+#gameid 18
+#sprite /graphics/amazon/armor/2h/chainhauberk_elite.png
+#recolormask /graphics/amazon/armor/2h/mailhauberk_recolormask.png
+#armor
+#basechance 0.25
+#needs legs chainpants_greaves_elite
+#theme "advanced"
+#tag "name mounted knight"
+#enditem
+
+
+--- Plate
+
+#newitem
+#name "gold plate cuirass"
+#gameid 9
+#sprite /graphics/amazon/armor/2h/platecuirass_elite.png
+#armor
+#basechance 0.25
+#theme "advanced"
+#enditem
+
+#newitem
+#name "gold plate hauberk"
+#gameid 14
+#sprite /graphics/amazon/armor/2h/platehauberk_elite.png
+#armor
+#basechance 0.25
+#theme "advanced"
+#tag "name mounted knight"
+#enditem
+
+#newitem -- gilt full plate
+#name "gold full plate"
+#gameid 19
+#sprite /graphics/amazon/armor/2h/fullplate_elite.png
+#armor
+#basechance 0.25
+#theme "advanced"
+#tag "name mounted knight"
+#enditem
+
+#newitem
+#name "silver plate cuirass"
+#gameid 9
+#sprite /graphics/amazon/armor/2h/platecuirass_elite2.png
+#armor
+#basechance 0.25
+#theme "advanced"
+#enditem
+
+#newitem
+#name "silver plate hauberk"
+#gameid 14
+#sprite /graphics/amazon/armor/2h/platehauberk_elite2.png
+#armor
+#basechance 0.25
+#theme "advanced"
+#tag "name mounted knight"
+#enditem
+
+#newitem -- silver-plated full plate
+#name "silver full plate"
+#gameid 19
+#sprite /graphics/amazon/armor/2h/fullplate_elite2.png
+#armor
+#basechance 0.25
+#theme "advanced"
+#tag "name mounted knight"
+#enditem

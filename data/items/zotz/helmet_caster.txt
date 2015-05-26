@@ -1,0 +1,72 @@
+#new
+#id headress
+#gameid -1
+#sprite /graphics/zotz/helmet/headress.png
+#recolormask self
+#tier 2
+#tier 1
+#eliteversion epicheadress
+#end
+
+#new
+#id headress_bw
+#gameid -1
+#sprite /graphics/zotz/helmet/headress.png
+#tier 2
+#tier 1
+#eliteversion epicheadress_bw
+#end
+
+#new
+#id epicheadress
+#gameid -1
+#sprite /graphics/zotz/helmet/epicheadress.png
+#recolormask self
+#tier 3
+#eliteversion epicheadress
+#end
+
+#new
+#id epicheadress_bw
+#gameid -1
+#sprite /graphics/zotz/helmet/epicheadress.png
+#recolormask /graphics/zotz/helmet/epicheadress_recolormask.png
+#tier 3
+#eliteversion epicheadress
+#end
+
+#new
+#id simple_crown
+#gameid 148
+#sprite /graphics/zotz/helmet/simple_crown.png
+#tier 1
+#tier 2
+#eliteversion crown
+#end
+
+#new
+#id crown
+#gameid 148
+#sprite /graphics/zotz/helmet/crown.png
+#tier 3
+#eliteversion jeweled_crown
+#end
+
+#new
+#id jewels
+#gameid -1
+#sprite /graphics/zotz/helmet/jewels.png
+#recolormask /graphics/zotz/helmet/jewels_recolormask.png
+#tier 1
+#tier 2
+#eliteversion jeweled_crown
+#end
+
+#new
+#id jeweled_crown
+#gameid 148
+#sprite /graphics/zotz/helmet/jeweled_crown.png
+#recolormask /graphics/zotz/helmet/jeweled_crown_recolormask.png
+#tier 3
+#eliteversion jeweled_crown
+#end

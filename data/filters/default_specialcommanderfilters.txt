@@ -1,0 +1,201 @@
+#new
+#name "administrator"
+#command "#taxcollector"
+#command "#incprovdef"
+#command "#gcost +30"
+#unitname "Administrator"
+#unitname "Governor"
+#description "%unitname% is able to collect taxes in distant lands and train militia."
+#end
+
+#new
+#basechance 0.1
+#name "bringer of fortune"
+#command "#gold 5"
+#command "#nobadevents 5"
+#unitname "Oracle"
+#description "%unitname% brings fortune to any province he lives in."
+#end
+
+#new
+#name "lawman"
+#command "#patrolbonus 20"
+#command "#incunrest -20"
+#command "#gcost +10"
+#unitname "Sherrif"
+#unitname "Constable"
+#unitname "Captain of the Guard"
+#description "%unitname% is skilled in preventing dissent."
+#end
+
+#new
+#name "siege engineer"
+#command "#siegebonus 30"
+#command "#castledef 30"
+#unitname "Siege Engineer"
+#unitname "Engineer"
+#description "%unitname% is adept at siege mechanics."
+#end
+
+#new
+#name "heretic"
+#command "#heretic 1"
+#command "#stealthy 0"
+#command "#gcost +30"
+#unitname "Heretic"
+#unitname "Atheist"
+#unitname "Agnostic"
+#caponlychance 0.1
+#description "%unitname% uses false logic to preach against any religion."
+#end
+
+#new
+#name "reanimator"
+#command "#reanimator 5"
+#command "#gcost +30"
+#unitname "Reanimator"
+#unitname "Animator"
+#basechance 0
+#chanceinc magic death 1
+#caponlychance 0.8
+#description "%unitname% is able to reanimate five corpses each month without the use of magic."
+#end
+
+
+#new
+#name "Librarian"
+#command "#inspiringres 1"
+#command "#gcost +20"
+#unitname "Librarian"
+#basechance 1
+#chanceinc magic astral 0.5
+#description "%unitname% is not skilled in magical research, but has an extensive knowledge of arcane literature, and is able to help researchers."
+#end
+
+#new
+#name "comslave"
+#command "#comslave"
+#command "#gcost +15"
+#unitname "Communicant"
+#unitname "Sabbath Slave"
+#basechance 0
+#chanceinc magic astral 3
+#chanceinc magic blood 1.5
+#description "%unitname% is able to serve as a communion or sabbath slave."
+#end
+
+#new
+#name "douser"
+#command "#douse 1"
+#command "#gcost +10"
+#unitname "Blood Hunter"
+#unitname "Blood Hunter"
+#unitname "Blood Hunter"
+#unitname "Blood Hunter"
+#unitname "Bloodseeker"
+#unitname "Sanguine Seeker"
+#basechance 0
+#chanceinc magic blood 2
+#description "%unitname% is skilled at finding blood slaves."
+#end
+
+#new
+#name "pearl maker"
+#command "#makepearls 1"
+#command "#gcost +10"
+#unitname "Pearl Cultivator"
+#unitname "Master of Pearls"
+#basechance 0
+#caponlychance 0.7
+#chanceinc magic astral water 1
+#chanceinc magic water 0.1
+#description "%unitname% is able to turn water gems into astral pearls."
+#end
+
+#new
+#name "pearl maker2"
+#command "#makepearls 2"
+#command "#gcost +30"
+#unitname "Pearl Cultivator"
+#unitname "Master of Pearls"
+#basechance 0
+#caponlychance 0.7
+#chanceinc magic astral water 0.5
+#chanceinc magic water 0.05
+#description "%unitname% is able to turn water gems into astral pearls."
+#end
+
+#new
+#name "frog summoner"
+#command "#makemonsters2 2222"
+#command "#gcost +30"
+#unitname "Frogherd"
+#unitname "Frog Tamer"
+#basechance 0.125
+#chanceinc magic nature 0.5
+#caponlychance 0.8
+#description "%unitname% is able to tame frogs."
+#end
+
+
+#new
+#name "wolfherd"
+#command "#makemonsters1 284"
+#command "#gcost +30"
+#unitname "Woldherd"
+#unitname "Wolf Tamer"
+#basechance 0.125
+#chanceinc magic nature 0.5
+#caponlychance 0.99
+#description "%unitname% is able to tame wolves."
+#end
+
+#new
+#name "dogherd"
+#command "#makemonsters1 1560"
+#command "#gcost +30"
+#unitname "Houndsmaster"
+#unitname "Dog Trainer"
+#basechance 0.125
+#chanceinc magic nature 0.5
+#caponlychance 0.95
+#description "%unitname% is able to train dogs."
+#end
+
+#new
+#name "goatherd"
+#command "#makemonsters1 2227"
+#command "#gcost +30"
+#unitname "Shepherd"
+#basechance 0.125
+#chanceinc magic nature 0.5
+#caponlychance 0.95
+#description "%unitname% is able to herd goats."
+#end
+
+
+#new
+#name "ant summoner"
+#command "#makemonsters3 1087"
+#command "#gcost +30"
+#unitname "Antherd"
+#unitname "Ant Tamer"
+#unitname "Lord of Insects"
+#basechance 0.0
+#chanceinc magic nature 0.125
+#caponlychance 0.8
+#description "%unitname% is able to tame ants."
+#end
+
+#new
+#name "fly summoner"
+#command "#makemonsters3 2218"
+#command "#gcost +30"
+#unitname "Lord of the Flies"
+#basechance 0.05
+#chanceinc magic nature 0.125
+#chanceinc magic death 0.05
+#chanceinc magic nature death 1
+#caponlychance 0.8
+#description "%unitname% is able to tame flies."
+#end

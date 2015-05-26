@@ -1,0 +1,49 @@
+
+#newrace
+#name "Zotz"
+#basechance 0.1
+#pose zotzmages
+#pose zotztroops
+#pose zotzcavalry
+#unitcommand "#gcost 7"
+#unitcommand "#rcost 1"
+#unitcommand "#size 2"
+#unitcommand "#ressize 1"
+#unitcommand "#coldblooded"
+#unitcommand "#hp 7"
+#unitcommand "#str 7"
+#unitcommand "#att 11"
+#unitcommand "#def 11"
+#unitcommand "#mr 9"
+#unitcommand "#enc 3"
+#unitcommand "#prec 5"
+-- #unitcommand "#flying" -- Zotz get flying via their "wings" slot to prevent cavalry from flying 
+#unitcommand "#mapmove 3"
+#unitcommand "#ap 10"
+#unitcommand "#maxage 100"
+#unitcommand "#nametype 123"
+#unitcommand "#eyes 2"
+#unitcommand "#blind"
+#unitcommand "#forestsurvival"
+#unitcommand "#patrolbonus -1"
+#unitcommand "#douse 1"
+-- #unitcommand "#stealthy +40" -- Zotz get their stealth (if eligible) via their "wings" slot to prevent cavalry/heavy troops from being stealthy
+
+#longsyllables /data/names/nations/nahuatl/longsyllables.txt
+#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt
+#suffixes /data/names/nations/nahuatl/suffixes.txt
+
+#magicpriority death 8
+#magicpriority blood 6
+#magicpriority nature 3
+#magicpriority earth 4
+
+#chanceinc primaryrace agarthan *2
+
+#all_troops_elite
+#all_troops_sacred
+
+#generationchance cavalry 0.05
+
+#description "The Zotz are often called the bat people. They resemble small humans with heads and wings of a bat. It is said that the Zotz once came from Xibalba, a great cavernous realm underneath the forests of Mictlan. The Zotz live in caverns and are rarely seen on the surface world."
+#endrace

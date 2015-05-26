@@ -1,0 +1,167 @@
+-- Non-visible headgear
+
+#newitem
+#id none
+#gameid -1
+#basechance 0
+#nogen
+#enditem
+
+#newitem
+#id leatherhood
+#gameid 121
+#basechance 0
+#nogen
+#enditem
+
+-- Long flowing locks
+
+#newitem
+#id blond_hair
+#gameid -1
+#sprite /graphics/helmet/standard/longblondehair.png
+#offsetx -1
+#offsety -10
+#basechance 0.33
+#enditem
+
+#newitem
+#id brown_hair
+#gameid -1
+#sprite /graphics/helmet/standard/longbrownhair.png
+#offsetx -1
+#offsety -10
+#basechance 0.33
+#enditem
+
+#newitem
+#id light_brown_hair
+#gameid -1
+#sprite /graphics/helmet/standard/longlightbrownhair.png
+#offsetx -1
+#offsety -10
+#basechance 0.33
+#enditem
+
+-- Standard helms
+
+#newitem
+#id leathercap
+#gameid 120
+#sprite /graphics/helmet/standard/leathercap.png
+#offsetx -1
+#offsety -10
+#armor
+#tag "eliteversion fancyhat"
+#enditem
+
+#newitem
+#id fancyhat
+#gameid 120
+#sprite /graphics/helmet/special/fancyhat.png
+#recolormask /graphics/helmet/special/fancyhat_recolormask.png
+#offsetx -1
+#offsety -10
+#armor
+#enditem
+
+-- Highmen specific helms
+
+-- Leather helms
+
+#newitem
+#id highman_leathercap
+#gameid 120
+#sprite /graphics/highmen/helmet/cap_leather.png
+#armor
+#tag "eliteversion highman_leathercap_crested"
+#tag "eliteversion highman_leathercap_reinforced"
+#enditem
+
+#newitem
+#id highman_leathercap_reinforced
+#gameid 119
+#sprite /graphics/highmen/helmet/cap_leather_reinforced.png
+#armor
+#tag "eliteversion highman_leathercap_crested"
+#enditem
+
+#newitem
+#id highman_leathercap_crested
+#gameid 162
+#sprite /graphics/highmen/helmet/cap_leather_crested.png
+#recolormask /graphics/highmen/helmet/crest_recolormask.png
+#armor
+#enditem
+
+-- Bronze helms
+
+#newitem
+#id highman_bronzecap
+#gameid 135
+#sprite /graphics/highmen/helmet/cap_bronze.png
+#armor
+#tag "eliteversion highman_bronzecap_crested"
+#theme "bronze"
+#enditem
+
+#newitem
+#id highman_bronzecap_crested
+#gameid 135
+#sprite /graphics/highmen/helmet/cap_bronze_crested.png
+#recolormask /graphics/highmen/helmet/crest_recolormask.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id highman_bronzecap2
+#gameid 135
+#sprite /graphics/highmen/helmet/cap_bronze2.png
+#armor
+#tag "eliteversion highman_bronzecap2_crested"
+#theme "bronze"
+#enditem
+
+#newitem
+#id highman_bronzecap2_crested
+#gameid 135
+#sprite /graphics/highmen/helmet/cap_bronze2_crested.png
+#recolormask /graphics/highmen/helmet/cap_bronze2_crested_recolormask.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id highman_halfhelm_bronze
+#gameid 118
+#sprite /graphics/highmen/helmet/halfhelm_bronze.png
+#armor
+#tag "eliteversion highman_halfhelm_bronze_horned"
+#theme "bronze"
+#enditem
+
+#newitem
+#id highman_halfhelm_bronze_horned
+#gameid 118
+#sprite /graphics/highmen/helmet/halfhelm_bronze_horned.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id highman_fullhelm_bronze
+#gameid 21
+#sprite /graphics/highmen/helmet/fullhelm_bronze.png
+#armor
+#tag "eliteversion highman_fullhelm_bronze_horned"
+#theme "bronze"
+#enditem
+
+#newitem
+#id highman_fullhelm_bronze_horned
+#gameid 21
+#sprite /graphics/highmen/helmet/fullhelm_bronze_horned.png
+#armor
+#theme "bronze"
+#enditem

@@ -1,0 +1,75 @@
+
+-------- Normal
+
+#newpose
+#basechance 0.5
+#name "markata infantry"
+#role "infantry"
+#role "scout"
+
+
+#load basesprite /data/items/monkey/markata/bases.txt
+#load shadow /data/items/monkey/markata/shadow.txt
+#load armor /data/items/monkey/markata/armor.txt
+
+#load weapon /data/items/monkey/markata/weapon.txt
+#load bonusweapon /data/items/monkey/markata/bonusweapon.txt
+
+#generateitem 1 bonusweapon
+#maxvarieties 1
+#maxunits 1
+
+#command "#maxage 15"
+
+#primaryraceonly
+
+#endpose
+
+-------- Ranged
+
+#newpose
+#basechance 0.5
+#name "markata ranged"
+#role "ranged"
+
+
+#load basesprite /data/items/monkey/markata/archerbases.txt
+#load shadow /data/items/monkey/markata/shadow.txt
+#load armor /data/items/monkey/markata/armor.txt
+
+#load weapon /data/items/monkey/markata/bows.txt
+
+
+#maxvarieties 1
+#maxunits 1
+#command "#maxage 15"
+
+#primaryraceonly
+
+#endpose
+
+------- Sacred
+
+#newpose
+#name "markata sacred infantry"
+#role "sacred infantry"
+#basechance 0.1
+
+
+#load basesprite /data/items/monkey/markata/sacredbases.txt
+#load shadow /data/items/monkey/markata/shadow.txt
+#load armor /data/items/monkey/markata/armor.txt
+
+#load weapon /data/items/monkey/markata/weapon.txt
+#load weapon /data/items/monkey/markata/sacredweapon.txt
+#load bonusweapon /data/items/monkey/markata/bonusweapon.txt
+#load offhand /data/items/monkey/markata/sacredoffhand.txt
+
+#generateitem 1 bonusweapon
+#maxvarieties 1
+#maxunits 1
+#command "#maxage 15"
+
+#primaryraceonly
+
+#endpose

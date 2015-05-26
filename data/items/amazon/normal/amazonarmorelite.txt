@@ -1,0 +1,105 @@
+
+--- "fancy" chainmail and plate for elite-eligable units
+
+--- Chain Mail
+
+#newitem
+#name "gold chain cuirass"
+#gameid 8
+#sprite /graphics/amazon/armor/standard/chaincuirass_elite.png
+#armor
+#basechance 0.25
+#theme "elite"
+#enditem
+
+
+#newitem
+#name "gold chain hauberk"
+#gameid 13
+#sprite /graphics/amazon/armor/standard/chainhauberk_elite.png
+#recolormask /graphics/amazon/armor/standard/mailhauberk_recolormask.png
+#basechance 0.25
+#armor
+#theme "elite"
+#enditem
+
+
+#newitem -- gilt full chain
+#name "gold full chain"
+#gameid 18
+#sprite /graphics/amazon/armor/standard/chainhauberk_elite.png
+#recolormask /graphics/amazon/armor/standard/mailhauberk_recolormask.png
+#armor
+#basechance 0.25
+#needs legs chainpants_greaves_elite
+#theme "advanced"
+#tag "name mounted knight"
+#theme "elite"
+#enditem
+
+
+--- Plate
+
+#newitem
+#name "gold plate cuirass"
+#gameid 9
+#sprite /graphics/amazon/armor/standard/platecuirass_elite.png
+#armor
+#basechance 0.25
+#theme "advanced"
+#theme "elite"
+#enditem
+
+#newitem
+#name "gold plate hauberk"
+#gameid 14
+#sprite /graphics/amazon/armor/standard/platehauberk_elite.png
+#armor
+#basechance 0.25
+#theme "advanced"
+#tag "name mounted knight"
+#theme "elite"
+#enditem
+
+#newitem -- gilt full plate
+#name "gold full plate"
+#gameid 19
+#sprite /graphics/amazon/armor/standard/fullplate_elite.png
+#armor
+#basechance 0.25
+#theme "advanced"
+#tag "name mounted knight"
+#theme "elite"
+#enditem
+
+#newitem
+#name "silver plate cuirass"
+#gameid 9
+#sprite /graphics/amazon/armor/standard/platecuirass_elite2.png
+#armor
+#basechance 0.25
+#theme "advanced"
+#theme "elite"
+#enditem
+
+#newitem
+#name "silver plate hauberk"
+#gameid 14
+#sprite /graphics/amazon/armor/standard/platehauberk_elite2.png
+#armor
+#basechance 0.25
+#theme "advanced"
+#tag "name mounted knight"
+#theme "elite"
+#enditem
+
+#newitem -- silver-plated full plate
+#name "silver full plate"
+#gameid 19
+#sprite /graphics/amazon/armor/standard/fullplate_elite2.png
+#armor
+#basechance 0.25
+#theme "advanced"
+#tag "name mounted knight"
+#theme "elite"
+#enditem

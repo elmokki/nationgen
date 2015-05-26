@@ -1,0 +1,64 @@
+#newpose
+#race 1
+#role "infantry"
+#role "scout"
+#role "sacred"
+#role "elite"
+#name "1h/pole"
+#sacred
+
+#load basesprite /data/items/lizard/normal/lizardbases.txt
+#load shadow /data/items/lizard/normal/shadow.txt
+
+#load hands /data/items/lizard/normal/lizardhands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt offsetx -1 offsety -2
+#load cloakb /data/items/human/normal/humancloakb.txt offsetx -1 offsety -2
+
+#load armor /data/items/lizard/normal/lizardarmor.txt offsetx -1 offsety -2
+#load armor /data/items/human/normal/orientalarmor.txt offsetx -1 offsety -2
+#load armor /data/items/lizard/normal/naked.txt offsetx -1 offsety -2
+#load helmet /data/items/lizard/normal/lizardhelmet.txt
+#load legs /data/items/lizard/normal/lizardlegs.txt
+
+#load weapon /data/items/human/normal/humanweapon.txt offsetx -1 offsety -2
+#load bonusweapon /data/items/human/normal/standards.txt offsetx -2 offsety -1
+#load bonusweapon /data/items/lizard/normal/bonusranged.txt offsetx -1 offsety -2
+
+#load offhand /data/items/human/normal/humanoffhand.txt offsetx -1 offsety -2
+#load offhand /data/items/human/normal/shields.txt offsetx -1 offsety -2
+#load offhand /data/items/human/normal/towershields.txt offsetx -1 offsety -2
+
+
+
+#endpose
+
+-------- 2h infantry
+
+#newpose
+#basechance 0.25
+#name "2h"
+#role "infantry"
+#role "sacred"
+#role "elite"
+#sacred
+#load basesprite /data/items/lizard/2h/humanbases.txt
+#load shadow /data/items/lizard/normal/shadow.txt
+
+#load hands /data/items/lizard/2h/humanhands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt offsetx -1 offsety -2
+#load cloakb /data/items/human/normal/humancloakb.txt offsetx -1 offsety -2
+
+#load armor /data/items/lizard/2h/humanarmor.txt offsetx -1 offsety -2
+#load armor /data/items/lizard/2h/naked.txt offsetx -1 offsety -2
+
+#load helmet /data/items/lizard/normal/lizardhelmet.txt
+#load legs /data/items/lizard/normal/lizardlegs.txt
+
+#load weapon /data/items/human/2h/humanweapon.txt offsetx -1 offsety -2
+#load bonusweapon /data/items/lizard/normal/bonusranged.txt offsetx -1 offsety -2
+
+#maxvarieties 1
+
+#endpose

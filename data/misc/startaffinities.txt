@@ -1,0 +1,99 @@
+#new
+#basechance 1
+#name "none"
+#end
+
+
+#new
+#basechance 0
+#name "forest"
+#chanceinc percentageofcommand #forestsurvival 0.5 0.1
+#chanceinc percentageofcommand #forestsurvival 0.75 0.5
+#chanceinc percentageofcommand #forestsurvival 0.9 4
+#command "#likesterr +2"
+#end
+
+#new
+#basechance 0
+#name "mountain"
+#chanceinc percentageofcommand #mountainsurvival 0.5 0.1
+#chanceinc percentageofcommand #mountainsurvival 0.75 0.5
+#chanceinc percentageofcommand #mountainsurvival 0.9 4
+#chanceinc percentageofcommand #flying 0.5 0.1
+#chanceinc percentageofcommand #flying 0.75 0.25
+#chanceinc percentageofcommand #flying 0.9 1
+#command "#likesterr +4"
+#end
+
+
+
+#new
+#basechance 0
+#name "waste"
+#chanceinc percentageofcommand #wastesurvival 0.5 0.1
+#chanceinc percentageofcommand #wastesurvival 0.75 0.5
+#chanceinc percentageofcommand #wastesurvival 0.9 4
+#command "#likesterr +8"
+#end
+
+
+#new
+#basechance 0
+#name "swamp"
+#chanceinc percentageofcommand #swampsurvival 0.5 0.1
+#chanceinc percentageofcommand #swampsurvival 0.75 0.5
+#chanceinc percentageofcommand #swampsurvival 0.9 4
+#command "#likesterr +128"
+#end
+
+#new
+#basechance 0.1
+#name "farm"
+#chanceinc percentageofrace hoburg 0.5 0.1
+#chanceinc percentageofrace hoburg 0.75 1
+#chanceinc percentageofrace hoburg 0.9 8
+#command "#likesterr +16"
+#end
+
+
+#new
+#basechance 0.1
+#name "plain"
+#command "#likesterr +1"
+#end
+
+
+#new
+#basechance 0.05
+#name "coast"
+#chanceinc percentageofcommand #amphibian 0.5 0.1
+#chanceinc percentageofcommand #amphibian 0.75 0.1
+#chanceinc percentageofcommand #amphibian 0.9 0.1
+#chanceinc percentageofcommand #pooramphibian 0.5 0.1
+#chanceinc percentageofcommand #pooramphibian 0.75 0.1
+#chanceinc percentageofcommand #pooramphibian 0.9 0.1
+#chanceinc command #sailing 0.5
+#chanceinc nationcommand #tradecoast 0.5
+#command "#likesterr +128"
+#end
+
+
+#new
+#basechance 0
+#name "cave"
+#chanceinc percentageofcommand #darkvision 0.5 0.05
+#chanceinc percentageofcommand #darkvision 0.75 0.5
+#chanceinc percentageofcommand #darkvision 0.9 4
+#chanceinc percentageofcommand #blind 0.5 0.05
+#chanceinc percentageofcommand #blind 0.75 0.5
+#chanceinc percentageofcommand #blind 0.9 4
+#chanceinc percentageofrace agarthan 0.75 8
+#chanceinc percentageofrace zotz 0.75 8
+#chanceinc percentageofrace agarthan 0.5 0.5
+#chanceinc percentageofrace zotz 0.5 0.5
+#command "#likesterr +512"
+#end
+
+
+
+

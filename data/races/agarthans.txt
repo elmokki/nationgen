@@ -1,0 +1,53 @@
+
+#newrace
+#name "Agarthan"
+#basechance 0.3
+
+#all_troops_elite
+
+#longsyllables /data/names/nations/agarthan/longsyllables.txt
+#shortsyllables /data/names/nations/agarthan/shortsyllables.txt
+#suffixes /data/names/nations/agarthan/suffixes.txt
+
+#unitcommand "#prot 3"
+#unitcommand "#gcost 10"
+#unitcommand "#hp 22"
+#unitcommand "#str 14"
+#unitcommand "#def 9"
+#unitcommand "#prec 8"
+#unitcommand "#att 8"
+#unitcommand "#def 8"
+#unitcommand "#ap 10"
+#unitcommand "#mr 12"
+#unitcommand "#amphibian"
+#unitcommand "#neednoteat"
+#unitcommand "#coldblood"
+#unitcommand "#mountainsurvival"
+#unitcommand "#siegebonus 2"
+#unitcommand "#darkvision 100"
+#unitcommand "#eyes 1"
+#unitcommand "#size 3"
+#unitcommand "#maxage 400"
+#unitcommand "#nametype 117"
+
+
+#specialcommand "#att +1"
+#specialcommand "#def +1"
+#specialcommand "#prec +1"
+
+#pose agarthantroops
+#pose agarthanmages
+
+#gods agarthagods
+
+#magicpriority earth 7
+#magicpriority death 2
+
+#secondaryracecommand_conditional "#darkvision +50"
+
+
+#generationchance cavalry 0.075
+#sacredcavalrychance 0.075
+
+#description "In dark caverns under the Roots of the Earth a strange race of one-eyed humanoids has evolved. Untouched by the sun, they have become known to humans as the Pale Ones. Pale Ones are gifted with perfect darkvision and gills. They inhabit underwater rivers and lakes as well as cavern halls."
+#endrace

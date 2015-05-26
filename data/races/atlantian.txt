@@ -1,0 +1,28 @@
+#newrace
+#name "Atlantian"
+#basechance 0.2
+#all_troops_elite
+#poses /races/atlantian/poses.txt
+
+#longsyllables /data/names/nations/atlantian/longsyllables.txt
+#shortsyllables /data/names/nations/atlantian/shortsyllables.txt
+#suffixes /data/names/nations/atlantian/suffixes.txt
+
+#unitcommand "#prot 2"
+#unitcommand "#gcost 12"
+#unitcommand "#hp 12"
+#unitcommand "#str 11"
+#unitcommand "#def 9"
+#unitcommand "#prec 8"
+#unitcommand "#ap 10"
+#unitcommand "#amphibian"
+#unitcommand "#nametype 117"
+#unitcommand "#maxage 500"
+
+#pose atlantiantroops
+#pose atlantianmages
+
+#magicpriority water 10
+#monsterchance 0.01
+
+#endrace

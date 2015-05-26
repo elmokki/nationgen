@@ -1,0 +1,30 @@
+--- Don't be afraid - they're only sacreds and mages.
+
+
+#newrace
+#name "Tengu"
+#basechance 0.1
+#pose tengumages
+#pose tengutroops
+#unitcommand "#gcost 40"
+#unitcommand "#size 3"
+#unitcommand "#ressize 2"
+#unitcommand "#hp 12"
+#unitcommand "#str 11"
+#unitcommand "#att 12"
+#unitcommand "#def 12"
+#unitcommand "#mr 12"
+#unitcommand "#enc 3"
+#unitcommand "#prec 11"
+#unitcommand "#flying"
+#unitcommand "#stormflying"
+#unitcommand "#mapmove 3"
+#unitcommand "#ap 10"
+#unitcommand "#nametype 134"
+#secondary
+#specialcommand "#weapon 419 -- Lighting Strike (racial)"
+#chanceinc "primaryrace caelian *20"
+
+#all_troops_sacred
+#all_troops_elite
+#endrace

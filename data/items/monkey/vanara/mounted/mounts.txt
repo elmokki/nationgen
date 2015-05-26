@@ -1,0 +1,520 @@
+--- Base offsets are applied to everything except base and overlay
+#newitem
+#basechance 0.1
+#name "serpent 1"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#secondtmpshape serpent1"
+ -- 1179
+#define "#gcost +30"
+#define "#ressize 2"
+#define "#enc 3"
+#theme "animal serpent"
+#theme "light"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 13"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#enditem
+
+#newitem
+#basechance 0.1
+#name "serpent 2"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent2.png
+#armor
+#offsetx -5
+#offsety 13
+#needs overlay 7
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 16"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#secondtmpshape serpent2"
+#define "#gcost +30"
+#define "#ressize 2"
+#define "#rcost +5"
+#define "#enc 4"
+#theme "animal serpent"
+#theme "heavy"
+#theme "specialmount"
+#tag "guaranteedprefix serpent"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#tag "minprot 14"
+#enditem
+
+#newitem
+#basechance 0.1
+#name "green lizard"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#gcost +20"
+#define "#ressize 2"
+#define "#enc 3"
+#theme "animal lizard"
+#theme "light"
+#theme "specialmount"
+#tag "guaranteedprefix lizard"
+#tag "maxprot 15"
+#enditem
+
+#newitem
+#basechance 0.25
+#name "cave drake"
+#gameid -1
+#sprite /graphics/mounts/standard/cavedrake.png
+#armor
+#offsetx 8
+#offsety 11
+#define "#size 4"
+#define "#mapmove 1"
+#define "#ap 7"
+#define "#mounted"
+#define "#weapon 417 --- Bite"
+#define "#secondshape cavedrake"
+-- 522
+#define "#gcost +70"
+#define "#ressize 2"
+#define "#rcost +5"
+#define "#enc 4"
+#theme "animal 'cave drake'"
+#theme "specialmount"
+#description "The cave drake will persist even if the rider dies."
+#tag "guaranteedprefix drake"
+#tag "name commander drakelord"
+#tag "minprot 0"
+#tag "maxprot 100"
+#sacredextra nonholyshape 0.25
+#enditem
+
+
+#newitem
+#basechance 0.1
+#name "spider"
+#gameid -1
+#sprite /graphics/mounts/standard/spider1.png
+#armor
+#offsetx 35
+#offsety 7
+#needs overlay spider_overlay
+#define "#size 5"
+#define "#mapmove 2"
+#define "#ap 13"
+#define "#mounted"
+#define "#weapon 262"
+#define "#weapon 313"
+#define "#secondshape spider"
+#description "The giant spider will persist even if the rider dies."
+#define "#gcost +30"
+#define "#ressize 2"
+#define "#enc 4"
+#theme "specialmount"
+#theme "animal spider"
+#tag "guaranteedprefix spider"
+#tag "minprot 0"
+#tag "maxprot 12"
+#enditem
+
+#newitem
+#basechance 0.1
+#name "spider heavy"
+#gameid -1
+#sprite /graphics/mounts/standard/spider1.png
+#armor
+#offsetx 35
+#offsety 7
+#needs overlay spider_overlay
+#define "#size 5"
+#define "#mapmove 2"
+#define "#ap 13"
+#define "#mounted"
+#define "#weapon 262 --- Web Spit"
+#define "#weapon 313 --- Spider Fangs"
+#define "#secondshape spider"
+#define "#gcost +40"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +5"
+#description "The giant spider will persist even if the rider dies."
+#theme "specialmount"
+#theme "animal spider"
+#tag "guaranteedprefix spider"
+#tag "minprot 13"
+#tag "maxprot 100"
+#enditem
+
+
+
+
+#newitem
+#basechance 20
+#name "tiger"
+#gameid -1
+#sprite /graphics/mounts/standard/tiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 236"
+#define "#weapon 237"
+#define "#secondshape tiger"
+#define "#gcost +40"
+#define "#rcost +6"
+#define "#ressize 2"
+#define "#enc 3"
+#theme "specialmount"
+#theme "light"
+#theme "animal tiger"
+#description "The tiger will persist even if the rider dies."
+#tag "guaranteedprefix tiger"
+#tag "minprot 0"
+#tag "maxprot 12"
+#enditem
+
+
+#newitem
+#name "jaguar"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 236"
+#define "#weapon 237"
+#define "#secondshape jaguarmount"
+#define "#gcost +35"
+#define "#rcost +5"
+#define "#ressize 2"
+#define "#enc 3"
+#theme "specialmount"
+#theme "light"
+#theme "animal jaguar"
+#description "The jaguar will persist even if the rider dies."
+#tag "guaranteedprefix jaguar"
+#tag "minprot 0"
+#tag "maxprot 12"
+#enditem
+
+#newitem
+#name "black tiger"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 236"
+#define "#weapon 237"
+#define "#gcost +25"
+#define "#rcost +5"
+#define "#ressize 2"
+#define "#enc 3"
+#theme "specialmount"
+#theme "light"
+#theme "animal tiger"
+#tag "guaranteedprefix black tiger"
+#tag "minprot 0"
+#tag "maxprot 11"
+#basechance 0.5
+#enditem
+
+#newitem
+#basechance 0.1
+#name "bigspider"
+#gameid -1
+#sprite /graphics/mounts/standard/bigspider.png
+#armor
+#offsetx 35
+#offsety -8
+#define "#size 6"
+#define "#mapmove 2"
+#define "#ap 14"
+#define "#mounted"
+#define "#weapon 313 --- Spider Fangs"
+#define "#secondshape hunterspider"
+#define "#gcost +70"
+#define "#ressize 2"
+#define "#enc 4"
+#description "The hunter spider will persist even if the rider dies."
+#theme "specialmount"
+#theme "heavy"
+#theme "animal spider"
+#tag "guaranteedprefix spider"
+#tag "minprot 14"
+#tag "maxprot 20"
+#sacredextra nonholyshape 0.7
+#enditem
+
+
+
+
+#newitem
+#basechance 0.5
+#name "amphiptere"
+#gameid -1
+#sprite /graphics/mounts/standard/amphiptere.png
+#armor
+#offsetx 23
+#offsety 13
+#needs overlay 13
+#define "#size 4"
+#define "#mapmove 3"
+#define "#flying"
+#define "#ap 10"
+#define "#mounted"
+#define "#weapon nostr_venfangs"
+#define "#weapon nostr_spraypoison"
+#define "#secondtmpshape amphiptere"
+#define "#gcost +50"
+#define "#rcost +6"
+#define "#ressize 2"
+#define "#enc 3"
+#theme "specialmount"
+#theme "animal amphiptere"
+#description "The amphiptere will fight until the end of the battle should the rider die"
+#tag "guaranteedprefix amphiptere"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#tag "maxprot 14"
+#sacredextra 0.5
+#enditem
+
+
+
+#newitem
+#basechance 0.05
+#name "brown horse"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#armor
+#needs overlay 1
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 24"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#enc 3"
+#define "#gcost +15"
+#theme "animal horse"
+#theme "light"
+#tag "maxprot 11"
+#epicness 0.25
+#offsetx -2
+#enditem
+
+#newitem
+#basechance 0.05
+#name "pegasus"
+#gameid -1
+#sprite /graphics/mounts/standard/pegasus.png
+#armor
+#offsetx 28
+#offsety 64
+#needs overlay 8
+#define "#size 4"
+#define "#mapmove 3"
+#define "#ap 22"
+#define "#mounted"
+#define "#flying"
+#define "#weapon 56 --- Hoof"
+#define "#gcost +50"
+#define "#ressize 2"
+#define "#enc 4"
+#theme "flying"
+#theme "animal pegasus"
+#tag "name commander windlord"
+#tag "guaranteedprefix pegasus"
+#sacredextra 0.7
+#enditem
+
+#newitem
+#basechance 0.025
+#name "unicorn"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#offsety 1
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 28"
+#define "#mounted"
+#define "#weapon 330 --- Alicorn"
+#define "#weapon 56 --- Hoof"
+#define "#gcost +35"
+#define "#ressize 2"
+#define "#enc 3"
+#define "#heal"
+#theme "heavy"
+#tag "minprot 12"
+#tag "maxprot 16"
+#theme "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#offsetx -2
+#enditem
+
+#newitem
+#basechance 0.025
+#name "unicorn"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#offsety 1
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 28"
+#define "#mounted"
+#define "#weapon 330 --- Alicorn"
+#define "#weapon 56 --- Hoof"
+#define "#gcost +30"
+#define "#ressize 2"
+#define "#enc 3"
+#define "#heal"
+#theme "heavy"
+#tag "minprot 8"
+#tag "maxprot 15"
+#theme "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#offsetx -2
+#enditem
+
+#newitem
+#name "wyvern"
+#basechance 0.05
+#gameid -1
+#sprite /graphics/mounts/standard/wyvern.png
+#armor
+#offsetx 28
+#offsety 69
+#needs overlay 14
+#define "#size 4"
+#define "#mapmove 3"
+#define "#ap 22"
+#define "#mounted"
+#define "#flying"
+#define "#weapon 237"
+#define "#weapon 203"
+#define "#gcost +75"
+#define "#ressize 2"
+#define "#rcost +4"
+#define "#enc 4"
+#define "#secondshape wyvern"
+#theme "flying"
+#theme "heavy"
+#theme "animal wyvern"
+#tag "minprot 10"
+#tag "maxprot 16"
+#tag "guaranteedprefix wyvern"
+#tag "name commander beastmaster"
+#description "Leaves a wyvern behind when the rider dies"
+#sacredextra nonholyshape 0.25
+#enditem
+
+#newitem
+#basechance 0.05
+#name "lion"
+#gameid -1
+#sprite /graphics/mounts/standard/lion.png
+#armor
+#define "#size 4"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape lionmount"
+#define "#gcost +35"
+#define "#ressize 2"
+#define "#enc 4"¨
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#offsety 5
+#offsetx -3
+#theme "animal lion"
+#tag "guaranteedprefix lion"
+#chanceinc primaryrace "human (black)" *10
+#enditem
+
+#newitem
+#basechance 0.05
+#name "scorpion"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 15
+#offsety 42
+#define "#size 5"
+#define "#mapmove 2"
+#define "#ap 8"
+#define "#mounted"
+#define "#weapon nostr_pincer"
+
+#define "#weapon nostr_scorpiontail"
+#define "#secondshape scorpionmount"
+#define "#gcost +50"
+#define "#ressize 2"
+#define "#enc 3"
+#define "#rcost +5"
+#theme "animal scorpion"
+#theme "heavy"
+#description "Leaves a giant scorpion behind when the rider dies"
+#tag "guaranteedprefix scorpion"
+
+#tag "minprot 10"
+#tag "maxprot 100"
+#chanceinc primaryrace abysian *100
+#enditem
+
+
+
+#newitem
+#name "cavecow"
+#gameid -1
+#basechance 0.05
+#sprite /graphics/mounts/standard/cavecow.png
+#armor
+#define "#size 4"
+#define "#mapmove 1"
+#define "#ap 8"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#weapon 599 -- Corrosive bite"
+#define "#secondtmpshape cavecowmount"
+#define "#gcost +30"
+#define "#prot +2"
+#define "#ressize 2"
+#define "#enc 4"¨
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#offsetx -8
+#offsety 6
+#theme "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#chanceinc primaryrace agarthan *100
+#enditem

@@ -1,0 +1,364 @@
+--- Supported chanceincs:
+---
+--- personalmagic <path> <pathlevel> <chance change>
+--- Each line can have multiple path-level combos that are required to get the change. Number after path signifies required path level.
+--- In general the unit must have the signified path level to get the name.
+--- The base chance is multiplied by the average path level of the paths the unit has.
+--- Example: Mage with F2 and E2 and "personalmagic fire 1 earth 1 1" gets (2 + 2) / 2 = 2 times the chance increase.
+---
+--- magicbelow  <path> <pathlevel> <chance change>
+--- Same as above, but it triggers if the unit has a magic level that is under the specified value. Good for making the most epic names not happen on tertiaries etc.
+--- Does not get the base chance multiplying however.
+---
+--- race <race name> <chance change>
+--- Should be fairly self explaining: checks unit's race.
+---
+--- pose <pose type> <chance change>
+--- Same as above, but makes sure unit's pose can be used for given role (infantry, mounted, ranged, scout, sacred, mage, priest, chariot)
+--- Not generally useful for mage/priest name separation (use magicbelow and magic for that) due to them often using same poses, but can be useful for sacred names.
+---
+--- personalcommand <personalcommand> <chance change>
+--- Checks if the unit has given personalcommand with any argument. For example "personalcommand #stealthy 1" name gets +1 chance of being picked when the unit has stealth of any level.
+---
+--- origname <name> <chance change>
+--- Designed for sacred personalcommander naming. If a sacred is named Thunderous Templar, "origname Templar 1" gets +1 chance of being picked when making personalcommander version 
+--- of that sacred.
+---
+--- magic <path> <chance change>
+--- Purely for sacreds. National magic and sacred equipment dictate what path the sacred is - this triggers on that.
+---
+--- filter <name> <chance change>
+--- If filter named <name> was applied to the unit, this triggers.
+
+
+#new 
+#name "guard"
+#basechance 2
+#end
+
+#new 
+#name "guard"
+#racevariant "Van" huskarl
+#basechance 1
+#end
+
+#new 
+#name "guardian"
+#basechance 1
+#end
+
+#new 
+#name "champion"
+#basechance 1
+#end
+
+#new 
+#name "champion"
+#racevariant "Van" hirdman
+#basechance 1
+#end
+
+#new 
+#name "master"
+#racevariant "Human (Amazon)" maiden
+#basechance 1
+#end
+
+#new 
+#name "templar"
+#basechance 1
+#chanceinc "taggedmagic holy 1"
+#end
+
+#new 
+#name "warrior"
+#basechance 1
+#end
+
+#new 
+#name "avenger"
+#basechance 1
+#end
+
+#new 
+#name "vindicator"
+#basechance 1
+#end
+
+#new 
+#name "destroyer"
+#basechance 1
+#end
+
+#new 
+#name "aspirant"
+#basechance 1
+#end
+
+#new 
+#name "disciple"
+#basechance 1
+#end
+
+#new 
+#name "paragon"
+#basechance 1
+#end
+
+#new 
+#name "exemplar"
+#basechance 1
+#end
+
+#new 
+#name "paladin"
+#basechance 1
+#chanceinc "taggedmagic holy 1"
+#end
+
+#new 
+#name "hierophant"
+#basechance 1
+#chanceinc "taggedmagic nature 1"
+#end
+
+#new 
+#name "knight"
+#racevariant "Oriental human" samurai
+#basechance 1
+#end
+
+#new 
+#name "retributor"
+#basechance 1
+#chanceinc "taggedmagic holy 1"
+#end
+
+#new 
+#name "follower"
+#basechance 1
+#end
+
+#new 
+#name "companion"
+#basechance 0.5
+#end
+
+#new 
+#name "cohort"
+#basechance 0.5
+#end
+
+#new 
+#name "apostle"
+#commandvariant #female vestal
+#basechance 1
+#end
+
+#new 
+#name "herald"
+#basechance 1
+#end
+
+#new 
+#name "nightblade"
+#basechance 0.5
+#chanceinc "personalcommand #stealthy 3.5"
+#chanceinc "pose ranged -100"
+#chanceinc "pose mounted -100"
+#end
+
+#new 
+#name "nightstalker"
+#basechance 0.5
+#chanceinc "personalcommand #stealthy 3.5"
+#chanceinc "pose ranged -100"
+#chanceinc "pose mounted -100"
+#end
+
+#new 
+#name "eidolon"
+#basechance 0.25
+#chanceinc "personalcommand #ethereal 2.75"
+#chanceinc "personalcommand #illusion 2.75"
+#end
+
+#new 
+#name "thane"
+#basechance 1
+#end
+
+#new 
+#name "hand"
+#basechance 0.5
+#chanceinc "pose ranged -100"
+#end
+
+#new 
+#name "blade"
+#basechance 0.5
+#chanceinc "pose ranged -100"
+#end
+
+--- Pose specific
+-- Mounted
+
+#new 
+#name "knight"
+#racevariant "Oriental human" samurai
+#basechance 0
+#chanceinc "pose mounted 2"
+
+#new 
+#name "cavalier"
+#basechance 0
+#chanceinc "pose mounted 2"
+#end
+
+#new 
+#name "rider"
+#basechance 0
+#chanceinc "pose mounted 1"
+#end
+
+
+-- Ranged
+
+#new 
+#name "ranger"
+#basechance 0
+#chanceinc "pose ranged 0.5"
+#chanceinc "personalcommand #stealthy 2"
+#end
+
+#new 
+#name "sniper"
+#basechance 0
+#chanceinc "pose ranged 1.5"
+#end
+
+#new 
+#name "marksman"
+#basechance 0
+#chanceinc "pose ranged 1.5"
+#end
+
+
+#new 
+#name "scout"
+#basechance 0
+#chanceinc "pose ranged 0.5"
+#chanceinc "personalcommand #stealthy 2"
+#end
+
+
+#new 
+#name "hunter"
+#commandvariant #female huntress
+#basechance 0
+#chanceinc "pose ranged 0.5"
+#chanceinc "personalcommand #stealthy 2"
+#end
+
+-- Other
+
+#new 
+#name "stalker"
+#basechance 0
+#chanceinc "personalcommand #stealthy 3"
+#chanceinc "personalcommand #illusion 3"
+#end
+
+#new 
+#name "lurker"
+#basechance 0
+#chanceinc "personalcommand #stealthy 2"
+#chanceinc "taggedmagic death 1"
+#chanceinc "pose mounted -100"
+#end
+
+#new 
+#name "nighthaunt"
+#basechance 0
+#chanceinc "personalcommand #stealthy 1.5"
+#chanceinc "personalcommand #ethereal 1.5"
+#chanceinc "taggedmagic death 2"
+#chanceinc "pose mounted -100"
+#end
+
+#new 
+#name "vessel"
+#basechance 0
+#chanceinc "magic death blood 3"
+#chanceinc "taggedmagic blood 2"
+#chanceinc "taggedmagic death 2"
+#chanceinc "taggedmagic astral 2"
+#end
+
+#new 
+#name "berserker"
+#basechance 0
+#chanceinc "personalcommand #berserk 2"
+#end
+
+#new 
+#name "reaver"
+#basechance 0.5
+#chanceinc "personalcommand #berserk 1"
+#chanceinc "personalcommand #pillagebonus 1"
+#chanceinc "magic death holy 2"
+#chanceinc "taggedmagic death 2"
+#end
+
+#new 
+#name "ravager"
+#basechance 0.5
+#chanceinc "personalcommand #berserk 3"
+#chanceinc "magic death blood 3"
+#chanceinc "taggedmagic death 2"
+#chanceinc "taggedmagic blood 2"
+#end
+
+#new 
+#name "marauder"
+#basechance 0.5
+#chanceinc "personalcommand #berserk 0.5"
+#chanceinc "personalcommand #pillagebonus 3.5"
+#chanceinc "magic death blood 1.5"
+#chanceinc "taggedmagic death 0.5"
+#chanceinc "taggedmagic blood 1"
+#end
+
+#new 
+#name "sentinel"
+#basechance 0.5
+#chanceinc "personalcommand #patrolbonus 3"
+#chanceinc "personalcommand #castledef 2"
+#end
+
+#new 
+#name "warden"
+#basechance 0.5
+#chanceinc "personalcommand #patrolbonus 2"
+#chanceinc "personalcommand #castledef 3"
+#end
+
+#new
+#name "terminator"
+#basechance 0.1
+#chanceinc "shape metalman 80"
+#end
+
+#new
+#name "wolfkin"
+#basechance 0.1
+#chanceinc "shape werewolf 40"
+#end
+
+#new
+#name "bearkin"
+#basechance 0.1
+#chanceinc "shape greatbear 40"
+#end
+
+

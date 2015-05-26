@@ -1,0 +1,108 @@
+
+--- Leather
+
+#newitem
+#name "leather cuirass 1"
+#gameid 5
+#sprite /graphics/bodyarmor/2h/leathercuirass.png
+#armor
+#basechance 0.25
+#enditem
+
+#newitem
+#name "leather cuirass 2"
+#gameid 5
+#sprite /graphics/bodyarmor/2h/leathercuirass2.png
+#armor
+#basechance 0.25
+#enditem
+
+#newitem
+#name "leather hauberk 1"
+#gameid 10
+#sprite /graphics/bodyarmor/2h/leatherhauberk.png
+#armor
+#basechance 0.25
+#enditem
+
+#newitem
+#name "leather hauberk 2"
+#gameid 10
+#sprite /graphics/bodyarmor/2h/leatherhauberk2.png
+#armor
+#basechance 0.25
+#enditem
+
+
+#newitem -- full leather
+#newitem
+#name "full leather"
+#gameid 15
+#basechance 0.25
+#sprite /graphics/bodyarmor/2h/leatherhauberk.png
+#needs legs leatherpants
+#armor
+#enditem
+
+
+--- Chain Mail
+
+
+#newitem
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/bodyarmor/2h/mailcuirass.png
+#armor
+#basechance 0.125
+#enditem
+
+
+--- Scale
+
+#newitem
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/bodyarmor/2h/mailcuirass.png
+#armor
+#basechance 0.125
+#enditem
+
+
+--- Ring
+
+#newitem
+#name "ring cuirass"
+#gameid 6
+#sprite /graphics/bodyarmor/2h/ringcuirass.png
+#armor
+#basechance 0.25
+#enditem
+
+
+#newitem
+#name "ring hauberk short"
+#gameid 11
+#sprite /graphics/bodyarmor/2h/ringhauberk.png
+#armor
+#basechance 0.25
+#enditem
+
+
+#newitem
+#name "ring hauberk long"
+#gameid 11
+#sprite /graphics/bodyarmor/2h/ringhauberk2.png
+#armor
+#basechance 0.25
+#enditem
+
+
+#newitem -- full ring
+#name "full ring"
+#gameid 16
+#sprite /graphics/bodyarmor/2h/ringhauberk.png
+#armor
+#needs legs ringpants
+#basechance 0.25
+#enditem
+

@@ -1,0 +1,214 @@
+-- UnitGen gives a mage a list of the 8 paths in a specified order
+-- the path patterns merely assign these 8 paths.
+--
+-- Commands:
+-- #picks <level> <path>
+-- #picks 3 2 results in level 3 in path 2
+--
+-- #random <level> <path>
+-- #random 0.5 3 results in 50% chance to get either first or second
+--               path.
+--
+-- See the table below for refrence on how to use <path>. 
+-- <path> may also be left blank, which results in the value 15.
+--
+-- #primarymages <amount>
+-- Sets the pattern available for nations with <amount> primary mages
+-- If nothing is set, available for all amounts
+--
+-- #level <level>
+-- Defines level of the pattern. 3 = primary, 2 = secondary, 1 = tertiary, 0 = extra mages
+-- This is, however, not the only thing filtering what patterns are chosen. Especially with extra mages 
+-- there are other terms that may filter the strongest or the weakest patterns off the list.
+--
+-- #pricepremium <price>
+-- Defines how much this pattern adds on top of the racial base cost
+-- Automatic calculation is usually relatively good on normal stuff, but with
+-- 50% randoms and other weirder things it's a good idea to set this manually.
+--
+-- Masks for random paths
+-- Sum for a mask:
+-- 1 - first
+-- 2 - second
+-- 4 - third
+-- 8 - fourth
+-- 16 - fifth
+-- 32 - sixth
+-- 64 - seventh
+-- 128 - eighth
+---
+
+
+
+------------ Secondary mage patterns
+
+-- 1-1?-0.5a-0.5b-0.5c (Mystic, 50% chance on 3 single paths)
+-- Variant that gets chance to increase the first path twice
+#new
+#basechance 0.5
+#picks 1 1
+#random 1 15
+#random 0.5 1
+#random 0.5 2
+#random 0.5 4
+#level 2
+#level 0
+#pricepremium 60
+#end
+
+-- 1-1?-0.5b-0.5c-0.5d (Mystic, 50% chance on 3 single paths)
+#new
+#basechance 0.5
+#picks 1 1
+#random 1 15
+#random 0.5 2
+#random 0.5 4
+#random 0.5 8
+#level 2
+#level 0
+#pricepremium 60
+#end
+
+-- 2-1 (example: 2F1S)
+#new
+#basechance 8
+#picks 2 1
+#picks 1 2
+#level 2
+#end
+
+-- 2-1-1 (example: 2F1S1W)
+#new
+#basechance 4
+#picks 2 1
+#picks 1 2
+#picks 1 4
+#level 2
+#end
+
+-- 2-2 (example: 2F2S)
+#new
+#basechance 4
+#picks 2 1
+#picks 2 2
+#level 2
+#level 0
+#end
+
+
+-- 2-? (example: 2F1?)
+#new
+#basechance 8
+#picks 2 1
+#random 1 15
+#random 0.1 15
+#level 2
+#level 0
+#end
+
+-- 2-1-? (example: 2F1?)
+#new
+#basechance 8
+#picks 2 1
+#picks 1 2
+#random 1 15
+#random 0.1 15
+#level 2
+#level 0
+#end
+
+-- 2-1-? (example: 2F1?) - 100% random for two first paths only
+#new
+#basechance 2
+#picks 2 1
+#picks 1 2
+#random 1 3
+#random 0.1 15
+#level 2
+#level 0
+#end
+
+-- 3 (example: 3F)
+#new
+#basechance 0.5
+#picks 3 1
+#level 2
+#level 0
+#end
+
+
+-- 2-2-1? (example: 2F2S1?)
+#new
+#basechance 0.25
+#picks 2 1
+#picks 2 2
+#random 1 15
+#random 0.1 15
+#level 2
+#level 0
+#end
+
+-- 1-1-2? (example: 1S1F2?)
+#new
+#basechance 0.375
+#picks 1 1
+#picks 1 2
+#random 1 15
+#random 1 15
+#random 0.1 15
+#level 2
+#level 0
+#end
+
+-- 1-1-2?l (example: 1S1F2?l)
+#new
+#basechance 0.2
+#picks 1 1
+#picks 1 2
+#random 2 15
+#random 0.1 15
+#level 2
+#level 0
+#end
+
+-- 1-2? (example: 1S2?)
+#new
+#basechance 0.25
+#picks 1 1
+#random 1 15
+#random 1 15
+#random 0.1 15
+#level 2
+#level 0
+#end
+
+
+-- 1-2?l (example: 1S2? linked)
+#new
+#basechance 0.5
+#picks 1 1
+#random 2 15
+#random 0.1 15
+#level 2
+#level 0
+#end
+
+-- 3? (example: 3? linked.)
+#new
+#basechance 0.25
+#random 3 15
+#random 0.1 15
+#level 2
+#level 0
+#end
+
+-- 1-1-1 (example: 1F1S1W)
+#new
+#basechance 0.5
+#picks 1 1
+#picks 1 2
+#picks 1 4
+#level 2
+#end
+
+

@@ -1,0 +1,40 @@
+
+--- Pants belonging to an armor set should be given id of the lowest prot armor they go with if you want to avoid naked people with plate pants.
+
+
+#newitem
+#id pants
+#gameid -1
+#sprite /graphics/hoburg/legs/pants.png
+#recolormask /graphics/hoburg/legs/pants_recolormask.png
+#recolormask self
+#enditem
+
+#newitem
+#id leatherpants
+#gameid -1
+#sprite /graphics/hoburg/legs/leatherpants.png
+#theme "primitive"
+#basechance 0.25
+#enditem
+
+#newitem
+#id ringpants
+#gameid -1
+#sprite /graphics/hoburg/legs/ringpants.png
+#basechance 0
+#enditem
+
+#newitem
+#id mailpants
+#gameid -1
+#sprite /graphics/hoburg/legs/steelpants.png
+#basechance 0
+#enditem
+
+#newitem
+#id platepants
+#gameid -1
+#sprite /graphics/hoburg/legs/steelpants.png
+#basechance 0
+#enditem

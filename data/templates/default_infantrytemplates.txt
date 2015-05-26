@@ -1,0 +1,179 @@
+#new
+#basechance 1
+#name "default template"
+#end
+
+#new
+#basechance 0
+#name "stealthy"
+#command "#stealthy +0"
+#command "#gcost +2"
+#chanceinc prot below 12 0.075
+#chanceinc prot below 10 0.075
+#chanceinc personalcommand stealthy -100
+#chanceinc tag stealthytroops 0.05
+#chanceinc tag stealthytroops *20
+#desc "Stealthy"
+#primarycommand "#stealthy"
+#end
+
+#new
+#basechance 0
+#name "mountainunit"
+#command "#mountainsurvival"
+#addtag "guaranteedprefix mountain"
+#addtag "bonusweaponchance 0.5"
+#addtag irregular
+#chanceinc prot below 12 0.0125
+#chanceinc prot below 10 0.025
+#maxvarieties 2
+#desc "Mountain survival"
+#possiblecommand "#prec +1" 0.5
+#possiblecommand "#att +1" 0.1
+#possiblecommand "#mor +1" 0.1
+#primarycommand "#mountainsurvival"
+#end
+
+
+#new
+#basechance 0
+#name "forestunit"
+#command "#forestsurvival"
+#addtag "guaranteedprefix forest"
+#addtag irregular
+#addtag "bonusweaponchance 0.5"
+#chanceinc prot below 12 0.0125
+#chanceinc prot below 10 0.025
+#maxvarieties 2
+#desc "Forest survival"
+#possiblecommand "#prec +1" 0.5
+#possiblecommand "#att +1" 0.1
+#possiblecommand "#mor +1" 0.1
+#primarycommand "#forestsurvival"
+#end
+
+#new
+#basechance 0
+#name "swampunit"
+#command "#swampsurvival"
+#addtag "guaranteedprefix swamp"
+#addtag irregular
+#addtag "bonusweaponchance 0.5"
+#chanceinc prot below 12 0.0125
+#chanceinc prot below 10 0.025
+#maxvarieties 2
+#desc "Swamp survival"
+#possiblecommand "#prec +1" 0.5
+#possiblecommand "#att +1" 0.1
+#possiblecommand "#mor +1" 0.1
+#primarycommand "#swampsurvival"
+#end
+
+#new
+#basechance 0.005
+#name "berserker"
+#command "#berserk +2"
+#addtag irregular
+#addtag "bonusweaponchance 0.5"
+#chanceinc prot below 12 0.0125
+#chanceinc prot below 10 0.025
+#chanceinc prot below 8 0.025
+#maxvarieties 2
+#desc "Berserker"
+#possiblecommand "#att +1" 0.5
+#possiblecommand "#def -1" 0.5
+#possiblecommand "#mor +1" 0.1
+#end
+
+#new
+#basechance 0.02
+#name "elite-dw"
+#command "#att +1"
+#command "#def +2"
+#command "#mor +1"
+#addtag dwchance 5
+#maxvarieties 1
+#desc "Elite"
+#end
+
+
+
+#new
+#basechance 0
+#name "pillager"
+#command "#pillagebonus +1"
+#addtag irregular
+#chanceinc prot below 12 0.025
+#chanceinc prot below 10 0.05
+#addtag dwchance 0.1
+#addtag bonusweaponchance 0.3
+#maxvarieties 2
+#desc "Pillager"
+#end
+
+#new
+#basechance 0
+#name "pillager_stealthy"
+#command "#pillagebonus +1"
+#command "#stealthy +0"
+#addtag irregular
+#chanceinc prot below 12 0.0125
+#chanceinc prot below 10 0.025
+#chanceinc personalcommand stealthy -100
+#addtag dwchance 0.15
+#addtag bonusweaponchance 0.3
+#maxvarieties 2
+#desc "Stealthy pillager"
+#primarycommand "#stealthy"
+#end
+
+#new
+#basechance 0.03
+#name "castledef"
+#command "#castledef +1"
+#chanceinc prot 12 0.01
+#chanceinc prot 15 0.01
+#maxvarieties 1
+#desc "Castle defender"
+#end
+
+#new
+#name "drilled"
+#chance 0.03
+#command "#gcost *1.1"
+#command "#formationfighter 1"
+#desc "Well drilled"
+#end
+
+
+#new
+#name "Brigand"
+#chance 0
+#command "#incurunrest +.2"
+#command "#pillagebonus +2"
+#command "#mor -1"
+#command "#gcost *0.9"
+#desc "Brigand"
+#addtag irregular
+#chanceinc prot below 12 0.0125
+#chanceinc prot below 10 0.025
+#maxvarieties 2
+#addtag dwchance 0.15
+#addtag bonusweaponchance 0.3
+#end
+
+
+
+#new
+#name "Deputy"
+#chance 0
+#command "#patrolbonus +2"
+#desc "Deputy"
+#addtag irregular
+#chanceinc prot below 12 0.0125
+#chanceinc prot below 10 0.025
+#maxvarieties 2
+#addtag dwchance 0.15
+#addtag bonusweaponchance 0.3
+#end
+

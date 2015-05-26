@@ -1,0 +1,97 @@
+
+
+--- Furs
+
+#newitem
+#name "furs"
+#gameid 44
+#armor
+#sprite /graphics/machakans/armor/furs.png
+#basechance 2
+#enditem
+
+--- Leather
+
+
+
+#newitem
+#name "nothing"
+#gameid -1
+#armor
+#sprite /graphics/bodyarmor/standard/blackbarechest.png
+#basechance 4
+#enditem
+
+#newitem
+#name "leather cuirass 2"
+#gameid 5
+#sprite /graphics/bodyarmor/standard/leathercuirass2.png
+#armor
+#enditem
+
+#newitem
+#name "leather hauberk 1"
+#gameid 10
+#sprite /graphics/bodyarmor/standard/leatherhauberk.png
+#armor
+#enditem
+
+
+
+--- Scale
+
+#newitem
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/bodyarmor/standard/mailcuirass.png
+#armor
+#basechance 0.5
+#enditem
+
+
+#newitem
+#name "scale hauberk short"
+#gameid 12
+#sprite /graphics/bodyarmor/standard/mailhauberk1.png
+#armor
+#basechance 0.5
+#enditem
+
+
+--- Plate
+
+
+#newitem
+#name "plate cuirass"
+#gameid 9
+#sprite /graphics/bodyarmor/standard/platecuirass.png
+#armor
+#theme "advanced"
+#needs legs platepants
+#basechance 1.5
+#enditem
+
+
+#newitem
+#name "plate hauberk"
+#gameid 14
+#sprite /graphics/bodyarmor/standard/platehauberk.png
+#armor
+#theme "advanced"
+#tag "name mounted knight"
+#needs legs platepants
+#basechance 1.5
+#enditem
+
+
+#newitem -- full plate
+#name "full plate"
+#gameid 19
+#sprite /graphics/bodyarmor/standard/platehauberk.png
+#armor
+#needs legs platepants
+#theme "advanced"
+#tag "name mounted knight"
+#enditem
+
+

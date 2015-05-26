@@ -1,0 +1,91 @@
+--- Melee weapons
+#newitem
+#id club
+#gameid 252
+#sprite /graphics/highmen/weapons/offhand_club.png
+#theme "primitive"
+#basechance 1
+#enditem
+
+#newitem
+#id spiked_club
+#gameid 593
+#sprite /graphics/highmen/weapons/offhand_spikedclub.png
+#theme "primitive"
+#basechance 1
+#enditem
+
+#newitem
+#id stone_hatchet
+#gameid 253
+#sprite /graphics/highmen/weapons/offhand_axe.png
+#theme "primitive"
+#basechance 1
+#enditem
+
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/highmen/weapons/offhand_axe_bronze.png
+#theme "advanced"
+#theme "bronze"
+#basechance 0.1
+#enditem
+
+#newitem
+#id hammer
+#gameid 13
+#sprite /graphics/highmen/weapons/offhand_hammer_bronze.png
+#theme "advanced"
+#theme "bronze"
+#basechance 0.1
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/highmen/weapons/offhand_mace_bronze.png
+#theme "advanced"
+#theme "bronze"
+#basechance 0.1
+#enditem
+
+-- Bonus missiles
+
+#newitem
+#id thrown_rocks
+#gameid 605
+#sprite /graphics/highmen/weapons/offhand_rock.png
+#offsetx 0
+#offsety -1
+#theme "primitive"
+#basechance 1
+#maxprot 10
+#enditem
+
+#newitem
+#id sticks_and_stones
+#gameid 360
+#theme "primitive"
+#basechance 1
+#maxprot 10
+#enditem
+
+#newitem
+#id net
+#gameid 263
+#sprite /graphics/highmen/weapons/offhand_net.png
+#basechance 0.3
+#maxprot 10
+#tag "tierunique"
+#tag "name infantry hunter"
+#enditem
+
+#newitem
+#id javelin
+#gameid 263
+#sprite /graphics/highmen/weapons/offhand_javelins.png
+#basechance 0.2
+#theme "advanced"
+#tag "name infantry hunter"
+#enditem

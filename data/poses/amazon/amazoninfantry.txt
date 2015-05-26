@@ -1,0 +1,149 @@
+
+-------- Normal Infantry - cannot be sacred or have fancy armor
+
+#newpose
+#name "standard inf"
+#role "infantry"
+
+#command "#female"
+
+#load basesprite /data/items/amazon/normal/amazonbases.txt
+#load shadow /data/items/amazon/normal/shadow.txt
+
+#load hands /data/items/amazon/normal/amazonhands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load shirt /data/items/amazon/normal/amazonshirt.txt
+#load hair /data/items/human/normal/humanhair.txt offsetx 0 offsety 1
+
+#load armor /data/items/amazon/normal/amazonarmor.txt
+#load armor /data/items/amazon/normal/naked.txt
+#load helmet /data/items/amazon/normal/amazonhelmet.txt
+#load helmet /data/items/amazon/normal/humanhelmet_amazon.txt offsetx 0 offsety 1
+#load legs /data/items/amazon/normal/amazonlegs.txt
+
+#load weapon /data/items/human/normal/humanweapon.txt
+#load bonusweapon /data/items/human/normal/standards.txt
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt offsetx -2 offsety 1
+
+#load offhand /data/items/human/normal/humanoffhand.txt offsetx -1 offsety 0
+#load offhand /data/items/amazon/normal/amazonshields.txt
+#load offhand /data/items/human/normal/shields.txt
+#load offhand /data/items/human/normal/towershields.txt
+
+
+#endpose
+
+-------- Elite infantry - can be sacred and has a slightly better chance of being heavy inf via access to fancy chain/plate
+
+#newpose
+#basechance 0.5
+#name "elite inf"
+#role "infantry"
+#role "elite"
+#role "sacred"
+#sacred
+
+#command "#female"
+
+#load basesprite /data/items/amazon/normal/amazonbases.txt
+#load shadow /data/items/amazon/normal/shadow.txt
+
+#load hands /data/items/amazon/normal/amazonhands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load shirt /data/items/amazon/normal/amazonshirt.txt
+#load hair /data/items/human/normal/humanhair.txt offsetx 0 offsety 1
+
+#load armor /data/items/amazon/normal/amazonarmor.txt
+#load armor /data/items/amazon/normal/amazonarmorelite.txt
+#load armor /data/items/amazon/normal/naked.txt
+#load helmet /data/items/amazon/normal/amazonhelmet.txt
+#load helmet /data/items/amazon/normal/humanhelmet_amazon.txt offsetx 0 offsety 1
+#load legs /data/items/amazon/normal/amazonlegs.txt
+
+#load weapon /data/items/human/normal/humanweapon.txt
+#load bonusweapon /data/items/human/normal/standards.txt
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt offsetx -2 offsety 1
+
+#load offhand /data/items/human/normal/humanoffhand.txt offsetx -1 offsety 0
+#load offhand /data/items/amazon/normal/amazonshields.txt
+#load offhand /data/items/human/normal/shields.txt
+#load offhand /data/items/human/normal/towershields.txt
+
+#load helmet /data/items/human/sacredstuff/humanspecific_sacredhelmet.txt offsetx 0 offsety 1
+#load helmet /data/items/human/sacredstuff/sacredhelmet.txt offsetx 0 offsety 1
+
+#endpose
+
+
+-------- 2h infantry
+
+#newpose
+#basechance 0.2
+#name "2h inf"
+#role "infantry"
+#role "sacred"
+#sacred
+
+#command "#female"
+
+#load basesprite /data/items/amazon/2h/amazonbases_2h.txt
+#load shadow /data/items/amazon/normal/shadow.txt
+
+#load hands /data/items/amazon/2h/amazonhands_2h.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load shirt /data/items/amazon/2h/amazonshirt_2h.txt
+#load hair /data/items/human/normal/humanhair.txt offsetx 0 offsety 1
+
+#load armor /data/items/amazon/2h/amazonarmor_2h.txt
+#load armor /data/items/amazon/2h/amazonarmorelite_2h.txt
+#load armor /data/items/amazon/2h/naked_2h.txt
+#load helmet /data/items/amazon/normal/amazonhelmet.txt
+#load helmet /data/items/amazon/normal/humanhelmet_amazon.txt offsetx 0 offsety 1
+#load legs /data/items/amazon/normal/amazonlegs.txt
+
+#load weapon /data/items/human/2h/humanweapon.txt
+#load bonusweapon /data/items/human/2h/humanbonusranged.txt offsetx -2 offsety 1
+
+#load helmet /data/items/human/sacredstuff/humanspecific_sacredhelmet.txt offsetx 0 offsety 1
+#load helmet /data/items/human/sacredstuff/sacredhelmet.txt offsetx 0 offsety 1
+
+#maxvarieties 1
+#endpose
+
+
+------------- scout
+
+#newpose
+#role "scout"
+
+#command "#female"
+
+
+#load basesprite /data/items/amazon/normal/amazonbases.txt
+#load shadow /data/items/amazon/normal/shadow.txt
+
+#load hands /data/items/amazon/normal/amazonhands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load shirt /data/items/amazon/normal/amazonshirt.txt
+#load hair /data/items/human/normal/humanhair.txt offsetx 0 offsety 1
+
+#load armor /data/items/amazon/normal/amazonarmor.txt
+#load armor /data/items/amazon/normal/naked.txt
+#load helmet /data/items/amazon/normal/amazonhelmet.txt
+#load helmet /data/items/amazon/normal/humanhelmet_amazon.txt offsetx 0 offsety 1
+#load legs /data/items/amazon/normal/amazonlegs.txt
+
+#load weapon /data/items/human/normal/humanweapon.txt
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt
+
+#load offhand /data/items/human/normal/humanoffhand.txt offsetx -1 offsety 0
+
+#endpose

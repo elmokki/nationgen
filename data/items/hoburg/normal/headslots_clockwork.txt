@@ -1,0 +1,17 @@
+#newitem
+#id normal_helm
+#gameid -1
+#define "#itemslots +12416" -- head & 2 misc
+#enditem
+
+#newitem
+#id integrated_helm
+#gameid -1
+#basechance 0.1
+#needs helmet "clockwork fullhelm"
+#define "#pooramphibian"
+#define "#poisonres +10"
+#define "#rcost +5"
+#define "#itemslots +12288" -- 2 misc only
+#enditem
+

@@ -1,0 +1,86 @@
+-------- Normal
+
+#newpose
+#basechance 0.125
+#role "infantry"
+#load basesprite /data/items/abysian/demonbred_bases.txt
+#load shadow /data/items/abysian/demonbred_shadow.txt
+
+
+-- No following slots:
+---- #load hands /data/items/abysian/hands.txt
+---- #load cloakf /data/items/human/normal/humancloakf.txt
+---- #load cloakb /data/items/human/normal/humancloakb.txt
+---- #load helmet /data/items/human/normal/humanhelmet.txt
+---- #load bonusweapon /data/items/abysian/bonusranged.txt
+
+#load armor /data/items/abysian/demonbred_armor.txt
+
+#load legs /data/items/abysian/demonbred_legs.txt
+
+
+#load weapon /data/items/abysian/demonbred_weapon.txt
+
+#load offhand /data/items/abysian/demonbred_offhand.txt
+#load offhand /data/items/abysian/demonbred_shields.txt
+
+#maxvarieties 1
+#dwchancebonus 0.4
+
+#command "#size 3"
+#command "#att +1"
+#command "#mor +3"
+#command "#hp +2"
+#command "#prot +6"
+#command "#darkvision +50"
+#command "#maxage +215"
+#command "#flying"
+#command "#gcost +10"
+
+#endpose
+
+-------- Sacred/scout version with different basechance
+
+#newpose
+#basechance 1
+#role "sacred infantry"
+#role "scout"
+#load basesprite /data/items/abysian/demonbred_bases.txt
+#load shadow /data/items/abysian/demonbred_shadow.txt
+
+
+-- No following slots:
+---- #load hands /data/items/abysian/hands.txt
+---- #load cloakf /data/items/human/normal/humancloakf.txt
+---- #load cloakb /data/items/human/normal/humancloakb.txt
+---- #load helmet /data/items/human/normal/humanhelmet.txt
+---- #load bonusweapon /data/items/abysian/bonusranged.txt
+
+#load armor /data/items/abysian/demonbred_armor.txt
+
+#load legs /data/items/abysian/demonbred_legs.txt
+
+
+#load weapon /data/items/abysian/demonbred_weapon.txt
+#load weapon /data/items/abysian/demonbred_poisondagger.txt
+
+#load offhand /data/items/abysian/demonbred_offhand.txt
+#load offhand /data/items/abysian/demonbred_shields.txt
+#load offhand /data/items/abysian/demonbred_offhand_poisondagger.txt
+
+#load helmet /data/items/abysian/demonbred_helmet.txt
+
+#maxvarieties 1
+#dwchancebonus 0.4
+
+
+#command "#size 3"
+#command "#att +1"
+#command "#mor +3"
+#command "#hp +2"
+#command "#prot +6"
+#command "#darkvision +50"
+#command "#maxage +215"
+#command "#flying"
+#command "#gcost +10"
+#endpose

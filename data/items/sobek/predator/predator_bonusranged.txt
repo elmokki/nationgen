@@ -1,0 +1,30 @@
+#newitem
+#name "javelin"
+#gameid 21
+#sprite /graphics/sobek/weapon/predator_javalinquiver.png
+#renderprio 7
+#renderslot "offhandw"
+-- #offsetx -1
+-- #offsety -6
+#tag "name infantry 'Javelineer'"
+#basechance 2
+#enditem
+
+#newitem
+#name "net"
+#gameid 263
+#sprite /graphics/sobek/weapon/predator_net.png
+#tag "maxprot 10"
+#tag "tierunique"
+#tag "name infantry hunter"
+#tag "noslot offhand"
+#basechance 2
+#enditem
+
+#newitem
+#name "chakram"
+#gameid 362
+#tag "name infantry 'Chakram Thrower'"
+#tag "tierunique"
+#basechance 0.25
+#enditem

@@ -1,0 +1,195 @@
+-- Non-visible helmets
+
+#newitem
+#id leatherhood
+#gameid 121
+#basechance 0
+#nogen
+#enditem
+
+
+-- Standard helms
+
+#newitem -- Iron cap
+#id halfhelmet-ironcap
+#gameid 20
+#sprite /graphics/helmet/standard/halfhelmet.png
+#offsetx -1
+#offsety -10
+#armor
+#enditem
+
+#newitem
+#id halfhelmet
+#gameid 118
+#sprite /graphics/helmet/standard/halfhelmet.png
+#offsetx -1
+#offsety -10
+#armor
+#enditem
+
+#newitem
+#id halfhelmet2
+#gameid 118
+#sprite /graphics/helmet/standard/halfhelmet2.png
+#offsetx -1
+#offsety -10
+#armor
+#enditem
+
+#newitem -- Iron cap
+#id halfhelmet2-ironcap
+#gameid 20
+#sprite /graphics/helmet/standard/halfhelmet2.png
+#offsetx -1
+#offsety -10
+#armor
+#enditem
+
+#newitem
+#id bascinet
+#gameid 118
+#sprite /graphics/helmet/standard/bascinet.png
+#offsetx -1
+#offsety -10
+#armor
+#enditem
+
+-- Advanced helms
+
+#newitem
+#id halfhelmet-sprite4
+#gameid 118
+#sprite /graphics/helmet/standard/halfhelmet4.png
+#offsetx -1
+#offsety -11
+#theme "advanced"
+#tag "eliteversion halfhelmet-sprite4-elite"
+#armor
+#enditem
+
+#newitem
+#id halfhelmet-sprite4-elite
+#gameid 118
+#sprite /graphics/helmet/special/elitehalfhelmet1.png
+#recolormask /graphics/helmet/special/elitehalfhelmet1_recolormask.png
+#offsetx -1
+#offsety -11
+#theme "advanced"
+#armor
+#enditem
+
+#newitem
+#id ironcap-sprite4
+#gameid 20
+#sprite /graphics/helmet/standard/halfhelmet4.png
+#offsetx -1
+#offsety -11
+#theme "advanced"
+#tag "eliteversion ironcap-sprite4-elite"
+#armor
+#enditem
+
+#newitem
+#id ironcap-sprite4-elite
+#gameid 20
+#sprite /graphics/helmet/special/elitehalfhelmet1.png
+#recolormask /graphics/helmet/special/elitehalfhelmet1_recolormask.png
+#offsetx -1
+#offsety -11
+#theme "advanced"
+#armor
+#enditem
+
+
+#newitem
+#id kettlehelmet-half
+#gameid 118
+#sprite /graphics/helmet/standard/halfhelmet3.png
+#offsetx -1
+#offsety -11
+#theme "advanced"
+#armor
+#enditem
+
+#newitem
+#id kettlehelmet-cap
+#gameid 20
+#sprite /graphics/helmet/standard/halfhelmet3.png
+#offsetx -1
+#offsety -11
+#theme "advanced"
+#armor
+#enditem
+
+#newitem
+#id fullhelmet
+#gameid 21
+#sprite /graphics/helmet/standard/fullhelmet2.png
+#offsetx -1
+#offsety -10
+#armor
+#tag "eliteversion elitefullhelmet"
+#theme "advanced"
+#enditem
+
+#newitem
+#id elitefullhelmet
+#gameid 21
+#sprite /graphics/helmet/special/elitefullhelmet1.png
+#recolormask /graphics/helmet/special/elitefullhelmet1_recolormask.png
+#offsetx -1
+#offsety -10
+#armor
+#enditem
+
+-- Highmen specific helms
+-- Iron helms
+
+#newitem
+#id highman_ironcap
+#gameid 20
+#sprite /graphics/highmen/helmet/cap_iron.png
+#armor
+#tag "eliteversion highman_ironcap_crested"
+#enditem
+
+#newitem
+#id highman_ironcap_crested
+#gameid 20
+#sprite /graphics/highmen/helmet/cap_iron_crested.png
+#recolormask /graphics/highmen/helmet/crest_recolormask.png
+#armor
+#enditem
+
+#newitem
+#id highman_bascinet
+#gameid 118
+#sprite /graphics/highmen/helmet/bascinet.png
+#tag "eliteversion highman_bascinet_crested"
+#armor
+#enditem
+
+#newitem
+#id highman_bascinet_crested
+#gameid 118
+#sprite /graphics/highmen/helmet/bascinet_crested.png
+#recolormask /graphics/highmen/helmet/bascinet_crested_recolormask.png
+#armor
+#enditem
+
+
+#newitem
+#id highman_halfhelm_iron
+#gameid 118
+#sprite /graphics/highmen/helmet/halfhelm_iron2.png
+#offsety -1
+#armor
+#enditem
+
+#newitem
+#id highman_fullhelm_iron
+#gameid 21
+#sprite /graphics/highmen/helmet/fullhelm_iron2.png
+#armor
+#enditem

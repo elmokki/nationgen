@@ -1,0 +1,28 @@
+#new
+#basechance 1
+#name "default template"
+#end
+
+
+#new
+#basechance 0.05
+#name "elite"
+#command "#att +1"
+#command "#def +1"
+#command "#mor +1"
+#chanceinc prot 13 0.075
+#maxvarieties 1
+#desc "Elite"
+#end
+
+
+#new
+#basechance 0
+#chanceinc prot below 12 0.025
+#chanceinc prot below 10 0.05
+#name "pillager"
+#command "#pillagebonus 1"
+#maxvarieties 2
+#addtag "bonusweaponchancebonus 0.8"
+#desc "Raider"
+#end

@@ -1,0 +1,34 @@
+#newrace
+#name "Human"
+#basechance 1.25
+
+#all_troops_sacred
+#all_troops_elite
+
+#pose humaninfantry
+#pose humancavalry
+#pose humanranged
+
+-- Temporarily including sleepers until barbarians are created
+#pose sleepertroops
+
+#pose humanmage
+
+#longsyllables /data/names/nations/human/longsyllables.txt
+#shortsyllables /data/names/nations/human/shortsyllables.txt
+#suffixes /data/names/nations/human/suffixes.txt
+
+-- Always have shirt, 5% chance for hair
+#generateitem 1 shirt
+#generateitem 0.05 hair
+
+#preferredmount horse
+
+#magicpatterns defaultprimary
+#magicpatterns defaultsecondary
+#magicpatterns defaulttertiary
+
+#unitcommand "#nametype 100"
+
+#gods europegods
+#endrace

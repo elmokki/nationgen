@@ -1,0 +1,61 @@
+
+-------- Normal
+
+#newpose
+#role "mounted"
+#name "1h mounted"
+#basechance 0.125
+#renderorder "shadow wings cloakb bag basesprite shirt armor mount legs strap cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/zotz/bases.txt
+#load hands /data/items/zotz/hands.txt
+#load wings /data/items/zotz/mounted_wings.txt
+
+#load mount /data/items/zotz/mounts.txt
+#load armor /data/items/zotz/mounted_armor.txt
+#load legs /data/items/zotz/mounted_legs.txt
+#load overlay /data/items/zotz/overlay.txt
+
+#load weapon /data/items/zotz/weapon.txt
+#load offhand /data/items/zotz/offhands.txt
+#load offhand /data/items/zotz/shields.txt
+#load bonusweapon /data/items/zotz/bonusranged.txt -12 -23
+
+
+#load cloakf /data/items/zotz/cloakf.txt
+#load cloakb /data/items/zotz/cloakb.txt
+
+#generateitem 1 wings
+
+#endpose
+
+
+-------- 2h
+
+#newpose
+#role "mounted"
+#name "2h mounted"
+#basechance 0.125
+#renderorder "shadow wings cloakb bag basesprite shirt armor mount legs strap cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/zotz/bases_2h.txt
+#load hands /data/items/zotz/hands_2h.txt
+#load wings /data/items/zotz/mounted_wings.txt
+
+
+#load mount /data/items/zotz/mounts.txt
+#load armor /data/items/zotz/mounted_armor_2h.txt
+#load legs /data/items/zotz/mounted_legs.txt
+#load overlay /data/items/zotz/overlay.txt
+
+#load weapon /data/items/zotz/weapon_2h.txt -1 0
+#load bonusweapon /data/items/zotz/bonusranged_2h.txt -12 -23
+
+
+#load cloakf /data/items/zotz/cloakf.txt
+#load cloakb /data/items/zotz/cloakb.txt
+
+#generateitem 1 wings
+
+#endpose
+

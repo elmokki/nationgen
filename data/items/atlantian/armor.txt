@@ -1,0 +1,46 @@
+#newitem
+#name "coralcuirass"
+#gameid 22
+#sprite /graphics/atlantian/armor/coralcuirass.png
+#armor
+#basechance 0.85
+#define "#poisonarmor"
+#enditem
+
+#newitem
+#name "coralhauberk"
+#gameid 23
+#sprite /graphics/atlantian/armor/coralhauberk.png
+#armor
+#basechance 0.5
+#tag "eliteversion coralhauberk-elite"
+#define "#poisonarmor"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "coralhauberk-elite"
+#gameid 23
+#sprite /graphics/atlantian/armor/coralhauberk-elite.png
+#armor
+#theme "elite" 
+#define "#poisonarmor"
+#enditem
+
+#newitem
+#name "sharkskinarmor"
+#gameid 151
+#sprite /graphics/atlantian/armor/sharkskinarmor.png
+#armor
+#theme "primitive"
+#basechance 1.3
+#enditem
+
+#newitem
+#name "shellarmor"
+#gameid 140
+#sprite /graphics/atlantian/armor/shellarmor.png
+#armor
+#theme "primitive"
+#basechance 1.3
+#enditem

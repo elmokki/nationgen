@@ -1,0 +1,170 @@
+#newpose
+#race 1
+#type "infantry"
+
+#load basesprite /races/lizard/normal/lizardbases.txt
+#load shadow /races/lizard/normal/shadow.txt
+
+#load hands /races/lizard/normal/lizardhands.txt
+
+#load cloakf /races/human/normal/humancloakf.txt -1 -2
+#load cloakb /races/human/normal/humancloakb.txt -1 -2
+
+#load armor /races/lizard/normal/lizardarmor.txt -1 -2
+#load armor /races/human/normal/orientalarmor.txt -1 -2
+#load armor /races/lizard/normal/naked.txt -1 -2
+#load helmet /races/lizard/normal/lizardhelmet.txt
+#load legs /races/lizard/normal/lizardlegs.txt
+
+#load weapon /races/human/normal/humanweapon.txt -1 -2
+#load bonusweapon /races/human/normal/standards.txt -2 -1
+#load bonusweapon /races/human/normal/humanbonusranged.txt -1 -2
+
+#load offhand /races/human/normal/humanoffhand.txt -1 -2
+#load offhand /races/human/normal/shields.txt -1 -2
+#load offhand /races/human/normal/towershields.txt -1 -2
+
+
+#load offhand /races/human/sacredstuff/sacredoffhand.txt -1 -2
+#load helmet /races/human/sacredstuff/sacredhelmet.txt -2 -4
+#load weapon /races/human/sacredstuff/sacredweapon.txt -1 -2
+#load weapon /races/human/sacredstuff/sacredweapon-infantry.txt -1 -2
+#load bonusweapon /races/human/sacredstuff/sacredbonusweapons.txt
+
+#endpose
+
+-------- 2h infantry
+
+#newpose
+#type "infantry"
+#load basesprite /races/lizard/2h/humanbases.txt
+#load shadow /races/lizard/normal/shadow.txt
+
+#load hands /races/lizard/2h/humanhands.txt
+
+#load cloakf /races/human/normal/humancloakf.txt -1 -2
+#load cloakb /races/human/normal/humancloakb.txt -1 -2
+
+#load armor /races/lizard/2h/humanarmor.txt -1 -2
+#load armor /races/lizard/2h/naked.txt -1 -2
+
+#load helmet /races/lizard/normal/lizardhelmet.txt
+#load legs /races/lizard/normal/lizardlegs.txt
+
+#load weapon /races/human/2h/humanweapon.txt -1 -2
+
+#load bonusweapon /races/human/2h/humanbonusranged.txt -2 -2
+#load helmet /races/human/sacredstuff/sacredhelmet.txt -2 -4
+#load bonusweapon /races/human/sacredstuff/sacredbonusweapons.txt
+
+
+#endpose
+
+----------- Charioteers
+
+#newpose
+#newpose
+#race 0
+#type "chariot"
+
+#load basesprite /races/lizard/normal/lizardbases.txt
+#load mount /races/lizard/normal/lizardbases_chariot.txt
+
+#load hands /races/lizard/normal/lizardhands.txt
+
+#load cloakf /races/human/normal/humancloakf.txt -1 -2
+#load cloakb /races/human/normal/humancloakb.txt -1 -2
+
+#load armor /races/lizard/normal/lizardarmor.txt -1 -2
+#load armor /races/human/normal/orientalarmor.txt -1 -2
+#load armor /races/lizard/normal/naked.txt -1 -2
+#load helmet /races/lizard/normal/lizardhelmet.txt
+#load legs /races/lizard/normal/lizardlegs.txt
+
+#load weapon /races/human/normal/humanweapon.txt -1 -2
+#load bonusweapon /races/human/normal/humanbonusranged.txt -1 -2
+
+#load offhand /races/human/human_mounted/humanoffhand.txt -1 -2
+#load offhand /races/human/normal/shields.txt -1 -2
+#load offhand /races/human/normal/towershields.txt -1 -2
+
+#load offhand /races/human/sacredstuff/sacredoffhand.txt -1 -2
+#load helmet /races/human/sacredstuff/sacredhelmet.txt -2 -4
+#load weapon /races/human/sacredstuff/sacredweapon.txt -1 -2
+#load bonusweapon /races/human/sacredstuff/sacredbonusweapons.txt
+#load overlay /races/human/human_mounted/mountedoverlay.txt
+#endpose
+
+---------- Mages and Priests 1
+--- Straight legs, so do not use this pose for non-robe armors.
+
+#newpose
+#race 0
+#type "mage"
+#type "priest"
+
+#load basesprite /races/lizard/caster/lizardbases.txt
+#load shadow /races/lizard/normal/shadow.txt
+
+#load hands /races/lizard/normal/lizardhands.txt
+
+#load cloakf /races/human/normal/humancloakf.txt -1 -2
+#load cloakb /races/human/normal/humancloakb.txt -1 -2
+
+#load armor /races/human/caster/robes.txt -1 -2
+#load weapon /races/human/caster/weapon.txt -1 -2
+#load helmet /races/human/caster/helmet.txt -2 -5
+#load helmet /races/lizard/caster/helmet.txt -2 -5
+#load offhand /races/human/caster/offhands.txt -1 -2
+
+#endpose
+
+----------- Archer
+
+#newpose
+#race 0
+#type "ranged"
+#renderorder "shadow cloakb basesprite mount shirt legs armor cloakf bonusweapon quiver weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /races/lizard/archer/bases.txt
+#load shadow /races/lizard/normal/shadow.txt
+
+#load hands /races/lizard/archer/hands.txt
+
+#load armor /races/lizard/archer/armor.txt -1 -2
+#load cloakf /races/human/normal/humancloakf.txt -1 -2
+#load cloakb /races/human/normal/humancloakb.txt -1 -2
+
+#load helmet /races/lizard/normal/lizardhelmet.txt
+#load legs /races/lizard/normal/lizardlegs.txt
+#load weapon /races/human/archer/bows.txt -1 -2
+
+#load quiver /races/human/archer/humanbonusranged.txt -1 -2
+#load bonusweapon /races/human/archer/archerweapon.txt -1 -2
+
+#load helmet /races/human/sacredstuff/sacredhelmet.txt -2 -4
+#endpose
+
+----------- Crossbowman
+
+#newpose
+#race 0
+#type "ranged"
+
+#load basesprite /races/lizard/crossbow/bases.txt
+#load shadow /races/lizard/normal/shadow.txt
+
+#load hands /races/lizard/crossbow/hands.txt
+
+#load armor /races/lizard/crossbow/armor.txt -1 -2
+#load cloakf /races/human/normal/humancloakf.txt -1 -2
+#load cloakb /races/human/normal/humancloakb.txt -1 -2
+
+#load helmet /races/lizard/normal/lizardhelmet.txt
+#load legs /races/lizard/normal/lizardlegs.txt
+#load weapon /races/human/crossbow/crossbows.txt -1 -2
+
+#load helmet /races/human/sacredstuff/sacredhelmet.txt -2 -4
+
+#load bonusweapon /races/human/archer/archerweapon.txt -1 -2
+#endpose

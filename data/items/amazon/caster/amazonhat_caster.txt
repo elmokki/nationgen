@@ -1,0 +1,506 @@
+#newitem
+#basechance 0
+#id no_helmet
+#gameid -1
+#enditem
+
+--- Baredheaded: about 1/6 tier 1s will have "standard" hair and no headgear
+
+#newitem
+#basechance 2
+#id bareheaded
+#gameid -1
+#tag "tier 1"
+#enditem
+
+--- "Big hair"
+
+#newitem
+#basechance 0.25
+#id "short_black_bun"
+#gameid -1
+#sprite /graphics/amazon/helmet/hair/bun_short_black.png
+#recolormask /graphics/amazon/helmet/hair/bun_short_recolormask.png
+#needs hair no_hair
+#tag "tier 1"
+#tag "tier 2"
+#tag "eliteversion fancy_black_bun"
+#tag "eliteversion ornate_black_bun"
+#armor
+#enditem
+
+#newitem
+#basechance 0.5
+#id "fancy_black_bun"
+#gameid -1
+#sprite /graphics/amazon/helmet/hair/bun_banded_black.png
+#recolormask /graphics/amazon/helmet/hair/bun_banded_recolormask.png
+#needs hair no_hair
+#tag "tier 2"
+#tag "tier 3"
+#tag "eliteversion ornate_black_bun"
+#armor
+#enditem
+
+#newitem
+#basechance 0.5
+#id "ornate_black_bun"
+#gameid -1
+#sprite /graphics/amazon/helmet/hair/bun_banded_black.png
+#needs hair no_hair
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#basechance 0.25
+#id "high_blonde_bun"
+#gameid -1
+#sprite /graphics/amazon/helmet/hair/bun_high_blonde.png
+#needs hair no_hair
+#tag "tier 1"
+#tag "tier 2"
+#tag "eliteversion high_white_bun"
+#armor
+#enditem
+
+#newitem
+#basechance 0.25
+#id "high_brown_bun"
+#gameid -1
+#sprite /graphics/amazon/helmet/hair/bun_high_brown.png
+#needs hair no_hair
+#tag "tier 1"
+#tag "tier 2"
+#tag "eliteversion high_white_bun"
+#armor
+#enditem
+
+#newitem
+#basechance 0.5
+#id "high_white_bun"
+#gameid -1
+#sprite /graphics/amazon/helmet/hair/bun_high_white.png
+#needs hair no_hair
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#basechance 0.25
+#id "long_chestnut_bun"
+#gameid -1
+#sprite /graphics/amazon/helmet/hair/bun_long_lightbrown.png
+#needs hair no_hair
+#tag "tier 1"
+#tag "tier 2"
+#tag "eliteversion long_grey_bun"
+#tag "eliteversion long_white_bun"
+#armor
+#enditem
+
+#newitem
+#basechance 0.25
+#id "long_blonde_bun"
+#gameid -1
+#sprite /graphics/amazon/helmet/hair/bun_long_blonde.png
+#needs hair no_hair
+#tag "tier 1"
+#tag "tier 2"
+#tag "eliteversion long_grey_bun"
+#tag "eliteversion long_white_bun"
+#armor
+#enditem
+
+#newitem
+#basechance 0.25
+#id "long_auburn_bun"
+#gameid -1
+#sprite /graphics/amazon/helmet/hair/bun_long_auburn.png
+#needs hair no_hair
+#tag "tier 1"
+#tag "tier 2"
+#tag "eliteversion long_grey_bun"
+#tag "eliteversion long_white_bun"
+#armor
+#enditem
+
+#newitem
+#basechance 0.25
+#id "long_black_bun"
+#gameid -1
+#sprite /graphics/amazon/helmet/hair/bun_long_black.png
+#needs hair no_hair
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
+#tag "eliteversion long_grey_bun"
+#tag "eliteversion long_white_bun"
+#armor
+#enditem
+
+#newitem
+#basechance 0.25
+#id "long_grey_bun"
+#gameid -1
+#sprite /graphics/amazon/helmet/hair/bun_long_grey.png
+#needs hair no_hair
+#tag "tier 2"
+#tag "tier 3"
+#tag "eliteversion long_white_bun"
+#armor
+#enditem
+
+#newitem
+#basechance 0.5
+#id "long_white_bun"
+#gameid -1
+#sprite /graphics/amazon/helmet/hair/bun_long_white.png
+#needs hair no_hair
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#basechance 0.25
+#id "long_flowing_black"
+#gameid -1
+#sprite /graphics/amazon/helmet/hair/long_flowing_black.png
+#needs hair no_hair
+#tag "tier 1"
+#tag "tier 2"
+#tag "eliteversion long_flowing_white"
+#armor
+#enditem
+
+#newitem
+#basechance 0.25
+#id "long_flowing_red"
+#gameid -1
+#sprite /graphics/amazon/helmet/hair/long_flowing_red.png
+#needs hair no_hair
+#tag "tier 1"
+#tag "tier 2"
+#tag "eliteversion long_flowing_white"
+#armor
+#enditem
+
+#newitem
+#basechance 0.25
+#id "long_flowing_brown"
+#gameid -1
+#sprite /graphics/amazon/helmet/hair/long_flowing_brown.png
+#needs hair no_hair
+#tag "tier 1"
+#tag "tier 2"
+#tag "eliteversion long_flowing_white"
+#armor
+#enditem
+
+#newitem
+#basechance 0.25
+#id "long_flowing_blonde"
+#gameid -1
+#sprite /graphics/amazon/helmet/hair/long_flowing_blonde.png
+#needs hair no_hair
+#tag "tier 1"
+#tag "tier 2"
+#tag "eliteversion long_flowing_white"
+#armor
+#enditem
+
+#newitem
+#basechance 0.5
+#id "long_flowing_white"
+#gameid -1
+#sprite /graphics/amazon/helmet/hair/long_flowing_white.png
+#needs hair no_hair
+#tag "tier 3"
+#armor
+#enditem
+
+--- Amazon helmets
+
+#newitem -- leather amazon cap
+#id amazoncap-leather
+#gameid 120
+#sprite /graphics/amazon/helmet/amazoncap_leather.png
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
+#recolormask self
+#enditem
+
+--- Caster hats
+
+#newitem
+#id hood1
+#gameid -1
+#sprite /graphics/helmet/caster/hood1.png
+#recolormask /graphics/helmet/caster/hood1_recolormask.png
+#armor
+#needs hair shaved
+#tag "tier 3"
+#enditem
+
+#newitem
+#id hood2
+#gameid -1
+#sprite /graphics/helmet/caster/hood2.png
+#recolormask self
+#armor
+#needs hair shaved
+#tag "tier 2"
+#tag "eliteversion hood1"
+#enditem
+
+#newitem
+#id laurel
+#gameid -1
+#sprite /graphics/helmet/caster/green.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id wizardhat1
+#gameid -1
+#offsety 1
+#sprite /graphics/helmet/caster/wizardhat1.png
+#recolormask /graphics/helmet/caster/wizardhat1_recolormask.png
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id gatthat-recolorable
+#gameid -1
+#offsety 1
+#sprite /graphics/helmet/caster/gathhat.png
+#recolormask self
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id gathhat
+#gameid -1
+#offsety 1
+#sprite /graphics/helmet/caster/gathhat.png
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id cap
+#gameid -1
+#offsety 1
+#sprite /graphics/helmet/caster/cap.png
+#recolormask self
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id crown
+#gameid 148
+#offsety 1
+#sprite /graphics/helmet/caster/crown.png
+#armor
+#tag "superior"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id antleredcap
+#gameid 120
+#offsety 1
+#sprite /graphics/helmet/caster/antlercap.png
+#armor
+#tag "primitive"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id feathercap
+#gameid 120
+#offsety 1
+#sprite /graphics/helmet/caster/feathercap.png
+#recolormask /graphics/helmet/caster/feathercap_recolormask.png
+#armor
+#tag "primitive"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id bishophat
+#gameid -1
+#offsety 1
+#sprite /graphics/helmet/caster/bishophat.png
+#recolormask /graphics/helmet/caster/bishophat_recolormask.png
+#armor
+#needs hair shaved
+#tag "tier 3"
+#enditem
+
+#newitem
+#id bishophat2
+#gameid -1
+#offsety 1
+#sprite /graphics/helmet/caster/bishophat.png
+#recolormask /graphics/helmet/caster/bishophat2_recolormask.png
+#armor
+#tag "eliteversion bishophat"
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+
+#newitem
+#id magistercap
+#gameid -1
+#offsety 1
+#sprite /graphics/helmet/caster/magistercap.png
+#recolormask self
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id thirdtierhat
+#gameid -1
+#offsety 1
+#sprite /graphics/helmet/caster/thirdtierhat.png
+#recolormask /graphics/helmet/caster/thirdtierhat_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id secondtierhat
+#gameid -1
+#offsety 1
+#sprite /graphics/helmet/caster/secondtierhat.png
+#recolormask /graphics/helmet/caster/secondtierhat_recolormask.png
+#armor
+#tag "tier 2"
+#tag "eliteversion thirdtierhat"
+#enditem
+
+#newitem
+#id blackpriesthat
+#gameid -1
+#offsety 1
+#sprite /graphics/helmet/caster/blackpriesthat.png
+#recolormask self
+#armor
+#tag "tier 3"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id goeticmasterhat
+#gameid -1
+#offsety 1
+#sprite /graphics/helmet/caster/goeticmasterhat.png
+#recolormask self
+#armor
+#tag "tier 3"
+#enditem
+
+
+#newitem
+#id goeticapprenticerhat
+#gameid -1
+#offsety 1
+#sprite /graphics/helmet/caster/goeticapprenticehat.png
+#recolormask self
+#armor
+#tag "eliteversion goeticmasterhat"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id demonjester
+#gameid -1
+#offsety 1
+#sprite /graphics/helmet/caster/demonjester.png
+#recolormask /graphics/helmet/caster/demonjester_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id demonjester_nobell
+#gameid -1
+#offsety 1
+#sprite /graphics/helmet/caster/demonjester_recolormask.png
+#recolormask /graphics/helmet/caster/demonjester_recolormask.png
+#armor
+#tag "eliteversion demonjester"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id lizardcrown1
+#gameid 148
+#offsety 1
+#sprite /graphics/helmet/caster/lizardcrown.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id lizardcrown2
+#gameid 148
+#offsety 1
+#sprite /graphics/helmet/caster/lizardcrown.png
+#recolormask /graphics/helmet/caster/lizardcrown_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id wizardhat2
+#gameid -1
+#offsety 1
+#sprite /graphics/helmet/caster/wizardhat2.png
+#recolormask self
+#armor
+#needs hair shaved
+#tag "tier 3"
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id headdress
+#gameid -1
+#offsety 1
+#sprite /graphics/helmet/caster/headdress.png
+#recolormask self
+#armor
+#offsetx 2
+#tag "tier 3"
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id headdress-nomask
+#gameid -1
+#offsety 1
+#sprite /graphics/helmet/caster/headdress.png
+#armor
+#offsetx 2
+#tag "tier 3"
+#tag "tier 2"
+#tag "tier 1"
+#enditem

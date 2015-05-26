@@ -1,0 +1,28 @@
+--- None
+
+#newitem
+#name "nekkid"
+#gameid -1
+#basechance 1.5
+#armor
+#end
+
+#newitem -- feathers (dark)
+#name "dark feathers"
+#gameid -1
+#sprite /graphics/sobek/armor/standard/runner_feathers.png
+#recolormask /graphics/sobek/armor/standard/runner_feathers_recolormask1.png
+#armor
+#needs helmet feathercap_dark
+#basechance 0.25
+#enditem
+
+#newitem -- feathers (bright)
+#name "bright feathers"
+#gameid -1
+#sprite /graphics/sobek/armor/standard/runner_feathers.png
+#recolormask /graphics/sobek/armor/standard/runner_feathers_recolormask2.png
+#armor
+#needs helmet feathercap_bright
+#basechance 0.25
+#enditem

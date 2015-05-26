@@ -1,0 +1,189 @@
+---------- Mages and Priests - these are standard mages
+--- No legs, so do not use this pose for non-robe armors.
+
+#newpose
+#role "mage"
+#role "priest"
+
+#tier 1
+#tier 2
+#tier 3
+
+#command "#female"
+
+#renderorder "shadow cloakb basesprite armor cloakf bonusweapon weapon offhand hands hair helmet"
+
+#load basesprite /data/items/amazon/caster/amazonbases_caster.txt
+#load shadow /data/items/amazon/normal/shadow.txt
+
+#load hands /data/items/amazon/caster/amazonhands_caster.txt
+
+#load armor /data/items/amazon/caster/amazonrobes.txt
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakf /data/items/amazon/normal/amazoncloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load cloakb /data/items/amazon/normal/amazoncloakb.txt
+
+#load hair /data/items/amazon/caster/amazonhair.txt
+#load weapon /data/items/human/caster/weapon.txt
+#load helmet /data/items/amazon/caster/amazonhat_caster.txt
+#load offhand /data/items/human/caster/offhands.txt
+
+#endpose
+
+
+---- Warrior-mages - unmounted
+--- these use a caster "armor" sprite as legs
+
+#newpose
+#role "mage"
+#name "warrior-mage"
+#basechance 0.15
+
+#tier 1
+#tier 2
+#tier 3
+
+#command "#female"
+
+#load basesprite /data/items/amazon/caster/amazonbases_caster.txt
+#load shadow /data/items/amazon/normal/shadow.txt
+
+#load hands /data/items/amazon/caster/amazonhands_caster.txt
+
+#load armor /data/items/amazon/caster/amazonarmor_caster.txt
+#load legs /data/items/amazon/caster/amazonrobes_warrior.txt
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+
+#load hair /data/items/human/normal/humanhair.txt offsetx 0 offsety 1
+#load weapon /data/items/amazon/caster/amazonweapon_caster.txt
+#load helmet /data/items/amazon/caster/amazonhelmet_caster.txt
+#load offhand /data/items/amazon/caster/amazonoffhand_caster.txt
+#load offhand /data/items/amazon/caster/amazonshield_caster.txt
+
+#endpose
+
+---- Warrior-mages - mounted
+--- eventually, these should be T1-2 mages, but for the moment they are disabled
+
+#newpose
+#role "mage"
+#role "mounted"
+#role "elite"
+#name "warrior-mage_mounted"
+#basechance 0 
+--- basechance 0.15  --- intended chance for mounted mages, but currently disabled to avoid malformed sprites
+
+#tier 1
+#tier 2
+
+#command "#female"
+
+#renderorder "shadow cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/amazon/caster/amazonbases_caster.txt
+#load mount /data/items/amazon/caster/amazonmounts_caster.txt offsetx 5 offsety -18
+-- #load mount /data/items/amazon/caster/amazonmounts_caster_low.txt offsetx 5 offsety -18
+
+#load hands /data/items/amazon/caster/amazonhands_caster.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load hair /data/items/human/normal/humanhair.txt offsetx 0 offsety 1
+
+#load armor /data/items/amazon/caster/amazonarmor_caster.txt
+#load helmet /data/items/amazon/caster/amazonhelmet_caster.txt
+#load legs /data/items/amazon/mounted/amazonlegs_cavalry.txt offsetx -1 offsety 0
+
+#load weapon /data/items/human/human_mounted/humanweapon.txt
+#load weapon /data/items/human/human_mounted/cavalryweapons.txt
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt offsetx -2 offsety 1
+#load lanceslot /data/items/human/human_mounted/lance.txt
+
+#load offhand /data/items/amazon/caster/amazonshield_caster.txt
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt offsetx 5 offsety -18
+#load overlay /data/items/amazon/mounted/amazon_overlays.txt offsetx 5 offsety -18
+
+#writeslot lanceslot
+#endpose
+
+
+---- Warrior-priestesses - unmounted
+--- these use a caster "armor" sprite as legs
+
+#newpose
+#role "priest"
+#name "warrior-priestess"
+#basechance 0.25
+
+#tier 1
+#tier 2
+#tier 3
+
+#command "#female"
+
+#load basesprite /data/items/amazon/caster/amazonbases_caster.txt
+#load shadow /data/items/amazon/normal/shadow.txt
+
+#load hands /data/items/amazon/caster/amazonhands_caster.txt
+
+#load armor /data/items/amazon/caster/amazonarmor_caster.txt
+#load legs /data/items/amazon/caster/amazonrobes_warrior.txt
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+
+#load hair /data/items/human/normal/humanhair.txt offsetx 0 offsety 1
+#load weapon /data/items/amazon/caster/amazonweapon_caster.txt
+#load helmet /data/items/amazon/caster/amazonhelmet_caster.txt
+#load offhand /data/items/amazon/caster/amazonoffhand_caster.txt
+#load offhand /data/items/amazon/caster/amazonshield_caster.txt
+
+#endpose
+
+---- Warrior-priestesses - mounted
+--- eventually, these should all tiers of priestess, but currently they're disabled to avoid malformed sprites
+
+#newpose
+#role "priest"
+#role "mounted"
+#role "elite"
+#name "warrior-priestess_mounted"
+#basechance 0
+ -- #basechance 0.25
+
+#tier 1
+#tier 2
+#tier 3
+
+#command "#female"
+
+#renderorder "shadow cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/amazon/caster/amazonbases_caster.txt
+#load mount /data/items/amazon/caster/amazonmounts_caster.txt offsetx 5 offsety -18
+-- #load mount /data/items/amazon/caster/amazonmounts_caster_low.txt offsetx 5 offsety -18
+
+#load hands /data/items/amazon/caster/amazonhands_caster.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load hair /data/items/human/normal/humanhair.txt offsetx 0 offsety 1
+
+#load armor /data/items/amazon/caster/amazonarmor_caster.txt
+#load helmet /data/items/amazon/caster/amazonhelmet_caster.txt
+#load legs /data/items/amazon/mounted/amazonlegs_cavalry.txt offsetx -1 offsety 0
+
+#load weapon /data/items/human/human_mounted/humanweapon.txt
+#load weapon /data/items/human/human_mounted/cavalryweapons.txt
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt offsetx -2 offsety 1
+#load lanceslot /data/items/human/human_mounted/lance.txt
+
+#load offhand /data/items/amazon/caster/amazonshield_caster.txt
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt offsetx 5 offsety -18
+#load overlay /data/items/amazon/mounted/amazon_overlays.txt offsetx 5 offsety -18
+
+#writeslot lanceslot
+#endpose

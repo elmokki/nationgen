@@ -1,0 +1,177 @@
+------- Standard Mounted
+
+#newpose
+#name "std mounted"
+#role "mounted"
+#basechance 0.5
+
+#command "#female"
+
+#renderorder "shadow cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/amazon/normal/amazonbases.txt
+#load mount /data/items/human/human_mounted/humanmounts.txt offsetx 5 offsety -18
+
+#load hands /data/items/amazon/normal/amazonhands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load shirt /data/items/amazon/normal/amazonshirt.txt
+#load hair /data/items/human/normal/humanhair.txt offsetx 0 offsety 1
+
+#load armor /data/items/amazon/mounted/amazonarmor_cavalry.txt
+#load helmet /data/items/amazon/normal/amazonhelmet.txt
+#load helmet /data/items/amazon/normal/humanhelmet_amazon.txt offsetx 0 offsety 1
+#load legs /data/items/amazon/mounted/amazonlegs_cavalry.txt offsetx -1 offsety 0
+
+#load weapon /data/items/human/human_mounted/humanweapon.txt
+#load weapon /data/items/human/human_mounted/cavalryweapons.txt
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt offsetx -2 offsety 1
+#load lanceslot /data/items/human/human_mounted/lance.txt
+
+#load offhand /data/items/amazon/normal/amazonshields.txt
+#load offhand /data/items/human/normal/shields.txt
+
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt offsetx 5 offsety -18
+#load overlay /data/items/amazon/mounted/amazon_overlays.txt offsetx 5 offsety -18
+
+#writeslot lanceslot
+#endpose
+
+------- Elite Mounted
+
+#newpose
+#name "elite mounted"
+#role "mounted"
+#role "sacred"
+#role "elite"
+#sacred
+#basechance 0.25
+
+#command "#female"
+
+#renderorder "shadow cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/amazon/normal/amazonbases.txt
+#load mount /data/items/human/human_mounted/humanmounts.txt offsetx 5 offsety -18
+#load mount /data/items/amazon/mounted/amazonmounts.txt offsetx 5 offsety -18
+
+#load hands /data/items/amazon/normal/amazonhands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load shirt /data/items/amazon/normal/amazonshirt.txt
+#load hair /data/items/human/normal/humanhair.txt offsetx 0 offsety 1
+
+#load armor /data/items/amazon/mounted/amazonarmor_cavalry.txt
+#load armor /data/items/amazon/mounted/amazonarmor_cavalry_elite.txt
+#load helmet /data/items/amazon/normal/amazonhelmet.txt
+#load helmet /data/items/amazon/normal/humanhelmet_amazon.txt offsetx 0 offsety 1
+#load legs /data/items/amazon/mounted/amazonlegs_cavalry.txt offsetx -1 offsety 0
+
+#load weapon /data/items/human/human_mounted/humanweapon.txt
+#load weapon /data/items/human/human_mounted/cavalryweapons.txt
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt offsetx -2 offsety 1
+#load lanceslot /data/items/human/human_mounted/lance.txt
+
+#load offhand /data/items/amazon/normal/amazonshields.txt
+#load offhand /data/items/human/normal/shields.txt
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt offsetx 5 offsety -18
+#load overlay /data/items/amazon/mounted/amazon_overlays.txt offsetx 5 offsety -18
+
+#writeslot lanceslot
+
+#maxvarieties 1
+
+#endpose
+
+------- Low mounted
+
+#newpose
+#name "low mounted"
+#role "mounted"
+#role "sacred"
+#role "elite"
+#sacred
+#basechance 0.25
+
+
+#command "#female"
+
+#renderorder "shadow cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/amazon/normal/amazonbases.txt
+#load mount /data/items/human/human_mounted/humanmounts_low.txt offsetx 5 offsety -18
+#load mount /data/items/amazon/mounted/amazonmounts_low.txt offsetx 5 offsety -18
+
+#load hands /data/items/amazon/normal/amazonhands.txt 
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load shirt /data/items/amazon/normal/amazonshirt.txt
+#load hair /data/items/human/normal/humanhair.txt offsetx 0 offsety 1
+
+#load armor /data/items/amazon/mounted/amazonarmor_cavalry.txt
+#load armor /data/items/amazon/mounted/amazonarmor_cavalry_elite.txt
+#load helmet /data/items/amazon/normal/amazonhelmet.txt
+#load helmet /data/items/amazon/normal/humanhelmet_amazon.txt offsetx 0 offsety 1
+#load legs /data/items/amazon/mounted/amazonlegs_cavalry.txt offsetx -1 offsety 0
+
+#load weapon /data/items/human/human_mounted/humanweapon.txt
+#load weapon /data/items/human/human_mounted/cavalryweapons.txt
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt offsetx -1 offsety 1
+#load lanceslot /data/items/human/human_mounted/lance.txt
+
+#load offhand /data/items/amazon/normal/amazonshields.txt
+#load offhand /data/items/human/normal/shields.txt
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt offsetx 5 offsety -18
+#load overlay /data/items/amazon/mounted/amazon_overlays.txt offsetx 5 offsety -18
+
+#writeslot lanceslot
+
+#maxvarieties 1
+
+#endpose
+
+----------- Standard Charioteers
+
+#newpose
+#name "chariot"
+#race 0
+#role "chariot"
+#basechance 0.125
+
+#command "#female"
+
+#load basesprite /data/items/amazon/normal/amazonbases.txt
+#load mount /data/items/human/human_mounted/humanbases_chariot.txt
+
+#load hands /data/items/amazon/normal/amazonhands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load shirt /data/items/amazon/normal/amazonshirt.txt
+#load hair /data/items/human/normal/humanhair.txt offsetx 0 offsety 1
+
+#load armor /data/items/amazon/mounted/amazonarmor_chariot.txt
+#load armor /data/items/amazon/normal/naked.txt
+#load helmet /data/items/amazon/normal/amazonhelmet.txt
+#load helmet /data/items/amazon/normal/humanhelmet_amazon.txt offsetx 0 offsety 1
+#load legs /data/items/amazon/normal/amazonlegs.txt
+
+#load weapon /data/items/human/normal/humanweapon.txt
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt offsetx -2 offsety 1
+
+#load offhand /data/items/human/human_mounted/humanoffhand.txt
+#load offhand /data/items/amazon/normal/amazonshields.txt
+#load offhand /data/items/human/normal/shields.txt
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+
+#maxvarieties 1
+#maxunits 1
+
+#endpose

@@ -1,0 +1,793 @@
+--- Supported chanceincs:
+---
+--- personalmagic <path> <pathlevel> <chance change>
+--- Each line can have multiple path-level combos that are required to get the change. Number after path signifies required path level.
+--- In general the unit must have the signified path level to get the name.
+--- The base chance is multiplied by the average path level of the paths the unit has.
+--- Example: Mage with F2 and E2 and "personalmagic fire 1 earth 1 1" gets (2 + 2) / 2 = 2 times the chance increase.
+---
+--- magicbelow  <path> <pathlevel> <chance change>
+--- Same as above, but it triggers if the unit has a magic level that is under the specified value. Good for making the most epic names not happen on tertiaries etc.
+--- Does not get the base chance multiplying however.
+---
+--- race <race name> <chance change>
+--- Should be fairly self explaining: checks unit's race.
+---
+--- pose <pose type> <chance change>
+--- Same as above, but makes sure unit's pose can be used for given role (infantry, mounted, ranged, scout, sacred, mage, priest, chariot)
+--- Not generally useful for mage/priest name separation (use magicbelow and magic for that) due to them often using same poses, but can be useful for sacred names.
+---
+--- personalcommand <personalcommand> <chance change>
+--- Checks if the unit has given personalcommand with any argument. For example "personalcommand #stealthy 1" name gets +1 chance of being picked when the unit has stealth of any level.
+---
+--- origname <name> <chance change>
+--- Designed for sacred personalcommander naming. If a sacred is named Thunderous Templar, "origname Templar 1" gets +1 chance of being picked when making personalcommander version 
+--- of that sacred.
+---
+--- magic <path> <chance change>
+--- Purely for sacreds. National magic and sacred equipment dictate what path the sacred is - this triggers on that.
+---
+--- filter <name> <chance change>
+--- If filter named <name> was applied to the unit, this triggers.
+
+
+-- Generic
+
+#new
+#name "temple"
+#tag "notsuffix"
+#basechance 1
+#end
+
+#new
+#name "holy"
+#tag "notsuffix"
+#basechance 0.5
+#end
+
+#new
+#name "pure"
+#tag "notsuffix"
+#basechance 0.5
+#end
+
+#new
+#name "righteous"
+#tag "notsuffix"
+#basechance 0.5
+#end
+
+#new
+#name "divine"
+#tag "notsuffix"
+#basechance 1
+#end
+
+#new
+#name "just"
+#tag "notsuffix"
+#basechance 0.5
+#end
+
+#new
+#name "avenging"
+#tag "notsuffix"
+#basechance 1
+#end
+
+#new
+#name "pious"
+#tag "notsuffix"
+#basechance 0.25
+#end
+
+
+--- Path specific
+
+- Fire
+
+#new
+#name "flame"
+#basechance 0
+#chanceinc "magic fire 0.25"
+#chanceinc "taggedmagic fire 1"
+#chanceinc "personalcommand #firepower 10"
+#chanceinc "personalcommand #heat 10"
+#end
+
+#new
+#name "fire"
+#basechance 0
+#chanceinc "magic fire 0.25"
+#chanceinc "taggedmagic fire 1"
+#chanceinc "personalcommand #firepower 10"
+#chanceinc "personalcommand #heat 10"
+#end
+
+#new
+#name "volcano"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic fire 0.5"
+#chanceinc "taggedmagic fire 2"
+#end
+
+#new
+#name "red"
+#basechance 0
+#chanceinc "magic fire 0.5"
+#chanceinc "taggedmagic fire 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "molten"
+#basechance 0
+#chanceinc "magic fire 0.5"
+#chanceinc "taggedmagic fire 2"
+#tag "notsuffix"
+#end
+
+- Air
+
+#new
+#name "thunder"
+#basechance 0
+#chanceinc "magic air 0.25"
+#chanceinc "taggedmagic air 1"
+#chanceinc "personalcommand #stormpower 10"
+#end
+
+#new
+#name "thunderous"
+#basechance 0
+#chanceinc "magic air 0.25"
+#chanceinc "taggedmagic air 1"
+#tag "notsuffix"
+#chanceinc "personalcommand #stormpower 10"
+#end
+
+#new
+#name "lightning"
+#basechance 0
+#chanceinc "magic air 0.5"
+#chanceinc "taggedmagic air 2"
+#tag "notprefix"
+#chanceinc "personalcommand #stormpower 10"
+#end
+
+#new
+#name "mist"
+#basechance 0
+#chanceinc "magic air 0.5"
+#chanceinc "taggedmagic air 2"
+#chanceinc "personalcommand #glamour 10"
+#end
+
+#new
+#name "illusion"
+#basechance 0
+#chanceinc "magic air 0.25"
+#chanceinc "taggedmagic air 1"
+#tag "notsuffix"
+#chanceinc "personalcommand #glamour 10"
+#end
+
+#new
+#name "illusions"
+#basechance 0
+#chanceinc "magic air 0.25"
+#chanceinc "taggedmagic air 1"
+#tag "notprefix"
+#chanceinc "personalcommand #glamour 10"
+#end
+
+- Water
+
+#new
+#name "frost"
+#basechance 0
+#chanceinc "magic water 0.5"
+#chanceinc "taggedmagic water 2"
+#chanceinc "personalcommand #coldpower 10"
+#chanceinc "personalcommand #cold 10"
+#end
+
+#new
+#name "ice"
+#basechance 0
+#chanceinc "magic water 0.5"
+#chanceinc "taggedmagic water 2"
+#chanceinc "personalcommand #coldpower 10"
+#chanceinc "personalcommand #cold 10"
+#end
+
+#new
+#name "blue"
+#basechance 0
+#chanceinc "magic water 0.5"
+#chanceinc "taggedmagic water 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "wave"
+#basechance 0
+#chanceinc "magic water 0.5"
+#chanceinc "taggedmagic water 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "water"
+#basechance 0
+#chanceinc "magic water 0.5"
+#chanceinc "taggedmagic water 2"
+#end
+
+#new
+#name "frozen"
+#basechance 0
+#chanceinc "magic water 0.5"
+#chanceinc "taggedmagic water 2"
+#tag "notsuffix"
+#chanceinc "personalcommand #coldpower 10"
+#chanceinc "personalcommand #cold 10"
+#end
+
+- Earth
+
+#new
+#name "steel"
+#basechance 0
+#chanceinc "magic earth 0.1"
+#chanceinc "taggedmagic earth 0.66"
+#chanceinc "personalshape metalman 20"
+#end
+
+#new
+#name "iron"
+#basechance 0
+#chanceinc "magic earth 0.1"
+#chanceinc "taggedmagic earth 0.66"
+#chanceinc "personalshape metalman 20"
+#end
+
+#new
+#name "metal"
+#basechance 0
+#chanceinc "magic earth 0.1"
+#chanceinc "taggedmagic earth 0.66"
+#chanceinc "personalshape metalman 20"
+#end
+
+
+#new
+#name "brass"
+#basechance 0
+#chanceinc "magic earth 0.1"
+#chanceinc "taggedmagic earth 0.66"
+#end
+
+#new
+#name "diamond"
+#basechance 0
+#chanceinc "magic earth 0.5"
+#chanceinc "taggedmagic earth 2"
+#end
+
+#new
+#name "rock"
+#basechance 0
+#chanceinc "magic earth 0.5"
+#chanceinc "taggedmagic earth 2"
+#end
+
+
+#new
+#name "earth"
+#basechance 0
+#chanceinc "magic earth 0.5"
+#chanceinc "taggedmagic earth 2"
+#end
+
+#new
+#name "gold"
+#basechance 0
+#chanceinc "magic earth 0.1"
+#chanceinc "taggedmagic earth 0.66"
+#end
+
+#new
+#name "golden"
+#basechance 0
+#chanceinc "magic earth 0.1"
+#chanceinc "taggedmagic earth 0.66"
+#tag "notsuffix"
+#end
+
+
+- Astral
+
+#new
+#name "astral"
+#basechance 0
+#chanceinc "magic astral 0.5"
+#chanceinc "taggedmagic astral 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "star"
+#basechance 0
+#chanceinc "magic astral 0.5"
+#chanceinc "taggedmagic astral 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "stars"
+#basechance 0
+#chanceinc "magic astral 0.5"
+#chanceinc "taggedmagic astral 2"
+#tag "notprefix"
+#end
+
+#new
+#name "plane"
+#basechance 0
+#chanceinc "magic astral 0.5"
+#chanceinc "taggedmagic astral 2"
+#chanceinc "personalcommand #ethereal 10"
+#tag "notsuffix"
+#end
+
+#new
+#name "planes"
+#basechance 0
+#chanceinc "magic astral 0.5"
+#chanceinc "taggedmagic astral 2"
+#chanceinc "personalcommand #ethereal 10"
+#tag "notprefix"
+#end
+
+#new
+#name "secret"
+#basechance 0
+#chanceinc "magic astral 0.5"
+#chanceinc "taggedmagic astral 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "poetry"
+#basechance 0
+#chanceinc "magic astral 0.125"
+#chanceinc "taggedmagic astral 0.25"
+#tag "notprefix"
+#end
+
+- Death
+
+#new
+#name "black"
+#basechance 0
+#chanceinc "magic death 0.5"
+#chanceinc "taggedmagic death 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "onyx"
+#basechance 0
+#chanceinc "magic death 0.5"
+#chanceinc "taggedmagic death 2"
+#end
+
+#new
+#name "death"
+#basechance 0
+#chanceinc "magic death 0.5"
+#chanceinc "taggedmagic death 2"
+#end
+
+#new
+#name "skull"
+#basechance 0
+#chanceinc "magic death 0.5"
+#chanceinc "taggedmagic death 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "tomb"
+#basechance 0
+#chanceinc "magic death 0.5"
+#chanceinc "taggedmagic death 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "unholy"
+#basechance 0
+#chanceinc "magic death 0.5"
+#chanceinc "taggedmagic death 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "corrupted"
+#basechance 0
+#chanceinc "magic death 0.5"
+#chanceinc "taggedmagic death 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "corruption"
+#basechance 0
+#chanceinc "magic death 0.5"
+#chanceinc "taggedmagic death 2"
+#tag "notprefix"
+#end
+
+- Nature
+
+#new
+#name "green"
+#basechance 0
+#chanceinc "magic nature 0.5"
+#chanceinc "taggedmagic nature 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "emerald"
+#basechance 0
+#chanceinc "magic nature 0.5"
+#chanceinc "taggedmagic nature 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "serpent"
+#basechance 0
+#chanceinc "magic nature 0.5"
+#chanceinc "taggedmagic nature 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "ancient"
+#basechance 0
+#chanceinc "magic nature 0.5"
+#chanceinc "taggedmagic nature 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "primordial"
+#basechance 0
+#chanceinc "magic nature 0.5"
+#chanceinc "taggedmagic nature 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "overgrown"
+#basechance 0
+#chanceinc "magic nature 0.5"
+#chanceinc "taggedmagic nature 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "blossoming"
+#basechance 0
+#chanceinc "magic nature 0.5"
+#chanceinc "taggedmagic nature 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "flower"
+#basechance 0
+#chanceinc "magic nature 0.5"
+#chanceinc "taggedmagic nature 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "dandellion"
+#basechance 0
+#chanceinc "magic nature 0.5"
+#chanceinc "taggedmagic nature 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "clover"
+#basechance 0
+#chanceinc "magic nature 0.5"
+#chanceinc "taggedmagic nature 2"
+#tag "notsuffix"
+#end
+
+
+#new
+#name "rhubarb"
+#basechance 0
+#chanceinc "magic nature 0.5"
+#chanceinc "taggedmagic nature 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "thyme"
+#basechance 0
+#chanceinc "magic nature 0.5"
+#chanceinc "taggedmagic nature 2"
+#tag "notsuffix"
+#end
+
+- Blood
+#new
+#name "tainted"
+#basechance 0
+#chanceinc "magic blood 0.5"
+#chanceinc "taggedmagic blood 2"
+#tag "notsuffix"
+#end
+
+
+#new
+#name "blood"
+#basechance 0
+#chanceinc "magic blood 0.5"
+#chanceinc "taggedmagic blood 2"
+#end
+
+#new
+#name "demonic"
+#basechance 0
+#chanceinc "magic blood 0.5"
+#chanceinc "taggedmagic blood 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "demon"
+#basechance 0
+#chanceinc "magic blood 0.5"
+#chanceinc "taggedmagic blood 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "hellish"
+#basechance 0
+#chanceinc "magic blood 0.5"
+#chanceinc "taggedmagic blood 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "hell"
+#basechance 0
+#chanceinc "magic blood 0.5"
+#chanceinc "taggedmagic blood 2"
+#end
+
+
+
+#new
+#name "acid"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic fire water 3"
+#chanceinc "taggedmagic fire water 15"
+#end
+
+#new
+#name "mud"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic earth water 3"
+#chanceinc "taggedmagic earth water 15"
+#end
+
+#new
+#name "dust"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic earth death 3"
+#chanceinc "taggedmagic earth death 15"
+#end
+
+#new
+#name "hellbent"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic blood fire 3"
+#chanceinc "taggedmagic blood fire 15"
+#end
+
+#new
+#name "radiant"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic fire astral 3"
+#chanceinc "taggedmagic fire astral 15"
+#chanceinc "personalcommand #awe 15"
+#end
+
+#new
+#name "devouring"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic earth nature 3"
+#chanceinc "taggedmagic earth nature 15"
+#end
+
+
+
+--- Crosspaths
+
+#new
+#name "inferno"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic blood fire 3"
+#chanceinc "taggedmagic blood fire 15"
+#end
+
+#new
+#name "steam"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic fire air 3"
+#chanceinc "taggedmagic fire air 15"
+#end
+
+
+
+#new
+#name "firstborn"
+#basechance 0
+#chanceinc "magic nature blood 3"
+#chanceinc "taggedmagic nature blood 15"
+#tag "notsuffix"
+#end
+
+#new
+#name "ancient"
+#basechance 0
+#chanceinc "magic nature blood 3"
+#chanceinc "taggedmagic nature blood 15"
+#tag "notsuffix"
+#end
+
+--- Other
+
+#new
+#name "summer"
+#basechance 0
+#chanceinc "personalcommand #summerpower 20"
+#end
+
+#new
+#name "spring"
+#basechance 0
+#chanceinc "personalcommand #springpower 20"
+#end
+
+#new
+#name "fall"
+#basechance 0
+#chanceinc "personalcommand #fallpower 20"
+#end
+
+#new
+#name "winter"
+#basechance 0
+#chanceinc "personalcommand #winterpower 20"
+#end
+
+#new
+#name "shadow"
+#basechance 0
+#chanceinc "personalcommand #stealthy 20"
+#tag "notsuffix"
+#end
+
+
+#new
+#name "night"
+#basechance 0
+#chanceinc "personalcommand #stealthy 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "unseen"
+#basechance 0
+#chanceinc "personalcommand #stealthy 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "translucent"
+#basechance 0
+#chanceinc "personalcommand #ethereal 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "elemental"
+#basechance 0
+#chanceinc "filter resistances 30"
+#chanceinc "filter minofelemental 40"
+#chanceinc "filter minoaelemental 40"
+#chanceinc "filter minowelemental 40"
+#chanceinc "filter minoeelemental 40"
+#tag "notsuffix"
+#end
+
+#new
+#name "elements"
+#basechance 0
+#chanceinc "filter resistances 20"
+#tag "notprefix"
+#end
+
+#new
+#name "radiant"
+#basechance 0
+#chanceinc "personalcommand #awe 10"
+#tag "notsuffix"
+#end
+
+#new
+#name "wolf"
+#basechance 0
+#chanceinc "filter werewolf 5"
+#tag "notsuffix"
+#end
+
+#new
+#name "accursed"
+#basechance 0
+#chanceinc "filter ghoul 5"
+#tag "notsuffix"
+#end
+
+#new
+#name "poison"
+#basechance 0
+#chanceinc "personalcommand #poisoncloud 15"
+#tag "notsuffix"
+#end
+
+#new
+#name "raging"
+#basechance 0
+#chanceinc "personalcommand #berserk 10"
+#tag "notsuffix"
+#end
+
+
+#new
+#name "primal"
+#basechance 0
+#chanceinc "personalcommand #berserk 10"
+#tag "notsuffix"
+#end
+
+
+#new
+#name "furious"
+#basechance 0
+#chanceinc "personalcommand #berserk 10"
+#tag "notsuffix"
+#end
+

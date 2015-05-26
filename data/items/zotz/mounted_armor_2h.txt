@@ -1,0 +1,166 @@
+--- Nekkid
+
+#newitem
+#name "nekkid"
+#gameid -1
+#armor
+#needs legs "nekkid leg"
+#enditem
+
+
+--- Leather
+
+#newitem
+#name "leather cuirass"
+#gameid 5
+#sprite /graphics/zotz/armor/leathercuirass_2h.png
+#recolormask /graphics/zotz/armor/armor_recolormask.png
+#armor
+#needs legs "nekkid leg"
+#enditem
+
+
+#newitem
+#name "leather hauberk"
+#gameid 10
+#sprite /graphics/zotz/armor/leatherhauberk_2h.png
+#recolormask /graphics/zotz/armor/armor_recolormask.png
+#armor
+#needs legs "nekkid leg"
+#enditem
+
+
+
+#newitem -- full leather
+#newitem
+#basechance 0.125
+#name "full leather"
+#gameid 15
+#sprite /graphics/zotz/armor/fullleather_2h.png
+#recolormask /graphics/zotz/armor/armor_recolormask.png
+#armor
+#needs legs "full leather leg"
+#enditem
+
+
+#newitem -- reinforced full leather (Mictlan armor)
+#basechance 0.1
+#name "reinforced leather"
+#gameid zotz_mictlanarmor
+#sprite /graphics/zotz/armor/mictlanarmor_2h.png
+#recolormask /graphics/zotz/armor/mictlanarmor_2h_recolormask.png
+#armor
+#needs legs "reinforced leather leg"
+#enditem
+
+
+--- Scale
+
+#newitem
+#basechance 0.5
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/zotz/armor/scalecuirass.png
+#recolormask /graphics/zotz/armor/armor_recolormask.png
+#armor
+#needs legs "nekkid leg"
+#enditem
+
+#newitem
+#basechance 0.5
+#name "scale cuirass with clothes"
+#gameid 7
+#sprite /graphics/zotz/armor/scalecuirass2_2h.png
+#recolormask /graphics/zotz/armor/scalecuirass2_recolormask.png
+#armor
+#needs legs "clothed scale leg"
+#enditem
+
+
+#newitem
+#basechance 0.125
+#name "scale hauberk"
+#gameid 12
+#sprite /graphics/zotz/armor/scalehauberk_2h.png
+#recolormask /graphics/zotz/armor/armor_recolormask.png
+#armor
+#needs legs "nekkid leg"
+#enditem
+
+#newitem
+#basechance 0.125
+#name "scale hauberk with clothes"
+#gameid 12
+#sprite /graphics/zotz/armor/scalehauberk2_2h.png
+#recolormask /graphics/zotz/armor/scalehauberk2_2h_recolormask.png
+#armor
+#needs legs "clothed scale leg"
+#enditem
+
+
+
+#newitem -- full scale
+#basechance 0.030625
+#name "full scale"
+#gameid 17
+#sprite /graphics/zotz/armor/fullscale_2h.png
+#recolormask /graphics/zotz/armor/armor_recolormask.png
+#armor
+#needs legs "full scale leg"
+#enditem
+
+#newitem -- full scale
+#basechance 0.030625
+#name "full scale with clothes"
+#gameid 17
+#sprite /graphics/zotz/armor/fullscale2_2h.png
+#recolormask /graphics/zotz/armor/fullscale2_2h_recolormask.png
+#armor
+#needs legs "clothed full scale leg"
+#enditem
+
+-- Low probability sacred armors
+
+#newitem
+#basechance 0.030625
+#name "golden cuirass"
+#gameid zotz_goldcuirass
+#sprite /graphics/zotz/armor/suncuirass_2h.png
+#chanceinc "magic fire *2"
+#theme "sacred"
+#armor
+#needs legs "nekkid leg"
+#enditem
+
+#newitem
+#basechance 0.0153125
+#name "golden armor"
+#gameid zotz_goldarmor
+#sprite /graphics/zotz/armor/sunarmor_2h.png
+#chanceinc "magic fire *2"
+#theme "sacred"
+#armor
+#needs legs "golden leg"
+#enditem
+
+#newitem
+#basechance 0.030625
+#name "obsidian cuirass"
+#gameid 206
+#sprite /graphics/zotz/armor/obsidiancuirass_2h.png
+#chanceinc "magic death *2"
+#theme "sacred"
+#armor
+#needs legs "nekkid leg"
+#enditem
+
+#newitem
+#basechance 0.0153125
+#name "obsidian armor"
+#gameid zotz_obsarmor
+#sprite /graphics/zotz/armor/obsidianarmor_2h.png
+#chanceinc "magic death *2"
+#theme "sacred"
+#armor
+#needs legs "obsidian leg"
+#enditem

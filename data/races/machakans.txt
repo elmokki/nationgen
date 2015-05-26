@@ -1,0 +1,29 @@
+#newrace
+#name "Human (black)"
+#visiblename "Human"
+#basechance 0.375
+#all_troops_elite
+
+#pose machakantroops
+#pose machakanmages
+#pose pygmies
+#pose colossi
+
+#longsyllables /data/names/nations/machakan/longsyllables.txt
+#shortsyllables /data/names/nations/machakan/shortsyllables.txt
+#suffixes /data/names/nations/machakan/suffixes.txt
+
+#tag "preferredmount horse"
+#unitcommand "#nametype 126"
+#unitcommand "#ap 13"
+#unitcommand "#enc 2"
+#unitcommand "#forestsurvival"
+#unitcommand "#mapmove 3"
+#nationcommand "#idealcold -1"
+
+#chanceinc "race lizard *3"
+#chanceinc "primaryrace Sobek *3"
+
+#mapmovepenaltyenc 3
+#mapmovepenaltyamount 2
+#endrace

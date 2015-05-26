@@ -1,0 +1,137 @@
+
+--- Leather
+
+
+--- Chain Mail
+
+#newitem
+#name "chain hauberk"
+#gameid 13
+#sprite /graphics/amazon/armor/standard/chainhauberk.png
+#recolormask /graphics/amazon/armor/standard/mailhauberk_recolormask.png
+#basechance 0.5
+#armor
+#enditem
+
+#newitem
+#name "chain hauberk sleeveless"
+#gameid 13
+#basechance 0.5
+#sprite /graphics/amazon/armor/standard/chainhauberk2.png
+#recolormask /graphics/amazon/armor/standard/mailhauberk_recolormask.png
+#armor
+#enditem
+
+#newitem -- full chain
+#name "full chain"
+#gameid 18
+#sprite /graphics/amazon/armor/standard/chainhauberk.png
+#recolormask /graphics/amazon/armor/standard/mailhauberk_recolormask.png
+#armor
+#needs legs chainpants_greaves
+#theme "advanced"
+#tag "name mounted knight"
+#enditem
+
+
+--- Scale
+
+#newitem
+#name "scale hauberk"
+#gameid 12
+#sprite /graphics/amazon/armor/standard/scalehauberk.png
+#recolormask /graphics/amazon/armor/standard/mailhauberk_recolormask.png
+#armor
+#basechance 0.5
+#enditem
+
+#newitem -- full scale
+#name "full scale"
+#gameid 17
+#sprite /graphics/amazon/armor/standard/scalehauberk.png
+#recolormask /graphics/amazon/armor/standard/mailhauberk_recolormask.png
+#armor
+#theme "advanced"
+#needs legs chainpants_greaves
+#enditem
+
+#newitem
+#name "bronze scale hauberk"
+#gameid 136
+#sprite /graphics/amazon/armor/standard/scalehauberk_bronze.png
+#recolormask /graphics/amazon/armor/standard/mailhauberk_recolormask.png
+#armor
+#basechance 0.25
+#enditem
+
+#newitem -- bronze "full scale"
+#name "bronze scale hauberk + greaves"
+#gameid 136
+#sprite /graphics/amazon/armor/standard/scalehauberk_bronze.png
+#recolormask /graphics/amazon/armor/standard/mailhauberk_recolormask.png
+#armor
+#basechance 0.25
+#needs legs chainpants_greaves_bronze
+#enditem
+
+
+--- Plate
+
+
+#newitem
+#name "plate cuirass"
+#gameid 9
+#sprite /graphics/amazon/armor/standard/platecuirass.png
+#armor
+#theme "advanced"
+#enditem
+
+#newitem
+#name "plate hauberk"
+#gameid 14
+#sprite /graphics/amazon/armor/standard/platehauberk.png
+#armor
+#theme "advanced"
+#tag "name mounted knight"
+#enditem
+
+#newitem -- full plate
+#name "full plate"
+#gameid 19
+#sprite /graphics/amazon/armor/standard/fullplate.png
+#armor
+#theme "advanced"
+#tag "name mounted knight"
+#enditem
+
+--- Bronze Plate
+
+#newitem
+#name "bronze plate hauberk"
+#gameid 101
+#sprite /graphics/amazon/armor/standard/platehauberk_bronze.png
+#armor
+#basechance 0.25
+#tag "name mounted knight"
+#enditem
+
+#newitem -- bronze "full plate"
+#name "bronze plate hauberk + greaves"
+#gameid 101
+#sprite /graphics/amazon/armor/standard/fullplate_bronze.png
+#armor
+#basechance 0.25
+#tag "name mounted knight"
+#enditem
+
+
+--- Ring
+
+#newitem -- full ring
+#name "full ring"
+#gameid 16
+#sprite /graphics/amazon/armor/standard/ringhauberk.png
+#armor
+#needs legs leatherpants
+#enditem
+

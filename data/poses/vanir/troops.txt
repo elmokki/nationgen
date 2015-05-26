@@ -1,0 +1,73 @@
+
+-------- Normal
+#newpose
+#renderorder "shadow cloakb mount basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands beard hair helmet offhanda overlay extra1 extra2 extra3"
+#role "infantry"
+#role "scout"
+#load basesprite /data/items/nordic/normal/bases.txt
+#load shadow /data/items/nordic/generic/shadow.txt
+
+#load hands /data/items/human/normal/humanhands.txt 0 -3
+
+#load cloakf /data/items/human/normal/humancloakf.txt 0 -3
+#load cloakb /data/items/human/normal/humancloakb.txt 0 -3
+
+#load beard /data/items/nordic/generic/beard.txt
+#load shirt /data/items/nordic/normal/shirt.txt
+#load hair /data/items/nordic/generic/hair.txt
+
+#load armor /data/items/nordic/normal/armor.txt
+#load helmet /data/items/nordic/generic/helmet.txt
+#load legs /data/items/nordic/generic/legs.txt
+
+#load weapon /data/items/nordic/normal/humanweapon.txt 0 -3
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt 0 -3
+
+#load offhand /data/items/nordic/normal/humanoffhand.txt 0 -3
+#load offhand /data/items/nordic/normal/shields.txt 0 -3
+
+#load weapon /data/items/human/sacredstuff/sacredweapon.txt 0 -3
+
+#generateitem 1 hair
+#generateitem 1 beard
+#endpose
+
+
+--- Mounted
+#newpose
+#renderorder "shadow cloakb mount basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands beard hair helmet offhanda overlay extra1 extra2 extra3"
+#role "mounted"
+#load basesprite /data/items/nordic/normal/bases.txt
+
+#load hands /data/items/human/normal/humanhands.txt 0 -3
+
+#load cloakf /data/items/human/normal/humancloakf.txt 0 -3
+#load cloakb /data/items/human/normal/humancloakb.txt 0 -3
+
+#load beard /data/items/nordic/generic/beard.txt
+#load shirt /data/items/nordic/normal/shirt.txt
+#load hair /data/items/nordic/generic/hair.txt
+
+#load armor /data/items/nordic/normal/armor.txt
+#load helmet /data/items/nordic/generic/helmet.txt
+#load mount /data/items/nordic/mounted/mounts.txt 5 -13
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+
+#load weapon /data/items/nordic/mounted/humanweapon.txt 0 -3
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt 0 -3
+
+#load weapon /data/items/human/human_mounted/cavalryweapons.txt 0 -3
+
+#load bonusweapon /data/items/human/human_mounted/lance.txt 0 -3
+
+
+#load offhand /data/items/nordic/normal/shields.txt 0 -3
+
+#load legs /data/items/human/human_mounted/humanlegs.txt 0 -1
+
+#load weapon /data/items/human/sacredstuff/sacredweapon.txt 0 -3
+#load bonusweapon /data/items/human/sacredstuff/sacredlance.txt 0 -3
+
+#generateitem 1 hair
+#generateitem 1 beard
+#endpose

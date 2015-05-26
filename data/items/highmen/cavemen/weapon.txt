@@ -1,0 +1,187 @@
+-- Primative weapons
+
+#newitem
+#id club
+#gameid 252
+#sprite /graphics/highmen/weapons/club.png
+#offsetx -2
+#offsety 3
+#theme "primitive"
+#tag "name infantry clubber"
+#tag "name infantry tribesman"
+#tag "name commander chieftan"
+#tag "name commander champion"
+#basechance 1
+#enditem
+
+#newitem
+#id spiked_club
+#gameid 593
+#sprite /graphics/highmen/weapons/spikedclub.png
+#offsetx -2
+#offsety 3
+#theme "primitive"
+#tag "name infantry clubber"
+#tag "name infantry tribesman"
+#tag "name commander chieftan"
+#tag "name commander champion"
+#basechance 1
+#enditem
+
+#newitem
+#id great_club
+#gameid 165
+#sprite /graphics/highmen/weapons/greatclub.png
+#offsetx 0
+#offsety 3
+#needs hands hands_2h
+#theme "primitive"
+#tag "name infantry warrior"
+#tag "name infantry tribesman"
+#tag "name commander chieftan"
+#basechance 1
+#enditem
+
+#newitem
+#id stone_spear
+#gameid 373
+#sprite /graphics/highmen/weapons/spear.png
+#offsetx -2
+#offsety 2
+#needs hands hands_2h
+#theme "primitive"
+#tag "name infantry hunter"
+#tag "name commander chieftan"
+#tag "name commander champion"
+#basechance 1
+#enditem
+
+#newitem
+#id stone_hatchet
+#gameid 253
+#sprite /graphics/highmen/weapons/axe.png
+#offsetx -3
+#offsety 3
+#theme "primitive"
+#tag "name infantry warrior"
+#tag "name infantry tribesman"
+#tag "name commander chieftan"
+#tag "name commander champion"
+#basechance 1
+#enditem
+
+#newitem
+#id rocks
+#gameid 553
+#sprite /graphics/highmen/weapons/rock.png
+#offsetx -1
+#offsety 0
+#theme "primitive"
+#tag "name infantry tribesman"
+#maxprot 7
+#needs offhand thrown_rocks
+#basechance 1
+#enditem
+
+-- "Advanced" weapons
+
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/highmen/weapons/axe_bronze.png
+#offsetx -3
+#offsety 3
+#theme "advanced"
+#tag "name infantry axeman"
+#tag "name infantry warrior"
+#tag "name commander champion"
+#tag "name commander warchief"
+#basechance 0.1
+#enditem
+
+#newitem
+#id greataxe
+#gameid 18
+#sprite /graphics/highmen/weapons/battleaxe_bronze.png
+#offsetx -2
+#offsety 2
+#needs hands hands_2h
+#theme "advanced"
+#tag "name infantry axeman"
+#tag "name infantry warrior"
+#tag "name commander champion"
+#tag "name commander warchief"
+#basechance 0.1
+#enditem
+
+#newitem
+#id hammer
+#gameid 13
+#sprite /graphics/highmen/weapons/hammer_bronze.png
+#offsetx -3
+#offsety 3
+#theme "advanced"
+#tag "name infantry hammerer"
+#tag "name infantry warrior"
+#tag "name commander champion"
+#tag "name commander warchief"
+#basechance 0.1
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/highmen/weapons/mace_bronze.png
+#offsetx -3
+#offsety 3
+#theme "advanced"
+#tag "name infantry maceman"
+#tag "name infantry warrior"
+#tag "name commander champion"
+#tag "name commander warchief"
+#basechance 0.1
+#enditem
+
+#newitem
+#id maul
+#gameid 14
+#sprite /graphics/highmen/weapons/maul.png
+#offsetx -2
+#offsety 2
+#needs hands hands_2h
+#theme "advanced"
+#tag "name infantry hammerer"
+#tag "name infantry warrior"
+#tag "name commander champion"
+#tag "name commander warchief"
+#basechance 0.2
+#enditem
+
+#newitem
+#id spear
+#gameid 1
+#sprite /graphics/highmen/weapons/spear.png
+#offsetx -2
+#offsety 2
+#needs hands hands_2h
+#theme "advanced"
+#tag "name infantry hunter"
+#tag "name commander chieftan"
+#tag "name commander champion"
+#basechance 0.2
+#enditem
+
+#newitem
+#id quarterstaff
+#gameid 7
+#sprite /graphics/highmen/weapons/quarterstaff.png
+#offsetx -2
+#offsety 2
+#needs hands hands_2h
+#theme "advanced"
+#tag "name infantry warrior"
+#tag "name commander champion"
+#tag "name commander warchief"
+#basechance 0.2
+#maxprot 10
+#enditem

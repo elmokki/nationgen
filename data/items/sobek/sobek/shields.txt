@@ -1,0 +1,86 @@
+--- Shields
+
+-- "Sobek" infantry shields
+
+#newitem
+#id sobek_shield
+#gameid 2
+#sprite /graphics/sobek/shields/sobek_shield.png
+#armor
+#enditem
+
+#newitem
+#id sobek_shield_dark
+#gameid 2
+#sprite /graphics/sobek/shields/sobek_shield.png
+#recolormask /graphics/sobek/shields/sobek_shield_recolormask1.png
+#armor
+#enditem
+
+#newitem
+#id sobek_shield_light
+#gameid 2
+#sprite /graphics/sobek/shields/sobek_shield.png
+#recolormask /graphics/sobek/shields/sobek_shield_recolormask2.png
+#armor
+#enditem
+
+#newitem
+#id sobek_shield_fringed
+#gameid 2
+#sprite /graphics/sobek/shields/sobek_shield.png
+#recolormask /graphics/sobek/shields/sobek_shield_recolormask3.png
+#armor
+#enditem
+
+-- Standard shields
+
+#newitem
+#id kite3
+#gameid 3
+#sprite /graphics/offhand/standard/kite3.png
+#armor
+#recolormask /graphics/offhand/standard/kite3_recolormask.png
+#offsetx -4
+#offsety -11
+#theme "advanced"
+#enditem
+
+#newitem
+#id shield3
+#gameid 2
+#sprite /graphics/offhand/standard/shield3.png
+#offsetx -3
+#offsety -9
+#armor
+#enditem
+
+#newitem
+#id shield4
+#gameid 2
+#sprite /graphics/offhand/standard/shield4.png
+#offsetx -2
+#offsety -11
+#armor
+#enditem
+
+#newitem
+#id shield4yellow
+#gameid 2
+#sprite /graphics/offhand/standard/shield4-yellow.png
+#offsetx -2
+#offsety -11
+#armor
+#enditem
+
+-- "Amazon" hoplon
+
+#newitem
+#id hoplon2_burnished
+#basechance 0
+#gameid 2
+#sprite /graphics/amazon/shields/hoplon2_burnished.png
+#offsetx -5
+#offsety -10
+#armor
+#enditem

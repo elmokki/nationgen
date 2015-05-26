@@ -1,0 +1,221 @@
+
+--- Leather
+
+#newitem
+#id "leather cuirass"
+#gameid 5
+#sprite /graphics/amazon/armor/standard/leathercuirass.png
+#armor
+#enditem
+
+#newitem
+#id "leather hauberk"
+#gameid 10
+#sprite /graphics/amazon/armor/standard/leatherhauberk.png
+#armor
+#enditem
+
+#newitem
+#id "leather hauberk - long"
+#gameid 10
+#sprite /graphics/amazon/armor/standard/leatherhauberk2.png
+#armor
+#enditem
+
+
+#newitem -- full leather
+#id "full leather"
+#gameid 15
+#sprite /graphics/amazon/armor/standard/leatherhauberk.png
+#needs legs mounted_leatherpants
+#armor
+#enditem
+
+
+--- Chain Mail
+
+
+#newitem
+#id "chain cuirass"
+#gameid 8
+#sprite /graphics/amazon/armor/standard/chaincuirass.png
+#armor
+#enditem
+
+
+#newitem
+#id "chain hauberk"
+#gameid 13
+#sprite /graphics/amazon/armor/standard/chainhauberk.png
+#armor
+#enditem
+
+
+#newitem
+#id "chain hauberk - sleeveless"
+#gameid 13
+#sprite /graphics/amazon/armor/standard/chainhauberk2.png
+#armor
+#enditem
+
+
+#newitem -- full chain
+#id "full chain"
+#gameid 18
+#sprite /graphics/amazon/armor/standard/chainhauberk.png
+#armor
+#needs legs mounted_greaves
+#enditem
+
+
+--- Scale
+
+#newitem
+#id "scale cuirass"
+#gameid 7
+#sprite /graphics/amazon/armor/standard/scalecuirass.png
+#armor
+#enditem
+
+
+#newitem
+#id "scale hauberk"
+#gameid 12
+#sprite /graphics/amazon/armor/standard/scalehauberk.png
+#armor
+#enditem
+
+
+#newitem -- full scale
+#id "full scale"
+#gameid 17
+#sprite /graphics/amazon/armor/standard/scalehauberk.png
+#armor
+#needs legs mounted_greaves
+#enditem
+
+
+--- Bronze Scale
+
+#newitem
+#id "bronze scale cuirass"
+#gameid 142
+#sprite /graphics/amazon/armor/standard/scalecuirass_bronze.png
+#armor
+#basechance 0.5
+#enditem
+
+
+#newitem
+#id "bronze scale hauberk"
+#gameid 136
+#sprite /graphics/amazon/armor/standard/scalehauberk_bronze.png
+#armor
+#basechance 0.25
+#enditem
+
+
+#newitem -- bronze "full scale"
+#id "bronze scale hauberk + greaves"
+#gameid 136
+#sprite /graphics/amazon/armor/standard/scalehauberk_bronze.png
+#armor
+#basechance 0.25
+#needs legs mounted_greaves_bronze
+#enditem
+
+--- Plate
+
+
+#newitem
+#id "plate cuirass"
+#gameid 9
+#sprite /graphics/amazon/armor/standard/platecuirass.png
+#armor
+#enditem
+
+
+#newitem
+#id "plate hauberk"
+#gameid 14
+#sprite /graphics/amazon/armor/mounted/platehauberk.png
+#armor
+#enditem
+
+
+#newitem -- full plate
+#id "full plate"
+#gameid 19
+#sprite /graphics/amazon/armor/mounted/fullplate.png
+#armor
+#enditem
+
+
+--- Bronze Plate
+
+
+#newitem
+#id "bronze plate cuirass"
+#gameid 100
+#sprite /graphics/amazon/armor/standard/platecuirass_bronze.png
+#armor
+#basechance 0.5
+#enditem
+
+
+#newitem
+#id "bronze plate hauberk"
+#gameid 101
+#sprite /graphics/amazon/armor/mounted/platehauberk_bronze.png
+#armor
+#basechance 0.25
+#enditem
+
+
+#newitem -- bronze "full plate"
+#id "bronze plate hauberk + greaves"
+#gameid 101
+#sprite /graphics/amazon/armor/mounted/fullplate_bronze.png
+#armor
+#basechance 0.25
+#enditem
+
+--- Ring
+
+#newitem
+#id "ring cuirass"
+#gameid 6
+#sprite /graphics/amazon/armor/standard/ringcuirass.png
+#armor
+#enditem
+
+
+#newitem
+#id "ring hauberk"
+#gameid 11
+#sprite /graphics/amazon/armor/standard/ringhauberk.png
+#armor
+#enditem
+
+
+#newitem
+#id "ring hauberk - long" 
+#gameid 11
+#sprite /graphics/amazon/armor/standard/ringhauberk2.png
+#armor
+#enditem
+
+
+#newitem -- full ring
+#id "full ring"
+#gameid 16
+#sprite /graphics/amazon/armor/standard/ringhauberk.png
+#armor
+#needs legs mounted_ringpants
+#enditem
+
+--- 20 and 21 free
+
+--- 22 Naked
+
+

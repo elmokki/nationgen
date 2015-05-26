@@ -1,0 +1,137 @@
+
+
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/weapon/standard/axe.png
+#theme "primitive"
+#tag "name infantry axeman"
+#tag "name commander warlord"
+#tag "name commander warchief"
+#basechance 0.5
+#enditem
+
+#newitem
+#id broadsword
+#gameid 8
+#basehance 0.05
+#sprite /graphics/weapon/standard/broadsword.png
+#tag "name infantry swordsman"
+#tag "name commander captain"
+#tag "name commander swordsmaster"
+#enditem
+
+#newitem
+#id flail
+#gameid 16
+#sprite /graphics/weapon/standard/flail.png
+#basechance 0.25
+#enditem
+
+#newitem
+#id greataxe
+#gameid 18
+#sprite /graphics/weapon/standard/greataxe.png
+#theme "primitive"
+#tag "name infantry axeman"
+#tag "name commander warlord"
+#tag "name commander warchief"
+#enditem
+
+
+#newitem
+#id hammer
+#gameid 13
+#sprite /graphics/weapon/standard/hammer.png
+#basechance 0.25
+#enditem
+
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/weapon/standard/mace.png
+#theme "primitive"
+#tag "name infantry maceman"
+#maxprot 15
+#enditem
+
+#newitem
+#id maul
+#gameid 14
+#sprite /graphics/weapon/standard/maul.png
+#enditem
+
+#newitem
+#id morningstar
+#gameid 15
+#sprite /graphics/weapon/standard/morningstar.png
+#basehance 0.1
+#enditem
+
+#newitem
+#id shortsword
+#gameid 6
+#sprite /graphics/weapon/standard/shortsword.png
+#tag "name commander captain"
+#basehance 0.2
+#enditem
+
+#newitem
+#id spear
+#gameid 1
+#basechance 3
+#sprite /graphics/weapon/standard/spear.png
+#tag "name infantry spearman"
+#eliteversion elitespear
+#enditem
+
+#newitem
+#id elitespear
+#gameid 1
+#sprite /graphics/machakans/weapon/spear_elite.png
+#recolormask /graphics/machakans/weapon/spear_elite_recolormask.png
+#tag "name infantry spearman"
+#elite
+#enditem
+
+#newitem
+#id trident
+#gameid 3
+#sprite /graphics/weapon/standard/trident.png
+#tag "prefix trident"
+#basechance 0.0125
+#enditem
+
+
+#newitem
+#id quarterstaff
+#gameid 7
+#sprite /graphics/weapon/standard/quarterstaff.png
+#basechance 0.05
+#maxprot 10
+#enditem
+
+#newitem
+#id machakanspear
+#gameid 315
+#sprite /graphics/machakans/weapon/machakanspear.png
+#tag "name infantry spearman"
+#tag "name commander captain"
+#elite
+#eliteversion elitemachakanspear
+#basechance 6
+#enditem
+
+
+#newitem
+#basechance 6
+#id elitemachakanspear
+#gameid 315
+#sprite /graphics/machakans/weapon/machakanspear_elite.png
+#recolormask /graphics/machakans/weapon/machakanspear_elite_recolormask.png
+#tag "name infantry spearman"
+#tag "name commander captain"
+#elite
+#eliteversion elitemachakanspear
+#enditem

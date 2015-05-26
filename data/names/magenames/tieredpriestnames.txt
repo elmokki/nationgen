@@ -1,0 +1,309 @@
+#new
+#name monk
+#rank 1
+#basechance 1
+#commandvariant #female nun
+#end
+
+#new
+#name hermit
+#rank 1
+#basechance 0.5
+#commandvariant #female anchoress
+#end
+
+#new
+#name brother
+#rank 1
+#basechance 1
+#commandvariant #female sister
+#end
+
+#new
+#name attendant
+#rank 1
+#basechance 0
+#end
+
+#new
+#name servitor
+#rank 1
+#basechance 1
+#commandvariant #female handmaiden
+#end
+
+#new
+#name servant
+#rank 1
+#basechance 1
+#end
+
+#new
+#name follower
+#rank 1
+#basechance 1
+#end
+
+#new
+#name initiate
+#rank 1
+#basechance 1
+#end
+
+#new
+#name neophyte
+#rank 1
+#basechance 1
+#end
+
+#new
+#name novice
+#rank 1
+#basechance 1
+#end
+
+#new
+#name missionary
+#rank 1
+#basechance 1
+#end
+
+#new
+#name pilgrim
+#rank 1
+#basechance 1
+#end
+
+#new
+#name acolyte
+#rank 1
+#basechance 1
+#end
+
+#new
+#name proselyte
+#rank 1
+#basechance 1
+#end
+
+#new
+#name votary
+#rank 1
+#basechance 1
+#end
+
+#new
+#name deacon
+#rank 1
+#basechance 1
+#commandvariant #female deaconess
+#end
+
+#new
+#name priest
+#rank 2
+#basechance 1
+#commandvariant #female priestess
+#end
+
+#new
+#name priest
+#rank 2
+#basechance 1
+#commandvariant #female priestess
+#end
+
+#new
+#name disciple
+#rank 2
+#basechance 1
+#end
+
+#new
+#name follower
+#rank 2
+#basechance 1
+#end
+
+#new
+#name rector
+#rank 2
+#basechance 1
+#end
+
+#new
+#name "ceremonial master"
+#rank 2
+#basechance 1
+#chanceinc "personalcommand #female *0"
+#commandvariant #female celebrant
+#end
+
+#new
+#name celebrant
+#rank 2
+#basechance 0.5
+#end
+
+#new
+#name chaplain
+#rank 2
+#basechance 1
+#end
+
+#new
+#name cleric
+#rank 2
+#basechance 1
+#end
+
+#new
+#name bishop
+#rank 2
+#basechance 1
+#end
+
+#new
+#name abbott
+#rank 2
+#basechance 1
+#commandvariant #female abbess
+#end
+
+#new
+#name prior
+#rank 2
+#basechance 1
+#end
+
+#new
+#name vicar
+#rank 2
+#basechance 1
+#end
+
+#new
+#name anointed
+#rank 2
+#basechance 1
+#end
+
+#new
+#name exarch
+#rank 3
+#basechance 1
+#end
+
+#new
+#name anathemant
+#rank 3
+#basechance 1
+#end
+
+#new
+#name cardinal
+#rank 3
+#basechance 1
+#end
+
+#new
+#name "arch bishop"
+#rank 3
+#basechance 1
+#end
+
+#new
+#name "high priest"
+#rank 3
+#basechance 1
+#commandvariant #female "high priestess"
+#end
+
+#new
+#name primate
+#rank 3
+#basechance 0.5
+#end
+
+#new
+#name patron
+#rank 3
+#basechance 0.5
+#commandvariant #female matron
+#end
+
+--- Racial priest names ---
+
+--- common T1 racial names
+#new  
+#name "acolyte"
+#rank 1
+#basechance 12
+#racevariant "Human (Amazon)" "sacred maiden"
+#racevariant "Agarthan" attendant
+#racevariant "Ape" brahmin
+#racevariant "Van" gode
+#end
+
+--- uncommon T1 racial names
+#new
+#name "acolyte"
+#rank 1
+#basechance 4
+#racevariant "Human (Amazon)" "sacred maiden"
+#racevariant "Atlantian" consort
+#racevariant "Fomorian" druid
+#racevariant "Lizard" scion
+#racevariant "Van" gode
+#racevariant "Ape" yogi
+#end
+
+--- common T2 racial names
+#new  
+#name "priest"
+#rank 2
+#basechance 12
+#racevariant "Fomorian" druid
+#racevariant "Lizard" prince
+#racevariant "Van" jarl
+#racevariant "Ape" guru
+#commandvariant #female priestess
+#end
+
+--- uncommon T2 racial names
+#new
+#name "priest"
+#rank 2
+#basechance 4
+#racevariant "Abysian" anathemant
+#racevariant "Agarthan" attendant
+#racevariant "Lizard" heir
+#racevariant "Van" gode
+#racevariant "Ape" brahmin
+#commandvariant #female priestess
+#end
+
+--- common T3 racial names
+#new  
+#name "high priest"
+#rank 3
+#basechance 9
+#racevariant "Abysian" anathemant
+#racevariant "Agarthan" oracle
+#racevariant "Lizard" king
+#racevariant "Ape" rishi
+#commandvariant #female "high priestess"
+#end
+
+--- uncommon T3 racial names
+#new
+#name "high priest"
+#rank 3
+#basechance 3
+#racevariant "Abysian" anathemant
+#racevariant "Agarthan" oracle
+#racevariant "Lizard" king
+#racevariant "Human (black)" king
+#racevariant "Ape" guru
+#commandvariant #female "high priestess"
+#end

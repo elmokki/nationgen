@@ -1,0 +1,203 @@
+
+-------- normal (Bronze)
+
+#newpose
+#basechance 0.125
+#role "infantry"
+#role "scout"
+#load basesprite /data/items/agarthan/generic/bases.txt
+#load shadow /data/items/agarthan/generic/shadow.txt
+#load hands /data/items/agarthan/generic/hands.txt
+#load legs /data/items/agarthan/generic/legs.txt
+
+#load armor /data/items/agarthan/normal_bronze/armor.txt
+#load helmet /data/items/agarthan/normal_bronze/helmets.txt
+#load offhand /data/items/agarthan/normal_bronze/shields.txt
+
+#load weapon /data/items/agarthan/generic/weapons.txt
+#load bonusweapon /data/items/agarthan/generic/bonusweapons.txt
+
+#load cloakf /data/items/agarthan/generic/cloakf.txt
+#load cloakb /data/items/agarthan/generic/cloakb.txt
+
+#endpose
+
+-------- normal (Steel)
+
+#newpose
+#basechance 0.125
+#role "infantry"
+#role "sacred"
+#load basesprite /data/items/agarthan/generic/bases.txt
+#load shadow /data/items/agarthan/generic/shadow.txt
+#load hands /data/items/agarthan/generic/hands.txt
+#load legs /data/items/agarthan/generic/legs.txt
+
+#load armor /data/items/agarthan/normal_steel/armor.txt
+#load helmet /data/items/agarthan/normal_steel/helmets.txt
+#load offhand /data/items/agarthan/normal_steel/shields.txt
+
+#load weapon /data/items/agarthan/generic/weapons.txt
+#load bonusweapon /data/items/agarthan/generic/bonusweapons.txt
+
+#load cloakf /data/items/agarthan/generic/cloakf.txt
+#load cloakb /data/items/agarthan/generic/cloakb.txt
+#endpose
+
+
+------ Ranged (bronze)
+
+#newpose
+#basechance 0.125
+#role "ranged"
+#renderorder "shadow cloakb mount bag basesprite shirt legs armor strap cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+#load basesprite /data/items/agarthan/generic/rangedbases.txt
+#load shadow /data/items/agarthan/generic/shadow.txt
+#load hands /data/items/agarthan/generic/hands.txt
+#load legs /data/items/agarthan/generic/legs.txt
+
+#load armor /data/items/agarthan/normal_bronze/armor.txt
+#load helmet /data/items/agarthan/normal_bronze/helmets.txt
+
+#load weapon /data/items/agarthan/generic/rangedweapons.txt
+#load bag /data/items/agarthan/generic/bags.txt
+#load strap /data/items/agarthan/generic/straps.txt
+
+#load bonusweapon /data/items/agarthan/generic/rangedbonusweapons.txt
+
+#load cloakf /data/items/agarthan/generic/cloakf.txt
+#load cloakb /data/items/agarthan/generic/cloakb.txt
+
+#generateitem 1 bonusweapon
+
+#endpose
+
+------ Ranged (steel)
+
+#newpose
+#basechance 0.125
+#role "sacred"
+#role "ranged"
+#renderorder "shadow cloakb mount bag basesprite shirt legs armor strap cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+#load basesprite /data/items/agarthan/generic/rangedbases.txt
+#load shadow /data/items/agarthan/generic/shadow.txt
+#load hands /data/items/agarthan/generic/hands.txt
+#load legs /data/items/agarthan/generic/legs.txt
+
+#load armor /data/items/agarthan/normal_steel/armor.txt
+#load helmet /data/items/agarthan/normal_steel/helmets.txt
+
+#load weapon /data/items/agarthan/generic/rangedweapons.txt
+#load bag /data/items/agarthan/generic/bags.txt
+#load strap /data/items/agarthan/generic/straps.txt
+
+#load bonusweapon /data/items/agarthan/generic/rangedbonusweapons.txt
+
+#load cloakf /data/items/agarthan/generic/cloakf.txt
+#load cloakb /data/items/agarthan/generic/cloakb.txt
+
+#generateitem 1 bonusweapon
+
+#endpose
+
+
+
+-------- sacred (Bronze)
+
+#newpose
+#role "sacred infantry"
+#load basesprite /data/items/agarthan/generic_big/bases.txt
+#load shadow /data/items/agarthan/generic_big/shadow.txt
+#load hands /data/items/agarthan/generic_big/hands.txt
+#load legs /data/items/agarthan/generic_big/legs.txt
+
+#load armor /data/items/agarthan/generic_big/armor.txt
+#load helmet /data/items/agarthan/generic_big/helmets.txt
+#load offhand /data/items/agarthan/generic_big/shields.txt
+
+#load weapon /data/items/agarthan/generic_big/weapons.txt
+
+#load cloakf /data/items/agarthan/generic_big/cloakf.txt
+#load cloakb /data/items/agarthan/generic_big/cloakb.txt
+
+
+
+#endpose
+
+
+------ Sacred ranged (bronze)
+
+#newpose
+#role "sacred ranged"
+#renderorder "shadow cloakb mount bag basesprite shirt legs armor strap cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+#load basesprite /data/items/agarthan/generic_big/rangedbases.txt
+#load shadow /data/items/agarthan/generic_big/shadow.txt
+#load hands /data/items/agarthan/generic_big/hands.txt
+#load legs /data/items/agarthan/generic_big/legs.txt
+
+#load armor /data/items/agarthan/generic_big/armor.txt
+#load helmet /data/items/agarthan/generic_big/helmets.txt
+
+#load weapon /data/items/agarthan/generic_big/rangedweapons.txt
+#load offhand /data/items/agarthan/generic_big/rangedoffhand.txt
+#load bag /data/items/agarthan/generic_big/bags.txt
+#load strap /data/items/agarthan/generic_big/straps.txt
+
+#load bonusweapon /data/items/agarthan/generic_big/rangedbonusweapons.txt
+
+#load cloakf /data/items/agarthan/generic_big/cloakf.txt
+#load cloakb /data/items/agarthan/generic_big/cloakb.txt
+
+#generateitem 1 bonusweapon
+
+
+#endpose
+
+-------------- Mounted
+
+
+-------- normal (Bronze)
+
+#newpose
+#basechance 0.1
+#role "mounted"
+#load basesprite /data/items/agarthan/generic/bases.txt
+#load hands /data/items/agarthan/generic/hands.txt
+#load legs /data/items/agarthan/mounted/legs.txt
+
+#load armor /data/items/agarthan/normal_bronze/armor.txt
+#load helmet /data/items/agarthan/normal_bronze/helmets.txt
+#load offhand /data/items/agarthan/normal_bronze/shields.txt
+
+#load mount /data/items/agarthan/mounted/mounts.txt
+
+#load weapon /data/items/agarthan/generic/weapons.txt
+#load bonusweapon /data/items/agarthan/generic/bonusweapons.txt
+
+#load cloakf /data/items/agarthan/generic/cloakf.txt
+#load cloakb /data/items/agarthan/generic/cloakb.txt
+
+#endpose
+
+
+-------- normal (Steel)
+
+#newpose
+#basechance 0.1
+#role "mounted"
+#load basesprite /data/items/agarthan/generic/bases.txt
+
+#load hands /data/items/agarthan/generic/hands.txt
+#load legs /data/items/agarthan/mounted/legs.txt
+#load mount /data/items/agarthan/mounted/mounts.txt
+#load armor /data/items/agarthan/normal_steel/armor.txt
+#load helmet /data/items/agarthan/normal_steel/helmets.txt
+#load offhand /data/items/agarthan/normal_steel/shields.txt
+
+#load weapon /data/items/agarthan/generic/weapons.txt
+#load bonusweapon /data/items/agarthan/generic/bonusweapons.txt
+
+#load cloakf /data/items/agarthan/generic/cloakf.txt
+#load cloakb /data/items/agarthan/generic/cloakb.txt
+#endpose
+

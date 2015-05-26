@@ -1,0 +1,18 @@
+--- Loads filters to NationGen
+--- Races or poses (poses override nations) can be defined to use these with #mage/elite/sacred/priest/nationfilters <name>
+--- Anything with default in it's name is loaded if nothing else is defined.
+
+#load default_elitefilters ./data/filters/default_elitefilters.txt
+
+#load default_sacredfilters ./data/filters/default_sacredfilters.txt
+
+#load default_magefilters ./data/filters/default_magefilters.txt
+#load default_magefilters_no_shapeshift ./data/filters/default_magefilters_no_shapechange.txt
+#load magefilters_fomorian ./data/filters/magefilters_fomorian.txt
+
+#load default_priestfilters ./data/filters/default_priestfilters.txt
+
+#load default_nationfilters ./data/filters/default_nationfilters.txt
+
+#load default_nationwidefilters ./data/filters/default_nationwidefilters.txt
+

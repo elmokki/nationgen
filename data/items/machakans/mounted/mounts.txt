@@ -1,0 +1,374 @@
+--- Base offsets are applied to everything except base and overlay
+
+
+#newitem
+#basechance 3
+#name "brown horse"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#armor
+#needs overlay 1
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 24"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#enc 3"
+#define "#gcost +15"
+#theme "animal horse"
+#theme "light"
+#tag "maxprot 11"
+#epicness 0.25
+#enditem
+
+#newitem
+#name "armored horse"
+#basechance 0.25
+#gameid -1
+#sprite /graphics/mounts/standard/armoredhorse1.png
+#armor
+#needs overlay 2
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 20"
+#define "#mounted"
+#define "#weapon warhorse_hoof --- Warhorse Hoof"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +5"
+#theme "animal horse"
+#theme "heavy"
+#tag "minprot 14"
+#define "#gcost +25"
+#epicness 0.25
+#tag "name commander 'knight'"
+#tag "name mounted knight"
+#enditem
+
+#newitem
+#basechance 0.25
+#name "armored horse 2"
+#gameid -1
+#sprite /graphics/mounts/standard/armoredhorse2.png
+#armor
+#needs overlay armoredhorse2overlay
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 20"
+#define "#mounted"
+#define "#weapon warhorse_hoof --- Warhorse Hoof"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +5"
+#theme "animal horse"
+#theme "heavy"
+#tag "minprot 12"
+#tag "maxprot 16"
+#define "#gcost +20"
+#epicness 0.25
+#tag "name commander 'knight'"
+#tag "name mounted knight"
+#enditem
+
+
+
+#newitem
+#basechance 0.4
+#name "catapract horse"
+#gameid -1
+#sprite /graphics/mounts/standard/catapracthorse1.png
+#armor
+#offsetx -3
+#needs overlay 4
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 22"
+#define "#mounted"
+#define "#weapon warhorse_hoof --- Warhorse Hoof"
+#define "#gcost +25"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +5"
+#theme "animal horse"
+#theme "heavy"
+#tag "minprot 12"
+#epicness 0.25
+#tag "name commander 'catapract commander'"
+#tag "name mounted catapract"
+#enditem
+
+#newitem
+#basechance 0.4
+#name "light catapract horse"
+#gameid -1
+#sprite /graphics/mounts/standard/lightcatapract1.png
+#armor
+#offsetx -3
+#needs overlay 5
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 24"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#gcost +20"
+#define "#ressize 2"
+#define "#enc 3"
+#theme "animal horse"
+#tag "minprot 10"
+#tag "maxprot 14"
+#tag "name commander 'catapract commander'"
+#tag "name mounted catapract"
+#epicness 0.25
+#enditem
+
+#newitem
+#name "pegasus"
+#gameid -1
+#sprite /graphics/mounts/standard/pegasus.png
+#armor
+#offsetx 28
+#offsety 64
+#needs overlay 8
+#define "#size 4"
+#define "#mapmove 3"
+#define "#ap 22"
+#define "#mounted"
+#define "#flying"
+#define "#weapon warhorse_hoof --- Warhorse Hoof"
+#define "#gcost +50"
+#define "#ressize 2"
+#define "#enc 4"
+#theme "flying"
+#theme "animal pegasus"
+#tag "name commander windlord"
+#tag "guaranteedprefix pegasus"
+#sacredextra 0.7
+#enditem
+
+
+#newitem
+#basechance 0.1
+#name "red guard horse"
+#gameid -1
+#sprite /graphics/mounts/standard/redguardmount.png
+#recolormask /graphics/mounts/standard/redguardmount_recolormask.png
+#armor
+#needs overlay redguardoverlay
+#offsety 1
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 24"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#gcost +20"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +5"
+#theme "animal horse"
+#theme "elite"
+#theme "heavy"
+#tag "minprot 12"
+#enditem
+
+#newitem
+#name "unicorn"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#offsety 1
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 28"
+#define "#mounted"
+#define "#weapon 330 --- Alicorn"
+#define "#gcost +35"
+#define "#ressize 2"
+#define "#enc 3"
+#define "#heal"
+#theme "elite"
+#theme "heavy"
+#tag "minprot 12"
+#tag "maxprot 16"
+#theme "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#basechance 0.5
+#enditem
+
+
+#newitem
+#name "unicorn"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#offsety 1
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 28"
+#define "#mounted"
+#define "#weapon 330 --- Alicorn"
+#define "#gcost +30"
+#define "#ressize 2"
+#define "#enc 3"
+#define "#heal"
+#theme "elite"
+#theme "heavy"
+#tag "minprot 8"
+#tag "maxprot 15"
+#theme "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#basechance 0.5
+#enditem
+
+#newitem
+#basechance 1.5
+#name "fayhorse"
+#gameid -1
+#sprite /graphics/mounts/standard/fayhorse.png
+#armor
+#offsety 1
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 28"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#gcost +30"
+#define "#ressize 2"
+#define "#enc 3"¨
+#theme "animal horse"
+#theme "elite"
+#theme "heavy"
+#tag "minprot 6"
+#tag "maxprot 14"
+#enditem
+
+#newitem
+#name "wyvern"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/mounts/standard/wyvern.png
+#armor
+#offsetx 28
+#offsety 69
+#needs overlay 14
+#define "#size 4"
+#define "#mapmove 3"
+#define "#ap 22"
+#define "#mounted"
+#define "#flying"
+#define "#weapon 237"
+#define "#weapon 203"
+#define "#gcost +75"
+#define "#ressize 2"
+#define "#rcost +4"
+#define "#enc 4"
+#define "#secondshape wyvern"
+#theme "flying"
+#theme "heavy"
+#theme "animal wyvern"
+#tag "minprot 10"
+#tag "maxprot 16"
+#tag "guaranteedprefix wyvern"
+#tag "name commander beastmaster"
+#description "Leaves a wyvern behind when the rider dies"
+#sacredextra nonholyshape 0.25
+#enditem
+
+
+#newitem
+#name "moose"
+#basechance 0.05
+#gameid -1
+#sprite /graphics/mounts/standard/moose.png
+#armor
+#offsetx 30
+#offsety 45
+#define "#size 4"
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 353"
+#define "#weapon 354"
+#define "#gcost +25"
+#define "#ressize 2"
+#define "#rcost +4"
+#define "#enc 4"
+#define "#secondtmpshape moose"
+#theme "animal moose"
+#tag "minprot 0"
+#tag "maxprot 16"
+#tag "guaranteedprefix moose"
+#description "Leaves a moose behind when the rider dies"
+#enditem
+
+
+#newitem
+#name "nightmare"
+#gameid -1
+#sprite /graphics/mounts/standard/nightmare.png
+#armor
+#offsety 1
+#define "#size 3"
+#define "#mapmove 4"
+#define "#ap 25"
+#define "#mounted"
+#define "#weapon warhorse_hoof --- Warhorse Hoof"
+#define "#secondtmpshape nightmare"
+#define "#gcost +40"
+#define "#ressize 2"
+#define "#enc 4"¨
+#theme "animal nightmare"
+#description "Leaves a nightmare behind when the rider dies"
+#basechance 0.25
+#tag "minprot 10"
+#sacredextra 0.5
+#enditem
+
+#newitem
+#name "bear"
+#basechance 0.1
+#gameid -1
+#sprite /graphics/mounts/standard/bear.png
+#armor
+#define "#size 4"
+#define "#mapmove 2"
+#define "#ap 16"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape bearmount"
+#define "#gcost +35"
+#define "#ressize 2"
+#define "#enc 4"¨
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#offsety -2
+#offsetx -1
+#theme "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#enditem
+
+
+#newitem
+#basechance 8
+#name "lion"
+#gameid -1
+#sprite /graphics/mounts/standard/lion.png
+#armor
+#define "#size 4"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape lionmount"
+#define "#gcost +35"
+#define "#ressize 2"
+#define "#enc 4"¨
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#offsety 5
+#offsetx -1
+#theme "animal lion"
+#tag "guaranteedprefix lion"
+#enditem

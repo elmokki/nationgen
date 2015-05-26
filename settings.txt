@@ -1,0 +1,58 @@
+
+-- Description files
+advancedDescs 1
+basicDescs 1
+
+-- Not yet functional
+separateSeeds 0
+seedsFromFile 0
+
+-----------------------------------------------------------------------------------------------------
+---- MODIFYING ANY VALUE BELOW THIS LINE WILL BREAK THE SEEDS COMPARED TO THE BASE RELEASE VERSION
+---- THUS DO NOT MODIFY ANYTHING BELOW THIS IF YOU ARE GOING TO SUBMIT A SEED TO A MULTIPLAYER GAME.
+-----------------------------------------------------------------------------------------------------
+
+
+-------------- Generic generation stuff
+
+-- Era, 1 is early, 2 is middle, 3 is late obviously
+era 2
+
+
+-------------- Militia
+-- militiaDivider / (rescost + goldcost) * 10 * militiaMultiplier = amount of specified unit in militia
+militiaDivider 20.0
+militiaMultiplier 1.0
+
+-- If resource is as treshold or above, change is applied
+resUpperTreshold 12
+resUpperTresholdChange -2
+-- Same as above but for gold
+goldUpperTreshold 10
+goldUpperTresholdChange 0
+-- Above stuff but for lower bounds
+resLowerTreshold 10
+resLowerTresholdChange 0
+goldLowerTreshold 10
+goldLowerTresholdChange 0
+
+-- Multiplies any resources above 10 by resMulti if rescost is at least at treshold
+-- Done after the additive tresholds above.
+resMultiTreshold 10
+resMulti 0.7
+
+
+-------------- Troop rosters
+-- desiredBaseSize + 0-desiredRandom units will be generated
+--
+-- Powers are relative probabilities of getting an unit of the type. There are hard limits for the amount of ranged units and chariots though.
+
+desiredBaseSize 6.0
+desiredRandom 4.0
+cavalryPower 0.3
+chariotPower 0.3
+rangedPower 0.3
+infantryPower 1.0
+
+-- Chance that a new weapon/mount is generated for an unit type instead of giving a new armor/weapon when there's still space for new variants of same weapon/mount 
+newArmorChance 0.2

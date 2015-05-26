@@ -1,0 +1,27 @@
+
+-- Light clockwork armor
+
+#newitem -- light clockwork armor
+#name "clockwork cuirass"
+#gameid 9
+#sprite /graphics/hoburg/bodyarmor/clockwork_armor2.png
+#armor
+#theme "advanced"
+
+#define "#gcost +15"
+#define "#rcost +20"
+#define "#size 1"
+#define "#ressize 1"
+#define "#enc 2"
+#define "#reinvigoration -2"
+#define "#str +2"
+#define "#def -2"
+#define "#mor +1"
+#define "#mapmove 2"
+#define "#ap +8"
+#define "#mounted"
+#description "Their armor is driven by complex clockwork mechanisms that increase their strength and speed, but run down and need rewound"
+#define "#itemslots 12422"
+
+#tag "guaranteedprefix clockwork"
+#enditem

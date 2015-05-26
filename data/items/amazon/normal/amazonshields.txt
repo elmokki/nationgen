@@ -1,0 +1,122 @@
+--- Shields
+
+-- "Amazon" infantry shields
+
+#newitem
+#id amazon_bronze
+#gameid 2
+#sprite /graphics/amazon/shields/amazon_bronze.png
+#tag "eliteversion amazon_burnished"
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id amazon_burnished
+#basechance 0
+#gameid 2
+#sprite /graphics/amazon/shields/amazon_burnished.png
+#armor
+#enditem
+
+
+-- Hoplon-style studded shields
+
+#newitem
+#id hoplon_painted
+#gameid 2
+#sprite /graphics/amazon/shields/hoplon_painted.png
+#tag "eliteversion hoplon_burnished"
+#armor
+#recolormask /graphics/amazon/shields/hoplon_painted_recolormask.png
+#enditem
+
+#newitem
+#id hoplon_bronze
+#gameid 2
+#sprite /graphics/amazon/shields/hoplon_bronze.png
+#tag "eliteversion hoplon_burnished"
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id hoplon_iron
+#gameid 2
+#sprite /graphics/amazon/shields/hoplon_iron.png
+#tag "eliteversion hoplon_burnished"
+#armor
+#enditem
+
+#newitem
+#id hoplon_burnished
+#basechance 0
+#gameid 2
+#sprite /graphics/amazon/shields/hoplon_burnished.png
+#armor
+#enditem
+
+-- Targe-style studded shields
+
+#newitem
+#id targe_painted
+#gameid 2
+#sprite /graphics/amazon/shields/targe_painted.png
+#tag "eliteversion targe_burnished"
+#armor
+#recolormask /graphics/amazon/shields/targe_painted_recolormask.png
+#enditem
+
+#newitem
+#id targe_bronze
+#gameid 2
+#sprite /graphics/amazon/shields/targe_bronze.png
+#tag "eliteversion targe_burnished"
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id targe_iron
+#gameid 2
+#sprite /graphics/amazon/shields/targe_iron.png
+#tag "eliteversion targe_burnished"
+#armor
+#enditem
+
+#newitem
+#id targe_burnished
+#basechance 0
+#gameid 2
+#sprite /graphics/amazon/shields/targe_burnished.png
+#armor
+#enditem
+
+-- Misc other shields
+
+#newitem
+#id myrmidon
+#gameid 2
+#sprite /graphics/amazon/shields/myrmidon.png
+#armor
+#recolormask /graphics/amazon/shields/myrmidon_recolormask.png
+#enditem
+
+#newitem
+#id hoplon2_bronze
+#gameid 2
+#chanceinc "personalcommand #mounted *0"
+#sprite /graphics/amazon/shields/hoplon2_bronze.png
+#tag "eliteversion hoplon2_burnished"
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id hoplon2_burnished
+#basechance 0
+#gameid 2
+#chanceinc "personalcommand #mounted *0"
+#sprite /graphics/amazon/shields/hoplon2_burnished.png
+#armor
+#enditem

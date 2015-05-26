@@ -1,0 +1,243 @@
+--- Base offsets are applied to everything except base and overlay
+#newitem
+#name "serpent 1"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 494 --- Poisonous Bite"
+#define "#secondtmpshape serpent1"
+ -- 1179
+#define "#gcost +30"
+#define "#ressize 2"
+#define "#enc 3"
+#theme "animal serpent"
+#theme "light"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 13"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#enditem
+
+#newitem
+#name "green lizard"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#gcost +20"
+#define "#ressize 2"
+#define "#enc 3"
+#theme "animal lizard"
+#theme "light"
+#theme "specialmount"
+#tag "guaranteedprefix lizard"
+#tag "maxprot 15"
+#enditem
+
+#newitem
+#name "spider"
+#gameid -1
+#sprite /graphics/mounts/standard/spider1.png
+#armor
+#offsetx 35
+#offsety 7
+#needs overlay spider_overlay
+#define "#size 5"
+#define "#mapmove 2"
+#define "#ap 13"
+#define "#mounted"
+#define "#weapon 262"
+#define "#weapon 313"
+#define "#secondshape spider"
+#description "The giant spider will persist even if the rider dies."
+#define "#gcost +20"
+#define "#ressize 2"
+#define "#enc 4"
+#theme "specialmount"
+#theme "animal spider"
+#tag "guaranteedprefix spider"
+#tag "minprot 0"
+#tag "maxprot 12"
+#enditem
+
+
+#newitem
+#name "boar"
+#gameid -1
+#sprite /graphics/mounts/standard/boarcavalry.png
+#needs overlay no_overlay
+#armor
+#offsetx -4
+#offsety 4
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 352 --- Nostr Gore"
+#define "#gcost +20"
+#define "#ressize 2"
+#define "#enc 3"
+#theme "specialmount"
+#theme "animal boar"
+#tag "guaranteedprefix boar"
+#tag "name commander boarmaster"
+#tag "minprot 0"
+#tag "maxprot 13"
+#enditem
+
+#newitem
+#name "tiger"
+#gameid -1
+#sprite /graphics/mounts/standard/tiger.png
+#needs overlay no_overlay
+#armor
+#offsetx -4
+#offsety 4
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 236"
+#define "#weapon 237"
+#define "#secondshape tiger"
+#define "#gcost +40"
+#define "#rcost +6"
+#define "#ressize 2"
+#define "#enc 3"
+#theme "specialmount"
+#theme "light"
+#theme "animal tiger"
+#description "The tiger will persist even if the rider dies."
+#tag "guaranteedprefix tiger"
+#tag "minprot 0"
+#tag "maxprot 12"
+#chanceinc primaryrace monkey *10
+#enditem
+
+
+#newitem
+#name "jaguar"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#needs overlay no_overlay
+#armor
+#offsetx -4
+#offsety 4
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 236"
+#define "#weapon 237"
+#define "#secondshape jaguarmount"
+#define "#gcost +35"
+#define "#rcost +5"
+#define "#ressize 2"
+#define "#enc 3"
+#theme "specialmount"
+#theme "light"
+#theme "animal jaguar"
+#description "The jaguar will persist even if the rider dies."
+#tag "guaranteedprefix jaguar"
+#tag "minprot 0"
+#tag "maxprot 12"
+#enditem
+
+#newitem
+#name "black tiger"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger.png
+#needs overlay no_overlay
+#armor
+#offsetx -4
+#offsety 4
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 236"
+#define "#weapon 237"
+#define "#gcost +25"
+#define "#rcost +5"
+#define "#ressize 2"
+#define "#enc 3"
+#theme "specialmount"
+#theme "light"
+#theme "animal tiger"
+#theme "sacred"
+#tag "guaranteedprefix black tiger"
+#tag "minprot 0"
+#tag "maxprot 11"
+#basechance 0.5
+#enditem
+
+#newitem
+#name "bigspider"
+#gameid -1
+#sprite /graphics/mounts/standard/bigspider.png
+#needs overlay no_overlay
+#armor
+#offsetx 35
+#offsety -8
+#define "#size 6"
+#define "#mapmove 2"
+#define "#ap 14"
+#define "#mounted"
+#define "#weapon 313 --- Spider Fangs"
+#define "#secondshape hunterspider"
+#define "#gcost +70"
+#define "#ressize 2"
+#define "#enc 4"
+#description "The hunter spider will persist even if the rider dies."
+#theme "specialmount"
+#theme "heavy"
+#theme "animal spider"
+#tag "guaranteedprefix spider"
+#tag "minprot 14"
+#tag "maxprot 20"
+#sacredextra nonholyshape 0.7
+#enditem
+
+
+#newitem
+#name "amphiptere"
+#gameid -1
+#sprite /graphics/mounts/standard/amphiptere.png
+#armor
+#offsetx 23
+#offsety 13
+#needs overlay 13
+#define "#size 4"
+#define "#mapmove 3"
+#define "#flying"
+#define "#ap 10"
+#define "#mounted"
+#define "#weapon nostr_venfangs"
+#define "#weapon nostr_spraypoison"
+#define "#secondtmpshape amphiptere"
+#define "#gcost +50"
+#define "#rcost +6"
+#define "#ressize 2"
+#define "#enc 3"
+#theme "specialmount"
+#theme "animal amphiptere"
+#description "The amphiptere will fight until the end of the battle should the rider die"
+#tag "guaranteedprefix amphiptere"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#tag "maxprot 14"
+#sacredextra 0.5
+#enditem

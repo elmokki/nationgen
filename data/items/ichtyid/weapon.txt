@@ -1,0 +1,181 @@
+#newitem
+#id longspear
+#gameid 28
+#sprite /graphics/ichtyid/weapon/longspear.png
+#tag "name infantry spearman"
+#tag "name commander captain"
+#basechance 0.75
+#enditem
+
+#newitem
+#id spear
+#gameid 1
+#sprite /graphics/weapon/standard/spear.png
+#offsetx -5
+#tag "name infantry spearman"
+#enditem
+
+#newitem
+#id trident
+#gameid 3
+#sprite /graphics/ichtyid/weapon/bronze_trident.png
+#offsetx 0
+#tag "prefix trident"
+#basechance 0.75
+#enditem
+
+#newitem
+#id pike
+#gameid 2
+#sprite /graphics/ichtyid/weapon/pike.png
+#tag "name infantry pikeman"
+#tag "name commander captain"
+#tag "advanced"
+#basechance 0.5
+#enditem
+
+
+#newitem
+#id quarterstaff
+#gameid 7
+#sprite /graphics/weapon/standard/quarterstaff.png
+#offsetx -2
+#basechance 0.125
+#maxprot 10
+#enditem
+
+-- Coral weapons
+
+#newitem
+#id coralspear
+#gameid 31
+#sprite /graphics/ichtyid/weapon/coral_spear.png
+#tag "name infantry spearman"
+#enditem
+
+#newitem
+#id corallongspear
+#gameid 580
+#sprite /graphics/atlantian/weapon/longspear.png
+#offsetx -1
+#tag "name infantry phalanx"
+#tag "advanced"
+#basechance 0.75
+#enditem
+
+#newitem
+#id coralglaive
+#gameid 46
+#sprite /graphics/ichtyid/weapon/coral_glaive.png
+#tag "advanced"
+#basechance 0.5
+#enditem
+
+#newitem
+#id coralshortsword
+#gameid coralshortsword
+#sprite /graphics/ichtyid/weapon/coral_shortsword.png
+#basechance 0.5
+#tag "name infantry swordmen"
+#enditem
+
+#newitem
+#id coralclub
+#gameid 45
+#sprite /graphics/ichtyid/weapon/coral_club.png
+#basechance 0.5
+#tag "name infantry clubber"
+#theme "primitive"
+#maxprot 11
+#enditem
+
+-- "Terrestrial" weapons
+
+#newitem
+#id shortsword
+#gameid 6
+#sprite /graphics/ichtyid/weapon/bronze_shortsword.png
+#basechance 0.5
+#tag "name infantry swordsman"
+#tag "name commander captain"
+#tag "name commander swordsmaster"
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/ichtyid/weapon/bronze_axe.png
+#basechance 0.5
+#tag "name infantry axeman"
+#tag "name commander warlord"
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id morningstar
+#gameid 15
+#sprite /graphics/ichtyid/weapon/bronze_morningstar.png
+#basechance 0.25
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id flail
+#gameid 16
+#sprite /graphics/ichtyid/weapon/bronze_flail.png
+#basechance 0.25
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id greataxe
+#gameid 18
+#sprite /graphics/ichtyid/weapon/bronze_greataxe.png
+#basechance 0.25
+#tag "name infantry axeman"
+#tag "name commander warlord"
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id halberd
+#gameid 5
+#sprite /graphics/ichtyid/weapon/bronze_halberd.png
+#basechance 0.25
+#tag "name infantry halberdier"
+#tag "name commander captain"
+#theme "advanced"
+#minprot 9
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id bardiche
+#gameid bardiche
+#sprite /graphics/ichtyid/weapon/bronze_bardiche.png
+#basechance 0.25
+#tag "name commander warchief"
+#tag "name commander warlord"
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id greatclub
+#gameid 165
+#sprite /graphics/weapon/2h/greatclub.png
+#basechance 0.5
+#offsetx -1
+#offsety 1
+#tag "name infantry clubber"
+#theme "primitive"
+#needs hands 2h_hands
+#maxprot 9
+#enditem

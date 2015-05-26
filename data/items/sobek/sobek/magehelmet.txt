@@ -1,0 +1,212 @@
+#newitem
+#id hubris
+#gameid -1
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id whitehood1
+#gameid -1
+#sprite /graphics/sobek/helmet/sobek_hood_white.png
+#tag "tier 2"
+#tag "eliteversion whitehood2"
+#needs armor whiterobe1
+#armor
+#enditem
+
+#newitem
+#id whitehood2
+#basechance 0.5
+#gameid -1
+#sprite /graphics/sobek/helmet/sobek_hood_white.png
+#recolormask /graphics/sobek/helmet/sobek_hood_white_recolormask.png
+#tag "tier 3"
+#needs armor ornate_whiterobe
+#armor
+#enditem
+
+#newitem
+#id blackhood1
+#gameid -1
+#sprite /graphics/sobek/helmet/sobek_hood_black.png
+#tag "tier 2"
+#tag "eliteversion blackhood2"
+#needs armor blackrobe1
+#armor
+#enditem
+
+#newitem
+#id blackhood2
+#basechance 0.5
+#gameid -1
+#sprite /graphics/sobek/helmet/sobek_hood_black.png
+#recolormask /graphics/sobek/helmet/sobek_hood_black_recolormask.png
+#tag "tier 3"
+#needs armor ornate_blackrobe
+#armor
+#enditem
+
+#newitem -- Gilt cap
+#id "gold cap"
+#gameid 20
+#sprite /graphics/sobek/helmet/sobek_gold_cap.png
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id lizardcrown1
+#gameid 148
+#sprite /graphics/sobek/helmet/lizard_hedjet.png
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id lizardcrown2
+#gameid 148
+#sprite /graphics/sobek/helmet/lizard_hedjet.png
+#recolormask /graphics/sobek/helmet/lizard_hedjet_recolormask.png
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id simplehedjet1
+#basechance 0.5
+#gameid 148
+#sprite /graphics/sobek/helmet/sobek_hedjet.png
+#tag "eliteversion ornate_hedjet1"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id simplehedjet2
+#basechance 0.5
+#gameid 148
+#sprite /graphics/sobek/helmet/sobek_hedjet.png
+#recolormask /graphics/sobek/helmet/sobek_hedjet_recolormask.png
+#tag "eliteversion ornate_hedjet2"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+
+#newitem
+#id deshret1
+#basechance 0.5
+#gameid 148
+#sprite /graphics/sobek/helmet/sobek_deshret.png
+#tag "eliteversion pschent1"
+#tag "eliteversion pschent2"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id deshret2
+#basechance 0.5
+#gameid 148
+#sprite /graphics/sobek/helmet/sobek_deshret.png
+#recolormask self
+#tag "eliteversion pschent3"
+#tag "eliteversion pschent4"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id ornatehedjet1
+#gameid 148
+#sprite /graphics/sobek/helmet/sobek_highpriest_hedjet.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id ornatehedjet2
+#gameid 148
+#sprite /graphics/sobek/helmet/sobek_highpriest_hedjet.png
+#recolormask /graphics/sobek/helmet/sobek_highpriest_hedjet_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id pschent1
+#basechance 0.5
+#gameid 148
+#sprite /graphics/sobek/helmet/sobek_pschent.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id pschent2
+#basechance 0.5
+#gameid 148
+#sprite /graphics/sobek/helmet/sobek_pschent.png
+#recolormask /graphics/sobek/helmet/sobek_pschent_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id pschent3
+#basechance 0.5
+#gameid 148
+#sprite /graphics/sobek/helmet/sobek_pschent.png
+#recolormask /graphics/sobek/helmet/sobek_deshret.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id pschent4
+#basechance 0.5
+#gameid 148
+#sprite /graphics/sobek/helmet/sobek_pschent.png
+#recolormask self
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id khepresh1
+#gameid 148
+#sprite /graphics/sobek/helmet/sobek_khepresh.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id khepresh2
+#gameid 148
+#sprite /graphics/sobek/helmet/sobek_khepresh.png
+#recolormask /graphics/sobek/helmet/sobek_khepresh_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nemes1
+#gameid 148
+#sprite /graphics/sobek/helmet/sobek_sauromancer_nemes.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nemes2
+#gameid 148
+#sprite /graphics/sobek/helmet/sobek_sauromancer_nemes.png
+#recolormask /graphics/sobek/helmet/sobek_sauromancer_nemes_recolormask.png
+#armor
+#tag "tier 3"
+#enditem

@@ -1,0 +1,26 @@
+#newitem
+#id barechest
+#gameid -1
+#sprite /graphics/amazon/armor/standard/barechest.png
+#needs legs nopants
+#armor
+#theme "naked"
+#theme "primitive"
+#tag "name infantry tribal"
+#tag "prefix tribal"
+#basechance 0.1
+#enditem
+
+#newitem
+#id shift
+#gameid -1
+#sprite /graphics/amazon/armor/standard/peplos.png
+#recolormask /graphics/amazon/armor/standard/peplos_recolormask.png
+#needs legs nopants
+#armor
+#theme "naked"
+#theme "primitive"
+#tag "name infantry levy"
+#tag "prefix levied"
+#basechance 0.2
+#enditem

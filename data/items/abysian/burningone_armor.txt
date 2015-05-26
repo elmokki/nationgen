@@ -1,0 +1,157 @@
+--- Primative stuff
+
+#newitem
+#name "starkers"
+#gameid -1
+#armor
+#basechance 1
+#theme "primative"
+#enditem
+
+#newitem
+#name "drake pelt"
+#gameid 44
+#sprite /graphics/highmen/armor/furs_firedrake.png
+#needs legs naked
+#needs cloakb nocloak
+#needs helmet leatherhood
+#armor
+#basechance 0.2
+#theme "primative"
+#theme "fire"
+#tag "drake"
+#enditem
+
+
+--- Scale
+
+#newitem
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/highmen/armor/scale_cuirass1.png
+#tag "eliteversion 'scale cuirass with greaves'"
+#armor
+#basechance 0.8
+#needs legs codpiece_armored
+#enditem
+
+#newitem
+#name "scale cuirass with greaves"
+#gameid 7
+#sprite /graphics/highmen/armor/scale_cuirass2.png
+#armor
+#basechance 0.2
+#needs legs codpiece_greaves
+#enditem
+
+#newitem
+#name "scale hauberk long"
+#gameid 12
+#sprite /graphics/highmen/armor/scale_hauberk.png
+#armor
+#basechance 1
+#needs legs mail_skirt
+#enditem
+
+#newitem -- full scale
+#name "full scale"
+#gameid 17
+#sprite /graphics/highmen/armor/scale_full.png
+#armor
+#basechance 1
+#theme "advanced"
+#needs legs mail_full
+#enditem
+
+
+--- Chain Mail
+
+#newitem
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/highmen/armor/chain_cuirass1.png
+#tag "eliteversion 'chain cuirass with greaves'"
+#armor
+#basechance 0.8
+#needs legs codpiece_armored
+#enditem
+
+#newitem
+#name "chain cuirass with greaves"
+#gameid 8
+#sprite /graphics/highmen/armor/chain_cuirass2.png
+#armor
+#basechance 0.2
+#needs legs codpiece_greaves
+#enditem
+
+#newitem
+#name "chain hauberk long"
+#gameid 13
+#sprite /graphics/highmen/armor/chain_hauberk.png
+#armor
+#basechance 1
+#needs legs mail_skirt
+#enditem
+
+#newitem -- full chain
+#name "full chain"
+#gameid 18
+#sprite /graphics/highmen/armor/chain_full.png
+#armor
+#basechance 1
+#theme "advanced"
+#needs legs mail_full
+#enditem
+
+
+--- Plate
+
+#newitem
+#name "plate cuirass"
+#gameid 9
+#sprite /graphics/highmen/armor/plate2_cuirass1.png
+#tag "eliteversion 'plate cuirass2 with greaves'"
+#armor
+#basechance 0.8
+#theme "advanced"
+#needs legs codpiece
+#enditem
+
+#newitem
+#name "plate cuirass with greaves"
+#gameid 9
+#sprite /graphics/highmen/armor/plate2_cuirass2.png
+#armor
+#basechance 0.2
+#theme "advanced"
+#needs legs codpiece
+#enditem
+
+#newitem
+#name "plate hauberk"
+#gameid 14
+#sprite /graphics/highmen/armor/plate2_hauberk1.png
+#tag "eliteversion 'plate hauberk2 with greaves'"
+#armor
+#basechance 0.8
+#theme "advanced"
+#enditem
+
+#newitem
+#name "plate hauberk with greaves"
+#gameid 14
+#sprite /graphics/highmen/armor/plate2_hauberk2.png
+#armor
+#basechance 0.2
+#theme "advanced"
+#enditem
+
+#newitem -- full plate
+#name "full plate"
+#gameid 19
+#sprite /graphics/highmen/armor/plate2_full.png
+#armor
+#theme "advanced"
+#maxvarieties 1
+#enditem

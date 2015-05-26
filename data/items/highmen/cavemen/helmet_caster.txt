@@ -1,0 +1,147 @@
+
+#newitem
+#id none
+#tag "primitive"
+#gameid -1
+#armor
+#enditem
+
+-- Facepaint
+
+#newitem
+#id facepaint1
+#tag "primitive"
+#gameid -1
+#sprite /graphics/highmen/helmet/facepaint1.png
+#recolormask self
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id facepaint2
+#tag "primitive"
+#gameid -1
+#sprite /graphics/highmen/helmet/facepaint2.png
+#recolormask self
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id facepaint3
+#tag "primitive"
+#gameid -1
+#sprite /graphics/highmen/helmet/facepaint3.png
+#recolormask self
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id facepaint4
+#tag "primitive"
+#gameid -1
+#sprite /graphics/highmen/helmet/facepaint4.png
+#recolormask self
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+-- Beards
+
+#newitem
+#id black_beard
+#gameid -1
+#sprite /graphics/highmen/helmet/caveman_beard_black.png
+#tag "eliteversion grey_beard"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id grey_beard
+#gameid -1
+#sprite /graphics/highmen/helmet/caveman_beard_grey.png
+#tag "eliteversion white_beard"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id white_beard
+#gameid -1
+#sprite /graphics/highmen/helmet/caveman_beard_white.png
+#armor
+#tag "tier 3"
+#enditem
+
+-- Suspicious newfangled "hats"
+
+#newitem
+#id laurel
+#gameid -1
+#sprite /graphics/helmet/caster/green.png
+#offsetx -1
+#offsety -12
+#armor
+#tag "tier 3"
+#basechance 0.5
+#enditem
+
+#newitem
+#id antleredcap
+#gameid 120
+#sprite /graphics/helmet/caster/antlercap.png
+#offsety -12
+#armor
+#tag "tier 3"
+#basechance 0.5
+#enditem
+
+#newitem
+#id feathercap
+#gameid 120
+#sprite /graphics/helmet/caster/feathercap.png
+#recolormask /graphics/helmet/caster/feathercap_recolormask.png
+#offsetx -1
+#offsety -11
+#armor
+#tag "tier 3"
+#basechance 0.5
+#enditem
+
+#newitem
+#id headdress
+#gameid -1
+#sprite /graphics/helmet/caster/headdress.png
+#recolormask self
+#offsetx 1
+#offsety -12
+#armor
+#tag "tier 3"
+#tag "tier 2"
+#basechance 0.3
+#enditem
+
+#newitem
+#id headdress
+#gameid -1
+#sprite /graphics/helmet/caster/headdress.png
+#offsetx 1
+#offsety -12
+#armor
+#tag "tier 3"
+#tag "tier 2"
+#basechance 0.2
+#enditem

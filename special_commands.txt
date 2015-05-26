@@ -1,0 +1,158 @@
+This file lists special commands that can be used in race/pose/item/filter files that aren't necessarily so obvious.
+Commands that appear in both races and poses prioritize using the one in the pose if both are found unless otherwise mentioned.
+
+
+--- Race
+#troopdescriptions <file>
+Uses this file (load files at /data/descriptions/descriptions.txt) for troop descriptions.
+
+#all_troops_sacred / #all_troops_elite
+All troop poses can be used to generate a sacred / elite unit. Without this only poses with role sacred or sacred infantry/mounted/chariot/ranged
+will be considered.
+
+#generationchance <role> <number> 
+Changes the weight of certain role in troop roster generation. Defaults are 0.25, 1, 0.33, 0.125 for ranger, infantry, cavalry and chariot
+respectively
+
+#magicpriority <path> <number>
+Sets the weight of a certain magic path in mage generation. Default for all paths is 1. Works in poses as well. 
+
+#sacred<role>chance <number>
+Sets the weight of a certain role (either just the "role" or "sacred role", ie "infantry" or "sacred infantry") to given number. Defaults are 
+0.125, 1, 0.25, 0.05 for ranger, infantry, cavalry and chariot
+
+#mapmovepenaltyenc <amount>
+The amount of encumberance from equipment before getting mapmove penalty. Won't affect mounted units. Default is 4.
+
+#mapmovepenaltyprot <amount>
+The amount of prot from equipment (calculated with natural prot 0) before getting mapmove penalty. Won't affect mounted units. Default is 14.
+
+#mapmovepenaltyamount <amount>
+Amount of mapmove penalty when over encumberance. Default is 1.
+
+#lowenctreshold <number>
+#lowenccommand <command>
+If encumberance from equipment is the number set in #lowenctreshold, command set in #lowenccommand will be added to the unit if the unit does not already have an instance of the command.
+
+#secondaryracetroopmod <amount>
+On primary race increases/decreases the likelihood of secondary race troops
+
+#primaryracetroopmod <amount>
+On secondary race increases/decreases the likelihood of primary race troops
+
+#secondaryracesacredmod <amount>
+On primary race increases/decreases the likelihood of secondary race sacreds
+
+#primaryracesacredmod <amount>
+On secondary race increases/decreases the likelihood of primary race sacreds
+
+#secondaryracemagemod <amount>
+On primary race increases/decreases the likelihood of secondary race primary and secondary mages
+
+#primaryracemagemod <amount>
+On secondary race increases/decreases the likelihood of primary race primary and secondary mages
+
+#secondaryracetertiarymagemod <amount>
+On primary race increases/decreases the likelihood of secondary race tertiary mages
+
+#primaryracetertiarymagemod <amount>
+On secondary race increases/decreases the likelihood of primary race tertiary mages
+
+#secondaryracecommand_conditional "<command>"
+#secondaryracecommand "<command>"
+Gives secondary race members this command when the nation has this race as the primary race. Conditional version does this only if the unit 
+in question does not have a command defining the same attribute in pose or race commands. Used by at least Abysians
+
+#oneprimarychance <number>
+#twoprimarychance <number>
+#threeprimarychance <number>
+Sets the weights of primary mage amount options of this race (determined by the race primaries will be). Defaults are 0.625, 0.225 and 0.15 respectively.
+
+#monsterchance <number>
+Sets the probability of getting a cool monster. Default is 0.05.
+
+#monsters <poses>
+Sets the pose set to be used for monsters. Default is default_monsters
+
+--- Pose
+#magicpriority <path> <number>
+Sets the weight of a certain magic path in mage generation. Default for all paths is 1. Works in races as well.
+
+#tier <number>
+Sets the tiers the pose is available for in mage and priest generation. Tier 1 is for H1 priests and crappiest mages while tier 3 is for
+the most powerful mages and H3 priests. Tier 2 is used for everything in between and extra mages.
+
+#generateitem <probability> <slot> 
+Generates an item in roster generation to given slot at given probability. Current use is mostly to generate a guaranteed bonusweapon
+to ranged units so they have something other than a fist for melee.
+
+#dwchancebonus <probability>
+Increases the probability of dual wielding (when there are offhand weapons and a short 1h mainhand weapon). Base probability is a random number
+ranging from 0 to 0.1 with a 20% chance of 0 and 80% chance of uniform distribution with parameters 0 and 0.1 (ie equal probability for all values)
+
+#mapmovepenaltyenc <amount>
+The amount of encumberance from equipment before getting mapmove penalty. Won't affect mounted units. Default is 4.
+
+#mapmovepenaltyamount <amount>
+Amount of mapmove penalty when over encumberance. Default is 1.
+
+#magicpriority <path> <number>
+Sets the weight of a certain magic path in mage generation. Default for all paths is 1.
+
+#maxvarieties <number>
+How many varieties of certain armor level of this pose can exist. Defaults to 3. Overridden by ability template and armor versions of this command.
+
+
+#writeslot <slot>
+Writes weapon/armor of this slot to the unit. Should be for lanceslot in any cavalry pose.
+
+#dontvaryhat
+#dontvaryweapon
+Mage variants of same tier won't vary hat/weapon
+
+#varyslot <slot>
+Mage variants vary one of the slots defined by the #varyslot command. Overrides the default hat/weapon varying.
+
+#primaryraceonly
+This pose will not be eligible for selection as a secondary race pose
+
+--- Item
+#recolormask <sprite filename/self>
+Draws the given sprite or the sprite itself if argument is self on top of the item sprite with national color recolor.
+
+#maxvarieties <number>
+How many varieties of certain armor level of this pose can exist. . Only works on body armor. Overridden by ability template version of this command.
+
+--- Ability templates
+
+#maxvarieties <number>
+How many varieties of certain armor level of this pose can exist. Defaults to 3.
+
+--- Filters, magic items, names etc
+#type <string>
+Units/nations/whatever can have only one filter of a type.
+
+#primarycommand <command>
+When checking if we're trying to add something that won't change the unit, we only consider commands marked with #primarycommand. For example a filter giving #ethereal and #gcost +15 will trigger on an ethereal unit thanks to the gold cost changing the unit. However, if you set #primarycommand #ethereal, only #ethereal will be considered and thus an ethereal unit won't get the filter in question.
+
+#commanderonly
+#trooponly
+Only works for nation wide filters. Applies the filter only to commanders or only to troops.
+
+#alwaysok
+Only for mage names. Always accepts this name part even if it does not match the required magic.
+
+--- Magic patterns
+#costpremium <price>
+Increases the cost of the mage with this pattern by given price.
+
+-- Names
+#racevariant <internal race name> <name>
+Uses this name instead for given race. Use internal race names, ie "Human (black)" for Machakans and so on.
+
+#posetagvariant <tag> <name> 
+#racetagvariant <tag> <name>
+Uses this name instead if race/pose has given tag.
+
+#commandvariant <command> [positive/negative] <name>
+Uses this name instead if unit has given command. Positive/negative can be used to require a negative or a positive value for the command (such as #fireres)

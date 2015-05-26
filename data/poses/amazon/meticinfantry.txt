@@ -1,0 +1,90 @@
+
+-------- Normal
+
+#newpose
+#basechance 0.5
+#name "light inf"
+#role "infantry"
+
+#command "#str +1"
+#command "#att -2"
+#command "#def -2"
+#command "#mor -2"
+#command "#prec -2"
+#command "#gcost -3"
+#command "#nametype 136"
+
+#load basesprite /data/items/human/normal/humanbases.txt
+#load shadow /data/items/amazon/normal/shadow.txt
+
+#load hands /data/items/human/normal/humanhands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load shirt /data/items/human/normal/humanshirt.txt
+#load hair /data/items/human/normal/humanhair.txt
+
+#load armor /data/items/amazon/metic/armor.txt
+#load armor /data/items/human/normal/naked.txt
+#load helmet /data/items/amazon/metic/helmet.txt
+#load legs /data/items/amazon/metic/legs.txt
+
+#load weapon /data/items/human/normal/humanweapon.txt
+#load bonusweapon /data/items/amazon/metic/bonusranged.txt
+
+#load offhand /data/items/human/normal/humanoffhand.txt
+#load offhand /data/items/amazon/metic/shields.txt
+#load offhand /data/items/amazon/normal/amazonshields.txt
+
+#maxvarieties 1
+#maxunits 1
+
+#primaryraceonly
+
+#generateitem 0.05 hair
+
+#endpose
+
+
+
+-------- 2h infantry
+
+#newpose
+#basechance 0.2
+#name "2h light inf"
+#role "infantry"
+
+#command "#str +1"
+#command "#att -2"
+#command "#def -2"
+#command "#mor -2"
+#command "#prec -2"
+#command "#gcost -3"
+#command "#nametype 136"
+
+#load basesprite /data/items/human/2h/humanbases.txt
+#load shadow /data/items/amazon/normal/shadow.txt
+
+#load hands /data/items/human/2h/humanhands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load shirt /data/items/human/2h/humanshirt.txt
+#load hair /data/items/human/normal/humanhair.txt
+
+#load armor /data/items/amazon/metic2h/armor.txt
+#load armor /data/items/human/2h/naked.txt
+#load helmet /data/items/amazon/metic/helmet.txt
+#load legs /data/items/amazon/metic/legs.txt
+
+#load weapon /data/items/human/2h/humanweapon.txt
+#load bonusweapon /data/items/amazon/metic2h/bonusranged.txt offsetx -1 offsety 0
+
+#maxvarieties 1
+#maxunits 1
+
+#primaryraceonly
+
+#generateitem 0.05 hair
+
+#endpose

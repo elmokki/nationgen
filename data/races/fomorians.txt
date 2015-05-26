@@ -1,0 +1,44 @@
+
+
+#newrace
+#name "Fomorian"
+#basechance 0.2
+#pose fomoriantroops
+#pose fomorianmages
+#pose fomoriangiants
+
+
+
+#longsyllables /data/names/nations/fomorian/longsyllables.txt
+#shortsyllables /data/names/nations/fomorian/shortsyllables.txt
+#suffixes /data/names/nations/fomorian/suffixes.txt
+
+#magefilters magefilters_fomorian
+
+#unitcommand "#def 10"
+#unitcommand "#mor 12"
+#unitcommand "#mr 12"
+#unitcommand "#gcost 20"
+#unitcommand "#prec 8"
+#unitcommand "#prot 5"
+#unitcommand "#enc 3"
+#unitcommand "#hp 30"
+#unitcommand "#size 4"
+#unitcommand "#str 20"
+#unitcommand "#ap 15"
+#unitcommand "#nametype 101"
+#unitcommand "#maxage 200"
+
+
+#magicpriority death 8
+#magicpriority air 8
+
+#oneprimarychance 0.85
+#twoprimarychance 0.125
+#threeprimarychance 0.025
+
+#chanceinc era 1 *3
+#chanceinc era 3 *0.5
+
+#monsterchance 0.01
+#endrace

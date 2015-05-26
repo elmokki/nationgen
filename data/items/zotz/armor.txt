@@ -1,0 +1,151 @@
+--- Nekkid
+
+#newitem
+#name "nekkid"
+#gameid -1
+#armor
+#enditem
+
+
+--- Leather
+
+#newitem
+#name "leather cuirass"
+#gameid 5
+#sprite /graphics/zotz/armor/leathercuirass.png
+#recolormask /graphics/zotz/armor/armor_recolormask.png
+#armor
+#enditem
+
+
+#newitem
+#name "leather hauberk"
+#gameid 10
+#sprite /graphics/zotz/armor/leatherhauberk.png
+#recolormask /graphics/zotz/armor/armor_recolormask.png
+#armor
+#enditem
+
+
+
+#newitem -- full leather
+#newitem
+#basechance 0.5
+#name "full leather"
+#gameid 15
+#sprite /graphics/zotz/armor/fullleather.png
+#recolormask /graphics/zotz/armor/armor_recolormask.png
+#armor
+#enditem
+
+
+#newitem -- reinforced full leather (Mictlan armor)
+#newitem
+#basechance 0.5
+#name "reinforced leather"
+#gameid zotz_mictlanarmor
+#sprite /graphics/zotz/armor/mictlanarmor.png
+#recolormask /graphics/zotz/armor/mictlanarmor_recolormask.png
+#armor
+#enditem
+
+--- Scale
+
+#newitem
+#basechance 0.5
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/zotz/armor/scalecuirass.png
+#recolormask /graphics/zotz/armor/armor_recolormask.png
+#armor
+#enditem
+
+#newitem
+#basechance 0.5
+#name "scale cuirass with clothes"
+#gameid 7
+#sprite /graphics/zotz/armor/scalecuirass2.png
+#recolormask /graphics/zotz/armor/scalecuirass2_recolormask.png
+#armor
+#enditem
+
+
+#newitem
+#basechance 0.125
+#name "scale hauberk"
+#gameid 12
+#sprite /graphics/zotz/armor/scalehauberk.png
+#recolormask /graphics/zotz/armor/armor_recolormask.png
+#armor
+#enditem
+
+#newitem
+#basechance 0.125
+#name "scale hauberk with clothes"
+#gameid 12
+#sprite /graphics/zotz/armor/scalehauberk2.png
+#recolormask /graphics/zotz/armor/scalehauberk2_recolormask.png
+#armor
+#enditem
+
+
+
+#newitem -- full scale
+#basechance 0.030625
+#name "full scale"
+#gameid 17
+#sprite /graphics/zotz/armor/fullscale.png
+#recolormask /graphics/zotz/armor/armor_recolormask.png
+#armor
+#enditem
+
+#newitem -- full scale
+#basechance 0.030625
+#name "full scale with clothes"
+#gameid 17
+#sprite /graphics/zotz/armor/fullscale2.png
+#recolormask /graphics/zotz/armor/fullscale2_recolormask.png
+#armor
+#enditem
+
+-- Low probability special armors
+
+#newitem
+#basechance 0.030625
+#name "golden cuirass"
+#gameid zotz_goldcuirass
+#sprite /graphics/zotz/armor/suncuirass.png
+#tag "tierunique"
+#chanceinc "personalcommand #sacred *5"
+#armor
+#enditem
+
+#newitem
+#basechance 0.0153125
+#name "golden armor"
+#gameid zotz_goldarmor
+#sprite /graphics/zotz/armor/sunarmor.png
+#tag "tierunique"
+#chanceinc "personalcommand #sacred *5"
+#armor
+#enditem
+
+#newitem
+#basechance 0.030625
+#name "obsidian cuirass"
+#gameid 206
+#sprite /graphics/zotz/armor/obsidiancuirass.png
+#tag "tierunique"
+#chanceinc "personalcommand #sacred *5"
+#armor
+#enditem
+
+#newitem
+#basechance 0.0153125
+#name "obsidian armor"
+#gameid zotz_obsarmor
+#sprite /graphics/zotz/armor/obsidianarmor.png
+#tag "tierunique"
+#chanceinc "personalcommand #sacred *5"
+#armor
+#enditem

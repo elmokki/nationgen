@@ -1,0 +1,30 @@
+--- This file lists ids UnitGen is forbidden to use and defines id range starts
+-
+-- Syntax:
+-
+- nation/site/unit/weapon/armor/name x-y 
+- forbids using the given range (includes both boundaries)
+-
+- nation/site/unit/weapon/armor/name x
+- forbids specific id
+-
+- nation/site/unit/weapon/armor/name start x
+- tells NationGen to start using ids from given id
+
+---- Nations
+nation start 100
+
+--- Sites
+site start 1500
+
+--- Units
+unit start 3000
+
+--- Weapons
+weapon start 700
+
+--- Armor
+armor start 250
+
+--- Nametypes
+name start 160

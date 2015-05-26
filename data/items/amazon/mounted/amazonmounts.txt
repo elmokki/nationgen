@@ -1,0 +1,314 @@
+--- Base offsets are applied to everything except base and overlay
+
+
+#newitem
+#name "gryphon"
+#gameid -1
+#sprite /graphics/amazon/mounts/gryphon.png
+#armor
+#offsetx 23
+#offsety 64
+#needs overlay gryphon_overlay
+#define "#size 5"
+#define "#mapmove 2"
+#define "#ap 15"
+#define "#mounted"
+#define "#flying"
+#define "#weapon 236 -- Claw"
+#define "#weapon 237 -- Bite"
+#define "#secondtmpshape gryphonmount"
+#define "#gcost +100"
+#define "#ressize 2"
+#define "#enc 4"
+#description "If the rider dies, the gryphon will carry on fighting until the end of the battle."
+#theme "flying"
+#theme "specialmount"
+#theme "animal gryphon"
+#tag "guaranteedprefix gryphon"
+#basechance 0.2
+#chanceinc primaryrace "Human (Amazon)" *5
+#sacredextra 0.8
+#enditem
+
+#newitem
+#name "leogryph"
+#gameid -1
+#sprite /graphics/amazon/mounts/leogryph.png
+#armor
+#define "#size 4"
+#define "#mapmove 2"
+#define "#ap 20"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape leogryphmount"
+#define "#gcost +40"
+#define "#ressize 2"
+#define "#enc 4"¨
+#description "If the rider dies, the leogryph will carry on fighting until the end of the battle."
+#basechance 0.25
+#offsety 5
+#offsetx -3
+#theme "specialmount"
+#theme "animal leogryph"
+#tag "guaranteedprefix leogryph"
+#chanceinc primaryrace "Human (Amazon)" *5
+#enditem
+
+#newitem
+#name "equine_nightmare"
+#gameid -1
+#offsetx 0
+#offsety 2
+#sprite /graphics/amazon/mounts/nightmare_equine.png
+#armor
+#needs overlay equine_nightmare_overlay
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 25"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#enc 15"
+#define "#fear 5"
+#define "#gcost +50"
+#tag "guaranteedprefix nightmare"
+#sacredextra 0.75
+#theme "specialmount"
+#theme "animal nightmare"
+#description "The riders animate their undead horses with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 0.5
+#tag "eliteversion equine_nightmare_caparison"
+#tag "eliteversion equine_nightmare_half-barded"
+#tag "eliteversion equine_nightmare_full-barded1"
+#tag "eliteversion equine_nightmare_scale-barded1"
+#tag "minprot 10"
+#chanceinc primaryrace "Human (Amazon)" *5
+#enditem
+
+#newitem
+#name "equine_nightmare_caparison"
+#gameid -1
+#offsetx 0
+#offsety 2
+#sprite /graphics/amazon/mounts/nightmare_equine_caparison.png
+#recolormask /graphics/amazon/mounts/nightmare_equine_caparison_recolormask.png
+#armor
+#needs overlay equine_caparison_nightmare_overlay
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 25"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#rcost +5"
+#define "#enc 15"
+#define "#fear 5"
+#define "#gcost +50"
+#tag "guaranteedprefix nightmare"
+#sacredextra 0.75
+#theme "specialmount"
+#theme "animal nightmare"
+#description "The riders animate their undead horses with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 0.5
+#tag "minprot 12"
+#chanceinc primaryrace "Human (Amazon)" *5
+#enditem
+
+#newitem
+#name "equine_nightmare_half-barded"
+#gameid -1
+#offsetx 0
+#offsety 2
+#sprite /graphics/amazon/mounts/nightmare_equine_halfbarded.png
+#armor
+#needs overlay equine_halfbarded_nightmare_overlay
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 25"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#enc 15"
+#define "#fear 5"
+#define "#gcost +50"
+#tag "guaranteedprefix nightmare"
+#sacredextra 0.75
+#theme "specialmount"
+#theme "animal nightmare"
+#description "The riders animate their undead horses with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 0.5
+#tag "eliteversion equine_nightmare_full-barded1"
+#tag "eliteversion equine_nightmare_full-barded2"
+#tag "minprot 10"
+#chanceinc primaryrace "Human (Amazon)" *5
+#enditem
+
+
+#newitem
+#name "equine_nightmare_scale-barded1"
+#gameid -1
+#offsetx 0
+#offsety 2
+#sprite /graphics/amazon/mounts/nightmare_equine_scalebarded1.png
+#armor
+#needs overlay equine_scalebarded_nightmare1_overlay
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 25"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#rcost +5"
+#define "#enc 15"
+#define "#fear 5"
+#define "#gcost +50"
+#tag "guaranteedprefix nightmare"
+#sacredextra 0.75
+#theme "specialmount"
+#theme "animal nightmare"
+#description "The riders animate their undead horses with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 0.25
+#tag "eliteversion equine_nightmare_scale-barded2"
+#tag "minprot 12"
+#chanceinc primaryrace amazon *5
+#enditem
+
+
+#newitem
+#name "equine_nightmare_scale-barded2"
+#gameid -1
+#offsetx 0
+#offsety 2
+#sprite /graphics/amazon/mounts/nightmare_equine_scalebarded2.png
+#armor
+#needs overlay equine_scalebarded_nightmare2_overlay
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 25"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#rcost +5"
+#define "#enc 15"
+#define "#fear 5"
+#define "#gcost +50"
+#tag "guaranteedprefix nightmare"
+#sacredextra 0.75
+#theme "specialmount"
+#theme "animal nightmare"
+#description "The riders animate their undead horses with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 0.25
+#tag "minprot 12"
+#chanceinc primaryrace "Human (Amazon)" *5
+#enditem
+
+#newitem
+#name "equine_nightmare_full-barded1"
+#gameid -1
+#offsetx 0
+#offsety 2
+#sprite /graphics/amazon/mounts/nightmare_equine_fullbarded1.png
+#armor
+#needs overlay equine_fullbarded_nightmare1_overlay
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 25"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#rcost +5"
+#define "#enc 15"
+#define "#fear 5"
+#define "#gcost +50"
+#tag "guaranteedprefix nightmare"
+#sacredextra 0.75
+#theme "specialmount"
+#theme "animal nightmare"
+#description "The riders animate their undead horses with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 0.25
+#tag "minprot 14"
+#chanceinc primaryrace amazon *5
+#enditem
+
+#newitem
+#name "equine_nightmare_full-barded2"
+#gameid -1
+#offsetx 0
+#offsety 2
+#sprite /graphics/amazon/mounts/nightmare_equine_fullbarded2.png
+#armor
+#needs overlay equine_fullbarded_nightmare2_overlay
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 25"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#rcost +5"
+#define "#enc 15"
+#define "#fear 5"
+#define "#gcost +50"
+#tag "guaranteedprefix nightmare"
+#sacredextra 0.75
+#theme "specialmount"
+#theme "animal nightmare"
+#description "The riders animate their undead horses with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 0.25
+#tag "minprot 14"
+#chanceinc primaryrace "Human (Amazon)" *5
+#enditem
+
+#newitem
+#name "feline_nightmare"
+#gameid -1
+#offsetx -4
+#offsety 6
+#sprite /graphics/amazon/mounts/nightmare_feline.png
+#armor
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#weapon 236 -- Claw"
+#define "#ressize 2"
+#define "#enc 15"
+#define "#fear 5"
+#define "#gcost +55"
+#tag "guaranteedprefix nightmare"
+#sacredextra 1
+#theme "specialmount"
+#theme "animal nightmare"
+#description "The riders animate their undead lions with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 0.2
+#tag "minprot 10"
+#chanceinc primaryrace "Human (Amazon)" *5
+#enditem
+
+#newitem
+#name "leogryph_nightmare"
+#gameid -1
+#offsetx -4
+#offsety 6
+#sprite /graphics/amazon/mounts/nightmare_leogryph.png
+#armor
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 22"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#weapon 236 -- Claw"
+#define "#ressize 2"
+#define "#enc 15"
+#define "#fear 5"
+#define "#gcost +55"
+#tag "guaranteedprefix nightmare"
+#sacredextra 1
+#theme "specialmount"
+#theme "animal nightmare"
+#description "The riders animate their undead leogryphs with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 0.2
+#tag "minprot 10"
+#chanceinc primaryrace "Human (Amazon)" *5
+#enditem

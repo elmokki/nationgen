@@ -1,0 +1,18 @@
+
+--- Pants belonging to an armor set should be given id of the lowest prot armor they go with if you want to avoid naked people with plate pants.
+
+#newitem -- No pants is possible for C'tisians!
+#id "naked lizard legs"
+#gameid -1
+#sprite /graphics/legs/ctis/nakedlegs.png
+#armor
+#enditem
+
+#newitem
+#id legarmor
+#gameid -1
+#sprite /graphics/legs/ctis/legarmor.png
+#recolormask /graphics/legs/ctis/legarmor_recolormask.png
+#armor
+#basechance 0
+#enditem

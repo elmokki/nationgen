@@ -1,0 +1,53 @@
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/zotz/weapon/axe.png
+#tag "name infantry axeman"
+#theme "advanced"
+#basechance 0.25
+#enditem
+
+#newitem
+#id hatchet
+#gameid 253
+#sprite /graphics/zotz/weapon/hatchet.png
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/zotz/weapon/mace.png
+#tag "name infantry maceman"
+#enditem
+
+#newitem
+#id lightlance
+#gameid 357
+#sprite /graphics/zotz/weapon/spear.png
+#tag "name infantry lancer"
+#chanceinc "personalcommand #mounted *3"
+#enditem
+
+
+#newitem
+#id dagger
+#basechance 0.25
+#gameid 9
+#sprite /graphics/zotz/weapon/dagger.png
+#chanceinc "personalcommand #mounted *0"
+#enditem
+
+#newitem
+#id trident
+#basechance 0.125
+#gameid 3
+#sprite /graphics/zotz/weapon/trident.png
+#chanceinc "personalcommand #mounted *3"
+#enditem
+
+#newitem
+#id clubsword
+#gameid 451
+#sprite /graphics/zotz/weapon/clubsword.png
+#enditem
+

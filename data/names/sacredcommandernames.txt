@@ -1,0 +1,100 @@
+--- Supported chanceincs:
+---
+--- personalmagic <path> <pathlevel> <chance change>
+--- Each line can have multiple path-level combos that are required to get the change. Number after path signifies required path level.
+--- In general the unit must have the signified path level to get the name.
+--- The base chance is multiplied by the average path level of the paths the unit has.
+--- Example: Mage with F2 and E2 and "personalmagic fire 1 earth 1 1" gets (2 + 2) / 2 = 2 times the chance increase.
+---
+--- magicbelow  <path> <pathlevel> <chance change>
+--- Same as above, but it triggers if the unit has a magic level that is under the specified value. Good for making the most epic names not happen on tertiaries etc.
+--- Does not get the base chance multiplying however.
+---
+--- race <race name> <chance change>
+--- Should be fairly self explaining: checks unit's race.
+---
+--- pose <pose type> <chance change>
+--- Same as above, but makes sure unit's pose can be used for given role (infantry, mounted, ranged, scout, sacred, mage, priest, chariot)
+--- Not generally useful for mage/priest name separation (use magicbelow and magic for that) due to them often using same poses, but can be useful for sacred names.
+---
+--- command <command> <chance change>
+--- Checks if the unit has given command with any argument. For example "command #stealthy 1" name gets +1 chance of being picked when the unit has stealth of any level.
+---
+--- origname <name> <chance change>
+--- Designed for sacred commander naming. If a sacred is named Thunderous Templar, "origname Templar 1" gets +1 chance of being picked when making commander version 
+--- of that sacred.
+---
+--- magic <path> <chance change>
+--- Purely for sacreds. National magic and sacred equipment dictate what path the sacred is - this triggers on that.
+---
+--- filter <name> <chance change>
+--- If filter named <name> was applied to the unit, this triggers.
+
+#new 
+#name "master"
+#commandvariant #female "mistress"
+#basechance 1
+#end
+
+#new 
+#name "lord"
+#commandvariant #female "lady"
+#basechance 1
+#end
+
+#new 
+#name "paladin"
+#basechance 0
+#chanceinc "origpart aspirant 3"
+#chanceinc "origpart disciple 3"
+#chanceinc "origpart follower 3"
+#chanceinc "origpart apostle 3"
+#end
+
+#new 
+#name "nightlord"
+#commandvariant #female "nightmistress"
+#basechance 0
+#chanceinc "origpart nightblade 3"
+#chanceinc "origpart nightstalker 3"
+#chanceinc "origpart nighthaunt 3"
+#end
+
+#new 
+#name "knight"
+#basechance 0
+#chanceinc "origpart cavalier 3"
+#end
+
+#new 
+#name "lord ranger"
+#commandvariant #female "lady ranger"
+#basechance 0
+#chanceinc "origpart ranger 3"
+#chanceinc "origpart sniper 1"
+#chanceinc "origpart marksman 1"
+#end
+
+#new 
+#name "herse"
+#basechance 0
+#chanceinc "origpart huskarl 5"
+#end
+
+#new 
+#name "jarl"
+#basechance 0
+#chanceinc "origpart hirdman 5"
+#end
+
+#new 
+#name "princess"
+#basechance 0
+#chanceinc "origpart maiden 5"
+#end
+
+#new 
+#name "daimyo"
+#basechance 0
+#chanceinc "origpart samurai 5"
+#end

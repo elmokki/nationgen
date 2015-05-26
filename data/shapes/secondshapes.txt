@@ -1,0 +1,778 @@
+--- You don't need to write the shapeshifting commands, they are done automatically based on the filter applying the shapes
+
+#new secondshape
+#name "turkey"
+#command "#copystats 1362"
+#command "#copyspr 1362"
+#command "#itemslots 12288"
+#end
+
+
+#new secondshape
+#name "werewolf"
+#command "#copyspr 854"
+#command "#magicboost 53 -1"
+#command "#name Werewolf"
+#command "#weapon 20"
+#command "#weapon 29"
+#command "#weapon 29"
+#command "#size 3"
+#command "#hp 20"
+#command "#prot 6"
+#command "#mor 17"
+#command "#mr 12"
+#command "#enc 2"
+#command "#str 14"
+#command "#att 12"
+#command "#def 11"
+#command "#prec 5"
+#command "#mapmove 2"
+#command "#ap 14"
+#command "#regeneration 10"
+#command "#forestsurvival"
+#end
+
+#new secondshape
+#name "wolf"
+#command "#copystats 284"
+#command "#copyspr 284"
+#command "#magicboost 53 -1"
+#command "#itemslots 12288"
+#end
+
+#new secondshape
+#name "hawk"
+#command "#copystats 1380"
+#command "#copyspr 1380"
+#command "#itemslots 12288"
+#command "#magicboost 53 -1"
+#end
+
+#new secondshape
+#name "greatboar"
+#command "#copystats 1807"
+#command "#copyspr 1807"
+#command "#itemslots 12288"
+#command "#magicboost 53 -1"
+#end
+
+#new secondshape
+#name "vineman"
+#command "#copystats 361"
+#command "#copyspr 361"
+#command "#magicboost 53 -1"
+#command "#hp 23"
+#nowayback
+#end
+
+#new secondshape
+#name "cavecrab"
+#command "#copystats 2514"
+#command "#copyspr 2514"
+#command "#itemslots 12288"
+#command "#magicboost 53 -1"
+#end
+
+#new secondshape
+#name "toad"
+#command "#name 'Giant Toad'"
+#command "#copyspr 1359"
+#command "#itemslots 12288"
+#command "#str 11"
+#command "#mor 12"
+#command "#mr 12"
+#command "#prot 3"
+#command "#hp 31"
+#command "#att 10"
+#command "#def 8"
+#command "#prec 9"
+#command "#ap 6"
+#command "#mapmove 2"
+#command "#enc 3"
+#command "#weapon 324"
+#command "#weapon 29"
+#command "#animal"
+#command "#coldblooded"
+#command "#size 3"
+#command "#trample"
+#command "#swamp survival"
+#command "#magicboost 53 -1"
+#end
+
+
+#new secondshape
+#name "wingedmonkey"
+#command "#copystats 1199"
+#command "#copyspr 1199"
+#command "#magicboost 53 -1"
+#command "#itemslots 12288"
+#end
+
+#new secondshape
+#name "devil"
+#command "#copystats 304"
+#command "#copyspr 304"
+#command "#magicboost 53 -1"
+#end
+
+
+#new secondshape
+#name "frostfiend"
+#command "#copystats 449"
+#command "#copyspr 449"
+#command "#magicboost 53 -1"
+#end
+
+#new secondshape
+#name "greatbear"
+#command "#copystats 694"
+#command "#copyspr 694"
+#command "#magicboost 53 -1"
+#command "#itemslots 12288"
+#end
+
+#new secondshape
+#name "jaguar"
+#command "#copyspr 858"
+#command "#magicboost 53 -1"
+#command "#name Jaguar"
+#command "#weapon 20"
+#command "#weapon 29"
+#command "#hp 19"
+#command "#prot 4"
+#command "#mor 13"
+#command "#mr 12"
+#command "#enc 3"
+#command "#str 15"
+#command "#att 13"
+#command "#def 10"
+#command "#prec 5"
+#command "#mapmove 3"
+#command "#ap 20"
+#command "#poorleader"
+#command "#itemslots 12288"
+#end
+
+#new secondshape
+#name "deepone"
+#command "#copystats 1686"
+#command "#copyspr 1686"
+#command "#magicboost 53 -1"
+#command "#magicboost 2 2"
+#end
+
+#new secondshape
+#name "ghost"
+#command "#copystats 566"
+#command "#spr1 greyscale 20"
+#command "#spr2 shift"
+#keepname
+#end
+
+#new secondshape
+#name "ghoul"
+#command "#copystats 198"
+#command "#copyspr 198"
+#command "#magicboost 53 -1"
+#command "#gcost -40"
+#command "#hp 16"
+#nowayback
+#keepname
+#end
+
+#new secondshape
+#name "hornedserpent"
+#command "#copystats 403"
+#command "#copyspr 403"
+#command "#itemslots 12288"
+#command "#hp 28"
+#keepname
+#end
+
+#new secondshape
+#name "felemental"
+#command "#copystats 594"
+#command "#copyspr 594"
+#command "#magicboost 53 -5"
+#command "#berserk 2"
+#command "#reinvigoration 10"
+#command "#itemslots 12288"
+#nowayback
+#keepname
+#end
+
+#new secondshape
+#name "minorfelemental"
+#command "#copystats 598"
+#command "#copyspr 598"
+#command "#magicboost 53 -5"
+#command "#reinvigoration 10"
+#command "#itemslots 12288"
+#nowayback
+#keepname
+#end
+
+#new secondshape
+#name "eelemental"
+#command "#copystats 493"
+#command "#copyspr 493"
+#command "#magicboost 53 -5"
+#command "#berserk 2"
+#command "#reinvigoration 10"
+#command "#itemslots 12288"
+#nowayback
+#keepname
+#end
+
+#new secondshape
+#name "minoreelemental"
+#command "#copystats 497"
+#command "#copyspr 497"
+#command "#magicboost 53 -5"
+#command "#reinvigoration 10"
+#command "#itemslots 12288"
+#nowayback
+#keepname
+#end
+
+#new secondshape
+#name "aelemental"
+#command "#copystats 567"
+#command "#copyspr 567"
+#command "#magicboost 53 -5"
+#command "#berserk 2"
+#command "#reinvigoration 10"
+#command "#itemslots 12288"
+#nowayback
+#keepname
+#end
+
+#new secondshape
+#name "minoraelemental"
+#command "#copystats 571"
+#command "#copyspr 571"
+#command "#magicboost 53 -5"
+#command "#reinvigoration 10"
+#command "#itemslots 12288"
+#nowayback
+#keepname
+#end
+
+#new secondshape
+#name "welemental"
+#command "#copystats 408"
+#command "#copyspr 408"
+#command "#magicboost 53 -5"
+#command "#berserk 2"
+#command "#reinvigoration 10"
+#command "#itemslots 12288"
+#nowayback
+#keepname
+#end
+
+#new secondshape
+#name "minorwelemental"
+#command "#copystats 412"
+#command "#copyspr 412"
+#command "#magicboost 53 -5"
+#command "#reinvigoration 10"
+#command "#itemslots 12288"
+#nowayback
+#keepname
+#end
+
+#new secondshape
+#name "metalman"
+#command "#copystats 532"
+#command "#copyspr 532"
+#command "#magicboost 53 -5"
+#command "#reinvigoration 5"
+#nowayback
+#end
+
+#new secondshape
+#name "scorpion"
+#command "#copystats 524"
+#command "#copyspr 524"
+#command "#magicboost 53 -5"
+#command "#itemslots 12288"
+#end
+
+#new secondshape
+#name "lesserhorror"
+#command "#copystats 307"
+#command "#copyspr 307"
+#command "#magicboost 53 -5"
+#command "#itemslots 12288"
+#end
+
+
+--- Mounts
+
+#new secondshape
+#name "jaguarmount"
+#command "#copyspr 858"
+#command "#magicboost 53 -1"
+#command "#name 'Jaguar'"
+#command "#weapon 20"
+#command "#weapon 29"
+#command "#hp 19"
+#command "#prot 4"
+#command "#mor 13"
+#command "#mr 12"
+#command "#enc 3"
+#command "#str 15"
+#command "#att 13"
+#command "#def 10"
+#command "#prec 5"
+#command "#mapmove 3"
+#command "#ap 20"
+#command "#noleader"
+#command "#itemslots 12288"
+#nogcost
+#nowayback
+#mount
+#end
+
+
+#new secondshape
+#name "jaguarmount-stealthy"
+#command "#copyspr 858"
+#command "#magicboost 53 -1"
+#command "#name 'Jaguar'"
+#command "#weapon 20"
+#command "#weapon 29"
+#command "#hp 19"
+#command "#prot 4"
+#command "#mor 13"
+#command "#mr 12"
+#command "#enc 3"
+#command "#str 15"
+#command "#att 13"
+#command "#def 10"
+#command "#prec 5"
+#command "#mapmove 3"
+#command "#ap 20"
+#command "#noleader"
+#command "#stealthy +40"
+#command "#itemslots 12288"
+#nogcost
+#nowayback
+#mount
+#end
+
+#new secondshape
+#name "serpent1"
+#command "#copystats 1179"
+#command "#copyspr 1179"
+#command "#magicboost 53 -5"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "serpent2"
+#command "#copystats 4"
+#command "#copyspr 4"
+#command "#magicboost 53 -5"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "cavedrake"
+#command "#copystats 522"
+#command "#copyspr 522"
+#command "#magicboost 53 -5"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "spider"
+#command "#copystats 884"
+#command "#copyspr 884"
+#command "#magicboost 53 -5"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "cavespider"
+#command "#copystats 2513"
+#command "#copyspr 2513"
+#command "#magicboost 53 -5"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "amphiptere"
+#command "#copystats 1412"
+#command "#copyspr 1412"
+#command "#name 'Amphiptere'"
+#nowayback
+#nogcost
+#mount
+#end
+
+
+#new secondshape
+#name "lionmount"
+#command "#copystats 628"
+#command "#copyspr 628"
+#command "#magicboost 53 -5"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "beastbat_nerfed"
+#command "#copyspr 1357"
+#command "#name 'Beast Bat'"
+#command "#weapon 251"
+#command "#size 2"
+#command "#hp 14"
+#command "#prot 4"
+#command "#mor 10"
+#command "#mr 8"
+#command "#enc 2"
+#command "#str 10"
+#command "#att 11"
+#command "#def 13"
+#command "#prec 5"
+#command "#mapmove 3"
+#command "#ap 18"
+#command "#flying"
+#command "#forestsurvival"
+#command "#itemslots 12288"
+#nowayback
+#nogcost
+#mount
+#end
+
+
+#new secondshape
+#name "ozelotl"
+#command "#copyspr 1356"
+#command "#name 'Ozelotl'"
+#command "#weapon 20"
+#command "#weapon 29"
+#command "#size 3"
+#command "#hp 21"
+#command "#prot 4"
+#command "#mor 13"
+#command "#mr 8"
+#command "#enc 2"
+#command "#str 15"
+#command "#att 13"
+#command "#def 10"
+#command "#prec 5"
+#command "#mapmove 3"
+#command "#ap 25"
+#command "#flying"
+#command "#forestsurvival"
+#command "#itemslots 12288"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "tiger"
+#command "#copyspr 1140"
+#command "#name 'Tiger'"
+#command "#weapon 20"
+#command "#weapon 29"
+#command "#size 3"
+#command "#hp 21"
+#command "#prot 4"
+#command "#mor 13"
+#command "#mr 8"
+#command "#enc 2"
+#command "#str 15"
+#command "#att 13"
+#command "#def 10"
+#command "#prec 5"
+#command "#mapmove 3"
+#command "#ap 18"
+#command "#forestsurvival"
+#command "#itemslots 12288"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "hunterspider"
+#command "#copyspr 899"
+#command "#magicboost 53 -5"
+#command "#name 'Hunter Spider'"
+#command "#weapon 65"
+#command "#weapon 261"
+#command "#size 6"
+#command "#hp 55"
+#command "#prot 16"
+#command "#mor 14"
+#command "#enc 2"
+#command "#str 16"
+#command "#att 14"
+#command "#def 11"
+#command "#prec 5"
+#command "#mapmove 2"
+#command "#ap 22"
+#command "#poisonres 100"
+#command "#itemslots 12288"
+#command "#mr 8"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "nightmare"
+#command "#spr1 ./graphics/mounts/standard/nightmare.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Nightmare'"
+#command "#fear 0"
+#command "#enc 50"
+#command "#ap 25"
+#command "#str 14"
+#command "#mr 12"
+#command "#mor 50"
+#command "#att 11"
+#command "#def 10"
+#command "#hp 16"
+#command "#prec 5"
+#command "#prot 5"
+#command "#size 3"
+#command "#mapmove 4"
+#command "#weapon 56 --- Hoof"
+#command "#demon"
+#command "#itemslots 12288"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "bearmount"
+#command "#spr1 ./graphics/mounts/standard/bear.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Bear'"
+#command "#enc 3"
+#command "#ap 16"
+#command "#str 16"
+#command "#mr 8"
+#command "#mor 10"
+#command "#att 10"
+#command "#def 8"
+#command "#hp 30"
+#command "#prec 5"
+#command "#prot 4"
+#command "#size 4"
+#command "#mapmove 2"
+#command "#itemslots 12288"
+#command "#weapon 20 --- Bite"
+#command "#weapon 29 -- Claw"
+#nowayback
+#nogcost
+#mount
+#end
+
+
+#new secondshape
+#name "caveman"
+#command "#copystats 2018"
+#command "#copyspr 2019"
+#command "#magicboost 53 -5"
+#command "#name 'Cave Man'"
+#command "#fear 0"
+#command "#gcost 20"
+#command "#armor 44"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "wyvern"
+#command "#copystats 520"
+#command "#copyspr 520"
+#command "#magicboost 53 -5"
+#command "#itemslots 12288"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "moose"
+#command "#copystats 1084"
+#command "#copyspr 1084"
+#command "#itemslots 12288"
+#command "#magicboost 53 -5"
+#nowayback
+#nogcost
+#mount
+#end
+
+
+#new secondshape
+#name "scorpionmount"
+#command "#copystats 524"
+#command "#copyspr 524"
+#command "#magicboost 53 -5"
+#command "#itemslots 12288"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "cavegrubmount"
+#command "#copystats 2526"
+#command "#copyspr 2526"
+#command "#magicboost 53 -5"
+#command "#itemslots 12288"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "cavecowmount"
+#command "#copystats 2512"
+#command "#copyspr 2512"
+#command "#magicboost 53 -5"
+#command "#itemslots 12288"
+#nowayback
+#nogcost
+#mount
+#end
+
+
+#new secondshape
+#name "fossilmount"
+#command "#copystats 1977"
+#command "#copyspr 1977"
+#command "#magicboost 53 -5"
+#command "#itemslots 12288"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "leogryphmount"
+#command "#copystats 2132"
+#command "#copyspr 2132"
+#command "#magicboost 53 -5"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "gryphonmount"
+#command "#copystats 2131"
+#command "#copyspr 2131"
+#command "#magicboost 53 -5"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "flayedserpent"
+#command "#spr1 ./graphics/amazon/mounts/flayed_serpent.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Flayed Serpent'"
+#command "#enc 0"
+#command "#ap 12"
+#command "#str 15"
+#command "#mr 5"
+#command "#mor 50"
+#command "#att 8"
+#command "#def 5"
+#command "#hp 42"
+#command "#prec 5"
+#command "#prot 4"
+#command "#size 3"
+#command "#mapmove 3"
+#command "#weapon 495 --- Poisonous Bite"
+#command "#coldres 15"
+#command "#poisonres 25"
+#command "#undisciplined"
+#command "#undead"
+#command "#inanimate"
+#command "#mindless"
+#command "#pooramphibian"
+#command "#neednoteat"
+#command "#noheal"
+#command "#itemslots 12288"
+#nowayback
+#nogcost
+#mount
+#end
+
+
+#new secondshape
+#name "hyenamount"
+#command "#spr1 ./graphics/mounts/standard/hyena.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Hyena'"
+#command "#enc 3"
+#command "#ap 20"
+#command "#str 13"
+#command "#mr 5"
+#command "#mor 10"
+#command "#att 10"
+#command "#def 9"
+#command "#hp 16"
+#command "#prec 8"
+#command "#prot 6"
+#command "#size 2"
+#command "#mapmove 2"
+#command "#weapon 20 --- Bite"
+#command "#stealthy 40"
+#command "#wastesurvival"
+#command "#undisciplined"
+#command "#animal"
+#command "#itemslots 12288"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "crocodilemount"
+#command "#copystats 2185"
+#command "#copyspr 2185"
+#command "#magicboost 53 -5"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "crocodilemount2"
+#command "#copystats 2185"
+#command "#spr1 ./graphics/mounts/standard/crocodile_monster_armored.png"
+#command "#spr2 shift"
+#command "#armor 172 --- Mail Barding"
+#command "#magicboost 53 -5"
+#nowayback
+#nogcost
+#mount
+#end

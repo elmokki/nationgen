@@ -1,0 +1,55 @@
+#newrace
+#name "Lizard"
+#poses /races/lizard/poses.txt
+
+
+
+#basechance 0.5
+#longsyllables /data/names/nations/lizard/longsyllables.txt
+#shortsyllables /data/names/nations/lizard/shortsyllables.txt
+#suffixes /data/names/nations/lizard/suffixes.txt
+#unitcommand "#prot 5"
+#unitcommand "#coldblooded"
+#unitcommand "#gcost 10"
+#unitcommand "#hp 11"
+#unitcommand "#mr 12"
+#unitcommand "#mor 9"
+#unitcommand "#enc 4"
+#unitcommand "#poisonres 5"
+#unitcommand "#swampsurvival"
+#unitcommand "#ap 10"
+#unitcommand "#nametype 113"
+#unitcommand "#maxage 75"
+#nationcommand "#idealcold -1"
+#tag "preferredmount serpent"
+#tag "preferredmount lizard"
+
+
+#generationchance chariot 0.25
+#generationchance ranged 0.125
+#generationchance cavalry 0.125
+
+#sacredchariotchance 0.25
+
+#magicpatterns defaultprimary
+#magicpatterns defaultsecondary
+#magicpatterns defaulttertiary
+
+#pose lizardinfantry
+#pose lizardchariots
+#pose lizardranged
+#pose predatorlizards
+#pose lizardmage
+#pose predatormages
+
+#gods lizardgods
+
+#magicpriority death 6
+#magicpriority nature 4
+#magicpriority water 2
+
+#chanceinc "primaryrace van *0.1"
+#chanceinc primaryrace "human (black)" *3
+#chanceinc primaryrace "Sobek" *3
+
+#endrace

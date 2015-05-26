@@ -1,0 +1,58 @@
+--- Mounted legs
+
+#newitem
+#id mounted_pants
+#gameid -1
+#sprite /graphics/legs/standard_mounted/mounted_pants.png
+#armor
+#recolormask /graphics/legs/standard_mounted/mounted_pants_recolormask.png
+#enditem
+
+
+#newitem
+#id mounted_leatherpants
+#gameid -1
+#sprite /graphics/legs/standard_mounted/mounted_leather.png
+#armor
+#enditem
+
+#newitem
+#id mounted_ringpants
+#gameid -1
+#sprite /graphics/legs/standard_mounted/mounted_ring.png
+#armor
+#basechance 0
+#enditem
+
+#newitem
+#id mounted_chainpants
+#gameid -1
+#sprite /graphics/legs/standard_mounted/mounted_chain.png
+#armor
+#tag "minprot 12"
+#enditem
+
+#newitem
+#id mounted_greaves
+#gameid -1
+#sprite /graphics/amazon/legs/standard_mounted/mounted_greaves.png
+#armor
+#basechance 0
+#enditem
+
+#newitem
+#id mounted_greaves_bronze
+#gameid -1
+#sprite /graphics/amazon/legs/standard_mounted/mounted_greaves_bronze.png
+#armor
+#basechance 0
+#enditem
+
+#newitem
+#id mounted_greaves_elite
+#gameid -1
+#sprite /graphics/amazon/legs/standard_mounted/mounted_greaves_elite.png
+#armor
+#basechance 0
+#theme "elite"
+#enditem

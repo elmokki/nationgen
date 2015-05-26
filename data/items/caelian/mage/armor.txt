@@ -1,0 +1,61 @@
+
+--- Leather
+
+#newitem
+#id simplerobe
+#gameid 158
+#sprite /graphics/caelian/armor/robes/basicrobe.png
+#recolormask self
+#tag "eliteversion toga"
+#tag "eliteversion bogarusrobe"
+#tag "eliteversion goldtrimmedrobe"
+#tag "eliteversion trimmedrobe"
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id bogarusrobe
+#gameid 158
+#sprite /graphics/caelian/armor/robes/goldtrimmedrobe.png
+#recolormask /graphics/caelian/armor/robes/goldtrimmedrobe-recolormask.png
+#armor
+#tag "tier 3"
+#tag "tier 2"
+#enditem
+
+
+#newitem
+#id goldtrimmedrobe
+#gameid 158
+#sprite /graphics/caelian/armor/robes/goldtrimmedrobe2.png
+#recolormask /graphics/caelian/armor/robes/goldtrimmedrobe2-recolormask.png
+#armor
+#tag "eliteversion bogarusrobe"
+#tag "tier 3"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id toga
+#gameid 158
+#sprite /graphics/caelian/armor/robes/toga.png
+#recolormask self
+#armor
+#tag "tier 3"
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id trimmedrobe
+#gameid 158
+#sprite /graphics/caelian/armor/robes/trimmedrobe.png
+#recolormask self
+#armor
+#tag "eliteversion bogarusrobe"
+#tag "tier 3"
+#tag "tier 2"
+#tag "tier 1"
+#enditem

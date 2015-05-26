@@ -1,0 +1,37 @@
+#newrace
+#name "Ichtyid"
+#basechance 0.1
+#all_troops_elite
+#poses /races/ichtyid/poses.txt
+
+-- Mimicing Atlantian names because we don't have anything else for ichtyids right now
+#longsyllables /data/names/nations/atlantian/longsyllables.txt
+#shortsyllables /data/names/nations/atlantian/shortsyllables.txt
+#suffixes /data/names/nations/atlantian/suffixes.txt
+
+#unitcommand "#gcost 10"
+#unitcommand "#hp 16"
+#unitcommand "#prot 5"
+#unitcommand "#mr 8"
+#unitcommand "#mor 12"
+#unitcommand "#str 11"
+#unitcommand "#att 9"
+#unitcommand "#def 8"
+#unitcommand "#prec 7"
+#unitcommand "#enc 3"
+#unitcommand "#ap 8"
+#unitcommand "#amphibian"
+#unitcommand "#nametype 117"
+#unitcommand "#maxage 50"
+
+#pose ichtyidtroops
+#pose ichtyidmages
+
+#magicpriority water 6
+#magicpriority nature 4
+#monsterchance 0.01
+
+
+#description "Ichtyids are a race of fishmen that dwell along that dwell along the coastlines, both in the water and on land."
+
+#endrace

@@ -1,0 +1,148 @@
+
+--- Leather
+
+#newitem
+#name "leather cuirass 1"
+#gameid 5
+#sprite /graphics/caelian/armor/leathercuirass.png
+#armor
+#enditem
+
+#newitem
+#name "leather hauberk 1"
+#gameid 10
+#sprite /graphics/caelian/armor/archer/leatherhauberk.png
+#armor
+#enditem
+
+
+
+#newitem -- full leather
+#newitem
+#name "full leather"
+#gameid 15
+#sprite /graphics/caelian/armor/archer/leatherhauberk.png
+#needs legs leatherpants
+#armor
+#enditem
+
+
+--- Chain Mail
+
+
+#newitem
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/caelian/armor/mailcuirass.png
+#armor
+#enditem
+
+
+#newitem
+#name "chain hauberk short"
+#gameid 13
+#sprite /graphics/caelian/armor/archer/mailhauberk.png
+#armor
+#enditem
+
+
+#newitem -- full chain
+#name "full chain"
+#gameid 18
+#sprite /graphics/caelian/armor/archer/mailhauberk.png
+#armor
+#theme "advanced"
+#needs legs mailpants
+#tag "name mounted knight"
+#enditem
+
+
+--- Scale
+
+#newitem
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/caelian/armor/mailcuirass.png
+#armor
+#enditem
+
+
+#newitem
+#name "scale hauberk short"
+#gameid 12
+#sprite /graphics/caelian/armor/archer/mailhauberk.png
+#armor
+#enditem
+
+
+
+#newitem -- full scale
+#name "full scale"
+#gameid 17
+#sprite /graphics/caelian/armor/archer/mailhauberk.png
+#armor
+#needs legs mailpants
+#theme "advanced"
+#enditem
+
+
+--- Plate
+
+
+#newitem
+#name "plate cuirass"
+#gameid 9
+#sprite /graphics/caelian/armor/platecuirass.png
+#armor
+#theme "advanced"
+#enditem
+
+
+#newitem
+#name "plate hauberk"
+#gameid 14
+#sprite /graphics/caelian/armor/archer/platehauberk.png
+#armor
+#theme "advanced"
+#tag "name mounted knight"
+#enditem
+
+
+#newitem -- full plate
+#name "full plate"
+#gameid 19
+#sprite /graphics/caelian/armor/archer/platehauberk.png
+#armor
+#theme "advanced"
+#needs legs platepants
+#tag "name mounted knight"
+#enditem
+
+
+--- Ring
+
+#newitem
+#name "ring cuirass"
+#gameid 6
+#sprite /graphics/caelian/armor/ringcuirass.png
+#armor
+#enditem
+
+
+#newitem
+#name "ring hauberk short"
+#gameid 11
+#sprite /graphics/caelian/armor/archer/ringhauberk.png
+#armor
+#enditem
+
+
+
+#newitem -- full ring
+#name "full ring"
+#gameid 16
+#sprite /graphics/caelian/armor/archer/ringhauberk.png
+#armor
+#needs legs ringpants
+#enditem
+

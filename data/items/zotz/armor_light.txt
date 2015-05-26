@@ -1,0 +1,50 @@
+--- Nekkid
+
+#newitem
+#name "nekkid"
+#gameid -1
+#armor
+#enditem
+
+
+--- Leather
+
+#newitem
+#name "leather cuirass"
+#gameid 5
+#sprite /graphics/zotz/armor/leathercuirass.png
+#recolormask /graphics/zotz/armor/armor_recolormask.png
+#armor
+#enditem
+
+
+#newitem
+#name "leather hauberk"
+#gameid 10
+#sprite /graphics/zotz/armor/leatherhauberk.png
+#recolormask /graphics/zotz/armor/armor_recolormask.png
+#armor
+#enditem
+
+
+
+#newitem -- full leather
+#newitem
+#basechance 0.125
+#name "full leather"
+#gameid 15
+#sprite /graphics/zotz/armor/fullleather.png
+#recolormask /graphics/zotz/armor/armor_recolormask.png
+#armor
+#enditem
+
+
+#newitem -- reinforced full leather (Mictlan armor)
+#newitem
+#basechance 0.1
+#name "reinforced leather"
+#gameid zotz_mictlanarmor
+#sprite /graphics/zotz/armor/mictlanarmor.png
+#recolormask /graphics/zotz/armor/mictlanarmor_recolormask.png
+#armor
+#enditem

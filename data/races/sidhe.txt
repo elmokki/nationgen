@@ -1,0 +1,62 @@
+#newrace
+#name "Sidhe"
+#basechance 0.05
+
+#pose sidhemages
+#pose sidhetroops
+
+#generateitem 1 shirt
+#generateitem 0.5 hair
+
+#all_troops_sacred
+#all_troops_elite
+
+#longsyllables /data/names/nations/fomorian/longsyllables.txt
+#shortsyllables /data/names/nations/fomorian/shortsyllables.txt
+#suffixes /data/names/nations/fomorian/suffixes.txt
+
+#tag "preferredmount fay horse"
+#unitcommand "#hp 13"
+#unitcommand "#enc 3"
+#unitcommand "#mr 14"
+#unitcommand "#mor 12"
+#unitcommand "#str 12"
+#unitcommand "#att 12"
+#unitcommand "#def 13"
+#unitcommand "#prec 12"
+#unitcommand "#gcost 40"
+#unitcommand "#darkvision 50"
+#unitcommand "#illusion"
+#unitcommand "#stealthy 0"
+#unitcommand "#maxage 1000"
+#unitcommand "#forestsurvival"
+#unitcommand "#ap 13"
+#unitcommand "#nametype 142"
+
+
+
+#magicpriority air 12
+#magicpriority nature 8
+#magicpriority earth 4
+#magicpriority water 4
+
+#weakmagicpatterns
+
+#oneprimarychance 0.7
+#twoprimarychance 0.275
+#threeprimarychance 0.025
+
+#chanceinc "hasprimaryrace *0.25"
+#chanceinc "primaryrace abysian *0.1"
+#chanceinc "primaryrace hoburg *6"
+#chanceinc "primaryrace human *2"
+
+#chanceinc era 1 *3
+#chanceinc era 3 *0.5
+
+#gods europegods
+
+#monsterchance 0.1
+
+#description "The Sidhe are a highly magical race, greatly superior to humans."
+#endrace

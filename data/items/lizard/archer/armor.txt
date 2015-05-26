@@ -1,0 +1,222 @@
+
+--- Leather
+
+#newitem
+#id 1
+#gameid 5
+#sprite /graphics/bodyarmor/standard/leathercuirass.png
+#armor
+#enditem
+
+#newitem
+#id 2
+#gameid 10
+#sprite /graphics/bodyarmor/archer/leatherhauberk.png
+#armor
+#enditem
+
+#newitem
+#id 3
+#gameid 10
+#sprite /graphics/bodyarmor/archer/leatherhauberk2.png
+#armor
+#enditem
+
+
+#newitem -- full leather
+#id 4
+#gameid 15
+#sprite /graphics/bodyarmor/archer/leatherhauberk.png
+#armor
+#enditem
+
+
+--- Chain Mail
+
+
+#newitem
+#id 5
+#gameid 8
+#sprite /graphics/bodyarmor/standard/mailcuirass.png
+#armor
+#basechance 0.25
+#enditem
+
+
+#newitem
+#id 6
+#gameid 13
+#sprite /graphics/bodyarmor/archer/mailhauberk1.png
+#armor
+#basechance 0.25
+#enditem
+
+
+#newitem
+#id 7
+#gameid 13
+#sprite /graphics/bodyarmor/archer/mailhauberk2.png
+#armor
+#basechance 0.25
+#enditem
+
+
+#newitem -- full chain
+#id 8
+#gameid 18
+#sprite /graphics/bodyarmor/archer/mailhauberk1.png
+#armor
+#basechance 0.25
+#needs legs legarmor
+#enditem
+
+
+--- Scale
+
+#newitem
+#id 9
+#gameid 7
+#sprite /graphics/bodyarmor/standard/mailcuirass.png
+#armor
+#basechance 0.25
+#enditem
+
+
+#newitem
+#id 10
+#gameid 12
+#sprite /graphics/bodyarmor/archer/mailhauberk1.png
+#armor
+#basechance 0.25
+#enditem
+
+
+#newitem
+#id 11
+#gameid 12
+#sprite /graphics/bodyarmor/archer/mailhauberk2.png
+#armor
+#basechance 0.25
+#enditem
+
+
+#newitem -- full scale
+#id 12
+#gameid 17
+#sprite /graphics/bodyarmor/archer/mailhauberk1.png
+#armor
+#needs legs legarmor
+#basechance 0.25
+#enditem
+
+
+--- Plate
+
+
+#newitem
+#id 13
+#gameid 9
+#sprite /graphics/bodyarmor/standard/platecuirass.png
+#armor
+#basechance 0.1
+#enditem
+
+
+#newitem
+#id 14
+#gameid 14
+#sprite /graphics/bodyarmor/archer/platehauberk.png
+#armor
+#basechance 0.1
+#enditem
+
+
+#newitem -- full plate
+#id 15
+#gameid 19
+#sprite /graphics/bodyarmor/archer/platehauberk.png
+#armor
+#needs legs legarmor
+#basechance 0.1
+#enditem
+
+
+--- Ring
+
+#newitem
+#id 16
+#gameid 6
+#sprite /graphics/bodyarmor/standard/ringcuirass.png
+#armor
+#basechance 0.1
+#enditem
+
+
+#newitem
+#id 17
+#gameid 11
+#sprite /graphics/bodyarmor/archer/ringhauberk.png
+#armor
+#basechance 0.1
+#enditem
+
+
+#newitem
+#id 18
+#gameid 11
+#sprite /graphics/bodyarmor/archer/ringhauberk2.png
+#armor
+#basechance 0.1
+#enditem
+
+
+#newitem -- full ring
+#id 19
+#gameid 16
+#sprite /graphics/bodyarmor/archer/ringhauberk.png
+#armor
+#basechance 0.1
+#enditem
+
+--- Japanese
+
+#newitem
+#id 20
+#gameid 129
+#sprite /graphics/bodyarmor/archer/samuraiarmor2.png
+#recolormask /graphics/bodyarmor/archer/samuraiarmor2_recolormask.png
+#armor
+#basechance 0.1
+#enditem
+
+#newitem -- Ashigaru armor
+#id 21
+#gameid 128
+#sprite /graphics/bodyarmor/archer/samuraiarmor2.png
+#recolormask /graphics/bodyarmor/archer/samuraiarmor2_recolormask.png
+#armor
+#basechance 0.1
+#enditem
+
+--- Naked
+
+#newitem
+#id 22
+#gameid -1
+#sprite /graphics/bodyarmor/ctis/archer_barechest.png
+#armor
+#theme "naked"
+#offsetx 1
+#offsety 2
+#basechance 10
+#enditem
+
+---
+
+#newitem
+#id 23
+#gameid 5
+#sprite /graphics/bodyarmor/standard/leathercuirass2.png
+#armor
+#basechance 0.25
+#enditem

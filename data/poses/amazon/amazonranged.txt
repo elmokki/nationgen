@@ -1,0 +1,72 @@
+------- Archer
+
+#newpose
+#role "ranged"
+#name "archer (bow)"
+#sacred
+#renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#command "#female"
+
+#load basesprite /data/items/amazon/archer/amazonbases_archer.txt
+#load shadow /data/items/amazon/normal/shadow.txt
+
+#load hands /data/items/amazon/archer/amazonhands_archer.txt
+
+#load armor /data/items/amazon/archer/amazonarmor_archer.txt
+#load armor /data/items/amazon/archer/amazonnaked_archer.txt
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load hair /data/items/human/normal/humanhair.txt  offsetx 0 offsety 1
+
+#load helmet /data/items/amazon/normal/amazonhelmet.txt
+#load helmet /data/items/amazon/normal/humanhelmet_amazon.txt offsetx 0 offsety 1
+#load legs /data/items/amazon/normal/amazonlegs.txt
+#load shirt /data/items/amazon/archer/amazonshirt_archer.txt
+#load weapon /data/items/human/archer/bows.txt offsetx -2 offsety -1
+
+#load quiver /data/items/human/archer/humanbonusranged.txt offsetx -2 offsety 1
+#load bonusweapon /data/items/human/archer/archerweapon.txt 
+
+#load helmet /data/items/human/sacredstuff/humanspecific_sacredhelmet.txt offsetx 0 offsety 1
+#load helmet /data/items/human/sacredstuff/sacredhelmet.txt offsetx 0 offsety 1
+
+#generateitem 1 bonusweapon
+#endpose
+
+------- crossbowman
+
+#newpose
+#role "ranged"
+#name "archer (Xbow)"
+#sacred
+
+#basechance 0.8
+
+#command "#female"
+
+#load basesprite /data/items/amazon/archer/amazonbases_archer.txt
+#load shadow /data/items/amazon/normal/shadow.txt
+
+#load hands /data/items/amazon/archer/amazonhands_archer.txt
+
+#load armor /data/items/amazon/archer/amazonarmor_archer.txt
+#load armor /data/items/amazon/archer/amazonnaked_archer.txt
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load hair /data/items/human/normal/humanhair.txt  offsetx 0 offsety 1
+
+#load helmet /data/items/amazon/normal/amazonhelmet.txt
+#load helmet /data/items/amazon/normal/humanhelmet_amazon.txt offsetx 0 offsety 1
+#load legs /data/items/amazon/normal/amazonlegs.txt
+#load shirt /data/items/amazon/archer/amazonshirt_archer.txt
+#load weapon /data/items/human/crossbow/crossbows.txt offsetx -4 offsety 4
+
+#load bonusweapon /data/items/human/archer/archerweapon.txt
+
+#load helmet /data/items/human/sacredstuff/humanspecific_sacredhelmet.txt offsetx 0 offsety 1
+#load helmet /data/items/human/sacredstuff/sacredhelmet.txt offsetx 0 offsety 1
+
+#generateitem 1 bonusweapon
+#endpose
+
