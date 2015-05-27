@@ -1,0 +1,40 @@
+#newrace
+#name "Muuch"
+#visiblename "Atlantian"
+#basechance 0.05
+#all_troops_elite
+
+#longsyllables /data/names/nations/nahuatl/longsyllables.txt
+#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt
+#suffixes /data/names/nations/nahuatl/suffixes.txt
+
+#unitcommand "#prot 2"
+#unitcommand "#gcost 12"
+#unitcommand "#hp 14"
+#unitcommand "#str 12"
+#unitcommand "#def 9"
+#unitcommand "#prec 8"
+#unitcommand "#enc 4"
+#unitcommand "#ap 10"
+#unitcommand "#amphibian"
+#unitcommand "#swampsurvival"
+#unitcommand "#darkvision 50"
+#unitcommand "#nametype 123"
+#unitcommand "#maxage 500"
+
+#pose muuchtroops
+#pose muuchmages
+
+#magicpriority water 8
+#magicpriority earth 8
+
+#monsterchance 0.01
+
+#chanceinc era 2 *5
+#chanceinc era 2 *2
+
+#chanceinc primaryrace agarthan *2
+#chanceinc primaryrace Atlantian *10
+#chanceinc primaryrace zotz *15
+
+#endrace
