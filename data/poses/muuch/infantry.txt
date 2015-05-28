@@ -7,14 +7,17 @@
 
 #load basesprite /data/items/muuch/muuchbases.txt
 #load shadow /data/items/muuch/shadow.txt
+#load hands /data/items/muuch/hands.txt
+
 #load armor /data/items/muuch/armor.txt
-#load armor /data/items/muuch/naked.txt
--- #load helmet /data/items/muuch/helmet.txt
--- #load legs /data/items/muuch/legs.txt
-#load standard /data/items/muuch/standard.txt
+#load cloakf /data/items/muuch/cloakf.txt
+#load cloakb /data/items/muuch/cloakb.txt
+
 #load weapon /data/items/muuch/weapon.txt
+#load offhand /data/items/muuch/offhand.txt
 #load offhand /data/items/muuch/shield.txt
 #load bonusweapon /data/items/muuch/bonusrangedweapon.txt
+
 #endpose
 
 
@@ -25,17 +28,21 @@
 #role "infantry"
 #role "sacred"
 
+#renderorder "shadow weapon cloakb basesprite armor bonusweapon cloakf offhandw hands helmet offhanda overlay"
+
 #load basesprite /data/items/muuch/shamblerbases.txt
 #load shadow /data/items/muuch/shamblershadow.txt
+#load hands /data/items/muuch/shamblerhands.txt
+
 #load armor /data/items/muuch/shamblerarmor.txt
-#load armor /data/items/muuch/shamblernaked.txt
--- #load legs /data/items/muuch/shamblerlegs.txt
--- #load helmet /data/items/muuch/shamblerhelmet.txt
+#load cloakf /data/items/muuch/shamblercloakf.txt
+#load cloakb /data/items/muuch/shamblercloakb.txt
+
 #load weapon /data/items/muuch/shamblerweapon.txt
-#load weapon2 /data/items/muuch/lobsterweapon.txt
-#load bonusweapon /data/items/muuch/bonusrangedweapon-s.txt
-#load offhand /data/items/muuch/shamblershield.txt
-#load standard /data/items/muuch/standard-s.txt
+#load offhand /data/items/muuch/offhand.txt 1 -9
+#load offhand /data/items/muuch/shield.txt 2 -6
+#load bonusweapon /data/items/muuch/shamblerbonusrangedweapon.txt
+
 #endpose
 
 
@@ -44,14 +51,21 @@
 #newpose
 #role "ranged"
 #role "sacred"
+
 #load basesprite /data/items/muuch/muuchbases.txt
 #load shadow /data/items/muuch/shadow.txt
+#load hands /data/items/muuch/hands.txt
+
 #load armor /data/items/muuch/archerarmor.txt
-#load armor /data/items/muuch/naked.txt
--- #load helmet /data/items/muuch/helmet.txt
--- #load legs /data/items/muuch/legs.txt
+#load cloakf /data/items/muuch/cloakf.txt
+#load cloakb /data/items/muuch/cloakb.txt
+
 #load weapon /data/items/muuch/ranged.txt
 #load bonusweapon /data/items/muuch/rangedmelee.txt
+
+#generateitem 1 bonusweapon
+
+#maxvarieties 1
 
 #endpose
 
@@ -61,13 +75,16 @@
 
 #newpose
 #role "scout"
+
 #load basesprite /data/items/muuch/muuchbases.txt
 #load shadow /data/items/muuch/shadow.txt
-#load armor /data/items/muuch/scoutarmor.txt
-#load armor /data/items/muuch/naked.txt
--- #load helmet /data/items/muuch/helmet.txt
--- #load legs /data/items/muuch/legs.txt
+#load hands /data/items/muuch/hands.txt
+
+#load armor /data/items/muuch/archerarmor.txt
+#load cloakf /data/items/muuch/cloakf.txt
+#load cloakb /data/items/muuch/cloakb.txt
+
 #load weapon /data/items/muuch/scoutweapon.txt
-#load offhand /data/items/muuch/scoutshield.txt
-#load bonusweapon /data/items/muuch/bonusrangedweapon.txt
+#load offhand /data/items/muuch/scoutoffhand.txt
+
 #endpose

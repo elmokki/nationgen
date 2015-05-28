@@ -1,0 +1,61 @@
+--- Nekkid
+
+#newitem
+#name "nekkid"
+#gameid -1
+#armor
+#theme "primitive"
+#theme "naked"
+#enditem
+
+--- Leather
+
+#newitem
+#name "leather cuirass"
+#basechance 1
+#notepic
+#gameid 5
+#sprite /graphics/muuch/armor/small/leather_cuirass.png
+#armor
+#theme "primitive"
+#enditem
+
+#newitem
+#name "leather cuirass dyed"
+#basechance 2
+#gameid 5
+#sprite /graphics/muuch/armor/small/leather_cuirass.png
+#recolormask /graphics/muuch/armor/small/leather_cuirass_recolormask.png
+#armor
+#theme "primitive"
+#enditem
+
+#newitem
+#name "leather hauberk"
+#basechance 1
+#notepic
+#gameid 10
+#sprite /graphics/muuch/armor/small/leather_hauberk.png
+#armor
+#theme "primitive"
+#enditem
+
+#newitem
+#name "leather hauberk dyed"
+#basechance 2
+#gameid 10
+#sprite /graphics/muuch/armor/small/leather_hauberk.png
+#recolormask /graphics/muuch/armor/small/leather_hauberk_recolormask.png
+#armor
+#theme "primitive"
+#enditem
+
+#newitem -- reinforced full leather (Mictlan armor)
+#newitem
+#name "reinforced leather"
+#gameid zotz_mictlanarmor
+#sprite /graphics/muuch/armor/small/ring_hauberk.png
+#recolormask /graphics/muuch/armor/small/fringe_recolormask.png
+#armor
+#theme "primitive"
+#enditem
