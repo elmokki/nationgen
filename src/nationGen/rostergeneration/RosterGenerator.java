@@ -10,6 +10,7 @@ import com.elmokki.Generic;
 
 
 
+
 import nationGen.NationGen;
 import nationGen.entities.Race;
 import nationGen.items.Item;
@@ -76,12 +77,11 @@ public class RosterGenerator {
 		List<Unit> ranged = new ArrayList<Unit>();
 		List<Unit> cavalry = new ArrayList<Unit>();
 		List<Unit> chariot = new ArrayList<Unit>();
-		
+			
 		int cycles = 0;
 		int incs = 1;
 		while(units < max)
 		{
-	
 			Race race = null;
 			if(nation.random.nextDouble() < secaffinity && secs < secamount) 
 			{
@@ -98,9 +98,8 @@ public class RosterGenerator {
 				for(int i = 0; i < maxamounts.length; i++)
 					maxamounts[i]++;
 			}
-			
+		
 			chances = getChances(race);
-			
 			String roll = rollRole(chances[2], chances[1], chances[0], chances[3]);
 
 
@@ -115,9 +114,7 @@ public class RosterGenerator {
 				target = cavalry;
 			else if(roll.equals("chariot") && maxamounts[3] > chariot.size())
 				target = chariot;
-			
-
-			
+						
 			if(race != null && target != null && race.hasRole(roll))
 			{
 				
