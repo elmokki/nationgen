@@ -1,0 +1,159 @@
+--- Nekkid
+
+#newitem
+#name "nekkid"
+#gameid -1
+#armor
+#theme "primitive"
+#theme "naked"
+#enditem
+
+--- Leather
+
+#newitem
+#name "leather cuirass"
+#basechance 0.5
+#notepic
+#gameid 5
+#sprite /graphics/muuch/armor/medium/leather_cuirass.png
+#armor
+#theme "primitive"
+#enditem
+
+#newitem
+#name "leather cuirass dyed"
+#basechance 1.5
+#gameid 5
+#sprite /graphics/muuch/armor/medium/leather_cuirass.png
+#recolormask /graphics/muuch/armor/medium/leather_cuirass_recolormask.png
+#armor
+#theme "primitive"
+#enditem
+
+#newitem
+#name "leather hauberk"
+#basechance 0.5
+#notepic
+#gameid 10
+#sprite /graphics/muuch/armor/medium/leather_hauberk.png
+#armor
+#theme "primitive"
+#enditem
+
+#newitem
+#name "leather hauberk dyed"
+#basechance 1.5
+#gameid 10
+#sprite /graphics/muuch/armor/medium/leather_hauberk.png
+#recolormask /graphics/muuch/armor/medium/leather_hauberk_recolormask.png
+#armor
+#theme "primitive"
+#enditem
+
+--- Bronze 
+
+#newitem
+#name "bronze scale cuirass"
+#basechance 2
+#gameid 142
+#sprite /graphics/muuch/armor/medium/bronzescale_cuirass.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#name "bronze scale hauberk"
+#basechance 2
+#gameid 136
+#sprite /graphics/muuch/armor/medium/bronzescale_hauberk.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#basechance 2
+#name "bronze cuirass"
+#gameid 100
+#sprite /graphics/muuch/armor/medium/bronze_cuirass.png
+#armor
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+#newitem
+#basechance 2
+#name "bronze hauberk"
+#gameid 101
+#sprite /graphics/muuch/armor/medium/bronze_hauberk.png
+#armor
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+
+--- Iron
+
+#newitem
+#basechance 1
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/muuch/armor/medium/scale_cuirass.png
+#armor
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#basechance 1
+#name "scale hauberk"
+#gameid 12
+#sprite /graphics/muuch/armor/medium/scale_hauberk.png
+#armor
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem 
+#basechance 1
+#name "plate cuirass"
+#gameid 9
+#sprite /graphics/muuch/armor/medium/plate_cuirass.png
+#armor
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#basechance 1
+#name "plate hauberk"
+#gameid 14
+#sprite /graphics/muuch/armor/medium/plate_hauberk.png
+#armor
+#theme "iron"
+#theme "advanced"
+#enditem
+
+
+-- Low probability special armors
+
+#newitem
+#basechance 1
+#name "obsidian cuirass"
+#gameid 206
+#sprite /graphics/muuch/armor/medium/obsidian_cuirass.png
+#armor
+#tag "tierunique"
+#chanceinc "personalcommand #sacred *4"
+#theme "obsidian"
+#enditem
+
+#newitem
+#basechance 1
+#name "obsidian armor"
+#gameid zotz_obsarmor
+#sprite /graphics/muuch/armor/medium/obsidian.png
+#armor
+#tag "tierunique"
+#chanceinc "personalcommand #sacred *2"
+#theme "obsidian"
+#enditem

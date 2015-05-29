@@ -1,0 +1,44 @@
+#newitem
+#name "harpoon"
+#gameid 452
+#sprite /graphics/atlantian/weapon/backharpoon.png
+#offsetx -3
+#tag "name infantry 'Harpooneer'"
+#tag "maxprot 14"
+#basechance 0.5
+#tag "tierunique"
+#enditem
+
+#newitem
+#name "net"
+#gameid 263
+#sprite /graphics/atlantian/weapon/offhandnet.png
+#tag "name infantry 'Trapper'"
+#tag "maxprot 12"
+#basechance 0.75
+#tag "tierunique"
+#tag "noslot offhand"
+#enditem
+
+#newitem
+#name "obsidian darts"
+#basechance 2.5
+#gameid 619
+#theme "primitive"
+#theme "obsidian"
+#tag "name infantry 'Dart Thrower'"
+#enditem
+
+#newitem
+#basechance 0.25
+#name "chakram"
+#gameid 362
+#tag "name infantry 'Chakram Thrower'"
+#sprite /graphics/weapon/standard/chakram.png
+#renderprio 7
+#renderslot "weapon"
+#tag "tierunique"
+#theme "bronze"
+#offsetx -4
+#offsety 4
+#enditem

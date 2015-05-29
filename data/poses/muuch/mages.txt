@@ -1,31 +1,52 @@
 
-
-
---- priest
+--- young muuch
 
 #newpose
+#name "small casters"
+#role "mage"
 #role "priest"
-#load basesprite /data/items/atlantian/shamblerpriestbases.txt
-#load shadow /data/items/atlantian/shamblershadow.txt
-#load armor /data/items/atlantian/priestnaked.txt
-#load armor /data/items/atlantian/priestrobe.txt
-#load armor /data/items/atlantian/prieststuff.txt
-#load helmet /data/items/atlantian/priesthelmet.txt
-#load legs /data/items/atlantian/shamblerpriestlegs.txt
-#load weapon /data/items/atlantian/priestweapon.txt
+
+#tier 1
+#tier 2
+#notfortier 3
+
+#renderorder "shadow basesprite armor helmet weapon hands"
+
+#load basesprite /data/items/muuch/muuchbases.txt
+#load shadow /data/items/muuch/shadow.txt
+#load hands /data/items/muuch/hands.txt
+
+#load armor /data/items/muuch/robes_small.txt
+#load helmet /data/items/muuch/casterhelmet.txt
+#load weapon /data/items/muuch/casterweapon_small.txt
+
 #endpose
 
 
---- mage 
+--- older muuch
 
 #newpose
+#name "shambler casters"
 #role "mage"
-#renderorder "shadow basesprite legs armor helmet weapon"
-#load basesprite /data/items/atlantian/base-m.txt
-#load shadow /data/items/atlantian/shadow.txt
-#load armor /data/items/atlantian/magenaked.txt
-#load armor /data/items/atlantian/magerobe.txt
-#load legs /data/items/atlantian/legs-m.txt
-#load helmet /data/items/atlantian/magehelmet.txt
-#load weapon /data/items/atlantian/mageweapon.txt
+#role "priest"
+
+#notfortier 1
+#tier 2
+#tier 3
+
+#renderorder "shadow weapon cloakb basesprite armor cloakf helmet offhandw hands"
+
+#load basesprite /data/items/muuch/shamblerbases.txt
+#load shadow /data/items/muuch/shamblershadow.txt
+#load hands /data/items/muuch/shamblerhands.txt
+
+#load armor /data/items/muuch/robes_medium.txt
+#load helmet /data/items/muuch/casterhelmet.txt -1 -10
+#load cloakf /data/items/muuch/castercloakf.txt
+#load cloakb /data/items/muuch/castercloakb.txt
+
+#load weapon /data/items/muuch/casterweapon_medium.txt
+
+#generateitem cloakb 1
+
 #endpose

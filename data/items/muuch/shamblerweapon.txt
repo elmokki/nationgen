@@ -1,0 +1,125 @@
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/ichtyid/weapon/bronze_axe.png
+#offsetx -2
+#offsety 1
+#tag "name infantry batab"
+#tag "name commander ajaw"
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/muuch/weapons/mace.png
+#tag "name infantry maceman"
+#tag "name commander chieftan"
+#enditem
+
+#newitem
+#id clubsword
+#gameid 451
+#sprite /graphics/muuch/weapons/clubsword_1h.png
+#tag "name infantry swordsman"
+#tag "name commander swordsmaster"
+#theme "obsidian"
+#enditem
+
+#newitem
+#id obsidian_blade
+#basechance 0.5
+#gameid 625
+#sprite /graphics/muuch/weapons/obsidian_blade.png
+#tag "name infantry swordsman"
+#tag "name commander bladesmaster"
+#theme "obsidian"
+#enditem
+
+#newitem
+#id obsidian_blade_poisoned
+#basechance 0.25
+#gameid 623
+#sprite /graphics/muuch/weapons/obsidian_blade.png
+#tag "name infantry swordsman"
+#tag "name commander bladesmaster"
+#theme "obsidian"
+#theme "poison"
+#enditem
+
+#newitem
+#id great_clubsword
+#gameid 288
+#sprite /graphics/muuch/weapons/clubsword_2h_shambler.png
+#tag "name infantry swordsman"
+#tag "name commander swordsmaster"
+#theme "obsidian"
+#enditem
+
+#newitem
+#id great_club
+#gameid 165
+#sprite /graphics/muuch/weapons/greatclub.png
+#offsetx -7
+#offsety -2
+#tag "name infantry clubber"
+#theme "primitive"
+#enditem
+
+#newitem
+#id greataxe
+#gameid 18
+#sprite /graphics/ichtyid/weapon/bronze_greataxe.png
+#offsetx -2
+#offsety 1
+#tag "name infantry batab"
+#tag "name commander ajaw"
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id spear
+#gameid 437
+#sprite /graphics/ichtyid/weapon/longspear.png
+#offsety 2
+#tag "name infantry spearman"
+#tag "name infantry chieftan"
+#enditem
+
+#newitem
+#id trident
+#gameid 3
+#sprite /graphics/ichtyid/weapon/bronze_trident.png
+#offsety 3
+#enditem
+
+#newitem
+#id bardiche
+#gameid 257
+#sprite /graphics/ichtyid/weapon/bronze_bardiche.png
+#offsety 3
+#tag "name infantry batab"
+#tag "name commander ajaw"
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id glaive
+#gameid 308
+#sprite /graphics/muuch/weapons/glaive.png
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id obsidian_glaive
+#basechance 0.05
+#chanceinc "personalcommand #sacred *10"
+#gameid 426
+#sprite /graphics/muuch/weapons/glaive_obsidian.png
+#theme "advanced"
+#theme "obsidian"
+#enditem

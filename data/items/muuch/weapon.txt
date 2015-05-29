@@ -1,0 +1,157 @@
+#newitem
+#id hatchet
+#gameid 253
+#sprite /graphics/muuch/weapons/hatchet.png
+#tag "eliteversion axe"
+#tag "name infantry warrior"
+#tag "name commander batab"
+#theme "bronze"
+#enditem
+
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/ichtyid/weapon/bronze_axe.png
+#offsetx -2
+#offsety 1
+#tag "name infantry axeman"
+#tag "name commander batab"
+#theme "advanced"
+#theme "bronze"
+#theme "elite"
+#basechance 0.25
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/muuch/weapons/mace.png
+#tag "name infantry maceman"
+#tag "name commander chieftan"
+#enditem
+
+#newitem
+#id spear
+#gameid 1
+#sprite /graphics/muuch/weapons/spear.png
+#tag "eliteversion spear_elite"
+#tag "name infantry spearman"
+#tag "name infantry chieftan"
+#enditem
+
+#newitem
+#id spear_elite
+#gameid 1
+#sprite /graphics/muuch/weapons/spear_elite.png
+#recolormask /graphics/muuch/weapons/spear_elite_recolormask.png
+#tag "name infantry spearman"
+#tag "name commander chief"
+#theme "elite"
+#enditem
+
+#newitem
+#id dagger
+#basechance 0.25
+#gameid 9
+#sprite /graphics/muuch/weapons/dagger.png
+#tag "name infantry skirmisher"
+#maxprot 9
+#notepic
+#enditem
+
+#newitem
+#id trident
+#basechance 0.5
+#gameid 3
+#sprite /graphics/atlantian/weapon/trident.png
+#tag "eliteversion trident_elite"
+#enditem
+
+#newitem
+#id trident_elite
+#gameid 3
+#sprite /graphics/atlantian/weapon/trident-elite.png
+#recolormask /graphics/atlantian/weapon/trident-elite_recolormask.png
+#offsetx -3
+#offsety -1
+#theme "elite"
+#enditem
+
+#newitem
+#id clubsword
+#gameid 451
+#sprite /graphics/muuch/weapons/clubsword_1h.png
+#tag "name infantry swordsman"
+#tag "name commander swordsmaster"
+#theme "obsidian"
+#enditem
+
+#newitem
+#id obsidian_blade
+#basechance 0.25
+#gameid 625
+#sprite /graphics/muuch/weapons/obsidian_blade.png
+#tag "eliteversion obsidian_blade_poisoned"
+#tag "name infantry swordsman"
+#tag "name commander bladesmaster"
+#theme "elite"
+#theme "obsidian"
+#enditem
+
+#newitem
+#id obsidian_blade_poisoned
+#basechance 0.125
+#gameid 623
+#sprite /graphics/muuch/weapons/obsidian_blade.png
+#tag "name infantry swordsman"
+#tag "name commander bladesmaster"
+#theme "elite"
+#theme "obsidian"
+#enditem
+
+#newitem
+#id great_clubsword
+#gameid 288
+#sprite /graphics/muuch/weapons/clubsword_2h.png
+#tag "name infantry swordsman"
+#tag "name commander swordsmaster"
+#theme "obsidian"
+#enditem
+
+#newitem
+#id great_club
+#gameid 165
+#sprite /graphics/muuch/weapons/greatclub.png
+#tag "name infantry clubber"
+#theme "primitive"
+#enditem
+
+#newitem
+#id quarterstaff
+#gameid 7
+#sprite /graphics/muuch/weapons/quarterstaff.png
+#theme "primitive"
+#basechance 0.5
+#maxprot 10
+#enditem
+
+#newitem
+#id greataxe
+#gameid 18
+#sprite /graphics/muuch/weapons/battleaxe.png
+#tag "name infantry axeman"
+#tag "name commander batab"
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id glaive
+#gameid 308
+#sprite /graphics/agarthan/weapons/glaive.png
+#offsetx -4
+#offsety -3
+#basechance 0.25
+#theme "advanced"
+#theme "bronze"
+#enditem

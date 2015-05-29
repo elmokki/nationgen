@@ -2,9 +2,11 @@
 #newrace
 #name "Zotz"
 #basechance 0.1
+
 #pose zotzmages
 #pose zotztroops
 #pose zotzcavalry
+
 #unitcommand "#gcost 7"
 #unitcommand "#rcost 1"
 #unitcommand "#size 2"
@@ -29,6 +31,8 @@
 #unitcommand "#douse 1"
 -- #unitcommand "#stealthy +40" -- Zotz get their stealth (if eligible) via their poses/mount slot to prevent heavy troops/(some) cavalry from being stealthy
 
+#nationcommand "#idealcold -1"
+
 #longsyllables /data/names/nations/nahuatl/longsyllables.txt
 #shortsyllables /data/names/nations/nahuatl/shortsyllables.txt
 #suffixes /data/names/nations/nahuatl/suffixes.txt
@@ -39,6 +43,7 @@
 #magicpriority earth 4
 
 #chanceinc primaryrace agarthan *2
+#chanceinc primaryrace muuch *10
 
 #all_troops_elite
 #all_troops_sacred
