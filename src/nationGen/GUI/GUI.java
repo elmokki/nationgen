@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.net.MalformedURLException;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
@@ -21,6 +22,7 @@ import java.util.Random;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -29,12 +31,14 @@ import javax.swing.JScrollPane;
 import javax.swing.JSlider;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.SwingUtilities;
-import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 
@@ -55,6 +59,8 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
     JButton startButton;
     JTabbedPane tabs = new JTabbedPane();
     
+    
+    JTextField settingtext = new JTextField("0");
     JTextArea amount = new JTextArea("1");
     JTextArea modname = new JTextArea("Random");
     JTextArea seed = new JTextArea("Random");
@@ -69,6 +75,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
     
     JCheckBox hideVanillaNations = new JCheckBox("Hide vanilla nations");
     JSlider eraSlider = new JSlider(JSlider.HORIZONTAL, 1, 3, 2);
+    JSlider spowerSlider = new JSlider(JSlider.HORIZONTAL, 1, 3, 1);
 
     
     private  NationGen n = null;
@@ -97,6 +104,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
     	
         JPanel panel = new JPanel(new BorderLayout(5, 5));
         JPanel options = new JPanel(new GridLayout(2,2));
+        JPanel advoptions = new JPanel(new GridLayout(8,1));
 
         // Main
         tabs.addTab("Main", panel);
@@ -169,6 +177,9 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         JPanel descs = new JPanel(new GridLayout(2, 1));
         descs.add(advDesc);
         descs.add(basicDesc);
+        descs.add(hideVanillaNations);
+        this.hideVanillaNations.addItemListener(this);
+
         options.add(descs, BorderLayout.NORTH);
 
         // Seeds
@@ -180,10 +191,67 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         this.seeds.setEnabled(false);
         options.add(seeds);
 
+
+        
+        // Advanced options
+        tabs.addTab("Advanced options", advoptions);
+        advoptions.add(new JLabel("WARNING! Changing these options changes the setting code. Seeds produce same nations only under the same setting code and program version."));
+
+       
+        
+        JPanel scodep = new JPanel(new GridLayout(1,2));
+        settingtext.setText("" + settings.getSettingInteger());
+        settingtext.addActionListener(this);
+
+        settingtext.getDocument().addDocumentListener(new DocumentListener() {
+        	  
+        	@Override
+        	public void changedUpdate(DocumentEvent e) {}
+
+			@Override
+			public void insertUpdate(DocumentEvent arg0) {
+				handleUpdate();
+			}
+			@Override
+			public void removeUpdate(DocumentEvent arg0) {
+				handleUpdate();
+				
+			}
+			
+			private void handleUpdate()
+			{
+			
+				
+				
+				// Change color when non-numeric settingtext
+				if(Generic.isNumeric(settingtext.getText()))
+					settingtext.setForeground(Color.BLACK);
+				if(!Generic.isNumeric(settingtext.getText()))
+					settingtext.setForeground(Color.RED);
+			
+		
+			
+				if(settingtext.getText().length() > 0 && Generic.isNumeric(settingtext.getText()))
+				{
+					int i = Integer.parseInt(settingtext.getText());
+					settings.setSettingInteger(i);
+					updateAdvancedSettings();
+					
+					
+				}				
+
+				
+			}
+
+        	});
+        
+        scodep.add(new JLabel("Setting code:"));
+        scodep.add(this.settingtext);
+        advoptions.add(scodep);
+        
         // Era
-        JPanel era = new JPanel(new GridLayout(2, 2));
+        JPanel era = new JPanel(new GridLayout(1,2));
         eraSlider.addChangeListener(this);
-        this.hideVanillaNations.addItemListener(this);
         Hashtable<Integer, JLabel> eraLabelTable = new Hashtable<Integer, JLabel>();
         eraLabelTable.put(new Integer(1), new JLabel("Early"));
         eraLabelTable.put(new Integer(2), new JLabel("Middle"));
@@ -192,14 +260,26 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         eraSlider.setPaintLabels(true);
         
 
-        era.add(hideVanillaNations);
-        era.add(new JLabel(""));
         era.add(new JLabel("Era:"));
         era.add(eraSlider);
         
-        options.add(era);
+        advoptions.add(era);
         
+        // Sacred power
+        JPanel spower = new JPanel(new GridLayout(1,2));
+        spowerSlider.addChangeListener(this);
+        Hashtable<Integer, JLabel> spowerLabelTable = new Hashtable<Integer, JLabel>();
+        spowerLabelTable.put(new Integer(1), new JLabel("Normal"));
+        spowerLabelTable.put(new Integer(2), new JLabel("High"));
+        spowerLabelTable.put(new Integer(3), new JLabel("Batshit Insane"));
+        spowerSlider.setLabelTable(spowerLabelTable);
+        spowerSlider.setPaintLabels(true);
         
+
+        spower.add(new JLabel("Sacred Power:"));
+        spower.add(spowerSlider);
+        
+        advoptions.add(spower);
         
         
         
@@ -213,6 +293,14 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
 		
         System.out.println("Dominions 4 NationGen version " + NationGen.version + " (" + NationGen.date + ")");
         System.out.println("------------------------------------------------------------------");
+
+    }
+    
+    
+    private void updateAdvancedSettings()
+    {
+    	this.eraSlider.setValue(settings.get("era").intValue());
+    	this.spowerSlider.setValue(settings.get("sacredpower").intValue());
 
     }
     
@@ -342,6 +430,8 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
     
 	@Override
 	public void actionPerformed(ActionEvent e) {
+
+		
 		if(e.getSource().equals(startButton))
 		{
 			if(modname.getText().length() == 0)
@@ -374,8 +464,17 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
 				return;
 			}
 			
+			settingtext.setText(settings.getSettingInteger() + "");
+
+			
 			process();
 		}
+		
+		if(e.getSource().equals(settingtext))
+		{
+			settingtext.setText(settings.getSettingInteger() + "");
+		}
+
 	}
 	
 		
@@ -453,8 +552,17 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
 	public void stateChanged(ChangeEvent e) {
 		
 		Object source = e.getSource();
-		if(source == this.eraSlider)
+		
+		if(source == this.eraSlider && eraSlider.getValueIsAdjusting())
+		{
 			settings.put("era", eraSlider.getValue());
+			settingtext.setText(settings.getSettingInteger() + "");
+		}
+		if(source == this.spowerSlider && spowerSlider.getValueIsAdjusting())
+		{
+			settings.put("sacredpower", spowerSlider.getValue());
+			settingtext.setText(settings.getSettingInteger() + "");
+		}
 		
 	}
 }

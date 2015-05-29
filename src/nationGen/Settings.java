@@ -3,19 +3,130 @@ package nationGen;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Scanner;
+
+
+
+
 
 import com.elmokki.Generic;
 
+
+
+
 public class Settings {
+	
+	private class SettingEntry {
+		public String key;
+		public Double value;
+		
+		public SettingEntry(String k, Double v)
+		{
+			key = k;
+			value = v;
+		}
+
+	}
+
 	
 	public HashMap<String, Double> settings = new HashMap<String, Double>();
 	public HashMap<String, String> descs = new HashMap<String, String>();
+	
+	public LinkedList<SettingEntry> exportvalues = new LinkedList<SettingEntry>();
+	public LinkedList<SettingEntry> defaultvalues = new LinkedList<SettingEntry>();
+	
+	
+	/**
+	 * Fills exportvalues
+	 */
+	private void setExportValues()
+	{
+		
+		// Settings
+		
+		// 1: Early era
+		exportvalues.add(new SettingEntry("era", 1.0));
+		// 2: Late era
+		exportvalues.add(new SettingEntry("era", 3.0));
+		// 4: Powerful sacreds
+		exportvalues.add(new SettingEntry("sacredpower", 2.0));
+		// 8: Batshit insane sacreds
+		exportvalues.add(new SettingEntry("sacredpower", 3.0));
 
+		
+		// Defaults
+		defaultvalues.add(new SettingEntry("era", 2.0));
+		defaultvalues.add(new SettingEntry("sacredpower", 1.0));
+
+	}
+	
+	
+	/**
+	 * Returns certain settings as an integer
+	 *
+	 * Here's the table of what each byte value is:
+	 * 1: Early era
+	 * 2: Late era
+	 * 4: High sacred power
+	 * 8: Batshit insane sacred power
+	 * 
+	 * @return
+	 */
+	public int getSettingInteger()
+	{
+		int integer = 0;
+		
+		Iterator<SettingEntry> expit = exportvalues.iterator();
+		
+		int i = 0;
+		while(expit.hasNext())
+		{
+			SettingEntry e = expit.next();
+			if(get(e.key).equals(e.value))
+			{
+				integer += Math.pow(2, i);
+			}
+			i++;
+		}
+		
+		return integer;
+	}
+	
+	/**
+	 * Sets certain settings based on an integer
+	 * @param integer
+	 */
+	public void setSettingInteger(int integer)
+	{
+		for(SettingEntry se : defaultvalues)
+		{
+			put(se.key, se.value);
+		}
+		
+		Iterator<SettingEntry> expit = exportvalues.iterator();
+		int i = 0;
+		while(expit.hasNext())
+		{
+			SettingEntry e = expit.next();
+			if(Generic.containsBitmask(integer, (int)Math.pow(2,i)))
+			{
+				put(e.key, e.value);
+			}
+			i++;
+		}
+	}
+	
+	
 	
 	public Settings()
 	{
+		setExportValues();
+
 		// Militia
 		settings.put("militiaResMulti", -0.1333);
 		settings.put("militiaLowResMulti", -0.125);
@@ -30,7 +141,7 @@ public class Settings {
 		// Items
 		settings.put("weaponGenerationChance", 0.3);
 		
-		// POWER (ranges from 0 to 2, integers only)
+		// POWER (ranges from 1 to 3, integers only)
 		settings.put("sacredpower", 1.0);
 		
 		
@@ -59,6 +170,11 @@ public class Settings {
 		}
 		
 		file.close();
+		
+		
+
+
+
 	}
 	
 	

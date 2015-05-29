@@ -409,14 +409,8 @@ public class NationGen {
 		tw.println("-----------------------------------");
 		
 		tw.println("-- Generated with version " + version + ".");
-		tw.println("-- Generation affecting settings: ");
-		if(settings.get("era") == 2.0)
-			tw.println("- Middle era (2)");
-		else if(settings.get("era") == 1.0)
-			tw.println("- Early era (1)");
-		else if(settings.get("era") == 3.0)
-			tw.println("- Late era (3)");
-		
+		tw.println("-- Generation setting code: " + settings.getSettingInteger());
+
 		if(!manyseeds)
 			tw.println("-- Nation seeds generated with seed " + this.seed + ".");
 		else
