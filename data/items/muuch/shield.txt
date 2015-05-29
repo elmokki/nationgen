@@ -2,6 +2,7 @@
 #id hideshield
 #gameid 105
 #sprite /graphics/muuch/offhands/hideshield.png
+#tag "eliteversion hideshield_tinted"
 #armor
 #theme "primitive"
 #basechance 3
@@ -11,6 +12,7 @@
 #id greathideshield
 #gameid 112
 #sprite /graphics/muuch/offhands/greathideshield.png
+#tag "eliteversion greathideshield_tinted"
 #armor
 #theme "primitive"
 #basechance 1
@@ -20,6 +22,7 @@
 #id metalshield
 #gameid 2
 #sprite /graphics/muuch/offhands/bronzeshield.png
+#tag "eliteversion metalshield_tinted"
 #armor
 #theme "bronze"
 #basechance 1.5
@@ -29,8 +32,54 @@
 #id bigmetalshield
 #gameid 2
 #sprite /graphics/muuch/offhands/bronzetower.png
+#tag "eliteversion bigmetalshield_tinted"
 #armor
 #basechance 0.5
 #theme "bronze"
 #theme "advanced"
+#enditem
+
+#newitem
+#id hideshield_tinted
+#gameid 105
+#sprite /graphics/muuch/offhands/hideshield.png
+#recolormask /graphics/muuch/offhands/shield_recolormask.png
+#armor
+#theme "primitive"
+#theme "elite"
+#basechance 3
+#enditem
+
+#newitem
+#id greathideshield_tinted
+#gameid 112
+#sprite /graphics/muuch/offhands/greathideshield.png
+#recolormask /graphics/muuch/offhands/bigshield_recolormask.png
+#armor
+#theme "primitive"
+#theme "elite"
+#basechance 1
+#enditem
+
+#newitem
+#id metalshield_tinted
+#gameid 2
+#sprite /graphics/muuch/offhands/bronzeshield.png
+#recolormask /graphics/muuch/offhands/shield_recolormask.png
+#armor
+#theme "bronze"
+#theme "elite"
+#basechance 1.5
+#enditem
+
+#newitem
+#id bigmetalshield_tinted
+#gameid 2
+#sprite /graphics/muuch/offhands/bronzetower.png
+#recolormask /graphics/muuch/offhands/bigshield_recolormask.png
+#armor
+#basechance 0.5
+#theme "bronze"
+#theme "advanced"
+#theme "elite"
 #enditem

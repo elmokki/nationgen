@@ -32,7 +32,6 @@
 #basechance 0.5
 #gameid 625
 #sprite /graphics/muuch/weapons/obsidian_blade.png
-#tag "eliteversion obsidian_blade_poisoned"
 #tag "name infantry swordsman"
 #tag "name commander bladesmaster"
 #theme "obsidian"
@@ -60,7 +59,7 @@
 
 #newitem
 #id great_club
-#gameid 288
+#gameid 165
 #sprite /graphics/muuch/weapons/greatclub.png
 #offsetx -7
 #offsety -2
@@ -98,7 +97,7 @@
 
 #newitem
 #id bardiche
-#gameid 458
+#gameid 257
 #sprite /graphics/ichtyid/weapon/bronze_bardiche.png
 #offsety 3
 #tag "name infantry batab"
@@ -113,4 +112,14 @@
 #sprite /graphics/muuch/weapons/glaive.png
 #theme "advanced"
 #theme "bronze"
+#enditem
+
+#newitem
+#id obsidian_glaive
+#basechance 0.05
+#chanceinc "personalcommand #sacred *10"
+#gameid 426
+#sprite /graphics/muuch/weapons/glaive_obsidian.png
+#theme "advanced"
+#theme "obsidian"
 #enditem

@@ -1,0 +1,170 @@
+--- Cloaks
+
+#newitem
+#id naked
+#gameid -1
+#tag "#eliteversion 'cloak1'"
+#tag "#eliteversion 'cloak2'"
+#tag "#eliteversion 'belt_gold'"
+#tag "#eliteversion 'belt_obsidian'"
+#tag "#eliteversion 'belt_pearls'"
+#tag "#eliteversion 'belt_skull'"
+#armor
+#tier1
+#enditem
+
+#newitem
+#id cloak1
+#gameid -1
+#sprite /graphics/muuch/armor/small/caster/cloak1.png
+#recolormask self
+#tag "#eliteversion 'cloak2'"
+#tag "#eliteversion 'cowl'"
+#armor
+#tier1
+#tier2
+#enditem
+
+#newitem
+#id cloak2
+#gameid -1
+#sprite /graphics/muuch/armor/small/caster/cloak2.png
+#recolormask self
+#tag "#eliteversion 'cowl'"
+#armor
+#tier2
+#enditem
+
+--- Assorted loincloths and such
+
+#newitem
+#id loincloth
+#gameid -1
+#sprite /graphics/muuch/armor/small/caster/loincloth_toad.png
+#recolormask /graphics/muuch/armor/small/caster/loincloth_toad_recolormask.png
+#tag "#eliteversion 'belt_gold'"
+#tag "#eliteversion 'belt_obsidian'"
+#tag "#eliteversion 'belt_pearls'"
+#tag "#eliteversion 'belt_skull'"
+#armor
+#tier1
+#enditem
+
+#newitem
+#id loincloth_fur
+#gameid -1
+#sprite /graphics/muuch/armor/small/caster/loincloth_jaguar.png
+#tag "#eliteversion 'furs_gold'"
+#tag "#eliteversion 'furs_obsidian'"
+#tag "#eliteversion 'furs_pearls'"
+#tag "#eliteversion 'furs_skull'"
+#armor
+#tier1
+#enditem
+
+#newitem
+#id belt_gold
+#gameid -1
+#sprite /graphics/muuch/armor/small/caster/belt_gold.png
+#tag "#eliteversion 'furs_gold'"
+#armor
+#tier2
+#enditem
+
+#newitem
+#id furs_gold
+#gameid -1
+#sprite /graphics/muuch/armor/small/caster/furs_gold.png
+#recolormask /graphics/muuch/armor/small/caster/furs_gold_recolormask.png
+#tag "#eliteversion 'belt_gold'"
+#armor
+#tier2
+#enditem
+
+#newitem
+#id belt_obsidian
+#gameid -1
+#sprite /graphics/muuch/armor/small/caster/belt_obsidian.png
+#tag "#eliteversion 'furs_obsidian'"
+#armor
+#tier2
+#enditem
+
+#newitem
+#id furs_obsidian
+#gameid -1
+#sprite /graphics/muuch/armor/small/caster/furs_obsidian.png
+#recolormask /graphics/muuch/armor/small/caster/furs_recolormask.png
+#tag "#eliteversion 'belt_obsidian'"
+#armor
+#tier2
+#enditem
+
+#newitem
+#id belt_pearls
+#gameid -1
+#sprite /graphics/muuch/armor/small/caster/belt_pearls.png
+#tag "#eliteversion 'furs_pearls'"
+#armor
+#tier2
+#enditem
+
+#newitem
+#id furs_pearls
+#gameid -1
+#sprite /graphics/muuch/armor/small/caster/furs_pearls.png
+#recolormask /graphics/muuch/armor/small/caster/furs_gold_recolormask.png
+#tag "#eliteversion 'belt_pearls'"
+#armor
+#tier2
+#enditem
+
+#newitem
+#id belt_skull
+#gameid -1
+#sprite /graphics/muuch/armor/small/caster/belt_skull.png
+#tag "#eliteversion 'furs_skull'"
+#armor
+#tier2
+#enditem
+
+#newitem
+#id furs_skull
+#gameid -1
+#sprite /graphics/muuch/armor/small/caster/furs_skull.png
+#recolormask /graphics/muuch/armor/small/caster/furs_recolormask.png
+#tag "#eliteversion 'belt_skull'"
+#armor
+#tier2
+#enditem
+
+--- Robes
+
+#newitem
+#id cowl
+#gameid 158
+#sprite /graphics/muuch/armor/small/caster/robe_cowled.png
+#recolormask /graphics/muuch/armor/small/caster/robe_cowled_recolormask.png
+#tag "noslot helmet"
+#armor
+#tier2
+#enditem
+
+#newitem
+#id toga_white
+#gameid 158
+#sprite /graphics/muuch/armor/small/caster/toga.png
+#tag "#eliteversion 'toga_dyed'"
+#armor
+#tier1
+#enditem
+
+#newitem
+#id toga_dyed
+#gameid 158
+#sprite /graphics/muuch/armor/small/caster/toga.png
+#recolormask self
+#armor
+#tier2
+#enditem
+

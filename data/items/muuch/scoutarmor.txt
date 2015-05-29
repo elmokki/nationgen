@@ -1,21 +1,50 @@
+--- Nekkid
+
 #newitem
-#name "coralcuirass"
-#gameid 22
-#sprite /graphics/atlantian/armor/coralcuirass.png
+#name "nekkid"
+#gameid -1
 #armor
-#define "#poisonarmor"
+#theme "primitive"
+#theme "naked"
+#enditem
+
+--- Leather
+
+#newitem
+#name "leather cuirass dyed"
+#basechance 2
+#gameid 5
+#sprite /graphics/muuch/armor/small/leather_cuirass.png
+#recolormask self
+#armor
+#theme "primitive"
 #enditem
 
 #newitem
-#name "sharkskinarmor"
-#gameid 151
-#sprite /graphics/atlantian/armor/sharkskinarmor.png
+#name "leather hauberk dyed"
+#basechance 2
+#gameid 10
+#sprite /graphics/muuch/armor/small/leather_hauberk.png
+#recolormask self
 #armor
+#theme "primitive"
+#enditem
+
+#newitem -- reinforced full leather (Mictlan armor)
+#newitem
+#name "reinforced leather"
+#gameid zotz_mictlanarmor
+#sprite /graphics/muuch/armor/small/ring_hauberk.png
+#recolormask /graphics/muuch/armor/small/fringe_recolormask.png
+#armor
+#theme "primitive"
 #enditem
 
 #newitem
-#name "shellarmor"
-#gameid 140
-#sprite /graphics/atlantian/armor/shellarmor.png
+#basechance 0.25
+#name "obsidian cuirass"
+#gameid 206
+#sprite /graphics/muuch/armor/small/obsidian_cuirass.png
 #armor
+#theme "obsidian"
 #enditem

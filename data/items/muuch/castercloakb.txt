@@ -1,0 +1,121 @@
+#newitem
+#name "cloak 1"
+#gameid -1
+#sprite /graphics/muuch/cloak/medium/short_b.png
+#needs cloakf "cloak 1"
+#armor
+#recolormask self
+#tier 2
+#enditem
+
+#newitem
+#name "cloak 2"
+#gameid -1
+#sprite /graphics/muuch/cloak/medium/long_b.png
+#tag "eliteversion cloak_gold"
+#tag "eliteversion cloak_blue"
+#tag "eliteversion cloak_red"
+#tag "eliteversion cloak_tinted"
+#needs cloakf "cloak 2"
+#armor
+#recolormask self
+#tier 2
+#enditem
+
+#newitem
+#name "cloak_gold"
+#gameid -1
+#sprite /graphics/muuch/cloak/medium/long_b_gold.png
+#needs cloakf "cloak 2"
+#armor
+#recolormask /graphics/muuch/cloak/medium/long_b.png
+#tier 3
+#enditem
+
+#newitem
+#name "cloak_blue"
+#gameid -1
+#sprite /graphics/muuch/cloak/medium/long_b_blue.png
+#needs cloakf "cloak 2"
+#armor
+#recolormask /graphics/muuch/cloak/medium/long_b.png
+#tier 3
+#enditem
+
+#newitem
+#name "cloak_red"
+#gameid -1
+#sprite /graphics/muuch/cloak/medium/long_b_red.png
+#needs cloakf "cloak 2"
+#armor
+#recolormask /graphics/muuch/cloak/medium/long_b.png
+#tier 3
+#enditem
+
+#newitem
+#name "cloak_tinted"
+#gameid -1
+#sprite /graphics/muuch/cloak/medium/long_b_blue.png
+#needs cloakf "cloak 2"
+#armor
+#recolormask self
+#tier 3
+#enditem
+
+#newitem
+#name "necklace_gold"
+#gameid -1
+#tag "eliteversion cloak_feathered_bright"
+#tag "eliteversion cloak_feathered_dark"
+#needs cloakf "necklace_gold"
+#armor
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#name "necklace_silver"
+#gameid -1
+#needs cloakf "necklace_silver"
+#armor
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#name "necklace_jeweled"
+#gameid -1
+#needs cloakf "necklace_jeweled"
+#armor
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#name "cloak_feathered_bright"
+#gameid -1
+#sprite /graphics/muuch/cloak/medium/feathercloak_b.png
+#recolormask /graphics/muuch/cloak/medium/feathercloak_b_recolormask2.png
+#needs cloakf "cloak_feathered_bright"
+#armor
+#tier 3
+#enditem
+
+#newitem
+#name "cloak_feathered_dark"
+#gameid -1
+#sprite /graphics/muuch/cloak/medium/feathercloak_b.png
+#recolormask /graphics/muuch/cloak/medium/feathercloak_b_recolormask1.png
+#needs cloakf "cloak_feathered_dark"
+#armor
+#tier 3
+#enditem
+
+#newitem
+#name "cloak_moss"
+#gameid -1
+#sprite /graphics/muuch/cloak/medium/mosscloak_b.png
+#needs cloakf "cloak_moss"
+#armor
+#tier 3
+#enditem
