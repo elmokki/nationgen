@@ -22,6 +22,7 @@ import java.util.Map.Entry;
 
 
 
+
 import com.elmokki.Drawing;
 import com.elmokki.Generic;
 
@@ -131,6 +132,7 @@ public class Nation {
 			allRaces.remove(race);
 
 		} while(race.tags.contains("secondary"));
+
 		races.add(race);
 		allRaces.clear();
 		allRaces.addAll(nationGen.races);
@@ -150,11 +152,9 @@ public class Nation {
 		comlists.get("priests").addAll(mageGen.generatePriests());
 		mageGen.applyFilters();
 
-		
 		// Troops
 		RosterGenerator g = new RosterGenerator(nationGen, this);
 		g.execute();
-		
 
 
 		//// Sacreds and elites
@@ -233,10 +233,6 @@ public class Nation {
 		if(races.get(0).hasRole("scout"))
 			comlists.get("scouts").add(scoutgen.generateScout(races.get(0)));
 	
-
-
-		
-
 
 		// Gods
 		GodGen gg = new GodGen(this);
@@ -338,9 +334,7 @@ public class Nation {
     			su.polish(nationGen, this);
         }
         
-        
-		
-
+       
 	}
 	
 	
