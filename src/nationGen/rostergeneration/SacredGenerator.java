@@ -314,9 +314,15 @@ public class SacredGenerator extends TroopGenerator {
 	
 	public Unit generateUnit(boolean sacred, int power, Race race)
 	{
-
+		// Handle sacred power settings
+		double extrapower = this.nationGen.settings.get("sacredpower") - 1;
+		power = (int) (power * extrapower * (1 + nation.random.nextDouble() * 0.5) + extrapower);
+		
+		
+		// Continue normally
 		double epicchance = nation.random.nextDouble() * 0.5 + power * 0.25 + 0.25;
 
+	
 
 		if(race == null)
 		{		
