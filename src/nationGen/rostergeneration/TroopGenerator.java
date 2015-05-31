@@ -10,6 +10,7 @@ import java.util.Random;
 
 
 
+
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
@@ -162,6 +163,7 @@ public class TroopGenerator {
 		int cycles = 0;
 		do
 		{
+
 			cycles++;
 			if(cycles > 50)
 			{
@@ -281,6 +283,7 @@ public class TroopGenerator {
 					int r = -1;
 					while(!done)
 					{
+
 						r = random.nextInt(3);
 
 						if(r == 0 && !has2h) // 2h
@@ -380,7 +383,7 @@ public class TroopGenerator {
 				Unit u = null;
 				while(u == null || armor == null)
 				{
-
+	
 					ItemSet armors = new ItemSet();
 					ItemSet oldarmors = new ItemSet();
 	
@@ -455,13 +458,13 @@ public class TroopGenerator {
 						if(t.pose.equals(p))
 							count++;
 					
-
 					if(count > maxunits)
 					{
 						armor = null;
-						continue;
+						break;			// EA20150529: If we continue here, we're not going to terminate
+						//continue;
 					}
-					
+			
 					// Generate unit!
 						
 
@@ -472,7 +475,10 @@ public class TroopGenerator {
 					if(u == null)
 						armor = null;
 				}
-
+				
+				if(u == null || armor == null) // EA20150529: The only case where this should occur is when #maxunits has been exceeded
+					break;
+				
 				AbilityTemplate at = null;
 				List<AbilityTemplate> atlist = new ArrayList<AbilityTemplate>();
 				atlist.addAll(u.pose.templates);
