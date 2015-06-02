@@ -38,6 +38,55 @@ public class MageGenerator extends TroopGenerator {
 		varyHat = n.random.nextBoolean();
 	}
 
+	
+	/**
+	 * Lists common magic paths of given units
+	 * @param all given units
+	 * @param minlevel minimum level to consider
+	 * @return list of integers signifying paths
+	 */
+	public static List<Integer> findCommonPaths(List<Unit> all, int minlevel)
+	{
+		List<Integer> list = new ArrayList<Integer>();
+		for(int i = 0; i < 9; i++)
+		{
+			boolean ok = true;
+			for(Unit u : all)
+			{
+
+				
+				int[] p = u.getMagicPicks(false);
+				if(p[i] < minlevel)
+				{
+					ok = false;
+				}
+				
+			}
+			
+			if(ok)
+				list.add(i);
+		}
+
+		
+		return list;
+	}
+	
+	/**
+	 * Lists common magic paths of given units
+	 * @param all given units
+	 * @return list of integers signifying paths
+	 */
+	public static List<Integer> findCommonPaths(List<Unit> all)
+	{
+		return findCommonPaths(all, 1);
+	}
+	
+	/**
+	 * Finds the paths that distinguish given mage from mages in a list
+	 * @param u The mage to distinguish
+	 * @param all The mages to distinguish from
+	 * @return List of integers signifying paths
+	 */
 	public static List<Integer> findDistinguishingPaths(Unit u, List<Unit> all)
 	{
 		int[] paths = u.getMagicPicks(false);
@@ -571,6 +620,9 @@ public class MageGenerator extends TroopGenerator {
 		return list;
 	}
 	
+	
+	
+	
 	public void applyFilters()
 	{		
 
@@ -607,16 +659,16 @@ public class MageGenerator extends TroopGenerator {
 		List<Filter> filters = ChanceIncHandler.retrieveFilters("magefilters", "default_magefilters", nationGen.filters, list.get(list.size() - 1).pose, list.get(list.size() - 1).race);
 		double mod = 0.25;
 		if(diversity < 3)
-			mod += 0.1;
+			mod += 0.2;
 		if(diversity < 4)
-			mod += 0.1;
+			mod += 0.15;
 		
 		if(max > 4)
-			mod -= 0.1;
+			mod -= 0.25;
 		if(max < 4)
 			mod += 0.1;
 		if(atmax < 2 && max < 4)
-			mod += 0.1;
+			mod += 0.2;
 		if(atmax < 3 && max < 4)
 			mod += 0.1;
 		
@@ -631,8 +683,8 @@ public class MageGenerator extends TroopGenerator {
 			mod *= 0.75;
 		
 
-		
 		int power = 0;
+		
 		if(nation.random.nextDouble() < mod * 3)
 		{
 			power++;
@@ -642,17 +694,26 @@ public class MageGenerator extends TroopGenerator {
 				if(nation.random.nextDouble() < mod)
 				{
 					power++;
-					if(nation.random.nextDouble() < mod / 2)
+					if(nation.random.nextDouble() < mod)
 					{
 						power++;
-						if(nation.random.nextDouble() < mod / 4)
+						if(nation.random.nextDouble() < mod / 2)
 						{
 							power++;
+							if(nation.random.nextDouble() < mod / 2)
+							{
+								power++;
+							}
 						}
 					}
 				}
 			}
 		}
+		
+
+		if(power > 0 && nation.random.nextDouble() > 0.5)
+			power++;
+		
 		
 		Unit extra = null;
 		for(Unit u : list)
@@ -669,7 +730,10 @@ public class MageGenerator extends TroopGenerator {
 		{
 			list.clear();
 			list.add(extra);
-			power = nation.random.nextInt(3) + 2;
+			power = nation.random.nextInt(3) + 2; // 2 to 4
+			if(nation.random.nextBoolean())
+				power += nation.random.nextInt(4); // 0 to 3;
+			
 			this.applyFilters(list, power, filters);
 		}
 		
@@ -690,16 +754,16 @@ public class MageGenerator extends TroopGenerator {
 					}
 				}
 			
-			if(nation.random.nextDouble() < 0.05 + maxStrength * 0.025)
+			if(nation.random.nextDouble() < 0.15 + maxStrength * 0.075)
 			{
 				power++;
-				if(nation.random.nextDouble() < 0.1 + maxStrength * 0.025)
+				if(nation.random.nextDouble() < 0.1 + maxStrength * 0.05)
 				{
 					power++;
-					if(nation.random.nextDouble() < 0.1 + maxStrength * 0.025)
+					if(nation.random.nextDouble() < 0.1 + maxStrength * 0.05)
 					{
 						power++;
-						if(nation.random.nextDouble() < 0.1 + maxStrength * 0.025)
+						if(nation.random.nextDouble() < 0.1 + maxStrength * 0.05)
 						{
 							power++;
 						}
@@ -707,6 +771,10 @@ public class MageGenerator extends TroopGenerator {
 				}
 			}
 			
+			if(power == 0 && nation.random.nextDouble() > 0.85)
+				power = nation.random.nextInt(3) + 2; // 2 to 3 
+				
+
 			this.applyFilters(list, power, filters);
 
 		}
@@ -1161,8 +1229,298 @@ public class MageGenerator extends TroopGenerator {
 		return priests;
 	}
 	
-	
+	/**
+	 * The new method
+	 * @param units
+	 * @param power
+	 * @param filters
+	 */
 	public void applyFilters(List<Unit> units, int power, List<Filter> filters)
+	{
+		if(units.size() == 0)
+			return;
+		
+
+		
+		ChanceIncHandler chandler = new ChanceIncHandler(nation);
+
+		while(power > 0)
+		{
+			List<Filter> moreFilters = new ArrayList<Filter>();
+			
+			if(nation.random.nextDouble() > 0.1)
+				moreFilters = ChanceIncHandler.getFiltersWithPower(power, power, filters);
+			
+
+			int at = nation.random.nextInt(power + 5) - 5; // -5 to power - 1
+			while(moreFilters.size() == 0 && at >= -5)
+			{
+				moreFilters = ChanceIncHandler.getFiltersWithPower(at, power, filters);
+				at--;
+			}
+			
+			int tier = 3;
+			if(nation.random.nextDouble() > 0.65)
+				tier = 2;
+			else if(nation.random.nextDouble() > 0.875)
+				tier = 1;
+			
+			List<Unit> mages = getMagesOfTier(units, tier);
+			
+			
+			if(mages.size() == 0)
+			{
+
+				if(units.get(0).tags.contains("extramage"))
+				{
+					mages.addAll(units);
+					tier = nation.random.nextInt(2) + 2; // 2 to 3;
+				}
+				
+				if(mages.size() == 0) // Unhandled tier. Heroes have that.
+				{ 
+					mages = units;
+				}
+			}
+			
+			List<Filter> actualFilters = this.getFiltersForTier(moreFilters, tier);
+			
+			
+			if(actualFilters.size() == 0)
+			{
+				System.out.println("No filters for tier " + tier + ", original " + moreFilters.size() + " / " + mages.get(0).race);
+				return;
+			}
+			
+			
+			boolean different = allHaveDistinguishingPath(mages);
+			boolean common = MageGenerator.findCommonPaths(mages).size() > 0;
+			
+			List<Filter> oldFilters = new ArrayList<Filter>();
+			for(Unit u : units)
+				oldFilters.addAll(u.appliedFilters);
+
+			// If all mages of tier have distinguishing paths and either luck or no common paths, separate filters are rolled. 
+			if(different && (nation.random.nextBoolean() || !common))
+			{
+				int maxpower = 0;
+				for(Unit u : mages)
+				{
+					List<Filter> givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findDistinguishingPaths(u, mages), true);
+					givenFilters.removeAll(u.appliedFilters);
+	
+					
+					if(givenFilters.size() == 0)
+					{
+						givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findDistinguishingPaths(u, mages), false);
+						givenFilters.removeAll(u.appliedFilters);
+					}
+					
+					
+					// Use old filters when feasible!
+					List<Filter> tempFilters = new ArrayList<Filter>();
+					tempFilters.addAll(givenFilters);
+					tempFilters.retainAll(oldFilters);
+					if(tempFilters.size() > 0 && nation.random.nextDouble() > 0.25)
+						givenFilters = tempFilters;
+						
+					
+					Filter f = Filter.getRandom(nation.random, chandler.handleChanceIncs(u, givenFilters));
+					u.appliedFilters.add(f);
+					
+					
+					if(f.power > maxpower)
+						maxpower = f.power;
+					
+				}
+				power -= maxpower;
+			}
+			// Otherwise all mages get the same filter if possible
+			else 
+			{
+				List<Filter> givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findCommonPaths(mages), false);
+				
+				// Remove given filters to avoid duplicates
+				for(Unit u : mages)
+				{
+					givenFilters.removeAll(u.appliedFilters);
+				}
+				
+				// If no filters, failsafe into giving whatever
+				if(givenFilters.size() == 0)
+				{
+					givenFilters = new ArrayList<Filter>();
+					givenFilters.addAll(actualFilters);
+					for(Unit u : mages)
+					{
+						givenFilters.removeAll(u.appliedFilters);
+					}
+				}
+		
+				// Use old filters when feasible!
+				List<Filter> tempFilters = new ArrayList<Filter>();
+				tempFilters.addAll(givenFilters);
+				tempFilters.retainAll(oldFilters);
+				if(tempFilters.size() > 0 && nation.random.nextDouble() > 0.25)
+					givenFilters = tempFilters;
+					
+					
+	
+				Filter f = Filter.getRandom(nation.random, chandler.handleChanceIncs(mages, givenFilters));
+				
+				for(Unit u : mages)
+					u.appliedFilters.add(f);
+				
+				power -= f.power;
+			}
+			
+			
+		}
+	}
+	
+	/**
+	 * Returns filters that align with given path (either #personalmagic or possibly also if just chanceincs)
+	 * @param filters Filters
+	 * @param path Paths
+	 * @param strict If true, require positive chanceinc in addition to #personalmagic
+	 * @return
+	 */
+	private List<Filter> getPossibleFiltersByPaths(List<Filter> filters, List<Integer> paths, boolean strict)
+	{
+		
+		List<Filter> list = new ArrayList<Filter>();
+		for(Filter f : filters)
+		{
+			boolean ok = true;
+			for(String tag : f.tags)
+			{
+				List<String> args = Generic.parseArgs(tag);
+				if(args.get(0).equals("personalmagic") && args.size() > 1)
+				{
+					int needpath = Generic.PathToInteger(args.get(1));
+					if(!paths.contains(needpath))
+					{
+						ok = false;
+					}
+				}
+				
+			
+			}
+			
+			if(strict)
+			{
+				for(String c : f.chanceincs)
+				{
+					List<String> args = Generic.parseArgs(c);
+					if((args.get(0).equals("personalmagic") || args.get(0).equals("magic")) && args.size() > 1)
+					{
+						List<Integer> possibles = new ArrayList<Integer>();
+						for(int i = 1; i < args.size() - 1; i++)
+						{
+							int needpath = Generic.PathToInteger(args.get(i));
+							if(needpath > -1)
+								possibles.add(needpath);
+						}
+						
+						if(!paths.containsAll(possibles))
+						{
+							ok = false;
+						}
+					}
+				}
+			}
+			
+			
+			if(ok)
+				list.add(f);
+		}
+		
+		return list;
+	}
+	
+	/** 
+	 * Checks whether all mages given have a distinguishing path
+	 * @param mages
+	 * @return
+	 */
+	private boolean allHaveDistinguishingPath(List<Unit> mages)
+	{
+		boolean d = true;
+		for(Unit u : mages)
+		{
+			if(MageGenerator.findDistinguishingPaths(u, mages).size() == 0)
+				d = false;
+		}
+		return d;
+	}
+	
+	/**
+	 * Returns a list of mages of given tier out of the given list of mages
+	 * @param mages List of mages
+	 * @param tier Tier
+	 * @return
+	 */
+	private List<Unit> getMagesOfTier(List<Unit> mages, int tier)
+	{
+		List<Unit> list = new ArrayList<Unit>();
+		for(Unit u : mages)
+		{
+			int gettier = -1;
+			if(Generic.getTagValue(u.tags, "schoolmage") != null)
+				gettier = Integer.parseInt(Generic.getTagValue(u.tags, "schoolmage"));
+			if(Generic.getTagValue(u.tags, "priest") != null && tier == 0)
+				gettier = Integer.parseInt(Generic.getTagValue(u.tags, "priest"));
+			
+			
+			if(gettier == tier)
+				list.add(u);
+			
+		}
+		
+		return list;
+	}
+	
+	
+	
+	
+	/**
+	 * Returns a list of filters without #notfortier <tier>
+	 * @param filters List of original filters
+	 * @param tier Tier
+	 * @return
+	 */
+	private List<Filter> getFiltersForTier(List<Filter> filters, int tier)
+	{
+		List<Filter> list = new ArrayList<Filter>();
+		for(Filter f : filters)
+		{
+			
+			boolean ok = true;
+			if(Generic.getTagValue(f.tags, "notfortier") != null)
+			{
+				int nottier = Integer.parseInt(Generic.getTagValue(f.tags, "notfortier"));
+				if(tier == nottier)
+				{
+					ok = false;
+				}
+			}
+			
+			if(ok)
+				list.add(f);
+			
+		}
+		
+		return list;
+	}
+	
+	
+	/**
+	 * The old method
+	 * @param units
+	 * @param power
+	 * @param filters
+	 */
+	public void applyFilters_old(List<Unit> units, int power, List<Filter> filters)
 	{
 		if(units.size() == 0)
 			return;
@@ -1417,7 +1775,7 @@ public class MageGenerator extends TroopGenerator {
 	{
 		if(units == null)
 			return;
-		
+	
 		for(Unit u : units)
 			u.tags.add(tag);
 	}
