@@ -1,0 +1,33 @@
+-- Generic theme with high diversity and low cohesion
+#newtheme
+#name default
+#basechance 4
+#endtheme
+
+-- Weights: EA 1, MA 1, LA 0.5
+#newtheme
+#name primitive
+#basechance 1
+#chanceinc era 3 -0.5
+#themeinc theme advanced *0.05
+#themeinc theme iron *0.5
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *2
+#themeinc theme primitive *2
+#endtheme
+
+
+-- Weights: EA 0.25, MA 1, LA 2
+#newtheme
+#name advanced
+#basechance 0.25
+#chanceinc era 3 1.75
+#chanceinc era 2 0.75
+#themeinc theme advanced *2
+#themeinc theme iron *2
+#themeinc theme bronze *0.5
+#themeinc theme wood *0.5
+#themeinc theme leather *0.5
+#themeinc theme primitive *0.05
+#endtheme

@@ -104,7 +104,11 @@ public class Entity {
 		{
 			this.basechance = Double.parseDouble(args.get(1));
 		}
-		else if(args.get(0).equals("#tag") || args.get(0).equals("#theme"))
+		else if(args.get(0).equals("#tag"))
+		{
+			this.tags.add(args.get(1).replaceAll("'", "\""));
+		}
+		else if(args.get(0).equals("#theme"))
 		{
 			this.tags.add(args.get(1).replaceAll("'", "\""));
 		}

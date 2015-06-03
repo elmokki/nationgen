@@ -23,6 +23,7 @@ import java.util.Map.Entry;
 
 
 
+
 import com.elmokki.Drawing;
 import com.elmokki.Generic;
 
@@ -30,6 +31,7 @@ import nationGen.NationGen;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Race;
+import nationGen.entities.Theme;
 import nationGen.items.CustomItem;
 import nationGen.magic.MageGenerator;
 import nationGen.misc.ChanceIncHandler;
@@ -71,6 +73,8 @@ public class Nation {
 	public List<CustomItem> customitems = new ArrayList<CustomItem>();
 	public List<Command> gods = new ArrayList<Command>();
 	public List<Site> sites = new ArrayList<Site>();
+	public List<Theme> themes = new ArrayList<Theme>();
+	
 	
 	public LinkedHashMap <String, List<Unit>> unitlists = new LinkedHashMap <String, List<Unit>>();
 	public LinkedHashMap <String, List<Unit>> comlists = new LinkedHashMap <String, List<Unit>>();
@@ -121,6 +125,7 @@ public class Nation {
 		
 
 
+
 		// choose races
 		List<Race> allRaces = new ArrayList<Race>();
 		allRaces.addAll(nationGen.races);
@@ -145,6 +150,34 @@ public class Nation {
 		ChanceIncHandler chandler = new ChanceIncHandler(this);
 		race = Race.getRandom(random, chandler.handleChanceIncs(allRaces));
 		races.add(race);
+
+		// Roll themes
+		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("nationthemes", "default_themes", nationGen.themes, null, races.get(0));
+		
+		
+		
+		possibleThemes = ChanceIncHandler.getValidFilters(possibleThemes, themes);
+		if(possibleThemes.size() > 0)
+		{
+			Theme t = Theme.getRandom(random, chandler.handleChanceIncs(possibleThemes));
+			if(t != null)
+			{
+				themes.add(t);
+				possibleThemes.remove(t);
+			}
+		}
+		
+		// 10% chance for second theme
+		possibleThemes = ChanceIncHandler.getValidFilters(possibleThemes, themes);
+		if(possibleThemes.size() > 0 && random.nextDouble() < 0.1)
+		{
+			Theme t = Theme.getRandom(random, chandler.handleChanceIncs(possibleThemes));
+			if(t != null)
+				themes.add(t);
+		}
+		
+		// Restart chanceinc handler after adding themes.
+		chandler = new ChanceIncHandler(this);
 		
 		// Mages and priests
 		MageGenerator mageGen = new MageGenerator(nationGen, this);
