@@ -46,7 +46,16 @@ public class EpithetGenerator {
 			NameFilter part = NameFilter.getRandom(n.random, mageepithetparts);
 			Name common = MageDescriber.getCommonName(n);
 			common.setType(Generic.plural(common.type.toString()));
-			epithet = part.name + " of the " + common.toString();
+			
+			if(common.suffix != null || common.suffixprefix != null)
+				if(common.suffixprefix == null)
+					epithet = part.name + " of the " + common.suffix;
+				else
+					epithet = part.name + " of the " + common.suffixprefix + " " + common.suffix;
+			else
+				epithet = part.name + " of the " + common.toString();
+			
+
 
 			
 		}
@@ -57,6 +66,7 @@ public class EpithetGenerator {
 		}
 		
 		epithet = Generic.capitalize(epithet);
-		n.commands.add(new Command("#epithet", "\"" + epithet + "\""));
+		n.epithet = epithet;
+		//n.commands.add(new Command("#epithet", "\"" + epithet + "\""));
 	}
 }
