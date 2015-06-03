@@ -1,0 +1,104 @@
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/fomorian/weapon/axe.png
+#theme "primitive"
+#tag "name infantry axeman"
+#tier 1
+#tier 2
+#tier 3
+#enditem
+
+
+#newitem
+#basechance 3
+#id elitelongspear
+#gameid 28
+#sprite /graphics/fomorian/weapon/fomorianlongspear_elite.png
+#tag "name infantry spearman"
+#tier 2
+#tier 3
+#eliteversion epicgoldenstaff
+#eliteversion goldenstaff
+#eliteversion epicbaubledstaff
+#enditem
+
+
+#newitem
+#basechance 3
+#id elitespear
+#gameid 1
+#sprite /graphics/fomorian/weapon/fomorianspear_elite.png
+#tag "name infantry spearman"
+#eliteversion goldenstaff
+#eliteversion woodenstaff
+#eliteversion woodenstaff_bauble
+#eliteversion elitelongspear
+#tier 1
+#enditem
+
+#newitem
+#id broadsword
+#gameid 8
+#sprite /graphics/fomorian/weapon/sword.png
+#tag "name infantry swordsman"
+#tag "name commander captain"
+#tag "name commander swordsmaster"
+#tier 1
+#tier 2
+#tier 3
+#enditem
+
+
+
+#newitem
+#id epicgoldenstaff
+#gameid 7
+#sprite /graphics/agarthan/weapons/mage/epicgoldenstaff.png
+#tag "tier 3"
+#offsetx 35
+#offsety 45
+#enditem
+
+
+#newitem
+#id goldenstaff
+#gameid 7
+#sprite /graphics/agarthan/weapons/mage/goldenstaff.png
+#tag "tier 2"
+#tag "tier 1"
+#eliteversion epicgoldenstaff
+#eliteversion epicbaubledstaff
+#eliteversion othersceptre
+#eliteversion woodenorbstaff
+#offsetx 35
+#offsety 45
+#enditem
+
+
+
+
+#newitem
+#id woodenstaff
+#gameid 7
+#sprite /graphics/agarthan/weapons/mage/woodenstaff.png
+#tag "tier 2"
+#tag "tier 1"
+#eliteversion goldenstaff
+#eliteversion woodenstaff_bauble
+#eliteversion woodenorbstaff
+#offsetx 35
+#offsety 45
+#enditem
+
+
+#newitem
+#id woodenstaff_bauble
+#gameid 7
+#tag "tier 2"
+#tag "tier 3"
+#sprite /graphics/agarthan/weapons/mage/woodenstaff_bauble.png
+#eliteversion epicbaubledstaff
+#offsetx 35
+#offsety 45
+#enditem
