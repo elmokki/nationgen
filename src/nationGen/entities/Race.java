@@ -56,6 +56,51 @@ public class Race extends Filter {
 		
 	}
 	
+	
+
+	
+	
+	/**
+	 * Adds a new command replacing old one of the same type. Just so nations can have both defaults and 
+	 * custom stuff on top of that.
+	 * @param str
+	 */
+	public void addOwnLine(String str)
+	{
+		List<String> args = Generic.parseArgs(str);
+		List<String> toBeRemoved = new ArrayList<String>();
+		
+		for(int i = 0; i < tags.size(); i++)
+		{
+			List<String> args2 = Generic.parseArgs(tags.get(i));
+			
+			if(args.size() != args2.size())
+				continue;
+			
+			boolean ok = true;
+			for(int j = 0; j < args.size() - 1; j++)
+			{
+				if(!args.get(j).equals(args2.get(j)))
+				{
+					ok = false;
+					continue;
+				}
+
+			}
+			
+			if(ok)
+			{
+				toBeRemoved.add(tags.get(i));
+			}
+
+		}
+		
+		tags.removeAll(toBeRemoved);
+		
+		this.handleOwnCommand(str);
+		
+	}
+	
 	public boolean hasRole(String role)
 	{
 		for(Pose p : poses)

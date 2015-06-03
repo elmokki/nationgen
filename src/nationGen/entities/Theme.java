@@ -15,6 +15,8 @@ public class Theme extends Filter {
 
 	
 	public List<String> themeincs = new ArrayList<String>();
+	public List<String> nationeffects = new ArrayList<String>();
+	public List<String> secondarynationeffects = new ArrayList<String>();
 	
 	public Theme(NationGen nationGen) {
 		super(nationGen);
@@ -32,6 +34,16 @@ public class Theme extends Filter {
 			{
 				args.remove(0);
 				this.themeincs.add(Generic.listToString(args));
+			}
+			else if(args.get(0).equals("#racedefinition"))
+			{
+				args.remove(0);
+				this.nationeffects.add(Generic.listToString(args));
+			}
+			else if(args.get(0).equals("#secondaryracedefinition"))
+			{
+				args.remove(0);
+				this.nationeffects.add(Generic.listToString(args));
 			}
 			else
 				super.handleOwnCommand(str);

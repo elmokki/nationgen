@@ -57,6 +57,7 @@ public class Nation {
 	public int nationid = 92;
 	public int era = 2;
 	public String name = "UNNAMED";
+	public String epithet = "NO EPITHET";
 	
 	public NationGen nationGen;
 	public int seed = 0;
@@ -139,23 +140,20 @@ public class Nation {
 		} while(race.tags.contains("secondary"));
 
 		races.add(race);
-		allRaces.clear();
-		allRaces.addAll(nationGen.races);
-		allRaces.remove(race);
+		
+		
 		
 		for(Command c : races.get(0).nationcommands)
 			this.handleCommand(commands, c);
 		
 
-		ChanceIncHandler chandler = new ChanceIncHandler(this);
-		race = Race.getRandom(random, chandler.handleChanceIncs(allRaces));
-		races.add(race);
+		
+
 
 		// Roll themes
 		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("nationthemes", "default_themes", nationGen.themes, null, races.get(0));
 		
-		
-		
+		ChanceIncHandler chandler = new ChanceIncHandler(this);
 		possibleThemes = ChanceIncHandler.getValidFilters(possibleThemes, themes);
 		if(possibleThemes.size() > 0)
 		{
@@ -178,6 +176,28 @@ public class Nation {
 		
 		// Restart chanceinc handler after adding themes.
 		chandler = new ChanceIncHandler(this);
+		
+		
+		// Secondary race after themes since themes may affect it
+		allRaces.clear();
+		allRaces.addAll(nationGen.races);
+		allRaces.remove(race);
+		
+		race = Race.getRandom(random, chandler.handleChanceIncs(allRaces));
+		races.add(race);
+		
+		// Apply theme race effects
+		for(Theme t : themes)
+		{
+			for(String str : t.nationeffects)
+			{
+				races.get(0).addOwnLine(str);
+			}
+			for(String str : t.secondarynationeffects)
+			{
+				races.get(1).addOwnLine(str);
+			}
+		}
 		
 		// Mages and priests
 		MageGenerator mageGen = new MageGenerator(nationGen, this);
@@ -602,12 +622,18 @@ public class Nation {
     
 
         tw.println();
+        tw.println("-- Nation " + nationid + ": " + this.name + ", " + this.epithet);
+        tw.println("---------------------------------------------------------------");
+        tw.println("-- Generated with filters: " + this.appliedfilters);
+        tw.println("-- Generated with themes: " + this.themes);
+        tw.println("---------------------------------------------------------------");
+
         //writeNationInfo(tw);
         tw.println("#selectnation " + nationid);
         tw.println("#clear");
         tw.println("#era " + era);
         tw.println("#name \"" + name + "\"");
-        tw.println("#epithet \"No description\"");
+        tw.println("#epithet \"" + epithet + "\"");
         
         
 		tw.println("#descr \"" + "A glorious NationGen nation!" + "\"");
