@@ -625,7 +625,6 @@ public class MageGenerator extends TroopGenerator {
 	
 	public void applyFilters()
 	{		
-
 		List<Unit> list = nation.generateComList("mage");
 		
 		// Diagnostics
@@ -1241,6 +1240,18 @@ public class MageGenerator extends TroopGenerator {
 			return;
 		
 
+		// Filter selection is strict (see method getPossibleFiltersByPaths) for mages, but not for priests.
+		// IF PRIESTS START TO CONSISTENTLY GET MAGIC WITH SOME NON-FILTER IMPLEMENTATION THIS NEEDS TO BECOME TAG BASED
+		boolean strict = false;
+		int[] picks = units.get(0).getMagicPicks(false);
+		
+		for(int i = 0; i < 8; i++)
+		{
+			if(picks[i] > 0)
+				strict = true;
+		}
+
+		
 		
 		ChanceIncHandler chandler = new ChanceIncHandler(nation);
 
@@ -1248,16 +1259,28 @@ public class MageGenerator extends TroopGenerator {
 		{
 			List<Filter> moreFilters = new ArrayList<Filter>();
 			
-			if(nation.random.nextDouble() > 0.1)
-				moreFilters = ChanceIncHandler.getFiltersWithPower(power, power, filters);
+			//if(nation.random.nextDouble() > 0.1)
+			//	moreFilters = ChanceIncHandler.getFiltersWithPower(power, power, filters);
 			
 
-			int at = nation.random.nextInt(power + 5) - 5; // -5 to power - 1
+			
+			int at = nation.random.nextInt(power + 5) - 5; // -5 to power - 2
+			int cyc = 0;
 			while(moreFilters.size() == 0 && at >= -5)
 			{
 				moreFilters = ChanceIncHandler.getFiltersWithPower(at, power, filters);
 				at--;
+				cyc++;
 			}
+			
+
+			if(moreFilters.size() < -2)
+			{
+				moreFilters.clear();
+				moreFilters.addAll(filters);
+			}
+			
+
 			
 			int tier = 3;
 			if(nation.random.nextDouble() > 0.65)
@@ -1284,7 +1307,7 @@ public class MageGenerator extends TroopGenerator {
 			}
 			
 			List<Filter> actualFilters = this.getFiltersForTier(moreFilters, tier);
-			
+
 			
 			if(actualFilters.size() == 0)
 			{
@@ -1306,10 +1329,10 @@ public class MageGenerator extends TroopGenerator {
 				int maxpower = 0;
 				for(Unit u : mages)
 				{
-					List<Filter> givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findDistinguishingPaths(u, mages), true);
+					List<Filter> givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findDistinguishingPaths(u, mages), strict);
 					givenFilters.removeAll(u.appliedFilters);
 	
-					
+
 					if(givenFilters.size() == 0)
 					{
 						givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findDistinguishingPaths(u, mages), false);
@@ -1317,16 +1340,27 @@ public class MageGenerator extends TroopGenerator {
 					}
 					
 					
+					// CanAdd check
+					givenFilters = ChanceIncHandler.getValidUnitFilters(givenFilters, mages);
+					
+					
 					// Use old filters when feasible!
 					List<Filter> tempFilters = new ArrayList<Filter>();
 					tempFilters.addAll(givenFilters);
 					tempFilters.retainAll(oldFilters);
-					if(tempFilters.size() > 0 && nation.random.nextDouble() > 0.25)
+					tempFilters = ChanceIncHandler.getValidUnitFilters(tempFilters, mages);
+
+					if(tempFilters.size() > 0 && nation.random.nextDouble() > 0.25 && chandler.handleChanceIncs(u, tempFilters).size() > 0)
 						givenFilters = tempFilters;
 						
+	
+					
 					
 					Filter f = Filter.getRandom(nation.random, chandler.handleChanceIncs(u, givenFilters));
+		
+					
 					u.appliedFilters.add(f);
+					
 					
 					
 					if(f.power > maxpower)
@@ -1356,17 +1390,28 @@ public class MageGenerator extends TroopGenerator {
 						givenFilters.removeAll(u.appliedFilters);
 					}
 				}
+				
+				// CanAdd check
+				givenFilters = ChanceIncHandler.getValidUnitFilters(givenFilters, mages);
 		
+				
 				// Use old filters when feasible!
 				List<Filter> tempFilters = new ArrayList<Filter>();
 				tempFilters.addAll(givenFilters);
 				tempFilters.retainAll(oldFilters);
+				tempFilters = ChanceIncHandler.getValidUnitFilters(tempFilters, mages);
+
+
+				
 				if(tempFilters.size() > 0 && nation.random.nextDouble() > 0.25)
 					givenFilters = tempFilters;
 					
-					
 	
+	
+				
 				Filter f = Filter.getRandom(nation.random, chandler.handleChanceIncs(mages, givenFilters));
+
+
 				
 				for(Unit u : mages)
 					u.appliedFilters.add(f);
@@ -1377,6 +1422,10 @@ public class MageGenerator extends TroopGenerator {
 			
 		}
 	}
+	
+	
+
+	
 	
 	/**
 	 * Returns filters that align with given path (either #personalmagic or possibly also if just chanceincs)

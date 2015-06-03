@@ -2,9 +2,10 @@
 #name "awe"
 #basechance 0.1
 #command "#awe +1"
-#chanceinc "magic astral 0.05"
-#chanceinc "magic death -0.1"
-#chanceinc "magic blood -0.1"
+#chanceinc "personalmagic astral 0.5"
+#chanceinc "personalmagic death -0.1"
+#chanceinc "personalmagic blood -0.1"
+#power 2
 #end
 
 #new magefilter
@@ -13,7 +14,7 @@
 #command "#stealthy +10"
 #command "#gcost +20"
 #tag "notfortier 3"
-#tag "notfortier 2"
+#tag "notfortier 2" 
 #end
 
 
@@ -39,10 +40,11 @@
 
 #new magefilter
 #name "spy"
-#basechance 0.1
+#basechance 0.25
 #command "#stealthy +10"
 #command "#spy"
 #command "#gcost +20"
+#power 2
 #tag "notfortier 3"
 #tag "notfortier 2"
 #end
@@ -51,82 +53,44 @@
 #name "sailing"
 #basechance 0.25
 #command "#sailing"
-#chanceinc "magic air 0.35"
-#chanceinc "magic water 0.35"
+#chanceinc "personalmagic air 0.35"
+#chanceinc "personalmagic water 0.35"
 #end
 
 #new magefilter
-#name "nobadevents 1p"
+#name "nobadevents 20"
 #type badevents
 #basechance 0.25
-#command "#nobadevents +%value%"
-#basevalue -5
-#valuemulti 5
+#command "#nobadevents +20"
 #tag "notfortier 1"
-#chanceinc "magic astral 0.25"
+#power 2
+#chanceinc "personalmagic astral 0.25"
 #end
 
 #new magefilter
-#name "nobadevents 2p"
+#name "nobadevents 10"
 #type badevents
-#basechance 0.05
-#command "#nobadevents +%value%"
-#basevalue 5
-#valuemulti 5
-#chanceinc "magic astral 0.2"
+#basechance 0.25
+#command "#nobadevents +10"
+#tag "notfortier 1"
+#chanceinc "personalmagic astral 0.25"
 #end
 
 #new magefilter
-#name "nobadevents 3p"
+#name "nobadevents 5"
 #type badevents
-#basechance 0.025
-#command "#nobadevents +%value%"
-#basevalue 10
-#valuemulti 5
-#chanceinc "magic astral 0.1"
-#tag "notfortier 1"
+#basechance 0.5
+#command "#nobadevents +5"
 #end
 
 #new magefilter
 #name "inquisitor"
 #type inquisitor
-#basechance 0.0
+#basechance 0.5
 #command "#inquisitor"
-#chanceinc "magic holy 3"
+#chanceinc "personalmagic holy 3"
 #end
 
-#new magefilter
-#name "inquisitor2"
-#type inquisitor
-#basechance 2
-#command "#inquisitor"
-#chanceinc "magic holy 1"
-#tag "notfortier 1"
-#tag "notfortier 2"
-#end
-
-#new magefilter
-#name "healer scaling"
-#type "healer"
-#basechance 0.025
-#chanceinc "magic nature 0.025"
-#command "#gcost +50"
-#command "#healer +%value%"
-#basevalue -35
-#valuemulti 35
-#tag "notfortier 1"
-#end
-
-#new magefilter
-#name "healer scaling 2"
-#type "healer"
-#basechance 0.01
-#chanceinc "magic nature 0.025"
-#command "#gcost +50"
-#command "#healer +%value%"
-#basevalue -20
-#valuemulti 25
-#end
 
 #new
 #name "autodishealer 1"
@@ -137,19 +101,20 @@
 #end
 
 #new
-#name "autodishealer 2"
+#name "autodishealer 3"
 #basechance 0.0125
 #type "healer"
-#command "#autodishealer 2"
+#command "#autodishealer 3"
 #command "#gcost +50"
+#power 2
 #end
 
 
 #new magefilter
 #name "elegist 1"
 #basechance 0
-#chanceinc "magic nature 0.15"
-#chanceinc "magic holy 0.8"
+#chanceinc "personalmagic nature 0.15"
+#chanceinc "personalmagic holy 0.8"
 #command "#elegist +1"
 #notfortier 3
 #notfortier 2
@@ -158,8 +123,8 @@
 #new magefilter
 #name "elegist 2"
 #basechance 0
-#chanceinc "magic nature 0.15"
-#chanceinc "magic holy 0.8"
+#chanceinc "personalmagic nature 0.15"
+#chanceinc "personalmagic holy 0.8"
 #command "#elegist +2"
 #notfortier 1
 #end
@@ -167,8 +132,8 @@
 #new magefilter
 #name "elegist 3"
 #basechance 0
-#chanceinc "magic nature 0.15"
-#chanceinc "magic holy 0.8"
+#chanceinc "personalmagic nature 0.15"
+#chanceinc "personalmagic holy 0.8"
 #command "#elegist +3"
 #notfortier 1
 #notfortier 2
@@ -179,31 +144,34 @@
 #new magefilter
 #name "healer 10"
 #basechance 0.1
-#chanceinc "magic nature 0.15"
-#chanceinc "magic holy 0.15"
+#chanceinc "personalmagic nature 0.15"
+#chanceinc "personalmagic holy 0.15"
 #command "#healer +10"
 #command "#gcost +50"
 #tag "notfortier 3"
+#power 2
 #end
 
 #new magefilter
 #name "healer 25"
 #basechance 0.1
-#chanceinc "magic nature 0.15"
-#chanceinc "magic holy 0.15"
+#chanceinc "personalmagic nature 0.15"
+#chanceinc "personalmagic holy 0.15"
 #command "#healer +25"
 #command "#gcost +70"
 #tag "notfortier 1"
 #tag "notfortier 2"
+#power 2
 #end
 
 #new magefilter
 #name "healer 50"
 #basechance 0.05
-#chanceinc "magic holy 0.05"
-#chanceinc "magic nature 0.05"
+#chanceinc "personalmagic holy 0.05"
+#chanceinc "personalmagic nature 0.05"
 #command "#healer +50"
 #command "#gcost +120"
 #tag "notfortier 1"
 #tag "notfortier 2"
+#power 3
 #end
