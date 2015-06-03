@@ -29,6 +29,7 @@ import nationGen.entities.MagicItem;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.entities.AbilityTemplate;
+import nationGen.entities.Theme;
 import nationGen.items.CustomItem;
 import nationGen.items.Item;
 import nationGen.magic.MagicPattern;
@@ -67,6 +68,7 @@ public class NationGen {
 	public ResourceStorage<AbilityTemplate> templates = new ResourceStorage<AbilityTemplate>(AbilityTemplate.class, this);
 	public ResourceStorage<Filter> descriptions = new ResourceStorage<Filter>(Filter.class, this);
 	public ResourceStorage<Pose> monsters = new ResourceStorage<Pose>(Pose.class, this);
+	public ResourceStorage<Theme> themes = new ResourceStorage<Theme>(Theme.class, this);
 
 	public List<String> secondShapeMountCommands = new ArrayList<String>();
 	public List<String> secondShapeNonMountCommands = new ArrayList<String>();
@@ -115,6 +117,7 @@ public class NationGen {
 			miscnames.load("./data/names/naming.txt");
 			templates.load("./data/templates/templates.txt");
 			descriptions.load("./data/descriptions/descriptions.txt");
+			themes.load("./data/themes/themes.txt");
 			
 			monsters.load("./data/monsters/monsters.txt");
 			loadRaces("./data/races/races.txt");

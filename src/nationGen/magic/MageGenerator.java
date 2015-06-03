@@ -1341,14 +1341,14 @@ public class MageGenerator extends TroopGenerator {
 					
 					
 					// CanAdd check
-					givenFilters = getValidFilters(givenFilters, mages);
+					givenFilters = ChanceIncHandler.getValidUnitFilters(givenFilters, mages);
 					
 					
 					// Use old filters when feasible!
 					List<Filter> tempFilters = new ArrayList<Filter>();
 					tempFilters.addAll(givenFilters);
 					tempFilters.retainAll(oldFilters);
-					tempFilters = getValidFilters(tempFilters, mages);
+					tempFilters = ChanceIncHandler.getValidUnitFilters(tempFilters, mages);
 
 					if(tempFilters.size() > 0 && nation.random.nextDouble() > 0.25 && chandler.handleChanceIncs(u, tempFilters).size() > 0)
 						givenFilters = tempFilters;
@@ -1392,14 +1392,14 @@ public class MageGenerator extends TroopGenerator {
 				}
 				
 				// CanAdd check
-				givenFilters = getValidFilters(givenFilters, mages);
+				givenFilters = ChanceIncHandler.getValidUnitFilters(givenFilters, mages);
 		
 				
 				// Use old filters when feasible!
 				List<Filter> tempFilters = new ArrayList<Filter>();
 				tempFilters.addAll(givenFilters);
 				tempFilters.retainAll(oldFilters);
-				tempFilters = getValidFilters(tempFilters, mages);
+				tempFilters = ChanceIncHandler.getValidUnitFilters(tempFilters, mages);
 
 
 				
@@ -1424,31 +1424,7 @@ public class MageGenerator extends TroopGenerator {
 	}
 	
 	
-	/**
-	 * Checks ChanceIncHandler.canAdd() for all filters and removes bad ones.
-	 * @param filters
-	 * @param units
-	 * @return
-	 */
-	private List<Filter> getValidFilters(List<Filter> filters, List<Unit> units)
-	{
-		List<Filter> list = new ArrayList<Filter>();
-		
-		for(Filter f : filters)
-		{
-			boolean ok = true;
-			for(Unit u : units)
-			{
-				if(!ChanceIncHandler.canAdd(u, f))
-					ok = false;
-			}
-			
-			if(ok)
-				list.add(f);
-		}
-		
-		return list;
-	}
+
 	
 	
 	/**

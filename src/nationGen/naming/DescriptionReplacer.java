@@ -44,7 +44,8 @@ public class DescriptionReplacer {
 		descs.put("%unitname_plural%", Generic.plural(u.name.toString()));
 		descs.put("%race%", u.race.toString().toLowerCase());
 		descs.put("%race_plural%", Generic.plural(u.race.toString().toLowerCase()));
-		if(u.getSlot("mount") != null && !Generic.getTagValue(u.getSlot("mount").tags, "animal").equals(""))
+		
+		if(u.getSlot("mount") != null && Generic.getTagValue(u.getSlot("mount").tags, "animal") != null && !Generic.getTagValue(u.getSlot("mount").tags, "animal").equals(""))
 		{
 	
 			descs.put("%mount%", Generic.getTagValue(u.getSlot("mount").tags, "animal"));

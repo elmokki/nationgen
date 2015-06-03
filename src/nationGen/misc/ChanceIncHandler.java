@@ -9,7 +9,11 @@ import java.util.List;
 
 
 
+
+
 import com.elmokki.Generic;
+
+
 
 
 
@@ -20,6 +24,7 @@ import com.elmokki.Generic;
 import nationGen.entities.Filter;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
+import nationGen.entities.Theme;
 import nationGen.nation.Nation;
 import nationGen.units.ShapeChangeUnit;
 import nationGen.units.Unit;
@@ -27,9 +32,18 @@ import nationGen.units.Unit;
 public class ChanceIncHandler {
 	
 	private Nation n;
+	private List<String> themeincs = new ArrayList<String>();
+	
 	public ChanceIncHandler(Nation n)
 	{
 		this.n = n;
+		
+		for(Theme t : n.themes)
+		{
+			this.themeincs.addAll(t.themeincs);
+		}
+
+		
 	}
 	
 	public <T extends Filter> LinkedHashMap<T, Double> handleChanceIncs(List<T> filters)
@@ -65,16 +79,22 @@ public class ChanceIncHandler {
 		return list;
 	}
 	
+	/**
+	 * The main method for handling chanceincs.
+	 * @param u
+	 * @param filters
+	 * @return
+	 */
 	public <T extends Filter> LinkedHashMap<T, Double> handleChanceIncs(List<Unit> u, List<T> filters)
 	{
 
 		LinkedHashMap<T, Double> set = new LinkedHashMap<T, Double>();
 		for(T t : filters)
 		{
-
-
 			set.put(t, t.basechance);
 		}
+		
+		handleThemeIncs(set);
 		handleNationIncs(set, n);
 
 		for(Unit un : u)
@@ -122,20 +142,7 @@ public class ChanceIncHandler {
 	{
 		if(!suitableFor(u, f, null))
 			return false;
-
 		
-		// Forbid the same type
-		for(Filter f2 : u.appliedFilters)
-		{
-			for(String s : f.types)
-			{
-				if(f2.types.contains(s))
-				{
-					
-					return false;
-				}
-			}
-		}  
 		
 		List<String> primaries = new ArrayList<String>();
 		if(Generic.containsTag(f.tags, "primarycommand"))
@@ -199,7 +206,35 @@ public class ChanceIncHandler {
 
 		}
 		
-		return ok;
+		if(!ok)
+			return false;
+		
+		return canAdd(u.appliedFilters, f);
+	}
+	
+	public static <E extends Filter> boolean canAdd(List<E> filters, Filter f)
+	{
+
+
+
+		// Forbid the same type
+		for(Filter f2 : filters)
+		{
+			for(String s : f.types)
+			{
+				if(f2.types.contains(s))
+				{
+					
+					return false;
+				}
+			}
+		}  
+		
+
+		
+		return true;
+		
+
 	}
 	
 	public static List<Filter> getFiltersWithPower(int min, int max, List<Filter> orig)
@@ -212,6 +247,54 @@ public class ChanceIncHandler {
 		}
 		return newList;
 	}
+	
+	
+	/**
+	 * Checks ChanceIncHandler.canAdd() for all filters and removes bad ones.
+	 * @param filters
+	 * @param units
+	 * @return
+	 */
+	public static List<Filter> getValidUnitFilters(List<Filter> filters, List<Unit> units)
+	{
+		List<Filter> list = new ArrayList<Filter>();
+		
+		for(Filter f : filters)
+		{
+			boolean ok = true;
+			for(Unit u : units)
+			{
+				if(!ChanceIncHandler.canAdd(u, f))
+					ok = false;
+			}
+			
+			if(ok)
+				list.add(f);
+		}
+		
+		return list;
+	}
+	
+	/**
+	 * Checks ChanceIncHandler.canAdd() for all filters and removes bad ones.
+	 * @param filters
+	 * @param units
+	 * @return
+	 */
+	public static <E extends Filter> List<E> getValidFilters(List<E> filters, List<E> oldfilters)
+	{
+		List<E> list = new ArrayList<E>();
+		
+		for(E f : filters)
+		{
+			if(ChanceIncHandler.canAdd(oldfilters, f))
+				list.add(f);
+	
+		}
+		
+		return list;
+	}
+	
 	
 	public static <E extends Filter> List<E> retrieveFilters(String lookfor, String defaultset, ResourceStorage<E> source, Pose p, Race r)
 	{
@@ -326,6 +409,9 @@ public class ChanceIncHandler {
 		return value;
 	}
 	
+	
+	
+	
 	public Double applyModifier(double value, String modifier)
 	{
 		String[] mod = modifier.split(" or ");
@@ -361,6 +447,45 @@ public class ChanceIncHandler {
 			
 	}
 	
+	/**
+	 * This is a separate method for chanceincs that target the filter/item/whatever itself - ie stuff that is relevant 
+	 * for themes only since in general targetting the thing itself is pointless.
+	 * 
+	 * All theme chanceincs SHOULD NOT be implemented here. If the chanceinc does not target the filter itself,
+	 * for example not something like "higher chance if item contains theme 'advanced'", it is usable in other
+	 * places as well.
+	 * 
+	 * @param filters
+	 * @param n
+	 */
+	private <T extends Filter> void handleThemeIncs(LinkedHashMap<T, Double> filters)
+	{
+		for(T f : filters.keySet())
+		{
+			List<String> chanceincs = new ArrayList<String>();
+			chanceincs.addAll(themeincs);
+			
+			for(String str : chanceincs)
+			{
+				
+				List<String> args = Generic.parseArgs(str);
+	
+				// Theme
+				if(args.get(0).equals("theme") && args.size() >= 3)
+				{
+					boolean not = args.contains("not");
+					if(f.tags.contains(args.get(args.size() - 2)) != not)
+					{
+						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+					}
+				}
+				
+
+			}
+			
+			
+		}
+	}
 	
 	private <T extends Filter> void handleNationIncs(LinkedHashMap<T, Double> filters,  Nation n)
 	{
@@ -404,10 +529,17 @@ public class ChanceIncHandler {
 		double avggold = totalgold / unitCount;
 		
 		
+		
+		
 		// Do chanceincs!
 		for(T f : filters.keySet())
 		{
-			for(String str : f.chanceincs)
+			
+			List<String> chanceincs = new ArrayList<String>();
+			chanceincs.addAll(f.chanceincs);
+			chanceincs.addAll(themeincs);
+			
+			for(String str : chanceincs)
 			{
 				
 				List<String> args = Generic.parseArgs(str);
@@ -757,7 +889,12 @@ public class ChanceIncHandler {
 
 		for(T f : filters.keySet())
 		{	
-			for(String str : f.chanceincs)
+			
+			List<String> chanceincs = new ArrayList<String>();
+			chanceincs.addAll(f.chanceincs);
+			chanceincs.addAll(themeincs);
+			
+			for(String str : chanceincs)
 			{
 				// Poses
 				List<String> args = Generic.parseArgs(str);
