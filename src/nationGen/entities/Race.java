@@ -133,6 +133,7 @@ public class Race extends Filter {
 	}
 	
 	
+	
 	public <E extends Entity> void handleOwnCommand(String str)
 	{
 		List<String> args = Generic.parseArgs(str);
@@ -148,11 +149,14 @@ public class Race extends Filter {
 		else if(args.get(0).equals("#visiblename"))
 			this.visiblename = args.get(1);
 		else if(args.get(0).equals("#nationcommand"))
-			this.nationcommands.add(Command.parseCommand(args.get(1)));
+			this.nationcommands.add(Command.parseCommandFromDefinition(args));
 		else if(args.get(0).equals("#unitcommand"))
-			this.addCommand(args.get(1));
+		{			
+			args.remove(0);
+			this.addCommand(Generic.listToString(args));
+		}
 		else if(args.get(0).equals("#specialcommand"))
-			this.specialcommands.add(Command.parseCommand(args.get(1)));
+			this.specialcommands.add(Command.parseCommandFromDefinition(args));
 		else if(args.get(0).equals("#pose"))
 		{
 			List<Pose> set = nationGen.poses.get(args.get(1));
