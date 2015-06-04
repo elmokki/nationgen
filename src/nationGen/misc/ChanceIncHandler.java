@@ -480,6 +480,20 @@ public class ChanceIncHandler {
 					}
 				}
 				
+				if(args.get(0).equals("racename") && args.size() >= 3 && f.name != null)
+				{
+					boolean not = args.contains("not");
+	
+					if(f.name.toLowerCase().equals(args.get(args.size() - 2).toLowerCase()) != not)
+					{
+						if(f.getClass().equals(Race.class))
+						{
+							filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+
+						}
+					}
+				}
+				
 
 			}
 			
