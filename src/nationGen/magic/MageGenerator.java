@@ -2082,6 +2082,9 @@ public class MageGenerator extends TroopGenerator {
 		if(varyHat)
 			slot = "helmet";
 		
+		if(u.pose.getItems("helmet") == null || u.pose.getItems("helmet").size() == 0)
+			slot = "weapon";
+		
 		
 		List<String> possibleslots = new ArrayList<String>();
 		for(String tag : u.pose.tags)
@@ -2092,7 +2095,8 @@ public class MageGenerator extends TroopGenerator {
 		}
 		if(possibleslots.size() > 0)
 			slot = possibleslots.get(nation.random.nextInt(possibleslots.size()));
-		
+
+	
 		ItemSet stuff = u.pose.getItems(slot).filterTag("tier " + tier, true);
 		stuff.removeAll(exclusions);
 		stuff.remove(u.getSlot(slot));
