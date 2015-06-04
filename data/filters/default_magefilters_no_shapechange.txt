@@ -8,7 +8,7 @@
 #new magefilter
 #name "heretic"
 #basechance 1
-#command "#heretic"
+#command "#heretic +1"
 #notfortier 3
 #notfortier 2
 #notfortier 1
@@ -75,7 +75,7 @@
 #new magefilter
 #name "slimer"
 #basechance 0.125
-#command "#slimer"
+#command "#slimer +1"
 #power 1
 #chanceinc "magic water 0.5"
 #chanceinc "magic nature 0.5"
@@ -488,7 +488,7 @@
 #new magefilter
 #name "fear"
 #basechance 0.2
-#command "#fear +0"
+#command "#fear +5"
 #chanceinc "magic death 0.8"
 #tag "notfortier 1"
 #tag "notfortier 2"

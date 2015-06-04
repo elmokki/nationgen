@@ -1,0 +1,132 @@
+--- 1h weapons
+
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/avvim/weapon/axe.png
+#offsetx 4
+#offsety -5
+#tag "name infantry axeman"
+#tag "name commander warlord"
+#tag "name commander warchief"
+#chanceinc unittag irregular 8
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/avvim/weapon/mace.png
+#offsetx 4
+#offsety -5
+#theme "primitive"
+#tag "name infantry maceman"
+#maxprot 15
+#chanceinc unittag irregular 8
+#enditem
+
+#newitem
+#id morningstar
+#gameid 15
+#sprite /graphics/avvim/weapon/morningstar.png
+#offsetx 3
+#offsety -7
+#theme "advanced"
+#enditem
+
+#newitem
+#id broadsword
+#gameid 8
+#sprite /graphics/avvim/weapon/broadsword.png
+#offsetx 3
+#offsety -7
+#tag "name infantry swordsman"
+#tag "name commander captain"
+#tag "name commander swordsmaster"
+#theme "advanced"
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#sprite /graphics/avvim/weapon/falchion.png
+#offsetx 3
+#offsety -7
+#tag "name infantry falchioneer"
+#theme "advanced"
+#enditem
+
+--- hafted weapons
+
+#newitem
+#id battleaxe
+#gameid 18
+#sprite /graphics/gaian/minotaur/weapon/battleaxe1.png
+#tag "name infantry axeman"
+#basechance 2
+#enditem
+
+#newitem
+#id greataxe
+#gameid 18
+#sprite /graphics/gaian/minotaur/weapon/battleaxe2.png
+#tag "name infantry axeman"
+#basechance 2
+#enditem
+
+#newitem
+#id maul
+#gameid 18
+#sprite /graphics/gaian/minotaur/weapon/maul.png
+#theme "primitive"
+#basechance 2
+#enditem
+
+#newitem
+#id flail
+#gameid 16
+#sprite /graphics/gaian/minotaur/weapon/flail.png
+#theme "advanced"
+#enditem
+
+#newitem
+#id glaive
+#gameid 308
+#sprite /graphics/gaian/minotaur/weapon/glaive.png
+#enditem
+
+#newitem
+#id bardiche
+#gameid 257
+#sprite /graphics/gaian/minotaur/weapon/bardiche.png
+#theme "advanced"
+#enditem
+
+#newitem
+#id halberd
+#gameid 5
+#sprite /graphics/gaian/minotaur/weapon/halberd.png
+#theme "advanced"
+#enditem
+
+#newitem
+#id spear
+#gameid 1
+#sprite /graphics/gaian/minotaur/weapon/spear.png
+#tag "name infantry spearman"
+#basechance 2
+#enditem
+
+#newitem
+#id longspear
+#gameid 28
+#sprite /graphics/gaian/minotaur/weapon/longspear.png
+#tag "name infantry spearman"
+#basechance 2
+#enditem
+
+#newitem
+#id trident
+#gameid 3
+#sprite /graphics/gaian/minotaur/weapon/trident.png
+#theme "advanced"
+#enditem
