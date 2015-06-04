@@ -145,6 +145,14 @@ public class Command {
 		
 	}
 	
+	public static Command parseCommandFromDefinition(List<String> args)
+	{
+		args.remove(0);
+		String asd = Generic.listToString(args);
+		return parseCommand(asd);
+		
+	}
+	
 	public Command(String cmd, List<String> args)
 	{
 		this.command = cmd;
