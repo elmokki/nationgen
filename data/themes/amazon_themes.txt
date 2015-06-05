@@ -162,7 +162,7 @@
 #themeinc theme leather *1
 #themeinc theme naked *1
 #themeinc theme primitive *1
-#themeinc theme slave +2
+#themeinc theme slave *20
 #themeinc theme free *0.5
 #themeinc racename caveman *5
 #themeinc racename ape *2
@@ -175,7 +175,7 @@
 #racedefinition "#unitcommand '#mor +1'"
 #racedefinition "#unitcommand '#gcost +1'"
 #racedefinition "#secondaryracecommand '#slave'"
-#racedefinition "#secondaryracecommand '#gcost *0.8'"
+#racedefinition "#secondaryracecommand '#gcost -2'"
 #racedefinition "#secondaryracecommand '#att -1'"
 #racedefinition "#secondaryracecommand '#def -1'"
 #racedefinition "#secondaryracecommand '#mor -2'"
