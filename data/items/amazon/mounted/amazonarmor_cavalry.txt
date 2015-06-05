@@ -6,6 +6,7 @@
 #gameid 5
 #sprite /graphics/amazon/armor/standard/leathercuirass.png
 #armor
+#theme "leather"
 #enditem
 
 #newitem
@@ -13,6 +14,7 @@
 #gameid 10
 #sprite /graphics/amazon/armor/standard/leatherhauberk.png
 #armor
+#theme "leather"
 #enditem
 
 #newitem
@@ -20,6 +22,7 @@
 #gameid 10
 #sprite /graphics/amazon/armor/standard/leatherhauberk2.png
 #armor
+#theme "leather"
 #enditem
 
 
@@ -29,6 +32,7 @@
 #sprite /graphics/amazon/armor/standard/leatherhauberk.png
 #needs legs mounted_leatherpants
 #armor
+#theme "leather"
 #enditem
 
 
@@ -40,6 +44,7 @@
 #gameid 8
 #sprite /graphics/amazon/armor/standard/chaincuirass.png
 #armor
+#theme "iron"
 #enditem
 
 
@@ -48,6 +53,7 @@
 #gameid 13
 #sprite /graphics/amazon/armor/standard/chainhauberk.png
 #armor
+#theme "iron"
 #enditem
 
 
@@ -56,6 +62,7 @@
 #gameid 13
 #sprite /graphics/amazon/armor/standard/chainhauberk2.png
 #armor
+#theme "iron"
 #enditem
 
 
@@ -65,6 +72,9 @@
 #sprite /graphics/amazon/armor/standard/chainhauberk.png
 #armor
 #needs legs mounted_greaves
+#theme "advanced"
+#theme "iron"
+#tag "name mounted knight"
 #enditem
 
 
@@ -75,14 +85,16 @@
 #gameid 7
 #sprite /graphics/amazon/armor/standard/scalecuirass.png
 #armor
+#theme "iron"
 #enditem
-
 
 #newitem
 #id "scale hauberk"
 #gameid 12
 #sprite /graphics/amazon/armor/standard/scalehauberk.png
 #armor
+#theme "iron"
+#tag "name mounted cataphract"
 #enditem
 
 
@@ -92,6 +104,8 @@
 #sprite /graphics/amazon/armor/standard/scalehauberk.png
 #armor
 #needs legs mounted_greaves
+#theme "iron"
+#tag "name mounted cataphract"
 #enditem
 
 
@@ -103,6 +117,7 @@
 #sprite /graphics/amazon/armor/standard/scalecuirass_bronze.png
 #armor
 #basechance 0.5
+#theme "bronze"
 #enditem
 
 
@@ -112,6 +127,8 @@
 #sprite /graphics/amazon/armor/standard/scalehauberk_bronze.png
 #armor
 #basechance 0.25
+#theme "bronze"
+#tag "name mounted cataphract"
 #enditem
 
 
@@ -122,6 +139,8 @@
 #armor
 #basechance 0.25
 #needs legs mounted_greaves_bronze
+#tag "name mounted cataphract"
+#theme "bronze"
 #enditem
 
 --- Plate
@@ -132,27 +151,32 @@
 #gameid 9
 #sprite /graphics/amazon/armor/standard/platecuirass.png
 #armor
+#theme "advanced"
+#theme "iron"
 #enditem
-
 
 #newitem
 #id "plate hauberk"
 #gameid 14
 #sprite /graphics/amazon/armor/mounted/platehauberk.png
 #armor
+#theme "advanced"
+#theme "iron"
+#tag "name mounted knight"
 #enditem
-
 
 #newitem -- full plate
 #id "full plate"
 #gameid 19
 #sprite /graphics/amazon/armor/mounted/fullplate.png
 #armor
+#theme "advanced"
+#theme "iron"
+#tag "name mounted knight"
 #enditem
 
 
 --- Bronze Plate
-
 
 #newitem
 #id "bronze plate cuirass"
@@ -160,6 +184,7 @@
 #sprite /graphics/amazon/armor/standard/platecuirass_bronze.png
 #armor
 #basechance 0.5
+#theme "bronze"
 #enditem
 
 
@@ -169,6 +194,7 @@
 #sprite /graphics/amazon/armor/mounted/platehauberk_bronze.png
 #armor
 #basechance 0.25
+#theme "bronze"
 #enditem
 
 
@@ -178,6 +204,9 @@
 #sprite /graphics/amazon/armor/mounted/fullplate_bronze.png
 #armor
 #basechance 0.25
+#theme "bronze"
+#theme "advanced"
+#tag "name mounted knight"
 #enditem
 
 --- Ring
@@ -187,6 +216,7 @@
 #gameid 6
 #sprite /graphics/amazon/armor/standard/ringcuirass.png
 #armor
+#theme "leather"
 #enditem
 
 
@@ -195,6 +225,7 @@
 #gameid 11
 #sprite /graphics/amazon/armor/standard/ringhauberk.png
 #armor
+#theme "leather"
 #enditem
 
 
@@ -203,6 +234,7 @@
 #gameid 11
 #sprite /graphics/amazon/armor/standard/ringhauberk2.png
 #armor
+#theme "leather"
 #enditem
 
 
@@ -212,10 +244,6 @@
 #sprite /graphics/amazon/armor/standard/ringhauberk.png
 #armor
 #needs legs mounted_ringpants
+#theme "leather"
 #enditem
-
---- 20 and 21 free
-
---- 22 Naked
-
 
