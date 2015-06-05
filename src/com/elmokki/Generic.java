@@ -10,6 +10,22 @@ import nationGen.entities.Entity;
 public class Generic {
 	
 	
+	public static String sanitize(String str)
+	{
+		str = str.replaceAll(" ", "");
+		str = str.replaceAll("-", "");
+		str = str.replaceAll("'", "");
+		str = str.replaceAll("\"", "");
+		str = str.replaceAll("Ä", "");
+		str = str.replaceAll("ä", "");
+		str = str.replaceAll("Ö", "");
+		str = str.replaceAll("ö", "");
+		str = str.replaceAll("Å", "");
+		str = str.replaceAll("å", "");
+		return str;
+
+	}
+	
 	
 	public static String integerToPath(int integer)
 	{

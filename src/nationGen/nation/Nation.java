@@ -139,17 +139,11 @@ public class Nation {
 
 		} while(race.tags.contains("secondary"));
 
-		races.add(race);
-		
-		
+		races.add(race.getCopy());
 		
 		for(Command c : races.get(0).nationcommands)
 			this.handleCommand(commands, c);
 		
-
-		
-
-
 		// Roll themes
 		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("nationthemes", "default_themes", nationGen.themes, null, races.get(0));
 		
@@ -177,18 +171,7 @@ public class Nation {
 		// Restart chanceinc handler after adding themes.
 		chandler = new ChanceIncHandler(this);
 		
-		// Apply theme race effects
-		for(Theme t : themes)
-		{
-			for(String str : t.nationeffects)
-			{
-				races.get(0).addOwnLine(str);
-			}
-			for(String str : t.secondarynationeffects)
-			{
-				races.get(1).addOwnLine(str);
-			}
-		}
+
 		
 		// Secondary race after themes since themes may affect it
 		allRaces.clear();
@@ -196,7 +179,7 @@ public class Nation {
 		allRaces.remove(race);
 		
 		race = Race.getRandom(random, chandler.handleChanceIncs(allRaces));
-		races.add(race);
+		races.add(race.getCopy());
 		
 		
 		// Add secondaryracecommands to the secondary race
@@ -211,7 +194,18 @@ public class Nation {
 			}
 		}
 		
-
+		// Apply theme race effects
+		for(Theme t : themes)
+		{
+			for(String str : t.nationeffects)
+			{
+				races.get(0).addOwnLine(str);
+			}
+			for(String str : t.secondarynationeffects)
+			{
+				races.get(1).addOwnLine(str);
+			}
+		}
 		
 		
 		// Mages and priests

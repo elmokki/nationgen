@@ -22,6 +22,8 @@ public class Race extends Filter {
 
 	public String visiblename = null;
 	
+	
+
 	public Race(NationGen nationGen)
 	{
 
@@ -222,5 +224,28 @@ public class Race extends Filter {
 			visiblename = name;
 	}
 
+	
+	public Race getCopy()
+	{
+		Race r = new Race(nationGen);
+		r.longsyllables = this.longsyllables;
+		r.shortsyllables = this.shortsyllables;
+		r.namesuffixes = this.namesuffixes;
+		r.nationcommands.addAll(this.nationcommands);
+		r.unitcommands.addAll(this.unitcommands);
+		r.specialcommands.addAll(this.specialcommands);
+		r.poses.addAll(this.poses);
+		r.chanceincs.addAll(this.chanceincs);
+		r.tags.addAll(this.tags);
+		r.visiblename = this.visiblename;
+		r.basechance = this.basechance;
+		r.commands.addAll(this.commands);
+		r.name = this.name;
+		r.types.addAll(this.types);
+		r.tags.addAll(this.types);
+		
+		return r;
+	}
+	
 
 }
