@@ -49,9 +49,20 @@ public class Race extends Filter {
 	{
 		Command c = Command.parseCommand(str);
 		
+		
 		for(int i = 0; i < unitcommands.size(); i++)
 			if(unitcommands.get(i).command.equals(c.command))
-				unitcommands.remove(unitcommands.get(i));
+			{
+				
+				if(c.args.get(0).startsWith("+") || c.args.get(0).startsWith("-") || c.args.get(0).startsWith("*"))
+				{
+					
+				}
+				else
+				{	
+					unitcommands.remove(unitcommands.get(i));
+				}
+			}
 		unitcommands.add(c);
 		
 	}
@@ -96,6 +107,7 @@ public class Race extends Filter {
 		}
 		
 		tags.removeAll(toBeRemoved);
+
 		
 		this.handleOwnCommand(str);
 		

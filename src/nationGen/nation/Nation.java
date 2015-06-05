@@ -177,15 +177,6 @@ public class Nation {
 		// Restart chanceinc handler after adding themes.
 		chandler = new ChanceIncHandler(this);
 		
-		
-		// Secondary race after themes since themes may affect it
-		allRaces.clear();
-		allRaces.addAll(nationGen.races);
-		allRaces.remove(race);
-		
-		race = Race.getRandom(random, chandler.handleChanceIncs(allRaces));
-		races.add(race);
-		
 		// Apply theme race effects
 		for(Theme t : themes)
 		{
@@ -198,6 +189,30 @@ public class Nation {
 				races.get(1).addOwnLine(str);
 			}
 		}
+		
+		// Secondary race after themes since themes may affect it
+		allRaces.clear();
+		allRaces.addAll(nationGen.races);
+		allRaces.remove(race);
+		
+		race = Race.getRandom(random, chandler.handleChanceIncs(allRaces));
+		races.add(race);
+		
+		
+		// Add secondaryracecommands to the secondary race
+
+		for(String tag : this.races.get(0).tags)
+		{
+			List<String> args = Generic.parseArgs(tag);
+			if(args.get(0).equals("secondaryracecommand"))
+			{
+				args.remove(0);
+				races.get(1).addCommand(Generic.listToString(args));
+			}
+		}
+		
+
+		
 		
 		// Mages and priests
 		MageGenerator mageGen = new MageGenerator(nationGen, this);
@@ -393,7 +408,6 @@ public class Nation {
 	
 	private void finalizeUnits()
 	{
-		List<Command> all = new ArrayList<Command>();
 		List<Command> conditional = new ArrayList<Command>();
 		
 		for(String tag : this.races.get(0).tags)
@@ -401,11 +415,7 @@ public class Nation {
 			List<String> args = Generic.parseArgs(tag);
 			if(args.get(0).equals("secondaryracecommand_conditional"))
 			{
-				conditional.add(Command.parseCommand(args.get(1)));
-			}
-			else if(args.get(0).equals("secondaryracecommand"))
-			{
-				all.add(Command.parseCommand(args.get(1)));
+				conditional.add(Command.parseCommandFromDefinition(args));
 			}
 		}
 		
@@ -415,7 +425,7 @@ public class Nation {
 			for(Unit u : l)
 			{
 				u.commands.addAll(u.race.specialcommands);
-				giveSecondaryRaceCommands(u, all, conditional);
+				giveSecondaryRaceSpecialCommands(u, conditional);
 				u.polish();
 			}
 		for(List<Unit> l : this.unitlists.values())
@@ -423,14 +433,14 @@ public class Nation {
 			{
 				if(u.tags.contains("elite") || u.tags.contains("sacred"))
 					u.commands.addAll(u.race.specialcommands);
-				giveSecondaryRaceCommands(u, all, conditional);
+				giveSecondaryRaceSpecialCommands(u, conditional);
 				u.polish();
 			}
 		
 		for(Unit u : heroes)
 		{
 			u.commands.addAll(u.race.specialcommands);
-			giveSecondaryRaceCommands(u, all, conditional);
+			giveSecondaryRaceSpecialCommands(u, conditional);
 			u.polish();
 		}
 		
@@ -520,7 +530,7 @@ public class Nation {
 
 	}
 	
-	private void giveSecondaryRaceCommands(Unit u, List<Command> all, List<Command> conditional)
+	private void giveSecondaryRaceSpecialCommands(Unit u, List<Command> conditional)
 	{
 		if(u.race == races.get(0))
 			return;
@@ -543,11 +553,7 @@ public class Nation {
 				u.commands.add(cc);
 			}
 		}
-		for(Command cc : all)
-		{
-			u.commands.add(cc);
 
-		}
 	}
 	
 	

@@ -102,19 +102,23 @@ public class Entity {
 		}
 		else if(args.get(0).equals("#basechance") || args.get(0).equals("#chance"))
 		{
-			this.basechance = Double.parseDouble(args.get(1));
+			args.remove(0);
+			this.basechance = Double.parseDouble(Generic.listToString(args));
 		}
-		else if(args.get(0).equals("#tag"))
+		else if(args.get(0).equals("#tag") || args.get(0).equals("#theme"))
 		{
-			this.tags.add(args.get(1).replaceAll("'", "\""));
+			// Legacy thing
+			args.get(1).replaceAll("'", "\"");
+			
+			args.remove(0);
+			this.tags.add(Generic.listToString(args));
+
 		}
-		else if(args.get(0).equals("#theme"))
-		{
-			this.tags.add(args.get(1).replaceAll("'", "\""));
-		}
+
 		else if(str.startsWith("#"))
 		{
 			this.tags.add(str.substring(1));
+
 		}
 		
 	}

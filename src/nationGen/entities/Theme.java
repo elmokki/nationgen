@@ -43,7 +43,7 @@ public class Theme extends Filter {
 			else if(args.get(0).equals("#secondaryracedefinition"))
 			{
 				args.remove(0);
-				this.nationeffects.add(Generic.listToString(args));
+				this.secondarynationeffects.add(Generic.listToString(args));
 			}
 			else
 				super.handleOwnCommand(str);
