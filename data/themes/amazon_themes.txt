@@ -154,7 +154,7 @@
 #newtheme
 #type social
 #name slaver
-#basechance 10000
+#basechance 0.5
 #themeinc theme advanced *1
 #themeinc theme iron *1
 #themeinc theme bronze *1
@@ -162,7 +162,7 @@
 #themeinc theme leather *1
 #themeinc theme naked *1
 #themeinc theme primitive *1
-#themeinc theme slave *200
+#themeinc theme slave *20
 #themeinc theme free *0.5
 #themeinc racename caveman *5
 #themeinc racename ape *2
@@ -174,11 +174,11 @@
 #themeinc racename tengu *0.1
 #racedefinition "#unitcommand '#mor +1'"
 #racedefinition "#unitcommand '#gcost +1'"
-#racedefinition "#secondaryracecommand '#slave'"
-#racedefinition "#secondaryracecommand '#gcost -2'"
-#racedefinition "#secondaryracecommand '#att -1'"
-#racedefinition "#secondaryracecommand '#def -1'"
-#racedefinition "#secondaryracecommand '#mor -2'"
+#secondaryracedefinition "#unitcommand '#slave'"
+#secondaryracedefinition "#unitcommand '#gcost -2'"
+#secondaryracedefinition "#unitcommand '#att -1'"
+#secondaryracedefinition "#unitcommand '#def -1'"
+#secondaryracedefinition "#unitcommand '#mor -2'"
 #racedefinition "#secondaryracetroopmod 100"
 #racedefinition "#secondaryracemagemod -100"
 #endtheme
