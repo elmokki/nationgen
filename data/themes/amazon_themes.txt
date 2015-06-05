@@ -70,7 +70,6 @@
 #themeinc theme leather *2
 #themeinc theme naked *0.5
 #themeinc theme primitive *1
-#racedefinition "#unitcommand #flying"
 #racedefinition "#unitcommand '#prec 13'"
 #racedefinition "#unitcommand '#mor 10'"
 #racedefinition "#generationchance ranged 2"
@@ -156,7 +155,6 @@
 #type social
 #name slaver
 #basechance 0.5
-#chanceinc "hasprimaryrace *0"
 #themeinc theme advanced *1
 #themeinc theme iron *1
 #themeinc theme bronze *1
@@ -175,7 +173,7 @@
 #themeinc racename sidhe *0.1
 #themeinc racename tengu *0.1
 #racedefinition "#unitcommand '#mor 12'"
-#secondaryracedefinition "#unitcommand #slave"
+#racedefinition "#secondaryracecommand #slave"
 #racedefinition "#secondaryracecommand '#mor -2'"
 #racedefinition "#secondaryracetroopmod 100"
 #racedefinition "#secondaryracemagemod -100"
