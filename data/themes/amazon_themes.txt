@@ -70,8 +70,8 @@
 #themeinc theme leather *2
 #themeinc theme naked *0.5
 #themeinc theme primitive *1
-#racedefinition "#unitcommand '#prec 13'"
-#racedefinition "#unitcommand '#mor 10'"
+#racedefinition "#unitcommand '#prec +1'"
+#racedefinition "#unitcommand '#mor -1'"
 #racedefinition "#generationchance ranged 2"
 #racedefinition "#magicpriority astral 10"
 #racedefinition "#magicpriority air 5"
@@ -95,10 +95,10 @@
 #themeinc racename humanbred *4
 #themeinc racename abysian *2
 #racedefinition "#unitcommand #wastelandsurvival"
-#racedefinition "#unitcommand '#att 12'"
-#racedefinition "#unitcommand '#def 12'"
-#racedefinition "#unitcommand '#fireres 15'"
-#racedefinition "#unitcommand '#gcost 14'"
+#racedefinition "#unitcommand '#att +1'"
+#racedefinition "#unitcommand '#def +1'"
+#racedefinition "#unitcommand '#fireres +15'"
+#racedefinition "#unitcommand '#gcost +2'"
 #racedefinition "#generationchance ranged 0.5"
 #racedefinition "#magicpriority blood 10"
 #racedefinition "#magicpriority fire 5"
@@ -162,8 +162,8 @@
 #themeinc theme leather *1
 #themeinc theme naked *1
 #themeinc theme primitive *1
-#themeinc theme slave +1
-#themeinc theme free *0.25
+#themeinc theme slave +2
+#themeinc theme free *0.5
 #themeinc racename caveman *5
 #themeinc racename ape *2
 #themeinc racename human *2
@@ -172,8 +172,12 @@
 #themeinc racename van *0.1
 #themeinc racename sidhe *0.1
 #themeinc racename tengu *0.1
-#racedefinition "#unitcommand '#mor 12'"
-#racedefinition "#secondaryracecommand #slave"
+#racedefinition "#unitcommand '#mor +1'"
+#racedefinition "#unitcommand '#gcost +1'"
+#racedefinition "#secondaryracecommand '#slave'"
+#racedefinition "#secondaryracecommand '#gcost *0.8'"
+#racedefinition "#secondaryracecommand '#att -1'"
+#racedefinition "#secondaryracecommand '#def -1'"
 #racedefinition "#secondaryracecommand '#mor -2'"
 #racedefinition "#secondaryracetroopmod 100"
 #racedefinition "#secondaryracemagemod -100"
