@@ -8,6 +8,7 @@ import com.elmokki.Generic;
 
 
 
+
 import nationGen.NationGen;
 import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
@@ -96,6 +97,11 @@ public class Race extends Filter {
 			boolean ok = true;
 			for(int j = 0; j < args.size() - 1; j++)
 			{
+				if(args.get(j).startsWith("\'") || args.get(j).startsWith("\""))
+					args.set(j, args.get(j).substring(1));
+				if(args.get(j).endsWith("\'") || args.get(j).endsWith("\""))
+					args.set(j, args.get(j).substring(0, args.get(j).length()-1));	
+					
 				if(!args.get(j).equals(args2.get(j)))
 				{
 					ok = false;

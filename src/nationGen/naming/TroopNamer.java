@@ -59,21 +59,33 @@ public class TroopNamer {
 		List<Unit> units = n.comlists.get("commanders");
 		String[] basicnames = {"Commander", "Lord", "Castellan", "Sergeant", "Lieutenant"};
 		String[] betternames = {"General", "Colonel", "Warlord", "Lord Commander", "Strategus"};
+		List<String> used = new ArrayList<String>();;
 		
 		for(Unit u : units)
 		{
 			boolean bad = true;
+			boolean unnamed = true;
+			
 			for(Command c : u.commands)
 			{
 				if(c.command.startsWith("#inspirational") || c.command.startsWith("#goodleader") || c.command.startsWith("#expertleader"))
 					bad = false;
 			}
+
+			if(n.random.nextBoolean())
+			{
+				String name = null;
+				unnamed = (null == (name = getWeaponBasedName(u, used, unnamed, true)));
+				if(name != null)
+					u.name.setType(name);
+			}
 			
-			if(bad)
+			if(bad && unnamed)
 				u.name.setType(basicnames[n.random.nextInt(basicnames.length)]);
-			else
+			else if(unnamed)
 				u.name.setType(betternames[n.random.nextInt(betternames.length)]);
 
+			used.add(u.getName());
 		}
 		
 		
@@ -185,7 +197,7 @@ public class TroopNamer {
 					
 					boolean unnamed = u.name.type.text.equals("UNNAMED");
 
-					String str = getWeaponBasedName(u, wpnused, unnamed);
+					String str = getWeaponBasedName(u, wpnused, unnamed, false);
 			
 			
 		
@@ -360,7 +372,7 @@ public class TroopNamer {
 		}
 	}
 
-	private String getWeaponBasedName(Unit u, List<String> used, boolean unnamed)
+	private String getWeaponBasedName(Unit u, List<String> used, boolean unnamed, boolean isCommander)
 	{
 		List<String> prefixes = new ArrayList<String>();
 		List<String> guaranteedprefixes = new ArrayList<String>();
@@ -379,35 +391,56 @@ public class TroopNamer {
 				
 				for(String s : item.tags)
 				{
+					List<String> args = Generic.parseArgs(s);
+					
 					if(used.contains(s))
 					{
 						old.add(s);
 					}
-					List<String> args = Generic.parseArgs(s);
-
+					else if(args.size() == 2 && used.contains(args.get(1)))
+					{
+						old.add(args.get(1));
+					}
+					else if(args.size() == 3 && used.contains(args.get(2)))
+					{
+						old.add(args.get(2));
+					}
+					
 					if(args.get(0).equals("name"))
 					{
-						if(args.size() == 2)
+						if(args.size() == 2 && !isCommander)
 						{
 							names.add(s);
 						}
-						else if(args.size() == 3 && u.pose.roles.contains(args.get(1)))
+						else if(args.size() == 3 && args.get(1).equals("commander") && isCommander)
+						{
+							names.add(args.get(2));
+						}
+						else if(args.size() == 3 && u.pose.roles.contains(args.get(1)) && !isCommander)
 						{
 							names.add(s);
 						}
 					}
 					else if(args.get(0).equals("prefix"))
 					{
-						if(args.size() == 2)
+						if(args.size() == 2 && !isCommander)
 							prefixes.add(s);
-						else if(args.size() == 3 && u.pose.roles.contains(args.get(1)))
+						else if(args.size() == 3 && args.get(1).equals("commander") && isCommander)
+						{
+							prefixes.add(args.get(2));
+						}
+						else if(args.size() == 3 && u.pose.roles.contains(args.get(1)) && !isCommander)
 							prefixes.add(s);
 					}
 					else if(args.get(0).equals("guaranteedprefix"))
 					{
-						if(args.size() == 2)
+						if(args.size() == 2 && !isCommander)
 							guaranteedprefixes.add(s);
-						else if(args.size() == 3 && u.pose.roles.contains(args.get(1)))
+						else if(args.size() == 3 && args.get(1).equals("commander") && isCommander)
+						{
+							guaranteedprefixes.add(args.get(2));
+						}
+						else if(args.size() == 3 && u.pose.roles.contains(args.get(1)) && !isCommander)
 							guaranteedprefixes.add(s);	
 					}
 				}
@@ -421,8 +454,10 @@ public class TroopNamer {
 		for(String str : old)
 		{
 			List<String> args = Generic.parseArgs(str);
-			if(args.size() > 2 && u.pose.roles.contains(args.get(1)))
+			if(args.size() > 2 && u.pose.roles.contains(args.get(1)) && !isCommander)
 				newold.add(str);
+			else if(args.size() > 2 && args.get(1).equals("commander") && isCommander)
+				newold.add(args.get(2));
 		}
 		
 		if(guaranteedprefixes.size() > 0 && !unnamed)

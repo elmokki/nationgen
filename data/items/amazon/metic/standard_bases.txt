@@ -2,16 +2,4 @@
 #name "metic basesprite"
 #gameid -1
 #sprite /graphics/basehuman.png
-#theme "free"
-#enditem
-
-#newitem
-#name "slave basesprite"
-#gameid -1
-#basechance 0
-#sprite /graphics/basehuman.png
-#theme "slave"
-#command "#slave"
-#command "#mor -2"
-#guaranteedprefix slave
 #enditem
