@@ -6,6 +6,7 @@
 #renderslot "offhandw"
 #tag "name lancer"
 #basechance 2
+#theme "wood"
 #enditem
 
 #newitem
@@ -15,6 +16,7 @@
 #renderprio 7
 #renderslot "offhandw"
 #basechance 2
+#theme "wood"
 #enditem
 
 #newitem
@@ -28,6 +30,7 @@
 #id hammer
 #gameid 13
 #sprite /graphics/vaettir/weapon/hammer.png
+#theme "iron"
 #enditem
 
 #newitem
@@ -42,12 +45,14 @@
 #gameid 15
 #sprite /graphics/vaettir/weapon/morningstar.png
 #theme "advanced"
+#theme "iron"
 #enditem
 
 #newitem
 #id shortsword
 #gameid 6
 #sprite /graphics/vaettir/weapon/shortsword.png
+#theme "iron"
 #enditem
 
 #newitem
@@ -56,6 +61,8 @@
 #sprite /graphics/vaettir/weapon/greataxe.png
 #tag "eliteversion greataxe"
 #needs offhand no_offhand
+#theme "iron"
+#theme "jotun"
 #enditem
 
 #newitem
@@ -72,4 +79,5 @@
 #sprite /graphics/vaettir/weapon/flail.png
 #needs offhand no_offhand
 #theme "advanced"
+#theme "iron"
 #enditem

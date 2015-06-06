@@ -3,6 +3,31 @@
 --- Use exact syntax you'd use for dom3 except for #newweapon, #newarmor and #end
 --- Remember #type for armor.
 
+--- Additional bronze armors
+
+
+#new customarmor
+#name bronzescale_full
+#armor
+#command "#type 5"
+#command "#prot 14"
+#command "#def -2"
+#command "#enc 3"
+#command "#rcost 11"
+#command "#name 'Bronze Full Scale Mail'"
+#end
+
+#new customarmor
+#name bronzeplate_full
+#armor
+#command "#type 5"
+#command "#prot 20"
+#command "#def -3"
+#command "#enc 6"
+#command "#rcost 22"
+#command "#name 'Bronze Full Plate Mail'"
+#end
+
 --- Siddhe Golden Axe
 
 #new customweapon
