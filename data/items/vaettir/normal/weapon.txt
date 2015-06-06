@@ -10,6 +10,7 @@
 #id hammer
 #gameid 13
 #sprite /graphics/vaettir/weapon/hammer.png
+#theme "iron"
 #enditem
 
 #newitem
@@ -25,12 +26,14 @@
 #gameid 15
 #sprite /graphics/vaettir/weapon/morningstar.png
 #theme "advanced"
+#theme "iron"
 #enditem
 
 #newitem
 #id shortsword
 #gameid 6
 #sprite /graphics/vaettir/weapon/shortsword.png
+#theme "iron"
 #enditem
 
 #newitem
@@ -40,6 +43,7 @@
 #renderprio 7
 #renderslot "quiver"
 #tag "name infantry spearman"
+#theme "wood"
 #enditem
 
 #newitem
@@ -49,6 +53,7 @@
 #renderprio 7
 #renderslot "quiver"
 #maxprot 10
+#theme "wood"
 #enditem
 
 #newitem
@@ -60,6 +65,7 @@
 #needs offhand no_offhand
 #tag "name infantry pikeman"
 #theme "advanced"
+#theme "wood"
 #enditem
 
 #newitem
@@ -70,6 +76,7 @@
 #tag "name infantry pikeman"
 #basechance 0
 #theme "advanced"
+#theme "wood"
 #enditem
 
 #newitem
@@ -79,6 +86,8 @@
 #tag "eliteversion greataxe"
 #needs offhand no_offhand
 #tag "name infantry axeman"
+#theme "iron"
+#theme "jotun"
 #enditem
 
 #newitem
@@ -87,6 +96,7 @@
 #sprite /graphics/vaettir/weapon/greataxe.png
 #basechance 0
 #tag "name infantry axeman"
+#theme "iron"
 #enditem
 
 #newitem
@@ -100,6 +110,7 @@
 #gameid 16
 #sprite /graphics/vaettir/weapon/flail.png
 #theme "advanced"
+#theme "iron"
 #enditem
 
 #newitem
@@ -109,6 +120,7 @@
 #renderslot "quiver"
 #tag "name infantry halberdier"
 #theme "advanced"
+#theme "iron"
 #enditem
 
 #newitem
@@ -117,4 +129,5 @@
 #sprite /graphics/vaettir/weapon/bardiche.png
 #renderslot "quiver"
 #theme "advanced"
+#theme "iron"
 #enditem

@@ -22,6 +22,7 @@
 #sprite /graphics/vaettir/armor/2h/leather_cuirass.png
 #armor
 #basechance 0.25
+#theme "leather"
 #enditem
 
 #newitem
@@ -30,6 +31,7 @@
 #sprite /graphics/vaettir/armor/2h/leather_hauberk.png
 #armor
 #basechance 0.75
+#theme "leather"
 #enditem
 
 
@@ -41,6 +43,7 @@
 #sprite /graphics/vaettir/armor/2h/leather_hauberk.png
 #needs legs leather_full
 #armor
+#theme "leather"
 #enditem
 
 
@@ -52,6 +55,7 @@
 #sprite /graphics/vaettir/armor/2h/ring_cuirass.png
 #armor
 #basechance 0.25
+#theme "leather"
 #enditem
 
 #newitem
@@ -60,6 +64,7 @@
 #sprite /graphics/vaettir/armor/2h/ring_hauberk.png
 #armor
 #basechance 0.75
+#theme "leather"
 #enditem
 
 #newitem -- full ring
@@ -69,6 +74,7 @@
 #armor
 #needs legs leather_full
 #basechance 1
+#theme "leather"
 #enditem
 
 
@@ -80,6 +86,7 @@
 #sprite /graphics/vaettir/armor/2h/scale_cuirass.png
 #armor
 #basechance 0.25
+#theme "iron"
 #enditem
 
 #newitem
@@ -88,6 +95,7 @@
 #sprite /graphics/vaettir/armor/2h/scale_hauberk.png
 #armor
 #basechance 0.25
+#theme "iron"
 #enditem
 
 #newitem -- full scale
@@ -100,6 +108,7 @@
 #theme "advanced"
 #tag "name infantry hirdman"
 #tag "name commander jarl"
+#theme "iron"
 #enditem
 
 
@@ -113,6 +122,7 @@
 #armor
 #basechance 0.125
 #theme "advanced"
+#theme "iron"
 #enditem
 
 
@@ -123,6 +133,7 @@
 #sprite /graphics/vaettir/armor/2h/chain_hauberk.png
 #armor
 #theme "advanced"
+#theme "iron"
 #tag "name infantry hirdman"
 #enditem
 
@@ -135,6 +146,7 @@
 #basechance 0.125
 #needs legs leather_full
 #theme "advanced"
+#theme "iron"
 #tag "name infantry hirdman"
 #tag "name commander jarl"
 #enditem
