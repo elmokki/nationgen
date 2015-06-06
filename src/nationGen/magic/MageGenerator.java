@@ -1877,7 +1877,7 @@ public class MageGenerator extends TroopGenerator {
 		{
 			List<Pose> poses = this.getPossiblePoses(posename, race, toTier, isPrimaryRace);
 			if(poses.size() > 0)
-				newpose = Entity.getRandom(nation.random, poses);
+				newpose = Entity.getRandom(nation.random, chandler.handleChanceIncs(poses));
 		}
 		else
 			newpose = parents.get(0).pose;
@@ -1922,7 +1922,7 @@ public class MageGenerator extends TroopGenerator {
 							all.remove(u.getSlot(slot));
 
 						}
-						newitem = Entity.getRandom(nation.random, all);
+						newitem = Entity.getRandom(nation.random, chandler.handleChanceIncs(all));
 					}
 	
 					
@@ -1977,7 +1977,7 @@ public class MageGenerator extends TroopGenerator {
 								
 				if(nu.getSlot("mount") == null)
 				{
-					nu.setSlot("mount", nu.pose.getItems("mount").getRandom(nation.random));
+					nu.setSlot("mount", nu.pose.getItems("mount").getRandom(chandler, nation.random));
 					// System.out.println("..\nCouldn't find old mount; using new\n..");
 				}
 			}
@@ -2013,14 +2013,14 @@ public class MageGenerator extends TroopGenerator {
 			possibles = test;
 		}
 		
-		return possibles.getRandom(nation.random);
+		return possibles.getRandom(chandler, nation.random);
 	}
 	
 	// Generates a set of specific tier mages from scratch
 	public List<Unit> generateNew(String posename, Race race, int amount, int tier, boolean isPrimaryRace)
 	{
 		
-		Unit u = unitGen.generateUnit(race, Entity.getRandom(nation.random, getPossiblePoses(posename, race, tier, isPrimaryRace)));
+		Unit u = unitGen.generateUnit(race, Entity.getRandom(nation.random, chandler.handleChanceIncs(getPossiblePoses(posename, race, tier, isPrimaryRace))));
 		
 
 

@@ -35,7 +35,7 @@ public class TroopGenerator {
 	private double dwchance = 0;
 	
 	private List<Template> templates = new ArrayList<Template>();
-	private ChanceIncHandler chandler;
+	protected ChanceIncHandler chandler;
 	
 	class Template
 	{
@@ -420,7 +420,7 @@ public class TroopGenerator {
 
 						if(possibles.size() > 0)
 						{
-							Pose p = Entity.getRandom(nation.random, possibles);
+							Pose p = Entity.getRandom(nation.random, chandler.handleChanceIncs(possibles));
 							armor = unitGen.getBestMatchForSlot(armor, p, "armor");
 						}
 						else
@@ -431,7 +431,7 @@ public class TroopGenerator {
 					if(armor == null)
 					{
 
-						Pose p = Entity.getRandom(nation.random, race.getPoses(role));
+						Pose p = Entity.getRandom(nation.random, chandler.handleChanceIncs(race.getPoses(role)));
 						armor = this.getNewItem("armor", role, race, p, armors, false);
 	
 						if(armor == null)
@@ -442,7 +442,7 @@ public class TroopGenerator {
 						System.out.println("NULL ARMOR?!");
 					
 	
-					Pose p = Entity.getRandom(random, getPosesWith(race, role, armor));
+					Pose p = Entity.getRandom(random, chandler.handleChanceIncs(getPosesWith(race, role, armor)));
 					
 					
 					// Make sure #maxunits is taken into account
