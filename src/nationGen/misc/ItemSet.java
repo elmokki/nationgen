@@ -1,11 +1,11 @@
 package nationGen.misc;
 
 import java.util.ArrayList;
-
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Random;
+
 
 
 import nationGen.entities.Entity;
@@ -16,6 +16,8 @@ import nationGen.items.Item;
 
 
 
+
+import nationGen.nation.Nation;
 
 import com.elmokki.Dom3DB;
 import com.elmokki.Generic;
@@ -225,9 +227,9 @@ public class ItemSet extends ArrayList<Item> {
 		return newlist;
 	}
 	
-	public Item getRandom(Random random)
+	public Item getRandom(ChanceIncHandler ch, Random random)
 	{
-		return Entity.getRandom(random, this);
+		return Entity.getRandom(random, ch.handleChanceIncs(this));
 	}
 	
 	public ItemSet filterForPose(Pose p)

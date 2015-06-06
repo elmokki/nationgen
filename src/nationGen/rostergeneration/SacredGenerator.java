@@ -438,7 +438,7 @@ public class SacredGenerator extends TroopGenerator {
 			return null;
 		}
 		
-		Pose p = Pose.getRandom(nation.random, possibleposes);
+		Pose p = Pose.getRandom(nation.random, chandler.handleChanceIncs(possibleposes));
 		Unit u = this.getSacredUnit(race, p, power, sacred, epicchance);
 		
 		// Calculate some loose power rating
@@ -543,11 +543,11 @@ public class SacredGenerator extends TroopGenerator {
 			Item item = null;
 			if((weaps.size() > 0 && nation.random.nextDouble() < 0.15 && (nationGen.weapondb.GetInteger(u.getSlot("weapon").id, "lgt") < 4 || nation.random.nextDouble() < epicchance / 4)) || u.pose.tags.contains("always_dw"))
 			{
-				item = Item.getRandom(nation.random, weaps);
+				item = Item.getRandom(nation.random, (weaps));
 			}
 			else if(shields.size() > 0)
 			{
-				item = Item.getRandom(nation.random, shields);
+				item = Item.getRandom(nation.random, (shields));
 			}
 			
 			if(item != null)
