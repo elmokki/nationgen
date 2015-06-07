@@ -6,14 +6,6 @@
 #name "freeman bowman"
 #theme "free"
 
-#command "#str +1"
-#command "#att -2"
-#command "#def -2"
-#command "#mor -3"
-#command "#prec -2"
-#command "#gcost -3"
-#command "#nametype 136"
-
 #renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/amazon/metic/bow_bases.txt
@@ -54,14 +46,6 @@
 #name "freeman Xbowman"
 #theme "free"
 
-#command "#str +1"
-#command "#att -2"
-#command "#def -2"
-#command "#mor -3"
-#command "#prec -2"
-#command "#gcost -3"
-#command "#nametype 136"
-
 #load basesprite /data/items/amazon/metic/xbow_bases.txt
 #load shadow /data/items/amazon/normal/shadow.txt
 
@@ -99,15 +83,9 @@
 #name "slave bowman"
 #theme "slave"
 
-#command "#str +1"
-#command "#att -2"
-#command "#def -2"
-#command "#mor -4"
-#command "#prec -2"
-#command "#gcost -3"
+#command "#mor -1"
 #command "#slave"
 #guaranteedprefix slave
-#command "#nametype 136"
 
 #renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -149,15 +127,9 @@
 #name "slave Xbowman"
 #theme "slave"
 
-#command "#str +1"
-#command "#att -2"
-#command "#def -2"
-#command "#mor -4"
-#command "#prec -2"
-#command "#gcost -3"
+#command "#mor -1"
 #command "#slave"
 #guaranteedprefix slave
-#command "#nametype 136"
 
 #load basesprite /data/items/amazon/metic/xbow_bases.txt
 #load shadow /data/items/amazon/normal/shadow.txt

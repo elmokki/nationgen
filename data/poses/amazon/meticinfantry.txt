@@ -7,14 +7,6 @@
 #role "infantry"
 #theme "free"
 
-#command "#str +1"
-#command "#att -2"
-#command "#def -2"
-#command "#mor -2"
-#command "#prec -2"
-#command "#gcost -3"
-#command "#nametype 136"
-
 #load basesprite /data/items/amazon/metic/standard_bases.txt
 #load shadow /data/items/amazon/normal/shadow.txt
 
@@ -56,14 +48,6 @@
 #role "infantry"
 #theme "free"
 
-#command "#str +1"
-#command "#att -2"
-#command "#def -2"
-#command "#mor -2"
-#command "#prec -2"
-#command "#gcost -3"
-#command "#nametype 136"
-
 #load basesprite /data/items/amazon/metic2h/2h_bases.txt
 #load shadow /data/items/amazon/normal/shadow.txt
 
@@ -100,15 +84,9 @@
 #role "infantry"
 #theme "slave"
 
-#command "#str +1"
-#command "#att -2"
-#command "#def -2"
-#command "#mor -3"
-#command "#prec -2"
-#command "#gcost -3"
+#command "#mor -1"
 #command "#slave"
 #guaranteedprefix slave
-#command "#nametype 136"
 
 #load basesprite /data/items/amazon/metic/standard_bases.txt
 #load shadow /data/items/amazon/normal/shadow.txt
@@ -151,15 +129,9 @@
 #role "infantry"
 #theme "slave"
 
-#command "#str +1"
-#command "#att -2"
-#command "#def -2"
-#command "#mor -3"
-#command "#prec -2"
-#command "#gcost -3"
+#command "#mor -1"
 #command "#slave"
 #guaranteedprefix slave
-#command "#nametype 136"
 
 #load basesprite /data/items/amazon/metic2h/2h_bases.txt
 #load shadow /data/items/amazon/normal/shadow.txt
