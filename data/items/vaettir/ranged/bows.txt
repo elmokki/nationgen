@@ -7,6 +7,8 @@
 #needs quiver quiver
 #tag "name Archer"
 #theme "wood"
+#theme "bear"
+#theme "boar"
 #enditem
 
 #newitem
@@ -18,6 +20,8 @@
 #needs quiver quiver
 #tag "name Archer"
 #theme "wood"
+#theme "deer"
+#theme "hawk"
 #enditem
 
 #newitem
@@ -31,5 +35,34 @@
 #basechance 0.5
 #theme "advanced"
 #theme "wood"
+#theme "deer"
+#theme "hawk"
 #enditem
 
+#newitem
+#name "long bow"
+#basechance 0
+#gameid 24
+#sprite /graphics/weapon/bowman/compositebow.png
+#offsetx 4
+#offsety 3
+#needs quiver quiver
+#tag "name Longbowman"
+#theme "advanced"
+#theme "wood"
+#theme "hawk"
+#enditem
+
+#newitem
+#name "poison bow"
+#gameid 594
+#sprite /graphics/weapon/bowman/compositebow.png
+#offsetx 4
+#offsety 3
+#needs quiver quiver
+#tag "name 'Spider Bowman'"
+#basechance 0
+#theme "advanced"
+#theme "wood"
+#theme "spider"
+#enditem
