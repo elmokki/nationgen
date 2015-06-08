@@ -247,6 +247,30 @@
 #enditem
 
 #newitem
+#name "lion"
+#gameid -1
+#sprite /graphics/mounts/standard/lion_asian.png
+#armor
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape lionmount"
+#define "#gcost +35"
+#define "#ressize 2"
+#define "#enc 4"¨
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#offsety 5
+#offsetx -3
+#theme "animal lion"
+#tag "guaranteedprefix lion"
+#basechance 4
+#enditem
+
+
+#newitem
 #basechance 0.1
 #name "bigspider"
 #gameid -1
@@ -436,30 +460,6 @@
 #tag "name commander beastmaster"
 #description "Leaves a wyvern behind when the rider dies"
 #sacredextra nonholyshape 0.25
-#enditem
-
-#newitem
-#basechance 0.05
-#name "lion"
-#gameid -1
-#sprite /graphics/mounts/standard/lion.png
-#armor
-#define "#size 4"
-#define "#mapmove 2"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape lionmount"
-#define "#gcost +35"
-#define "#ressize 2"
-#define "#enc 4"¨
-#description "If the rider dies, the lion will carry on fighting until the end of the battle."
-#offsety 5
-#offsetx -3
-#theme "animal lion"
-#tag "guaranteedprefix lion"
-#chanceinc primaryrace "human (black)" *10
 #enditem
 
 #newitem
