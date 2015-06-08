@@ -184,3 +184,61 @@
 #tag "minprot 10"
 #basechance 0.25
 #enditem
+
+#newitem
+#name "tiger"
+#gameid -1
+#sprite /graphics/mounts/standard/tiger.png
+#armor
+#offsetx -2
+#offsety -18
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 236"
+#define "#weapon 237"
+#define "#secondtmpshape tiger"
+#define "#gcost +35"
+#define "#rcost +6"
+#define "#ressize 1"
+#define "#enc 3"
+#theme "specialmount"
+#theme "heavy"
+#theme "tiger"
+#theme "animal tiger"
+#description "If the rider dies, the tiger will carry on fighting until the end of the battle."
+#tag "guaranteedprefix tiger"
+#chanceinc primaryrace monkey *10
+#basechance 0.25
+#tag "minprot 9"
+#tag "maxprot 18"
+#enditem
+
+#newitem
+#name "lion"
+#gameid -1
+#sprite /graphics/mounts/standard/lion_asian.png
+#armor
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 237 --- Bite"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape lionmount"
+#define "#gcost +35"
+#define "#ressize 1"
+#define "#enc 3"¨
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#offsetx 2
+#offsety -16
+#theme "specialmount"
+#theme "heavy"
+#theme "animal lion"
+#theme "lion"
+#tag "guaranteedprefix lion"
+#basechance 0.25
+#tag "minprot 9"
+#tag "maxprot 18"
+#enditem
