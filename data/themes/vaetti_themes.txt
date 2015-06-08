@@ -171,7 +171,7 @@
 #themeinc theme naked *2
 #themeinc theme primitive *1
 #themeinc theme hawk +2
-#racedefinition "#unitcommand '#gcost +2'"
+#racedefinition "#unitcommand '#gcost +1'"
 #racedefinition "#unitcommand '#hp -1'"
 #racedefinition "#unitcommand '#prec +2'"
 #racedefinition "#unitcommand '#darkvision +20'"
@@ -202,7 +202,7 @@
 #themeinc theme naked *0.5
 #themeinc theme primitive *0.5
 #themeinc theme spider +2
-#racedefinition "#unitcommand '#gcost +2'"
+#racedefinition "#unitcommand '#gcost +1'"
 #racedefinition "#unitcommand '#poisonres +2'"
 #racedefinition "#unitcommand '#siegebonus +1'"
 #racedefinition "#unitcommand '#scalewalls'"
@@ -213,6 +213,90 @@
 #racedefinition "#magicpriority blood 1"
 #racedefinition "#preferredmount spider"
 #racedefinition "#descr 'These vaettir have the devious cunning and remarkable maneuverability of the spider, their tribal totem. '"
+#endtheme
+
+-- Weights: EA 1, MA 0.25, LA 0.125
+#newtheme
+#type tribal
+#name lion
+#basechance 1
+#chanceinc era 2 -0.75
+#chanceinc era 3 -0.875
+#themeinc theme advanced *0.5
+#themeinc theme iron *0.5
+#themeinc theme bronze *0.5
+#themeinc theme wood *1
+#themeinc theme leather *2
+#themeinc theme naked *2
+#themeinc theme primitive *2
+#themeinc theme lion +2
+#racedefinition "#unitcommand '#gcost +1'"
+#racedefinition "#unitcommand '#mapmove +1'"
+#racedefinition "#unitcommand '#ap +1'"
+#racedefinition "#unitcommand '#enc -1'"
+#racedefinition "#generationchance ranged *2"
+#racedefinition "#magicpriority nature 11"
+#racedefinition "#magicpriority death 5"
+#racedefinition "#magicpriority fire 2"
+#racedefinition "#magicpriority earth 2"
+#racedefinition "#magicpriority astral 1"
+#racedefinition "#magicpriority blood 1"
+#racedefinition "#preferredmount lion"
+#racedefinition "#descr 'These vaettir have the endurance of the lion, their tribal totem, and can travel far without rest.  '"
+#endtheme
+
+-- Weights: EA 1, MA 0.25, LA 0.125
+#newtheme
+#type tribal
+#name tiger
+#basechance 1
+#chanceinc era 2 -0.75
+#chanceinc era 3 -0.875
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *2
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#themeinc theme tiger +2
+#racedefinition "#unitcommand '#gcost +1'"
+#racedefinition "#unitcommand '#mor +2'"
+#racedefinition "#unitcommand '#str +1'"
+#racedefinition "#generationchance ranged *0.5"
+#racedefinition "#magicpriority nature 10"
+#racedefinition "#magicpriority water 3"
+#racedefinition "#magicpriority fire 3"
+#racedefinition "#magicpriority death 1"
+#racedefinition "#magicpriority astral 1"
+#racedefinition "#magicpriority blood 1"
+#racedefinition "#preferredmount lion"
+#racedefinition "#descr 'These vaettir have the strength and determination of the tiger, their tribal totem.  '"
+#endtheme
+
+-- Weights: EA 0.125, MA 0.5, LA 1
+#newtheme
+#type tribal
+#name civilized
+#basechance 1
+#chanceinc era 2 -0.5
+#chanceinc era 1 -0.875
+#themeinc theme advanced *2
+#themeinc theme iron *2
+#themeinc theme bronze *2
+#themeinc theme wood *0.75
+#themeinc theme leather *0.75
+#themeinc theme naked *0.5
+#themeinc theme primitive *0.5
+#racedefinition "#unitcommand '#mr -2'"
+#racedefinition "#unitcommand '#mor +1'"
+#racedefinition "#pose vaetticrossbows"
+#racedefinition "#generationchance mounted *0.25"
+#racedefinition "#magicpriority nature 3"
+#racedefinition "#magicpriority death 7"
+#racedefinition "#magicpriority astral 7"
+#racedefinition "#magicpriority blood 5"
+#racedefinition "#descr 'These vaettir have turned their back on both superstition and tradition, and no longer honor the totemic spirits.  '"
 #endtheme
 
 -- Weights: EA 0.25, MA 0.25, LA 0.25
@@ -227,7 +311,6 @@
 #themeinc theme leather *1
 #themeinc theme naked *0.05
 #themeinc theme primitive *1
-#racedefinition "#unitcommand '#gcost +2'"
 #racedefinition "#unitcommand '#str -1'"
 #racedefinition "#unitcommand '#mr +2'"
 #racedefinition "#unitcommand '#female'"
