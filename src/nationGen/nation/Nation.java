@@ -226,26 +226,35 @@ public class Nation {
 
 		// Elite
 		int sacredcount = 1;
-		if(random.nextDouble() > 0.8)
+		if(random.nextDouble() > 0.8) 
 		{
 			int power = 0; 
+			if(random.nextDouble() > 0.25)
+				power++;
 			if(random.nextDouble() > 0.5)
 				power++;
 			if(random.nextDouble() > 0.75)
 				power++;
+			if(random.nextDouble() > 0.9)
+				power++;
+			
 			Unit sacred = sacGen.generateUnit(false, power);
 			List<Unit> elites = new ArrayList<Unit>();
 			elites.add(sacred);
 			
 			String role = "";
-			if(sacred.pose.roles.contains("infantry"))
+			if(sacred.pose.roles.contains("infantry") || sacred.pose.roles.contains("elite infantry") || sacred.pose.roles.contains("sacred infantry"))
 				role = "infantry";
-			else if(sacred.pose.roles.contains("mounted"))
+			else if(sacred.pose.roles.contains("mounted")  || sacred.pose.roles.contains("elite mounted") || sacred.pose.roles.contains("sacred mounted"))
 				role = "mounted";
-			else if(sacred.pose.roles.contains("ranged"))
+			else if(sacred.pose.roles.contains("ranged")  || sacred.pose.roles.contains("elite ranged") || sacred.pose.roles.contains("sacred ranged"))
 				role = "ranged";
-			else if(sacred.pose.roles.contains("chariot"))
+			else if(sacred.pose.roles.contains("chariot")  || sacred.pose.roles.contains("elite chariot") || sacred.pose.roles.contains("sacred chariot"))
 				role = "chariot";
+			
+
+			if(role.equals(""))
+				System.out.println(sacred.race + " " + sacred.pose.roles + " AS ELITE UNIT HAS RECEIVED NO ROLES!");
 			
 			if(sacred != null)
 				unitlists.put(role, elites);
@@ -261,18 +270,22 @@ public class Nation {
 		{
 		
 			int power = 1; 
-			if(random.nextDouble() < 0.75)
+			if(random.nextDouble() < 0.8)
 			{
 				power++;
-				if(random.nextDouble() < 0.66)
+				if(random.nextDouble() < 0.7)
 				{
 					power++;
 					if(random.nextDouble() < 0.5)
 					{
 						power++;
-						if(random.nextDouble() < 0.25)
+						if(random.nextDouble() < 0.35)
 						{
 							power++;
+							if(random.nextDouble() < 0.15)
+							{
+								power++;
+							}
 						}
 					}
 				}
