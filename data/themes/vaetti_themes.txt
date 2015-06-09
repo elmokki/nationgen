@@ -55,7 +55,7 @@
 #themeinc theme naked *1
 #themeinc theme primitive *1
 #themeinc theme deer +2
-#racedefinition "#unitcommand '#gcost +2'"
+#racedefinition "#unitcommand '#gcost +1'"
 #racedefinition "#unitcommand '#def +2'"
 #racedefinition "#unitcommand '#ap +2'"
 #racedefinition "#unitcommand '#mor -1'"
@@ -84,7 +84,7 @@
 #themeinc theme naked *1
 #themeinc theme primitive *1
 #themeinc theme bear +2
-#racedefinition "#unitcommand '#gcost +2'"
+#racedefinition "#unitcommand '#gcost +1'"
 #racedefinition "#unitcommand '#hp +2'"
 #racedefinition "#unitcommand '#str +1'"
 #racedefinition "#unitcommand '#mountainsurvival'"
@@ -113,7 +113,7 @@
 #themeinc theme naked *1
 #themeinc theme primitive *1
 #themeinc theme wolf +2
-#racedefinition "#unitcommand '#gcost +2'"
+#racedefinition "#unitcommand '#gcost +1'"
 #racedefinition "#unitcommand '#att +1'"
 #racedefinition "#unitcommand '#enc -1'"
 #racedefinition "#unitcommand '#mountainsurvival'"
@@ -141,7 +141,7 @@
 #themeinc theme naked *2
 #themeinc theme primitive *2
 #themeinc theme boar +2
-#racedefinition "#unitcommand '#gcost +2'"
+#racedefinition "#unitcommand '#gcost +1'"
 #racedefinition "#unitcommand '#hp +2'"
 #racedefinition "#unitcommand '#str +1'"
 #racedefinition "#unitcommand '#berserk +2'"
@@ -242,6 +242,7 @@
 #racedefinition "#magicpriority astral 1"
 #racedefinition "#magicpriority blood 1"
 #racedefinition "#preferredmount lion"
+#racedefinition "#nationcommand '#idealcold +1'"
 #racedefinition "#descr 'These vaettir have the endurance of the lion, their tribal totem, and can travel far without rest.  '"
 #endtheme
 
@@ -270,8 +271,38 @@
 #racedefinition "#magicpriority death 1"
 #racedefinition "#magicpriority astral 1"
 #racedefinition "#magicpriority blood 1"
-#racedefinition "#preferredmount lion"
+#racedefinition "#preferredmount tiger"
 #racedefinition "#descr 'These vaettir have the strength and determination of the tiger, their tribal totem.  '"
+#endtheme
+
+-- Weights: EA 1, MA 0.25, LA 0.125
+#newtheme
+#type tribal
+#name rabbit
+#basechance 1
+#chanceinc era 2 -0.75
+#chanceinc era 3 -0.875
+#themeinc theme advanced *1
+#themeinc theme iron *0.5
+#themeinc theme bronze *0.5
+#themeinc theme wood *2
+#themeinc theme leather *2
+#themeinc theme naked *2
+#themeinc theme primitive *1
+#themeinc theme rabbit +2
+#racedefinition "#unitcommand '#gcost -1'"
+#racedefinition "#unitcommand '#str -1'"
+#racedefinition "#unitcommand '#att -1'"
+#racedefinition "#unitcommand '#def +1'"
+#racedefinition "#unitcommand '#ap +2"
+#racedefinition "#unitcommand '#mor -2"
+#racedefinition "#generationchance infantry *0.5"
+#racedefinition "#generationchance mounted *0.5"
+#racedefinition "#magicpriority nature 10"
+#racedefinition "#magicpriority earth 5"
+#racedefinition "#magicpriority astral 1"
+#racedefinition "#magicpriority blood 1"
+#racedefinition "#descr 'These vaettir have the fecundity and timid agility of the rabbit, their tribal totem. '"
 #endtheme
 
 -- Weights: EA 0.125, MA 0.5, LA 1
