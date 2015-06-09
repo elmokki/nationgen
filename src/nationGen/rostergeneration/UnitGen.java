@@ -39,7 +39,7 @@ public class UnitGen {
 	
 	public Unit generateUnit(Race race, Pose pose)
 	{
-		Unit u = new Unit(nationGen, race, pose);
+		Unit u = new Unit(nationGen, race, pose, nation);
 
 
 		

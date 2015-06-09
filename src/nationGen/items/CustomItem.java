@@ -23,24 +23,7 @@ public class CustomItem extends Item {
 	
 	public CustomItem getCopy()
 	{
-		CustomItem item = new CustomItem(nationGen);
-		item.sprite = sprite;
-		item.mask = mask;
-		item.id = id;
-		item.armor = armor;
-		item.setOffsetX(this.getOffsetX());
-		item.setOffsetY(this.getOffsetY());
-		item.dependencies = dependencies;
-		item.commands.addAll(commands);
-		item.slot = slot;
-		item.set = set;
-		item.renderslot = renderslot;
-		item.renderprio = renderprio;
-		item.name = this.name;
-		item.basechance = this.basechance;
-		item.tags.addAll(tags);
-		
-		item.magicItem = magicItem;
+		CustomItem item = this.getCustomItemCopy();
 		for(String str : values.keySet())
 			item.values.put(str, values.get(str));
 		

@@ -11,7 +11,9 @@ import java.util.List;
 
 
 
+
 import com.elmokki.Generic;
+
 
 
 
@@ -25,6 +27,7 @@ import nationGen.entities.Filter;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.entities.Theme;
+import nationGen.items.Item;
 import nationGen.nation.Nation;
 import nationGen.units.ShapeChangeUnit;
 import nationGen.units.Unit;
@@ -945,7 +948,7 @@ public class ChanceIncHandler {
 				List<String> args = Generic.parseArgs(str);
 				if(args.get(0).equals("pose") && args.size() > 2)
 				{
-					if(u.pose.roles.contains(args.get(1)))
+					if(u.pose.roles.contains(args.get(1)) || u.pose.roles.contains("elite " + args.get(1)) || u.pose.roles.contains("sacred " + args.get(1)))
 					{
 						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
 						continue;
@@ -1025,6 +1028,36 @@ public class ChanceIncHandler {
 
 					boolean contains = Generic.containsTag(u.race.tags, args.get(1)) || Generic.containsTag(u.tags, args.get(1)) || Generic.containsTag(u.pose.tags, args.get(1));					
 					if(contains)
+					{
+						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						continue;
+					}
+				}
+				else if(args.get(0).equals("itemtag") && args.size() > 2)
+				{
+
+					boolean not = args.contains("not");
+					boolean contains = false;
+					for(Item i : u.slotmap.values())
+						if(Generic.containsTag(i.tags, args.get(args.size() - 2)))
+						{
+							contains = true;
+							break;
+						}
+					
+					if(contains != not)
+					{
+						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						continue;
+					}
+				}
+				else if(args.get(0).equals("hasitem") && args.size() > 3)
+				{
+
+					boolean not = args.contains("not");
+					boolean contains = u.getSlot(args.get(args.size() - 3)).equals(args.get(args.size() - 2));
+					
+					if(contains != not)
 					{
 						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
 						continue;

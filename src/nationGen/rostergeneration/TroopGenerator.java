@@ -861,7 +861,7 @@ public class TroopGenerator {
 		if(u != null)
 			return Entity.getRandom(nation.random, chandler.handleChanceIncs(u, select));
 		else
-			return Entity.getRandom(nation.random, chandler.handleChanceIncs(new Unit(nationGen, race, p), select));
+			return Entity.getRandom(nation.random, chandler.handleChanceIncs(new Unit(nationGen, race, p, nation), select));
 
 	}
 	

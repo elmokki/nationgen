@@ -40,7 +40,7 @@ public class MonsterGenerator {
 		
 		Pose p = Pose.getRandom(n.random, chandler.handleChanceIncs(poses));
 	
-		Unit u = new Unit(ng, r, p);
+		Unit u = new Unit(ng, r, p, n);
 		
 		double chance = 0.95;
 		if(Generic.containsTag(p.tags, "caponlychance"))

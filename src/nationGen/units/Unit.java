@@ -10,8 +10,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Random;
 
 import javax.imageio.ImageIO;
+
+
+
+
 
 
 
@@ -29,14 +34,21 @@ import com.elmokki.Generic;
 
 
 
+
+
+
+
 import nationGen.NationGen;
+import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.MagicFilter;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.items.Item;
+import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.naming.Name;
+import nationGen.nation.Nation;
 
 
 
@@ -55,12 +67,19 @@ public class Unit {
 	public List<Filter> appliedFilters = new ArrayList<Filter>();
 	private boolean polished = false;
 	public boolean invariantMonster = false;  // Is the unit a monster that must be used as-is instead of copying? (E.g., hydras)
+	private Nation nation = null;
 	
 	public Unit(NationGen nationGen, Race race, Pose pose)
 	{
 		this.nationGen = nationGen;
 		this.pose = pose;
 		this.race = race;
+	}
+	
+	public Unit(NationGen nationGen, Race race, Pose pose, Nation n)
+	{
+		this(nationGen, race, pose);
+		this.nation = n;
 	}
 
 	
@@ -199,6 +218,7 @@ public class Unit {
 		if(getSlot(slotname) == null)
 			return;
 		
+		// This handles #needs
 		if(getSlot(slotname).dependencies.size() > 0)
 		{
 			for(String itemname : getSlot(slotname).dependencies.keySet())
@@ -209,7 +229,7 @@ public class Unit {
 				if(pose.getItems(slot) == null)
 				{
 			
-					System.out.println("Dependency for " + slotname + " and item " + getSlot(slotname).name + " on slot " + slot + " failed. Roles " + this.pose.roles + ", race " + race.name );
+					System.out.println("#needs for " + slotname + ", item " + itemname + " and item " + getSlot(slotname).name + " on slot " + slot + " failed. Roles " + this.pose.roles + ", race " + race.name );
 					break;
 				}
 				Item item = pose.getItems(slot).getItemWithName(itemname, slot);
@@ -225,6 +245,35 @@ public class Unit {
 				}
 			}
 		}
+		
+		// This handles #needstype
+		if(getSlot(slotname).typedependencies.size() > 0 && this.nation != null)
+		{
+			ChanceIncHandler chandler = new ChanceIncHandler(nation);
+			Random r = new Random(nation.random.nextInt());
+			
+			for(String type : getSlot(slotname).typedependencies.keySet())
+			{
+				String slot = getSlot(slotname).typedependencies.get(type);
+				
+	
+				if(pose.getItems(slot) == null)
+				{
+					System.out.println("#needstype for " + slotname + ", type " + type + " and item " + getSlot(slotname).name + " on slot " + slot + " failed due to the slot having no items. Roles " + this.pose.roles + ", race " + race.name );
+					break;
+				}
+				
+				
+				List<Item> possibles = ChanceIncHandler.getFiltersWithType(type, pose.getItems(slot));
+		
+				
+				Item item = Entity.getRandom(r, chandler.handleChanceIncs(this, possibles));
+				
+				if(item != null)
+					setSlot(slot, item); 
+	
+			}
+		}
 	}
 
 	
@@ -238,7 +287,6 @@ public class Unit {
 			return;
 
 
-		
 		handleDependency(slotname);
 		
 
