@@ -127,7 +127,7 @@ public class Nation {
 
 
 
-		// choose races
+		// choose primary race
 		List<Race> allRaces = new ArrayList<Race>();
 		allRaces.addAll(nationGen.races);
 
@@ -144,32 +144,13 @@ public class Nation {
 		for(Command c : races.get(0).nationcommands)
 			this.handleCommand(commands, c);
 		
-		// Roll themes
-		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("nationthemes", "default_themes", nationGen.themes, null, races.get(0));
+
 		
-		ChanceIncHandler chandler = new ChanceIncHandler(this);
-		possibleThemes = ChanceIncHandler.getValidFilters(possibleThemes, themes);
-		if(possibleThemes.size() > 0)
-		{
-			Theme t = Theme.getRandom(random, chandler.handleChanceIncs(possibleThemes));
-			if(t != null)
-			{
-				themes.add(t);
-				possibleThemes.remove(t);
-			}
-		}
-		
-		// 10% chance for second theme
-		possibleThemes = ChanceIncHandler.getValidFilters(possibleThemes, themes);
-		if(possibleThemes.size() > 0 && random.nextDouble() < 0.1)
-		{
-			Theme t = Theme.getRandom(random, chandler.handleChanceIncs(possibleThemes));
-			if(t != null)
-				themes.add(t);
-		}
+		// Add themes
+		addThemes();
 		
 		// Restart chanceinc handler after adding themes.
-		chandler = new ChanceIncHandler(this);
+		ChanceIncHandler chandler = new ChanceIncHandler(this);
 		
 
 		
@@ -181,9 +162,17 @@ public class Nation {
 		race = Race.getRandom(random, chandler.handleChanceIncs(allRaces));
 		races.add(race.getCopy());
 		
+		// Apply theme race effects for the secondary race as well
+		for(Theme t : themes)
+		{
+
+			for(String str : t.secondarynationeffects)
+			{
+				races.get(1).addOwnLine(str);
+			}
+		}
 		
 		// Add secondaryracecommands to the secondary race
-
 		for(String tag : this.races.get(0).tags)
 		{
 			List<String> args = Generic.parseArgs(tag);
@@ -194,18 +183,7 @@ public class Nation {
 			}
 		}
 		
-		// Apply theme race effects
-		for(Theme t : themes)
-		{
-			for(String str : t.nationeffects)
-			{
-				races.get(0).addOwnLine(str);
-			}
-			for(String str : t.secondarynationeffects)
-			{
-				races.get(1).addOwnLine(str);
-			}
-		}
+
 		
 		
 		// Mages and priests
@@ -226,26 +204,35 @@ public class Nation {
 
 		// Elite
 		int sacredcount = 1;
-		if(random.nextDouble() > 0.8)
+		if(random.nextDouble() > 0.8) 
 		{
 			int power = 0; 
+			if(random.nextDouble() > 0.25)
+				power++;
 			if(random.nextDouble() > 0.5)
 				power++;
 			if(random.nextDouble() > 0.75)
 				power++;
+			if(random.nextDouble() > 0.9)
+				power++;
+			
 			Unit sacred = sacGen.generateUnit(false, power);
 			List<Unit> elites = new ArrayList<Unit>();
 			elites.add(sacred);
 			
 			String role = "";
-			if(sacred.pose.roles.contains("infantry"))
+			if(sacred.pose.roles.contains("infantry") || sacred.pose.roles.contains("elite infantry") || sacred.pose.roles.contains("sacred infantry"))
 				role = "infantry";
-			else if(sacred.pose.roles.contains("mounted"))
+			else if(sacred.pose.roles.contains("mounted")  || sacred.pose.roles.contains("elite mounted") || sacred.pose.roles.contains("sacred mounted"))
 				role = "mounted";
-			else if(sacred.pose.roles.contains("ranged"))
+			else if(sacred.pose.roles.contains("ranged")  || sacred.pose.roles.contains("elite ranged") || sacred.pose.roles.contains("sacred ranged"))
 				role = "ranged";
-			else if(sacred.pose.roles.contains("chariot"))
+			else if(sacred.pose.roles.contains("chariot")  || sacred.pose.roles.contains("elite chariot") || sacred.pose.roles.contains("sacred chariot"))
 				role = "chariot";
+			
+
+			if(role.equals(""))
+				System.out.println(sacred.race + " " + sacred.pose.roles + " AS ELITE UNIT HAS RECEIVED NO ROLES!");
 			
 			if(sacred != null)
 				unitlists.put(role, elites);
@@ -261,18 +248,22 @@ public class Nation {
 		{
 		
 			int power = 1; 
-			if(random.nextDouble() < 0.75)
+			if(random.nextDouble() < 0.8)
 			{
 				power++;
-				if(random.nextDouble() < 0.66)
+				if(random.nextDouble() < 0.7)
 				{
 					power++;
 					if(random.nextDouble() < 0.5)
 					{
 						power++;
-						if(random.nextDouble() < 0.25)
+						if(random.nextDouble() < 0.35)
 						{
 							power++;
+							if(random.nextDouble() < 0.15)
+							{
+								power++;
+							}
 						}
 					}
 				}
@@ -399,6 +390,93 @@ public class Nation {
        
 	}
 	
+	
+	private void addTheme(Theme t)
+	{
+		themes.add(t);
+		// Add race commands
+		for(String str2 : t.nationeffects)
+		{
+			races.get(0).addOwnLine(str2);
+		}
+	}
+	
+	private void addThemes()
+	{
+		Random r = new Random(this.random.nextInt());
+		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("nationthemes", "default_themes", nationGen.themes, null, races.get(0));
+		ChanceIncHandler chandler = new ChanceIncHandler(this);
+
+
+		
+		
+		List<String> freeThemes = Generic.getTagValues(races.get(0).tags, "freetheme");
+		
+		for(String str : freeThemes)
+		{
+			List<Theme> frees = ChanceIncHandler.getFiltersWithType(str, possibleThemes);
+			Theme t = null;
+			
+			if(frees.size() > 0)
+			{
+				t = Entity.getRandom(r, chandler.handleChanceIncs(frees));
+				if(t != null)
+				{
+					System.out.println(t + " for " + races.get(0) + " for " + str);
+				
+					possibleThemes.remove(t);
+					addTheme(t);
+			
+				}
+			}
+
+
+			if(t == null)
+				System.out.println(races.get(0) + " has #freetheme " + str + " but no filters of #type " + str);
+			
+			
+		}
+		
+		
+		
+		
+		
+		int guaranteedthemes = 1;
+		if(Generic.getTagValue(races.get(0).tags, "guaranteedthemes") != null)
+			guaranteedthemes = Integer.parseInt(Generic.getTagValue(races.get(0).tags, "guaranteedthemes"));
+		
+		// Guaranteed themes
+		for(int i = 0; i < guaranteedthemes; i++)
+		{
+	
+			possibleThemes = ChanceIncHandler.getValidFilters(possibleThemes, themes);
+			if(possibleThemes.size() > 0)
+			{
+				Theme t = Theme.getRandom(r, chandler.handleChanceIncs(possibleThemes));
+				if(t != null)
+				{
+					addTheme(t);
+					possibleThemes.remove(t);
+					
+
+				}
+			}
+		}
+		
+		// 10% chance for second theme
+		possibleThemes = ChanceIncHandler.getValidFilters(possibleThemes, themes);
+		if(possibleThemes.size() > 0 && r.nextDouble() < 0.1)
+		{
+			Theme t = Theme.getRandom(r, chandler.handleChanceIncs(possibleThemes));
+			if(t != null)
+			{
+				addTheme(t);
+			}
+		}
+		
+		
+		
+	}
 	
 	private void finalizeUnits()
 	{

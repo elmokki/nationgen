@@ -249,6 +249,21 @@ public class ChanceIncHandler {
 	}
 	
 	
+	public static <E extends Filter> List<E> getFiltersWithType(String type, List<E> orig)
+	{
+		List<E> newList = new ArrayList<E>();
+		for(E f : orig)
+		{
+			if(f.types.contains(type))
+			{
+				newList.add(f);
+			}
+		}
+		
+		return newList;
+	}
+	
+	
 	/**
 	 * Checks ChanceIncHandler.canAdd() for all filters and removes bad ones.
 	 * @param filters
@@ -589,7 +604,23 @@ public class ChanceIncHandler {
 					if(canIncrease)
 						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
 				}
-
+				
+				// Theme
+				canIncrease = false;
+				if(args.get(0).equals("theme") && args.size() >= 3)
+				{
+					String theme = args.get(1);
+					for(Theme t : n.themes)
+					{
+						if(t.name.equals(theme))
+							canIncrease = true;			
+					}
+					
+					if(canIncrease)
+						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+				}
+				
+				
 				// Era
 				canIncrease = false;
 				if(args.get(0).equals("era") && args.size() >= 3)

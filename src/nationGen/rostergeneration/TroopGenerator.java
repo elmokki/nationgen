@@ -93,7 +93,7 @@ public class TroopGenerator {
 	{
 		nationGen = g;
 		nation = n;
-		unitGen = new UnitGen(g, n.random);
+		unitGen = new UnitGen(g, n);
 		bonusrangedness = nation.random.nextDouble();
 		dwchance = Math.max(0, (nation.random.nextDouble() - 0.2) / 8);
 		chandler = new ChanceIncHandler(nation);
