@@ -6,25 +6,35 @@ import java.util.Random;
 
 
 
+
+
+
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
 import nationGen.entities.Entity;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
+import nationGen.entities.Theme;
 import nationGen.items.Item;
+import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
+import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
 public class UnitGen {
 	private NationGen nationGen;
 	private Random random;
+	private Nation nation;
+	private ChanceIncHandler chandler;
 	
-	public UnitGen(NationGen gen, Random random)
+	public UnitGen(NationGen gen, Nation n)
 	{
 		this.nationGen = gen;
-		this.random = random; //random;
+		this.nation = n;
+		this.random = new Random(n.random.nextInt());
+		this.chandler = new ChanceIncHandler(n);
 	}
 	
 	public Unit generateUnit(Race race, Pose pose)
@@ -32,12 +42,53 @@ public class UnitGen {
 		Unit u = new Unit(nationGen, race, pose);
 
 
-		if(u.pose.getListOfSlots().contains("hands"))
-			u.setSlot("hands", Entity.getRandom(random, u.pose.getItems("hands")));
-		u.setSlot("shadow", Entity.getRandom(random, u.pose.getItems("shadow")));
-		u.setSlot("basesprite", Entity.getRandom(random, u.pose.getItems("basesprite")));
-		u.setSlot("legs", Entity.getRandom(random, u.pose.getItems("legs")));
-	
+		
+		String[] slots = {"hands", "shadow", "basesprite", "legs"};
+		for(int i = 0; i < slots.length; i++)
+		{
+			String slot = slots[i];
+			
+			
+			
+			if(u.pose.getListOfSlots().contains(slot))
+			{
+				Item item = null;
+
+				// Handle #lockslot
+				for(Theme t : nation.themes)
+					for(String tag : t.tags)
+					{
+						List<String> args = Generic.parseArgs(tag);
+						if(args.get(0).equals("lockslot"))
+						{
+							if(args.get(1).equals(slot))
+							{
+								String name = args.get(2);
+								item = u.pose.getItems(slot).getItemWithName(name, slot);
+								
+								if(item != null)
+									break;
+
+							}
+						}
+						
+						
+						if(item != null)
+							break;
+					}
+				
+				// If no lockslot or no suitable item for lockslot
+				if(item == null)
+					item = Entity.getRandom(random, chandler.handleChanceIncs(u, u.pose.getItems(slot)));
+				
+				u.setSlot(slot, item);
+			}
+		}
+		
+
+		
+		
+		
 		return u;
 	}
 	
