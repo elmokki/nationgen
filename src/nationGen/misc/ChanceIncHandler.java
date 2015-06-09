@@ -607,7 +607,7 @@ public class ChanceIncHandler {
 				
 				// Theme
 				canIncrease = false;
-				if(args.get(0).equals("theme") && args.size() >= 3)
+				if(args.get(0).equals("hastheme") && args.size() >= 3)
 				{
 					String theme = args.get(1);
 					for(Theme t : n.themes)
