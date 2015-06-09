@@ -5,6 +5,9 @@
 #offsetx -1
 #offsety 9
 #tag "name infantry 'Javelineer'"
+#theme "wood"
+#theme "deer"
+#theme "bear"
 #enditem
 
 #newitem
@@ -14,6 +17,9 @@
 #offsetx -1
 #offsety 8
 #tag "name infantry 'Javelineer'"
+#theme "wood"
+#theme "bear"
+#theme "deer"
 #enditem
 
 #newitem -- Throwing axe
@@ -21,6 +27,8 @@
 #gameid 260
 #theme "primitive"
 #tag "name infantry 'Axe Thrower'"
+#theme "iron"
+#theme "bear"
 #enditem
 
 #newitem
@@ -30,6 +38,8 @@
 #offsetx -1
 #offsety 8
 #basechance 0.5
+#theme "wood"
+#theme "hawk"
 #enditem
 
 #newitem
@@ -37,6 +47,7 @@
 #gameid 362
 #tag "name infantry 'Chakram Thrower'"
 #tag "tierunique"
+#theme "iron"
 #enditem
 
 #newitem
@@ -46,6 +57,7 @@
 #theme "primitive"
 #tag "maxprot 8"
 #tag "notepic"
+#theme "boar"
 #enditem
 
 #newitem
@@ -58,6 +70,8 @@
 #tag "maxprot 12"
 #tag "tierunique"
 #basechance 0.5
+#theme "wood"
+#theme "iron"
 #enditem
 
 #newitem
@@ -67,4 +81,12 @@
 #tag "maxprot 10"
 #tag "tierunique"
 #basechance 0.45
+#theme "spider"
+#enditem
+
+#newitem
+#name "poison darts"
+#basechance 0
+#gameid 620
+#theme "spider"
 #enditem

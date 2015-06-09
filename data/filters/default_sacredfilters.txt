@@ -482,7 +482,7 @@
 #basechance 0.2
 #chanceinc "magic nature 0.8"
 #chanceinc "command #regeneration 6"
-#command "#regeneration 10"
+#command "#regeneration +10"
 #command "#gcost +15"
 #tag "path nature"
 #power 2
@@ -493,8 +493,8 @@
 #basechance 0.0
 #chanceinc "command #fireres 0.2"
 #chanceinc "magic water 0.25"
-#command "#heat 3"
-#command "#fireres 5"
+#command "#heat +3"
+#command "#fireres +5"
 #command "#gcost +10"
 #chanceinc "nationcommand #idealcold above 0 -5"
 #tag "nopose chariot"
@@ -509,8 +509,8 @@
 #basechance 0.0
 #chanceinc "command #coldres 2"
 #chanceinc "magic water 0.25"
-#command "#cold 3"
-#command "#coldres 5"
+#command "#cold +3"
+#command "#coldres +5"
 #command "#gcost +10"
 #chanceinc "command #coldblooded -5"
 #chanceinc "command #coldblood -5"
@@ -527,8 +527,8 @@
 #basechance 0.0
 #chanceinc "command #poisonres 4"
 #chanceinc "magic nature 0.2"
-#command "#poisoncloud 3"
-#command "#poisonres 5"
+#command "#poisoncloud +3"
+#command "#poisonres +5"
 #command "#gcost +20"
 #chanceinc "pose mounted *0.025"
 #tag "nopose chariot"
@@ -570,7 +570,7 @@
 #name "invulnerable (5)"
 #basechance 0.2
 #primarycommand "#prot"
-#command "#invulnerable 5"
+#command "#invulnerable +5"
 #command "#gcost +8"
 #power 1
 #end
@@ -580,7 +580,7 @@
 #name "invulnerable (10)"
 #basechance 0.2
 #primarycommand "#prot"
-#command "#invulnerable 10"
+#command "#invulnerable +10"
 #command "#gcost +10"
 #power 2
 #end
@@ -606,7 +606,7 @@
 #new
 #name "magicpower"
 #basechance 0.3
-#command "#magicpower 1"
+#command "#magicpower +1"
 #chanceinc "magic astral 0.3"
 #end
 

@@ -11,6 +11,7 @@
 #recolormask /graphics/amazon/armor/standard/mailhauberk_recolormask.png
 #basechance 0.5
 #armor
+#theme "iron"
 #enditem
 
 #newitem
@@ -20,6 +21,7 @@
 #sprite /graphics/amazon/armor/standard/chainhauberk2.png
 #recolormask /graphics/amazon/armor/standard/mailhauberk_recolormask.png
 #armor
+#theme "iron"
 #enditem
 
 #newitem -- full chain
@@ -30,6 +32,7 @@
 #armor
 #needs legs chainpants_greaves
 #theme "advanced"
+#theme "iron"
 #tag "name mounted knight"
 #enditem
 
@@ -42,6 +45,7 @@
 #sprite /graphics/amazon/armor/standard/scalehauberk.png
 #recolormask /graphics/amazon/armor/standard/mailhauberk_recolormask.png
 #armor
+#theme "iron"
 #basechance 0.5
 #enditem
 
@@ -52,6 +56,7 @@
 #recolormask /graphics/amazon/armor/standard/mailhauberk_recolormask.png
 #armor
 #theme "advanced"
+#theme "iron"
 #needs legs chainpants_greaves
 #enditem
 
@@ -62,15 +67,17 @@
 #recolormask /graphics/amazon/armor/standard/mailhauberk_recolormask.png
 #armor
 #basechance 0.25
+#theme "bronze"
 #enditem
 
 #newitem -- bronze "full scale"
 #name "bronze scale hauberk + greaves"
-#gameid 136
+#gameid bronzescale_full
 #sprite /graphics/amazon/armor/standard/scalehauberk_bronze.png
 #recolormask /graphics/amazon/armor/standard/mailhauberk_recolormask.png
 #armor
 #basechance 0.25
+#theme "bronze"
 #needs legs chainpants_greaves_bronze
 #enditem
 
@@ -84,6 +91,7 @@
 #sprite /graphics/amazon/armor/standard/platecuirass.png
 #armor
 #theme "advanced"
+#theme "iron"
 #enditem
 
 #newitem
@@ -92,7 +100,7 @@
 #sprite /graphics/amazon/armor/standard/platehauberk.png
 #armor
 #theme "advanced"
-#tag "name mounted knight"
+#theme "iron"
 #enditem
 
 #newitem -- full plate
@@ -101,7 +109,7 @@
 #sprite /graphics/amazon/armor/standard/fullplate.png
 #armor
 #theme "advanced"
-#tag "name mounted knight"
+#theme "iron"
 #enditem
 
 --- Bronze Plate
@@ -112,16 +120,16 @@
 #sprite /graphics/amazon/armor/standard/platehauberk_bronze.png
 #armor
 #basechance 0.25
-#tag "name mounted knight"
+#theme "bronze"
 #enditem
 
 #newitem -- bronze "full plate"
 #name "bronze plate hauberk + greaves"
-#gameid 101
+#gameid bronzeplate_full
 #sprite /graphics/amazon/armor/standard/fullplate_bronze.png
 #armor
 #basechance 0.25
-#tag "name mounted knight"
+#theme "bronze"
 #enditem
 
 
@@ -133,5 +141,6 @@
 #sprite /graphics/amazon/armor/standard/ringhauberk.png
 #armor
 #needs legs leatherpants
+#theme "leather"
 #enditem
 

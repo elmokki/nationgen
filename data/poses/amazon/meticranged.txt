@@ -1,21 +1,95 @@
-------- Archer
+------- Archer freeman 
 
 #newpose
 #basechance 0.75
 #role "ranged"
-#name "light bowman"
-
-#command "#str +1"
-#command "#att -2"
-#command "#def -2"
-#command "#mor -2"
-#command "#prec -2"
-#command "#gcost -3"
-#command "#nametype 136"
+#name "freeman bowman"
+#theme "free"
 
 #renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
-#load basesprite /data/items/human/archer/humanbases.txt
+#load basesprite /data/items/amazon/metic/bow_bases.txt
+#load shadow /data/items/amazon/normal/shadow.txt
+
+#load hands /data/items/human/archer/humanhands.txt
+
+#load armor /data/items/amazon/metic/armor_archer.txt
+#load armor /data/items/human/archer/naked.txt
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load hair /data/items/human/normal/humanhair.txt
+
+#load helmet /data/items/amazon/metic/helmet.txt
+#load legs /data/items/amazon/metic/legs.txt
+#load shirt /data/items/human/archer/humanshirt.txt
+#load weapon /data/items/human/archer/bows.txt
+
+#load quiver /data/items/human/archer/humanbonusranged.txt
+#load bonusweapon /data/items/human/archer/archerweapon.txt
+
+#generateitem 1 bonusweapon
+
+#maxvarieties 1
+#maxunits 1
+
+#primaryraceonly
+
+#generateitem 0.05 hair
+
+#endpose
+
+------- crossbowman freeman
+
+#newpose
+#basechance 0.25
+#role "ranged"
+#name "freeman Xbowman"
+#theme "free"
+
+#load basesprite /data/items/amazon/metic/xbow_bases.txt
+#load shadow /data/items/amazon/normal/shadow.txt
+
+#load hands /data/items/human/crossbow/humanhands.txt
+
+#load armor /data/items/amazon/metic/armor_crossbow.txt
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load hair /data/items/human/normal/humanhair.txt
+
+#load helmet /data/items/amazon/metic/helmet.txt
+#load legs /data/items/amazon/metic/legs.txt
+#load shirt /data/items/human/crossbow/humanshirt.txt
+#load weapon /data/items/human/crossbow/crossbows.txt
+
+#load bonusweapon /data/items/human/archer/archerweapon.txt
+
+#generateitem 1 bonusweapon
+
+#maxvarieties 1
+#maxunits 1
+
+#primaryraceonly
+
+#generateitem 0.05 hair
+
+#endpose
+
+
+------- Archer
+
+#newpose
+#basechance 0.075
+#role "ranged"
+#name "slave bowman"
+#theme "slave"
+
+#command "#mor -1"
+#command "#slave"
+#guaranteedprefix slave
+
+#renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/amazon/metic/bow_bases.txt
 #load shadow /data/items/amazon/normal/shadow.txt
 
 #load hands /data/items/human/archer/humanhands.txt
@@ -48,19 +122,16 @@
 ------- crossbowman
 
 #newpose
-#basechance 0.25
+#basechance 0.025
 #role "ranged"
-#name "light Xbowman"
+#name "slave Xbowman"
+#theme "slave"
 
-#command "#str +1"
-#command "#att -2"
-#command "#def -2"
-#command "#mor -2"
-#command "#prec -2"
-#command "#gcost -3"
-#command "#nametype 136"
+#command "#mor -1"
+#command "#slave"
+#guaranteedprefix slave
 
-#load basesprite /data/items/human/crossbow/humanbases.txt
+#load basesprite /data/items/amazon/metic/xbow_bases.txt
 #load shadow /data/items/amazon/normal/shadow.txt
 
 #load hands /data/items/human/crossbow/humanhands.txt
@@ -87,4 +158,3 @@
 #generateitem 0.05 hair
 
 #endpose
-

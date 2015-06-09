@@ -108,10 +108,12 @@ public class Entity {
 		else if(args.get(0).equals("#tag") || args.get(0).equals("#theme"))
 		{
 			// Legacy thing
-			args.get(1).replaceAll("'", "\"");
+			args.get(1).replaceAll("\'", "\"");
 			
 			args.remove(0);
-			this.tags.add(Generic.listToString(args));
+
+			// Legacy thing EA20150605
+			this.tags.add(Generic.listToString(args).replaceAll("\'", "\""));
 
 		}
 

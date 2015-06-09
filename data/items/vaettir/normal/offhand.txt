@@ -1,15 +1,23 @@
+#newitem
+#id no_offhand
+#basechance 0
+#gameid -1
+#nogen
+#enditem
 
 #newitem
 #id offhandhatchet
 #gameid 253
 #sprite /graphics/vaettir/offhand/hatchet.png
 #theme "primitive"
+#theme "bear"
 #enditem
 
 #newitem
 #id offhandhammer
 #gameid 13
 #sprite /graphics/vaettir/offhand/hammer.png
+#theme "iron"
 #enditem
 
 #newitem
@@ -17,18 +25,28 @@
 #gameid 12
 #sprite /graphics/vaettir/offhand/mace.png
 #theme "primitive"
+#theme "boar"
 #enditem
 
 #newitem
 #id offhandshortsword
 #gameid 6
 #sprite /graphics/vaettir/offhand/shortsword.png
+#theme "iron"
+#theme "wolf"
 #enditem
 
 #newitem
 #id offhanddagger
 #gameid 9
 #sprite /graphics/vaettir/offhand/dagger.png
+#theme "wolf"
 #enditem
 
-
+#newitem
+#id offhandpoisondagger
+#basechance 0
+#gameid 126
+#sprite /graphics/vaettir/offhand/dagger.png
+#theme "spider"
+#enditem

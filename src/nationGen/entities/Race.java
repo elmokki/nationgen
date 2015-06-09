@@ -7,6 +7,8 @@ import com.elmokki.Generic;
 
 
 
+
+
 import nationGen.NationGen;
 import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
@@ -49,8 +51,10 @@ public class Race extends Filter {
 	 */
 	public void addCommand(String str)
 	{
-		Command c = Command.parseCommand(str);
+		if((str.startsWith("\'") && str.endsWith("\'")) || (str.startsWith("\"") && str.endsWith("\"")))  // do final cleanup on command EA20150604
+			str = str.substring(1, str.length()-1);
 		
+		Command c = Command.parseCommand(str);
 		
 		for(int i = 0; i < unitcommands.size(); i++)
 			if(unitcommands.get(i).command.equals(c.command))
@@ -61,11 +65,11 @@ public class Race extends Filter {
 					
 				}
 				else
-				{	
+				{
 					unitcommands.remove(unitcommands.get(i));
 				}
 			}
-		unitcommands.add(c);
+			unitcommands.add(c);
 		
 	}
 	
@@ -93,6 +97,11 @@ public class Race extends Filter {
 			boolean ok = true;
 			for(int j = 0; j < args.size() - 1; j++)
 			{
+				if(args.get(j).startsWith("\'") || args.get(j).startsWith("\""))
+					args.set(j, args.get(j).substring(1));
+				if(args.get(j).endsWith("\'") || args.get(j).endsWith("\""))
+					args.set(j, args.get(j).substring(0, args.get(j).length()-1));	
+					
 				if(!args.get(j).equals(args2.get(j)))
 				{
 					ok = false;
