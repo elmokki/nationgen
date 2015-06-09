@@ -3,6 +3,7 @@ Commands that appear in both races and poses prioritize using the one in the pos
 
 
 --- Race
+
 #troopdescriptions <file>
 Uses this file (load files at /data/descriptions/descriptions.txt) for troop descriptions.
 
@@ -74,7 +75,63 @@ Sets the probability of getting a cool monster. Default is 0.05.
 #monsters <poses>
 Sets the pose set to be used for monsters. Default is default_monsters
 
+#nationthemes <set>
+Loads nation themes from given definition set
+
+#startaffinities <set>
+Loads start affinities from given definition set
+
+#startaffinities <set>
+Loads start affinities from given definition set
+
+#nationwidefilters <set>
+Loads nation wide filters from given definition set. This is stuff like "all units are myopic"
+
+#nationfilters <set>
+Loads nation filters from given definition set. This stuff is like "nation gets blood sacrifice"
+
+#startaffinities <set>
+Loads start affinities from given definition set
+
+#troopdescriptions <set>
+Loads troop descriptions from given definition set
+
+#magefilters <set>
+Loads mage filters from given definition set
+
+#priestfilters <set>
+Loads priest filters from given definition set
+
+#sacredfilters <set>
+Loads sacred filters from given definition set
+
+#elitefilters <set>
+Loads elite filters from given definition set
+
+#magicitems <set>
+Loads magici tems (for sacreds etc) from given definition set
+
+#epithet_era_names <set>
+Loads epithet parts from given definition set
+
 --- Pose
+
+#magefilters <set>
+Loads mage filters from given definition set
+
+#priestfilters <set>
+Loads priest filters from given definition set
+
+#sacredfilters <set>
+Loads sacred filters from given definition set
+
+#elitefilters <set>
+Loads elite filters from given definition set
+
+#magicitems <set>
+Loads magici tems (for sacreds etc) from given definition set
+
+
 #magicpriority <path> <number>
 Sets the weight of a certain magic path in mage generation. Default for all paths is 1. Works in races as well.
 
