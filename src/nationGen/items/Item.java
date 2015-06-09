@@ -31,11 +31,13 @@ public class Item extends Filter {
 	public boolean armor = false;
 	
 	
-	private int offsetx = 0;
-	private int offsety = 0;
+	protected int offsetx = 0;
+	protected int offsety = 0;
 	
 	
 	public LinkedHashMap<String, String> dependencies = new LinkedHashMap<String, String>();
+	public LinkedHashMap<String, String> typedependencies = new LinkedHashMap<String, String>();
+
 	public List<Command> commands = new ArrayList<Command>();
 	public String slot = "";
 	public String set = "";
@@ -70,16 +72,18 @@ public class Item extends Filter {
 		this.offsety = y;
 	}
 	
-	public Item getCopy()
+	
+	public CustomItem getCustomItemCopy()
 	{
-		Item item = new Item(nationGen);
+		CustomItem item = new CustomItem(nationGen);
 		item.sprite = sprite;
 		item.mask = mask;
 		item.id = id;
 		item.armor = armor;
 		item.offsetx = offsetx;
 		item.offsety = offsety;
-		item.dependencies = dependencies;
+		dependencies.putAll(dependencies);
+		typedependencies.putAll(typedependencies);
 		item.commands.addAll(commands);
 		item.slot = slot;
 		item.set = set;
@@ -89,6 +93,12 @@ public class Item extends Filter {
 		item.basechance = this.basechance;
 		item.tags.addAll(tags);
 		return item;
+	}
+	
+	public Item getCopy()
+	{
+
+		return (Item) this.getCustomItemCopy();
 	}
 	
 	public <E extends Entity> void handleOwnCommand(String str)
@@ -118,6 +128,10 @@ public class Item extends Filter {
 			this.offsety = Integer.parseInt(args.get(1));
 		else if(args.get(0).equals("#needs"))
 			this.dependencies.put(args.get(2), args.get(1));
+		else if(args.get(0).equals("#needstype"))
+		{
+			this.typedependencies.put(args.get(2), args.get(1));
+		}
 		else if(args.get(0).equals("#command") || args.get(0).equals("#define"))
 			this.commands.add(Command.parseCommand(args.get(1)));
 		else

@@ -1,0 +1,213 @@
+Grand list of NationGen chanceincs and themeincs as of 9th of June 2015
+-------------------------------------------
+- [] signify optional modifier, <> signify mandatory one
+- Feel free to ask for extra functionality.
+
+
+Theme specific
+----------------------------------------------------
+
+Theme
+------------------------
+Usage:	#chanceinc theme [not] <theme> <mod>
+Info: 	If any filter/item/pose/whatever has #theme or #tag <theme>, apply modifier
+
+Racename
+------------------------
+Usage:	#chanceinc racename [not] <race> <mod>
+Info: 	If any race is named <race>, apply modifier
+
+
+Generic
+----------------------------------------------------
+
+Pose role
+------------------------
+Usage:	#chanceinc pose <role> <mod>
+Info: 	If the pose has given role, modifier is added. Pose is considered to have 
+	given role if it has role that is "elite <role>" or "sacred <role>"
+
+Unit command
+------------------------
+Usage:	#chanceinc personalcommand <command> <mod>
+Info:	If the unit in question (or in case of multiple units, any of them) has 
+	given command with any argument, modifier is added.
+
+Unit shapeshift
+------------------------
+Usage:	#chanceinc personalshape <shape> <mod>
+Info:	If the unit in question (or in case of multiple units, any of them) has 
+	given shapeshift form, modifier is added.
+
+Unit filter
+------------------------
+Usage:	#chanceinc filter <filter> <mod>
+Info:	If the unit in question (or in case of multiple units, any of them) has 
+	given filter applied, modifier is added.
+
+Unit tag
+------------------------
+Usage:	#chanceinc unittag <tag> <mod>
+Info:	If the unit in question (or in case of multiple units, any of them) has 
+	given tag, modifier is added.
+
+Race tag
+------------------------
+Usage:	#chanceinc racetag <tag> <mod>
+Info:	If the race of the unit in  question  has given tag, modifier is added.
+
+Pose tag
+------------------------
+Usage:	#chanceinc posetag <tag> <mod>
+Info:	If the pose of the unit in  question  has given tag, modifier is added.
+
+Tag
+------------------------
+Usage:	#chanceinc tag <tag> <mod>
+Info:	If the pose, race of the unit or the unit itself in question  has given 
+	tag, modifier is added.
+
+Item tag
+------------------------
+Usage:	#chanceinc itemtag [not] <tag> <mod>
+Info:	If any item of the unit has the given tag, modifier is added
+
+Has Item
+------------------------
+Usage:	#chanceinc hasitem [not] <slot> <itemname> <mod>
+Info:	If the unit has item named <itemname> in slot <slot>, modifier is added.
+	If not switch is used, vice versa.
+
+Taggedmagic
+------------------------
+Usage:	#chanceinc taggedmagic <path> <mod>
+Info:	If the unit has item, filter or personal tag of form "path <path>", modifier
+	is added	
+
+Has Item
+------------------------
+Usage:	#chanceinc hasitem <slot> <itemname> <mod>
+Info:	If the unit has item named <itemname> in slot <slot>, modifier is added
+
+Compare magic
+------------------------
+Usage:	#chanceinc comparemagic <below/above/equal> <path> <level> <modifier>
+Info:	If the unit has magic path <path> at below/above/equal to <level>, modifier
+	is added.
+
+Personal magic
+------------------------
+Usage:	#chanceinc personalmagic <path> [below] <level> <mod> 
+Info:	If the unit has magic path <path> at least/below <level>, modifier is added.
+	You can add multiple <path> [below] <level> sequences before <mod> for multiple
+	checks.
+
+Magic below
+------------------------
+Usage:	#chanceinc magicbelow <path> <level> <mod>
+Info:	If the unit has magic path <path> at below <level>, modifier is added.
+	You can add multipel <path> <level> sequences before <mod>
+
+Original name
+------------------------
+Usage:	#chanceinc origname <name> <mod>
+Info:	If the unit's name base (ie for Black Knight of the Dawn just Knight)
+	equals this, apply modifier. Used in updating sacred names to sacred
+	commander names.
+
+Race
+------------------------
+Usage:	#chanceinc race <race> <mod>
+Info:	If the unit's race equals <race>, apply modifier.
+
+
+Prot
+------------------------
+Usage:	#chanceinc prot [below] <prot> <modifier>
+Info:	If unit protection (#prot and equipment) is at least/below <prot>, apply modifier
+
+
+Encumberance
+------------------------
+Usage:	#chanceinc enc [below] <prot> <modifier>
+Info:	If unit encumberance (just #enc) is at least/below <prot>, apply modifier
+
+
+Magic
+------------------------
+Usage:	#chanceinc magic <path> <mod>
+Info:	If the nation's highest paths contain <path>, apply modifier
+	You can add multiple paths.
+
+Shape
+------------------------
+Usage:	#chanceinc shape <shape> <mod>
+Info:	If the nation has an unit with shape <shape>, apply modifier
+
+
+Has theme
+------------------------
+Usage:	#chanceinc hastheme <theme> <mod>
+Info:	If the nation has theme named <theme>, apply modifier
+
+Era
+------------------------
+Usage:	#chanceinc era <era> <mod>
+Info:	If the nation's era is <era> (1-3), apply modifier
+
+Has primary race
+------------------------
+Usage:	#chanceinc hasprimaryrace <mod>
+Info:	If the nation has a primary race, apply modifier
+	Used mostly for secondary race chanceincs
+
+Nation command
+------------------------
+Usage:	#chanceinc nationcommand <command> [above/below] <value> <mod>
+Info:	If the nation has a nation command <comamnd> above/below/at <value>,
+	apply mod
+
+Unit command
+------------------------
+Usage:	#chanceinc command [below] <command> <value> <mod>
+Info:	If the nation has an unit with command <comamnd> above/below <value>,
+	apply mod. 
+
+Percentage of command
+------------------------
+Usage:	#chanceinc percentageofcommand <command> [below] <value> <amount> <mod>
+Info:	If the nation has at least <amount>% units with command <comamnd> above/below 
+	<value>, apply mod. 
+
+
+Percentage of race
+------------------------
+Usage:	#chanceinc percentageofrace <race> <amount> <mod>
+Info:	If the nation has at least <amount>% units with race <race>, apply mod.
+
+
+Primary race
+------------------------
+Usage:	#chanceinc primaryrace <race> <mod>
+Info:	If <race> is the nation's primary race, apply mod
+
+Race tag
+------------------------
+Usage:	#chanceinc racetag <tag> <mod>
+Info:	If nation's primary race has tag <tag>, apply mod
+
+Nation tag
+------------------------
+Usage:	#chanceinc primaryrace <race> <mod>
+Info:	If nation has tag <tag>, apply mod
+
+Average gold cost
+------------------------
+Usage:	#chanceinc avggold <gold> <mod>
+Info:	If nation's units' average gold cost is at least <gold>, apply mod
+
+Average resource cost
+------------------------
+Usage:	#chanceinc avgres <res> <mod>
+Info:	If nation's units' average resource cost is at least <res>, apply mod
+
