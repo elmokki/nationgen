@@ -147,6 +147,25 @@ public class Generic {
 		return null;
 	}
 	
+	public static List<String> getTagValues(List<String> tags, String tag)
+	{
+		List<String> values = new ArrayList<String>();
+		
+		for(String str : tags)
+		{
+			List<String> args = parseArgs(str);
+
+			if(args.get(0).equals(tag))
+			{
+
+				args.remove(0);
+				values.add(Generic.listToString(args));
+			}
+		
+		}
+		
+		return values;
+	}
 	
 	public static boolean isNumeric(String str)
 	{

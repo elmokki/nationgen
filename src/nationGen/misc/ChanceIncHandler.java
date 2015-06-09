@@ -249,6 +249,21 @@ public class ChanceIncHandler {
 	}
 	
 	
+	public static <E extends Filter> List<E> getFiltersWithType(String type, List<E> orig)
+	{
+		List<E> newList = new ArrayList<E>();
+		for(E f : orig)
+		{
+			if(f.types.contains(type))
+			{
+				newList.add(f);
+			}
+		}
+		
+		return newList;
+	}
+	
+	
 	/**
 	 * Checks ChanceIncHandler.canAdd() for all filters and removes bad ones.
 	 * @param filters
