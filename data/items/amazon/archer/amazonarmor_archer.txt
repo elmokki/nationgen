@@ -63,7 +63,7 @@
 #gameid 13
 #sprite /graphics/amazon/armor/standard/chainhauberk.png
 #recolormask /graphics/amazon/armor/standard/mailhauberk_recolormask.png
-#basechance 0.5
+#basechance 0.25
 #armor
 #theme "iron"
 #enditem
@@ -72,7 +72,7 @@
 #newitem
 #name "chain hauberk sleeveless"
 #gameid 13
-#basechance 0.5
+#basechance 0.25
 #sprite /graphics/amazon/armor/standard/chainhauberk2.png
 #recolormask /graphics/amazon/armor/standard/mailhauberk_recolormask.png
 #armor
@@ -86,6 +86,7 @@
 #sprite /graphics/amazon/armor/standard/chainhauberk.png
 #recolormask /graphics/amazon/armor/standard/mailhauberk_recolormask.png
 #armor
+#basechance 0.25
 #needs legs chainpants_greaves
 #theme "advanced"
 #theme "iron"
@@ -120,6 +121,7 @@
 #sprite /graphics/amazon/armor/standard/scalehauberk.png
 #recolormask /graphics/amazon/armor/standard/mailhauberk_recolormask.png
 #armor
+#basechance 0.25
 #theme "advanced"
 #theme "iron"
 #needs legs chainpants_greaves
@@ -153,7 +155,7 @@
 #sprite /graphics/amazon/armor/standard/scalehauberk_bronze.png
 #recolormask /graphics/amazon/armor/standard/mailhauberk_recolormask.png
 #armor
-#basechance 0.25
+#basechance 0.125
 #tag "name mounted cataphract"
 #needs legs chainpants_greaves_bronze
 #theme "bronze"
@@ -166,6 +168,7 @@
 #gameid 9
 #sprite /graphics/amazon/armor/standard/platecuirass.png
 #armor
+#basechance 0.5
 #theme "advanced"
 #theme "iron"
 #enditem
@@ -175,6 +178,7 @@
 #gameid 14
 #sprite /graphics/amazon/armor/standard/platehauberk.png
 #armor
+#basechance 0.25
 #theme "advanced"
 #theme "iron"
 #tag "name mounted knight"
@@ -185,6 +189,7 @@
 #gameid 19
 #sprite /graphics/amazon/armor/archer/fullplate.png
 #armor
+#basechance 0.125
 #theme "advanced"
 #theme "iron"
 #tag "name mounted knight"
@@ -216,7 +221,7 @@
 #gameid bronzescale_full
 #sprite /graphics/amazon/armor/archer/fullplate_bronze.png
 #armor
-#basechance 0.25
+#basechance 0.125
 #tag "name mounted knight"
 #theme "bronze"
 #theme "advanced"

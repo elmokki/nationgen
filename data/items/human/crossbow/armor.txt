@@ -9,6 +9,13 @@
 #enditem
 
 #newitem
+#id 23
+#gameid 5
+#sprite /graphics/bodyarmor/standard/leathercuirass2.png
+#armor
+#enditem
+
+#newitem
 #id 2
 #gameid 10
 #sprite /graphics/bodyarmor/crossbow/leatherhauberk.png
@@ -48,6 +55,7 @@
 #gameid 13
 #sprite /graphics/bodyarmor/crossbow/mailhauberk1.png
 #armor
+#basechance 0.25
 #enditem
 
 
@@ -56,6 +64,7 @@
 #gameid 13
 #sprite /graphics/bodyarmor/crossbow/mailhauberk2.png
 #armor
+#basechance 0.25
 #enditem
 
 
@@ -65,6 +74,7 @@
 #sprite /graphics/bodyarmor/crossbow/mailhauberk1.png
 #armor
 #needs legs chainpants
+#basechance 0.25
 #enditem
 
 
@@ -77,22 +87,21 @@
 #armor
 #enditem
 
-
 #newitem
 #id 10
 #gameid 12
 #sprite /graphics/bodyarmor/crossbow/mailhauberk1.png
 #armor
+#basechance 0.5
 #enditem
-
 
 #newitem
 #id 11
 #gameid 12
 #sprite /graphics/bodyarmor/crossbow/mailhauberk2.png
 #armor
+#basechance 0.5
 #enditem
-
 
 #newitem -- full scale
 #id 12
@@ -100,27 +109,27 @@
 #sprite /graphics/bodyarmor/crossbow/mailhauberk1.png
 #armor
 #needs legs chainpants
+#basechance 0.25
 #enditem
 
 
 --- Plate
-
 
 #newitem
 #id 13
 #gameid 9
 #sprite /graphics/bodyarmor/crossbow/platecuirass.png
 #armor
+#basechance 0.5
 #enditem
-
 
 #newitem
 #id 14
 #gameid 14
 #sprite /graphics/bodyarmor/crossbow/platehauberk.png
 #armor
+#basechance 0.25
 #enditem
-
 
 #newitem -- full plate
 #id 15
@@ -128,6 +137,7 @@
 #sprite /graphics/bodyarmor/crossbow/platehauberk.png
 #armor
 #needs legs platepants
+#basechance 0.125
 #enditem
 
 
@@ -138,8 +148,8 @@
 #gameid 6
 #sprite /graphics/bodyarmor/crossbow/ringcuirass.png
 #armor
+#basechance 2
 #enditem
-
 
 #newitem
 #id 17
@@ -148,14 +158,12 @@
 #armor
 #enditem
 
-
 #newitem
 #id 18
 #gameid 11
 #sprite /graphics/bodyarmor/crossbow/ringhauberk2.png
 #armor
 #enditem
-
 
 #newitem -- full ring
 #id 19
@@ -184,14 +192,5 @@
 #recolormask /graphics/bodyarmor/crossbow/ashigaruarmor_recolormask.png
 #theme "oriental"
 #basechance 0.5
-#armor
-#enditem
-
-----
-
-#newitem
-#id 23
-#gameid 5
-#sprite /graphics/bodyarmor/standard/leathercuirass2.png
 #armor
 #enditem

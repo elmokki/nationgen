@@ -2,29 +2,28 @@
 --- Leather
 
 #newitem
-#id 1
+#id leathercuirass1
 #gameid 5
 #sprite /graphics/bodyarmor/crossbow/leathercuirass.png
 #armor
 #enditem
 
 #newitem
-#id 2
+#id leatherhauberk1
 #gameid 10
 #sprite /graphics/bodyarmor/crossbow/leatherhauberk.png
 #armor
 #enditem
 
 #newitem
-#id 3
+#id leatherhauberk2
 #gameid 10
 #sprite /graphics/bodyarmor/crossbow/leatherhauberk2.png
 #armor
 #enditem
 
-
 #newitem -- full leather
-#id 4
+#id fullleather
 #gameid 15
 #sprite /graphics/bodyarmor/crossbow/leatherhauberk.png
 #armor
@@ -33,7 +32,6 @@
 
 --- Chain Mail
 
-
 #newitem
 #id 5
 #gameid 8
@@ -41,22 +39,21 @@
 #armor
 #enditem
 
-
 #newitem
 #id 6
 #gameid 13
 #sprite /graphics/bodyarmor/crossbow/mailhauberk1.png
 #armor
+#basechance 0.25
 #enditem
-
 
 #newitem
 #id 7
 #gameid 13
 #sprite /graphics/bodyarmor/crossbow/mailhauberk2.png
 #armor
+#basechance 0.25
 #enditem
-
 
 #newitem -- full chain
 #id 8
@@ -64,6 +61,7 @@
 #sprite /graphics/bodyarmor/crossbow/mailhauberk1.png
 #armor
 #needs legs legarmor
+#basechance 0.25
 #enditem
 
 
@@ -76,22 +74,21 @@
 #armor
 #enditem
 
-
 #newitem
 #id 10
 #gameid 12
 #sprite /graphics/bodyarmor/crossbow/mailhauberk1.png
 #armor
+#basechance 0.25
 #enditem
-
 
 #newitem
 #id 11
 #gameid 12
 #sprite /graphics/bodyarmor/crossbow/mailhauberk2.png
 #armor
+#basechance 0.25
 #enditem
-
 
 #newitem -- full scale
 #id 12
@@ -99,27 +96,27 @@
 #sprite /graphics/bodyarmor/crossbow/mailhauberk1.png
 #armor
 #needs legs legarmor
+#basechance 0.25
 #enditem
 
 
 --- Plate
-
 
 #newitem
 #id 13
 #gameid 9
 #sprite /graphics/bodyarmor/crossbow/platecuirass.png
 #armor
+#basechance 0.5
 #enditem
-
 
 #newitem
 #id 14
 #gameid 14
 #sprite /graphics/bodyarmor/crossbow/platehauberk.png
 #armor
+#basechance 0.25
 #enditem
-
 
 #newitem -- full plate
 #id 15
@@ -127,6 +124,7 @@
 #sprite /graphics/bodyarmor/crossbow/platehauberk.png
 #armor
 #needs legs legarmor
+#basechance 0.125
 #enditem
 
 
@@ -139,7 +137,6 @@
 #armor
 #enditem
 
-
 #newitem
 #id 17
 #gameid 11
@@ -147,14 +144,12 @@
 #armor
 #enditem
 
-
 #newitem
 #id 18
 #gameid 11
 #sprite /graphics/bodyarmor/crossbow/ringhauberk2.png
 #armor
 #enditem
-
 
 #newitem -- full ring
 #id 19

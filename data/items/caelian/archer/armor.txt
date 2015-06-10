@@ -15,8 +15,6 @@
 #armor
 #enditem
 
-
-
 #newitem -- full leather
 #newitem
 #name "full leather"
@@ -29,7 +27,6 @@
 
 --- Chain Mail
 
-
 #newitem
 #name "chain cuirass"
 #gameid 8
@@ -37,14 +34,13 @@
 #armor
 #enditem
 
-
 #newitem
 #name "chain hauberk short"
 #gameid 13
 #sprite /graphics/caelian/armor/archer/mailhauberk.png
 #armor
+#basechance 0.5
 #enditem
-
 
 #newitem -- full chain
 #name "full chain"
@@ -54,6 +50,7 @@
 #theme "advanced"
 #needs legs mailpants
 #tag "name mounted knight"
+#basechance 0.25
 #enditem
 
 
@@ -66,15 +63,13 @@
 #armor
 #enditem
 
-
 #newitem
 #name "scale hauberk short"
 #gameid 12
 #sprite /graphics/caelian/armor/archer/mailhauberk.png
 #armor
+#basechance 0.5
 #enditem
-
-
 
 #newitem -- full scale
 #name "full scale"
@@ -83,11 +78,11 @@
 #armor
 #needs legs mailpants
 #theme "advanced"
+#basechance 0.25
 #enditem
 
 
 --- Plate
-
 
 #newitem
 #name "plate cuirass"
@@ -95,8 +90,8 @@
 #sprite /graphics/caelian/armor/platecuirass.png
 #armor
 #theme "advanced"
+#basechance 0.5
 #enditem
-
 
 #newitem
 #name "plate hauberk"
@@ -105,8 +100,8 @@
 #armor
 #theme "advanced"
 #tag "name mounted knight"
+#basechance 0.25
 #enditem
-
 
 #newitem -- full plate
 #name "full plate"
@@ -116,6 +111,7 @@
 #theme "advanced"
 #needs legs platepants
 #tag "name mounted knight"
+#basechance 0.125
 #enditem
 
 
@@ -128,15 +124,12 @@
 #armor
 #enditem
 
-
 #newitem
 #name "ring hauberk short"
 #gameid 11
 #sprite /graphics/caelian/armor/archer/ringhauberk.png
 #armor
 #enditem
-
-
 
 #newitem -- full ring
 #name "full ring"
