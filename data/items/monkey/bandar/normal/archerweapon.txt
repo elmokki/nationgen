@@ -1,12 +1,53 @@
+
 #newitem
-#id axe
-#gameid 17
+#id hatchet
+#gameid 253
+#theme "primitive"
+#eliteversion axe
 #enditem
 
+#newitem
+#id kopesh
+#gameid 513
+#eliteversion falchion
+#theme "bronze"
+#enditem
 
+#newitem
+#id club
+#gameid 252
+#theme "primitive"
+#theme "wood"
+#eliteversion spikedclub
+#enditem
+
+#newitem
+#id spikedclub
+#gameid 265
+#theme "primitive"
+#theme "wood"
+#eliteversion mace
+#enditem
 
 #newitem
 #id mace
 #gameid 12
+#theme "primitive"
 #enditem
 
+--- Heavier, elite archer weapons
+
+#newitem
+#id axe
+#gameid 17
+#theme "primitive"
+#theme "iron"
+#theme "elite"
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#theme "elite"
+#theme "iron"
+#enditem
