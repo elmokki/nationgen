@@ -1,17 +1,356 @@
+--- "Standard" Shields
+
+--- Shields
+
+-- Hide shields
+
 #newitem
-#id kiteshield
-#gameid 3
-#sprite /graphics/fomorian/offhand/kite.png
-#recolormask /graphics/fomorian/offhand/kite_recolormask.png
+#basechance 1
+#id greathideshield
+#gameid 112
+#sprite /graphics/highmen/shields/greathideshield.png
+#recolormask /graphics/highmen/shields/greathideshield_recolormask.png
+#offsetx 8
+#offsety -3
 #armor
 #enditem
 
 
+-- Bucklers
+
 #newitem
-#id shield
-#gameid 2
-#sprite /graphics/fomorian/offhand/shield.png
-#recolormask /graphics/fomorian/offhand/shield_recolormask.png
-#basechance 2
+#basechance 1
+#id buckler
+#gameid 1
+#sprite /graphics/offhand/standard/shield1.png
+#offsetx 9
+#offsety -12
 #armor
+#enditem
+
+#newitem
+#basechance 1
+#id metal_buckler
+#gameid 2
+#sprite /graphics/offhand/standard/shield2.png
+#offsetx 9
+#offsety -12
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#basechance 1
+#id buckler
+#gameid 1
+#sprite /graphics/amazon/shields/targe_burnished.png
+#offsetx 9
+#offsety -12
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#basechance 1
+#id buckler_painted
+#gameid 1
+#sprite /graphics/amazon/shields/targe_painted.png
+#recolormask /graphics/amazon/shields/targe_painted_recolormask.png
+#offsetx 9
+#offsety -12
+#armor
+#enditem
+
+#newitem
+#basechance 1
+#id shield7
+#gameid 1
+#sprite /graphics/offhand/standard/shield7.png
+#recolormask /graphics/offhand/standard/shield7_recolormask.png
+#offsetx 9
+#offsety -12
+#armor
+#theme "bronze"
+#enditem
+
+
+-- Normal shields
+
+#newitem
+#id hoplon
+#basechance 1
+#gameid 2
+#sprite /graphics/amazon/shields/hoplon_burnished.png
+#offsetx 9
+#offsety -12
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id hoplon_painted
+#basechance 1
+#gameid 2
+#sprite /graphics/amazon/shields/hoplon_bronze.png
+#recolormask /graphics/amazon/shields/hoplon_painted_recolormask.png
+#offsetx 9
+#offsety -12
+#armor
+#enditem
+
+#newitem
+#basechance 1
+#id hoplon_bronze
+#gameid 2
+#sprite /graphics/amazon/shields/hoplon2_bronze.png
+#offsetx 8
+#offsety -12
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#basechance 1
+#id shield5
+#gameid 2
+#sprite /graphics/offhand/standard/shield5.png
+#offsetx 9
+#offsety -12
+#armor
+#enditem
+
+#newitem
+#basechance 1
+#id shield6
+#gameid 2
+#sprite /graphics/offhand/standard/shield6.png
+#recolormask /graphics/offhand/standard/shield6_recolormask.png
+#offsetx 9
+#offsety -12
+#armor
+#enditem
+
+#newitem
+#basechance 1
+#id shield8
+#gameid 2
+#sprite /graphics/offhand/standard/coe-metalshield.png
+#offsetx 9
+#offsety -14
+#armor
+#theme "iron"
+#enditem
+
+
+-- Human-sized tower shields
+
+#newitem
+#id tower1
+#gameid 2
+#sprite /graphics/offhand/standard/tower1.png
+#recolormask /graphics/offhand/standard/tower1_recolormask.png
+#offsetx 10
+#offsety -14
+#theme "advanced"
+#armor
+#enditem
+
+#newitem
+#id tower2
+#gameid 2
+#sprite /graphics/offhand/standard/tower2.png
+#recolormask self
+#offsetx 10
+#offsety -14
+#theme "advanced"
+#armor
+#enditem
+
+#newitem
+#id tower3
+#gameid 2
+#sprite /graphics/offhand/standard/tower3.png
+#recolormask /graphics/offhand/standard/tower3_recolormask.png
+#offsetx 10
+#offsety -14
+#theme "advanced"
+#theme "iron"
+#armor
+#enditem
+
+-- Full-sized tower shields
+
+#newitem
+#id big_tower1a
+#basechance 0.25
+#gameid 4
+#sprite /graphics/highmen/shields/tower1.png
+#theme "advanced"
+#theme "iron"
+#armor
+#offsetx 8
+#offsety -8
+#enditem
+
+#newitem
+#id big_tower1b
+#basechance 0.25
+#gameid 4
+#sprite /graphics/highmen/shields/tower1.png
+#recolormask /graphics/highmen/shields/tower1_recolormask.png
+#theme "advanced"
+#theme "iron"
+#armor
+#offsetx 8
+#offsety -8
+#enditem
+
+#newitem
+#id big_tower2a
+#basechance 0.25
+#gameid 4
+#sprite /graphics/highmen/shields/tower2.png
+#recolormask /graphics/highmen/shields/tower2_recolormask1.png
+#theme "advanced"
+#theme "iron"
+#armor
+#enditem
+
+#newitem
+#id big_tower2b
+#basechance 0.25
+#gameid 4
+#sprite /graphics/highmen/shields/tower2.png
+#recolormask /graphics/highmen/shields/tower2_recolormask2.png
+#theme "advanced"
+#theme "iron"
+#armor
+#offsetx 8
+#offsety -8
+#enditem
+
+#newitem
+#id big_tower3a
+#basechance 0.25
+#gameid 4
+#sprite /graphics/highmen/shields/tower3.png
+#recolormask self
+#theme "advanced"
+#theme "iron"
+#armor
+#offsetx 8
+#offsety -8
+#enditem
+
+#newitem
+#id big_tower3b
+#basechance 0.25
+#gameid 4
+#sprite /graphics/highmen/shields/tower3.png
+#recolormask /graphics/highmen/shields/tower3_recolormask1.png
+#theme "advanced"
+#theme "iron"
+#armor
+#offsetx 8
+#offsety -8
+#enditem
+
+
+--- Avvite-style shields
+
+-- Bucklers
+
+#newitem
+#id iron_buckler
+#gameid 1
+#sprite /graphics/avvim/offhand/buckler2.png
+#theme "iron"
+#armor
+#offsetx 10
+#offsety -4
+#enditem
+
+#newitem
+#id wood_buckler
+#gameid 1
+#sprite /graphics/avvim/offhand/buckler1.png
+#theme "wood"
+#armor
+#offsetx 10
+#offsety -4
+#enditem
+
+#newitem
+#id painted_buckler
+#gameid 1
+#sprite /graphics/avvim/offhand/buckler1.png
+#recolormask /graphics/avvim/offhand/buckler1_recolormask.png
+#armor
+#offsetx 10
+#offsety -4
+#enditem
+
+
+-- Standard shields
+
+#newitem
+#id shield_tan
+#gameid 2
+#sprite /graphics/avvim/offhand/shield1.png
+#theme "wood"
+#armor
+#offsetx 10
+#offsety -6
+#enditem
+
+#newitem
+#id shield_light
+#gameid 2
+#sprite /graphics/avvim/offhand/shield1.png
+#recolormask /graphics/avvim/offhand/shield1_recolormask.png
+#armor
+#offsetx 10
+#offsety -6
+#enditem
+
+#newitem
+#id shield_dark_iron
+#gameid 2
+#sprite /graphics/avvim/offhand/shield2.png
+#theme "iron"
+#armor
+#offsetx 10
+#offsety -4
+#enditem
+
+#newitem
+#id shield_dark_iron_painted
+#gameid 2
+#sprite /graphics/avvim/offhand/shield2.png
+#recolormask /graphics/avvim/offhand/shield2_recolormask.png
+#theme "iron"
+#armor
+#offsetx 10
+#offsety -4
+#enditem
+
+#newitem
+#id shield_dark_gold
+#gameid 2
+#sprite /graphics/avvim/offhand/shield3.png
+#theme "bronze"
+#armor
+#offsetx 10
+#offsety -4
+#enditem
+
+#newitem
+#id shield_dark_gold_painted
+#gameid 2
+#sprite /graphics/avvim/offhand/shield3.png
+#recolormask /graphics/avvim/offhand/shield3_recolormask.png
+#theme "bronze"
+#armor
+#offsetx 10
+#offsety -4
 #enditem
