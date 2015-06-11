@@ -1,0 +1,116 @@
+--- No armor
+
+#new
+#name "no armor"
+#gameid -1
+#basechance 0.5
+#theme "naked"
+#theme "primitive"
+#tag "tier 1"
+#end
+
+--- Leather
+
+#newitem
+#name "furs"
+#gameid 44
+#sprite /graphics/gaian/minotaur/armor/standard/furs.png
+#armor
+#theme "primitive"
+#theme "leather"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#name "leather hauberk"
+#gameid 10
+#sprite /graphics/gaian/minotaur/armor/standard/leather_hauberk.png
+#armor
+#theme "leather"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#name "full leather"
+#gameid 15
+#basechance 0.5
+#sprite /graphics/gaian/minotaur/armor/standard/leather_full.png
+#armor
+#theme "leather"
+#theme "advanced"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+--- Bronze Scale
+
+#newitem
+#name "bronze scale cuirass"
+#gameid 142
+#sprite /graphics/gaian/minotaur/armor/standard/bronzescale_cuirass.png
+#armor
+#theme "bronze"
+#tag "tier 1"
+#enditem
+
+#newitem
+#name "bronze scale hauberk"
+#gameid 136
+#basechance 0.5
+#sprite /graphics/gaian/minotaur/armor/standard/bronzescale_hauberk.png
+#armor
+#theme "bronze"
+#tag "tier 1"
+#enditem
+
+--- Bronze Plate
+
+#newitem
+#name "bronze plate cuirass"
+#gameid 100
+#basechance 0.25
+#sprite /graphics/gaian/minotaur/armor/standard/bronze_cuirass.png
+#armor
+#theme "bronze"
+#tag "tier 1"
+#enditem
+
+
+--- Iron Scale
+
+#newitem
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/gaian/minotaur/armor/standard/scale_cuirass.png
+#armor
+#theme "iron"
+#theme "advanced"
+#tag "tier 1"
+#enditem
+
+#newitem
+#name "scale hauberk"
+#gameid 12
+#basechance 0.5
+#sprite /graphics/gaian/minotaur/armor/standard/scale_hauberk.png
+#armor
+#theme "iron"
+#theme "advanced"
+#tag "tier 1"
+#enditem
+
+
+--- Iron Plate
+
+#newitem
+#name "plate cuirass"
+#gameid 9
+#basechance 0.25
+#sprite /graphics/gaian/minotaur/armor/standard/plate_cuirass.png
+#armor
+#theme "iron"
+#theme "advanced"
+#tag "tier 1"
+#enditem
