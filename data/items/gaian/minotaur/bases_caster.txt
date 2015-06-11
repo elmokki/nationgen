@@ -1,0 +1,45 @@
+#newitem
+#name "basesprite_savage"
+#basechance 4
+#gameid -1
+#sprite /graphics/gaian/minotaur/minotaur_basesprite.png
+#command "#berserk +4"
+#theme "savage"
+#tier 1
+#enditem
+
+#newitem
+#name "basesprite_civilized"
+#basechance 4
+#gameid -1
+#sprite /graphics/gaian/minotaur/minotaur_basesprite.png
+#command "#hp -2"
+#command "#mr -1"
+#command "#mor +1"
+#command "#att +1"
+#command "#def +1"
+#theme "civilized"
+#tier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#name "basesprite_white"
+#gameid -1
+#sprite /graphics/gaian/minotaur/minotaur_basesprite_white.png
+#command "#inspirational +1"
+#command "#mr +1"
+#theme "primitive"
+#tier 3
+#enditem
+
+#newitem
+#name "basesprite_black"
+#gameid -1
+#sprite /graphics/gaian/minotaur/minotaur_basesprite_black.png
+#command "#berserk +4"
+#command "#hp +2"
+#theme "primitive"
+#tier 3
+#enditem

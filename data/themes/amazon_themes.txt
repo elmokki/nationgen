@@ -76,6 +76,7 @@
 #racedefinition "#magicpriority astral 10"
 #racedefinition "#magicpriority air 5"
 #racedefinition "#preferredmount pegasus"
+#racedefinition "#descr 'These Amazons are descended from the Crystal tribe; they are adept archers but less adroit in melee. '"
 #endtheme
 
 -- Weights: EA 2, MA 1, LA 0.5
@@ -95,6 +96,7 @@
 #themeinc racename humanbred *4
 #themeinc racename abysian *2
 #racedefinition "#unitcommand #wastelandsurvival"
+#racedefinition "#nationcommand '#idealcold -1'"
 #racedefinition "#unitcommand '#att +1'"
 #racedefinition "#unitcommand '#def +1'"
 #racedefinition "#unitcommand '#fireres +15'"
@@ -103,6 +105,7 @@
 #racedefinition "#magicpriority blood 10"
 #racedefinition "#magicpriority fire 5"
 #racedefinition "#preferredmount gryphon"
+#racedefinition "#descr 'These Amazons are descended from the Garnet tribe; they more aggressive and arrogant than other Amazons. '"
 #endtheme
 
 -- Weights: EA 2, MA 1, LA 0.5
@@ -124,8 +127,8 @@
 #racedefinition "#magicpriority nature 10"
 #racedefinition "#magicpriority water 5"
 #racedefinition "#preferredmount lizard"
+#racedefinition "#descr 'These Amazons are descended from the Jade tribe; they are known for their skill in magic. '"
 #endtheme
-
 
 -- Weights: EA 2, MA 1, LA 0.5
 #newtheme
@@ -146,7 +149,116 @@
 #racedefinition "#magicpriority death 10"
 #racedefinition "#magicpriority earth 5"
 #racedefinition "#preferredmount nightmare"
+#racedefinition "#descr 'These Amazons are descended from the Onyx tribe; they use heavier armor than most Amazons. '"
 #endtheme
+
+-- Weights: EA 1, MA 0.25, LA 0.125
+#newtheme
+#type tribal
+#name deer
+#basechance 1
+#chanceinc era 2 -0.75
+#chanceinc era 3 -0.875
+#themeinc theme advanced *0.5
+#themeinc theme iron *0.5
+#themeinc theme bronze *0.5
+#themeinc theme wood *2
+#themeinc theme leather *2
+#themeinc theme naked *1
+#themeinc theme primitive *2
+#themeinc theme deer +2
+#racedefinition "#unitcommand '#gcost +1'"
+#racedefinition "#unitcommand '#def +2'"
+#racedefinition "#unitcommand '#ap +2'"
+#racedefinition "#unitcommand '#mor -1'"
+#racedefinition "#unitcommand #forestsurvival"
+#racedefinition "#generationchance ranged 2"
+#racedefinition "#magicpriority nature 10"
+#racedefinition "#magicpriority air 5"
+#racedefinition "#descr 'These Amazons have embraced the deer as their tribal totem, and have come to share its acute sense and cautious mentality. '"
+#endtheme
+
+-- Weights: EA 1, MA 0.25, LA 0.125
+#newtheme
+#type tribal
+#name bear
+#basechance 1
+#chanceinc era 2 -0.75
+#chanceinc era 3 -0.875
+#themeinc theme advanced *0.5
+#themeinc theme iron *1
+#themeinc theme bronze *0.5
+#themeinc theme wood *1
+#themeinc theme leather *2
+#themeinc theme naked *1
+#themeinc theme primitive *2
+#themeinc theme bear +2
+#racedefinition "#unitcommand '#gcost +1'"
+#racedefinition "#unitcommand '#hp +2'"
+#racedefinition "#unitcommand '#str +1'"
+#racedefinition "#unitcommand '#mountainsurvival'"
+#racedefinition "#generationchance ranged 0.1"
+#racedefinition "#magicpriority nature 10"
+#racedefinition "#magicpriority earth 5"
+#racedefinition "#preferredmount bear"
+#racedefinition "#descr 'These Amazons have embraced the bear as their tribal totem, and have come to share its strength and fortitude. '"
+#endtheme
+
+-- Weights: EA 1, MA 0.25, LA 0.125
+#newtheme
+#type tribal
+#name wolf
+#basechance 1
+#chanceinc era 2 -0.75
+#chanceinc era 3 -0.875
+#themeinc theme advanced *0.5
+#themeinc theme iron *1
+#themeinc theme bronze *0.5
+#themeinc theme wood *1
+#themeinc theme leather *2
+#themeinc theme naked *1
+#themeinc theme primitive *2
+#themeinc theme wolf +2
+#racedefinition "#unitcommand '#gcost +1'"
+#racedefinition "#unitcommand '#att +1'"
+#racedefinition "#unitcommand '#enc -1'"
+#racedefinition "#unitcommand '#mountainsurvival'"
+#racedefinition "#unitcommand '#wastelandsurvival'"
+#racedefinition "#magicpriority nature 10"
+#racedefinition "#magicpriority death 5"
+#racedefinition "#preferredmount wolf"
+#racedefinition "#descr 'These Amazons have embraced the wolf as their tribal totem, and have come to share its battle prowress and stamina. '"
+#endtheme
+
+-- Weights: EA 1, MA 0.25, LA 0.125
+#newtheme
+#type tribal
+#name lion
+#basechance 1
+#chanceinc era 2 -0.75
+#chanceinc era 3 -0.875
+#themeinc theme advanced *0.5
+#themeinc theme iron *0.5
+#themeinc theme bronze *0.5
+#themeinc theme wood *1
+#themeinc theme leather *2
+#themeinc theme naked *2
+#themeinc theme primitive *2
+#themeinc theme lion +2
+#racedefinition "#unitcommand '#gcost +1'"
+#racedefinition "#unitcommand '#mapmove +1'"
+#racedefinition "#unitcommand '#ap +1'"
+#racedefinition "#unitcommand '#enc -1'"
+#racedefinition "#generationchance ranged 2"
+#racedefinition "#magicpriority nature 5"
+#racedefinition "#magicpriority death 2"
+#racedefinition "#magicpriority fire 2"
+#racedefinition "#magicpriority earth 2"
+#racedefinition "#preferredmount lion"
+#racedefinition "#nationcommand '#idealcold -1'"
+#racedefinition "#descr 'These Amazons have embraced the lion as their tribal totem, and have come to share its endurance. '"
+#endtheme
+
 
 -- Social themes
 

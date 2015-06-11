@@ -6,13 +6,14 @@
 
 -- Tech level themes
 
--- Weights: EA 1, MA 0.75, LA 0.5
+-- Weights: EA 2, MA 0.5, LA 0.25
 #newtheme
 #type techlevel
 #name primitive
-#basechance 1
-#chanceinc era 2 -0.25
-#chanceinc era 3 -0.5
+#basechance 2
+#chanceinc era 2 -1.5
+#chanceinc era 3 -1.75
+#themeinc theme civilized *0.5
 #themeinc theme advanced *0.05
 #themeinc theme iron *0.25
 #themeinc theme bronze *1
@@ -20,6 +21,26 @@
 #themeinc theme leather *2
 #themeinc theme naked *2
 #themeinc theme primitive *2
+#themeinc theme savage +1
+#endtheme
+
+-- Weights: EA 2, MA 1, LA 0.5
+#newtheme
+#type techlevel
+#name bronze
+#basechance 2
+#chanceinc era 2 -1
+#chanceinc era 3 -1.5
+#themeinc theme civilized *0.5
+#themeinc theme advanced *0.5
+#themeinc theme iron *0.5
+#themeinc theme bronze +1
+#themeinc theme bronze *2
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *0.5
+#themeinc theme primitive *1
+#themeinc theme savage *1
 #endtheme
 
 -- Weights: EA 0.25, MA 1, LA 2
@@ -27,16 +48,67 @@
 #type techlevel
 #name advanced
 #basechance 0.25
-#chanceinc era 3 1.75
-#chanceinc era 2 0.75
+#chanceinc era 3 +1.75
+#chanceinc era 2 +0.75
+#themeinc theme civilized *2
 #themeinc theme advanced *2
 #themeinc theme iron *2
 #themeinc theme bronze *0.5
 #themeinc theme wood *0.5
 #themeinc theme leather *0.5
 #themeinc theme naked *0.05
-#themeinc theme primitive *0.05
+#themeinc theme primitive *0.5
+#themeinc theme savage *0.5
 #endtheme
+
+-- Social themes
+
+-- Weights: EA 5, MA 2, LA 0.5
+#newtheme
+#type social
+#name savage
+#basechance 2
+#chanceinc era 1 *2.5
+#chanceinc era 3 *0.25
+#themeinc theme civilized *0.5
+#themeinc theme advanced *0.25
+#themeinc theme iron *0.5
+#themeinc theme bronze *2
+#themeinc theme wood *2
+#themeinc theme leather *2
+#themeinc theme naked *2
+#themeinc theme primitive *2
+#themeinc theme savage *2
+#racedefinition "#magicpriority nature 10"
+#racedefinition "#magicpriority earth 4"
+#racedefinition "#magicpriority blood 6"
+#racedefinition "#magicpriority astral 0.5"
+#racedefinition "#magicpriority air 0.5"
+#racedefinition "#descr 'These minotaurs retain the primal savagery of the wild, and can rarely control their rage in battle. '"
+#endtheme
+
+-- Weights: EA 0.5, MA 1, LA 2.5
+#newtheme
+#type social
+#name civilized
+#basechance 0.5
+#chanceinc era 2 *2
+#chanceinc era 3 *5
+#themeinc theme civilized +2
+#themeinc theme advanced *2
+#themeinc theme iron *2
+#themeinc theme bronze *0.5
+#themeinc theme wood *0.5
+#themeinc theme leather *0.5
+#themeinc theme naked *0.05
+#themeinc theme primitive *0.5
+#themeinc theme savage *0.1
+#racedefinition "#magicpriority nature 6"
+#racedefinition "#magicpriority earth 6"
+#racedefinition "#magicpriority blood 2"
+#racedefinition "#descr 'These minotaurs have been civilized, and now fight more with skill than rage. '"
+#endtheme
+
 
 -- Tribal themes
 
@@ -327,23 +399,4 @@
 #racedefinition "#magicpriority astral 7"
 #racedefinition "#magicpriority blood 5"
 #racedefinition "#descr 'These vaettir have turned their back on both superstition and tradition, and no longer honor the totemic spirits.  '"
-#endtheme
-
--- Weights: EA 0.25, MA 0.25, LA 0.25
-#newtheme
-#type social
-#name amazon
-#basechance 0.25
-#themeinc theme advanced *1
-#themeinc theme iron *1
-#themeinc theme bronze *1
-#themeinc theme wood *1
-#themeinc theme leather *1
-#themeinc theme naked *0.05
-#themeinc theme primitive *1
-#racedefinition "#unitcommand '#str -1'"
-#racedefinition "#unitcommand '#mr +2'"
-#racedefinition "#unitcommand '#female'"
-#racedefinition "#unitcommand '#nametype 116'"
-#racedefinition "#descr 'These vaettir have regulated the men of their tribes to a secondary role, and all duties of any importance are carried out by women. '"
 #endtheme
