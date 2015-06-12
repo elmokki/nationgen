@@ -67,6 +67,7 @@ public class FlagGen {
 			border.addAll(n.nationGen.flagparts.get("defaultborders"));
 		if(bases.size() == 0)
 			bases.addAll(n.nationGen.flagparts.get("defaultbaseflags"));
+
 	}
 	
 	
@@ -86,6 +87,11 @@ public class FlagGen {
 	}
 	  
 	   
+	
+	
+	
+
+		
 	   private BufferedImage getFlag(Nation n) throws IOException
 	   {
 			Flag baseflag = Flag.getRandom(n.random, chandler.handleChanceIncs(bases));
@@ -109,29 +115,46 @@ public class FlagGen {
 			int features = 0;
 			
 			
-			boolean hastop = false;
+			boolean hasmid = false;
 			if(r.nextDouble() > 0.5)
 			{
 				if(drawIcon(combined, n, recolor, baseflag.name))
 					features++;
 			}
 			
+			// Border
 			if(r.nextDouble() > 0.2 || features == 0)
 			{
 				drawIcon(combined, n, border, baseflag.name);
 			}
 			
-			if(r.nextDouble() > 0.4 + features * 0.3)
+			// Middle
+			if(r.nextDouble() > 0.5 + features * 0.4)
+			{
+				if(drawIcon(combined, n, mid, baseflag.name))
+				{
+					features++;
+					hasmid = true;
+				}
+			}
+			
+			// Shading
+			if(!baseflag.shading.equals(""))
+			{
+				BufferedImage shading = ImageIO.read(new File("./", baseflag.shading));
+				g.drawImage(shading, 0, 0, null);
+
+			}
+			
+			// Top icon
+			if(r.nextDouble() > 0.2 + features * 0.2 && !hasmid)
 			{
 				if(drawIcon(combined, n, top, baseflag.name))
 				{
 					features++;
-					hastop = true;
 				}
 			}
-			
-			if(r.nextDouble() > 0.2 + features * 0.4 && !hastop)
-				drawIcon(combined, n, mid, baseflag.name);
+
 			
 			
 			return combined;
