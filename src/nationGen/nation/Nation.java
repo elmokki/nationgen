@@ -235,7 +235,11 @@ public class Nation {
 				System.out.println(sacred.race + " " + sacred.pose.roles + " AS ELITE UNIT HAS RECEIVED NO ROLES!");
 			
 			if(sacred != null)
+			{
+				if(unitlists.get(role) != null)
+					System.out.print(role + " - " + unitlists.get(role).size() + " -> ");
 				unitlists.put(role, elites);
+			}
 			
 		}
 		else if(random.nextDouble() > 0.9)
@@ -422,7 +426,6 @@ public class Nation {
 				t = Entity.getRandom(r, chandler.handleChanceIncs(frees));
 				if(t != null)
 				{
-					System.out.println(t + " for " + races.get(0) + " for " + str);
 				
 					possibleThemes.remove(t);
 					addTheme(t);
