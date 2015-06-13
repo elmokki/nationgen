@@ -327,21 +327,21 @@
 #enditem
 
 #newitem
-#name "bear"
+#name "great bear"
 #basechance 0.1
 #gameid -1
 #sprite /graphics/mounts/standard/bear.png
 #armor
 #define "#size 4"
-#define "#mapmove 2"
+#define "#mapmove 3"
 #define "#ap 16"
 #define "#mounted"
 #define "#weapon 237 --- Bite"
 #define "#weapon 236 -- Claw"
 #define "#secondtmpshape bearmount"
-#define "#gcost +35"
+#define "#gcost +40"
 #define "#ressize 2"
-#define "#enc 4"¨
+#define "#enc 4"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety -2
 #offsetx -1
@@ -349,6 +349,30 @@
 #tag "name commander beastmaster"
 #tag "guaranteedprefix bear"
 #tag "minprot 10"
+#enditem
+
+#newitem
+#name "bear"
+#basechance 0.2
+#gameid -1
+#sprite /graphics/mounts/standard/bear_small.png
+#armor
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 14"
+#define "#mounted"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape smallbearmount"
+#define "#gcost +30"
+#define "#ressize 2"
+#define "#enc 4"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#offsety 4
+#offsetx -1
+#theme "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 8"
 #enditem
 
 

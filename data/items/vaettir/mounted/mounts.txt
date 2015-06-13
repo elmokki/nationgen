@@ -167,20 +167,20 @@
 #enditem
 
 #newitem
-#name "bear"
+#name "great bear"
 #gameid -1
 #sprite /graphics/mounts/standard/bear.png
 #armor
 #define "#size 4"
-#define "#mapmove 2"
+#define "#mapmove 3"
 #define "#ap 16"
 #define "#mounted"
-#define "#weapon 19 --- Bite"
+#define "#weapon 237 --- Bite"
 #define "#weapon 236 -- Claw"
 #define "#secondtmpshape bearmount"
-#define "#gcost +35"
-#define "#rcost +10"
+#define "#gcost +40"
 #define "#ressize 1"
+#define "#rcost +10"
 #define "#enc 4"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety -24
@@ -193,8 +193,37 @@
 #theme "totemanimal"
 #tag "name commander beastmaster"
 #tag "guaranteedprefix bear"
-#tag "minprot 10"
+#tag "minprot 12"
 #basechance 0.5
+#enditem
+
+#newitem
+#name "bear"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_small.png
+#armor
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 14"
+#define "#mounted"
+#define "#weapon 236 -- Claw"
+#define "#secondshape smallbearmount"
+#define "#gcost +35"
+#define "#ressize 1"
+#define "#rcost +6"
+#define "#enc 4"
+#description "If the rider dies, the bear will continue to fight alongside its Vaetti companions."
+#offsety -16
+#offsetx -1
+#theme "specialmount"
+#theme "heavy"
+#theme "animal bear"
+#theme "bear"
+#theme "beartotem"
+#theme "totemanimal"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
 #enditem
 
 #newitem

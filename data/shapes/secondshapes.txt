@@ -42,6 +42,59 @@
 #command "#transformation 0"
 #end
 
+
+#new secondshape
+#name "werebear"
+#command "#spr1 ./graphics/mounts/standard/bear_small_upright.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -1"
+#command "#name Werebear"
+#command "#weapon 20"
+#command "#weapon 29"
+#command "#size 3"
+#command "#hp 33"
+#command "#prot 8"
+#command "#mor 17"
+#command "#mr 13"
+#command "#enc 2"
+#command "#str 17"
+#command "#att 12"
+#command "#def 9"
+#command "#prec 5"
+#command "#mapmove 3"
+#command "#ap 14"
+#command "#berserk +1"
+#command "#heal"
+#command "#forestsurvival"
+#command "#mountainsurvival"
+#end
+
+#new secondshape
+#name "bear"
+#command "#spr1 ./graphics/mounts/standard/bear_small.png"
+#command "#spr2 ./graphics/mounts/standard/bear_small_upright.png"
+#command "#magicboost 53 -1"
+#command "#name Bear"
+#command "#weapon 29"
+#command "#size 3"
+#command "#hp 30"
+#command "#prot 8"
+#command "#mor 13"
+#command "#mr 12"
+#command "#enc 3"
+#command "#str 16"
+#command "#att 9"
+#command "#def 8"
+#command "#prec 5"
+#command "#mapmove 3"
+#command "#ap 14"
+#command "#animal"
+#command "#forestsurvival"
+#command "#mountainsurvival"
+#command "#itemslots 12288"
+#command "#transformation 0"
+#end
+
 #new secondshape
 #name "hawk"
 #command "#copystats 1380"
@@ -103,7 +156,6 @@
 #command "#swamp survival"
 #command "#magicboost 53 -1"
 #end
-
 
 #new secondshape
 #name "wingedmonkey"
@@ -671,27 +723,61 @@
 #command "#spr1 ./graphics/mounts/standard/bear.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
-#command "#name 'Bear'"
-#command "#enc 3"
-#command "#ap 16"
-#command "#str 16"
-#command "#mr 8"
-#command "#mor 10"
-#command "#att 10"
-#command "#def 8"
-#command "#hp 30"
-#command "#prec 5"
-#command "#prot 4"
-#command "#size 4"
-#command "#mapmove 2"
-#command "#itemslots 12288"
+#command "#name 'Great Bear'"
 #command "#weapon 20 --- Bite"
 #command "#weapon 29 -- Claw"
+#command "#size 4"
+#command "#hp 40"
+#command "#prot 8"
+#command "#mr 8"
+#command "#mor 13"
+#command "#str 19"
+#command "#att 9"
+#command "#def 7"
+#command "#prec 5"
+#command "#enc 3"
+#command "#mapmove 3"
+#command "#ap 16"
+#command "#animal"
+#command "#undisciplined"
+#command "#forestsurvival"
+#command "#mountainsurvival"
+#command "#itemslots 12288"
+#command "#transformation 0"
 #nowayback
 #nogcost
 #mount
 #end
 
+#new secondshape
+#name "smallbearmount"
+#command "#spr1 ./graphics/mounts/standard/bear_small.png"
+#command "#spr2 ./graphics/mounts/standard/bear_small_upright.png"
+#command "#magicboost 53 -5"
+#command "#name Bear"
+#command "#weapon 29 -- Claw"
+#command "#size 3"
+#command "#hp 30"
+#command "#prot 8"
+#command "#mor 13"
+#command "#mr 5"
+#command "#str 16"
+#command "#att 9"
+#command "#def 8"
+#command "#prec 5"
+#command "#enc 3"
+#command "#mapmove 3"
+#command "#ap 14"
+#command "#animal"
+#command "#undisciplined"
+#command "#forestsurvival"
+#command "#mountainsurvival"
+#command "#itemslots 12288"
+#command "#transformation 0"
+#nowayback
+#nogcost
+#mount
+#end
 
 #new secondshape
 #name "caveman"
