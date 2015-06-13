@@ -1,13 +1,13 @@
 #new
 #sprite "./graphics/flags/top/astral.png"
 #basechance 0.05
-#chanceinc "magic astral 4.95"
+#chanceinc "magic astral 7.95"
 #end
 
 #new
 #sprite "./graphics/flags/top/flame.png"
 #basechance 0.1
-#chanceinc "magic fire 4.9"
+#chanceinc "magic fire 7.9"
 #end
 
 #new
@@ -25,29 +25,60 @@
 #new
 #sprite "./graphics/flags/top/horns.png"
 #basechance 1
-#chanceinc "magic nature 3"
+#chanceinc "magic nature 6"
 #end
 
 #new
 #sprite "./graphics/flags/top/serpent.png"
 #basechance 0.5
 #chanceinc "magic nature 0.5"
-#chanceinc "race lizard 5"
+#chanceinc "race lizard 7"
 #end
 
 #new
 #sprite "./graphics/flags/top/skull.png"
 #basechance 0.1
-#chanceinc "magic death 4.9"
+#chanceinc "magic death 7.9"
 #end
 
 
 #new
 #sprite "./graphics/flags/top/tree.png"
 #basechance 0.5
-#chanceinc "magic nature 3.5"
+#chanceinc "magic nature 7.5"
 #end
 
+#new
+#sprite "./graphics/flags/top/burningskull.png"
+#basechance 0.0
+#chanceinc "magic fire 0.25"
+#chanceinc "magic death 0.25"
+#chanceinc "magic death fire 16"
+#end
+
+#new
+#sprite "./graphics/flags/top/anvil.png"
+#basechance 0.25
+#chanceinc "magic earth 4"
+#chanceinc "avgres 8 0.5"
+#chanceinc "avgres 12 2"
+#chanceinc "avgres 14 4"
+#chanceinc "avgres 16 8"
+#end
+
+#new
+#sprite "./graphics/flags/top/harp.png"
+#basechance 0
+#chanceinc "race sidhe 7.5"
+#chanceinc "magic nature 0.5"
+#end
+
+#new
+#sprite "./graphics/flags/top/harp.png"
+#basechance 0
+#chanceinc "race sidhe 7.5"
+#chanceinc "magic nature 0.5"
+#end
 
 ---- Flag parts by Flypaper
 
@@ -55,14 +86,16 @@
 #sprite "./graphics/flags/top/ankh.png"
 #basechance 0.25
 #chanceinc "magic astral 3.75"
+#chanceinc "magic death 3.75"
 #end
 
 #new
 #sprite "./graphics/flags/top/spidergem.png"
-#basechance 0.25
-#chanceinc "magic death 0.125"
-#chanceinc "magic nature 0.125"
-#chanceinc "magic death nature 2"
+#basechance 0.125
+#chanceinc "magic death 0.25"
+#chanceinc "magic nature 0.25"
+#chanceinc "magic death nature 4"
+#chanceinc "magic astral blood 4"
 #end
 
 #new
@@ -85,7 +118,7 @@
 #new
 #sprite "./graphics/flags/top/clownface.png"
 #basechance 0.05
-#chanceinc "magic death 0.95"
+#chanceinc "magic death 1.95"
 #chanceinc "magic death blood 4"
 #end
 
