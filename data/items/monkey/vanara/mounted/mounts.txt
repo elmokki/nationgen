@@ -518,3 +518,28 @@
 #tag "guaranteedprefix 'cave cow'"
 #chanceinc primaryrace agarthan *100
 #enditem
+
+
+#newitem
+#name "bear"
+#basechance 0.1
+#gameid -1
+#sprite /graphics/mounts/standard/bear_small.png
+#armor
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 14"
+#define "#mounted"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape smallbearmount"
+#define "#gcost +30"
+#define "#ressize 2"
+#define "#enc 4"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#offsety 4
+#offsetx -5
+#theme "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 8"
+#enditem

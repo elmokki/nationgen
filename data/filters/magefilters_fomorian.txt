@@ -724,3 +724,18 @@
 #tag "notfortier 2"
 #power 2
 #end
+
+#new magefilter
+#type "shapeshift"
+#name "greatbear"
+#basechance 0
+#chanceinc "magic nature 0.5"
+#chanceinc "personalcommand mounted *0"
+#command "#shapechange greatbear"
+#tag "personalmagic nature"
+#description "can shapeshift into a great bear"
+#theme "beartotem"
+#theme "totemanimal"
+#tag "notfortier 1"
+#tag "notfortier 2"
+#end

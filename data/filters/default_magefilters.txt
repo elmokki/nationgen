@@ -190,8 +190,6 @@
 #power 3
 #end
 
-
-
 #new magefilter
 #name "coldres"
 #basechance 0.1
@@ -199,7 +197,6 @@
 #chanceinc "magic water 1.5"
 #chanceinc "magic fire 0.25"
 #end
-
 
 #new magefilter
 #name "fireres"
@@ -224,16 +221,12 @@
 #chanceinc "magic nature 0.75"
 #end
 
-
-
 #new magefilter
 #name "majorshockres"
 #basechance 0.1
 #command "#shockres +10"
 #chanceinc "magic air 0.75"
 #end
-
-
 
 #new magefilter
 #name "majorcoldres"
@@ -242,8 +235,6 @@
 #chanceinc "magic water 0.75"
 #chanceinc "magic fire 0.125"
 #end
-
-
 
 #new magefilter
 #name "illusion"
@@ -873,6 +864,7 @@
 #basechance 0.025
 #chanceinc "magic nature 0.3"
 #chanceinc "magic air 0.3"
+#chanceinc "personalcommand mounted *0"
 #command "#shapechange turkey"
 #tag "notfortier 1"
 #description "can shapeshift into a turkey"
@@ -883,6 +875,7 @@
 #name "werewolf"
 #basechance 0.05
 #chanceinc "magic nature 0.5"
+#chanceinc "personalcommand mounted *0"
 #command "#shapechange werewolf"
 #tag "notfortier 1"
 #description "can shapeshift into a werewolf"
@@ -897,6 +890,7 @@
 #name "werewolf2"
 #basechance 0.05
 #chanceinc "magic nature 0.5"
+#chanceinc "personalcommand mounted *0"
 #command "#shapechange werewolf"
 #command "#gcost *1.2"
 #tag "notfortier 1"
@@ -909,9 +903,41 @@
 
 #new magefilter
 #type "shapeshift"
+#name "werebear"
+#basechance 0.05
+#chanceinc "magic nature 0.5"
+#chanceinc "personalcommand mounted *0"
+#command "#shapechange werebear"
+#tag "notfortier 1"
+#tag "notfortier 2"
+#description "can shapeshift into a werebear"
+#power 2
+#theme "beartotem"
+#theme "totemanimal"
+#end
+
+#new magefilter
+#type "shapeshift"
+#name "werebear2"
+#basechance 0.05
+#chanceinc "magic nature 0.5"
+#chanceinc "personalcommand mounted *0"
+#command "#shapechange werebear"
+#command "#gcost *1.2"
+#tag "notfortier 1"
+#tag "notfortier 3"
+#description "can shapeshift into a werebear"
+#power 2
+#theme "beartotem"
+#theme "totemanimal"
+#end
+
+#new magefilter
+#type "shapeshift"
 #name "wolf"
 #basechance 0.05
 #chanceinc "magic nature 1"
+#chanceinc "personalcommand mounted *0"
 #command "#shapechange wolf"
 #description "can shapeshift into a wolf"
 #tag "notfortier 1"
@@ -926,6 +952,7 @@
 #basechance 0.05
 #chanceinc "magic nature 0.75"
 #chanceinc "magic air 0.75"
+#chanceinc "personalcommand mounted *0"
 #command "#shapechange wingedmonkey"
 #description "can shapeshift into a winged monkey"
 #tag "notfortier 1"
@@ -937,6 +964,7 @@
 #basechance 0.0
 #chanceinc "magic blood 0.2"
 #chanceinc "magic blood fire 3"
+#chanceinc "personalcommand mounted *0"
 #command "#shapechange devil"
 #command "#demon"
 #tag "notfortier 1"
@@ -966,6 +994,7 @@
 #basechance 0.0
 #chanceinc "magic blood 0.2"
 #chanceinc "magic blood water 3"
+#chanceinc "personalcommand mounted *0"
 #command "#shapechange frostfiend"
 #command "#demon"
 #tag "notfortier 1"
@@ -979,8 +1008,9 @@
 #new magefilter
 #type "shapeshift"
 #name "greatbear"
-#basechance 0.05
+#basechance 0.025
 #chanceinc "magic nature 1"
+#chanceinc "personalcommand mounted *0"
 #command "#shapechange greatbear"
 #tag "personalmagic nature"
 #description "can shapeshift into a great bear"
@@ -990,9 +1020,23 @@
 
 #new magefilter
 #type "shapeshift"
+#name "bear"
+#basechance 0.05
+#chanceinc "magic nature 1"
+#chanceinc "personalcommand mounted *0"
+#command "#shapechange bear"
+#tag "personalmagic nature"
+#description "can shapeshift into a bear"
+#theme "beartotem"
+#theme "totemanimal"
+#end
+
+#new magefilter
+#type "shapeshift"
 #name "jaguar"
 #basechance 0.025
 #chanceinc "magic nature 1"
+#chanceinc "personalcommand mounted *0"
 #command "#shapechange jaguar"
 #description "can shapeshift into a jaguar"
 #theme "jaguartotem"
@@ -1004,6 +1048,7 @@
 #name "deepone"
 #basechance 0.0
 #chanceinc "magic water 1"
+#chanceinc "personalcommand mounted *0"
 #command "#shapechange deepone"
 #tag "notfortier 1"
 #description "can shapeshift into a deep one"
@@ -1054,6 +1099,7 @@
 #name "serpent"
 #basechance 0.0
 #chanceinc "magic nature 2"
+#chanceinc "personalcommand mounted *0"
 #command "#secondshape hornedserpent"
 #description "can shapeshift into a horned serpent"
 #theme "snaketotem"
@@ -1140,6 +1186,7 @@
 #chanceinc "magic fire 0.25"
 #chanceinc "magic earth 0.25"
 #chanceinc "magic fire earth 2"
+#chanceinc "personalcommand mounted *0"
 #command "#shapechange scorpion"
 #command "#gcost +15"
 #tag "notfortier 1"
@@ -1158,6 +1205,7 @@
 #chanceinc "magic nature earth 1"
 #chanceinc "command darkvision 1"
 #chanceinc "personalcommand darkvision 1"
+#chanceinc "personalcommand mounted *0"
 #command "#shapechange cavecrab"
 #command "#gcost +15"
 #tag "notfortier 1"
@@ -1176,6 +1224,7 @@
 #chanceinc "magic nature air 1"
 #chanceinc "command flying 1"
 #chanceinc "personalcommand flying -10"
+#chanceinc "personalcommand mounted *0"
 #command "#shapechange hawk"
 #command "#gcost +15"
 #tag "notfortier 1"
@@ -1193,6 +1242,7 @@
 #chanceinc "magic nature 0.25"
 #chanceinc "magic nature water 1"
 #chanceinc "command swampsurvival 1"
+#chanceinc "personalcommand mounted *0"
 #command "#shapechange toad"
 #command "#gcost +15"
 #tag "notfortier 1"
@@ -1207,6 +1257,7 @@
 #name "greatboar"
 #basechance 0.1
 #chanceinc "magic nature 1"
+#chanceinc "personalcommand mounted *0"
 #command "#shapechange greatboar"
 #command "#gcost +15"
 #tag "notfortier 1"
@@ -1222,6 +1273,7 @@
 #basechance 0.05
 #chanceinc "magic nature 1"
 #chanceinc "personalcommand #poisonres 1"
+#chanceinc "personalcommand mounted *0"
 #command "#shapechange smallerspider"
 #command "#gcost +15"
 #tag "notfortier 1"
