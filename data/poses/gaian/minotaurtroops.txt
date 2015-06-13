@@ -6,11 +6,8 @@
 #role "infantry"
 #role "scout"
 
-#basechance 0.5
-#chanceinc era 1 *5
-#chanceinc era 3 *0.2
-
-#command "#berserk +4"
+#basedchance 2
+#theme "savage"
 
 #load basesprite /data/items/gaian/minotaur/bases.txt
 #load shadow /data/items/gaian/minotaur/shadow.txt
@@ -34,7 +31,7 @@
 
 #basechance 0.1
 
-#command "#berserk +4"
+#theme "savage"
 
 #load basesprite /data/items/gaian/minotaur/2h_bases.txt
 #load shadow /data/items/gaian/minotaur/shadow.txt
@@ -59,11 +56,8 @@
 #name "DW"
 #role "infantry"
 
-#basechance 0.2
-#chanceinc era 1 *5
-#chanceinc era 3 *0.5
-
-#command "#berserk +4"
+#basedchance 0.1
+#theme "savage"
 
 #dwchancebonus 1
 
@@ -82,22 +76,17 @@
 
 #endpose
 
--------- "Civilized" minotaurs
+-------- Trained minotaurs
 
 #newpose
 #name "soldiers"
 #role "infantry"
 #role "scout"
 
-#basechance 0.5
-#chanceinc era 1 *0.2
-#chanceinc era 3 *5
+#renderorder "shadow bonusweapon cloakb basesprite mount shirt legs armor cloakf quiver weapon offhandw hands hair helmet offhanda overlay"
 
-#command "#hp -2"
-#command "#mr -1"
-#command "#mor +1"
-#command "#att +1"
-#command "#def +1"
+#basedchance 0.1
+#theme "civilized"
 
 #load basesprite /data/items/gaian/minotaur/bases.txt
 #load shadow /data/items/gaian/minotaur/shadow.txt

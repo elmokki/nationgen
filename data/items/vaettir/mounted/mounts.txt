@@ -18,6 +18,8 @@
 #define "#stealthy +0"
 #theme "animal wolf"
 #theme "wolf"
+#theme "wolftotem"
+#theme "totemanimal"
 #tag "maxprot 14"
 #tag "guaranteedprefix wolf"
 #description "If the rider dies, the wolf will continue to fight alongside its Vaetti companions."
@@ -44,6 +46,8 @@
 #define "#stealthy +0"
 #theme "heavy"
 #theme "wolf"
+#theme "wolftotem"
+#theme "totemanimal"
 #theme "animal wolf"
 #tag "minprot 9"
 #tag "maxprot 18"
@@ -71,12 +75,13 @@
 #define "#enc 3"
 #theme "heavy"
 #theme "boar"
+#theme "boartotem"
+#theme "totemanimal"
 #theme "animal boar"
 #tag "guaranteedprefix boar"
 #tag "name commander boarmaster"
 #tag "minprot 9"
 #tag "maxprot 18"
-#basechance 0.5
 #enditem
 
 #newitem
@@ -95,10 +100,11 @@
 #define "#rcost +4"
 #theme "animal deer"
 #theme "deer"
+#theme "deertotem"
+#theme "totemanimal"
 #tag "maxprot 14"
 #tag "guaranteedprefix deer"
 #define "#stealthy +0"
-#basechance 0.5
 #offsety -13
 #offsetx -1
 #enditem
@@ -122,9 +128,10 @@
 #theme "specialmount"
 #theme "animal hawk"
 #theme "hawk"
+#theme "hawktotem"
+#theme "totemanimal"
 #tag "maxprot 16"
 #tag "guaranteedprefix hawk"
-#basechance 0.5
 #offsety 30
 #offsetx 25
 #enditem
@@ -151,9 +158,12 @@
 #define "#stealthy +0"
 #theme "specialmount"
 #theme "animal spider"
+#theme "spider"
+#theme "spidertotem"
+#theme "totemanimal"
 #tag "guaranteedprefix spider"
 #tag "maxprot 12"
-#basechance 0.25
+#basechance 0.5
 #enditem
 
 #newitem
@@ -179,10 +189,12 @@
 #theme "heavy"
 #theme "animal bear"
 #theme "bear"
+#theme "beartotem"
+#theme "totemanimal"
 #tag "name commander beastmaster"
 #tag "guaranteedprefix bear"
 #tag "minprot 10"
-#basechance 0.25
+#basechance 0.5
 #enditem
 
 #newitem
@@ -206,11 +218,13 @@
 #theme "specialmount"
 #theme "heavy"
 #theme "tiger"
+#theme "tigertotem"
+#theme "totemanimal"
 #theme "animal tiger"
 #description "If the rider dies, the tiger will carry on fighting until the end of the battle."
 #tag "guaranteedprefix tiger"
 #chanceinc primaryrace monkey *10
-#basechance 0.25
+#basechance 0.5
 #tag "minprot 9"
 #tag "maxprot 18"
 #enditem
@@ -237,8 +251,10 @@
 #theme "heavy"
 #theme "animal lion"
 #theme "lion"
+#theme "liontotem"
+#theme "totemanimal"
 #tag "guaranteedprefix lion"
-#basechance 0.25
+#basechance 0.5
 #tag "minprot 9"
 #tag "maxprot 18"
 #enditem

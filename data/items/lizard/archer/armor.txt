@@ -2,21 +2,29 @@
 --- Leather
 
 #newitem
-#id 1
+#id leathercuirass1
 #gameid 5
 #sprite /graphics/bodyarmor/standard/leathercuirass.png
 #armor
 #enditem
 
 #newitem
-#id 2
+#id leathercuirass2
+#gameid 5
+#sprite /graphics/bodyarmor/standard/leathercuirass2.png
+#armor
+#basechance 0.25
+#enditem
+
+#newitem
+#id leatherhauberk1
 #gameid 10
 #sprite /graphics/bodyarmor/archer/leatherhauberk.png
 #armor
 #enditem
 
 #newitem
-#id 3
+#id leatherhauberk2
 #gameid 10
 #sprite /graphics/bodyarmor/archer/leatherhauberk2.png
 #armor
@@ -24,7 +32,7 @@
 
 
 #newitem -- full leather
-#id 4
+#id fullleather
 #gameid 15
 #sprite /graphics/bodyarmor/archer/leatherhauberk.png
 #armor
@@ -112,7 +120,6 @@
 
 --- Plate
 
-
 #newitem
 #id 13
 #gameid 9
@@ -121,7 +128,6 @@
 #basechance 0.1
 #enditem
 
-
 #newitem
 #id 14
 #gameid 14
@@ -129,7 +135,6 @@
 #armor
 #basechance 0.1
 #enditem
-
 
 #newitem -- full plate
 #id 15
@@ -151,7 +156,6 @@
 #basechance 0.1
 #enditem
 
-
 #newitem
 #id 17
 #gameid 11
@@ -160,7 +164,6 @@
 #basechance 0.1
 #enditem
 
-
 #newitem
 #id 18
 #gameid 11
@@ -168,7 +171,6 @@
 #armor
 #basechance 0.1
 #enditem
-
 
 #newitem -- full ring
 #id 19
@@ -209,14 +211,4 @@
 #offsetx 1
 #offsety 2
 #basechance 10
-#enditem
-
----
-
-#newitem
-#id 23
-#gameid 5
-#sprite /graphics/bodyarmor/standard/leathercuirass2.png
-#armor
-#basechance 0.25
 #enditem

@@ -61,7 +61,6 @@
 #description "%unitname% is able to reanimate five corpses each month without the use of magic."
 #end
 
-
 #new
 #name "Librarian"
 #command "#inspiringres 1"
@@ -135,8 +134,9 @@
 #chanceinc magic nature 0.5
 #caponlychance 0.8
 #description "%unitname% is able to tame frogs."
+#theme "toadtotem"
+#theme "totemanimal"
 #end
-
 
 #new
 #name "wolfherd"
@@ -148,6 +148,8 @@
 #chanceinc magic nature 0.5
 #caponlychance 0.99
 #description "%unitname% is able to tame wolves."
+#theme "wolftotem"
+#theme "totemanimal"
 #end
 
 #new
@@ -173,7 +175,6 @@
 #description "%unitname% is able to herd goats."
 #end
 
-
 #new
 #name "ant summoner"
 #command "#makemonsters3 1087"
@@ -185,6 +186,8 @@
 #chanceinc magic nature 0.125
 #caponlychance 0.8
 #description "%unitname% is able to tame ants."
+#theme "anttotem"
+#theme "totemanimal"
 #end
 
 #new
@@ -198,4 +201,40 @@
 #chanceinc magic nature death 1
 #caponlychance 0.8
 #description "%unitname% is able to tame flies."
+#end
+
+#new
+#name "spider summoner"
+#command "#makemonsters3 2223"
+#command "#gcost +30"
+#unitname "Spiderbreeder"
+#unitname "Web Master"
+#unitname "Lord of Spiders"
+#basechance 0.0
+#chanceinc magic nature 0.125
+#chanceinc "personalcommand #poisonres 0.075"
+#caponlychance 0.8
+#description "%unitname% is able to tame oversized spiders."
+#theme "spidertotem"
+#theme "totemanimal"
+#end
+
+#new
+#name "scorpion summoner"
+#command "#makemonsters3 2232"
+#command "#gcost +30"
+#unitname "Scorpion Trainer"
+#unitname "Scorpion Master"
+#unitname "Scorpionherd"
+#basechance 0.0
+#chanceinc magic earth 0.125
+#chanceinc magic death 0.05
+#chanceinc magic fire 0.05
+#chanceinc magic earth death 0.5
+#chanceinc magic earth fire 0.5
+#chanceinc "personalcommand #poisonres 0.075"
+#caponlychance 0.8
+#description "%unitname% is able to tame oversized scorpions."
+#theme "scorpiontotem"
+#theme "totemanimal"
 #end

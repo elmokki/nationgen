@@ -81,7 +81,6 @@
 #chanceinc "magic nature 0.5"
 #end
 
-
 #new magefilter
 #name "iceprot"
 #basechance 0.125
@@ -98,8 +97,6 @@
 #chanceinc "magic air 0.75"
 #chanceinc "magic astral 0.25"
 #end
-
-
 
 #new magefilter
 #name "elegist 1"
@@ -137,7 +134,6 @@
 #chanceinc "command #chaosrec 100"
 #chanceinc "command #chaospower 100"
 #end
-
 
 #new
 #name "chaosrec_high"
@@ -183,8 +179,6 @@
 #power 3
 #end
 
-
-
 #new magefilter
 #name "coldres"
 #basechance 0.1
@@ -192,8 +186,6 @@
 #chanceinc "magic water 1.5"
 #chanceinc "magic fire 0.25"
 #end
-
-
 
 #new magefilter
 #name "fireres"
@@ -203,8 +195,6 @@
 #chanceinc "magic water 0.25"
 #end
 
-
-
 #new magefilter
 #name "majorfireres"
 #basechance 0.1
@@ -213,16 +203,12 @@
 #chanceinc "magic water 0.125"
 #end
 
-
-
 #new magefilter
 #name "majorpoisonres"
 #basechance 0.1
 #command "#poisonres +10"
 #chanceinc "magic nature 0.75"
 #end
-
-
 
 #new magefilter
 #name "majorshockres"
@@ -231,8 +217,6 @@
 #chanceinc "magic air 0.75"
 #end
 
-
-
 #new magefilter
 #name "majorcoldres"
 #basechance 0.1
@@ -240,8 +224,6 @@
 #chanceinc "magic water 0.75"
 #chanceinc "magic fire 0.125"
 #end
-
-
 
 #new magefilter
 #name "illusion"
@@ -256,16 +238,12 @@
 #chanceinc "race vanir -20"
 #end
 
-
-
 #new magefilter
 #name "holy"
 #basechance 0.2
 #primarycommand "#holy"
 #command "#holy"
 #end
-
-
 
 #new magefilter
 #name "amphibian"
@@ -275,10 +253,7 @@
 #tag "personalmagic water"
 #end
 
-
-
 #new magefilter
-
 #name "flying"
 #basechance 0.0
 #command "#flying"
@@ -289,8 +264,6 @@
 #power 3
 #end
 
-
-
 #new magefilter
 #name "sailing"
 #basechance 0.25
@@ -299,8 +272,6 @@
 #chanceinc "magic water 0.35"
 #end
 
-
-
 #new magefilter
 #name "forestsurvival"
 #basechance 0.0
@@ -308,8 +279,6 @@
 #chanceinc "magic nature 0.5"
 #tag "notfortier 3"
 #end
-
-
 
 #new magefilter
 #name "mountainsurvival"
@@ -320,8 +289,6 @@
 #tag "notfortier 3"
 #end
 
-
-
 #new magefilter
 #name "swampsurvival"
 #basechance 0.0
@@ -330,8 +297,6 @@
 #chanceinc "magic water 0.25"
 #tag "notfortier 3"
 #end
-
-
 
 #new magefilter
 #name "wastesurvival"
@@ -342,16 +307,12 @@
 #tag "notfortier 3"
 #end
 
-
-
 #new magefilter
 #name "forestsurvival all"
 #basechance 0.0
 #command "#forestsurvival"
 #chanceinc "magic nature 0.25"
 #end
-
-
 
 #new magefilter
 #name "mountainsurvival all"
@@ -360,8 +321,6 @@
 #chanceinc "magic nature 0.125"
 #chanceinc "magic earth 0.125"
 #end
-
-
 
 #new magefilter
 #name "swampsurvival all"
@@ -410,8 +369,6 @@
 #power 2
 #end
 
-
-
 #new magefilter
 #name "assassin"
 #basechance 0.2
@@ -423,8 +380,6 @@
 #tag "notfortier 3"
 #power 2
 #end
-
-
 
 #new magefilter
 #name "assassin2"
@@ -438,10 +393,6 @@
 #power 2
 #end
 
-
-
-
-
 #new magefilter
 #name "ethereal"
 #basechance 0.1
@@ -452,8 +403,6 @@
 #tag "personalmagic astral"
 #power 3
 #end
-
-
 
 #new magefilter
 #name "ethereal2"
@@ -468,10 +417,6 @@
 #power 3
 #end
 
-
-
-
-
 #new magefilter
 #name "awe"
 #basechance 0.4
@@ -483,8 +428,6 @@
 #power 2
 #end
 
-
-
 #new magefilter
 #name "fear"
 #basechance 0.2
@@ -494,10 +437,6 @@
 #tag "notfortier 2"
 #end
 
-
-
-
-
 #new magefilter
 #name "regeneration"
 #basechance 0.1
@@ -506,8 +445,6 @@
 #tag "notfortier 1"
 #tag "personalmagic nature"
 #end
-
-
 
 #new magefilter
 #name "fireshield"
@@ -519,8 +456,6 @@
 #tag "personalmagic fire"
 #end
 
-
-
 #new magefilter
 #name "poisonarmor"
 #basechance 0
@@ -528,8 +463,6 @@
 #chanceinc "magic nature 2"
 #tag "notfortier 1"
 #end
-
-
 
 #new magefilter
 #name "nobadevents1"
@@ -541,8 +474,6 @@
 #chanceinc "magic astral 0.8"
 #end
 
-
-
 #new magefilter
 #name "nobadevents2"
 #basechance 0.05
@@ -553,8 +484,6 @@
 #tag "notfortier 3"
 #end
 
-
-
 #new magefilter
 #name "nobadevents3"
 #basechance 0.025
@@ -563,8 +492,6 @@
 #tag "notfortier 1"
 #tag "notfortier 3"
 #end
-
-
 
 #new magefilter
 #name "nobadevents4"
@@ -583,16 +510,12 @@
 #tag "personalmagic holy"
 #end
 
-
-
 #new magefilter
 #name "drainimmune"
 #basechance 0.5
 #command "#drainimmune"
 #power 3
 #end
-
-
 
 #new magefilter
 #type "healer"
@@ -608,8 +531,6 @@
 #power 3
 #end
 
-
-
 #new magefilter
 #type "healer"
 #name "healerscaling 2"
@@ -622,8 +543,6 @@
 #valuemulti 35
 #power 3
 #end
-
-
 
 #new magefilter
 #type "healer"
@@ -638,8 +557,6 @@
 #power 2
 #end
 
-
-
 #new magefilter
 #type "healer"
 #name "autohealer 3"
@@ -653,8 +570,6 @@
 #power 2
 #end
 
-
-
 #new magefilter
 #type "healer"
 #name "autodishealer2"
@@ -667,8 +582,6 @@
 #power 3
 #end
 
-
-
 #new magefilter
 #name "recuperation"
 #basechance 0.1
@@ -676,8 +589,6 @@
 #chanceinc "personalcommand startaff 1.5"
 #command "#heal"
 #end
-
-
 
 #new magefilter
 #type "darkvision"
@@ -687,8 +598,6 @@
 #command "#darkvision +50"
 #end
 
-
-
 #new magefilter
 #type "darkvision"
 #name "darkvision100"
@@ -696,8 +605,6 @@
 #chanceinc "magic earth 0.15"
 #command "#darkvision 100"
 #end
-
-
 
 #new magefilter
 #name "warriormage"
@@ -745,7 +652,6 @@
 #power 3
 #end
 
-
 #new magefilter
 #type "forge"
 #name "forgebonus 1 primary"
@@ -790,8 +696,6 @@
 #description "has charged body"
 #end
 
-
-
 #new magefilter
 #name "shikigami_primary"
 #type "familiar"
@@ -815,7 +719,6 @@
 #description "has a shikigami familiar"
 #end
 
-
 #new magefilter
 #name "imp_primary"
 #type "familiar"
@@ -836,7 +739,6 @@
 #tag "notfortier 1"
 #description "has bound an imp to serve as a familiar"
 #end
-
 
 #new magefilter
 #name "blackdog_primary"
@@ -908,7 +810,6 @@
 #tag "notfortier 2"
 #power 2
 #end
-
 
 #new magefilter
 #name "waterele"

@@ -1,5 +1,22 @@
 #newitem
-#name "basesprite"
+#name "basesprite_savage"
 #gameid -1
 #sprite /graphics/gaian/minotaur/minotaur_basesprite.png
+#command "#berserk +4"
+#theme "savage"
+#theme "primitive"
+#enditem
+
+#newitem
+#name "basesprite_civilized"
+#basechance 0.01
+#gameid -1
+#sprite /graphics/gaian/minotaur/minotaur_basesprite.png
+#command "#hp -2"
+#command "#mr -1"
+#command "#mor +1"
+#command "#att +1"
+#command "#def +1"
+#theme "advanced"
+#theme "civilized"
 #enditem

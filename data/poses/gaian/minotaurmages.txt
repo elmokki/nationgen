@@ -6,17 +6,14 @@
 #role "mage"
 #role "priest"
 
-#command "#berserk +4"
-
-
-#load basesprite /data/items/gaian/minotaur/bases.txt
+#load basesprite /data/items/gaian/minotaur/bases_caster.txt
 #load shadow /data/items/gaian/minotaur/shadow.txt
-#load hands /data/items/gaian/minotaur/1h_hands.txt
+#load hands /data/items/gaian/minotaur/hafted_hands.txt
 
 #load armor /data/items/gaian/minotaur/robes.txt
+#load armor /data/items/gaian/minotaur/armor_caster.txt
 
-#load weapon /data/items/gaian/minotaur/weapon_caster.txt
-
+#load weapon /data/items/gaian/minotaur/hafted_weapon.txt
 
 #load cloakf /data/items/gaian/minotaur/cloakf.txt
 #load cloakb /data/items/gaian/minotaur/cloakb.txt
@@ -25,25 +22,26 @@
 #notfortier 2
 #notfortier 3
 
+#dontvaryhat
+
 #endpose
 
 
 
 #newpose
-#basechance 0.15
 #name "tier 2-3 mature elder"
 #role "mage"
 #role "priest"
 
+#renderorder "shadow weapon cloakb basesprite armor bonusweapon offhandw hands cloakf helmet offhanda"
 
-#load basesprite /data/items/gaian/minotaur/bases.txt
+#load basesprite /data/items/gaian/minotaur/bases_caster.txt
 #load shadow /data/items/gaian/minotaur/shadow.txt
-#load hands /data/items/gaian/minotaur/1h_hands.txt
+#load hands /data/items/gaian/minotaur/caster_hands.txt
 
 #load armor /data/items/gaian/minotaur/robes.txt
 
 #load weapon /data/items/gaian/minotaur/weapon_caster.txt
-
 
 #load cloakf /data/items/gaian/minotaur/cloakf.txt
 #load cloakb /data/items/gaian/minotaur/cloakb.txt
@@ -51,5 +49,7 @@
 #tier 3
 #tier 2
 #notfortier 1
+
+#dontvaryhat
 
 #endpose

@@ -2,29 +2,35 @@
 --- Leather
 
 #newitem
-#id 1
+#id leathercuirass1
 #gameid 5
 #sprite /graphics/bodyarmor/standard/leathercuirass.png
 #armor
 #enditem
 
 #newitem
-#id 2
+#id leathercuirass2
+#gameid 5
+#sprite /graphics/bodyarmor/standard/leathercuirass2.png
+#armor
+#enditem
+
+#newitem
+#id leatherhauberk1
 #gameid 10
 #sprite /graphics/bodyarmor/archer/leatherhauberk.png
 #armor
 #enditem
 
 #newitem
-#id 3
+#id leatherhauberk2
 #gameid 10
 #sprite /graphics/bodyarmor/archer/leatherhauberk2.png
 #armor
 #enditem
 
-
 #newitem -- full leather
-#id 4
+#id fullleather
 #gameid 15
 #sprite /graphics/bodyarmor/archer/leatherhauberk.png
 #needs legs leatherpants
@@ -34,7 +40,6 @@
 
 --- Chain Mail
 
-
 #newitem
 #id 5
 #gameid 8
@@ -42,22 +47,21 @@
 #armor
 #enditem
 
-
 #newitem
 #id 6
 #gameid 13
 #sprite /graphics/bodyarmor/archer/mailhauberk1.png
 #armor
+#basechance 0.25
 #enditem
-
 
 #newitem
 #id 7
 #gameid 13
 #sprite /graphics/bodyarmor/archer/mailhauberk2.png
 #armor
+#basechance 0.25
 #enditem
-
 
 #newitem -- full chain
 #id 8
@@ -65,6 +69,7 @@
 #sprite /graphics/bodyarmor/archer/mailhauberk1.png
 #armor
 #needs legs chainpants
+#basechance 0.25
 #enditem
 
 
@@ -77,22 +82,21 @@
 #armor
 #enditem
 
-
 #newitem
 #id 10
 #gameid 12
 #sprite /graphics/bodyarmor/archer/mailhauberk1.png
 #armor
+#basechance 0.25
 #enditem
-
 
 #newitem
 #id 11
 #gameid 12
 #sprite /graphics/bodyarmor/archer/mailhauberk2.png
 #armor
+#basechance 0.25
 #enditem
-
 
 #newitem -- full scale
 #id 12
@@ -100,25 +104,26 @@
 #sprite /graphics/bodyarmor/archer/mailhauberk1.png
 #armor
 #needs legs chainpants
+#basechance 0.25
 #enditem
 
 
 --- Plate
-
 
 #newitem
 #id 13
 #gameid 9
 #sprite /graphics/bodyarmor/standard/platecuirass.png
 #armor
+#basechance 0.5
 #enditem
-
 
 #newitem
 #id 14
 #gameid 14
 #sprite /graphics/bodyarmor/archer/platehauberk.png
 #armor
+#basechance 0.25
 #enditem
 
 
@@ -128,6 +133,7 @@
 #sprite /graphics/bodyarmor/archer/platehauberk.png
 #armor
 #needs legs platepants
+#basechance 0.125
 #enditem
 
 
@@ -138,8 +144,8 @@
 #gameid 6
 #sprite /graphics/bodyarmor/standard/ringcuirass.png
 #armor
+#basechance 2
 #enditem
-
 
 #newitem
 #id 17
@@ -148,14 +154,12 @@
 #armor
 #enditem
 
-
 #newitem
 #id 18
 #gameid 11
 #sprite /graphics/bodyarmor/archer/ringhauberk2.png
 #armor
 #enditem
-
 
 #newitem -- full ring
 #id 19
@@ -185,14 +189,4 @@
 #armor
 #theme "oriental"
 #basechance 0.5
-#enditem
-
-
---
-
-#newitem
-#id 23
-#gameid 5
-#sprite /graphics/bodyarmor/standard/leathercuirass2.png
-#armor
 #enditem

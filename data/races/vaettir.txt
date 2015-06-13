@@ -1,6 +1,7 @@
 #newrace
 #name "Vaetti"
 #basechance 0.1
+#basechance 10000
 #all_troops_sacred
 #all_troops_elite
 
@@ -9,12 +10,13 @@
 #pose vaettimages
 
 #nationthemes vaetti_themes
+#freetheme tribal
 
 #longsyllables /data/names/nations/nordic/longsyllables.txt
 #shortsyllables /data/names/nations/nordic/shortsyllables.txt
 #suffixes /data/names/nations/nordic/suffixes.txt
 
-#tag "preferredmount wolf"
+-- #tag "preferredmount wolf" -- Given by tribe if applicable
 
 #sacredcavalrychance 1
 #sacredrangerchance 0.5
@@ -52,6 +54,6 @@
 -- Typically just mooses, but still
 #monsterchance 0.5 
 
-#description "The Wolf Kin, or Vaettir as they call themselves, are a race of forest-dwelling goblins. They are small and stealthy and can hide in enemy territory."
+#description "The Vaettir are a race of forest-dwelling goblins. They are small and stealthy and can hide in enemy territory."
 
 #endrace

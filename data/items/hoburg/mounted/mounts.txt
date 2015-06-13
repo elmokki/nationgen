@@ -312,3 +312,27 @@
 #offsetx 0
 #enditem
 
+#newitem
+#name "crocodile"
+#basechance 0.33
+#gameid -1
+#sprite /graphics/mounts/standard/crocodile_mount.png
+#offsetx 25
+#offsety -7
+#armor
+#define "#size 3"
+#define "#mapmove 1"
+#define "#ap 8"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#gcost +30"
+#define "#ressize 1"
+#define "#enc 3"
+#define "#swampsurvival"
+#define "#secondtmpshape crocodilemount"
+#description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
+#theme "animal crocodile"
+#theme "light"
+#theme "specialmount"
+#tag "guaranteedprefix crocodile"
+#enditem
