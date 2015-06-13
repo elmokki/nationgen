@@ -497,8 +497,15 @@ public class ChanceIncHandler {
 						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
 					}
 				}
-				
-				if(args.get(0).equals("racename") && args.size() >= 3 && f.name != null)
+				else if(args.get(0).equals("owntag") && args.size() >= 3)
+				{
+					boolean not = args.contains("not");
+					if(f.tags.contains(args.get(args.size() - 2)) != not)
+					{
+						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+					}
+				}
+				else if(args.get(0).equals("racename") && args.size() >= 3 && f.name != null)
 				{
 					boolean not = args.contains("not");
 	
@@ -1013,10 +1020,30 @@ public class ChanceIncHandler {
 						continue;
 					}
 				}
+				else if(args.get(0).equals("racetheme") && args.size() > 2)
+				{
+
+					boolean contains = Generic.containsTag(u.race.themes, args.get(1));					
+					if(contains)
+					{
+						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						continue;
+					}
+				}
 				else if(args.get(0).equals("posetag") && args.size() > 2)
 				{
 
 					boolean contains = Generic.containsTag(u.pose.tags, args.get(1));					
+					if(contains)
+					{
+						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						continue;
+					}
+				}
+				else if(args.get(0).equals("posetheme") && args.size() > 2)
+				{
+
+					boolean contains = Generic.containsTag(u.pose.themes, args.get(1));					
 					if(contains)
 					{
 						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
@@ -1040,6 +1067,24 @@ public class ChanceIncHandler {
 					boolean contains = false;
 					for(Item i : u.slotmap.values())
 						if(Generic.containsTag(i.tags, args.get(args.size() - 2)))
+						{
+							contains = true;
+							break;
+						}
+					
+					if(contains != not)
+					{
+						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						continue;
+					}
+				}
+				else if(args.get(0).equals("itemtheme") && args.size() > 2)
+				{
+
+					boolean not = args.contains("not");
+					boolean contains = false;
+					for(Item i : u.slotmap.values())
+						if(Generic.containsTag(i.themes, args.get(args.size() - 2)))
 						{
 							contains = true;
 							break;
