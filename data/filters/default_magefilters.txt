@@ -258,16 +258,12 @@
 #chanceinc "race vanir -20"
 #end
 
-
-
 #new magefilter
 #name "holy"
 #basechance 0.2
 #primarycommand "#holy"
 #command "#holy"
 #end
-
-
 
 #new magefilter
 #name "amphibian"
@@ -277,10 +273,7 @@
 #tag "personalmagic water"
 #end
 
-
-
 #new magefilter
-
 #name "flying"
 #basechance 0.0
 #command "#flying"
@@ -291,8 +284,6 @@
 #power 3
 #end
 
-
-
 #new magefilter
 #name "sailing"
 #basechance 0.25
@@ -301,8 +292,6 @@
 #chanceinc "magic water 0.35"
 #end
 
-
-
 #new magefilter
 #name "forestsurvival"
 #basechance 0.0
@@ -310,8 +299,6 @@
 #chanceinc "magic nature 0.5"
 #tag "notfortier 3"
 #end
-
-
 
 #new magefilter
 #name "mountainsurvival"
@@ -322,8 +309,6 @@
 #tag "notfortier 3"
 #end
 
-
-
 #new magefilter
 #name "swampsurvival"
 #basechance 0.0
@@ -332,8 +317,6 @@
 #chanceinc "magic water 0.25"
 #tag "notfortier 3"
 #end
-
-
 
 #new magefilter
 #name "wastesurvival"
@@ -344,16 +327,12 @@
 #tag "notfortier 3"
 #end
 
-
-
 #new magefilter
 #name "forestsurvival all"
 #basechance 0.0
 #command "#forestsurvival"
 #chanceinc "magic nature 0.25"
 #end
-
-
 
 #new magefilter
 #name "mountainsurvival all"
@@ -362,8 +341,6 @@
 #chanceinc "magic nature 0.125"
 #chanceinc "magic earth 0.125"
 #end
-
-
 
 #new magefilter
 #name "swampsurvival all"
@@ -412,8 +389,6 @@
 #power 2
 #end
 
-
-
 #new magefilter
 #name "assassin"
 #basechance 0.2
@@ -425,8 +400,6 @@
 #tag "notfortier 3"
 #power 2
 #end
-
-
 
 #new magefilter
 #name "assassin2"
@@ -440,10 +413,6 @@
 #power 2
 #end
 
-
-
-
-
 #new magefilter
 #name "ethereal"
 #basechance 0.1
@@ -454,8 +423,6 @@
 #tag "personalmagic astral"
 #power 3
 #end
-
-
 
 #new magefilter
 #name "ethereal2"
@@ -470,8 +437,6 @@
 #power 3
 #end
 
-
-
 #new magefilter
 #name "awe"
 #basechance 0.4
@@ -483,8 +448,6 @@
 #power 2
 #end
 
-
-
 #new magefilter
 #name "fear"
 #basechance 0.2
@@ -494,7 +457,6 @@
 #tag "notfortier 2"
 #end
 
-
 #new magefilter
 #name "regeneration"
 #basechance 0.1
@@ -503,8 +465,6 @@
 #tag "notfortier 1"
 #tag "personalmagic nature"
 #end
-
-
 
 #new magefilter
 #name "fireshield"
@@ -516,8 +476,6 @@
 #tag "personalmagic fire"
 #end
 
-
-
 #new magefilter
 #name "poisonarmor"
 #basechance 0
@@ -525,8 +483,6 @@
 #chanceinc "magic nature 2"
 #tag "notfortier 1"
 #end
-
-
 
 #new magefilter
 #name "nobadevents1"
@@ -538,8 +494,6 @@
 #chanceinc "magic astral 0.8"
 #end
 
-
-
 #new magefilter
 #name "nobadevents2"
 #basechance 0.05
@@ -550,8 +504,6 @@
 #tag "notfortier 3"
 #end
 
-
-
 #new magefilter
 #name "nobadevents3"
 #basechance 0.025
@@ -560,8 +512,6 @@
 #tag "notfortier 1"
 #tag "notfortier 3"
 #end
-
-
 
 #new magefilter
 #name "nobadevents4"
@@ -580,16 +530,12 @@
 #tag "personalmagic holy"
 #end
 
-
-
 #new magefilter
 #name "drainimmune"
 #basechance 0.5
 #command "#drainimmune"
 #power 3
 #end
-
-
 
 #new magefilter
 #type "healer"
@@ -605,8 +551,6 @@
 #power 3
 #end
 
-
-
 #new magefilter
 #type "healer"
 #name "healerscaling 2"
@@ -619,8 +563,6 @@
 #valuemulti 35
 #power 3
 #end
-
-
 
 #new magefilter
 #type "healer"
@@ -635,8 +577,6 @@
 #power 2
 #end
 
-
-
 #new magefilter
 #type "healer"
 #name "autohealer 3"
@@ -650,8 +590,6 @@
 #power 2
 #end
 
-
-
 #new magefilter
 #type "healer"
 #name "autodishealer2"
@@ -664,8 +602,6 @@
 #power 3
 #end
 
-
-
 #new magefilter
 #name "recuperation"
 #basechance 0.1
@@ -673,8 +609,6 @@
 #chanceinc "personalcommand startaff 1.5"
 #command "#heal"
 #end
-
-
 
 #new magefilter
 #type "darkvision"
@@ -684,8 +618,6 @@
 #command "#darkvision +50"
 #end
 
-
-
 #new magefilter
 #type "darkvision"
 #name "darkvision100"
@@ -693,8 +625,6 @@
 #chanceinc "magic earth 0.15"
 #command "#darkvision 100"
 #end
-
-
 
 #new magefilter
 #name "warriormage"
@@ -742,7 +672,6 @@
 #power 3
 #end
 
-
 #new magefilter
 #type "forge"
 #name "forgebonus 1 primary"
@@ -786,8 +715,6 @@
 #chanceinc "magic air 0.5"
 #description "has charged body"
 #end
-
-
 
 #new magefilter
 #name "shikigami_primary"
@@ -904,7 +831,6 @@
 #power 2
 #end
 
-
 #new magefilter
 #name "waterele"
 #type "familiar"
@@ -941,7 +867,6 @@
 #power 2
 #end
 
-
 #new magefilter
 #type "shapeshift"
 #name "turkeyshape"
@@ -953,8 +878,6 @@
 #description "can shapeshift into a turkey"
 #end
 
-
-
 #new magefilter
 #type "shapeshift"
 #name "werewolf"
@@ -965,9 +888,9 @@
 #description "can shapeshift into a werewolf"
 #tag "notfortier 2"
 #power 2
+#theme "wolftotem"
+#theme "totemanimal"
 #end
-
-
 
 #new magefilter
 #type "shapeshift"
@@ -980,9 +903,9 @@
 #description "can shapeshift into a werewolf"
 #tag "notfortier 3"
 #power 2
+#theme "wolftotem"
+#theme "totemanimal"
 #end
-
-
 
 #new magefilter
 #type "shapeshift"
@@ -993,9 +916,9 @@
 #description "can shapeshift into a wolf"
 #tag "notfortier 1"
 #power 2
+#theme "wolftotem"
+#theme "totemanimal"
 #end
-
-
 
 #new magefilter
 #type "shapeshift"
@@ -1007,8 +930,6 @@
 #description "can shapeshift into a winged monkey"
 #tag "notfortier 1"
 #end
-
-
 
 #new magefilter
 #type "shapeshift"
@@ -1026,9 +947,6 @@
 #power 2
 #end
 
-
-
-
 #new
 #name "vineman"
 #type "shapeshift"
@@ -1041,9 +959,6 @@
 #description "becomes a vine man upon death"
 #power 2
 #end
-
-
-
 
 #new magefilter
 #type "shapeshift"
@@ -1061,7 +976,6 @@
 #power 2
 #end
 
-
 #new magefilter
 #type "shapeshift"
 #name "greatbear"
@@ -1070,8 +984,9 @@
 #command "#shapechange greatbear"
 #tag "personalmagic nature"
 #description "can shapeshift into a great bear"
+#theme "beartotem"
+#theme "totemanimal"
 #end
-
 
 #new magefilter
 #type "shapeshift"
@@ -1080,9 +995,9 @@
 #chanceinc "magic nature 1"
 #command "#shapechange jaguar"
 #description "can shapeshift into a jaguar"
+#theme "jaguartotem"
+#theme "totemanimal"
 #end
-
-
 
 #new magefilter
 #type "shapeshift"
@@ -1094,7 +1009,6 @@
 #description "can shapeshift into a deep one"
 #tag "personalmagic water"
 #end
-
 
 #new magefilter
 #type "shapeshift"
@@ -1110,8 +1024,6 @@
 #power 2
 #end
 
-
-
 #new magefilter
 #type "shapeshift"
 #name "ghost"
@@ -1123,7 +1035,6 @@
 #tag "personalmagic death"
 #description "is able to grasp into mortal life on death, being able to avenge it's own death as a ghost"
 #end
-
 
 #new magefilter
 #type "shapeshift"
@@ -1145,8 +1056,9 @@
 #chanceinc "magic nature 2"
 #command "#secondshape hornedserpent"
 #description "can shapeshift into a horned serpent"
+#theme "snaketotem"
+#theme "totemanimal"
 #end
-
 
 #new magefilter
 #name "crossbreeder"
@@ -1181,7 +1093,6 @@
 #tag "notfortier 1"
 #description "explodes as a burst of elemental energy upon death, spawning an elemental"
 #end
-
 
 #new magefilter
 #type "shapeshift"
@@ -1222,7 +1133,6 @@
 #power 2
 #end
 
-
 #new magefilter
 #type "shapeshift"
 #name "scorpion"
@@ -1235,6 +1145,8 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #description "can shapeshift into a scorpion"
+#theme "scorpiontotem"
+#theme "totemanimal"
 #end
 
 #new magefilter
@@ -1251,6 +1163,8 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #description "can shapeshift into a cave crab"
+#theme "crabtotem"
+#theme "totemanimal"
 #end
 
 #new magefilter
@@ -1267,6 +1181,8 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #description "can shapeshift into a hawk"
+#theme "hawktotem"
+#theme "totemanimal"
 #end
 
 #new magefilter
@@ -1282,6 +1198,8 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #description "can shapeshift into a giant toad"
+#theme "toadtotem"
+#theme "totemanimal"
 #end
 
 #new magefilter
@@ -1294,5 +1212,21 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #description "can shapeshift into a great boar"
+#theme "boartotem"
+#theme "totemanimal"
 #end
 
+#new magefilter
+#type "shapeshift"
+#name "spider"
+#basechance 0.05
+#chanceinc "magic nature 1"
+#chanceinc "personalcommand #poisonres 1"
+#command "#shapechange smallerspider"
+#command "#gcost +15"
+#tag "notfortier 1"
+#tag "notfortier 2"
+#description "can shapeshift into a giant spider"
+#theme "spidertotem"
+#theme "totemanimal"
+#end

@@ -198,6 +198,31 @@
 #end
 
 #new secondshape
+#name "smallerspider"
+#command "#copyspr 782"
+#command "#magicboost 53 -1"
+#command "#weapon 65"
+#command "#size 3"
+#command "#hp 12"
+#command "#prot 8"
+#command "#mor 10"
+#command "#enc 2"
+#command "#str 8"
+#command "#att 12"
+#command "#def 10"
+#command "#prec 5"
+#command "#mapmove 2"
+#command "#ap 14"
+#command "#enc 2"
+#command "#animal"
+#command "#resistpoison 15"
+#command "#forestsurvival"
+#command "#itemslots 12288"
+#command "#transformation 0"
+#keepname
+#end
+
+#new secondshape
 #name "felemental"
 #command "#copystats 594"
 #command "#copyspr 594"
@@ -314,7 +339,6 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 12288"
 #end
-
 
 --- Mounts
 
