@@ -17,7 +17,6 @@
 #tag "notfortier 2" 
 #end
 
-
 -- Disabled since they don't work right now
 #new magefilter
 #name "divineins 3-3"
@@ -91,7 +90,6 @@
 #chanceinc "personalmagic holy 3"
 #end
 
-
 #new
 #name "autodishealer 1"
 #basechance 0.05
@@ -108,7 +106,6 @@
 #command "#gcost +50"
 #power 2
 #end
-
 
 #new magefilter
 #name "elegist 1"
@@ -139,7 +136,6 @@
 #notfortier 2
 #power 3
 #end
-
 
 #new magefilter
 #name "healer 10"
@@ -174,4 +170,20 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #power 3
+#end
+
+#new
+#name "comslave"
+#command "#comslave"
+#command "#gcost +15"
+#unitname "Communicant"
+#unitname "Sabbath Slave"
+#basechance 0
+#chanceinc magic astral 0.05
+#chanceinc magic blood 0.025
+#chanceinc "personalmagic astral -0.05"
+#chanceinc "personalmagic blood -0.025"
+#description "%unitname% is able to serve as a communion or sabbath slave."
+#notfortier 3
+#notfortier 2
 #end

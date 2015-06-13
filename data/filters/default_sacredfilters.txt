@@ -10,7 +10,6 @@
 #tag "nopose mounted"
 #end
 
-
 #new
 #name "berserklowest"
 #type "berserk"
@@ -76,7 +75,6 @@
 #chanceinc "command #chaospower 100"
 #end
 
-
 #new
 #name "deathrec"
 #type "chaosrec"
@@ -87,7 +85,6 @@
 #chanceinc "magic death 5"
 #end
 
-
 #new
 #name "chaosrec_high"
 #type "chaosrec"
@@ -97,7 +94,6 @@
 #chanceinc "command #chaospower 25"
 #end
 
-
 #new
 #name "chaospower"
 #basechance 0.1
@@ -105,7 +101,6 @@
 #chanceinc "command #chaosrec 100"
 #chanceinc "command #chaospower 100"
 #end
-
 
 #new
 #name "deathpower"
@@ -115,7 +110,6 @@
 #chanceinc "command #deathpower 100"
 #chanceinc "magic death 5"
 #end
-
 
 #new
 #name "fireshield2"
@@ -153,7 +147,6 @@
 #chanceinc "prot 15 *0"
 #power 3
 #end
-
 
 #new
 #name "stealthhigh"
@@ -210,7 +203,6 @@
 #power 3
 #end
 
-
 #new
 #name "resistances_fire"
 #basechance 0.2
@@ -259,7 +251,6 @@
 #command "#gcost +1"
 #end
 
-
 #new
 #type "allres"
 #name "resistances_high"
@@ -300,7 +291,6 @@
 #power 2
 #end
 
-
 #new
 #name "recup"
 #basechance 0.0
@@ -309,7 +299,6 @@
 #command "#heal"
 #command "#gcost +5"
 #end
-
 
 #new
 #type "scalepower"
@@ -338,7 +327,6 @@
 #command "#gcost +5"
 #tag "path fire"
 #end
-
 
 #new
 #name "stormpower"
@@ -460,8 +448,6 @@
 #tag "path death"
 #end
 
-
-
 #new
 #type "strong defensive"
 #name "awe"
@@ -537,8 +523,6 @@
 #power 2
 #end
 
-
-
 #new
 #type "resist"
 #name "bluntres"
@@ -555,7 +539,6 @@
 #command "#gcost +5"
 #end
 
-
 #new
 #type "resist"
 #name "slashres"
@@ -563,7 +546,6 @@
 #command "#slashres"
 #command "#gcost +5"
 #end
-
 
 #new
 #type "invuln"
@@ -585,8 +567,6 @@
 #power 2
 #end
 
-
-
 #new
 #name "incunrest_low"
 #basechance 0.1
@@ -600,8 +580,6 @@
 #command "#incunrest +2"
 #power -1
 #end
-
-
 
 #new
 #name "magicpower"
@@ -656,6 +634,8 @@
 #command "#gcost +10"
 #chanceinc "pose mounted *0"
 #power 3
+#theme "wolftotem"
+#theme "totemanimal"
 #end
 
 #new
@@ -682,6 +662,8 @@
 #chanceinc "pose mounted *0.25"
 #tag "path nature"
 #power 3
+#theme "snaketotem"
+#theme "totemanimal"
 #end
 
 #new
@@ -763,7 +745,6 @@
 #power 2
 #end
 
-
 #new
 #name "amphibian"
 #basechance 0
@@ -798,6 +779,8 @@
 #command "#gcost +15"
 #description "can shapeshift into a great boar"
 #power 2
+#theme "boartotem"
+#theme "totemanimal"
 #end
 
 #new magefilter
@@ -813,8 +796,25 @@
 #tag "notfortier 2"
 #description "can shapeshift into a giant toad"
 #power 2
+#theme "toadtotem"
+#theme "totemanimal"
 #end
 
+#new magefilter
+#type "shapeshift"
+#name "spider"
+#basechance 0.05
+#chanceinc "magic nature 1"
+#chanceinc "personalcommand #poisonres 1"
+#command "#shapechange smallerspider"
+#command "#gcost +15"
+#tag "notfortier 1"
+#tag "notfortier 2"
+#description "can shapeshift into a giant spider"
+#power 2
+#theme "spidertotem"
+#theme "totemanimal"
+#end
 
 #new
 #name "cultist"

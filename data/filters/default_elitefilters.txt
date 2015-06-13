@@ -192,6 +192,8 @@
 #command "#gcost +10"
 #power 3
 #description "can shapeshift into a werewolf"
+#theme "wolftotem"
+#theme "totemanimal"
 #end
 
 #new
@@ -218,9 +220,9 @@
 #tag "path nature"
 #power 2
 #description "can shapeshift into a horned serpent"
+#theme "snaketotem"
+#theme "totemanimal"
 #end
-
-
 
 #new
 #name "metalman"
@@ -236,9 +238,6 @@
 #power 3
 #end
 
-
-
-
 #new magefilter
 #type "shapeshift"
 #name "hawk"
@@ -253,6 +252,8 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #description "can shapeshift into a hawk"
+#theme "hawktotem"
+#theme "totemanimal"
 #end
 
 #new magefilter
@@ -268,6 +269,8 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #description "can shapeshift into a giant toad"
+#theme "toadtotem"
+#theme "totemanimal"
 #end
 
 #new magefilter
@@ -280,5 +283,21 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #description "can shapeshift into a great boar"
+#theme "boartotem"
+#theme "totemanimal"
 #end
 
+#new magefilter
+#type "shapeshift"
+#name "spider"
+#basechance 0.05
+#chanceinc "magic nature 1"
+#chanceinc "personalcommand #poisonres 1"
+#command "#shapechange smallerspider"
+#command "#gcost +10"
+#tag "notfortier 1"
+#tag "notfortier 2"
+#description "can shapeshift into a giant spider"
+#theme "spidertotem"
+#theme "totemanimal"
+#end

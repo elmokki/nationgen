@@ -70,7 +70,6 @@
 #command "#mr +1"
 #end
 
-
 #new
 #name "strong"
 #tag "strong"
@@ -86,7 +85,6 @@
 #command "#str -1"
 #description "Weak"
 #end
-
 
 #new
 #name "weak"
@@ -124,7 +122,6 @@
 #command "#prec -1"
 #description "Myopic"
 #end
-
 
 #new
 #name "Keen eyed"
@@ -177,7 +174,6 @@
 #description "Sick"
 #end
 
-
 #new
 #name "coldvuln"
 #chance 0.05
@@ -186,7 +182,6 @@
 #chanceinc nationcommand #idealcold below 0 *0
 #description "Vulnerable to cold"
 #end
-
 
 #new
 #name "firevuln"
@@ -215,7 +210,6 @@
 #description "Magical"
 #end
 
-
 #new
 #name "demonblood"
 #chance 0.0125
@@ -237,6 +231,8 @@
 #primarycommand "#amphibian"
 #command "#pooramphibian"
 #description "Poor amphibian"
+#theme "toadtotem"
+#theme "totemanimal"
 #end
 
 #new
@@ -257,7 +253,6 @@
 #description "Warrior culture"
 #end
 
-
 #new
 #name "professional"
 #chance 0.03
@@ -271,7 +266,6 @@
 #description "Skilled warrior"
 #end
 
-
 #new
 #name "professional"
 #chance 0.03
@@ -284,7 +278,6 @@
 #command "#prec +1"
 #description "Skilled warrior"
 #end
-
 
 #new
 #name "Hardy"
@@ -317,7 +310,6 @@
 #description "Thick skinned"
 #end
 
-
 #new
 #name "golem"
 #chance 0.00625
@@ -326,7 +318,6 @@
 #command "#prot +4"
 #description "Stone skinned"
 #end
-
 
 #new
 #name "golem"
@@ -371,6 +362,3 @@
 #command "#chaosrec %cost10"
 #description "Chaos rec 10%"
 #end
-
-
-

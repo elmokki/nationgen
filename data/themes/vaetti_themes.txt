@@ -54,7 +54,9 @@
 #themeinc theme leather *2
 #themeinc theme naked *1
 #themeinc theme primitive *1
-#themeinc theme deer +2
+#themeinc theme deer +3
+#themeinc theme totemanimal *0.5
+#themeinc theme deertotem *10
 #racedefinition "#unitcommand '#gcost +1'"
 #racedefinition "#unitcommand '#def +2'"
 #racedefinition "#unitcommand '#ap +2'"
@@ -83,7 +85,9 @@
 #themeinc theme leather *2
 #themeinc theme naked *1
 #themeinc theme primitive *1
-#themeinc theme bear +2
+#themeinc theme bear +3
+#themeinc theme totemanimal *0.5
+#themeinc theme beartotem *10
 #racedefinition "#unitcommand '#gcost +1'"
 #racedefinition "#unitcommand '#hp +2'"
 #racedefinition "#unitcommand '#str +1'"
@@ -112,7 +116,9 @@
 #themeinc theme leather *2
 #themeinc theme naked *1
 #themeinc theme primitive *1
-#themeinc theme wolf +2
+#themeinc theme wolf +3
+#themeinc theme totemanimal *0.5
+#themeinc theme wolftotem *10
 #racedefinition "#unitcommand '#gcost +1'"
 #racedefinition "#unitcommand '#att +1'"
 #racedefinition "#unitcommand '#enc -1'"
@@ -140,7 +146,9 @@
 #themeinc theme leather *2
 #themeinc theme naked *2
 #themeinc theme primitive *2
-#themeinc theme boar +2
+#themeinc theme boar +3
+#themeinc theme totemanimal *0.5
+#themeinc theme boartotem *10
 #racedefinition "#unitcommand '#gcost +1'"
 #racedefinition "#unitcommand '#hp +2'"
 #racedefinition "#unitcommand '#str +1'"
@@ -169,7 +177,9 @@
 #themeinc theme leather *2
 #themeinc theme naked *2
 #themeinc theme primitive *1
-#themeinc theme hawk +2
+#themeinc theme hawk +3
+#themeinc theme totemanimal *0.5
+#themeinc theme hawktotem *10
 #racedefinition "#unitcommand '#gcost +1'"
 #racedefinition "#unitcommand '#hp -1'"
 #racedefinition "#unitcommand '#prec +2'"
@@ -200,7 +210,9 @@
 #themeinc theme leather *2
 #themeinc theme naked *0.5
 #themeinc theme primitive *0.5
-#themeinc theme spider +2
+#themeinc theme spider +3
+#themeinc theme totemanimal *0.5
+#themeinc theme spidertotem *10
 #racedefinition "#unitcommand '#gcost +1'"
 #racedefinition "#unitcommand '#poisonres +2'"
 #racedefinition "#unitcommand '#siegebonus +1'"
@@ -228,7 +240,9 @@
 #themeinc theme leather *2
 #themeinc theme naked *2
 #themeinc theme primitive *2
-#themeinc theme lion +2
+#themeinc theme lion +3
+#themeinc theme totemanimal *0.5
+#themeinc theme liontotem *10
 #racedefinition "#unitcommand '#gcost +1'"
 #racedefinition "#unitcommand '#mapmove +1'"
 #racedefinition "#unitcommand '#ap +1'"
@@ -259,7 +273,9 @@
 #themeinc theme leather *2
 #themeinc theme naked *1
 #themeinc theme primitive *1
-#themeinc theme tiger +2
+#themeinc theme tiger +3
+#themeinc theme totemanimal *0.5
+#themeinc theme tigertotem *10
 #racedefinition "#unitcommand '#gcost +1'"
 #racedefinition "#unitcommand '#mor +2'"
 #racedefinition "#unitcommand '#str +1'"
@@ -274,7 +290,7 @@
 #racedefinition "#descr 'These vaettir have the strength and determination of the tiger, their tribal totem.  '"
 #endtheme
 
--- Weights: EA 1, MA 0.25, LA 0.125
+-- Weights: EA 1, MA 0.5, LA 0.5
 #newtheme
 #type tribal
 #name rabbit
@@ -288,7 +304,9 @@
 #themeinc theme leather *2
 #themeinc theme naked *2
 #themeinc theme primitive *1
-#themeinc theme rabbit +2
+#themeinc theme rabbit +3
+#themeinc theme totemanimal *0.5
+#themeinc theme rabbittotem *10
 #racedefinition "#unitcommand '#gcost -1'"
 #racedefinition "#unitcommand '#str -1'"
 #racedefinition "#unitcommand '#att -1'"
@@ -304,13 +322,13 @@
 #racedefinition "#descr 'These vaettir have the fecundity and timid agility of the rabbit, their tribal totem. '"
 #endtheme
 
--- Weights: EA 0.125, MA 0.5, LA 1
+-- Weights: EA 0.5, MA 1.5, LA 4
 #newtheme
 #type tribal
 #name civilized
-#basechance 1
-#chanceinc era 2 -0.5
-#chanceinc era 1 -0.875
+#basechance 4
+#chanceinc era 1 -3.5
+#chanceinc era 2 -2.5
 #themeinc theme advanced *2
 #themeinc theme iron *2
 #themeinc theme bronze *2
@@ -318,6 +336,7 @@
 #themeinc theme leather *0.75
 #themeinc theme naked *0.5
 #themeinc theme primitive *0.5
+#themeinc theme totemanimal *0.25
 #racedefinition "#unitcommand '#mr -2'"
 #racedefinition "#unitcommand '#mor +1'"
 #racedefinition "#pose vaetticrossbows"
