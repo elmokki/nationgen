@@ -945,12 +945,16 @@ public class ChanceIncHandler {
 		for(T f : filters.keySet())
 		{	
 			
+
+			
 			List<String> chanceincs = new ArrayList<String>();
 			chanceincs.addAll(f.chanceincs);
 			chanceincs.addAll(themeincs);
 			
 			for(String str : chanceincs)
 			{
+				
+				
 				// Poses
 				List<String> args = Generic.parseArgs(str);
 				if(args.get(0).equals("pose") && args.size() > 2)
@@ -1331,7 +1335,7 @@ public class ChanceIncHandler {
 						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
 					}
 				}
-				else if(args.get(0).equals("enc") && args.size() >= 3)
+				else if(args.get(0).equals("enc") && args.size() >= 2)
 				{
 					boolean canIncrease = false;
 					
@@ -1339,12 +1343,8 @@ public class ChanceIncHandler {
 					if(args.contains("below"))
 						below = true;
 					
-					int enc = 3;
-					for(Command c : u.getCommands())
-					{
-						if(c.command.equals("#enc"))
-							enc = Integer.parseInt(c.args.get(0));
-					}
+					int enc = u.getTotalEnc();
+					
 					
 					if(!below && enc >= Integer.parseInt(args.get(args.size() - 2)))
 					{

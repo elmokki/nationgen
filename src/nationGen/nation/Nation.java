@@ -274,7 +274,6 @@ public class Nation {
 			}
 	
 	
-	
 			Unit sacred = sacGen.generateUnit(true, power);
 			if(sacred != null)
 			{

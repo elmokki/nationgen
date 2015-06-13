@@ -1022,7 +1022,7 @@ public class Unit {
 		int helmetprot = 0;
 		int natural = 0;
 		
-		for(Command c : this.race.unitcommands)
+		for(Command c : this.getCommands())
 		{
 			if(c.command.equals("#prot"))
 			{
@@ -1051,6 +1051,42 @@ public class Unit {
 		
 		return (int)Math.round(natural + prot - (natural * prot / 40));
 	}
+	
+	public int getTotalEnc()
+	{
+		int armorprot = 0;
+		int helmetprot = 0;
+		int offhandprot = 0;
+		int natural = 0;
+		
+		for(Command c : this.getCommands())
+		{
+			if(c.command.equals("#enc"))
+			{
+				String arg = c.args.get(0).replace("+", "");
+				natural = natural + Integer.parseInt(arg);
+			}
+		}
+	
+		Dom3DB armordb = nationGen.armordb;
+		
+		if(getSlot("armor") != null)
+			armorprot = armordb.GetInteger(getSlot("armor").id, "enc", 0);
+		
+		if(getSlot("helmet") != null)
+			helmetprot = armordb.GetInteger(getSlot("helmet").id, "enc", 0);
+
+		
+		if(getSlot("offhand") != null)
+			offhandprot = armordb.GetInteger(getSlot("offhand").id, "enc", 0);
+
+
+
+		double prot = offhandprot + armorprot + helmetprot + natural;
+		
+		return (int)prot;
+	}
+	
 	
 	public void write(PrintWriter tw, String spritedir) throws IOException
 	{ 
