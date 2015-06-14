@@ -113,10 +113,10 @@
 #new
 #name "bloodsac"
 #type "bloodsac"
-#basechance 0.5
+#basechance 1
 #command "#sacrificedom"
-#chanceinc "magic blood holy 3"
-#chanceinc "magic blood 3"
+#chanceinc "magic blood holy 4"
+#chanceinc "magic blood 1"
 #desc "Priests may perform blood sacrifices"
 #end
 
@@ -124,7 +124,9 @@
 #name "nodeathsupply"
 #basechance 0.05
 #command "#nodeathsupply"
-#chanceinc "magic death 2"
+#chanceinc "magic death 1"
+#chanceinc "command deathpower 1"
+#chanceinc "command deathrecruit 1"
 #desc "Death dominion does not reduce supplies"
 #end
 
@@ -133,20 +135,21 @@
 #type "reanim"
 #basechance 0.0
 #command "#zombiereanim"
-#chanceinc "magic death 1"
+#chanceinc "magic death 2"
 #desc "Priests can reanimate the dead"
 #end
 
 #new
 #name "godrebirth"
-#basechance 0.05
+#basechance 0.3
 #command "#godrebirth"
+#chanceinc "command elegist 10"
 #desc "The pretender god of this nation does not lose magical skill upon death"
 #end
 
 #new
 #name "tradecoast-10"
-#basechance 0.05
+#basechance 0.25
 #command "#tradecoast +10"
 #desc "10 percent higher gold income in coastal provinces"
 #end
@@ -156,10 +159,10 @@
 #name "castleprod 10"
 #basechance 0.05
 #command "#castleprod +10"
-#chanceinc avgres 12 0.20
-#chanceinc avgres 15 1
-#chanceinc avgres 20 1
-#chanceinc avgres 25 1
+#chanceinc avgres 12 1
+#chanceinc avgres 15 2
+#chanceinc avgres 20 3
+#chanceinc avgres 25 4
 #desc "10 percent higher resource production in castles"
 #end
 
@@ -168,17 +171,17 @@
 #name "castleprod 25"
 #basechance 0.05
 #command "#castleprod +25"
-#chanceinc avgres 12 0.20
+#chanceinc avgres 12 0.5
 #chanceinc avgres 15 1
-#chanceinc avgres 20 1
-#chanceinc avgres 25 1
+#chanceinc avgres 20 1.5
+#chanceinc avgres 25 2
 #desc "25 percent higher resource production in castles"
 #end
 
 #new
 #name "cheaplabs"
 #type "lab"
-#basechance 0.05
+#basechance 0.25
 #command "#labcost 400"
 #desc "Laboratories cost 400 gold"
 #end
@@ -186,7 +189,7 @@
 #new
 #name "expensivelabs"
 #type "lab"
-#basechance 0.05
+#basechance 0.25
 #command "#labcost 600"
 #desc "Laboratories cost 600 gold"
 #end
@@ -194,7 +197,7 @@
 #new
 #name "cheaptemple"
 #type "temple"
-#basechance 0.1
+#basechance 0.25
 #command "#templecost 300"
 #desc "Temples cost 300 gold"
 #end
@@ -210,7 +213,7 @@
 #new
 #name "expensivetemple"
 #type "temple"
-#basechance 0.15
+#basechance 0.25
 #command "#templecost 500"
 #desc "Temples cost 500 gold"
 #end
@@ -218,7 +221,7 @@
 #new
 #name "expensivetemple2"
 #type "temple"
-#basechance 0.05
+#basechance 0.1
 #command "#templecost 600"
 #desc "Temples cost 600 gold"
 #end
@@ -226,7 +229,7 @@
 #new
 #name "cheapforts"
 #type "fort"
-#basechance 0.05
+#basechance 0.25
 #command "#fortcost -10"
 #desc "Fortifications are 10 percent cheaper"
 #end
@@ -234,7 +237,7 @@
 #new
 #name "cheapforts2"
 #type "fort"
-#basechance 0.025
+#basechance 0.1
 #command "#fortcost -20"
 #desc "Fortifications are 20 percent cheaper"
 #end
@@ -242,7 +245,7 @@
 #new
 #name "expensiveforts"
 #type "fort"
-#basechance 0.05
+#basechance 0.25
 #command "#fortcost 10"
 #desc "Fortifications are 10 percent more expensive"
 #end
@@ -250,7 +253,7 @@
 #new
 #name "expensiveforts2"
 #type "fort"
-#basechance 0.025
+#basechance 0.1
 #command "#fortcost 20"
 #desc "Fortifications are 20 percent more expensive"
 #end
