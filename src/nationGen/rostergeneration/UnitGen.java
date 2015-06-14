@@ -624,8 +624,6 @@ public class UnitGen {
 		excluded = excluded.filterSlot(slot).filterForPose(u.pose);
 		included = included.filterSlot(slot).filterForPose(u.pose);
 		
-
-		
 		
 		included.removeAll(excluded);
 		all.removeAll(excluded);
@@ -652,8 +650,8 @@ public class UnitGen {
 		{
 			chosen = chosen.filterTag(targettag, true);
 		}
-		Item newitem = Entity.getRandom(random, chosen);
-
+//		Item newitem = Entity.getRandom(random, chosen);
+		Item newitem = chandler.getRandom(chosen, u);
 
 		
 		return newitem;
