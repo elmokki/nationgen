@@ -353,9 +353,9 @@ public class Nation {
 		{
 			Filter startaff = Filter.getRandom(random, chandler.handleChanceIncs(posaff));
 			
-			if(startaff.commands.size() > 0)
+			if(startaff.getCommands().size() > 0)
 			{
-				for(Command c : startaff.commands)
+				for(Command c : startaff.getCommands())
 				{
 					Command.handleCommand(this.commands, c, nationGen);
 				}
@@ -612,12 +612,12 @@ public class Nation {
 		for(Command cc : conditional)
 		{
 			boolean ok = true;
-			for(Command c : u.race.commands)
+			for(Command c : u.race.getCommands())
 			{
 				if(c.command.equals(cc.command))
 					ok = false;
 			}
-			for(Command c : u.pose.commands)
+			for(Command c : u.pose.getCommands())
 			{
 				if(c.command.equals(cc.command))
 					ok = false;
@@ -654,7 +654,7 @@ public class Nation {
 			Filter f = Filter.getRandom(random, chandler.handleChanceIncs(filters));
 			chandler.removeRelated(f, filters);
 			this.appliedfilters.add(f);
-			for(Command c : f.commands)
+			for(Command c : f.getCommands())
 				this.handleCommand(this.commands, c);
 
 		}

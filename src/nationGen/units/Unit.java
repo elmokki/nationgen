@@ -413,7 +413,7 @@ public class Unit {
 		if(!polished)
 		{
 			allCommands.addAll(race.unitcommands);
-			allCommands.addAll(pose.commands);
+			allCommands.addAll(pose.getCommands());
 	
 	
 				
@@ -669,7 +669,7 @@ public class Unit {
 				if(c.command.equals("#mapmove"))
 					MM = Integer.parseInt(c.args.get(0));
 			
-			for(Command c : pose.commands)
+			for(Command c : pose.getCommands())
 				if(c.command.equals("#mapmove"))
 				{
 					if(c.args.get(0).startsWith("-") || c.args.get(0).startsWith("+"))
