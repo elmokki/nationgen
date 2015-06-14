@@ -93,7 +93,7 @@ public class CustomItemGen {
 				}
 				
 				
-				for(Command c : mitem.commands)
+				for(Command c : mitem.getCommands())
 				{
 					String key = c.command.substring(1);
 					

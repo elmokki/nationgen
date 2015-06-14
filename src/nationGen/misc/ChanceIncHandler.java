@@ -12,6 +12,8 @@ import java.util.List;
 
 
 
+import java.util.Random;
+
 import com.elmokki.Generic;
 
 
@@ -23,6 +25,9 @@ import com.elmokki.Generic;
 
 
 
+
+
+import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
@@ -35,11 +40,13 @@ import nationGen.units.Unit;
 public class ChanceIncHandler {
 	
 	private Nation n;
+	private Random r;
 	private List<String> themeincs = new ArrayList<String>();
 	
 	public ChanceIncHandler(Nation n)
 	{
 		this.n = n;
+		this.r = new Random(n.random.nextInt());
 		
 		for(Theme t : n.themes)
 		{
@@ -174,7 +181,7 @@ public class ChanceIncHandler {
 			}
 
 			
-			for(Command fc : f.commands)
+			for(Command fc : f.getCommands())
 			{
 
 				if(c.command.equals(fc.command) && c.args.size() == 0 && fc.args.size() == 0)
@@ -190,7 +197,7 @@ public class ChanceIncHandler {
 		
 
 		
-		if(f.commands.size() == 0 && Generic.containsTag(f.tags, "lowenctreshold") && !primarycommandfail)
+		if(f.getCommands().size() == 0 && Generic.containsTag(f.tags, "lowenctreshold") && !primarycommandfail)
 		{
 			int treshold = Integer.parseInt(Generic.getTagValue(f.tags, "lowenctreshold"));
 			
@@ -494,11 +501,18 @@ public class ChanceIncHandler {
 					boolean not = args.contains("not");
 					if(f.tags.contains(args.get(args.size() - 2)) != not)
 					{
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 					}
 				}
-				
-				if(args.get(0).equals("racename") && args.size() >= 3 && f.name != null)
+				else if(args.get(0).equals("owntag") && args.size() >= 3)
+				{
+					boolean not = args.contains("not");
+					if(f.tags.contains(args.get(args.size() - 2)) != not)
+					{
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+					}
+				}
+				else if(args.get(0).equals("racename") && args.size() >= 3 && f.name != null)
 				{
 					boolean not = args.contains("not");
 	
@@ -506,7 +520,7 @@ public class ChanceIncHandler {
 					{
 						if(f.getClass().equals(Race.class))
 						{
-							filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+							applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 
 						}
 					}
@@ -517,6 +531,46 @@ public class ChanceIncHandler {
 			
 			
 		}
+	}
+
+	
+	public <T extends Filter> T getRandom(List<T> list, List<Unit> units)
+	{
+		return Entity.getRandom(r, this.handleChanceIncs(units, list));
+	}
+	
+	public <T extends Filter> T getRandom(List<T> list, Unit u)
+	{
+		return Entity.getRandom(r, this.handleChanceIncs(u, list));
+	}
+	
+	public <T extends Filter> T getRandom(List<T> list)
+	{
+		return Entity.getRandom(r, this.handleChanceIncs(list));
+	}
+
+
+	private <T extends Filter> void applyChanceInc(LinkedHashMap<T, Double> filters, T f,  String mod)
+	{
+		if(!filters.containsKey(f))
+		{
+			filters.put(f, f.basechance);
+		}
+		
+		double a = applyModifier(filters.get(f), mod);
+		filters.put(f, a);
+
+	}
+	
+	private <T extends Filter> void applyChanceInc(LinkedHashMap<T, Double> filters, T f,  double value)
+	{
+		if(!filters.containsKey(f))
+		{
+			filters.put(f, f.basechance);
+		}
+		
+		filters.put(f, value);
+
 	}
 	
 	private <T extends Filter> void handleNationIncs(LinkedHashMap<T, Double> filters,  Nation n)
@@ -589,7 +643,7 @@ public class ChanceIncHandler {
 					
 					if(canIncrease)
 					{
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 					}
 				}
 				
@@ -605,7 +659,7 @@ public class ChanceIncHandler {
 					}
 					
 					if(canIncrease)
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
 				// Theme
@@ -620,7 +674,7 @@ public class ChanceIncHandler {
 					}
 					
 					if(canIncrease)
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
 				
@@ -630,14 +684,14 @@ public class ChanceIncHandler {
 				{
 					int era = Integer.parseInt(args.get(1));
 					if(era == n.era)
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				// Primary race
 				canIncrease = false;
 				if(args.get(0).equals("hasprimaryrace") && args.size() >= 2)
 				{
 					if(n.races.size() > 0)
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				// Nation commands
 				canIncrease = false;
@@ -684,7 +738,7 @@ public class ChanceIncHandler {
 
 					
 					if(canIncrease)
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
 				// Unit commands
@@ -740,7 +794,7 @@ public class ChanceIncHandler {
 					}
 					if(canIncrease)
 					{
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 					}
 				}
 				
@@ -777,7 +831,7 @@ public class ChanceIncHandler {
 					
 					if(canIncrease)
 					{
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 					}
 				}
 				
@@ -802,7 +856,7 @@ public class ChanceIncHandler {
 					
 					if(canIncrease)
 					{
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 					}
 				}
 				
@@ -815,7 +869,7 @@ public class ChanceIncHandler {
 						canIncrease = true;
 					}
 					if(canIncrease)
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
 				// racetag
@@ -826,7 +880,7 @@ public class ChanceIncHandler {
 						canIncrease = true;
 					
 					if(canIncrease)
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
 				// nationtag
@@ -839,7 +893,7 @@ public class ChanceIncHandler {
 							canIncrease = true;
 					
 					if(canIncrease)
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
 				// Average gold and res
@@ -851,7 +905,7 @@ public class ChanceIncHandler {
 						canIncrease = true;
 					
 					if(canIncrease)
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
 				canIncrease = false;
@@ -862,7 +916,7 @@ public class ChanceIncHandler {
 						canIncrease = true;
 					
 					if(canIncrease)
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
 			}
@@ -891,9 +945,9 @@ public class ChanceIncHandler {
 				for(T f : filters.keySet())
 				{
 					if(type && f.types.contains(value))
-						filters.put(f, f.basechance * multi);
+						this.applyChanceInc(filters, f, f.basechance * multi);
 					else if(!type && f.name.equals(value))
-						filters.put(f, f.basechance * multi);
+						this.applyChanceInc(filters, f, f.basechance * multi);
 				}
 			}
 
@@ -938,19 +992,23 @@ public class ChanceIncHandler {
 		for(T f : filters.keySet())
 		{	
 			
+
+			
 			List<String> chanceincs = new ArrayList<String>();
 			chanceincs.addAll(f.chanceincs);
 			chanceincs.addAll(themeincs);
 			
 			for(String str : chanceincs)
 			{
+				
+				
 				// Poses
 				List<String> args = Generic.parseArgs(str);
 				if(args.get(0).equals("pose") && args.size() > 2)
 				{
 					if(u.pose.roles.contains(args.get(1)) || u.pose.roles.contains("elite " + args.get(1)) || u.pose.roles.contains("sacred " + args.get(1)))
 					{
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 						continue;
 					}
 				}
@@ -965,7 +1023,7 @@ public class ChanceIncHandler {
 					if(contains)
 					{
 						
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 						continue;
 					}
 				}
@@ -980,7 +1038,7 @@ public class ChanceIncHandler {
 					}
 					
 					if(contains)
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				if(args.get(0).equals("filter") && args.size() >= 3)
 				{
@@ -991,7 +1049,7 @@ public class ChanceIncHandler {
 							contains = true;
 					}
 					if(contains)
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				else if(args.get(0).equals("unittag") && args.size() > 2)
 				{
@@ -999,7 +1057,7 @@ public class ChanceIncHandler {
 					boolean contains = Generic.containsTag(u.tags, args.get(1));					
 					if(contains)
 					{
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 						continue;
 					}
 				}
@@ -1009,7 +1067,17 @@ public class ChanceIncHandler {
 					boolean contains = Generic.containsTag(u.race.tags, args.get(1));					
 					if(contains)
 					{
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+						continue;
+					}
+				}
+				else if(args.get(0).equals("racetheme") && args.size() > 2)
+				{
+
+					boolean contains = Generic.containsTag(u.race.themes, args.get(1));					
+					if(contains)
+					{
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 						continue;
 					}
 				}
@@ -1019,7 +1087,17 @@ public class ChanceIncHandler {
 					boolean contains = Generic.containsTag(u.pose.tags, args.get(1));					
 					if(contains)
 					{
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+						continue;
+					}
+				}
+				else if(args.get(0).equals("posetheme") && args.size() > 2)
+				{
+
+					boolean contains = Generic.containsTag(u.pose.themes, args.get(1));					
+					if(contains)
+					{
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 						continue;
 					}
 				}
@@ -1029,7 +1107,7 @@ public class ChanceIncHandler {
 					boolean contains = Generic.containsTag(u.race.tags, args.get(1)) || Generic.containsTag(u.tags, args.get(1)) || Generic.containsTag(u.pose.tags, args.get(1));					
 					if(contains)
 					{
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 						continue;
 					}
 				}
@@ -1047,7 +1125,25 @@ public class ChanceIncHandler {
 					
 					if(contains != not)
 					{
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+						continue;
+					}
+				}
+				else if(args.get(0).equals("itemtheme") && args.size() > 2)
+				{
+
+					boolean not = args.contains("not");
+					boolean contains = false;
+					for(Item i : u.slotmap.values())
+						if(Generic.containsTag(i.themes, args.get(args.size() - 2)))
+						{
+							contains = true;
+							break;
+						}
+					
+					if(contains != not)
+					{
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 						continue;
 					}
 				}
@@ -1059,7 +1155,7 @@ public class ChanceIncHandler {
 					
 					if(contains != not)
 					{
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 						continue;
 					}
 				}
@@ -1088,7 +1184,7 @@ public class ChanceIncHandler {
 					
 					if(contains)
 					{
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 						continue;
 					}
 					
@@ -1129,7 +1225,7 @@ public class ChanceIncHandler {
 					
 					if(check)
 					{
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 						continue;
 					}
 						
@@ -1200,7 +1296,7 @@ public class ChanceIncHandler {
 					if(contains)
 					{
 						
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 						continue;
 					}
 				}
@@ -1236,7 +1332,7 @@ public class ChanceIncHandler {
 					if(contains)
 					{
 						
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 						continue;
 					}
 				}
@@ -1251,7 +1347,7 @@ public class ChanceIncHandler {
 					if(contains)
 					{
 						
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 						continue;
 					}
 				}
@@ -1263,7 +1359,7 @@ public class ChanceIncHandler {
 						canIncrease = true;
 					}
 					if(canIncrease)
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				else if(args.get(0).equals("prot") && args.size() >= 3)
 				{
@@ -1283,10 +1379,10 @@ public class ChanceIncHandler {
 					}
 					if(canIncrease)
 					{
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 					}
 				}
-				else if(args.get(0).equals("enc") && args.size() >= 3)
+				else if(args.get(0).equals("enc") && args.size() >= 2)
 				{
 					boolean canIncrease = false;
 					
@@ -1294,12 +1390,8 @@ public class ChanceIncHandler {
 					if(args.contains("below"))
 						below = true;
 					
-					int enc = 3;
-					for(Command c : u.getCommands())
-					{
-						if(c.command.equals("#enc"))
-							enc = Integer.parseInt(c.args.get(0));
-					}
+					int enc = u.getTotalEnc();
+					
 					
 					if(!below && enc >= Integer.parseInt(args.get(args.size() - 2)))
 					{
@@ -1310,7 +1402,7 @@ public class ChanceIncHandler {
 						canIncrease = true;
 					}
 					if(canIncrease)
-						filters.put(f, applyModifier(f.basechance, args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
 				

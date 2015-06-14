@@ -20,7 +20,7 @@
 #define "#ressize 2"
 #define "#enc 3"
 #define "#rcost +5"
-#theme "animal scorpion"
+#tag "animal scorpion"
 #theme "heavy"
 #description "Leaves a giant scorpion behind when the rider dies"
 #tag "guaranteedprefix scorpion"
@@ -52,7 +52,7 @@
 #define "#ressize 2"
 #define "#enc 5"
 #define "#rcost +5"
-#theme "animal fossil"
+#tag "animal fossil"
 #theme "heavy"
 #description "Leaves a fossilized giant behind when the rider dies"
 #tag "guaranteedprefix fossil"
@@ -78,7 +78,7 @@
 #define "#gcost +40"
 #define "#ressize 2"
 #define "#enc 3"
-#theme "animal gloso"
+#tag "animal gloso"
 #description "Leaves a burning black sow behind when the rider dies"
 #basechance 0.25
 #tag "minprot 0"
@@ -101,7 +101,7 @@
 #define "#ressize 2"
 #define "#enc 4"
 #theme "specialmount"
-#theme "animal nightmare"
+#tag "animal nightmare"
 #description "Leaves a nightmare behind when the rider dies"
 #basechance 0.5
 #tag "minprot 10"
@@ -127,7 +127,7 @@
 #description "If the rider dies, the lion will carry on fighting until the end of the battle."
 #offsety 5
 #offsetx -1
-#theme "animal lion"
+#tag "animal lion"
 #tag "guaranteedprefix lion"
 #theme "light"
 #tag "maxprot 12"
@@ -149,7 +149,7 @@
 #define "#gcost +25"
 #define "#ressize 2"
 #define "#enc 4"
-#theme "animal wolf"
+#tag "animal wolf"
 #theme "light"
 #tag "maxprot 12"
 #tag "guaranteedprefix wolf"
@@ -181,7 +181,7 @@
 #description "If the rider dies, the gryphon will carry on fighting until the end of the battle."
 #theme "flying"
 #theme "specialmount"
-#theme "animal gryphon"
+#tag "animal gryphon"
 #tag "guaranteedprefix gryphon"
 #basechance 0.125
 #enditem
@@ -206,7 +206,7 @@
 #offsety 6
 #offsetx -4
 #theme "specialmount"
-#theme "animal leogryph"
+#tag "animal leogryph"
 #tag "guaranteedprefix leogryph"
 #enditem
 
@@ -228,7 +228,7 @@
 #define "#ressize 2"
 #define "#enc 4"
 #define "#rcost +5"
-#theme "animal horse"
+#tag "animal horse"
 #theme "heavy"
 #tag "minprot 14"
 #define "#gcost +25"
@@ -254,7 +254,7 @@
 #define "#ressize 2"
 #define "#enc 4"
 #define "#rcost +5"
-#theme "animal horse"
+#tag "animal horse"
 #theme "heavy"
 #tag "minprot 12"
 #tag "name commander 'cataphract commander'"
@@ -279,7 +279,7 @@
 #define "#ressize 2"
 #define "#enc 3"
 #define "#gcost +15"
-#theme "animal horse"
+#tag "animal horse"
 #theme "light"
 #tag "maxprot 11"
 #epicness 0.25
@@ -300,7 +300,7 @@
 #define "#ressize 2"
 #define "#enc 4"
 #define "#rcost +5"
-#theme "animal horse"
+#tag "animal horse"
 #theme "heavy"
 #tag "minprot 14"
 #define "#gcost +25"
@@ -324,7 +324,7 @@
 #define "#ressize 2"
 #define "#enc 4"
 #define "#rcost +5"
-#theme "animal horse"
+#tag "animal horse"
 #theme "heavy"
 #tag "minprot 12"
 #tag "maxprot 16"
@@ -351,7 +351,7 @@
 #define "#ressize 2"
 #define "#enc 4"
 #define "#rcost +5"
-#theme "animal horse"
+#tag "animal horse"
 #theme "heavy"
 #tag "minprot 12"
 #epicness 0.25
@@ -375,7 +375,7 @@
 #define "#gcost +20"
 #define "#ressize 2"
 #define "#enc 3"
-#theme "animal horse"
+#tag "animal horse"
 #tag "minprot 10"
 #tag "maxprot 14"
 #tag "name commander 'cataphract commander'"

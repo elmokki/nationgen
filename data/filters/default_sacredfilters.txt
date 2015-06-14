@@ -1,14 +1,28 @@
 #new
-#name "reinvig"
+#name "reinvig 2"
 #basechance 0.05
 #command "#reinvigoration +2"
 #chanceinc "magic earth 0.95"
-#chanceinc "enc 8 1"
-#chanceinc "enc 9 2"
-#chanceinc "enc 10 3"
+#chanceinc "enc 6 1"
+#chanceinc "enc 8 2"
+#chanceinc "enc 10 4"
 #tag "nopose ranged"
 #tag "nopose mounted"
 #end
+
+#new
+#name "reinvig 4"
+#basechance 0
+#command "#reinvigoration +4"
+#chanceinc "enc 6 1"
+#chanceinc "enc 8 3"
+#chanceinc "enc 10 5"
+#chanceinc "magic earth *2"
+#tag "nopose ranged"
+#tag "nopose mounted"
+#power 2
+#end
+
 
 #new
 #name "berserklowest"
@@ -69,7 +83,7 @@
 #new
 #name "chaosrec"
 #type "chaosrec"
-#basechance 0.1
+#basechance 0.2
 #command "#chaosrec %cost10"
 #chanceinc "command #chaosrec 100"
 #chanceinc "command #chaospower 100"
@@ -78,11 +92,11 @@
 #new
 #name "deathrec"
 #type "chaosrec"
-#basechance 0.01
+#basechance 0.1
 #command "#deathrec %cost10"
 #chanceinc "command #deathrec 100"
 #chanceinc "command #deathpower 100"
-#chanceinc "magic death 5"
+#chanceinc "magic death 0.1"
 #end
 
 #new
@@ -478,11 +492,14 @@
 #name "heat"
 #basechance 0.0
 #chanceinc "command #fireres 0.2"
-#chanceinc "magic water 0.25"
+#chanceinc "magic fire 0.25"
 #command "#heat +3"
 #command "#fireres +5"
 #command "#gcost +10"
 #chanceinc "nationcommand #idealcold above 0 -5"
+#chanceinc "nationcommand #idealcold below 0 1"
+#chanceinc "nationcommand #idealcold below 1 1"
+#chanceinc "nationcommand #idealcold below 2 1"
 #tag "nopose chariot"
 #tag "nopose ranged"
 #tag "path fire"
@@ -501,6 +518,9 @@
 #chanceinc "command #coldblooded -5"
 #chanceinc "command #coldblood -5"
 #chanceinc "nationcommand #idealcold below 0 -5"
+#chanceinc "nationcommand #idealcold above 0 1"
+#chanceinc "nationcommand #idealcold above 1 1"
+#chanceinc "nationcommand #idealcold above 2 1"
 #tag "nopose chariot"
 #tag "nopose ranged"
 #tag "path water"
@@ -512,7 +532,7 @@
 #name "poisoncloud"
 #basechance 0.0
 #chanceinc "command #poisonres 4"
-#chanceinc "magic nature 0.2"
+#chanceinc "magic nature 1"
 #command "#poisoncloud +3"
 #command "#poisonres +5"
 #command "#gcost +20"
@@ -526,7 +546,7 @@
 #new
 #type "resist"
 #name "bluntres"
-#basechance 0.1
+#basechance 0.5
 #command "#bluntres"
 #command "#gcost +5"
 #end
@@ -534,7 +554,7 @@
 #new
 #type "resist"
 #name "pierceres"
-#basechance 0.1
+#basechance 0.5
 #command "#pierceres"
 #command "#gcost +5"
 #end
@@ -542,7 +562,7 @@
 #new
 #type "resist"
 #name "slashres"
-#basechance 0.1
+#basechance 0.5
 #command "#slashres"
 #command "#gcost +5"
 #end
@@ -550,7 +570,7 @@
 #new
 #type "invuln"
 #name "invulnerable (5)"
-#basechance 0.2
+#basechance 0.5
 #primarycommand "#prot"
 #command "#invulnerable +5"
 #command "#gcost +8"
@@ -560,7 +580,7 @@
 #new
 #type "invuln"
 #name "invulnerable (10)"
-#basechance 0.2
+#basechance 0.25
 #primarycommand "#prot"
 #command "#invulnerable +10"
 #command "#gcost +10"
@@ -569,21 +589,21 @@
 
 #new
 #name "incunrest_low"
-#basechance 0.1
+#basechance 0.25
 #command "#incunrest +1"
 #power -1
 #end
 
 #new
 #name "incunrest_high"
-#basechance 0.05
+#basechance 0.125
 #command "#incunrest +2"
 #power -1
 #end
 
 #new
 #name "magicpower"
-#basechance 0.3
+#basechance 0.5
 #command "#magicpower +1"
 #chanceinc "magic astral 0.3"
 #end
@@ -591,7 +611,7 @@
 #new
 #name "poisonarmor"
 #basechance 0.0
-#chanceinc "magic nature 2"
+#chanceinc "magic nature 3"
 #command "#poisonarmor"
 #command "#gcost +5"
 #tag "path nature"
@@ -600,7 +620,7 @@
 #new
 #name "castlemaster"
 #type "siege"
-#basechance 0.5
+#basechance 1
 #command "#siegebonus +3"
 #command "#castledef +3"
 #end
@@ -608,19 +628,19 @@
 #new
 #name "sieger"
 #type "siege"
-#basechance 0.25
+#basechance 1
 #command "#siegebonus +5"
 #end
 
 #new
 #name "patrol"
-#basechance 0.25
+#basechance 1
 #command "#patrolbonus +3"
 #end
 
 #new
 #name "pillage"
-#basechance 0.25
+#basechance 1
 #command "#pillagebonus +3"
 #end
 
@@ -767,6 +787,7 @@
 #chanceinc "command #amphibian 10"
 #chanceinc "command #pooramphibian 3"
 #chanceinc "race atlantian -100"
+#chanceinc "personalcommand #amphibian -100"
 #chanceinc "nopose mounted"
 #chanceinc "magic water 2"
 #power 2
@@ -793,7 +814,7 @@
 #basechance 0.1
 #chanceinc "magic nature 1"
 #command "#shapechange greatboar"
-#command "#gcost +15"
+#command "#gcost +10"
 #description "can shapeshift into a great boar"
 #power 2
 #theme "boartotem"
@@ -835,7 +856,8 @@
 
 #new
 #name "cultist"
-#chance 0.05
+#chance 0.1
+#chanceinc "magic blood astral 1"
 #primarycommand "#horrormark"
 #command "#horrormark"
 #command "#startaff +20"

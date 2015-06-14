@@ -16,7 +16,7 @@
 #define "#ressize 2"
 #define "#enc 3"
 #define "#gcost +15"
-#theme "animal horse"
+#tag "animal horse"
 #theme "light"
 #tag "maxprot 11"
 #epicness 0.25
@@ -37,7 +37,7 @@
 #define "#ressize 2"
 #define "#enc 4"
 #define "#rcost +5"
-#theme "animal horse"
+#tag "animal horse"
 #theme "heavy"
 #tag "minprot 14"
 #define "#gcost +25"
@@ -61,7 +61,7 @@
 #define "#ressize 2"
 #define "#enc 4"
 #define "#rcost +5"
-#theme "animal horse"
+#tag "animal horse"
 #theme "heavy"
 #tag "minprot 12"
 #tag "maxprot 16"
@@ -90,7 +90,7 @@
 #define "#ressize 2"
 #define "#enc 4"
 #define "#rcost +5"
-#theme "animal horse"
+#tag "animal horse"
 #theme "heavy"
 #tag "minprot 12"
 #epicness 0.25
@@ -114,7 +114,7 @@
 #define "#gcost +20"
 #define "#ressize 2"
 #define "#enc 3"
-#theme "animal horse"
+#tag "animal horse"
 #tag "minprot 10"
 #tag "maxprot 14"
 #tag "name commander 'catapract commander'"
@@ -140,7 +140,7 @@
 #define "#ressize 2"
 #define "#enc 4"
 #theme "flying"
-#theme "animal pegasus"
+#tag "animal pegasus"
 #tag "name commander windlord"
 #tag "guaranteedprefix pegasus"
 #sacredextra 0.7
@@ -165,7 +165,7 @@
 #define "#ressize 2"
 #define "#enc 4"
 #define "#rcost +5"
-#theme "animal horse"
+#tag "animal horse"
 #theme "elite"
 #theme "heavy"
 #tag "minprot 12"
@@ -191,7 +191,7 @@
 #theme "heavy"
 #tag "minprot 12"
 #tag "maxprot 16"
-#theme "animal unicorn"
+#tag "animal unicorn"
 #tag "guaranteedprefix unicorn"
 #basechance 0.5
 #enditem
@@ -217,7 +217,7 @@
 #theme "heavy"
 #tag "minprot 8"
 #tag "maxprot 15"
-#theme "animal unicorn"
+#tag "animal unicorn"
 #tag "guaranteedprefix unicorn"
 #basechance 0.5
 #enditem
@@ -237,7 +237,7 @@
 #define "#gcost +30"
 #define "#ressize 2"
 #define "#enc 3"¨
-#theme "animal horse"
+#tag "animal horse"
 #theme "elite"
 #theme "heavy"
 #tag "minprot 6"
@@ -267,7 +267,7 @@
 #define "#secondshape wyvern"
 #theme "flying"
 #theme "heavy"
-#theme "animal wyvern"
+#tag "animal wyvern"
 #tag "minprot 10"
 #tag "maxprot 16"
 #tag "guaranteedprefix wyvern"
@@ -296,7 +296,7 @@
 #define "#rcost +4"
 #define "#enc 4"
 #define "#secondtmpshape moose"
-#theme "animal moose"
+#tag "animal moose"
 #tag "minprot 0"
 #tag "maxprot 16"
 #tag "guaranteedprefix moose"
@@ -319,7 +319,7 @@
 #define "#gcost +40"
 #define "#ressize 2"
 #define "#enc 4"¨
-#theme "animal nightmare"
+#tag "animal nightmare"
 #description "Leaves a nightmare behind when the rider dies"
 #basechance 0.25
 #tag "minprot 10"
@@ -345,7 +345,7 @@
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety -2
 #offsetx -1
-#theme "animal bear"
+#tag "animal bear"
 #tag "name commander beastmaster"
 #tag "guaranteedprefix bear"
 #tag "minprot 10"
@@ -395,6 +395,6 @@
 #description "If the rider dies, the lion will carry on fighting until the end of the battle."
 #offsety 5
 #offsetx -1
-#theme "animal lion"
+#tag "animal lion"
 #tag "guaranteedprefix lion"
 #enditem

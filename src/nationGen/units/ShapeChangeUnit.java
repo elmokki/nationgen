@@ -130,7 +130,7 @@ public class ShapeChangeUnit extends Unit {
 			if(!otherForm.race.tags.contains("noinheritance"))
 				clist.addAll(otherForm.race.unitcommands);
 			if(!otherForm.pose.tags.contains("noinheritance"))
-				clist.addAll(otherForm.pose.commands);
+				clist.addAll(otherForm.pose.getCommands());
 			for(Command c : clist)
 			{
 				if(n.secondShapeRacePoseCommands.contains(c.command))
@@ -143,7 +143,7 @@ public class ShapeChangeUnit extends Unit {
 			for(Filter f : otherForm.appliedFilters)
 			{
 				boolean shape = false;
-				for(Command c : f.commands)
+				for(Command c : f.getCommands())
 					if(c.command.contains("shape"))
 						shape = true;
 				
@@ -152,7 +152,7 @@ public class ShapeChangeUnit extends Unit {
 				
 				
 				// Add filters
-				for(Command c : f.commands)
+				for(Command c : f.getCommands())
 				{
 			
 					if(n.secondShapeNonMountCommands.contains(c.command) && !thisForm.tags.contains("mount"))

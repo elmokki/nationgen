@@ -23,7 +23,8 @@ public class Entity {
 	public String name;
 	public double basechance = 1;
 	public List<String> tags = new ArrayList<String>();
-	
+	public List<String> themes = new ArrayList<String>();
+
 	public Entity(NationGen nationGen)
 	{
 		this.nationGen = nationGen;
@@ -105,7 +106,7 @@ public class Entity {
 			args.remove(0);
 			this.basechance = Double.parseDouble(Generic.listToString(args));
 		}
-		else if(args.get(0).equals("#tag") || args.get(0).equals("#theme"))
+		else if(args.get(0).equals("#tag"))
 		{
 			// Legacy thing
 			args.get(1).replaceAll("\'", "\"");
@@ -116,7 +117,17 @@ public class Entity {
 			this.tags.add(Generic.listToString(args).replaceAll("\'", "\""));
 
 		}
+		else if(args.get(0).equals("#theme"))
+		{
+			// Legacy thing
+			args.get(1).replaceAll("\'", "\"");
+			
+			args.remove(0);
 
+			// Legacy thing EA20150605
+			this.themes.add(Generic.listToString(args).replaceAll("\'", "\""));
+
+		}
 		else if(str.startsWith("#"))
 		{
 			this.tags.add(str.substring(1));

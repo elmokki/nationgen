@@ -9,7 +9,7 @@ import nationGen.NationGen;
 import nationGen.misc.Command;
 
 public class Filter extends Entity {
-	public List<Command> commands = new ArrayList<Command>();
+	protected List<Command> commands = new ArrayList<Command>();
 	public List<String> chanceincs = new ArrayList<String>();
 	public List<String> types = new ArrayList<String>();
 	public int power = 1;
