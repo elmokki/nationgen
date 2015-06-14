@@ -305,10 +305,10 @@ public class Nation {
 		
 		// Nation wide filters
 		int count = 0;
-		if(random.nextDouble() < 0.25)
+		if(random.nextDouble() < 0.33)
 		{
 			count++;
-			if(random.nextDouble() < 0.25)
+			if(random.nextDouble() < 0.33)
 				count++;
 		}
 
