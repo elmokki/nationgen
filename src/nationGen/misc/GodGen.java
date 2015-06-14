@@ -51,7 +51,7 @@ public class GodGen extends ChanceIncHandler {
 		
 		LinkedHashMap<Filter, Double> possibles = chandler.handleChanceIncs(orig);
 		Filter pantheon = Filter.getRandom(n.random, possibles);
-		filters.addAll(pantheon.commands);
+		filters.addAll(pantheon.getCommands());
 		
 		
 		filters.add(new Command("#homerealm", "10"));
@@ -83,7 +83,7 @@ public class GodGen extends ChanceIncHandler {
 			{
 				Filter newFilter = Filter.getRandom(n.random, possibles);
 				mores.remove(newFilter);
-				filters.addAll(newFilter.commands);
+				filters.addAll(newFilter.getCommands());
 			}
 		}
 		return filters;

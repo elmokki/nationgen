@@ -60,11 +60,11 @@ public class SacredGenerator extends TroopGenerator {
 			}
 		}
 		
-		if(power > 0 && nation.random.nextBoolean())
+		if(power > 2 && nation.random.nextBoolean())
 		{
 			powerups++;
 			power--;
-			if(power > 0 && nation.random.nextBoolean())
+			if(power > 2 && nation.random.nextBoolean())
 			{
 				powerups++;
 				power--;
@@ -203,7 +203,6 @@ public class SacredGenerator extends TroopGenerator {
 		else
 			filters = ChanceIncHandler.retrieveFilters("elitefilters", "default_elitefilters", nationGen.filters, u.pose, u.race);
 
-
 		
 		int filterCount = 0;
 		boolean weapon = false;
@@ -272,6 +271,8 @@ public class SacredGenerator extends TroopGenerator {
 					choices = ChanceIncHandler.getFiltersWithPower(power - 1, power, filters);
 				if(choices.size() == 0 || power == 1)
 					choices = ChanceIncHandler.getFiltersWithPower(-100, power, filters);
+				
+
 				if(choices.size() == 0)	
 					break;
 		
@@ -316,8 +317,8 @@ public class SacredGenerator extends TroopGenerator {
 	{
 		// Handle sacred power settings
 		double extrapower = this.nationGen.settings.get("sacredpower") - 1;
-		power = (int) (power * extrapower * (1 + nation.random.nextDouble() * 0.5) + extrapower);
-		
+	
+		power = (int) (power + power * extrapower * (1 + nation.random.nextDouble() * 0.5) + extrapower);
 		
 		// Continue normally
 		double epicchance = nation.random.nextDouble() * 0.5 + power * 0.25 + 0.25;
@@ -464,6 +465,8 @@ public class SacredGenerator extends TroopGenerator {
 	
 	public Unit getSacredUnit(Race race, Pose p, int power, boolean sacred, double epicchance)
 	{
+
+		
 		Unit u = this.unitGen.generateUnit(race, p);
 		String role = "";
 		
@@ -591,7 +594,6 @@ public class SacredGenerator extends TroopGenerator {
 			Item weapon = Entity.getRandom(nation.random, fetchItems(u, "bonusweapon", sacred, epicchance));
 			u.setSlot("bonusweapon", weapon);
 		}
-		
 		
 		this.addEpicness(u, sacred, power);
 		

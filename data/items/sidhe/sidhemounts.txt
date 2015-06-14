@@ -13,7 +13,7 @@
 #define "#gcost +20"
 #define "#ressize 2"
 #define "#enc 3"¨
-#theme "animal horse"
+#tag "animal horse"
 #tag "minprot 6"
 #tag "maxprot 16"
 #enditem
@@ -35,7 +35,7 @@
 #define "#ressize 2"
 #define "#patrolbonus 1"
 #define "#enc 3"¨
-#theme "animal dog"
+#tag "animal dog"
 #tag "minprot 5"
 #tag "maxprot 15"
 #enditem
@@ -60,7 +60,7 @@
 #define "#ressize 2"
 #define "#enc 4"
 #theme "flying"
-#theme "animal pegasus"
+#tag "animal pegasus"
 #tag "name commander windlord"
 #tag "guaranteedprefix pegasus"
 #sacredextra 0.7
@@ -86,7 +86,7 @@
 #define "#heal"
 #tag "minprot 6"
 #tag "maxprot 16"
-#theme "animal unicorn"
+#tag "animal unicorn"
 #tag "guaranteedprefix unicorn"
 #basechance 0.5
 #enditem
@@ -115,7 +115,7 @@
 #define "#secondshape wyvern"
 #theme "flying"
 #theme "heavy"
-#theme "animal wyvern"
+#tag "animal wyvern"
 #tag "minprot 10"
 #tag "maxprot 16"
 #tag "guaranteedprefix wyvern"
@@ -145,7 +145,7 @@
 #define "#rcost +4"
 #define "#enc 4"
 #define "#secondtmpshape moose"
-#theme "animal moose"
+#tag "animal moose"
 #tag "minprot 0"
 #tag "maxprot 16"
 #tag "guaranteedprefix moose"
@@ -169,8 +169,8 @@
 #define "#gcost +40"
 #define "#ressize 2"
 #define "#enc 4"¨
+#tag "animal nightmare"
 #define "#float"
-#theme "animal nightmare"
 #description "Leaves a nightmare behind when the rider dies"
 #basechance 0.25
 #tag "minprot 10"
@@ -195,7 +195,7 @@
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety -2
 #offsetx -1
-#theme "animal bear"
+#tag "animal bear"
 #tag "name commander beastmaster"
 #tag "guaranteedprefix bear"
 #tag "minprot 10"

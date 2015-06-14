@@ -10,12 +10,17 @@ Theme specific
 Theme
 ------------------------
 Usage:	#chanceinc theme [not] <theme> <mod>
-Info: 	If any filter/item/pose/whatever has #theme or #tag <theme>, apply modifier
+Info: 	If any filter/item/pose/whatever has #theme <theme>, apply modifier
 
 Racename
 ------------------------
 Usage:	#chanceinc racename [not] <race> <mod>
 Info: 	If any race is named <race>, apply modifier
+
+Own tag
+------------------------
+Usage:	#chanceinc owntag [not] <tag> <mod>
+Info: 	If any filter/item/pose/whatever has #tag <tag> or #<theme>, apply modifier
 
 
 Generic
@@ -70,6 +75,22 @@ Info:	If the pose, race of the unit or the unit itself in question  has given
 Item tag
 ------------------------
 Usage:	#chanceinc itemtag [not] <tag> <mod>
+Info:	If any item of the unit has the given tag, modifier is added
+
+Race theme
+------------------------
+Usage:	#chanceinc racetheme <theme> <mod>
+Info:	If the race of the unit in  question  has given tag, modifier is added.
+
+Pose theme
+------------------------
+Usage:	#chanceinc posetheme <theme> <mod>
+Info:	If the pose of the unit in  question  has given tag, modifier is added.
+
+
+Item theme
+------------------------
+Usage:	#chanceinc itemtheme [not] <theme> <mod>
 Info:	If any item of the unit has the given tag, modifier is added
 
 Has Item

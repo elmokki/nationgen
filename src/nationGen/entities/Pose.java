@@ -22,7 +22,6 @@ public class Pose extends Filter {
 	private LinkedHashMap<String, ItemSet> items = new LinkedHashMap<String, ItemSet>();
 	public List<String> roles = new ArrayList<String>();
 	public String renderorder = "shadow cloakb mount basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay extra1 extra2 extra3";
-	public List<Command> commands = new ArrayList<Command>();
 	public List<AbilityTemplate> templates = new ArrayList<AbilityTemplate>();
 	
 	public Pose(NationGen nationGen)

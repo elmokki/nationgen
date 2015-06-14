@@ -15,7 +15,7 @@
 #define "#ressize 1"
 #define "#rcost +4"
 #define "#enc 4"
-#theme "animal boar"
+#tag "animal boar"
 #tag "guaranteedprefix hog"
 #offsety -12
 #offsetx 1
@@ -35,7 +35,7 @@
 #define "#ressize 1"
 #define "#enc 3"
 #define "#rcost +4"
-#theme "animal wolf"
+#tag "animal wolf"
 #tag "maxprot 14"
 #tag "guaranteedprefix wolf"
 #offsety -8
@@ -57,7 +57,7 @@
 #define "#mountainsurvival"
 #define "#enc 3"
 #define "#rcost +4"
-#theme "animal goat"
+#tag "animal goat"
 #tag "maxprot 12"
 #tag "guaranteedprefix goat"
 #offsety -7
@@ -81,7 +81,7 @@
 #define "#ressize 1"
 #define "#enc 4"
 #define "#rcost +4"
-#theme "animal hawk"
+#tag "animal hawk"
 #tag "maxprot 16"
 #tag "guaranteedprefix hawk"
 #basechance 0.5
@@ -111,7 +111,7 @@
 #define "#rcost +4"
 #define "#enc 3"
 #define "#secondtmpshape ozelotl"
-#theme "animal ozelotl"
+#tag "animal ozelotl"
 #description "The ozelotl fight until the end of the battle if the rider perishes"
 #tag "maxprot 14"
 #tag "guaranteedprefix ozelotl"
@@ -139,7 +139,7 @@
 #define "#ressize 1"
 #define "#rcost +4"
 #define "#enc 3"
-#theme "animal bat"
+#tag "animal bat"
 #tag "maxprot 16"
 #tag "guaranteedprefix giant bat"
 #description "The giant bat fight until the end of the battle if the rider perishes"
@@ -163,7 +163,7 @@
 #define "#ressize 1"
 #define "#enc 4"
 #define "#rcost +4"
-#theme "animal parrot"
+#tag "animal parrot"
 #tag "maxprot 14"
 #tag "guaranteedprefix parrot"
 #basechance 0.22
@@ -189,7 +189,7 @@
 #define "#ressize 1"
 #define "#enc 4"
 #define "#rcost +4"
-#theme "animal parrot"
+#tag "animal parrot"
 #tag "maxprot 14"
 #tag "guaranteedprefix parrot"
 #basechance 0.11
@@ -215,7 +215,7 @@
 #basechance 0.33
 #needs overlay caveman_overlay
 #define "#weapon nostr_greatclub"
-#theme "animal caveman"
+#tag "animal caveman"
 #tag "guaranteedprefix 'cave man'"
 #offsety 29
 #offsetx 6
@@ -237,7 +237,7 @@
 #define "#enc 3"
 #define "#weapon mechant_bite"
 #basechance 0.33
-#theme "animal 'mechanical ant'"
+#tag "animal 'mechanical ant'"
 #tag "guaranteedprefix 'mechanized'"
 #offsety -18
 #offsetx -3
@@ -250,7 +250,7 @@
 #sprite /graphics/hoburg/mounts/mech_spider.png
 #armor
 #basechance 0.33
-#theme "animal 'mechanical spider'"
+#tag "animal 'mechanical spider'"
 #tag "guaranteedprefix 'mechanized'"
 #needs overlay "mechspider_overlay"
 #define "#size 2"
@@ -273,7 +273,7 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/mech_mosquito.png
 #armor
-#theme "animal 'mechanical mosquito'"
+#tag "animal 'mechanical mosquito'"
 #tag "guaranteedprefix 'mechanized'"
 #needs overlay "mechmosquito_overlay"
 #define "#size 3"
@@ -305,7 +305,7 @@
 #define "#ressize 1"
 #define "#enc 3"
 #define "#rcost +4"
-#theme "animal deer"
+#tag "animal deer"
 #tag "maxprot 14"
 #tag "guaranteedprefix deer"
 #offsety -14
@@ -331,7 +331,7 @@
 #define "#swampsurvival"
 #define "#secondtmpshape crocodilemount"
 #description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
-#theme "animal crocodile"
+#tag "animal crocodile"
 #theme "light"
 #theme "specialmount"
 #tag "guaranteedprefix crocodile"

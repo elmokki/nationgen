@@ -64,12 +64,20 @@
 #name "boulder"
 #command "#ammo 5"
 #command "#range -3"
-#command "#dmg 1"
-#command "#dt_cap"
-#command "#secondaryeffectalways 27"
+#command "#dmg 10"
+#command "#secondaryeffectalways boulder_splash"
 #command "#flyspr 100 1"
 #command "#name 'Boulder'"
 #command "#blunt"
+#end
+
+#new customweapon
+#name "boulder_splash"
+#command "#dmg -16"
+#command "#name 'Boulder Impact'"
+#command "#blunt"
+#command "#aoe 1"
+#command "#explspr 10192"
 #end
 
 --- Amphiptere nostr weapons
@@ -572,10 +580,9 @@
 
 #new customweapon
 #name "large_rock"
-#command "#ammo 5"¨
-#command "#att -2"
+#command "#ammo 12"¨
 #command "#range -2"
-#command "#dmg 10"
+#command "#dmg 8"
 #command "#flyspr 100 1"
 #command "#name 'Large Rock'"
 #command "#twohanded"
