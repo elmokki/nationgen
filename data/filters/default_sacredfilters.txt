@@ -659,6 +659,21 @@
 #end
 
 #new
+#name "werebear"
+#type "shapeshift"
+#basechance 0.1
+#chanceinc "magic nature 1"
+#chanceinc "shape werebear 20"
+#command "#secondshape werebear"
+#command "#gcost +10"
+#chanceinc "pose mounted *0"
+#power 3
+#description "can shapeshift into a werebear"
+#theme "beartotem"
+#theme "totemanimal"
+#end
+
+#new
 #name "ghoul"
 #type "shapeshift"
 #basechance 0.1
@@ -776,6 +791,8 @@
 #chanceinc "nopose mounted"
 #chanceinc "magic water 2"
 #power 2
+#theme "toadtotem"
+#theme "totemanimal"
 #end
 
 #new
