@@ -32,7 +32,7 @@ public class PreviewGenerator {
 		
 		List<Unit> troops = n.generateUnitList("ranged");
 		troops.addAll(n.generateUnitList("infantry"));
-		troops.addAll(n.generateUnitList("cavalry"));
+		troops.addAll(n.generateUnitList("mounted"));
 		troops.addAll(n.generateUnitList("chariot"));
 		troops.addAll(n.generateUnitList("sacred"));
 		

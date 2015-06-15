@@ -202,13 +202,7 @@ public class TroopGenerator {
 				// Copy unit
 				unit = this.copyUnit(t.template);
 	
-				/*
-							
-				unit = unitGen.generateUnit(race, t.template.pose);
-
-				for(String slot : t.template.slotmap.keySet())
-					unit.setSlot(slot, t.template.getSlot(slot));
-				 */
+		
 
 				if(!role.equals("mounted"))
 				{
@@ -376,7 +370,7 @@ public class TroopGenerator {
 			
 		
 
-			// Add new armor!
+			// Add new template!
 			if(unit == null)
 			{
 				Item armor = null;
@@ -421,6 +415,7 @@ public class TroopGenerator {
 						if(possibles.size() > 0)
 						{
 							Pose p = Entity.getRandom(nation.random, chandler.handleChanceIncs(possibles));
+							
 							armor = unitGen.getBestMatchForSlot(armor, p, "armor");
 						}
 						else
@@ -470,10 +465,8 @@ public class TroopGenerator {
 
 					u = unitGen.generateUnit(race, p);
 					u.setSlot("armor", armor);
-					u = unitGen.equipUnit(u, used, exclusions, null, false);
+					unitGen.armorUnit(u, used, exclusions, null, false);
 
-					if(u == null)
-						armor = null;
 				}
 				
 				if(u == null || armor == null) // EA20150529: The only case where this should occur is when #maxunits has been exceeded
@@ -681,9 +674,13 @@ public class TroopGenerator {
 	{
 		// TODO: Handle more than one hand \:D/
 		Item weapon = u.getSlot("weapon");
+		
+		
+		
 		boolean twohand = nationGen.weapondb.GetValue(weapon.id, "2h").equals("1");
 		if(twohand)
 			u.setSlot("offhand", null);
+	
 	}
 	
 	/**

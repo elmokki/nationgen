@@ -27,11 +27,13 @@ import com.elmokki.Generic;
 
 
 
+
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.entities.Theme;
+import nationGen.items.CustomItem;
 import nationGen.items.Item;
 import nationGen.nation.Nation;
 import nationGen.units.ShapeChangeUnit;
@@ -104,13 +106,23 @@ public class ChanceIncHandler {
 			set.put(t, t.basechance);
 		}
 		
-		handleThemeIncs(set);
-		handleNationIncs(set, n);
+		List<String> miscincs = new ArrayList<String>();
+		for(Unit un : u)
+		{
+			for(Filter f : un.appliedFilters)
+				miscincs.addAll(f.themeincs);
+		}
+		
+		handleNationIncs(set, n, miscincs);
 
 		for(Unit un : u)
-			handleUnitIncs(set, un);
+		{
+			handleUnitIncs(set, un, miscincs);
+			
+		}
 		
-		
+		handleThemeIncs(set, miscincs);
+
 		List<T> redundantFilters = new ArrayList<T>();
 		
 		for(T f : set.keySet())
@@ -300,6 +312,14 @@ public class ChanceIncHandler {
 		return list;
 	}
 	
+	public static List<Filter> getValidUnitFilters(List<Filter> filters, Unit unit)
+	{
+		List<Unit> l = new ArrayList<Unit>();
+		l.add(unit);
+
+		
+		return getValidUnitFilters(filters, l);
+	}
 	/**
 	 * Checks ChanceIncHandler.canAdd() for all filters and removes bad ones.
 	 * @param filters
@@ -483,16 +503,18 @@ public class ChanceIncHandler {
 	 * @param filters
 	 * @param n
 	 */
-	private <T extends Filter> void handleThemeIncs(LinkedHashMap<T, Double> filters)
+	private <T extends Filter> void handleThemeIncs(LinkedHashMap<T, Double> filters, List<String> miscincs)
 	{
 		for(T f : filters.keySet())
 		{
 			List<String> chanceincs = new ArrayList<String>();
 			chanceincs.addAll(themeincs);
+			chanceincs.addAll(miscincs);
+			
+			
 			
 			for(String str : chanceincs)
 			{
-				
 				List<String> args = Generic.parseArgs(str);
 	
 				// Theme
@@ -525,8 +547,51 @@ public class ChanceIncHandler {
 						}
 					}
 				}
-				
+				else if(args.get(0).equals("thisitemtag") && args.size() >= 3 && f.name != null)
+				{
+					boolean not = args.contains("not");
+					if(f.tags.contains(args.get(args.size() - 2)) != not)
+					{
+						if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
+						{
+							applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+						}
+					}
+				}
+				else if(args.get(0).equals("thisitemtheme") && args.size() >= 3 && f.name != null)
+				{
+					boolean not = args.contains("not");
+	
+					if(f.themes.contains(args.get(args.size() - 2)) != not)
+					{
+						if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
+						{
+							applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+						}
+					}
+				}
+				else if(args.get(0).equals("thisarmorprot") && args.size() >= 3 && f.name != null)
+				{
+					boolean below = args.contains("below");
 
+					if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
+					{
+						int value = Integer.parseInt(args.get(args.size() - 2));
+						Item i = (Item)f;
+						
+						if(i.armor && !i.slot.equals("offhand"))
+						{
+							int prot = n.nationGen.armordb.GetInteger(i.id, "prot", 0);
+							if((prot >= value) != below)
+							{
+								applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+							}
+						}
+					}
+				}
+		
+				
+		
 			}
 			
 			
@@ -573,7 +638,7 @@ public class ChanceIncHandler {
 
 	}
 	
-	private <T extends Filter> void handleNationIncs(LinkedHashMap<T, Double> filters,  Nation n)
+	private <T extends Filter> void handleNationIncs(LinkedHashMap<T, Double> filters,  Nation n, List<String> miscincs)
 	{
 
 		List<Unit> tempmages = n.generateComList("mage");
@@ -624,6 +689,7 @@ public class ChanceIncHandler {
 			List<String> chanceincs = new ArrayList<String>();
 			chanceincs.addAll(f.chanceincs);
 			chanceincs.addAll(themeincs);
+			chanceincs.addAll(miscincs);
 			
 			for(String str : chanceincs)
 			{
@@ -983,7 +1049,7 @@ public class ChanceIncHandler {
 	}
 	
 	
-	protected <T extends Filter> void handleUnitIncs(LinkedHashMap<T, Double> filters,  Unit u)
+	private <T extends Filter> void handleUnitIncs(LinkedHashMap<T, Double> filters,  Unit u, List<String> miscincs)
 	{
 
 		if(u == null)
@@ -993,19 +1059,24 @@ public class ChanceIncHandler {
 		{	
 			
 
+
 			
 			List<String> chanceincs = new ArrayList<String>();
 			chanceincs.addAll(f.chanceincs);
 			chanceincs.addAll(themeincs);
+			chanceincs.addAll(miscincs);
+
+			
+			
 			
 			for(String str : chanceincs)
 			{
-				
-				
+		
 				// Poses
 				List<String> args = Generic.parseArgs(str);
 				if(args.get(0).equals("pose") && args.size() > 2)
 				{
+				
 					if(u.pose.roles.contains(args.get(1)) || u.pose.roles.contains("elite " + args.get(1)) || u.pose.roles.contains("sacred " + args.get(1)))
 					{
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
@@ -1117,11 +1188,12 @@ public class ChanceIncHandler {
 					boolean not = args.contains("not");
 					boolean contains = false;
 					for(Item i : u.slotmap.values())
-						if(Generic.containsTag(i.tags, args.get(args.size() - 2)))
-						{
-							contains = true;
-							break;
-						}
+						if(i != null)
+							if(Generic.containsTag(i.tags, args.get(args.size() - 2)))
+							{
+								contains = true;
+								break;
+							}
 					
 					if(contains != not)
 					{

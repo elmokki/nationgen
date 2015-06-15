@@ -14,7 +14,6 @@ import nationGen.NationGen;
 public class Theme extends Filter {
 
 	
-	public List<String> themeincs = new ArrayList<String>();
 	public List<String> nationeffects = new ArrayList<String>();
 	public List<String> secondarynationeffects = new ArrayList<String>();
 	
@@ -30,12 +29,8 @@ public class Theme extends Filter {
 		try
 		{
 		
-			if(args.get(0).equals("#themeinc"))
-			{
-				args.remove(0);
-				this.themeincs.add(Generic.listToString(args));
-			}
-			else if(args.get(0).equals("#racedefinition"))
+
+			if(args.get(0).equals("#racedefinition"))
 			{
 				args.remove(0);
 				this.nationeffects.add(Generic.listToString(args));
