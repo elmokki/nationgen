@@ -49,22 +49,22 @@ public class SacredGenerator extends TroopGenerator {
 		
 		
 		int powerups = Math.max(1, power - 2);
-		if(nation.random.nextDouble() < 0.5)
+		if(random.nextDouble() < 0.5)
 		{
 			powerups++;
-			if(nation.random.nextDouble() < 0.25)
+			if(random.nextDouble() < 0.25)
 			{
 				powerups++;
-				if(nation.random.nextDouble() < 0.125)
+				if(random.nextDouble() < 0.125)
 					powerups++;
 			}
 		}
 		
-		if(power > 2 && nation.random.nextBoolean())
+		if(power > 2 && random.nextBoolean())
 		{
 			powerups++;
 			power--;
-			if(power > 2 && nation.random.nextBoolean())
+			if(power > 2 && random.nextBoolean())
 			{
 				powerups++;
 				power--;
@@ -132,7 +132,7 @@ public class SacredGenerator extends TroopGenerator {
 			for(int j = 0; j < Math.min(3, ups.size()); j++)
 			{
 				
-				Filter f = Entity.getRandom(nation.random, ups);
+				Filter f = Entity.getRandom(random, ups);
 				ups.remove(f);
 				
 
@@ -163,14 +163,8 @@ public class SacredGenerator extends TroopGenerator {
 
 		u.commands.add(new Command("#gcost", "+" + (int)Math.round(extra)));
 		
-		if(!sacred)
-			u.tags.add("elite");
-		if(sacred)
-		{
-			u.tags.add("sacred");
-			u.commands.add(new Command("#holy"));
-		}
 		
+
 		
 		int mradd = power;
 		if(power > 5)
@@ -185,10 +179,10 @@ public class SacredGenerator extends TroopGenerator {
 		
 		u.commands.add(new Command("#mr", "+" + mradd));
 		
-		int morbonus = power + nation.random.nextInt(2); 
-		if(nation.random.nextDouble() > 0.25)
+		int morbonus = power + random.nextInt(2); 
+		if(random.nextDouble() > 0.25)
 			morbonus++;
-		if(nation.random.nextDouble() > 0.25)
+		if(random.nextDouble() > 0.25)
 			morbonus++;
 		
 	
@@ -213,7 +207,7 @@ public class SacredGenerator extends TroopGenerator {
 		
 		while(power > 0 && filterCount <= maxfilters)
 		{
-			double rand = nation.random.nextDouble();
+			double rand = random.nextDouble();
 			
 			boolean guaranteeds = false;
 			String[] tslots = {"weapon", "bonusweapon", "offhand"};
@@ -224,50 +218,17 @@ public class SacredGenerator extends TroopGenerator {
 			}
 			
 			
-			// Magic weapon
-			if((guaranteeds || (sacred && rand < 0.15) || power > 7) && !weapon)
+			// Magic weapon is handled later since no weapons exist when this is run.
+			if((guaranteeds || (sacred && rand < 0.15) || power >= 4) && !weapon)
 			{
-				CustomItemGen ciGen = new CustomItemGen(nation);
-				List<MagicItem> magicItems = new ArrayList<MagicItem>();
-
-	
-				magicItems = ChanceIncHandler.retrieveFilters("magicitems", "defaultprimary", nationGen.magicitems, u.pose, u.race);
-		
-				CustomItem item = ciGen.getMagicItem(u, u.getSlot("weapon"), power, nation.random.nextDouble(), magicItems);
-				
-				if(item != null)
-				{
-					u.setSlot("weapon", item);
-
-					int loss = 1;
-					if(item.magicItem != null)
-						loss = item.magicItem.power;
-					
-					power -= loss;
-				
-				}
-				
-				if(u.getSlot("bonusweapon") != null && (nation.random.nextDouble() > 0.75 || u.getSlot("bonusweapon").tags.contains("guaranteedmagic")  || power > 5))
-				{
-					CustomItem item2 = ciGen.getMagicItem(u, u.getSlot("bonusweapon"), 1, nation.random.nextDouble(), magicItems);
-					if(item2 != null)
-						u.setSlot("bonusweapon", item2);
-				}
-				
-				if(u.getSlot("offhand") != null && !u.getSlot("offhand").armor && (nation.random.nextDouble() > 0.75 || u.getSlot("offhand").tags.contains("guaranteedmagic") || power > 5))
-				{
-					CustomItem item2 = ciGen.getMagicItem(u, u.getSlot("offhand"), power, nation.random.nextDouble(), magicItems);
-					if(item2 != null)
-						u.setSlot("offhand", item2);
-				}
-				
 				weapon = true;
-
+				int cost = 1 + random.nextInt(Math.min(6, power));
+				power -= cost;
 			}
-			else
+			else // Filters
 			{
 				List<Filter> choices = ChanceIncHandler.getFiltersWithPower(power, power, filters);
-				if(choices.size() == 0 || nation.random.nextDouble() > 0.8)
+				if(choices.size() == 0 || random.nextDouble() > 0.8)
 					choices = ChanceIncHandler.getFiltersWithPower(power - 1, power, filters);
 				if(choices.size() == 0 || power == 1)
 					choices = ChanceIncHandler.getFiltersWithPower(-100, power, filters);
@@ -276,7 +237,7 @@ public class SacredGenerator extends TroopGenerator {
 				if(choices.size() == 0)	
 					break;
 		
-				Filter f = Filter.getRandom(nation.random, chandler.handleChanceIncs(u, choices));
+				Filter f = Filter.getRandom(random, chandler.handleChanceIncs(u, choices));
 				
 				if(f != null && ChanceIncHandler.canAdd(u, f))
 				{
@@ -293,6 +254,57 @@ public class SacredGenerator extends TroopGenerator {
 		
 	}
 	
+	
+	private void giveMagicWeapons(Unit u, int power)
+	{
+		
+
+		
+		CustomItemGen ciGen = new CustomItemGen(nation);
+		List<MagicItem> magicItems = new ArrayList<MagicItem>();
+
+		magicItems = ChanceIncHandler.retrieveFilters("magicitems", "defaultprimary", nationGen.magicitems, u.pose, u.race);
+
+		CustomItem item = ciGen.getMagicItem(u, u.getSlot("weapon"), power, random.nextDouble(), magicItems);
+		
+		if(item != null)
+		{
+			u.setSlot("weapon", item);
+
+			int loss = 1;
+			if(item.magicItem != null)
+				loss = item.magicItem.power;
+			
+			power -= loss;
+		
+		}
+		
+		if(u.getSlot("bonusweapon") != null && (random.nextDouble() > 0.75 || u.getSlot("bonusweapon").tags.contains("guaranteedmagic")  || power >= 2))
+		{
+			CustomItem item2 = ciGen.getMagicItem(u, u.getSlot("bonusweapon"), 1, random.nextDouble(), magicItems);
+			if(item2 != null)
+				u.setSlot("bonusweapon", item2);
+		}
+		
+		if(u.getSlot("offhand") != null && !u.getSlot("offhand").armor && (random.nextDouble() > 0.75 || u.getSlot("offhand").tags.contains("guaranteedmagic") || power >= 3))
+		{
+			CustomItem item2 = ciGen.getMagicItem(u, u.getSlot("offhand"), power, random.nextDouble(), magicItems);
+			if(item2 != null)
+				u.setSlot("offhand", item2);
+		}
+		
+	}
+	
+	private void addInitialFilters(Unit u)
+	{
+
+		addTemplateFilter(u, "sacredtemplates", "default_sacredtemplates");
+		if(random.nextDouble() < 0.1)
+		{
+			addTemplateFilter(u, "sacredtemplates", "default_sacredtemplates");
+		}
+	
+	}
 	
 	private boolean canBeSacred(boolean sacred, Race race)
 	{
@@ -318,10 +330,10 @@ public class SacredGenerator extends TroopGenerator {
 		// Handle sacred power settings
 		double extrapower = this.nationGen.settings.get("sacredpower") - 1;
 	
-		power = (int) (power + power * extrapower * (1 + nation.random.nextDouble() * 0.5) + extrapower);
+		power = (int) (power + power * extrapower * (1 + random.nextDouble() * 0.5) + extrapower);
 		
 		// Continue normally
-		double epicchance = nation.random.nextDouble() * 0.5 + power * 0.25 + 0.25;
+		double epicchance = random.nextDouble() * 0.5 + power * 0.25 + 0.25;
 
 	
 
@@ -348,10 +360,10 @@ public class SacredGenerator extends TroopGenerator {
 				bonussecchance -= Double.parseDouble(Generic.getTagValue(nation.races.get(1).tags, "primaryracesacredmod"));
 			
 			
-			if(foreigners || nation.random.nextDouble() < 0.05 * bonussecchance)
+			if(foreigners || random.nextDouble() < 0.05 * bonussecchance)
 			{
 		
-				if(nation.random.nextDouble() < 0.2 * bonussecchance && nation.races.get(1) != null && canBeSacred(sacred, nation.races.get(1)))
+				if(random.nextDouble() < 0.2 * bonussecchance && nation.races.get(1) != null && canBeSacred(sacred, nation.races.get(1)))
 					race = nation.races.get(1);
 				
 			}
@@ -389,6 +401,7 @@ public class SacredGenerator extends TroopGenerator {
 			roles.remove("mounted");
 		
 
+		String role = "";
 		while(roles.size() > 0)
 		{
 
@@ -401,12 +414,12 @@ public class SacredGenerator extends TroopGenerator {
 				pf.add(f);
 			}
 			
-			Filter f = Filter.getRandom(nation.random, pf);
+			Filter f = chandler.getRandom(pf);
 			if(f == null)
 				break;
 			
 			roles.remove(f.name);
-			String role = f.name;
+			role = f.name;
 			
 
 			for(Pose p : race.poses)
@@ -439,7 +452,7 @@ public class SacredGenerator extends TroopGenerator {
 			return null;
 		}
 		
-		Pose p = Pose.getRandom(nation.random, chandler.handleChanceIncs(possibleposes));
+		Pose p = Pose.getRandom(random, chandler.handleChanceIncs(possibleposes));
 		Unit u = this.getSacredUnit(race, p, power, sacred, epicchance);
 		
 		// Calculate some loose power rating
@@ -449,15 +462,45 @@ public class SacredGenerator extends TroopGenerator {
 		
 		// Rating should theoretically range from 0 to 4ish at this point
 		
-		if(u.getTotalProt() < 5)
-			rating *= 0.3;
-		else if(u.getTotalProt() < 8)
-			rating *= 0.6;
-		else if(u.getTotalProt() < 12)
-			rating *= 0.8;
-			
 		
-		if(nation.random.nextDouble() < (power + rating) / 12 + 0.3)
+		if(!role.equals("ranged"))
+		{
+			if(u.getTotalProt() < 5)
+				rating *= 0.3;
+			else if(u.getTotalProt() < 8)
+				rating *= 0.6;
+			else if(u.getTotalProt() < 12)
+				rating *= 0.8;
+		}	
+		else
+		{
+			if(u.getTotalProt() < 5)
+				rating *= 1.8;
+			else if(u.getTotalProt() < 8)
+				rating *= 1.5;
+			else if(u.getTotalProt() < 12)
+				rating *= 1.2;
+		}
+		
+		List<String> values = Generic.getTagValues(Generic.getAllUnitTags(u, nation), "sacredratingmulti");
+		double total = 1;
+		for(String str : values)
+		{
+			total *= Double.parseDouble(str.substring(1));
+		}
+		rating *= total;
+		
+		
+		values = Generic.getTagValues(Generic.getAllUnitTags(u, nation), "sacredcostmulti");
+		total = 1;
+		for(String str : values)
+		{
+			total *= Double.parseDouble(str.substring(1));
+		}
+		u.commands.add(new Command("#gcost", "*" + total));
+
+		
+		if(random.nextDouble() < (power + rating) / 12 + 0.3)
 			u.caponly = true;
 		
 		return u;
@@ -470,6 +513,48 @@ public class SacredGenerator extends TroopGenerator {
 		Unit u = this.unitGen.generateUnit(race, p);
 		String role = "";
 		
+		// Filters
+		this.addInitialFilters(u);
+		
+		// Add a sacred generic filter
+		
+		Filter tf = new Filter(nationGen);
+		tf.name = Generic.capitalize(role) + " sacred";
+		
+		
+
+		if(sacred)
+		{
+			tf.themeincs.add("thisitemtheme elite *"  + epicchance * 20);
+			tf.themeincs.add("thisitemtheme sacred *"   + epicchance * 50);
+			tf.themeincs.add("thisitemtheme not sacred *"   + 1/epicchance * 0.50);
+			tf.themeincs.add("thisitemtheme not elite *"   + 1/epicchance * 0.50);
+
+		}
+		else 
+		{
+			tf.themeincs.add("thisitemtheme elite *"  + epicchance * 50);
+			tf.themeincs.add("thisitemtheme not elite *"   + 1/epicchance * 0.50);
+			tf.themeincs.add("thisitemtheme sacred *0.05");
+		}
+		
+		
+		if(!sacred)
+			u.tags.add("elite");
+		if(sacred)
+		{
+			u.tags.add("sacred");
+			tf.commands.add(new Command("#holy"));
+		}
+		u.appliedFilters.add(tf);
+
+		
+		// Add epic stuff
+		this.addEpicness(u, sacred, power);
+		this.handleExtraGeneration(u, role);
+		
+		
+		// Equip
 		for(String r : u.pose.roles)
 			if(r.contains("infantry") || r.contains("sacred infantry"))
 				role = "infantry";
@@ -480,16 +565,19 @@ public class SacredGenerator extends TroopGenerator {
 			else if(r.contains("ranged") || r.contains("sacred ranged"))
 				role = "ranged";
 		
+		
 		if(role.equals(""))
 		{
 			System.out.println("WARNING: No role in some pose of " + race.name + ", possible pose name: " + u.pose.name + ", possible other roles: " + u.pose.roles);
 			return null;
 		}
 		
+
+		
 		// Mount
 		if(role.equals("chariot") || role.equals("mounted"))
 		{
-			Item mount = Entity.getRandom(nation.random, fetchItems(u, "mount", sacred, epicchance));
+			Item mount = chandler.getRandom(fetchItems(u, "mount", sacred, epicchance));
 			u.setSlot("mount", mount);
 		}
 		
@@ -518,21 +606,21 @@ public class SacredGenerator extends TroopGenerator {
 			if(items.size() == 0)
 				items = u.pose.getItems("armor").filterProt(nationGen.armordb, minprot, maxprot);
 			
-			u.setSlot("armor", Item.getRandom(nation.random, items));
+			u.setSlot("armor", chandler.getRandom(items, u));
 		}
 		
 		if(u.pose.getItems("weapon") != null && u.pose.getItems("weapon").size() > 0)
 		{
-			Item weapon = Entity.getRandom(nation.random, fetchItems(u, "weapon", sacred, epicchance));
+			Item weapon = chandler.getRandom(fetchItems(u, "weapon", sacred, epicchance), u);
 			u.setSlot("weapon", weapon);
 		}
 		
 		if(u.pose.getItems("bonusweapon") != null && u.pose.getItems("bonusweapon").possibleItems() > 0)
 		{
 			int prot = nationGen.armordb.GetInteger(u.getSlot("armor").id, "prot");
-			if(nation.random.nextDouble() > 0.4 + (double)prot * 0.02)
+			if(random.nextDouble() > 0.4 + (double)prot * 0.02)
 			{
-				Item weapon = Entity.getRandom(nation.random, fetchItems(u, "bonusweapon", sacred, epicchance));
+				Item weapon = chandler.getRandom(fetchItems(u, "bonusweapon", sacred, epicchance), u);
 				u.setSlot("bonusweapon", weapon);
 			}
 		}
@@ -544,13 +632,13 @@ public class SacredGenerator extends TroopGenerator {
 			ItemSet weaps = items.filterArmor(false);
 			
 			Item item = null;
-			if((weaps.size() > 0 && nation.random.nextDouble() < 0.15 && (nationGen.weapondb.GetInteger(u.getSlot("weapon").id, "lgt") < 4 || nation.random.nextDouble() < epicchance / 4)) || u.pose.tags.contains("always_dw"))
+			if((weaps.size() > 0 && random.nextDouble() < 0.15 && (nationGen.weapondb.GetInteger(u.getSlot("weapon").id, "lgt") < 4 || random.nextDouble() < epicchance / 4)) || u.pose.tags.contains("always_dw"))
 			{
-				item = Item.getRandom(nation.random, (weaps));
+				item = chandler.getRandom(weaps, u);
 			}
 			else if(shields.size() > 0)
 			{
-				item = Item.getRandom(nation.random, (shields));
+				item = chandler.getRandom(shields, u);
 			}
 			
 			if(item != null)
@@ -564,7 +652,7 @@ public class SacredGenerator extends TroopGenerator {
 				prot = nationGen.armordb.GetInteger(u.getSlot("armor").id, "prot");
 			
 			boolean ignoreupwards = false;
-			if(nation.random.nextDouble() > epicchance)
+			if(random.nextDouble() > epicchance)
 				ignoreupwards = true;
 			
 			ItemSet maybe = null;
@@ -580,24 +668,31 @@ public class SacredGenerator extends TroopGenerator {
 					break;
 			}
 			
-			u.setSlot("helmet", Item.getRandom(nation.random, maybe));
+			u.setSlot("helmet", chandler.getRandom(maybe, u));
 		}
 		
-		if(u.pose.getItems("cloakb") != null && u.pose.getItems("cloakb").size() > 0 && nation.random.nextDouble() > epicchance / 8)
+		if(u.pose.getItems("cloakb") != null && u.pose.getItems("cloakb").size() > 0 && random.nextDouble() > epicchance / 8)
 		{
-			Item weapon = Entity.getRandom(nation.random, fetchItems(u, "cloakb", sacred, epicchance));
+			
+			Item weapon = chandler.getRandom(fetchItems(u, "cloakb", sacred, epicchance), u);
 			u.setSlot("cloakb", weapon);
 		}
 		
 		if(u.pose.roles.contains("ranged") || u.pose.roles.contains("sacred ranged") && u.pose.getItems("bonusweapon") != null && u.pose.getItems("bonusweapon").size() > 0)
 		{
-			Item weapon = Entity.getRandom(nation.random, fetchItems(u, "bonusweapon", sacred, epicchance));
+			Item weapon = chandler.getRandom(fetchItems(u, "bonusweapon", sacred, epicchance), u);
 			u.setSlot("bonusweapon", weapon);
 		}
 		
-		this.addEpicness(u, sacred, power);
+		// Give magic weapons if they were promised:
+		if(Generic.containsTag(u.tags, "NEEDSMAGICWEAPON"))
+		{
+			int cost = Integer.parseInt(Generic.getTagValue(u.tags, "NEEDSMAGICWEAPON"));
+			u.tags.remove("NEEDSMAGICWEAPON " + cost);
+			giveMagicWeapons(u, cost);
+		}
 		
-		this.handleExtraGeneration(u, role);
+		// Clean up
 		this.cleanUnit(u);
 		
 		return u;
@@ -611,13 +706,10 @@ public class SacredGenerator extends TroopGenerator {
 		if(u.pose.getItems(slot) == null)
 			return possibles;
 			
-		if(sacred && nation.random.nextDouble() < epicchance * 2)
-			possibles = u.pose.getItems(slot).filterTag("sacred", true);
-		if(!sacred || possibles.size() == 0  || (nation.random.nextDouble() > epicchance - 0.2 && u.pose.getItems(slot).filterTag("elite", true).size() > 0))
-			possibles = u.pose.getItems(slot).filterTag("elite", true);
-		if(possibles.size() == 0 && nation.random.nextDouble() < 0.5)
+
+		if(possibles.size() == 0 && random.nextDouble() < 0.5)
 			possibles = usedItems.filterForPose(u.pose).filterSlot(slot);
-		if(possibles.size() == 0 || nation.random.nextDouble() > epicchance * 1.5)
+		if(possibles.size() == 0 || random.nextDouble() > epicchance * 1.5)
 			possibles = u.pose.getItems(slot);
 		
 		if(possibles.size() == 0)

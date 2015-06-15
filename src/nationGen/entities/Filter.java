@@ -9,8 +9,9 @@ import nationGen.NationGen;
 import nationGen.misc.Command;
 
 public class Filter extends Entity {
-	protected List<Command> commands = new ArrayList<Command>();
+	public List<Command> commands = new ArrayList<Command>();
 	public List<String> chanceincs = new ArrayList<String>();
+	public List<String> themeincs = new ArrayList<String>();
 	public List<String> types = new ArrayList<String>();
 	public int power = 1;
 	public Filter(NationGen nationGen) {
@@ -34,6 +35,11 @@ public class Filter extends Entity {
 			if(args.get(0).equals("#command") || args.get(0).equals("#define"))
 			{
 				this.commands.add(Command.parseCommand(args.get(1)));
+			}
+			else if(args.get(0).equals("#themeinc"))
+			{
+				args.remove(0);
+				this.themeincs.add(Generic.listToString(args));
 			}
 			else if(args.get(0).equals("#type") || args.get(0).equals("#category"))
 				this.types.add(args.get(1));

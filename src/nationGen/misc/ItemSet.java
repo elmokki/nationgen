@@ -238,7 +238,6 @@ public class ItemSet extends ArrayList<Item> {
 		for(Item i : this)
 		{
 	
-
 			if(p.getItems(i.slot) != null)
 				for(Item i2 : p.getItems(i.slot))
 				{

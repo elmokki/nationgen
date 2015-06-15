@@ -2,6 +2,7 @@ package nationGen.rostergeneration;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import com.elmokki.Generic;
 
@@ -11,10 +12,23 @@ import com.elmokki.Generic;
 
 
 
+
+
+
+
+
+
+
+
+
 import nationGen.NationGen;
+import nationGen.entities.Filter;
+import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.items.Item;
+import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
+import nationGen.misc.ItemSet;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
@@ -24,27 +38,35 @@ public class RosterGenerator {
 	
 	NationGen nationGen;
 	Nation nation;
+	private Random r;
+	private ChanceIncHandler chandler = null;
+
+
+	
+	private List<Unit> infantry = new ArrayList<Unit>();
+	private List<Unit> ranged = new ArrayList<Unit>();
+	private List<Unit> cavalry = new ArrayList<Unit>();
+	private List<Unit> chariot = new ArrayList<Unit>();
+	
 	public RosterGenerator(NationGen g, Nation n)
 	{
 		nationGen = g;
 		nation = n;
+		this.r = new Random(n.random.nextInt());
+		chandler = new ChanceIncHandler(nation);
 	}
 	
+
 	
 	public void execute()
 	{
 
-		
-		TroopGenerator gen = new TroopGenerator(nationGen, nation);
-		
-
-		
-
+	
 		
 		Race primary = nation.races.get(0);
 		Race secondary = nation.races.get(1);
 		
-		int max = 7 + nation.random.nextInt(6);
+		int max = 6 + r.nextInt(5); // 6-10
 		int units = 0;
 		
 		double bonussecchance = 1;
@@ -53,9 +75,15 @@ public class RosterGenerator {
 		if(Generic.containsTag(secondary.tags, "primaryracetroopmod"))
 			bonussecchance -= Double.parseDouble(Generic.getTagValue(secondary.tags, "primaryracetroopmod"));
 		
-		double secaffinity = nation.random.nextDouble() * bonussecchance;
+		double secaffinity = r.nextDouble() * bonussecchance;
 		int secs = 0;
-		if(secaffinity < 0.5 && nation.random.nextDouble() < 0.75)
+		
+		if(secaffinity > 0.5)
+			max = Math.min(10, max + 2);
+		else if(secaffinity > 0.3)
+			max = Math.min(10, max + 1);
+		
+		if(secaffinity < 0.5 && r.nextDouble() < 0.75)
 			secaffinity = 0;
 		
 		
@@ -68,22 +96,23 @@ public class RosterGenerator {
 		double chances[] = {0.3, 1, 0.5, 0};
 		int maxamounts[] = {2, 8, 4, 2};  
 
-		maxamounts[3] = nation.random.nextInt(3);
+		maxamounts[3] = r.nextInt(3);
 		maxamounts[0] = (int)Math.round(Math.max(1, max * 0.2));
 		
 
 		
-		List<Unit> infantry = new ArrayList<Unit>();
-		List<Unit> ranged = new ArrayList<Unit>();
-		List<Unit> cavalry = new ArrayList<Unit>();
-		List<Unit> chariot = new ArrayList<Unit>();
+
 			
 		int cycles = 0;
 		int incs = 1;
+		
+		TroopGenerator tgen = new TroopGenerator(nationGen, nation);
+
 		while(units < max)
 		{
+			
 			Race race = null;
-			if(nation.random.nextDouble() < secaffinity && secs < secamount) 
+			if(r.nextDouble() < secaffinity && secs < secamount) 
 			{
 				race = secondary;
 				secs++;
@@ -115,23 +144,27 @@ public class RosterGenerator {
 			else if(roll.equals("chariot") && maxamounts[3] > chariot.size())
 				target = chariot;
 						
+			
+			
 			if(race != null && target != null && race.hasRole(roll))
 			{
-				
-				Unit u = gen.generateUnit(roll, race, 1, 0, 100, 3, (race == primary));
-				
+			
+				Unit u = tgen.generateUnit(roll, race, 3);
 				if(u != null)
 				{
 					target.add(u);
 					units++;
 				}
-				else units++;
+	
+				
 			}
 			
 
 		}
-		
 
+
+
+		
 		putToNation("ranged", sortToLists(ranged));
 		putToNation("infantry", sortToLists(infantry));
 		putToNation("mounted", sortToLists(cavalry));
@@ -142,9 +175,11 @@ public class RosterGenerator {
 	}
 	
 	
+
+	
 	private double[] getChances(Race race)
 	{
-		double chances[] = {0.25, 1, 0.33, 0.125};
+		double chances[] = {0.25, 1, 0.25, 0.125};
 		String[] slots = {"ranged", "infantry", "cavalry", "chariot"};
 		for(String tag : race.tags)
 		{
@@ -174,7 +209,7 @@ public class RosterGenerator {
 	private String rollRole(double cavshare, double infantryshare, double rangedshare, double chariotshare)
 	{
 		
-		double random = nation.random.nextDouble() * (cavshare + infantryshare + rangedshare + chariotshare);
+		double random = r.nextDouble() * (cavshare + infantryshare + rangedshare + chariotshare);
 		
 		if(random < cavshare)
 		{
@@ -225,6 +260,37 @@ public class RosterGenerator {
 		}
 		
 
+		return newlist;
+	}
+	
+	
+	private List<Unit> sortByGcost(List<Unit> templates)
+	{
+		List<Unit> newlist = new ArrayList<Unit>();
+		
+		newlist.add(templates.get(0));
+		templates.remove(0);
+		
+		while(templates.size() > 0)
+		{
+			int gcost = templates.get(0).getGoldCost();
+			for(int i = newlist.size() - 1; i >= 0; i--)
+			{
+				if(gcost > newlist.get(i).getGoldCost())
+				{
+					newlist.add(templates.get(0));
+					templates.remove(0);
+					break;
+				}
+				else if(i == 0)
+				{
+					newlist.add(0, templates.get(0));
+					templates.remove(0);
+				}
+			}
+			
+		}
+
 		
 		return newlist;
 	}
@@ -238,6 +304,12 @@ public class RosterGenerator {
 			if(!allArmor.contains(u.getSlot("armor")))
 				allArmor.add(u.getSlot("armor"));
 		
+		if(allArmor.size() == 0 || (allArmor.size() == 1 && allArmor.get(0) == null))
+		{
+			finallist.add(templates);
+			return finallist;
+		}
+
 		while(templates.size() > 0)
 		{
 			String lowestID = allArmor.get(0).id;
@@ -261,12 +333,16 @@ public class RosterGenerator {
 					newlist.add(u);
 
 			templates.removeAll(newlist);
-			finallist.add(newlist);
+			finallist.add(sortByGcost(newlist));
 			//System.out.println("Removing all units with " + nationGen.armordb.GetValue(lowestID, "armorname") + ", #" + newlist.size() + ". " + templates.size() + " remain.");
 		}
-		
+
 		return finallist;
 	}	
+	
+
+	
+
 	
 	private List<List<Unit>> sortToListsByBasesprite(List<Unit> templates)
 	{
@@ -279,7 +355,7 @@ public class RosterGenerator {
 				allArmor.add(u.getSlot("basesprite"));
 		
 		
-	
+
 		while(templates.size() > 0)
 		{
 			int lowestHP = this.getHP(templates.get(0));
@@ -309,7 +385,7 @@ public class RosterGenerator {
 			troops.add(newlist);
 			//System.out.println("Removing all units with " + nationGen.armordb.GetValue(lowestID, "armorname") + ", #" + newlist.size() + ". " + templates.size() + " remain.");
 		}
-		
+
 		
 		
 		return troops;
@@ -361,4 +437,9 @@ public class RosterGenerator {
 		}
 		return prio;
 	}
+	
+
+
+	
+	
 }

@@ -195,12 +195,11 @@ public class Nation {
 		// Troops
 		RosterGenerator g = new RosterGenerator(nationGen, this);
 		g.execute();
-
-
+		
 		//// Sacreds and elites
 		SacredGenerator sacGen = new SacredGenerator(nationGen, this);
 		List<Unit> sacreds = new ArrayList<Unit>();
-		
+
 
 		// Elite
 		int sacredcount = 1;
@@ -283,12 +282,14 @@ public class Nation {
 		if(sacreds.size() > 0)
 			unitlists.put("sacreds", sacreds);
 		
+
 		// Scouts
 		
 		ScoutGenerator scoutgen = new ScoutGenerator(nationGen, this);
 		if(races.get(0).hasRole("scout"))
 			comlists.get("scouts").add(scoutgen.generateScout(races.get(0)));
-	
+		
+
 
 		// Gods
 		GodGen gg = new GodGen(this);
@@ -314,9 +315,12 @@ public class Nation {
 
 		applyNationWideFilter(count);
 		
+
 		// Commanders
 		CommanderGenerator comgen = new CommanderGenerator(nationGen, this);
 		comgen.generateComs();
+		
+
 		
 		// Monsters
 		double monsterchance = 0.05;

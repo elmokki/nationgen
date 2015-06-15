@@ -38,6 +38,7 @@
 ------- Mounted
 
 #newpose
+#name "mounted"
 #role "mounted"
 #role "sacred"
 
@@ -57,7 +58,7 @@
 #load weapon /data/items/machakans/mounted/weapon.txt 5 -15
 
 #load bonusweapon /data/items/human/normal/humanbonusranged.txt 5 -15
-#load bonusweapon /data/items/human/human_mounted/lance.txt 5 -15
+#load lanceslot /data/items/human/human_mounted/lance.txt 5 -15
 #load bonusweapon /data/items/human/sacredstuff/sacredbonusweapons.txt 5 -15
 
 #load offhand /data/items/machakans/standard/shields.txt 5 -15
@@ -72,7 +73,7 @@
 ------- Low mounted
 
 #newpose
-#race 0
+#name "mounted low"
 #role "mounted"
 #role "sacred"
 

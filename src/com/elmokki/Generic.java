@@ -6,6 +6,10 @@ import java.util.List;
 import java.util.Random;
 
 import nationGen.entities.Entity;
+import nationGen.entities.Filter;
+import nationGen.entities.Theme;
+import nationGen.nation.Nation;
+import nationGen.units.Unit;
 
 public class Generic {
 	
@@ -145,6 +149,20 @@ public class Generic {
 		}
 		
 		return null;
+	}
+	
+	
+	public static List<String> getAllUnitTags(Unit u, Nation n)
+	{
+		List<String> tags = new ArrayList<String>();
+		tags.addAll(u.race.tags);
+		tags.addAll(u.pose.tags);
+		for(Filter f : u.appliedFilters)
+			tags.addAll(f.tags);
+		for(Theme t : n.themes)
+			tags.addAll(t.tags);
+		
+		return tags;
 	}
 	
 	public static List<String> getTagValues(List<String> tags, String tag)

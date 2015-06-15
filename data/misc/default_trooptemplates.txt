@@ -1,0 +1,110 @@
+
+#new
+#basechance 0.5
+#name "militia"
+#maxvarieties 1
+#chanceinc pose mounted *0
+#chanceinc pose chariot *0
+#command "#def -2"
+#command "#att -2"
+#command "#gcost *0.7"
+#command "#mor -2"
+#command "#prec -1"
+#themeinc "thisarmorprot 8 *0.50"
+#themeinc "thisarmorprot 10 *0.05"
+#themeinc "thisarmorprot 12 *0.01"
+#themeinc "thisitemtheme militia *10"
+#theme militia
+#end
+
+#new
+#basechance 0.25
+#name "elite +1"
+#type elite
+#maxvarieties 1
+#command "#def +1"
+#command "#att +1"
+#command "#gcost *1.2"
+#command "#mor +1"
+#command "#prec +1"
+#theme elite
+#themeinc "thisitemtheme elite *2"
+#themeinc thisarmorprot below 12 *0.5
+#themeinc thisarmorprot 12 *2
+#themeinc thisarmorprot 14 *2
+#generateitem 0.5 cloakb
+#alloweliteitems
+#end
+
+
+#new
+#basechance 0.125
+#name "elite +2"
+#type elite
+#maxvarieties 1
+#command "#def +2"
+#command "#att +2"
+#command "#gcost *1.4"
+#command "#mor +2"
+#command "#hp *1.2"
+#command "#prec +2"
+#theme elite
+#themeinc "thisitemtheme elite *5"
+#themeinc thisarmorprot below 12 *0.5
+#themeinc thisarmorprot 12 *2
+#themeinc thisarmorprot 14 *2
+#generateitem 1 cloakb
+#alloweliteitems
+#end
+
+#new
+#basechance 0.5
+#name "mountainunit"
+#chanceinc pose mounted *0
+#chanceinc pose chariot *0
+#command "#mountainsurvival"
+#tag "guaranteedprefix mountain"
+#tag "bonusweaponchance 0.5"
+#themeinc theme irregular *4
+#themeinc thisarmorprot below 13 *2
+#themeinc thisarmorprot below 11 *2
+#maxvarieties 3
+#desc "Mountain survival"
+#primarycommand "#mountainsurvival"
+#generateitem 0.25 cloakb
+#end
+
+#new
+#basechance 0.5
+#name "forestunit"
+#chanceinc pose mounted *0
+#chanceinc pose chariot *0
+#command "#forestsurvival"
+#tag "guaranteedprefix mountain"
+#tag "bonusweaponchance 0.5"
+#themeinc theme irregular *4
+#themeinc thisarmorprot below 13 *2
+#themeinc thisarmorprot below 11 *2
+#maxvarieties 3
+#desc "Forest survival"
+#primarycommand "#forestsurvival"
+#generateitem 0.25 cloakb
+#end
+
+
+#new
+#basechance 0.125
+#chanceinc pose mounted *0
+#chanceinc pose chariot *0
+#chanceinc pose ranged *0
+#name "berserker"
+#command "#berserk +2"
+#theme primitive
+#tag "dwchance 0.5"
+#themeinc theme irregular *4
+#themeinc theme primitive *4
+#chanceinc thisarmorprot below 11 *2
+#chanceinc thisarmorprot below 9 *2
+#maxvarieties 2
+#desc "Berserker"
+#end
