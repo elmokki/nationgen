@@ -137,6 +137,7 @@ public class UnitGen {
 		// Armor
 		if(!hasItem(u, "armor") && u.pose.getItems("armor") != null)
 		{
+		
 			Item armor = getSuitableItem("armor", u, excluded, included, targettag);
 			u.setSlot("armor", armor);
 		}
@@ -149,14 +150,14 @@ public class UnitGen {
 			ItemSet possibleMounts = included.filterSlot("mount").filterForPose(u.pose).filterMinMaxProt(prot);
 			
 
-			if(possibleMounts.possibleItems() == 0 || random.nextDouble() > 0.66)
+			if(chandler.countPossibleFilters(possibleMounts, u) == 0 || random.nextDouble() > 0.66)
 			{
 				possibleMounts = u.pose.getItems("mount").filterMinMaxProt(prot);
 				if(possibleMounts.possibleItems() == 0)
 					possibleMounts = u.pose.getItems("mount");
 			}
 
-			if(random.nextDouble() < 0.1 && possibleMounts.filterTag("elite", true).possibleItems() > 0)
+			if(random.nextDouble() < 0.1 && chandler.countPossibleFilters(possibleMounts.filterTag("elite", true), u) > 0)
 			{
 				possibleMounts = possibleMounts.filterTag("elite", true);
 			}
@@ -168,17 +169,17 @@ public class UnitGen {
 			ItemSet test = new ItemSet();
 			test.addAll(possibleMounts.filterForPose(u.pose));
 			test.removeAll(excluded.filterForPose(u.pose));
-			if(test.possibleItems() == 0)
+			if(chandler.countPossibleFilters(test, u) == 0)
 			{
 				excluded.removeAll(possibleMounts.filterForPose(u.pose));
 			}
 
 			ItemSet possibleMounts2 = possibleMounts.filterMinMaxProt(prot);
-			if(possibleMounts2.possibleItems() > 0)
+			if(chandler.countPossibleFilters(possibleMounts2, u) > 0)
 				possibleMounts = possibleMounts2;
 		
-			
-			if(possibleMounts.possibleItems() > 0)
+		
+			if(chandler.countPossibleFilters(possibleMounts, u) > 0)
 			{
 
 				String pref = null;
@@ -191,6 +192,8 @@ public class UnitGen {
 				Item mount = getSuitableItem("mount", u, excluded, null, possibleMounts, "animal " + pref);
 				if(mount == null)
 					mount = getSuitableItem("mount", u, excluded, null, possibleMounts, null);
+				
+				
 				
 				u.setSlot("mount", mount);
 				excluded.add(u.getSlot("mount"));
@@ -657,8 +660,6 @@ public class UnitGen {
 			included = new ItemSet();
 				
 
-		
-		
 		excluded = excluded.filterSlot(slot).filterForPose(u.pose);
 		included = included.filterSlot(slot).filterForPose(u.pose);
 		
@@ -671,6 +672,8 @@ public class UnitGen {
 		
 	
 
+
+		
 		
 		ItemSet remain = new ItemSet();
 		remain.addAll(included);
@@ -680,9 +683,9 @@ public class UnitGen {
 		
 		ItemSet chosen = null;
 
-	
 		
-		if(remain.possibleItems() > 0 && random.nextDouble() > 0.75)
+
+		if(chandler.countPossibleFilters(remain, u) > 0 && random.nextDouble() > 0.75)
 			chosen = remain;
 		else
 		{
@@ -737,428 +740,8 @@ public class UnitGen {
 	}
 	
 	
-	public List<Unit> varyCavalryWeapon(Unit u, int amount, String slot, ItemSet used, ItemSet exclusions, String targettag)
-	{
-		List<Unit> units = new ArrayList<Unit>();
-		if(amount == 1)
-		{
-			units.add(u);
-			return units;
-		}
-		
-		
-		if(used == null)
-			used = new ItemSet();
-		if(exclusions == null)
-			exclusions = new ItemSet();
-		
-		
-		ItemSet stuff = null;
-		
-		if(targettag != null)
-		{
-			stuff = u.pose.getItems(slot).filterTag(targettag, true);
-			stuff.remove(u.getSlot(slot));
-		}
-		
-		if(stuff == null || stuff.possibleItems() == 0)
-		{
-			stuff = u.pose.getItems(slot);
-			stuff.remove(u.getSlot(slot));
-		}
-		
-		exclusions.add(u.getSlot(slot));
-		
-		// Try removing exclusions
-		ItemSet teststuff = new ItemSet();
-		teststuff.addAll(stuff);
-		teststuff.removeAll(exclusions);
-		teststuff.remove(u.getSlot(slot));
-		if(teststuff.possibleItems() > 0)
-			stuff = teststuff;
-		
-		
-		
-		boolean lance_equipped = u.getSlot("lanceslot") != null && (u.getSlot("lanceslot").id.equals("4") || u.getSlot("lanceslot").tags.contains("lance"));
-		boolean canGetLance = false;
-		if(lance_equipped == false && u.pose.getItems("lanceslot") != null)
-		{
-			int ap = 10;
-			for(Command c : u.getCommands())
-				if(c.args.equals("#ap"))
-					ap = Integer.parseInt(c.args.get(0));
-			
-			boolean availableLance = false;
-			
-			for(Item i : u.pose.getItems("lanceslot"))
-				if(i.id.equals("4") || i.tags.contains("lance"))
-					availableLance = true;
-			
-			if(10 + random.nextInt(20) > ap && availableLance)
-				canGetLance = true;
-			
 
-		}
-			
-		boolean twohand_available = u.pose.getItems(slot).filterDom3DB("2h", "0", false, nationGen.weapondb).possibleItems() > 0; 
-		boolean	twohand_equipped =	nationGen.weapondb.GetValue(u.getSlot(slot).id, "2h").equals("1");
-		boolean canGet2h = twohand_available && !twohand_equipped;
-		
-		boolean onehand_available = u.pose.getItems(slot).filterDom3DB("2h", "0", true, nationGen.weapondb).possibleItems() > 0; 
-		boolean	onehand_equipped =	nationGen.weapondb.GetValue(u.getSlot(slot).id, "2h").equals("0");
-		boolean canGet1h = onehand_available && (!onehand_equipped || lance_equipped);
-		
-		
-		
-		for(int i = 1; i < amount; i++)
-		{
-			Unit nu = u.getCopy();
 
-			
-			if(!(canGetLance && onehand_available) && !canGet1h && !canGet2h)
-				break;
-			
-			
-			boolean derp = false;
-			int roll = -1;
-			while(roll < 0 || !derp)
-			{
-				roll = random.nextInt(3); // 0-2
-				
-				if(roll == 2 && canGetLance && onehand_available)
-					derp = true;
-				else if(roll == 1 && canGet1h)
-				{
-					derp = true;
-				}
-				else if(roll == 0 && canGet2h  && random.nextBoolean())
-					derp = true;
+
 	
-			}
-			
-			ItemSet items = null;
-			if(roll == 0)
-				items = u.pose.getItems(slot).filterDom3DB("2h", "0", false, nationGen.weapondb);
-			else
-				items = u.pose.getItems(slot).filterDom3DB("2h", "1", false, nationGen.weapondb);
-
-			
-			ItemSet test = new ItemSet();
-			test.addAll(items);
-			test.removeAll(exclusions);
-			if(test.possibleItems() > 0)
-			{
-				
-			}
-			
-			
-			Item newitem = getSuitableItem(slot, nu, exclusions, used, items, targettag);
-			
-			
-			if(newitem != null)
-				nu.setSlot(slot, newitem);
-			else
-				System.out.println("NO WEAPON FOR CAVALRY VARIANT " + u.race.name + " " + u.pose.roles + " " + u.pose.name);
-			
-			
-			if(roll == 0)
-			{
-				exclusions.add(newitem);
-				canGet2h = false;
-			}
-			else if(roll == 2)
-			{
-				Item lance = getSuitableItem("lanceslot", nu, exclusions, used, items, targettag);
-				if(lance != null)
-					u.setSlot("lanceslot", lance);
-				canGetLance = false;
-			}
-			else 
-				canGet1h = false;
-			
-			
-
-			units.add(nu);
-		}
-		
-		
-		return units;
-	}
-
-	public List<Unit> varyUnit(Unit u, int amount, String slot, ItemSet used, ItemSet exclusions, String targettag)
-	{
-		List<Unit> units = new ArrayList<Unit>();
-		if(amount == 1)
-		{
-			units.add(u);
-			return units;
-		}
-		
-		
-		if(used == null)
-			used = new ItemSet();
-		if(exclusions == null)
-			exclusions = new ItemSet();
-		
-		
-		ItemSet stuff = null;
-		
-		if(targettag != null)
-		{
-			stuff = u.pose.getItems(slot).filterTag(targettag, true);
-			stuff.remove(u.getSlot(slot));
-		}
-		
-		if(stuff == null || stuff.possibleItems() == 0)
-		{
-			stuff = u.pose.getItems(slot);
-			stuff.remove(u.getSlot(slot));
-		}
-		
-		exclusions.add(u.getSlot(slot));
-		
-		
-		
-		
-		// Try removing exclusions
-		ItemSet teststuff = new ItemSet();
-		teststuff.addAll(stuff);
-		teststuff.removeAll(exclusions);
-		teststuff.remove(u.getSlot(slot));
-		if(teststuff.possibleItems() > 0)
-			stuff = teststuff;
-		
-		
-		for(int i = 1; i < amount; i++)
-		{
-			Unit nu = u.getCopy();
-			
-			
-			Item newitem = getSuitableItem(slot, nu, exclusions, used, stuff, targettag);
-			
-			if(newitem == null)
-				break;
-			
-			nu.setSlot(slot, newitem);
-			exclusions.add(newitem);
-
-			
-			units.add(nu);
-		}
-		
-		return units;
-		
-	}
-
-	public void equipOffhand(Unit u, ItemSet used, ItemSet excluded, String targettag, boolean mage)
-	{
-		if(u.pose.getItems("offhand") == null)
-			return;
-		
-		
-		
-		double local_dwchance = 0.05;
-		if(!mage)
-		{
-			List<String> tags = new ArrayList<String>();
-			tags.addAll(u.race.tags);
-			tags.addAll(u.pose.tags);
-			for(Theme t : nation.themes)
-				tags.addAll(t.tags);
-			for(Filter f : u.appliedFilters)
-				tags.addAll(f.tags);
-					
-			
-			List<String> values = Generic.getTagValues(tags, "dwchance");
-			if(values.size() > 0)
-			{
-				List<Double> intvalues = new ArrayList<Double>();
-				for(String s : values)
-					intvalues.add(Double.parseDouble(s));
-				
-				
-				double largest = intvalues.get(0);
-				for(double d : intvalues)
-					if(d > largest)
-						largest = d;
-				
-				local_dwchance = largest;
-			}
-			
-			values = Generic.getTagValues(tags, "dwchancebonus");
-			if(values.size() > 0)
-			{
-				for(String s : values)
-					local_dwchance +=  Double.parseDouble(s);	
-			}
-		}
-		
-		if(random.nextDouble() > local_dwchance && !mage)
-			return;
-		
-		
-
-		
-		ItemSet stuff = new ItemSet();
-		
-	
-		
-		int rolls = 0;
-		while(stuff.possibleItems() == 0 && rolls < 20)
-		{
-
-			rolls++;
-			double roll = nation.random.nextDouble();
-			if(roll < 0.66)
-			{
-				stuff = u.pose.getItems("offhand").filterArmor(false);
-			}
-			else
-			{
-				Item offhand = u.pose.getItems("offhand").filterArmor(false).getItemWithID(u.getSlot("weapon").id, "offhand");
-				if(offhand != null)
-					stuff.add(offhand);
-			}
-
-		}
-		
-		if(stuff.possibleItems() > 0)
-		{
-			Item wep = this.getSuitableItem("offhand", u, excluded, used, stuff, targettag);
-			u.setSlot("offhand", wep);
-		}
-		
-	}
-	
-	
-	public void equipBonusWeapon(Unit u, ItemSet used, ItemSet excluded, String targettag, boolean mage)
-	{
-		if(u.pose.roles.contains("ranged"))
-			return;
-		
-		
-		Random random = nation.random;
-		ItemSet bonuses = used.filterSlot("bonusweapon").filterForPose(u.pose);
-		if(bonuses.possibleItems() < 1 || random.nextDouble() < 0.5)
-		{
-			bonuses.add(this.getSuitableItem("bonusweapon", u, excluded, used, targettag));
-		}
-		
-		bonuses = bonuses.filterForPose(u.pose);
-		
-
-		Item bonusweapon = Entity.getRandom(random, chandler.handleChanceIncs(u, bonuses));
-		if(bonusweapon == null)
-			return;
-
-		
-	
-		
-		// Prot level
-		int maxprot = 100;
-		int minprot = 0;
-		int totalprot = u.getTotalProt(false);
-		
-
-		if(Generic.containsTag(u.race.tags, "zeroarmor"))
-			totalprot -= Integer.parseInt(Generic.getTagValue(u.race.tags, "zeroarmor"));
-		if(Generic.containsTag(bonusweapon.tags, "maxprot"))
-			maxprot = Integer.parseInt(Generic.getTagValue(bonusweapon.tags, "maxprot"));
-		if(Generic.containsTag(bonusweapon.tags, "minprot"))
-			minprot = Integer.parseInt(Generic.getTagValue(bonusweapon.tags, "minprot"));
-		totalprot = Math.max(0, totalprot);
-		
-		if(totalprot < minprot || totalprot > maxprot)
-			return;
-		
-		
-
-		double local_bwchance = 0.15;
-		if(!mage)
-		{
-			List<String> tags = new ArrayList<String>();
-			tags.addAll(u.race.tags);
-			tags.addAll(u.pose.tags);
-			for(Theme t : nation.themes)
-				tags.addAll(t.tags);
-			for(Filter f : u.appliedFilters)
-				tags.addAll(f.tags);
-					
-			
-			List<String> values = Generic.getTagValues(tags, "bonusweaponchance");
-			if(values.size() > 0)
-			{
-				List<Double> intvalues = new ArrayList<Double>();
-				for(String s : values)
-					intvalues.add(Double.parseDouble(s));
-				
-				
-				double largest = intvalues.get(0);
-				for(double d : intvalues)
-					if(d > largest)
-						largest = d;
-				
-				local_bwchance = largest;
-			}
-			
-			values = Generic.getTagValues(tags, "bonusweaponchancebonus");
-			if(values.size() > 0)
-			{
-				for(String s : values)
-					local_bwchance +=  Double.parseDouble(s);	
-			}
-		}
-		else
-			local_bwchance = 100;
-		
-		double chance = local_bwchance;
-
-
-		
-		double rescost = u.getResCost(false);
-		
-		rescost += 4 * nationGen.weapondb.GetInteger(u.getSlot("weapon").id, "res");
-		if(nationGen.weapondb.GetValue(u.getSlot("weapon").id, "2h").equals("1"))
-			rescost += 2 * nationGen.weapondb.GetInteger(u.getSlot("weapon").id, "res");
-
-
-
-
-		
-		if(u.getSlot("offhand") != null && u.getSlot("offhand").armor)
-			rescost += 4 * nationGen.armordb.GetInteger(u.getSlot("offhand").id, "res");
-		else if(u.getSlot("offhand") != null)
-			rescost += 4 * nationGen.weapondb.GetInteger(u.getSlot("offhand").id, "res");
-		
-		if(nationGen.weapondb.GetInteger(u.getSlot("weapon").id, "dmg") <= 4)
-			rescost *= 0.75;
-		
-		if(u.pose.roles.contains("mounted") || u.pose.roles.contains("sacred mounted") || u.pose.roles.contains("elite mounted")) // +15% res cost for calculations for cavalry
-			rescost = rescost * 1.15;
-		if(u.getSlot("lanceslot") != null) // +15% if there already is a lance
-			rescost = rescost * 1.15;
-
-		if((rescost - 6) / 32 < chance)
-		{
-			u.setSlot("bonusweapon", bonusweapon);
-			used.add(bonusweapon);	
-		}
-		
-		// Tieruniqueness.
-		if(bonusweapon.tags.contains("tierunique"))
-		{
-			excluded.add(bonusweapon);
-		}
-		
-	}
-	
-	
-	protected void cleanUnit(Unit u)
-	{
-		// TODO: Handle more than one hand \:D/
-		Item weapon = u.getSlot("weapon");
-		boolean twohand = nationGen.weapondb.GetValue(weapon.id, "2h").equals("1");
-		if(twohand)
-			u.setSlot("offhand", null);
-	}
 }

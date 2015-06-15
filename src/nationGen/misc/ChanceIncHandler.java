@@ -28,6 +28,7 @@ import com.elmokki.Generic;
 
 
 
+
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Pose;
@@ -105,8 +106,11 @@ public class ChanceIncHandler {
 		{
 			set.put(t, t.basechance);
 		}
+
 		
 		List<String> miscincs = new ArrayList<String>();
+		
+		
 		for(Unit un : u)
 		{
 			for(Filter f : un.appliedFilters)
@@ -163,8 +167,9 @@ public class ChanceIncHandler {
 	public static boolean canAdd(Unit u, Filter f)
 	{
 		if(!suitableFor(u, f, null))
+		{
 			return false;
-		
+		}
 		
 		List<String> primaries = new ArrayList<String>();
 		if(Generic.containsTag(f.tags, "primarycommand"))
@@ -189,6 +194,7 @@ public class ChanceIncHandler {
 			{
 				primarycommandfail = true;
 				ok = false;
+
 				break;
 			}
 
@@ -221,9 +227,9 @@ public class ChanceIncHandler {
 			if(u.getSlot("helmet") != null)
 				enc += u.nationGen.armordb.GetInteger(u.getSlot("helmet").id, "enc");
 			
-			
-			ok = (enc <= treshold);
 
+			ok = (enc <= treshold);
+			
 			
 
 		}
@@ -296,11 +302,14 @@ public class ChanceIncHandler {
 	{
 		List<Filter> list = new ArrayList<Filter>();
 		
+
 		for(Filter f : filters)
 		{
+
 			boolean ok = true;
 			for(Unit u : units)
 			{
+
 				if(!ChanceIncHandler.canAdd(u, f))
 					ok = false;
 			}
@@ -317,7 +326,7 @@ public class ChanceIncHandler {
 		List<Unit> l = new ArrayList<Unit>();
 		l.add(unit);
 
-		
+
 		return getValidUnitFilters(filters, l);
 	}
 	/**
@@ -598,6 +607,18 @@ public class ChanceIncHandler {
 		}
 	}
 
+	
+	public <T extends Filter> int countPossibleFilters(List<T> list, Unit u)
+	{
+	
+		return 	this.handleChanceIncs(u, list).size();
+	}
+	
+	public <T extends Filter> int countPossibleFilters(List<T> list)
+	{
+	
+		return 	this.handleChanceIncs(list).size();
+	}
 	
 	public <T extends Filter> T getRandom(List<T> list, List<Unit> units)
 	{
