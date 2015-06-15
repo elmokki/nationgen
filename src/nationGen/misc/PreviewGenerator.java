@@ -97,7 +97,7 @@ public class PreviewGenerator {
 		Font d = f.deriveFont(32f);
 		g.setFont(d);
 		//g.setColor(c);
-		g.drawString(n.name, 128, 48);
+		g.drawString(n.name, 96, 48);
 		g.setFont(f);
 		g.setColor(Color.white);
 		g.drawImage(flag, 16, 0, null);
