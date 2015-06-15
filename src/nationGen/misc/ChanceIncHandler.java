@@ -499,7 +499,7 @@ public class ChanceIncHandler {
 				if(args.get(0).equals("theme") && args.size() >= 3)
 				{
 					boolean not = args.contains("not");
-					if(f.tags.contains(args.get(args.size() - 2)) != not)
+					if(f.themes.contains(args.get(args.size() - 2)) != not)
 					{
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 					}
