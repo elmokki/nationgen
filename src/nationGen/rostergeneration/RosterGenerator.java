@@ -39,14 +39,9 @@ public class RosterGenerator {
 	NationGen nationGen;
 	Nation nation;
 	private Random r;
-	private UnitGen unitGen = null;
 	private ChanceIncHandler chandler = null;
 
-	private List<Filter> unitTemplates = new ArrayList<Filter>();
-	private int maxtemplates = 0;
-	private ItemSet used = new ItemSet();
-	private ItemSet exclusions = new ItemSet();
-	
+
 	
 	private List<Unit> infantry = new ArrayList<Unit>();
 	private List<Unit> ranged = new ArrayList<Unit>();
@@ -58,24 +53,10 @@ public class RosterGenerator {
 		nationGen = g;
 		nation = n;
 		this.r = new Random(n.random.nextInt());
-		unitGen = new UnitGen(nationGen, nation);
 		chandler = new ChanceIncHandler(nation);
 	}
 	
-	private List<Unit> getTargetList(String roll)
-	{
-		if(roll.equals("ranged"))
-			return ranged;
-		else if(roll.equals("infantry"))
-			return infantry;
-		else if(roll.equals("mounted"))
-			return cavalry;
-		else if(roll.equals("chariot"))
-			return chariot;
-		
-		return null;
-	}
-	
+
 	
 	public void execute()
 	{
@@ -119,13 +100,14 @@ public class RosterGenerator {
 		maxamounts[0] = (int)Math.round(Math.max(1, max * 0.2));
 		
 
-		maxtemplates = r.nextInt(3) + 1; // 1 to 3;
 		
 
 			
 		int cycles = 0;
 		int incs = 1;
 		
+		TroopGenerator tgen = new TroopGenerator(nationGen, nation);
+
 		while(units < max)
 		{
 			
@@ -162,50 +144,18 @@ public class RosterGenerator {
 			else if(roll.equals("chariot") && maxamounts[3] > chariot.size())
 				target = chariot;
 						
+			
+			
 			if(race != null && target != null && race.hasRole(roll))
 			{
 			
-				
-			
-				Unit u = getNewUnit(race, roll);
+				Unit u = tgen.generateUnit(roll, race, 3);
 				if(u != null)
 				{
-					
-					
-					// Add variants!
-					if(r.nextDouble() > 0.3)
-					{
-						int amount = 2;
-						if(getMaxVarieties(u) > 1)
-						{
-							amount += r.nextInt(this.getMaxVarieties(u) - 1);
-						}
-						else
-							amount = 1;
-						
-						if(u.pose.roles.contains("mounted"))
-							amount = 2;
-						
-						amount = Math.min(amount, max - units + 1);
-						
-
-						List<Unit> news = null;
-						if(u.pose.roles.contains("mounted"))
-							news = unitGen.varyCavalryWeapon(u, amount, "weapon", used, null, null);
-						else
-							news = unitGen.varyUnit(u, amount, "weapon", used, null, null);
-
-						target.addAll(news);
-						units += news.size();
-					}
-					else
-					{
-						target.add(u);
-						units++;
-
-					}
+					target.add(u);
+					units++;
 				}
-				
+	
 				
 			}
 			
@@ -213,26 +163,7 @@ public class RosterGenerator {
 		}
 
 
-		// Final stuff
-		for(Unit u : infantry)
-		{
-			unitGen.equipOffhand(u, used, exclusions, null, false);
-			unitGen.equipBonusWeapon(u, used, exclusions, null, false);
-			unitGen.cleanUnit(u);
-		}
-		for(Unit u : cavalry)
-		{
-			unitGen.equipBonusWeapon(u, used, exclusions, null, false);
-			unitGen.cleanUnit(u);
-		}
-		for(Unit u : chariot)
-		{
-			unitGen.cleanUnit(u);
-		}
-		for(Unit u : ranged)
-		{
-			unitGen.cleanUnit(u);
-		}
+
 		
 		putToNation("ranged", sortToLists(ranged));
 		putToNation("infantry", sortToLists(infantry));
@@ -244,87 +175,7 @@ public class RosterGenerator {
 	}
 	
 	
-	private Unit getNewUnit(Race race, String role)
-	{
-		Pose p = this.getSuitablePose(race, role);
-		if(p == null)
-			return null;
-		
-		Unit u = unitGen.generateUnit(race, p);
-		
-		
-		// Add unit template to available templates
-		if(unitTemplates.size() < maxtemplates)
-		{
-			List<Filter> possibleFilters = ChanceIncHandler.retrieveFilters("trooptemplates", "default_templates", nationGen.miscdef, u.pose, u.race);
-			possibleFilters.removeAll(unitTemplates);
-			possibleFilters = ChanceIncHandler.getValidUnitFilters(possibleFilters, u);
-			
-			Filter f = chandler.getRandom(possibleFilters, u);
-			if(f != null)
-			{
-				u.appliedFilters.add(f);
-				unitTemplates.add(f);
-			}
-		}
-		
-		
-		// Remove elite and sacred items
-		Filter tf = new Filter(nationGen);
-		tf.name = Generic.capitalize(role) + " unit";
-		
-		boolean elite = false;
-		boolean sacred = false;
-		for(Filter f : u.appliedFilters)
-		{
-			if(f.tags.contains("alloweliteitems"))
-				elite = true;
-			if(f.tags.contains("allowsacreditems"))
-				sacred = true;
-		}
-		
-		if(!elite || !sacred)
-		{
 
-			if(!elite)
-			{
-				tf.themeincs.add("thisitemtag elite *0");
-				tf.themeincs.add("thisitemtheme elite *0");
-			}
-			if(!sacred)
-			{
-				tf.themeincs.add("thisitemtag sacred *0");
-				tf.themeincs.add("thisitemtheme sacred *0");
-
-			}
-			
-		}	
-
-		u.appliedFilters.add(tf);
-		
-	
-		// Equip unit
-		
-
-		ItemSet fooexc = new ItemSet();
-		List<Unit> others = getTargetList(role);
-		for(Unit un : others)
-			if(un.pose == u.pose)
-				fooexc.add(u.getSlot("armor"));
-		
-		fooexc.addAll(exclusions);
-		
-		unitGen.armorUnit(u, used, fooexc, null, false);
-		unitGen.armUnit(u, used, exclusions, null, false);
-
-		addToUsed(u);
-		
-
-
-		
-		return u;
-	}
-	
 	
 	private double[] getChances(Race race)
 	{
@@ -489,65 +340,9 @@ public class RosterGenerator {
 		return finallist;
 	}	
 	
-	public void addToUsed(Unit unit)
-	{
-		
-		for(Item i : unit.slotmap.values())
-			if(!used.contains(i) && unit.getSlot("armor") != i)
-				used.add(i);
 
-		
-		for(String r : unit.pose.roles)
-			for(Pose p2 : unit.race.getPoses(r))
-			{	
 	
-				if(p2.getItems("offhand") != null && unit.getSlot("offhand") != null && unit.getSlot("offhand").armor)
-					for(Item i : p2.getItems("offhand").filterArmor(true))
-						if(i.id.equals(unit.getSlot("offhand").id) && (!i.sprite.equals(unit.getSlot("offhand").sprite) && !i.name.equals(unit.getSlot("offhand").name)))
-							{
-								
-								if(!exclusions.contains(i))
-								{
-									this.exclusions.add(i);
-								}
-							}
-		
-			}
-		
-	}
-	
-	
-	private Pose getSuitablePose(Race race, String role)
-	{
-		Pose p = null;
-		List<Pose> poses = race.getPoses(role);
-		List<Pose> remove = new ArrayList<Pose>();
-		
-		for(Pose pose : poses)
-		{
-			if(Generic.containsTag(pose.tags, "primaryraceonly") && race != nation.races.get(0))
-				remove.add(pose);
-			
-			List<Item> armors = new ArrayList<Item>();
-			armors.addAll(pose.getItems("armor"));
-			
-			
-			if(exclusions.filterSlot("armor").filterForPose(pose).containsAll(armors))
-			{
-				System.out.println(poses.size() + " vs " + exclusions.filterSlot("armor").filterForPose(pose) + " " + role + " " + race);
-				remove.add(pose);
-			}
-			
-			
-		}
-		poses.removeAll(remove);
-		p = chandler.getRandom(poses);
 
-		if(p == null)
-			System.out.println("NO POSE FOR RACE " + race + " " + exclusions.filterSlot("armor").size() + " main race " + nation.races.get(0) + " role " + role);
-		
-		return p;
-	}
 	
 	private List<List<Unit>> sortToListsByBasesprite(List<Unit> templates)
 	{
@@ -643,38 +438,7 @@ public class RosterGenerator {
 		return prio;
 	}
 	
-	
-	private int getMaxVarieties(Unit u)
-	{
-		
-		int maxvar = 3;
-		if(u.pose.roles.contains("mounted"))
-			maxvar = 2;
-		if(u.pose.roles.contains("chariot"))
-			maxvar = 1;
-		
-		for(Filter f : u.appliedFilters)
-			if(Generic.getTagValue(f.tags, "maxvarieties") != null)
-				maxvar = Integer.parseInt(Generic.getTagValue(f.tags, "maxvarieties"));
-		
-		if(Generic.getTagValue(u.getSlot("armor").tags, "maxvarieties") != null)
-			maxvar = Math.min(maxvar, Integer.parseInt(Generic.getTagValue(u.getSlot("armor").tags, "maxvarieties")));
-		
-		if(u.getSlot("mount") != null && Generic.getTagValue(u.getSlot("mount").tags, "maxvarieties") != null)
-			maxvar = Math.min(maxvar, Integer.parseInt(Generic.getTagValue(u.getSlot("mount").tags, "maxvarieties")));
-		
-		
-		if(Generic.getTagValue(u.pose.tags, "maxvarieties") != null)
-			maxvar = Math.min(maxvar, Integer.parseInt(Generic.getTagValue(u.pose.tags, "maxvarieties")));
-		
-		
-		maxvar = Math.min(u.pose.getItems("weapon").possibleItems(), maxvar);
-		
-	
-		return maxvar;
 
-	}
-	
 
 	
 	

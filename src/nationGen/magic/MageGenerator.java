@@ -2125,7 +2125,7 @@ public class MageGenerator extends TroopGenerator {
 		
 		for(int i = 1; i < amount; i++)
 		{
-			Unit nu = copyUnit(u);
+			Unit nu = u.getCopy();
 			Item newitem = unitGen.getSuitableItem(slot, nu, exclusions, used, "tier " + tier);
 			nu.setSlot(slot, newitem);
 			

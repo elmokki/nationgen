@@ -21,7 +21,7 @@ public class ConsoleGUI {
 		seeds.add(1306265258);
 		
 		//nationGen.generate(seeds);
-		nationGen.generate(100, 45456);
+		nationGen.generate(1, 1375961368);
 	}
 
 
