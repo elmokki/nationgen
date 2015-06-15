@@ -27,6 +27,17 @@
 #needs legs leatherpants
 #enditem
 
+#newitem
+#name "reinforced leather"
+#gameid zotz_mictlanarmor
+#sprite /graphics/hoburg/bodyarmor/leatherhauberk.png
+#armor
+#theme "leather"
+#theme "primitive"
+#needs legs leatherpants
+#enditem
+
+
 --- Ring
 
 #newitem
@@ -71,6 +82,7 @@
 #sprite /graphics/hoburg/bodyarmor/mailhauberk.png
 #armor
 #theme "iron"
+#basechance 0.5
 #enditem
 
 #newitem -- full scale
@@ -81,6 +93,7 @@
 #theme "advanced"
 #theme "iron"
 #needs legs mailpants
+#basechance 0.25
 #enditem
 
 
@@ -100,6 +113,7 @@
 #sprite /graphics/hoburg/bodyarmor/mailhauberk.png
 #armor
 #theme "iron"
+#basechance 0.5
 #enditem
 
 #newitem -- full chain
@@ -111,6 +125,7 @@
 #theme "iron"
 #tag "name mounted knight"
 #needs legs mailpants
+#basechance 0.25
 #enditem
 
 
@@ -123,6 +138,7 @@
 #armor
 #theme "advanced"
 #theme "iron"
+#basechance 0.5
 #enditem
 
 #newitem
@@ -133,6 +149,7 @@
 #theme "advanced"
 #theme "iron"
 #tag "name mounted knight"
+#basechance 0.25
 #enditem
 
 #newitem -- full plate
@@ -145,4 +162,5 @@
 #needs legs platepants
 #tag "name mounted knight"
 #maxvarieties 1
+#basechance 0.125
 #enditem
