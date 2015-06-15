@@ -28,8 +28,9 @@ public class PreviewGenerator {
 		int maxY = 1;
 		
 		int neededBlocks = 0;
+		int totalNeededBlocks = 0;
 		int troopLines = 0;
-		
+
 		List<Unit> troops = n.generateUnitList("ranged");
 		troops.addAll(n.generateUnitList("infantry"));
 		troops.addAll(n.generateUnitList("mounted"));
@@ -49,6 +50,7 @@ public class PreviewGenerator {
 		
 		troopLines = (int) Math.ceil((double)neededBlocks / ((double)maxX + 1));
 		maxY += (int) Math.ceil((double)neededBlocks / ((double)maxX + 1));
+		totalNeededBlocks += neededBlocks;
 		neededBlocks = 0;
 		
 		for(Unit u : n.generateComList())
@@ -61,11 +63,15 @@ public class PreviewGenerator {
 			
 			neededBlocks += x*y;
 		}
+		totalNeededBlocks += neededBlocks;
 
+
+		
 		maxY += (int) Math.ceil((double)neededBlocks / ((double)maxX + 1));
 		neededBlocks = 0;
 		maxY++;
 		
+
 		
 		BufferedImage img = new BufferedImage((1 + maxX)*baseX, (1 + maxY)*baseY, BufferedImage.TYPE_3BYTE_BGR);
 		Graphics g = img.getGraphics();
@@ -104,13 +110,18 @@ public class PreviewGenerator {
 			
 		drawList(map, maxX, maxY, troops, g);
 		
+		/*
 		for(int y = 0; y < maxY; y++)
 		{
 			if(map[y][0] == 1)
 				for(int x = 0; x < maxX; x++)
+				{
 					map[y][x] = 1;
+			
+				}
+			
 		}
-		
+		*/
 		drawList(map, maxX, maxY, n.generateComList(), g);
 		
 		
@@ -125,8 +136,10 @@ public class PreviewGenerator {
 			boolean foundFit = false;
 			for(int y = 0; y < maxY; y++)
 			{
+
 				for(int x = 0; x < maxX; x++)
 				{
+
 					if(map[y][x] == 0)
 					{
 						int unitX = getSize(u, true);
@@ -135,7 +148,7 @@ public class PreviewGenerator {
 						unitX = (int)Math.ceil((double)unitX / 64);
 						unitY = (int)Math.ceil((double)unitY / 64);
 						
-						
+
 						boolean fit = true;
 				
 	
@@ -179,6 +192,10 @@ public class PreviewGenerator {
 							break;
 						}
 						
+					}
+					else
+					{
+
 					}
 					
 				}
