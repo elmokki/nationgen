@@ -6,6 +6,31 @@
 #end
 
 #new magefilter
+#name "terrestrial"
+#basechance 0.01
+#chanceinc "personalmagic air *5"
+#chanceinc "personalmagic earth *2"
+#chanceinc "magic water *0"
+#command "#uwdamage 100"
+#notfortier 3
+#notfortier 2
+#notfortier 1
+#power -1
+#end
+
+#new magefilter
+#name "bound"
+#basechance 0.01
+#chanceinc "personalmagic blood *5"
+#chanceinc "personalmagic nature *5"
+#command "#homesick 10"
+#notfortier 3
+#notfortier 2
+#notfortier 1
+#power -1
+#end
+
+#new magefilter
 #name "heretic"
 #basechance 1
 #command "#heretic +1"

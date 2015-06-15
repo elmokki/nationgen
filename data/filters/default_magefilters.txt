@@ -6,6 +6,31 @@
 #end
 
 #new magefilter
+#name "terrestrial"
+#basechance 0.01
+#chanceinc "personalmagic air *5"
+#chanceinc "personalmagic earth *2"
+#chanceinc "magic water *0"
+#command "#uwdamage 100"
+#notfortier 3
+#notfortier 2
+#notfortier 1
+#power -1
+#end
+
+#new magefilter
+#name "bound"
+#basechance 0.01
+#chanceinc "personalmagic blood *5"
+#chanceinc "personalmagic nature *5"
+#command "#homesick 10"
+#notfortier 3
+#notfortier 2
+#notfortier 1
+#power -1
+#end
+
+#new magefilter
 #name "heretic"
 #basechance 1
 #command "#heretic +1"
@@ -99,8 +124,6 @@
 #chanceinc "magic astral 0.25"
 #end
 
-
-
 #new magefilter
 #name "elegist 1"
 #basechance 0
@@ -142,7 +165,6 @@
 #chanceinc "command #chaospower 100"
 #end
 
-
 #new
 #name "chaosrec_high"
 #type "chaosrec"
@@ -161,7 +183,6 @@
 #chanceinc "command #deathpower 100"
 #chanceinc "magic death 5"
 #end
-
 
 #new magefilter
 #name "shockres"
@@ -1063,6 +1084,7 @@
 #chanceinc "magic blood 0.05"
 #chanceinc "magic astral blood 2"
 #command "#secondtmpshape lesserhorror"
+#command "#horrormark"
 #command "#gcost *1.2"
 #tag "personalmagic astral"
 #description "unleashes its true form of a horror on death"

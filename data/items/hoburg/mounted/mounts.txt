@@ -17,29 +17,9 @@
 #define "#enc 4"
 #tag "animal boar"
 #tag "guaranteedprefix hog"
+#theme "boar"
 #offsety -12
 #offsetx 1
-#enditem
-
-#newitem
-#name "wolf"
-#gameid -1
-#sprite /graphics/hoburg/mounts/wolf.png
-#armor
-#define "#size 2"
-#define "#mapmove 2"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon nostr_bite_10 --- Bite"
-#define "#gcost +17"
-#define "#ressize 1"
-#define "#enc 3"
-#define "#rcost +4"
-#tag "animal wolf"
-#tag "maxprot 14"
-#tag "guaranteedprefix wolf"
-#offsety -8
-#offsetx -2
 #enditem
 
 #newitem
@@ -60,89 +40,9 @@
 #tag "animal goat"
 #tag "maxprot 12"
 #tag "guaranteedprefix goat"
+#theme "goat"
 #offsety -7
 #offsetx 0
-#basechance 0.5
-#enditem
-
-#newitem
-#name "hawk"
-#gameid -1
-#sprite /graphics/hoburg/mounts/hawk.png
-#armor
-#needs overlay hawkoverlay
-#define "#size 2"
-#define "#mapmove 3"
-#define "#ap 6"
-#define "#flying"
-#define "#mounted"
-#define "#weapon 236 --- claw"
-#define "#gcost +27"
-#define "#ressize 1"
-#define "#enc 4"
-#define "#rcost +4"
-#tag "animal hawk"
-#tag "maxprot 16"
-#tag "guaranteedprefix hawk"
-#basechance 0.5
-#offsety 30
-#offsetx 26
-#enditem
-
-
-#newitem
-#name "ozelotl"
-#gameid -1
-#sprite /graphics/hoburg/mounts/ozelotl.png
-#armor
-#offsety 32
-#offsetx 30
-#needs overlay ozelotl_overlay
-#define "#size 3"
-#define "#mapmove 3"
-#define "#ap 10"
-#define "#flying"
-#define "#mounted"
-#define "#weapon 19"
-#define "#weapon 236"
-#define "#gcost +45"
-#define "#hp +2"
-#define "#ressize 1"
-#define "#rcost +4"
-#define "#enc 3"
-#define "#secondtmpshape ozelotl"
-#tag "animal ozelotl"
-#description "The ozelotl fight until the end of the battle if the rider perishes"
-#tag "maxprot 14"
-#tag "guaranteedprefix ozelotl"
-#basechance 0.33
-#enditem
-
-#newitem
-#name "giant bat"
-#gameid -1
-#sprite /graphics/hoburg/mounts/giant_bat.png
-#armor
-#offsety 34
-#offsetx 30
-#needs overlay giant_bat_overlay
-#needs legs pants2
-#define "#size 2"
-#define "#mapmove 3"
-#define "#ap 10"
-#define "#flying"
-#define "#mounted"
-#define "#weapon 19 -- Bite"
-#define "#gcost +35"
-#define "#hp +2"
-#define "#secondtmpshape beastbat_nerfed"
-#define "#ressize 1"
-#define "#rcost +4"
-#define "#enc 3"
-#tag "animal bat"
-#tag "maxprot 16"
-#tag "guaranteedprefix giant bat"
-#description "The giant bat fight until the end of the battle if the rider perishes"
 #basechance 0.5
 #enditem
 
@@ -169,6 +69,11 @@
 #basechance 0.22
 #offsetx -1
 #offsety -30
+#theme "primitive"
+#theme "occidental"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
 #enditem
 
 #newitem
@@ -195,6 +100,11 @@
 #basechance 0.11
 #offsetx -1
 #offsety -30
+#theme "primitive"
+#theme "occidental"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
 #enditem
 
 #newitem
@@ -219,8 +129,9 @@
 #tag "guaranteedprefix 'cave man'"
 #offsety 29
 #offsetx 6
+#theme "primitive"
+#theme "caveman"
 #enditem
-
 
 #newitem
 #name "mechant"
@@ -242,6 +153,9 @@
 #offsety -18
 #offsetx -3
 #minprot 10
+#theme "advanced"
+#theme "mechanical"
+#theme "iron"
 #enditem
 
 #newitem
@@ -266,6 +180,9 @@
 #offsety -5
 #offsetx 5
 #minprot 10
+#theme "advanced"
+#theme "mechanical"
+#theme "iron"
 #enditem
 
 #newitem
@@ -289,27 +206,9 @@
 #offsety -15
 #offsetx -14
 #minprot 10
-#enditem
-
-#newitem
-#name "deer"
-#gameid -1
-#sprite /graphics/hoburg/mounts/deer.png
-#armor
-#define "#size 2"
-#define "#mapmove 3"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon 354 --- antlers"
-#define "#gcost +15"
-#define "#ressize 1"
-#define "#enc 3"
-#define "#rcost +4"
-#tag "animal deer"
-#tag "maxprot 14"
-#tag "guaranteedprefix deer"
-#offsety -14
-#offsetx 0
+#theme "advanced"
+#theme "mechanical"
+#theme "iron"
 #enditem
 
 #newitem
@@ -332,7 +231,11 @@
 #define "#secondtmpshape crocodilemount"
 #description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
 #tag "animal crocodile"
-#theme "light"
+#theme "heavy"
 #theme "specialmount"
 #tag "guaranteedprefix crocodile"
+#theme "primitive"
+#theme "crocodile"
+#theme "crocodiletotem"
+#theme "totemanimal"
 #enditem

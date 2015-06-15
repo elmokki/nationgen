@@ -3,6 +3,7 @@
 #gameid 21
 #sprite /graphics/weapon/standard/javelin1.png
 #tag "name infantry 'Javelineer'"
+#theme "wood"
 #enditem
 
 #newitem
@@ -10,20 +11,23 @@
 #gameid 21
 #sprite /graphics/weapon/standard/javelin2.png
 #tag "name infantry 'Javelineer'"
+#theme "wood"
 #enditem
 
 #newitem
 #name "bonus crossbow"
-#gameid 25
+#gameid hoburg_crossbow
 #sprite /graphics/weapon/standard/bonuscrossbow.png
 #basechance 0.25
 #theme "advanced"
+#theme "mechanical"
 #enditem
 
 #newitem -- Throwing axe
 #name "throwing axe"
 #gameid 260
 #theme "primitive"
+#theme "iron"
 #tag "name infantry 'Axe Thrower'"
 #enditem
 
@@ -32,6 +36,7 @@
 #gameid 361
 #sprite /graphics/weapon/standard/bonusshortbow.png
 #basechance 0.5
+#theme "wood"
 #enditem
 
 #newitem
@@ -44,6 +49,7 @@
 #tag "tierunique"
 #offsetx 4
 #offsety -2
+#theme "iron"
 #enditem
 
 #newitem
@@ -51,6 +57,7 @@
 #gameid 360
 #basechance 0.5
 #theme "primitive"
+#theme "wood"
 #tag "maxprot 8"
 #tag "notepic"
 #enditem
@@ -63,6 +70,9 @@
 #tag "maxprot 12"
 #tag "tierunique"
 #basechance 0.5
+#theme "primitive"
+#theme "wood"
+#theme "iron"
 #enditem
 
 #newitem
@@ -72,4 +82,6 @@
 #tag "maxprot 10"
 #tag "tierunique"
 #basechance 0.45
+#theme "primitive"
+#theme "wood"
 #enditem

@@ -6,6 +6,7 @@
 #gameid 5
 #sprite /graphics/hoburg/bodyarmor/crossbow/leathercuirass.png
 #armor
+#theme "leather"
 #enditem
 
 #newitem
@@ -13,6 +14,7 @@
 #gameid 10
 #sprite /graphics/hoburg/bodyarmor/crossbow/leatherhauberk.png
 #armor
+#theme "leather"
 #enditem
 
 #newitem -- full leather, TODO: legs
@@ -21,34 +23,43 @@
 #gameid 15
 #sprite /graphics/hoburg/bodyarmor/crossbow/leatherhauberk.png
 #armor
-#enditem
-
-
---- Chain Mail
-
-#newitem
-#name "chain cuirass"
-#gameid 8
-#sprite /graphics/hoburg/bodyarmor/crossbow/mailcuirass.png
-#armor
+#theme "leather"
 #enditem
 
 #newitem
-#name "chain hauberk short"
-#gameid 13
-#sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk.png
+#name "reinforced leather"
+#gameid zotz_mictlanarmor
+#sprite /graphics/hoburg/bodyarmor/crossbow/leatherhauberk.png
 #armor
-#basechance 0.5
+#theme "leather"
+#theme "primitive"
 #enditem
 
-#newitem -- full chain, TODO legs
-#name "full chain"
-#gameid 18
-#sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk.png
+
+--- Ring
+
+#newitem
+#name "ring cuirass"
+#gameid 6
+#sprite /graphics/hoburg/bodyarmor/crossbow/ringcuirass.png
 #armor
-#theme "advanced"
-#tag "name mounted knight"
-#basechance 0.25
+#theme "leather"
+#enditem
+
+#newitem
+#name "ring hauberk short"
+#gameid 11
+#sprite /graphics/hoburg/bodyarmor/crossbow/ringhauberk.png
+#armor
+#theme "leather"
+#enditem
+
+#newitem -- full ring, TODO legs
+#name "full ring"
+#gameid 16
+#sprite /graphics/hoburg/bodyarmor/crossbow/ringhauberk.png
+#armor
+#theme "leather"
 #enditem
 
 
@@ -59,6 +70,7 @@
 #gameid 7
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailcuirass.png
 #armor
+#theme "iron"
 #enditem
 
 #newitem
@@ -66,6 +78,7 @@
 #gameid 12
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk.png
 #armor
+#theme "iron"
 #basechance 0.5
 #enditem
 
@@ -75,6 +88,38 @@
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk.png
 #armor
 #theme "advanced"
+#theme "iron"
+#basechance 0.25
+#enditem
+
+
+--- Chain Mail
+
+#newitem
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/hoburg/bodyarmor/crossbow/mailcuirass.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "chain hauberk short"
+#gameid 13
+#sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk.png
+#armor
+#theme "iron"
+#basechance 0.5
+#enditem
+
+#newitem -- full chain, TODO legs
+#name "full chain"
+#gameid 18
+#sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk.png
+#armor
+#theme "advanced"
+#theme "iron"
+#tag "name mounted knight"
 #basechance 0.25
 #enditem
 
@@ -87,6 +132,7 @@
 #sprite /graphics/hoburg/bodyarmor/crossbow/platecuirass.png
 #armor
 #theme "advanced"
+#theme "iron"
 #basechance 0.5
 #enditem
 
@@ -96,6 +142,7 @@
 #sprite /graphics/hoburg/bodyarmor/crossbow/platehauberk.png
 #armor
 #theme "advanced"
+#theme "iron"
 #tag "name mounted knight"
 #basechance 0.25
 #enditem
@@ -106,31 +153,7 @@
 #sprite /graphics/hoburg/bodyarmor/crossbow/platehauberk.png
 #armor
 #theme "advanced"
+#theme "iron"
 #tag "name mounted knight"
 #basechance 0.125
 #enditem
-
-
---- Ring
-
-#newitem
-#name "ring cuirass"
-#gameid 6
-#sprite /graphics/hoburg/bodyarmor/crossbow/ringcuirass.png
-#armor
-#enditem
-
-#newitem
-#name "ring hauberk short"
-#gameid 11
-#sprite /graphics/hoburg/bodyarmor/crossbow/ringhauberk.png
-#armor
-#enditem
-
-#newitem -- full ring, TODO legs
-#name "full ring"
-#gameid 16
-#sprite /graphics/hoburg/bodyarmor/crossbow/ringhauberk.png
-#armor
-#enditem
-
