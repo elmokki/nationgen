@@ -44,6 +44,8 @@ public class CommanderGenerator extends TroopGenerator {
 		possibleComs.addAll(nation.generateUnitList("chariot"));
 		possibleComs.addAll(nation.generateUnitList("sacred"));
 		
+
+		
 		List<String> features = new ArrayList<String>();
 		List<String> allFeatures = new ArrayList<String>();
 		allFeatures.add("#flying");
@@ -171,6 +173,9 @@ public class CommanderGenerator extends TroopGenerator {
 		int minimumcoms = orig;
 	
 		
+		possibleComs.removeAll(tempComs);
+		minimumcoms = Math.min(minimumcoms, possibleComs.size());
+		
 		while(minimumcoms > 0 || features.size() > 0)
 		{			
 			
@@ -190,9 +195,10 @@ public class CommanderGenerator extends TroopGenerator {
 			}
 			else
 			{
-			
+
 				do
 				{
+
 					u = possibleComs.get(r.nextInt(possibleComs.size()));
 				} 
 				while(u == null || tempComs.contains(u) || (shouldReRoll(u, tempComs) && r.nextBoolean()));
@@ -205,7 +211,7 @@ public class CommanderGenerator extends TroopGenerator {
 			}
 			
 		}
-		
+
 		List<Unit> coms = new ArrayList<Unit>();
 		for(Unit u : tempComs)
 		{

@@ -23,9 +23,11 @@ import javax.imageio.ImageIO;
 
 
 
+
 import com.elmokki.Dom3DB;
 import com.elmokki.Drawing;
 import com.elmokki.Generic;
+
 
 
 
@@ -87,6 +89,28 @@ public class Unit {
 	{
 		return slotmap.get(s);
 
+	}
+	
+	public Unit getCopy()
+	{
+		Unit unit = new Unit(nationGen, race, pose);
+		
+		
+		// Copy unit
+		for(String slot : this.slotmap.keySet())
+		{
+			unit.setSlot(slot, this.getSlot(slot));
+		}
+		
+		unit.color = color;
+		unit.nation = nation;
+		unit.polished = this.polished;
+		unit.invariantMonster = this.invariantMonster;
+		unit.caponly = caponly;
+		unit.tags.addAll(tags);
+		unit.commands.addAll(commands);
+		unit.appliedFilters.addAll(appliedFilters);
+		return unit;
 	}
 	
 	/**
@@ -849,7 +873,7 @@ public class Unit {
 		}
 		
 		
-		if(c.args.size() > 0 && (c.args.get(0).startsWith("+") || c.args.get(0).startsWith("-") || c.args.get(0).startsWith("*")) && copystats != -1 && old == null)
+		if(c.args.size() > 0 && (c.args.get(0).startsWith("+")) && copystats != -1 && old == null)
 		{
 			String value = this.nationGen.units.GetValue(copystats + "", c.command.substring(1));
 			if(!value.equals(""))
@@ -858,8 +882,7 @@ public class Unit {
 				commands.add(old);
 			}
 		}
-
-		if(old != null && !uniques.contains(c.command))
+		else if(old != null && !uniques.contains(c.command))
 		{
 			/*
 			if(this.tags.contains("sacred") && c.command.equals("#gcost"))
@@ -898,8 +921,6 @@ public class Unit {
 					arg = arg.substring(1);
 					try
 					{
-			
-
 						oldarg = "" + (int)(Integer.parseInt(oldarg) * Double.parseDouble(arg));
 						old.args.set(i, oldarg);
 					}

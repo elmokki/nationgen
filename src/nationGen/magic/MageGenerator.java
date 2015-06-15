@@ -1973,7 +1973,7 @@ public class MageGenerator extends TroopGenerator {
 					pref = Generic.getTagValue(nu.race.tags, "preferredmount");
 				}
 		
-				nu.setSlot("mount", unitGen.getSuitableItem("mount", nu, nu.pose.getItems("mount"), exclusions, nu.pose.getItems("mount"), "animal " + pref, false, false));
+				nu.setSlot("mount", unitGen.getSuitableItem("mount", nu, nu.pose.getItems("mount"), exclusions, "animal " + pref));
 								
 				if(nu.getSlot("mount") == null)
 				{
@@ -2024,11 +2024,11 @@ public class MageGenerator extends TroopGenerator {
 		
 
 
-		unitGen.equipUnit(u, used, exclusions, "tier " + tier, false);
+		unitGen.armorUnit(u, used, exclusions, "tier " + tier, false);
 		unitGen.armUnit(u, used, exclusions, "tier " + tier, false);
 		if(tier == 3)
 		{
-			u.setSlot("cloakb", unitGen.getSuitableItem("cloakb", u, exclusions, used, u.pose.getItems("cloakb"), null, true, true));
+			u.setSlot("cloakb", unitGen.getSuitableItem("cloakb", u, exclusions, used, null));
 		}
 		
 
@@ -2123,11 +2123,10 @@ public class MageGenerator extends TroopGenerator {
 		
 		exclusions.add(u.getSlot(slot));
 		
-		ItemSet all = u.pose.getItems(slot);
 		for(int i = 1; i < amount; i++)
 		{
 			Unit nu = copyUnit(u);
-			Item newitem = unitGen.getSuitableItem(slot, nu, exclusions, used, all, "tier " + tier);
+			Item newitem = unitGen.getSuitableItem(slot, nu, exclusions, used, "tier " + tier);
 			nu.setSlot(slot, newitem);
 			
 			exclusions.add(nu.getSlot(slot));

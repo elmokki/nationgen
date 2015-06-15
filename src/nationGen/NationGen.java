@@ -35,6 +35,7 @@ import nationGen.items.Item;
 import nationGen.magic.MagicPattern;
 import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
+import nationGen.misc.PreviewGenerator;
 import nationGen.misc.ResourceStorage;
 import nationGen.misc.Site;
 import nationGen.naming.EpithetGenerator;
@@ -496,9 +497,24 @@ public class NationGen {
         }
 		System.out.println(" Done!");
         
-		
+        // Draw previews
+        if(settings.get("drawPreview") == 1)
+        {
+
+    		System.out.print("Drawing previews");
+			PreviewGenerator pGen = new PreviewGenerator();
+			for(Nation n : nations)
+			{
+				pGen.savePreview(n, "./mods/" + dir + "/preview_" + n.name.toLowerCase().replaceAll(" ", "_") + ".png");
+				System.out.print(".");
+			}
+			System.out.println(" Done!");
+		}
+        
 		if(settings.get("hidevanillanations") == 1)
 			hideVanillaNations(tw, nations.size());
+		
+		
 		
         tw.flush();
         tw.close();
