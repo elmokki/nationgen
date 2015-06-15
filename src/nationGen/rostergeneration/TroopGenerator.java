@@ -45,7 +45,7 @@ public class TroopGenerator {
 	private double skipchance = 0.2;
 	private List<Template> templates = new ArrayList<Template>();
 	protected ChanceIncHandler chandler;
-	private Random random;
+	protected Random random;
 	
 	class Template
 	{
@@ -688,7 +688,7 @@ public class TroopGenerator {
 	
 	
 	
-	private void addTemplateFilter(Unit u)
+	protected void addTemplateFilter(Unit u, String query, String defaultv)
 	{
 		
 		
@@ -701,7 +701,8 @@ public class TroopGenerator {
 		// Add unit template to available templates
 		if(unitTemplates.size() < maxtemplates && possibleFilters.size() == 0)
 		{
-			List<Filter> tFilters = ChanceIncHandler.retrieveFilters("trooptemplates", "default_templates", nationGen.miscdef, u.pose, u.race);
+			List<Filter> tFilters = ChanceIncHandler.retrieveFilters(query, defaultv, nationGen.miscdef, u.pose, u.race);
+			possibleFilters.retainAll(tFilters);
 			tFilters.removeAll(unitTemplates);			
 			tFilters = ChanceIncHandler.getValidUnitFilters(tFilters, u);
 			
@@ -729,15 +730,15 @@ public class TroopGenerator {
 	
 	}
 	
-	private void addInitialFilters(Unit u, String role)
+	protected void addInitialFilters(Unit u, String role)
 	{
 
 		if(random.nextDouble() < 0.05 || appliedtemplates < maxtemplates)
 		{
-			addTemplateFilter(u);
+			addTemplateFilter(u, "trooptemplates", "default_templates");
 			if(random.nextDouble() < 0.1)
 			{
-				addTemplateFilter(u);
+				addTemplateFilter(u, "trooptemplates", "default_templates");
 			}
 		}
 		
@@ -745,7 +746,7 @@ public class TroopGenerator {
 
 	}
 	
-	private void removeEliteSacred(Unit u, String role)
+	protected void removeEliteSacred(Unit u, String role)
 	{
 		// Remove elite and sacred items
 		Filter tf = new Filter(nationGen);
