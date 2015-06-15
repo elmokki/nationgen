@@ -598,6 +598,25 @@ public class ChanceIncHandler {
 						}
 					}
 				}
+				else if(args.get(0).equals("thisarmorenc") && args.size() >= 3 && f.name != null)
+				{
+					boolean below = args.contains("below");
+
+					if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
+					{
+						int value = Integer.parseInt(args.get(args.size() - 2));
+						Item i = (Item)f;
+						
+						if(i.armor && !i.slot.equals("offhand"))
+						{
+							int prot = n.nationGen.armordb.GetInteger(i.id, "enc", 0);
+							if((prot >= value) != below)
+							{
+								applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+							}
+						}
+					}
+				}
 		
 				
 		
