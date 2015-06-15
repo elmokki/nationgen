@@ -69,6 +69,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
     JTextArea seeds = new JTextArea("1337, 715517, 80085");
     JCheckBox advDesc = new JCheckBox("Write advanced descriptions");
     JCheckBox basicDesc = new JCheckBox("Write basic descriptions");
+    JCheckBox preview = new JCheckBox("Draw sprite review image");
     List<JCheckBox> optionChecks = new ArrayList<JCheckBox>();
     Settings settings = new Settings();
     JCheckBox seedcheckbox = new JCheckBox("Use predefined nation seeds (separate by line change and/or comma)");
@@ -94,6 +95,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
     {
     	optionChecks.add(advDesc);
     	optionChecks.add(basicDesc);
+    	optionChecks.add(preview);
     	optionChecks.add(seedcheckbox);
     	optionChecks.add(hideVanillaNations);
 
@@ -114,6 +116,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         seedRandom.addItemListener(this);
         modNameRandom.addItemListener(this);
         advDesc.addItemListener(this);
+        preview.addItemListener(this);
         basicDesc.addItemListener(this);
         
         startButton.setPreferredSize(new Dimension(100, 50));
@@ -177,6 +180,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         JPanel descs = new JPanel(new GridLayout(2, 1));
         descs.add(advDesc);
         descs.add(basicDesc);
+        descs.add(preview);
         descs.add(hideVanillaNations);
         this.hideVanillaNations.addItemListener(this);
 
@@ -314,7 +318,8 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
 
 
     	
-    	
+    	if(this.settings.get("drawPreview") == 1.0)
+    		preview.setSelected(true);
     	if(this.settings.get("advancedDescs") == 1.0)
     		advDesc.setSelected(true);
     	if(this.settings.get("basicDescs") == 1.0)
@@ -525,7 +530,8 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
 				value = 1;
 			
 
-			
+			if(source == this.preview)
+				settings.put("drawPreview", value);
 			if(source == this.advDesc)
 				settings.put("advancedDescs", value);
 			if(source == this.basicDesc)
