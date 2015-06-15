@@ -1046,10 +1046,11 @@ public class UnitGen {
 		
 		bonuses = bonuses.filterForPose(u.pose);
 		
-		
+
 		Item bonusweapon = Entity.getRandom(random, chandler.handleChanceIncs(u, bonuses));
 		if(bonusweapon == null)
 			return;
+
 		
 	
 		
@@ -1119,6 +1120,8 @@ public class UnitGen {
 		rescost += 4 * nationGen.weapondb.GetInteger(u.getSlot("weapon").id, "res");
 		if(nationGen.weapondb.GetValue(u.getSlot("weapon").id, "2h").equals("1"))
 			rescost += 2 * nationGen.weapondb.GetInteger(u.getSlot("weapon").id, "res");
+
+
 
 
 		
