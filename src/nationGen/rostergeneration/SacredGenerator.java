@@ -574,45 +574,22 @@ public class SacredGenerator extends TroopGenerator {
 		
 
 		
-		// Mount
-		if(role.equals("chariot") || role.equals("mounted"))
-		{
-			Item mount = chandler.getRandom(fetchItems(u, "mount", sacred, epicchance));
-			u.setSlot("mount", mount);
-		}
+		unitGen.armorUnit(u, null, null, null, false);
+		unitGen.armUnit(u, null, null, null, false);
 		
-		// Armor
-		if(u.pose.getItems("armor") != null && u.pose.getItems("armor").size() > 0)
+		if(u.pose.getItems("offhand") != null && u.pose.getItems("offhand").possibleItems() > 0 && nationGen.weapondb.GetValue(u.getSlot("weapon").id, "2h").equals("0"))
 		{
-			int minprot = 0;
-			int maxprot = 100;
-			if(u.getSlot("mount") != null)
+			ItemSet items = fetchItems(u, "offhand", sacred, epicchance);
+			ItemSet weaps = items.filterArmor(false);
+			
+			Item item = null;
+			if((weaps.size() > 0 && random.nextDouble() < 0.15 && nationGen.weapondb.GetInteger(u.getSlot("weapon").id, "lgt") < 4) || u.pose.tags.contains("always_dw"))
 			{
-				for(String tag : u.getSlot("mount").tags)
-				{
-					if(tag.startsWith("minprot") && tag.split(" ").length > 1)
-					{
-						minprot = Integer.parseInt(tag.split(" ")[1]);
-					}
-					else if(tag.startsWith("maxprot") && tag.split(" ").length > 1)
-					{
-						maxprot = Integer.parseInt(tag.split(" ")[1]);
-					} 
-				}
+				item = chandler.getRandom(weaps, u);
 			}
-			
-			ItemSet items = fetchItems(u, "armor", sacred, epicchance);
-			items = items.filterProt(nationGen.armordb, minprot, maxprot);
-			if(items.size() == 0)
-				items = u.pose.getItems("armor").filterProt(nationGen.armordb, minprot, maxprot);
-			
-			u.setSlot("armor", chandler.getRandom(items, u));
-		}
-		
-		if(u.pose.getItems("weapon") != null && u.pose.getItems("weapon").size() > 0)
-		{
-			Item weapon = chandler.getRandom(fetchItems(u, "weapon", sacred, epicchance), u);
-			u.setSlot("weapon", weapon);
+
+			if(item != null)
+				u.setSlot("offhand", item);
 		}
 		
 		if(u.pose.getItems("bonusweapon") != null && u.pose.getItems("bonusweapon").possibleItems() > 0)
@@ -623,52 +600,6 @@ public class SacredGenerator extends TroopGenerator {
 				Item weapon = chandler.getRandom(fetchItems(u, "bonusweapon", sacred, epicchance), u);
 				u.setSlot("bonusweapon", weapon);
 			}
-		}
-
-		if(u.pose.getItems("offhand") != null && u.pose.getItems("offhand").possibleItems() > 0 && nationGen.weapondb.GetValue(u.getSlot("weapon").id, "2h").equals("0"))
-		{
-			ItemSet items = fetchItems(u, "offhand", sacred, epicchance);
-			ItemSet shields = items.filterArmor(true);
-			ItemSet weaps = items.filterArmor(false);
-			
-			Item item = null;
-			if((weaps.size() > 0 && random.nextDouble() < 0.15 && (nationGen.weapondb.GetInteger(u.getSlot("weapon").id, "lgt") < 4 || random.nextDouble() < epicchance / 4)) || u.pose.tags.contains("always_dw"))
-			{
-				item = chandler.getRandom(weaps, u);
-			}
-			else if(shields.size() > 0)
-			{
-				item = chandler.getRandom(shields, u);
-			}
-			
-			if(item != null)
-				u.setSlot("offhand", item);
-		}
-		if(u.pose.getItems("helmet") != null && u.pose.getItems("helmet").size() > 0)
-		{
-			ItemSet items = fetchItems(u, "helmet", sacred, epicchance);
-			int prot = 0;
-			if(u.getSlot("armor") != null)
-				prot = nationGen.armordb.GetInteger(u.getSlot("armor").id, "prot");
-			
-			boolean ignoreupwards = false;
-			if(random.nextDouble() > epicchance)
-				ignoreupwards = true;
-			
-			ItemSet maybe = null;
-			for(int i = 4; i < 20; i++)
-			{
-				int highlimit = prot + i;
-				if(ignoreupwards)
-					highlimit = 100;
-				
-				maybe = items.filterProt(nationGen.armordb, prot - i, highlimit);
-				
-				if(maybe.size() > 0)
-					break;
-			}
-			
-			u.setSlot("helmet", chandler.getRandom(maybe, u));
 		}
 		
 		if(u.pose.getItems("cloakb") != null && u.pose.getItems("cloakb").size() > 0 && random.nextDouble() > epicchance / 8)

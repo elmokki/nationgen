@@ -137,7 +137,6 @@ public class UnitGen {
 		// Armor
 		if(!hasItem(u, "armor") && u.pose.getItems("armor") != null)
 		{
-		
 			Item armor = getSuitableItem("armor", u, excluded, included, targettag);
 			u.setSlot("armor", armor);
 		}
@@ -157,12 +156,7 @@ public class UnitGen {
 					possibleMounts = u.pose.getItems("mount");
 			}
 
-			if(random.nextDouble() < 0.1 && chandler.countPossibleFilters(possibleMounts.filterTag("elite", true), u) > 0)
-			{
-				possibleMounts = possibleMounts.filterTag("elite", true);
-			}
-			else
-				possibleMounts = possibleMounts.filterTag("elite", false);
+		
 			
 
 			// Make sure there is a mount to add in some weirder cases of a very limited mount being already taken
@@ -225,53 +219,56 @@ public class UnitGen {
 
 				int prot = nationGen.armordb.GetInteger(u.getSlot("armor").id, "prot");
 				
-				ItemSet inchere = included.filterSlot("helmet");
+				ItemSet inchere = included.filterSlot("helmet").filterForPose(u.pose);
 				if(inchere.possibleItems() == 0)
 					inchere = u.pose.getItems("helmet");
 				
-				if(inchere.filterProt(nationGen.armordb,  prot - 3, prot + 3).possibleItems() > 0)
-				{
-					u.setSlot("helmet", getSuitableItem("helmet", u, excluded, inchere.filterProt(nationGen.armordb,  prot - 3, prot + 3), targettag));
-
-				}
+	
 				if(u.getSlot("helmet") == null)
-				{		
-					if(inchere.filterProt(nationGen.armordb,  prot - 5, prot + 5).possibleItems() > 0)
-					{
-						u.setSlot("helmet", getSuitableItem("helmet", u, excluded, inchere.filterProt(nationGen.armordb,  prot - 5, prot + 5), targettag));
+				{
 
+					// Fancy chanceinc implementation
+					if(inchere.filterProt(nationGen.armordb,  prot - 3, prot + 3).possibleItems() == 0)
+					{
+						inchere = u.pose.getItems("helmet");
+					}
+					Item helmet = Entity.getRandom(random, chandler.handleChanceIncs(u, inchere, this.generateTargetProtChanceIncs(prot, 8)));
+					
+
+					u.setSlot("helmet", helmet);
+					
+
+					// Traditional implementation
+					/*
+					int range = 1;
+					int amount1 = Math.min(inchere.possibleItems(), 2);
+					int amount2 = Math.min(u.pose.getItems("helmet").possibleItems(), 4);
+		
+					while(chandler.countPossibleFilters(inchere.filterProt(nationGen.armordb,  prot - range, prot + range), u) < amount1 
+							&& u.pose.getItems("helmet").filterProt(nationGen.armordb,  prot - range, prot + range).possibleItems() < amount2)
+					{
+						range = range + 1;
 					}
 					
+					if(inchere.filterProt(nationGen.armordb,  prot - range, prot + range).possibleItems() > 0)
+						u.setSlot("helmet", getSuitableItem("helmet", u, excluded, inchere.filterProt(nationGen.armordb,  prot - range, prot + range), targettag));
+					else if(u.pose.getItems("helmet").filterProt(nationGen.armordb,  prot - range, prot + range).possibleItems() > 0)
+						u.setSlot("helmet", getSuitableItem("helmet", u, excluded, u.pose.getItems("helmet").filterProt(nationGen.armordb,  prot - range, prot + range), targettag));
+					*/
 					
-					if(u.getSlot("helmet") == null && u.pose.getItems("helmet").filterProt(nationGen.armordb,  prot - 5, prot + 5).possibleItems() > 0)
-					{
-
-						u.setSlot("helmet", getSuitableItem("helmet", u, excluded, u.pose.getItems("helmet").filterProt(nationGen.armordb,  prot - 5, prot + 5), targettag));
-
-					}
+					
+					// Failsafe
 					if(u.getSlot("helmet") == null)
 					{
-
-						int range = 1;
-						int amount1 = Math.min(inchere.possibleItems(), 2);
-						int amount2 = Math.min(u.pose.getItems("helmet").possibleItems(), 2);
-
-						while(inchere.filterProt(nationGen.armordb,  prot - range*2, prot + range).possibleItems() < amount1 && u.pose.getItems("helmet").filterProt(nationGen.armordb,  prot - range*2, prot + range).possibleItems() < amount2)
-						{
-							range = range + 1;
-						}
-						
-						if(inchere.filterProt(nationGen.armordb,  prot - range - 2, prot + range).possibleItems() > 0)
-							u.setSlot("helmet", getSuitableItem("helmet", u, excluded, inchere.filterProt(nationGen.armordb,  prot - range*2, prot + range), targettag));
-						else if(u.pose.getItems("helmet").filterProt(nationGen.armordb,  prot - range*2, prot + range).possibleItems() > 0)
-							u.setSlot("helmet", getSuitableItem("helmet", u, excluded, u.pose.getItems("helmet").filterProt(nationGen.armordb,  prot - range*2, prot + range), targettag));
-					
-
+						u.setSlot("helmet", getSuitableItem("helmet", u, excluded, u.pose.getItems("helmet"), targettag));
 					}
 					
-				}
+					
 
-				//int prot2 = nationGen.armordb.GetInteger(u.getSlot("helmet").id, "prot");
+				}
+				
+				
+
 		
 			}
 			else 
@@ -342,6 +339,28 @@ public class UnitGen {
 	
 	}
 	
+	
+	private List<String> generateTargetProtChanceIncs(int prot, int range)
+	{
+		List<String> list = new ArrayList<String>();
+		
+		for(int i = 0; i < range; i++)
+		{
+		
+			
+			// Below not applied instantly
+			if(i >= 2)
+			{
+				int bottom = prot - i; // "below"
+				list.add("thisarmorprot below " + bottom + " *0.8");
+			}
+			
+			int top = prot + i + 1; // above or at
+			list.add("thisarmorprot " + top + " *0.8");
+		}
+		
+		return list;
+	}
 	
 	
 
