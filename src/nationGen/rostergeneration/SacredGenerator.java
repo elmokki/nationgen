@@ -45,10 +45,12 @@ public class SacredGenerator extends TroopGenerator {
 	
 	private void addEpicness(Unit u, boolean sacred, int power)
 	{
+
 		double extra = 0;
 		
 		
 		int powerups = Math.max(1, power - 2);
+		
 		if(random.nextDouble() < 0.5)
 		{
 			powerups++;
@@ -71,6 +73,7 @@ public class SacredGenerator extends TroopGenerator {
 			}
 
 		}
+		
 
 
 		
@@ -197,16 +200,26 @@ public class SacredGenerator extends TroopGenerator {
 		else
 			filters = ChanceIncHandler.retrieveFilters("elitefilters", "default_elitefilters", nationGen.filters, u.pose, u.race);
 
+		filters = ChanceIncHandler.getValidUnitFilters(filters, u);
+
 		
 		int filterCount = 0;
 		boolean weapon = false;
 		
 		ChanceIncHandler chandler = new ChanceIncHandler(nation);
 		
-		int maxfilters = Math.max(Math.min(power / 2, 5), 2);
+		int maxfilters = Math.max(Math.min(power / 2, 5), 3);
 		
+
+		int cycles = 0;
 		while(power > 0 && filterCount <= maxfilters)
 		{
+			cycles++;
+			if(cycles > 50)
+			{
+				break;
+			}
+
 			double rand = random.nextDouble();
 			
 			boolean guaranteeds = false;
@@ -219,24 +232,53 @@ public class SacredGenerator extends TroopGenerator {
 			
 			
 			// Magic weapon is handled later since no weapons exist when this is run.
-			if((guaranteeds || (sacred && rand < 0.15) || power >= 4) && !weapon)
+			if((guaranteeds || (sacred && rand < 0.07 + power*0.03) || (chandler.countPossibleFilters(filters, u) == 0)) && !weapon)
 			{
 				weapon = true;
 				int cost = 1 + random.nextInt(Math.min(6, power));
+
 				power -= cost;
+
 			}
 			else // Filters
 			{
+				
+
 				List<Filter> choices = ChanceIncHandler.getFiltersWithPower(power, power, filters);
-				if(choices.size() == 0 || random.nextDouble() > 0.8)
+				
+				
+				if(chandler.countPossibleFilters(choices, u) == 0 || random.nextDouble() > 0.8)
 					choices = ChanceIncHandler.getFiltersWithPower(power - 1, power, filters);
-				if(choices.size() == 0 || power == 1)
+				
+				
+				
+				if(chandler.countPossibleFilters(choices, u) == 0)
+				{
+					int range = 1;
+					while(range < 20 && chandler.countPossibleFilters(choices, u) == 0)
+					{
+						choices = ChanceIncHandler.getFiltersWithPower(power - range, power, filters);
+						range++;
+					}
+				}
+				if(chandler.countPossibleFilters(choices, u) == 0 || power <= 2 || (power <= 3 && random.nextDouble() < 0.35))
 					choices = ChanceIncHandler.getFiltersWithPower(-100, power, filters);
 				
 
-				if(choices.size() == 0)	
+				if(random.nextDouble() < 0.05)
+				{
+					List<Filter> maybe = ChanceIncHandler.getFiltersWithPower(-100, -1, filters);
+					if(chandler.countPossibleFilters(maybe, u) > 0)
+						choices = maybe;
+					
+
+				}
+				
+				if(chandler.countPossibleFilters(choices, u) == 0)	
+				{
+
 					break;
-		
+				}
 				Filter f = Filter.getRandom(random, chandler.handleChanceIncs(u, choices));
 				
 				if(f != null && ChanceIncHandler.canAdd(u, f))
@@ -245,13 +287,12 @@ public class SacredGenerator extends TroopGenerator {
 					u.appliedFilters.add(f);
 					u.tags.addAll(f.tags);
 					power -= f.power;
+					filterCount++;
 
 				}
 				
-				filterCount++;
 			}
 		}
-		
 	}
 	
 	
@@ -452,7 +493,7 @@ public class SacredGenerator extends TroopGenerator {
 			return null;
 		}
 		
-		Pose p = Pose.getRandom(random, chandler.handleChanceIncs(possibleposes));
+		Pose p = Pose.getRandom(random, chandler.handleChanceIncs(race, role, possibleposes));
 		Unit u = this.getSacredUnit(race, p, power, sacred, epicchance);
 		
 		// Calculate some loose power rating

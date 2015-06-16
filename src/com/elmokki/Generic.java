@@ -159,7 +159,7 @@ public class Generic {
 		tags.addAll(u.pose.tags);
 		for(Filter f : u.appliedFilters)
 			tags.addAll(f.tags);
-		for(Theme t : n.themes)
+		for(Theme t : u.race.themefilters)
 			tags.addAll(t.tags);
 		
 		return tags;

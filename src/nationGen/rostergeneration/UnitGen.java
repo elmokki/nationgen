@@ -75,7 +75,7 @@ public class UnitGen {
 				Item item = null;
 
 				// Handle #lockslot
-				for(Theme t : nation.themes)
+				for(Theme t : race.themefilters)
 					for(String tag : t.tags)
 					{
 						List<String> args = Generic.parseArgs(tag);

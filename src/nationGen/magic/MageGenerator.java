@@ -16,6 +16,7 @@ import nationGen.entities.Filter;
 import nationGen.entities.MagicFilter;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
+import nationGen.entities.Theme;
 import nationGen.items.Item;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
@@ -1333,7 +1334,7 @@ public class MageGenerator extends TroopGenerator {
 					givenFilters.removeAll(u.appliedFilters);
 	
 
-					if(givenFilters.size() == 0)
+					if(chandler.countPossibleFilters(givenFilters, u) == 0)
 					{
 						givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findDistinguishingPaths(u, mages), false);
 						givenFilters.removeAll(u.appliedFilters);
@@ -1350,21 +1351,26 @@ public class MageGenerator extends TroopGenerator {
 					tempFilters.retainAll(oldFilters);
 					tempFilters = ChanceIncHandler.getValidUnitFilters(tempFilters, mages);
 
-					if(tempFilters.size() > 0 && nation.random.nextDouble() > 0.25 && chandler.handleChanceIncs(u, tempFilters).size() > 0)
+					if(chandler.countPossibleFilters(tempFilters, u) > 0 && nation.random.nextDouble() > 0.25)
 						givenFilters = tempFilters;
 						
-	
 					
+
 					
 					Filter f = Filter.getRandom(nation.random, chandler.handleChanceIncs(u, givenFilters));
 		
 					
-					u.appliedFilters.add(f);
-					
-					
-					
-					if(f.power > maxpower)
-						maxpower = f.power;
+					if(f != null)
+					{
+						u.appliedFilters.add(f);
+						
+						
+						
+						if(f.power > maxpower)
+							maxpower = f.power;
+					}
+					else
+						System.out.println("Nation " + nation.seed + " had a null filter for a mage.");
 					
 				}
 				power -= maxpower;
@@ -1877,7 +1883,7 @@ public class MageGenerator extends TroopGenerator {
 		{
 			List<Pose> poses = this.getPossiblePoses(posename, race, toTier, isPrimaryRace);
 			if(poses.size() > 0)
-				newpose = Entity.getRandom(nation.random, chandler.handleChanceIncs(poses));
+				newpose = Entity.getRandom(nation.random, chandler.handleChanceIncs(race, "mage", poses));
 		}
 		else
 			newpose = parents.get(0).pose;
@@ -2020,7 +2026,7 @@ public class MageGenerator extends TroopGenerator {
 	public List<Unit> generateNew(String posename, Race race, int amount, int tier, boolean isPrimaryRace)
 	{
 		
-		Unit u = unitGen.generateUnit(race, Entity.getRandom(nation.random, chandler.handleChanceIncs(getPossiblePoses(posename, race, tier, isPrimaryRace))));
+		Unit u = unitGen.generateUnit(race, Entity.getRandom(nation.random, chandler.handleChanceIncs(race, "mage", getPossiblePoses(posename, race, tier, isPrimaryRace))));
 		
 
 
@@ -2047,9 +2053,11 @@ public class MageGenerator extends TroopGenerator {
 	{
 		List<Pose> possibles = new ArrayList<Pose>();
 		for(Pose p : race.getPoses(posename))
+		{
 			if(p.tags.contains("tier " + tier) && (isPrimaryRace || !p.tags.contains("primaryraceonly")))
 				possibles.add(p);
-	
+		}
+		
 		if(possibles.size() == 0)
 		{
 			for(Pose p : race.getPoses(posename))
@@ -2059,9 +2067,11 @@ public class MageGenerator extends TroopGenerator {
 			}
 		}
 		
-		if(possibles.size() == 0)
-			System.out.println("CRITICAL ERROR: No possible pose for " + race.name + " mages for tier " + tier + ".");
 		
+		if(possibles.size() == 0)
+		{
+			System.out.println("CRITICAL ERROR: No possible pose for " + race.name + " " + posename + " for tier " + tier + ". Nation seed: " + nation.seed +  " and main race " + nation.races.get(0));
+		}
 		return possibles;
 			
 	}

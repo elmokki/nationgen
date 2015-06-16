@@ -9,6 +9,7 @@ import com.elmokki.Generic;
 
 
 
+
 import nationGen.NationGen;
 import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
@@ -21,6 +22,8 @@ public class Race extends Filter {
 	public List<Command> unitcommands = new ArrayList<Command>();
 	public List<Command> specialcommands = new ArrayList<Command>();
 	public List<Pose> poses = new ArrayList<Pose>();
+	
+	public List<Theme> themefilters = new ArrayList<Theme>();
 
 	public String visiblename = null;
 	
@@ -233,6 +236,15 @@ public class Race extends Filter {
 			visiblename = name;
 	}
 
+	public void addTheme(Theme t)
+	{
+		themefilters.add(t);
+		// Add race commands
+		for(String str2 : t.nationeffects)
+		{
+			addOwnLine(str2);
+		}
+	}
 	
 	public Race getCopy()
 	{
@@ -252,6 +264,7 @@ public class Race extends Filter {
 		r.name = this.name;
 		r.types.addAll(this.types);
 		r.tags.addAll(this.types);
+		r.themes.addAll(this.themes);
 		
 		return r;
 	}
