@@ -145,7 +145,7 @@ public class RosterGenerator {
 				target = chariot;
 						
 			
-			
+
 			if(race != null && target != null && race.hasRole(roll))
 			{
 			

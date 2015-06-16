@@ -14,6 +14,7 @@ import java.util.Random;
 
 
 
+
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
@@ -291,7 +292,13 @@ public class TroopGenerator {
 			
 			if(unit == null)
 			{
-				templates.add(getNewTemplate(race, role));
+
+				Template t = getNewTemplate(race, role);
+				if(t != null)
+					templates.add(t);
+				else
+					return null;
+
 			}
 
 	
@@ -497,7 +504,6 @@ public class TroopGenerator {
 					lancelimit = lancelimit * 2;
 
 				boolean getsLance = (ap >= lancelimit);
-				//System.out.println(ap + " vs " + lancelimit + " -> " + getsLance);
 				
 				if(getsLance && t.pose.getItems("lanceslot").size() > 0)
 				{
@@ -609,36 +615,21 @@ public class TroopGenerator {
 			
 
 			Pose p = null;
-			
-			// Failsafe
 			if(armor != null)
-				p = Entity.getRandom(random, chandler.handleChanceIncs(getPosesWith(race, role, armor)));
+			{
+				p = chandler.getRandom(getPosesWithoutMaxUnits(getPosesWith(race, role, armor)));
+			}
 			else
 			{
-				p = Entity.getRandom(random, chandler.handleChanceIncs(race.getPoses(role)));
+				p = chandler.getRandom(getPosesWithoutMaxUnits(race.getPoses(role)));
+				
 				armor = Entity.getRandom(random, chandler.handleChanceIncs(p.getItems("armor")));
 			}
+			
 			if(p == null)
-				continue;
+				return null;
 			
-			// Make sure #maxunits is taken into account
-			int maxunits = 100;
-			if(Generic.getTagValue(p.tags, "maxunits") != null)
-			{
-				maxunits = Integer.parseInt(Generic.getTagValue(p.tags, "maxunits"));
-			}	
-			
-			int count = 0;
-			for(Template t : this.templates)
-				if(t.pose.equals(p))
-					count++;
-			
-			if(count > maxunits)
-			{
-				armor = null;
-				continue;	 		
-				
-			}
+
 	
 			// Generate unit!
 				
@@ -688,6 +679,39 @@ public class TroopGenerator {
 	}
 	
 	
+	private List<Pose> getPosesWithoutMaxUnits(List<Pose> orig)
+	{
+		List<Pose> poses = new ArrayList<Pose>();
+		for(Pose p : orig)
+			if(!poseHasMaxUnits(p))
+			{
+				poses.add(p);
+			}
+	
+		return poses;
+		
+	}
+	private boolean poseHasMaxUnits(Pose p)
+	{
+		// Make sure #maxunits is taken into account
+		int maxunits = 100;
+		if(Generic.getTagValue(p.tags, "maxunits") != null)
+		{
+			maxunits = Integer.parseInt(Generic.getTagValue(p.tags, "maxunits"));
+		}	
+		
+		int count = 0;
+		for(Template t : this.templates)
+			if(t.pose.equals(p))
+				count++;
+		
+		if(count > maxunits)
+		{
+			return true;
+		}
+		
+		return false;
+	}
 	
 	protected void addTemplateFilter(Unit u, String query, String defaultv)
 	{

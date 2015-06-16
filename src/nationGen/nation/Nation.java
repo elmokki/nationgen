@@ -191,11 +191,12 @@ public class Nation {
 		comlists.get("mages").addAll(mageGen.generate());
 		comlists.get("priests").addAll(mageGen.generatePriests());
 		mageGen.applyFilters();
+		
 
 		// Troops
 		RosterGenerator g = new RosterGenerator(nationGen, this);
 		g.execute();
-		
+
 		//// Sacreds and elites
 		SacredGenerator sacGen = new SacredGenerator(nationGen, this);
 		List<Unit> sacreds = new ArrayList<Unit>();
@@ -206,6 +207,8 @@ public class Nation {
 		if(random.nextDouble() > 0.8) 
 		{
 			int power = 0; 
+			if(random.nextDouble() > 0.25)
+				power++;
 			if(random.nextDouble() > 0.25)
 				power++;
 			if(random.nextDouble() > 0.5)
@@ -251,21 +254,32 @@ public class Nation {
 		{
 		
 			int power = 1; 
-			if(random.nextDouble() < 0.8)
-			{
+			
+
+			
+			if(random.nextDouble() < 0.9)
+			{			
 				power++;
-				if(random.nextDouble() < 0.7)
+				if(random.nextDouble() < 0.8)
 				{
 					power++;
-					if(random.nextDouble() < 0.5)
+					if(random.nextDouble() < 0.7)
 					{
 						power++;
-						if(random.nextDouble() < 0.35)
+						if(random.nextDouble() < 0.5)
 						{
 							power++;
-							if(random.nextDouble() < 0.15)
+							if(random.nextDouble() < 0.4)
 							{
 								power++;
+								if(random.nextDouble() < 0.3)
+								{
+									power++;
+								}
+								if(random.nextDouble() < 0.3)
+								{
+									power++;
+								}
 							}
 						}
 					}
