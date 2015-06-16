@@ -493,7 +493,7 @@ public class SacredGenerator extends TroopGenerator {
 			return null;
 		}
 		
-		Pose p = Pose.getRandom(random, chandler.handleChanceIncs(possibleposes));
+		Pose p = Pose.getRandom(random, chandler.handleChanceIncs(race, role, possibleposes));
 		Unit u = this.getSacredUnit(race, p, power, sacred, epicchance);
 		
 		// Calculate some loose power rating

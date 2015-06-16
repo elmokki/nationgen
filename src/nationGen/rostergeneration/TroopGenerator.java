@@ -140,7 +140,7 @@ public class TroopGenerator {
 		List<String> tags = new ArrayList<String>();
 		tags.addAll(u.race.tags);
 		tags.addAll(u.pose.tags);
-		for(Theme t : nation.themes)
+		for(Theme t : u.race.themefilters)
 			tags.addAll(t.tags);
 		for(Filter f : u.appliedFilters)
 			tags.addAll(f.tags);
@@ -617,11 +617,11 @@ public class TroopGenerator {
 			Pose p = null;
 			if(armor != null)
 			{
-				p = chandler.getRandom(getPosesWithoutMaxUnits(getPosesWith(race, role, armor)));
+				p = chandler.getRandom(getPosesWithoutMaxUnits(getPosesWith(race, role, armor)), race, role);
 			}
 			else
 			{
-				p = chandler.getRandom(getPosesWithoutMaxUnits(race.getPoses(role)));
+				p = chandler.getRandom(getPosesWithoutMaxUnits(race.getPoses(role)), race, role);
 				
 				armor = Entity.getRandom(random, chandler.handleChanceIncs(p.getItems("armor")));
 			}
@@ -905,8 +905,10 @@ public class TroopGenerator {
 		List<String> tags = new ArrayList<String>();
 		tags.addAll(u.race.tags);
 		tags.addAll(u.pose.tags);
-		for(Theme th : nation.themes)
+		
+		for(Theme th : u.race.themefilters)
 			tags.addAll(th.tags);
+		
 		for(Filter f : u.appliedFilters)
 			tags.addAll(f.tags);
 				

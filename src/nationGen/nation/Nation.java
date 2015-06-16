@@ -74,7 +74,6 @@ public class Nation {
 	public List<CustomItem> customitems = new ArrayList<CustomItem>();
 	public List<Command> gods = new ArrayList<Command>();
 	public List<Site> sites = new ArrayList<Site>();
-	public List<Theme> themes = new ArrayList<Theme>();
 	
 	
 	public LinkedHashMap <String, List<Unit>> unitlists = new LinkedHashMap <String, List<Unit>>();
@@ -126,6 +125,7 @@ public class Nation {
 		
 
 
+		ChanceIncHandler chandler = new ChanceIncHandler(this);
 
 		// choose primary race
 		List<Race> allRaces = new ArrayList<Race>();
@@ -134,7 +134,7 @@ public class Nation {
 		Race race;
 		do
 		{
-			race = Entity.getRandom(random, allRaces);
+			race = chandler.getRandom(allRaces);
 			allRaces.remove(race);
 
 		} while(race.tags.contains("secondary"));
@@ -147,12 +147,11 @@ public class Nation {
 
 		
 		// Add themes
-		addThemes();
+		addThemes(races.get(0));
 		
 		// Restart chanceinc handler after adding themes.
-		ChanceIncHandler chandler = new ChanceIncHandler(this);
+		chandler = new ChanceIncHandler(this);
 		
-
 		
 		// Secondary race after themes since themes may affect it
 		allRaces.clear();
@@ -162,8 +161,11 @@ public class Nation {
 		race = Race.getRandom(random, chandler.handleChanceIncs(allRaces));
 		races.add(race.getCopy());
 		
-		// Apply theme race effects for the secondary race as well
-		for(Theme t : themes)
+		// Add themes for secondary race
+		addThemes(races.get(1));
+		
+		// Apply the theme primary race effects for the secondary race as well
+		for(Theme t : races.get(0).themefilters)
 		{
 
 			for(String str : t.secondarynationeffects)
@@ -171,6 +173,7 @@ public class Nation {
 				races.get(1).addOwnLine(str);
 			}
 		}
+		
 		
 		// Add secondaryracecommands to the secondary race
 		for(String tag : this.races.get(0).tags)
@@ -182,6 +185,9 @@ public class Nation {
 				races.get(1).addCommand(Generic.listToString(args));
 			}
 		}
+		
+		// Restart chanceinc handler after adding themes to secondary race as well.
+		chandler = new ChanceIncHandler(this);
 		
 
 		
@@ -412,26 +418,17 @@ public class Nation {
 	}
 	
 	
-	private void addTheme(Theme t)
-	{
-		themes.add(t);
-		// Add race commands
-		for(String str2 : t.nationeffects)
-		{
-			races.get(0).addOwnLine(str2);
-		}
-	}
+
 	
-	private void addThemes()
+	private void addThemes(Race race)
 	{
 		Random r = new Random(this.random.nextInt());
-		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("nationthemes", "default_themes", nationGen.themes, null, races.get(0));
+		
+		
+		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("nationthemes", "default_themes", nationGen.themes, null, race);
 		ChanceIncHandler chandler = new ChanceIncHandler(this);
-
-
 		
-		
-		List<String> freeThemes = Generic.getTagValues(races.get(0).tags, "freetheme");
+		List<String> freeThemes = Generic.getTagValues(race.tags, "freetheme");
 		
 		for(String str : freeThemes)
 		{
@@ -445,37 +442,39 @@ public class Nation {
 				{
 				
 					possibleThemes.remove(t);
-					addTheme(t);
+					race.addTheme(t);
 			
 				}
 			}
 
 
 			if(t == null)
-				System.out.println(races.get(0) + " has #freetheme " + str + " but no filters of #type " + str);
+				System.out.println(race + " has #freetheme " + str + " but no filters of #type " + str);
 			
 			
 		}
 		
 		
 		
-		
-		
 		int guaranteedthemes = 1;
-		if(Generic.getTagValue(races.get(0).tags, "guaranteedthemes") != null)
-			guaranteedthemes = Integer.parseInt(Generic.getTagValue(races.get(0).tags, "guaranteedthemes"));
+		if(Generic.getTagValue(race.tags, "guaranteedthemes") != null)
+			guaranteedthemes = Integer.parseInt(Generic.getTagValue(race.tags, "guaranteedthemes"));
+		
+		boolean getsNonFreeThemes = (race == races.get(0));
+		if(!getsNonFreeThemes)
+			Generic.containsTag(race.tags, "normal_themes_as_secondary");
 		
 		// Guaranteed themes
 		for(int i = 0; i < guaranteedthemes; i++)
 		{
 	
-			possibleThemes = ChanceIncHandler.getValidFilters(possibleThemes, themes);
+			possibleThemes = ChanceIncHandler.getValidFilters(possibleThemes, race.themefilters);
 			if(possibleThemes.size() > 0)
 			{
 				Theme t = Theme.getRandom(r, chandler.handleChanceIncs(possibleThemes));
 				if(t != null)
 				{
-					addTheme(t);
+					race.addTheme(t);
 					possibleThemes.remove(t);
 					
 
@@ -484,13 +483,13 @@ public class Nation {
 		}
 		
 		// 10% chance for second theme
-		possibleThemes = ChanceIncHandler.getValidFilters(possibleThemes, themes);
+		possibleThemes = ChanceIncHandler.getValidFilters(possibleThemes, race.themefilters);
 		if(possibleThemes.size() > 0 && r.nextDouble() < 0.1)
 		{
 			Theme t = Theme.getRandom(r, chandler.handleChanceIncs(possibleThemes));
 			if(t != null)
 			{
-				addTheme(t);
+				race.addTheme(t);
 			}
 		}
 		
@@ -723,7 +722,8 @@ public class Nation {
         tw.println("-- Nation " + nationid + ": " + this.name + ", " + this.epithet);
         tw.println("---------------------------------------------------------------");
         tw.println("-- Generated with filters: " + this.appliedfilters);
-        tw.println("-- Generated with themes: " + this.themes);
+        tw.println("-- Generated with " + races.get(0) + " race themes: " + races.get(0).themes);
+        tw.println("-- Generated with " + races.get(1) + " race themes: " + races.get(1).themes);
         tw.println("---------------------------------------------------------------");
 
         //writeNationInfo(tw);
