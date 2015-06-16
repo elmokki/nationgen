@@ -1,25 +1,34 @@
+
 #newitem
 #name "crossbow_hoburg"
 #gameid hoburg_crossbow
 #sprite /graphics/hoburg/weapon/crossbow/crossbow.png
 #tag "name Crossbowman"
 #theme "advanced"
+#theme "iron"
 #enditem
 
 #newitem
 #name "arbalest_hoburg"
 #gameid hoburg_arbalest
 #sprite /graphics/hoburg/weapon/crossbow/crossbow.png
-#tag "name Crossbowman"
+#tag "name 'Heavy Crossbowman'"
 #theme "advanced"
+#theme "iron"
 #basechance 0.5
 #enditem
 
 #newitem
-#name "shortbow"
-#gameid 23
-#sprite /graphics/hoburg/weapon/crossbow/shortbow.png
-#tag "name Longbowman"
+#name "advanced_crossbow"
+#gameid steel_crossbow
+#sprite /graphics/hoburg/weapon/crossbow/crossbow.png
+#tag "name 'Heavy Crossbowman'"
+#theme "advanced"
+#theme "mechanical"
+#theme "iron"
+#basechance 0.25
+#define "#gcost +1"
+#define "#rcost +5"
 #enditem
 
 #newitem
@@ -27,4 +36,22 @@
 #gameid 361
 #sprite /graphics/hoburg/weapon/crossbow/tinybow.png
 #tag "name Archer"
+#theme "wood"
+#enditem
+
+#newitem
+#name "shortbow"
+#gameid 23
+#sprite /graphics/hoburg/weapon/crossbow/shortbow.png
+#tag "name Longbowman"
+#theme "wood"
+#enditem
+
+#newitem
+#name "blowpipe"
+#gameid 34
+#sprite /graphics/hoburg/weapon/crossbow/blowpipe.png
+#tag "name Empoisoner"
+#theme "wood"
+#theme "primitive"
 #enditem

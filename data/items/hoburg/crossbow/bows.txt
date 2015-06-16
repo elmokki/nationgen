@@ -1,0 +1,36 @@
+
+#newitem
+#name "smallbow"
+#gameid 361
+#sprite /graphics/hoburg/weapon/crossbow/tinybow.png
+#tag "name Archer"
+#theme "wood"
+#enditem
+
+#newitem
+#name "shortbow"
+#gameid 23
+#sprite /graphics/hoburg/weapon/crossbow/shortbow.png
+#tag "name Longbowman"
+#theme "wood"
+#enditem
+
+#newitem
+#name "compositebow"
+#gameid 264
+#sprite /graphics/hoburg/weapon/crossbow/shortbow.png
+#tag "name Hunter"
+#theme "wood"
+#theme "primitive"
+#define "#gcost +1"
+#define "#rcost +2"
+#enditem
+
+#newitem
+#name "blowpipe"
+#gameid 34
+#sprite /graphics/hoburg/weapon/crossbow/blowpipe.png
+#tag "name Empoisoner"
+#theme "wood"
+#theme "primitive"
+#enditem
