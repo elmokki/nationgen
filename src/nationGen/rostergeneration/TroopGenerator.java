@@ -532,7 +532,6 @@ public class TroopGenerator {
 		Unit u = null;
 		while(u == null || armor == null)
 		{
-
 			
 			ItemSet armors = new ItemSet();
 			ItemSet oldarmors = new ItemSet();
@@ -637,26 +636,28 @@ public class TroopGenerator {
 			if(count > maxunits)
 			{
 				armor = null;
-				break;			// EA20150529: If we continue here, we're not going to terminate
-				//continue;
+				continue;	 		
+				
 			}
 	
 			// Generate unit!
 				
 
 			u = unitGen.generateUnit(race, p);
+
 			addInitialFilters(u, role);
 			
 			unitGen.armorUnit(u, used, exclusions, null, false);
-
+			armor = u.getSlot("armor");
+			
+			
 		}
 		
 		//if(u == null || armor == null) // EA20150529: The only case where this should occur is when #maxunits has been exceeded
 		//	return null;
 		
 
-		
-		
+
 		Template t = new Template(u.getSlot("armor"), race, u, role, u.pose);
 
 		//System.out.println("Adding template with " + t.armor);
