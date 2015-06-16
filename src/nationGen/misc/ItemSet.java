@@ -309,7 +309,16 @@ public class ItemSet extends ArrayList<Item> {
 		return newlist;
 	}
 	
+	public ItemSet filterTheme(String tag, boolean keepTag)
+	{
+		ItemSet newlist = new ItemSet();
+		for(Item i : this)
+			if(i.themes.contains(tag) == keepTag)
+				newlist.add(i);
 
+		return newlist;
+	}
+	
 	
 	public int possibleItems()
 	{
