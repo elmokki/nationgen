@@ -144,7 +144,7 @@ public class Settings {
 		// POWER (ranges from 1 to 3, integers only)
 		settings.put("sacredpower", 1.0);
 		
-		settings.put("drawPreview", 1.0);
+		settings.put("drawPreview", 0.0);
 
 		settings.put("era", 2.0);
 		settings.put("hidevanillanations", 1.0);
