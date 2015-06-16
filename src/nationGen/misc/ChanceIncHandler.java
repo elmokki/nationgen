@@ -68,9 +68,7 @@ public class ChanceIncHandler {
 	
 	public <T extends Filter> LinkedHashMap<T, Double> handleChanceIncs(Unit u, List<T> filters)
 	{
-		List<Unit> units = new ArrayList<Unit>();
-		units.add(u);
-		return handleChanceIncs(units, filters);
+		return handleChanceIncs(u, filters, null);
 	}
 	
 	public <T extends Filter> List<T> removeRelated(T thing, List<T> list)
@@ -92,13 +90,25 @@ public class ChanceIncHandler {
 		return list;
 	}
 	
+	public <T extends Filter> LinkedHashMap<T, Double> handleChanceIncs(Unit u, List<T> filters, List<String> extraincs)
+	{
+		List<Unit> units = new ArrayList<Unit>();
+		units.add(u);
+		return handleChanceIncs(units, filters, extraincs);
+	}
+	
+	public <T extends Filter> LinkedHashMap<T, Double> handleChanceIncs(List<Unit> u, List<T> filters)
+	{
+		return handleChanceIncs(u, filters, null);
+	}
+	
 	/**
 	 * The main method for handling chanceincs.
 	 * @param u
 	 * @param filters
 	 * @return
 	 */
-	public <T extends Filter> LinkedHashMap<T, Double> handleChanceIncs(List<Unit> u, List<T> filters)
+	public <T extends Filter> LinkedHashMap<T, Double> handleChanceIncs(List<Unit> u, List<T> filters, List<String> extraincs)
 	{
 
 		LinkedHashMap<T, Double> set = new LinkedHashMap<T, Double>();
@@ -110,6 +120,8 @@ public class ChanceIncHandler {
 		
 		List<String> miscincs = new ArrayList<String>();
 		
+		if(extraincs != null)
+			miscincs.addAll(extraincs);
 		
 		for(Unit un : u)
 		{

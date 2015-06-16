@@ -219,7 +219,7 @@ public class UnitGen {
 
 				int prot = nationGen.armordb.GetInteger(u.getSlot("armor").id, "prot");
 				
-				ItemSet inchere = included.filterSlot("helmet");
+				ItemSet inchere = included.filterSlot("helmet").filterForPose(u.pose);
 				if(inchere.possibleItems() == 0)
 					inchere = u.pose.getItems("helmet");
 				
@@ -227,6 +227,19 @@ public class UnitGen {
 				if(u.getSlot("helmet") == null)
 				{
 
+					// Fancy chanceinc implementation
+					if(inchere.filterProt(nationGen.armordb,  prot - 3, prot + 3).possibleItems() == 0)
+					{
+						inchere = u.pose.getItems("helmet");
+					}
+					Item helmet = Entity.getRandom(random, chandler.handleChanceIncs(u, inchere, this.generateTargetProtChanceIncs(prot, 8)));
+					
+
+					u.setSlot("helmet", helmet);
+					
+
+					// Traditional implementation
+					/*
 					int range = 1;
 					int amount1 = Math.min(inchere.possibleItems(), 2);
 					int amount2 = Math.min(u.pose.getItems("helmet").possibleItems(), 4);
@@ -241,6 +254,8 @@ public class UnitGen {
 						u.setSlot("helmet", getSuitableItem("helmet", u, excluded, inchere.filterProt(nationGen.armordb,  prot - range, prot + range), targettag));
 					else if(u.pose.getItems("helmet").filterProt(nationGen.armordb,  prot - range, prot + range).possibleItems() > 0)
 						u.setSlot("helmet", getSuitableItem("helmet", u, excluded, u.pose.getItems("helmet").filterProt(nationGen.armordb,  prot - range, prot + range), targettag));
+					*/
+					
 					
 					// Failsafe
 					if(u.getSlot("helmet") == null)
@@ -254,7 +269,6 @@ public class UnitGen {
 				
 				
 
-				//int prot2 = nationGen.armordb.GetInteger(u.getSlot("helmet").id, "prot");
 		
 			}
 			else 
@@ -325,6 +339,28 @@ public class UnitGen {
 	
 	}
 	
+	
+	private List<String> generateTargetProtChanceIncs(int prot, int range)
+	{
+		List<String> list = new ArrayList<String>();
+		
+		for(int i = 0; i < range; i++)
+		{
+		
+			
+			// Below not applied instantly
+			if(i >= 2)
+			{
+				int bottom = prot - i; // "below"
+				list.add("thisarmorprot below " + bottom + " *0.8");
+			}
+			
+			int top = prot + i + 1; // above or at
+			list.add("thisarmorprot " + top + " *0.8");
+		}
+		
+		return list;
+	}
 	
 	
 
