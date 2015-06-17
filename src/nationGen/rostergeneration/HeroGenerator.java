@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.elmokki.Drawing;
+import com.elmokki.Generic;
 
 import nationGen.NationGen;
 import nationGen.entities.Entity;
@@ -32,19 +33,7 @@ public class HeroGenerator {
 		this.ng = g;
 	}
 	
-	
-	public List<Unit> generateMultiHeroes(int count)
-	{
-		List<Unit> units = new ArrayList<Unit>();
-		for(int i = 0; i < count; i++)
-		{
-			if(n.random.nextDouble() < 0.5)
-				units.add(generateMageHero(true));
-			else
-				units.add(generateHero(true));
-		}
-		return units;
-	}
+
 	
 	public List<Unit> generateHeroes(int count)
 	{
@@ -57,9 +46,33 @@ public class HeroGenerator {
 				units.add(generateHero(false));
 	
 		}
+		
+		// Remove upkeep
+		for(Unit u : units)
+		{
+			u.commands.add(new Command("#gcost", "*0"));
+		}
+		
 		return units;
 	}
 	
+	private void addHeroFilter(Unit u)
+	{
+		// Add a filter to g
+		Filter tf = new Filter(ng);
+		
+		
+		tf.name = "Hero";
+	
+
+		// Remove recruitment filters
+		tf.themeincs.add("thisitemtheme recruitment *0");
+
+
+		
+
+		u.appliedFilters.add(tf);
+	}
 	
 	private Unit generateHero(boolean multihero)
 	{
@@ -73,7 +86,16 @@ public class HeroGenerator {
 			power += 3 + n.random.nextInt(8); // +3-10;
 
 		Race r = getRace("mage");
-		Unit hero = sacGen.generateUnit(n.random.nextBoolean(), power, r);
+		
+		boolean sacred = n.random.nextBoolean();
+		Pose p = sacGen.getPose(true, power, r);
+		
+		double epicchance = n.random.nextDouble() * 0.5 + power * 0.25 + 0.25;
+
+		Unit u = sacGen.unitGen.generateUnit(r, p);
+		this.addHeroFilter(u);
+
+		Unit hero = sacGen.getSacredUnit(u, power, sacred, epicchance);
 
 		if(n.races.contains(hero.race))
 			hero.color = n.colors[1];
@@ -92,11 +114,11 @@ public class HeroGenerator {
 			MageGenerator mg = new MageGenerator(ng, n);
 			ChanceIncHandler chandler = new ChanceIncHandler(n);
 			
-			MagicPattern p = Entity.getRandom(n.random, chandler.handleChanceIncs(hero, MageGenerator.getPatternsOfLevel(mg.possiblePatterns, tier)));
+			MagicPattern pat = Entity.getRandom(n.random, chandler.handleChanceIncs(hero, MageGenerator.getPatternsOfLevel(mg.possiblePatterns, tier)));
 			List<Integer> prio = this.getPrio(n.races.contains(hero.race));
 			MagicFilter f = new MagicFilter(ng);
 			f.prio = prio;
-			f.pattern = p;
+			f.pattern = pat;
 			hero.appliedFilters.add(f);
 		}
 		
@@ -124,7 +146,8 @@ public class HeroGenerator {
 		if(multihero && n.random.nextDouble() < 0.5)
 			tier = 2;
 		
-		Unit hero = mg.generateNew("mage", r, 1, tier, true).get(0);
+		Unit hero = mg.generateBases("mage", r, 1, tier).get(0);
+		this.addHeroFilter(hero);
 		
 		if(n.races.contains(r))
 			hero.color = n.colors[1];
@@ -154,6 +177,8 @@ public class HeroGenerator {
 			power +=  n.random.nextInt(5); // 0-4;
 				
 		mg.applyFilters(heroes, power, filters);
+		
+		mg.equipBase(hero, tier);
 		
 		hero.name.setType("Hero");
 		if(!multihero)

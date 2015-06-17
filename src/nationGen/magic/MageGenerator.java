@@ -29,14 +29,13 @@ import nationGen.units.Unit;
 
 public class MageGenerator extends TroopGenerator {
 	
-	boolean varyHat;
 	public List<MagicPattern> possiblePatterns = new ArrayList<MagicPattern>();
+	
 	
 	public MageGenerator(NationGen g, Nation n) {
 		super(g, n);
 		
 		loadPatterns();
-		varyHat = n.random.nextBoolean();
 	}
 
 	
@@ -257,11 +256,20 @@ public class MageGenerator extends TroopGenerator {
 
 
 	
-	public List<Unit> generate()
+	public List<Unit> generateMages()
 	{
 		
 
 		List<List<Unit>> mages = generateBases();
+		
+		
+		// Tag mages
+		for(int i = 0; i < 3; i++)
+		{
+			this.tagAll(mages.get(i), "schoolmage " + (i+1));
+
+		}
+
 		
 		int primaries = mages.get(2).size();
 		int secondaries = mages.get(1).size();
@@ -372,6 +380,8 @@ public class MageGenerator extends TroopGenerator {
 		List<MagicPattern> terts = getPatternsWithPicks(this.getPatternsForTier(1, primaries), 0, maxPicks);
 		List<MagicPattern> tertiarypatterns = new ArrayList<MagicPattern>();
 		
+		
+		
 		MagicPattern p = Entity.getRandom(nation.random, chandler.handleChanceIncs(terts));
 		for(int i = 0; i < tertiaries; i++)
 		{						
@@ -379,6 +389,7 @@ public class MageGenerator extends TroopGenerator {
 		}
 		
 
+		// Apply patterns
 		List<List<MagicPattern>> all = new ArrayList<List<MagicPattern>>();
 		all.add(tertiarypatterns);
 		all.add(secondarypatterns);
@@ -393,20 +404,21 @@ public class MageGenerator extends TroopGenerator {
 			for(int j = 0; j < mages.get(i).size(); j++)
 			{
 	
+				
 				List<Unit> parents = null;
 				if(i < 2)
 					parents = mages.get(i + 1);
 				
 				List<Integer> derp;
-				if(i == 1 && !varySecs)
+				if(i == 1 && !varySecs) // Secondary mages, specific case of pattern varying but magic order not
 				{
 					derp = prio;
 				}
-				else if(parents != null && mages.get(i).size() == parents.size() && parents.size() > 1)
+				else if(parents != null && mages.get(i).size() == parents.size() && parents.size() > 1) // Secondary and tertiary mages
 				{
 					derp = varyAt(getVaryPoint(all.get(i).get(j), mages.get(i).size()), prio, j, parents.get(j), parents);
 				}
-				else
+				else // Primary Mages
 				{
 					derp = varyAt(getVaryPoint(all.get(i).get(j), mages.get(i).size()), prio, j);
 				}
@@ -415,9 +427,10 @@ public class MageGenerator extends TroopGenerator {
 				mages.get(i).get(j).appliedFilters.add(f);
 				
 
-				
+				// Sets mage name to match pattern. Debug purposes.
 				mages.get(i).get(j).name.setType(all.get(i).get(j).toString(derp));
 				
+				// Price mage
 				mages.get(i).get(j).commands.add(new Command("#gcost", "+" + this.priceMage(mages.get(i).get(j))));
 				
 				
@@ -500,56 +513,7 @@ public class MageGenerator extends TroopGenerator {
 		
 
 		
-		// Filters for main mages
 
-		
-		List<Filter> filters = ChanceIncHandler.retrieveFilters("magefilters", "default_magefilters", nationGen.filters, list.get(list.size() - 1).pose, list.get(list.size() - 1).race);
-		double mod = 0.25;
-		if(diversity < 3)
-			mod += 0.1;
-		if(diversity < 4)
-			mod += 0.1;
-		
-		if(max > 4)
-			mod -= 0.1;
-		if(max < 4)
-			mod += 0.1;
-		if(atmax < 2 && max < 4)
-			mod += 0.1;
-		if(atmax < 3 && max < 4)
-			mod += 0.1;
-		
-			
-		if(picks[4] > 0 && picks[3] > 0)
-			mod *= 0.75;
-		if(picks[4] > 2)
-			mod *= 0.75;
-		else if(norand_picks[4] > 0)
-			mod *= 0.8;
-		if(picks[7] > 2)
-			mod *= 0.75;
-		
-
-		
-		int power = 0;
-		if(nation.random.nextDouble() < mod * 2)
-		{
-			power++;
-			if(nation.random.nextDouble() < mod)
-			{
-				power++;
-				if(nation.random.nextDouble() < mod / 2)
-				{
-					power++;
-					if(nation.random.nextDouble() < mod / 4)
-					{
-						power++;
-					}
-				}
-			}
-		}
-		//this.applyFilters(list, power, filters);
-		
 
 		
 		// Extra mage
@@ -583,38 +547,91 @@ public class MageGenerator extends TroopGenerator {
 			ok = true;
 		}
 		
-
+		List<Unit> extramages = new ArrayList<Unit>();
 		if(ok)
 		{
-			List<Unit> stuff = this.generateExtraMages(primaries, this.getShuffledPrios(list));
-			this.resolveAge(stuff);
-			this.tagAll(stuff, "extramage");
-			this.priceMage(stuff.get(0));
-			this.applyStats(stuff.get(0));
+			extramages = this.generateExtraMages(primaries, this.getShuffledPrios(list));
+			this.resolveAge(extramages);
+			this.tagAll(extramages, "extramage");
+			this.priceMage(extramages.get(0));
+			this.applyStats(extramages.get(0));
 
 
 			
-			stuff.get(0).caponly = nation.random.nextBoolean();
+			extramages.get(0).caponly = nation.random.nextBoolean();
 			if((primaries > 1 || secondaries > 1) && caponlyprimaries)
-				stuff.get(0).caponly = true;
+				extramages.get(0).caponly = true;
 			else if(!caponlyprimaries)
-				stuff.get(0).caponly = true;
+				extramages.get(0).caponly = true;
 			
 
 			
-			if(stuff.get(0).caponly == false && nation.random.nextDouble() > 0.5)
-				stuff.get(0).commands.add(new Command("#slowrec"));
+			if(extramages.get(0).caponly == false && nation.random.nextDouble() > 0.5)
+				extramages.get(0).commands.add(new Command("#slowrec"));
 		
-			// filters
-			/*
-			power = nation.random.nextInt(3) + 2;
-
-			this.applyFilters(stuff, power, filters);
-			*/
-			list.addAll(0, stuff);
+		
+			list.addAll(0, extramages);
 			
 			
 		}
+
+		// Apply filters
+		applyMageFilters(list);
+		
+		//// Equip units
+		
+		/// Equip main mages
+		
+		// Primaries
+		List<Unit> primarymages = mages.get(2);
+		
+		Unit u = primarymages.get(0);
+		
+		equipBase(u, 3);
+		varyEquipment(u, primarymages, 3);
+
+		// Secondaries
+		List<Unit> secondarymages = mages.get(1);
+		
+		if(secondarymages.size() > 0)
+		{
+			u = secondarymages.get(0);
+			
+			if(secondarymages.size() == primarymages.size())
+			{
+				deriveEquipment(primarymages, secondarymages, 3, 2);
+			}
+			else
+			{
+				deriveEquipment(primarymages.get(0), u, 3, 2);
+				varyEquipment(u, secondarymages, 2);
+			}
+		}
+		
+		// Tertiaries
+		List<Unit> tertiarymages = mages.get(0);
+		
+		if(tertiarymages.size() > 0)
+		{
+			u = tertiarymages.get(0);
+			
+			if(secondarymages.size() > 0)
+			{
+				deriveEquipment(secondarymages.get(0), u, 2, 1);
+			}
+			else 
+			{
+				deriveEquipment(primarymages.get(0), u, 3, 1);
+			}
+		}
+		
+		
+		/// Equip extra mage
+		for(Unit un : extramages)
+		{
+			this.equipBase(un, 2);
+		}
+		
 
 
 		
@@ -622,11 +639,55 @@ public class MageGenerator extends TroopGenerator {
 	}
 	
 	
+	private void applyPriestFilters(List<Unit> list)
+	{
+		// priests
+		if(list.size() > 0)
+		{
+			List<Filter> filters = ChanceIncHandler.retrieveFilters("priestfilters", "default_priestfilters", nationGen.filters, list.get(0).pose, list.get(0).race);
+			int power = 0;
+			int maxStrength = 1;
+			for(Unit u : list)
+				for(int i = 3; i > 0; i--)
+				{
+					if(u.tags.contains("priest " + i) && i > maxStrength)
+					{
+						maxStrength = i;
+						break;
+					}
+				}
+			
+			if(nation.random.nextDouble() < 0.15 + maxStrength * 0.075)
+			{
+				power++;
+				if(nation.random.nextDouble() < 0.1 + maxStrength * 0.05)
+				{
+					power++;
+					if(nation.random.nextDouble() < 0.1 + maxStrength * 0.05)
+					{
+						power++;
+						if(nation.random.nextDouble() < 0.1 + maxStrength * 0.05)
+						{
+							power++;
+						}
+					}
+				}
+			}
+			
+			if(power == 0 && nation.random.nextDouble() > 0.85)
+				power = nation.random.nextInt(3) + 2; // 2 to 3 
+				
+
+			this.applyFilters(list, power, filters);
+
+		}
+	}
 	
-	
-	public void applyFilters()
+	private void applyMageFilters(List<Unit> list2)
 	{		
-		List<Unit> list = nation.generateComList("mage");
+		
+		List<Unit> list = new ArrayList<Unit>();
+		list.addAll(list2);
 		
 		// Diagnostics
 		double[] picks = getAllPicks(list, true);
@@ -723,9 +784,10 @@ public class MageGenerator extends TroopGenerator {
 				break;
 			}
 		list.remove(extra);
-		
 		this.applyFilters(list, power, filters);
+
 		
+		// Filters for extra mage
 		if(extra != null)
 		{
 			list.clear();
@@ -737,50 +799,9 @@ public class MageGenerator extends TroopGenerator {
 			this.applyFilters(list, power, filters);
 		}
 		
-		// priests
-		list = nation.generateComList("priest");
-		if(list.size() > 0)
-		{
-			filters = ChanceIncHandler.retrieveFilters("priestfilters", "default_priestfilters", nationGen.filters, list.get(0).pose, list.get(0).race);
-			power = 0;
-			int maxStrength = 1;
-			for(Unit u : list)
-				for(int i = 3; i > 0; i--)
-				{
-					if(u.tags.contains("priest " + i) && i > maxStrength)
-					{
-						maxStrength = i;
-						break;
-					}
-				}
-			
-			if(nation.random.nextDouble() < 0.15 + maxStrength * 0.075)
-			{
-				power++;
-				if(nation.random.nextDouble() < 0.1 + maxStrength * 0.05)
-				{
-					power++;
-					if(nation.random.nextDouble() < 0.1 + maxStrength * 0.05)
-					{
-						power++;
-						if(nation.random.nextDouble() < 0.1 + maxStrength * 0.05)
-						{
-							power++;
-						}
-					}
-				}
-			}
-			
-			if(power == 0 && nation.random.nextDouble() > 0.85)
-				power = nation.random.nextInt(3) + 2; // 2 to 3 
-				
-
-			this.applyFilters(list, power, filters);
-
-		}
-
-		
 	}
+	
+	
 	public static double[] getAllPicks(List<Unit> units, boolean randoms)
 	{
 		double[] picks = {0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -973,10 +994,7 @@ public class MageGenerator extends TroopGenerator {
 		}
 	}
 	
-	private List<Unit> generateExtraMages(int primaries)
-	{
-		return generateExtraMages(primaries, null);
-	}
+
 	
 	private List<Unit> generateExtraMages(int primaries, List<Integer> prio)
 	{
@@ -993,7 +1011,7 @@ public class MageGenerator extends TroopGenerator {
 		else if(!nation.races.get(0).hasRole("mage"))
 			race = nation.races.get(1);
 
-		List<Unit> bases = generateNew("mage", race, 1, 2, race == nation.races.get(0));
+		List<Unit> bases = generateBases("mage", race, 1, 2);
 		
 		List<MagicPattern> available = getPatternsForTier(0, primaries);
 		
@@ -1014,6 +1032,8 @@ public class MageGenerator extends TroopGenerator {
 		bases.get(0).color = nation.colors[2];
 		bases.get(0).appliedFilters.add(f);
 		this.priceMage(bases.get(0));
+		
+		this.equipBase(bases.get(0), 2);
 		
 		return bases;
 
@@ -1090,6 +1110,7 @@ public class MageGenerator extends TroopGenerator {
 			priestsFrom = r.nextInt(maxStrength + 1);
 		}
 		
+
 		while(currentStrength > 0)
 		{
 			boolean done = false;
@@ -1125,7 +1146,9 @@ public class MageGenerator extends TroopGenerator {
 					atTier++;
 					
 					if(r.nextDouble() < 0.2)
+					{
 						doneWithMages = true;
+					}
 				}
 			}
 			
@@ -1140,11 +1163,13 @@ public class MageGenerator extends TroopGenerator {
 				{
 					List<Unit> derp = new ArrayList<Unit>();
 					derp.add(priests.get(0));
-					u = this.deriveFrom("priest", derp, priests.get(0).race, currentStrength + 1, currentStrength, true).get(0);
+					
+					// FIX THIS
+					u = deriveBasesFrom(1, "priest", priests.get(0), priests.get(0).race, currentStrength + 1, currentStrength).get(0);
 				}
 				else
 				{
-					u = this.generateNew("priest", prace, 1, currentStrength + 1, prace == nation.races.get(0)).get(0);
+					u = this.generateBases("priest", prace, 1, currentStrength + 1).get(0);
 				}
 				
 				u.color = priestcolor;
@@ -1200,37 +1225,45 @@ public class MageGenerator extends TroopGenerator {
 		}
 		
 		
-		
-		// Filters
-		List<Filter> filters = ChanceIncHandler.retrieveFilters("priestfilters", "default_priestfilters", nationGen.filters, priests.get(0).pose, priests.get(0).race);
+		// Apply filters
+		applyPriestFilters(priests);
 
-		int power = 0;
-		if(nation.random.nextDouble() < 0.05 + maxStrength * 0.025)
+		// Equip priests
+		int maxtier = 0;
+		Unit parent = null;
+		for(Unit u : priests)
 		{
-			power++;
-			if(nation.random.nextDouble() < 0.1 + maxStrength * 0.025)
-			{
-				power++;
-				if(nation.random.nextDouble() < 0.1 + maxStrength * 0.025)
-				{
-					power++;
-					if(nation.random.nextDouble() < 0.1 + maxStrength * 0.025)
-					{
-						power++;
-					}
-				}
-			}
+			int tier = Integer.parseInt(Generic.getTagValue(u.tags, "priest"));
+			if(tier > maxtier)
+				maxtier = tier;
 		}
 		
+	
+		for(int i = priests.size() - 1; i >= 0; i--)
+		{
 
-		//this.applyFilters(priests, power, filters);
-		
+			Unit u = priests.get(i);
+			int tier = Integer.parseInt(Generic.getTagValue(u.tags, "priest"));
+			
+
+			if(tier == maxtier)
+			{
+				equipBase(u, tier);
+			}
+			else
+			{
+				int ptier = Integer.parseInt(Generic.getTagValue(parent.tags, "priest"));
+				this.deriveEquipment(parent, u, ptier, tier);
+			}
+			
+			parent = u;
+		}
 
 		return priests;
 	}
 	
 	/**
-	 * The new method
+	 * The new method of actually applying filters. Used in HeroGenerator and here.
 	 * @param units
 	 * @param power
 	 * @param filters
@@ -1266,12 +1299,10 @@ public class MageGenerator extends TroopGenerator {
 
 			
 			int at = nation.random.nextInt(power + 5) - 5; // -5 to power - 2
-			int cyc = 0;
 			while(moreFilters.size() == 0 && at >= -5)
 			{
 				moreFilters = ChanceIncHandler.getFiltersWithPower(at, power, filters);
 				at--;
-				cyc++;
 			}
 			
 
@@ -1290,7 +1321,6 @@ public class MageGenerator extends TroopGenerator {
 				tier = 1;
 			
 			List<Unit> mages = getMagesOfTier(units, tier);
-			
 			
 			if(mages.size() == 0)
 			{
@@ -1657,7 +1687,8 @@ public class MageGenerator extends TroopGenerator {
 		
 	}
 	
-	
+
+
 	public List<List<Unit>> generateBases()
 	{
 
@@ -1674,7 +1705,6 @@ public class MageGenerator extends TroopGenerator {
 		
 		
 
-		// 27.09.14 sloppy code to check to make sure secondary nation has a secondary-eligible pose
 		if(nation.random.nextDouble() < 0.075 * bonussecchance && nation.races.get(1).hasRole("mage"))
 		{
 			for(Pose p : nation.races.get(1).poses)
@@ -1692,7 +1722,7 @@ public class MageGenerator extends TroopGenerator {
 						break;
 			}
 		}
-		else if(!nation.races.get(0).hasRole("mage"))
+		else if(!nation.races.get(0).hasRole("mage")) // This hopefully never happens since it can cause issues unless handled very delicately.
 			race = nation.races.get(1);
 		
 		if(race == nation.races.get(1))
@@ -1700,9 +1730,9 @@ public class MageGenerator extends TroopGenerator {
 		
 		int primaryamount = 1;
 		
-		double onechance = 0.625;
-		double twochance = 0.225;
-		double threechance = 0.15;
+		double onechance = 0.75;
+		double twochance = 0.2;
+		double threechance = 0.05;
 		
 		if(Generic.containsTag(race.tags, "oneprimarychance"))
 			onechance = Double.parseDouble(Generic.getTagValue(race.tags, "oneprimarychance"));
@@ -1721,10 +1751,9 @@ public class MageGenerator extends TroopGenerator {
 			primaryamount = 3;
 
 		
-		List<Unit> primaries = generateNew("mage", race, primaryamount, 3, race == nation.races.get(0));
+		List<Unit> primaries = generateBases("mage", race, primaryamount, 3);
 		
 
-		
 		// SECONDARIES
 		if(nation.random.nextDouble() < 0.1 * bonussecchance && race != nation.races.get(0)){/*do nothing*/}
 		else
@@ -1756,19 +1785,10 @@ public class MageGenerator extends TroopGenerator {
 			secondaryamount = 2;
 		
 		List<Unit> secondaries = new ArrayList<Unit>();
-		if(secondaryamount <= primaryamount && secondaryamount > 0)
+		if(secondaryamount > 0)
 		{
-			secondaries = deriveFrom("mage", primaries, race, 3, 2, true);
-			// Remove last generated unit until we have the correct count
-			for(int i = 0; i < primaryamount - secondaryamount; i++)
-				secondaries.remove(secondaries.size() - 1);
+			secondaries = deriveBasesFrom(secondaryamount, "mage", primaries.get(0), race, 3, 2);
 		}
-		else if(secondaryamount > 0)
-		{
-			secondaries = deriveFrom("mage", primaries, race, 3, 2, true);
-			secondaries = this.varyUnit(secondaries.get(0), secondaryamount, 2, varyHat);
-		}
-		
 
 		// TERTIARIES
 		List<Unit> tertiaries = new ArrayList<Unit>();
@@ -1793,29 +1813,17 @@ public class MageGenerator extends TroopGenerator {
 			tertiaryamount = 0;
 	
 		
-		if(tertiaryamount <= secondaryamount && tertiaryamount > 0)
+
+		if(tertiaryamount > 0 && secondaryamount > 0)
 		{
-			tertiaries = deriveFrom("mage", secondaries, race, 2, 1, true);
-	
-			// Remove last generated unit until we have the correct count
-			for(int i = 0; i < secondaryamount - tertiaryamount; i++)
-				tertiaries.remove(tertiaries.size() - 1);
-		}
-		else if(secondaryamount > 0  && tertiaryamount > 0)
-		{
-			tertiaries = deriveFrom("mage", secondaries, race, 2, 1, true);
-			tertiaries = this.varyUnit(tertiaries.get(0), tertiaryamount, 1, varyHat);
+			tertiaries = deriveBasesFrom(tertiaryamount, "mage", secondaries.get(0), race, 2, 1);
 		}
 		else if(tertiaryamount > 0)
 		{
-			tertiaries = deriveFrom("mage", primaries, race, 3, 1, true);
-			for(int i = 0; i < primaryamount - tertiaryamount; i++)
-				tertiaries.remove(tertiaries.size() - 1);
+			tertiaries = deriveBasesFrom(tertiaryamount, "mage", primaries.get(0), race, 3, 1);
 		}
 		
-		tagAll(primaries, "schoolmage 3");
-		tagAll(secondaries, "schoolmage 2");
-		tagAll(tertiaries, "schoolmage 1");
+
 
 		
 		List<List<Unit>> list = new ArrayList<List<Unit>>();
@@ -1824,6 +1832,7 @@ public class MageGenerator extends TroopGenerator {
 		list.add(primaries);
 		return list;
 	}
+	
 	
 	
 	private void tagAll(List<Unit> units, String tag)
@@ -1872,29 +1881,100 @@ public class MageGenerator extends TroopGenerator {
 	}
 	
 
-	
-	private List<Unit> deriveFrom(String posename, List<Unit> parents, Race race, int fromTier, int toTier, boolean isPrimaryRace)
+	private List<Unit> deriveBasesFrom(int amount, String posename, Unit parent, Race race, int fromTier, int toTier)
 	{
-		
-		List<Unit> newlist = new ArrayList<Unit>();
+		List<Unit> units = new ArrayList<Unit>();
 		
 		Pose newpose = null;
-		if(shouldChangePose(posename, race, parents.get(0).race, parents.get(0).pose, fromTier, toTier))
+		if(shouldChangePose(posename, race, parent.race, parent.pose, fromTier, toTier))
 		{
-			List<Pose> poses = this.getPossiblePoses(posename, race, toTier, isPrimaryRace);
+			List<Pose> poses = this.getPossiblePoses(posename, race, toTier);
 			if(poses.size() > 0)
 				newpose = Entity.getRandom(nation.random, chandler.handleChanceIncs(race, "mage", poses));
 		}
 		else
-			newpose = parents.get(0).pose;
+			newpose = parent.pose;
+		
+		
+		for(int i = 0; i < amount; i++)
+		{
+			Unit nu = unitGen.generateUnit(nation.races.get(0), newpose);
+			units.add(nu);
+		}
+		
+		return units;
+		
+	}
+	
+	public void deriveEquipment(Unit parent, Unit follower, int fromTier, int toTier)
+	{
+		List<Unit> parents = new ArrayList<Unit>();
+		parents.add(parent);
+		List<Unit> followers = new ArrayList<Unit>();
+		followers.add(follower);
+		
+		deriveEquipment(parents, followers, fromTier, toTier);
+	}
+
+	
+	private void polishUnit(Unit unit)
+	{
+		
+		if(unit.getSlot("weapon") != null)
+		{
+			boolean troop = false;
+			if(Generic.containsTag(Generic.getAllUnitTags(unit, nation), "troopweapon"))
+				troop = true;
+			else if(Generic.containsTag(unit.getSlot("weapon").tags, "troopweapon"))
+				troop = true;
+	
+			if(troop)
+			{
+				if(nationGen.weapondb.GetInteger(unit.getSlot("weapon").id, "lgt") >= 3)
+				{
+					if(unit.getSlot("offhand") != null && !unit.getSlot("offhand").armor)
+						unit.setSlot("offhand", null);
+				}
+				else if(nationGen.weapondb.GetInteger(unit.getSlot("weapon").id, "2h") == 1)
+				{
+					unit.setSlot("offhand", null);
+				}
+			}	
+		
+		}
+	}
+	
+	public void deriveEquipment(List<Unit> parents, List<Unit> followers, int fromTier, int toTier)
+	{
+		
+		int max = parents.size();
+		if(followers.size() < parents.size())
+			max = followers.size();
+		
+		// Handle varyslot
+		String oldslot = Generic.getTagValue(parents.get(0).tags, "varyslot");
+		String newslot = null;
+		
+		if(followers.size() > 1)
+		{
+			List<String> possibleslots = this.getPossibleVarySlots(followers.get(0));
+			if(possibleslots.contains(oldslot))
+				newslot = oldslot;
+			else
+				newslot = possibleslots.get(random.nextInt(possibleslots.size()));
+			
+			tagAll(followers, "varyslot " + newslot);
+		}
 		
 		ItemSet used = new ItemSet();
-		for(Unit u : parents)
+		for(int k = 0; k < max; k++)
 		{
-			Unit nu = this.unitGen.generateUnit(nation.races.get(0), newpose); //this.copyUnit(u);
+			Unit u = parents.get(k); // Old unit
+			Unit nu = followers.get(k); // New unit
+			
 			for(String slot : u.slotmap.keySet())
 			{
-				if(u.pose.getItems(slot) == null || nu.pose.getItems(slot) == null)
+				if(u.pose.getItems(slot) == null || nu.pose.getItems(slot) == null || nu.getSlot(slot) != null)
 					continue;
 				
 				// Just targeted tier		
@@ -1910,33 +1990,42 @@ public class MageGenerator extends TroopGenerator {
 				{
 					Item newitem = getDerivedItem(u.getSlot(slot), nu, used);
 					
+					// Failure may result in using old armor in tier 2 to 1 
 					if((newitem == null || !newitem.tags.contains("eliteversion " + u.getSlot(slot).name)) && slot.equals("armor") && toTier < 2 && fromTier == 2 && u.pose == nu.pose)
 						newitem = u.getSlot(slot);
 					
-					
+
 					
 					if(newitem == null)
 					{				
-						ItemSet derp = new ItemSet();
-						derp.addAll(all);
-						derp.retainAll(used);
-						if(derp.possibleItems() > 0)
-							all = derp;
 						
+	
 						if(all.possibleItems() > 1)
 						{
 							all.remove(u.getSlot(slot));
 
 						}
-						newitem = Entity.getRandom(nation.random, chandler.handleChanceIncs(all));
+						
+						ItemSet temp = new ItemSet();
+						temp.addAll(all);
+						temp.removeAll(exclusions);
+						if(chandler.countPossibleFilters(temp, nu) > 0)
+						{
+							all = temp;
+						}
+		
+						newitem = Entity.getRandom(nation.random, chandler.handleChanceIncs(nu, all));
+					
 					}
 	
+			
+					if(newslot != null && slot.equalsIgnoreCase(newslot))
+						exclusions.add(newitem);
 					
 					if(newitem != null)
 					{
 						nu.setSlot(slot, newitem);
 						used.add(newitem);
-
 					}
 					
 				}
@@ -1944,53 +2033,35 @@ public class MageGenerator extends TroopGenerator {
 			}
 			
 			
+
+
+			
+			// This should fill in missing slots like mount
+			unitGen.armorUnit(nu, null, exclusions, "tier " + toTier, true);
+			unitGen.armUnit(nu, null, exclusions, "tier " + toTier, true);
+			
+			
 			if(toTier < 2)
 			{
-				varyHat = false;
-				nu.setSlot("helmet", null);
-				nu.setSlot("cloakb", null);
-				nu.setSlot("cloakf", null);
-			}
-			
-			newlist.add(nu);
-			if(varyHat)
-				exclusions.add(nu.getSlot("helmet"));
-			else
-				exclusions.add(nu.getSlot("weapon"));
-			
-			
-			// 2015.03.26 Sloppy code derived from unitGen to add mounts
-			if(nu.pose.getItems("mount") != null && nu.getSlot("mount") == null)
-			{
-				//Item mount = nation.usedItems.filterSlot("mount").filterForPose(p).getRandom(nation.random);
+				if(Generic.containsTag(Generic.getAllUnitTags(nu, nation), "mage_nolowtierhat"))
+				{
+					nu.setSlot("helmet", null);
 
-				/*if(mount == null)
-				{
-					mount = p.getItems("mount").getRandom(nation.random);
-					System.out.println("..\nCouldn't find old mount; using new\n..");
-				}*/
-				
-				//template.setSlot("mount", mount);
-				
-				// Scouts usually ride the typical racial mount
-				String pref = null;
-				if(Generic.getTagValue(nu.race.tags, "preferredmount") != null && nation.random.nextDouble() > 0.80)
-				{
-					pref = Generic.getTagValue(nu.race.tags, "preferredmount");
 				}
-		
-				nu.setSlot("mount", unitGen.getSuitableItem("mount", nu, nu.pose.getItems("mount"), exclusions, "animal " + pref));
-								
-				if(nu.getSlot("mount") == null)
+				if(!Generic.containsTag(Generic.getAllUnitTags(nu, nation), "mage_lowtiercloak"))
 				{
-					nu.setSlot("mount", nu.pose.getItems("mount").getRandom(chandler, nation.random));
-					// System.out.println("..\nCouldn't find old mount; using new\n..");
+					nu.setSlot("cloakb", null);
+					nu.setSlot("cloakf", null);
 				}
 			}
-	
+			
+			
+			
+			this.polishUnit(nu);
+			
 		}
 		
-		return newlist;
+	
 	}
 	
 	private Item getDerivedItem(Item item, Unit u, ItemSet used)
@@ -1999,6 +2070,12 @@ public class MageGenerator extends TroopGenerator {
 			used = new ItemSet();
 		
 		ItemSet items = u.pose.getItems(item.slot).filterSameSprite(exclusions);
+		items.removeAll(exclusions);
+		
+		if(chandler.countPossibleFilters(items, u) == 0)
+		{
+			items = u.pose.getItems(item.slot).filterSameSprite(exclusions);
+		}
 		
 		ItemSet possibles = new ItemSet();
 		for(Item i : items)
@@ -2019,17 +2096,31 @@ public class MageGenerator extends TroopGenerator {
 			possibles = test;
 		}
 		
-		return possibles.getRandom(chandler, nation.random);
+		Item i = possibles.getRandom(chandler, nation.random);
+		return i;
 	}
 	
-	// Generates a set of specific tier mages from scratch
-	public List<Unit> generateNew(String posename, Race race, int amount, int tier, boolean isPrimaryRace)
+	
+	public List<Unit> generateBases(String posename, Race race, int amount, int tier)
+	{
+		List<Unit> units = new ArrayList<Unit>();
+		Pose p = Entity.getRandom(nation.random, chandler.handleChanceIncs(race, "mage", getPossiblePoses(posename, race, tier)));
+		
+		for(int i = 0; i < amount; i++)
+		{
+			Unit u = unitGen.generateUnit(race, p);
+			units.add(u);
+		}
+		
+		return units;
+
+	}
+	
+	
+
+	public void equipBase(Unit u, int tier)
 	{
 		
-		Unit u = unitGen.generateUnit(race, Entity.getRandom(nation.random, chandler.handleChanceIncs(race, "mage", getPossiblePoses(posename, race, tier, isPrimaryRace))));
-		
-
-
 		unitGen.armorUnit(u, used, exclusions, "tier " + tier, false);
 		unitGen.armUnit(u, used, exclusions, "tier " + tier, false);
 		if(tier == 3)
@@ -2038,19 +2129,39 @@ public class MageGenerator extends TroopGenerator {
 		}
 		
 
-		
-		List<Unit> list = varyUnit(u, amount, tier, varyHat);
-	
-		
 		if(!exclusions.contains(u.getSlot("weapon")))
 			exclusions.add(u.getSlot("weapon"));
 		
+	
+		this.polishUnit(u);
+	}
+	
+	
+	public List<Unit> generateaNew(String posename, Race race, int amount, int tier)
+	{
+		
+		
+		List<Unit> list = this.generateBases(posename, race, amount, tier);
+		
+		Unit u = list.get(0);
+		
+		this.equipBase(u, tier);
+		
+		if(tier == 3)
+		{
+			u.setSlot("cloakb", unitGen.getSuitableItem("cloakb", u, exclusions, used, null));
+		}
+		
+	
+		this.varyEquipment(u, list, tier);
 		return list;
 	}
 	
 	
-	private List<Pose> getPossiblePoses(String posename, Race race, int tier, boolean isPrimaryRace)
+	private List<Pose> getPossiblePoses(String posename, Race race, int tier)
 	{
+		boolean isPrimaryRace = (race == nation.races.get(0));
+		
 		List<Pose> possibles = new ArrayList<Pose>();
 		for(Pose p : race.getPoses(posename))
 		{
@@ -2077,25 +2188,9 @@ public class MageGenerator extends TroopGenerator {
 	}
 	
 	
-	private List<Unit> varyUnit(Unit u, int amount, int tier, boolean varyHat)
+	private List<String> getPossibleVarySlots(Unit u)
 	{
-		
-		
-		if(u.pose.tags.contains("dontvaryhat"))
-		{
-			varyHat = false;
-		}
-		if(u.pose.tags.contains("dontvaryweapon"))
-			varyHat = true;
-
-		String slot = "weapon";
-		if(varyHat)
-			slot = "helmet";
-		
-		if(u.pose.getItems("helmet") == null || u.pose.getItems("helmet").size() == 0)
-			slot = "weapon";
-		
-		
+		//  Get slot to vary
 		List<String> possibleslots = new ArrayList<String>();
 		for(String tag : u.pose.tags)
 		{
@@ -2103,22 +2198,50 @@ public class MageGenerator extends TroopGenerator {
 			if(args.get(0).equals("varyslot"))
 				possibleslots.add(args.get(1));
 		}
-		if(possibleslots.size() > 0)
-			slot = possibleslots.get(nation.random.nextInt(possibleslots.size()));
+		
+		if(possibleslots.size() == 0)
+		{
+			if(!u.pose.tags.contains("dontvaryhat") && u.pose.getItems("helmet") != null && chandler.countPossibleFilters(u.pose.getItems("helmet"), u) > 0)
+			{
+				possibleslots.add("helmet");
+			}
+			if(!u.pose.tags.contains("dontvaryweapon") && u.pose.getItems("weapon") != null && chandler.countPossibleFilters(u.pose.getItems("weapon"), u) > 0)
+			{
+				possibleslots.add("weapon");
+			}
+		}
+		
+		return possibleslots;
+	}
 
 	
+	private void varyEquipment(Unit u, List<Unit> all, int tier)
+	{
+		int amount = all.size();
+		
+		// Copy gear
+		for(Unit other : all)
+		{
+			if(other == u)
+				continue;
+			
+			for(String slot : u.slotmap.keySet())
+			{
+				other.setSlot(slot, u.getSlot(slot));
+			}
+		}
+	
+		
+		List<String> possibleslots = this.getPossibleVarySlots(u);
+		String slot = possibleslots.get(nation.random.nextInt(possibleslots.size()));
+	
+		// Vary item
 		ItemSet stuff = u.pose.getItems(slot).filterTag("tier " + tier, true);
 		stuff.removeAll(exclusions);
 		stuff.remove(u.getSlot(slot));
 		
-
-		if(stuff.possibleItems() == 0)
+		if(chandler.countPossibleFilters(stuff, u) == 0)
 		{
-			if(slot.equals("weapon") && u.pose.getItems("helmet") != null)
-				slot = "helmet";
-			else if(u.pose.getItems("weapon") != null)
-				slot = "weapon";
-			
 			stuff = u.pose.getItems(slot).filterTag("tier " + tier, true);
 			stuff.removeAll(exclusions);
 			stuff.remove(u.getSlot(slot));
@@ -2126,32 +2249,24 @@ public class MageGenerator extends TroopGenerator {
 
 
 
-		
-		List<Unit> list = new ArrayList<Unit>();
-		
-		list.add(u);
+
 		
 		exclusions.add(u.getSlot(slot));
 		
 		for(int i = 1; i < amount; i++)
 		{
-			Unit nu = u.getCopy();
+			Unit nu = all.get(i);
 			Item newitem = unitGen.getSuitableItem(slot, nu, exclusions, used, "tier " + tier);
 			nu.setSlot(slot, newitem);
-			
 			exclusions.add(nu.getSlot(slot));
 			
-
 			
-			
-			list.add(nu);
-
 		}
 		
+		tagAll(all, "varyslot " + slot);
+		for(Unit un : all)
+			this.polishUnit(un);
 
-		
-
-		return list;
 	}
 	
 	
