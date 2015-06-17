@@ -366,53 +366,76 @@ public class SacredGenerator extends TroopGenerator {
 		return generateUnit(sacred, power, null);
 	}
 	
+	
 	public Unit generateUnit(boolean sacred, int power, Race race)
+	{
+		
+		if(race == null)
+			race = getRace(sacred);
+		
+		Pose p = getPose(sacred, power, race);
+		
+		double epicchance = random.nextDouble() * 0.5 + power * 0.25 + 0.25;
+
+		Unit u = this.getSacredUnit(race, p, power, sacred, epicchance);
+		
+		calculatePower(u, power);
+		
+		return u;
+		
+	}
+	
+	private Race getRace(boolean sacred)
+	{
+
+		
+		Race race = null;
+		race = nation.races.get(0);
+		boolean foreigners = false;
+		for(Unit u : nation.comlists.get("mages"))
+		{
+			if(u.race != race)
+				foreigners = true;
+		}
+		for(Unit u : nation.generateTroopList())
+		{
+			if(u.race != race)
+				foreigners = true;
+		}
+
+		double bonussecchance = 1;
+		if(Generic.containsTag(race.tags, "secondaryracesacredmod"))
+			bonussecchance += Double.parseDouble(Generic.getTagValue(race.tags, "secondaryracesacredmod"));
+		if(Generic.containsTag(nation.races.get(1).tags, "primaryracesacredmod"))
+			bonussecchance -= Double.parseDouble(Generic.getTagValue(nation.races.get(1).tags, "primaryracesacredmod"));
+		
+		
+		if(foreigners || random.nextDouble() < 0.05 * bonussecchance)
+		{
+	
+			if(random.nextDouble() < 0.2 * bonussecchance && nation.races.get(1) != null && canBeSacred(sacred, nation.races.get(1)))
+				race = nation.races.get(1);
+			
+		}
+		else if(!canBeSacred(sacred, nation.races.get(0)))
+		{
+			race = nation.races.get(1);
+		}
+		
+		return race;
+		
+	}
+	
+	public Pose getPose(boolean sacred, int power, Race race)
 	{
 		// Handle sacred power settings
 		double extrapower = this.nationGen.settings.get("sacredpower") - 1;
 	
 		power = (int) (power + power * extrapower * (1 + random.nextDouble() * 0.5) + extrapower);
 		
-		// Continue normally
-		double epicchance = random.nextDouble() * 0.5 + power * 0.25 + 0.25;
 
 	
 
-		if(race == null)
-		{		
-
-			race = nation.races.get(0);
-			boolean foreigners = false;
-			for(Unit u : nation.comlists.get("mages"))
-			{
-				if(u.race != race)
-					foreigners = true;
-			}
-			for(Unit u : nation.generateTroopList())
-			{
-				if(u.race != race)
-					foreigners = true;
-			}
-	
-			double bonussecchance = 1;
-			if(Generic.containsTag(race.tags, "secondaryracesacredmod"))
-				bonussecchance += Double.parseDouble(Generic.getTagValue(race.tags, "secondaryracesacredmod"));
-			if(Generic.containsTag(nation.races.get(1).tags, "primaryracesacredmod"))
-				bonussecchance -= Double.parseDouble(Generic.getTagValue(nation.races.get(1).tags, "primaryracesacredmod"));
-			
-			
-			if(foreigners || random.nextDouble() < 0.05 * bonussecchance)
-			{
-		
-				if(random.nextDouble() < 0.2 * bonussecchance && nation.races.get(1) != null && canBeSacred(sacred, nation.races.get(1)))
-					race = nation.races.get(1);
-				
-			}
-			else if(!canBeSacred(sacred, nation.races.get(0)))
-			{
-				race = nation.races.get(1);
-			}
-		}
 		List<Pose> possibleposes = new ArrayList<Pose>();
 		
 		LinkedHashMap<String, Double> roles = new LinkedHashMap<String, Double>();
@@ -494,8 +517,20 @@ public class SacredGenerator extends TroopGenerator {
 		}
 		
 		Pose p = Pose.getRandom(random, chandler.handleChanceIncs(race, role, possibleposes));
-		Unit u = this.getSacredUnit(race, p, power, sacred, epicchance);
 		
+
+		return p;
+	}
+	
+	/**
+	 * Adds some cost and caponlyness if unit is badass enough
+	 * @param u
+	 * @param role
+	 * @param power
+	 */
+	private void calculatePower(Unit u, int power)
+	{
+
 		// Calculate some loose power rating
 		double rating = 0;
 		for(Filter f : u.appliedFilters)
@@ -504,7 +539,7 @@ public class SacredGenerator extends TroopGenerator {
 		// Rating should theoretically range from 0 to 4ish at this point
 		
 		
-		if(!role.equals("ranged"))
+		if(u.pose.roles.contains("ranged") || u.pose.roles.contains("elite ranged") || u.pose.roles.contains("sacred ranged"))
 		{
 			if(u.getTotalProt() < 5)
 				rating *= 0.3;
@@ -543,25 +578,58 @@ public class SacredGenerator extends TroopGenerator {
 		
 		if(random.nextDouble() < (power + rating) / 12 + 0.3)
 			u.caponly = true;
-		
-		return u;
 	}
 	
 	public Unit getSacredUnit(Race race, Pose p, int power, boolean sacred, double epicchance)
 	{
-
-		
 		Unit u = this.unitGen.generateUnit(race, p);
+		return getSacredUnit(u, power, sacred, epicchance);
+	}
+	public Unit getSacredUnit(Unit u, int power, boolean sacred, double epicchance)
+	{
+
+		Race race = u.race;
+		
+		//Unit u = this.unitGen.generateUnit(race, p);
 		String role = "";
 		
 		// Filters
 		this.addInitialFilters(u);
 		
+
+
+		
+		// Add epic stuff
+		this.addEpicness(u, sacred, power);
+		this.handleExtraGeneration(u, role);
+		
+		
+		// Equip
+		for(String r : u.pose.roles)
+			if(r.contains("infantry") || r.contains("sacred infantry"))
+				role = "infantry";
+			else if(r.contains("mounted") || r.contains("sacred mounted"))
+				role = "mounted";
+			else if(r.contains("chariot") || r.contains("sacred chariot"))
+				role = "chariot";
+			else if(r.contains("ranged") || r.contains("sacred ranged"))
+				role = "ranged";
+		
+		
+		if(role.equals(""))
+		{
+			System.out.println("WARNING: No role in some pose of " + race.name + ", possible pose name: " + u.pose.name + ", possible other roles: " + u.pose.roles);
+			return null;
+		}
+		
+		
 		// Add a sacred generic filter
-		
 		Filter tf = new Filter(nationGen);
-		tf.name = Generic.capitalize(role) + " sacred";
 		
+		if(sacred)
+			tf.name = Generic.capitalize(role) + " sacred";
+		else
+			tf.name = Generic.capitalize(role) + " elite";
 		
 
 		if(sacred)
@@ -588,33 +656,9 @@ public class SacredGenerator extends TroopGenerator {
 			tf.commands.add(new Command("#holy"));
 		}
 		u.appliedFilters.add(tf);
-
-		
-		// Add epic stuff
-		this.addEpicness(u, sacred, power);
-		this.handleExtraGeneration(u, role);
 		
 		
 		// Equip
-		for(String r : u.pose.roles)
-			if(r.contains("infantry") || r.contains("sacred infantry"))
-				role = "infantry";
-			else if(r.contains("mounted") || r.contains("sacred mounted"))
-				role = "mounted";
-			else if(r.contains("chariot") || r.contains("sacred chariot"))
-				role = "chariot";
-			else if(r.contains("ranged") || r.contains("sacred ranged"))
-				role = "ranged";
-		
-		
-		if(role.equals(""))
-		{
-			System.out.println("WARNING: No role in some pose of " + race.name + ", possible pose name: " + u.pose.name + ", possible other roles: " + u.pose.roles);
-			return null;
-		}
-		
-
-		
 		unitGen.armorUnit(u, null, null, null, false);
 		unitGen.armUnit(u, null, null, null, false);
 		
