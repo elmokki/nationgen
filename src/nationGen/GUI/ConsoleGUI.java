@@ -20,10 +20,11 @@ public class ConsoleGUI {
 		List<Integer> seeds = new ArrayList<Integer>();
 		seeds.add(-1816253951);
 		
-		nationGen.settings.put("era", 1.0);
-		
+		nationGen.settings.put("era", 2.0);
+		nationGen.settings.put("drawPreview", 1.0);
+
 		//nationGen.generate(seeds);
-		nationGen.generate(200);
+		nationGen.generate(100);
 	}
 
 

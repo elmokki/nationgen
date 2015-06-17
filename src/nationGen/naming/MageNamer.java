@@ -124,8 +124,10 @@ public class MageNamer extends Namer {
 		boolean suffix = n.random.nextBoolean();
 		
 		
+		
 		generateNewNames(primaries, startTier, prefixrank, suffix);
 		
+
 		deriveNames(primaries, secondaries, startTier - 1, prefixrank, suffix);
 		
 		if(secondaries.size() > 0 && secondaries.size() <= primaries.size())
@@ -199,6 +201,7 @@ public class MageNamer extends Namer {
 			}
 			
 			ff = NameFilter.getRandom(n.random, filters);
+
 			
 		} while((ff.name.equals(from.get(0).name.type) && !prefixrank)|| (ff.name.equals(from.get(0).name.rankprefix) && prefixrank));
 		

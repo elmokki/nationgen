@@ -194,9 +194,8 @@ public class Nation {
 		
 		// Mages and priests
 		MageGenerator mageGen = new MageGenerator(nationGen, this);
-		comlists.get("mages").addAll(mageGen.generate());
+		comlists.get("mages").addAll(mageGen.generateMages());
 		comlists.get("priests").addAll(mageGen.generatePriests());
-		mageGen.applyFilters();
 		
 
 		// Troops
@@ -687,9 +686,11 @@ public class Nation {
 		{
 			List<Unit> l = new ArrayList<Unit>();
 			for(Unit u : all)
+			{
+			
 				if(u.tags.contains("schoolmage " + i))
 					l.add(u);
-			
+			}
 			lists.add(l);
 		}
 		
