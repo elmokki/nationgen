@@ -4,7 +4,7 @@
 #newitem 
 #name "clockwork armor"
 #gameid 19
-#sprite /graphics/hoburg/bodyarmor/clockwork_armor1.png
+#sprite /graphics/hoburg/bodyarmor/clockwork_armor_medium.png
 #armor
 #theme "advanced"
 
@@ -14,7 +14,7 @@
 #define "#ressize 2"
 #define "#enc 2"
 #define "#reinvigoration -1"
-#define "#hp +2"
+#define "#hp +7"
 #define "#str +5"
 #define "#def -5"
 #define "#mor +3"
@@ -25,6 +25,8 @@
 #define "#coldres +5"
 #define "#shockres +5"
 #define "#poisonres +5"
+#define "#slashres"
+#define "#woundfend 50"
 #define "#mounted"
 #description "Their heavy armor is driven by complex clockwork mechanisms that increase their strength and speed, but gradually run down and need rewound"
 
