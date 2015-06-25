@@ -441,7 +441,6 @@ public class ChanceIncHandler {
 	{
 		List<E> filters = new ArrayList<E>();
 		
-		System.out.println(lookfor);
 		
 		if(r != null)
 			filters.addAll(retrieveFiltersFromTags(r.tags, lookfor, source));
