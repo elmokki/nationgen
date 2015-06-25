@@ -4,6 +4,8 @@
 #basechance 4
 #endtheme
 
+--- Techlevel themes (mandatory)
+
 -- Weights: EA 1.5, MA 0.5, LA 0.25
 #newtheme
 #type techlevel
@@ -106,4 +108,119 @@
 #racedefinition "#pose hoburgtroops"
 #racedefinition "#pose clockworktroops"
 #racedefinition "#tag 'preferredmount mechanical'"
+#endtheme
+
+
+--- Regional themes (mandatory)
+
+-- Standard "northern European" hoburgs
+-- Weights: primitive 4, agrarian 4, advanced 4, industrial 4
+#newtheme
+#type regional
+#name boreal
+#basechance 4
+#themeinc theme mechanical *1
+#themeinc theme advanced *1.5
+#themeinc theme iron *1
+#themeinc theme bronze *0.5
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *0.5
+#themeinc theme primitive *1
+#endtheme
+
+--"Asian neo-Jomonese" hoburgs 
+-- Weights: primitive 0.5, agrarian 1, advanced 2, industrial 2
+#newtheme
+#type regional
+#name oriental
+#basechance 1
+#chanceinc racetheme primitive *0.5
+#chanceinc racetheme agrarian *1
+#chanceinc racetheme advanced *2
+#chanceinc racetheme industrial *2
+#themeinc theme mechanical *2
+#themeinc theme advanced *1
+#themeinc theme iron *2
+#themeinc theme bronze *0.25
+#themeinc theme wood *2
+#themeinc theme leather *1
+#themeinc theme naked *0.05
+#themeinc theme primitive *0.5
+#themeinc theme oriental *100
+#racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
+#racedefinition "#unitcommand '#nametype 134'"
+#endtheme
+
+--"Mesoamerican proto-Mictlanese" hoburgs 
+-- Weights: primitive 2, agrarian 1, advanced 0.5, industrial 0.25
+#newtheme
+#type regional
+#name occidental
+#basechance 1
+#chanceinc racetheme primitive *2
+#chanceinc racetheme agrarian *1
+#chanceinc racetheme advanced *0.5
+#chanceinc racetheme industrial *0.25
+#themeinc theme mechanical *0.25
+#themeinc theme advanced *0.25
+#themeinc theme iron *0.25
+#themeinc theme bronze *2
+#themeinc theme wood *2
+#themeinc theme leather *2
+#themeinc theme naked *2
+#themeinc theme primitive *2
+#themeinc theme occidental *100
+#racedefinition "#longsyllables /data/names/nations/nahuatl/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
+#racedefinition "#unitcommand '#nametype 123'"
+#endtheme
+
+-- "African quasi-Machakan" hoburgs 
+-- Weights: primitive 0.5, agrarian 1, advanced 1, industrial 0.5
+#newtheme
+#type regional
+#name austral
+#basechance 1
+#chanceinc racetheme primitive *0.5
+#chanceinc racetheme agrarian *1
+#chanceinc racetheme advanced *1
+#chanceinc racetheme industrial *0.5
+#themeinc theme mechanical *0.25
+#themeinc theme advanced *1
+#themeinc theme iron *2
+#themeinc theme bronze *0.5
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *2
+#themeinc theme primitive *1
+#themeinc theme austral *100
+#racedefinition "#longsyllables /data/names/nations/machakan/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/machakan/shortsyllables.txt"
+#racedefinition "#unitcommand '#nametype 126'"
+#endtheme
+
+-- "Hellenic quasi-Arco" hoburgs 
+-- Weights: primitive 0.25, agrarian 2, advanced 2, industrial 0.25
+#newtheme
+#type regional
+#name central
+#basechance 1
+#chanceinc racetheme primitive *0.25
+#chanceinc racetheme agrarian *2
+#chanceinc racetheme advanced *2
+#chanceinc racetheme industrial *0.25
+#themeinc theme mechanical *2
+#themeinc theme advanced *0.5
+#themeinc theme iron *1
+#themeinc theme bronze *2
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *0.5
+#themeinc theme primitive *0.5
+#themeinc theme central *100
+#racedefinition "#longsyllables /data/names/nations/amazon/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/amazon/shortsyllables.txt"
+#racedefinition "#unitcommand '#nametype 107'"
 #endtheme
