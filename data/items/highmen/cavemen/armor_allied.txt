@@ -1,0 +1,175 @@
+--- Unarmored
+
+#newitem
+#name "starkers"
+#gameid -1
+#needs shirt noshirt
+#armor
+#basechance 0.25
+#theme "primative"
+#theme "naked"
+#enditem
+
+#newitem
+#name "loincloth"
+#gameid -1
+#needs shirt loincloth
+#armor
+#basechance 0.25
+#theme "primative"
+#theme "naked"
+#enditem
+
+
+--- Furs
+
+#newitem
+#name "tight furs"
+#gameid 44
+#sprite /graphics/highmen/armor/furs.png
+#needs shirt noshirt
+#armor
+#basechance 0.5
+#theme "primative"
+#enditem
+
+
+--- Leather
+
+#newitem
+#name "leather cuirass"
+#gameid 5
+#sprite /graphics/highmen/armor/leather2_cuirass.png
+#needs shirt loincloth
+#armor
+#basechance 0.5
+#theme "leather"
+#enditem
+
+#newitem
+#name "leather hauberk"
+#gameid 10
+#sprite /graphics/highmen/armor/leather2_hauberk3.png
+#needs shirt noshirt
+#armor
+#basechance 0.5
+#theme "leather"
+#theme "advanced"
+#enditem
+
+--- Ring
+
+#newitem
+#name "ring cuirass"
+#gameid 6
+#sprite /graphics/highmen/armor/ring2_cuirass.png
+#needs shirt loincloth
+#armor
+#basechance 0.5
+#theme "leather"
+#enditem
+
+#newitem
+#name "ring hauberk"
+#gameid 11
+#sprite /graphics/highmen/armor/ring2_hauberk.png
+#needs shirt noshirt
+#armor
+#basechance 0.5
+#theme "leather"
+#enditem
+
+--- Bronze Scale
+
+#newitem
+#name "bronze scale cuirass"
+#gameid 142
+#sprite /graphics/highmen/armor/scale_cuirass1_bronze.png
+#needs shirt leather
+#armor
+#basechance 0.25
+#theme "bronze"
+#enditem
+
+#newitem
+#name "bronze scale hauberk"
+#gameid 136
+#sprite /graphics/highmen/armor/scale_hauberk_bronze.png
+#needs shirt leather
+#armor
+#basechance 0.25
+#theme "bronze"
+#enditem
+
+
+--- Bronze Plate
+
+#newitem
+#name "bronze plate cuirass"
+#gameid 100
+#sprite /graphics/highmen/armor/plate_cuirass1_bronze.png
+#needs shirt leather
+#armor
+#basechance 0.25
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "bronze plate hauberk"
+#gameid 101
+#sprite /graphics/highmen/armor/plate_hauberk_bronze.png
+#needs shirt leather
+#armor
+#basechance 0.25
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+
+--- Iron Scale
+
+#newitem
+#name "iron scale cuirass"
+#gameid 7
+#sprite /graphics/highmen/armor/scale_cuirass1.png
+#needs shirt leather
+#armor
+#basechance 0.25
+#theme "iron"
+#enditem
+
+#newitem
+#name "iron scale hauberk"
+#gameid 12
+#sprite /graphics/highmen/armor/scale_hauberk.png
+#needs shirt leather
+#armor
+#basechance 0.25
+#theme "iron"
+#enditem
+
+
+--- Iron Plate
+
+#newitem
+#name "iron plate cuirass"
+#gameid 9
+#sprite /graphics/highmen/armor/plate_cuirass1.png
+#needs shirt leather
+#armor
+#basechance 0.25
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "iron plate hauberk"
+#gameid 14
+#sprite /graphics/highmen/armor/plate_hauberk.png
+#needs shirt leather
+#armor
+#basechance 0.25
+#theme "iron"
+#theme "advanced"
+#enditem

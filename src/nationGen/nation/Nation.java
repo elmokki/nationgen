@@ -723,8 +723,8 @@ public class Nation {
         tw.println("-- Nation " + nationid + ": " + this.name + ", " + this.epithet);
         tw.println("---------------------------------------------------------------");
         tw.println("-- Generated with filters: " + this.appliedfilters);
-        tw.println("-- Generated with " + races.get(0) + " race themes: " + races.get(0).themes);
-        tw.println("-- Generated with " + races.get(1) + " race themes: " + races.get(1).themes);
+        tw.println("-- Generated with " + races.get(0) + " race themes: " + races.get(0).themefilters);
+        tw.println("-- Generated with " + races.get(1) + " race themes: " + races.get(1).themefilters);
         tw.println("---------------------------------------------------------------");
 
         //writeNationInfo(tw);
