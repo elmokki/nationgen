@@ -22,11 +22,11 @@ public class Race extends Filter {
 	public List<Command> unitcommands = new ArrayList<Command>();
 	public List<Command> specialcommands = new ArrayList<Command>();
 	public List<Pose> poses = new ArrayList<Pose>();
+	public List<Pose> spriteGenPoses = new ArrayList<Pose>();
 	
 	public List<Theme> themefilters = new ArrayList<Theme>();
 
 	public String visiblename = null;
-	
 	
 
 	public Race(NationGen nationGen)
@@ -47,6 +47,7 @@ public class Race extends Filter {
 		addCommand("#enc 3");
 	}
 	
+
 	/**
 	 * Adds a new command replacing old one of the same type. Just so nations can have both defaults and 
 	 * custom stuff on top of that.
@@ -195,6 +196,18 @@ public class Race extends Filter {
 				this.poses.addAll(set);
 			}
 		}
+		else if(args.get(0).equals("#spritegenpose"))
+		{
+			List<Pose> set = nationGen.poses.get(args.get(1));
+			if(set == null)
+			{
+				System.out.println("Pose set " + args.get(1) + " was not found.");
+			}
+			else
+			{
+				this.spriteGenPoses.addAll(set);
+			}
+		}
 		else
 			super.handleOwnCommand(str);
 
@@ -256,6 +269,7 @@ public class Race extends Filter {
 		r.unitcommands.addAll(this.unitcommands);
 		r.specialcommands.addAll(this.specialcommands);
 		r.poses.addAll(this.poses);
+		r.spriteGenPoses.addAll(this.spriteGenPoses);
 		r.chanceincs.addAll(this.chanceincs);
 		r.tags.addAll(this.tags);
 		r.visiblename = this.visiblename;

@@ -151,6 +151,7 @@
 #themeinc theme naked *0.05
 #themeinc theme primitive *0.5
 #themeinc theme oriental *100
+#themeinc theme boreal *0.01
 #racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 134'"
@@ -175,6 +176,7 @@
 #themeinc theme naked *2
 #themeinc theme primitive *2
 #themeinc theme occidental *100
+#themeinc theme boreal *0.01
 #racedefinition "#longsyllables /data/names/nations/nahuatl/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 123'"
@@ -199,6 +201,7 @@
 #themeinc theme naked *2
 #themeinc theme primitive *1
 #themeinc theme austral *100
+#themeinc theme boreal *0.01
 #racedefinition "#longsyllables /data/names/nations/machakan/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/machakan/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 126'"
@@ -223,6 +226,7 @@
 #themeinc theme naked *0.5
 #themeinc theme primitive *0.5
 #themeinc theme central *100
+#themeinc theme boreal *0.01
 #racedefinition "#longsyllables /data/names/nations/amazon/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/amazon/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 107'"
@@ -230,7 +234,7 @@
 
 
 --- Social themes
-
+-- Weights: primitive 1, agrarian 1, advanced 0.25, industrial 0.05
 #newtheme
 #type social
 #name cavemen_allies

@@ -535,6 +535,7 @@ public class NationGen {
        */
 	}
 	
+
 	private void hideVanillaNations(PrintWriter tw, int nationcount)
 	{
 
@@ -824,5 +825,17 @@ public class NationGen {
 		
 		Drawing.writeTGA(combined, "./mods/" + output);
 	
+	}
+	
+	/**
+	 * Copies any poses from each race's spriteGenPoses list into its poses list
+	 * @param filename
+	 * @return
+	 */
+	public void setSpriteGenPoses()
+	{
+		for(Race race : races)
+			race.poses.addAll(race.spriteGenPoses);
+
 	}
 }

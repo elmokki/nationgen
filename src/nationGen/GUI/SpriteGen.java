@@ -124,6 +124,8 @@ public class SpriteGen extends JFrame implements ActionListener, ItemListener{
 	
     public SpriteGen() throws IOException {
     	nGen = new NationGen();
+    	nGen.setSpriteGenPoses();
+    	
     	dummy = new Item(nGen);
     	
         setTitle("SpriteGen");
