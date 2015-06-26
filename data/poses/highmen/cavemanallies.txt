@@ -4,9 +4,29 @@
 #newpose
 #name "caveman auxilliary"
 #role "infantry"
-#role "scout"
 #role "sacred infantry"
 #role "elite infantry"
+
+#command "#gcost 25"
+#command "#size 3"
+#command "#hp 23"
+#command "#prot 2"
+#command "#str 17"
+#command "#att 10"
+#command "#def 10"
+#command "#mr 8"
+#command "#enc 3"
+#command "#supplybonus 0"
+#command "#prec 9"
+#command "#mapmove 2"
+#command "#ap 14"
+#command "#fireres 5"
+#command "#coldres 5"
+#command "#darkvision 50"
+#command "#wastesurvival"
+#command "#mountainsurvival"
+#command "#nametype 104"
+#command "#maxage 50"
 
 #load basesprite /data/items/highmen/cavemen/bases.txt
 #load shadow /data/items/highmen/cavemen/shadow.txt
@@ -34,6 +54,26 @@
 #tier 1
 #notfortier 2
 #notfortier 3
+
+#command "#gcost 25"
+#command "#size 3"
+#command "#hp 23"
+#command "#prot 2"
+#command "#str 17"
+#command "#att 10"
+#command "#def 10"
+#command "#mr 10"
+#command "#enc 3"
+#command "#supplybonus 0"
+#command "#prec 9"
+#command "#mapmove 2"
+#command "#ap 14"
+#command "#fireres 5"
+#command "#coldres 5"
+#command "#darkvision 50"
+#command "#wastesurvival"
+#command "#mountainsurvival"
+#command "#maxage 50"
 
 #renderorder "shadow bonusweapon cloakb basesprite armor cloakf weapon offhand hands hair helmet"
 
