@@ -46,27 +46,29 @@ public class ChanceIncHandler {
 	
 	private Nation n;
 	private Random r;
-	private HashMap<Race, List<String>> thememap = new HashMap<Race, List<String>>();
 	
 	public ChanceIncHandler(Nation n)
 	{
 		this.n = n;
 		this.r = new Random(n.random.nextInt());
 		
+
+
+	}
+	
+	private List<String> getRaceThemeIncs(Race r)
+	{
+		if(r == null)
+			return null;
+	
+		List<String> list = new ArrayList<String>();
 		
-		if(n.races.size() > 0)
-			thememap.put(n.races.get(0), new ArrayList<String>());	
-		if(n.races.size() > 1)
-			thememap.put(n.races.get(1), new ArrayList<String>());
-
-		for(int i = 0; i < thememap.size(); i++)
-		{
-			for(Theme t : n.races.get(i).themefilters)
-			{
-				thememap.get(n.races.get(i)).addAll(t.themeincs);
-			}
-		}
-
+		
+		
+		for(Theme t : r.themefilters)
+			list.addAll(t.themeincs);
+		
+		return list;
 	}
 	
 	public <T extends Filter> List<T> removeRelated(T thing, List<T> list)
@@ -128,11 +130,11 @@ public class ChanceIncHandler {
 	public <T extends Filter> LinkedHashMap<T, Double> handleChanceIncs(List<Unit> u, List<T> filters, List<String> extraincs)
 	{
 		
+	
 		Race race = null;
-		if(u.size() > 0 && thememap.get(u.get(0).race) != null)
+		if(u.size() > 0 && getRaceThemeIncs(u.get(0).race) != null)
 			race = u.get(0).race;
-		else if(n.races.size() > 0)
-			n.races.get(0);
+
 
 
 		LinkedHashMap<T, Double> set = new LinkedHashMap<T, Double>();
@@ -394,40 +396,73 @@ public class ChanceIncHandler {
 	}
 	
 	
+	private static <E extends Filter> void removeRemovableFilters(List<E> filters)
+	{
+		List<E> remov = new ArrayList<E>();
+		for(E e : filters)
+			if(!e.tags.contains("unremovable"))
+				remov.add(e);
+		
+		filters.removeAll(remov);
+	}
+	
+	
+	private static <E extends Filter> List<E> retrieveFiltersFromTags(List<String> tags, String lookfor, ResourceStorage<E> source)
+	{
+		List<E> filters = new ArrayList<E>();
+		
+		for(String tag : tags)
+		{
+			if(tag.startsWith(lookfor))
+			{
+				
+				String setname = tag.split(" ")[1];
+				List<E> set = source.get(setname);
+				
+				if(setname.equals("clear"))
+				{
+					removeRemovableFilters(filters);
+					if(set != null)
+						System.out.println("WARNING! #" + lookfor + " clear is trying to load a set named clear. This did not succeed. Please rename the set.");
+				}
+				else if(set != null)
+				{
+					filters.addAll(set);
+				}
+				else
+					System.out.println("#" + lookfor + " " + setname + " could not find the set " + setname);
+			
+			
+			}
+		}	
+		
+		return filters;
+	}
+	
 	public static <E extends Filter> List<E> retrieveFilters(String lookfor, String defaultset, ResourceStorage<E> source, Pose p, Race r)
 	{
 		List<E> filters = new ArrayList<E>();
 		
-		boolean empty = true;
 		
+		if(r != null)
+			filters.addAll(retrieveFiltersFromTags(r.tags, lookfor, source));
 		
 		if(p != null)
-			for(String tag : p.tags)
-			{
-				if(tag.startsWith(lookfor))
-				{
-					empty = false;
-					filters.addAll(source.get(tag.split(" ")[1]));
-				}
-			}
-	
-		
-		if(empty && r != null)
-		{
-			for(String tag : r.tags)
-			{
-				if(tag.startsWith(lookfor))
-				{
-					empty = false;
-					filters.addAll(source.get(tag.split(" ")[1]));
-				}
-			}
-		}
-		
-		
-		if(empty)
-			filters.addAll(source.get(defaultset));
+			filters.addAll(retrieveFiltersFromTags(p.tags, lookfor, source));
 
+	
+
+		
+		
+		if(filters.size() == 0)
+		{
+			if(source.get(defaultset) != null)
+				filters.addAll(source.get(defaultset));
+			else
+				System.out.println("Default set " + defaultset + " for " + lookfor + " was not found from " + source);
+		}
+
+		
 		return filters;
 
 	}
@@ -563,7 +598,7 @@ public class ChanceIncHandler {
 			List<String> chanceincs = new ArrayList<String>();
 			
 			if(r != null)
-				chanceincs.addAll(this.thememap.get(r)); // Should never be null.
+				chanceincs.addAll(getRaceThemeIncs(r)); // Should never be null.
 
 	
 			chanceincs.addAll(miscincs);
@@ -786,7 +821,7 @@ public class ChanceIncHandler {
 
 			// Should never be null.
 			if(race != null)
-				chanceincs.addAll(this.thememap.get(race));
+				chanceincs.addAll(getRaceThemeIncs(race));
 			
 			for(String str : chanceincs)
 			{
@@ -829,14 +864,35 @@ public class ChanceIncHandler {
 				canIncrease = false;
 				if(args.get(0).equals("hastheme") && args.size() >= 3 && n.races.size() > 0)
 				{
-					String theme = args.get(1);
+					String theme = args.get(args.size() - 2);
+					boolean not = args.contains("not");
+
 					for(Theme t : n.races.get(0).themefilters)
 					{
 						if(t.name.equals(theme))
 							canIncrease = true;			
 					}
 					
-					if(canIncrease)
+					if(canIncrease != not)
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+				}
+				
+				// Theme in a primary race theme
+				canIncrease = false;
+				if(args.get(0).equals("anytheme") && args.size() >= 3 && n.races.size() > 0)
+				{
+					String theme = args.get(args.size() - 2);
+					boolean not = args.contains("not");
+					
+					for(Theme t : n.races.get(0).themefilters)
+					{
+						if(t.themes.contains(theme))
+							canIncrease = true;			
+					}
+					if(n.races.get(0).themes.contains(theme))
+						canIncrease = true;		
+					
+					if(canIncrease != not)
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
@@ -844,14 +900,16 @@ public class ChanceIncHandler {
 				canIncrease = false;
 				if(args.get(0).equals("hasthemetheme") && args.size() >= 3 && n.races.size() > 0)
 				{
-					String theme = args.get(1);
+					String theme = args.get(args.size() - 2);
+					boolean not = args.contains("not");
+					
 					for(Theme t : n.races.get(0).themefilters)
 					{
 						if(t.themes.contains(theme))
 							canIncrease = true;			
 					}
 					
-					if(canIncrease)
+					if(canIncrease != not)
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
@@ -859,14 +917,16 @@ public class ChanceIncHandler {
 				canIncrease = false;
 				if(args.get(0).equals("secondaryracetheme") && args.size() >= 3 && n.races.size() > 1)
 				{
-					String theme = args.get(1);
+					String theme = args.get(args.size() - 2);
+					boolean not = args.contains("not");
+					
 					for(Theme t : n.races.get(1).themefilters)
 					{
 						if(t.name.equals(theme))
 							canIncrease = true;			
 					}
 					
-					if(canIncrease)
+					if(canIncrease != not)
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
@@ -1193,7 +1253,7 @@ public class ChanceIncHandler {
 			
 			// Should never be null.
 			if(race != null)
-				chanceincs.addAll(this.thememap.get(race));
+				chanceincs.addAll(getRaceThemeIncs(race));
 			
 			
 			for(String str : chanceincs)

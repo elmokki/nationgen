@@ -66,7 +66,7 @@ public class NationGen {
 	public ResourceStorage<Flag> flagparts = new ResourceStorage<Flag>(Flag.class, this);
 	public ResourceStorage<MagicItem> magicitems = new ResourceStorage<MagicItem>(MagicItem.class, this);
 	public ResourceStorage<NameFilter> miscnames = new ResourceStorage<NameFilter>(NameFilter.class, this);
-	public ResourceStorage<AbilityTemplate> templates = new ResourceStorage<AbilityTemplate>(AbilityTemplate.class, this);
+	public ResourceStorage<Filter> templates = new ResourceStorage<Filter>(Filter.class, this);
 	public ResourceStorage<Filter> descriptions = new ResourceStorage<Filter>(Filter.class, this);
 	public ResourceStorage<Pose> monsters = new ResourceStorage<Pose>(Pose.class, this);
 	public ResourceStorage<Theme> themes = new ResourceStorage<Theme>(Theme.class, this);

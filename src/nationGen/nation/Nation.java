@@ -149,9 +149,7 @@ public class Nation {
 		// Add themes
 		addThemes(races.get(0));
 		
-		// Restart chanceinc handler after adding themes.
-		chandler = new ChanceIncHandler(this);
-		
+	
 		
 		// Secondary race after themes since themes may affect it
 		allRaces.clear();
@@ -186,11 +184,9 @@ public class Nation {
 			}
 		}
 		
-		// Restart chanceinc handler after adding themes to secondary race as well.
-		chandler = new ChanceIncHandler(this);
-		
 
 		
+
 		
 		// Mages and priests
 		MageGenerator mageGen = new MageGenerator(nationGen, this);
@@ -314,8 +310,12 @@ public class Nation {
 		GodGen gg = new GodGen(this);
 		this.gods.addAll(gg.giveGods());
 		
-
-	
+		// Forts
+		List<Filter> possibleForts = ChanceIncHandler.retrieveFilters("forts", "default_forts", nationGen.miscdef, null, races.get(0));
+		possibleForts = ChanceIncHandler.getFiltersWithType("era " + era, possibleForts);
+		Filter forts = chandler.getRandom(possibleForts);
+		this.commands.addAll(forts.commands);
+		
 		// Heroes
 		
 		HeroGenerator hg = new HeroGenerator(nationGen, this);
@@ -461,7 +461,7 @@ public class Nation {
 		
 		boolean getsNonFreeThemes = (race == races.get(0));
 		if(!getsNonFreeThemes)
-			Generic.containsTag(race.tags, "normal_themes_as_secondary");
+			getsNonFreeThemes = Generic.containsTag(race.tags, "normal_themes_as_secondary");
 		
 		// Guaranteed themes
 		for(int i = 0; i < guaranteedthemes; i++)
@@ -735,7 +735,8 @@ public class Nation {
         tw.println("#epithet \"" + epithet + "\"");
         
         
-		tw.println("#descr \"" + "A glorious NationGen nation!" + "\"");
+		tw.println("#descr \"" + "A glorious NationGen nation! Generated from seed " + seed + " with settings integer " + 
+				   nationGen.settings.getSettingInteger() + "\"");
 		
         tw.println("#summary \"" + summary + "\"");
         tw.println("#brief \"No description\"");
@@ -777,9 +778,9 @@ public class Nation {
         tw.println("#defunit2b " + getMilitia(2, 2).id);
         tw.println("#defmult2b " + militiaAmount(getMilitia(2, 2)));
         tw.println("");
-        // Start army
         
-     
+        
+        // Start army
         tw.println("#startcom " + comlists.get("commanders").get(0).id);
         if(comlists.get("scouts").size() > 0)
         	tw.println("#startscout " + comlists.get("scouts").get(0).id);
@@ -818,34 +819,18 @@ public class Nation {
         for(Command cmd : this.gods)
         	tw.println(cmd.command + " " + Generic.listToString(cmd.args));
      
-        // Forts
-        int forts = this.era;
-        if(random.nextDouble() > 0.8)
-        	forts++;
-        else if(random.nextDouble() > 0.8)
-        	forts--;
-        if(random.nextDouble() > 0.9 && forts < this.era)
-        	forts--;
-        if(random.nextDouble() > 0.9 && forts > this.era)
-        	forts++;
-        if(forts == 0 && random.nextDouble() > 0.2)
-        	forts++;
-
-        forts = Math.min(3, Math.max(0, forts));
-        tw.println("#fortera " + forts);
+ 
         
         tw.println("");
         
         
-        
-        
-        tw.println("");
         tw.println("#templepic " + random.nextInt(19));
         tw.println("");
         
 
         tw.println("#end");
         tw.println("");
+        
         tw.println("");
         
 

@@ -338,7 +338,8 @@ public class SacredGenerator extends TroopGenerator {
 	
 	private void addInitialFilters(Unit u)
 	{
-
+		
+		unitGen.addFreeTemplateFilters(u);
 		addTemplateFilter(u, "sacredtemplates", "default_sacredtemplates");
 		if(random.nextDouble() < 0.1)
 		{
@@ -558,7 +559,7 @@ public class SacredGenerator extends TroopGenerator {
 				rating *= 1.2;
 		}
 		
-		List<String> values = Generic.getTagValues(Generic.getAllUnitTags(u, nation), "sacredratingmulti");
+		List<String> values = Generic.getTagValues(Generic.getAllUnitTags(u), "sacredratingmulti");
 		double total = 1;
 		for(String str : values)
 		{
@@ -567,7 +568,7 @@ public class SacredGenerator extends TroopGenerator {
 		rating *= total;
 		
 		
-		values = Generic.getTagValues(Generic.getAllUnitTags(u, nation), "sacredcostmulti");
+		values = Generic.getTagValues(Generic.getAllUnitTags(u), "sacredcostmulti");
 		total = 1;
 		for(String str : values)
 		{
