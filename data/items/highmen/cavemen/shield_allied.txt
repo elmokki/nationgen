@@ -1,0 +1,129 @@
+--- Shields
+
+-- Hide shields
+
+#newitem
+#id hideshield
+#gameid 105
+#sprite /graphics/machakans/shields/hideshield.png
+#offsetx 1
+#offsety -4
+#eliteversion colored_hideshield
+#armor
+#theme "leather"
+#enditem
+
+#newitem
+#id colored_hideshield
+#gameid 105
+#sprite /graphics/machakans/shields/greathideshield.png
+#recolormask /graphics/machakans/shields/greathideshield_recolormask.png
+#offsetx 1
+#offsety -4
+#armor
+#theme "leather"
+#enditem
+
+#newitem
+#id greathideshield
+#gameid 112
+#sprite /graphics/highmen/shields/greathideshield.png
+#recolormask /graphics/highmen/shields/greathideshield_recolormask.png
+#armor
+#theme "leather"
+#enditem
+
+
+-- Bucklers
+
+#newitem
+#id buckler
+#gameid 1
+#sprite /graphics/offhand/standard/shield1.png
+#offsetx 2
+#offsety -1
+#armor
+#theme "wood"
+#enditem
+
+#newitem
+#id bronze_buckler
+#gameid 1
+#sprite /graphics/amazon/shields/targe_burnished.png
+#offsetx 2
+#offsety -2
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id iron_buckler
+#gameid 2
+#sprite /graphics/offhand/standard/shield2.png
+#offsetx 2
+#offsety -1
+#armor
+#theme "iron"
+#enditem
+
+
+-- Normal shields
+
+#newitem
+#id hoplon
+#gameid 2
+#sprite /graphics/amazon/shields/hoplon_burnished.png
+#offsetx 2
+#offsety -2
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id hoplon_painted
+#gameid 2
+#sprite /graphics/amazon/shields/hoplon_bronze.png
+#recolormask /graphics/amazon/shields/hoplon_painted_recolormask.png
+#offsetx 2
+#offsety -2
+#armor
+#enditem
+
+#newitem
+#id iron_shield
+#basechance 1
+#gameid 2
+#sprite /graphics/offhand/standard/shield6.png
+#recolormask /graphics/offhand/standard/shield6_recolormask.png
+#offsetx 2
+#offsety -1
+#armor
+#theme "iron"
+#enditem
+
+
+-- Bonus missiles
+
+#newitem
+#id thrown_rocks
+#gameid 605
+#sprite /graphics/highmen/weapons/offhand_rock.png
+#offsetx 0
+#offsety -1
+#theme "primitive"
+#enditem
+
+#newitem
+#id sticks_and_stones
+#gameid 360
+#theme "primitive"
+#enditem
+
+#newitem
+#id net
+#gameid 263
+#sprite /graphics/highmen/weapons/offhand_net.png
+#basechance 0.25
+#tag "tierunique"
+#tag "name infantry hunter"
+#enditem

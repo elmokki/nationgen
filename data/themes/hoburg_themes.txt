@@ -21,9 +21,10 @@
 #themeinc theme leather *2
 #themeinc theme naked *2
 #themeinc theme primitive *2
-#racedefinition "#unitcommand '#gcost -2'"
+#racedefinition "#unitcommand '#gcost -1'"
 #racedefinition "#unitcommand '#mor -1'"
 #racedefinition "#unitcommand '#str -1'"
+#racedefinition "#unitcommand '#def +1'"
 #racedefinition "#unitcommand '#prec -2'"
 #racedefinition "#unitcommand '#enc -1'"
 #racedefinition "#unitcommand '#mapmove +1'"
@@ -52,6 +53,8 @@
 #themeinc theme naked *1
 #themeinc theme primitive *1
 #racedefinition "#unitcommand '#gcost -1'"
+#racedefinition "#unitcommand '#mor -1'"
+#racedefinition "#unitcommand '#def +1'
 #racedefinition "#magicpriority nature 5"
 #racedefinition "#pose hoburgmages"
 #racedefinition "#pose hoburgtroops"
@@ -148,6 +151,7 @@
 #themeinc theme naked *0.05
 #themeinc theme primitive *0.5
 #themeinc theme oriental *100
+#themeinc theme boreal *0.01
 #racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 134'"
@@ -172,6 +176,7 @@
 #themeinc theme naked *2
 #themeinc theme primitive *2
 #themeinc theme occidental *100
+#themeinc theme boreal *0.01
 #racedefinition "#longsyllables /data/names/nations/nahuatl/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 123'"
@@ -196,6 +201,7 @@
 #themeinc theme naked *2
 #themeinc theme primitive *1
 #themeinc theme austral *100
+#themeinc theme boreal *0.01
 #racedefinition "#longsyllables /data/names/nations/machakan/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/machakan/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 126'"
@@ -220,7 +226,23 @@
 #themeinc theme naked *0.5
 #themeinc theme primitive *0.5
 #themeinc theme central *100
+#themeinc theme boreal *0.01
 #racedefinition "#longsyllables /data/names/nations/amazon/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/amazon/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 107'"
+#endtheme
+
+
+--- Social themes
+-- Weights: primitive 1, agrarian 1, advanced 0.25, industrial 0.05
+#newtheme
+#type social
+#name cavemen_allies
+#basechance 0.5
+#chanceinc racetheme primitive *2
+#chanceinc racetheme agrarian *2
+#chanceinc racetheme advanced *0.5
+#chanceinc racetheme industrial *0.1
+#racedefinition "#pose cavemanallies"
+#racedefinition "#tag 'preferredmount caveman'"
 #endtheme

@@ -1,0 +1,91 @@
+
+--- Leather
+
+#newitem
+#basechance 1
+#name "leather cuirass"
+#gameid 5
+#sprite /graphics/hoburg/bodyarmor/roninarmor.png
+#needs legs roninpants
+#armor
+#theme "leather"
+#theme "oriental"
+#enditem
+
+#newitem
+#basechance 1
+#name "leather hauberk"
+#gameid 10
+#sprite /graphics/hoburg/bodyarmor/roninarmor.png
+#needs legs roninpants
+#armor
+#theme "leather"
+#theme "oriental"
+#enditem
+
+
+--- Ashiguru
+
+#newitem
+#basechance 2
+#name "ashigaru armor"
+#gameid 128
+#sprite /graphics/hoburg/bodyarmor/ashigaruarmor.png
+#recolormask /graphics/hoburg/bodyarmor/ashigaruarmor_recolormask.png
+#needs legs ashigarupants
+#armor
+#theme "oriental"
+#enditem
+
+--- Samurai
+
+#newitem
+#basechance 2
+#name "samurai armor"
+#gameid 129
+#sprite /graphics/hoburg/bodyarmor/samuraiarmor.png
+#recolormask /graphics/hoburg/bodyarmor/samuraiarmor_recolormask.png
+#tag "eliteversion 'samurai armor elite'"
+#needs legs samuraipants
+#armor
+#theme "oriental"
+#enditem
+
+#newitem
+#basechance 2
+#name "samurai armor elite"
+#gameid 129
+#sprite /graphics/hoburg/bodyarmor/samuraiarmor_elite.png
+#recolormask /graphics/hoburg/bodyarmor/samuraiarmor_elite_recolormask.png
+#theme "elite"
+#needs legs samuraipants
+#armor
+#theme "oriental"
+#enditem
+
+
+--- Heavy samurai
+
+#newitem
+#basechance 1
+#name "heavy samurai armor"
+#gameid 130
+#sprite /graphics/hoburg/bodyarmor/heavysamuraiarmor.png
+#recolormask /graphics/hoburg/bodyarmor/samuraiarmor_recolormask.png
+#tag "eliteversion 'heavy samurai armor elite'"
+#needs legs heavysamuraipants
+#armor
+#theme "oriental"
+#enditem
+
+#newitem
+#basechance 1
+#name "heavy samurai armor elite"
+#gameid 130
+#sprite /graphics/hoburg/bodyarmor/heavysamuraiarmor_elite.png
+#recolormask /graphics/hoburg/bodyarmor/samuraiarmor_elite_recolormask.png
+#theme "elite"
+#needs legs heavysamuraipants
+#armor
+#theme "oriental"
+#enditem
