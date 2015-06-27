@@ -4,7 +4,7 @@
 #newpose
 #role "infantry"
 #role "scout"
-
+#name "stealthy boreal infantry"
 #command "#stealthy 0"
 
 #load basesprite /data/items/hoburg/normal/bases.txt
@@ -30,7 +30,7 @@
 ---- Mounted - loud
 #newpose
 #role "mounted"
-
+#name "not-so-stealthy boreal cavalry"
 #renderorder "shadow cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/hoburg/normal/bases.txt
@@ -60,7 +60,7 @@
 ---- Mounted - stealthy
 #newpose
 #role "mounted"
-
+#name "stealthy boreal cavalry"
 #command "#stealthy 0"
 
 #renderorder "shadow cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
@@ -93,7 +93,7 @@
 
 #newpose
 #role "ranged"
-
+#name "stealthy boreal archers"
 #command "#stealthy 0"
 
 #renderorder "shadow cloakb mount basesprite shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"

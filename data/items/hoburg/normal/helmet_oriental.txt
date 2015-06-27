@@ -1,0 +1,80 @@
+
+#newitem
+#id bare
+#gameid -1
+#sprite /graphics/hoburg/helmet/topknot.png
+#armor
+#theme "naked"
+#enditem
+
+#newitem
+#id leathercap
+#gameid 120
+#sprite /graphics/hoburg/helmet/leathercap.png
+#tag "eliteversion leathercap-elite"
+#armor
+#theme "leather"
+#enditem
+
+#newitem
+#id leatherhat
+#gameid 120
+#sprite /graphics/hoburg/helmet/coe-leatherhat.png
+#tag "eliteversion leatherhat-elite"
+#armor
+#theme "leather"
+#enditem
+
+#newitem
+#id ironcap
+#gameid 20
+#sprite /graphics/hoburg/helmet/ironcap.png
+#theme "advanced"
+#tag "eliteversion ironcap-elite"
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#id ironcap
+#gameid 20
+#sprite /graphics/hoburg/helmet/ironcap2.png
+#theme "advanced"
+#tag "eliteversion ironcap-elite"
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#id jingasa
+#basechance 4
+#gameid 131
+#sprite /graphics/hoburg/helmet/jingasa.png
+#recolormask /graphics/helmet/standard/jingasa_recolormask.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#id kabuto
+#basechance 2
+#gameid 132
+#sprite /graphics/hoburg/helmet/kabuto.png
+#tag "eliteversion kabuto"
+#tag "eliteversion kabuto_elite"
+#tag "name samurai"
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#id kabuto_elite
+#basechance 2
+#gameid 132
+#sprite /graphics/hoburg/helmet/kabuto_elite.png
+#tag "eliteversion kabuto_elite"
+#theme "elite"
+#tag "name samurai"
+#armor
+#theme "iron"
+#enditem
