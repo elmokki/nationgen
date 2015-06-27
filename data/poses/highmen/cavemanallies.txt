@@ -1,0 +1,92 @@
+
+-------- Normal
+
+#newpose
+#name "caveman auxilliary"
+#role "infantry"
+#role "sacred infantry"
+#role "elite infantry"
+
+#command "#gcost 25"
+#command "#size 3"
+#command "#hp 23"
+#command "#prot 2"
+#command "#str 17"
+#command "#att 10"
+#command "#def 10"
+#command "#mr 8"
+#command "#enc 3"
+#command "#supplybonus 0"
+#command "#prec 9"
+#command "#mapmove 2"
+#command "#ap 14"
+#command "#fireres 5"
+#command "#coldres 5"
+#command "#darkvision 50"
+#command "#wastesurvival"
+#command "#mountainsurvival"
+#command "#nametype 104"
+#command "#maxage 50"
+
+#load basesprite /data/items/highmen/cavemen/bases.txt
+#load shadow /data/items/highmen/cavemen/shadow.txt
+#load hands /data/items/highmen/cavemen/hands.txt
+
+#load armor /data/items/highmen/cavemen/armor_allied.txt
+#load shirt /data/items/highmen/cavemen/shirt.txt
+
+#load weapon /data/items/highmen/cavemen/weapon_allied.txt
+#load offhand /data/items/highmen/cavemen/offhand_allied.txt
+#load offhand /data/items/highmen/cavemen/shield_allied.txt
+
+#maxunits 3
+
+#endpose
+
+
+---------- Mages and Priests
+
+#newpose
+#name "caveman shaman"
+#role "mage"
+#role "priest"
+
+#tier 1
+#notfortier 2
+#notfortier 3
+
+#command "#gcost 25"
+#command "#size 3"
+#command "#hp 23"
+#command "#prot 2"
+#command "#str 17"
+#command "#att 10"
+#command "#def 10"
+#command "#mr 10"
+#command "#enc 3"
+#command "#supplybonus 0"
+#command "#prec 9"
+#command "#mapmove 2"
+#command "#ap 14"
+#command "#fireres 5"
+#command "#coldres 5"
+#command "#darkvision 50"
+#command "#wastesurvival"
+#command "#mountainsurvival"
+#command "#maxage 50"
+
+#renderorder "shadow bonusweapon cloakb basesprite armor cloakf weapon offhand hands hair helmet"
+
+#load basesprite /data/items/highmen/cavemen/bases.txt
+#load shadow /data/items/highmen/cavemen/shadow.txt
+#load hands /data/items/highmen/cavemen/hands.txt
+
+#load armor /data/items/highmen/cavemen/armor_caster.txt
+#load shirt /data/items/highmen/cavemen/shirt.txt
+
+#load weapon /data/items/highmen/cavemen/weapon_caster.txt
+#load offhand /data/items/highmen/cavemen/offhand_caster.txt
+
+#load helmet /data/items/highmen/cavemen/helmet_caster.txt
+
+#endpose
