@@ -713,7 +713,9 @@ public class TroopGenerator {
 		return false;
 	}
 	
-	protected void addTemplateFilter(Unit u, String query, String defaultv)
+	
+
+	public void addTemplateFilter(Unit u, String query, String defaultv)
 	{
 		
 		
@@ -722,17 +724,15 @@ public class TroopGenerator {
 		possibleFilters.removeAll(u.appliedFilters);
 		
 	
-		
-		// Add unit template to available templates
-		if(unitTemplates.size() < maxtemplates && possibleFilters.size() == 0)
+		// Add unit template filter to available template filters
+		if(unitTemplates.size() < maxtemplates && chandler.countPossibleFilters(possibleFilters, u) == 0)
 		{
-			List<Filter> tFilters = ChanceIncHandler.retrieveFilters(query, defaultv, nationGen.miscdef, u.pose, u.race);
+			List<Filter> tFilters = ChanceIncHandler.retrieveFilters(query, defaultv, nationGen.templates, u.pose, u.race);
 			possibleFilters.retainAll(tFilters);
 			tFilters.removeAll(unitTemplates);			
 			tFilters = ChanceIncHandler.getValidUnitFilters(tFilters, u);
 			
 			Filter t = chandler.getRandom(tFilters, u);
-			
 			
 			
 			if(t != null)
@@ -749,15 +749,13 @@ public class TroopGenerator {
 			appliedtemplates++;
 			u.appliedFilters.add(f);
 		}
-		
-		
-
-	
 	}
 	
-	protected void addInitialFilters(Unit u, String role)
+	public void addInitialFilters(Unit u, String role)
 	{
 
+		unitGen.addFreeTemplateFilters(u);
+		
 		if(random.nextDouble() < 0.05 || appliedtemplates < maxtemplates)
 		{
 			addTemplateFilter(u, "trooptemplates", "default_templates");

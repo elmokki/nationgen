@@ -267,6 +267,13 @@ public class MageGenerator extends TroopGenerator {
 		for(int i = 0; i < 3; i++)
 		{
 			this.tagAll(mages.get(i), "schoolmage " + (i+1));
+			
+			
+			for(Unit u : mages.get(i))
+			{
+				unitGen.addFreeTemplateFilters(u);
+				unitGen.addTemplateFilter(u, "magetemplates", "default_magetemplates");
+			}
 
 		}
 
@@ -1923,7 +1930,7 @@ public class MageGenerator extends TroopGenerator {
 		if(unit.getSlot("weapon") != null)
 		{
 			boolean troop = false;
-			if(Generic.containsTag(Generic.getAllUnitTags(unit, nation), "troopweapon"))
+			if(Generic.containsTag(Generic.getAllUnitTags(unit), "troopweapon"))
 				troop = true;
 			else if(Generic.containsTag(unit.getSlot("weapon").tags, "troopweapon"))
 				troop = true;
@@ -2043,12 +2050,12 @@ public class MageGenerator extends TroopGenerator {
 			
 			if(toTier < 2)
 			{
-				if(Generic.containsTag(Generic.getAllUnitTags(nu, nation), "mage_nolowtierhat"))
+				if(Generic.containsTag(Generic.getAllUnitTags(nu), "mage_nolowtierhat"))
 				{
 					nu.setSlot("helmet", null);
 
 				}
-				if(!Generic.containsTag(Generic.getAllUnitTags(nu, nation), "mage_lowtiercloak"))
+				if(!Generic.containsTag(Generic.getAllUnitTags(nu), "mage_lowtiercloak"))
 				{
 					nu.setSlot("cloakb", null);
 					nu.setSlot("cloakf", null);

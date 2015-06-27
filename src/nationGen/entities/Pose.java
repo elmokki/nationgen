@@ -145,18 +145,6 @@ public class Pose extends Filter {
 		{
 			this.commands.add(Command.parseCommand(args.get(1)));
 		}
-		else if(args.get(0).equals("#template"))
-		{
-			List<AbilityTemplate> set = nationGen.templates.get(args.get(1));
-			if(set == null)
-			{
-				System.out.println("Template set " + args.get(1) + " was not found.");
-			}
-			else
-			{
-				this.templates.addAll(set);
-			}
-		}
 		else if(args.get(0).equals("#load"))
 		{
 

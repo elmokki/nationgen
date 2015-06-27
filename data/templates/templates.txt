@@ -1,6 +1,8 @@
 
--- Troop templates
-#load default_infantrytemplates ./data/templates/default_infantrytemplates.txt
-#load default_mountedtemplates ./data/templates/default_mountedtemplates.txt
-#load default_rangedtemplates ./data/templates/default_rangedtemplates.txt
+--- Unit templates
+#load default_templates ./data/templates/default_trooptemplates.txt
+#load default_sacredtemplates ./data/templates/default_sacredtemplates.txt
+#load default_freetemplates ./data/templates/default_freetemplates.txt
+#load default_magetemplates ./data/templates/default_magetemplates.txt
 
+#load slavetemplate ./data/templates/slavetemplate.txt

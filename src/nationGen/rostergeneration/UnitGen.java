@@ -17,6 +17,8 @@ import java.util.Random;
 
 
 
+
+
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
@@ -112,8 +114,87 @@ public class UnitGen {
 		return u;
 	}
 	
+	/**
+	 * A simpler version of the troopgenerator version
+	 * @param u
+	 * @param query
+	 * @param defaultv
+	 */
+	public void addTemplateFilter(Unit u, String query, String defaultv)
+	{
+	
+			List<Filter> tFilters = ChanceIncHandler.retrieveFilters(query, defaultv, nationGen.templates, u.pose, u.race);
+			tFilters.removeAll(u.appliedFilters);			
+			tFilters = ChanceIncHandler.getValidUnitFilters(tFilters, u);
+			Filter t = chandler.getRandom(tFilters, u);
+			
+			
+			if(t != null)
+			{
+				u.appliedFilters.add(t);
+			}
+		
+	}
+
 	
 	
+	/**
+	 * Adds a free template filter if #freetemplatefilter was specified somewhere
+	 * @param u
+	 * @param query
+	 * @param defaultv
+	 */
+	public void addFreeTemplateFilters(Unit u)
+	{
+		if(!Generic.containsTag(Generic.getAllUnitTags(u), "freetemplatefilter"))
+		{
+			return;
+		}
+		
+		List<String> types = Generic.getTagValues(Generic.getAllUnitTags(u), "freetemplatefilter");
+		for(String str : types)		
+		{		
+			
+			List<String> args = Generic.parseArgs(str);
+			String type = args.get(args.size() - 1);
+			
+			String set = null;
+			if(args.size() > 0)
+				set = args.get(0);
+			
+			List<Filter> tFilters = null;
+			if(set == null)
+				tFilters = ChanceIncHandler.retrieveFilters("freetemplatefilters", "default_freetemplatefilters", nationGen.templates, u.pose, u.race);
+			else
+			{
+				tFilters = new ArrayList<Filter>();
+				
+				
+				if(nationGen.templates.get(set) == null)
+					System.out.println("No template filters were found for set + " + set + "!");
+				else
+					tFilters.addAll(nationGen.templates.get(set));
+
+
+			}
+				
+			List<Filter> possibles = ChanceIncHandler.getFiltersWithType(type, tFilters);
+			if(possibles.size() == 0)
+			{
+				System.out.println("No template filters of type " + type + " were found for #freetemplatefilter " + type);
+			}
+			else
+			{
+				Filter t = chandler.getRandom(tFilters, u);
+				if(t != null)
+				{
+					u.appliedFilters.add(t);
+					tFilters.remove(t);
+				}
+			}
+		}
+			
+	}
 	
 	
 	/**

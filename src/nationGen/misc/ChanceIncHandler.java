@@ -394,40 +394,73 @@ public class ChanceIncHandler {
 	}
 	
 	
+	private static <E extends Filter> void removeRemovableFilters(List<E> filters)
+	{
+		List<E> remov = new ArrayList<E>();
+		for(E e : filters)
+			if(!e.tags.contains("unremovable"))
+				remov.add(e);
+		
+		filters.removeAll(remov);
+	}
+	
+	
+	private static <E extends Filter> List<E> retrieveFiltersFromTags(List<String> tags, String lookfor, ResourceStorage<E> source)
+	{
+		List<E> filters = new ArrayList<E>();
+		
+		for(String tag : tags)
+		{
+			if(tag.startsWith(lookfor))
+			{
+				
+				String setname = tag.split(" ")[1];
+				List<E> set = source.get(setname);
+				
+				if(setname.equals("clear"))
+				{
+					removeRemovableFilters(filters);
+					if(set != null)
+						System.out.println("WARNING! #" + lookfor + " clear is trying to load a set named clear. This did not succeed. Please rename the set.");
+				}
+				else if(set != null)
+				{
+					filters.addAll(set);
+				}
+				else
+					System.out.println("#" + lookfor + " " + setname + " could not find the set " + setname);
+			
+			
+			}
+		}	
+		
+		return filters;
+	}
+	
 	public static <E extends Filter> List<E> retrieveFilters(String lookfor, String defaultset, ResourceStorage<E> source, Pose p, Race r)
 	{
 		List<E> filters = new ArrayList<E>();
 		
-		boolean empty = true;
 		
+		if(r != null)
+			filters.addAll(retrieveFiltersFromTags(r.tags, lookfor, source));
 		
 		if(p != null)
-			for(String tag : p.tags)
-			{
-				if(tag.startsWith(lookfor))
-				{
-					empty = false;
-					filters.addAll(source.get(tag.split(" ")[1]));
-				}
-			}
-	
-		
-		if(empty && r != null)
-		{
-			for(String tag : r.tags)
-			{
-				if(tag.startsWith(lookfor))
-				{
-					empty = false;
-					filters.addAll(source.get(tag.split(" ")[1]));
-				}
-			}
-		}
-		
-		
-		if(empty)
-			filters.addAll(source.get(defaultset));
+			filters.addAll(retrieveFiltersFromTags(p.tags, lookfor, source));
 
+	
+
+		
+		
+		if(filters.size() == 0)
+		{
+			if(source.get(defaultset) != null)
+				filters.addAll(source.get(defaultset));
+			else
+				System.out.println("Default set " + defaultset + " for " + lookfor + " was not found from " + source);
+		}
+
+		
 		return filters;
 
 	}
