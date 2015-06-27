@@ -178,7 +178,6 @@ public class UnitGen {
 
 			}
 				
-			System.out.println(tFilters);
 			List<Filter> possibles = ChanceIncHandler.getFiltersWithType(type, tFilters);
 			if(possibles.size() == 0)
 			{
