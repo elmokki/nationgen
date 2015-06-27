@@ -169,7 +169,23 @@ Info:	If the nation has an unit with shape <shape>, apply modifier
 Has theme
 ------------------------
 Usage:	#chanceinc hastheme <theme> <mod>
-Info:	If the nation has theme named <theme>, apply modifier
+Info:	If the primary race has theme named <theme>, apply modifier
+
+Secondary race theme
+------------------------
+Usage:	#chanceinc secondaryracetheme <theme> <mod>
+Info:	If the secondary race has theme named <theme>, apply modifier
+
+Has theme theme
+------------------------
+Usage:	#chanceinc hasthemetheme <theme> <mod>
+Info:	If primary race has a theme with given #theme tagged, apply modifier
+
+Has any theme tag
+------------------------
+Usage:	#chanceinc anytheme <theme> <mod>
+Info:	If primary race has a theme with given #theme tagged or has given #theme
+	in race description, apply modifier
 
 Era
 ------------------------

@@ -864,14 +864,35 @@ public class ChanceIncHandler {
 				canIncrease = false;
 				if(args.get(0).equals("hastheme") && args.size() >= 3 && n.races.size() > 0)
 				{
-					String theme = args.get(1);
+					String theme = args.get(args.size() - 2);
+					boolean not = args.contains("not");
+
 					for(Theme t : n.races.get(0).themefilters)
 					{
 						if(t.name.equals(theme))
 							canIncrease = true;			
 					}
 					
-					if(canIncrease)
+					if(canIncrease != not)
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+				}
+				
+				// Theme in a primary race theme
+				canIncrease = false;
+				if(args.get(0).equals("anytheme") && args.size() >= 3 && n.races.size() > 0)
+				{
+					String theme = args.get(args.size() - 2);
+					boolean not = args.contains("not");
+					
+					for(Theme t : n.races.get(0).themefilters)
+					{
+						if(t.themes.contains(theme))
+							canIncrease = true;			
+					}
+					if(n.races.get(0).themes.contains(theme))
+						canIncrease = true;		
+					
+					if(canIncrease != not)
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
@@ -879,14 +900,16 @@ public class ChanceIncHandler {
 				canIncrease = false;
 				if(args.get(0).equals("hasthemetheme") && args.size() >= 3 && n.races.size() > 0)
 				{
-					String theme = args.get(1);
+					String theme = args.get(args.size() - 2);
+					boolean not = args.contains("not");
+					
 					for(Theme t : n.races.get(0).themefilters)
 					{
 						if(t.themes.contains(theme))
 							canIncrease = true;			
 					}
 					
-					if(canIncrease)
+					if(canIncrease != not)
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
@@ -894,14 +917,16 @@ public class ChanceIncHandler {
 				canIncrease = false;
 				if(args.get(0).equals("secondaryracetheme") && args.size() >= 3 && n.races.size() > 1)
 				{
-					String theme = args.get(1);
+					String theme = args.get(args.size() - 2);
+					boolean not = args.contains("not");
+					
 					for(Theme t : n.races.get(1).themefilters)
 					{
 						if(t.name.equals(theme))
 							canIncrease = true;			
 					}
 					
-					if(canIncrease)
+					if(canIncrease != not)
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
