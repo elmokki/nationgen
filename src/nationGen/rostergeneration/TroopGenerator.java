@@ -74,10 +74,7 @@ public class TroopGenerator {
 	
 			this.maxvar = getMaxVarieties(template);
 			
-			
-			if(role.equals("mounted"))
-				this.maxvar = Math.min(getCavVarieties(pose), maxvar);
-
+		
 			if(Generic.getTagValue(pose.tags, "primaryraceonly") != null)
 				this.canBeSecondary = false;
 
@@ -94,10 +91,7 @@ public class TroopGenerator {
 		if(u.pose.roles.contains("chariot"))
 			maxvar = 1;
 		
-		for(Filter f : u.appliedFilters)
-			if(Generic.getTagValue(f.tags, "maxvarieties") != null)
-				maxvar = Integer.parseInt(Generic.getTagValue(f.tags, "maxvarieties"));
-		
+
 		if(Generic.getTagValue(u.getSlot("armor").tags, "maxvarieties") != null)
 			maxvar = Math.min(maxvar, Integer.parseInt(Generic.getTagValue(u.getSlot("armor").tags, "maxvarieties")));
 		
@@ -110,10 +104,18 @@ public class TroopGenerator {
 		
 		
 		maxvar = Math.min(u.pose.getItems("weapon").possibleItems(), maxvar);
+
+		
+		for(Filter f : u.appliedFilters)
+			if(Generic.getTagValue(f.tags, "maxvarieties") != null)
+			{
+				maxvar = Integer.parseInt(Generic.getTagValue(f.tags, "maxvarieties"));
+			}
+		
 		
 		if(u.pose.roles.contains("mounted"))
 			maxvar = Math.min(getCavVarieties(u.pose), maxvar);
-
+		
 		return maxvar;
 
 	}
@@ -588,7 +590,10 @@ public class TroopGenerator {
 				List<Pose> ps = new ArrayList<Pose>();
 				for(Pose p : race.getPoses(role))
 				{
+
 					List<Item> temp = p.getItems("armor");
+					
+
 					temp.removeAll(armors);
 					
 					int count = chandler.countPossibleFilters(temp, dummy);
@@ -725,7 +730,7 @@ public class TroopGenerator {
 		
 	
 		// Add unit template filter to available template filters
-		if(unitTemplates.size() < maxtemplates && chandler.countPossibleFilters(possibleFilters, u) == 0)
+		if(unitTemplates.size() < maxtemplates || chandler.countPossibleFilters(possibleFilters, u) == 0)
 		{
 			List<Filter> tFilters = ChanceIncHandler.retrieveFilters(query, defaultv, nationGen.templates, u.pose, u.race);
 			possibleFilters.retainAll(tFilters);
@@ -748,6 +753,25 @@ public class TroopGenerator {
 		{
 			appliedtemplates++;
 			u.appliedFilters.add(f);
+			
+			if(Generic.containsTag(f.tags, "maxunits"))
+			{
+				int max = Integer.parseInt(Generic.getTagValue(f.tags, "maxunits"));
+				int count = 1;
+				for(Template t : this.templates)
+					if(t.template.appliedFilters.contains(f))
+						count++;
+				
+				
+				if(count >= max)
+				{
+					unitTemplates.remove(f);
+					maxtemplates--;
+				}
+			}
+				
+				
+			
 		}
 	}
 	
@@ -758,12 +782,13 @@ public class TroopGenerator {
 		
 		if(random.nextDouble() < 0.05 || appliedtemplates < maxtemplates)
 		{
+
 			addTemplateFilter(u, "trooptemplates", "default_templates");
-			if(random.nextDouble() < 0.1)
+			if(random.nextDouble() < 0.3)
 			{
 				addTemplateFilter(u, "trooptemplates", "default_templates");
 			}
-		}
+		}	
 		
 		removeEliteSacred(u, role);
 
