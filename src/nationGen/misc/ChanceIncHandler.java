@@ -454,7 +454,10 @@ public class ChanceIncHandler {
 		
 		if(filters.size() == 0)
 		{
-			filters.addAll(source.get(defaultset));
+			if(source.get(defaultset) != null)
+				filters.addAll(source.get(defaultset));
+			else
+				System.out.println("Default set " + defaultset + " for " + lookfor + " was not found from " + source);
 		}
 
 		

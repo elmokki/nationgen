@@ -152,7 +152,7 @@ public class Generic {
 	}
 	
 	
-	public static List<String> getAllUnitTags(Unit u, Nation n)
+	public static List<String> getAllUnitTags(Unit u)
 	{
 		List<String> tags = new ArrayList<String>();
 		tags.addAll(u.race.tags);

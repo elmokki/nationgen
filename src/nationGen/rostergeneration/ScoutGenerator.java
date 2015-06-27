@@ -70,7 +70,7 @@ public class ScoutGenerator extends TroopGenerator {
 		Unit template = unitGen.generateUnit(race, p);
 		
 		this.addStats(template, tier);
-
+		unitGen.addFreeTemplateFilters(template);
 		
 		
 		

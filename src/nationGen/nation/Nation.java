@@ -461,7 +461,7 @@ public class Nation {
 		
 		boolean getsNonFreeThemes = (race == races.get(0));
 		if(!getsNonFreeThemes)
-			Generic.containsTag(race.tags, "normal_themes_as_secondary");
+			getsNonFreeThemes = Generic.containsTag(race.tags, "normal_themes_as_secondary");
 		
 		// Guaranteed themes
 		for(int i = 0; i < guaranteedthemes; i++)
