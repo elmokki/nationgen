@@ -57,7 +57,7 @@ public class ScoutGenerator extends TroopGenerator {
 			}
 			
 			// Chance to give a whatever weapon rarely
-			if(r.nextDouble() > 0.9 + tier * 0.25)
+			if(r.nextDouble() > 0.9 + (tier - 1) * 0.25)
 			{
 				Item tweapon = race.getItems("weapon", posename).getRandom(chandler, r);
 				if(tweapon != null)
