@@ -149,9 +149,7 @@ public class Nation {
 		// Add themes
 		addThemes(races.get(0));
 		
-		// Restart chanceinc handler after adding themes.
-		chandler = new ChanceIncHandler(this);
-		
+	
 		
 		// Secondary race after themes since themes may affect it
 		allRaces.clear();
@@ -186,11 +184,9 @@ public class Nation {
 			}
 		}
 		
-		// Restart chanceinc handler after adding themes to secondary race as well.
-		chandler = new ChanceIncHandler(this);
-		
 
 		
+
 		
 		// Mages and priests
 		MageGenerator mageGen = new MageGenerator(nationGen, this);
