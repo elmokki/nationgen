@@ -603,16 +603,14 @@ public class Unit {
 	private int getCopyStats()
 	{
 		
-		
 		int stats = -1;
 		for(Command c : this.getCommands())
 		{
-			
+	
 			if(c.command.equals("#copystats"))
 				stats = Integer.parseInt(c.args.get(0));
 		}
 		
-	
 		return stats;
 	}
 	
@@ -1232,9 +1230,6 @@ public class Unit {
 	
 	public BufferedImage render(int offsetX) throws IOException
 	{
-		if(this.getClass() == ShapeChangeUnit.class)
-			return null;
-		
 		
 		Unit u = this;
 

@@ -3,7 +3,6 @@
 #basechance 0.5
 #name "militia"
 #maxvarieties 1
-#maxunits 1
 #chanceinc pose mounted *0
 #chanceinc pose chariot *0
 #command "#def -2"
@@ -23,7 +22,6 @@
 #name "elite +1"
 #type elite
 #maxvarieties 1
-#maxunits 2
 #chanceinc pose ranged *0
 #command "#def +1"
 #command "#att +1"
@@ -45,7 +43,6 @@
 #name "elite +2"
 #type elite
 #maxvarieties 1
-#maxunits 1
 #chanceinc pose ranged *0
 #command "#def +2"
 #command "#att +2"
@@ -68,7 +65,6 @@
 #name "ranged elite +1"
 #type elite
 #maxvarieties 1
-#maxunits 1
 #chanceinc pose mounted *0
 #chanceinc pose infantry *0
 #chanceinc pose chariot *0
@@ -134,5 +130,5 @@
 #chanceinc thisarmorprot below 11 *2
 #chanceinc thisarmorprot below 9 *2
 #maxvarieties 2
-#maxunits 1
+#desc "Berserker"
 #end

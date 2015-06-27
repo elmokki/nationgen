@@ -68,7 +68,7 @@ public class NationGen {
 	public ResourceStorage<NameFilter> miscnames = new ResourceStorage<NameFilter>(NameFilter.class, this);
 	public ResourceStorage<Filter> templates = new ResourceStorage<Filter>(Filter.class, this);
 	public ResourceStorage<Filter> descriptions = new ResourceStorage<Filter>(Filter.class, this);
-	public ResourceStorage<ShapeShift> monsters = new ResourceStorage<ShapeShift>(ShapeShift.class, this);
+	public ResourceStorage<Pose> monsters = new ResourceStorage<Pose>(Pose.class, this);
 	public ResourceStorage<Theme> themes = new ResourceStorage<Theme>(Theme.class, this);
 
 	public List<String> secondShapeMountCommands = new ArrayList<String>();

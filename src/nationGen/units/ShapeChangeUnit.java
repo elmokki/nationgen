@@ -18,8 +18,6 @@ import nationGen.entities.Filter;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.misc.Command;
-import nationGen.naming.Name;
-import nationGen.naming.NamePart;
 import nationGen.nation.Nation;
 
 
@@ -31,6 +29,7 @@ public class ShapeChangeUnit extends Unit {
 	boolean sacred = false;
 	public String shiftcommand = "#firstshape";
 	private int gcost = 0;
+	public List<Command> commands = new ArrayList<Command>();
 	
 	public ShapeChangeUnit(NationGen nationGen, Race race, Pose pose, Unit otherForm, ShapeShift thisForm)
 	{
@@ -42,10 +41,8 @@ public class ShapeChangeUnit extends Unit {
 
 	public void polish(NationGen n, Nation nation)
 	{
-		
-		// Copy sacredness and gcost from main form
+		//System.out.println("1 polish");
 		if(otherForm != null)
-		{
 			for(Command c : otherForm.getCommands())
 			{
 				if(c.command.equals("#holy") && !thisForm.tags.contains("mount"))
@@ -71,9 +68,7 @@ public class ShapeChangeUnit extends Unit {
 
 
 			}
-		}
 		
-		// Handle custom weapons
 		for(Command c : thisForm.commands)
 		{
 			// Weapons
@@ -94,27 +89,20 @@ public class ShapeChangeUnit extends Unit {
 			}
 		}
 		
-
-		boolean hasName = false;
 		
 		// Copy commands from this form
 		for(Command c : thisForm.commands)
 		{
 			if(c.command.equals("#name") && c.args.size() > 0)
 			{
-				hasName = true;
 				c.args.set(0, "\"" + Generic.capitalize(c.args.get(0).replaceAll("\"", "")) + "\"");
-				name = new Name();
-				name.type = new NamePart(Generic.capitalize(c.args.get(0).replaceAll("\"", "")));
 			}
 			
 			if(!c.command.startsWith("#spr"))
 				commands.add(c);
-		
+
 		}
 		
-		
-			
 		// ...and other Form
 		if(otherForm != null)
 		{
@@ -231,26 +219,6 @@ public class ShapeChangeUnit extends Unit {
 		Graphics g = base.getGraphics();
 		g.drawImage(image, xoffset, 0, null);
 		
-
-		
-		if(Generic.containsTag(thisForm.tags, "recolormask"))
-		{
-			BufferedImage mask = null;
-			String file = Generic.getTagValue(thisForm.tags, "recolormask");
-			try {
-				mask = ImageIO.read(new File("./", file));
-				Drawing.recolor(mask, this.color);
-
-			} catch (IOException e) {
-				System.out.println("CRITICAL FAILURE, IMAGE FILE " + file + " CANNOT BE FOUND.");
-				return;
-			}
-			g.drawImage(mask, xoffset, 0, null);
-
-			
-
-		}
-		
 		try
 		{
 			Drawing.writeTGA(base, dest);
@@ -265,6 +233,7 @@ public class ShapeChangeUnit extends Unit {
 	
 	public void write(PrintWriter tw, String spritedir)
 	{
+
 
 		
 		// Handle sprites
@@ -337,14 +306,14 @@ public class ShapeChangeUnit extends Unit {
 
 		// Write the unit text
 		if(otherForm != null)
-			tw.println("--- Shapechange form for " + otherForm.getName());
+			tw.println("--- Shapechange form for " + otherForm.name);
 		else
-			tw.println("--- Special unit " + getName());
-		
+			tw.println("--- Special unit");
+
 		tw.println("#newmonster " + id);
 
 
-		// Own non-gcost commands first due to #copystats
+		// Own commands first due to #copystats
 		for(Command c : commands)
 		{
 			if(!c.command.equals("#gcost"))

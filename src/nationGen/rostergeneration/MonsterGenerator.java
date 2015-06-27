@@ -1,7 +1,6 @@
 package nationGen.rostergeneration;
 
 import java.util.List;
-import java.util.Random;
 
 import com.elmokki.Generic;
 
@@ -10,8 +9,6 @@ import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.nation.Nation;
-import nationGen.units.ShapeChangeUnit;
-import nationGen.units.ShapeShift;
 import nationGen.units.Unit;
 
 public class MonsterGenerator {
@@ -33,7 +30,7 @@ public class MonsterGenerator {
 		r.visiblename = "Monster";
 		ChanceIncHandler chandler = new ChanceIncHandler(n);
 		
-		List<ShapeShift> poses = ChanceIncHandler.retrieveFilters("monsters", "default_monsters", ng.monsters, null, n.races.get(0));
+		List<Pose> poses = ChanceIncHandler.retrieveFilters("monsters", "default_monsters", ng.monsters, null, n.races.get(0));
 		
 		if(poses.size() == 0)
 		{
@@ -41,14 +38,9 @@ public class MonsterGenerator {
 			return null;
 		}
 		
-		Random rand = new Random(n.random.nextInt());
-		
-		Pose pose = new Pose(ng);
-		
-		ShapeShift p = ShapeShift.getRandom(rand, chandler.handleChanceIncs(poses));
+		Pose p = Pose.getRandom(n.random, chandler.handleChanceIncs(poses));
 	
-		
-		ShapeChangeUnit u = new ShapeChangeUnit(ng, r, pose, null, p);
+		Unit u = new Unit(ng, r, p, n);
 		
 		double chance = 0.95;
 		if(Generic.containsTag(p.tags, "caponlychance"))
@@ -63,9 +55,6 @@ public class MonsterGenerator {
 			u.invariantMonster = true;
 			u.name.setType(p.name);  // Give the unit the same name as the pose for documentation purposes
 		}
-		
-		u.polish(n.nationGen, n);
-		
 		
 		return u;
 		
