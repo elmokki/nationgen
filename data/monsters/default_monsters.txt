@@ -12,7 +12,7 @@
 #name "elephant_human_2"
 #basechance 0
 #chanceinc primaryrace human 0.25
-#chanceinc era 3 2
+#chanceinc era 3 3.75
 #command "#copystats 1555"
 #command "#copyspr 1555"
 #end
@@ -20,7 +20,7 @@
 #new
 #name "elephant_human_3"
 #basechance 0
-#chanceinc primaryrace human 1
+#chanceinc primaryrace human 2
 #command "#copystats 150"
 #command "#copyspr 150"
 #end
@@ -28,32 +28,32 @@
 #new
 #name "elephant_monkey"
 #basechance 0
-#chanceinc primaryrace monkey 1
+#chanceinc primaryrace monkey 2
 #command "#copystats 1147"
 #command "#copyspr 1147"
 #end
 
--- #new
--- #name "elephant_avvite_1"
--- #basechance 0
--- #chanceinc primaryrace avvite 4
--- #command "#copystats 2261"
--- #command "#spr1 ./graphics/monsters/elephant_avvite.png"
--- #command "#spr2 shift"
--- #command "#recolormask /graphics/monsters/elephant_avvite_recolormask.png"
--- #end
+#new
+#name "elephant_avvite_1"
+#basechance 0
+#chanceinc primaryrace avvite 4
+#command "#copystats 2261"
+#command "#spr1 ./graphics/monsters/elephant_avvite.png"
+#command "#spr2 shift"
+#recolormask /graphics/monsters/elephant_avvite_recolormask.png
+#end
 
--- #new
--- #name "elephant_avvite_2"
--- #basechance 0
--- #chanceinc primaryrace avvite 1
--- #chanceinc era 2 *4
--- #chanceinc era 3 *6
--- #command "#copystats 1555"
--- #command "#spr1 ./graphics/monsters/elephant_avvite2.png"
--- #command "#spr2 shift"
--- #command "#recolormask /graphics/monsters/elephant_avvite2_recolormask.png"
--- #end
+#new
+#name "elephant_avvite_2"
+#basechance 0
+#chanceinc primaryrace avvite 2
+#chanceinc era 2 *4
+#chanceinc era 3 *6
+#command "#copystats 1555"
+#command "#spr1 ./graphics/monsters/elephant_avvite2.png"
+#command "#spr2 shift"
+#recolormask /graphics/monsters/elephant_avvite2_recolormask.png
+#end
 
 #new
 #name "mammoth_caelian"
