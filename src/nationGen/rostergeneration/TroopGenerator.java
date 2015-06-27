@@ -287,7 +287,8 @@ public class TroopGenerator {
 				
 				// Bonusweapon
 					
-				this.equipBonusWeapon(unit, role, race, t);
+				if(unit != null)
+					this.equipBonusWeapon(unit, role, race, t);
 
 			}
 

@@ -6,6 +6,7 @@
 #name "leather cuirass"
 #gameid 5
 #sprite /graphics/hoburg/bodyarmor/roninarmor.png
+#recolormask /graphics/hoburg/bodyarmor/roninarmor_recolormask.png
 #needs legs roninpants
 #armor
 #theme "leather"
@@ -17,6 +18,7 @@
 #name "leather hauberk"
 #gameid 10
 #sprite /graphics/hoburg/bodyarmor/roninarmor.png
+#recolormask /graphics/hoburg/bodyarmor/roninarmor_recolormask.png
 #needs legs roninpants
 #armor
 #theme "leather"
@@ -71,7 +73,7 @@
 #name "heavy samurai armor"
 #gameid 130
 #sprite /graphics/hoburg/bodyarmor/heavysamuraiarmor.png
-#recolormask /graphics/hoburg/bodyarmor/samuraiarmor_recolormask.png
+#recolormask /graphics/hoburg/bodyarmor/heavysamuraiarmor_recolormask.png
 #tag "eliteversion 'heavy samurai armor elite'"
 #needs legs heavysamuraipants
 #armor
@@ -83,9 +85,53 @@
 #name "heavy samurai armor elite"
 #gameid 130
 #sprite /graphics/hoburg/bodyarmor/heavysamuraiarmor_elite.png
-#recolormask /graphics/hoburg/bodyarmor/samuraiarmor_elite_recolormask.png
+#recolormask /graphics/hoburg/bodyarmor/heavysamuraiarmor_elite_recolormask.png
 #theme "elite"
 #needs legs heavysamuraipants
 #armor
 #theme "oriental"
+#enditem
+
+
+--- New-fangled (specifically nanban) armor
+
+#newitem
+#basechance 0.5
+#name "light nanban plate"
+#gameid 9
+#sprite /graphics/hoburg/bodyarmor/nanban_light.png
+#recolormask /graphics/hoburg/bodyarmor/nanban_light_recolormask.png
+#tag "eliteversion 'medium nanban plate'"
+#needs legs roninpants
+#armor
+#theme "oriental"
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#basechance 0.5
+#name "medium nanban plate"
+#gameid 14
+#sprite /graphics/hoburg/bodyarmor/nanban_medium.png
+#recolormask /graphics/hoburg/bodyarmor/samuraiarmor_recolormask.png
+#tag "eliteversion 'heavy nanban plate'"
+#needs legs samuraipants
+#armor
+#theme "oriental"
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#basechance 0.5
+#name "heavy nanban plate"
+#gameid 19
+#sprite /graphics/hoburg/bodyarmor/nanban_heavy.png
+#recolormask /graphics/hoburg/bodyarmor/heavysamuraiarmor_recolormask.png
+#needs legs heavysamuraipants
+#armor
+#theme "oriental"
+#theme "iron"
+#theme "advanced"
 #enditem
