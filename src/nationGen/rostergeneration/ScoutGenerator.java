@@ -35,7 +35,7 @@ public class ScoutGenerator extends TroopGenerator {
 		
 
 
-		Random r = nation.random;
+		Random r = new Random(nation.random.nextInt());
 		int tier = 1 + r.nextInt(3);
 		
 		Pose p = null;
@@ -46,13 +46,22 @@ public class ScoutGenerator extends TroopGenerator {
 		{
 			tries++;
 			if(tier != 3)
-				weapon = race.getItems("weapon", posename).filterDom3DB("2h", "0", true, nationGen.weapondb).getRandom(chandler, nation.random);
+				weapon = race.getItems("weapon", posename).filterDom3DB("2h", "0", true, nationGen.weapondb).getRandom(chandler, r);
 			else
-				weapon = race.getItems("weapon", posename).filterDom3DB("2h", "0", true, nationGen.weapondb).filterDom3DB("lgt", "3", false, nationGen.weapondb).filterDom3DB("lgt", "4", false, nationGen.weapondb).getRandom(chandler, nation.random);
-			
+			{
+				weapon = race.getItems("weapon", posename).filterDom3DBInteger("lgt", 3, true, nationGen.weapondb).getRandom(chandler, r);
+			}
 			if(weapon == null)
 			{
-				weapon = race.getItems("weapon", posename).getRandom(chandler, nation.random);
+				weapon = race.getItems("weapon", posename).getRandom(chandler, r);
+			}
+			
+			// Chance to give a whatever weapon rarely
+			if(r.nextDouble() > 0.9 + (tier - 1) * 0.25)
+			{
+				Item tweapon = race.getItems("weapon", posename).getRandom(chandler, r);
+				if(tweapon != null)
+					weapon = tweapon;
 			}
 	
 			
@@ -130,14 +139,14 @@ public class ScoutGenerator extends TroopGenerator {
 		}
 		
 		
-		double dwchance = 0.1;
+		double dwchance = 0.3;
 
 
 		
 		if(tier == 3)
 			dwchance = 1;
 			
-		if(p.getItems("offhand") != null && r.nextDouble() < (dwchance * 3) && p.getItems("offhand").filterArmor(false).size() > 0 && nationGen.weapondb.GetInteger(template.getSlot("weapon").id, "lgt") < 3)
+		if(p.getItems("offhand") != null && r.nextDouble() < dwchance && p.getItems("offhand").filterArmor(false).size() > 0 && nationGen.weapondb.GetInteger(template.getSlot("weapon").id, "lgt") < 3 && nationGen.weapondb.GetInteger(template.getSlot("weapon").id, "2h") == 0)
 		{	
 		
 			if(r.nextDouble() > 0.25 && p.getItems("offhand").filterArmor(false).getItemWithID(weapon.id, "offhand") != null)

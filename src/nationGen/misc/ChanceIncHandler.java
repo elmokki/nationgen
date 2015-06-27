@@ -46,27 +46,29 @@ public class ChanceIncHandler {
 	
 	private Nation n;
 	private Random r;
-	private HashMap<Race, List<String>> thememap = new HashMap<Race, List<String>>();
 	
 	public ChanceIncHandler(Nation n)
 	{
 		this.n = n;
 		this.r = new Random(n.random.nextInt());
 		
+
+
+	}
+	
+	private List<String> getRaceThemeIncs(Race r)
+	{
+		if(r == null)
+			return null;
+	
+		List<String> list = new ArrayList<String>();
 		
-		if(n.races.size() > 0)
-			thememap.put(n.races.get(0), new ArrayList<String>());	
-		if(n.races.size() > 1)
-			thememap.put(n.races.get(1), new ArrayList<String>());
-
-		for(int i = 0; i < thememap.size(); i++)
-		{
-			for(Theme t : n.races.get(i).themefilters)
-			{
-				thememap.get(n.races.get(i)).addAll(t.themeincs);
-			}
-		}
-
+		
+		
+		for(Theme t : r.themefilters)
+			list.addAll(t.themeincs);
+		
+		return list;
 	}
 	
 	public <T extends Filter> List<T> removeRelated(T thing, List<T> list)
@@ -128,11 +130,11 @@ public class ChanceIncHandler {
 	public <T extends Filter> LinkedHashMap<T, Double> handleChanceIncs(List<Unit> u, List<T> filters, List<String> extraincs)
 	{
 		
+	
 		Race race = null;
-		if(u.size() > 0 && thememap.get(u.get(0).race) != null)
+		if(u.size() > 0 && getRaceThemeIncs(u.get(0).race) != null)
 			race = u.get(0).race;
-		else if(n.races.size() > 0)
-			n.races.get(0);
+
 
 
 		LinkedHashMap<T, Double> set = new LinkedHashMap<T, Double>();
@@ -596,7 +598,7 @@ public class ChanceIncHandler {
 			List<String> chanceincs = new ArrayList<String>();
 			
 			if(r != null)
-				chanceincs.addAll(this.thememap.get(r)); // Should never be null.
+				chanceincs.addAll(getRaceThemeIncs(r)); // Should never be null.
 
 	
 			chanceincs.addAll(miscincs);
@@ -819,7 +821,7 @@ public class ChanceIncHandler {
 
 			// Should never be null.
 			if(race != null)
-				chanceincs.addAll(this.thememap.get(race));
+				chanceincs.addAll(getRaceThemeIncs(race));
 			
 			for(String str : chanceincs)
 			{
@@ -862,14 +864,35 @@ public class ChanceIncHandler {
 				canIncrease = false;
 				if(args.get(0).equals("hastheme") && args.size() >= 3 && n.races.size() > 0)
 				{
-					String theme = args.get(1);
+					String theme = args.get(args.size() - 2);
+					boolean not = args.contains("not");
+
 					for(Theme t : n.races.get(0).themefilters)
 					{
 						if(t.name.equals(theme))
 							canIncrease = true;			
 					}
 					
-					if(canIncrease)
+					if(canIncrease != not)
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+				}
+				
+				// Theme in a primary race theme
+				canIncrease = false;
+				if(args.get(0).equals("anytheme") && args.size() >= 3 && n.races.size() > 0)
+				{
+					String theme = args.get(args.size() - 2);
+					boolean not = args.contains("not");
+					
+					for(Theme t : n.races.get(0).themefilters)
+					{
+						if(t.themes.contains(theme))
+							canIncrease = true;			
+					}
+					if(n.races.get(0).themes.contains(theme))
+						canIncrease = true;		
+					
+					if(canIncrease != not)
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
@@ -877,14 +900,16 @@ public class ChanceIncHandler {
 				canIncrease = false;
 				if(args.get(0).equals("hasthemetheme") && args.size() >= 3 && n.races.size() > 0)
 				{
-					String theme = args.get(1);
+					String theme = args.get(args.size() - 2);
+					boolean not = args.contains("not");
+					
 					for(Theme t : n.races.get(0).themefilters)
 					{
 						if(t.themes.contains(theme))
 							canIncrease = true;			
 					}
 					
-					if(canIncrease)
+					if(canIncrease != not)
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
@@ -892,14 +917,16 @@ public class ChanceIncHandler {
 				canIncrease = false;
 				if(args.get(0).equals("secondaryracetheme") && args.size() >= 3 && n.races.size() > 1)
 				{
-					String theme = args.get(1);
+					String theme = args.get(args.size() - 2);
+					boolean not = args.contains("not");
+					
 					for(Theme t : n.races.get(1).themefilters)
 					{
 						if(t.name.equals(theme))
 							canIncrease = true;			
 					}
 					
-					if(canIncrease)
+					if(canIncrease != not)
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
@@ -1226,7 +1253,7 @@ public class ChanceIncHandler {
 			
 			// Should never be null.
 			if(race != null)
-				chanceincs.addAll(this.thememap.get(race));
+				chanceincs.addAll(getRaceThemeIncs(race));
 			
 			
 			for(String str : chanceincs)
