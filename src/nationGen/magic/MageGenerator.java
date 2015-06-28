@@ -34,7 +34,7 @@ public class MageGenerator extends TroopGenerator {
 	
 	public MageGenerator(NationGen g, Nation n) {
 		super(g, n);
-		
+	
 		loadPatterns();
 	}
 
@@ -143,7 +143,7 @@ public class MageGenerator extends TroopGenerator {
 		
 		while(orig.size() > 0)
 		{
-			Filter i = Filter.getRandom(nation.random, orig);
+			Filter i = Filter.getRandom(this.random, orig);
 			orig.remove(i);
 			newlist.add(Generic.PathToInteger(i.name));
 		}
@@ -194,7 +194,7 @@ public class MageGenerator extends TroopGenerator {
 		
 		while(orig.size() > 0)
 		{
-			Filter i = Filter.getRandom(nation.random, orig);
+			Filter i = Filter.getRandom(this.random, orig);
 			orig.remove(i);
 			newlist.add(Generic.PathToInteger(i.name));
 		}
@@ -288,7 +288,7 @@ public class MageGenerator extends TroopGenerator {
 
 		if(secondaries > primaries)
 			caponlyprimaries = true;	
-		if(primaries > 0 && secondaries > 0 && nation.random.nextDouble() < 0.70)
+		if(primaries > 0 && secondaries > 0 && this.random.nextDouble() < 0.70)
 			caponlyprimaries = true;
 		if(primaries + secondaries + tertiaries >= 5)
 			caponlyprimaries = true;
@@ -304,7 +304,7 @@ public class MageGenerator extends TroopGenerator {
 		List<MagicPattern> primarypatterns = new ArrayList<MagicPattern>();
 		
 		ChanceIncHandler chandler = new ChanceIncHandler(nation);
-		MagicPattern primaryPattern = Entity.getRandom(nation.random, chandler.handleChanceIncs(available));
+		MagicPattern primaryPattern = Entity.getRandom(this.random, chandler.handleChanceIncs(available));
 
 
 		// Primaries
@@ -324,7 +324,7 @@ public class MageGenerator extends TroopGenerator {
 		List<MagicPattern> secondarypatterns = new ArrayList<MagicPattern>();
 
 		
-		if(primaries == secondaries && nation.random.nextDouble() < 0.35)
+		if(primaries == secondaries && this.random.nextDouble() < 0.35)
 			secs = getPatternsWithSpread(secs, 0, Math.max(0, primaryPattern.getPathsAtleastAt(1)));
 		
 		// A setting here is probably a good idea as well.
@@ -345,20 +345,20 @@ public class MageGenerator extends TroopGenerator {
 
 
 		// More secondaries than primaries only if there's 1 secondary (10.1.2014.)
-		if(secondaries > primaries && nation.random.nextDouble() < 0.6 && secs.size() >= secondaries)
+		if(secondaries > primaries && this.random.nextDouble() < 0.6 && secs.size() >= secondaries)
 		{
 			varySecs = false;
 			for(int i = 0; i < secondaries; i++)
 			{			
 				
-				MagicPattern p = Entity.getRandom(nation.random, chandler.handleChanceIncs(secs));
+				MagicPattern p = Entity.getRandom(this.random, chandler.handleChanceIncs(secs));
 				secs.remove(p);
 				secondarypatterns.add(p);
 			}
 		}
 		else
 		{
-			MagicPattern p = Entity.getRandom(nation.random, chandler.handleChanceIncs(secs));
+			MagicPattern p = Entity.getRandom(this.random, chandler.handleChanceIncs(secs));
 			for(int i = 0; i < secondaries; i++)
 			{						
 				secondarypatterns.add(p);
@@ -389,7 +389,7 @@ public class MageGenerator extends TroopGenerator {
 		
 		
 		
-		MagicPattern p = Entity.getRandom(nation.random, chandler.handleChanceIncs(terts));
+		MagicPattern p = Entity.getRandom(this.random, chandler.handleChanceIncs(terts));
 		for(int i = 0; i < tertiaries; i++)
 		{						
 			tertiarypatterns.add(p);
@@ -402,9 +402,9 @@ public class MageGenerator extends TroopGenerator {
 		all.add(secondarypatterns);
 		all.add(primarypatterns);
 		
-		double leaderrandom1 = nation.random.nextDouble();
-		double leaderrandom2 = nation.random.nextDouble();
-		double slowrecrand = nation.random.nextDouble();
+		double leaderrandom1 = this.random.nextDouble();
+		double leaderrandom2 = this.random.nextDouble();
+		double slowrecrand = this.random.nextDouble();
 		
 
 		for(int i = 2; i >= 0; i--)
@@ -525,7 +525,7 @@ public class MageGenerator extends TroopGenerator {
 		
 		// Extra mage
 		boolean ok = false;
-		if(diversity < 4 && ((norand_picks[4] == 0 && norand_picks[7] == 0) && nation.random.nextDouble() < 0.8))
+		if(diversity < 4 && ((norand_picks[4] == 0 && norand_picks[7] == 0) && this.random.nextDouble() < 0.8))
 		{
 			ok = true;
 		}
@@ -533,23 +533,23 @@ public class MageGenerator extends TroopGenerator {
 		{
 			ok = true;
 		}
-		if(diversity < 5 && norand_picks[4] == 0 && norand_picks[7] == 0 && nation.random.nextDouble() < 0.1)
+		if(diversity < 5 && norand_picks[4] == 0 && norand_picks[7] == 0 && this.random.nextDouble() < 0.1)
 		{
 			ok = true;
 		}
-		if(max < 4 && atmax < 2 && norand_picks[4] == 0 && norand_picks[7] == 0 && nation.random.nextDouble() < 0.5)
+		if(max < 4 && atmax < 2 && norand_picks[4] == 0 && norand_picks[7] == 0 && this.random.nextDouble() < 0.5)
 		{
 			ok = true;
 		}
-		if(norand_picks[4] == 0 && norand_picks[7] == 0 && diversity < 6 && nation.random.nextDouble() < 0.05)
+		if(norand_picks[4] == 0 && norand_picks[7] == 0 && diversity < 6 && this.random.nextDouble() < 0.05)
 		{
 			ok = true;
 		}
-		if(norand_picks[4] == 0 && norand_picks[7] == 0 && atmax == 1 && diversity < 4 && nation.random.nextDouble() < 0.65)
+		if(norand_picks[4] == 0 && norand_picks[7] == 0 && atmax == 1 && diversity < 4 && this.random.nextDouble() < 0.65)
 		{
 			ok = true;
 		}
-		if(norand_picks[4] < 2 && norand_picks[7] < 2 && atmax == 1 && diversity < 4 && nation.random.nextDouble() < 0.35)
+		if(norand_picks[4] < 2 && norand_picks[7] < 2 && atmax == 1 && diversity < 4 && this.random.nextDouble() < 0.35)
 		{
 			ok = true;
 		}
@@ -565,7 +565,7 @@ public class MageGenerator extends TroopGenerator {
 
 
 			
-			extramages.get(0).caponly = nation.random.nextBoolean();
+			extramages.get(0).caponly = this.random.nextBoolean();
 			if((primaries > 1 || secondaries > 1) && caponlyprimaries)
 				extramages.get(0).caponly = true;
 			else if(!caponlyprimaries)
@@ -573,7 +573,7 @@ public class MageGenerator extends TroopGenerator {
 			
 
 			
-			if(extramages.get(0).caponly == false && nation.random.nextDouble() > 0.5)
+			if(extramages.get(0).caponly == false && this.random.nextDouble() > 0.5)
 				extramages.get(0).commands.add(new Command("#slowrec"));
 		
 		
@@ -664,16 +664,16 @@ public class MageGenerator extends TroopGenerator {
 					}
 				}
 			
-			if(nation.random.nextDouble() < 0.15 + maxStrength * 0.075)
+			if(this.random.nextDouble() < 0.15 + maxStrength * 0.075)
 			{
 				power++;
-				if(nation.random.nextDouble() < 0.1 + maxStrength * 0.05)
+				if(this.random.nextDouble() < 0.1 + maxStrength * 0.05)
 				{
 					power++;
-					if(nation.random.nextDouble() < 0.1 + maxStrength * 0.05)
+					if(this.random.nextDouble() < 0.1 + maxStrength * 0.05)
 					{
 						power++;
-						if(nation.random.nextDouble() < 0.1 + maxStrength * 0.05)
+						if(this.random.nextDouble() < 0.1 + maxStrength * 0.05)
 						{
 							power++;
 						}
@@ -681,8 +681,8 @@ public class MageGenerator extends TroopGenerator {
 				}
 			}
 			
-			if(power == 0 && nation.random.nextDouble() > 0.85)
-				power = nation.random.nextInt(3) + 2; // 2 to 3 
+			if(power == 0 && this.random.nextDouble() > 0.85)
+				power = this.random.nextInt(3) + 2; // 2 to 3 
 				
 
 			this.applyFilters(list, power, filters);
@@ -753,22 +753,22 @@ public class MageGenerator extends TroopGenerator {
 
 		int power = 0;
 		
-		if(nation.random.nextDouble() < mod * 3)
+		if(this.random.nextDouble() < mod * 3)
 		{
 			power++;
-			if(nation.random.nextDouble() < mod * 2)
+			if(this.random.nextDouble() < mod * 2)
 			{
 				power++;
-				if(nation.random.nextDouble() < mod)
+				if(this.random.nextDouble() < mod)
 				{
 					power++;
-					if(nation.random.nextDouble() < mod)
+					if(this.random.nextDouble() < mod)
 					{
 						power++;
-						if(nation.random.nextDouble() < mod / 2)
+						if(this.random.nextDouble() < mod / 2)
 						{
 							power++;
-							if(nation.random.nextDouble() < mod / 2)
+							if(this.random.nextDouble() < mod / 2)
 							{
 								power++;
 							}
@@ -779,7 +779,7 @@ public class MageGenerator extends TroopGenerator {
 		}
 		
 
-		if(power > 0 && nation.random.nextDouble() > 0.5)
+		if(power > 0 && this.random.nextDouble() > 0.5)
 			power++;
 		
 		
@@ -799,9 +799,9 @@ public class MageGenerator extends TroopGenerator {
 		{
 			list.clear();
 			list.add(extra);
-			power = nation.random.nextInt(3) + 2; // 2 to 4
-			if(nation.random.nextBoolean())
-				power += nation.random.nextInt(4); // 0 to 3;
+			power = this.random.nextInt(3) + 2; // 2 to 4
+			if(this.random.nextBoolean())
+				power += this.random.nextInt(4); // 0 to 3;
 			
 			this.applyFilters(list, power, filters);
 		}
@@ -841,7 +841,7 @@ public class MageGenerator extends TroopGenerator {
 	
 	private int getVaryPoint(MagicPattern p, int primaries)
 	{
-		if(primaries <= p.getPathsAtleastAt(1, 100) && (nation.random.nextDouble() > 0.8 && p.getPathsAtleastAt(3, 0) < 2))
+		if(primaries <= p.getPathsAtleastAt(1, 100) && (this.random.nextDouble() > 0.8 && p.getPathsAtleastAt(3, 0) < 2))
 		{
 			for(int i = 3; i > 0; i--)
 			{
@@ -1013,7 +1013,7 @@ public class MageGenerator extends TroopGenerator {
 		if(Generic.containsTag(nation.races.get(1).tags, "primaryracemagemod"))
 			bonussecchance -= Double.parseDouble(Generic.getTagValue(nation.races.get(1).tags, "primaryracemagemod"));
 		
-		if((nation.random.nextDouble() < 0.075 * bonussecchance) && nation.races.get(1).hasRole("mage"))
+		if((this.random.nextDouble() < 0.075 * bonussecchance) && nation.races.get(1).hasRole("mage"))
 			race = nation.races.get(1);
 		else if(!nation.races.get(0).hasRole("mage"))
 			race = nation.races.get(1);
@@ -1023,7 +1023,7 @@ public class MageGenerator extends TroopGenerator {
 		List<MagicPattern> available = getPatternsForTier(0, primaries);
 		
 		ChanceIncHandler chandler = new ChanceIncHandler(nation);
-		MagicPattern pattern = Entity.getRandom(nation.random, chandler.handleChanceIncs(available));
+		MagicPattern pattern = Entity.getRandom(this.random, chandler.handleChanceIncs(available));
 
 		
 		if(prio == null)
@@ -1053,7 +1053,7 @@ public class MageGenerator extends TroopGenerator {
 		List<Unit> extras = all.get(3);
 		
 		
-		Random r = nation.random;
+		Random r = this.random;
 		
 		int maxStrength = 1;
 		if(r.nextDouble() > 0.50)
@@ -1300,12 +1300,12 @@ public class MageGenerator extends TroopGenerator {
 		{
 			List<Filter> moreFilters = new ArrayList<Filter>();
 			
-			//if(nation.random.nextDouble() > 0.1)
+			//if(this.random.nextDouble() > 0.1)
 			//	moreFilters = ChanceIncHandler.getFiltersWithPower(power, power, filters);
 			
 
 			
-			int at = nation.random.nextInt(power + 5) - 5; // -5 to power - 2
+			int at = this.random.nextInt(power + 5) - 5; // -5 to power - 2
 			while(moreFilters.size() == 0 && at >= -5)
 			{
 				moreFilters = ChanceIncHandler.getFiltersWithPower(at, power, filters);
@@ -1322,9 +1322,9 @@ public class MageGenerator extends TroopGenerator {
 
 			
 			int tier = 3;
-			if(nation.random.nextDouble() > 0.65)
+			if(this.random.nextDouble() > 0.65)
 				tier = 2;
-			else if(nation.random.nextDouble() > 0.875)
+			else if(this.random.nextDouble() > 0.875)
 				tier = 1;
 			
 			List<Unit> mages = getMagesOfTier(units, tier);
@@ -1335,7 +1335,7 @@ public class MageGenerator extends TroopGenerator {
 				if(units.get(0).tags.contains("extramage"))
 				{
 					mages.addAll(units);
-					tier = nation.random.nextInt(2) + 2; // 2 to 3;
+					tier = this.random.nextInt(2) + 2; // 2 to 3;
 				}
 				
 				if(mages.size() == 0) // Unhandled tier. Heroes have that.
@@ -1362,7 +1362,7 @@ public class MageGenerator extends TroopGenerator {
 				oldFilters.addAll(u.appliedFilters);
 
 			// If all mages of tier have distinguishing paths and either luck or no common paths, separate filters are rolled. 
-			if(different && (nation.random.nextBoolean() || !common))
+			if(different && (this.random.nextBoolean() || !common))
 			{
 				int maxpower = 0;
 				for(Unit u : mages)
@@ -1388,13 +1388,13 @@ public class MageGenerator extends TroopGenerator {
 					tempFilters.retainAll(oldFilters);
 					tempFilters = ChanceIncHandler.getValidUnitFilters(tempFilters, mages);
 
-					if(chandler.countPossibleFilters(tempFilters, u) > 0 && nation.random.nextDouble() > 0.25)
+					if(chandler.countPossibleFilters(tempFilters, u) > 0 && this.random.nextDouble() > 0.25)
 						givenFilters = tempFilters;
 						
 					
 
 					
-					Filter f = Filter.getRandom(nation.random, chandler.handleChanceIncs(u, givenFilters));
+					Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(u, givenFilters));
 		
 					
 					if(f != null)
@@ -1446,13 +1446,13 @@ public class MageGenerator extends TroopGenerator {
 
 
 				
-				if(tempFilters.size() > 0 && nation.random.nextDouble() > 0.25)
+				if(tempFilters.size() > 0 && this.random.nextDouble() > 0.25)
 					givenFilters = tempFilters;
 					
 	
 	
 				
-				Filter f = Filter.getRandom(nation.random, chandler.handleChanceIncs(mages, givenFilters));
+				Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(mages, givenFilters));
 
 
 				
@@ -1624,7 +1624,7 @@ public class MageGenerator extends TroopGenerator {
 			List<Filter> moreFilters = ChanceIncHandler.getFiltersWithPower(power, power, filters);
 			
 
-			if(chandler.handleChanceIncs(units, moreFilters).size() == 0 || nation.random.nextDouble() > 0.7)
+			if(chandler.handleChanceIncs(units, moreFilters).size() == 0 || this.random.nextDouble() > 0.7)
 				moreFilters = ChanceIncHandler.getFiltersWithPower(power - 1, power, filters);
 			if(chandler.handleChanceIncs(units, moreFilters).size() == 0 || power == 1)
 				moreFilters = ChanceIncHandler.getFiltersWithPower(-100, power, filters);
@@ -1632,7 +1632,7 @@ public class MageGenerator extends TroopGenerator {
 				break;
 			
 
-			Filter f = Filter.getRandom(nation.random, chandler.handleChanceIncs(units, moreFilters));
+			Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(units, moreFilters));
 			
 			
 			// validate
@@ -1712,7 +1712,7 @@ public class MageGenerator extends TroopGenerator {
 		
 		
 
-		if(nation.random.nextDouble() < 0.075 * bonussecchance && nation.races.get(1).hasRole("mage"))
+		if(this.random.nextDouble() < 0.075 * bonussecchance && nation.races.get(1).hasRole("mage"))
 		{
 			if(this.hasPoseForTier("mage", nation.races.get(1), 3))
 				race = nation.races.get(1);
@@ -1736,7 +1736,7 @@ public class MageGenerator extends TroopGenerator {
 		if(Generic.containsTag(race.tags, "threeprimarychance"))
 			threechance = Double.parseDouble(Generic.getTagValue(race.tags, "threeprimarychance"));
 		
-		double rand = nation.random.nextDouble() * (onechance + twochance + threechance);
+		double rand = this.random.nextDouble() * (onechance + twochance + threechance);
 
 		if(rand < onechance)
 			primaryamount = 1;
@@ -1750,16 +1750,16 @@ public class MageGenerator extends TroopGenerator {
 		
 
 		// SECONDARIES
-		if(nation.random.nextDouble() < 0.1 * bonussecchance && race != nation.races.get(0)){/*do nothing*/}
+		if(this.random.nextDouble() < 0.1 * bonussecchance && race != nation.races.get(0)){/*do nothing*/}
 		else
 			race = nation.races.get(0);
 		
-		if((race == nation.races.get(0) && nation.random.nextDouble() < 0.1 && hasPoseForTier("mage", nation.races.get(1), 2)) || !hasPoseForTier("mage", nation.races.get(0), 2))
+		if((race == nation.races.get(0) && this.random.nextDouble() < 0.1 && hasPoseForTier("mage", nation.races.get(1), 2)) || !hasPoseForTier("mage", nation.races.get(0), 2))
 			race = nation.races.get(1);
 
 		
 		
-		double randroll = nation.random.nextDouble();
+		double randroll = this.random.nextDouble();
 		int secondaryamount = 1;
 		// 3 primaries - 35% chance for 3 secondaries.
 		if(primaryamount == 3 && randroll < 0.35)
@@ -1798,7 +1798,7 @@ public class MageGenerator extends TroopGenerator {
 		if(Generic.containsTag(nation.races.get(1).tags, "primaryracetertiarymagemod"))
 			bonussecchance -= Double.parseDouble(Generic.getTagValue(nation.races.get(1).tags, "primaryracemagemod"));
 		
-		if((0.05 * bonussecchance > nation.random.nextDouble() && !primaryforeign && hasPoseForTier("mage", nation.races.get(1), 1)) || !hasPoseForTier("mage", nation.races.get(0), 1))
+		if((0.05 * bonussecchance > this.random.nextDouble() && !primaryforeign && hasPoseForTier("mage", nation.races.get(1), 1)) || !hasPoseForTier("mage", nation.races.get(0), 1))
 			race = nation.races.get(1);
 		else
 			race = nation.races.get(0);
@@ -1807,7 +1807,7 @@ public class MageGenerator extends TroopGenerator {
 
 		int tertiaryamount = 1;
 		
-		if((primaryamount + secondaryamount > 3 && nation.random.nextDouble() < 0.25) || (primaryamount + secondaryamount > 4 && nation.random.nextDouble() < 0.5) || primaryamount + secondaryamount > 5)
+		if((primaryamount + secondaryamount > 3 && this.random.nextDouble() < 0.25) || (primaryamount + secondaryamount > 4 && this.random.nextDouble() < 0.5) || primaryamount + secondaryamount > 5)
 			tertiaryamount = 0;
 	
 		
@@ -1867,7 +1867,7 @@ public class MageGenerator extends TroopGenerator {
 			past = true;
 		
 		// Random chance
-		if(future && nation.random.nextDouble() < 0.075)
+		if(future && this.random.nextDouble() < 0.075)
 			past = true;
 		
 		if(oldrace != newrace)
@@ -1890,7 +1890,7 @@ public class MageGenerator extends TroopGenerator {
 		{
 			List<Pose> poses = this.getPossiblePoses(posename, race, toTier);
 			if(poses.size() > 0)
-				newpose = Entity.getRandom(nation.random, chandler.handleChanceIncs(race, "mage", poses));
+				newpose = Entity.getRandom(this.random, chandler.handleChanceIncs(race, "mage", poses));
 			
 			
 
@@ -2018,7 +2018,7 @@ public class MageGenerator extends TroopGenerator {
 							all = temp;
 						}
 		
-						newitem = Entity.getRandom(nation.random, chandler.handleChanceIncs(nu, all));
+						newitem = Entity.getRandom(this.random, chandler.handleChanceIncs(nu, all));
 					
 					}
 	
@@ -2100,7 +2100,7 @@ public class MageGenerator extends TroopGenerator {
 			possibles = test;
 		}
 		
-		Item i = possibles.getRandom(chandler, nation.random);
+		Item i = possibles.getRandom(chandler, this.random);
 		return i;
 	}
 	
@@ -2112,7 +2112,7 @@ public class MageGenerator extends TroopGenerator {
 		
 
 		
-		Pose p = Entity.getRandom(nation.random, chandler.handleChanceIncs(race, "mage", getPossiblePoses(posename, race, tier)));
+		Pose p = Entity.getRandom(this.random, chandler.handleChanceIncs(race, "mage", getPossiblePoses(posename, race, tier)));
 		
 		
 		for(int i = 0; i < amount; i++)
@@ -2266,7 +2266,7 @@ public class MageGenerator extends TroopGenerator {
 	
 		
 		List<String> possibleslots = this.getPossibleVarySlots(u);
-		String slot = possibleslots.get(nation.random.nextInt(possibleslots.size()));
+		String slot = possibleslots.get(this.random.nextInt(possibleslots.size()));
 	
 		// Vary item
 		ItemSet stuff = u.pose.getItems(slot).filterTag("tier " + tier, true);
@@ -2337,7 +2337,7 @@ public class MageGenerator extends TroopGenerator {
 	
 	protected void resolveAge(List<Unit> units)
 	{
-		Random r = nation.random;
+		Random r = this.random;
 		double random = r.nextDouble();
 		for(Unit u : units)
 		{
