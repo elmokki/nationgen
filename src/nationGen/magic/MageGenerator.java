@@ -1881,6 +1881,8 @@ public class MageGenerator extends TroopGenerator {
 
 	private List<Unit> deriveBasesFrom(int amount, String posename, Unit parent, Race race, int fromTier, int toTier)
 	{
+		
+		
 		List<Unit> units = new ArrayList<Unit>();
 		
 		Pose newpose = null;
@@ -1889,10 +1891,14 @@ public class MageGenerator extends TroopGenerator {
 			List<Pose> poses = this.getPossiblePoses(posename, race, toTier);
 			if(poses.size() > 0)
 				newpose = Entity.getRandom(nation.random, chandler.handleChanceIncs(race, "mage", poses));
+			
+			
+
 		}
 		else
+		{
 			newpose = parent.pose;
-		
+		}
 		
 		for(int i = 0; i < amount; i++)
 		{
@@ -2101,8 +2107,13 @@ public class MageGenerator extends TroopGenerator {
 	
 	public List<Unit> generateBases(String posename, Race race, int amount, int tier)
 	{
+		
 		List<Unit> units = new ArrayList<Unit>();
+		
+
+		
 		Pose p = Entity.getRandom(nation.random, chandler.handleChanceIncs(race, "mage", getPossiblePoses(posename, race, tier)));
+		
 		
 		for(int i = 0; i < amount; i++)
 		{
@@ -2184,15 +2195,19 @@ public class MageGenerator extends TroopGenerator {
 		for(Pose p : race.getPoses(posename))
 		{
 			if(p.tags.contains("tier " + tier) && (isPrimaryRace || !p.tags.contains("primaryraceonly")))
+			{
 				possibles.add(p);
+			}
 		}
 		
 		if(possibles.size() == 0)
 		{
 			for(Pose p : race.getPoses(posename))
 			{
-				if(!p.tags.contains("notier " + tier) && (isPrimaryRace || !p.tags.contains("primaryraceonly")))
+				if(!p.tags.contains("notfortier " + tier) && (isPrimaryRace || !p.tags.contains("primaryraceonly")))
+				{
 					possibles.add(p);
+				}
 			}
 		}
 		
