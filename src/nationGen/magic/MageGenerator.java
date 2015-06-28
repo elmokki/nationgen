@@ -1714,20 +1714,8 @@ public class MageGenerator extends TroopGenerator {
 
 		if(nation.random.nextDouble() < 0.075 * bonussecchance && nation.races.get(1).hasRole("mage"))
 		{
-			for(Pose p : nation.races.get(1).poses)
-			{
-				if(Generic.containsTag(p.roles, "mage"))
-					for(AbilityTemplate t : p.templates)
-					{
-						if(!Generic.containsTag(t.tags, "primarynationonly"))
-						{
-							race = nation.races.get(1);
-							break;
-						}
-					}
-					if(race == nation.races.get(1))
-						break;
-			}
+			if(this.hasPoseForTier("mage", nation.races.get(1), 3))
+				race = nation.races.get(1);
 		}
 		else if(!nation.races.get(0).hasRole("mage")) // This hopefully never happens since it can cause issues unless handled very delicately.
 			race = nation.races.get(1);
@@ -1765,6 +1753,9 @@ public class MageGenerator extends TroopGenerator {
 		if(nation.random.nextDouble() < 0.1 * bonussecchance && race != nation.races.get(0)){/*do nothing*/}
 		else
 			race = nation.races.get(0);
+		
+		if((race == nation.races.get(0) && nation.random.nextDouble() < 0.1 && hasPoseForTier("mage", nation.races.get(1), 2)) || !hasPoseForTier("mage", nation.races.get(0), 2))
+			race = nation.races.get(1);
 
 		
 		
@@ -1807,7 +1798,7 @@ public class MageGenerator extends TroopGenerator {
 		if(Generic.containsTag(nation.races.get(1).tags, "primaryracetertiarymagemod"))
 			bonussecchance -= Double.parseDouble(Generic.getTagValue(nation.races.get(1).tags, "primaryracemagemod"));
 		
-		if(0.05 * bonussecchance > nation.random.nextDouble() && !primaryforeign)
+		if((0.05 * bonussecchance > nation.random.nextDouble() && !primaryforeign && hasPoseForTier("mage", nation.races.get(1), 1)) || !hasPoseForTier("mage", nation.races.get(0), 1))
 			race = nation.races.get(1);
 		else
 			race = nation.races.get(0);
@@ -2164,6 +2155,26 @@ public class MageGenerator extends TroopGenerator {
 		return list;
 	}
 	
+	
+	private boolean hasPoseForTier(String posename, Race race, int tier)
+	{
+		boolean isPrimaryRace = (race == nation.races.get(0));
+		for(Pose p : race.getPoses(posename))
+		{
+			if(p.tags.contains("tier " + tier) && (isPrimaryRace || !p.tags.contains("primaryraceonly")))
+				return true;
+		}
+		
+
+		for(Pose p : race.getPoses(posename))
+		{
+			if(!p.tags.contains("notier " + tier) && (isPrimaryRace || !p.tags.contains("primaryraceonly")))
+				return true;
+		}
+		
+		return false;
+		
+	}
 	
 	private List<Pose> getPossiblePoses(String posename, Race race, int tier)
 	{
