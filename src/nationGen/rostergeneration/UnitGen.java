@@ -71,7 +71,6 @@ public class UnitGen {
 			String slot = slots[i];
 			
 			
-			
 			if(u.pose.getListOfSlots().contains(slot))
 			{
 				Item item = null;
@@ -197,11 +196,16 @@ public class UnitGen {
 	}
 	
 	
+	public void armorUnit(Unit u, ItemSet included, ItemSet excluded, String targettag, boolean mage)
+	{
+		armorUnit(u, included, excluded, null, targettag, mage);
+	}
+	
 	/**
 	 * Armors unit up
 	 * @param u
 	 */
-	public void armorUnit(Unit u, ItemSet included, ItemSet excluded, String targettag, boolean mage)
+	public void armorUnit(Unit u, ItemSet included, ItemSet excluded, ItemSet poseexclusions, String targettag, boolean mage)
 	{
 		// Handles generationchances and stuff
 		this.handleExtraGeneration(u);
@@ -210,15 +214,18 @@ public class UnitGen {
 			included = new ItemSet();	
 		if(excluded == null)
 			excluded = new ItemSet();
-		
-		
+		if(poseexclusions == null)
+			poseexclusions = new ItemSet();
+
 		boolean ignoreArmor = mage;
 		
 
 		// Armor
 		if(!hasItem(u, "armor") && u.pose.getItems("armor") != null)
 		{
-			Item armor = getSuitableItem("armor", u, excluded, included, targettag);
+			ItemSet all = u.pose.getItems("armor");
+			all.removeAll(poseexclusions);
+			Item armor = getSuitableItem("armor", u, excluded, included, all, targettag);
 			u.setSlot("armor", armor);
 		}
 		
@@ -764,9 +771,6 @@ public class UnitGen {
 		included = included.filterSlot(slot).filterForPose(u.pose);
 		
 
-
-
-		
 		included.removeAll(excluded);
 		all.removeAll(excluded);
 		
