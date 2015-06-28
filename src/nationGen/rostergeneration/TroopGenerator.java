@@ -43,7 +43,7 @@ public class TroopGenerator {
 	private int maxtemplates = 0;
 	private int appliedtemplates = 0;
 	
-	private double skipchance = 0.2;
+	private double skipchance = 0.1;
 	private List<Template> templates = new ArrayList<Template>();
 	protected ChanceIncHandler chandler;
 	protected Random random;
@@ -128,7 +128,7 @@ public class TroopGenerator {
 		unitGen = new UnitGen(g, n);
 		random = new Random(n.random.nextInt());
 
-		
+		skipchance = 0.05 + random.nextDouble() * 0.15;
 		bonusrangedness = random.nextDouble() * 0.3;
 		chandler = new ChanceIncHandler(nation);
 		maxtemplates = 1 + random.nextInt(3); // 1-3
@@ -244,13 +244,7 @@ public class TroopGenerator {
 			{			
 				
 				
-				// Calculate the same armor happening in same role in different poses
-				int occurances = 0;
-				for(Template t2 : templates)
-					if(t.armor.id.equals(t2.armor.id) && Math.abs(t.template.getHP() - t2.template.getHP()) < 4 && t.role.equals(t2.role) && t.template.getSlot("mount") == t2.template.getSlot("mount"))
-					{
-						occurances += t2.weapons.size();
-					}
+	
 				
 				//// Skip over if:
 				// - Too many occurances of armor
@@ -282,7 +276,7 @@ public class TroopGenerator {
 				if(!success)
 				{
 					unit = null;
-							
+					continue;
 				}
 				
 				// Bonusweapon
@@ -312,7 +306,6 @@ public class TroopGenerator {
 			// Add everything to used;
 			addToUsed(unit);
 			
-			this.handleExtraGeneration(unit, role);
 			this.cleanUnit(unit);
 	
 		
@@ -326,7 +319,6 @@ public class TroopGenerator {
 	
 	private boolean armInfantry(Unit unit, Template t)
 	{
-
 	
 		ItemSet possibleWeapons = t.template.pose.getItems("weapon").filterTag("elite", false).filterTag("sacred", false);
 		if(possibleWeapons.possibleItems() - t.weapons.size() <= 0)
@@ -364,7 +356,6 @@ public class TroopGenerator {
 			}
 		
 		}
-		
 		return true;
 	}
 	
@@ -534,106 +525,34 @@ public class TroopGenerator {
 	private Template getNewTemplate(Race race, String role)
 	{
 	
-		Unit dummy = new Unit(nationGen, null, null);
+		Unit dummy = new Unit(nationGen, race, new Pose(nationGen));
 		removeEliteSacred(dummy, role);
 		
-		Item armor = null;
 		Unit u = null;
-		while(u == null || armor == null)
+		while(u == null)
 		{
 			
+			
+			
 			ItemSet armors = new ItemSet();
-			ItemSet oldarmors = new ItemSet();
-
-			
-			// Armors are the set of armors that already are in
-			// Oldarmors are the armors that are in but may be used
 			for(Template t : templates)
-			{
-				if(t.role.equals(role))
-					armors.add(t.armor);
+				armors.add(t.armor);
 			
-				
-				int occurances = 0;
-				for(Template t2 : templates)
-					if(t.armor.id.equals(t2.armor.id) && Math.abs(t.template.getHP() - t2.template.getHP()) < 3 && t.role.equals(t2.role))
-					{
-						occurances += t2.weapons.size();
-					}
-				if(occurances < t.maxvar)
-					oldarmors.add(t.armor);
-					
-			}
-			
-			// 30% chance to get an old armor if possible
-			if(oldarmors.size() > 0 && random.nextDouble() < 0.3)
+			List<Pose> poses = new ArrayList<Pose>();
+			for(Pose p : getPosesWithoutMaxUnits(race.getPoses(role)))
 			{
-				armor = Entity.getRandom(random, chandler.handleChanceIncs(dummy, oldarmors));
-				List<Item> possibleArmor = new ArrayList<Item>();
 				
-				
-				for(Pose p : race.getPoses(role))
-				{
-					Item it = unitGen.getBestMatchForSlot(armor, p, "armor");
-					if(it != null)
-						possibleArmor.add(it);
-				
-				}
-				
-				armor = Entity.getRandom(random, possibleArmor);
+				List<Item> poseArmors = new ArrayList<Item>();
+				poseArmors.addAll(p.getItems("armor"));
+				poseArmors.removeAll(armors);
+				if(chandler.countPossibleFilters(poseArmors, dummy) > 0)
+					poses.add(p);
 			}
 
-
-			if(armor == null)
-			{
+			
+			
+			Pose p = chandler.getRandom(poses, race, role);
 	
-					
-				List<Pose> ps = new ArrayList<Pose>();
-				for(Pose p : race.getPoses(role))
-				{
-
-					List<Item> temp = p.getItems("armor");
-					
-
-					temp.removeAll(armors);
-					
-					int count = chandler.countPossibleFilters(temp, dummy);
-					if(count > 0)
-					{
-						ps.add(p);
-					}
-				}
-				
-				Pose p = Entity.getRandom(random, chandler.handleChanceIncs(dummy, ps));
-				
-				if(p != null)
-				{
-					ItemSet newarmors = new ItemSet();
-					newarmors.addAll(p.getItems("armor"));
-					newarmors.removeAll(armors);
-					
-					armor = this.getNewItem("armor", role, new Unit(nationGen, race, p), newarmors, null);
-				}
-
-			}
-
-			
-			
-
-			Pose p = null;
-			if(armor != null)
-			{
-				p = chandler.getRandom(getPosesWithoutMaxUnits(getPosesWith(race, role, armor)), race, role);
-			}
-			else
-			{
-				p = chandler.getRandom(getPosesWithoutMaxUnits(race.getPoses(role)), race, role);
-				
-				armor = Entity.getRandom(random, chandler.handleChanceIncs(p.getItems("armor")));
-			}
-			
-			if(p == null)
-				return null;
 			
 
 	
@@ -643,17 +562,15 @@ public class TroopGenerator {
 			u = unitGen.generateUnit(race, p);
 
 			addInitialFilters(u, role);
-			
-			unitGen.armorUnit(u, used, exclusions, null, false);
-			armor = u.getSlot("armor");
-			
-			
+			unitGen.armorUnit(u, used, exclusions, armors, null, false);
+			this.handleExtraGeneration(u, role);
+
 		}
 		
 		//if(u == null || armor == null) // EA20150529: The only case where this should occur is when #maxunits has been exceeded
 		//	return null;
 		
-
+		
 
 		Template t = new Template(u.getSlot("armor"), race, u, role, u.pose);
 

@@ -1274,7 +1274,7 @@ public class ChanceIncHandler {
 				{
 
 					boolean contains = false;
-					for(Command c : u.commands)
+					for(Command c : u.getCommands())
 						if(c.command.equals(args.get(1)))
 							contains = true;
 					
@@ -1324,6 +1324,27 @@ public class ChanceIncHandler {
 
 					boolean contains = Generic.containsTag(u.race.tags, args.get(1));					
 					if(contains)
+					{
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+						continue;
+					}
+				}
+				else if(args.get(0).equals("unittheme") && args.size() > 2)
+				{
+
+					boolean not = args.contains("not");
+					
+					boolean contains = Generic.containsTag(u.race.themes, args.get(args.size() - 2));		
+					
+					for(Filter fs : u.race.themefilters)
+						if(Generic.containsTag(fs.themes, args.get(args.size() - 2)))
+							contains = true;
+					
+					for(Filter fs : u.appliedFilters)
+						if(Generic.containsTag(fs.themes, args.get(args.size() - 2)))
+							contains = true;
+					
+					if(contains != not)
 					{
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 						continue;
