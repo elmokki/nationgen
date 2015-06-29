@@ -1,0 +1,108 @@
+#newitem
+#name "wings"
+#gameid -1
+#basechance 0
+#sprite /graphics/hoburg/hoburg_wings.png
+#recolormask /graphics/hoburg/hoburg_wings_recolormask.png
+#define "#flying"
+#define "#gcost *1.5"
+#define "size 2"
+#define "ressize 1"
+#theme "sacred"
+#theme "fae"
+#renderprio 7
+#renderslot "cloakb"
+#description "Has wings and is thus able to fly"
+#enditem
+
+#newitem
+#name "hypnosis"
+#gameid 595
+#basechance 0.01
+#theme "sacred"
+#theme "fae"
+#enditem
+
+#newitem
+#name "entangling"
+#gameid -1
+#basechance 0
+#chanceinc magic nature 0.1
+#define "#entangle"
+#theme "sacred"
+#theme "fae"
+#description "Protected by the plants of the land"
+#enditem
+
+#newitem
+#name "animal-friend"
+#gameid -1
+#basechance 0
+#chanceinc magic nature 0.1
+#define "#animalawe 1"
+#theme "sacred"
+#theme "fae"
+#description "Beloved by the beasts of the land"
+#enditem
+
+#newitem
+#name "vexing"
+#gameid -1
+#basechance 0.01
+#chanceinc magic nature 0.19
+#chanceinc magic death 0.05
+#define "#deathcurse"
+#theme "sacred"
+#theme "fae"
+#description "Beloved of the fates"
+#enditem
+
+#newitem
+#name "observant"
+#gameid -1
+#basechance 0.01
+#chanceinc magic nature 0.29
+#define "#patrolbonus 2"
+#theme "sacred"
+#theme "fae"
+#description "Confidant of the little creatures"
+#enditem
+
+#newitem
+#name "vernal"
+#gameid -1
+#basechance 0.01
+#chanceinc magic air 0.25
+#chanceinc magic nature 0.04
+#define "#springpower 20"
+#define "#hp +2"
+#theme "sacred"
+#theme "fae"
+#description "Enlivened by the spring rains"
+#enditem
+
+#newitem
+#name "estival"
+#gameid -1
+#basechance 0.01
+#chanceinc magic fire 0.25
+#chanceinc magic nature 0.04
+#define "#summerpower 20"
+#define "#hp +2"
+#theme "sacred"
+#theme "fae"
+#description "Strengthened by the summer sun"
+#enditem
+
+#newitem
+#name "otherworldly"
+#gameid -1
+#basechance 0
+#chanceinc magic astral 0.05
+#define "#gcost *1.25"
+#define "#ethereal"
+#define "#magicbeing"
+#theme "sacred"
+#theme "fae"
+#description "Not of this world"
+#enditem
