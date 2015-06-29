@@ -1178,8 +1178,11 @@ public class MageGenerator extends TroopGenerator {
 				}
 				else
 				{
+					int str = currentStrength;
+					if(r.nextBoolean())
+						str = Math.min(currentStrength + 1, 3);
 					
-					u = this.generateBases("priest", prace, 1, Math.min(currentStrength + 1, 3)).get(0);
+					u = this.generateBases("priest", prace, 1, str).get(0);
 				}
 				
 				u.color = priestcolor;
