@@ -505,7 +505,7 @@ public class NationGen {
 			PreviewGenerator pGen = new PreviewGenerator();
 			for(Nation n : nations)
 			{
-				pGen.savePreview(n, "./mods/" + dir + "/preview_" + n.name.toLowerCase().replaceAll(" ", "_") + ".png");
+				pGen.savePreview(n, "./mods/" + dir + "/preview_" + n.nationid + "_" + n.name.toLowerCase().replaceAll(" ", "_") + ".png");
 				System.out.print(".");
 			}
 			System.out.println(" Done!");
