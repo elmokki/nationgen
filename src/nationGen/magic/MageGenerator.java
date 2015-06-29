@@ -1176,7 +1176,7 @@ public class MageGenerator extends TroopGenerator {
 				}
 				else
 				{
-					u = this.generateBases("priest", prace, 1, currentStrength + 1).get(0);
+					u = this.generateBases("priest", prace, 1, currentStrength).get(0);
 				}
 				
 				u.color = priestcolor;
@@ -2110,10 +2110,10 @@ public class MageGenerator extends TroopGenerator {
 		
 		List<Unit> units = new ArrayList<Unit>();
 		
+	
+		Pose p = Entity.getRandom(this.random, chandler.handleChanceIncs(race, posename, getPossiblePoses(posename, race, tier)));
+		
 
-		
-		Pose p = Entity.getRandom(this.random, chandler.handleChanceIncs(race, "mage", getPossiblePoses(posename, race, tier)));
-		
 		
 		for(int i = 0; i < amount; i++)
 		{
