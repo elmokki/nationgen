@@ -1163,6 +1163,8 @@ public class MageGenerator extends TroopGenerator {
 			if(!nation.races.get(0).hasRole("priest"))
 				prace = nation.races.get(1);
 			
+			
+			
 			if((currentStrength > 1 && !done) || currentStrength == 1 || currentStrength <= priestsFrom)
 			{
 				Unit u = null;
@@ -1176,7 +1178,8 @@ public class MageGenerator extends TroopGenerator {
 				}
 				else
 				{
-					u = this.generateBases("priest", prace, 1, currentStrength).get(0);
+					
+					u = this.generateBases("priest", prace, 1, Math.min(currentStrength + 1, 3)).get(0);
 				}
 				
 				u.color = priestcolor;
