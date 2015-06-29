@@ -1859,7 +1859,7 @@ public class MageGenerator extends TroopGenerator {
 			past = true;
 		
 		// Forbidden from the future tier
-		if(current.tags.contains("notier " + futuretier))
+		if(current.tags.contains("notfortier " + futuretier))
 			past = true;
 		
 		// We have a specific pose and current doesn't contain the required pose
@@ -2179,7 +2179,7 @@ public class MageGenerator extends TroopGenerator {
 
 		for(Pose p : race.getPoses(posename))
 		{
-			if(!p.tags.contains("notier " + tier) && (isPrimaryRace || !p.tags.contains("primaryraceonly")))
+			if(!p.tags.contains("notfortier " + tier) && (isPrimaryRace || !p.tags.contains("primaryraceonly")))
 				return true;
 		}
 		
