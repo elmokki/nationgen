@@ -1,9 +1,12 @@
+--- Generic hoburg troops
 
 -------- Normal
 #newpose
 #name "boreal infantry"
 #role "infantry"
 #role "scout"
+
+#basechance 1
 
 #theme "boreal"
 
@@ -31,6 +34,8 @@
 #newpose
 #name "boreal cavalry"
 #role "mounted"
+
+#basechance 1
 
 #theme "boreal"
 
@@ -68,6 +73,8 @@
 #name "boreal ranged"
 #role "ranged"
 
+#basechance 1
+
 #theme "boreal"
 
 #renderorder "shadow cloakb mount basesprite shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
@@ -91,6 +98,9 @@
 #generateitem 1 bonusweapon
 
 #endpose
+
+
+--- Oriental-theme troops
 
 -------- Infantry (Oriental)
 

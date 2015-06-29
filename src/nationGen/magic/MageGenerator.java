@@ -1163,6 +1163,8 @@ public class MageGenerator extends TroopGenerator {
 			if(!nation.races.get(0).hasRole("priest"))
 				prace = nation.races.get(1);
 			
+			
+			
 			if((currentStrength > 1 && !done) || currentStrength == 1 || currentStrength <= priestsFrom)
 			{
 				Unit u = null;
@@ -1176,7 +1178,11 @@ public class MageGenerator extends TroopGenerator {
 				}
 				else
 				{
-					u = this.generateBases("priest", prace, 1, currentStrength + 1).get(0);
+					int str = currentStrength;
+					if(r.nextBoolean())
+						str = Math.min(currentStrength + 1, 3);
+					
+					u = this.generateBases("priest", prace, 1, str).get(0);
 				}
 				
 				u.color = priestcolor;
@@ -1859,7 +1865,7 @@ public class MageGenerator extends TroopGenerator {
 			past = true;
 		
 		// Forbidden from the future tier
-		if(current.tags.contains("notier " + futuretier))
+		if(current.tags.contains("notfortier " + futuretier))
 			past = true;
 		
 		// We have a specific pose and current doesn't contain the required pose
@@ -2110,10 +2116,10 @@ public class MageGenerator extends TroopGenerator {
 		
 		List<Unit> units = new ArrayList<Unit>();
 		
+	
+		Pose p = Entity.getRandom(this.random, chandler.handleChanceIncs(race, posename, getPossiblePoses(posename, race, tier)));
+		
 
-		
-		Pose p = Entity.getRandom(this.random, chandler.handleChanceIncs(race, "mage", getPossiblePoses(posename, race, tier)));
-		
 		
 		for(int i = 0; i < amount; i++)
 		{
@@ -2179,7 +2185,7 @@ public class MageGenerator extends TroopGenerator {
 
 		for(Pose p : race.getPoses(posename))
 		{
-			if(!p.tags.contains("notier " + tier) && (isPrimaryRace || !p.tags.contains("primaryraceonly")))
+			if(!p.tags.contains("notfortier " + tier) && (isPrimaryRace || !p.tags.contains("primaryraceonly")))
 				return true;
 		}
 		
