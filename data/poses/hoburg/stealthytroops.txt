@@ -1,8 +1,6 @@
-
 -------- Normal
-
 #newpose
-#basechance 0.25
+#basechance 0.5
 
 #role "infantry"
 #role "scout"
@@ -32,7 +30,6 @@
 
 ---- Mounted - loud
 #newpose
-
 #basechance 0.25
 
 #role "mounted"
@@ -64,10 +61,10 @@
 #writeslot lanceslot
 #endpose
 
+
 ---- Mounted - stealthy
 #newpose
-
-#basechance 0.25
+#basechance 0.5
 
 #role "mounted"
 #name "stealthy boreal cavalry"
@@ -100,11 +97,9 @@
 #writeslot lanceslot
 #endpose
 
-------- bowman
-
+------- bowmen
 #newpose
-
-#basechance 0.25
+#basechance 0.5
 
 #role "ranged"
 #name "stealthy boreal archers"
