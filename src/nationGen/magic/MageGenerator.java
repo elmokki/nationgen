@@ -1208,7 +1208,23 @@ public class MageGenerator extends TroopGenerator {
 				if(currentStrength == 3 && r.nextDouble() > 0.75){/*do nothing*/}
 				else if(currentStrength == 2 && r.nextDouble() > 0.85){/*do nothing*/}
 				else
-					u.commands.add(new Command("#poorleader"));
+				{
+					if(maxStrength == 1 && r.nextDouble() > 0.5)
+						u.commands.add(new Command("#gcost", "+10"));
+					else if(currentStrength == 1 && r.nextDouble() > 0.875)
+						u.commands.add(new Command("#gcost", "+10"));
+					else if(currentStrength == 1 && maxStrength > 1 && r.nextDouble() > 0.875)
+					{
+						u.commands.add(new Command("#noleader"));
+						u.commands.add(new Command("#gcost", "-5"));
+					}
+					else
+					{
+						u.commands.add(new Command("#poorleader"));
+						if(r.nextDouble() > 0.875)
+							u.commands.add(new Command("#command", "+30"));
+					}
+				}
 				
 				List<String> body = new ArrayList<String>();	// Set a temporary null description for priests
 				(new CommanderGenerator(this.nationGen, this.nation)).generateDescription(u, false, false, false);
