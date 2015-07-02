@@ -1222,7 +1222,10 @@ public class MageGenerator extends TroopGenerator {
 					{
 						u.commands.add(new Command("#poorleader"));
 						if(r.nextDouble() > 0.875)
+						{
 							u.commands.add(new Command("#command", "+30"));
+							u.commands.add(new Command("#gcost", "+5"));
+						}
 					}
 				}
 				
