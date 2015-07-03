@@ -1,0 +1,19 @@
+#newitem
+#name "wings"
+#gameid -1
+#sprite /graphics/monkey/bandar_wings.png
+#define "#flying"
+#define "#gcost *1.5"
+#theme "sacred"
+#renderprio 7
+#renderslot "cloakb"
+#description "Has wings and is thus able to fly"
+#basechance 0.5
+#enditem
+
+#newitem
+#name "hypnosis"
+#gameid 595
+#basechance 0.01
+#theme "sacred"
+#enditem

@@ -144,3 +144,97 @@
 #theme "deertotem"
 #theme "totemanimal"
 #enditem
+
+#newitem
+#name "unicorn"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#offsety -22
+#offsetx 6
+#armor
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 28"
+#define "#mounted"
+#define "#weapon 330 --- Alicorn"
+#define "#weapon 56 --- Hoof"
+#define "#gcost +30"
+#define "#ressize 1"
+#define "#enc 3"
+#define "#heal"
+#tag "minprot 8"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#theme "fae"
+#theme "elite"
+#basechance 0
+#enditem
+
+#newitem
+#name "cu sidhe"
+#gameid -1
+#sprite /graphics/sidhe/mounts/cusidhe.png
+#offsety -22
+#offsetx -3
+#armor
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 28"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#gcost +20"
+#define "#ressize 1"
+#define "#patrolbonus 1"
+#define "#enc 3"
+#tag "animal dog"
+#tag "minprot 7"
+#theme "fae"
+#basechance 0
+#enditem
+
+#newitem
+#name "barghest"
+#gameid -1
+#sprite /graphics/hoburg/mounts/barghest.png
+#offsety -22
+#offsetx -3
+#armor
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 26"
+#define "#mounted"
+#define "#weapon 447 --- Venomous Bite"
+#define "#gcost +20"
+#define "#ressize 1"
+#define "#darkpower 1"
+#define "#enc 3"
+#tag "animal dog"
+#tag "guaranteedprefix barghest"
+#tag "minprot 7"
+#theme "fae"
+#theme "elite"
+#basechance 0
+#enditem
+
+#newitem
+#name "black dog"
+#gameid -1
+#sprite /graphics/hoburg/mounts/blackdog.png
+#offsety -11
+#offsetx -3
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 22"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#gcost +15"
+#define "#ressize 1"
+#define "#enc 3"
+#tag "animal dog"
+#tag "minprot 5"
+#tag "maxprot 14"
+#theme "fae"
+#eliteversion barghest
+#basechance 0
+#enditem

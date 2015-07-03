@@ -351,6 +351,15 @@ public class CommanderGenerator extends TroopGenerator {
 					com.commands.add(new Command("#inspirational", "+1"));
 					com.commands.add(new Command("#gcost", "+10"));
 				}
+				if(r.nextDouble() > 0.5)
+				{
+					com.commands.add(new Command("#command", "+20"));
+					if(r.nextDouble() > 0.875)
+					{
+						com.commands.add(new Command("#command", "+20"));
+						com.commands.add(new Command("#gcost", "+10"));
+					}
+				}
 			}
 			
 			// Magic leadership
