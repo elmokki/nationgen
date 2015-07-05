@@ -6,6 +6,7 @@
 #maxunits 1
 #chanceinc pose mounted *0
 #chanceinc pose chariot *0
+#chanceinc pose ranged *0.25
 #command "#def -2"
 #command "#att -2"
 #command "#gcost *0.7"
@@ -108,7 +109,7 @@
 #chanceinc pose mounted *0
 #chanceinc pose chariot *0
 #command "#forestsurvival"
-#tag "guaranteedprefix mountain"
+#tag "guaranteedprefix forest"
 #tag "bonusweaponchance 0.5"
 #themeinc theme irregular *4
 #themeinc thisarmorprot below 13 *2
@@ -116,6 +117,23 @@
 #maxvarieties 3
 #desc "Forest survival"
 #primarycommand "#forestsurvival"
+#generateitem 0.25 cloakb
+#end
+
+#new
+#basechance 0.5
+#name "swampunit"
+#chanceinc pose mounted *0
+#chanceinc pose chariot *0
+#command "#forestsurvival"
+#tag "guaranteedprefix swamp"
+#tag "bonusweaponchance 0.5"
+#themeinc theme irregular *4
+#themeinc thisarmorprot below 13 *2
+#themeinc thisarmorprot below 11 *2
+#maxvarieties 3
+#desc "Swamp survival"
+#primarycommand "#swampsurvival"
 #generateitem 0.25 cloakb
 #end
 

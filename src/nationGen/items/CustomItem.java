@@ -19,11 +19,12 @@ import nationGen.entities.MagicItem;
 public class CustomItem extends Item {
 
 	public LinkedHashMap<String, String> values = new LinkedHashMap<String, String>();
-	
+	public Item olditem = null;
 	
 	public CustomItem getCopy()
 	{
 		CustomItem item = this.getCustomItemCopy();
+		item.olditem = this.olditem;
 		for(String str : values.keySet())
 			item.values.put(str, values.get(str));
 		

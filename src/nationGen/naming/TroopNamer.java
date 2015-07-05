@@ -132,7 +132,7 @@ public class TroopNamer {
 		for(String role : roles)
 		{
 			List<List<Unit>> unitlists = n.getListsOfType(role, false, true);
-			NamePart defaultpart = new NamePart();
+			NamePart defaultpart = new NamePart(n.nationGen);
 			defaultpart = NameGenerator.getTemplateName(n, role);
 			
 			for(List<Unit> list : unitlists)
@@ -167,8 +167,8 @@ public class TroopNamer {
 						
 						
 						
-						NamePart part = new NamePart();
-						part.text = namepart;
+						NamePart part = new NamePart(n.nationGen);
+						part.name = namepart;
 						
 						boolean canGive = canGive(str, "armor", unitlists);
 						if(!canGive && given.contains(str))
@@ -195,7 +195,7 @@ public class TroopNamer {
 					
 					u.name = name.getCopy();
 					
-					boolean unnamed = u.name.type.text.equals("UNNAMED");
+					boolean unnamed = u.name.type.name.equals("UNNAMED");
 
 					String str = getWeaponBasedName(u, wpnused, unnamed, false);
 			
@@ -217,8 +217,8 @@ public class TroopNamer {
 						else
 							System.out.println("Faulty naming line: " + str);
 						
-						NamePart part = new NamePart();
-						part.text = namepart;
+						NamePart part = new NamePart(n.nationGen);
+						part.name = namepart;
 						
 						boolean canGive = canGive(str, "weapon", unitlists);
 						if(!canGive)

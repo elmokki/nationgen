@@ -18,7 +18,6 @@ public class CustomItemGen {
 	
 	
 	Nation n;
-	private int num = 0;
 	public CustomItemGen(Nation n)
 	{
 		this.n = n;
@@ -298,6 +297,7 @@ public class CustomItemGen {
 		newitem.renderslot = item.renderslot;
 		newitem.renderprio = item.renderprio;
 		newitem.armor = item.armor;
+		newitem.olditem = item;
 		
 		Dom3DB db = null;
 		if(item.armor)

@@ -18,10 +18,10 @@ import nationGen.units.Unit;
 public class SacredNamer {
 	
 
-	List<NameFilter> parts = new ArrayList<NameFilter>();
-	List<NameFilter> bases = new ArrayList<NameFilter>();
-	List<NameFilter> combases = new ArrayList<NameFilter>();
-	List<NameFilter> eliteparts = new ArrayList<NameFilter>();
+	List<NamePart> parts = new ArrayList<NamePart>();
+	List<NamePart> bases = new ArrayList<NamePart>();
+	List<NamePart> combases = new ArrayList<NamePart>();
+	List<NamePart> eliteparts = new ArrayList<NamePart>();
 	private Random r;
 	
 	ChanceIncHandler chandler = null;
@@ -82,9 +82,9 @@ public class SacredNamer {
 			{
 
 
-				NameFilter part = Filter.getRandom(n.random, chandler.handleChanceIncs(u, combases));
+				NamePart part = Filter.getRandom(n.random, chandler.handleChanceIncs(u, combases));
 				com.name = u.name.getCopy();
-				com.name.type = part.toPart();
+				com.name.type = part.getCopy();
 			}
 		
 			
@@ -132,22 +132,22 @@ public class SacredNamer {
 
 
 				
-				NameFilter part = Filter.getRandom(n.random, chandler.handleChanceIncs(u, parts));
+				NamePart part = Filter.getRandom(n.random, chandler.handleChanceIncs(u, parts));
 
 
 				
 				boolean suffix = r.nextBoolean();
 				if((suffix && !part.tags.contains("notsuffix")) || part.tags.contains("notprefix"))
-					name.suffix = part.toPart();
+					name.suffix = part.getCopy();
 				else
-					name.prefix = part.toPart();
+					name.prefix = part.getCopy();
 		
 			
 			}
 			else if(num == 0) // Base
 			{
-				NameFilter part = Filter.getRandom(n.random, chandler.handleChanceIncs(u, bases));
-				name.type = part.toPart();
+				NamePart part = Filter.getRandom(n.random, chandler.handleChanceIncs(u, bases));
+				name.type = part.getCopy();
 			}
 			
 			num--;
