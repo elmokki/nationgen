@@ -84,6 +84,12 @@ Info:	If item has item with given id in a slot or in case of some custom items a
 	custom item base, modifier is added. Use not to reverse and armor/weapon to restrict
 	to armor and weapons as defined by #armor in items.
 
+Slotname
+------------------------
+Usage:	#chanceinc slotname [not] [armor/weapon] <slot> <name> <mod>
+Info:	Same as above but not for base items and checks item name instead of id
+	Potentially useful for triggering from custom items.
+
 Race theme
 ------------------------
 Usage:	#chanceinc racetheme <theme> <mod>
