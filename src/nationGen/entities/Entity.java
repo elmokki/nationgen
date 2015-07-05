@@ -29,7 +29,7 @@ public class Entity {
 	{
 		this.nationGen = nationGen;
 	}
-	
+
 	
 	public static <E extends Entity> List<E> readFile(NationGen nationGen, String file, Class<E> c) throws IOException
 	{

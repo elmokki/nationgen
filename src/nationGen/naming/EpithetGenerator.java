@@ -13,7 +13,7 @@ import nationGen.nation.Nation;
 public class EpithetGenerator {
 	private NationGen ngen;
 	
-	List<NameFilter> mageepithetparts = new ArrayList<NameFilter>();
+	List<NamePart> mageepithetparts = new ArrayList<NamePart>();
 	
 	public EpithetGenerator(NationGen ngen)
 	{
@@ -32,7 +32,7 @@ public class EpithetGenerator {
 		
 		if(r > 0.55 && !MageDescriber.getCommonNoun(n).equals("")) // Second condition is relatively rare
 		{
-			NameFilter part = NameFilter.getRandom(n.random, mageepithetparts);
+			NamePart part = NamePart.getRandom(n.random, mageepithetparts);
 			
 			if(n.random.nextDouble() < 0.5 && MageDescriber.getCommonNoun(n).toString().split(" ").length < 2)
 			{
@@ -43,7 +43,7 @@ public class EpithetGenerator {
 		}
 		else if(r > 0.3 && !MageDescriber.getCommonName(n).toString().equals("Mage"))
 		{
-			NameFilter part = NameFilter.getRandom(n.random, mageepithetparts);
+			NamePart part = NamePart.getRandom(n.random, mageepithetparts);
 			Name common = MageDescriber.getCommonName(n);
 			common.setType(Generic.plural(common.type.toString()));
 			

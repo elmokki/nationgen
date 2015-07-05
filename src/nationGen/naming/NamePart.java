@@ -3,26 +3,42 @@ package nationGen.naming;
 import java.util.ArrayList;
 import java.util.List;
 
+import nationGen.NationGen;
+import nationGen.entities.Entity;
+import nationGen.entities.Filter;
 import nationGen.misc.Command;
 import nationGen.units.Unit;
 
 import com.elmokki.Generic;
 
 
-public class NamePart {
-	public String text = "";
+public class NamePart extends Filter {
+
 	public boolean weak = false;
 	public List<String> elements = new ArrayList<String>();
 	public int minimumelements = 0;
-	public List<String> tags = new ArrayList<String>();
+	public int rank = -1;
 	
+	
+
+	
+	public NamePart(NationGen nationGen) {
+		super(nationGen);
+	}
+	
+	public static NamePart newNamePart(String text, NationGen nationGen)
+	{
+		NamePart np = new NamePart(nationGen);
+		np.name = text;
+		return np;
+	}
 	
 	public String toString(Unit u)
 	{
 		if(u == null)
 			return this.toString();
 		
-		String str = this.text;
+		String str = this.name;
 		
 		if(Generic.containsTag(tags, "commandvariant"))
 		{
@@ -99,39 +115,49 @@ public class NamePart {
 	
 	public String toString()
 	{
-		return this.text;
+		return this.name;
 	}
 	
-	public NamePart(String str)
-	{
-		this.text = str;
-	}
-	
-	public NamePart()
+	public <E extends Entity> void handleOwnCommand(String str)
 	{
 
+		List<String> args = Generic.parseArgs(str);
+		
+		try
+		{
+		
+		if(args.get(0).equals("#rank"))
+			this.rank = Integer.parseInt(args.get(1));
+		else
+			super.handleOwnCommand(str);
+		
+		}
+		catch(IndexOutOfBoundsException e)
+		{
+			System.out.println("WARNING: " + str + " has insufficient arguments (" + this.name + ")");
+		}
 	}
 	
 	public NamePart getCopy()
 	{
-		NamePart part = new NamePart();
-		part.text = this.text;
+		NamePart part = new NamePart(this.nationGen);
+		part.name = this.name;
 		part.weak = this.weak;
 		part.elements.addAll(this.elements);
 		part.minimumelements = this.minimumelements;
 		return part;
 	}
 	
-	public static NamePart fromLine(String line)
+	public static NamePart fromLine(String line, NationGen ng)
 	{
 		if(line.startsWith("-") || line.equals(""))
 			return null;
 		
-		NamePart part = new NamePart();
+		NamePart part = new NamePart(ng);
 		List<String> args = Generic.parseArgs(line);
 		
 
-		part.text = args.get(0);
+		part.name = args.get(0);
 		if(args.size() > 1)
 		{
 			part.minimumelements = Integer.parseInt(args.get(1));

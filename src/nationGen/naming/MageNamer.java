@@ -22,14 +22,14 @@ public class MageNamer extends Namer {
 
 
 	
-	public List<NameFilter> names = new ArrayList<NameFilter>();
-	public List<NameFilter> adjectives = new ArrayList<NameFilter>();;
-	public List<NameFilter> nouns = new ArrayList<NameFilter>();;
-	public List<NameFilter> tieredpriest = new ArrayList<NameFilter>();;
-	public List<NameFilter> tieredmage = new ArrayList<NameFilter>();;
-	public List<NameFilter> rankedprefix = new ArrayList<NameFilter>();;
-	public List<NameFilter> extraparts_n = new ArrayList<NameFilter>();;
-	public List<NameFilter> extraparts_a = new ArrayList<NameFilter>();;
+	public List<NamePart> names = new ArrayList<NamePart>();
+	public List<NamePart> adjectives = new ArrayList<NamePart>();;
+	public List<NamePart> nouns = new ArrayList<NamePart>();;
+	public List<NamePart> tieredpriest = new ArrayList<NamePart>();;
+	public List<NamePart> tieredmage = new ArrayList<NamePart>();;
+	public List<NamePart> rankedprefix = new ArrayList<NamePart>();;
+	public List<NamePart> extraparts_n = new ArrayList<NamePart>();;
+	public List<NamePart> extraparts_a = new ArrayList<NamePart>();;
 
 
 
@@ -161,7 +161,7 @@ public class MageNamer extends Namer {
 
 	}
 	
-	protected List<Integer> getPathInformation(NameFilter ff)
+	protected List<Integer> getPathInformation(NamePart ff)
 	{
 		List<Integer> paths = new ArrayList<Integer>();
 		for(String str : ff.chanceincs)
@@ -183,13 +183,13 @@ public class MageNamer extends Namer {
 	{
 
 		
-		List<NameFilter> source = tieredmage;
+		List<NamePart> source = tieredmage;
 		if(prefixrank)
 			source = rankedprefix;
 		
 		ChanceIncHandler cha = new ChanceIncHandler(n);
-		NameFilter ff = null;
-		LinkedHashMap<NameFilter, Double> filters = null;
+		NamePart ff = null;
+		LinkedHashMap<NamePart, Double> filters = null;
 		boolean noname = false;
 		
 		do
@@ -200,7 +200,7 @@ public class MageNamer extends Namer {
 				filters = cha.handleChanceIncs(to, source);
 			}
 			
-			ff = NameFilter.getRandom(n.random, filters);
+			ff = NamePart.getRandom(n.random, filters);
 
 			
 		} while((ff.name.equals(from.get(0).name.type) && !prefixrank)|| (ff.name.equals(from.get(0).name.rankprefix) && prefixrank));
@@ -245,7 +245,7 @@ public class MageNamer extends Namer {
 			else // to.size() > from.size()
 			{
 				
-				source = new ArrayList<NameFilter>();
+				source = new ArrayList<NamePart>();
 				//source.addAll(filterByRank(tieredmage, rank));
 				source.addAll(names);
 				
@@ -275,13 +275,13 @@ public class MageNamer extends Namer {
 				}
 			
 				
-				List<NameFilter> available = new ArrayList<NameFilter>();
+				List<NamePart> available = new ArrayList<NamePart>();
 				available.addAll(source);
 				available = this.filterByPaths(available, MageGenerator.findDistinguishingPaths(u, to), true);
 				if(available.size() == 0)
 					available.addAll(source);
 				
-				NameFilter ff2 = null;
+				NamePart ff2 = null;
 				do
 				{	
 					filters = cha.handleChanceIncs(u, this.filterByRank(available, rank));
@@ -290,20 +290,20 @@ public class MageNamer extends Namer {
 						filters = cha.handleChanceIncs(u, available);
 					}
 					
-					ff2 = NameFilter.getRandom(n.random, filters);
-				} while(used.contains(ff2.toPart()));
+					ff2 = NamePart.getRandom(n.random, filters);
+				} while(used.contains(ff2.getCopy()));
 				
 				used.add(ff2.toString());
 				
 				u.name = same;
 				u.name.rankprefix = null;
-				u.name.type = ff2.toPart();
+				u.name.type = ff2.getCopy();
 			}
 			
 			
 			if(u.name.type == null || u.name.type.equals(""))
 			{
-				List<NameFilter> available = new ArrayList<NameFilter>();
+				List<NamePart> available = new ArrayList<NamePart>();
 				
 				if(!prefixrank)
 					available.addAll(tieredmage);
@@ -311,7 +311,7 @@ public class MageNamer extends Namer {
 					available.addAll(filterByPaths(names, MageGenerator.findDistinguishingPaths(u, to), false));
 	
 					
-				NameFilter ff2 = null;
+				NamePart ff2 = null;
 				do
 				{	
 					filters = cha.handleChanceIncs(u, this.filterByRank(available, rank));
@@ -320,19 +320,19 @@ public class MageNamer extends Namer {
 						filters = cha.handleChanceIncs(u, available);
 					}
 					
-					ff2 = NameFilter.getRandom(n.random, filters);
+					ff2 = NamePart.getRandom(n.random, filters);
 				} while(used.contains(ff2.toString()));
 				used.add(ff2.toString());
-				u.name.type = ff2.toPart();
+				u.name.type = ff2.getCopy();
 				noname = true;
 			}
 
 			if(to.size() <= from.size())
 			{
 				if(prefixrank && !noname)
-					u.name.rankprefix = ff.toPart();
+					u.name.rankprefix = ff.getCopy();
 				else if(!prefixrank)
-					u.name.type = ff.toPart();
+					u.name.type = ff.getCopy();
 			}
 						
 		}
@@ -406,7 +406,7 @@ public class MageNamer extends Namer {
 			varyname = n.random.nextDouble() > 0.85;
 			
 		// Base name "mage" "necromancer" etc
-		List<NameFilter> source = null;
+		List<NamePart> source = null;
 		if(prefixrank && varyname)
 		{
 			if(noun)
@@ -423,7 +423,7 @@ public class MageNamer extends Namer {
 		
 
 		
-		LinkedHashMap<NameFilter, Double> filters = cha.handleChanceIncs(primaries, filterByPaths(source, commons, strict));
+		LinkedHashMap<NamePart, Double> filters = cha.handleChanceIncs(primaries, filterByPaths(source, commons, strict));
 
 
 		if(filters.size() == 0)
@@ -431,12 +431,12 @@ public class MageNamer extends Namer {
 			filters = cha.handleChanceIncs(primaries, source);
 
 		}
-		NameFilter ff = NameFilter.getRandom(n.random, filters);
+		NamePart ff = NamePart.getRandom(n.random, filters);
 
 		for(Unit u : primaries)
 		{
 			if(!varyname)
-				u.name.type = ff.toPart();
+				u.name.type = ff.getCopy();
 			else
 			{
 				
@@ -449,12 +449,12 @@ public class MageNamer extends Namer {
 				if(!noun || !shouldbesuffix) // Is noun or should be prefix -> Nouns for prefix and all kinds of adjectives
 				{
 					if(ff != null)
-						u.name.prefixprefix = ff.toPart();
+						u.name.prefixprefix = ff.getCopy();
 				}
 				else
 				{
 					if(ff != null)
-						u.name.suffix = ff.toPart();
+						u.name.suffix = ff.getCopy();
 				}
 			}
 				
@@ -469,9 +469,9 @@ public class MageNamer extends Namer {
 			if(filters.size() == 0)
 				filters = cha.handleChanceIncs(primaries, rankedprefix);
 			
-			NameFilter prefixf = NameFilter.getRandom(n.random, filters);
+			NamePart prefixf = NamePart.getRandom(n.random, filters);
 			for(Unit u : primaries)
-				u.name.rankprefix = prefixf.toPart();
+				u.name.rankprefix = prefixf.getCopy();
 			
 
 		}
@@ -484,10 +484,10 @@ public class MageNamer extends Namer {
 		}
 		
 		// Get an extra name part. Not for prefixrank mages to avoid super long names.
-		NameFilter extra = null;
+		NamePart extra = null;
 		if((commons.size() > 1) && !prefixrank)
 		{
-			List<NameFilter> source2 = new ArrayList<NameFilter>();
+			List<NamePart> source2 = new ArrayList<NamePart>();
 			if(noun)
 			{
 				source2.addAll(adjectives);
@@ -502,7 +502,7 @@ public class MageNamer extends Namer {
 			filters = cha.handleChanceIncs(primaries, filterByPaths(source2, commons, false));
 			if(filters.size() == 0)
 				filters = cha.handleChanceIncs(primaries, source2);
-			extra = NameFilter.getRandom(n.random, filters);
+			extra = NamePart.getRandom(n.random, filters);
 		}
 		
 		// Set rest of the name
@@ -534,7 +534,7 @@ public class MageNamer extends Namer {
 					filters = cha.handleChanceIncs(primaries, adjectives);
 			}
 
-			NameFilter suffixpart = NameFilter.getRandom(n.random, filters);
+			NamePart suffixpart = NamePart.getRandom(n.random, filters);
 			
 			if(suffixpart.tags.contains("nosuffix"))
 				shouldbesuffix = false;
@@ -544,17 +544,17 @@ public class MageNamer extends Namer {
 			if(varyname)
 			{
 				if(suffixpart != null)
-					u.name.type = suffixpart.toPart();
+					u.name.type = suffixpart.getCopy();
 			}
 			else if(!noun || !shouldbesuffix) // Is noun or should be prefix -> Nouns for prefix and all kinds of adjectives
 			{
 				if(suffixpart != null)
-					u.name.prefixprefix = suffixpart.toPart();
+					u.name.prefixprefix = suffixpart.getCopy();
 			}
 			else
 			{
 				if(suffixpart != null)
-					u.name.suffix = suffixpart.toPart();
+					u.name.suffix = suffixpart.getCopy();
 			}
 
 
@@ -563,19 +563,19 @@ public class MageNamer extends Namer {
 			{
 				if(noun)
 				{
-					u.name.suffixprefix = extra.toPart();
+					u.name.suffixprefix = extra.getCopy();
 				}
 				else
 				{
 					suffixpart = extra;
-					u.name.suffix = extra.toPart();
+					u.name.suffix = extra.getCopy();
 					u.name.suffixprefix = u.name.prefixprefix;
 					u.name.prefixprefix = null;
 				}
 
 			}
 
-			if(u.name.suffix != null && suffixpart != null && suffixpart.name.equals(u.name.suffix.text))
+			if(u.name.suffix != null && suffixpart != null && suffixpart.name.equals(u.name.suffix.name))
 			{
 				boolean def = suffixpart.tags.contains("definitesuffix");
 				boolean plur = suffixpart.tags.contains("pluralsuffix");
@@ -586,7 +586,7 @@ public class MageNamer extends Namer {
 					u.name.pluralsuffix = true;
 			
 			}
-			if(u.name.suffix != null && extra != null && extra.name.equals(u.name.suffix.text))
+			if(u.name.suffix != null && extra != null && extra.name.equals(u.name.suffix.name))
 			{
 
 				boolean def = extra.tags.contains("definitesuffix");
@@ -597,7 +597,7 @@ public class MageNamer extends Namer {
 				if(plur)
 					u.name.pluralsuffix = true;
 			}
-			if(u.name.suffix != null && ff != null && ff.name.equals(u.name.suffix.text))
+			if(u.name.suffix != null && ff != null && ff.name.equals(u.name.suffix.name))
 			{
 
 				boolean def = ff.tags.contains("definitesuffix");
@@ -619,10 +619,10 @@ public class MageNamer extends Namer {
 	
 
 	
-	protected List<NameFilter> filterByRank(List<NameFilter> orig, int rank)
+	protected List<NamePart> filterByRank(List<NamePart> orig, int rank)
 	{
-		List<NameFilter> list = new ArrayList<NameFilter>();
-		for(NameFilter f : orig)
+		List<NamePart> list = new ArrayList<NamePart>();
+		for(NamePart f : orig)
 		{
 			if(f.rank == rank)
 				list.add(f);
@@ -630,10 +630,10 @@ public class MageNamer extends Namer {
 		return list;
 	}
 	
-	protected List<NameFilter> filterByPaths(List<NameFilter> orig, List<Integer> paths, boolean strict)
+	protected List<NamePart> filterByPaths(List<NamePart> orig, List<Integer> paths, boolean strict)
 	{
-		List<NameFilter> list = new ArrayList<NameFilter>();
-		for(NameFilter f : orig)
+		List<NamePart> list = new ArrayList<NamePart>();
+		for(NamePart f : orig)
 		{
 			boolean ok = strict;
 			boolean hadChanceInc = false;

@@ -80,7 +80,7 @@ public class NameGenerator {
 		
 		while(file.hasNextLine())
 		{
-			NamePart part = NamePart.fromLine(file.nextLine());
+			NamePart part = NamePart.fromLine(file.nextLine(), nGen);
 			if(part != null)
 				this.siteadjectives.add(part);
 		}
@@ -98,7 +98,7 @@ public class NameGenerator {
 		
 		while(file.hasNextLine())
 		{
-			NamePart part = NamePart.fromLine(file.nextLine());
+			NamePart part = NamePart.fromLine(file.nextLine(), nGen);
 			if(part != null)
 				this.sitenouns.add(part);
 		}
@@ -115,7 +115,7 @@ public class NameGenerator {
 		
 		while(file.hasNextLine())
 		{
-			NamePart part = NamePart.fromLine(file.nextLine());
+			NamePart part = NamePart.fromLine(file.nextLine(), nGen);
 			if(part != null)
 				this.siteplaces.add(part);
 		}
@@ -267,11 +267,11 @@ public class NameGenerator {
 		
 			if(noun)
 			{
-				name = capitalize(place.text) + " of " + capitalize(additional.text);
+				name = capitalize(place.name) + " of " + capitalize(additional.name);
 			}
 			else
 			{
-				name = capitalize(additional.text) + " " + capitalize(place.text);
+				name = capitalize(additional.name) + " " + capitalize(place.name);
 			}
 		
 		} while(usedSites.contains(name) || siteblacklist.contains(name));
@@ -427,15 +427,15 @@ public class NameGenerator {
 		}
 	
 
-			
+	
 		Random r = n.random;
-		NamePart part = new NamePart();
-		part.text = "UNNAMED";
+		NamePart part = new NamePart(n.nationGen);
+		part.name = "UNNAMED";
 		
 		if(possiblenames.size() == 0)
 			return part;
 		
-		part.text = capitalize(possiblenames.get(r.nextInt(possiblenames.size())));
+		part.name = capitalize(possiblenames.get(r.nextInt(possiblenames.size())));
 
 		return part;
 		
