@@ -105,7 +105,8 @@ public class ShapeChangeUnit extends Unit {
 				hasName = true;
 				c.args.set(0, "\"" + Generic.capitalize(c.args.get(0).replaceAll("\"", "")) + "\"");
 				name = new Name();
-				name.type = new NamePart(Generic.capitalize(c.args.get(0).replaceAll("\"", "")));
+				
+				name.type = NamePart.newNamePart(Generic.capitalize(c.args.get(0).replaceAll("\"", "")), null);
 			}
 			
 			if(!c.command.startsWith("#spr"))

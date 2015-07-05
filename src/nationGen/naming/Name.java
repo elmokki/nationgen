@@ -23,27 +23,28 @@ public class Name  {
 	
 	public void setType(String str)
 	{
-		this.type = new NamePart(str);
+
+		this.type = NamePart.newNamePart(str, null);
 	}
 	public void setRankPrefix(String str)
 	{
-		this.rankprefix = new NamePart(str);
+		this.rankprefix = NamePart.newNamePart(str, null);
 	}
 	public void setPrefix(String str)
 	{
-		this.prefix = new NamePart(str);
+		this.prefix = NamePart.newNamePart(str, null);
 	}
 	public void setPrefixprefix(String str)
 	{
-		this.prefixprefix = new NamePart(str);
+		this.prefixprefix = NamePart.newNamePart(str, null);
 	}
 	public void setSuffixprefix(String str)
 	{
-		this.suffixprefix = new NamePart(str);
+		this.suffixprefix = NamePart.newNamePart(str, null);
 	}
 	public void setSuffix(String str)
 	{
-		this.suffix = new NamePart(str);
+		this.suffix = NamePart.newNamePart(str, null);
 	}
 	
 	
@@ -135,11 +136,11 @@ public class Name  {
 	public List<String> getAsList()
 	{
 		List<String> list = new ArrayList<String>();
-		list.add(prefixprefix.text);
-		list.add(prefix.text);
-		list.add(type.text);
-		list.add(suffixprefix.text);
-		list.add(suffix.text);
+		list.add(prefixprefix.name);
+		list.add(prefix.name);
+		list.add(type.name);
+		list.add(suffixprefix.name);
+		list.add(suffix.name);
 		return list;
 	}
 	
