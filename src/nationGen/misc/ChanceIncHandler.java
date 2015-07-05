@@ -1390,6 +1390,45 @@ public class ChanceIncHandler {
 						continue;
 					}
 				}
+				else if(args.get(0).equals("slot") && args.size() > 3)
+				{
+
+					boolean not = args.contains("not");
+					boolean armor = args.contains("armor");
+					boolean weapon = args.contains("weapon");
+					boolean contains = false;
+					Item i = u.getSlot(args.get(args.size() - 3));
+					if(i != null)
+					{
+						if(i.id.equals(args.get(args.size() - 2)))
+						{
+							contains = true;
+						}
+						else if(i.getClass() == CustomItem.class)
+						{
+							CustomItem ci = (CustomItem)i;
+							if(ci.olditem != null || ci.olditem.id.equals(args.get(args.size() - 2)))
+							{
+								contains = true;
+							}
+						}
+						
+						if(contains)
+						{
+							if(armor && !i.armor)
+								contains = false;
+							if(weapon && i.armor)
+								contains = false;
+						}
+					}
+
+					
+					if(contains != not)
+					{
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+						continue;
+					}
+				}
 				else if(args.get(0).equals("itemtag") && args.size() > 2)
 				{
 

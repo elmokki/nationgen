@@ -77,6 +77,13 @@ Item tag
 Usage:	#chanceinc itemtag [not] <tag> <mod>
 Info:	If any item of the unit has the given tag, modifier is added
 
+Slot
+------------------------
+Usage:	#chanceinc slot [not] [armor/weapon] <tag> <mod>
+Info:	If item has item with given id in a slot or in case of some custom items as
+	custom item base, modifier is added. Use not to reverse and armor/weapon to restrict
+	to armor and weapons as defined by #armor in items.
+
 Race theme
 ------------------------
 Usage:	#chanceinc racetheme <theme> <mod>
