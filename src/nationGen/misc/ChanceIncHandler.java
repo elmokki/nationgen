@@ -913,6 +913,23 @@ public class ChanceIncHandler {
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
+				// Theme in a primary race theme
+				canIncrease = false;
+				if(args.get(0).equals("secondarythemetheme") && args.size() >= 3 && n.races.size() > 1)
+				{
+					String theme = args.get(args.size() - 2);
+					boolean not = args.contains("not");
+					
+					for(Theme t : n.races.get(1).themefilters)
+					{
+						if(t.themes.contains(theme))
+							canIncrease = true;			
+					}
+					
+					if(canIncrease != not)
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+				}
+				
 				// SecondaryRaceTheme
 				canIncrease = false;
 				if(args.get(0).equals("secondaryracetheme") && args.size() >= 3 && n.races.size() > 1)
@@ -1264,7 +1281,14 @@ public class ChanceIncHandler {
 				if(args.get(0).equals("pose") && args.size() > 2)
 				{
 				
+					boolean not = args.contains("not");
+					boolean contains = false;
 					if(u.pose.roles.contains(args.get(1)) || u.pose.roles.contains("elite " + args.get(1)) || u.pose.roles.contains("sacred " + args.get(1)))
+					{
+						contains = true;
+					}
+					
+					if(contains != not)
 					{
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 						continue;

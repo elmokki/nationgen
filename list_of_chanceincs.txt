@@ -28,7 +28,7 @@ Generic
 
 Pose role
 ------------------------
-Usage:	#chanceinc pose <role> <mod>
+Usage:	#chanceinc pose [not] <role> <mod>
 Info: 	If the pose has given role, modifier is added. Pose is considered to have 
 	given role if it has role that is "elite <role>" or "sacred <role>"
 
@@ -199,6 +199,12 @@ Has theme theme
 ------------------------
 Usage:	#chanceinc hasthemetheme [not] <theme> <mod>
 Info:	If primary race has a theme with given #theme tagged, apply modifier
+
+
+Secondary race theme theme
+------------------------
+Usage:	#chanceinc secondarythemetheme [not] <theme> <mod>
+Info:	If secondary race has a theme with given #theme tagged, apply modifier
 
 Has any theme tag
 ------------------------
