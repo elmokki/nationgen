@@ -607,7 +607,7 @@ public class ChanceIncHandler {
 			
 			for(String str : chanceincs)
 			{
-				List<String> args = Generic.parseArgs(str);
+				List<String> args = Generic.parseArgs(str, "'");
 	
 				// Theme
 				if(args.get(0).equals("theme") && args.size() >= 3)
@@ -709,6 +709,19 @@ public class ChanceIncHandler {
 		}
 	}
 
+	public <T extends Filter> List<T> getPossibleFilters(List<T> list, Unit u)
+	{
+		List<T> stuff = new ArrayList<T>();
+		stuff.addAll(handleChanceIncs(u, list).keySet());
+		return stuff;
+	}
+	
+	public <T extends Filter> List<T> getPossibleFilters(List<T> list)
+	{
+		List<T> stuff = new ArrayList<T>();
+		stuff.addAll(handleChanceIncs(list).keySet());
+		return stuff;
+	}
 	
 	public <T extends Filter> int countPossibleFilters(List<T> list, Unit u)
 	{
@@ -826,7 +839,7 @@ public class ChanceIncHandler {
 			for(String str : chanceincs)
 			{
 				
-				List<String> args = Generic.parseArgs(str);
+				List<String> args = Generic.parseArgs(str, "'");
 	
 				// Magic paths
 				boolean canIncrease = true;
@@ -1277,7 +1290,7 @@ public class ChanceIncHandler {
 			{
 		
 				// Poses
-				List<String> args = Generic.parseArgs(str);
+				List<String> args = Generic.parseArgs(str, "'");
 				if(args.get(0).equals("pose") && args.size() > 2)
 				{
 				
@@ -1499,6 +1512,30 @@ public class ChanceIncHandler {
 						}
 					}
 
+					
+					if(contains != not)
+					{
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+						continue;
+					}
+				}
+				else if(args.get(0).equals("slottagvalue") && args.size() > 4)
+				{
+
+					boolean not = args.contains("not");
+					boolean contains = false;
+					Item i = u.getSlot(args.get(args.size() - 4));
+					if(i != null)
+					{
+
+						String value = Generic.getTagValue(i.tags, args.get(args.size() - 3));
+
+						if(value != null && args.get(args.size() - 2).equals(value))
+						{
+							contains = true;
+						}
+					}
+					
 					
 					if(contains != not)
 					{
