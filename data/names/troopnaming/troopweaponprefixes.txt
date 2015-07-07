@@ -1,0 +1,277 @@
+
+----- Swords
+
+#new 
+#name "sword"
+#basechance 0
+
+#type weapon
+-- Broad sword
+#chanceinc slot weapon 8 1
+-- Short sword
+#chanceinc slot weapon 6 1
+-- Great sword
+#chanceinc slot weapon 11 1
+-- Falchion
+#chanceinc slot weapon 10 0.2
+#prefix
+#end
+
+
+#new 
+#name "falchion"
+#basechance 0
+
+#type weapon
+-- Falchion
+#chanceinc slot weapon 10 2
+#prefix
+#end
+
+----- Clubs
+
+#new 
+#name "club"
+#basechance 0
+
+#type weapon
+-- Greatclub
+#chanceinc slot weapon 165 1
+-- Spiked club
+#chanceinc slot weapon 593 1
+-- club
+#chanceinc slot weapon 252 1
+
+#end
+
+
+----- Spears
+
+#new 
+#name "spear"
+#basechance 0
+
+#type weapon
+-- Spear
+#chanceinc slot weapon 1 1
+-- Coral Spear
+#chanceinc slot weapon 31 1
+-- Long Spear
+#chanceinc slot weapon 28 1
+-- Stone spear
+#chanceinc slot weapon 373 1
+#prefix
+#end
+
+
+
+----- Axes
+
+#new 
+#name "axe"
+#basechance 0
+
+#type weapon
+-- Axe
+#chanceinc slot weapon 17 1
+-- Battleaxe
+#chanceinc slot weapon 18 1
+-- Stone hatchet
+#chanceinc slot weapon 253 1
+#prefix
+#end
+
+
+
+----- Pike
+
+#new 
+#name "pike"
+#basechance 0
+
+#type weapon
+-- Pike
+#chanceinc slot weapon 2 1
+#prefix
+#end
+
+----- Halberd
+
+#new 
+#name "Halberd"
+#basechance 0
+
+#type weapon
+-- Halbred
+#chanceinc slot weapon 5 1
+#prefix
+#end
+
+----- Flail
+
+#new 
+#name "flail"
+#basechance 0
+
+#type weapon
+#chanceinc slot weapon 16 1
+#prefix
+#end
+
+----- Bardiche
+
+#new 
+#name "bardiche"
+#basechance 0
+
+#type weapon
+#chanceinc slot weapon 257 1
+#prefix
+#end
+
+----- Bardiche
+
+#new 
+#name "maul"
+#basechance 0
+
+#type weapon
+#chanceinc slot weapon 14 1
+#prefix
+#end
+
+----- Morningstar
+
+#new 
+#name "morningstar"
+#basechance 0
+
+#type weapon
+#chanceinc slot weapon 15 1
+#prefix
+#end
+
+----- Trident
+
+#new 
+#name "trident"
+#basechance 0
+
+#type weapon
+#chanceinc slot weapon 3 1
+#prefix
+#end
+
+----- Staff
+
+#new 
+#name "staff"
+#basechance 0
+
+#type weapon
+-- Quarterstaff
+#chanceinc slot weapon 7 1
+#prefix
+#end
+
+----- Yari
+
+#new 
+#name "yari"
+#basechance 0
+
+#type weapon
+#chanceinc slot weapon 376 1
+#end
+
+----- naginata
+
+#new 
+#name "naginata"
+#basechance 0
+
+#type weapon
+#chanceinc slot weapon 380 1
+#end
+
+----- wakizasi
+
+#new 
+#name "wakizasi"
+#basechance 0
+
+#type weapon
+#chanceinc slot weapon 377 1
+#end
+
+----- katana
+
+#new 
+#name "katana"
+#basechance 0
+
+#type weapon
+#chanceinc slot weapon 378 1
+#end
+
+----- nodachi
+
+#new 
+#name "nodachi"
+#basechance 0
+
+#type weapon
+#chanceinc slot weapon 379 1
+#end
+
+----- Mace
+
+#new 
+#name "mace"
+#basechance 0
+
+#type weapon
+-- mace
+#chanceinc slot weapon 12 1
+#prefix
+#end
+
+----- Hammer
+
+#new 
+#name "hammer"
+#basechance 0
+
+#type weapon
+-- hammer
+#chanceinc slot weapon 13 1
+#prefix
+#end
+
+--------- Ranged weapons
+----- Note that by default if you add a ranged prefix you may get "<prefix> archer"
+----- So adding something like "Blowpipe" doesn't really make sense.
+----- Bows
+
+
+#new 
+#name "longbow"
+#basechance 0
+
+#type weapon
+-- Long bow
+#chanceinc slot weapon 24 1
+#prefix
+#end
+
+
+#new 
+#name "greatbow"
+#basechance 0
+
+#type weapon
+-- Great bow
+#chanceinc slot weapon 266 1
+#prefix
+#end
+

@@ -1,0 +1,88 @@
+------- This file is for basic troop names
+------- Troop names should be such that they can appear on all units of a role - ie basic
+
+
+--- Pose specific
+
+-- Infantry
+
+#new 
+#name "soldier"
+#basechance 0
+#chanceinc "pose infantry 2"
+#theme advanced
+#end
+
+#new 
+#name "infantry"
+#basechance 0
+#chanceinc "pose infantry 4"
+#end
+
+#new 
+#name "warrior"
+#basechance 0
+#chanceinc "pose infantry 2"
+#theme primitive
+#end
+
+-- Chariot
+#new 
+#name "chariot"
+#basechance 0
+#chanceinc "pose chariot 2"
+#end
+
+
+#new 
+#name "charioteer"
+#basechance 0
+#chanceinc "pose chariot 2"
+#end
+
+
+-- Mounted
+
+
+
+#new 
+#name "cavalier"
+#basechance 0
+#chanceinc "pose mounted 2"
+#theme advanced
+#end
+
+#new 
+#name "rider"
+#basechance 0
+#chanceinc "pose mounted 1"
+#chanceinc "prot 12 *0"
+#theme primitive
+#end
+
+#new 
+#name "cavalry"
+#basechance 0
+#chanceinc "pose mounted 1"
+#end
+
+
+
+-- Ranged
+
+- Note: If you have a non-bow ranged unit, do add a base name only so you never get
+-       something like "Blowpipe Archer"
+#new 
+#name "archer"
+#basechance 0
+#chanceinc "pose ranged 1"
+#end
+
+
+
+
+
+
+
+
+

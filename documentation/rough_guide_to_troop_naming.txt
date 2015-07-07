@@ -1,0 +1,57 @@
+General
+---------------------------------
+First of all a note: Troop names come from primary race if defined.
+
+Second of all, even if sets specify prefix or a slot, they aren't hard coded. You can have #prefix on a namepart
+anywhere and you can use chanceincs of any slot. 
+
+#type definitions are important. Otherwise you may end up with Sword Swordsmen or Javelin Javelin Throwers. 
+
+Troop naming has two main methods of naming:
+----------------------------------
+1. GuaranteedPart
+This one gives every unit eligible to something from the name set a name part
+
+2. DifferentiateName
+This one gives units nameparts only when the algorithm thinks it will increase the name diversity
+
+
+Now, troop naming goes in steps:
+----------------------------------
+1. Base names ("Infantry", "Soldier", "Cavalry", "Rider")
+
+Each role will get a separate name applied to all units of the role. 
+You can change the set with #troopbasenames
+
+2. Weapon/Mount names
+
+Each unit will get a prefix or a base name based on its mount, or if no mount, on main hand weapon. 
+You can change the sets with #troopweaponnames, #troopmonutprefixes and #troopweaponprefixes
+
+3. Misc guaranteed names
+
+Each unit will get something from this short list if eligible. 
+To change, #troopmiscguaranteedparts
+
+4. Misc item differentation
+
+The algorithm will try to differentiate units by using sets defined by #troopmiscitemnames and #troopmiscitemprefixes
+By default these sets contain mostly bonus ranged weapon stuff and some minor other things. Considering how it is used only
+for differentiation, it may not be a horrible idea to add some easier-to-trigger things here.
+
+5. Special parts
+
+Every unit eligible will get stuff from #troopspecialnames and #troopspecialprefixes. These are mostly for filters. Argueably these could
+just be moved to misc guaranteed, but oh well.
+
+6. Differentiate by weapon names
+
+We use weapon names (not prefixes) found from #troopweaponnames to differentiate units if needed. This was added because your beautifully 
+differentiated "Sword Warriors" and "Spear Warriors" can end up to "Clockwork Warriors" or "Mountain Warriors" in steps 3 and 4. Here we
+make them Clockwork Swordsman and Clockwork Spearman instead if feasible.
+
+Bonus part: Commander naming
+----------------------------------
+Commanders get a name from #commanderbasenames. #tier 1-3 can be added. Tier of a commander is partially random but also based on leadership 
+abilities. If #generic is added, commander may get a #troopweaponprefix or a #troopspecialprefix. Commanders do always get #troopmiscguaranteedparts
+like troops in step 3 if eligible. This may cause issues that may have to be remedied at some point, but not now.

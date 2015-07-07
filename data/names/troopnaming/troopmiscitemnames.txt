@@ -1,0 +1,126 @@
+
+
+----- Lance
+
+#new 
+#name "lancer"
+#basechance 0
+-- Lance
+#chanceinc slot lanceslot 4 1
+#end
+
+---- General armor level
+
+
+#new 
+#name "knight"
+#racevariant "Oriental human" samurai
+#basechance 0
+#chanceinc "pose mounted 2"
+#chanceinc "prot below 13 *0"
+#chanceinc "prot 16 *5"
+#theme advanced
+#end
+
+----- Misc ranged
+
+#new 
+#name "blowpiper"
+#basechance 0
+#type rangedweapon
+#chanceinc slot bonusweapon 34 1
+#chanceinc pose not infantry *0
+#end
+
+#new 
+#name "poisoneer"
+#basechance 0
+#type rangedweapon
+#chanceinc slot bonusweapon 34 1
+#chanceinc pose not infantry *0
+#end
+
+#new 
+#name "javelin thrower"
+#basechance 0
+#type rangedweapon
+#chanceinc slot bonusweapon 21 1
+#chanceinc pose not infantry *0
+#end
+
+#new 
+#name "javelineer"
+#basechance 0
+#type rangedweapon
+#chanceinc slot bonusweapon 21 0.5
+#chanceinc pose not infantry *0
+#end
+
+#new 
+#name "axe thrower"
+#basechance 0
+#type rangedweapon
+#chanceinc slot bonusweapon 260 1
+#chanceinc pose not infantry *0
+#end
+
+-- Ranger is for bonusweapon bow/crossbow
+#new 
+#name "ranger"
+#basechance 0
+#chanceinc slot bonusweapon 25 0.5
+#chanceinc slot bonusweapon 23 0.5
+#chanceinc pose not infantry *0
+#end
+
+#new 
+#name "fish thrower"
+#basechance 0
+#type rangedweapon
+#chanceinc slotname bonusweapon atl_poisonfish 1
+#chanceinc pose not infantry *0
+#end
+
+#new 
+#name "harponeer"
+#basechance 0
+#type rangedweapon
+#chanceinc slot bonusweapon 452 1
+#chanceinc pose not infantry *0
+#end
+
+#new 
+#name "trapper"
+#basechance 0
+#type rangedweapon
+#chanceinc slot bonusweapon 263 1
+#chanceinc pose not infantry *0
+#end
+
+#new 
+#name "netter"
+#basechance 0
+#type rangedweapon
+#chanceinc slot bonusweapon 263 1
+#chanceinc pose not infantry *0
+#end
+
+
+#new 
+#name "chakram thrower"
+#basechance 0
+#type rangedweapon
+#chanceinc slot bonusweapon 362 1
+#chanceinc pose not infantry *0
+#end
+
+#new 
+#name "dart thrower"
+#basechance 0
+#type rangedweapon
+-- Obsidian darts
+#chanceinc slot bonusweapon 619 1
+-- Poison darts
+#chanceinc slot bonusweapon 620 1
+#chanceinc pose not infantry *0
+#end

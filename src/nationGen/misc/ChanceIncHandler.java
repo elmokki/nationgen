@@ -1296,10 +1296,12 @@ public class ChanceIncHandler {
 				
 					boolean not = args.contains("not");
 					boolean contains = false;
-					if(u.pose.roles.contains(args.get(1)) || u.pose.roles.contains("elite " + args.get(1)) || u.pose.roles.contains("sacred " + args.get(1)))
+					if(u.pose.roles.contains(args.get(args.size() - 2)) || u.pose.roles.contains("elite " + args.get(args.size() - 2)) || u.pose.roles.contains("sacred " + args.get(args.size() - 2)))
 					{
 						contains = true;
 					}
+					
+				
 					
 					if(contains != not)
 					{
@@ -1348,8 +1350,8 @@ public class ChanceIncHandler {
 				}
 				else if(args.get(0).equals("unittag") && args.size() > 2)
 				{
-
-					boolean contains = Generic.containsTag(u.tags, args.get(1));					
+					
+					boolean contains = Generic.containsTag(Generic.getAllUnitTags(u), args.get(1));					
 					if(contains)
 					{
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
@@ -1468,7 +1470,6 @@ public class ChanceIncHandler {
 				}
 				else if(args.get(0).equals("slotname") && args.size() > 3)
 				{
-
 					boolean not = args.contains("not");
 					boolean armor = args.contains("armor");
 					boolean weapon = args.contains("weapon");

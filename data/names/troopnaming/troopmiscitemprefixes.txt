@@ -1,0 +1,77 @@
+----- Lance
+
+#new 
+#name "lance"
+#basechance 0
+-- Lance
+#chanceinc slot lanceslot 4 0.25
+#prefix
+#end
+
+
+----- Misc ranged
+
+#new 
+#name "blowpipe"
+#basechance 0
+#type rangedweapon
+#chanceinc slot bonusweapon 34 1
+#chanceinc pose not infantry *0
+#prefix
+#end
+
+
+
+#new 
+#name "javelin"
+#basechance 0
+#type rangedweapon
+#chanceinc slot bonusweapon 21 1
+#chanceinc pose not infantry *0
+#prefix
+#end
+
+
+
+
+#new 
+#name "harpoon"
+#basechance 0
+#type rangedweapon
+#chanceinc slot bonusweapon 452 1
+#chanceinc pose not infantry *0
+#prefix
+#end
+
+
+
+#new 
+#name "net"
+#basechance 0
+#type rangedweapon
+#chanceinc slot bonusweapon 263 1
+#chanceinc pose not infantry *0
+#prefix
+#end
+
+
+#new 
+#name "chakram"
+#basechance 0
+#type rangedweapon
+#chanceinc slot bonusweapon 362 1
+#chanceinc pose not infantry *0
+#prefix
+#end
+
+#new 
+#name "dart"
+#basechance 0
+#type rangedweapon
+-- Obsidian darts
+#chanceinc slot bonusweapon 619 1
+-- Poison darts
+#chanceinc slot bonusweapon 620 1
+#chanceinc pose not infantry *0
+#prefix
+#end

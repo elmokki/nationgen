@@ -70,7 +70,6 @@ public class UnitGen {
 		{
 			String slot = slots[i];
 			
-			
 			if(u.pose.getListOfSlots().contains(slot))
 			{
 				Item item = null;

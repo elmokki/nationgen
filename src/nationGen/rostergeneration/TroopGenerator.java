@@ -552,13 +552,13 @@ public class TroopGenerator {
 			
 			
 			Pose p = chandler.getRandom(poses, race, role);
-	
-			
+
+			if(p == null)
+				return null;
 
 	
 			// Generate unit!
 				
-
 			u = unitGen.generateUnit(race, p);
 
 			addInitialFilters(u, role);

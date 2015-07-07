@@ -443,14 +443,14 @@ public class NameGenerator {
 	
 
 	
-	private static boolean sameName(Name name1, Name name2)
+	public static boolean sameName(Name name1, Name name2)
 	{
-		if(!name1.type.equals(name2.type))
+		if(!name1.type.toString().equals(name2.type.toString()))
 			return false;
 		
 		if(name1.prefix != null && name2.prefix != null)
 		{
-			if(!name1.prefix.equals(name2.prefix))
+			if(!name1.prefix.toString().equals(name2.prefix.toString()))
 				return false;
 		}
 		
@@ -460,32 +460,6 @@ public class NameGenerator {
 		return true;
 	}
 
-	public static void addHeavyLightPrefix(List<Unit> units)
-	{
-		for(Unit named : units)
-		{
-			for(Unit unit : units)
-			{
-				if(sameName(named.name, unit.name) && unit.getTotalProt() != named.getTotalProt())
-				{
-					
-					if(unit.getTotalProt() < named.getTotalProt() && named.isHeavy())
-					{
-						String part = "Heavy";
-						named.name.setPrefixprefix(part);
-						break;
-					}
-					else if(unit.getTotalProt() > named.getTotalProt() && named.isLight())
-					{
-						String part = "Light";
-						named.name.setPrefixprefix(part);
-						break;
-					}
-
-				}
-			}
-		}
-	}
 	
     public static String plural(String line)
     {
@@ -516,32 +490,7 @@ public class NameGenerator {
     	return line + end;
     }
     
-	public static void addNationalPrefix(List<Unit> units, Nation n)
-	{
 
-		Random r = n.random;
-		boolean suffix = r.nextBoolean();
-		
-		
-		for(Unit u : units)
-		{
-			String part = "";
-			
-			if(!suffix)
-			{
-				part = n.name + n.nationalitysuffix;
-				u.name.setPrefixprefix(part);
-
-			}
-			else
-			{
-				part = n.name;
-				u.name.setSuffix(part);
-			}	
-
-		}
-			
-	}
 	
 	public static String capitalizeFirst(String s)
 	{
