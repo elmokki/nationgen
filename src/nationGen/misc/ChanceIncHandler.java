@@ -1485,6 +1485,27 @@ public class ChanceIncHandler {
 						continue;
 					}
 				}
+				else if(args.get(0).equals("slottag") && args.size() > 3)
+				{
+
+					boolean not = args.contains("not");
+					boolean contains = false;
+					Item i = u.getSlot(args.get(args.size() - 3));
+					if(i != null)
+					{
+						if(i.tags.contains(args.get(args.size() - 2)))
+						{
+							contains = true;
+						}
+					}
+
+					
+					if(contains != not)
+					{
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+						continue;
+					}
+				}
 				else if(args.get(0).equals("itemtag") && args.size() > 2)
 				{
 
