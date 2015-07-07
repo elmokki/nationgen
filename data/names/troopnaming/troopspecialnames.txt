@@ -9,13 +9,25 @@
 
 #type weapon
 -- Broad sword
-#chanceinc slot weapon 8 3
+#chanceinc slot weapon 8 5
 -- Short sword
-#chanceinc slot weapon 6 3
+#chanceinc slot weapon 6 5
 -- Great sword
-#chanceinc slot weapon 11 3
+#chanceinc slot weapon 11 5
+-- Claymore
+#chanceinc slot weapon 258 5
+-- Jotun Longsword
+#chanceinc slot weapon 268 5
+-- Obsidian Club Swords
+#chanceinc slot weapon 288 5
+#chanceinc slot weapon 451 5
+-- Coral Swords
+#chanceinc slot weapon coralbroadsword 5
+#chanceinc slot weapon coralshortsword 5
 -- Falchion
 #chanceinc slot weapon 10 0.25
+-- Kopesh
+#chanceinc slot weapon 513 0.25
 #chanceinc origname swordsman *20
 #commandvariant #female swordsmistress
 #theme elite
@@ -27,11 +39,12 @@
 #basechance 0
 
 #type weapon
-#chanceinc slot weapon 1 3
--- Coral Spear
-#chanceinc slot weapon 31 3
+#chanceinc slot weapon 1 5
+-- Coral Spears
+#chanceinc slot weapon 31 5
+#chanceinc slot weapon corallongspear 5
 -- Long Spear
-#chanceinc slot weapon 28 3
+#chanceinc slot weapon 28 5
 #chanceinc origname spearman *20
 #commandvariant #female spearmistress
 #theme elite
@@ -45,8 +58,15 @@
 
 #type weapon
 -- Axe
-#chanceinc slot weapon 17 3
+#chanceinc slot weapon 17 5
 -- Battleaxe
+#chanceinc slot weapon 18 5
+-- Jotun Axe
+#chanceinc slot weapon 66 5
+-- Jotun Battleaxe
+#chanceinc slot weapon 307 5
+-- Hatchet
+#chanceinc slot weapon 253 5
 #chanceinc origname axeman *20
 #commandvariant #female axemistress
 #theme elite
@@ -62,6 +82,25 @@
 #basechance 0
 #chanceinc "unittheme militia 1000"
 #theme militia
+#end
+
+#new 
+#type militia
+#name "levy"
+#basechance 0
+#chanceinc "unittheme militia 1000"
+#theme militia
+#theme advanced
+#end
+
+#new 
+#type militia
+#name "tribesman"
+#basechance 0
+#chanceinc "unittheme militia 1000"
+#theme militia
+#theme primitive
+#commandvariant #female tribeswoman
 #end
 
 #new 
@@ -92,6 +131,13 @@
 #chanceinc "unittheme pillager 25"
 #theme pillager
 #theme elite
+#end
+
+#new 
+#name "bandit"
+#basechance 0
+#chanceinc "unittheme pillager 25"
+#theme pillager
 #end
 
 
@@ -159,7 +205,6 @@
 #end
 
 
-
 #new 
 #type elite
 #name "ranger"
@@ -183,4 +228,34 @@
 #basechance 0
 #chanceinc "pose ranged 1.5"
 #theme elite
+#end
+
+#new 
+#type elite
+#name "sharpshooter"
+#basechance 0
+#chanceinc "pose ranged 1.5"
+#theme elite
+#end
+
+#new 
+#type elite
+#type forest
+#name "forester"
+#basechance 0
+#chanceinc "unittheme forest 20"
+#chanceinc "pose not ranged *0.1"
+#theme elite
+#theme forest
+#end
+
+#new 
+#type elite
+#type mountain
+#name "mountaineer"
+#basechance 0
+#chanceinc "unittheme mountain 20"
+#chanceinc "pose not ranged *0.1"
+#theme elite
+#theme mountain
 #end

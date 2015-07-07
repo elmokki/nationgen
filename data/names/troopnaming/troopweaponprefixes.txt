@@ -12,8 +12,20 @@
 #chanceinc slot weapon 6 1
 -- Great sword
 #chanceinc slot weapon 11 1
+-- Claymore
+#chanceinc slot weapon 258 1
+-- Jotun Longsword
+#chanceinc slot weapon 268 1
+-- Obsidian Club Swords
+#chanceinc slot weapon 288 1
+#chanceinc slot weapon 451 1
+-- Coral Swords
+#chanceinc slot weapon coralbroadsword 1
+#chanceinc slot weapon coralshortsword 1
 -- Falchion
 #chanceinc slot weapon 10 0.2
+-- Kopesh
+#chanceinc slot weapon 513 0.2
 #prefix
 #end
 
@@ -41,7 +53,13 @@
 #chanceinc slot weapon 593 1
 -- club
 #chanceinc slot weapon 252 1
-
+-- coral club
+#chanceinc slot weapon 45 1
+-- stone club
+#chanceinc slot weapon 429 1
+-- Iron cudgel
+#chanceinc slot weapon 363 1
+#prefix
 #end
 
 
@@ -54,8 +72,9 @@
 #type weapon
 -- Spear
 #chanceinc slot weapon 1 1
--- Coral Spear
+-- Coral Spears
 #chanceinc slot weapon 31 1
+#chanceinc slot weapon corallongspear 1
 -- Long Spear
 #chanceinc slot weapon 28 1
 -- Stone spear
@@ -76,7 +95,11 @@
 #chanceinc slot weapon 17 1
 -- Battleaxe
 #chanceinc slot weapon 18 1
--- Stone hatchet
+-- Jotun Axe
+#chanceinc slot weapon 66 1
+-- Jotun Battleaxe
+#chanceinc slot weapon 307 1
+-- Hatchet
 #chanceinc slot weapon 253 1
 #prefix
 #end
@@ -92,6 +115,8 @@
 #type weapon
 -- Pike
 #chanceinc slot weapon 2 1
+-- Short Pike
+#chanceinc slot weapon 590 1
 #prefix
 #end
 
@@ -129,7 +154,7 @@
 #prefix
 #end
 
------ Bardiche
+----- Maul
 
 #new 
 #name "maul"
@@ -182,6 +207,7 @@
 
 #type weapon
 #chanceinc slot weapon 376 1
+#prefix
 #end
 
 ----- naginata
@@ -192,6 +218,7 @@
 
 #type weapon
 #chanceinc slot weapon 380 1
+#prefix
 #end
 
 ----- wakizasi
@@ -202,6 +229,7 @@
 
 #type weapon
 #chanceinc slot weapon 377 1
+#prefix
 #end
 
 ----- katana
@@ -212,6 +240,7 @@
 
 #type weapon
 #chanceinc slot weapon 378 1
+#prefix
 #end
 
 ----- nodachi
@@ -222,6 +251,7 @@
 
 #type weapon
 #chanceinc slot weapon 379 1
+#prefix
 #end
 
 ----- Mace
@@ -272,6 +302,17 @@
 #type weapon
 -- Great bow
 #chanceinc slot weapon 266 1
+#prefix
+#end
+
+#new 
+#name "empoisoned"
+#basechance 0
+
+#type weapon
+-- Poison bows
+#chanceinc slot weapon 372 1
+#chanceinc slot weapon 594 1
 #prefix
 #end
 

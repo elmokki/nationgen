@@ -1,0 +1,137 @@
+
+--- Leather
+
+#newitem
+#basechance 1
+#name "leather cuirass"
+#gameid 5
+#sprite /graphics/hoburg/bodyarmor/crossbow/roninarmor.png
+#recolormask /graphics/hoburg/bodyarmor/crossbow/roninarmor_recolormask.png
+#needs legs roninpants
+#armor
+#theme "leather"
+#theme "oriental"
+#enditem
+
+#newitem
+#basechance 1
+#name "leather hauberk"
+#gameid 10
+#sprite /graphics/hoburg/bodyarmor/crossbow/roninarmor.png
+#recolormask /graphics/hoburg/bodyarmor/crossbow/roninarmor_recolormask.png
+#needs legs roninpants
+#armor
+#theme "leather"
+#theme "oriental"
+#enditem
+
+
+--- Ashiguru
+
+#newitem
+#basechance 2
+#name "ashigaru armor"
+#gameid 128
+#sprite /graphics/hoburg/bodyarmor/crossbow/ashigaruarmor.png
+#recolormask /graphics/hoburg/bodyarmor/crossbow/ashigaruarmor_recolormask.png
+#needs legs ashigarupants
+#armor
+#theme "oriental"
+#enditem
+
+--- Samurai
+
+#newitem
+#basechance 2
+#name "samurai armor"
+#gameid 129
+#sprite /graphics/hoburg/bodyarmor/crossbow/samuraiarmor.png
+#recolormask /graphics/hoburg/bodyarmor/crossbow/samuraiarmor_recolormask.png
+#tag "eliteversion 'samurai armor elite'"
+#needs legs samuraipants
+#armor
+#theme "oriental"
+#enditem
+
+#newitem
+#basechance 2
+#name "samurai armor elite"
+#gameid 129
+#sprite /graphics/hoburg/bodyarmor/crossbow/samuraiarmor_elite.png
+#recolormask /graphics/hoburg/bodyarmor/crossbow/samuraiarmor_elite_recolormask.png
+#theme "elite"
+#needs legs samuraipants
+#armor
+#theme "oriental"
+#enditem
+
+
+--- Heavy samurai
+
+#newitem
+#basechance 1
+#name "heavy samurai armor"
+#gameid 130
+#sprite /graphics/hoburg/bodyarmor/crossbow/heavysamuraiarmor.png
+#recolormask /graphics/hoburg/bodyarmor/crossbow/heavysamuraiarmor_recolormask.png
+#tag "eliteversion 'heavy samurai armor elite'"
+#needs legs heavysamuraipants
+#armor
+#theme "oriental"
+#enditem
+
+#newitem
+#basechance 1
+#name "heavy samurai armor elite"
+#gameid 130
+#sprite /graphics/hoburg/bodyarmor/crossbow/heavysamuraiarmor_elite.png
+#recolormask /graphics/hoburg/bodyarmor/crossbow/heavysamuraiarmor_elite_recolormask.png
+#theme "elite"
+#needs legs heavysamuraipants
+#armor
+#theme "oriental"
+#enditem
+
+
+--- New-fangled (specifically nanban) armor
+
+#newitem
+#basechance 0.5
+#name "light nanban plate"
+#gameid 9
+#sprite /graphics/hoburg/bodyarmor/crossbow/nanban_light.png
+#recolormask /graphics/hoburg/bodyarmor/crossbow/nanban_light_recolormask.png
+#tag "eliteversion 'medium nanban plate'"
+#needs legs roninpants
+#armor
+#theme "oriental"
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#basechance 0.5
+#name "medium nanban plate"
+#gameid 14
+#sprite /graphics/hoburg/bodyarmor/crossbow/nanban_medium.png
+#recolormask /graphics/hoburg/bodyarmor/crossbow/samuraiarmor_recolormask.png
+#tag "eliteversion 'heavy nanban plate'"
+#needs legs samuraipants
+#armor
+#theme "oriental"
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#basechance 0.5
+#name "heavy nanban plate"
+#gameid 19
+#sprite /graphics/hoburg/bodyarmor/crossbow/nanban_heavy.png
+#recolormask /graphics/hoburg/bodyarmor/crossbow/heavysamuraiarmor_recolormask.png
+#needs legs heavysamuraipants
+#armor
+#theme "oriental"
+#theme "iron"
+#theme "advanced"
+#enditem
