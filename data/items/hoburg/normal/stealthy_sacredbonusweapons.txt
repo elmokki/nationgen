@@ -106,3 +106,30 @@
 #theme "fae"
 #description "Not of this world"
 #enditem
+
+#newitem
+#name "elf shot"
+#gameid 228
+#sprite /graphics/weapon/standard/bonusshortbow.png
+#offsetx 0
+#offsety 14
+#basechance 0
+#define "#gcost +5"
+#define "#rcost +5"
+#theme "sacred"
+#theme "fae"
+#enditem
+
+#newitem
+#name "vine bow"
+#gameid 303
+#sprite /graphics/weapon/standard/bonusshortbow.png
+#offsetx 0
+#offsety 14
+#basechance 0.01
+#chanceinc magic nature 0.04
+#define "#gcost +5"
+#define "#rcost +5"
+#theme "sacred"
+#theme "fae"
+#enditem
