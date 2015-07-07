@@ -87,8 +87,13 @@ Info:	If item has item with given id in a slot or in case of some custom items a
 Slotname
 ------------------------
 Usage:	#chanceinc slotname [not] [armor/weapon] <slot> <name> <mod>
-Info:	Same as above but not for base items and checks item name instead of id
+Info:	Same as above but not for base items of custom items and checks item name instead of id
 	Potentially useful for triggering from custom items.
+
+Slottag
+------------------------
+Usage:	#chanceinc slottag [not] <slot> <name> <mod>
+Info:	Applies modifier if item in given slot has given tag.
 
 Race theme
 ------------------------
