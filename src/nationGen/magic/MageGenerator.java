@@ -682,7 +682,7 @@ public class MageGenerator extends TroopGenerator {
 			}
 			
 			if(power == 0 && this.random.nextDouble() > 0.85)
-				power = this.random.nextInt(3) + 2; // 2 to 3 
+				power = this.random.nextInt(3) + 2; // 2 to 4 
 				
 
 			this.applyFilters(list, power, filters);
@@ -1585,7 +1585,7 @@ public class MageGenerator extends TroopGenerator {
 			int gettier = -1;
 			if(Generic.getTagValue(u.tags, "schoolmage") != null)
 				gettier = Integer.parseInt(Generic.getTagValue(u.tags, "schoolmage"));
-			if(Generic.getTagValue(u.tags, "priest") != null && tier == 0)
+			if(Generic.getTagValue(u.tags, "priest") != null)
 				gettier = Integer.parseInt(Generic.getTagValue(u.tags, "priest"));
 			
 			
