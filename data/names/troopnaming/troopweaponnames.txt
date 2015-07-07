@@ -1,0 +1,353 @@
+--------- This file is supposed to be for mainhand weapons - it is very high in priority for naming.
+--------- Bonus weapons and potentially but not necessarily offhands should be elsewhere.
+
+----- Swords
+
+#new 
+#name "swordsman"
+#basechance 0
+
+#type weapon
+
+-- Broad sword
+#chanceinc slot weapon 8 1
+-- Short sword
+#chanceinc slot weapon 6 1
+-- Great sword
+#chanceinc slot weapon 11 1
+-- Falchion
+#chanceinc slot weapon 10 0.25
+#commandvariant #female swordsmaiden
+#end
+
+
+
+#new 
+#name "falchioneer"
+#basechance 0
+
+#type weapon
+-- Falchion
+#chanceinc slot weapon 10 2
+#end
+
+
+----- Spears
+
+#new 
+#name "spearman"
+#basechance 0
+
+#type weapon
+-- Spear
+#chanceinc slot weapon 1 1
+-- Coral Spear
+#chanceinc slot weapon 31 1
+-- Long Spear
+#chanceinc slot weapon 28 1
+-- Stone spear
+#chanceinc slot weapon 373 1
+#commandvariant #female spearmaiden
+#end
+
+----- Clubs
+
+#new 
+#name "clubber"
+#basechance 0
+
+#type weapon
+-- Greatclub
+#chanceinc slot weapon 165 1
+-- Spiked club
+#chanceinc slot weapon 593 1
+-- club
+#chanceinc slot weapon 252 1
+#end
+
+----- Clubs
+
+#new 
+#name "basher"
+#basechance 0
+
+#type weapon
+-- Greatclub
+#chanceinc slot weapon 165 0.1
+-- Spiked club
+#chanceinc slot weapon 593 0.1
+-- club
+#chanceinc slot weapon 252 0.1
+-- hammer
+#chanceinc slot weapon 13 0.1
+-- mace
+#chanceinc slot weapon 12 0.1
+-- Primitives should actually get this
+#chanceinc hastheme primitive *25
+#chanceinc hastheme advanced *0.1
+#end
+
+
+----- Cave man rocks
+
+#new 
+#name "rock thrower"
+#basechance 0
+
+#type weapon
+#chanceinc slot weapon 553 1
+#chanceinc slotname not offhand thrown_rocks *0
+#prefix
+#end
+
+----- Hammer
+
+#new 
+#name "hammerer"
+#basechance 0
+
+#type weapon
+-- hammer
+#chanceinc slot weapon 13 1
+#prefix
+#end
+
+
+----- Axes
+
+#new 
+#name "axeman"
+#basechance 0
+
+#type weapon
+-- Axe
+#chanceinc slot weapon 17 1
+-- Battleaxe
+#chanceinc slot weapon 18 1
+-- Stone hatchet
+#chanceinc slot weapon 253 1
+#commandvariant #female axemaiden
+#end
+
+
+
+
+
+----- Pike
+
+#new 
+#name "Pikeman"
+#basechance 0
+
+#type weapon
+-- Pike
+#chanceinc slot weapon 2 1
+#commandvariant #female pikemaiden
+#end
+
+#new 
+#name "Pikeneer"
+#basechance 0
+
+#type weapon
+-- Pike
+#chanceinc slot weapon 2 1
+#end
+
+----- Halberd
+
+#new 
+#name "Halberdier"
+#basechance 0
+
+#type weapon
+-- Halbred
+#chanceinc slot weapon 5 1
+#end
+
+----- Mace
+
+#new 
+#name "maceman"
+#basechance 0
+
+#type weapon
+-- mace
+#chanceinc slot weapon 12 1
+#commandvariant #female macemaiden
+#end
+
+----- ashigaru
+
+#new 
+#name "ashigaru"
+#basechance 0
+-- naginata
+#chanceinc slot weapon 380 1
+-- yari
+#chanceinc slot weapon 377 1
+#chanceinc prot 12 *0
+#end
+
+
+----- samurai
+
+#new 
+#name "samurai"
+#basechance 0
+-- nodachi
+#chanceinc slot weapon 379 1
+-- katana
+#chanceinc slot weapon 378 1
+#end
+
+
+
+----- Lance
+
+#new 
+#name "lancer"
+#basechance 0
+
+#type weapon
+-- lance
+#chanceinc slot lanceslot 4 1
+#chanceinc prot 14 *0.125
+#end
+
+----- Bows
+
+
+- Technically duplicate to the generic name, but needs to be
+- here so that it actually competes with bowman since it should
+
+#new 
+#name "archer"
+#basechance 0
+
+#type weapon
+-- Short bow
+#chanceinc slot weapon 23 0.5
+-- Composite bow
+#chanceinc slot weapon 264 0.5
+-- Small bow
+#chanceinc slot weapon 361 0.5
+-- Great bow
+#chanceinc slot weapon 266 0.5
+#end
+
+#new 
+#name "bowman"
+#basechance 0
+
+#type weapon
+-- Short bow
+#chanceinc slot weapon 23 0.5
+-- Composite bow
+#chanceinc slot weapon 264 0.5
+-- Small bow
+#chanceinc slot weapon 361 0.5
+-- Great bow
+#chanceinc slot weapon 266 0.5
+#commandvariant #female bowmaiden
+#end
+
+#new 
+#name "longbowman"
+#basechance 0
+
+#type weapon
+-- Long bow
+#chanceinc slot weapon 24 1
+#commandvariant #female bowmaiden
+#end
+
+----- Crossbows
+
+#new 
+#name "crossbowman"
+#basechance 0
+
+#type weapon
+-- Crossbows
+#chanceinc slot weapon 25 0.5
+#chanceinc slot weapon 26 0.5
+#chanceinc slot weapon 463 0.5
+#chanceinc slotname weapon crossbow_hoburg 0.5
+#chanceinc slotname weapon arbalest_hoburg 0.5
+#chanceinc slotname weapon advanced_crossbow 0.5
+#chanceinc slotname weapon light_crossbow 0.5
+#chanceinc slotname weapon vaetti_crossbow 0.5
+#chanceinc slotname weapon vaetti_arbalest 0.5
+#commandvariant #female crossbowmaiden
+#end
+
+----- Misc ranged
+#new 
+#name "blowpiper"
+#basechance 0
+
+#type weapon
+#chanceinc slot weapon 34 1
+#end
+
+#new 
+#name "boulder thrower"
+#basechance 0
+
+#type weapon
+#chanceinc slotname weapon boulder 1
+#end
+
+#new 
+#name "rock thrower"
+#basechance 0
+
+#type weapon
+#chanceinc slotname weapon large_rock 1
+#end
+
+#new 
+#name "javelin thrower"
+#basechance 0
+
+#type weapon
+#chanceinc slotname weapon agarthan_javelin 1
+#end
+
+#new 
+#name "javelineer"
+#basechance 0
+
+#type weapon
+#chanceinc slotname weapon agarthan_javelin 0.5
+#end
+
+
+#new 
+#name "fish thrower"
+#basechance 0
+
+#type weapon
+#chanceinc slotname weapon atl_poisonfish 0.5
+#end
+
+#new 
+#name "slinger"
+#basechance 0
+
+#type weapon
+#chanceinc slot weapon 22 1
+#end
+
+
+#new 
+#name "dart thrower"
+#basechance 0
+
+#type weapon
+-- Obsidian darts
+#chanceinc slot weapon 619 1
+-- Poison darts
+#chanceinc slot weapon 620 1
+#end

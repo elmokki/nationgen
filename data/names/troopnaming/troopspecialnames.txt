@@ -1,0 +1,186 @@
+------- Not strictly for filters - just mostly
+
+
+--- Weapon specific stuff
+
+#new 
+#name "swordsmaster"
+#basechance 0
+
+#type weapon
+-- Broad sword
+#chanceinc slot weapon 8 3
+-- Short sword
+#chanceinc slot weapon 6 3
+-- Great sword
+#chanceinc slot weapon 11 3
+-- Falchion
+#chanceinc slot weapon 10 0.25
+#chanceinc origname swordsman *20
+#commandvariant #female swordsmistress
+#theme elite
+#theme commander
+#end
+
+#new 
+#name "spearmaster"
+#basechance 0
+
+#type weapon
+#chanceinc slot weapon 1 3
+-- Coral Spear
+#chanceinc slot weapon 31 3
+-- Long Spear
+#chanceinc slot weapon 28 3
+#chanceinc origname spearman *20
+#commandvariant #female spearmistress
+#theme elite
+#theme commander
+#end
+
+
+#new 
+#name "axemaster"
+#basechance 0
+
+#type weapon
+-- Axe
+#chanceinc slot weapon 17 3
+-- Battleaxe
+#chanceinc origname axeman *20
+#commandvariant #female axemistress
+#theme elite
+#theme commander
+#end
+
+
+--- Rest
+
+#new 
+#type militia
+#name "militia"
+#basechance 0
+#chanceinc "unittheme militia 1000"
+#theme militia
+#end
+
+#new 
+#type hunter
+#name "hunter"
+#commandvariant #female huntress
+#basechance 0
+#chanceinc "personalcommand #stealthy 10"
+#chanceinc "unittheme stealthy *10"
+#chanceinc "pose not ranged *0"
+#theme stealthy
+#theme irregular
+#end
+
+
+#new 
+#type berserk
+#name "berserker"
+#basechance 0
+#chanceinc "unittheme berserk 25"
+#theme berserk
+#end
+
+
+#new 
+#name "brigand"
+#basechance 0
+#chanceinc "unittheme pillager 25"
+#theme pillager
+#theme elite
+#end
+
+
+#new 
+#name "irregular"
+#basechance 0
+#chanceinc "unittheme irregular 5"
+#chanceinc "pose not infantry *0"
+#theme irregular
+#theme elite
+#end
+
+#new 
+#type elite
+#name "guard"
+#basechance 0
+#chanceinc unittheme guard 25
+#chanceinc unittag allowelitenaming 0.25
+#end
+
+
+#new 
+#type elite
+#name "guardian"
+#basechance 0
+#chanceinc unittag allowelitenaming 0.25
+#chanceinc unittheme guard *10
+#end
+
+
+#new 
+#type elite
+#name "champion"
+#basechance 1
+#chanceinc unittheme allowelitenaming *5
+#theme elite
+#theme commander
+#end
+
+#new 
+#type elite
+#name "champion"
+#racevariant "Van" hirdman
+#basechance 1
+#chanceinc unittheme allowelitenaming *5
+
+#new 
+#type elite
+#name "knight"
+#racevariant "Oriental human" samurai
+#basechance 1
+#theme elite
+#end
+
+
+#new 
+#type elite
+#name "thane"
+#basechance 1
+#chanceinc race van *5
+#theme elite
+#end
+#theme elite
+#theme commander
+#end
+
+
+
+#new 
+#type elite
+#name "ranger"
+#basechance 0
+#chanceinc "personalcommand #stealthy 2"
+#chanceinc unittheme allowelitenaming 2
+#chanceinc pose not ranged *0
+#end
+
+#new 
+#type elite
+#name "sniper"
+#basechance 0
+#chanceinc "pose ranged 1.5"
+#theme elite
+#end
+
+#new 
+#type elite
+#name "marksman"
+#basechance 0
+#chanceinc "pose ranged 1.5"
+#theme elite
+#end

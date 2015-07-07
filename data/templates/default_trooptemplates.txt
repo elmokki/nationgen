@@ -15,7 +15,9 @@
 #themeinc "thisarmorprot 8 *0.50"
 #themeinc "thisarmorprot 10 *0.05"
 #themeinc "thisarmorprot 12 *0.01"
-#themeinc "thisitemtheme militia *10"
+#themeinc theme militia *10
+#themeinc theme heavy *0.25
+#themeinc theme advanced *0.25
 #theme militia
 #end
 
@@ -32,12 +34,13 @@
 #command "#mor +1"
 #command "#prec +1"
 #theme elite
-#themeinc "thisitemtheme elite *2"
+#themeinc "thisitemtheme elite *4"
 #themeinc thisarmorprot below 12 *0.5
 #themeinc thisarmorprot 12 *2
 #themeinc thisarmorprot 14 *2
 #generateitem 0.5 cloakb
 #alloweliteitems
+#allowelitenaming
 #end
 
 
@@ -55,12 +58,13 @@
 #command "#hp *1.2"
 #command "#prec +2"
 #theme elite
-#themeinc "thisitemtheme elite *5"
+#themeinc "thisitemtheme elite *8"
 #themeinc thisarmorprot below 12 *0.5
 #themeinc thisarmorprot 12 *2
 #themeinc thisarmorprot 14 *2
 #generateitem 1 cloakb
 #alloweliteitems
+#allowelitenaming
 #end
 
 
@@ -80,7 +84,7 @@
 #command "#hp *1.1"
 #command "#prec +1"
 #theme elite
-#themeinc "thisitemtheme elite *5"
+#themeinc "thisitemtheme elite *8"
 #generateitem 1 cloakb
 #alloweliteitems
 #end
@@ -97,10 +101,15 @@
 #themeinc theme irregular *4
 #themeinc thisarmorprot below 13 *2
 #themeinc thisarmorprot below 11 *2
-#maxvarieties 3
+#themeinc theme heavy *0.25
+#themeinc theme advanced *0.25
+#maxvarieties 2
+#maxunits 2
 #desc "Mountain survival"
 #primarycommand "#mountainsurvival"
 #generateitem 0.25 cloakb
+#theme irregular
+#theme mountain
 #end
 
 #new
@@ -114,10 +123,14 @@
 #themeinc theme irregular *4
 #themeinc thisarmorprot below 13 *2
 #themeinc thisarmorprot below 11 *2
-#maxvarieties 3
-#desc "Forest survival"
+#themeinc theme heavy *0.25
+#themeinc theme advanced *0.25
+#maxvarieties 2
+#maxunits 2
 #primarycommand "#forestsurvival"
 #generateitem 0.25 cloakb
+#theme irregular
+#theme forest
 #end
 
 #new
@@ -131,10 +144,15 @@
 #themeinc theme irregular *4
 #themeinc thisarmorprot below 13 *2
 #themeinc thisarmorprot below 11 *2
-#maxvarieties 3
+#themeinc theme heavy *0.25
+#themeinc theme advanced *0.25
+#maxvarieties 2
+#maxunits 2
 #desc "Swamp survival"
 #primarycommand "#swampsurvival"
 #generateitem 0.25 cloakb
+#theme irregular
+#theme swamp
 #end
 
 
@@ -145,12 +163,190 @@
 #chanceinc pose ranged *0
 #name "berserker"
 #command "#berserk +2"
+#command "#gcost *1.2"
+#theme berserk
 #theme primitive
 #tag "dwchance 0.5"
 #themeinc theme irregular *4
 #themeinc theme primitive *4
+#themeinc theme berserk *20
+#themeinc theme heavy *0.25
+#themeinc theme advanced *0.25
 #chanceinc thisarmorprot below 11 *2
 #chanceinc thisarmorprot below 9 *2
 #maxvarieties 2
 #maxunits 1
+#end
+
+
+#new
+#basechance 0.25
+#type stealth
+#name "stealthy"
+#maxvarieties 1
+#maxunits 1
+#chanceinc pose mounted *0.1
+#chanceinc pose chariot *0
+#chanceinc pose ranged *0.1
+#tag "bonusweaponchance 0.5"
+#command "#stealthy +0"
+#command "#gcost *1.2"
+#themeinc thisarmorprot 15 *0.05
+#themeinc thisarmorprot 13 *0.1
+#themeinc thisarmorprot below 11 *2
+#themeinc theme irregular *10
+#themeinc theme stealthy *20
+#themeinc theme heavy *0.25
+#theme irregular
+#theme stealthy
+#generateitem 0.25 cloakb
+#end
+
+
+#new
+#basechance 0.125
+#type patrol
+#name "patroller 1"
+#maxvarieties 2
+#maxunits 2
+#chanceinc pose chariot *0
+#command "#patrolbonus 1 +1"
+#generateitem 0.25 cloakb
+#end
+
+
+#new
+#basechance 0.125
+#type siege
+#name "castledef +1"
+#maxvarieties 2
+#maxunits 2
+#chanceinc pose mounted *0
+#chanceinc pose chariot *0
+#command "#castledef 1"
+#generateitem 0.25 cloakb
+#theme guard
+#end
+
+#new
+#basechance 0.125
+#type siege
+#name "castledef 2"
+#maxvarieties 2
+#maxunits 2
+#chanceinc pose mounted *0
+#chanceinc pose chariot *0
+#command "#castledef +2"
+#generateitem 0.25 cloakb
+#theme guard
+#end
+
+#new
+#basechance 0.125
+#type elite
+#type bodyguard
+#name "bodyguard elite"
+#maxvarieties 1
+#maxunits 1
+#chanceinc pose mounted *0
+#chanceinc pose ranged *0
+#chanceinc pose chariot *0
+#command "#def +1"
+#command "#att +1"
+#command "#gcost *1.2"
+#command "#mor +1"
+#command "#prec +1"
+#command "#bodyguard +2"
+#generateitem 1 cloakb
+#alloweliteitems
+#allowelitenaming
+#theme elite
+#theme guard
+#end
+
+#new
+#basechance 0.125
+#type bodyguard
+#name "bodyguard"
+#maxvarieties 1
+#maxunits 1
+#chanceinc pose mounted *0
+#chanceinc pose ranged *0
+#chanceinc pose chariot *0
+#command "#bodyguard +1"
+#generateitem 0.25 cloakb
+#theme elite
+#theme guard
+#end
+
+#new
+#basechance 0.075
+#type stealth
+#type elite
+#name "stealthy elite"
+#maxvarieties 1
+#maxunits 1
+#chanceinc pose mounted *0
+#chanceinc pose ranged *0
+#chanceinc pose chariot *0
+#command "#def +1"
+#command "#att +1"
+#command "#gcost *1.3"
+#command "#mor +1"
+#command "#prec +1"
+#command "#stealthy +0"
+#themeinc thisarmorprot below 15 *2
+#themeinc thisarmorprot below 13 *2
+#generateitem 1 cloakb
+#alloweliteitems
+#allowelitenaming
+#theme elite
+#theme stealthy
+#end
+
+
+
+#new
+#basechance 0.15
+#type pillager
+#name "pillager"
+#maxvarieties 2
+#maxunits 2
+#chanceinc pose mounted *0
+#chanceinc pose ranged *0
+#chanceinc pose chariot *0
+#command "#pillagebonus +2"
+#command "#stealthy +0"
+#tag "bonusweaponchance 0.5"
+#themeinc theme irregular *4
+#themeinc thisarmorprot below 13 *2
+#themeinc thisarmorprot below 11 *2
+#themeinc theme heavy *0.25
+#themeinc theme advanced *0.25
+#generateitem 1 cloakb
+#theme pillager
+#end
+#new
+
+#basechance 0.15
+#type pillager
+#type stealthy
+#name "pillager stealthy"
+#maxvarieties 2
+#maxunits 2
+#chanceinc pose mounted *0
+#chanceinc pose ranged *0
+#chanceinc pose chariot *0
+#command "#pillagebonus +2"
+#command "#stealthy +0"
+#command "#gcost *1.2"
+#tag "bonusweaponchance 0.5"
+#themeinc theme irregular *4
+#themeinc thisarmorprot below 13 *2
+#themeinc thisarmorprot below 11 *2
+#themeinc theme heavy *0.25
+#themeinc theme advanced *0.25
+#generateitem 1 cloakb
+#theme pillager
+#theme stealthy
 #end

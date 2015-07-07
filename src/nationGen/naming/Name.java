@@ -62,6 +62,7 @@ public class Name  {
 	public Name getCopy()
 	{
 		Name name = new Name();
+		name.rankprefix = rankprefix;
 		name.prefixprefix = prefixprefix;
 		name.prefix = prefix;
 		name.type = type;
@@ -117,6 +118,8 @@ public class Name  {
 	public String getPrefixSuffix()
 	{
 		String str = "";
+		if(rankprefix != null)
+			str = str + rankprefix + " ";
 		if(prefixprefix != null)
 			str = str + prefixprefix + " ";
 		if(prefix != null)
@@ -136,6 +139,7 @@ public class Name  {
 	public List<String> getAsList()
 	{
 		List<String> list = new ArrayList<String>();
+		list.add(rankprefix.name);
 		list.add(prefixprefix.name);
 		list.add(prefix.name);
 		list.add(type.name);
@@ -144,7 +148,24 @@ public class Name  {
 		return list;
 	}
 	
-
+	public List<NamePart> getAsNamePartList()
+	{
+		List<NamePart> list = new ArrayList<NamePart>();
+		list.add(rankprefix);
+		list.add(prefixprefix);
+		list.add(prefix);
+		list.add(type);
+		list.add(suffixprefix);
+		list.add(suffix);
+		
+		list.remove(null);
+		list.remove(null);
+		list.remove(null);
+		list.remove(null);
+		list.remove(null);
+		list.remove(null);
+		return list;
+	}
 	
 	public boolean isDuplicate(Name other)
 	{

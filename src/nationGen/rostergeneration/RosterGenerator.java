@@ -193,7 +193,6 @@ public class RosterGenerator {
 			int[] amounts = {cavalry.size(), infantry.size(), ranged.size(), chariot.size()};
 			String roll = rollRole(getChances(race), maxamounts, amounts, race);
 		
-
 			
 
 			List<Unit> target = null;
@@ -212,6 +211,9 @@ public class RosterGenerator {
 			{
 			
 				Unit u = tgen.generateUnit(roll, race, 3);
+				
+		
+
 				if(u != null)
 				{
 					target.add(u);
@@ -250,7 +252,7 @@ public class RosterGenerator {
 	private double[] getChances(Race race)
 	{
 		double chances[] = {0.25, 1, 0.25, 0.125};
-		String[] slots = {"ranged", "infantry", "cavalry", "chariot"};
+		String[] slots = {"ranged", "infantry", "mounted", "chariot"};
 		for(String tag : race.tags)
 		{
 			List<String> args = Generic.parseArgs(tag);

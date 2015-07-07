@@ -294,7 +294,7 @@ public class CommanderGenerator extends TroopGenerator {
 			// Goodleader
 			// Expertleader
 			double random = r.nextDouble();
-			if(random > 1 - 0.075 * i)
+			if(random > 1 - 0.125 * i)
 			{
 				power = 3;
 				com.commands.add(new Command("#gcost", "+50"));
@@ -321,7 +321,7 @@ public class CommanderGenerator extends TroopGenerator {
 		
 				
 			}
-			else if(random > 0.2 - 0.05 * i)
+			else if(random > 0.25 - 0.05 * i)
 			{
 				power = 2;
 				com.commands.add(new Command("#gcost", "+20"));
@@ -346,6 +346,8 @@ public class CommanderGenerator extends TroopGenerator {
 			}
 			else
 			{
+				com.commands.add(new Command("#okleader"));
+
 				if(r.nextDouble() > 0.75)
 				{
 					com.commands.add(new Command("#inspirational", "+1"));
