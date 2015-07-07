@@ -28,7 +28,7 @@ Generic
 
 Pose role
 ------------------------
-Usage:	#chanceinc pose <role> <mod>
+Usage:	#chanceinc pose [not] <role> <mod>
 Info: 	If the pose has given role, modifier is added. Pose is considered to have 
 	given role if it has role that is "elite <role>" or "sacred <role>"
 
@@ -87,8 +87,19 @@ Info:	If item has item with given id in a slot or in case of some custom items a
 Slotname
 ------------------------
 Usage:	#chanceinc slotname [not] [armor/weapon] <slot> <name> <mod>
-Info:	Same as above but not for base items and checks item name instead of id
+Info:	Same as above but not for base items of custom items and checks item name instead of id
 	Potentially useful for triggering from custom items.
+
+Slot tag
+------------------------
+Usage:	#chanceinc slottag [not] <slot> <tag> <mod>
+Info:	Applies modifier if item in given slot has given tag.
+
+Slot tag value
+------------------------
+Usage:	#chanceinc slottag [not] <slot> <tag> <value> <mod>
+Info:	Applies modifier if item in given slot has given tag with given value.
+
 
 Race theme
 ------------------------
@@ -199,6 +210,12 @@ Has theme theme
 ------------------------
 Usage:	#chanceinc hasthemetheme [not] <theme> <mod>
 Info:	If primary race has a theme with given #theme tagged, apply modifier
+
+
+Secondary race theme theme
+------------------------
+Usage:	#chanceinc secondarythemetheme [not] <theme> <mod>
+Info:	If secondary race has a theme with given #theme tagged, apply modifier
 
 Has any theme tag
 ------------------------

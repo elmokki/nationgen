@@ -224,7 +224,7 @@ public class NationAdvancedSummarizer {
 			for(String tag : u.getSlot("mount").tags)
 				if(tag.startsWith("animal"))
 				{
-					mountname =	Generic.parseArgs(tag, "'").get(1);
+					mountname =	Generic.getTagValue(u.getSlot("mount").tags, "animal");
 				}
 			line = line + NameGenerator.capitalize(mountname) + " mount, ";
 		}

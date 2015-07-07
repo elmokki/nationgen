@@ -10,6 +10,7 @@ import java.util.Map.Entry;
 import com.elmokki.Generic;
 
 import nationGen.items.Item;
+import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
@@ -20,75 +21,208 @@ public class TroopNamer {
 	private Nation n;
 
 	List<String> given = new ArrayList<String>();
+	private Random r;
+	
+	private List<NamePart> basenames;
+	private List<NamePart> weaponnames;
+	private List<NamePart> weaponprefixes;
+	private List<NamePart> mountprefixes;
+	private List<NamePart> specialprefixes;
+	private List<NamePart> specialnames;
+	private List<NamePart> miscitemprefixes;
+	private List<NamePart> miscitemnames;
+	private List<NamePart> miscguaranteed;
+	private List<NamePart> combases;
+	
+	private ChanceIncHandler chandler;
 	
 	public TroopNamer(Nation n)
 	{
 		this.n = n;
+		r = new Random(n.random.nextInt());
+		chandler = new ChanceIncHandler(n);
+		
+		basenames = ChanceIncHandler.retrieveFilters("troopbasenames", "troopbasenames", n.nationGen.miscnames, null, n.races.get(0));
+		weaponnames = ChanceIncHandler.retrieveFilters("troopweaponnames", "troopweaponnames", n.nationGen.miscnames, null, n.races.get(0));
+		weaponprefixes = ChanceIncHandler.retrieveFilters("troopweaponprefixes", "troopweaponprefixes", n.nationGen.miscnames, null, n.races.get(0));
+		mountprefixes = ChanceIncHandler.retrieveFilters("troopmountprefixes", "troopmountprefixes", n.nationGen.miscnames, null, n.races.get(0));
+		specialprefixes = ChanceIncHandler.retrieveFilters("troopspecialprefixes", "troopspecialprefixes", n.nationGen.miscnames, null, n.races.get(0));
+		specialnames = ChanceIncHandler.retrieveFilters("troopspecialnames", "troopspecialnames", n.nationGen.miscnames, null, n.races.get(0));
+		miscitemnames = ChanceIncHandler.retrieveFilters("troopmiscitemnames", "troopmiscitemnames", n.nationGen.miscnames, null, n.races.get(0));
+		miscitemprefixes = ChanceIncHandler.retrieveFilters("troopmiscitemprefixes", "troopmiscitemprefixes", n.nationGen.miscnames, null, n.races.get(0));
+		miscguaranteed = ChanceIncHandler.retrieveFilters("troopmiscguaranteedparts", "troopmiscguaranteedparts", n.nationGen.miscnames, null, n.races.get(0));
+		combases = ChanceIncHandler.retrieveFilters("commanderbasenames", "commanderbasenames", n.nationGen.miscnames, null, n.races.get(0));
+
+
 	}
 	
 	public void execute() {
-		nameNation(n);
+		nameNation();
 	}
 	
+	
 
-
-	private void nameNation(Nation n)
+	private void nameNation()
 	{
-
-		this.n = n;
-		nameAfterArmor(n);
 		
-		// Give light/heavy prefixes and nationality prefix
+		// Get base names ("warrior", "cavalry", "soldier" etc)
+		setBaseNames();
+		
+		// Forces every unit to have a weapon/mount (mount prioritized) based name
+		setWeaponMountNames();
+		
+	
+		// Add all troops to one list
 		List<Unit> alltroops = n.combineTroopsToList("infantry");
 		alltroops.addAll(n.combineTroopsToList("chariot"));
 		alltroops.addAll(n.combineTroopsToList("mounted"));
 		alltroops.addAll(n.combineTroopsToList("ranged"));
 		
-		NameGenerator.addHeavyLightPrefix(n.combineTroopsToList("infantry"));
-		NameGenerator.addHeavyLightPrefix(n.combineTroopsToList("mounted"));
-		NameGenerator.addHeavyLightPrefix(n.combineTroopsToList("ranged"));
-		NameGenerator.addNationalPrefix(alltroops, n);
+		// Give misc guaranteed parts
+		setGuaranteedParts(alltroops, miscguaranteed);
+		
+		// Differentiate units based on misc items
+		List<NamePart> parts = new ArrayList<NamePart>();
+		parts.addAll(miscitemnames);
+		parts.addAll(miscitemprefixes);
+		differentiateNames(alltroops, parts);
+		
+		// Give special parts
+		setGuaranteedParts(alltroops, specialnames);
+		setGuaranteedParts(alltroops, specialprefixes);
+		
+		// If we have overwritten a prefix we may want to differentiate infantry with weapon names
+		differentiateNames(n.combineTroopsToList("infantry"), weaponnames);
+
+		
+		// National prefix/suffix
+		addNationalPrefix(alltroops);
+		
+		// Give light/heavy prefixes and nationality prefix
+		addHeavyLightPrefix(n.combineTroopsToList("infantry"));
+		addHeavyLightPrefix(n.combineTroopsToList("mounted"));
+		addHeavyLightPrefix(n.combineTroopsToList("ranged"));
+		
 		
 		nameCommanders(n);
 		
 	}
 	
 	
-	private void nameCommanders(Nation n)
+
+
+	private void addHeavyLightPrefix(List<Unit> units)
 	{
-		List<Unit> units = n.comlists.get("commanders");
-		String[] basicnames = {"Commander", "Lord", "Castellan", "Sergeant", "Lieutenant"};
-		String[] betternames = {"General", "Colonel", "Warlord", "Lord Commander", "Strategus"};
-		List<String> used = new ArrayList<String>();;
+		for(Unit named : units)
+		{
+			for(Unit unit : units)
+			{
+				if(named.getName().equals(unit.getName()) && unit.getTotalProt() != named.getTotalProt())
+				{
+					if(unit.getTotalProt() < named.getTotalProt() && named.isHeavy())
+					{
+						String part = "Heavy";
+						named.name.setRankPrefix(part);
+						break;
+					}
+					else if(unit.getTotalProt() > named.getTotalProt() && named.isLight())
+					{
+						String part = "Light";
+						named.name.setRankPrefix(part);
+						break;
+					}
+
+				}
+			}
+		}
+	}
+	
+	private void addNationalPrefix(List<Unit> units)
+	{
+
+	
 		
 		for(Unit u : units)
 		{
-			boolean bad = true;
-			boolean unnamed = true;
+
 			
+			String part = "";
+			
+	
+			if(!u.race.visiblename.equals(n.races.get(0).visiblename))
+			{
+				part = u.race.visiblename;
+				u.name.setPrefixprefix(part);
+			}
+
+		}
+			
+	}
+	
+	private void nameCommanders(Nation n)
+	{
+		List<Unit> units = new ArrayList<Unit>();
+		units.addAll(n.comlists.get("commanders"));
+		List<Unit> generics = new ArrayList<Unit>();
+		List<NamePart> used = new ArrayList<NamePart>();
+		
+		for(Unit u : units)
+		{
+			int tier = 0;
 			for(Command c : u.commands)
 			{
-				if(c.command.startsWith("#inspirational") || c.command.startsWith("#goodleader") || c.command.startsWith("#expertleader"))
-					bad = false;
+				if(c.command.startsWith("#okleader"))
+					tier++;
+				else if(c.command.startsWith("#inspirational"))
+					tier++;
+				if(c.command.startsWith("#goodleader"))
+					tier++;
+				if(c.command.startsWith("#expertleader"))
+					tier++;
+				
+	
+		
 			}
-
-			if(n.random.nextBoolean())
-			{
-				String name = null;
-				unnamed = (null == (name = getWeaponBasedName(u, used, unnamed, true)));
-				if(name != null)
-					u.name.setType(name);
-			}
+			tier += r.nextInt(3) - 1; // -1 to 1
 			
-			if(bad && unnamed)
-				u.name.setType(basicnames[n.random.nextInt(basicnames.length)]);
-			else if(unnamed)
-				u.name.setType(betternames[n.random.nextInt(betternames.length)]);
-
-			used.add(u.getName());
+			tier = Math.max(Math.min(3, tier), 1);
+			
+			
+			List<NamePart> all = getSuitableParts(this.combases, false, true);
+			all.removeAll(used);
+			
+			List<NamePart> suitables = new ArrayList<NamePart>();
+			for(NamePart p : all)
+			{
+				if(Generic.getTagValues(p.tags, "tier").contains("" + tier))
+					suitables.add(p);
+			}
+			if(suitables.size() == 0)
+				for(NamePart p : all)
+				{
+					if(Generic.getTagValues(p.tags, "tier").size() == 0)
+						suitables.add(p);
+				}
+			
+			NamePart p = getSuitablePart(all, null, u);
+			used.add(p);
+			this.setNamePart(u, p);
+			
+			if(p.tags.contains("generic"))
+				generics.add(u);
 		}
 		
-		
+		// Extra stuff
+		setGuaranteedParts(units, miscguaranteed);
+		setGuaranteedParts(generics, this.specialprefixes);
+		units.clear();
+		for(Unit u : generics)
+			if(u.name.getAsNamePartList().size() < 2)
+				units.add(u);
+		setGuaranteedParts(units, weaponnames);
+
+			
+		// Scouts
 		units = n.comlists.get("scouts");
 		for(Unit u : units)
 		{
@@ -112,16 +246,166 @@ public class TroopNamer {
 		}
 	}
 	
-
-	private void nameAfterArmor(Nation n)
+	private List<NamePart> getSuitableParts(List<NamePart> all, boolean elite, boolean commander)
 	{
-		List<String> used = new ArrayList<String>();
-		List<String> wpnused = new ArrayList<String>();
+		List<NamePart> selected = new ArrayList<NamePart>();
+		for(NamePart p : all)
+		{
+			
+			if(p.themes.contains("elite") && elite)
+				selected.add(p);
+			if(p.themes.contains("commander") && commander && !selected.contains(p))
+				selected.add(p);
+			
+			if(!p.themes.contains("elite") && !p.themes.contains("commander") && !elite && !commander && !selected.contains(p))
+				selected.add(p);
+			
+		}	
 		
-		// Get non-weapon nameparts
+		return selected;
+	}
+	
+	private NamePart getSuitablePart(List<NamePart> all, List<NamePart> used, Unit u)
+	{
+		if(used == null)
+			used = new ArrayList<NamePart>();
+		
+		List<NamePart> newall = new ArrayList<NamePart>();
+		newall.addAll(all);
+		
+		NamePart part = null;
+		List<NamePart> unitname = u.name.getAsNamePartList();
+		List<NamePart> pointless = new ArrayList<NamePart>();
+		for(NamePart p : all)
+		{
+			boolean ok = true;
 
+			boolean prefix = p.tags.contains("prefix");
+			boolean prefixprefix = p.tags.contains("prefixprefix");
+			for(NamePart op : unitname)
+			{
+				if(op == null)
+					continue;
+				
+				if(op == p)
+					ok = false;
+				
+
+				
+				if((prefix && !op.tags.contains("prefix")) || (prefixprefix && !op.tags.contains("prefixprefix")))
+				{
+
+					for(String t : op.types)
+					{
+						if(p.types.contains(t))
+						{
+							ok = false;
+							break;
+						}
+					}
+				}
+			}
+			
+			if(!ok)
+			{
+				pointless.add(p);
+			}
+		}
+		
+		used.removeAll(pointless);
+		newall.removeAll(pointless);
 		
 		
+		// Use old part if possible
+		if(chandler.countPossibleFilters(used, u) > 0)
+		{
+			part = chandler.getRandom(used, u);
+		}
+		else
+		{
+			part = chandler.getRandom(newall, u);
+			if(part != null)
+				used.add(part);
+		}
+		
+		return part;
+	}
+	
+	private void setWeaponMountNames()
+	{
+		List<String> roles = new ArrayList<String>();
+		roles.add("infantry");
+		roles.add("mounted");
+		roles.add("ranged");
+		roles.add("chariot");
+		
+		List<NamePart> used = new ArrayList<NamePart>();
+		for(String role : roles)
+		{
+			List<Unit> units = n.generateUnitList(role);
+			
+			if(units.size() == 0)
+				continue;
+			
+			
+			for(Unit u : units)
+			{
+				
+				List<NamePart> parts;
+				// Mount stuff
+				if(u.getSlot("mount") != null)
+				{
+					parts = getSuitableParts(mountprefixes, false, false);
+				}
+				// Other stuff
+				else
+				{
+					List<NamePart> temp = new ArrayList<NamePart>();
+					temp.addAll(this.weaponnames);
+					temp.addAll(this.weaponprefixes);
+					parts = getSuitableParts(temp, false, false);
+				}
+				
+				List<NamePart> usedhere = new ArrayList<NamePart>();
+				usedhere.addAll(used);
+				usedhere.retainAll(parts);
+				
+				NamePart part = this.getSuitablePart(parts, usedhere, u);
+				
+				usedhere.removeAll(used);
+				used.addAll(usedhere);
+				
+				if(part != null)
+				{
+					setNamePart(u, part);
+
+				}
+				
+				
+				
+			}
+			
+			
+	
+			
+		}
+	}
+	
+	private void setNamePart(Unit u, NamePart part)
+	{
+		if(part.tags.contains("prefix"))
+			u.name.prefix = part;
+		else if(part.tags.contains("prefixprefix"))
+			u.name.prefixprefix = part;
+		else
+			u.name.type = part;
+	}
+	
+	
+	
+	private void setBaseNames()
+	{
+
 		List<String> roles = new ArrayList<String>();
 		roles.add("infantry");
 		roles.add("mounted");
@@ -131,357 +415,170 @@ public class TroopNamer {
 		
 		for(String role : roles)
 		{
-			List<List<Unit>> unitlists = n.getListsOfType(role, false, true);
-			NamePart defaultpart = new NamePart(n.nationGen);
-			defaultpart = NameGenerator.getTemplateName(n, role);
+			List<Unit> units = n.generateUnitList(role);
 			
-			for(List<Unit> list : unitlists)
-			{	
-				if(list.size() == 0)
-					continue;
-				
-				Name name = new Name();
-				name.type = defaultpart;
-				
-				if(true)
-				{
-					String str = getArmorBasedName(list.get(0), used);
-					
-		
-					
-					if(str != null)
-					{
-						if(!used.contains(str))
-							used.add(str);
-						
-						
-						String namepart = "";
-						List<String> args = Generic.parseArgs(str);
-						
-						if(args.size() == 2)
-							namepart = args.get(1);
-						else if(args.size() == 3)
-							namepart = args.get(2);
-						else
-							System.out.println("Faulty naming line: " + str);
-						
-						
-						
-						NamePart part = new NamePart(n.nationGen);
-						part.name = namepart;
-						
-						boolean canGive = canGive(str, "armor", unitlists);
-						if(!canGive && given.contains(str))
-							canGive = true;
-						
-						if(args.get(0).equals("name") && canGive)
-						{
-							given.add(str);
-							name.type = part;
-						}
-						else if((args.get(0).equals("prefix") && canGive) || args.get(0).equals("guaranteedprefix"))
-						{
-							given.add(str);
-							name.prefix = part;
-						}
-					}
-				}
-				
-				
-				for(Unit u : list)
-				{
-					if(u.tags.contains("auxillary"))
-						continue;
-					
-					u.name = name.getCopy();
-					
-					boolean unnamed = u.name.type.name.equals("UNNAMED");
-
-					String str = getWeaponBasedName(u, wpnused, unnamed, false);
+			if(units.size() == 0)
+				continue;
 			
+			NamePart part = chandler.getRandom(getSuitableParts(basenames, false, false), units);
 			
-		
-					
-					if(str != null)
-					{
-						if(!wpnused.contains(str))
-							wpnused.add(str);
-						
-						String namepart = "";
-						List<String> args = Generic.parseArgs(str);
-						
-						if(args.size() == 2)
-							namepart = args.get(1);
-						else if(args.size() == 3)
-							namepart = args.get(2);
-						else
-							System.out.println("Faulty naming line: " + str);
-						
-						NamePart part = new NamePart(n.nationGen);
-						part.name = namepart;
-						
-						boolean canGive = canGive(str, "weapon", unitlists);
-						if(!canGive)
-							canGive = canGive(str, "bonusweapon", unitlists);
-						if(!canGive && given.contains(str))
-							canGive = true;
-						
-
-						
-						if(args.get(0).equals("name") && (canGive || unnamed))
-						{
-							given.add(str);
-							u.name.type = part;
-						}
-						else if((args.get(0).equals("prefix") && (canGive || unnamed)) || args.get(0).equals("guaranteedprefix"))
-						{
-							given.add(str);
-							u.name.prefix = part;
-						}
-						
-				
-				
-					}
-					
-				
-				}
-				
-				for(Unit u : list)
+			if(part != null)
+			{
+				for(Unit u : units)
 				{
-					if(n.percentageOfRace(u.race) < 0.1 && u.race != n.races.get(0))
-					{
-						u.name.setType("Auxillary");
-					}
+					setNamePart(u, part);
 				}
-				
-				
 			}
+			else
+			{
+				System.out.println("Unable to find a base name for " + role + " of a nation of race " + n.races.get(0));
+			}
+			
 		}
 		
 
 	}
 	
-	private boolean canGive(String line, String slot, List<List<Unit>> unitlists)
+	private List<NamePart> getPointlessParts(List<NamePart> possibleParts, Unit u)
 	{
-		int all = 0;
-		int count = 0;
-		for(List<Unit> list : unitlists)
-			for(Unit u : list)
-			{
-				if(u.getSlot(slot) != null && u.getSlot(slot).tags.contains(line))
-					count++;
-				all++;
-			}
-				
+		List<NamePart> pointlessParts = new ArrayList<NamePart>();
 		
-		double perc = (double)count/(double)all;
-		return  n.random.nextDouble() < count * 0.1 + perc;
+		// Remove parts of already existing types
+		for(NamePart p : possibleParts)
+			for(String t : p.types)
+				for(NamePart p2 : u.name.getAsNamePartList())
+					if(p2 != null && p2.types.contains(t))
+						pointlessParts.add(p);
+		
+		return pointlessParts;
+		
 	}
-	
-	private String getArmorBasedName(Unit u, List<String> used)
+	private void differentiateNames(List<Unit> units, List<NamePart> parts)
 	{
-		List<String> prefixes = new ArrayList<String>();
-		List<String> guaranteedprefixes = new ArrayList<String>();
-		List<String> names = new ArrayList<String>();
-		List<String> old = new ArrayList<String>();
 		
-		for(Item item : u.slotmap.values())
-		{
+		for(Unit u : units)
+		{		
 			
-			if(item != null)
+			// Get all units with the same name
+			List<Unit> matches = new ArrayList<Unit>();
+			for(Unit u2 : units)
 			{
 				
-				if(item.slot.equals("weapon") || item.slot.equals("bonusweapon"))
-					continue;
-				
-
-				for(String s : item.tags)
+				if(u.getName().equals(u2.getName()))
 				{
-					parseNames(s, u, used, guaranteedprefixes, prefixes, names, old);
+					matches.add(u);
 				}
 			}
+			
+
+			// If we found more than one, we should try changing the names
+			if(matches.size() > 1)
+			{
+				List<NamePart> possibleParts = this.getSuitableParts(parts, false, false);
+				possibleParts = chandler.getPossibleFilters(possibleParts, u);
+					
+				
+				// Remove all parts that don't help differentiating at all
+				List<NamePart> pointlessParts = new ArrayList<NamePart>();
+				
+				// Remove parts of already existing types
+				for(NamePart p : possibleParts)
+					for(String t : p.types)
+						for(NamePart p2 : u.name.getAsNamePartList())
+							if(p2 != null && p2.types.contains(t))
+								pointlessParts.add(p);
+				
+
+				for(NamePart p : possibleParts)
+				{
+					
+					int samematches = 1;
+					int sames = 1;
+					for(Unit u2 : units)
+					{
+						if(u2 == u)
+							continue;
+					
+						List<NamePart> possibleParts2 = this.getSuitableParts(parts, false, false);
+						possibleParts2 = chandler.getPossibleFilters(possibleParts2, u2);
+						
+						if(possibleParts2.contains(p))
+						{
+							sames++;
+							if(matches.contains(u2))
+								samematches++;
+						}
+					}
+					
+					if(samematches == matches.size() || sames > matches.size() + 2)
+						pointlessParts.add(p);
+				
+	
+				}
+					
+				possibleParts.removeAll(pointlessParts);
+				possibleParts.removeAll(u.name.getAsNamePartList());
+				// If we have possible parts, set one.
+				if(possibleParts.size() > 0)
+				{
+					NamePart p = chandler.getRandom(possibleParts, u);
+					
+
+					for(Unit u2 : units)
+					{
+						List<NamePart> possibleParts2 = this.getSuitableParts(parts, false, false);
+						possibleParts2 = chandler.getPossibleFilters(possibleParts2, u2);
+						possibleParts2.removeAll(getPointlessParts(possibleParts2, u2));
+				
+						
+						if(possibleParts2.contains(p))
+						{
+							setNamePart(u2, p);
+						}
+					}
+				}
+					
+				
+			}
+			
 		}
-		for(String s : u.tags)
-		{
-			parseNames(s, u, used, guaranteedprefixes, prefixes, names, old);
-		}
+	}
+	
+	private void setGuaranteedParts(List<Unit> units, List<NamePart> all)
+	{
 		
-		Random r = n.random;
-		boolean prefix = r.nextBoolean();
+		List<NamePart> used = new ArrayList<NamePart>();
+		for(Unit u : units)
+		{
+			List<NamePart> parts = new ArrayList<NamePart>();
+			
+			boolean elite = Generic.getAllUnitTags(u).contains("allowelitenaming");
+			
+			parts = getSuitableParts(all, elite, false);
 		
-		if(guaranteedprefixes.size() > 0)
-		{
-			return guaranteedprefixes.get(r.nextInt(guaranteedprefixes.size()));
-		}
-		else if(old.size() > 0)
-		{
-			return old.get(r.nextInt(old.size()));
-		}
-		else if((prefix || names.size() == 0) && prefixes.size() > 0)
-		{
-			return prefixes.get(r.nextInt(prefixes.size()));
-		}
-		else if(names.size() > 0)
-		{
-			return names.get(r.nextInt(names.size()));
-		}
-		else
-		{
-			return null;
+			
+			List<NamePart> usedhere = new ArrayList<NamePart>();
+			usedhere.addAll(used);
+			usedhere.retainAll(parts);
+			
+			NamePart part = this.getSuitablePart(parts, usedhere, u);
+
+			usedhere.removeAll(used);
+			used.addAll(usedhere);
+			
+			if(part != null)
+			{
+				setNamePart(u, part);
+
+			}
+			
+			
+			
 		}
 		
 	}
 	
-	private void parseNames(String s, Unit u, List<String> used, List<String> guaranteedprefixes,  List<String> prefixes,  List<String> names, List<String> old)
-	{
-		if(used.contains(s))
-			old.add(s);
-		
-		List<String> args = Generic.parseArgs(s);
 
-		if(args.get(0).equals("name"))
-		{
-			if(args.size() == 2)
-			{
-				names.add(s);
-			}
-			else if(args.size() > 2 && u.pose.roles.contains(args.get(1)))
-			{
-				names.add(s);
-			}
-			else if(args.size() < 2)
-				System.out.println("Faulty naming line: " + s);
-		}
-		else if(args.get(0).equals("prefix"))
-		{
-			if(args.size() == 2)
-				prefixes.add(s);
-			else if(args.size() > 2 && u.pose.roles.contains(args.get(1)))
-				prefixes.add(s);
-			else if(args.size() < 2)
-				System.out.println("Faulty naming line: " + s);
-		}
-		else if(args.get(0).equals("guaranteedprefix"))
-		{
-			if(args.size() == 2)
-				guaranteedprefixes.add(s);
-			else if(args.size() > 2 && u.pose.roles.contains(args.get(1)))
-				guaranteedprefixes.add(s);	
-			else if(args.size() < 2)
-				System.out.println("Faulty naming line: " + s);
-		}
-	}
-
-	private String getWeaponBasedName(Unit u, List<String> used, boolean unnamed, boolean isCommander)
-	{
-		List<String> prefixes = new ArrayList<String>();
-		List<String> guaranteedprefixes = new ArrayList<String>();
-		List<String> names = new ArrayList<String>();
-		List<String> old = new ArrayList<String>();
-		
-		for(Item item : u.slotmap.values())
-		{
-			
-			if(item != null)
-			{
-				if(!item.slot.equals("weapon") && !item.slot.equals("bonusweapon"))
-					continue;
-				
-
-				
-				for(String s : item.tags)
-				{
-					List<String> args = Generic.parseArgs(s);
-					
-					if(used.contains(s))
-					{
-						old.add(s);
-					}
-					else if(args.size() == 2 && used.contains(args.get(1)))
-					{
-						old.add(args.get(1));
-					}
-					else if(args.size() == 3 && used.contains(args.get(2)))
-					{
-						old.add(args.get(2));
-					}
-					
-					if(args.get(0).equals("name"))
-					{
-						if(args.size() == 2 && !isCommander)
-						{
-							names.add(s);
-						}
-						else if(args.size() == 3 && args.get(1).equals("commander") && isCommander)
-						{
-							names.add(args.get(2));
-						}
-						else if(args.size() == 3 && u.pose.roles.contains(args.get(1)) && !isCommander)
-						{
-							names.add(s);
-						}
-					}
-					else if(args.get(0).equals("prefix"))
-					{
-						if(args.size() == 2 && !isCommander)
-							prefixes.add(s);
-						else if(args.size() == 3 && args.get(1).equals("commander") && isCommander)
-						{
-							prefixes.add(args.get(2));
-						}
-						else if(args.size() == 3 && u.pose.roles.contains(args.get(1)) && !isCommander)
-							prefixes.add(s);
-					}
-					else if(args.get(0).equals("guaranteedprefix"))
-					{
-						if(args.size() == 2 && !isCommander)
-							guaranteedprefixes.add(s);
-						else if(args.size() == 3 && args.get(1).equals("commander") && isCommander)
-						{
-							guaranteedprefixes.add(args.get(2));
-						}
-						else if(args.size() == 3 && u.pose.roles.contains(args.get(1)) && !isCommander)
-							guaranteedprefixes.add(s);	
-					}
-				}
-			}
-		}
-		
-		Random r = n.random;
-		boolean prefix = r.nextBoolean();
-		
-		List<String> newold = new ArrayList<String>();
-		for(String str : old)
-		{
-			List<String> args = Generic.parseArgs(str);
-			if(args.size() > 2 && u.pose.roles.contains(args.get(1)) && !isCommander)
-				newold.add(str);
-			else if(args.size() > 2 && args.get(1).equals("commander") && isCommander)
-				newold.add(args.get(2));
-		}
-		
-		if(guaranteedprefixes.size() > 0 && !unnamed)
-		{
-			return guaranteedprefixes.get(r.nextInt(guaranteedprefixes.size()));
-		}
-		else if(newold.size() > 0 && !unnamed)
-		{
-			return newold.get(r.nextInt(newold.size()));
-		}
-		else if((prefix || names.size() == 0) && prefixes.size() > 0 && !unnamed && r.nextBoolean())
-		{
-			return prefixes.get(r.nextInt(prefixes.size()));
-		}
-		else if(names.size() > 0 && (r.nextBoolean() || unnamed))
-		{
-			return names.get(r.nextInt(names.size()));
-		}
-		else
-		{
-			return null;
-		}
-		
-	}
 
 
 
