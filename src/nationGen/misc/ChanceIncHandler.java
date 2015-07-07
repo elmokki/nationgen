@@ -1431,7 +1431,7 @@ public class ChanceIncHandler {
 						else if(i.getClass() == CustomItem.class)
 						{
 							CustomItem ci = (CustomItem)i;
-							if(ci.olditem != null || ci.olditem.id.equals(args.get(args.size() - 2)))
+							if(ci.olditem != null && ci.olditem.id != null && ci.olditem.id.equals(args.get(args.size() - 2)))
 							{
 								contains = true;
 							}
