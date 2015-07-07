@@ -11,8 +11,20 @@
 #chanceinc slot weapon 6 5
 -- Great sword
 #chanceinc slot weapon 11 5
+-- Claymore
+#chanceinc slot weapon 258 5
+-- Jotun Longsword
+#chanceinc slot weapon 268 5
+-- Obsidian Club Swords
+#chanceinc slot weapon 288 5
+#chanceinc slot weapon 451 5
+-- Coral Swords
+#chanceinc slot weapon coralbroadsword 5
+#chanceinc slot weapon coralshortsword 5
 -- Falchion
 #chanceinc slot weapon 10 0.25
+-- Kopesh
+#chanceinc slot weapon 513 0.25
 #chanceinc origname swordsman *20
 #commandvariant #female swordsmistress
 #theme elite
@@ -27,8 +39,9 @@
 
 #type weapon
 #chanceinc slot weapon 1 5
--- Coral Spear
+-- Coral Spears
 #chanceinc slot weapon 31 5
+#chanceinc slot weapon corallongspear 5
 -- Long Spear
 #chanceinc slot weapon 28 5
 #chanceinc origname spearman *20
@@ -48,6 +61,13 @@
 -- Axe
 #chanceinc slot weapon 17 5
 -- Battleaxe
+#chanceinc slot weapon 18 5
+-- Jotun Axe
+#chanceinc slot weapon 66 5
+-- Jotun Battleaxe
+#chanceinc slot weapon 307 5
+-- Hatchet
+#chanceinc slot weapon 253 5
 #chanceinc origname axeman *20
 #commandvariant #female axemistress
 #theme elite
@@ -75,12 +95,21 @@
 #generic
 #end
 
-
 #new 
 #name "castellan"
 #basechance 0.5
 #theme commander
 #tier 2
+#tier 1
+#end
+
+
+#new 
+#name "warden"
+#basechance 0.25
+#chanceinc origname ranger *20
+#chanceinc origname guard *10
+#theme commander
 #tier 1
 #end
 
@@ -90,7 +119,6 @@
 #theme commander
 #tier 3
 #end
-
 
 #new 
 #name "sergeant"
@@ -102,6 +130,15 @@
 
 #new 
 #name "lieutenant"
+#basechance 0.5
+#theme commander
+#theme advanced
+#tier 1
+#tier 2
+#end
+
+#new 
+#name "captain"
 #basechance 0.5
 #theme commander
 #theme advanced
