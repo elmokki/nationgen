@@ -776,9 +776,38 @@
 #chanceinc "magic nature 0.125"
 #chanceinc "magic death 0.5"
 #chanceinc "magic nature death 2"
+#chanceinc "personalcommand illusion 0.125"
+#chanceinc "theme fae 0.5"
 #tag "notfortier 1"
 #tag "notfortier 2"
 #description "is followed into battle by two black dogs"
+#end
+
+#new magefilter
+#name "fairy_primary"
+#type "familiar"
+#basechance 0
+#command "#batstartsum2 592"
+#chanceinc "magic nature 0.05"
+#chanceinc "magic air *2"
+#chanceinc "personalcommand illusion *3"
+#chanceinc "theme fae *3"
+#tag "notfortier 1"
+#tag "notfortier 2"
+#description "is jealously protected by fairy companions"
+#end
+
+#new magefilter
+#name "fairy"
+#type "familiar"
+#basechance 0
+#command "#batstartsum1 592"
+#chanceinc "magic nature 0.05"
+#chanceinc "magic air *2"
+#chanceinc "personalcommand illusion *3"
+#chanceinc "theme fae *3"
+#tag "notfortier 1"
+#description "is accompanied by a small fairy"
 #end
 
 #new magefilter

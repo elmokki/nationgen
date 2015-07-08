@@ -1,0 +1,52 @@
+-- Barechested
+
+#newitem
+#basechance 0.25
+#name "nothing"
+#gameid -1
+#needs legs roninpants
+#armor
+#theme "naked"
+#theme "oriental"
+#enditem
+
+
+--- Leather
+
+#newitem
+#basechance 1
+#name "leather cuirass"
+#gameid 5
+#sprite /graphics/hoburg/bodyarmor/crossbow/roninarmor.png
+#recolormask /graphics/hoburg/bodyarmor/crossbow/roninarmor_recolormask.png
+#needs legs roninpants
+#armor
+#theme "leather"
+#theme "oriental"
+#enditem
+
+#newitem
+#basechance 1
+#name "leather hauberk"
+#gameid 10
+#sprite /graphics/hoburg/bodyarmor/crossbow/roninarmor.png
+#recolormask /graphics/hoburg/bodyarmor/crossbow/roninarmor_recolormask.png
+#needs legs roninpants
+#armor
+#theme "leather"
+#theme "oriental"
+#enditem
+
+
+--- Ashiguru
+
+#newitem
+#basechance 2
+#name "ashigaru armor"
+#gameid 128
+#sprite /graphics/hoburg/bodyarmor/crossbow/ashigaruarmor.png
+#recolormask /graphics/hoburg/bodyarmor/crossbow/ashigaruarmor_recolormask.png
+#needs legs ashigarupants
+#armor
+#theme "oriental"
+#enditem

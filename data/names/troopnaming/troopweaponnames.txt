@@ -10,13 +10,26 @@
 #type weapon
 
 -- Broad sword
+-- Broad sword
 #chanceinc slot weapon 8 1
 -- Short sword
 #chanceinc slot weapon 6 1
 -- Great sword
 #chanceinc slot weapon 11 1
+-- Claymore
+#chanceinc slot weapon 258 1
+-- Jotun Longsword
+#chanceinc slot weapon 268 1
+-- Obsidian Club Swords
+#chanceinc slot weapon 288 1
+#chanceinc slot weapon 451 1
+-- Coral Swords
+#chanceinc slot weapon coralbroadsword 1
+#chanceinc slot weapon coralshortsword 1
 -- Falchion
 #chanceinc slot weapon 10 0.25
+-- Kopesh
+#chanceinc slot weapon 513 0.25
 #commandvariant #female swordsmaiden
 #end
 
@@ -41,8 +54,9 @@
 #type weapon
 -- Spear
 #chanceinc slot weapon 1 1
--- Coral Spear
+-- Coral Spears
 #chanceinc slot weapon 31 1
+#chanceinc slot weapon corallongspear 1
 -- Long Spear
 #chanceinc slot weapon 28 1
 -- Stone spear
@@ -63,6 +77,10 @@
 #chanceinc slot weapon 593 1
 -- club
 #chanceinc slot weapon 252 1
+-- coral club
+#chanceinc slot weapon 45 1
+-- stone club
+#chanceinc slot weapon 429 1
 #end
 
 ----- Clubs
@@ -78,6 +96,12 @@
 #chanceinc slot weapon 593 0.1
 -- club
 #chanceinc slot weapon 252 0.1
+-- coral club
+#chanceinc slot weapon 45 1
+-- stone club
+#chanceinc slot weapon 429 1
+-- Iron cudgel
+#chanceinc slot weapon 363 1
 -- hammer
 #chanceinc slot weapon 13 0.1
 -- mace
@@ -97,7 +121,6 @@
 #type weapon
 #chanceinc slot weapon 553 1
 #chanceinc slotname not offhand thrown_rocks *0
-#prefix
 #end
 
 ----- Hammer
@@ -109,7 +132,8 @@
 #type weapon
 -- hammer
 #chanceinc slot weapon 13 1
-#prefix
+-- maul
+#chanceinc slot weapon 14 1
 #end
 
 
@@ -124,7 +148,11 @@
 #chanceinc slot weapon 17 1
 -- Battleaxe
 #chanceinc slot weapon 18 1
--- Stone hatchet
+-- Jotun Axe
+#chanceinc slot weapon 66 1
+-- Jotun Battleaxe
+#chanceinc slot weapon 307 1
+-- Hatchet
 #chanceinc slot weapon 253 1
 #commandvariant #female axemaiden
 #end
@@ -142,6 +170,8 @@
 #type weapon
 -- Pike
 #chanceinc slot weapon 2 1
+-- Short Pike
+#chanceinc slot weapon 590 1
 #commandvariant #female pikemaiden
 #end
 
@@ -152,6 +182,8 @@
 #type weapon
 -- Pike
 #chanceinc slot weapon 2 1
+-- Short Pike
+#chanceinc slot weapon 590 1
 #end
 
 ----- Halberd
@@ -212,6 +244,9 @@
 #type weapon
 -- lance
 #chanceinc slot lanceslot 4 1
+-- light lances
+#chanceinc slot weapon 357 1
+#chanceinc slot weapon 596 1
 #chanceinc prot 14 *0.125
 #end
 
@@ -273,6 +308,7 @@
 #chanceinc slot weapon 25 0.5
 #chanceinc slot weapon 26 0.5
 #chanceinc slot weapon 463 0.5
+#chanceinc slotname weapon steel_crossbow 0.5
 #chanceinc slotname weapon crossbow_hoburg 0.5
 #chanceinc slotname weapon arbalest_hoburg 0.5
 #chanceinc slotname weapon advanced_crossbow 0.5
@@ -285,6 +321,14 @@
 ----- Misc ranged
 #new 
 #name "blowpiper"
+#basechance 0
+
+#type weapon
+#chanceinc slot weapon 34 1
+#end
+
+#new 
+#name "empoisoner"
 #basechance 0
 
 #type weapon
@@ -338,6 +382,7 @@
 
 #type weapon
 #chanceinc slot weapon 22 1
+#chanceinc slot weapon heavy_sling 1
 #end
 
 
