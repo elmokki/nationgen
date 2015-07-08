@@ -6,3 +6,72 @@
 #tag "name infantry lancer"
 #needs handslots one_hand
 #enditem
+
+#newitem
+#name "katana"
+#gameid -1
+#needs specialweapon katana
+#sprite /graphics/tengu/weapons/katana/katana.png
+#offsetx 0
+#offsety -11
+#enditem
+
+#newitem
+#name "nodachi"
+#gameid -1
+#needs specialweapon nodachi
+#sprite /graphics/tengu/weapons/katana/nodachi.png
+#offsetx 0
+#offsety -11
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#sprite /graphics/weapon/standard/falchion.png
+#offsetx 0
+#offsety -5
+#enditem
+
+
+--- Polearms
+
+#newitem
+#id longspear
+#gameid 28
+#sprite /graphics/weapon/standard/longspear.png
+#offsetx -1
+#offsety -7
+#troopweapon
+#needs offhand nooffhand
+#enditem
+
+#newitem
+#id spear
+#gameid 1
+#sprite /graphics/weapon/standard/spear.png
+#offsetx -1
+#offsety -7
+#troopweapon
+#needs offhand nooffhand
+#enditem
+
+#newitem
+#id yari
+#gameid 376
+#sprite /graphics/weapon/standard/spear.png
+#offsetx -1
+#offsety -7
+#troopweapon
+#needs offhand nooffhand
+#enditem
+
+#newitem
+#id naginata
+#gameid 380
+#sprite /graphics/tengu/weapons/naginata.png
+#offsetx 1
+#offsety -7
+#troopweapon
+#needs offhand nooffhand
+#enditem
