@@ -14,6 +14,7 @@ import nationGen.items.Item;
 import nationGen.magic.MagicPattern;
 import nationGen.magic.RandomEntry;
 import nationGen.misc.Command;
+import nationGen.misc.ItemSet;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
@@ -663,54 +664,79 @@ public class CommanderGenerator extends TroopGenerator {
 
 	}
 
+	
+	private ItemSet getSuitableCommanderItems(Unit u, String slot)
+	{
+		ItemSet all = new ItemSet();
+		
+		Item i = u.getSlot(slot);
+		boolean sacred = u.tags.contains("sacred") || (i != null && i.tags.contains("sacred"));
+		
+		all.addAll(u.pose.getItems(slot).filterTheme("elite", true));
+		if(sacred)
+			all.addAll(u.pose.getItems(slot).filterTheme("sacred", true));
+
+		if(i != null && i.name != null)
+			all.removeAll(u.pose.getItems(slot).filterTag("eliteversion " + i.name, true));
+
+		
+		return all;
+		
+	}
 
 	private void equipEliteItem(Unit u, String slot)
 	{
 
-
+		
+		
 		int helmetprot = 0;
 		
 		Item helmet = null;
 		if(u.getSlot(slot) == null)
 			return;
 		
+		
+		
 		if(u.getSlot(slot).armor)
 			helmetprot = nationGen.armordb.GetInteger(u.getSlot(slot).id, "prot");
 			
+		// Try to get elite version
 		Item item = u.getSlot(slot);
 		if(Generic.containsTag(item.tags, "eliteversion"))
 		{
-			helmet = u.pose.getItems(slot).filterTag("elite", true).getItemWithName(Generic.getTagValue(item.tags, "eliteversion"), slot);
+			helmet = u.pose.getItems(slot).getItemWithName(Generic.getTagValue(item.tags, "eliteversion"), slot);
 		}
+		
 		
 		// No elite version and already elite or sacred? Yeah. Let's not bother.
-		if(u.getSlot(slot) != null)
-		{
-			if(u.getSlot(slot).tags.contains("elite") || u.getSlot(slot).tags.contains("sacred"))
-				return;
-		}
-
+		if(helmet == null && (u.getSlot(slot).themes.contains("elite") || u.getSlot(slot).themes.contains("sacred")))
+			return;
 	
-		
-		if(u.getSlot(slot).armor && helmet == null && !slot.equals("offhand"))
-		{
-				helmet = Entity.getRandom(nation.random, u.pose.getItems(slot).filterTag("elite", true).filterProt(nationGen.armordb, helmetprot, helmetprot));
-			
-				if(helmet == null)
-					helmet = Entity.getRandom(nation.random, u.pose.getItems(slot).filterTag("elite", true).filterProt(nationGen.armordb, helmetprot, helmetprot + 8));
-		}
 
+		// Try to get an elite item with same id in same slot
 		if(helmet == null && item != null && u.pose.getItems(slot) != null)
 		{
 			try
 			{
-				helmet = u.pose.getItems(slot).getItemWithID(item.id, slot);
+				helmet = getSuitableCommanderItems(u, slot).filterArmor(item.armor).getItemWithID(item.id, slot);
 			}
 			catch(Exception e)
 			{
 			
 			}
 		}
+		
+		// Try to get an elite armor of some suitable sort
+		if(u.getSlot(slot).armor && helmet == null && !slot.equals("offhand"))
+		{
+				helmet = chandler.getRandom(getSuitableCommanderItems(u, slot).filterProt(nationGen.armordb, helmetprot, helmetprot));
+			
+				if(helmet == null)
+					helmet = chandler.getRandom(getSuitableCommanderItems(u, slot).filterProt(nationGen.armordb, helmetprot - 2, helmetprot + 8));
+		
+		}
+
+
 		
 		if(helmet != null)
 			u.setSlot(slot, helmet);
