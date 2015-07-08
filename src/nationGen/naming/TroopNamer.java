@@ -210,16 +210,25 @@ public class TroopNamer {
 			
 			if(p.tags.contains("generic"))
 				generics.add(u);
+			
+			List<Unit> only = new ArrayList<Unit>();
+			only.add(u);
+			setGuaranteedParts(only, miscguaranteed);
+			
+			if(p.tags.contains("generic") && !p.tags.contains("prefix"))
+			{
+				setGuaranteedParts(only, weaponprefixes);
+				setGuaranteedParts(only, specialprefixes);
+			}
+			else if(p.tags.contains("prefix"))
+			{
+				setGuaranteedParts(only, weaponnames);
+				setGuaranteedParts(only, specialnames);
+			}
 		}
 		
-		// Extra stuff
-		setGuaranteedParts(units, miscguaranteed);
-		setGuaranteedParts(generics, this.specialprefixes);
-		units.clear();
-		for(Unit u : generics)
-			if(u.name.getAsNamePartList().size() < 2)
-				units.add(u);
-		setGuaranteedParts(units, weaponnames);
+
+
 
 			
 		// Scouts
