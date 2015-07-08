@@ -641,18 +641,23 @@ public class TroopGenerator {
 	public void addTemplateFilter(Unit u, String query, String defaultv)
 	{
 		
-		
+		// If we have #onlyfilter, skip!
+		if(!canGetMoreFilters(u))
+			return;
+			
 		List<Filter> possibleFilters = new ArrayList<Filter>();
 		possibleFilters.addAll(this.unitTemplates);
 		possibleFilters.removeAll(u.appliedFilters);
 		
-	
+		
 		// Add unit template filter to available template filters
-		if(unitTemplates.size() < maxtemplates || chandler.countPossibleFilters(possibleFilters, u) == 0)
+		if(unitTemplates.size() < maxtemplates)
 		{
 			List<Filter> tFilters = ChanceIncHandler.retrieveFilters(query, defaultv, nationGen.templates, u.pose, u.race);
 			possibleFilters.retainAll(tFilters);
-			tFilters.removeAll(unitTemplates);			
+			tFilters.removeAll(unitTemplates);		
+			tFilters.removeAll(u.appliedFilters);	
+						
 			tFilters = ChanceIncHandler.getValidUnitFilters(tFilters, u);
 			
 			Filter t = chandler.getRandom(tFilters, u);
@@ -660,18 +665,19 @@ public class TroopGenerator {
 			
 			if(t != null)
 			{
+
 				unitTemplates.add(t);
 				possibleFilters.add(t);
 			}
 		
 		}
 		
+
 		Filter f = chandler.getRandom(possibleFilters, u);
 		if(f != null)
 		{
 			appliedtemplates++;
 			u.appliedFilters.add(f);
-			
 			if(Generic.containsTag(f.tags, "maxunits"))
 			{
 				int max = Integer.parseInt(Generic.getTagValue(f.tags, "maxunits"));
@@ -693,21 +699,33 @@ public class TroopGenerator {
 		}
 	}
 	
+	
+	private boolean canGetMoreFilters(Unit u)
+	{
+		boolean ok = true;
+		for(Filter f : u.appliedFilters)
+			if(f.tags.contains("onlyfilter"))
+				ok = false;
+		
+		return ok;
+	}
 	public void addInitialFilters(Unit u, String role)
 	{
 
 		unitGen.addFreeTemplateFilters(u);
+
 		
-		if(random.nextDouble() < 0.05 || appliedtemplates < maxtemplates)
+		
+		if((random.nextDouble() < 0.075 || appliedtemplates < maxtemplates) && canGetMoreFilters(u))
 		{
 
 			addTemplateFilter(u, "trooptemplates", "default_templates");
-			if(random.nextDouble() < 0.3)
+			if(random.nextDouble() < 0.25  && canGetMoreFilters(u))
 			{
 				addTemplateFilter(u, "trooptemplates", "default_templates");
 			}
 		}	
-		
+
 		removeEliteSacred(u, role);
 
 	}
