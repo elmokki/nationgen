@@ -2,6 +2,8 @@ package nationGen.rostergeneration;
 
 
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import com.elmokki.Generic;
@@ -36,45 +38,73 @@ public class ScoutGenerator extends TroopGenerator {
 
 
 		Random r = new Random(nation.random.nextInt());
-		int tier = 1 + r.nextInt(3);
-		
-		Pose p = null;
-		Item weapon = null;
-		
-		int tries = 0;
-		while((p == null || weapon == null) && tries < 10)
-		{
-			tries++;
-			if(tier != 3)
-				weapon = race.getItems("weapon", posename).filterDom3DB("2h", "0", true, nationGen.weapondb).getRandom(chandler, r);
-			else
-			{
-				weapon = race.getItems("weapon", posename).filterDom3DBInteger("lgt", 3, true, nationGen.weapondb).getRandom(chandler, r);
-			}
-			if(weapon == null)
-			{
-				weapon = race.getItems("weapon", posename).getRandom(chandler, r);
-			}
-			
-			// Chance to give a whatever weapon rarely
-			if(r.nextDouble() > 0.9 + (tier - 1) * 0.25)
-			{
-				Item tweapon = race.getItems("weapon", posename).getRandom(chandler, r);
-				if(tweapon != null)
-					weapon = tweapon;
-			}
 	
-			
-			for(Pose p2 : race.poses)
-			{
-				if(p2.roles.contains(posename) && p2.getItems("weapon").contains(weapon))
-					p = p2;
-			}
-			
+		
+		// Select whether it is a spy, scout or assassin
+		double scoutchance = 0.5;
+		double spychance = 0.25;
+		double assassinchance = 0.25;
+		
+		if(Generic.containsTag(race.tags, "scoutchance"))
+			scoutchance = Double.parseDouble(Generic.getTagValue(race.tags, "scoutchance"));
+		if(Generic.containsTag(race.tags, "spychance"))
+			scoutchance = Double.parseDouble(Generic.getTagValue(race.tags, "spychance"));
+		if(Generic.containsTag(race.tags, "assassinchance"))
+			scoutchance = Double.parseDouble(Generic.getTagValue(race.tags, "assassinchance"));
+		
+		
+		double all = scoutchance + spychance + assassinchance;
+		double roll = r.nextDouble() * all;
+		
+		int tier = 1;
+		if(roll < assassinchance)
+			tier = 3;
+		else if(roll < spychance + assassinchance)
+			tier = 2;
 
+		
+		// Get possible poses
+		List<Pose> possiblePoses = new ArrayList<Pose>();
+		for(Pose p : race.getPoses(posename))
+		{
+			if(p.tags.contains("cannot_be_scout") && tier == 1)
+				continue;
+			else if(p.tags.contains("cannot_be_spy") && tier == 2)
+				continue;
+			else if(p.tags.contains("cannot_be_assassin") && tier == 3)
+				continue;	
+			possiblePoses.add(p);
+		}
+		
+		// Select pose
+		Pose p = chandler.getRandom(possiblePoses, race, posename);
+		
+		
+		// Select a mainhand weapon
+		Item weapon = null;
+		if(tier != 3) //  Scout/spy gets whatever non-2h
+			weapon = p.getItems("weapon").filterDom3DB("2h", "0", true, nationGen.weapondb).getRandom(chandler, r);
+		else // Assassin gets max length 3 weapons
+		{
+			weapon = p.getItems("weapon").filterDom3DBInteger("lgt", 3, true, nationGen.weapondb).getRandom(chandler, r);
+		}
+		
+		// Failsafe
+		if(weapon == null)
+		{
+			weapon = p.getItems("weapon").getRandom(chandler, r);
+		}
+		
+		// Chance to give a whatever weapon rarely
+		if(r.nextDouble() > 0.9 + (tier - 1) * 0.25)
+		{
+			Item tweapon = p.getItems("weapon").getRandom(chandler, r);
+			if(tweapon != null)
+				weapon = tweapon;
 		}
 
-		
+		if(p == null)
+			System.out.println("No suitable pose found for a tier " + tier + " scout/spy/assassin");
 		
 		Unit template = unitGen.generateUnit(race, p);
 		
@@ -177,9 +207,10 @@ public class ScoutGenerator extends TroopGenerator {
 			
 			//template.setSlot("mount", mount);
 			
-			// Scouts usually ride the typical racial mount
+			// Scouts usually ride the typical racial mount 
+			// 2015.07.08: Made the 20% chance to 80% chance so it's actually usually 
 			String pref = null;
-			if(Generic.getTagValue(template.race.tags, "preferredmount") != null && nation.random.nextDouble() > 0.80)
+			if(Generic.getTagValue(template.race.tags, "preferredmount") != null && nation.random.nextDouble() < 0.80)
 			{
 				pref = Generic.getTagValue(template.race.tags, "preferredmount");
 			}
