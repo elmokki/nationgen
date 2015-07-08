@@ -320,7 +320,7 @@ public class TroopGenerator {
 	private boolean armInfantry(Unit unit, Template t)
 	{
 	
-		ItemSet possibleWeapons = t.template.pose.getItems("weapon").filterTag("elite", false).filterTag("sacred", false);
+		ItemSet possibleWeapons = t.template.pose.getItems("weapon").filterTheme("elite", false).filterTheme("sacred", false);
 		if(possibleWeapons.possibleItems() - t.weapons.size() <= 0)
 		{
 			unit = null;
@@ -443,8 +443,8 @@ public class TroopGenerator {
 
 				if(r == 0 && !has2h) // 2h
 				{
-					tempweps.addAll(t.pose.getItems("weapon").filterTag("elite", false).filterTag("sacred", false).filterDom3DB("2h", "0", true, nationGen.weapondb));
-					for(Item i : t.pose.getItems("weapon").filterTag("elite", false).filterTag("sacred", false))
+					tempweps.addAll(t.pose.getItems("weapon").filterTheme("elite", false).filterTheme("sacred", false).filterDom3DB("2h", "0", true, nationGen.weapondb));
+					for(Item i : t.pose.getItems("weapon").filterTheme("elite", false).filterTheme("sacred", false))
 					{
 						if(i.id.equals("357") || i.tags.contains("lightlance"))
 							tempweps.add(i);
@@ -453,8 +453,8 @@ public class TroopGenerator {
 				}
 				else if(r == 1 && !has1h) // 1h
 				{
-					tempweps.addAll(t.pose.getItems("weapon").filterTag("elite", false).filterTag("sacred", false).filterDom3DB("2h", "1", true, nationGen.weapondb));
-					for(Item i : t.pose.getItems("weapon").filterTag("elite", false).filterTag("sacred", false))
+					tempweps.addAll(t.pose.getItems("weapon").filterTheme("elite", false).filterTheme("sacred", false).filterDom3DB("2h", "1", true, nationGen.weapondb));
+					for(Item i : t.pose.getItems("weapon").filterTheme("elite", false).filterTheme("sacred", false))
 					{
 						if(i.id.equals("357") || i.tags.contains("lightlance"))
 							tempweps.add(i);
@@ -463,7 +463,7 @@ public class TroopGenerator {
 				}
 				else if(r == 2 && !hasllance) // lightlance
 				{
-					for(Item i : t.pose.getItems("weapon").filterTag("elite", false).filterTag("sacred", false))
+					for(Item i : t.pose.getItems("weapon").filterTheme("elite", false).filterTheme("sacred", false))
 					{
 						if(!i.id.equals("357") && !i.tags.contains("lightlance"))
 							tempweps.add(i);
