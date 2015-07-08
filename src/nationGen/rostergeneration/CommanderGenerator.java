@@ -32,6 +32,16 @@ public class CommanderGenerator extends TroopGenerator {
 	
 
 
+	private List<Unit> getUnitsWithTag(List<Unit> list, String tag)
+	{
+		List<Unit> newlist = new ArrayList<Unit>();
+		for(Unit u : list)
+			if(Generic.getAllUnitTags(u).contains(tag))
+				newlist.add(u);
+		
+		return newlist;
+	}
+	
 	public void generateComs()
 	{
 
@@ -155,6 +165,16 @@ public class CommanderGenerator extends TroopGenerator {
 		possibleComs.clear();
 		possibleComs.addAll(nation.generateUnitList("infantry"));
 		
+		List<Unit> cantbes = this.getUnitsWithTag(possibleComs, "cannot_be_commander");
+		if(cantbes.size() < possibleComs.size())
+			possibleComs.removeAll(cantbes);
+		
+		List<Unit> shouldbes = this.getUnitsWithTag(possibleComs, "should_be_commander");
+		if(shouldbes.size() > 0)
+			possibleComs = shouldbes;
+		
+		
+		
 		// Add one random infantry com
 		if(nation.generateUnitList("infantry").size() > 0)
 		{
@@ -176,19 +196,39 @@ public class CommanderGenerator extends TroopGenerator {
 		possibleComs.removeAll(tempComs);
 		minimumcoms = Math.min(minimumcoms, possibleComs.size());
 		
-		while(minimumcoms > 0 || features.size() > 0)
+		
+		cantbes = this.getUnitsWithTag(possibleComs, "cannot_be_commander");
+		if(possibleComs.size() - cantbes.size() >= minimumcoms)
+			possibleComs.removeAll(cantbes);
+		
+
+		
+		int tries = 0;
+		while((minimumcoms > 0 || features.size() > 0) && tries < 200)
 		{			
+			tries++;
+			
+			List<Unit> temps = new ArrayList<Unit>();
+			shouldbes = this.getUnitsWithTag(possibleComs, "should_be_commander");
+			if(shouldbes.size() >= 1)
+				temps.addAll(shouldbes);
+			else
+				temps.addAll(possibleComs);
 			
 			Unit u = null;
 			if(features.size() > 0)
 			{
 				do
 				{
-					u = getUnitWith(features, allFeatures, possibleComs);
+					u = getUnitWith(features, allFeatures, temps);
 					if(u == null)
 					{
-						features.clear();
-						break;
+						u = getUnitWith(features, allFeatures, possibleComs);
+						if(u == null)
+						{
+							features.clear();
+							break;
+						}
 					}
 				} 
 				while(tempComs.contains(u));
