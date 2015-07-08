@@ -301,9 +301,11 @@ public class Nation {
 		// Scouts
 		
 		ScoutGenerator scoutgen = new ScoutGenerator(nationGen, this);
-		if(races.get(0).hasRole("scout"))
-			comlists.get("scouts").add(scoutgen.generateScout(races.get(0)));
 		
+		if(races.get(0).hasRole("scout") && !races.get(0).tags.contains("#no_scouts"))
+			comlists.get("scouts").add(scoutgen.generateScout(races.get(0)));
+		else if(races.get(1).hasRole("scout") && !races.get(1).tags.contains("#no_scouts"))
+			comlists.get("scouts").add(scoutgen.generateScout(races.get(1)));
 
 
 		// Gods
