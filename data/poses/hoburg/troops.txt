@@ -5,10 +5,9 @@
 #name "boreal infantry"
 #role "infantry"
 #role "scout"
+#theme "boreal"
 
 #basechance 1
-
-#theme "boreal"
 
 #load basesprite /data/items/hoburg/normal/bases.txt
 #load shadow /data/items/hoburg/normal/shadow.txt
@@ -34,10 +33,9 @@
 #newpose
 #name "boreal cavalry"
 #role "mounted"
+#theme "boreal"
 
 #basechance 1
-
-#theme "boreal"
 
 #renderorder "shadow cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -72,10 +70,9 @@
 #newpose
 #name "boreal ranged"
 #role "ranged"
+#theme "boreal"
 
 #basechance 1
-
-#theme "boreal"
 
 #renderorder "shadow cloakb mount basesprite shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -106,12 +103,11 @@
 
 #newpose
 #name "oriental infantry"
+#role "infantry"
+#role "scout"
 #theme "oriental"
 
 #basechance 0.01
-
-#role "infantry"
-#role "scout"
 
 #renderorder "shadow cloakb mount basesprite shirt legs hair helmet armor cloakf bonusweapon weapon offhandw hands offhanda overlay"
 
@@ -136,11 +132,10 @@
 ---- Mounted (Oriental)
 #newpose
 #name "oriental cavalry"
+#role "mounted"
 #theme "oriental"
 
 #basechance 0.01
-
-#role "mounted"
 
 #renderorder "shadow cloakb mount basesprite shirt legs hair helmet armor cloakf bonusweapon weapon offhandw hands offhanda overlay"
 
@@ -171,11 +166,10 @@
 
 #newpose
 #name "oriental archers"
+#role "ranged"
 #theme "oriental"
 
 #basechance 0.01
-
-#role "ranged"
 
 #renderorder "shadow cloakb mount basesprite shirt legs hair helmet armor cloakf quiver bonusweapon weapon offhandw hands offhanda overlay"
 
