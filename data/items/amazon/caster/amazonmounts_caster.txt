@@ -33,7 +33,7 @@
 #define "#mapmove 2"
 #define "#ap 22"
 #define "#mounted"
-#define "#weapon warhorse_hoof --- Warhorse Hoof"
+#define "#weapon 56 --- Hoof"
 #define "#gcost +25"
 #define "#ressize 2"
 #define "#enc 4"
@@ -83,7 +83,7 @@
 #define "#ap 22"
 #define "#mounted"
 #define "#flying"
-#define "#weapon warhorse_hoof --- Warhorse Hoof"
+#define "#weapon 56 --- Hoof"
 #define "#gcost +50"
 #define "#ressize 2"
 #define "#enc 4"
@@ -101,7 +101,7 @@
 #armor
 #offsetx 23
 #offsety 64
-#needs overlay gryphon
+#needs overlay gryphon_overlay
 #define "#size 5"
 #define "#mapmove 2"
 #define "#ap 15"
@@ -171,13 +171,13 @@
 #enditem
 
 #newitem
-#name "amazon_lizard"
+#name "green lizard"
 #gameid -1
-#sprite /graphics/amazon/mounts/lizard_dom4.png
+#sprite /graphics/mounts/standard/greenlizard.png
 #armor
 #offsetx -5
 #offsety 3
-#needs overlay dom4_lizard
+#needs overlay 3
 #define "#size 3"
 #define "#mapmove 2"
 #define "#ap 18"
