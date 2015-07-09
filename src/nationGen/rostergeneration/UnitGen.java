@@ -377,49 +377,52 @@ public class UnitGen {
 			{
 				ItemSet all = u.pose.getItems("offhand").filterArmor(true);
 				
-		
-				all.removeAll(excluded.filterForPose(u.pose));
-				ItemSet newincluded = new ItemSet();
-				newincluded.addAll(included.filterForPose(u.pose));
-				
-				double deviance = random.nextDouble();
-				int prot = (int)Math.round(nationGen.armordb.GetInteger(u.getSlot("armor").id, "prot"));
-				
-				int operation = 0;
-				// Chance to remove bucklers
-				if(deviance > 0.8 && prot > 12)
-					operation = -1;
-				if(deviance > 0.5 && prot > 15)
-					operation = -1;
-				if(deviance > 0.2 && prot >= 18)
-					operation = -1;
-				
-				// chance to remove tower shield and kite shield
-				if(deviance > 0.5 && prot < 10)
-					operation = 1;
+				if(all.size() > 0)
+				{
+					all.removeAll(excluded.filterForPose(u.pose));
+					ItemSet newincluded = new ItemSet();
+					newincluded.addAll(included.filterForPose(u.pose));
+					
+					double deviance = random.nextDouble();
+					int prot = (int)Math.round(nationGen.armordb.GetInteger(u.getSlot("armor").id, "prot"));
+					
+					int operation = 0;
+					// Chance to remove bucklers
+					if(deviance > 0.8 && prot > 12)
+						operation = -1;
+					if(deviance > 0.5 && prot > 15)
+						operation = -1;
+					if(deviance > 0.2 && prot >= 18)
+						operation = -1;
+					
+					// chance to remove tower shield and kite shield
+					if(deviance > 0.5 && prot < 10)
+						operation = 1;
+	
+					if(operation == -1)
+					{
+						all = all.filterProt(nationGen.armordb, 15, 100);
+						newincluded = newincluded.filterProt(nationGen.armordb, 15, 100);
+					}
+					else if(operation == 1)
+					{
+						all = all.filterProt(nationGen.armordb, 0, 19, true);
+						newincluded = newincluded.filterProt(nationGen.armordb, 0, 19, true);
+					}
+					
+					if(newincluded.possibleItems() == 0)
+						newincluded = included;
+					
+					if(all.possibleItems() == 0)
+						all = null;
+					
+					if(random.nextDouble() < 0.1)
+						newincluded = null;
+					
+					Item shield = this.getSuitableItem("offhand", u, excluded, newincluded, u.pose.getItems("offhand").filterArmor(true), targettag);
+					u.setSlot("offhand", shield);
+				}
 
-				if(operation == -1)
-				{
-					all = all.filterProt(nationGen.armordb, 15, 100);
-					newincluded = newincluded.filterProt(nationGen.armordb, 15, 100);
-				}
-				else if(operation == 1)
-				{
-					all = all.filterProt(nationGen.armordb, 0, 19, true);
-					newincluded = newincluded.filterProt(nationGen.armordb, 0, 19, true);
-				}
-				
-				if(newincluded.possibleItems() == 0)
-					newincluded = included;
-				
-				if(all.possibleItems() == 0)
-					all = null;
-				
-				if(random.nextDouble() < 0.1)
-					newincluded = null;
-				
-				Item shield = this.getSuitableItem("offhand", u, excluded, newincluded, u.pose.getItems("offhand").filterArmor(true), targettag);
-				u.setSlot("offhand", shield);
 			}
 		}
 		
