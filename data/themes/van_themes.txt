@@ -1,0 +1,75 @@
+-- Generic theme with high diversity and low cohesion
+#newtheme
+#name default
+#basechance 4
+#endtheme
+
+-- Tech level themes
+
+-- Weights: EA 1, MA 1, LA 0.5
+#newtheme
+#type techlevel
+#name primitive
+#basechance 1
+#chanceinc era 3 -0.5
+#themeinc theme advanced *0.05
+#themeinc theme iron *0.25
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *2
+#themeinc theme naked *2
+#themeinc theme primitive *2
+#endtheme
+
+-- Weights: EA 0.25, MA 1, LA 2
+#newtheme
+#type techlevel
+#name advanced
+#basechance 0.25
+#chanceinc era 3 1.75
+#chanceinc era 2 0.75
+#themeinc theme advanced *2
+#themeinc theme iron *2
+#themeinc theme bronze *0.5
+#themeinc theme wood *0.5
+#themeinc theme leather *0.5
+#themeinc theme naked *0.05
+#themeinc theme primitive *0.05
+#endtheme
+
+-- Social themes
+-- Weights: EA 0, MA 2, LA 4
+#newtheme
+#type social
+#name slaver
+#basechance 0
+#chanceinc era 2 2
+#chanceinc era 3 4
+#chanceinc "hasprimaryrace *0"
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#themeinc theme slave *20
+#themeinc theme free *0.5
+#themeinc racename human *10
+#themeinc racename caveman *2
+#themeinc racename vaetti *2
+#themeinc racename lizard *0.1
+#themeinc racename ape *0.1
+#themeinc racename avvite *0.1
+#themeinc racename abysian *0.1
+#themeinc racename "Human (black)" *0.1
+#themeinc racename zotz *0.1
+#themeinc racename muuch *0.1
+#themeinc racename tengu *0.1
+#secondaryracedefinition "#freetemplatefilter slavetemplate slave"
+#secondaryracedefinition "#unitcommand '#gcost -1'"
+#secondaryracedefinition "#unitcommand '#att -1'"
+#secondaryracedefinition "#unitcommand '#def -1'"
+#racedefinition "#secondaryracetroopmod 100"
+#racedefinition "#secondaryracemagemod -100"
+#endtheme
