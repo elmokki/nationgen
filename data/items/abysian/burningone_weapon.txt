@@ -3,18 +3,21 @@
 #gameid 17
 #sprite /graphics/highmen/weapons/axe.png
 #theme "primitive"
+#theme "iron"
 #enditem
 
 #newitem
 #id morningstar
 #gameid 15
 #sprite /graphics/highmen/weapons/morningstar_bronze.png
+#theme "iron"
 #enditem
 
 #newitem
 #id hammer
 #gameid 13
 #sprite /graphics/highmen/weapons/hammer.png
+#theme "iron"
 #enditem
 
 #newitem
@@ -22,6 +25,7 @@
 #gameid 12
 #sprite /graphics/highmen/weapons/mace.png
 #theme "primitive"
+#theme "iron"
 #enditem
 
 #newitem
@@ -29,6 +33,7 @@
 #gameid 6
 #sprite /graphics/highmen/weapons/shortsword.png
 #basechance 0.25
+#theme "iron"
 #enditem
 
 #newitem
@@ -36,6 +41,7 @@
 #gameid 8
 #sprite /graphics/highmen/weapons/broadsword.png
 #basechance 0.25
+#theme "iron"
 #enditem
 
 -- 2h weapons
@@ -45,6 +51,7 @@
 #gameid 16
 #sprite /graphics/highmen/weapons/flail_bronze.png
 #needs hands hands_2h
+#theme "iron"
 #enditem
 
 #newitem
@@ -53,6 +60,7 @@
 #sprite /graphics/highmen/weapons/battleaxe.png
 #needs hands hands_2h
 #theme "primitive"
+#theme "iron"
 #enditem
 
 #newitem
@@ -60,6 +68,7 @@
 #gameid 14
 #sprite /graphics/highmen/weapons/maul.png
 #theme "primitive"
+#theme "iron"
 #needs hands hands_2h
 #enditem
 
@@ -68,6 +77,7 @@
 #gameid 363
 #sprite /graphics/highmen/weapons/ironcudgel.png
 #theme "primitive"
+#theme "iron"
 #needs hands hands_2h
 #enditem
 
@@ -77,4 +87,6 @@
 #sprite /graphics/highmen/weapons/greatsword.png
 #basechance 0.25
 #needs hands hands_2h
+#theme "advanced"
+#theme "iron"
 #enditem

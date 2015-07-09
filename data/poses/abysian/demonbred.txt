@@ -1,11 +1,16 @@
 -------- Normal
 
 #newpose
-#basechance 0.125
+#name "demonbred infantry"
 #role "infantry"
+#role "elite infantry"
+#elite
+
+#basechance 0.25
+#theme "abysian"
+
 #load basesprite /data/items/abysian/demonbred_bases.txt
 #load shadow /data/items/abysian/demonbred_shadow.txt
-
 
 -- No following slots:
 ---- #load hands /data/items/abysian/hands.txt
@@ -27,24 +32,19 @@
 #maxvarieties 1
 #dwchancebonus 0.4
 
-#command "#size 3"
-#command "#att +1"
-#command "#mor +3"
-#command "#hp +2"
-#command "#prot +6"
-#command "#darkvision +50"
-#command "#maxage +215"
-#command "#flying"
-#command "#gcost +10"
-
 #endpose
 
 -------- Sacred/scout version with different basechance
 
 #newpose
-#basechance 1
+#name "elite demonbred infantry"
 #role "sacred infantry"
 #role "scout"
+#sacred
+
+#basechance 2
+#theme "abysian"
+
 #load basesprite /data/items/abysian/demonbred_bases.txt
 #load shadow /data/items/abysian/demonbred_shadow.txt
 
@@ -73,14 +73,4 @@
 #maxvarieties 1
 #dwchancebonus 0.4
 
-
-#command "#size 3"
-#command "#att +1"
-#command "#mor +3"
-#command "#hp +2"
-#command "#prot +6"
-#command "#darkvision +50"
-#command "#maxage +215"
-#command "#flying"
-#command "#gcost +10"
 #endpose
