@@ -204,27 +204,42 @@ public class TroopNamer {
 						suitables.add(p);
 				}
 			
-			NamePart p = getSuitablePart(all, null, u);
-			used.add(p);
-			this.setNamePart(u, p);
-			
-			if(p.tags.contains("generic"))
-				generics.add(u);
 			
 			List<Unit> only = new ArrayList<Unit>();
 			only.add(u);
+			setGuaranteedParts(only, weaponnames);
+			setGuaranteedParts(only, specialnames);	
+
+			List<NamePart> possibles = new ArrayList<NamePart>();
+			if(u.name.type.toString().equals("UNNAMED"))
+			{
+				for(NamePart p : all)
+					if(!p.tags.contains("prefix"))
+						possibles.add(p);
+			}
+			else
+				possibles.addAll(all);
+			
+			
+			NamePart p = getSuitablePart(possibles, null, u);
+			used.add(p);
+			this.setNamePart(u, p);
+			
+	
+			
+			
+		
 			setGuaranteedParts(only, miscguaranteed);
+			
+			
 			
 			if(p.tags.contains("generic") && !p.tags.contains("prefix"))
 			{
 				setGuaranteedParts(only, weaponprefixes);
 				setGuaranteedParts(only, specialprefixes);
 			}
-			else if(p.tags.contains("prefix"))
-			{
-				setGuaranteedParts(only, weaponnames);
-				setGuaranteedParts(only, specialnames);
-			}
+
+			
 		}
 		
 
