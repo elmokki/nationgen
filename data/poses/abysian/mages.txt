@@ -3,8 +3,12 @@
 
 #newpose
 #race 0
+#name "lowly abysian caster"
 #role "mage"
 #role "priest"
+
+#basechance 0.5
+#theme "abysian"
 
 #load basesprite /data/items/abysian/bases.txt
 #load shadow /data/items/human/normal/shadow.txt
@@ -22,4 +26,68 @@
 #load offhand /data/items/human/caster/offhands.txt
 
 #mage_nolowtierhat
+#tier 1
+#notfortier 2
+#notfortier 3
+#endpose
+
+#newpose
+#race 0
+#name "middling abysian caster"
+#role "mage"
+#role "priest"
+
+#basechance 1
+#theme "abysian"
+
+#load basesprite /data/items/abysian/bases.txt
+#load shadow /data/items/human/normal/shadow.txt
+
+#load hands /data/items/abysian/hands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+
+#load armor /data/items/human/caster/robes.txt
+#load armor /data/items/abysian/abysian_robes.txt
+#load weapon /data/items/human/caster/weapon.txt
+#load helmet /data/items/human/caster/helmet.txt
+#load helmet /data/items/human/caster/humanspecific_helmet.txt
+#load offhand /data/items/human/caster/offhands.txt
+
+#mage_nolowtierhat
+#notfortier 1
+#tier 2
+#notfortier 3
+#endpose
+
+
+#newpose
+#race 0
+#name "lofty abysian caster"
+#role "mage"
+#role "priest"
+
+#basechance 4
+#theme "abysian"
+
+#load basesprite /data/items/abysian/bases.txt
+#load shadow /data/items/human/normal/shadow.txt
+
+#load hands /data/items/abysian/hands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+
+#load armor /data/items/human/caster/robes.txt
+#load armor /data/items/abysian/abysian_robes.txt
+#load weapon /data/items/human/caster/weapon.txt
+#load helmet /data/items/human/caster/helmet.txt
+#load helmet /data/items/human/caster/humanspecific_helmet.txt
+#load offhand /data/items/human/caster/offhands.txt
+
+#mage_nolowtierhat
+#notfortier 1
+#notfortier 2
+#tier 3
 #endpose

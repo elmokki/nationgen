@@ -2,8 +2,54 @@
 -------- Normal
 
 #newpose
+#name "abysian infantry"
 #role "infantry"
 #role "scout"
+
+#basechance 1
+#theme "abysian"
+
+#load basesprite /data/items/abysian/bases.txt
+#load shadow /data/items/human/normal/shadow.txt
+
+#load hands /data/items/abysian/hands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+
+#load armor /data/items/abysian/armor.txt
+
+#load helmet /data/items/abysian/humanhelmet_metal.txt
+#load helmet /data/items/abysian/abysian_helmet.txt
+#load legs /data/items/abysian/legs.txt
+
+#load weapon /data/items/abysian/weapon.txt
+#load bonusweapon /data/items/abysian/bonusranged.txt
+
+#load offhand /data/items/abysian/offhand.txt
+#load offhand /data/items/abysian/shields.txt
+#load offhand /data/items/abysian/towershields.txt
+
+#load offhand /data/items/human/sacredstuff/sacredoffhand.txt
+#load helmet /data/items/human/sacredstuff/sacredhelmet.txt
+#load bonusweapon /data/items/human/sacredstuff/human_sacredbonusweapons.txt
+#load weapon /data/items/human/sacredstuff/sacredweapon.txt
+#load weapon /data/items/human/sacredstuff/sacredweapon-infantry.txt
+#load bonusweapon /data/items/human/sacredstuff/sacredbonusweapons.txt
+
+#endpose
+
+
+#newpose
+#name "elite abysian infantry"
+#role "elite infantry"
+#role "sacred infantry"
+#elite
+#sacred
+
+#basechance 4
+#theme "abysian"
+
 #load basesprite /data/items/abysian/bases.txt
 #load shadow /data/items/human/normal/shadow.txt
 
@@ -41,7 +87,14 @@
 
 #newpose
 #race 0
+#name "abysian cavalry"
 #role "mounted"
+#elite
+#sacred
+
+#basechance 1
+#theme "abysian"
+
 #load basesprite /data/items/abysian/bases.txt 5 -15
 #load mount /data/items/abysian/mounts.txt
 
