@@ -280,7 +280,7 @@
 #sprite /graphics/mounts/standard/moose.png
 #armor
 #offsetx 30
-#offsety 45
+#offsety 43
 #define "#size 4"
 #define "#mapmove 3"
 #define "#ap 18"
@@ -362,7 +362,7 @@
 #define "#ressize 2"
 #define "#enc 4"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
-#offsety 4
+#offsety 3
 #offsetx -1
 #theme "animal bear"
 #tag "name commander beastmaster"
@@ -387,7 +387,7 @@
 #define "#ressize 2"
 #define "#enc 4"
 #description "If the rider dies, the lion will carry on fighting until the end of the battle."
-#offsety 5
+#offsety 4
 #offsetx -1
 #tag "animal lion"
 #tag "guaranteedprefix lion"
@@ -407,7 +407,6 @@
 #define "#ap 8"
 #define "#mounted"
 #define "#weapon nostr_pincer"
-
 #define "#weapon nostr_scorpiontail"
 #define "#secondshape scorpionmount"
 #define "#gcost +50"
@@ -418,7 +417,6 @@
 #theme "heavy"
 #description "Leaves a giant scorpion behind when the rider dies"
 #tag "guaranteedprefix scorpion"
-
 #tag "minprot 10"
 #tag "maxprot 100"
 #chanceinc primaryrace abysian *100
@@ -432,7 +430,6 @@
 #gameid -1
 #sprite /graphics/abysian/mounts/fossil.png
 #armor
-
 #needs overlay fossil_overlay
 #offsetx 34
 #offsety 31
@@ -440,9 +437,7 @@
 #define "#mapmove 3"
 #define "#ap 8"
 #define "#mounted"
-
 #define "#prot 5"
-
 #define "#okundeadleader"
 #define "#weapon nostr_fossilsword"
 #define "#secondshape fossilmount"
@@ -454,7 +449,6 @@
 #theme "heavy"
 #description "Leaves a fossilized giant behind when the rider dies"
 #tag "guaranteedprefix fossil"
-
 #tag "minprot 10"
 #tag "maxprot 100"
 #chanceinc primaryrace abysian *100

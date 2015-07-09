@@ -65,15 +65,14 @@
 #endpose
 
 ---- Warrior-mages - mounted
---- eventually, these should be T1-2 mages, but for the moment they are disabled
+--- T1-2 mages
 
 #newpose
 #role "mage"
 #role "mounted"
 #role "elite"
 #name "warrior-mage_mounted"
-#basechance 0 
---- basechance 0.15  --- intended chance for mounted mages, but currently disabled to avoid malformed sprites
+#basechance 0.15  
 
 #tier 1
 #tier 2
@@ -84,7 +83,6 @@
 
 #load basesprite /data/items/amazon/caster/amazonbases_caster.txt
 #load mount /data/items/amazon/caster/amazonmounts_caster.txt offsetx 5 offsety -18
--- #load mount /data/items/amazon/caster/amazonmounts_caster_low.txt offsetx 5 offsety -18
 
 #load hands /data/items/amazon/caster/amazonhands_caster.txt
 
@@ -143,15 +141,13 @@
 #endpose
 
 ---- Warrior-priestesses - mounted
---- eventually, these should all tiers of priestess, but currently they're disabled to avoid malformed sprites
 
 #newpose
 #role "priest"
 #role "mounted"
 #role "elite"
 #name "warrior-priestess_mounted"
-#basechance 0
- -- #basechance 0.25
+#basechance 0.25
 
 #tier 1
 #tier 2
@@ -163,7 +159,6 @@
 
 #load basesprite /data/items/amazon/caster/amazonbases_caster.txt
 #load mount /data/items/amazon/caster/amazonmounts_caster.txt offsetx 5 offsety -18
--- #load mount /data/items/amazon/caster/amazonmounts_caster_low.txt offsetx 5 offsety -18
 
 #load hands /data/items/amazon/caster/amazonhands_caster.txt
 
