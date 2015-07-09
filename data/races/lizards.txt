@@ -1,11 +1,26 @@
 #newrace
 #name "Lizard"
-#poses /races/lizard/poses.txt
 
-#basechance 0.4
+#basechance 0.5
+
+#nationthemes lizard_themes
+#freetheme demographic
+
+#spritegenpose lizardinfantry
+#spritegenpose lizardchariots
+#spritegenpose lizardranged
+#spritegenpose lizardmage
+#spritegenpose predatorlizards
+#spritegenpose predatormages
+#spritegenpose sobekpredators
+#spritegenpose sobekshamans
+#spritegenpose sobeks
+#spritegenpose sobekmages
+
 #longsyllables /data/names/nations/lizard/longsyllables.txt
 #shortsyllables /data/names/nations/lizard/shortsyllables.txt
 #suffixes /data/names/nations/lizard/suffixes.txt
+
 #unitcommand "#prot 5"
 #unitcommand "#coldblooded"
 #unitcommand "#gcost 10"
@@ -28,26 +43,19 @@
 #generationchance cavalry 0.125
 
 #sacredchariotchance 0.25
+#generationchance cavalry 0.05
 
 #magicpatterns defaultprimary
 #magicpatterns defaultsecondary
 #magicpatterns defaulttertiary
 
-#pose lizardinfantry
-#pose lizardchariots
-#pose lizardranged
-#pose predatorlizards
-#pose lizardmage
-#pose predatormages
-
 #gods lizardgods
 
 #magicpriority death 6
 #magicpriority nature 4
-#magicpriority water 2
+#magicpriority water 4
 
 #chanceinc "primaryrace van *0.1"
 #chanceinc primaryrace "human (black)" *3
-#chanceinc primaryrace "Sobek" *3
 
 #endrace
