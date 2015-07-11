@@ -663,7 +663,7 @@ public class SacredGenerator extends TroopGenerator {
 		unitGen.armorUnit(u, null, null, null, false);
 		unitGen.armUnit(u, null, null, null, false);
 		
-		if(u.pose.getItems("offhand") != null && u.pose.getItems("offhand").possibleItems() > 0 && isDualWieldEligible(u.getSlot("weapon")) && (u.getSlot("offhand") == null || u.getSlot("offhand").armor))
+		if(u.pose.getItems("offhand") != null && u.pose.getItems("offhand").possibleItems() > 0 && isDualWieldEligible(u) && (u.getSlot("offhand") == null || u.getSlot("offhand").armor))
 		{
 			ItemSet items = fetchItems(u, "offhand", sacred, epicchance);
 			ItemSet weaps = items.filterArmor(false);
