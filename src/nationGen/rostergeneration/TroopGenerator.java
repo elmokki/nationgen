@@ -134,18 +134,33 @@ public class TroopGenerator {
 		maxtemplates = 1 + random.nextInt(3); // 1-3
 	}
 	
-	private double getDualWieldChance(Unit u)
+	
+	protected boolean isDualWieldEligible(Item i)
+	{
+		if(i == null)
+			return false;
+		
+		System.out.print("Is " + i + " eligible? ");
+		boolean regularok = true;
+		if((nationGen.weapondb.GetInteger(i.id, "lgt") > 2) || nationGen.weapondb.GetInteger(i.id, "2h") == 1)
+		{
+			regularok = false;
+		}
+		
+		if(i.tags.contains("ignore_dw_restrictions"))
+			regularok = true;
+		
+		System.out.println(regularok + " - " + i.tags);
+		return regularok;
+		
+	}
+	
+	protected double getDualWieldChance(Unit u, double basechance)
 	{
 		
-		double local_dwchance = 0.05;
+		double local_dwchance = basechance;
 
-		List<String> tags = new ArrayList<String>();
-		tags.addAll(u.race.tags);
-		tags.addAll(u.pose.tags);
-		for(Theme t : u.race.themefilters)
-			tags.addAll(t.tags);
-		for(Filter f : u.appliedFilters)
-			tags.addAll(f.tags);
+		List<String> tags = Generic.getAllUnitTags(u); 
 				
 		
 		List<String> values = Generic.getTagValues(tags, "dwchance");
@@ -344,9 +359,9 @@ public class TroopGenerator {
 			t.weapons.add(weapon);
 			
 
-			if(t.role.equals("infantry") && nationGen.weapondb.GetInteger(unit.getSlot("weapon").id, "2h") == 0 && nationGen.weapondb.GetInteger(unit.getSlot("weapon").id, "lgt") < 3)
+			if(t.role.equals("infantry") && unit.pose.getItems("offhand") != null && isDualWieldEligible(unit.getSlot("weapon")) && (unit.getSlot("offhand") == null || unit.getSlot("offhand").armor))
 			{
-				double local_dwchance = this.getDualWieldChance(unit);
+				double local_dwchance = this.getDualWieldChance(unit, 0.05);
 				
 				if(random.nextDouble() < local_dwchance)
 					
@@ -809,6 +824,39 @@ public class TroopGenerator {
 		
 	}
 	
+	
+	protected double getBonusWeaponChance(Unit u)
+	{
+		double local_bwchance = 0;
+		List<String> tags = Generic.getAllUnitTags(u);
+		List<String> values = Generic.getTagValues(tags, "bonusweaponchance");
+		if(values.size() > 0)
+		{
+			List<Double> intvalues = new ArrayList<Double>();
+			for(String s : values)
+				intvalues.add(Double.parseDouble(s));
+			
+			
+			double largest = intvalues.get(0);
+			for(double d : intvalues)
+				if(d > largest)
+					largest = d;
+			
+			local_bwchance = largest;
+		}
+		
+		values = Generic.getTagValues(tags, "bonusweaponchancebonus");
+		if(values.size() > 0)
+		{
+			for(String s : values)
+				local_bwchance +=  Double.parseDouble(s);	
+		}
+		
+		return local_bwchance;
+	
+		
+	}
+	
 	private void equipBonusWeapon(Unit u, String role, Race race, Template t)
 	{
 		if(role.equals("ranged"))
@@ -859,41 +907,7 @@ public class TroopGenerator {
 		
 
 
-		double local_bwchance = 0.05;
-	
-		List<String> tags = new ArrayList<String>();
-		tags.addAll(u.race.tags);
-		tags.addAll(u.pose.tags);
-		
-		for(Theme th : u.race.themefilters)
-			tags.addAll(th.tags);
-		
-		for(Filter f : u.appliedFilters)
-			tags.addAll(f.tags);
-				
-		
-		List<String> values = Generic.getTagValues(tags, "bonusweaponchance");
-		if(values.size() > 0)
-		{
-			List<Double> intvalues = new ArrayList<Double>();
-			for(String s : values)
-				intvalues.add(Double.parseDouble(s));
-			
-			
-			double largest = intvalues.get(0);
-			for(double d : intvalues)
-				if(d > largest)
-					largest = d;
-			
-			local_bwchance = largest;
-		}
-		
-		values = Generic.getTagValues(tags, "bonusweaponchancebonus");
-		if(values.size() > 0)
-		{
-			for(String s : values)
-				local_bwchance +=  Double.parseDouble(s);	
-		}
+		double local_bwchance = 0.05 + this.getBonusWeaponChance(u);
 	
 	
 		
@@ -938,9 +952,9 @@ public class TroopGenerator {
 		Item weapon = u.getSlot("weapon");
 		
 		
-		
+	
 		boolean twohand = nationGen.weapondb.GetValue(weapon.id, "2h").equals("1");
-		if(twohand)
+		if(twohand && !this.isDualWieldEligible(u.getSlot("weapon")))
 			u.setSlot("offhand", null);
 	
 	}
