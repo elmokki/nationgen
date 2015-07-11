@@ -663,13 +663,14 @@ public class SacredGenerator extends TroopGenerator {
 		unitGen.armorUnit(u, null, null, null, false);
 		unitGen.armUnit(u, null, null, null, false);
 		
-		if(u.pose.getItems("offhand") != null && u.pose.getItems("offhand").possibleItems() > 0 && nationGen.weapondb.GetValue(u.getSlot("weapon").id, "2h").equals("0"))
+		if(u.pose.getItems("offhand") != null && u.pose.getItems("offhand").possibleItems() > 0 && isDualWieldEligible(u.getSlot("weapon")) && (u.getSlot("offhand") == null || u.getSlot("offhand").armor))
 		{
 			ItemSet items = fetchItems(u, "offhand", sacred, epicchance);
 			ItemSet weaps = items.filterArmor(false);
 			
+			double dwchance = this.getDualWieldChance(u, 0.15);
 			Item item = null;
-			if((weaps.size() > 0 && random.nextDouble() < 0.15 && nationGen.weapondb.GetInteger(u.getSlot("weapon").id, "lgt") < 4) || u.pose.tags.contains("always_dw"))
+			if(weaps.size() > 0 && random.nextDouble() < dwchance)
 			{
 				item = chandler.getRandom(weaps, u);
 			}
@@ -681,7 +682,8 @@ public class SacredGenerator extends TroopGenerator {
 		if(u.pose.getItems("bonusweapon") != null && u.pose.getItems("bonusweapon").possibleItems() > 0)
 		{
 			int prot = nationGen.armordb.GetInteger(u.getSlot("armor").id, "prot");
-			if(random.nextDouble() > 0.4 + (double)prot * 0.02)
+			double local_bwchance = 0.4 + this.getBonusWeaponChance(u);
+			if(random.nextDouble() < local_bwchance - (double)prot * 0.02)
 			{
 				Item weapon = chandler.getRandom(fetchItems(u, "bonusweapon", sacred, epicchance), u);
 				u.setSlot("bonusweapon", weapon);
