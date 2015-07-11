@@ -1,84 +1,52 @@
 #newitem
-#id axe
-#gameid 17
-#sprite /graphics/avvim/weapon/axe.png
-#offsetx -2
-#offsety -15
-#theme "primitive"
+#id cudgel
+#gameid 363
+#needs specialweapon no_special
+#sprite /graphics/tengu/weapons/oversized/ironcudgel.png
+#ignore_dw_restrictions
 #enditem
 
 #newitem
-#id mace
-#gameid 12
-#sprite /graphics/avvim/weapon/mace.png
-#offsetx -2
-#offsety -15
-#theme "primitive"
+#id wakizasi
+#gameid 377
+#needs specialweapon no_special
+#sprite /graphics/tengu/weapons/oversized/wakizasi.png
 #enditem
 
 #newitem
-#id morningstar
-#gameid 15
-#sprite /graphics/avvim/weapon/morningstar.png
-#offsetx -2
-#offsety -15
+#name katana
+#gameid 378
+#sprite /graphics/tengu/weapons/oversized/katana.png
+#ignore_dw_restrictions
 #enditem
 
 #newitem
-#id broadsword
-#gameid 8
-#sprite /graphics/avvim/weapon/broadsword.png
-#offsetx -2
-#offsety -16
+#name nodachi
+#gameid 379
+#needs specialweapon no_special
+#sprite /graphics/tengu/weapons/oversized/nodachi.png
+#ignore_dw_restrictions
+#enditem
+
+--- Polearms
+
+#newitem
+#id spear
+#gameid 1
+#sprite /graphics/tengu/weapons/oversized/spear.png
+#needs offhand nooffhand
 #enditem
 
 #newitem
-#id falchion
-#gameid 10
-#sprite /graphics/avvim/weapon/falchion.png
-#offsetx -2
-#offsety -16
+#id yari
+#gameid 376
+#sprite /graphics/tengu/weapons/oversized/yari.png
+#needs offhand nooffhand
 #enditem
 
 #newitem
-#id claymore
-#gameid 258
-#sprite /graphics/avvim/weapon/claymore.png
-#offsetx 6
-#offsety -9
-#enditem
-
-#newitem
-#id greatsword
-#gameid 11
-#sprite /graphics/avvim/weapon/claymore.png
-#offsetx 6
-#offsety -9
-#theme "advanced"
-#enditem
-
-#newitem
-#id flail
-#gameid 16
-#sprite /graphics/highmen/weapons/flail.png
-#offsetx 0
-#offsety -13
-#enditem
-
-#newitem
-#id greataxe
-#gameid 18
-#sprite /graphics/highmen/weapons/battleaxe.png
-#offsetx 0
-#offsety -13
-#theme "primitive"
-#enditem
-
-#newitem
-#id maul
-#gameid 14
-#sprite /graphics/highmen/weapons/maul.png
-#offsetx 0
-#offsety -13
-#theme "primitive"
+#id naginata
+#gameid 380
+#sprite /graphics/tengu/weapons/oversized/naginata.png
+#needs offhand nooffhand
 #enditem

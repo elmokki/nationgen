@@ -1,75 +1,56 @@
 #newitem
-#id axe
-#gameid 17
-#sprite /graphics/weapon/standard/axe.png
-#theme "primitive"
-#tag "name infantry axeman"
-#offsetx 1
-#offsety 7
-#enditem
-
-#newitem
-#id greataxe
-#gameid 18
-#sprite /graphics/hoburg/weapon/greataxe.png
-#theme "primitive"
-#tag "name infantry axeman"
-#offsetx 0
-#offsety -5
-#enditem
-
-#newitem
-#id halberd
-#gameid 5
-#sprite /graphics/hoburg/weapon/halberd.png
-#tag "name infantry halberdier"
-#theme "advanced"
-#offsetx 0
-#offsety -5
-#enditem
-
-#newitem
-#id hammer
-#gameid 13
-#sprite /graphics/weapon/standard/hammer.png
-#offsetx 1
-#offsety 5
-#enditem
-
-#newitem
-#id mace
-#gameid 12
-#sprite /graphics/weapon/standard/mace.png
-#theme "primitive"
-#tag "name infantry maceman"
-#offsetx 1
-#offsety 7
-#enditem
-
-#newitem
-#id shortsword
-#gameid 6
-#sprite /graphics/weapon/standard/shortsword.png
-#offsetx 1
-#offsety 6
-#enditem
-
-#newitem
-#id spear
-#gameid 1
+#id light_lance
+#gameid 357
 #sprite /graphics/hoburg/weapon/spear.png
-#tag "name infantry spearman"
-#offsetx 0
-#offsety -5
+#offsetx -2
+#offsety -6
+#theme "wood"
+#enditem
+
+#newitem
+#id naginata
+#gameid 380
+#sprite  /graphics/hoburg/weapon/naginata.png
+#offsetx -2
+#offsety -6
+#theme "iron"
+#enditem
+
+#newitem
+#id yari
+#gameid 376
+#sprite /graphics/hoburg/weapon/longspear.png
+#offsetx -2
+#offsety -6
+#theme "wood"
 #enditem
 
 #newitem
 #id pike
 #gameid 590
 #sprite /graphics/hoburg/weapon/pike.png
-#tag "name infantry pikeman"
-#offsetx 0
-#offsety -5
+#offsetx -2
+#offsety -6
+#theme "wood"
+#theme "advanced"
+#enditem
+
+#newitem
+#id wakizasi
+#gameid 377
+#sprite /graphics/hoburg/weapon/wakizasi.png
+#offsetx -2
+#offsety -6
+#theme "iron"
+#enditem
+
+#newitem
+#name "ninjato"
+#gameid 381
+#sprite /graphics/hoburg/weapon/ninjato.png
+#offsetx -2
+#offsety -6
+#theme "iron"
 #enditem
 
 #newitem
@@ -78,7 +59,18 @@
 #sprite /graphics/weapon/standard/falchion.png
 #tag "name infantry falchioneer"
 #offsetx 1
-#offsety 6
+#offsety 5
+#theme "iron"
+#enditem
+
+#newitem
+#id katana
+#gameid 378
+#sprite /graphics/hoburg/weapon/katana.png
+#offsetx -2
+#offsety -6
+#theme "iron"
+#theme "advanced"
 #enditem
 
 #newitem
@@ -88,14 +80,6 @@
 #needs offhand offhandbladehand
 #needs hands bladehands
 #define "#itemslots 12416"
-#enditem
-
-#newitem
-#id hammerhand
-#gameid 13
-#tag "name infantry crusher"
-#needs offhand offhandhammerhand
-#needs hands hammerhands
-#define "#itemslots 12416"
-#define "#rcost -4" -- hammer costs are included in the chassis 
+#theme "iron"
+#theme "advanced"
 #enditem

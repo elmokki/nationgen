@@ -5,11 +5,29 @@
 #enditem
 
 #newitem
+#id offhanddagger
+#gameid 9
+#sprite /graphics/offhand/standard/dagger.png
+#offsetx 0
+#offsety -4
+#enditem
+
+#newitem
 #id offhandwakizasi
 #gameid 377
 #sprite /graphics/tengu/weapons/offhand/wakizasi.png
 #offsetx 2
 #offsety -4
+#theme "iron"
+#enditem
+
+#newitem
+#name offhandninjato
+#gameid 381
+#sprite /graphics/tengu/weapons/offhand/ninjato.png
+#offsetx 2
+#offsety -3
+#theme "iron"
 #enditem
 
 #newitem
@@ -18,12 +36,5 @@
 #sprite /graphics/tengu/weapons/offhand/falchion.png
 #offsetx 2
 #offsety -4
-#enditem
-
-#newitem
-#id offhanddagger
-#gameid 9
-#sprite /graphics/offhand/standard/dagger.png
-#offsetx 0
-#offsety -4
+#theme "iron"
 #enditem
