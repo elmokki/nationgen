@@ -1,45 +1,31 @@
---- Weapons
-
 #newitem
-#id offhandaxe
-#gameid 17
-#sprite /graphics/avvim/offhand/axe.png
-#offsetx 7
-#offsety -8
-#theme "primitive"
+#id nooffhand
+#gameid -1
+#basechance 0
 #enditem
 
 #newitem
-#id offhandmace
-#gameid 12
-#sprite /graphics/avvim/offhand/mace.png
-#offsetx 7
-#offsety -8
-#theme "primitive"
+#id cudgel
+#gameid 363
+#sprite /graphics/tengu/weapons/oversized/ironcudgel_oh.png
 #enditem
 
 #newitem
-#id offhandmorningstar
-#gameid 15
-#sprite /graphics/avvim/offhand/morningstar.png
-#offsetx 7
-#offsety -8
+#id wakizasi
+#gameid 377
+#sprite /graphics/tengu/weapons/oversized/wakizasi_oh.png
 #enditem
 
 #newitem
-#id offhandbroadsword
-#gameid 8
-#sprite /graphics/avvim/offhand/broadsword.png
-#offsetx 7
-#offsety -8
+#name katana
+#gameid 378
+#sprite /graphics/tengu/weapons/oversized/katana_oh.png
 #enditem
 
 #newitem
-#id offhandfalchion
-#gameid 10
-#sprite /graphics/avvim/offhand/falchion.png
-#offsetx 7
-#offsety -8
+#name nodachi
+#gameid 379
+#sprite /graphics/tengu/weapons/oversized/nodachi_oh.png
 #enditem
 
 

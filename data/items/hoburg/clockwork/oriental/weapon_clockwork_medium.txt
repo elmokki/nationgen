@@ -3,24 +3,24 @@
 #basechance 2
 #gameid 357
 #sprite /graphics/hoburg/weapon/clockwork_lance.png
-#tag "name infantry lancer"
+#ignore_dw_restrictions
 #needs handslots one_hand
 #enditem
 
 #newitem
-#name "katana"
-#gameid -1
-#needs specialweapon katana
+#name katana
+#gameid 378
 #sprite /graphics/tengu/weapons/katana/katana.png
+#ignore_dw_restrictions
 #offsetx 0
 #offsety -11
 #enditem
 
 #newitem
-#name "nodachi"
-#gameid -1
-#needs specialweapon nodachi
+#name nodachi
+#gameid 379
 #sprite /graphics/tengu/weapons/katana/nodachi.png
+#ignore_dw_restrictions
 #offsetx 0
 #offsety -11
 #enditem
@@ -42,7 +42,6 @@
 #sprite /graphics/weapon/standard/longspear.png
 #offsetx -1
 #offsety -7
-#troopweapon
 #needs offhand nooffhand
 #enditem
 
@@ -52,7 +51,6 @@
 #sprite /graphics/weapon/standard/spear.png
 #offsetx -1
 #offsety -7
-#troopweapon
 #needs offhand nooffhand
 #enditem
 
@@ -62,7 +60,6 @@
 #sprite /graphics/weapon/standard/spear.png
 #offsetx -1
 #offsety -7
-#troopweapon
 #needs offhand nooffhand
 #enditem
 
@@ -72,6 +69,5 @@
 #sprite /graphics/tengu/weapons/naginata.png
 #offsetx 1
 #offsety -7
-#troopweapon
 #needs offhand nooffhand
 #enditem
