@@ -135,20 +135,23 @@ public class TroopGenerator {
 	}
 	
 	
-	protected boolean isDualWieldEligible(Item i)
+	protected boolean isDualWieldEligible(Unit u)
 	{
+		Item i = u.getSlot("weapon");
 		if(i == null)
 			return false;
 		
-		System.out.print("Is " + i + " eligible? ");
+		List<String> tags = Generic.getAllUnitTags(u);
+		int dw_maxlength = 2;
+		if(Generic.containsTag(tags, "dw_maxlength"))
+			dw_maxlength = Integer.parseInt(Generic.getTagValue(tags, "dw_maxlength"));
+		
 		boolean regularok = true;
-		if((nationGen.weapondb.GetInteger(i.id, "lgt") > 2) || nationGen.weapondb.GetInteger(i.id, "2h") == 1)
+		if((nationGen.weapondb.GetInteger(i.id, "lgt") > dw_maxlength) || nationGen.weapondb.GetInteger(i.id, "2h") == 1)
 		{
 			regularok = false;
 		}
-		
-		if(i.tags.contains("ignore_dw_restrictions"))
-			regularok = true;
+
 		
 		System.out.println(regularok + " - " + i.tags);
 		return regularok;
