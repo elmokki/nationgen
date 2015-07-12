@@ -2,7 +2,6 @@
 #name "Atlantian"
 #basechance 0.2
 #all_troops_elite
-#poses /races/atlantian/poses.txt
 
 #longsyllables /data/names/nations/atlantian/longsyllables.txt
 #shortsyllables /data/names/nations/atlantian/shortsyllables.txt
@@ -22,6 +21,10 @@
 
 #pose atlantiantroops
 #pose atlantianmages
+
+#nationcommand "#uwbuild 1"
+
+#chanceinc primaryrace muuch *2
 
 #magicpriority water 10
 #monsterchance 0.01
