@@ -134,6 +134,7 @@
 #themeinc theme leather *1
 #themeinc theme naked *0.5
 #themeinc theme primitive *1
+#racedefinition "#nationcommand '#idealcold +1'"
 #endtheme
 
 --"Asian neo-Jomonese" hoburgs 
@@ -154,8 +155,8 @@
 #themeinc theme leather *1
 #themeinc theme naked *0.05
 #themeinc theme primitive *0.5
-#themeinc theme oriental *100
-#themeinc theme boreal *0.01
+#themeinc theme oriental *1000
+#themeinc theme boreal *0.001
 #racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 134'"
@@ -179,11 +180,12 @@
 #themeinc theme leather *2
 #themeinc theme naked *2
 #themeinc theme primitive *2
-#themeinc theme occidental *100
-#themeinc theme boreal *0.01
+#themeinc theme occidental *1000
+#themeinc theme boreal *0.001
 #racedefinition "#longsyllables /data/names/nations/nahuatl/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 123'"
+#racedefinition "#nationcommand '#idealcold -1'"
 #endtheme
 
 -- "African quasi-Machakan" hoburgs 
@@ -204,11 +206,12 @@
 #themeinc theme leather *1
 #themeinc theme naked *2
 #themeinc theme primitive *1
-#themeinc theme austral *100
-#themeinc theme boreal *0.01
+#themeinc theme austral *1000
+#themeinc theme boreal *0.001
 #racedefinition "#longsyllables /data/names/nations/machakan/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/machakan/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 126'"
+#racedefinition "#nationcommand '#idealcold -1'"
 #endtheme
 
 -- "Hellenic quasi-Arco" hoburgs 
@@ -229,8 +232,8 @@
 #themeinc theme leather *1
 #themeinc theme naked *0.5
 #themeinc theme primitive *0.5
-#themeinc theme central *100
-#themeinc theme boreal *0.01
+#themeinc theme central *1000
+#themeinc theme boreal *0.001
 #racedefinition "#longsyllables /data/names/nations/amazon/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/amazon/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 107'"
