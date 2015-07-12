@@ -538,6 +538,7 @@ public class Summary {
 		int templecost = 400;
 		int labcost = 500;
 		int fortcost = 0;
+		int golemcult = 0;
 		for(Command c : n.commands)
 		{
 			if(c.command.equals("#nopreach"))
@@ -548,6 +549,8 @@ public class Summary {
 				bloodsac = true;
 			if(c.command.equals("#manikinreanim"))
 				manikin = true;
+			if(c.command.equals("#golemhp"))
+				golemcult = Integer.parseInt(c.args.get(0));
 			if(c.command.equals("#templecost"))
 				templecost = Integer.parseInt(c.args.get(0));
 			if(c.command.equals("#labcost"))
@@ -590,6 +593,8 @@ public class Summary {
 			priest = priest + ", can perform blood sacrifices";
 		if(manikin)
 			priest = priest + ", can reanimate manikin";
+		if(golemcult > 0)
+			priest = priest + ", their constructs are stronger within their Dominion";
 		
 		priest = priest + ".";
 		

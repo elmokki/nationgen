@@ -2,7 +2,6 @@
 #name "Ichtyid"
 #basechance 0.1
 #all_troops_elite
-#poses /races/ichtyid/poses.txt
 
 -- Mimicing Atlantian names because we don't have anything else for ichtyids right now
 #longsyllables /data/names/nations/atlantian/longsyllables.txt
@@ -24,13 +23,14 @@
 #unitcommand "#nametype 117"
 #unitcommand "#maxage 50"
 
+#nationcommand "#uwbuild 1"
+
 #pose ichtyidtroops
 #pose ichtyidmages
 
 #magicpriority water 6
 #magicpriority nature 4
 #monsterchance 0.01
-
 
 #description "Ichtyids are a race of fishmen that dwell along that dwell along the coastlines, both in the water and on land."
 
