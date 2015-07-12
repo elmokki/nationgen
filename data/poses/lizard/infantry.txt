@@ -2,10 +2,12 @@
 #race 1
 #role "infantry"
 #role "scout"
-#role "sacred"
-#role "elite"
+#role "sacred infantry"
+#role "elite infantry"
 #name "1h/pole"
 #sacred
+
+#theme "herbivore"
 
 #load basesprite /data/items/lizard/normal/lizardbases.txt
 #load shadow /data/items/lizard/normal/shadow.txt
@@ -39,9 +41,12 @@
 #basechance 0.25
 #name "2h"
 #role "infantry"
-#role "sacred"
-#role "elite"
+#role "sacred infantry"
+#role "elite infantry"
 #sacred
+
+#theme "herbivore"
+
 #load basesprite /data/items/lizard/2h/humanbases.txt
 #load shadow /data/items/lizard/normal/shadow.txt
 

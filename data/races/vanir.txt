@@ -1,12 +1,14 @@
 #newrace
 #name "Van"
-#basechance 0.05
+#basechance 0.1
 #nationcommand "#idealcold +1"
 #pose vanirmages
 #pose vanirtroops
 
 #all_troops_sacred
 #all_troops_elite
+
+#nationthemes van_themes
 
 #longsyllables /data/names/nations/nordic/longsyllables.txt
 #shortsyllables /data/names/nations/nordic/shortsyllables.txt
@@ -40,15 +42,11 @@
 
 #chanceinc "hasprimaryrace 0.225"
 #chanceinc "primaryrace abysian *0.1"
-#chanceinc "primaryrace humanbred *0.2"
 #chanceinc "primaryrace caelian *4"
 #chanceinc "primaryrace human *2"
 #chanceinc "primaryrace vaetti *0.5"
-#chanceinc "primaryrace 'Lizard slavers' *0.01"
-#chanceinc "primaryrace 'Abysian slavers' *0.01"
-#chanceinc "primaryrace 'Van slavers' *0.01"
 
-#chanceinc era 1 *3
+#chanceinc era 1 *1.5
 #chanceinc era 3 *0.5
 
 #sacredcostmulti *1.2

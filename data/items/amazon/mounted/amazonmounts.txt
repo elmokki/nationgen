@@ -47,7 +47,7 @@
 #define "#enc 4"¨
 #description "If the rider dies, the leogryph will carry on fighting until the end of the battle."
 #basechance 0.25
-#offsety 5
+#offsety 6
 #offsetx -3
 #theme "specialmount"
 #tag "animal leogryph"
@@ -56,7 +56,7 @@
 #enditem
 
 #newitem
-#name "equine_nightmare"
+#name "eq_nmare"
 #gameid -1
 #offsetx 0
 #offsety 2
@@ -87,14 +87,14 @@
 #enditem
 
 #newitem
-#name "equine_nightmare_caparison"
+#name "eq_nmare_caparison"
 #gameid -1
 #offsetx 0
 #offsety 2
 #sprite /graphics/amazon/mounts/nightmare_equine_caparison.png
 #recolormask /graphics/amazon/mounts/nightmare_equine_caparison_recolormask.png
 #armor
-#needs overlay equine_caparison_nightmare_overlay
+#needs overlay equine_caparison_overlay
 #define "#size 3"
 #define "#mapmove 3"
 #define "#ap 25"
@@ -116,13 +116,13 @@
 #enditem
 
 #newitem
-#name "equine_nightmare_half-barded"
+#name "eq_nmare_half-barded"
 #gameid -1
 #offsetx 0
 #offsety 2
 #sprite /graphics/amazon/mounts/nightmare_equine_halfbarded.png
 #armor
-#needs overlay equine_halfbarded_nightmare_overlay
+#needs overlay equine_halfbarded_overlay
 #define "#size 3"
 #define "#mapmove 3"
 #define "#ap 25"
@@ -146,13 +146,13 @@
 
 
 #newitem
-#name "equine_nightmare_scale-barded1"
+#name "eq_nmare_scale1"
 #gameid -1
 #offsetx 0
 #offsety 2
 #sprite /graphics/amazon/mounts/nightmare_equine_scalebarded1.png
 #armor
-#needs overlay equine_scalebarded_nightmare1_overlay
+#needs overlay equine_scalebarded1_overlay
 #define "#size 3"
 #define "#mapmove 3"
 #define "#ap 25"
@@ -176,13 +176,13 @@
 
 
 #newitem
-#name "equine_nightmare_scale-barded2"
+#name "eq_nmare_scale2"
 #gameid -1
 #offsetx 0
 #offsety 2
 #sprite /graphics/amazon/mounts/nightmare_equine_scalebarded2.png
 #armor
-#needs overlay equine_scalebarded_nightmare2_overlay
+#needs overlay equine_scalebarded2_overlay
 #define "#size 3"
 #define "#mapmove 3"
 #define "#ap 25"
@@ -204,13 +204,13 @@
 #enditem
 
 #newitem
-#name "equine_nightmare_full-barded1"
+#name "eq_nmare_barded1"
 #gameid -1
 #offsetx 0
 #offsety 2
 #sprite /graphics/amazon/mounts/nightmare_equine_fullbarded1.png
 #armor
-#needs overlay equine_fullbarded_nightmare1_overlay
+#needs overlay equine_fullbarded1_overlay
 #define "#size 3"
 #define "#mapmove 3"
 #define "#ap 25"
@@ -232,13 +232,13 @@
 #enditem
 
 #newitem
-#name "equine_nightmare_full-barded2"
+#name "eq_nmare_barded2"
 #gameid -1
 #offsetx 0
 #offsety 2
 #sprite /graphics/amazon/mounts/nightmare_equine_fullbarded2.png
 #armor
-#needs overlay equine_fullbarded_nightmare2_overlay
+#needs overlay equine_fullbarded2_overlay
 #define "#size 3"
 #define "#mapmove 3"
 #define "#ap 25"

@@ -13,6 +13,7 @@
 #basechance 0.5
 #chanceinc era 3 -0.25
 #chanceinc era 1 +1
+#chanceinc primaryrace 'Human (advanced)' *0.25
 #themeinc theme mechanical *0.05
 #themeinc theme advanced *0.05
 #themeinc theme iron *0.05
@@ -44,6 +45,7 @@
 #name agrarian
 #basechance 1
 #chanceinc era 3 -0.5
+#chanceinc primaryrace 'Human (advanced)' *0.5
 #themeinc theme mechanical *0.05
 #themeinc theme advanced *0.25
 #themeinc theme iron *1
@@ -70,6 +72,7 @@
 #basechance 0.25
 #chanceinc era 3 1.75
 #chanceinc era 2 0.75
+#chanceinc primaryrace 'Human (advanced)' *4
 #themeinc theme mechanical +0.25
 #themeinc theme advanced *2
 #themeinc theme iron *2
@@ -93,6 +96,7 @@
 #basechance 0.05
 #chanceinc era 3 *20
 #chanceinc era 2 *6
+#chanceinc primaryrace 'Human (advanced)' *2
 #themeinc theme mechanical +1
 #themeinc theme mechanical *2
 #themeinc theme advanced *3
@@ -134,6 +138,8 @@
 #themeinc theme leather *1
 #themeinc theme naked *0.5
 #themeinc theme primitive *1
+#racedefinition "#nationcommand '#idealcold +1'"
+#racedefinition "#nationcommand '#gods europegods"
 #endtheme
 
 --"Asian neo-Jomonese" hoburgs 
@@ -141,11 +147,15 @@
 #newtheme
 #type regional
 #name oriental
-#basechance 10000
+#basechance 1
 #chanceinc racetheme primitive *0.5
 #chanceinc racetheme agrarian *1
 #chanceinc racetheme advanced *2
 #chanceinc racetheme industrial *2
+#chanceinc primaryrace 'Oriental human' *5
+#chanceinc primaryrace ape *2.5
+#chanceinc primaryrace zotz *0.5
+#chanceinc primaryrace muuch *0.5
 #themeinc theme mechanical *2
 #themeinc theme advanced *1
 #themeinc theme iron *2
@@ -154,11 +164,12 @@
 #themeinc theme leather *1
 #themeinc theme naked *0.05
 #themeinc theme primitive *0.5
-#themeinc theme oriental *100
-#themeinc theme boreal *0.01
+#themeinc theme oriental *1000
+#themeinc theme boreal *0.001
 #racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 134'"
+#racedefinition "#nationcommand '#gods easterngods"
 #endtheme
 
 --"Mesoamerican proto-Mictlanese" hoburgs 
@@ -171,6 +182,10 @@
 #chanceinc racetheme agrarian *1
 #chanceinc racetheme advanced *0.5
 #chanceinc racetheme industrial *0.25
+#chanceinc primaryrace 'Oriental human' *0.5
+#chanceinc primaryrace ape *0.5
+#chanceinc primaryrace zotz *5
+#chanceinc primaryrace muuch *5
 #themeinc theme mechanical *0.25
 #themeinc theme advanced *0.25
 #themeinc theme iron *0.25
@@ -179,11 +194,13 @@
 #themeinc theme leather *2
 #themeinc theme naked *2
 #themeinc theme primitive *2
-#themeinc theme occidental *100
-#themeinc theme boreal *0.01
+#themeinc theme occidental *1000
+#themeinc theme boreal *0.001
 #racedefinition "#longsyllables /data/names/nations/nahuatl/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 123'"
+#racedefinition "#nationcommand '#idealcold -1'"
+#racedefinition "#nationcommand '#gods westerngods"
 #endtheme
 
 -- "African quasi-Machakan" hoburgs 
@@ -196,6 +213,11 @@
 #chanceinc racetheme agrarian *1
 #chanceinc racetheme advanced *1
 #chanceinc racetheme industrial *0.5
+#chanceinc primaryrace 'Human (black)' *5
+#chanceinc primaryrace Lizard *2.5
+#chanceinc primaryrace Avvite *2.5
+#chanceinc primaryrace van *0.5
+#chanceinc primaryrace vaetti *0.5
 #themeinc theme mechanical *0.25
 #themeinc theme advanced *1
 #themeinc theme iron *2
@@ -204,11 +226,13 @@
 #themeinc theme leather *1
 #themeinc theme naked *2
 #themeinc theme primitive *1
-#themeinc theme austral *100
-#themeinc theme boreal *0.01
+#themeinc theme austral *1000
+#themeinc theme boreal *0.001
 #racedefinition "#longsyllables /data/names/nations/machakan/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/machakan/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 126'"
+#racedefinition "#nationcommand '#idealcold -1'"
+#racedefinition "#nationcommand '#gods southerngods"
 #endtheme
 
 -- "Hellenic quasi-Arco" hoburgs 
@@ -221,6 +245,12 @@
 #chanceinc racetheme agrarian *2
 #chanceinc racetheme advanced *2
 #chanceinc racetheme industrial *0.25
+#chanceinc primaryrace 'Human (Amazon)' *5
+#chanceinc primaryrace Minotaur *5
+#chanceinc primaryrace Lizard *2
+#chanceinc primaryrace Avvite *2
+#chanceinc primaryrace zotz *0.5
+#chanceinc primaryrace muuch *0.5
 #themeinc theme mechanical *2
 #themeinc theme advanced *0.5
 #themeinc theme iron *1
@@ -229,8 +259,8 @@
 #themeinc theme leather *1
 #themeinc theme naked *0.5
 #themeinc theme primitive *0.5
-#themeinc theme central *100
-#themeinc theme boreal *0.01
+#themeinc theme central *1000
+#themeinc theme boreal *0.001
 #racedefinition "#longsyllables /data/names/nations/amazon/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/amazon/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 107'"
@@ -285,4 +315,32 @@
 #racedefinition "#unitcommand '#forestsurvival'"
 #racedefinition "#unitcommand '#illusion'"
 #racedefinition "#unitcommand '#nametype 142'"
+#endtheme
+
+-- Weights: primitive 0.01, agrarian 0.2, advanced 0.2, industrial 0.4
+#newtheme
+#type social
+#name lesser_golem_cult
+#basechance 0.1
+#chanceinc racetheme primitive *0.1
+#chanceinc racetheme agrarian *2
+#chanceinc racetheme advanced *2
+#chanceinc racetheme industrial *4
+#themeinc theme mechanical *2
+#racedefinition "#nationcommand '#golemhp 5'"
+#racedefinition "#magicpriority earth 8"
+#endtheme
+
+-- Weights: primitive 0.005, agrarian 0.1, advanced 0.1, industrial 0.2
+#newtheme
+#type social
+#name greater_golem_cult
+#basechance 0.05
+#chanceinc racetheme primitive *0.1
+#chanceinc racetheme agrarian *2
+#chanceinc racetheme advanced *2
+#chanceinc racetheme industrial *4
+#themeinc theme mechanical *3
+#racedefinition "#nationcommand '#golemhp 10'"
+#racedefinition "#magicpriority earth 10"
 #endtheme

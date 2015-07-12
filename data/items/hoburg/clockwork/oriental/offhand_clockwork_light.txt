@@ -1,56 +1,47 @@
 #newitem
-#id offhandaxe
-#gameid 17
-#sprite /graphics/offhand/standard/axe.png
-#offsetx 0
-#offsety 4
+#id nooffhand
+#gameid -1
+#basechance 0
 #enditem
 
 #newitem
-#id offhandhammer
-#gameid 13
-#sprite /graphics/offhand/standard/hammer.png
+#id offhanddagger
+#gameid 9
+#sprite /graphics/hoburg/weapon/dagger_oh.png
 #offsetx -2
-#offsety 2
+#offsety -6
 #enditem
 
-
 #newitem
-#id offhandmace
-#gameid 12
-#sprite /graphics/offhand/standard/mace.png
-#offsetx 0
-#offsety 4
-#enditem
-
-
-#newitem
-#id offhandshortsword
-#gameid 6
-#sprite /graphics/offhand/standard/shortsword.png
+#id offhandwakizasi
+#gameid 377
+#sprite /graphics/hoburg/weapon/wakizasi_oh.png
 #offsetx -2
-#offsety 2
+#offsety -6
+#theme "iron"
 #enditem
 
+#newitem
+#name offhandninjato
+#gameid 381
+#sprite /graphics/hoburg/weapon/ninjato_oh.png
+#offsetx -3
+#offsety -6
+#theme "iron"
+#enditem
 
 #newitem
 #id offhandfalchion
 #gameid 10
-#sprite /graphics/offhand/standard/falchion.png
-#offsetx -2
+#sprite /graphics/tengu/weapons/offhand/falchion.png
+#offsetx 0
 #offsety 2
+#theme "iron"
 #enditem
 
 #newitem
 #id offhandbladehand
 #basechance 0
 #gameid 343
-#enditem
-
-
-#newitem
-#id offhandhammerhand
-#basechance 0
-#gameid 13
 #enditem
 

@@ -1,7 +1,15 @@
 --- Hands belonging to an armor set should be given id of the lowest prot armor they go with if you want to avoid naked people with plate gloves.
 
 #newitem
-#id 1
+#id hands
 #gameid -1
+#type boreal
 #sprite /graphics/hoburg/crossbowhands.png
+#enditem
+
+#newitem
+#id hands_austral
+#gameid -1
+#type austral
+#sprite /graphics/hoburg/crossbowhands_austral.png
 #enditem

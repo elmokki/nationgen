@@ -5,7 +5,8 @@
 #role "mage"
 #role "priest"
 #name "elite caster"
-#sacred
+
+#theme "sobek"
 
 #renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
 
@@ -28,9 +29,11 @@
 
 #newpose
 #role "mage"
-#name "journeyman mage"
-#sacred
+#role "priest"
+#name "journeyman"
 #basechance 0.125
+
+#theme "sobek"
 
 #renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
 
@@ -47,5 +50,32 @@
 #notfortier 3
 #tier 2
 #notfortier 1
+
+#endpose
+
+
+-- Low-probability T1 caster for sobek-only nations
+#newpose
+#role "mage"
+#role "priest"
+#name "apprentice"
+#basechance 0.005
+
+#theme "sobek"
+
+#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/sobek/sobek/bases.txt
+#load shadow /data/items/sobek/sobek/shadow.txt
+
+#load hands /data/items/sobek/sobek/hands.txt
+
+#load armor /data/items/sobek/sobek/magearmor.txt
+#load helmet /data/items/sobek/sobek/magehelmet.txt
+#load weapon /data/items/sobek/sobek/mageweapon.txt
+
+#notfortier 3
+#notfortier 2
+#tier 1
 
 #endpose

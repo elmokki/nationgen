@@ -1,9 +1,34 @@
+-- Low-probability "normal" sobek for sobek-only nations
+
+#newpose
+#basechance 0.005
+#role "infantry"
+#role "scout"
+
+#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/sobek/sobek/bases.txt
+#load shadow /data/items/sobek/sobek/shadow.txt
+
+#load hands /data/items/sobek/sobek/hands.txt
+
+#load armor /data/items/sobek/sobek/armor.txt
+#load helmet /data/items/sobek/sobek/helmet.txt
+
+#load weapon /data/items/sobek/sobek/weapon.txt
+-- #load bonusweapon /data/items/sobek/sobek/bonusranged.txt
+
+-- #load offhand /data/items/sobek/sobek/offhand.txt
+#load offhand /data/items/sobek/sobek/shields.txt
+
+#endpose
+
+
 #newpose
 #basechance 2
 #role "sacred infantry"
 #role "elite infantry"
 #name "sobek infantry"
-#sacred
 
 #renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
 
@@ -27,10 +52,9 @@
 
 #newpose
 #role "chariot"
-#role "elite"
-#role "sacred"
+#role "elite chariot"
+#role "sacred chariot"
 #name "sobek chariot"
-#sacred
 #basechance 0.2
 
 #renderorder "shadow mount weapon bonusweapon cloakb basesprite shirt legs armor cloakf offhandw hands hair helmet offhanda overlay"

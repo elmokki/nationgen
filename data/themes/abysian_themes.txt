@@ -1,0 +1,186 @@
+-- Generic theme with high diversity and low cohesion
+#newtheme
+#name default
+#basechance 4
+#endtheme
+
+-- Tech level themes
+
+-- Weights: EA 1, MA 1, LA 0.5
+#newtheme
+#type techlevel
+#name primitive
+#basechance 1
+#chanceinc era 3 -0.5
+#themeinc theme advanced *0.5
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *0.5
+#themeinc theme leather *2
+#themeinc theme naked *2
+#themeinc theme primitive *2
+#endtheme
+
+-- Weights: EA 0.25, MA 1, LA 2
+#newtheme
+#type techlevel
+#name advanced
+#basechance 0.25
+#chanceinc era 3 1.75
+#chanceinc era 2 0.75
+#themeinc theme advanced *2
+#themeinc theme iron *2
+#themeinc theme bronze *0.5
+#themeinc theme wood *1
+#themeinc theme leather *0.5
+#themeinc theme naked *0.05
+#themeinc theme primitive *0.25
+#endtheme
+
+-- Demographic themes (mandatory)
+
+-- Weights: EA 4, MA 1, LA 0.1
+#newtheme
+#type demographic
+#name primal
+#basechance 4
+#chanceinc era 2 *0.25
+#chanceinc era 3 *0.025
+#racedefinition "#pose abysiantroops"
+#racedefinition "#pose abysianmages"
+#racedefinition "#pose demonbred"
+#racedefinition "#pose burningones"
+#themeinc theme advanced *1
+#themeinc theme iron *4
+#themeinc theme bronze *2
+#themeinc theme wood *0.01
+#themeinc theme leather *0.01
+#themeinc theme naked *1
+#themeinc theme primitive *2
+#racedefinition "#magicpriority fire 12"
+#racedefinition "#magicpriority water 0.1"
+#racedefinition "#magicpriority nature 0.1"
+#racedefinition "#nationcommand '#idealcold -3'"
+#racedefinition "#nationcommand '#spreadheat +1'"
+#racedefinition "#secondaryracecommand_conditional '#fireres 5'"
+#endtheme
+
+-- Weights: EA 0.2, MA 2, LA 1
+#newtheme
+#type demographic
+#name tainted
+#basechance 2
+#chanceinc era 1 *0.1
+#chanceinc era 3 *0.5
+#themeinc theme abysian *2
+#themeinc theme humanbred *0.5
+#themeinc theme advanced *1
+#themeinc theme iron *2
+#themeinc theme bronze *1
+#themeinc theme wood *0.5
+#themeinc theme leather *0.5
+#themeinc theme naked *0.5
+#themeinc theme primitive *1
+#racedefinition "#pose abysiantroops"
+#racedefinition "#pose abysianmages"
+#racedefinition "#pose demonbred"
+#racedefinition "#pose burningones"
+#racedefinition "#pose humanbredtroops"
+#racedefinition "#pose humanbredmages"
+#racedefinition "#magicpriority fire 9"
+#racedefinition "#magicpriority water 0.1"
+#racedefinition "#magicpriority nature 0.1"
+#racedefinition "#magicpriority blood 3"
+#racedefinition "#nationcommand '#idealcold -3'"
+#racedefinition "#secondaryracecommand_conditional '#fireres 5'"
+#endtheme
+
+-- Weights: EA 0.1, MA 1, LA 2
+#newtheme
+#type demographic
+#name diluted
+#basechance 2
+#chanceinc era 1 *0.05
+#chanceinc era 2 *0.5
+#themeinc theme abysian *0.25
+#themeinc theme humanbred *2
+#themeinc theme advanced *1
+#themeinc theme iron *2
+#themeinc theme bronze *0.5
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *0.5
+#themeinc theme primitive *1
+#racedefinition "#pose abysiantroops"
+#racedefinition "#pose abysianmages"
+#racedefinition "#pose demonbred"
+#racedefinition "#pose humanbredtroops"
+#racedefinition "#pose humanbredmages"
+#racedefinition "#pose warbred"
+#racedefinition "#magicpriority fire 7"
+#racedefinition "#magicpriority water 0.25"
+#racedefinition "#magicpriority nature 0.25"
+#racedefinition "#magicpriority blood 7"
+#racedefinition "#nationcommand '#idealcold -2'"
+#racedefinition "#secondaryracecommand_conditional '#fireres 5'"
+#racedefinition "#monsterchance 0.05"
+#endtheme
+
+-- Weights: EA 0.01, MA 0.1, LA 1
+#newtheme
+#type demographic
+#name degenerate
+#basechance 1
+#chanceinc era 1 *0.01
+#chanceinc era 2 *0.1
+#themeinc theme advanced *2
+#themeinc theme iron *1
+#themeinc theme bronze *0.5
+#themeinc theme wood *2
+#themeinc theme leather *2
+#themeinc theme naked *0.1
+#themeinc theme primitive *0.5
+#racedefinition "#pose humanbredtroops"
+#racedefinition "#pose humanbredmages"
+#racedefinition "#pose warbred"
+#racedefinition "#magicpriority fire 5"
+#racedefinition "#magicpriority water 0.5"
+#racedefinition "#magicpriority nature 0.5"
+#racedefinition "#magicpriority blood 5"
+#racedefinition "#nationcommand '#idealcold -2'"
+#racedefinition "#monsterchance 0.15"
+#endtheme
+
+
+-- Social themes
+
+-- Weights: Primal 0.1, Tainted 2, Diluted 4, Degenerate 1
+#newtheme
+#type social
+#name slaver
+#basechance 1
+#chanceinc racetheme primal *0.1
+#chanceinc racetheme tainted *2
+#chanceinc racetheme diluted *4
+#chanceinc racetheme degenerate *1
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#themeinc theme slave *20
+#themeinc theme free *0.5
+#themeinc racename caveman *10
+#themeinc racename human *10
+#themeinc racename argarthan *2
+#themeinc racename zotz *2
+#themeinc racename caelian *0.1
+#themeinc racename van *0.1
+#themeinc racename sidhe *0.1
+#themeinc racename tengu *0.1
+#secondaryracedefinition "#freetemplatefilter slavetemplate slave"
+#racedefinition "#secondaryracetroopmod 100"
+#racedefinition "#secondaryracemagemod -100"
+#endtheme

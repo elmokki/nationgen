@@ -1,22 +1,21 @@
 #newpose
 #role "infantry"
-#role "sacred"
-#role "elite"
+#role "sacred infantry"
+#role "elite infantry"
 #name "predator infantry"
 #sacred
+
+#theme "predator"
 
 #renderorder "shadow bonusweapon weapon basesprite armor offhandw hands helmet offhanda"
 
 #load basesprite /data/items/sobek/predator/predator_bases.txt
-
 #load shadow /data/items/sobek/predator/predator_shadow.txt
 
 #load armor /data/items/sobek/predator/predator_armor.txt
-
 #load helmet /data/items/sobek/predator/predator_helmet.txt
 
 #load weapon /data/items/sobek/predator/predator_weapons.txt
-
 #load bonusweapon /data/items/sobek/predator/predator_bonusranged.txt
 
 #maxvarieties 2
@@ -33,18 +32,17 @@
 #name "runner skirmisher"
 #basechance 0.5
 
+#theme "predator"
+
 #renderorder "shadow bonusweapon weapon basesprite armor offhandw hands helmet offhanda"
 
 #load basesprite /data/items/sobek/predator/runner_bases.txt
-
 #load shadow /data/items/sobek/predator/runner_shadow.txt
 
 #load armor /data/items/sobek/predator/runner_armor.txt
-
 #load helmet /data/items/sobek/predator/runner_helmet.txt
 
 #load weapon /data/items/sobek/predator/runner_weapons.txt
-
 #load bonusweapon /data/items/sobek/predator/runner_bonusranged.txt
 
 #maxvarieties 1
@@ -58,18 +56,17 @@
 #name "runner slinger"
 #basechance 0.25
 
+#theme "predator"
+
 #renderorder "shadow bonusweapon weapon basesprite armor offhandw quiver hands helmet offhanda"
 
 #load basesprite /data/items/sobek/predator/runner_bases.txt
-
 #load shadow /data/items/sobek/predator/runner_shadow.txt
 
 #load armor /data/items/sobek/predator/runner_armor.txt
-
 #load helmet /data/items/sobek/predator/runner_helmet.txt
 
 #load weapon /data/items/sobek/predator/runner_missiles.txt
-
 #load quiver /data/items/sobek/predator/runner_missle_kit.txt
 #load bonusweapon /data/items/sobek/predator/runner_bonus_weapons.txt
 
@@ -82,20 +79,20 @@
 
 #newpose
 #role "mounted"
-#role "elite"
-#role "sacred"
+#role "elite mounted"
+#role "sacred mounted"
 #name "runner cavalry"
 #sacred
 #basechance 0.1
 
+#theme "predator"
+
 #renderorder "mount weapon basesprite armor offhandw hands helmet offhanda"
 
 #load basesprite /data/items/sobek/predator/runner_bases_mounted.txt
-
 #load mount /data/items/sobek/predator/runner_mounts.txt
 
 #load armor /data/items/sobek/predator/runner_armor_mounted.txt
-
 #load helmet /data/items/sobek/predator/runner_helmet_mounted.txt
 
 #load weapon /data/items/sobek/predator/runner_weapons_mounted.txt

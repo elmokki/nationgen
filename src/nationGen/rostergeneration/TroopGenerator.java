@@ -151,9 +151,11 @@ public class TroopGenerator {
 		{
 			regularok = false;
 		}
-
 		
-		System.out.println(regularok + " - " + i.tags);
+		if(i.tags.contains("ignore_dw_restrictions"))
+			regularok = true;
+		
+		// System.out.println(regularok + " - " + i.tags);
 		return regularok;
 		
 	}
@@ -362,7 +364,7 @@ public class TroopGenerator {
 			t.weapons.add(weapon);
 			
 
-			if(t.role.equals("infantry") && unit.pose.getItems("offhand") != null && isDualWieldEligible(unit.getSlot("weapon")) && (unit.getSlot("offhand") == null || unit.getSlot("offhand").armor))
+			if(t.role.equals("infantry") && unit.pose.getItems("offhand") != null && isDualWieldEligible(unit) && (unit.getSlot("offhand") == null || unit.getSlot("offhand").armor))
 			{
 				double local_dwchance = this.getDualWieldChance(unit, 0.05);
 				
@@ -957,7 +959,7 @@ public class TroopGenerator {
 		
 	
 		boolean twohand = nationGen.weapondb.GetValue(weapon.id, "2h").equals("1");
-		if(twohand && !this.isDualWieldEligible(u.getSlot("weapon")))
+		if(twohand && !this.isDualWieldEligible(u))
 			u.setSlot("offhand", null);
 	
 	}

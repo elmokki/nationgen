@@ -2,4 +2,21 @@
 #name "hoburg basesprite"
 #gameid -1
 #sprite /graphics/hoburg/basehoburg_crossbow.png
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#theme "oriental"
+#basechance 1
+#needstype hands boreal
+#needstype legs boreal
+#enditem
+
+#newitem
+#name "austral basesprite"
+#gameid -1
+#sprite /graphics/hoburg/basehoburg_crossbow_austral.png
+#theme "austral"
+#basechance 0.001
+#needstype hands austral
+#needstype legs austral
 #enditem

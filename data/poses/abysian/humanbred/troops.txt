@@ -2,8 +2,47 @@
 -------- Normal
 
 #newpose
+#role "humanbred infantry"
 #role "infantry"
 #role "scout"
+
+#basechance 4
+#theme "humanbred"
+
+#load basesprite /data/items/abysian/humanbred/bases.txt
+#load shadow /data/items/human/normal/shadow.txt
+
+#load hands /data/items/abysian/humanbred/hands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+
+#load armor /data/items/abysian/humanbred/lightarmor.txt
+#load armor /data/items/abysian/armor.txt
+
+#load helmet /data/items/human/normal/humanhelmet.txt
+#load helmet /data/items/abysian/abysian_helmet.txt
+#load legs /data/items/abysian/humanbred/legs.txt
+
+#load weapon /data/items/abysian/weapon.txt
+#load bonusweapon /data/items/abysian/bonusranged.txt
+
+#load offhand /data/items/abysian/offhand.txt
+#load offhand /data/items/abysian/shields.txt
+#load offhand /data/items/abysian/towershields.txt
+
+#endpose
+
+
+-------- Normal
+
+#newpose
+#role "elite humanbred infantry"
+#role "sacred infantry"
+#role "elite infantry"
+
+#basechance 0.5
+#theme "humanbred"
 
 #load basesprite /data/items/abysian/humanbred/bases.txt
 #load shadow /data/items/human/normal/shadow.txt
@@ -37,11 +76,14 @@
 #endpose
 
 
-
 -------- Ranged: normal infantry with a bow or crossbow
 
 #newpose
+#role "humanbred archers"
 #role "ranged"
+
+#basechance 0.5
+#theme "humanbred"
 
 #command "#enc +1"
 
@@ -84,7 +126,14 @@
 
 #newpose
 #race 0
+#role "humanbred cavalry"
 #role "mounted"
+#role "elite mounted"
+#role "sacred mounted"
+
+#basechance 0.5
+#theme "humanbred"
+
 #load basesprite /data/items/abysian/humanbred/bases.txt 5 -15
 #load mount /data/items/abysian/humanbred/mounts.txt
 

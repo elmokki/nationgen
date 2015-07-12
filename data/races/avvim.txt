@@ -1,9 +1,11 @@
 #newrace
 #name "Avvite"
-#basechance 0.05
+#basechance 0.1
 
 #all_troops_sacred
 #all_troops_elite
+
+#nationthemes avvite_themes
 
 #unitcommand "#gcost 30"
 #unitcommand "#rcost 1"
@@ -45,10 +47,8 @@
 #magicpatterns defaultsecondary
 #magicpatterns defaulttertiary
 
-#chanceinc era 1 *6
-#chanceinc era 2 *3
-
-#chanceinc "primaryrace 'Avvite slavers' *0.01"
+#chanceinc era 1 *4
+#chanceinc era 2 *2
 
 #monsterchance 0.1
 

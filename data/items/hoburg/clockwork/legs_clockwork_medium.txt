@@ -2,8 +2,24 @@
 --- Pants belonging to an armor set should be given id of the lowest prot armor they go with if you want to avoid naked people with plate pants.
 
 #newitem
-#id "clockwork pants"
+#id "CW pants"
 #gameid -1
-#sprite /graphics/hoburg/legs/pants_clockwork.png
-#recolormask /graphics/hoburg/legs/pants_clockwork_recolormask.png
+#type boreal
+#sprite /graphics/hoburg/legs/pants_clockwork_medium.png
+#recolormask /graphics/hoburg/legs/pants_clockwork_medium_recolormask.png
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#theme "oriental"
+#basechance 1
+#enditem
+
+#newitem
+#id "austral CW pants"
+#gameid -1
+#type austral
+#sprite /graphics/hoburg/legs/pants_clockwork_medium_austral.png
+#recolormask /graphics/hoburg/legs/pants_clockwork_medium_recolormask.png
+#theme "austral"
+#basechance 0.001
 #enditem
