@@ -1191,7 +1191,10 @@ public class Unit {
 		{
 			if(this.commands.get(x).toString().startsWith("#descr") && this.commands.get(x).args.size() > argIndex)
 			{
-				this.commands.get(x).args.set(argIndex, newValue);
+				if(newValue.startsWith("\""))
+					this.commands.get(x).args.set(argIndex, newValue);
+				else
+					this.commands.get(x).args.set(argIndex, "\"" + newValue + "\"");
 			}
 		}
 	}
@@ -1205,7 +1208,21 @@ public class Unit {
 		for(Command c : tempCommands)
 		{
 			if(c.args.size() > 0)
-				tw.println(c.command + " " + Generic.listToString(c.args));
+			{
+				if(c.command.toString().startsWith("#descr"))
+				{
+					if(Generic.listToString(c.args).startsWith("\""))
+						tw.print(c.command + " " + Generic.listToString(c.args));
+					else
+						tw.print(c.command + " \"" + Generic.listToString(c.args));
+					if(Generic.listToString(c.args).endsWith("\""))
+						tw.print("\n");
+					else
+						tw.println("\"");
+				}
+				else
+					tw.println(c.command + " " + Generic.listToString(c.args));
+			}
 			else
 				tw.println(c.command);
 		}
