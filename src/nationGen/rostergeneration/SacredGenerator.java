@@ -543,20 +543,20 @@ public class SacredGenerator extends TroopGenerator {
 		if(u.pose.roles.contains("ranged") || u.pose.roles.contains("elite ranged") || u.pose.roles.contains("sacred ranged"))
 		{
 			if(u.getTotalProt() < 5)
-				rating *= 0.3;
+				rating *= 2;
 			else if(u.getTotalProt() < 8)
-				rating *= 0.6;
+				rating *= 1.75;
 			else if(u.getTotalProt() < 12)
-				rating *= 0.8;
+				rating *= 1.5;
 		}	
 		else
 		{
 			if(u.getTotalProt() < 5)
-				rating *= 1.8;
+				rating *= 0.25;
 			else if(u.getTotalProt() < 8)
-				rating *= 1.5;
+				rating *= 0.5;
 			else if(u.getTotalProt() < 12)
-				rating *= 1.2;
+				rating *= 0.8;
 		}
 		
 		List<String> values = Generic.getTagValues(Generic.getAllUnitTags(u), "sacredratingmulti");
