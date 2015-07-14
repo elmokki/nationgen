@@ -1,0 +1,28 @@
+
+-- Light clockwork armor
+
+#newitem -- light clockwork armor
+#name "light clockwork armor"
+#gameid 100
+#sprite /graphics/hoburg/bodyarmor/clockwork_armor_light_bronze.png
+#armor
+
+#define "#gcost +15"
+#define "#rcost +5"
+#define "#size 1"
+#define "#ressize 1"
+#define "#hp +2"
+#define "#enc 2"
+#define "#reinvigoration -2"
+#define "#str +2"
+#define "#def -2"
+#define "#mor +1"
+#define "#mapmove 2"
+#define "#ap +8"
+#define "#mounted"
+#define "#woundfend 25"
+#description "Their armor is driven by complex clockwork mechanisms that increase their strength and speed, but run down and need rewound"
+#define "#itemslots 12422"
+
+#tag "guaranteedprefix clockwork"
+#enditem

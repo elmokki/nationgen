@@ -10,7 +10,7 @@
 #theme "occidental"
 #theme "central"
 
-#basechance 1
+#basechance 0.1
 
 #load basesprite /data/items/hoburg/normal/bases.txt
 #load shadow /data/items/hoburg/normal/shadow.txt
@@ -41,7 +41,7 @@
 #theme "occidental"
 #theme "central"
 
-#basechance 1
+#basechance 0.1
 
 #renderorder "shadow cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -81,7 +81,7 @@
 #theme "occidental"
 #theme "central"
 
-#basechance 1
+#basechance 0.1
 
 #renderorder "shadow cloakb mount basesprite shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -116,7 +116,8 @@
 #role "scout"
 #theme "oriental"
 
-#basechance 0.001
+#dwchancebonus 1
+#basechance 0.1
 
 #renderorder "shadow cloakb mount basesprite shirt legs hair helmet armor cloakf bonusweapon weapon offhandw hands offhanda overlay"
 
@@ -145,7 +146,7 @@
 #role "mounted"
 #theme "oriental"
 
-#basechance 0.001
+#basechance 0.1
 
 #renderorder "shadow cloakb mount basesprite shirt legs hair helmet armor cloakf bonusweapon weapon offhandw hands offhanda overlay"
 
@@ -179,7 +180,7 @@
 #role "ranged"
 #theme "oriental"
 
-#basechance 0.001
+#basechance 0.1
 
 #renderorder "shadow cloakb mount basesprite shirt legs hair helmet armor cloakf quiver bonusweapon weapon offhandw hands offhanda overlay"
 
