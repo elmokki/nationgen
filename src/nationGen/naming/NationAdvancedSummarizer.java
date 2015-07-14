@@ -322,7 +322,7 @@ public class NationAdvancedSummarizer {
 			if(c.command.equals("#holy"))
 				holy = true;
 			if(c.command.equals("#slowrec"))
-				holy = str;
+				str = true;
 		}
 		if(str)
 			stuff.add("Slow to recruit");
