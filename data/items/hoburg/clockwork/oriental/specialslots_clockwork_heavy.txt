@@ -3,6 +3,26 @@
 -- Special integrated weapons
 
 #newitem
+#id shock
+#basechance 0.25
+#gameid -1
+#armor
+#needstype weapon polearm
+#needs specialweapon shocklance
+#description "the armor electrically charges its weapon, delivering a light shock to enemies it strikes"
+#enditem
+
+#newitem
+#id fire
+#basechance 0.25
+#gameid -1
+#armor
+#needstype weapon polearm
+#needs specialweapon firelance
+#description "the armor ignites its weapon, delivering a burn to enemies it strikes"
+#enditem
+
+#newitem
 #id firespewer
 #basechance 0.25
 #gameid -1
@@ -70,10 +90,10 @@
 #basechance 1
 #gameid -1
 #armor
-#sprite /graphics/hoburg/clockwork/clockwork_oriental.png
-#recolormask /graphics/hoburg/clockwork/clockwork_standard_recolormask.png
+#sprite /graphics/hoburg/clockwork/clockwork_standard_oriental.png
+#recolormask /graphics/hoburg/clockwork/clockwork_standard_oriental_recolormask.png
 #offsetx 1
-#offsety -4
+#offsety -18
 #define "#standard +1"
 #define "#rcost +5"
 #description "the armor has an impressive standard mounted on its back to inspire nearby units"

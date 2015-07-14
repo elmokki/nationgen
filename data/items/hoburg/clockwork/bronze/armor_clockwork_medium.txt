@@ -1,0 +1,34 @@
+
+-- Medium clockwork armor
+
+#newitem 
+#name "medium clockwork armor"
+#gameid bronzeplate_full
+#sprite /graphics/hoburg/bodyarmor/clockwork_armor_medium_bronze.png
+#armor
+
+#define "#gcost +25"
+#define "#rcost +8"
+#define "#size 2"
+#define "#ressize 2"
+#define "#enc 2"
+#define "#reinvigoration -1"
+#define "#hp +7"
+#define "#str +5"
+#define "#def -5"
+#define "#mor +3"
+#define "#mapmove 3"
+#define "#ap +2"
+#define "#prec -3"
+#define "#fireres +5"
+#define "#coldres +5"
+#define "#shockres +5"
+#define "#poisonres +5"
+#define "#slashres"
+#define "#woundfend 50"
+#define "#mounted"
+#description "Their heavy armor is driven by complex clockwork mechanisms that increase their strength and speed, but gradually run down and need rewound"
+
+#tag "guaranteedprefix clockwork"
+#enditem
+

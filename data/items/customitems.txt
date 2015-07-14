@@ -181,6 +181,75 @@
 #command "#name 'Fire Lance'"
 #end
 
+#new customweapon
+#name "firelance_heavy"
+#command "#rcost 4"
+#command "#dmg 8"
+#command "#norepel"
+#command "#len 4"
+#command "#nratt 1"
+#command "#nostr"
+#command "#bonus"
+#command "#fire"
+#command "#armorpiercing"
+#command "#magic"
+#command "#explspr 10103"
+#command "#sound 16"
+#command "#name 'Fire Lance'"
+#end
+
+#new customweapon
+#name "shocklance_heavy"
+#command "#rcost 4"
+#command "#dmg 12"
+#command "#norepel"
+#command "#len 4"
+#command "#nratt 1"
+#command "#nostr"
+#command "#bonus"
+#command "#shock"
+#command "#dt_stun"
+#command "#armornegating"
+#command "#magic"
+#command "#explspr 10229"
+#command "#sound 24"
+#command "#name 'Shock Lance'"
+#end
+
+#new customweapon
+#name "clockworkfire_heavy"
+#command "#rcost 6"
+#command "#ammo 4"
+#command "#aoe 2"
+#command "#nratt 1"
+#command "#range 4"
+#command "#nostr"
+#command "#bonus"
+#command "#range050"
+#command "#beam"
+#command "#secondaryeffectalways 221"
+#command "#explspr 10162"
+#command "#sound 16"
+#command "#name 'Fire Spewer'"
+#end
+
+#new customweapon
+#name "clockworkpoison_heavy"
+#command "#rcost 6"
+#command "#ammo 4"
+#command "#aoe 2"
+#command "#att -2"
+#command "#nratt 1"
+#command "#range 4"
+#command "#nostr"
+#command "#bonus"
+#command "#range050"
+#command "#beam"
+#command "#secondaryeffectalways 51"
+#command "#explspr 10127"
+#command "#sound 46"
+#command "#name 'Poison Spewer'"
+#end
 
 --- Light Crossbow
 

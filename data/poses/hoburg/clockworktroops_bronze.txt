@@ -1,56 +1,56 @@
 
 ---- Light clockwork troop (elite)
 #newpose
-#name "clockwork ashiguru (elite)"
+#name "clockwork cuirass (elite)"
 #role "elite infantry"
 #role "sacred infantry"
 #basechance 0.1
 
 #theme "mechanical"
-#theme "oriental"
-
-#dwchancebonus 1
+#theme "occidental"
+#theme "central"
 
 #renderorder "shadow cloakb mount basesprite hair shirt legs helmet armor cloakf quiver bonusweapon weapon offhandw hands offhanda overlay"
 
 #load basesprite /data/items/hoburg/clockwork/bases_clockwork_light.txt
 #load shadow /data/items/hoburg/clockwork/shadow_clockwork_light.txt
 #load shirt /data/items/hoburg/clockwork/shirt_clockwork_light.txt
-#load hands /data/items/hoburg/clockwork/hands_clockwork_light.txt
+#load hands /data/items/hoburg/clockwork/bronze/hands_clockwork_light.txt
 
-#load armor /data/items/hoburg/clockwork/oriental/armor_clockwork_light.txt
-#load helmet /data/items/hoburg/normal/helmet_oriental.txt -2 -7
+#load armor /data/items/hoburg/clockwork/bronze/armor_clockwork_light.txt
+#load helmet /data/items/hoburg/normal/helmet.txt -2 -7
 #load legs /data/items/hoburg/clockwork/legs_clockwork_light.txt
 
-#load weapon /data/items/hoburg/clockwork/oriental/weapon_clockwork_light.txt
-#load offhand /data/items/hoburg/clockwork/oriental/offhand_clockwork_light.txt
+#load weapon /data/items/hoburg/clockwork/bronze/weapon_clockwork_light.txt
+#load offhand /data/items/hoburg/clockwork/bronze/offhand_clockwork_light.txt
+#load offhand /data/items/hoburg/normal/shields.txt -2 -7
 
 #endpose
 
 ---- Light clockwork troop
 #newpose
-#name "clockwork ashiguru (normal)"
+#name "clockwork cuirass (normal)"
 #role "infantry"
 #basechance 0.025
 
 #theme "mechanical"
-#theme "oriental"
-
-#dwchancebonus 1
+#theme "occidental"
+#theme "central"
 
 #renderorder "shadow cloakb mount basesprite hair shirt legs helmet armor cloakf quiver bonusweapon weapon offhandw hands offhanda overlay"
 
 #load basesprite /data/items/hoburg/clockwork/bases_clockwork_light.txt
 #load shadow /data/items/hoburg/clockwork/shadow_clockwork_light.txt
 #load shirt /data/items/hoburg/clockwork/shirt_clockwork_light.txt
-#load hands /data/items/hoburg/clockwork/hands_clockwork_light.txt
+#load hands /data/items/hoburg/clockwork/bronze/hands_clockwork_light.txt
 
-#load armor /data/items/hoburg/clockwork/oriental/armor_clockwork_light.txt
-#load helmet /data/items/hoburg/normal/helmet_oriental.txt -2 -7
+#load armor /data/items/hoburg/clockwork/bronze/armor_clockwork_light.txt
+#load helmet /data/items/hoburg/normal/helmet.txt -2 -7
 #load legs /data/items/hoburg/clockwork/legs_clockwork_light.txt
 
-#load weapon /data/items/hoburg/clockwork/oriental/weapon_clockwork_light.txt
-#load offhand /data/items/hoburg/clockwork/oriental/offhand_clockwork_light.txt
+#load weapon /data/items/hoburg/clockwork/bronze/weapon_clockwork_light.txt
+#load offhand /data/items/hoburg/clockwork/bronze/offhand_clockwork_light.txt
+#load offhand /data/items/hoburg/normal/shields.txt -2 -7
 
 #maxvarieties 2
 #maxunits 1
@@ -60,80 +60,84 @@
 
 ---- Clockwork troop (elite)
 #newpose
-#name "clockwork samurai (elite)"
+#name "clockwork armor (elite)"
 #role "elite infantry"
 #role "sacred infantry"
 #basechance 0.1
 
 #theme "mechanical"
-#theme "oriental"
-
-#dwchancebonus 1
+#theme "occidental"
+#theme "central"
 
 #renderorder "shadow cloakb mount specialslot basesprite hair shirt legs helmet armor cloakf quiver bonusweapon weapon offhandw specialweapon hands offhanda overlay"
 
 #load basesprite /data/items/hoburg/clockwork/bases_clockwork_medium.txt
 #load shadow /data/items/hoburg/clockwork/shadow_clockwork_medium.txt
 #load shirt /data/items/hoburg/clockwork/shirt_clockwork_medium.txt 0 1
-#load hands /data/items/hoburg/clockwork/hands_clockwork_medium.txt
+#load hands /data/items/hoburg/clockwork/bronze/hands_clockwork_medium.txt
 
-#load armor /data/items/hoburg/clockwork/oriental/armor_clockwork_medium.txt
-#load helmet /data/items/hoburg/clockwork/oriental/helmet_clockwork_medium.txt
-#load helmet /data/items/hoburg/normal/helmet_oriental.txt -1 -16
+#load armor /data/items/hoburg/clockwork/bronze/armor_clockwork_medium.txt
+#load helmet /data/items/hoburg/clockwork/bronze/helmet_clockwork_medium.txt
+#load helmet /data/items/hoburg/normal/helmet.txt -1 -16
 #load legs /data/items/hoburg/clockwork/legs_clockwork_medium.txt
 
-#load weapon /data/items/hoburg/clockwork/oriental/weapon_clockwork_medium.txt
-#load specialweapon /data/items/hoburg/clockwork/specialweapon_clockwork_medium.txt
+#load weapon /data/items/human/normal/humanweapon.txt 1 -5
+#load weapon /data/items/hoburg/clockwork/bronze/weapon_clockwork_medium.txt
+#load specialweapon /data/items/hoburg/clockwork/bronze/specialweapon_clockwork_medium.txt
 
-#load offhand /data/items/hoburg/clockwork/oriental/offhand_clockwork_medium.txt
+#load offhand /data/items/human/normal/humanoffhand.txt 0 -5
+#load offhand /data/items/human/normal/shields.txt 0 -5
+#load offhand /data/items/human/normal/towershields.txt 0 -5
 
 #load headslot /data/items/hoburg/clockwork/headslots_clockwork_medium.txt
 #load handslots /data/items/hoburg/clockwork/handslots_clockwork_medium.txt
-#load specialslot /data/items/hoburg/clockwork/specialslots_clockwork_medium.txt
+#load specialslot /data/items/hoburg/clockwork/bronze/specialslots_clockwork_medium.txt
 
 #generateitem 1 headslot -- used to define commander helmet slots
 #generateitem 1 handslots -- used to define commander hand slots
--- #generateitem 1 specialweapon
+#generateitem 1 specialweapon
 #generateitem 1 specialslot
 
 #endpose
 
 ---- Clockwork troop
 #newpose
-#name "clockwork samurai (normal)"
+#name "clockwork armor (normal)"
 #role "infantry"
 #basechance 0.025
 
 #theme "mechanical"
-#theme "oriental"
-
-#dwchancebonus 1
+#theme "occidental"
+#theme "central"
 
 #renderorder "shadow cloakb mount specialslot basesprite hair shirt legs helmet armor cloakf quiver bonusweapon weapon offhandw specialweapon hands offhanda overlay"
 
 #load basesprite /data/items/hoburg/clockwork/bases_clockwork_medium.txt
 #load shadow /data/items/hoburg/clockwork/shadow_clockwork_medium.txt
 #load shirt /data/items/hoburg/clockwork/shirt_clockwork_medium.txt 0 1
-#load hands /data/items/hoburg/clockwork/hands_clockwork_medium.txt
+#load hands /data/items/hoburg/clockwork/bronze/hands_clockwork_medium.txt
 
-#load armor /data/items/hoburg/clockwork/oriental/armor_clockwork_medium.txt
-#load helmet /data/items/hoburg/clockwork/oriental/helmet_clockwork_medium.txt
-#load helmet /data/items/hoburg/normal/helmet_oriental.txt -1 -16
+#load armor /data/items/hoburg/clockwork/bronze/armor_clockwork_medium.txt
+#load helmet /data/items/hoburg/clockwork/bronze/helmet_clockwork_medium.txt
+#load helmet /data/items/hoburg/normal/helmet.txt -1 -16
 #load legs /data/items/hoburg/clockwork/legs_clockwork_medium.txt
 
-#load weapon /data/items/hoburg/clockwork/oriental/weapon_clockwork_medium.txt
-#load specialweapon /data/items/hoburg/clockwork/specialweapon_clockwork_medium.txt
+#load weapon /data/items/human/normal/humanweapon.txt 1 -5
+#load weapon /data/items/hoburg/clockwork/bronze/weapon_clockwork_medium.txt
+#load specialweapon /data/items/hoburg/clockwork/bronze/specialweapon_clockwork_medium.txt
 
-#load offhand /data/items/hoburg/clockwork/oriental/offhand_clockwork_medium.txt
+#load offhand /data/items/human/normal/humanoffhand.txt 0 -5
+#load offhand /data/items/human/normal/shields.txt 0 -5
+#load offhand /data/items/human/normal/towershields.txt 0 -5
 
 #load headslot /data/items/hoburg/clockwork/headslots_clockwork_medium.txt
 #load handslots /data/items/hoburg/clockwork/handslots_clockwork_medium.txt
-#load specialslot /data/items/hoburg/clockwork/specialslots_clockwork_medium.txt
+#load specialslot /data/items/hoburg/clockwork/bronze/specialslots_clockwork_medium.txt
 
 #generateitem 1 headslot -- used to define commander helmet slots
 #generateitem 1 handslots -- used to define commander hand slots
 
--- #generateitem 1 specialweapon
+#generateitem 1 specialweapon
 #generateitem 0.2 specialslot
 
 #maxvarieties 2
@@ -144,33 +148,34 @@
 
 ---- Heavy clockwork troop (elite)
 #newpose
-#name "clockwork o-bakemono (elite)"
+#name "clockwork ogre (elite)"
 #role "elite infantry"
 #role "sacred infantry"
 #basechance 0.05
 
 #theme "mechanical"
-#theme "oriental"
-
-#dwchancebonus 1
+#theme "occidental"
+#theme "central"
 
 #renderorder "shadow cloakb mount specialslot basesprite hair shirt legs helmet armor cloakf quiver bonusweapon weapon offhandw specialweapon hands offhanda overlay"
 
 #load basesprite /data/items/hoburg/clockwork/bases_clockwork_heavy.txt
 #load shadow /data/items/hoburg/clockwork/shadow_clockwork_heavy.txt
-#load hands /data/items/hoburg/clockwork/hands_clockwork_heavy.txt
+#load hands /data/items/hoburg/clockwork/bronze/hands_clockwork_heavy.txt
 
-#load armor /data/items/hoburg/clockwork/oriental/armor_clockwork_heavy.txt
+#load armor /data/items/hoburg/clockwork/bronze/armor_clockwork_heavy.txt
 
-#load weapon /data/items/hoburg/clockwork/oriental/weapon_clockwork_heavy.txt
-#load specialweapon /data/items/hoburg/clockwork/oriental/specialweapon_clockwork_heavy.txt
+#load weapon /data/items/hoburg/clockwork/bronze/weapon_clockwork_heavy.txt
+#load specialweapon /data/items/hoburg/clockwork/bronze/specialweapon_clockwork_heavy.txt
 
-#load offhand /data/items/hoburg/clockwork/oriental/offhand_clockwork_heavy.txt
+#load offhand /data/items/hoburg/clockwork/bronze/offhand_clockwork_heavy.txt
+#load offhand /data/items/hoburg/clockwork/bronze/shields_clockwork_heavy.txt
 
 -- #load handslots /data/items/hoburg/clockwork/handslots_clockwork_heavy.txt
-#load specialslot /data/items/hoburg/clockwork/oriental/specialslots_clockwork_heavy.txt
+#load specialslot /data/items/hoburg/clockwork/bronze/specialslots_clockwork_heavy.txt
 
 -- #generateitem 1 handslots -- used to define commander hand slots
+-- #generateitem 1 specialweapon
 #generateitem 1 specialslot
 
 #endpose
