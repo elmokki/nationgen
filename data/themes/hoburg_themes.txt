@@ -124,12 +124,12 @@
 #endtheme
 
 
---- Regional themes (mandatory)
+--- Cultural themes (mandatory)
 
 -- Standard "northern European" hoburgs
 -- Weights: primitive 4, agrarian 4, advanced 4, industrial 4
 #newtheme
-#type regional
+#type cultural
 #name boreal
 #basechance 4
 #themeinc theme mechanical *1
@@ -148,7 +148,7 @@
 --"Asian neo-Jomonese" hoburgs 
 -- Weights: primitive 0.5, agrarian 1, advanced 2, industrial 2
 #newtheme
-#type regional
+#type cultural
 #name oriental
 #basechance 1
 #chanceinc racetheme primitive *0.5
@@ -177,7 +177,7 @@
 --"Mesoamerican proto-Mictlanese" hoburgs 
 -- Weights: primitive 2, agrarian 1, advanced 0.5, industrial 0.25
 #newtheme
-#type regional
+#type cultural
 #name occidental
 #basechance 1
 #chanceinc racetheme primitive *2
@@ -208,7 +208,7 @@
 -- "African quasi-Machakan" hoburgs 
 -- Weights: primitive 0.5, agrarian 1, advanced 1, industrial 0.5
 #newtheme
-#type regional
+#type cultural
 #name austral
 #basechance 1
 #chanceinc racetheme primitive *0.5
@@ -240,7 +240,7 @@
 -- "Hellenic quasi-Arco" hoburgs 
 -- Weights: primitive 0.25, agrarian 2, advanced 2, industrial 0.25
 #newtheme
-#type regional
+#type cultural
 #name central
 #basechance 1
 #chanceinc racetheme primitive *0.25
@@ -265,6 +265,37 @@
 #racedefinition "#longsyllables /data/names/nations/amazon/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/amazon/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 107'"
+#endtheme
+
+-- "Hoburgbred" Abysians 
+-- Weights: primitive 0.5, agrarian 1, advanced 1, industrial 0.5
+#newtheme
+#type cultural
+#name hoburgbred
+#basechance 0.5
+#chanceinc racetheme primitive *1
+#chanceinc racetheme agrarian *2
+#chanceinc racetheme advanced *2
+#chanceinc racetheme industrial *1
+#chanceinc primaryrace Abysian *10
+#themeinc theme mechanical *2
+#themeinc theme advanced *1
+#themeinc theme iron *4
+#themeinc theme bronze *1
+#themeinc theme wood *0.5
+#themeinc theme leather *0.5
+#themeinc theme naked *1
+#themeinc theme primitive *0.5
+#themeinc theme hoburgbred *100
+#racedefinition "#longsyllables /data/names/nations/abysian/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/abysian/shortsyllables.txt"
+#racedefinition "#unitcommand '#nametype 101'"
+#racedefinition "#nationcommand '#idealcold -2'"
+#racedefinition "#nationcommand '#likespop 94'"
+#racedefinition "#magicpriority nature 1"
+#racedefinition "#magicpriority water 0.1"
+#racedefinition "#magicpriority fire 8"
+#racedefinition "#magicpriority blood 4"
 #endtheme
 
 

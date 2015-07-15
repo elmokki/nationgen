@@ -21,5 +21,15 @@
 #sprite /graphics/hoburg/legs/pants_clockwork_medium_austral.png
 #recolormask /graphics/hoburg/legs/pants_clockwork_medium_recolormask.png
 #theme "austral"
-#basechance 0.001
+#basechance 0
+#enditem
+
+#newitem
+#id "hoburgbred CW pants"
+#gameid -1
+#type hoburgbred
+#sprite /graphics/hoburg/legs/pants_clockwork_medium_hoburgbred.png
+#recolormask /graphics/hoburg/legs/pants_clockwork_medium_recolormask.png
+#theme "hoburgbred"
+#basechance 0
 #enditem

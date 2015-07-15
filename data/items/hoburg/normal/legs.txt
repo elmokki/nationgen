@@ -5,33 +5,14 @@
 #newitem
 #id pants
 #gameid -1
-#type boreal
 #sprite /graphics/hoburg/legs/pants.png
-#recolormask /graphics/hoburg/legs/pants_recolormask.png
-#enditem
-
-#newitem
-#id pants
-#gameid -1
-#type austral
-#sprite /graphics/hoburg/legs/pants_austral.png
-#recolormask /graphics/hoburg/legs/pants_recolormask.png
+#recolormask self
 #enditem
 
 #newitem
 #id leatherpants
 #gameid -1
-#type boreal
 #sprite /graphics/hoburg/legs/leatherpants.png
-#theme "primitive"
-#basechance 0.25
-#enditem
-
-#newitem
-#id leatherpants
-#gameid -1
-#type austral
-#sprite /graphics/hoburg/legs/leatherpants_austral.png
 #theme "primitive"
 #basechance 0.25
 #enditem
@@ -39,8 +20,6 @@
 #newitem
 #id ringpants
 #gameid -1
-#type boreal
-#type austral
 #sprite /graphics/hoburg/legs/ringpants.png
 #basechance 0
 #enditem
@@ -48,8 +27,6 @@
 #newitem
 #id mailpants
 #gameid -1
-#type boreal
-#type austral
 #sprite /graphics/hoburg/legs/steelpants.png
 #basechance 0
 #enditem
@@ -57,8 +34,6 @@
 #newitem
 #id platepants
 #gameid -1
-#type boreal
-#type austral
 #sprite /graphics/hoburg/legs/steelpants.png
 #basechance 0
 #enditem
@@ -66,40 +41,20 @@
 #newitem
 #id roninpants
 #gameid -1
-#type boreal
 #sprite /graphics/hoburg/legs/roninpants.png
 #basechance 0
 #enditem
 
 #newitem
-#id roninpants
-#gameid -1
-#type austral
-#sprite /graphics/hoburg/legs/roninpants_austral.png
-#basechance 0
-#enditem
-
-#newitem
 #id ashigarupants
 #gameid -1
-#type boreal
 #sprite /graphics/hoburg/legs/ashigarupants.png
-#basechance 0
-#enditem
-
-#newitem
-#id ashigarupants
-#gameid -1
-#type austral
-#sprite /graphics/hoburg/legs/ashigarupants_austral.png
 #basechance 0
 #enditem
 
 #newitem
 #id samuraipants
 #gameid -1
-#type boreal
-#type austral
 #sprite /graphics/hoburg/legs/samuraipants.png
 #basechance 0
 #enditem
@@ -107,8 +62,6 @@
 #newitem
 #id heavysamuraipants
 #gameid -1
-#type boreal
-#type austral
 #sprite /graphics/hoburg/legs/heavysamuraipants.png
 #basechance 0
 #enditem

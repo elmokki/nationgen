@@ -19,7 +19,6 @@
 
 #load armor /data/items/hoburg/clockwork/bronze/armor_clockwork_light.txt
 #load helmet /data/items/hoburg/normal/helmet.txt -2 -7
-#load legs /data/items/hoburg/clockwork/legs_clockwork_light.txt
 
 #load weapon /data/items/hoburg/clockwork/bronze/weapon_clockwork_light.txt
 #load offhand /data/items/hoburg/clockwork/bronze/offhand_clockwork_light.txt
@@ -46,7 +45,6 @@
 
 #load armor /data/items/hoburg/clockwork/bronze/armor_clockwork_light.txt
 #load helmet /data/items/hoburg/normal/helmet.txt -2 -7
-#load legs /data/items/hoburg/clockwork/legs_clockwork_light.txt
 
 #load weapon /data/items/hoburg/clockwork/bronze/weapon_clockwork_light.txt
 #load offhand /data/items/hoburg/clockwork/bronze/offhand_clockwork_light.txt
@@ -79,7 +77,6 @@
 #load armor /data/items/hoburg/clockwork/bronze/armor_clockwork_medium.txt
 #load helmet /data/items/hoburg/clockwork/bronze/helmet_clockwork_medium.txt
 #load helmet /data/items/hoburg/normal/helmet.txt -1 -16
-#load legs /data/items/hoburg/clockwork/legs_clockwork_medium.txt
 
 #load weapon /data/items/human/normal/humanweapon.txt 1 -5
 #load weapon /data/items/hoburg/clockwork/bronze/weapon_clockwork_medium.txt
@@ -95,7 +92,7 @@
 
 #generateitem 1 headslot -- used to define commander helmet slots
 #generateitem 1 handslots -- used to define commander hand slots
-#generateitem 1 specialweapon
+-- #generateitem 1 specialweapon
 #generateitem 1 specialslot
 
 #endpose
@@ -120,7 +117,6 @@
 #load armor /data/items/hoburg/clockwork/bronze/armor_clockwork_medium.txt
 #load helmet /data/items/hoburg/clockwork/bronze/helmet_clockwork_medium.txt
 #load helmet /data/items/hoburg/normal/helmet.txt -1 -16
-#load legs /data/items/hoburg/clockwork/legs_clockwork_medium.txt
 
 #load weapon /data/items/human/normal/humanweapon.txt 1 -5
 #load weapon /data/items/hoburg/clockwork/bronze/weapon_clockwork_medium.txt
@@ -137,7 +133,7 @@
 #generateitem 1 headslot -- used to define commander helmet slots
 #generateitem 1 handslots -- used to define commander hand slots
 
-#generateitem 1 specialweapon
+-- #generateitem 1 specialweapon
 #generateitem 0.2 specialslot
 
 #maxvarieties 2
