@@ -4,7 +4,8 @@
 #sprite /graphics/weapon/standard/axe.png
 #theme "primitive"
 #theme "iron"
-#tag "name infantry axeman"
+#theme "austral"
+#theme "boreal"
 #offsetx 2
 #offsety 13
 #enditem
@@ -15,6 +16,10 @@
 #sprite /graphics/hoburg/weapon/stick.png
 #theme "primitive"
 #theme "wood"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
 #tag "maxprot 9"
 #tag "notepic"
 #enditem
@@ -25,16 +30,18 @@
 #sprite /graphics/hoburg/weapon/greataxe.png
 #theme "primitive"
 #theme "iron"
-#tag "name infantry axeman"
+#theme "austral"
+#theme "boreal"
 #enditem
 
 #newitem
 #id halberd
 #gameid 5
 #sprite /graphics/hoburg/weapon/halberd.png
-#tag "name infantry halberdier"
 #theme "advanced"
 #theme "iron"
+#theme "austral"
+#theme "boreal"
 #enditem
 
 #newitem
@@ -44,6 +51,9 @@
 #offsetx 3
 #offsety 12
 #theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
 #enditem
 
 
@@ -52,7 +62,10 @@
 #gameid 12
 #sprite /graphics/hoburg/weapon/mace.png
 #theme "primitive"
-#tag "name infantry maceman"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
 #enditem
 
 
@@ -63,14 +76,19 @@
 #offsetx 3
 #offsety 12
 #theme "iron"
+#theme "austral"
+#theme "boreal"
 #enditem
 
 #newitem
 #id spear
 #gameid 1
 #sprite /graphics/hoburg/weapon/spear.png
-#tag "name infantry spearman"
 #theme "wood"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
 #enditem
 
 
@@ -78,9 +96,12 @@
 #id pike
 #gameid 590
 #sprite /graphics/hoburg/weapon/pike.png
-#tag "name infantry pikeman"
 #theme "wood"
 #theme "advanced"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
 #enditem
 
 
@@ -88,9 +109,10 @@
 #id falchion
 #gameid 10
 #sprite /graphics/weapon/standard/falchion.png
-#tag "name infantry falchioneer"
 #offsetx 3
 #offsety 12
 #theme "iron"
 #theme "elite"
+#theme "austral"
+#theme "boreal"
 #enditem
