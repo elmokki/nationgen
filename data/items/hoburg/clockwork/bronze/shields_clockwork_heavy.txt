@@ -1,0 +1,207 @@
+--- Shields
+
+#newitem
+#id hideshield
+#gameid 105
+#sprite /graphics/muuch/offhands/hideshield.png
+#tag "eliteversion hideshield_tinted"
+#offsetx 8
+#offsety -15
+#armor
+#theme "leather"
+#theme "occidental"
+#basechance 0.5
+#enditem
+
+#newitem
+#id greathideshield
+#gameid 112
+#sprite /graphics/muuch/offhands/greathideshield.png
+#tag "eliteversion greathideshield_tinted"
+#offsetx 8
+#offsety -15
+#armor
+#theme "leather"
+#theme "occidental"
+#basechance 1
+#enditem
+
+#newitem
+#id metalshield
+#gameid 2
+#sprite /graphics/muuch/offhands/bronzeshield.png
+#tag "eliteversion metalshield_tinted"
+#offsetx 8
+#offsety -15
+#armor
+#theme "bronze"
+#theme "occidental"
+#theme "central"
+#basechance 1
+#enditem
+
+#newitem
+#id bigmetalshield
+#gameid 2
+#sprite /graphics/muuch/offhands/bronzetower.png
+#tag "eliteversion bigmetalshield_tinted"
+#offsetx 8
+#offsety -15
+#armor
+#basechance 3
+#theme "bronze"
+#theme "occidental"
+#theme "central"
+#enditem
+
+#newitem
+#id hideshield_tinted
+#gameid 105
+#sprite /graphics/muuch/offhands/hideshield.png
+#recolormask /graphics/muuch/offhands/shield_recolormask.png
+#offsetx 8
+#offsety -15
+#armor
+#theme "leather"
+#theme "elite"
+#theme "occidental"
+#basechance 1
+#enditem
+
+#newitem
+#id greathideshield_tinted
+#gameid 112
+#sprite /graphics/muuch/offhands/greathideshield.png
+#recolormask /graphics/muuch/offhands/bigshield_recolormask.png
+#offsetx 8
+#offsety -15
+#armor
+#theme "leather"
+#theme "elite"
+#theme "occidental"
+#basechance 1
+#enditem
+
+#newitem
+#id metalshield_tinted
+#gameid 2
+#sprite /graphics/muuch/offhands/bronzeshield.png
+#recolormask /graphics/muuch/offhands/shield_recolormask.png
+#offsetx 8
+#offsety -15
+#armor
+#theme "bronze"
+#theme "elite"
+#theme "occidental"
+#theme "central"
+#basechance 1.5
+#enditem
+
+#newitem
+#id bigmetalshield_tinted
+#gameid 2
+#sprite /graphics/muuch/offhands/bronzetower.png
+#recolormask /graphics/muuch/offhands/bigshield_recolormask.png
+#offsetx 8
+#offsety -15
+#armor
+#basechance 3
+#theme "bronze"
+#theme "occidental"
+#theme "central"
+#theme "elite"
+#enditem
+
+-- Standard shields
+
+#newitem
+#id shield_tan
+#gameid 2
+#sprite /graphics/avvim/offhand/shield1.png
+#offsetx 9
+#offsety -7
+#theme "occidental"
+#theme "central"
+#armor
+#enditem
+
+#newitem
+#id shield_light
+#gameid 2
+#sprite /graphics/avvim/offhand/shield1.png
+#recolormask /graphics/avvim/offhand/shield1_recolormask.png
+#offsetx 9
+#offsety -7
+#theme "occidental"
+#theme "central"
+#armor
+#enditem
+
+#newitem
+#id shield_dark_iron
+#gameid 2
+#sprite /graphics/avvim/offhand/shield2.png
+#offsetx 9
+#offsety -5
+#theme "central"
+#armor
+#enditem
+
+#newitem
+#id shield_dark_iron_painted
+#gameid 2
+#sprite /graphics/avvim/offhand/shield2.png
+#recolormask /graphics/avvim/offhand/shield2_recolormask.png
+#offsetx 9
+#offsety -5
+#theme "central"
+#armor
+#enditem
+
+#newitem
+#id shield_dark_gold
+#gameid 2
+#sprite /graphics/avvim/offhand/shield3.png
+#offsetx 9
+#offsety -5
+#theme "central"
+#armor
+#enditem
+
+#newitem
+#id shield_dark_gold_painted
+#gameid 2
+#sprite /graphics/avvim/offhand/shield3.png
+#recolormask /graphics/avvim/offhand/shield3_recolormask.png
+#offsetx 9
+#offsety -5
+#theme "central"
+#armor
+#enditem
+
+
+-- Kite shields
+
+#newitem
+#id kite4
+#gameid 3
+#sprite /graphics/offhand/standard/kite4.png
+#recolormask self
+#offsetx 7
+#offsety -16
+#armor
+#theme "advanced"
+#theme "central"
+#enditem
+
+#newitem
+#id kite5
+#gameid 3
+#sprite /graphics/offhand/standard/kite5.png
+#recolormask /graphics/offhand/standard/kite5_recolormask.png
+#offsetx 7
+#offsety -16
+#armor
+#theme "advanced"
+#theme "central"
+#enditem

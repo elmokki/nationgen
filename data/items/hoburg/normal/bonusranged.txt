@@ -3,7 +3,11 @@
 #gameid 21
 #sprite /graphics/weapon/standard/javelin1.png
 #tag "name infantry 'Javelineer'"
-#theme "wood"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#theme "oriental"
 #enditem
 
 #newitem
@@ -12,6 +16,11 @@
 #sprite /graphics/weapon/standard/javelin2.png
 #tag "name infantry 'Javelineer'"
 #theme "wood"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#theme "oriental"
 #enditem
 
 #newitem
@@ -21,6 +30,10 @@
 #basechance 0.25
 #theme "advanced"
 #theme "mechanical"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "oriental"
 #enditem
 
 #newitem -- Throwing axe
@@ -29,6 +42,8 @@
 #theme "primitive"
 #theme "iron"
 #tag "name infantry 'Axe Thrower'"
+#theme "boreal"
+#theme "central"
 #enditem
 
 #newitem
@@ -37,6 +52,10 @@
 #sprite /graphics/weapon/standard/bonusshortbow.png
 #basechance 0.5
 #theme "wood"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "oriental"
 #enditem
 
 #newitem
@@ -50,6 +69,10 @@
 #offsetx 4
 #offsety -2
 #theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "oriental"
 #enditem
 
 #newitem
@@ -60,6 +83,11 @@
 #theme "wood"
 #tag "maxprot 8"
 #tag "notepic"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#theme "oriental"
 #enditem
 
 #newitem
@@ -73,6 +101,8 @@
 #theme "primitive"
 #theme "wood"
 #theme "iron"
+#theme "boreal"
+#theme "oriental"
 #enditem
 
 #newitem
@@ -84,4 +114,20 @@
 #basechance 0.45
 #theme "primitive"
 #theme "wood"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#theme "oriental"
+#enditem
+
+#newitem
+#name "sling"
+#gameid 22
+#sprite /graphics/hoburg/weapon/crossbow/sling.png
+#theme "leather"
+#theme "primitive"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
 #enditem

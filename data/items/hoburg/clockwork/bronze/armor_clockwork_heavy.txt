@@ -1,0 +1,39 @@
+
+-- Heavy clockwork armor
+
+#newitem 
+#name "heavy clockwork armor"
+#gameid -1
+#sprite /graphics/hoburg/bodyarmor/clockwork_armor_heavy_bronze.png
+#recolormask /graphics/hoburg/bodyarmor/clockwork_armor_heavy_bronze_recolormask.png
+#armor
+
+#define "#gcost +40"
+#define "#rcost +35"
+#define "#size 3"
+#define "#ressize 3"
+#define "#enc 1"
+#define "#reinvigoration 0"
+#define "#hp +12"
+#define "#prot 20"
+#define "#str +12"
+#define "#def -6"
+#define "#mor +12"
+#define "#mapmove 2"
+#define "#ap +0"
+#define "#prec -3"
+#define "#fireres +10"
+#define "#coldres +10"
+#define "#shockres +10"
+#define "#poisonres +10"
+#define "#slashres"
+#define "#pierceres"
+#define "#woundfend 75"
+#define "#mounted"
+#define "#itemslots +28672"
+
+#description "Their ponderous armor is driven by complex clockwork mechanisms that vastly increase their strength, but eventually run down and need rewound"
+
+#tag "guaranteedprefix clockwork"
+#enditem
+

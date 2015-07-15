@@ -9,6 +9,8 @@
 #basedchance 2
 #theme "savage"
 
+#command "#trample"
+
 #load basesprite /data/items/gaian/minotaur/bases.txt
 #load shadow /data/items/gaian/minotaur/shadow.txt
 #load hands /data/items/gaian/minotaur/hafted_hands.txt
@@ -21,17 +23,50 @@
 #load cloakf /data/items/gaian/minotaur/cloakf.txt
 #load cloakb /data/items/gaian/minotaur/cloakb.txt
 
+#maxunits 3
+
 #endpose
 
--------- Great Swords and Clubs for savage minotaurs
+-------- Dual-Wielding savage minotaurs
+
+#newpose
+#name "DW"
+#role "infantry"
+#role "scout"
+
+#basedchance 0.5
+#theme "savage"
+
+#command "#trample"
+
+#dwchancebonus 1
+
+#load basesprite /data/items/gaian/minotaur/bases.txt
+#load shadow /data/items/gaian/minotaur/shadow.txt
+#load hands /data/items/gaian/minotaur/1h_hands.txt
+
+#load armor /data/items/gaian/minotaur/armor.txt
+
+#load weapon /data/items/gaian/minotaur/dw_weapon.txt
+#load offhand /data/items/gaian/minotaur/offhand.txt
+#load helmet /data/items/gaian/minotaur/helmet.txt
+
+#load cloakf /data/items/gaian/minotaur/cloakf.txt
+#load cloakb /data/items/gaian/minotaur/cloakb.txt
+
+#maxunits 1
+
+#endpose
+
+-------- Great Swords or Clubs (low-probability pose for either civilized or savage)
 
 #newpose
 #name "2h short"
 #role "infantry"
 
-#basechance 0.1
+#basechance 3
 
-#theme "savage"
+#command "#trample"
 
 #load basesprite /data/items/gaian/minotaur/2h_bases.txt
 #load shadow /data/items/gaian/minotaur/shadow.txt
@@ -49,35 +84,7 @@
 
 #endpose
 
-
--------- Dual-Wielding savage minotaurs
-
-#newpose
-#name "DW"
-#role "infantry"
-
-#basedchance 0.1
-#theme "savage"
-
-#dwchancebonus 1
-
-#load basesprite /data/items/gaian/minotaur/bases.txt
-#load shadow /data/items/gaian/minotaur/shadow.txt
-#load hands /data/items/gaian/minotaur/1h_hands.txt
-
-#load armor /data/items/gaian/minotaur/armor.txt
-
-#load weapon /data/items/gaian/minotaur/dw_weapon.txt
-#load offhand /data/items/gaian/minotaur/offhand.txt
-#load helmet /data/items/gaian/minotaur/helmet.txt
-
-#load cloakf /data/items/gaian/minotaur/cloakf.txt
-#load cloakb /data/items/gaian/minotaur/cloakb.txt
-
-#endpose
-
--------- Trained minotaurs
-
+-------- Peltasts and other lower-discipline soldiers
 #newpose
 #name "soldiers"
 #role "infantry"
@@ -85,8 +92,11 @@
 
 #renderorder "shadow bonusweapon cloakb basesprite mount shirt legs armor cloakf quiver weapon offhandw hands hair helmet offhanda overlay"
 
-#basedchance 0.1
+#basedchance 1
 #theme "civilized"
+
+#command "#trample"
+#command "#def +1"
 
 #load basesprite /data/items/gaian/minotaur/bases.txt
 #load shadow /data/items/gaian/minotaur/shadow.txt
@@ -103,5 +113,38 @@
 #load cloakf /data/items/gaian/minotaur/cloakf.txt
 #load cloakb /data/items/gaian/minotaur/cloakb.txt
 
+#maxunits 3
+
 #endpose
 
+
+-------- Hoplites
+#newpose
+#name "hoplites"
+#role "infantry"
+
+#renderorder "shadow bonusweapon weapon cloakb basesprite mount shirt legs armor cloakf quiver offhandw hands hair helmet offhanda overlay"
+
+#basedchance 0.5
+#theme "civilized"
+
+#command "#formationfighter +1"
+#command "#mor +1"
+
+#load basesprite /data/items/gaian/minotaur/bases.txt
+#load shadow /data/items/gaian/minotaur/shadow.txt
+#load hands /data/items/gaian/minotaur/1h_hands.txt
+
+#load armor /data/items/gaian/minotaur/armor.txt
+
+#load weapon /data/items/gaian/minotaur/polearm.txt
+#load offhand /data/items/gaian/minotaur/shields.txt
+#load bonusweapon /data/items/gaian/minotaur/bonusranged.txt
+#load helmet /data/items/gaian/minotaur/helmet.txt
+
+#load cloakf /data/items/gaian/minotaur/cloakf.txt
+#load cloakb /data/items/gaian/minotaur/cloakb.txt
+
+#maxunits 3
+
+#endpose

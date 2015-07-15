@@ -3,24 +3,26 @@
 -- Special integrated weapons
 
 #newitem
-#id shock
+#id firespewer
 #basechance 0.25
 #gameid -1
 #armor
-#needs specialweapon shocklance
-#description "the armor electrically charges its weapon, delivering a light shock to enemies it strikes"
+#needs specialweapon firespewer
+#define "#fireres +5"
+#description "the armor can spew a limited amount of burning liquid at its enemies"
 #enditem
 
 #newitem
-#id fire
+#id poisonspewer
 #basechance 0.25
 #gameid -1
 #armor
-#needs specialweapon firelance
-#description "the armor ignites its weapon, delivering a burn to enemies it strikes"
+#needs specialweapon poisonspewer
+#define "#poisonres +5"
+#description "the armor can spew a limited amount of venomous vapors at its enemies"
 #enditem
 
--- Special integrated armor
+-- "Miscellaneous" modifications
 
 #newitem
 #id diving_helm
@@ -28,22 +30,39 @@
 #gameid -1
 #armor
 #define "#pooramphibian"
-#define "#poisonres +10"
+#define "#poisonres +5"
 #define "#rcost +5"
 #description "the armor has a sealed helmet that allows its wearer to survive underwater"
 #enditem
 
--- "Miscellaneous" modifications
-
 #newitem
-#id superior_gears
+#id food_stores
 #basechance 1
 #gameid -1
 #armor
-#theme "advanced"
-#define "#reinvigoration +1"
+#define "#supply +3"
+#define "gcost +5"
+#description "the armor has large compartments to store foodstuffs"
+#enditem
+
+#newitem
+#id modular_systems
+#basechance 1
+#gameid -1
+#armor
+#define "#heal"
 #define "rcost +5"
-#description "the armor's mechanisms are well-crafted and wind down very slowly"
+#description "the armor is designed so that damaged parts can eventually be replaced"
+#enditem
+
+#newitem
+#id optical_enhancer
+#basechance 1
+#gameid -1
+#armor
+#define "#darkvision 100"
+#define "rcost +5"
+#description "the armor has complex optical systems which allow it to operate normally in total darkness"
 #enditem
 
 #newitem
@@ -51,23 +70,50 @@
 #basechance 1
 #gameid -1
 #armor
-#theme "advanced"
-#sprite /graphics/hoburg/clockwork/clockwork_standard.png
+#sprite /graphics/hoburg/clockwork/clockwork_oriental.png
 #recolormask /graphics/hoburg/clockwork/clockwork_standard_recolormask.png
+#offsetx 1
+#offsety -4
 #define "#standard +1"
-#define "rcost +5"
+#define "#rcost +5"
 #description "the armor has an impressive standard mounted on its back to inspire nearby units"
 #enditem
 
 #newitem
-#id wings
-#basechance 0.25
+#id screeching_gears
+#basechance 0.5
 #gameid -1
 #armor
-#theme "advanced"
-#sprite /graphics/hoburg/clockwork/clockwork_wings.png
-#define "#flying"
-#define "gcost *1.5"
+#define "#fear +5"
+#define "#standard -1"
+#define "#gcost *1.2"
+#define "#rcost +10"
+#description "the armor's gears have been designed to screech loudly and painfully in battle; however, this is unpleasant for anyone near them, not just enemies"
+#enditem
+
+#newitem
+#id internal_engine
+#basechance 0.5
+#gameid -1
+#armor
+#define "#enc 0"
+#define "#mapmove +1"
+#define "#deathfire 2"
+#define "#fireres -5"
 #define "rcost +10"
+#description "the armor is driven by an internal engine instead of clockworks, giving it more endurance; however, it is also prone to explode when heavily damaged"
+#enditem
+
+#newitem
+#id wings
+#basechance 0.5
+#gameid -1
+#armor
+#sprite /graphics/hoburg/clockwork/clockwork_wings_heavy.png
+#define "#flying"
+#define "#gcost *1.5"
+#define "#enc +1"
+#define "#size 4"
+#define "#rcost +10"
 #description "the armor has cunningly-built mechanical wings that allow it to fly"
 #enditem

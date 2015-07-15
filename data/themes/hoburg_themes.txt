@@ -73,7 +73,7 @@
 #chanceinc era 3 1.75
 #chanceinc era 2 0.75
 #chanceinc primaryrace 'Human (advanced)' *4
-#themeinc theme mechanical +0.25
+#themeinc theme mechanical +0.025
 #themeinc theme advanced *2
 #themeinc theme iron *2
 #themeinc theme bronze *0.5
@@ -87,6 +87,7 @@
 #racedefinition "#pose hoburgtroops"
 #racedefinition "#pose clockworktroops"
 #racedefinition "#pose clockworktroops_oriental"
+#racedefinition "#pose clockworktroops_bronze"
 #endtheme
 
 -- Weights: EA 0.05, MA 0.3, LA 1
@@ -97,7 +98,7 @@
 #chanceinc era 3 *20
 #chanceinc era 2 *6
 #chanceinc primaryrace 'Human (advanced)' *2
-#themeinc theme mechanical +1
+#themeinc theme mechanical +0.1
 #themeinc theme mechanical *2
 #themeinc theme advanced *3
 #themeinc theme iron *3
@@ -118,6 +119,7 @@
 #racedefinition "#pose hoburgtroops"
 #racedefinition "#pose clockworktroops"
 #racedefinition "#pose clockworktroops_oriental"
+#racedefinition "#pose clockworktroops_bronze"
 #racedefinition "#tag 'preferredmount mechanical'"
 #endtheme
 
@@ -138,6 +140,7 @@
 #themeinc theme leather *1
 #themeinc theme naked *0.5
 #themeinc theme primitive *1
+#themeinc theme boreal *100
 #racedefinition "#nationcommand '#idealcold +1'"
 #racedefinition "#nationcommand '#gods europegods"
 #endtheme
@@ -164,8 +167,7 @@
 #themeinc theme leather *1
 #themeinc theme naked *0.05
 #themeinc theme primitive *0.5
-#themeinc theme oriental *1000
-#themeinc theme boreal *0.001
+#themeinc theme oriental *100
 #racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 134'"
@@ -194,13 +196,13 @@
 #themeinc theme leather *2
 #themeinc theme naked *2
 #themeinc theme primitive *2
-#themeinc theme occidental *1000
-#themeinc theme boreal *0.001
+#themeinc theme occidental *100
 #racedefinition "#longsyllables /data/names/nations/nahuatl/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 123'"
 #racedefinition "#nationcommand '#idealcold -1'"
 #racedefinition "#nationcommand '#gods westerngods"
+#racedefinition "#nationcommand '#likespop 82'"
 #endtheme
 
 -- "African quasi-Machakan" hoburgs 
@@ -226,13 +228,13 @@
 #themeinc theme leather *1
 #themeinc theme naked *2
 #themeinc theme primitive *1
-#themeinc theme austral *1000
-#themeinc theme boreal *0.001
+#themeinc theme austral *100
 #racedefinition "#longsyllables /data/names/nations/machakan/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/machakan/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 126'"
 #racedefinition "#nationcommand '#idealcold -1'"
 #racedefinition "#nationcommand '#gods southerngods"
+#racedefinition "#nationcommand '#likespop 80'"
 #endtheme
 
 -- "Hellenic quasi-Arco" hoburgs 
@@ -259,8 +261,7 @@
 #themeinc theme leather *1
 #themeinc theme naked *0.5
 #themeinc theme primitive *0.5
-#themeinc theme central *1000
-#themeinc theme boreal *0.001
+#themeinc theme central *100
 #racedefinition "#longsyllables /data/names/nations/amazon/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/amazon/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 107'"
