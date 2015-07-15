@@ -7,6 +7,10 @@
 #sprite /graphics/hoburg/bodyarmor/leathercuirass.png
 #armor
 #theme "leather"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
 #enditem
 
 #newitem
@@ -15,6 +19,10 @@
 #sprite /graphics/hoburg/bodyarmor/leatherhauberk.png
 #armor
 #theme "leather"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
 #enditem
 
 #newitem -- full leather
@@ -24,7 +32,20 @@
 #sprite /graphics/hoburg/bodyarmor/leatherhauberk.png
 #armor
 #theme "leather"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
 #needs legs leatherpants
+#enditem
+
+#newitem
+#name "reinforced leather"
+#gameid zotz_mictlanarmor
+#sprite /graphics/hoburg/bodyarmor/leatherhauberk.png
+#armor
+#theme "leather"
+#theme "occidental"
 #enditem
 
 --- Ring
@@ -35,6 +56,8 @@
 #sprite /graphics/hoburg/bodyarmor/ringcuirass.png
 #armor
 #theme "leather"
+#theme "boreal"
+#theme "central"
 #enditem
 
 #newitem
@@ -43,6 +66,8 @@
 #sprite /graphics/hoburg/bodyarmor/ringhauberk.png
 #armor
 #theme "leather"
+#theme "boreal"
+#theme "central"
 #enditem
 
 #newitem -- full ring
@@ -51,6 +76,8 @@
 #sprite /graphics/hoburg/bodyarmor/ringhauberk.png
 #armor
 #theme "leather"
+#theme "boreal"
+#theme "central"
 #needs legs ringpants
 #enditem
 
@@ -63,6 +90,9 @@
 #sprite /graphics/hoburg/bodyarmor/mailcuirass.png
 #armor
 #theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
 #enditem
 
 #newitem
@@ -71,6 +101,9 @@
 #sprite /graphics/hoburg/bodyarmor/mailhauberk.png
 #armor
 #theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
 #enditem
 
 #newitem -- full scale
@@ -80,6 +113,9 @@
 #armor
 #theme "advanced"
 #theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
 #needs legs mailpants
 #enditem
 
@@ -92,6 +128,7 @@
 #sprite /graphics/hoburg/bodyarmor/mailcuirass.png
 #armor
 #theme "iron"
+#theme "boreal"
 #enditem
 
 #newitem
@@ -100,6 +137,7 @@
 #sprite /graphics/hoburg/bodyarmor/mailhauberk.png
 #armor
 #theme "iron"
+#theme "boreal"
 #enditem
 
 #newitem -- full chain
@@ -109,7 +147,7 @@
 #armor
 #theme "advanced"
 #theme "iron"
-#tag "name mounted knight"
+#theme "boreal"
 #needs legs mailpants
 #enditem
 
@@ -123,6 +161,9 @@
 #armor
 #theme "advanced"
 #theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
 #enditem
 
 #newitem
@@ -132,7 +173,9 @@
 #armor
 #theme "advanced"
 #theme "iron"
-#tag "name mounted knight"
+#theme "austral"
+#theme "boreal"
+#theme "central"
 #enditem
 
 #newitem -- full plate
@@ -142,7 +185,9 @@
 #armor
 #theme "advanced"
 #theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
 #needs legs platepants
-#tag "name mounted knight"
 #maxvarieties 1
 #enditem
