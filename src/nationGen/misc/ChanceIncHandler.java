@@ -1581,6 +1581,31 @@ public class ChanceIncHandler {
 						continue;
 					}
 				}
+				else if(args.get(0).equals("poseitemtheme") && args.size() > 3)
+				{
+
+					boolean not = args.contains("not");
+					boolean contains = false;
+					
+					ItemSet stuff = u.pose.getItems(args.get(args.size() - 3));
+					if(stuff == null)
+						contains = false;
+					else
+					{
+						for(Item i : stuff)
+							if(Generic.containsTag(i.themes, args.get(args.size() - 2)))
+							{
+								contains = true;
+								break;
+							}
+					}
+					
+					if(contains != not)
+					{
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+						continue;
+					}
+				}
 				else if(args.get(0).equals("hasitem") && args.size() > 3)
 				{
 
