@@ -1111,7 +1111,7 @@ public class TroopGenerator {
 		
 
 		
-		// If nothing is available or under 5% of possible stuff is used, use all
+		// If nothing is available or under 5% of probability stuff is used, use all
 		if(chandler.countPossibleFilters(select, u) == 0 || (oldsum/allsum) < 0.05)
 		{
 			select = all;
