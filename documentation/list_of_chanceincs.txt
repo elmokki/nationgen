@@ -191,9 +191,9 @@ Info:	If unit encumberance (just #enc) is at least/below <prot>, apply modifier
 
 Magic
 ------------------------
-Usage:	#chanceinc magic <path> <mod>
+Usage:	#chanceinc magic [not] <path1> [not] <path2> ... <mod>
 Info:	If the nation's highest paths contain <path>, apply modifier
-	You can add multiple paths.
+	You can add multiple paths. The optional not-switch is for each path separately.
 
 Shape
 ------------------------
