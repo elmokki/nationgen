@@ -123,6 +123,11 @@ Item theme
 Usage:	#chanceinc itemtheme [not] <theme> <mod>
 Info:	If any item of the unit has the given tag, modifier is added
 
+Pose Item theme
+------------------------
+Usage:	#chanceinc itemtheme [not] <slot> <theme> <mod>
+Info:	If pose has any item with given theme available for given slot, apply
+
 Has Item
 ------------------------
 Usage:	#chanceinc hasitem [not] <slot> <itemname> <mod>
@@ -186,9 +191,9 @@ Info:	If unit encumberance (just #enc) is at least/below <prot>, apply modifier
 
 Magic
 ------------------------
-Usage:	#chanceinc magic <path> <mod>
+Usage:	#chanceinc magic [not] <path1> [not] <path2> ... <mod>
 Info:	If the nation's highest paths contain <path>, apply modifier
-	You can add multiple paths.
+	You can add multiple paths. The optional not-switch is for each path separately.
 
 Shape
 ------------------------
