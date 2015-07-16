@@ -1076,7 +1076,7 @@ public class TroopGenerator {
 			all = all.filterForPose(p);
 		}
 		
-
+		// Infantry has a high chance of onehanders if available
 		if(slot.equals("weapon") && role.equals("infantry"))
 		{
 			if(!this.has1H(used) && random.nextDouble() < 0.5)
@@ -1089,15 +1089,38 @@ public class TroopGenerator {
 		}
 		
 
-		
+		// Old is the ideal set
 		ItemSet select = old;
-		if(chandler.countPossibleFilters(select, u) == 0)
+		
+		// Check whether we should ditch using old
+		LinkedHashMap<Item, Double> map = null;
+		if(u != null)
+			map = chandler.handleChanceIncs(u, p.getItems(slot));
+		else
+			map = chandler.handleChanceIncs(new Unit(nationGen, race, p, nation), race.getItems(slot, role));
+	
+		double allsum = 0;
+		double oldsum = 0;
+		for(Item i : map.keySet())
+		{
+			if(old.contains(i))
+				oldsum += map.get(i);
+			if(p.getItems(slot).contains(i))
+				allsum += map.get(i);
+		}
+		
+
+		
+		// If nothing is available or under 5% of probability stuff is used, use all
+		if(chandler.countPossibleFilters(select, u) == 0 || (oldsum/allsum) < 0.05)
 		{
 			select = all;
 		}
 		
 
+
 		
+		// If nothing was possible, get a general solution
 		if(chandler.countPossibleFilters(select, u) == 0)
 		{
 			if(p == null)
@@ -1106,16 +1129,10 @@ public class TroopGenerator {
 				select = p.getItems(slot);
 		}
 		
-
-
-
-		
-
+		// Chance to just select whatever
 		if(random.nextDouble() < 0.5 && chandler.countPossibleFilters(all, u) > 0)
 			select = all;
 		
-		//System.out.println(all.possibleItems() + " / " + old.possibleItems() + " / " + select.possibleItems());
-
 		
 		if(u != null)
 			return Entity.getRandom(random, chandler.handleChanceIncs(u, select));

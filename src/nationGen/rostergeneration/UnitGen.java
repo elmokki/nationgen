@@ -1,8 +1,10 @@
 package nationGen.rostergeneration;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Random;
+
 
 
 
@@ -790,14 +792,32 @@ public class UnitGen {
 		ItemSet chosen = null;
 
 		
-
-		if(chandler.countPossibleFilters(remain, u) > 0 && random.nextDouble() > 0.75)
+		if(chandler.countPossibleFilters(remain, u) > 0)
 			chosen = remain;
-		else
+
+		// Check whether we should ditch using old
+		LinkedHashMap<Item, Double> map = null;
+		map = chandler.handleChanceIncs(u, u.pose.getItems(slot));
+	
+		double allsum = 0;
+		double oldsum = 0;
+		for(Item i : map.keySet())
+		{
+			if(remain.contains(i))
+				oldsum += map.get(i);
+			if(u.pose.getItems(slot).contains(i))
+				allsum += map.get(i);
+		}
+		
+		
+		if(chosen == null || chandler.countPossibleFilters(chosen, u) == 0 || random.nextDouble() < 0.5 || (oldsum/allsum) < 0.05)
 		{
 			chosen = all;	
 		}
 	
+		
+
+		
 
 		if(targettag != null && chosen.filterTag(targettag, true).possibleItems() > 0)
 		{

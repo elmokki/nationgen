@@ -845,11 +845,26 @@ public class ChanceIncHandler {
 				boolean canIncrease = true;
 				if(args.get(0).equals("magic") && args.size() >= 3)
 				{
+					boolean not = false;
 					for(int i = 1; i < args.size() - 1; i++)
 					{
+						if(args.get(i).equals("not"))
+						{
+							not = true;
+							continue;
+						}
+						
 						int path = Generic.PathToInteger(args.get(i));
-						if(!atHighest.contains(path))
+						
+						
+						if(atHighest.contains(path) == not)
+						{
 							canIncrease = false;
+							break;
+						}
+						
+						not = false;
+						
 					}
 					
 					if(canIncrease)
@@ -978,7 +993,8 @@ public class ChanceIncHandler {
 				// Nation commands
 				canIncrease = false;
 				if(args.get(0).equals("nationcommand") && args.size() >= 3)
-				{
+				{					
+
 					String command = args.get(1);
 					
 					int dir = 0;
@@ -995,7 +1011,7 @@ public class ChanceIncHandler {
 					{
 						if(c.command.equals(command))
 						{
-					
+							System.out.println(c.command);
 							
 							String arg = c.args.get(0);
 
@@ -1574,6 +1590,31 @@ public class ChanceIncHandler {
 							contains = true;
 							break;
 						}
+					
+					if(contains != not)
+					{
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+						continue;
+					}
+				}
+				else if(args.get(0).equals("poseitemtheme") && args.size() > 3)
+				{
+
+					boolean not = args.contains("not");
+					boolean contains = false;
+					
+					ItemSet stuff = u.pose.getItems(args.get(args.size() - 3));
+					if(stuff == null)
+						contains = false;
+					else
+					{
+						for(Item i : stuff)
+							if(Generic.containsTag(i.themes, args.get(args.size() - 2)))
+							{
+								contains = true;
+								break;
+							}
+					}
 					
 					if(contains != not)
 					{
