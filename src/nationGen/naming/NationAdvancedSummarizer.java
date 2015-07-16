@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import nationGen.entities.Filter;
+import nationGen.entities.Race;
 import nationGen.items.Item;
 import nationGen.misc.Command;
 import nationGen.nation.Nation;
@@ -107,7 +108,7 @@ public class NationAdvancedSummarizer {
 					traits.add(f.name);
 			
 			}
-			
+
 			if(traits.size() > 0)
 			{
 				tw.println("National traits:");
@@ -116,6 +117,25 @@ public class NationAdvancedSummarizer {
 				tw.println();
 			}
 			
+			// Write themes
+			for(Race r : n.races)
+			{
+				tw.print(r.visiblename + " themes: ");
+				String str = "";
+				for(Filter f : r.themefilters)
+				{
+					
+					if(Generic.containsTag(f.tags, "desc"))
+						str = str + Generic.getTagValue(f.tags, "desc") + ", ";
+					else
+						str = str + f.name + ", ";
+				}
+				if(str.length() > 0)
+					str = str.substring(0, str.length() - 2);
+				tw.println(str);
+			}
+			tw.println();
+
 			
 			// Units
 			tw.println("Troops:");
