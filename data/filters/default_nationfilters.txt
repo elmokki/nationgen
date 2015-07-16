@@ -258,4 +258,143 @@
 #desc "Fortifications are 20 percent more expensive"
 #end
 
+#new
+#name "templegems: fire"
+#type "templegemgen"
+#basechance 0
+#command "#templegems 0"
+#chanceinc "magic fire 0.05"
+#desc "Temples generate fire gems"
+#end
 
+#new
+#name "templegems: air"
+#type "templegemgen"
+#basechance 0
+#command "#templegems 1"
+#chanceinc "magic air 0.05"
+#desc "Temples generate air gems"
+#end
+
+#new
+#name "templegems: water"
+#type "templegemgen"
+#basechance 0
+#command "#templegems 2"
+#chanceinc "magic air 0.05"
+#desc "Temples generate water gems"
+#end
+
+#new
+#name "templegems: earth"
+#type "templegemgen"
+#basechance 0
+#command "#templegems 3"
+#chanceinc "magic earth 0.05"
+#desc "Temples generate earth gems"
+#end
+
+#new
+#name "templegems: astral"
+#type "templegemgen"
+#basechance 0
+#command "#templegems 4"
+#chanceinc "magic astral 0.05"
+#desc "Temples generate astral gems"
+#end
+
+#new
+#name "templegems: death"
+#type "templegemgen"
+#basechance 0
+#command "#templegems 5"
+#chanceinc "magic death 0.05"
+#desc "Temples generate death gems"
+#end
+
+#new
+#name "templegems: nature"
+#type "templegemgen"
+#basechance 0
+#command "#templegems 6"
+#chanceinc "magic nature 0.05"
+#desc "Temples generate nature gems"
+#end
+
+#new
+#name "templegems: nature"
+#type "templegemgen"
+#basechance 0
+#command "#templegems 7"
+#chanceinc "magic blood 0.15"
+#desc "Temples generate blood slaves"
+#end
+
+#new
+#name "uwbuild"
+#basechance 0
+#command "#uwbuild 1"
+#chanceinc command #amphibian 1
+#chanceinc command #pooramphibian 1
+#chanceinc magic not water *0
+#chanceinc nationcommand above #uwbuild 0 *0
+#desc "Can build forts under water"
+#end
+
+#new
+#name "guardian spirit: ghost"
+#type guardspirit
+#basechance 0
+#command "#guardspirit 566"
+#chanceinc magic death 0.05
+#desc "Ghosts protect priests in battles"
+#end
+
+#new
+#name "guardian spirit: black hawk"
+#type guardspirit
+#basechance 0
+#command "#guardspirit 517"
+#chanceinc magic nature 0.025
+#chanceinc magic air 0.025
+#chanceinc magic nature air 0.05
+#desc "Black hawks protect priests in battles"
+#end
+
+#new
+#name "spreadcold 3"
+#type spread
+#basechance 0
+#command "#spreadcold 3"
+#chanceinc nationcommand idealcold below -1 0.025
+#chanceinc nationcommand idealcold below -2 0.05
+#desc "Spreads cold"
+#end
+
+#new
+#name "spreadcold 5"
+#type spread
+#basechance 0
+#command "#spreadcold 5"
+#chanceinc nationcommand idealcold below -2 0.025
+#desc "Spreads cold"
+#end
+
+#new
+#name "spreadheat 3"
+#type spread
+#basechance 0
+#command "#spreadheat 3"
+#chanceinc nationcommand idealcold above 1 0.025
+#chanceinc nationcommand idealcold above 2 0.05
+#desc "Spreads heat"
+#end
+
+#new
+#name "spreadheat 5"
+#type spread
+#basechance 0
+#command "#spreadheat 5"
+#chanceinc nationcommand idealcold above 2 0.025
+#desc "Spreads heat"
+#end
