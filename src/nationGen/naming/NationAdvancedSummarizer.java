@@ -283,9 +283,10 @@ public class NationAdvancedSummarizer {
 					magicstuff = magicstuff + rand + pathnames[i];
 				else
 					magicstuff = magicstuff + paths[i] + pathnames[i];	
-					
+				magicstuff = magicstuff + " ";	
 			}
 		}
+		magicstuff = magicstuff.trim();
 
 		
 		if(randoms.size() > 0)
@@ -302,7 +303,7 @@ public class NationAdvancedSummarizer {
 		magicstuff = magicstuff + ". ";
 		
 
-		if(!magicstuff.equals(" . "))
+		if(!magicstuff.equals(". "))
 		{
 			magicstuff = magicstuff.trim();
 			tw.println("--- " + magicstuff);
