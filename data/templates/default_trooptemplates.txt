@@ -1,6 +1,6 @@
 
 #new
-#basechance 0.5
+#basechance 1
 #name "militia"
 #maxvarieties 1
 #maxunits 1
@@ -22,6 +22,23 @@
 #cannot_be_commander
 #onlyfilter
 #end
+
+
+-- Formation fighter
+- Needs unit to have a weapon with theme formationfighter available
+#new
+#basechance 0.125
+#name "formationfighter"
+#type formationfighter
+#command "#formationfighter"
+#themeinc thisitemtheme formationfighter *1000
+#chanceinc pose not infantry *0
+#chanceinc poseitemtheme not weapon formationfighter *0
+#maxunits 1
+#maxvarieties 2
+#theme formationfighter
+#end
+
 
 #new
 #basechance 0.25
@@ -93,7 +110,7 @@
 
 
 #new
-#basechance 0.5
+#basechance 0.25
 #name "mountainunit"
 #chanceinc pose mounted *0
 #chanceinc pose chariot *0
@@ -115,7 +132,7 @@
 #end
 
 #new
-#basechance 0.5
+#basechance 0.25
 #name "forestunit"
 #chanceinc pose mounted *0
 #chanceinc pose chariot *0
@@ -136,7 +153,7 @@
 #end
 
 #new
-#basechance 0.5
+#basechance 0.25
 #name "swampunit"
 #chanceinc pose mounted *0
 #chanceinc pose chariot *0
@@ -309,7 +326,7 @@
 
 
 #new
-#basechance 0.15
+#basechance 0.125
 #type pillager
 #name "pillager"
 #maxvarieties 2
@@ -330,7 +347,7 @@
 #end
 #new
 
-#basechance 0.15
+#basechance 0.125
 #type pillager
 #type stealthy
 #name "pillager stealthy"
