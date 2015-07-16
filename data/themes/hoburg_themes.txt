@@ -127,11 +127,13 @@
 --- Cultural themes (mandatory)
 
 -- Standard "northern European" hoburgs
--- Weights: primitive 4, agrarian 4, advanced 4, industrial 4
+-- Weights: primitive 1, agrarian 4, advanced 4, industrial 4
 #newtheme
 #type cultural
 #name boreal
+#theme boreal
 #basechance 4
+#chanceinc racetheme primitive *0.25
 #themeinc theme mechanical *1
 #themeinc theme advanced *1.5
 #themeinc theme iron *1
@@ -140,21 +142,22 @@
 #themeinc theme leather *1
 #themeinc theme naked *0.5
 #themeinc theme primitive *1
-#themeinc theme boreal *100
+#themeinc theme boreal *1000
 #racedefinition "#nationcommand '#idealcold +1'"
 #racedefinition "#nationcommand '#gods europegods"
 #endtheme
 
 --"Asian neo-Jomonese" hoburgs 
--- Weights: primitive 0.5, agrarian 1, advanced 2, industrial 2
+-- Weights: primitive 0.5, agrarian 1, advanced 2, industrial 4
 #newtheme
 #type cultural
 #name oriental
+#theme oriental
 #basechance 1
 #chanceinc racetheme primitive *0.5
 #chanceinc racetheme agrarian *1
 #chanceinc racetheme advanced *2
-#chanceinc racetheme industrial *2
+#chanceinc racetheme industrial *4
 #chanceinc primaryrace 'Oriental human' *5
 #chanceinc primaryrace ape *2.5
 #chanceinc primaryrace zotz *0.5
@@ -167,7 +170,7 @@
 #themeinc theme leather *1
 #themeinc theme naked *0.05
 #themeinc theme primitive *0.5
-#themeinc theme oriental *100
+#themeinc theme oriental *1000
 #racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 134'"
@@ -175,13 +178,14 @@
 #endtheme
 
 --"Mesoamerican proto-Mictlanese" hoburgs 
--- Weights: primitive 2, agrarian 1, advanced 0.5, industrial 0.25
+-- Weights: primitive 4, agrarian 2, advanced 0.5, industrial 0.25
 #newtheme
 #type cultural
 #name occidental
+#theme occidental
 #basechance 1
-#chanceinc racetheme primitive *2
-#chanceinc racetheme agrarian *1
+#chanceinc racetheme primitive *4
+#chanceinc racetheme agrarian *2
 #chanceinc racetheme advanced *0.5
 #chanceinc racetheme industrial *0.25
 #chanceinc primaryrace 'Oriental human' *0.5
@@ -196,7 +200,7 @@
 #themeinc theme leather *2
 #themeinc theme naked *2
 #themeinc theme primitive *2
-#themeinc theme occidental *100
+#themeinc theme occidental *1000
 #racedefinition "#longsyllables /data/names/nations/nahuatl/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 123'"
@@ -206,15 +210,16 @@
 #endtheme
 
 -- "African quasi-Machakan" hoburgs 
--- Weights: primitive 0.5, agrarian 1, advanced 1, industrial 0.5
+-- Weights: primitive 1, agrarian 3, advanced 3, industrial 1
 #newtheme
 #type cultural
 #name austral
+#theme austral
 #basechance 1
-#chanceinc racetheme primitive *0.5
-#chanceinc racetheme agrarian *1
-#chanceinc racetheme advanced *1
-#chanceinc racetheme industrial *0.5
+#chanceinc racetheme primitive *1
+#chanceinc racetheme agrarian *3
+#chanceinc racetheme advanced *3
+#chanceinc racetheme industrial *1
 #chanceinc primaryrace 'Human (black)' *5
 #chanceinc primaryrace Lizard *2.5
 #chanceinc primaryrace Avvite *2.5
@@ -228,7 +233,7 @@
 #themeinc theme leather *1
 #themeinc theme naked *2
 #themeinc theme primitive *1
-#themeinc theme austral *100
+#themeinc theme austral *1000
 #racedefinition "#longsyllables /data/names/nations/machakan/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/machakan/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 126'"
@@ -238,13 +243,14 @@
 #endtheme
 
 -- "Hellenic quasi-Arco" hoburgs 
--- Weights: primitive 0.25, agrarian 2, advanced 2, industrial 0.25
+-- Weights: primitive 0.25, agrarian 4, advanced 2, industrial 0.25
 #newtheme
 #type cultural
 #name central
+#theme central
 #basechance 1
 #chanceinc racetheme primitive *0.25
-#chanceinc racetheme agrarian *2
+#chanceinc racetheme agrarian *4
 #chanceinc racetheme advanced *2
 #chanceinc racetheme industrial *0.25
 #chanceinc primaryrace 'Human (Amazon)' *5
@@ -261,32 +267,33 @@
 #themeinc theme leather *1
 #themeinc theme naked *0.5
 #themeinc theme primitive *0.5
-#themeinc theme central *100
+#themeinc theme central *1000
 #racedefinition "#longsyllables /data/names/nations/amazon/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/amazon/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 107'"
 #endtheme
 
 -- "Hoburgbred" Abysians 
--- Weights: primitive 0.5, agrarian 1, advanced 1, industrial 0.5
+-- Weights: primitive 0.5, agrarian 1, advanced 2, industrial 2
 #newtheme
 #type cultural
-#name hoburgbred
-#basechance 0.5
-#chanceinc racetheme primitive *1
-#chanceinc racetheme agrarian *2
+#name abysian
+#theme abysian
+#basechance 1
+#chanceinc racetheme primitive *0.5
+#chanceinc racetheme agrarian *1
 #chanceinc racetheme advanced *2
-#chanceinc racetheme industrial *1
-#chanceinc primaryrace Abysian *10
+#chanceinc racetheme industrial *2
+#chanceinc primaryrace Abysian *20
 #themeinc theme mechanical *2
 #themeinc theme advanced *1
 #themeinc theme iron *4
-#themeinc theme bronze *1
+#themeinc theme bronze *0.25
 #themeinc theme wood *0.5
 #themeinc theme leather *0.5
 #themeinc theme naked *1
 #themeinc theme primitive *0.5
-#themeinc theme hoburgbred *100
+#themeinc theme abysian *1000
 #racedefinition "#longsyllables /data/names/nations/abysian/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/abysian/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 101'"
