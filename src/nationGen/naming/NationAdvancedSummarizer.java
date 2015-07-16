@@ -99,6 +99,11 @@ public class NationAdvancedSummarizer {
 				{
 					traits.add("Ideal cold level " + c.args.get(0));
 				}
+				else if(c.command.equals("#uwbuild") && c.args.get(0).equals("1"))
+				{
+					traits.add("Can build forts underwater");
+				}
+
 			for(Filter f : n.appliedfilters)
 			{
 				
