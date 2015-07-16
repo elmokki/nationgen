@@ -7,13 +7,15 @@
 #theme "occidental"
 #theme "oriental"
 #theme "austral"
+#chanceinc theme abysian *0.1
 #enditem
 
 #newitem
 #name "clockwork basesprite"
 #sprite /graphics/hoburg/basehoburg_clockwork_heavy.png
 #gameid -1
-#theme "hoburgbred"
+#theme "abysian"
+#chanceinc theme not abysian *0.1
 #define "#gcost +3"
 #define "#hp +2"
 #define "#mor +2"

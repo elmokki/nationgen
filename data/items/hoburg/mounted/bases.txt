@@ -7,6 +7,8 @@
 #theme "occidental"
 #theme "oriental"
 #basechance 0.1
+#chanceinc theme austral *0.1
+#chanceinc theme abysian *0.1
 #needstype hands boreal
 #enditem
 
@@ -16,6 +18,7 @@
 #sprite /graphics/hoburg/basehoburg_mounted_austral.png
 #theme "austral"
 #basechance 0.1
+#chanceinc theme not austral *0.1
 #needstype hands austral
 #enditem
 
@@ -23,8 +26,9 @@
 #name "hoburgbred basesprite"
 #gameid -1
 #sprite /graphics/hoburg/basehoburg_mounted_hoburgbred.png
-#theme "hoburgbred"
+#theme "abysian"
 #basechance 0.1
+#chanceinc theme not abysian *0.1
 #define "#gcost +3"
 #define "#hp +2"
 #define "#mor +2"
