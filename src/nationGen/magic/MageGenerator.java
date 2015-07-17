@@ -1330,19 +1330,7 @@ public class MageGenerator extends TroopGenerator {
 			
 
 			
-			int at = this.random.nextInt(power + 5) - 5; // -5 to power - 2
-			while(moreFilters.size() == 0 && at >= -5)
-			{
-				moreFilters = ChanceIncHandler.getFiltersWithPower(at, power, filters);
-				at--;
-			}
-			
 
-			if(moreFilters.size() < -2)
-			{
-				moreFilters.clear();
-				moreFilters.addAll(filters);
-			}
 			
 
 			
@@ -1369,10 +1357,26 @@ public class MageGenerator extends TroopGenerator {
 				}
 			}
 			
+			
+			int at = this.random.nextInt(power + 5) - 5; // -5 to power - 2
+			while(moreFilters.size() == 0 && at >= -5)
+			{
+				moreFilters = getFiltersForTier(ChanceIncHandler.getFiltersWithPower(at, power, filters), tier);
+				at--;
+			}
+			
+
+			if(moreFilters.size() < 2)
+			{
+				moreFilters.clear();
+				moreFilters.addAll(filters);
+			}
+			
 			List<Filter> actualFilters = this.getFiltersForTier(moreFilters, tier);
 			
 			if(actualFilters.size() == 0)
 			{
+				System.out.println(moreFilters);
 				System.out.println("No filters for tier " + tier + ", original " + moreFilters.size() + " / " + mages.get(0).race);
 				return;
 			}

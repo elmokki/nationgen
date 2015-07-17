@@ -706,7 +706,6 @@ public class SacredGenerator extends TroopGenerator {
 		// Give magic weapons if they were promised:
 		if(Generic.containsTag(u.tags, "NEEDSMAGICWEAPON"))
 		{
-			System.out.println("MAGIC WEAPON!");
 			int cost = Integer.parseInt(Generic.getTagValue(u.tags, "NEEDSMAGICWEAPON"));
 			u.tags.remove("NEEDSMAGICWEAPON " + cost);
 			giveMagicWeapons(u, cost);
