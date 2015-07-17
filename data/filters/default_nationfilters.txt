@@ -113,10 +113,10 @@
 #new
 #name "bloodsac"
 #type "bloodsac"
-#basechance 1
+#basechance 2
 #command "#sacrificedom"
 #chanceinc "magic blood holy 4"
-#chanceinc "magic blood 1"
+#chanceinc "magic blood 2"
 #desc "Priests may perform blood sacrifices"
 #end
 
@@ -124,9 +124,9 @@
 #name "nodeathsupply"
 #basechance 0.05
 #command "#nodeathsupply"
-#chanceinc "magic death 1"
-#chanceinc "command deathpower 1"
-#chanceinc "command deathrecruit 1"
+#chanceinc "magic death 2"
+#chanceinc "command deathpower 2"
+#chanceinc "command deathrecruit 2"
 #desc "Death dominion does not reduce supplies"
 #end
 
@@ -135,7 +135,7 @@
 #type "reanim"
 #basechance 0.0
 #command "#zombiereanim"
-#chanceinc "magic death 2"
+#chanceinc "magic death 3"
 #desc "Priests can reanimate the dead"
 #end
 
@@ -157,9 +157,9 @@
 #new
 #type "castleprod"
 #name "castleprod 10"
-#basechance 0.05
+#basechance 0.025
 #command "#castleprod +10"
-#chanceinc avgres 12 1
+#chanceinc avgres 12 0.475
 #chanceinc avgres 15 2
 #chanceinc avgres 20 3
 #chanceinc avgres 25 4
@@ -169,9 +169,9 @@
 #new
 #type "castleprod"
 #name "castleprod 25"
-#basechance 0.05
+#basechance 0.025
 #command "#castleprod +25"
-#chanceinc avgres 12 0.5
+#chanceinc avgres 12 0.225
 #chanceinc avgres 15 1
 #chanceinc avgres 20 1.5
 #chanceinc avgres 25 2
@@ -334,8 +334,8 @@
 #name "uwbuild"
 #basechance 0
 #command "#uwbuild 1"
-#chanceinc command #amphibian 1
-#chanceinc command #pooramphibian 1
+#chanceinc command #amphibian 0.25
+#chanceinc command #pooramphibian 0.25
 #chanceinc magic not water *0
 #chanceinc nationcommand above #uwbuild 0 *0
 #desc "Can build forts under water"
@@ -347,7 +347,7 @@
 #basechance 0
 #command "#guardspirit 566"
 #chanceinc magic death 0.05
-#desc "Ghosts protect priests in battles"
+#desc "Ghosts occasionally protect priests in battles"
 #end
 
 #new
@@ -358,16 +358,63 @@
 #chanceinc magic nature 0.025
 #chanceinc magic air 0.025
 #chanceinc magic nature air 0.05
-#desc "Black hawks protect priests in battles"
+#desc "Black hawks occasionally protect priests in battles"
 #end
+
+#new
+#name "guardian spirit: siren"
+#type guardspirit
+#basechance 0
+#command "#guardspirit 1055"
+#chanceinc magic water 0.025
+#chanceinc magic air 0.0125
+#chanceinc magic water air 0.05
+#desc "Sirens occasionally protect priests in battles"
+#end
+
+#new
+#name "guardian spirit: revenant"
+#type guardspirit
+#basechance 0
+#command "#guardspirit 396"
+#chanceinc magic death 0.025"
+#desc "Revenants occasionally protect priests in battles"
+#end
+
+#new
+#name "guardian spirit: nun"
+#type guardspirit
+#basechance 0
+#command "#guardspirit 396"
+#chanceinc primaryrace human 0.0125
+#chanceinc primaryrace "Human (advanced)" 0.0125
+#desc "Nuns occasionally follow priests in battles"
+#end
+
+-- Very low normal chanceinc values due to multipliers
+#new
+#name "guardian spirit: fravashi"
+#type guardspirit
+#command "#guardspirit 2562"
+#basechance 0
+#chanceinc primaryrace caelian 0.125
+#chanceinc magic air 0.00625
+#chanceinc magic astral 0.00625
+#chanceinc magic astral air 0.0125
+#chanceinc magic air *2
+#chanceinc magic astrla *2
+#chanceinc magic astral air *2
+#desc "Fravashis occasionally guard priests in battles"
+#end
+
 
 #new
 #name "spreadcold 3"
 #type spread
 #basechance 0
 #command "#spreadcold 3"
-#chanceinc nationcommand idealcold below -1 0.025
-#chanceinc nationcommand idealcold below -2 0.05
+#chanceinc nationcommand idealcold below -1 0.05
+#chanceinc nationcommand idealcold below -2 0.125
 #desc "Spreads cold"
 #end
 
@@ -376,7 +423,7 @@
 #type spread
 #basechance 0
 #command "#spreadcold 5"
-#chanceinc nationcommand idealcold below -2 0.025
+#chanceinc nationcommand idealcold below -2 0.05
 #desc "Spreads cold"
 #end
 
@@ -385,8 +432,8 @@
 #type spread
 #basechance 0
 #command "#spreadheat 3"
-#chanceinc nationcommand idealcold above 1 0.025
-#chanceinc nationcommand idealcold above 2 0.05
+#chanceinc nationcommand idealcold above 1 0.05
+#chanceinc nationcommand idealcold above 2 0.125
 #desc "Spreads heat"
 #end
 
@@ -395,6 +442,6 @@
 #type spread
 #basechance 0
 #command "#spreadheat 5"
-#chanceinc nationcommand idealcold above 2 0.025
+#chanceinc nationcommand idealcold above 2 0.05
 #desc "Spreads heat"
 #end

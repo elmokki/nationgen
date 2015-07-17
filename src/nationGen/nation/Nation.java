@@ -655,7 +655,7 @@ public class Nation {
 		List<Filter> filters = ChanceIncHandler.retrieveFilters("nationfilters", "default_nationfilters", this.nationGen.filters, null, this.races.get(0));
 		
 		int count = 0;
-		if(random.nextDouble() > 0.35)
+		if(random.nextDouble() > 0.5)
 		{	
 			count++;
 			if(random.nextDouble() > 0.75)
