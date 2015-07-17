@@ -132,7 +132,10 @@ public class TroopGenerator {
 		skipchance = 0.05 + random.nextDouble() * 0.15;
 		bonusrangedness = random.nextDouble() * 0.3;
 		chandler = new ChanceIncHandler(nation);
+		
 		maxtemplates = 1 + random.nextInt(3); // 1-3
+		if(maxtemplates == 1 && random.nextBoolean())
+			maxtemplates++;
 	}
 	
 	
