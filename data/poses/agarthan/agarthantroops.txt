@@ -128,6 +128,7 @@
 #role "sacred infantry"
 
 #command "#coldblood"
+#subrace "ancient one"
 
 #load basesprite /data/items/agarthan/generic_big/bases.txt
 #load shadow /data/items/agarthan/generic_big/shadow.txt
@@ -153,6 +154,7 @@
 #role "sacred ranged"
 
 #command "#coldblood"
+#subrace "ancient one"
 
 #renderorder "shadow cloakb mount bag basesprite shirt legs armor strap cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 #load basesprite /data/items/agarthan/generic_big/rangedbases.txt
@@ -184,6 +186,8 @@
 #name olmspawn_bronze
 #basechance 0.25
 #role "sacred infantry"
+
+#subrace "olmspawn"
 
 #command "#prot +2"
 #command "#gcost +20"
@@ -222,6 +226,8 @@
 #name olmspawn_steel
 #basechance 0.25
 #role "sacred infantry"
+
+#subrace "olmspawn"
 
 #command "#prot +2"
 #command "#gcost +20"
@@ -314,6 +320,8 @@
 #name olmspawn_scout
 #basechance 0.01
 #role "scout"
+
+#subrace "olmspawn"
 
 #command "#prot +2"
 #command "#gcost +20"
