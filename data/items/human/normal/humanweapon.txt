@@ -5,25 +5,27 @@
 #gameid 17
 #sprite /graphics/weapon/standard/axe.png
 #theme "primitive"
-#tag "name infantry axeman"
-#tag "name commander warlord"
-#tag "name commander warchief"
-#chanceinc unittag irregular 8
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
 #enditem
 
 #newitem
 #id broadsword
 #gameid 8
 #sprite /graphics/weapon/standard/broadsword.png
-#tag "name infantry swordsman"
-#tag "name commander captain"
-#tag "name commander swordsmaster"
+#theme "austral"
+#theme "boreal"
 #enditem
 
 #newitem
 #id flail
 #gameid 16
 #sprite /graphics/weapon/standard/flail.png
+#theme "austral"
+#theme "boreal"
+#theme "central"
 #enditem
 
 #newitem
@@ -31,18 +33,20 @@
 #gameid 18
 #sprite /graphics/weapon/standard/greataxe.png
 #theme "primitive"
-#tag "name infantry axeman"
-#tag "name commander warlord"
-#tag "name commander warchief"
-#chanceinc unittag irregular 8
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
 #enditem
 
 #newitem
 #id halberd
 #gameid 5
 #sprite /graphics/weapon/standard/halberd.png
-#tag "name infantry halberdier"
-#tag "name commander captain"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
 #theme "advanced"
 #minprot 8
 #enditem
@@ -51,23 +55,27 @@
 #id bardiche
 #gameid 257
 #sprite /graphics/weapon/standard/bardiche.png
-#tag "name commander warchief"
-#tag "name commander warlord"
+#theme "austral"
+#theme "boreal"
 #enditem
 
 #newitem
 #id hammer
 #gameid 13
 #sprite /graphics/weapon/standard/hammer.png
-#chanceinc unittag irregular 8
+#theme "austral"
+#theme "boreal"
+#theme "central"
 #enditem
 
 #newitem
 #id longspear
 #gameid 28
 #sprite /graphics/weapon/standard/longspear.png
-#tag "name infantry spearman"
-#tag "name commander captain"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
 #theme formationfighter
 #enditem
 
@@ -76,7 +84,10 @@
 #gameid 12
 #sprite /graphics/weapon/standard/mace.png
 #theme "primitive"
-#tag "name infantry maceman"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
 #maxprot 15
 #chanceinc unittag irregular 8
 #enditem
@@ -85,19 +96,28 @@
 #id maul
 #gameid 14
 #sprite /graphics/weapon/standard/maul.png
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
 #enditem
 
 #newitem
 #id morningstar
 #gameid 15
 #sprite /graphics/weapon/standard/morningstar.png
+#theme "austral"
+#theme "boreal"
+#theme "central"
 #enditem
 
 #newitem
 #id shortsword
 #gameid 6
 #sprite /graphics/weapon/standard/shortsword.png
-#tag "name commander captain"
+#theme "austral"
+#theme "boreal"
+#theme "central"
 #enditem
 
 #newitem
@@ -105,6 +125,10 @@
 #gameid 1
 #sprite /graphics/weapon/standard/spear.png
 #tag "name infantry spearman"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
 #theme formationfighter
 #enditem
 
@@ -112,6 +136,10 @@
 #id trident
 #gameid 3
 #sprite /graphics/weapon/standard/trident.png
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
 #tag "prefix trident"
 #basechance 0.25
 #theme formationfighter
@@ -127,8 +155,10 @@
 #id pike
 #gameid 2
 #sprite /graphics/weapon/standard/pike.png
-#tag "name infantry pikeman"
-#tag "name commander captain"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
 #theme formationfighter
 #enditem
 
@@ -137,13 +167,18 @@
 #id falchion
 #gameid 10
 #sprite /graphics/weapon/standard/falchion.png
-#tag "name infantry falchioneer"
+#theme "austral"
+#theme "boreal"
 #enditem
 
 #newitem
 #id quarterstaff
 #gameid 7
 #sprite /graphics/weapon/standard/quarterstaff.png
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
 #basechance 0.125
 #maxprot 10
 #enditem

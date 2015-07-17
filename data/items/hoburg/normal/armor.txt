@@ -1,8 +1,41 @@
+--- Nothing
+
+#newitem
+#name "barechest"
+#gameid -1
+#armor
+#basechance 1
+#theme "primitive"
+#theme "naked"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#theme "abysian"
+#needs shirt noshirt
+#enditem
+
+
+--- Furs
+
+#newitem
+#name "furs"
+#gameid 44
+#sprite /graphics/hoburg/bodyarmor/furs.png
+#armor
+#basechance 1
+#theme "primitive"
+#theme "leather"
+#theme "austral"
+#theme "occidental"
+#needs shirt noshirt
+#enditem
+
 
 --- Leather
 
 #newitem
-#name "leather cuirass 1"
+#name "leather cuirass"
 #gameid 5
 #sprite /graphics/hoburg/bodyarmor/leathercuirass.png
 #armor
@@ -14,7 +47,7 @@
 #enditem
 
 #newitem
-#name "leather hauberk 1"
+#name "leather hauberk"
 #gameid 10
 #sprite /graphics/hoburg/bodyarmor/leatherhauberk.png
 #armor
@@ -58,16 +91,18 @@
 #theme "leather"
 #theme "boreal"
 #theme "central"
+#theme "abysian"
 #enditem
 
 #newitem
-#name "ring hauberk short"
+#name "ring hauberk"
 #gameid 11
 #sprite /graphics/hoburg/bodyarmor/ringhauberk.png
 #armor
 #theme "leather"
 #theme "boreal"
 #theme "central"
+#theme "abysian"
 #enditem
 
 #newitem -- full ring
@@ -78,9 +113,46 @@
 #theme "leather"
 #theme "boreal"
 #theme "central"
+#theme "abysian"
 #needs legs ringpants
 #enditem
 
+
+--- Bronze Scale
+
+#newitem
+#name "bronze scale cuirass"
+#gameid 142
+#sprite /graphics/hoburg/bodyarmor/mailcuirass_bronze.png
+#armor
+#theme "bronze"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#enditem
+
+#newitem
+#name "bronze scale hauberk"
+#gameid 136
+#sprite /graphics/hoburg/bodyarmor/mailhauberk_bronze.png
+#armor
+#theme "bronze"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#enditem
+
+#newitem -- full scale
+#name "bronze full scale"
+#gameid bronzescale_full
+#sprite /graphics/hoburg/bodyarmor/mailhauberk_bronze.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "central"
+#theme "occidental"
+#needs legs mailpants_bronze
+#enditem
 
 --- Scale
 
@@ -93,10 +165,11 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
+#theme "abysian"
 #enditem
 
 #newitem
-#name "scale hauberk short"
+#name "scale hauberk"
 #gameid 12
 #sprite /graphics/hoburg/bodyarmor/mailhauberk.png
 #armor
@@ -104,6 +177,7 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
+#theme "abysian"
 #enditem
 
 #newitem -- full scale
@@ -116,9 +190,9 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
+#theme "abysian"
 #needs legs mailpants
 #enditem
-
 
 --- Chain Mail
 
@@ -129,6 +203,7 @@
 #armor
 #theme "iron"
 #theme "boreal"
+#theme "abysian"
 #enditem
 
 #newitem
@@ -138,6 +213,7 @@
 #armor
 #theme "iron"
 #theme "boreal"
+#theme "abysian"
 #enditem
 
 #newitem -- full chain
@@ -148,7 +224,48 @@
 #theme "advanced"
 #theme "iron"
 #theme "boreal"
+#theme "abysian"
 #needs legs mailpants
+#enditem
+
+
+--- Bronze Plate
+
+#newitem
+#name "bronze plate cuirass"
+#gameid 100
+#sprite /graphics/hoburg/bodyarmor/platecuirass_bronze.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#enditem
+
+#newitem
+#name "bronze plate hauberk"
+#gameid 14
+#sprite /graphics/hoburg/bodyarmor/platehauberk_bronze.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#enditem
+
+#newitem -- full plate
+#name "bronze full plate"
+#gameid bronzeplate_full
+#sprite /graphics/hoburg/bodyarmor/platehauberk_bronze.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "central"
+#theme "occidental"
+#needs legs platepants_bronze
+#maxvarieties 1
 #enditem
 
 
@@ -164,6 +281,7 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
+#theme "abysian"
 #enditem
 
 #newitem
@@ -176,6 +294,7 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
+#theme "abysian"
 #enditem
 
 #newitem -- full plate
@@ -188,6 +307,7 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
+#theme "abysian"
 #needs legs platepants
 #maxvarieties 1
 #enditem

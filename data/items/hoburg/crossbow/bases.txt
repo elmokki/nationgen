@@ -7,6 +7,8 @@
 #theme "occidental"
 #theme "oriental"
 #basechance 0.1
+#chanceinc theme austral *0.1
+#chanceinc theme abysian *0.1
 #needstype hands boreal
 #enditem
 
@@ -16,5 +18,26 @@
 #sprite /graphics/hoburg/basehoburg_crossbow_austral.png
 #theme "austral"
 #basechance 0.1
-#needstype hands austral
+#chanceinc theme not austral *0.1
+#enditem
+
+
+#newitem
+#name "hoburgbred basesprite"
+#gameid -1
+#sprite /graphics/hoburg/basehoburg_crossbow_hoburgbred.png
+#theme "abysian"
+#chanceinc theme not abysian *0.1
+#basechance 0.1
+#needstype hands hoburgbred
+#define "#gcost +3"
+#define "#hp +2"
+#define "#mor +2"
+#define "#str +2"
+#define "#def -2"
+#define "#prec -2"
+#define "#ap +2"
+#define "#fireres 15"
+#define "#maxage *0.8"
+#command "#descr 'Hoburgbred Abysians are the result of ill-conceived crossbreeding experiments aiming to combine the best traits of the two races. They are fire resistant, stronger, and more arrogant than typical hoburgs.'"
 #enditem

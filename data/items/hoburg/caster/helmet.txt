@@ -1,4 +1,91 @@
 
+
+--- Bare heads
+
+#newitem
+#id bald
+#gameid -1
+#sprite /graphics/hoburg/helmet/caster/turban1.png
+#recolormask /graphics/hoburg/helmet/caster/turban1_recolormask.png
+#armor
+#tag "tier 1"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#theme "oriental"
+#theme "abysian"
+#enditem
+
+#newitem
+#id topknot
+#gameid -1
+#sprite /graphics/hoburg/helmet/topknot.png
+#armor
+#tag "tier 1"
+#theme "oriental"
+#enditem
+
+
+--- Headdresses
+
+#newitem
+#id headdress_small
+#gameid -1
+#sprite /graphics/hoburg/helmet/caster/feathercap_blue.png
+#recolormask self
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#tag "eliteversion headdress_large"
+#theme "central"
+#enditem
+
+#newitem
+#id headdress_large
+#gameid -1
+#sprite /graphics/hoburg/helmet/caster/feathercap_blue_twotone.png
+#recolormask self
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "central"
+#enditem
+
+#newitem
+#id plume_red
+#gameid -1
+#sprite /graphics/hoburg/helmet/caster/feathercap_red_high.png
+#tag "eliteversion plume_redscale"
+#tag "eliteversion plume_colored"
+#armor
+#tag "tier 2"
+#theme "central"
+#enditem
+
+#newitem
+#id plume_redscale
+#gameid -1
+#sprite /graphics/hoburg/helmet/caster/feathercap_red_high.png
+#recolormask /graphics/hoburg/helmet/caster/feathercap_red_high_recolormask1.png
+#tag "eliteversion plume_colored"
+#armor
+#tag "tier 3"
+#theme "central"
+#enditem
+
+#newitem
+#id plume_colored
+#gameid -1
+#sprite /graphics/hoburg/helmet/caster/feathercap_red_high.png
+#recolormask /graphics/hoburg/helmet/caster/feathercap_red_high_recolormask2.png
+#tag "eliteversion plume_redscale"
+#armor
+#tag "tier 3"
+#theme "central"
+#enditem
+
+
 --- Caster hats
 
 #newitem
@@ -27,4 +114,24 @@
 #theme "boreal"
 #theme "central"
 #theme "oriental"
+#enditem
+
+#newitem
+#id fancyhat1
+#gameid 120
+#sprite /graphics/hoburg/helmet/fancyhat1.png
+#recolormask /graphics/hoburg/helmet/fancyhat1_recolormask.png
+#armor
+#tag "tier 3"
+#theme "boreal"
+#enditem
+
+#newitem
+#id fancyhat2
+#gameid 120
+#sprite /graphics/hoburg/helmet/fancyhat2.png
+#recolormask /graphics/hoburg/helmet/fancyhat2_recolormask.png
+#armor
+#tag "tier 3"
+#theme "boreal"
 #enditem

@@ -7,6 +7,37 @@
 #sprite /graphics/hoburg/bodyarmor/clockwork_armor_light_samurai.png
 #armor
 #theme "advanced"
+#eliteversion "elite light clockwork armor"
+
+#define "#gcost +15"
+#define "#rcost +10"
+#define "#size 1"
+#define "#ressize 1"
+#define "#hp +2"
+#define "#enc 2"
+#define "#reinvigoration -2"
+#define "#str +2"
+#define "#def -2"
+#define "#mor +1"
+#define "#mapmove 2"
+#define "#ap +8"
+#define "#mounted"
+#define "#woundfend 25"
+#description "Their armor is driven by complex clockwork mechanisms that increase their strength and speed, but run down and need rewound"
+#define "#itemslots 12422"
+
+#tag "guaranteedprefix clockwork"
+#enditem
+
+
+#newitem -- light clockwork armor
+#name "elite light clockwork armor"
+#gameid 129
+#sprite /graphics/hoburg/bodyarmor/clockwork_armor_light_samurai_elite.png
+#recolormask /graphics/hoburg/bodyarmor/clockwork_armor_light_samurai_elite_recolormask.png
+#armor
+#theme "advanced"
+#theme "elite"
 
 #define "#gcost +15"
 #define "#rcost +10"
