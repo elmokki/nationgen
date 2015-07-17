@@ -25,6 +25,7 @@
 #theme "central"
 #theme "occidental"
 #theme "oriental"
+#theme "abysian"
 #enditem
 
 #newitem
@@ -53,6 +54,31 @@
 #theme "boreal"
 #theme "central"
 #theme "oriental"
+#enditem
+
+#newitem
+#name "black goat"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat_black.png
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 10"
+#define "#mounted"
+#define "#weapon 352 --- gore"
+#define "#gcost +12"
+#define "#ressize 1"
+#define "#mountainsurvival"
+#define "#enc 3"
+#define "#rcost +4"
+#tag "animal goat"
+#tag "maxprot 12"
+#tag "guaranteedprefix goat"
+#theme "goat"
+#offsety -7
+#offsetx 0
+#basechance 0.5
+#theme "abysian"
 #enditem
 
 #newitem
@@ -207,6 +233,7 @@
 #theme "boreal"
 #theme "central"
 #theme "occidental"
+#theme "abysian"
 #enditem
 
 #newitem
@@ -236,6 +263,7 @@
 #theme "boreal"
 #theme "central"
 #theme "oriental"
+#theme "abysian"
 #enditem
 
 #newitem
@@ -267,6 +295,7 @@
 #theme "boreal"
 #theme "central"
 #theme "oriental"
+#theme "abysian"
 #enditem
 
 #newitem
@@ -297,6 +326,7 @@
 #theme "boreal"
 #theme "central"
 #theme "oriental"
+#theme "abysian"
 #enditem
 
 #newitem
@@ -329,6 +359,7 @@
 #theme "austral"
 #theme "occidental"
 #theme "oriental"
+#theme "abysian"
 #enditem
 
 #newitem
@@ -362,5 +393,6 @@
 #theme "austral"
 #theme "central"
 #theme "oriental"
+#theme "abysian"
 #enditem
 

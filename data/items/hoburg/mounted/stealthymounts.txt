@@ -29,6 +29,7 @@
 #theme "central"
 #theme "occidental"
 #theme "oriental"
+#theme "abysian"
 #enditem
 
 #newitem
@@ -133,6 +134,7 @@
 #theme "central"
 #theme "occidental"
 #theme "oriental"
+#theme "abysian"
 #enditem
 
 #newitem
@@ -275,4 +277,26 @@
 #theme "central"
 #theme "occidental"
 #theme "oriental"
+#enditem
+
+#newitem
+#name "demonbred hog"
+#gameid -1
+#sprite /graphics/hoburg/mounts/demonbred_hog.png
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 14"
+#define "#mounted"
+#define "#weapon 352 --- Gore"
+#define "#gcost +17"
+#define "#ressize 1"
+#define "#rcost +4"
+#define "#enc 4"
+#tag "animal boar"
+#tag "guaranteedprefix hog"
+#theme "boar"
+#offsety -12
+#offsetx 1
+#theme "abysian"
 #enditem

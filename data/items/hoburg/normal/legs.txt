@@ -18,6 +18,31 @@
 #enditem
 
 #newitem
+#id loincloth
+#gameid -1
+#sprite /graphics/hoburg/legs/loincloth.png
+#recolormask /graphics/hoburg/legs/loincloth_recolormask.png
+#theme "primitive"
+#theme "naked"
+#theme "austral"
+#theme "occidental"
+#needs shirt noshirt
+#basechance 0.01
+#enditem
+
+#newitem
+#id starkers
+#gameid -1
+#theme "primitive"
+#theme "naked"
+#theme "central"
+#theme "abysian"
+#needs shirt noshirt
+#basechance 0.01
+#maxprot 0
+#enditem
+
+#newitem
 #id ringpants
 #gameid -1
 #sprite /graphics/hoburg/legs/ringpants.png
@@ -25,9 +50,23 @@
 #enditem
 
 #newitem
+#id mailpants_bronze
+#gameid -1
+#sprite /graphics/hoburg/legs/bronzepants.png
+#basechance 0
+#enditem
+
+#newitem
 #id mailpants
 #gameid -1
 #sprite /graphics/hoburg/legs/steelpants.png
+#basechance 0
+#enditem
+
+#newitem
+#id platepants_bronze
+#gameid -1
+#sprite /graphics/hoburg/legs/bronzepants.png
 #basechance 0
 #enditem
 

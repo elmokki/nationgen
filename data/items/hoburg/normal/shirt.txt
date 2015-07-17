@@ -1,6 +1,26 @@
 #newitem
-#id 1
+#id shirt
 #gameid -1
 #sprite /graphics/hoburg/shirt/shirt.png
 #recolormask self
+#theme "boreal"
+#theme "central"
+#theme "oriental"
+#enditem
+
+#newitem
+#id noshirt
+#gameid -1
+#theme "austral"
+#theme "occidental"
+#theme "abysian"
+#enditem
+
+#newitem
+#id noshirt
+#gameid -1
+#basechance 0.001
+#theme "boreal"
+#theme "central"
+#theme "oriental"
 #enditem
