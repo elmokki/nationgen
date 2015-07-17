@@ -1342,19 +1342,10 @@ public class MageGenerator extends TroopGenerator {
 			
 			List<Unit> mages = getMagesOfTier(units, tier);
 			
-			if(mages.size() == 0)
+			if(mages.size() == 0) // This happens for heroes and extra mages.
 			{
-
-				if(units.get(0).tags.contains("extramage"))
-				{
-					mages.addAll(units);
-					tier = this.random.nextInt(2) + 2; // 2 to 3;
-				}
-				
-				if(mages.size() == 0) // Unhandled tier. Heroes have that.
-				{ 
-					mages = units;
-				}
+				mages.addAll(units);
+				tier = 4;
 			}
 			
 			
