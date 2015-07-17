@@ -1472,11 +1472,9 @@ public class MageGenerator extends TroopGenerator {
 				tempFilters = ChanceIncHandler.getValidUnitFilters(tempFilters, mages);
 
 
-				
-				if(tempFilters.size() > 0 && this.random.nextDouble() > 0.25)
+				if(chandler.countPossibleFilters(tempFilters, mages.get(0)) > 0 && this.random.nextDouble() > 0.25)
 					givenFilters = tempFilters;
 					
-	
 	
 				
 				Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(mages, givenFilters));
