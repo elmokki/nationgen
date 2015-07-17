@@ -437,8 +437,9 @@ public class TroopGenerator {
 	
 	private boolean armCavalry(Unit unit, Template t)
 	{
-	
-
+		
+		
+			
 			boolean hasllance = false;
 			
 			ItemSet tempweps = new ItemSet();
@@ -457,16 +458,18 @@ public class TroopGenerator {
 			boolean has1h = has1H(tempweps);
 			boolean has2h = (!has1H(tempweps) && tempweps.size() > 0);
 			
-			//System.out.println(has1h + ", " + has2h + ", " + hasllance);
 			boolean done = false;
 			int r = -1;
+			tempweps.clear();
+			
 			while(!done)
 			{
 
 				r = random.nextInt(3);
 
-				if(r == 0 && !has2h) // 2h
+				if(r == 0 && !has1h) // 1h
 				{
+
 					tempweps.addAll(t.pose.getItems("weapon").filterTheme("elite", false).filterTheme("sacred", false).filterDom3DB("2h", "0", true, nationGen.weapondb));
 					for(Item i : t.pose.getItems("weapon").filterTheme("elite", false).filterTheme("sacred", false))
 					{
@@ -475,8 +478,9 @@ public class TroopGenerator {
 					}
 					done = true;
 				}
-				else if(r == 1 && !has1h) // 1h
+				else if(r == 1 && !has2h) // 2h
 				{
+
 					tempweps.addAll(t.pose.getItems("weapon").filterTheme("elite", false).filterTheme("sacred", false).filterDom3DB("2h", "1", true, nationGen.weapondb));
 					for(Item i : t.pose.getItems("weapon").filterTheme("elite", false).filterTheme("sacred", false))
 					{
@@ -489,10 +493,13 @@ public class TroopGenerator {
 				{
 					for(Item i : t.pose.getItems("weapon").filterTheme("elite", false).filterTheme("sacred", false))
 					{
-						if(!i.id.equals("357") && !i.tags.contains("lightlance"))
+						if(i.id.equals("357") || i.tags.contains("lightlance"))
+						{
 							tempweps.add(i);
+						}
 					}
-					done = true;
+					if(tempweps.size() > 0)
+						done = true;
 				}
 			}
 				
@@ -501,7 +508,6 @@ public class TroopGenerator {
 
 			
 			unit.setSlot("weapon", weapon);
-			
 
 			t.weapons.add(weapon);
 			
@@ -538,11 +544,11 @@ public class TroopGenerator {
 				}
 				
 				
-				}
+			}
 				
 
 			
-				return true;
+			return true;
 			
 	}
 
@@ -1082,6 +1088,8 @@ public class TroopGenerator {
 			race = u.race;
 		}
 		
+
+		
 		if(p != null && p.getItems(slot) == null)
 			return null;
 		
@@ -1098,8 +1106,9 @@ public class TroopGenerator {
 			all = p.getItems(slot);
 
 		
-		if(p != null)
+		if(p != null && u != null && chandler.countPossibleFilters(all, u) == 0)
 			all = p.getItems(slot);
+
 
 		
 		old = old.filterImpossibleAdditions(used);
