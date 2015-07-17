@@ -1,4 +1,54 @@
-** As of 20150530, the .XXE branch is being merged back into the main branch, taxonomically speaking. As a record of changes exists on the Github repository, this file is considered deprecated, will no longer be updated, and at some time after 0.6.0 will disappear **
+0.6.0 (17th of July 2015)
+----------------------------------------------------------
+
+Code
+-------------------
+- A pile of seed-affecting options are now available. They give an options 0"seed" that can copied easily to sync options with other people.
+- Mage and priest special ability generation rewritten. The distribution of stuff is different now.
+- Theme system: Races get random themes and you might end up with something like oriental advanced hoburgs or primitive slaver lizards. For most races there are just few themes with moderate to little effect. However, see content part.
+- Preview drawing is back (but does have some limitations like now showing #copystatted special monsters, so do note that)
+- Troop generation overhaul
+- Troop themes: Similar to old rare troop templates but able to affect unit generation instead of being given to units afterwards. These allow stuff like militia, minor elites etc and are far more common than the old troop templates. Every nation should get at least one.
+- Support for mage/sacred/etc themes for future ideas of random templates for those
+- Monsters support custom sprites
+- Troop and commander naming was entirely rewritten
+- A good pile of new #chanceincs for content creation
+- Documentation on some things has been updated
+- Forts moved to a file for ability to affect their probabilities
+- Hero gold costs are now zero
+- Heroes shouldn't get chaos recruitment and similar stuff
+- Fixed a bug where only the last #chanceinc per thing was applied. This changed massively on how some things are generated.
+- Nation filters are a bit more common
+- A lot of tweaking and bugfixes
+
+Content
+-------------------
+- New race: Minotaurs
+- Slaver variants of races merged into normal race with use of themes
+- Major theme setup for Vaettir: Tribal themes that affect stats, equipment and magic
+- Major theme setup for Amazons: Tribal themes that affect stats, equipment and magic
+- Major theme setup for Hoburgs: More complex tech level themes and regional themes
+- Major theme setup for Lizards: Demographic composition themes
+- Major theme setup for Abysians: Demographic composition themes
+- Major theme setup for Minotaurs: Civilized-Savage divide themes
+- Avvite elephants re-enabled
+- Winged monkeys
+- Magic path themed kite shields for sacreds
+- Massive amount of new equipment for hoburgs
+- Added several possible melee weapons for ranged units and restricted non-elite ranged units from getting strong melee weapons
+- Distinct nation names for advanced humans
+- Several miscellaneous new mounts added to various races (small bears, black dogs, etc.)
+- Several new filters for mages and troops; imposed some common sense restrictions on some of the shapechanging filters
+- Slavery is more widespear (if rare for most races)
+- More nation filters
+- Other more or less minor additions
+
+According to github there has been net of 9990 lines of code and content definitions (probably more definitions than code) added between June 13 and July 13. Last version of the program was released at the end of May so this is not even everything. To give credit where it's due, pretty much all the content additions apart from some of the troop and commander name files have been made by Ealb. While I've written most of the new code, Ealb has written a lot of bugfixes and tweaks and even more importantly spotted a huge number of bugs that may have been there for years.
+
+Hoburgs are really worth checking out now. They really got a great amount of love from Ealb and are even more amazing now than before.
+
+Earlier versions
+----------------------------------------------------------
 
 version 0.5.0.11E (29th of May 2015)
 - updated graphics for a few more mounts and the remaining un-updated chariots

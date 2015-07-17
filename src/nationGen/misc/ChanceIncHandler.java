@@ -1011,7 +1011,6 @@ public class ChanceIncHandler {
 					{
 						if(c.command.equals(command))
 						{
-							System.out.println(c.command);
 							
 							String arg = c.args.get(0);
 
