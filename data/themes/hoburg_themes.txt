@@ -143,7 +143,7 @@
 #themeinc theme naked *0.5
 #themeinc theme primitive *1
 #themeinc theme boreal *1000
-#themeinc theme abysian *0.001
+#themeinc thisitemtheme abysian *0.001
 #racedefinition "#nationcommand '#idealcold +1'"
 #racedefinition "#nationcommand '#gods europegods"
 #endtheme
@@ -172,7 +172,7 @@
 #themeinc theme naked *0.05
 #themeinc theme primitive *0.5
 #themeinc theme oriental *1000
-#themeinc theme abysian *0.001
+#themeinc thisitemtheme abysian *0.001
 #racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 134'"
@@ -203,7 +203,7 @@
 #themeinc theme naked *2
 #themeinc theme primitive *2
 #themeinc theme occidental *1000
-#themeinc theme abysian *0.001
+#themeinc thisitemtheme abysian *0.001
 #racedefinition "#longsyllables /data/names/nations/nahuatl/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 123'"
@@ -237,7 +237,7 @@
 #themeinc theme naked *2
 #themeinc theme primitive *1
 #themeinc theme austral *1000
-#themeinc theme abysian *0.001
+#themeinc thisitemtheme abysian *0.001
 #racedefinition "#longsyllables /data/names/nations/machakan/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/machakan/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 126'"
@@ -272,7 +272,7 @@
 #themeinc theme naked *0.5
 #themeinc theme primitive *0.5
 #themeinc theme central *1000
-#themeinc theme abysian *0.001
+#themeinc thisitemtheme abysian *0.001
 #racedefinition "#longsyllables /data/names/nations/amazon/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/amazon/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 107'"
@@ -387,4 +387,33 @@
 #themeinc theme mechanical *3
 #racedefinition "#nationcommand '#golemhp 10'"
 #racedefinition "#magicpriority earth 10"
+#endtheme
+
+-- Weights: EA 0.5, MA 0.5, LA 0.5
+#newtheme
+#type social
+#name slaver
+#basechance 0.01
+#chanceinc racetheme advanced *0.25
+#chanceinc racetheme industrial *0.125
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#themeinc theme slave *20
+#themeinc theme free *0.5
+#themeinc racename caveman *5
+#themeinc racename ape *5
+#themeinc racename human *5
+#themeinc racename hoburg *5
+#themeinc racename caelian *0.1
+#themeinc racename van *0.1
+#themeinc racename sidhe *0.1
+#themeinc racename tengu *0.1
+#secondaryracedefinition "#freetemplatefilter slavetemplate slave"
+#racedefinition "#secondaryracetroopmod 100"
+#racedefinition "#secondaryracemagemod -100"
 #endtheme
