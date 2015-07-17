@@ -236,7 +236,7 @@ public class SacredGenerator extends TroopGenerator {
 			{
 				weapon = true;
 				int cost = 1 + random.nextInt(Math.min(6, power));
-
+				u.tags.add("NEEDSMAGICWEAPON " + cost);
 				power -= cost;
 
 			}
