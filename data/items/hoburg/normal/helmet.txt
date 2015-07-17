@@ -6,6 +6,7 @@
 #tag "eliteversion fullhelmet-elite"
 #theme "advanced"
 #theme "iron"
+#theme "abysian"
 #enditem
 
 #newitem
@@ -15,6 +16,7 @@
 #tag "eliteversion halfhelmet-elite"
 #armor
 #theme "iron"
+#theme "abysian"
 #enditem
 
 #newitem
@@ -25,6 +27,7 @@
 #tag "eliteversion ironcap-elite"
 #armor
 #theme "iron"
+#theme "abysian"
 #enditem
 
 #newitem
@@ -35,6 +38,7 @@
 #tag "eliteversion ironcap-elite"
 #armor
 #theme "iron"
+#theme "abysian"
 #enditem
 
 #newitem
@@ -44,6 +48,7 @@
 #tag "eliteversion leathercap-elite"
 #armor
 #theme "leather"
+#theme "abysian"
 #enditem
 
 #newitem
@@ -123,6 +128,7 @@
 #theme "advanced"
 #theme "elite"
 #theme "iron"
+#theme "abysian"
 #enditem
 
 #newitem
@@ -133,6 +139,7 @@
 #armor
 #theme "elite"
 #theme "iron"
+#theme "abysian"
 #enditem
 
 #newitem
@@ -144,6 +151,7 @@
 #armor
 #theme "elite"
 #theme "iron"
+#theme "abysian"
 #enditem
 
 #newitem
@@ -154,6 +162,341 @@
 #armor
 #theme "elite"
 #theme "leather"
+#theme "abysian"
+#enditem
+
+#newitem
+#id fancyhat1
+#gameid 120
+#basechance 0.005
+#sprite /graphics/hoburg/helmet/fancyhat1.png
+#recolormask /graphics/hoburg/helmet/fancyhat1_recolormask.png
+#armor
+#theme "elite"
+#theme "leather"
+#theme "advanced"
+#theme "boreal"
+#enditem
+
+#newitem
+#id fancyhat2
+#gameid 120
+#basechance 0.005
+#sprite /graphics/hoburg/helmet/fancyhat2.png
+#recolormask /graphics/hoburg/helmet/fancyhat2_recolormask.png
+#armor
+#theme "elite"
+#theme "leather"
+#theme "advanced"
+#theme "boreal"
+#enditem
+
+#newitem
+#id legionairehelm
+#gameid 126
+#basechance 0.5
+#sprite /graphics/hoburg/helmet/legionairehelm.png
+#recolormask /graphics/hoburg/helmet/legionairehelm_recolormask.png
+#eliteversion bronzehelm_elite
+#armor
+#theme "elite"
+#theme "iron"
+#theme "abysian"
 #enditem
 
 
+-- Bronze helms
+
+#newitem
+#id bronzecap_cone
+#gameid 135
+#basechance 1
+#sprite /graphics/hoburg/helmet/bronzecap_cone.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id bronzecap
+#gameid 135
+#basechance 1
+#sprite /graphics/hoburg/helmet/bronzecap.png
+#eliteversion bronzecap_elite
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id bronzecap_elite
+#gameid 135
+#basechance 1
+#sprite /graphics/hoburg/helmet/bronzecap_elite.png
+#armor
+#theme "elite"
+#theme "bronze"
+#enditem
+
+#newitem
+#id bronzecap_lizard
+#gameid 135
+#basechance 0.003
+#sprite /graphics/hoburg/helmet/bronzecap_lizard.png
+#eliteversion bronzecap_lizard_elite
+#armor
+#theme "bronze"
+#theme "austral"
+#theme "occidental"
+#enditem
+
+#newitem
+#id bronzecap_lizard_elite
+#gameid 135
+#basechance 0.003
+#sprite /graphics/hoburg/helmet/bronzecap_lizard.png
+#recolormask /graphics/helmet/caster/bronzecap_lizard_elite_recolormask.png
+#armor
+#theme "elite"
+#theme "bronze"
+#theme "austral"
+#theme "occidental"
+#enditem
+
+#newitem
+#id kettlehelm_bronze
+#gameid 118
+#basechance 1
+#sprite /graphics/hoburg/helmet/kettlehelmet_bronze.png
+#eliteversion kettlehelm_bronze_elite
+#armor
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+#newitem
+#id kettlehelm_bronze_elite
+#gameid 118
+#basechance 1
+#sprite /graphics/hoburg/helmet/kettlehelmet_bronze_elite.png
+#recolormask /graphics/helmet/caster/kettlehelmet_bronze_elite_recolormask.png
+#armor
+#theme "elite"
+#theme "bronze"
+#enditem
+
+#newitem
+#id highhelm_bronze
+#gameid 118
+#basechance 1
+#sprite /graphics/hoburg/helmet/highhelmet_bronze.png
+#eliteversion highhelm_bronze_elite
+#eliteversion highhelm_bronze_fancy
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id highhelm_bronze_elite
+#gameid 118
+#basechance 1
+#sprite /graphics/hoburg/helmet/highhelmet_bronze_elite.png
+#eliteversion highhelm_bronze_fancy
+#armor
+#theme "elite"
+#theme "bronze"
+#enditem
+
+#newitem
+#id highhelm_bronze_fancy
+#gameid 118
+#basechance 1
+#sprite /graphics/hoburg/helmet/highhelmet_bronze_elite.png
+#recolormask /graphics/helmet/caster/highhelmet_bronze_elite_recolormask.png
+#armor
+#theme "elite"
+#theme "bronze"
+#enditem
+
+#newitem
+#id bronzehelm
+#gameid 127
+#basechance 1
+#sprite /graphics/hoburg/helmet/bronzehalfhelm.png
+#eliteversion bronzehelm_elite
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id bronze_legionairehelm
+#gameid 127
+#basechance 0.5
+#sprite /graphics/hoburg/helmet/legionairehelm_bronze.png
+#recolormask /graphics/hoburg/helmet/legionairehelm_recolormask.png
+#eliteversion bronzehelm_elite
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id bronzehelm_elite
+#gameid 127
+#basechance 1
+#sprite /graphics/hoburg/helmet/bronzehalfhelm_elite.png
+#recolormask /graphics/hoburg/helmet/bronzehalfhelm_elite_recolormask.png
+#armor
+#theme "elite"
+#theme "bronze"
+#enditem
+
+#newitem
+#id hoplitehelm
+#gameid 123
+#basechance 0.005
+#sprite /graphics/hoburg/helmet/hoplitehelm.png
+#eliteversion hoplitehelm_elite
+#armor
+#theme "bronze"
+#theme "central"
+#enditem
+
+#newitem
+#id hoplitehelm_elite
+#gameid 123
+#basechance 0.005
+#sprite /graphics/hoburg/helmet/hoplitehelm_elite.png
+#recolormask /graphics/hoburg/helmet/hoplitehelm_elite.png
+#armor
+#theme "bronze"
+#theme "central"
+#theme "elite"
+#enditem
+
+
+-- Reinforced caps
+
+#newitem
+#id reinforcedcap
+#gameid 119
+#basechance 0.005
+#sprite /graphics/hoburg/helmet/reinforced_cap.png
+#recolormask /graphics/hoburg/helmet/reinforced_cap_recolormask.png
+#eliteversion crestedcap
+#armor
+#theme "leather"
+#theme "central"
+#theme "occidental"
+#theme "austral"
+#enditem
+
+#newitem
+#id crestedcap
+#gameid 162
+#basechance 0.005
+#sprite /graphics/hoburg/helmet/crested_cap.png
+#recolormask /graphics/hoburg/helmet/crested_cap_recolormask.png
+#armor
+#theme "leather"
+#theme "central"
+#theme "occidental"
+#theme "austral"
+#theme "elite"
+#enditem
+
+#newitem
+#id headdress
+#gameid 119
+#basechance 0.005
+#sprite /graphics/helmet/caster/headdress.png
+#recolormask self
+#armor
+#offsetx 2
+#offsety 14
+#theme "primitive"
+#theme "leather"
+#theme "austral"
+#theme "occidental"
+#enditem
+
+#newitem
+#id headdress-nomask
+#gameid 119
+#basechance 0.005
+#sprite /graphics/helmet/caster/headdress.png
+#armor
+#offsetx 2
+#offsety 14
+#theme "primitive"
+#theme "leather"
+#theme "austral"
+#theme "occidental"
+#enditem
+
+#newitem
+#id feathercap
+#gameid 119
+#basechance 0.005
+#sprite /graphics/helmet/caster/feathercap.png
+#recolormask /graphics/helmet/caster/feathercap_recolormask.png
+#offsetx 2
+#offsety 14
+#armor
+#theme "primitive"
+#theme "leather"
+#theme "elite"
+#theme "austral"
+#theme "occidental"
+#enditem
+
+#newitem
+#id feathercap_red
+#gameid 119
+#basechance 0.002
+#sprite /graphics/hoburg/helmet/feathercap_red.png
+#eliteversion feathercap_red_twotone
+#armor
+#theme "primitive"
+#theme "leather"
+#theme "austral"
+#theme "occidental"
+#enditem
+
+#newitem
+#id feathercap_redscale
+#gameid 119
+#basechance 0.003
+#sprite /graphics/hoburg/helmet/feathercap_red.png
+#recolormask /graphics/hoburg/helmet/feathercap_red_recolormask.png
+#eliteversion feathercap_redscale_twotone
+#armor
+#theme "primitive"
+#theme "leather"
+#theme "austral"
+#theme "occidental"
+#enditem
+
+#newitem
+#id feathercap_red_twotone
+#gameid 119
+#basechance 0.002
+#sprite /graphics/hoburg/helmet/feathercap_red_twotone.png
+#armor
+#theme "primitive"
+#theme "leather"
+#theme "elite"
+#theme "austral"
+#theme "occidental"
+#enditem
+
+#newitem
+#id feathercap_redscale
+#gameid 119
+#basechance 0.003
+#sprite /graphics/hoburg/helmet/feathercap_red_twotone.png
+#recolormask /graphics/hoburg/helmet/feathercap_red_twotone_recolormask.png
+#armor
+#theme "primitive"
+#theme "leather"
+#theme "elite"
+#theme "austral"
+#theme "occidental"
+#enditem
