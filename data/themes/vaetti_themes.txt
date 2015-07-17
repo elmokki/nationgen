@@ -375,3 +375,31 @@
 #racedefinition "#nationcommand '#likespop 43'"
 #racedefinition "#descr 'These vaettir have regulated the men of their tribes to a secondary role, and all duties of any importance are carried out by women. '"
 #endtheme
+
+-- Weights: EA 0.01, MA 0.01, LA 0.01
+#newtheme
+#type social
+#name slaver
+#basechance 0.01
+#chanceinc racetheme civilized *0.25
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#themeinc theme slave *20
+#themeinc theme free *0.5
+#themeinc racename caveman *5
+#themeinc racename ape *5
+#themeinc racename human *5
+#themeinc racename hoburg *5
+#themeinc racename caelian *0.1
+#themeinc racename van *0.1
+#themeinc racename sidhe *0.1
+#themeinc racename tengu *0.1
+#secondaryracedefinition "#freetemplatefilter slavetemplate slave"
+#racedefinition "#secondaryracetroopmod 100"
+#racedefinition "#secondaryracemagemod -100"
+#endtheme
