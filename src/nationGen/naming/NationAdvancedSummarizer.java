@@ -219,7 +219,14 @@ public class NationAdvancedSummarizer {
 	private String getTroopInfo(Unit u, PrintWriter tw)
 	{
 		// Gear
-		String line = "** " + u.getName() + " (" + u.race.visiblename +  "), ";
+		String line = "** " + u.getName();
+		
+		if(Generic.containsTag(u.pose.tags, "subrace"))
+			line = line + " (" + u.race.visiblename  + " - " + Generic.getTagValue(u.pose.tags, "subrace") +  "), ";
+		else
+			line = line + " (" + u.race.visiblename +  "), ";
+		
+		
 		line = line + u.getGoldCost() + "g, " + u.getResCost(true) + "r, ";
 		
 

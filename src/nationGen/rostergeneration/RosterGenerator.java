@@ -22,6 +22,7 @@ import com.elmokki.Generic;
 
 
 
+
 import nationGen.NationGen;
 import nationGen.entities.Filter;
 import nationGen.entities.Pose;
@@ -161,7 +162,7 @@ public class RosterGenerator {
 
 		while(units < max)
 		{
-			
+
 			Race race = null;
 			if(prims < maxprimaries && r.nextDouble() > secaffinity)
 			{
@@ -177,6 +178,19 @@ public class RosterGenerator {
 			}
 	
 			
+			boolean allzero = true;
+			for(double d : getChances(race))
+				if(d > 0)
+					allzero = false;
+			
+			if(allzero)
+			{
+				if(race == primary)
+					race = secondary;
+				else if(race == secondary)
+					race = primary;
+			}
+			
 			cycles++;
 			if(cycles > 100 * incs)
 			{
@@ -186,15 +200,17 @@ public class RosterGenerator {
 				
 				if(secaffinity > 0)
 					secamount++;
+
+
 			}
 		
+			
 			
 			
 			int[] amounts = {cavalry.size(), infantry.size(), ranged.size(), chariot.size()};
 			String roll = rollRole(getChances(race), maxamounts, amounts, race);
 		
 			
-
 			List<Unit> target = null;
 			if(roll.equals("ranged") && maxamounts[0] > ranged.size())
 				target = ranged;
@@ -206,7 +222,7 @@ public class RosterGenerator {
 				target = chariot;
 
 						
-			
+
 			if(race != null && target != null && race.hasRole(roll))
 			{
 			
@@ -378,6 +394,7 @@ public class RosterGenerator {
 		
 		while(templates.size() > 0)
 		{
+
 			int gcost = templates.get(0).getGoldCost();
 			for(int i = newlist.size() - 1; i >= 0; i--)
 			{

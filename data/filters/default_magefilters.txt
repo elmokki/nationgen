@@ -2,7 +2,7 @@
 #name "poisonres"
 #basechance 0.1
 #command "#poisonres +5"
-#chanheinc "personalmagic nature 1.5"
+#chanceinc "personalmagic nature 1.5"
 #end
 
 #new magefilter
@@ -10,7 +10,7 @@
 #basechance 0.01
 #chanceinc "personalmagic air *5"
 #chanceinc "personalmagic earth *2"
-#chanheinc "personalmagic water *0"
+#chanceinc "personalmagic water *0"
 #command "#uwdamage 100"
 #notfortier 3
 #notfortier 2
@@ -44,9 +44,9 @@
 #name "makepearls"
 #basechance 0.2
 #command "#makepearls 3"
-#chanheinc "personalmagic water 0.5"
-#chanheinc "personalmagic astral 0.5"
-#chanheinc "personalmagic water astral 0.8"
+#chanceinc "personalmagic water 0.5"
+#chanceinc "personalmagic astral 0.5"
+#chanceinc "personalmagic water astral 0.8"
 #power 1
 #end
 
@@ -54,7 +54,7 @@
 #name "resourcebonus"
 #basechance 0.05
 #command "#resources +10"
-#chanheinc "personalmagic earth 0.95"
+#chanceinc "personalmagic earth 0.95"
 #power 1
 #notfortier 1
 #notfortier 3
@@ -81,8 +81,8 @@
 #basechance 0.5
 #command "#float"
 #power 1
-#chanheinc "personalmagic air 0.5"
-#chanheinc "personalmagic astral 0.5"
+#chanceinc "personalmagic air 0.5"
+#chanceinc "personalmagic astral 0.5"
 #end
 
 #new magefilter
@@ -90,9 +90,9 @@
 #basechance 0.25
 #command "#deathcurse"
 #power 1
-#chanheinc "personalmagic death 0.25"
-#chanheinc "personalmagic blood 0.25"
-#chanheinc "personalmagic blood death 1"
+#chanceinc "personalmagic death 0.25"
+#chanceinc "personalmagic blood 0.25"
+#chanceinc "personalmagic blood death 1"
 #notfortier 2
 #notfortier 1
 #end
@@ -102,8 +102,8 @@
 #basechance 0.125
 #command "#slimer +1"
 #power 1
-#chanheinc "personalmagic water 0.5"
-#chanheinc "personalmagic nature 0.5"
+#chanceinc "personalmagic water 0.5"
+#chanceinc "personalmagic nature 0.5"
 #end
 
 
@@ -112,7 +112,7 @@
 #basechance 0.125
 #command "#iceprot 3"
 #power 1
-#chanheinc "personalmagic water 0.5"
+#chanceinc "personalmagic water 0.5"
 #end
 
 #new magefilter
@@ -120,15 +120,15 @@
 #basechance 0.25
 #command "#falsearmy 20"
 #power 1
-#chanheinc "personalmagic air 0.75"
-#chanheinc "personalmagic astral 0.25"
+#chanceinc "personalmagic air 0.75"
+#chanceinc "personalmagic astral 0.25"
 #end
 
 #new magefilter
 #name "elegist 1"
 #basechance 0
 #tag "personalmagic holy"
-#chanheinc "personalmagic holy 1.5"
+#chanceinc "personalmagic holy 1.5"
 #command "#elegist +1"
 #notfortier 3
 #notfortier 2
@@ -138,7 +138,7 @@
 #name "elegist 2"
 #basechance 0
 #tag "personalmagic holy"
-#chanheinc "personalmagic holy 0.8"
+#chanceinc "personalmagic holy 0.8"
 #command "#elegist +2"
 #command "#gcost +5"
 #notfortier 1
@@ -148,7 +148,7 @@
 #name "elegist 3"
 #basechance 0
 #tag "personalmagic holy"
-#chanheinc "personalmagic holy 0.8"
+#chanceinc "personalmagic holy 0.8"
 #command "#elegist +3"
 #command "#gcost +25"
 #notfortier 1
@@ -183,7 +183,7 @@
 #command "#deathrec %cost10"
 #chanceinc "command #deathrec 100"
 #chanceinc "command #deathpower 100"
-#chanheinc "personalmagic death 5"
+#chanceinc "personalmagic death 5"
 #theme recruitment
 #end
 
@@ -191,7 +191,7 @@
 #name "shockres"
 #basechance 0.1
 #command "#shockres +4"
-#chanheinc "personalmagic air 1.5"
+#chanceinc "personalmagic air 1.5"
 #end
 
 #new
@@ -218,46 +218,46 @@
 #name "coldres"
 #basechance 0.1
 #command "#coldres +5"
-#chanheinc "personalmagic water 1.5"
-#chanheinc "personalmagic fire 0.25"
+#chanceinc "personalmagic water 1.5"
+#chanceinc "personalmagic fire 0.25"
 #end
 
 #new magefilter
 #name "fireres"
 #basechance 0.1
 #command "#fireres +5"
-#chanheinc "personalmagic fire 1.5"
-#chanheinc "personalmagic water 0.25"
+#chanceinc "personalmagic fire 1.5"
+#chanceinc "personalmagic water 0.25"
 #end
 
 #new magefilter
 #name "majorfireres"
 #basechance 0.1
 #command "#fireres +10"
-#chanheinc "personalmagic fire 0.75"
-#chanheinc "personalmagic water 0.125"
+#chanceinc "personalmagic fire 0.75"
+#chanceinc "personalmagic water 0.125"
 #end
 
 #new magefilter
 #name "majorpoisonres"
 #basechance 0.1
 #command "#poisonres +10"
-#chanheinc "personalmagic nature 0.75"
+#chanceinc "personalmagic nature 0.75"
 #end
 
 #new magefilter
 #name "majorshockres"
 #basechance 0.1
 #command "#shockres +10"
-#chanheinc "personalmagic air 0.75"
+#chanceinc "personalmagic air 0.75"
 #end
 
 #new magefilter
 #name "majorcoldres"
 #basechance 0.1
 #command "#coldres +10"
-#chanheinc "personalmagic water 0.75"
-#chanheinc "personalmagic fire 0.125"
+#chanceinc "personalmagic water 0.75"
+#chanceinc "personalmagic fire 0.125"
 #end
 
 #new magefilter
@@ -267,7 +267,7 @@
 #command "#stealthy +0"
 #command "#gcost *1.05"
 #primarycommand #illusion
-#chanheinc "personalmagic air 2"
+#chanceinc "personalmagic air 2"
 #power 2
 #tag "personalmagic air"
 #chanceinc "race vanir -20"
@@ -284,7 +284,7 @@
 #name "amphibian"
 #basechance 0.0
 #command "#amphibian"
-#chanheinc "personalmagic water 1"
+#chanceinc "personalmagic water 1"
 #tag "personalmagic water"
 #end
 
@@ -292,7 +292,7 @@
 #name "flying"
 #basechance 0.0
 #command "#flying"
-#chanheinc "personalmagic air 1"
+#chanceinc "personalmagic air 1"
 #tag "personalmagic air"
 #tag "notfortier 1"
 #tag "notfortier 2"
@@ -303,15 +303,15 @@
 #name "sailing"
 #basechance 0.25
 #command "#sailing 999 3"
-#chanheinc "personalmagic air 0.35"
-#chanheinc "personalmagic water 0.35"
+#chanceinc "personalmagic air 0.35"
+#chanceinc "personalmagic water 0.35"
 #end
 
 #new magefilter
 #name "forestsurvival"
 #basechance 0.0
 #command "#forestsurvival"
-#chanheinc "personalmagic nature 0.5"
+#chanceinc "personalmagic nature 0.5"
 #tag "notfortier 3"
 #end
 
@@ -319,8 +319,8 @@
 #name "mountainsurvival"
 #basechance 0.0
 #command "#mountainsurvival"
-#chanheinc "personalmagic nature 0.25"
-#chanheinc "personalmagic earth 0.25"
+#chanceinc "personalmagic nature 0.25"
+#chanceinc "personalmagic earth 0.25"
 #tag "notfortier 3"
 #end
 
@@ -328,8 +328,8 @@
 #name "swampsurvival"
 #basechance 0.0
 #command "#swampsurvival"
-#chanheinc "personalmagic nature 0.25"
-#chanheinc "personalmagic water 0.25"
+#chanceinc "personalmagic nature 0.25"
+#chanceinc "personalmagic water 0.25"
 #tag "notfortier 3"
 #end
 
@@ -337,8 +337,8 @@
 #name "wastesurvival"
 #basechance 0.0
 #command "#wastesurvival"
-#chanheinc "personalmagic nature 0.25"
-#chanheinc "personalmagic fire 0.25"
+#chanceinc "personalmagic nature 0.25"
+#chanceinc "personalmagic fire 0.25"
 #tag "notfortier 3"
 #end
 
@@ -346,31 +346,31 @@
 #name "forestsurvival all"
 #basechance 0.0
 #command "#forestsurvival"
-#chanheinc "personalmagic nature 0.25"
+#chanceinc "personalmagic nature 0.25"
 #end
 
 #new magefilter
 #name "mountainsurvival all"
 #basechance 0.0
 #command "#mountainsurvival"
-#chanheinc "personalmagic nature 0.125"
-#chanheinc "personalmagic earth 0.125"
+#chanceinc "personalmagic nature 0.125"
+#chanceinc "personalmagic earth 0.125"
 #end
 
 #new magefilter
 #name "swampsurvival all"
 #basechance 0.0
 #command "#swampsurvival"
-#chanheinc "personalmagic nature 0.125"
-#chanheinc "personalmagic water 0.125"
+#chanceinc "personalmagic nature 0.125"
+#chanceinc "personalmagic water 0.125"
 #end
 
 #new magefilter
 #name "wastesurvival all"
 #basechance 0.0
 #command "#wastesurvival"
-#chanheinc "personalmagic nature 0.125"
-#chanheinc "personalmagic fire 0.125"
+#chanceinc "personalmagic nature 0.125"
+#chanceinc "personalmagic fire 0.125"
 #end
 
 #new magefilter
@@ -433,7 +433,7 @@
 #basechance 0.1
 #command "#ethereal"
 #command "#gcost +20"
-#chanheinc "personalmagic astral 0.5"
+#chanceinc "personalmagic astral 0.5"
 #primarycommand #ethereal
 #tag "personalmagic astral"
 #power 3
@@ -445,7 +445,7 @@
 #command "#ethereal"
 #command "#gcost +20"
 #primarycommand #ethereal
-#chanheinc "personalmagic astral 1"
+#chanceinc "personalmagic astral 1"
 #tag "personalmagic astral"
 #tag "notfortier 2"
 #tag "notfortier 1"
@@ -456,10 +456,10 @@
 #name "awe"
 #basechance 0.4
 #command "#awe +1"
-#chanheinc "personalmagic astral 0.4"
-#chanheinc "personalmagic holy 0.4"
-#chanheinc "personalmagic death -0.4"
-#chanheinc "personalmagic blood -0.4"
+#chanceinc "personalmagic astral 0.4"
+#chanceinc "personalmagic holy 0.4"
+#chanceinc "personalmagic death -0.4"
+#chanceinc "personalmagic blood -0.4"
 #power 2
 #end
 
@@ -467,7 +467,7 @@
 #name "fear"
 #basechance 0.2
 #command "#fear +5"
-#chanheinc "personalmagic death 0.8"
+#chanceinc "personalmagic death 0.8"
 #tag "notfortier 1"
 #tag "notfortier 2"
 #end
@@ -476,7 +476,7 @@
 #name "regeneration"
 #basechance 0.1
 #command "#regeneration 10"
-#chanheinc "personalmagic nature 1"
+#chanceinc "personalmagic nature 1"
 #tag "notfortier 1"
 #tag "personalmagic nature"
 #end
@@ -486,7 +486,7 @@
 #basechance 0
 #command "#fireshield 8"
 #command "#speciallook 1"
-#chanheinc "personalmagic fire 2"
+#chanceinc "personalmagic fire 2"
 #tag "notfortier 1"
 #tag "personalmagic fire"
 #end
@@ -495,7 +495,7 @@
 #name "poisonarmor"
 #basechance 0
 #command "#poisonarmor"
-#chanheinc "personalmagic nature 2"
+#chanceinc "personalmagic nature 2"
 #tag "notfortier 1"
 #end
 
@@ -506,7 +506,7 @@
 #basevalue -4
 #valuemulti 4
 #tag "notfortier 1"
-#chanheinc "personalmagic astral 0.8"
+#chanceinc "personalmagic astral 0.8"
 #end
 
 #new magefilter
@@ -515,7 +515,7 @@
 #command "#nobadevents +%value%"
 #basevalue 0
 #valuemulti 4
-#chanheinc "personalmagic astral 0.45"
+#chanceinc "personalmagic astral 0.45"
 #tag "notfortier 3"
 #end
 
@@ -523,7 +523,7 @@
 #name "nobadevents3"
 #basechance 0.025
 #command "#nobadevents +6"
-#chanheinc "personalmagic astral 0.2"
+#chanceinc "personalmagic astral 0.2"
 #tag "notfortier 1"
 #tag "notfortier 3"
 #end
@@ -534,14 +534,14 @@
 #command "#nobadevents +8"
 #tag "notfortier 2"
 #tag "notfortier 3"
-#chanheinc "personalmagic astral 0.5"
+#chanceinc "personalmagic astral 0.5"
 #end
 
 #new magefilter
 #name "inquisitor"
 #basechance 0.0
 #command "#inquisitor"
-#chanheinc "personalmagic holy 2"
+#chanceinc "personalmagic holy 2"
 #tag "personalmagic holy"
 #end
 
@@ -556,8 +556,8 @@
 #type "healer"
 #name "healerscaling"
 #basechance 0.05
-#chanheinc "personalmagic nature 0.1"
-#chanheinc "personalmagic holy 0.1"
+#chanceinc "personalmagic nature 0.1"
+#chanceinc "personalmagic holy 0.1"
 #chanceinc "command startaff 0.8"
 #command "#healer +%value%"
 #basevalue -35
@@ -570,8 +570,8 @@
 #type "healer"
 #name "healerscaling 2"
 #basechance 0.05
-#chanheinc "personalmagic nature 0.1"
-#chanheinc "personalmagic holy 0.1"
+#chanceinc "personalmagic nature 0.1"
+#chanceinc "personalmagic holy 0.1"
 #chanceinc "command startaff 0.8"
 #command "#healer +%value%"
 #basevalue -25
@@ -583,8 +583,8 @@
 #type "healer"
 #name "autohealer1"
 #basechance 0.1
-#chanheinc "personalmagic nature 0.3"
-#chanheinc "personalmagic holy 0.3"
+#chanceinc "personalmagic nature 0.3"
+#chanceinc "personalmagic holy 0.3"
 #chanceinc "command startaff 1.5"
 #command "#autohealer +1"
 #tag "notfortier 1"
@@ -596,8 +596,8 @@
 #type "healer"
 #name "autohealer 3"
 #basechance 0.1
-#chanheinc "personalmagic nature 0.3"
-#chanheinc "personalmagic holy 0.3"
+#chanceinc "personalmagic nature 0.3"
+#chanceinc "personalmagic holy 0.3"
 #command "#autohealer 3"
 #tag "notfortier 1"
 #tag "notfortier 2"
@@ -609,8 +609,8 @@
 #type "healer"
 #name "autodishealer2"
 #basechance 0.05
-#chanheinc "personalmagic holy 0.5"
-#chanheinc "personalmagic nature 0.5"
+#chanceinc "personalmagic holy 0.5"
+#chanceinc "personalmagic nature 0.5"
 #command "#autodishealer 2"
 #tag "notfortier 1"
 #tag "notfortier 2"
@@ -620,7 +620,7 @@
 #new magefilter
 #name "recuperation"
 #basechance 0.1
-#chanheinc "personalmagic nature 1"
+#chanceinc "personalmagic nature 1"
 #chanceinc "personalcommand startaff 1.5"
 #command "#heal"
 #end
@@ -629,7 +629,7 @@
 #type "darkvision"
 #name "darkvision50"
 #basechance 0.075
-#chanheinc "personalmagic earth 0.15"
+#chanceinc "personalmagic earth 0.15"
 #command "#darkvision +50"
 #end
 
@@ -637,7 +637,7 @@
 #type "darkvision"
 #name "darkvision100"
 #basechance 0.05
-#chanheinc "personalmagic earth 0.15"
+#chanceinc "personalmagic earth 0.15"
 #command "#darkvision 100"
 #end
 
@@ -671,7 +671,7 @@
 #command "#gcost +30"
 #tag "notfortier 1"
 #tag "notfortier 3"
-#chanheinc "personalmagic earth 0.05"
+#chanceinc "personalmagic earth 0.05"
 #power 2
 #end
 
@@ -683,7 +683,7 @@
 #command "#gcost +30"
 #tag "notfortier 1"
 #tag "notfortier 3"
-#chanheinc "personalmagic earth 0.05"
+#chanceinc "personalmagic earth 0.05"
 #power 3
 #end
 
@@ -695,7 +695,7 @@
 #command "#gcost *1.2"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#chanheinc "personalmagic earth 0.025"
+#chanceinc "personalmagic earth 0.025"
 #power 3
 #end
 
@@ -707,7 +707,7 @@
 #command "#gcost *1.2"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#chanheinc "personalmagic earth 0.025"
+#chanceinc "personalmagic earth 0.025"
 #power 3
 #end
 
@@ -719,7 +719,7 @@
 #command "#gcost +20"
 #tag "notfortier 2"
 #tag "notfortier 3"
-#chanheinc "personalmagic earth 0.05"
+#chanceinc "personalmagic earth 0.05"
 #power 2
 #end
 
@@ -727,7 +727,7 @@
 #name "chargedbody"
 #basechance 0.0
 #command "#onebattlespell 500"
-#chanheinc "personalmagic air 0.5"
+#chanceinc "personalmagic air 0.5"
 #description "has charged body"
 #end
 
@@ -736,8 +736,8 @@
 #type "familiar"
 #basechance 0.05
 #command "#batstartsum1 2092"
-#chanheinc "personalmagic nature 0.5"
-#chanheinc "personalmagic earth 0.5"
+#chanceinc "personalmagic nature 0.5"
+#chanceinc "personalmagic earth 0.5"
 #tag "notfortier 1"
 #tag "notfortier 2"
 #description "has a shikigami familiar"
@@ -748,8 +748,8 @@
 #type "familiar"
 #basechance 0.05
 #command "#batstartsum1 2092"
-#chanheinc "personalmagic nature 0.5"
-#chanheinc "personalmagic earth 0.5"
+#chanceinc "personalmagic nature 0.5"
+#chanceinc "personalmagic earth 0.5"
 #tag "notfortier 1"
 #description "has a shikigami familiar"
 #end
@@ -759,7 +759,7 @@
 #type "familiar"
 #basechance 0.05
 #command "#batstartsum1 2287"
-#chanheinc "personalmagic blood 1"
+#chanceinc "personalmagic blood 1"
 #tag "notfortier 1"
 #tag "notfortier 2"
 #description "has bound an imp to serve as a familiar"
@@ -770,7 +770,7 @@
 #type "familiar"
 #basechance 0.05
 #command "#batstartsum1 2287"
-#chanheinc "personalmagic blood 1"
+#chanceinc "personalmagic blood 1"
 #tag "notfortier 1"
 #description "has bound an imp to serve as a familiar"
 #end
@@ -780,9 +780,9 @@
 #type "familiar"
 #basechance 0.05
 #command "#batstartsum2 1769"
-#chanheinc "personalmagic nature 0.125"
-#chanheinc "personalmagic death 0.5"
-#chanheinc "personalmagic nature death 2"
+#chanceinc "personalmagic nature 0.125"
+#chanceinc "personalmagic death 0.5"
+#chanceinc "personalmagic nature death 2"
 #chanceinc "personalcommand illusion 0.125"
 #chanceinc "theme fae 0.5"
 #tag "notfortier 1"
@@ -795,8 +795,8 @@
 #type "familiar"
 #basechance 0
 #command "#batstartsum2 592"
-#chanheinc "personalmagic nature 0.05"
-#chanheinc "personalmagic air *2"
+#chanceinc "personalmagic nature 0.05"
+#chanceinc "personalmagic air *2"
 #chanceinc "personalcommand illusion *3"
 #chanceinc "theme fae *3"
 #tag "notfortier 1"
@@ -809,8 +809,8 @@
 #type "familiar"
 #basechance 0
 #command "#batstartsum1 592"
-#chanheinc "personalmagic nature 0.05"
-#chanheinc "personalmagic air *2"
+#chanceinc "personalmagic nature 0.05"
+#chanceinc "personalmagic air *2"
 #chanceinc "personalcommand illusion *3"
 #chanceinc "theme fae *3"
 #tag "notfortier 1"
@@ -822,8 +822,8 @@
 #type "familiar"
 #basechance 0.05
 #command "#batstartsum2 1363"
-#chanheinc "personalmagic death 0.5"
-#chanheinc "personalmagic nature death 2"
+#chanceinc "personalmagic death 0.5"
+#chanceinc "personalmagic nature death 2"
 #description "watched over by ancestors"
 #end
 
@@ -832,8 +832,8 @@
 #type "familiar"
 #basechance 0.05
 #command "#batstartsum3 2218"
-#chanheinc "personalmagic nature 1"
-#chanheinc "personalmagic nature death 1"
+#chanceinc "personalmagic nature 1"
+#chanceinc "personalmagic nature death 1"
 #description "followed by a small swarm of bugs"
 #tag "notfortier 1"
 #tag "notfortier 2"
@@ -844,7 +844,7 @@
 #type "familiar"
 #basechance 0
 #command "#batstartsum1 2283"
-#chanheinc "personalmagic blood earth 1"
+#chanceinc "personalmagic blood earth 1"
 #description "protected by tainted earth"
 #tag "notfortier 1"
 #tag "notfortier 2"
@@ -915,8 +915,8 @@
 #type "shapeshift"
 #name "turkeyshape"
 #basechance 0.025
-#chanheinc "personalmagic nature 0.3"
-#chanheinc "personalmagic air 0.3"
+#chanceinc "personalmagic nature 0.3"
+#chanceinc "personalmagic air 0.3"
 #chanceinc "personalcommand mounted *0"
 #command "#shapechange turkey"
 #tag "notfortier 1"
@@ -927,7 +927,7 @@
 #type "shapeshift"
 #name "werewolf"
 #basechance 0.05
-#chanheinc "personalmagic nature 0.5"
+#chanceinc "personalmagic nature 0.5"
 #chanceinc "personalcommand mounted *0"
 #command "#shapechange werewolf"
 #tag "notfortier 1"
@@ -942,7 +942,7 @@
 #type "shapeshift"
 #name "werewolf2"
 #basechance 0.05
-#chanheinc "personalmagic nature 0.5"
+#chanceinc "personalmagic nature 0.5"
 #chanceinc "personalcommand mounted *0"
 #command "#shapechange werewolf"
 #command "#gcost *1.2"
@@ -958,7 +958,7 @@
 #type "shapeshift"
 #name "werebear"
 #basechance 0.05
-#chanheinc "personalmagic nature 0.5"
+#chanceinc "personalmagic nature 0.5"
 #chanceinc "personalcommand mounted *0"
 #command "#shapechange werebear"
 #tag "notfortier 1"
@@ -973,7 +973,7 @@
 #type "shapeshift"
 #name "werebear2"
 #basechance 0.05
-#chanheinc "personalmagic nature 0.5"
+#chanceinc "personalmagic nature 0.5"
 #chanceinc "personalcommand mounted *0"
 #command "#shapechange werebear"
 #command "#gcost *1.2"
@@ -989,7 +989,7 @@
 #type "shapeshift"
 #name "wolf"
 #basechance 0.05
-#chanheinc "personalmagic nature 1"
+#chanceinc "personalmagic nature 1"
 #chanceinc "personalcommand mounted *0"
 #command "#shapechange wolf"
 #description "can shapeshift into a wolf"
@@ -1003,8 +1003,8 @@
 #type "shapeshift"
 #name "wingedmonkey"
 #basechance 0.05
-#chanheinc "personalmagic nature 0.75"
-#chanheinc "personalmagic air 0.75"
+#chanceinc "personalmagic nature 0.75"
+#chanceinc "personalmagic air 0.75"
 #chanceinc "personalcommand mounted *0"
 #command "#shapechange wingedmonkey"
 #description "can shapeshift into a winged monkey"
@@ -1015,8 +1015,8 @@
 #type "shapeshift"
 #name "devil"
 #basechance 0.0
-#chanheinc "personalmagic blood 0.2"
-#chanheinc "personalmagic blood fire 3"
+#chanceinc "personalmagic blood 0.2"
+#chanceinc "personalmagic blood fire 3"
 #chanceinc "personalcommand mounted *0"
 #command "#shapechange devil"
 #command "#demon"
@@ -1032,7 +1032,7 @@
 #name "vineman"
 #type "shapeshift"
 #basechance 0
-#chanheinc "personalmagic nature 1"
+#chanceinc "personalmagic nature 1"
 #chanceinc "shape vineman 20"
 #command "#secondshape vineman"
 #command "#gcost +20"
@@ -1045,8 +1045,8 @@
 #type "shapeshift"
 #name "frostfiend"
 #basechance 0.0
-#chanheinc "personalmagic blood 0.2"
-#chanheinc "personalmagic blood water 3"
+#chanceinc "personalmagic blood 0.2"
+#chanceinc "personalmagic blood water 3"
 #chanceinc "personalcommand mounted *0"
 #command "#shapechange frostfiend"
 #command "#demon"
@@ -1062,7 +1062,7 @@
 #type "shapeshift"
 #name "greatbear"
 #basechance 0.025
-#chanheinc "personalmagic nature 1"
+#chanceinc "personalmagic nature 1"
 #chanceinc "personalcommand mounted *0"
 #command "#shapechange greatbear"
 #tag "personalmagic nature"
@@ -1075,7 +1075,7 @@
 #type "shapeshift"
 #name "bear"
 #basechance 0.05
-#chanheinc "personalmagic nature 1"
+#chanceinc "personalmagic nature 1"
 #chanceinc "personalcommand mounted *0"
 #command "#shapechange bear"
 #tag "personalmagic nature"
@@ -1088,7 +1088,7 @@
 #type "shapeshift"
 #name "jaguar"
 #basechance 0.025
-#chanheinc "personalmagic nature 1"
+#chanceinc "personalmagic nature 1"
 #chanceinc "personalcommand mounted *0"
 #command "#shapechange jaguar"
 #description "can shapeshift into a jaguar"
@@ -1100,7 +1100,7 @@
 #type "shapeshift"
 #name "deepone"
 #basechance 0.0
-#chanheinc "personalmagic water 1"
+#chanceinc "personalmagic water 1"
 #chanceinc "personalcommand mounted *0"
 #command "#shapechange deepone"
 #tag "notfortier 1"
@@ -1112,9 +1112,9 @@
 #type "shapeshift"
 #name "lesserhorror"
 #basechance 0.0
-#chanheinc "personalmagic astral 0.01"
-#chanheinc "personalmagic blood 0.05"
-#chanheinc "personalmagic astral blood 2"
+#chanceinc "personalmagic astral 0.01"
+#chanceinc "personalmagic blood 0.05"
+#chanceinc "personalmagic astral blood 2"
 #command "#secondtmpshape lesserhorror"
 #command "#horrormark"
 #command "#gcost *1.2"
@@ -1127,7 +1127,7 @@
 #type "shapeshift"
 #name "ghost"
 #basechance 0.0
-#chanheinc "personalmagic death 2"
+#chanceinc "personalmagic death 2"
 #command "#secondtmpshape ghost"
 #command "#gcost *1.2"
 #power 2
@@ -1139,7 +1139,7 @@
 #type "shapeshift"
 #name "ghoul"
 #basechance 0.0
-#chanheinc "personalmagic death 2"
+#chanceinc "personalmagic death 2"
 #tag "personalmagic death"
 #command "#secondshape ghoul"
 #command "#gcost *1.2"
@@ -1152,7 +1152,7 @@
 #type "shapeshift"
 #name "serpent"
 #basechance 0.0
-#chanheinc "personalmagic nature 2"
+#chanceinc "personalmagic nature 2"
 #chanceinc "personalcommand mounted *0"
 #command "#secondshape hornedserpent"
 #description "can shapeshift into a horned serpent"
@@ -1163,7 +1163,7 @@
 #new magefilter
 #name "crossbreeder"
 #basechance 0.0
-#chanheinc "personalmagic nature blood 4"
+#chanceinc "personalmagic nature blood 4"
 #command "#crossbreeder 4"
 #description "excellent at crossbreeding."
 #end
@@ -1172,8 +1172,8 @@
 #type "shapeshift"
 #name "felemental"
 #basechance 0.0
-#chanheinc "personalmagic fire 1"
-#chanheinc "personalmagic water -0.75"
+#chanceinc "personalmagic fire 1"
+#chanceinc "personalmagic water -0.75"
 #command "#secondtmpshape felemental"
 #command "#gcost +30"
 #tag "personalmagic fire"
@@ -1185,8 +1185,8 @@
 #type "shapeshift"
 #name "eelemental"
 #basechance 0.0
-#chanheinc "personalmagic earth 1"
-#chanheinc "personalmagic air -0.75"
+#chanceinc "personalmagic earth 1"
+#chanceinc "personalmagic air -0.75"
 #command "#secondtmpshape eelemental"
 #command "#gcost +30"
 #tag "personalmagic earth"
@@ -1198,8 +1198,8 @@
 #type "shapeshift"
 #name "aelemental"
 #basechance 0.0
-#chanheinc "personalmagic air 1"
-#chanheinc "personalmagic earth -0.75"
+#chanceinc "personalmagic air 1"
+#chanceinc "personalmagic earth -0.75"
 #command "#secondtmpshape aelemental"
 #command "#gcost +30"
 #description "explodes as a burst of elemental energy upon death, spawning an elemental"
@@ -1211,8 +1211,8 @@
 #type "shapeshift"
 #name "welemental"
 #basechance 0.0
-#chanheinc "personalmagic water 1"
-#chanheinc "personalmagic fire -0.75"
+#chanceinc "personalmagic water 1"
+#chanceinc "personalmagic fire -0.75"
 #command "#secondtmpshape welemental"
 #command "#gcost +30"
 #tag "personalmagic water"
@@ -1224,7 +1224,7 @@
 #type "shapeshift"
 #name "metalman"
 #basechance 0.05
-#chanheinc "personalmagic earth 0.95"
+#chanceinc "personalmagic earth 0.95"
 #chanceinc "command #secondshape -0.7"
 #command "#hp -5"
 #command "#gcost +30"
@@ -1237,9 +1237,9 @@
 #type "shapeshift"
 #name "scorpion"
 #basechance 0.1
-#chanheinc "personalmagic fire 0.25"
-#chanheinc "personalmagic earth 0.25"
-#chanheinc "personalmagic fire earth 2"
+#chanceinc "personalmagic fire 0.25"
+#chanceinc "personalmagic earth 0.25"
+#chanceinc "personalmagic fire earth 2"
 #chanceinc "personalcommand mounted *0"
 #command "#shapechange scorpion"
 #command "#gcost +15"
@@ -1254,9 +1254,9 @@
 #type "shapeshift"
 #name "cavecrab"
 #basechance 0.1
-#chanheinc "personalmagic nature 0.25"
-#chanheinc "personalmagic earth 0.25"
-#chanheinc "personalmagic nature earth 1"
+#chanceinc "personalmagic nature 0.25"
+#chanceinc "personalmagic earth 0.25"
+#chanceinc "personalmagic nature earth 1"
 #chanceinc "command darkvision 1"
 #chanceinc "personalcommand darkvision 1"
 #chanceinc "personalcommand mounted *0"
@@ -1273,9 +1273,9 @@
 #type "shapeshift"
 #name "hawk"
 #basechance 0.1
-#chanheinc "personalmagic nature 0.25"
-#chanheinc "personalmagic air 0.75"
-#chanheinc "personalmagic nature air 1"
+#chanceinc "personalmagic nature 0.25"
+#chanceinc "personalmagic air 0.75"
+#chanceinc "personalmagic nature air 1"
 #chanceinc "command flying 1"
 #chanceinc "personalcommand flying -10"
 #chanceinc "personalcommand mounted *0"
@@ -1292,9 +1292,9 @@
 #type "shapeshift"
 #name "toad"
 #basechance 0.1
-#chanheinc "personalmagic water 0.25"
-#chanheinc "personalmagic nature 0.25"
-#chanheinc "personalmagic nature water 1"
+#chanceinc "personalmagic water 0.25"
+#chanceinc "personalmagic nature 0.25"
+#chanceinc "personalmagic nature water 1"
 #chanceinc "command swampsurvival 1"
 #chanceinc "personalcommand mounted *0"
 #command "#shapechange toad"
@@ -1310,7 +1310,7 @@
 #type "shapeshift"
 #name "greatboar"
 #basechance 0.1
-#chanheinc "personalmagic nature 1"
+#chanceinc "personalmagic nature 1"
 #chanceinc "personalcommand mounted *0"
 #command "#shapechange greatboar"
 #command "#gcost +15"
@@ -1325,7 +1325,7 @@
 #type "shapeshift"
 #name "spider"
 #basechance 0.05
-#chanheinc "personalmagic nature 1"
+#chanceinc "personalmagic nature 1"
 #chanceinc "personalcommand #poisonres 1"
 #chanceinc "personalcommand mounted *0"
 #command "#shapechange smallerspider"
@@ -1342,7 +1342,7 @@
 #type "familiar"
 #basechance 0
 #command "#batstartsum1 756"
-#chanheinc "personalmagic astral 0.5"
+#chanceinc "personalmagic astral 0.5"
 #tag "notfortier 1"
 #tag "notfortier 2"
 #description "has a lesser otherness following"

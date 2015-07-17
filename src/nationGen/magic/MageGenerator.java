@@ -1330,19 +1330,7 @@ public class MageGenerator extends TroopGenerator {
 			
 
 			
-			int at = this.random.nextInt(power + 5) - 5; // -5 to power - 2
-			while(moreFilters.size() == 0 && at >= -5)
-			{
-				moreFilters = ChanceIncHandler.getFiltersWithPower(at, power, filters);
-				at--;
-			}
-			
 
-			if(moreFilters.size() < -2)
-			{
-				moreFilters.clear();
-				moreFilters.addAll(filters);
-			}
 			
 
 			
@@ -1354,26 +1342,32 @@ public class MageGenerator extends TroopGenerator {
 			
 			List<Unit> mages = getMagesOfTier(units, tier);
 			
-			if(mages.size() == 0)
+			if(mages.size() == 0) // This happens for heroes and extra mages.
 			{
+				mages.addAll(units);
+				tier = 4;
+			}
+			
+			
+			int at = this.random.nextInt(power + 5) - 5; // -5 to power - 2
+			while(moreFilters.size() == 0 && at >= -5)
+			{
+				moreFilters = getFiltersForTier(ChanceIncHandler.getFiltersWithPower(at, power, filters), tier);
+				at--;
+			}
+			
 
-				if(units.get(0).tags.contains("extramage"))
-				{
-					mages.addAll(units);
-					tier = this.random.nextInt(2) + 2; // 2 to 3;
-				}
-				
-				if(mages.size() == 0) // Unhandled tier. Heroes have that.
-				{ 
-					mages = units;
-				}
+			if(moreFilters.size() < 2)
+			{
+				moreFilters.clear();
+				moreFilters.addAll(filters);
 			}
 			
 			List<Filter> actualFilters = this.getFiltersForTier(moreFilters, tier);
-
 			
 			if(actualFilters.size() == 0)
 			{
+				System.out.println(moreFilters);
 				System.out.println("No filters for tier " + tier + ", original " + moreFilters.size() + " / " + mages.get(0).race);
 				return;
 			}
@@ -1420,13 +1414,11 @@ public class MageGenerator extends TroopGenerator {
 
 					
 					Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(u, givenFilters));
-		
+
 					
 					if(f != null)
 					{
 						u.appliedFilters.add(f);
-						
-						
 						
 						if(f.power > maxpower)
 							maxpower = f.power;
@@ -1441,7 +1433,7 @@ public class MageGenerator extends TroopGenerator {
 			else 
 			{
 				List<Filter> givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findCommonPaths(mages), false);
-				
+
 				// Remove given filters to avoid duplicates
 				for(Unit u : mages)
 				{
@@ -1461,7 +1453,8 @@ public class MageGenerator extends TroopGenerator {
 				
 				// CanAdd check
 				givenFilters = ChanceIncHandler.getValidUnitFilters(givenFilters, mages);
-		
+
+
 				
 				// Use old filters when feasible!
 				List<Filter> tempFilters = new ArrayList<Filter>();
@@ -1470,14 +1463,13 @@ public class MageGenerator extends TroopGenerator {
 				tempFilters = ChanceIncHandler.getValidUnitFilters(tempFilters, mages);
 
 
-				
-				if(tempFilters.size() > 0 && this.random.nextDouble() > 0.25)
+				if(chandler.countPossibleFilters(tempFilters, mages.get(0)) > 0 && this.random.nextDouble() > 0.25)
 					givenFilters = tempFilters;
 					
 	
-	
 				
 				Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(mages, givenFilters));
+
 
 
 				
@@ -1611,12 +1603,14 @@ public class MageGenerator extends TroopGenerator {
 		List<Filter> list = new ArrayList<Filter>();
 		for(Filter f : filters)
 		{
-			
 			boolean ok = true;
 			if(Generic.getTagValue(f.tags, "notfortier") != null)
 			{
-				int nottier = Integer.parseInt(Generic.getTagValue(f.tags, "notfortier"));
-				if(tier == nottier)
+				List<Integer> nottiers = new ArrayList<Integer>();
+				for(String str : Generic.getTagValues(f.tags, "notfortier"))
+					nottiers.add(Integer.parseInt(str));
+		
+				if(nottiers.contains(tier))
 				{
 					ok = false;
 				}
@@ -1624,7 +1618,6 @@ public class MageGenerator extends TroopGenerator {
 			
 			if(ok)
 				list.add(f);
-			
 		}
 		
 		return list;
