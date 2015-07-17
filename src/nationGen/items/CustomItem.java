@@ -169,7 +169,7 @@ public class CustomItem extends Item {
 			
 			if(str.equals("name") && this.armor)
 			{
-				str = "armor_name";
+				str = "armorname";
 				arg = arg.replaceAll("\"", "");
 			}
 			else if(str.equals("name") && !this.armor)
