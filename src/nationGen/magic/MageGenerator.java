@@ -1370,7 +1370,6 @@ public class MageGenerator extends TroopGenerator {
 			}
 			
 			List<Filter> actualFilters = this.getFiltersForTier(moreFilters, tier);
-
 			
 			if(actualFilters.size() == 0)
 			{
@@ -1420,13 +1419,11 @@ public class MageGenerator extends TroopGenerator {
 
 					
 					Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(u, givenFilters));
-		
+
 					
 					if(f != null)
 					{
 						u.appliedFilters.add(f);
-						
-						
 						
 						if(f.power > maxpower)
 							maxpower = f.power;
@@ -1441,7 +1438,7 @@ public class MageGenerator extends TroopGenerator {
 			else 
 			{
 				List<Filter> givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findCommonPaths(mages), false);
-				
+
 				// Remove given filters to avoid duplicates
 				for(Unit u : mages)
 				{
@@ -1461,7 +1458,8 @@ public class MageGenerator extends TroopGenerator {
 				
 				// CanAdd check
 				givenFilters = ChanceIncHandler.getValidUnitFilters(givenFilters, mages);
-		
+
+
 				
 				// Use old filters when feasible!
 				List<Filter> tempFilters = new ArrayList<Filter>();
@@ -1479,6 +1477,8 @@ public class MageGenerator extends TroopGenerator {
 				
 				Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(mages, givenFilters));
 
+
+				System.out.println(" -> " + f + " - " + f.tags + ", tier is " + tier + " - " + mages.size());
 
 				
 				for(Unit u : mages)
@@ -1611,12 +1611,14 @@ public class MageGenerator extends TroopGenerator {
 		List<Filter> list = new ArrayList<Filter>();
 		for(Filter f : filters)
 		{
-			
 			boolean ok = true;
 			if(Generic.getTagValue(f.tags, "notfortier") != null)
 			{
-				int nottier = Integer.parseInt(Generic.getTagValue(f.tags, "notfortier"));
-				if(tier == nottier)
+				List<Integer> nottiers = new ArrayList<Integer>();
+				for(String str : Generic.getTagValues(f.tags, "notfortier"))
+					nottiers.add(Integer.parseInt(str));
+		
+				if(nottiers.contains(tier))
 				{
 					ok = false;
 				}
@@ -1624,7 +1626,6 @@ public class MageGenerator extends TroopGenerator {
 			
 			if(ok)
 				list.add(f);
-			
 		}
 		
 		return list;
