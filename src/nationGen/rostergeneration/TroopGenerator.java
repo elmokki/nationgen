@@ -712,14 +712,36 @@ public class TroopGenerator {
 		
 		
 		// Add unit template filter to available template filters
-		if(unitTemplates.size() < maxtemplates)
+		if(unitTemplates.size() < maxtemplates || possibleFilters.size() == 0)
 		{
 			List<Filter> tFilters = ChanceIncHandler.retrieveFilters(query, defaultv, nationGen.templates, u.pose, u.race);
 			possibleFilters.retainAll(tFilters);
+			
+			// Remove #onlyfilter
+			List<Filter> removef = new ArrayList<Filter>();
+			List<Filter> match = new ArrayList<Filter>();
+			match.addAll(u.appliedFilters);
+			match.retainAll(tFilters);
+			
+			for(Filter f : tFilters)
+				if(f.tags.contains("onlyfilter") && match.size() > 0)
+					removef.add(f);
+			
+
+			tFilters.removeAll(removef);
 			tFilters.removeAll(unitTemplates);		
 			tFilters.removeAll(u.appliedFilters);	
 						
 			tFilters = ChanceIncHandler.getValidUnitFilters(tFilters, u);
+			
+
+			
+			
+
+			
+			tFilters.removeAll(removef);
+			
+			
 			
 			Filter t = chandler.getRandom(tFilters, u);
 			
