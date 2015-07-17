@@ -1478,7 +1478,6 @@ public class MageGenerator extends TroopGenerator {
 				Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(mages, givenFilters));
 
 
-				System.out.println(" -> " + f + " - " + f.tags + ", tier is " + tier + " - " + mages.size());
 
 				
 				for(Unit u : mages)
