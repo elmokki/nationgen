@@ -226,6 +226,10 @@ public class UnitGen {
 		{
 			ItemSet all = u.pose.getItems("armor");
 			all.removeAll(poseexclusions);
+			
+			if(all.size() == 0)
+				all = u.pose.getItems("armor");
+			
 			Item armor = getSuitableItem("armor", u, excluded, included, all, targettag);
 			u.setSlot("armor", armor);
 		}
@@ -780,7 +784,6 @@ public class UnitGen {
 		
 	
 
-
 		
 		
 		ItemSet remain = new ItemSet();
@@ -795,6 +798,8 @@ public class UnitGen {
 		if(chandler.countPossibleFilters(remain, u) > 0)
 			chosen = remain;
 
+
+		
 		// Check whether we should ditch using old
 		LinkedHashMap<Item, Double> map = null;
 		map = chandler.handleChanceIncs(u, u.pose.getItems(slot));
@@ -817,12 +822,17 @@ public class UnitGen {
 	
 		
 
-		
+		if(chandler.countPossibleFilters(chosen, u) == 0)
+			chosen = u.pose.getItems(slot);
 
+
+		
 		if(targettag != null && chosen.filterTag(targettag, true).possibleItems() > 0)
 		{
 			chosen = chosen.filterTag(targettag, true);
 		}
+		
+
 		
 
 		Item newitem = chandler.getRandom(chosen, u);
