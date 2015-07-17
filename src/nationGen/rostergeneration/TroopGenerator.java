@@ -15,6 +15,7 @@ import java.util.Random;
 
 
 
+
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
@@ -558,6 +559,10 @@ public class TroopGenerator {
 			for(Template t : templates)
 				armors.add(t.armor);
 			
+
+			
+			
+			
 			List<Pose> poses = new ArrayList<Pose>();
 			for(Pose p : getPosesWithoutMaxUnits(race.getPoses(role)))
 			{
@@ -569,22 +574,49 @@ public class TroopGenerator {
 					poses.add(p);
 			}
 
-			
+
 			
 			Pose p = chandler.getRandom(poses, race, role);
-
 			if(p == null)
 				return null;
 
-	
+			// Remove armors that are on poses of the same type
+			ItemSet pointless = new ItemSet();
+			
+			for(Template t : templates)
+			{
+
+				if(t.template.pose.roles.contains(role))
+				{
+					pointless.add(t.armor);
+					for(Item i : t.template.pose.getItems("armor"))
+						if(i.id.equals(t.armor.id))
+							pointless.add(i);
+				}
+		
+			}
+			armors.removeAll(pointless);
+			used.removeAll(pointless);
+				
 			// Generate unit!
 				
 			u = unitGen.generateUnit(race, p);
 
 			addInitialFilters(u, role);
-			unitGen.armorUnit(u, used, exclusions, armors, null, false);
-			this.handleExtraGeneration(u, role);
+			
+			
+			pointless.addAll(exclusions);
 
+			if(random.nextBoolean() && armors.possibleItems() > 0)
+				unitGen.armorUnit(u, used, pointless, armors, null, false);
+			else
+				unitGen.armorUnit(u, null, pointless, u.pose.getItems("armor"), null, false);
+
+			
+			
+			this.handleExtraGeneration(u, role);
+			
+			
 		}
 		
 		//if(u == null || armor == null) // EA20150529: The only case where this should occur is when #maxunits has been exceeded
