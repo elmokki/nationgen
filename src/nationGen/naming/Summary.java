@@ -388,7 +388,10 @@ public class Summary {
 		for(Race r : races)
 		{
 			int amount = 0;
-			for(Unit u : n.generateTroopList())
+			List<Unit> ulist = new ArrayList<Unit>();
+			ulist.addAll(n.generateTroopList());
+			ulist.addAll(n.generateComList());
+			for(Unit u : ulist)
 				if(u.race == r)
 					amount++;
 			
