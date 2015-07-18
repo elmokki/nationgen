@@ -1,10 +1,52 @@
+
+#newitem
+#id kopesh
+#gameid 513
+#sprite /graphics/weapon/standard/kopesh_bronze.png
+#offsetx 4
+#offsety 11
+#theme "bronze"
+#theme "austral"
+#theme "central"
+#enditem
+
+#newitem
+#id clubsword
+#gameid 451
+#basechance 2
+#sprite /graphics/hoburg/weapon/clubsword.png
+#theme "occidental"
+#enditem
+
+#newitem
+#id hatchet_bronze
+#gameid 253
+#sprite /graphics/hoburg/weapon/hatchet_bronze.png
+#theme "primitive"
+#theme "bronze"
+#theme "austral"
+#theme "central"
+#theme "occidental"
+#enditem
+
+#newitem
+#id hatchet_iron
+#gameid 253
+#sprite /graphics/hoburg/weapon/hatchet_iron.png
+#theme "primitive"
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "abysian"
+#theme "central"
+#enditem
+
 #newitem
 #id axe
 #gameid 17
 #sprite /graphics/weapon/standard/axe.png
-#theme "primitive"
+#theme "elite"
 #theme "iron"
-#theme "austral"
 #theme "boreal"
 #theme "abysian"
 #offsetx 2
@@ -15,6 +57,7 @@
 #id stick
 #gameid 153
 #sprite /graphics/hoburg/weapon/stick.png
+#eliteversion staff
 #theme "primitive"
 #theme "wood"
 #theme "austral"
@@ -26,6 +69,55 @@
 #enditem
 
 #newitem
+#id staff
+#gameid 7
+#sprite /graphics/hoburg/weapon/stick.png
+#theme "elite"
+#theme "primitive"
+#theme "wood"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#tag "maxprot 9"
+#enditem
+
+#newitem
+#id morningstar_bronze
+#gameid 15
+#sprite /graphics/hoburg/weapon/morningstar_bronze.png
+#needs offhand nooffhand
+#theme "advanced"
+#theme "bronze"
+#theme "austral"
+#theme "central"
+#enditem
+
+#newitem
+#id morningstar
+#gameid 15
+#sprite /graphics/hoburg/weapon/morningstar.png
+#needs offhand nooffhand
+#theme "advanced"
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "abysian"
+#enditem
+
+#newitem
+#id greataxe_bronze
+#gameid 18
+#sprite /graphics/hoburg/weapon/greataxe_bronze.png
+#theme "primitive"
+#theme "bronze"
+#theme "austral"
+#theme "central"
+#theme "occidental"
+#enditem
+
+#newitem
 #id greataxe
 #gameid 18
 #sprite /graphics/hoburg/weapon/greataxe.png
@@ -33,6 +125,7 @@
 #theme "iron"
 #theme "austral"
 #theme "boreal"
+#theme "central"
 #theme "abysian"
 #enditem
 
@@ -83,7 +176,19 @@
 #theme "iron"
 #theme "austral"
 #theme "boreal"
+#theme "central"
 #theme "abysian"
+#enditem
+
+#newitem
+#id shortsword_bronze
+#gameid 6
+#sprite /graphics/highmen/weapons/shortsword_bronze.png
+#offsetx 7
+#offsety 13
+#theme "bronze"
+#theme "austral"
+#theme "central"
 #enditem
 
 #newitem

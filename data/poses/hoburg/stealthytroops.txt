@@ -1,6 +1,6 @@
 -------- Normal
 #newpose
-#basechance 0.05
+#basechance 0.1
 
 #role "infantry"
 #role "scout"
@@ -35,7 +35,7 @@
 
 ---- Mounted - loud
 #newpose
-#basechance 0.025
+#basechance 0.05
 #role "mounted"
 #name "not-so-stealthy boreal cavalry"
 #theme "boreal"
@@ -74,7 +74,7 @@
 
 ---- Mounted - stealthy
 #newpose
-#basechance 0.05
+#basechance 0.1
 #role "mounted"
 #name "stealthy boreal cavalry"
 #theme "boreal"
@@ -113,7 +113,7 @@
 
 ------- bowmen
 #newpose
-#basechance 0.05
+#basechance 0.1
 #role "ranged"
 #name "stealthy boreal archers"
 #theme "boreal"
@@ -142,6 +142,7 @@
 
 #load weapon /data/items/hoburg/crossbow/bows.txt
 #load bonusweapon /data/items/human/archer/archerweapon.txt
+#load bonusweapon /data/items/hoburg/crossbow/archerweapon.txt
 #generateitem 1 bonusweapon
 
 #endpose
@@ -157,7 +158,7 @@
 #role "scout"
 #theme "oriental"
 
-#basechance 0.05
+#basechance 0.1
 
 #dwchancebonus 1
 #command "#stealthy 0"
@@ -190,7 +191,7 @@
 #role "mounted"
 #theme "oriental"
 
-#basechance 0.05
+#basechance 0.1
 
 #command "#stealthy 0"
 
@@ -229,14 +230,14 @@
 
 #command "#stealthy 0"
 
-#basechance 0.05
+#basechance 0.1
 
 #renderorder "shadow cloakb mount basesprite shirt legs hair helmet armor cloakf quiver bonusweapon weapon offhandw hands offhanda overlay"
 
 #load basesprite /data/items/hoburg/crossbow/bases.txt
 #load shadow /data/items/hoburg/normal/shadow.txt
 #load hands /data/items/hoburg/crossbow/hands.txt
-#load shirt /data/items/hoburg/normal/shirt.txt
+#load shirt /data/items/hoburg/crossbow/shirt.txt
 
 #load cloakf /data/items/hoburg/normal/cloakf.txt
 #load cloakb /data/items/hoburg/normal/cloakb.txt
