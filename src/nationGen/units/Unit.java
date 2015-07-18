@@ -440,7 +440,8 @@ public class Unit {
 			allCommands.addAll(pose.getCommands());
 	
 	
-				
+			// Adjustment stuff
+			allCommands.addAll(this.commands);
 		
 			// Item commands
 			Iterator<Item> itr = slotmap.values().iterator();
@@ -459,7 +460,6 @@ public class Unit {
 			{
 				for(Command c : f.getCommands())
 				{
-					
 					Command tc = c;
 					int tier = 2;
 					if(Generic.getTagValue(this.tags, "schoolmage") != null)
@@ -492,28 +492,27 @@ public class Unit {
 						
 					}
 					allCommands.add(tc);
+					
 			
 				}
 			}
 		}
 		
 		
-		// Adjustment stuff
-		allCommands.addAll(this.commands);
 
-		
+
+
 		// Now handle them!
 		
 		for(Command c : allCommands)
 			if(c.args.size() > 0 && c.args.get(0).startsWith("*") && Generic.isNumeric(c.args.get(0).substring(1)))
 				multiCommands.add(c);
-			else if(c.args.size() > 0 && c.args.get(0).startsWith("%cost") && Generic.isNumeric(c.args.get(0).substring(5)))
+			else if(c.args.size() > 0 && c.args.get(0).startsWith("%cost") && (Generic.isNumeric(c.args.get(0).substring(5)) || (c.args.size() > 1 && Generic.isNumeric(c.args.get(1)))))
 				percentCostCommands.add(c);
 			else
 				handleCommand(tempCommands, c);
-		
-		
 
+	
 
 		//Percentual cost increases
 		for(Command c : multiCommands)
@@ -541,7 +540,14 @@ public class Unit {
 			
 			for(Command c : percentCostCommands)
 			{
-				double multi = Double.parseDouble(c.args.get(0).substring(5)) / 100;
+				double multi = 0;
+				
+				if(Generic.isNumeric(c.args.get(0).substring(5)))
+						multi = Double.parseDouble(c.args.get(0).substring(5)) / 100;
+				else if(c.args.size() > 1 && Generic.isNumeric(c.args.get(1)))
+						multi = Double.parseDouble(c.args.get(1)) / 100;
+				
+				
 				int price = (int)Math.round((double)gcost * multi);
 				Command d = new Command(c.command, price + "");
 				handleCommand(tempCommands, d);
@@ -751,7 +757,7 @@ public class Unit {
 		}
 		
 		// Fist for things without proper weapons
-		if(!Generic.containsTag(pose.tags, "no_free_fist") && !copystats)
+		if(!Generic.containsTag(pose.tags, "no_free_fist") && !copystats && getClass() != ShapeChangeUnit.class)
 			if(this.getSlot("weapon") == null || this.getSlot("weapon").id.equals("-1") || nationGen.weapondb.GetInteger(getSlot("weapon").id, "rng") != 0)
 			{
 				if(this.getSlot("bonusweapon") == null || this.getSlot("bonusweapon").id.equals("-1") || nationGen.weapondb.GetInteger(getSlot("bonusweapon").id, "rng") != 0)
