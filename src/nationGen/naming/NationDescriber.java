@@ -58,7 +58,38 @@ public class NationDescriber {
 			}
 			
 			desc = dr.replace(desc.trim());
-			u.commands.add(new Command("#descr", "\"" + desc + "\""));
+			
+			
+			Command tmpDesc = null;
+			
+
+			for(Command c : u.getCommands())
+			{
+				if(c.command.equals("#descr"))
+					tmpDesc = c;
+			}
+			
+			if(tmpDesc != null)
+			{
+				desc += tmpDesc.args.get(0);	
+			}
+		
+			for(Filter f : u.appliedFilters)
+			{
+				if(f != null && Generic.getTagValue(f.tags, "description") != null)
+				{
+					desc = desc + " " + Generic.getTagValue(f.tags, "description");
+				}
+			}
+			
+			
+			desc = dr.replace(desc);
+			
+			if(tmpDesc != null)
+				u.setCommandValue("#descr", 0, "\"" + desc + "\"");
+			else
+				u.commands.add(new Command("#descr", "\"" + desc + "\""));
+
 		}
 	}
 	
