@@ -8,6 +8,7 @@ import com.elmokki.Generic;
 
 import nationGen.NationGen;
 import nationGen.entities.Entity;
+import nationGen.entities.Filter;
 import nationGen.entities.MagicFilter;
 import nationGen.entities.Race;
 import nationGen.items.Item;
@@ -661,6 +662,13 @@ public class CommanderGenerator extends TroopGenerator {
 			equipEliteItem(u, "offhand");
 	
 		}
+		
+		// Remove troop only filters
+		List<Filter> removef = new ArrayList<Filter>();
+		for(Filter f : u.appliedFilters)
+			if(f.themes.contains("trooponly"))
+				removef.add(f);
+		u.appliedFilters.removeAll(removef);
 
 	}
 

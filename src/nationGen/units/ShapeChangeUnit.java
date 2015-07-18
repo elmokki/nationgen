@@ -36,7 +36,7 @@ public class ShapeChangeUnit extends Unit {
 	{
 		super(nationGen, race, pose);
 		this.otherForm = otherForm;
-		this.thisForm = thisForm;
+		this.thisForm = thisForm.getCopy();
 	}
 
 
@@ -57,7 +57,6 @@ public class ShapeChangeUnit extends Unit {
 					if(otherForm.tags.contains("sacredmount"))
 						sacred = true;
 				}
-				
 				
 				if(c.command.equals("#gcost") && !thisForm.tags.contains("nogcost"))
 				{
@@ -137,6 +136,10 @@ public class ShapeChangeUnit extends Unit {
 				otherForm.commands.add(new Command("#maxage", "50"));
 			}
 			
+		
+			Filter sf = new Filter(n);
+			sf.name = "Second shape inheritance";
+			
 			// Inherit from race/pose
 			// Careful here since this stuff generally is definite instead of relative definitions
 			List<Command> clist = new ArrayList<Command>();
@@ -148,7 +151,8 @@ public class ShapeChangeUnit extends Unit {
 			{
 				if(n.secondShapeRacePoseCommands.contains(c.command))
 				{	
-					handleCommand(commands, c);
+					sf.commands.add(c);
+					//handleCommand(commands, c);
 				}
 			}
 			
@@ -170,18 +174,24 @@ public class ShapeChangeUnit extends Unit {
 			
 					if(n.secondShapeNonMountCommands.contains(c.command) && !thisForm.tags.contains("mount"))
 					{	
-						handleCommand(commands, c);
+						sf.commands.add(c);
+						//handleCommand(commands, c);
 					}
 					
 					if(n.secondShapeMountCommands.contains(c.command) && thisForm.tags.contains("mount"))
 					{
-						handleCommand(commands, c);
+						sf.commands.add(c);
+						//handleCommand(commands, c);
 					}
 			
 				}
 				
 			}
 			
+			if(sf.commands.size() > 0)
+			{
+				appliedFilters.add(sf);
+			}
 
 
 	
@@ -345,6 +355,7 @@ public class ShapeChangeUnit extends Unit {
 		tw.println("#newmonster " + id);
 
 
+		List<Command> commands = this.getCommands();
 		// Own non-gcost commands first due to #copystats
 		for(Command c : commands)
 		{
