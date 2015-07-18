@@ -1,4 +1,10 @@
 #newitem
+#id nooffhand
+#gameid -1
+#basechance 0
+#enditem
+
+#newitem
 #id kite1
 #gameid 3
 #sprite /graphics/hoburg/shields/kite.png
@@ -14,6 +20,7 @@
 #newitem
 #id shield1
 #gameid 2
+#basechance 0.5
 #sprite /graphics/hoburg/shields/woodenshield.png
 #armor
 #theme "primitive"
@@ -32,6 +39,7 @@
 #theme "iron"
 #theme "austral"
 #theme "boreal"
+#theme "central"
 #theme "abysian"
 #enditem
 
@@ -44,7 +52,7 @@
 #theme "iron"
 #theme "austral"
 #theme "boreal"
-#theme "abysian"
+#theme "central"
 #enditem
 
 
@@ -56,7 +64,7 @@
 #theme "iron"
 #theme "austral"
 #theme "boreal"
-#theme "abysian"
+#theme "central"
 #enditem
 
 #newitem
@@ -72,7 +80,6 @@
 #armor
 #enditem
 
-
 #newitem
 #id tower2
 #gameid 4
@@ -87,4 +94,49 @@
 
 -- Hide shields
 
--- Bronze shields
+#newitem
+#id hideshield_occidental
+#gameid 105
+#basechance 3
+#sprite /graphics/hoburg/shields/hideshield1.png
+#armor
+#theme "primitive"
+#theme "leather"
+#theme "occidental"
+#enditem
+
+#newitem
+#id hideshield_austral
+#gameid 105
+#basechance 3
+#sprite /graphics/hoburg/shields/hideshield2.png
+#armor
+#theme "primitive"
+#theme "leather"
+#theme "austral"
+#enditem
+
+
+-- Hoplons
+
+#newitem
+#id bronze_hoplon
+#gameid 2
+#basechance 3
+#sprite /graphics/hoburg/shields/bronze_hoplon.png
+#theme "bronze"
+#theme "occidental"
+#theme "central"
+#armor
+#enditem
+
+#newitem
+#id iron_hoplon
+#gameid 2
+#basechance 2
+#sprite /graphics/hoburg/shields/iron_hoplon.png
+#theme "iron"
+#theme "central"
+#theme "abysian"
+#armor
+#enditem
