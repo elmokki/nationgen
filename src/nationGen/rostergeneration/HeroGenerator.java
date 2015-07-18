@@ -67,6 +67,7 @@ public class HeroGenerator {
 
 		// Remove recruitment filters
 		tf.themeincs.add("thisitemtheme recruitment *0");
+		tf.themeincs.add("thisitemtheme trooponly *0");
 
 
 		

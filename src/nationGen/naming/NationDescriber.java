@@ -136,16 +136,10 @@ public class NationDescriber {
 					desc = Generic.getTagValue(u.race.tags, "description") + " ";
 				
 	
-				for(Filter f : u.appliedFilters)
-				{
-					if(f != null && Generic.getTagValue(f.tags, "description") != null)
-					{
-						desc = desc + Generic.getTagValue(f.tags, "description") + " ";
-					}
-				}
-				
+	
 				Command tmpDesc = null;
 				
+
 				for(Command c : u.getCommands())
 				{
 					if(c.command.equals("#descr"))
@@ -157,11 +151,19 @@ public class NationDescriber {
 					desc += tmpDesc.args.get(0);	
 				}
 			
+				for(Filter f : u.appliedFilters)
+				{
+					if(f != null && Generic.getTagValue(f.tags, "description") != null)
+					{
+						desc = desc + " " + Generic.getTagValue(f.tags, "description");
+					}
+				}
+				
+				
 				desc = dr.replace(desc);
-	
+				
 				if(tmpDesc != null)
 					u.setCommandValue("#descr", 0, "\"" + desc + "\"");
-		
 				else
 					u.commands.add(new Command("#descr", "\"" + desc + "\""));
 			}
