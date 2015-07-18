@@ -67,7 +67,7 @@ public class Unit {
 	public boolean caponly = false;
 	public List<String> tags = new ArrayList<String>();
 	public List<Filter> appliedFilters = new ArrayList<Filter>();
-	private boolean polished = false;
+	public boolean polished = false;
 	public boolean invariantMonster = false;  // Is the unit a monster that must be used as-is instead of copying? (E.g., hydras)
 	private Nation nation = null;
 	
@@ -433,8 +433,10 @@ public class Unit {
 		List<Command> allCommands = new ArrayList<Command>();
 		List<Command> multiCommands = new ArrayList<Command>();
 		List<Command> percentCostCommands = new ArrayList<Command>();
-
-		if(!polished)
+		
+		if(polished)
+			return this.commands;
+		else
 		{
 			allCommands.addAll(race.unitcommands);
 			allCommands.addAll(pose.getCommands());
@@ -553,6 +555,8 @@ public class Unit {
 				handleCommand(tempCommands, d);
 			}
 		}
+
+		
 		return tempCommands;
 	}
 
@@ -1210,6 +1214,7 @@ public class Unit {
 	
 
 		List<Command> tempCommands = this.commands;
+
 		
 		for(Command c : tempCommands)
 		{
