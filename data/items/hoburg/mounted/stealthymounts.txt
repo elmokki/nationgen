@@ -300,3 +300,33 @@
 #offsetx 1
 #theme "abysian"
 #enditem
+
+#newitem
+#name "red ant"
+#gameid -1
+#sprite /graphics/mounts/standard/redant.png
+#needs overlay redant_overlay
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 8"
+#define "#mounted"
+#define "#weapon nostr_smallsting"
+#define "#gcost +8"
+#define "#ressize 1"
+#define "#enc 2"
+#theme "animal ant"
+#theme "ant"
+#theme "anttotem"
+#theme "totemanimal"
+#theme "primitive"
+#theme "austral"
+#theme "occidental"
+#theme "abysian"
+#tag "maxprot 12"
+#tag "guaranteedprefix ant"
+#define "#secondtmpshape antmount"
+#description "If the rider dies, the ant will carry on fighting until the end of the battle."
+#offsetx 1
+#offsety -4
+#enditem
