@@ -14,6 +14,7 @@
 #define "#ressize 1"
 #define "#enc 3"
 #define "#rcost +4"
+#define "#hp +2"
 #define "#mor +2"
 #theme "animal hyena"
 #tag "maxprot 14"
@@ -37,11 +38,14 @@
 #define "#mounted"
 #define "#weapon nostr_talons_10"
 #define "#weapon nostr_beak_10"
-#define "#gcost +25"
+#define "#gcost +15"
 #define "#ressize 1"
 #define "#enc 4"
 #define "#rcost +4"
 #theme "animal parrot"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
 #tag "maxprot 16"
 #tag "guaranteedprefix parrot"
 #basechance 0.3
@@ -63,14 +67,44 @@
 #define "#mounted"
 #define "#weapon nostr_talons_10"
 #define "#weapon nostr_beak_10"
-#define "#gcost +25"
+#define "#gcost +15"
 #define "#ressize 1"
 #define "#enc 4"
 #define "#rcost +4"
 #theme "animal parrot"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
 #tag "maxprot 16"
 #tag "guaranteedprefix parrot"
 #basechance 0.2
 #offsetx -3
 #offsety -28
+#enditem
+
+
+#newitem
+#name "red ant"
+#gameid -1
+#sprite /graphics/mounts/standard/redant.png
+#needs overlay redant_overlay
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 8"
+#define "#mounted"
+#define "#weapon nostr_smallsting"
+#define "#gcost +5"
+#define "#ressize 1"
+#define "#enc 2"
+#theme "animal ant"
+#theme "ant"
+#theme "anttotem"
+#theme "totemanimal"
+#tag "maxprot 16"
+#tag "guaranteedprefix ant"
+#define "#secondtmpshape antmount"
+#description "If the rider dies, the ant will carry on fighting until the end of the battle."
+#offsetx 0
+#offsety -7
 #enditem
