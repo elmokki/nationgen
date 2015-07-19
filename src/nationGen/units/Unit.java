@@ -442,8 +442,7 @@ public class Unit {
 			allCommands.addAll(pose.getCommands());
 	
 	
-			// Adjustment stuff
-			allCommands.addAll(this.commands);
+
 		
 			// Item commands
 			Iterator<Item> itr = slotmap.values().iterator();
@@ -501,7 +500,8 @@ public class Unit {
 		}
 		
 		
-
+		// Adjustment stuff
+		allCommands.addAll(this.commands);
 
 
 		// Now handle them!
