@@ -42,6 +42,8 @@ public class ShapeChangeUnit extends Unit {
 
 	public void polish(NationGen n, Nation nation)
 	{
+		Filter sf = new Filter(n);
+		sf.name = "Second shape";
 		
 		// Copy sacredness and gcost from main form
 		if(otherForm != null)
@@ -109,7 +111,7 @@ public class ShapeChangeUnit extends Unit {
 			}
 			
 			if(!c.command.startsWith("#spr"))
-				commands.add(c);
+				sf.commands.add(c);
 		
 		}
 		
@@ -118,6 +120,7 @@ public class ShapeChangeUnit extends Unit {
 		// ...and other Form
 		if(otherForm != null)
 		{
+
 			
 			// Inherit nametype and maxage
 			
@@ -125,20 +128,19 @@ public class ShapeChangeUnit extends Unit {
 			for(Command c : otherForm.getCommands())
 				if(c.command.equals("#maxage") || c.command.equals("#nametype"))
 				{
-					this.commands.add(c);
+					sf.commands.add(c);
 					if(c.command.equals("#maxage"))
 						maxagefound = true;
 				}
 			
 			if(!maxagefound)
 			{
-				this.commands.add(new Command("#maxage", "50"));
+				sf.commands.add(new Command("#maxage", "50"));
 				otherForm.commands.add(new Command("#maxage", "50"));
 			}
 			
 		
-			Filter sf = new Filter(n);
-			sf.name = "Second shape inheritance";
+
 			
 			// Inherit from race/pose
 			// Careful here since this stuff generally is definite instead of relative definitions
