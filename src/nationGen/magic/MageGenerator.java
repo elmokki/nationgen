@@ -1767,15 +1767,22 @@ public class MageGenerator extends TroopGenerator {
 		List<Unit> primaries = generateBases("mage", race, primaryamount, 3);
 		
 
+
+		
+		
+		
 		// SECONDARIES
+		boolean changed_at_secondary = false;
 		if(this.random.nextDouble() < 0.1 * bonussecchance && race != nation.races.get(0)){/*do nothing*/}
 		else
 			race = nation.races.get(0);
 		
 		if((race == nation.races.get(0) && this.random.nextDouble() < 0.1 && hasPoseForTier("mage", nation.races.get(1), 2)) || !hasPoseForTier("mage", nation.races.get(0), 2))
+		{
+			changed_at_secondary = true;
 			race = nation.races.get(1);
+		}
 
-		
 		
 		double randroll = this.random.nextDouble();
 		int secondaryamount = 1;
@@ -1805,7 +1812,8 @@ public class MageGenerator extends TroopGenerator {
 		{
 			secondaries = deriveBasesFrom(secondaryamount, "mage", primaries.get(0), race, 3, 2);
 		}
-
+		
+	
 		// TERTIARIES
 		List<Unit> tertiaries = new ArrayList<Unit>();
 		
@@ -1816,7 +1824,7 @@ public class MageGenerator extends TroopGenerator {
 		if(Generic.containsTag(nation.races.get(1).tags, "primaryracetertiarymagemod"))
 			bonussecchance -= Double.parseDouble(Generic.getTagValue(nation.races.get(1).tags, "primaryracemagemod"));
 		
-		if((0.05 * bonussecchance > this.random.nextDouble() && !primaryforeign && hasPoseForTier("mage", nation.races.get(1), 1)) || !hasPoseForTier("mage", nation.races.get(0), 1))
+		if((0.05 * bonussecchance > this.random.nextDouble() && hasPoseForTier("mage", nation.races.get(1), 1)) || !hasPoseForTier("mage", nation.races.get(0), 1) || changed_at_secondary)
 			race = nation.races.get(1);
 		else
 			race = nation.races.get(0);
@@ -1920,7 +1928,7 @@ public class MageGenerator extends TroopGenerator {
 		
 		for(int i = 0; i < amount; i++)
 		{
-			Unit nu = unitGen.generateUnit(nation.races.get(0), newpose);
+			Unit nu = unitGen.generateUnit(race, newpose);
 			units.add(nu);
 		}
 		
