@@ -865,7 +865,7 @@ public class UnitGen {
 			{
 				String slot = args.get(2);
 				double chance = Double.parseDouble(args.get(1));
-				if(nation.random.nextDouble() < chance)
+				if(random.nextDouble() < chance)
 				{
 					Item item = this.getSuitableItem(slot, u, null, null, null); 
 					u.setSlot(slot, item);
