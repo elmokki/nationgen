@@ -23,8 +23,10 @@ import nationGen.units.Unit;
 
 public class CommanderGenerator extends TroopGenerator {
 
+	private Random r;
 	public CommanderGenerator(NationGen g, Nation n) {
 		super(g, n);
+		r = new Random(n.random.nextInt());
 
 	}
 
@@ -47,7 +49,7 @@ public class CommanderGenerator extends TroopGenerator {
 	public void generateComs()
 	{
 
-		Random r = nation.random;
+		
 		
 		List<Unit> tempComs = new ArrayList<Unit>();
 		List<Unit> possibleComs = new ArrayList<Unit>();
@@ -650,7 +652,7 @@ public class CommanderGenerator extends TroopGenerator {
 			
 
 			//System.out.println(items.filterForPose(u.pose).filterSlot("cloakb").getRandom(new ArrayList<Tag>(), false).xoffset + ", " + items.filterForPose(u.pose).filterSlot("cloakb").getRandom(new ArrayList<Tag>(), false).yoffset);
-			u.setSlot("cloakb", Entity.getRandom(nation.random, u.pose.getItems("cloakb")));
+			u.setSlot("cloakb", Entity.getRandom(r, u.pose.getItems("cloakb")));
 			//System.out.println(u.getSlot("cloakb").xoffset + ", " + u.getSlot("cloakb").yoffset);
 		
 		}
@@ -946,7 +948,6 @@ public class CommanderGenerator extends TroopGenerator {
 
 	private String pickRandomSubstring(String string)
 	{
-		Random r = nation.random;
 		String[] words = null;
 		
 		words = string.split(" ");
@@ -957,7 +958,6 @@ public class CommanderGenerator extends TroopGenerator {
 
 	private String pickRandomSubstring(String string, String token) {
 
-		Random r = nation.random;
 		String[] words = null;
 		
 		words = string.split(token);
