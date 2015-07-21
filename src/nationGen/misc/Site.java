@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
 
+import nationGen.entities.Filter;
 import nationGen.units.Unit;
 
 
@@ -16,7 +17,9 @@ public class Site {
 	public HashMap<Integer, Integer> gemMap = new HashMap<Integer, Integer>();
 	public List<Unit> troops = new ArrayList<Unit>();
 	public List<Unit> coms = new ArrayList<Unit>();
-	public List<String> othercommands = new ArrayList<String>();
+	public List<Command> othercommands = new ArrayList<Command>();
+	public List<Filter> appliedfilters = new ArrayList<Filter>();
+
 	public int id = -1;
 	public String name = "UNNAMED";
 	public int level = 0;
@@ -57,8 +60,12 @@ public class Site {
 			tw.println("#homecom " + u.id + " --- " + u.name);
 		for(Unit u : troops)
 			tw.println("#homemon " + u.id + " --- " + u.name);
-		for(String str : othercommands)
+		for(Command str : othercommands)
 			tw.println(str);
+		for(Filter f : this.appliedfilters)
+			for(Command str : f.commands)
+				tw.println(str);
+		
 		Iterator<Entry<Integer, Integer>> itr = gemMap.entrySet().iterator();
 		while(itr.hasNext())
 		{
@@ -90,6 +97,8 @@ public class Site {
 				
 					paths[i] += unitpaths[i];
 
+
+
 				}
 			}
 			
@@ -106,11 +115,28 @@ public class Site {
 					int path = Integer.parseInt(tag.split(" ")[1]);
 					int power = Integer.parseInt(tag.split(" ")[2]);
 					paths[path] = paths[path] + power;
+
 				}
 			}
 				
 		}
 		
+		for(Filter f : appliedfilters)
+		{
+			for(String tag : f.tags)
+			{
+				if(tag.startsWith("sitepath") && tag.split(" ").length == 3)
+				{
+					int path = Integer.parseInt(tag.split(" ")[1]);
+					int power = Integer.parseInt(tag.split(" ")[2]);
+					paths[path] = paths[path] + power;
+
+				}
+				
+			}
+			
+			
+		}
 		
 		Iterator<Entry<Integer, Integer>> itr = gemMap.entrySet().iterator();
 		while(itr.hasNext())

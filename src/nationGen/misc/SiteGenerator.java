@@ -7,6 +7,7 @@ import java.util.Random;
 
 import com.elmokki.Generic;
 
+import nationGen.entities.Filter;
 import nationGen.nation.Nation;
 import nationGen.units.ShapeChangeUnit;
 import nationGen.units.Unit;
@@ -66,6 +67,11 @@ public class SiteGenerator {
 			}
 		*/
 		
+		stuff++;
+		Filter f = null;
+		ChanceIncHandler chandler = new ChanceIncHandler(n);
+		List<Filter> filters = ChanceIncHandler.retrieveFilters("sitefeatures", "default_sitefeatures", n.nationGen.miscdef, null, n.races.get(0));
+		f = chandler.getRandom(filters);
 		
 		int sites = (int)Math.ceil((double)stuff / 5);
 		if(sites < 4 && (sites * 5 - stuff) / 20 > n.random.nextDouble())
@@ -77,19 +83,20 @@ public class SiteGenerator {
 			int minstuff = StuffPerSite(sites, stuff);
 			int added = 0;
 			Site s = new Site();
-
+			int max = 4 + n.random.nextInt(3);
 			
-			while(added < 5 && added < stuff)
+			while(added < max && added < stuff)
 			{
 			
 
 				// 0 = troop
 				// 1 = com
 				// 2 = mage
-				// 3 = gem
-
+				// 3 = filter
+				// 4 = gem
 				
-				int type = n.random.nextInt(3);
+				
+				int type = n.random.nextInt(4);
 				
 
 				if(type == 0 && otherComs.size() > 0)
@@ -100,7 +107,7 @@ public class SiteGenerator {
 					added++;
 			
 					List<Unit> rels = getRelatives(otherTroops, u);
-					while(added < 5 && rels.size() > 0)
+					while(added < max && rels.size() > 0)
 					{
 						Unit u2 = rels.get(n.random.nextInt(rels.size()));
 						rels.remove(u2);
@@ -118,7 +125,7 @@ public class SiteGenerator {
 					added++;
 			
 					List<Unit> rels = getRelatives(otherComs, u);
-					while(added < 5 && rels.size() > 0)
+					while(added < max && rels.size() > 0)
 					{
 						Unit u2 = rels.get(n.random.nextInt(rels.size()));
 						rels.remove(u2);
@@ -136,7 +143,7 @@ public class SiteGenerator {
 					added++;
 			
 					List<Unit> rels = getRelatives(mages, u);
-					while(added < 5 && rels.size() > 0)
+					while(added < max && rels.size() > 0)
 					{
 						Unit u2 = rels.get(n.random.nextInt(rels.size()));
 						rels.remove(u2);
@@ -146,9 +153,14 @@ public class SiteGenerator {
 
 					}
 				}
-		
+				else if(type == 3 && f != null)
+				{
+					s.appliedfilters.add(f);
+					added++;
+					f = null;
+				}
 			
-				if(added < 5 && gems > 0)
+				if(added < max && gems > 0)
 				{
 					double[] paths = s.getSitePathDistribution();
 					paths[8] = -100;
