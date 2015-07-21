@@ -869,7 +869,7 @@ public class Unit {
 		uniques.add("#weapon");
 		uniques.add("#custommagic");
 		uniques.add("#magicskill");
-		
+		uniques.add("#magicboost");
 		
 		int copystats = -1;
 
