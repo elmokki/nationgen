@@ -20,7 +20,40 @@ Info: 	If any race is named <race>, apply modifier
 Own tag
 ------------------------
 Usage:	#chanceinc owntag [not] <tag> <mod>
-Info: 	If any filter/item/pose/whatever has #tag <tag> or #<theme>, apply modifier
+Info: 	If any filter/item/pose/whatever has #tag <tag>, apply modifier
+
+
+Item tag
+------------------------
+Usage:	#chanceinc thisitemtag [not] <tag> <mod>
+Info: 	If an item has #tag <tag>, apply modifier
+
+Item theme
+------------------------
+Usage:	#chanceinc thisitemtheme [not] <tag> <mod>
+Info: 	If an item has #theme <tag>, apply modifier
+
+Armor prot
+------------------------
+Usage:	#chanceinc thisarmorprot [below] <prot> <mod>
+Info: 	If an item is armor and has at least <prot> prot, apply modifier
+	Ignores shields.
+
+Armor enc
+------------------------
+Usage:	#chanceinc thisarmorenc [below] <enc> <mod>
+Info: 	If an item is armor and has at least <enc> enc, apply modifier
+	Ignores shields.
+
+Armor db
+------------------------
+Usage:	#chanceinc thisarmordb [below] <query> <value> <mod>
+Info: 	If an item is armor and value queried from armors.csv is at least <query>, apply modifier
+
+Weapon db
+------------------------
+Usage:	#chanceinc thisweapondb [below] <query> <value> <mod>
+Info: 	If an item is weapon and value queried from weapons.csv is at least <query>, apply modifier
 
 
 Generic
