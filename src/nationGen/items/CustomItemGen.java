@@ -18,9 +18,11 @@ public class CustomItemGen {
 	
 	
 	Nation n;
+	Random random;
 	public CustomItemGen(Nation n)
 	{
 		this.n = n;
+		random = new Random(n.random.nextInt());
 	}
 	
 	
@@ -41,7 +43,7 @@ public class CustomItemGen {
 			lowshots = true;
 			
 
-		if(n.random.nextDouble() > epicness)
+		if(random.nextDouble() > epicness)
 		{
 
 			List<MagicItem> possibles = new ArrayList<MagicItem>();
@@ -66,7 +68,7 @@ public class CustomItemGen {
 				ChanceIncHandler chandler = new ChanceIncHandler(n);
 				LinkedHashMap<MagicItem, Double> itemMap = chandler.handleChanceIncs(u, possibles); 
 				
-				MagicItem mitem = MagicItem.getRandom(n.random, itemMap);
+				MagicItem mitem = MagicItem.getRandom(random, itemMap);
 				
 				// Special looks
 				if(Generic.containsTag(mitem.tags, "weapon"))
@@ -85,7 +87,7 @@ public class CustomItemGen {
 					
 					if(pos.size() > 0)
 					{
-						CustomItem miten = this.getFromItem(Item.getRandom(n.random, pos));
+						CustomItem miten = this.getFromItem(Item.getRandom(random, pos));
 						if(miten != null)
 							i = miten;
 					}
@@ -135,15 +137,15 @@ public class CustomItemGen {
 				if(suffixes.size() > 0 || prefixes.size() > 0)
 				{
 					String part = "";
-					int rand = n.random.nextInt(suffixes.size() + prefixes.size()) + 1;
+					int rand = random.nextInt(suffixes.size() + prefixes.size()) + 1;
 					if(rand > suffixes.size() && suffixes.size() > 0)
 					{
-						part = suffixes.get(n.random.nextInt(suffixes.size()));
+						part = suffixes.get(random.nextInt(suffixes.size()));
 						name = "\"" + Generic.capitalize(name + " " + part) + "\"";
 					}
 					else
 					{
-						part = prefixes.get(n.random.nextInt(prefixes.size()));
+						part = prefixes.get(random.nextInt(prefixes.size()));
 						name = "\"" + Generic.capitalize(part + " " + name) + "\"";
 					}
 	
@@ -173,15 +175,15 @@ public class CustomItemGen {
 
 		
 		int runs = 2;
-		if(n.random.nextDouble() > epicness)
+		if(random.nextDouble() > epicness)
 			runs++;
-		if(n.random.nextDouble() > epicness / 2)
+		if(random.nextDouble() > epicness / 2)
 			runs++;
-		if(n.random.nextDouble() > epicness / 4)
+		if(random.nextDouble() > epicness / 4)
 			runs++;
 		
 		boolean magic = false;
-		if(!ranged && i.magicItem != null && n.random.nextDouble() > 0.75)
+		if(!ranged && i.magicItem != null && random.nextDouble() > 0.75)
 		{
 			i.values.put("magic", "");
 			magic = true;
@@ -197,7 +199,7 @@ public class CustomItemGen {
 			for(int j = 0; j < chances.length; j++)
 				sum += chances[j];
 			
-			double rand = n.random.nextDouble() * sum;
+			double rand = random.nextDouble() * sum;
 			
 			if(ranged)
 				chances[3] = 0;

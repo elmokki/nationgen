@@ -159,10 +159,13 @@
 #name "castleprod 10"
 #basechance 0.025
 #command "#castleprod +10"
-#chanceinc avgres 12 0.475
-#chanceinc avgres 15 2
-#chanceinc avgres 20 3
-#chanceinc avgres 25 4
+#chanceinc avgres 12 1
+#chanceinc avgres 15 5
+#chanceinc unitswithresabove 12 3 0.5
+#chanceinc unitswithresabove 14 3 1
+#chanceinc unitswithresabove 14 2 1
+#chanceinc unitswithresabove 15 2 2
+#chanceinc unitswithresabove 17 2 2
 #desc "10 percent higher resource production in castles"
 #end
 
@@ -171,10 +174,15 @@
 #name "castleprod 25"
 #basechance 0.025
 #command "#castleprod +25"
-#chanceinc avgres 12 0.225
-#chanceinc avgres 15 1
-#chanceinc avgres 20 1.5
-#chanceinc avgres 25 2
+#chanceinc avgres 12 0.5
+#chanceinc avgres 15 6
+#chanceinc avgres 20 10
+#chanceinc avgres 25 20
+#chanceinc unitswithresabove 12 3 0.5
+#chanceinc unitswithresabove 14 3 1
+#chanceinc unitswithresabove 14 2 1
+#chanceinc unitswithresabove 15 2 2
+#chanceinc unitswithresabove 17 2 2
 #desc "25 percent higher resource production in castles"
 #end
 

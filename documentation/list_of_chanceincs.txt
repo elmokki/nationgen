@@ -289,3 +289,12 @@ Average resource cost
 Usage:	#chanceinc avgres <res> <mod>
 Info:	If nation's units' average resource cost is at least <res>, apply mod
 
+Units with resource cost above
+------------------------
+Usage:	#chanceinc unitswithresabove [below] <res> <count> <mod>
+Info:	If nation has aleast count units with resource cost above res, modifier is applied
+
+Cap only units with resource cost above
+------------------------
+Usage:	#chanceinc caponlyunitswithresabove [below] <res> <count> <mod>
+Info:	If nation has aleast count units with resource cost above res, modifier is applied

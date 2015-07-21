@@ -133,7 +133,7 @@ public class NameGenerator {
 	{
 		Random r = new Random();
 		if(n != null)
-			r = n.random;
+			r = new Random(n.random.nextInt());
 
 		
 		
@@ -428,7 +428,7 @@ public class NameGenerator {
 	
 
 	
-		Random r = n.random;
+		Random r = new Random(n.random.nextInt());
 		NamePart part = new NamePart(n.nationGen);
 		part.name = "UNNAMED";
 		
@@ -533,7 +533,7 @@ public class NameGenerator {
 		
 		
 		List<String> possible = new ArrayList<String>();
-		Random r = n.random;
+		Random r = new Random(n.random.nextInt());
 
 		name = name.trim();
 		if(!isVowel(name.charAt(name.length() - 1 ) +""))
