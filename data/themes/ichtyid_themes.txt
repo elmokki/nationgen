@@ -42,211 +42,192 @@
 #type demographic
 #name common_pigment
 #basechance 4
-#lockslot base common_pigment
+#themeinc theme common_pigment *1000
 #endtheme
 
 #newtheme
 #type demographic
 #name faint_pigment
-#basechance 0 
-#lockslot base faint_pigment
+#basechance 1
+#themeinc theme faint_pigment *1000
 #endtheme
 
 #newtheme
 #type demographic
 #name light_pigment
-#basechance 0 
-#lockslot base light_pigment
+#basechance 1
+#themeinc theme light_pigment *1000
 #endtheme
 
 #newtheme
 #type demographic
 #name dark_pigment
-#basechance 4
-#lockslot base dark_pigment
+#basechance 2
+#themeinc theme dark_pigment *1000
 #endtheme
 
 #newtheme
 #type demographic
 #name faint_pigment_red
-#lockslot base faint_pigment_red
+#themeinc theme faint_pigment_red *1000
 #racedefinition "#magicpriority fire 2"
 #racedefinition "#magicpriority blood 2"
-#basechance 0
 #endtheme
 
 #newtheme
 #type demographic
 #name faint_pigment_blue
-#lockslot base faint_pigment_blue
+#themeinc theme faint_pigment_blue *1000
 #racedefinition "#magicpriority water 8"
-#basechance 0
 #endtheme
 
 #newtheme
 #type demographic
 #name faint_pigment_green
-#lockslot base faint_pigment_green
+#themeinc theme faint_pigment_green *1000
 #racedefinition "#magicpriority nature 6"
-#basechance 0
 #endtheme
 
 #newtheme
 #type demographic
 #name faint_pigment_black
-#lockslot base faint_pigment_black
+#themeinc theme faint_pigment_black *1000
 #racedefinition "#magicpriority earth 2"
 #racedefinition "#magicpriority death 2"
-#basechance 0
 #endtheme
 
 #newtheme
 #type demographic
 #name faint_pigment_cyan
-#lockslot base faint_pigment_cyan
+#themeinc theme faint_pigment_cyan *1000
 #racedefinition "#magicpriority water 8"
 #racedefinition "#magicpriority air 4"
-#basechance 0
 #endtheme
 
 #newtheme
 #type demographic
 #name faint_pigment_gold
-#lockslot base faint_pigment_gold
+#themeinc theme faint_pigment_gold *1000
 #racedefinition "#magicpriority earth 4"
-#basechance 0
 #endtheme
 
 #newtheme
 #type demographic
 #name faint_pigment_orange
-#lockslot base faint_pigment_orange
+#themeinc theme faint_pigment_orange *1000
 #racedefinition "#magicpriority fire 2"
 #racedefinition "#magicpriority earth 2"
-#basechance 0
 #endtheme
 
 #newtheme
 #type demographic
 #name faint_pigment_purple
-#lockslot base faint_pigment_purple
+#themeinc theme faint_pigment_purple *1000
 #racedefinition "#magicpriority death 4"
-#basechance 0
 #endtheme
 
 #newtheme
 #type demographic
 #name faint_pigment_white
-#lockslot base faint_pigment_white
+#themeinc theme faint_pigment_white *1000
 #racedefinition "#magicpriority astral 2"
 #racedefinition "#magicpriority air 2"
-#basechance 0
 #endtheme
 
 #newtheme
 #type demographic
 #name light_pigment_red
-#lockslot base light_pigment_red
+#themeinc theme light_pigment_red *1000
 #racedefinition "#magicpriority fire 4"
 #racedefinition "#magicpriority blood 4"
-#basechance 0
 #endtheme
 
 #newtheme
 #type demographic
 #name light_pigment_blue
-#lockslot base light_pigment_blue
+#themeinc theme light_pigment_blue *1000
 #racedefinition "#magicpriority water 8"
-#basechance 0
 #endtheme
 
 #newtheme
 #type demographic
 #name light_pigment_green
-#lockslot base light_pigment_green
+#themeinc theme light_pigment_green *1000
 #racedefinition "#magicpriority nature 8"
-#basechance 0
 #endtheme
 
 #newtheme
 #type demographic
 #name light_pigment_black
-#lockslot base light_pigment_black
+#themeinc theme light_pigment_black *1000
 #racedefinition "#magicpriority earth 4"
 #racedefinition "#magicpriority death 4"
-#basechance 0
 #endtheme
 
 #newtheme
 #type demographic
 #name light_pigment_cyan
-#lockslot base light_pigment_cyan
+#themeinc theme light_pigment_cyan *1000
 #racedefinition "#magicpriority water 8"
 #racedefinition "#magicpriority air 6"
-#basechance 0
 #endtheme
 
 #newtheme
 #type demographic
 #name light_pigment_gold
-#lockslot base light_pigment_gold
+#themeinc theme light_pigment_gold *1000
 #racedefinition "#magicpriority earth 6"
-#basechance 0
 #endtheme
 
 #newtheme
 #type demographic
 #name light_pigment_orange
-#lockslot base light_pigment_orange
+#themeinc theme light_pigment_orange *1000
 #racedefinition "#magicpriority fire 4"
 #racedefinition "#magicpriority earth 4"
-#basechance 0
 #endtheme
 
 #newtheme
 #type demographic
 #name light_pigment_purple
-#lockslot base light_pigment_purple
+#themeinc theme light_pigment_purple *1000
 #racedefinition "#magicpriority death 6"
-#basechance 0
 #endtheme
 
 #newtheme
 #type demographic
 #name light_pigment_white
-#lockslot base light_pigment_white
+#themeinc theme light_pigment_white *1000
 #racedefinition "#magicpriority astral 4"
 #racedefinition "#magicpriority air 4"
-#basechance 0
 #endtheme
 
 #newtheme
 #type demographic
 #name dark_pigment_red
-#lockslot base dark_pigment_red
+#themeinc theme dark_pigment_red *1000
 #racedefinition "#magicpriority fire 6"
 #racedefinition "#magicpriority blood 6"
-#basechance 10000
 #endtheme
 
 #newtheme
 #type demographic
 #name dark_pigment_blue
-#lockslot base dark_pigment_blue
+#themeinc theme dark_pigment_blue *1000
 #racedefinition "#magicpriority water 8"
 #endtheme
 
 #newtheme
 #type demographic
 #name dark_pigment_green
-#lockslot base dark_pigment_green
+#themeinc theme dark_pigment_green *1000
 #racedefinition "#magicpriority nature 8"
 #endtheme
 
 #newtheme
 #type demographic
 #name dark_pigment_black
-#lockslot base dark_pigment_black
+#themeinc theme dark_pigment_black *1000
 #racedefinition "#magicpriority earth 6"
 #racedefinition "#magicpriority death 6"
 #endtheme
@@ -254,7 +235,7 @@
 #newtheme
 #type demographic
 #name dark_pigment_cyan
-#lockslot base dark_pigment_cyan
+#themeinc theme dark_pigment_cyan *1000
 #racedefinition "#magicpriority water 8"
 #racedefinition "#magicpriority air 8"
 #endtheme
@@ -262,14 +243,14 @@
 #newtheme
 #type demographic
 #name dark_pigment_gold
-#lockslot base dark_pigment_gold
+#themeinc theme dark_pigment_gold *1000
 #racedefinition "#magicpriority earth 8"
 #endtheme
 
 #newtheme
 #type demographic
 #name dark_pigment_orange
-#lockslot base dark_pigment_orange
+#themeinc theme dark_pigment_orange *1000
 #racedefinition "#magicpriority fire 6"
 #racedefinition "#magicpriority earth 6"
 #endtheme
@@ -277,14 +258,14 @@
 #newtheme
 #type demographic
 #name dark_pigment_purple
-#lockslot base dark_pigment_purple
+#themeinc theme dark_pigment_purple *1000
 #racedefinition "#magicpriority death 8"
 #endtheme
 
 #newtheme
 #type demographic
 #name dark_pigment_white
-#lockslot base dark_pigment_white
+#themeinc theme dark_pigment_white *1000
 #racedefinition "#magicpriority astral 6"
 #racedefinition "#magicpriority air 6"
 #endtheme

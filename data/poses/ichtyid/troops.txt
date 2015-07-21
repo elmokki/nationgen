@@ -3,32 +3,8 @@
 #newpose
 #name "normal infantry"
 #role "infantry"
-#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
-
-#load basesprite /data/items/ichtyid/bases.txt
-#load shadow /data/items/ichtyid/shadow.txt
-#load hands /data/items/ichtyid/hands.txt
-#load armor /data/items/ichtyid/armor.txt
-#load armor /data/items/ichtyid/naked.txt
-#load scales /data/items/ichtyid/scales.txt
-#load helmet /data/items/ichtyid/helmet.txt
-#load weapon /data/items/ichtyid/weapon.txt
-#load offhand /data/items/ichtyid/offhand.txt
-#load offhand /data/items/ichtyid/shield.txt
-#load bonusweapon /data/items/ichtyid/bonusrangedweapon.txt
-
--- #generateitem 1 scales
-
-#endpose
-
--------- Sacred and elite infantry - they can have pigmented scales
-
-#newpose
-#name "normal infantry"
-#role "infantry"
 #role "sacred"
 #role "elite"
-
 #renderorder "shadow weapon basesprite scales armor bonusweapon offhandw hands helmet offhanda"
 
 #load basesprite /data/items/ichtyid/bases.txt
@@ -37,37 +13,15 @@
 #load armor /data/items/ichtyid/armor.txt
 #load armor /data/items/ichtyid/naked.txt
 #load scales /data/items/ichtyid/scales.txt
--- #load pigment /data/items/ichtyid/pigment.txt
 #load helmet /data/items/ichtyid/helmet.txt
--- #load standard /data/items/ichtyid/standard.txt
 #load weapon /data/items/ichtyid/weapon.txt
 #load offhand /data/items/ichtyid/offhand.txt
 #load offhand /data/items/ichtyid/shield.txt
 #load bonusweapon /data/items/ichtyid/bonusrangedweapon.txt
 
--- #generateitem 1 scales
--- #generateitem 0.1 pigment
+#generateitem 1 scales
 
 #endpose
-
-------- Archer - not currently used
-
--- #newpose
--- #role "ranged"
--- #role "sacred"
--- #basechance 0
-
--- #load basesprite /data/items/ichtyid/bases.txt
--- #load shadow /data/items/ichtyid/shadow.txt
--- #load hands /data/items/ichtyid/hands.txt
--- #load armor /data/items/ichtyid/armor.txt
--- #load armor /data/items/ichtyid/naked.txt
--- #load helmet /data/items/ichtyid/helmet.txt
--- #load weapon /data/items/ichtyid/ranged.txt
--- #load bonusweapon /data/items/ichtyid/rangedmelee.txt
-
--- #endpose
-
 
 
 -------- scout
@@ -75,7 +29,7 @@
 #newpose
 #role "scout"
 
-#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+#renderorder "shadow weapon basesprite scales armor bonusweapon offhandw hands helmet offhanda"
 
 #load basesprite /data/items/ichtyid/bases.txt
 #load shadow /data/items/ichtyid/shadow.txt
@@ -88,6 +42,6 @@
 #load offhand /data/items/ichtyid/scoutoffhand.txt
 #load bonusweapon /data/items/ichtyid/bonusrangedweapon.txt
 
--- #generateitem 1 scales
+#generateitem 1 scales
 
 #endpose
