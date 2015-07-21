@@ -96,6 +96,7 @@
 #chanceinc "personalmagic blood death 1"
 #notfortier 2
 #notfortier 1
+#theme curse
 #end
 
 #new magefilter
@@ -307,6 +308,7 @@
 #primarycommand #sailing
 #chanceinc "personalmagic air 0.35"
 #chanceinc "personalmagic water 0.35"
+#theme sailing
 #end
 
 #new magefilter
@@ -1325,4 +1327,82 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #description "has a lesser otherness following"
+#end
+
+#new magefilter
+#name "resource generator 10"
+#type "resources"
+#basechance 0.5
+#chanceinc "personalmagic earth *6"
+#chanceinc avgres 14 *2
+#chanceinc unitswithresabove 14 3 0.5
+#chanceinc unitswithresabove 15 2 *2
+#chanceinc unitswithresabove 17 2 *2
+#command "#resources +10"
+#notfortier 3
+#theme smith
+#theme resources
+#end
+
+#new magefilter
+#name "resource generator 15"
+#type "resources"
+#basechance 0.5
+#chanceinc "personalmagic earth *6"
+#chanceinc avgres 14 *2
+#chanceinc unitswithresabove 14 3 0.5
+#chanceinc unitswithresabove 15 2 *2
+#chanceinc unitswithresabove 17 2 *2
+#command "#resources +15"
+#notfortier 3
+#theme smith
+#theme resources
+#end
+
+#new magefilter
+#name "resource generator 25"
+#type "resources"
+#basechance 0.5
+#chanceinc "personalmagic earth *6"
+#chanceinc avgres 14 *2
+#chanceinc unitswithresabove 14 3 0.5
+#chanceinc unitswithresabove 15 2 *2
+#chanceinc unitswithresabove 17 2 *2
+#command "#resources +25"
+#notfortier 1
+#notfortier 2
+#theme smith
+#theme resources
+#end
+
+#new magefilter
+#name "cold resource generator 10"
+#type "resources"
+#basechance 0.5
+#chanceinc "personalmagic water *6"
+#chanceinc avgres 14 *2
+#chanceinc unitswithresabove 14 3 0.5
+#chanceinc unitswithresabove 15 2 *2
+#chanceinc unitswithresabove 17 2 *2
+#chanceinc nationcommand above idealcold -1 *0
+#command "#iceforging +10"
+#notfortier 3
+#theme smith
+#theme resources
+#end
+
+#new magefilter
+#name "cold resource generator 15"
+#type "resources"
+#basechance 0.5
+#chanceinc "personalmagic water *6"
+#chanceinc avgres 14 *2
+#chanceinc unitswithresabove 14 3 0.5
+#chanceinc unitswithresabove 15 2 *2
+#chanceinc unitswithresabove 17 2 *2
+#chanceinc nationcommand above idealcold -1 *0
+#command "#iceforging +15"
+#notfortier 3
+#theme smith
+#theme resources
 #end
