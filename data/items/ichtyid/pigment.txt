@@ -1,0 +1,447 @@
+-- Untinted pigments
+
+
+
+#newitem
+#name faint_pigment
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_faint.png
+#recolormask self
+#armor
+#tag "tier 3"
+#basechance 0
+#enditem
+
+#newitem
+#name light_pigment
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_light.png
+#recolormask self
+#armor
+#tag "tier 3"
+#basechance 2
+#enditem
+
+#newitem
+#name dark_pigment
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_dark.png
+#recolormask self
+#armor
+#tag "tier 3"
+#basechance 0
+#enditem
+
+-- Faint tinted pigments
+
+#newitem
+#name faint_pigment_red
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_faint_red.png
+#recolormask self
+#armor
+#tag "eliteversion faint_pigment_red"
+#tag "eliteversion light_pigment_red"
+#basechance 0
+#theme "blood"
+#theme "fire"
+#chanceinc "personalmagic blood 1 5"
+#chanceinc "personalmagic fire 1 5"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#name faint_pigment_blue
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_faint_blue.png
+#recolormask self
+#armor
+#tag "eliteversion faint_pigment_blue"
+#tag "eliteversion light_pigment_blue"
+#basechance 0
+#theme "water"
+#chanceinc "personalmagic water 1 5"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#name faint_pigment_green
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_faint_green.png
+#recolormask self
+#armor
+#tag "eliteversion faint_pigment_green"
+#tag "eliteversion light_pigment_green"
+#basechance 0
+#theme "nature"
+#chanceinc "personalmagic nature 1 5"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#name faint_pigment_black
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_faint_black.png
+#recolormask self
+#armor
+#tag "eliteversion faint_pigment_black"
+#tag "eliteversion light_pigment_black"
+#basechance 0
+#theme "death"
+#theme "earth"
+#chanceinc "personalmagic earth 1 5"
+#chanceinc "personalmagic death 1 5"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#name faint_pigment_cyan
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_faint_cyan.png
+#recolormask self
+#armor
+#tag "eliteversion faint_pigment_cyan"
+#tag "eliteversion light_pigment_cyan"
+#basechance 0
+#theme "water"
+#theme "air"
+#chanceinc "personalmagic water 1 5"
+#chanceinc "personalmagic air 1 5"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#name faint_pigment_gold
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_faint_gold.png
+#recolormask self
+#armor
+#tag "eliteversion faint_pigment_gold"
+#tag "eliteversion light_pigment_gold"
+#basechance 0
+#theme "earth"
+#chanceinc "personalmagic earth 1 5"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#name faint_pigment_orange
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_faint_orange.png
+#recolormask self
+#armor
+#tag "eliteversion faint_pigment_orange"
+#tag "eliteversion light_pigment_orange"
+#basechance 0
+#theme "earth"
+#theme "fire"
+#chanceinc "personalmagic earth 1 5"
+#chanceinc "personalmagic fire 1 5"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#name faint_pigment_purple
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_faint_purple.png
+#recolormask self
+#armor
+#tag "eliteversion faint_pigment_purple"
+#tag "eliteversion light_pigment_purple"
+#basechance 0
+#theme "death"
+#chanceinc "personalmagic death 1 5"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#name faint_pigment_white
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_faint_white.png
+#recolormask self
+#armor
+#tag "eliteversion faint_pigment_white"
+#tag "eliteversion light_pigment_white"
+#basechance 0
+#theme "astral"
+#theme "air"
+#chanceinc "personalmagic astral 1 5"
+#chanceinc "personalmagic air 1 5"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+-- Light tinted pigments
+
+#newitem
+#name light_pigment_red
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_light_red.png
+#recolormask self
+#armor
+#tag "eliteversion light_pigment_red"
+#tag "eliteversion dark_pigment_red"
+#basechance 0
+#theme "blood"
+#theme "fire"
+#chanceinc "personalmagic blood 1 5"
+#chanceinc "personalmagic fire 1 5"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name light_pigment_blue
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_light_blue.png
+#recolormask self
+#armor
+#tag "eliteversion light_pigment_blue"
+#tag "eliteversion dark_pigment_blue"
+#basechance 0
+#theme "water"
+#chanceinc "personalmagic water 1 5"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name light_pigment_green
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_light_green.png
+#recolormask self
+#armor
+#tag "eliteversion light_pigment_green"
+#tag "eliteversion dark_pigment_green"
+#basechance 0
+#theme "nature"
+#chanceinc "personalmagic nature 1 5"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name light_pigment_black
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_light_black.png
+#recolormask self
+#armor
+#tag "eliteversion light_pigment_black"
+#tag "eliteversion dark_pigment_black"
+#basechance 0
+#theme "death"
+#theme "earth"
+#chanceinc "personalmagic earth 1 5"
+#chanceinc "personalmagic death 1 5"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name light_pigment_cyan
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_light_cyan.png
+#recolormask self
+#armor
+#tag "eliteversion light_pigment_cyan"
+#tag "eliteversion dark_pigment_cyan"
+#basechance 0
+#theme "water"
+#theme "air"
+#chanceinc "personalmagic water 1 5"
+#chanceinc "personalmagic air 1 5"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name light_pigment_gold
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_light_gold.png
+#recolormask self
+#armor
+#tag "eliteversion light_pigment_gold"
+#tag "eliteversion dark_pigment_gold"
+#basechance 0
+#theme "earth"
+#chanceinc "personalmagic earth 1 5"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name light_pigment_orange
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_light_orange.png
+#recolormask self
+#armor
+#tag "eliteversion light_pigment_orange"
+#tag "eliteversion dark_pigment_orange"
+#basechance 0
+#theme "earth"
+#theme "fire"
+#chanceinc "personalmagic earth 1 5"
+#chanceinc "personalmagic fire 1 5"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name light_pigment_purple
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_light_purple.png
+#recolormask self
+#armor
+#tag "eliteversion light_pigment_purple"
+#tag "eliteversion dark_pigment_purple"
+#basechance 0
+#theme "death"
+#chanceinc "personalmagic death 1 5"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name light_pigment_white
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_light_white.png
+#recolormask self
+#armor
+#tag "eliteversion light_pigment_white"
+#tag "eliteversion dark_pigment_white"
+#basechance 0
+#theme "astral"
+#theme "air"
+#chanceinc "personalmagic astral 1 5"
+#chanceinc "personalmagic air 1 5"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+-- Dark tinted pigments
+
+#newitem
+#name dark_pigment_red
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_dark_red.png
+#recolormask self
+#armor
+#basechance 0
+#theme "blood"
+#theme "fire"
+#chanceinc "personalmagic blood 1 5"
+#chanceinc "personalmagic fire 1 5"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name dark_pigment_blue
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_dark_blue.png
+#recolormask self
+#armor
+#basechance 0
+#theme "water"
+#chanceinc "personalmagic water 1 5"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name dark_pigment_green
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_dark_green.png
+#recolormask self
+#armor
+#basechance 0
+#theme "nature"
+#chanceinc "personalmagic nature 1 5"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name dark_pigment_black
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_dark_black.png
+#recolormask self
+#armor
+#basechance 0
+#theme "death"
+#theme "earth"
+#chanceinc "personalmagic earth 1 5"
+#chanceinc "personalmagic death 1 5"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name dark_pigment_cyan
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_dark_cyan.png
+#recolormask self
+#armor
+#basechance 0
+#theme "water"
+#theme "air"
+#chanceinc "personalmagic water 1 5"
+#chanceinc "personalmagic air 1 5"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name dark_pigment_gold
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_dark_gold.png
+#recolormask self
+#armor
+#basechance 0
+#theme "earth"
+#chanceinc "personalmagic earth 1 5"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name dark_pigment_orange
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_dark_orange.png
+#recolormask self
+#armor
+#basechance 0
+#theme "earth"
+#theme "fire"
+#chanceinc "personalmagic earth 1 5"
+#chanceinc "personalmagic fire 1 5"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name dark_pigment_purple
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_dark_purple.png
+#recolormask self
+#armor
+#basechance 0
+#theme "death"
+#chanceinc "personalmagic death 1 5"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name dark_pigment_white
+#gameid -1
+#sprite /graphics/ichtyid/scales/pigment_dark_white.png
+#recolormask self
+#armor
+#basechance 0
+#theme "astral"
+#theme "air"
+#chanceinc "personalmagic astral 1 5"
+#chanceinc "personalmagic air 1 5"
+#tag "tier 3"
+#enditem
