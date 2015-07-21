@@ -1216,6 +1216,47 @@ public class ChanceIncHandler {
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
+				canIncrease = false;
+				if(args.get(0).equals("unitswithresabove") && args.size() >= 3)
+				{
+					boolean below = args.contains("below");
+					double res = Double.parseDouble(args.get(args.size() - 3));
+					int count = Integer.parseInt(args.get(args.size() - 2));
+					
+					int counted = 0;
+					for(Unit u : n.generateTroopList())
+					{
+						if(u.getResCost(true) > res)
+							counted++;
+					}
+					
+					if((counted >= count) != below)
+						canIncrease = true;
+					
+					if(canIncrease)
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+				}
+				
+				canIncrease = false;
+				if(args.get(0).equals("caponlyunitswithresabove") && args.size() >= 3)
+				{
+					boolean below = args.contains("below");
+					double res = Double.parseDouble(args.get(args.size() - 3));
+					int count = Integer.parseInt(args.get(args.size() - 2));
+					
+					int counted = 0;
+					for(Unit u : n.generateTroopList())
+					{
+						if(u.getResCost(true) > res && u.caponly)
+							counted++;
+					}
+					
+					if((counted >= count) != below)
+						canIncrease = true;
+					
+					if(canIncrease)
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+				}
 			}
 
 		}
