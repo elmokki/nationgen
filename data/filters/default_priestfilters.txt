@@ -17,25 +17,32 @@
 #tag "notfortier 2" 
 #end
 
--- Disabled since they don't work right now
 #new magefilter
-#name "divineins 3-3"
+#name "divineins researcher 3"
 #type "divineins"
-#basechance 0
-#command "#divineins +3"
-#command "#researchbonus +3"
-#command "#gcost +20"
+#basechance 0.25
+#command "#divineins"
+#command "#fixedresearch +3"
 #end
 
--- Disabled since they don't work right now
 #new magefilter
-#name "divineins 1-8"
+#name "divineins researcher 5"
 #type "divineins"
-#basechance 0
-#command "#divineins +1"
-#command "#researchbonus +8"
-#command "#gcost +20"
+#basechance 0.5
+#command "#divineins"
+#command "#fixedresearch +5"
+#command "#gcost +30"
 #end
+
+#new magefilter
+#name "divineins researcher sloth 1-1"
+#type "divineins"
+#basechance 0.5
+#command "#divineins"
+#command "#fixedresearch +1"
+#command "#slothresearch +1"
+#end
+
 
 #new magefilter
 #name "spy"
