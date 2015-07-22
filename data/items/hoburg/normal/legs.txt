@@ -3,34 +3,6 @@
 
 
 #newitem
-#id pants
-#gameid -1
-#sprite /graphics/hoburg/legs/pants.png
-#recolormask self
-#enditem
-
-#newitem
-#id leatherpants
-#gameid -1
-#sprite /graphics/hoburg/legs/leatherpants.png
-#theme "primitive"
-#basechance 0.25
-#enditem
-
-#newitem
-#id loincloth
-#gameid -1
-#sprite /graphics/hoburg/legs/loincloth.png
-#recolormask /graphics/hoburg/legs/loincloth_recolormask.png
-#theme "primitive"
-#theme "naked"
-#theme "austral"
-#theme "occidental"
-#needs shirt noshirt
-#basechance 0.01
-#enditem
-
-#newitem
 #id starkers
 #gameid -1
 #theme "primitive"
@@ -40,6 +12,122 @@
 #needs shirt noshirt
 #basechance 0.01
 #maxprot 5
+#enditem
+
+#newitem
+#id loincloth_austral
+#gameid -1
+#sprite /graphics/hoburg/legs/loincloth.png
+#recolormask /graphics/hoburg/legs/loincloth_recolormask.png
+#theme "primitive"
+#theme "naked"
+#theme "austral"
+#needs shirt noshirt
+#basechance 0.01
+#chanceinc "filter militia 1.24"
+#chanceinc "filter slave 4.99"
+#enditem
+
+#newitem
+#id loincloth_white
+#gameid -1
+#sprite /graphics/hoburg/legs/loincloth_white.png
+#theme "primitive"
+#theme "naked"
+#theme "occidental"
+#needs shirt noshirt
+#basechance 0.01
+#chanceinc "filter militia 1.24"
+#chanceinc "filter slave 4.99"
+#enditem
+
+#newitem
+#id loincloth_colored
+#gameid -1
+#sprite /graphics/hoburg/legs/loincloth_white.png
+#recolormask self
+#theme "primitive"
+#theme "naked"
+#theme "occidental"
+#needs shirt noshirt
+#basechance 0.1
+#chanceinc "filter militia 0.4"
+#chanceinc "filter slave 0.4"
+#enditem
+
+#newitem
+#id warskirt
+#gameid -1
+#sprite /graphics/hoburg/legs/warskirt_occidental.png
+#theme "primitive"
+#theme "occidental"
+#needs shirt noshirt
+#basechance 2
+#chanceinc "filter militia *0.25"
+#chanceinc "filter slave *0.005"
+#enditem
+
+#newitem
+#id warskirt_colored
+#gameid -1
+#sprite /graphics/hoburg/legs/warskirt_occidental.png
+#recolormask /graphics/hoburg/legs/warskirt_occidental_recolormask.png
+#theme "primitive"
+#theme "occidental"
+#needs shirt noshirt
+#basechance 1
+#chanceinc "filter militia *0.25"
+#chanceinc "filter slave *0.005"
+#enditem
+
+#newitem
+#id pants
+#gameid -1
+#sprite /graphics/hoburg/legs/pants.png
+#recolormask self
+#theme "boreal"
+#theme "central"
+#theme "abysian"
+#enditem
+
+#newitem
+#id leatherpants
+#gameid -1
+#sprite /graphics/hoburg/legs/leatherpants.png
+#theme "primitive"
+#theme "boreal"
+#theme "austral"
+#theme "central"
+#theme "abysian"
+#basechance 0.25
+#enditem
+
+#newitem
+#id warpants
+#type warpants
+#gameid -1
+#sprite /graphics/hoburg/legs/warpants_occidental.png
+#recolormask /graphics/hoburg/legs/warpants_occidental_recolormask1.png
+#theme "primitive"
+#theme "occidental"
+#needs shirt noshirt
+#basechance 0.002
+#chanceinc "filter militia *0.001"
+#chanceinc "filter slave *0.001"
+#enditem
+
+#newitem
+#id warpants_colored
+#type warpants
+#gameid -1
+#sprite /graphics/hoburg/legs/warpants_occidental.png
+#recolormask /graphics/hoburg/legs/warpants_occidental_recolormask2.png
+#theme "primitive"
+#theme "occidental"
+#needs shirt noshirt
+#basechance 0.001
+#chanceinc "filter militia *0.001"
+#chanceinc "filter slave *0.001"
 #enditem
 
 #newitem
