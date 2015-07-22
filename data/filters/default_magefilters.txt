@@ -42,6 +42,42 @@
 #end
 
 #new magefilter
+#name "better researcher +1"
+#basechance 0.25
+#command "#researchbonus +1"
+#end
+
+#new magefilter
+#name "better researcher +3"
+#basechance 0.25
+#command "#researchbonus +3"
+#notfortier 3
+#end
+
+#new magefilter
+#name "better researcher +3"
+#basechance 0.25
+#command "#researchbonus +3"
+#notfortier 1
+#notfortier 2
+#power 3
+#end
+
+#new magefilter
+#name "sloth researcher +2"
+#basechance 0.125
+#command "#slothresearch +2"
+#power 2
+#end
+
+
+#new magefilter
+#name "sloth researcher +1"
+#basechance 0.125
+#command "#slothresearch +1"
+#end
+
+#new magefilter
 #name "makepearls"
 #basechance 0.2
 #command "#makepearls 3"
@@ -529,6 +565,17 @@
 #basechance 0.5
 #command "#drainimmune"
 #power 3
+#notfortier 4
+#givetoall
+#end
+
+#new magefilter
+#name "drainimmune for extramages"
+#basechance 0.5
+#command "#drainimmune"
+#notfortier 1
+#notfortier 2
+#notfortier 3
 #end
 
 #new magefilter
@@ -580,7 +627,7 @@
 #command "#autohealer 3"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#chanceinc "command startaff 1.5"
+#chanceinc "command #startaff 5"
 #power 2
 #end
 
@@ -600,7 +647,7 @@
 #name "recuperation"
 #basechance 0.1
 #chanceinc "personalmagic nature 1"
-#chanceinc "personalcommand startaff 1.5"
+#chanceinc "personalcommand #startaff 1.5"
 #command "#heal"
 #end
 
