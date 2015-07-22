@@ -158,80 +158,72 @@
 #end
 
 #new
-#name "firerange 3"
-#command "#firerange 3"
-#sitepath 0 40
-#basechance 0
-#chanceinc magic fire 0.125
-#end
-
-#new
-#name "airrange 3"
-#command "#airrange 3"
-#sitepath 1 40
-#basechance 0
-#chanceinc magic air 0.125
-#end
-
-#new
-#name "waterrange 2"
-#command "#waterrange 2"
-#sitepath 3 40
-#basechance 0
-#chanceinc magic water 0.125
-#end
-
-#new
-#name "earthrange 3"
-#command "#earthrange 3"
-#sitepath 3 40
-#basechance 0
-#chanceinc magic earth 0.125
-#end
-
-#new
-#name "astralrange 3"
-#command "#astralrange 3"
+#name "sorceryrange 2"
+#command "#sorceryrange 2"
 #sitepath 4 40
-#basechance 0
-#chanceinc magic astral 0.125
-#end
-
-#new
-#name "deathrange 3"
-#command "#deathrange 3"
 #sitepath 5 40
+#sitepath 6 40
+#sitepath 7 40
 #basechance 0
+#chanceinc magic blood 0.125
+#chanceinc magic astral 0.125
+#chanceinc magic nature 0.125
 #chanceinc magic death 0.125
 #end
 
 #new
-#name "naturerange 3"
-#command "#naturerange 3"
-#sitepath 6 40
+#name "elementrange 2"
+#command "#elementrange 2"
+#sitepath 0 40
+#sitepath 1 40
+#sitepath 2 40
+#sitepath 3 40
 #basechance 0
-#chanceinc magic nature 0.125
+#chanceinc magic fire 0.125
+#chanceinc magic air 0.125
+#chanceinc magic water 0.125
+#chanceinc magic earth 0.125
 #end
 
 #new
-#name "bloodrange 3"
-#command "#bloodrange 3"
+#name "sorceryrange 3"
+#command "#sorceryrange 3"
+#sitepath 4 40
+#sitepath 5 40
+#sitepath 6 40
 #sitepath 7 40
 #basechance 0
 #chanceinc magic blood 0.125
+#chanceinc magic astral 0.125
+#chanceinc magic nature 0.125
+#chanceinc magic death 0.125
+#end
+
+#new
+#name "elementrange 3"
+#command "#elementrange 3"
+#sitepath 0 40
+#sitepath 1 40
+#sitepath 2 40
+#sitepath 3 40
+#basechance 0
+#chanceinc magic fire 0.125
+#chanceinc magic air 0.125
+#chanceinc magic water 0.125
+#chanceinc magic earth 0.125
+#end
+
+#new
+#name "allrange 2"
+#type allrange
+#command "#allrange 2"
+#basechance 0.125
 #end
 
 #new
 #name "allrange 3"
 #type allrange
 #command "#allrange 3"
-#basechance 0.125
-#end
-
-#new
-#name "allrange 5"
-#type allrange
-#command "#allrange 5"
 #basechance 0.0625
 #end
 
