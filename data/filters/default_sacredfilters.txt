@@ -82,6 +82,68 @@
 #end
 
 #new
+#name "undyinglowest"
+#type "undying"
+#basechance 0
+#command "#undying +3"
+#chanceinc "magic death 0.5"
+#chanceinc "magic death nature 0.5"
+#chanceinc "command #undying 1"
+#chanceinc "command #undead 10"
+#chanceinc "command #demon 5"
+#chanceinc "command #magicbeing 1"
+#chanceinc "command #berserk 5"
+#chanceinc "command #regeneration 5"
+#chanceinc "pose ranged -100"
+#chanceinc "pose mounted -100"
+#tag "nopose ranged"
+#tag "nopose mounted"
+#power 1
+#end
+
+
+#new
+#name "undyinglow"
+#type "undying"
+#basechance 0
+#command "#undying +6"
+#chanceinc "magic death 0.5"
+#chanceinc "magic death nature 0.5"
+#chanceinc "command #undying 10"
+#chanceinc "command #undead 10"
+#chanceinc "command #demon 5"
+#chanceinc "command #magicbeing 1"
+#chanceinc "command #berserk 5"
+#chanceinc "command #regeneration 5"
+#chanceinc "pose ranged -100"
+#chanceinc "pose mounted -100"
+#tag "nopose ranged"
+#tag "nopose mounted"
+#command "#gcost +5"
+#power 2
+#end
+
+#new
+#name "undyinghigh"
+#type "undying"
+#basechance 0
+#command "#undying +9"
+#chanceinc "magic death 0.5"
+#chanceinc "magic death nature 0.5"
+#chanceinc "command #undying 5"
+#chanceinc "command #undead 10"
+#chanceinc "command #demon 1"
+#chanceinc "command #berserk 5"
+#chanceinc "command #regeneration 5"
+#chanceinc "pose ranged -100"
+#chanceinc "pose mounted -100"
+#tag "nopose ranged"
+#tag "nopose mounted"
+#command "#gcost +10"
+#power 2
+#end
+
+#new
 #name "stealthlow"
 #type "stealth"
 #basechance 0.5
