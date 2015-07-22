@@ -2,6 +2,7 @@ package nationGen.naming;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import com.elmokki.Generic;
 
@@ -14,9 +15,10 @@ import nationGen.units.Unit;
 
 public class NationDescriber {
 	private Nation n;
-	
+	private Random random;
 	public NationDescriber(Nation n)
 	{
+		random = new Random(n.random.nextInt());
 		this.n = n;
 		describeTroops();
 		describeCommanders();
@@ -130,7 +132,7 @@ public class NationDescriber {
 			Filter descf = null;
 			if(possibles.size() > 0)
 			{
-				descf = Filter.getRandom(n.random, chandler.handleChanceIncs(units, possibles));
+				descf = Filter.getRandom(random, chandler.handleChanceIncs(units, possibles));
 
 			}
 			else
@@ -148,8 +150,8 @@ public class NationDescriber {
 	{
 		String[] roles = {"commanders", "priests"};
 		
-		ChanceIncHandler chandler = new ChanceIncHandler(n);
-		List<Filter> descs = ChanceIncHandler.retrieveFilters("troopdescriptions", "troopdescs", n.nationGen.descriptions, null, n.races.get(0));
+		//ChanceIncHandler chandler = new ChanceIncHandler(n);
+		//List<Filter> descs = ChanceIncHandler.retrieveFilters("troopdescriptions", "troopdescs", n.nationGen.descriptions, null, n.races.get(0));
 
 		DescriptionReplacer dr = new DescriptionReplacer(n);
 		

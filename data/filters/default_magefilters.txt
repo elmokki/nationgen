@@ -16,6 +16,7 @@
 #notfortier 2
 #notfortier 1
 #power -1
+#desc "Will die underwater"
 #end
 
 #new magefilter
@@ -95,6 +96,7 @@
 #chanceinc "personalmagic blood death 1"
 #notfortier 2
 #notfortier 1
+#theme curse
 #end
 
 #new magefilter
@@ -303,8 +305,10 @@
 #name "sailing"
 #basechance 0.25
 #command "#sailing 999 3"
+#primarycommand #sailing
 #chanceinc "personalmagic air 0.35"
 #chanceinc "personalmagic water 0.35"
+#theme sailing
 #end
 
 #new magefilter
@@ -377,18 +381,17 @@
 #name "stealthy"
 #basechance 0.3
 #command "#stealthy +10"
-#command "#gcost +20"
-#tag "notfortier 3"
+#command "#gcost *1.2"
 #chanceinc "race vanir -20"
 #chanceinc "race sidhe -20"
 #power 2
 #end
 
 #new magefilter
-#name "stealthy all"
-#basechance 0.15
+#name "stealthy - fixed cost"
+#basechance 0.3
 #command "#stealthy +10"
-#command "#gcost +10"
+#command "#gcost +40"
 #chanceinc "race vanir -20"
 #chanceinc "race sidhe -20"
 #power 2
@@ -399,32 +402,20 @@
 #basechance 0.20
 #command "#stealthy +10"
 #command "#spy"
-#command "#gcost +20"
+#command "#gcost +30"
 #tag "notfortier 3"
 #power 2
 #end
 
-#new magefilter
-#name "assassin"
-#basechance 0.2
-#command "#stealthy +25"
-#command "#assassin"
-#command "#gcost +20"
-#primarycommand #assassin
-#tag "notfortier 2"
-#tag "notfortier 3"
-#power 2
-#end
 
 #new magefilter
 #name "assassin2"
 #basechance 0.2
 #command "#stealthy +25"
 #command "#assassin"
-#command "#gcost +20"
+#command "#gcost +30"
 #primarycommand #assassin
 #tag "notfortier 3"
-#tag "notfortier 1"
 #power 2
 #end
 
@@ -502,34 +493,22 @@
 #new magefilter
 #name "nobadevents1"
 #basechance 0.2
-#command "#nobadevents +%value%"
-#basevalue -4
-#valuemulti 4
+#command "#nobadevents +5"
 #tag "notfortier 1"
 #chanceinc "personalmagic astral 0.8"
 #end
 
 #new magefilter
 #name "nobadevents2"
-#basechance 0.05
-#command "#nobadevents +%value%"
-#basevalue 0
-#valuemulti 4
-#chanceinc "personalmagic astral 0.45"
-#tag "notfortier 3"
+#basechance 0.2
+#command "#nobadevents +3"
+#tag "notfortier 1"
+#chanceinc "personalmagic astral 0.8"
 #end
+
 
 #new magefilter
 #name "nobadevents3"
-#basechance 0.025
-#command "#nobadevents +6"
-#chanceinc "personalmagic astral 0.2"
-#tag "notfortier 1"
-#tag "notfortier 3"
-#end
-
-#new magefilter
-#name "nobadevents4"
 #basechance 0.1
 #command "#nobadevents +8"
 #tag "notfortier 2"
@@ -716,7 +695,7 @@
 #name "forgebonus 1 tert"
 #basechance 0.1
 #command "#fixforgebonus +1"
-#command "#gcost +20"
+#command "#gcost +50"
 #tag "notfortier 2"
 #tag "notfortier 3"
 #chanceinc "personalmagic earth 0.05"
@@ -738,21 +717,9 @@
 #command "#batstartsum1 2092"
 #chanceinc "personalmagic nature 0.5"
 #chanceinc "personalmagic earth 0.5"
-#tag "notfortier 1"
-#tag "notfortier 2"
 #description "has a shikigami familiar"
 #end
 
-#new magefilter
-#name "shikigami"
-#type "familiar"
-#basechance 0.05
-#command "#batstartsum1 2092"
-#chanceinc "personalmagic nature 0.5"
-#chanceinc "personalmagic earth 0.5"
-#tag "notfortier 1"
-#description "has a shikigami familiar"
-#end
 
 #new magefilter
 #name "imp_primary"
@@ -795,10 +762,10 @@
 #type "familiar"
 #basechance 0
 #command "#batstartsum2 592"
-#chanceinc "personalmagic nature 0.05"
+#chanceinc "personalmagic nature 0.25"
 #chanceinc "personalmagic air *2"
 #chanceinc "personalcommand illusion *3"
-#chanceinc "theme fae *3"
+#chanceinc "theme fae *10"
 #tag "notfortier 1"
 #tag "notfortier 2"
 #description "is jealously protected by fairy companions"
@@ -809,10 +776,10 @@
 #type "familiar"
 #basechance 0
 #command "#batstartsum1 592"
-#chanceinc "personalmagic nature 0.05"
+#chanceinc "personalmagic nature 0.25"
 #chanceinc "personalmagic air *2"
 #chanceinc "personalcommand illusion *3"
-#chanceinc "theme fae *3"
+#chanceinc "theme fae *10"
 #tag "notfortier 1"
 #description "is accompanied by a small fairy"
 #end
@@ -822,7 +789,7 @@
 #type "familiar"
 #basechance 0.05
 #command "#batstartsum2 1363"
-#chanceinc "personalmagic death 0.5"
+#chanceinc "personalmagic death 1"
 #chanceinc "personalmagic nature death 2"
 #description "watched over by ancestors"
 #end
@@ -833,7 +800,7 @@
 #basechance 0.05
 #command "#batstartsum3 2218"
 #chanceinc "personalmagic nature 1"
-#chanceinc "personalmagic nature death 1"
+#chanceinc "personalmagic nature death 3"
 #description "followed by a small swarm of bugs"
 #tag "notfortier 1"
 #tag "notfortier 2"
@@ -844,11 +811,13 @@
 #type "familiar"
 #basechance 0
 #command "#batstartsum1 2283"
-#chanceinc "personalmagic blood earth 1"
+#command "#gcost +40"
+#chanceinc "personalmagic blood 0.5"
+#chanceinc "personalmagic blood earth 10"
 #description "protected by tainted earth"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#power 2
+#power 3
 #end
 
 #new magefilter
@@ -856,11 +825,12 @@
 #type "familiar"
 #basechance 0
 #command "#batstartsum1 496"
+#command "#gcost +40"
 #chanceinc "personalmagic earth 1"
 #description "protected by earth"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#power 2
+#power 3
 #end
 
 #new magefilter
@@ -868,11 +838,12 @@
 #type "familiar"
 #basechance 0
 #command "#batstartsum1 597"
+#command "#gcost +40"
 #chanceinc "personalmagic fire 1"
 #description "protected by fire"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#power 2
+#power 3
 #end
 
 #new magefilter
@@ -880,11 +851,12 @@
 #type "familiar"
 #basechance 0
 #command "#batstartsum1 411"
+#command "#gcost +40"
 #chanceinc "personalmagic water 1"
 #description "protected by water"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#power 2
+#power 3
 #end
 
 #new magefilter
@@ -892,11 +864,12 @@
 #type "familiar"
 #basechance 0
 #command "#batstartsum1 570"
+#command "#gcost +40"
 #chanceinc "personalmagic air 1"
 #description "protected by air"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#power 2
+#power 3
 #end
 
 #new magefilter
@@ -917,7 +890,7 @@
 #basechance 0.025
 #chanceinc "personalmagic nature 0.3"
 #chanceinc "personalmagic air 0.3"
-#chanceinc "personalcommand mounted *0"
+#chanceinc "personalcommand #mounted *0"
 #command "#shapechange turkey"
 #tag "notfortier 1"
 #description "can shapeshift into a turkey"
@@ -942,8 +915,8 @@
 #type "shapeshift"
 #name "werewolf2"
 #basechance 0.05
-#chanceinc "personalmagic nature 0.5"
-#chanceinc "personalcommand mounted *0"
+#chanceinc "personalmagic nature 0.25"
+#chanceinc "personalcommand #mounted *0"
 #command "#shapechange werewolf"
 #command "#gcost *1.2"
 #tag "notfortier 1"
@@ -959,7 +932,7 @@
 #name "werebear"
 #basechance 0.05
 #chanceinc "personalmagic nature 0.5"
-#chanceinc "personalcommand mounted *0"
+#chanceinc "personalcommand #mounted *0"
 #command "#shapechange werebear"
 #tag "notfortier 1"
 #tag "notfortier 2"
@@ -974,7 +947,7 @@
 #name "werebear2"
 #basechance 0.05
 #chanceinc "personalmagic nature 0.5"
-#chanceinc "personalcommand mounted *0"
+#chanceinc "personalcommand #mounted *0"
 #command "#shapechange werebear"
 #command "#gcost *1.2"
 #tag "notfortier 1"
@@ -990,7 +963,7 @@
 #name "wolf"
 #basechance 0.05
 #chanceinc "personalmagic nature 1"
-#chanceinc "personalcommand mounted *0"
+#chanceinc "personalcommand #mounted *0"
 #command "#shapechange wolf"
 #description "can shapeshift into a wolf"
 #tag "notfortier 1"
@@ -1005,7 +978,7 @@
 #basechance 0.05
 #chanceinc "personalmagic nature 0.75"
 #chanceinc "personalmagic air 0.75"
-#chanceinc "personalcommand mounted *0"
+#chanceinc "personalcommand #mounted *0"
 #command "#shapechange wingedmonkey"
 #description "can shapeshift into a winged monkey"
 #tag "notfortier 1"
@@ -1017,7 +990,7 @@
 #basechance 0.0
 #chanceinc "personalmagic blood 0.2"
 #chanceinc "personalmagic blood fire 3"
-#chanceinc "personalcommand mounted *0"
+#chanceinc "personalcommand #mounted *0"
 #command "#shapechange devil"
 #command "#demon"
 #tag "notfortier 1"
@@ -1047,7 +1020,7 @@
 #basechance 0.0
 #chanceinc "personalmagic blood 0.2"
 #chanceinc "personalmagic blood water 3"
-#chanceinc "personalcommand mounted *0"
+#chanceinc "personalcommand #mounted *0"
 #command "#shapechange frostfiend"
 #command "#demon"
 #tag "notfortier 1"
@@ -1063,7 +1036,7 @@
 #name "greatbear"
 #basechance 0.025
 #chanceinc "personalmagic nature 1"
-#chanceinc "personalcommand mounted *0"
+#chanceinc "personalcommand #mounted *0"
 #command "#shapechange greatbear"
 #tag "personalmagic nature"
 #description "can shapeshift into a great bear"
@@ -1076,7 +1049,7 @@
 #name "bear"
 #basechance 0.05
 #chanceinc "personalmagic nature 1"
-#chanceinc "personalcommand mounted *0"
+#chanceinc "personalcommand #mounted *0"
 #command "#shapechange bear"
 #tag "personalmagic nature"
 #description "can shapeshift into a bear"
@@ -1089,7 +1062,7 @@
 #name "jaguar"
 #basechance 0.025
 #chanceinc "personalmagic nature 1"
-#chanceinc "personalcommand mounted *0"
+#chanceinc "personalcommand #mounted *0"
 #command "#shapechange jaguar"
 #description "can shapeshift into a jaguar"
 #theme "jaguartotem"
@@ -1101,7 +1074,7 @@
 #name "deepone"
 #basechance 0.0
 #chanceinc "personalmagic water 1"
-#chanceinc "personalcommand mounted *0"
+#chanceinc "personalcommand #mounted *0"
 #command "#shapechange deepone"
 #tag "notfortier 1"
 #description "can shapeshift into a deep one"
@@ -1175,10 +1148,12 @@
 #chanceinc "personalmagic fire 1"
 #chanceinc "personalmagic water -0.75"
 #command "#secondtmpshape felemental"
-#command "#gcost +30"
+#command "#gcost +40"
 #tag "personalmagic fire"
 #tag "notfortier 1"
+#tag "notfortier 2"
 #description "explodes as a burst of elemental energy upon death, spawning an elemental"
+#power 2
 #end
 
 #new magefilter
@@ -1188,10 +1163,12 @@
 #chanceinc "personalmagic earth 1"
 #chanceinc "personalmagic air -0.75"
 #command "#secondtmpshape eelemental"
-#command "#gcost +30"
+#command "#gcost +40"
 #tag "personalmagic earth"
 #tag "notfortier 1"
+#tag "notfortier 2"
 #description "explodes as a burst of elemental energy upon death, spawning an elemental"
+#power 2
 #end
 
 #new magefilter
@@ -1201,10 +1178,12 @@
 #chanceinc "personalmagic air 1"
 #chanceinc "personalmagic earth -0.75"
 #command "#secondtmpshape aelemental"
-#command "#gcost +30"
+#command "#gcost +40"
 #description "explodes as a burst of elemental energy upon death, spawning an elemental"
 #tag "personalmagic air"
 #tag "notfortier 1"
+#tag "notfortier 2"
+#power 2
 #end
 
 #new magefilter
@@ -1214,10 +1193,12 @@
 #chanceinc "personalmagic water 1"
 #chanceinc "personalmagic fire -0.75"
 #command "#secondtmpshape welemental"
-#command "#gcost +30"
+#command "#gcost +40"
 #tag "personalmagic water"
 #description "explodes as a burst of elemental energy upon death, spawning an elemental"
 #tag "notfortier 1"
+#tag "notfortier 2"
+#power 2
 #end
 
 #new magefilter
@@ -1346,4 +1327,82 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #description "has a lesser otherness following"
+#end
+
+#new magefilter
+#name "resource generator 10"
+#type "resources"
+#basechance 0.5
+#chanceinc "personalmagic earth *6"
+#chanceinc avgres 14 *2
+#chanceinc unitswithresabove 14 3 0.5
+#chanceinc unitswithresabove 15 2 *2
+#chanceinc unitswithresabove 17 2 *2
+#command "#resources +10"
+#notfortier 3
+#theme smith
+#theme resources
+#end
+
+#new magefilter
+#name "resource generator 15"
+#type "resources"
+#basechance 0.5
+#chanceinc "personalmagic earth *6"
+#chanceinc avgres 14 *2
+#chanceinc unitswithresabove 14 3 0.5
+#chanceinc unitswithresabove 15 2 *2
+#chanceinc unitswithresabove 17 2 *2
+#command "#resources +15"
+#notfortier 3
+#theme smith
+#theme resources
+#end
+
+#new magefilter
+#name "resource generator 25"
+#type "resources"
+#basechance 0.5
+#chanceinc "personalmagic earth *6"
+#chanceinc avgres 14 *2
+#chanceinc unitswithresabove 14 3 0.5
+#chanceinc unitswithresabove 15 2 *2
+#chanceinc unitswithresabove 17 2 *2
+#command "#resources +25"
+#notfortier 1
+#notfortier 2
+#theme smith
+#theme resources
+#end
+
+#new magefilter
+#name "cold resource generator 10"
+#type "resources"
+#basechance 0.5
+#chanceinc "personalmagic water *6"
+#chanceinc avgres 14 *2
+#chanceinc unitswithresabove 14 3 0.5
+#chanceinc unitswithresabove 15 2 *2
+#chanceinc unitswithresabove 17 2 *2
+#chanceinc nationcommand above idealcold -1 *0
+#command "#iceforging +10"
+#notfortier 3
+#theme smith
+#theme resources
+#end
+
+#new magefilter
+#name "cold resource generator 15"
+#type "resources"
+#basechance 0.5
+#chanceinc "personalmagic water *6"
+#chanceinc avgres 14 *2
+#chanceinc unitswithresabove 14 3 0.5
+#chanceinc unitswithresabove 15 2 *2
+#chanceinc unitswithresabove 17 2 *2
+#chanceinc nationcommand above idealcold -1 *0
+#command "#iceforging +15"
+#notfortier 3
+#theme smith
+#theme resources
 #end

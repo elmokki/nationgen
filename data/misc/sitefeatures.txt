@@ -1,0 +1,303 @@
+#new
+#name "nothing"
+#basechance 5
+#end
+
+
+#new
+#name "res75"
+#type resources
+#command "#res 75"
+#basechance 0
+#chanceinc magic earth 0.125
+#chanceinc unitswithresabove 14 4 0.125
+#chanceinc unitswithresabove 16 4 0.25
+#chanceinc unitswithresabove 17 3 0.5
+#chanceinc unitswithresabove 19 3 0.5
+#chanceinc unitswithresabove 24 3 0.5
+#chanceinc magic earth *2
+#chanceinc avgres 16 *2
+#chanceinc avgres 18 *2
+#chanceinc avgres 20 *2
+#sitepath 3 20
+#theme resources
+#end
+
+
+#new
+#name "res50"
+#type resources
+#command "#res 50"
+#basechance 0.05
+#chanceinc magic earth 0.125
+#chanceinc unitswithresabove 14 4 0.125
+#chanceinc unitswithresabove 16 4 0.25
+#chanceinc unitswithresabove 17 4 0.5
+#chanceinc unitswithresabove 19 3 0.5
+#chanceinc magic earth *2
+#chanceinc avgres 16 *2
+#chanceinc avgres 18 *2
+#sitepath 3 20
+#theme resources
+#end
+
+
+#new
+#name "res30"
+#type resources
+#command "#res 30"
+#basechance 0.25
+#chanceinc magic earth 0.5
+#chanceinc unitswithresabove 14 4 0.125
+#chanceinc unitswithresabove 16 4 0.25
+#chanceinc unitswithresabove 17 3 0.5
+#chanceinc magic earth *2
+#chanceinc avgres 14 *2
+#theme resources
+#sitepath 3 10
+#end
+
+#new
+#name "decunrest 5"
+#type unrest
+#command "#decunrest 5"
+#basechance 0.125
+#end
+
+
+#new
+#name "decunrest 10"
+#type unrest
+#command "#decunrest 10"
+#basechance 0.125
+#sitepath 8 20
+#end
+
+#new
+#name "decunrest 15"
+#type unrest
+#command "#decunrest 15"
+#basechance 0.125
+#sitepath 8 20
+#end
+
+#new
+#name "void gate 20"
+#type voidgate
+#command "#voidgate 20"
+#basechance 0
+#sitepath 4 80
+#chanceinc magic astral 0.2
+#theme gate
+#theme void
+#end
+
+#new
+#name "void gate 40"
+#type voidgate
+#command "#voidgate 40"
+#basechance 0
+#sitepath 4 80
+#chanceinc magic astral 0.1
+#theme gate
+#theme void
+#end
+
+#new
+#name "ghoul summoning"
+#type summon
+#command "#summon 198"
+#sitepath 5 1000
+#basechance 0
+#chanceinc magic death 0.25
+#end
+
+#new
+#name "ghost summoning"
+#type summon
+#command "#summon 566"
+#sitepath 5 1000
+#basechance 0
+#chanceinc magic death 0.25
+#end
+
+#new
+#name "imp summoning"
+#type summon
+#command "#summon 303"
+#sitepath 7 1000
+#basechance 0
+#chanceinc magic blood 0.25
+#end
+
+#new
+#name "wolf summoning"
+#type summon
+#command "#summon 284"
+#sitepath 6 1000
+#basechance 0
+#chanceinc magic nature 0.25
+#end
+
+#new
+#name "scry 1"
+#type scry
+#command "#scry 1"
+#sitepath 4 80
+#basechance 0
+#chanceinc magic astral 0.5
+#end
+
+#new
+#name "scry 2"
+#type scry
+#command "#scry 2"
+#sitepath 4 80
+#basechance 0
+#chanceinc magic astral 0.125
+#end
+
+#new
+#name "firerange 3"
+#command "#firerange 3"
+#sitepath 0 40
+#basechance 0
+#chanceinc magic fire 0.125
+#end
+
+#new
+#name "airrange 3"
+#command "#airrange 3"
+#sitepath 1 40
+#basechance 0
+#chanceinc magic air 0.125
+#end
+
+#new
+#name "waterrange 2"
+#command "#waterrange 2"
+#sitepath 3 40
+#basechance 0
+#chanceinc magic water 0.125
+#end
+
+#new
+#name "earthrange 3"
+#command "#earthrange 3"
+#sitepath 3 40
+#basechance 0
+#chanceinc magic earth 0.125
+#end
+
+#new
+#name "astralrange 3"
+#command "#astralrange 3"
+#sitepath 4 40
+#basechance 0
+#chanceinc magic astral 0.125
+#end
+
+#new
+#name "deathrange 3"
+#command "#deathrange 3"
+#sitepath 5 40
+#basechance 0
+#chanceinc magic death 0.125
+#end
+
+#new
+#name "naturerange 3"
+#command "#naturerange 3"
+#sitepath 6 40
+#basechance 0
+#chanceinc magic nature 0.125
+#end
+
+#new
+#name "bloodrange 3"
+#command "#bloodrange 3"
+#sitepath 7 40
+#basechance 0
+#chanceinc magic blood 0.125
+#end
+
+#new
+#name "allrange 3"
+#type allrange
+#command "#allrange 3"
+#basechance 0.125
+#end
+
+#new
+#name "allrange 5"
+#type allrange
+#command "#allrange 5"
+#basechance 0.0625
+#end
+
+#new
+#name "heal 1"
+#type heal
+#command "#heal 1"
+#basechance 0.05
+#chanceinc magic nature *5
+#sitepath 6 40
+#end
+
+#new
+#name "heal 3"
+#type heal
+#command "#heal 3"
+#basechance 0.05
+#chanceinc magic nature *5
+#sitepath 6 40
+#end
+
+#new
+#name "heal 5"
+#type heal
+#command "#heal 5"
+#basechance 0.025
+#chanceinc magic nature *5
+#sitepath 6 40
+#end
+
+#new
+#name "xp 1"
+#type xp
+#command "#xp 1"
+#basechance 0.2
+#end
+
+#new
+#name "xp 2"
+#type xp
+#command "#xp 2"
+#basechance 0.2
+#end
+
+#new
+#name "holyfire 10"
+#type holyfire
+#command "#holyfire 10"
+#basechance 0.05
+#chanceinc magic fire *6
+#chanceinc magic death *0
+#chanceinc magic blood *0
+#chanceinc command #undead *0
+#chanceinc command #demon *0
+#sitepath 0 40
+#end
+
+#new
+#name "holypower 10"
+#type holyfire
+#command "#holypower 10"
+#basechance 0.05
+#chanceinc magic astral *6
+#chanceinc magic death *0
+#chanceinc magic blood *0
+#chanceinc command #undead *0
+#chanceinc command #demon *0
+#sitepath 4 40
+#end

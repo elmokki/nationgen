@@ -2,6 +2,7 @@ package nationGen.naming;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import com.elmokki.Generic;
 
@@ -18,23 +19,25 @@ public class EpithetGenerator {
 	public EpithetGenerator(NationGen ngen)
 	{
 		this.ngen = ngen;
+	
 	}
 	
 	public void giveEpithet(Nation n)
 	{
+		Random random = new Random(n.random.nextInt());
 		mageepithetparts = ChanceIncHandler.retrieveFilters("epithet_era_names", "default_epithet_parts", ngen.miscnames, null, n.races.get(0));
 
 		
 		String epithet = "";
 		
 		
-		double r = n.random.nextDouble();
+		double r = random.nextDouble();
 		
 		if(r > 0.55 && !MageDescriber.getCommonNoun(n).equals("")) // Second condition is relatively rare
 		{
-			NamePart part = NamePart.getRandom(n.random, mageepithetparts);
+			NamePart part = NamePart.getRandom(random, mageepithetparts);
 			
-			if(n.random.nextDouble() < 0.5 && MageDescriber.getCommonNoun(n).toString().split(" ").length < 2)
+			if(random.nextDouble() < 0.5 && MageDescriber.getCommonNoun(n).toString().split(" ").length < 2)
 			{
 				epithet = MageDescriber.getCommonNoun(n) + " " + part.name;
 			}
@@ -43,7 +46,7 @@ public class EpithetGenerator {
 		}
 		else if(r > 0.3 && !MageDescriber.getCommonName(n).toString().equals("Mage"))
 		{
-			NamePart part = NamePart.getRandom(n.random, mageepithetparts);
+			NamePart part = NamePart.getRandom(random, mageepithetparts);
 			Name common = MageDescriber.getCommonName(n);
 			common.setType(Generic.plural(common.type.toString()));
 			

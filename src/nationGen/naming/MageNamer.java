@@ -4,6 +4,7 @@ package nationGen.naming;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Random;
 
 import com.elmokki.Generic;
 
@@ -15,8 +16,10 @@ import nationGen.units.Unit;
 
 public class MageNamer extends Namer {
 	
+	private Random random;
 	public MageNamer(Nation n) {
 		super(n);
+		random = new Random(n.random.nextInt());
 		loadNameData();
 	}
 
@@ -115,13 +118,13 @@ public class MageNamer extends Namer {
 		
 		// prefixrank = <rank> <fixed name>
 		// other = <rank based name>
-		boolean prefixrank = n.random.nextBoolean();
+		boolean prefixrank = random.nextBoolean();
 		
 
 		// whether extra special fun stuff should be suffix or prefix
 		// ie apprentice storm druid or apprentice druid of astral graves
 		// ie golden storm master or master of golden storm
-		boolean suffix = n.random.nextBoolean();
+		boolean suffix = random.nextBoolean();
 		
 		
 		
@@ -153,7 +156,7 @@ public class MageNamer extends Namer {
 		}
 		
 		if(extras != null)
-			generateNewNames(extras, 2, false, n.random.nextBoolean());
+			generateNewNames(extras, 2, false, random.nextBoolean());
 
 		
 		
@@ -200,15 +203,15 @@ public class MageNamer extends Namer {
 				filters = cha.handleChanceIncs(to, source);
 			}
 			
-			ff = NamePart.getRandom(n.random, filters);
+			ff = NamePart.getRandom(random, filters);
 
 			
 		} while((ff.name.equals(from.get(0).name.type) && !prefixrank)|| (ff.name.equals(from.get(0).name.rankprefix) && prefixrank));
 		
 
 		
-		boolean swapnoun = n.random.nextBoolean();
-		double modify = n.random.nextDouble();
+		boolean swapnoun = random.nextBoolean();
+		double modify = random.nextDouble();
 		
 		List<String> used = new ArrayList<String>();
 		for(Unit u2 : from)
@@ -290,7 +293,7 @@ public class MageNamer extends Namer {
 						filters = cha.handleChanceIncs(u, available);
 					}
 					
-					ff2 = NamePart.getRandom(n.random, filters);
+					ff2 = NamePart.getRandom(random, filters);
 				} while(used.contains(ff2.getCopy()));
 				
 				used.add(ff2.toString());
@@ -320,7 +323,7 @@ public class MageNamer extends Namer {
 						filters = cha.handleChanceIncs(u, available);
 					}
 					
-					ff2 = NamePart.getRandom(n.random, filters);
+					ff2 = NamePart.getRandom(random, filters);
 				} while(used.contains(ff2.toString()));
 				used.add(ff2.toString());
 				u.name.type = ff2.getCopy();
@@ -370,12 +373,12 @@ public class MageNamer extends Namer {
 		
 
 		// Prefix or suffix crap
-		boolean noun = n.random.nextBoolean();
+		boolean noun = random.nextBoolean();
 
 
 			
 		// Should it be a suffix if it's a noun?
-		boolean shouldbesuffix = n.random.nextBoolean();
+		boolean shouldbesuffix = random.nextBoolean();
 		
 		// Get common paths
 		List<Integer> commons = new ArrayList<Integer>();
@@ -403,7 +406,7 @@ public class MageNamer extends Namer {
 		// Vary name instead of some other parT?
 		boolean varyname = false;
 		if(prefixrank && primaries.size() > 1 && commons.size() > 0)
-			varyname = n.random.nextDouble() > 0.85;
+			varyname = random.nextDouble() > 0.85;
 			
 		// Base name "mage" "necromancer" etc
 		List<NamePart> source = null;
@@ -419,7 +422,7 @@ public class MageNamer extends Namer {
 		else
 			source = filterByRank(tieredmage, rank);
 	
-		boolean strict = n.random.nextBoolean();
+		boolean strict = random.nextBoolean();
 		
 
 		
@@ -431,7 +434,7 @@ public class MageNamer extends Namer {
 			filters = cha.handleChanceIncs(primaries, source);
 
 		}
-		NamePart ff = NamePart.getRandom(n.random, filters);
+		NamePart ff = NamePart.getRandom(random, filters);
 
 		for(Unit u : primaries)
 		{
@@ -469,7 +472,7 @@ public class MageNamer extends Namer {
 			if(filters.size() == 0)
 				filters = cha.handleChanceIncs(primaries, rankedprefix);
 			
-			NamePart prefixf = NamePart.getRandom(n.random, filters);
+			NamePart prefixf = NamePart.getRandom(random, filters);
 			for(Unit u : primaries)
 				u.name.rankprefix = prefixf.getCopy();
 			
@@ -502,7 +505,7 @@ public class MageNamer extends Namer {
 			filters = cha.handleChanceIncs(primaries, filterByPaths(source2, commons, false));
 			if(filters.size() == 0)
 				filters = cha.handleChanceIncs(primaries, source2);
-			extra = NamePart.getRandom(n.random, filters);
+			extra = NamePart.getRandom(random, filters);
 		}
 		
 		// Set rest of the name
@@ -534,7 +537,7 @@ public class MageNamer extends Namer {
 					filters = cha.handleChanceIncs(primaries, adjectives);
 			}
 
-			NamePart suffixpart = NamePart.getRandom(n.random, filters);
+			NamePart suffixpart = NamePart.getRandom(random, filters);
 			
 			if(suffixpart.tags.contains("nosuffix"))
 				shouldbesuffix = false;
