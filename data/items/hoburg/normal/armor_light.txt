@@ -70,18 +70,18 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
-#theme "occidental"
 #needs legs leatherpants
 #enditem
 
 #newitem
 #name "reinforced leather"
 #gameid zotz_mictlanarmor
-#sprite /graphics/hoburg/bodyarmor/leatherhauberk.png
+#sprite /graphics/hoburg/bodyarmor/leatherreinforced.png
+#recolormask /graphics/hoburg/bodyarmor/leatherreinforced_recolormask.png
 #armor
 #theme "leather"
 #theme "occidental"
-#needs legs leatherpants
+#needstype legs warpants
 #enditem
 
 
@@ -121,7 +121,6 @@
 #needs legs ringpants
 #enditem
 
-
 --- Bronze Scale
 
 #newitem
@@ -132,32 +131,63 @@
 #theme "bronze"
 #theme "boreal"
 #theme "central"
-#theme "occidental"
 #enditem
 
 #newitem
 #name "bronze scale hauberk"
 #gameid 136
-#basechance 0.5
 #sprite /graphics/hoburg/bodyarmor/mailhauberk_bronze.png
 #armor
 #theme "bronze"
 #theme "boreal"
 #theme "central"
-#theme "occidental"
+#basechance 0.5
 #enditem
 
 #newitem -- full scale
 #name "bronze full scale"
 #gameid bronzescale_full
-#basechance 0.25
 #sprite /graphics/hoburg/bodyarmor/mailhauberk_bronze.png
 #armor
 #theme "advanced"
 #theme "bronze"
 #theme "central"
-#theme "occidental"
 #needs legs mailpants_bronze
+#basechance 0.25
+#enditem
+
+#newitem
+#name "occidental scale cuirass"
+#gameid 142
+#sprite /graphics/hoburg/bodyarmor/mailcuirass_occidental.png
+#recolormask /graphics/hoburg/bodyarmor/mailcuirass_occidental_recolormask.png
+#armor
+#theme "bronze"
+#theme "occidental"
+#enditem
+
+#newitem
+#name "occidental scale hauberk"
+#gameid 136
+#sprite /graphics/hoburg/bodyarmor/mailhauberk_occidental.png
+#recolormask /graphics/hoburg/bodyarmor/mailhauberk_occidental_recolormask.png
+#armor
+#theme "bronze"
+#theme "occidental"
+#basechance 0.5
+#enditem
+
+#newitem -- full scale
+#name "occidental full scale"
+#gameid bronzescale_full
+#sprite /graphics/hoburg/bodyarmor/mailhauberk_occidental.png
+#recolormask /graphics/hoburg/bodyarmor/mailhauberk_occidental_recolormask.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "occidental"
+#needstype legs warpants
+#basechance 0.25
 #enditem
 
 
@@ -246,41 +276,75 @@
 #newitem
 #name "bronze plate cuirass"
 #gameid 100
-#basechance 0.5
 #sprite /graphics/hoburg/bodyarmor/platecuirass_bronze.png
 #armor
 #theme "advanced"
 #theme "bronze"
 #theme "boreal"
 #theme "central"
-#theme "occidental"
+#basechance 0.5
 #enditem
 
 #newitem
 #name "bronze plate hauberk"
 #gameid 14
-#basechance 0.25
 #sprite /graphics/hoburg/bodyarmor/platehauberk_bronze.png
 #armor
 #theme "advanced"
 #theme "bronze"
 #theme "boreal"
 #theme "central"
-#theme "occidental"
+#basechance 0.25
 #enditem
 
 #newitem -- full plate
 #name "bronze full plate"
 #gameid bronzeplate_full
-#basechance 0.125
 #sprite /graphics/hoburg/bodyarmor/platehauberk_bronze.png
 #armor
 #theme "advanced"
 #theme "bronze"
 #theme "central"
-#theme "occidental"
 #needs legs platepants_bronze
 #maxvarieties 1
+#basechance 0.125
+#enditem
+
+#newitem
+#name "occidental plate cuirass"
+#gameid 100
+#sprite /graphics/hoburg/bodyarmor/platecuirass_occidental.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "occidental"
+#basechance 0.5
+#enditem
+
+#newitem
+#name "occidental plate hauberk"
+#gameid 14
+#sprite /graphics/hoburg/bodyarmor/platehauberk_occidental.png
+#recolormask /graphics/hoburg/bodyarmor/platehauberk_occidental_recolormask.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "occidental"
+#basechance 0.25
+#enditem
+
+#newitem -- full plate
+#name "occidental full plate"
+#gameid bronzeplate_full
+#sprite /graphics/hoburg/bodyarmor/platehauberk_occidental.png
+#recolormask /graphics/hoburg/bodyarmor/platehauberk_occidental_recolormask.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "occidental"
+#needstype legs warpants
+#maxvarieties 1
+#basechance 0.125
 #enditem
 
 
