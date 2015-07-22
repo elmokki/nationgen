@@ -384,7 +384,6 @@
 #armor
 #theme "leather"
 #theme "central"
-#theme "occidental"
 #theme "austral"
 #enditem
 
@@ -397,9 +396,20 @@
 #armor
 #theme "leather"
 #theme "central"
-#theme "occidental"
 #theme "austral"
 #theme "elite"
+#enditem
+
+#newitem
+#id featheredcap
+#gameid 119
+#basechance 0.005
+#sprite /graphics/hoburg/helmet/reinforced_cap_occidental.png
+#recolormask self
+#eliteversion feathercap
+#armor
+#theme "leather"
+#theme "occidental"
 #enditem
 
 #newitem
