@@ -357,7 +357,9 @@ public class ShapeChangeUnit extends Unit {
 		tw.println("#newmonster " + id);
 
 
-		List<Command> commands = this.getCommands();
+		List<Command> commands = getCommands();
+
+		
 		// Own non-gcost commands first due to #copystats
 		for(Command c : commands)
 		{

@@ -66,7 +66,6 @@ public class MonsterGenerator {
 		
 		u.polish(n.nationGen, n);
 		
-		
 		return u;
 		
 	}

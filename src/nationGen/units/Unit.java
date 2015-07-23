@@ -438,6 +438,14 @@ public class Unit {
 			return this.commands;
 		else
 		{
+			if(this.getClass() == ShapeChangeUnit.class)
+			{
+				ShapeChangeUnit su = (ShapeChangeUnit)this;
+				for(Command c : su.thisForm.commands)
+					if(!c.command.equals("#spr1") && !c.command.equals("#spr2"))
+						allCommands.add(c);
+			}
+			
 			allCommands.addAll(race.unitcommands);
 			allCommands.addAll(pose.getCommands());
 	
