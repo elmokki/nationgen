@@ -913,7 +913,7 @@ public class Unit {
 			
 				String arg = c.args.get(i);
 				String oldarg = old.args.get(i);
-				if(arg.startsWith("+") || arg.startsWith("-"))
+				if(arg.startsWith("+") || (arg.startsWith("-") && !arg.startsWith("--")))
 				{
 					if(arg.startsWith("+"))
 						arg = arg.substring(1);
@@ -921,16 +921,12 @@ public class Unit {
 
 					try
 					{
-						//if(this.tags.contains("schoolmage 3"))
-							//System.out.println(arg + " + " + oldarg + " = " + (int)(Integer.parseInt(oldarg) + Double.parseDouble(arg)));
-						
-						
 						oldarg = "" + (Integer.parseInt(oldarg) + Integer.parseInt(arg));
 						old.args.set(i, oldarg);
 					}
 					catch(NumberFormatException e)
 					{
-						System.out.println("FATAL ERROR: Argument parsing " + oldarg + " + " + arg + " on " + c.command + " caused crash.");
+						System.out.println("FATAL ERROR 1: Argument parsing " + oldarg + " + " + arg + " on " + c + " caused crash.");
 					}
 					continue;
 			
@@ -946,7 +942,7 @@ public class Unit {
 					}
 					catch(Exception e)
 					{
-						System.out.println("FATAL ERROR: Argument parsing " + oldarg + " * " + arg + " on " + c.command + " caused crash.");
+						System.out.println("FATAL ERROR 2: Argument parsing " + oldarg + " * " + arg + " on " + c.command + " caused crash.");
 					}
 					continue;
 				}
