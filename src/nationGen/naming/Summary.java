@@ -77,7 +77,7 @@ public class Summary {
 			}
 		}
 		
-		for(List<Unit> list : n.getListsOfType("cavalry", false, true))
+		for(List<Unit> list : n.getListsOfType("mounted", false, true))
 		{
 			if(list.size() == 0)
 				continue;
@@ -96,7 +96,8 @@ public class Summary {
 					{
 						if(tag.startsWith("animal"))
 						{
-							List<String> args = Generic.parseArgs(tag, "'");
+							String mounttype = tag.replaceAll("\"", "");
+							List<String> args = Generic.parseArgs(mounttype, "'");
 							args.remove(0);
 							String str = "";
 							for(String s : args)
@@ -117,7 +118,8 @@ public class Summary {
 					{
 						if(tag.startsWith("animal"))
 						{
-							List<String> args = Generic.parseArgs(tag, "'");
+							String mounttype = tag.replaceAll("\"", "");
+							List<String> args = Generic.parseArgs(mounttype, "'");
 							args.remove(0);
 							String str = "";
 							for(String s : args)
@@ -181,7 +183,8 @@ public class Summary {
 						if(tag.startsWith("animal"))
 							if(!tag.split(" ")[1].equals("horse"))
 							{
-								List<String> args = Generic.parseArgs(tag, "'");
+								String mounttype = tag.replaceAll("\"", "");
+								List<String> args = Generic.parseArgs(mounttype, "'");
 								args.remove(0);
 								String str = "";
 								for(String s : args)
