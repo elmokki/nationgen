@@ -77,7 +77,7 @@ public class Summary {
 			}
 		}
 		
-		for(List<Unit> list : n.getListsOfType("cavalry", false, true))
+		for(List<Unit> list : n.getListsOfType("mounted", false, true))
 		{
 			if(list.size() == 0)
 				continue;
@@ -259,7 +259,8 @@ public class Summary {
 			if(list.get(i).equals("light"))
 				for(int j = 0; j < lightmounts.size(); j++)
 				{
-					List<String> args = Generic.parseArgs(lightmounts.get(j), "'");
+					String mountname = lightmounts.get(j).replaceAll("\"", "\'");	// Make sure all quotes are uniformly '
+					List<String> args = Generic.parseArgs(mountname, "'");
 					String str = "";
 					for(String s : args)
 						str = str + s + " ";
@@ -276,7 +277,8 @@ public class Summary {
 			else if(list.get(i).equals("heavy"))
 				for(int j = 0; j < heavymounts.size(); j++)
 				{
-					List<String> args = Generic.parseArgs(heavymounts.get(j), "'");
+					String mountname = heavymounts.get(j).replaceAll("\"", "\'");
+					List<String> args = Generic.parseArgs(mountname, "'");
 					String str = "";
 					for(String s : args)
 						str = str + s + " ";
