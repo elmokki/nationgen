@@ -96,7 +96,8 @@ public class Summary {
 					{
 						if(tag.startsWith("animal"))
 						{
-							List<String> args = Generic.parseArgs(tag, "'");
+							String mounttype = tag.replaceAll("\"", "");
+							List<String> args = Generic.parseArgs(mounttype, "'");
 							args.remove(0);
 							String str = "";
 							for(String s : args)
@@ -117,7 +118,8 @@ public class Summary {
 					{
 						if(tag.startsWith("animal"))
 						{
-							List<String> args = Generic.parseArgs(tag, "'");
+							String mounttype = tag.replaceAll("\"", "");
+							List<String> args = Generic.parseArgs(mounttype, "'");
 							args.remove(0);
 							String str = "";
 							for(String s : args)
@@ -181,7 +183,8 @@ public class Summary {
 						if(tag.startsWith("animal"))
 							if(!tag.split(" ")[1].equals("horse"))
 							{
-								List<String> args = Generic.parseArgs(tag, "'");
+								String mounttype = tag.replaceAll("\"", "");
+								List<String> args = Generic.parseArgs(mounttype, "'");
 								args.remove(0);
 								String str = "";
 								for(String s : args)
@@ -259,8 +262,7 @@ public class Summary {
 			if(list.get(i).equals("light"))
 				for(int j = 0; j < lightmounts.size(); j++)
 				{
-					String mountname = lightmounts.get(j).replaceAll("\"", "\'");	// Make sure all quotes are uniformly '
-					List<String> args = Generic.parseArgs(mountname, "'");
+					List<String> args = Generic.parseArgs(lightmounts.get(j), "'");
 					String str = "";
 					for(String s : args)
 						str = str + s + " ";
@@ -277,8 +279,7 @@ public class Summary {
 			else if(list.get(i).equals("heavy"))
 				for(int j = 0; j < heavymounts.size(); j++)
 				{
-					String mountname = heavymounts.get(j).replaceAll("\"", "\'");
-					List<String> args = Generic.parseArgs(mountname, "'");
+					List<String> args = Generic.parseArgs(heavymounts.get(j), "'");
 					String str = "";
 					for(String s : args)
 						str = str + s + " ";
