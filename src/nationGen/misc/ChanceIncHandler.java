@@ -1788,20 +1788,27 @@ public class ChanceIncHandler {
 				}
 				else if(args.get(0).equals("personalmagic") && args.size() > 1)
 				{
-
+					
+	
+					
 					boolean contains = true;
 					int level = 1;
 					
 					int step = 0;
 					int path = -1;
+					boolean not = false;
+
 					for(int i = 1; i < args.size() - 1; i++)
 					{
+						
 						if(step == 0)
 						{
 							path = Generic.PathToInteger(args.get(i));
 							
+
+							
 							// If there's no level specified
-							if(i != args.size() - 2 && !Generic.isNumeric(args.get(i + 1)) && !args.get(i+1).equals("below"))
+							if((i < args.size() - 2 && !Generic.isNumeric(args.get(i + 1)) && !args.get(i+1).equals("below")) || i == args.size() - 2)
 							{
 								if(u.getMagicPicks()[path] < 1)
 								{
@@ -1810,15 +1817,16 @@ public class ChanceIncHandler {
 								}	
 							}
 							else
+							{
+						
 								step++;
-							
+							}
 							
 							
 						}
 						else if(step == 1)
 						{
-							
-							boolean not = false;
+
 							if(args.get(i).equals("below"))
 							{
 								if(i != args.size() - 2)
@@ -1831,15 +1839,16 @@ public class ChanceIncHandler {
 									level = 0;
 								}
 								not = true;
+								continue;
 							}
 							else
 								level = Integer.parseInt(args.get(i));		
 
-							
-
+		
 							if((u.getMagicPicks()[path] < level) != not)
 							{
 								contains = false;
+								not = false;
 								break;
 							}
 							step--;
@@ -1850,7 +1859,7 @@ public class ChanceIncHandler {
 					
 					if(contains)
 					{
-						
+
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 						continue;
 					}
@@ -1886,7 +1895,6 @@ public class ChanceIncHandler {
 					
 					if(contains)
 					{
-						
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 						continue;
 					}
