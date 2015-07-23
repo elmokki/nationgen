@@ -1349,7 +1349,7 @@ public class MageGenerator extends TroopGenerator {
 			}
 			
 			
-			int at = this.random.nextInt(power + 5) - 5; // -5 to power - 2
+			int at = this.random.nextInt(power + 6) - 5; // -4 to power
 			while(moreFilters.size() == 0 && at >= -5)
 			{
 				moreFilters = getFiltersForTier(ChanceIncHandler.getFiltersWithPower(at, power, filters), tier);
@@ -1419,7 +1419,8 @@ public class MageGenerator extends TroopGenerator {
 					if(f != null)
 					{
 						u.appliedFilters.add(f);
-						
+						handleGiveToAll(f, units, tier);
+	
 						if(f.power > maxpower)
 							maxpower = f.power;
 					}
@@ -1470,20 +1471,36 @@ public class MageGenerator extends TroopGenerator {
 				
 				Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(mages, givenFilters));
 
-
-
-				
 				for(Unit u : mages)
 					u.appliedFilters.add(f);
+				
+				handleGiveToAll(f, units, tier);
 				
 				power -= f.power;
 			}
 			
-			
+	
 		}
+	
 	}
 	
 	
+	private void handleGiveToAll(Filter f, List<Unit> units, int tier)
+	{
+		if(f.tags.contains("givetoall") && tier < 4 && tier > 0)
+			for(int i = 1; i <= 3; i++)
+			{
+				List<Unit> mages = getMagesOfTier(units, i);
+
+				for(Unit u : mages)
+				{
+					if(!u.appliedFilters.contains(f) && !f.tags.contains("notfortier " + i))
+					{
+						u.appliedFilters.add(f);
+					}
+				}
+			}
+	}
 
 	
 	
