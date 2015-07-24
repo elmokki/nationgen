@@ -86,6 +86,33 @@
 #end
 
 #new 
+#type swamp
+#name "bog"
+#basechance 0
+#chanceinc "unittheme swamp 20"
+#theme swamp
+#prefix
+#end
+
+#new 
+#type swamp
+#name "marsh"
+#basechance 0
+#chanceinc "unittheme swamp 20"
+#theme swamp
+#prefix
+#end
+
+#new 
+#type swamp
+#name "fen"
+#basechance 0
+#chanceinc "unittheme swamp 10"
+#theme swamp
+#prefix
+#end
+
+#new 
 #type forest
 #name "forest"
 #basechance 0
@@ -94,6 +121,33 @@
 #prefix
 #end
 
+#new 
+#type forest
+#name "woodland"
+#basechance 0
+#chanceinc "unittheme forest 20"
+#theme forest
+#prefix
+#end
+
+#new 
+#type forest
+#name "sylvan"
+#basechance 0
+#chanceinc "unittheme forest 10"
+#theme forest
+#prefix
+#end
+
+#new 
+#type forest
+#name "jungle"
+#basechance 0
+#chanceinc "unittheme forest 20"
+#chanceinc "nationcommand #idealcold above -1 *0"
+#theme forest
+#prefix
+#end
 
 #new 
 #type mountain
@@ -101,5 +155,61 @@
 #basechance 0
 #chanceinc "unittheme mountain 20"
 #theme mountain
+#prefix
+#end
+
+#new 
+#type mountain
+#name "hill"
+#basechance 0
+#chanceinc "unittheme mountain 20"
+#theme mountain
+#prefix
+#end
+
+#new 
+#type mountain
+#name "highland"
+#basechance 0
+#chanceinc "unittheme mountain 10"
+#theme mountain
+#prefix
+#end
+
+#new 
+#type mountain
+#name "alpine"
+#basechance 0
+#chanceinc "unittheme mountain 10"
+#theme mountain
+#prefix
+#end
+
+#new 
+#type waste
+#name "wasteland"
+#basechance 0
+#chanceinc "unittheme waste 20"
+#theme waste
+#prefix
+#end
+
+#new 
+#type waste
+#name "desert"
+#basechance 0
+#chanceinc "unittheme waste 20"
+#chanceinc "nationcommand #idealcold above -1 *0"
+#theme waste
+#prefix
+#end
+
+#new 
+#type waste
+#name "tundra"
+#basechance 0
+#chanceinc "unittheme waste 20"
+#chanceinc "nationcommand #idealcold below 1 *0"
+#theme waste
 #prefix
 #end
