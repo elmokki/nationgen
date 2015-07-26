@@ -286,7 +286,8 @@
 #chanceinc "command #illusion 10"
 #command "#illusion"
 #command "#stealthy +0"
-#command "#gcost +10"
+#command "#gcost *1.2"
+#command "#gcost +23"
 #tag "path air"
 #chanceinc "personalcommand #illusion -20"
 #chanceinc "race van -20"
@@ -294,7 +295,7 @@
 #chanceinc "race abysian *0.5"
 #chanceinc "prot 15 *0.5"
 #chanceinc "pose mounted *0.5"
-#power 3
+#power 4
 #end
 
 #new

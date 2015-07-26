@@ -65,13 +65,13 @@
 #racedefinition "#tag 'preferredmount hog'"
 #endtheme
 
--- Weights: EA 0.25, MA 1, LA 2
+-- Weights: EA 0.10, MA 1, LA 2
 #newtheme
 #type techlevel
 #name advanced
-#basechance 0.25
-#chanceinc era 3 1.75
-#chanceinc era 2 0.75
+#basechance 0.10
+#chanceinc era 3 1.9
+#chanceinc era 2 0.9
 #chanceinc primaryrace 'Human (advanced)' *4
 #themeinc theme mechanical +0.025
 #themeinc theme advanced *2
@@ -90,13 +90,13 @@
 #racedefinition "#pose clockworktroops_bronze"
 #endtheme
 
--- Weights: EA 0.05, MA 0.3, LA 1
+-- Weights: EA 0.025, MA 0.3, LA 1
 #newtheme
 #type techlevel
 #name industrial
-#basechance 0.05
-#chanceinc era 3 *20
-#chanceinc era 2 *6
+#basechance 0.025
+#chanceinc era 3 *40
+#chanceinc era 2 *12
 #chanceinc primaryrace 'Human (advanced)' *2
 #themeinc theme mechanical +0.1
 #themeinc theme mechanical *2
