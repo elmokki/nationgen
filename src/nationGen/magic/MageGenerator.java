@@ -604,7 +604,6 @@ public class MageGenerator extends TroopGenerator {
 			if(secondarymages.size() == primarymages.size())
 			{
 				deriveEquipment(primarymages, secondarymages, 3, 2);
-				System.out.println(primarymages.get(0).getSlot("mount") +  " -> " + secondarymages.get(0).getSlot("mount"));
 			}
 			else
 			{
