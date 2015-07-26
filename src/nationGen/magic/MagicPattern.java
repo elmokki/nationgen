@@ -232,15 +232,7 @@ public class MagicPattern extends Filter {
 	public int getPrice()
 	{
 		// Get premium
-		double premium = 0;
-		for(String t : this.tags)
-		{
-			List<String> args = Generic.parseArgs(t);
-			if(args.get(0).equals("pricepremium") && args.size() > 1)
-			{
-				premium += Double.parseDouble(args.get(1));
-			}
-		}
+		double premium = this.premium;
 	
 		
 		// Autocalc algorithm from now on
@@ -309,8 +301,6 @@ public class MagicPattern extends Filter {
 			System.out.print(cheap[i] + " ");
 		System.out.println();
 		*/
-		
-
 		
 		return price + (int)premium;
 	}
@@ -437,7 +427,7 @@ public class MagicPattern extends Filter {
 		List<String> args = Generic.parseArgs(str);
 		if(args.size() == 0)
 			return;
-		
+
 		if(args.get(0).equals("#picks"))
 		{
 			int amount = Integer.parseInt(args.get(1));
