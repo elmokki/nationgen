@@ -158,7 +158,7 @@
 #name "swampunit"
 #chanceinc pose mounted *0
 #chanceinc pose chariot *0
-#command "#forestsurvival"
+#command "#swampsurvival"
 #tag "guaranteedprefix swamp"
 #tag "bonusweaponchance 0.5"
 #themeinc theme irregular *4
@@ -175,6 +175,27 @@
 #theme swamp
 #end
 
+#new
+#basechance 0.25
+#name "wasteunit"
+#chanceinc pose mounted *0
+#chanceinc pose chariot *0
+#command "#wastesurvival"
+#tag "guaranteedprefix waste"
+#tag "bonusweaponchance 0.5"
+#themeinc theme irregular *4
+#themeinc thisarmorprot below 13 *2
+#themeinc thisarmorprot below 11 *2
+#themeinc theme heavy *0.25
+#themeinc theme advanced *0.25
+#maxvarieties 2
+#maxunits 2
+#desc "Waste survival"
+#primarycommand "#wastesurvival"
+#generateitem 0.25 cloakb
+#theme irregular
+#theme waste
+#end
 
 #new
 #basechance 0.125

@@ -9,8 +9,6 @@
 #command "#fortera 0"
 #end
 
-
-
 #new
 #name "1: Standard forts for early era"
 #type "era 1"
@@ -20,7 +18,6 @@
 #chanceinc era 3 0.5
 #command "#fortera 1"
 #end
-
 
 #new
 #name "2: Standard forts for middle era"
@@ -41,13 +38,7 @@
 #command "#fortera 3"
 #end
 
-#new
-#name "4: Better than standard forts for late era"
-#type "era 1"
-#basechance 0.025
-#chanceinc anytheme advanced *4
-#command "#fortera 4"
-#end
+
 
 -- Middle age
 
@@ -59,8 +50,6 @@
 #command "#fortera 0"
 #end
 
-
-
 #new
 #name "1: Standard forts for early era"
 #type "era 2"
@@ -71,7 +60,6 @@
 #command "#fortera 1"
 #chanceinc anytheme primitive *8
 #end
-
 
 #new
 #name "2: Standard forts for middle era"
@@ -91,13 +79,6 @@
 #command "#fortera 3"
 #end
 
-#new
-#name "4: Better than standard forts for late era"
-#type "era 2"
-#basechance 0.1
-#chanceinc anytheme advanced *2
-#command "#fortera 4"
-#end
 
 -- Late age
 
@@ -109,8 +90,6 @@
 #command "#fortera 0"
 #end
 
-
-
 #new
 #name "1: Standard forts for early era"
 #type "era 3"
@@ -121,7 +100,6 @@
 #command "#fortera 1"
 #chanceinc anytheme primitive *8
 #end
-
 
 #new
 #name "2: Standard forts for middle era"
@@ -139,12 +117,4 @@
 #type "era 3"
 #basechance 1
 #command "#fortera 3"
-#end
-
-#new
-#name "4: Better than standard forts for late era"
-#type "era 3"
-#basechance 0.2
-#chanceinc anytheme advanced *2
-#command "#fortera 4"
 #end
