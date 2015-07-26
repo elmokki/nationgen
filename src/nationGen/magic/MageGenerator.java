@@ -437,9 +437,7 @@ public class MageGenerator extends TroopGenerator {
 				// Sets mage name to match pattern. Debug purposes.
 				mages.get(i).get(j).name.setType(all.get(i).get(j).toString(derp));
 				
-				// Price mage
-				mages.get(i).get(j).commands.add(new Command("#gcost", "+" + this.priceMage(mages.get(i).get(j))));
-				
+			
 				
 				
 				if(i == 2 && leaderrandom1 > 0.9)
@@ -560,7 +558,6 @@ public class MageGenerator extends TroopGenerator {
 			extramages = this.generateExtraMages(primaries, this.getShuffledPrios(list));
 			this.resolveAge(extramages);
 			this.tagAll(extramages, "extramage");
-			this.priceMage(extramages.get(0));
 			this.applyStats(extramages.get(0));
 
 
@@ -836,6 +833,7 @@ public class MageGenerator extends TroopGenerator {
 		f.prio = prio;
 		f.pattern = p;
 		f.name = "MAGICPICKS";
+		f.tags.addAll(p.tags);
 		return f;
 	}
 	
@@ -1038,7 +1036,6 @@ public class MageGenerator extends TroopGenerator {
 		
 		bases.get(0).color = nation.colors[2];
 		bases.get(0).appliedFilters.add(f);
-		this.priceMage(bases.get(0));
 		
 		this.equipBase(bases.get(0), 2);
 		
@@ -2021,6 +2018,9 @@ public class MageGenerator extends TroopGenerator {
 			
 			for(String slot : u.slotmap.keySet())
 			{
+				if(slot.equals("overlay"))
+					continue;
+				
 				if(u.pose.getItems(slot) == null || nu.pose.getItems(slot) == null || nu.getSlot(slot) != null)
 					continue;
 				
@@ -2043,6 +2043,13 @@ public class MageGenerator extends TroopGenerator {
 					
 
 					
+					if(newitem == null)
+					{
+						if(nu.pose == u.pose && (u.getSlot(slot).tags.contains("tier " + toTier) || !u.getSlot(slot).tags.contains("tier " + fromTier)))
+						{
+							newitem = u.getSlot(slot);
+						}
+					}
 					if(newitem == null)
 					{				
 						
@@ -2082,11 +2089,12 @@ public class MageGenerator extends TroopGenerator {
 			
 
 
-			
+
 			// This should fill in missing slots like mount
 			unitGen.armorUnit(nu, null, exclusions, "tier " + toTier, true);
 			unitGen.armUnit(nu, null, exclusions, "tier " + toTier, true);
 			
+
 			
 			if(toTier < 2)
 			{
@@ -2115,7 +2123,8 @@ public class MageGenerator extends TroopGenerator {
 	{
 		if(used == null)
 			used = new ItemSet();
-		
+	
+
 		ItemSet items = u.pose.getItems(item.slot).filterSameSprite(exclusions);
 		items.removeAll(exclusions);
 		
@@ -2144,6 +2153,8 @@ public class MageGenerator extends TroopGenerator {
 		}
 		
 		Item i = possibles.getRandom(chandler, this.random);
+		
+
 		return i;
 	}
 	
@@ -2346,35 +2357,6 @@ public class MageGenerator extends TroopGenerator {
 	}
 	
 	
-	public int priceMage(Unit u)
-	{
-		/*
-		double max = u.getMagicAtHighest(0.25);
-		double picks = u.getMagicAmount(1);
-		double randoms = u.getRandoms(0.25);
-		double holy = u.getHolyPicks();
-		*/
-
-
-		double premium = 0;
-		List<MagicFilter> fs = u.getMagicFilters();
-		for(MagicFilter f : fs)
-		{
-			for(String t : f.tags)
-			{
-				List<String> args = Generic.parseArgs(t);
-				if(args.get(0).equals("pricepremium") && args.size() > 1)
-				{
-					premium += Double.parseDouble(args.get(1));
-				}
-			}
-		}
-		/*
-		double baseprice = 28.98577 * picks + 24.00298 * randoms + 20.1666 * holy + 20.50836 * max + premium;
-		int price = 5 * (int)Math.round(baseprice / 5);
-		*/
-		return (int)premium;
-	}
 
 
 	

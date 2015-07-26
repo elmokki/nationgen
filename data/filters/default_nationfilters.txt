@@ -103,6 +103,7 @@
 #new
 #name "nopreach"
 #type "bloodsac"
+#type "temple"
 #basechance 0
 #command "#nopreach"
 #command "#sacrificedom"
@@ -268,70 +269,152 @@
 
 #new
 #name "templegems: fire"
-#type "templegemgen"
+#type "temple"
 #basechance 0
 #command "#templegems 0"
-#chanceinc "magic fire 0.05"
+#chanceinc "magic fire 0.025"
+#command "#templecost 800"
+#desc "Temples generate fire gems"
+#end
+
+#new
+#name "templegems: fire cheap"
+#type "temple"
+#basechance 0
+#command "#templegems 0"
+#chanceinc "magic fire 0.025"
+#command "#templecost 600"
 #desc "Temples generate fire gems"
 #end
 
 #new
 #name "templegems: air"
-#type "templegemgen"
+#type "temple"
 #basechance 0
 #command "#templegems 1"
-#chanceinc "magic air 0.05"
+#command "#templecost 800"
+#chanceinc "magic air 0.025"
+#desc "Temples generate air gems"
+#end
+
+
+#new
+#name "templegems: air cheap"
+#type "temple"
+#basechance 0
+#command "#templegems 1"
+#command "#templecost 600"
+#chanceinc "magic air 0.025"
 #desc "Temples generate air gems"
 #end
 
 #new
 #name "templegems: water"
-#type "templegemgen"
+#type "temple"
 #basechance 0
 #command "#templegems 2"
-#chanceinc "magic air 0.05"
+#command "#templecost 800"
+#chanceinc "magic water 0.025"
+#desc "Temples generate water gems"
+#end
+
+#new
+#name "templegems: water cheap"
+#type "temple"
+#basechance 0
+#command "#templegems 2"
+#command "#templecost 600"
+#chanceinc "magic water 0.025"
 #desc "Temples generate water gems"
 #end
 
 #new
 #name "templegems: earth"
-#type "templegemgen"
+#type "temple"
 #basechance 0
 #command "#templegems 3"
-#chanceinc "magic earth 0.05"
+#command "#templecost 800"
+#chanceinc "magic earth 0.025"
 #desc "Temples generate earth gems"
 #end
 
 #new
+#name "templegems: earth cheap"
+#type "temple"
+#basechance 0
+#command "#templegems 3"
+#command "#templecost 600"
+#chanceinc "magic earth 0.025"
+#desc "Temples generate earth gems"
+#end
+
+
+#new
 #name "templegems: astral"
-#type "templegemgen"
+#type "temple"
 #basechance 0
 #command "#templegems 4"
-#chanceinc "magic astral 0.05"
+#command "#templecost 800"
+#chanceinc "magic astral 0.025"
+#desc "Temples generate astral gems"
+#end
+
+#new
+#name "templegems: astral cheap"
+#type "temple"
+#basechance 0
+#command "#templegems 4"
+#command "#templecost 600"
+#chanceinc "magic astral 0.025"
 #desc "Temples generate astral gems"
 #end
 
 #new
 #name "templegems: death"
-#type "templegemgen"
+#type "temple"
 #basechance 0
 #command "#templegems 5"
-#chanceinc "magic death 0.05"
+#command "#templecost 800"
+#chanceinc "magic death 0.025"
 #desc "Temples generate death gems"
 #end
 
 #new
+#name "templegems: death cheap"
+#type "temple"
+#basechance 0
+#command "#templegems 5"
+#command "#templecost 600"
+#chanceinc "magic death 0.025"
+#desc "Temples generate death gems"
+#end
+
+
+#new
 #name "templegems: nature"
-#type "templegemgen"
+#type "temple"
 #basechance 0
 #command "#templegems 6"
-#chanceinc "magic nature 0.05"
+#command "#templecost 800"
+#chanceinc "magic nature 0.025"
 #desc "Temples generate nature gems"
 #end
 
+
+#new
+#name "templegems: nature cheap"
+#type "temple"
+#basechance 0
+#command "#templegems 6"
+#command "#templecost 600"
+#chanceinc "magic nature 0.025"
+#desc "Temples generate nature gems"
+#end
+
+
 #new
 #name "templegems: blood"
-#type "templegemgen"
+#type "temple"
 #basechance 0
 #command "#templegems 7"
 #chanceinc "magic blood 0.15"

@@ -235,7 +235,7 @@ public class UnitGen {
 		}
 		
 		// Mount
-		if(u.pose.getItems("mount") != null && u.pose.getItems("mount").size() > 0)
+		if(u.getSlot("mount") == null && u.pose.getItems("mount") != null && u.pose.getItems("mount").size() > 0)
 		{
 			int prot = nationGen.armordb.GetInteger(u.getSlot("armor").id, "prot");
 			
