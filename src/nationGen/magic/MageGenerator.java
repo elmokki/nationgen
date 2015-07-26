@@ -604,6 +604,7 @@ public class MageGenerator extends TroopGenerator {
 			if(secondarymages.size() == primarymages.size())
 			{
 				deriveEquipment(primarymages, secondarymages, 3, 2);
+				System.out.println(primarymages.get(0).getSlot("mount") +  " -> " + secondarymages.get(0).getSlot("mount"));
 			}
 			else
 			{
@@ -2018,6 +2019,9 @@ public class MageGenerator extends TroopGenerator {
 			
 			for(String slot : u.slotmap.keySet())
 			{
+				if(slot.equals("overlay"))
+					continue;
+				
 				if(u.pose.getItems(slot) == null || nu.pose.getItems(slot) == null || nu.getSlot(slot) != null)
 					continue;
 				
@@ -2040,6 +2044,13 @@ public class MageGenerator extends TroopGenerator {
 					
 
 					
+					if(newitem == null)
+					{
+						if(nu.pose == u.pose && (u.getSlot(slot).tags.contains("tier " + toTier) || !u.getSlot(slot).tags.contains("tier " + fromTier)))
+						{
+							newitem = u.getSlot(slot);
+						}
+					}
 					if(newitem == null)
 					{				
 						
@@ -2079,11 +2090,12 @@ public class MageGenerator extends TroopGenerator {
 			
 
 
-			
+
 			// This should fill in missing slots like mount
 			unitGen.armorUnit(nu, null, exclusions, "tier " + toTier, true);
 			unitGen.armUnit(nu, null, exclusions, "tier " + toTier, true);
 			
+
 			
 			if(toTier < 2)
 			{
@@ -2112,7 +2124,8 @@ public class MageGenerator extends TroopGenerator {
 	{
 		if(used == null)
 			used = new ItemSet();
-		
+	
+
 		ItemSet items = u.pose.getItems(item.slot).filterSameSprite(exclusions);
 		items.removeAll(exclusions);
 		
@@ -2141,6 +2154,8 @@ public class MageGenerator extends TroopGenerator {
 		}
 		
 		Item i = possibles.getRandom(chandler, this.random);
+		
+
 		return i;
 	}
 	
