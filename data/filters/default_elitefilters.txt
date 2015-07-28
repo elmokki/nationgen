@@ -192,6 +192,7 @@
 #chanceinc "shape werewolf 20"
 #command "#secondshape werewolf"
 #command "#gcost +10"
+#command "#maxage *2"
 #chanceinc "pose mounted *0"
 #chanceinc "pose chariot *0"
 #power 3
@@ -208,6 +209,7 @@
 #chanceinc "shape werebear 20"
 #command "#secondshape werebear"
 #command "#gcost +10"
+#command "#maxage *2"
 #command "#heal"
 #chanceinc "pose mounted *0"
 #chanceinc "pose chariot *0"
@@ -256,6 +258,7 @@
 #command "#secondshape metalman"
 #command "#hp -5"
 #command "#gcost +7"
+#command "#maxage 800"
 #tag "path earth"
 #description "reveals its true shape of a metal man upon death"
 #power 3
