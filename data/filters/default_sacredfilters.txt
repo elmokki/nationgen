@@ -749,7 +749,7 @@
 #command "#heal"
 #chanceinc "pose mounted *0"
 #power 3
-#description "can shapeshift into a werebear"
+#description "shapeshifts into a werebear when damaged"
 #theme "beartotem"
 #theme "totemanimal"
 #end
@@ -894,9 +894,9 @@
 #name "greatboar"
 #basechance 0.1
 #chanceinc "magic nature 1"
-#command "#shapechange greatboar"
+#command "#secondshape greatboar"
 #command "#gcost +10"
-#description "can shapeshift into a great boar"
+#description "shapeshifts into a great boar when damaged"
 #power 2
 #theme "boartotem"
 #theme "totemanimal"
@@ -909,11 +909,11 @@
 #chanceinc "magic water 0.25"
 #chanceinc "magic nature 0.25"
 #chanceinc "magic nature water 0.5"
-#command "#shapechange toad"
+#command "#secondshape toad"
 #command "#gcost +15"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#description "can shapeshift into a giant toad"
+#description "shapeshifts into a giant toad when damaged"
 #power 2
 #theme "toadtotem"
 #theme "totemanimal"
@@ -925,11 +925,11 @@
 #basechance 0.05
 #chanceinc "magic nature 1"
 #chanceinc "personalcommand #poisonres 1"
-#command "#shapechange smallerspider"
+#command "#secondshape smallerspider"
 #command "#gcost +15"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#description "can shapeshift into a giant spider"
+#description "shapeshifts into a giant spider when damaged"
 #power 2
 #theme "spidertotem"
 #theme "totemanimal"
