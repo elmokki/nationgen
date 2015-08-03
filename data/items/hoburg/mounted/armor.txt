@@ -1,0 +1,614 @@
+--- Nothing
+
+#newitem
+#name "barechest"
+#gameid -1
+#armor
+#basechance 1
+#theme "primitive"
+#theme "naked"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#theme "abysian"
+#needs shirt noshirt
+#enditem
+
+
+--- Furs
+
+#newitem
+#name "furs"
+#gameid 44
+#sprite /graphics/hoburg/bodyarmor/furs.png
+#armor
+#basechance 1
+#theme "primitive"
+#theme "leather"
+#theme "austral"
+#theme "occidental"
+#needs shirt noshirt
+#enditem
+
+
+--- Leather
+
+#newitem
+#name "leather cuirass"
+#gameid 5
+#sprite /graphics/hoburg/bodyarmor/leathercuirass.png
+#armor
+#theme "leather"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#enditem
+
+#newitem
+#name "leather hauberk"
+#gameid 10
+#sprite /graphics/hoburg/bodyarmor/leatherhauberk.png
+#armor
+#theme "leather"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#enditem
+
+#newitem -- full leather
+#newitem
+#name "full leather"
+#gameid 15
+#sprite /graphics/hoburg/bodyarmor/leatherhauberk.png
+#armor
+#theme "leather"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#needs legs leatherpants
+#enditem
+
+#newitem
+#name "imperial leather hauberk"
+#gameid 10
+#sprite /graphics/hoburg/bodyarmor/leathercuirass.png
+#armor
+#theme "leather"
+#theme "imperial"
+#theme "abysian"
+#enditem
+
+#newitem -- full leather
+#newitem
+#name "imperial full leather"
+#gameid 15
+#sprite /graphics/hoburg/bodyarmor/leathercuirass.png
+#armor
+#theme "leather"
+#theme "imperial"
+#theme "abysian"
+#needs legs leatherpants
+#enditem
+
+#newitem
+#name "reinforced leather"
+#gameid zotz_mictlanarmor
+#sprite /graphics/hoburg/bodyarmor/leatherreinforced.png
+#recolormask /graphics/hoburg/bodyarmor/leatherreinforced_recolormask.png
+#armor
+#theme "leather"
+#theme "occidental"
+#needstype legs warpants
+#enditem
+
+--- Ring
+
+#newitem
+#name "ring cuirass"
+#gameid 6
+#sprite /graphics/hoburg/bodyarmor/ringcuirass.png
+#armor
+#theme "leather"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "abysian"
+#enditem
+
+#newitem
+#name "ring hauberk"
+#gameid 11
+#sprite /graphics/hoburg/bodyarmor/ringhauberk.png
+#armor
+#theme "leather"
+#theme "boreal"
+#theme "central"
+#enditem
+
+#newitem -- full ring
+#name "full ring"
+#gameid 16
+#sprite /graphics/hoburg/bodyarmor/ringhauberk.png
+#armor
+#theme "leather"
+#theme "boreal"
+#theme "central"
+#needs legs ringpants
+#enditem
+
+#newitem
+#name "imperial ring hauberk"
+#gameid 11
+#sprite /graphics/hoburg/bodyarmor/ringcuirass.png
+#armor
+#theme "leather"
+#theme "imperial"
+#theme "abysian"
+#enditem
+
+#newitem -- full ring
+#name "imperial full ring"
+#gameid 16
+#sprite /graphics/hoburg/bodyarmor/ringcuirass.png
+#armor
+#theme "leather"
+#theme "imperial"
+#theme "abysian"
+#needs legs ringpants
+#enditem
+
+
+--- Bronze Scale
+
+#newitem
+#name "bronze scale cuirass"
+#gameid 142
+#sprite /graphics/hoburg/bodyarmor/mailcuirass_bronze.png
+#armor
+#theme "bronze"
+#theme "boreal"
+#theme "central"
+#enditem
+
+#newitem
+#name "bronze scale hauberk"
+#gameid 136
+#sprite /graphics/hoburg/bodyarmor/mailhauberk_bronze.png
+#armor
+#theme "bronze"
+#theme "boreal"
+#theme "central"
+#enditem
+
+#newitem -- full scale
+#name "bronze full scale"
+#gameid bronzescale_full
+#sprite /graphics/hoburg/bodyarmor/mailhauberk_bronze.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "central"
+#needs legs mailpants_bronze
+#enditem
+
+#newitem
+#name "occidental scale cuirass"
+#gameid 142
+#sprite /graphics/hoburg/bodyarmor/mailcuirass_occidental.png
+#recolormask /graphics/hoburg/bodyarmor/mailcuirass_occidental_recolormask.png
+#armor
+#theme "bronze"
+#theme "occidental"
+#enditem
+
+#newitem
+#name "occidental scale hauberk"
+#gameid 136
+#sprite /graphics/hoburg/bodyarmor/mailhauberk_occidental.png
+#recolormask /graphics/hoburg/bodyarmor/mailhauberk_occidental_recolormask.png
+#armor
+#theme "bronze"
+#theme "occidental"
+#enditem
+
+#newitem -- full scale
+#name "occidental full scale"
+#gameid bronzescale_full
+#sprite /graphics/hoburg/bodyarmor/mailhauberk_occidental.png
+#recolormask /graphics/hoburg/bodyarmor/mailhauberk_occidental_recolormask.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "occidental"
+#needstype legs warpants
+#enditem
+
+#newitem
+#name "bronze imperial scale cuirass"
+#gameid 142
+#basechance 0.25
+#sprite /graphics/hoburg/bodyarmor/mailcuirass_imperial_bronze_mounted.png
+#armor
+#theme "bronze"
+#theme "abysian"
+#enditem
+
+#newitem
+#name "bronze lorica squamata"
+#gameid 117
+#sprite /graphics/hoburg/bodyarmor/mailcuirass_imperial_bronze_mounted.png
+#armor
+#theme "bronze"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "bronze imperial scale hauberk"
+#gameid 136
+#basechance 0.25
+#sprite /graphics/hoburg/bodyarmor/mailcuirass_imperial_bronze_mounted.png
+#armor
+#theme "bronze"
+#theme "abysian"
+#enditem
+
+#newitem -- full scale
+#name "bronze imperial full scale"
+#gameid bronzescale_full
+#basechance 0.25
+#sprite /graphics/hoburg/bodyarmor/mailcuirass_imperial_bronze_mounted.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "abysian"
+#needs legs mailpants_bronze
+#enditem
+
+--- Scale
+
+#newitem
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/hoburg/bodyarmor/mailcuirass.png
+#armor
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#enditem
+
+#newitem
+#name "scale hauberk"
+#gameid 12
+#sprite /graphics/hoburg/bodyarmor/mailhauberk.png
+#armor
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#enditem
+
+#newitem -- full scale
+#name "full scale"
+#gameid 17
+#sprite /graphics/hoburg/bodyarmor/mailhauberk.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#needs legs mailpants
+#enditem
+
+#newitem
+#name "imperial scale cuirass"
+#gameid 7
+#sprite /graphics/hoburg/bodyarmor/mailcuirass_imperial_mounted.png
+#armor
+#theme "iron"
+#theme "abysian"
+#enditem
+
+#newitem
+#name "lorica squamata"
+#gameid 117
+#sprite /graphics/hoburg/bodyarmor/mailcuirass_imperial_mounted.png
+#armor
+#theme "iron"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "imperial scale hauberk"
+#gameid 12
+#sprite /graphics/hoburg/bodyarmor/mailcuirass_imperial_mounted.png
+#armor
+#theme "iron"
+#theme "abysian"
+#enditem
+
+#newitem -- full scale
+#name "full scale"
+#gameid 17
+#sprite /graphics/hoburg/bodyarmor/mailcuirass_imperial_mounted.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "abysian"
+#needs legs mailpants
+#enditem
+
+--- Chain Mail
+
+#newitem
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/hoburg/bodyarmor/mailcuirass.png
+#armor
+#theme "iron"
+#theme "boreal"
+#enditem
+
+#newitem
+#name "chain hauberk"
+#gameid 13
+#sprite /graphics/hoburg/bodyarmor/mailhauberk.png
+#armor
+#theme "iron"
+#theme "boreal"
+#enditem
+
+#newitem -- full chain
+#name "full chain"
+#gameid 18
+#sprite /graphics/hoburg/bodyarmor/mailhauberk.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "boreal"
+#needs legs mailpants
+#enditem
+
+#newitem
+#name "imperial chain cuirass"
+#gameid 8
+#sprite /graphics/hoburg/bodyarmor/mailcuirass_imperial_mounted.png
+#armor
+#theme "iron"
+#theme "abysian"
+#enditem
+
+#newitem
+#name "lorica hamata"
+#gameid 8
+#sprite /graphics/hoburg/bodyarmor/mailcuirass_imperial_mounted.png
+#armor
+#theme "iron"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "imperial chain hauberk"
+#gameid 13
+#sprite /graphics/hoburg/bodyarmor/mailcuirass_imperial_mounted.png
+#armor
+#theme "iron"
+#theme "abysian"
+#enditem
+
+#newitem -- full chain
+#name "imperial full chain"
+#gameid 18
+#sprite /graphics/hoburg/bodyarmor/mailcuirass_imperial_mounted.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "abysian"
+#needs legs mailpants
+#enditem
+
+
+--- Bronze Plate
+
+#newitem
+#name "bronze plate cuirass"
+#gameid 100
+#sprite /graphics/hoburg/bodyarmor/platecuirass_bronze.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "boreal"
+#theme "central"
+#enditem
+
+#newitem
+#name "bronze plate hauberk"
+#gameid 101
+#sprite /graphics/hoburg/bodyarmor/platehauberk_bronze.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "boreal"
+#theme "central"
+#enditem
+
+#newitem -- full plate
+#name "bronze full plate"
+#gameid bronzeplate_full
+#sprite /graphics/hoburg/bodyarmor/platehauberk_bronze.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "central"
+#needs legs platepants_bronze
+#maxvarieties 1
+#enditem
+
+#newitem
+#name "occidental plate cuirass"
+#gameid 100
+#sprite /graphics/hoburg/bodyarmor/platecuirass_occidental.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "occidental"
+#enditem
+
+#newitem
+#name "occidental plate hauberk"
+#gameid 101
+#sprite /graphics/hoburg/bodyarmor/platehauberk_occidental.png
+#recolormask /graphics/hoburg/bodyarmor/platehauberk_occidental_recolormask.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "occidental"
+#enditem
+
+#newitem -- full plate
+#name "occidental full plate"
+#gameid bronzeplate_full
+#sprite /graphics/hoburg/bodyarmor/platehauberk_occidental.png
+#recolormask /graphics/hoburg/bodyarmor/platehauberk_occidental_recolormask.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "occidental"
+#needstype legs warpants
+#maxvarieties 1
+#enditem
+
+#newitem
+#name "imperial bronze plate cuirass"
+#gameid 100
+#sprite /graphics/hoburg/bodyarmor/platecuirass_imperial_bronze_mounted.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "imperial"
+#theme "abysian"
+#enditem
+
+#newitem
+#name "bronze lorica segmentata"
+#gameid 99
+#sprite /graphics/hoburg/bodyarmor/platecuirass_imperial_bronze_mounted.png
+#armor
+#theme "bronze"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "imperial bronze plate hauberk"
+#gameid 101
+#sprite /graphics/hoburg/bodyarmor/platecuirass_imperial_bronze_mounted.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "imperial"
+#theme "abysian"
+#enditem
+
+#newitem -- full plate
+#name "imperial bronze full plate"
+#gameid bronzeplate_full
+#sprite /graphics/hoburg/bodyarmor/platecuirass_imperial_bronze_mounted.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "imperial"
+#theme "abysian"
+#needs legs platepants_bronze
+#maxvarieties 1
+#enditem
+
+
+--- Plate
+
+#newitem
+#name "plate cuirass"
+#gameid 9
+#sprite /graphics/hoburg/bodyarmor/platecuirass.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#enditem
+
+#newitem
+#name "plate hauberk"
+#gameid 14
+#sprite /graphics/hoburg/bodyarmor/platehauberk.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#enditem
+
+#newitem -- full plate
+#name "full plate"
+#gameid 19
+#sprite /graphics/hoburg/bodyarmor/platehauberk.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#needs legs platepants
+#maxvarieties 1
+#enditem
+
+#newitem
+#name "imperial plate cuirass"
+#gameid 9
+#sprite /graphics/hoburg/bodyarmor/platecuirass_imperial_mounted.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "imperial"
+#theme "abysian"
+#enditem
+
+#newitem
+#name "lorica segmentata"
+#gameid 99
+#sprite /graphics/hoburg/bodyarmor/platecuirass_imperial_mounted.png
+#armor
+#theme "iron"
+#theme "imperial"
+#enditem
+
+
+#newitem
+#name "imperial plate hauberk"
+#gameid 14
+#sprite /graphics/hoburg/bodyarmor/platecuirass_imperial_mounted.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "imperial"
+#theme "abysian"
+#enditem
+
+#newitem -- full plate
+#name "imperial full plate"
+#gameid 19
+#sprite /graphics/hoburg/bodyarmor/platecuirass_imperial_mounted.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "imperial"
+#theme "abysian"
+#needs legs platepants
+#maxvarieties 1
+#enditem

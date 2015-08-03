@@ -1,4 +1,3 @@
-
 --- Nothing
 
 #newitem
@@ -44,6 +43,7 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
+#theme "imperial"
 #theme "occidental"
 #enditem
 
@@ -73,6 +73,26 @@
 #enditem
 
 #newitem
+#name "imperial leather hauberk"
+#gameid 10
+#sprite /graphics/hoburg/bodyarmor/crossbow/leatherhauberk_imperial.png
+#armor
+#theme "leather"
+#theme "imperial"
+#enditem
+
+#newitem -- full leather
+#newitem
+#name "imperial full leather"
+#gameid 15
+#sprite /graphics/hoburg/bodyarmor/crossbow/leatherhauberk_imperial.png
+#armor
+#theme "leather"
+#theme "imperial"
+#needs legs leatherpants
+#enditem
+
+#newitem
 #name "reinforced leather"
 #gameid zotz_mictlanarmor
 #sprite /graphics/hoburg/bodyarmor/crossbow/leatherreinforced.png
@@ -92,9 +112,9 @@
 #sprite /graphics/hoburg/bodyarmor/crossbow/ringcuirass.png
 #armor
 #theme "leather"
-#theme "austral"
 #theme "boreal"
 #theme "central"
+#theme "imperial"
 #theme "abysian"
 #enditem
 
@@ -104,10 +124,8 @@
 #sprite /graphics/hoburg/bodyarmor/crossbow/ringhauberk.png
 #armor
 #theme "leather"
-#theme "austral"
 #theme "boreal"
 #theme "central"
-#theme "abysian"
 #enditem
 
 #newitem -- full ring, TODO legs
@@ -116,10 +134,29 @@
 #sprite /graphics/hoburg/bodyarmor/crossbow/ringhauberk.png
 #armor
 #theme "leather"
-#theme "austral"
 #theme "boreal"
 #theme "central"
+#enditem
+
+#newitem
+#name "imperial ring hauberk"
+#gameid 11
+#sprite /graphics/hoburg/bodyarmor/crossbow/ringhauberk_imperial.png
+#armor
+#theme "leather"
+#theme "imperial"
 #theme "abysian"
+#enditem
+
+#newitem -- full ring
+#name "imperial full ring"
+#gameid 16
+#sprite /graphics/hoburg/bodyarmor/crossbow/ringhauberk_imperial.png
+#armor
+#theme "leather"
+#theme "imperial"
+#theme "abysian"
+#needs legs ringpants
 #enditem
 
 
@@ -190,6 +227,47 @@
 #basechance 0.25
 #enditem
 
+#newitem
+#name "bronze imperial scale cuirass"
+#gameid 142
+#basechance 0.125
+#sprite /graphics/hoburg/bodyarmor/crossbow/mailcuirass_imperial_bronze.png
+#armor
+#theme "bronze"
+#theme "abysian"
+#enditem
+
+#newitem
+#name "bronze lorica squamata"
+#gameid 117
+#basechance 0.5
+#sprite /graphics/hoburg/bodyarmor/crossbow/mailcuirass_imperial_bronze.png
+#armor
+#theme "bronze"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "bronze imperial scale hauberk"
+#gameid 136
+#basechance 0.125
+#sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk_imperial_bronze.png
+#armor
+#theme "bronze"
+#theme "abysian"
+#enditem
+
+#newitem -- full scale
+#name "bronze imperial full scale"
+#gameid bronzescale_full
+#basechance 0.125
+#sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk_imperial_bronze.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "abysian"
+#needs legs mailpants_bronze
+#enditem
 
 --- Scale
 
@@ -202,11 +280,10 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
-#theme "abysian"
 #enditem
 
 #newitem
-#name "scale hauberk short"
+#name "scale hauberk"
 #gameid 12
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk.png
 #armor
@@ -215,7 +292,6 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
-#theme "abysian"
 #enditem
 
 #newitem -- full scale, TODO legs
@@ -229,7 +305,46 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
+#enditem
+
+#newitem
+#name "imperial scale cuirass"
+#gameid 7
+#sprite /graphics/hoburg/bodyarmor/crossbow/mailcuirass_imperial.png
+#armor
+#theme "iron"
 #theme "abysian"
+#enditem
+
+#newitem
+#name "lorica squamata"
+#gameid 117
+#sprite /graphics/hoburg/bodyarmor/crossbow/mailcuirass_imperial.png
+#armor
+#theme "iron"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "imperial scale hauberk"
+#gameid 12
+#basechance 0.5
+#sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk_imperial.png
+#armor
+#theme "iron"
+#theme "abysian"
+#enditem
+
+#newitem -- full scale
+#name "full scale"
+#gameid 17
+#basechance 0.25
+#sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk_imperial.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "abysian"
+#needs legs mailpants
 #enditem
 
 
@@ -242,18 +357,16 @@
 #armor
 #theme "iron"
 #theme "boreal"
-#theme "abysian"
 #enditem
 
 #newitem
-#name "chain hauberk short"
+#name "chain hauberk"
 #gameid 13
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk.png
 #armor
 #theme "iron"
 #basechance 0.5
 #theme "boreal"
-#theme "abysian"
 #enditem
 
 #newitem -- full chain, TODO legs
@@ -265,7 +378,46 @@
 #theme "iron"
 #basechance 0.25
 #theme "boreal"
+#enditem
+
+#newitem
+#name "imperial chain cuirass"
+#gameid 8
+#sprite /graphics/hoburg/bodyarmor/crossbow/mailcuirass_imperial.png
+#armor
+#theme "iron"
 #theme "abysian"
+#enditem
+
+#newitem
+#name "lorica hamata"
+#gameid 8
+#sprite /graphics/hoburg/bodyarmor/crossbow/mailcuirass_imperial.png
+#armor
+#theme "iron"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "imperial chain hauberk"
+#gameid 13
+#basechance 0.5
+#sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk_imperial.png
+#armor
+#theme "iron"
+#theme "abysian"
+#enditem
+
+#newitem -- full chain
+#name "imperial full chain"
+#gameid 18
+#basechance 0.25
+#sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk_imperial.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "abysian"
+#needs legs mailpants
 #enditem
 
 
@@ -274,6 +426,7 @@
 #newitem
 #name "bronze plate cuirass"
 #gameid 100
+#basechance 0.5
 #sprite /graphics/hoburg/bodyarmor/crossbow/platecuirass_bronze.png
 #armor
 #theme "advanced"
@@ -285,6 +438,7 @@
 #newitem
 #name "bronze plate hauberk"
 #gameid 14
+#basechance 0.25
 #sprite /graphics/hoburg/bodyarmor/crossbow/platehauberk_bronze.png
 #armor
 #theme "advanced"
@@ -296,6 +450,7 @@
 #newitem -- full plate
 #name "bronze full plate"
 #gameid bronzeplate_full
+#basechance 0.125
 #sprite /graphics/hoburg/bodyarmor/crossbow/platehauberk_bronze.png
 #armor
 #theme "advanced"
@@ -342,6 +497,52 @@
 #basechance 0.125
 #enditem
 
+#newitem
+#name "imperial bronze plate cuirass"
+#gameid 100
+#basechance 0.5
+#sprite /graphics/hoburg/bodyarmor/crossbow/platecuirass_imperial_bronze.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "imperial"
+#theme "abysian"
+#enditem
+
+#newitem
+#name "bronze lorica segmentata"
+#gameid 99
+#sprite /graphics/hoburg/bodyarmor/crossbow/platecuirass_imperial_bronze.png
+#armor
+#theme "bronze"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "imperial bronze plate hauberk"
+#gameid 101
+#basechance 0.25
+#sprite /graphics/hoburg/bodyarmor/crossbow/platehauberk_imperial_bronze.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "imperial"
+#theme "abysian"
+#enditem
+
+#newitem -- full plate
+#name "imperial bronze full plate"
+#gameid bronzeplate_full
+#basechance 0.125
+#sprite /graphics/hoburg/bodyarmor/crossbow/platefull_imperial_bronze.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "imperial"
+#theme "abysian"
+#maxvarieties 1
+#enditem
+
 
 --- Plate
 
@@ -356,7 +557,6 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
-#theme "abysian"
 #enditem
 
 #newitem
@@ -370,7 +570,6 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
-#theme "abysian"
 #enditem
 
 #newitem -- full plate, TODO legs
@@ -384,5 +583,50 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
+#enditem
+
+#newitem
+#name "imperial plate cuirass"
+#gameid 9
+#basechance 0.5
+#sprite /graphics/hoburg/bodyarmor/crossbow/platecuirass_imperial.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "imperial"
 #theme "abysian"
+#enditem
+
+#newitem
+#name "lorica segmentata"
+#gameid 99
+#sprite /graphics/hoburg/bodyarmor/crossbow/platecuirass_imperial.png
+#armor
+#theme "iron"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "imperial plate hauberk"
+#gameid 14
+#basechance 0.25
+#sprite /graphics/hoburg/bodyarmor/crossbow/platehauberk_imperial.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "imperial"
+#theme "abysian"
+#enditem
+
+#newitem -- full plate
+#name "imperial full plate"
+#gameid 19
+#basechance 0.125
+#sprite /graphics/hoburg/bodyarmor/crossbow/platefull_imperial.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "imperial"
+#theme "abysian"
+#maxvarieties 1
 #enditem

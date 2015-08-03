@@ -953,6 +953,7 @@
 #tag "notfortier 1"
 #description "can shapeshift into a werewolf"
 #tag "notfortier 2"
+#command "#maxage *2"
 #power 2
 #theme "wolftotem"
 #theme "totemanimal"
@@ -969,6 +970,7 @@
 #tag "notfortier 1"
 #description "can shapeshift into a werewolf"
 #tag "notfortier 3"
+#command "#maxage *2"
 #power 2
 #theme "wolftotem"
 #theme "totemanimal"
@@ -983,6 +985,7 @@
 #command "#shapechange werebear"
 #tag "notfortier 1"
 #tag "notfortier 2"
+#command "#maxage *2"
 #description "can shapeshift into a werebear"
 #power 2
 #theme "beartotem"
@@ -998,6 +1001,7 @@
 #command "#shapechange werebear"
 #command "#gcost *1.2"
 #tag "notfortier 1"
+#command "#maxage *2"
 #tag "notfortier 3"
 #description "can shapeshift into a werebear"
 #power 2
@@ -1040,6 +1044,7 @@
 #chanceinc "personalcommand #mounted *0"
 #command "#shapechange devil"
 #command "#demon"
+#command "#maxage 1000"
 #tag "notfortier 1"
 #tag "notfortier 2"
 #command "#gcost +45"
@@ -1056,7 +1061,9 @@
 #chanceinc "shape vineman 20"
 #command "#secondshape vineman"
 #command "#gcost +20"
+#command "#maxage 1000"
 #tag "path nature"
+#theme "ivy"
 #description "becomes a vine man upon death"
 #power 2
 #end
@@ -1070,6 +1077,7 @@
 #chanceinc "personalcommand #mounted *0"
 #command "#shapechange frostfiend"
 #command "#demon"
+#command "#maxage 1000"
 #tag "notfortier 1"
 #tag "notfortier 2"
 #command "#gcost +45"
@@ -1123,6 +1131,7 @@
 #chanceinc "personalmagic water 1"
 #chanceinc "personalcommand #mounted *0"
 #command "#shapechange deepone"
+#command "#maxage 500"
 #tag "notfortier 1"
 #description "can shapeshift into a deep one"
 #tag "personalmagic water"

@@ -122,7 +122,6 @@
 #caponlychance 1
 #end
 
-
 #new
 #name "moose riders"
 #basechance 0
@@ -130,4 +129,41 @@
 #command "#copystats 1085"
 #command "#copyspr 1085"
 #caponlychance 0.5
+#end
+
+#new
+#name "vine men"
+#basechance 0
+#chanceinc racetheme vinegrower 10
+#command "#copystats 361"
+#command "#copyspr 361"
+#command "#gcost 20"
+#command "#rcost 1"
+#command "#reclimit 3"
+#caponlychance 0.75
+#end
+
+#new
+#name "vine ogres"
+#basechance 0
+#chanceinc racetheme vinegrower 5
+#command "#copystats 362"
+#command "#copyspr 362"
+#command "#gcost 40"
+#command "#rcost 1"
+#command "#reclimit 1"
+#caponlychance 0.9
+#end
+
+#new
+#name "dark vines"
+#basechance 0
+#chanceinc racetheme podslaver 5
+#command "#copystats 330"
+#command "#copyspr 330"
+#command "#gcost 100"
+#command "#rcost 1"
+#command "#reclimit 1"
+#command "#slow_to_recruit"
+#caponlychance 1
 #end

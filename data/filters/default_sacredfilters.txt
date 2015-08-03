@@ -734,6 +734,7 @@
 #chanceinc "shape werewolf 20"
 #command "#secondshape werewolf"
 #command "#gcost +10"
+#command "#maxage *2"
 #chanceinc "pose mounted *0"
 #power 3
 #theme "wolftotem"
@@ -748,6 +749,7 @@
 #chanceinc "shape werebear 20"
 #command "#secondshape werebear"
 #command "#gcost +10"
+#command "#maxage *2"
 #command "#heal"
 #chanceinc "pose mounted *0"
 #power 3
@@ -847,6 +849,7 @@
 #command "#secondshape metalman"
 #command "#hp -5"
 #command "#gcost +15"
+#command "#maxage 800"
 #tag "path earth"
 #power 3
 #end
@@ -859,7 +862,9 @@
 #chanceinc "shape vineman 20"
 #command "#secondshape vineman"
 #command "#gcost +20"
+#command "#maxage 1000"
 #tag "path nature"
+#theme "ivy"
 #power 2
 #end
 

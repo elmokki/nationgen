@@ -1,0 +1,36 @@
+
+-- Parasitic vine armor
+
+#newitem 
+#name "symbiotic vine armor"
+#gameid -1
+#sprite /graphics/hoburg/bodyarmor/vine_symbiote.png
+#armor
+#theme "primitive"
+
+#define "#gcost +15"
+#define "#rcost +5"
+#define "#size 2"
+#define "#ressize 2"
+#define "#enc 1"
+#define "#hp +10"
+#define "#prot +10"
+#define "#str +5"
+#define "#def -5"
+#define "#mor 30"
+#define "#mapmove 2"
+#define "#prec *0.5"
+#define "#supplybonus *0"
+#define "#poisonres +10"
+#define "#bluntres"
+#define "#woundfend 50"
+#define "#mounted"
+#define "#forestsurvival"
+#define "#neednoteat"
+#define "#maxage *2"
+#description "These hoburgs have been grafted into a symbiotic vineman that grants them strength and protection. "
+
+#needs hands parasite_hands
+
+#enditem
+

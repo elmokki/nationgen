@@ -577,7 +577,19 @@ public class SacredGenerator extends TroopGenerator {
 		u.commands.add(new Command("#gcost", "*" + total));
 
 		
-		if(random.nextDouble() < (power + rating) / 12 + 0.3)
+		// The highest caponlychyance for the unit will apply if one is defined, unless the default formula is higher 
+		values = Generic.getTagValues(Generic.getAllUnitTags(u), "caponlychance");
+		double highestcaponlychance = 0;
+		for(String str : values)
+		{
+			if(highestcaponlychance < Double.parseDouble(str.substring(1)))
+				highestcaponlychance = Double.parseDouble(str.substring(1));
+		}
+		
+		if(highestcaponlychance < ((power + rating) / 12 + 0.3))
+			highestcaponlychance = (power + rating) / 12 + 0.3;
+		
+		if(random.nextDouble() < highestcaponlychance)
 			u.caponly = true;
 	}
 	
