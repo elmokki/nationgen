@@ -9,3 +9,25 @@
 #command "#def -1"
 #theme slave
 #end
+
+#new
+#name "podslave"
+#type slave
+#basechance 0.001
+#command "#gcost *0.75"
+#command "#hp *1.25"
+#command "#mr *0.5"
+#command "#mor 50"
+#command "#str *1.25"
+#command "#att *0.75"
+#command "#def *0.75"
+#command "#prec *0.5"
+#command "#mapmove 2"
+#command "#ap *0.75"
+#command "#mind"
+#command "#magicbeing"
+#command "#descr 'These unfortunate beings are controlled by parasitic vines that dull their wills and senses. '"
+#theme parasitic_vines
+#cannot_be_commander
+#onlyfilter
+#end

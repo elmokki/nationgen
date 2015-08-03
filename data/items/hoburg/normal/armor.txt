@@ -43,6 +43,7 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
+#theme "imperial"
 #theme "occidental"
 #enditem
 
@@ -72,6 +73,28 @@
 #enditem
 
 #newitem
+#name "imperial leather hauberk"
+#gameid 10
+#sprite /graphics/hoburg/bodyarmor/leatherhauberk_imperial.png
+#armor
+#theme "leather"
+#theme "imperial"
+#theme "abysian"
+#enditem
+
+#newitem -- full leather
+#newitem
+#name "imperial full leather"
+#gameid 15
+#sprite /graphics/hoburg/bodyarmor/leatherhauberk_imperial.png
+#armor
+#theme "leather"
+#theme "imperial"
+#theme "abysian"
+#needs legs leatherpants
+#enditem
+
+#newitem
 #name "reinforced leather"
 #gameid zotz_mictlanarmor
 #sprite /graphics/hoburg/bodyarmor/leatherreinforced.png
@@ -92,6 +115,7 @@
 #theme "leather"
 #theme "boreal"
 #theme "central"
+#theme "imperial"
 #theme "abysian"
 #enditem
 
@@ -103,7 +127,6 @@
 #theme "leather"
 #theme "boreal"
 #theme "central"
-#theme "abysian"
 #enditem
 
 #newitem -- full ring
@@ -114,6 +137,26 @@
 #theme "leather"
 #theme "boreal"
 #theme "central"
+#needs legs ringpants
+#enditem
+
+#newitem
+#name "imperial ring hauberk"
+#gameid 11
+#sprite /graphics/hoburg/bodyarmor/ringhauberk_imperial.png
+#armor
+#theme "leather"
+#theme "imperial"
+#theme "abysian"
+#enditem
+
+#newitem -- full ring
+#name "imperial full ring"
+#gameid 16
+#sprite /graphics/hoburg/bodyarmor/ringhauberk_imperial.png
+#armor
+#theme "leather"
+#theme "imperial"
 #theme "abysian"
 #needs legs ringpants
 #enditem
@@ -184,6 +227,46 @@
 #needstype legs warpants
 #enditem
 
+#newitem
+#name "bronze imperial scale cuirass"
+#gameid 142
+#basechance 0.25
+#sprite /graphics/hoburg/bodyarmor/mailcuirass_imperial_bronze.png
+#armor
+#theme "bronze"
+#theme "abysian"
+#enditem
+
+#newitem
+#name "bronze lorica squamata"
+#gameid 117
+#sprite /graphics/hoburg/bodyarmor/mailcuirass_imperial_bronze.png
+#armor
+#theme "bronze"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "bronze imperial scale hauberk"
+#gameid 136
+#basechance 0.25
+#sprite /graphics/hoburg/bodyarmor/mailhauberk_imperial_bronze.png
+#armor
+#theme "bronze"
+#theme "abysian"
+#enditem
+
+#newitem -- full scale
+#name "bronze imperial full scale"
+#gameid bronzescale_full
+#basechance 0.25
+#sprite /graphics/hoburg/bodyarmor/mailhauberk_imperial_bronze.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "abysian"
+#needs legs mailpants_bronze
+#enditem
 
 --- Scale
 
@@ -196,7 +279,6 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
-#theme "abysian"
 #enditem
 
 #newitem
@@ -208,7 +290,6 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
-#theme "abysian"
 #enditem
 
 #newitem -- full scale
@@ -221,6 +302,43 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
+#needs legs mailpants
+#enditem
+
+#newitem
+#name "imperial scale cuirass"
+#gameid 7
+#sprite /graphics/hoburg/bodyarmor/mailcuirass_imperial.png
+#armor
+#theme "iron"
+#theme "abysian"
+#enditem
+
+#newitem
+#name "lorica squamata"
+#gameid 117
+#sprite /graphics/hoburg/bodyarmor/mailcuirass_imperial.png
+#armor
+#theme "iron"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "imperial scale hauberk"
+#gameid 12
+#sprite /graphics/hoburg/bodyarmor/mailhauberk_imperial.png
+#armor
+#theme "iron"
+#theme "abysian"
+#enditem
+
+#newitem -- full scale
+#name "full scale"
+#gameid 17
+#sprite /graphics/hoburg/bodyarmor/mailhauberk_imperial.png
+#armor
+#theme "advanced"
+#theme "iron"
 #theme "abysian"
 #needs legs mailpants
 #enditem
@@ -234,17 +352,15 @@
 #armor
 #theme "iron"
 #theme "boreal"
-#theme "abysian"
 #enditem
 
 #newitem
-#name "chain hauberk short"
+#name "chain hauberk"
 #gameid 13
 #sprite /graphics/hoburg/bodyarmor/mailhauberk.png
 #armor
 #theme "iron"
 #theme "boreal"
-#theme "abysian"
 #enditem
 
 #newitem -- full chain
@@ -255,6 +371,43 @@
 #theme "advanced"
 #theme "iron"
 #theme "boreal"
+#needs legs mailpants
+#enditem
+
+#newitem
+#name "imperial chain cuirass"
+#gameid 8
+#sprite /graphics/hoburg/bodyarmor/mailcuirass_imperial.png
+#armor
+#theme "iron"
+#theme "abysian"
+#enditem
+
+#newitem
+#name "lorica hamata"
+#gameid 8
+#sprite /graphics/hoburg/bodyarmor/mailcuirass_imperial.png
+#armor
+#theme "iron"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "imperial chain hauberk"
+#gameid 13
+#sprite /graphics/hoburg/bodyarmor/mailhauberk_imperial.png
+#armor
+#theme "iron"
+#theme "abysian"
+#enditem
+
+#newitem -- full chain
+#name "imperial full chain"
+#gameid 18
+#sprite /graphics/hoburg/bodyarmor/mailhauberk_imperial.png
+#armor
+#theme "advanced"
+#theme "iron"
 #theme "abysian"
 #needs legs mailpants
 #enditem
@@ -275,7 +428,7 @@
 
 #newitem
 #name "bronze plate hauberk"
-#gameid 14
+#gameid 101
 #sprite /graphics/hoburg/bodyarmor/platehauberk_bronze.png
 #armor
 #theme "advanced"
@@ -308,7 +461,7 @@
 
 #newitem
 #name "occidental plate hauberk"
-#gameid 14
+#gameid 101
 #sprite /graphics/hoburg/bodyarmor/platehauberk_occidental.png
 #recolormask /graphics/hoburg/bodyarmor/platehauberk_occidental_recolormask.png
 #armor
@@ -330,6 +483,53 @@
 #maxvarieties 1
 #enditem
 
+#newitem
+#name "imperial bronze plate cuirass"
+#gameid 100
+#sprite /graphics/hoburg/bodyarmor/platecuirass_imperial_bronze.png
+#eliteversion "gilt imperial plate cuirass"
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "imperial"
+#theme "abysian"
+#enditem
+
+#newitem
+#name "bronze lorica segmentata"
+#gameid 99
+#sprite /graphics/hoburg/bodyarmor/platecuirass_imperial_bronze.png
+#eliteversion "gilt imperial lorica segmentata"
+#armor
+#theme "bronze"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "imperial bronze plate hauberk"
+#gameid 101
+#sprite /graphics/hoburg/bodyarmor/platehauberk_imperial_bronze.png
+#eliteversion "gilt imperial plate hauberk"
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "imperial"
+#theme "abysian"
+#enditem
+
+#newitem -- full plate
+#name "imperial bronze full plate"
+#gameid bronzeplate_full
+#sprite /graphics/hoburg/bodyarmor/platefull_imperial_bronze.png
+#eliteversion "gilt imperial full plate"
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "imperial"
+#theme "abysian"
+#maxvarieties 1
+#enditem
+
 
 --- Plate
 
@@ -343,7 +543,6 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
-#theme "abysian"
 #enditem
 
 #newitem
@@ -356,7 +555,6 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
-#theme "abysian"
 #enditem
 
 #newitem -- full plate
@@ -369,7 +567,98 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
-#theme "abysian"
 #needs legs platepants
+#maxvarieties 1
+#enditem
+
+#newitem
+#name "imperial plate cuirass"
+#gameid 9
+#sprite /graphics/hoburg/bodyarmor/platecuirass_imperial.png
+#eliteversion "gilt imperial plate cuirass"
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "imperial"
+#theme "abysian"
+#enditem
+
+#newitem
+#name "lorica segmentata"
+#gameid 99
+#sprite /graphics/hoburg/bodyarmor/platecuirass_imperial.png
+#eliteversion "gilt lorica segmentata"
+#armor
+#theme "iron"
+#theme "imperial"
+#enditem
+
+
+#newitem
+#name "imperial plate hauberk"
+#gameid 14
+#sprite /graphics/hoburg/bodyarmor/platehauberk_imperial.png
+#eliteversion "gilt imperial plate hauberk"
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "imperial"
+#theme "abysian"
+#enditem
+
+#newitem -- full plate
+#name "imperial full plate"
+#gameid 19
+#sprite /graphics/hoburg/bodyarmor/platefull_imperial.png
+#eliteversion "gilt imperial full plate"
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "imperial"
+#theme "abysian"
+#maxvarieties 1
+#enditem
+
+
+-- Gilt imperial plate
+
+#newitem
+#name "gilt imperial plate cuirass"
+#gameid 9
+#sprite /graphics/hoburg/bodyarmor/platecuirass_imperial_gilt.png
+#armor
+#theme "advanced"
+#theme "elite"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "gilt lorica segmentata"
+#gameid 99
+#sprite /graphics/hoburg/bodyarmor/platecuirass_imperial_gilt.png
+#armor
+#theme "elite"
+#theme "imperial"
+#enditem
+
+
+#newitem
+#name "gilt imperial plate hauberk"
+#gameid 14
+#sprite /graphics/hoburg/bodyarmor/platehauberk_imperial_gilt.png
+#armor
+#theme "advanced"
+#theme "elite"
+#theme "imperial"
+#enditem
+
+#newitem -- full plate
+#name "gilt imperial full plate"
+#gameid 19
+#sprite /graphics/hoburg/bodyarmor/platefull_imperial_gilt.png
+#armor
+#theme "advanced"
+#theme "elite"
+#theme "imperial"
 #maxvarieties 1
 #enditem

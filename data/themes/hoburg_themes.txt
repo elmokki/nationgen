@@ -17,7 +17,7 @@
 #themeinc theme mechanical *0.05
 #themeinc theme advanced *0.05
 #themeinc theme iron *0.05
-#themeinc theme bronze *0.5
+#themeinc theme bronze *2
 #themeinc theme wood *2
 #themeinc theme leather *2
 #themeinc theme naked *2
@@ -49,7 +49,7 @@
 #themeinc theme mechanical *0.05
 #themeinc theme advanced *0.25
 #themeinc theme iron *1
-#themeinc theme bronze *1
+#themeinc theme bronze *0.5
 #themeinc theme wood *2
 #themeinc theme leather *2
 #themeinc theme naked *1
@@ -278,6 +278,37 @@
 #racedefinition "#unitcommand '#nametype 107'"
 #endtheme
 
+-- "Imperial quasi-Ermorian" hoburgs 
+-- Weights: primitive 0.25, agrarian 3, advanced 3, industrial 0.25
+#newtheme
+#type cultural
+#name imperial
+#theme imperial
+#basechance 1
+#chanceinc racetheme primitive *0.25
+#chanceinc racetheme agrarian *3
+#chanceinc racetheme advanced *3
+#chanceinc racetheme industrial *0.25
+#chanceinc primaryrace Lizard *2
+#themeinc theme mechanical *0.5
+#themeinc theme advanced *0.5
+#themeinc theme iron *2
+#themeinc theme bronze *2
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *0.5
+#themeinc theme primitive *0.5
+#themeinc theme imperial *1000
+#themeinc thisitemtheme abysian *0.001
+#racedefinition "#unitcommand '#mor +1'"
+#racedefinition "#magicpriority fire 4"
+#racedefinition "#magicpriority nature 1"
+#racedefinition "#magicpriority astral 4"
+#racedefinition "#magicpriority death 4"
+#racedefinition "#unitcommand '#nametype 106'"
+#racedefinition "#tag 'preferredmount wolf'"
+#endtheme
+
 -- "Hoburgbred" Abysians 
 -- Weights: primitive 0.5, agrarian 1, advanced 2, industrial 2
 #newtheme
@@ -389,13 +420,13 @@
 #racedefinition "#magicpriority earth 10"
 #endtheme
 
--- Weights: EA 0.5, MA 0.5, LA 0.5
+-- Weights: primitive 0.01, agrarian 0.01, advanced 0.05, industrial 0.1
 #newtheme
 #type social
 #name slaver
 #basechance 0.01
-#chanceinc racetheme advanced *0.25
-#chanceinc racetheme industrial *0.125
+#chanceinc racetheme advanced *5
+#chanceinc racetheme industrial *10
 #themeinc theme advanced *1
 #themeinc theme iron *1
 #themeinc theme bronze *1
@@ -408,7 +439,6 @@
 #themeinc racename caveman *5
 #themeinc racename ape *5
 #themeinc racename human *5
-#themeinc racename hoburg *5
 #themeinc racename caelian *0.1
 #themeinc racename van *0.1
 #themeinc racename sidhe *0.1
@@ -416,4 +446,66 @@
 #secondaryracedefinition "#freetemplatefilter slavetemplate slave"
 #racedefinition "#secondaryracetroopmod 100"
 #racedefinition "#secondaryracemagemod -100"
+#endtheme
+
+-- Weights: primitive 0.25, agrarian 0.5, advanced 0, industrial 0
+#newtheme
+#type social
+#name podslaver
+---- #basechance 0.25
+#basechance 0
+#chanceinc racetheme agrarian *2
+#chanceinc racetheme advanced *0
+#chanceinc racetheme industrial *0
+#themeinc theme advanced *0.25
+#themeinc theme iron *0.25
+#themeinc theme bronze *1
+#themeinc theme wood *2
+#themeinc theme leather *2
+#themeinc theme naked *1
+#themeinc theme primitive *2
+#themeinc theme slave *20
+#themeinc theme free *0.5
+#themeinc theme parasitic_vines *1000
+#themeinc theme symbiotic_vines *0.001
+#themeinc theme ivy *2
+#themeinc racename caveman *5
+#themeinc racename ape *5
+#themeinc racename human *5
+#themeinc racename caelian *0.1
+#themeinc racename van *0.1
+#themeinc racename sidhe *0.1
+#themeinc racename tengu *0.1
+#secondaryracedefinition "#freetemplatefilter slavetemplate podslave"
+#racedefinition "#secondaryracetroopmod 100"
+#racedefinition "#secondaryracemagemod -100"
+#racedefinition "#magicpriority blood 4"
+#racedefinition "#descr 'These hoburgs have mastered vile horticultural techniques allowing them to graft parasitic mind-controlling vines into unwilling victims. '"
+#racedefinition "#monsterchance 0.25"
+---- #racedefinition "#pose vinetroops"
+#endtheme
+
+-- Weights: primitive 0.5, agrarian 0.5, advanced 0, industrial 0
+#newtheme
+#type social
+#name vinegrower
+---- #basechance 0.5
+#basechance 0
+#chanceinc racetheme advanced *0
+#chanceinc racetheme industrial *0
+#chanceinc racetheme abysian *0.1
+#themeinc theme advanced *0.25
+#themeinc theme iron *0.25
+#themeinc theme bronze *1
+#themeinc theme wood *2
+#themeinc theme leather *2
+#themeinc theme naked *1
+#themeinc theme primitive *2
+#themeinc theme parasitic_vines *0.001
+#themeinc theme symbiotic_vines *1000
+#themeinc theme ivy *10
+#racedefinition "#magicpriority nature 10"
+#racedefinition "#descr 'These hoburgs live in symbiotic harmony with vinemen. '"
+#racedefinition "#monsterchance 0.5"
+---- #racedefinition "#pose vinetroops"
 #endtheme

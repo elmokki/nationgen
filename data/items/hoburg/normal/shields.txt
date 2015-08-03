@@ -28,6 +28,7 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
+#theme "imperial"
 #theme "occidental"
 #enditem
 
@@ -76,6 +77,7 @@
 #theme "iron"
 #theme "austral"
 #theme "boreal"
+#theme "imperial"
 #theme "abysian"
 #armor
 #enditem
@@ -89,6 +91,51 @@
 #theme "iron"
 #theme "austral"
 #theme "boreal"
+#theme "imperial"
+#theme "abysian"
+#enditem
+
+#newitem
+#id tower_imperial1
+#gameid 4
+#basechance 4
+#sprite /graphics/hoburg/shields/tower_imperial.png
+#recolormask /graphics/hoburg/shields/tower_imperial_recolormask1.png
+#armor
+#theme "imperial"
+#enditem
+
+#newitem
+#id tower_imperial2
+#gameid 4
+#basechance 4
+#sprite /graphics/hoburg/shields/tower_imperial.png
+#recolormask /graphics/hoburg/shields/tower_imperial_recolormask2.png
+#armor
+#theme "imperial"
+#enditem
+
+#newitem
+#id tower_abysian1
+#gameid 4
+#basechance 4
+#sprite /graphics/hoburg/shields/tower_abysian.png
+#recolormask /graphics/hoburg/shields/tower_abysian_recolormask1.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "abysian"
+#enditem
+
+#newitem
+#id tower_abysian2
+#gameid 4
+#basechance 4
+#sprite /graphics/hoburg/shields/tower_abysian.png
+#recolormask /graphics/hoburg/shields/tower_abysian_recolormask2.png
+#armor
+#theme "advanced"
+#theme "iron"
 #theme "abysian"
 #enditem
 
