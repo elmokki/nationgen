@@ -1,0 +1,82 @@
+-- Clockwork armor can only have one special modification, just to keep things from getting too crazy
+
+-- Special integrated weapons
+
+#newitem
+#id shocklance
+#basechance 0.25
+#gameid -1
+#armor
+#theme "advanced"
+#needs weapon lance
+#needs specialweapon shocklance
+#needs handslots one_hand
+#description "the armor has an electrically charged lance attached that will shock the first enemy struck with it"
+#enditem
+
+#newitem
+#id firelance
+#basechance 0.25
+#gameid -1
+#armor
+#theme "advanced"
+#needs weapon lance
+#needs specialweapon firelance
+#needs handslots one_hand
+#description "the armor has a built-in lance with a firey charge attached that will blast the first enemy struck with it"
+#enditem
+
+-- Special integrated armor
+
+#newitem
+#id diving_helm
+#basechance 1
+#gameid -1
+#armor
+#theme "advanced"
+#needs helmet "clockwork fullhelm"
+#needs headslot integrated_helm
+#define "#pooramphibian"
+#define "#poisonres +10"
+#define "#rcost +5"
+#description "the armor has a sealed helmet that allows its wearer to survive underwater"
+#enditem
+
+-- "Miscellaneous" modifications
+
+#newitem
+#id superior_gears
+#basechance 1
+#gameid -1
+#armor
+#theme "advanced"
+#define "#reinvigoration +1"
+#define "rcost +5"
+#description "the armor's mechanisms are well-crafted and wind down very slowly"
+#enditem
+
+#newitem
+#id standard
+#basechance 1
+#gameid -1
+#armor
+#theme "advanced"
+#sprite /graphics/hoburg/clockwork/clockwork_standard.png
+#recolormask /graphics/hoburg/clockwork/clockwork_standard_recolormask.png
+#define "#standard +1"
+#define "rcost +5"
+#description "the armor has an impressive standard mounted on its back to inspire nearby units"
+#enditem
+
+#newitem
+#id wings
+#basechance 0.25
+#gameid -1
+#armor
+#theme "advanced"
+#sprite /graphics/hoburg/clockwork/clockwork_wings.png
+#define "#flying"
+#define "gcost *1.5"
+#define "rcost +10"
+#description "the armor has cunningly-built mechanical wings that allow it to fly"
+#enditem
