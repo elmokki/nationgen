@@ -598,6 +598,7 @@ public class SacredGenerator extends TroopGenerator {
 		Unit u = this.unitGen.generateUnit(race, p);
 		return getSacredUnit(u, power, sacred, epicchance);
 	}
+	
 	public Unit getSacredUnit(Unit u, int power, boolean sacred, double epicchance)
 	{
 
@@ -724,11 +725,42 @@ public class SacredGenerator extends TroopGenerator {
 		}
 		
 		// Clean up
-		this.cleanUnit(u);
+		cleanUnit(u);
+		
+		// Adjust gcost
+		adjustGoldCost(u, sacred);
 		
 		return u;
 	}
 	
+	
+	private void adjustGoldCost(Unit u, boolean sacred)
+	{
+
+		int cgcost = u.getGoldCost();
+		
+		cgcost -= 75;
+		
+		if(cgcost <= 0)
+		{
+			return;
+		}
+	
+		
+		int newprice = (int) Math.round(Math.pow(cgcost, 0.965));
+		int discount = cgcost - newprice;
+		
+		if(sacred)
+			discount = (int)Math.round(discount * (1/1.3));
+		
+		u.commands.add(new Command("#gcost", "-" + discount));
+		
+
+		
+
+	}
+	
+
 	
 	private ItemSet fetchItems(Unit u, String slot, boolean sacred, double epicchance)
 	{
