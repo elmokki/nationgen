@@ -732,6 +732,7 @@
 #basechance 0.1
 #chanceinc "magic nature 1"
 #chanceinc "shape werewolf 20"
+#chanceinc "pose mounted *0"
 #command "#secondshape werewolf"
 #command "#gcost +10"
 #command "#maxage *2"
@@ -747,6 +748,7 @@
 #basechance 0.1
 #chanceinc "magic nature 1"
 #chanceinc "shape werebear 20"
+#chanceinc "pose mounted *0"
 #command "#secondshape werebear"
 #command "#gcost +10"
 #command "#maxage *2"
@@ -764,6 +766,7 @@
 #basechance 0.1
 #chanceinc "magic death 2"
 #chanceinc "shape ghoul 20"
+#chanceinc "pose mounted *0"
 #command "#secondshape ghoul"
 #command "#gcost +5"
 #tag "path death"
@@ -777,6 +780,7 @@
 #basechance 0.05
 #chanceinc "magic nature 2"
 #chanceinc "shape hornedserpent 20"
+#chanceinc "pose mounted *0"
 #command "#secondshape hornedserpent"
 #command "#gcost +8"
 #chanceinc "pose mounted *0.25"
@@ -860,6 +864,7 @@
 #basechance 0
 #chanceinc "magic nature 1"
 #chanceinc "shape vineman 20"
+#chanceinc "pose mounted *0"
 #command "#secondshape vineman"
 #command "#gcost +20"
 #command "#maxage 1000"
@@ -901,6 +906,7 @@
 #name "greatboar"
 #basechance 0.1
 #chanceinc "magic nature 1"
+#chanceinc "pose mounted *0"
 #command "#secondshape greatboar"
 #command "#gcost +10"
 #description "shapeshifts into a great boar when damaged"
@@ -916,6 +922,7 @@
 #chanceinc "magic water 0.25"
 #chanceinc "magic nature 0.25"
 #chanceinc "magic nature water 0.5"
+#chanceinc "pose mounted *0"
 #command "#secondshape toad"
 #command "#gcost +15"
 #tag "notfortier 1"
@@ -932,6 +939,7 @@
 #basechance 0.05
 #chanceinc "magic nature 1"
 #chanceinc "personalcommand #poisonres 1"
+#chanceinc "pose mounted *0"
 #command "#secondshape smallerspider"
 #command "#gcost +15"
 #tag "notfortier 1"
