@@ -1,28 +1,44 @@
 #newitem
+#name "firedrake 1"
+#gameid -1
+#sprite /graphics/abysian/mounts/firedrake.png
+#armor
+#needs overlay firedrake_overlay
+#offsetx -7
+#offsety 16
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 9"
+#define "#mounted"
+#define "#weapon 567 --- Drake Fire"
+#define "#weapon 20 -- Bite"
+#define "#gcost +55"
+#define "#ressize 2"
+#define "#enc 5"
+#tag "animal drake"
+#tag "minprot 10"
+#tag "maxprot 100"
+#enditem
+
+#newitem
 #name "salamander 1"
 #gameid -1
 #sprite /graphics/abysian/mounts/salamander.png
 #armor
-
-#needs overlay salamander_overlay
 #offsetx -7
-#offsety 16
+#offsety 14
 #define "#size 3"
 #define "#mapmove 2"
 #define "#ap 10"
 #define "#mounted"
 #define "#weapon 48 --- Fire Flare"
 #define "#gcost +45"
-
 #define "#heat 6"
 #define "#ressize 2"
 #define "#enc 20"
 #tag "animal salamander"
-#tag "guaranteedprefix salamander"
 #tag "maxprot 100"
 #enditem
-
-
 
 #newitem
 #name "scorpion"
@@ -36,7 +52,6 @@
 #define "#ap 8"
 #define "#mounted"
 #define "#weapon nostr_pincer"
-
 #define "#weapon nostr_scorpiontail"
 #define "#secondshape scorpionmount"
 #define "#gcost +50"
@@ -47,7 +62,6 @@
 #theme "heavy"
 #description "Leaves a giant scorpion behind when the rider dies"
 #tag "guaranteedprefix scorpion"
-
 #tag "minprot 10"
 #tag "maxprot 100"
 #enditem
