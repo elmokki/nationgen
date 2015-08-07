@@ -1419,12 +1419,48 @@ public class ChanceIncHandler {
 				else if(args.get(0).equals("personalcommand") && args.size() > 2)
 				{
 
-					boolean contains = false;
+					boolean canIncrease = false;
+					String command = args.get(1);
 					for(Command c : u.getCommands())
-						if(c.command.equals(args.get(1)))
-							contains = true;
-					
-					if(contains)
+					{
+						if(c.command.equals(command))
+						{
+							if(args.size() > 3)
+							{
+								int level = 0;
+								boolean above = true;
+								if(Generic.isNumeric(args.get(2)))
+								{
+									level = Integer.parseInt(args.get(2));
+								}
+								else if(args.size() > 4)
+								{
+									if(args.contains("below"))
+										above = false;
+									
+									level = Integer.parseInt(args.get(3));
+								}
+								else
+									canIncrease = true;
+								
+								
+								if(!canIncrease)
+								{
+									if((Integer.parseInt(c.args.get(0)) >= level) == above)
+									{
+										canIncrease = true;
+									}
+
+									
+								}
+								
+							}
+							else
+								canIncrease = true;
+						}
+						
+					}
+					if(canIncrease)
 					{
 						
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
