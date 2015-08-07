@@ -159,13 +159,24 @@
 #end
 
 #new
-#name "chaosrec"
+#name "chaosrec5"
 #type "chaosrec"
 #basechance 0.2
-#command "#chaosrec %cost10"
+#command "#chaosrec %cost5"
 #chanceinc "command #chaosrec 100"
 #chanceinc "command #chaospower 100"
 #theme recruitment
+#end
+
+#new
+#name "chaosrec10"
+#type "chaosrec"
+#basechance 0.05
+#command "#chaosrec %cost10"
+#chanceinc "command #chaosrec 50"
+#chanceinc "command #chaospower 50"
+#theme recruitment
+#power 2
 #end
 
 #new

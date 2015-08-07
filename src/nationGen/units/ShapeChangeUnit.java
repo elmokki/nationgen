@@ -191,11 +191,7 @@ public class ShapeChangeUnit extends Unit {
 				
 			}
 			
-			if(sf.commands.size() > 0)
-			{
-				appliedFilters.add(sf);
-			}
-
+	
 
 	
 			
@@ -220,6 +216,12 @@ public class ShapeChangeUnit extends Unit {
 		
 		
 		}
+		
+		if(sf.commands.size() > 0)
+		{
+			appliedFilters.add(sf);
+		}
+
 	}
 	
 	
