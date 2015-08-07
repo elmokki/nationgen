@@ -18,6 +18,8 @@ public class SiteGenerator {
 
 	public static void generateSites(Nation n)
 	{
+		Random random = new Random(n.random.nextInt());
+		
 		int stuff = 0;
 		
 		HashMap<Integer, Integer> totalgems = getTotalGems(n);
@@ -28,7 +30,6 @@ public class SiteGenerator {
 			if(totalgems.get(i) > 0)
 				stuff++;
 		}
-
 
 		
 		List<Unit> origmages = n.generateComList("mage");
@@ -58,6 +59,7 @@ public class SiteGenerator {
 				stuff++;
 			}
 		
+
 		/**
 		for(ShapeChangeUnit su : n.specialmonsters)
 			if(su.thisForm.tags.contains("caponly"))
@@ -67,23 +69,25 @@ public class SiteGenerator {
 			}
 		*/
 		
-		stuff++;
+		
 		Filter f = null;
 		ChanceIncHandler chandler = new ChanceIncHandler(n);
 		List<Filter> filters = ChanceIncHandler.retrieveFilters("sitefeatures", "default_sitefeatures", n.nationGen.miscdef, null, n.races.get(0));
 		f = chandler.getRandom(filters);
+		if(!f.name.equals("nothing"))
+			stuff++;
 		
 		int sites = (int)Math.ceil((double)stuff / 5);
-		if(sites < 4 && (sites * 5 - stuff) / 20 > n.random.nextDouble())
+		if(sites < 4 && (sites * 5 - stuff) / 20 > random.nextDouble())
 			sites++;
 		
-		
+
 		while(stuff > 0)
 		{
 			int minstuff = StuffPerSite(sites, stuff);
 			int added = 0;
 			Site s = new Site();
-			int max = 4 + n.random.nextInt(3);
+			int max = 4 + random.nextInt(3);
 			
 			while(added < max && added < stuff)
 			{
@@ -96,12 +100,12 @@ public class SiteGenerator {
 				// 4 = gem
 				
 				
-				int type = n.random.nextInt(4);
+				int type = random.nextInt(4);
 				
 
 				if(type == 0 && otherComs.size() > 0)
 				{
-					Unit u = otherComs.get(n.random.nextInt(otherComs.size()));
+					Unit u = otherComs.get(random.nextInt(otherComs.size()));
 					s.coms.add(u);
 					otherComs.remove(u);
 					added++;
@@ -109,7 +113,7 @@ public class SiteGenerator {
 					List<Unit> rels = getRelatives(otherTroops, u);
 					while(added < max && rels.size() > 0)
 					{
-						Unit u2 = rels.get(n.random.nextInt(rels.size()));
+						Unit u2 = rels.get(random.nextInt(rels.size()));
 						rels.remove(u2);
 						otherTroops.remove(u2);
 						added++;
@@ -119,7 +123,7 @@ public class SiteGenerator {
 				}
 				else if(type == 1 && otherTroops.size() > 0)
 				{
-					Unit u = otherTroops.get(n.random.nextInt(otherTroops.size()));
+					Unit u = otherTroops.get(random.nextInt(otherTroops.size()));
 					s.troops.add(u);
 					otherTroops.remove(u);
 					added++;
@@ -127,7 +131,7 @@ public class SiteGenerator {
 					List<Unit> rels = getRelatives(otherComs, u);
 					while(added < max && rels.size() > 0)
 					{
-						Unit u2 = rels.get(n.random.nextInt(rels.size()));
+						Unit u2 = rels.get(random.nextInt(rels.size()));
 						rels.remove(u2);
 						otherComs.remove(u2);
 						added++;
@@ -137,7 +141,7 @@ public class SiteGenerator {
 				}
 				else if(type == 2 && mages.size() > 0)
 				{
-					Unit u = mages.get(n.random.nextInt(mages.size()));
+					Unit u = mages.get(random.nextInt(mages.size()));
 					s.coms.add(u);
 					mages.remove(u);
 					added++;
@@ -145,7 +149,7 @@ public class SiteGenerator {
 					List<Unit> rels = getRelatives(mages, u);
 					while(added < max && rels.size() > 0)
 					{
-						Unit u2 = rels.get(n.random.nextInt(rels.size()));
+						Unit u2 = rels.get(random.nextInt(rels.size()));
 						rels.remove(u2);
 						mages.remove(u2);
 						added++;
@@ -153,7 +157,7 @@ public class SiteGenerator {
 
 					}
 				}
-				else if(type == 3 && f != null)
+				else if(type == 3 && f != null && !f.name.equals("nothing"))
 				{
 					s.appliedfilters.add(f);
 					added++;
@@ -194,7 +198,7 @@ public class SiteGenerator {
 								possibles.add(i);
 						}
 						
-						int pos = possibles.get(n.random.nextInt(possibles.size()));
+						int pos = possibles.get(random.nextInt(possibles.size()));
 						added++;
 						s.gemMap.put(pos, totalgems.get(pos));
 						gems -= totalgems.get(pos);

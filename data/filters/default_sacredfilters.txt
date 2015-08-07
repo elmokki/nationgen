@@ -159,13 +159,24 @@
 #end
 
 #new
-#name "chaosrec"
+#name "chaosrec5"
 #type "chaosrec"
 #basechance 0.2
-#command "#chaosrec %cost10"
+#command "#chaosrec %cost5"
 #chanceinc "command #chaosrec 100"
 #chanceinc "command #chaospower 100"
 #theme recruitment
+#end
+
+#new
+#name "chaosrec10"
+#type "chaosrec"
+#basechance 0.05
+#command "#chaosrec %cost10"
+#chanceinc "command #chaosrec 50"
+#chanceinc "command #chaospower 50"
+#theme recruitment
+#power 2
 #end
 
 #new
@@ -303,10 +314,8 @@
 #name "resistances_fire"
 #basechance 0.2
 #chanceinc "magic fire 2"
-#chanceinc "command #poisonres *0.5"
-#chanceinc "command #fireres *0.5"
-#chanceinc "command #coldres *0.5"
-#chanceinc "command #shockres *0.5"
+#chanceinc "command #fireres 0.8"
+#chanceinc "personalcommand #fireres *0.25"
 #command "#fireres +5"
 #command "#gcost +1"
 #end
@@ -315,10 +324,8 @@
 #name "resistances_poison"
 #basechance 0.2
 #chanceinc "magic nature 2"
-#chanceinc "command #poisonres *0.5"
-#chanceinc "command #fireres *0.5"
-#chanceinc "command #coldres *0.5"
-#chanceinc "command #shockres *0.5"
+#chanceinc "command #poisonres 0.8"
+#chanceinc "personalcommand #poisonres *0.25"
 #command "#poisonres +5"
 #command "#gcost +1"
 #end
@@ -327,10 +334,8 @@
 #name "resistances_cold"
 #basechance 0.2
 #chanceinc "magic water 2"
-#chanceinc "command #poisonres *0.5"
-#chanceinc "command #fireres *0.5"
-#chanceinc "command #coldres *0.5"
-#chanceinc "command #shockres *0.5"
+#chanceinc "command #coldres 0.8"
+#chanceinc "personalcommand #coldres *0.25"
 #command "#coldres +5"
 #command "#gcost +1"
 #end
@@ -339,10 +344,8 @@
 #name "resistances_shock"
 #basechance 0.2
 #chanceinc "magic water 2"
-#chanceinc "command #poisonres *0.5"
-#chanceinc "command #fireres *0.5"
-#chanceinc "command #coldres *0.5"
-#chanceinc "command #shockres *0.5"
+#chanceinc "command #shockres 0.8"
+#chanceinc "personalcommand #shockres *0.25"
 #command "#shockres +5"
 #command "#gcost +1"
 #end
@@ -355,15 +358,16 @@
 #chanceinc "magic fire 0.5"
 #chanceinc "magic earth 0.5"
 #chanceinc "magic water 0.5"
-#chanceinc "command #fireres 0.5"
-#chanceinc "command #coldres 0.5"
-#chanceinc "command #poisonres 0.5"
-#chanceinc "command #shockres 0.5"
+#chanceinc "personalcommand #fireres *0.25"
+#chanceinc "personalcommand #coldres *0.25"
+#chanceinc "personalcommand #poisonres *0.25"
+#chanceinc "personalcommand #shockres *0.25"
 #command "#fireres +5"
 #command "#coldres +5"
 #command "#poisonres +5"
 #command "#shockres +5"
-#command "#gcost +10"
+#command "#gcost +5"
+#command "#gcost *1.2"
 #power 3
 #end
 
@@ -371,14 +375,14 @@
 #type "allres"
 #name "resistances_low"
 #basechance 0.0
-#chanceinc "magic air 0.5"
-#chanceinc "magic fire 0.5"
-#chanceinc "magic earth 0.5"
-#chanceinc "magic water 0.5"
-#chanceinc "command #fireres 0.5"
-#chanceinc "command #coldres 0.5"
-#chanceinc "command #poisonres 0.5"
-#chanceinc "command #shockres 0.5"
+#chanceinc "magic air 1"
+#chanceinc "magic fire 1"
+#chanceinc "magic earth 1"
+#chanceinc "magic water 1"
+#chanceinc "personalcommand #fireres *0.25"
+#chanceinc "personalcommand #coldres *0.25"
+#chanceinc "personalcommand #poisonres *0.25"
+#chanceinc "personalcommand #shockres *0.25"
 #command "#fireres +3"
 #command "#coldres +3"
 #command "#poisonres +3"
@@ -552,10 +556,9 @@
 #chanceinc "command #awe +1"
 #command "#awe +1"
 #command "#gcost +20"
-#command "#gcost *1.5"
-#chanceinc "prot 15 *0.0625"
-#chanceinc "prot 12 *0.0625"
-#chanceinc "prot 8 *0.125"
+#command "#gcost *1.25"
+#chanceinc "prot 15 *0.125"
+#chanceinc "prot 12 *0.125"
 #power 3
 #end
 
@@ -573,7 +576,8 @@
 #new
 #name "heat"
 #basechance 0.0
-#chanceinc "command #fireres 0.2"
+#chanceinc "command #fireres above 0 0.2"
+#chanceinc "personalcommand #fireres 0.2"
 #chanceinc "magic fire 0.25"
 #command "#heat +3"
 #command "#fireres +5"
@@ -592,7 +596,8 @@
 #new
 #name "cold"
 #basechance 0.0
-#chanceinc "command #coldres 2"
+#chanceinc "command #coldres above 0 2"
+#chanceinc "personalcommand #coldres 0.2"
 #chanceinc "magic water 0.25"
 #command "#cold +3"
 #command "#coldres +5"
@@ -726,147 +731,6 @@
 #command "#pillagebonus +3"
 #end
 
-#new
-#name "werewolf"
-#type "shapeshift"
-#basechance 0.1
-#chanceinc "magic nature 1"
-#chanceinc "shape werewolf 20"
-#command "#secondshape werewolf"
-#command "#gcost +10"
-#command "#maxage *2"
-#chanceinc "pose mounted *0"
-#power 3
-#theme "wolftotem"
-#theme "totemanimal"
-#end
-
-#new
-#name "werebear"
-#type "shapeshift"
-#basechance 0.1
-#chanceinc "magic nature 1"
-#chanceinc "shape werebear 20"
-#command "#secondshape werebear"
-#command "#gcost +10"
-#command "#maxage *2"
-#command "#heal"
-#chanceinc "pose mounted *0"
-#power 3
-#description "can shapeshift into a werebear"
-#theme "beartotem"
-#theme "totemanimal"
-#end
-
-#new
-#name "ghoul"
-#type "shapeshift"
-#basechance 0.1
-#chanceinc "magic death 2"
-#chanceinc "shape ghoul 20"
-#command "#secondshape ghoul"
-#command "#gcost +5"
-#tag "path death"
-#chanceinc "pose mounted *0.25"
-#power 1
-#end
-
-#new
-#name "hornedserpent"
-#type "shapeshift"
-#basechance 0.05
-#chanceinc "magic nature 2"
-#chanceinc "shape hornedserpent 20"
-#command "#secondshape hornedserpent"
-#command "#gcost +8"
-#chanceinc "pose mounted *0.25"
-#tag "path nature"
-#power 3
-#theme "snaketotem"
-#theme "totemanimal"
-#end
-
-#new
-#name "minorfelemental"
-#type "shapeshift"
-#basechance 0.0
-#chanceinc "magic fire 1"
-#chanceinc "magic water -0.5"
-#chanceinc "shape felemental 20"
-#command "#secondtmpshape minorfelemental"
-#command "#gcost +8"
-#tag "path fire"
-#power 3
-#end
-
-#new
-#name "minoreelemental"
-#type "shapeshift"
-#basechance 0.0
-#chanceinc "magic earth 1"
-#chanceinc "magic air -0.5"
-#chanceinc "command #flying -0.5"
-#chanceinc "shape eelemental 20"
-#command "#secondtmpshape minoreelemental"
-#command "#gcost +10"
-#tag "path earth"
-#power 3
-#end
-
-#new
-#name "minoraelemental"
-#type "shapeshift"
-#basechance 0.0
-#chanceinc "magic air 1"
-#chanceinc "magic earth -0.5"
-#chanceinc "shape aelemental 20"
-#chanceinc "command #flying 0.5"
-#command "#secondtmpshape minoraelemental"
-#command "#gcost +12"
-#tag "path air"
-#power 3
-#end
-
-#new
-#name "minorwelemental"
-#type "shapeshift"
-#basechance 0.0
-#chanceinc "magic water 1"
-#chanceinc "magic fire -0.5"
-#chanceinc "shape welemental 20"
-#command "#secondtmpshape minorwelemental"
-#command "#gcost +8"
-#tag "path water"
-#power 3
-#end
-
-#new
-#name "metalman"
-#type "shapeshift"
-#basechance 0.05
-#chanceinc "magic earth 1"
-#chanceinc "shape metalman 20"
-#command "#secondshape metalman"
-#command "#hp -5"
-#command "#gcost +15"
-#command "#maxage 800"
-#tag "path earth"
-#power 3
-#end
-
-#new
-#name "vineman"
-#type "shapeshift"
-#basechance 0
-#chanceinc "magic nature 1"
-#chanceinc "shape vineman 20"
-#command "#secondshape vineman"
-#command "#gcost +20"
-#command "#maxage 1000"
-#tag "path nature"
-#theme "ivy"
-#power 2
-#end
 
 #new
 #name "amphibian"
@@ -896,51 +760,6 @@
 #power 3
 #end
 
-#new magefilter
-#type "shapeshift"
-#name "greatboar"
-#basechance 0.1
-#chanceinc "magic nature 1"
-#command "#shapechange greatboar"
-#command "#gcost +10"
-#description "can shapeshift into a great boar"
-#power 2
-#theme "boartotem"
-#theme "totemanimal"
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "toad"
-#basechance 0.01
-#chanceinc "magic water 0.25"
-#chanceinc "magic nature 0.25"
-#chanceinc "magic nature water 0.5"
-#command "#shapechange toad"
-#command "#gcost +15"
-#tag "notfortier 1"
-#tag "notfortier 2"
-#description "can shapeshift into a giant toad"
-#power 2
-#theme "toadtotem"
-#theme "totemanimal"
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "spider"
-#basechance 0.05
-#chanceinc "magic nature 1"
-#chanceinc "personalcommand #poisonres 1"
-#command "#shapechange smallerspider"
-#command "#gcost +15"
-#tag "notfortier 1"
-#tag "notfortier 2"
-#description "can shapeshift into a giant spider"
-#power 2
-#theme "spidertotem"
-#theme "totemanimal"
-#end
 
 #new
 #name "cultist"

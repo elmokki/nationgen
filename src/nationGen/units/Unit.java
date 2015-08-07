@@ -438,17 +438,15 @@ public class Unit {
 			return this.commands;
 		else
 		{
-			if(this.getClass() == ShapeChangeUnit.class)
+			// Shapechangeunits aren't really of the race/pose their other form is
+			if(this.getClass() != ShapeChangeUnit.class)
 			{
-				ShapeChangeUnit su = (ShapeChangeUnit)this;
-				for(Command c : su.thisForm.commands)
-					if(!c.command.equals("#spr1") && !c.command.equals("#spr2"))
-						allCommands.add(c);
+				allCommands.addAll(race.unitcommands);
+				allCommands.addAll(pose.getCommands());
+
 			}
-			
-			allCommands.addAll(race.unitcommands);
-			allCommands.addAll(pose.getCommands());
 	
+
 	
 
 		
@@ -459,19 +457,27 @@ public class Unit {
 				Item item = itr.next();
 				
 				if(item != null)
+				{
 					allCommands.addAll(item.commands);
+				}
 			}
 			
 
-			
+
 			// Filters
 			for(Filter f : this.appliedFilters)
 			{
+		
+			
+				
 				for(Command c : f.getCommands())
 				{
+			
+					
 					Command tc = c;
 					int tier = 2;
-					if(Generic.getTagValue(this.tags, "schoolmage") != null)
+					
+					if(Generic.containsTag(tags, "schoolmage"))
 						tier = Integer.parseInt(Generic.getTagValue(this.tags, "schoolmage"));
 					
 					if(c.args.size() > 0 && c.args.get(0).contains("%value%"))
@@ -500,17 +506,31 @@ public class Unit {
 							tc = new Command(c.command, resstring);
 						
 					}
-					allCommands.add(tc);
+					
+					// Shape change units handle #spr1/#spr2 separately
+					if(this.getClass() == ShapeChangeUnit.class)
+					{
+				
+						if(!tc.command.equals("#spr1") && !tc.command.equals("#spr2"))
+							allCommands.add(tc);
+					}
+					else
+						allCommands.add(tc);
+				
 					
 			
 				}
 			}
+			
+			// Adjustment stuff
+			allCommands.addAll(this.commands);
+			
+		
 		}
 		
-		
-		// Adjustment stuff
-		allCommands.addAll(this.commands);
 
+
+		
 
 		// Now handle them!
 		
@@ -522,6 +542,7 @@ public class Unit {
 			else
 				handleCommand(tempCommands, c);
 
+	
 	
 
 		//Percentual cost increases
@@ -842,8 +863,25 @@ public class Unit {
 		}
 		u.commands = commands;
 
-		// Separate loop to round gcost at the end
 		
+		// Adjustment commands
+		List<Command> adjustmentcommands = new ArrayList<Command>();
+		for(String str : Generic.getTagValues(Generic.getAllUnitTags(u), "adjustmentcommand"))
+		{
+			adjustmentcommands.add(Command.parseCommand(str));
+		}
+		
+		for(Command c : commands)
+		{
+			for(Command ac : adjustmentcommands)
+			{
+				if(c.command.equals(ac.command))
+					c.args = ac.args;
+			}
+		}
+		
+		// Separate loop to round gcost at the end
+		// Check for morale over 50
 		for(Command c : commands)
 		{
 
@@ -862,7 +900,23 @@ public class Unit {
 					c.args.set(0, "" + cost);
 				}
 			}
+			
+			// morale 50 if over 50
+			if(c.command.equals("#mor"))
+			{
+				int mor = Integer.parseInt(c.args.get(0));
+				if(mor > 50)
+				{
+					c.args.set(0, "50");
+				}
+				else if(mor <= 0)
+				{
+					c.args.set(0, "1");
+				}
+			}
 		}
+		
+		
 		
 		
 		polished = true;
@@ -892,18 +946,24 @@ public class Unit {
 				copystats = Integer.parseInt(cmd.args.get(0));
 		}
 		
-		
+
+		// If the unit has #copystats it doesn't have defined stats. Thus we need to fetch value from database
 		if(c.args.size() > 0 && (c.args.get(0).startsWith("+")) && copystats != -1 && old == null)
 		{
 			String value = this.nationGen.units.GetValue(copystats + "", c.command.substring(1));
-			if(!value.equals(""))
-			{
-				old = new Command(c.command, value);
-				commands.add(old);
-			}
+			if(value.equals(""))
+				value = "0";
+			
+			old = new Command(c.command, value);
+			commands.add(old);	
+			
 		}
-		else if(old != null && !uniques.contains(c.command))
+	
+		
+		if(old != null && !uniques.contains(c.command))
 		{
+
+			
 			/*
 			if(this.tags.contains("sacred") && c.command.equals("#gcost"))
 				System.out.println(c.command + "  " + c.args);
@@ -915,6 +975,8 @@ public class Unit {
 				String oldarg = old.args.get(i);
 				if(arg.startsWith("+") || (arg.startsWith("-") && !arg.startsWith("--")))
 				{
+			
+					
 					if(arg.startsWith("+"))
 						arg = arg.substring(1);
 					
@@ -933,7 +995,8 @@ public class Unit {
 				}
 				else if(arg.startsWith("*"))
 				{
-						
+				
+					
 					arg = arg.substring(1);
 					try
 					{
@@ -948,6 +1011,8 @@ public class Unit {
 				}
 				else
 				{
+			
+					
 					if(!uniques.contains(c.command))
 					{
 						oldarg = arg;
@@ -963,9 +1028,9 @@ public class Unit {
 				}
 			}
 		}
-		else
+		else 
 		{
-
+		
 			
 			for(int i = 0; i < c.args.size(); i++)
 			{
@@ -975,6 +1040,7 @@ public class Unit {
 					c.args.set(i, 0 + "");
 
 			}
+
 			commands.add(c);
 		}
 	

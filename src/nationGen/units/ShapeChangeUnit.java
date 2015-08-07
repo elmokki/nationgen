@@ -37,6 +37,7 @@ public class ShapeChangeUnit extends Unit {
 		super(nationGen, race, pose);
 		this.otherForm = otherForm;
 		this.thisForm = thisForm.getCopy();
+
 	}
 
 
@@ -190,11 +191,7 @@ public class ShapeChangeUnit extends Unit {
 				
 			}
 			
-			if(sf.commands.size() > 0)
-			{
-				appliedFilters.add(sf);
-			}
-
+	
 
 	
 			
@@ -219,6 +216,12 @@ public class ShapeChangeUnit extends Unit {
 		
 		
 		}
+		
+		if(sf.commands.size() > 0)
+		{
+			appliedFilters.add(sf);
+		}
+
 	}
 	
 	
@@ -358,7 +361,6 @@ public class ShapeChangeUnit extends Unit {
 
 
 		List<Command> commands = getCommands();
-
 		
 		// Own non-gcost commands first due to #copystats
 		for(Command c : commands)

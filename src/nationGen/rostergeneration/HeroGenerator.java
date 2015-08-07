@@ -176,8 +176,9 @@ public class HeroGenerator {
 			power += 2 + n.random.nextInt(7); // 2-8;
 		else
 			power +=  n.random.nextInt(5); // 0-4;
-				
-		mg.applyFilters(heroes, power, filters);
+		
+		String[] defaults = {"default_magefilters", "default_magefilters_shapeshift", "default_magefilters_strongdefence"};
+		mg.applyFilters(heroes, power, defaults, "magefilters");
 		
 		mg.equipBase(hero, tier);
 		

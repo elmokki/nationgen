@@ -42,12 +42,14 @@
 #end
 
 #new magefilter
+#type research
 #name "better researcher +1"
 #basechance 0.25
 #command "#researchbonus +1"
 #end
 
 #new magefilter
+#type research
 #name "better researcher +3"
 #basechance 0.25
 #command "#researchbonus +3"
@@ -55,6 +57,7 @@
 #end
 
 #new magefilter
+#type research
 #name "better researcher +3"
 #basechance 0.25
 #command "#researchbonus +3"
@@ -64,6 +67,7 @@
 #end
 
 #new magefilter
+#type research
 #name "sloth researcher +2"
 #basechance 0.125
 #command "#slothresearch +2"
@@ -72,6 +76,7 @@
 
 
 #new magefilter
+#type research
 #name "sloth researcher +1"
 #basechance 0.125
 #command "#slothresearch +1"
@@ -198,7 +203,7 @@
 #name "chaosrec"
 #type "chaosrec"
 #basechance 0.1
-#command "#chaosrec %cost8"
+#command "#chaosrec %cost5"
 #chanceinc "command #chaosrec 100"
 #chanceinc "command #chaospower 100"
 #theme recruitment
@@ -208,7 +213,7 @@
 #name "chaosrec_high"
 #type "chaosrec"
 #basechance 0.05
-#command "#chaosrec %cost15"
+#command "#chaosrec %cost10"
 #chanceinc "command #chaosrec 25"
 #chanceinc "command #chaospower 25"
 #theme recruitment
@@ -931,263 +936,6 @@
 #power 2
 #end
 
-#new magefilter
-#type "shapeshift"
-#name "turkeyshape"
-#basechance 0.025
-#chanceinc "personalmagic nature 0.3"
-#chanceinc "personalmagic air 0.3"
-#chanceinc "personalcommand #mounted *0"
-#command "#shapechange turkey"
-#tag "notfortier 1"
-#description "can shapeshift into a turkey"
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "werewolf"
-#basechance 0.05
-#chanceinc "personalmagic nature 0.5"
-#chanceinc "personalcommand mounted *0"
-#command "#shapechange werewolf"
-#tag "notfortier 1"
-#description "can shapeshift into a werewolf"
-#tag "notfortier 2"
-#command "#maxage *2"
-#power 2
-#theme "wolftotem"
-#theme "totemanimal"
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "werewolf2"
-#basechance 0.05
-#chanceinc "personalmagic nature 0.25"
-#chanceinc "personalcommand #mounted *0"
-#command "#shapechange werewolf"
-#command "#gcost *1.2"
-#tag "notfortier 1"
-#description "can shapeshift into a werewolf"
-#tag "notfortier 3"
-#command "#maxage *2"
-#power 2
-#theme "wolftotem"
-#theme "totemanimal"
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "werebear"
-#basechance 0.05
-#chanceinc "personalmagic nature 0.5"
-#chanceinc "personalcommand #mounted *0"
-#command "#shapechange werebear"
-#tag "notfortier 1"
-#tag "notfortier 2"
-#command "#maxage *2"
-#description "can shapeshift into a werebear"
-#power 2
-#theme "beartotem"
-#theme "totemanimal"
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "werebear2"
-#basechance 0.05
-#chanceinc "personalmagic nature 0.5"
-#chanceinc "personalcommand #mounted *0"
-#command "#shapechange werebear"
-#command "#gcost *1.2"
-#tag "notfortier 1"
-#command "#maxage *2"
-#tag "notfortier 3"
-#description "can shapeshift into a werebear"
-#power 2
-#theme "beartotem"
-#theme "totemanimal"
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "wolf"
-#basechance 0.05
-#chanceinc "personalmagic nature 1"
-#chanceinc "personalcommand #mounted *0"
-#command "#shapechange wolf"
-#description "can shapeshift into a wolf"
-#tag "notfortier 1"
-#power 2
-#theme "wolftotem"
-#theme "totemanimal"
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "wingedmonkey"
-#basechance 0.05
-#chanceinc "personalmagic nature 0.75"
-#chanceinc "personalmagic air 0.75"
-#chanceinc "personalcommand #mounted *0"
-#command "#shapechange wingedmonkey"
-#description "can shapeshift into a winged monkey"
-#tag "notfortier 1"
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "devil"
-#basechance 0.0
-#chanceinc "personalmagic blood 0.2"
-#chanceinc "personalmagic blood fire 3"
-#chanceinc "personalcommand #mounted *0"
-#command "#shapechange devil"
-#command "#demon"
-#command "#maxage 1000"
-#tag "notfortier 1"
-#tag "notfortier 2"
-#command "#gcost +45"
-#description "can shapeshift into a devil"
-#tag "personalmagic blood"
-#power 2
-#end
-
-#new
-#name "vineman"
-#type "shapeshift"
-#basechance 0
-#chanceinc "personalmagic nature 1"
-#chanceinc "shape vineman 20"
-#command "#secondshape vineman"
-#command "#gcost +20"
-#command "#maxage 1000"
-#tag "path nature"
-#theme "ivy"
-#description "becomes a vine man upon death"
-#power 2
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "frostfiend"
-#basechance 0.0
-#chanceinc "personalmagic blood 0.2"
-#chanceinc "personalmagic blood water 3"
-#chanceinc "personalcommand #mounted *0"
-#command "#shapechange frostfiend"
-#command "#demon"
-#command "#maxage 1000"
-#tag "notfortier 1"
-#tag "notfortier 2"
-#command "#gcost +45"
-#description "can shapeshift into a frost fiend"
-#tag "personalmagic blood"
-#power 2
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "greatbear"
-#basechance 0.025
-#chanceinc "personalmagic nature 1"
-#chanceinc "personalcommand #mounted *0"
-#command "#shapechange greatbear"
-#tag "personalmagic nature"
-#description "can shapeshift into a great bear"
-#theme "beartotem"
-#theme "totemanimal"
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "bear"
-#basechance 0.05
-#chanceinc "personalmagic nature 1"
-#chanceinc "personalcommand #mounted *0"
-#command "#shapechange bear"
-#tag "personalmagic nature"
-#description "can shapeshift into a bear"
-#theme "beartotem"
-#theme "totemanimal"
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "jaguar"
-#basechance 0.025
-#chanceinc "personalmagic nature 1"
-#chanceinc "personalcommand #mounted *0"
-#command "#shapechange jaguar"
-#description "can shapeshift into a jaguar"
-#theme "jaguartotem"
-#theme "totemanimal"
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "deepone"
-#basechance 0.0
-#chanceinc "personalmagic water 1"
-#chanceinc "personalcommand #mounted *0"
-#command "#shapechange deepone"
-#command "#maxage 500"
-#tag "notfortier 1"
-#description "can shapeshift into a deep one"
-#tag "personalmagic water"
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "lesserhorror"
-#basechance 0.0
-#chanceinc "personalmagic astral 0.01"
-#chanceinc "personalmagic blood 0.05"
-#chanceinc "personalmagic astral blood 2"
-#command "#secondtmpshape lesserhorror"
-#command "#horrormark"
-#command "#gcost *1.2"
-#tag "personalmagic astral"
-#description "unleashes its true form of a horror on death"
-#power 2
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "ghost"
-#basechance 0.0
-#chanceinc "personalmagic death 2"
-#command "#secondtmpshape ghost"
-#command "#gcost *1.2"
-#power 2
-#tag "personalmagic death"
-#description "is able to grasp into mortal life on death, being able to avenge its own death as a ghost"
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "ghoul"
-#basechance 0.0
-#chanceinc "personalmagic death 2"
-#tag "personalmagic death"
-#command "#secondshape ghoul"
-#command "#gcost *1.2"
-#description "has a pact with death, allowing it to live an another life as a ghoul after death"
-#tag "notfortier 1"
-#power 2
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "serpent"
-#basechance 0.0
-#chanceinc "personalmagic nature 2"
-#chanceinc "personalcommand mounted *0"
-#command "#secondshape hornedserpent"
-#description "can shapeshift into a horned serpent"
-#theme "snaketotem"
-#theme "totemanimal"
-#end
 
 #new magefilter
 #name "crossbreeder"
@@ -1195,183 +943,6 @@
 #chanceinc "personalmagic nature blood 4"
 #command "#crossbreeder 4"
 #description "excellent at crossbreeding."
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "felemental"
-#basechance 0.0
-#chanceinc "personalmagic fire 1"
-#chanceinc "personalmagic water -0.75"
-#command "#secondtmpshape felemental"
-#command "#gcost +40"
-#tag "personalmagic fire"
-#tag "notfortier 1"
-#tag "notfortier 2"
-#description "explodes as a burst of elemental energy upon death, spawning an elemental"
-#power 2
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "eelemental"
-#basechance 0.0
-#chanceinc "personalmagic earth 1"
-#chanceinc "personalmagic air -0.75"
-#command "#secondtmpshape eelemental"
-#command "#gcost +40"
-#tag "personalmagic earth"
-#tag "notfortier 1"
-#tag "notfortier 2"
-#description "explodes as a burst of elemental energy upon death, spawning an elemental"
-#power 2
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "aelemental"
-#basechance 0.0
-#chanceinc "personalmagic air 1"
-#chanceinc "personalmagic earth -0.75"
-#command "#secondtmpshape aelemental"
-#command "#gcost +40"
-#description "explodes as a burst of elemental energy upon death, spawning an elemental"
-#tag "personalmagic air"
-#tag "notfortier 1"
-#tag "notfortier 2"
-#power 2
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "welemental"
-#basechance 0.0
-#chanceinc "personalmagic water 1"
-#chanceinc "personalmagic fire -0.75"
-#command "#secondtmpshape welemental"
-#command "#gcost +40"
-#tag "personalmagic water"
-#description "explodes as a burst of elemental energy upon death, spawning an elemental"
-#tag "notfortier 1"
-#tag "notfortier 2"
-#power 2
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "metalman"
-#basechance 0.05
-#chanceinc "personalmagic earth 0.95"
-#chanceinc "command #secondshape -0.7"
-#command "#hp -5"
-#command "#gcost +30"
-#command "#secondtmpshape metalman"
-#description "reveals its true shape of a metal man upon death"
-#power 2
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "scorpion"
-#basechance 0.1
-#chanceinc "personalmagic fire 0.25"
-#chanceinc "personalmagic earth 0.25"
-#chanceinc "personalmagic fire earth 2"
-#chanceinc "personalcommand mounted *0"
-#command "#shapechange scorpion"
-#command "#gcost +15"
-#tag "notfortier 1"
-#tag "notfortier 2"
-#description "can shapeshift into a scorpion"
-#theme "scorpiontotem"
-#theme "totemanimal"
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "cavecrab"
-#basechance 0.1
-#chanceinc "personalmagic nature 0.25"
-#chanceinc "personalmagic earth 0.25"
-#chanceinc "personalmagic nature earth 1"
-#chanceinc "command darkvision 1"
-#chanceinc "personalcommand darkvision 1"
-#chanceinc "personalcommand mounted *0"
-#command "#shapechange cavecrab"
-#command "#gcost +15"
-#tag "notfortier 1"
-#tag "notfortier 2"
-#description "can shapeshift into a cave crab"
-#theme "crabtotem"
-#theme "totemanimal"
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "hawk"
-#basechance 0.1
-#chanceinc "personalmagic nature 0.25"
-#chanceinc "personalmagic air 0.75"
-#chanceinc "personalmagic nature air 1"
-#chanceinc "command flying 1"
-#chanceinc "personalcommand flying -10"
-#chanceinc "personalcommand mounted *0"
-#command "#shapechange hawk"
-#command "#gcost +15"
-#tag "notfortier 1"
-#tag "notfortier 2"
-#description "can shapeshift into a hawk"
-#theme "hawktotem"
-#theme "totemanimal"
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "toad"
-#basechance 0.1
-#chanceinc "personalmagic water 0.25"
-#chanceinc "personalmagic nature 0.25"
-#chanceinc "personalmagic nature water 1"
-#chanceinc "command swampsurvival 1"
-#chanceinc "personalcommand mounted *0"
-#command "#shapechange toad"
-#command "#gcost +15"
-#tag "notfortier 1"
-#tag "notfortier 2"
-#description "can shapeshift into a giant toad"
-#theme "toadtotem"
-#theme "totemanimal"
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "greatboar"
-#basechance 0.1
-#chanceinc "personalmagic nature 1"
-#chanceinc "personalcommand mounted *0"
-#command "#shapechange greatboar"
-#command "#gcost +15"
-#tag "notfortier 1"
-#tag "notfortier 2"
-#description "can shapeshift into a great boar"
-#theme "boartotem"
-#theme "totemanimal"
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "spider"
-#basechance 0.05
-#chanceinc "personalmagic nature 1"
-#chanceinc "personalcommand #poisonres 1"
-#chanceinc "personalcommand mounted *0"
-#command "#shapechange smallerspider"
-#command "#gcost +15"
-#tag "notfortier 1"
-#tag "notfortier 2"
-#description "can shapeshift into a giant spider"
-#theme "spidertotem"
-#theme "totemanimal"
 #end
 
 #new magefilter
@@ -1434,12 +1005,12 @@
 #new magefilter
 #name "cold resource generator 10"
 #type "resources"
-#basechance 0.5
-#chanceinc "personalmagic water *6"
+#basechance 0.025
 #chanceinc avgres 14 *2
-#chanceinc unitswithresabove 14 3 0.5
+#chanceinc unitswithresabove 14 3 0.475
 #chanceinc unitswithresabove 15 2 *2
 #chanceinc unitswithresabove 17 2 *2
+#chanceinc "personalmagic water below 1 *0"
 #chanceinc nationcommand above idealcold -1 *0
 #command "#iceforging +10"
 #notfortier 3
@@ -1450,12 +1021,12 @@
 #new magefilter
 #name "cold resource generator 15"
 #type "resources"
-#basechance 0.5
-#chanceinc "personalmagic water *6"
+#basechance 0.025
 #chanceinc avgres 14 *2
-#chanceinc unitswithresabove 14 3 0.5
+#chanceinc unitswithresabove 14 3 0.475
 #chanceinc unitswithresabove 15 2 *2
 #chanceinc unitswithresabove 17 2 *2
+#chanceinc "personalmagic water below 1 *0"
 #chanceinc nationcommand above idealcold -1 *0
 #command "#iceforging +15"
 #notfortier 3
