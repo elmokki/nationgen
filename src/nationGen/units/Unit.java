@@ -863,8 +863,12 @@ public class Unit {
 		}
 		u.commands = commands;
 
-		// Separate loop to round gcost at the end
 		
+
+
+		
+		// Separate loop to round gcost at the end
+		// Check for morale over 50
 		for(Command c : commands)
 		{
 
@@ -883,7 +887,23 @@ public class Unit {
 					c.args.set(0, "" + cost);
 				}
 			}
+			
+			// morale 50 if over 50
+			if(c.command.equals("#mor"))
+			{
+				int mor = Integer.parseInt(c.args.get(0));
+				if(mor > 50 || Generic.getAllUnitTags(u).contains("mindless"))
+				{
+					c.args.set(0, "50");
+				}
+				else if(mor <= 0)
+				{
+					c.args.set(0, "1");
+				}
+			}
 		}
+		
+		
 		
 		
 		polished = true;
