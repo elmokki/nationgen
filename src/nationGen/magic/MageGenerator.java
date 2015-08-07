@@ -648,7 +648,6 @@ public class MageGenerator extends TroopGenerator {
 		// priests
 		if(list.size() > 0)
 		{
-			List<Filter> filters = ChanceIncHandler.retrieveFilters("priestfilters", "default_priestfilters", nationGen.filters, list.get(0).pose, list.get(0).race);
 			int power = 0;
 			int maxStrength = 1;
 			for(Unit u : list)
@@ -681,8 +680,8 @@ public class MageGenerator extends TroopGenerator {
 			if(power == 0 && this.random.nextDouble() > 0.85)
 				power = this.random.nextInt(3) + 2; // 2 to 4 
 				
-
-			this.applyFilters(list, power, filters);
+			String[] defaults = {"default_priestfilters"};
+			this.applyFilters(list, power, defaults, "priestfilters");
 
 		}
 	}
@@ -720,8 +719,9 @@ public class MageGenerator extends TroopGenerator {
 		
 		// Filters for main mages
 	
-		
-		List<Filter> filters = ChanceIncHandler.retrieveFilters("magefilters", "default_magefilters", nationGen.filters, list.get(list.size() - 1).pose, list.get(list.size() - 1).race);
+		String[] defaults = {"default_magefilters", "default_magefilters_shapeshift", "default_magefilters_strongdefence"};
+		//List<Filter> filters = ChanceIncHandler.retrieveFilters("magefilters", defaults, nationGen.filters, list.get(list.size() - 1).pose, list.get(list.size() - 1).race);
+
 		double mod = 0.25;
 		if(diversity < 3)
 			mod += 0.2;
@@ -788,7 +788,7 @@ public class MageGenerator extends TroopGenerator {
 				break;
 			}
 		list.remove(extra);
-		this.applyFilters(list, power, filters);
+		this.applyFilters(list, power, defaults, "magefilters");
 
 		
 		// Filters for extra mage
@@ -800,7 +800,7 @@ public class MageGenerator extends TroopGenerator {
 			if(this.random.nextBoolean())
 				power += this.random.nextInt(4); // 0 to 3;
 			
-			this.applyFilters(list, power, filters);
+			this.applyFilters(list, power, defaults, "magefilters");
 		}
 		
 	}
@@ -1297,7 +1297,7 @@ public class MageGenerator extends TroopGenerator {
 	 * @param power
 	 * @param filters
 	 */
-	public void applyFilters(List<Unit> units, int power, List<Filter> filters)
+	public void applyFilters(List<Unit> units, int power, String[] defaults, String lookfor)
 	{
 		if(units.size() == 0)
 			return;
@@ -1339,13 +1339,17 @@ public class MageGenerator extends TroopGenerator {
 			
 			List<Unit> mages = getMagesOfTier(units, tier);
 			
+			
+
+			
 			if(mages.size() == 0) // This happens for heroes and extra mages.
 			{
 				mages.addAll(units);
 				tier = 4;
 			}
 			
-			
+			List<Filter> filters = ChanceIncHandler.retrieveFilters(lookfor, defaults, nationGen.filters, mages.get(mages.size() - 1).pose, mages.get(mages.size() - 1).race);
+
 			int at = this.random.nextInt(power + 6) - 5; // -4 to power
 			while(moreFilters.size() == 0 && at >= -5)
 			{

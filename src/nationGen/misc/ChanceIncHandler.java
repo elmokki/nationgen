@@ -439,7 +439,14 @@ public class ChanceIncHandler {
 		return filters;
 	}
 	
+	
 	public static <E extends Filter> List<E> retrieveFilters(String lookfor, String defaultset, ResourceStorage<E> source, Pose p, Race r)
+	{
+		String[] derp = {defaultset};
+		return retrieveFilters(lookfor, derp, source, p, r);
+	}
+	
+	public static <E extends Filter> List<E> retrieveFilters(String lookfor, String[] defaultset, ResourceStorage<E> source, Pose p, Race r)
 	{
 		List<E> filters = new ArrayList<E>();
 		
@@ -456,10 +463,14 @@ public class ChanceIncHandler {
 		
 		if(filters.size() == 0)
 		{
-			if(source.get(defaultset) != null)
-				filters.addAll(source.get(defaultset));
-			else
-				System.out.println("Default set " + defaultset + " for " + lookfor + " was not found from " + source);
+			for(String str : defaultset)
+			{
+				if(source.get(str) != null)
+					filters.addAll(source.get(str));
+				else
+					System.out.println("Default set " + str + " for " + lookfor + " was not found from " + source);
+			}
+
 		}
 
 		

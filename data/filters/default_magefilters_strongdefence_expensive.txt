@@ -1,0 +1,133 @@
+
+#new
+#name "invulnerable10"
+#type "strongdefence"
+#basechance 0.25
+#command "#invulnerable 10"
+#command "#gcost +20"
+#power 2
+#end
+
+#new
+#name "invulnerable20"
+#type "strongdefence"
+#basechance 0.125
+#command "#invulnerable 20"
+#command "#gcost *1.1"
+#power 4
+#end
+
+#new magefilter
+#name "majorfireres"
+#type "strongdefence"
+#basechance 0.1
+#command "#fireres +10"
+#chanceinc "personalmagic fire 0.75"
+#chanceinc "personalmagic water 0.125"
+#power 2
+#end
+
+#new magefilter
+#name "majorpoisonres"
+#type "strongdefence"
+#basechance 0.1
+#command "#poisonres +10"
+#chanceinc "personalmagic nature 0.75"
+#power 2
+#end
+
+#new magefilter
+#name "majorshockres"
+#type "strongdefence"
+#basechance 0.1
+#command "#shockres +10"
+#chanceinc "personalmagic air 0.75"
+#power 2
+#end
+
+#new magefilter
+#name "majorcoldres"
+#type "strongdefence"
+#basechance 0.1
+#command "#coldres +10"
+#chanceinc "personalmagic water 0.75"
+#chanceinc "personalmagic fire 0.125"
+#power 2
+#end
+
+#new magefilter
+#name "illusion"
+#type "strongdefence"
+#basechance 0.0
+#command "#illusion"
+#command "#stealthy +0"
+#command "#gcost *1.1"
+#primarycommand #illusion
+#chanceinc "personalmagic air 2"
+#power 4
+#tag "personalmagic air"
+#chanceinc "race vanir -20"
+#end
+
+#new magefilter
+#name "ethereal"
+#type "strongdefence"
+#basechance 0.1
+#command "#ethereal"
+#command "#gcost *1.1"
+#chanceinc "personalmagic astral 0.5"
+#primarycommand #ethereal
+#tag "personalmagic astral"
+#power 4
+#end
+
+#new magefilter
+#name "ethereal2"
+#type "strongdefence"
+#basechance 0.33
+#command "#ethereal"
+#command "#gcost *1.1"
+#primarycommand #ethereal
+#chanceinc "personalmagic astral 1"
+#tag "personalmagic astral"
+#tag "notfortier 2"
+#tag "notfortier 1"
+#power 4
+#end
+
+#new magefilter
+#name "awe"
+#type "strongdefence"
+#basechance 0.4
+#command "#awe +1"
+#command "#gcost *1.1"
+#chanceinc "personalmagic astral 0.4"
+#chanceinc "personalmagic holy 0.4"
+#chanceinc "personalmagic death -0.4"
+#chanceinc "personalmagic blood -0.4"
+#power 4
+#end
+
+#new magefilter
+#name "fear"
+#type "strongdefence"
+#basechance 0.2
+#command "#fear +5"
+#command "#gcost *1.1"
+#chanceinc "personalmagic death 0.8"
+#tag "notfortier 1"
+#tag "notfortier 2"
+#power 3
+#end
+
+#new magefilter
+#name "regeneration"
+#type "strongdefence"
+#basechance 0.1
+#command "#regeneration 10"
+#command "#gcost *1.1"
+#chanceinc "personalmagic nature 1"
+#tag "notfortier 1"
+#tag "personalmagic nature"
+#power 3
+#end
