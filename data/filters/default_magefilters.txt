@@ -1439,12 +1439,12 @@
 #new magefilter
 #name "cold resource generator 10"
 #type "resources"
-#basechance 0.5
-#chanceinc "personalmagic water *6"
+#basechance 0.025
 #chanceinc avgres 14 *2
-#chanceinc unitswithresabove 14 3 0.5
+#chanceinc unitswithresabove 14 3 0.475
 #chanceinc unitswithresabove 15 2 *2
 #chanceinc unitswithresabove 17 2 *2
+#chanceinc "personalmagic water below 1 *0"
 #chanceinc nationcommand above idealcold -1 *0
 #command "#iceforging +10"
 #notfortier 3
@@ -1455,12 +1455,12 @@
 #new magefilter
 #name "cold resource generator 15"
 #type "resources"
-#basechance 0.5
-#chanceinc "personalmagic water *6"
+#basechance 0.025
 #chanceinc avgres 14 *2
-#chanceinc unitswithresabove 14 3 0.5
+#chanceinc unitswithresabove 14 3 0.475
 #chanceinc unitswithresabove 15 2 *2
 #chanceinc unitswithresabove 17 2 *2
+#chanceinc "personalmagic water below 1 *0"
 #chanceinc nationcommand above idealcold -1 *0
 #command "#iceforging +15"
 #notfortier 3
