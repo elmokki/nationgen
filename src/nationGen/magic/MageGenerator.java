@@ -2384,7 +2384,7 @@ public class MageGenerator extends TroopGenerator {
 			if(picks < 4)
 				limit = 0;
 			
-			if(random < limit)
+			if(random < limit && u.getSlot("mount") != null)
 			{
 				u.commands.add(new Command("#mapmove", "-1"));
 			}
