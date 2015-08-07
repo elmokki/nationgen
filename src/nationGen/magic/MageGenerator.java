@@ -1341,19 +1341,28 @@ public class MageGenerator extends TroopGenerator {
 			
 			
 
-			
 			if(mages.size() == 0) // This happens for heroes and extra mages.
 			{
 				mages.addAll(units);
 				tier = 4;
 			}
 			
+			
+			// Figure whether to give different filters for mages of tier or not
+			boolean different = allHaveDistinguishingPath(mages);
+			boolean common = MageGenerator.findCommonPaths(mages).size() > 0;
+			different = different && (this.random.nextBoolean() || !common);
+			
+			
+			// Get filters
 			List<Filter> filters = ChanceIncHandler.retrieveFilters(lookfor, defaults, nationGen.filters, mages.get(mages.size() - 1).pose, mages.get(mages.size() - 1).race);
 
 			int at = this.random.nextInt(power + 6) - 5; // -4 to power
 			while(moreFilters.size() == 0 && at >= -5)
 			{
 				moreFilters = getFiltersForTier(ChanceIncHandler.getFiltersWithPower(at, power, filters), tier);
+				if(different)
+					moreFilters = ChanceIncHandler.getValidUnitFilters(moreFilters, mages);
 				at--;
 			}
 			
@@ -1373,16 +1382,13 @@ public class MageGenerator extends TroopGenerator {
 				return;
 			}
 			
-			
-			boolean different = allHaveDistinguishingPath(mages);
-			boolean common = MageGenerator.findCommonPaths(mages).size() > 0;
-			
+		
 			List<Filter> oldFilters = new ArrayList<Filter>();
 			for(Unit u : units)
 				oldFilters.addAll(u.appliedFilters);
 
 			// If all mages of tier have distinguishing paths and either luck or no common paths, separate filters are rolled. 
-			if(different && (this.random.nextBoolean() || !common))
+			if(different)
 			{
 				int maxpower = 0;
 				for(Unit u : mages)
@@ -1442,8 +1448,9 @@ public class MageGenerator extends TroopGenerator {
 					givenFilters.removeAll(u.appliedFilters);
 				}
 				
+
 				// If no filters, failsafe into giving whatever
-				if(givenFilters.size() == 0)
+				if(chandler.countPossibleFilters(givenFilters, mages.get(0)) == 0)
 				{
 					givenFilters = new ArrayList<Filter>();
 					givenFilters.addAll(actualFilters);
@@ -1453,9 +1460,9 @@ public class MageGenerator extends TroopGenerator {
 					}
 				}
 				
+
 				// CanAdd check
 				givenFilters = ChanceIncHandler.getValidUnitFilters(givenFilters, mages);
-
 
 				
 				// Use old filters when feasible!
@@ -1468,10 +1475,11 @@ public class MageGenerator extends TroopGenerator {
 				if(chandler.countPossibleFilters(tempFilters, mages.get(0)) > 0 && this.random.nextDouble() > 0.25)
 					givenFilters = tempFilters;
 					
-	
+
 				
 				Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(mages, givenFilters));
 
+				
 				for(Unit u : mages)
 					u.appliedFilters.add(f);
 				
