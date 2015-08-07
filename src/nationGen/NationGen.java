@@ -55,7 +55,7 @@ import nationGen.units.Unit;
 
 
 public class NationGen {
-	public static String version = "0.6.6";
+	public static String version = "0.6.7";
 	public static String date = "7th of August 2015";
 	
 	public ResourceStorage<MagicPattern> patterns = new ResourceStorage<MagicPattern>(MagicPattern.class, this);
