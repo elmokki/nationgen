@@ -80,9 +80,10 @@ public class SacredGenerator extends TroopGenerator {
 		
 		int precadded = 0;
 		int encadded = 0;
-		int hpadded = 0;
 		String[] posup = {"#att", "#def", "#prec", "#enc", "#mr", "#hp"};
 		int[] defvals = {10, 10, 10, 3, 10, u.getCommandValue("#hp", 10)};
+		if(u.getCommandValue("#hp", 10) < 10)
+			defvals[5] = u.getCommandValue("#hp", 10) - Math.min(3, 10 - u.getCommandValue("#hp", 10));
 		
 		for(int i = 0; i < powerups; i++)
 		{
@@ -102,10 +103,10 @@ public class SacredGenerator extends TroopGenerator {
 					scaler = 4;
 				}
 				
-				if(dif < 0)
-					scaler = scaler * 0.5;
-				
-				chance = (double)defvals[j] / ((double)defvals[j] + Math.pow((double)dif, scaler));
+				if(dif < 0 && !s.equals("#enc"))
+					chance = ((double)defvals[j] + Math.abs(Math.pow((double)dif, scaler))) /  (double)defvals[j];
+				else
+					chance = (double)defvals[j] / (Math.abs(((double)defvals[j] + Math.pow((double)dif, scaler))));
 				
 			
 				if(s.equals("#enc"))
@@ -148,7 +149,6 @@ public class SacredGenerator extends TroopGenerator {
 				{
 					double amount = Math.max(defvals[5] * 0.05, 1);
 					u.commands.add(new Command(f.name, "+" + (int)Math.round(amount)));
-					hpadded++;
 				}
 				else
 				{
@@ -196,10 +196,17 @@ public class SacredGenerator extends TroopGenerator {
 		
 		List<Filter> filters = new ArrayList<Filter>();
 		if(sacred)
-			filters = ChanceIncHandler.retrieveFilters("sacredfilters", "default_sacredfilters", nationGen.filters, u.pose, u.race);
+		{
+			String[] defaults = {"default_sacredfilters", "default_sacredfilters_shapeshift"};
+			filters = ChanceIncHandler.retrieveFilters("sacredfilters", defaults, nationGen.filters, u.pose, u.race);
+		
+		}
 		else
-			filters = ChanceIncHandler.retrieveFilters("elitefilters", "default_elitefilters", nationGen.filters, u.pose, u.race);
-
+		{
+			String[] defaults = {"default_elitefilters", "default_elitefilters_shapeshift"};
+			filters = ChanceIncHandler.retrieveFilters("elitefilters", defaults, nationGen.filters, u.pose, u.race);
+		}
+		
 		filters = ChanceIncHandler.getValidUnitFilters(filters, u);
 
 		
