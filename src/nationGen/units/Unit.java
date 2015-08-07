@@ -864,8 +864,21 @@ public class Unit {
 		u.commands = commands;
 
 		
-
-
+		// Adjustment commands
+		List<Command> adjustmentcommands = new ArrayList<Command>();
+		for(String str : Generic.getTagValues(Generic.getAllUnitTags(u), "adjustmentcommand"))
+		{
+			adjustmentcommands.add(Command.parseCommand(str));
+		}
+		
+		for(Command c : commands)
+		{
+			for(Command ac : adjustmentcommands)
+			{
+				if(c.command.equals(ac.command))
+					c.args = ac.args;
+			}
+		}
 		
 		// Separate loop to round gcost at the end
 		// Check for morale over 50
@@ -892,7 +905,7 @@ public class Unit {
 			if(c.command.equals("#mor"))
 			{
 				int mor = Integer.parseInt(c.args.get(0));
-				if(mor > 50 || Generic.getAllUnitTags(u).contains("mindless"))
+				if(mor > 50)
 				{
 					c.args.set(0, "50");
 				}
