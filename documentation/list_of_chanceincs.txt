@@ -67,9 +67,8 @@ Info: 	If the pose has given role, modifier is added. Pose is considered to have
 
 Unit command
 ------------------------
-Usage:	#chanceinc personalcommand <command> <mod>
-Info:	If the unit in question (or in case of multiple units, any of them) has 
-	given command with any argument, modifier is added.
+Usage:	#chanceinc personalcommand [below] <command> <value> <mod>
+Info:	If the unit has command <command> above/below <value>, apply mod. 
 
 Unit shapeshift
 ------------------------

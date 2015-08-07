@@ -439,7 +439,14 @@ public class ChanceIncHandler {
 		return filters;
 	}
 	
+	
 	public static <E extends Filter> List<E> retrieveFilters(String lookfor, String defaultset, ResourceStorage<E> source, Pose p, Race r)
+	{
+		String[] derp = {defaultset};
+		return retrieveFilters(lookfor, derp, source, p, r);
+	}
+	
+	public static <E extends Filter> List<E> retrieveFilters(String lookfor, String[] defaultset, ResourceStorage<E> source, Pose p, Race r)
 	{
 		List<E> filters = new ArrayList<E>();
 		
@@ -456,10 +463,14 @@ public class ChanceIncHandler {
 		
 		if(filters.size() == 0)
 		{
-			if(source.get(defaultset) != null)
-				filters.addAll(source.get(defaultset));
-			else
-				System.out.println("Default set " + defaultset + " for " + lookfor + " was not found from " + source);
+			for(String str : defaultset)
+			{
+				if(source.get(str) != null)
+					filters.addAll(source.get(str));
+				else
+					System.out.println("Default set " + str + " for " + lookfor + " was not found from " + source);
+			}
+
 		}
 
 		
@@ -1408,12 +1419,48 @@ public class ChanceIncHandler {
 				else if(args.get(0).equals("personalcommand") && args.size() > 2)
 				{
 
-					boolean contains = false;
+					boolean canIncrease = false;
+					String command = args.get(1);
 					for(Command c : u.getCommands())
-						if(c.command.equals(args.get(1)))
-							contains = true;
-					
-					if(contains)
+					{
+						if(c.command.equals(command))
+						{
+							if(args.size() > 3)
+							{
+								int level = 0;
+								boolean above = true;
+								if(Generic.isNumeric(args.get(2)))
+								{
+									level = Integer.parseInt(args.get(2));
+								}
+								else if(args.size() > 4)
+								{
+									if(args.contains("below"))
+										above = false;
+									
+									level = Integer.parseInt(args.get(3));
+								}
+								else
+									canIncrease = true;
+								
+								
+								if(!canIncrease)
+								{
+									if((Integer.parseInt(c.args.get(0)) >= level) == above)
+									{
+										canIncrease = true;
+									}
+
+									
+								}
+								
+							}
+							else
+								canIncrease = true;
+						}
+						
+					}
+					if(canIncrease)
 					{
 						
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
