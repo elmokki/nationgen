@@ -185,7 +185,7 @@ public class UnitGen {
 			}
 			else
 			{
-				Filter t = chandler.getRandom(tFilters, u);
+				Filter t = chandler.getRandom(possibles, u);
 				if(t != null)
 				{
 					u.appliedFilters.add(t);
