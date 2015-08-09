@@ -151,6 +151,15 @@
 #end
 
 #new 
+#name "skirmisher"
+#basechance 0
+#chanceinc "unittheme irregular 5"
+#chanceinc "pose not infantry *0"
+#theme irregular
+#theme elite
+#end
+
+#new 
 #type elite
 #name "guard"
 #basechance 0
@@ -181,6 +190,7 @@
 #type elite
 #name "champion"
 #racevariant "Van" hirdman
+#racevariant "Vaetti" hirdman
 #basechance 1
 #chanceinc unittheme allowelitenaming *5
 
