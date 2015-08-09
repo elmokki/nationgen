@@ -3,6 +3,8 @@
 #basechance 0.1
 
 #role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
 #role "scout"
 #name "stealthy boreal infantry"
 #theme "boreal"
@@ -11,6 +13,8 @@
 #theme "central"
 #theme "imperial"
 #theme "abysian"
+#sacred
+#elite
 
 #command "#stealthy 0"
 
@@ -38,6 +42,8 @@
 #newpose
 #basechance 0.05
 #role "mounted"
+#role "elite mounted"
+#role "sacred mounted"
 #name "not-so-stealthy boreal cavalry"
 #theme "boreal"
 #theme "austral"
@@ -45,6 +51,8 @@
 #theme "central"
 #theme "imperial"
 #theme "abysian"
+#elite
+#sacred
 
 #renderorder "shadow cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -78,6 +86,8 @@
 #newpose
 #basechance 0.1
 #role "mounted"
+#role "elite mounted"
+#role "sacred mounted"
 #name "stealthy boreal cavalry"
 #theme "boreal"
 #theme "austral"
@@ -85,6 +95,8 @@
 #theme "central"
 #theme "imperial"
 #theme "abysian"
+#elite
+#sacred
 
 #command "#stealthy 0"
 
@@ -118,6 +130,8 @@
 #newpose
 #basechance 0.1
 #role "ranged"
+#role "elite ranged"
+#role "sacred ranged"
 #name "stealthy boreal archers"
 #theme "boreal"
 #theme "austral"
@@ -125,6 +139,8 @@
 #theme "central"
 #theme "imperial"
 #theme "abysian"
+#elite
+#sacred
 
 #command "#stealthy 0"
 
@@ -159,8 +175,12 @@
 #newpose
 #name "stealthy oriental infantry"
 #role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
 #role "scout"
 #theme "oriental"
+#elite
+#sacred
 
 #basechance 0.1
 
@@ -193,7 +213,11 @@
 #newpose
 #name "stealthy oriental cavalry"
 #role "mounted"
+#role "elite mounted"
+#role "sacred mounted"
 #theme "oriental"
+#elite
+#sacred
 
 #basechance 0.1
 
@@ -230,7 +254,11 @@
 #newpose
 #name "stealthy oriental archers"
 #role "ranged"
+#role "elite ranged"
+#role "sacred ranged"
 #theme "oriental"
+#elite
+#sacred
 
 #command "#stealthy 0"
 

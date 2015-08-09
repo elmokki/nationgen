@@ -1,4 +1,22 @@
 #new 
+#type slave
+#name "slave"
+#basechance 0
+#chanceinc "unittheme slave 1000"
+#theme slave
+#prefix
+#end
+
+#new 
+#type gladiator
+#name "gladiator"
+#basechance 0
+#chanceinc "unittheme gladiator 1000"
+#theme gladiator
+#prefix
+#end
+
+#new 
 #type militia
 #name "militia"
 #basechance 0
@@ -18,16 +36,6 @@
 #end
 
 #new 
-#type slave
-#name "slave"
-#basechance 0
-#chanceinc "unittheme slave 1000"
-#theme slave
-#prefix
-#end
-
-
-#new 
 #type militia
 #name "tribal"
 #basechance 0
@@ -36,7 +44,6 @@
 #theme primitive
 #prefix
 #end
-
 
 #new 
 #type elite
@@ -47,7 +54,6 @@
 #prefix
 #end
 
-
 #new 
 #type berserk
 #name "berserking"
@@ -56,7 +62,6 @@
 #theme berserk
 #prefix
 #end
-
 
 #new 
 #type irregular
