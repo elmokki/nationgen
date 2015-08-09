@@ -467,8 +467,6 @@ public class Unit {
 			// Filters
 			for(Filter f : this.appliedFilters)
 			{
-		
-			
 				
 				for(Command c : f.getCommands())
 				{
@@ -487,7 +485,7 @@ public class Unit {
 						try
 						{
 							multi = Integer.parseInt(Generic.getTagValue(f.tags, "valuemulti"));
-							base = Integer.parseInt(Generic.getTagValue(f.tags, "basvalue"));
+							base = Integer.parseInt(Generic.getTagValue(f.tags, "basevalue"));
 						}
 						catch(Exception e)
 						{
@@ -866,19 +864,28 @@ public class Unit {
 		
 		// Adjustment commands
 		List<Command> adjustmentcommands = new ArrayList<Command>();
-		for(String str : Generic.getTagValues(Generic.getAllUnitTags(u), "adjustmentcommand"))
+		for(String str : Generic.getTagValues(Generic.getAllUnitTags(u), "#adjustmentcommand"))
 		{
 			adjustmentcommands.add(Command.parseCommand(str));
 		}
-		
-		for(Command c : commands)
+
+		for(Command ac : adjustmentcommands)
 		{
-			for(Command ac : adjustmentcommands)
+			boolean foundAC = false;
+			
+			for(Command c : commands)
 			{
 				if(c.command.equals(ac.command))
+				{
 					c.args = ac.args;
+					foundAC = true;
+				}
 			}
-		}
+			
+			// Add AC verbatim if it's not already defined
+			if(!foundAC)
+				commands.add(ac);
+		}		
 		
 		// Separate loop to round gcost at the end
 		// Check for morale over 50
