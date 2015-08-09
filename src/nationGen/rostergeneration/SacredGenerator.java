@@ -598,6 +598,14 @@ public class SacredGenerator extends TroopGenerator {
 		
 		if(random.nextDouble() < highestcaponlychance)
 			u.caponly = true;
+		else
+		{
+			if(u.getGoldCost() < 50)
+				u.commands.add(new Command("#gcost", "+5"));
+			else
+				u.commands.add(new Command("#gcost", "*1.1"));
+
+		}
 	}
 	
 	public Unit getSacredUnit(Race race, Pose p, int power, boolean sacred, double epicchance)
@@ -743,7 +751,10 @@ public class SacredGenerator extends TroopGenerator {
 	
 	private void adjustGoldCost(Unit u, boolean sacred)
 	{
-
+		if(u.pose.types.contains("ranged") || u.pose.types.contains("elite ranged") || u.pose.types.contains("sacred ranged"))
+			if(u.getGoldCost() < 15)
+				u.commands.add(new Command("#gcost", "+10"));
+			
 		int cgcost = u.getGoldCost();
 		
 		cgcost -= 75;
