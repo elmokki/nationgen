@@ -10,14 +10,15 @@
 #command "#res 75"
 #basechance 0
 #chanceinc magic earth 0.125
-#chanceinc unitswithresabove 14 4 0.125
-#chanceinc unitswithresabove 16 4 0.25
-#chanceinc unitswithresabove 17 3 0.5
-#chanceinc unitswithresabove 19 3 0.5
-#chanceinc unitswithresabove 24 3 0.5
+#chanceinc unitswithresabove 18 5 0.125
+#chanceinc unitswithresabove 20 4 0.25
+#chanceinc unitswithresabove 22 4 0.25
+#chanceinc unitswithresabove 24 3 0.25
+#chanceinc caponlyunitswithresabove 24 1 0.25
+#chanceinc caponlyunitswithresabove 19 1 0.125
+#chanceinc unitswithsize 3 4 *0.5
+#chanceinc unitswithsize 4 3 *0.5
 #chanceinc magic earth *2
-#chanceinc avgres 16 *2
-#chanceinc avgres 18 *2
 #chanceinc avgres 20 *2
 #sitepath 3 20
 #theme resources
@@ -30,13 +31,14 @@
 #command "#res 50"
 #basechance 0.05
 #chanceinc magic earth 0.125
-#chanceinc unitswithresabove 14 4 0.125
-#chanceinc unitswithresabove 16 4 0.25
-#chanceinc unitswithresabove 17 4 0.5
-#chanceinc unitswithresabove 19 3 0.5
+#chanceinc unitswithresabove 18 5 0.25
+#chanceinc unitswithresabove 20 4 0.5
+#chanceinc unitswithresabove 22 3 0.25
+#chanceinc caponlyunitswithresabove 18 1 0.125
+#chanceinc caponlyunitswithresabove 20 1 0.25
 #chanceinc magic earth *2
-#chanceinc avgres 16 *2
-#chanceinc avgres 18 *2
+#chanceinc unitswithsize 3 3 *0.5
+#chanceinc unitswithsize 4 3 *0.5
 #sitepath 3 20
 #theme resources
 #end
@@ -46,13 +48,14 @@
 #name "res30"
 #type resources
 #command "#res 30"
-#basechance 0.25
-#chanceinc magic earth 0.5
-#chanceinc unitswithresabove 14 4 0.125
-#chanceinc unitswithresabove 16 4 0.25
-#chanceinc unitswithresabove 17 3 0.5
+#basechance 0.05
+#chanceinc magic earth 0.295
+#chanceinc unitswithresabove 18 5 0.125
+#chanceinc unitswithresabove 20 4 0.125
+#chanceinc caponlyunitswithresabove 20 1 0.125
 #chanceinc magic earth *2
-#chanceinc avgres 14 *2
+#chanceinc unitswithsize 3 3 *0.5
+#chanceinc unitswithsize 4 3 *0.5
 #theme resources
 #sitepath 3 10
 #end
