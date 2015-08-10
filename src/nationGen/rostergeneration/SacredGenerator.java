@@ -570,7 +570,7 @@ public class SacredGenerator extends TroopGenerator {
 		double total = 1;
 		for(String str : values)
 		{
-			total *= Double.parseDouble(str.substring(1));
+			total *= Double.parseDouble(str);
 		}
 		rating *= total;
 		
@@ -579,7 +579,7 @@ public class SacredGenerator extends TroopGenerator {
 		total = 1;
 		for(String str : values)
 		{
-			total *= Double.parseDouble(str.substring(1));
+			total *= Double.parseDouble(str);
 		}
 		u.commands.add(new Command("#gcost", "*" + total));
 
