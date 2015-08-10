@@ -864,7 +864,7 @@ public class Unit {
 		
 		// Adjustment commands
 		List<Command> adjustmentcommands = new ArrayList<Command>();
-		for(String str : Generic.getTagValues(Generic.getAllUnitTags(u), "#adjustmentcommand"))
+		for(String str : Generic.getTagValues(Generic.getAllUnitTags(u), "adjustmentcommand"))
 		{
 			adjustmentcommands.add(Command.parseCommand(str));
 		}
