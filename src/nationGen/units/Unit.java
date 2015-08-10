@@ -378,7 +378,14 @@ public class Unit {
 		
 	}
 	
+	
+	
 	public int getResCost(boolean useSize)
+	{
+		return getResCost(useSize, this.getCommands());
+	}
+
+	private int getResCost(boolean useSize, List<Command> commands)
 	{
 		int res = 0;
 		int size = 2;
@@ -388,7 +395,7 @@ public class Unit {
 		Dom3DB weapondb = nationGen.weapondb;
 		Dom3DB armordb = nationGen.armordb;
 		
-		List<Command> commands = this.getCommands();
+
 		for(Command c : commands)
 			if(c.command.equals("#rcost"))
 				extrares = extrares + Integer.parseInt(c.args.get(0));
@@ -520,15 +527,47 @@ public class Unit {
 				}
 			}
 			
+			
 			// Adjustment stuff
 			allCommands.addAll(this.commands);
 			
-		
+
+			// Adjustment commands
+			List<Command> adjustmentcommands = new ArrayList<Command>();
+			for(String str : Generic.getTagValues(Generic.getAllUnitTags(this), "adjustmentcommand"))
+			{
+				adjustmentcommands.add(Command.parseCommand(str));
+			}
+			
+			
+			// Special case: #fixedrescost
+			if(Generic.getTagValues(Generic.getAllUnitTags(this), "fixedrescost").size() > 0)
+			{
+				// If we have many, we use the first one. The order is Race, pose, filter, theme.
+				// Assumedly these exist mostly in one of these anyway
+				int cost = Integer.parseInt(Generic.getTagValues(Generic.getAllUnitTags(this), "fixedrescost").get(0));
+				int currentcost = getResCost(true, allCommands);
+				
+				cost -= currentcost;
+				
+				if(cost > 0)
+					adjustmentcommands.add(new Command("#rcost", "+" + cost));
+				else if(cost < 0)
+					adjustmentcommands.add(new Command("#rcost", "" + cost));
+
+			}
+			
+			
+			
+			// Add adjustments
+			allCommands.addAll(adjustmentcommands);
+			
+
 		}
 		
 
 
-		
+
 
 		// Now handle them!
 		
@@ -803,14 +842,7 @@ public class Unit {
 		// Autocalc enabler
 		//u.commands.add(new Command("#gcost", "+10000"));
 
-		// Adjustment commands
-		List<Command> adjustmentcommands = new ArrayList<Command>();
-		for(String str : Generic.getTagValues(Generic.getAllUnitTags(u), "adjustmentcommand"))
-		{
-			adjustmentcommands.add(Command.parseCommand(str));
-		}
-		
-		u.commands.addAll(adjustmentcommands);
+
 		
 		
 		// Clean up commands
