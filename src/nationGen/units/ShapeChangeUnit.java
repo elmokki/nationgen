@@ -44,7 +44,7 @@ public class ShapeChangeUnit extends Unit {
 	public void polish(NationGen n, Nation nation)
 	{
 		Filter sf = new Filter(n);
-		sf.name = "Second shape";
+		sf.name = "Special unit";
 		
 		// Copy sacredness and gcost from main form
 		if(otherForm != null)

@@ -6,6 +6,9 @@
 #unitname "Administrator"
 #unitname "Governor"
 #description "%unitname% is able to collect taxes in distant lands and train militia."
+#posepriority 1 type infantry
+#themeinc theme official *50
+#themeinc theme administrator *50
 #end
 
 #new
@@ -15,6 +18,10 @@
 #command "#nobadevents 5"
 #unitname "Oracle"
 #description "%unitname% brings fortune to any province he lives in."
+#posepriority 1 type mage
+#themeinc theme mystic *50
+#themeinc theme oracle *50
+#themeinc theme cultist *5
 #end
 
 #new
@@ -26,6 +33,9 @@
 #unitname "Constable"
 #unitname "Captain of the Guard"
 #description "%unitname% is skilled in preventing dissent."
+#posepriority 1 type infantry
+#themeinc theme official *50
+#themeinc theme administrator *50
 #end
 
 #new
@@ -35,6 +45,10 @@
 #unitname "Siege Engineer"
 #unitname "Engineer"
 #description "%unitname% is adept at siege mechanics."
+#posepriority 1 type infantry
+#posepriority 1 type mage
+#themeinc theme official *50
+#themeinc theme administrator *50
 #end
 
 #new
@@ -47,6 +61,10 @@
 #unitname "Agnostic"
 #caponlychance 0.1
 #description "%unitname% uses false logic to preach against any religion."
+#posepriority 1 type priest
+#themeinc theme cultist *10
+#themeinc theme heretic *50
+#themeinc theme priest *50
 #end
 
 #new
@@ -59,6 +77,8 @@
 #chanceinc magic death 1
 #caponlychance 0.8
 #description "%unitname% is able to reanimate five corpses each month without the use of magic."
+#posepriority 1 type mage
+#themeinc theme cultist *100
 #end
 
 #new
@@ -69,6 +89,9 @@
 #basechance 1
 #chanceinc magic astral 0.5
 #description "%unitname% is not skilled in magical research, but has an extensive knowledge of arcane literature, and is able to help researchers."
+#posepriority 1 type mage
+#themeinc tag "tier 1" *20
+#themeinc tag "tier 2" *10
 #end
 
 #new
@@ -81,6 +104,8 @@
 #chanceinc magic astral 3
 #chanceinc magic blood 1.5
 #description "%unitname% is able to serve as a communion or sabbath slave."
+#posepriority 1 type mage
+#themeinc tag "tier 1" *50
 #end
 
 #new
@@ -96,6 +121,9 @@
 #basechance 0
 #chanceinc magic blood 2
 #description "%unitname% is skilled at finding blood slaves."
+#posepriority 1 type mage
+#themeinc tag "tier 1" *10
+#themeinc theme cultist *100
 #end
 
 #new
@@ -109,6 +137,9 @@
 #chanceinc magic astral water 1
 #chanceinc magic water 0.1
 #description "%unitname% is able to turn water gems into astral pearls."
+#posepriority 1 type mage
+#themeinc tag "tier 2" *20
+#themeinc tag "tier 1" *10
 #end
 
 #new
@@ -122,6 +153,26 @@
 #chanceinc magic astral water 0.5
 #chanceinc magic water 0.05
 #description "%unitname% is able to turn water gems into astral pearls."
+#posepriority 1 type mage
+#themeinc tag "tier 2" *20
+#themeinc tag "tier 1" *10
+#end
+
+#new
+#name "imp summoner"
+#command "#makemonsters1 303"
+#command "#gcost +30"
+#unitname "Imp Summoner"
+#basechance 0
+#chanceinc magic blood 0.5
+#caponlychance 1
+#description "%unitname% is able to summon imps via ancient rituals."
+#theme "toadtotem"
+#theme "totemanimal"
+#posepriority 1 type mage
+#themeinc theme cultist *100
+#themeinc tag "tier 1" *20
+#themeinc tag "tier 2" *10
 #end
 
 #new
@@ -130,12 +181,17 @@
 #command "#gcost +30"
 #unitname "Frogherd"
 #unitname "Frog Tamer"
-#basechance 0.125
+#basechance 0.05
 #chanceinc magic nature 0.5
 #caponlychance 0.8
 #description "%unitname% is able to tame frogs."
 #theme "toadtotem"
 #theme "totemanimal"
+#posepriority 1 type infantry
+#themeinc theme herder *100
+#themeinc theme peasant *100
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
 #end
 
 #new
@@ -144,12 +200,17 @@
 #command "#gcost +30"
 #unitname "Woldherd"
 #unitname "Wolf Tamer"
-#basechance 0.125
+#basechance 0.1
 #chanceinc magic nature 0.5
 #caponlychance 0.99
 #description "%unitname% is able to tame wolves."
 #theme "wolftotem"
 #theme "totemanimal"
+#posepriority 1 type infantry
+#themeinc theme herder *100
+#themeinc theme peasant *100
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
 #end
 
 #new
@@ -158,10 +219,15 @@
 #command "#gcost +30"
 #unitname "Houndsmaster"
 #unitname "Dog Trainer"
-#basechance 0.125
+#basechance 0.2
 #chanceinc magic nature 0.5
 #caponlychance 0.95
 #description "%unitname% is able to train dogs."
+#posepriority 1 type infantry
+#themeinc theme herder *100
+#themeinc theme peasant *100
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
 #end
 
 #new
@@ -169,10 +235,15 @@
 #command "#makemonsters1 2227"
 #command "#gcost +30"
 #unitname "Shepherd"
-#basechance 0.125
+#basechance 0.15
 #chanceinc magic nature 0.5
 #caponlychance 0.95
 #description "%unitname% is able to herd goats."
+#posepriority 1 type infantry
+#themeinc theme herder *100
+#themeinc theme peasant *100
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
 #end
 
 #new
@@ -188,6 +259,11 @@
 #description "%unitname% is able to tame ants."
 #theme "anttotem"
 #theme "totemanimal"
+#posepriority 1 type infantry
+#themeinc theme herder *100
+#themeinc theme peasant *100
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
 #end
 
 #new
@@ -195,12 +271,17 @@
 #command "#makemonsters3 2218"
 #command "#gcost +30"
 #unitname "Lord of the Flies"
-#basechance 0.05
+#basechance 0.0
 #chanceinc magic nature 0.125
 #chanceinc magic death 0.05
 #chanceinc magic nature death 1
 #caponlychance 0.8
 #description "%unitname% is able to tame flies."
+#posepriority 1 type infantry
+#themeinc theme herder *100
+#themeinc theme peasant *100
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
 #end
 
 #new
@@ -212,11 +293,16 @@
 #unitname "Lord of Spiders"
 #basechance 0.0
 #chanceinc magic nature 0.125
-#chanceinc "personalcommand #poisonres 0.075"
+#chanceinc "command #poisonres 0.075"
 #caponlychance 0.8
 #description "%unitname% is able to tame oversized spiders."
 #theme "spidertotem"
 #theme "totemanimal"
+#posepriority 1 type infantry
+#themeinc theme herder *100
+#themeinc theme peasant *100
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
 #end
 
 #new
@@ -232,9 +318,14 @@
 #chanceinc magic fire 0.05
 #chanceinc magic earth death 0.5
 #chanceinc magic earth fire 0.5
-#chanceinc "personalcommand #poisonres 0.075"
+#chanceinc "command #poisonres 0.075"
 #caponlychance 0.8
 #description "%unitname% is able to tame oversized scorpions."
 #theme "scorpiontotem"
 #theme "totemanimal"
+#posepriority 1 type infantry
+#themeinc theme herder *100
+#themeinc theme peasant *100
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
 #end
