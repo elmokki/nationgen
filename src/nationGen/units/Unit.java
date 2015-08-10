@@ -868,28 +868,13 @@ public class Unit {
 		{
 			adjustmentcommands.add(Command.parseCommand(str));
 		}
+		u.commands.addAll(adjustmentcommands);
+		u.commands = u.getCommands();
 
-		for(Command ac : adjustmentcommands)
-		{
-			boolean foundAC = false;
-			
-			for(Command c : commands)
-			{
-				if(c.command.equals(ac.command))
-				{
-					c.args = ac.args;
-					foundAC = true;
-				}
-			}
-			
-			// Add AC verbatim if it's not already defined
-			if(!foundAC)
-				commands.add(ac);
-		}		
 		
 		// Separate loop to round gcost at the end
 		// Check for morale over 50
-		for(Command c : commands)
+		for(Command c : u.getCommands())
 		{
 
 			
