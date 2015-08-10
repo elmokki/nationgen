@@ -803,9 +803,20 @@ public class Unit {
 		// Autocalc enabler
 		//u.commands.add(new Command("#gcost", "+10000"));
 
-
+		// Adjustment commands
+		List<Command> adjustmentcommands = new ArrayList<Command>();
+		for(String str : Generic.getTagValues(Generic.getAllUnitTags(u), "adjustmentcommand"))
+		{
+			adjustmentcommands.add(Command.parseCommand(str));
+		}
+		
+		u.commands.addAll(adjustmentcommands);
+		
+		
 		// Clean up commands
 		List<Command> commands = u.getCommands();
+		
+
 		for(Command c : commands)
 		{
 			
@@ -861,31 +872,9 @@ public class Unit {
 		}
 		u.commands = commands;
 
-		
-		// Adjustment commands
-		List<Command> adjustmentcommands = new ArrayList<Command>();
-		for(String str : Generic.getTagValues(Generic.getAllUnitTags(u), "#adjustmentcommand"))
-		{
-			adjustmentcommands.add(Command.parseCommand(str));
-		}
 
-		for(Command ac : adjustmentcommands)
-		{
-			boolean foundAC = false;
-			
-			for(Command c : commands)
-			{
-				if(c.command.equals(ac.command))
-				{
-					c.args = ac.args;
-					foundAC = true;
-				}
-			}
-			
-			// Add AC verbatim if it's not already defined
-			if(!foundAC)
-				commands.add(ac);
-		}		
+
+
 		
 		// Separate loop to round gcost at the end
 		// Check for morale over 50
