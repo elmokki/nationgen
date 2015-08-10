@@ -70,6 +70,8 @@
 #chanceinc slot weapon 253 5
 #chanceinc origname axeman *20
 #commandvariant #female axemistress
+#racevariant "Muuch" batab
+#racevariant "zotz" batab
 #theme elite
 #theme commander
 #tier 1
@@ -180,6 +182,15 @@
 #theme primitive
 #theme commander
 #tier 3
+#end
+
+#new 
+#name "champion"
+#basechance 0.5
+#theme primitive
+#theme commander
+#tier 1
+#generic
 #end
 
 #new 
