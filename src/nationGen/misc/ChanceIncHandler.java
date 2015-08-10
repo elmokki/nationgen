@@ -1094,6 +1094,9 @@ public class ChanceIncHandler {
 				if(args.get(0).equals("command") && args.size() >= 3)
 				{
 					String command = args.get(1);
+					if(!command.startsWith("#"))
+						command = "#" + command;
+					
 					List<Unit> units = n.generateTroopList();
 					units.addAll(n.generateComList("mage"));
 					units.addAll(n.generateComList("priest"));
@@ -1140,6 +1143,8 @@ public class ChanceIncHandler {
 							
 						}
 					}
+					
+		
 					if(canIncrease)
 					{
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
