@@ -810,6 +810,27 @@ public class Unit {
 			adjustmentcommands.add(Command.parseCommand(str));
 		}
 		
+		
+		// Special case: #fixedrescost
+		if(Generic.getTagValues(Generic.getAllUnitTags(u), "fixedrescost").size() > 0)
+		{
+			// If we have many, we use the first one. The order is Race, pose, filter, theme.
+			// Assumedly these exist mostly in one of these anyway
+			int cost = Integer.parseInt(Generic.getTagValues(Generic.getAllUnitTags(u), "fixedrescost").get(0));
+			int currentcost = getResCost(true);
+			
+			cost -= currentcost;
+			
+			if(cost > 0)
+				adjustmentcommands.add(new Command("#rcost", "+" + cost));
+			else if(cost < 0)
+				adjustmentcommands.add(new Command("#rcost", "" + cost));
+
+			
+			
+		}
+		
+		// Add adjustments
 		u.commands.addAll(adjustmentcommands);
 		
 		
