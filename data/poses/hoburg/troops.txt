@@ -4,6 +4,8 @@
 #newpose
 #name "boreal infantry"
 #role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
 #role "scout"
 #theme "boreal"
 #theme "austral"
@@ -40,6 +42,8 @@
 #newpose
 #name "boreal cavalry"
 #role "mounted"
+#role "elite mounted"
+#role "sacred mounted"
 #theme "boreal"
 #theme "austral"
 #theme "occidental"
@@ -83,6 +87,8 @@
 #newpose
 #name "boreal ranged"
 #role "ranged"
+#role "elite ranged"
+#role "sacred ranged"
 #theme "boreal"
 #theme "austral"
 #theme "occidental"
@@ -124,6 +130,8 @@
 #newpose
 #name "oriental infantry"
 #role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
 #role "scout"
 #theme "oriental"
 
@@ -157,6 +165,8 @@
 #newpose
 #name "oriental cavalry"
 #role "mounted"
+#role "elite mounted"
+#role "sacred mounted"
 #theme "oriental"
 
 #basechance 0.05
@@ -193,6 +203,8 @@
 #newpose
 #name "oriental archers"
 #role "ranged"
+#role "elite ranged"
+#role "sacred ranged"
 #theme "oriental"
 
 #basechance 0.05
@@ -207,7 +219,6 @@
 
 #load cloakf /data/items/hoburg/normal/cloakf.txt
 #load cloakb /data/items/hoburg/normal/cloakb.txt
-
  
 #load armor /data/items/hoburg/crossbow/armor_oriental.txt
 
@@ -219,5 +230,38 @@
 #load weapon /data/items/hoburg/crossbow/weapon.txt
 #load bonusweapon /data/items/oriental/archer/archerweapon.txt
 #generateitem 1 bonusweapon
+
+#endpose
+
+
+-------- Gladiators (Imperial)
+#newpose
+#name "gladiators"
+#role "infantry"
+#theme "imperial"
+
+#basechance 0.03
+
+#freetemplatefilter gladiatortemplate gladiator
+
+#load basesprite /data/items/hoburg/normal/bases.txt
+#load shadow /data/items/hoburg/normal/shadow.txt
+#load shirt /data/items/hoburg/normal/shirt.txt
+#load hands /data/items/hoburg/normal/hands.txt
+
+#load cloakf /data/items/hoburg/normal/cloakf.txt
+#load cloakb /data/items/hoburg/normal/cloakb.txt
+
+#load armor /data/items/hoburg/normal/armor_gladiator.txt
+#load helmet /data/items/hoburg/normal/helmet_gladiator.txt
+#load legs /data/items/hoburg/normal/legs.txt
+
+#load weapon /data/items/hoburg/normal/weapon_gladiator.txt
+#load offhand /data/items/hoburg/normal/offhand_gladiator.txt
+
+#generateitem 1 offhand
+
+#maxvarieties 2
+#maxunits 1
 
 #endpose

@@ -51,7 +51,7 @@
 #armor
 #theme "advanced"
 #define "#reinvigoration +1"
-#define "rcost +5"
+#define "#rcost +5"
 #description "the armor's mechanisms are well-crafted and wind down very slowly"
 #enditem
 
@@ -64,7 +64,7 @@
 #sprite /graphics/hoburg/clockwork/clockwork_standard_oriental.png
 #recolormask /graphics/hoburg/clockwork/clockwork_standard_oriental_recolormask.png
 #define "#standard +1"
-#define "rcost +5"
+#define "#rcost +5"
 #description "the armor has an impressive standard mounted on its back to inspire nearby units"
 #enditem
 
@@ -76,7 +76,7 @@
 #theme "advanced"
 #sprite /graphics/hoburg/clockwork/clockwork_wings.png
 #define "#flying"
-#define "gcost *1.5"
-#define "rcost +10"
+#define "#gcost *1.5"
+#define "#rcost +10"
 #description "the armor has cunningly-built mechanical wings that allow it to fly"
 #enditem

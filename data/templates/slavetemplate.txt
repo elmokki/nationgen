@@ -12,7 +12,7 @@
 
 #new
 #name "podslave"
-#type slave
+#type podslave
 #basechance 0.001
 #command "#gcost *0.75"
 #command "#hp *1.25"
@@ -30,4 +30,5 @@
 #theme parasitic_vines
 #cannot_be_commander
 #onlyfilter
+#theme podslave
 #end
