@@ -15,6 +15,7 @@ import nationGen.entities.Filter;
 import nationGen.entities.Race;
 import nationGen.items.Item;
 import nationGen.misc.Command;
+import nationGen.misc.Site;
 import nationGen.nation.Nation;
 import nationGen.units.ShapeChangeUnit;
 import nationGen.units.Unit;
@@ -103,7 +104,8 @@ public class NationAdvancedSummarizer {
 				{
 					traits.add("Can build forts underwater");
 				}
-
+			
+			
 			for(Filter f : n.appliedfilters)
 			{
 				
@@ -140,7 +142,20 @@ public class NationAdvancedSummarizer {
 				tw.println(str);
 			}
 			tw.println();
-
+			
+			// Site features
+			List<String> sitef = new ArrayList<String>();
+			for(Site s : n.sites)
+				for(Filter f : s.appliedfilters)
+					sitef.add(f.toString());
+			
+			if(sitef.size() > 0)
+			{
+				tw.println("Magic site features: " + Generic.listToString(sitef, ","));
+				tw.println();
+			}
+				
+			
 			
 			// Units
 			tw.println("Troops:");

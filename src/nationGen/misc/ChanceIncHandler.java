@@ -1094,6 +1094,9 @@ public class ChanceIncHandler {
 				if(args.get(0).equals("command") && args.size() >= 3)
 				{
 					String command = args.get(1);
+					if(!command.startsWith("#"))
+						command = "#" + command;
+					
 					List<Unit> units = n.generateTroopList();
 					units.addAll(n.generateComList("mage"));
 					units.addAll(n.generateComList("priest"));
@@ -1140,6 +1143,8 @@ public class ChanceIncHandler {
 							
 						}
 					}
+					
+		
 					if(canIncrease)
 					{
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
@@ -1299,6 +1304,28 @@ public class ChanceIncHandler {
 					for(Unit u : n.generateTroopList())
 					{
 						if(u.getResCost(true) > res && u.caponly)
+							counted++;
+					}
+					
+					if((counted >= count) != below)
+						canIncrease = true;
+					
+					if(canIncrease)
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+				}
+				
+				
+				canIncrease = false;
+				if(args.get(0).equals("unitswithsize") && args.size() >= 3)
+				{
+					boolean below = args.contains("below");
+					double size = Double.parseDouble(args.get(args.size() - 3));
+					int count = Integer.parseInt(args.get(args.size() - 2));
+					
+					int counted = 0;
+					for(Unit u : n.generateTroopList())
+					{
+						if(u.getCommandValue("#size", 2) >= size)
 							counted++;
 					}
 					
