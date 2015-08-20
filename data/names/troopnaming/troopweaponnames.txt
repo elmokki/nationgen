@@ -2,14 +2,11 @@
 --------- Bonus weapons and potentially but not necessarily offhands should be elsewhere.
 
 ----- Swords
-
 #new 
 #name "swordsman"
 #basechance 0
 
 #type weapon
-
--- Broad sword
 -- Broad sword
 #chanceinc slot weapon 8 1
 -- Short sword
@@ -34,7 +31,6 @@
 #end
 
 
-
 #new 
 #name "falchioneer"
 #basechance 0
@@ -46,7 +42,6 @@
 
 
 ----- Spears
-
 #new 
 #name "spearman"
 #basechance 0
@@ -64,8 +59,8 @@
 #commandvariant #female spearmaiden
 #end
 
------ Clubs
 
+----- Clubs
 #new 
 #name "clubber"
 #basechance 0
@@ -83,7 +78,6 @@
 #chanceinc slot weapon 429 1
 #end
 
------ Clubs
 
 #new 
 #name "basher"
@@ -110,6 +104,7 @@
 #chanceinc hastheme primitive *25
 #chanceinc hastheme advanced *0.1
 #end
+
 
 #new 
 #name "crusher"
@@ -139,6 +134,7 @@
 #chanceinc hastheme advanced *0.1
 #end
 
+
 ----- Cave man rocks
 
 #new 
@@ -150,8 +146,8 @@
 #chanceinc slotname not offhand thrown_rocks *0
 #end
 
------ Hammer
 
+----- Hammer
 #new 
 #name "hammerer"
 #basechance 0
@@ -181,7 +177,6 @@
 
 
 ----- Axes
-
 #new 
 #name "axeman"
 #basechance 0
@@ -201,11 +196,7 @@
 #end
 
 
-
-
-
 ----- Pike
-
 #new 
 #name "Pikeman"
 #basechance 0
@@ -230,7 +221,6 @@
 #end
 
 ----- Halberd
-
 #new 
 #name "Halberdier"
 #basechance 0
@@ -241,7 +231,6 @@
 #end
 
 ----- Mace
-
 #new 
 #name "maceman"
 #basechance 0
@@ -252,8 +241,8 @@
 #commandvariant #female macemaiden
 #end
 
------ ashigaru
 
+----- ashigaru
 #new 
 #name "ashigaru"
 #basechance 0
@@ -270,7 +259,6 @@
 
 
 ----- samurai
-
 #new 
 #name "samurai"
 #basechance 0
@@ -281,7 +269,6 @@
 #end
 
 ----- unusual samurai
-
 #new 
 #name "samurai"
 #basechance 0
@@ -296,7 +283,6 @@
 
 
 ----- Lance
-
 #new 
 #name "lancer"
 #basechance 0
@@ -310,8 +296,8 @@
 #chanceinc prot 14 *0.125
 #end
 
------ Bows
 
+----- Bows
 
 - Technically duplicate to the generic name, but needs to be
 - here so that it actually competes with bowman since it should
@@ -358,7 +344,6 @@
 #end
 
 ----- Crossbows
-
 #new 
 #name "crossbowman"
 #basechance 0

@@ -3,7 +3,6 @@
 #new 
 #name "swordsmaster"
 #basechance 0
-
 #type weapon
 -- Broad sword
 #chanceinc slot weapon 8 5
@@ -27,6 +26,7 @@
 #chanceinc slot weapon 513 0.25
 #chanceinc origname swordsman *20
 #commandvariant #female swordsmistress
+#racevariant "hoburg" swordmeister
 #theme elite
 #theme commander
 #tier 1
@@ -36,7 +36,6 @@
 #new 
 #name "spearmaster"
 #basechance 0
-
 #type weapon
 #chanceinc slot weapon 1 5
 -- Coral Spears
@@ -46,6 +45,7 @@
 #chanceinc slot weapon 28 5
 #chanceinc origname spearman *20
 #commandvariant #female spearmistress
+#racevariant "hoburg" spearmeister
 #theme elite
 #theme commander
 #tier 1
@@ -56,7 +56,6 @@
 #new 
 #name "axemaster"
 #basechance 0
-
 #type weapon
 -- Axe
 #chanceinc slot weapon 17 5
@@ -70,6 +69,7 @@
 #chanceinc slot weapon 253 5
 #chanceinc origname axeman *20
 #commandvariant #female axemistress
+#racevariant "hoburg" axemeister
 #racevariant "Muuch" batab
 #racevariant "zotz" batab
 #theme elite
@@ -180,6 +180,7 @@
 #name "warmaster"
 #basechance 0.125
 #theme primitive
+#racevariant "hoburg" warmeister
 #theme commander
 #tier 3
 #end
