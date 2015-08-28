@@ -317,11 +317,11 @@ public class CustomItemGen {
 			}
 			
 			
-			if(db.GetValue(item.id, "dt_b").equals("1"))
+			if(db.GetValue(item.id, "dt_blunt").equals("1"))
 				newitem.values.put("blunt", "");
-			if(db.GetValue(item.id, "dt_s").equals("1"))
+			if(db.GetValue(item.id, "dt_slash").equals("1"))
 				newitem.values.put("slash", "");
-			if(db.GetValue(item.id, "dt_p").equals("1"))
+			if(db.GetValue(item.id, "dt_pierce").equals("1"))
 				newitem.values.put("pierce", "");
 			if(db.GetValue(item.id, "magic").equals("1"))
 				newitem.values.put("magic", "");
@@ -409,10 +409,10 @@ public class CustomItemGen {
 			if(db.GetValue(item.id, "an").equals("1"))
 				newitem.values.put("armornegating", "");
 			
-			if(!db.GetValue(item.id, "2nd_effect").equals("0") && !db.GetValue(item.id, "2nd_effect").equals(""))
+			if(!db.GetValue(item.id, "secondaryeffect").equals("0") && !db.GetValue(item.id, "2nd_effect").equals(""))
 				newitem.values.put("secondaryeffect", db.GetValue(item.id, "2nd_effect"));
 			
-			if(!db.GetValue(item.id, "effauto").equals("0") && !db.GetValue(item.id, "effauto").equals(""))
+			if(!db.GetValue(item.id, "secondaryeffectalways").equals("0") && !db.GetValue(item.id, "effauto").equals(""))
 				newitem.values.put("secondaryeffectalways", db.GetValue(item.id, "effauto"));
 			
 			if(newitem.values.get("dmg").equals("spc") || item.id.equals("-1"))
