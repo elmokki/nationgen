@@ -220,7 +220,11 @@ public class Generic {
 		return listToString(list, "");
 	}
 	
-
+   public static boolean containsLongBitmask(long bitmask, long wanted)
+   {
+	   return((bitmask & wanted) != 0);
+   }
+	   
    public static boolean containsBitmask(int bitmask, int wanted)
    {
 	   return((bitmask & wanted) != 0);

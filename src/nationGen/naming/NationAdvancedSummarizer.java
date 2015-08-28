@@ -127,7 +127,7 @@ public class NationAdvancedSummarizer {
 			// Write themes
 			for(Race r : n.races)
 			{
-				tw.print(r.visiblename + " themes: ");
+				tw.print(r.name + " themes: ");
 				String str = "";
 				for(Filter f : r.themefilters)
 				{
