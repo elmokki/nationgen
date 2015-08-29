@@ -302,9 +302,8 @@ public class MageGenerator extends TroopGenerator {
 		List<MagicPattern> available = getPatternsForTier(3, primaries);
 		
 		List<MagicPattern> primarypatterns = new ArrayList<MagicPattern>();
-		
 		ChanceIncHandler chandler = new ChanceIncHandler(nation);
-		MagicPattern primaryPattern = Entity.getRandom(this.random, chandler.handleChanceIncs(available));
+		MagicPattern primaryPattern = Entity.getRandom(this.random, chandler.handleChanceIncs(mages.get(2).get(0), available));
 
 
 		// Primaries
@@ -326,6 +325,7 @@ public class MageGenerator extends TroopGenerator {
 		
 		if(primaries == secondaries && this.random.nextDouble() < 0.35)
 			secs = getPatternsWithSpread(secs, 0, Math.max(0, primaryPattern.getPathsAtleastAt(1)));
+		
 		
 		// A setting here is probably a good idea as well.
 		if(secondaries > 1)
@@ -351,14 +351,19 @@ public class MageGenerator extends TroopGenerator {
 			for(int i = 0; i < secondaries; i++)
 			{			
 				
-				MagicPattern p = Entity.getRandom(this.random, chandler.handleChanceIncs(secs));
+				MagicPattern p = Entity.getRandom(this.random, chandler.handleChanceIncs(mages.get(1).get(0), secs));
+				
 				secs.remove(p);
 				secondarypatterns.add(p);
 			}
 		}
-		else
+		else if(secondaries > 0)
 		{
-			MagicPattern p = Entity.getRandom(this.random, chandler.handleChanceIncs(secs));
+			
+			
+			MagicPattern p = Entity.getRandom(this.random, chandler.handleChanceIncs(mages.get(1).get(0), secs));
+			
+
 			for(int i = 0; i < secondaries; i++)
 			{						
 				secondarypatterns.add(p);
@@ -387,14 +392,14 @@ public class MageGenerator extends TroopGenerator {
 		List<MagicPattern> terts = getPatternsWithPicks(this.getPatternsForTier(1, primaries), 0, maxPicks);
 		List<MagicPattern> tertiarypatterns = new ArrayList<MagicPattern>();
 		
-		
-		
-		MagicPattern p = Entity.getRandom(this.random, chandler.handleChanceIncs(terts));
-		for(int i = 0; i < tertiaries; i++)
-		{						
-			tertiarypatterns.add(p);
-		}
-		
+		if(tertiaries > 0)
+		{
+			MagicPattern p = Entity.getRandom(this.random, chandler.handleChanceIncs(mages.get(0).get(0), terts));
+			for(int i = 0; i < tertiaries; i++)
+			{						
+				tertiarypatterns.add(p);
+			}
+		}		
 
 		// Apply patterns
 		List<List<MagicPattern>> all = new ArrayList<List<MagicPattern>>();

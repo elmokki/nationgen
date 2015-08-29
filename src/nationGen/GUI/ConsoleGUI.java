@@ -24,7 +24,7 @@ public class ConsoleGUI {
 		//nationGen.settings.put("drawPreview", 1.0);
 
 		//nationGen.generate(seeds);
-		nationGen.generate(1);
+		nationGen.generate(25);
 	}
 
 

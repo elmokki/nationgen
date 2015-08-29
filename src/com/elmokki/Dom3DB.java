@@ -7,7 +7,7 @@ import java.util.*;
 
 public class Dom3DB {
 	
-	private HashMap<String, String> entryMap = new HashMap<String, String>();
+	public HashMap<String, String> entryMap = new HashMap<String, String>();
     private String[] definition;
 
     public int getSize()
@@ -141,6 +141,88 @@ public class Dom3DB {
         	list.add(this.getValue(line, placeOfValue));
         
         return list;
+    }
+    
+    
+    public void saveToFile(String filename) throws IOException
+    {
+		
+		FileWriter fstream = new FileWriter(filename);
+		PrintWriter tw = new PrintWriter(fstream);
+		
+		String def = "";
+		for(int i = 0; i < definition.length; i++)
+			def = def + definition[i] + ";";
+		
+		tw.println(def);
+		
+		for(int i = 0; i < 700; i++)
+		{
+			if(entryMap.keySet().contains("" + i))
+				tw.println(entryMap.get("" + i));
+
+		}
+
+		tw.flush();
+		tw.close();
+		fstream.close();
+
+    }
+    
+    public void setValue(String id, String value, String column)
+    {
+    	String line = entryMap.get(id);
+
+       
+    	// Gets the column
+        int placeOfValue = -1;
+        for (int i = 0; i < definition.length; i++)
+        {
+            if (definition[i].toLowerCase().equals(column.toLowerCase()))
+            {
+                placeOfValue = i;
+                break;
+            }
+        }
+        if(placeOfValue == -1)
+        {
+        	String[] newdef = new String[definition.length + 1];
+        	for(int i = 0; i < definition.length; i++)
+        		newdef[i] = definition[i];
+        	newdef[definition.length] = column;
+        	placeOfValue = definition.length;
+        	definition = newdef;
+        }
+        
+        
+        String newline = "";
+        String[] crap = new String[definition.length];
+        String[] stuff = line.split(";");
+
+        for(int i = 0; i < stuff.length; i++)
+        	crap[i] = stuff[i];
+
+
+        for(int i = 0; i < placeOfValue; i++)
+        {
+        	if(crap[i] == null)
+        		crap[i] = "";
+        	
+        	newline = newline + crap[i] + ";";
+        }
+        newline = newline + value + ";";
+        
+        for(int i = placeOfValue + 1; i < crap.length; i++)
+        {
+        	if(crap[i] == null)
+        		crap[i] = "";
+        	
+        	newline = newline + crap[i] + ";";
+        }
+
+        entryMap.put(id, newline);
+
+        
     }
     
     
