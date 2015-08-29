@@ -1,27 +1,30 @@
 #newitem
 #id longspear
-#gameid 28
+#gameid 644
 #sprite /graphics/ichtyid/weapon/longspear.png
 #tag "name infantry spearman"
 #tag "name commander captain"
 #basechance 0.75
+#theme "bronze"
 #enditem
 
 #newitem
 #id spear
-#gameid 1
+#gameid 643
 #sprite /graphics/weapon/standard/spear.png
 #offsetx -5
 #tag "name infantry spearman"
+#theme "bronze"
 #enditem
 
 #newitem
 #id trident
-#gameid 3
+#gameid 641
 #sprite /graphics/ichtyid/weapon/bronze_trident.png
 #offsetx 0
 #tag "prefix trident"
 #basechance 0.75
+#theme "bronze"
 #enditem
 
 #newitem
@@ -31,6 +34,7 @@
 #tag "name infantry pikeman"
 #tag "name commander captain"
 #tag "advanced"
+#theme "bronze"
 #basechance 0.5
 #enditem
 
@@ -42,6 +46,7 @@
 #offsetx -2
 #basechance 0.125
 #maxprot 10
+#theme "wood"
 #enditem
 
 -- Coral weapons
@@ -51,6 +56,7 @@
 #gameid 31
 #sprite /graphics/ichtyid/weapon/coral_spear.png
 #tag "name infantry spearman"
+#theme "coral"
 #enditem
 
 #newitem
@@ -61,6 +67,7 @@
 #tag "name infantry phalanx"
 #tag "advanced"
 #basechance 0.75
+#theme "coral"
 #enditem
 
 #newitem
@@ -69,6 +76,7 @@
 #sprite /graphics/ichtyid/weapon/coral_glaive.png
 #tag "advanced"
 #basechance 0.5
+#theme "coral"
 #enditem
 
 #newitem
@@ -77,6 +85,7 @@
 #sprite /graphics/ichtyid/weapon/coral_shortsword.png
 #basechance 0.5
 #tag "name infantry swordmen"
+#theme "coral"
 #enditem
 
 #newitem
@@ -86,6 +95,7 @@
 #basechance 0.5
 #tag "name infantry clubber"
 #theme "primitive"
+#theme "coral"
 #maxprot 11
 #enditem
 
@@ -93,7 +103,7 @@
 
 #newitem
 #id shortsword
-#gameid 6
+#gameid 645
 #sprite /graphics/ichtyid/weapon/bronze_shortsword.png
 #basechance 0.5
 #tag "name infantry swordsman"
@@ -105,7 +115,7 @@
 
 #newitem
 #id axe
-#gameid 17
+#gameid 646
 #sprite /graphics/ichtyid/weapon/bronze_axe.png
 #basechance 0.5
 #tag "name infantry axeman"
@@ -178,4 +188,6 @@
 #theme "primitive"
 #needs hands 2h_hands
 #maxprot 9
+#theme "wood"
+#theme "primitive"
 #enditem

@@ -2,15 +2,25 @@
 
 #newitem
 #id spear
-#gameid 1
+#gameid 31
+#sprite /graphics/weapon/standard/coral_spear.png
+#offsetx -5
+#theme "coral"
+#enditem
+
+#newitem
+#id bronzespear
+#gameid 643
 #sprite /graphics/weapon/standard/spear.png
 #offsetx -5
+#theme "bronze"
 #enditem
 
 #newitem
 #id trident
-#gameid 3
+#gameid 641
 #sprite /graphics/ichtyid/weapon/bronze_trident.png
+#theme "bronze"
 #enditem
 
 #newitem
@@ -19,13 +29,14 @@
 #sprite /graphics/weapon/standard/quarterstaff.png
 #offsetx -2
 #basechance 0.5
+#theme "wood"
 #enditem
 
 -- 1h
 
 #newitem
 #id shortsword_bronze
-#gameid 6
+#gameid 645
 #sprite graphics/ichtyid/weapon/bronze_shortsword.png
 #theme "advanced"
 #theme "bronze"
@@ -35,12 +46,14 @@
 #id shortsword_coral
 #gameid coralshortsword
 #sprite graphics/ichtyid/weapon/coral_shortsword.png
+#theme "coral"
 #enditem
 
 #newitem
 #id dagger
 #gameid 9
 #sprite graphics/ichtyid/weapon/bronze_dagger.png
+#theme "bronze"
 #enditem
 
 #newitem
@@ -49,11 +62,13 @@
 #sprite /graphics/atlantian/weapon/coralknifeleft.png
 #offsetx 0
 #offsety -1
+#theme "coral"
 #enditem
 
 #newitem
 #id club_coral
 #gameid 45
 #sprite graphics/ichtyid/weapon/coral_club.png
+#theme "coral"
 #enditem
 
