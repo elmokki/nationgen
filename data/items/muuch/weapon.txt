@@ -32,7 +32,7 @@
 
 #newitem
 #id spear
-#gameid 643
+#gameid 373
 #sprite /graphics/muuch/weapons/spear.png
 #tag "eliteversion spear_elite"
 #tag "name infantry spearman"
@@ -41,8 +41,27 @@
 
 #newitem
 #id spear_elite
-#gameid 643
+#gameid 373
 #sprite /graphics/muuch/weapons/spear_elite.png
+#recolormask /graphics/muuch/weapons/spear_elite_recolormask.png
+#tag "name infantry spearman"
+#tag "name commander chief"
+#theme "elite"
+#enditem
+
+#newitem
+#id bronzespear
+#gameid 643
+#sprite /graphics/muuch/weapons/bronzespear.png
+#tag "eliteversion spear_elite"
+#tag "name infantry spearman"
+#tag "name infantry chieftan"
+#enditem
+
+#newitem
+#id bronzespear_elite
+#gameid 643
+#sprite /graphics/muuch/weapons/bronzespear_elite.png
 #recolormask /graphics/muuch/weapons/spear_elite_recolormask.png
 #tag "name infantry spearman"
 #tag "name commander chief"
