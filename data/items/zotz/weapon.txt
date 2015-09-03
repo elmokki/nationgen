@@ -1,6 +1,6 @@
 #newitem
 #id axe
-#gameid 17
+#gameid 646
 #sprite /graphics/zotz/weapon/axe.png
 #tag "name infantry axeman"
 #theme "advanced"
@@ -9,7 +9,7 @@
 
 #newitem
 #id hatchet
-#gameid 253
+#gameid 646
 #sprite /graphics/zotz/weapon/hatchet.png
 #enditem
 
@@ -22,7 +22,7 @@
 
 #newitem
 #id lightlance
-#gameid 357
+#gameid 651
 #sprite /graphics/zotz/weapon/spear.png
 #tag "name infantry lancer"
 #chanceinc "personalcommand #mounted *3"
@@ -32,7 +32,7 @@
 #newitem
 #id dagger
 #basechance 0.25
-#gameid 9
+#gameid nonferrousdagger
 #sprite /graphics/zotz/weapon/dagger.png
 #chanceinc "personalcommand #mounted *0"
 #enditem
@@ -40,7 +40,7 @@
 #newitem
 #id trident
 #basechance 0.125
-#gameid 3
+#gameid 641
 #sprite /graphics/zotz/weapon/trident.png
 #chanceinc "personalcommand #mounted *3"
 #enditem

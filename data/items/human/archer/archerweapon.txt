@@ -2,24 +2,43 @@
 #id hatchet
 #gameid 253
 #theme "primitive"
+#theme "iron"
 #eliteversion axe
 #theme "austral"
 #theme "boreal"
 #theme "central"
-#theme "occidental"
 #theme "abysian"
+#enditem
+
+#newitem
+#id bronzehatchet
+#gameid 646
+#theme "primitive"
+#theme "bronze"
+#eliteversion axe
+#theme "central"
+#theme "occidental"
 #enditem
 
 #newitem
 #id dagger
 #gameid 9
 #eliteversion shortsword
+#theme "iron"
 #theme "austral"
 #theme "boreal"
 #theme "central"
-#theme "occidental"
 #theme "oriental"
 #theme "abysian"
+#enditem
+
+#newitem
+#id dagger
+#gameid nonferrousdagger
+#eliteversion bronzeshortsword
+#theme "bronze"
+#theme "central"
+#theme "occidental"
 #enditem
 
 #newitem
@@ -44,12 +63,27 @@
 #enditem
 
 #newitem
+#id bronzeshortsword
+#gameid 645
+#eliteversion bronzebroadsword
+#theme "bronze"
+#theme "central"
+#enditem
+
+#newitem
 #id kopesh
 #gameid 513
 #eliteversion falchion
 #theme "bronze"
-#theme "austral"
 #theme "central"
+#enditem
+
+#newitem
+#id kopesh
+#gameid ironkopesh
+#eliteversion falchion
+#theme "iron"
+#theme "austral"
 #theme "oriental"
 #enditem
 
@@ -105,7 +139,6 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
-#theme "occidental"
 #theme "abysian"
 #enditem
 
@@ -116,6 +149,14 @@
 #theme "iron"
 #theme "austral"
 #theme "boreal"
+#enditem
+
+#newitem
+#id bronzebroadsword
+#gameid bronzebroadsword
+#theme "elite"
+#theme "bronze"
+#theme "central"
 #enditem
 
 #newitem
