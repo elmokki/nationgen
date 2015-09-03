@@ -5,7 +5,6 @@
 
 --- Additional bronze armors
 
-
 #new customarmor
 #name bronzescale_full
 #armor
@@ -26,6 +25,86 @@
 #command "#enc 6"
 #command "#rcost 22"
 #command "#name 'Bronze Full Plate Mail'"
+#end
+
+--- Additional bronze weapons
+
+#new customweapon
+#name "nonferrousdagger"
+#command "#att +1"
+#command "#dmg 2"
+#command "#name 'Dagger'"
+#command "#pierce"
+#end
+
+#new customweapon
+#name "bronzebroadsword"
+#command "#def +1"
+#command "#dmg 5"
+#command "#len 2"
+#command "#rcost 4"
+#command "#name 'Bronze Broad Sword'"
+#command "#slash"
+#end
+
+#new customweapon
+#name "bronzeclaymore"
+#command "#att +1"
+#command "#def +1"
+#command "#dmg 9"
+#command "#len 3"
+#command "#rcost 6"
+#command "#name 'Bronze Claymore'"
+#command "#slash"
+#command "#twohanded"
+#end
+
+#new customweapon
+#name "bronzebattleaxe"
+#command "#att +1"
+#command "#dmg 8"
+#command "#len 3"
+#command "#rcost 4"
+#command "#name 'Bronze Battleaxe'"
+#command "#slash"
+#command "#twohanded"
+#end
+
+#new customweapon
+#name "bronzeglaive"
+#command "#att -1"
+#command "#def +1"
+#command "#dmg 9"
+#command "#len 4"
+#command "#rcost 5"
+#command "#name 'Bronze Glaive'"
+#command "#slash"
+#command "#pierce"
+#command "#twohanded"
+#end
+
+#new customweapon
+#name "bronzehalberd"
+#command "#att -1"
+#command "#def +1"
+#command "#dmg 9"
+#command "#len 4"
+#command "#rcost 5"
+#command "#name 'Bronze Halberd'"
+#command "#slash"
+#command "#pierce"
+#command "#twohanded"
+#end
+
+#new customweapon
+#name "bronzebardiche"
+#command "#def -1"
+#command "#dmg 5"
+#command "#len 5"
+#command "#rcost 5"
+#command "#name 'Bronze Bardiche'"
+#command "#slash"
+#command "#twohanded"
 #end
 
 --- Siddhe Golden Axe
