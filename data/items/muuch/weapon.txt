@@ -1,6 +1,6 @@
 #newitem
 #id hatchet
-#gameid 253
+#gameid 646
 #sprite /graphics/muuch/weapons/hatchet.png
 #tag "eliteversion axe"
 #tag "name infantry warrior"
@@ -10,7 +10,7 @@
 
 #newitem
 #id axe
-#gameid 17
+#gameid 646
 #sprite /graphics/ichtyid/weapon/bronze_axe.png
 #offsetx -2
 #offsety 1
@@ -32,7 +32,7 @@
 
 #newitem
 #id spear
-#gameid 1
+#gameid 643
 #sprite /graphics/muuch/weapons/spear.png
 #tag "eliteversion spear_elite"
 #tag "name infantry spearman"
@@ -41,7 +41,7 @@
 
 #newitem
 #id spear_elite
-#gameid 1
+#gameid 643
 #sprite /graphics/muuch/weapons/spear_elite.png
 #recolormask /graphics/muuch/weapons/spear_elite_recolormask.png
 #tag "name infantry spearman"
@@ -52,7 +52,7 @@
 #newitem
 #id dagger
 #basechance 0.25
-#gameid 9
+#gameid nonferrousdagger
 #sprite /graphics/muuch/weapons/dagger.png
 #tag "name infantry skirmisher"
 #maxprot 9
@@ -62,14 +62,14 @@
 #newitem
 #id trident
 #basechance 0.5
-#gameid 3
+#gameid 641
 #sprite /graphics/atlantian/weapon/trident.png
 #tag "eliteversion trident_elite"
 #enditem
 
 #newitem
 #id trident_elite
-#gameid 3
+#gameid 641
 #sprite /graphics/atlantian/weapon/trident-elite.png
 #recolormask /graphics/atlantian/weapon/trident-elite_recolormask.png
 #offsetx -3
@@ -137,7 +137,7 @@
 
 #newitem
 #id greataxe
-#gameid 18
+#gameid bronzebattleaxe
 #sprite /graphics/muuch/weapons/battleaxe.png
 #tag "name infantry axeman"
 #tag "name commander batab"
@@ -147,7 +147,7 @@
 
 #newitem
 #id glaive
-#gameid 308
+#gameid bronzeglaive
 #sprite /graphics/agarthan/weapons/glaive.png
 #offsetx -4
 #offsety -3
