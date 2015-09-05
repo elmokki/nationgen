@@ -457,48 +457,95 @@
 
 #new
 #type "seasonpower"
-#name "springpower"
-#basechance 0.2
-#chanceinc "magic water 0.5"
-#chanceinc "magic nature 0.5"
-#chanceinc "magic water nature 2.5"
-#command "#springpower +1"
+#name "springpower-low"
+#basechance 0.5
+#chanceinc "magic water 0.75"
+#chanceinc "magic nature 0.75"
+#chanceinc "magic water nature 3"
+#command "#springpower +25"
 #tag "path nature"
 #end
 
 #new
 #type "seasonpower"
-#name "summerpower"
-#basechance 0.2
-#chanceinc "magic fire 0.5"
-#chanceinc "magic nature 0.5"
-#chanceinc "magic fire nature 2.5"
-#chanceinc "command #fireres 0.1"
-#command "#summerpower +1"
+#name "summerpower-low"
+#basechance 0.5
+#chanceinc "magic fire 0.75"
+#chanceinc "magic nature 0.75"
+#chanceinc "magic fire nature 3"
+#chanceinc "command #fireres 0.5"
+#command "#summerpower +25"
 #tag "path fire"
 #end
 
 #new
 #type "seasonpower"
-#name "fallpower"
-#basechance 0.2
+#name "fallpower-low"
+#basechance 0.5
 #chanceinc "magic earth 1"
-#chanceinc "magic nature 0.1"
+#chanceinc "magic nature 0.5"
 #chanceinc "magic earth nature 3"
-#command "#fallpower +1"
+#command "#fallpower +25"
 #tag "path earth"
 #end
 
 #new
 #type "seasonpower"
-#name "winterpower"
+#name "winterpower-low"
 #basechance 0.0
-#chanceinc "magic water 0.5"
-#chanceinc "magic nature 0.05"
-#chanceinc "magic death 0.5"
+#chanceinc "magic water 0.7"
+#chanceinc "magic nature 0.1"
+#chanceinc "magic death 0.7"
 #chanceinc "magic death water 3"
-#chanceinc "command #frostres 0.1"
-#command "#winterpower +1"
+#chanceinc "command #frostres 1"
+#command "#winterpower +25"
+#tag "path water"
+#end
+
+#new
+#type "seasonpower"
+#name "springpower-high"
+#basechance 0.1
+#chanceinc "magic water 0.25"
+#chanceinc "magic nature 0.25"
+#chanceinc "magic water nature 1"
+#command "#springpower +50"
+#tag "path nature"
+#end
+
+#new
+#type "seasonpower"
+#name "summerpower-high"
+#basechance 0.1
+#chanceinc "magic fire 0.25"
+#chanceinc "magic nature 0.25"
+#chanceinc "magic fire nature 1"
+#chanceinc "command #fireres 0.25"
+#command "#summerpower +50"
+#tag "path fire"
+#end
+
+#new
+#type "seasonpower"
+#name "fallpower-high"
+#basechance 0.1
+#chanceinc "magic earth 0.4"
+#chanceinc "magic nature 0.1"
+#chanceinc "magic earth nature 1"
+#command "#fallpower +50"
+#tag "path earth"
+#end
+
+#new
+#type "seasonpower"
+#name "winterpower-high"
+#basechance 0.0
+#chanceinc "magic water 0.2"
+#chanceinc "magic nature 0.1"
+#chanceinc "magic death 0.2"
+#chanceinc "magic death water 1"
+#chanceinc "command #frostres 1"
+#command "#winterpower +50"
 #tag "path water"
 #end
 
