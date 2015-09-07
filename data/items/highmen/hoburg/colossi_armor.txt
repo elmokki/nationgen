@@ -1,0 +1,170 @@
+--- Unarmored
+
+#newitem
+#name "loincloth"
+#gameid -1
+#needs shirt loincloth
+#armor
+#basechance 0.125
+#theme "primitive"
+#theme "naked"
+#enditem
+
+#newitem
+#name "tunic"
+#gameid -1
+#needs shirt tunic
+#armor
+#basechance 0.125
+#enditem
+
+--- Furs
+
+#newitem
+#name "plain furs"
+#gameid 44
+#sprite /graphics/highmen/armor/hoburg/furs.png
+#needs shirt noshirt
+#armor
+#basechance 0.25
+#theme "primitive"
+#enditem
+
+--- Leather
+
+#newitem
+#name "leather cuirass"
+#gameid 5
+#sprite /graphics/highmen/armor/hoburg/leather_cuirass.png
+#armor
+#theme "leather"
+#enditem
+
+#newitem
+#name "leather hauberk"
+#gameid 10
+#sprite /graphics/highmen/armor/hoburg/leather_hauberk.png
+#armor
+#theme "leather"
+#enditem
+
+#newitem
+#name "full leather"
+#gameid 15
+#sprite /graphics/highmen/armor/hoburg/leather_full.png
+#armor
+#theme "leather"
+#enditem
+
+
+--- Ring
+
+#newitem
+#name "ring cuirass"
+#gameid 6
+#sprite /graphics/highmen/armor/hoburg/ring_cuirass.png
+#theme "leather"
+#armor
+#enditem
+
+#newitem
+#name "ring hauberk"
+#gameid 11
+#sprite /graphics/highmen/armor/hoburg/ring_hauberk.png
+#armor
+#theme "leather"
+#enditem
+
+#newitem -- full ring
+#name "full ring"
+#gameid 16
+#sprite /graphics/highmen/armor/hoburg/ring_full.png
+#armor
+#theme "leather"
+#enditem
+
+
+--- Scale
+
+#newitem
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/highmen/armor/hoburg/scale_cuirass.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "scale hauberk"
+#gameid 12
+#sprite /graphics/highmen/armor/hoburg/scale_hauberk.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem -- full scale
+#name "full scale"
+#gameid 17
+#sprite /graphics/highmen/armor/hoburg/scale_full.png
+#armor
+#theme "advanced"
+#theme "iron"
+#enditem
+
+--- Chain Mail
+
+#newitem
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/highmen/armor/hoburg/chain_cuirass.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "chain hauberk"
+#gameid 13
+#sprite /graphics/highmen/armor/hoburg/chain_hauberk.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem -- full chain
+#name "full chain"
+#gameid 18
+#sprite /graphics/highmen/armor/hoburg/chain_full.png
+#armor
+#theme "advanced"
+#theme "iron"
+#enditem
+
+
+-- Plate
+
+#newitem
+#name "plate cuirass"
+#gameid 9
+#sprite /graphics/highmen/armor/hoburg/plate_cuirass.png
+#armor
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem
+#name "plate hauberk"
+#gameid 14
+#sprite /graphics/highmen/armor/hoburg/plate_hauberk.png
+#armor
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem -- full plate
+#name "full plate"
+#gameid 19
+#sprite /graphics/highmen/armor/hoburg/plate_full.png
+#armor
+#theme "advanced"
+#theme "iron"
+#maxvarieties 1
+#enditem

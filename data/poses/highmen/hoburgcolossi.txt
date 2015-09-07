@@ -1,0 +1,69 @@
+-------- Normal
+
+#newpose
+
+#basechance 2
+#name "colossi infantry"
+#role "sacred infantry"
+#role "elite infantry"
+
+#theme "austral"
+#subrace colossi
+
+#load basesprite /data/items/highmen/hoburg/colossi_bases.txt
+#load shadow /data/items/highmen/sleeper/shadow.txt
+#load hands /data/items/highmen/hoburg/colossi_hands.txt
+
+#load armor /data/items/highmen/hoburg/colossi_armor.txt
+#load shirt /data/items/highmen/hoburg/colossi_shirt.txt
+
+#load weapon /data/items/machakans/standard/weapon.txt 0 3
+#load weapon /data/items/highmen/hoburg/colossi_weapon.txt
+#load offhand /data/items/machakans/standard/shields.txt 0 3
+#load offhand /data/items/human/normal/towershields.txt 0 3
+#load offhand /data/items/human/normal/humanoffhand.txt 0 3
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt 0 3
+
+#load helmet /data/items/highmen/hoburg/colossi_helmet.txt
+
+#load cloakf /data/items/highmen/hoburg/colossi_cloakf.txt
+#load cloakb /data/items/highmen/hoburg/colossi_cloakb.txt
+
+#generateitem 1 shirt
+
+#endpose
+
+
+#newpose
+
+#basechance 0.5
+#name "colossi archer"
+#role "sacred ranged"
+#role "elite ranged"
+
+#theme "austral"
+#subrace colossi
+
+#renderorder "shadow quiver cloakb basesprite mount shirt legs armor cloakf bonusweapon offhandw weapon hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/highmen/hoburg/colossi_bases.txt
+#load shadow /data/items/highmen/sleeper/shadow.txt
+#load hands /data/items/highmen/hoburg/colossi_hands.txt
+
+#load armor /data/items/highmen/hoburg/colossi_armor.txt
+#load shirt /data/items/highmen/hoburg/colossi_shirt.txt
+
+#load helmet /data/items/highmen/hoburg/colossi_helmet.txt
+
+#load weapon /data/items/highmen/hoburg/colossi_bows.txt
+
+#load quiver /data/items/highmen/hoburg/colossi_quiver.txt
+#load bonusweapon /data/items/human/archer/archerweapon.txt
+
+#load cloakf /data/items/highmen/hoburg/colossi_cloakf.txt
+#load cloakb /data/items/highmen/hoburg/colossi_cloakb.txt
+
+#generateitem 1 bonusweapon
+#generateitem 1 shirt
+
+#endpose
