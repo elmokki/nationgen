@@ -1,0 +1,367 @@
+-- Generic theme with high diversity and low cohesion
+#newtheme
+#name default
+#basechance 4
+#endtheme
+
+-- Tech level themes
+
+-- Weights: EA 1, MA 1, LA 0.5
+#newtheme
+#type techlevel
+#name primitive
+#basechance 1
+#chanceinc era 3 -0.5
+#themeinc theme advanced *0.5
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme ice *2
+#themeinc theme magic *2
+#themeinc theme wood *0.5
+#themeinc theme leather *2
+#themeinc theme naked *2
+#themeinc theme primitive *2
+#endtheme
+
+-- Weights: EA 2, MA 1, LA 0.5
+#newtheme
+#type techlevel
+#name bronze
+#basechance 2
+#chanceinc era 2 -1
+#chanceinc era 3 -1.5
+#themeinc theme advanced *0.05
+#themeinc theme iron *0.5
+#themeinc theme bronze +1
+#themeinc theme bronze *2
+#themeinc theme ice *1
+#themeinc theme magic *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *0.5
+#themeinc theme primitive *0.5
+#endtheme
+
+-- Weights: EA 0.25, MA 1, LA 2
+#newtheme
+#type techlevel
+#name advanced
+#basechance 0.25
+#chanceinc era 3 1.75
+#chanceinc era 2 0.75
+#themeinc theme advanced *2
+#themeinc theme iron *2
+#themeinc theme bronze *0.5
+#themeinc theme ice *0.5
+#themeinc theme magic *0.1
+#themeinc theme wood *1
+#themeinc theme leather *0.5
+#themeinc theme naked *0.05
+#themeinc theme primitive *0.25
+#endtheme
+
+-- Demographic themes (mandatory)
+
+-- Weights: EA 0.25, MA 0.05, LA 0.01
+#newtheme
+#type demographic
+#name yazata
+#basechance 0.25
+#chanceinc era 2 *0.2
+#chanceinc era 3 *0.04
+#themeinc theme advanced *0.025
+#themeinc theme iron *0.025
+#themeinc theme bronze *0.5
+#themeinc theme ice *1
+#themeinc theme magic *20
+#themeinc theme wood *0.25
+#themeinc theme leather *0.25
+#themeinc theme naked *0.025
+#themeinc theme primitive *1
+#themeinc theme yazata *1000
+#racedefinition "#strongmagicpatterns"
+#racedefinition "#magicpriority astral 21"
+#racedefinition "#magicpriority fire 9"
+#racedefinition "#magicpriority air 7"
+#racedefinition "#magicpriority water 7"
+#racedefinition "#magicpriority earth 3"
+#racedefinition "#magicpriority nature 2"
+#racedefinition "#magicpriority blood 0.1"
+#racedefinition "#magicpriority death 0.1"
+#racedefinition "#nationcommand '#idealcold +2'"
+#endtheme
+
+
+-- Weights: EA 0.25, MA 0.05, LA 0.01
+#newtheme
+#type demographic
+#name daeva
+#basechance 0.25
+#chanceinc era 2 *0.2
+#chanceinc era 3 *0.04
+#chanceinc 'primaryrace abysian *1000'
+#themeinc theme advanced *0.025
+#themeinc theme iron *0.025
+#themeinc theme bronze *1
+#themeinc theme ice *0.025
+#themeinc theme magic *20
+#themeinc theme wood *0.25
+#themeinc theme leather *0.25
+#themeinc theme naked *0.025
+#themeinc theme primitive *1
+#themeinc theme daeva *1000
+#racedefinition "#strongmagicpatterns"
+#racedefinition "#magicpriority death 24"
+#racedefinition "#magicpriority fire 13"
+#racedefinition "#magicpriority blood 7"
+#racedefinition "#magicpriority earth 7"
+#racedefinition "#magicpriority astral 3"
+#racedefinition "#magicpriority water 3"
+#racedefinition "#magicpriority air 0.1"
+#racedefinition "#magicpriority nature 0.1"
+#racedefinition "#nationcommand '#likespop 34'"
+#racedefinition "#nationcommand '#idealcold -2'"
+#endtheme
+
+-- Weights: EA 1, MA 0.5, LA 0.1
+#newtheme
+#type demographic
+#name airya
+#basechance 1
+#chanceinc era 2 *0.5
+#chanceinc era 3 *0.1
+#themeinc theme advanced *0.1
+#themeinc theme iron *0.1
+#themeinc theme bronze *0.5
+#themeinc theme ice *5
+#themeinc theme magic *1
+#themeinc theme wood *0.1
+#themeinc theme leather *0.5
+#themeinc theme naked *0.01
+#themeinc theme primitive *1
+#themeinc theme yazata *250
+#themeinc theme airya *1000
+#racedefinition "#strongmagicpatterns"
+#racedefinition "#magicpriority astral 1"
+#racedefinition "#magicpriority fire 6"
+#racedefinition "#magicpriority air 12"
+#racedefinition "#magicpriority water 6"
+#racedefinition "#magicpriority earth 1"
+#racedefinition "#magicpriority nature 1"
+#racedefinition "#magicpriority blood 0.1"
+#racedefinition "#magicpriority death 0.1"
+#racedefinition "#nationcommand '#idealcold +3'"
+#endtheme
+
+-- Weights: EA 1, MA 0.5, LA 0.1
+#newtheme
+#type demographic
+#name mairya
+#basechance 1
+#chanceinc era 2 *0.5
+#chanceinc era 3 *0.1
+#chanceinc 'primaryrace abysian *50'
+#themeinc theme advanced *0.5
+#themeinc theme iron *0.5
+#themeinc theme bronze *10
+#themeinc theme ice *0.01
+#themeinc theme magic *1
+#themeinc theme wood *0.1
+#themeinc theme leather *1
+#themeinc theme naked *0.01
+#themeinc theme primitive *0.5
+#themeinc theme daeva *250
+#themeinc theme mairya *1000
+#racedefinition "#magicpriority death 6"
+#racedefinition "#magicpriority fire 12"
+#racedefinition "#magicpriority blood 1"
+#racedefinition "#magicpriority earth 6"
+#racedefinition "#magicpriority astral 1"
+#racedefinition "#magicpriority water 1"
+#racedefinition "#magicpriority air 0.1"
+#racedefinition "#magicpriority nature 0.1"
+#racedefinition "#nationcommand '#likespop 34'"
+#racedefinition "#nationcommand '#idealcold -1'"
+#endtheme
+
+-- Weights: EA 2, MA 2, LA 2
+#newtheme
+#type demographic
+#name spirehorn
+#basechance 2
+#themeinc theme advanced *0.5
+#themeinc theme iron *0.5
+#themeinc theme bronze *5
+#themeinc theme ice *5
+#themeinc theme magic *0.5
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *0.01
+#themeinc theme primitive *0.5
+#themeinc theme yazata *50
+#themeinc theme airya *250
+#themeinc theme spirehorn *1000
+#themeinc theme wingless *50
+#racedefinition "#magicpriority astral 1"
+#racedefinition "#magicpriority fire 1"
+#racedefinition "#magicpriority air 12"
+#racedefinition "#magicpriority water 1"
+#racedefinition "#magicpriority earth 1"
+#racedefinition "#magicpriority nature 1"
+#racedefinition "#magicpriority blood 0.1"
+#racedefinition "#magicpriority death 0.1"
+#racedefinition "#nationcommand '#idealcold +1'"
+#endtheme
+
+-- Weights: EA 2, MA 2, LA 2
+#newtheme
+#type demographic
+#name raptor
+#basechance 2
+#themeinc theme advanced *0.5
+#themeinc theme iron *2.5
+#themeinc theme bronze *2.5
+#themeinc theme ice *5
+#themeinc theme magic *0.5
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *0.01
+#themeinc theme primitive *0.5
+#themeinc theme daeva *50
+#themeinc theme mairya *250
+#themeinc theme spirehorn *1000
+#themeinc theme wingless *100
+#racedefinition "#magicpriority death 3"
+#racedefinition "#magicpriority fire 3"
+#racedefinition "#magicpriority blood 1"
+#racedefinition "#magicpriority earth 6"
+#racedefinition "#magicpriority astral 0.1"
+#racedefinition "#magicpriority water 1"
+#racedefinition "#magicpriority air 3"
+#racedefinition "#magicpriority nature 0.1"
+#racedefinition "#nationcommand '#idealcold 0'"
+#endtheme
+
+-- Weights: EA 1, MA 2, LA 3
+#newtheme
+#type demographic
+#name diverse
+#basechance 1
+#chanceinc era 2 *2
+#chanceinc era 3 *3
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme ice *1
+#themeinc theme magic *0.1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *0.01
+#themeinc theme primitive *0.5
+#themeinc theme airya *100
+#themeinc theme mairya *100
+#themeinc theme spirehorn *500
+#themeinc theme raptor *500
+#themeinc theme hybrid *500
+#themeinc theme wingless *100
+#racedefinition "#magicpriority astral 1"
+#racedefinition "#magicpriority fire 6"
+#racedefinition "#magicpriority air 12"
+#racedefinition "#magicpriority water 6"
+#racedefinition "#magicpriority earth 1"
+#racedefinition "#magicpriority nature 0.1"
+#racedefinition "#magicpriority blood 0.1"
+#racedefinition "#magicpriority death 1"
+#racedefinition "#nationcommand '#idealcold +1'"
+#endtheme
+
+-- Weights: EA 0.1, MA 1, LA 2
+#newtheme
+#type demographic
+#name diluted
+#basechance 0.1
+#chanceinc era 2 *10
+#chanceinc era 3 *20
+#themeinc theme advanced *2
+#themeinc theme iron *2
+#themeinc theme bronze *2
+#themeinc theme ice *0.1
+#themeinc theme magic *0.01
+#themeinc theme wood *2
+#themeinc theme leather *2
+#themeinc theme naked *0.01
+#themeinc theme primitive *0.1
+#themeinc theme spirehorn *100
+#themeinc theme raptor *100
+#themeinc theme hybrid *1000
+#themeinc theme wingless *250
+#racedefinition "#magicpriority astral 1"
+#racedefinition "#magicpriority fire 6"
+#racedefinition "#magicpriority air 12"
+#racedefinition "#magicpriority water 6"
+#racedefinition "#magicpriority earth 1"
+#racedefinition "#magicpriority nature 0.1"
+#racedefinition "#magicpriority blood 0.1"
+#racedefinition "#magicpriority death 1"
+#racedefinition "#nationcommand '#idealcold +1'"
+#endtheme
+
+-- Weights: EA 0.01, MA 0.1, LA 1
+#newtheme
+#type demographic
+#name degenerate
+#basechance 0.1
+#chanceinc era 1 *0.01
+#chanceinc era 3 *10
+#themeinc theme advanced *1
+#themeinc theme iron *2
+#themeinc theme bronze *0.5
+#themeinc theme ice *0.01
+#themeinc theme magic *0.01
+#themeinc theme wood *2
+#themeinc theme leather *2
+#themeinc theme naked *0.01
+#themeinc theme primitive *1
+#themeinc theme hybrid *250
+#themeinc theme wingless *1000
+#racedefinition "#weakmagicpatterns"
+#racedefinition "#magicpriority astral 1"
+#racedefinition "#magicpriority fire 1"
+#racedefinition "#magicpriority air 3"
+#racedefinition "#magicpriority water 1"
+#racedefinition "#magicpriority earth 3"
+#racedefinition "#magicpriority nature 0.1"
+#racedefinition "#magicpriority blood 0.1"
+#racedefinition "#magicpriority death 1"
+#racedefinition "#nationcommand '#idealcold 0'"
+#endtheme
+
+
+-- Social themes
+
+-- Weights: EA 0.01, MA 0.01, LA 0.01
+#newtheme
+#type social
+#name slaver
+#basechance 0.01
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#themeinc theme slave *20
+#themeinc theme free *0.5
+#themeinc racename caveman *5
+#themeinc racename ape *5
+#themeinc racename human *5
+#themeinc racename hoburg *5
+#themeinc racename caelian *0.1
+#themeinc racename van *0.1
+#themeinc racename sidhe *0.1
+#themeinc racename tengu *0.1
+#secondaryracedefinition "#freetemplatefilter slavetemplate slave"
+#racedefinition "#secondaryracetroopmod 100"
+#racedefinition "#secondaryracemagemod -100"
+#endtheme
