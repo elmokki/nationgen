@@ -1,9 +1,19 @@
 --- Hands belonging to an armor set should be given id of the lowest prot armor they go with if you want to avoid naked people with plate gloves.
 
 #newitem
-#id spirehornwings
+#id yazatawings
 #gameid -1
-#sprite /graphics/caelian/spirehornoverlay.png
+#sprite /graphics/caelian/yazataoverlay.png
+#nogen
+#basechance 0
+#enditem
+
+#newitem
+#id daevawings
+#gameid -1
+#sprite /graphics/caelian/daevaoverlay.png
+#nogen
+#basechance 0
 #enditem
 
 #newitem
@@ -15,6 +25,20 @@
 #enditem
 
 #newitem
+#id mairyawings
+#gameid -1
+#sprite /graphics/caelian/mairyaoverlay.png
+#nogen
+#basechance 0
+#enditem
+
+#newitem
+#id spirehornwings
+#gameid -1
+#sprite /graphics/caelian/spirehornoverlay.png
+#enditem
+
+#newitem
 #id raptorwings
 #gameid -1
 #sprite /graphics/caelian/raptoroverlay.png
@@ -23,17 +47,9 @@
 #enditem
 
 #newitem
-#id yazatawings
+#id hybridwings
 #gameid -1
-#sprite /graphics/caelian/yazataoverlay.png
-#nogen
-#basechance 0
-#enditem
-
-#newitem
-#id mairyawings
-#gameid -1
-#sprite /graphics/caelian/mairyaoverlay.png
+#sprite /graphics/caelian/hybridoverlay.png
 #nogen
 #basechance 0
 #enditem
