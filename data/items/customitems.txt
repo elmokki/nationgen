@@ -216,7 +216,7 @@
 #command "#slash"
 #end
 
---- Hoburg nostr greatclub for caveman cavalry
+--- Hoburg nostr clubs for caveman cavalry
 
 #new customweapon
 #name "nostr_greatclub"
@@ -227,6 +227,17 @@
 #command "#nostr"
 #command "#bonus"
 #command "#name 'Great Club'"
+#command "#blunt"
+#end
+
+#new customweapon
+#name "nostr_fossilclub"
+#command "#att -1"
+#command "#dmg 27"
+#command "#len 3"
+#command "#nostr"
+#command "#bonus"
+#command "#name 'Stone Club'"
 #command "#blunt"
 #end
 

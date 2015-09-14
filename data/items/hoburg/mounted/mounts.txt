@@ -26,6 +26,27 @@
 #theme "imperial"
 #theme "occidental"
 #theme "oriental"
+#enditem
+
+#newitem
+#name "black hog"
+#gameid -1
+#sprite /graphics/hoburg/mounts/demonbred_hog.png
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 14"
+#define "#mounted"
+#define "#weapon nostr_poisongore"
+#define "#gcost +22"
+#define "#ressize 1"
+#define "#rcost +4"
+#define "#enc 3"
+#tag "animal boar"
+#tag "guaranteedprefix hog"
+#theme "boar"
+#offsety -12
+#offsetx 1
 #theme "abysian"
 #enditem
 
@@ -221,7 +242,7 @@
 #define "#rcost +8"
 #define "#secondshape caveman"
 #define "#enc 4"
-#description "The caveman is fiercely loyal and will follow the hoburg army even if it's rider dies"
+#description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
 #basechance 0.33
 #needs overlay caveman_overlay
 #define "#weapon nostr_greatclub"
@@ -399,4 +420,64 @@
 #theme "imperial"
 #theme "oriental"
 #theme "abysian"
+#enditem
+
+#newitem
+#name "fossil"
+#gameid -1
+#basechance 0.33
+#sprite /graphics/hoburg/mounts/caveman_fossil.png
+#armor
+#needs overlay caveman_fossil_overlay
+#offsetx 34
+#offsety 31
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 7"
+#define "#mounted"
+#define "#prot 4"
+#define "#okundeadleader"
+#define "#weapon nostr_fossilclub"
+#define "#secondshape fossil_caveman_mount"
+#define "#gcost +45"
+#define "#ressize 1"
+#define "#enc 5"
+#define "#rcost +5"
+#tag "animal fossil"
+#theme "heavy"
+#theme "caveman"
+#theme "abysian"
+#description "Leaves a fossilized caveman behind when the rider dies"
+#tag "guaranteedprefix fossil"
+#tag "minprot 10"
+#tag "maxprot 100"
+#enditem
+
+#newitem
+#name "vine nightmare"
+#gameid -1
+#basechance 0.33
+#sprite /graphics/hoburg/mounts/vine_nightmare.png
+#needs overlay vine_nightmare_overlay
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 14"
+#define "#prot 2"
+#define "#mounted"
+#define "#weapon 352 --- Gore"
+#define "#ressize 1"
+#define "#enc 15"
+#define "#fear 5"
+#define "#poisonres 15"
+#define "#gcost +40"
+#tag "guaranteedprefix nightmare"
+#theme "specialmount"
+#tag "animal nightmare"
+#description "The riders animate their undead hogs with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#theme "primitive"
+#theme "parasitic_vines"
+#offsety -12
+#offsetx 1
+#tag "minprot 10"
 #enditem
