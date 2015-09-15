@@ -1,4 +1,4 @@
--- Primative weapons
+-- Primitive weapons
 
 #newitem
 #id club
@@ -88,11 +88,12 @@
 
 #newitem
 #id axe
-#gameid 17
+#gameid 646
 #sprite /graphics/highmen/weapons/axe_bronze.png
 #offsetx -3
 #offsety 3
 #theme "advanced"
+#theme "bronze"
 #tag "name infantry axeman"
 #tag "name infantry warrior"
 #tag "name commander champion"
@@ -102,12 +103,13 @@
 
 #newitem
 #id greataxe
-#gameid 18
+#gameid bronzebattleaxe
 #sprite /graphics/highmen/weapons/battleaxe_bronze.png
 #offsetx -2
 #offsety 2
 #needs hands hands_2h
 #theme "advanced"
+#theme "bronze"
 #tag "name infantry axeman"
 #tag "name infantry warrior"
 #tag "name commander champion"
@@ -122,6 +124,7 @@
 #offsetx -3
 #offsety 3
 #theme "advanced"
+#theme "bronze"
 #tag "name infantry hammerer"
 #tag "name infantry warrior"
 #tag "name commander champion"
@@ -136,6 +139,7 @@
 #offsetx -3
 #offsety 3
 #theme "advanced"
+#theme "bronze"
 #tag "name infantry maceman"
 #tag "name infantry warrior"
 #tag "name commander champion"
@@ -160,12 +164,13 @@
 
 #newitem
 #id spear
-#gameid 1
-#sprite /graphics/highmen/weapons/spear.png
+#gameid 643
+#sprite /graphics/highmen/weapons/spear_bronze.png
 #offsetx -2
 #offsety 2
 #needs hands hands_2h
 #theme "advanced"
+#theme "bronze"
 #tag "name infantry hunter"
 #tag "name commander chieftan"
 #tag "name commander champion"

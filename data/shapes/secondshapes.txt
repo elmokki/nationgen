@@ -867,6 +867,44 @@
 #end
 
 #new secondshape
+#name "fossil_caveman_mount"
+#command "#spr1 ./graphics/hoburg/mounts/caveman_fossil.png"
+#command "#spr2 shift"
+#command "#size 3"
+#command "#hp 9"
+#command "#prot 20"
+#command "#mr 7"
+#command "#mor 50"
+#command "#str 18"
+#command "#att 9"
+#command "#def 7"
+#command "#prec 5"
+#command "#enc 0"
+#command "#mapmove 2"
+#command "#ap 7"
+#command "#okayundeadleader"
+#command "#maxage 500"
+#command "#fireres 5"
+#command "#coldres 5"
+#command "#poisonres 25"
+#command "#pooramphibian"
+#command "#pierceres"
+#command "#undead"
+#command "#magicbeing"
+#command "#inanimate"
+#command "#neednoteat"
+#command "#mind"
+#command "#noheal"
+#command "#stonebeing"
+#command "#weapon 429 --- Stone Club"
+#command "#magicboost 53 -5"
+#command "#itemslots 12288"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
 #name "leogryphmount"
 #command "#copystats 2132"
 #command "#copyspr 2132"

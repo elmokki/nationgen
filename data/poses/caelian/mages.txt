@@ -5,12 +5,17 @@
 #newpose
 #role "mage"
 #role "priest"
+
+#renderorder "shadow cloakb wings basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
 #load basesprite /data/items/caelian/normal/bases.txt
 #load shadow /data/items/caelian/normal/shadow.txt
 #load hands /data/items/caelian/normal/hands.txt
+#load wings /data/items/caelian/mage/wings-T1.txt
+#load wings /data/items/caelian/mage/wings-T2.txt
+#load wings /data/items/caelian/mage/wings-T3.txt
 #load overlay /data/items/caelian/normal/overlay.txt
 #load legs /data/items/caelian/normal/legs.txt
-
 
 #load armor /data/items/caelian/mage/armor.txt
 
@@ -23,5 +28,7 @@
 
 #load cloakf /data/items/human/normal/humancloakf.txt 0 4
 #load cloakb /data/items/human/normal/humancloakb.txt 0 4
+
+#generateitem 1 wings
 
 #endpose

@@ -1,0 +1,156 @@
+-- Non-visible headgear
+
+#newitem
+#id none
+#gameid -1
+#basechance 0
+#nogen
+#armor
+#enditem
+
+#newitem
+#id leatherhood
+#gameid 121
+#basechance 0
+#nogen
+#armor
+#enditem
+
+-- Machakan helms
+
+#newitem
+#id headdress-leather
+#gameid 120
+#sprite /graphics/machakans/helmets/elitehelmet.png
+#recolormask /graphics/machakans/helmets/elitehelmet_recolormask.png
+#offsetx -1
+#offsety 2
+#armor
+#enditem
+
+#newitem
+#id headdress-iron
+#gameid 20
+#sprite /graphics/machakans/helmets/elitehelmet_metal.png
+#offsetx -1
+#offsety 2
+#armor
+#enditem
+
+-- Standard helms
+
+#newitem
+#id fancyhat
+#gameid 120
+#sprite /graphics/helmet/special/fancyhat.png
+#recolormask /graphics/helmet/special/fancyhat_recolormask.png
+#offsetx -1
+#offsety 2
+#armor
+#enditem
+
+#newitem
+#id fancyhat2
+#gameid 120
+#sprite /graphics/helmet/special/fancyhat2.png
+#recolormask /graphics/helmet/special/fancyhat2_recolormask.png
+#offsetx -1
+#offsety 2
+#armor
+#enditem
+
+-- Highmen specific helms
+
+-- Leather helms
+
+#newitem
+#id highman_leathercap
+#gameid 120
+#sprite /graphics/highmen/helmet/cap_leather_hoburg.png
+#armor
+#tag "eliteversion highman_leathercap_crested"
+#tag "eliteversion highman_leathercap_reinforced"
+#enditem
+
+#newitem
+#id highman_leathercap_reinforced
+#gameid 119
+#sprite /graphics/highmen/helmet/cap_leather_reinforced_hoburg.png
+#armor
+#tag "eliteversion highman_leathercap_crested"
+#enditem
+
+#newitem
+#id highman_leathercap_crested
+#gameid 162
+#sprite /graphics/highmen/helmet/cap_leather_crested.png
+#recolormask /graphics/highmen/helmet/crest_recolormask.png
+#armor
+#offsety 12
+#enditem
+
+#newitem
+#id highman_ironcap
+#gameid 20
+#sprite /graphics/highmen/helmet/cap_iron_hoburg.png
+#armor
+#tag "eliteversion highman_ironcap_crested"
+#enditem
+
+#newitem
+#id highman_ironcap_crested
+#gameid 20
+#sprite /graphics/highmen/helmet/cap_iron_crested.png
+#recolormask /graphics/highmen/helmet/crest_recolormask.png
+#armor
+#offsety 12
+#enditem
+
+#newitem
+#id highman_bascinet
+#gameid 118
+#sprite /graphics/highmen/helmet/bascinet.png
+#tag "eliteversion highman_bascinet_crested"
+#armor
+#offsety 12
+#enditem
+
+#newitem
+#id highman_bascinet_crested
+#gameid 118
+#sprite /graphics/highmen/helmet/bascinet_crested.png
+#recolormask /graphics/highmen/helmet/bascinet_crested_recolormask.png
+#armor
+#offsety 12
+#enditem
+
+
+#newitem
+#id highman_halfhelm_iron
+#gameid 118
+#sprite /graphics/highmen/helmet/halfhelm_iron_hoburg.png
+#armor
+#tag "eliteversion highman_halfhelm_iron_horned"
+#enditem
+
+#newitem
+#id highman_halfhelm_iron_horned
+#gameid 118
+#sprite /graphics/highmen/helmet/halfhelm_iron_horned_hoburg.png
+#armor
+#enditem
+
+#newitem
+#id highman_fullhelm_iron
+#gameid 21
+#sprite /graphics/highmen/helmet/fullhelm_iron_hoburg.png
+#armor
+#tag "eliteversion highman_fullhelm_iron_horned"
+#enditem
+
+#newitem
+#id highman_fullhelm_iron_horned
+#gameid 21
+#sprite /graphics/highmen/helmet/fullhelm_iron_horned_hoburg.png
+#armor
+#enditem

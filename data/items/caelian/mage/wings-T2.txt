@@ -1,0 +1,176 @@
+--- Hands belonging to an armor set should be given id of the lowest prot armor they go with if you want to avoid naked people with plate gloves.
+
+#newitem
+#id spirehornwings
+#gameid -1
+#sprite /graphics/caelian/spirehornwings.png
+#basechance 1000
+#theme spirehorn
+#needs overlay spirehornwings
+#define "#coldres +5"
+#define "#shockres +5"
+#define "#stormimmune"
+#define "#flying"
+#subrace "Spire Horn"
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id airyawings
+#gameid -1
+#sprite /graphics/caelian/airyawings.png
+#basechance 10000
+#theme airya
+#needs overlay airyawings
+#define "#hp -1"
+#define "#mr +1"
+#define "#str -1"
+#define "#coldres +15"
+#define "#flying"
+#subrace "Airya"
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id raptorwings
+#gameid -1
+#sprite /graphics/caelian/raptorwings.png
+#basechance 1000
+#theme raptor
+#needs overlay raptorwings
+#define "#hp +1"
+#define "#mr -1"
+#define "#mor +1"
+#define "#att +1"
+#define "#def +1"
+#define "#prec -1"
+#define "#flying"
+#subrace "Raptor"
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id yazatawings
+#gameid -1
+#sprite /graphics/caelian/yazatawings.png
+#basechance 1
+#theme yazata
+#needs overlay yazatawings
+#define "#gcost 35"
+#define "#hp +6"
+#define "#mr +4"
+#define "#mor +4"
+#define "#str +2"
+#define "#att +3"
+#define "#def +3"
+#define "#prec +1"
+#define "#enc -2"
+#define "#ap +5"
+#define "#maxage 300"
+#define "#coldres +5"
+#define "#shockres +10"
+#define "#awe +2"
+#define "#magicbeing"
+#define "#stormimmune"
+#define "#flying"
+#subrace "Yazata"
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id daevawings
+#gameid -1
+#sprite /graphics/caelian/daevawings.png
+#basechance 1
+#theme daeva
+#needs overlay daevawings
+#define "#gcost 35"
+#define "#hp +6"
+#define "#mr +4"
+#define "#mor +4"
+#define "#str +2"
+#define "#att +3"
+#define "#def +3"
+#define "#prec +1"
+#define "#enc -2"
+#define "#ap +5"
+#define "#maxage 300"
+#define "#fireres +5"
+#define "#shockres +5"
+#define "#chaospower +1"
+#define "#fear +5"
+#define "#demon"
+#define "#flying"
+#subrace "Daeva"
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id mairyawings
+#gameid -1
+#sprite /graphics/caelian/mairyawings.png
+#basechance 10000
+#theme mairya
+#needs overlay mairyawings
+#define "#gcost 16"
+#define "#hp +2"
+#define "#mor +2"
+#define "#str +1"
+#define "#att +2"
+#define "#def +2"
+#define "#prec -1"
+#define "#flying"
+#subrace "Mairya"
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id hybridwings
+#gameid -1
+#sprite /graphics/caelian/hybridwings.png
+#basechance 250
+#theme hybrid
+#needs overlay hybridwings
+#define "#hp +1"
+#define "#mr -1"
+#define "#mor +1"
+#define "#att +1"
+#define "#def +1"
+#define "#prec -1"
+#define "#coldres +5"
+#define "#flying"
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id nowings
+#gameid -1
+#basechance 5
+#theme wingless
+#needs overlay nowings
+#define "#size 2"
+#define "#hp -1"
+#define "#mor +4"
+#define "#str -1"
+#define "#enc -1"
+#unitcommand "#mapmove 2"
+#unitcommand "#ap 12"
+#subrace "Wingless"
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem

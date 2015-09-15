@@ -5,7 +5,6 @@
 
 --- Additional bronze armors
 
-
 #new customarmor
 #name bronzescale_full
 #armor
@@ -26,6 +25,96 @@
 #command "#enc 6"
 #command "#rcost 22"
 #command "#name 'Bronze Full Plate Mail'"
+#end
+
+--- Additional bronze weapons
+
+#new customweapon
+#name "nonferrousdagger"
+#command "#att +1"
+#command "#dmg 2"
+#command "#name 'Dagger'"
+#command "#pierce"
+#end
+
+#new customweapon
+#name "bronzebroadsword"
+#command "#def +1"
+#command "#dmg 5"
+#command "#len 2"
+#command "#rcost 4"
+#command "#name 'Bronze Broad Sword'"
+#command "#slash"
+#end
+
+#new customweapon
+#name "bronzeclaymore"
+#command "#att +1"
+#command "#def +1"
+#command "#dmg 9"
+#command "#len 3"
+#command "#rcost 6"
+#command "#name 'Bronze Claymore'"
+#command "#slash"
+#command "#twohanded"
+#end
+
+#new customweapon
+#name "bronzebattleaxe"
+#command "#att +1"
+#command "#dmg 8"
+#command "#len 3"
+#command "#rcost 4"
+#command "#name 'Bronze Battleaxe'"
+#command "#slash"
+#command "#twohanded"
+#end
+
+#new customweapon
+#name "bronzeglaive"
+#command "#att -1"
+#command "#def +1"
+#command "#dmg 9"
+#command "#len 4"
+#command "#rcost 5"
+#command "#name 'Bronze Glaive'"
+#command "#slash"
+#command "#pierce"
+#command "#twohanded"
+#end
+
+#new customweapon
+#name "bronzehalberd"
+#command "#att -1"
+#command "#def +1"
+#command "#dmg 9"
+#command "#len 4"
+#command "#rcost 5"
+#command "#name 'Bronze Halberd'"
+#command "#slash"
+#command "#pierce"
+#command "#twohanded"
+#end
+
+#new customweapon
+#name "bronzebardiche"
+#command "#def -1"
+#command "#dmg 5"
+#command "#len 5"
+#command "#rcost 5"
+#command "#name 'Bronze Bardiche'"
+#command "#slash"
+#command "#twohanded"
+#end
+
+#new customweapon
+#name "ironkopesh"
+#command "#dmg 6"
+#command "#len 2"
+#command "#rcost 2"
+#command "#name 'Iron Kopesh'"
+#command "#slash"
+#ironweapon
 #end
 
 --- Siddhe Golden Axe
@@ -127,7 +216,7 @@
 #command "#slash"
 #end
 
---- Hoburg nostr greatclub for caveman cavalry
+--- Hoburg nostr clubs for caveman cavalry
 
 #new customweapon
 #name "nostr_greatclub"
@@ -138,6 +227,17 @@
 #command "#nostr"
 #command "#bonus"
 #command "#name 'Great Club'"
+#command "#blunt"
+#end
+
+#new customweapon
+#name "nostr_fossilclub"
+#command "#att -1"
+#command "#dmg 27"
+#command "#len 3"
+#command "#nostr"
+#command "#bonus"
+#command "#name 'Stone Club'"
 #command "#blunt"
 #end
 
@@ -619,6 +719,7 @@
 #command "#name 'Basalt Cap'"
 #end
 
+-- Should be depricated everywhere in favor of id 211
 #new customarmor
 #armor
 #name atl_meteoritecap-s
