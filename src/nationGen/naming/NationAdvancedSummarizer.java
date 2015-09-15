@@ -236,7 +236,19 @@ public class NationAdvancedSummarizer {
 		// Gear
 		String line = "** " + u.getName();
 		
-		if(Generic.containsTag(u.pose.tags, "subrace"))
+		String subrace = null;
+		
+		for(String str : u.slotmap.keySet())
+		{
+			if(u.getSlot(str) == null)
+				continue;
+			if(Generic.containsTag(u.getSlot(str).tags, "subrace"))
+				subrace = Generic.getTagValue(u.getSlot(str).tags, "subrace");
+		}
+		
+		if(subrace != null)
+			line = line + " (" + u.race.name  + " - " + subrace +  "), ";
+		else if(Generic.containsTag(u.pose.tags, "subrace"))
 			line = line + " (" + u.race.name  + " - " + Generic.getTagValue(u.pose.tags, "subrace") +  "), ";
 		else
 			line = line + " (" + u.race.name +  "), ";
