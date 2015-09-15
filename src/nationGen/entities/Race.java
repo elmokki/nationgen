@@ -96,11 +96,11 @@ public class Race extends Filter {
 		{
 			List<String> args2 = Generic.parseArgs(tags.get(i));
 			
-			if(args.size() != args2.size() || args.size() < 2 || !args.get(1).equals(args2.get(1)))
+			if(args.size() != args2.size())
 				continue;
 			
 			boolean ok = true;
-			for(int j = 1; j < args.size() - 1; j++)
+			for(int j = 0; j < args.size() - 1; j++)
 			{
 				if(args.get(j).startsWith("\'") || args.get(j).startsWith("\""))
 					args.set(j, args.get(j).substring(1));
@@ -110,10 +110,8 @@ public class Race extends Filter {
 				if(!args.get(j).equals(args2.get(j)))
 				{
 					ok = false;
-					break;
+					continue;
 				}
-
-
 
 			}
 			
@@ -254,15 +252,12 @@ public class Race extends Filter {
 
 	public void addTheme(Theme t)
 	{
-		
 		themefilters.add(t);
-		
 		// Add race commands
 		for(String str2 : t.nationeffects)
 		{
 			addOwnLine(str2);
 		}
-
 	}
 	
 	public Race getCopy()
