@@ -1,12 +1,15 @@
 #newrace
 #name "Caelian"
 #basechance 0.25
+#basechance 10000
+
+#nationthemes caelian_themes
+#freetheme demographic
 
 #longsyllables /data/names/nations/caelian/longsyllables.txt
 #shortsyllables /data/names/nations/caelian/shortsyllables.txt
 #suffixes /data/names/nations/caelian/suffixes.txt
 
-#nationcommand "#idealcold +2"
 #unitcommand "#gcost 10"
 #unitcommand "#size 3"
 #unitcommand "#ressize 2"
@@ -23,17 +26,13 @@
 #unitcommand "#maxage 50"
 #unitcommand "#nametype 111"
 
-#magicpriority air 12
-
 #pose caeliantroops
 #pose caelianmages
+
 #gods agarthagods
 
 #all_troops_elite
 #all_troops_sacred
-
--- This should get moved into a Raptor theme once those get defined
-#nationcommand "#likespop 34"
 
 #chanceinc "primaryrace lizard *0.25"
 #chanceinc "primaryrace abysian *0.125"
@@ -41,6 +40,5 @@
 
 #monsterchance 0.75
 
-#strongmagicpatterns
 #description "Caelians make poor fighters. They are of lighter stock than humans and their wings make them slow in hand-to-hand combat. But the ability of flight has other benefits and makes Caelian armies quick and unpredictable."
 #endrace
