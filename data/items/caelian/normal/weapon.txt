@@ -5,6 +5,7 @@
 #gameid 17
 #sprite /graphics/weapon/standard/axe.png
 #theme "primitive"
+#theme "iron"
 #tag "name infantry axeman"
 #tag "name commander warlord"
 #tag "name commander warchief"
@@ -15,6 +16,7 @@
 #id broadsword
 #gameid 8
 #sprite /graphics/weapon/standard/broadsword.png
+#theme "iron"
 #tag "name infantry swordsman"
 #tag "name commander captain"
 #tag "name commander swordsmaster"
@@ -24,6 +26,7 @@
 #id flail
 #gameid 16
 #sprite /graphics/weapon/standard/flail.png
+#theme "iron"
 #enditem
 
 #newitem
@@ -31,6 +34,7 @@
 #gameid 18
 #sprite /graphics/weapon/standard/greataxe.png
 #theme "primitive"
+#theme "iron"
 #tag "name infantry axeman"
 #tag "name commander warlord"
 #tag "name commander warchief"
@@ -41,9 +45,11 @@
 #id halberd
 #gameid 5
 #sprite /graphics/weapon/standard/halberd.png
+#theme "iron"
 #tag "name infantry halberdier"
 #tag "name commander captain"
 #theme "advanced"
+#theme "formationfighter"
 #minprot 8
 #enditem
 
@@ -51,6 +57,7 @@
 #id bardiche
 #gameid 257
 #sprite /graphics/weapon/standard/bardiche.png
+#theme "iron"
 #tag "name commander warchief"
 #tag "name commander warlord"
 #enditem
@@ -59,6 +66,7 @@
 #id hammer
 #gameid 13
 #sprite /graphics/weapon/standard/hammer.png
+#theme "iron"
 #chanceinc unittag irregular 8
 #enditem
 
@@ -66,8 +74,10 @@
 #id longspear
 #gameid 28
 #sprite /graphics/weapon/standard/longspear.png
+#theme "iron"
 #tag "name infantry spearman"
 #tag "name commander captain"
+#theme "formationfighter"
 #enditem
 
 #newitem
@@ -90,12 +100,14 @@
 #id morningstar
 #gameid 15
 #sprite /graphics/weapon/standard/morningstar.png
+#theme "iron"
 #enditem
 
 #newitem
 #id shortsword
 #gameid 6
 #sprite /graphics/weapon/standard/shortsword.png
+#theme "iron"
 #tag "name commander captain"
 #enditem
 
@@ -103,13 +115,16 @@
 #id lightlance
 #gameid 357
 #sprite /graphics/weapon/standard/spear.png
+#theme "iron"
 #tag "name infantry lancer"
+#theme "formationfighter"
 #enditem
 
 #newitem
 #id trident
 #gameid 3
 #sprite /graphics/weapon/standard/trident.png
+#theme "iron"
 #tag "prefix trident"
 #basechance 0.25
 #enditem
@@ -124,8 +139,10 @@
 #id pike
 #gameid 2
 #sprite /graphics/weapon/standard/pike.png
+#theme "iron"
 #tag "name infantry pikeman"
 #tag "name commander captain"
+#theme "formationfighter"
 #enditem
 
 
@@ -133,6 +150,7 @@
 #id falchion
 #gameid 10
 #sprite /graphics/weapon/standard/falchion.png
+#theme "iron"
 #tag "name infantry falchioneer"
 #enditem
 
@@ -140,6 +158,7 @@
 #id quarterstaff
 #gameid 7
 #sprite /graphics/weapon/standard/quarterstaff.png
+#theme "wood"
 #basechance 0.125
 #maxprot 10
 #enditem
