@@ -12,6 +12,7 @@
 #sprite /graphics/weapon/2h/zweihander.png
 #tag "name infantry swordsman"
 #tag "name commander swordsmaster"
+#theme "iron"
 #enditem
 
 #newitem
@@ -21,4 +22,15 @@
 #tag "name infantry swordsman"
 #tag "name commander swordsmaster"
 #basechance 0.25
+#theme "iron"
+#enditem
+
+#newitem
+#id bronze_claymore
+#gameid bronzeclaymore
+#sprite /graphics/weapon/bronze/claymore.png
+#tag "name infantry swordsman"
+#tag "name commander swordsmaster"
+#basechance 0.125
+#theme "bronze"
 #enditem

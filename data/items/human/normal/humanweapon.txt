@@ -4,6 +4,7 @@
 #id axe
 #gameid 17
 #sprite /graphics/weapon/standard/axe.png
+#theme "iron"
 #theme "primitive"
 #theme "austral"
 #theme "boreal"
@@ -15,6 +16,7 @@
 #id broadsword
 #gameid 8
 #sprite /graphics/weapon/standard/broadsword.png
+#theme "iron"
 #theme "austral"
 #theme "boreal"
 #enditem
@@ -23,6 +25,7 @@
 #id flail
 #gameid 16
 #sprite /graphics/weapon/standard/flail.png
+#theme "iron"
 #theme "austral"
 #theme "boreal"
 #theme "central"
@@ -32,6 +35,7 @@
 #id greataxe
 #gameid 18
 #sprite /graphics/weapon/standard/greataxe.png
+#theme "iron"
 #theme "primitive"
 #theme "austral"
 #theme "boreal"
@@ -43,6 +47,7 @@
 #id halberd
 #gameid 5
 #sprite /graphics/weapon/standard/halberd.png
+#theme "iron"
 #theme "austral"
 #theme "boreal"
 #theme "central"
@@ -55,6 +60,7 @@
 #id bardiche
 #gameid 257
 #sprite /graphics/weapon/standard/bardiche.png
+#theme "iron"
 #theme "austral"
 #theme "boreal"
 #enditem
@@ -63,6 +69,7 @@
 #id hammer
 #gameid 13
 #sprite /graphics/weapon/standard/hammer.png
+#theme "iron"
 #theme "austral"
 #theme "boreal"
 #theme "central"
@@ -72,6 +79,7 @@
 #id longspear
 #gameid 28
 #sprite /graphics/weapon/standard/longspear.png
+#theme "iron"
 #theme "austral"
 #theme "boreal"
 #theme "central"
@@ -106,6 +114,7 @@
 #id morningstar
 #gameid 15
 #sprite /graphics/weapon/standard/morningstar.png
+#theme "iron"
 #theme "austral"
 #theme "boreal"
 #theme "central"
@@ -115,9 +124,18 @@
 #id shortsword
 #gameid 6
 #sprite /graphics/weapon/standard/shortsword.png
+#theme "iron"
 #theme "austral"
 #theme "boreal"
 #theme "central"
+#enditem
+
+#newitem
+#id kopesh
+#gameid ironkopesh
+#theme "iron"
+#theme "austral"
+#theme "oriental"
 #enditem
 
 #newitem
@@ -125,6 +143,7 @@
 #gameid 1
 #sprite /graphics/weapon/standard/spear.png
 #tag "name infantry spearman"
+#theme "iron"
 #theme "austral"
 #theme "boreal"
 #theme "central"
@@ -136,11 +155,25 @@
 #id trident
 #gameid 3
 #sprite /graphics/weapon/standard/trident.png
+#theme "iron"
 #theme "austral"
 #theme "boreal"
 #theme "central"
 #theme "occidental"
 #tag "prefix trident"
+#basechance 0.25
+#theme formationfighter
+#enditem
+
+#newitem
+#id spetum
+#gameid 639
+#sprite /graphics/weapon/standard/spetum.png
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#tag "prefix spetum"
 #basechance 0.25
 #theme formationfighter
 #enditem
@@ -155,6 +188,7 @@
 #id pike
 #gameid 2
 #sprite /graphics/weapon/standard/pike.png
+#theme "iron"
 #theme "austral"
 #theme "boreal"
 #theme "central"
@@ -167,6 +201,7 @@
 #id falchion
 #gameid 10
 #sprite /graphics/weapon/standard/falchion.png
+#theme "iron"
 #theme "austral"
 #theme "boreal"
 #enditem
@@ -175,6 +210,7 @@
 #id quarterstaff
 #gameid 7
 #sprite /graphics/weapon/standard/quarterstaff.png
+#theme "wood"
 #theme "austral"
 #theme "boreal"
 #theme "central"

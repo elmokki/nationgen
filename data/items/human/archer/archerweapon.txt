@@ -4,6 +4,7 @@
 #theme "primitive"
 #theme "iron"
 #eliteversion axe
+#theme "iron"
 #theme "austral"
 #theme "boreal"
 #theme "central"
@@ -113,6 +114,7 @@
 #theme "oriental"
 #eliteversion mace
 #eliteversion hammer
+#eliteversion bronze_hammer
 #enditem
 
 #newitem
@@ -125,7 +127,9 @@
 #theme "occidental"
 #theme "abysian"
 #eliteversion hammer
+#eliteversion bronze_hammer
 #eliteversion morningstar
+#eliteversion bronze_morningstar
 #enditem
 
 --- Heavier, elite archer weapons
@@ -181,6 +185,17 @@
 #enditem
 
 #newitem
+#id bronze_hammer
+#gameid 13
+#theme "elite"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
 #id morningstar
 #gameid 15
 #theme "elite"
@@ -189,4 +204,15 @@
 #theme "boreal"
 #theme "central"
 #theme "abysian"
+#enditem
+
+#newitem
+#id bronze_morningstar
+#gameid bronzemorningstar
+#theme "elite"
+#theme "bronze"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "advanced"
 #enditem

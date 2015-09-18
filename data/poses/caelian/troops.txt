@@ -3,8 +3,6 @@
 
 #newpose
 #role "infantry"
--- #role "sacred infantry"
--- #role "elite infantry"
 #role "scout"
 
 #renderorder "shadow cloakb wings basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
@@ -19,7 +17,9 @@
 #load armor /data/items/caelian/normal/armor.txt
 
 #load weapon /data/items/caelian/normal/weapon.txt 2 7
+#load weapon /data/items/caelian/normal/weapon_bronze.txt 2 7
 #load offhand /data/items/human/normal/humanoffhand.txt -3 2
+#load offhand /data/items/human/normal/humanoffhand_bronze.txt -3 2
 #load offhand /data/items/human/normal/shields.txt 0 2
 
 #load helmet /data/items/human/normal/humanhelmet.txt 0 4
@@ -41,8 +41,6 @@
 
 #newpose
 #role "ranged"
--- #role "sacred ranged"
--- #role "elite ranged"
 
 #renderorder "shadow cloakb wings basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -76,8 +74,6 @@
 #newpose
 #theme advanced
 #role "ranged"
--- #role "sacred ranged"
--- #role "elite ranged"
 #basechance 0.33
 
 #renderorder "shadow cloakb wings basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"

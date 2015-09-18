@@ -38,6 +38,30 @@
 #end
 
 #new customweapon
+#name "bronzehammer"
+#command "#def -1"
+#command "#dmg 6"
+#command "#len 1"
+#command "#rcost 3"
+#command "#name 'Hammer'"
+#command "#pierce"
+#command "#blunt"
+#end
+
+#new customweapon
+#name "bronzemorningstar"
+#command "#att +1"
+#command "#def -2"
+#command "#dmg 5"
+#command "#len 2"
+#command "#rcost 3"
+#command "#name 'Morningstar'"
+#command "#pierce"
+#command "#blunt"
+#command "#flail"
+#end
+
+#new customweapon
 #name "bronzebroadsword"
 #command "#def +1"
 #command "#dmg 5"
