@@ -2,121 +2,28 @@
 --- Leather
 
 #newitem
-#name "leather cuirass 1"
+#name "leather cuirass"
 #gameid 5
 #sprite /graphics/caelian/armor/leathercuirass.png
 #armor
+#theme "leather"
 #enditem
 
 #newitem
-#name "leather hauberk 1"
+#name "leather hauberk"
 #gameid 10
 #sprite /graphics/caelian/armor/leatherhauberk.png
 #armor
+#theme "leather"
 #enditem
 
-
-
 #newitem -- full leather
-#newitem
 #name "full leather"
 #gameid 15
 #sprite /graphics/caelian/armor/leatherhauberk.png
 #needs legs leatherpants
 #armor
-#enditem
-
-
---- Chain Mail
-
-
-#newitem
-#name "chain cuirass"
-#gameid 8
-#sprite /graphics/caelian/armor/mailcuirass.png
-#armor
-#enditem
-
-
-#newitem
-#name "chain hauberk short"
-#gameid 13
-#sprite /graphics/caelian/armor/mailhauberk.png
-#armor
-#enditem
-
-
-#newitem -- full chain
-#name "full chain"
-#gameid 18
-#sprite /graphics/caelian/armor/mailhauberk.png
-#armor
-#theme "advanced"
-#needs legs mailpants
-#tag "name mounted knight"
-#enditem
-
-
---- Scale
-
-#newitem
-#name "scale cuirass"
-#gameid 7
-#sprite /graphics/caelian/armor/mailcuirass.png
-#armor
-#enditem
-
-
-#newitem
-#name "scale hauberk short"
-#gameid 12
-#sprite /graphics/caelian/armor/mailhauberk.png
-#armor
-#enditem
-
-
-
-#newitem -- full scale
-#name "full scale"
-#gameid 17
-#sprite /graphics/caelian/armor/mailhauberk.png
-#armor
-#needs legs mailpants
-#theme "advanced"
-#enditem
-
-
---- Plate
-
-
-#newitem
-#name "plate cuirass"
-#gameid 9
-#sprite /graphics/caelian/armor/platecuirass.png
-#armor
-#theme "advanced"
-#enditem
-
-
-#newitem
-#name "plate hauberk"
-#gameid 14
-#sprite /graphics/caelian/armor/platehauberk.png
-#armor
-#theme "advanced"
-#tag "name mounted knight"
-#enditem
-
-
-#newitem -- full plate
-#name "full plate"
-#gameid 19
-#sprite /graphics/caelian/armor/platehauberk.png
-#armor
-#theme "advanced"
-#needs legs platepants
-#tag "name mounted knight"
-#maxvarieties 1
+#theme "leather"
 #enditem
 
 
@@ -127,23 +34,255 @@
 #gameid 6
 #sprite /graphics/caelian/armor/ringcuirass.png
 #armor
+#theme "iron"
+#theme "leather"
 #enditem
 
-
 #newitem
-#name "ring hauberk short"
+#name "ring hauberk"
 #gameid 11
 #sprite /graphics/caelian/armor/ringhauberk.png
 #armor
+#theme "iron"
+#theme "leather"
 #enditem
-
-
 
 #newitem -- full ring
 #name "full ring"
 #gameid 16
 #sprite /graphics/caelian/armor/ringhauberk.png
 #armor
+#theme "iron"
+#theme "leather"
 #needs legs ringpants
 #enditem
 
+#newitem
+#name "bronze ring cuirass"
+#gameid 6
+#sprite /graphics/caelian/armor/ringcuirass_bronze.png
+#armor
+#theme "bronze"
+#theme "leather"
+#enditem
+
+#newitem
+#name "bronze ring hauberk"
+#gameid 11
+#sprite /graphics/caelian/armor/ringhauberk_bronze.png
+#armor
+#theme "bronze"
+#theme "leather"
+#enditem
+
+#newitem -- full ring
+#name "bronze full ring"
+#gameid 16
+#sprite /graphics/caelian/armor/ringhauberk_bronze.png
+#armor
+#theme "bronze"
+#theme "leather"
+#needs legs ringpants_bronze
+#enditem
+
+
+--- Scale
+#newitem
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/caelian/armor/mailcuirass.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "scale hauberk"
+#gameid 12
+#sprite /graphics/caelian/armor/mailhauberk.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem -- full scale
+#name "full scale"
+#gameid 17
+#sprite /graphics/caelian/armor/mailfull.png
+#armor
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem
+#name "bronze scale cuirass"
+#gameid 142
+#sprite /graphics/caelian/armor/mailcuirass_bronze.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#name "bronze scale hauberk"
+#gameid 136
+#sprite /graphics/caelian/armor/mailhauberk_bronze.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem -- full scale
+#name "bronze full scale"
+#gameid bronzescale_full
+#sprite /graphics/caelian/armor/mailfull_bronze.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+
+--- Chain Mail
+#newitem
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/caelian/armor/mailcuirass.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "chain hauberk"
+#gameid 13
+#sprite /graphics/caelian/armor/mailhauberk.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem -- full chain
+#name "full chain"
+#gameid 18
+#sprite /graphics/caelian/armor/mailfull.png
+#armor
+#theme "advanced"
+#theme "iron"
+#needs legs mailpants
+#enditem
+
+
+--- Plate
+
+#newitem
+#name "plate cuirass"
+#gameid 9
+#sprite /graphics/caelian/armor/platecuirass.png
+#armor
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem
+#name "plate hauberk"
+#gameid 14
+#sprite /graphics/caelian/armor/platehauberk.png
+#armor
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem -- full plate
+#name "full plate"
+#gameid 19
+#sprite /graphics/caelian/armor/platefull.png
+#armor
+#theme "advanced"
+#needs legs platepants
+#theme "iron"
+#maxvarieties 1
+#enditem
+
+#newitem
+#name "bronze plate cuirass"
+#gameid 100
+#sprite /graphics/caelian/armor/platecuirass_bronze.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#name "bronze plate hauberk"
+#gameid 101
+#sprite /graphics/caelian/armor/platehauberk_bronze.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem -- full plate
+#name "bronze full plate"
+#gameid bronzeplate_full
+#sprite /graphics/caelian/armor/platefull.png
+#armor
+#theme "advanced"
+#needs legs platepants_bronze
+#theme "bronze"
+#maxvarieties 1
+#enditem
+
+
+--- Ice armor
+
+#newitem
+#name "icestudded cuirass"
+#gameid icestudded_cuirass
+#sprite /graphics/caelian/armor/icestuddedcuirass.png
+#needs legs leatherpants
+#armor
+#theme "leather"
+#theme "ice"
+#define "#iceprot 1"
+#enditem
+
+#newitem
+#name "icestudded armor"
+#gameid 52
+#sprite /graphics/caelian/armor/icestuddedhauberk.png
+#needs legs icepants
+#armor
+#theme "leather"
+#theme "ice"
+#define "#iceprot 1"
+#enditem
+
+#newitem
+#name "icicle cuirass"
+#gameid icicle_cuirass
+#sprite /graphics/caelian/armor/iciclecuirass.png
+#armor
+#theme "ice"
+#define "#iceprot 2"
+#enditem
+
+#newitem
+#name "icicle mail"
+#gameid 133
+#sprite /graphics/caelian/armor/iciclehauberk.png
+#armor
+#theme "ice"
+#define "#iceprot 2"
+#enditem
+
+#newitem
+#name "ice cuirass"
+#gameid 26
+#sprite /graphics/caelian/armor/icecuirass.png
+#armor
+#theme "ice"
+#define "#iceprot 2"
+#enditem
+
+#newitem
+#name "ice hauberk"
+#gameid 26
+#sprite /graphics/caelian/armor/icehauberk.png
+#armor
+#theme "ice"
+#define "#iceprot 2"
+#enditem
