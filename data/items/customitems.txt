@@ -3,6 +3,30 @@
 --- Use exact syntax you'd use for dom3 except for #newweapon, #newarmor and #end
 --- Remember #type for armor.
 
+--- Additional ice armors
+
+#new customarmor
+#name icestudded_cuirass
+#armor
+#command "#type 5"
+#command "#prot 6"
+#command "#def -1"
+#command "#enc 0"
+#command "#rcost 3"
+#command "#name 'Ice Studded Cuirass'"
+#end
+
+#new customarmor
+#name icicle_cuirass
+#armor
+#command "#type 5"
+#command "#prot 8"
+#command "#def -1"
+#command "#enc 1"
+#command "#rcost 7"
+#command "#name 'Ice Studded Cuirass'"
+#end
+
 --- Additional bronze armors
 
 #new customarmor
