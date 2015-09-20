@@ -1,5 +1,6 @@
 package nationGen.rostergeneration;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -45,7 +46,8 @@ public class MonsterGenerator {
 		
 		Pose pose = new Pose(ng);
 		
-		ShapeShift p = ShapeShift.getRandom(rand, chandler.handleChanceIncs(poses));
+		List<Unit> units = new ArrayList<Unit>();
+		ShapeShift p = ShapeShift.getRandom(rand, chandler.handleChanceIncs(units, poses, null, n.races.get(0)));
 	
 		
 		ShapeChangeUnit u = new ShapeChangeUnit(ng, r, pose, null, p);
