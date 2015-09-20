@@ -112,12 +112,12 @@ public class ChanceIncHandler {
 	{
 		List<Unit> units = new ArrayList<Unit>();
 		units.add(u);
-		return handleChanceIncs(units, filters, extraincs, null);
+		return handleChanceIncs(units, filters, extraincs);
 	}
 	
 	public <T extends Filter> LinkedHashMap<T, Double> handleChanceIncs(List<Unit> u, List<T> filters)
 	{
-		return handleChanceIncs(u, filters, null, null);
+		return handleChanceIncs(u, filters, null);
 	}
 	
 	
@@ -125,19 +125,15 @@ public class ChanceIncHandler {
 	 * The main method for handling chanceincs.
 	 * @param u
 	 * @param filters
-	 * @param fixedRace: this allows the method to override its setting of race baced on u[0].race; this is currently only used so that monsters can process themeincs
 	 * @return
 	 */
-	public <T extends Filter> LinkedHashMap<T, Double> handleChanceIncs(List<Unit> u, List<T> filters, List<String> extraincs, Race fixedRace)
+	public <T extends Filter> LinkedHashMap<T, Double> handleChanceIncs(List<Unit> u, List<T> filters, List<String> extraincs)
 	{
 		
 	
 		Race race = null;
 		if(u.size() > 0 && getRaceThemeIncs(u.get(0).race) != null)
 			race = u.get(0).race;
-		else if(fixedRace != null && getRaceThemeIncs(fixedRace) != null)
-			race = fixedRace;
-
 
 		LinkedHashMap<T, Double> set = new LinkedHashMap<T, Double>();
 		for(T t : filters)
