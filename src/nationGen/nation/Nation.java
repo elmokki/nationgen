@@ -48,6 +48,7 @@ import nationGen.rostergeneration.MonsterGenerator;
 import nationGen.rostergeneration.RosterGenerator;
 import nationGen.rostergeneration.SacredGenerator;
 import nationGen.rostergeneration.ScoutGenerator;
+import nationGen.rostergeneration.SpecialCommanderGenerator;
 import nationGen.units.ShapeChangeUnit;
 import nationGen.units.Unit;
 
@@ -306,6 +307,18 @@ public class Nation {
 			comlists.get("scouts").add(scoutgen.generateScout(races.get(0)));
 		else if(races.get(1).hasRole("scout") && !races.get(1).tags.contains("#no_scouts"))
 			comlists.get("scouts").add(scoutgen.generateScout(races.get(1)));
+
+		// Special commanders
+
+		double specialcomchance = 0.05;
+		if(Generic.containsTag(races.get(0).tags, "specialcommanderchance"))
+			specialcomchance = Double.parseDouble(Generic.getTagValue(races.get(0).tags, "monsterchance"));
+		
+		if(random.nextDouble() < specialcomchance)
+		{
+			SpecialCommanderGenerator scg = new SpecialCommanderGenerator(this, nationGen);
+			scg.generate();
+		}
 
 
 		// Gods
@@ -1081,7 +1094,7 @@ public class Nation {
 	{
 		List<String> order = Generic.parseArgs("ranged infantry mounted chariot special sacred monsters");
 		if(coms)
-			order = Generic.parseArgs("scouts commanders priests mages");
+			order = Generic.parseArgs("scouts commanders specialcoms priests mages");
 		
 		String line = "#addreccom";
 		if(!coms)

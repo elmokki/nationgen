@@ -39,14 +39,15 @@ public class Filter extends Entity {
 			else if(args.get(0).equals("#themeinc"))
 			{
 				args.remove(0);
-				this.themeincs.add(Generic.listToString(args));
+				this.themeincs.add(Generic.listToString(args, "", "'"));
+				
 			}
 			else if(args.get(0).equals("#type") || args.get(0).equals("#category"))
 				this.types.add(args.get(1));
 			else if(args.get(0).equals("#chanceinc"))
 			{
 				args.remove(0);
-				this.chanceincs.add(Generic.listToString(args));
+				this.chanceincs.add(Generic.listToString(args, "", "'"));
 			}
 			else if(args.get(0).equals("#power"))
 				this.power = Integer.parseInt(args.get(1));

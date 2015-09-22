@@ -1,0 +1,250 @@
+--- Usable special stuff that may be badly documented
+--
+-- #pose role/name <thing>
+-- Uses poses of <thing> name or role
+--
+-- #requiredposetag <tag>
+-- #requiredposetheme <theme>
+-- Excludes poses without this tag/theme
+--
+-- #equipmenttargettag <tag>
+-- Equipment will have to have this tag when it is available. 
+-- This is for "tier 1-3" for mage/priest type poses, but themeincs work well as well.
+--
+-- #troop
+-- This is a troop instead of commander (I'm looking at you, communion slave)
+--
+-- Extra tip: #generateitem works here like it should in all filters/equipment
+-- Extra tip: Special commanders get #poorleader or #noleader if nothing is specified
+
+
+#new
+#name "pearl maker"
+#command "#makepearls 1"
+#command "#gcost +10"
+#unitname "Pearl Cultivator"
+#unitname "Master of Pearls"
+#basechance 0
+#caponlychance 0.7
+#chanceinc magic astral water 1
+#chanceinc magic water 0.1
+#description "is able to turn water gems into astral pearls."
+#pose role mage
+#themeinc thisitemtag "tier 1" *100
+#themeinc thisitemtag "tier 2" *25
+#themeinc thisitemtag "tier 3" *0
+#end
+
+#new
+#name "pearl maker2"
+#command "#makepearls 2"
+#command "#gcost +20"
+#unitname "Pearl Cultivator"
+#unitname "Master of Pearls"
+#basechance 0
+#caponlychance 0.7
+#chanceinc magic astral water 0.5
+#chanceinc magic water 0.05
+#description "is able to turn water gems into astral pearls."
+#pose role mage
+#themeinc thisitemtag "tier 1" *100
+#themeinc thisitemtag "tier 2" *25
+#themeinc thisitemtag "tier 3" *0
+#end
+
+#new
+#name "imp summoner"
+#command "#makemonsters1 303"
+#command "#gcost +30"
+#unitname "Imp Summoner"
+#basechance 0
+#chanceinc magic blood 0.5
+#caponlychance 1
+#description "is able to summon imps via ancient rituals."
+#theme "toadtotem"
+#theme "totemanimal"
+#pose role mage
+#themeinc theme cultist *100
+#themeinc thisitemtag "tier 1" *100
+#themeinc thisitemtag "tier 2" *25
+#themeinc thisitemtag "tier 3" *0
+#end
+
+#new
+#name "frog summoner"
+#command "#makemonsters2 2222"
+#command "#gcost +30"
+#unitname "Frogherd"
+#unitname "Frog Tamer"
+#basechance 0.05
+#chanceinc magic nature 0.5
+#caponlychance 0.8
+#description "is able to tame frogs."
+#theme "toadtotem"
+#theme "totemanimal"
+#pose role infantry
+#themeinc theme herder *100
+#themeinc theme peasant *100
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +40"
+#possiblecommand stealth "#gcost +20"
+#end
+
+#new
+#name "wolfherd"
+#command "#makemonsters1 284"
+#command "#gcost +30"
+#unitname "Woldherd"
+#unitname "Wolf Tamer"
+#basechance 0.1
+#chanceinc magic nature 0.5
+#caponlychance 0.99
+#description "is able to tame wolves."
+#theme "wolftotem"
+#theme "totemanimal"
+#pose role infantry
+#themeinc theme herder *100
+#themeinc theme peasant *100
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +40"
+#possiblecommand stealth "#gcost +20"
+#end
+
+#new
+#name "dogherd"
+#command "#makemonsters1 1560"
+#command "#gcost +30"
+#unitname "Houndsmaster"
+#unitname "Dog Trainer"
+#basechance 0.2
+#chanceinc magic nature 0.5
+#caponlychance 0.95
+#description "is able to train dogs."
+#pose role infantry
+#themeinc theme herder *100
+#themeinc theme peasant *100
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +40"
+#possiblecommand stealth "#gcost +20"
+#end
+
+#new
+#name "goatherd"
+#command "#makemonsters1 2227"
+#command "#gcost +30"
+#unitname "Shepherd"
+#basechance 0.15
+#chanceinc magic nature 0.5
+#caponlychance 0.95
+#description "is able to herd goats."
+#pose role infantry
+#themeinc theme herder *100
+#themeinc theme peasant *100
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +40"
+#possiblecommand stealth "#gcost +20"
+#end
+
+#new
+#name "ant summoner"
+#command "#makemonsters3 1087"
+#command "#gcost +30"
+#unitname "Antherd"
+#unitname "Ant Tamer"
+#unitname "Lord of Insects"
+#basechance 0.0
+#chanceinc magic nature 0.125
+#caponlychance 0.8
+#description "is able to tame ants."
+#theme "anttotem"
+#theme "totemanimal"
+#pose role infantry
+#themeinc theme herder *100
+#themeinc theme peasant *100
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +40"
+#possiblecommand stealth "#gcost +20"
+#end
+
+#new
+#name "fly summoner"
+#command "#makemonsters3 2218"
+#command "#gcost +30"
+#unitname "Lord of the Flies"
+#basechance 0.0
+#chanceinc magic nature 0.125
+#chanceinc magic death 0.05
+#chanceinc magic nature death 1
+#caponlychance 0.8
+#description "is able to tame flies."
+#pose role infantry
+#themeinc theme herder *100
+#themeinc theme peasant *100
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +40"
+#possiblecommand stealth "#gcost +20"
+#end
+
+#new
+#name "spider summoner"
+#command "#makemonsters3 2223"
+#command "#gcost +30"
+#unitname "Spiderbreeder"
+#unitname "Web Master"
+#unitname "Lord of Spiders"
+#basechance 0.0
+#chanceinc magic nature 0.125
+#chanceinc "command #poisonres 0.075"
+#caponlychance 0.8
+#description "is able to tame oversized spiders."
+#theme "spidertotem"
+#theme "totemanimal"
+#pose role infantry
+#themeinc theme herder *100
+#themeinc theme peasant *100
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +40"
+#possiblecommand stealth "#gcost +20"
+#end
+
+#new
+#name "scorpion summoner"
+#command "#makemonsters3 2232"
+#command "#gcost +30"
+#unitname "Scorpion Trainer"
+#unitname "Scorpion Master"
+#unitname "Scorpionherd"
+#basechance 0.0
+#chanceinc magic earth 0.125
+#chanceinc magic death 0.05
+#chanceinc magic fire 0.05
+#chanceinc magic earth death 0.5
+#chanceinc magic earth fire 0.5
+#chanceinc "command #poisonres 0.075"
+#caponlychance 0.8
+#description "is able to tame oversized scorpions."
+#theme "scorpiontotem"
+#theme "totemanimal"
+#pose role infantry
+#themeinc theme herder *100
+#themeinc theme peasant *100
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +40"
+#possiblecommand stealth "#gcost +20"
+#end
