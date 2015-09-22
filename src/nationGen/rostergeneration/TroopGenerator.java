@@ -877,7 +877,7 @@ public class TroopGenerator {
 			}
 			else
 			{
-				Item offhand = u.pose.getItems("offhand").filterArmor(false).getItemWithID(u.getSlot("weapon").id, "offhand");
+				Item offhand = chandler.getRandom(u.pose.getItems("offhand").filterArmor(false).getItemsWithID(u.getSlot("weapon").id, "offhand"), u);
 				if(offhand != null)
 					stuff.add(offhand);
 			}
