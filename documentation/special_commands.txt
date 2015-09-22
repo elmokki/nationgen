@@ -120,6 +120,12 @@ Loads given pose set
 #spritegenpose <set>
 Loads given pose set, but only in SpriteGen; this is principly useful for being able to load poses in SpriteGen that are normally only granted by themes
 
+#possiblecommandset <setname> <probability> 
+Defines a new set of commands that is given to units with given probability. Works on most filters as well.
+
+#possiblecommand <setname> <command>
+Defines a command to a set of #possiblecommandset commands
+
 --- Pose
 
 #magefilters <set>
@@ -148,6 +154,12 @@ the most powerful mages and H3 priests. Tier 2 is used for everything in between
 #generateitem <probability> <slot> 
 Generates an item in roster generation to given slot at given probability. Current use is mostly to generate a guaranteed bonusweapon
 to ranged units so they have something other than a fist for melee.
+
+#possiblecommandset <setname> <probability> 
+Defines a new set of commands that is given to units with given probability. Works on most filters as well.
+
+#possiblecommand <setname> <command>
+Defines a command to a set of #possiblecommandset commands
 
 #dwchancebonus <probability>
 Increases the probability of dual wielding (when there are offhand weapons and a short 1h mainhand weapon). Base probability is a random number
@@ -204,6 +216,12 @@ Only works for nation wide filters. Applies the filter only to commanders or onl
 
 #alwaysok
 Only for mage names. Always accepts this name part even if it does not match the required magic.
+
+#possiblecommandset <setname> <probability> 
+Defines a new set of commands that is given to units with given probability. Works on most filters as well.
+
+#possiblecommand <setname> <command>
+Defines a command to a set of #possiblecommandset commands
 
 --- Magic patterns
 #costpremium <price>
