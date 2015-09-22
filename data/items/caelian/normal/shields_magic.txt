@@ -1,0 +1,313 @@
+-- Gold-ish shields
+#newitem
+#id goldenbuckler
+#gameid 1
+#basechance 20000
+#sprite /graphics/offhand/standard/bronzebuckler.png
+#offsetx 0
+#offsety 2
+#armor
+#theme "yazata"
+#theme "daeva"
+#enditem
+
+#newitem
+#id goldenkite1
+#gameid 3
+#basechance 5000
+#sprite /graphics/offhand/sacred/goldenkite1.png
+#recolormask /graphics/offhand/standard/kite1_recolormask.png
+#offsetx 0
+#offsety 2
+#armor
+#theme "advanced"
+#theme "yazata"
+#theme "daeva"
+#theme "iron"
+#enditem
+
+#newitem
+#id goldenshield
+#gameid 155
+#basechance 5000
+#sprite /graphics/offhand/sacred/goldenshield.png
+#offsetx 0
+#offsety 2
+#theme "yazata"
+#theme "daeva"
+#armor
+#enditem
+
+#newitem
+#id goldenshield3
+#gameid 155
+#basechance 5000
+#sprite /graphics/offhand/sacred/goldenshield3.png
+#offsetx 0
+#offsety 2
+#theme "yazata"
+#theme "daeva"
+#armor
+#enditem
+
+#newitem
+#id goldenshield6
+#gameid 209
+#basechance 5000
+#sprite /graphics/offhand/sacred/goldenshield6.png
+#recolormask /graphics/offhand/standard/shield6_recolormask.png
+#offsetx 0
+#offsety 2
+#theme "yazata"
+#theme "daeva"
+#armor
+#enditem
+
+#newitem
+#id hoplon1
+#gameid 209
+#basechance 5000
+#sprite /graphics/offhand/standard/hoplon1.png
+#offsetx 0
+#offsety 2
+#theme "yazata"
+#theme "daeva"
+#armor
+#enditem
+
+#newitem
+#id hoplon2
+#gameid 209
+#basechance 5000
+#sprite /graphics/offhand/standard/hoplon2.png
+#offsetx 0
+#offsety 2
+#theme "yazata"
+#theme "daeva"
+#armor
+#enditem
+
+#newitem
+#id hoplon3
+#gameid 209
+#basechance 5000
+#sprite /graphics/offhand/standard/hoplon3.png
+#offsetx 0
+#offsety 2
+#theme "yazata"
+#theme "daeva"
+#armor
+#enditem
+
+
+-- Pathed kites
+#newitem
+#id kite_fire
+#gameid 3
+#basechance 0
+#chanceinc "magic fire 0.25"
+#chanceinc "personalcommand #summerpower 0.0625"
+#chanceinc "personalcommand #fireres 0.0625"
+#chanceinc "personalcommand #heat 0.0625"
+#chanceinc "personalcommand #firepower 0.0625"
+#chanceinc "magic fire *2"
+#sprite /graphics/offhand/sacred/kite_fire.png
+#offsetx 0
+#offsety 2
+#armor
+#theme "advanced"
+#theme "sacred"
+#theme "fire"
+#enditem
+
+#newitem
+#id kite_air
+#gameid 3
+#basechance 0
+#chanceinc "magic air 0.25"
+#chanceinc "personalcommand #springpower 0.0625"
+#chanceinc "personalcommand #shockres 0.0625"
+#chanceinc "personalcommand #illusion 0.0625"
+#chanceinc "personalcommand #stormpower 0.0625"
+#chanceinc "magic air *2"
+#sprite /graphics/offhand/sacred/kite_air.png
+#offsetx 0
+#offsety 2
+#armor
+#theme "advanced"
+#theme "sacred"
+#theme "air"
+#enditem
+
+#newitem
+#id kite_water
+#gameid 3
+#basechance 0
+#chanceinc "magic water 0.25"
+#chanceinc "personalcommand #winterpower 0.0625"
+#chanceinc "personalcommand #coldres 0.0625"
+#chanceinc "personalcommand #cold 0.0625"
+#chanceinc "personalcommand #coldpower 0.0625"
+#chanceinc "magic water *2"
+#sprite /graphics/offhand/sacred/kite_water.png
+#offsetx 0
+#offsety 2
+#armor
+#theme "advanced"
+#theme "sacred"
+#theme "water"
+#enditem
+
+#newitem
+#id kite_earth
+#gameid 3
+#basechance 0
+#chanceinc "magic earth 0.25"
+#chanceinc "personalcommand #fallpower 0.0625"
+#chanceinc "personalcommand #reinvigoration 0.0625"
+#chanceinc "personalcommand #stonebeing 0.0625"
+#chanceinc "personalcommand #reinvigoration 0.0625"
+#chanceinc "magic earth *2"
+#sprite /graphics/offhand/sacred/kite_earth.png
+#offsetx 0
+#offsety 2
+#armor
+#theme "advanced"
+#theme "sacred"
+#theme "earth"
+#enditem
+
+#newitem
+#id kite_astral
+#gameid 3
+#basechance 0
+#chanceinc "magic astral 0.25"
+#chanceinc "personalcommand #ethereal 0.0625"
+#chanceinc "personalcommand #magicpower 0.125"
+#chanceinc "personalcommand #horrormark 0.0625"
+#chanceinc "magic astral *2"
+#sprite /graphics/offhand/sacred/kite_astral.png
+#offsetx 0
+#offsety 2
+#armor
+#theme "advanced"
+#theme "sacred"
+#theme "astral"
+#enditem
+
+#newitem
+#id kite_death
+#gameid 3
+#basechance 0
+#chanceinc "magic death 0.25"
+#chanceinc "personalcommand #undead 0.0625"
+#chanceinc "personalcommand #deathpower 0.6025"
+#chanceinc "personalcommand #darkpower 0.0625"
+#chanceinc "personalcommand #deathrec 0.0625"
+#chanceinc "magic death *2"
+#sprite /graphics/offhand/sacred/kite_death.png
+#offsetx 0
+#offsety 2
+#armor
+#theme "advanced"
+#theme "sacred"
+#theme "death"
+#enditem
+
+#newitem
+#id kite_nature
+#gameid 3
+#basechance 0
+#chanceinc "magic nature 0.25"
+#chanceinc "personalcommand #regeneration 0.0625"
+#chanceinc "personalcommand #heal 0.0625"
+#chanceinc "personalcommand #poisonres 0.0625"
+#chanceinc "personalcommand #poisoncloud 0.0625"
+#chanceinc "magic nature *2"
+#sprite /graphics/offhand/sacred/kite_nature.png
+#offsetx 0
+#offsety 2
+#armor
+#theme "advanced"
+#theme "sacred"
+#theme "nature"
+#enditem
+
+#newitem
+#id kite_blood
+#gameid 3
+#basechance 0
+#chanceinc "magic blood 0.25"
+#chanceinc "personalcommand #demon 0.0625"
+#chanceinc "personalcommand #berserk 0.0625"
+#chanceinc "personalcommand #chaospower 0.0625"
+#chanceinc "personalcommand #chaosrec 0.0625"
+#chanceinc "magic blood *2"
+#sprite /graphics/offhand/sacred/kite_blood.png
+#offsetx 0
+#offsety 2
+#armor
+#theme "advanced"
+#theme "sacred"
+#theme "blood"
+#enditem
+
+
+-- Caelian-specific magic shields
+#newitem
+#id iceshield
+#gameid 9
+#basechance 0.005
+#sprite /graphics/caelian/shield/iceshield.png
+#theme "yazata"
+#theme "ice"
+#armor
+#enditem
+
+#newitem
+#id pearlshield
+#gameid 189
+#basechance 0.005
+#sprite /graphics/caelian/shield/pearlshield.png
+#theme "yazata"
+#theme "magic"
+#armor
+#enditem
+
+#newitem
+#id obsidianshield
+#gameid 143
+#basechance 0.005
+#sprite /graphics/caelian/shield/obsidianshield.png
+#theme "daeva"
+#theme "magic"
+#armor
+#define "#rcost +10"
+#enditem
+
+#newitem
+#id crimsonshield
+#gameid 157
+#basechance 0.005
+#sprite /graphics/caelian/shield/crimsonshield.png
+#theme "daeva"
+#theme "magic"
+#armor
+#enditem
+
+#newitem
+#id spectralshield
+#gameid 156
+#basechance 0
+#chanceinc "magic death 2500"
+#chanceinc "magic air 2500"
+#chanceinc "magic death air 5000"
+#sprite /graphics/caelian/shield/spectralshield.png
+#theme "yazata"
+#theme "daeva"
+#theme "magic"
+#theme "air"
+#theme "death"
+#theme "sacred"
+#armor
+#enditem

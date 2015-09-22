@@ -32,9 +32,11 @@
 #load offhand /data/items/amazon/normal/amazonshields.txt
 #load offhand /data/items/human/normal/shields.txt
 
-
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt offsetx 5 offsety -18
 #load overlay /data/items/amazon/mounted/amazon_overlays.txt offsetx 5 offsety -18
+
+#load weapon /data/items/human/human_mounted/humanweapon_bronze.txt
+#load weapon /data/items/human/human_mounted/cavalryweapons_bronze.txt
 
 #writeslot lanceslot
 #endpose
@@ -78,6 +80,9 @@
 
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt offsetx 5 offsety -18
 #load overlay /data/items/amazon/mounted/amazon_overlays.txt offsetx 5 offsety -18
+
+#load weapon /data/items/human/human_mounted/humanweapon_bronze.txt
+#load weapon /data/items/human/human_mounted/cavalryweapons_bronze.txt
 
 #writeslot lanceslot
 
@@ -127,6 +132,9 @@
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt offsetx 5 offsety -18
 #load overlay /data/items/amazon/mounted/amazon_overlays.txt offsetx 5 offsety -18
 
+#load weapon /data/items/human/human_mounted/humanweapon_bronze.txt
+#load weapon /data/items/human/human_mounted/cavalryweapons_bronze.txt
+
 #writeslot lanceslot
 
 #maxvarieties 1
@@ -160,6 +168,7 @@
 #load legs /data/items/amazon/normal/amazonlegs.txt
 
 #load weapon /data/items/human/normal/humanweapon.txt
+#load weapon /data/items/human/human_mounted/humanweapon_bronze.txt
 #load bonusweapon /data/items/human/normal/humanbonusranged.txt offsetx -2 offsety 1
 
 #load offhand /data/items/human/human_mounted/humanoffhand.txt

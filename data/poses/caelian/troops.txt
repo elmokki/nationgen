@@ -3,8 +3,6 @@
 
 #newpose
 #role "infantry"
-#role "sacred infantry"
-#role "elite infantry"
 #role "scout"
 
 #renderorder "shadow cloakb wings basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
@@ -19,7 +17,9 @@
 #load armor /data/items/caelian/normal/armor.txt
 
 #load weapon /data/items/caelian/normal/weapon.txt 2 7
+#load weapon /data/items/caelian/normal/weapon_bronze.txt 2 7
 #load offhand /data/items/human/normal/humanoffhand.txt -3 2
+#load offhand /data/items/human/normal/humanoffhand_bronze.txt -3 2
 #load offhand /data/items/human/normal/shields.txt 0 2
 
 #load helmet /data/items/human/normal/humanhelmet.txt 0 4
@@ -27,7 +27,48 @@
 #load cloakf /data/items/human/normal/humancloakf.txt 0 4
 #load cloakb /data/items/human/normal/humancloakb.txt 0 4
 
-#load offhand /data/items/human/sacredstuff/sacredoffhand.txt 0 2
+#generateitem 1 wings
+
+#endpose
+
+
+
+-------- Elite infantry: these will be the only available infantry poses for elites/sacred, but will be the standard units for the Yazata/Daeva themes (i.e., only Yazatas/Daevas)
+
+#newpose
+#role "infantry"
+#role "sacred infantry"
+#role "elite infantry"
+#role "scout"
+#basechance 0.001
+#chanceinc hastheme yazata *100000
+#chanceinc hastheme daeva *100000
+
+#renderorder "shadow cloakb wings basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/caelian/normal/bases.txt
+#load shadow /data/items/caelian/normal/shadow.txt
+#load hands /data/items/caelian/normal/hands.txt
+#load wings /data/items/caelian/normal/wings_elite.txt
+#load overlay /data/items/caelian/normal/overlay.txt
+#load legs /data/items/caelian/normal/legs.txt
+
+#load armor /data/items/caelian/normal/armor.txt
+#load armor /data/items/caelian/normal/armor_magic.txt
+
+#load weapon /data/items/caelian/normal/weapon_magic.txt
+#load weapon /data/items/caelian/normal/weapon.txt 2 7
+#load weapon /data/items/caelian/normal/weapon_bronze.txt 2 7
+#load offhand /data/items/human/normal/humanoffhand.txt -3 2
+#load offhand /data/items/human/normal/humanoffhand_bronze.txt -3 2
+#load offhand /data/items/caelian/normal/shields_magic.txt
+#load offhand /data/items/human/normal/shields.txt 0 2
+
+#load helmet /data/items/human/normal/humanhelmet.txt 0 4
+
+#load cloakf /data/items/human/normal/humancloakf.txt 0 4
+#load cloakb /data/items/human/normal/humancloakb.txt 0 4
+
 #load helmet /data/items/human/sacredstuff/sacredhelmet.txt 0 4
 #load weapon /data/items/human/sacredstuff/sacredweapon.txt 2 7
 #load weapon /data/items/human/sacredstuff/sacredweapon-infantry.txt 2 7
@@ -78,6 +119,7 @@
 #role "ranged"
 #role "sacred ranged"
 #role "elite ranged"
+
 #basechance 0.33
 
 #renderorder "shadow cloakb wings basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"

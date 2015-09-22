@@ -56,11 +56,69 @@
 #end
 
 #new
-#name "mammoth_caelian"
+#name "elephant_caelian_raptor"
 #basechance 0
-#chanceinc primaryrace caelian 8
+#chanceinc primaryrace caelian 0.08
+#chanceinc nationcommand idealcold above 0 *0
+#theme "raptor"
+#command "#copystats 2261"
+#command "#spr1 ./graphics/monsters/elephant_caelian_raptor.png"
+#command "#spr2 shift"
+#end
+
+#new
+#name "elephant_caelian_hybrid"
+#basechance 0
+#chanceinc primaryrace caelian 0.08
+#chanceinc nationcommand idealcold above 0 *0
+#theme "hybrid"
+#command "#copystats 2261"
+#command "#spr1 ./graphics/monsters/elephant_caelian_hybrid.png"
+#command "#spr2 shift"
+#end
+
+#new
+#name "elephant_caelian_wingless"
+#basechance 0
+#chanceinc primaryrace caelian 0.08
+#chanceinc nationcommand idealcold above 0 *0
+#theme "wingless"
+#command "#copystats 2261"
+#command "#spr1 ./graphics/monsters/elephant_caelian_wingless.png"
+#command "#spr2 shift"
+#end
+
+#new
+#name "mammoth_caelian_spirehorn"
+#basechance 0
+#chanceinc primaryrace caelian 0.08
+#chanceinc nationcommand idealcold below 1 *0
+#theme "spirehorn"
 #command "#copystats 419"
-#command "#copyspr 419"
+#command "#spr1 ./graphics/monsters/mammoth_caelian_spirehorn.png"
+#command "#spr2 shift"
+#end
+
+#new
+#name "mammoth_caelian_hybrid"
+#basechance 0
+#chanceinc primaryrace caelian 0.08
+#chanceinc nationcommand idealcold below 1 *0
+#theme "hybrid"
+#command "#copystats 419"
+#command "#spr1 ./graphics/monsters/mammoth_caelian_hybrid.png"
+#command "#spr2 shift"
+#end
+
+#new
+#name "mammoth_caelian_wingless"
+#basechance 0
+#chanceinc primaryrace caelian 0.08
+#chanceinc nationcommand idealcold below 1 *0
+#theme "wingless"
+#command "#copystats 419"
+#command "#spr1 ./graphics/monsters/mammoth_caelian_wingless.png"
+#command "#spr2 shift"
 #end
 
 #new

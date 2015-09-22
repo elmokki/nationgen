@@ -135,8 +135,6 @@ public class ChanceIncHandler {
 		if(u.size() > 0 && getRaceThemeIncs(u.get(0).race) != null)
 			race = u.get(0).race;
 
-
-
 		LinkedHashMap<T, Double> set = new LinkedHashMap<T, Double>();
 		for(T t : filters)
 		{

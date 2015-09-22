@@ -1,0 +1,124 @@
+
+#newitem
+#basechance 10000
+#name "light scale"
+#gameid 49
+#sprite /graphics/caelian/armor/lightscale.png
+#armor
+#theme "yazata"
+#theme "daeva"
+#enditem
+
+#newitem
+#basechance 10000
+#name "golden scale"
+#gameid 196
+#sprite /graphics/caelian/armor/goldscale.png
+#armor
+#theme "yazata"
+#theme "daeva"
+#enditem
+
+#newitem
+#basechance  5000
+#name "mirror armor"
+#gameid 177
+#sprite /graphics/caelian/armor/mirrorplate.png
+#armor
+#theme "yazata"
+#theme "daeva"
+#define "#mr +2"
+#enditem
+
+#newitem
+#basechance  5000
+#name "fire plate"
+#gameid 75
+#sprite /graphics/caelian/armor/fireplate.png
+#armor
+#theme "yazata"
+#theme "daeva"
+#enditem
+
+#newitem
+#basechance 0.005
+#name "sun cuirass"
+#gameid 205
+#sprite /graphics/caelian/armor/suncuirass.png
+#armor
+#theme "yazata"
+#enditem
+
+#newitem
+#basechance 0.0025
+#name "sun armor"
+#gameid 204
+#sprite /graphics/caelian/armor/sunarmor.png
+#armor
+#theme "yazata"
+#enditem
+
+#newitem
+#basechance 0.005
+#name "obsidian cuirass"
+#gameid 206
+#sprite /graphics/caelian/armor/obsidiancuirass.png
+#armor
+#theme "daeva"
+#enditem
+
+#newitem
+#basechance 0.0025
+#name "obsidian armor"
+#gameid zotz_obsarmor
+#sprite /graphics/caelian/armor/obsidianarmor.png
+#armor
+#theme "daeva"
+#enditem
+
+
+--- Ice armor
+
+#newitem
+#name "icicle cuirass"
+#gameid icicle_cuirass
+#basechance 0.005
+#sprite /graphics/caelian/armor/iciclecuirass.png
+#armor
+#theme "ice"
+#define "#iceprot 2"
+#theme "yazata"
+#enditem
+
+#newitem
+#name "icicle mail"
+#gameid 133
+#basechance 0.0025
+#sprite /graphics/caelian/armor/iciclehauberk.png
+#armor
+#theme "ice"
+#define "#iceprot 2"
+#theme "yazata"
+#enditem
+
+#newitem
+#name "ice cuirass"
+#gameid 26
+#basechance 0.0025
+#sprite /graphics/caelian/armor/icecuirass.png
+#armor
+#theme "ice"
+#define "#iceprot 2"
+#theme "yazata"
+#enditem
+
+#newitem
+#name "ice hauberk"
+#gameid 26
+#basechance 0.00125
+#sprite /graphics/caelian/armor/icehauberk.png
+#armor
+#theme "ice"
+#define "#iceprot 2"
+#theme "yazata"
+#enditem

@@ -2,147 +2,292 @@
 --- Leather
 
 #newitem
-#name "leather cuirass 1"
+#name "leather cuirass"
 #gameid 5
 #sprite /graphics/caelian/armor/crossbow/leathercuirass.png
 #armor
+#theme "leather"
 #enditem
 
 #newitem
-#name "leather hauberk 1"
+#name "leather hauberk"
 #gameid 10
 #sprite /graphics/caelian/armor/crossbow/leatherhauberk.png
 #armor
+#theme "leather"
 #enditem
 
-
-
 #newitem -- full leather
-#newitem
 #name "full leather"
 #gameid 15
 #sprite /graphics/caelian/armor/crossbow/leatherhauberk.png
 #needs legs leatherpants
 #armor
-#enditem
-
-
---- Chain Mail
-
-
-#newitem
-#name "chain cuirass"
-#gameid 8
-#sprite /graphics/caelian/armor/crossbow/mailcuirass.png
-#armor
-#enditem
-
-
-#newitem
-#name "chain hauberk short"
-#gameid 13
-#sprite /graphics/caelian/armor/crossbow/mailhauberk.png
-#armor
-#enditem
-
-
-#newitem -- full chain
-#name "full chain"
-#gameid 18
-#sprite /graphics/caelian/armor/crossbow/mailhauberk.png
-#armor
-#theme "advanced"
-#needs legs mailpants
-#tag "name mounted knight"
-#enditem
-
-
---- Scale
-
-#newitem
-#name "scale cuirass"
-#gameid 7
-#sprite /graphics/caelian/armor/crossbow/mailcuirass.png
-#armor
-#enditem
-
-
-#newitem
-#name "scale hauberk short"
-#gameid 12
-#sprite /graphics/caelian/armor/crossbow/mailhauberk.png
-#armor
-#enditem
-
-
-
-#newitem -- full scale
-#name "full scale"
-#gameid 17
-#sprite /graphics/caelian/armor/crossbow/mailhauberk.png
-#armor
-#needs legs mailpants
-#theme "advanced"
-#enditem
-
-
---- Plate
-
-
-#newitem
-#name "plate cuirass"
-#gameid 9
-#sprite /graphics/caelian/armor/crossbow/platecuirass.png
-#armor
-#theme "advanced"
-#enditem
-
-
-#newitem
-#name "plate hauberk"
-#gameid 14
-#sprite /graphics/caelian/armor/crossbow/platehauberk.png
-#armor
-#theme "advanced"
-#tag "name mounted knight"
-#enditem
-
-
-#newitem -- full plate
-#name "full plate"
-#gameid 19
-#sprite /graphics/caelian/armor/crossbow/platehauberk.png
-#armor
-#theme "advanced"
-#needs legs platepants
-#tag "name mounted knight"
+#theme "leather"
 #enditem
 
 
 --- Ring
-
 #newitem
 #name "ring cuirass"
 #gameid 6
 #sprite /graphics/caelian/armor/crossbow/ringcuirass.png
 #armor
+#theme "iron"
+#theme "leather"
 #enditem
 
-
 #newitem
-#name "ring hauberk short"
+#name "ring hauberk"
 #gameid 11
 #sprite /graphics/caelian/armor/crossbow/ringhauberk.png
 #armor
+#theme "iron"
+#theme "leather"
 #enditem
-
-
 
 #newitem -- full ring
 #name "full ring"
 #gameid 16
 #sprite /graphics/caelian/armor/crossbow/ringhauberk.png
 #armor
+#theme "iron"
+#theme "leather"
 #needs legs ringpants
 #enditem
 
+#newitem
+#name "bronze ring cuirass"
+#gameid 6
+#sprite /graphics/caelian/armor/crossbow/ringcuirass_bronze.png
+#armor
+#theme "bronze"
+#theme "leather"
+#enditem
+
+#newitem
+#name "bronze ring hauberk"
+#gameid 11
+#sprite /graphics/caelian/armor/crossbow/ringhauberk_bronze.png
+#armor
+#theme "bronze"
+#theme "leather"
+#enditem
+
+#newitem -- full ring
+#name "bronze full ring"
+#gameid 16
+#sprite /graphics/caelian/armor/crossbow/ringhauberk_bronze.png
+#armor
+#theme "bronze"
+#theme "leather"
+#needs legs ringpants_bronze
+#enditem
+
+
+--- Scale
+#newitem
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/caelian/armor/crossbow/mailcuirass.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "scale hauberk"
+#basechance 0.5
+#gameid 12
+#sprite /graphics/caelian/armor/crossbow/mailhauberk.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem -- full scale
+#name "full scale"
+#basechance 0.25
+#gameid 17
+#sprite /graphics/caelian/armor/crossbow/mailfull.png
+#armor
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem
+#name "bronze scale cuirass"
+#gameid 142
+#sprite /graphics/caelian/armor/crossbow/mailcuirass_bronze.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#name "bronze scale hauberk"
+#basechance 0.5
+#gameid 136
+#sprite /graphics/caelian/armor/crossbow/mailhauberk_bronze.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem -- full scale
+#name "bronze full scale"
+#basechance 0.25
+#gameid bronzescale_full
+#sprite /graphics/caelian/armor/crossbow/mailfull_bronze.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+
+--- Chain Mail
+#newitem
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/caelian/armor/crossbow/mailcuirass.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "chain hauberk"
+#basechance 0.5
+#gameid 13
+#sprite /graphics/caelian/armor/crossbow/mailhauberk.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem -- full chain
+#name "full chain"
+#basechance 0.25
+#gameid 18
+#sprite /graphics/caelian/armor/crossbow/mailfull.png
+#armor
+#theme "advanced"
+#theme "iron"
+#needs legs mailpants
+#enditem
+
+
+--- Plate
+
+#newitem
+#name "plate cuirass"
+#basechance 0.5
+#gameid 9
+#sprite /graphics/caelian/armor/crossbow/platecuirass.png
+#armor
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem
+#name "plate hauberk"
+#basechance 0.25
+#gameid 14
+#sprite /graphics/caelian/armor/crossbow/platehauberk.png
+#armor
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem -- full plate
+#name "full plate"
+#basechance 0.125
+#gameid 19
+#sprite /graphics/caelian/armor/crossbow/platehauberk.png
+#armor
+#theme "advanced"
+#needs legs platepants
+#theme "iron"
+#maxvarieties 1
+#enditem
+
+#newitem
+#name "bronze plate cuirass"
+#basechance 0.5
+#gameid 100
+#sprite /graphics/caelian/armor/platecuirass_bronze.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#name "bronze plate hauberk"
+#basechance 0.25
+#gameid 101
+#sprite /graphics/caelian/armor/crossbow/platehauberk_bronze.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem -- full plate
+#name "bronze full plate"
+#basechance 0.125
+#gameid bronzeplate_full
+#sprite /graphics/caelian/armor/crossbow/platehauberk_bronze.png
+#armor
+#theme "advanced"
+#needs legs platepants_bronze
+#theme "bronze"
+#maxvarieties 1
+#enditem
+
+
+--- Ice armor
+#newitem
+#name "icestudded cuirass"
+#gameid icestudded_cuirass
+#sprite /graphics/caelian/armor/crossbow/icestuddedcuirass.png
+#needs legs leatherpants
+#armor
+#theme "leather"
+#theme "ice"
+#define "#iceprot 1"
+#enditem
+
+#newitem
+#name "icestudded armor"
+#basechance 0.5
+#gameid 52
+#sprite /graphics/caelian/armor/icestuddedcuirass.png
+#needs legs icepants
+#armor
+#theme "leather"
+#theme "ice"
+#define "#iceprot 1"
+#enditem
+
+#newitem
+#name "icicle cuirass"
+#basechance 0.5
+#gameid icicle_cuirass
+#sprite /graphics/caelian/armor/crossbow/iciclecuirass.png
+#armor
+#theme "ice"
+#define "#iceprot 2"
+#enditem
+
+#newitem
+#name "icicle mail"
+#basechance 0.25
+#gameid 133
+#sprite /graphics/caelian/armor/crossbow/iciclehauberk.png
+#armor
+#theme "ice"
+#define "#iceprot 2"
+#enditem
+
+#newitem
+#name "ice cuirass"
+#basechance 0.5
+#gameid 26
+#sprite /graphics/caelian/armor/crossbow/icecuirass.png
+#armor
+#theme "ice"
+#define "#iceprot 2"
+#enditem
