@@ -125,6 +125,18 @@ public class ItemSet extends ArrayList<Item> {
 		return null;
 	}
 	
+	public ItemSet getItemsWithID(String string, String slot)
+	{
+		ItemSet newset = new ItemSet();
+		ItemSet possibles = this; //this.filterTheme("elite", false).filterTheme("sacred", false);
+		for(Item item : possibles)
+		{
+			if(item.id.equals(string) && item.slot.equals(slot))
+				newset.add(item);
+		}
+		return newset;
+	}
+	
 	public Item getItemWithName(String name, String slot)
 	{
 		Iterator<Item> itr = this.iterator();
