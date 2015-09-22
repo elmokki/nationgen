@@ -210,6 +210,9 @@ public class UnitGen {
 	{
 		// Handles generationchances and stuff
 		this.handleExtraGeneration(u);
+		// Handles possiblecommands
+		this.handlePossibleCommands(u);
+		
 		// Failsafe
 		if(included == null)
 			included = new ItemSet();	
@@ -876,7 +879,42 @@ public class UnitGen {
 	}
 	
 	
+	private void handlePossibleCommands(Unit u)
+	{
+		List<String> tags = new ArrayList<String>();
+		tags.addAll(u.pose.tags);
+		tags.addAll(u.race.tags);
+		for(Item i : u.slotmap.values())
+			if(i != null)
+				tags.addAll(i.tags);
+		for(Filter f : u.appliedFilters)
+			tags.addAll(f.tags);
+		
+		
+		for(String tag : tags)
+		{
+			List<String> args = Generic.parseArgs(tag);
+			if(args.get(0).equals("possiblecommandset"))
+			{
+				String name = args.get(1);
+				double chance = Double.parseDouble(args.get(2));
+				if(random.nextDouble() < chance)
+				{
 
+					List<String> coms = Generic.getTagValues(tags, "possiblecommand");
+					for(String str : coms)
+					{
+						List<String> args2 = Generic.parseArgs(str);
+						if(args2.get(0).equals(name))
+						{
+							u.commands.add(Command.parseCommand(args2.get(1)));
+						}
+					}
+
+				}
+			}
+		}
+	}
 
 
 	

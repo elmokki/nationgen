@@ -164,6 +164,7 @@ public class NationAdvancedSummarizer {
 			printUnits(tw, "infantry", "Infantry", n);
 			printUnits(tw, "mounted", "Cavalry", n);
 			printUnits(tw, "chariot", "Chariots", n);
+			printUnits(tw, "special", "Special units", n);
 			printUnits(tw, "sacred", "Sacreds", n);
 			printUnits(tw, "monsters", "Monsters", n);
 			
@@ -207,6 +208,12 @@ public class NationAdvancedSummarizer {
 			tw.println("- Commanders:");
 			for(Unit u : n.generateComList("commander"))
 				getTroopInfo(u, tw);
+			if(n.generateComList("specialcoms").size() > 0)
+			{
+				tw.println("- Special commanders:");
+				for(Unit u : n.generateComList("specialcoms"))
+					getTroopInfo(u, tw);
+			}
 			tw.println("- Priests:");
 			for(Unit u : n.generateComList("priest"))
 				getTroopInfo(u, tw);

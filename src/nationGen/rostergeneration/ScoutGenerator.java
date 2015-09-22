@@ -78,35 +78,32 @@ public class ScoutGenerator extends TroopGenerator {
 		
 		// Select pose
 		Pose p = chandler.getRandom(possiblePoses, race, posename);
-		
-		
+		Unit template = unitGen.generateUnit(race, p);
+
+		chandler.getRandom(p.getItems("weapon").filterDom3DB("2h", "0", true, nationGen.weapondb), template);
 		// Select a mainhand weapon
 		Item weapon = null;
 		if(tier != 3) //  Scout/spy gets whatever non-2h
-			weapon = p.getItems("weapon").filterDom3DB("2h", "0", true, nationGen.weapondb).getRandom(chandler, r);
+			weapon = chandler.getRandom(p.getItems("weapon").filterDom3DB("2h", "0", true, nationGen.weapondb), template);
 		else // Assassin gets max length 3 weapons
 		{
-			weapon = p.getItems("weapon").filterDom3DBInteger("lgt", 3, true, nationGen.weapondb).getRandom(chandler, r);
+			weapon = chandler.getRandom(p.getItems("weapon").filterDom3DBInteger("lgt", 3, true, nationGen.weapondb), template);
 		}
-		
 		// Failsafe
 		if(weapon == null)
 		{
-			weapon = p.getItems("weapon").getRandom(chandler, r);
+			weapon = chandler.getRandom(p.getItems("weapon"), template);
+
 		}
 		
 		// Chance to give a whatever weapon rarely
 		if(r.nextDouble() > 0.9 + (tier - 1) * 0.25)
 		{
-			Item tweapon = p.getItems("weapon").getRandom(chandler, r);
+			Item tweapon = 	chandler.getRandom(p.getItems("weapon"), template);
 			if(tweapon != null)
 				weapon = tweapon;
 		}
 
-		if(p == null)
-			System.out.println("No suitable pose found for a tier " + tier + " scout/spy/assassin");
-		
-		Unit template = unitGen.generateUnit(race, p);
 		
 		this.addStats(template, tier);
 		unitGen.addFreeTemplateFilters(template);
@@ -122,17 +119,18 @@ public class ScoutGenerator extends TroopGenerator {
 		{
 			armor = nation.usedItems.filterSlot("armor").filterForPose(p).getRandom(chandler, nation.random);
 			if(armor == null)
-				armor = p.getItems("armor").getRandom(chandler, nation.random);
+				armor = chandler.getRandom(p.getItems("armor"), template);
+
 		}
 		else
 		{
 			armor = nation.usedItems.filterSlot("armor").filterForPose(p).filterProt(nationGen.armordb, 0, 10).getRandom(chandler, nation.random);
 			if(armor == null)
-				armor = p.getItems("armor").filterProt(nationGen.armordb, 0, 10).getRandom(chandler, nation.random);
+				armor = chandler.getRandom(p.getItems("armor").filterProt(nationGen.armordb, 0, 10), template);
 			if(armor == null)
-				armor = p.getItems("armor").filterProt(nationGen.armordb, 0, 12).getRandom(chandler, nation.random);
+				armor = chandler.getRandom(p.getItems("armor").filterProt(nationGen.armordb, 0, 12), template);
 			if(armor == null)
-				armor = p.getItems("armor").getRandom(chandler, nation.random);
+				armor = chandler.getRandom(p.getItems("armor"), template);
 		}
 		
 		if(armor == null)
@@ -155,17 +153,21 @@ public class ScoutGenerator extends TroopGenerator {
 				ItemSet helms = template.pose.getItems("helmet").filterProt(nationGen.armordb, prot - range, prot + range);
 				
 				if((range < 6 && helms.possibleItems() < 3) || range >= 6)
-					helmet = Entity.getRandom(nation.random, chandler.handleChanceIncs(helms));
+					helmet = Entity.getRandom(nation.random, chandler.handleChanceIncs(template, helms));
 			}
 			template.setSlot("helmet", helmet);
 		}
 	
 		if(r.nextDouble() < 0.15 && template.pose.getItems("bonusweapon") != null)
 		{
-			template.setSlot("bonusweapon", nation.usedItems.filterSlot("bonusweapon").filterTag("noelite", false).filterThoseNotInArmorRange(template.getTotalProt(false)).getRandom(chandler, nation.random));
+			Item bweapon = chandler.getRandom(nation.usedItems.filterSlot("bonusweapon").filterTag("noelite", false).filterThoseNotInArmorRange(template.getTotalProt(false)), template);
+			template.setSlot("bonusweapon", bweapon);
+			
 			if(template.getSlot("bonusweapon") == null)
-				template.setSlot("bonusweapon", template.pose.getItems("bonusweapon").filterTag("noelite", false).filterThoseNotInArmorRange(template.getTotalProt(false)).getRandom(chandler, nation.random));
-
+			{			
+				bweapon = chandler.getRandom(template.pose.getItems("bonusweapon").filterTag("noelite", false).filterThoseNotInArmorRange(template.getTotalProt(false)), template);
+				template.setSlot("bonusweapon", bweapon);
+			}
 		}
 		
 		
@@ -181,17 +183,17 @@ public class ScoutGenerator extends TroopGenerator {
 		
 			if(r.nextDouble() > 0.25 && p.getItems("offhand").filterArmor(false).getItemWithID(weapon.id, "offhand") != null)
 			{
-				template.setSlot("offhand", p.getItems("offhand").filterArmor(false).getItemWithID(weapon.id, "offhand"));
+				template.setSlot("offhand", chandler.getRandom(p.getItems("offhand").filterArmor(false).getItemsWithID(weapon.id, "offhand"), template));
 			}
 			else
 			{
-				template.setSlot("offhand", p.getItems("offhand").filterArmor(false).getRandom(chandler, nation.random));
+				template.setSlot("offhand", chandler.getRandom(p.getItems("offhand").filterArmor(false), template));
 			}
 			
 		}
 
 		if(p.getItems("cloakb") != null)
-			template.setSlot("cloakb", p.getItems("cloakb").filterForPose(template.pose).getRandom(chandler, nation.random));
+			template.setSlot("cloakb", chandler.getRandom(p.getItems("cloakb").filterForPose(template.pose), template));
 		
 		
 		// 2015.03.26 Sloppy code derived from unitGen to add mounts
@@ -219,7 +221,7 @@ public class ScoutGenerator extends TroopGenerator {
 							
 			if(template.getSlot("mount") == null)
 			{
-				template.setSlot("mount", p.getItems("mount").getRandom(chandler, nation.random));
+				template.setSlot("mount", chandler.getRandom(p.getItems("mount"), template));
 				// System.out.println("..\nCouldn't find old mount; using new\n..");
 			}
 		
