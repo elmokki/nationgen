@@ -900,7 +900,6 @@ public class UnitGen {
 				double chance = Double.parseDouble(args.get(2));
 				if(random.nextDouble() < chance)
 				{
-					System.out.println("success with " + name);
 
 					List<String> coms = Generic.getTagValues(tags, "possiblecommand");
 					for(String str : coms)
@@ -908,7 +907,6 @@ public class UnitGen {
 						List<String> args2 = Generic.parseArgs(str);
 						if(args2.get(0).equals(name))
 						{
-							System.out.println("adding " + Command.parseCommand(args2.get(1)) + " | " + str);
 							u.commands.add(Command.parseCommand(args2.get(1)));
 						}
 					}
