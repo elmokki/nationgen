@@ -1,12 +1,31 @@
+--- Usable special stuff that may be badly documented
+--
+-- #pose role/name <thing>
+-- Uses poses of <thing> name or role
+--
+-- #requiredposetag <tag>
+-- #requiredposetheme <theme>
+-- Excludes poses without this tag/theme
+--
+-- #equipmenttargettag <tag>
+-- Equipment will have to have this tag when it is available. 
+-- This is for "tier 1-3" for mage/priest type poses, but themeincs work well as well.
+--
+-- #troop
+-- This is a troop instead of commander (I'm looking at you, communion slave)
+--
+-- Extra tip: #generateitem works here like it should in all filters/equipment
+-- Extra tip: Special commanders get #poorleader or #noleader if nothing is specified
+
 #new
 #name "administrator"
 #command "#taxcollector"
 #command "#incprovdef"
-#command "#gcost +30"
+#command "#gcost +10"
 #unitname "Administrator"
 #unitname "Governor"
-#description "%unitname% is able to collect taxes in distant lands and train militia."
-#posepriority 1 type infantry
+#description "is able to collect taxes in distant lands and train militia."
+#pose role infantry
 #themeinc theme official *50
 #themeinc theme administrator *50
 #end
@@ -17,25 +36,35 @@
 #command "#gold 5"
 #command "#nobadevents 5"
 #unitname "Oracle"
-#description "%unitname% brings fortune to any province he lives in."
-#posepriority 1 type mage
+#description "brings fortune to any province he lives in."
+#pose role mage
 #themeinc theme mystic *50
 #themeinc theme oracle *50
 #themeinc theme cultist *5
+#themeinc thisitemtag "tier 1" *100
+#themeinc thisitemtag "tier 2" *25
+#themeinc thisitemtag "tier 3" *0
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +0"
+#possiblecommand stealth "#gcost +20"
 #end
 
 #new
 #name "lawman"
 #command "#patrolbonus 20"
 #command "#incunrest -20"
-#command "#gcost +10"
+#command "#gcost +40"
+#command "#okleader"
 #unitname "Sherrif"
 #unitname "Constable"
 #unitname "Captain of the Guard"
-#description "%unitname% is skilled in preventing dissent."
-#posepriority 1 type infantry
+#description "is skilled in preventing dissent."
+#pose role infantry
 #themeinc theme official *50
 #themeinc theme administrator *50
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +0"
+#possiblecommand stealth "#gcost +20"
 #end
 
 #new
@@ -44,9 +73,9 @@
 #command "#castledef 30"
 #unitname "Siege Engineer"
 #unitname "Engineer"
-#description "%unitname% is adept at siege mechanics."
-#posepriority 1 type infantry
-#posepriority 1 type mage
+#description "is adept at siege mechanics."
+#pose role infantry
+#pose role mage
 #themeinc theme official *50
 #themeinc theme administrator *50
 #end
@@ -60,8 +89,8 @@
 #unitname "Atheist"
 #unitname "Agnostic"
 #caponlychance 0.1
-#description "%unitname% uses false logic to preach against any religion."
-#posepriority 1 type priest
+#description "uses false logic to preach against any religion."
+#pose role priest
 #themeinc theme cultist *10
 #themeinc theme heretic *50
 #themeinc theme priest *50
@@ -76,36 +105,86 @@
 #basechance 0
 #chanceinc magic death 1
 #caponlychance 0.8
-#description "%unitname% is able to reanimate five corpses each month without the use of magic."
-#posepriority 1 type mage
+#description "is able to reanimate five corpses each month without the use of magic."
+#pose role mage
 #themeinc theme cultist *100
 #end
 
 #new
 #name "Librarian"
 #command "#inspiringres 1"
-#command "#gcost +20"
+#command "#gcost +10"
 #unitname "Librarian"
 #basechance 1
 #chanceinc magic astral 0.5
-#description "%unitname% is not skilled in magical research, but has an extensive knowledge of arcane literature, and is able to help researchers."
-#posepriority 1 type mage
-#themeinc tag "tier 1" *20
-#themeinc tag "tier 2" *10
+#description "is not skilled in magical research, but has an extensive knowledge of arcane literature, and is able to help researchers."
+#pose role mage
+#themeinc thisitemtag "tier 1" *100
+#themeinc thisitemtag "tier 2" *25
+#themeinc thisitemtag "tier 3" *0
 #end
 
 #new
 #name "comslave"
 #command "#comslave"
-#command "#gcost +15"
+#command "#gcost +10"
 #unitname "Communicant"
+#unitname "Supplicant"
+#basechance 0
+#chanceinc magic astral 3
+#description "is able to serve as a communion or sabbath slave."
+#pose role mage
+#themeinc thisitemtag "tier 1" *100
+#themeinc thisitemtag "tier 2" *25
+#themeinc thisitemtag "tier 3" *0
+#end
+
+
+#new
+#name "comslave blood"
+#command "#comslave"
+#command "#gcost +10"
 #unitname "Sabbath Slave"
+#unitname "Supplicant"
+#basechance 0
+#chanceinc magic blood 1.5
+#description "is able to serve as a communion or sabbath slave."
+#pose role mage
+#themeinc thisitemtag "tier 1" *100
+#themeinc thisitemtag "tier 2" *25
+#themeinc thisitemtag "tier 3" *0
+#end
+
+#new
+#name "comslave-troop"
+#command "#comslave"
+#command "#gcost +40"
+#unitname "Communicant"
+#unitname "Supplicant"
 #basechance 0
 #chanceinc magic astral 3
 #chanceinc magic blood 1.5
-#description "%unitname% is able to serve as a communion or sabbath slave."
-#posepriority 1 type mage
-#themeinc tag "tier 1" *50
+#description "is able to serve as a communion or sabbath slave."
+#pose role mage
+#themeinc thisitemtag "tier 1" *100
+#themeinc thisitemtag "tier 3" *0
+#troop
+#end
+
+#new
+#name "comslave-troop-blood"
+#command "#comslave"
+#command "#gcost +40"
+#unitname "Sabbath Slave"
+#unitname "Supplicant"
+#basechance 0
+#chanceinc magic astral 3
+#chanceinc magic blood 1.5
+#description "is able to serve as a communion or sabbath slave."
+#pose role mage
+#themeinc thisitemtag "tier 1" *100
+#themeinc thisitemtag "tier 3" *0
+#troop
 #end
 
 #new
@@ -120,212 +199,10 @@
 #unitname "Sanguine Seeker"
 #basechance 0
 #chanceinc magic blood 2
-#description "%unitname% is skilled at finding blood slaves."
-#posepriority 1 type mage
-#themeinc tag "tier 1" *10
+#description "is skilled at finding blood slaves."
+#pose role mage
+#themeinc thisitemtag "tier 1" *100
+#themeinc thisitemtag "tier 2" *25
+#themeinc thisitemtag "tier 3" *0
 #themeinc theme cultist *100
-#end
-
-#new
-#name "pearl maker"
-#command "#makepearls 1"
-#command "#gcost +10"
-#unitname "Pearl Cultivator"
-#unitname "Master of Pearls"
-#basechance 0
-#caponlychance 0.7
-#chanceinc magic astral water 1
-#chanceinc magic water 0.1
-#description "%unitname% is able to turn water gems into astral pearls."
-#posepriority 1 type mage
-#themeinc tag "tier 2" *20
-#themeinc tag "tier 1" *10
-#end
-
-#new
-#name "pearl maker2"
-#command "#makepearls 2"
-#command "#gcost +30"
-#unitname "Pearl Cultivator"
-#unitname "Master of Pearls"
-#basechance 0
-#caponlychance 0.7
-#chanceinc magic astral water 0.5
-#chanceinc magic water 0.05
-#description "%unitname% is able to turn water gems into astral pearls."
-#posepriority 1 type mage
-#themeinc tag "tier 2" *20
-#themeinc tag "tier 1" *10
-#end
-
-#new
-#name "imp summoner"
-#command "#makemonsters1 303"
-#command "#gcost +30"
-#unitname "Imp Summoner"
-#basechance 0
-#chanceinc magic blood 0.5
-#caponlychance 1
-#description "%unitname% is able to summon imps via ancient rituals."
-#theme "toadtotem"
-#theme "totemanimal"
-#posepriority 1 type mage
-#themeinc theme cultist *100
-#themeinc tag "tier 1" *20
-#themeinc tag "tier 2" *10
-#end
-
-#new
-#name "frog summoner"
-#command "#makemonsters2 2222"
-#command "#gcost +30"
-#unitname "Frogherd"
-#unitname "Frog Tamer"
-#basechance 0.05
-#chanceinc magic nature 0.5
-#caponlychance 0.8
-#description "%unitname% is able to tame frogs."
-#theme "toadtotem"
-#theme "totemanimal"
-#posepriority 1 type infantry
-#themeinc theme herder *100
-#themeinc theme peasant *100
-#themeinc thisarmorprot 12 *0.25
-#themeinc thisarmorprot 10 *0.25
-#end
-
-#new
-#name "wolfherd"
-#command "#makemonsters1 284"
-#command "#gcost +30"
-#unitname "Woldherd"
-#unitname "Wolf Tamer"
-#basechance 0.1
-#chanceinc magic nature 0.5
-#caponlychance 0.99
-#description "%unitname% is able to tame wolves."
-#theme "wolftotem"
-#theme "totemanimal"
-#posepriority 1 type infantry
-#themeinc theme herder *100
-#themeinc theme peasant *100
-#themeinc thisarmorprot 12 *0.25
-#themeinc thisarmorprot 10 *0.25
-#end
-
-#new
-#name "dogherd"
-#command "#makemonsters1 1560"
-#command "#gcost +30"
-#unitname "Houndsmaster"
-#unitname "Dog Trainer"
-#basechance 0.2
-#chanceinc magic nature 0.5
-#caponlychance 0.95
-#description "%unitname% is able to train dogs."
-#posepriority 1 type infantry
-#themeinc theme herder *100
-#themeinc theme peasant *100
-#themeinc thisarmorprot 12 *0.25
-#themeinc thisarmorprot 10 *0.25
-#end
-
-#new
-#name "goatherd"
-#command "#makemonsters1 2227"
-#command "#gcost +30"
-#unitname "Shepherd"
-#basechance 0.15
-#chanceinc magic nature 0.5
-#caponlychance 0.95
-#description "%unitname% is able to herd goats."
-#posepriority 1 type infantry
-#themeinc theme herder *100
-#themeinc theme peasant *100
-#themeinc thisarmorprot 12 *0.25
-#themeinc thisarmorprot 10 *0.25
-#end
-
-#new
-#name "ant summoner"
-#command "#makemonsters3 1087"
-#command "#gcost +30"
-#unitname "Antherd"
-#unitname "Ant Tamer"
-#unitname "Lord of Insects"
-#basechance 0.0
-#chanceinc magic nature 0.125
-#caponlychance 0.8
-#description "%unitname% is able to tame ants."
-#theme "anttotem"
-#theme "totemanimal"
-#posepriority 1 type infantry
-#themeinc theme herder *100
-#themeinc theme peasant *100
-#themeinc thisarmorprot 12 *0.25
-#themeinc thisarmorprot 10 *0.25
-#end
-
-#new
-#name "fly summoner"
-#command "#makemonsters3 2218"
-#command "#gcost +30"
-#unitname "Lord of the Flies"
-#basechance 0.0
-#chanceinc magic nature 0.125
-#chanceinc magic death 0.05
-#chanceinc magic nature death 1
-#caponlychance 0.8
-#description "%unitname% is able to tame flies."
-#posepriority 1 type infantry
-#themeinc theme herder *100
-#themeinc theme peasant *100
-#themeinc thisarmorprot 12 *0.25
-#themeinc thisarmorprot 10 *0.25
-#end
-
-#new
-#name "spider summoner"
-#command "#makemonsters3 2223"
-#command "#gcost +30"
-#unitname "Spiderbreeder"
-#unitname "Web Master"
-#unitname "Lord of Spiders"
-#basechance 0.0
-#chanceinc magic nature 0.125
-#chanceinc "command #poisonres 0.075"
-#caponlychance 0.8
-#description "%unitname% is able to tame oversized spiders."
-#theme "spidertotem"
-#theme "totemanimal"
-#posepriority 1 type infantry
-#themeinc theme herder *100
-#themeinc theme peasant *100
-#themeinc thisarmorprot 12 *0.25
-#themeinc thisarmorprot 10 *0.25
-#end
-
-#new
-#name "scorpion summoner"
-#command "#makemonsters3 2232"
-#command "#gcost +30"
-#unitname "Scorpion Trainer"
-#unitname "Scorpion Master"
-#unitname "Scorpionherd"
-#basechance 0.0
-#chanceinc magic earth 0.125
-#chanceinc magic death 0.05
-#chanceinc magic fire 0.05
-#chanceinc magic earth death 0.5
-#chanceinc magic earth fire 0.5
-#chanceinc "command #poisonres 0.075"
-#caponlychance 0.8
-#description "%unitname% is able to tame oversized scorpions."
-#theme "scorpiontotem"
-#theme "totemanimal"
-#posepriority 1 type infantry
-#themeinc theme herder *100
-#themeinc theme peasant *100
-#themeinc thisarmorprot 12 *0.25
-#themeinc thisarmorprot 10 *0.25
 #end
