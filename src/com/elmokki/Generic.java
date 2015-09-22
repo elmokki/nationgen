@@ -143,7 +143,7 @@ public class Generic {
 			{
 
 				args.remove(0);
-				return listToString(args);
+				return listToString(args, "", "\"");
 			}
 		
 		}
@@ -177,7 +177,7 @@ public class Generic {
 			{
 
 				args.remove(0);
-				values.add(Generic.listToString(args));
+				values.add(Generic.listToString(args, "", "\""));
 			}
 		
 		}
@@ -198,20 +198,30 @@ public class Generic {
 			return false;
 		}
 	}
-	
-	public static String listToString(List<String> list, String separator)
+	public static String listToString(List<String> list, String separator, String multiwordid)
 	{
 		String result = "";
 		for(String str : list)
 		{
+			
+			
 			if(result.length() != 0)
 				result = result + separator + " ";
 			
+			if(str.contains(" ") && list.size() > 1)
+				result = result + multiwordid;
 			result = result + str;
-		
+			if(str.contains(" ")  && list.size() > 1)
+				result = result + multiwordid;
+			
 		}
 		
 		return result;
+	}
+	
+	public static String listToString(List<String> list, String separator)
+	{
+		return listToString(list, "", "");
 	}
 	
 	
