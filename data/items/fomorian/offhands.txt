@@ -1,19 +1,29 @@
 #newitem
 #id axe
-#gameid 646
+#gameid 17
 #sprite /graphics/fomorian/weapon/axe.png
 #theme "primitive"
-#tag "name infantry axeman"
+#theme "iron"
 #enditem
 
-
-
+#newitem
+#id hatchet
+#gameid 646
+#sprite /graphics/fomorian/weapon/hatchet.png
+#theme "primitive"
+#theme "bronze"
+#enditem
 
 #newitem
 #id broadsword
-#gameid bronzebroadsword
+#gameid 8
 #sprite /graphics/fomorian/weapon/sword.png
-#tag "name infantry swordsman"
-#tag "name commander captain"
-#tag "name commander swordsmaster"
+#theme "iron"
+#enditem
+
+#newitem
+#id broadsword_bronze
+#gameid bronzebroadsword
+#sprite /graphics/fomorian/weapon/sword_bronze.png
+#theme "bronze"
 #enditem

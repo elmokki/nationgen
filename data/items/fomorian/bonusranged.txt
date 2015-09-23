@@ -1,8 +1,17 @@
 #newitem
 #name "javelin"
 #gameid 21
-#sprite /graphics/fomorian/weapon/bronzejavelin.png
+#sprite /graphics/fomorian/weapon/javelin_bronze.png
 #tag "name infantry 'Javelineer'"
+#theme "bronze"
+#enditem
+
+#newitem
+#name "javelin"
+#gameid 21
+#sprite /graphics/fomorian/weapon/javelin.png
+#tag "name infantry 'Javelineer'"
+#theme "iron"
 #enditem
 
 
@@ -11,6 +20,7 @@
 #gameid 260
 #basechance 0.5
 #tag "name infantry 'Axe Thrower'"
+#theme "iron"
 #enditem
 
 
