@@ -27,6 +27,18 @@
 #enditem
 
 #newitem
+#id shortsword_bronze
+#gameid 645
+#sprite /graphics/weapon/bronze/shortsword.png
+#offsetx 3
+#offsety 12
+#theme "bronze"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#enditem
+
+#newitem
 #id falchion
 #gameid 10
 #sprite /graphics/weapon/standard/falchion.png
@@ -38,6 +50,18 @@
 #theme "boreal"
 #theme "imperial"
 #theme "oriental"
+#enditem
+
+#newitem
+#id kopesh
+#gameid 513
+#sprite /graphics/weapon/bronze/kopesh.png
+#offsetx 4
+#offsety 11
+#theme "bronze"
+#theme "austral"
+#theme "central"
+#theme "imperial"
 #enditem
 
 #newitem
@@ -112,7 +136,7 @@
 
 #newitem
 #id dagger
-#gameid 9
+#gameid nonferrousdagger
 #sprite /graphics/weapon/mage/dagger.png
 #tag "tier 1"
 #offsetx 5

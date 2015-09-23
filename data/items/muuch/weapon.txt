@@ -53,6 +53,7 @@
 #id bronzespear
 #gameid 643
 #sprite /graphics/muuch/weapons/bronzespear.png
+#theme "bronze"
 #tag "eliteversion spear_elite"
 #tag "name infantry spearman"
 #tag "name infantry chieftan"
@@ -63,6 +64,7 @@
 #gameid 643
 #sprite /graphics/muuch/weapons/bronzespear_elite.png
 #recolormask /graphics/muuch/weapons/spear_elite_recolormask.png
+#theme "bronze"
 #tag "name infantry spearman"
 #tag "name commander chief"
 #theme "elite"
@@ -82,15 +84,17 @@
 #id trident
 #basechance 0.5
 #gameid 641
-#sprite /graphics/atlantian/weapon/trident.png
+#sprite /graphics/muuch/weapons/trident.png
+#theme "bronze"
 #tag "eliteversion trident_elite"
 #enditem
 
 #newitem
 #id trident_elite
 #gameid 641
-#sprite /graphics/atlantian/weapon/trident-elite.png
-#recolormask /graphics/atlantian/weapon/trident-elite_recolormask.png
+#sprite /graphics/muuch/weapons/trident-elite.png
+#recolormask /graphics/muuch/weapons/trident-elite_recolormask.png
+#theme "bronze"
 #offsetx -3
 #offsety -1
 #theme "elite"

@@ -2,6 +2,8 @@
 #newtheme
 #name default
 #basechance 4
+#themeinc theme iron *1
+#themeinc theme bronze *0.125
 #endtheme
 
 -- Weights: EA 1, MA 1, LA 0.5
@@ -19,6 +21,21 @@
 #themeinc theme primitive *2
 #endtheme
 
+-- Weights: EA 2, MA 1, LA 0.25
+#newtheme
+#type techlevel
+#name bronze
+#basechance 2
+#chanceinc era 2 -1
+#chanceinc era 3 -1.5
+#themeinc theme advanced *0.05
+#themeinc theme iron *0.25
+#themeinc theme bronze *2
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *0.5
+#themeinc theme primitive *0.5
+#endtheme
 
 -- Weights: EA 0.25, MA 1, LA 2
 #newtheme
@@ -29,7 +46,7 @@
 #chanceinc era 2 0.75
 #themeinc theme advanced *2
 #themeinc theme iron *2
-#themeinc theme bronze *0.5
+#themeinc theme bronze *0.05
 #themeinc theme wood *0.5
 #themeinc theme leather *0.5
 #themeinc theme naked *0.05

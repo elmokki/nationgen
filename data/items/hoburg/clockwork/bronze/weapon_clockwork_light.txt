@@ -1,7 +1,7 @@
 #newitem
 #id axe
-#gameid 17
-#sprite /graphics/weapon/standard/axe.png
+#gameid 646
+#sprite /graphics/weapon/bronze/hatchet.png
 #theme "primitive"
 #tag "name infantry axeman"
 #offsetx 1
@@ -10,8 +10,8 @@
 
 #newitem
 #id greataxe
-#gameid 18
-#sprite /graphics/hoburg/weapon/greataxe.png
+#gameid bronzebattleaxe
+#sprite /graphics/hoburg/weapon/greataxe_bronze.png
 #theme "primitive"
 #tag "name infantry axeman"
 #offsetx 0
@@ -19,19 +19,9 @@
 #enditem
 
 #newitem
-#id halberd
-#gameid 5
-#sprite /graphics/hoburg/weapon/halberd.png
-#tag "name infantry halberdier"
-#theme "advanced"
-#offsetx 0
-#offsety -5
-#enditem
-
-#newitem
 #id hammer
-#gameid 13
-#sprite /graphics/weapon/standard/hammer.png
+#gameid bronzehammer
+#sprite /graphics/weapon/bronze/hammer.png
 #offsetx 1
 #offsety 5
 #enditem
@@ -48,16 +38,16 @@
 
 #newitem
 #id shortsword
-#gameid 6
-#sprite /graphics/weapon/standard/shortsword.png
+#gameid 645
+#sprite /graphics/weapon/bronze/shortsword.png
 #offsetx 1
 #offsety 6
 #enditem
 
 #newitem
 #id spear
-#gameid 1
-#sprite /graphics/hoburg/weapon/spear.png
+#gameid 643
+#sprite /graphics/hoburg/weapon/spear_bronze.png
 #tag "name infantry spearman"
 #offsetx 0
 #offsety -5
@@ -65,17 +55,17 @@
 
 #newitem
 #id pike
-#gameid 590
-#sprite /graphics/hoburg/weapon/pike.png
+#gameid 644
+#sprite /graphics/hoburg/weapon/longspear_bronze.png
 #tag "name infantry pikeman"
 #offsetx 0
 #offsety -5
 #enditem
 
 #newitem
-#id falchion
-#gameid 10
-#sprite /graphics/weapon/standard/falchion.png
+#id kopesh
+#gameid 513
+#sprite /graphics/weapon/bronze/kopesh.png
 #tag "name infantry falchioneer"
 #offsetx 1
 #offsety 6

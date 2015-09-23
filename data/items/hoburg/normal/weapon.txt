@@ -8,6 +8,7 @@
 #theme "bronze"
 #theme "austral"
 #theme "central"
+#theme "imperial"
 #enditem
 
 #newitem
@@ -160,6 +161,18 @@
 #theme "abysian"
 #enditem
 
+#newitem
+#id hammer_bronze
+#gameid bronzehammer
+#sprite /graphics/weapon/bronze/hammer.png
+#offsetx 3
+#offsety 12
+#theme "bronze"
+#theme "advanced"
+#theme "austral"
+#theme "imperial"
+#theme "central"
+#enditem
 
 #newitem
 #id mace
@@ -205,29 +218,51 @@
 #id spear
 #gameid 1
 #sprite /graphics/hoburg/weapon/spear.png
-#theme "wood"
+#theme "iron"
 #theme "austral"
 #theme "boreal"
 #theme "central"
 #theme "imperial"
-#theme "occidental"
 #theme "abysian"
 #theme formationfighter
 #enditem
 
+#newitem
+#id spear_bronze
+#gameid 643
+#sprite /graphics/hoburg/weapon/spear_bronze.png
+#theme "bronze"
+#theme "austral"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#theme formationfighter
+#enditem
 
 #newitem
 #id pike
 #gameid 590
 #sprite /graphics/hoburg/weapon/pike.png
-#theme "wood"
+#theme "iron"
 #theme "advanced"
 #theme "austral"
 #theme "boreal"
 #theme "central"
 #theme "imperial"
-#theme "occidental"
 #theme "abysian"
+#theme formationfighter
+#enditem
+
+#newitem
+#id longspear_bronze
+#gameid 644
+#sprite /graphics/hoburg/weapon/longspear_bronze.png
+#theme "bronze"
+#theme "advanced"
+#theme "austral"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
 #theme formationfighter
 #enditem
 
@@ -242,4 +277,5 @@
 #theme "elite"
 #theme "austral"
 #theme "boreal"
+#theme "imperial"
 #enditem
