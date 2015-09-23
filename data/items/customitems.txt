@@ -62,6 +62,16 @@
 #end
 
 #new customweapon
+#name "nonferrousspear"
+#command "#rcost 1"
+#command "#natt 1"
+#command "#dmg 3"
+#command "#len 4"
+#command "#name 'Spear'"
+#command "#pierce"
+#end
+
+#new customweapon
 #name "bronzehammer"
 #command "#def -1"
 #command "#dmg 6"
@@ -153,6 +163,21 @@
 #command "#name 'Bronze Bardiche'"
 #command "#slash"
 #command "#twohanded"
+#end
+
+#new customweapon
+#name "heavybronzelance"
+#command "#rcost 2"
+#command "#dmg 6"
+#command "#att +1"
+#command "#len 4"
+#command "#nratt 1"
+#command "#singleuse"
+#command "#norepel"
+#command "#bonus"
+#command "#charge"
+#command "#pierce"
+#command "#name 'Heavy Bronze Lance'"
 #end
 
 #new customweapon
