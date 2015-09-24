@@ -4,6 +4,7 @@
 #name "no armor"
 #gameid -1
 #basechance 0.25
+#theme "naked"
 #end
 
 --- Leather
@@ -13,6 +14,7 @@
 #gameid 5
 #sprite /graphics/fomorian/armor/leathercuirass.png
 #armor
+#theme "leather"
 #enditem
 
 #newitem
@@ -20,85 +22,151 @@
 #gameid 10
 #sprite /graphics/fomorian/armor/leatherhauberk.png
 #armor
+#theme "leather"
 #enditem
-
-
-
---- Chain Mail
-
 
 #newitem
-#name "chain cuirass"
-#gameid 8
-#sprite /graphics/fomorian/armor/bronzecuirass.png
+#name "full leather"
+#gameid 15
+#sprite /graphics/fomorian/armor/leatherfull.png
 #armor
+#theme "leather"
 #enditem
 
+--- Ring
 
 #newitem
-#name "chain hauberk short"
-#gameid 13
-#sprite /graphics/fomorian/armor/bronzehauberk.png
+#name "bronze ring cuirass"
+#gameid 6
+#sprite /graphics/fomorian/armor/ringcuirass_bronze.png
 #armor
+#theme "leather"
+#theme "bronze"
 #enditem
 
-
-#newitem -- full chain
-#name "full chain"
-#gameid 18
-#sprite /graphics/fomorian/armor/bronzefull.png
+#newitem
+#name "bronze ring hauberk"
+#gameid 11
+#sprite /graphics/fomorian/armor/ringhauberk_bronze.png
 #armor
-#basechance 0.5
+#theme "leather"
+#theme "bronze"
+#enditem
+
+#newitem
+#name "bronze full ring"
+#gameid 16
+#sprite /graphics/fomorian/armor/ringfull_bronze.png
+#armor
+#theme "leather"
+#theme "bronze"
+#enditem
+
+#newitem
+#name "iron ring cuirass"
+#gameid 6
+#sprite /graphics/fomorian/armor/ringcuirass_iron.png
+#armor
+#theme "leather"
+#theme "iron"
+#enditem
+
+#newitem
+#name "iron ring hauberk"
+#gameid 11
+#sprite /graphics/fomorian/armor/ringhauberk_iron.png
+#armor
+#theme "leather"
+#theme "iron"
+#enditem
+
+#newitem
+#name "iron full ring"
+#gameid 16
+#sprite /graphics/fomorian/armor/ringfull_iron.png
+#armor
+#theme "leather"
+#theme "iron"
 #enditem
 
 
 --- Scale
 
 #newitem
-#name "scale cuirass"
+#name "bronze scale cuirass"
 #gameid 142
-#sprite /graphics/fomorian/armor/bronzecuirass.png
+#sprite /graphics/fomorian/armor/scalecuirass_bronze.png
 #armor
-#basechance 0.25
+#theme "bronze"
 #enditem
-
 
 #newitem
 #name "scale hauberk"
 #gameid 136
-#sprite /graphics/fomorian/armor/bronzehauberk.png
+#sprite /graphics/fomorian/armor/scalehauberk_bronze.png
 #armor
-#basechance 0.25
+#theme "bronze"
 #enditem
-
-
 
 #newitem -- full scale
 #name "full scale"
 #gameid bronzescale_full
-#sprite /graphics/fomorian/armor/bronzefull.png
+#sprite /graphics/fomorian/armor/scalefull_bronze.png
 #armor
-#basechance 0.125
+#basechance 0.5
+#theme "bronze"
 #enditem
-
-
-
-
---- Ring
 
 #newitem
-#name "ring cuirass"
-#gameid 6
-#sprite /graphics/fomorian/armor/ringcuirass.png
+#name "iron scale cuirass"
+#gameid 7
+#sprite /graphics/fomorian/armor/scalecuirass_iron.png
 #armor
+#theme "iron"
 #enditem
-
 
 #newitem
-#name "ring hauberk"
-#gameid 11
-#sprite /graphics/fomorian/armor/ringhauberk.png
+#name "iron scale hauberk"
+#gameid 12
+#sprite /graphics/fomorian/armor/scalehauberk_iron.png
 #armor
+#theme "iron"
+#enditem
+
+#newitem -- full scale
+#name "iron full scale"
+#gameid 17
+#sprite /graphics/fomorian/armor/scalefull_iron.png
+#armor
+#basechance 0.5
+#theme "iron"
 #enditem
 
 
+
+--- Chain Mail
+
+#newitem
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/fomorian/armor/scalecuirass_iron.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "chain hauberk short"
+#gameid 13
+#sprite /graphics/fomorian/armor/scalehauberk_iron.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem -- full chain
+#name "full chain"
+#gameid 18
+#sprite /graphics/fomorian/armor/scalefull_iron.png
+#armor
+#basechance 0.5
+#theme "iron"
+#enditem
