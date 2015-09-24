@@ -17,6 +17,7 @@
 #id broadsword
 #gameid bronzebroadsword
 #sprite /graphics/fomorian/giant/weapon/sword_bronze.png
+#eliteversion elitebroadsword
 #theme "bronze"
 #enditem
 
@@ -24,7 +25,14 @@
 #id broadsword_iron
 #gameid 8
 #sprite /graphics/fomorian/giant/weapon/sword.png
+#eliteversion elitebroadsword
 #theme "iron"
+#enditem
+
+#newitem
+#id elitebroadsword
+#gameid 8
+#sprite /graphics/fomorian/giant/weapon/elitesword.png
 #enditem
 
 #newitem

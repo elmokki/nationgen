@@ -1,11 +1,22 @@
 
-
+#newitem
+#id broadsword_bronze
+#gameid bronzebroadsword
+#sprite /graphics/fomorian/giant/offhand/offhandsword_bronze.png
+#eliteversion elitebroadsword
+#theme "bronze"
+#enditem
 
 #newitem
 #id broadsword
 #gameid 8
 #sprite /graphics/fomorian/giant/offhand/offhandsword.png
-#tag "name infantry swordsman"
-#tag "name commander captain"
-#tag "name commander swordsmaster"
+#eliteversion elitebroadsword
+#theme "iron"
+#enditem
+
+#newitem
+#id elitebroadsword
+#gameid 8
+#sprite /graphics/fomorian/giant/offhand/offhandelitesword.png
 #enditem

@@ -10,7 +10,7 @@
 #newitem
 #id kiteshield
 #gameid 3
-#sprite /graphics/fomorian/giant/offhand/kiteshield.png
+#sprite /graphics/fomorian/giant/offhand/kiteshield_iron.png
 #recolormask /graphics/fomorian/giant/offhand/kiteshield_recolormask.png
 #armor
 #theme "iron"
@@ -23,4 +23,15 @@
 #recolormask /graphics/fomorian/giant/offhand/shield_recolormask.png
 #basechance 2
 #armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id ironshield
+#gameid 208
+#sprite /graphics/fomorian/giant/offhand/shield_iron.png
+#recolormask /graphics/fomorian/giant/offhand/shield_recolormask.png
+#basechance 2
+#armor
+#theme "iron"
 #enditem
