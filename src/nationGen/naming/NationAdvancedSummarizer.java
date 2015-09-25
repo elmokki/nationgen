@@ -17,6 +17,7 @@ import nationGen.items.Item;
 import nationGen.misc.Command;
 import nationGen.misc.Site;
 import nationGen.nation.Nation;
+import nationGen.nation.PDSelector;
 import nationGen.units.ShapeChangeUnit;
 import nationGen.units.Unit;
 
@@ -25,6 +26,7 @@ import com.elmokki.Generic;
 
 
 public class NationAdvancedSummarizer {
+	
 	
 	Dom3DB weapondb;
 	Dom3DB armordb;
@@ -36,6 +38,22 @@ public class NationAdvancedSummarizer {
 	}
 	
 
+	private void printPDInfo(PrintWriter tw, Nation n)
+	{
+		PDSelector pds = new PDSelector(n, n.nationGen);
+		
+		tw.println("Start army:");
+        tw.println("** " + n.comlists.get("commanders").get(0).name);
+        if(n.comlists.get("scouts").size() > 0)
+        	tw.println("** " + n.comlists.get("scouts").get(0).name);
+        else
+        	tw.println("** " + n.comlists.get("commanders").get(1).name);
+  
+		tw.println("** " + pds.getStartArmyAmount(pds.getMilitia(1, 1)) + "x " + pds.getMilitia(1, 1).name);
+		tw.println("** " + pds.getStartArmyAmount(pds.getMilitia(1, 2)) + "x " + pds.getMilitia(1, 2).name);
+
+
+	}
 	
 	
 	private void printUnits(PrintWriter tw, String role, String tag, Nation n)
@@ -226,7 +244,9 @@ public class NationAdvancedSummarizer {
 				getTroopInfo(u, tw);
 			tw.println();
 
-			
+			this.printPDInfo(tw, n);
+			tw.println();
+
 			
 			
 			

@@ -165,6 +165,22 @@ public class Generic {
 		return tags;
 	}
 	
+	public static List<String> getAllNationTags(Nation n)
+	{
+		List<String> tags = new ArrayList<String>();
+
+		if(n.races.get(0) != null)
+		{
+			tags.addAll(n.races.get(0).tags);
+			for(Theme t : n.races.get(0).themefilters)
+				tags.addAll(t.tags);
+		}
+		for(Filter f : n.appliedfilters)
+			tags.addAll(f.tags);
+		
+		return tags;
+	}
+	
 	public static List<String> getTagValues(List<String> tags, String tag)
 	{
 		List<String> values = new ArrayList<String>();
