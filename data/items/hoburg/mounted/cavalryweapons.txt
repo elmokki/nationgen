@@ -5,9 +5,21 @@
 #tag "name lancer"
 #offsetx -3
 #offsety -3
-#theme "wood"
+#theme "iron"
 #theme "austral"
 #theme "boreal"
+#theme "central"
+#theme "imperial"
+#enditem
+
+#newitem
+#id lightlance_bronze
+#gameid 651
+#sprite /graphics/hoburg/weapon/spear_bronze.png
+#tag "name lancer"
+#offsetx -3
+#offsety -3
+#theme "bronze"
 #theme "central"
 #theme "imperial"
 #theme "occidental"
@@ -57,13 +69,22 @@
 #id spear
 #gameid 1
 #sprite /graphics/hoburg/weapon/spear.png
-#theme "wood"
+#theme "iron"
 #theme "austral"
 #theme "boreal"
 #theme "central"
 #theme "imperial"
-#theme "occidental"
 #theme "abysian"
+#enditem
+
+#newitem
+#id spear_bronze
+#gameid 643
+#sprite /graphics/hoburg/weapon/spear_bronze.png
+#theme "bronze"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
 #enditem
 
 #newitem
@@ -77,7 +98,7 @@
 #newitem
 #id kopesh
 #gameid 513
-#sprite /graphics/weapon/standard/kopesh_bronze.png
+#sprite /graphics/weapon/bronze/kopesh.png
 #offsetx 4
 #offsety 11
 #theme "bronze"

@@ -4,6 +4,16 @@
 #sprite /graphics/weapon/standard/broadsword.png
 #tag "tier 3"
 #tag "tier 2"
+#theme "iron"
+#enditem
+
+#newitem
+#id broadsword_bronze
+#gameid bronzebroadsword
+#sprite /graphics/weapon/bronze/broadsword.png
+#tag "tier 3"
+#tag "tier 2"
+#theme "bronze"
 #enditem
 
 #newitem
@@ -13,6 +23,17 @@
 #tag "tier 3"
 #tag "tier 2"
 #tag "tier 1"
+#theme "iron"
+#enditem
+
+#newitem
+#id hammer_bronze
+#gameid bronzehammer
+#sprite /graphics/weapon/bronze/hammer.png
+#tag "tier 3"
+#tag "tier 2"
+#tag "tier 1"
+#theme "bronze"
 #enditem
 
 #newitem
@@ -23,6 +44,18 @@
 #tag "tier 3"
 #tag "tier 2"
 #tag "tier 1"
+#theme "iron"
+#enditem
+
+#newitem
+#id shortsword_bronze
+#gameid 645
+#sprite /graphics/weapon/bronze/shortsword.png
+#tag "eliteversion broadsword_bronze"
+#tag "tier 3"
+#tag "tier 2"
+#tag "tier 1"
+#theme "bronze"
 #enditem
 
 #newitem
@@ -31,6 +64,16 @@
 #sprite /graphics/weapon/standard/falchion.png
 #tag "tier 3"
 #tag "tier 2"
+#theme "iron"
+#enditem
+
+#newitem
+#id kopesh
+#gameid 513
+#sprite /graphics/weapon/bronze/kopesh.png
+#tag "tier 3"
+#tag "tier 2"
+#theme "bronze"
 #enditem
 
 #newitem
@@ -96,7 +139,7 @@
 
 #newitem
 #id dagger
-#gameid 9
+#gameid nonferrousdagger
 #sprite /graphics/weapon/mage/dagger.png
 #tag "tier 1"
 #enditem

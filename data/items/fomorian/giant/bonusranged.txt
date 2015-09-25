@@ -1,18 +1,25 @@
 #newitem
 #name "javelin"
 #gameid 21
-#sprite /graphics/fomorian/giant/weapon/javelins.png
+#sprite /graphics/fomorian/giant/weapon/javelins_bronze.png
 #tag "name infantry 'Javelineer'"
+#theme "bronze"
 #enditem
 
+#newitem
+#name "javelin_iron"
+#gameid 21
+#sprite /graphics/fomorian/giant/weapon/javelins.png
+#tag "name infantry 'Javelineer'"
+#theme "iron"
+#enditem
 
 #newitem -- Throwing axe
 #name "throwing axe"
 #gameid 260
 #basechance 0.5
-#tag "name infantry 'Axe Thrower'"
+#theme "iron"
 #enditem
-
 
 #newitem
 #name "harpoon"

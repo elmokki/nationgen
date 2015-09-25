@@ -1,45 +1,86 @@
 #newitem
 #id axe
-#gameid 646
+#gameid 17
 #sprite /graphics/fomorian/weapon/axe.png
 #theme "primitive"
 #tag "name infantry axeman"
 #tier 1
 #tier 2
 #tier 3
+#theme "iron"
 #enditem
 
+#newitem
+#id hatchet
+#gameid 646
+#sprite /graphics/fomorian/weapon/hatchet.png
+#theme "primitive"
+#tag "name infantry axeman"
+#tier 1
+#tier 2
+#tier 3
+#theme "bronze"
+#enditem
 
 #newitem
 #basechance 3
 #id elitelongspear
-#gameid 485
-#sprite /graphics/fomorian/weapon/fomorianlongspear_elite.png
+#gameid 234
+#sprite /graphics/fomorian/weapon/longspear_elite.png
 #tag "name infantry spearman"
 #tier 2
 #tier 3
 #eliteversion epicgoldenstaff
 #eliteversion goldenstaff
 #eliteversion epicbaubledstaff
+#theme "iron"
 #enditem
 
+#newitem
+#basechance 3
+#id elitelongspear_bronze
+#gameid 485
+#sprite /graphics/fomorian/weapon/longspear_bronze_elite.png
+#tag "name infantry spearman"
+#tier 2
+#tier 3
+#eliteversion epicgoldenstaff
+#eliteversion goldenstaff
+#eliteversion epicbaubledstaff
+#theme "bronze"
+#enditem
 
 #newitem
 #basechance 3
 #id elitespear
 #gameid 485
-#sprite /graphics/fomorian/weapon/fomorianspear_elite.png
+#sprite /graphics/fomorian/weapon/spear_elite.png
 #tag "name infantry spearman"
 #eliteversion goldenstaff
 #eliteversion woodenstaff
 #eliteversion woodenstaff_bauble
 #eliteversion elitelongspear
 #tier 1
+#theme "iron"
+#enditem
+
+#newitem
+#basechance 3
+#id elitespear_bronze
+#gameid 485
+#sprite /graphics/fomorian/weapon/spear_bronze_elite.png
+#tag "name infantry spearman"
+#eliteversion goldenstaff
+#eliteversion woodenstaff
+#eliteversion woodenstaff_bauble
+#eliteversion elitelongspear_bronze
+#tier 1
+#theme "bronze"
 #enditem
 
 #newitem
 #id broadsword
-#gameid bronzebroadsword
+#gameid 8
 #sprite /graphics/fomorian/weapon/sword.png
 #tag "name infantry swordsman"
 #tag "name commander captain"
@@ -47,9 +88,21 @@
 #tier 1
 #tier 2
 #tier 3
+#theme "iron"
 #enditem
 
-
+#newitem
+#id broadsword_bronze
+#gameid bronzebroadsword
+#sprite /graphics/fomorian/weapon/sword_bronze.png
+#tag "name infantry swordsman"
+#tag "name commander captain"
+#tag "name commander swordsmaster"
+#tier 1
+#tier 2
+#tier 3
+#theme "bronze"
+#enditem
 
 #newitem
 #id epicgoldenstaff
@@ -59,7 +112,6 @@
 #offsetx 35
 #offsety 45
 #enditem
-
 
 #newitem
 #id goldenstaff
@@ -75,9 +127,6 @@
 #offsety 45
 #enditem
 
-
-
-
 #newitem
 #id woodenstaff
 #gameid 7
@@ -90,7 +139,6 @@
 #offsetx 35
 #offsety 45
 #enditem
-
 
 #newitem
 #id woodenstaff_bauble

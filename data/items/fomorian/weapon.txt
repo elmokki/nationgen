@@ -1,68 +1,121 @@
 #newitem
 #id axe
-#gameid 646
+#gameid 17
 #sprite /graphics/fomorian/weapon/axe.png
 #theme "primitive"
-#tag "name infantry axeman"
+#theme "iron"
 #enditem
 
+#newitem
+#id hatchet
+#gameid 646
+#sprite /graphics/fomorian/weapon/hatchet.png
+#theme "primitive"
+#theme "bronze"
+#enditem
 
 #newitem
 #id greataxe
-#gameid bronzebattleaxe
+#gameid 18
 #sprite /graphics/fomorian/weapon/battleaxe.png
 #theme "primitive"
-#tag "name infantry axeman"
+#theme "iron"
 #enditem
 
+#newitem
+#id greataxe_bronze
+#gameid bronzebattleaxe
+#sprite /graphics/fomorian/weapon/battleaxe_bronze.png
+#theme "primitive"
+#theme "bronze"
+#enditem
 
 #newitem
-#id longspear
+#id elitespear
+#gameid 234
+#sprite /graphics/fomorian/weapon/spear_elite.png
+#theme "iron"
+#enditem
+
+#newitem
+#id elitespear_bronze
 #gameid 485
-#sprite /graphics/fomorian/weapon/fomorianlongspear.png
-#tag "name infantry spearman"
-#eliteversion elitelongspear
+#sprite /graphics/fomorian/weapon/spear_bronze_elite.png
+#theme "bronze"
 #enditem
 
 #newitem
 #id elitelongspear
+#gameid 234
+#sprite /graphics/fomorian/weapon/longspear_elite.png
+#theme "iron"
+#enditem
+
+#newitem
+#id elitelongspear_bronze
 #gameid 485
-#sprite /graphics/fomorian/weapon/fomorianlongspear_elite.png
-#tag "name infantry spearman"
-#elite
+#sprite /graphics/fomorian/weapon/longspear_bronze_elite.png
+#theme "bronze"
 #enditem
 
 #newitem
 #id broadsword
-#gameid bronzebroadsword
+#gameid 8
 #sprite /graphics/fomorian/weapon/sword.png
-#tag "name infantry swordsman"
-#tag "name commander captain"
-#tag "name commander swordsmaster"
+#theme "iron"
+#enditem
+
+#newitem
+#id broadsword_bronze
+#gameid bronzebroadsword
+#sprite /graphics/fomorian/weapon/sword_bronze.png
+#theme "bronze"
 #enditem
 
 #newitem
 #id spear
-#gameid 643
+#gameid 1
 #sprite /graphics/fomorian/weapon/fomorianspear.png
-#tag "name infantry spearman"
 #eliteversion elitespear
+#theme "iron"
 #enditem
 
-
+#newitem
+#id spear_bronze
+#gameid 643
+#sprite /graphics/fomorian/weapon/spear_bronze.png
+#eliteversion elitespear_bronze
+#theme "bronze"
+#enditem
 
 #newitem
 #id elitespear
+#gameid 1
+#sprite /graphics/fomorian/weapon/spear_elite.png
+#theme "iron"
+#elite
+#enditem
+
+#newitem
+#id elitespear_bronze
 #gameid 643
-#sprite /graphics/fomorian/weapon/fomorianspear_elite.png
-#tag "name infantry spearman"
+#sprite /graphics/fomorian/weapon/spear_bronze_elite.png
+#theme "bronze"
 #elite
 #enditem
 
 #newitem
 #id claymore
-#gameid bronzeclaymore
+#gameid 258
 #sprite /graphics/fomorian/weapon/claymore.png
-#tag "name infantry swordsman"
+#theme "iron"
+#enditem
+
+
+#newitem
+#id claymore_bronze
+#gameid bronzeclaymore
+#sprite /graphics/fomorian/weapon/claymore_bronze.png
+#theme "bronze"
 #enditem
 

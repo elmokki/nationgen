@@ -95,7 +95,15 @@
 #id spear
 #gameid 1
 #sprite /graphics/hoburg/weapon/spear.png
-#theme "wood"
+#theme "iron"
+#needstype offhand defensive
+#enditem
+
+#newitem
+#id spear_bronze
+#gameid 643
+#sprite /graphics/hoburg/weapon/spear_bronze.png
+#theme "bronze"
 #needstype offhand defensive
 #enditem
 
@@ -103,7 +111,16 @@
 #id trident
 #gameid 590
 #sprite /graphics/hoburg/weapon/trident.png
-#theme "wood"
+#theme "iron"
+#theme "advanced"
+#needstype offhand defensive
+#enditem
+
+#newitem
+#id trident_bronze
+#gameid 641
+#sprite /graphics/hoburg/weapon/trident_bronze.png
+#theme "bronze"
 #theme "advanced"
 #needstype offhand defensive
 #enditem
