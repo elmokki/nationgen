@@ -780,18 +780,20 @@ public class Nation {
         writeRecs(true, comlists, tw);
 
         
+        // PD
+        PDSelector pds = new PDSelector(this, nationGen);
         
         tw.println("");
         tw.println("#defcom1 " + comlists.get("commanders").get(0).id);
-        tw.println("#defunit1 " + getMilitia(1, 1).id);
-        tw.println("#defmult1 " + militiaAmount(getMilitia(1, 1)));
-        tw.println("#defunit1b " + getMilitia(2, 1).id);
-        tw.println("#defmult1b " + militiaAmount(getMilitia(2, 1)));
+        tw.println("#defunit1 " + pds.getMilitia(1, 1).id);
+        tw.println("#defmult1 " + pds.getMilitiaAmount(pds.getMilitia(1, 1)));
+        tw.println("#defunit1b " + pds.getMilitia(2, 1).id);
+        tw.println("#defmult1b " + pds.getMilitiaAmount(pds.getMilitia(2, 1)));
         tw.println("#defcom2 " + comlists.get("commanders").get(1).id);
-        tw.println("#defunit2 " + getMilitia(1, 2).id);
-        tw.println("#defmult2 " + militiaAmount(getMilitia(1, 2)));
-        tw.println("#defunit2b " + getMilitia(2, 2).id);
-        tw.println("#defmult2b " + militiaAmount(getMilitia(2, 2)));
+        tw.println("#defunit2 " + pds.getMilitia(1, 2).id);
+        tw.println("#defmult2 " + pds.getMilitiaAmount(pds.getMilitia(1, 2)));
+        tw.println("#defunit2b " + pds.getMilitia(2, 2).id);
+        tw.println("#defmult2b " + pds.getMilitiaAmount(pds.getMilitia(2, 2)));
         tw.println("");
         
         
@@ -803,11 +805,11 @@ public class Nation {
         	tw.println("#startscout " + comlists.get("commanders").get(1).id);
     
         
-        tw.println("#startunittype1 " + getMilitia(1, 1).id);
-        tw.println("#startunittype2 " + getMilitia(1, 2).id);
-        int amount1 = (int)(militiaAmount(getMilitia(1, 1)) * 1.2);
+        tw.println("#startunittype1 " + pds.getMilitia(1, 1).id);
+        tw.println("#startunittype2 " + pds.getMilitia(1, 2).id);
+        int amount1 = (int)(pds.getStartArmyAmount(pds.getMilitia(1, 1)));
         tw.println("#startunitnbrs1 " + amount1);
-        int amount2 = (int)(militiaAmount(getMilitia(1, 2)) * 1.2);
+        int amount2 = (int)(pds.getStartArmyAmount(pds.getMilitia(1, 2)));
         tw.println("#startunitnbrs2 " + amount2);
         tw.println("");
         
@@ -871,144 +873,9 @@ public class Nation {
 		return unitlist;
 	}
     
-	/**
-	 * Gets the rank:th best militia unit of tier:th tier
-	 * @param rank rankth best (1-2)
-	 * @param tier tier increases possible resource cost.
-	 * @return
-	 */
-	public Unit getMilitia(int rank, int tier)
-	{
-		
-		if(rank < 1)
-			rank = 1;
-		if(rank > 2)
-			rank = 2;
-		
-		double targetgcost = 10;
-		double targetrcost = 10;
-		
-		List<List<Unit>> militia = new ArrayList<List<Unit>>();
 
-		List<Unit> units = combineTroopsToList("infantry");
-		units.addAll(combineTroopsToList("mounted"));
-		units.addAll(combineTroopsToList("ranged"));
-		
-		//System.out.println(nationid + " has " + units.size() + " units for militia");
-		
-		
-		
-		List<Unit> units2 = new ArrayList<Unit>();
-		units2.addAll(units);
-		
-		for(int i = 0; i < tier; i++)
-		{
-			if(units.size() == 0)
-			{
-				//System.out.println("NOT ENOUGH UNITS FOR MILITIA?! WHAT IS THIS MADNESS? (Nation " + this.nationid + ")");
-				
-				units = combineTroopsToList("infantry");
-				units.addAll(combineTroopsToList("mounted"));
-				units.addAll(combineTroopsToList("ranged"));
-				//break;
-			}
-			
-			List<Unit> rankunits = new ArrayList<Unit>();
-			
-			targetrcost = targetrcost * 1.2;
-			while(rankunits.size() < 2 && units.size() > 0)
-			{	
-				boolean canBeRanged = true;
-				if(i > 0 && militia.get(i - 1).get(0).isRanged())
-					canBeRanged = false;
-				if(rankunits.size() > 0 && rankunits.get(0).isRanged())
-					canBeRanged = false;
-				
-				Unit best = units.get(0);
-				double bestscore = scoreForMilitia(best, targetrcost, targetgcost);
-				for(Unit u : units)
-				{
-					if(!u.isRanged() || (u.isRanged() && canBeRanged))
-					{
-						double score = scoreForMilitia(u, targetrcost, targetgcost);
-						if(bestscore >= score)
-						{
-							bestscore = score;
-							best = u;
-						}		
-					}
-				}
-				units.remove(best);
-				rankunits.add(best);
-			}
-			
 
-			if(rankunits.size() < 2)
-			{
-				//System.out.println("MILITIA PROBLEM - FAILSAFE INITIATED FOR RACE " + this.races.get(0).name + " NATION " + this.nationid);
-				rankunits.add(rankunits.get(0));
-			}
 
-			militia.add(i, rankunits);
-		}
-
-		
-		return militia.get(tier - 1).get(rank - 1);
-	}
-	
-	private double scoreForMilitia(Unit u, double targetres, double targetgold)
-	{
-
-		double goldscore = 0;
-		double resscore = 0;
-		
-		
-		goldscore = Math.abs(u.getGoldCost() - targetgold);
-		if(u.getGoldCost() < targetgold * 0.7)
-			goldscore = goldscore * 2;
-		if(u.getGoldCost() > targetgold * 2)
-			goldscore = goldscore * 2;
-		
-		resscore = Math.abs(u.getResCost(false) - targetres);
-		if(u.getResCost(false) < targetres * 0.7)
-			resscore = resscore * 2;
-		if(u.getResCost(false) > targetres * 2.25)
-			resscore = resscore * 2;
-	
-		if(u.isRanged() && u.getResCost(false) < 20)
-			resscore = resscore * 0.25;
-		
-		//System.out.println("TARGET: " + targetres + " " + targetgold);
-		//System.out.println("UNIT  : " + u.getResCost() + " " + u.getGoldCost() + " - " + u.id + " / " + u.name);
-		//System.out.println("--> " + (0.75*goldscore + resscore));
-		return 0.75*goldscore + resscore;
-	}
-	
-	private int militiaAmount(Unit u)
-	{
-		int res = u.getResCost(true);
-		int gold = u.getGoldCost();
-		
-		if(res >= nationGen.settings.get("resUpperTreshold"))
-			res += nationGen.settings.get("resUpperTresholdChange");
-		if(res <= nationGen.settings.get("resLowerTreshold"))
-			res += nationGen.settings.get("resLowerTresholdChange");
-		if(gold >= nationGen.settings.get("goldUpperTreshold"))
-			gold += nationGen.settings.get("goldUpperTresholdChange");
-		if(gold <= nationGen.settings.get("goldLowerTreshold"))
-			gold += nationGen.settings.get("goldLowerTresholdChange");
-		
-		if(res >= nationGen.settings.get("resMultiTreshold"))
-			res *= nationGen.settings.get("resMulti");
-		
-		int score = res + gold;
-		double multi = nationGen.settings.get("militiaDivider") / score;
-		double result = Math.round(multi * 10);
-		result = result * nationGen.settings.get("militiaMultiplier");
-		
-		return (int)result;
-		
-	}
 	
     
 	public void writeUnits(PrintWriter tw, String spritedir) throws IOException

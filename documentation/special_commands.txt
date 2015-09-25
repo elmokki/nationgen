@@ -4,6 +4,20 @@ Commands that appear in both races and poses prioritize using the one in the pos
 
 --- Race
 
+#pd_targetrcost <cost>
+#pd_targetgcost <cost>
+Sets the target, ie "ideal" pd and start army resource/gold cost with this. Default is mean gold/res cost of non-chariot
+non-special troops the nation has.
+
+#pd_targetrcostmulti <multi>
+#pd_targetgcostmulti <multi>
+Multiplies the target, ie "ideal" pd AND start army resource or gold cost with this. Having multiple entries in one or more places
+stacks multiplicatively.
+
+#pd_amountmulti <multi>
+#startarmy_amountmulti <multi>
+PD/start army amount multiplier. These stack like the above commands. 
+
 #troopdescriptions <file>
 Uses this file (load files at /data/descriptions/descriptions.txt) for troop descriptions.
 
@@ -132,7 +146,26 @@ Defines a new set of commands that is given to units with given probability. Wor
 #possiblecommand <setname> <command>
 Defines a command to a set of #possiblecommandset commands
 
+--- Themes
+
+#pd_targetrcost <cost>
+#pd_targetgcost <cost>
+Sets the target, ie "ideal" pd and start army resource/gold cost with this. Default is mean gold/res cost of non-chariot
+non-special troops the nation has.
+
+#pd_targetrcostmulti <multi>
+#pd_targetgcostmulti <multi>
+Multiplies the target, ie "ideal" pd AND start army resource or gold cost with this. Having multiple entries in one or more places
+stacks multiplicatively.
+
+#pd_amountmulti <multi>
+#startarmy_amountmulti <multi>
+PD/start army amount multiplier. These stack like the above commands. 
+
 --- Pose
+
+#cannot_be_pd
+This unit cannot be used for start armies / province defence
 
 #magefilters <set>
 Loads mage filters from given definition set
@@ -228,6 +261,9 @@ Defines a new set of commands that is given to units with given probability. Wor
 
 #possiblecommand <setname> <command>
 Defines a command to a set of #possiblecommandset commands
+
+#cannot_be_pd
+This unit cannot be used for start armies / province defence
 
 --- Magic patterns
 #costpremium <price>

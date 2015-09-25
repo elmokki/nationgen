@@ -20,12 +20,11 @@ era 2
 
 
 -------------- Militia
--- militiaDivider / (rescost + goldcost) * 10 * militiaMultiplier = amount of specified unit in militia
-militiaDivider 20.0
+-- 20 / (rescost + goldcost) * 10 * militiaMultiplier = amount of specified unit in militia
 militiaMultiplier 1.0
 
 -- If resource is as treshold or above, change is applied
-resUpperTreshold 12
+resUpperTreshold 14
 resUpperTresholdChange -2
 -- Same as above but for gold
 goldUpperTreshold 10
