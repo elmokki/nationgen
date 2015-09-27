@@ -206,6 +206,135 @@
 #end
 
 
+--- Generic giant weapons (for larger giants such as Fomorians)
+
+#new customweapon
+#name "giantaxe"
+#command "#natt 1"
+#command "#def -1"
+#command "#dmg 7"
+#command "#len 3"
+#command "#rcost 2"
+#command "#name 'Giant Axe'"
+#command "#slash"
+#ironweapon
+#end
+
+#new customweapon
+#name "giantspear"
+#command "#natt 1"
+#command "#dmg 3"
+#command "#len 5"
+#command "#rcost 1"
+#command "#name 'Giant Spear'"
+#command "#pierce"
+#ironweapon
+#end
+
+#new customweapon
+#name "giantsword"
+#command "#natt 1"
+#command "#def +1"
+#command "#dmg 9"
+#command "#len 3"
+#command "#rcost 3"
+#command "#name 'Giant Longsword'"
+#command "#slash"
+#ironweapon
+#end
+
+#new customweapon
+#name "giantgreataxe"
+#command "#natt 1"
+#command "#att +1"
+#command "#dmg 9"
+#command "#len 4"
+#command "#rcost 3"
+#command "#name 'Giant Greataxe'"
+#command "#slash"
+#twohanded
+#ironweapon
+#end
+
+#new customweapon
+#name "giantaxe_bronze"
+#command "#natt 1"
+#command "#def -1"
+#command "#dmg 6"
+#command "#len 3"
+#command "#rcost 3"
+#command "#name 'Giant Bronze Axe'"
+#command "#slash"
+#end
+
+#new customweapon
+#name "giantspear_bronze"
+#command "#natt 1"
+#command "#dmg 3"
+#command "#len 5"
+#command "#rcost 1"
+#command "#name 'Giant Bronze Spear'"
+#command "#pierce"
+#end
+
+#new customweapon
+#name "giantsword_bronze"
+#command "#natt 1"
+#command "#def +1"
+#command "#dmg 7"
+#command "#len 3"
+#command "#rcost 3"
+#command "#name 'Giant Bronze Sword'"
+#command "#slash"
+#end
+
+#new customweapon
+#name "giantgreataxe_bronze"
+#command "#natt 1"
+#command "#att +1"
+#command "#dmg 8"
+#command "#len 4"
+#command "#rcost 4"
+#command "#name 'Giant Bronze Greataxe'"
+#command "#slash"
+#twohanded
+#end
+
+#new customweapon
+#name "giantmagicaxe"
+#command "#natt 1"
+#command "#def -1"
+#command "#dmg 9"
+#command "#len 3"
+#command "#rcost 5"
+#command "#name 'Giant Magic Axe'"
+#command "#slash"
+#magic
+#end
+
+#new customweapon
+#name "giantmagicspear"
+#command "#natt 1"
+#command "#dmg 5"
+#command "#len 5"
+#command "#rcost 3"
+#command "#name 'Giant Magic Spear'"
+#command "#pierce"
+#magic
+#end
+
+#new customweapon
+#name "giantmagicsword"
+#command "#natt 1"
+#command "#def +1"
+#command "#dmg 11"
+#command "#len 3"
+#command "#rcost 6"
+#command "#name 'Giant Magic Sword'"
+#command "#slash"
+#magic
+#end
+
 --- CBM warhorse hoof (should be unused currently)
 
 #new customweapon
