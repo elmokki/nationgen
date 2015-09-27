@@ -1,21 +1,47 @@
 
 #newitem
+#id axe
+#gameid giantaxe_bronze
+#sprite /graphics/fomorian/giant/weapon/hatchet.png
+#recolormask /graphics/fomorian/giant/weapon/axe_recolormask.png
+#eliteversion eliteaxe
+#theme "bronze"
+#enditem
+
+#newitem
+#id axe_iron
+#gameid giantaxe
+#sprite /graphics/fomorian/giant/weapon/axe.png
+#recolormask /graphics/fomorian/giant/weapon/axe_recolormask.png
+#eliteversion eliteaxe
+#theme "iron"
+#enditem
+
+#newitem
+#id eliteaxe
+#basechance 0.25
+#gameid giantaxe
+#sprite /graphics/fomorian/giant/weapon/eliteaxe.png
+#recolormask /graphics/fomorian/giant/weapon/axe_recolormask.png
+#enditem
+
+#newitem
 #id greataxe
-#gameid bronzebattleaxe
+#gameid giantgreataxe_bronze
 #sprite /graphics/fomorian/giant/weapon/battleaxe_bronze.png
 #theme "bronze"
 #enditem
 
 #newitem
 #id greataxe_iron
-#gameid 17
+#gameid giantgreataxe
 #sprite /graphics/fomorian/giant/weapon/battleaxe.png
 #theme "iron"
 #enditem
 
 #newitem
 #id broadsword
-#gameid bronzebroadsword
+#gameid giantsword_bronze
 #sprite /graphics/fomorian/giant/weapon/sword_bronze.png
 #eliteversion elitebroadsword
 #theme "bronze"
@@ -23,7 +49,7 @@
 
 #newitem
 #id broadsword_iron
-#gameid 8
+#gameid giantsword
 #sprite /graphics/fomorian/giant/weapon/sword.png
 #eliteversion elitebroadsword
 #theme "iron"
@@ -31,20 +57,21 @@
 
 #newitem
 #id elitebroadsword
-#gameid 8
+#basechance 0.25
+#gameid giantmagicsword
 #sprite /graphics/fomorian/giant/weapon/elitesword.png
 #enditem
 
 #newitem
 #id spear
-#gameid 485
+#gameid giantspear_bronze
 #sprite /graphics/fomorian/giant/weapon/spear_bronze.png
 #theme "bronze"
 #enditem
 
 #newitem
 #id spear_iron
-#gameid 234
+#gameid giantspear
 #sprite /graphics/fomorian/giant/weapon/spear.png
 #theme "iron"
 #enditem
