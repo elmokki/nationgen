@@ -108,3 +108,31 @@
 #offsetx 0
 #offsety -7
 #enditem
+
+#newitem
+#name "flying fish"
+#gameid -1
+#sprite /graphics/machakans/mounts/flyingfish.png
+#needs overlay flyingfish_overlay
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 9"
+#define "#flying"
+#define "#mounted"
+#define "#weapon nostr_bite_5"
+#define "#gcost +5"
+#define "#ressize 1"
+#define "#enc 5"
+#define "#swampsurvival"
+#define "#pooramphibian"
+#tag "animal fish"
+#theme "fish"
+#theme "fishtotem"
+#theme "totemanimal"
+#tag "maxprot 8"
+#tag "guaranteedprefix fish"
+#basechance 0.1
+#offsetx -3
+#offsety -28
+#enditem

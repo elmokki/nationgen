@@ -6,6 +6,8 @@
 #basechance 4
 #subrace giant
 
+#renderorder "shadow extra1 cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda"
+
 #load basesprite /data/items/fomorian/giant/bases.txt
 #load shadow /data/items/fomorian/giant/shadow.txt
 #load hands /data/items/fomorian/giant/hands.txt
@@ -33,6 +35,8 @@
 #newpose
 #role "mage"
 #subrace giant
+
+#renderorder "shadow extra1 cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda"
 
 #magefilters default_magefilters
 #magefilters default_magefilters_strongdefence_expensive
