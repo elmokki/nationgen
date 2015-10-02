@@ -378,7 +378,49 @@ public class Unit {
 		
 	}
 	
+
+	public String getLeaderLevel()
+	{
+		return getLeaderLevel("");
+	}
 	
+	public String getLeaderLevel(String prefix)
+	{
+		List<String> levels = Generic.getLeadershipLevels();
+		
+		String level = "ok";
+		for(Command c : this.getCommands())
+		{
+			String lead = null;
+			if(c.command.endsWith("leader"))
+				lead = c.command.substring(1, c.command.indexOf(prefix + "leader"));
+			
+			if(levels.contains(lead))
+				level = lead;
+		}
+		
+		return level;
+	}
+	
+	
+	public boolean hasLeaderLevel(String prefix)
+	{
+		List<String> levels = Generic.getLeadershipLevels();
+		
+		String level = null;
+		for(Command c : this.getCommands())
+		{
+			String lead = null;
+			if(c.command.endsWith("leader"))
+				lead = c.command.substring(1, c.command.indexOf(prefix + "leader"));
+			
+			if(levels.contains(lead))
+				level = lead;
+		}
+		
+		return level != null;
+		
+	}
 	
 	public int getResCost(boolean useSize)
 	{

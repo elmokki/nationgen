@@ -2,22 +2,149 @@ package nationGen.nation;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.misc.Command;
 import nationGen.units.Unit;
 
 public class PDSelector {
     
 	private NationGen ng;
 	private Nation n;
+	private Random r;
 	public PDSelector(Nation n, NationGen ng)
 	{
 		this.ng = ng;
 		this.n = n;
+		r = new Random(n.random.nextInt());
 	}
 	
+	
+	
+	public Unit getStartArmyCommander()
+	{
+		return getCommander(1, true);
+	}
+	
+	public Unit getPDCommander(int rank)
+	{
+		return getCommander(rank, false);
+	}
+
+	private Unit getCommander(int rank, boolean startarmy)
+	{
+		if(rank < 1)
+			rank = 1;
+		if(rank > 2)
+			rank = 2;
+		
+		List<Unit> commanders = n.generateComList("commander");
+		
+		
+		// Chance to get a priest as potential commander for PD
+		if(!startarmy)
+		{
+			double rand = r.nextDouble();
+			if(rand < 0.025)
+				commanders.add(0, n.generateComList("priest").get(0));
+			else if(rand < 0.1)
+				commanders.add(1, n.generateComList("priest").get(0));
+		}
+		
+		List<Unit> others = new ArrayList<Unit>();
+		if(startarmy)
+		{
+			others.add(getMilitia(1, 1));
+			others.add(getMilitia(1, 2));
+		}
+		else if(rank == 1)
+		{
+			others.add(getMilitia(1, 1));
+			others.add(getMilitia(2, 1));
+		}
+		else if(rank == 2)
+		{
+			others.add(getMilitia(1, 1));
+			others.add(getMilitia(2, 1));
+		}
+		
+		boolean ud_demon = false;
+		boolean magicbeing = false;
+		
+		for(Unit u : others)
+			for(Command c : u.commands)
+			{
+				if(c.command.equals("#undead") || c.command.equals("#demon"))
+					ud_demon = true;
+				else if(c.command.equals("#magicbeing"))
+					magicbeing = true;
+			}
+		
+		
+		List<String> badprefixes = new ArrayList<String>();
+		badprefixes.add("no");
+		if(startarmy)
+			badprefixes.add("poor");
+		
+		// First pass at trying to find a suitable commander
+		List<Unit> validComs = new ArrayList<Unit>();
+		for(Unit u : commanders)
+		{
+			boolean udvalid = false;
+			boolean magicvalid = false;
+			for(Command c : u.commands)
+			{
+				if(ud_demon && c.command.contains("undeadleader"))
+				{
+					String leader = c.command.substring(1, c.command.indexOf("undeadleader"));
+					System.out.println("U: " + leader);
+					if(!badprefixes.contains(leader))
+					{
+						udvalid = true;
+					}
+				}
+				if(magicbeing && c.command.contains("magicleader"))
+				{
+					String leader = c.command.substring(1, c.command.indexOf("magicleader"));
+					System.out.println("M: " + leader);
+					if(!badprefixes.contains(leader))
+					{
+						magicvalid = true;
+					}
+				}
+			}
+			
+
+			if(!ud_demon || ud_demon == udvalid)
+				if(!magicbeing || magicbeing == magicvalid)
+					validComs.add(u);
+			
+			
+		}
+		
+		
+		boolean failsafe = false;
+		if(validComs.size() == 0 || (validComs.size() == 1 && rank == 2))
+		{
+			failsafe = true;
+			validComs = commanders;
+		}
+
+		
+		Unit com = validComs.get(rank - 1);
+		if(failsafe)
+		{
+			if(magicbeing)
+				com.commands.add(new Command("#magiccommand", "40"));
+			if(ud_demon)
+				com.commands.add(new Command("#undcommand", "40"));
+		}
+		
+		return commanders.get(0);
+	}
 	
 	/**
 	 * Gets the rank:th best militia unit of tier:th tier

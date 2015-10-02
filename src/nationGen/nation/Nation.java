@@ -783,13 +783,14 @@ public class Nation {
         // PD
         PDSelector pds = new PDSelector(this, nationGen);
         
+      
         tw.println("");
-        tw.println("#defcom1 " + comlists.get("commanders").get(0).id);
+        tw.println("#defcom1 " + pds.getPDCommander(1).id);
         tw.println("#defunit1 " + pds.getMilitia(1, 1).id);
         tw.println("#defmult1 " + pds.getMilitiaAmount(pds.getMilitia(1, 1)));
         tw.println("#defunit1b " + pds.getMilitia(2, 1).id);
         tw.println("#defmult1b " + pds.getMilitiaAmount(pds.getMilitia(2, 1)));
-        tw.println("#defcom2 " + comlists.get("commanders").get(1).id);
+        tw.println("#defcom2 " + pds.getPDCommander(2).id);
         tw.println("#defunit2 " + pds.getMilitia(1, 2).id);
         tw.println("#defmult2 " + pds.getMilitiaAmount(pds.getMilitia(1, 2)));
         tw.println("#defunit2b " + pds.getMilitia(2, 2).id);
@@ -798,11 +799,11 @@ public class Nation {
         
         
         // Start army
-        tw.println("#startcom " + comlists.get("commanders").get(0).id);
+        tw.println("#startcom " + pds.getStartArmyCommander().id);
         if(comlists.get("scouts").size() > 0)
         	tw.println("#startscout " + comlists.get("scouts").get(0).id);
         else
-        	tw.println("#startscout " + comlists.get("commanders").get(1).id);
+        	tw.println("#startscout " + pds.getPDCommander(2).id);
     
         
         tw.println("#startunittype1 " + pds.getMilitia(1, 1).id);
