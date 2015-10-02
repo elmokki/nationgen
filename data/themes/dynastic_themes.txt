@@ -1,0 +1,224 @@
+-- Generic theme with high diversity and low cohesion
+#newtheme
+#name default
+#basechance 4
+#endtheme
+
+
+-- Tech level themes (mandatory)
+
+-- Weights: EA 1, MA 0.5, LA 0.25
+#newtheme
+#type techlevel
+#name primitive
+#basechance 1
+#chanceinc era 2 -0.5
+#chanceinc era 3 -0.75
+#themeinc theme advanced *0.05
+#themeinc theme iron *0.05
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme cloth *4
+#themeinc theme naked *2
+#themeinc theme primitive *2
+#endtheme
+
+-- Weights: EA 3, MA 2, LA 1
+#newtheme
+#type techlevel
+#name bronze
+#basechance 3
+#chanceinc era 2 -1
+#chanceinc era 3 -2
+#themeinc theme advanced *0.05
+#themeinc theme iron *0.05
+#themeinc theme bronze +1
+#themeinc theme bronze *2
+#themeinc theme wood *2
+#themeinc theme cloth *2
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#endtheme
+
+-- Weights: EA 0.5, MA 1, LA 2
+#newtheme
+#type techlevel
+#name iron
+#basechance 1
+#chanceinc era 1 -0.5
+#chanceinc era 3 +1
+#themeinc theme advanced *1
+#themeinc theme bronze *0.05
+#themeinc theme iron +1
+#themeinc theme iron *2
+#themeinc theme wood *2
+#themeinc theme cloth *1
+#themeinc theme naked *0.5
+#themeinc theme primitive *0.05
+#endtheme
+
+
+-- Demographic themes (mandatory)
+
+-- Just dustwalkers
+-- Weights: EA 2, MA 1, LA 0.5
+#newtheme
+#type demographic
+#name dustwalkers_only
+#basechance 2
+#chanceinc era 2 -1
+#chanceinc era 3 -0.5
+#themeinc theme advanced *0.25
+#themeinc theme iron *0.5
+#themeinc theme bronze *1
+#themeinc theme wood *0.5
+#themeinc theme cloth *2
+#themeinc theme naked *0.5
+#themeinc theme primitive *0.5
+#racedefinition "#pose dustwalkermages"
+#racedefinition "#pose dustwalkertroops"
+#racedefinition "#nationcommand '#idealcold -3'"
+-- #racedefinition "#generationchance ranged 2"
+#racedefinition "#magicpriority death 12.5"
+#racedefinition "#magicpriority earth 10"
+#racedefinition "#magicpriority fire 7.5"
+#racedefinition "#magicpriority astral 5"
+#endtheme
+
+-- Dustwalkers and human slaves
+-- Weights: EA 3, MA 1.5, LA 0.5
+#newtheme
+#type demographic
+#name dustwalkers_slaves
+#basechance 3
+#chanceinc era 2 -1.5
+#chanceinc era 3 -2.5
+#themeinc theme advanced *0.5
+#themeinc theme iron *0.5
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme cloth *2
+#themeinc theme naked *1
+#themeinc theme primitive *0.5
+#racedefinition "#pose dustwalkermages"
+#racedefinition "#pose dustwalkertroops"
+#racedefinition "#pose archaicslaves"
+#racedefinition "#nationcommand '#idealcold -3'"
+-- #racedefinition "#generationchance ranged 2"
+#racedefinition "#magicpriority death 12.5"
+#racedefinition "#magicpriority earth 7.5"
+#racedefinition "#magicpriority fire 7.5"
+#racedefinition "#magicpriority astral 5"
+#endtheme
+
+-- Dustwalker elites and human troops
+-- Weights: EA 2, MA 2, LA 1
+#newtheme
+#type demographic
+#name dustwalkers_humans
+#basechance 2
+#chanceinc era 3 -1
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme cloth *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#racedefinition "#pose dustwalkermages"
+#racedefinition "#pose dustwalkerelites"
+#racedefinition "#pose archaictroops"
+#racedefinition "#pose archaicslaves"
+#racedefinition "#nationcommand '#idealcold -2'"
+-- #racedefinition "#generationchance ranged 2"
+#racedefinition "#magicpriority death 15"
+#racedefinition "#magicpriority earth 5"
+#racedefinition "#magicpriority fire 7.5"
+#racedefinition "#magicpriority astral 7.5"
+#endtheme
+
+-- Dustwalkers T3/sacreds and humans
+-- Weights: EA 1, MA 2, LA 4
+#newtheme
+#type demographic
+#name humans_dustwalkers
+#basechance 4
+#chanceinc era 1 -3
+#chanceinc era 2 -2
+#themeinc theme advanced *1.5
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *2
+#themeinc theme cloth *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#racedefinition "#pose dustwalkermasters"
+#racedefinition "#pose dustwalkersacreds"
+#racedefinition "#pose archaicmages"
+#racedefinition "#pose archaictroops"
+#racedefinition "#pose archaicslaves"
+#racedefinition "#nationcommand '#idealcold -2'"
+-- #racedefinition "#generationchance ranged 2"
+#racedefinition "#magicpriority death 15"
+#racedefinition "#magicpriority earth 2.5"
+#racedefinition "#magicpriority fire 5"
+#racedefinition "#magicpriority astral 5"
+#endtheme
+
+-- Just humans
+-- Weights: EA 0, MA 1, LA 2
+#newtheme
+#type demographic
+#name humans_only
+#basechance 2
+#chanceinc era 1 -2
+#chanceinc era 2 -1
+#themeinc theme advanced *1
+#themeinc theme iron *2
+#themeinc theme bronze *2
+#themeinc theme wood *2
+#themeinc theme cloth *2
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#racedefinition "#pose archaicmages"
+#racedefinition "#pose archaictroops"
+#racedefinition "#pose archaicslaves"
+#racedefinition "#nationcommand '#idealcold -2'"
+-- #racedefinition "#generationchance ranged 2"
+#racedefinition "#magicpriority death 10"
+#racedefinition "#magicpriority earth 2.5"
+#racedefinition "#magicpriority fire 5"
+#racedefinition "#magicpriority astral 7.5"
+#endtheme
+
+
+-- Social themes
+
+-- Weights: EA 3, MA 2, LA 1
+#newtheme
+#type social
+#name slaver
+#basechance 2
+#chanceinc era 1 +1
+#chanceinc era 3 -1
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#themeinc theme slave *20
+#themeinc theme free *0.5
+#themeinc racename caveman *5
+#themeinc racename ape *2
+#themeinc racename human *2
+#themeinc racename lizard *2
+#themeinc racename caelian *0.1
+#themeinc racename van *0.1
+#themeinc racename sidhe *0.1
+#themeinc racename tengu *0.1
+#secondaryracedefinition "#freetemplatefilter slavetemplate slave"
+#racedefinition "#secondaryracetroopmod 100"
+#racedefinition "#secondaryracemagemod -100"
+#endtheme
