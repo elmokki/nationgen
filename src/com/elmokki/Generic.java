@@ -31,6 +31,18 @@ public class Generic {
 	}
 	
 	
+	public static List<String> getLeadershipLevels()
+	{
+		List<String> levels = new ArrayList<String>();
+		levels.add("no");
+		levels.add("poor");
+		levels.add("ok");
+		levels.add("good");
+		levels.add("expert");
+		levels.add("superior");
+		return levels;
+	}
+	
 	public static String integerToPath(int integer)
 	{
 		String[] paths = { "fire", "air", "water", "earth", "astral", "death", "nature", "blood", "holy" };

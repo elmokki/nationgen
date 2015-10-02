@@ -493,7 +493,11 @@ public class MageGenerator extends TroopGenerator {
 		{
 			this.resolveAge(l);
 			list.addAll(l);
+			
 		}
+
+		for(Unit u : list)
+			determineSpecialLeadership(u);
 
 		tagAll(list, "identifier schoolmage");
 		
@@ -595,7 +599,7 @@ public class MageGenerator extends TroopGenerator {
 		List<Unit> primarymages = mages.get(2);
 		
 		Unit u = primarymages.get(0);
-		
+
 		equipBase(u, 3);
 		varyEquipment(u, primarymages, 3);
 
@@ -641,9 +645,7 @@ public class MageGenerator extends TroopGenerator {
 			this.equipBase(un, 2);
 		}
 		
-
-
-		
+		determineSpecialLeadership(u);
 		return list;
 	}
 	
@@ -1197,39 +1199,7 @@ public class MageGenerator extends TroopGenerator {
 				u.commands.add(new Command("#mr", "+" + (2 + currentStrength)));
 
 				
-				// STR or cap only for h3
-				if(currentStrength == 3 && r.nextDouble() > 0.5)
-					u.commands.add(new Command("#slowrec"));
-				else if(currentStrength == 3)
-				{
-					u.caponly = true;
-					if(r.nextDouble() > 0.9)
-						u.commands.add(new Command("#slowrec"));
-				}
-				
-				if(currentStrength == 3 && r.nextDouble() > 0.75){/*do nothing*/}
-				else if(currentStrength == 2 && r.nextDouble() > 0.85){/*do nothing*/}
-				else
-				{
-					if(maxStrength == 1 && r.nextDouble() > 0.5)
-						u.commands.add(new Command("#gcost", "+10"));
-					else if(currentStrength == 1 && r.nextDouble() > 0.875)
-						u.commands.add(new Command("#gcost", "+10"));
-					else if(currentStrength == 1 && maxStrength > 1 && r.nextDouble() > 0.875)
-					{
-						u.commands.add(new Command("#noleader"));
-						u.commands.add(new Command("#gcost", "-5"));
-					}
-					else
-					{
-						u.commands.add(new Command("#poorleader"));
-						if(r.nextDouble() > 0.875)
-						{
-							u.commands.add(new Command("#command", "+30"));
-							u.commands.add(new Command("#gcost", "+5"));
-						}
-					}
-				}
+
 				
 				List<String> body = new ArrayList<String>();	// Set a temporary null description for priests
 				(new CommanderGenerator(this.nationGen, this.nation)).generateDescription(u, false, false, false);
@@ -1290,10 +1260,77 @@ public class MageGenerator extends TroopGenerator {
 				this.deriveEquipment(parent, u, ptier, tier);
 			}
 			
+
+			
+			
 			parent = u;
 		}
 
+		
+		for(Unit u : priests)
+		{
+			// STR or cap only for h3
+			if(currentStrength == 3 && r.nextDouble() > 0.5)
+				u.commands.add(new Command("#slowrec"));
+			else if(currentStrength == 3)
+			{
+				u.caponly = true;
+				if(r.nextDouble() > 0.9)
+					u.commands.add(new Command("#slowrec"));
+			}
+			
+			if(currentStrength == 3 && r.nextDouble() > 0.75){/*do nothing*/}
+			else if(currentStrength == 2 && r.nextDouble() > 0.85){/*do nothing*/}
+			else
+			{
+				if(maxStrength == 1 && r.nextDouble() > 0.5)
+					u.commands.add(new Command("#gcost", "+10"));
+				else if(currentStrength == 1 && r.nextDouble() > 0.875)
+					u.commands.add(new Command("#gcost", "+10"));
+				else if(currentStrength == 1 && maxStrength > 1 && r.nextDouble() > 0.875)
+				{
+					u.commands.add(new Command("#noleader"));
+					u.commands.add(new Command("#gcost", "-5"));
+				}
+				else
+				{
+					u.commands.add(new Command("#poorleader"));
+					if(r.nextDouble() > 0.875)
+					{
+						u.commands.add(new Command("#command", "+30"));
+						u.commands.add(new Command("#gcost", "+5"));
+					}
+				}
+			}
+			
+			// Determine special leadership
+			determineSpecialLeadership(u);
+		}
+		
+		
 		return priests;
+	}
+	
+	private void determineSpecialLeadership(Unit u)
+	{
+		String basiclevel = u.getLeaderLevel();
+		
+		List<String> others = new ArrayList<String>();
+		for(Command c : u.commands)
+			if(c.command.equals("#undead") || c.command.equals("#demon"))
+				others.add("undead");
+			else if(c.command.equals("#magicbeing"))
+				others.add("magic");
+		
+		for(String str : others)
+		{
+			if(!u.hasLeaderLevel(str))
+			{
+				u.commands.add(new Command("#" + basiclevel + str + "leader"));
+			}
+		}
+
+		
 	}
 	
 	/**
