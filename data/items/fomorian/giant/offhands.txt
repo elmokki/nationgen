@@ -1,7 +1,7 @@
 
 #newitem
 #id broadsword_bronze
-#gameid bronzebroadsword
+#gameidgiantsword_ bronze
 #sprite /graphics/fomorian/giant/offhand/offhandsword_bronze.png
 #eliteversion elitebroadsword
 #theme "bronze"
@@ -9,7 +9,7 @@
 
 #newitem
 #id broadsword
-#gameid 8
+#gameid giantsword
 #sprite /graphics/fomorian/giant/offhand/offhandsword.png
 #eliteversion elitebroadsword
 #theme "iron"
@@ -17,6 +17,34 @@
 
 #newitem
 #id elitebroadsword
-#gameid 8
+#basechance 0.25
+#gameid giantmagicsword
 #sprite /graphics/fomorian/giant/offhand/offhandelitesword.png
+#enditem
+
+
+#newitem
+#id axe
+#gameid giantaxe_bronze
+#sprite /graphics/fomorian/giant/offhand/offhandaxe.png
+#recolormask /graphics/fomorian/offhand/offhandaxe_recolormask.png
+#eliteversion eliteaxe
+#theme "bronze"
+#enditem
+
+#newitem
+#id axe_iron
+#gameid giantaxe
+#sprite /graphics/fomorian/giant/offhand/offhandaxe.png
+#recolormask /graphics/fomorian/giant/offhand/offhandaxe_recolormask.png
+#eliteversion eliteaxe
+#theme "iron"
+#enditem
+
+#newitem
+#id eliteaxe
+#basechance 0.25
+#gameid giantaxe
+#sprite /graphics/fomorian/giant/offhand/offhandeliteaxe.png
+#recolormask /graphics/fomorian/giant/offhand/offhandaxe_recolormask.png
 #enditem
