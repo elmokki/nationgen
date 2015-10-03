@@ -1,0 +1,81 @@
+------- Dynastic human mages: only difference between tier poses is basechance
+
+------- mage/priest T1 - pretty much always human
+#newpose
+#role "mage"
+#role "priest"
+
+#basechance 100
+
+#tier 1
+#notfortier 2
+#notfortier 3
+
+#load basesprite /data/items/dynastichuman/bases_dynastic.txt
+#load shadow /data/items/dynastichuman/shadow.txt
+#load hands /data/items/dynastichuman/hands_dynastic.txt
+
+#load cloakf /data/items/dynastichuman/cloakf.txt
+#load cloakb /data/items/dynastichuman/cloakb.txt
+
+#load armor /data/items/dynastichuman/caster/robes.txt
+#load helmet /data/items/dynastichuman/caster/helmet.txt
+
+#load weapon /data/items/dynastichuman/caster/weapon.txt
+#load offhand /data/items/dynastichuman/caster/offhands.txt
+
+#endpose
+
+
+------- mage/priest T2 - less likely than Dust Walkers but they exist
+#newpose
+#role "mage"
+#role "priest"
+
+#basechance 1
+
+#notfortier 1
+#tier 2
+#notfortier 3
+
+#load basesprite /data/items/dynastichuman/bases_dustwalker.txt
+#load shadow /data/items/dynastichuman/shadow.txt
+#load hands /data/items/dynastichuman/hands_dustwalker.txt
+
+#load cloakf /data/items/dynastichuman/cloakf.txt
+#load cloakb /data/items/dynastichuman/cloakb.txt
+
+#load armor /data/items/dynastichuman/caster/robes.txt
+#load helmet /data/items/dynastichuman/caster/helmet.txt
+
+#load weapon /data/items/dynastichuman/caster/weapon.txt
+#load offhand /data/items/dynastichuman/caster/offhands.txt
+
+#endpose
+
+
+------- mage/priest T3 - Pretty much never unless it's only humans
+#newpose
+#role "mage"
+#role "priest"
+
+#basechance 0.01
+
+#notfortier 1
+#notfortier 2
+#tier 3
+
+#load basesprite /data/items/dynastichuman/bases_dustwalker.txt
+#load shadow /data/items/dynastichuman/shadow.txt
+#load hands /data/items/dynastichuman/hands_dustwalker.txt
+
+#load cloakf /data/items/dynastichuman/cloakf.txt
+#load cloakb /data/items/dynastichuman/cloakb.txt
+
+#load armor /data/items/dynastichuman/caster/robes.txt
+#load helmet /data/items/dynastichuman/caster/helmet.txt
+
+#load weapon /data/items/dynastichuman/caster/weapon.txt
+#load offhand /data/items/dynastichuman/caster/offhands.txt
+
+#endpose

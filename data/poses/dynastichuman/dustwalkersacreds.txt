@@ -1,0 +1,111 @@
+
+-------- Normal
+
+#newpose
+#basechance 100
+#name "standard inf"
+#role "sacred infantry"
+#mapmovepenaltyenc 10
+
+#renderorder "shadow cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon cloakf offhandw hands helmet offhanda overlay"
+
+#load basesprite /data/items/dynastichuman/bases_dustwalker.txt
+#load shadow /data/items/dynastichuman/shadow.txt
+#load hands /data/items/dynastichuman/hands_dustwalker.txt
+
+#load cloakf /data/items/dynastichuman/cloakf.txt
+#load cloakb /data/items/dynastichuman/cloakb.txt
+
+#load armor /data/items/dynastichuman/normal/armor.txt
+#load helmet /data/items/dynastichuman/normal/helmet.txt
+#load legs /data/items/dynastichuman/legs.txt
+
+#load weapon /data/items/dynastichuman/normal/weapon.txt
+#load bonusweapon /data/items/dynastichuman/normal/bonusranged.txt 
+
+#load offhand /data/items/dynastichuman/normal/offhand.txt
+#load offhand /data/items/dynastichuman/normal/shields.txt
+#load offhand /data/items/dynastichuman/normal/sacredweapon.txt
+
+#endpose
+
+
+
+-------- 2h infantry
+
+#newpose
+#basechance 20
+#name "2h inf"
+#role "sacred infantry"
+#mapmovepenaltyenc 10
+
+#load basesprite /data/items/dynastichuman/bases_dustwalker_2h.txt
+#load shadow /data/items/dynastichuman/shadow.txt
+#load hands /data/items/dynastichuman/hands_dustwalker.txt
+
+#load cloakf /data/items/dynastichuman/cloakf.txt
+#load cloakb /data/items/dynastichuman/cloakb.txt
+
+#load armor /data/items/dynastichuman/normal/armor_2h.txt
+#load helmet /data/items/dynastichuman/normal/helmet.txt
+#load legs /data/items/dynastichuman/legs.txt
+
+#load weapon /data/items/dynastichuman/normal/weapon_2h.txt
+#load bonusweapon /data/items/dynastichuman/normal/bonusranged.txt 
+
+#endpose
+
+
+#newpose
+#name "dustwalker archer"
+#basechance 100
+#role "sacred ranged"
+#mapmovepenaltyenc 10
+
+#renderorder "shadow cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon cloakf offhandw hands helmet offhanda overlay"
+
+#load basesprite /data/items/dynastichuman/bases_dustwalker.txt
+#load shadow /data/items/dynastichuman/shadow.txt
+#load hands /data/items/dynastichuman/hands_dustwalker.txt
+
+#load cloakf /data/items/dynastichuman/cloakf.txt
+#load cloakb /data/items/dynastichuman/cloakb.txt
+
+#load armor /data/items/dynastichuman/normal/armor.txt
+#load helmet /data/items/dynastichuman/normal/helmet.txt
+#load legs /data/items/dynastichuman/legs.txt
+
+#load weapon /data/items/dynastichuman/archer/bows.txt
+#load quiver /data/items/dynastichuman/archer/quiver.txt
+#load bonusweapon /data/items/dynastichuman/archer/archerweapon.txt
+
+#generateitem 1 bonusweapon
+
+#endpose
+
+----------- Charioteers
+
+#newpose
+#basechance 100
+#name "dustwalker chariot"
+#role "elite chariot"
+#role "sacred chariot"
+
+#load basesprite /data/items/dynastichuman/bases_dustwalker_2h.txt
+#load mount /data/items/lizard/normal/lizardbases_chariot.txt
+
+#load hands /data/items/dynastichuman/hands_dustwalker.txt
+
+#load cloakf /data/items/dynastichuman/cloakf.txt
+#load cloakb /data/items/dynastichuman/cloakb.txt
+
+#load armor /data/items/dynastichuman/chariot/armor.txt
+#load helmet /data/items/dynastichuman/normal/helmet.txt
+#load legs /data/items/dynastichuman/legs.txt
+
+#load weapon /data/items/dynastichuman/chariot/weapon.txt
+#load bonusweapon /data/items/dynastichuman/normal/bonusranged.txt 
+-- Always have a bonus ranged?
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+#endpose
