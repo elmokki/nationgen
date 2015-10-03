@@ -1,0 +1,146 @@
+
+--- Leather
+
+
+#newitem
+#name "leather cuirass"
+#gameid 5
+#sprite /graphics/advancedhuman/armor/leather_cuirass.png
+#armor
+#enditem
+
+#newitem
+#name "leather hauberk"
+#gameid 10
+#sprite /graphics/advancedhuman/armor/leather_hauberk.png
+#armor
+#enditem
+
+
+#newitem -- full leather
+#newitem
+#name "full leather"
+#gameid 15
+#sprite /graphics/advancedhuman/armor/leather_hauberk.png
+#needs shirt noshirt_leatherpants
+#armor
+#enditem
+
+
+--- Ring
+
+#newitem
+#name "ring cuirass"
+#gameid 6
+#sprite /graphics/advancedhuman/armor/ring_cuirass.png
+#armor
+#enditem
+
+
+#newitem
+#name "ring hauberk"
+#gameid 11
+#sprite /graphics/advancedhuman/armor/ring_hauberk.png
+#armor
+#enditem
+
+#newitem -- full ring
+#name "full ring"
+#gameid 16
+#sprite /graphics/advancedhuman/armor/ring_hauberk.png
+#armor
+#needs shirt noshirt_leatherpants
+#enditem
+
+
+--- Scale Mail
+
+#newitem
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/advancedhuman/armor/scale_cuirass.png
+#tag "eliteversion 'scale cuirass elite'"
+#armor
+#enditem
+
+#newitem
+#name "scale hauberk"
+#gameid 12
+#sprite /graphics/advancedhuman/armor/scale_hauberk.png
+#tag "eliteversion 'scale hauberk elite'"
+#armor
+#needs shirt mailsleeves_pants
+#enditem
+
+#newitem -- full scale
+#name "full scale"
+#gameid 17
+#sprite /graphics/advancedhuman/armor/scale_full.png
+#tag "eliteversion 'scale full elite'"
+#armor
+#needs shirt mailsleeves_pants
+#enditem
+
+
+--- Chain Mail
+
+#newitem
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/advancedhuman/armor/chain_cuirass.png
+#tag "eliteversion 'chain cuirass elite'"
+#armor
+#enditem
+
+#newitem
+#name "chain hauberk"
+#gameid 13
+#sprite /graphics/advancedhuman/armor/chain_hauberk.png
+#tag "eliteversion 'chain hauberk elite'"
+#armor
+#needs shirt mailsleeves_pants
+#enditem
+
+#newitem -- full chain
+#name "full chain"
+#gameid 18
+#sprite /graphics/advancedhuman/armor/chain_full.png
+#tag "eliteversion 'chain full elite'"
+#armor
+#tag "name mounted knight"
+#needs shirt mailsleeves_pants
+#enditem
+
+--- Plate
+
+#newitem
+#name "plate cuirass"
+#gameid 9
+#sprite /graphics/advancedhuman/armor/plate_cuirass.png
+#tag "eliteversion 'plate cuirass elite'"
+#tag "eliteversion 'plate cuirass gilt'"
+#armor
+#enditem
+
+#newitem
+#name "plate hauberk"
+#gameid 14
+#sprite /graphics/advancedhuman/armor/plate_hauberk.png
+#tag "eliteversion 'plate hauberk'"
+#tag "eliteversion 'plate hauberk gilt1'"
+#tag "eliteversion 'plate hauberk gilt2'"
+#armor
+#tag "name mounted knight"
+#enditem
+
+#newitem -- full plate
+#name "full plate"
+#gameid 19
+#sprite /graphics/advancedhuman/armor/plate_full.png
+#tag "eliteversion 'full plate'"
+#tag "eliteversion 'full plate gilt'"
+#armor
+#tag "name mounted knight"
+#maxvarieties 1
+#needs shirt noshirt_nopants
+#enditem

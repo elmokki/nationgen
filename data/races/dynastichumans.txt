@@ -1,0 +1,43 @@
+#newrace
+#name "Dynastic human"
+#visiblename "Human"
+#basechance 0.375
+#basechance 0
+
+#nationthemes dynastic_themes
+#freetheme techlevel
+#freetheme demographic
+
+-- There are other poses defined, but they're all subsets of these pose sets
+#spritegenpose dustwalkermages
+#spritegenpose dustwalkertroops
+#spritegenpose dynasticmages
+#spritegenpose dynastictroops
+#spritegenpose dynasticslaves
+
+#longsyllables /data/names/nations/lizard/longsyllables.txt
+#shortsyllables /data/names/nations/lizard/shortsyllables.txt
+#suffixes /data/names/nations/lizard/suffixes.txt
+
+#generationchance chariot 0.5
+#generationchance ranged 2
+#generationchance cavalry 0.001
+
+#sacredchariotchance 0.25
+#monsterchance 0.01
+
+#gods lizardgods
+
+#chanceinc "race van *0.1"
+#chanceinc "race sidhe *0.1"
+#chanceinc "race caelian *0.1"
+#chanceinc "race 'Austral human' *3"
+#chanceinc "race lizard *3"
+
+#chanceinc era 1 +0.125
+#chanceinc era 3 -0.125
+
+#specialcommanderfilters default_specialcommanderfilters
+#specialcommanderfilters specialcommanderfilters_extended
+
+#endrace

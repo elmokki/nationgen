@@ -1,0 +1,56 @@
+------- Strong Dust Walker mages: only difference between tier poses is basechance
+
+------- mage/priest T1 - N/A
+
+------- mage/priest T2 - rare but not impossible
+#newpose
+#role "mage"
+#role "priest"
+
+#basechance 0.1
+
+#notfortier 1
+#tier 2
+#notfortier 3
+
+#load basesprite /data/items/dynastichuman/bases_dustwalker_2h.txt
+#load shadow /data/items/dynastichuman/shadow.txt
+#load hands /data/items/dynastichuman/hands_dustwalker.txt
+
+#load cloakf /data/items/dynastichuman/cloakf.txt
+#load cloakb /data/items/dynastichuman/cloakb.txt
+
+#load armor /data/items/dynastichuman/caster/robes.txt
+#load helmet /data/items/dynastichuman/caster/helmet.txt
+
+#load weapon /data/items/dynastichuman/caster/weapon.txt
+#load offhand /data/items/dynastichuman/caster/offhands.txt
+
+#endpose
+
+
+------- mage/priest T3 - Pretty much always regardless of whether there are humans
+#newpose
+#role "mage"
+#role "priest"
+
+#basechance 100
+
+#notfortier 1
+#notfortier 2
+#tier 3
+
+#load basesprite /data/items/dynastichuman/bases_dustwalker_2h.txt
+#load shadow /data/items/dynastichuman/shadow.txt
+#load hands /data/items/dynastichuman/hands_dustwalker.txt
+
+#load cloakf /data/items/dynastichuman/cloakf.txt
+#load cloakb /data/items/dynastichuman/cloakb.txt
+
+#load armor /data/items/dynastichuman/caster/robes.txt
+#load helmet /data/items/dynastichuman/caster/helmet.txt
+
+#load weapon /data/items/dynastichuman/caster/weapon.txt
+#load offhand /data/items/dynastichuman/caster/offhands.txt
+
+#endpose

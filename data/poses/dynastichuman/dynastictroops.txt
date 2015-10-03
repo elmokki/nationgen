@@ -1,0 +1,140 @@
+-------- Normal
+
+#newpose
+#name "human inf"
+#role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
+
+#renderorder "shadow cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon cloakf offhandw hands helmet offhanda overlay"
+
+#load basesprite /data/items/dynastichuman/bases_dynastic.txt
+#load shadow /data/items/dynastichuman/shadow.txt
+#load hands /data/items/dynastichuman/hands_dynastic.txt
+
+#load cloakf /data/items/dynastichuman/cloakf.txt
+#load cloakb /data/items/dynastichuman/cloakb.txt
+
+#load armor /data/items/dynastichuman/normal/armor.txt
+#load helmet /data/items/dynastichuman/normal/helmet.txt
+#load legs /data/items/dynastichuman/legs.txt
+
+#load weapon /data/items/dynastichuman/normal/weapon.txt
+#load bonusweapon /data/items/dynastichuman/normal/bonusranged.txt 
+
+#load offhand /data/items/dynastichuman/normal/offhand.txt
+#load offhand /data/items/dynastichuman/normal/shields.txt
+#load offhand /data/items/dynastichuman/normal/sacredweapon.txt
+
+#endpose
+
+
+
+-------- 2h infantry
+
+#newpose
+#basechance 0.2
+#name "human 2h inf"
+#role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
+
+#load basesprite /data/items/dynastichuman/bases_dynastic_2h.txt
+#load shadow /data/items/dynastichuman/shadow.txt
+#load hands /data/items/dynastichuman/hands_dynastic.txt
+
+#load cloakf /data/items/dynastichuman/cloakf.txt
+#load cloakb /data/items/dynastichuman/cloakb.txt
+
+#load armor /data/items/dynastichuman/normal/armor_2h.txt
+#load helmet /data/items/dynastichuman/normal/helmet.txt
+#load legs /data/items/dynastichuman/legs.txt
+
+#load weapon /data/items/dynastichuman/normal/weapon_2h.txt
+#load bonusweapon /data/items/dynastichuman/normal/bonusranged.txt 
+
+#endpose
+
+
+#newpose
+#name "human archer"
+#role "ranged"
+#role "elite ranged"
+#role "sacred ranged"
+
+#renderorder "shadow cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon cloakf offhandw hands helmet offhanda overlay"
+
+#load basesprite /data/items/dynastichuman/bases_dynastic.txt
+#load shadow /data/items/dynastichuman/shadow.txt
+#load hands /data/items/dynastichuman/hands_dynastic.txt
+
+#load cloakf /data/items/dynastichuman/cloakf.txt
+#load cloakb /data/items/dynastichuman/cloakb.txt
+
+#load armor /data/items/dynastichuman/normal/armor.txt
+#load helmet /data/items/dynastichuman/normal/helmet.txt
+#load legs /data/items/dynastichuman/legs.txt
+
+#load weapon /data/items/dynastichuman/archer/bows.txt
+#load quiver /data/items/dynastichuman/archer/quiver.txt
+#load bonusweapon /data/items/dynastichuman/archer/archerweapon.txt
+
+#generateitem 1 bonusweapon
+
+#endpose
+
+
+----------- Charioteers
+
+#newpose
+#role "human chariot"
+#role "chariot"
+#role "elite chariot"
+#role "sacred chariot"
+
+#load basesprite /data/items/dynastichuman/bases_dynastic_2h.txt
+#load mount /data/items/human/human_mounted/humanbases_chariot.txt
+
+#load hands /data/items/dynastichuman/hands_dynastic.txt
+
+#load cloakf /data/items/dynastichuman/cloakf.txt
+#load cloakb /data/items/dynastichuman/cloakb.txt
+
+#load armor /data/items/dynastichuman/chariot/armor.txt
+#load helmet /data/items/dynastichuman/normal/helmet.txt
+#load legs /data/items/dynastichuman/legs.txt
+
+#load weapon /data/items/dynastichuman/chariot/weapon.txt
+#load bonusweapon /data/items/dynastichuman/normal/bonusranged.txt 
+-- Always have a bonus ranged?
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+#endpose
+
+
+
+------------- scout
+
+#newpose
+#role "human scout"
+
+#renderorder "shadow cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon cloakf helmet offhandw hands offhanda overlay"
+
+#load basesprite /data/items/dynastichuman/bases_dynastic_2h.txt
+#load shadow /data/items/dynastichuman/shadow.txt
+#load hands /data/items/dynastichuman/hands_dynastic.txt
+
+#load cloakf /data/items/dynastichuman/cloakf.txt
+#load cloakb /data/items/dynastichuman/cloakb.txt
+
+#load armor /data/items/dynastichuman/normal/armor_2h.txt
+#load helmet /data/items/dynastichuman/scout/helmet.txt
+#load legs /data/items/dynastichuman/legs.txt
+
+#load weapon /data/items/dynastichuman/scout/weapon.txt
+#load bonusweapon /data/items/dynastichuman/normal/bonusranged.txt 
+
+#load offhand /data/items/dynastichuman/scout/offhand.txt
+
+#endpose
+
