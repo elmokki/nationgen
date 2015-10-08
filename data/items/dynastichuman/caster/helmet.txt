@@ -1,153 +1,155 @@
-
---- Caster hats
-
-#newitem
-#id azuremage_cap
-#gameid 120
-#sprite /graphics/advancedhuman/helmets/caster/azuremage_cap.png
-#recolormask /graphics/advancedhuman/helmets/caster/azuremage_cap_recolormask.png
-#armor
-#tag "tier 2"
-#tag "tier 3"
-#offsety -1
-#enditem
+-- Nothing
 
 #newitem
-#id straw_hat
+#id nothing
+#basechance 0
+#chanceinc "personalcommand #slave 12"
+#chanceinc "personalcommand #mindless 12"
 #gameid -1
-#sprite /graphics/advancedhuman/helmets/caster/cap_conical.png
-#offsety -1
+#eliteversion scarf_worn
 #armor
-#tag "tier 1"
-#tag "eliteversion straw_hat_colored"
+#theme "primitive"
+#theme "naked"
+#type slave
+#type longdead
 #enditem
 
 #newitem
-#id straw_hat_colored
+#id nothing
+#basechance 3
+#chanceinc "personalcommand #undead *0"
 #gameid -1
-#sprite /graphics/advancedhuman/helmets/caster/cap_conical.png
-#recolormask /graphics/advancedhuman/helmets/caster/cap_conical_recolormask.png
-#offsety -1
+#eliteversion scarf
 #armor
-#tag "tier 1"
-#tag "tier 2"
+#theme "primitive"
+#theme "naked"
 #enditem
 
+
+
+-- Headscarf
+
 #newitem
-#id cap_gnome
+#id scarf_worn
+#basechance 0
+#chanceinc "personalcommand #slave 12"
+#chanceinc "personalcommand #mindless 12"
 #gameid -1
-#sprite /graphics/advancedhuman/helmets/caster/cap_gnome.png
-#recolormask self
-#offsety -1
+#sprite /graphics/dynastichuman/helmet/headscarf_worn.png
+#eliteversion scarf
 #armor
-#tag "tier 1"
-#tag "tier 2"
-#tag "eliteversion hood1"
+#type slave
+#type longdead
 #enditem
 
 #newitem
-#id cap_ragha1
+#id scarf
+#basechance 12
+#chanceinc "personalcommand #slave -6"
 #gameid -1
-#sprite /graphics/advancedhuman/helmets/caster/cap_ragha1.png
-#recolormask /graphics/advancedhuman/helmets/caster/cap_ragha1_recolormask.png
-#offsety -1
+#sprite /graphics/dynastichuman/helmet/headscarf.png
+#eliteversion nemes_ornate
 #armor
-#tag "tier 1"
-#tag "tier 2"
-#tag "eliteversion cap_ragha2"
-#tag "eliteversion hat_demonpriest"
+#type slave
 #enditem
 
 #newitem
-#id cap_ragha2
-#gameid -1
-#sprite /graphics/advancedhuman/helmets/caster/cap_ragha2.png
-#recolormask /graphics/advancedhuman/helmets/caster/cap_ragha2_recolormask.png
-#offsety -1
+#id nemes_ornate
+#basechance 1
+#gameid 148
+#sprite /graphics/dynastichuman/helmet/nemes_ornate.png
+#recolormask /graphics/dynastichuman/helmet/nemes_ornate_recolormask.png
+#eliteversion nemes_ornate
 #armor
-#tag "tier 3"
-#tag "tier 2"
+#theme "sacred"
+#enditem
+
+
+
+-- Helmet
+
+#newitem
+#id bronzecap
+#gameid 20
+#sprite /graphics/dynastichuman/helmet/bronzecap.png
+#eliteversion bronzecap_gilt
+#eliteversion bronzecap_fancy
+#armor
+#theme "bronze"
+#theme "advanced"
 #enditem
 
 #newitem
-#id hat_captain
-#gameid -1
-#sprite /graphics/advancedhuman/helmets/caster/captain_hat.png
-#recolormask /graphics/advancedhuman/helmets/caster/captain_hat_recolormask.png
-#offsety -1
+#id bronzecap_fancy
+#gameid 20
+#sprite /graphics/dynastichuman/helmet/bronzecap_feather.png
+#eliteversion bronzecap_gilt_fancy
 #armor
-#tag "tier 3"
-#tag "tier 2"
+#theme "bronze"
+#theme "advanced"
+#theme "elite"
 #enditem
 
 #newitem
-#id hat_demonpriest
-#gameid -1
-#sprite /graphics/advancedhuman/helmets/caster/demonpriest_hat.png
-#recolormask self
-#offsety -1
+#id bronzecap_gilt
+#gameid 20
+#sprite /graphics/dynastichuman/helmet/goldcap.png
+#eliteversion bronzecap_gilt_fancy
 #armor
-#tag "tier 3"
-#tag "tier 2"
+#theme "bronze"
+#theme "advanced"
+#theme "elite"
 #enditem
 
 #newitem
-#id hat_engineer
-#gameid -1
-#sprite /graphics/advancedhuman/helmets/caster/engineer_hat.png
-#recolormask /graphics/advancedhuman/helmets/caster/engineer_hat_recolormask.png
+#id bronzecap_gilt_fancy
+#gameid 20
+#sprite /graphics/dynastichuman/helmet/goldcap_feather.png
 #armor
-#tag "tier 3"
-#tag "tier 2"
+#theme "bronze"
+#theme "advanced"
+#theme "elite"
 #enditem
 
 #newitem
-#id hat_missionary
-#gameid 120
-#sprite /graphics/advancedhuman/helmets/caster/missionary_hat.png
-#offsetx -1
-#offsety -1
+#id ironcap
+#gameid 20
+#sprite /graphics/dynastichuman/helmet/ironcap.png
+#eliteversion ironcap_gilt
+#eliteversion ironcap_fancy
 #armor
-#tag "tier 2"
-#tag "tier 1"
+#theme "iron"
+#theme "advanced"
 #enditem
 
 #newitem
-#id hat_troubadour
-#gameid 120
-#sprite /graphics/advancedhuman/helmets/caster/troubadour_hat.png
-#recolormask /graphics/advancedhuman/helmets/caster/troubadour_hat_recolormask.png
-#offsety -1
+#id ironcap_fancy
+#gameid 20
+#sprite /graphics/dynastichuman/helmet/ironcap_feather.png
+#eliteversion ironcap_gilt_fancy
 #armor
-#tag "tier 3"
-#tag "tier 2"
-#tag "tier 1"
+#theme "iron"
+#theme "advanced"
+#theme "elite"
 #enditem
 
 #newitem
-#id turban_white
-#gameid -1
-#sprite /graphics/advancedhuman/helmets/caster/turban.png
-#tag "eliteversion turban_light"
-#tag "eliteversion turban_dark"
+#id ironcap_gilt
+#gameid 20
+#sprite /graphics/dynastichuman/helmet/goldcap.png
+#eliteversion ironcap_gilt_fancy
 #armor
-#tag "tier 1"
+#theme "iron"
+#theme "advanced"
+#theme "elite"
 #enditem
 
 #newitem
-#id turban_light
-#gameid -1
-#sprite /graphics/advancedhuman/helmets/caster/turban.png
-#recolormask /graphics/advancedhuman/helmets/caster/turban_recolormask2.png
+#id ironcap_gilt_fancy
+#gameid 20
+#sprite /graphics/dynastichuman/helmet/goldcap_feather.png
 #armor
-#tag "tier 2"
+#theme "iron"
+#theme "advanced"
+#theme "elite"
 #enditem
-
-#newitem
-#id turban_dark
-#gameid -1
-#sprite /graphics/advancedhuman/helmets/caster/turban.png
-#recolormask /graphics/advancedhuman/helmets/caster/turban_recolormask3.png
-#armor
-#tag "tier 2"
-#enditem#enditem

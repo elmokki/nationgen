@@ -2,6 +2,8 @@
 #name "javelin 1"
 #gameid 21
 #sprite /graphics/weapon/standard/javelin1.png
+#offsetx 1
+#offsety -2
 #tag "name infantry 'Javelineer'"
 #basechance 0.75
 #enditem
@@ -10,23 +12,16 @@
 #name "javelin 2"
 #gameid 21
 #sprite /graphics/weapon/standard/javelin2.png
+#offsetx 1
+#offsety -3
 #tag "name infantry 'Javelineer'"
 #basechance 0.75
-#enditem
-
-#newitem
-#name "bonus crossbow"
-#gameid 25
-#sprite /graphics/weapon/standard/bonuscrossbow.png
-#basechance 1.5
-#theme "advanced"
-#tag "name infantry 'Ranger'"
 #enditem
 
 #newitem -- Throwing axe
 #name "throwing axe"
 #gameid 260
-#theme "primitive"
+#theme "iron"
 #tag "name infantry 'Axe Thrower'"
 #basechance 1.5
 #chanceinc unittag irregular 4
@@ -36,43 +31,18 @@
 #name "bonus shortbow"
 #gameid 23
 #sprite /graphics/weapon/standard/bonusshortbow.png
+#offsetx 2
+#offsety -2
 #basechance 1
 #tag "name infantry 'Ranger'"
-#enditem
-
-#newitem
-#name "chakram"
-#gameid 362
-#tag "name infantry 'Chakram Thrower'"
-#tag "tierunique"
-#basechance 0.25
-#enditem
-
-#newitem
-#name "harpoon"
-#gameid 452
-#sprite /graphics/weapon/standard/javelin1.png
-#tag "name infantry 'Harponeer'"
-#tag "maxprot 14"
-#tag "tierunique"
-#basechance 0.25
-#chanceinc unittag irregular 1.5
-#enditem
-
-#newitem
-#name "blowpipe"
-#gameid 34
-#tag "name infantry 'Poisoner'"
-#tag "maxprot 12"
-#tag "tierunique"
-#basechance 0.5
-#chanceinc unittag irregular 1.5
 #enditem
 
 #newitem
 #name "net"
 #gameid 263
 #sprite /graphics/weapon/standard/net.png
+#offsetx -1
+#offsety -1
 #tag "maxprot 12"
 #tag "tierunique"
 #tag "noslot offhand"

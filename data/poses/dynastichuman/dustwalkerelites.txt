@@ -12,7 +12,7 @@
 
 #load basesprite /data/items/dynastichuman/bases_dustwalker.txt
 #load shadow /data/items/dynastichuman/shadow.txt
-#load hands /data/items/dynastichuman/hands_dustwalker.txt
+#load hands /data/items/dynastichuman/hands.txt
 
 #load cloakf /data/items/dynastichuman/cloakf.txt
 #load cloakb /data/items/dynastichuman/cloakb.txt
@@ -43,7 +43,7 @@
 
 #load basesprite /data/items/dynastichuman/bases_dustwalker_2h.txt
 #load shadow /data/items/dynastichuman/shadow.txt
-#load hands /data/items/dynastichuman/hands_dustwalker.txt
+#load hands /data/items/dynastichuman/hands.txt
 
 #load cloakf /data/items/dynastichuman/cloakf.txt
 #load cloakb /data/items/dynastichuman/cloakb.txt
@@ -69,7 +69,7 @@
 
 #load basesprite /data/items/dynastichuman/bases_dustwalker.txt
 #load shadow /data/items/dynastichuman/shadow.txt
-#load hands /data/items/dynastichuman/hands_dustwalker.txt
+#load hands /data/items/dynastichuman/hands.txt
 
 #load cloakf /data/items/dynastichuman/cloakf.txt
 #load cloakb /data/items/dynastichuman/cloakb.txt
@@ -87,7 +87,7 @@
 #endpose
 
 
------------ Charioteers
+----------- Charioteers (always have some missle)
 
 #newpose
 #basechance 100
@@ -99,7 +99,7 @@
 #load basesprite /data/items/dynastichuman/bases_dustwalker_2h.txt
 #load mount /data/items/lizard/normal/lizardbases_chariot.txt
 
-#load hands /data/items/dynastichuman/hands_dustwalker.txt
+#load hands /data/items/dynastichuman/hands.txt
 
 #load cloakf /data/items/dynastichuman/cloakf.txt
 #load cloakb /data/items/dynastichuman/cloakb.txt
@@ -108,9 +108,13 @@
 #load helmet /data/items/dynastichuman/normal/helmet.txt
 #load legs /data/items/dynastichuman/legs.txt
 
-#load weapon /data/items/dynastichuman/chariot/weapon.txt
-#load bonusweapon /data/items/dynastichuman/normal/bonusranged.txt 
--- Always have a bonus ranged?
+#load weapon /data/items/dynastichuman/scout/weapon.txt
+#load offhand /data/items/dynastichuman/scout/offhand.txt
+#load offhand /data/items/dynastichuman/normal/shields.txt
+
+#load bonusweapon /data/items/dynastichuman/chariot/bonusranged.txt 
+
+#generateitem 1 bonusweapon
 
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
 #endpose

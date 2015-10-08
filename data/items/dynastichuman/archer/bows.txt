@@ -1,25 +1,23 @@
 #newitem
 #name "short bow"
 #gameid 23
-#sprite /graphics/weapon/bowman/shortbow.png
+#sprite /graphics/dynastichuman/weapons/bow.png
 #needs quiver quiver
-#tag "name Archer"
-#enditem
-
-#newitem
-#name "long bow"
-#gameid 24
-#sprite /graphics/weapon/bowman/longbow.png
-#needs quiver quiver
-#tag "name Longbowman"
-#basechance 0.5
+#type slave
 #enditem
 
 #newitem
 #name "composite bow"
 #gameid 264
-#sprite /graphics/weapon/bowman/compositebow.png
+#sprite /graphics/dynastichuman/weapons/compositebow.png
 #needs quiver quiver
-#tag "name Archer"
+#type slave
 #enditem
 
+#newitem
+#name "sling"
+#gameid 22
+#sprite /graphics/dynastichuman/weapons/sling.png
+#maxprot 9
+#type slave
+#enditem

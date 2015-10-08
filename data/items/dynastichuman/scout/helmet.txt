@@ -1,86 +1,40 @@
-#newitem
-#id leathercap
-#gameid 120
-#sprite /graphics/helmet/standard/leathercap.png
-#offsetx 2
-#offsety 1
-#armor
-#enditem
+-- Headscarf
 
 #newitem
-#id reinforcedcap1
-#gameid 119
-#sprite /graphics/helmet/standard/reinforcedcap1.png
-#offsetx 2
-#offsety 0
-#armor
-#enditem
-
-#newitem
-#id reinforcedcap2
-#gameid 119
-#sprite /graphics/helmet/standard/reinforcedcap2.png
-#offsetx 2
-#offsety 0
-#armor
-#enditem
-
-#newitem
-#id fancyhat
-#gameid 120
-#sprite /graphics/helmet/special/fancyhat.png
-#recolormask /graphics/helmet/special/fancyhat_recolormask.png
-#offsetx 2
-#offsety 1
-#armor
-#enditem
-
-#newitem
-#id fancyhat2
-#gameid 120
-#sprite /graphics/helmet/special/fancyhat2.png
-#recolormask /graphics/helmet/special/fancyhat2_recolormask.png
-#offsetx 2
-#offsety 0
-#armor
-#enditem
-
-#newitem
-#id fancyhat3a
-#gameid 120
-#sprite /graphics/helmet/special/fancyhat3.png
-#recolormask /graphics/helmet/special/fancyhat3_recolormask1.png
-#offsetx 2
-#offsety 0
-#armor
-#enditem
-
-#newitem
-#id fancyhat3b
-#gameid 120
-#sprite /graphics/helmet/special/fancyhat3.png
-#recolormask /graphics/helmet/special/fancyhat3_recolormask2.png
-#offsetx 2
-#offsety 0
-#armor
-#enditem
-
-#newitem
-#id hood4
-#gameid 120
-#sprite /graphics/helmet/caster/hood4.png
-#recolormask self
-#offsetx 2
-#offsety 0
-#armor
-#enditem
-
-#newitem
-#id cowl
-#gameid 121
-#sprite /graphics/advancedhuman/helmets/cowl.png
+#id hood
+#basechance 6
+#gameid -1
+#sprite /graphics/scouts/hood.png
 #recolormask self
 #offsetx 1
-#offsety 0
+#offsety -1
+#armor
+#enditem
+
+#newitem
+#id hood_heavy
+#basechance 3
+#gameid -1
+#sprite /graphics/scouts/hood_witch.png
+#recolormask self
+#offsetx 1
+#offsety -2
+#armor
+#enditem
+
+#newitem
+#id scarf_worn
+#basechance 6
+#gameid -1
+#sprite /graphics/dynastichuman/helmet/headscarf_worn.png
+#armor
+#enditem
+
+#newitem
+#id scarf
+#basechance 12
+#chanceinc "personalcommand #slave -6"
+#gameid -1
+#sprite /graphics/dynastichuman/helmet/headscarf.png
 #armor
 #enditem

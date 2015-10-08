@@ -10,7 +10,7 @@
 
 #load basesprite /data/items/dynastichuman/bases_dynastic.txt
 #load shadow /data/items/dynastichuman/shadow.txt
-#load hands /data/items/dynastichuman/hands_dynastic.txt
+#load hands /data/items/dynastichuman/hands.txt
 
 #load cloakf /data/items/dynastichuman/cloakf.txt
 #load cloakb /data/items/dynastichuman/cloakb.txt
@@ -41,7 +41,7 @@
 
 #load basesprite /data/items/dynastichuman/bases_dynastic_2h.txt
 #load shadow /data/items/dynastichuman/shadow.txt
-#load hands /data/items/dynastichuman/hands_dynastic.txt
+#load hands /data/items/dynastichuman/hands.txt
 
 #load cloakf /data/items/dynastichuman/cloakf.txt
 #load cloakb /data/items/dynastichuman/cloakb.txt
@@ -66,7 +66,7 @@
 
 #load basesprite /data/items/dynastichuman/bases_dynastic.txt
 #load shadow /data/items/dynastichuman/shadow.txt
-#load hands /data/items/dynastichuman/hands_dynastic.txt
+#load hands /data/items/dynastichuman/hands.txt
 
 #load cloakf /data/items/dynastichuman/cloakf.txt
 #load cloakb /data/items/dynastichuman/cloakb.txt
@@ -84,7 +84,7 @@
 #endpose
 
 
------------ Charioteers
+----------- Charioteers (always have some missle)
 
 #newpose
 #role "human chariot"
@@ -95,7 +95,7 @@
 #load basesprite /data/items/dynastichuman/bases_dynastic_2h.txt
 #load mount /data/items/human/human_mounted/humanbases_chariot.txt
 
-#load hands /data/items/dynastichuman/hands_dynastic.txt
+#load hands /data/items/dynastichuman/hands.txt
 
 #load cloakf /data/items/dynastichuman/cloakf.txt
 #load cloakb /data/items/dynastichuman/cloakb.txt
@@ -104,9 +104,13 @@
 #load helmet /data/items/dynastichuman/normal/helmet.txt
 #load legs /data/items/dynastichuman/legs.txt
 
-#load weapon /data/items/dynastichuman/chariot/weapon.txt
-#load bonusweapon /data/items/dynastichuman/normal/bonusranged.txt 
--- Always have a bonus ranged?
+#load weapon /data/items/dynastichuman/scout/weapon.txt
+#load offhand /data/items/dynastichuman/scout/offhand.txt
+#load offhand /data/items/dynastichuman/normal/shields.txt
+
+#load bonusweapon /data/items/dynastichuman/chariot/bonusranged.txt 
+
+#generateitem 1 bonusweapon
 
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
 #endpose
@@ -116,13 +120,14 @@
 ------------- scout
 
 #newpose
-#role "human scout"
+#name "human scout"
+#role "scout"
 
 #renderorder "shadow cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon cloakf helmet offhandw hands offhanda overlay"
 
 #load basesprite /data/items/dynastichuman/bases_dynastic_2h.txt
 #load shadow /data/items/dynastichuman/shadow.txt
-#load hands /data/items/dynastichuman/hands_dynastic.txt
+#load hands /data/items/dynastichuman/hands.txt
 
 #load cloakf /data/items/dynastichuman/cloakf.txt
 #load cloakb /data/items/dynastichuman/cloakb.txt

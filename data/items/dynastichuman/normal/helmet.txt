@@ -1,392 +1,155 @@
+-- Nothing
+
 #newitem
-#id fullhelmet2
-#gameid 21
-#sprite /graphics/helmet/standard/fullhelmet2.png
-#offsetx 2
-#offsety 0
+#id nothing
+#basechance 0
+#chanceinc "personalcommand #slave 12"
+#chanceinc "personalcommand #mindless 12"
+#gameid -1
+#eliteversion scarf_worn
 #armor
-#tag "eliteversion elitefullhelmet"
-#theme "advanced"
+#theme "primitive"
+#theme "naked"
+#type slave
+#type longdead
 #enditem
 
 #newitem
-#id savaran_fullhelmet
-#gameid 21
-#sprite /graphics/helmet/standard/fullhelmet3.png
-#offsetx 2
-#offsety 0
+#id nothing
+#basechance 3
+#chanceinc "personalcommand #undead *0"
+#gameid -1
+#eliteversion scarf
 #armor
-#tag "eliteversion savaran_fullhelmet_elite"
-#theme "advanced"
+#theme "primitive"
+#theme "naked"
+#enditem
+
+
+
+-- Headscarf
+
+#newitem
+#id scarf_worn
+#basechance 0
+#chanceinc "personalcommand #slave 12"
+#chanceinc "personalcommand #mindless 12"
+#gameid -1
+#sprite /graphics/dynastichuman/helmet/headscarf_worn.png
+#eliteversion scarf
+#armor
+#type slave
+#type longdead
 #enditem
 
 #newitem
-#id savaran_fullhelmet_elite
-#gameid 21
-#sprite /graphics/helmet/standard/fullhelmet3.png
-#recolormask /graphics/helmet/standard/fullhelmet3_elite_recolormask.png
-#offsetx 2
-#offsety 0
+#id scarf
+#basechance 12
+#chanceinc "personalcommand #slave -6"
+#gameid -1
+#sprite /graphics/dynastichuman/helmet/headscarf.png
+#eliteversion nemes_ornate
 #armor
-#theme "elite"
-#theme "advanced"
+#type slave
 #enditem
 
 #newitem
-#id mercenary_fullhelmet
-#gameid 21
-#sprite /graphics/helmet/standard/fullhelmet4.png
-#offsetx 2
-#offsety 0
+#id nemes_ornate
+#basechance 1
+#gameid 148
+#sprite /graphics/dynastichuman/helmet/nemes_ornate.png
+#recolormask /graphics/dynastichuman/helmet/nemes_ornate_recolormask.png
+#eliteversion nemes_ornate
 #armor
-#tag "eliteversion mercenary_fullhelmet_elite"
-#theme "advanced"
+#theme "sacred"
 #enditem
 
-#newitem
-#id mercenary_fullhelmet_elite
-#gameid 21
-#sprite /graphics/helmet/standard/fullhelmet4.png
-#recolormask /graphics/helmet/standard/fullhelmet4_elite_recolormask.png
-#offsetx 2
-#offsety 0
-#armor
-#theme "elite"
-#theme "advanced"
-#enditem
+
+
+-- Helmet
 
 #newitem
-#id halfhelmet
-#gameid 118
-#sprite /graphics/helmet/standard/halfhelmet.png
-#offsetx 2
-#offsety 1
-#armor
-#enditem
-
-#newitem
-#id savaran_halfhelmet
-#gameid 118
-#sprite /graphics/helmet/standard/halfhelmet5.png
-#tag "eliteversion savaran_halfhelmet_elite"
-#offsetx 2
-#offsety 0
-#armor
-#enditem
-
-#newitem
-#id savaran_halfhelmet_elite
-#gameid 118
-#sprite /graphics/helmet/standard/halfhelmet5.png
-#recolormask /graphics/helmet/standard/halfhelmet5_elite_recolormask.png
-#offsetx 2
-#offsety 0
-#theme "elite"
-#armor
-#enditem
-
-#newitem
-#id savaran_ironcap
+#id bronzecap
 #gameid 20
-#sprite /graphics/helmet/standard/halfhelmet5.png
-#offsetx 2
-#offsety 0
+#sprite /graphics/dynastichuman/helmet/bronzecap.png
+#eliteversion bronzecap_gilt
+#eliteversion bronzecap_fancy
 #armor
-#enditem
-
-#newitem
-#id ulmish_halfhelmet
-#gameid 118
-#sprite /graphics/helmet/standard/halfhelmet6.png
-#tag "eliteversion ulmish_halfhelmet_elite"
-#offsetx 2
-#offsety 0
-#armor
-#enditem
-
-#newitem
-#id ulmish_halfhelmet_elite
-#gameid 118
-#sprite /graphics/helmet/standard/halfhelmet6.png
-#recolormask /graphics/helmet/standard/halfhelmet6_elite_recolormask.png
-#theme "elite"
-#offsetx 2
-#offsety 0
-#armor
-#enditem
-
-#newitem
-#id cavalry_halfhelmet
-#gameid 118
-#sprite /graphics/helmet/standard/halfhelmet7.png
-#offsetx 2
-#offsety 0
-#armor
-#enditem
-
-#newitem
-#id cavalry_ironcap
-#gameid 20
-#sprite /graphics/helmet/standard/halfhelmet7.png
-#offsetx 2
-#offsety 0
-#armor
-#enditem
-
-#newitem
-#id bascinet
-#gameid 118
-#sprite /graphics/helmet/standard/bascinet.png
-#offsetx 2
-#offsety 0
-#tag "eliteversion elitebascinet"
-#armor
-#enditem
-
-#newitem
-#id elitebascinet
-#gameid 118
-#sprite /graphics/helmet/standard/bascinet-elite.png
-#recolormask /graphics/helmet/standard/bascinet-elite_recolormask.png
-#offsetx 2
-#offsety 0
-#armor
-#theme "elite"
-#enditem
-
-#newitem -- Iron cap
-#id halfhelmet-ironcap
-#gameid 20
-#sprite /graphics/helmet/standard/halfhelmet.png
-#offsetx 2
-#offsety 1
-#armor
-#enditem
-
-#newitem
-#id leathercap
-#gameid 120
-#sprite /graphics/helmet/standard/leathercap.png
-#offsetx 2
-#offsety 1
-#armor
-#tag "eliteversion fancyhat"
-#enditem
-
-#newitem
-#id reinforcedcap1
-#gameid 119
-#sprite /graphics/helmet/standard/reinforcedcap1.png
-#offsetx 2
-#offsety 0
-#armor
-#tag "eliteversion reinforcedcap1"
-#tag "eliteversion fancyhat"
-#tag "eliteversion fancyhat2"
-#tag "eliteversion fancyhat3a"
-#tag "eliteversion fancyhat3b"
-#enditem
-
-#newitem
-#id reinforcedcap2
-#gameid 119
-#sprite /graphics/helmet/standard/reinforcedcap2.png
-#offsetx 2
-#offsety 0
-#armor
-#tag "eliteversion reinforcedcap2"
-#tag "eliteversion fancyhat"
-#tag "eliteversion fancyhat2"
-#tag "eliteversion fancyhat3a"
-#tag "eliteversion fancyhat3b"
-#enditem
-
-
-#newitem
-#id kabuto
-#gameid 132
-#sprite /graphics/helmet/standard/kabuto.png
-#offsetx 2
-#offsety 1
-#theme "oriental"
-#tag "name samurai"
-#armor
-#basechance 0.5
-#enditem
-
-#newitem
-#id jingasa
-#gameid 131
-#sprite /graphics/helmet/standard/jingasa2.png
-#recolormask /graphics/helmet/standard/jingasa2_recolormask.png
-#offsetx 2
-#offsety 1
-#theme "oriental"
-#armor
-#basechance 0.5
-#enditem
-
-
-#newitem
-#id halfhelmet2
-#gameid 118
-#sprite /graphics/helmet/standard/halfhelmet2.png
-#offsetx 2
-#offsety 1
-#armor
-#enditem
-
-#newitem -- Iron cap
-#id halfhelmet2-ironcap
-#gameid 20
-#sprite /graphics/helmet/standard/halfhelmet2.png
-#offsetx 2
-#offsety 1
-#armor
-#enditem
-
-
-
-#newitem
-#id kettlehelmet-half
-#gameid 118
-#sprite /graphics/helmet/standard/halfhelmet3.png
-#offsetx 2
-#offsety 0
+#theme "bronze"
 #theme "advanced"
-#tag "eliteversion kettlehelmet-half-elite"
-#armor
 #enditem
 
 #newitem
-#id kettlehelmet-cap
+#id bronzecap_fancy
 #gameid 20
-#sprite /graphics/helmet/standard/halfhelmet3.png
-#offsetx 2
-#offsety 0
+#sprite /graphics/dynastichuman/helmet/bronzecap_feather.png
+#eliteversion bronzecap_gilt_fancy
+#armor
+#theme "bronze"
 #theme "advanced"
-#tag "eliteversion kettlehelmet-cap-elite"
-#armor
+#theme "elite"
 #enditem
 
 #newitem
-#id halfhelmet-sprite4
-#gameid 118
-#sprite /graphics/helmet/standard/halfhelmet4.png
-#offsetx 2
-#offsety 0
+#id bronzecap_gilt
+#gameid 20
+#sprite /graphics/dynastichuman/helmet/goldcap.png
+#eliteversion bronzecap_gilt_fancy
+#armor
+#theme "bronze"
 #theme "advanced"
-#tag "eliteversion halfhelmet-sprite4-elite"
-#armor
+#theme "elite"
 #enditem
 
 #newitem
-#id ironcap-sprite4
+#id bronzecap_gilt_fancy
 #gameid 20
-#sprite /graphics/helmet/standard/halfhelmet4.png
-#offsetx 2
-#offsety 0
+#sprite /graphics/dynastichuman/helmet/goldcap_feather.png
+#armor
+#theme "bronze"
 #theme "advanced"
-#tag "eliteversion ironcap-sprite4-elite"
-#armor
-#enditem
-
-
-#newitem
-#id halfhelmet-sprite4-elite
-#gameid 118
-#sprite /graphics/helmet/special/elitehalfhelmet1.png
-#recolormask /graphics/helmet/special/elitehalfhelmet1_recolormask.png
-#offsetx 2
-#offsety 0
-#armor
 #theme "elite"
 #enditem
 
 #newitem
-#id ironcap-sprite4-elite
+#id ironcap
 #gameid 20
-#sprite /graphics/helmet/special/elitehalfhelmet1.png
-#recolormask /graphics/helmet/special/elitehalfhelmet1_recolormask.png
-#offsetx 2
-#offsety 0
+#sprite /graphics/dynastichuman/helmet/ironcap.png
+#eliteversion ironcap_gilt
+#eliteversion ironcap_fancy
 #armor
-#theme "elite"
+#theme "iron"
+#theme "advanced"
 #enditem
 
 #newitem
-#id kettlehelmet-half-elite
-#gameid 118
-#sprite /graphics/helmet/special/elitehalfhelmet2.png
-#recolormask /graphics/helmet/special/elitehalfhelmet2_recolormask.png
-#offsetx 2
-#offsety 0
-#armor
-#theme "elite"
-#enditem
-
-#newitem
-#id kettlehelmet-cap-elite
+#id ironcap_fancy
 #gameid 20
-#sprite /graphics/helmet/special/elitehalfhelmet2.png
-#recolormask /graphics/helmet/special/elitehalfhelmet2_recolormask.png
-#offsetx 2
-#offsety 0
+#sprite /graphics/dynastichuman/helmet/ironcap_feather.png
+#eliteversion ironcap_gilt_fancy
 #armor
+#theme "iron"
+#theme "advanced"
 #theme "elite"
 #enditem
 
 #newitem
-#id elitefullhelmet
-#gameid 21
-#sprite /graphics/helmet/special/elitefullhelmet1.png
-#recolormask /graphics/helmet/special/elitefullhelmet1_recolormask.png
-#offsetx 2
-#offsety 0
+#id ironcap_gilt
+#gameid 20
+#sprite /graphics/dynastichuman/helmet/goldcap.png
+#eliteversion ironcap_gilt_fancy
 #armor
+#theme "iron"
+#theme "advanced"
 #theme "elite"
 #enditem
 
 #newitem
-#id fancyhat
-#gameid 120
-#sprite /graphics/helmet/special/fancyhat.png
-#recolormask /graphics/helmet/special/fancyhat_recolormask.png
-#offsetx 2
-#offsety 1
+#id ironcap_gilt_fancy
+#gameid 20
+#sprite /graphics/dynastichuman/helmet/goldcap_feather.png
 #armor
-#theme "elite"
-#enditem
-
-#newitem
-#id fancyhat2
-#gameid 120
-#sprite /graphics/helmet/special/fancyhat2.png
-#recolormask /graphics/helmet/special/fancyhat2_recolormask.png
-#offsetx 2
-#offsety 1
-#armor
-#theme "elite"
-#enditem
-
-#newitem
-#id fancyhat3a
-#gameid 120
-#sprite /graphics/helmet/special/fancyhat3.png
-#recolormask /graphics/helmet/special/fancyhat3_recolormask1.png
-#offsetx 2
-#offsety 1
-#armor
-#theme "elite"
-#enditem
-
-#newitem
-#id fancyhat3b
-#gameid 120
-#sprite /graphics/helmet/special/fancyhat3.png
-#recolormask /graphics/helmet/special/fancyhat3_recolormask2.png
-#offsetx 2
-#offsety 1
-#armor
+#theme "iron"
+#theme "advanced"
 #theme "elite"
 #enditem
