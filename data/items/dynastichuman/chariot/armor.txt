@@ -1,55 +1,152 @@
+--- None
 
---- Leather
-
+--- Linen
 
 #newitem
-#name "leather cuirass"
-#gameid 5
-#sprite /graphics/advancedhuman/armor/leather_cuirass.png
+#name "elite linen cuirass 1"
+#gameid 183
+#sprite /graphics/dynastichuman/armor/linencuirass_elite.png
+#recolormask /graphics/dynastichuman/armor/linencuirass_elite_recolormask_bright.png
 #armor
+#type dustwalker
+#theme "cloth"
+#theme "primitive"
+#needstype legs bright
 #enditem
 
 #newitem
-#name "leather hauberk"
-#gameid 10
-#sprite /graphics/advancedhuman/armor/leather_hauberk.png
+#name "elite linen cuirass 2"
+#gameid 183
+#sprite /graphics/dynastichuman/armor/linencuirass_elite.png
+#recolormask /graphics/dynastichuman/armor/linencuirass_elite_recolormask_dark.png
 #armor
+#type dustwalker
+#theme "cloth"
+#theme "primitive"
+#needstype legs dark
 #enditem
-
-
-#newitem -- full leather
-#newitem
-#name "full leather"
-#gameid 15
-#sprite /graphics/advancedhuman/armor/leather_hauberk.png
-#needs shirt noshirt_leatherpants
-#armor
-#enditem
-
-
---- Ring
 
 #newitem
-#name "ring cuirass"
-#gameid 6
-#sprite /graphics/advancedhuman/armor/ring_cuirass.png
+#name "elite thick linen cuirass 1"
+#basechance 2
+#gameid 183
+#sprite /graphics/dynastichuman/armor/linencuirass_elite.png
+#recolormask /graphics/dynastichuman/armor/linencuirass_elite_recolormask_bright.png
 #armor
+#type dynastic
+#theme "elite"
+#theme "cloth"
+#theme "primitive"
+#needstype legs bright
 #enditem
-
 
 #newitem
-#name "ring hauberk"
-#gameid 11
-#sprite /graphics/advancedhuman/armor/ring_hauberk.png
+#name "elite thick linen cuirass 2"
+#basechance 2
+#gameid 183
+#sprite /graphics/dynastichuman/armor/linencuirass_thick_elite.png
+#recolormask /graphics/dynastichuman/armor/linencuirass_elite_recolormask_dark.png
 #armor
+#type dynastic
+#theme "elite"
+#theme "cloth"
+#theme "primitive"
+#needstype legs dark
 #enditem
 
-#newitem -- full ring
-#name "full ring"
-#gameid 16
-#sprite /graphics/advancedhuman/armor/ring_hauberk.png
+
+--- Bronze Scale Mail
+
+#newitem
+#name "bronze scale cuirass"
+#gameid 142
+#basechance 2
+#sprite /graphics/dynastichuman/armor/bronzescalecuirass.png
+#tag "eliteversion 'elite bronze scale cuirass'"
 #armor
-#needs shirt noshirt_leatherpants
+#type dustwalker
+#theme "bronze"
+#enditem
+
+#newitem
+#name "bronze scale hauberk"
+#gameid 136
+#basechance 2
+#sprite /graphics/dynastichuman/armor/bronzescalehauberk.png
+#tag "eliteversion 'elite bronze scale hauberk'"
+#armor
+#type dustwalker
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "thick bronze scale cuirass"
+#gameid 142
+#basechance 2
+#sprite /graphics/dynastichuman/armor/bronzescalecuirass_thick.png
+#tag "eliteversion 'elite thick bronze scale cuirass'"
+#armor
+#type dynastic
+#theme "bronze"
+#enditem
+
+#newitem
+#name "thick bronze scale hauberk"
+#gameid 136
+#basechance 2
+#sprite /graphics/dynastichuman/armor/bronzescalehauberk_thick.png
+#tag "eliteversion 'elite thick bronze scale hauberk'"
+#armor
+#type dynastic
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "elite bronze scale cuirass"
+#gameid 142
+#basechance 2
+#sprite /graphics/dynastichuman/armor/scalecuirass_elite.png
+#armor
+#type dustwalker
+#theme "elite"
+#theme "bronze"
+#enditem
+
+#newitem
+#name "elite bronze scale hauberk"
+#gameid 136
+#basechance 2
+#sprite /graphics/dynastichuman/armor/scalehauberk_elite.png
+#armor
+#type dustwalker
+#theme "elite"
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "elite thick bronze scale cuirass"
+#gameid 142
+#basechance 2
+#sprite /graphics/dynastichuman/armor/scalecuirass_thick_elite.png
+#armor
+#type dynastic
+#theme "elite"
+#theme "bronze"
+#enditem
+
+#newitem
+#name "elite thick bronze scale hauberk"
+#gameid 136
+#basechance 2
+#sprite /graphics/dynastichuman/armor/scalehauberk_thick_elite.png
+#armor
+#type dynastic
+#theme "elite"
+#theme "bronze"
+#theme "advanced"
 #enditem
 
 
@@ -58,89 +155,91 @@
 #newitem
 #name "scale cuirass"
 #gameid 7
-#sprite /graphics/advancedhuman/armor/scale_cuirass.png
-#tag "eliteversion 'scale cuirass elite'"
+#basechance 2
+#sprite /graphics/dynastichuman/armor/scalecuirass.png
+#tag "eliteversion 'elite scale cuirass'"
 #armor
+#type dustwalker
+#theme "iron"
 #enditem
 
 #newitem
 #name "scale hauberk"
 #gameid 12
-#sprite /graphics/advancedhuman/armor/scale_hauberk.png
-#tag "eliteversion 'scale hauberk elite'"
+#basechance 2
+#sprite /graphics/dynastichuman/armor/scalehauberk.png
+#tag "eliteversion 'elite scale hauberk'"
 #armor
-#needs shirt mailsleeves_pants
-#enditem
-
-#newitem -- full scale
-#name "full scale"
-#gameid 17
-#sprite /graphics/advancedhuman/armor/scale_full.png
-#tag "eliteversion 'scale full elite'"
-#armor
-#needs shirt mailsleeves_pants
-#enditem
-
-
---- Chain Mail
-
-#newitem
-#name "chain cuirass"
-#gameid 8
-#sprite /graphics/advancedhuman/armor/chain_cuirass.png
-#tag "eliteversion 'chain cuirass elite'"
-#armor
+#type dustwalker
+#theme "iron"
+#theme "advanced"
 #enditem
 
 #newitem
-#name "chain hauberk"
-#gameid 13
-#sprite /graphics/advancedhuman/armor/chain_hauberk.png
-#tag "eliteversion 'chain hauberk elite'"
+#name "thick scale cuirass"
+#gameid 7
+#basechance 2
+#sprite /graphics/dynastichuman/armor/scalecuirass_thick.png
+#tag "eliteversion 'elite thick scale cuirass'"
 #armor
-#needs shirt mailsleeves_pants
-#enditem
-
-#newitem -- full chain
-#name "full chain"
-#gameid 18
-#sprite /graphics/advancedhuman/armor/chain_full.png
-#tag "eliteversion 'chain full elite'"
-#armor
-#tag "name mounted knight"
-#needs shirt mailsleeves_pants
-#enditem
-
---- Plate
-
-#newitem
-#name "plate cuirass"
-#gameid 9
-#sprite /graphics/advancedhuman/armor/plate_cuirass.png
-#tag "eliteversion 'plate cuirass elite'"
-#tag "eliteversion 'plate cuirass gilt'"
-#armor
+#type dynastic
+#theme "iron"
 #enditem
 
 #newitem
-#name "plate hauberk"
-#gameid 14
-#sprite /graphics/advancedhuman/armor/plate_hauberk.png
-#tag "eliteversion 'plate hauberk'"
-#tag "eliteversion 'plate hauberk gilt1'"
-#tag "eliteversion 'plate hauberk gilt2'"
+#name "thick scale hauberk"
+#gameid 12
+#basechance 2
+#sprite /graphics/dynastichuman/armor/scalehauberk_thick.png
+#tag "eliteversion 'elite thick scale hauberk'"
 #armor
-#tag "name mounted knight"
+#type dynastic
+#theme "iron"
+#theme "advanced"
 #enditem
 
-#newitem -- full plate
-#name "full plate"
-#gameid 19
-#sprite /graphics/advancedhuman/armor/plate_full.png
-#tag "eliteversion 'full plate'"
-#tag "eliteversion 'full plate gilt'"
+#newitem
+#name "elite scale cuirass"
+#gameid 7
+#basechance 2
+#sprite /graphics/dynastichuman/armor/scalecuirass_elite.png
 #armor
-#tag "name mounted knight"
-#maxvarieties 1
-#needs shirt noshirt_nopants
+#type dustwalker
+#theme "elite"
+#theme "iron"
+#enditem
+
+#newitem
+#name "elite scale hauberk"
+#gameid 12
+#basechance 2
+#sprite /graphics/dynastichuman/armor/scalehauberk_elite.png
+#armor
+#type dustwalker
+#theme "elite"
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "elite thick bronze scale cuirass"
+#gameid 7
+#basechance 2
+#sprite /graphics/dynastichuman/armor/scalecuirass_thick_elite.png
+#armor
+#type dynastic
+#theme "elite"
+#theme "iron"
+#enditem
+
+#newitem
+#name "elite thick bronze scale hauberk"
+#gameid 12
+#basechance 2
+#sprite /graphics/dynastichuman/armor/scalehauberk_thick_elite.png
+#armor
+#type dynastic
+#theme "elite"
+#theme "iron"
+#theme "advanced"
 #enditem

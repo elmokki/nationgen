@@ -1,32 +1,21 @@
 
--------- Normal
+-------- Slave infantry
 
 #newpose
 #name "slave inf"
 #role "infantry"
-#role "elite infantry"
-
-#command "#gcost -3"
-#command "#mor -3"
-#command "#str +1"
-#command "#att -2"
-#command "#def -2"
-#command "#enc -1"
-#command "#ap +2"
-#command "#slave"
 
 #renderorder "shadow cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon cloakf offhandw hands helmet offhanda overlay"
 
-#load basesprite /data/items/dynastichuman/bases_dynastic.txt
+#load basesprite /data/items/dynastichuman/bases_slave.txt
 #load shadow /data/items/dynastichuman/shadow.txt
-#load hands /data/items/dynastichuman/hands_dynastic.txt
+#load hands /data/items/dynastichuman/hands.txt
 
-#load armor /data/items/dynastichuman/normal/armor_slave.txt
+#load armor /data/items/dynastichuman/normal/armor.txt
 #load helmet /data/items/dynastichuman/normal/helmet.txt
 #load legs /data/items/dynastichuman/legs.txt
 
-#load weapon /data/items/dynastichuman/normal/weapon.txt
-#load bonusweapon /data/items/dynastichuman/normal/bonusranged.txt 
+#load weapon /data/items/dynastichuman/normal/weapon.txt 
 
 #load offhand /data/items/dynastichuman/normal/offhand.txt
 #load offhand /data/items/dynastichuman/normal/shields.txt
@@ -35,57 +24,41 @@
 
 
 
--------- 2h infantry
+-------- Slave elites
 
 #newpose
 #basechance 0.2
 #name "slave 2h inf"
-#role "infantry"
 #role "elite infantry"
 
-#command "#gcost -3"
-#command "#mor -3"
-#command "#str +1"
-#command "#att -2"
-#command "#def -2"
-#command "#enc -1"
-#command "#ap +2"
-#command "#slave"
-
-#load basesprite /data/items/dynastichuman/bases_dynastic_2h.txt
+#load basesprite /data/items/dynastichuman/bases_slave_2h.txt
 #load shadow /data/items/dynastichuman/shadow.txt
-#load hands /data/items/dynastichuman/hands_dynastic.txt
+#load hands /data/items/dynastichuman/hands.txt
 
-#load armor /data/items/dynastichuman/normal/armor_slave_2h.txt
+#load armor /data/items/dynastichuman/normal/armor_2h.txt
 #load helmet /data/items/dynastichuman/normal/helmet.txt
 #load legs /data/items/dynastichuman/legs.txt
 
-#load weapon /data/items/dynastichuman/normal/weapon_2h.txt
-#load bonusweapon /data/items/dynastichuman/normal/bonusranged.txt 
+#load weapon /data/items/dynastichuman/scout/weapon.txt
+#load offhand /data/items/dynastichuman/scout/offhand.txt
+#load offhand /data/items/dynastichuman/normal/shields.txt
 
 #endpose
 
+
+-------- Slave archers
 
 #newpose
 #name "slave archer"
 #role "ranged"
 
-#command "#gcost -3"
-#command "#mor -3"
-#command "#str +1"
-#command "#att -2"
-#command "#def -2"
-#command "#enc -1"
-#command "#ap +2"
-#command "#slave"
-
 #renderorder "shadow cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon cloakf offhandw hands helmet offhanda overlay"
 
-#load basesprite /data/items/dynastichuman/bases_dynastic.txt
+#load basesprite /data/items/dynastichuman/bases_slave.txt
 #load shadow /data/items/dynastichuman/shadow.txt
-#load hands /data/items/dynastichuman/hands_dynastic.txt
+#load hands /data/items/dynastichuman/hands.txt
 
-#load armor /data/items/dynastichuman/normal/armor_slave.txt
+#load armor /data/items/dynastichuman/normal/armor.txt
 #load helmet /data/items/dynastichuman/normal/helmet.txt
 #load legs /data/items/dynastichuman/legs.txt
 

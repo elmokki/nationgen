@@ -1,79 +1,89 @@
--- 1h weapons
-
 #newitem
-#id oh_dagger
-#gameid 9
-#sprite /graphics/advancedhuman/weapons/oh_dagger.png
-#tag "eliteversion oh_dagger_elite"
-#enditem
-
-#newitem
-#id oh_dagger_elite
-#gameid 9
-#sprite /graphics/advancedhuman/weapons/oh_dagger_elite.png
-#theme "elite"
-#enditem
-
-#newitem
-#id oh_shortsword
-#gameid 6
-#sprite /graphics/advancedhuman/weapons/oh_shortsword.png
-#tag "eliteversion oh_shortsword_elite"
-#enditem
-
-#newitem
-#id oh_shortsword_elite
-#gameid 6
-#sprite /graphics/advancedhuman/weapons/oh_shortsword_elite.png
-#theme "elite"
-#enditem
-
-#newitem
-#id oh_broadsword
-#gameid 8
-#sprite /graphics/advancedhuman/weapons/oh_broadsword.png
-#tag "eliteversion oh_broadsword_elite"
-#enditem
-
-#newitem
-#id oh_broadsword_elite
-#gameid 8
-#sprite /graphics/advancedhuman/weapons/oh_broadsword_elite.png
-#theme "elite"
-#enditem
-
-#newitem
-#id oh_falchion
-#gameid 10
-#sprite /graphics/advancedhuman/weapons/oh_falchion.png
-#tag "eliteversion oh_falchion_elite"
-#enditem
-
-#newitem
-#id oh_falchion_elite
-#gameid 10
-#sprite /graphics/advancedhuman/weapons/oh_falchion_elite.png
-#theme "elite"
-#enditem
-
-#newitem
-#id oh_morningstar
-#gameid 15
-#sprite /graphics/advancedhuman/weapons/oh_morningstar.png
-#enditem
-
-#newitem
-#id oh_mace
-#gameid 12
-#sprite /graphics/advancedhuman/weapons/oh_mace.png
+#id offhandclub
+#gameid 252
+#sprite /graphics/dynastichuman/weapons/club_oh.png
 #theme "primitive"
-#maxprot 15
+#theme "wood"
+#type slave
+#maxprot 9
 #chanceinc unittag irregular 8
 #enditem
 
 #newitem
-#id oh_hammer
-#gameid 13
-#sprite /graphics/advancedhuman/weapons/oh_hammer.png
+#id offhandmace
+#gameid 12
+#sprite /graphics/dynastichuman/weapons/mace_oh.png
+#theme "primitive"
+#type slave
+#maxprot 12
 #chanceinc unittag irregular 8
+#enditem
+
+#newitem
+#id hatchet_bronze
+#gameid 646
+#sprite /graphics/dynastichuman/weapons/hatchet1_oh.png
+#theme "primitive"
+#theme "bronze"
+#type slave
+#enditem
+
+#newitem
+#id dagger
+#gameid nonferrousdagger
+#sprite /graphics/dynastichuman/weapons/dagger_bronze_oh.png
+#theme "bronze"
+#theme "primitive"
+#type slave
+#maxprot 9
+#enditem
+
+#newitem
+#id shortsword_bronze
+#gameid 645
+#sprite /graphics/dynastichuman/weapons/shortsword_bronze_oh.png
+#theme "austral"
+#type slave
+#enditem
+
+#newitem
+#id kopesh
+#gameid 513
+#sprite /graphics/dynastichuman/weapons/kopesh_oh.png
+#theme "bronze"
+#enditem
+
+#newitem
+#id offhandaxe
+#gameid 17
+#sprite /graphics/dynastichuman/weapons/axe1_oh.png
+#theme "iron"
+#theme "primitive"
+#type slave
+#enditem
+
+#newitem
+#id offhanddagger
+#gameid 9
+#sprite /graphics/dynastichuman/weapons/dagger_oh.png
+#theme "iron"
+#theme "primitive"
+#type slave
+#maxprot 9
+#enditem
+
+#newitem
+#id offhandshortsword
+#gameid 6
+#sprite /graphics/dynastichuman/weapons/shortsword_oh.png
+#theme "iron"
+#type slave
+#enditem
+
+#newitem
+#id offhandfalchion
+#gameid 10
+#sprite /graphics/dynastichuman/weapons/falchion_oh.png
+#theme "iron"
+#theme "advanced"
 #enditem

@@ -1,10 +1,11 @@
 #newitem
 #name "basesprite"
 #gameid -1
-#sprite /graphics/dynastichumans/dustwalker_basesprite.png
+#sprite /graphics/dynastichuman/dustwalker_basesprite.png
 #needs hands dustwalker
 #needstype armor dustwalker
-#define "#gcost 50"
+#needstype legs dustwalker
+#define "#gcost 60"
 #define "#size 2"
 #define "#hp 25"
 #define "#prot 5"

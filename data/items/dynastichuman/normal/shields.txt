@@ -1,15 +1,30 @@
 --- Shields
 
-- Bucklers
+-- Bucklers
+
+#newitem
+#id bronze_buckler
+#gameid 1
+#sprite /graphics/offhand/standard/bronzebuckler.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id iron_buckler
+#gameid 1
+#sprite /graphics/offhand/standard/buckler.png
+#armor
+#theme "iron"
+#enditem
 
 #newitem
 #id wood_buckler
 #gameid 1
 #sprite /graphics/offhand/standard/woodbuckler.png
-#offsetx 3
-#offsety 0
 #armor
-#basechance 2
+#theme "wood"
+#type slave
 #enditem
 
 #newitem
@@ -17,193 +32,111 @@
 #gameid 1
 #sprite /graphics/offhand/standard/woodbuckler.png
 #recolormask /graphics/offhand/standard/woodbuckler_recolormask.png
-#offsetx 3
-#offsety 0
 #armor
-#basechance 2
+#theme "wood"
+#type slave
 #enditem
 
-#newitem
-#id iron_buckler
-#gameid 1
-#sprite /graphics/offhand/standard/buckler.png
-#offsetx 3
-#offsety 1
-#armor
-#basechance 2
-#enditem
-
-
-- Kite shields
-
-#newitem
-#id kite1
-#gameid 3
-#sprite /graphics/offhand/standard/kite1.png
-#recolormask /graphics/offhand/standard/kite1_recolormask.png
-#offsetx 3
-#offsety 2
-#armor
-#theme "advanced"
-#enditem
-
-#newitem
-#id kite2
-#gameid 3
-#sprite /graphics/offhand/standard/kite2.png
-#recolormask /graphics/offhand/standard/kite2_recolormask.png
-#offsetx 3
-#offsety 2
-#armor
-#theme "advanced"
-#enditem
-
-#newitem
-#id kite3
-#gameid 3
-#sprite /graphics/offhand/standard/kite3.png
-#recolormask /graphics/offhand/standard/kite3_recolormask.png
-#offsetx 3
-#offsety 2
-#armor
-#theme "advanced"
-#enditem
-
-#newitem
-#id kite4
-#gameid 3
-#sprite /graphics/offhand/standard/kite4.png
-#recolormask self
-#offsetx 3
-#offsety 0
-#armor
-#theme "advanced"
-#enditem
-
-#newitem
-#id kite5
-#gameid 3
-#sprite /graphics/offhand/standard/kite5.png
-#recolormask /graphics/offhand/standard/kite5_recolormask.png
-#offsetx 3
-#offsety 0
-#armor
-#theme "advanced"
-#enditem
-
-#newitem
-#id kite6
-#gameid 3
-#sprite /graphics/offhand/standard/kite6.png
-#offsetx 3
-#offsety 0
-#armor
-#theme "advanced"
-#enditem
-
-#newitem
-#id kite6_colored
-#gameid 3
-#sprite /graphics/offhand/standard/kite6.png
-#offsetx 3
-#offsety 0
-#recolormask self
-#armor
-#theme "advanced"
-#enditem
-
-#newitem
-#id kite7
-#gameid 3
-#sprite /graphics/offhand/standard/kite7.png
-#recolormask self
-#offsetx 3
-#offsety 0
-#armor
-#theme "advanced"
-#enditem
 
 -- Standard shields
 
 #newitem
-#id shield1
-#gameid 2
-#sprite /graphics/offhand/standard/shield1.png
-#offsetx 3
-#offsety 2
-#armor
-#enditem
-
-#newitem
-#id shield2
-#gameid 2
-#sprite /graphics/offhand/standard/shield2.png
-#offsetx 3
-#offsety 2
-#armor
-#enditem
-
-#newitem
 #id shield3
-#gameid 2
+#gameid 207
+#basechance 2
 #sprite /graphics/offhand/standard/shield3.png
-#offsetx 3
-#offsety 2
 #armor
+#theme "wood"
+#type slave
 #enditem
 
 #newitem
-#id shield6
-#gameid 2
-#sprite /graphics/offhand/standard/shield6.png
-#recolormask /graphics/offhand/standard/shield6_recolormask.png
-#offsetx 3
-#offsety 2
+#id shield4
+#gameid 208
+#sprite /graphics/offhand/standard/shield4.png
 #armor
+#theme "iron"
+#theme "elite"
+#enditem
+
+#newitem
+#id shield4yellow
+#gameid 209
+#sprite /graphics/offhand/standard/shield4-yellow.png
+#armor
+#theme "bronze"
+#theme "elite"
 #enditem
 
 #newitem
 #id shield8
 #gameid 208
 #sprite /graphics/offhand/standard/shield8.png
-#offsetx 3
-#offsety 2
 #armor
+#theme "iron"
 #enditem
 
 #newitem
-#id shield9
-#gameid 2
-#sprite /graphics/offhand/standard/shield9.png
-#offsetx 3
-#offsety 2
+#id shield10_iron
+#gameid 208
+#basechance 4
+#sprite /graphics/offhand/standard/shield10.png
+#eliteversion shield10_iron_painted
 #armor
+#theme "iron"
 #enditem
 
 #newitem
-#id shield10
+#id shield10_iron_painted
 #gameid 208
 #sprite /graphics/offhand/standard/shield10.png
-#offsetx 3
-#offsety 2
-#armor
-#enditem
-
-#newitem
-#id shield10_painted
-#gameid 2
-#sprite /graphics/offhand/standard/shield10_painted.png
 #recolormask /graphics/offhand/standard/shield10_painted_recolormask.png
-#offsetx 3
-#offsety 2
 #armor
+#theme "iron"
+#theme "elite"
 #enditem
 
 #newitem
-#id shield11
-#gameid 208
-#sprite /graphics/offhand/standard/coe-metalshield.png
-#offsetx 3
-#offsety 2
+#id shield10_bronze
+#gameid 209
+#basechance 4
+#sprite /graphics/offhand/standard/shield10_bronze.png
+#eliteversion shield10_bronze_painted
 #armor
+#theme "bronze"
 #enditem
+
+#newitem
+#id shield10_bronze_painted
+#gameid 209
+#sprite /graphics/offhand/standard/shield10_bronze.png
+#recolormask /graphics/offhand/standard/shield10_painted_recolormask.png
+#armor
+#theme "bronze"
+#theme "elite"
+#enditem
+
+#newitem
+#id shield10_wicker
+#gameid 207
+#basechance 4
+#sprite /graphics/offhand/standard/shield10_unpainted.png
+#eliteversion shield10_wicker_painted
+#armor
+#theme "wood"
+#type slave
+#enditem
+
+#newitem
+#id shield10_wicker_painted
+#gameid 207
+#sprite /graphics/offhand/standard/shield10.png
+#recolormask /graphics/offhand/standard/shield10_painted_recolormask2.png
+#armor
+#theme "wood"
+#theme "elite"
+#type slave
+#enditem
+
+
+

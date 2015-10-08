@@ -1,182 +1,70 @@
--- 1h weapons
-
 #newitem
-#id shortsword
-#gameid 6
-#sprite /graphics/advancedhuman/weapons/shortsword.png
-#tag "eliteversion shortsword_elite"
-#tag "name commander captain"
-#enditem
-
-#newitem
-#id shortsword_elite
-#gameid 6
-#sprite /graphics/advancedhuman/weapons/shortsword_elite.png
-#theme "elite"
-#tag "name commander captain"
-#enditem
-
-#newitem
-#id broadsword
-#gameid 8
-#sprite /graphics/advancedhuman/weapons/broadsword.png
-#tag "eliteversion broadsword_elite"
-#tag "name infantry swordsman"
-#tag "name commander captain"
-#tag "name commander swordsmaster"
-#enditem
-
-#newitem
-#id broadsword_elite
-#gameid 8
-#sprite /graphics/advancedhuman/weapons/broadsword_elite.png
-#theme "elite"
-#tag "name infantry swordsman"
-#tag "name commander captain"
-#tag "name commander swordsmaster"
-#enditem
-
-#newitem
-#id falchion
-#gameid 10
-#sprite /graphics/advancedhuman/weapons/falchion.png
-#tag "eliteversion falchion_elite"
-#tag "name infantry falchioneer"
-#tag "name commander captain"
-#tag "name commander swordsmaster"
-#enditem
-
-#newitem
-#id falchion_elite
-#gameid 10
-#sprite /graphics/advancedhuman/weapons/falchion_elite.png
-#theme "elite"
-#tag "name infantry falchioneer"
-#tag "name commander captain"
-#tag "name commander swordsmaster"
-#enditem
-
-#newitem
-#id morningstar
-#gameid 15
-#sprite /graphics/advancedhuman/weapons/morningstar.png
+#id club
+#gameid 252
+#sprite /graphics/dynastichuman/weapons/club1.png
+#theme "primitive"
+#theme "wood"
+#maxprot 9
+#chanceinc unittag irregular 8
+#type slave
 #enditem
 
 #newitem
 #id mace
 #gameid 12
-#sprite /graphics/advancedhuman/weapons/mace.png
+#sprite /graphics/dynastichuman/weapons/mace1.png
 #theme "primitive"
-#tag "name infantry maceman"
 #maxprot 15
 #chanceinc unittag irregular 8
+#type slave
 #enditem
 
 #newitem
-#id hammer
-#gameid 13
-#sprite /graphics/advancedhuman/weapons/hammer.png
-#chanceinc unittag irregular 8
-#enditem
-
--- 2h weapons
-
-#newitem
-#id greatsword
-#gameid 11
-#sprite /graphics/advancedhuman/weapons/greatsword.png
-#tag "name infantry swordsman"
-#tag "name commander swordsmaster"
-#needs hands hands_2h
-#enditem
-
-#newitem
-#id maul
-#gameid 14
-#sprite /graphics/advancedhuman/weapons/maul.png
+#id hatchet_bronze
+#gameid 646
+#sprite /graphics/dynastichuman/weapons/hatchet1.png
 #theme "primitive"
-#needs hands hands_2h
+#theme "bronze"
+#type slave
 #enditem
 
 #newitem
-#id flail
-#gameid 16
-#sprite /graphics/advancedhuman/weapons/flail.png
-#needs hands hands_2h
+#id shortsword_bronze
+#gameid 645
+#sprite /graphics/dynastichuman/weapons/shortsword1_bronze.png
+#theme "bronze"
+#type slave
 #enditem
 
 #newitem
-#id greataxe
-#gameid 18
-#sprite /graphics/advancedhuman/weapons/greataxe.png
+#id kopesh
+#gameid 513
+#sprite /graphics/dynastichuman/weapons/kopesh1.png
+#theme "bronze"
+#type slave
+#enditem
+
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/dynastichuman/weapons/axe1.png
+#theme "iron"
 #theme "primitive"
-#tag "name infantry axeman"
-#chanceinc unittag irregular 8
-#needs hands hands_2h
-#enditem
-
--- Polearms
-
-#newitem
-#id spear
-#gameid 1
-#sprite /graphics/advancedhuman/weapons/spear.png
-#renderprio 6
-#renderslot "extra1"
-#tag "name infantry spearman"
-#theme formationfighter
+#type slave
 #enditem
 
 #newitem
-#id longspear
-#gameid 28
-#sprite /graphics/advancedhuman/weapons/longspear.png
-#renderprio 6
-#renderslot "extra1"
-#tag "name infantry spearman"
-#tag "name commander captain"
-#theme formationfighter
+#id shortsword
+#gameid 6
+#sprite /graphics/dynastichuman/weapons/shortsword1.png
+#theme "iron"
+#type slave
 #enditem
 
 #newitem
-#id pike
-#gameid 2
-#sprite /graphics/advancedhuman/weapons/pike.png
-#renderprio 6
-#renderslot "extra1"
-#tag "name infantry pikeman"
-#tag "name commander captain"
-#theme formationfighter
-#enditem
-
-#newitem
-#id halberd
-#gameid 5
-#sprite /graphics/advancedhuman/weapons/halberd.png
-#renderprio 6
-#renderslot "extra1"
-#tag "name infantry halberdier"
-#tag "name commander captain"
+#id falchion
+#gameid 10
+#sprite /graphics/dynastichuman/weapons/falchion1.png
+#theme "iron"
 #theme "advanced"
-#minprot 8
-#enditem
-
-#newitem
-#id bardiche
-#gameid bardiche
-#sprite /graphics/advancedhuman/weapons/bardiche.png
-#renderprio 6
-#renderslot "extra1"
-#tag "name commander captain"
-#enditem
-
-#newitem
-#id trident
-#gameid 3
-#sprite /graphics/advancedhuman/weapons/trident.png
-#renderprio 6
-#renderslot "extra1"
-#tag "prefix trident"
-#basechance 0.25
-#theme formationfighter
 #enditem

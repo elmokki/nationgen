@@ -1,148 +1,76 @@
 
 --- Pants belonging to an armor set should be given id of the lowest prot armor they go with if you want to avoid naked people with plate pants.
 
--- No breeches, just whatever hose the basesprite has; intended for full plate (always) or other armor (sometimes)
-
 #newitem
-#id nopants
+#basechance 0.5
+#id shendyt
+#sprite /graphics/dynastichuman/legs/shendyt.png
+#recolormask /graphics/dynastichuman/legs/shendyt_recolormask_faint.png
+#eliteversion shendyt_bright
+#eliteversion shendyt_dark
 #gameid -1
-#enditem
-
--- Leather breeches; intended for full leather/ring only
-
-#newitem
-#basechance 0
-#id leather_breeches
-#sprite /graphics/advancedhuman/legs/breeches_leather.png
-#gameid -1
-#enditem
-
--- Basic breeches
-
-#newitem
-#id dark_breeches
-#gameid -1
-#sprite /graphics/advancedhuman/legs/breeches_dark.png
-#recolormask /graphics/advancedhuman/legs/breeches_dark_recolormask.png
-#tag "eliteversion dark_breeches_elite"
-#theme "advanced"
+#type new
+#type dustwalker
+#type dynastic
+#type slave
 #enditem
 
 #newitem
-#id medium_breeches
+#basechance 2
+#id shendyt_bright
+#sprite /graphics/dynastichuman/legs/shendyt.png
+#recolormask /graphics/dynastichuman/legs/shendyt_recolormask_bright.png
 #gameid -1
-#sprite /graphics/advancedhuman/legs/breeches_medium.png
-#recolormask /graphics/advancedhuman/legs/breeches_medium_recolormask.png
-#tag "eliteversion medium_breeches_elite"
-#theme "advanced"
+#theme elite
+#type bright
+#type dustwalker
+#type dynastic
+#type slave
 #enditem
 
 #newitem
-#id light_breeches
+#basechance 2
+#id shendyt_dark
+#sprite /graphics/dynastichuman/legs/shendyt.png
+#recolormask /graphics/dynastichuman/legs/shendyt_recolormask_dark.png
 #gameid -1
-#sprite /graphics/advancedhuman/legs/breeches_light.png
-#recolormask /graphics/advancedhuman/legs/breeches_light_recolormask.png
-#tag "eliteversion light_breeches_elite"
-#theme "advanced"
+#theme elite
+#type dark
+#type dustwalker
+#type dynastic
+#type slave
 #enditem
 
 #newitem
-#id khaki_breeches
+#basechance 0.5
+#id worn_shendyt
+#sprite /graphics/dynastichuman/legs/shendyt_worn.png
+#recolormask /graphics/dynastichuman/legs/shendyt_recolormask_faint.png
+#eliteversion worn_shendyt_bright
+#eliteversion worn_shendyt_dark
 #gameid -1
-#sprite /graphics/advancedhuman/legs/breeches_khaki.png
-#theme "advanced"
+#type worn
+#type longdead
 #enditem
 
 #newitem
-#id black_breeches
+#basechance 2
+#id worn_shendyt_bright
+#sprite /graphics/dynastichuman/legs/shendyt_worn.png
+#recolormask /graphics/dynastichuman/legs/shendyt_recolormask_bright.png
 #gameid -1
-#sprite /graphics/advancedhuman/legs/breeches_black.png
-#needs basesprite dyed_base
-#tag "eliteversion black_breeches_elite"
-#theme "advanced"
-#enditem
-
--- Elite breeches with colored trim
-
-#newitem
-#id dark_breeches_elite
-#gameid -1
-#sprite /graphics/advancedhuman/legs/breeches_dark_elite.png
-#recolormask /graphics/advancedhuman/legs/breeches_dark_elite_recolormask.png
-#tag "eliteversion dark_breeches_fancy"
-#theme "elite"
-#theme "advanced"
+#theme elite
+#type bright_worn
+#type longdead
 #enditem
 
 #newitem
-#id medium_breeches_elite
+#basechance 2
+#id worn_shendyt_dark
+#sprite /graphics/dynastichuman/legs/shendyt_worn.png
+#recolormask /graphics/dynastichuman/legs/shendyt_recolormask_dark.png
 #gameid -1
-#sprite /graphics/advancedhuman/legs/breeches_medium_elite.png
-#recolormask /graphics/advancedhuman/legs/breeches_medium_elite_recolormask.png
-#tag "eliteversion medium_breeches_fancy"
-#theme "elite"
-#theme "advanced"
-#enditem
-
-#newitem
-#id light_breeches_elite
-#gameid -1
-#sprite /graphics/advancedhuman/legs/breeches_light_elite.png
-#recolormask /graphics/advancedhuman/legs/breeches_light_elite_recolormask.png
-#tag "eliteversion light_breeches_fancy"
-#theme "elite"
-#theme "advanced"
-#enditem
-
-#newitem
-#id black_breeches_elite
-#gameid -1
-#sprite /graphics/advancedhuman/legs/breeches_black_elite.png
-#recolormask /graphics/advancedhuman/legs/breeches_black_elite_recolormask.png
-#needs basesprite dyed_base
-#tag "eliteversion black_breeches_fancy"
-#theme "elite"
-#theme "advanced"
-#enditem
-
--- Fancy breeches with gold trim
-
-#newitem
-#id dark_breeches_fancy
-#gameid -1
-#sprite /graphics/advancedhuman/legs/breeches_dark_fancy.png
-#recolormask /graphics/advancedhuman/legs/breeches_dark_fancy_recolormask.png
-#tag "eliteversion dark_breeches_elite"
-#theme "elite"
-#theme "advanced"
-#enditem
-
-#newitem
-#id medium_breeches_fancy
-#gameid -1
-#sprite /graphics/advancedhuman/legs/breeches_medium_fancy.png
-#recolormask /graphics/advancedhuman/legs/breeches_medium_fancy_recolormask.png
-#tag "eliteversion medium_breeches_fancy_elite"
-#theme "elite"
-#theme "advanced"
-#enditem
-
-#newitem
-#id light_breeches_fancy
-#gameid -1
-#sprite /graphics/advancedhuman/legs/breeches_light_fancy.png
-#recolormask /graphics/advancedhuman/legs/breeches_light_fancy_recolormask.png
-#tag "eliteversion light_breeches_elite"
-#theme "elite"
-#theme "advanced"
-#enditem
-
-#newitem
-#id black_breeches_fancy
-#gameid -1
-#sprite /graphics/advancedhuman/legs/breeches_black_fancy.png
-#needs basesprite dyed_base
-#tag "eliteversion black_breeches_elite"
-#theme "elite"
-#theme "advanced"
+#theme elite
+#type dark_worn
+#type longdead
 #enditem
