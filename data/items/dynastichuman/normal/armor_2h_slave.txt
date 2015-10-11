@@ -1,0 +1,230 @@
+--- None
+
+#newitem
+#name "nothing"
+#basechance 6
+#chanceinc "personalcommand #undead *0"
+#gameid -1
+#armor
+#type slave
+#theme "naked"
+#theme "primitive"
+#enditem
+
+#newitem
+#name "nothing"
+#basechance 0
+#chanceinc "personalcommand #undead 10"
+#gameid -1
+#armor
+#type longdead
+#theme "naked"
+#theme "primitive"
+#enditem
+
+
+--- Linen
+
+#newitem
+#name "thick linen cuirass"
+#basechance 4
+#chanceinc "personalcommand #undead *0"
+#gameid 183
+#sprite /graphics/dynastichuman/armor/linencuirass_thick.png
+#eliteversion "elite thick linen cuirass 1"
+#eliteversion "elite thick linen cuirass 2"
+#armor
+#type dynastic
+#type slave
+#theme "cloth"
+#theme "primitive"
+#needstype legs new
+#enditem
+
+#newitem
+#name "worn linen cuirass"
+#basechance 0
+#chanceinc "personalcommand #undead 8"
+#gameid 183
+#sprite /graphics/dynastichuman/armor/linencuirass_worn.png
+#eliteversion "elite worn linen cuirass 1"
+#eliteversion "elite worn linen cuirass 2"
+#armor
+#type longdead
+#theme "cloth"
+#theme "primitive"
+#needstype legs worn
+#enditem
+
+#newitem
+#name "elite thick linen cuirass 1"
+#basechance 2
+#chanceinc "personalcommand #undead *0"
+#gameid 183
+#sprite /graphics/dynastichuman/armor/linencuirass_elite.png
+#recolormask /graphics/dynastichuman/armor/linencuirass_elite_recolormask_bright.png
+#armor
+#type dynastic
+#type slave
+#theme "elite"
+#theme "cloth"
+#theme "primitive"
+#needstype legs bright
+#enditem
+
+#newitem
+#name "elite thick linen cuirass 2"
+#basechance 2
+#chanceinc "personalcommand #undead *0"
+#gameid 183
+#sprite /graphics/dynastichuman/armor/linencuirass_thick_elite.png
+#recolormask /graphics/dynastichuman/armor/linencuirass_elite_recolormask_dark.png
+#armor
+#type dynastic
+#type slave
+#theme "elite"
+#theme "cloth"
+#theme "primitive"
+#needstype legs dark
+#enditem
+
+#newitem
+#name "elite worn linen cuirass 1"
+#basechance 0
+#chanceinc "personalcommand #undead 2"
+#gameid 183
+#sprite /graphics/dynastichuman/armor/linencuirass_worn_elite.png
+#recolormask /graphics/dynastichuman/armor/linencuirass_elite_recolormask_bright.png
+#armor
+#type longdead
+#theme "elite"
+#theme "cloth"
+#theme "primitive"
+#needstype legs bright_worn
+#enditem
+
+#newitem
+#name "elite worn linen cuirass 2"
+#basechance 0
+#chanceinc "personalcommand #undead 2"
+#gameid 183
+#sprite /graphics/dynastichuman/armor/linencuirass_worn_elite.png
+#recolormask /graphics/dynastichuman/armor/linencuirass_elite_recolormask_dark.png
+#needstype legs dark
+#armor
+#type longdead
+#theme "elite"
+#theme "cloth"
+#theme "primitive"
+#needstype legs dark_worn
+#enditem
+
+
+--- Bronze Scale Mail
+
+#newitem
+#name "thick bronze scale cuirass"
+#gameid 142
+#basechance 0.5
+#chanceinc "personalcommand #undead *0"
+#sprite /graphics/dynastichuman/armor/bronzescalecuirass_thick.png
+#tag "eliteversion 'elite thick bronze scale cuirass'"
+#armor
+#type dynastic
+#type slave
+#theme "bronze"
+#enditem
+
+
+--- Scale Mail
+
+#newitem
+#name "thick scale cuirass"
+#gameid 7
+#basechance 0.5
+#chanceinc "personalcommand #undead *0"
+#sprite /graphics/dynastichuman/armor/scalecuirass_thick.png
+#tag "eliteversion 'elite thick scale cuirass'"
+#armor
+#type dynastic
+#type slave
+#theme "iron"
+#enditem
+
+
+--- Rusty Scale Mail
+
+#newitem
+#name "rusty scale cuirass"
+#basechance 0
+#chanceinc "personalcommand #undead 4.5"
+#gameid 93
+#sprite /graphics/dynastichuman/armor/rustyscalecuirass.png
+#tag "eliteversion 'longdead bronze scale cuirass'"
+#tag "eliteversion 'longdead scale cuirass'"
+#armor
+#type longdead
+#enditem
+
+#newitem
+#name "rusty scale hauberk"
+#basechance 0
+#chanceinc "personalcommand #undead 1.5"
+#gameid 31
+#sprite /graphics/dynastichuman/armor/rustyscalehauberk_2h.png
+#tag "eliteversion 'longdead bronze scale hauberk'"
+#tag "eliteversion 'longdead scale hauberk'"
+#armor
+#type longdead
+#theme "advanced"
+#enditem
+
+#newitem
+#name "longdead bronze scale cuirass"
+#basechance 0
+#chanceinc "personalcommand #undead 0.5"
+#gameid 142
+#sprite /graphics/dynastichuman/armor/bronzescalecuirass.png
+#armor
+#type longdead
+#theme "elite"
+#theme "bronze"
+#enditem
+
+#newitem
+#name "longdead bronze scale hauberk"
+#basechance 0
+#chanceinc "personalcommand #undead 0.25"
+#gameid 136
+#sprite /graphics/dynastichuman/armor/bronzescalehauberk_2h.png
+#armor
+#type longdead
+#theme "elite"
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "longdead scale cuirass"
+#basechance 0
+#chanceinc "personalcommand #undead 0.5"
+#gameid 7
+#sprite /graphics/dynastichuman/armor/scalecuirass.png
+#armor
+#type longdead
+#theme "elite"
+#theme "iron"
+#enditem
+
+#newitem
+#name "longdead scale hauberk"
+#basechance 0
+#chanceinc "personalcommand #undead 0.25"
+#gameid 12
+#sprite /graphics/dynastichuman/armor/scalehauberk_2h.png
+#armor
+#type longdead
+#theme "elite"
+#theme "iron"
+#theme "advanced"
+#enditem

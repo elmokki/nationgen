@@ -1,0 +1,129 @@
+-- "Standard" cloaks
+
+#newitem
+#name "cloak 1"
+#basechance 1
+#gameid -1
+#sprite /graphics/cloaks/standard/cloakback.png
+#offsetx 1
+#offsety -2
+#recolormask self
+#needs cloakf "cloak 1"
+#enditem
+
+#newitem
+#name "cloak 2"
+#basechance 1
+#gameid -1
+#sprite /graphics/cloaks/standard/cloak2back.png
+#offsetx 0
+#offsety -3
+#recolormask self
+#needs cloakf "cloak 2"
+#enditem
+
+#newitem
+#name "cloak 3"
+#basechance 1
+#gameid -1
+#sprite /graphics/cloaks/standard/cloakback.png
+#offsetx 0
+#offsety -2
+#recolormask self
+#needs cloakf "cloak 2"
+#enditem
+
+#newitem
+#name "cloak 4"
+#basechance 1
+#gameid -1
+#sprite /graphics/cloaks/standard/short_b.png
+#offsetx 1
+#offsety -2
+#recolormask self
+#needs cloakf "cloak 4"
+#enditem
+
+#newitem
+#name "cloak 5 dark"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/cloaks/standard/high_dark_nocollar_b.png
+#offsety -2
+#recolormask self
+#needs cloakf "cloak 5 dark"
+#enditem
+
+#newitem
+#name "cloak 5 light"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/cloaks/standard/high_light_nocollar_b.png
+#offsety -2
+#recolormask self
+#needs cloakf "cloak 5 light"
+#enditem
+
+-- Dynastic cloaks
+
+#newitem
+#name "cloak 6 dark"
+#basechance 2.5
+#gameid -1
+#sprite /graphics/dynastichuman/cloaks/cloak1_dark_b.png
+#recolormask self
+#eliteversion "cloak 7a dark"
+#needs cloakf "cloak 6a dark"
+#enditem
+
+#newitem
+#name "cloak 6 light"
+#basechance 2.5
+#gameid -1
+#sprite /graphics/dynastichuman/cloaks/cloak1_bright_b.png
+#recolormask self
+#eliteversion "cloak 7 light"
+#needs cloakf "cloak 6 light"
+#enditem
+
+#newitem
+#name "cloak 7 dark"
+#basechance 2.5
+#gameid -1
+#sprite /graphics/dynastichuman/cloaks/cloak2_dark_b.png
+#recolormask self
+#needs cloakf "cloak 7 dark"
+#theme elite
+#enditem
+
+#newitem
+#name "cloak 7 light"
+#basechance 2.5
+#gameid -1
+#sprite /graphics/dynastichuman/cloaks/cloak2_bright_b.png
+#recolormask self
+#needs cloakf "cloak 7 light"
+#theme elite
+#enditem
+
+#newitem
+#name "usekh dark"
+#basechance 2.5
+#gameid -1
+#eliteversion "cloak 7 dark"
+#needs cloakf "usekh dark"
+#theme elite
+#maxprot 10
+#needstype legs dark
+#enditem
+
+#newitem
+#name "usekh light"
+#basechance 2.5
+#gameid -1
+#eliteversion "cloak 7 light"
+#needs cloakf "usekh light"
+#theme elite
+#maxprot 10
+#needstype legs bright
+#enditem

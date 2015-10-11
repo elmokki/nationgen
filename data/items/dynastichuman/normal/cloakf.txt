@@ -1,0 +1,91 @@
+-- "Standard" cloaks
+
+#newitem
+#name "cloak 1"
+#gameid -1
+#sprite /graphics/cloaks/standard/cloakfront.png
+#offsetx 1
+#offsety -2
+#armor
+#recolormask self
+#enditem
+
+#newitem
+#name "cloak 2"
+#gameid -1
+#sprite /graphics/cloaks/standard/cloak2front.png
+#offsety -3
+#armor
+#recolormask self
+#enditem
+
+#newitem
+#name "cloak 4"
+#gameid -1
+#sprite /graphics/cloaks/standard/short_f.png
+#offsetx 1
+#offsety -2
+#armor
+#recolormask self
+#enditem
+
+#newitem
+#name "cloak 5 dark"
+#gameid -1
+#sprite /graphics/cloaks/standard/high_dark_nocollar_f.png
+#offsety -2
+#recolormask self
+#enditem
+
+#newitem
+#name "cloak 5 light"
+#gameid -1
+#sprite /graphics/cloaks/standard/high_light_nocollar_f.png
+#offsety -2
+#recolormask self
+#enditem
+
+
+-- Dynastic cloaks
+
+#newitem
+#name "cloak 6 dark"
+#gameid -1
+#sprite /graphics/dynastichuman/cloaks/cloak1_dark_f.png
+#recolormask self
+#enditem
+
+#newitem
+#name "cloak 6 light"
+#gameid -1
+#sprite /graphics/dynastichuman/cloaks/cloak1_bright_f.png
+#recolormask self
+#enditem
+
+#newitem
+#name "cloak 7 dark"
+#gameid -1
+#sprite /graphics/dynastichuman/cloaks/cloak2_dark_f.png
+#recolormask /graphics/dynastichuman/cloaks/cloak2_dark_f_recolormask.png
+#enditem
+
+#newitem
+#name "cloak 7 light"
+#gameid -1
+#sprite /graphics/dynastichuman/cloaks/cloak2_bright_f.png
+#recolormask /graphics/dynastichuman/cloaks/cloak2_light_f_recolormask.png
+#enditem
+
+#newitem
+#name "usekh dark"
+#gameid -1
+#sprite /graphics/dynastichuman/cloaks/usekh_dark.png
+#recolormask /graphics/dynastichuman/cloaks/usekh_dark_recolormask.png
+#enditem
+
+#newitem
+#name "usekh light"
+#gameid -1
+#sprite /graphics/dynastichuman/cloaks/usekh_bright.png
+#recolormask /graphics/dynastichuman/cloaks/usekh_light_recolormask.png
+#enditem
