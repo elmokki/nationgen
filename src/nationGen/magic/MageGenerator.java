@@ -1311,7 +1311,7 @@ public class MageGenerator extends TroopGenerator {
 		return priests;
 	}
 	
-	private void determineSpecialLeadership(Unit u)
+	public static void determineSpecialLeadership(Unit u)
 	{
 		String basiclevel = u.getLeaderLevel();
 		

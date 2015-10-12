@@ -24,9 +24,11 @@ import javax.imageio.ImageIO;
 
 
 
+
 import com.elmokki.Dom3DB;
 import com.elmokki.Drawing;
 import com.elmokki.Generic;
+
 
 
 
@@ -47,6 +49,7 @@ import nationGen.entities.MagicFilter;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.items.Item;
+import nationGen.magic.MageGenerator;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.naming.Name;
@@ -411,7 +414,7 @@ public class Unit {
 		for(Command c : this.getCommands())
 		{
 			String lead = null;
-			if(c.command.endsWith("leader"))
+			if(c.command.endsWith(prefix + "leader"))
 				lead = c.command.substring(1, c.command.indexOf(prefix + "leader"));
 			
 			if(levels.contains(lead))
@@ -986,8 +989,16 @@ public class Unit {
 			}
 		}
 		
+		boolean isMage = false;
 		
+		for(Command c : commands)
+		{
+			if(c.command.equals("#magicskill") || c.command.equals("#custommagic"))
+				isMage = true;
+		}
 		
+		if(isMage) 
+			MageGenerator.determineSpecialLeadership(u);
 		
 		polished = true;
 	}
