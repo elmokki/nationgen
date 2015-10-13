@@ -100,7 +100,6 @@ public class PDSelector {
 				if(ud_demon && c.command.contains("undeadleader"))
 				{
 					String leader = c.command.substring(1, c.command.indexOf("undeadleader"));
-					System.out.println("U: " + leader);
 					if(!badprefixes.contains(leader))
 					{
 						udvalid = true;
@@ -109,7 +108,6 @@ public class PDSelector {
 				if(magicbeing && c.command.contains("magicleader"))
 				{
 					String leader = c.command.substring(1, c.command.indexOf("magicleader"));
-					System.out.println("M: " + leader);
 					if(!badprefixes.contains(leader))
 					{
 						magicvalid = true;
