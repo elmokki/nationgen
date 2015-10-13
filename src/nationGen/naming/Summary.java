@@ -14,7 +14,6 @@ import nationGen.units.Unit;
 
 public class Summary {
 
-	public String main = "";
 	public String race = "";
 	public String military = "";
 	public String magic = "";
@@ -608,7 +607,7 @@ public class Summary {
 	
 	public String toString()
 	{
-		return main + "\n\n" + race + "\n\n" + military + "\n\n" + magic + "\n\n" + priest;
+		return race + "\n\n" + military + "\n\n" + magic + "\n\n" + priest;
 	}
 	
 	
