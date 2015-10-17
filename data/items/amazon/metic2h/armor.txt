@@ -1,6 +1,4 @@
-
 --- Leather
-
 #newitem
 #name "leather cuirass 1"
 #gameid 5
@@ -37,7 +35,6 @@
 #theme "leather"
 #enditem
 
-
 #newitem -- full leather
 #newitem
 #name "full leather"
@@ -50,33 +47,7 @@
 #enditem
 
 
---- Chain Mail
-
-
-#newitem
-#name "chain cuirass"
-#gameid 8
-#sprite /graphics/bodyarmor/2h/mailcuirass.png
-#armor
-#basechance 0.125
-#theme "iron"
-#enditem
-
-
---- Scale
-
-#newitem
-#name "scale cuirass"
-#gameid 7
-#sprite /graphics/bodyarmor/2h/mailcuirass.png
-#armor
-#basechance 0.125
-#theme "iron"
-#enditem
-
-
 --- Ring
-
 #newitem
 #name "ring cuirass"
 #gameid 6
@@ -84,8 +55,8 @@
 #armor
 #basechance 0.25
 #theme "leather"
+#theme "iron"
 #enditem
-
 
 #newitem
 #name "ring hauberk short"
@@ -94,8 +65,8 @@
 #armor
 #basechance 0.25
 #theme "leather"
+#theme "iron"
 #enditem
-
 
 #newitem
 #name "ring hauberk long"
@@ -104,8 +75,8 @@
 #armor
 #basechance 0.25
 #theme "leather"
+#theme "iron"
 #enditem
-
 
 #newitem -- full ring
 #name "full ring"
@@ -115,5 +86,68 @@
 #needs legs ringpants
 #basechance 0.25
 #theme "leather"
+#theme "iron"
 #enditem
 
+#newitem
+#id 16
+#gameid 6
+#sprite /graphics/bodyarmor/bronze/ringcuirass_2h.png
+#armor
+#basechance 0.25
+#theme "leather"
+#theme "bronze"
+#enditem
+
+#newitem
+#id 17
+#gameid 11
+#sprite /graphics/bodyarmor/bronze/ringhauberk_2h.png
+#armor
+#basechance 0.25
+#needs legs ringpants_bronze
+#theme "leather"
+#theme "bronze"
+#enditem
+
+#newitem -- full ring
+#id 19
+#gameid 16
+#sprite /graphics/bodyarmor/bronze/fullring_2h.png
+#armor
+#basechance 0.25
+#needs legs ringpants_bronze
+#theme "leather"
+#theme "bronze"
+#enditem
+
+
+--- Scale
+#newitem
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/bodyarmor/2h/mailcuirass.png
+#armor
+#basechance 0.125
+#theme "iron"
+#enditem
+
+#newitem
+#id 9
+#gameid 100
+#sprite /graphics/bodyarmor/bronze/scalecuirass_2h.png
+#armor
+#theme "bronze"
+#basechance 0.125
+#enditem
+
+
+--- Chain Mail
+#newitem
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/bodyarmor/2h/mailcuirass.png
+#armor
+#basechance 0.125
+#theme "iron"
+#enditem

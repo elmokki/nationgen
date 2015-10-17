@@ -34,7 +34,6 @@
 #theme "leather"
 #enditem
 
-
 #newitem -- full leather
 #newitem
 #name "full leather"
@@ -46,33 +45,7 @@
 #enditem
 
 
---- Chain Mail
-
-
-#newitem
-#name "chain cuirass"
-#gameid 8
-#sprite /graphics/bodyarmor/standard/mailcuirass.png
-#armor
-#theme "iron"
-#basechance 0.25
-#enditem
-
-
---- Scale
-
-#newitem
-#name "scale cuirass"
-#gameid 7
-#sprite /graphics/bodyarmor/standard/mailcuirass.png
-#armor
-#basechance 0.25
-#theme "iron"
-#enditem
-
-
 --- Ring
-
 #newitem
 #name "ring cuirass"
 #gameid 6
@@ -80,8 +53,8 @@
 #armor
 #basechance 2
 #theme "leather"
+#theme "iron"
 #enditem
-
 
 #newitem
 #name "ring hauberk short"
@@ -89,8 +62,8 @@
 #sprite /graphics/bodyarmor/standard/ringhauberk.png
 #armor
 #theme "leather"
+#theme "iron"
 #enditem
-
 
 #newitem
 #name "ring hauberk long"
@@ -98,8 +71,8 @@
 #sprite /graphics/bodyarmor/standard/ringhauberk2.png
 #armor
 #theme "leather"
+#theme "iron"
 #enditem
-
 
 #newitem -- full ring
 #name "full ring"
@@ -108,5 +81,67 @@
 #armor
 #needs legs ringpants
 #theme "leather"
+#theme "iron"
 #enditem
 
+#newitem
+#id 16
+#gameid 6
+#sprite /graphics/bodyarmor/bronze/ringcuirass.png
+#armor
+#basechance 2
+#theme "leather"
+#theme "bronze"
+#enditem
+
+#newitem
+#id 17
+#gameid 11
+#sprite /graphics/bodyarmor/bronze/ringhauberk.png
+#armor
+#basechance 2
+#needs legs ringpants_bronze
+#theme "leather"
+#theme "bronze"
+#enditem
+
+#newitem -- full ring
+#id 19
+#gameid 16
+#sprite /graphics/bodyarmor/bronze/fullring.png
+#armor
+#needs legs ringpants_bronze
+#theme "leather"
+#theme "bronze"
+#enditem
+
+
+--- Scale
+#newitem
+#id 9
+#gameid 7
+#sprite /graphics/bodyarmor/standard/mailcuirass.png
+#armor
+#theme "iron"
+#basechance 0.25
+#enditem
+
+#newitem
+#id 9
+#gameid 100
+#sprite /graphics/bodyarmor/bronze/scalecuirass.png
+#armor
+#theme "bronze"
+#basechance 0.25
+#enditem
+
+
+--- Chain Mail
+#newitem
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/bodyarmor/standard/mailcuirass.png
+#armor
+#theme "iron"
+#basechance 0.25
+#enditem
