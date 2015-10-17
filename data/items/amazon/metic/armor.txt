@@ -39,7 +39,7 @@
 #name "full leather"
 #gameid 15
 #sprite /graphics/bodyarmor/standard/leatherhauberk.png
-#needs legs leatherpants
+#needs legs leathergreaves
 #armor
 #theme "leather"
 #enditem
@@ -79,7 +79,7 @@
 #gameid 16
 #sprite /graphics/bodyarmor/standard/ringhauberk.png
 #armor
-#needs legs ringpants
+#needs legs irongreaves
 #theme "leather"
 #theme "iron"
 #enditem
@@ -100,7 +100,7 @@
 #sprite /graphics/bodyarmor/bronze/ringhauberk.png
 #armor
 #basechance 2
-#needs legs ringpants_bronze
+#needs legs bronzegreaves
 #theme "leather"
 #theme "bronze"
 #enditem
@@ -110,7 +110,7 @@
 #gameid 16
 #sprite /graphics/bodyarmor/bronze/fullring.png
 #armor
-#needs legs ringpants_bronze
+#needs legs bronzegreaves
 #theme "leather"
 #theme "bronze"
 #enditem
@@ -141,6 +141,7 @@
 #name "chain cuirass"
 #gameid 8
 #sprite /graphics/bodyarmor/standard/mailcuirass.png
+#needs legs irongreaves
 #armor
 #theme "iron"
 #basechance 0.25
