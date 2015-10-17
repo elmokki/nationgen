@@ -1,0 +1,90 @@
+
+--- Ring
+#newitem
+#name "ring cuirass"
+#gameid 6
+#sprite /graphics/bodyarmor/bronze/ringcuirass.png
+#armor
+#theme "leather"
+#theme "bronze"
+#enditem
+
+#newitem
+#name "ring hauberk"
+#gameid 11
+#sprite /graphics/bodyarmor/bronze/ringhauberk.png
+#armor
+#theme "leather"
+#theme "bronze"
+#needstype legs bronze
+#enditem
+
+#newitem -- full ring
+#name "full ring"
+#gameid 16
+#sprite /graphics/bodyarmor/bronze/fullring.png
+#armor
+#needstype legs bronze
+#theme "leather"
+#theme "bronze"
+#enditem
+
+
+--- Scale
+#newitem
+#name "scale cuirass"
+#gameid 142
+#sprite /graphics/bodyarmor/bronze/scalecuirass.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#name "scale hauberk"
+#gameid 136
+#sprite /graphics/bodyarmor/bronze/scalehauberk.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem -- full scale
+#name "full scale"
+#gameid bronzescale_full
+#sprite /graphics/bodyarmor/bronze/fullscale.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#needstype legs bronze
+#enditem
+
+
+--- Plate
+#newitem
+#name "plate cuirass"
+#gameid 100
+#sprite /graphics/bodyarmor/bronze/platecuirass.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#name "plate hauberk"
+#gameid 101
+#sprite /graphics/bodyarmor/bronze/platehauberk.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#needstype legs bronze
+#enditem
+
+#newitem -- full plate
+#name "full plate"
+#gameid bronzeplate_full
+#sprite /graphics/bodyarmor/bronze/fullplate.png
+#armor
+#needstype legs bronze
+#theme "advanced"
+#theme "bronze"
+#maxvarieties 1
+#enditem

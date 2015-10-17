@@ -1,0 +1,97 @@
+--- Ring
+#newitem
+#name "ring cuirass"
+#gameid 6
+#sprite /graphics/bodyarmor/bronze/ringcuirass_2h.png
+#armor
+#basechance 0.25
+#theme "leather"
+#theme "bronze"
+#enditem
+
+#newitem
+#name "ring hauberk short"
+#gameid 11
+#sprite /graphics/bodyarmor/bronze/ringhauberk_2h.png
+#armor
+#basechance 0.5
+#theme "leather"
+#theme "bronze"
+#enditem
+
+#newitem -- full ring
+#name "full ring"
+#gameid 16
+#sprite /graphics/bodyarmor/bronze/fullring_2h.png
+#armor
+#needs legs ringpants
+#basechance 0.25
+#theme "leather"
+#theme "bronze"
+#enditem
+
+
+--- Scale
+#newitem
+#name "scale cuirass"
+#gameid 100
+#sprite /graphics/bodyarmor/bronze/scalecuirass_2h.png
+#armor
+#basechance 0.25
+#theme "bronze"
+#enditem
+
+#newitem
+#name "scale hauberk long"
+#gameid 101
+#sprite /graphics/bodyarmor/bronze/scalehauberk_2h.png
+#armor
+#basechance 0.5
+#theme "bronze"
+#enditem
+
+#newitem -- full scale
+#name "full scale"
+#gameid bronzescale_full
+#sprite /graphics/bodyarmor/bronze/fullscale_2h.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#needs legs chainpants
+#basechance 0.25
+#enditem
+
+
+--- Plate
+#newitem
+#name "plate cuirass"
+#gameid 142
+#sprite /graphics/bodyarmor/bronze/platecuirass_2h.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#basechance 0.25
+#enditem
+
+#newitem
+#name "plate hauberk"
+#gameid 136
+#sprite /graphics/bodyarmor/bronze/platehauberk_2h.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#tag "name mounted knight"
+#basechance 0.25
+#enditem
+
+#newitem -- full plate
+#name "full plate"
+#gameid bronzeplate_full
+#sprite /graphics/bodyarmor/bronze/fullplate_2h.png
+#armor
+#needs legs platepants
+#theme "advanced"
+#theme "bronze"
+#tag "name mounted knight"
+#basechance 0.25
+#enditem

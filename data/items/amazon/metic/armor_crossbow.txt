@@ -1,10 +1,16 @@
-
 --- Leather
-
 #newitem
 #id 1
 #gameid 5
 #sprite /graphics/bodyarmor/crossbow/leathercuirass.png
+#armor
+#theme "leather"
+#enditem
+
+#newitem
+#id 23
+#gameid 5
+#sprite /graphics/bodyarmor/standard/leathercuirass2.png
 #armor
 #theme "leather"
 #enditem
@@ -25,7 +31,6 @@
 #theme "leather"
 #enditem
 
-
 #newitem -- full leather
 #id 4
 #gameid 15
@@ -36,38 +41,16 @@
 #enditem
 
 
---- Chain Mail
-
-
-#newitem
-#id 5
-#gameid 8
-#sprite /graphics/bodyarmor/crossbow/mailcuirass.png
-#armor
-#theme "iron"
-#enditem
-
-
---- Scale
-
-#newitem
-#id 9
-#gameid 7
-#sprite /graphics/bodyarmor/crossbow/mailcuirass.png
-#armor
-#theme "iron"
-#enditem
-
 --- Ring
-
 #newitem
 #id 16
 #gameid 6
 #sprite /graphics/bodyarmor/crossbow/ringcuirass.png
 #armor
 #theme "leather"
+#theme "iron"
+#basechance 2
 #enditem
-
 
 #newitem
 #id 17
@@ -75,8 +58,8 @@
 #sprite /graphics/bodyarmor/crossbow/ringhauberk.png
 #armor
 #theme "leather"
+#theme "iron"
 #enditem
-
 
 #newitem
 #id 18
@@ -84,8 +67,8 @@
 #sprite /graphics/bodyarmor/crossbow/ringhauberk2.png
 #armor
 #theme "leather"
+#theme "iron"
 #enditem
-
 
 #newitem -- full ring
 #id 19
@@ -94,14 +77,67 @@
 #armor
 #needs legs ringpants
 #theme "leather"
+#theme "iron"
 #enditem
 
-----
+#newitem
+#id 16
+#gameid 6
+#sprite /graphics/bodyarmor/bronze/ringcuirass.png
+#armor
+#basechance 2
+#theme "leather"
+#theme "bronze"
+#enditem
 
 #newitem
-#id 23
-#gameid 5
-#sprite /graphics/bodyarmor/standard/leathercuirass2.png
+#id 17
+#gameid 11
+#sprite /graphics/bodyarmor/bronze/ringhauberk_xbow.png
 #armor
+#basechance 2
+#needs legs ringpants_bronze
 #theme "leather"
+#theme "bronze"
+#enditem
+
+#newitem -- full ring
+#id 19
+#gameid 16
+#sprite /graphics/bodyarmor/bronze/fullring_xbow.png
+#armor
+#needs legs ringpants_bronze
+#theme "leather"
+#theme "bronze"
+#enditem
+
+
+--- Scale
+#newitem
+#id 9
+#gameid 7
+#sprite /graphics/bodyarmor/crossbow/mailcuirass.png
+#armor
+#theme "iron"
+#basechance 0.25
+#enditem
+
+#newitem
+#id 9
+#gameid 100
+#sprite /graphics/bodyarmor/bronze/scalecuirass.png
+#armor
+#theme "bronze"
+#basechance 0.25
+#enditem
+
+
+--- Chain Mail
+#newitem
+#id 5
+#gameid 8
+#sprite /graphics/bodyarmor/crossbow/mailcuirass.png
+#armor
+#theme "iron"
+#basechance 0.25
 #enditem
