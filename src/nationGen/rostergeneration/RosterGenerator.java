@@ -90,6 +90,9 @@ public class RosterGenerator {
 		// Affinity
 		double secaffinity = r.nextDouble() * bonussecchance;	
 		
+		if(r.nextDouble() < 0.2)
+			secaffinity = 0;
+		
 		if(secaffinity < 0.25 && r.nextDouble() < 0.75 && maxprimaries < max)
 			secaffinity = Math.max(minsecaffinity, 0);
 		
@@ -123,7 +126,8 @@ public class RosterGenerator {
 		if(max - maxprimaries > 0)
 			secamount = Math.max(max - maxprimaries, secamount);
 		
-		
+		if(secaffinity == 0)
+			secamount = 0;
 		
 		// Affinity tweaking 
 		if(maxprimaries < max)
