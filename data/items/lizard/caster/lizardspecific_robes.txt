@@ -3,6 +3,8 @@
 #gameid 158
 #sprite /graphics/bodyarmor/robes/bogarusrobe.png
 #recolormask /graphics/bodyarmor/robes/bogarusrobe_recolormask.png
+#offsetx -1
+#offsety -2
 #armor
 #tag "tier 3"
 #tag "tier 2"
@@ -14,6 +16,8 @@
 #gameid 158
 #sprite /graphics/bodyarmor/robes/bogarusrobe2.png
 #recolormask /graphics/bodyarmor/robes/bogarusrobe2_recolormask.png
+#offsetx -1
+#offsety -2
 #armor
 #eliteversion "bogarusrobe"
 #tag "tier 2"
@@ -25,9 +29,12 @@
 #gameid 158
 #sprite /graphics/bodyarmor/robes/imperialrobe1.png
 #recolormask /graphics/bodyarmor/robes/imperialrobe1_recolormask.png
+#offsetx -1
+#offsety -2
 #armor
 #tag "tier 3"
 #tag "eliteversion imperialrobe3"
+#theme "advanced"
 #enditem
 
 #newitem
@@ -35,11 +42,14 @@
 #gameid 158
 #sprite /graphics/bodyarmor/robes/imperialrobe2.png
 #recolormask /graphics/bodyarmor/robes/imperialrobe2_recolormask.png
+#offsetx -1
+#offsety -2
 #armor
 #tag "eliteversion imperialrobe1"
 #tag "eliteversion imperialrobe3"
 #tag "tier 2"
 #tag "tier 1"
+#theme "advanced"
 #enditem
 
 #newitem
@@ -47,8 +57,11 @@
 #gameid 158
 #sprite /graphics/bodyarmor/robes/imperialrobe3.png
 #recolormask /graphics/bodyarmor/robes/imperialrobe3_recolormask.png
+#offsetx -1
+#offsety -2
 #armor
 #tag "tier 3"
+#theme "advanced"
 #enditem
 
 #newitem
@@ -57,19 +70,19 @@
 #sprite /graphics/bodyarmor/ctis_robes/cultistrobe.png
 #recolormask /graphics/bodyarmor/robes/cultistrobe_recolormask.png
 #armor
-#offsetx 5
-#offsety -2
+#offsetx 3
+#offsety -3
 #tag "tier 3"
 #enditem
 
 #newitem
 #id cultistrobe2
 #gameid 158
-#sprite /graphics/bodyarmor/c_tisrobes/cultistrobe2.png
+#sprite /graphics/bodyarmor/ctis_robes/cultistrobe2.png
 #recolormask self
 #armor
-#offsetx 5
-#offsety -2
+#offsetx 3
+#offsety -3
 #tag "eliteversion cultistrobe"
 #tag "tier 2"
 #tag "tier 1"
@@ -80,10 +93,10 @@
 #gameid 158
 #sprite /graphics/bodyarmor/robes/lizardkingrobe1_lizard.png
 #recolormask graphics/bodyarmor/robes/lizardkingrobe1_recolormask.png
+#offsetx -1
+#offsety -2
 #armor
 #tag "tier 3"
-#offsetx 5
-#offsety -2
 #enditem
 
 #newitem
@@ -91,8 +104,208 @@
 #gameid 158
 #sprite /graphics/bodyarmor/robes/lizardkingrobe1_lizard.png
 #recolormask graphics/bodyarmor/robes/lizardkingrobe1_recolormask2.png
+#offsetx -1
+#offsety -2
 #armor
 #tag "tier 3"
-#offsetx 5
-#offsety -2
+#enditem
+
+#newitem
+#id spectatorrobe_white
+#gameid 158
+#sprite /graphics/bodyarmor/ctis_robes/ermorrobe_light.png
+#tag "eliteversion spectatorrobe_grey"
+#tag "eliteversion spectatorrobe_light"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id spectatorrobe_light
+#gameid 158
+#sprite /graphics/bodyarmor/ctis_robes/ermorrobe_light.png
+#recolormask self
+#tag "eliteversion spectatorrobe_medium"
+#armor
+#tag "tier 3"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id spectatorrobe_grey
+#gameid 158
+#sprite /graphics/bodyarmor/ctis_robes/ermorrobe_medium.png
+#tag "eliteversion spectatorrobe_medium"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id spectatorrobe_medium
+#gameid 158
+#sprite /graphics/bodyarmor/ctis_robes/ermorrobe_medium.png
+#recolormask self
+#tag "eliteversion spectatorrobe_light"
+#tag "eliteversion spectatorrobe_dark"
+#armor
+#tag "tier 3"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id spectatorrobe_black
+#gameid 158
+#sprite /graphics/bodyarmor/ctis_robes/ermorrobe_dark.png
+#tag "eliteversion spectatorrobe_grey"
+#tag "eliteversion spectatorrobe_dark"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id spectatorrobe_dark
+#gameid 158
+#sprite /graphics/bodyarmor/ctis_robes/ermorrobe_dark.png
+#recolormask self
+#tag "eliteversion spectatorrobe_medium"
+#armor
+#tag "tier 3"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id ermorrobe_white
+#gameid 158
+#sprite /graphics/bodyarmor/ctis_robes/ermorrobe2.png
+#tag "eliteversion ermorrobe_light"
+#tag "eliteversion ermorrobe_half"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id ermorrobe_light
+#gameid 158
+#sprite /graphics/bodyarmor/ctis_robes/ermorrobe2.png
+#recolormask self
+#tag "eliteversion spectatorrobe_twotone"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id ermorrobe_half
+#gameid 158
+#sprite /graphics/bodyarmor/ctis_robes/ermorrobe2.png
+#recolormask /graphics/bodyarmor/ctis_robes/ermorrobe2_recolormask1.png
+#tag "eliteversion spectatorrobe_twotone"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id ermorrobe_twotone
+#gameid 158
+#sprite /graphics/bodyarmor/ctis_robes/ermorrobe2.png
+#recolormask /graphics/bodyarmor/ctis_robes/ermorrobe2_recolormask2.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id heirodulerobe_white
+#gameid 158
+#sprite /graphics/bodyarmor/ctis_robes/heirodule_robe.png
+#tag "eliteversion heirodulerobe_faint"
+#tag "eliteversion heirodulerobe_trimmed"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id heirodulerobe_faint
+#gameid 158
+#sprite /graphics/bodyarmor/ctis_robes/heirodule_robe.png
+#recolormask /graphics/bodyarmor/ctis_robes/heirodule_robe_recolormask2.png
+#tag "eliteversion heirodulerobe_bright"
+#tag "eliteversion heirodulerobe_twotone"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id heirodulerobe_trimmed
+#gameid 158
+#sprite /graphics/bodyarmor/ctis_robes/heirodule_robe.png
+#recolormask /graphics/bodyarmor/ctis_robes/heirodule_robe_recolormask3.png
+#tag "eliteversion heirodulerobe_bright"
+#tag "eliteversion heirodulerobe_twotone"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id heirodulerobe_bright
+#gameid 158
+#sprite /graphics/bodyarmor/ctis_robes/heirodule_robe.png
+#recolormask /graphics/bodyarmor/ctis_robes/heirodule_robe_recolormask1.png
+#tag "eliteversion heirodulerobe_twotone"
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id heirodulerobe_twotone
+#gameid 158
+#sprite /graphics/bodyarmor/ctis_robes/heirodule_robe.png
+#recolormask /graphics/bodyarmor/ctis_robes/heirodule_robe_recolormask4.png
+#tag "eliteversion heirodulerobe_bright"
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id shendyt_white
+#gameid -1
+#sprite /graphics/bodyarmor/ctis_robes/shendyt.png
+#tag "eliteversion shendyt_light"
+#tag "eliteversion usekh_white"
+#armor
+#tag "tier 1"
+#theme "primitive"
+#enditem
+
+#newitem
+#id shendyt_light
+#gameid -1
+#sprite /graphics/bodyarmor/ctis_robes/shendyt.png
+#recolormask /graphics/bodyarmor/ctis_robes/shendyt_recolormask.png
+#tag "eliteversion usekh_light"
+#armor
+#tag "tier 2"
+#theme "primitive"
+#enditem
+
+#newitem
+#id usekh_white
+#gameid 161
+#sprite /graphics/bodyarmor/ctis_robes/shendyt_usekh.png
+#recolormask /graphics/bodyarmor/ctis_robes/shendyt_usekh_recolormask1.png
+#tag "eliteversion usekh_light"
+#armor
+#tag "tier 2"
+#theme "primitive"
+#enditem
+
+#newitem
+#id usekh_light
+#gameid 161
+#sprite /graphics/bodyarmor/ctis_robes/shendyt_usekh.png
+#recolormask /graphics/bodyarmor/ctis_robes/shendyt_usekh_recolormask2.png
+#armor
+#tag "tier 3"
+#theme "primitive"
 #enditem
