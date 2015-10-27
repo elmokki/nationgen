@@ -114,7 +114,8 @@
 #name shendyt_usekh_grey
 #sprite /graphics/dynastichuman/armor/robes/shendyt_long_usekh1.png
 #recolormask /graphics/dynastichuman/armor/robes/shendyt_long_usekh_recolormask.png
-#eliteversion "shendyt__usekh_bright"
+#needs overlay shendyt_usekh
+#eliteversion "shendyt_usekh_bright"
 #gameid 161
 #armor
 #tag "tier 2"
@@ -124,6 +125,7 @@
 #name shendyt_usekh_black
 #sprite /graphics/dynastichuman/armor/robes/shendyt_long_usekh2.png
 #recolormask /graphics/dynastichuman/armor/robes/shendyt_long_usekh_recolormask.png
+#needs overlay shendyt_usekh
 #eliteversion "shendyt_usekh_dark"
 #gameid 161
 #armor
@@ -134,6 +136,7 @@
 #name shendyt_usekh_bright
 #sprite /graphics/dynastichuman/armor/robes/shendyt_long_usekh1.png
 #recolormask /graphics/dynastichuman/armor/robes/shendyt_long_usekh1_recolormask.png
+#needs overlay shendyt_usekh
 #gameid 161
 #armor
 #tag "tier 3"
@@ -143,6 +146,7 @@
 #name shendyt_usekh_dark
 #sprite /graphics/dynastichuman/armor/robes/shendyt_long_usekh2.png
 #recolormask /graphics/dynastichuman/armor/robes/shendyt_long_usekh2_recolormask.png
+#needs overlay shendyt_usekh
 #gameid 161
 #armor
 #tag "tier 3"
@@ -174,6 +178,7 @@
 #name halfrobe_usekh_white
 #sprite /graphics/dynastichuman/armor/robes/robes_graveconsort2.png
 #recolormask /graphics/dynastichuman/armor/robes/robes_graveconsort_recolormask1.png
+#needs overlay graveconsort_usekh1-3
 #eliteversion "halfrobe_usekh_light"
 #gameid -1
 #armor
@@ -185,6 +190,7 @@
 #name halfrobe_usekh_light
 #sprite /graphics/dynastichuman/armor/robes/robes_graveconsort2.png
 #recolormask /graphics/dynastichuman/armor/robes/robes_graveconsort_recolormask3.png
+#needs overlay graveconsort_usekh1-3
 #gameid -1
 #armor
 #tag "tier 3"
@@ -215,6 +221,7 @@
 #name halfrobe_cultist_ornate
 #sprite /graphics/dynastichuman/armor/robes/robes_halfcultist_ornate.png
 #recolormask /graphics/dynastichuman/armor/robes/robes_halfcultist_recolormask.png
+#needs overlay halfcultist_necklace
 #eliteversion "halfrobe_cultist_ornate"
 #gameid -1
 #armor
@@ -250,6 +257,7 @@
 #name robes_cultist_ornate
 #sprite /graphics/dynastichuman/armor/robes/robes_cultist_ornate.png
 #recolormask /graphics/dynastichuman/armor/robes/robes_cultist_ornate_recolormask.png
+#needs overlay cultist_necklace
 #gameid 158
 #armor
 #tag "tier 3"
@@ -312,6 +320,7 @@
 #gameid 158
 #sprite /graphics/dynastichuman/armor/robes/robes_graveconsort.png
 #recolormask /graphics/dynastichuman/armor/robes/robes_graveconsort_recolormask2.png
+#needs overlay graveconsort_usekh2
 #tag "eliteversion graveconsortrobe_dark"
 #armor
 #tag "tier 1"
@@ -322,6 +331,7 @@
 #gameid 158
 #sprite /graphics/dynastichuman/armor/robes/robes_graveconsort.png
 #recolormask /graphics/dynastichuman/armor/robes/robes_graveconsort_recolormask1.png
+#needs overlay graveconsort_usekh1-3
 #tag "eliteversion graveconsortrobe_twotone"
 #armor
 #tag "tier 2"
@@ -332,6 +342,7 @@
 #gameid 158
 #sprite /graphics/dynastichuman/armor/robes/robes_graveconsort.png
 #recolormask /graphics/dynastichuman/armor/robes/robes_graveconsort_recolormask4.png
+#needs overlay graveconsort_usekh4
 #armor
 #tag "tier 3"
 #enditem
