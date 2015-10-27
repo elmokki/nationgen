@@ -129,7 +129,7 @@
 -- Mask
 #newitem
 #id mask_serpent
-#basechance 1
+#basechance 0
 #chanceinc "magic nature 1"
 #chanceinc "magic nature water 1"
 #chanceinc "magic nature death 1"
@@ -144,11 +144,11 @@
 
 #newitem
 #id mask_jackal
-#basechance 1
+#basechance 0
 #chanceinc "magic death 1"
 #chanceinc "magic fire death 1"
-#chanceinc "magic air death 1"
-#chanceinc "magic fire air 1"
+#chanceinc "magic air death 0.5"
+#chanceinc "magic fire air 0.5"
 #gameid 145
 #sprite /graphics/dynastichuman/helmet/mask_jackal.png
 #eliteversion mask_jackal_elite
@@ -160,11 +160,11 @@
 
 #newitem
 #id mask_jackal_elite
-#basechance 1
+#basechance 0
 #chanceinc "magic death 1"
 #chanceinc "magic fire death 1"
-#chanceinc "magic air death 1"
-#chanceinc "magic fire air 1"
+#chanceinc "magic air death 0.5"
+#chanceinc "magic fire air 0.5"
 #gameid 187
 #sprite /graphics/dynastichuman/helmet/mask_jackal_elite.png
 #recolormask /graphics/dynastichuman/helmet/mask_jackal_elite_recolormask.png
@@ -176,11 +176,11 @@
 
 #newitem
 #id mask_crocodile
-#basechance 1
+#basechance 0
 #chanceinc "magic water 1"
 #chanceinc "magic nature 1"
-#chanceinc "magic water death 1"
-#chanceinc "magic astral fire 1"
+#chanceinc "magic water death 0.5"
+#chanceinc "magic astral fire 0.5"
 #gameid 145
 #sprite /graphics/dynastichuman/helmet/mask_crocodile.png
 #eliteversion mask_crocodile_elite1
@@ -194,11 +194,11 @@
 
 #newitem
 #id mask_crocodile_elite1
-#basechance 0.5
+#basechance 0
 #chanceinc "magic water 0.5"
 #chanceinc "magic nature 0.5"
-#chanceinc "magic water death 0.5"
-#chanceinc "magic astral fire 0.5"
+#chanceinc "magic water death 0.25"
+#chanceinc "magic astral fire 0.25"
 #gameid 187
 #sprite /graphics/dynastichuman/helmet/mask_crocodile_elite.png
 #recolormask /graphics/dynastichuman/helmet/mask_crocodile_elite_recolormask.png
@@ -211,11 +211,11 @@
 
 #newitem
 #id mask_crocodile_elite2
-#basechance 0.5
+#basechance 0
 #chanceinc "magic water 0.5"
 #chanceinc "magic nature 0.5"
-#chanceinc "magic water death 0.5"
-#chanceinc "magic astral fire 0.5"
+#chanceinc "magic water death 0.25"
+#chanceinc "magic astral fire 0.25"
 #gameid 187
 #sprite /graphics/dynastichuman/helmet/mask_crocodile_elite2.png
 #recolormask /graphics/dynastichuman/helmet/mask_crocodile_elite2_recolormask.png
@@ -226,12 +226,13 @@
 #theme "nature"
 #enditem
 
+#newitem
 #id mask_lion
-#basechance 1
+#basechance 0
 #chanceinc "magic fire 1"
 #chanceinc "magic fire nature 1"
-#chanceinc "magic fire air 1"
-#chanceinc "magic fire astral 1"
+#chanceinc "magic air fire 0.5"
+#chanceinc "magic astral fire 0.5"
 #gameid 145
 #sprite /graphics/dynastichuman/helmet/mask_lion.png
 #eliteversion mask_lion_elite
@@ -243,11 +244,11 @@
 
 #newitem
 #id mask_lion_elite
-#basechance 1
+#basechance 0
 #chanceinc "magic fire 1"
 #chanceinc "magic fire nature 1"
-#chanceinc "magic fire air 1"
-#chanceinc "magic fire astral 1"
+#chanceinc "magic air fire 0.5"
+#chanceinc "magic astral fire 0.5"
 #gameid 187
 #sprite /graphics/dynastichuman/helmet/mask_lion_elite.png
 #recolormask /graphics/dynastichuman/helmet/mask_lion_elite_recolormask.png
@@ -257,8 +258,9 @@
 #theme "fire"
 #enditem
 
+#newitem
 #id mask_bull
-#basechance 1
+#basechance 0
 #chanceinc "magic earth 1"
 #chanceinc "magic nature 1"
 #chanceinc "magic earth nature 1"
@@ -274,7 +276,7 @@
 
 #newitem
 #id mask_bull_elite
-#basechance 1
+#basechance 0
 #chanceinc "magic earth 1"
 #chanceinc "magic nature 1"
 #chanceinc "magic earth nature 1"
@@ -288,8 +290,9 @@
 #theme "nature"
 #enditem
 
+#newitem
 #id mask_hawk
-#basechance 1
+#basechance 0
 #chanceinc "magic astral 1"
 #chanceinc "magic fire 1"
 #chanceinc "magic astral air 1"
@@ -306,7 +309,7 @@
 
 #newitem
 #id mask_hawk_elite
-#basechance 1
+#basechance 0
 #chanceinc "magic astral 1"
 #chanceinc "magic fire 1"
 #chanceinc "magic astral air 1"
@@ -321,12 +324,13 @@
 #theme "fire"
 #enditem
 
+#newitem
 #id mask_heron
-#basechance 1
+#basechance 0
 #chanceinc "magic air 1"
 #chanceinc "magic fire 1"
-#chanceinc "magic air fire 1"
-#chanceinc "magic air water 1"
+#chanceinc "magic air fire 0.5"
+#chanceinc "magic air water 0.5"
 #gameid 145
 #sprite /graphics/dynastichuman/helmet/mask_heron.png
 #eliteversion mask_heron_elite
@@ -340,11 +344,11 @@
 
 #newitem
 #id mask_heron_elite
-#basechance 1
+#basechance 0
 #chanceinc "magic air 1"
 #chanceinc "magic fire 1"
-#chanceinc "magic air fire 1"
-#chanceinc "magic air water 1"
+#chanceinc "magic air fire 0.5"
+#chanceinc "magic air water 0.5"
 #gameid 187
 #sprite /graphics/dynastichuman/helmet/mask_heron_elite.png
 #recolormask /graphics/dynastichuman/helmet/bird_nemes_recolormask.png
@@ -356,8 +360,9 @@
 #theme "fire"
 #enditem
 
+#newitem
 #id mask_ibis
-#basechance 1
+#basechance 0
 #chanceinc "magic astral 1"
 #chanceinc "magic water 1"
 #chanceinc "magic astral water 1"
@@ -374,7 +379,7 @@
 
 #newitem
 #id mask_ibis_elite
-#basechance 1
+#basechance 0
 #chanceinc "magic astral 1"
 #chanceinc "magic water 1"
 #chanceinc "magic astral water 1"
