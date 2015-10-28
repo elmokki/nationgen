@@ -82,7 +82,6 @@
 #offsety -28
 #enditem
 
-
 #newitem
 #name "red ant"
 #gameid -1
@@ -133,6 +132,9 @@
 #tag "maxprot 8"
 #tag "guaranteedprefix fish"
 #basechance 0.1
+#chanceinc "personalcommand #swampsurvival 0.9"
+#chanceinc "personalcommand #pooramphibian *10"
+#chanceinc "personalcommand #amphibian *10"
 #offsetx -3
 #offsety -28
 #enditem

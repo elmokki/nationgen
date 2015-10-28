@@ -10,14 +10,21 @@
 #type weapon
 -- Broad sword
 #chanceinc slot weapon 8 5
+#chanceinc slot weapon bronzebroadsword 5
+#chanceinc slot weapon 474 5
 -- Short sword
 #chanceinc slot weapon 6 5
+#chanceinc slot weapon 645 5
 -- Great sword
 #chanceinc slot weapon 11 5
 -- Claymore
 #chanceinc slot weapon 258 5
+#chanceinc slot weapon bronzeclaymore 5
 -- Jotun Longsword
 #chanceinc slot weapon 268 5
+#chanceinc slot weapon giantsword 5
+#chanceinc slot weapon giantsword_bronze 5
+#chanceinc slot weapon giantmagicsword 5
 -- Obsidian Club Swords
 #chanceinc slot weapon 288 5
 #chanceinc slot weapon 451 5
@@ -28,8 +35,10 @@
 #chanceinc slot weapon 10 0.25
 -- Kopesh
 #chanceinc slot weapon 513 0.25
+#chanceinc slot weapon ironkopesh 0.25
 #chanceinc origname swordsman *20
 #commandvariant #female swordsmistress
+#racevariant "Hoburg" swordmeister
 #theme elite
 #theme commander
 #end
@@ -40,13 +49,23 @@
 
 #type weapon
 #chanceinc slot weapon 1 5
+#chanceinc slot weapon 643 5
+#chanceinc slot weapon nonferrousspear 5
+#chanceinc slot weapon giantspear 5
+#chanceinc slot weapon giantspear_bronze 5
+#chanceinc slot weapon giantmagicspear 5
+#chanceinc slot weapon 473 5
 -- Coral Spears
 #chanceinc slot weapon 31 5
 #chanceinc slot weapon corallongspear 5
 -- Long Spear
 #chanceinc slot weapon 28 5
+#chanceinc slot weapon 644 5
+#chanceinc slot weapon 485 5
+#chanceinc slot weapon 234 5
 #chanceinc origname spearman *20
 #commandvariant #female spearmistress
+#racevariant "Hoburg" spearmeister
 #theme elite
 #theme commander
 #end
@@ -59,16 +78,27 @@
 #type weapon
 -- Axe
 #chanceinc slot weapon 17 5
+#chanceinc slot weapon goldenaxe 5
 -- Battleaxe
 #chanceinc slot weapon 18 5
+#chanceinc slot weapon bronzebattleaxe 5
 -- Jotun Axe
 #chanceinc slot weapon 66 5
+#chanceinc slot weapon giantaxe 5
+#chanceinc slot weapon giantaxe_bronze 5
+#chanceinc slot weapon giantmagicaxe 5
 -- Jotun Battleaxe
 #chanceinc slot weapon 307 5
+#chanceinc slot weapon giantgreataxe 5
+#chanceinc slot weapon giantgreataxe_bronze 5
 -- Hatchet
 #chanceinc slot weapon 253 5
+#chanceinc slot weapon 646 5
 #chanceinc origname axeman *20
 #commandvariant #female axemistress
+#racevariant "Hoburg" axemeister
+#racevariant "Muuch" batab
+#racevariant "Zotz" batab
 #theme elite
 #theme commander
 #end
