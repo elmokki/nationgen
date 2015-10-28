@@ -1061,3 +1061,27 @@
 #nogcost
 #mount
 #end
+
+#new secondshape
+#name "wingedlionmount"
+#command "#copystats 628"
+#command "#spr1 ./graphics/mounts/standard/wingedlion.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#size 4"
+#command "#hp 16"
+#command "#str 14"
+#command "#att 12"
+#command "#def 14"
+#command "#prot 2"
+#command "#mr 10"
+#command "#mor 10"
+#command "#maxage 42"
+#command "#mapmove 3"
+#command "#ap 24"
+#command "#flying"
+#nowayback
+#nogcost
+#mount
+#end

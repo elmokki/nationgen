@@ -8,14 +8,20 @@
 #type weapon
 -- Broad sword
 #chanceinc slot weapon 8 1
+#chanceinc slot weapon bronzebroadsword 1
+#chanceinc slot weapon 474 1
 -- Short sword
 #chanceinc slot weapon 6 1
+#chanceinc slot weapon 645 1
 -- Great sword
 #chanceinc slot weapon 11 1
 -- Claymore
 #chanceinc slot weapon 258 1
+#chanceinc slot weapon bronzeclaymore 1
 -- Jotun Longsword
 #chanceinc slot weapon 268 1
+#chanceinc slot weapon giantsword 1
+#chanceinc slot weapon giantsword_bronze 1
 -- Obsidian Club Swords
 #chanceinc slot weapon 288 1
 #chanceinc slot weapon 451 1
@@ -23,9 +29,10 @@
 #chanceinc slot weapon coralbroadsword 1
 #chanceinc slot weapon coralshortsword 1
 -- Falchion
-#chanceinc slot weapon 10 0.2
+#chanceinc slot weapon 10 0.25
 -- Kopesh
-#chanceinc slot weapon 513 0.2
+#chanceinc slot weapon 513 0.25
+#chanceinc slot weapon ironkopesh 0.25
 #prefix
 #end
 
@@ -37,6 +44,9 @@
 #type weapon
 -- Falchion
 #chanceinc slot weapon 10 2
+-- Kopesh
+#chanceinc slot weapon 513 0.25
+#chanceinc slot weapon ironkopesh 0.25
 #prefix
 #end
 
@@ -72,16 +82,23 @@
 #type weapon
 -- Spear
 #chanceinc slot weapon 1 1
+#chanceinc slot weapon 643 1
+#chanceinc slot weapon nonferrousspear 1
+#chanceinc slot weapon giantspear 1
+#chanceinc slot weapon giantspear_bronze 1
+#chanceinc slot weapon 473 1
 -- Coral Spears
 #chanceinc slot weapon 31 1
 #chanceinc slot weapon corallongspear 1
 -- Long Spear
 #chanceinc slot weapon 28 1
+#chanceinc slot weapon 644 1
+#chanceinc slot weapon 485 1
+#chanceinc slot weapon 234 1
 -- Stone spear
 #chanceinc slot weapon 373 1
 #prefix
 #end
-
 
 
 ----- Axes
@@ -93,17 +110,23 @@
 #type weapon
 -- Axe
 #chanceinc slot weapon 17 1
+#chanceinc slot weapon goldenaxe 1
 -- Battleaxe
 #chanceinc slot weapon 18 1
+#chanceinc slot weapon bronzebattleaxe 1
 -- Jotun Axe
 #chanceinc slot weapon 66 1
+#chanceinc slot weapon giantaxe 1
+#chanceinc slot weapon giantaxe_bronze 1
 -- Jotun Battleaxe
 #chanceinc slot weapon 307 1
+#chanceinc slot weapon giantgreataxe 1
+#chanceinc slot weapon giantgreataxe_bronze 1
 -- Hatchet
 #chanceinc slot weapon 253 1
+#chanceinc slot weapon 646 1
 #prefix
 #end
-
 
 
 ----- Pike
@@ -129,6 +152,7 @@
 #type weapon
 -- Halbred
 #chanceinc slot weapon 5 1
+#chanceinc slot weapon bronzehalberd 1
 #prefix
 #end
 
@@ -151,6 +175,57 @@
 
 #type weapon
 #chanceinc slot weapon 257 1
+#chanceinc slot weapon bronzebardiche 1
+#prefix
+#end
+
+----- Glaive
+
+#new 
+#name "glaive"
+#basechance 0
+
+#type weapon
+#chanceinc slot weapon 308 1
+#chanceinc slot weapon 46 1
+#chanceinc slot weapon 427 1
+#chanceinc slot weapon 454 1
+#chanceinc slot weapon 426 1
+#chanceinc slot weapon 598 0.5
+#chanceinc slot weapon 455 0.5
+#chanceinc slot weapon bronzeglaive 1
+#chanceinc slot weapon meteoriteglaive 1
+#prefix
+#end
+
+----- Generic "polearm" - about 1/6th the chance of specific arms
+
+#new 
+#name "polearm"
+#basechance 0
+
+#type weapon
+-- Halbred
+#chanceinc slot weapon 5 0.2
+#chanceinc slot weapon bronzehalberd 0.2
+-- Bardiche
+#chanceinc slot weapon 257 0.2
+#chanceinc slot weapon bronzebardiche 1
+-- Glaive
+#chanceinc slot weapon 308 0.2
+#chanceinc slot weapon 46 0.2
+#chanceinc slot weapon 427 0.2
+#chanceinc slot weapon 454 0.2
+#chanceinc slot weapon 426 0.2
+#chanceinc slot weapon 598 0.1
+#chanceinc slot weapon 455 0.1
+#chanceinc slot weapon bronzeglaive 0.2
+#chanceinc slot weapon meteoriteglaive 0.2
+-- Yari/naginata
+#chanceinc slot weapon 376 1
+#chanceinc slot weapon 380 1
+-- Spetum
+#chanceinc slot weapon 639 1
 #prefix
 #end
 
@@ -173,6 +248,7 @@
 
 #type weapon
 #chanceinc slot weapon 15 1
+#chanceinc slot weapon bronzemorningstar 1
 #prefix
 #end
 
@@ -184,6 +260,18 @@
 
 #type weapon
 #chanceinc slot weapon 3 1
+#chanceinc slot weapon 641 1
+#prefix
+#end
+
+----- Spetum
+
+#new 
+#name "spetum"
+#basechance 0
+
+#type weapon
+#chanceinc slot weapon 639 1
 #prefix
 #end
 
@@ -275,6 +363,7 @@
 #type weapon
 -- hammer
 #chanceinc slot weapon 13 1
+#chanceinc slot weapon bronzehammer 1
 #prefix
 #end
 
