@@ -42,7 +42,7 @@
 #new 
 #name "drake"
 #basechance 0
-#chanceinc slottagvalue mount animal 'cave drake' 1
+#chanceinc slottagvalue mount animal 'drake' 1
 #prefix
 #end
 
@@ -104,9 +104,23 @@
 --- Hoburg
 
 #new 
+#name "hog"
+#basechance 0
+#chanceinc slottagvalue mount animal 'hog' 1
+#prefix
+#end
+
+#new 
 #name "boar"
 #basechance 0
 #chanceinc slottagvalue mount animal 'boar' 1
+#prefix
+#end
+
+#new 
+#name "sow"
+#basechance 0
+#chanceinc slottagvalue mount animal 'gloso' 1
 #prefix
 #end
 
@@ -182,6 +196,7 @@
 #prefix
 #end
 
+
 --- Human
 
 #new 
@@ -202,6 +217,7 @@
 #name "lion"
 #basechance 0
 #chanceinc slottagvalue mount animal 'lion' 1
+#chanceinc slottagvalue mount animal 'winged lion' 1
 #prefix
 #end
 
@@ -212,14 +228,12 @@
 #prefix
 #end
 
-
 #new 
 #name "serpent"
 #basechance 0
 #chanceinc slottagvalue mount animal 'serpent' 1
 #prefix
 #end
-
 
 #new 
 #name "spider"
@@ -228,14 +242,12 @@
 #prefix
 #end
 
-
 #new 
 #name "tiger"
 #basechance 0
 #chanceinc slottagvalue mount animal 'tiger' 1
 #prefix
 #end
-
 
 #new 
 #name "jaguar"
@@ -248,6 +260,20 @@
 #name "amphiptere"
 #basechance 0
 #chanceinc slottagvalue mount animal 'amphiptere' 1
+#prefix
+#end
+
+#new 
+#name "hyena"
+#basechance 0
+#chanceinc slottagvalue mount animal 'hyena' 1
+#prefix
+#end
+
+#new 
+#name "fish"
+#basechance 0
+#chanceinc slottagvalue mount animal 'fish' 1
 #prefix
 #end
 

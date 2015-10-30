@@ -1,6 +1,4 @@
-
 --- Leather
-
 #newitem
 #name "leather cuirass 1"
 #gameid 5
@@ -37,34 +35,94 @@
 #theme "leather"
 #enditem
 
-
 #newitem -- full leather
 #newitem
 #name "full leather"
 #gameid 15
 #basechance 0.25
 #sprite /graphics/bodyarmor/2h/leatherhauberk.png
-#needs legs leatherpants
+#needs legs leathergreaves
 #armor
 #theme "leather"
 #enditem
 
 
---- Chain Mail
-
+--- Ring
+#newitem
+#name "ring cuirass"
+#gameid 6
+#sprite /graphics/bodyarmor/2h/ringcuirass.png
+#armor
+#basechance 0.25
+#theme "leather"
+#theme "iron"
+#enditem
 
 #newitem
-#name "chain cuirass"
-#gameid 8
-#sprite /graphics/bodyarmor/2h/mailcuirass.png
+#name "ring hauberk short"
+#gameid 11
+#sprite /graphics/bodyarmor/2h/ringhauberk.png
 #armor
-#basechance 0.125
+#basechance 0.25
+#theme "leather"
 #theme "iron"
+#enditem
+
+#newitem
+#name "ring hauberk long"
+#gameid 11
+#sprite /graphics/bodyarmor/2h/ringhauberk2.png
+#armor
+#basechance 0.25
+#theme "leather"
+#theme "iron"
+#enditem
+
+#newitem -- full ring
+#name "full ring"
+#gameid 16
+#sprite /graphics/bodyarmor/2h/ringhauberk.png
+#armor
+#needs legs irongreaves
+#basechance 0.25
+#theme "leather"
+#theme "iron"
+#enditem
+
+#newitem
+#id 16
+#gameid 6
+#sprite /graphics/bodyarmor/bronze/ringcuirass_2h.png
+#armor
+#basechance 0.25
+#theme "leather"
+#theme "bronze"
+#enditem
+
+#newitem
+#id 17
+#gameid 11
+#sprite /graphics/bodyarmor/bronze/ringhauberk_2h.png
+#armor
+#basechance 0.25
+#needs legs bronzegreaves
+#theme "leather"
+#theme "bronze"
+#enditem
+
+#newitem -- full ring
+#id 19
+#gameid 16
+#sprite /graphics/bodyarmor/bronze/fullring_2h.png
+#armor
+#basechance 0.25
+#needs legs bronzegreaves
+#theme "leather"
+#theme "bronze"
 #enditem
 
 
 --- Scale
-
 #newitem
 #name "scale cuirass"
 #gameid 7
@@ -74,46 +132,23 @@
 #theme "iron"
 #enditem
 
-
---- Ring
-
 #newitem
-#name "ring cuirass"
-#gameid 6
-#sprite /graphics/bodyarmor/2h/ringcuirass.png
+#id 9
+#gameid 100
+#sprite /graphics/bodyarmor/bronze/scalecuirass_2h.png
 #armor
-#basechance 0.25
-#theme "leather"
+#theme "bronze"
+#basechance 0.125
 #enditem
 
 
+--- Chain Mail
 #newitem
-#name "ring hauberk short"
-#gameid 11
-#sprite /graphics/bodyarmor/2h/ringhauberk.png
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/bodyarmor/2h/mailcuirass.png
+#needs legs irongreaves
 #armor
-#basechance 0.25
-#theme "leather"
+#basechance 0.125
+#theme "iron"
 #enditem
-
-
-#newitem
-#name "ring hauberk long"
-#gameid 11
-#sprite /graphics/bodyarmor/2h/ringhauberk2.png
-#armor
-#basechance 0.25
-#theme "leather"
-#enditem
-
-
-#newitem -- full ring
-#name "full ring"
-#gameid 16
-#sprite /graphics/bodyarmor/2h/ringhauberk.png
-#armor
-#needs legs ringpants
-#basechance 0.25
-#theme "leather"
-#enditem
-

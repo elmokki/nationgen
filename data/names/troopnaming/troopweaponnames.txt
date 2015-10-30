@@ -9,14 +9,20 @@
 #type weapon
 -- Broad sword
 #chanceinc slot weapon 8 1
+#chanceinc slot weapon bronzebroadsword 1
+#chanceinc slot weapon 474 1
 -- Short sword
 #chanceinc slot weapon 6 1
+#chanceinc slot weapon 645 1
 -- Great sword
 #chanceinc slot weapon 11 1
 -- Claymore
 #chanceinc slot weapon 258 1
+#chanceinc slot weapon bronzeclaymore 1
 -- Jotun Longsword
 #chanceinc slot weapon 268 1
+#chanceinc slot weapon giantsword 1
+#chanceinc slot weapon giantsword_bronze 1
 -- Obsidian Club Swords
 #chanceinc slot weapon 288 1
 #chanceinc slot weapon 451 1
@@ -27,6 +33,7 @@
 #chanceinc slot weapon 10 0.25
 -- Kopesh
 #chanceinc slot weapon 513 0.25
+#chanceinc slot weapon ironkopesh 0.25
 #commandvariant #female swordsmaiden
 #end
 
@@ -38,6 +45,9 @@
 #type weapon
 -- Falchion
 #chanceinc slot weapon 10 2
+-- Kopesh
+#chanceinc slot weapon 513 0.25
+#chanceinc slot weapon ironkopesh 0.25
 #end
 
 
@@ -49,14 +59,65 @@
 #type weapon
 -- Spear
 #chanceinc slot weapon 1 1
+#chanceinc slot weapon 643 1
+#chanceinc slot weapon nonferrousspear 1
+#chanceinc slot weapon giantspear 1
+#chanceinc slot weapon giantspear_bronze 1
+#chanceinc slot weapon 473 1
 -- Coral Spears
 #chanceinc slot weapon 31 1
 #chanceinc slot weapon corallongspear 1
 -- Long Spear
 #chanceinc slot weapon 28 1
+#chanceinc slot weapon 644 1
+#chanceinc slot weapon 485 1
+#chanceinc slot weapon 234 1
 -- Stone spear
 #chanceinc slot weapon 373 1
 #commandvariant #female spearmaiden
+#end
+
+----- Impaler
+
+#new 
+#name "impaler"
+#basechance 0
+
+#type weapon
+-- Spear
+#chanceinc slot weapon 1 0.1
+#chanceinc slot weapon 643 0.1
+#chanceinc slot weapon nonferrousspear 0.1
+#chanceinc slot weapon giantspear 0.1
+#chanceinc slot weapon giantspear_bronze 0.1
+#chanceinc slot weapon 473 0.1
+-- Coral Spears
+#chanceinc slot weapon 31 0.1
+#chanceinc slot weapon corallongspear 0.1
+-- Long Spear
+#chanceinc slot weapon 28 0.1
+#chanceinc slot weapon 644 0.1
+#chanceinc slot weapon 485 0.1
+#chanceinc slot weapon 234 0.1
+-- Stone spear
+#chanceinc slot weapon 373 0.1
+-- Glaive
+#chanceinc slot weapon 308 0.05
+#chanceinc slot weapon 46 0.05
+#chanceinc slot weapon 427 0.05
+#chanceinc slot weapon 454 0.05
+#chanceinc slot weapon 426 0.05
+#chanceinc slot weapon 598 0.025
+#chanceinc slot weapon 455 0.025
+#chanceinc slot weapon bronzeglaive 0.05
+#chanceinc slot weapon meteoriteglaive 0.05
+-- Yari
+#chanceinc slot weapon 376 0.1
+-- Spetum
+#chanceinc slot weapon 639 0.1
+-- Primitives should actually get this
+#chanceinc hastheme primitive *25
+#chanceinc hastheme advanced *0.1
 #end
 
 
@@ -98,6 +159,7 @@
 #chanceinc slot weapon 363 1
 -- hammer
 #chanceinc slot weapon 13 0.1
+#chanceinc slot weapon bronzehammer 0.1
 -- mace
 #chanceinc slot weapon 12 0.1
 -- Primitives should actually get this
@@ -127,6 +189,7 @@
 #chanceinc slot weapon 14 1
 -- hammer
 #chanceinc slot weapon 13 0.1
+#chanceinc slot weapon bronzehammer 0.1
 -- mace
 #chanceinc slot weapon 12 0.1
 -- Primitives should actually get this
@@ -155,6 +218,7 @@
 #type weapon
 -- hammer
 #chanceinc slot weapon 13 1
+#chanceinc slot weapon bronzehammer 1
 -- maul
 #chanceinc slot weapon 14 1
 #end
@@ -166,6 +230,7 @@
 #type weapon
 -- hammer
 #chanceinc slot weapon 13 0.1
+#chanceinc slot weapon bronzehammer 0.1
 -- maul
 #chanceinc slot weapon 14 1
 -- Iron cudgel
@@ -184,14 +249,21 @@
 #type weapon
 -- Axe
 #chanceinc slot weapon 17 1
+#chanceinc slot weapon goldenaxe 1
 -- Battleaxe
 #chanceinc slot weapon 18 1
+#chanceinc slot weapon bronzebattleaxe 1
 -- Jotun Axe
 #chanceinc slot weapon 66 1
+#chanceinc slot weapon giantaxe 1
+#chanceinc slot weapon giantaxe_bronze 1
 -- Jotun Battleaxe
 #chanceinc slot weapon 307 1
+#chanceinc slot weapon giantgreataxe 1
+#chanceinc slot weapon giantgreataxe_bronze 1
 -- Hatchet
 #chanceinc slot weapon 253 1
+#chanceinc slot weapon 646 1
 #commandvariant #female axemaiden
 #end
 
@@ -228,6 +300,7 @@
 #type weapon
 -- Halbred
 #chanceinc slot weapon 5 1
+#chanceinc slot weapon bronzehalberd 1
 #end
 
 ----- Mace
@@ -290,9 +363,19 @@
 #type weapon
 -- lance
 #chanceinc slot lanceslot 4 1
+#chanceinc slot lanceslot heavybronzelance 1
 -- light lances
 #chanceinc slot weapon 357 1
 #chanceinc slot weapon 596 1
+#chanceinc slot weapon 651 1
+#chanceinc slot weapon 577 1
+#chanceinc slot weapon 36 1
+#chanceinc slot weapon 475 1
+-- fancy hoburg lances
+#chanceinc slot weapon shocklance 1
+#chanceinc slot weapon shocklance_heavy 1
+#chanceinc slot weapon firelance 1
+#chanceinc slot weapon firelance_heavy 1
 #chanceinc prot 14 *0.125
 #end
 
@@ -315,6 +398,9 @@
 #chanceinc slot weapon 361 0.5
 -- Great bow
 #chanceinc slot weapon 266 0.5
+-- Poison bows
+#chanceinc slot weapon 372 0.5
+#chanceinc slot weapon 594 0.5
 #end
 
 #new 
@@ -330,6 +416,9 @@
 #chanceinc slot weapon 361 0.5
 -- Great bow
 #chanceinc slot weapon 266 0.5
+-- Poison bows
+#chanceinc slot weapon 372 0.5
+#chanceinc slot weapon 594 0.5
 #commandvariant #female bowmaiden
 #end
 
@@ -369,6 +458,7 @@
 #basechance 0
 
 #type weapon
+-- blowpipe
 #chanceinc slot weapon 34 1
 #end
 
@@ -377,7 +467,13 @@
 #basechance 0
 
 #type weapon
+-- blowpipe
 #chanceinc slot weapon 34 1
+-- Poison sling
+#chanceinc slot weapon 167 1
+-- Poison bows
+#chanceinc slot weapon 372 1
+#chanceinc slot weapon 594 1
 #end
 
 #new 
@@ -428,6 +524,7 @@
 #type weapon
 #chanceinc slot weapon 22 1
 #chanceinc slot weapon heavy_sling 1
+#chanceinc slot weapon 167 0.25
 #end
 
 

@@ -1,0 +1,156 @@
+--- No armor
+
+#new
+#name "no armor"
+#gameid -1
+#basechance 0.25
+#theme "naked"
+#theme "primitive"
+#end
+
+--- Leather
+
+#newitem
+#name "furs"
+#gameid 44
+#sprite /graphics/halfmen/minotaur/armor/2h/furs.png
+#armor
+#theme "primitive"
+#theme "leather"
+#enditem
+
+#newitem
+#name "leather hauberk"
+#gameid 10
+#sprite /graphics/halfmen/minotaur/armor/2h/leather_hauberk.png
+#armor
+#theme "leather"
+#enditem
+
+#newitem
+#name "full leather"
+#gameid 15
+#sprite /graphics/halfmen/minotaur/armor/2h/leather_full.png
+#armor
+#theme "leather"
+#theme "advanced"
+#enditem
+
+--- Bronze Scale
+
+#newitem
+#name "bronze scale cuirass"
+#gameid 142
+#sprite /graphics/halfmen/minotaur/armor/2h/bronzescale_cuirass.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#name "bronze scale hauberk"
+#gameid 136
+#sprite /graphics/halfmen/minotaur/armor/2h/bronzescale_hauberk.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#name "full bronze scale"
+#gameid bronzescale_full
+#sprite /graphics/halfmen/minotaur/armor/2h/bronzescale_full.png
+#armor
+#basechance 0.5
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+
+--- Bronze Plate
+
+#newitem
+#name "bronze plate cuirass"
+#gameid 100
+#sprite /graphics/halfmen/minotaur/armor/2h/bronze_cuirass.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#name "bronze plate hauberk"
+#gameid 101
+#sprite /graphics/halfmen/minotaur/armor/2h/bronze_hauberk.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#name "full bronze plate"
+#gameid bronzeplate_full
+#sprite /graphics/halfmen/minotaur/armor/2h/bronze_full.png
+#armor
+#basechance 0.25
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+
+--- Iron Scale
+
+#newitem
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/halfmen/minotaur/armor/2h/scale_cuirass.png
+#armor
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "scale hauberk"
+#gameid 12
+#sprite /graphics/halfmen/minotaur/armor/2h/scale_hauberk.png
+#armor
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "full scale"
+#gameid 17
+#sprite /graphics/halfmen/minotaur/armor/2h/scale_full.png
+#armor
+#basechance 0.5
+#theme "iron"
+#theme "advanced"
+#enditem
+
+
+--- Iron Plate
+
+#newitem
+#name "plate cuirass"
+#gameid 9
+#sprite /graphics/halfmen/minotaur/armor/2h/plate_cuirass.png
+#armor
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "plate hauberk"
+#gameid 14
+#sprite /graphics/halfmen/minotaur/armor/2h/plate_hauberk.png
+#armor
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "full plate"
+#gameid 19
+#sprite /graphics/halfmen/minotaur/armor/2h/plate_full.png
+#armor
+#basechance 0.25
+#theme "iron"
+#theme "advanced"
+#enditem

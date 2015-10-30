@@ -19,7 +19,9 @@
 
 #newitem
 #id hood
-#basechance 6
+#basechance 0
+#chanceinc "personalcommand #assassin 3"
+#chanceinc "personalcommand #spy 6"
 #gameid -1
 #sprite /graphics/scouts/hood.png
 #recolormask self
@@ -30,7 +32,9 @@
 
 #newitem
 #id hood_heavy
-#basechance 3
+#basechance 0
+#chanceinc "personalcommand #assassin 6"
+#chanceinc "personalcommand #spy 3"
 #gameid -1
 #sprite /graphics/scouts/hood_witch.png
 #recolormask self

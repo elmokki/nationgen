@@ -1,239 +1,348 @@
---- None
+--- Non-robes (shendyts, mostly)
 
 #newitem
-#name "nothing"
-#basechance 1
+#name shendyt_short_light
+#sprite /graphics/dynastichuman/armor/robes/shendyt_short2.png
+#recolormask /graphics/dynastichuman/armor/robes/shendyt_short2_recolormask.png
+#eliteversion "shendyt_short_white"
 #gameid -1
 #armor
-#type dustwalker
-#theme "naked"
+#tag "tier 1"
 #theme "primitive"
 #enditem
 
 #newitem
-#name "nothing"
-#basechance 3
+#name shendyt_short_white
+#sprite /graphics/dynastichuman/armor/robes/shendyt_short2.png
+#recolormask /graphics/dynastichuman/armor/robes/shendyt_short_recolormask2.png
 #gameid -1
 #armor
-#type dynastic
-#theme "naked"
+#tag "tier 1"
+#tag "tier 2"
 #theme "primitive"
 #enditem
 
---- Linen
-
 #newitem
-#name "linen cuirass"
-#basechance 4
-#gameid 183
-#sprite /graphics/dynastichuman/armor/linencuirass.png
-#eliteversion "elite linen cuirass 1"
-#eliteversion "elite linen cuirass 2"
+#name shendyt_short_dark
+#sprite /graphics/dynastichuman/armor/robes/shendyt_short1.png
+#recolormask /graphics/dynastichuman/armor/robes/shendyt_short1_recolormask.png
+#eliteversion "shendyt_short_black"
+#gameid -1
 #armor
-#type dustwalker
-#theme "cloth"
+#tag "tier 1"
 #theme "primitive"
-#needstype legs new
 #enditem
 
 #newitem
-#name "thick linen cuirass"
-#basechance 4
-#gameid 183
-#sprite /graphics/dynastichuman/armor/linencuirass_thick.png
+#name shendyt_short_black
+#sprite /graphics/dynastichuman/armor/robes/shendyt_short1.png
+#recolormask /graphics/dynastichuman/armor/robes/shendyt_short_recolormask2.png
+#gameid -1
 #armor
-#type dynastic
-#theme "cloth"
+#tag "tier 1"
+#tag "tier 2"
 #theme "primitive"
-#needstype legs new
-#enditem
-
-
---- Bronze Scale Mail
-
-#newitem
-#name "bronze scale cuirass"
-#gameid 142
-#basechance 0.5
-#sprite /graphics/dynastichuman/armor/bronzescalecuirass.png
-#tag "eliteversion 'elite bronze scale cuirass'"
-#armor
-#type dustwalker
-#theme "bronze"
 #enditem
 
 #newitem
-#name "bronze scale hauberk"
-#gameid 136
-#basechance 0.25
-#sprite /graphics/dynastichuman/armor/bronzescalehauberk_2h.png
-#tag "eliteversion 'elite bronze scale hauberk'"
+#name shendyt_grey
+#sprite /graphics/dynastichuman/armor/robes/shendyt_long_simple_bright.png
+#eliteversion "shendyt_pale"
+#eliteversion "shendyt_usekh_grey"
+#gameid -1
 #armor
-#type dustwalker
-#theme "bronze"
-#theme "advanced"
+#tag "tier 1"
 #enditem
 
 #newitem
-#name "thick bronze scale cuirass"
-#gameid 142
-#basechance 0.5
-#sprite /graphics/dynastichuman/armor/bronzescalecuirass_thick.png
-#tag "eliteversion 'elite thick bronze scale cuirass'"
+#name shendyt_black
+#sprite /graphics/dynastichuman/armor/robes/shendyt_long_simple_dark.png
+#eliteversion "shendyt_dull"
+#eliteversion "shendyt_usekh_black"
+#gameid -1
 #armor
-#type dynastic
-#theme "bronze"
+#tag "tier 1"
 #enditem
 
 #newitem
-#name "thick bronze scale hauberk"
-#gameid 136
-#basechance 0.5
-#sprite /graphics/dynastichuman/armor/bronzescalehauberk_2h.png
-#tag "eliteversion 'elite thick bronze scale hauberk'"
+#name shendyt_pale
+#sprite /graphics/dynastichuman/armor/robes/shendyt_long_simple_bright.png
+#recolormask /graphics/dynastichuman/armor/robes/shendyt_long_simple_dull_recolormask.png
+#eliteversion "shendyt_bright"
+#eliteversion "shendyt_dull"
+#gameid -1
 #armor
-#type dynastic
-#theme "bronze"
-#theme "advanced"
+#tag "tier 1"
+#tag "tier 2"
 #enditem
 
 #newitem
-#name "elite bronze scale cuirass"
-#gameid 142
-#basechance 0.5
-#sprite /graphics/dynastichuman/armor/scalecuirass_elite.png
+#name shendyt_dull
+#sprite /graphics/dynastichuman/armor/robes/shendyt_long_simple_dark.png
+#recolormask /graphics/dynastichuman/armor/robes/shendyt_long_simple_dull_recolormask.png
+#eliteversion "shendyt_dark"
+#eliteversion "shendyt_pale"
+#gameid -1
 #armor
-#type dustwalker
-#theme "elite"
-#theme "bronze"
+#tag "tier 1"
+#tag "tier 2"
 #enditem
 
 #newitem
-#name "elite bronze scale hauberk"
-#gameid 136
-#basechance 0.25
-#sprite /graphics/dynastichuman/armor/scalehauberk_2h_elite.png
+#name shendyt_bright
+#sprite /graphics/dynastichuman/armor/robes/shendyt_long_simple_bright.png
+#recolormask /graphics/dynastichuman/armor/robes/shendyt_long_simple_bright_recolormask.png
+#eliteversion "shendyt_usekh_bright"
+#eliteversion "shendyt_dark"
+#gameid -1
 #armor
-#type dustwalker
-#theme "elite"
-#theme "bronze"
-#theme "advanced"
+#tag "tier 2"
 #enditem
 
 #newitem
-#name "elite thick bronze scale cuirass"
-#gameid 142
-#basechance 0.5
-#sprite /graphics/dynastichuman/armor/scalecuirass_thick_elite.png
+#name shendyt_dark
+#sprite /graphics/dynastichuman/armor/robes/shendyt_long_simple_dark.png
+#recolormask /graphics/dynastichuman/armor/robes/shendyt_long_simple_dark_recolormask.png
+#eliteversion "shendyt_usekh_dark"
+#eliteversion "shendyt_light"
+#gameid -1
 #armor
-#type dynastic
-#theme "elite"
-#theme "bronze"
+#tag "tier 2"
 #enditem
 
 #newitem
-#name "elite thick bronze scale hauberk"
-#gameid 136
-#basechance 0.5
-#sprite /graphics/dynastichuman/armor/scalehauberk_2h_elite.png
+#name shendyt_usekh_grey
+#sprite /graphics/dynastichuman/armor/robes/shendyt_long_usekh1.png
+#recolormask /graphics/dynastichuman/armor/robes/shendyt_long_usekh_recolormask.png
+#needs overlay shendyt_usekh
+#eliteversion "shendyt_usekh_bright"
+#gameid 161
 #armor
-#type dynastic
-#theme "elite"
-#theme "bronze"
-#theme "advanced"
-#enditem
-
-
---- Scale Mail
-
-#newitem
-#name "scale cuirass"
-#gameid 7
-#basechance 0.5
-#sprite /graphics/dynastichuman/armor/scalecuirass.png
-#tag "eliteversion 'elite scale cuirass'"
-#armor
-#type dustwalker
-#theme "iron"
+#tag "tier 2"
 #enditem
 
 #newitem
-#name "scale hauberk"
-#gameid 12
-#basechance 0.25
-#sprite /graphics/dynastichuman/armor/scalehauberk_2h.png
-#tag "eliteversion 'elite scale hauberk'"
+#name shendyt_usekh_black
+#sprite /graphics/dynastichuman/armor/robes/shendyt_long_usekh2.png
+#recolormask /graphics/dynastichuman/armor/robes/shendyt_long_usekh_recolormask.png
+#needs overlay shendyt_usekh
+#eliteversion "shendyt_usekh_dark"
+#gameid 161
 #armor
-#type dustwalker
-#theme "iron"
-#theme "advanced"
+#tag "tier 2"
 #enditem
 
 #newitem
-#name "thick scale cuirass"
-#gameid 7
-#basechance 0.5
-#sprite /graphics/dynastichuman/armor/scalecuirass_thick.png
-#tag "eliteversion 'elite thick scale cuirass'"
+#name shendyt_usekh_bright
+#sprite /graphics/dynastichuman/armor/robes/shendyt_long_usekh1.png
+#recolormask /graphics/dynastichuman/armor/robes/shendyt_long_usekh1_recolormask.png
+#needs overlay shendyt_usekh
+#gameid 161
 #armor
-#type dynastic
-#theme "iron"
+#tag "tier 3"
 #enditem
 
 #newitem
-#name "thick scale hauberk"
-#gameid 12
-#basechance 0.5
-#sprite /graphics/dynastichuman/armor/scalehauberk_2h.png
-#tag "eliteversion 'elite thick scale hauberk'"
+#name shendyt_usekh_dark
+#sprite /graphics/dynastichuman/armor/robes/shendyt_long_usekh2.png
+#recolormask /graphics/dynastichuman/armor/robes/shendyt_long_usekh2_recolormask.png
+#needs overlay shendyt_usekh
+#gameid 161
 #armor
-#type dynastic
-#theme "iron"
-#theme "advanced"
+#tag "tier 3"
 #enditem
 
 #newitem
-#name "elite scale cuirass"
-#gameid 7
-#basechance 0.5
-#sprite /graphics/dynastichuman/armor/scalecuirass_elite.png
+#name halfrobe_plain_white
+#sprite /graphics/dynastichuman/armor/robes/robes_graveconsort3.png
+#recolormask /graphics/dynastichuman/armor/robes/robes_graveconsort3_recolormask1.png
+#eliteversion "halfrobe_plain_light"
+#eliteversion "halfrobe_usekh_white"
+#gameid -1
 #armor
-#type dustwalker
-#theme "elite"
-#theme "iron"
+#tag "tier 1"
 #enditem
 
 #newitem
-#name "elite scale hauberk"
-#gameid 12
-#basechance 0.25
-#sprite /graphics/dynastichuman/armor/scalehauberk_2h_elite.png
+#name halfrobe_plain_light
+#sprite /graphics/dynastichuman/armor/robes/robes_graveconsort3.png
+#recolormask /graphics/dynastichuman/armor/robes/robes_graveconsort3_recolormask2.png
+#eliteversion "halfrobe_usekh_light"
+#gameid -1
 #armor
-#type dustwalker
-#theme "elite"
-#theme "iron"
-#theme "advanced"
+#tag "tier 1"
+#tag "tier 2"
 #enditem
 
 #newitem
-#name "elite thick bronze scale cuirass"
-#gameid 7
-#basechance 0.5
-#sprite /graphics/dynastichuman/armor/scalecuirass_thick_elite.png
+#name halfrobe_usekh_white
+#sprite /graphics/dynastichuman/armor/robes/robes_graveconsort2.png
+#recolormask /graphics/dynastichuman/armor/robes/robes_graveconsort_recolormask1.png
+#needs overlay graveconsort_usekh1-3
+#eliteversion "halfrobe_usekh_light"
+#gameid -1
 #armor
-#type dynastic
-#theme "elite"
-#theme "iron"
+#tag "tier 1"
+#tag "tier 2"
 #enditem
 
 #newitem
-#name "elite thick bronze scale hauberk"
-#gameid 12
-#basechance 0.5
-#sprite /graphics/dynastichuman/armor/scalehauberk_2h_elite.png
+#name halfrobe_usekh_light
+#sprite /graphics/dynastichuman/armor/robes/robes_graveconsort2.png
+#recolormask /graphics/dynastichuman/armor/robes/robes_graveconsort_recolormask3.png
+#needs overlay graveconsort_usekh1-3
+#gameid -1
 #armor
-#type dynastic
-#theme "elite"
-#theme "iron"
-#theme "advanced"
+#tag "tier 3"
+#tag "tier 2"
+#enditem
+
+#newitem
+#name halfrobe_cultist_plain
+#sprite /graphics/dynastichuman/armor/robes/robes_halfcultist_plain.png
+#recolormask /graphics/dynastichuman/armor/robes/robes_halfcultist_plain_recolormask.png
+#eliteversion "halfrobe_cultist_fancy"
+#gameid -1
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#name halfrobe_cultist_fancy
+#sprite /graphics/dynastichuman/armor/robes/robes_halfcultist_fancy.png
+#recolormask /graphics/dynastichuman/armor/robes/robes_halfcultist_recolormask.png
+#eliteversion "halfrobe_cultist_ornate"
+#gameid -1
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#name halfrobe_cultist_ornate
+#sprite /graphics/dynastichuman/armor/robes/robes_halfcultist_ornate.png
+#recolormask /graphics/dynastichuman/armor/robes/robes_halfcultist_recolormask.png
+#needs overlay halfcultist_necklace
+#eliteversion "halfrobe_cultist_ornate"
+#gameid -1
+#armor
+#tag "tier 3"
+#enditem
+
+
+
+
+--- Robes
+
+#newitem
+#name robes_cultist_plain
+#sprite /graphics/dynastichuman/armor/robes/robes_cultist_plain.png
+#recolormask self
+#eliteversion "robes_cultist_fancy"
+#gameid 158
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#name robes_cultist_fancy
+#sprite /graphics/dynastichuman/armor/robes/robes_cultist_fancy.png
+#recolormask self
+#eliteversion "robes_cultist_ornate"
+#gameid 158
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#name robes_cultist_ornate
+#sprite /graphics/dynastichuman/armor/robes/robes_cultist_ornate.png
+#recolormask /graphics/dynastichuman/armor/robes/robes_cultist_ornate_recolormask.png
+#needs overlay cultist_necklace
+#gameid 158
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id heirodulerobe_white
+#gameid 158
+#sprite /graphics/dynastichuman/armor/robes/robes_heirodule.png
+#tag "eliteversion heirodulerobe_faint"
+#tag "eliteversion heirodulerobe_trimmed"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id heirodulerobe_faint
+#gameid 158
+#sprite /graphics/dynastichuman/armor/robes/robes_heirodule.png
+#recolormask /graphics/dynastichuman/armor/robes/robes_heirodule_recolormask2.png
+#tag "eliteversion heirodulerobe_bright"
+#tag "eliteversion heirodulerobe_twotone"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id heirodulerobe_trimmed
+#gameid 158
+#sprite /graphics/dynastichuman/armor/robes/robes_heirodule.png
+#recolormask /graphics/dynastichuman/armor/robes/robes_heirodule_recolormask3.png
+#tag "eliteversion heirodulerobe_bright"
+#tag "eliteversion heirodulerobe_twotone"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id heirodulerobe_bright
+#gameid 158
+#sprite /graphics/dynastichuman/armor/robes/robes_heirodule.png
+#recolormask /graphics/dynastichuman/armor/robes/robes_heirodule_recolormask1.png
+#tag "eliteversion heirodulerobe_twotone"
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id heirodulerobe_twotone
+#gameid 158
+#sprite /graphics/dynastichuman/armor/robes/robes_heirodule.png
+#recolormask /graphics/dynastichuman/armor/robes/robes_heirodule_recolormask4.png
+#tag "eliteversion heirodulerobe_bright"
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id graveconsortrobe_faint
+#gameid 158
+#sprite /graphics/dynastichuman/armor/robes/robes_graveconsort.png
+#recolormask /graphics/dynastichuman/armor/robes/robes_graveconsort_recolormask2.png
+#needs overlay graveconsort_usekh2
+#tag "eliteversion graveconsortrobe_dark"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id graveconsortrobe_dark
+#gameid 158
+#sprite /graphics/dynastichuman/armor/robes/robes_graveconsort.png
+#recolormask /graphics/dynastichuman/armor/robes/robes_graveconsort_recolormask1.png
+#needs overlay graveconsort_usekh1-3
+#tag "eliteversion graveconsortrobe_twotone"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id graveconsortrobe_twotone
+#gameid 158
+#sprite /graphics/dynastichuman/armor/robes/robes_graveconsort.png
+#recolormask /graphics/dynastichuman/armor/robes/robes_graveconsort_recolormask4.png
+#needs overlay graveconsort_usekh4
+#armor
+#tag "tier 3"
 #enditem
