@@ -1,0 +1,55 @@
+
+-------- Normal
+
+#newpose
+#name "tier 1 hot-headed youth"
+#role "mage"
+#role "priest"
+
+#load basesprite /data/items/halfmen/minotaur/bases_caster.txt
+#load shadow /data/items/halfmen/minotaur/shadow.txt
+#load hands /data/items/halfmen/minotaur/hafted_hands.txt
+
+#load armor /data/items/halfmen/minotaur/robes.txt
+#load armor /data/items/halfmen/minotaur/armor_caster.txt
+
+#load weapon /data/items/halfmen/minotaur/hafted_weapon.txt
+
+#load cloakf /data/items/halfmen/minotaur/cloakf.txt
+#load cloakb /data/items/halfmen/minotaur/cloakb.txt
+
+#tier 1
+#notfortier 2
+#notfortier 3
+
+#dontvaryhat
+
+#endpose
+
+
+
+#newpose
+#name "tier 2-3 mature elder"
+#role "mage"
+#role "priest"
+
+#renderorder "shadow weapon cloakb basesprite armor bonusweapon offhandw hands cloakf helmet offhanda"
+
+#load basesprite /data/items/halfmen/minotaur/bases_caster.txt
+#load shadow /data/items/halfmen/minotaur/shadow.txt
+#load hands /data/items/halfmen/minotaur/caster_hands.txt
+
+#load armor /data/items/halfmen/minotaur/robes.txt
+
+#load weapon /data/items/halfmen/minotaur/weapon_caster.txt
+
+#load cloakf /data/items/halfmen/minotaur/cloakf.txt
+#load cloakb /data/items/halfmen/minotaur/cloakb.txt
+
+#tier 3
+#tier 2
+#notfortier 1
+
+#dontvaryhat
+
+#endpose
