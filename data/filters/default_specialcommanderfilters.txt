@@ -28,6 +28,7 @@
 #pose role infantry
 #themeinc theme official *50
 #themeinc theme administrator *50
+#caponlychance 0.1
 #end
 
 #new
@@ -47,6 +48,7 @@
 #possiblecommandset stealth 0.25
 #possiblecommand stealth "#stealthy +0"
 #possiblecommand stealth "#gcost +20"
+#caponlychance 0.1
 #end
 
 #new
@@ -65,6 +67,7 @@
 #possiblecommandset stealth 0.25
 #possiblecommand stealth "#stealthy +0"
 #possiblecommand stealth "#gcost +20"
+#caponlychance 0.1
 #end
 
 #new
@@ -78,6 +81,7 @@
 #pose role mage
 #themeinc theme official *50
 #themeinc theme administrator *50
+#caponlychance 0.1
 #end
 
 #new
@@ -108,6 +112,7 @@
 #description "is able to reanimate five corpses each month without the use of magic."
 #pose role mage
 #themeinc theme cultist *100
+#caponlychance 0.25
 #end
 
 #new
@@ -122,6 +127,7 @@
 #themeinc thisitemtag "tier 1" *100
 #themeinc thisitemtag "tier 2" *25
 #themeinc thisitemtag "tier 3" *0
+#caponlychance 0.25
 #end
 
 #new
@@ -156,14 +162,15 @@
 #end
 
 #new
-#name "comslave-troop"
+#name "comslave-troop-1"
 #command "#comslave"
 #command "#gcost +40"
+#command "#reclimit 1"
+#caponlychance 0
 #unitname "Communicant"
 #unitname "Supplicant"
 #basechance 0
-#chanceinc magic astral 3
-#chanceinc magic blood 1.5
+#chanceinc magic astral 1
 #description "is able to serve as a communion or sabbath slave."
 #pose role mage
 #themeinc thisitemtag "tier 1" *25
@@ -172,14 +179,15 @@
 #end
 
 #new
-#name "comslave-troop-blood"
+#name "comslave-troop-blood-1"
 #command "#comslave"
 #command "#gcost +40"
+#command "#reclimit 1"
+#caponlychance 0
 #unitname "Sabbath Slave"
 #unitname "Supplicant"
 #basechance 0
-#chanceinc magic astral 3
-#chanceinc magic blood 1.5
+#chanceinc magic blood 0.5
 #description "is able to serve as a communion or sabbath slave."
 #pose role mage
 #themeinc thisitemtag "tier 1" *25
@@ -187,6 +195,71 @@
 #troop
 #end
 
+#new
+#name "comslave-troop-3"
+#command "#comslave"
+#command "#gcost +40"
+#command "#reclimit 3"
+#unitname "Communicant"
+#unitname "Supplicant"
+#basechance 0.5
+#chanceinc magic astral 0.25
+#description "is able to serve as a communion or sabbath slave."
+#pose role mage
+#themeinc thisitemtag "tier 1" *25
+#themeinc thisitemtag "tier 3" *0
+#troop
+#end
+
+#new
+#name "comslave-troop-blood-3"
+#command "#comslave"
+#command "#gcost +40"
+#command "#reclimit 3"
+#unitname "Sabbath Slave"
+#unitname "Supplicant"
+#basechance 0
+#chanceinc magic blood 0.125
+#description "is able to serve as a communion or sabbath slave."
+#pose role mage
+#themeinc thisitemtag "tier 1" *25
+#themeinc thisitemtag "tier 3" *0
+#troop
+#end
+
+#new
+#name "comslave-troop-5"
+#command "#comslave"
+#command "#gcost +40"
+#command "#reclimit 1"
+#unitname "Communicant"
+#unitname "Supplicant"
+#basechance 0
+#chanceinc magic astral 1
+#description "is able to serve as a communion or sabbath slave."
+#pose role mage
+#themeinc thisitemtag "tier 1" *25
+#themeinc thisitemtag "tier 3" *0
+#troop
+#end
+
+#new
+#name "comslave-troop-blood-5"
+#command "#comslave"
+#command "#gcost +40"
+#command "#reclimit 1"
+#unitname "Sabbath Slave"
+#unitname "Supplicant"
+#basechance 0
+#chanceinc magic blood 0.5
+#description "is able to serve as a communion or sabbath slave."
+#pose role mage
+#themeinc thisitemtag "tier 1" *25
+#themeinc thisitemtag "tier 3" *0
+#troop
+#end
+
+ 
 #new
 #name "douser"
 #command "#douse 1"
@@ -205,4 +278,5 @@
 #themeinc thisitemtag "tier 2" *5
 #themeinc thisitemtag "tier 3" *0
 #themeinc theme cultist *10
+#caponlychance 0.1
 #end
