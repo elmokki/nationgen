@@ -1,0 +1,41 @@
+#newitem
+#name "javelin"
+#gameid 21
+#sprite /graphics/fomorian/weapon/javelin_bronze.png
+#offsetx -37
+#offsety -56
+#tag "name infantry 'Javelineer'"
+#theme "advanced"
+#enditem
+
+
+#newitem -- Throwing axe
+#name "throwing axe"
+#gameid 260
+#basechance 0.5
+#tag "name infantry 'Axe Thrower'"
+#enditem
+
+
+#newitem
+#name "harpoon"
+#gameid 452
+#sprite /graphics/fomorian/weapon/bronzejavelin_bronze.png
+#offsetx -37
+#offsety -56
+#tag "name infantry 'Harponeer'"
+#tag "maxprot 12"
+#tag "tierunique"
+#basechance 0.125
+#theme "primitive"
+#enditem
+
+#newitem
+#name "blowpipe"
+#gameid 34
+#tag "name infantry 'Poisoner'"
+#tag "maxprot 10"
+#tag "tierunique"
+#basechance 0.125
+#theme "primitive"
+#enditem
