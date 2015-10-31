@@ -215,6 +215,7 @@
 #tag "name mounted knight"
 #enditem
 
+
 --- Ring
 
 #newitem
@@ -224,8 +225,8 @@
 #armor
 #basechance 2
 #theme "leather"
+#theme "iron"
 #enditem
-
 
 #newitem
 #name "ring hauberk short"
@@ -233,8 +234,8 @@
 #sprite /graphics/amazon/armor/standard/ringhauberk.png
 #armor
 #theme "leather"
+#theme "iron"
 #enditem
-
 
 #newitem
 #name "ring hauberk long"
@@ -242,8 +243,8 @@
 #sprite /graphics/amazon/armor/standard/ringhauberk2.png
 #armor
 #theme "leather"
+#theme "iron"
 #enditem
-
 
 #newitem -- full ring
 #name "full ring"
@@ -251,6 +252,45 @@
 #sprite /graphics/amazon/armor/standard/ringhauberk.png
 #armor
 #theme "leather"
+#theme "iron"
+#needs legs leatherpants
+#enditem
+
+#newitem
+#name "bronze ring cuirass"
+#gameid 6
+#sprite /graphics/amazon/armor/standard/ringcuirass_bronze.png
+#armor
+#basechance 2
+#theme "leather"
+#theme "bronze"
+#enditem
+
+#newitem
+#name "bronze ring hauberk short"
+#gameid 11
+#sprite /graphics/amazon/armor/standard/ringhauberk_bronze.png
+#armor
+#theme "leather"
+#theme "bronze"
+#enditem
+
+#newitem
+#name "bronze ring hauberk long"
+#gameid 11
+#sprite /graphics/amazon/armor/standard/ringhauberk2_bronze.png
+#armor
+#theme "leather"
+#theme "bronze"
+#enditem
+
+#newitem -- full ring
+#name "bronze full ring"
+#gameid 16
+#sprite /graphics/amazon/armor/standard/ringhauberk_bronze.png
+#armor
+#theme "leather"
+#theme "bronze"
 #needs legs leatherpants
 #enditem
 
