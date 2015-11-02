@@ -1,0 +1,84 @@
+-- Bucklers
+#newitem
+#id bronze_buckler
+#gameid 1
+#basechance 4
+#sprite /graphics/caelian/shield/buckler_bronze.png
+#theme "bronze"
+#armor
+#maxprot 14
+#enditem
+
+#newitem
+#id iron_buckler
+#gameid 1
+#basechance 4
+#sprite /graphics/caelian/shield/buckler_iron.png
+#theme "iron"
+#armor
+#maxprot 14
+#enditem
+
+
+-- Wooden Shields
+#newitem
+#id woodshield_bronze
+#gameid 2
+#basechance 4
+#sprite /graphics/caelian/shield/woodshield_bronze.png
+#theme "bronze"
+#armor
+#enditem
+
+#newitem
+#id woodshield_iron
+#gameid 2
+#basechance 4
+#sprite /graphics/caelian/shield/woodshield_iron.png
+#theme "iron"
+#armor
+#enditem
+
+
+-- Metal Shields
+#newitem
+#id metalshield_bronze
+#gameid 209
+#basechance 2
+#sprite /graphics/caelian/shield/kiteshield_bronze.png
+#theme "bronze"
+#armor
+#minprot 12
+#enditem
+
+#newitem
+#id paintedshield_bronze
+#gameid 209
+#basechance 2
+#sprite /graphics/caelian/shield/kiteshield_bronze.png
+#recolormask /graphics/caelian/shield/kiteshield_recolormask.png
+#theme "bronze"
+#armor
+#minprot 12
+#enditem
+
+#newitem
+#id metalshield_iron
+#gameid 208
+#basechance 2
+#sprite /graphics/caelian/shield/kiteshield_iron.png
+#theme "iron"
+#armor
+#minprot 12
+#enditem
+
+#newitem
+#id paintedshield_iron
+#gameid 208
+#basechance 2
+#sprite /graphics/caelian/shield/kiteshield_iron.png
+#recolormask /graphics/caelian/shield/kiteshield_recolormask.png
+#theme "iron"
+#armor
+#minprot 12
+#enditem
