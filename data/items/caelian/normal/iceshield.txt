@@ -1,0 +1,55 @@
+#newitem
+#name "icestudded shield"
+#chanceinc itemtheme not armor ice *0.001
+#chanceinc itemtheme armor ice  *100
+#chanceinc itemtheme weapon ice  *100
+#chanceinc "personalcommand below #coldres 5 *0"
+#gameid 2
+#sprite /graphics/caelian/shield/woodshield_ice.png
+#armor
+#theme "ice"
+#theme "wood"
+#type ice
+#maxprot 10
+#enditem
+
+#newitem
+#name "small ice aegis"
+#chanceinc itemtheme not armor ice *0.001
+#chanceinc itemtheme armor ice  *100
+#chanceinc itemtheme weapon ice  *100
+#chanceinc "personalcommand below #coldres 5 *0"
+#gameid 28
+#sprite /graphics/caelian/shield/iceshield2.png
+#armor
+#theme "ice"
+#type ice
+#enditem
+
+#newitem
+#name "medium ice aegis"
+#chanceinc itemtheme not armor ice *0.001
+#chanceinc itemtheme armor ice  *100
+#chanceinc itemtheme weapon ice  *100
+#chanceinc "personalcommand below #coldres 5 *0"
+#gameid 28
+#sprite /graphics/caelian/shield/iceshield1.png
+#armor
+#theme "ice"
+#type ice
+#enditem
+
+#newitem
+#name "large ice aegis"
+#basechance 0.5
+#chanceinc itemtheme not armor ice *0.001
+#chanceinc itemtheme armor ice  *100
+#chanceinc itemtheme weapon ice  *100
+#chanceinc "personalcommand below #coldres 5 *0"
+#gameid 28
+#sprite /graphics/caelian/shield/kiteshield_ice.png
+#armor
+#minprot 14
+#theme "ice"
+#type ice
+#enditem
