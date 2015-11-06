@@ -194,3 +194,87 @@
 #notfortier 3
 #notfortier 2
 #end
+
+#new magefilter
+#name "demagogue 30"
+#type "leadership"
+#basechance 0
+#chanceinc "personalcommand #poorleader 0.1"
+#command "#command +30"
+#end
+
+#new magefilter
+#name "demagogue 40-1"
+#type "leadership"
+#basechance 0
+#chanceinc "personalcommand #okleader 0.05"
+#chanceinc "personalcommand #goodleader 0.025"
+#chanceinc "personalcommand #expertleader 0.0125"
+#command "#command +40"
+#command "#inspirational -1"
+#notfortier 1
+#end
+
+#new magefilter
+#name "demagogue 40"
+#type "leadership"
+#basechance 0
+#chanceinc "personalcommand #okleader 0.1"
+#chanceinc "personalcommand #goodleader 0.05"
+#chanceinc "personalcommand #expertleader 0.025"
+#command "#command +40"
+#command "#gcost +10"
+#notfortier 1
+#end
+
+#new magefilter
+#name "demagogue 40+1"
+#type "leadership"
+#basechance 0
+#chanceinc "personalcommand #okleader 0.05"
+#chanceinc "personalcommand #goodleader 0.025"
+#chanceinc "personalcommand #expertleader 0.0125"
+#command "#command +40"
+#command "#inspirational +1"
+#command "#gcost +20"
+#notfortier 1
+#notfortier 2
+#end
+
+#new magefilter
+#name "demagogue 80"
+#type "leadership"
+#basechance 0
+#chanceinc "personalcommand #okleader 0.05"
+#chanceinc "personalcommand #goodleader 0.025"
+#command "#command +80"
+#command "#gcost +30"
+#notfortier 1
+#notfortier 2
+#end
+
+#new magefilter
+#name "charismatic 1"
+#type "leadership"
+#basechance 0
+#chanceinc "personalcommand #poorleader 0.1"
+#chanceinc "personalcommand #okleader 0.1"
+#chanceinc "personalcommand #goodleader 0.1"
+#chanceinc "personalcommand #expertleader 0.1"
+#command "#inspirational +1"
+#command "#gcost +10"
+#notfortier 1
+#end
+
+#new magefilter
+#name "charismatic 2"
+#type "leadership"
+#basechance 0
+#chanceinc "personalcommand #poorleader 0.05"
+#chanceinc "personalcommand #okleader 0.05"
+#chanceinc "personalcommand #goodleader 0.05"
+#command "#inspirational +2"
+#command "#gcost +20"
+#notfortier 1
+#notfortier 2
+#end
