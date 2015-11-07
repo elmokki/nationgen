@@ -1,0 +1,24 @@
+#newitem
+#name "terrestrial"
+#theme "terrestrial"
+#gameid -1
+#command "#gcost 10"
+#enditem
+
+#newitem
+#name "winged"
+#theme "winged"
+#gameid -1
+#sprite /graphics/monkey/vanara_wings.png
+#needs overlay vanara_wings
+#renderprio 7
+#renderslot "cloakb"
+#command "#gcost 15"
+#command "#size 3"
+#command "#ressize 2"
+#command "#mr +2"
+#command "#mor -1"
+#command "#mapmove 3"
+#command "#maxage +10"
+#command "#flying"
+#enditem
