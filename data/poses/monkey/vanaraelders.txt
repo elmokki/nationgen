@@ -1,8 +1,29 @@
--------- Lowly mage
+-------- Terrestrial high mage
 #newpose
-#name "vanara mage, standing"
+#name "vanara elder mage, floating"
 #role "mage"
 #theme "terrestrial"
+#subrace vanara
+
+#load basesprite /data/items/monkey/vanara/caster/magebases_float.txt
+#load shadow /data/items/monkey/vanara/normal/shadow.txt
+
+#load armor /data/items/monkey/vanara/caster/robes.txt
+#load helmet /data/items/monkey/vanara/caster/helmet.txt 2 2
+#load weapon /data/items/monkey/vanara/caster/emptyweapons.txt
+
+#tier 3
+#notfortier 2
+#notfortier 1
+#dontvaryweapon
+#command "#maxage 120"
+#endpose
+
+
+-------- Winged high mage
+#newpose
+#name "winged vanara elder mage"
+#role "mage"
 #theme "winged"
 #subrace vanara
 
@@ -28,18 +49,18 @@
 
 #generateitem 1 wings
 
-#tier 1
-#notfortier 3
+#tier 3
+#notfortier 1
 #notfortier 2
-#command "#maxage 60"
+#command "#maxage 120"
 #endpose
 
 
--------- Terrestrial advanced mage
 
+-------- Terrestrial high priest
 #newpose
-#name "vanara mage, sitting"
-#role "mage"
+#name "vanara elder priest, sitting"
+#role "priest"
 #theme "terrestrial"
 #subrace vanara
 
@@ -47,58 +68,19 @@
 #load shadow /data/items/monkey/vanara/normal/shadow.txt
 
 #load armor /data/items/monkey/vanara/caster/robes.txt
-#load helmet /data/items/monkey/vanara/caster/helmet.txt 1 12
+#load helmet /data/items/monkey/vanara/caster/helmet.txt 2 10
 #load weapon /data/items/monkey/vanara/caster/emptyweapons.txt
 
-#tier 2
-#notfortier 1
-#notfortier 3
+#tier 3
 #dontvaryweapon
 #command "#maxage 90"
 #endpose
 
 
--------- Winged advanced mage
+------ Winged high priest
 #newpose
-#name "winged vanara mage"
-#role "mage"
-#theme "winged"
-#subrace vanara
-
-#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
-
-#load basesprite /data/items/monkey/vanara/caster/magebases.txt
-#load shadow /data/items/monkey/vanara/normal/shadow.txt
-
-#load hands /data/items/monkey/vanara/normal/hands.txt
-
-#load cloakf /data/items/monkey/vanara/normal/cloakf.txt
-#load cloakb /data/items/monkey/vanara/normal/cloakb.txt
-
-#load armor /data/items/monkey/vanara/caster/robes.txt
-#load helmet /data/items/monkey/vanara/caster/helmet.txt 2 0
-
-#load weapon /data/items/monkey/vanara/caster/weapon.txt
-
-#load offhand /data/items/monkey/vanara/caster/offhands.txt
-
-#load wings /data/items/monkey/vanara/normal/wings.txt
-#load overlay /data/items/monkey/vanara/normal/overlay.txt
-
-#generateitem 1 wings
-
-#tier 2
-#notfortier 1
-#notfortier 3
-#command "#maxage 90"
-#endpose
-
-
------- Priest
-#newpose
-#name "vanara priest, standing"
+#name "winged vanara elder priest"
 #role "priest"
-#theme "terrestrial"
 #theme "winged"
 #subrace vanara
 
@@ -124,8 +106,6 @@
 
 #generateitem 1 wings
 
-#tier 1
-#tier 2
-#notfortier 3
-#command "#maxage 60"
+#tier 3
+#command "#maxage 90"
 #endpose

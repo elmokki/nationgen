@@ -5,7 +5,12 @@
 #name "vanara infantry"
 #role "infantry"
 #basechance 0.5
+#theme "terrestrial"
+#theme "winged"
+
 #subrace vanara
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/monkey/vanara/normal/bases.txt
 #load shadow /data/items/monkey/vanara/normal/shadow.txt
@@ -14,7 +19,6 @@
 
 #load cloakf /data/items/monkey/vanara/normal/cloakf.txt
 #load cloakb /data/items/monkey/vanara/normal/cloakb.txt
-
 
 #load armor /data/items/monkey/vanara/normal/armor.txt
 #load helmet /data/items/monkey/vanara/normal/helmet.txt
@@ -25,6 +29,12 @@
 #load offhand /data/items/monkey/vanara/normal/shields.txt
 #load offhand /data/items/monkey/vanara/normal/towershields.txt
 #load offhand /data/items/monkey/vanara/normal/offhand.txt
+
+#load wings /data/items/monkey/vanara/normal/wings.txt
+#load overlay /data/items/monkey/vanara/normal/overlay.txt
+
+#generateitem 1 wings
+
 #command "#maxage 30"
 #endpose
 
@@ -37,7 +47,12 @@
 #role "scout"
 #role "infantry"
 #basechance 0.5
+#theme "terrestrial"
+#theme "winged"
+
 #subrace vanara
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/monkey/vanara/normal/bases.txt
 #load shadow /data/items/monkey/vanara/normal/shadow.txt
@@ -46,7 +61,6 @@
 
 #load cloakf /data/items/monkey/vanara/normal/cloakf.txt
 #load cloakb /data/items/monkey/vanara/normal/cloakb.txt
-
 
 #load armor /data/items/monkey/vanara/normal/lightarmor.txt
 #load helmet /data/items/monkey/vanara/normal/helmet.txt
@@ -57,6 +71,10 @@
 #load offhand /data/items/monkey/vanara/normal/shields.txt
 #load offhand /data/items/monkey/vanara/normal/offhand.txt
 
+#load wings /data/items/monkey/vanara/normal/wings.txt
+#load overlay /data/items/monkey/vanara/normal/overlay.txt
+
+#generateitem 1 wings
 #generateitem 1 bonusweapon
 #command "#maxage 30"
 #endpose
@@ -69,9 +87,12 @@
 #name "vanara archer"
 #role "ranged"
 #basechance 0.5
+#theme "terrestrial"
+#theme "winged"
+
 #subrace vanara
 
-#renderorder "shadow cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow wingscloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/monkey/vanara/normal/bases.txt
 #load shadow /data/items/monkey/vanara/normal/shadow.txt
@@ -92,6 +113,10 @@
 #load strap /data/items/monkey/vanara/normal/strap.txt
 #load quiver /data/items/monkey/vanara/normal/quiver.txt
 
+#load wings /data/items/monkey/vanara/normal/wings.txt
+#load overlay /data/items/monkey/vanara/normal/overlay.txt
+
+#generateitem 1 wings
 #generateitem 1 bonusweapon
 #command "#maxage 30"
 #endpose
@@ -102,8 +127,13 @@
 #name "vanara light archer"
 #role "ranged"
 #basechance 0.5
-#renderorder "shadow cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+#theme "terrestrial"
+#theme "winged"
+
 #subrace vanara
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
 
 #load basesprite /data/items/monkey/vanara/normal/bases.txt
 #load shadow /data/items/monkey/vanara/normal/shadow.txt
@@ -124,21 +154,27 @@
 #load strap /data/items/monkey/vanara/normal/strap.txt
 #load quiver /data/items/monkey/vanara/normal/quiver.txt
 
+#load wings /data/items/monkey/vanara/normal/wings.txt
+#load overlay /data/items/monkey/vanara/normal/overlay.txt
+
+#generateitem 1 wings
 #generateitem 1 bonusweapon
 #command "#maxage 30"
 #endpose
 
----------- Sacreds
 
--------- Sacred infantry
 
+-------- Normal cavalry
 #newpose
-#name "vanara sacred infantry"
-#role "sacred infantry"
+#name "vanara cavalry"
+#role "mounted"
+#basechance 0.5
+#theme "terrestrial"
 #subrace vanara
 
-#load basesprite /data/items/monkey/vanara/normal/sacredbases.txt
-#load shadow /data/items/monkey/vanara/normal/shadow.txt
+#renderorder "shadow cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/monkey/vanara/mounted/bases.txt
 
 #load hands /data/items/monkey/vanara/normal/hands.txt
 
@@ -146,7 +182,7 @@
 #load cloakb /data/items/monkey/vanara/normal/cloakb.txt
 
 
-#load armor /data/items/monkey/vanara/normal/sacredarmor.txt
+#load armor /data/items/monkey/vanara/normal/armor.txt
 #load helmet /data/items/monkey/vanara/normal/helmet.txt
 
 #load weapon /data/items/monkey/vanara/normal/weapon.txt
@@ -155,40 +191,9 @@
 #load offhand /data/items/monkey/vanara/normal/shields.txt
 #load offhand /data/items/monkey/vanara/normal/offhand.txt
 
-#generateitem 1 bonusweapon
+#load mount /data/items/monkey/vanara/mounted/mounts.txt 5 -15
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+
 #command "#maxage 30"
-#endpose
 
-
-
--------- Sacred Archer
-
-#newpose
-#name "vanara sacred archer"
-#role "sacred ranged"
-#subrace vanara
-
-#renderorder "shadow cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
-
-#load basesprite /data/items/monkey/vanara/normal/sacredbases.txt
-#load shadow /data/items/monkey/vanara/normal/shadow.txt
-
-#load hands /data/items/monkey/vanara/normal/hands.txt
-
-#load cloakf /data/items/monkey/vanara/normal/cloakf.txt
-#load cloakb /data/items/monkey/vanara/normal/cloakb.txt
-
-
-#load armor /data/items/monkey/vanara/normal/sacredarmor.txt
-#load helmet /data/items/monkey/vanara/normal/helmet.txt
-
-#load weapon /data/items/monkey/vanara/normal/bows.txt -3 3
-#load bonusweapon /data/items/monkey/bandar/normal/archerweapon.txt
-
-
-#load strap /data/items/monkey/vanara/normal/strap.txt
-#load quiver /data/items/monkey/vanara/normal/quiver.txt
-
-#generateitem 1 bonusweapon
-#command "#maxage 30"
 #endpose
