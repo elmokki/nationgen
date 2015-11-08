@@ -1,41 +1,173 @@
+-- Nothing
+
 #newitem
 #id none
 #gameid -1
 #basechance 4
-#tag "eliteversion ironcap-elite"
 #armor
+#theme "enlightened"
+#theme "imperial"
+#theme "naked"
 #enditem
 
 #newitem
-#id halfhelmet
-#gameid 118
-#sprite /graphics/monkey/helmet/bandar/halfhelmet_gilt.png
-#tag "eliteversion halfhelmet-elite"
+#id none
+#gameid -1
+#basechance 2
+#eliteversion ironcap_elite
 #armor
+#theme "enlightened"
+#theme "iron"
+#enditem
+
+#newitem
+#id none
+#gameid -1
+#basechance 2
+#eliteversion bronzecap_elite
+#armor
+#theme "enlightened"
+#theme "bronze"
+#enditem
+
+
+-- Enlightened helms
+
+#newitem
+#id bronzecap
+#gameid 135
+#sprite /graphics/monkey/helmet/bandar/bronzecap.png
+#eliteversion bronzecap_elite
+#armor
+#theme "enlightened"
+#theme "bronze"
 #enditem
 
 #newitem
 #id ironcap
 #gameid 20
-#sprite /graphics/monkey/helmet/bandar/cap_gilt.png
-#tag "eliteversion ironcap-elite"
+#sprite /graphics/monkey/helmet/bandar/ironcap.png
+#eliteversion ironcap_elite
 #armor
+#theme "enlightened"
+#theme "iron"
 #enditem
 
+#newitem
+#id halfhelmet
+#gameid 118
+#sprite /graphics/monkey/helmet/bandar/halfhelmet.png
+#eliteversion halfhelmet_elite
+#armor
+#theme "enlightened"
+#theme "iron"
+#enditem
 
 #newitem
-#id halfhelmet-elite
-#gameid 118
+#id bronzecap_elite
+#gameid 135
 #sprite /graphics/monkey/helmet/bandar_mage/bronze_cone.png
 #armor
-#elite
+#theme "enlightened"
+#theme "elite"
+#theme "bronze"
 #enditem
 
 #newitem
-#id ironcap-elite
+#id ironcap_elite
 #gameid 20
 #sprite /graphics/monkey/helmet/bandar_mage/bronze_cone.png
 #armor
 #elite
+#theme "enlightened"
+#theme "elite"
+#theme "iron"
 #enditem
 
+#newitem
+#id halfhelmet_elite
+#gameid 118
+#sprite /graphics/monkey/helmet/bandar_mage/bronze_cone.png
+#armor
+#theme "enlightened"
+#theme "elite"
+#theme "iron"
+#enditem
+
+#newitem
+#id fullhelmet
+#gameid 21
+#sprite /graphics/monkey/helmet/bandar/fullhelm.png
+#armor
+#theme "enlightened"
+#theme "elite"
+#theme "iron"
+#minprot 13
+#enditem
+
+#newitem
+#id hoplitehelmet
+#gameid 123
+#sprite /graphics/monkey/helmet/bandar/hoplitehelm.png
+#armor
+#theme "enlightened"
+#theme "elite"
+#theme "bronze"
+#minprot 12
+#enditem
+
+
+--- Imperial helms
+
+#newitem
+#id leathercap_imperial
+#gameid 119
+#sprite /graphics/monkey/helmet/bandar/leathercap.png
+#armor
+#theme "imperial"
+#theme "leather"
+#maxprot 10
+#enditem
+
+#newitem
+#id ironcap_imperial
+#gameid 20
+#sprite /graphics/monkey/helmet/bandar/ironcap.png
+#armor
+#theme "imperial"
+#theme "iron"
+#maxprot 10
+#enditem
+
+#newitem
+#id halfhelmet_imperial
+#gameid 20
+#sprite /graphics/monkey/helmet/bandar/halfhelmet.png
+#armor
+#theme "imperial"
+#theme "iron"
+#maxprot 10
+#enditem
+
+#newitem
+#id legionaryhelmet
+#gameid 126
+#sprite /graphics/monkey/helmet/bandar/legionaryhelm.png
+#eliteversion legionaryhelmet_elite
+#armor
+#theme "imperial"
+#theme "iron"
+#minprot 8
+#enditem
+
+#newitem
+#id legionaryhelmet_elite
+#gameid 126
+#sprite /graphics/monkey/helmet/bandar/legionaryhelm_crested.png
+#recolormask /graphics/monkey/helmet/bandar/legionaryhelm_crested_recolormask.png
+#armor
+#theme "imperial"
+#theme "elite"
+#theme "iron"
+#minprot 8
+#enditem
