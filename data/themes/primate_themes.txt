@@ -109,6 +109,13 @@
 #theme enlightened
 #basechance 4
 #themeinc theme enlightened *10000
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
 #racedefinition "#pose bandartroops"
 #racedefinition "#pose bandarelites"
 #racedefinition "#pose bandarmages"
@@ -136,6 +143,13 @@
 #basechance 1
 -- #themeinc theme oriental *10000
 #themeinc theme enlightened *10000
+#themeinc theme advanced *0.5
+#themeinc theme iron *2
+#themeinc theme bronze *0.25
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *0.25
+#themeinc theme primitive *0.5
 #racedefinition "#pose bandartroops"
 #racedefinition "#pose bandarelites"
 #racedefinition "#pose bandarmages"
@@ -163,6 +177,13 @@
 #basechance 1
 -- #themeinc theme occidental *10000
 #themeinc theme enlightened *10000
+#themeinc theme advanced *0.125
+#themeinc theme iron *0.125
+#themeinc theme bronze *2
+#themeinc theme wood *2
+#themeinc theme leather *2
+#themeinc theme naked *2
+#themeinc theme primitive *1
 #racedefinition "#pose vanaratroops"
 #racedefinition "#pose vanaraelites"
 #racedefinition "#pose vanaramages"
@@ -188,6 +209,13 @@
 #basechance 1
 -- #themeinc theme austral *10000
 #themeinc theme enlightened *10000
+#themeinc theme advanced *1
+#themeinc theme iron *2
+#themeinc theme bronze *0.25
+#themeinc theme wood *1
+#themeinc theme leather *2
+#themeinc theme naked *1
+#themeinc theme primitive *1
 #racedefinition "#pose bandartroops"
 #racedefinition "#pose bandarelites"
 #racedefinition "#pose bandarmages"
@@ -205,15 +233,22 @@
 #endtheme
 
 -- "Imperial vanara" - subordinate bandar, no markata 
--- Weights: EA 0.25, MA 0.5, LA 1
+-- Weights: EA 0.5, MA 1, LA 1.5
 #newtheme
 #type cultural
 #name imperial_vanara
 #theme imperial
 #basechance 1
-#chanceinc era 1 *0.25
-#chanceinc era 2 *0.5
+#chanceinc era 1 -0.5
+#chanceinc era 3 +0.5
 #themeinc theme imperial *10000
+#themeinc theme advanced *1
+#themeinc theme iron *2
+#themeinc theme bronze *0.25
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *0.5
+#themeinc theme primitive *0.5
 #racedefinition "#pose bandartroops"
 #racedefinition "#pose bandarmages"
 #racedefinition "#pose vanaratroops"
@@ -231,15 +266,22 @@
 #endtheme
 
 -- "Imperial bandar" - subordinate vanara, no markata 
--- Weights: EA 0.25, MA 0.5, LA 1
+-- Weights: EA 0.5, MA 1, LA 1.5
 #newtheme
 #type cultural
 #name imperial_bandar
 #theme imperial
 #basechance 1
-#chanceinc era 1 *0.25
-#chanceinc era 2 *0.5
+#chanceinc era 1 -0.5
+#chanceinc era 3 +0.5
 #themeinc theme imperial *10000
+#themeinc theme advanced *1
+#themeinc theme iron *2
+#themeinc theme bronze *0.25
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *0.5
+#themeinc theme primitive *0.5
 #racedefinition "#pose bandartroops"
 #racedefinition "#pose bandarelites"
 #racedefinition "#pose bandarmages"
