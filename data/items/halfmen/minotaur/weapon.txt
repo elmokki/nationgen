@@ -1,0 +1,250 @@
+--- 1h weapons
+
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/avvim/weapon/axe.png
+#offsetx 4
+#offsety -5
+#chanceinc unittag irregular 8
+#theme "iron"
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/avvim/weapon/mace.png
+#offsetx 4
+#offsety -5
+#theme "primitive"
+#maxprot 15
+#chanceinc unittag irregular 8
+#enditem
+
+#newitem
+#id morningstar
+#gameid 15
+#sprite /graphics/avvim/weapon/morningstar.png
+#offsetx 3
+#offsety -7
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem
+#id broadsword
+#gameid 8
+#sprite /graphics/avvim/weapon/broadsword.png
+#offsetx 3
+#offsety -7
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#sprite /graphics/avvim/weapon/falchion.png
+#offsetx 3
+#offsety -7
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem
+#id hatchet_bronze
+#gameid 646
+#sprite /graphics/highmen/weapons/axe_bronze.png
+#offsetx 6
+#offsety -3
+#chanceinc unittag irregular 8
+#theme "bronze"
+#enditem
+
+#newitem
+#id morningstar_bronze
+#gameid bronzemorningstar
+#sprite /graphics/highmen/weapons/morningstar_bronze.png
+#offsetx 6
+#offsety -4
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id sword_bronze
+#gameid 645
+#sprite /graphics/highmen/weapons/shortsword_bronze.png
+#offsetx 6
+#offsety -4
+#theme "bronze"
+#enditem
+
+#newitem
+#id broadsword_bronze
+#gameid bronzebroadsword
+#sprite /graphics/highmen/weapons/broadsword_bronze.png
+#offsetx 6
+#offsety -4
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+
+--- hafted weapons
+
+#newitem
+#id battleaxe
+#gameid 18
+#sprite /graphics/halfmen/minotaur/weapon/battleaxe1.png
+#basechance 2
+#theme "iron"
+#enditem
+
+#newitem
+#id greataxe
+#gameid 18
+#sprite /graphics/halfmen/minotaur/weapon/battleaxe2.png
+#basechance 2
+#theme "iron"
+#enditem
+
+#newitem
+#id maul
+#gameid 14
+#sprite /graphics/halfmen/minotaur/weapon/maul.png
+#theme "primitive"
+#basechance 2
+#enditem
+
+#newitem
+#id flail
+#gameid 16
+#sprite /graphics/halfmen/minotaur/weapon/flail.png
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem
+#id glaive
+#gameid 308
+#sprite /graphics/halfmen/minotaur/weapon/glaive.png
+#theme "iron"
+#enditem
+
+#newitem
+#id bardiche
+#gameid 257
+#sprite /graphics/halfmen/minotaur/weapon/bardiche.png
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem
+#id halberd
+#gameid 5
+#sprite /graphics/halfmen/minotaur/weapon/halberd.png
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem
+#id spear
+#gameid 1
+#sprite /graphics/halfmen/minotaur/weapon/spear.png
+#theme "iron"
+#theme formationfighter
+#basechance 2
+#enditem
+
+#newitem
+#id longspear
+#gameid 28
+#sprite /graphics/halfmen/minotaur/weapon/longspear.png
+#theme "iron"
+#theme formationfighter
+#basechance 2
+#enditem
+
+#newitem
+#id trident
+#gameid 3
+#sprite /graphics/halfmen/minotaur/weapon/trident.png
+#theme "advanced"
+#theme "iron"
+#theme formationfighter
+#enditem
+
+#newitem
+#id battleaxe_bronze
+#gameid bronzebattleaxe
+#sprite /graphics/halfmen/minotaur/weapon/battleaxe1_bronze.png
+#basechance 2
+#theme "bronze"
+#enditem
+
+#newitem
+#id greataxe_bronze
+#gameid bronzebattleaxe
+#sprite /graphics/halfmen/minotaur/weapon/battleaxe2_bronze.png
+#basechance 2
+#theme "bronze"
+#enditem
+
+#newitem
+#id flail_bronze
+#gameid 16
+#sprite /graphics/halfmen/minotaur/weapon/flail_bronze.png
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id glaive_bronze
+#gameid bronzeglaive
+#sprite /graphics/halfmen/minotaur/weapon/glaive_bronze.png
+#theme "bronze"
+#enditem
+
+#newitem
+#id bardiche_bronze
+#gameid bronzebardiche
+#sprite /graphics/halfmen/minotaur/weapon/bardiche_bronze.png
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id halberd_bronze
+#gameid bronzehalberd
+#sprite /graphics/halfmen/minotaur/weapon/halberd_bronze.png
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id spear_bronze
+#gameid 643
+#sprite /graphics/halfmen/minotaur/weapon/spear_bronze.png
+#basechance 2
+#theme "bronze"
+#theme formationfighter
+#enditem
+
+#newitem
+#id longspear_bronze
+#gameid 644
+#sprite /graphics/halfmen/minotaur/weapon/longspear_bronze.png
+#basechance 2
+#theme "bronze"
+#theme formationfighter
+#enditem
+
+#newitem
+#id trident_bronze
+#gameid 641
+#sprite /graphics/halfmen/minotaur/weapon/trident_bronze.png
+#theme "advanced"
+#theme "bronze"
+#theme formationfighter
+#enditem

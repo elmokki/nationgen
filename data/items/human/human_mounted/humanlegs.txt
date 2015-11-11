@@ -8,7 +8,6 @@
 #recolormask /graphics/legs/standard_mounted/mounted_pants_recolormask.png
 #enditem
 
-
 #newitem
 #id leatherpants
 #gameid -1
@@ -38,4 +37,14 @@
 #sprite /graphics/legs/standard_mounted/mounted_plate.png
 #armor
 #basechance 0
+#enditem
+
+#newitem
+#id bronzepants
+#gameid -1
+#sprite /graphics/legs/standard_mounted/mounted_bronze.png
+#recolormask /graphics/legs/standard_mounted/mounted_bronze_recolormask.png
+#armor
+#basechance 0
+#type bronze
 #enditem

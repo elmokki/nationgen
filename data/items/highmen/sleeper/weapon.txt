@@ -44,12 +44,12 @@
 #enditem
 
 -- 2h weapons
-
 #newitem
 #id flail
 #gameid 16
 #sprite /graphics/highmen/weapons/flail_bronze.png
 #needs hands hands_2h
+#troopweapon
 #enditem
 
 #newitem
@@ -58,6 +58,7 @@
 #sprite /graphics/highmen/weapons/battleaxe_bronze.png
 #needs hands hands_2h
 #theme "primitive"
+#troopweapon
 #enditem
 
 #newitem
@@ -66,6 +67,7 @@
 #sprite /graphics/highmen/weapons/maul.png
 #theme "primitive"
 #needs hands hands_2h
+#troopweapon
 #enditem
 
 #newitem
@@ -73,6 +75,7 @@
 #gameid bronzeclaymore
 #sprite /graphics/highmen/weapons/greatsword_bronze.png
 #needs hands hands_2h
+#troopweapon
 #enditem
 
 #newitem
@@ -80,6 +83,7 @@
 #gameid 7
 #sprite /graphics/highmen/weapons/quarterstaff.png
 #needs hands hands_2h
+#troopweapon
 #enditem
 
 #newitem
@@ -88,4 +92,5 @@
 #sprite /graphics/highmen/weapons/greatclub.png
 #theme "primitive"
 #needs hands hands_2h
+#troopweapon
 #enditem

@@ -1,0 +1,90 @@
+--- Ring
+#newitem
+#id 16
+#gameid 6
+#sprite /graphics/bodyarmor/bronze/ringcuirass.png
+#armor
+#basechance 2
+#theme "leather"
+#theme "bronze"
+#enditem
+
+#newitem
+#id 17
+#gameid 11
+#sprite /graphics/bodyarmor/bronze/ringhauberk_bow.png
+#armor
+#needstype legs bronze
+#theme "leather"
+#theme "bronze"
+#enditem
+
+#newitem -- full ring
+#id 19
+#gameid 16
+#sprite /graphics/bodyarmor/bronze/fullring_bow.png
+#armor
+#needstype legs bronze
+#theme "leather"
+#theme "bronze"
+#enditem
+
+
+--- Scale
+#newitem
+#id 9
+#gameid 100
+#sprite /graphics/bodyarmor/bronze/scalecuirass.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id 10
+#gameid 101
+#sprite /graphics/bodyarmor/bronze/scalehauberk.png
+#armor
+#basechance 0.5
+#theme "bronze"
+#enditem
+
+#newitem -- full scale
+#id 12
+#gameid bronzescale_full
+#sprite /graphics/bodyarmor/bronze/fullscale_bow.png
+#armor
+#needstype legs bronze
+#basechance 0.25
+#theme "bronze"
+#enditem
+
+
+--- Plate
+#newitem
+#id 13
+#gameid 142
+#sprite /graphics/bodyarmor/bronze/platecuirass.png
+#armor
+#basechance 0.5
+#theme "bronze"
+#enditem
+
+#newitem
+#id 14
+#gameid 136
+#sprite /graphics/bodyarmor/bronze/platehauberk_bow.png
+#armor
+#basechance 0.25
+#theme "bronze"
+#needstype legs bronze
+#enditem
+
+#newitem -- full plate
+#id 15
+#gameid bronzeplate_full
+#sprite /graphics/bodyarmor/bronze/fullplate_bow.png
+#armor
+#needstype legs bronze
+#basechance 0.125
+#theme "bronze"
+#enditem

@@ -95,7 +95,7 @@
 #define "#ressize 2"
 #define "#rcost +5"
 #define "#enc 4"
-#tag "animal 'cave drake'"
+#tag "animal drake"
 #theme "specialmount"
 #description "The cave drake will persist even if the rider dies."
 #tag "guaranteedprefix drake"
@@ -267,6 +267,33 @@
 #tag "animal lion"
 #tag "guaranteedprefix lion"
 #basechance 4
+#enditem
+
+#newitem
+#basechance 8
+#name "winged lion"
+#basechance 0.25
+#gameid -1
+#sprite /graphics/mounts/standard/wingedlion.png
+#needs overlay wingedlion_overlay
+#armor
+#define "#size 4"
+#define "#mapmove 3"
+#define "#ap 22"
+#define "#mounted"
+#define "#weapon 237 --- Bite"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape wingedlionmount"
+#define "#gcost +60"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#flying"
+#description "If the rider dies, the winged lion will carry on fighting until the end of the battle."
+#offsety 5
+#offsetx -10
+#tag "animal 'winged lion'"
+#tag "guaranteedprefix lion"
+#theme "flying"
 #enditem
 
 

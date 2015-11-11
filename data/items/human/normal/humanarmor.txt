@@ -1,12 +1,10 @@
-
 --- Leather
-
-
 #newitem
 #name "leather cuirass 1"
 #gameid 5
 #sprite /graphics/bodyarmor/standard/leathercuirass.png
 #armor
+#theme "leather"
 #enditem
 
 #newitem
@@ -14,6 +12,7 @@
 #gameid 5
 #sprite /graphics/bodyarmor/standard/leathercuirass2.png
 #armor
+#theme "leather"
 #enditem
 
 #newitem
@@ -21,6 +20,7 @@
 #gameid 10
 #sprite /graphics/bodyarmor/standard/leatherhauberk.png
 #armor
+#theme "leather"
 #enditem
 
 #newitem
@@ -28,8 +28,8 @@
 #gameid 10
 #sprite /graphics/bodyarmor/standard/leatherhauberk2.png
 #armor
+#theme "leather"
 #enditem
-
 
 #newitem -- full leather
 #newitem
@@ -38,19 +38,95 @@
 #sprite /graphics/bodyarmor/standard/leatherhauberk.png
 #needs legs leatherpants
 #armor
+#theme "leather"
+#enditem
+
+--- Ring
+#newitem
+#name "ring cuirass"
+#gameid 6
+#sprite /graphics/bodyarmor/standard/ringcuirass.png
+#armor
+#basechance 2
+#theme "leather"
+#theme "iron"
+#enditem
+
+#newitem
+#name "ring hauberk short"
+#gameid 11
+#sprite /graphics/bodyarmor/standard/ringhauberk.png
+#armor
+#theme "leather"
+#theme "iron"
+#enditem
+
+#newitem
+#name "ring hauberk long"
+#gameid 11
+#sprite /graphics/bodyarmor/standard/ringhauberk2.png
+#armor
+#theme "leather"
+#theme "iron"
+#enditem
+
+#newitem -- full ring
+#name "full ring"
+#gameid 16
+#sprite /graphics/bodyarmor/standard/ringhauberk.png
+#armor
+#needs legs chainpants
+#theme "leather"
+#theme "iron"
+#enditem
+
+
+--- Scale
+#newitem
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/bodyarmor/standard/mailcuirass.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "scale hauberk short"
+#gameid 12
+#sprite /graphics/bodyarmor/standard/mailhauberk1.png
+#armor
+#basechance 0.5
+#theme "iron"
+#enditem
+
+#newitem
+#name "scale hauberk long"
+#gameid 12
+#sprite /graphics/bodyarmor/standard/mailhauberk2.png
+#armor
+#basechance 0.5
+#theme "iron"
+#enditem
+
+#newitem -- full scale
+#name "full scale"
+#gameid 17
+#sprite /graphics/bodyarmor/standard/mailhauberk1.png
+#armor
+#theme "advanced"
+#theme "iron"
+#needs legs chainpants
 #enditem
 
 
 --- Chain Mail
-
-
 #newitem
 #name "chain cuirass"
 #gameid 8
 #sprite /graphics/bodyarmor/standard/mailcuirass.png
 #armor
+#theme "iron"
 #enditem
-
 
 #newitem
 #name "chain hauberk short"
@@ -58,8 +134,8 @@
 #sprite /graphics/bodyarmor/standard/mailhauberk1.png
 #basechance 0.5
 #armor
+#theme "iron"
 #enditem
-
 
 #newitem
 #name "chain hauberk long"
@@ -67,8 +143,8 @@
 #basechance 0.5
 #sprite /graphics/bodyarmor/standard/mailhauberk2.png
 #armor
+#theme "iron"
 #enditem
-
 
 #newitem -- full chain
 #name "full chain"
@@ -77,59 +153,20 @@
 #armor
 #needs legs chainpants
 #theme "advanced"
+#theme "iron"
 #tag "name mounted knight"
 #enditem
 
 
---- Scale
-
-#newitem
-#name "scale cuirass"
-#gameid 7
-#sprite /graphics/bodyarmor/standard/mailcuirass.png
-#armor
-#enditem
-
-
-#newitem
-#name "scale hauberk short"
-#gameid 12
-#sprite /graphics/bodyarmor/standard/mailhauberk1.png
-#armor
-#basechance 0.5
-#enditem
-
-
-#newitem
-#name "scale hauberk long"
-#gameid 12
-#sprite /graphics/bodyarmor/standard/mailhauberk2.png
-#armor
-#basechance 0.5
-#enditem
-
-
-#newitem -- full scale
-#name "full scale"
-#gameid 17
-#sprite /graphics/bodyarmor/standard/mailhauberk1.png
-#armor
-#theme "advanced"
-#needs legs chainpants
-#enditem
-
-
 --- Plate
-
-
 #newitem
 #name "plate cuirass"
 #gameid 9
 #sprite /graphics/bodyarmor/standard/platecuirass.png
 #armor
 #theme "advanced"
+#theme "iron"
 #enditem
-
 
 #newitem
 #name "plate hauberk"
@@ -137,9 +174,9 @@
 #sprite /graphics/bodyarmor/standard/platehauberk.png
 #armor
 #theme "advanced"
+#theme "iron"
 #tag "name mounted knight"
 #enditem
-
 
 #newitem -- full plate
 #name "full plate"
@@ -148,43 +185,8 @@
 #armor
 #needs legs chainpants
 #theme "advanced"
+#theme "iron"
 #tag "name mounted knight"
 #maxvarieties 1
-#enditem
-
-
---- Ring
-
-#newitem
-#name "ring cuirass"
-#gameid 6
-#sprite /graphics/bodyarmor/standard/ringcuirass.png
-#armor
-#basechance 2
-#enditem
-
-
-#newitem
-#name "ring hauberk short"
-#gameid 11
-#sprite /graphics/bodyarmor/standard/ringhauberk.png
-#armor
-#enditem
-
-
-#newitem
-#name "ring hauberk long"
-#gameid 11
-#sprite /graphics/bodyarmor/standard/ringhauberk2.png
-#armor
-#enditem
-
-
-#newitem -- full ring
-#name "full ring"
-#gameid 16
-#sprite /graphics/bodyarmor/standard/ringhauberk.png
-#armor
-#needs legs chainpants
 #enditem
 

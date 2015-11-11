@@ -318,7 +318,8 @@
 #define "#secondtmpshape nightmare"
 #define "#gcost +40"
 #define "#ressize 2"
-#define "#enc 4"¨
+#define "#enc 4"
+#define "#float"
 #tag "animal nightmare"
 #description "Leaves a nightmare behind when the rider dies"
 #basechance 0.25
@@ -391,10 +392,37 @@
 #define "#secondtmpshape lionmount"
 #define "#gcost +35"
 #define "#ressize 2"
-#define "#enc 4"¨
+#define "#enc 4"
 #description "If the rider dies, the lion will carry on fighting until the end of the battle."
 #offsety 5
 #offsetx -1
 #tag "animal lion"
 #tag "guaranteedprefix lion"
+#enditem
+
+#newitem
+#basechance 8
+#name "winged lion"
+#basechance 0.25
+#gameid -1
+#sprite /graphics/mounts/standard/wingedlion.png
+#needs overlay wingedlion_overlay
+#armor
+#define "#size 4"
+#define "#mapmove 3"
+#define "#ap 22"
+#define "#mounted"
+#define "#weapon 237 --- Bite"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape wingedlionmount"
+#define "#gcost +60"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#flying"
+#description "If the rider dies, the winged lion will carry on fighting until the end of the battle."
+#offsety 5
+#offsetx -5
+#tag "animal 'winged lion'"
+#tag "guaranteedprefix lion"
+#theme "flying"
 #enditem

@@ -8,6 +8,8 @@
 
 #basechance 100
 
+#renderorder "shadow cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon helmet cloakf overlay offhandw hands offhanda"
+
 #tier 1
 #notfortier 2
 #notfortier 3
@@ -21,10 +23,11 @@
 #load cloakb /data/items/dynastichuman/cloakb.txt
 
 #load armor /data/items/dynastichuman/caster/robes.txt
+#load overlay /data/items/dynastichuman/caster/overlay.txt
 #load helmet /data/items/dynastichuman/caster/helmet.txt
 
-#load weapon /data/items/dynastichuman/caster/weapon.txt
-#load offhand /data/items/dynastichuman/caster/offhands.txt
+#load weapon /data/items/human/caster/weapon.txt 0 -3
+#load offhand /data/items/human/caster/offhands.txt -1 -2
 
 #endpose
 
@@ -36,6 +39,8 @@
 #role "priest"
 
 #basechance 1
+
+#renderorder "shadow cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon helmet cloakf overlay offhandw hands offhanda"
 
 #notfortier 1
 #tier 2
@@ -50,10 +55,11 @@
 #load cloakb /data/items/dynastichuman/cloakb.txt
 
 #load armor /data/items/dynastichuman/caster/robes.txt
+#load overlay /data/items/dynastichuman/caster/overlay.txt
 #load helmet /data/items/dynastichuman/caster/helmet.txt
 
-#load weapon /data/items/dynastichuman/caster/weapon.txt
-#load offhand /data/items/dynastichuman/caster/offhands.txt
+#load weapon /data/items/human/caster/weapon.txt 0 -3
+#load offhand /data/items/human/caster/offhands.txt -1 -2
 
 #endpose
 
@@ -65,6 +71,8 @@
 #role "priest"
 
 #basechance 0.01
+
+#renderorder "shadow cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon helmet cloakf overlay offhandw hands offhanda"
 
 #notfortier 1
 #notfortier 2
@@ -79,9 +87,10 @@
 #load cloakb /data/items/dynastichuman/cloakb.txt
 
 #load armor /data/items/dynastichuman/caster/robes.txt
+#load overlay /data/items/dynastichuman/caster/overlay.txt
 #load helmet /data/items/dynastichuman/caster/helmet.txt
 
-#load weapon /data/items/dynastichuman/caster/weapon.txt
-#load offhand /data/items/dynastichuman/caster/offhands.txt
+#load weapon /data/items/human/caster/weapon.txt 0 -3
+#load offhand /data/items/human/caster/offhands.txt -1 -2
 
 #endpose

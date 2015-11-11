@@ -1,118 +1,453 @@
 -- Nothing
-
 #newitem
 #id nothing
-#basechance 0
-#chanceinc "personalcommand #slave 12"
-#chanceinc "personalcommand #mindless 12"
-#gameid -1
-#eliteversion scarf_worn
-#armor
-#theme "primitive"
-#theme "naked"
-#type slave
-#type longdead
-#enditem
-
-#newitem
-#id nothing
-#basechance 3
+#basechance 6
 #chanceinc "personalcommand #undead *0"
 #gameid -1
 #eliteversion scarf
 #armor
 #theme "primitive"
 #theme "naked"
+#tag "tier 1"
 #enditem
-
 
 
 -- Headscarf
-
-#newitem
-#id scarf_worn
-#basechance 0
-#chanceinc "personalcommand #slave 12"
-#chanceinc "personalcommand #mindless 12"
-#gameid -1
-#sprite /graphics/dynastichuman/helmet/headscarf_worn.png
-#eliteversion scarf
-#armor
-#type slave
-#type longdead
-#enditem
-
 #newitem
 #id scarf
-#basechance 12
-#chanceinc "personalcommand #slave -6"
+#basechance 2
 #gameid -1
 #sprite /graphics/dynastichuman/helmet/headscarf.png
 #eliteversion nemes_ornate
 #armor
-#type slave
+#tag "tier 1"
+#tag "tier 2"
+#theme "primitive"
+#enditem
+
+#newitem
+#id nemes_simple
+#basechance 2
+#gameid 148
+#sprite /graphics/dynastichuman/helmet/nemes_simple.png
+#recolormask /graphics/dynastichuman/helmet/nemes_simple_recolormask.png
+#armor
+#tag "tier 2"
+#theme "primitive"
 #enditem
 
 #newitem
 #id nemes_ornate
-#basechance 1
+#basechance 2
 #gameid 148
 #sprite /graphics/dynastichuman/helmet/nemes_ornate.png
 #recolormask /graphics/dynastichuman/helmet/nemes_ornate_recolormask.png
-#eliteversion nemes_ornate
 #armor
-#theme "sacred"
+#tag "tier 2"
+#theme "primitive"
+#enditem
+
+#newitem
+#id nemes_long
+#basechance 2
+#gameid 148
+#sprite /graphics/dynastichuman/helmet/nemes_long.png
+#recolormask /graphics/dynastichuman/helmet/nemes_long_recolormask.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
 #enditem
 
 
-
--- Helmet
+-- Crown
+#newitem
+#id crown_plain
+#basechance 2
+#gameid 148
+#sprite /graphics/dynastichuman/helmet/crown.png
+#recolormask /graphics/dynastichuman/helmet/crown_recolormask.png
+#eliteversion crown_scarf
+#eliteversion crown_khepresh
+#armor
+#tag "tier 2"
+#enditem
 
 #newitem
+#id crown_scarf
+#basechance 1
+#gameid 148
+#sprite /graphics/dynastichuman/helmet/crown_headscarf.png
+#recolormask /graphics/dynastichuman/helmet/crown_headscarf_recolormask.png
+#eliteversion crown_scarf
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id crown_highpriest
+#basechance 2
+#gameid 148
+#sprite /graphics/dynastichuman/helmet/crown_highpriest.png
+#eliteversion crown_lizard
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id crown_lizard
+#basechance 2
+#gameid 148
+#sprite /graphics/helmet/caster/lizardcrown.png
+#recolormask /graphics/helmet/caster/lizardcrown_recolormask.png
+#offsetx 1
+#offsety -2
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id crown_lich
+#basechance 2
+#gameid 148
+#sprite /graphics/dynastichuman/helmet/crown_lich.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id crown_khepresh
+#basechance 2
+#gameid 148
+#sprite /graphics/dynastichuman/helmet/crown_khepresh.png
+#recolormask /graphics/dynastichuman/helmet/crown_khepresh_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+
+-- Mask
+#newitem
+#id mask_serpent
+#basechance 0
+#chanceinc "magic nature 1"
+#chanceinc "magic nature water 1"
+#chanceinc "magic nature death 1"
+#gameid 145
+#sprite /graphics/dynastichuman/helmet/mask_serpent.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "serpent"
+#theme "nature"
+#enditem
+
+#newitem
+#id mask_jackal
+#basechance 0
+#chanceinc "magic death 1"
+#chanceinc "magic fire death 1"
+#chanceinc "magic air death 0.5"
+#chanceinc "magic fire air 0.5"
+#gameid 145
+#sprite /graphics/dynastichuman/helmet/mask_jackal.png
+#eliteversion mask_jackal_elite
+#armor
+#tag "tier 2"
+#theme "jackal"
+#theme "death"
+#enditem
+
+#newitem
+#id mask_jackal_elite
+#basechance 0
+#chanceinc "magic death 1"
+#chanceinc "magic fire death 1"
+#chanceinc "magic air death 0.5"
+#chanceinc "magic fire air 0.5"
+#gameid 187
+#sprite /graphics/dynastichuman/helmet/mask_jackal_elite.png
+#recolormask /graphics/dynastichuman/helmet/mask_jackal_elite_recolormask.png
+#armor
+#tag "tier 3"
+#theme "jackal"
+#theme "death"
+#enditem
+
+#newitem
+#id mask_crocodile
+#basechance 0
+#chanceinc "magic water 1"
+#chanceinc "magic nature 1"
+#chanceinc "magic water death 0.5"
+#chanceinc "magic astral fire 0.5"
+#gameid 145
+#sprite /graphics/dynastichuman/helmet/mask_crocodile.png
+#eliteversion mask_crocodile_elite1
+#eliteversion mask_crocodile_elite2
+#armor
+#tag "tier 2"
+#theme "crocodile"
+#theme "water"
+#theme "nature"
+#enditem
+
+#newitem
+#id mask_crocodile_elite1
+#basechance 0
+#chanceinc "magic water 0.5"
+#chanceinc "magic nature 0.5"
+#chanceinc "magic water death 0.25"
+#chanceinc "magic astral fire 0.25"
+#gameid 187
+#sprite /graphics/dynastichuman/helmet/mask_crocodile_elite.png
+#recolormask /graphics/dynastichuman/helmet/mask_crocodile_elite_recolormask.png
+#armor
+#tag "tier 3"
+#theme "crocodile"
+#theme "water"
+#theme "nature"
+#enditem
+
+#newitem
+#id mask_crocodile_elite2
+#basechance 0
+#chanceinc "magic water 0.5"
+#chanceinc "magic nature 0.5"
+#chanceinc "magic water death 0.25"
+#chanceinc "magic astral fire 0.25"
+#gameid 187
+#sprite /graphics/dynastichuman/helmet/mask_crocodile_elite2.png
+#recolormask /graphics/dynastichuman/helmet/mask_crocodile_elite2_recolormask.png
+#armor
+#tag "tier 3"
+#theme "crocodile"
+#theme "water"
+#theme "nature"
+#enditem
+
+#newitem
+#id mask_lion
+#basechance 0
+#chanceinc "magic fire 1"
+#chanceinc "magic fire nature 1"
+#chanceinc "magic air fire 0.5"
+#chanceinc "magic astral fire 0.5"
+#gameid 145
+#sprite /graphics/dynastichuman/helmet/mask_lion.png
+#eliteversion mask_lion_elite
+#armor
+#tag "tier 2"
+#theme "lion"
+#theme "fire"
+#enditem
+
+#newitem
+#id mask_lion_elite
+#basechance 0
+#chanceinc "magic fire 1"
+#chanceinc "magic fire nature 1"
+#chanceinc "magic air fire 0.5"
+#chanceinc "magic astral fire 0.5"
+#gameid 187
+#sprite /graphics/dynastichuman/helmet/mask_lion_elite.png
+#recolormask /graphics/dynastichuman/helmet/mask_lion_elite_recolormask.png
+#armor
+#tag "tier 3"
+#theme "lion"
+#theme "fire"
+#enditem
+
+#newitem
+#id mask_bull
+#basechance 0
+#chanceinc "magic earth 1"
+#chanceinc "magic nature 1"
+#chanceinc "magic earth nature 1"
+#gameid 145
+#sprite /graphics/dynastichuman/helmet/mask_bull.png
+#eliteversion mask_bull_elite
+#armor
+#tag "tier 2"
+#theme "bull"
+#theme "earth"
+#theme "nature"
+#enditem
+
+#newitem
+#id mask_bull_elite
+#basechance 0
+#chanceinc "magic earth 1"
+#chanceinc "magic nature 1"
+#chanceinc "magic earth nature 1"
+#gameid 187
+#sprite /graphics/dynastichuman/helmet/mask_bull_elite.png
+#recolormask /graphics/dynastichuman/helmet/mask_bull_elite_recolormask.png
+#armor
+#tag "tier 3"
+#theme "bull"
+#theme "earth"
+#theme "nature"
+#enditem
+
+#newitem
+#id mask_hawk
+#basechance 0
+#chanceinc "magic astral 1"
+#chanceinc "magic fire 1"
+#chanceinc "magic astral air 1"
+#gameid 145
+#sprite /graphics/dynastichuman/helmet/mask_hawk.png
+#eliteversion mask_hawk_elite
+#armor
+#tag "tier 2"
+#theme "hawk"
+#theme "bird"
+#theme "astral"
+#theme "fire"
+#enditem
+
+#newitem
+#id mask_hawk_elite
+#basechance 0
+#chanceinc "magic astral 1"
+#chanceinc "magic fire 1"
+#chanceinc "magic astral air 1"
+#gameid 187
+#sprite /graphics/dynastichuman/helmet/mask_hawk_elite.png
+#recolormask /graphics/dynastichuman/helmet/mask_hawk_elite_recolormask.png
+#armor
+#tag "tier 3"
+#theme "hawk"
+#theme "bird"
+#theme "astral"
+#theme "fire"
+#enditem
+
+#newitem
+#id mask_heron
+#basechance 0
+#chanceinc "magic air 1"
+#chanceinc "magic fire 1"
+#chanceinc "magic air fire 0.5"
+#chanceinc "magic air water 0.5"
+#gameid 145
+#sprite /graphics/dynastichuman/helmet/mask_heron.png
+#eliteversion mask_heron_elite
+#armor
+#tag "tier 2"
+#theme "heron"
+#theme "bird"
+#theme "air"
+#theme "fire"
+#enditem
+
+#newitem
+#id mask_heron_elite
+#basechance 0
+#chanceinc "magic air 1"
+#chanceinc "magic fire 1"
+#chanceinc "magic air fire 0.5"
+#chanceinc "magic air water 0.5"
+#gameid 187
+#sprite /graphics/dynastichuman/helmet/mask_heron_elite.png
+#recolormask /graphics/dynastichuman/helmet/bird_nemes_recolormask.png
+#armor
+#tag "tier 3"
+#theme "heron"
+#theme "bird"
+#theme "air"
+#theme "fire"
+#enditem
+
+#newitem
+#id mask_ibis
+#basechance 0
+#chanceinc "magic astral 1"
+#chanceinc "magic water 1"
+#chanceinc "magic astral water 1"
+#gameid 145
+#sprite /graphics/dynastichuman/helmet/mask_ibis.png
+#eliteversion mask_ibis_elite
+#armor
+#tag "tier 2"
+#theme "ibis"
+#theme "bird"
+#theme "astral"
+#theme "water"
+#enditem
+
+#newitem
+#id mask_ibis_elite
+#basechance 0
+#chanceinc "magic astral 1"
+#chanceinc "magic water 1"
+#chanceinc "magic astral water 1"
+#gameid 187
+#sprite /graphics/dynastichuman/helmet/mask_ibis_elite.png
+#recolormask /graphics/dynastichuman/helmet/bird_nemes_recolormask.png
+#armor
+#tag "tier 3"
+#theme "ibis"
+#theme "bird"
+#theme "astral"
+#theme "water"
+#enditem
+
+
+-- Helmet
+#newitem
 #id bronzecap
-#gameid 20
+#basechance 0.4
+#gameid 135
 #sprite /graphics/dynastichuman/helmet/bronzecap.png
 #eliteversion bronzecap_gilt
 #eliteversion bronzecap_fancy
 #armor
 #theme "bronze"
 #theme "advanced"
+#tag "tier 1"
 #enditem
 
 #newitem
 #id bronzecap_fancy
-#gameid 20
+#basechance 0.2
+#gameid 135
 #sprite /graphics/dynastichuman/helmet/bronzecap_feather.png
 #eliteversion bronzecap_gilt_fancy
 #armor
 #theme "bronze"
 #theme "advanced"
-#theme "elite"
+#tag "tier 1"
 #enditem
 
 #newitem
 #id bronzecap_gilt
-#gameid 20
+#basechance 0.4
+#gameid 135
 #sprite /graphics/dynastichuman/helmet/goldcap.png
 #eliteversion bronzecap_gilt_fancy
 #armor
 #theme "bronze"
 #theme "advanced"
-#theme "elite"
+#tag "tier 2"
 #enditem
 
 #newitem
 #id bronzecap_gilt_fancy
-#gameid 20
+#basechance 0.2
+#gameid 135
 #sprite /graphics/dynastichuman/helmet/goldcap_feather.png
 #armor
 #theme "bronze"
 #theme "advanced"
-#theme "elite"
+#tag "tier 2"
+#tag "tier 3"
 #enditem
 
 #newitem
 #id ironcap
+#basechance 0.4
 #gameid 20
 #sprite /graphics/dynastichuman/helmet/ironcap.png
 #eliteversion ironcap_gilt
@@ -120,36 +455,43 @@
 #armor
 #theme "iron"
 #theme "advanced"
+#tag "tier 1"
 #enditem
 
 #newitem
 #id ironcap_fancy
+#basechance 0.2
 #gameid 20
 #sprite /graphics/dynastichuman/helmet/ironcap_feather.png
 #eliteversion ironcap_gilt_fancy
 #armor
 #theme "iron"
 #theme "advanced"
-#theme "elite"
+#tag "tier 1"
 #enditem
 
 #newitem
 #id ironcap_gilt
+#basechance 0.4
 #gameid 20
 #sprite /graphics/dynastichuman/helmet/goldcap.png
 #eliteversion ironcap_gilt_fancy
 #armor
 #theme "iron"
 #theme "advanced"
-#theme "elite"
+#tag "tier 2"
 #enditem
 
 #newitem
 #id ironcap_gilt_fancy
+#basechance 0.2
 #gameid 20
 #sprite /graphics/dynastichuman/helmet/goldcap_feather.png
 #armor
 #theme "iron"
 #theme "advanced"
-#theme "elite"
+#tag "tier 2"
+#tag "tier 3"
 #enditem
+
+
