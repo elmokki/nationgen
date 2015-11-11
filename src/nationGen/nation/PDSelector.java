@@ -49,9 +49,9 @@ public class PDSelector {
 		{
 			double rand = r.nextDouble();
 			if(rand < 0.025)
-				commanders.add(0, n.generateComList("priest").get(0));
+				commanders.add(rank - 1, n.generateComList("priest").get(0));
 			else if(rand < 0.1)
-				commanders.add(1, n.generateComList("priest").get(0));
+				commanders.add(rank, n.generateComList("priest").get(0));
 		}
 		
 		List<Unit> others = new ArrayList<Unit>();
@@ -141,7 +141,7 @@ public class PDSelector {
 				com.commands.add(new Command("#undcommand", "40"));
 		}
 		
-		return commanders.get(0);
+		return com;
 	}
 	
 	/**
