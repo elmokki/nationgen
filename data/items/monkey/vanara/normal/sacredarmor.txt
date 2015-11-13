@@ -1,38 +1,106 @@
-
+--- Nada
 #newitem
 #basechance 0.5
 #name "naked"
 #gameid -1
 #armor
 #command "#stealthy +0"
+#theme "enlightened"
+#theme "naked"
+#theme "primitive"
 #enditem
 
+
+
+--- Bronze Scale
+#newitem
+#name "gilt bronze scale cuirass"
+#gameid 142
+#sprite /graphics/monkey/armor/vanara/scalecuirass_gilt.png
+#armor
+#theme "enlightened"
+#theme "bronze"
+#enditem
+
+#newitem
+#name "gilt bronze scale hauberk"
+#gameid 136
+#sprite /graphics/monkey/armor/vanara/scalehauberk_gilt.png
+#armor
+#theme "enlightened"
+#theme "bronze"
+#enditem
+
+#newitem
+#name "gilt bronze full scale"
+#gameid bronzescale_full
+#sprite /graphics/monkey/armor/vanara/fullscale_gilt.png
+#armor
+#theme "enlightened"
+#theme "bronze"
+#enditem
 
 
 --- Scale
-
 #newitem
-#name "scale cuirass"
+#name "gilt scale cuirass"
 #gameid 7
-#sprite /graphics/monkey/armor/vanara/scalecuirass.png
+#sprite /graphics/monkey/armor/vanara/scalecuirass_gilt.png
 #armor
+#theme "enlightened"
+#theme "iron"
 #enditem
-
 
 #newitem
-#basechance 0.5
-#name "scale hauberk short"
+#name "gilt scale hauberk"
 #gameid 12
-#sprite /graphics/monkey/armor/vanara/scalehauberk.png
+#sprite /graphics/monkey/armor/vanara/scalehauberk_gilt.png
 #armor
+#theme "enlightened"
+#theme "iron"
+#enditem
+
+#newitem
+#name "gilt full scale"
+#gameid 17
+#sprite /graphics/monkey/armor/vanara/fullscale_gilt.png
+#armor
+#theme "enlightened"
+#theme "iron"
 #enditem
 
 
 
-#newitem -- full scale
-#basechance 0.25
-#name "full scale"
-#gameid 17
-#sprite /graphics/monkey/armor/vanara/fullscale.png
+--- Imperial armor
+#newitem
+#name "lorica squamata"
+#gameid 117
+#sprite /graphics/monkey/armor/vanara/lorica_squamata_gilt.png
+#recolormask /graphics/monkey/armor/vanara/imperial_recolormask.png
+#eliteversion "lorica segmentata"
 #armor
+#theme "iron"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "lorica segmentata"
+#gameid 99
+#sprite /graphics/monkey/armor/vanara/lorica_segmentata_gilt.png
+#recolormask /graphics/monkey/armor/vanara/imperial_recolormask.png
+#eliteversion "imperial plate"
+#armor
+#theme "imperial"
+#theme "iron"
+#enditem
+
+#newitem
+#name "imperial plate"
+#gameid 14
+#sprite /graphics/monkey/armor/vanara/platehauberk_imperial_gilt.png
+#recolormask /graphics/monkey/armor/vanara/imperial_recolormask.png
+#armor
+#theme "imperial"
+#theme "iron"
+#theme "elite"
 #enditem
