@@ -998,7 +998,7 @@ public class Unit {
 		}
 		
 		if(isMage) 
-			MageGenerator.determineSpecialLeadership(u);
+			MageGenerator.determineSpecialLeadership(u, false);
 		
 		polished = true;
 	}

@@ -294,11 +294,7 @@ public class MageGenerator extends TroopGenerator {
 			caponlyprimaries = true;
 
 
-		
-
-		
-
-		
+				
 		List<MagicPattern> available = getPatternsForTier(3, primaries);
 		
 		List<MagicPattern> primarypatterns = new ArrayList<MagicPattern>();
@@ -497,7 +493,7 @@ public class MageGenerator extends TroopGenerator {
 		}
 
 		for(Unit u : list)
-			determineSpecialLeadership(u);
+			determineSpecialLeadership(u, false);
 
 		tagAll(list, "identifier schoolmage");
 		
@@ -645,7 +641,7 @@ public class MageGenerator extends TroopGenerator {
 			this.equipBase(un, 2);
 		}
 		
-		determineSpecialLeadership(u);
+		determineSpecialLeadership(u, false);
 		return list;
 	}
 	
@@ -1304,30 +1300,48 @@ public class MageGenerator extends TroopGenerator {
 			}
 			
 			// Determine special leadership
-			determineSpecialLeadership(u);
+			determineSpecialLeadership(u, true);
 		}
 		
 		
 		return priests;
 	}
 	
-	public static void determineSpecialLeadership(Unit u)
+	public static void determineSpecialLeadership(Unit u, boolean isPriest)
 	{
+		boolean isUndead = false;
+		
 		String basiclevel = u.getLeaderLevel();
 		
 		List<String> others = new ArrayList<String>();
 		for(Command c : u.commands)
-			if(c.command.equals("#undead") || c.command.equals("#demon"))
+			if(c.command.equals("#undead"))
+			{
+				isUndead = true;
+				others.add("undead");
+			}
+			else if (c.command.equals("#demon"))
 				others.add("undead");
 			else if(c.command.equals("#magicbeing"))
 				others.add("magic");
 		
 		for(String str : others)
 		{
-			if(!u.hasLeaderLevel(str))
+			// Undead priests almost all have elevated undead leadership, so if they have leadership bump it up a level
+			if(!u.hasLeaderLevel(str) && str.equals("undead") && isUndead && isPriest)
 			{
-				u.commands.add(new Command("#" + basiclevel + str + "leader"));
+				if(basiclevel.equals("no"))
+					u.commands.add(new Command("#noundeadleader"));
+				else if(basiclevel.equals("poor"))
+					u.commands.add(new Command("#okayundeadleader"));
+				else
+				{
+					u.commands.add(new Command("#" + basiclevel + str + "leader"));
+					u.commands.add(new Command("#undcommand +40"));
+				}					
 			}
+			else if(!u.hasLeaderLevel(str))
+				u.commands.add(new Command("#" + basiclevel + str + "leader"));
 		}
 
 		
