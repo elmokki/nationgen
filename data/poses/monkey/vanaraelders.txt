@@ -3,13 +3,35 @@
 #name "vanara elder mage, floating"
 #role "mage"
 #theme "terrestrial"
+#theme "enlightened"
 #subrace vanara
 
 #load basesprite /data/items/monkey/vanara/caster/magebases_float.txt
 #load shadow /data/items/monkey/vanara/normal/shadow.txt
 
-#load armor /data/items/monkey/vanara/caster/robes.txt
+#load armor /data/items/monkey/vanara/caster/robes_sitting.txt
 #load helmet /data/items/monkey/vanara/caster/helmet.txt 2 2
+#load weapon /data/items/monkey/vanara/caster/emptyweapons.txt
+
+#tier 3
+#notfortier 2
+#notfortier 1
+#dontvaryweapon
+#command "#maxage 120"
+#endpose
+
+-------- Terrestrial high mage - small palaquin
+#newpose
+#name "vanara elder mage - small palaquin"
+#role "mage"
+#theme "terrestrial"
+#theme "imperial"
+#subrace vanara
+
+#load basesprite /data/items/monkey/vanara/caster/magebases_palaquin_imperial.txt
+
+#load armor /data/items/monkey/vanara/caster/robes_palaquin_imperial.txt
+#load helmet /data/items/monkey/vanara/caster/helmet.txt 31 -23
 #load weapon /data/items/monkey/vanara/caster/emptyweapons.txt
 
 #tier 3
@@ -25,6 +47,8 @@
 #name "winged vanara elder mage"
 #role "mage"
 #theme "winged"
+#theme "imperial"
+#theme "enlightened"
 #subrace vanara
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
@@ -62,13 +86,34 @@
 #name "vanara elder priest, sitting"
 #role "priest"
 #theme "terrestrial"
+#theme "enlightened"
 #subrace vanara
 
 #load basesprite /data/items/monkey/vanara/caster/magebases_sit.txt
 #load shadow /data/items/monkey/vanara/normal/shadow.txt
 
-#load armor /data/items/monkey/vanara/caster/robes.txt
+#load armor /data/items/monkey/vanara/caster/robes_sitting.txt
 #load helmet /data/items/monkey/vanara/caster/helmet.txt 2 10
+#load weapon /data/items/monkey/vanara/caster/emptyweapons.txt
+
+#tier 3
+#dontvaryweapon
+#command "#maxage 90"
+#endpose
+
+
+-------- Terrestrial high priest - small palaquin
+#newpose
+#name "vanara elder priest - small palaquin"
+#role "priest"
+#theme "terrestrial"
+#theme "imperial"
+#subrace vanara
+
+#load basesprite /data/items/monkey/vanara/caster/magebases_palaquin_imperial.txt
+
+#load armor /data/items/monkey/vanara/caster/robes_palaquin_imperial.txt
+#load helmet /data/items/monkey/vanara/caster/helmet.txt 31 -23
 #load weapon /data/items/monkey/vanara/caster/emptyweapons.txt
 
 #tier 3
@@ -82,6 +127,8 @@
 #name "winged vanara elder priest"
 #role "priest"
 #theme "winged"
+#theme "imperial"
+#theme "enlightened"
 #subrace vanara
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"

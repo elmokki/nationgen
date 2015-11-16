@@ -1,26 +1,3 @@
--- Common shields
-#newitem
-#basechance 10
-#id woodshield
-#gameid 2
-#sprite /graphics/monkey/offhand/vanara/woodshield.png
-#armor
-#theme "enlightened"
-#theme "imperial"
-#theme "wood"
-#enditem
-
-#newitem
-#basechance 10
-#id woodbuckler
-#gameid 1
-#sprite /graphics/monkey/offhand/vanara/woodbuckler.png
-#armor
-#theme "enlightened"
-#theme "imperial"
-#theme "wood"
-#enditem
-
 #newitem
 #basechance 10
 #id bronzeshield
@@ -73,7 +50,6 @@
 #eliteversion "ironshield_gilt"
 #armor
 #theme "enlightened"
-#theme "imperial"
 #theme "iron"
 #enditem
 
@@ -85,7 +61,6 @@
 #eliteversion "ironbuckler_gilt"
 #armor
 #theme "enlightened"
-#theme "imperial"
 #theme "iron"
 #enditem
 
@@ -96,7 +71,6 @@
 #sprite /graphics/monkey/offhand/vanara/giltshield.png
 #armor
 #theme "enlightened"
-#theme "imperial"
 #theme "iron"
 #theme "elite"
 #enditem
@@ -108,22 +82,20 @@
 #sprite /graphics/monkey/offhand/vanara/giltbuckler.png
 #armor
 #theme "enlightened"
-#theme "imperial"
 #theme "iron"
 #theme "elite"
 #enditem
 
 
--- Rare shields
+-- Imperial shields
 #newitem
-#id tower
+#id tower1
 #gameid 4
-#basechance 3
+#basechance 4
 #sprite /graphics/offhand/standard/tower1.png
 #recolormask /graphics/offhand/standard/tower1_recolormask.png
 #theme "imperial"
 #theme "iron"
-#theme "elite"
 #armor
 #offsetx 2
 #offsety 2
@@ -132,12 +104,11 @@
 #newitem
 #id tower2
 #gameid 4
-#basechance 3
+#basechance 4
 #sprite /graphics/offhand/standard/tower1.png
 #recolormask /graphics/offhand/standard/tower1_recolormask2.png
 #theme "imperial"
 #theme "iron"
-#theme "elite"
 #armor
 #offsetx 2
 #offsety 2
@@ -146,12 +117,11 @@
 #newitem
 #id tower3
 #gameid 4
-#basechance 3
+#basechance 4
 #sprite /graphics/offhand/standard/tower1.png
 #recolormask /graphics/offhand/standard/tower1_recolormask3.png
 #theme "imperial"
 #theme "iron"
-#theme "elite"
 #armor
 #offsetx 2
 #offsety 2

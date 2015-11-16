@@ -4,6 +4,8 @@
 #role "mage"
 #theme "terrestrial"
 #theme "winged"
+#theme "enlightened"
+#theme "imperial"
 #subrace vanara
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
@@ -35,18 +37,18 @@
 #endpose
 
 
--------- Terrestrial advanced mage
-
+-------- Terrestrial advanced mage - sitting
 #newpose
 #name "vanara mage, sitting"
 #role "mage"
 #theme "terrestrial"
+#theme "enlightened"
 #subrace vanara
 
 #load basesprite /data/items/monkey/vanara/caster/magebases_sit.txt
 #load shadow /data/items/monkey/vanara/normal/shadow.txt
 
-#load armor /data/items/monkey/vanara/caster/robes.txt
+#load armor /data/items/monkey/vanara/caster/robes_sitting.txt
 #load helmet /data/items/monkey/vanara/caster/helmet.txt 1 12
 #load weapon /data/items/monkey/vanara/caster/emptyweapons.txt
 
@@ -58,11 +60,45 @@
 #endpose
 
 
+-------- Terrestrial advanced mage - standing
+#newpose
+#name "vanara elder, standing"
+#role "mage"
+#theme "terrestrial"
+#theme "imperial"
+#subrace vanara
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/monkey/vanara/caster/magebases.txt
+#load shadow /data/items/monkey/vanara/normal/shadow.txt
+
+#load hands /data/items/monkey/vanara/normal/hands.txt
+
+#load cloakf /data/items/monkey/vanara/normal/cloakf.txt
+#load cloakb /data/items/monkey/vanara/normal/cloakb.txt
+
+#load armor /data/items/monkey/vanara/caster/robes.txt
+#load helmet /data/items/monkey/vanara/caster/helmet.txt 2 0
+
+#load weapon /data/items/monkey/vanara/caster/weapon.txt
+
+#load offhand /data/items/monkey/vanara/caster/offhands.txt
+
+#tier 2
+#notfortier 1
+#notfortier 3
+#command "#maxage 90"
+#endpose
+
+
 -------- Winged advanced mage
 #newpose
 #name "winged vanara mage"
 #role "mage"
 #theme "winged"
+#theme "enlightened"
+#theme "imperial"
 #subrace vanara
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
@@ -100,6 +136,8 @@
 #role "priest"
 #theme "terrestrial"
 #theme "winged"
+#theme "enlightened"
+#theme "imperial"
 #subrace vanara
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"

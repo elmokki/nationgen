@@ -116,43 +116,46 @@
 
 -- Rare shields
 #newitem
-#id tower
-#gameid 4
-#basechance 3
-#sprite /graphics/offhand/standard/tower1.png
-#recolormask /graphics/offhand/standard/tower1_recolormask.png
-#theme "imperial"
-#theme "iron"
-#theme "elite"
-#armor
+#id kite1
+#gameid 3
+#basechance 4
+#sprite /graphics/offhand/standard/kite1.png
+#recolormask /graphics/offhand/standard/kite1_recolormask.png
 #offsetx 2
 #offsety 2
+#armor
+#theme "enlightened"
+#theme "imperial"
+#theme "advanced"
+#theme "iron"
 #enditem
 
 #newitem
-#id tower2
-#gameid 4
-#basechance 3
-#sprite /graphics/offhand/standard/tower1.png
-#recolormask /graphics/offhand/standard/tower1_recolormask2.png
-#theme "imperial"
-#theme "iron"
-#theme "elite"
-#armor
+#id kite2
+#gameid 3
+#basechance 4
+#sprite /graphics/offhand/standard/kite2.png
+#recolormask /graphics/offhand/standard/kite2_recolormask.png
 #offsetx 2
 #offsety 2
+#armor
+#theme "enlightened"
+#theme "imperial"
+#theme "advanced"
+#theme "iron"
 #enditem
 
 #newitem
-#id tower3
-#gameid 4
-#basechance 3
-#sprite /graphics/offhand/standard/tower1.png
-#recolormask /graphics/offhand/standard/tower1_recolormask3.png
-#theme "imperial"
-#theme "iron"
-#theme "elite"
-#armor
+#id kite6_colored
+#gameid 3
+#basechance 4
+#sprite /graphics/offhand/standard/kite6.png
+#recolormask self
 #offsetx 2
 #offsety 2
+#armor
+#theme "enlightened"
+#theme "imperial"
+#theme "advanced"
+#theme "iron"
 #enditem
