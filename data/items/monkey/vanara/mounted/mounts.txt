@@ -622,36 +622,8 @@
 #enditem
 
 #newitem
-#name "wolf"
-#basechance 0.2
-#gameid -1
-#sprite /graphics/hoburg/mounts/wolf.png
-#armor
-#define "#size 2"
-#define "#mapmove 2"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon nostr_bite_10 --- Bite"
-#define "#gcost +17"
-#define "#ressize 2"
-#define "#enc 3"
-#define "#rcost +4"
-#tag "animal wolf"
-#theme "primitive"
-#theme "wolf"
-#theme "wolftotem"
-#theme "totemanimal"
-#tag "maxprot 14"
-#tag "guaranteedprefix wolf"
-#offsety -3
-#offsetx 3
-#theme "imperial"
-#theme "occidental"
-#enditem
-
-#newitem
 #name "dire wolf"
-#basechance 0.1
+#basechance 0.3
 #gameid -1
 #sprite /graphics/mounts/standard/direwolf1.png
 #armor
@@ -669,8 +641,8 @@
 #tag "maxprot 11"
 #tag "guaranteedprefix wolf"
 #description "If the rider dies, the wolf will carry on fighting until the end of the battle."
-#offsety -15
-#offsetx -6
+#offsety 0
+#offsetx -9
 #theme "imperial"
 #theme "occidental"
 #enditem
