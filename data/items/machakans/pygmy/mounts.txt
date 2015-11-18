@@ -109,6 +109,33 @@
 #enditem
 
 #newitem
+#name "forest spider"
+#gameid -1
+#sprite /graphics/mounts/standard/spider2.png
+#armor
+#offsetx 3
+#offsety -2
+#needs overlay spider2_overlay
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 12"
+#define "#mounted"
+#define "#weapon 313 --- Fangs"
+#define "#secondtmpshape forestspider"
+#description "If the rider dies, the spider will carry on fighting until the end of the battle."
+#define "#gcost +15"
+#define "#rcost +4"
+#define "#ressize 1"
+#define "#enc 4"
+#tag "animal spider"
+#theme "spider"
+#theme "spidertotem"
+#theme "totemanimal"
+#tag "guaranteedprefix spider"
+#tag "maxprot 14"
+#enditem
+
+#newitem
 #name "flying fish"
 #gameid -1
 #sprite /graphics/machakans/mounts/flyingfish.png
@@ -131,7 +158,7 @@
 #theme "totemanimal"
 #tag "maxprot 8"
 #tag "guaranteedprefix fish"
-#basechance 0.1
+#basechance 0.25
 #chanceinc "personalcommand #swampsurvival 0.9"
 #chanceinc "personalcommand #pooramphibian *10"
 #chanceinc "personalcommand #amphibian *10"
