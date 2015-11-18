@@ -455,8 +455,8 @@ public class SacredGenerator extends TroopGenerator {
 		String toGet = "sacred";
 		if(Generic.containsTag(race.tags, toGet + "infantrychance"))
 			roles.put("infantry", Double.parseDouble(Generic.getTagValue(race.tags, toGet + "infantrychance")));
-		if(Generic.containsTag(race.tags, toGet + "cavalrychance"))
-			roles.put("mounted", Double.parseDouble(Generic.getTagValue(race.tags, toGet + "cavalrychance")));
+		if(Generic.containsTag(race.tags, toGet + "mountedchance"))
+			roles.put("mounted", Double.parseDouble(Generic.getTagValue(race.tags, toGet + "mountedchance")));
 		if(Generic.containsTag(race.tags, toGet + "chariotchance"))
 			roles.put("chariot", Double.parseDouble(Generic.getTagValue(race.tags, toGet + "chariotchance")));
 		if(Generic.containsTag(race.tags, toGet + "rangedchance"))
