@@ -3,41 +3,156 @@
 #gameid 17
 #sprite /graphics/monkey/weapon/bandar/axe.png
 #theme "primitive"
-#tag "name infantry axeman"
+#theme "enlightened"
+#theme "imperial"
+#theme "iron"
+#enditem
+
+#newitem
+#id hatchet_bronze
+#gameid 646
+#sprite /graphics/monkey/weapon/bandar/hatchet_bronze.png
+#theme "primitive"
+#theme "enlightened"
+#theme "imperial"
+#theme "bronze"
 #enditem
 
 #newitem
 #id greataxe
 #gameid 18
 #sprite /graphics/monkey/weapon/bandar/battleaxe.png
-#tag "name infantry axeman"
+#theme "enlightened"
+#theme "imperial"
+#theme "iron"
+#enditem
+
+#newitem
+#id greataxe_bronze
+#gameid bronzebattleaxe
+#sprite /graphics/monkey/weapon/bandar/battleaxe_bronze.png
+#theme "enlightened"
+#theme "imperial"
+#theme "iron"
 #enditem
 
 #newitem
 #id mace
 #gameid 12
 #sprite /graphics/monkey/weapon/bandar/mace.png
-#tag "name infantry maceman"
+#theme "primitive"
+#theme "enlightened"
+#theme "imperial"
 #enditem
 
 #newitem
 #id spear
 #gameid 1
 #sprite /graphics/monkey/weapon/bandar/spear.png
-#tag "name infantry spearman"
+#theme "enlightened"
+#theme "imperial"
+#theme "iron"
 #theme formationfighter
+#enditem
+
+#newitem
+#id spear_bronze
+#gameid 643
+#sprite /graphics/monkey/weapon/bandar/spear_bronze.png
+#theme "enlightened"
+#theme "imperial"
+#theme "bronze"
+#theme formationfighter
+#enditem
+
+#newitem
+#id longspear
+#gameid 28
+#sprite /graphics/monkey/weapon/bandar/longspear.png
+#theme "imperial"
+#theme "iron"
+#theme formationfighter
+#enditem
+
+#newitem
+#id longspear_bronze
+#gameid 644
+#sprite /graphics/monkey/weapon/bandar/longspear_bronze.png
+#theme "imperial"
+#theme "bronze"
+#theme formationfighter
+#enditem
+
+#newitem
+#id shortsword
+#gameid 6
+#sprite /graphics/monkey/weapon/bandar/shortsword.png
+#theme "iron"
+#theme "imperial"
+#enditem
+
+#newitem
+#id shortsword_bronze
+#gameid 645
+#sprite /graphics/monkey/weapon/bandar/shortsword_bronze.png
+#theme "bronze"
+#theme "imperial"
+#enditem
+
+#newitem
+#id broadsword
+#gameid 8
+#sprite /graphics/monkey/weapon/bandar/broadsword.png
+#theme "advanced"
+#theme "iron"
+#theme "imperial"
 #enditem
 
 #newitem
 #id falchion
 #gameid 10
 #sprite /graphics/monkey/weapon/bandar/falchion.png
-#tag "name infantry falchioneer"
+#theme "iron"
+#theme "enlightened"
 #enditem
 
+#newitem
+#id greatclub
+#gameid 165
+#sprite /graphics/monkey/weapon/bandar/cudgel.png
+#theme "primitive"
+#theme "wood"
+#theme "enlightened"
+#enditem
 
 #newitem
 #id cudgel
 #gameid 363
 #sprite /graphics/monkey/weapon/bandar/cudgel.png
+#theme "iron"
+#theme "enlightened"
+#enditem
+
+#newitem
+#id maul
+#gameid 14
+#sprite /graphics/monkey/weapon/bandar/maul.png
+#theme "imperial"
+#theme "enlightened"
+#enditem
+
+#newitem
+#id flail
+#gameid 16
+#sprite /graphics/monkey/weapon/bandar/flail.png
+#theme "imperial"
+#theme "iron"
+#enditem
+
+#newitem
+#id flail_bronze
+#gameid 16
+#sprite /graphics/monkey/weapon/bandar/flail_bronze.png
+#theme "imperial"
+#theme "bronze"
 #enditem
