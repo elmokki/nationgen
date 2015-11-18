@@ -6,6 +6,8 @@
 #name "vanara sacred infantry"
 #role "sacred infantry"
 #role "elite infantry"
+#theme "imperial"
+#theme "enlightened"
 #theme "terrestrial"
 #theme "winged"
 #subrace vanara
@@ -46,11 +48,13 @@
 #name "vanara sacred archer"
 #role "sacred ranged"
 #role "elite ranged"
+#theme "imperial"
+#theme "enlightened"
 #theme "terrestrial"
 #theme "winged"
 #subrace vanara
 
-#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap bonusweapon weapon armor cloakf quiver offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap bonusweapon weapon quiver armor cloakf offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/monkey/vanara/normal/sacredbases.txt
 #load shadow /data/items/monkey/vanara/normal/shadow.txt
@@ -85,6 +89,8 @@
 #name "vanara sacred cavalry"
 #role "sacred mounted"
 #role "elite mounted"
+#theme "imperial"
+#theme "enlightened"
 #theme "terrestrial"
 #basechance 0.5
 #subrace vanara

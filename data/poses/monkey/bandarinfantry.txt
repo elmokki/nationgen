@@ -3,11 +3,13 @@
 #name "bandar infantry"
 #role "infantry"
 #role "elite"
+#theme "imperial"
+#theme "enlightened"
 #theme "terrestrial"
 #theme "winged"
 #subrace bandar
 
-#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap bonusweapon armor cloakf quiver weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap bonusweapon quiver armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/monkey/bandar/normal/bases.txt
 #load shadow /data/items/monkey/bandar/normal/shadow.txt
@@ -39,11 +41,13 @@
 #newpose
 #name "bandar light infantry"
 #role "infantry"
+#theme "imperial"
+#theme "enlightened"
 #theme "terrestrial"
 #theme "winged"
 #subrace bandar
 
-#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap bonusweapon armor cloakf quiver weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap bonusweapon quiver armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/monkey/bandar/normal/bases.txt
 #load shadow /data/items/monkey/bandar/normal/shadow.txt
@@ -75,11 +79,13 @@
 #newpose
 #name "bandar archer"
 #role "ranged"
+#theme "imperial"
+#theme "enlightened"
 #theme "terrestrial"
 #theme "winged"
 #subrace bandar
 
-#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap quiver armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/monkey/bandar/normal/bases.txt
 #load shadow /data/items/monkey/bandar/normal/shadow.txt
@@ -104,4 +110,49 @@
 #generateitem 1 bonusweapon
 
 #command "#maxage 45"
+#endpose
+
+
+-------- Gladiators (Imperial)
+#newpose
+#name "bandar gladiators"
+#role "infantry"
+#theme "imperial"
+#theme "terrestrial"
+#theme "winged"
+#cannot_be_pd
+
+#basechance 0.5
+
+#subrace bandar
+
+#freetemplatefilter gladiatortemplate gladiator
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap bonusweapon quiver armor cloakf weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/monkey/bandar/normal/bases.txt
+#load shadow /data/items/monkey/bandar/normal/shadow.txt
+
+#load hands /data/items/monkey/bandar/normal/hands.txt
+
+#load cloakf /data/items/monkey/bandar/normal/cloakf.txt
+#load cloakb /data/items/monkey/bandar/normal/cloakb.txt
+
+
+#load armor /data/items/monkey/bandar/normal/lightarmor.txt
+#load helmet /data/items/monkey/bandar/normal/helmet.txt
+
+#load weapon /data/items/monkey/bandar/normal/weapon.txt
+#load bonusweapon /data/items/monkey/bandar/normal/lightbonusranged.txt 4 -4
+
+#load offhand /data/items/monkey/bandar/normal/offhand.txt
+#load offhand /data/items/monkey/bandar/normal/shields.txt
+
+#load wings /data/items/monkey/bandar/normal/wings.txt
+
+#generateitem 1 wings
+
+#command "#maxage 45"
+#maxvarieties 2
+#maxunits 1
 #endpose
