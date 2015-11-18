@@ -23,8 +23,37 @@
 #theme advanced
 #end
 
------ Misc ranged
+---- Specific armors (imperial)
 
+#new 
+#name "legionary"
+#basechance 0
+#chanceinc hastheme imperial 10
+#chanceinc slot armor 99 90
+#chanceinc slot armor 117 90
+#chanceinc slot armor 116 10
+#chanceinc slot armor 9 *5
+#chanceinc slot armor 14 *10
+#chanceinc slot armor 19 *20
+#chanceinc slot offhand 4 *2
+#chanceinc slot helmet 126 10
+#chanceinc slot helmet 127 10
+#chanceinc "prot below 10 *0"
+#end
+
+#new 
+#name "auxiliary"
+#basechance 0
+#chanceinc hastheme imperial 16
+#chanceinc slot armor 116 4
+#chanceinc slot helmet 126 5
+#chanceinc slot helmet 127 5
+#chanceinc slot offhand 4 *2
+#chanceinc "prot above 10 *0"
+#end
+
+
+----- Misc ranged
 #new 
 #name "blowpiper"
 #basechance 0
