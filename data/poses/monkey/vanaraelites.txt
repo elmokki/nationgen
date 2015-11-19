@@ -6,11 +6,13 @@
 #name "vanara sacred infantry"
 #role "sacred infantry"
 #role "elite infantry"
+#theme "imperial"
+#theme "enlightened"
 #theme "terrestrial"
 #theme "winged"
 #subrace vanara
 
-#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/monkey/vanara/normal/sacredbases.txt
 #load shadow /data/items/monkey/vanara/normal/shadow.txt
@@ -27,7 +29,7 @@
 #load weapon /data/items/monkey/vanara/normal/weapon.txt
 #load bonusweapon /data/items/monkey/vanara/normal/bonusranged.txt 0 1
 
-#load offhand /data/items/monkey/vanara/normal/shields.txt
+#load offhand /data/items/monkey/vanara/normal/shields_elite.txt
 #load offhand /data/items/monkey/vanara/normal/offhand.txt
 
 #load wings /data/items/monkey/vanara/normal/wings.txt
@@ -46,11 +48,13 @@
 #name "vanara sacred archer"
 #role "sacred ranged"
 #role "elite ranged"
+#theme "imperial"
+#theme "enlightened"
 #theme "terrestrial"
 #theme "winged"
 #subrace vanara
 
-#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap bonusweapon weapon quiver armor cloakf offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/monkey/vanara/normal/sacredbases.txt
 #load shadow /data/items/monkey/vanara/normal/shadow.txt
@@ -80,16 +84,18 @@
 #endpose
 
 
--------- Sacred
+-------- Sacred cavalry
 #newpose
 #name "vanara sacred cavalry"
 #role "sacred mounted"
 #role "elite mounted"
+#theme "imperial"
+#theme "enlightened"
 #theme "terrestrial"
 #basechance 0.5
 #subrace vanara
 
-#renderorder "shadow wings cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow wings cloakb mount basesprite shirt legs bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/monkey/vanara/mounted/sacredbases.txt
 
@@ -98,14 +104,13 @@
 #load cloakf /data/items/monkey/vanara/normal/cloakf.txt
 #load cloakb /data/items/monkey/vanara/normal/cloakb.txt
 
-
-#load armor /data/items/monkey/vanara/normal/armor.txt
+#load armor /data/items/monkey/vanara/mounted/armor.txt
 #load helmet /data/items/monkey/vanara/normal/helmet.txt
 
 #load weapon /data/items/monkey/vanara/normal/weapon.txt
 #load bonusweapon /data/items/monkey/vanara/normal/bonusranged.txt 0 1
 
-#load offhand /data/items/monkey/vanara/normal/shields.txt
+#load offhand /data/items/monkey/vanara/mounted/shields.txt
 #load offhand /data/items/monkey/vanara/normal/offhand.txt
 
 #load mount /data/items/monkey/vanara/mounted/mounts.txt 5 -15

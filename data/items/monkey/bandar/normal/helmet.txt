@@ -5,6 +5,7 @@
 #gameid -1
 #basechance 4
 #armor
+#tag "eliteversion laurel"
 #theme "enlightened"
 #theme "imperial"
 #theme "naked"
@@ -170,4 +171,15 @@
 #theme "elite"
 #theme "iron"
 #minprot 8
+#enditem
+
+#newitem
+#id laurel
+#gameid -1
+#basechance 0
+#chanceinc "personalcommand holy 0.5"
+#sprite /graphics/monkey/helmet/bandar_mage/laurel.png
+#armor
+#theme "elite"
+#theme "imperial"
 #enditem

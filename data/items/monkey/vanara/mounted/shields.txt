@@ -1,0 +1,161 @@
+-- Common shields
+#newitem
+#basechance 10
+#id woodshield
+#gameid 2
+#sprite /graphics/monkey/offhand/vanara/woodshield.png
+#armor
+#theme "enlightened"
+#theme "imperial"
+#theme "wood"
+#enditem
+
+#newitem
+#basechance 10
+#id woodbuckler
+#gameid 1
+#sprite /graphics/monkey/offhand/vanara/woodbuckler.png
+#armor
+#theme "enlightened"
+#theme "imperial"
+#theme "wood"
+#enditem
+
+#newitem
+#basechance 10
+#id bronzeshield
+#gameid 209
+#sprite /graphics/monkey/offhand/vanara/bronzeshield.png
+#eliteversion "bronzeshield_gilt"
+#armor
+#theme "enlightened"
+#theme "bronze"
+#enditem
+
+#newitem
+#basechance 10
+#id bronzebuckler
+#gameid 1
+#sprite /graphics/monkey/offhand/vanara/bronzebuckler.png
+#eliteversion "bronzebuckler_gilt"
+#armor
+#theme "enlightened"
+#theme "bronze"
+#enditem
+
+#newitem
+#basechance 10
+#id bronzeshield_gilt
+#gameid 209
+#sprite /graphics/monkey/offhand/vanara/giltshield.png
+#armor
+#theme "enlightened"
+#theme "bronze"
+#theme "elite"
+#enditem
+
+#newitem
+#basechance 10
+#id bronzebuckler_gilt
+#gameid 1
+#sprite /graphics/monkey/offhand/vanara/giltbuckler.png
+#armor
+#theme "enlightened"
+#theme "bronze"
+#theme "elite"
+#enditem
+
+#newitem
+#basechance 10
+#id ironshield
+#gameid 208
+#sprite /graphics/monkey/offhand/vanara/ironshield.png
+#eliteversion "ironshield_gilt"
+#armor
+#theme "enlightened"
+#theme "imperial"
+#theme "iron"
+#enditem
+
+#newitem
+#basechance 10
+#id ironbuckler
+#gameid 1
+#sprite /graphics/monkey/offhand/vanara/ironbuckler.png
+#eliteversion "ironbuckler_gilt"
+#armor
+#theme "enlightened"
+#theme "imperial"
+#theme "iron"
+#enditem
+
+#newitem
+#basechance 10
+#id ironshield_gilt
+#gameid 208
+#sprite /graphics/monkey/offhand/vanara/giltshield.png
+#armor
+#theme "enlightened"
+#theme "imperial"
+#theme "iron"
+#theme "elite"
+#enditem
+
+#newitem
+#basechance 10
+#id ironbuckler_gilt
+#gameid 1
+#sprite /graphics/monkey/offhand/vanara/giltbuckler.png
+#armor
+#theme "enlightened"
+#theme "imperial"
+#theme "iron"
+#theme "elite"
+#enditem
+
+
+-- Rare shields
+#newitem
+#id kite1
+#gameid 3
+#basechance 4
+#sprite /graphics/offhand/standard/kite1.png
+#recolormask /graphics/offhand/standard/kite1_recolormask.png
+#offsetx 2
+#offsety 2
+#armor
+#theme "enlightened"
+#theme "imperial"
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem
+#id kite2
+#gameid 3
+#basechance 4
+#sprite /graphics/offhand/standard/kite2.png
+#recolormask /graphics/offhand/standard/kite2_recolormask.png
+#offsetx 2
+#offsety 2
+#armor
+#theme "enlightened"
+#theme "imperial"
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem
+#id kite6_colored
+#gameid 3
+#basechance 4
+#sprite /graphics/offhand/standard/kite6.png
+#recolormask self
+#offsetx 2
+#offsety 2
+#armor
+#theme "enlightened"
+#theme "imperial"
+#theme "advanced"
+#theme "iron"
+#enditem

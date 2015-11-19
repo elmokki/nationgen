@@ -23,6 +23,8 @@
 #tag "guaranteedprefix serpent"
 #tag "maxprot 13"
 #description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#theme "imperial"
+#theme "enlightened"
 #enditem
 
 #newitem
@@ -50,6 +52,8 @@
 #tag "guaranteedprefix serpent"
 #description "If the rider dies, the serpent will carry on fighting until the end of the battle."
 #tag "minprot 14"
+#theme "imperial"
+#theme "enlightened"
 #enditem
 
 #newitem
@@ -74,6 +78,9 @@
 #theme "specialmount"
 #tag "guaranteedprefix lizard"
 #tag "maxprot 15"
+#theme "imperial"
+#theme "enlightened"
+#theme "oriental"
 #enditem
 
 #newitem
@@ -103,6 +110,9 @@
 #tag "minprot 0"
 #tag "maxprot 100"
 #sacredextra nonholyshape 0.25
+#theme "occidental"
+#theme "enlightened"
+#theme "oriental"
 #enditem
 
 
@@ -131,6 +141,8 @@
 #tag "guaranteedprefix spider"
 #tag "minprot 0"
 #tag "maxprot 12"
+#theme "occidental"
+#theme "enlightened"
 #enditem
 
 #newitem
@@ -159,9 +171,9 @@
 #tag "guaranteedprefix spider"
 #tag "minprot 13"
 #tag "maxprot 100"
+#theme "occidental"
+#theme "enlightened"
 #enditem
-
-
 
 
 #newitem
@@ -190,6 +202,8 @@
 #tag "guaranteedprefix tiger"
 #tag "minprot 0"
 #tag "maxprot 12"
+#theme "oriental"
+#theme "enlightened"
 #enditem
 
 
@@ -218,7 +232,9 @@
 #tag "guaranteedprefix jaguar"
 #tag "minprot 0"
 #tag "maxprot 12"
+#theme "occidental"
 #enditem
+
 
 #newitem
 #name "black tiger"
@@ -244,7 +260,10 @@
 #tag "minprot 0"
 #tag "maxprot 11"
 #basechance 0.5
+#theme "oriental"
+#theme "enlightened"
 #enditem
+
 
 #newitem
 #name "lion"
@@ -267,7 +286,11 @@
 #tag "animal lion"
 #tag "guaranteedprefix lion"
 #basechance 4
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
 #enditem
+
 
 #newitem
 #basechance 8
@@ -294,6 +317,9 @@
 #tag "animal 'winged lion'"
 #tag "guaranteedprefix lion"
 #theme "flying"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
 #enditem
 
 
@@ -322,9 +348,9 @@
 #tag "minprot 14"
 #tag "maxprot 20"
 #sacredextra nonholyshape 0.7
+#theme "occidental"
+#theme "enlightened"
 #enditem
-
-
 
 
 #newitem
@@ -356,8 +382,10 @@
 #tag "minprot 6"
 #tag "maxprot 14"
 #sacredextra 0.5
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
 #enditem
-
 
 
 #newitem
@@ -380,6 +408,9 @@
 #tag "maxprot 11"
 #epicness 0.25
 #offsetx -2
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
 #enditem
 
 #newitem
@@ -405,6 +436,8 @@
 #tag "name commander windlord"
 #tag "guaranteedprefix pegasus"
 #sacredextra 0.7
+#theme "imperial"
+#theme "enlightened"
 #enditem
 
 #newitem
@@ -430,6 +463,8 @@
 #tag "animal unicorn"
 #tag "guaranteedprefix unicorn"
 #offsetx -2
+#theme "oriental"
+#theme "enlightened"
 #enditem
 
 #newitem
@@ -455,6 +490,8 @@
 #tag "animal unicorn"
 #tag "guaranteedprefix unicorn"
 #offsetx -2
+#theme "oriental"
+#theme "enlightened"
 #enditem
 
 #newitem
@@ -487,6 +524,10 @@
 #tag "name commander beastmaster"
 #description "Leaves a wyvern behind when the rider dies"
 #sacredextra nonholyshape 0.25
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
 #enditem
 
 #newitem
@@ -513,12 +554,14 @@
 #theme "heavy"
 #description "Leaves a giant scorpion behind when the rider dies"
 #tag "guaranteedprefix scorpion"
-
 #tag "minprot 10"
 #tag "maxprot 100"
 #chanceinc primaryrace abysian *100
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
 #enditem
-
 
 
 #newitem
@@ -544,6 +587,9 @@
 #tag "animal 'cave cow'"
 #tag "guaranteedprefix 'cave cow'"
 #chanceinc primaryrace "Pale One" *100
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
 #enditem
 
 
@@ -569,4 +615,34 @@
 #tag "name commander beastmaster"
 #tag "guaranteedprefix bear"
 #tag "minprot 8"
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#enditem
+
+#newitem
+#name "dire wolf"
+#basechance 0.3
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 22"
+#define "#mounted"
+#define "#weapon 237 --- bite"
+#define "#secondtmpshape direwolf1mount"
+#define "#gcost +25"
+#define "#ressize 2"
+#define "#enc 4"
+#tag "animal wolf"
+#theme "light"
+#tag "maxprot 11"
+#tag "guaranteedprefix wolf"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#offsety 0
+#offsetx -9
+#theme "imperial"
+#theme "occidental"
 #enditem

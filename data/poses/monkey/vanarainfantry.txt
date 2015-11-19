@@ -5,12 +5,14 @@
 #name "vanara infantry"
 #role "infantry"
 #basechance 0.5
+#theme "imperial"
+#theme "enlightened"
 #theme "terrestrial"
 #theme "winged"
 
 #subrace vanara
 
-#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/monkey/vanara/normal/bases.txt
 #load shadow /data/items/monkey/vanara/normal/shadow.txt
@@ -27,7 +29,6 @@
 #load bonusweapon /data/items/monkey/vanara/normal/bonusranged.txt 0 1
 
 #load offhand /data/items/monkey/vanara/normal/shields.txt
-#load offhand /data/items/monkey/vanara/normal/towershields.txt
 #load offhand /data/items/monkey/vanara/normal/offhand.txt
 
 #load wings /data/items/monkey/vanara/normal/wings.txt
@@ -47,12 +48,14 @@
 #role "scout"
 #role "infantry"
 #basechance 0.5
+#theme "imperial"
+#theme "enlightened"
 #theme "terrestrial"
 #theme "winged"
 
 #subrace vanara
 
-#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/monkey/vanara/normal/bases.txt
 #load shadow /data/items/monkey/vanara/normal/shadow.txt
@@ -87,12 +90,14 @@
 #name "vanara archer"
 #role "ranged"
 #basechance 0.5
+#theme "imperial"
+#theme "enlightened"
 #theme "terrestrial"
 #theme "winged"
 
 #subrace vanara
 
-#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/monkey/vanara/normal/bases.txt
 #load shadow /data/items/monkey/vanara/normal/shadow.txt
@@ -127,12 +132,14 @@
 #name "vanara light archer"
 #role "ranged"
 #basechance 0.5
+#theme "imperial"
+#theme "enlightened"
 #theme "terrestrial"
 #theme "winged"
 
 #subrace vanara
 
-#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap  quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
 
 #load basesprite /data/items/monkey/vanara/normal/bases.txt
@@ -169,10 +176,12 @@
 #name "vanara cavalry"
 #role "mounted"
 #basechance 0.5
+#theme "imperial"
+#theme "enlightened"
 #theme "terrestrial"
 #subrace vanara
 
-#renderorder "shadow cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow cloakb mount basesprite shirt legs bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/monkey/vanara/mounted/bases.txt
 
@@ -182,18 +191,64 @@
 #load cloakb /data/items/monkey/vanara/normal/cloakb.txt
 
 
-#load armor /data/items/monkey/vanara/normal/armor.txt
+#load armor /data/items/monkey/vanara/mounted/armor.txt
 #load helmet /data/items/monkey/vanara/normal/helmet.txt
 
 #load weapon /data/items/monkey/vanara/normal/weapon.txt
 #load bonusweapon /data/items/monkey/vanara/normal/bonusranged.txt 0 1
 
-#load offhand /data/items/monkey/vanara/normal/shields.txt
+#load offhand /data/items/monkey/vanara/mounted/shields.txt
 #load offhand /data/items/monkey/vanara/normal/offhand.txt
 
 #load mount /data/items/monkey/vanara/mounted/mounts.txt 5 -15
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
 
 #command "#maxage 30"
+
+#endpose
+
+-------- Gladiators (Imperial)
+#newpose
+#name "vanara gladiators"
+#role "infantry"
+#theme "imperial"
+#theme "terrestrial"
+#theme "winged"
+#cannot_be_pd
+
+#basechance 0.5
+
+#subrace vanara
+
+#freetemplatefilter gladiatortemplate gladiator
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/monkey/vanara/normal/bases.txt
+#load shadow /data/items/monkey/vanara/normal/shadow.txt
+
+#load hands /data/items/monkey/vanara/normal/hands.txt
+
+#load cloakf /data/items/monkey/vanara/normal/cloakf.txt
+#load cloakb /data/items/monkey/vanara/normal/cloakb.txt
+
+#load armor /data/items/monkey/vanara/normal/lightarmor.txt
+#load helmet /data/items/monkey/vanara/normal/helmet.txt
+
+#load weapon /data/items/monkey/vanara/normal/weapon.txt
+#load bonusweapon /data/items/monkey/vanara/normal/lightbonusranged.txt 0 1
+
+#load offhand /data/items/monkey/vanara/normal/shields.txt
+#load offhand /data/items/monkey/vanara/normal/offhand.txt
+
+#load wings /data/items/monkey/vanara/normal/wings.txt
+#load overlay /data/items/monkey/vanara/normal/overlay.txt
+
+#generateitem 1 wings
+#generateitem 1 bonusweapon
+#command "#maxage 30"
+
+#maxvarieties 2
+#maxunits 1
 
 #endpose

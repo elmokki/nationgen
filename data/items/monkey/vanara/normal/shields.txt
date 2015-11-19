@@ -1,11 +1,35 @@
-
+-- Common shields
+#newitem
+#basechance 10
+#id woodshield
+#gameid 2
+#sprite /graphics/monkey/offhand/vanara/woodshield.png
+#armor
+#theme "enlightened"
+#theme "imperial"
+#theme "wood"
+#enditem
 
 #newitem
 #basechance 10
-#id shield1
+#id woodbuckler
+#gameid 1
+#sprite /graphics/monkey/offhand/vanara/woodbuckler.png
+#armor
+#theme "enlightened"
+#theme "imperial"
+#theme "wood"
+#enditem
+
+#newitem
+#basechance 10
+#id bronzeshield
 #gameid 209
 #sprite /graphics/monkey/offhand/vanara/bronzeshield.png
+#eliteversion "bronzeshield_gilt"
 #armor
+#theme "enlightened"
+#theme "bronze"
 #enditem
 
 #newitem
@@ -13,133 +37,122 @@
 #id bronzebuckler
 #gameid 1
 #sprite /graphics/monkey/offhand/vanara/bronzebuckler.png
+#eliteversion "bronzebuckler_gilt"
 #armor
-#enditem
-
-
---- super rare stuff
-
-
-#newitem
-#basechance 0.01
-#id kite1
-#gameid 3
-#sprite /graphics/offhand/standard/kite1.png
-#armor
-#theme "advanced"
-#recolormask /graphics/offhand/standard/kite1_recolormask.png
-#offsetx 4
-#offsety 4
+#theme "enlightened"
+#theme "bronze"
 #enditem
 
 #newitem
-#basechance 0.01
-#id kite2
-#gameid 3
-#sprite /graphics/offhand/standard/kite2.png
-#armor
-#theme "advanced"
-#recolormask /graphics/offhand/standard/kite2_recolormask.png
-#offsetx 4
-#offsety 4
-#enditem
-
-
-#newitem
-#basechance 0.01
-#id shield6
-#gameid 2
-#sprite /graphics/offhand/standard/shield6.png
-#recolormask /graphics/offhand/standard/shield6_recolormask.png
-#armor
-#offsetx 4
-#offsety 4
-#enditem
-
-
-
-#newitem
-#basechance 0.01
-#id kite3
-#gameid 3
-#sprite /graphics/offhand/standard/kite3.png
-#armor
-#recolormask /graphics/offhand/standard/kite3_recolormask.png
-#theme "advanced"
-#offsetx 4
-#offsety 4
-#enditem
-
-
-
-#newitem
-#basechance 0.01
-#id shield1
-#gameid 2
-#sprite /graphics/offhand/standard/shield1.png
-#armor
-#offsetx 4
-#offsety 4
-#enditem
-
-#newitem
-#basechance 0.01
-#id shield2
-#gameid 2
-#sprite /graphics/offhand/standard/shield2.png
-#armor
-#offsetx 4
-#offsety 4
-#enditem
-
-#newitem
-#basechance 0.01
-#id shield3
-#gameid 2
-#sprite /graphics/offhand/standard/shield3.png
-#armor
-#offsetx 4
-#offsety 4
-#enditem
-
-#newitem
-#basechance 0.01
-#id shield4
-#gameid 208
-#sprite /graphics/offhand/standard/shield4.png
-#armor
-#offsetx 4
-#offsety 4
-#enditem
-
-#newitem
-#basechance 0.01
-#id shield4yellow
+#basechance 10
+#id bronzeshield_gilt
 #gameid 209
-#sprite /graphics/offhand/standard/shield4-yellow.png
+#sprite /graphics/monkey/offhand/vanara/giltshield.png
 #armor
-#offsetx 4
-#offsety 4
-#enditem
-
-
-#newitem
-#basechance 0.01
-#id shield5
-#gameid 2
-#sprite /graphics/offhand/standard/shield5.png
-#armor
-#offsetx 4
-#offsety 4
+#theme "enlightened"
+#theme "bronze"
+#theme "elite"
 #enditem
 
 #newitem
-#basechance 0.01
-#id shield6
-#gameid 2
-#sprite /graphics/offhand/standard/coe-metalshield.png
+#basechance 10
+#id bronzebuckler_gilt
+#gameid 1
+#sprite /graphics/monkey/offhand/vanara/giltbuckler.png
 #armor
-#offsetx 4
-#offsety 4
+#theme "enlightened"
+#theme "bronze"
+#theme "elite"
 #enditem
 
+#newitem
+#basechance 10
+#id ironshield
+#gameid 208
+#sprite /graphics/monkey/offhand/vanara/ironshield.png
+#eliteversion "ironshield_gilt"
+#armor
+#theme "enlightened"
+#theme "imperial"
+#theme "iron"
+#enditem
+
+#newitem
+#basechance 10
+#id ironbuckler
+#gameid 1
+#sprite /graphics/monkey/offhand/vanara/ironbuckler.png
+#eliteversion "ironbuckler_gilt"
+#armor
+#theme "enlightened"
+#theme "imperial"
+#theme "iron"
+#enditem
+
+#newitem
+#basechance 10
+#id ironshield_gilt
+#gameid 208
+#sprite /graphics/monkey/offhand/vanara/giltshield.png
+#armor
+#theme "enlightened"
+#theme "imperial"
+#theme "iron"
+#theme "elite"
+#enditem
+
+#newitem
+#basechance 10
+#id ironbuckler_gilt
+#gameid 1
+#sprite /graphics/monkey/offhand/vanara/giltbuckler.png
+#armor
+#theme "enlightened"
+#theme "imperial"
+#theme "iron"
+#theme "elite"
+#enditem
+
+
+-- Rare shields
+#newitem
+#id tower
+#gameid 4
+#basechance 3
+#sprite /graphics/offhand/standard/tower1.png
+#recolormask /graphics/offhand/standard/tower1_recolormask.png
+#theme "imperial"
+#theme "iron"
+#theme "elite"
+#armor
+#offsetx 2
+#offsety 2
+#enditem
+
+#newitem
+#id tower2
+#gameid 4
+#basechance 3
+#sprite /graphics/offhand/standard/tower1.png
+#recolormask /graphics/offhand/standard/tower1_recolormask2.png
+#theme "imperial"
+#theme "iron"
+#theme "elite"
+#armor
+#offsetx 2
+#offsety 2
+#enditem
+
+#newitem
+#id tower3
+#gameid 4
+#basechance 3
+#sprite /graphics/offhand/standard/tower1.png
+#recolormask /graphics/offhand/standard/tower1_recolormask3.png
+#theme "imperial"
+#theme "iron"
+#theme "elite"
+#armor
+#offsetx 2
+#offsety 2
+#enditem

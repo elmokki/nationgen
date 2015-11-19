@@ -82,7 +82,7 @@
 #name terrestrial
 #basechance 2
 #themeinc theme terrestrial *10000
-#racedefinition "#generationchance cavalry 0.125"
+#racedefinition "#generationchance mounted 0.125"
 #racedefinition "#monsterchance 0.3"
 #endtheme
 
@@ -94,7 +94,7 @@
 #chanceinc era 1 *2
 #chanceinc era 3 *0.5
 #themeinc theme winged *10000
-#racedefinition "#generationchance cavalry 0"
+#racedefinition "#generationchance mounted 0"
 #racedefinition "#monsterchance 0"
 #endtheme
 
@@ -189,7 +189,6 @@
 #racedefinition "#pose vanaramages"
 #racedefinition "#pose vanaraelders"
 #racedefinition "#pose markata"
-#racedefinition "#visiblename Monkey"
 #racedefinition "#nationcommand '#idealcold -1'"
 #racedefinition "#longsyllables /data/names/nations/nahuatl/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
@@ -221,7 +220,6 @@
 #racedefinition "#pose bandarmages"
 #racedefinition "#pose bandarelders"
 #racedefinition "#pose markata"
-#racedefinition "#visiblename Ape"
 #racedefinition "#nationcommand '#idealcold -2'"
 #racedefinition "#longsyllables /data/names/nations/machakan/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/machakan/shortsyllables.txt"
@@ -236,7 +234,7 @@
 -- Weights: EA 0.5, MA 1, LA 1.5
 #newtheme
 #type cultural
-#name imperial_vanara
+#name imperial
 #theme imperial
 #basechance 1
 #chanceinc era 1 -0.5
@@ -255,13 +253,14 @@
 #racedefinition "#pose vanaraelites"
 #racedefinition "#pose vanaramages"
 #racedefinition "#pose vanaraelders"
-#racedefinition "#visiblename Monkey"
 #racedefinition "#nationcommand '#idealcold 0'"
 #racedefinition "#longsyllables /data/names/nations/romance/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/romance/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/romance/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 106'"
 #racedefinition "#tag 'preferredmount wolf'"
+#racedefinition "#sacredmountedchance 2.5"
+#racedefinition "#sacredinfantrychance 2.5"
 #racedefinition "#tag 'imperial'"
 #endtheme
 
@@ -269,7 +268,7 @@
 -- Weights: EA 0.5, MA 1, LA 1.5
 #newtheme
 #type cultural
-#name imperial_bandar
+#name imperial
 #theme imperial
 #basechance 1
 #chanceinc era 1 -0.5
@@ -288,11 +287,11 @@
 #racedefinition "#pose bandarelders"
 #racedefinition "#pose vanaratroops"
 #racedefinition "#pose vanaramages"
-#racedefinition "#visiblename Ape"
 #racedefinition "#nationcommand '#idealcold 0'"
 #racedefinition "#longsyllables /data/names/nations/romance/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/romance/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/romance/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 106'"
+#racedefinition "#sacredinfantrychance 5"
 #racedefinition "#tag 'imperial'"
 #endtheme

@@ -3,7 +3,13 @@
 #gameid -1
 #basechance 4
 #tag "eliteversion ironcap-elite"
+#tag "eliteversion bronzecap-elite"
+#tag "eliteversion laurel"
 #armor
+#theme "enlightened"
+#theme "imperial"
+#theme "naked"
+#theme "primitive"
 #enditem
 
 #newitem
@@ -12,6 +18,18 @@
 #sprite /graphics/monkey/helmet/vanara/halfhelmet.png
 #tag "eliteversion halfhelmet-elite"
 #armor
+#theme "enlightened"
+#theme "iron"
+#enditem
+
+#newitem
+#id halfhelmet-elite
+#gameid 118
+#sprite /graphics/monkey/helmet/vanara/halfhelmet_gilt.png
+#armor
+#theme "enlightened"
+#theme "iron"
+#theme "elite"
 #enditem
 
 #newitem
@@ -20,23 +38,134 @@
 #sprite /graphics/monkey/helmet/vanara/ironcap.png
 #tag "eliteversion ironcap-elite"
 #armor
+#theme "enlightened"
+#theme "iron"
 #enditem
-
-
-#newitem
-#id halfhelmet-elite
-#gameid 118
-#sprite /graphics/monkey/helmet/vanara/ironcap_elite.png
-#armor
-#elite
-#enditem
-
 
 #newitem
 #id ironcap-elite
 #gameid 20
-#sprite /graphics/monkey/helmet/vanara/ironcap_elite.png
+#sprite /graphics/monkey/helmet/vanara/giltcap.png
 #armor
-#elite
+#theme "enlightened"
+#theme "iron"
+#theme "elite"
 #enditem
 
+#newitem
+#id bronzecap
+#gameid 135
+#sprite /graphics/monkey/helmet/vanara/bronzecap.png
+#tag "eliteversion bronzecap-elite"
+#armor
+#theme "enlightened"
+#theme "bronze"
+#enditem
+
+#newitem
+#id bronzecap-elite
+#gameid 135
+#sprite /graphics/monkey/helmet/vanara/giltcap.png
+#armor
+#theme "enlightened"
+#theme "bronze"
+#theme "elite"
+#enditem
+
+
+
+--- Imperial helms
+#newitem
+#id leathercap_imperial
+#gameid 119
+#sprite /graphics/monkey/helmet/vanara/reinforcedhelm.png
+#tag "eliteversion crestedcap_imperial"
+#armor
+#theme "imperial"
+#theme "leather"
+#maxprot 10
+#enditem
+
+#newitem
+#id crestedcap_imperial
+#gameid 162
+#sprite /graphics/monkey/helmet/vanara/reinforcedhelm.png
+#recolormask /graphics/monkey/helmet/vanara/reinforcedhelm_recolormask.png
+#armor
+#theme "imperial"
+#theme "leather"
+#theme "elite"
+#maxprot 10
+#enditem
+
+#newitem
+#id ironcap_imperial
+#gameid 20
+#sprite /graphics/monkey/helmet/vanara/ironcap.png
+#armor
+#theme "imperial"
+#theme "iron"
+#maxprot 10
+#enditem
+
+#newitem
+#id legionaryhelmet
+#gameid 126
+#sprite /graphics/monkey/helmet/vanara/legionaryhelm.png
+#eliteversion legionaryhelmet_elite
+#armor
+#theme "imperial"
+#theme "iron"
+#minprot 8
+#enditem
+
+#newitem
+#id legionaryhelmet_elite
+#gameid 126
+#sprite /graphics/monkey/helmet/vanara/legionaryhelm.png
+#recolormask /graphics/monkey/helmet/vanara/legionaryhelm_recolormask.png
+#armor
+#theme "imperial"
+#theme "elite"
+#theme "iron"
+#minprot 8
+#enditem
+
+#newitem
+#id fullhelmet_imperial
+#gameid 21
+#basechance 0.25
+#sprite /graphics/monkey/helmet/vanara/fullhelm_imperial.png
+#eliteversion fullhelmet_imperial_elite
+#armor
+#theme "imperial"
+#theme "iron"
+#theme "advanced"
+#minprot 12
+#enditem
+
+#newitem
+#id fullhelmet_imperial_elite
+#gameid 21
+#basechance 0.25
+#sprite /graphics/monkey/helmet/vanara/fullhelm_imperial.png
+#recolormask /graphics/monkey/helmet/vanara/fullhelm_imperial_recolormask.png
+#armor
+#theme "imperial"
+#theme "elite"
+#theme "iron"
+#theme "advanced"
+#minprot 12
+#enditem
+
+#newitem
+#id laurel
+#gameid -1
+#basechance 0
+#chanceinc "personalcommand holy 0.5"
+#sprite /graphics/helmet/caster/green.png
+#offsetx 1
+#armor
+#theme "elite"
+#theme "imperial"
+#enditem
