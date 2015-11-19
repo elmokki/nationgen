@@ -1,0 +1,39 @@
+#newitem
+#id ice_blade
+#basechance 1
+#chanceinc itemtheme not armor ice *0.05
+#chanceinc itemtheme armor ice  *20
+#chanceinc itemtheme weapon ice  *200
+#chanceinc "personalcommand below #coldres 5 *0"
+#gameid 37
+#sprite /graphics/caelian/weapon/iceblade_oh.png
+#theme "ice"
+#type ice
+#enditem
+
+#newitem
+#id ice_mace
+#basechance 1
+#chanceinc itemtheme not armor ice *0.05
+#chanceinc itemtheme armor ice  *20
+#chanceinc itemtheme weapon ice  *200
+#chanceinc "personalcommand below #coldres 5 *0"
+#gameid 44
+#sprite /graphics/caelian/weapon/icemace_oh.png
+#theme "ice"
+#type ice
+#enditem
+
+#newitem
+#id ice_knife
+#basechance 1
+#chanceinc itemtheme not armor ice *0.05
+#chanceinc itemtheme armor ice  *20
+#chanceinc itemtheme weapon ice  *200
+#chanceinc "personalcommand below #coldres 5 *0"
+#gameid 35
+#sprite /graphics/caelian/weapon/iceknife_oh.png
+#theme "ice"
+#type ice
+#maxprot 12
+#enditem

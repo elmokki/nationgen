@@ -1,28 +1,190 @@
-
---- Scale
+--- Bronze Scale
+#newitem
+#name "bronze scale cuirass"
+#gameid 142
+#sprite /graphics/monkey/armor/bandar/scalecuirass_bronze.png
+#recolormask /graphics/monkey/armor/bandar/scale_recolormask.png
+#eliteversion "gilt bronze scale cuirass"
+#armor
+#theme "enlightened"
+#theme "bronze"
+#enditem
 
 #newitem
-#name "scale cuirass"
-#gameid 7
+#basechance 0.5
+#name "bronze scale hauberk"
+#gameid 136
+#sprite /graphics/monkey/armor/bandar/scalehauberk_bronze.png
+#recolormask /graphics/monkey/armor/bandar/scale_recolormask.png
+#eliteversion "gilt bronze scale hauberk"
+#armor
+#theme "enlightened"
+#theme "bronze"
+#enditem
+
+#newitem
+#basechance 0.25
+#name "bronze full scale"
+#gameid bronzescale_full
+#sprite /graphics/monkey/armor/bandar/fullscale_bronze.png
+#recolormask /graphics/monkey/armor/bandar/scale_recolormask.png
+#eliteversion "gilt bronze full scale"
+#armor
+#theme "enlightened"
+#theme "bronze"
+#enditem
+
+#newitem
+#name "gilt bronze scale cuirass"
+#gameid 142
 #sprite /graphics/monkey/armor/bandar/scalecuirass_gilt.png
 #recolormask /graphics/monkey/armor/bandar/scale_recolormask.png
 #armor
+#theme "enlightened"
+#theme "bronze"
+#theme "elite"
+#enditem
+
+#newitem
+#basechance 0.5
+#name "gilt bronze scale hauberk"
+#gameid 136
+#sprite /graphics/monkey/armor/bandar/scalehauberk_gilt.png
+#recolormask /graphics/monkey/armor/bandar/scale_recolormask.png
+#armor
+#theme "enlightened"
+#theme "bronze"
+#theme "elite"
+#enditem
+
+#newitem
+#basechance 0.25
+#name "gilt bronze full scale"
+#gameid bronzescale_full
+#sprite /graphics/monkey/armor/bandar/fullscale_gilt.png
+#recolormask /graphics/monkey/armor/bandar/scale_recolormask.png
+#armor
+#theme "enlightened"
+#theme "bronze"
+#theme "elite"
+#enditem
+
+
+--- Scale
+#newitem
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/monkey/armor/bandar/scalecuirass.png
+#recolormask /graphics/monkey/armor/bandar/scale_recolormask.png
+#eliteversion "gilt scale cuirass"
+#armor
+#theme "enlightened"
+#theme "iron"
 #enditem
 
 #newitem
 #basechance 0.5
 #name "scale hauberk short"
 #gameid 12
+#sprite /graphics/monkey/armor/bandar/scalehauberk.png
+#recolormask /graphics/monkey/armor/bandar/scale_recolormask.png
+#eliteversion "gilt scale hauberk"
+#armor
+#theme "enlightened"
+#theme "iron"
+#enditem
+
+#newitem
+#basechance 0.25
+#name "full scale"
+#gameid 17
+#sprite /graphics/monkey/armor/bandar/fullscale.png
+#recolormask /graphics/monkey/armor/bandar/scale_recolormask.png
+#eliteversion "gilt full scale"
+#armor
+#theme "enlightened"
+#theme "iron"
+#enditem
+
+#newitem
+#name "gilt scale cuirass"
+#gameid 7
+#sprite /graphics/monkey/armor/bandar/scalecuirass_gilt.png
+#recolormask /graphics/monkey/armor/bandar/scale_recolormask.png
+#armor
+#theme "enlightened"
+#theme "iron"
+#theme "elite"
+#enditem
+
+#newitem
+#basechance 0.5
+#name "gilt scale hauberk"
+#gameid 12
 #sprite /graphics/monkey/armor/bandar/scalehauberk_gilt.png
 #recolormask /graphics/monkey/armor/bandar/scale_recolormask.png
 #armor
+#theme "enlightened"
+#theme "iron"
+#theme "elite"
 #enditem
 
-#newitem -- full scale
+#newitem
 #basechance 0.25
-#name "full scale"
+#name "gilt full scale"
 #gameid 17
 #sprite /graphics/monkey/armor/bandar/fullscale_gilt.png
 #recolormask /graphics/monkey/armor/bandar/scale_recolormask.png
 #armor
+#theme "enlightened"
+#theme "iron"
+#theme "elite"
+#enditem
+
+
+
+--- Imperial armor
+#newitem
+#basechance 0.5
+#name "lorica hamata"
+#gameid 116
+#sprite /graphics/monkey/armor/bandar/lorica_hamata.png
+#recolormask /graphics/monkey/armor/bandar/lorica_hamata_recolormask.png
+#eliteversion "lorica squamata"
+#armor
+#theme "imperial"
+#enditem
+
+#newitem
+#name "lorica squamata"
+#gameid 117
+#sprite /graphics/monkey/armor/bandar/lorica_squamata.png
+#recolormask /graphics/monkey/armor/bandar/lorica_squamata_recolormask.png
+#eliteversion "lorica segmentata"
+#armor
+#theme "imperial"
+#enditem
+
+#newitem
+#name "lorica segmentata"
+#gameid 99
+#sprite /graphics/monkey/armor/bandar/lorica_segmentata.png
+#recolormask /graphics/monkey/armor/bandar/lorica_segmentata_recolormask.png
+#eliteversion "imperial plate"
+#armor
+#theme "imperial"
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "imperial plate"
+#gameid 14
+#sprite /graphics/monkey/armor/bandar/platehauberk_imperial.png
+#recolormask /graphics/monkey/armor/bandar/lorica_segmentata_recolormask.png
+#armor
+#theme "imperial"
+#theme "iron"
+#theme "advanced"
+#theme "elite"
 #enditem

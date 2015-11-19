@@ -1,12 +1,13 @@
-
 -------- Normal
-
 #newpose
 #name "bandar infantry"
 #role "infantry"
 #role "elite"
+#theme "terrestrial"
+#theme "winged"
 #subrace bandar
 
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/monkey/bandar/normal/bases.txt
 #load shadow /data/items/monkey/bandar/normal/shadow.txt
@@ -26,17 +27,23 @@
 #load offhand /data/items/monkey/bandar/normal/offhand.txt
 #load offhand /data/items/monkey/bandar/normal/shields.txt
 
+#load wings /data/items/monkey/bandar/normal/wings.txt
+
+#generateitem 1 wings
+
 #command "#maxage 45"
 #endpose
 
 
 -------- Light Normal
-
 #newpose
 #name "bandar light infantry"
 #role "infantry"
+#theme "terrestrial"
+#theme "winged"
 #subrace bandar
 
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/monkey/bandar/normal/bases.txt
 #load shadow /data/items/monkey/bandar/normal/shadow.txt
@@ -56,21 +63,28 @@
 #load offhand /data/items/monkey/bandar/normal/offhand.txt
 #load offhand /data/items/monkey/bandar/normal/shields.txt
 
+#load wings /data/items/monkey/bandar/normal/wings.txt
+
+#generateitem 1 wings
+
 #command "#maxage 45"
 #endpose
 
--------- Sacred
+
+-------- archer
 #newpose
-#name "bandar sacred infantry"
-#role "sacred infantry"
-#basechance 0.25
+#name "bandar archer"
+#role "ranged"
+#theme "terrestrial"
+#theme "winged"
 #subrace bandar
 
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
-#load basesprite /data/items/monkey/bandar/normal/bases_sacred.txt
+#load basesprite /data/items/monkey/bandar/normal/bases.txt
 #load shadow /data/items/monkey/bandar/normal/shadow.txt
 
-#load hands /data/items/monkey/bandar/normal/hands_sacred.txt
+#load hands /data/items/monkey/bandar/normal/hands.txt
 
 #load cloakf /data/items/monkey/bandar/normal/cloakf.txt
 #load cloakb /data/items/monkey/bandar/normal/cloakb.txt
@@ -79,12 +93,15 @@
 #load armor /data/items/monkey/bandar/normal/armor.txt
 #load helmet /data/items/monkey/bandar/normal/helmet.txt
 
-#load weapon /data/items/monkey/bandar/normal/weapon.txt
-#load bonusweapon /data/items/monkey/bandar/normal/bonusranged.txt 4 -4
+#load weapon /data/items/monkey/bandar/normal/bows.txt
+#load bonusweapon /data/items/monkey/bandar/normal/archerweapon.txt
 
-#load offhand /data/items/monkey/bandar/normal/offhand.txt
-#load offhand /data/items/monkey/bandar/normal/shields.txt
+#load strap /data/items/monkey/bandar/normal/strap.txt
+#load quiver /data/items/monkey/bandar/normal/quiver.txt
+#load wings /data/items/monkey/bandar/normal/wings.txt
+
+#generateitem 1 wings
+#generateitem 1 bonusweapon
 
 #command "#maxage 45"
 #endpose
-

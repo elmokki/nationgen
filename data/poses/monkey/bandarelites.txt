@@ -1,0 +1,72 @@
+-------- Sacred
+#newpose
+#name "bandar elite infantry"
+#role "sacred infantry"
+#role "elite infantry"
+#basechance 0.25
+#theme "terrestrial"
+#theme "winged"
+#subrace bandar
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/monkey/bandar/normal/bases_sacred.txt
+#load shadow /data/items/monkey/bandar/normal/shadow.txt
+
+#load hands /data/items/monkey/bandar/normal/hands_sacred.txt
+
+#load cloakf /data/items/monkey/bandar/normal/cloakf.txt
+#load cloakb /data/items/monkey/bandar/normal/cloakb.txt
+
+
+#load armor /data/items/monkey/bandar/normal/armor.txt
+#load helmet /data/items/monkey/bandar/normal/helmet.txt
+
+#load weapon /data/items/monkey/bandar/normal/weapon.txt
+#load bonusweapon /data/items/monkey/bandar/normal/bonusranged.txt 4 -4
+
+#load offhand /data/items/monkey/bandar/normal/offhand.txt
+#load offhand /data/items/monkey/bandar/normal/shields_elite.txt
+#load wings /data/items/monkey/bandar/normal/wings.txt
+
+#generateitem 1 wings
+
+#command "#maxage 45"
+#endpose
+
+-------- archer
+#newpose
+#name "bandar elite archer"
+#role "sacred ranged"
+#role "elite ranged"
+#basechance 0.25
+#theme "terrestrial"
+#theme "winged"
+#subrace bandar
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/monkey/bandar/normal/bases.txt
+#load shadow /data/items/monkey/bandar/normal/shadow.txt
+
+#load hands /data/items/monkey/bandar/normal/hands.txt
+
+#load cloakf /data/items/monkey/bandar/normal/cloakf.txt
+#load cloakb /data/items/monkey/bandar/normal/cloakb.txt
+
+#load armor /data/items/monkey/bandar/normal/armor.txt
+#load helmet /data/items/monkey/bandar/normal/helmet.txt
+
+#load weapon /data/items/monkey/bandar/normal/bows.txt
+#load bonusweapon /data/items/monkey/bandar/normal/archerweapon.txt
+
+#load strap /data/items/monkey/bandar/normal/strap.txt
+#load quiver /data/items/monkey/bandar/normal/quiver.txt
+#load wings /data/items/monkey/bandar/normal/wings.txt
+
+#generateitem 1 wings
+#generateitem 1 bonusweapon
+
+#command "#maxage 45"
+#endpose
+

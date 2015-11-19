@@ -1,11 +1,13 @@
-
--------- Mage Priest
-
+-------- Mage/Priest
 #newpose
 #name "bandar caster"
 #role "mage"
 #role "priest"
+#theme "terrestrial"
+#theme "winged"
 #subrace bandar
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/monkey/bandar/caster/bases.txt
 #load shadow /data/items/monkey/bandar/normal/shadow.txt
@@ -22,9 +24,12 @@
 
 #load offhand /data/items/monkey/bandar/caster/offhands.txt
 
-#tier 3
+#load wings /data/items/monkey/bandar/normal/wings.txt
+
+#generateitem 1 wings
+
+#notfortier 3
 #tier 2
 #tier 1
 #command "#maxage 45"
 #endpose
-

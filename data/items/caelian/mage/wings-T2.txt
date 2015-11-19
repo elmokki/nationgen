@@ -1,7 +1,6 @@
---- Hands belonging to an armor set should be given id of the lowest prot armor they go with if you want to avoid naked people with plate gloves.
 
 #newitem
-#id spirehornwings
+#id spirehornwingsT2
 #gameid -1
 #sprite /graphics/caelian/spirehornwings.png
 #basechance 1000
@@ -15,10 +14,11 @@
 #notfortier 1
 #tier 2
 #notfortier 3
+#define "#descr 'Caelians of the Spire Horn clan were blessed in ancient times by the Mainyus of wind and storms. They are often warriors and archers, and are little interested in magic.'"
 #enditem
 
 #newitem
-#id airyawings
+#id airyawingsT2
 #gameid -1
 #sprite /graphics/caelian/airyawings.png
 #basechance 10000
@@ -33,10 +33,11 @@
 #notfortier 1
 #tier 2
 #notfortier 3
+#define "#descr 'Caelians of the Airya clan were blessed in ancient times by the Mainyus of the cold winter. They are of lighter stock than most Caelians and make poor fighters.'"
 #enditem
 
 #newitem
-#id raptorwings
+#id raptorwingsT2
 #gameid -1
 #sprite /graphics/caelian/raptorwings.png
 #basechance 1000
@@ -53,10 +54,11 @@
 #notfortier 1
 #tier 2
 #notfortier 3
+#define "#descr 'Caelians of the Raptor clan are stronger and more warlike than other Caelians. As their lineage descends from the wicked Daevas rather than the Yazatas, they have no particular tolerance for cold.'"
 #enditem
 
 #newitem
-#id yazatawings
+#id yazatawingsT2
 #gameid -1
 #sprite /graphics/caelian/yazatawings.png
 #basechance 1
@@ -83,10 +85,11 @@
 #notfortier 1
 #tier 2
 #notfortier 3
+#define "#descr 'Yazatas, or Adorable Ones, are semi-divine beings of an earlier age and the ancestors of most Caelians. Yazatas are attuned to air and are surrounded by an aura of splendor.'"
 #enditem
 
 #newitem
-#id daevawings
+#id daevawingsT2
 #gameid -1
 #sprite /graphics/caelian/daevawings.png
 #basechance 1
@@ -113,10 +116,11 @@
 #notfortier 1
 #tier 2
 #notfortier 3
+#define "#descr 'Daevas are demonic beings of an earlier age and the ancestors of the Mairya and Raptor clans. Daevas are attuned to fire and are surrounded by an aura of fear.'"
 #enditem
 
 #newitem
-#id mairyawings
+#id mairyawingsT2
 #gameid -1
 #sprite /graphics/caelian/mairyawings.png
 #basechance 10000
@@ -134,10 +138,11 @@
 #notfortier 1
 #tier 2
 #notfortier 3
+#define "#descr 'Caelians of the Mairya clan are the strongest and most warlike of all Caelians, in keeping with their Daevic ancestory. They have no particular tolerance for cold.'"
 #enditem
 
 #newitem
-#id hybridwings
+#id hybridwingsT2
 #gameid -1
 #sprite /graphics/caelian/hybridwings.png
 #basechance 250
@@ -157,7 +162,7 @@
 #enditem
 
 #newitem
-#id nowings
+#id nowingsT2
 #gameid -1
 #basechance 5
 #theme wingless
@@ -173,4 +178,5 @@
 #notfortier 1
 #tier 2
 #notfortier 3
+#define "#descr 'The Wingless are misshapen, scorned Caelians born without wings. Though they are frail and have little tolerance for cold, they are ferocious fighters who do not falter in the face of an often-welcome death.'"
 #enditem

@@ -1,0 +1,72 @@
+#newitem
+#name "icecap"
+#chanceinc itemtheme not armor ice *0.001
+#chanceinc itemtheme armor ice  *100
+#chanceinc "personalcommand below #coldres 5 *0"
+#gameid 29
+#sprite graphics/caelian/helmet/icecap.png
+#eliteversion icehelm_elite
+#armor
+#theme "ice"
+#type ice
+#enditem
+
+#newitem
+#name "icehelm"
+#chanceinc itemtheme not armor ice *0.001
+#chanceinc itemtheme armor ice  *100
+#chanceinc "personalcommand below #coldres 5 *0"
+#gameid 124
+#sprite graphics/caelian/helmet/icehelmet.png
+#eliteversion icehelm_elite
+#armor
+#theme "ice"
+#type ice
+#minprot 12
+#enditem
+
+#newitem
+#name "icehelm_elite"
+#chanceinc itemtheme not armor ice *0.001
+#chanceinc itemtheme armor ice  *100
+#chanceinc "personalcommand below #coldres 5 *0"
+#gameid 124
+#sprite graphics/caelian/helmet/icehelmet.png
+#theme "ice"
+#theme "elite"
+#type ice
+#armor
+#minprot 12
+#enditem
+
+#newitem
+#basechance 0.5
+#chanceinc itemtheme not armor ice *0.001
+#chanceinc itemtheme armor ice  *100
+#chanceinc "personalcommand below #coldres 5 *0"
+#name "icehelmet"
+#gameid icehelmet_full
+#sprite graphics/caelian/helmet/icehelmet_full.png
+#eliteversion icehelmet_elite
+#armor
+#theme "advanced"
+#theme "ice"
+#type ice
+#minprot 15
+#enditem
+
+#newitem
+#basechance 0.5
+#chanceinc itemtheme not armor ice *0.001
+#chanceinc itemtheme armor ice  *100
+#chanceinc "personalcommand below #coldres 5 *0"
+#name "icehelmet_elite"
+#gameid icehelmet_full
+#sprite graphics/caelian/helmet/icehelmet_full.png
+#theme ice
+#theme "elite"
+#theme "advanced"
+#type ice
+#armor
+#minprot 15
+#enditem

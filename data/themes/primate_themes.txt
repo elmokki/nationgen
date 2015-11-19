@@ -1,0 +1,298 @@
+-- Generic theme with high diversity and low cohesion
+#newtheme
+#name default
+#type techlevel
+#basechance 4
+#themeinc theme iron *1
+#themeinc theme bronze *0.125
+#endtheme
+
+
+-- Techlevel themes (mandatory)
+
+-- Weights: EA 1, MA 1, LA 0.5
+#newtheme
+#type techlevel
+#name primitive
+#basechance 1
+#chanceinc era 3 -0.5
+#themeinc theme advanced *0.05
+#themeinc theme iron *0.125
+#themeinc theme bronze *1
+#themeinc theme wood *2
+#themeinc theme leather *2
+#themeinc theme naked *2
+#themeinc theme primitive *2
+#endtheme
+
+-- Weights: EA 2, MA 1, LA 0.25
+#newtheme
+#type techlevel
+#name bronze
+#basechance 2
+#chanceinc era 2 -1
+#chanceinc era 3 -1.5
+#themeinc theme advanced *0.5
+#themeinc theme iron *0.125
+#themeinc theme bronze *2
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *0.5
+#themeinc theme primitive *0.5
+#endtheme
+
+-- Weights: EA 1, MA 2, LA 3
+#newtheme
+#name iron
+#type techlevel
+#basechance 2
+#chanceinc era 1 -1
+#chanceinc era 3 +1
+#themeinc theme advanced *1
+#themeinc theme iron *2
+#themeinc theme bronze *0.125
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *0.5
+#themeinc theme primitive *0.5
+#endtheme
+
+-- Weights: EA 0.25, MA 1, LA 2
+#newtheme
+#type techlevel
+#name advanced
+#basechance 0.25
+#chanceinc era 3 1.75
+#chanceinc era 2 0.75
+#themeinc theme advanced *2
+#themeinc theme iron *2
+#themeinc theme bronze *0.05
+#themeinc theme wood *0.5
+#themeinc theme leather *0.5
+#themeinc theme naked *0.05
+#themeinc theme primitive *0.05
+#endtheme
+
+
+-- Demographic themes (mandatory)
+
+-- Weights: EA 2, MA 2, LA 2
+#newtheme
+#type demographic
+#name terrestrial
+#basechance 2
+#themeinc theme terrestrial *10000
+#racedefinition "#generationchance cavalry 0.125"
+#racedefinition "#monsterchance 0.3"
+#endtheme
+
+-- Weights: EA 0.5, MA 0.25, LA 0.125
+#newtheme
+#type demographic
+#name winged
+#basechance 0.25
+#chanceinc era 1 *2
+#chanceinc era 3 *0.5
+#themeinc theme winged *10000
+#racedefinition "#generationchance cavalry 0"
+#racedefinition "#monsterchance 0"
+#endtheme
+
+
+--- Cultural themes (mandatory)
+
+-- Standard "enlightened" primates - full range of subtypes
+-- Weights: EA 4, MA 4, LA 4
+#newtheme
+#type cultural
+#name enlightened
+#theme enlightened
+#basechance 4
+#themeinc theme enlightened *10000
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#racedefinition "#pose bandartroops"
+#racedefinition "#pose bandarelites"
+#racedefinition "#pose bandarmages"
+#racedefinition "#pose bandarelders"
+#racedefinition "#pose markata"
+#racedefinition "#pose vanaratroops"
+#racedefinition "#pose vanaraelites"
+#racedefinition "#pose vanaramages"
+#racedefinition "#pose vanaraelders"
+#racedefinition "#nationcommand '#idealcold -2'"
+#racedefinition "#nationcommand '#gods monkeygods"
+#racedefinition "#unitcommand '#nametype 129'"
+#racedefinition "#longsyllables /data/names/nations/monkey/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/monkey/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/monkey/suffixes.txt"
+#racedefinition "#tag 'enlightened'"
+#endtheme
+
+--"Oriental" primates - full range of subtypes
+-- Weights: EA 1, MA 1, LA 1
+#newtheme
+#type cultural
+#name oriental
+#theme oriental
+#basechance 1
+-- #themeinc theme oriental *10000
+#themeinc theme enlightened *10000
+#themeinc theme advanced *0.5
+#themeinc theme iron *2
+#themeinc theme bronze *0.25
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *0.25
+#themeinc theme primitive *0.5
+#racedefinition "#pose bandartroops"
+#racedefinition "#pose bandarelites"
+#racedefinition "#pose bandarmages"
+#racedefinition "#pose bandarelders"
+#racedefinition "#pose markata"
+#racedefinition "#pose vanaratroops"
+#racedefinition "#pose vanaraelites"
+#racedefinition "#pose vanaramages"
+#racedefinition "#pose vanaraelders"
+#racedefinition "#nationcommand '#idealcold -1'"
+#racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/oriental/suffixes.txt"
+#racedefinition "#unitcommand '#nametype 134'"
+#racedefinition "#nationcommand '#gods easterngods"
+#racedefinition "#tag 'oriental'"
+#endtheme
+
+--"Occidental" primates - no bandar
+-- Weights: EA 1, MA 1, LA 1
+#newtheme
+#type cultural
+#name occidental
+#theme occidental
+#basechance 1
+-- #themeinc theme occidental *10000
+#themeinc theme enlightened *10000
+#themeinc theme advanced *0.125
+#themeinc theme iron *0.125
+#themeinc theme bronze *2
+#themeinc theme wood *2
+#themeinc theme leather *2
+#themeinc theme naked *2
+#themeinc theme primitive *1
+#racedefinition "#pose vanaratroops"
+#racedefinition "#pose vanaraelites"
+#racedefinition "#pose vanaramages"
+#racedefinition "#pose vanaraelders"
+#racedefinition "#pose markata"
+#racedefinition "#visiblename Monkey"
+#racedefinition "#nationcommand '#idealcold -1'"
+#racedefinition "#longsyllables /data/names/nations/nahuatl/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/nahuatl/suffixes.txt"
+#racedefinition "#unitcommand '#nametype 123'"
+#racedefinition "#nationcommand '#gods westerngods"
+#racedefinition "#nationcommand '#likespop 82'"
+#racedefinition "#tag 'occidental'"
+#endtheme
+
+-- "Austral" primates - no vanara
+-- Weights: EA 1, MA 1, LA 1
+#newtheme
+#type cultural
+#name austral
+#theme austral
+#basechance 1
+-- #themeinc theme austral *10000
+#themeinc theme enlightened *10000
+#themeinc theme advanced *1
+#themeinc theme iron *2
+#themeinc theme bronze *0.25
+#themeinc theme wood *1
+#themeinc theme leather *2
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#racedefinition "#pose bandartroops"
+#racedefinition "#pose bandarelites"
+#racedefinition "#pose bandarmages"
+#racedefinition "#pose bandarelders"
+#racedefinition "#pose markata"
+#racedefinition "#visiblename Ape"
+#racedefinition "#nationcommand '#idealcold -2'"
+#racedefinition "#longsyllables /data/names/nations/machakan/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/machakan/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/machakan/suffixes.txt"
+#racedefinition "#unitcommand '#nametype 126'"
+#racedefinition "#nationcommand '#gods southerngods"
+#racedefinition "#nationcommand '#likespop 80'"
+#racedefinition "#tag 'austral'"
+#endtheme
+
+-- "Imperial vanara" - subordinate bandar, no markata 
+-- Weights: EA 0.5, MA 1, LA 1.5
+#newtheme
+#type cultural
+#name imperial_vanara
+#theme imperial
+#basechance 1
+#chanceinc era 1 -0.5
+#chanceinc era 3 +0.5
+#themeinc theme imperial *10000
+#themeinc theme advanced *1
+#themeinc theme iron *2
+#themeinc theme bronze *0.25
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *0.5
+#themeinc theme primitive *0.5
+#racedefinition "#pose bandartroops"
+#racedefinition "#pose bandarmages"
+#racedefinition "#pose vanaratroops"
+#racedefinition "#pose vanaraelites"
+#racedefinition "#pose vanaramages"
+#racedefinition "#pose vanaraelders"
+#racedefinition "#visiblename Monkey"
+#racedefinition "#nationcommand '#idealcold 0'"
+#racedefinition "#longsyllables /data/names/nations/romance/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/romance/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/romance/suffixes.txt"
+#racedefinition "#unitcommand '#nametype 106'"
+#racedefinition "#tag 'preferredmount wolf'"
+#racedefinition "#tag 'imperial'"
+#endtheme
+
+-- "Imperial bandar" - subordinate vanara, no markata 
+-- Weights: EA 0.5, MA 1, LA 1.5
+#newtheme
+#type cultural
+#name imperial_bandar
+#theme imperial
+#basechance 1
+#chanceinc era 1 -0.5
+#chanceinc era 3 +0.5
+#themeinc theme imperial *10000
+#themeinc theme advanced *1
+#themeinc theme iron *2
+#themeinc theme bronze *0.25
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *0.5
+#themeinc theme primitive *0.5
+#racedefinition "#pose bandartroops"
+#racedefinition "#pose bandarelites"
+#racedefinition "#pose bandarmages"
+#racedefinition "#pose bandarelders"
+#racedefinition "#pose vanaratroops"
+#racedefinition "#pose vanaramages"
+#racedefinition "#visiblename Ape"
+#racedefinition "#nationcommand '#idealcold 0'"
+#racedefinition "#longsyllables /data/names/nations/romance/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/romance/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/romance/suffixes.txt"
+#racedefinition "#unitcommand '#nametype 106'"
+#racedefinition "#tag 'imperial'"
+#endtheme

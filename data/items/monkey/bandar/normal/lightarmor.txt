@@ -6,6 +6,65 @@
 #name "naked"
 #gameid -1
 #armor
+#theme "enlightened"
+#theme "imperial"
+#theme "naked"
+#theme "primitive"
 #enditem
 
+#newitem
+#basechance 3
+#name "imperial tunic"
+#gameid -1
+#sprite /graphics/monkey/armor/bandar/tunic_imperial.png
+#recolormask /graphics/monkey/armor/bandar/tunic_imperial_recolormask.png
+#armor
+#theme "imperial"
+#theme "naked"
+#enditem
 
+#newitem
+#basechance 3
+#name "furs"
+#gameid 44
+#sprite /graphics/monkey/armor/bandar/furs.png
+#armor
+#theme "imperial"
+#theme "primitive"
+#theme "leather"
+#enditem
+
+#newitem
+#name "imperial leather"
+#basechance 6
+#gameid 10
+#sprite /graphics/monkey/armor/bandar/leatherhauberk_imperial.png
+#recolormask /graphics/monkey/armor/bandar/lorica_segmentata_recolormask.png
+#armor
+#theme "imperial"
+#theme "leather"
+#enditem
+
+#newitem
+#name "imperial ring"
+#basechance 4
+#gameid 11
+#sprite /graphics/monkey/armor/bandar/ringhauberk_imperial.png
+#recolormask /graphics/monkey/armor/bandar/lorica_segmentata_recolormask.png
+#armor
+#theme "imperial"
+#theme "leather"
+#theme "iron"
+#enditem
+
+#newitem
+#name "lorica hamata"
+#basechance 2
+#gameid 116
+#sprite /graphics/monkey/armor/bandar/lorica_hamata.png
+#recolormask /graphics/monkey/armor/bandar/lorica_hamata_recolormask.png
+#armor
+#theme "imperial"
+#theme "iron"
+#theme "advanced"
+#enditem
