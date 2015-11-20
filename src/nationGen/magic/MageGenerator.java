@@ -1419,6 +1419,9 @@ public class MageGenerator extends TroopGenerator {
 				moreFilters = getFiltersForTier(ChanceIncHandler.getFiltersWithPower(at, power, filters), tier);
 				if(different)
 					moreFilters = ChanceIncHandler.getValidUnitFilters(moreFilters, mages);
+				else
+					moreFilters = ChanceIncHandler.getValidUnitFilters(moreFilters, mages.get(0));
+
 				at--;
 			}
 			
@@ -1503,7 +1506,7 @@ public class MageGenerator extends TroopGenerator {
 				{
 					givenFilters.removeAll(u.appliedFilters);
 				}
-				
+
 
 				// If no filters, failsafe into giving whatever
 				if(chandler.countPossibleFilters(givenFilters, mages.get(0)) == 0)
@@ -1534,10 +1537,10 @@ public class MageGenerator extends TroopGenerator {
 
 				
 				Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(mages, givenFilters));
-
 				
 				for(Unit u : mages)
 					u.appliedFilters.add(f);
+				
 				
 				handleGiveToAll(f, units, tier);
 				
