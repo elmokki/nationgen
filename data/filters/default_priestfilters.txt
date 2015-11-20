@@ -145,22 +145,22 @@
 #end
 
 #new magefilter
-#name "healer 10"
+#name "healer 1"
 #basechance 0.1
 #chanceinc "personalmagic nature 0.15"
 #chanceinc "personalmagic holy 0.15"
-#command "#healer +10"
+#command "#autohealer +1"
 #command "#gcost +50"
 #tag "notfortier 3"
 #power 2
 #end
 
 #new magefilter
-#name "healer 25"
+#name "healer 2"
 #basechance 0.1
 #chanceinc "personalmagic nature 0.15"
 #chanceinc "personalmagic holy 0.15"
-#command "#healer +25"
+#command "#autohealer +2"
 #command "#gcost +70"
 #tag "notfortier 1"
 #tag "notfortier 2"
@@ -168,11 +168,11 @@
 #end
 
 #new magefilter
-#name "healer 50"
+#name "healer 3"
 #basechance 0.05
 #chanceinc "personalmagic holy 0.05"
 #chanceinc "personalmagic nature 0.05"
-#command "#healer +50"
+#command "#autohealer +3"
 #command "#gcost +120"
 #tag "notfortier 1"
 #tag "notfortier 2"
