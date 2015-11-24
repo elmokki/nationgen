@@ -190,3 +190,84 @@
 #theme "advanced"
 #theme "elite"
 #enditem
+
+
+
+--- Oriental armor
+#newitem
+#name "samurai armor"
+#gameid 129
+#sprite /graphics/monkey/armor/bandar/samuraiarmor.png
+#recolormask /graphics/monkey/armor/bandar/samuraiarmor_recolormask.png
+#eliteversion "heavy samurai armor"
+#eliteversion "samurai armor elite"
+#armor
+#theme "oriental"
+#theme "iron"
+#enditem
+
+#newitem
+#name "samurai armor elite"
+#gameid 129
+#sprite /graphics/monkey/armor/bandar/samuraiarmor_elite.png
+#recolormask /graphics/monkey/armor/bandar/samuraiarmor_elite_recolormask.png
+#eliteversion "heavy samurai armor elite"
+#eliteversion "samurai armor elite"
+#armor
+#theme "oriental"
+#theme "iron"
+#theme "elite"
+#enditem
+
+#newitem
+#name "heavy samurai armor"
+#gameid 130
+#sprite /graphics/monkey/armor/bandar/heavysamuraiarmor.png
+#recolormask /graphics/monkey/armor/bandar/samuraiarmor_recolormask.png
+#eliteversion "heavy samurai armor elite"
+#eliteversion "gilt samurai armor"
+#armor
+#theme "oriental"
+#theme "iron"
+#enditem
+
+#newitem
+#name "heavy samurai armor elite"
+#gameid 130
+#sprite /graphics/monkey/armor/bandar/heavysamuraiarmor_elite.png
+#recolormask /graphics/monkey/armor/bandar/samuraiarmor_elite_recolormask.png
+#eliteversion "gilt samurai armor elite"
+#armor
+#theme "oriental"
+#theme "iron"
+#theme "elite"
+#enditem
+
+#newitem
+#name "gilt samurai armor"
+#gameid 130
+#basechance 0.1
+#chanceinc "personalcommand holy *10"
+#sprite /graphics/monkey/armor/bandar/heavysamuraiarmor.png
+#recolormask /graphics/monkey/armor/bandar/samuraiarmor_recolormask.png
+#eliteversion "heavy samurai armor elite"
+#eliteversion "gilt samurai armor"
+#armor
+#theme "oriental"
+#theme "iron"
+#theme "elite"
+#enditem
+
+#newitem
+#name "gilt samurai armor elite"
+#gameid 130
+#basechance 0.1
+#chanceinc "personalcommand holy *10"
+#sprite /graphics/monkey/armor/bandar/heavysamuraiarmor_elite.png
+#recolormask /graphics/monkey/armor/bandar/samuraiarmor_elite_recolormask.png
+#eliteversion "gilt samurai armor elite"
+#armor
+#theme "oriental"
+#theme "iron"
+#theme "elite"
+#enditem

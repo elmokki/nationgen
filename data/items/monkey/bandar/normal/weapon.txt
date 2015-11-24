@@ -25,6 +25,7 @@
 #theme "enlightened"
 #theme "imperial"
 #theme "iron"
+#troopweapon
 #enditem
 
 #newitem
@@ -34,6 +35,7 @@
 #theme "enlightened"
 #theme "imperial"
 #theme "iron"
+#troopweapon
 #enditem
 
 #newitem
@@ -51,6 +53,7 @@
 #sprite /graphics/monkey/weapon/bandar/spear.png
 #theme "enlightened"
 #theme "imperial"
+#theme "oriental"
 #theme "iron"
 #theme formationfighter
 #enditem
@@ -70,6 +73,7 @@
 #gameid 28
 #sprite /graphics/monkey/weapon/bandar/longspear.png
 #theme "imperial"
+#theme "oriental"
 #theme "iron"
 #theme formationfighter
 #enditem
@@ -114,6 +118,7 @@
 #sprite /graphics/monkey/weapon/bandar/falchion.png
 #theme "iron"
 #theme "enlightened"
+#theme "oriental"
 #enditem
 
 #newitem
@@ -123,6 +128,7 @@
 #theme "primitive"
 #theme "wood"
 #theme "enlightened"
+#troopweapon
 #enditem
 
 #newitem
@@ -131,6 +137,8 @@
 #sprite /graphics/monkey/weapon/bandar/cudgel.png
 #theme "iron"
 #theme "enlightened"
+#theme "oriental"
+#troopweapon
 #enditem
 
 #newitem
@@ -139,6 +147,7 @@
 #sprite /graphics/monkey/weapon/bandar/maul.png
 #theme "imperial"
 #theme "enlightened"
+#troopweapon
 #enditem
 
 #newitem
@@ -147,6 +156,7 @@
 #sprite /graphics/monkey/weapon/bandar/flail.png
 #theme "imperial"
 #theme "iron"
+#troopweapon
 #enditem
 
 #newitem
@@ -155,4 +165,58 @@
 #sprite /graphics/monkey/weapon/bandar/flail_bronze.png
 #theme "imperial"
 #theme "bronze"
+#troopweapon
+#enditem
+
+#newitem
+#id yari
+#gameid 376
+#sprite /graphics/monkey/weapon/bandar/spear.png
+#troopweapon
+#theme formationfighter
+#theme "iron"
+#theme "oriental"
+#enditem
+
+#newitem
+#id naginata
+#gameid 380
+#sprite /graphics/monkey/weapon/bandar/naginata.png
+#troopweapon
+#theme "iron"
+#theme "oriental"
+#enditem
+
+#newitem
+#id ninjato
+#gameid 381
+#sprite /graphics/monkey/weapon/bandar/ninjato.png
+#theme "oriental"
+#theme "iron"
+#enditem
+
+#newitem
+#id wakizashi
+#gameid 377
+#sprite /graphics/monkey/weapon/bandar/wakizashi.png
+#theme "oriental"
+#theme "iron"
+#enditem
+
+#newitem
+#id katana
+#gameid 378
+#sprite /graphics/monkey/weapon/bandar/katana.png
+#theme "oriental"
+#theme "iron"
+#troopweapon
+#enditem
+
+#newitem
+#id nodachi
+#gameid 379
+#sprite /graphics/monkey/weapon/bandar/nodachi.png
+#theme "oriental"
+#theme "iron"
+#troopweapon
 #enditem
