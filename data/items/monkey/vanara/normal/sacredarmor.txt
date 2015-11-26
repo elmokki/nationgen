@@ -142,3 +142,57 @@
 #theme "iron"
 #theme "elite"
 #enditem
+
+
+-- Oriental armor
+#newitem
+#name "oriental full scale"
+#basechance 3
+#chanceinc "personalcommand holy -2"
+#gameid 17
+#sprite /graphics/monkey/armor/vanara/fullscale_oriental.png
+#recolormask /graphics/monkey/armor/vanara/hauberk_oriental_recolormask.png
+#armor
+#theme "oriental"
+#theme "iron"
+#enditem
+
+#newitem
+#name "ashigaru armor"
+#basechance 6
+#chanceinc "personalcommand holy -5"
+#gameid 128
+#sprite /graphics/monkey/armor/vanara/ashigaruarmor.png
+#recolormask /graphics/monkey/armor/vanara/ashigaruarmor_recolormask.png
+#eliteversion "samurai armor"
+#armor
+#theme "oriental"
+#theme "iron"
+#enditem
+
+#newitem
+#name "samurai armor"
+#basechance 3
+#chanceinc "personalcommand holy 3"
+#chanceinc hastheme not oriental *0
+#gameid 129
+#sprite /graphics/monkey/armor/vanara/samuraiarmor.png
+#eliteversion "samurai armor elite"
+#armor
+#theme "oriental"
+#theme "iron"
+#enditem
+
+#newitem
+#name "samurai armor elite"
+#basechance 0
+#chanceinc "personalcommand holy 6"
+#chanceinc hastheme not oriental *0
+#gameid 129
+#sprite /graphics/monkey/armor/vanara/samuraiarmor_elite.png
+#recolormask /graphics/monkey/armor/vanara/samuraiarmor_elite_recolormask.png
+#armor
+#theme "oriental"
+#theme "iron"
+#theme "elite"
+#enditem
