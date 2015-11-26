@@ -7,6 +7,7 @@
 #armor
 #theme "enlightened"
 #theme "imperial"
+#theme "oriental"
 #theme "naked"
 #theme "primitive"
 #command "#stealthy +0"
@@ -29,12 +30,15 @@
 #gameid 44
 #sprite /graphics/monkey/armor/vanara/furs.png
 #armor
-#theme "imperial"
+#theme "enlightened"
+#theme "oriental"
 #theme "primitive"
 #theme "leather"
 #command "#stealthy +0"
 #enditem
 
+
+-- Imperial
 #newitem
 #name "imperial leather"
 #basechance 6
@@ -68,4 +72,38 @@
 #theme "imperial"
 #theme "iron"
 #theme "advanced"
+#enditem
+
+
+-- Oriental
+#newitem
+#name "oriental leather cuirass"
+#basechance 6
+#gameid 5
+#sprite /graphics/monkey/armor/vanara/leathercuirass_oriental.png
+#armor
+#theme "oriental"
+#theme "leather"
+#enditem
+
+#newitem
+#name "oriental leather hauberk"
+#basechance 4
+#gameid 10
+#sprite /graphics/monkey/armor/vanara/leatherhauberk_oriental.png
+#recolormask /graphics/monkey/armor/vanara/hauberk_oriental_recolormask.png
+#armor
+#theme "oriental"
+#theme "leather"
+#enditem
+
+#newitem
+#name "oriental scale cuirass"
+#basechance 2
+#gameid 7
+#sprite /graphics/monkey/armor/vanara/leathercuirass_oriental.png
+#recolormask /graphics/monkey/armor/vanara/hauberk_oriental_recolormask.png
+#armor
+#theme "oriental"
+#theme "iron"
 #enditem

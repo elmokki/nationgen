@@ -7,12 +7,22 @@
 #armor
 #tag "eliteversion laurel"
 #theme "enlightened"
+#theme "oriental"
+#theme "naked"
+#enditem
+
+#newitem
+#id none_laurel
+#gameid -1
+#basechance 4
+#armor
+#tag "eliteversion laurel"
 #theme "imperial"
 #theme "naked"
 #enditem
 
 #newitem
-#id none
+#id none_bronze
 #gameid -1
 #basechance 2
 #eliteversion ironcap_elite
@@ -22,7 +32,7 @@
 #enditem
 
 #newitem
-#id none
+#id none_iron
 #gameid -1
 #basechance 2
 #eliteversion bronzecap_elite
@@ -119,7 +129,6 @@
 
 
 --- Imperial helms
-
 #newitem
 #id leathercap_imperial
 #gameid 119
@@ -178,8 +187,47 @@
 #gameid -1
 #basechance 0
 #chanceinc "personalcommand holy 0.5"
+#chanceinc hastheme not imperial *0
 #sprite /graphics/monkey/helmet/bandar_mage/laurel.png
 #armor
 #theme "elite"
 #theme "imperial"
+#enditem
+
+
+
+--- Oriental helms
+#newitem
+#id jingasa
+#gameid 131
+#sprite /graphics/monkey/helmet/bandar/jingasa.png
+#recolormask /graphics/monkey/helmet/bandar/jingasa_recolormask.png
+#armor
+#theme "oriental"
+#theme "iron"
+#minprot 6
+#maxprot 12
+#enditem
+
+#newitem
+#id kabuto
+#gameid 132
+#sprite /graphics/monkey/helmet/bandar/kabuto.png
+#eliteversion kabuto_elite
+#armor
+#theme "oriental"
+#theme "iron"
+#minprot 12
+#enditem
+
+#newitem
+#id kabuto_elite
+#gameid 132
+#sprite /graphics/monkey/helmet/bandar/kabuto_elite.png
+#eliteversion kabuto_elite
+#armor
+#theme "oriental"
+#theme "iron"
+#theme "elite"
+#minprot 12
 #enditem

@@ -1,5 +1,16 @@
 #newitem
+#name "nocloak"
+#gameid -1
+#needs cloakf "nocloak"
+#theme "oriental"
+#theme "enlightened"
+#theme "primitive"
+#theme "naked"
+#enditem
+
+#newitem
 #name "cloak"
+#basechance 2
 #gameid -1
 #sprite /graphics/monkey/cloak/bandar/cloakback.png
 #recolormask self
@@ -14,4 +25,15 @@
 #recolormask self
 #needs cloakf "cloak_imperial"
 #theme "imperial"
+#enditem
+
+#newitem
+#name "cloak_oriental"
+#basechance 0.125
+#gameid -1
+#sprite /graphics/monkey/cloak/bandar/cloakback_oriental.png
+#recolormask self
+#needs cloakf "cloak_oriental"
+#theme "oriental"
+#theme "advanced"
 #enditem
