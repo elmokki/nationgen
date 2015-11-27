@@ -5,7 +5,10 @@
 #role "priest"
 #theme "terrestrial"
 #theme "winged"
-#subrace bandar
+#theme "abysian"
+#theme "enlightened"
+#theme "imperial"
+#theme "oriental"
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -25,8 +28,6 @@
 #load offhand /data/items/monkey/bandar/caster/offhands.txt
 
 #load wings /data/items/monkey/bandar/normal/wings.txt
-
-#generateitem 1 wings
 
 #tier 3
 #command "#maxage 45"

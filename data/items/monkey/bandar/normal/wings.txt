@@ -2,19 +2,13 @@
 #name "terrestrial"
 #theme "terrestrial"
 #gameid -1
-#command "#gcost 18"
 #enditem
 
 #newitem
 #name "winged"
 #theme "winged"
+#basechance 0
+#nogen
 #gameid -1
 #sprite /graphics/monkey/bandar_wings.png
-#command "#gcost 28"
-#command "#str -1"
-#command "#mr +2"
-#command "#mor -1"
-#command "#mapmove 3"
-#command "#maxage +5"
-#command "#flying"
 #enditem

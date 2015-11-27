@@ -8,9 +8,10 @@
 #role "elite infantry"
 #theme "imperial"
 #theme "enlightened"
+#theme "oriental"
 #theme "terrestrial"
 #theme "winged"
-#subrace vanara
+#theme "abysian"
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
@@ -35,7 +36,6 @@
 #load wings /data/items/monkey/vanara/normal/wings.txt
 #load overlay /data/items/monkey/vanara/normal/overlay.txt
 
-#generateitem 1 wings
 #generateitem 1 bonusweapon
 #command "#maxage 30"
 #endpose
@@ -50,9 +50,10 @@
 #role "elite ranged"
 #theme "imperial"
 #theme "enlightened"
+#theme "oriental"
 #theme "terrestrial"
 #theme "winged"
-#subrace vanara
+#theme "abysian"
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap bonusweapon weapon quiver armor cloakf offhandw hands hair helmet offhanda overlay"
 
@@ -78,7 +79,6 @@
 #load wings /data/items/monkey/vanara/normal/wings.txt
 #load overlay /data/items/monkey/vanara/normal/overlay.txt
 
-#generateitem 1 wings
 #generateitem 1 bonusweapon
 #command "#maxage 30"
 #endpose
@@ -91,9 +91,10 @@
 #role "elite mounted"
 #theme "imperial"
 #theme "enlightened"
+#theme "oriental"
 #theme "terrestrial"
+#theme "abysian"
 #basechance 0.5
-#subrace vanara
 
 #renderorder "shadow wings cloakb mount basesprite shirt legs bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
@@ -119,7 +120,5 @@
 #load wings /data/items/monkey/vanara/normal/wings.txt
 #load overlay /data/items/monkey/vanara/normal/overlay.txt
 
-#generateitem 1 wings
 #command "#maxage 30"
-
 #endpose

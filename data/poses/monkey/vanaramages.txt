@@ -4,10 +4,10 @@
 #role "mage"
 #theme "terrestrial"
 #theme "winged"
+#theme "abysian"
 #theme "enlightened"
 #theme "imperial"
 #theme "oriental"
-#subrace vanara
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -26,8 +26,6 @@
 #load wings /data/items/monkey/vanara/normal/wings.txt
 #load overlay /data/items/monkey/vanara/normal/overlay.txt
 
-#generateitem 1 wings
-
 #tier 1
 #notfortier 3
 #notfortier 2
@@ -41,7 +39,6 @@
 #role "mage"
 #theme "terrestrial"
 #theme "enlightened"
-#subrace vanara
 
 #load basesprite /data/items/monkey/vanara/caster/magebases_sit.txt
 #load shadow /data/items/monkey/vanara/normal/shadow.txt
@@ -63,9 +60,9 @@
 #name "vanara elder, standing"
 #role "mage"
 #theme "terrestrial"
+#theme "abysian"
 #theme "imperial"
 #theme "oriental"
-#subrace vanara
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -78,8 +75,10 @@
 #load helmet /data/items/monkey/vanara/caster/helmet.txt 2 1
 
 #load weapon /data/items/monkey/vanara/caster/weapon.txt
-
 #load offhand /data/items/monkey/vanara/caster/offhands.txt
+
+#load wings /data/items/monkey/vanara/normal/wings.txt
+#load overlay /data/items/monkey/vanara/normal/overlay.txt
 
 #tier 2
 #notfortier 1
@@ -96,7 +95,6 @@
 #theme "enlightened"
 #theme "imperial"
 #theme "oriental"
-#subrace vanara
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -109,13 +107,10 @@
 #load helmet /data/items/monkey/vanara/caster/helmet.txt 2 1
 
 #load weapon /data/items/monkey/vanara/caster/weapon.txt
-
 #load offhand /data/items/monkey/vanara/caster/offhands.txt
 
 #load wings /data/items/monkey/vanara/normal/wings.txt
 #load overlay /data/items/monkey/vanara/normal/overlay.txt
-
-#generateitem 1 wings
 
 #tier 2
 #notfortier 1
@@ -130,10 +125,10 @@
 #role "priest"
 #theme "terrestrial"
 #theme "winged"
+#theme "abysian"
 #theme "enlightened"
 #theme "imperial"
 #theme "oriental"
-#subrace vanara
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -146,13 +141,10 @@
 #load helmet /data/items/monkey/vanara/caster/helmet.txt 2 1
 
 #load weapon /data/items/monkey/vanara/caster/weapon.txt
-
 #load offhand /data/items/monkey/vanara/caster/offhands.txt
 
 #load wings /data/items/monkey/vanara/normal/wings.txt
 #load overlay /data/items/monkey/vanara/normal/overlay.txt
-
-#generateitem 1 wings
 
 #tier 1
 #tier 2
