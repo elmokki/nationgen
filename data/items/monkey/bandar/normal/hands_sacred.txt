@@ -1,7 +1,15 @@
 --- Hands belonging to an armor set should be given id of the lowest prot armor they go with if you want to avoid naked people with plate gloves.
 
 #newitem
-#id 1
+#id bandar_hands_sacred
 #gameid -1
 #sprite /graphics/monkey/bandar_hands_sacred.png
+#enditem
+
+#newitem
+#id bandarbred_hands
+#gameid -1
+#basechance 0
+#nogen
+#sprite /graphics/monkey/bandarbred_hands.png
 #enditem

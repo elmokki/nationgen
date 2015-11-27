@@ -2,12 +2,38 @@
 #name "vanara basesprite"
 #gameid -1
 #sprite /graphics/monkey/vanara_base_mounted.png
+#needs hands vanara_hands
 #command "#gcost 10"
 #command "#hp 10"
 #command "#mr 8"
-#command "#animal"
-#command "#forestsurvival"
 #command "#prot 1"
 #command "#mor 9"
 #command "#ap 10"
+#command "#animal"
+#command "#forestsurvival"
+#subrace vanara
+#theme terrestrial
+#theme winged
+#enditem
+
+#newitem
+#name "vanarabred basesprite"
+#gameid -1
+#sprite /graphics/monkey/vanara_base_vanarabred_mounted.png
+#needs hands vanarabred_hands
+#command "#gcost 12"
+#command "#hp 12"
+#command "#mr 9"
+#command "#prot 1"
+#command "#mor 9"
+#command "#str 11"
+#command "#def 9"
+#command "#prec 8"
+#command "#ap 9"
+#command "#maxage *0.8"
+#command "#wastesurvival"
+#command "#forestsurvival"
+#command "#fireres 15"
+#subrace vanarabred
+#theme abysian
 #enditem

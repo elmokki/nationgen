@@ -1,7 +1,8 @@
 #newitem
-#name "markata basesprite"
+#name "markata base"
 #gameid -1
 #sprite /graphics/monkey/markata_base.png
+#command "#gcost 5"
 #command "#hp 5"
 #command "#mr 7"
 #command "#animal"
@@ -15,4 +16,56 @@
 #command "#ap 14"
 #command "#enc 2"
 #command "#size 1"
+#subrace markata
+#theme terrestrial
+#enditem
+
+#newitem
+#name "winged markata base"
+#gameid -1
+#sprite /graphics/monkey/markata_base.png
+#needs wings winged
+#command "#gcost 10"
+#command "#hp 5"
+#command "#mr 9"
+#command "#mor 6"
+#command "#prec 8"
+#command "#def 14"
+#command "#att 10"
+#command "#str 5"
+#command "#ap 14"
+#command "#enc 2"
+#command "#size 1"
+#command "#mapmove 3"
+#command "#maxage +5"
+#command "#flying"
+#command "#animal"
+#command "#forestsurvival"
+#command "#undisciplined"
+#subrace "winged markata"
+#theme winged
+#enditem
+
+#newitem
+#name "markatabred base"
+#gameid -1
+#sprite /graphics/monkey/markata_base_markatabred.png
+#command "#gcost 6"
+#command "#hp 6"
+#command "#mr 8"
+#command "#mor 7"
+#command "#prec 7"
+#command "#def 13"
+#command "#att 10"
+#command "#str 6"
+#command "#ap 11"
+#command "#enc 2"
+#command "#size 1"
+#command "#forestsurvival"
+#command "#wastesurvival"
+#command "#undisciplined"
+#command "#fireres 15"
+#command "#maxage *0.8"
+#subrace "markatabred"
+#theme abysian
 #enditem

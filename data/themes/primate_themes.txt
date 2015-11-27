@@ -81,7 +81,7 @@
 #type demographic
 #name terrestrial
 #basechance 2
-#themeinc theme terrestrial *10000
+#themeinc theme terrestrial *100000
 #racedefinition "#generationchance mounted 0.125"
 #racedefinition "#monsterchance 0.3"
 #endtheme
@@ -93,8 +93,22 @@
 #basechance 0.25
 #chanceinc era 1 *2
 #chanceinc era 3 *0.5
-#themeinc theme winged *10000
+#themeinc theme winged *100000
 #racedefinition "#generationchance mounted 0"
+#racedefinition "#monsterchance 0"
+#endtheme
+
+-- Weights: EA 0.125, MA 0.25, LA 0.5
+#newtheme
+#type demographic
+#name abysian
+#basechance 0.25
+#basechance 0
+#chanceinc era 1 *2
+#chanceinc era 3 *0.5
+#themeinc theme abysian *100000
+#themeinc theme iron *10
+#themeinc theme bronze *0.1
 #racedefinition "#monsterchance 0"
 #endtheme
 
@@ -108,7 +122,7 @@
 #name enlightened
 #theme enlightened
 #basechance 4
-#themeinc theme enlightened *10000
+#themeinc theme enlightened *1000
 #themeinc theme advanced *1
 #themeinc theme iron *1
 #themeinc theme bronze *1
@@ -141,8 +155,7 @@
 #name oriental
 #theme oriental
 #basechance 1
-#themeinc theme oriental *10000
--- #themeinc theme enlightened *10000
+#themeinc theme oriental *1000
 #themeinc theme advanced *0.5
 #themeinc theme iron *2
 #themeinc theme bronze *0.25
@@ -175,8 +188,8 @@
 #name occidental
 #theme occidental
 #basechance 1
--- #themeinc theme occidental *10000
-#themeinc theme enlightened *10000
+-- #themeinc theme occidental *1000
+#themeinc theme enlightened *1000
 #themeinc theme advanced *0.125
 #themeinc theme iron *0.125
 #themeinc theme bronze *2
@@ -206,8 +219,8 @@
 #name austral
 #theme austral
 #basechance 1
--- #themeinc theme austral *10000
-#themeinc theme enlightened *10000
+-- #themeinc theme austral *1000
+#themeinc theme enlightened *1000
 #themeinc theme advanced *1
 #themeinc theme iron *2
 #themeinc theme bronze *0.25
@@ -239,7 +252,7 @@
 #basechance 1
 #chanceinc era 1 -0.5
 #chanceinc era 3 +0.5
-#themeinc theme imperial *10000
+#themeinc theme imperial *1000
 #themeinc theme advanced *1
 #themeinc theme iron *2
 #themeinc theme bronze *0.25
@@ -273,7 +286,7 @@
 #basechance 1
 #chanceinc era 1 -0.5
 #chanceinc era 3 +0.5
-#themeinc theme imperial *10000
+#themeinc theme imperial *1000
 #themeinc theme advanced *1
 #themeinc theme iron *2
 #themeinc theme bronze *0.25
