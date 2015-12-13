@@ -1,0 +1,64 @@
+#newitem
+#id rock
+#gameid 553
+#basechance 0
+#chanceinc racetheme primitive 10
+#theme "primitive"
+#enditem
+
+#newitem
+#id club
+#gameid 252
+#basechance 1
+#chanceinc racetheme primitive *10
+#chanceinc racetheme advanced *0
+#sprite /graphics/monkey/yeti/club.png
+#theme "primitive"
+#enditem
+
+#newitem
+#id great_club
+#basechance 5
+#gameid 165
+#sprite /graphics/monkey/yeti/greatclub.png
+#theme "primitive"
+#enditem
+
+#newitem
+#id stone_spear
+#basechance 5
+#gameid 373
+#sprite /graphics/monkey/yeti/spear.png
+#theme "primitive"
+#troopweapon
+#enditem
+
+#newitem
+#id ice_mace
+#basechance 1
+#chanceinc racetheme primitive *0
+#chanceinc racetheme advanced *10
+#gameid 44
+#sprite /graphics/monkey/yeti/icemace.png
+#theme "ice"
+#enditem
+
+#newitem
+#id ice_spear
+#basechance 1
+#chanceinc racetheme primitive *0
+#chanceinc racetheme advanced *10
+#gameid 611
+#sprite /graphics/monkey/yeti/icespear.png
+#theme "ice"
+#enditem
+
+#newitem
+#id iceglaive
+#basechance 0.5
+#chanceinc racetheme primitive *0
+#chanceinc racetheme advanced *10
+#gameid 454
+#sprite /graphics/monkey/yeti/iceglaive.png
+#theme "ice"
+#enditem

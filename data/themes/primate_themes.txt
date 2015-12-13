@@ -112,6 +112,15 @@
 #racedefinition "#monsterchance 0"
 #endtheme
 
+-- Weights: EA 0.25, MA 0.25, LA 0.25
+#newtheme
+#type demographic
+#name yeti
+#basechance 0.25
+#themeinc theme terrestrial *100000
+#racedefinition "#pose yeti"
+#endtheme
+
 
 --- Cultural themes (mandatory)
 
@@ -173,6 +182,8 @@
 #racedefinition "#pose vanaramages"
 #racedefinition "#pose vanaraelders"
 #racedefinition "#nationcommand '#idealcold -1'"
+#racedefinition "#nationcommand '#magicpriority astral 6'"
+#racedefinition "#nationcommand '#magicpriority nature 6'"
 #racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/oriental/suffixes.txt"
@@ -267,6 +278,7 @@
 #racedefinition "#pose vanaramages"
 #racedefinition "#pose vanaraelders"
 #racedefinition "#nationcommand '#idealcold 0'"
+#racedefinition "#nationcommand '#magicpriority nature 1'"
 #racedefinition "#longsyllables /data/names/nations/romance/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/romance/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/romance/suffixes.txt"
@@ -301,6 +313,7 @@
 #racedefinition "#pose vanaratroops"
 #racedefinition "#pose vanaramages"
 #racedefinition "#nationcommand '#idealcold 0'"
+#racedefinition "#nationcommand '#magicpriority nature 1'"
 #racedefinition "#longsyllables /data/names/nations/romance/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/romance/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/romance/suffixes.txt"

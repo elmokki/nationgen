@@ -1,0 +1,429 @@
+--- Robes
+#newitem
+#id great_toga
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/great_toga.png
+#recolormask /graphics/monkey/armor/bandar_mage/great_toga_recolormask.png
+#armor
+#tag "tier 3"
+#theme "enlightened"
+#theme "oriental"
+#enditem
+
+#newitem
+#id toga
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/toga.png
+#recolormask /graphics/monkey/armor/bandar_mage/toga_recolormask.png
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#eliteversion "great_toga"
+#theme "enlightened"
+#theme "oriental"
+#enditem
+
+#newitem
+#id lesser_toga
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/lessertoga.png
+#recolormask self
+#armor
+#tag "tier 1"
+#eliteversion "toga"
+#theme "enlightened"
+#theme "oriental"
+#enditem
+
+#newitem
+#id great_loincloth
+#gameid -1
+#sprite /graphics/monkey/armor/bandar_mage/loincloth_gold_best.png
+#recolormask /graphics/monkey/armor/bandar_mage/loincloth_gold_recolormask.png
+#armor
+#tag "tier 2"
+#eliteversion "great_toga"
+#theme "enlightened"
+#enditem
+
+#newitem
+#id gold_loincloth
+#gameid -1
+#sprite /graphics/monkey/armor/bandar_mage/loincloth_gold.png
+#recolormask /graphics/monkey/armor/bandar_mage/loincloth_gold_recolormask.png
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#eliteversion "great_toga"
+#eliteversion "great_loincloth"
+#eliteversion "toga"
+#theme "enlightened"
+#enditem
+
+#newitem
+#id loincloth
+#gameid -1
+#sprite /graphics/monkey/armor/bandar_mage/loincloth.png
+#recolormask self
+#armor
+#tag "tier 1"
+#eliteversion "gold_loincloth"
+#eliteversion "great_loincloth"
+#eliteversion "toga"
+#eliteversion "great_toga"
+#theme "enlightened"
+#enditem
+
+
+
+--- Imperial robes (monochrome)
+#newitem
+#id imperialrobe_white
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_bright.png
+#eliteversion "imperialrobe_faint"
+#eliteversion "imperialrobe_brighttop_white"
+#eliteversion "imperialrobe_darktop_white"
+#armor
+#tag "tier 1"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_faint
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_bright.png
+#recolormask /graphics/monkey/armor/bandar_mage/ermorrobe_faint_recolormask.png
+#eliteversion "imperialrobe_bright"
+#eliteversion "imperialrobe_middling"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_bright
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_bright.png
+#recolormask self
+#eliteversion "imperialrobe_medium"
+#eliteversion "imperialrobe_whitetop_bright"
+#eliteversion "imperialrobe_blacktop_bright"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_grey
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_medium.png
+#eliteversion "imperialrobe_middling"
+#eliteversion "imperialrobe_brighttop_grey"
+#eliteversion "imperialrobe_darktop_grey"
+#eliteversion "imperialrobe_greytop_bright"
+#eliteversion "imperialrobe_greytop_dark"
+#armor
+#tag "tier 1"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_middling
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_medium.png
+#recolormask /graphics/monkey/armor/bandar_mage/ermorrobe_faint_recolormask.png
+#eliteversion "imperialrobe_medium"
+#eliteversion "imperialrobe_faint"
+#eliteversion "imperialrobe_dull"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_medium
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_medium.png
+#recolormask self
+#eliteversion "imperialrobe_bright"
+#eliteversion "imperialrobe_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_black
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_dark.png
+#eliteversion "imperialrobe_dull"
+#eliteversion "imperialrobe_brighttop_black"
+#eliteversion "imperialrobe_darktop_black"
+#armor
+#tag "tier 1"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_dull
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_bright.png
+#recolormask /graphics/monkey/armor/bandar_mage/ermorrobe_faint_recolormask.png
+#eliteversion "imperialrobe_middling"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_dark
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_dark.png
+#recolormask self
+#eliteversion "imperialrobe_medium"
+#eliteversion "imperialrobe_whitetop_dark"
+#eliteversion "imperialrobe_blacktop_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+--- Imperial robes (twotone)
+#newitem
+#id imperialrobe_brighttop_white
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_bright.png
+#recolormask /graphics/monkey/armor/bandar_mage/ermorrobe_brighttop_recolormask.png
+#eliteversion "imperialrobe_bright"
+#eliteversion "imperialrobe_whitetop_bright"
+#eliteversion "imperialrobe_brighttop_grey"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_brighttop_grey
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_medium.png
+#recolormask /graphics/monkey/armor/bandar_mage/ermorrobe_brighttop_recolormask.png
+#eliteversion "imperialrobe_bright"
+#eliteversion "imperialrobe_greytop_bright"
+#eliteversion "imperialrobe_brighttop_white"
+#eliteversion "imperialrobe_brighttop_black"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_brighttop_black
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_dark.png
+#recolormask /graphics/monkey/armor/bandar_mage/ermorrobe_brighttop_recolormask.png
+#eliteversion "imperialrobe_bright"
+#eliteversion "imperialrobe_blacktop_bright"
+#eliteversion "imperialrobe_brighttop_grey"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_darktop_white
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_bright.png
+#recolormask /graphics/monkey/armor/bandar_mage/ermorrobe_darktop_recolormask.png
+#eliteversion "imperialrobe_dark"
+#eliteversion "imperialrobe_whitetop_dark"
+#eliteversion "imperialrobe_darktop_grey"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_darktop_grey
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_medium.png
+#recolormask /graphics/monkey/armor/bandar_mage/ermorrobe_darktop_recolormask.png
+#eliteversion "imperialrobe_dark"
+#eliteversion "imperialrobe_greytop_dark"
+#eliteversion "imperialrobe_darktop_white"
+#eliteversion "imperialrobe_darktop_black"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_darktop_black
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_dark.png
+#recolormask /graphics/monkey/armor/bandar_mage/ermorrobe_darktop_recolormask.png
+#eliteversion "imperialrobe_dark"
+#eliteversion "imperialrobe_blacktop_dark"
+#eliteversion "imperialrobe_darktop_grey"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_whitetop_bright
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_bright.png
+#recolormask /graphics/monkey/armor/bandar_mage/ermorrobe_brightbottom_recolormask.png
+#eliteversion "imperialrobe_bright"
+#eliteversion "imperialrobe_greytop_bright"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_greytop_bright
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_medium.png
+#recolormask /graphics/monkey/armor/bandar_mage/ermorrobe_brightbottom_recolormask.png
+#eliteversion "imperialrobe_bright"
+#eliteversion "imperialrobe_greytop_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_blacktop_bright
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_dark.png
+#recolormask /graphics/monkey/armor/bandar_mage/ermorrobe_brightbottom_recolormask.png
+#eliteversion "imperialrobe_bright"
+#eliteversion "imperialrobe_greytop_bright"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_whitetop_dark
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_bright.png
+#recolormask /graphics/monkey/armor/bandar_mage/ermorrobe_darkbottom_recolormask.png
+#eliteversion "imperialrobe_dark"
+#eliteversion "imperialrobe_greytop_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_greytop_dark
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_medium.png
+#recolormask /graphics/monkey/armor/bandar_mage/ermorrobe_darkbottom_recolormask.png
+#eliteversion "imperialrobe_dark"
+#eliteversion "imperialrobe_greytop_bright"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_blacktop_dark
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_dark.png
+#recolormask /graphics/monkey/armor/bandar_mage/ermorrobe_darkbottom_recolormask.png
+#eliteversion "imperialrobe_dark"
+#eliteversion "imperialrobe_greytop_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_blacktop-white
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_dark-bright.png
+#eliteversion "imperialrobe_whitetop-black"
+#eliteversion "imperialrobe_darktop_bright"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_whitetop-black
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_bright-dark.png
+#eliteversion "imperialrobe_blacktop-white"
+#eliteversion "imperialrobe_brighttop_dark"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_darktop-bright
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_dark-bright.png
+#recolormask self
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_brighttop-dark
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_bright-dark.png
+#recolormask self
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_dulltop-faint
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_dark-bright.png
+#recolormask /graphics/monkey/armor/bandar_mage/ermorrobe_faint_recolormask.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialrobe_fainttop-dull
+#gameid 158
+#sprite /graphics/monkey/armor/bandar_mage/ermorrobe_bright-dark.png
+#recolormask /graphics/monkey/armor/bandar_mage/ermorrobe_faint_recolormask.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
