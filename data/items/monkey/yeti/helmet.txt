@@ -1,0 +1,564 @@
+#newitem
+#id nothing
+#gameid -1
+#basechance 3
+#armor
+#tag "tier 1"
+#theme "imperial"
+#theme "enlightened"
+#theme "oriental"
+#enditem
+
+
+--- Caster hats
+#newitem
+#id bronze_cone
+#gameid 135
+#sprite /graphics/monkey/helmet/bandar_mage/bronze_cone.png
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#tag "eliteversion crown"
+#tag "eliteversion bronze_cone_tall"
+#theme "enlightened"
+#enditem
+
+#newitem
+#id bronze_cone_tall
+#gameid 135
+#sprite /graphics/monkey/helmet/bandar_mage/bronze_cone_tall.png
+#armor
+#tag "tier 3"
+#tag "tier 2"
+#tag "eliteversion crown"
+#theme "enlightened"
+#enditem
+
+#newitem
+#id crown
+#gameid 148
+#sprite /graphics/monkey/helmet/bandar_mage/crown.png
+#armor
+#tag "tier 3"
+#theme "enlightened"
+#enditem
+
+#newitem
+#id laurel
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/laurel.png
+#armor
+#tag "tier 3"
+#theme "enlightened"
+#theme "imperial"
+#enditem
+
+#newitem
+#id nemes
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/nemes.png
+#recolormask /graphics/monkey/helmet/bandar_mage/nemes_recolormask.png
+#armor
+#tag "tier 3"
+#theme "enlightened"
+#theme "imperial"
+#enditem
+
+
+--- Imperial cowls
+#newitem
+#id cowl_low_white
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_priest_bright.png
+#eliteversion "cowl_low_faint"
+#eliteversion "cowl_high_white"
+#eliteversion "cowl_high_white_black"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_low_grey
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_priest_medium.png
+#eliteversion "cowl_low_middling"
+#eliteversion "cowl_high_grey"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_low_black
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_priest_dark.png
+#eliteversion "cowl_low_dull"
+#eliteversion "cowl_high_black"
+#eliteversion "cowl_high_black_white"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_low_faint
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_priest_bright.png
+#recolormask /graphics/monkey/helmet/bandar_mage/cowl_priest_faint_recolormask.png
+#eliteversion "cowl_low_bright"
+#eliteversion "cowl_high_faint"
+#eliteversion "cowl_high_white_faint"
+#armor
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_low_middling
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_priest_medium.png
+#recolormask /graphics/monkey/helmet/bandar_mage/cowl_priest_faint_recolormask.png
+#eliteversion "cowl_low_medium"
+#eliteversion "cowl_high_middling"
+#eliteversion "cowl_high_grey_middling"
+#armor
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_low_dull
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_priest_dark.png
+#recolormask /graphics/monkey/helmet/bandar_mage/cowl_priest_faint_recolormask.png
+#eliteversion "cowl_low_dark"
+#eliteversion "cowl_high_dull"
+#eliteversion "cowl_high_black_dull"
+#armor
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_low_bright
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_priest_bright.png
+#recolormask self
+#eliteversion "cowl_high_bright"
+#eliteversion "cowl_high_white_bright"
+#eliteversion "cowl_high_dark_bright"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_low_medium
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_priest_medium.png
+#recolormask self
+#eliteversion "cowl_high_medium"
+#eliteversion "cowl_high_grey_medium"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_low_dark
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_priest_dark.png
+#recolormask self
+#eliteversion "cowl_high_dark"
+#eliteversion "cowl_high_black_dark"
+#eliteversion "cowl_high_bright_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_white
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_bright.png
+#eliteversion "cowl_high_faint"
+#eliteversion "cowl_high_bright_white"
+#eliteversion "cowl_high_black_white"
+#armor
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_grey
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_medium.png
+#eliteversion "cowl_high_middling"
+#eliteversion "cowl_high_medium_grey"
+#armor
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_black
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_dark.png
+#eliteversion "cowl_high_dull"
+#eliteversion "cowl_high_dark_black"
+#eliteversion "cowl_high_white_black"
+#armor
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_faint
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_bright.png
+#recolormask /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_faint_recolormask.png
+#eliteversion "cowl_high_bright"
+#eliteversion "cowl_high_middling"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_middling
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_medium.png
+#recolormask /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_faint_recolormask.png
+#eliteversion "cowl_high_medium"
+#eliteversion "cowl_high_faint"
+#eliteversion "cowl_high_dull"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_dull
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_dark.png
+#recolormask /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_faint_recolormask.png
+#eliteversion "cowl_high_dark"
+#eliteversion "cowl_high_middling"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_bright
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_bright.png
+#recolormask self
+#eliteversion "cowl_high_dark_bright"
+#eliteversion "cowl_high_medium"
+#armor
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_medium
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_medium.png
+#recolormask self
+#eliteversion "cowl_high_bright"
+#eliteversion "cowl_high_dark"
+#armor
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_dark
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_dark.png
+#recolormask self
+#eliteversion "cowl_high_bright_dark"
+#eliteversion "cowl_high_medium"
+#armor
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_white_black
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_bright-dark.png
+#eliteversion "cowl_high_faint_dull"
+#eliteversion "cowl_high_bright_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_black_white
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_dark-bright.png
+#eliteversion "cowl_high_dark_bright"
+#eliteversion "cowl_high_dull_faint"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_white_faint
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_bright.png
+#recolormask /graphics/monkey/helmet/bandar_mage/cowl_priest_faint_recolormask.png
+#eliteversion "cowl_high_faint"
+#eliteversion "cowl_high_white_bright"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_grey_middling
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_medium.png
+#recolormask /graphics/monkey/helmet/bandar_mage/cowl_priest_faint_recolormask.png
+#eliteversion "cowl_high_middling"
+#eliteversion "cowl_high_grey_medium"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_black_dull
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_dark.png
+#recolormask /graphics/monkey/helmet/bandar_mage/cowl_priest_faint_recolormask.png
+#eliteversion "cowl_high_dull"
+#eliteversion "cowl_high_black_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_white_bright
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_bright.png
+#recolormask /graphics/monkey/helmet/bandar_mage/cowl_priest_bright.png
+#eliteversion "cowl_high_bright"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_grey_medium
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_medium.png
+#recolormask /graphics/monkey/helmet/bandar_mage/cowl_priest_medium.png
+#eliteversion "cowl_high_medium"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_black_dark
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_dark.png
+#recolormask /graphics/monkey/helmet/bandar_mage/cowl_priest_dark.png
+#eliteversion "cowl_high_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_faint_dull
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_bright-dark.png
+#recolormask /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_faint_recolormask.png
+#eliteversion "cowl_high_bright_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_dull_faint
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_dark-bright.png
+#recolormask /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_faint_recolormask.png
+#eliteversion "cowl_high_dark_bright"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_bright_dark
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_bright-dark.png
+#recolormask self
+#armor
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_dark_bright
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_dark-bright.png
+#recolormask self
+#armor
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_bright_white
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_bright.png
+#recolormask /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_bright_recolormask.png
+#eliteversion "cowl_high_bright"
+#armor
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_medium_grey
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_medium.png
+#recolormask /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_medium_recolormask.png
+#eliteversion "cowl_high_medium"
+#armor
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id cowl_high_dark_black
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_dark.png
+#recolormask /graphics/monkey/helmet/bandar_mage/cowl_inquisitor_dark_recolormask.png
+#eliteversion "cowl_high_dark"
+#armor
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+
+
+-- Oriental hats
+#newitem
+#id cap_eunuch
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cap_eunuch.png
+#recolormask self
+#armor
+#theme "oriental"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id cap_minister1
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cap_minister1.png
+#recolormask self
+#armor
+#theme "oriental"
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id cap_minister2
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cap_minister2.png
+#recolormask self
+#armor
+#theme "oriental"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id cap_minister3
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cap_minister3.png
+#recolormask self
+#armor
+#theme "oriental"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id cap_minister4
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cap_minister4.png
+#recolormask self
+#armor
+#theme "oriental"
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id cap_demonpriest
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cap_demonpriest.png
+#recolormask self
+#armor
+#theme "oriental"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id cap_rahaga1
+#gameid -1
+#sprite /graphics/monkey/helmet/bandar_mage/cap_rahaga1.png
+#recolormask /graphics/monkey/helmet/bandar_mage/cap_rahaga1_recolormask.png
+#armor
+#theme "oriental"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id cap_rahaga2
+#gameid -1
+#recolormask /graphics/monkey/helmet/bandar_mage/cap_rahaga2_recolormask.png
+#recolormask /graphics/monkey/helmet/bandar_mage/cap_rahaga2_recolormask.png
+#armor
+#theme "oriental"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
