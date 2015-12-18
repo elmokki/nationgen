@@ -116,7 +116,8 @@
 #newtheme
 #type demographic
 #name yeti
-#basechance 0.25
+#basechance 0
+-- #basechance 0.25
 #themeinc theme terrestrial *100000
 #racedefinition "#pose yeti"
 #endtheme
@@ -158,12 +159,13 @@
 #endtheme
 
 --"Oriental" primates - full range of subtypes
--- Weights: EA 1, MA 1, LA 1
+-- Weights: EA 2, MA 2, LA 2
 #newtheme
 #type cultural
 #name oriental
 #theme oriental
-#basechance 1
+#basechance 0
+-- #basechance 2
 #themeinc theme oriental *1000
 #themeinc theme advanced *0.5
 #themeinc theme iron *2
@@ -193,12 +195,13 @@
 #endtheme
 
 --"Occidental" primates - no bandar
--- Weights: EA 1, MA 1, LA 1
+-- Weights: EA 2, MA 2, LA 2
 #newtheme
 #type cultural
 #name occidental
 #theme occidental
-#basechance 1
+-- #basechance 2
+#basechance 0
 -- #themeinc theme occidental *1000
 #themeinc theme enlightened *1000
 #themeinc theme advanced *0.125
@@ -224,12 +227,13 @@
 #endtheme
 
 -- "Austral" primates - no vanara
--- Weights: EA 1, MA 1, LA 1
+-- Weights: EA 2, MA 2, LA 2
 #newtheme
 #type cultural
 #name austral
 #theme austral
-#basechance 1
+-- #basechance 2
+#basechance 0
 -- #themeinc theme austral *1000
 #themeinc theme enlightened *1000
 #themeinc theme advanced *1
