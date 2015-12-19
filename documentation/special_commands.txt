@@ -50,28 +50,43 @@ Amount of mapmove penalty when over encumberance. Default is 1.
 If encumberance from equipment is the number set in #lowenctreshold, command set in #lowenccommand will be added to the unit if the unit does not already have an instance of the command.
 
 #secondaryracetroopmod <amount>
-On primary race increases/decreases the likelihood of secondary race troops
+On primary race increases/decreases the likelihood of secondary race troops (Default is 0.5)
 
 #primaryracetroopmod <amount>
-On secondary race increases/decreases the likelihood of primary race troops
+On secondary race increases/decreases the likelihood of primary race troops (Default is 0.5)
+
+#minsecaffinity <amount>
+On primary race increases the minimum likelyhood of secondary race troops (Default is 0.0)
+
+#minsecondaryracetroops <amount>
+On primary race sets the minimum amount of secondary race troops (Default is 0)
+
+#minsecondaryracetroopshare <amount>
+On primary race increases the minimum percentage of secondary race troops (Default is 0.0)
+
+#maxprimaryracetroops <amount>
+On primary race sets the maximum amount of primary race troops (Default is 100)
+
+#maxprimaryracetroopshare <amount>
+On primary race decreases the maximum amount of primary race troops (Default is 1.0)
 
 #secondaryracesacredmod <amount>
-On primary race increases/decreases the likelihood of secondary race sacreds
+On primary race increases/decreases the likelihood of secondary race sacreds (Default is 1, as a multiplier of 0.05)
 
 #primaryracesacredmod <amount>
-On secondary race increases/decreases the likelihood of primary race sacreds
+On secondary race increases/decreases the likelihood of primary race sacreds (Default is 1, as a multiplier of 0.05)
 
 #secondaryracemagemod <amount>
-On primary race increases/decreases the likelihood of secondary race primary and secondary mages
+On primary race increases/decreases the likelihood of secondary race primary and secondary mages (Default is 1, as a multiplier of 0.075)
 
 #primaryracemagemod <amount>
-On secondary race increases/decreases the likelihood of primary race primary and secondary mages
+On secondary race increases/decreases the likelihood of primary race primary and secondary mages (Default is 1, as a multiplier of 0.075)
 
 #secondaryracetertiarymagemod <amount>
-On primary race increases/decreases the likelihood of secondary race tertiary mages
+On primary race increases/decreases the likelihood of secondary race tertiary mages (Default is 1, as a multiplier of 0.05)
 
 #primaryracetertiarymagemod <amount>
-On secondary race increases/decreases the likelihood of primary race tertiary mages
+On secondary race increases/decreases the likelihood of primary race tertiary mages (Default is 1, as a multiplier of 0.05)
 
 #secondaryracecommand_conditional "<command>"
 #secondaryracecommand "<command>"
