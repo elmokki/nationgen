@@ -6,6 +6,8 @@
 #name "standard inf"
 #role "sacred infantry"
 #mapmovepenaltyenc 10
+#cannot_be_militia
+#cannot_be_pd
 
 #renderorder "shadow weapon cloakb extra1 mount basesprite shirt legs armor hair bonusweapon cloakf offhandw hands helmet offhanda overlay"
 
@@ -38,6 +40,8 @@
 #name "2h inf"
 #role "sacred infantry"
 #mapmovepenaltyenc 10
+#cannot_be_militia
+#cannot_be_pd
 
 #load basesprite /data/items/dynastichuman/bases_dustwalker_2h.txt
 #load shadow /data/items/dynastichuman/shadow.txt
@@ -61,6 +65,8 @@
 #basechance 100
 #role "sacred ranged"
 #mapmovepenaltyenc 10
+#cannot_be_militia
+#cannot_be_pd
 
 #renderorder "shadow cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon cloakf offhandw hands helmet offhanda overlay"
 

@@ -5,11 +5,9 @@
 #role "infantry"
 #role "scout"
 
-
 #load basesprite /data/items/fomorian/bases.txt
 #load shadow /data/items/fomorian/shadow.txt
 #load hands /data/items/fomorian/hands.txt
-
 
 #load armor /data/items/fomorian/armor.txt
 
@@ -31,6 +29,8 @@
 #role "scout"
 #role "elite infantry"
 #role "sacred infantry"
+#cannot_be_militia
+#cannot_be_pd
 
 #load basesprite /data/items/fomorian/bases.txt
 #load shadow /data/items/fomorian/shadow.txt
@@ -47,7 +47,6 @@
 
 #load cloakf /data/items/fomorian/cloakf.txt
 #load cloakb /data/items/fomorian/cloakb.txt
-
 
 #endpose
 
