@@ -17,7 +17,7 @@
 #command "#enc 2"
 #command "#size 1"
 #subrace markata
-#theme terrestrial
+#theme lowland
 #enditem
 
 #newitem
@@ -68,4 +68,29 @@
 #command "#maxage *0.8"
 #subrace "markatabred"
 #theme abysian
+#enditem
+
+#newitem
+#name "alpine markata base"
+#gameid -1
+#sprite /graphics/monkey/markata_base_alpine.png
+#command "#gcost 6"
+#command "#hp 5"
+#command "#mr 8"
+#command "#animal"
+#command "#forestsurvival"
+#command "#mountainsurvival"
+#command "#undisciplined"
+#command "#mor 8"
+#command "#prec 8"
+#command "#def 14"
+#command "#att 10"
+#command "#str 5"
+#command "#ap 14"
+#command "#enc 2"
+#command "#size 1"
+#command "#coldres 15"
+#command "#maxage *1.2"
+#subrace "alpine markata"
+#theme alpine
 #enditem

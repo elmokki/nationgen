@@ -76,12 +76,12 @@
 
 -- Demographic themes (mandatory)
 
--- Weights: EA 2, MA 2, LA 2
+-- Weights: EA 1.5, MA 1.5, LA 1.5
 #newtheme
 #type demographic
-#name terrestrial
+#name lowland
 #basechance 2
-#themeinc theme terrestrial *100000
+#themeinc theme lowland *100000
 #racedefinition "#generationchance mounted 0.125"
 #racedefinition "#monsterchance 0.3"
 #endtheme
@@ -104,8 +104,8 @@
 #name abysian
 #basechance 0.25
 #basechance 0
-#chanceinc era 1 *2
-#chanceinc era 3 *0.5
+#chanceinc era 3 *2
+#chanceinc era 1 *0.5
 #themeinc theme abysian *100000
 #themeinc theme iron *10
 #themeinc theme bronze *0.1
@@ -115,11 +115,12 @@
 -- Weights: EA 0.25, MA 0.25, LA 0.25
 #newtheme
 #type demographic
-#name yeti
+#name alpine
 #basechance 0
 -- #basechance 0.25
-#themeinc theme terrestrial *100000
+#themeinc theme alpine *100000
 #racedefinition "#pose yeti"
+#racedefinition "#monsterchance 0"
 #endtheme
 
 
