@@ -218,3 +218,23 @@
 #theme waste
 #prefix
 #end
+
+#new 
+#type flying
+#name "flying"
+#basechance 0
+#chanceinc "personalcommand #flying 20"
+#chanceinc "percentageofcommand #flying 0.2 *0"
+#theme flying
+#prefix
+#end
+
+#new 
+#type flying
+#name "winged"
+#basechance 0
+#chanceinc "itemtheme winged 20"
+#chanceinc "percentageofcommand #flying 0.2 *0"
+#theme flying
+#prefix
+#end

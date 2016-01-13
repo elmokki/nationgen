@@ -1,14 +1,27 @@
 #newitem
-#name "lowland"
+#name "wingless"
 #theme "lowland"
+#theme "alpine"
+#theme "abysian"
 #gameid -1
 #enditem
 
 #newitem
-#name "winged"
+#name "wings"
 #theme "winged"
 #basechance 0
 #nogen
 #gameid -1
 #sprite /graphics/monkey/bandar_wings.png
+#enditem
+
+#newitem
+#name "demonbred"
+#theme "abysian"
+#basechance 0
+#chanceinc "racetheme abysian 0.05"
+#define "#flying"
+#define "#gcost *1.5"
+#gameid -1
+#sprite /graphics/monkey/bandarbred_wings.png
 #enditem
