@@ -7,13 +7,14 @@
 #enditem
 
 #newitem
-#name "wings"
+#name "winged"
 #theme "winged"
 #gameid -1
 #basechance 0
 #nogen
 #sprite /graphics/monkey/vanara_wings.png
 #needs overlay vanara_wings
+#tag "winged"
 #enditem
 
 #newitem
@@ -27,4 +28,5 @@
 #define "ressize 2"
 #gameid -1
 #sprite /graphics/monkey/vanarabred_wings.png
+#tag "winged"
 #enditem

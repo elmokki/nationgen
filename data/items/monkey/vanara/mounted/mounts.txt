@@ -1,183 +1,8 @@
 --- Base offsets are applied to everything except base and overlay
-#newitem
-#basechance 0.1
-#name "serpent 1"
-#gameid -1
-#sprite /graphics/mounts/standard/serpent1.png
-#armor
-#offsetx -7
-#offsety 14
-#needs overlay 6
-#define "#size 3"
-#define "#mapmove 2"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#secondtmpshape serpent1"
- -- 1179
-#define "#gcost +30"
-#define "#ressize 2"
-#define "#enc 3"
-#tag "animal serpent"
-#theme "light"
-#tag "guaranteedprefix serpent"
-#tag "maxprot 13"
-#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
-#theme "imperial"
-#theme "enlightened"
-#enditem
-
-#newitem
-#basechance 0.1
-#name "serpent 2"
-#gameid -1
-#sprite /graphics/mounts/standard/serpent2.png
-#armor
-#offsetx -5
-#offsety 13
-#needs overlay 7
-#define "#size 3"
-#define "#mapmove 2"
-#define "#ap 16"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#secondtmpshape serpent2"
-#define "#gcost +30"
-#define "#ressize 2"
-#define "#rcost +5"
-#define "#enc 4"
-#tag "animal serpent"
-#theme "heavy"
-#theme "specialmount"
-#tag "guaranteedprefix serpent"
-#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
-#tag "minprot 14"
-#theme "imperial"
-#theme "enlightened"
-#enditem
-
-#newitem
-#basechance 0.1
-#name "green lizard"
-#gameid -1
-#sprite /graphics/mounts/standard/greenlizard.png
-#armor
-#offsetx -5
-#offsety 3
-#needs overlay 3
-#define "#size 3"
-#define "#mapmove 2"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#gcost +20"
-#define "#ressize 2"
-#define "#enc 3"
-#tag "animal lizard"
-#theme "light"
-#theme "specialmount"
-#tag "guaranteedprefix lizard"
-#tag "maxprot 15"
-#theme "imperial"
-#theme "enlightened"
-#theme "oriental"
-#enditem
-
-#newitem
-#basechance 0.25
-#name "cave drake"
-#gameid -1
-#sprite /graphics/mounts/standard/cavedrake.png
-#armor
-#offsetx 8
-#offsety 11
-#define "#size 4"
-#define "#mapmove 1"
-#define "#ap 7"
-#define "#mounted"
-#define "#weapon 417 --- Bite"
-#define "#secondshape cavedrake"
--- 522
-#define "#gcost +70"
-#define "#ressize 2"
-#define "#rcost +5"
-#define "#enc 4"
-#tag "animal drake"
-#theme "specialmount"
-#description "The cave drake will persist even if the rider dies."
-#tag "guaranteedprefix drake"
-#tag "name commander drakelord"
-#tag "minprot 0"
-#tag "maxprot 100"
-#sacredextra nonholyshape 0.25
-#theme "occidental"
-#theme "enlightened"
-#theme "oriental"
-#enditem
-
-
-#newitem
-#basechance 0.1
-#name "spider"
-#gameid -1
-#sprite /graphics/mounts/standard/spider1.png
-#armor
-#offsetx 35
-#offsety 7
-#needs overlay spider_overlay
-#define "#size 5"
-#define "#mapmove 2"
-#define "#ap 13"
-#define "#mounted"
-#define "#weapon 262"
-#define "#weapon 313"
-#define "#secondshape spider"
-#description "The giant spider will persist even if the rider dies."
-#define "#gcost +30"
-#define "#ressize 2"
-#define "#enc 4"
-#theme "specialmount"
-#tag "animal spider"
-#tag "guaranteedprefix spider"
-#tag "minprot 0"
-#tag "maxprot 12"
-#theme "occidental"
-#theme "enlightened"
-#enditem
-
-#newitem
-#basechance 0.1
-#name "spider heavy"
-#gameid -1
-#sprite /graphics/mounts/standard/spider1.png
-#armor
-#offsetx 35
-#offsety 7
-#needs overlay spider_overlay
-#define "#size 5"
-#define "#mapmove 2"
-#define "#ap 13"
-#define "#mounted"
-#define "#weapon 262 --- Web Spit"
-#define "#weapon 313 --- Spider Fangs"
-#define "#secondshape spider"
-#define "#gcost +40"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#rcost +5"
-#description "The giant spider will persist even if the rider dies."
-#theme "specialmount"
-#tag "animal spider"
-#tag "guaranteedprefix spider"
-#tag "minprot 13"
-#tag "maxprot 100"
-#theme "occidental"
-#theme "enlightened"
-#enditem
-
-
+--- Culturally favored mounts
 #newitem
 #basechance 20
+#chanceinc "nationcommand #idealcold above 1 *0.25"
 #name "tiger"
 #gameid -1
 #sprite /graphics/mounts/standard/tiger.png
@@ -208,6 +33,8 @@
 
 
 #newitem
+#basechance 20
+#chanceinc "nationcommand #idealcold above 1 *0"
 #name "jaguar"
 #gameid -1
 #sprite /graphics/mounts/standard/jaguar.png
@@ -237,7 +64,272 @@
 
 
 #newitem
+#name "dire wolf"
+#basechance 20
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 22"
+#define "#mounted"
+#define "#weapon 237 --- bite"
+#define "#secondtmpshape direwolf1mount"
+#define "#gcost +25"
+#define "#ressize 2"
+#define "#enc 4"
+#tag "animal wolf"
+#theme "light"
+#tag "maxprot 11"
+#tag "guaranteedprefix wolf"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#offsety 0
+#offsetx -9
+#theme "imperial"
+#enditem
+
+
+#newitem
+#name "lion"
+#basechance 20
+#chanceinc "nationcommand #idealcold above 1 *0"
+#gameid -1
+#sprite /graphics/mounts/standard/lion_asian.png
+#armor
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 237 --- Bite"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape lionmount"
+#define "#gcost +35"
+#define "#ressize 2"
+#define "#enc 4"¨
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#offsety 5
+#offsetx -3
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#theme "austral"
+#enditem
+
+
+#newitem
+#name "serpent 1"
+#chanceinc "nationcommand #idealcold above 0 *0"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#secondtmpshape serpent1"
+#define "#gcost +30"
+#define "#ressize 2"
+#define "#enc 3"
+#tag "animal serpent"
+#theme "light"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 13"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#theme "imperial"
+#theme "enlightened"
+#enditem
+
+
+#newitem
+#name "serpent 2"
+#chanceinc "nationcommand #idealcold above 0 *0"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent2.png
+#armor
+#offsetx -5
+#offsety 13
+#needs overlay 7
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 16"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#secondtmpshape serpent2"
+#define "#gcost +30"
+#define "#ressize 2"
+#define "#rcost +5"
+#define "#enc 4"
+#tag "animal serpent"
+#theme "heavy"
+#theme "specialmount"
+#tag "guaranteedprefix serpent"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#tag "minprot 14"
+#theme "imperial"
+#theme "enlightened"
+#enditem
+
+
+#newitem
+#basechance 0.5
+#chanceinc "nationcommand #idealcold above 0 *0"
+#name "green lizard"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#gcost +20"
+#define "#ressize 2"
+#define "#enc 3"
+#tag "animal lizard"
+#theme "light"
+#theme "specialmount"
+#tag "guaranteedprefix lizard"
+#tag "maxprot 15"
+#theme "imperial"
+#theme "enlightened"
+#theme "oriental"
+#enditem
+
+
+#newitem
+#basechance 0.25
+#chanceinc "nationcommand #idealcold above 0 *0"
+#name "cave drake"
+#gameid -1
+#sprite /graphics/mounts/standard/cavedrake.png
+#armor
+#offsetx 8
+#offsety 11
+#define "#size 4"
+#define "#mapmove 1"
+#define "#ap 7"
+#define "#mounted"
+#define "#weapon 417 --- Bite"
+#define "#secondshape cavedrake" -- 522
+#define "#gcost +70"
+#define "#ressize 2"
+#define "#rcost +5"
+#define "#enc 4"
+#tag "animal drake"
+#theme "specialmount"
+#description "The cave drake will persist even if the rider dies."
+#tag "guaranteedprefix drake"
+#tag "name commander drakelord"
+#tag "minprot 0"
+#tag "maxprot 100"
+#sacredextra nonholyshape 0.25
+#theme "occidental"
+#theme "enlightened"
+#theme "oriental"
+#enditem
+
+
+#newitem
+#basechance 0.5
+#chanceinc "nationcommand #idealcold above 2 *0"
+#name "spider"
+#gameid -1
+#sprite /graphics/mounts/standard/spider1.png
+#armor
+#offsetx 35
+#offsety 7
+#needs overlay spider_overlay
+#define "#size 5"
+#define "#mapmove 2"
+#define "#ap 13"
+#define "#mounted"
+#define "#weapon 262"
+#define "#weapon 313"
+#define "#secondshape spider"
+#description "The giant spider will persist even if the rider dies."
+#define "#gcost +30"
+#define "#ressize 2"
+#define "#enc 4"
+#theme "specialmount"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "minprot 0"
+#tag "maxprot 12"
+#theme "occidental"
+#theme "enlightened"
+#enditem
+
+
+#newitem
+#basechance 0.5
+#chanceinc "nationcommand #idealcold above 2 *0"
+#name "spider heavy"
+#gameid -1
+#sprite /graphics/mounts/standard/spider1.png
+#armor
+#offsetx 35
+#offsety 7
+#needs overlay spider_overlay
+#define "#size 5"
+#define "#mapmove 2"
+#define "#ap 13"
+#define "#mounted"
+#define "#weapon 262 --- Web Spit"
+#define "#weapon 313 --- Spider Fangs"
+#define "#secondshape spider"
+#define "#gcost +40"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +5"
+#description "The giant spider will persist even if the rider dies."
+#theme "specialmount"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "minprot 13"
+#tag "maxprot 100"
+#theme "occidental"
+#theme "enlightened"
+#enditem
+
+
+#newitem
+#name "black jaguar"
+#chanceinc "nationcommand #idealcold above 1 *0"
+#gameid -1
+#sprite /graphics/mounts/standard/blackjaguar.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 236"
+#define "#weapon 237"
+#define "#gcost +35"
+#define "#rcost +5"
+#define "#ressize 2"
+#define "#enc 3"
+#theme "specialmount"
+#theme "light"
+#tag "animal panther"
+#tag "guaranteedprefix panther"
+#tag "minprot 0"
+#tag "maxprot 12"
+#theme "occidental"
+#enditem
+
+
+#newitem
 #name "black tiger"
+#basechance 0.5
+#chanceinc "nationcommand #idealcold above 1 *0"
 #gameid -1
 #sprite /graphics/mounts/standard/blacktiger.png
 #armor
@@ -259,14 +351,72 @@
 #tag "guaranteedprefix black tiger"
 #tag "minprot 0"
 #tag "maxprot 11"
-#basechance 0.5
 #theme "oriental"
 #theme "enlightened"
 #enditem
 
 
 #newitem
+#name "white tiger"
+#basechance 0.5
+#chanceinc "nationcommand #idealcold above 1 *40"
+#chanceinc "nationcommand #idealcold below -1 *0"
+#gameid -1
+#sprite /graphics/mounts/standard/whitetiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 236"
+#define "#weapon 237"
+#define "#gcost +25"
+#define "#rcost +5"
+#define "#ressize 2"
+#define "#enc 3"
+#theme "specialmount"
+#theme "light"
+#tag "animal tiger"
+#tag "guaranteedprefix white tiger"
+#tag "minprot 0"
+#tag "maxprot 11"
+#theme "oriental"
+#theme "enlightened"
+#enditem
+
+
+#newitem
+#name "dire wolf"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 22"
+#define "#mounted"
+#define "#weapon 237 --- bite"
+#define "#secondtmpshape direwolf1mount"
+#define "#gcost +25"
+#define "#ressize 2"
+#define "#enc 4"
+#tag "animal wolf"
+#theme "light"
+#tag "maxprot 11"
+#tag "guaranteedprefix wolf"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#offsety 0
+#offsetx -9
+#theme "occidental"
+#theme "oriental"
+#enditem
+
+
+#newitem
 #name "lion"
+#basechance 4
+#chanceinc "nationcommand #idealcold above 2 *0"
 #gameid -1
 #sprite /graphics/mounts/standard/lion_asian.png
 #armor
@@ -285,7 +435,6 @@
 #offsetx -3
 #tag "animal lion"
 #tag "guaranteedprefix lion"
-#basechance 4
 #theme "imperial"
 #theme "oriental"
 #theme "enlightened"
@@ -293,9 +442,8 @@
 
 
 #newitem
-#basechance 8
 #name "winged lion"
-#basechance 0.25
+#basechance 0.1
 #gameid -1
 #sprite /graphics/mounts/standard/wingedlion.png
 #needs overlay wingedlion_overlay
@@ -324,7 +472,38 @@
 
 
 #newitem
+#name "bear"
+#gameid -1
+#basechance 4
+#chanceinc "nationcommand #idealcold below -1 *0"
+#sprite /graphics/mounts/standard/bear_small.png
+#armor
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 14"
+#define "#mounted"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape smallbearmount"
+#define "#gcost +30"
+#define "#ressize 2"
+#define "#enc 4"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#offsety 4
+#offsetx -5
+#theme "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 8"
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#enditem
+
+
+#newitem
 #basechance 0.1
+#chanceinc "nationcommand #idealcold above 2 *0"
 #name "bigspider"
 #gameid -1
 #sprite /graphics/mounts/standard/bigspider.png
@@ -354,7 +533,8 @@
 
 
 #newitem
-#basechance 0.5
+#basechance 0.1
+#chanceinc "nationcommand #idealcold above 2 *0"
 #name "amphiptere"
 #gameid -1
 #sprite /graphics/mounts/standard/amphiptere.png
@@ -389,7 +569,6 @@
 
 
 #newitem
-#basechance 0.05
 #name "brown horse"
 #gameid -1
 #sprite /graphics/mounts/standard/brownhorse.png
@@ -413,8 +592,9 @@
 #theme "enlightened"
 #enditem
 
+
 #newitem
-#basechance 0.05
+#basechance 0.1
 #name "pegasus"
 #gameid -1
 #sprite /graphics/mounts/standard/pegasus.png
@@ -440,8 +620,9 @@
 #theme "enlightened"
 #enditem
 
+
 #newitem
-#basechance 0.025
+#basechance 0.1
 #name "unicorn"
 #gameid -1
 #sprite /graphics/mounts/standard/unicorn.png
@@ -467,8 +648,9 @@
 #theme "enlightened"
 #enditem
 
+
 #newitem
-#basechance 0.025
+#basechance 0.1
 #name "unicorn"
 #gameid -1
 #sprite /graphics/mounts/standard/unicorn.png
@@ -494,9 +676,11 @@
 #theme "enlightened"
 #enditem
 
+
 #newitem
 #name "wyvern"
-#basechance 0.05
+#basechance 0.1
+#chanceinc "nationcommand #idealcold above 2 *0"
 #gameid -1
 #sprite /graphics/mounts/standard/wyvern.png
 #armor
@@ -530,9 +714,11 @@
 #theme "enlightened"
 #enditem
 
+
 #newitem
-#basechance 0.05
+#basechance 0.1
 #name "scorpion"
+#chanceinc "nationcommand #idealcold above 0 *0"
 #gameid -1
 #sprite /graphics/abysian/mounts/scorpion.png
 #armor
@@ -543,7 +729,6 @@
 #define "#ap 8"
 #define "#mounted"
 #define "#weapon nostr_pincer"
-
 #define "#weapon nostr_scorpiontail"
 #define "#secondshape scorpionmount"
 #define "#gcost +50"
@@ -557,6 +742,7 @@
 #tag "minprot 10"
 #tag "maxprot 100"
 #chanceinc primaryrace abysian *100
+#chanceinc primaryrace zotz *100
 #theme "imperial"
 #theme "oriental"
 #theme "occidental"
@@ -567,7 +753,7 @@
 #newitem
 #name "cavecow"
 #gameid -1
-#basechance 0.05
+#basechance 0.1
 #sprite /graphics/mounts/standard/cavecow.png
 #armor
 #define "#size 4"
@@ -590,59 +776,4 @@
 #theme "oriental"
 #theme "occidental"
 #theme "enlightened"
-#enditem
-
-
-#newitem
-#name "bear"
-#basechance 0.1
-#gameid -1
-#sprite /graphics/mounts/standard/bear_small.png
-#armor
-#define "#size 3"
-#define "#mapmove 2"
-#define "#ap 14"
-#define "#mounted"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape smallbearmount"
-#define "#gcost +30"
-#define "#ressize 2"
-#define "#enc 4"
-#description "If the rider dies, the bear will carry on fighting until the end of the battle."
-#offsety 4
-#offsetx -5
-#theme "animal bear"
-#tag "name commander beastmaster"
-#tag "guaranteedprefix bear"
-#tag "minprot 8"
-#theme "imperial"
-#theme "oriental"
-#theme "occidental"
-#theme "enlightened"
-#enditem
-
-#newitem
-#name "dire wolf"
-#basechance 0.3
-#gameid -1
-#sprite /graphics/mounts/standard/direwolf1.png
-#armor
-#define "#size 3"
-#define "#mapmove 2"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon 237 --- bite"
-#define "#secondtmpshape direwolf1mount"
-#define "#gcost +25"
-#define "#ressize 2"
-#define "#enc 4"
-#tag "animal wolf"
-#theme "light"
-#tag "maxprot 11"
-#tag "guaranteedprefix wolf"
-#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
-#offsety 0
-#offsetx -9
-#theme "imperial"
-#theme "occidental"
 #enditem
