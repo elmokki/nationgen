@@ -84,6 +84,7 @@
 #themeinc theme lowland *100000
 #racedefinition "#generationchance mounted 0.125"
 #racedefinition "#monsterchance 0.3"
+#racedefinition "#nationcommand '#idealcold -2'"
 #endtheme
 
 -- Weights: EA 0.5, MA 0.25, LA 0.125
@@ -96,6 +97,7 @@
 #themeinc theme winged *100000
 #racedefinition "#generationchance mounted 0"
 #racedefinition "#monsterchance 0"
+#racedefinition "#nationcommand '#idealcold 0'"
 #endtheme
 
 -- Weights: EA 0.125, MA 0.25, LA 0.5
@@ -103,24 +105,28 @@
 #type demographic
 #name abysian
 #basechance 0.25
-#basechance 0
 #chanceinc era 3 *2
 #chanceinc era 1 *0.5
 #themeinc theme abysian *100000
 #themeinc theme iron *10
 #themeinc theme bronze *0.1
 #racedefinition "#monsterchance 0"
+#racedefinition "#nationcommand '#idealcold -2'"
+#racedefinition "#nationcommand '#magicpriority fire 4'"
+#racedefinition "#nationcommand '#magicpriority blood 4'"
 #endtheme
 
 -- Weights: EA 0.25, MA 0.25, LA 0.25
 #newtheme
 #type demographic
 #name alpine
-#basechance 0
--- #basechance 0.25
+#basechance 0.25
 #themeinc theme alpine *100000
-#racedefinition "#pose yeti"
+-- #racedefinition "#pose yeti"
 #racedefinition "#monsterchance 0"
+#racedefinition "#nationcommand '#idealcold 2'"
+#racedefinition "#nationcommand '#magicpriority air 4'"
+#racedefinition "#nationcommand '#magicpriority water 4'"
 #endtheme
 
 
@@ -150,7 +156,6 @@
 #racedefinition "#pose vanaraelites"
 #racedefinition "#pose vanaramages"
 #racedefinition "#pose vanaraelders"
-#racedefinition "#nationcommand '#idealcold -2'"
 #racedefinition "#nationcommand '#gods monkeygods"
 #racedefinition "#unitcommand '#nametype 129'"
 #racedefinition "#longsyllables /data/names/nations/monkey/longsyllables.txt"
@@ -165,8 +170,7 @@
 #type cultural
 #name oriental
 #theme oriental
-#basechance 0
--- #basechance 2
+#basechance 2
 #themeinc theme oriental *1000
 #themeinc theme advanced *0.5
 #themeinc theme iron *2
@@ -184,7 +188,6 @@
 #racedefinition "#pose vanaraelites"
 #racedefinition "#pose vanaramages"
 #racedefinition "#pose vanaraelders"
-#racedefinition "#nationcommand '#idealcold -1'"
 #racedefinition "#nationcommand '#magicpriority astral 6'"
 #racedefinition "#nationcommand '#magicpriority nature 6'"
 #racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
@@ -217,7 +220,6 @@
 #racedefinition "#pose vanaramages"
 #racedefinition "#pose vanaraelders"
 #racedefinition "#pose markata"
-#racedefinition "#nationcommand '#idealcold -1'"
 #racedefinition "#longsyllables /data/names/nations/nahuatl/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/nahuatl/suffixes.txt"
@@ -249,7 +251,6 @@
 #racedefinition "#pose bandarmages"
 #racedefinition "#pose bandarelders"
 #racedefinition "#pose markata"
-#racedefinition "#nationcommand '#idealcold -2'"
 #racedefinition "#longsyllables /data/names/nations/machakan/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/machakan/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/machakan/suffixes.txt"
@@ -282,7 +283,6 @@
 #racedefinition "#pose vanaraelites"
 #racedefinition "#pose vanaramages"
 #racedefinition "#pose vanaraelders"
-#racedefinition "#nationcommand '#idealcold 0'"
 #racedefinition "#nationcommand '#magicpriority nature 1'"
 #racedefinition "#longsyllables /data/names/nations/romance/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/romance/shortsyllables.txt"
@@ -317,7 +317,6 @@
 #racedefinition "#pose bandarelders"
 #racedefinition "#pose vanaratroops"
 #racedefinition "#pose vanaramages"
-#racedefinition "#nationcommand '#idealcold 0'"
 #racedefinition "#nationcommand '#magicpriority nature 1'"
 #racedefinition "#longsyllables /data/names/nations/romance/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/romance/shortsyllables.txt"

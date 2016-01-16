@@ -1,6 +1,8 @@
 #newitem
-#name "lowland"
+#name "wingless"
 #theme "lowland"
+#theme "alpine"
+#theme "abysian"
 #gameid -1
 #enditem
 
@@ -12,4 +14,19 @@
 #nogen
 #sprite /graphics/monkey/vanara_wings.png
 #needs overlay vanara_wings
+#tag "winged"
+#enditem
+
+#newitem
+#name "demonbred"
+#theme "abysian"
+#basechance 0
+#chanceinc "racetheme abysian 0.05"
+#define "#flying"
+#define "#gcost *1.5"
+#define "size 3"
+#define "ressize 2"
+#gameid -1
+#sprite /graphics/monkey/vanarabred_wings.png
+#tag "winged"
 #enditem

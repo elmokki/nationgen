@@ -4,14 +4,14 @@
 #name "militia"
 #maxvarieties 1
 #maxunits 1
-#chanceinc pose mounted *0
-#chanceinc pose chariot *0
-#chanceinc pose ranged *0.25
-#chanceinc unittag noble *0
-#chanceinc itemtag  noble *0
-#chanceinc itemtag not slow_militia *0
+#chanceinc "pose mounted *0"
+#chanceinc "pose chariot *0"
+#chanceinc "pose ranged *0.25"
+#chanceinc "unittag noble *0"
+#chanceinc "itemtag  noble *0"
+#chanceinc "itemtag not slow_militia *0"
 #chanceinc "personalcommand #flying *0"
-#chanceinc tag cannot_be_militia *0
+#chanceinc "tag cannot_be_militia *0"
 #command "#def -2"
 #command "#att -2"
 #command "#gcost *0.7"
@@ -22,9 +22,9 @@
 #themeinc "thisarmorprot 8 *0.50"
 #themeinc "thisarmorprot 10 *0.05"
 #themeinc "thisarmorprot 12 *0.01"
-#themeinc theme militia *10
-#themeinc theme heavy *0.25
-#themeinc theme advanced *0.25
+#themeinc "theme militia *10"
+#themeinc "theme heavy *0.25"
+#themeinc "theme advanced *0.25"
 #theme militia
 #cannot_be_commander
 #onlyfilter
@@ -33,17 +33,16 @@
 -- Nomal-speed militia
 #new
 #basechance 1
-#chanceinc 
 #name "militia"
 #maxvarieties 1
 #maxunits 1
-#chanceinc pose mounted *0
-#chanceinc pose chariot *0
-#chanceinc pose ranged *0.25
-#chanceinc unittag noble *0
-#chanceinc itemtag  noble *0
-#chanceinc itemtag slow_militia *0
-#chanceinc tag cannot_be_militia *0
+#chanceinc "pose mounted *0"
+#chanceinc "pose chariot *0"
+#chanceinc "pose ranged *0.25"
+#chanceinc "unittag noble *0"
+#chanceinc "itemtag  noble *0"
+#chanceinc "itemtag slow_militia *0"
+#chanceinc "tag cannot_be_militia *0"
 #command "#def -2"
 #command "#att -2"
 #command "#gcost *0.7"
@@ -52,9 +51,9 @@
 #themeinc "thisarmorprot 8 *0.50"
 #themeinc "thisarmorprot 10 *0.05"
 #themeinc "thisarmorprot 12 *0.01"
-#themeinc theme militia *10
-#themeinc theme heavy *0.25
-#themeinc theme advanced *0.25
+#themeinc "theme militia *10"
+#themeinc "theme heavy *0.25"
+#themeinc "theme advanced *0.25"
 #theme militia
 #cannot_be_commander
 #onlyfilter

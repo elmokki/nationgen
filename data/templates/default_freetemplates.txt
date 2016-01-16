@@ -36,13 +36,13 @@
 #basechance 0.5
 #name "militia"
 #maxvarieties 1
-#chanceinc pose mounted *0
-#chanceinc pose chariot *0
-#chanceinc unittag noble *0
-#chanceinc itemtag  noble *0
-#chanceinc itemtag not slow_militia *0
+#chanceinc "pose mounted *0"
+#chanceinc "pose chariot *0"
+#chanceinc "unittag noble *0"
+#chanceinc "itemtag  noble *0"
+#chanceinc "itemtag not slow_militia *0"
 #chanceinc "personalcommand #flying *0"
-#chanceinc tag cannot_be_militia *0
+#chanceinc "tag cannot_be_militia *0"
 #command "#def -2"
 #command "#att -2"
 #command "#gcost *0.7"
@@ -62,12 +62,12 @@
 #basechance 0.5
 #name "militia"
 #maxvarieties 1
-#chanceinc pose mounted *0
-#chanceinc pose chariot *0
-#chanceinc unittag noble *0
-#chanceinc itemtag  noble *0
-#chanceinc itemtag slow_militia *0
-#chanceinc tag cannot_be_militia *0
+#chanceinc "pose mounted *0"
+#chanceinc "pose chariot *0"
+#chanceinc "unittag noble *0"
+#chanceinc "itemtag  noble *0"
+#chanceinc "itemtag slow_militia *0"
+#chanceinc "tag cannot_be_militia *0"
 #command "#def -2"
 #command "#att -2"
 #command "#gcost *0.7"

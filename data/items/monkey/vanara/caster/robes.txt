@@ -4,9 +4,205 @@
 #gameid -1
 #armor
 #tag "tier 1"
+#theme "enlightened"
+#theme "naked"
+#enditem
+
+#newitem
+#id nothing
+#gameid -1
+#armor
 #tag "tier 2"
+#theme "enlightened"
+#theme "naked"
+#enditem
+
+#newitem
+#id nothing
+#gameid -1
+#armor
 #tag "tier 3"
 #theme "enlightened"
+#theme "naked"
+#enditem
+
+#newitem
+#id loincloth
+#gameid -1
+#sprite /graphics/monkey/armor/vanara_mage/loincloth.png
+#recolormask self
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "oriental"
+#enditem
+
+
+--- Multicultural robes
+#newitem
+#id toga_white
+#gameid 158
+#sprite /graphics/monkey/armor/vanara_mage/toga_bright.png
+#eliteversion "toga_faint"
+#armor
+#tag "tier 1"
+#theme "imperial"
+#theme "oriental"
+#enditem
+
+#newitem
+#id toga_faint
+#gameid 158
+#sprite /graphics/monkey/armor/vanara_mage/toga_bright.png
+#recolormask /graphics/monkey/armor/vanara_mage/toga_recolormask2.png
+#eliteversion "toga_bright"
+#eliteversion "toga_middling"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "imperial"
+#theme "oriental"
+#enditem
+
+#newitem
+#id toga_bright
+#gameid 158
+#sprite /graphics/monkey/armor/vanara_mage/toga_bright.png
+#recolormask /graphics/monkey/armor/vanara_mage/toga_recolormask1.png
+#eliteversion "toga_medium"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#theme "oriental"
+#enditem
+
+#newitem
+#id toga_grey
+#gameid 158
+#sprite /graphics/monkey/armor/vanara_mage/toga_medium.png
+#eliteversion "toga_middling"
+#armor
+#tag "tier 1"
+#theme "imperial"
+#theme "oriental"
+#enditem
+
+#newitem
+#id toga_middling
+#gameid 158
+#sprite /graphics/monkey/armor/vanara_mage/toga_medium.png
+#recolormask /graphics/monkey/armor/vanara_mage/toga_recolormask1.png
+#eliteversion "toga_medium"
+#eliteversion "toga_faint"
+#eliteversion "toga_dull"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "imperial"
+#theme "oriental"
+#enditem
+
+#newitem
+#id toga_medium
+#gameid 158
+#sprite /graphics/monkey/armor/vanara_mage/toga_medium.png
+#recolormask self
+#eliteversion "toga_bright"
+#eliteversion "toga_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#theme "oriental"
+#enditem
+
+#newitem
+#id toga_black
+#gameid 158
+#sprite /graphics/monkey/armor/vanara_mage/toga_dark.png
+#eliteversion "toga_dull"
+#armor
+#tag "tier 1"
+#theme "imperial"
+#theme "oriental"
+#enditem
+
+#newitem
+#id toga_dull
+#gameid 158
+#sprite /graphics/monkey/armor/vanara_mage/toga_dark.png
+#recolormask /graphics/monkey/armor/vanara_mage/toga_recolormask1.png
+#eliteversion "toga_dark"
+#eliteversion "toga_middling"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "imperial"
+#theme "oriental"
+#enditem
+
+#newitem
+#id toga_dark
+#gameid 158
+#sprite /graphics/monkey/armor/vanara_mage/toga_dark.png
+#recolormask self
+#eliteversion "toga_medium"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#theme "oriental"
+#enditem
+
+#newitem
+#id robe_lizard_light
+#gameid 158
+#sprite /graphics/monkey/armor/vanara_mage/robe_lizard.png
+#recolormask /graphics/monkey/armor/vanara_mage/robe_lizard_recolormask1.png
+#eliteversion "robe_lizard_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "oriental"
+#enditem
+
+#newitem
+#id robe_lizard_dark
+#gameid 158
+#sprite /graphics/monkey/armor/vanara_mage/robe_lizard.png
+#recolormask /graphics/monkey/armor/vanara_mage/robe_lizard_recolormask2.png
+#eliteversion "robe_lizard_light"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "oriental"
+#enditem
+
+
+--- Oriental robes
+
+#newitem
+#id apron_apocathary_bright
+#gameid 158
+#sprite /graphics/monkey/armor/vanara_mage/apron_apocathary_bright.png
+#recolormask self
+#eliteversion "apron_apocathary_dark"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "oriental"
+#enditem
+
+#newitem
+#id apron_apocathary_dark
+#gameid 158
+#sprite /graphics/monkey/armor/vanara_mage/apron_apocathary_dark.png
+#recolormask self
+#eliteversion "apron_apocathary_bright"
+#armor
+#tag "tier 1"
+#tag "tier 2"
 #theme "oriental"
 #enditem
 
@@ -108,9 +304,10 @@
 #newitem
 #id imperialrobe_dull
 #gameid 158
-#sprite /graphics/monkey/armor/vanara_mage/ermorrobe_bright.png
+#sprite /graphics/monkey/armor/vanara_mage/ermorrobe_dark.png
 #recolormask /graphics/monkey/armor/vanara_mage/ermorrobe_faint_recolormask.png
 #eliteversion "imperialrobe_middling"
+#eliteversion "imperialrobe_dark"
 #armor
 #tag "tier 1"
 #tag "tier 2"
