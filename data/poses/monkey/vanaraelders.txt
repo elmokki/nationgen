@@ -1,3 +1,49 @@
+------ Warrior-mage
+#newpose
+#name "vanara warrior-mage"
+#role "priest"
+#role "mage"
+#theme "lowland"
+#theme "winged"
+#theme "abysian"
+#theme "imperial"
+#theme "oriental"
+
+#command "#gcost +10"
+#command "#hp +2"
+#command "#mor +2"
+#command "#str +2"
+#command "#att +2"
+#command "#def +2"
+#command "#ap +2"
+#command "#older +15"
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/monkey/vanara/caster/magebases.txt
+#load shadow /data/items/monkey/vanara/normal/shadow.txt
+
+#load hands /data/items/monkey/vanara/normal/hands.txt
+
+#load armor /data/items/monkey/vanara/caster/armor.txt
+#load shirt /data/items/monkey/vanara/normal/shirt.txt
+#load helmet /data/items/monkey/vanara/caster/helmet_warrior.txt
+
+#load weapon /data/items/monkey/vanara/caster/weapon_warrior.txt
+
+#load wings /data/items/monkey/vanara/normal/wings.txt
+#load overlay /data/items/monkey/vanara/normal/overlay.txt
+
+#generateitem 1 shirt
+
+#tier 1
+#tier 2
+#notfortier 3
+#command "#maxage 60"
+#endpose
+
+
+
 -------- Terrestrial high mage, standing
 #newpose
 #name "standing vanara elder mage"

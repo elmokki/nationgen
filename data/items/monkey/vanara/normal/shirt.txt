@@ -1,0 +1,22 @@
+#newitem
+#name "noshirt"
+#theme "enlightened"
+#theme "imperial"
+#theme "oriental"
+#theme "primitive"
+#gameid -1
+#basechance 1
+#enditem
+
+#newitem
+#name "full_dark"
+#theme "imperial"
+#theme "oriental"
+#theme "advanced"
+#gameid -1
+#basechance 1
+#chanceinc "racetheme abysian *0"
+#chanceinc "racetheme alpine *0"
+#sprite /graphics/monkey/armor/vanara/shirt_dark.png
+#recolormask self
+#enditem

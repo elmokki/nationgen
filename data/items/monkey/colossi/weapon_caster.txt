@@ -1,127 +1,61 @@
 #newitem
 #id ice_mace
-#basechance 1
-#chanceinc itemtheme not armor ice *0.05
-#chanceinc itemtheme armor ice  *20
-#chanceinc "personalcommand below #coldres 5 *0"
 #gameid 44
-#sprite /graphics/caelian/weapon/icemace.png
-#theme "ice"
-#type ice
-#maxprot 12
+#sprite /graphics/monkey/yeti/icemace.png
 #enditem
 
 #newitem
-#id orb
+#id ice_scepter
+#gameid 44
+#sprite /graphics/monkey/yeti/icescepter.png
+#recolormask /graphics/monkey/yeti/icescepter_recolormask.png
+#enditem
+
+#newitem
+#id iceorb
 #gameid -1
-#sprite /graphics/weapon/mage/orb.png
-#recolormask self
-#tag "tier 3"
-#offsetx -2
-#offsety 7
+#sprite /graphics/monkey/yeti/iceorb.png
 #enditem
 
 #newitem
-#id sceptre
-#gameid 446
-#sprite /graphics/weapon/mage/sceptre.png
-#tag "tier 2"
-#tag "tier 3"
-#tag "eliteversion orbsceptre"
-#offsetx -2
-#offsety 4
+#id icestaff
+#gameid 124
+#sprite /graphics/monkey/yeti/icestaff.png
 #enditem
 
 #newitem
-#id orbsceptre
-#gameid 446
-#sprite /graphics/weapon/mage/sceptre_orb.png
-#recolormask /graphics/weapon/mage/sceptre_orb_recolormask.png
-#theme "superior"
-#tag "tier 3"
-#offsetx -2
-#offsety 4
+#id orbstaff
+#gameid 124
+#sprite /graphics/monkey/yeti/orbstaff.png
+#recolormask /graphics/monkey/yeti/orbstaff_recolormask.png
 #enditem
 
 #newitem
-#id pestle
-#gameid 499
-#needs offhand mortar
-#sprite /graphics/weapon/mage/pestle.png
-#tag "tier 1"
-#offsetx -2
-#offsety 4
+#id iciclestaff
+#gameid 124
+#sprite /graphics/monkey/yeti/iciclestaff.png
 #enditem
 
 #newitem
-#id dagger
-#gameid 9
-#sprite /graphics/weapon/mage/dagger.png
-#tag "tier 1"
-#offsetx 1
-#offsety 8
-#enditem
-
-#newitem
-#id falchion
-#gameid 10
-#sprite /graphics/monkey/weapon/bandar/falchion.png
-#tag "name infantry falchioneer"
-#enditem
-
-
-#newitem
-#id pestle
-#gameid 499
-#needs offhand mortar
-#sprite /graphics/weapon/mage/pestle.png
-#tag "tier 1"
-#offsetx -2
-#offsety 4
-#enditem
-
-
-#newitem
-#id epicgoldenstaff
+#id woodstaff
 #gameid 7
-#sprite /graphics/agarthan/weapons/mage/epicgoldenstaff.png
-#tag "tier 3"
-#offsetx -1
+#sprite /graphics/monkey/yeti/woodstaff.png
 #enditem
-
 
 #newitem
-#id goldenstaff
+#id gnarledstaff
 #gameid 7
-#sprite /graphics/agarthan/weapons/mage/goldenstaff.png
-#tag "tier 2"
-#tag "tier 1"
-#eliteversion epicgoldenstaff
-#eliteversion epicbaubledstaff
-#eliteversion woodenorbstaff
-#offsetx -1
+#sprite /graphics/monkey/yeti/gnarledstaff.png
 #enditem
-
-
 
 #newitem
-#id woodenstaff
+#id skullstaff1
 #gameid 7
-#sprite /graphics/agarthan/weapons/mage/woodenstaff.png
-#tag "tier 2"
-#tag "tier 1"
-#eliteversion goldenstaff
-#eliteversion woodenstaff_bauble
-#offsetx -2
+#sprite /graphics/monkey/yeti/skullstaff.png
 #enditem
-
 
 #newitem
-#id woodenstaff_bauble
+#id skullstaff2
 #gameid 7
-#tag "tier 2"
-#tag "tier 3"
-#sprite /graphics/agarthan/weapons/mage/woodenstaff_bauble.png
-#offsetx -2
+#sprite /graphics/monkey/yeti/skullstaff2.png
 #enditem
-

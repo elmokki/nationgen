@@ -195,6 +195,40 @@
 
 --- Oriental armor
 #newitem
+#chanceinc "personalcommand holy *0.1"
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/monkey/armor/bandar/scalecuirass_oriental.png
+#recolormask /graphics/monkey/armor/bandar/scale_oriental_recolormask.png
+#armor
+#theme "oriental"
+#theme "iron"
+#enditem
+
+#newitem
+#chanceinc "personalcommand holy *0.1"
+#name "scale hauberk"
+#gameid 12
+#sprite /graphics/monkey/armor/bandar/scalehauberk_oriental.png
+#recolormask /graphics/monkey/armor/bandar/scale_oriental_recolormask.png
+#armor
+#theme "oriental"
+#theme "iron"
+#enditem
+
+#newitem
+#chanceinc "personalcommand holy *0.1"
+#name "full scale"
+#gameid 17
+#sprite /graphics/monkey/armor/bandar/fullscale_oriental.png
+#recolormask /graphics/monkey/armor/bandar/scale_oriental_recolormask.png
+#eliteversion "gilt full scale"
+#armor
+#theme "oriental"
+#theme "iron"
+#enditem
+
+#newitem
 #name "samurai armor"
 #gameid 129
 #sprite /graphics/monkey/armor/bandar/samuraiarmor.png

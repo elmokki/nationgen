@@ -1,6 +1,7 @@
 -------- Troop
 
 #newpose
+#name "yeti"
 #role "elite infantry"
 #basechance 1
 #theme "enlightened"
@@ -19,7 +20,6 @@
 #load shadow /data/items/monkey/yeti/shadow.txt
 #load hands /data/items/monkey/yeti/hands.txt
 
-#load helmet /data/items/monkey/yeti/helmet.txt
 #load armor /data/items/monkey/yeti/armor.txt
 
 #load weapon /data/items/monkey/yeti/weapon.txt
@@ -36,6 +36,7 @@
 
 
 #newpose
+#name "sacred yeti"
 #role "sacred infantry"
 #basechance 4
 #theme "enlightened"
@@ -52,7 +53,6 @@
 #load shadow /data/items/monkey/yeti/shadow.txt
 #load hands /data/items/monkey/yeti/hands.txt
 
-#load helmet /data/items/monkey/yeti/helmet.txt
 #load armor /data/items/monkey/yeti/armor.txt
 
 #load weapon /data/items/monkey/yeti/weapon.txt
@@ -67,6 +67,7 @@
 
 -------- Mage
 #newpose
+#name "yeti mage"
 #role "mage"
 #basechance 4
 #theme "enlightened"
@@ -89,7 +90,7 @@
 
 #load basesprite /data/items/monkey/yeti/bases.txt
 #load shadow /data/items/monkey/yeti/shadow.txt
-#load hands /data/items/monkey/yeti/hands.txt
+#load hands /data/items/monkey/yeti/hands_mage.txt
 
 #load helmet /data/items/monkey/yeti/helmet.txt
 #load armor /data/items/monkey/yeti/robes.txt

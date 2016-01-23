@@ -36,7 +36,7 @@
 #enditem
 
 #newitem
-#basechance 4
+#basechance 5
 #name "ronin pants"
 #gameid 158
 #sprite /graphics/monkey/armor/bandar/ronin_pants.png
@@ -53,7 +53,6 @@
 #armor
 #theme "imperial"
 #theme "enlightened"
-#theme "oriental"
 #theme "primitive"
 #theme "leather"
 #enditem
@@ -70,21 +69,32 @@
 #enditem
 
 #newitem
-#name "ronin leather cuirass"
+#name "TC leather cuirass"
 #basechance 5
 #gameid 5
-#sprite /graphics/monkey/armor/bandar/ronin_shirt.png
+#sprite /graphics/monkey/armor/bandar/leathercuirass_oriental.png
 #armor
 #theme "oriental"
 #theme "leather"
 #enditem
 
 #newitem
-#name "ronin leather hauberk"
+#name "TC leather hauberk"
 #basechance 5
 #gameid 10
-#sprite /graphics/monkey/armor/bandar/ronin_shirt.png
-#recolormask /graphics/monkey/armor/bandar/ronin_shirt_recolormask1.png
+#sprite /graphics/monkey/armor/bandar/leatherhauberk_oriental.png
+#recolormask /graphics/monkey/armor/bandar/scale_oriental_recolormask.png
+#armor
+#theme "oriental"
+#theme "leather"
+#enditem
+
+#newitem
+#name "TC full leather"
+#basechance 5
+#gameid 15
+#sprite /graphics/monkey/armor/bandar/fullleather_oriental.png
+#recolormask /graphics/monkey/armor/bandar/scale_oriental_recolormask.png
 #armor
 #theme "oriental"
 #theme "leather"

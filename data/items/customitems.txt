@@ -198,7 +198,32 @@
 #command "#rcost 2"
 #command "#name 'Iron Kopesh'"
 #command "#slash"
-#ironweapon
+#command "#ironweapon"
+#end
+
+#new customweapon
+#name "lucernehammer"
+#command "#att +1"
+#command "#dmg 9"
+#command "#len 4"
+#command "#rcost 4"
+#command "#name 'Lucerne Hammer'"
+#command "#pierce"
+#command "#blunt"
+#command "#twohanded"
+#command "#ironweapon"
+#end
+
+#new customweapon
+#name "bronzelucernehammer"
+#command "#att +1"
+#command "#dmg 8"
+#command "#len 4"
+#command "#rcost 5"
+#command "#name 'Bronze Lucerne Hammer'"
+#command "#pierce"
+#command "#blunt"
+#command "#twohanded"
 #end
 
 --- Siddhe Golden Axe
@@ -228,7 +253,7 @@
 #command "#rcost 2"
 #command "#name 'Giant Axe'"
 #command "#slash"
-#ironweapon
+#command "#ironweapon"
 #end
 
 #new customweapon
@@ -239,7 +264,7 @@
 #command "#rcost 1"
 #command "#name 'Giant Spear'"
 #command "#pierce"
-#ironweapon
+#command "#ironweapon"
 #end
 
 #new customweapon
@@ -251,7 +276,7 @@
 #command "#rcost 3"
 #command "#name 'Giant Longsword'"
 #command "#slash"
-#ironweapon
+#command "#ironweapon"
 #end
 
 #new customweapon
@@ -263,8 +288,8 @@
 #command "#rcost 3"
 #command "#name 'Giant Greataxe'"
 #command "#slash"
-#twohanded
-#ironweapon
+#command "#twohanded"
+#command "#ironweapon"
 #end
 
 #new customweapon
@@ -308,7 +333,7 @@
 #command "#rcost 4"
 #command "#name 'Giant Bronze Greataxe'"
 #command "#slash"
-#twohanded
+#command "#twohanded"
 #end
 
 #new customweapon
@@ -320,7 +345,7 @@
 #command "#rcost 5"
 #command "#name 'Giant Magic Axe'"
 #command "#slash"
-#magic
+#command "#magic"
 #end
 
 #new customweapon
@@ -331,7 +356,7 @@
 #command "#rcost 3"
 #command "#name 'Giant Magic Spear'"
 #command "#pierce"
-#magic
+#command "#magic"
 #end
 
 #new customweapon
@@ -343,7 +368,7 @@
 #command "#rcost 6"
 #command "#name 'Giant Magic Sword'"
 #command "#slash"
-#magic
+#command "#magic"
 #end
 
 --- CBM warhorse hoof (should be unused currently)
@@ -1129,4 +1154,18 @@
 #command "#bonus"
 #command "#name 'Sting'"
 #command "#pierce"
+#end
+
+#new customweapon
+#name "nostr_acidspit_5"
+#command "#att 0"
+#command "#dmg 5"
+#command "#range 5"
+#command "#ammo 5"
+#command "#nostr"
+#command "#bonus"
+#command "#acid"
+#command "#flyspr 313 1"
+#command "#secondaryeffect 515"
+#command "#name 'Corrosive Spit'"
 #end
