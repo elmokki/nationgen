@@ -4,12 +4,33 @@
 #needs cloakf "nocloak"
 #theme "oriental"
 #theme "enlightened"
+#theme "imperial"
 #theme "primitive"
 #theme "naked"
 #enditem
 
 #newitem
 #name "cloak"
+#basechance 2
+#gameid -1
+#sprite /graphics/monkey/cloak/bandar/cloakback.png
+#recolormask self
+#needs cloakf "cloak"
+#theme "enlightened"
+#enditem
+
+#newitem
+#name "cloak2"
+#basechance 2
+#gameid -1
+#sprite /graphics/monkey/cloak/bandar/cloakback.png
+#recolormask self
+#needs cloakf "cloak"
+#theme "enlightened"
+#enditem
+
+#newitem
+#name "cloak3"
 #basechance 2
 #gameid -1
 #sprite /graphics/monkey/cloak/bandar/cloakback.png
@@ -28,12 +49,46 @@
 #enditem
 
 #newitem
+#name "cloak2_imperial"
+#gameid -1
+#sprite /graphics/monkey/cloak/bandar/cloakback_imperial.png
+#recolormask self
+#needs cloakf "cloak_imperial"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "cloak3_imperial"
+#gameid -1
+#sprite /graphics/monkey/cloak/bandar/cloakback_imperial.png
+#recolormask self
+#needs cloakf "cloak_imperial"
+#theme "imperial"
+#enditem
+
+#newitem
 #name "cloak_oriental"
-#basechance 0.125
 #gameid -1
 #sprite /graphics/monkey/cloak/bandar/cloakback_oriental.png
 #recolormask self
 #needs cloakf "cloak_oriental"
 #theme "oriental"
-#theme "advanced"
+#enditem
+
+#newitem
+#name "cloak2_oriental"
+#gameid -1
+#sprite /graphics/monkey/cloak/bandar/cloakback_oriental.png
+#recolormask self
+#needs cloakf "cloak_oriental"
+#theme "oriental"
+#enditem
+
+#newitem
+#name "cloak3_oriental"
+#gameid -1
+#sprite /graphics/monkey/cloak/bandar/cloakback_oriental.png
+#recolormask self
+#needs cloakf "cloak_oriental"
+#theme "oriental"
 #enditem
