@@ -223,6 +223,25 @@
 #racedefinition "#secondaryracemagemod -100"
 #endtheme
 
+-- Weights: EA 1, MA 2, LA 3
+#newtheme
+#type social
+#name imperial
+#basechance 2
+#chanceinc era 1 -1
+#chanceinc era 3 +1
+#themeinc theme advanced *2
+#themeinc theme iron *2
+#themeinc theme bronze *0.1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *0.1
+#themeinc theme imperial *10000
+#racedefinition "#tag 'imperial'"
+#tag "imperial"
+#endtheme
+
 -- TODO: predator lizard slaves social theme?
 
 -- TODO: imperial human colonization social theme? Addendum TODO: make imperial humans :p

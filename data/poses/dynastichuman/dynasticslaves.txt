@@ -73,3 +73,34 @@
 #theme slave
 #endpose
 
+
+-------- Imperial gladiators
+
+#newpose
+#name "slave inf"
+#role "infantry"
+#cannot_be_pd
+
+#basechance 0.0001
+
+#freetemplatefilter gladiatortemplate gladiator
+
+#renderorder "shadow cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon cloakf offhandw hands helmet offhanda overlay"
+
+#load basesprite /data/items/dynastichuman/bases_slave_2h.txt
+#load shadow /data/items/dynastichuman/shadow.txt
+#load hands /data/items/dynastichuman/hands.txt
+
+#load armor /data/items/dynastichuman/normal/armor_2h_slave.txt
+#load helmet /data/items/dynastichuman/normal/helmet.txt
+#load legs /data/items/dynastichuman/legs.txt
+
+#load weapon /data/items/dynastichuman/scout/weapon.txt
+#load offhand /data/items/dynastichuman/scout/offhand.txt
+
+#maxvarieties 2
+#maxunits 1
+
+#theme slave
+#theme imperial
+#endpose

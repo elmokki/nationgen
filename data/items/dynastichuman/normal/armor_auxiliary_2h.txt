@@ -1,0 +1,56 @@
+--- Imperial armors
+
+#newitem
+#name "nada"
+#gameid -1
+#basechance 3
+#tag "eliteversion 'nada elite'"
+#tag "eliteversion 'elite linen cuirass'"
+#armor
+#enditem
+
+#newitem
+#name "nada elite"
+#gameid -1
+#tag "eliteversion 'elite linen cuirass'"
+#theme "elite"
+#armor
+#enditem
+
+#newitem
+#name "linen cuirass"
+#gameid 183
+#sprite /graphics/dynastichuman/armor/linencuirass_thick.png
+#basechance 5
+#tag "eliteversion 'elite linen cuirass'"
+#armor
+#enditem
+
+#newitem
+#name "elite linen cuirass"
+#gameid 183
+#sprite /graphics/dynastichuman/armor/linencuirass_imperial_elite.png
+#tag "eliteversion 'elite lorica segmentata'"
+#theme "elite"
+#armor
+#enditem
+
+
+#newitem
+#name "lorica hamata"
+#basechance 2
+#gameid 116
+#sprite /graphics/dynastichuman/armor/lorica_hamata_2h.png
+#tag "eliteversion 'elite lorica segmentata'"
+#armor
+#define "#nametype 106"
+#enditem
+
+#newitem
+#name "elite lorica segmentata"
+#gameid 99
+#sprite /graphics/dynastichuman/armor/lorica_segmentata_elite_2h.png
+#theme "elite"
+#armor
+#define "#nametype 106"
+#enditem
