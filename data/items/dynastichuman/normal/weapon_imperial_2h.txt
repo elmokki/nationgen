@@ -1,0 +1,45 @@
+#newitem
+#id greataxe
+#gameid 18
+#sprite /graphics/weapon/standard/greataxe.png
+#offsety -2
+#enditem
+
+#newitem
+#id bardiche
+#gameid 257
+#sprite /graphics/weapon/standard/bardiche.png
+#theme "advanced"
+#offsety -3
+#enditem
+
+#newitem
+#id halberd
+#gameid 5
+#sprite /graphics/weapon/standard/halberd.png
+#theme "advanced"
+#offsetx 3
+#enditem
+
+#newitem
+#id pike
+#gameid 2
+#sprite /graphics/weapon/standard/longspear.png
+#theme "advanced"
+#offsetx 3
+#enditem
+
+#newitem
+#id standard
+#gameid 100
+#sprite /graphics/weapon/standard/standard1.png
+#recolormask /graphics/weapon/standard/standard1_recolormask.png
+#define "#standard 1"
+#define "#gcost +15"
+#tag "name 'Standard Bearer'"
+#tag "tierunique"
+#tag "ignoreaffinity"
+#tag "noelite"
+#tag "cannot_be_pd"
+#define "#aisinglerec"
+#enditem

@@ -1,0 +1,61 @@
+--- Imperial armors
+
+#newitem
+#name "lorica hamata"
+#gameid 116
+#basechance 0.5
+#sprite /graphics/dynastichuman/armor/lorica_hamata.png
+#tag "eliteversion 'plate hauberk'"
+#tag "eliteversion 'elite lorica segmentata'"
+#armor
+#define "#nametype 106"
+#enditem
+
+#newitem
+#name "lorica squamata"
+#gameid 117
+#sprite /graphics/dynastichuman/armor/lorica_squamata.png
+#tag "eliteversion 'plate hauberk'"
+#tag "eliteversion 'elite lorica segmentata'"
+#armor
+#define "#nametype 106"
+#enditem
+
+#newitem
+#name "lorica segmentata"
+#gameid 99
+#sprite /graphics/dynastichuman/armor/lorica_segmentata.png
+#tag "eliteversion 'plate hauberk'"
+#tag "eliteversion 'elite lorica segmentata'"
+#armor
+#define "#nametype 106"
+#enditem
+
+#newitem
+#name "elite lorica segmentata"
+#gameid 99
+#sprite /graphics/dynastichuman/armor/lorica_segmentata_elite.png
+#tag "eliteversion 'elite plate hauberk'"
+#theme "elite"
+#armor
+#define "#nametype 106"
+#enditem
+
+#newitem
+#name "plate hauberk"
+#gameid 14
+#sprite /graphics/dynastichuman/armor/plate_hauberk_imperial.png
+#tag "eliteversion 'elite plate hauberk'"
+#theme "elite"
+#armor
+#define "#nametype 106"
+#enditem
+
+#newitem
+#name "elite plate hauberk"
+#gameid 14
+#sprite /graphics/dynastichuman/armor/plate_hauberk_imperial_elite.png
+#theme "elite"
+#armor
+#define "#nametype 106"
+#enditem

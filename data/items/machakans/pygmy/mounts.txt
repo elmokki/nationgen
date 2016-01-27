@@ -159,13 +159,12 @@
 #tag "maxprot 8"
 #tag "guaranteedprefix fish"
 #basechance 1
-#chanceinc "personalcommand #swampsurvival 0.9"
+#chanceinc "personalcommand #swampsurvival 0.5"
 #chanceinc "personalcommand #pooramphibian *10"
 #chanceinc "personalcommand #amphibian *10"
 #offsetx -3
 #offsety -28
 #enditem
-
 
 #newitem
 #name "giant snail"
@@ -187,12 +186,42 @@
 #theme "snail"
 #theme "snailtotem"
 #theme "totemanimal"
-#tag "maxprot 8"
+#tag "maxprot 16"
 #tag "guaranteedprefix snail"
 #basechance 1
-#chanceinc "personalcommand #swampsurvival 0.9"
+#chanceinc "personalcommand #swampsurvival 0.5"
 #chanceinc "personalcommand #pooramphibian *10"
 #chanceinc "personalcommand #amphibian *10"
 #offsetx -2
 #offsety -6
+#enditem
+
+#newitem
+#name "huge locust"
+#gameid -1
+#sprite /graphics/mounts/standard/hugelocust.png
+#needs overlay hugelocust_overlay
+#armor
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 12"
+#define "#flying"
+#define "#mounted"
+#define "#weapon nostr_bite_10"
+#define "#gcost +10"
+#define "#ressize 1"
+#define "#enc 5"
+#define "#undisciplined"
+#define "#pillagebonus +2"
+#define "#supplybonus -1"
+#tag "animal locust"
+#theme "locust"
+#theme "locusttotem"
+#theme "totemanimal"
+#tag "maxprot 12"
+#tag "guaranteedprefix locust"
+#basechance 1
+#chanceinc "personalcommand #pillagebonus 1"
+#offsetx -3
+#offsety -16
 #enditem
