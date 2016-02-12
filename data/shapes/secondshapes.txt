@@ -42,6 +42,14 @@
 #command "#transformation 0"
 #end
 
+#new secondshape
+#name "dog"
+#command "#copystats 1560"
+#command "#copyspr 1560"
+#command "#magicboost 53 -1"
+#command "#itemslots 12288"
+#command "#transformation 0"
+#end
 
 #new secondshape
 #name "werebear"
@@ -153,7 +161,7 @@
 #command "#coldblooded"
 #command "#size 3"
 #command "#trample"
-#command "#swamp survival"
+#command "#swampsurvival"
 #command "#magicboost 53 -1"
 #end
 
@@ -383,6 +391,37 @@
 #command "#copyspr 524"
 #command "#magicboost 53 -5"
 #command "#itemslots 12288"
+#command "#transformation 0"
+#end
+
+#new secondshape
+#name "hugemantis"
+#command "#name 'Giant Mantis'"
+#command "#spr1 ./graphics/mounts/standard/hugemantis.png"
+#command "#spr2 shift"
+#command "#itemslots 12288"
+#command "#size 2"
+#command "#hp 12"
+#command "#prot 10"
+#command "#mr 12"
+#command "#mor 50"
+#command "#str 9"
+#command "#att 13"
+#command "#def 9"
+#command "#prec 4"
+#command "#ap 14"
+#command "#mapmove 2"
+#command "#enc 2"
+#command "#weapon 29"
+#command "#weapon 29"
+#command "#poisonres 15"
+#command "#stealthy 0"
+#command "#animal"
+#command "#mind"
+#command "#magicbeing"
+#command "#neednoteat"
+#command "#wastesurvival"
+#command "#magicboost 53 -1"
 #command "#transformation 0"
 #end
 
@@ -1027,6 +1066,18 @@
 #end
 
 #new secondshape
+#name "dogmount"
+#command "#copystats 1560"
+#command "#copyspr 1560"
+#command "#magicboost 53 -5"
+#command "#itemslots 12288"
+#command "#transformation 0"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
 #name "direwolf1mount"
 #command "#copystats 1224"
 #command "#copyspr 1224"
@@ -1081,6 +1132,41 @@
 #command "#mapmove 3"
 #command "#ap 24"
 #command "#flying"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "hugemantismount"
+#command "#name 'Giant Mantis'"
+#command "#spr1 ./graphics/mounts/standard/hugemantis.png"
+#command "#spr2 shift"
+#command "#itemslots 12288"
+#command "#size 2"
+#command "#hp 12"
+#command "#prot 10"
+#command "#mr 5"
+#command "#mor 50"
+#command "#str 9"
+#command "#att 13"
+#command "#def 9"
+#command "#prec 4"
+#command "#ap 14"
+#command "#mapmove 2"
+#command "#enc 2"
+#command "#weapon 29"
+#command "#weapon 29"
+#command "#poisonres 15"
+#command "#stealthy 0"
+#command "#animal"
+#command "#mind"
+#command "#magicbeing"
+#command "#neednoteat"
+#command "#wastesurvival"
+#command "#maxage 28"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
 #nowayback
 #nogcost
 #mount
