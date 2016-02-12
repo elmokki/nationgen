@@ -26,6 +26,51 @@
 #enditem
 
 #newitem
+#name "lion"
+#gameid -1
+#sprite /graphics/mounts/standard/lion.png
+#armor
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 237 --- Bite"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape lionmount"
+#define "#gcost +25"
+#define "#ressize 1"
+#define "#enc 4"
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#offsety -18
+#offsetx 4
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#enditem
+
+#newitem
+#name "boar"
+#gameid -1
+#sprite /graphics/mounts/standard/boarcavalry.png
+#armor
+#offsetx 2
+#offsety -20
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 352 --- Nostr Gore"
+#define "#gcost +20"
+#define "#ressize 1"
+#define "#enc 3"
+#theme "specialmount"
+#tag "animal boar"
+#tag "guaranteedprefix boar"
+#tag "name commander boarmaster"
+#tag "minprot 0"
+#tag "maxprot 13"
+#enditem
+
+#newitem
 #name "grey parrot"
 #gameid -1
 #sprite /graphics/machakans/mounts/giant_parrot.png
@@ -80,6 +125,36 @@
 #basechance 0.4
 #offsetx -3
 #offsety -28
+#enditem
+
+#newitem
+#name "giant bat"
+#gameid -1
+#sprite /graphics/hoburg/mounts/giant_bat.png
+#armor
+#offsety 32
+#offsetx 31
+#needs overlay giant_bat_overlay
+#define "#size 2"
+#define "#mapmove 3"
+#define "#ap 10"
+#define "#flying"
+#define "#mounted"
+#define "#weapon 19 -- Bite"
+#define "#gcost +35"
+#define "#hp +2"
+#define "#secondtmpshape beastbat_nerfed"
+#define "#ressize 1"
+#define "#rcost +4"
+#define "#enc 3"
+#tag "animal bat"
+#tag "maxprot 16"
+#tag "guaranteedprefix giant bat"
+#description "The giant bat fight until the end of the battle if the rider perishes"
+#theme "primitive"
+#theme "bat"
+#theme "battotem"
+#theme "totemanimal"
 #enditem
 
 #newitem
@@ -210,7 +285,6 @@
 #theme "totemanimal"
 #tag "maxprot 8"
 #tag "guaranteedprefix fish"
-#basechance 1
 #chanceinc "personalcommand #swampsurvival 0.5"
 #chanceinc "personalcommand #pooramphibian *10"
 #chanceinc "personalcommand #amphibian *10"
@@ -272,7 +346,6 @@
 #theme "totemanimal"
 #tag "maxprot 12"
 #tag "guaranteedprefix locust"
-#basechance 1
 #chanceinc "personalcommand #pillagebonus 1"
 #offsetx -3
 #offsety -16

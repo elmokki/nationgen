@@ -333,6 +333,21 @@
 
 #new magefilter
 #type "shapeshift"
+#name "hugemantis"
+#basechance 0.05
+#chanceinc "personalmagic nature 0.25"
+#chanceinc "personalcommand #mounted *0"
+#chanceinc "personalcommand above #size 3 *0"
+#command "#hp -3"
+#command "#gcost +30"
+#command "#secondtmpshape hugemantis"
+#tag "notfortier 1"
+#description "reveals its true form, that of a giant mantis, when mortally wounded"
+#tag "personalmagic nature"
+#end
+
+#new magefilter
+#type "shapeshift"
 #name "scorpion"
 #basechance 0.1
 #chanceinc "personalmagic fire 0.25"

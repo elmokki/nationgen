@@ -1,0 +1,79 @@
+---------- Mages and Priests, T1
+--- No legs, so do not use this pose for non-robe armors or draw legs to your body armor.
+
+#newpose
+#name "T1 pygmy caster"
+#role "mage"
+#role "priest"
+#subrace pygmy
+
+#load basesprite /data/items/machakans/pygmy/bases.txt
+#load basesprite /data/items/machakans/pygmy/hands.txt
+#load shadow /data/items/machakans/pygmy/shadow.txt
+
+#load weapon /data/items/machakans/pygmy/weapon_caster.txt
+#load armor /data/items/machakans/pygmy/robes.txt
+
+#mage_nolowtierhat
+
+#tier 1
+#notfortier 2
+#notfortier 3
+
+#endpose
+
+
+---------- Priests, T2-3
+--- No legs, so do not use this pose for non-robe armors or draw legs to your body armor.
+
+#newpose
+#name "pygmy high priest"
+#role "priest"
+#subrace pygmy
+
+#load basesprite /data/items/machakans/pygmy/bases.txt
+#load hands /data/items/machakans/pygmy/hands.txt
+#load shadow /data/items/machakans/pygmy/shadow.txt
+#load hair /data/items/machakans/pygmy/beards.txt
+
+#load weapon /data/items/machakans/pygmy/weapon_caster.txt
+#load armor /data/items/machakans/pygmy/robes.txt
+
+#mage_nolowtierhat
+
+#generateitem 1 hair
+
+#notfortier 1
+#tier 2
+#tier 3
+
+#endpose
+
+
+---------- Mounted mages, T2-3
+
+#newpose
+#name "mounted pygmy mage"
+#role "mage"
+#subrace pygmy
+
+#renderorder "shadow cloakb mount basesprite shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/machakans/pygmy/bases_mounted.txt
+#load overlay /data/items/machakans/pygmy/overlay.txt
+#load legs /data/items/machakans/pygmy/legs_mounted.txt
+#load hands /data/items/machakans/pygmy/hands.txt
+#load hair /data/items/machakans/pygmy/beards.txt
+
+#load mount /data/items/machakans/pygmy/mounts.txt
+
+#load weapon /data/items/machakans/pygmy/weapon_caster.txt
+#load armor /data/items/machakans/pygmy/robes_mounted.txt
+
+#generateitem 1 hair
+
+#notfortier 1
+#tier 2
+#tier 3
+
+#endpose

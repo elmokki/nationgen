@@ -8,6 +8,7 @@
 #subrace pygmy
 #load basesprite /data/items/machakans/pygmy/bases.txt
 #load shadow /data/items/machakans/pygmy/shadow.txt
+#load hands /data/items/machakans/pygmy/hands.txt
 #load legs /data/items/machakans/pygmy/legs.txt
 
 #load weapon /data/items/machakans/pygmy/weapon.txt
@@ -21,10 +22,9 @@
 #command "#hp 5"
 #command "#str 5"
 
-#primaryraceonly
-
 #maxvarieties 1
 #maxunits 1
+
 #endpose
 
 
@@ -39,29 +39,20 @@
 
 #load basesprite /data/items/machakans/pygmy/bases_archer.txt
 #load shadow /data/items/machakans/pygmy/shadow.txt
+#load hands /data/items/machakans/pygmy/hands.txt
 #load legs /data/items/machakans/pygmy/legs.txt
 
 #load armor /data/items/machakans/pygmy/armor.txt
 
 #load weapon /data/items/machakans/pygmy/bows.txt
-#command "#gcost 5"
-#command "#size 1"
-#command "#ap 7"
-#command "#mapmove 2"
-#command "#mor 8"
-#command "#hp 5"
-#command "#str 5"
-
-#primaryraceonly
 
 #maxvarieties 1
 #maxunits 1
+
 #endpose
 
+
 ------- Scout
-
-
-------- Archer
 
 #newpose
 #basechance 0.125
@@ -72,23 +63,16 @@
 
 #load basesprite /data/items/machakans/pygmy/bases_archer.txt
 #load shadow /data/items/machakans/pygmy/shadow.txt
+#load hands /data/items/machakans/pygmy/hands.txt
 #load legs /data/items/machakans/pygmy/legs.txt
 
 #load armor /data/items/machakans/pygmy/armor.txt
 
 #load weapon /data/items/machakans/pygmy/bows.txt
-#command "#gcost 5"
-#command "#size 1"
-#command "#ap 7"
-#command "#mapmove 2"
-#command "#mor 8"
-#command "#hp 5"
-#command "#str 5"
-
-#primaryraceonly
 
 #maxvarieties 1
 #maxunits 1
+
 #endpose
 
 
@@ -101,23 +85,16 @@
 #subrace pygmy
 #load basesprite /data/items/machakans/pygmy/bases.txt
 #load shadow /data/items/machakans/pygmy/shadow.txt
+#load hands /data/items/machakans/pygmy/hands.txt
 #load legs /data/items/machakans/pygmy/legs.txt
 
 #load weapon /data/items/machakans/pygmy/weapon.txt
 #load armor /data/items/machakans/pygmy/armor.txt
 
-#command "#gcost 5"
-#command "#size 1"
-#command "#ap 7"
-#command "#mapmove 2"
-#command "#mor 8"
-#command "#hp 5"
-#command "#str 5"
 #command "#gcost *0.75"
+
 #maxvarieties 1
 #maxunits 1
-
-#primaryraceonly
 
 #cannot_be_pd
 
@@ -136,6 +113,7 @@
 
 #load basesprite /data/items/machakans/pygmy/bases_mounted.txt
 #load overlay /data/items/machakans/pygmy/overlay.txt
+#load hands /data/items/machakans/pygmy/hands.txt
 #load legs /data/items/machakans/pygmy/legs_mounted.txt
 
 #load armor /data/items/machakans/pygmy/armor.txt
@@ -144,17 +122,7 @@
 
 #load weapon /data/items/machakans/pygmy/weapon_mounted.txt
 
-#command "#gcost 5"
-#command "#size 1"
-#command "#ap 7"
-#command "#mapmove 2"
-#command "#mor 8"
-#command "#hp 5"
-#command "#str 5"
-
 #maxvarieties 1
-#maxunits 1
-
-#primaryraceonly
+#maxunits 2
 
 #endpose
