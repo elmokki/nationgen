@@ -1,0 +1,105 @@
+
+
+--- Bare heads
+
+#newitem
+#id bald
+#basechance 4
+#gameid -1
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+
+--- Headdresses
+
+#newitem
+#id headdress_small
+#gameid -1
+#sprite /graphics/machakans/helmets/pygmy/headress_machakan.png
+#recolormask self
+#armor
+#tag "tier 2"
+#tag "eliteversion headdress_large"
+#enditem
+
+#newitem
+#id headdress_large
+#gameid -1
+#sprite /graphics/machakans/helmets/pygmy/headress_mictlan.png
+#recolormask /graphics/machakans/helmets/pygmy/headress_mictlan_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+
+--- Caster hats
+
+#newitem
+#id wizardhat
+#gameid -1
+#sprite /graphics/machakans/helmets/pygmy/wizardhat.png
+#recolormask self
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id jestercap
+#gameid -1
+#sprite /graphics/machakans/helmets/pygmy/demonjester.png
+#recolormask /graphics/machakans/helmets/pygmy/demonjester_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id jestercap_nobell
+#gameid -1
+#sprite /graphics/machakans/helmets/pygmy/demonjester_recolormask.png
+#recolormask self
+#armor
+#tag "tier 3"
+#enditem
+
+
+-- Crowns
+
+#newitem
+#id goldcap
+#gameid 122
+#sprite /graphics/machakans/helmets/pygmy/goldcap.png
+#armor
+#tag "tier 3"
+#theme "superior"
+#enditem
+
+#newitem
+#id crown
+#gameid 148
+#sprite /graphics/machakans/helmets/pygmy/crown.png
+#armor
+#tag "tier 3"
+#theme "superior"
+#enditem
+
+#newitem
+#id crown_khepresh
+#gameid 148
+#sprite /graphics/machakans/helmets/pygmy/crown_khepresh.png
+#recolormask /graphics/machakans/helmets/pygmy/crown_khepresh_recolormask.png
+#armor
+#tag "tier 3"
+#theme "superior"
+#enditem
+
+#newitem
+#id crown_nemes
+#gameid 148
+#sprite /graphics/machakans/helmets/pygmy/crown_nemes.png
+#recolormask /graphics/machakans/helmets/pygmy/crown_nemes_recolormask.png
+#armor
+#tag "tier 3"
+#theme "superior"
+#enditem
