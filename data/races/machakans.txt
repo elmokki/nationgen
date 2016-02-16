@@ -2,12 +2,17 @@
 #name "Austral human"
 #visiblename "Human"
 #basechance 0.3
-#all_troops_elite
 
-#pose machakantroops
-#pose machakanmages
-#pose pygmies
-#pose colossi
+#nationthemes austral_themes
+#freetheme demographic
+
+#spritegenpose machakantroops
+#spritegenpose machakanmages
+#spritegenpose pygmies
+#spritegenpose pygmy_elites
+#spritegenpose pygmy_mages
+#spritegenpose colossi
+-- #spritegenpose colossi_mages
 
 #longsyllables /data/names/nations/machakan/longsyllables.txt
 #shortsyllables /data/names/nations/machakan/shortsyllables.txt

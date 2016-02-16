@@ -1,0 +1,215 @@
+--- No robes
+
+#newitem
+#id loincloth
+#gameid -1
+#basechance 9
+#tier 1
+#theme "primitive"
+#theme "naked"
+#armor
+#enditem
+
+#newitem
+#id furs
+#gameid -1
+#basechance 3
+#sprite /graphics/machakans/armor/pygmy/furs.png
+#tier 1
+#tier 2
+#theme "primitive"
+#armor
+#enditem
+
+#newitem
+#id shendyt_white
+#gameid -1
+#basechance 1
+#sprite /graphics/machakans/armor/pygmy_mounted/shendyt_white.png
+#eliteversion shendyt_light
+#tier 1
+#tier 2
+#armor
+#enditem
+
+#newitem
+#id shendyt_grey
+#gameid -1
+#basechance 1
+#sprite /graphics/machakans/armor/pygmy_mounted/shendyt_grey.png
+#eliteversion shendyt_medium
+#tier 1
+#tier 2
+#armor
+#enditem
+
+#newitem
+#id shendyt_black
+#gameid -1
+#basechance 1
+#sprite /graphics/machakans/armor/pygmy_mounted/shendyt_black.png
+#eliteversion shendyt_dark
+#tier 1
+#tier 2
+#armor
+#enditem
+
+#newitem
+#id shendyt_light
+#gameid -1
+#basechance 1
+#sprite /graphics/machakans/armor/pygmy_mounted/shendyt_white.png
+#recolormask /graphics/machakans/armor/pygmy_mounted/shendyt_white_recolormask.png
+#tier 2
+#tier 3
+#armor
+#enditem
+
+#newitem
+#id shendyt_medium
+#gameid -1
+#basechance 1
+#sprite /graphics/machakans/armor/pygmy_mounted/shendyt_grey.png
+#recolormask self
+#tier 2
+#tier 3
+#armor
+#enditem
+
+#newitem
+#id shendyt_dark
+#gameid -1
+#basechance 1
+#sprite /graphics/machakans/armor/pygmy_mounted/shendyt_black.png
+#recolormask self
+#tier 2
+#tier 3
+#armor
+#enditem
+
+
+
+-- Togas
+
+#newitem
+#id toga_brown
+#gameid 158
+#basechance 1
+#sprite /graphics/machakans/armor/pygmy_mounted/toga_brown.png
+#eliteversion toga_white
+#eliteversion toga_black
+#tier 1
+#tier 2
+#armor
+#enditem
+
+#newitem
+#id toga_white
+#gameid 158
+#basechance 1
+#sprite /graphics/machakans/armor/pygmy_mounted/toga_white.png
+#eliteversion toga_light
+#tier 2
+#tier 3
+#armor
+#enditem
+
+#newitem
+#id toga_black
+#gameid 158
+#basechance 1
+#sprite /graphics/machakans/armor/pygmy_mounted/toga_black.png
+#eliteversion toga_dark
+#tier 2
+#tier 3
+#armor
+#enditem
+
+#newitem
+#id toga_light
+#gameid 158
+#basechance 1
+#sprite /graphics/machakans/armor/pygmy_mounted/toga_white.png
+#recolormask self
+#tier 3
+#armor
+#enditem
+
+#newitem
+#id toga_dark
+#gameid -1
+#basechance 1
+#sprite /graphics/machakans/armor/pygmy_mounted/toga_black.png
+#recolormask self
+#tier 3
+#armor
+#enditem
+
+
+-- Ermor-style robes
+
+#newitem
+#id robe_white
+#gameid 158
+#basechance 1
+#sprite /graphics/machakans/armor/pygmy_mounted/robe_white.png
+#eliteversion robe_light
+#tier 2
+#armor
+#theme "advanced"
+#enditem
+
+#newitem
+#id robe_grey
+#gameid 158
+#basechance 1
+#sprite /graphics/machakans/armor/pygmy_mounted/robe_grey.png
+#eliteversion robe_medium
+#tier 2
+#armor
+#theme "advanced"
+#enditem
+
+#newitem
+#id robe_black
+#gameid 158
+#basechance 1
+#sprite /graphics/machakans/armor/pygmy_mounted/robe_black.png
+#eliteversion robe_dark
+#tier 2
+#armor
+#theme "advanced"
+#enditem
+
+#newitem
+#id robe_light
+#gameid 158
+#basechance 1
+#sprite /graphics/machakans/armor/pygmy_mounted/robe_white.png
+#recolormask /graphics/machakans/armor/pygmy_mounted/robe_white_recolormask.png
+#tier 3
+#armor
+#theme "advanced"
+#enditem
+
+#newitem
+#id robe_medium
+#gameid 158
+#basechance 1
+#sprite /graphics/machakans/armor/pygmy_mounted/robe_grey.png
+#recolormask self
+#tier 3
+#armor
+#theme "advanced"
+#enditem
+
+#newitem
+#id robe_dark
+#gameid 158
+#basechance 1
+#sprite /graphics/machakans/armor/pygmy_mounted/robe_black.png
+#recolormask self
+#tier 3
+#armor
+#theme "advanced"
+#enditem

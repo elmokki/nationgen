@@ -2,20 +2,22 @@
 -------- Normal
 
 #newpose
-#basechance 0.3
+#basechance 1
 #role "infantry"
 #name "pygmy infantry"
 #subrace pygmy
-#load basesprite /data/items/machakans/pygmy/bases.txt
+
+#load basesprite /data/items/machakans/pygmy/bases_elite.txt
 #load shadow /data/items/machakans/pygmy/shadow.txt
 #load hands /data/items/machakans/pygmy/hands.txt
 #load legs /data/items/machakans/pygmy/legs.txt
 
-#load weapon /data/items/machakans/pygmy/weapon.txt
-#load armor /data/items/machakans/pygmy/armor.txt
+#load weapon /data/items/machakans/pygmy/weapon_elite.txt
+#load offhand /data/items/machakans/pygmy/shields_elite.txt
+#load armor /data/items/machakans/pygmy/armor_elite.txt
 
 #maxvarieties 1
-#maxunits 1
+#maxunits 2
 
 #endpose
 
@@ -23,23 +25,24 @@
 ------- Archer
 
 #newpose
-#basechance 1
+#basechance 2
 #role "ranged"
 #name "pygmy ranged"
 #subrace pygmy
+
 #renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
-#load basesprite /data/items/machakans/pygmy/bases_archer.txt
+#load basesprite /data/items/machakans/pygmy/bases_archer_elite.txt
 #load shadow /data/items/machakans/pygmy/shadow.txt
 #load hands /data/items/machakans/pygmy/hands.txt
 #load legs /data/items/machakans/pygmy/legs.txt
 
-#load armor /data/items/machakans/pygmy/armor.txt
+#load armor /data/items/machakans/pygmy/armor_elite.txt
 
-#load weapon /data/items/machakans/pygmy/bows.txt
+#load weapon /data/items/machakans/pygmy/bows_elite.txt
 
 #maxvarieties 1
-#maxunits 1
+#maxunits 2
 
 #endpose
 
@@ -47,48 +50,51 @@
 ------- Scout
 
 #newpose
-#basechance 0.5
+#basechance 1
 #role "scout"
 #name "pygmy scout"
 #subrace pygmy
+
 #renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
-#load basesprite /data/items/machakans/pygmy/bases_archer.txt
+#load basesprite /data/items/machakans/pygmy/bases_archer_elite.txt
 #load shadow /data/items/machakans/pygmy/shadow.txt
 #load hands /data/items/machakans/pygmy/hands.txt
 #load legs /data/items/machakans/pygmy/legs.txt
 
-#load armor /data/items/machakans/pygmy/armor.txt
+#load armor /data/items/machakans/pygmy/armor_elite.txt
 
-#load weapon /data/items/machakans/pygmy/bows.txt
+#load weapon /data/items/machakans/pygmy/bows_elite.txt
 
 #maxvarieties 1
-#maxunits 1
+#maxunits 2
 
 #endpose
 
 
--------- sacred infantry
+-------- elite infantry
 
 #newpose
-#basechance 0.3
+#basechance 1
 #role "sacred infantry"
+#role "elite infantry"
 #name "pygmy sacred infantry"
 #subrace pygmy
-#load basesprite /data/items/machakans/pygmy/bases.txt
+
+#load basesprite /data/items/machakans/pygmy/bases_elite.txt
 #load shadow /data/items/machakans/pygmy/shadow.txt
 #load hands /data/items/machakans/pygmy/hands.txt
+#load helmet /data/items/machakans/pygmy/helmet_elite.txt
 #load legs /data/items/machakans/pygmy/legs.txt
 
-#load weapon /data/items/machakans/pygmy/weapon.txt
+#load weapon /data/items/machakans/pygmy/weapon_elite.txt
 #load offhand /data/items/machakans/pygmy/shields_elite.txt
-#load armor /data/items/machakans/pygmy/armor.txt
-#load helmet /data/items/machakans/pygmy/helmet_elite.txt
+#load armor /data/items/machakans/pygmy/armor_elite.txt
 
 #command "#gcost *0.75"
 
 #maxvarieties 1
-#maxunits 1
+#maxunits 2
 
 #cannot_be_pd
 
@@ -97,24 +103,26 @@
 --------- pygmy cavalry
 
 #newpose
-#basechance 0.3
+#basechance 1
 #role "mounted"
 #role "sacred"
+#role "elite"
 #name "pygmy cavalry"
 #subrace pygmy
 
 #renderorder "shadow cloakb mount basesprite shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
-#load basesprite /data/items/machakans/pygmy/bases_mounted.txt
+#load basesprite /data/items/machakans/pygmy/bases_mounted_elite.txt
 #load overlay /data/items/machakans/pygmy/overlay.txt
 #load hands /data/items/machakans/pygmy/hands.txt
+#load helmet /data/items/machakans/pygmy/helmet_elite.txt
 #load legs /data/items/machakans/pygmy/legs_mounted.txt
 
-#load armor /data/items/machakans/pygmy/armor.txt
+#load armor /data/items/machakans/pygmy/armor_elite.txt
 
 #load mount /data/items/machakans/pygmy/mounts.txt
 
-#load weapon /data/items/machakans/pygmy/weapon_mounted.txt
+#load weapon /data/items/machakans/pygmy/weapon_mounted_elite.txt
 
 #maxvarieties 1
 #maxunits 2

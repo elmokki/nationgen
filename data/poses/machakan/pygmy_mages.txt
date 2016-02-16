@@ -7,8 +7,8 @@
 #role "priest"
 #subrace pygmy
 
-#load basesprite /data/items/machakans/pygmy/bases.txt
-#load basesprite /data/items/machakans/pygmy/hands.txt
+#load basesprite /data/items/machakans/pygmy/bases_caster.txt
+#load hands /data/items/machakans/pygmy/hands.txt
 #load shadow /data/items/machakans/pygmy/shadow.txt
 
 #load weapon /data/items/machakans/pygmy/weapon_caster.txt
@@ -31,13 +31,14 @@
 #role "priest"
 #subrace pygmy
 
-#load basesprite /data/items/machakans/pygmy/bases.txt
+#load basesprite /data/items/machakans/pygmy/bases_caster.txt
 #load hands /data/items/machakans/pygmy/hands.txt
 #load shadow /data/items/machakans/pygmy/shadow.txt
 #load hair /data/items/machakans/pygmy/beards.txt
 
 #load weapon /data/items/machakans/pygmy/weapon_caster.txt
 #load armor /data/items/machakans/pygmy/robes.txt
+#load helmet /data/items/machakans/pygmy/helmet_caster.txt
 
 #mage_nolowtierhat
 
@@ -59,7 +60,7 @@
 
 #renderorder "shadow cloakb mount basesprite shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
-#load basesprite /data/items/machakans/pygmy/bases_mounted.txt
+#load basesprite /data/items/machakans/pygmy/bases_caster.txt
 #load overlay /data/items/machakans/pygmy/overlay.txt
 #load legs /data/items/machakans/pygmy/legs_mounted.txt
 #load hands /data/items/machakans/pygmy/hands.txt
@@ -67,8 +68,9 @@
 
 #load mount /data/items/machakans/pygmy/mounts.txt
 
-#load weapon /data/items/machakans/pygmy/weapon_caster.txt
+#load weapon /data/items/machakans/pygmy/weapon_caster_mounted.txt
 #load armor /data/items/machakans/pygmy/robes_mounted.txt
+#load helmet /data/items/machakans/pygmy/helmet_caster.txt
 
 #generateitem 1 hair
 
