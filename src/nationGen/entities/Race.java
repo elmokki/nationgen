@@ -250,11 +250,17 @@ public class Race extends Filter {
 			visiblename = name;
 	}
 
-	public void addTheme(Theme t)
+
+	
+
+	public void handleTheme(Theme t)
 	{
-		themefilters.add(t);
 		// Add race commands
 		for(String str2 : t.nationeffects)
+		{
+			addOwnLine(str2);
+		}
+		for(String str2 : t.bothnationeffects)
 		{
 			addOwnLine(str2);
 		}

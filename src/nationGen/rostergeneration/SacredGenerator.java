@@ -439,9 +439,9 @@ public class SacredGenerator extends TroopGenerator {
 		// Handle sacred power settings
 		double extrapower = this.nationGen.settings.get("sacredpower") - 1;
 	
+		
 		power = (int) (power + power * extrapower * (1 + random.nextDouble() * 0.5) + extrapower);
 		
-
 	
 
 		List<Pose> possibleposes = new ArrayList<Pose>();

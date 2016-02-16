@@ -13,6 +13,7 @@ import java.util.List;
 
 import nationGen.entities.Filter;
 import nationGen.entities.Race;
+import nationGen.entities.Theme;
 import nationGen.items.Item;
 import nationGen.misc.Command;
 import nationGen.misc.Site;
@@ -124,7 +125,7 @@ public class NationAdvancedSummarizer {
 				}
 			
 			
-			for(Filter f : n.appliedfilters)
+			for(Theme f : n.nationthemes)
 			{
 				
 				if(Generic.containsTag(f.tags, "desc"))

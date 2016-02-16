@@ -1,6 +1,9 @@
 
--- Themes
-#load default_themes ./data/themes/default_themes.txt
+-- Race themes
+------------------------------------------------------------
+#load default_racethemes ./data/themes/default_racethemes.txt
+
+- Race specific ones
 #load abysian_themes ./data/themes/abysian_themes.txt
 #load amazon_themes ./data/themes/amazon_themes.txt
 #load austral_themes ./data/themes/austral_themes.txt
@@ -17,4 +20,10 @@
 #load vaetti_themes ./data/themes/vaetti_themes.txt
 #load van_themes ./data/themes/van_themes.txt
 
+- Generic slaver theme
 #load slavertheme ./data/themes/slavertheme.txt
+
+
+-- Nation themes
+------------------------------------------------------------
+#load default_nationthemes ./data/themes/default_nationthemes.txt
