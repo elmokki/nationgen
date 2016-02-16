@@ -187,7 +187,7 @@ public class Generic {
 			for(Theme t : n.races.get(0).themefilters)
 				tags.addAll(t.tags);
 		}
-		for(Filter f : n.appliedfilters)
+		for(Filter f : n.nationthemes)
 			tags.addAll(f.tags);
 		
 		return tags;
@@ -206,6 +206,30 @@ public class Generic {
 
 				args.remove(0);
 				values.add(Generic.listToString(args, "", "\""));
+			}
+		
+		}
+		
+		return values;
+	}
+	
+	/**
+	 * Returns all tags of certain type, for example all lines with #magicpriority <path> <number)
+	 * @param tags The source of tags
+	 * @param tag The tag to fetch, for example #magicpriority
+	 * @return
+	 */
+	public static List<String> getTags(List<String> tags, String tag)
+	{
+		List<String> values = new ArrayList<String>();
+		
+		for(String str : tags)
+		{
+			List<String> args = parseArgs(str);
+
+			if(args.get(0).equals(tag))
+			{
+				values.add(str);
 			}
 		
 		}

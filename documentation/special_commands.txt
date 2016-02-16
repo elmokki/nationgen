@@ -4,6 +4,18 @@ Commands that appear in both races and poses prioritize using the one in the pos
 
 --- Race
 
+#magepriestchance <chance>
+Chance to get primary race mage priests. Default is 0.3. Works for nationthemes and races. Highest value found is used.
+
+#highestpriestlevel <level>
+Manually sets the level of highest priests in the nation. Works for nationthemes and races. Highest value found is used.
+
+#higherpriestlevelchance <chance>
+Chance of highest priest level in a nation is chance^level. Default is 0.5, ie 50% for 1, 25% for 2 and 12.5% for 3. Highest value found is used.
+
+#priestextracost <cost>
+Increases priest costs by <cost> per level of holy.
+
 #pd_targetrcost <cost>
 #pd_targetgcost <cost>
 Sets the target, ie "ideal" pd and start army resource/gold cost with this. Default is mean gold/res cost of non-chariot
@@ -109,6 +121,9 @@ Loads special commander filters from given definition set
 
 #monsters <poses>
 Sets the pose set to be used for monsters. Default is default_monsters
+
+#racethemes <set>
+Loads race themes from given definition set
 
 #nationthemes <set>
 Loads nation themes from given definition set

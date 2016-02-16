@@ -1,0 +1,592 @@
+#newtheme
+#name default
+#basechance 10
+#endtheme
+
+
+---------- Weather effects
+
+#new
+#name "colder 1"
+#type "weather"
+#basechance 0.5
+#command "#idealcold +1"
+#chanceinc "nationcommand #idealcold above 2 *0"
+#chanceinc "primaryracecommand #coldblooded *0.1"
+#bothracedefinition "#command coldres +3"
+#desc "Prefers slightly colder climate than usual for the race"
+#magicpriority water 2
+#end
+
+#new
+#name "colder 2"
+#type "weather"
+#basechance 0.125
+#command "#idealcold +2"
+#bothracedefinition "#command coldres +3"
+#chanceinc "nationcommand #idealcold above 1 *0"
+#chanceinc "primaryracecommand #coldblooded *0"
+#bothracedefinition "#command coldres +3"
+#desc "Prefers one considerably colder climate than usual for the race"
+#magicpriority water 4
+#end
+
+#new
+#name "colder 3"
+#type "weather"
+#basechance 0.05
+#command "#idealcold +3"
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "primaryracecommand #coldblooded *0"
+#bothracedefinition "#command coldres +3"
+#magicpriority water 10
+#end
+
+#new
+#name "hotter 1"
+#type "weather"
+#basechance 0.5
+#command "#idealcold -1"
+#chanceinc "nationcommand #idealcold below 2 *0"
+#bothracedefinition "#command fireres +3"
+#magicpriority fire 2
+#desc "Prefers slightly warmer climate than usual for the race"
+#end
+
+#new
+#name "hotter 2"
+#type "weather"
+#basechance 0.125
+#command "#idealcold -2"
+#chanceinc "nationcommand #idealcold below 1 *0"
+#bothracedefinition "#command fireres +3"
+#magicpriority fire 4
+#desc "Prefers considerably warmer climate than usual for the race"
+#end
+
+#new
+#name "hotter 3"
+#type "weather"
+#basechance 0.05
+#command "#idealcold -3"
+#chanceinc "nationcommand #idealcold below 0 *0"
+#bothracedefinition "#command fireres +3"
+#magicpriority fire 10
+#desc "Prefers extremely warmer climate than usual for the race"
+#end
+
+
+#new
+#name "spreadcold 3"
+#type spread
+#basechance 0
+#command "#spreadcold 3"
+#chanceinc nationcommand idealcold below -1 0.05
+#chanceinc nationcommand idealcold below -2 0.25
+#desc "Spreads cold"
+#magicpriority water 4
+#end
+
+#new
+#name "spreadcold 5"
+#type spread
+#basechance 0
+#command "#spreadcold 5"
+#chanceinc nationcommand idealcold below -2 0.125
+#desc "Spreads cold"
+#magicpriority water 8
+#end
+
+#new
+#name "spreadheat 3"
+#type spread
+#basechance 0
+#command "#spreadheat 3"
+#chanceinc nationcommand idealcold above 1 0.05
+#chanceinc nationcommand idealcold above 2 0.25
+#desc "Spreads heat"
+#magicpriority fire 4
+#end
+
+#new
+#name "spreadheat 5"
+#type spread
+#basechance 0
+#command "#spreadheat 5"
+#chanceinc nationcommand idealcold above 2 0.125
+#magicpriority fire 8
+#desc "Spreads heat"
+#end
+
+
+- Dominion effects
+-----------
+
+
+
+#new
+#name "nopreach"
+#type "bloodsac"
+#type "dominion"
+#basechance 0.05
+#command "#nopreach"
+#command "#sacrificedom"
+#magicpriority blood 10000
+#magepriestchance 1
+#highestpriestlevel 3
+#desc "Priests are unable to preach but may perform blood sacrifices"
+#end
+
+#new
+#name "bloodsac"
+#type "bloodsac"
+#type "dominion"
+#basechance 0.5
+#command "#sacrificedom"
+#primaryracedefinition "#magicpriority blood 4"
+#magepriestchance 0.6
+#higherpriestlevelchance 0.6
+#magicpriority blood 2
+#desc "Priests may perform blood sacrifices"
+#end
+
+#new
+#name "nodeathsupply"
+#basechance 0.05
+#command "#nodeathsupply"
+#magicpriority death 8
+#desc "Death dominion does not reduce supplies"
+#end
+
+#new
+#name "zombiereanim"
+#type "reanim"
+#basechance 0.05
+#command "#zombiereanim"
+#magicpriority death 256
+#desc "Priests can reanimate the ghouls, soulless and longdead infantry."
+#magepriestchance 0.6
+#higherpriestlevelchance 0.75
+#priestextracost 20
+#end
+
+#new
+#name "horsereanim"
+#type "reanim"
+#basechance 0.025
+#command "#zombiereanim"
+#command "#reanim"
+#magicpriority death 256
+#desc "Priests can reanimate the ghouls, soulless and longdead infantry."
+#higherpriestlevelchance 0.85
+#magepriestchance 0.85
+#priestextracost 30
+#end
+
+#new
+#name "manikinreanim"
+#type "reanim"
+#type "dominion"
+#basechance 0.05
+#command "#manikinreanim"
+#command "#domunrest +1"
+#magicpriority death 256
+#magicpriority nature 256
+#desc "Priests can encite the nature to reanimate dead bodies to fight again. This causes some unrest amongst the population."
+#higherpriestlevelchance 0.75
+#magepriestchance 0.85
+#priestextracost 30
+#end
+
+#new
+#name "godrebirth"
+#basechance 0.3
+#command "#godrebirth"
+#magicpriority nature 4
+#desc "The pretender god of this nation does not lose magical skill upon death"
+#end
+
+
+--- General economy modifiers
+
+#new
+#type "castleprod"
+#name "castleprod 10"
+#basechance 0.2
+#command "#castleprod +10"
+#magicpriority earth 4
+#themeinc thisarmorprot 14 *3
+#themeinc thisarmorprot 16 *3
+#desc "10 percent higher resource production in castles"
+#end
+
+#new
+#type "castleprod"
+#name "castleprod 25"
+#basechance 0.1
+#command "#castleprod +25"
+#magicpriority earth 4
+#themeinc thisarmorprot 14 *3
+#themeinc thisarmorprot 16 *3
+#desc "25 percent higher resource production in castles"
+#end
+
+#new
+#name "tradecoast-10"
+#basechance 0.25
+#command "#tradecoast +10"
+#desc "10 percent higher gold income in coastal provinces"
+#end
+
+
+#new
+#name "cheaplabs"
+#type "lab"
+#basechance 0.25
+#command "#labcost 400"
+#desc "Laboratories cost 400 gold"
+#end
+
+#new
+#name "expensivelabs"
+#type "lab"
+#basechance 0.25
+#command "#labcost 600"
+#desc "Laboratories cost 600 gold"
+#end
+
+#new
+#name "cheaptemple"
+#type "temple"
+#basechance 0.25
+#command "#templecost 300"
+#desc "Temples cost 300 gold"
+#end
+
+#new
+#name "cheaptemple2"
+#type "temple"
+#basechance 0.1
+#command "#templecost 200"
+#desc "Temples cost 200 gold"
+#end
+
+#new
+#name "expensivetemple"
+#type "temple"
+#basechance 0.25
+#command "#templecost 500"
+#desc "Temples cost 500 gold"
+#end
+
+#new
+#name "expensivetemple2"
+#type "temple"
+#basechance 0.1
+#command "#templecost 600"
+#desc "Temples cost 600 gold"
+#end
+
+#new
+#name "cheapforts"
+#type "fort"
+#basechance 0.25
+#command "#fortcost -10"
+#desc "Fortifications are 10 percent cheaper"
+#end
+
+#new
+#name "cheapforts2"
+#type "fort"
+#basechance 0.1
+#command "#fortcost -20"
+#desc "Fortifications are 20 percent cheaper"
+#end
+
+
+#new
+#name "expensivemercs"
+#type "merc"
+#basechance 0.1
+#command "#merccost 25"
+#desc "Mercenaries are 25 percent more expensive"
+#end
+
+#new
+#name "cheapmercs"
+#type "merc"
+#basechance 0.1
+#command "#merccost -25"
+#desc "Mercenaries are 25 percent cheaper"
+#end
+
+#new
+#name "expensiveforts"
+#type "fort"
+#basechance 0.25
+#command "#fortcost 10"
+#desc "Fortifications are 10 percent more expensive"
+#end
+
+#new
+#name "expensiveforts2"
+#type "fort"
+#basechance 0.1
+#command "#fortcost 20"
+#desc "Fortifications are 20 percent more expensive"
+#end
+
+#new
+#name "templegems: fire"
+#type "temple"
+#basechance 0.025
+#command "#templegems 0"
+#chanceinc "magicpriority fire below 1 *0"
+#command "#templecost 800"
+#desc "Temples generate fire gems"
+#magicpriority fire 16
+#end
+
+#new
+#name "templegems: fire cheap"
+#type "temple"
+#basechance 0.0125
+#command "#templegems 0"
+#chanceinc "magicpriority fire below 1 *0"
+#command "#templecost 600"
+#desc "Temples generate fire gems"
+#magicpriority fire 16
+#end
+
+#new
+#name "templegems: air"
+#type "temple"
+#basechance 0.025
+#command "#templegems 1"
+#command "#templecost 800"
+#chanceinc "magicpriority air below 1 *0"
+#magicpriority air 16
+#desc "Temples generate air gems"
+#end
+
+
+#new
+#name "templegems: air cheap"
+#type "temple"
+#basechance 0.0125
+#command "#templegems 1"
+#command "#templecost 600"
+#magicpriority air 16
+#chanceinc "magicpriority air below 1 *0"
+#desc "Temples generate air gems"
+#end
+
+#new
+#name "templegems: water"
+#type "temple"
+#basechance 0.025
+#command "#templegems 2"
+#command "#templecost 800"
+#magicpriority water 16
+#chanceinc "magicpriority water below 1 *0"
+#desc "Temples generate water gems"
+#end
+
+#new
+#name "templegems: water cheap"
+#type "temple"
+#basechance 0.0125
+#command "#templegems 2"
+#command "#templecost 600"
+#magicpriority water 16
+#chanceinc "magicpriority water below 1 *0"
+#desc "Temples generate water gems"
+#end
+
+#new
+#name "templegems: earth"
+#type "temple"
+#basechance 0.025
+#command "#templegems 3"
+#command "#templecost 800"
+#magicpriority earth 16
+#chanceinc "magicpriority earth below 1 *0"
+#desc "Temples generate earth gems"
+#end
+
+#new
+#name "templegems: earth cheap"
+#type "temple"
+#basechance 0.0125
+#command "#templegems 3"
+#command "#templecost 600"
+#magicpriority earth 16
+#chanceinc "magicpriority earth below 1 *0"
+#desc "Temples generate earth gems"
+#end
+
+
+#new
+#name "templegems: astral"
+#type "temple"
+#basechance 0.025
+#command "#templegems 4"
+#command "#templecost 800"
+#magicpriority astral 16
+#chanceinc "magicpriority astral below 1 *0"
+#desc "Temples generate astral gems"
+#end
+
+#new
+#name "templegems: astral cheap"
+#type "temple"
+#basechance 0.0125
+#command "#templegems 4"
+#command "#templecost 600"
+#magicpriority astral 16
+#chanceinc "magicpriority astral below 1 *0"
+#desc "Temples generate astral gems"
+#end
+
+#new
+#name "templegems: death"
+#type "temple"
+#basechance 0.025
+#command "#templegems 5"
+#command "#templecost 800"
+#magicpriority death 16
+#chanceinc "magicpriority death below 1 *0"
+#desc "Temples generate death gems"
+#end
+
+#new
+#name "templegems: death cheap"
+#type "temple"
+#basechance 0.0125
+#command "#templegems 5"
+#command "#templecost 600"
+#magicpriority death 16
+#chanceinc "magicpriority death below 1 *0"
+#desc "Temples generate death gems"
+#end
+
+
+#new
+#name "templegems: nature"
+#type "temple"
+#basechance 0.025
+#command "#templegems 6"
+#command "#templecost 800"
+#magicpriority nature 16
+#chanceinc "magicpriority nature below 1 *0"
+#desc "Temples generate nature gems"
+#end
+
+
+#new
+#name "templegems: nature cheap"
+#type "temple"
+#basechance 0.0125
+#command "#templegems 6"
+#command "#templecost 600"
+#magicpriority nature 16
+#chanceinc "magicpriority nature below 1 *0"
+#desc "Temples generate nature gems"
+#end
+
+
+#new
+#name "templegems: blood"
+#type "temple"
+#basechance 0.05
+#command "#templegems 7"
+#magicpriority blood 16
+#desc "Temples generate blood slaves"
+#chanceinc "magicpriority blood below 1 *0"
+#end
+
+#new
+#name "uwbuild"
+#basechance 0.0125
+#command "#uwbuild 1"
+#chanceinc primaryracecommand #amphibian 0.25
+#chanceinc primaryracecommand #pooramphibian 0.25
+#chanceinc nationcommand above #uwbuild 0 *0
+#chanceinc magicpriority water below 1 *0.05
+#magicpriority water 32
+#desc "Can build forts under water"
+#end
+
+
+--- Guardian spirits
+
+#new
+#name "guardian spirit: ghost"
+#type guardspirit
+#basechance 0.05
+#command "#guardspirit 566"
+#chanceinc magicpriority death below 1 *0
+#magicpriority death 8
+#desc "Ghosts occasionally protect priests in battles"
+#end
+
+#new
+#name "guardian spirit: black hawk"
+#type guardspirit
+#basechance 0.05
+#command "#guardspirit 517"
+#chanceinc magicpriority air below 1 *0
+#chanceinc magicpriority nature below 1 *0
+#magicpriority air 4
+#magicpriority nature 2
+#desc "Black hawks occasionally protect priests in battles"
+#end
+
+#new
+#name "guardian spirit: siren"
+#type guardspirit
+#basechance 0.05
+#command "#guardspirit 1055"
+#chanceinc magicpriority water below 1 *0
+#chanceinc magicpriority air below 1 *0
+#magicpriority air 2
+#magicpriority water 4
+#desc "Sirens occasionally protect priests in battles"
+#end
+
+#new
+#name "guardian spirit: revenant"
+#type guardspirit
+#basechance 0.05
+#command "#guardspirit 396"
+#chanceinc magicpriority death below 1 *0
+#magicpriority death 8
+#desc "Revenants occasionally protect priests in battles"
+#end
+
+#new
+#name "guardian spirit: nun"
+#type guardspirit
+#basechance 0
+#command "#guardspirit 396"
+#chanceinc primaryrace human 0.0125
+#chanceinc primaryrace "Advanced human" 0.0125
+#higherpriestlevelchance 0.75
+#desc "Nuns occasionally follow priests in battles"
+#end
+
+-- Very low normal chanceinc values due to multipliers
+#new
+#name "guardian spirit: fravashi"
+#type guardspirit
+#command "#guardspirit 2562"
+#basechance 0.025
+#chanceinc primaryrace caelian 0.25
+#chanceinc magicpriority air below 1 *0.1
+#chanceinc magicpriority astral below 1 *0
+#magicpriority air 4
+#magicpriority astral 4
+#desc "Fravashis occasionally guard priests in battles"
+#end
+
+

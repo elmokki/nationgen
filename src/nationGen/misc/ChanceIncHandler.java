@@ -609,10 +609,14 @@ public class ChanceIncHandler {
 		{
 			List<String> chanceincs = new ArrayList<String>();
 			
+			// Add race themes if appliceable!
 			if(r != null)
 				chanceincs.addAll(getRaceThemeIncs(r)); // Should never be null.
 
-	
+			// Add all nation theme themeincs!
+			for(Theme t : n.nationthemes)
+				chanceincs.addAll(t.themeincs);
+			
 			chanceincs.addAll(miscincs);
 			
 
@@ -1042,13 +1046,14 @@ public class ChanceIncHandler {
 					if(n.races.size() > 0)
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
+				
 				// Nation commands
 				canIncrease = false;
 				if(args.get(0).equals("nationcommand") && args.size() >= 3)
 				{					
 
 					String command = args.get(1);
-					
+
 					int dir = 0;
 					if(args.contains("below"))
 						dir = -1;
@@ -1059,6 +1064,80 @@ public class ChanceIncHandler {
 						
 					List<Command> coms = n.getCommands();
 					coms.addAll(n.races.get(0).nationcommands);
+					for(Command c : coms)
+					{
+						if(c.command.equals(command))
+						{
+							
+							String arg = c.args.get(0);
+
+							
+							if(dir == -1 && Integer.parseInt(arg) < Integer.parseInt(args.get(args.size() - 2)))
+							{
+								canIncrease = true;
+							}
+							else if(dir == 1 && Integer.parseInt(arg) > Integer.parseInt(args.get(args.size() - 2)))
+							{
+								canIncrease = true;
+							}
+							else if(dir == 0)
+							{
+								canIncrease = true;
+							}
+								
+						}
+					}
+					
+			
+
+					
+					if(canIncrease)
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+				}
+				
+				
+				// Magic priority
+				canIncrease = false;
+				if(args.get(0).equals("magicpriority"))
+				{
+					List<String> tags = Generic.getTags(Generic.getAllNationTags(n), "magicpriority");
+					double chance = 1;
+					for(String str1 : tags)
+					{
+						List<String> args1 = Generic.parseArgs(str1);
+						if(args.get(1).equals(args1.get(1)))
+						{
+							chance *= Double.parseDouble(args1.get(2));
+						}
+					}
+					
+					if(args.contains("below") && chance < Double.parseDouble(args.get(args.size() - 2)))
+						canIncrease = true;
+					else if(chance >= Double.parseDouble(args.get(args.size() - 2)))
+						canIncrease = true;
+					
+					
+					if(canIncrease)
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+				}
+				
+				
+				// Nation commands
+				canIncrease = false;
+				if(args.get(0).equals("primaryracecommand") && args.size() >= 3)
+				{					
+
+					String command = args.get(1);
+
+					int dir = 0;
+					if(args.contains("below"))
+						dir = -1;
+					if(args.contains("above"))
+						dir = 1;
+					
+					
+						
+					List<Command> coms = n.races.get(0).getCommands();
 					for(Command c : coms)
 					{
 						if(c.command.equals(command))
@@ -1242,7 +1321,7 @@ public class ChanceIncHandler {
 				if(args.get(0).equals("nationtag") && args.size() >= 3)
 				{
 					
-					for(Filter f2 : n.appliedfilters)
+					for(Filter f2 : n.nationthemes)
 						if(f2.tags.contains(args.get(1)))
 							canIncrease = true;
 					

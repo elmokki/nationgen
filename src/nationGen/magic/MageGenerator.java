@@ -159,19 +159,22 @@ public class MageGenerator extends TroopGenerator {
 		
 		
 		
+		List<String> source = new ArrayList<String>();
 		
+		if(Generic.getTagValue(u.pose.tags, "magicpriority") != null)
+			source.addAll(Generic.getTags(u.pose.tags, "magicpriority"));
+		else if(Generic.getTagValue(u.race.tags, "magicpriority") != null)
+			source.addAll(Generic.getTags(u.race.tags, "magicpriority"));
+		for(Theme t : nation.nationthemes)
+			if(Generic.getTagValue(t.tags, "magicpriority") != null)
+				source.addAll(Generic.getTags(t.tags, "magicpriority"));
+		
+	
 		for(int i = 0; i < 8; i++)
 		{
 			Filter f = new Filter(this.nationGen);
 			f.name = Generic.integerToPath(i);
-			
-			// RACE/POSE EXTRA MAGIC PRIORITIES!
-			List<String> source = null;
-			if(Generic.getTagValue(u.pose.tags, "magicpriority") != null)
-				source = u.pose.tags;
-			else if(Generic.getTagValue(u.race.tags, "magicpriority") != null)
-				source = u.race.tags;
-			
+	
 			if(source != null)
 			{
 				for(String tag : source)
@@ -181,7 +184,11 @@ public class MageGenerator extends TroopGenerator {
 					{
 						if(Generic.PathToInteger(args.get(1)) == i)
 						{
-							f.basechance = Double.parseDouble(args.get(2));
+							f.basechance *= Double.parseDouble(args.get(2));
+							
+							// All paths need to be possible, so let's have a failsafe
+							if(f.basechance == 0)
+								f.basechance = 0.00001;
 						}
 					}
 				}
@@ -1055,16 +1062,61 @@ public class MageGenerator extends TroopGenerator {
 		
 		Random r = this.random;
 		
+		
+		double priestUpChance = 0.5;
+		if(Generic.containsTag(Generic.getAllNationTags(nation), "higherpriestlevelchance"))
+		{
+			List<String> possiblevalues = Generic.getTagValues(Generic.getAllNationTags(nation), "higherpriestlevelchance");
+			double highest = 0;
+			for(String str : possiblevalues)
+			{
+				if(Double.parseDouble(str) > highest)
+					highest = Double.parseDouble(str);
+			}
+			priestUpChance = highest;
+		}
+		
 		int maxStrength = 1;
-		if(r.nextDouble() > 0.50)
+		if(r.nextDouble() < priestUpChance)
 		{
 			maxStrength++;
-			if(r.nextDouble() > 0.5)
+			if(r.nextDouble() < priestUpChance)
 				maxStrength++;
 		}
 		
-		boolean magePriests = r.nextBoolean();
-		boolean compensationMagePriests = r.nextBoolean();
+
+		if(Generic.containsTag(Generic.getAllNationTags(nation), "highestpriestlevel"))
+		{
+			List<String> possiblevalues = Generic.getTagValues(Generic.getAllNationTags(nation), "highestpriestlevel");
+			int highest = 0;
+			for(String str : possiblevalues)
+			{
+				if(Integer.parseInt(str) > highest)
+					highest = Integer.parseInt(str);
+			}
+			maxStrength = highest;
+		}
+		
+	
+		
+		double magePriestChance = 0.3;
+		if(Generic.containsTag(Generic.getAllNationTags(nation), "magepriestchance"))
+		{
+			List<String> possiblevalues = Generic.getTagValues(Generic.getAllNationTags(nation), "magepriestchance");
+			double highest = 0;
+			for(String str : possiblevalues)
+			{
+				if(Double.parseDouble(str) > highest)
+					highest = Double.parseDouble(str);
+			}
+			magePriestChance = highest;
+		}
+				
+		boolean magePriests = r.nextDouble() < magePriestChance;
+		
+		// If we have extra mages, they can be priests 20% of the time if primary mages aren't
+		boolean compensationMagePriests = (!magePriests && r.nextDouble() < 0.20);
+
 		
 		int sacredMageTiers = 0;
 		if(r.nextDouble() < 0.5)
