@@ -1,6 +1,67 @@
 -------- Normal
 
 #newpose
+#basechance 0.002
+#name "colossi infantry"
+#role "infantry"
+#subrace colossi
+
+#load basesprite /data/items/machakans/colossi/bases.txt
+#load shadow /data/items/machakans/colossi/shadow.txt
+#load hands /data/items/machakans/colossi/hands.txt
+
+#load armor /data/items/machakans/colossi/armor.txt
+#load shirt /data/items/machakans/colossi/shirt.txt
+
+#load weapon /data/items/machakans/colossi/weapon.txt
+#load offhand /data/items/machakans/colossi/shields.txt
+#load offhand /data/items/machakans/colossi/offhand.txt
+#load bonusweapon /data/items/machakans/colossi/bonusranged.txt
+
+#load helmet /data/items/machakans/colossi/helmet.txt
+
+#load cloakf /data/items/machakans/colossi/cloakf.txt
+#load cloakb /data/items/machakans/colossi/cloakb.txt
+
+#generateitem 1 shirt
+
+#endpose
+
+
+#newpose
+#basechance 0.0005
+#name "colossi archer"
+#role "ranged"
+#subrace colossi
+
+#renderorder "shadow quiver weapon cloakb basesprite mount shirt legs armor cloakf bonusweapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/machakans/colossi/bases.txt
+#load shadow /data/items/machakans/colossi/shadow.txt
+#load hands /data/items/machakans/colossi/hands.txt
+
+#load armor /data/items/machakans/colossi/armor.txt
+#load shirt /data/items/machakans/colossi/shirt.txt
+
+#load helmet /data/items/machakans/colossi/helmet.txt
+
+#load weapon /data/items/machakans/colossi/bows.txt
+
+#load quiver /data/items/machakans/colossi/quiver.txt
+#load bonusweapon /data/items/machakans/colossi/weapon_ranged.txt
+
+#load cloakf /data/items/machakans/colossi/cloakf.txt
+#load cloakb /data/items/machakans/colossi/cloakb.txt
+
+#generateitem 1 bonusweapon
+#generateitem 1 shirt
+
+#endpose
+
+
+-------- Elite
+
+#newpose
 #basechance 2
 #name "colossi infantry"
 #role "sacred infantry"
@@ -25,6 +86,8 @@
 #load cloakb /data/items/machakans/colossi/cloakb.txt
 
 #generateitem 1 shirt
+
+#cannot_be_pd
 
 #endpose
 
@@ -57,5 +120,7 @@
 
 #generateitem 1 bonusweapon
 #generateitem 1 shirt
+
+#cannot_be_pd
 
 #endpose

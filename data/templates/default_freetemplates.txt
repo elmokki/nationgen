@@ -31,15 +31,43 @@
 #maxvarieties 2
 #end
 
+-- Slow militia
 #new
 #basechance 0.5
 #name "militia"
 #maxvarieties 1
-#chanceinc pose mounted *0
-#chanceinc pose chariot *0
-#chanceinc unittag noble *0
-#chanceinc itemtag  noble *0
-#chanceinc tag  cannot_be_militia *0
+#chanceinc "pose mounted *0"
+#chanceinc "pose chariot *0"
+#chanceinc "unittag noble *0"
+#chanceinc "itemtag  noble *0"
+#chanceinc "itemtag not slow_militia *0"
+#chanceinc "personalcommand #flying *0"
+#chanceinc "tag cannot_be_militia *0"
+#command "#def -2"
+#command "#att -2"
+#command "#gcost *0.7"
+#command "#mor -2"
+#command "#prec -1"
+#command "#mapmove *0"
+#command "#mapmove +1"
+#themeinc "thisarmorprot 8 *0.50"
+#themeinc "thisarmorprot 10 *0.05"
+#themeinc "thisarmorprot 12 *0.01"
+#themeinc "thisitemtheme militia *10"
+#theme militia
+#end
+
+-- Normal militia
+#new
+#basechance 0.5
+#name "militia"
+#maxvarieties 1
+#chanceinc "pose mounted *0"
+#chanceinc "pose chariot *0"
+#chanceinc "unittag noble *0"
+#chanceinc "itemtag  noble *0"
+#chanceinc "itemtag slow_militia *0"
+#chanceinc "tag cannot_be_militia *0"
 #command "#def -2"
 #command "#att -2"
 #command "#gcost *0.7"

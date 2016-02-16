@@ -5,6 +5,17 @@
 #armor
 #tag "tier 1"
 #theme "imperial"
+#theme "oriental"
+#enditem
+
+#newitem
+#id nothing
+#gameid -1
+#basechance 3
+#armor
+#eliteversion turban_white
+#tag "tier 1"
+#theme "enlightened"
 #enditem
 
 
@@ -52,6 +63,7 @@
 #tag "tier 2"
 #tag "tier 1"
 #theme "enlightened"
+#theme "oriental"
 #enditem
 
 #newitem
@@ -86,6 +98,7 @@
 #tag "tier 2"
 #tag "tier 1"
 #theme "enlightened"
+#theme "oriental"
 #enditem
 
 #newitem
@@ -128,6 +141,7 @@
 #armor
 #tag "tier 3"
 #theme "enlightened"
+#theme "oriental"
 #enditem
 
 #newitem
@@ -140,6 +154,7 @@
 #tag "tier 2"
 #tag "tier 1"
 #theme "enlightened"
+#theme "oriental"
 #enditem
 
 
@@ -162,6 +177,7 @@
 #armor
 #tag "tier 3"
 #theme "enlightened"
+#theme "oriental"
 #enditem
 
 #newitem
@@ -173,6 +189,7 @@
 #tag "eliteversion goeticmasterhat"
 #tag "tier 2"
 #theme "enlightened"
+#theme "oriental"
 #enditem
 
 #newitem
@@ -183,6 +200,7 @@
 #armor
 #tag "tier 3"
 #theme "enlightened"
+#theme "oriental"
 #enditem
 
 #newitem
@@ -194,6 +212,7 @@
 #tag "eliteversion demonjester"
 #tag "tier 2"
 #theme "enlightened"
+#theme "oriental"
 #enditem
 
 #newitem
@@ -227,6 +246,7 @@
 #tag "tier 2"
 #tag "tier 1"
 #theme "enlightened"
+#theme "oriental"
 #enditem
 
 #newitem
@@ -264,6 +284,63 @@
 #tag "tier 3"
 #theme "enlightened"
 #theme "imperial"
+#enditem
+
+
+-- Enlightened turbans
+#newitem
+#id turban_white
+#gameid -1
+#sprite /graphics/monkey/helmet/vanara_mage/turban.png
+#recolormask /graphics/monkey/helmet/vanara_mage/turban_recolormask1.png
+#offsetx -2
+#offsety -1
+#eliteversion "turban_light"
+#eliteversion "turban_dark"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "enlightened"
+#enditem
+
+#newitem
+#id turban_light
+#gameid -1
+#sprite /graphics/monkey/helmet/vanara_mage/turban.png
+#recolormask /graphics/monkey/helmet/vanara_mage/turban_recolormask2.png
+#offsetx -2
+#offsety -1
+#eliteversion "turban_maharishi"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "enlightened"
+#enditem
+
+#newitem
+#id turban_dark
+#gameid -1
+#sprite /graphics/monkey/helmet/vanara_mage/turban.png
+#recolormask /graphics/monkey/helmet/vanara_mage/turban_recolormask3.png
+#offsetx -2
+#offsety -1
+#eliteversion "turban_maharishi"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "enlightened"
+#enditem
+
+#newitem
+#id turban_maharishi
+#gameid -1
+#sprite /graphics/monkey/helmet/vanara_mage/turban_maharishi.png
+#recolormask /graphics/monkey/helmet/vanara_mage/turban_maharishi_recolormask.png
+#offsetx -2
+#offsety -1
+#armor
+#tag "tier 3"
+#theme "enlightened"
 #enditem
 
 
@@ -704,4 +781,111 @@
 #armor
 #tag "tier 3"
 #theme "imperial"
+#enditem
+
+
+-- Oriental hats
+#newitem
+#id cap_eunuch
+#gameid -1
+#sprite /graphics/tengu/helmet/caster/cap_eunuch.png
+#recolormask self
+#offsetx -1
+#offsety -1
+#armor
+#theme "oriental"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id cap_minister1
+#gameid -1
+#sprite /graphics/tengu/helmet/caster/cap_minister1.png
+#recolormask self
+#offsetx -1
+#offsety -1
+#armor
+#theme "oriental"
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id cap_minister2
+#gameid -1
+#sprite /graphics/tengu/helmet/caster/cap_minister2.png
+#recolormask self
+#offsetx -1
+#offsety -1
+#armor
+#theme "oriental"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id cap_minister3
+#gameid -1
+#sprite /graphics/tengu/helmet/caster/cap_minister3.png
+#recolormask self
+#offsetx -1
+#offsety -1
+#armor
+#theme "oriental"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id cap_minister4
+#gameid -1
+#sprite /graphics/tengu/helmet/caster/cap_minister4.png
+#recolormask self
+#offsetx -1
+#offsety -1
+#armor
+#theme "oriental"
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id cap_demonpriest
+#gameid -1
+#sprite /graphics/tengu/helmet/caster/demonpriest_hat.png
+#recolormask self
+#offsetx -1
+#offsety -1
+#armor
+#theme "oriental"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id cap_rahaga1
+#gameid -1
+#sprite /graphics/tengu/helmet/caster/cap_rahaga1.png
+#recolormask /graphics/tengu/helmet/caster/cap_rahaga1_recolormask.png
+#offsetx 0
+#offsety 0
+#armor
+#theme "oriental"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id cap_rahaga2
+#gameid -1
+#sprite /graphics/tengu/helmet/caster/cap_rahaga2.png
+#recolormask /graphics/tengu/helmet/caster/cap_rahaga2_recolormask.png
+#offsetx 0
+#offsety 0
+#armor
+#theme "oriental"
+#tag "tier 2"
+#tag "tier 3"
 #enditem

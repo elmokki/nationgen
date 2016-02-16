@@ -1,0 +1,33 @@
+-- No armor
+#newitem
+#name none
+#basechance 10
+#chanceinc racetheme advanced *0.1
+#gameid -1
+#theme "naked"
+#armor
+#enditem
+
+--- Loincloth
+#newitem
+#id loincloth
+#basechance 5
+#chanceinc racetheme primitive *0.2
+#chanceinc racetheme advanced *2
+#gameid -1
+#sprite /graphics/monkey/yeti/loincloth.png
+#sprite /graphics/monkey/yeti/loincloth_recolormask.png
+#armor
+#enditem
+
+--- Toga
+#newitem
+#id toga
+#basechance 1
+#chanceinc racetheme primitive *0.1
+#chanceinc racetheme advanced *10
+#gameid 158
+#sprite /graphics/monkey/yeti/toga.png
+#sprite /graphics/monkey/yeti/toga_recolormask.png
+#armor
+#enditem

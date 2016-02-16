@@ -1,0 +1,30 @@
+--- Shields
+
+#newitem
+#basechance 3
+#id none
+#gameid -1
+#armor
+#theme "primitive"
+#theme "naked"
+#enditem
+
+#newitem
+#basechance 2
+#id hideshield
+#gameid 105
+#sprite /graphics/machakans/shields/pygmyshield.png
+#eliteversion greathideshield
+#armor
+#enditem
+
+#newitem
+#basechance 1
+#id greathideshield
+#gameid 112
+#sprite /graphics/machakans/shields/pygmygreatshield.png
+#recolormask /graphics/machakans/shields/pygmygreatshield_recolormask.png
+#armor
+#theme "advanced"
+#enditem
+

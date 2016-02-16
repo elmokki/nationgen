@@ -1,12 +1,11 @@
 #newitem
-#name "bandar basesprite"
+#name "sacred bandar basesprite"
 #gameid -1
 #sprite /graphics/monkey/bandar_base_sacred.png
-#command "#gcost +2"
+#needs hands bandar_hands_sacred
+#command "#gcost 20"
 #command "#hp 20"
 #command "#mr 10"
-#command "#animal"
-#command "#forestsurvival"
 #command "#prot 3"
 #command "#mor 12"
 #command "#prec 10"
@@ -14,4 +13,77 @@
 #command "#att 11"
 #command "#str 16"
 #command "#size 3"
+#command "#animal"
+#command "#forestsurvival"
+#subrace bandar
+#theme lowland
+#enditem
+
+#newitem
+#name "sacred winged bandar basesprite"
+#gameid -1
+#sprite /graphics/monkey/bandar_base_sacred.png
+#needs wings winged
+#needs hands bandar_hands_sacred
+#command "#gcost 30"
+#command "#hp 20"
+#command "#mr 12"
+#command "#prot 3"
+#command "#mor 11"
+#command "#prec 10"
+#command "#def 10"
+#command "#att 11"
+#command "#str 15"
+#command "#size 3"
+#command "#mapmove 3"
+#command "#maxage +5"
+#command "#flying"
+#command "#animal"
+#command "#forestsurvival"
+#subrace winged bandar"
+#theme winged
+#enditem
+
+#newitem
+#name "sacred bandarbred basesprite"
+#gameid -1
+#sprite /graphics/monkey/bandar_base_bandarbred_sacred.png
+#needs hands bandarbred_hands
+#command "#gcost 24"
+#command "#hp 22"
+#command "#mr 11"
+#command "#prot 3"
+#command "#mor 12"
+#command "#prec 8"
+#command "#def 9"
+#command "#att 11"
+#command "#str 17"
+#command "#size 3"
+#command "#maxage *0.8"
+#command "#wastesurvival"
+#command "#fireres 15"
+#subrace bandarbred
+#theme abysian
+#enditem
+
+#newitem
+#name "sacred alpine bandar basesprite"
+#gameid -1
+#sprite /graphics/monkey/bandar_base_alpine_sacred.png
+#needs hands bandar_hands
+#command "#gcost 21"
+#command "#hp 20"
+#command "#mr 11"
+#command "#prot 4"
+#command "#mor 12"
+#command "#prec 10"
+#command "#def 10"
+#command "#att 11"
+#command "#str 16"
+#command "#size 3"
+#command "#animal"
+#command "#mountainsurvival"
+#command "#coldres 15"
+#subrace "alpine bandar"
+#theme alpine
 #enditem

@@ -1,11 +1,10 @@
 #newitem
-#name "markata sacred basesprite"
+#name "sacred markata base"
 #gameid -1
 #sprite /graphics/monkey/markata_base_sacred.png
+#command "#gcost 5"
 #command "#hp 6"
 #command "#mr 9"
-#command "#animal"
-#command "#forestsurvival"
 #command "#mor 10"
 #command "#prec 9"
 #command "#def 14"
@@ -15,4 +14,81 @@
 #command "#enc 2"
 #command "#weapon 20"
 #command "#size 1"
+#command "#animal"
+#command "#forestsurvival"
+#subrace markata
+#theme lowland
+#enditem
+
+
+#newitem
+#name "winged sacred markata base"
+#gameid -1
+#sprite /graphics/monkey/markata_base_sacred.png
+#needs wings winged
+#command "#gcost 10"
+#command "#hp 6"
+#command "#mr 11"
+#command "#mor 9"
+#command "#prec 9"
+#command "#def 14"
+#command "#att 10"
+#command "#str 6"
+#command "#ap 14"
+#command "#enc 2"
+#command "#weapon 20"
+#command "#size 1"
+#command "#mapmove 3"
+#command "#maxage +5"
+#command "#flying"
+#command "#animal"
+#command "#forestsurvival"
+#subrace "winged markata"
+#theme winged
+#enditem
+
+#newitem
+#name "markatabred sacred base"
+#gameid -1
+#sprite /graphics/monkey/markata_base_markatabred.png
+#command "#gcost 6"
+#command "#hp 7"
+#command "#mr 10"
+#command "#mor 10"
+#command "#prec 8"
+#command "#def 13"
+#command "#att 10"
+#command "#str 7"
+#command "#ap 13"
+#command "#enc 2"
+#command "#size 1"
+#command "#wastesurvival"
+#command "#fireres 15"
+#command "#maxage *0.8"
+#subrace "markatabred"
+#theme abysian
+#enditem
+
+#newitem
+#name "sacred alpine markata base"
+#gameid -1
+#sprite /graphics/monkey/markata_base_sacred.png
+#command "#gcost 6"
+#command "#hp 6"
+#command "#mr 10"
+#command "#mor 10"
+#command "#prec 9"
+#command "#def 14"
+#command "#att 10"
+#command "#str 6"
+#command "#ap 14"
+#command "#enc 2"
+#command "#weapon 20"
+#command "#size 1"
+#command "#animal"
+#command "#mountainsurvival"
+#command "#coldres 15"
+#command "#maxage *1.2"
+#subrace "alpine markata"
+#theme alpine
 #enditem

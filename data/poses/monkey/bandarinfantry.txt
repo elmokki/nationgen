@@ -2,12 +2,13 @@
 #newpose
 #name "bandar infantry"
 #role "infantry"
-#role "elite"
 #theme "imperial"
 #theme "enlightened"
-#theme "terrestrial"
+#theme "oriental"
+#theme "lowland"
 #theme "winged"
-#subrace bandar
+#theme "abysian"
+#theme "alpine"
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap bonusweapon quiver armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
@@ -31,8 +32,6 @@
 
 #load wings /data/items/monkey/bandar/normal/wings.txt
 
-#generateitem 1 wings
-
 #command "#maxage 45"
 #endpose
 
@@ -43,9 +42,10 @@
 #role "infantry"
 #theme "imperial"
 #theme "enlightened"
-#theme "terrestrial"
+#theme "oriental"
+#theme "lowland"
 #theme "winged"
-#subrace bandar
+#theme "alpine"
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap bonusweapon quiver armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
@@ -69,8 +69,6 @@
 
 #load wings /data/items/monkey/bandar/normal/wings.txt
 
-#generateitem 1 wings
-
 #command "#maxage 45"
 #endpose
 
@@ -81,9 +79,10 @@
 #role "ranged"
 #theme "imperial"
 #theme "enlightened"
-#theme "terrestrial"
+#theme "oriental"
+#theme "lowland"
 #theme "winged"
-#subrace bandar
+#theme "alpine"
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap quiver armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -106,7 +105,6 @@
 #load quiver /data/items/monkey/bandar/normal/quiver.txt
 #load wings /data/items/monkey/bandar/normal/wings.txt
 
-#generateitem 1 wings
 #generateitem 1 bonusweapon
 
 #command "#maxage 45"
@@ -118,13 +116,11 @@
 #name "bandar gladiators"
 #role "infantry"
 #theme "imperial"
-#theme "terrestrial"
+#theme "lowland"
 #theme "winged"
+#theme "abysian"
 #cannot_be_pd
-
 #basechance 0.5
-
-#subrace bandar
 
 #freetemplatefilter gladiatortemplate gladiator
 
@@ -149,8 +145,6 @@
 #load offhand /data/items/monkey/bandar/normal/shields.txt
 
 #load wings /data/items/monkey/bandar/normal/wings.txt
-
-#generateitem 1 wings
 
 #command "#maxage 45"
 #maxvarieties 2

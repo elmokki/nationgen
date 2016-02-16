@@ -1,7 +1,23 @@
 --- Hands belonging to an armor set should be given id of the lowest prot armor they go with if you want to avoid naked people with plate gloves.
 
 #newitem
-#id 1
+#id vanara_hands
 #gameid -1
 #sprite /graphics/monkey/vanara_hands.png
+#enditem
+
+#newitem
+#id vanarabred_hands
+#gameid -1
+#basechance 0
+#nogen
+#sprite /graphics/monkey/vanarabred_hands.png
+#enditem
+
+#newitem
+#id vanara_hands_alpine
+#gameid -1
+#basechance 0
+#nogen
+#sprite /graphics/monkey/vanara_alpine_hands.png
 #enditem

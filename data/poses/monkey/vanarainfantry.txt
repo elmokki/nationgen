@@ -7,10 +7,11 @@
 #basechance 0.5
 #theme "imperial"
 #theme "enlightened"
-#theme "terrestrial"
+#theme "oriental"
+#theme "lowland"
 #theme "winged"
-
-#subrace vanara
+#theme "abysian"
+#theme "alpine"
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
@@ -23,6 +24,7 @@
 #load cloakb /data/items/monkey/vanara/normal/cloakb.txt
 
 #load armor /data/items/monkey/vanara/normal/armor.txt
+#load shirt /data/items/monkey/vanara/normal/shirt.txt
 #load helmet /data/items/monkey/vanara/normal/helmet.txt
 
 #load weapon /data/items/monkey/vanara/normal/weapon.txt
@@ -34,8 +36,7 @@
 #load wings /data/items/monkey/vanara/normal/wings.txt
 #load overlay /data/items/monkey/vanara/normal/overlay.txt
 
-#generateitem 1 wings
-
+#generateitem 1 shirt
 #command "#maxage 30"
 #endpose
 
@@ -50,10 +51,10 @@
 #basechance 0.5
 #theme "imperial"
 #theme "enlightened"
-#theme "terrestrial"
+#theme "oriental"
+#theme "lowland"
 #theme "winged"
-
-#subrace vanara
+#theme "alpine"
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
@@ -77,7 +78,6 @@
 #load wings /data/items/monkey/vanara/normal/wings.txt
 #load overlay /data/items/monkey/vanara/normal/overlay.txt
 
-#generateitem 1 wings
 #generateitem 1 bonusweapon
 #command "#maxage 30"
 #endpose
@@ -92,10 +92,11 @@
 #basechance 0.5
 #theme "imperial"
 #theme "enlightened"
-#theme "terrestrial"
+#theme "oriental"
+#theme "lowland"
 #theme "winged"
-
-#subrace vanara
+#theme "abysian"
+#theme "alpine"
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
@@ -109,6 +110,7 @@
 
 
 #load armor /data/items/monkey/vanara/normal/armor.txt
+#load shirt /data/items/monkey/vanara/normal/shirt.txt
 #load helmet /data/items/monkey/vanara/normal/helmet.txt
 
 #load weapon /data/items/monkey/vanara/normal/bows.txt -3 3
@@ -121,8 +123,8 @@
 #load wings /data/items/monkey/vanara/normal/wings.txt
 #load overlay /data/items/monkey/vanara/normal/overlay.txt
 
-#generateitem 1 wings
 #generateitem 1 bonusweapon
+#generateitem 1 shirt
 #command "#maxage 30"
 #endpose
 
@@ -134,10 +136,10 @@
 #basechance 0.5
 #theme "imperial"
 #theme "enlightened"
-#theme "terrestrial"
+#theme "oriental"
+#theme "lowland"
 #theme "winged"
-
-#subrace vanara
+#theme "alpine"
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap  quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
@@ -164,7 +166,6 @@
 #load wings /data/items/monkey/vanara/normal/wings.txt
 #load overlay /data/items/monkey/vanara/normal/overlay.txt
 
-#generateitem 1 wings
 #generateitem 1 bonusweapon
 #command "#maxage 30"
 #endpose
@@ -178,8 +179,10 @@
 #basechance 0.5
 #theme "imperial"
 #theme "enlightened"
-#theme "terrestrial"
-#subrace vanara
+#theme "oriental"
+#theme "lowland"
+#theme "abysian"
+#theme "alpine"
 
 #renderorder "shadow cloakb mount basesprite shirt legs bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
@@ -192,6 +195,7 @@
 
 
 #load armor /data/items/monkey/vanara/mounted/armor.txt
+#load shirt /data/items/monkey/vanara/mounted/shirt.txt
 #load helmet /data/items/monkey/vanara/normal/helmet.txt
 
 #load weapon /data/items/monkey/vanara/normal/weapon.txt
@@ -204,7 +208,7 @@
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
 
 #command "#maxage 30"
-
+#generateitem 1 shirt
 #endpose
 
 -------- Gladiators (Imperial)
@@ -212,13 +216,12 @@
 #name "vanara gladiators"
 #role "infantry"
 #theme "imperial"
-#theme "terrestrial"
+#theme "lowland"
 #theme "winged"
+#theme "abysian"
 #cannot_be_pd
 
 #basechance 0.5
-
-#subrace vanara
 
 #freetemplatefilter gladiatortemplate gladiator
 
@@ -244,7 +247,6 @@
 #load wings /data/items/monkey/vanara/normal/wings.txt
 #load overlay /data/items/monkey/vanara/normal/overlay.txt
 
-#generateitem 1 wings
 #generateitem 1 bonusweapon
 #command "#maxage 30"
 

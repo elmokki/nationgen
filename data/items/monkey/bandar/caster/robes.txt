@@ -7,6 +7,7 @@
 #armor
 #tag "tier 3"
 #theme "enlightened"
+#theme "oriental"
 #enditem
 
 #newitem
@@ -19,6 +20,7 @@
 #tag "tier 1"
 #eliteversion "great_toga"
 #theme "enlightened"
+#theme "oriental"
 #enditem
 
 #newitem
@@ -30,6 +32,7 @@
 #tag "tier 1"
 #eliteversion "toga"
 #theme "enlightened"
+#theme "oriental"
 #enditem
 
 #newitem
@@ -69,6 +72,142 @@
 #eliteversion "toga"
 #eliteversion "great_toga"
 #theme "enlightened"
+#enditem
+
+
+--- Oriental robes
+#newitem
+#id orientalrobe_simple_white
+#gameid 159
+#sprite /graphics/monkey/armor/bandar_mage/imperialrobe_simple_white.png
+#eliteversion "orientalrobe_simple_bright"
+#eliteversion "orientalrobe_fancy_white"
+#armor
+#tag "tier 1"
+#theme "oriental"
+#enditem
+
+#newitem
+#id orientalrobe_simple_bright
+#gameid 159
+#sprite /graphics/monkey/armor/bandar_mage/imperialrobe_simple_white.png
+#recolormask /graphics/monkey/armor/bandar_mage/imperialrobe_simple_recolormask.png
+#eliteversion "orientalrobe_simple_medium"
+#eliteversion "orientalrobe_fancy_bright"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "oriental"
+#enditem
+
+#newitem
+#id orientalrobe_simple_grey
+#gameid 159
+#sprite /graphics/monkey/armor/bandar_mage/imperialrobe_simple_grey.png
+#eliteversion "orientalrobe_simple_medium"
+#eliteversion "orientalrobe_fancy_grey"
+#armor
+#tag "tier 1"
+#theme "oriental"
+#enditem
+
+#newitem
+#id orientalrobe_simple_medium
+#gameid 159
+#sprite /graphics/monkey/armor/bandar_mage/imperialrobe_simple_grey.png
+#recolormask /graphics/monkey/armor/bandar_mage/imperialrobe_simple_recolormask.png
+#eliteversion "orientalrobe_fancy_medium"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "oriental"
+#enditem
+
+#newitem
+#id orientalrobe_simple_black
+#gameid 159
+#sprite /graphics/monkey/armor/bandar_mage/imperialrobe_simple_black.png
+#eliteversion "orientalrobe_simple_dark"
+#eliteversion "orientalrobe_fancy_black"
+#armor
+#tag "tier 1"
+#theme "oriental"
+#enditem
+
+#newitem
+#id orientalrobe_simple_dark
+#gameid 159
+#sprite /graphics/monkey/armor/bandar_mage/imperialrobe_simple_black.png
+#recolormask /graphics/monkey/armor/bandar_mage/imperialrobe_simple_recolormask.png
+#eliteversion "orientalrobe_simple_medium"
+#eliteversion "orientalrobe_fancy_dark"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "oriental"
+#enditem
+
+#newitem
+#id orientalrobe_fancy_white
+#gameid 159
+#sprite /graphics/monkey/armor/bandar_mage/imperialrobe_fancy_white.png
+#eliteversion "orientalrobe_fancy_bright"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "oriental"
+#enditem
+
+#newitem
+#id orientalrobe_fancy_bright
+#gameid 159
+#sprite /graphics/monkey/armor/bandar_mage/imperialrobe_fancy_white.png
+#recolormask /graphics/monkey/armor/bandar_mage/imperialrobe_fancy_bright_recolormask.png
+#armor
+#tag "tier 3"
+#theme "oriental"
+#enditem
+
+#newitem
+#id orientalrobe_fancy_grey
+#gameid 159
+#sprite /graphics/monkey/armor/bandar_mage/imperialrobe_fancy_grey.png
+#eliteversion "orientalrobe_fancy_medium"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "oriental"
+#enditem
+
+#newitem
+#id orientalrobe_fancy_medium
+#gameid 159
+#sprite /graphics/monkey/armor/bandar_mage/imperialrobe_fancy_grey.png
+#recolormask /graphics/monkey/armor/bandar_mage/imperialrobe_fancy_medium_recolormask.png
+#armor
+#tag "tier 3"
+#theme "oriental"
+#enditem
+
+#newitem
+#id orientalrobe_fancy_black
+#gameid 159
+#sprite /graphics/monkey/armor/bandar_mage/imperialrobe_fancy_black.png
+#eliteversion "orientalrobe_fancy_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "oriental"
+#enditem
+
+#newitem
+#id orientalrobe_fancy_dark
+#gameid 159
+#sprite /graphics/monkey/armor/bandar_mage/imperialrobe_fancy_black.png
+#recolormask /graphics/monkey/armor/bandar_mage/imperialrobe_fancy_dark_recolormask.png
+#armor
+#tag "tier 3"
+#theme "oriental"
 #enditem
 
 

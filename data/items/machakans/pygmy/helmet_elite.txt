@@ -1,0 +1,29 @@
+--- Bare heads
+
+#newitem
+#id bald
+#basechance 4
+#gameid -1
+#armor
+#enditem
+
+
+--- Headdresses
+
+#newitem
+#id headdress_small
+#gameid -1
+#sprite /graphics/machakans/helmets/pygmy/headress_machakan.png
+#recolormask self
+#armor
+#tag "eliteversion headdress_large"
+#enditem
+
+#newitem
+#id headdress_large
+#gameid -1
+#sprite /graphics/machakans/helmets/pygmy/headress_mictlan.png
+#recolormask /graphics/machakans/helmets/pygmy/headress_mictlan_recolormask.png
+#armor
+#theme sacred
+#enditem

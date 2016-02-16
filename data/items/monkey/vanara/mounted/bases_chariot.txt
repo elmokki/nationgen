@@ -1,0 +1,419 @@
+--- Base offsets are applied to everything except base and overlay
+#newitem
+#name "horse chariot h"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#define "#trample"
+#define "#mounted"
+#define "#size 4"
+#define "#prot 5"
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#ressize 2"
+#define "#gcost +25"
+#define "#rcost +10"
+#define "#enc 4"
+#tag "chariot"
+#tag "minprot 10"
+#tag "maxprot 15"
+#tag "animal 'horse'"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "bronze horse chariot h"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse_bronze.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#trample"
+#define "#mounted"
+#define "#size 4"
+#define "#prot 5"
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#ressize 2"
+#define "#gcost +25"
+#define "#rcost +10"
+#define "#enc 4"
+#tag "chariot"
+#tag "minprot 10"
+#tag "maxprot 15"
+#tag "animal 'horse'"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "lizard chariot h"
+#gameid -1
+#sprite /graphics/mounts/chariots/lizard.png
+#armor
+#needs overlay 12
+#offsetx 51
+#offsety -10
+#define "#trample"
+#define "#mounted"
+#define "#size 4"
+#define "#prot 5"
+#define "#weapon nostr_bite_10" -- Bite
+#define "#mapmove 3"
+#define "#ap 16"
+#define "#ressize 2"
+#define "#gcost +25"
+#define "#rcost +10"
+#define "#enc 4"
+#tag "chariot"
+#tag "minprot 10"
+#tag "maxprot 15"
+#tag "animal 'lizard'"
+#basechance 0.25
+#theme "imperial"
+#enditem
+
+#newitem
+#name "boar chariot h"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#define "#trample"
+#define "#mounted"
+#define "#size 4"
+#define "#prot 5"
+#define "#weapon 352" -- Gore
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#ressize 2"
+#define "#gcost +25"
+#define "#rcost +10"
+#define "#enc 4"
+#tag "chariot"
+#tag "minprot 10"
+#tag "maxprot 15"
+#tag "animal 'boar'"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "horse chariot - oriental"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse_oriental.png
+#armor
+#needs overlay oriental_chariot
+#offsetx 51
+#offsety -8
+#define "#trample"
+#define "#mounted"
+#define "#size 4"
+#define "#prot 6"
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#ressize 2"
+#define "#gcost +25"
+#define "#rcost +12"
+#define "#enc 4"
+#tag "chariot"
+#tag "minprot 10"
+#tag "maxprot 15"
+#tag "animal 'horse'"
+#theme "enlightened"
+#theme "oriental"
+#enditem
+
+#newitem
+#name "lizard chariot - oriental"
+#gameid -1
+#sprite /graphics/mounts/chariots/lizard_oriental.png
+#recolormask /graphics/mounts/chariots/lizard_oriental_recolormask.png
+#armor
+#needs overlay oriental_chariot
+#offsetx 51
+#offsety -8
+#define "#trample"
+#define "#mounted"
+#define "#size 4"
+#define "#prot 5"
+#define "#weapon nostr_bite_10" -- Bite
+#define "#mapmove 3"
+#define "#ap 16"
+#define "#ressize 2"
+#define "#gcost +25"
+#define "#rcost +10"
+#define "#enc 4"
+#tag "chariot"
+#tag "minprot 10"
+#tag "maxprot 15"
+#tag "animal 'lizard'"
+#basechance 0.25
+#theme "enlightened"
+#theme "oriental"
+#enditem
+
+#newitem
+#name "boar chariot - oriental"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar_oriental.png
+#armor
+#needs overlay oriental_chariot
+#offsetx 51
+#offsety -8
+#define "#trample"
+#define "#mounted"
+#define "#size 4"
+#define "#prot 5"
+#define "#weapon 352" -- Gore
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#ressize 2"
+#define "#gcost +25"
+#define "#rcost +10"
+#define "#enc 4"
+#tag "chariot"
+#tag "minprot 10"
+#tag "maxprot 15"
+#tag "animal 'boar'"
+#theme "enlightened"
+#theme "oriental"
+#enditem
+
+#newitem
+#name "tiger chariot - oriental"
+#gameid -1
+#sprite /graphics/mounts/chariots/tiger_oriental.png
+#armor
+#needs overlay oriental_chariot
+#offsetx 51
+#offsety -8
+#define "#trample"
+#define "#mounted"
+#define "#size 4"
+#define "#prot 5"
+#define "#weapon 236" -- Claw
+#define "#mapmove 2"
+#define "#ap 16"
+#define "#ressize 2"
+#define "#gcost +25"
+#define "#rcost +10"
+#define "#enc 4"
+#tag "chariot"
+#tag "minprot 10"
+#tag "maxprot 15"
+#tag "animal 'tiger'"
+#theme "enlightened"
+#theme "oriental"
+#enditem
+
+
+--- High gcost versions
+
+#newitem
+#name "horse chariot he"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#define "#trample"
+#define "#mounted"
+#define "#size 4"
+#define "#prot 5"
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#ressize 2"
+#define "#gcost +40"
+#define "#rcost +15"
+#define "#enc 5"
+#tag "chariot"
+#tag "minprot 16"
+#tag "animal 'horse'"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "bronze horse chariot he"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse_bronze.png
+#armor
+#theme "bronze"
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#trample"
+#define "#mounted"
+#define "#size 4"
+#define "#prot 5"
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#ressize 2"
+#define "#gcost +40"
+#define "#rcost +15"
+#define "#enc 5"
+#tag "chariot"
+#tag "minprot 16"
+#tag "animal 'horse'"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "lizard chariot he"
+#gameid -1
+#sprite /graphics/mounts/chariots/lizard.png
+#armor
+#needs overlay 12
+#offsetx 51
+#offsety -10
+#define "#trample"
+#define "#mounted"
+#define "#size 4"
+#define "#prot 5"
+#define "#weapon nostr_bite_10" -- Bite
+#define "#mapmove 3"
+#define "#ap 16"
+#define "#ressize 2"
+#define "#gcost +40"
+#define "#rcost +15"
+#define "#enc 5"
+#tag "chariot"
+#tag "minprot 16"
+#tag "animal 'lizard'"
+#basechance 0.25
+#theme "imperial"
+#enditem
+
+#newitem
+#name "boar chariot he"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#define "#trample"
+#define "#mounted"
+#define "#size 4"
+#define "#prot 5"
+#define "#weapon 352" -- Gore
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#ressize 2"
+#define "#gcost +40"
+#define "#rcost +15"
+#define "#enc 5"
+#tag "chariot"
+#tag "minprot 16"
+#tag "animal 'boar'"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "horse chariot he - oriental"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse_oriental.png
+#armor
+#needs overlay oriental_chariot
+#offsetx 51
+#offsety -8
+#define "#trample"
+#define "#mounted"
+#define "#size 4"
+#define "#prot 6"
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#ressize 2"
+#define "#gcost +40"
+#define "#rcost +16"
+#define "#enc 5"
+#tag "chariot"
+#tag "minprot 16"
+#tag "animal 'horse'"
+#theme "enlightened"
+#theme "oriental"
+#enditem
+
+#newitem
+#name "lizard chariot he - oriental"
+#gameid -1
+#sprite /graphics/mounts/chariots/lizard_oriental.png
+#armor
+#needs overlay oriental_chariot
+#offsetx 51
+#offsety -8
+#define "#trample"
+#define "#mounted"
+#define "#size 4"
+#define "#prot 5"
+#define "#weapon nostr_bite_10" -- Bite
+#define "#mapmove 3"
+#define "#ap 16"
+#define "#ressize 2"
+#define "#gcost +40"
+#define "#rcost +15"
+#define "#enc 5"
+#tag "chariot"
+#tag "minprot 16"
+#tag "animal 'lizard'"
+#basechance 0.25
+#theme "enlightened"
+#theme "oriental"
+#enditem
+
+#newitem
+#name "boar chariot he - oriental"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar_oriental.png
+#armor
+#needs overlay oriental_chariot
+#offsetx 51
+#offsety -8
+#define "#trample"
+#define "#mounted"
+#define "#size 4"
+#define "#prot 5"
+#define "#weapon 352" -- Gore
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#ressize 2"
+#define "#gcost +40"
+#define "#rcost +15"
+#define "#enc 5"
+#tag "chariot"
+#tag "minprot 16"
+#tag "animal 'boar'"
+#theme "enlightened"
+#theme "oriental"
+#enditem
+
+#newitem
+#name "tiger chariot he - oriental"
+#gameid -1
+#sprite /graphics/mounts/chariots/tiger_oriental.png
+#armor
+#needs overlay oriental_chariot
+#offsetx 51
+#offsety -8
+#define "#trample"
+#define "#mounted"
+#define "#size 4"
+#define "#prot 5"
+#define "#weapon 236" -- Claw
+#define "#mapmove 2"
+#define "#ap 16"
+#define "#ressize 2"
+#define "#gcost +40"
+#define "#rcost +15"
+#define "#enc 5"
+#tag "chariot"
+#tag "minprot 16"
+#tag "animal 'tiger'"
+#theme "enlightened"
+#theme "oriental"
+#enditem

@@ -7,6 +7,8 @@
 #role "elite infantry"
 #role "sacred infantry"
 #mapmovepenaltyenc 10
+#cannot_be_militia
+#cannot_be_pd
 
 #renderorder "shadow weapon cloakb extra1 mount basesprite shirt legs armor hair bonusweapon cloakf offhandw hands helmet offhanda overlay"
 
@@ -40,6 +42,8 @@
 #role "elite infantry"
 #role "sacred infantry"
 #mapmovepenaltyenc 10
+#cannot_be_militia
+#cannot_be_pd
 
 #load basesprite /data/items/dynastichuman/bases_dustwalker_2h.txt
 #load shadow /data/items/dynastichuman/shadow.txt
@@ -58,12 +62,78 @@
 #endpose
 
 
+-------- Imperial
+
+#newpose
+#basechance 0.4
+#theme imperial
+#name "imperial inf"
+#role "elite infantry"
+#role "sacred infantry"
+#mapmovepenaltyenc 10
+#cannot_be_militia
+#cannot_be_pd
+
+#renderorder "shadow weapon cloakb extra1 mount basesprite shirt legs armor hair bonusweapon cloakf offhandw hands helmet offhanda overlay"
+
+#load basesprite /data/items/dynastichuman/bases_dustwalker.txt
+#load shadow /data/items/dynastichuman/shadow.txt
+#load hands /data/items/dynastichuman/hands.txt
+
+#load cloakf /data/items/dynastichuman/cloakf.txt
+#load cloakb /data/items/dynastichuman/cloakb.txt
+
+#load armor /data/items/dynastichuman/normal/armor_legionary.txt
+#load helmet /data/items/dynastichuman/normal/helmet_legionary.txt
+#load legs /data/items/dynastichuman/legs.txt
+
+#load weapon /data/items/dynastichuman/normal/weapon_imperial.txt
+#load bonusweapon /data/items/dynastichuman/normal/bonusranged_imperial.txt 
+
+#load offhand /data/items/dynastichuman/normal/shields_imperial.txt
+#load weapon /data/items/dynastichuman/normal/sacredweapon.txt
+
+#endpose
+
+
+
+-------- 2h Imperial
+
+#newpose
+#basechance 0.08
+#theme imperial
+#name "2h imperial inf"
+#role "elite infantry"
+#role "sacred infantry"
+#mapmovepenaltyenc 10
+#cannot_be_militia
+#cannot_be_pd
+
+#load basesprite /data/items/dynastichuman/bases_dustwalker_2h.txt
+#load shadow /data/items/dynastichuman/shadow.txt
+#load hands /data/items/dynastichuman/hands.txt
+
+#load cloakf /data/items/dynastichuman/cloakf.txt
+#load cloakb /data/items/dynastichuman/cloakb.txt
+
+#load armor /data/items/dynastichuman/normal/armor_legionary_2h.txt
+#load helmet /data/items/dynastichuman/normal/helmet_legionary.txt
+#load legs /data/items/dynastichuman/legs.txt
+
+#load weapon /data/items/dynastichuman/normal/weapon_imperial_2h.txt
+#load bonusweapon /data/items/dynastichuman/normal/bonusranged_imperial.txt 
+
+#endpose
+
+
 #newpose
 #name "dustwalker archer"
 #basechance 100
 #role "elite ranged"
 #role "sacred ranged"
 #mapmovepenaltyenc 10
+#cannot_be_militia
+#cannot_be_pd
 
 #renderorder "shadow cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon cloakf offhandw hands helmet offhanda overlay"
 

@@ -1,0 +1,381 @@
+--- Base offsets are applied to everything except base and overlay
+
+#newitem
+#name "hyena"
+#gameid -1
+#sprite /graphics/mounts/standard/hyena.png
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 20"
+#define "#mounted"
+#define "#weapon 237 --- bite"
+#define "#gcost +15"
+#define "#ressize 1"
+#define "#enc 3"
+#define "#rcost +4"
+#define "#hp +2"
+#define "#mor +2"
+#tag "animal hyena"
+#tag "maxprot 14"
+#tag "guaranteedprefix hyena"
+#define "#secondtmpshape hyenamount"
+#description "If the rider dies, the hyena will carry on fighting until the end of the battle."
+#offsetx -3
+#offsety -20
+#enditem
+
+#newitem
+#name "lion"
+#gameid -1
+#sprite /graphics/mounts/standard/lion.png
+#armor
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 237 --- Bite"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape lionmount"
+#define "#gcost +25"
+#define "#ressize 1"
+#define "#enc 4"
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#offsety -18
+#offsetx 4
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#enditem
+
+#newitem
+#name "boar"
+#gameid -1
+#sprite /graphics/mounts/standard/boarcavalry.png
+#armor
+#offsetx 2
+#offsety -20
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 352 --- Nostr Gore"
+#define "#gcost +20"
+#define "#ressize 1"
+#define "#enc 3"
+#theme "specialmount"
+#tag "animal boar"
+#tag "guaranteedprefix boar"
+#tag "name commander boarmaster"
+#tag "minprot 0"
+#tag "maxprot 13"
+#enditem
+
+#newitem
+#name "grey parrot"
+#gameid -1
+#sprite /graphics/machakans/mounts/giant_parrot.png
+#needs overlay giant_parrot_overlay
+#armor
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 6"
+#define "#flying"
+#define "#mounted"
+#define "#weapon nostr_talons_10"
+#define "#weapon nostr_beak_10"
+#define "#gcost +15"
+#define "#ressize 1"
+#define "#enc 4"
+#define "#rcost +4"
+#tag "animal parrot"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#tag "maxprot 16"
+#tag "guaranteedprefix parrot"
+#basechance 0.6
+#offsetx -3
+#offsety -28
+#enditem
+
+#newitem
+#name "colorful parrot"
+#gameid -1
+#sprite /graphics/machakans/mounts/giant_parrot.png
+#recolormask /graphics/machakans/mounts/giant_parrot_recolormask.png
+#needs overlay giant_parrot_overlay
+#armor
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 6"
+#define "#flying"
+#define "#mounted"
+#define "#weapon nostr_talons_10"
+#define "#weapon nostr_beak_10"
+#define "#gcost +15"
+#define "#ressize 1"
+#define "#enc 4"
+#define "#rcost +4"
+#tag "animal parrot"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#tag "maxprot 16"
+#tag "guaranteedprefix parrot"
+#basechance 0.4
+#offsetx -3
+#offsety -28
+#enditem
+
+#newitem
+#name "giant bat"
+#gameid -1
+#sprite /graphics/hoburg/mounts/giant_bat.png
+#armor
+#offsety 32
+#offsetx 31
+#needs overlay giant_bat_overlay
+#define "#size 2"
+#define "#mapmove 3"
+#define "#ap 10"
+#define "#flying"
+#define "#mounted"
+#define "#weapon 19 -- Bite"
+#define "#gcost +35"
+#define "#hp +2"
+#define "#secondtmpshape beastbat_nerfed"
+#define "#ressize 1"
+#define "#rcost +4"
+#define "#enc 3"
+#tag "animal bat"
+#tag "maxprot 16"
+#tag "guaranteedprefix giant bat"
+#description "The giant bat fight until the end of the battle if the rider perishes"
+#theme "primitive"
+#theme "bat"
+#theme "battotem"
+#theme "totemanimal"
+#enditem
+
+#newitem
+#name "red ant"
+#gameid -1
+#sprite /graphics/mounts/standard/redant.png
+#needs overlay redant_overlay
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 8"
+#define "#mounted"
+#define "#weapon nostr_smallsting"
+#define "#gcost +5"
+#define "#ressize 1"
+#define "#enc 2"
+#tag "animal ant"
+#theme "ant"
+#theme "anttotem"
+#theme "totemanimal"
+#tag "maxprot 16"
+#tag "guaranteedprefix ant"
+#define "#secondtmpshape redantmount"
+#description "If the rider dies, the ant will carry on fighting until the end of the battle."
+#offsetx 0
+#offsety -7
+#enditem
+
+#newitem
+#name "dog"
+#gameid -1
+#sprite /graphics/mounts/standard/dog.png
+#offsety -7
+#offsetx -1
+#armor
+#define "#size 2"
+#define "#mapmove 3"
+#define "#ap 22"
+#define "#mounted"
+#define "#weapon nostr_bite_5"
+#define "#secondtmpshape dogmount"
+#description "The dog is fiercely loyal and will follow the army even if its rider dies."
+#define "#gcost +10"
+#define "#ressize 1"
+#define "#enc 3"
+#tag "animal dog"
+#tag "minprot 0"
+#tag "maxprot 14"
+#theme "dog"
+#theme "light"
+#enditem
+
+#newitem
+#name "forest spider"
+#gameid -1
+#sprite /graphics/mounts/standard/spider2.png
+#armor
+#offsetx 3
+#offsety -2
+#needs overlay spider2_overlay
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 12"
+#define "#mounted"
+#define "#weapon 313 --- Fangs"
+#define "#secondtmpshape forestspider"
+#description "If the rider dies, the spider will carry on fighting until the end of the battle."
+#define "#gcost +15"
+#define "#rcost +4"
+#define "#ressize 1"
+#define "#enc 4"
+#tag "animal spider"
+#theme "spider"
+#theme "spidertotem"
+#theme "totemanimal"
+#tag "guaranteedprefix spider"
+#tag "maxprot 14"
+#enditem
+
+#newitem
+#name "crocodile"
+#gameid -1
+#sprite /graphics/mounts/standard/crocodile_mount.png
+#offsetx 22
+#offsety -7
+#armor
+#define "#size 3"
+#define "#mapmove 1"
+#define "#ap 8"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#gcost +25"
+#define "#ressize 1"
+#define "#enc 3"
+#define "#swampsurvival"
+#define "#secondtmpshape crocodilemount"
+#description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
+#tag "animal crocodile"
+#theme "heavy"
+#theme "specialmount"
+#tag "guaranteedprefix crocodile"
+#theme "primitive"
+#theme "crocodile"
+#theme "crocodiletotem"
+#theme "totemanimal"
+#enditem
+
+#newitem
+#name "flying fish"
+#gameid -1
+#sprite /graphics/machakans/mounts/flyingfish.png
+#needs overlay flyingfish_overlay
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 9"
+#define "#flying"
+#define "#mounted"
+#define "#weapon nostr_bite_5"
+#define "#gcost +5"
+#define "#ressize 1"
+#define "#enc 5"
+#define "#swampsurvival"
+#define "#pooramphibian"
+#tag "animal fish"
+#theme "fish"
+#theme "fishtotem"
+#theme "totemanimal"
+#tag "maxprot 8"
+#tag "guaranteedprefix fish"
+#chanceinc "personalcommand #swampsurvival 0.5"
+#chanceinc "personalcommand #pooramphibian *10"
+#chanceinc "personalcommand #amphibian *10"
+#offsetx -3
+#offsety -28
+#enditem
+
+#newitem
+#name "giant snail"
+#gameid -1
+#sprite /graphics/machakans/mounts/snail.png
+#armor
+#define "#size 1"
+#define "#mapmove 1"
+#define "#ap 6"
+#define "#mounted"
+#define "#weapon nostr_bite_5"
+#define "#nostr_acidspit_5"
+#define "#gcost +10"
+#define "#ressize 1"
+#define "#enc 3"
+#define "#swampsurvival"
+#define "#pooramphibian"
+#tag "animal snail"
+#theme "snail"
+#theme "snailtotem"
+#theme "totemanimal"
+#tag "maxprot 16"
+#tag "guaranteedprefix snail"
+#basechance 1
+#chanceinc "personalcommand #swampsurvival 0.5"
+#chanceinc "personalcommand #pooramphibian *10"
+#chanceinc "personalcommand #amphibian *10"
+#offsetx -2
+#offsety -6
+#enditem
+
+#newitem
+#name "huge locust"
+#gameid -1
+#sprite /graphics/mounts/standard/hugelocust.png
+#needs overlay hugelocust_overlay
+#armor
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 12"
+#define "#flying"
+#define "#mounted"
+#define "#weapon nostr_bite_10"
+#define "#gcost +10"
+#define "#ressize 1"
+#define "#enc 5"
+#define "#undisciplined"
+#define "#pillagebonus +2"
+#define "#supplybonus -1"
+#tag "animal locust"
+#theme "locust"
+#theme "locusttotem"
+#theme "totemanimal"
+#tag "maxprot 12"
+#tag "guaranteedprefix locust"
+#chanceinc "personalcommand #pillagebonus 1"
+#offsetx -3
+#offsety -16
+#enditem
+
+#newitem
+#name "huge mantis"
+#gameid -1
+#sprite /graphics/mounts/standard/hugemantis.png
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 12"
+#define "#mounted"
+#define "#weapon nostr_claws_10"
+#define "#weapon nostr_claws_10"
+#define "#gcost +20"
+#define "#ressize 1"
+#define "#enc 3"
+#tag "animal mantis"
+#theme "mantis"
+#theme "locusttotem"
+#theme "totemanimal"
+#tag "maxprot 12"
+#tag "guaranteedprefix mantis"
+#define "#wastesurvival"
+#define "#secondtmpshape hugemantismount"
+#description "If the rider dies, the mantis will carry on fighting until the end of the battle."
+#tag "animal mantis"
+#basechance 1
+#offsetx -1
+#offsety -12
+#enditem

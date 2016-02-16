@@ -48,7 +48,7 @@
 #theme "totemanimal"
 #tag "maxprot 16"
 #tag "guaranteedprefix parrot"
-#basechance 0.3
+#basechance 0.6
 #offsetx -3
 #offsety -28
 #enditem
@@ -77,7 +77,7 @@
 #theme "totemanimal"
 #tag "maxprot 16"
 #tag "guaranteedprefix parrot"
-#basechance 0.2
+#basechance 0.4
 #offsetx -3
 #offsety -28
 #enditem
@@ -109,6 +109,30 @@
 #enditem
 
 #newitem
+#name "dog"
+#gameid -1
+#sprite /graphics/mounts/standard/dog.png
+#offsety -7
+#offsetx -1
+#armor
+#define "#size 2"
+#define "#mapmove 3"
+#define "#ap 22"
+#define "#mounted"
+#define "#weapon nostr_bite_5"
+#define "#secondtmpshape dogmount"
+#description "The dog is fiercely loyal and will follow the army even if its rider dies."
+#define "#gcost +10"
+#define "#ressize 1"
+#define "#enc 3"
+#tag "animal dog"
+#tag "minprot 0"
+#tag "maxprot 14"
+#theme "dog"
+#theme "light"
+#enditem
+
+#newitem
 #name "forest spider"
 #gameid -1
 #sprite /graphics/mounts/standard/spider2.png
@@ -136,6 +160,34 @@
 #enditem
 
 #newitem
+#name "crocodile"
+#gameid -1
+#sprite /graphics/mounts/standard/crocodile_mount.png
+#offsetx 22
+#offsety -7
+#armor
+#define "#size 3"
+#define "#mapmove 1"
+#define "#ap 8"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#gcost +25"
+#define "#ressize 1"
+#define "#enc 3"
+#define "#swampsurvival"
+#define "#secondtmpshape crocodilemount"
+#description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
+#tag "animal crocodile"
+#theme "heavy"
+#theme "specialmount"
+#tag "guaranteedprefix crocodile"
+#theme "primitive"
+#theme "crocodile"
+#theme "crocodiletotem"
+#theme "totemanimal"
+#enditem
+
+#newitem
 #name "flying fish"
 #gameid -1
 #sprite /graphics/machakans/mounts/flyingfish.png
@@ -158,10 +210,99 @@
 #theme "totemanimal"
 #tag "maxprot 8"
 #tag "guaranteedprefix fish"
-#basechance 0.25
-#chanceinc "personalcommand #swampsurvival 0.9"
+#basechance 1
+#chanceinc "personalcommand #swampsurvival 0.5"
 #chanceinc "personalcommand #pooramphibian *10"
 #chanceinc "personalcommand #amphibian *10"
 #offsetx -3
 #offsety -28
+#enditem
+
+#newitem
+#name "giant snail"
+#gameid -1
+#sprite /graphics/machakans/mounts/snail.png
+#armor
+#define "#size 1"
+#define "#mapmove 1"
+#define "#ap 6"
+#define "#mounted"
+#define "#weapon nostr_bite_5"
+#define "#nostr_acidspit_5"
+#define "#gcost +10"
+#define "#ressize 1"
+#define "#enc 3"
+#define "#swampsurvival"
+#define "#pooramphibian"
+#tag "animal snail"
+#theme "snail"
+#theme "snailtotem"
+#theme "totemanimal"
+#tag "maxprot 16"
+#tag "guaranteedprefix snail"
+#basechance 1
+#chanceinc "personalcommand #swampsurvival 0.5"
+#chanceinc "personalcommand #pooramphibian *10"
+#chanceinc "personalcommand #amphibian *10"
+#offsetx -2
+#offsety -6
+#enditem
+
+#newitem
+#name "huge locust"
+#gameid -1
+#sprite /graphics/mounts/standard/hugelocust.png
+#needs overlay hugelocust_overlay
+#armor
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 12"
+#define "#flying"
+#define "#mounted"
+#define "#weapon nostr_bite_10"
+#define "#gcost +10"
+#define "#ressize 1"
+#define "#enc 5"
+#define "#undisciplined"
+#define "#pillagebonus +2"
+#define "#supplybonus -1"
+#tag "animal locust"
+#theme "locust"
+#theme "locusttotem"
+#theme "totemanimal"
+#tag "maxprot 12"
+#tag "guaranteedprefix locust"
+#basechance 1
+#chanceinc "personalcommand #pillagebonus 1"
+#offsetx -3
+#offsety -16
+#enditem
+
+#newitem
+#name "huge mantis"
+#gameid -1
+#sprite /graphics/mounts/standard/hugemantis.png
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 12"
+#define "#mounted"
+#define "#weapon nostr_claws_10"
+#define "#weapon nostr_claws_10"
+#define "#gcost +20"
+#define "#ressize 1"
+#define "#enc 3"
+#tag "animal mantis"
+#theme "mantis"
+#theme "locusttotem"
+#theme "totemanimal"
+#tag "maxprot 12"
+#tag "guaranteedprefix mantis"
+#define "#wastesurvival"
+#define "#secondtmpshape hugemantismount"
+#description "If the rider dies, the mantis will carry on fighting until the end of the battle."
+#tag "animal mantis"
+#basechance 1
+#offsetx -1
+#offsety -12
 #enditem

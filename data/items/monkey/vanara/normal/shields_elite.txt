@@ -61,6 +61,7 @@
 #eliteversion "ironbuckler_gilt"
 #armor
 #theme "enlightened"
+#theme "oriental"
 #theme "iron"
 #enditem
 
@@ -82,8 +83,36 @@
 #sprite /graphics/monkey/offhand/vanara/giltbuckler.png
 #armor
 #theme "enlightened"
+#theme "oriental"
 #theme "iron"
 #theme "elite"
+#enditem
+
+#newitem
+#id box_shield
+#gameid 208
+#basechance 4
+#sprite /graphics/offhand/standard/coe-metalshield.png
+#theme "oriental"
+#theme "iron"
+#theme "advanced"
+#armor
+#offsetx 2
+#offsety 2
+#enditem
+
+#newitem
+#id tower4
+#gameid 4
+#basechance 4
+#sprite /graphics/offhand/standard/tower2.png
+#recolormask self
+#theme "oriental"
+#theme "iron"
+#theme "advanced"
+#armor
+#offsetx 2
+#offsety 2
 #enditem
 
 
@@ -126,3 +155,4 @@
 #offsetx 2
 #offsety 2
 #enditem
+

@@ -1,0 +1,120 @@
+-- Nothing
+
+#newitem
+#id nothing
+#basechance 5
+#gameid -1
+#eliteversion scarf
+#armor
+#theme "primitive"
+#theme "naked"
+#enditem
+
+
+
+-- Headscarf
+
+#newitem
+#id scarf
+#basechance 3
+#gameid -1
+#sprite /graphics/dynastichuman/helmet/headscarf.png
+#armor
+#enditem
+
+#newitem
+#id scarf_and_cap
+#basechance 2
+#gameid 20
+#sprite /graphics/dynastichuman/helmet/headscarf.png
+#armor
+#enditem
+
+-- Helmet
+
+#newitem
+#id auxiliaryhelm
+#gameid 119
+#sprite /graphics/dynastichuman/helmet/auxiliaryhelm.png
+#eliteversion auxiliaryhelm_elite
+#armor
+#theme "leather"
+#theme "advanced"
+#enditem
+
+#newitem
+#id auxiliaryhelm_elite
+#gameid 162
+#sprite /graphics/dynastichuman/helmet/auxiliaryhelm_elite.png
+#recolormask /graphics/dynastichuman/helmet/auxiliaryhelm_elite_recolormask.png
+#eliteversion legionaryhelm_elite
+#armor
+#theme "leather"
+#theme "advanced"
+#theme "elite"
+#enditem
+
+#newitem
+#id legionaryhelm
+#gameid 126
+#basechance 0
+#sprite /graphics/dynastichuman/helmet/legionaryhelm_elite.png
+#recolormask /graphics/dynastichuman/helmet/legionaryhelm_elite_recolormask.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "elite"
+#minprot 10
+#enditem
+
+#newitem
+#id legionaryhelm_elite
+#gameid 126
+#basechance 0
+#sprite /graphics/dynastichuman/helmet/legionaryhelm_elite.png
+#recolormask /graphics/dynastichuman/helmet/legionaryhelm_elite_recolormask.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "elite"
+#minprot 10
+#enditem
+
+#newitem
+#id ironcap
+#gameid 20
+#sprite /graphics/dynastichuman/helmet/ironcap.png
+#eliteversion ironcap_gilt
+#eliteversion ironcap_fancy
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#id ironcap_fancy
+#gameid 20
+#sprite /graphics/dynastichuman/helmet/ironcap_feather.png
+#eliteversion ironcap_gilt_fancy
+#armor
+#theme "iron"
+#theme "elite"
+#enditem
+
+#newitem
+#id ironcap_gilt
+#gameid 20
+#sprite /graphics/dynastichuman/helmet/goldcap.png
+#eliteversion ironcap_gilt_fancy
+#armor
+#theme "iron"
+#theme "elite"
+#enditem
+
+#newitem
+#id ironcap_gilt_fancy
+#gameid 20
+#sprite /graphics/dynastichuman/helmet/goldcap_feather.png
+#armor
+#theme "iron"
+#theme "elite"
+#enditem

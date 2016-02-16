@@ -1,19 +1,17 @@
 #newitem
-#name "terrestrial"
-#theme "terrestrial"
+#name "wingless"
+#theme "lowland"
+#theme "abysian"
+#theme "alpine"
 #gameid -1
-#command "#gcost 5"
 #enditem
 
 #newitem
 #name "winged"
 #theme "winged"
 #gameid -1
+#basechance 0
+#nogen
 #sprite /graphics/monkey/markata_wings.png
-#command "#gcost 10"
-#command "#mr +2"
-#command "#mor -1"
-#command "#mapmove 3"
-#command "#maxage +5"
-#command "#flying"
+#tag "winged"
 #enditem

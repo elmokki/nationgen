@@ -1,0 +1,159 @@
+
+--- Imperial armor
+#newitem
+#name "lorica squamata"
+#gameid 117
+#sprite /graphics/monkey/armor/vanara/lorica_squamata_gilt.png
+#recolormask /graphics/monkey/armor/vanara/imperial_recolormask.png
+#eliteversion "gold lorica squamata"
+#armor
+#theme "iron"
+#theme "imperial"
+#tier 1
+#notfortier 2
+#enditem
+
+#newitem
+#name "lorica segmentata"
+#gameid 99
+#sprite /graphics/monkey/armor/vanara/lorica_segmentata_gilt.png
+#recolormask /graphics/monkey/armor/vanara/imperial_recolormask.png
+#eliteversion "gold lorica segmentata"
+#armor
+#theme "imperial"
+#theme "iron"
+#tier 1
+#notfortier 2
+#enditem
+
+#newitem
+#name "imperial plate"
+#gameid 14
+#sprite /graphics/monkey/armor/vanara/platehauberk_imperial_gilt.png
+#recolormask /graphics/monkey/armor/vanara/imperial_recolormask.png
+#eliteversion "gold imperial plate"
+#armor
+#theme "imperial"
+#theme "iron"
+#tier 1
+#notfortier 2
+#enditem
+
+#newitem
+#name "gold lorica squamata"
+#gameid 117
+#sprite /graphics/monkey/armor/vanara/lorica_squamata_gold.png
+#recolormask /graphics/monkey/armor/vanara/imperial_recolormask.png
+#eliteversion "gold lorica segmentata"
+#armor
+#theme "iron"
+#theme "imperial"
+#notfortier 1
+#tier 2
+#enditem
+
+#newitem
+#name "gold lorica segmentata"
+#gameid 99
+#sprite /graphics/monkey/armor/vanara/lorica_segmentata_gold.png
+#recolormask /graphics/monkey/armor/vanara/imperial_recolormask.png
+#eliteversion "gold imperial plate"
+#armor
+#theme "imperial"
+#theme "iron"
+#notfortier 1
+#tier 2
+#enditem
+
+#newitem
+#name "gold imperial plate"
+#gameid 14
+#sprite /graphics/monkey/armor/vanara/platehauberk_imperial_gold.png
+#recolormask /graphics/monkey/armor/vanara/imperial_recolormask.png
+#armor
+#theme "imperial"
+#theme "iron"
+#notfortier 1
+#tier 2
+#enditem
+
+
+-- Oriental armor
+#newitem
+#name "ronin armor"
+#gameid 158
+#sprite /graphics/monkey/armor/vanara/ronin.png
+#armor
+#needs shirt noshirt
+#theme "oriental"
+#theme "leather"
+#theme "naked"
+#tier 1
+#notfortier 2
+#enditem
+
+#newitem
+#name "samurai armor"
+#gameid 129
+#sprite /graphics/monkey/armor/vanara/samuraiarmor.png
+#eliteversion "samurai armor elite"
+#armor
+#theme "oriental"
+#theme "iron"
+#tier 1
+#notfortier 2
+#enditem
+
+#newitem
+#name "samurai armor elite"
+#gameid 129
+#sprite /graphics/monkey/armor/vanara/samuraiarmor_elite.png
+#recolormask /graphics/monkey/armor/vanara/samuraiarmor_elite_recolormask.png
+#armor
+#theme "oriental"
+#theme "iron"
+#notfortier 1
+#tier 2
+#enditem
+
+#newitem
+#name "ancestor cuirass"
+#gameid 154
+#baserchance 0
+#chanceinc "personalmagic death 1"
+#sprite /graphics/monkey/armor/vanara_mage/ancestor_cuirass.png
+#eliteversion "ancestor armor"
+#armor
+#theme "oriental"
+#theme "iron"
+#theme "death"
+#tier 1
+#notfortier 2
+#command "#hp +1"
+#command "#str +1"
+#command "#att +1"
+#command "#def +1"
+#command "#mr +3"
+#command "#oldage +30"
+#enditem
+
+#newitem
+#name "ancestor armor"
+#gameid 146
+#baserchance 0
+#chanceinc "personalmagic death 1"
+#sprite /graphics/monkey/armor/vanara_mage/ancestor_armor.png
+#armor
+#theme "oriental"
+#theme "iron"
+#theme "death"
+#notfortier 1
+#tier 2
+#command "#hp +2"
+#command "#str +2"
+#command "#att +2"
+#command "#def +2"
+#command "#mr +3"
+#command "#maxage +30"
+#command "#oldage +60"
+#enditem

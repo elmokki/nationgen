@@ -2,36 +2,28 @@
 -------- Normal
 
 #newpose
-#basechance 0.075
+#basechance 0.3
 #role "infantry"
 #name "pygmy infantry"
 #subrace pygmy
 #load basesprite /data/items/machakans/pygmy/bases.txt
 #load shadow /data/items/machakans/pygmy/shadow.txt
+#load hands /data/items/machakans/pygmy/hands.txt
 #load legs /data/items/machakans/pygmy/legs.txt
 
 #load weapon /data/items/machakans/pygmy/weapon.txt
 #load armor /data/items/machakans/pygmy/armor.txt
 
-#command "#gcost 5"
-#command "#size 1"
-#command "#ap 7"
-#command "#mapmove 2"
-#command "#mor 8"
-#command "#hp 5"
-#command "#str 5"
-
-#primaryraceonly
-
 #maxvarieties 1
 #maxunits 1
+
 #endpose
 
 
 ------- Archer
 
 #newpose
-#basechance 0.25
+#basechance 1
 #role "ranged"
 #name "pygmy ranged"
 #subrace pygmy
@@ -39,32 +31,23 @@
 
 #load basesprite /data/items/machakans/pygmy/bases_archer.txt
 #load shadow /data/items/machakans/pygmy/shadow.txt
+#load hands /data/items/machakans/pygmy/hands.txt
 #load legs /data/items/machakans/pygmy/legs.txt
 
 #load armor /data/items/machakans/pygmy/armor.txt
 
 #load weapon /data/items/machakans/pygmy/bows.txt
-#command "#gcost 5"
-#command "#size 1"
-#command "#ap 7"
-#command "#mapmove 2"
-#command "#mor 8"
-#command "#hp 5"
-#command "#str 5"
-
-#primaryraceonly
 
 #maxvarieties 1
 #maxunits 1
+
 #endpose
+
 
 ------- Scout
 
-
-------- Archer
-
 #newpose
-#basechance 0.125
+#basechance 0.5
 #role "scout"
 #name "pygmy scout"
 #subrace pygmy
@@ -72,59 +55,49 @@
 
 #load basesprite /data/items/machakans/pygmy/bases_archer.txt
 #load shadow /data/items/machakans/pygmy/shadow.txt
+#load hands /data/items/machakans/pygmy/hands.txt
 #load legs /data/items/machakans/pygmy/legs.txt
 
 #load armor /data/items/machakans/pygmy/armor.txt
 
 #load weapon /data/items/machakans/pygmy/bows.txt
-#command "#gcost 5"
-#command "#size 1"
-#command "#ap 7"
-#command "#mapmove 2"
-#command "#mor 8"
-#command "#hp 5"
-#command "#str 5"
-
-#primaryraceonly
 
 #maxvarieties 1
 #maxunits 1
+
 #endpose
 
 
 -------- sacred infantry
 
 #newpose
-#basechance 0.075
+#basechance 0.3
 #role "sacred infantry"
 #name "pygmy sacred infantry"
 #subrace pygmy
 #load basesprite /data/items/machakans/pygmy/bases.txt
 #load shadow /data/items/machakans/pygmy/shadow.txt
+#load hands /data/items/machakans/pygmy/hands.txt
 #load legs /data/items/machakans/pygmy/legs.txt
 
 #load weapon /data/items/machakans/pygmy/weapon.txt
+#load offhand /data/items/machakans/pygmy/shields_elite.txt
 #load armor /data/items/machakans/pygmy/armor.txt
+#load helmet /data/items/machakans/pygmy/helmet_elite.txt
 
-#command "#gcost 5"
-#command "#size 1"
-#command "#ap 7"
-#command "#mapmove 2"
-#command "#mor 8"
-#command "#hp 5"
-#command "#str 5"
 #command "#gcost *0.75"
+
 #maxvarieties 1
 #maxunits 1
 
-#primaryraceonly
+#cannot_be_pd
 
 #endpose
 
 --------- pygmy cavalry
 
 #newpose
-#basechance 0.075
+#basechance 0.3
 #role "mounted"
 #role "sacred"
 #name "pygmy cavalry"
@@ -134,6 +107,7 @@
 
 #load basesprite /data/items/machakans/pygmy/bases_mounted.txt
 #load overlay /data/items/machakans/pygmy/overlay.txt
+#load hands /data/items/machakans/pygmy/hands.txt
 #load legs /data/items/machakans/pygmy/legs_mounted.txt
 
 #load armor /data/items/machakans/pygmy/armor.txt
@@ -142,17 +116,7 @@
 
 #load weapon /data/items/machakans/pygmy/weapon_mounted.txt
 
-#command "#gcost 5"
-#command "#size 1"
-#command "#ap 7"
-#command "#mapmove 2"
-#command "#mor 8"
-#command "#hp 5"
-#command "#str 5"
-
 #maxvarieties 1
-#maxunits 1
-
-#primaryraceonly
+#maxunits 2
 
 #endpose

@@ -8,8 +8,20 @@
 #armor
 #theme "enlightened"
 #theme "imperial"
+#theme "oriental"
 #theme "naked"
 #theme "primitive"
+#enditem
+
+#newitem
+#basechance 3
+#name "loincloth"
+#gameid -1
+#sprite /graphics/monkey/armor/bandar_mage/loincloth.png
+#recolormask self
+#armor
+#theme "enlightened"
+#theme "naked"
 #enditem
 
 #newitem
@@ -24,12 +36,23 @@
 #enditem
 
 #newitem
+#basechance 5
+#name "ronin pants"
+#gameid 158
+#sprite /graphics/monkey/armor/bandar/ronin_pants.png
+#armor
+#theme "oriental"
+#theme "naked"
+#enditem
+
+#newitem
 #basechance 3
 #name "furs"
 #gameid 44
 #sprite /graphics/monkey/armor/bandar/furs.png
 #armor
 #theme "imperial"
+#theme "enlightened"
 #theme "primitive"
 #theme "leather"
 #enditem
@@ -42,6 +65,38 @@
 #recolormask /graphics/monkey/armor/bandar/lorica_segmentata_recolormask.png
 #armor
 #theme "imperial"
+#theme "leather"
+#enditem
+
+#newitem
+#name "TC leather cuirass"
+#basechance 5
+#gameid 5
+#sprite /graphics/monkey/armor/bandar/leathercuirass_oriental.png
+#armor
+#theme "oriental"
+#theme "leather"
+#enditem
+
+#newitem
+#name "TC leather hauberk"
+#basechance 5
+#gameid 10
+#sprite /graphics/monkey/armor/bandar/leatherhauberk_oriental.png
+#recolormask /graphics/monkey/armor/bandar/scale_oriental_recolormask.png
+#armor
+#theme "oriental"
+#theme "leather"
+#enditem
+
+#newitem
+#name "TC full leather"
+#basechance 5
+#gameid 15
+#sprite /graphics/monkey/armor/bandar/fullleather_oriental.png
+#recolormask /graphics/monkey/armor/bandar/scale_oriental_recolormask.png
+#armor
+#theme "oriental"
 #theme "leather"
 #enditem
 

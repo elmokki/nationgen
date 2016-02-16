@@ -1,0 +1,32 @@
+-- No armor
+#newitem
+#name none
+#basechance 10
+#chanceinc racetheme advanced *0.1
+#gameid -1
+#theme "naked"
+#armor
+#enditem
+
+-- Icicle armor
+#newitem
+#name icicle_cuirass
+#basechance 1.5
+#chanceinc racetheme primitive *0
+#gameid icicle_cuirass
+#sprite /graphics/monkey/yeti/iciclecuirass.png
+#armor
+#theme "ice"
+#define "#iceprot 2"
+#enditem
+
+#newitem
+#name icicle_mail
+#basechance 0.5
+#chanceinc racetheme primitive *0
+#gameid 133
+#sprite /graphics/monkey/yeti/iciclemail.png
+#armor
+#theme "ice"
+#define "#iceprot 2"
+#enditem

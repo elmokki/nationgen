@@ -87,7 +87,7 @@
 #gameid -1
 #armor
 #define "#fear +5"
-#define "#standard -1"
+#define "#standard -5"
 #define "#gcost *1.25"
 #define "#rcost +10"
 #description "the armor's gears have been designed to screech loudly and painfully in battle; however, this is unpleasant for anyone near them, not just enemies"
@@ -98,7 +98,7 @@
 #basechance 0.5
 #gameid -1
 #armor
-#define "#enc 0"
+#define "#enc 1"
 #define "#mapmove +1"
 #define "#deathfire 2"
 #define "#fireres -5"
@@ -118,4 +118,5 @@
 #define "#size 4"
 #define "#rcost +10"
 #description "the armor has cunningly-built mechanical wings that allow it to fly"
+#tag "winged"
 #enditem

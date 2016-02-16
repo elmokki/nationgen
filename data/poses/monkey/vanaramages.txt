@@ -2,11 +2,13 @@
 #newpose
 #name "vanara mage, standing"
 #role "mage"
-#theme "terrestrial"
+#theme "lowland"
 #theme "winged"
+#theme "abysian"
+#theme "alpine"
 #theme "enlightened"
 #theme "imperial"
-#subrace vanara
+#theme "oriental"
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -16,7 +18,7 @@
 #load hands /data/items/monkey/vanara/normal/hands.txt
 
 #load armor /data/items/monkey/vanara/caster/robes.txt
-#load helmet /data/items/monkey/vanara/caster/helmet.txt 2 0
+#load helmet /data/items/monkey/vanara/caster/helmet.txt 2 1
 
 #load weapon /data/items/monkey/vanara/caster/weapon.txt
 
@@ -24,8 +26,6 @@
 
 #load wings /data/items/monkey/vanara/normal/wings.txt
 #load overlay /data/items/monkey/vanara/normal/overlay.txt
-
-#generateitem 1 wings
 
 #tier 1
 #notfortier 3
@@ -38,15 +38,14 @@
 #newpose
 #name "vanara mage, sitting"
 #role "mage"
-#theme "terrestrial"
+#theme "lowland"
 #theme "enlightened"
-#subrace vanara
 
 #load basesprite /data/items/monkey/vanara/caster/magebases_sit.txt
 #load shadow /data/items/monkey/vanara/normal/shadow.txt
 
 #load armor /data/items/monkey/vanara/caster/robes_sitting.txt
-#load helmet /data/items/monkey/vanara/caster/helmet.txt 1 12
+#load helmet /data/items/monkey/vanara/caster/helmet.txt 1 11
 #load weapon /data/items/monkey/vanara/caster/emptyweapons.txt
 
 #tier 2
@@ -61,9 +60,11 @@
 #newpose
 #name "vanara elder, standing"
 #role "mage"
-#theme "terrestrial"
+#theme "lowland"
+#theme "abysian"
+#theme "alpine"
 #theme "imperial"
-#subrace vanara
+#theme "oriental"
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -73,11 +74,13 @@
 #load hands /data/items/monkey/vanara/normal/hands.txt
 
 #load armor /data/items/monkey/vanara/caster/robes.txt
-#load helmet /data/items/monkey/vanara/caster/helmet.txt 2 0
+#load helmet /data/items/monkey/vanara/caster/helmet.txt 2 1
 
 #load weapon /data/items/monkey/vanara/caster/weapon.txt
-
 #load offhand /data/items/monkey/vanara/caster/offhands.txt
+
+#load wings /data/items/monkey/vanara/normal/wings.txt
+#load overlay /data/items/monkey/vanara/normal/overlay.txt
 
 #tier 2
 #notfortier 1
@@ -93,7 +96,7 @@
 #theme "winged"
 #theme "enlightened"
 #theme "imperial"
-#subrace vanara
+#theme "oriental"
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -103,16 +106,13 @@
 #load hands /data/items/monkey/vanara/normal/hands.txt
 
 #load armor /data/items/monkey/vanara/caster/robes.txt
-#load helmet /data/items/monkey/vanara/caster/helmet.txt 2 0
+#load helmet /data/items/monkey/vanara/caster/helmet.txt 2 1
 
 #load weapon /data/items/monkey/vanara/caster/weapon.txt
-
 #load offhand /data/items/monkey/vanara/caster/offhands.txt
 
 #load wings /data/items/monkey/vanara/normal/wings.txt
 #load overlay /data/items/monkey/vanara/normal/overlay.txt
-
-#generateitem 1 wings
 
 #tier 2
 #notfortier 1
@@ -125,11 +125,13 @@
 #newpose
 #name "vanara priest, standing"
 #role "priest"
-#theme "terrestrial"
+#theme "lowland"
 #theme "winged"
+#theme "abysian"
+#theme "alpine"
 #theme "enlightened"
 #theme "imperial"
-#subrace vanara
+#theme "oriental"
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -139,16 +141,13 @@
 #load hands /data/items/monkey/vanara/normal/hands.txt
 
 #load armor /data/items/monkey/vanara/caster/robes.txt
-#load helmet /data/items/monkey/vanara/caster/helmet.txt 2 0
+#load helmet /data/items/monkey/vanara/caster/helmet.txt 2 1
 
 #load weapon /data/items/monkey/vanara/caster/weapon.txt
-
 #load offhand /data/items/monkey/vanara/caster/offhands.txt
 
 #load wings /data/items/monkey/vanara/normal/wings.txt
 #load overlay /data/items/monkey/vanara/normal/overlay.txt
-
-#generateitem 1 wings
 
 #tier 1
 #tier 2

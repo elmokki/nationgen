@@ -2,6 +2,17 @@
 #name "pygmy basesprite"
 #gameid -1
 #sprite /graphics/machakans/basepygmy.png
+
+#define "#gcost 5"
+#define "#size 1"
+#define "#ap 7"
+#define "#mapmove 2"
+#define "#mor 8"
+#define "#hp 5"
+#define "#str 5"
+
+#tag "prefix pygmy"
+
 #enditem
 
 #newitem
@@ -9,4 +20,16 @@
 #gameid -1
 #basechance 0
 #sprite /graphics/machakans/basepygmy_archer.png
+#needs hands "hands_bow"
+
+#define "#gcost 5"
+#define "#size 1"
+#define "#ap 7"
+#define "#mapmove 2"
+#define "#mor 8"
+#define "#hp 5"
+#define "#str 5"
+
+#tag "prefix pygmy"
+
 #enditem

@@ -494,4 +494,106 @@
 #tag "tier 3"
 #enditem
 
+-- Imperial headgear
+#newitem
+#id laurel
+#basechance 0.0005
+#gameid -1
+#sprite /graphics/dynastichuman/helmet/laurel.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "imperial"
+#enditem
 
+#newitem
+#id imperialcowl_white
+#basechance 0.0002
+#gameid -1
+#sprite /graphics/dynastichuman/helmet/imperialcowl_bright.png
+#eliteversion imperialhood_white
+#eliteversion imperialcowl_bright
+#armor
+#tag "tier 1"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialcowl_bright
+#basechance 0.0002
+#gameid -1
+#sprite /graphics/dynastichuman/helmet/imperialcowl_bright.png
+#recolormask self
+#eliteversion imperialhood_bright
+#armor
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialhood_white
+#basechance 0.0002
+#gameid -1
+#sprite /graphics/dynastichuman/helmet/imperialhood_bright.png
+#eliteversion imperialhood_bright
+#armor
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialhood_bright
+#basechance 0.0002
+#gameid -1
+#sprite /graphics/dynastichuman/helmet/imperialhood_bright.png
+#recolormask self
+#armor
+#tag "tier 3"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialcowl_bright
+#basechance 0.0002
+#gameid -1
+#sprite /graphics/dynastichuman/helmet/imperialcowl_dark.png
+#eliteversion imperialhood_black
+#eliteversion imperialcowl_dark
+#armor
+#tag "tier 1"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialcowl_dark
+#basechance 0.0002
+#gameid -1
+#sprite /graphics/dynastichuman/helmet/imperialcowl_dark.png
+#recolormask self
+#eliteversion imperialhood_dark
+#armor
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialhood_black
+#basechance 0.0002
+#gameid -1
+#sprite /graphics/dynastichuman/helmet/imperialhood_dark.png
+#eliteversion imperialhood_dark
+#armor
+#tag "tier 2"
+#theme "imperial"
+#enditem
+
+#newitem
+#id imperialhood_dark
+#basechance 0.0002
+#gameid -1
+#sprite /graphics/dynastichuman/helmet/imperialhood_dark.png
+#recolormask self
+#armor
+#tag "tier 3"
+#theme "imperial"
+#enditem

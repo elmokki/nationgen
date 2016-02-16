@@ -1,0 +1,153 @@
+#newitem
+#id none
+#gameid -1
+#eliteversion laurel
+#eliteversion nemes
+#armor
+#theme "sacred"
+#theme "naked"
+#enditem
+
+#newitem
+#id auxiliary_helmet
+#gameid 119
+#sprite /graphics/dynastichuman/helmet/auxiliaryhelm.png
+#eliteversion auxiliary_helmet_elite
+#armor
+#theme "leather"
+#maxprot 10
+#enditem
+
+#newitem
+#id auxiliary_helmet_elite
+#gameid 162
+#sprite /graphics/dynastichuman/helmet/auxiliaryhelm_elite.png
+#recolormask /graphics/dynastichuman/helmet/auxiliaryhelm_elite_recolormask.png
+#eliteversion centurion_helmet
+#armor
+#theme "leather"
+#theme "elite"
+#maxprot 10
+#enditem
+
+#newitem
+#id legionary_helmet
+#gameid 126
+#sprite /graphics/dynastichuman/helmet/legionaryhelm.png
+#eliteversion legionary_helmet_elite
+#armor
+#theme "iron"
+#minprot 8
+#enditem
+
+#newitem
+#id legionary_helmet_elite
+#gameid 126
+#sprite /graphics/dynastichuman/helmet/legionaryhelm_elite.png
+#recolormask /graphics/dynastichuman/helmet/legionaryhelm_elite_recolormask.png
+#eliteversion centurion_helmet
+#armor
+#theme "elite"
+#theme "iron"
+#minprot 8
+#enditem
+
+#newitem
+#id centurion_helmet
+#gameid 126
+#sprite /graphics/dynastichuman/helmet/centurionhelm.png
+#recolormask /graphics/dynastichuman/helmet/centurionhelm_recolormask.png
+#eliteversion centurion_helmet_gilt
+#armor
+#theme "elite"
+#theme "iron"
+#minprot 10
+#enditem
+
+#newitem
+#id centurion_helmet_gilt
+#gameid 126
+#sprite /graphics/dynastichuman/helmet/centurionhelm_gilt.png
+#recolormask /graphics/dynastichuman/helmet/centurionhelm_recolormask.png
+#eliteversion legate_helmet_gilt
+#eliteversion laurel
+#eliteversion nemes
+#armor
+#theme "elite"
+#theme "sacred"
+#theme "iron"
+#type gilt
+#minprot 10
+#enditem
+
+#newitem
+#id legate_helmet
+#gameid 126
+#sprite /graphics/dynastichuman/helmet/legatehelm.png
+#recolormask /graphics/dynastichuman/helmet/legatehelm_recolormask.png
+#eliteversion centurion_helmet_elite
+#armor
+#theme "elite"
+#theme "iron"
+#minprot 12
+#enditem
+
+#newitem
+#id legate_helmet_gilt
+#gameid 126
+#sprite /graphics/dynastichuman/helmet/legatehelm_gilt.png
+#recolormask /graphics/dynastichuman/helmet/legatehelm_recolormask.png
+#eliteversion legate_helmet
+#eliteversion laurel
+#eliteversion nemes
+#armor
+#theme "elite"
+#theme "sacred"
+#theme "iron"
+#type gilt
+#minprot 12
+#enditem
+
+#newitem
+#id fullhelmet
+#gameid 21
+#sprite /graphics/dynastichuman/helmet/legionaryfullhelm.png
+#recolormask /graphics/dynastichuman/helmet/legatehelm_recolormask.png
+#eliteversion fullhelmet_gilt
+#armor
+#theme "iron"
+#theme "advanced"
+#minprot 18
+#enditem
+
+#newitem
+#id fullhelmet_gilt
+#gameid 21
+#sprite /graphics/dynastichuman/helmet/legionaryfullhelm_gilt.png
+#recolormask /graphics/dynastichuman/helmet/legatehelm_recolormask.png
+#armor
+#theme "elite"
+#theme "sacred"
+#theme "iron"
+#theme "advanced"
+#minprot 18
+#enditem
+
+#newitem
+#id laurel
+#gameid -1
+#sprite /graphics/dynastichuman/helmet/laurel.png
+#armor
+#theme "sacred"
+#theme "elite"
+#enditem
+
+#newitem
+#id nemes
+#gameid -1
+#sprite /graphics/dynastichuman/helmet/nemes_ornate.png
+#recolormask /graphics/dynastichuman/helmet/nemes_ornate_recolormask.png
+#armor
+#theme "sacred"
+#theme "elite"
+#enditem

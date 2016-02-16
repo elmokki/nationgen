@@ -6,9 +6,13 @@
 #basechance 0.25
 #theme "imperial"
 #theme "enlightened"
-#theme "terrestrial"
+#theme "oriental"
+#theme "lowland"
 #theme "winged"
-#subrace bandar
+#theme "abysian"
+#theme "alpine"
+#cannot_be_militia
+#cannot_be_pd
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap bonusweapon quiver armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
@@ -31,10 +35,9 @@
 #load offhand /data/items/monkey/bandar/normal/shields_elite.txt
 #load wings /data/items/monkey/bandar/normal/wings.txt
 
-#generateitem 1 wings
-
 #command "#maxage 45"
 #endpose
+
 
 -------- archer
 #newpose
@@ -44,9 +47,12 @@
 #basechance 0.25
 #theme "imperial"
 #theme "enlightened"
-#theme "terrestrial"
+#theme "oriental"
+#theme "lowland"
 #theme "winged"
-#subrace bandar
+#theme "alpine"
+#cannot_be_militia
+#cannot_be_pd
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap quiver armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -68,7 +74,6 @@
 #load quiver /data/items/monkey/bandar/normal/quiver.txt
 #load wings /data/items/monkey/bandar/normal/wings.txt
 
-#generateitem 1 wings
 #generateitem 1 bonusweapon
 
 #command "#maxage 45"

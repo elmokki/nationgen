@@ -1,4 +1,14 @@
 #newitem
+#name "nocloak"
+#gameid -1
+#theme "oriental"
+#theme "enlightened"
+#theme "imperial"
+#theme "primitive"
+#theme "naked"
+#enditem
+
+#newitem
 #name "cloak"
 #gameid -1
 #sprite /graphics/monkey/cloak/bandar/cloakfront.png
@@ -14,4 +24,13 @@
 #armor
 #recolormask self
 #theme "imperial"
+#enditem
+
+#newitem
+#name "cloak_oriental"
+#gameid -1
+#sprite /graphics/monkey/cloak/bandar/cloakfront_oriental.png
+#armor
+#recolormask self
+#theme "oriental"
 #enditem

@@ -2,11 +2,77 @@
 #name "vanara basesprite"
 #gameid -1
 #sprite /graphics/monkey/vanara_base_old.png
+#needs hands vanara_hands
+#command "#gcost 10"
 #command "#hp 10"
 #command "#mr 8"
-#command "#animal"
-#command "#forestsurvival"
 #command "#prot 1"
 #command "#mor 9"
 #command "#ap 10"
+#command "#animal"
+#command "#forestsurvival"
+#subrace vanara
+#theme lowland
+#enditem
+
+#newitem
+#name "winged vanara basesprite"
+#gameid -1
+#sprite /graphics/monkey/vanara_base_old.png
+#needs hands vanara_hands
+#needs wings winged
+#command "#gcost 15"
+#command "#hp 10"
+#command "#mr 10"
+#command "#prot 1"
+#command "#mor 8"
+#command "#ap 10"
+#command "#size 3"
+#command "#ressize 2"
+#command "#mapmove 3"
+#command "#maxage +10"
+#command "#flying"
+#command "#animal"
+#command "#forestsurvival"
+#subrace "winged vanara"
+#theme winged
+#enditem
+
+#newitem
+#name "vanarabred basesprite"
+#gameid -1
+#sprite /graphics/monkey/vanara_base_vanarabred.png
+#needs hands vanarabred_hands
+#command "#gcost 12"
+#command "#hp 12"
+#command "#mr 9"
+#command "#prot 1"
+#command "#mor 9"
+#command "#str 11"
+#command "#def 9"
+#command "#prec 8"
+#command "#ap 9"
+#command "#maxage *0.8"
+#command "#wastesurvival"
+#command "#fireres 15"
+#subrace vanarabred
+#theme abysian
+#enditem
+
+#newitem
+#name "alpine vanara basesprite"
+#gameid -1
+#sprite /graphics/monkey/vanara_base_alpine_old.png
+#needs hands vanara_hands_alpine
+#command "#gcost 11"
+#command "#hp 10"
+#command "#mr 9"
+#command "#prot 2"
+#command "#mor 10"
+#command "#ap 10"
+#command "#animal"
+#command "#mountainsurvival"
+#command "#coldres 15"
+#subrace "alpine vanara"
+#theme alpine
 #enditem

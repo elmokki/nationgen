@@ -6,7 +6,12 @@
 #name "markata infantry"
 #role "infantry"
 #role "scout"
-#subrace markata
+#theme "lowland"
+#theme "winged"
+#theme "abysian"
+#theme "alpine"
+#theme "enlightened"
+#theme "oriental"
 
 #renderorder "shadow wings basesprite armor bonusweapon weapon offhandw"
 
@@ -18,7 +23,6 @@
 #load bonusweapon /data/items/monkey/markata/bonusweapon.txt
 #load wings /data/items/monkey/markata/wings.txt
 
-#generateitem 1 wings
 #generateitem 1 bonusweapon
 #maxvarieties 1
 #maxunits 1
@@ -35,7 +39,12 @@
 #basechance 0.5
 #name "markata ranged"
 #role "ranged"
-#subrace markata
+#theme "lowland"
+#theme "winged"
+#theme "abysian"
+#theme "alpine"
+#theme "enlightened"
+#theme "oriental"
 
 #renderorder "shadow wings basesprite armor bonusweapon weapon offhandw"
 
@@ -47,7 +56,6 @@
 
 #load wings /data/items/monkey/markata/wings.txt
 
-#generateitem 1 wings
 #maxvarieties 1
 #maxunits 1
 #command "#maxage 15"
@@ -61,8 +69,15 @@
 #newpose
 #name "markata sacred infantry"
 #role "sacred infantry"
-#basechance 0.1
-#subrace markata
+#basechance 0.2
+#theme "lowland"
+#theme "winged"
+#theme "abysian"
+#theme "alpine"
+#theme "enlightened"
+#theme "oriental"
+#cannot_be_militia
+#cannot_be_pd
 
 #renderorder "shadow wings basesprite armor bonusweapon weapon offhandw"
 
@@ -77,7 +92,6 @@
 
 #load wings /data/items/monkey/markata/wings.txt
 
-#generateitem 1 wings
 #generateitem 1 bonusweapon
 #maxvarieties 1
 #maxunits 1

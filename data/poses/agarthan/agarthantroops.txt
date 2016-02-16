@@ -144,6 +144,8 @@
 #load cloakf /data/items/agarthan/generic_big/cloakf.txt
 #load cloakb /data/items/agarthan/generic_big/cloakb.txt
 
+#cannot_be_pd
+
 #endpose
 
 
@@ -177,6 +179,8 @@
 
 #generateitem 1 bonusweapon
 
+#cannot_be_pd
+
 #endpose
 
 
@@ -200,7 +204,8 @@
 #command "#mor +2"
 #command "#coldres 5"
 #command "#poisonres 15"
-#command "#sacred"
+#command "#holy"
+#command "#itemslot 13446"
 
 #load basesprite /data/items/agarthan/generic/bases.txt
 #load shadow /data/items/agarthan/olmspawn/shadow.txt
@@ -217,6 +222,8 @@
 
 #load cloakf /data/items/agarthan/generic/cloakf.txt
 #load cloakb /data/items/agarthan/generic/cloakb.txt
+
+#cannot_be_pd
 
 #endpose
 
@@ -240,7 +247,8 @@
 #command "#mor +2"
 #command "#coldres 5"
 #command "#poisonres 15"
-#command "#sacred"
+#command "#holy"
+#command "#itemslot 13446"
 
 #load basesprite /data/items/agarthan/generic/bases.txt
 #load shadow /data/items/agarthan/olmspawn/shadow.txt
@@ -257,6 +265,9 @@
 
 #load cloakf /data/items/agarthan/generic/cloakf.txt
 #load cloakb /data/items/agarthan/generic/cloakb.txt
+
+#cannot_be_pd
+
 #endpose
 
 -------------- Mounted
@@ -314,12 +325,13 @@
 #load cloakb /data/items/agarthan/generic/cloakb.txt
 #endpose
 
--------- Olmspawn (scout)
+-------- Olmspawn (sacred spy/assassin)
 
 #newpose
 #name olmspawn_scout
 #basechance 0.01
 #role "scout"
+#tag "cannot_be_scout"
 
 #subrace "olmspawn"
 
@@ -334,7 +346,8 @@
 #command "#mor +2"
 #command "#coldres 5"
 #command "#poisonres 15"
-#command "#sacred"
+#command "#holy"
+#command "#itemslot 13446"
 
 #load basesprite /data/items/agarthan/generic/bases.txt
 #load shadow /data/items/agarthan/olmspawn/shadow.txt

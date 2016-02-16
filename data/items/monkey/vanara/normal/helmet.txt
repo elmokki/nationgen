@@ -163,9 +163,131 @@
 #gameid -1
 #basechance 0
 #chanceinc "personalcommand holy 0.5"
+#chanceinc hastheme not imperial *0
 #sprite /graphics/helmet/caster/green.png
 #offsetx 1
 #armor
 #theme "elite"
 #theme "imperial"
+#enditem
+
+--- Oriental helms
+#newitem
+#id kabuto
+#gameid 132
+#sprite /graphics/monkey/helmet/vanara/kabuto.png
+#tag "eliteversion kabuto"
+#tag "eliteversion kabuto_elite"
+#theme "oriental"
+#theme "iron"
+#armor
+#enditem
+
+#newitem
+#id kabuto_elite
+#basechance 0.01
+#gameid 132
+#sprite /graphics/monkey/helmet/vanara/kabuto_elite1.png
+#tag "eliteversion kabuto_elite"
+#tag "eliteversion kabuto_elitest"
+#theme "oriental"
+#theme "elite"
+#theme "iron"
+#armor
+#enditem
+
+#newitem
+#id kabuto_elitest
+#basechance 0.01
+#gameid 132
+#sprite /graphics/monkey/helmet/vanara/kabuto_elite2.png
+#theme "oriental"
+#theme "elite"
+#theme "iron"
+#armor
+#enditem
+
+#newitem
+#id jingasa
+#gameid 131
+#sprite /graphics/helmet/standard/jingasa2.png
+#recolormask /graphics/helmet/standard/jingasa2_recolormask.png
+#theme "oriental"
+#theme "iron"
+#offsetx 2
+#offsety 1
+#armor
+#theme peasant
+#enditem
+
+#newitem
+#id leathercap_oriental
+#gameid 120
+#sprite /graphics/tengu/helmet/reinforcedcap.png
+#tag "eliteversion ironcap_oriental"
+#theme "oriental"
+#theme "leather"
+#offsetx 3
+#armor
+#enditem
+
+#newitem
+#id reinforcedcap_oriental
+#gameid 119
+#sprite /graphics/tengu/helmet/reinforcedcap.png
+#tag "eliteversion halfhelm_oriental"
+#theme "oriental"
+#theme "leather"
+#offsetx 3
+#armor
+#enditem
+
+#newitem
+#id halfhelmet_oriental
+#gameid 118
+#sprite /graphics/tengu/helmet/tienchihelmet.png
+#tag "eliteversion halfhelm_oriental_elite"
+#theme "oriental"
+#theme "iron"
+#offsetx 3
+#armor
+#enditem
+
+#newitem
+#id ironcap_oriental
+#gameid 20
+#sprite /graphics/tengu/helmet/tienchihelmet.png
+#tag "eliteversion ironcap_oriental_elite"
+#theme "oriental"
+#theme "iron"
+#offsetx 3
+#armor
+#enditem
+
+#newitem
+#id halfhelmet_oriental_elite
+#basechance 0.01
+#gameid 118
+#sprite /graphics/tengu/helmet/tienchihelmet_elite.png
+#recolormask /graphics/tengu/helmet/tienchihelmet_elite_recolormask.png
+#theme "oriental"
+#theme "iron"
+#theme "elite"
+#offsetx 3
+#armor
+#enditem
+
+#newitem
+#id ironcap_oriental_elite
+#basechance 0.01
+#gameid 20
+#sprite /graphics/tengu/helmet/tienchihelmet_fancy.png
+#recolormask /graphics/tengu/helmet/tienchihelmet_fancy_recolormask.png
+#tag "eliteversion halfhelm_elite"
+#tag "eliteversion ironcap_elite"
+#theme "oriental"
+#theme "iron"
+#theme "elite"
+#offsetx 3
+#armor
 #enditem
