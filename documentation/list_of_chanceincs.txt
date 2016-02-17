@@ -221,6 +221,13 @@ Usage:	#chanceinc enc [below] <prot> <modifier>
 Info:	If unit encumberance (just #enc) is at least/below <prot>, apply modifier
 
 
+Magic priority
+------------------------
+Usage:	#chanceinc magicpriority <path> [below] <level> <mod>
+Info:	If general nation (primary race and nation theme) magic priority is at or above 
+	(or below) level, apply mod.
+
+
 Magic
 ------------------------
 Usage:	#chanceinc magic [not] <path1> [not] <path2> ... <mod>
@@ -270,6 +277,13 @@ Has primary race
 Usage:	#chanceinc hasprimaryrace <mod>
 Info:	If the nation has a primary race, apply modifier
 	Used mostly for secondary race chanceincs
+
+Primary race command
+------------------------
+Usage:	#chanceinc primarycommand <command> [above/below] <value> <mod>
+Info:	If the primary race has an unit command <command> above/below/at <value>,
+	apply mod
+
 
 Nation command
 ------------------------
