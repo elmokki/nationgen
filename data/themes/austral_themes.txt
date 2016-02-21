@@ -57,6 +57,7 @@
 #basechance 0.5
 #racedefinition "#pose pygmy_elites"
 #racedefinition "#pose pygmy_mages"
+#racedefinition "#strongmagicpatterns"
 #endtheme
 
 -- Weights: EA 1, MA 1, LA 1
@@ -72,7 +73,8 @@
 #newtheme
 #type demographic
 #name colossi
-#basechance 0.5
+-- #basechance 0.5
+#basechance 0
 #chanceinc era 1 0.25
 #chanceinc era 3 -0.25
 #racedefinition "#pose colossi"
@@ -110,7 +112,7 @@
 #basechance 0
 #racedefinition "#pose pygmy_elites"
 #racedefinition "#pose colossi"
-#racedefinition "#pose colossi_mages"
+-- #racedefinition "#pose colossi_mages"
 #endtheme
 
 -- Weights: EA 0.5, MA 0.5, LA 0.5
@@ -120,6 +122,7 @@
 #basechance 0.5
 #racedefinition "#pose colossi"
 #racedefinition "#pose pygmy_mages"
+#racedefinition "#strongmagicpatterns"
 #endtheme
 
 -- Weights: EA 0.1, MA 0.1, LA 0.1
