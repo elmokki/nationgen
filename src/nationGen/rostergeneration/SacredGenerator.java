@@ -19,6 +19,7 @@ import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
 import nationGen.nation.Nation;
+import nationGen.rostergeneration.montagtemplates.SacredMontagTemplate;
 import nationGen.units.Unit;
 
 public class SacredGenerator extends TroopGenerator {
@@ -387,8 +388,18 @@ public class SacredGenerator extends TroopGenerator {
 
 		Unit u = this.getSacredUnit(race, p, power, sacred, epicchance);
 		
-		calculatePower(u, power);
-		
+		if(unitGen.hasMontagPose(u))
+		{
+			SacredMontagTemplate template = new SacredMontagTemplate();
+			template.power = power;
+			template.sacred = sacred;
+			unitGen.handleMontagUnits(u, template, "montagsacreds");
+			u.caponly = true;
+		}
+		else
+		{
+			calculatePower(u, power);
+		}
 		return u;
 		
 	}
@@ -536,7 +547,7 @@ public class SacredGenerator extends TroopGenerator {
 	 * @param role
 	 * @param power
 	 */
-	private void calculatePower(Unit u, int power)
+	public void calculatePower(Unit u, int power)
 	{
 
 		// Calculate some loose power rating

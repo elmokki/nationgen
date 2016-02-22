@@ -18,13 +18,13 @@ public class ConsoleGUI {
 		NationGen nationGen = new NationGen();
 
 		List<Integer> seeds = new ArrayList<Integer>();
-		seeds.add(-1816253951);
+		seeds.add(-421273726);
 		
 		//nationGen.settings.put("era", 2.0);
-		//nationGen.settings.put("drawPreview", 1.0);
+		nationGen.settings.put("drawPreview", 1.0);
 
-		//nationGen.generate(seeds);
-		nationGen.generate(10);
+		nationGen.generate(seeds);
+		//nationGen.generate(1);
 	}
 
 

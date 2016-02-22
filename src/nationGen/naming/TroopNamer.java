@@ -77,7 +77,8 @@ public class TroopNamer {
 		alltroops.addAll(n.combineTroopsToList("chariot"));
 		alltroops.addAll(n.combineTroopsToList("mounted"));
 		alltroops.addAll(n.combineTroopsToList("ranged"));
-		
+		alltroops.addAll(n.combineTroopsToList("montagtroops"));
+
 		// Give misc guaranteed parts
 		setGuaranteedParts(alltroops, miscguaranteed);
 		
@@ -93,6 +94,7 @@ public class TroopNamer {
 		
 		// If we have overwritten a prefix we may want to differentiate infantry with weapon names
 		differentiateNames(n.combineTroopsToList("infantry"), weaponnames);
+		differentiateNames(n.combineTroopsToList("montagtroops"), weaponnames);
 
 		
 		// National prefix/suffix
@@ -102,7 +104,8 @@ public class TroopNamer {
 		addHeavyLightPrefix(n.combineTroopsToList("infantry"));
 		addHeavyLightPrefix(n.combineTroopsToList("mounted"));
 		addHeavyLightPrefix(n.combineTroopsToList("ranged"));
-		
+		addHeavyLightPrefix(n.combineTroopsToList("montagtroops"));
+
 		
 		nameCommanders(n);
 		
@@ -367,6 +370,9 @@ public class TroopNamer {
 		for(String role : roles)
 		{
 			List<Unit> units = n.generateUnitList(role);
+			for(Unit u : n.generateUnitList("montagtroops"))
+				if(u.guessRole().equals(role))
+					units.add(u);
 			
 			if(units.size() == 0)
 				continue;
@@ -440,6 +446,10 @@ public class TroopNamer {
 		for(String role : roles)
 		{
 			List<Unit> units = n.generateUnitList(role);
+			for(Unit u : n.generateUnitList("montagtroops"))
+				if(u.guessRole().equals(role))
+					units.add(u);
+			
 			
 			if(units.size() == 0)
 				continue;

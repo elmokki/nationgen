@@ -2,13 +2,13 @@
 -
 -- Syntax:
 -
-- nation/site/unit/weapon/armor/name x-y 
+- nation/site/unit/weapon/armor/name/montag x-y 
 - forbids using the given range (includes both boundaries)
 -
-- nation/site/unit/weapon/armor/name x
+- nation/site/unit/weapon/armor/name/montag x
 - forbids specific id
 -
-- nation/site/unit/weapon/armor/name start x
+- nation/site/unit/weapon/armor/name/montag start x
 - tells NationGen to start using ids from given id
 
 ---- Nations
@@ -28,3 +28,6 @@ armor start 250
 
 --- Nametypes
 name start 160
+
+--- Montags (inputted in game as negative, but positive here, ie if you want to forbid montag -1423, you will forbid 1423 here)
+montag start 1000

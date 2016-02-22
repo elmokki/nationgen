@@ -1,0 +1,160 @@
+-------- Normal
+#newpose
+#basechance 500000000
+#name "FUCK YEAH"
+#role "infantry"
+#theme "imperial"
+#theme "enlightened"
+#theme "oriental"
+#theme "lowland"
+#theme "winged"
+#theme "abysian"
+#theme "alpine"
+
+#montagpose "yeti" 0.5
+#montagpose "markata infantry" 2
+#montagpose "sacred yeti" 0.5
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap bonusweapon quiver armor cloakf weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/monkey/bandar/normal/bases.txt
+#load shadow /data/items/monkey/bandar/normal/shadow.txt
+
+#load hands /data/items/monkey/bandar/normal/hands.txt
+
+#load cloakf /data/items/monkey/bandar/normal/cloakf.txt
+#load cloakb /data/items/monkey/bandar/normal/cloakb.txt
+
+
+#load armor /data/items/monkey/bandar/normal/armor.txt
+#load helmet /data/items/monkey/bandar/normal/helmet.txt
+
+#load weapon /data/items/monkey/bandar/normal/weapon.txt
+#load bonusweapon /data/items/monkey/bandar/normal/bonusranged.txt 4 -4
+
+#load offhand /data/items/monkey/bandar/normal/offhand.txt
+#load offhand /data/items/monkey/bandar/normal/shields.txt
+
+#load wings /data/items/monkey/bandar/normal/wings.txt
+
+#command "#maxage 45"
+#endpose
+
+
+-------- Light Normal
+#newpose
+#name "bandar light infantry"
+#role "infantry"
+#theme "imperial"
+#theme "enlightened"
+#theme "oriental"
+#theme "lowland"
+#theme "winged"
+#theme "alpine"
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap bonusweapon quiver armor cloakf weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/monkey/bandar/normal/bases.txt
+#load shadow /data/items/monkey/bandar/normal/shadow.txt
+
+#load hands /data/items/monkey/bandar/normal/hands.txt
+
+#load cloakf /data/items/monkey/bandar/normal/cloakf.txt
+#load cloakb /data/items/monkey/bandar/normal/cloakb.txt
+
+
+#load armor /data/items/monkey/bandar/normal/lightarmor.txt
+#load helmet /data/items/monkey/bandar/normal/helmet.txt
+
+#load weapon /data/items/monkey/bandar/normal/weapon.txt
+#load bonusweapon /data/items/monkey/bandar/normal/lightbonusranged.txt 4 -4
+
+#load offhand /data/items/monkey/bandar/normal/offhand.txt
+#load offhand /data/items/monkey/bandar/normal/shields.txt
+
+#load wings /data/items/monkey/bandar/normal/wings.txt
+
+#command "#maxage 45"
+#endpose
+
+
+-------- archer
+#newpose
+#name "bandar archer"
+#role "ranged"
+#theme "imperial"
+#theme "enlightened"
+#theme "oriental"
+#theme "lowland"
+#theme "winged"
+#theme "alpine"
+#basechance 500
+
+#montagpose "markata ranged"
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap quiver armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/monkey/bandar/normal/bases.txt
+#load shadow /data/items/monkey/bandar/normal/shadow.txt
+
+#load hands /data/items/monkey/bandar/normal/hands.txt
+
+#load cloakf /data/items/monkey/bandar/normal/cloakf.txt
+#load cloakb /data/items/monkey/bandar/normal/cloakb.txt
+
+
+#load armor /data/items/monkey/bandar/normal/armor.txt
+#load helmet /data/items/monkey/bandar/normal/helmet.txt
+
+#load weapon /data/items/monkey/bandar/normal/bows.txt
+#load bonusweapon /data/items/monkey/bandar/normal/archerweapon.txt
+
+#load strap /data/items/monkey/bandar/normal/strap.txt
+#load quiver /data/items/monkey/bandar/normal/quiver.txt
+#load wings /data/items/monkey/bandar/normal/wings.txt
+
+#generateitem 1 bonusweapon
+
+#command "#maxage 45"
+#endpose
+
+
+-------- Gladiators (Imperial)
+#newpose
+#name "bandar gladiators"
+#role "infantry"
+#theme "imperial"
+#theme "lowland"
+#theme "winged"
+#theme "abysian"
+#cannot_be_pd
+#basechance 0.5
+
+#freetemplatefilter gladiatortemplate gladiator
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap bonusweapon quiver armor cloakf weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/monkey/bandar/normal/bases.txt
+#load shadow /data/items/monkey/bandar/normal/shadow.txt
+
+#load hands /data/items/monkey/bandar/normal/hands.txt
+
+#load cloakf /data/items/monkey/bandar/normal/cloakf.txt
+#load cloakb /data/items/monkey/bandar/normal/cloakb.txt
+
+
+#load armor /data/items/monkey/bandar/normal/lightarmor.txt
+#load helmet /data/items/monkey/bandar/normal/helmet.txt
+
+#load weapon /data/items/monkey/bandar/normal/weapon.txt
+#load bonusweapon /data/items/monkey/bandar/normal/lightbonusranged.txt 4 -4
+
+#load offhand /data/items/monkey/bandar/normal/offhand.txt
+#load offhand /data/items/monkey/bandar/normal/shields.txt
+
+#load wings /data/items/monkey/bandar/normal/wings.txt
+
+#command "#maxage 45"
+#maxvarieties 2
+#maxunits 1
+#endpose

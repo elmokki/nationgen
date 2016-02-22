@@ -328,7 +328,7 @@ public class Nation {
 
 		double specialcomchance = 0.05;
 		if(Generic.containsTag(races.get(0).tags, "specialcommanderchance"))
-			specialcomchance = Double.parseDouble(Generic.getTagValue(races.get(0).tags, "monsterchance"));
+			specialcomchance = Double.parseDouble(Generic.getTagValue(races.get(0).tags, "specialcommanderchance"));
 		
 		if(random.nextDouble() < specialcomchance)
 		{

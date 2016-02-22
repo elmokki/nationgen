@@ -738,6 +738,18 @@ public class Unit {
 	}
 	
 	
+	public String guessRole()
+	{
+		String r = "infantry";
+		for(String role : pose.roles)
+			if(role.contains("ranged"))
+				r = "ranged";
+		for(String role : pose.roles)
+			if(role.contains("mounted"))
+				r = "mounted";
+		return r;
+	}
+	
 	public void polish()
 	{
 		Unit u = this;
@@ -922,8 +934,9 @@ public class Unit {
 				// Second shapes
 				if(c.command.contains("shape") && !nationGen.hasShapeShift(c.args.get(0)))
 				{
-				
-					nationGen.handleShapeshift(c, u);
+					if(c.command.equals("#firstshape") && u.tags.contains("montagunit"));
+					else
+						nationGen.handleShapeshift(c, u);
 				}
 				
 				// Weapons
