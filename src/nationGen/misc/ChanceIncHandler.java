@@ -90,6 +90,9 @@ public class ChanceIncHandler {
 		return list;
 	}
 	
+	
+	
+	
 	public <T extends Filter> LinkedHashMap<T, Double> handleChanceIncs(List<T> filters)
 	{
 		List<Unit> units = new ArrayList<Unit>();
@@ -120,14 +123,47 @@ public class ChanceIncHandler {
 		return handleChanceIncs(u, filters, null);
 	}
 	
-	
 	/**
-	 * The main method for handling chanceincs.
+	 * The main method for handling chanceincs. This uses basechances.
 	 * @param u
 	 * @param filters
 	 * @return
 	 */
 	public <T extends Filter> LinkedHashMap<T, Double> handleChanceIncs(List<Unit> u, List<T> filters, List<String> extraincs)
+	{
+		
+		LinkedHashMap<T, Double> set = new LinkedHashMap<T, Double>();
+		for(T t : filters)
+		{
+			set.put(t, t.basechance);
+		}
+
+		return handleChanceIncs(u, set, extraincs);
+	}
+	
+	
+	
+	/**
+	 * The main method for handling chanceincs. This overrides basechances.
+	 * @param u
+	 * @param filters
+	 * @return
+	 */
+	public <T extends Filter> LinkedHashMap<T, Double> handleChanceIncs(Unit u, LinkedHashMap<T, Double> filters)
+	{
+		ArrayList<Unit> list = new ArrayList<Unit>();
+		list.add(u);
+		return handleChanceIncs(list, filters, null);
+	}
+	
+	/**
+	 * The main method for handling chanceincs. This overrides basechances.
+	 * @param u
+	 * @param filters
+	 * @param extraincs
+	 * @return
+	 */
+	public <T extends Filter> LinkedHashMap<T, Double> handleChanceIncs(List<Unit> u, LinkedHashMap<T, Double> set, List<String> extraincs)
 	{
 		
 	
@@ -138,11 +174,6 @@ public class ChanceIncHandler {
 			race = n.races.get(0);
 		
 		
-		LinkedHashMap<T, Double> set = new LinkedHashMap<T, Double>();
-		for(T t : filters)
-		{
-			set.put(t, t.basechance);
-		}
 
 
 		List<String> miscincs = new ArrayList<String>();

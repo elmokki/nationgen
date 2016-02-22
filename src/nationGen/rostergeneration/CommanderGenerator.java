@@ -58,6 +58,18 @@ public class CommanderGenerator extends TroopGenerator {
 		possibleComs.addAll(nation.generateUnitList("chariot"));
 		possibleComs.addAll(nation.generateUnitList("sacred"));
 		
+		
+		for(Unit u : possibleComs)
+			if(u.tags.contains("montagunit"))
+				tempComs.add(u);
+		possibleComs.removeAll(tempComs);
+		tempComs.clear();
+		
+		for(Unit u : nation.generateUnitList("montagtroops"))
+		{
+			if(u.guessRole().equals("infantry") || u.guessRole().equals("chariot") || u.guessRole().equals("mounted"))
+				possibleComs.add(u);
+		}
 
 		
 		List<String> features = new ArrayList<String>();

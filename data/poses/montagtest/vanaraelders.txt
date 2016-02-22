@@ -1,0 +1,253 @@
+------ Warrior-mage
+#newpose
+#name "vanara warrior-mage"
+#role "priest"
+#role "mage"
+#theme "lowland"
+#theme "winged"
+#theme "abysian"
+#theme "imperial"
+#theme "oriental"
+
+#command "#gcost +10"
+#command "#hp +2"
+#command "#mor +2"
+#command "#str +2"
+#command "#att +2"
+#command "#def +2"
+#command "#ap +2"
+#command "#older +15"
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/monkey/vanara/caster/magebases.txt
+#load shadow /data/items/monkey/vanara/normal/shadow.txt
+
+#load hands /data/items/monkey/vanara/normal/hands.txt
+
+#load armor /data/items/monkey/vanara/caster/armor.txt
+#load shirt /data/items/monkey/vanara/normal/shirt.txt
+#load helmet /data/items/monkey/vanara/caster/helmet_warrior.txt
+
+#load weapon /data/items/monkey/vanara/caster/weapon_warrior.txt
+
+#load wings /data/items/monkey/vanara/normal/wings.txt
+#load overlay /data/items/monkey/vanara/normal/overlay.txt
+
+#generateitem 1 shirt
+
+#tier 1
+#tier 2
+#notfortier 3
+#command "#maxage 60"
+#endpose
+
+
+
+-------- Terrestrial high mage, standing
+#newpose
+#name "standing vanara elder mage"
+#role "mage"
+#theme "lowland"
+#theme "abysian"
+#theme "alpine"
+#theme "oriental"
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/monkey/vanara/caster/magebases.txt
+#load shadow /data/items/monkey/vanara/normal/shadow.txt
+
+#load hands /data/items/monkey/vanara/normal/hands.txt
+
+#load armor /data/items/monkey/vanara/caster/robes.txt
+#load helmet /data/items/monkey/vanara/caster/helmet.txt 2 1
+
+#load weapon /data/items/monkey/vanara/caster/weapon.txt
+#load offhand /data/items/monkey/vanara/caster/offhands.txt
+
+#load wings /data/items/monkey/vanara/normal/wings.txt
+#load overlay /data/items/monkey/vanara/normal/overlay.txt
+
+#tier 3
+#notfortier 1
+#notfortier 2
+#command "#maxage 120"
+#endpose
+
+-------- Terrestrial high mage, floating
+#newpose
+#name "vanara elder mage, floating"
+#role "mage"
+#theme "lowland"
+#theme "enlightened"
+
+#load basesprite /data/items/monkey/vanara/caster/magebases_float.txt
+#load shadow /data/items/monkey/vanara/normal/shadow.txt
+
+#load armor /data/items/monkey/vanara/caster/robes_sitting.txt
+#load helmet /data/items/monkey/vanara/caster/helmet.txt 2 2
+#load weapon /data/items/monkey/vanara/caster/emptyweapons.txt
+
+#tier 3
+#notfortier 2
+#notfortier 1
+#dontvaryweapon
+#command "#maxage 120"
+#endpose
+
+-------- Terrestrial high mage - small palaquin
+#newpose
+#name "vanara elder mage - small palaquin"
+#role "mage"
+#theme "lowland"
+#theme "imperial"
+
+#load basesprite /data/items/monkey/vanara/caster/magebases_palaquin_imperial.txt
+
+#load armor /data/items/monkey/vanara/caster/robes_palaquin_imperial.txt
+#load helmet /data/items/monkey/vanara/caster/helmet.txt 31 -22
+#load weapon /data/items/monkey/vanara/caster/emptyweapons.txt
+
+#tier 3
+#notfortier 2
+#notfortier 1
+#dontvaryweapon
+#command "#maxage 120"
+#endpose
+
+
+-------- Winged high mage
+#newpose
+#name "winged vanara elder mage"
+#role "mage"
+#theme "winged"
+#theme "imperial"
+#theme "enlightened"
+#theme "oriental"
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/monkey/vanara/caster/magebases.txt
+#load shadow /data/items/monkey/vanara/normal/shadow.txt
+
+#load hands /data/items/monkey/vanara/normal/hands.txt
+
+#load armor /data/items/monkey/vanara/caster/robes.txt
+#load helmet /data/items/monkey/vanara/caster/helmet.txt 2 1
+
+#load weapon /data/items/monkey/vanara/caster/weapon.txt
+
+#load offhand /data/items/monkey/vanara/caster/offhands.txt
+
+#load wings /data/items/monkey/vanara/normal/wings.txt
+#load overlay /data/items/monkey/vanara/normal/overlay.txt
+
+#generateitem 1 wings
+
+#tier 3
+#notfortier 1
+#notfortier 2
+#command "#maxage 120"
+#endpose
+
+
+
+------ Terrestrial high priest, standing
+#newpose
+#name "standing vanara elder priest"
+#role "priest"
+#theme "lowland"
+#theme "abysian"
+#theme "alpine"
+#theme "oriental"
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/monkey/vanara/caster/magebases.txt
+#load shadow /data/items/monkey/vanara/normal/shadow.txt
+
+#load hands /data/items/monkey/vanara/normal/hands.txt
+
+#load armor /data/items/monkey/vanara/caster/robes.txt
+#load helmet /data/items/monkey/vanara/caster/helmet.txt 2 1
+
+#load weapon /data/items/monkey/vanara/caster/weapon.txt
+#load offhand /data/items/monkey/vanara/caster/offhands.txt
+
+#load wings /data/items/monkey/vanara/normal/wings.txt
+#load overlay /data/items/monkey/vanara/normal/overlay.txt
+
+#tier 3
+#command "#maxage 90"
+#endpose
+
+
+-------- Terrestrial high priest, sitting
+#newpose
+#name "vanara elder priest, sitting"
+#role "priest"
+#theme "lowland"
+#theme "enlightened"
+
+#load basesprite /data/items/monkey/vanara/caster/magebases_sit.txt
+#load shadow /data/items/monkey/vanara/normal/shadow.txt
+
+#load armor /data/items/monkey/vanara/caster/robes_sitting.txt
+#load helmet /data/items/monkey/vanara/caster/helmet.txt 2 11
+#load weapon /data/items/monkey/vanara/caster/emptyweapons.txt
+
+#tier 3
+#dontvaryweapon
+#command "#maxage 90"
+#endpose
+
+
+-------- Terrestrial high priest - small palaquin
+#newpose
+#name "vanara elder priest - small palaquin"
+#role "priest"
+#theme "lowland"
+#theme "imperial"
+
+#load basesprite /data/items/monkey/vanara/caster/magebases_palaquin_imperial.txt
+
+#load armor /data/items/monkey/vanara/caster/robes_palaquin_imperial.txt
+#load helmet /data/items/monkey/vanara/caster/helmet.txt 31 -22
+#load weapon /data/items/monkey/vanara/caster/emptyweapons.txt
+
+#tier 3
+#dontvaryweapon
+#command "#maxage 90"
+#endpose
+
+
+------ Winged high priest
+#newpose
+#name "winged vanara elder priest"
+#role "priest"
+#theme "winged"
+#theme "imperial"
+#theme "enlightened"
+#theme "oriental"
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/monkey/vanara/caster/magebases.txt
+#load shadow /data/items/monkey/vanara/normal/shadow.txt
+
+#load hands /data/items/monkey/vanara/normal/hands.txt
+
+#load armor /data/items/monkey/vanara/caster/robes.txt
+#load helmet /data/items/monkey/vanara/caster/helmet.txt 2 1
+
+#load weapon /data/items/monkey/vanara/caster/weapon.txt
+
+#load offhand /data/items/monkey/vanara/caster/offhands.txt
+
+#load wings /data/items/monkey/vanara/normal/wings.txt
+#load overlay /data/items/monkey/vanara/normal/overlay.txt
+
+#tier 3
+#command "#maxage 90"
+#endpose
