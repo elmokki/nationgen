@@ -1,0 +1,66 @@
+--- No armor
+
+#new
+#name "no armor"
+#gameid -1
+#theme "naked"
+#theme "primitive"
+#end
+
+--- Leather
+
+#newitem
+#name "furs"
+#gameid 44
+#sprite /graphics/halfmen/centaur/armor/furs.png
+#armor
+#theme "primitive"
+#theme "leather"
+#enditem
+
+#newitem
+#name "leather barding"
+#gameid leather_barding
+#sprite /graphics/halfmen/halfmen/centaur/armor/barding_leather.png
+#armor
+#theme "leather"
+#enditem
+
+--- Scale
+
+#newitem
+#name "bronze scale barding"
+#gameid bronzescale_barding
+#sprite /graphics/halfmen/centaur/armor/barding_bronzescale.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#name "iron scale barding"
+#gameid scale_barding
+#sprite /graphics/halfmen/centaur/armor/barding_scale.png
+#armor
+#theme "iron"
+#enditem
+
+
+--- Plate
+
+#newitem
+#name "bronze plate barding"
+#gameid bronze_barding
+#sprite /graphics/halfmen/centaur/armor/barding_bronze.png
+#armor
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "iron plate barding"
+#gameid plate_barding
+#sprite /graphics/halfmen/centaur/armor/barding_plate.png
+#armor
+#theme "iron"
+#theme "advanced"
+#enditem

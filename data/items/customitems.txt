@@ -3,6 +3,66 @@
 --- Use exact syntax you'd use for dom3 except for #newweapon, #newarmor and #end
 --- Remember #type for armor.
 
+--- Centaur barding
+
+#new customarmor
+#name plate_barding
+#armor
+#command "#type 5"
+#command "#prot 17"
+#command "#def -2"
+#command "#enc 3"
+#command "#rcost 26"
+#command "#ironarmor"
+#command "#name 'Plate Barding'"
+#end
+
+#new customarmor
+#name bronze_barding
+#armor
+#command "#type 5"
+#command "#prot 16"
+#command "#def -2"
+#command "#enc 4"
+#command "#rcost 23"
+#command "#name 'Bronze Barding'"
+#end
+
+#new customarmor
+#name leather_barding
+#armor
+#command "#type 5"
+#command "#prot 7"
+#command "#def 0"
+#command "#enc 0"
+#command "#rcost 6"
+#command "#name 'Leather Barding'"
+#end
+
+#new customarmor
+#name scale_barding
+#armor
+#command "#type 5"
+#command "#prot 12"
+#command "#def -1"
+#command "#enc 1"
+#command "#rcost 15"
+#command "#ironarmor"
+#command "#name 'Scale Barding'"
+#end
+
+#new customarmor
+#name bronzescale_barding
+#armor
+#command "#type 5"
+#command "#prot 11"
+#command "#def -1"
+#command "#enc 1"
+#command "#rcost 13"
+#command "#name 'Bronze Scale Barding'"
+#end
+
+
 --- Additional ice armors
 
 #new customarmor
