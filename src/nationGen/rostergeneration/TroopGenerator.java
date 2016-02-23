@@ -30,6 +30,7 @@ import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
 import nationGen.nation.Nation;
+import nationGen.rostergeneration.montagtemplates.TroopMontagTemplate;
 import nationGen.units.Unit;
 
 public class TroopGenerator {
@@ -229,6 +230,51 @@ public class TroopGenerator {
 	
 	
 
+	public Unit generateUnit(Pose pose, Race race)
+	{
+		Unit u = this.unitGen.generateUnit(race, pose);
+		this.removeEliteSacred(u, u.guessRole());
+		
+		unitGen.armorUnit(u, null, null, u.pose.getItems("armor"), null, false);
+
+		String role = "infantry";
+		if(pose.roles.contains("mounted") || pose.roles.contains("sacred mounted") || pose.roles.contains("elite mounted"))
+			role = "mounted";
+		if(pose.roles.contains("ranged") || !pose.roles.contains("sacred ranged") || !pose.roles.contains("elite ranged"))
+			role = "ranged";
+		
+		Template t = new Template(u.getSlot("armor"), race, u, role, u.pose);
+
+		boolean success = false;
+		if(role.equals("mounted"))
+		{
+			success = armInfantry(u, t);
+			
+		}
+		else
+			success = armCavalry(u, t);
+	
+
+		unitGen.addFreeTemplateFilters(u);
+		if(random.nextDouble() < 0.1 && canGetMoreFilters(u))
+			addTemplateFilter(u, "trooptemplates", "default_templates");
+
+		if(!success)
+		{
+			u = null;
+		}
+		
+		// Bonusweapon
+			
+		if(u != null)
+			this.equipBonusWeapon(u, role, race, t);
+		
+		this.handleExtraGeneration(u, role);
+
+		
+		return u;
+	}
+	
 	/**
 	 * Generates units
 	 * @param role
@@ -330,14 +376,21 @@ public class TroopGenerator {
 			// Add everything to used;
 			addToUsed(unit);
 			
+			// Clean equipment
 			this.cleanUnit(unit);
-	
+
+
+			// Montag stuff
+			if(unitGen.hasMontagPose(unit))
+				unitGen.handleMontagUnits(unit, new TroopMontagTemplate(), "montagtroops");
 		
+			
 			//System.out.println("CREATED A " + role + ": " + unit.getSlot("armor").name + " and " + unit.getSlot("weapon").name + " / " + unit.pose.roles + " | " + unit.pose.name);
 			//if(unit.getSlot("hands") != null)
 			//	System.out.println("DPEDPER: " + unit.getSlot("hands").name + " " + unit.getSlot("basesprite").name);
 		}
 
+		
 		return unit;
 	}
 	

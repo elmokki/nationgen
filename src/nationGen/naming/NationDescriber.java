@@ -76,6 +76,7 @@ public class NationDescriber {
 				desc += tmpDesc.args.get(0);	
 			}
 		
+			
 			for(Filter f : u.appliedFilters)
 			{
 				if(f != null && Generic.getTagValue(f.tags, "description") != null)
@@ -84,6 +85,14 @@ public class NationDescriber {
 				}
 			}
 			
+			
+			if(Generic.containsTag(u.tags, "montagunit"))
+			{
+				if(desc.length() > 0)
+					desc = desc + "\n\n";
+				
+				desc = desc + "When recruited, one unit of this category will appear instead of the unit shown here.";
+			}
 			
 			desc = dr.replace(desc);
 			
@@ -97,7 +106,7 @@ public class NationDescriber {
 	
 	private void describeTroops()
 	{
-		String[] roles = {"ranged", "infantry", "mounted", "chariot"};
+		String[] roles = {"ranged", "infantry", "mounted", "chariot", "sacred"};
 		
 		ChanceIncHandler chandler = new ChanceIncHandler(n);
 		List<Filter> descs = ChanceIncHandler.retrieveFilters("troopdescriptions", "troopdescs", n.nationGen.descriptions, null, n.races.get(0));
@@ -118,7 +127,7 @@ public class NationDescriber {
 	
 			if(role.equals("chariot"))
 				dr.descs.put("%role%", role + "s");
-			if(role.equals("ranged"))
+			if(role.equals("ranged") || role.equals("sacred"))
 				dr.descs.put("%role%", role + " units");
 			
 
@@ -135,10 +144,7 @@ public class NationDescriber {
 				descf = Filter.getRandom(random, chandler.handleChanceIncs(units, possibles));
 
 			}
-			else
-			{
-				System.out.println("No suitable troop descriptions for " + role + "!");
-			}
+
 			
 			describeUnits(dr, units, descf);
 			

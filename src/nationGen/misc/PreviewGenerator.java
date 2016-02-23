@@ -36,7 +36,10 @@ public class PreviewGenerator {
 		troops.addAll(n.generateUnitList("mounted"));
 		troops.addAll(n.generateUnitList("chariot"));
 		troops.addAll(n.generateUnitList("sacred"));
-		
+		troops.addAll(n.generateUnitList("montagsacreds"));
+		troops.addAll(n.generateUnitList("montagtroops"));
+
+
 		for(Unit u : troops)
 		{
 			int x = getSize(u, true);

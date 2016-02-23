@@ -36,6 +36,7 @@ import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
 import nationGen.nation.Nation;
 import nationGen.rostergeneration.TroopGenerator.Template;
+import nationGen.rostergeneration.montagtemplates.MontagTemplate;
 import nationGen.units.Unit;
 
 public class UnitGen {
@@ -64,7 +65,7 @@ public class UnitGen {
 	public Unit generateUnit(Race race, Pose pose)
 	{
 		Unit u = new Unit(nationGen, race, pose, nation);
-
+		
 
 		
 		String[] slots = {"hands", "shadow", "basesprite", "legs"};
@@ -878,6 +879,114 @@ public class UnitGen {
 		}
 	}
 	
+	
+	
+	/**
+	 * Checks whether unit has #montagpose
+	 * @param u
+	 */
+	public boolean hasMontagPose(Unit u)
+	{
+		return Generic.containsTag(u.pose.tags, "montagpose");
+	}
+	
+	/**
+	 * Adds #firstshape -<montag> to the unit and adds units to nation
+	 * @param u Unit
+	 * @return
+	 */
+	public void handleMontagUnits(Unit u, MontagTemplate template, String listname)
+	{
+		
+		ArrayList<Unit> list = new ArrayList<Unit>();
+		LinkedHashMap<Pose, Double> montagposes = new LinkedHashMap<Pose, Double>();
+
+		List<Pose> poses = new ArrayList<Pose>();
+		poses.addAll(u.race.poses);
+		
+		for(String tag : Generic.getTags(u.pose.tags, "montagpose"))
+		{
+			List<String> args = Generic.parseArgs(tag);
+
+			String name = args.get(1);
+			double weight = 1;
+			
+			if(args.size() > 2)
+				weight = Double.parseDouble(args.get(2));
+			
+			
+			for(Pose p : poses)
+				if(p.name.equals(name))
+				{
+					if(args.size() > 2)
+						montagposes.put(p, weight);
+					else
+						montagposes.put(p, p.basechance);
+
+				}
+			
+		}
+		montagposes = chandler.handleChanceIncs(u, montagposes);
+
+		
+		// Determine unit amount
+		int min = 10;
+		int max = 10;
+		if(Generic.containsTag(u.pose.tags, "montagpose_min"))
+			min = Integer.parseInt(Generic.getTagValue(u.pose.tags, "montagpose_min"));
+		if(Generic.containsTag(u.pose.tags, "montagpose_max"))
+			max = Integer.parseInt(Generic.getTagValue(u.pose.tags, "montagpose_min"));
+		
+		int count = min + random.nextInt(max - min + 1);
+		
+		// Generate units
+		int tries = 0;
+		while(list.size() < count && tries < 100)
+		{
+			tries++;
+			
+			Pose p = Pose.getRandom(random, montagposes);
+			Unit newunit = template.generateUnit(u, p, nation, nationGen);
+			
+			if(newunit != null)
+			{
+				list.add(newunit);
+			}
+			
+			if(Generic.getTagValue(p.tags, "maxunits") != null)
+			{
+				int maxunits = Integer.parseInt(Generic.getTagValue(p.tags, "maxunits"));
+				int unitcount = 0;
+				for(Unit nu : list)
+				{
+					if(nu.pose == p)
+						unitcount++;
+				}
+				if(unitcount >= maxunits)
+					montagposes.remove(p);
+			}
+			
+		}
+		
+		if(list.size() > 0)
+		{
+			int montag = nationGen.idHandler.nextMontagId();
+			for(Unit nu : list)
+			{
+				nu.tags.add("hasmontag");
+				nu.commands.add(new Command("#montag", ""+montag));
+			}
+			u.commands.add(new Command("#firstshape", "-"+montag));
+			u.tags.add("montagunit");
+		}
+				
+		if(nation.unitlists.get(listname) == null)
+			nation.unitlists.put(listname, list);
+		else
+			nation.unitlists.get(listname).addAll(list);
+		
+		
+	}
 	
 	private void handlePossibleCommands(Unit u)
 	{

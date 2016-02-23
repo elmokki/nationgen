@@ -43,16 +43,16 @@ public class NationAdvancedSummarizer {
 	{
 		PDSelector pds = new PDSelector(n, n.nationGen);
 		
-		tw.println("Start army:");
-        tw.println("** " + n.comlists.get("commanders").get(0).name);
-        if(n.comlists.get("scouts").size() > 0)
-        	tw.println("** " + n.comlists.get("scouts").get(0).name);
-        else
-        	tw.println("** " + n.comlists.get("commanders").get(1).name);
-  
-		tw.println("** " + pds.getStartArmyAmount(pds.getMilitia(1, 1)) + "x " + pds.getMilitia(1, 1).name);
-		tw.println("** " + pds.getStartArmyAmount(pds.getMilitia(1, 2)) + "x " + pds.getMilitia(1, 2).name);
-
+		tw.println("Province defence:");
+        tw.println("* Commander 1: " + pds.getPDCommander(1).name);
+        tw.println("* Commander 2: " + pds.getPDCommander(2).name);
+        
+		tw.println("* Troop 1a: " + pds.getMilitia(1, 1).name + " - "  + pds.getStartArmyAmount(pds.getMilitia(1, 1)) + " per 10 PD");
+		tw.println("* Troop 1b: " + pds.getMilitia(2, 1).name + " - " + pds.getStartArmyAmount(pds.getMilitia(2, 1)) + " per 10 PD");
+		tw.println("* Troop 2a: " + pds.getMilitia(1, 2).name + " - " + pds.getStartArmyAmount(pds.getMilitia(1, 2)) + " per 10 PD");
+		tw.println("* Troop 2b: " + pds.getMilitia(2, 2).name + " - " + pds.getStartArmyAmount(pds.getMilitia(2, 2)) + " per 10 PD");
+		
+		
 
 	}
 	
@@ -187,6 +187,8 @@ public class NationAdvancedSummarizer {
 			printUnits(tw, "sacred", "Sacreds", n);
 			printUnits(tw, "monsters", "Monsters", n);
 			
+
+			
 			/*
 			if(n.specialmonsters.size() > 0)
 			{
@@ -245,10 +247,15 @@ public class NationAdvancedSummarizer {
 				getTroopInfo(u, tw);
 			tw.println();
 
+		
 			this.printPDInfo(tw, n);
 			tw.println();
 
+			tw.println("Montag units:");
+			printUnits(tw, "montagtroops", "Troops", n);
+			printUnits(tw, "montagsacreds", "Sacreds", n);
 			
+			tw.println();
 			
 			
 			System.out.print(".");
@@ -417,7 +424,28 @@ public class NationAdvancedSummarizer {
 		if(holy)
 			stuff.add("Sacred");
 
+		if(Generic.containsTag(u.tags, "montagunit"))
+		{
+			int shape = -1;
+			for(Command c : u.getCommands())
+				if(c.command.equals("#firstshape"))
+					shape = -1 * Integer.parseInt(c.args.get(0));
+			
+			if(shape != -1)
+				stuff.add("Becomes unit of montag " + shape + " when recruited");
+		}
 		
+
+		if(Generic.containsTag(u.tags, "hasmontag"))
+		{
+			int shape = -1;
+			for(Command c : u.getCommands())
+				if(c.command.equals("#montag"))
+					shape = -1 * Integer.parseInt(c.args.get(0));
+			
+			if(shape != -1)
+				stuff.add("Has montag " + shape);
+		}
 		
 		for(Filter f : u.appliedFilters)
 		{

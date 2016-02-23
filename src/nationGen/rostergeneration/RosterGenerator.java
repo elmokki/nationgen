@@ -68,7 +68,15 @@ public class RosterGenerator {
 		Race primary = nation.races.get(0);
 		Race secondary = nation.races.get(1);
 		
-		int max = 6 + r.nextInt(5); // 6-10
+		int maxtroops = 10;
+		int mintroops = 6;
+		if(Generic.containsTag(primary.tags, "maxtroops"))
+			maxtroops += Integer.parseInt(Generic.getTagValue(primary.tags, "maxtroops"));
+		if(Generic.containsTag(secondary.tags, "mintroops"))
+			mintroops -= Integer.parseInt(Generic.getTagValue(primary.tags, "mintroops"));
+		
+		
+		int max = mintroops + r.nextInt(maxtroops - mintroops + 1); // 6-10 by default
 		int units = 0;
 		int secs = 0;
 		int prims = 0;
@@ -80,9 +88,14 @@ public class RosterGenerator {
 			bonussecchance -= Double.parseDouble(Generic.getTagValue(secondary.tags, "primaryracetroopmod"));
 		
 		int maxprimaries = 100;
+		
 		double minsecaffinity = 0;
 		if(Generic.containsTag(primary.tags, "minsecaffinity"))
 			minsecaffinity = Double.parseDouble(Generic.getTagValue(secondary.tags, "minsecaffinity"));
+		
+		double maxsecaffinity = 0;
+		if(Generic.containsTag(primary.tags, "maxsecaffinity"))
+			maxsecaffinity = Double.parseDouble(Generic.getTagValue(secondary.tags, "maxsecaffinity"));
 		
 		
 
@@ -90,14 +103,19 @@ public class RosterGenerator {
 		// Affinity
 		double secaffinity = r.nextDouble() * bonussecchance;	
 		
-		if(r.nextDouble() < 0.2)
+		double nosecaffinitychance = 0.2;
+		if(Generic.containsTag(primary.tags, "nosecaffinitychance"))
+			maxsecaffinity = Double.parseDouble(Generic.getTagValue(secondary.tags, "nosecaffinitychance"));
+		
+		if(r.nextDouble() < nosecaffinitychance)
 			secaffinity = 0;
 		
 		if(secaffinity < 0.25 && r.nextDouble() < 0.75 && maxprimaries < max)
 			secaffinity = Math.max(minsecaffinity, 0);
 		
 		secaffinity = Math.max(minsecaffinity, secaffinity);
-		
+		secaffinity = Math.min(maxsecaffinity, secaffinity);
+
 		// Amount
 		double secamount = max * 0.3;
 		if(r.nextDouble() < bonussecchance)
@@ -129,14 +147,7 @@ public class RosterGenerator {
 		if(secaffinity == 0)
 			secamount = 0;
 		
-		// Affinity tweaking 
-		if(maxprimaries < max)
-		{
-			secaffinity = Math.max(secaffinity, 0.1);
-		}
-		
 
-			
 		// Max
 		if(secaffinity > 0.5)
 		{
@@ -146,8 +157,10 @@ public class RosterGenerator {
 		else if(secaffinity > 0.3)
 			max = Math.min(10, max + 1);
 		
-
-		
+		if(secamount == 0)
+			max = Math.min(max, maxprimaries);
+		else
+			max = (int) Math.min(max, maxprimaries + secamount);
 		
 		int maxamounts[] = {1, 8, 4, 2};  
 		

@@ -62,13 +62,19 @@ Amount of mapmove penalty when over encumberance. Default is 1.
 If encumberance from equipment is the number set in #lowenctreshold, command set in #lowenccommand will be added to the unit if the unit does not already have an instance of the command.
 
 #secondaryracetroopmod <amount>
-On primary race increases/decreases the likelihood of secondary race troops (Default is 0.5)
+On primary race increases/decreases the roll range of likelihood of secondary race troops (Default is 0.5, which results in 0-0.5)
 
 #primaryracetroopmod <amount>
-On secondary race increases/decreases the likelihood of primary race troops (Default is 0.5)
+On secondary race increases/decreases the roll range of likelihood of primary race troops (Default is, which results in 0-0.5)
 
 #minsecaffinity <amount>
-On primary race increases the minimum likelyhood of secondary race troops (Default is 0.0)
+On primary race increases the minimum likelihood of secondary race troops (Default is 0.0)
+
+#maxsecaffinity <amount>
+On primary race increases the maximum likelihood of secondary race troops (Default is 1.0)
+
+#nosecaffinitychance <amount>
+Chance to reset likelihood of secondary race troops to 0 regardless of other rolls. Minimum likelihood switch above overrides this. (Default is 0.2)
 
 #minsecondaryracetroops <amount>
 On primary race sets the minimum amount of secondary race troops (Default is 0)
@@ -193,6 +199,27 @@ stacks multiplicatively.
 PD/start army amount multiplier. These stack like the above commands. 
 
 --- Pose
+
+#montagpose <pose> [basechance]
+Sets pose named <pose> as a pose this pose might #firstshape into. Basechance option overwrites the original pose basechance for montag 
+purposes only. This was set so that multiple poses do not have to be made for multiple 
+
+#montagpose_min <number>
+#montagpose_max <number>
+Tells how many montag units to generate. Default for both is 10, which means always 10 units. Different minimum and maximum result in
+random amount between the numbers.
+
+#maxunits <number>
+Only this many copies of this pose may be generated. For normal troops it is across all instances of normal troops. For montag units 
+as defined by #montagpose it is per pose defining montagposes - thus #maxunits 1 unit may appear multiple times, but not in the same
+montag.
+
+#maxtroops <number>
+#mintroops <number>
+Sets minimum and maximum for troops on a nation of this priamry race. The actual amount is a random number between minimum and maximum. 
+Defaults to 6 and 10. Be careful with changing this too much: Nations with low diversity may have issues generating with too high numbers 
+and too low numbers may cause strange things. Consider using #maxprimaryracetroops or #maxprimaryracetroopshare instead.
+
 
 #cannot_be_pd
 This unit cannot be used for start armies / province defence

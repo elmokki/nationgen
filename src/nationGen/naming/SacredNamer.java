@@ -65,11 +65,20 @@ public class SacredNamer {
 
 		
 		List<Unit> toName = n.generateUnitList("sacred");
+		toName.addAll(n.generateUnitList("montagsacreds"));
 		for(Unit u : n.generateTroopList())
 			if(Generic.containsTag(u.tags, "elite"))
 			{
 				toName.add(u);
 			}
+		
+		for(Unit u : n.generateUnitList("montagtroops"))
+			if(Generic.containsTag(u.tags, "elite"))
+			{
+				toName.add(u);
+			}
+		
+
 		
 		for(Unit u : toName)
 		{

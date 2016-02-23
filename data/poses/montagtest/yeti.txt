@@ -1,0 +1,115 @@
+-------- Troop
+
+#newpose
+#name "yeti"
+#role "elite infantry"
+#basechance 0
+#theme "enlightened"
+#theme "oriental"
+#theme "occidental"
+#theme "alpine"
+#cannot_be_militia
+#cannot_be_pd
+
+#subrace yeti
+
+#command "#gcost +10"
+
+#renderorder "shadow extra1 cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda"
+
+#load basesprite /data/items/monkey/yeti/bases.txt
+#load shadow /data/items/monkey/yeti/shadow.txt
+#load hands /data/items/monkey/yeti/hands.txt
+
+#load armor /data/items/monkey/yeti/armor.txt
+
+#load weapon /data/items/monkey/yeti/weapon.txt
+#load bonusweapon /data/items/monkey/yeti/bonusranged.txt
+
+#caponlychance 1
+
+#maxunits 3
+#maxvarieties 1
+
+#generateitem 1 bonusweapon
+
+#endpose
+
+
+#newpose
+#name "sacred yeti"
+#role "sacred infantry"
+#basechance 50000
+#theme "enlightened"
+#theme "oriental"
+#theme "occidental"
+#theme "alpine"
+#cannot_be_militia
+#cannot_be_pd
+
+#subrace yeti
+
+#renderorder "shadow extra1 cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda"
+
+#load basesprite /data/items/monkey/yeti/bases.txt
+#load shadow /data/items/monkey/yeti/shadow.txt
+#load hands /data/items/monkey/yeti/hands.txt
+
+#load armor /data/items/monkey/yeti/armor.txt
+
+#load weapon /data/items/monkey/yeti/weapon.txt
+#load bonusweapon /data/items/monkey/yeti/bonusranged.txt
+
+#generateitem 1 bonusweapon
+
+#montagpose "sacred yeti"
+#montagpose "vanara sacred infantry"
+#montagpose "bandar elite infantry"
+#montagpose "markata sacred infantry" 0.5
+
+#maxunits 1
+#caponlychance 0.9
+#sacredratingmulti 1.25
+#endpose
+
+
+-------- Mage
+#newpose
+#name "yeti mage"
+#role "mage"
+#basechance 1
+#theme "enlightened"
+#theme "oriental"
+#theme "occidental"
+#theme "austral"
+#theme "imperial"
+#theme "alpine"
+
+#subrace yeti
+
+#renderorder "shadow extra1 cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda"
+
+#magefilters default_magefilters
+#magefilters default_magefilters_strongdefence_expensive
+
+#magicpriority earth 0.1
+#magicpriority fire 0.1
+#magicpriority air 10
+#magicpriority water 10
+
+#load basesprite /data/items/monkey/yeti/bases.txt
+#load shadow /data/items/monkey/yeti/shadow.txt
+#load hands /data/items/monkey/yeti/hands_mage.txt
+
+#load helmet /data/items/monkey/yeti/helmet.txt
+#load armor /data/items/monkey/yeti/robes.txt
+
+#load weapon /data/items/monkey/yeti/weapon_caster.txt
+
+#tier 3
+#notfortier 2
+#notfortier 1
+
+#dontvaryhat
+#endpose
+

@@ -15,6 +15,7 @@ public class IdHandler {
 	private int site = 1;
 	private int armor = 1;
 	private int name = 1;
+	private int montag = 1;
 	private int mock = -2;
 	
 	public List<Integer> forbiddenNations = new ArrayList<Integer>();
@@ -23,7 +24,8 @@ public class IdHandler {
 	public List<Integer> forbiddenSites = new ArrayList<Integer>();
 	public List<Integer> forbiddenArmors = new ArrayList<Integer>();
 	public List<Integer> forbiddenNames = new ArrayList<Integer>();
-	
+	public List<Integer> forbiddenMontags = new ArrayList<Integer>();
+
 	public IdHandler()
 	{
 
@@ -224,6 +226,25 @@ public class IdHandler {
 					forbiddenNames.add(Integer.parseInt(args.get(0)));
 				}
 			}
+			
+			if(command.equals("montag"))
+			{
+				if(args.get(0).contains("-"))
+				{
+					for(int i = Integer.parseInt(args.get(0).split("-")[0]); i <= Integer.parseInt(args.get(0).split("-")[1]); i++)
+					{
+						forbiddenMontags.add(i);
+					}
+				}
+				else if(args.get(0).equals("start"))
+				{
+					montag = Integer.parseInt(args.get(1)) - 1;
+				}
+				else
+				{
+					forbiddenMontags.add(Integer.parseInt(args.get(0)));
+				}
+			}
 		}
 		
 		file.close();
@@ -292,5 +313,12 @@ public class IdHandler {
 		return name;
 	}
 	
+	public int nextMontagId()
+	{
+		montag++;
+		while(forbiddenMontags.contains(montag))
+			montag++;
+		return montag;
+	}
 	
 }
