@@ -623,7 +623,7 @@ public class TroopGenerator {
 
 			
 			
-			this.handleExtraGeneration(u, role);
+			unitGen.handleExtraGeneration(u);
 			
 			
 		}
@@ -1051,36 +1051,7 @@ public class TroopGenerator {
 	}
 	
 	
-	protected void handleExtraGeneration(Unit u, String role)
-	{
-		List<String> tags = new ArrayList<String>();
-		tags.addAll(u.pose.tags);
-		tags.addAll(u.race.tags);
-		for(Item i : u.slotmap.values())
-			if(i != null)
-				tags.addAll(i.tags);
-		for(Filter f : u.appliedFilters)
-			if(f != null)
-				tags.addAll(f.tags);
-		
-		for(String tag : tags)
-		{
-			List<String> args = Generic.parseArgs(tag);
-			if(args.get(0).equals("generateitem"))
-			{
-				String slot = args.get(2);
-				double chance = Double.parseDouble(args.get(1));
-				if(random.nextDouble() < chance)
-				{
-					Item item = getNewItem(slot, role, u, null);
-					u.setSlot(slot, item);
-					if(used != null && !used.contains(item))
-						used.add(item);
-				}
-			}
-		}
-	}
-	
+
 	
 	
 
