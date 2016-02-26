@@ -772,6 +772,12 @@ public class SacredGenerator extends TroopGenerator {
 		if(sacred)
 			discount = (int)Math.round(discount * (1/1.3));
 		
+		if(u.isRanged() && u.getGoldCost() - discount > 60)
+		{
+			discount += Math.sqrt(u.getGoldCost() - discount) * 2;
+		}
+	
+		
 		u.commands.add(new Command("#gcost", "-" + discount));
 		
 
