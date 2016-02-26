@@ -230,7 +230,7 @@ public class ScoutGenerator extends TroopGenerator {
 		
 		template.color = new Color(60, 60, 60);
 		
-		this.handleExtraGeneration(template, posename);
+		unitGen.handleExtraGeneration(template);
 		
 		return template;
 	}
