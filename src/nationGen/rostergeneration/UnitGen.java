@@ -325,14 +325,15 @@ public class UnitGen {
 				{
 
 					// Fancy chanceinc implementation
-					if(inchere.filterProt(nationGen.armordb,  prot - 3, prot + 3).possibleItems() == 0)
+					if(chandler.handleChanceIncs(u, inchere.filterProt(nationGen.armordb,  prot - 3, prot + 3)).size() == 0)
 					{
 						inchere = u.pose.getItems("helmet");
 					}
 					Item helmet = Entity.getRandom(random, chandler.handleChanceIncs(u, inchere, this.generateTargetProtChanceIncs(prot, 8)));
 					
+					if(helmet != null)
+						u.setSlot("helmet", helmet);
 
-					u.setSlot("helmet", helmet);
 					
 
 					// Traditional implementation
