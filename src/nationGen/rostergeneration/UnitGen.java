@@ -109,7 +109,8 @@ public class UnitGen {
 		}
 		
 
-		
+		// Handles generationchances and stuff
+		this.handleExtraGeneration(u);
 		
 		
 		return u;
@@ -209,8 +210,7 @@ public class UnitGen {
 	 */
 	public void armorUnit(Unit u, ItemSet included, ItemSet excluded, ItemSet poseexclusions, String targettag, boolean mage)
 	{
-		// Handles generationchances and stuff
-		this.handleExtraGeneration(u);
+	
 		// Handles possiblecommands
 		this.handlePossibleCommands(u);
 		
@@ -850,7 +850,7 @@ public class UnitGen {
 	}
 	
 
-	private void handleExtraGeneration(Unit u)
+	public void handleExtraGeneration(Unit u)
 	{
 		List<String> tags = new ArrayList<String>();
 		tags.addAll(u.pose.tags);

@@ -86,6 +86,8 @@ public class SacredGenerator extends TroopGenerator {
 		if(u.getCommandValue("#hp", 10) < 10)
 			defvals[5] = u.getCommandValue("#hp", 10) - Math.min(3, 10 - u.getCommandValue("#hp", 10));
 		
+		
+		
 		for(int i = 0; i < powerups; i++)
 		{
 			List<Filter> ups = new ArrayList<Filter>();
@@ -93,8 +95,8 @@ public class SacredGenerator extends TroopGenerator {
 			{
 				String s = posup[j];
 
-				int dif = u.getCommandValue(s, 10) - defvals[j];
-		
+				int dif = u.getCommandValue(s, defvals[j]) - defvals[j];
+
 				double chance = 1;
 				double scaler = 2;
 				
@@ -641,7 +643,6 @@ public class SacredGenerator extends TroopGenerator {
 		
 		// Add epic stuff
 		this.addEpicness(u, sacred, power);
-		this.handleExtraGeneration(u, role);
 		
 		
 		// Equip
@@ -781,6 +782,12 @@ public class SacredGenerator extends TroopGenerator {
 		
 		if(sacred)
 			discount = (int)Math.round(discount * (1/1.3));
+		
+		if(u.isRanged() && u.getGoldCost() - discount > 60)
+		{
+			discount += Math.sqrt(u.getGoldCost() - discount) * 2;
+		}
+	
 		
 		u.commands.add(new Command("#gcost", "-" + discount));
 		
