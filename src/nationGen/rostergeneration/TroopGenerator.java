@@ -269,7 +269,7 @@ public class TroopGenerator {
 		if(u != null)
 			this.equipBonusWeapon(u, role, race, t);
 		
-		this.handleExtraGeneration(u, role);
+		unitGen.handleExtraGeneration(u);
 
 		
 		return u;
