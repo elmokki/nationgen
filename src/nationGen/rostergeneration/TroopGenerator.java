@@ -86,13 +86,18 @@ public class TroopGenerator {
 	
 	public int getMaxVarieties(Unit u)
 	{
-		
 		int maxvar = 3;
-		if(u.pose.roles.contains("mounted"))
-			maxvar = 2;
-		if(u.pose.roles.contains("chariot"))
-			maxvar = 1;
 		
+		if(Generic.getTagValue(u.pose.tags, "maxvarieties") != null)
+			maxvar = Integer.parseInt(Generic.getTagValue(u.pose.tags, "maxvarieties"));
+		else
+		{
+			maxvar = 3;
+			if(u.pose.roles.contains("mounted"))
+				maxvar = 2;
+			if(u.pose.roles.contains("chariot"))
+				maxvar = 1;
+		}
 
 		if(Generic.getTagValue(u.getSlot("armor").tags, "maxvarieties") != null)
 			maxvar = Math.min(maxvar, Integer.parseInt(Generic.getTagValue(u.getSlot("armor").tags, "maxvarieties")));
@@ -101,10 +106,7 @@ public class TroopGenerator {
 			maxvar = Math.min(maxvar, Integer.parseInt(Generic.getTagValue(u.getSlot("mount").tags, "maxvarieties")));
 		
 		
-		if(Generic.getTagValue(u.pose.tags, "maxvarieties") != null)
-			maxvar = Math.min(maxvar, Integer.parseInt(Generic.getTagValue(u.pose.tags, "maxvarieties")));
-		
-		
+	
 		maxvar = Math.min(u.pose.getItems("weapon").possibleItems(), maxvar);
 
 		
