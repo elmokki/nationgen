@@ -93,7 +93,7 @@ public class RosterGenerator {
 		if(Generic.containsTag(primary.tags, "minsecaffinity"))
 			minsecaffinity = Double.parseDouble(Generic.getTagValue(secondary.tags, "minsecaffinity"));
 		
-		double maxsecaffinity = 0;
+		double maxsecaffinity = 1000;
 		if(Generic.containsTag(primary.tags, "maxsecaffinity"))
 			maxsecaffinity = Double.parseDouble(Generic.getTagValue(secondary.tags, "maxsecaffinity"));
 		
@@ -103,18 +103,18 @@ public class RosterGenerator {
 		// Affinity
 		double secaffinity = r.nextDouble() * bonussecchance;	
 		
-		double nosecaffinitychance = 0.2;
+
+		double nosecaffinitychance = 0.35;
 		if(Generic.containsTag(primary.tags, "nosecaffinitychance"))
-			maxsecaffinity = Double.parseDouble(Generic.getTagValue(secondary.tags, "nosecaffinitychance"));
+			nosecaffinitychance = Double.parseDouble(Generic.getTagValue(secondary.tags, "nosecaffinitychance"));
 		
 		if(r.nextDouble() < nosecaffinitychance)
 			secaffinity = 0;
 		
-		if(secaffinity < 0.25 && r.nextDouble() < 0.75 && maxprimaries < max)
-			secaffinity = Math.max(minsecaffinity, 0);
-		
+	
 		secaffinity = Math.max(minsecaffinity, secaffinity);
 		secaffinity = Math.min(maxsecaffinity, secaffinity);
+
 
 		// Amount
 		double secamount = max * 0.3;
@@ -144,9 +144,9 @@ public class RosterGenerator {
 		if(max - maxprimaries > 0)
 			secamount = Math.max(max - maxprimaries, secamount);
 		
+
 		if(secaffinity == 0)
 			secamount = 0;
-		
 
 		// Max
 		if(secaffinity > 0.5)
@@ -176,7 +176,7 @@ public class RosterGenerator {
 		int cycles = 0;
 		int incs = 1;
 		TroopGenerator tgen = new TroopGenerator(nationGen, nation);
-
+		
 		while(units < max)
 		{
 
