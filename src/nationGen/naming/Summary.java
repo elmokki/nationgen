@@ -91,21 +91,22 @@ public class Summary {
 						elites.add("cavalry");
 					}
 					
-					for(String tag : u.getSlot("mount").tags)
-					{
-						if(tag.startsWith("animal"))
+					if(u.getSlot("mount") != null)
+						for(String tag : u.getSlot("mount").tags)
 						{
-							String mounttype = tag.replaceAll("\"", "");
-							List<String> args = Generic.parseArgs(mounttype, "'");
-							args.remove(0);
-							String str = "";
-							for(String s : args)
-								str = str + s + " ";
-							str = str.trim();
-							if(!lightmounts.contains(str))
-								lightmounts.add(str);
+							if(tag.startsWith("animal"))
+							{
+								String mounttype = tag.replaceAll("\"", "");
+								List<String> args = Generic.parseArgs(mounttype, "'");
+								args.remove(0);
+								String str = "";
+								for(String s : args)
+									str = str + s + " ";
+								str = str.trim();
+								if(!lightmounts.contains(str))
+									lightmounts.add(str);
+							}
 						}
-					}
 				}
 			}
 			else
@@ -115,18 +116,19 @@ public class Summary {
 				{
 					for(String tag : u.getSlot("mount").tags)
 					{
-						if(tag.startsWith("animal"))
-						{
-							String mounttype = tag.replaceAll("\"", "");
-							List<String> args = Generic.parseArgs(mounttype, "'");
-							args.remove(0);
-							String str = "";
-							for(String s : args)
-								str = str + s + " ";
-							str = str.trim();
-							if(!heavymounts.contains(str))
-								heavymounts.add(str);
-						}
+						if(u.getSlot("mount") != null)
+							if(tag.startsWith("animal"))
+							{
+								String mounttype = tag.replaceAll("\"", "");
+								List<String> args = Generic.parseArgs(mounttype, "'");
+								args.remove(0);
+								String str = "";
+								for(String s : args)
+									str = str + s + " ";
+								str = str.trim();
+								if(!heavymounts.contains(str))
+									heavymounts.add(str);
+							}
 
 					}
 				}
