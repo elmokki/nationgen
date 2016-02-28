@@ -964,6 +964,8 @@ public class Nation {
 		if(coms)
 			order = Generic.parseArgs("scouts commanders specialcoms priests mages");
 		
+
+		
 		String line = "#addreccom";
 		if(!coms)
 			line = "#addrecunit";
@@ -980,15 +982,7 @@ public class Nation {
 		listnames.addAll(unitlists.keySet());
 		for(String str : order)
 		{
-			if(str.equals("special"))
-			{
-				/*
-				for(ShapeChangeUnit su : this.specialmonsters)
-					if(!su.thisForm.tags.contains("caponly"))
-						tw.println(line + " " + su.id);
-				*/
-			}
-			else
+			if(true)
 			{
 				for(int i = 1; i <= 10; i++)
 				{
