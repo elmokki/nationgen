@@ -1455,7 +1455,7 @@ public class Unit {
 		
 		
 
-		if(slotmap.get("mount") != null)
+		if(slotmap.get("mount") != null && !slotmap.get("mount").sprite.equals(""))
 		{
 			base = ImageIO.read(new File("./", u.slotmap.get("mount").sprite));
 			w = base.getWidth();
