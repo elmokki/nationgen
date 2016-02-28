@@ -243,7 +243,7 @@ public class RosterGenerator {
 			if(race != null && target != null && race.hasRole(roll))
 			{
 			
-				Unit u = tgen.generateUnit(roll, race, 3);
+				Unit u = tgen.generateUnit(roll, race);
 				
 		
 

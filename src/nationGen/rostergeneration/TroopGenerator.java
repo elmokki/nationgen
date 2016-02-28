@@ -118,6 +118,10 @@ public class TroopGenerator {
 		if(u.pose.roles.contains("mounted"))
 			maxvar = Math.min(getCavVarieties(u.pose), maxvar);
 		
+		if(Generic.getTagValue(u.pose.tags, "maxvarieties_override") != null)
+		{
+			maxvar = Integer.parseInt(Generic.getTagValue(u.pose.tags, "maxvarieties_override"));
+		}
 		return maxvar;
 
 	}
@@ -285,7 +289,7 @@ public class TroopGenerator {
 	 * @param isPrimaryRace
 	 * @return
 	 */
-	public Unit generateUnit(String role, Race race, int maxvarieties)
+	public Unit generateUnit(String role, Race race)
 	{
 		Unit unit = null;
 		
@@ -323,12 +327,12 @@ public class TroopGenerator {
 				// - Wrong role
 				// - Too many units in template
 				// - Correct race but #primaryraceonly
-				if(shouldSkipTemplate(t, isPrimaryRace, maxvarieties, race, role))
+				
+				if(shouldSkipTemplate(t, isPrimaryRace, t.maxvar, race, role))
 				{
 					continue;
 				}
 
-					
 				// Copy unit
 				unit = t.template.getCopy();
 	
@@ -637,6 +641,10 @@ public class TroopGenerator {
 			}
 
 
+			if(poses.size() == 0)
+				poses.addAll(getPosesWithoutMaxUnits(race.getPoses(role)));
+			if(poses.size() == 0)
+				poses.addAll(race.getPoses(role));
 			
 			Pose p = chandler.getRandom(poses, race, role);
 			if(p == null)
@@ -688,7 +696,6 @@ public class TroopGenerator {
 
 		Template t = new Template(u.getSlot("armor"), race, u, role, u.pose);
 
-		//System.out.println("Adding template with " + t.armor);
 
 		//templates.add(t);
 		
