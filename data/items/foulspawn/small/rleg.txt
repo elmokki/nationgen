@@ -2,30 +2,50 @@
 #name "humanoid"
 #gameid -1
 #sprite /graphics/foulspawn/small/rleg/humanoid.png
+#command "#gcost +1"
+#command "#hp +1"
+#command "#enc +1"
+#command "#ap +1"
 #enditem
 
 #newitem
 #name "goblinoid"
 #gameid -1
 #sprite /graphics/foulspawn/small/rleg/goblinoid.png
+#command "#gcost +1"
+#command "#hp +1"
+#command "#enc +1"
+#command "#ap +2"
 #enditem
 
 #newitem
 #name "canid"
 #gameid -1
 #sprite /graphics/foulspawn/small/rleg/canid.png
+#command "#gcost +1"
+#command "#hp +1"
+#command "#enc +1"
+#command "#ap +2"
 #enditem
 
 #newitem
 #name "tentacloid"
 #gameid -1
 #sprite /graphics/foulspawn/small/rleg/tentacle_green.png
+#command "#gcost +0"
+#command "#hp +2"
+#command "#enc +2"
+#command "#ap +1"
 #enditem
 
 #newitem
 #name "fleshblob"
 #gameid -1
 #sprite /graphics/foulspawn/small/rleg/tentacle_pink.png
+#command "#gcost +0"
+#command "#hp +2"
+#command "#enc +2"
+#command "#ap +1"
 #enditem
 
 #newitem
@@ -33,4 +53,10 @@
 #gameid -1
 #sprite /graphics/foulspawn/small/rleg/crab.png
 #needs shadow large_shadow
+#command "#gcost +3"
+#command "#prot +2"
+#command "#hp +2"
+#command "#def +1"
+#command "#enc +1"
+#command "#ap +2"
 #enditem
