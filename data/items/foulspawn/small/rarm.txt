@@ -2,30 +2,42 @@
 #name "humanoid"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/humanoid.png
+#command "#hp +1"
 #enditem
 
 #newitem
 #name "goblinoid"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/goblinoid.png
+#command "#hp +1"
 #enditem
 
 #newitem
 #name "canid"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/canid.png
+#command "#hp +1"
+#command "#str +1"
 #enditem
 
 #newitem
 #name "tentacloid"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/tentacle_green.png
+#command "#hp +2"
+#command "#str -1"
+#needstype rweapon tentacle
+#needs weapon none
 #enditem
 
 #newitem
 #name "fleshblob"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/tentacle_pink.png
+#command "#hp +2"
+#command "#str -1"
+#needstype rweapon tentacle
+#needs weapon none
 #enditem
 
 
@@ -33,28 +45,49 @@
 #name "tentacles_blue"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/tentacles_blue.png
+#command "#hp +0"
+#command "#str -2"
+#needstype rweapon smalltentacle
+#needs weapon none
 #enditem
 
 #newitem
 #name "tentacles_grey"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/tentacles_grey.png
+#command "#hp +0"
+#command "#str -1"
+#needstype rweapon smalltentacle
+#needs weapon none
 #enditem
 
 #newitem
 #name "humanoid_arms"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/arms_humanoid.png
+#command "#hp +2"
+#command "#str +1"
+#needstype weapon twohand
+#needstype offhand onehand
 #enditem
 
 #newitem
 #name "goblinoid_arms"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/arms_goblinoid.png
+#command "#hp +2"
+#command "#str +1"
+#needstype weapon twohand
+#needstype offhand onehand
 #enditem
 
 #newitem
 #name "crab"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/pincer.png
+#command "#prot +2"
+#command "#hp +1"
+#needs rweapon pincer
+#needs weapon none
+#needstype offhand onehand
 #enditem

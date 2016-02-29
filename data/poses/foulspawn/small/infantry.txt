@@ -2,15 +2,14 @@
 -------- Troop
 
 #newpose
-#name copy1
 #role "sacred infantry"
 #role "elite infantry"
 #role "infantry"
 #role "scout"
-#role "mounted"
-#role "ranged"
 
 #renderorder "shadow basesprite rleg lleg rarm larm head overlay shirt armor bonusweapon weapon offhandw hands helmet offhanda"
+
+#no_free_fist
 
 #load basesprite /data/items/foulspawn/small/bases.txt
 #load rarm /data/items/foulspawn/small/rarm.txt
@@ -20,7 +19,6 @@
 #load head /data/items/foulspawn/small/head.txt
 #load shadow /data/items/foulspawn/small/shadow.txt
 #load hands /data/items/foulspawn/small/hands.txt
-
 
 #load armor /data/items/foulspawn/small/armor.txt
 #load helmet /data/items/foulspawn/small/helmet.txt
@@ -32,48 +30,9 @@
 
 #load overlay /data/items/foulspawn/small/overlay.txt
 
-#generateitem 1 rarm
-#generateitem 1 larm
-#generateitem 1 rleg
-#generateitem 1 lleg
-#generateitem 1 head
-
-#maxunits 8
-#maxvarieties 8
-
-#endpose
-
-
-
--------- Troop
-
-#newpose
-#name copy2
-#role "ranged"
-#role "elite ranged"
-#role "sacred ranged"
-
-#renderorder "shadow basesprite rleg lleg rarm larm head overlay shirt armor bonusweapon weapon offhandw hands helmet offhanda"
-
-#load basesprite /data/items/foulspawn/small/bases.txt
-#load rarm /data/items/foulspawn/small/rarm.txt
-#load larm /data/items/foulspawn/small/larm.txt
-#load rleg /data/items/foulspawn/small/rleg.txt
-#load lleg /data/items/foulspawn/small/lleg.txt
-#load head /data/items/foulspawn/small/head.txt
-#load shadow /data/items/foulspawn/small/shadow.txt
-#load hands /data/items/foulspawn/small/hands.txt
-
-
-#load armor /data/items/foulspawn/small/armor.txt
-#load helmet /data/items/foulspawn/small/helmet.txt
-
-#load weapon /data/items/foulspawn/small/weapon.txt
-#load offhand /data/items/foulspawn/small/offhand.txt
-#load offhand /data/items/foulspawn/small/shield.txt
--- #load bonusweapon /data/items/foulspawn/small/bonusranged.txt
-
-#load overlay /data/items/foulspawn/small/overlay.txt
+#load headweapon /data/items/foulspawn/small/headweapon.txt
+#load rweapon /data/items/foulspawn/small/rweapon.txt
+#load lweapon /data/items/foulspawn/small/lweapon.txt
 
 #generateitem 1 rarm
 #generateitem 1 larm
@@ -81,49 +40,7 @@
 #generateitem 1 lleg
 #generateitem 1 head
 
-#maxunits 8
-#maxvarieties 8
-
-#endpose
-
--------- Troop
-
-#newpose
-#name copy3
-#role "mounted"
-#role "elite mounted"
-#role "sacred mounted"
-
-#renderorder "shadow basesprite rleg lleg rarm larm head overlay shirt armor bonusweapon weapon offhandw hands helmet offhanda"
-
-#load basesprite /data/items/foulspawn/small/bases.txt
-#load rarm /data/items/foulspawn/small/rarm.txt
-#load larm /data/items/foulspawn/small/larm.txt
-#load rleg /data/items/foulspawn/small/rleg.txt
-#load lleg /data/items/foulspawn/small/lleg.txt
-#load head /data/items/foulspawn/small/head.txt
-#load shadow /data/items/foulspawn/small/shadow.txt
-#load hands /data/items/foulspawn/small/hands.txt
-
-#load mount /data/items/foulspawn/small/stub_mounts.txt
-
-#load armor /data/items/foulspawn/small/armor.txt
-#load helmet /data/items/foulspawn/small/helmet.txt
-
-#load weapon /data/items/foulspawn/small/weapon.txt
-#load offhand /data/items/foulspawn/small/offhand.txt
-#load offhand /data/items/foulspawn/small/shield.txt
--- #load bonusweapon /data/items/foulspawn/small/bonusranged.txt
-
-#load overlay /data/items/foulspawn/small/overlay.txt
-
-#generateitem 1 rarm
-#generateitem 1 larm
-#generateitem 1 rleg
-#generateitem 1 lleg
-#generateitem 1 head
-
-#maxvarieties 8
+#maxvarieties_override 8
 
 #endpose
 
