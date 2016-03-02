@@ -1,0 +1,16 @@
+Item slots are handled with #itemslot <slot> <modifier>. 
+
+Slot names are those in mod manual in singular form, ie hand/head/body/feet/misc. For modifier +/- for changes, no operator for setting. Ie, #itemslot hand +1 adds a hand, #itemslot hand 1 sets hands to 1. You should avoid hard setting of slots if possible, except at highest possible levels.
+
+All default to human values, ie for hand/head/body/feet/misc defaults are 2/1/1/1/2 and are bounded to at highest 4/2/1/1/5 (up to 5 or 6 misc work iirc but there's a maximum total of slots due to UI) and at lowest 0.
+
+An alternative way to set slots is to have #itemslots defined as a command for the unit, in which case dynamic setting is skipped.
+
+Prioritizes in this order:
+- Race
+- Pose 
+- Filters
+- Race theme
+- Basesprite
+- Other itemslots
+- Unit tags (hardcoded stuff)
