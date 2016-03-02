@@ -9,6 +9,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
@@ -226,6 +227,101 @@ public class Unit {
 			}
 		
 		return n;
+	}
+	
+	
+	private int handleModifier(String mod, int value)
+	{
+		if(mod.startsWith("+") || mod.startsWith("-"))
+		{
+			if(mod.startsWith("+"))
+				mod = mod.substring(1);
+			
+			value += Integer.parseInt(mod);
+		}
+		else
+			value = Integer.parseInt(mod);
+		
+		return value;
+	}
+	
+	public int getItemSlots()
+	{
+		
+		int slots = -1;
+		for(Command c : this.getCommands())
+			if(c.command.equals("#itemslots"))
+				slots = Integer.parseInt(c.args.get(0));
+		
+		if(slots == -1)
+		{
+			slots = 0;
+
+			ArrayList<String> tags =  (ArrayList<String>) Generic.getAllUnitTags(this);
+			if(this.slotmap.get("basesprite") != null)
+				tags.addAll(this.slotmap.get("basesprite").tags);
+
+			for(Item i : this.slotmap.values())
+				if(i != null && i != this.slotmap.get("basesprite"))
+					tags.addAll(i.tags);
+			
+			tags.addAll(this.tags);
+			
+			
+			int head = 1;
+			int body = 1;
+			int feet = 1;
+			int hand = 2;
+			int misc = 2;
+			
+			List<String> args = Generic.getTagValues(tags, "itemslot");
+			for(String arg : args)
+			{
+				if(arg.split(" ")[0].equals("head"))
+					head = handleModifier(arg.split(" ")[1], head);
+				else if(arg.split(" ")[0].equals("misc"))
+					misc = handleModifier(arg.split(" ")[1], misc);
+				else if(arg.split(" ")[0].equals("body"))
+					body = handleModifier(arg.split(" ")[1], body);
+				else if(arg.split(" ")[0].equals("hand"))
+					hand = handleModifier(arg.split(" ")[1], hand);
+				else if(arg.split(" ")[0].equals("feet"))
+					feet = handleModifier(arg.split(" ")[1], feet);			
+			}
+			
+			head = Math.min(head, 1);
+			misc = Math.min(misc, 5);
+			body = Math.min(body, 1);
+			hand = Math.min(hand, 4);
+			feet = Math.min(feet, 1);
+			
+			head = Math.max(head, 0);
+			misc = Math.max(misc, 0);
+			body = Math.max(body, 0);
+			hand = Math.max(hand, 0);
+			feet = Math.max(feet, 0);
+			
+			if(hand > 0)
+				for(int i = 0; i < hand; i++)
+					slots += Math.pow(2, (i+1));
+			if(head > 0)
+				for(int i = 0; i < head; i++)
+					slots += Math.pow(2, (i+7));
+			if(body > 0)
+				slots += 1024;
+			if(feet > 0)
+				slots += 2048;
+			if(misc > 0)
+				for(int i = 0; i < misc; i++)
+					slots += Math.pow(2, (i+12));
+			
+			if(slots == 0)
+					slots = 1;
+			
+			return slots;
+		}
+		
+		return slots;
 	}
 	
 	public boolean isRanged()
@@ -771,6 +867,7 @@ public class Unit {
 		if(this.getSlot("mount") != null)
 		{
 			this.commands.add(new Command("#hp", "+2"));
+			this.tags.add("itemslot feet -1");
 		}
 		
 
@@ -1380,6 +1477,8 @@ public class Unit {
 		List<Command> tempCommands = this.commands;
 
 		
+		tw.println("#itemslots " + this.getItemSlots());
+
 		for(Command c : tempCommands)
 		{
 			if(c.args.size() > 0)
@@ -1394,6 +1493,10 @@ public class Unit {
 						tw.print("\n");
 					else
 						tw.println("\"");
+				}
+				else if(c.command.equals("#itemslots"))
+				{
+					// Skipped here
 				}
 				else
 					tw.println(c.command + " " + Generic.listToString(c.args));
