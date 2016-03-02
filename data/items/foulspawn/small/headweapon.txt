@@ -1,0 +1,95 @@
+#newitem
+#id none
+#gameid -1
+#type "bite"
+#type "poison"
+#type "maw"
+#enditem
+
+#newitem
+#id bite_weak
+#gameid 576
+#type "bite"
+#type "maw"
+#enditem
+
+#newitem
+#id bite
+#gameid 20
+#type "bite"
+#enditem
+
+#newitem
+#id bite_poison_weak
+#gameid 323
+#type "poison"
+#command "#gcost +1"
+#enditem
+
+#newitem
+#id bite_poison_strong
+#gameid 239
+#type "poison"
+#command "#gcost +2"
+#enditem
+
+#newitem
+#id bite_poison_stun
+#gameid 251
+#type "poison"
+#command "#gcost +1"
+#enditem
+
+#newitem
+#id spit_poison_fixed
+#gameid 141
+#type "poison"
+#command "#gcost +1"
+#enditem
+
+#newitem
+#id spit_poison_magic
+#gameid 224
+#type "poison"
+#command "#gcost +2"
+#enditem
+
+#newitem
+#id bite_corrosive
+#gameid 603
+#type "maw"
+#command "#gcost +2"
+#enditem
+
+#newitem
+#id spit_corrosive
+#gameid 599
+#type "maw"
+#command "#gcost +2"
+#enditem
+
+#newitem
+#id tentacle
+#gameid 85
+#type "maw"
+#enditem
+
+#newitem
+#id tentacle_tiny
+#gameid 672
+#type "maw"
+#enditem
+
+#newitem
+#id tongue_sleep
+#gameid 387
+#type "maw"
+#command "#gcost +1"
+#enditem
+
+#newitem
+#id tongue_disease
+#gameid 142
+#type "maw"
+#command "#gcost +2"
+#enditem

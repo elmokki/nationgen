@@ -2,30 +2,95 @@
 #name "humanoid"
 #gameid -1
 #sprite /graphics/foulspawn/small/torso/humanoid.png
+#command "#gcost 4"
+#command "#hp 5"
+#command "#size 2"
+#command "#prot 0"
+#command "#mr 8"
+#command "#mor 10"
+#command "#str 11"
+#command "#att 8"
+#command "#def 8"
+#command "#prec 8"
+#command "#enc 1"
+#command "#ap 4"
+#command "#maxage 50"
 #enditem
 
 #newitem
 #name "goblinoid"
 #gameid -1
 #sprite /graphics/foulspawn/small/torso/goblinoid.png
+#command "#gcost 5"
+#command "#hp 6"
+#command "#size 2"
+#command "#prot 1"
+#command "#mr 8"
+#command "#mor 10"
+#command "#str 11"
+#command "#att 8"
+#command "#def 8"
+#command "#prec 8"
+#command "#enc 1"
+#command "#ap 6"
+#command "#maxage 50"
 #enditem
 
 #newitem
 #name "canid"
 #gameid -1
 #sprite /graphics/foulspawn/small/torso/canid.png
+#command "#gcost 5"
+#command "#hp 6"
+#command "#size 2"
+#command "#prot 2"
+#command "#mr 8"
+#command "#mor 10"
+#command "#str 11"
+#command "#att 8"
+#command "#def 8"
+#command "#prec 8"
+#command "#enc 0"
+#command "#ap 5"
+#command "#maxage 50"
 #enditem
 
 #newitem
 #name "tentacloid"
 #gameid -1
 #sprite /graphics/foulspawn/small/torso/tentacloid.png
+#command "#gcost 6"
+#command "#hp 7"
+#command "#size 2"
+#command "#prot 4"
+#command "#mr 8"
+#command "#mor 10"
+#command "#str 12"
+#command "#att 8"
+#command "#def 8"
+#command "#prec 8"
+#command "#enc 2"
+#command "#ap 3"
+#command "#maxage 50"
 #enditem
 
 #newitem
 #name "fleshblob"
 #gameid -1
 #sprite /graphics/foulspawn/small/torso/fleshblob.png
+#command "#gcost 5"
+#command "#hp 7"
+#command "#size 2"
+#command "#prot 0"
+#command "#mr 8"
+#command "#mor 10"
+#command "#str 12"
+#command "#att 8"
+#command "#def 8"
+#command "#prec 8"
+#command "#enc 2"
+#command "#ap 3"
+#command "#maxage 50"
 #enditem
 
 #newitem
@@ -33,4 +98,17 @@
 #gameid -1
 #sprite /graphics/foulspawn/small/torso/turtle.png
 #needs overlay turtle_overlay
+#command "#gcost 10"
+#command "#hp 7"
+#command "#size 2"
+#command "#prot 12"
+#command "#mr 8"
+#command "#mor 12"
+#command "#str 12"
+#command "#att 8"
+#command "#def 7"
+#command "#prec 8"
+#command "#enc 2"
+#command "#ap 4"
+#command "#maxage 75"
 #enditem
