@@ -1,71 +1,115 @@
 #newitem
 #id none
 #gameid -1
-#nogen
 #enditem
 
 
--- Natural weapons
+-- Hafted 2h weapons
 
 #newitem
-#id tentacle
-#gameid 85
-#type "tentacle"
+#id greataxe
+#gameid 18
+#sprite /graphics/monkey/weapon/vanara/battleaxe.png
+#offsetx -2
+#offsety -1
+#theme "iron"
+#needstype rhand hafted
 #enditem
 
 #newitem
-#id tentacle_sleep
-#gameid 387
-#type "tentacle"
-#type "smalltentacle"
-#command "#gcost +1"
+#id greataxe_bronze
+#gameid bronzebattleaxe
+#sprite /graphics/monkey/weapon/vanara/battleaxe_bronze.png
+#offsetx -2
+#offsety -1
+#theme "bronze"
+#needstype rhand hafted
 #enditem
 
 #newitem
-#id tentacle_strangle
-#gameid 116
-#type "tentacle"
-#type "smalltentacle"
+#id flail
+#gameid 16
+#sprite /graphics/monkey/weapon/vanara/flail.png
+#offsetx -2
+#offsety -1
+#theme "iron"
+#needstype rhand hafted
 #enditem
 
 #newitem
-#id tentacle_tiny
-#gameid 672
-#type "smalltentacle"
+#id flail_bronze
+#gameid 16
+#sprite /graphics/monkey/weapon/vanara/flail_bronze.png
+#offsetx -2
+#offsety -1
+#theme "bronze"
+#needstype rhand hafted
 #enditem
 
 #newitem
-#id tentacle_disease
-#gameid 142
-#type "smalltentacle"
-#command "#gcost +2"
+#id spear
+#gameid 1
+#sprite /graphics/monkey/weapon/vanara/spear.png
+#offsetx -2
+#offsety -1
+#theme "iron"
+#theme formationfighter
+#needstype rhand hafted
 #enditem
 
 #newitem
-#id tentacle_lifedrain
-#gameid 63
-#type "smalltentacle"
-#command "#gcost +2"
+#id spear_bronze
+#gameid 643
+#sprite /graphics/monkey/weapon/vanara/spear_bronze.png
+#offsetx -2
+#offsety -1
+#theme "iron"
+#theme formationfighter
+#needstype rhand hafted
 #enditem
 
 #newitem
-#id tentacle_paralyze
-#gameid 282
-#type "smalltentacle"
-#command "#gcost +1"
+#id longspear
+#gameid 28
+#sprite /graphics/monkey/weapon/vanara/longspear.png
+#offsetx -2
+#offsety -1
+#theme "iron"
+#theme formationfighter
+#needstype rhand hafted
 #enditem
 
 #newitem
-#id tentacle_poison
-#gameid 355
-#type "smalltentacle"
-#command "#gcost +1"
+#id longspear_bronze
+#gameid 644
+#sprite /graphics/monkey/weapon/vanara/longspear_bronze.png
+#offsetx -2
+#offsety -1
+#theme "bronze"
+#theme formationfighter
+#needstype rhand hafted
 #enditem
 
 #newitem
-#id pincer
-#gameid 273
-#type "pincer"
+#id trident
+#gameid 3
+#sprite /graphics/monkey/weapon/vanara/trident.png
+#offsetx -2
+#offsety -1
+#theme "iron"
+#theme formationfighter
+#needstype rhand hafted
+#enditem
+
+#newitem
+#id trident_bronze
+#gameid 641
+#sprite /graphics/monkey/weapon/vanara/trident_bronze.png
+#offsetx -2
+#offsety -1
+#theme "bronze"
+#theme formationfighter
+#needstype rhand hafted
 #enditem
 
 
@@ -106,8 +150,8 @@
 #id axe
 #gameid 17
 #sprite /graphics/vaettir/weapon/hatchet.png
-#offsetx -4
-#offsety -1
+#offsetx -1
+#offsety -4
 #type "onehand"
 #theme "iron"
 #theme "primitive"
@@ -188,8 +232,8 @@
 #id flail
 #gameid 16
 #sprite /graphics/advancedhuman/weapons/flail_1.png
-#offsetx -4
-#offsety -1
+#offsetx -1
+#offsety -4
 #type "twohand"
 #theme "iron"
 #enditem
@@ -198,8 +242,8 @@
 #id spear
 #gameid 1
 #sprite /graphics/advancedhuman/weapons/spear.png
-#offsetx -4
-#offsety -1
+#offsetx -1
+#offsety -4
 #type "twohand"
 #theme "iron"
 #theme formationfighter
@@ -209,8 +253,8 @@
 #id longspear
 #gameid 28
 #sprite /graphics/advancedhuman/weapons/longspear.png
-#offsetx -4
-#offsety -1
+#offsetx -1
+#offsety -4
 #type "twohand"
 #theme "iron"
 #theme formationfighter
@@ -220,8 +264,8 @@
 #id pike
 #gameid 2
 #sprite /graphics/advancedhuman/weapons/pike.png
-#offsetx -4
-#offsety -1
+#offsetx -1
+#offsety -4
 #type "twohand"
 #theme "iron"
 #theme formationfighter
@@ -231,8 +275,8 @@
 #id halberd
 #gameid 5
 #sprite /graphics/advancedhuman/weapons/halberd.png
-#offsetx -4
-#offsety -1
+#offsetx -1
+#offsety -4
 #type "twohand"
 #theme "iron"
 #theme "advanced"
@@ -243,8 +287,8 @@
 #id lucernehammer
 #gameid lucernehammer
 #sprite /graphics/advancedhuman/weapons/lucernehammer.png
-#offsetx -4
-#offsety -1
+#offsetx -1
+#offsety -4
 #type "twohand"
 #theme "advanced"
 #theme "iron"
@@ -255,8 +299,8 @@
 #id bardiche
 #gameid bardiche
 #sprite /graphics/advancedhuman/weapons/bardiche.png
-#offsetx -4
-#offsety -1
+#offsetx -1
+#offsety -4
 #type "twohand"
 #theme "iron"
 #enditem
@@ -265,8 +309,8 @@
 #id trident
 #gameid 3
 #sprite /graphics/advancedhuman/weapons/trident.png
-#offsetx -4
-#offsety -1
+#offsetx -1
+#offsety -4
 #type "twohand"
 #theme "iron"
 #theme formationfighter
