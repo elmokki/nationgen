@@ -106,9 +106,8 @@ public class TroopGenerator {
 			maxvar = Math.min(maxvar, Integer.parseInt(Generic.getTagValue(u.getSlot("mount").tags, "maxvarieties")));
 		
 		
-	
-		maxvar = Math.min(u.pose.getItems("weapon").possibleItems(), maxvar);
-
+		
+		maxvar = Math.min(chandler.handleChanceIncs(u, u.pose.getItems("weapon")).size(), maxvar);
 		
 		for(Filter f : u.appliedFilters)
 			if(Generic.getTagValue(f.tags, "maxvarieties") != null)

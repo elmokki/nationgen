@@ -636,22 +636,22 @@ public class ChanceIncHandler {
 	 */
 	private <T extends Filter> void handleThemeIncs(LinkedHashMap<T, Double> filters, List<String> miscincs, Race r)
 	{
+		
+		List<String> chanceincs = new ArrayList<String>();
+		
+		// Add race themes if appliceable!
+		if(r != null)
+			chanceincs.addAll(getRaceThemeIncs(r)); // Should never be null.
+
+		// Add all nation theme themeincs!
+		for(Theme t : n.nationthemes)
+			chanceincs.addAll(t.themeincs);
+		
+		chanceincs.addAll(miscincs);
+		
 		for(T f : filters.keySet())
 		{
-			List<String> chanceincs = new ArrayList<String>();
-			
-			// Add race themes if appliceable!
-			if(r != null)
-				chanceincs.addAll(getRaceThemeIncs(r)); // Should never be null.
-
-			// Add all nation theme themeincs!
-			for(Theme t : n.nationthemes)
-				chanceincs.addAll(t.themeincs);
-			
-			chanceincs.addAll(miscincs);
-			
-
-			
+	
 			for(String str : chanceincs)
 			{
 				List<String> args = Generic.parseArgs(str, "'");
@@ -697,6 +697,21 @@ public class ChanceIncHandler {
 						}
 					}
 				}
+				else if(args.get(0).equals("thisitemslottag") && args.size() >= 3 && f.name != null)
+				{
+					boolean not = args.contains("not");
+					if(f.tags.contains(args.get(args.size() - 2)) != not)
+					{
+						if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
+						{
+							Item i = (Item)f;
+							if(i.slot.equals(args.get(args.size() - 3)))
+							{
+								applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+							}
+						}
+					}
+				}
 				else if(args.get(0).equals("thisitemtheme") && args.size() >= 3 && f.name != null)
 				{
 					boolean not = args.contains("not");
@@ -706,6 +721,21 @@ public class ChanceIncHandler {
 						if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
 						{
 							applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+						}
+					}
+				}
+				else if(args.get(0).equals("thisitemslottheme") && args.size() >= 3 && f.name != null)
+				{
+					boolean not = args.contains("not");
+					if(f.themes.contains(args.get(args.size() - 2)) != not)
+					{
+						if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
+						{
+							Item i = (Item)f;
+							if(i.slot.equals(args.get(args.size() - 3)))
+							{
+								applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+							}
 						}
 					}
 				}

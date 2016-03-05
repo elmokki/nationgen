@@ -50,6 +50,7 @@ import nationGen.entities.MagicFilter;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.items.Item;
+import nationGen.items.ItemDependency;
 import nationGen.magic.MageGenerator;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
@@ -336,69 +337,107 @@ public class Unit {
 		return false;
 	}
 	
-	private void handleDependency(String slotname)
+	private void handleDependency(String slotname, boolean lagged)
 	{
 		if(getSlot(slotname) == null)
 			return;
 		
+		ChanceIncHandler chandler = null;
+		Random r = null;
+		if(nation != null)
+		{
+			chandler = new ChanceIncHandler(nation);
+			r = new Random(nation.random.nextInt());
+		}
+		
 		// This handles #needs
 		if(getSlot(slotname).dependencies.size() > 0)
 		{
-			for(String itemname : getSlot(slotname).dependencies.keySet())
+			for(ItemDependency d : getSlot(slotname).dependencies)
 			{
-				String slot = getSlot(slotname).dependencies.get(itemname);
+				if(d.lagged != lagged)
+					continue;
+				
+				String target = d.target;
+				String slot = d.slot;
 				
 	
-				if(pose.getItems(slot) == null)
+				if(!d.type) // Handle needs and setslot
 				{
-			
-					System.out.println("#needs for " + slotname + ", item " + itemname + " and item " + getSlot(slotname).name + " on slot " + slot + " failed. Roles " + this.pose.roles + ", race " + race.name );
-					break;
+					String command = "#needs";
+					if(lagged)
+						command = "#forceslot";
+					
+					if(pose.getItems(slot) == null)
+					{
+				
+						System.out.println(command + " for " + slotname + ", item " + target + " and item " + getSlot(slotname).name + " on slot " + slot + " failed. Roles " + this.pose.roles + ", race " + race.name );
+						break;
+					}
+					Item item = pose.getItems(slot).getItemWithName(target, slot);
+					
+					
+					if(item != null)
+					{
+						setSlot(slot, item); 
+					}
+					else
+					{
+	
+	
+						System.out.println("!!! " + getSlot(slotname).name + " on slot " + slotname + " tried to link to " + target + " on list " + slot + ", but such item was not found. Check your definitions! Pose " + this.pose.roles + ", race " + this.race.name);
+					}
 				}
-				Item item = pose.getItems(slot).getItemWithName(itemname, slot);
-				
-				
-				if(item != null)
-					setSlot(slot, item); 
-				else
+				else if(this.nation != null) // Handle needstype and setslottype
 				{
-
-
-					System.out.println("!!! " + getSlot(slotname).name + " on slot " + slotname + " tried to link to " + itemname + " on list " + slot + ", but such item was not found. Check your definitions! Pose " + this.pose.roles + ", race " + this.race.name);
+					String command = "#needstype";
+					if(lagged)
+						command = "#forceslottype";
+					
+			
+				
+			
+					if(pose.getItems(slot) == null)
+					{
+						System.out.println(command + " for " + slotname + ", type " + target + " and item " + getSlot(slotname).name + " on slot " + slot + " failed due to the slot having no items. Roles " + this.pose.roles + ", race " + race.name );
+						break;
+					}
+					
+					
+					List<Item> possibles = ChanceIncHandler.getFiltersWithType(target, pose.getItems(slot));
+					Item item = Entity.getRandom(r, chandler.handleChanceIncs(this, possibles));
+					
+					if(item != null)
+					{
+						setSlot(slot, item); 
+					}
 				}
 			}
 		}
 		
-		// This handles #needstype
-		if(getSlot(slotname).typedependencies.size() > 0 && this.nation != null)
-		{
-			ChanceIncHandler chandler = new ChanceIncHandler(nation);
-			Random r = new Random(nation.random.nextInt());
-			
-			for(String type : getSlot(slotname).typedependencies.keySet())
-			{
-				String slot = getSlot(slotname).typedependencies.get(type);
-				
-	
-				if(pose.getItems(slot) == null)
-				{
-					System.out.println("#needstype for " + slotname + ", type " + type + " and item " + getSlot(slotname).name + " on slot " + slot + " failed due to the slot having no items. Roles " + this.pose.roles + ", race " + race.name );
-					break;
-				}
-				
-				
-				List<Item> possibles = ChanceIncHandler.getFiltersWithType(type, pose.getItems(slot));
-		
-				
-				Item item = Entity.getRandom(r, chandler.handleChanceIncs(this, possibles));
-				
-				if(item != null)
-					setSlot(slot, item); 
-	
-			}
-		}
+
 	}
 
+	
+	private void handleAddThemeinc(Item item)
+	{
+		if(item == null)
+			return;
+		
+		List<String> tags = Generic.getTagValues(item.tags, "addthemeinc");
+		if(tags.size() == 0)
+			return;
+		
+		Filter f = new Filter(nationGen);
+		f.name = item.slot + " " + item.name + " generation effects";
+		f.tags.add("do_not_show_in_descriptions");
+		
+		for(String t : tags)
+			f.handleOwnCommand("#themeinc " + t);
+		
+		
+		this.appliedFilters.add(f);
+	}
 	
 	public void setSlot(String slotname, Item newitem)
 	{
@@ -410,8 +449,8 @@ public class Unit {
 			return;
 
 
-		handleDependency(slotname);
-		
+		handleDependency(slotname, false);
+		handleAddThemeinc(newitem);
 
 		
 	}
@@ -863,16 +902,18 @@ public class Unit {
 			System.out.println("UNIT NAMING ERROR! PLEASE REPORT THE SEED!");
 		}
 		
-		// +2hp to mounted
-		if(this.getSlot("mount") != null)
+		// Slot hard setting
+		for(String slot : this.slotmap.keySet())
 		{
-			this.commands.add(new Command("#hp", "+2"));
-			this.tags.add("itemslot feet -1");
+			if(getSlot(slot) != null)
+			{
+				handleDependency(slot, true);
+			}
 		}
 		
-
+		
 		// Slot removal
-		for(String slot : this.pose.renderorder.split(" "))
+		for(String slot : this.slotmap.keySet())
 		{
 			if(getSlot(slot) != null)
 			{
@@ -880,6 +921,13 @@ public class Unit {
 					if(tag.startsWith("noslot "))
 						this.setSlot(tag.split(" ")[1], null);
 			}
+		}
+		
+		// +2hp to mounted
+		if(this.getSlot("mount") != null)
+		{
+			this.commands.add(new Command("#hp", "+2"));
+			this.tags.add("itemslot feet -1");
 		}
 		
 		// Handle custom equipment

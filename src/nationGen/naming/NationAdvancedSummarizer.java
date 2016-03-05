@@ -449,6 +449,9 @@ public class NationAdvancedSummarizer {
 		
 		for(Filter f : u.appliedFilters)
 		{
+			if(f.tags.contains("do_not_show_in_descriptions"))
+				continue;
+			
 			String text = null;
 			
 			if(Generic.containsTag(f.tags, "description"))
