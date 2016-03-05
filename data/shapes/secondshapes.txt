@@ -1171,3 +1171,68 @@
 #nogcost
 #mount
 #end
+
+#new secondshape
+#name "toad_jaguar_mount"
+#command "#name 'Giant Toad'"
+#command "#copyspr 1359"
+#command "#itemslots 12288"
+#command "#str 11"
+#command "#mor 12"
+#command "#mr 5"
+#command "#prot 3"
+#command "#hp 21"
+#command "#att 7"
+#command "#def 6"
+#command "#prec 5"
+#command "#ap 6"
+#command "#mapmove 2"
+#command "#enc 3"
+#command "#weapon 324"
+#command "#weapon 29"
+#command "#animal"
+#command "#coldblooded"
+#command "#size 3"
+#command "#trample"
+#command "#poisonres 15"
+#command "#poisonskin 20"
+#command "#swampsurvival"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "toad_sapphire_mount"
+#command "#name 'Giant Frog'"
+#command "#spr1 ./graphics/mounts/standard/toad_sapphire.png"
+#command "#spr2 shift"
+#command "#itemslots 12288"
+#command "#str 11"
+#command "#mor 12"
+#command "#mr 5"
+#command "#prot 1"
+#command "#hp 21"
+#command "#att 7"
+#command "#def 6"
+#command "#prec 5"
+#command "#ap 9"
+#command "#mapmove 2"
+#command "#enc 3"
+#command "#weapon 29"
+#command "#animal"
+#command "#coldblooded"
+#command "#size 3"
+#command "#trample"
+#command "#poisonres 15"
+#command "#poisonskin 20"
+#command "#swampsurvival"
+#command "#amphibian"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#nowayback
+#nogcost
+#mount
+#end
