@@ -106,7 +106,7 @@ public class NationGen {
 		
 
 		try {
-	        System.out.print("Loading Edi's Dom4DB... ");
+	        System.out.print("Loading Larzm42's Dom4 Mod Inspector database... ");
 			loadDom3DB();
 			System.out.println("done!");
 	        System.out.print("Loading definitions... ");
