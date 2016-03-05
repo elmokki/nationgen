@@ -636,22 +636,22 @@ public class ChanceIncHandler {
 	 */
 	private <T extends Filter> void handleThemeIncs(LinkedHashMap<T, Double> filters, List<String> miscincs, Race r)
 	{
+		
+		List<String> chanceincs = new ArrayList<String>();
+		
+		// Add race themes if appliceable!
+		if(r != null)
+			chanceincs.addAll(getRaceThemeIncs(r)); // Should never be null.
+
+		// Add all nation theme themeincs!
+		for(Theme t : n.nationthemes)
+			chanceincs.addAll(t.themeincs);
+		
+		chanceincs.addAll(miscincs);
+		
 		for(T f : filters.keySet())
 		{
-			List<String> chanceincs = new ArrayList<String>();
-			
-			// Add race themes if appliceable!
-			if(r != null)
-				chanceincs.addAll(getRaceThemeIncs(r)); // Should never be null.
-
-			// Add all nation theme themeincs!
-			for(Theme t : n.nationthemes)
-				chanceincs.addAll(t.themeincs);
-			
-			chanceincs.addAll(miscincs);
-			
-
-			
+	
 			for(String str : chanceincs)
 			{
 				List<String> args = Generic.parseArgs(str, "'");
