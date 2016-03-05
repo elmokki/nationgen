@@ -7,7 +7,7 @@
 #role "infantry"
 #role "scout"
 
-#renderorder "shadow basesprite rarm larm rweapon rleg lleg head overlay shirt pants armor bonusweapon weapon offhandw hands helmet offhanda"
+#renderorder "shadow basesprite rarm rweapon rleg lleg larm head overlay shirt pants armor bonusweapon weapon offhandw hands helmet offhanda"
 
 #no_free_fist
 
@@ -26,7 +26,6 @@
 #load helmet /data/items/foulspawn/small/helmet.txt
 
 #load weapon /data/items/foulspawn/small/weapon.txt
-#load rweapon /data/items/foulspawn/small/rweapon.txt
 #load offhand /data/items/foulspawn/small/offhand.txt
 #load offhand /data/items/foulspawn/small/shield.txt
 -- #load bonusweapon /data/items/foulspawn/small/bonusranged.txt
@@ -35,15 +34,13 @@
 
 #load headweapon /data/items/foulspawn/small/headweapon.txt
 
-#generateitem 1 rarm
-#generateitem 1 rweapon
-#generateitem 1 larm
-#generateitem 1 rleg
-#generateitem 1 lleg
-#generateitem 1 head
-#generateitem 1 head
-#generateitem 1 shirt
 #generateitem 1 pants
+#generateitem 1 shirt
+#generateitem 1 head
+#generateitem 1 lleg
+#generateitem 1 rleg
+#generateitem 1 larm
+#generateitem 1 rarm
 
 #maxvarieties_override 8
 
