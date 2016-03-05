@@ -584,22 +584,22 @@ public class Unit {
 			else if(c.command.equals("#ressize"))
 				ressize = Integer.parseInt(c.args.get(0));
 		
-		if(getSlot("armor") != null)
-			res = res + armordb.GetInteger(this.getSlot("armor").id, "res");
-		if(getSlot("helmet") != null)
-			res = res + armordb.GetInteger(this.getSlot("helmet").id, "res");
-		if(getSlot("weapon") != null)
-			res = res + weapondb.GetInteger(this.getSlot("weapon").id, "res");
-		if(getSlot("bonusweapon") != null)
-			res = res + weapondb.GetInteger(this.getSlot("bonusweapon").id, "res");
-		if(getSlot("offhand") != null)
-		{
-			if(getSlot("offhand").armor)
-				res = res + armordb.GetInteger(this.getSlot("offhand").id, "res");
-			else
-				res = res + weapondb.GetInteger(this.getSlot("offhand").id, "res");
-		}
 		
+		for(Item i : this.slotmap.values())
+		{
+			if(i == null || i.id.equals("-1"))
+				continue;
+			
+			Dom3DB db = null;
+			if(i.armor)
+				db = armordb;
+			else
+				db = weapondb;
+			
+			res = res + db.GetInteger(i.id, "res");
+
+		}
+
 
 
 		
@@ -991,12 +991,14 @@ public class Unit {
 			int origMM = MM;
 			
 			int enc = 0;
-			if(getSlot("armor") != null)
-				enc += nationGen.armordb.GetInteger(getSlot("armor").id, "enc");
-			if(getSlot("offhand") != null && getSlot("offhand").armor)
-				enc += nationGen.armordb.GetInteger(getSlot("offhand").id, "enc");
-			if(getSlot("helmet") != null)
-				enc += nationGen.armordb.GetInteger(getSlot("helmet").id, "enc");
+			for(String slot : slotmap.keySet())
+			{
+				if(getSlot(slot) != null && getSlot(slot).armor && !getSlot(slot).id.equals("-1"))
+				{
+					enc += nationGen.armordb.GetInteger(getSlot(slot).id, "enc", 0);
+				}
+			}
+			
 			
 			int prot = this.getTotalProt(false);
 			
@@ -1375,12 +1377,23 @@ public class Unit {
 	
 		Dom3DB armordb = nationGen.armordb;
 		
-		if(getSlot("armor") != null)
-			armorprot = armordb.GetInteger(getSlot("armor").id, "prot", 0);
-		
-		if(getSlot("helmet") != null)
-			helmetprot = armordb.GetInteger(getSlot("helmet").id, "prot", 0);
+		for(String slot : slotmap.keySet())
+		{
+			if(getSlot(slot) != null && getSlot(slot).armor)
+			{
+				if(armordb.GetInteger(getSlot(slot).id, "type") == 5)
+				{
+					armorprot += armordb.GetInteger(getSlot(slot).id, "prot", 0);
+				}
+				else if(armordb.GetInteger(getSlot(slot).id, "type") == 6)
+				{
+					helmetprot += armordb.GetInteger(getSlot(slot).id, "prot", 0);
+				}
 
+			}
+		
+		}
+		
 		// To not make special stuff that may not be handled considered light
 		if(armorprot == 0 && getSlot("armor") != null && !getSlot("armor").id.equals("-1"))
 			armorprot = 10;
@@ -1396,9 +1409,7 @@ public class Unit {
 	
 	public int getTotalEnc()
 	{
-		int armorprot = 0;
-		int helmetprot = 0;
-		int offhandprot = 0;
+		int eqenc = 0;
 		int natural = 0;
 		
 		for(Command c : this.getCommands())
@@ -1412,19 +1423,19 @@ public class Unit {
 	
 		Dom3DB armordb = nationGen.armordb;
 		
-		if(getSlot("armor") != null)
-			armorprot = armordb.GetInteger(getSlot("armor").id, "enc", 0);
 		
-		if(getSlot("helmet") != null)
-			helmetprot = armordb.GetInteger(getSlot("helmet").id, "enc", 0);
-
+		for(String slot : slotmap.keySet())
+		{
+			if(getSlot(slot) != null && getSlot(slot).armor && !getSlot(slot).id.equals("-1"))
+			{
+				eqenc += armordb.GetInteger(getSlot(slot).id, "enc", 0);
+			}
+		}
 		
-		if(getSlot("offhand") != null)
-			offhandprot = armordb.GetInteger(getSlot("offhand").id, "enc", 0);
 
 
 
-		double prot = offhandprot + armorprot + helmetprot + natural;
+		double prot = eqenc + natural;
 		
 		return (int)prot;
 	}
