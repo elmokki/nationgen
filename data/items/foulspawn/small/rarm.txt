@@ -4,6 +4,7 @@
 #sprite /graphics/foulspawn/small/rarm/humanoid.png
 #command "#hp +1"
 -- #needstype rhand humanoid
+#needstype weapon onehand
 #itemslot hand +1
 #enditem
 
@@ -13,6 +14,7 @@
 #sprite /graphics/foulspawn/small/rarm/goblinoid.png
 #command "#hp +1"
 -- #needstype rhand goblinoid
+#needstype weapon onehand
 #itemslot hand +1
 #enditem
 
@@ -23,6 +25,7 @@
 #command "#hp +1"
 #command "#str +1"
 -- #needstype rhand canidoid
+#needstype weapon onehand
 #itemslot hand +1
 #enditem
 
@@ -32,7 +35,7 @@
 #sprite /graphics/foulspawn/small/rarm/tentacle_green.png
 #command "#hp +2"
 #command "#str -1"
-#needstype rweapon tentacle
+#needstype weapon tentacle
 -- #needs rhand none
 #enditem
 
@@ -42,7 +45,7 @@
 #sprite /graphics/foulspawn/small/rarm/tentacle_pink.png
 #command "#hp +2"
 #command "#str -1"
-#needstype rweapon tentacle
+#needstype weapon tentacle
 -- #needs rhand none
 #enditem
 
@@ -53,7 +56,7 @@
 #sprite /graphics/foulspawn/small/rarm/tentacles_blue.png
 #command "#hp +0"
 #command "#str -2"
-#needstype rweapon smalltentacle
+#needstype weapon smalltentacle
 -- #needs rhand none
 #enditem
 
@@ -63,7 +66,7 @@
 #sprite /graphics/foulspawn/small/rarm/tentacles_grey.png
 #command "#hp +0"
 #command "#str -1"
-#needstype rweapon smalltentacle
+#needstype weapon smalltentacle
 -- #needs rhand none
 #enditem
 
@@ -73,7 +76,7 @@
 #sprite /graphics/foulspawn/small/rarm/arms_humanoid.png
 #command "#hp +2"
 #command "#str +1"
-#needstype rweapon twohand
+#needstype weapon twohand
 #needstype offhand onehand
 -- #needstype rhand humanoid_two
 #itemslot hand +2
@@ -85,7 +88,7 @@
 #sprite /graphics/foulspawn/small/rarm/arms_goblinoid.png
 #command "#hp +2"
 #command "#str +1"
-#needstype rweapon twohand
+#needstype weapon twohand
 #needstype offhand onehand
 -- #needstype rhand goblinoid_two
 #itemslot hand +2
@@ -97,7 +100,7 @@
 #sprite /graphics/foulspawn/small/rarm/pincer.png
 #command "#prot +2"
 #command "#hp +1"
-#needs rweapon pincer
+#needs weapon pincer
 #needstype offhand onehand
 -- #needs rhand none
 #enditem
