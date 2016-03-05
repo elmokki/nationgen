@@ -697,6 +697,21 @@ public class ChanceIncHandler {
 						}
 					}
 				}
+				else if(args.get(0).equals("thisitemslottag") && args.size() >= 3 && f.name != null)
+				{
+					boolean not = args.contains("not");
+					if(f.tags.contains(args.get(args.size() - 2)) != not)
+					{
+						if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
+						{
+							Item i = (Item)f;
+							if(i.slot.equals(args.get(args.size() - 3)))
+							{
+								applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+							}
+						}
+					}
+				}
 				else if(args.get(0).equals("thisitemtheme") && args.size() >= 3 && f.name != null)
 				{
 					boolean not = args.contains("not");
@@ -706,6 +721,21 @@ public class ChanceIncHandler {
 						if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
 						{
 							applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+						}
+					}
+				}
+				else if(args.get(0).equals("thisitemslottheme") && args.size() >= 3 && f.name != null)
+				{
+					boolean not = args.contains("not");
+					if(f.themes.contains(args.get(args.size() - 2)) != not)
+					{
+						if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
+						{
+							Item i = (Item)f;
+							if(i.slot.equals(args.get(args.size() - 3)))
+							{
+								applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+							}
 						}
 					}
 				}
