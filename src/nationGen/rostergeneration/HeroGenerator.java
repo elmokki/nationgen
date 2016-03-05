@@ -120,6 +120,7 @@ public class HeroGenerator {
 			MagicFilter f = new MagicFilter(ng);
 			f.prio = prio;
 			f.pattern = pat;
+			f.tags.add("do_not_show_in_descriptions");
 			hero.appliedFilters.add(f);
 		}
 		

@@ -844,6 +844,7 @@ public class MageGenerator extends TroopGenerator {
 		f.pattern = p;
 		f.name = "MAGICPICKS";
 		f.tags.addAll(p.tags);
+		f.tags.add("do_not_show_in_descriptions");
 		return f;
 	}
 	
@@ -2530,6 +2531,7 @@ public class MageGenerator extends TroopGenerator {
 		m.pattern = p;
 		m.prio = prio;
 		m.name = "PRIESTPICKS";
+		m.tags.add("do_not_show_in_descriptions");
 		
 		return m;
 	
