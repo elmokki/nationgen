@@ -294,6 +294,10 @@ Draws the given sprite or the sprite itself if argument is self on top of the it
 #maxvarieties <number>
 How many varieties of certain armor level of this pose can exist. . Only works on body armor. Overridden by ability template version of this command.
 
+#addthemeinc <themeinc>
+Essentially adds a theme filter with <themeinc> to the unit. The themeinc argument should be just like a command that starts with #themeinc, but without #themeinc.
+For example: "#addthemeinc thisitemtag leather *10"
+
 --- Ability templates
 
 #maxvarieties <number>
