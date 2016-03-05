@@ -34,9 +34,9 @@ public class Item extends Filter {
 	protected int offsetx = 0;
 	protected int offsety = 0;
 	
-	
-	public LinkedHashMap<String, String> dependencies = new LinkedHashMap<String, String>();
-	public LinkedHashMap<String, String> typedependencies = new LinkedHashMap<String, String>();
+	public ArrayList<ItemDependency> dependencies = new ArrayList<ItemDependency>();
+	//public LinkedHashMap<String, String> dependencies = new LinkedHashMap<String, String>();
+	//public LinkedHashMap<String, String> typedependencies = new LinkedHashMap<String, String>();
 
 	public List<Command> commands = new ArrayList<Command>();
 	public String slot = "";
@@ -82,8 +82,7 @@ public class Item extends Filter {
 		item.armor = armor;
 		item.offsetx = offsetx;
 		item.offsety = offsety;
-		dependencies.putAll(dependencies);
-		typedependencies.putAll(typedependencies);
+		dependencies.addAll(dependencies);
 		item.commands.addAll(commands);
 		item.slot = slot;
 		item.set = set;
@@ -127,10 +126,16 @@ public class Item extends Filter {
 		else if(args.get(0).equals("#offsety"))
 			this.offsety = Integer.parseInt(args.get(1));
 		else if(args.get(0).equals("#needs"))
-			this.dependencies.put(args.get(2), args.get(1));
+			this.dependencies.add(new ItemDependency(args.get(1), args.get(2), false, false));
 		else if(args.get(0).equals("#needstype"))
 		{
-			this.typedependencies.put(args.get(2), args.get(1));
+			this.dependencies.add(new ItemDependency(args.get(1), args.get(2), true, false));
+		}
+		else if(args.get(0).equals("#forceslot"))
+			this.dependencies.add(new ItemDependency(args.get(1), args.get(2), false, true));
+		else if(args.get(0).equals("#forceslottype"))
+		{
+			this.dependencies.add(new ItemDependency(args.get(1), args.get(2), true, true));
 		}
 		else if(args.get(0).equals("#command") || args.get(0).equals("#define"))
 			this.commands.add(Command.parseCommand(args.get(1)));

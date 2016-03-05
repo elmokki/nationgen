@@ -298,6 +298,19 @@ How many varieties of certain armor level of this pose can exist. . Only works o
 Essentially adds a theme filter with <themeinc> to the unit. The themeinc argument should be just like a command that starts with #themeinc, but without #themeinc.
 For example: "#addthemeinc thisitemtag leather *10"
 
+#needs <slot> <name>
+When this item is added to a slot, the program tries to add item named <name> to <slot>.
+
+#forceslot <slot> <name>
+At the end of item generation, the program tries to add item named <name> to <slot>. May have adverse effects on generation on important slots (weapon, armor, mount etc)
+
+#needstype <slot> <type>
+When this item is added to a slot, the program tries to add a random item of #type <type> to <slot>.
+
+#forceslottype <slot> <type>
+At the end of item generation, the program tries to add a random item of #type <type> to <slot>. May have adverse effects on generation on important slots (weapon, armor, mount etc)
+
+
 --- Ability templates
 
 #maxvarieties <number>
