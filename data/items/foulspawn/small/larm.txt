@@ -29,7 +29,7 @@
 #sprite /graphics/foulspawn/small/larm/tentacle_green.png
 #command "#hp +2"
 #command "#str -1"
-#needstype weapon tentacle
+#addthemeinc thisitemslottag not offhand tentacle *0
 #enditem
 
 #newitem
@@ -38,7 +38,7 @@
 #sprite /graphics/foulspawn/small/larm/tentacle_pink.png
 #command "#hp +2"
 #command "#str -1"
-#needstype weapon tentacle
+#addthemeinc thisitemslottag not offhand tentacle *0
 #enditem
 
 #newitem
@@ -48,5 +48,5 @@
 #command "#prot +2"
 #command "#hp +1"
 #command "#str +0"
-#needstype weapon pincer
+#addthemeinc thisitemslottag not offhand pincer *0
 #enditem

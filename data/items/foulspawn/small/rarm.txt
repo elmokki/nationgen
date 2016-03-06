@@ -3,8 +3,7 @@
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/humanoid.png
 #command "#hp +1"
--- #needstype rhand humanoid
-#needstype weapon onehand
+#addthemeinc thisitemslottag not weapon onehand *0
 #itemslot hand +1
 #enditem
 
@@ -13,8 +12,7 @@
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/goblinoid.png
 #command "#hp +1"
--- #needstype rhand goblinoid
-#needstype weapon onehand
+#addthemeinc thisitemslottag not weapon onehand *0
 #itemslot hand +1
 #enditem
 
@@ -24,8 +22,7 @@
 #sprite /graphics/foulspawn/small/rarm/canid.png
 #command "#hp +1"
 #command "#str +1"
--- #needstype rhand canidoid
-#needstype weapon onehand
+#addthemeinc thisitemslottag not weapon onehand *0
 #itemslot hand +1
 #enditem
 
@@ -35,8 +32,7 @@
 #sprite /graphics/foulspawn/small/rarm/tentacle_green.png
 #command "#hp +2"
 #command "#str -1"
-#needstype weapon tentacle
--- #needs rhand none
+#addthemeinc thisitemslottag not weapon tentacle *0
 #enditem
 
 #newitem
@@ -45,8 +41,7 @@
 #sprite /graphics/foulspawn/small/rarm/tentacle_pink.png
 #command "#hp +2"
 #command "#str -1"
-#needstype weapon tentacle
--- #needs rhand none
+#addthemeinc thisitemslottag not weapon tentacle *0
 #enditem
 
 
@@ -56,8 +51,7 @@
 #sprite /graphics/foulspawn/small/rarm/tentacles_blue.png
 #command "#hp +0"
 #command "#str -2"
-#needstype weapon smalltentacle
--- #needs rhand none
+#addthemeinc thisitemslottag not weapon smalltentacle *0
 #enditem
 
 #newitem
@@ -66,8 +60,7 @@
 #sprite /graphics/foulspawn/small/rarm/tentacles_grey.png
 #command "#hp +0"
 #command "#str -1"
-#needstype weapon smalltentacle
--- #needs rhand none
+#addthemeinc thisitemslottag not weapon smalltentacle *0
 #enditem
 
 #newitem
@@ -76,9 +69,8 @@
 #sprite /graphics/foulspawn/small/rarm/arms_humanoid.png
 #command "#hp +2"
 #command "#str +1"
-#needstype weapon twohand
-#needstype offhand onehand
--- #needstype rhand humanoid_two
+#addthemeinc thisitemslottag not weapon twohand *0
+#addthemeinc thisitemslottag not offhand onehand *0
 #itemslot hand +2
 #enditem
 
@@ -88,9 +80,8 @@
 #sprite /graphics/foulspawn/small/rarm/arms_goblinoid.png
 #command "#hp +2"
 #command "#str +1"
-#needstype weapon twohand
-#needstype offhand onehand
--- #needstype rhand goblinoid_two
+#addthemeinc thisitemslottag not weapon twohand *0
+#addthemeinc thisitemslottag not offhand onehand *0
 #itemslot hand +2
 #enditem
 
@@ -100,7 +91,6 @@
 #sprite /graphics/foulspawn/small/rarm/pincer.png
 #command "#prot +2"
 #command "#hp +1"
-#needs weapon pincer
-#needstype offhand onehand
--- #needs rhand none
+#addthemeinc thisitemslottag not weapon pincer *0
+#addthemeinc thisitemslottag not offhand onehand *0
 #enditem

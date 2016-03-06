@@ -1,71 +1,75 @@
-#newitem
-#id none
-#gameid -1
-#nogen
-#enditem
-
-
 -- Natural weapons
 
 #newitem
 #id tentacle
 #gameid 85
-#type "tentacle"
+#tentacle
 #enditem
 
 #newitem
 #id tentacle_sleep
 #gameid 387
-#type "tentacle"
-#type "smalltentacle"
+#tentacle
 #command "#gcost +1"
 #enditem
 
 #newitem
 #id tentacle_strangle
 #gameid 116
-#type "tentacle"
-#type "smalltentacle"
+#tentacle
+#enditem
+
+#newitem
+#id tentacle_sleep
+#gameid 387
+#smalltentacle
+#command "#gcost +1"
+#enditem
+
+#newitem
+#id tentacle_strangle
+#gameid 116
+#smalltentacle
 #enditem
 
 #newitem
 #id tentacle_tiny
 #gameid 672
-#type "smalltentacle"
+#smalltentacle
 #enditem
 
 #newitem
 #id tentacle_disease
 #gameid 142
-#type "smalltentacle"
+#smalltentacle
 #command "#gcost +2"
 #enditem
 
 #newitem
 #id tentacle_lifedrain
 #gameid 63
-#type "smalltentacle"
+#smalltentacle
 #command "#gcost +2"
 #enditem
 
 #newitem
 #id tentacle_paralyze
 #gameid 282
-#type "smalltentacle"
+#smalltentacle
 #command "#gcost +1"
 #enditem
 
 #newitem
 #id tentacle_poison
 #gameid 355
-#type "smalltentacle"
+#smalltentacle
 #command "#gcost +1"
 #enditem
 
 #newitem
 #id pincer
 #gameid 273
-#type "pincer"
+#pincer
 #enditem
 
 
@@ -78,7 +82,7 @@
 #sprite /graphics/advancedhuman/weapons/shortsword.png
 #offsetx -4
 #offsety 3
-#type "onehand"
+#onehand
 #theme "iron"
 #enditem
 
@@ -88,7 +92,7 @@
 #sprite /graphics/advancedhuman/weapons/broadsword.png
 #offsetx -4
 #offsety 3
-#type "onehand"
+#onehand
 #theme "iron"
 #enditem
 
@@ -98,7 +102,7 @@
 #sprite /graphics/advancedhuman/weapons/falchion.png
 #offsetx -4
 #offsety 3
-#type "onehand"
+#onehand
 #theme "iron"
 #enditem
 
@@ -108,7 +112,7 @@
 #sprite /graphics/vaettir/weapon/hatchet.png
 #offsetx -4
 #offsety -1
-#type "onehand"
+#onehand
 #theme "iron"
 #theme "primitive"
 #chanceinc unittag irregular 8
@@ -120,7 +124,7 @@
 #sprite /graphics/advancedhuman/weapons/mace.png
 #offsetx -6
 #offsety 2
-#type "onehand"
+#onehand
 #theme "primitive"
 #maxprot 15
 #chanceinc unittag irregular 8
@@ -132,7 +136,7 @@
 #sprite /graphics/advancedhuman/weapons/hammer.png
 #offsetx -5
 #offsety 3
-#type "onehand"
+#onehand
 #theme "advanced"
 #enditem
 
@@ -142,7 +146,7 @@
 #sprite /graphics/advancedhuman/weapons/morningstar.png
 #offsetx -6
 #offsety 2
-#type "onehand"
+#onehand
 #theme "advanced"
 #enditem
 
@@ -153,7 +157,7 @@
 #id greatclub
 #gameid 165
 #sprite /graphics/foulspawn/small/weapon/greatclub.png
-#type "twohand"
+#twohand
 #theme "primitive"
 #theme "wood"
 #enditem
@@ -162,7 +166,7 @@
 #id maul
 #gameid 14
 #sprite /graphics/foulspawn/small/weapon/maul.png
-#type "twohand"
+#twohand
 #theme "primitive"
 #enditem
 
@@ -171,7 +175,7 @@
 #gameid 18
 #sprite /graphics/foulspawn/small/weapon/greataxe.png
 #chanceinc unittag irregular 8
-#type "twohand"
+#twohand
 #theme "iron"
 #theme "primitive"
 #enditem
@@ -180,7 +184,7 @@
 #id greatsword
 #gameid 11
 #sprite /graphics/foulspawn/small/weapon/greatsword.png
-#type "twohand"
+#twohand
 #theme "iron"
 #enditem
 
@@ -190,7 +194,7 @@
 #sprite /graphics/advancedhuman/weapons/flail_1.png
 #offsetx -4
 #offsety -1
-#type "twohand"
+#twohand
 #theme "iron"
 #enditem
 
@@ -200,7 +204,7 @@
 #sprite /graphics/advancedhuman/weapons/spear.png
 #offsetx -4
 #offsety -1
-#type "twohand"
+#twohand
 #theme "iron"
 #theme formationfighter
 #enditem
@@ -211,7 +215,7 @@
 #sprite /graphics/advancedhuman/weapons/longspear.png
 #offsetx -4
 #offsety -1
-#type "twohand"
+#twohand
 #theme "iron"
 #theme formationfighter
 #enditem
@@ -222,7 +226,7 @@
 #sprite /graphics/advancedhuman/weapons/pike.png
 #offsetx -4
 #offsety -1
-#type "twohand"
+#twohand
 #theme "iron"
 #theme formationfighter
 #enditem
@@ -233,7 +237,7 @@
 #sprite /graphics/advancedhuman/weapons/halberd.png
 #offsetx -4
 #offsety -1
-#type "twohand"
+#twohand
 #theme "iron"
 #theme "advanced"
 #minprot 8
@@ -245,7 +249,7 @@
 #sprite /graphics/advancedhuman/weapons/lucernehammer.png
 #offsetx -4
 #offsety -1
-#type "twohand"
+#twohand
 #theme "advanced"
 #theme "iron"
 #minprot 8
@@ -257,7 +261,7 @@
 #sprite /graphics/advancedhuman/weapons/bardiche.png
 #offsetx -4
 #offsety -1
-#type "twohand"
+#twohand
 #theme "iron"
 #enditem
 
@@ -267,7 +271,7 @@
 #sprite /graphics/advancedhuman/weapons/trident.png
 #offsetx -4
 #offsety -1
-#type "twohand"
+#twohand
 #theme "iron"
 #theme formationfighter
 #enditem
