@@ -341,6 +341,8 @@ public class Generic {
    	}
    	else if(line.toLowerCase().endsWith("vaetti"))
    		line = line + "r";
+   	else if(line.toLowerCase().endsWith("avvite"))
+   		line = line.substring(0, line.length() - 3) + "im";
    	else if(line.toLowerCase().endsWith("siddhe") || line.toLowerCase().endsWith("sidhe"))
    	{
    		// do nothing
