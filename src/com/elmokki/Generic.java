@@ -331,10 +331,19 @@ public class Generic {
    		line = line.substring(0, line.length() - 1) + "ies";
    	else if(line.toLowerCase().endsWith("man") && !line.toLowerCase().endsWith("human"))
    		line = line.substring(0, line.length() - 3) + "men";
-   	else if(line.toLowerCase().endsWith("samurai") || line.toLowerCase().endsWith("vanir") || line.toLowerCase().endsWith(" sheep") || line.toLowerCase().endsWith(" fish")){/*do nothing*/}
+   	else if(line.toLowerCase().endsWith("samurai") || line.toLowerCase().endsWith("vanir") || line.toLowerCase().endsWith(" sheep") || line.toLowerCase().endsWith(" fish"))
+   	{
+   		/*do nothing*/
+   	}
    	else if(line.toLowerCase().endsWith("van"))
    	{
    		line = line + "ir";
+   	}
+   	else if(line.toLowerCase().endsWith("vaetti"))
+   		line = line + "r";
+   	else if(line.toLowerCase().endsWith("siddhe") || line.toLowerCase().endsWith("sidhe"))
+   	{
+   		// do nothing
    	}
    	else
    		line = line + "s";
