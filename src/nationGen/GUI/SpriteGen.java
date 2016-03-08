@@ -129,8 +129,8 @@ public class SpriteGen extends JFrame implements ActionListener, ItemListener{
     	dummy = new Item(nGen);
     	
         setTitle("SpriteGen");
-        this.setPreferredSize(new Dimension(1000, 800));
-        this.setResizable(false);
+        this.setPreferredSize(new Dimension(1000, 600));
+        //this.setResizable(false);
 
         initGUI();
         pack();
