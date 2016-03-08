@@ -147,22 +147,32 @@ public class TroopGenerator {
 	
 	protected boolean isDualWieldEligible(Unit u)
 	{
-		Item i = u.getSlot("weapon");
-		if(i == null)
-			return false;
+	
 		
+
+		Item it = u.getSlot("weapon");
+		if(it == null)
+				return false;
+			
 		List<String> tags = Generic.getAllUnitTags(u);
+		for(Item i : u.slotmap.values())
+			if(i != null)
+			{
+				tags.addAll(i.tags);
+			}
+				
+		
 		int dw_maxlength = 2;
 		if(Generic.containsTag(tags, "dw_maxlength"))
 			dw_maxlength = Integer.parseInt(Generic.getTagValue(tags, "dw_maxlength"));
 		
 		boolean regularok = true;
-		if((nationGen.weapondb.GetInteger(i.id, "lgt") > dw_maxlength) || nationGen.weapondb.GetInteger(i.id, "2h") == 1)
+		if((nationGen.weapondb.GetInteger(it.id, "lgt") > dw_maxlength) || nationGen.weapondb.GetInteger(it.id, "2h") == 1)
 		{
 			regularok = false;
 		}
 		
-		if(i.tags.contains("ignore_dw_restrictions"))
+		if(Generic.containsTag(tags, "ignore_dw_restrictions"))
 			regularok = true;
 		
 		// System.out.println(regularok + " - " + i.tags);
