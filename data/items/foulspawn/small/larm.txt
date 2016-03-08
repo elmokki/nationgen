@@ -4,6 +4,7 @@
 #sprite /graphics/foulspawn/small/larm/humanoid.png
 #command "#hp +1"
 #itemslot hand +1
+#type onehand
 #enditem
 
 #newitem
@@ -12,6 +13,7 @@
 #sprite /graphics/foulspawn/small/larm/goblinoid.png
 #command "#hp +1"
 #itemslot hand +1
+#type onehand
 #enditem
 
 #newitem
@@ -21,6 +23,7 @@
 #command "#hp +1"
 #command "#str +1"
 #itemslot hand +1
+#type onehand
 #enditem
 
 #newitem
@@ -29,7 +32,7 @@
 #sprite /graphics/foulspawn/small/larm/tentacle_green.png
 #command "#hp +2"
 #command "#str -1"
-#needstype weapon tentacle
+#type tentacle
 #enditem
 
 #newitem
@@ -38,7 +41,7 @@
 #sprite /graphics/foulspawn/small/larm/tentacle_pink.png
 #command "#hp +2"
 #command "#str -1"
-#needstype weapon tentacle
+#type tentacle
 #enditem
 
 #newitem
@@ -47,6 +50,5 @@
 #sprite /graphics/foulspawn/small/larm/pincer.png
 #command "#prot +2"
 #command "#hp +1"
-#command "#str +0"
-#needstype weapon pincer
+#type pincer
 #enditem

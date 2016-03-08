@@ -1,5 +1,4 @@
 -------- Normal
-
 #newpose
 #name "normal infantry"
 #role "infantry"
@@ -14,6 +13,9 @@
 #load weapon /data/items/atlantian/weapon.txt
 #load offhand /data/items/atlantian/shield.txt
 #load bonusweapon /data/items/atlantian/bonusrangedweapon.txt
+
+#command "#amphibian"
+
 #endpose
 
 
@@ -32,6 +34,9 @@
 #load weapon /data/items/atlantian/iceweapon.txt
 #load offhand /data/items/atlantian/iceshield.txt
 #load offhand /data/items/atlantian/shield.txt
+
+#command "#amphibian"
+
 #endpose
 
 
@@ -47,11 +52,74 @@
 #load helmet /data/items/atlantian/helmet.txt
 #load legs /data/items/atlantian/legs.txt
 #load weapon /data/items/atlantian/meteorweapon.txt
+
+#command "#amphibian"
+
+#endpose
+
+
+-------- Cavalry
+#newpose
+#name "normal cavalry"
+#basechance 0.25
+#role "mounted"
+#role "sacred"
+
+#load basesprite /data/items/atlantian/atlantianbases.txt
+#load mount /data/items/atlantian/mounts.txt
+#load armor /data/items/atlantian/armor_mounted.txt
+#load helmet /data/items/atlantian/helmet.txt
+#load legs /data/items/atlantian/legs_mounted.txt
+#load weapon /data/items/atlantian/weapon.txt
+#load offhand /data/items/atlantian/shield.txt
+#load bonusweapon /data/items/atlantian/bonusrangedweapon.txt
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+
+#endpose
+
+
+#newpose
+#name "ice cavalry"
+#basechance 0.25
+#role "mounted"
+#role "sacred"
+#sacred
+
+#load basesprite /data/items/atlantian/atlantianbases.txt
+#load mount /data/items/atlantian/mounts.txt
+#load armor /data/items/atlantian/icearmor_mounted.txt
+#load helmet /data/items/atlantian/icehelmet.txt
+#load legs /data/items/atlantian/legs_mounted.txt
+#load weapon /data/items/atlantian/iceweapon.txt
+#load offhand /data/items/atlantian/iceshield.txt
+#load offhand /data/items/atlantian/shield.txt
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+
+#endpose
+
+
+#newpose
+#name "meteor armor cavalry"
+#basechance 0.25
+#role "mounted"
+#role "sacred"
+#sacred
+
+#load basesprite /data/items/atlantian/atlantianbases.txt
+#load mount /data/items/atlantian/mounts.txt
+#load armor /data/items/atlantian/meteorarmor_mounted.txt
+#load helmet /data/items/atlantian/helmet.txt
+#load legs /data/items/atlantian/legs_mounted.txt
+#load weapon /data/items/atlantian/meteorweapon.txt
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+
 #endpose
 
 
 -------- shambler
-
 #newpose
 #name "shambler infantry"
 #role "infantry"
@@ -70,6 +138,9 @@
 #load bonusweapon /data/items/atlantian/bonusrangedweapon-s.txt
 #load offhand /data/items/atlantian/shamblershield.txt
 #load standard /data/items/atlantian/standard-s.txt
+
+#command "#amphibian"
+
 #endpose
 
 
@@ -88,6 +159,8 @@
 #load weapon /data/items/atlantian/ranged.txt
 #load bonusweapon /data/items/atlantian/rangedmelee.txt
 
+#command "#amphibian"
+
 #endpose
 
 
@@ -105,4 +178,7 @@
 #load weapon /data/items/atlantian/scoutweapon.txt
 #load offhand /data/items/atlantian/scoutshield.txt
 #load bonusweapon /data/items/atlantian/bonusrangedweapon.txt
+
+#command "#amphibian"
+
 #endpose

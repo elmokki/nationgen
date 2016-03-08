@@ -1,0 +1,286 @@
+--- Base offsets are applied to everything except base and overlay
+
+#newitem
+#name "moose"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/mounts/standard/moose.png
+#armor
+#offsetx 35
+#offsety 33
+#define "#size 4"
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 353"
+#define "#weapon 354"
+#define "#gcost +25"
+#define "#ressize 2"
+#define "#rcost +4"
+#define "#enc 4"
+#define "#secondtmpshape moose"
+#tag "animal moose"
+#tag "minprot 0"
+#tag "maxprot 16"
+#tag "guaranteedprefix moose"
+#description "Leaves a moose behind when the rider dies"
+#enditem
+
+#newitem
+#name "great bear"
+#gameid -1
+#sprite /graphics/mounts/standard/bear.png
+#offsetx -4
+#offsety -19
+#armor
+#define "#size 4"
+#define "#mapmove 3"
+#define "#ap 16"
+#define "#mounted"
+#define "#weapon 237 --- Bite"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape bearmount"
+#define "#gcost +40"
+#define "#ressize 2"
+#define "#enc 4"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#enditem
+
+#newitem
+#name "bear"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_small.png
+#offsetx -3
+#offsety -11
+#armor
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 14"
+#define "#mounted"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape smallbearmount"
+#define "#gcost +30"
+#define "#ressize 2"
+#define "#enc 4"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 8"
+#enditem
+
+#newitem
+#name "cavecow"
+#gameid -1
+#basechance 0.125
+#sprite /graphics/mounts/standard/cavecow.png
+#offsetx -4
+#offsety -10
+#armor
+#define "#size 4"
+#define "#mapmove 1"
+#define "#ap 8"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#weapon 599 -- Corrosive bite"
+#define "#secondtmpshape cavecowmount"
+#define "#gcost +30"
+#define "#prot +2"
+#define "#ressize 2"
+#define "#enc 4"¨
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#chanceinc primaryrace "Pale One" *100
+#enditem
+
+#newitem
+#name "dire wolf"
+#basechance 0.75
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf2.png
+#offsetx -4
+#offsety -16
+#armor
+#needs overlay direwolf2_overlay
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 22"
+#define "#mounted"
+#define "#weapon 237 --- bite"
+#define "#secondtmpshape direwolf1mount"
+#define "#gcost +25"
+#define "#ressize 2"
+#define "#enc 4"
+#tag "animal wolf"
+#theme "light"
+#tag "maxprot 11"
+#tag "guaranteedprefix wolf"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#enditem
+
+#newitem
+#name "serpent 1"
+#basechance 0.125
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -3
+#offsety -2
+#needs overlay 6
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 494 --- Poisonous Bite"
+#define "#secondtmpshape serpent1"  -- 1179
+#define "#gcost +30"
+#define "#ressize 2"
+#define "#enc 3"
+#tag "animal serpent"
+#theme "light"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 13"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#enditem
+
+#newitem
+#name "white tiger"
+#basechance 0.5
+#chanceinc "nationcommand #idealcold above 1 *40"
+#chanceinc "nationcommand #idealcold below -1 *0"
+#gameid -1
+#sprite /graphics/mounts/standard/whitetiger.png
+#armor
+#offsetx -3
+#offsety -11
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 236"
+#define "#weapon 237"
+#define "#gcost +25"
+#define "#rcost +5"
+#define "#ressize 2"
+#define "#enc 3"
+#theme "specialmount"
+#theme "light"
+#tag "animal tiger"
+#tag "guaranteedprefix white tiger"
+#tag "minprot 0"
+#tag "maxprot 11"
+#enditem
+
+
+#newitem
+#name "jaguar"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -6
+#offsety -12
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 236"
+#define "#weapon 237"
+#define "#secondshape jaguarmount"
+#define "#gcost +35"
+#define "#rcost +5"
+#define "#ressize 2"
+#define "#enc 3"
+#theme "specialmount"
+#theme "light"
+#tag "animal jaguar"
+#description "The jaguar will persist even if the rider dies."
+#tag "guaranteedprefix jaguar"
+#tag "minprot 0"
+#tag "maxprot 12"
+#enditem
+
+#newitem
+#name "cavegrub"
+#gameid -1
+#sprite /graphics/mounts/standard/cavegrub.png
+#armor
+#basechance 0.125
+#offsetx 38
+#offsety -2
+#define "#size 4"
+#define "#mapmove 1"
+#define "#ap 5"
+#define "#mounted"
+#define "#weapon 603"
+#define "#gcost +30"
+#define "#rcost +3"
+#define "#ressize 2"
+#define "#enc 3"
+#define "#secondtmpshape cavegrubmount"
+#description "The cave grub will fight until the end of the battle should the rider die"
+#tag "animal 'cave grub'"
+#tag "guaranteedprefix grub"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#tag "maxprot 14"
+#sacredextra 0.5
+#chanceinc primaryrace "Pale One" *80
+#enditem
+
+#newitem
+#name "toad"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/mounts/standard/toad_jaguar.png
+#armor
+#offsetx 2
+#offsety -9
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 6"
+#define "#mounted"
+#define "#weapon nostr_poisonspit"
+#define "#gcost +30"
+#define "#rcost +3"
+#define "#ressize 2"
+#define "#enc 3"
+#define "#secondtmpshape toad_jaguar_mount"
+#description "The giant toad will fight until the end of the battle should the rider die"
+#tag "animal 'giant toad'"
+#tag "guaranteedprefix toad"
+#tag "minprot 6"
+#tag "maxprot 14"
+#enditem
+
+
+#newitem
+#name "frog"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/mounts/standard/toad_sapphire.png
+#armor
+#offsetx 2
+#offsety -9
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 9"
+#define "#mounted"
+#define "#weapon 236"
+#define "#gcost +30"
+#define "#rcost +3"
+#define "#ressize 2"
+#define "#enc 3"
+#command "#amphibian"
+#define "#secondtmpshape toad_sapphire_mount"
+#description "The giant frog will fight until the end of the battle should the rider die"
+#tag "animal 'giant frog'"
+#tag "guaranteedprefix frog"
+#tag "minprot 6"
+#tag "maxprot 14"
+#enditem

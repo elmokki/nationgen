@@ -275,7 +275,7 @@
 #new customweapon
 #name "lucernehammer"
 #command "#att +1"
-#command "#dmg 9"
+#command "#dmg 7"
 #command "#len 4"
 #command "#rcost 4"
 #command "#name 'Lucerne Hammer'"
@@ -288,7 +288,7 @@
 #new customweapon
 #name "bronzelucernehammer"
 #command "#att +1"
-#command "#dmg 8"
+#command "#dmg 6"
 #command "#len 4"
 #command "#rcost 5"
 #command "#name 'Bronze Lucerne Hammer'"
@@ -526,6 +526,23 @@
 #command "#bonus"
 #command "#name 'Poisonous Gore'"
 #command "#slash"
+#command "#natural"
+#end
+
+--- Nostr version of 329
+#new customweapon
+#name nostr_poisonspit
+#command "#dmg 10"
+#command "#range 12"
+#command "#nratt 1"
+#command "#ammo 5"
+#command "#nostr"
+#command "#bonus"
+#command "#armornegating"
+#command "#magic"
+#command "#poison"
+#command "#name 'Poison Spit'"
+#command "#flyspr 404 3"
 #command "#natural"
 #end
 
