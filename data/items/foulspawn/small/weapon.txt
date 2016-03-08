@@ -1,9 +1,12 @@
+
 -- Natural weapons
 
 #newitem
 #id tentacle
 #gameid 85
+#type "tentacle"
 #tentacle
+#needstype rarm tentacle
 #enditem
 
 #newitem
@@ -11,12 +14,14 @@
 #gameid 387
 #tentacle
 #command "#gcost +1"
+#needstype rarm tentacle
 #enditem
 
 #newitem
 #id tentacle_strangle
 #gameid 116
 #tentacle
+#needstype rarm tentacle
 #enditem
 
 #newitem
@@ -24,18 +29,21 @@
 #gameid 387
 #smalltentacle
 #command "#gcost +1"
+#needstype rarm smalltentacle
 #enditem
 
 #newitem
 #id tentacle_strangle
 #gameid 116
 #smalltentacle
+#needstype rarm smalltentacle
 #enditem
 
 #newitem
 #id tentacle_tiny
 #gameid 672
 #smalltentacle
+#needstype rarm smalltentacle
 #enditem
 
 #newitem
@@ -43,6 +51,7 @@
 #gameid 142
 #smalltentacle
 #command "#gcost +2"
+#needstype rarm smalltentacle
 #enditem
 
 #newitem
@@ -50,6 +59,7 @@
 #gameid 63
 #smalltentacle
 #command "#gcost +2"
+#needstype rarm smalltentacle
 #enditem
 
 #newitem
@@ -57,6 +67,7 @@
 #gameid 282
 #smalltentacle
 #command "#gcost +1"
+#needstype rarm smalltentacle
 #enditem
 
 #newitem
@@ -64,12 +75,14 @@
 #gameid 355
 #smalltentacle
 #command "#gcost +1"
+#needstype rarm smalltentacle
 #enditem
 
 #newitem
 #id pincer
 #gameid 273
 #pincer
+#needstype rarm pincer
 #enditem
 
 
@@ -84,6 +97,7 @@
 #offsety 3
 #onehand
 #theme "iron"
+#needstype rarm onehand
 #enditem
 
 #newitem
@@ -94,6 +108,7 @@
 #offsety 3
 #onehand
 #theme "iron"
+#needstype rarm onehand
 #enditem
 
 #newitem
@@ -104,6 +119,7 @@
 #offsety 3
 #onehand
 #theme "iron"
+#needstype rarm onehand
 #enditem
 
 #newitem
@@ -116,6 +132,7 @@
 #theme "iron"
 #theme "primitive"
 #chanceinc unittag irregular 8
+#needstype rarm onehand
 #enditem
 
 #newitem
@@ -128,6 +145,7 @@
 #theme "primitive"
 #maxprot 15
 #chanceinc unittag irregular 8
+#needstype rarm onehand
 #enditem
 
 #newitem
@@ -138,6 +156,7 @@
 #offsety 3
 #onehand
 #theme "advanced"
+#needstype rarm onehand
 #enditem
 
 #newitem
@@ -148,6 +167,7 @@
 #offsety 2
 #onehand
 #theme "advanced"
+#needstype rarm onehand
 #enditem
 
 
@@ -160,6 +180,8 @@
 #twohand
 #theme "primitive"
 #theme "wood"
+#needstype rarm twohand
+#ignore_dw_restrictions
 #enditem
 
 #newitem
@@ -168,6 +190,8 @@
 #sprite /graphics/foulspawn/small/weapon/maul.png
 #twohand
 #theme "primitive"
+#needstype rarm twohand
+#ignore_dw_restrictions
 #enditem
 
 #newitem
@@ -178,6 +202,8 @@
 #twohand
 #theme "iron"
 #theme "primitive"
+#needstype rarm twohand
+#ignore_dw_restrictions
 #enditem
 
 #newitem
@@ -186,6 +212,8 @@
 #sprite /graphics/foulspawn/small/weapon/greatsword.png
 #twohand
 #theme "iron"
+#needstype rarm twohand
+#ignore_dw_restrictions
 #enditem
 
 #newitem
@@ -196,6 +224,8 @@
 #offsety -1
 #twohand
 #theme "iron"
+#needstype rarm twohand
+#ignore_dw_restrictions
 #enditem
 
 #newitem
@@ -207,6 +237,8 @@
 #twohand
 #theme "iron"
 #theme formationfighter
+#needstype rarm twohand
+#ignore_dw_restrictions
 #enditem
 
 #newitem
@@ -218,6 +250,8 @@
 #twohand
 #theme "iron"
 #theme formationfighter
+#needstype rarm twohand
+#ignore_dw_restrictions
 #enditem
 
 #newitem
@@ -229,6 +263,8 @@
 #twohand
 #theme "iron"
 #theme formationfighter
+#needstype rarm twohand
+#ignore_dw_restrictions
 #enditem
 
 #newitem
@@ -241,6 +277,8 @@
 #theme "iron"
 #theme "advanced"
 #minprot 8
+#needstype rarm twohand
+#ignore_dw_restrictions
 #enditem
 
 #newitem
@@ -253,6 +291,8 @@
 #theme "advanced"
 #theme "iron"
 #minprot 8
+#needstype rarm twohand
+#ignore_dw_restrictions
 #enditem
 
 #newitem
@@ -263,6 +303,8 @@
 #offsety -1
 #twohand
 #theme "iron"
+#needstype rarm twohand
+#ignore_dw_restrictions
 #enditem
 
 #newitem
@@ -274,4 +316,6 @@
 #twohand
 #theme "iron"
 #theme formationfighter
+#needstype rarm twohand
+#ignore_dw_restrictions
 #enditem

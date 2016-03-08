@@ -1,14 +1,17 @@
 #newitem
 #id none
 #gameid -1
-#onehand
-#twohand
+#nogen
+#needstype larm onehand
 #enditem
+
+-- Natural weapons
 
 #newitem
 #id tentacle
 #gameid 85
 #tentacle
+#needstype larm tentacle
 #enditem
 
 #newitem
@@ -16,17 +19,106 @@
 #gameid 387
 #tentacle
 #command "#gcost +1"
+#needstype larm tentacle
 #enditem
 
 #newitem
 #id tentacle_strangle
 #gameid 116
 #tentacle
+#needstype larm tentacle
 #enditem
 
 #newitem
 #id pincer
 #gameid 273
 #pincer
+#needstype larm pincer
 #enditem
 
+
+-- 1h weapons
+#newitem
+#id oh_dagger
+#gameid 9
+#sprite /graphics/advancedhuman/weapons/oh_dagger.png
+#offsetx 2
+#offsety 6
+#needstype larm onehand
+#theme "iron"
+#enditem
+
+#newitem
+#id oh_shortsword
+#gameid 6
+#sprite /graphics/advancedhuman/weapons/oh_shortsword.png
+#offsetx 2
+#offsety 6
+#needstype larm onehand
+#theme "iron"
+#enditem
+
+#newitem
+#id oh_broadsword
+#gameid 8
+#sprite /graphics/advancedhuman/weapons/oh_broadsword.png
+#offsetx 2
+#offsety 6
+#needstype larm onehand
+#theme "iron"
+#enditem
+
+#newitem
+#id oh_falchion
+#gameid 10
+#sprite /graphics/advancedhuman/weapons/oh_falchion.png
+#offsetx 2
+#offsety 6
+#needstype larm onehand
+#theme "iron"
+#enditem
+
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/vaettir/offhand/hatchet.png
+#offsetx 2
+#offsety 1
+#onehand
+#theme "iron"
+#theme "primitive"
+#chanceinc unittag irregular 8
+#needstype larm onehand
+#enditem
+
+#newitem
+#id oh_mace
+#gameid 12
+#sprite /graphics/advancedhuman/weapons/oh_mace.png
+#offsetx 2
+#offsety 6
+#needstype larm onehand
+#theme "primitive"
+#maxprot 15
+#chanceinc unittag irregular 8
+#enditem
+
+#newitem
+#id oh_hammer
+#gameid 13
+#sprite /graphics/advancedhuman/weapons/oh_hammer.png
+#offsetx 2
+#offsety 6
+#needstype larm onehand
+#theme "advanced"
+#enditem
+
+#newitem
+#id oh_morningstar
+#gameid 15
+#sprite /graphics/advancedhuman/weapons/oh_morningstar.png
+#offsetx 2
+#offsety 6
+#needstype larm onehand
+#theme "advanced"
+#enditem
