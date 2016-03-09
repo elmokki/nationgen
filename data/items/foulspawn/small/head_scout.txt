@@ -1,0 +1,82 @@
+#newitem
+#name "humanoid"
+#basechance 2
+#gameid -1
+#sprite /graphics/foulspawn/small/head/humanoid.png
+#command "#gcost +2"
+#command "#hp +0"
+#command "#prot +0"
+#command "#mr +2"
+#command "#mor +1"
+#command "#att +2"
+#command "#def +2"
+#command "#prec +0"
+#command "#ap +1"
+#addthemeinc thisitemslottag not helmet small *0
+#enditem
+
+#newitem
+#name "goblinoid"
+#basechance 2
+#gameid -1
+#sprite /graphics/foulspawn/small/head/goblinoid.png
+#command "#gcost +2"
+#command "#hp +1"
+#command "#prot +0"
+#command "#mr +1"
+#command "#mor +1"
+#command "#att +2"
+#command "#def +2"
+#command "#prec +2"
+#command "#ap +1"
+#addthemeinc thisitemslottag not helmet small *0
+#enditem
+
+#newitem
+#name "canid"
+#gameid -1
+#sprite /graphics/foulspawn/small/head/canid.png
+#command "#gcost +3"
+#command "#hp +0"
+#command "#prot +1"
+#command "#mr +0"
+#command "#mor +5"
+#command "#att +2"
+#command "#def +2"
+#command "#prec +1"
+#command "#ap +1"
+#needstype headweapon bite
+#addthemeinc thisitemslottag not helmet canid *0
+#enditem
+
+#newitem
+#name "tentacloid"
+#gameid -1
+#sprite /graphics/foulspawn/small/head/tentacloid.png
+#command "#gcost +2"
+#command "#hp +2"
+#command "#prot +1"
+#command "#mr +1"
+#command "#mor +1"
+#command "#att +2"
+#command "#def +2"
+#command "#prec +1"
+#command "#ap +1"
+#addthemeinc thisitemslottag not helmet large *0
+#enditem
+
+#newitem
+#name "fleshblob"
+#gameid -1
+#sprite /graphics/foulspawn/small/head/fleshblob.png
+#command "#gcost +2"
+#command "#hp +2"
+#command "#prot +0"
+#command "#mr +1"
+#command "#mor +1"
+#command "#att +2"
+#command "#def +2"
+#command "#prec +1"
+#command "#ap +1"
+#addthemeinc thisitemslottag not helmet large *0
+#enditem
