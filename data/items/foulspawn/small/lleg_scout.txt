@@ -1,0 +1,71 @@
+#newitem
+#name "humanoid"
+#basechance 2
+#gameid -1
+#sprite /graphics/foulspawn/small/lleg/humanoid.png
+#command "#gcost +1"
+#command "#hp +1"
+#command "#enc +1"
+#command "#ap +1"
+#enditem
+
+#newitem
+#name "goblinoid"
+#basechance 2
+#gameid -1
+#sprite /graphics/foulspawn/small/lleg/goblinoid.png
+#command "#gcost +1"
+#command "#hp +1"
+#command "#enc +1"
+#command "#ap +2"
+#enditem
+
+#newitem
+#name "canid"
+#gameid -1
+#sprite /graphics/foulspawn/small/lleg/canid.png
+#command "#gcost +1"
+#command "#hp +1"
+#command "#enc +1"
+#command "#ap +2"
+#enditem
+
+#newitem
+#name "tentacloid"
+#basechance 0.2
+#gameid -1
+#sprite /graphics/foulspawn/small/lleg/tentacle_green.png
+#command "#gcost +0"
+#command "#hp +2"
+#command "#enc +2"
+#command "#ap +1"
+#itemslot foot 0
+#enditem
+
+#newitem
+#name "fleshblob"
+#basechance 0.2
+#gameid -1
+#sprite /graphics/foulspawn/small/lleg/tentacle_pink.png
+#command "#gcost +0"
+#command "#hp +2"
+#command "#def -1"
+#command "#enc +2"
+#command "#ap +1"
+#itemslot foot 0
+#enditem
+
+#newitem
+#name "crab"
+#basechance 0.1
+#gameid -1
+#sprite /graphics/foulspawn/small/lleg/crab.png
+#needs shadow large_shadow
+#command "#gcost +3"
+#command "#prot +2"
+#command "#hp +2"
+#command "#def +1"
+#command "#enc +1"
+#command "#ap +2"
+#itemslot foot 0
+#enditem
