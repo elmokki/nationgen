@@ -5,7 +5,6 @@
 #role "sacred infantry"
 #role "elite infantry"
 #role "infantry"
-#role "scout"
 
 #renderorder "shadow basesprite rarm rweapon rleg lleg larm head overlay shirt pants armor bonusweapon weapon offhandw hands helmet offhanda"
 
@@ -41,6 +40,54 @@
 #generateitem 1 rleg
 
 #maxvarieties_override 8
+
+#itemslot hand 0
+#itemslot head 1
+#itemslot misc 2
+
+#endpose
+
+
+-------- Scout
+
+#newpose
+#role "scout"
+
+#renderorder "shadow cloakb basesprite rarm rweapon rleg lleg larm head overlay shirt pants armor bonusweapon weapon offhandw hands cloakf helmet offhanda"
+
+#no_free_fist
+
+#load basesprite /data/items/foulspawn/small/bases.txt
+#load rarm /data/items/foulspawn/small/rarm.txt
+#load larm /data/items/foulspawn/small/larm.txt
+#load rleg /data/items/foulspawn/small/rleg_scout.txt
+#load lleg /data/items/foulspawn/small/lleg_scout.txt
+#load head /data/items/foulspawn/small/head_scout.txt
+#load shadow /data/items/foulspawn/small/shadow.txt
+#load shirt /data/items/foulspawn/small/shirt.txt
+#load pants /data/items/foulspawn/small/pants.txt
+#load hands /data/items/foulspawn/small/hands.txt
+
+#load armor /data/items/foulspawn/small/armor.txt
+#load helmet /data/items/foulspawn/small/helmet.txt
+
+#load weapon /data/items/foulspawn/small/weapon_scout.txt
+#load offhand /data/items/foulspawn/small/offhand_scout.txt
+-- #load bonusweapon /data/items/foulspawn/small/bonusranged.txt
+
+#load cloakf /data/items/foulspawn/small/cloakf.txt
+#load cloakb /data/items/foulspawn/small/cloakb.txt
+
+#load overlay /data/items/foulspawn/small/overlay.txt
+
+#load headweapon /data/items/foulspawn/small/headweapon.txt
+
+#generateitem 1 pants
+#generateitem 1 shirt
+#generateitem 1 head
+#generateitem 1 lleg
+#generateitem 1 rleg
+#generateitem 1 offhand
 
 #itemslot hand 0
 #itemslot head 1

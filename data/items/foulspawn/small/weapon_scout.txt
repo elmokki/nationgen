@@ -1,0 +1,182 @@
+
+-- Natural weapons
+
+#newitem
+#id tentacle
+#basechance 0.5
+#gameid 85
+#type "tentacle"
+#tentacle
+#needstype rarm tentacle
+#enditem
+
+#newitem
+#id tentacle_sleep
+#basechance 0.5
+#gameid 387
+#tentacle
+#command "#gcost +1"
+#needstype rarm tentacle
+#enditem
+
+#newitem
+#id tentacle_strangle
+#basechance 0.5
+#gameid 116
+#tentacle
+#needstype rarm tentacle
+#enditem
+
+#newitem
+#id tentacle_sleep
+#basechance 0.2
+#gameid 387
+#smalltentacle
+#command "#gcost +1"
+#needstype rarm smalltentacle
+#enditem
+
+#newitem
+#id tentacle_strangle
+#basechance 0.2
+#gameid 116
+#smalltentacle
+#needstype rarm smalltentacle
+#enditem
+
+#newitem
+#id tentacle_tiny
+#basechance 0.2
+#gameid 672
+#smalltentacle
+#needstype rarm smalltentacle
+#enditem
+
+#newitem
+#id tentacle_disease
+#basechance 0.2
+#gameid 142
+#smalltentacle
+#command "#gcost +2"
+#needstype rarm smalltentacle
+#enditem
+
+#newitem
+#id tentacle_lifedrain
+#basechance 0.2
+#gameid 63
+#smalltentacle
+#command "#gcost +2"
+#needstype rarm smalltentacle
+#enditem
+
+#newitem
+#id tentacle_paralyze
+#basechance 0.2
+#gameid 282
+#smalltentacle
+#command "#gcost +1"
+#needstype rarm smalltentacle
+#enditem
+
+#newitem
+#id tentacle_poison
+#basechance 0.2
+#gameid 355
+#smalltentacle
+#command "#gcost +1"
+#needstype rarm smalltentacle
+#enditem
+
+#newitem
+#id pincer
+#basechance 0.1
+#gameid 273
+#pincer
+#needstype rarm pincer
+#enditem
+
+
+
+-- 1h weapons
+
+#newitem
+#id shortsword
+#gameid 6
+#sprite /graphics/advancedhuman/weapons/shortsword.png
+#offsetx -4
+#offsety 3
+#onehand
+#theme "iron"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id broadsword
+#gameid 8
+#sprite /graphics/advancedhuman/weapons/broadsword.png
+#offsetx -4
+#offsety 3
+#onehand
+#theme "iron"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#sprite /graphics/advancedhuman/weapons/falchion.png
+#offsetx -4
+#offsety 3
+#onehand
+#theme "iron"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/vaettir/weapon/hatchet.png
+#offsetx -4
+#offsety -1
+#onehand
+#theme "iron"
+#theme "primitive"
+#chanceinc unittag irregular 8
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/advancedhuman/weapons/mace.png
+#offsetx -6
+#offsety 2
+#onehand
+#theme "primitive"
+#maxprot 15
+#chanceinc unittag irregular 8
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id hammer
+#gameid 13
+#sprite /graphics/advancedhuman/weapons/hammer.png
+#offsetx -5
+#offsety 3
+#onehand
+#theme "advanced"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id morningstar
+#gameid 15
+#sprite /graphics/advancedhuman/weapons/morningstar.png
+#offsetx -6
+#offsety 2
+#onehand
+#theme "advanced"
+#needstype rarm onehand
+#enditem
