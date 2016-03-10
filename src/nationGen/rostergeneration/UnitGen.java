@@ -917,7 +917,7 @@ public class UnitGen {
 			
 			
 			for(Pose p : poses)
-				if(p.name.equals(name))
+				if(p.name != null && p.name.equals(name))
 				{
 					if(args.size() > 2)
 						montagposes.put(p, weight);

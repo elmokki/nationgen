@@ -1,9 +1,34 @@
-
--------- Troop
+--- Montag poses
 
 #newpose
-#role "sacred infantry"
+#basechance 500000000
+#name "foulspawn infantry"
+#role "infantry"
 #role "elite infantry"
+#role "sacred infantry"
+
+#montagpose "scout" 2
+#montagpose "normal infantry" 2
+#montagpose "elite infantry" 0.5
+#montagpose "sacred infantry" 0.5
+
+#command "#gcost 10"
+#command "#rcost 10"
+
+#load basesprite /data/items/foulspawn/small/bases_infantry.txt
+
+#load armor /data/items/foulspawn/small/armor_placeholder.txt
+#load helmet /data/items/foulspawn/small/helmet_placeholder.txt
+
+#load weapon /data/items/foulspawn/small/weapon_placeholder.txt
+
+#endpose
+
+
+-------- Troop poses
+
+#newpose
+#name "normal infantry"
 #role "infantry"
 
 #renderorder "shadow basesprite rarm rweapon rleg lleg larm head overlay shirt pants armor bonusweapon weapon offhandw hands helmet offhanda"
@@ -39,7 +64,99 @@
 #generateitem 1 lleg
 #generateitem 1 rleg
 
-#maxvarieties_override 8
+#maxvarieties 4
+
+#itemslot hand 0
+#itemslot head 1
+#itemslot misc 2
+
+#endpose
+
+
+#newpose
+#name "elite infantry"
+#role "elite infantry"
+
+#renderorder "shadow basesprite rarm rweapon rleg lleg larm head overlay shirt pants armor bonusweapon weapon offhandw hands helmet offhanda"
+
+#no_free_fist
+
+#load basesprite /data/items/foulspawn/small/bases.txt
+#load rarm /data/items/foulspawn/small/rarm.txt
+#load larm /data/items/foulspawn/small/larm.txt
+#load rleg /data/items/foulspawn/small/rleg.txt
+#load lleg /data/items/foulspawn/small/lleg.txt
+#load head /data/items/foulspawn/small/head.txt
+#load shadow /data/items/foulspawn/small/shadow.txt
+#load shirt /data/items/foulspawn/small/shirt.txt
+#load pants /data/items/foulspawn/small/pants.txt
+#load hands /data/items/foulspawn/small/hands.txt
+
+#load armor /data/items/foulspawn/small/armor.txt
+#load helmet /data/items/foulspawn/small/helmet.txt
+
+#load weapon /data/items/foulspawn/small/weapon.txt
+#load offhand /data/items/foulspawn/small/offhand.txt
+#load offhand /data/items/foulspawn/small/shield.txt
+-- #load bonusweapon /data/items/foulspawn/small/bonusranged.txt
+
+#load overlay /data/items/foulspawn/small/overlay.txt
+
+#load headweapon /data/items/foulspawn/small/headweapon.txt
+
+#generateitem 1 pants
+#generateitem 1 shirt
+#generateitem 1 head
+#generateitem 1 lleg
+#generateitem 1 rleg
+
+#maxvarieties 2
+
+#itemslot hand 0
+#itemslot head 1
+#itemslot misc 2
+
+#endpose
+
+
+#newpose
+#name "sacred infantry"
+#role "sacred infantry"
+
+#renderorder "shadow basesprite rarm rweapon rleg lleg larm head overlay shirt pants armor bonusweapon weapon offhandw hands helmet offhanda"
+
+#no_free_fist
+
+#load basesprite /data/items/foulspawn/small/bases.txt
+#load rarm /data/items/foulspawn/small/rarm.txt
+#load larm /data/items/foulspawn/small/larm.txt
+#load rleg /data/items/foulspawn/small/rleg.txt
+#load lleg /data/items/foulspawn/small/lleg.txt
+#load head /data/items/foulspawn/small/head.txt
+#load shadow /data/items/foulspawn/small/shadow.txt
+#load shirt /data/items/foulspawn/small/shirt.txt
+#load pants /data/items/foulspawn/small/pants.txt
+#load hands /data/items/foulspawn/small/hands.txt
+
+#load armor /data/items/foulspawn/small/armor.txt
+#load helmet /data/items/foulspawn/small/helmet.txt
+
+#load weapon /data/items/foulspawn/small/weapon.txt
+#load offhand /data/items/foulspawn/small/offhand.txt
+#load offhand /data/items/foulspawn/small/shield.txt
+-- #load bonusweapon /data/items/foulspawn/small/bonusranged.txt
+
+#load overlay /data/items/foulspawn/small/overlay.txt
+
+#load headweapon /data/items/foulspawn/small/headweapon.txt
+
+#generateitem 1 pants
+#generateitem 1 shirt
+#generateitem 1 head
+#generateitem 1 lleg
+#generateitem 1 rleg
+
+#maxvarieties 1
 
 #itemslot hand 0
 #itemslot head 1
@@ -51,7 +168,9 @@
 -------- Scout
 
 #newpose
+#name "scout"
 #role "scout"
+#role "infantry"
 
 #renderorder "shadow cloakb basesprite rarm rweapon rleg lleg larm head overlay shirt pants armor bonusweapon weapon offhandw hands cloakf helmet offhanda"
 
@@ -92,6 +211,8 @@
 #itemslot hand 0
 #itemslot head 1
 #itemslot misc 2
+
+#maxvarieties_override 4
 
 #endpose
 
