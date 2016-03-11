@@ -727,7 +727,11 @@ public class CommanderGenerator extends TroopGenerator {
 		Item item = u.getSlot(slot);
 		if(Generic.containsTag(item.tags, "eliteversion"))
 		{
-			helmet = u.pose.getItems(slot).getItemWithName(Generic.getTagValue(item.tags, "eliteversion"), slot);
+			ItemSet helmets = new ItemSet();
+			for(String str : Generic.getTagValues(item.tags, "eliteversion"))
+				helmets.add(u.pose.getItems(slot).getItemWithName(str, slot));
+			
+			helmet = chandler.getRandom(helmets, u);
 		}
 		
 		
@@ -741,7 +745,14 @@ public class CommanderGenerator extends TroopGenerator {
 		{
 			try
 			{
-				helmet = getSuitableCommanderItems(u, slot).filterArmor(item.armor).getItemWithID(item.id, slot);
+				ItemSet helmets = new ItemSet();
+			
+				for(Item it : getSuitableCommanderItems(u, slot).filterSlot(slot))
+					if(it.id.equals(item.id))
+						helmets.add(it);
+				
+				helmet = chandler.getRandom(helmets, u);
+				
 			}
 			catch(Exception e)
 			{

@@ -2271,12 +2271,13 @@ public class MageGenerator extends TroopGenerator {
 		ItemSet test = new ItemSet();
 		test.addAll(possibles);
 		test.retainAll(used);
-		if(test.possibleItems() > 0)
+		if(chandler.handleChanceIncs(u, test).size() > 0)
 		{
 			possibles = test;
 		}
 		
-		Item i = possibles.getRandom(chandler, this.random);
+		Item i = chandler.getRandom(possibles, u)
+;
 		
 
 		return i;
