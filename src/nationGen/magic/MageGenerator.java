@@ -134,11 +134,11 @@ public class MageGenerator extends TroopGenerator {
 			{
 				f.basechance = (double)1 / (3 * old[i]);
 				if(old[i] > 3)
-					f.basechance = 0.00001;
+					f.basechance = 0;
 			}
 		
-			
-			orig.add(f);
+			if(f.basechance > 0)
+				orig.add(f);
 		}
 		while(orig.size() > 0)
 		{
