@@ -142,20 +142,18 @@ public class ScoutGenerator extends TroopGenerator {
 		template.setSlot("armor", armor);
 		
 		Item helmet = null;
-		int range = 0;
 		int prot = nationGen.armordb.GetInteger(template.getSlot("armor").id, "prot");
 		
 		if(template.pose.getItems("helmet") != null)
 		{
-			while(helmet == null && range < 16)
-			{
-				range++;
-				ItemSet helms = template.pose.getItems("helmet").filterProt(nationGen.armordb, prot - range, prot + range);
-				
-				if((range < 6 && helms.possibleItems() < 3) || range >= 6)
-					helmet = Entity.getRandom(nation.random, chandler.handleChanceIncs(template, helms));
-			}
+			ItemSet helms = template.pose.getItems("helmet");
+			helmet = Entity.getRandom(nation.random, chandler.handleChanceIncs(template, helms, unitGen.generateTargetProtChanceIncs(prot, 4)));
+	
+			
+	
+			System.out.println("-> " + helmet + " " + helmet.tags + " " + template.getSlot("head") + " - " + template.getSlot("head").tags);
 			template.setSlot("helmet", helmet);
+	
 		}
 	
 		if(r.nextDouble() < 0.15 && template.pose.getItems("bonusweapon") != null)
