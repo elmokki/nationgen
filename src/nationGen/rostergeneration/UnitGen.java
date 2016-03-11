@@ -457,7 +457,7 @@ public class UnitGen {
 			}
 			
 			int top = prot + i + 1; // above or at
-			list.add("thisarmorprot " + top + " *0.8");
+			list.add("thisarmorprot " + top + " *0.5");
 		}
 		
 		return list;

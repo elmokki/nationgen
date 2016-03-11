@@ -151,7 +151,6 @@ public class ScoutGenerator extends TroopGenerator {
 	
 			
 	
-			System.out.println("-> " + helmet + " " + helmet.tags + " " + template.getSlot("head") + " - " + template.getSlot("head").tags);
 			template.setSlot("helmet", helmet);
 	
 		}
