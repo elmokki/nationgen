@@ -161,6 +161,10 @@ public class Entity {
 			max += i.basechance;
 		}
 
+		
+		if(max == 0)
+			return null;
+		
 		double target = r.nextDouble() * max;
 		double current = 0;
 

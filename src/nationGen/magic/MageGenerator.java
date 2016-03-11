@@ -137,12 +137,12 @@ public class MageGenerator extends TroopGenerator {
 					f.basechance = 0;
 			}
 		
-			
-			orig.add(f);
+			if(f.basechance > 0)
+				orig.add(f);
 		}
-		
 		while(orig.size() > 0)
 		{
+
 			Filter i = Filter.getRandom(this.random, orig);
 			orig.remove(i);
 			newlist.add(Generic.PathToInteger(i.name));
@@ -2271,12 +2271,13 @@ public class MageGenerator extends TroopGenerator {
 		ItemSet test = new ItemSet();
 		test.addAll(possibles);
 		test.retainAll(used);
-		if(test.possibleItems() > 0)
+		if(chandler.handleChanceIncs(u, test).size() > 0)
 		{
 			possibles = test;
 		}
 		
-		Item i = possibles.getRandom(chandler, this.random);
+		Item i = chandler.getRandom(possibles, u)
+;
 		
 
 		return i;
