@@ -134,15 +134,15 @@ public class MageGenerator extends TroopGenerator {
 			{
 				f.basechance = (double)1 / (3 * old[i]);
 				if(old[i] > 3)
-					f.basechance = 0;
+					f.basechance = 0.00001;
 			}
 		
 			
 			orig.add(f);
 		}
-		
 		while(orig.size() > 0)
 		{
+
 			Filter i = Filter.getRandom(this.random, orig);
 			orig.remove(i);
 			newlist.add(Generic.PathToInteger(i.name));
