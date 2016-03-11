@@ -441,7 +441,7 @@ public class UnitGen {
 	}
 	
 	
-	private List<String> generateTargetProtChanceIncs(int prot, int range)
+	public List<String> generateTargetProtChanceIncs(int prot, int range)
 	{
 		List<String> list = new ArrayList<String>();
 		
