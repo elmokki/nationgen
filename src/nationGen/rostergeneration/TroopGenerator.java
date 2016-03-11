@@ -248,7 +248,14 @@ public class TroopGenerator {
 	public Unit generateUnit(Pose pose, Race race)
 	{
 		Unit u = this.unitGen.generateUnit(race, pose);
+
+		unitGen.addFreeTemplateFilters(u);
+		if(random.nextDouble() < 0.1 && canGetMoreFilters(u))
+			addTemplateFilter(u, "trooptemplates", "default_templates");
+
 		this.removeEliteSacred(u, u.guessRole());
+		
+
 		
 		unitGen.armorUnit(u, null, null, u.pose.getItems("armor"), null, false);
 
@@ -259,7 +266,8 @@ public class TroopGenerator {
 			role = "ranged";
 		
 		Template t = new Template(u.getSlot("armor"), race, u, role, u.pose);
-
+		
+		
 		boolean success = false;
 		if(role.equals("mounted"))
 		{
@@ -270,9 +278,6 @@ public class TroopGenerator {
 			success = armCavalry(u, t);
 	
 
-		unitGen.addFreeTemplateFilters(u);
-		if(random.nextDouble() < 0.1 && canGetMoreFilters(u))
-			addTemplateFilter(u, "trooptemplates", "default_templates");
 
 		if(!success)
 		{
