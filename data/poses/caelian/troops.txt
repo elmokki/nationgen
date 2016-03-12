@@ -3,6 +3,8 @@
 #newpose
 #role "infantry"
 #role "scout"
+#chanceinc hastheme yazata *0.001
+#chanceinc hastheme daeva *0.001
 
 #renderorder "shadow cloakb wings basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -39,15 +41,13 @@
 
 
 
--------- Elite infantry: these will be the only available infantry poses for elites/sacred, but will be the standard units for the Yazata/Daeva themes (i.e., only Yazatas/Daevas)
+-------- Elite infantry: these will be the only available infantry poses for elites/sacred
 #newpose
-#role "infantry"
 #role "sacred infantry"
 #role "elite infantry"
-#role "scout"
 #basechance 0.001
-#chanceinc hastheme yazata *100000
-#chanceinc hastheme daeva *100000
+#chanceinc hastheme yazata *1000000
+#chanceinc hastheme daeva *1000000
 
 #renderorder "shadow cloakb wings basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -95,6 +95,8 @@
 --- archer
 #newpose
 #role "ranged"
+#chanceinc hastheme yazata *0.001
+#chanceinc hastheme daeva *0.001
 
 #renderorder "shadow cloakb wings basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -132,6 +134,8 @@
 #newpose
 #theme advanced
 #role "ranged"
+#chanceinc hastheme yazata *0.001
+#chanceinc hastheme daeva **0.001
 
 #basechance 0.33
 
@@ -165,14 +169,13 @@
 
 #endpose
 
--------- Elite ranged: these will be the only available ranged poses for elites/sacred, but will be the standard units for the Yazata/Daeva themes (i.e., only Yazatas/Daevas); no crossbows, though
+-------- Elite ranged: these will be the only available ranged poses for elites/sacred
 #newpose
-#role "ranged"
 #role "sacred ranged"
 #role "elite ranged"
 #basechance 0.001
-#chanceinc hastheme yazata *100000
-#chanceinc hastheme daeva *100000
+#chanceinc hastheme yazata *1000000
+#chanceinc hastheme daeva *1000000
 
 #renderorder "shadow cloakb wings basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
