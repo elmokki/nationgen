@@ -314,7 +314,11 @@ public class UnitGen {
 			{
 		
 
-				int prot = nationGen.armordb.GetInteger(u.getSlot("armor").id, "prot");
+				int prot;
+				if (u.getSlot("armor") == null)
+					prot = 0;
+				else
+					prot = nationGen.armordb.GetInteger(u.getSlot("armor").id, "prot");
 				
 				ItemSet inchere = included.filterSlot("helmet").filterForPose(u.pose);
 				if(inchere.possibleItems() == 0)
