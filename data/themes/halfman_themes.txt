@@ -85,7 +85,7 @@
 #racedefinition "#magicpriority blood 6"
 #racedefinition "#magicpriority astral 0.5"
 #racedefinition "#magicpriority air 0.5"
-#racedefinition "#descr 'These minotaurs retain the primal savagery of the wild, and can rarely control their rage in battle. '"
+#racedefinition "#descr 'These halfmen retain the primal savagery of the wild, and can rarely control their rage in battle. '"
 #endtheme
 
 -- Weights: EA 0.5, MA 1, LA 2.5
@@ -107,5 +107,41 @@
 #racedefinition "#magicpriority nature 6"
 #racedefinition "#magicpriority earth 6"
 #racedefinition "#magicpriority blood 2"
-#racedefinition "#descr 'These minotaurs have been civilized, and now fight more with skill than rage. '"
+#racedefinition "#descr 'These halfmen have been civilized, and now fight more with skill than rage. '"
+#endtheme
+
+
+-- Demographic themes - One for each level is mandatory, and a given demographic can only be present on one level
+
+-- Weights: EA 1, MA 1, LA 1
+#newtheme
+#type demographic_primary
+#name minotaur_primary
+#endtheme
+
+-- Weights: EA 1, MA 1, LA 1
+#newtheme
+#type demographic_primary
+#name centaur_primary
+#endtheme
+
+-- Weights: EA 1, MA 1, LA 1
+#newtheme
+#type demographic_secondary
+#name minotaur_secondary
+#chanceinc racetheme minotaur_primary *0
+#endtheme
+
+-- Weights: EA 1, MA 1, LA 1
+#newtheme
+#type demographic_secondary
+#name centaur_secondary
+#chanceinc racetheme centaur_primary *0
+#endtheme
+
+-- Weights: EA 1, MA 1, LA 1
+#newtheme
+#type demographic_secondary
+#name no_secondary
+#basechance 1
 #endtheme

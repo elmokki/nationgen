@@ -1,0 +1,79 @@
+#newitem
+#name "javelin 1"
+#gameid 21
+#sprite /graphics/weapon/standard/javelin1.png
+#offsetx -8
+#offsety -18
+#basechance 2
+#enditem
+
+#newitem
+#name "javelin 2"
+#gameid 21
+#sprite /graphics/weapon/standard/javelin2.png
+#offsetx -8
+#offsety -18
+#basechance 2
+#enditem
+
+#newitem
+#name "bonus crossbow"
+#gameid 25
+#sprite /graphics/weapon/standard/bonuscrossbow.png
+#offsetx -8
+#offsety -18
+#basechance 0.5
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem -- Throwing axe
+#name "throwing axe"
+#gameid 260
+#theme "primitive"
+#theme "iron"
+#tag "name infantry 'Axe Thrower'"
+#basechance 2
+#chanceinc unittag irregular 4
+#enditem
+
+#newitem
+#name "bonus shortbow"
+#gameid 23
+#sprite /graphics/weapon/standard/bonusshortbow.png
+#offsetx -8
+#offsety -18
+#basechance 0.5
+#enditem
+
+#newitem
+#name "sticksandstones"
+#gameid 360
+#basechance 0.25
+#theme "primitive"
+#tag "maxprot 14"
+#tag "notepic"
+#enditem
+
+#newitem
+#name "harpoon"
+#gameid 452
+#sprite /graphics/weapon/standard/javelin1.png
+#offsetx -8
+#offsety -18
+#tag "maxprot 14"
+#tag "tierunique"
+#basechance 0.5
+#chanceinc unittag irregular 1.5
+#enditem
+
+#newitem
+#name "blowpipe"
+#gameid 34
+#tag "name infantry 'Poisoner'"
+#tag "maxprot 12"
+#tag "tierunique"
+#basechance 0.5
+#chanceinc unittag irregular 1.5
+#theme "primitive"
+#enditem

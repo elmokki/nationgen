@@ -1,0 +1,32 @@
+#newrace
+#name "Halfman"
+#visiblename "Halfman"
+#basechance 0.2
+
+#pose minotaurtroops
+#pose minotaurmages
+#pose centaurtroops
+
+#racethemes halfman_themes
+#freetheme social
+#freetheme demographic_primary
+#freetheme demographic_secondary
+
+#all_troops_sacred
+#all_troops_elite
+
+#longsyllables /data/names/nations/amazon/longsyllables.txt
+#shortsyllables /data/names/nations/amazon/shortsyllables.txt
+#suffixes /data/names/nations/amazon/suffixes.txt
+
+#secondaryracemagemod 15
+#primaryracemagemod 30
+
+-- Magic priorities are determined by the savage/civilized social theme
+
+#oneprimarychance 0.85
+#twoprimarychance 0.125
+#threeprimarychance 0.025
+
+#monsterchance 0.01
+#endrace
