@@ -1,0 +1,153 @@
+#newitem
+#id axe_bronze
+#gameid 646
+#sprite /graphics/weapon/bronze/hatchet_oh.png
+#offsetx -10
+#offsety -20
+#theme "primitive"
+#theme "bronze"
+#enditem
+
+#newitem
+#id broadsword_bronze
+#gameid bronzebroadsword
+#sprite /graphics/weapon/bronze/broadsword_oh.png
+#offsetx -12
+#offsety -19
+#theme "bronze"
+#enditem
+
+#newitem
+#id hammer_bronze
+#gameid bronzehammer
+#sprite /graphics/weapon/bronze/hammer_oh.png
+#offsetx -10
+#offsety -20
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id morningstar_bronze
+#gameid bronzemorningstar
+#sprite /graphics/weapon/bronze/morningstar_oh.png
+#offsetx -10
+#offsety -20
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id shortsword_bronze
+#gameid 645
+#sprite /graphics/weapon/bronze/shortsword_oh.png
+#offsetx -12
+#offsety -19
+#theme "bronze"
+#enditem
+
+-- 1h weapons
+
+#newitem
+#id oh_axe
+#gameid 17
+#sprite /graphics/vaettir/offhand/hatchet.png
+#offsetx -11
+#offsety -24
+#theme "primitive"
+#theme "iron"
+#maxprot 15
+#chanceinc unittag irregular 8
+#enditem
+
+#newitem
+#id oh_shortsword
+#gameid 6
+#sprite /graphics/advancedhuman/weapons/oh_shortsword.png
+#offsetx -11
+#offsety -19
+#tag "eliteversion oh_shortsword_elite"
+#theme "iron"
+#enditem
+
+#newitem
+#id oh_shortsword_elite
+#gameid 6
+#sprite /graphics/advancedhuman/weapons/oh_shortsword_elite.png
+#offsetx -11
+#offsety -19
+#theme "elite"
+#theme "iron"
+#enditem
+
+#newitem
+#id oh_broadsword
+#gameid 8
+#sprite /graphics/advancedhuman/weapons/oh_broadsword.png
+#offsetx -11
+#offsety -19
+#tag "eliteversion oh_broadsword_elite"
+#theme "iron"
+#enditem
+
+#newitem
+#id oh_broadsword_elite
+#gameid 8
+#sprite /graphics/advancedhuman/weapons/oh_broadsword_elite.png
+#offsetx -11
+#offsety -19
+#theme "elite"
+#theme "iron"
+#enditem
+
+#newitem
+#id oh_falchion
+#gameid 10
+#sprite /graphics/advancedhuman/weapons/oh_falchion.png
+#offsetx -11
+#offsety -19
+#tag "eliteversion oh_falchion_elite"
+#theme "iron"
+#enditem
+
+#newitem
+#id oh_falchion_elite
+#gameid 10
+#sprite /graphics/advancedhuman/weapons/oh_falchion_elite.png
+#offsetx -11
+#offsety -19
+#theme "elite"
+#theme "iron"
+#enditem
+
+#newitem
+#id oh_morningstar
+#gameid 15
+#sprite /graphics/advancedhuman/weapons/oh_morningstar.png
+#offsetx -11
+#offsety -19
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem
+#id oh_mace
+#gameid 12
+#sprite /graphics/advancedhuman/weapons/oh_mace.png
+#offsetx -11
+#offsety -19
+#theme "primitive"
+#maxprot 15
+#chanceinc unittag irregular 8
+#enditem
+
+#newitem
+#id oh_hammer
+#gameid 13
+#sprite /graphics/advancedhuman/weapons/oh_hammer.png
+#offsetx -11
+#offsety -19
+#chanceinc unittag irregular 8
+#theme "advanced"
+#theme "iron"
+#enditem
