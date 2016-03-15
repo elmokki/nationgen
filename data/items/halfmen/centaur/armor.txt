@@ -1,30 +1,16 @@
---- No armor
-
-#new
-#name "no armor"
-#gameid -1
-#theme "naked"
-#theme "primitive"
-#end
-
 --- Leather
 
 #newitem
-#name "furs"
-#gameid 44
-#sprite /graphics/halfmen/centaur/armor/furs.png
-#armor
-#theme "primitive"
-#theme "leather"
-#enditem
-
-#newitem
 #name "leather barding"
+#basechance 0.25
 #gameid leather_barding
 #sprite /graphics/halfmen/centaur/armor/barding_leather.png
 #armor
 #theme "leather"
+#theme "primitive"
+#command "#stealthy +40"
 #enditem
+
 
 --- Scale
 
