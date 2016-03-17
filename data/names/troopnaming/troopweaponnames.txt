@@ -60,7 +60,6 @@
 -- Spear
 #chanceinc slot weapon 1 1
 #chanceinc slot weapon 643 1
-#chanceinc slot weapon nonferrousspear 1
 #chanceinc slot weapon giantspear 1
 #chanceinc slot weapon giantspear_bronze 1
 #chanceinc slot weapon 473 1
@@ -87,7 +86,6 @@
 -- Spear
 #chanceinc slot weapon 1 0.1
 #chanceinc slot weapon 643 0.1
-#chanceinc slot weapon nonferrousspear 0.1
 #chanceinc slot weapon giantspear 0.1
 #chanceinc slot weapon giantspear_bronze 0.1
 #chanceinc slot weapon 473 0.1
@@ -109,12 +107,18 @@
 #chanceinc slot weapon 426 0.05
 #chanceinc slot weapon 598 0.025
 #chanceinc slot weapon 455 0.025
-#chanceinc slot weapon bronzeglaive 0.05
+#chanceinc slot weapon 673 0.05
 #chanceinc slot weapon meteoriteglaive 0.05
 -- Yari
 #chanceinc slot weapon 376 0.1
 -- Spetum
 #chanceinc slot weapon 639 0.1
+-- Trident
+#chanceinc slot weapon 3 0.1
+#chanceinc slot weapon 389 0.1
+#chanceinc slot weapon 641 0.1
+#chanceinc slot weapon 642 0.1
+#chanceinc slot weapon 670 0.1
 -- Primitives should actually get this
 #chanceinc hastheme primitive *25
 #chanceinc hastheme advanced *0.1
@@ -252,6 +256,7 @@
 #type weapon
 -- Axe
 #chanceinc slot weapon 17 1
+#chanceinc slot weapon 675 1
 #chanceinc slot weapon goldenaxe 1
 -- Battleaxe
 #chanceinc slot weapon 18 1
