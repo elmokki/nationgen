@@ -1,0 +1,118 @@
+--- Montag poses
+
+#newpose
+-- #basechance 500000000
+#basechance 0
+#name "foulspawn cavalry"
+#role "mounted"
+#role "elite mounted"
+#role "sacred mounted"
+
+#montagpose "normal cavalry" 2
+#montagpose "elite cavalry" 0.5
+
+#command "#gcost 20"
+#command "#rcost 15"
+
+#load basesprite /data/items/foulspawn/small/bases_infantry.txt
+
+#load armor /data/items/foulspawn/small/armor_placeholder.txt
+#load helmet /data/items/foulspawn/small/helmet_placeholder.txt
+
+#load weapon /data/items/foulspawn/small/weapon_placeholder.txt
+
+#maxvarieties_override 8
+
+#endpose
+
+
+-------- Mounted poses
+
+#newpose
+#name "normal cavalry"
+#role "mounted"
+
+#renderorder "shadow basesprite rarm weapon mount lleg larm head shirt pants armor bonusweapon offhandw hands helmet offhanda overlay"
+
+#no_free_fist
+
+#load basesprite /data/items/foulspawn/mounted/bases.txt
+#load mount /data/items/human/human_mounted/humanmounts.txt 2 -20
+#load rarm /data/items/foulspawn/small/rarm.txt
+#load larm /data/items/foulspawn/small/larm.txt
+#load lleg /data/items/foulspawn/mounted/lleg.txt
+#load head /data/items/foulspawn/mounted/head.txt
+#load shirt /data/items/foulspawn/small/shirt.txt
+#load pants /data/items/foulspawn/mounted/pants.txt
+#load hands /data/items/foulspawn/small/hands.txt
+
+#load armor /data/items/foulspawn/small/armor.txt
+#load helmet /data/items/foulspawn/small/helmet.txt
+
+#load weapon /data/items/foulspawn/mounted/weapon.txt
+#load lance /data/items/foulspawn/mounted/lance.txt
+#load offhand /data/items/foulspawn/mounted/offhand.txt
+#load offhand /data/items/foulspawn/small/shield.txt
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+
+#writeslot lanceslot
+
+#generateitem 1 pants
+#generateitem 1 shirt
+#generateitem 1 head
+#generateitem 1 lleg
+
+#maxvarieties 4
+
+#itemslot hand 0
+#itemslot feet 0
+#itemslot head 1
+#itemslot misc 2
+
+#endpose
+
+
+#newpose
+#name "elite cavalry"
+#role "mounted"
+
+#renderorder "shadow basesprite rarm weapon mount lleg larm head shirt pants armor bonusweapon offhandw hands helmet offhanda overlay"
+
+#no_free_fist
+
+#load basesprite /data/items/foulspawn/mounted/bases.txt
+#load mount /data/items/human/human_mounted/humanmounts.txt 2 -20
+#load rarm /data/items/foulspawn/small/rarm.txt
+#load larm /data/items/foulspawn/small/larm.txt
+#load lleg /data/items/foulspawn/mounted/lleg.txt
+#load head /data/items/foulspawn/mounted/head.txt
+#load shirt /data/items/foulspawn/small/shirt.txt
+#load pants /data/items/foulspawn/mounted/pants.txt
+#load hands /data/items/foulspawn/small/hands.txt
+
+#load armor /data/items/foulspawn/small/armor.txt
+#load helmet /data/items/foulspawn/small/helmet.txt
+
+#load weapon /data/items/foulspawn/mounted/weapon.txt
+#load lance /data/items/foulspawn/mounted/lance.txt
+#load offhand /data/items/foulspawn/mounted/offhand.txt
+#load offhand /data/items/foulspawn/small/shield.txt
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+
+#writeslot lanceslot
+
+#generateitem 1 pants
+#generateitem 1 shirt
+#generateitem 1 head
+#generateitem 1 lleg
+
+#maxvarieties 4
+
+#itemslot hand 0
+#itemslot feet 0
+#itemslot head 1
+#itemslot misc 2
+
+#endpose
