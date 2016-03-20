@@ -1,0 +1,240 @@
+
+-- Natural weapons
+
+#newitem
+#id tentacle
+#gameid 85
+#type "tentacle"
+#tentacle
+#needstype rarm tentacle
+#enditem
+
+#newitem
+#id tentacle_sleep
+#gameid 387
+#tentacle
+#command "#gcost +1"
+#needstype rarm tentacle
+#enditem
+
+#newitem
+#id tentacle_strangle
+#gameid 116
+#tentacle
+#needstype rarm tentacle
+#enditem
+
+#newitem
+#id tentacle_sleep
+#gameid 387
+#smalltentacle
+#command "#gcost +1"
+#needstype rarm smalltentacle
+#enditem
+
+#newitem
+#id tentacle_strangle
+#gameid 116
+#smalltentacle
+#needstype rarm smalltentacle
+#enditem
+
+#newitem
+#id tentacle_tiny
+#gameid 672
+#smalltentacle
+#needstype rarm smalltentacle
+#enditem
+
+#newitem
+#id tentacle_disease
+#gameid 142
+#smalltentacle
+#command "#gcost +2"
+#needstype rarm smalltentacle
+#enditem
+
+#newitem
+#id tentacle_lifedrain
+#gameid 63
+#smalltentacle
+#command "#gcost +2"
+#needstype rarm smalltentacle
+#enditem
+
+#newitem
+#id tentacle_paralyze
+#gameid 282
+#smalltentacle
+#command "#gcost +1"
+#needstype rarm smalltentacle
+#enditem
+
+#newitem
+#id tentacle_poison
+#gameid 355
+#smalltentacle
+#command "#gcost +1"
+#needstype rarm smalltentacle
+#enditem
+
+#newitem
+#id pincer
+#gameid 273
+#pincer
+#needstype rarm pincer
+#enditem
+
+
+
+-- 1h weapons
+
+#newitem
+#id broadsword
+#gameid 8
+#sprite /graphics/advancedhuman/weapons/broadsword.png
+#offsetx -4
+#offsety 3
+#onehand
+#theme "iron"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#sprite /graphics/advancedhuman/weapons/falchion.png
+#offsetx -4
+#offsety 3
+#onehand
+#theme "iron"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/vaettir/weapon/hatchet.png
+#offsetx -4
+#offsety -1
+#onehand
+#theme "iron"
+#theme "primitive"
+#chanceinc unittag irregular 8
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id morningstar
+#gameid 15
+#sprite /graphics/advancedhuman/weapons/morningstar.png
+#offsetx -6
+#offsety 2
+#onehand
+#theme "advanced"
+#needstype rarm onehand
+#enditem
+
+
+-- 2h weapons
+
+#newitem
+#id greatclub
+#gameid 165
+#sprite /graphics/foulspawn/small/weapon/greatclub.png
+#twohand
+#theme "primitive"
+#theme "wood"
+#needstype rarm twohand
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id maul
+#gameid 14
+#sprite /graphics/foulspawn/small/weapon/maul.png
+#twohand
+#theme "primitive"
+#needstype rarm twohand
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id greataxe
+#gameid 18
+#sprite /graphics/foulspawn/small/weapon/greataxe.png
+#chanceinc unittag irregular 8
+#twohand
+#theme "iron"
+#theme "primitive"
+#needstype rarm twohand
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id greatsword
+#gameid 11
+#sprite /graphics/foulspawn/small/weapon/greatsword.png
+#twohand
+#theme "iron"
+#needstype rarm twohand
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id flail
+#gameid 16
+#sprite /graphics/advancedhuman/weapons/flail_1.png
+#offsetx -4
+#offsety -1
+#twohand
+#theme "iron"
+#needstype rarm twohand
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id lightlance
+#gameid 357
+#sprite /graphics/advancedhuman/weapons/spear.png
+#offsetx -5
+#theme "iron"
+#onehand
+#needstype rarm onehand
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id lightlance
+#gameid 357
+#sprite /graphics/advancedhuman/weapons/spear.png
+#offsetx -4
+#offsety -1
+#twohand
+#theme "iron"
+#needstype rarm twohand
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id trident
+#gameid 3
+#sprite /graphics/advancedhuman/weapons/trident.png
+#offsetx -5
+#theme "iron"
+#onehand
+#needstype rarm onehand
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id trident
+#gameid 3
+#sprite /graphics/advancedhuman/weapons/trident.png
+#offsetx -4
+#offsety -1
+#twohand
+#theme "iron"
+#needstype rarm twohand
+#ignore_dw_restrictions
+#enditem
