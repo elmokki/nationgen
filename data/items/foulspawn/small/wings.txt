@@ -1,0 +1,75 @@
+#newitem
+#name "bat_wings"
+#gameid -1
+#sprite /graphics/wings.png
+#offsety 3
+#define "#flying"
+#define "#gcost *1.5"
+#define "size 3"
+#define "ressize 2"
+#tag "winged"
+#enditem
+
+#newitem
+#name "demon_wings"
+#gameid -1
+#sprite /graphics/monkey/vanarabred_wings.png
+#offsetx -2
+#offsety 1
+#define "#flying"
+#define "#gcost *1.5"
+#define "size 3"
+#define "ressize 2"
+#tag "winged"
+#enditem
+
+#newitem
+#name "adorable_wings"
+#gameid -1
+#sprite /graphics/caelian/yazatawings.png
+#needs overlay yazata_overlay
+#offsetx -3
+#offsety 2
+#define "#flying"
+#define "#gcost *1.5"
+#define "size 3"
+#define "ressize 2"
+#tag "winged"
+#enditem
+
+#newitem
+#name "locust_wings"
+#gameid -1
+#sprite /graphics/foulspawn/small/bonus/locust_wings.png
+#offsetx -2
+#offsety 1
+#define "#flying"
+#define "#gcost *1.5"
+#define "size 3"
+#define "ressize 2"
+#tag "winged"
+#enditem
+
+#newitem
+#name "harpy_wings"
+#gameid -1
+#sprite /graphics/foulspawn/small/bonus/wings_harpy.png
+#define "#flying"
+#define "#gcost *1.5"
+#define "#hp -2"
+#define "#ap -2"
+#tag "winged"
+#enditem
+
+#newitem
+#name "butterfly_wings"
+#gameid -1
+#sprite /graphics/hoburg/hoburg_wings.png
+#offsetx -1
+#offsety -9
+#define "#flying"
+#define "#gcost *1.5"
+#define "#hp -2"
+#define "#ap -2"
+#tag "winged"
+#enditem

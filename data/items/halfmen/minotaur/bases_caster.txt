@@ -3,6 +3,26 @@
 #basechance 4
 #gameid -1
 #sprite /graphics/halfmen/minotaur/minotaur_basesprite.png
+#define "#gcost 40"
+#define "#hp 25"
+#define "#size 3"
+#define "#prot 4"
+#define "#mr 11"
+#define "#mor 13"
+#define "#str 16"
+#define "#att 10"
+#define "#def 9"
+#define "#prec 8"
+#define "#enc 3"
+#define "#ap 15"
+#define "#nametype 109"
+#define "#maxage 90"
+#define "#forestsurvival"
+#define "#heal"
+#define "#description 'Minotaurs are large, wild creatures with the head of a bull, the upper body of a very muscular man and hindquarters of a hoofed being.'"
+
+#mapmovepenaltyenc 9
+#mapmovepenaltyprot 20
 #command "#berserk +2"
 #command "#trample"
 #theme "savage"
@@ -15,11 +35,26 @@
 #basechance 4
 #gameid -1
 #sprite /graphics/halfmen/minotaur/minotaur_basesprite.png
-#command "#hp -2"
-#command "#mr -1"
-#command "#mor +1"
-#command "#att +1"
-#command "#def +1"
+#define "#gcost 30"
+#define "#hp 23"
+#define "#size 3"
+#define "#prot 4"
+#define "#mr 10"
+#define "#mor 14"
+#define "#str 16"
+#define "#att 11"
+#define "#def 10"
+#define "#prec 8"
+#define "#enc 3"
+#define "#ap 15"
+#define "#nametype 109"
+#define "#maxage 90"
+#define "#forestsurvival"
+#define "#heal"
+#define "#description 'Minotaurs are large, wild creatures with the head of a bull, the upper body of a very muscular man and hindquarters of a hoofed being.'"
+
+#mapmovepenaltyenc 9
+#mapmovepenaltyprot 20
 #theme "civilized"
 #tier 1
 #tier 2
@@ -31,6 +66,26 @@
 #name "basesprite_white"
 #gameid -1
 #sprite /graphics/halfmen/minotaur/minotaur_basesprite_white.png
+#define "#gcost 40"
+#define "#hp 25"
+#define "#size 3"
+#define "#prot 4"
+#define "#mr 11"
+#define "#mor 13"
+#define "#str 16"
+#define "#att 10"
+#define "#def 9"
+#define "#prec 8"
+#define "#enc 3"
+#define "#ap 15"
+#define "#nametype 109"
+#define "#maxage 90"
+#define "#forestsurvival"
+#define "#heal"
+#define "#description 'Minotaurs are large, wild creatures with the head of a bull, the upper body of a very muscular man and hindquarters of a hoofed being.'"
+
+#mapmovepenaltyenc 9
+#mapmovepenaltyprot 20
 #command "#inspirational +1"
 #command "#mr +1"
 #theme "primitive"
@@ -43,9 +98,28 @@
 #name "basesprite_black"
 #gameid -1
 #sprite /graphics/halfmen/minotaur/minotaur_basesprite_black.png
+#define "#gcost 40"
+#define "#hp 27"
+#define "#size 3"
+#define "#prot 4"
+#define "#mr 11"
+#define "#mor 13"
+#define "#str 16"
+#define "#att 10"
+#define "#def 9"
+#define "#prec 8"
+#define "#enc 3"
+#define "#ap 15"
+#define "#nametype 109"
+#define "#maxage 90"
+#define "#forestsurvival"
+#define "#heal"
+#define "#description 'Minotaurs are large, wild creatures with the head of a bull, the upper body of a very muscular man and hindquarters of a hoofed being.'"
+
+#mapmovepenaltyenc 9
+#mapmovepenaltyprot 20
 #command "#berserk +4"
 #command "#trample"
-#command "#hp +2"
 #theme "primitive"
 #theme "blood"
 #tier 3

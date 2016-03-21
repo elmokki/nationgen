@@ -1,0 +1,36 @@
+--- Various bad things that afflict degenerates
+
+#newitem
+#id feebleminded
+#basechance 4
+#gameid -1
+#command "#startingaff 33554432"
+#enditem
+
+#newitem
+#id doomed
+#gameid -1
+#command "#startingaff 2097152"
+#command "#startingaff 2"
+#enditem
+
+#newitem
+#id sickly
+#gameid -1
+#command "#startingaff 1"
+#command "#diseaseres 10"
+#enditem
+
+#newitem
+#id withering
+#gameid -1
+#command "#startaff 25"
+#command "#noheal"
+#enditem
+
+#newitem
+#id shortlived
+#gameid -1
+#command "#older 1"
+#command "#maxage 25"
+#enditem

@@ -1,0 +1,125 @@
+#newitem
+#name "javelin 1"
+#gameid 21
+#sprite /graphics/weapon/standard/javelin1.png
+#offsetx -1
+#offsety 4
+#basechance 2
+#enditem
+
+#newitem
+#name "javelin 2"
+#gameid 21
+#sprite /graphics/weapon/standard/javelin2.png
+#offsetx -1
+#offsety 4
+#basechance 2
+#enditem
+
+#newitem
+#name "bonus crossbow"
+#gameid 25
+#sprite /graphics/weapon/standard/bonuscrossbow.png
+#offsetx -1
+#offsety 4
+#basechance 0.5
+#theme "advanced"
+#enditem
+
+#newitem -- Throwing axe
+#name "throwing axe"
+#gameid 260
+#theme "primitive"
+#basechance 2
+#chanceinc unittag irregular 2
+#enditem
+
+#newitem
+#name "bonus shortbow"
+#gameid 23
+#sprite /graphics/weapon/standard/bonusshortbow.png
+#offsetx -1
+#offsety 4
+#basechance 0.5
+#enditem
+
+#newitem
+#name "sticksandstones"
+#gameid 360
+#basechance 0.25
+#theme "primitive"
+#tag "maxprot 14"
+#tag "notepic"
+#enditem
+
+#newitem
+#name "harpoon"
+#gameid 452
+#sprite /graphics/weapon/standard/javelin1.png
+#offsetx -1
+#offsety 4
+#tag "maxprot 14"
+#tag "tierunique"
+#basechance 0.5
+#chanceinc unittag irregular 1.5
+#enditem
+
+#newitem
+#name "blowpipe"
+#gameid 34
+#tag "name infantry 'Poisoner'"
+#tag "maxprot 12"
+#tag "tierunique"
+#basechance 0.5
+#chanceinc unittag irregular 1.5
+#enditem
+
+
+-- Extra body parts
+
+#newitem
+#name "tentacle_green"
+#gameid 85
+#basechance 2
+#sprite /graphics/foulspawn/small/bonus/tentacles_green.png
+#tentacle
+#itemslot misc +1
+#enditem
+
+#newitem
+#name "tentacle_pink"
+#gameid 85
+#basechance 2
+#sprite /graphics/foulspawn/small/bonus/tentacles_pink.png
+#tentacle
+#itemslot misc +1
+#enditem
+
+#newitem
+#name "tail_monkey"
+#gameid -1
+#sprite /graphics/foulspawn/small/bonus/tail_monkey.png
+#tail
+#itemslot misc +1
+#enditem
+
+#newitem
+#name "tail_lion"
+#gameid -1
+#sprite /graphics/foulspawn/small/bonus/tail_lion.png
+#tail
+#enditem
+
+#newitem
+#name "tail_scorpion"
+#gameid 355
+#sprite /graphics/foulspawn/small/bonus/tail_scorpion.png
+#tail
+#enditem
+
+#newitem
+#name "tail_lizard"
+#gameid 589
+#sprite /graphics/foulspawn/small/bonus/tail_lizard.png
+#tail
+#enditem

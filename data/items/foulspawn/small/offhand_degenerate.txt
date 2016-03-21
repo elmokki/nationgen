@@ -1,0 +1,67 @@
+-- Natural weapons
+
+#newitem
+#id fist
+#gameid 92
+#needstype larm onehand
+#hand
+#enditem
+
+#newitem
+#id claw
+#gameid 29
+#needstype larm claw
+#claw
+#enditem
+
+#newitem
+#id claw_stun
+#basechance 0.25
+#gameid 250
+#needstype larm claw
+#claw
+#command "#gcost +1"
+#enditem
+
+#newitem
+#id claw_poison
+#basechance 0.25
+#gameid 248
+#needstype larm claw
+#claw
+#command "#gcost +1"
+#enditem
+
+#newitem
+#id tentacle
+#gameid 85
+#tentacle
+#needstype larm tentacle
+#enditem
+
+#newitem
+#id tentacle_sleep
+#basechance 0.25
+#gameid 387
+#tentacle
+#command "#gcost +1"
+#needstype larm tentacle
+#enditem
+
+#newitem
+#id tentacle_strangle
+#basechance 0.25
+#gameid 116
+#tentacle
+#command "#gcost +1"
+#needstype larm tentacle
+#enditem
+
+#newitem
+#id pincer
+#basechance 0.25
+#gameid 273
+#pincer
+#command "#gcost +1"
+#needstype larm pincer
+#enditem

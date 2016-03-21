@@ -1,0 +1,347 @@
+#newitem
+#id axe_bronze
+#gameid 675
+#sprite /graphics/weapon/bronze/hatchet.png
+#offsetx -3
+#offsety -7
+#theme "primitive"
+#theme "bronze"
+#enditem
+
+#newitem
+#id broadsword_bronze
+#gameid bronzebroadsword
+#sprite /graphics/weapon/bronze/broadsword.png
+#offsetx -3
+#offsety -7
+#theme "bronze"
+#enditem
+
+#newitem
+#id flail_bronze
+#gameid 16
+#sprite /graphics/weapon/bronze/flail.png
+#offsetx -8
+#offsety -11
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id bronze_claymore
+#gameid bronzeclaymore
+#sprite /graphics/weapon/bronze/claymore.png
+#offsetx -6
+#offsety -12
+#basechance 0.125
+#theme "bronze"
+#enditem
+
+#newitem
+#id greataxe_bronze
+#gameid bronzebattleaxe
+#sprite /graphics/weapon/bronze/greataxe.png
+#offsetx -9
+#offsety -12
+#theme "primitive"
+#theme "bronze"
+#enditem
+
+#newitem
+#id halberd_bronze
+#gameid bronzehalberd
+#sprite /graphics/weapon/bronze/halberd.png
+#offsetx -7
+#offsety -10
+#theme "advanced"
+#theme "bronze"
+#minprot 8
+#enditem
+
+#newitem
+#id bardiche_bronze
+#gameid bronzebardiche
+#sprite /graphics/weapon/bronze/bardiche.png
+#offsetx -5
+#offsety -8
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id hammer_bronze
+#gameid bronzehammer
+#sprite /graphics/weapon/bronze/hammer.png
+#offsetx -3
+#offsety -7
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id lucernehammer_bronze
+#gameid bronzelucernehammer
+#sprite /graphics/weapon/bronze/lucernehammer.png
+#offsetx -5
+#offsety -8
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id morningstar_bronze
+#gameid bronzemorningstar
+#sprite /graphics/weapon/bronze/morningstar.png
+#offsetx -3
+#offsety -7
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id shortsword_bronze
+#gameid 645
+#sprite /graphics/weapon/bronze/shortsword.png
+#offsetx -3
+#offsety -7
+#theme "bronze"
+#enditem
+
+#newitem
+#id spear_bronze
+#gameid 643
+#sprite /graphics/weapon/bronze/spear.png
+#offsetx -9
+#offsety -12
+#theme "bronze"
+#enditem
+
+#newitem
+#id lance_bronze
+#gameid 651
+#sprite /graphics/weapon/bronze/spear.png
+#offsetx -9
+#offsety -12
+#theme "bronze"
+#enditem
+
+#newitem
+#id trident_bronze
+#gameid 641
+#sprite /graphics/weapon/bronze/trident.png
+#offsetx -9
+#offsety -12
+#theme "bronze"
+#basechance 0.25
+#enditem
+
+
+-- 1h weapons
+
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/vaettir/weapon/hatchet.png
+#offsetx -8
+#offsety -19
+#theme "primitive"
+#theme "iron"
+#maxprot 15
+#chanceinc unittag irregular 8
+#enditem
+
+#newitem
+#id shortsword
+#gameid 6
+#sprite /graphics/advancedhuman/weapons/shortsword.png
+#tag "eliteversion shortsword_elite"
+#offsetx -8
+#offsety -17
+#theme "iron"
+#enditem
+
+#newitem
+#id shortsword_elite
+#gameid 6
+#sprite /graphics/advancedhuman/weapons/shortsword_elite.png
+#theme "elite"
+#offsetx -8
+#offsety -17
+#theme "iron"
+#enditem
+
+#newitem
+#id broadsword
+#gameid 8
+#sprite /graphics/advancedhuman/weapons/broadsword.png
+#tag "eliteversion broadsword_elite"
+#offsetx -8
+#offsety -17
+#theme "iron"
+#enditem
+
+#newitem
+#id broadsword_elite
+#gameid 8
+#sprite /graphics/advancedhuman/weapons/broadsword_elite.png
+#theme "elite"
+#offsetx -8
+#offsety -17
+#theme "iron"
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#sprite /graphics/advancedhuman/weapons/falchion.png
+#tag "eliteversion falchion_elite"
+#offsetx -8
+#offsety -17
+#theme "iron"
+#enditem
+
+#newitem
+#id falchion_elite
+#gameid 10
+#sprite /graphics/advancedhuman/weapons/falchion_elite.png
+#theme "elite"
+#offsetx -8
+#offsety -17
+#theme "iron"
+#enditem
+
+#newitem
+#id morningstar
+#gameid 15
+#sprite /graphics/advancedhuman/weapons/morningstar.png
+#offsetx -8
+#offsety -17
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/advancedhuman/weapons/mace.png
+#theme "primitive"
+#offsetx -8
+#offsety -17
+#theme "iron"
+#maxprot 15
+#chanceinc unittag irregular 8
+#enditem
+
+#newitem
+#id hammer
+#gameid 13
+#sprite /graphics/advancedhuman/weapons/hammer.png
+#chanceinc unittag irregular 8
+#offsetx -8
+#offsety -17
+#theme "iron"
+#theme "advanced"
+#enditem
+
+-- 2h weapons
+
+#newitem
+#id greatsword
+#gameid 11
+#sprite /graphics/foulspawn/small/weapon/greatsword.png
+#offsetx -4
+#offsety -17
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#id maul
+#gameid 14
+#sprite /graphics/advancedhuman/weapons/maul.png
+#offsetx -4
+#offsety -16
+#theme "primitive"
+#enditem
+
+#newitem
+#id flail
+#gameid 16
+#sprite /graphics/advancedhuman/weapons/flail_1.png
+#offsetx -8
+#offsety -17
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#id greataxe
+#gameid 18
+#sprite /graphics/advancedhuman/weapons/greataxe.png
+#offsetx -4
+#offsety -16
+#theme "iron"
+#theme "primitive"
+#chanceinc unittag irregular 8
+#enditem
+
+-- Polearms
+
+#newitem
+#id spear
+#gameid 1
+#sprite /graphics/advancedhuman/weapons/spear.png
+#offsetx -8
+#offsety -17
+#theme "iron"
+#enditem
+
+#newitem
+#id longspear
+#gameid 357
+#sprite /graphics/advancedhuman/weapons/longspear.png
+#offsetx -8
+#offsety -17
+#theme "iron"
+#enditem
+
+#newitem
+#id halberd
+#gameid 5
+#sprite /graphics/advancedhuman/weapons/halberd.png
+#offsetx -8
+#offsety -17
+#theme "iron"
+#theme "advanced"
+#minprot 8
+#enditem
+
+#newitem
+#id lucernehammer
+#gameid lucernehammer
+#sprite /graphics/advancedhuman/weapons/lucernehammer.png
+#offsetx -8
+#offsety -17
+#theme "iron"
+#theme "advanced"
+#minprot 8
+#enditem
+
+#newitem
+#id bardiche
+#gameid bardiche
+#sprite /graphics/advancedhuman/weapons/bardiche.png
+#offsetx -8
+#offsety -17
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#id trident
+#gameid 3
+#sprite /graphics/advancedhuman/weapons/trident.png
+#offsetx -8
+#offsety -17
+#theme "iron"
+#enditem
