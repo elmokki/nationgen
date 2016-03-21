@@ -77,7 +77,7 @@
 #name "centauroid"
 #role "mounted"
 
-#renderorder "shadow basesprite rarm weapon mount lleg larm head shirt pants armor bonusweapon offhandw hands helmet offhanda overlay"
+#renderorder "shadow underlay basesprite rarm weapon mount lleg larm head shirt pants armor bonusweapon offhandw hands helmet offhanda overlay"
 
 #no_free_fist
 
@@ -97,6 +97,7 @@
 #load offhand /data/items/foulspawn/small/shield.txt
 
 #load overlay /data/items/foulspawn/mounted/overlay.txt
+#load underlay /data/items/foulspawn/mounted/underlay.txt
 #load headweapon /data/items/foulspawn/small/headweapon.txt
 
 #generateitem 1 shirt
