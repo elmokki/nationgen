@@ -123,7 +123,7 @@ public class Pose extends Filter {
 	{
 		String str = this.roles.toString();
 		if(this.name != null && !this.name.equals(""))
-			str = str + " (" + this.name + ")";
+			str = this.name;
 		
 		return str;
 	}
