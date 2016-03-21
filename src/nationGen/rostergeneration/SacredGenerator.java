@@ -384,7 +384,6 @@ public class SacredGenerator extends TroopGenerator {
 		if(race == null)
 			race = getRace(sacred);
 		
-		System.out.println("Sacred " + race + " - " + sacred);
 		
 		Pose p = getPose(sacred, power, race);
 		
