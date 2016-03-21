@@ -203,6 +203,9 @@ PD/start army amount multiplier. These stack like the above commands.
 
 --- Pose
 
+#forcedname <name>
+Forces the unit name to this. Works only for troops and sacredgenerator sacreds/elites.
+
 #montagpose <pose> [basechance]
 Sets pose named <pose> as a pose this pose might #firstshape into. Basechance option overwrites the original pose basechance for montag 
 purposes only. This was set so that multiple poses do not have to be made for multiple 
