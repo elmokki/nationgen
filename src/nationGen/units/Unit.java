@@ -1645,7 +1645,7 @@ public class Unit {
 
 					
 	
-			if(s.equals("mount") || s.equals("overlay"))
+			if(s.equals("mount") || (s.equals("overlay") && u.getSlot(s) != null && u.getSlot("overlay").getOffsetX() == 0 && u.getSlot("overlay").getOffsetY() == 0))
 			{
 				renderSlot(g, this, s, false, offsetX);
 			}
