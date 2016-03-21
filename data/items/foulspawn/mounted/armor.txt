@@ -22,17 +22,6 @@
 #theme "stealthy"
 #enditem
 
-#newitem
-#name "sharkskin armor"
-#basechance 0.01
-#gameid 15
-#sprite /graphics/foulspawn/small/armor/sharkskin_full.png
-#armor
-#theme "leather"
-#theme "amphibious"
-#theme "stealthy"
-#enditem
-
 
 --- Leather
 
@@ -49,15 +38,6 @@
 #name "leather hauberk"
 #gameid 10
 #sprite /graphics/foulspawn/small/armor/leather_hauberk.png
-#armor
-#theme "leather"
-#theme "stealthy"
-#enditem
-
-#newitem
-#name "full leather"
-#gameid 15
-#sprite /graphics/foulspawn/small/armor/leather_full.png
 #armor
 #theme "leather"
 #theme "stealthy"
@@ -81,15 +61,7 @@
 #sprite /graphics/foulspawn/small/armor/mail_hauberk.png
 #armor
 #theme "iron"
-#enditem
-
-#newitem
-#name "full scale"
-#gameid 17
-#sprite /graphics/foulspawn/small/armor/mail_full.png
-#armor
-#basechance 0.5
-#theme "iron"
+#theme "advanced"
 #enditem
 
 
@@ -110,15 +82,6 @@
 #sprite /graphics/foulspawn/small/armor/mail_hauberk.png
 #armor
 #theme "iron"
-#enditem
-
-#newitem
-#name "full chain"
-#gameid 18
-#sprite /graphics/foulspawn/small/armor/mail_full.png
-#armor
-#basechance 0.25
-#theme "iron"
 #theme "advanced"
 #enditem
 
@@ -138,15 +101,6 @@
 #gameid 14
 #sprite /graphics/foulspawn/small/armor/plate_hauberk.png
 #armor
-#theme "iron"
-#enditem
-
-#newitem
-#name "full plate"
-#gameid 19
-#sprite /graphics/foulspawn/small/armor/plate_full.png
-#armor
-#basechance 0.25
 #theme "iron"
 #theme "advanced"
 #enditem

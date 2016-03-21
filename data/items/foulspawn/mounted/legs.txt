@@ -1,0 +1,281 @@
+#newitem
+#name "goat"
+#gameid -1
+#sprite /graphics/foulspawn/centauroid/legs/goat.png
+#offsetx -4
+#define "#size 2"
+#define "#prot +2"
+#define "#str -2"
+#define "#def -1"
+#define "#mapmove 3"
+#define "#ap 16"
+#define "#gcost +5"
+#define "#mountainsurvival"
+#define "#enc 2"
+#define "#rcost +2"
+#tag "animal goat"
+#enditem
+
+#newitem
+#name "goat_winged"
+#gameid -1
+#sprite /graphics/foulspawn/centauroid/legs/goat_winged.png
+#offsetx -4
+#needs overlay goat_winged
+#needs underlay goat_winged
+#define "#size 2"
+#define "#prot +2"
+#define "#str -2"
+#define "#def -1"
+#define "#mapmove 3"
+#define "#ap 16"
+#define "#gcost +10"
+#define "#mountainsurvival"
+#define "#enc 3"
+#define "#rcost +2"
+#define "#flying"
+#tag "animal goat"
+#enditem
+
+#newitem
+#name "centaur"
+#gameid -1
+#sprite /graphics/foulspawn/centauroid/legs/centaur.png
+#offsetx -8
+#offsety -19
+#define "#size 3"
+#define "#hp +10"
+#define "#prot +3"
+#define "#str +2"
+#define "#def +2"
+#define "#mapmove 3"
+#define "#ap 30"
+#define "#gcost +15"
+#define "#ressize 2"
+#define "#enc 3"
+#define "#rcost +4"
+#define "#weapon 55"
+#tag "animal horse"
+#enditem
+
+#newitem
+#name "centaur_winged"
+#gameid -1
+#sprite /graphics/foulspawn/centauroid/legs/centaur_winged.png
+#offsetx -8
+#offsety -19
+#define "#size 3"
+#define "#hp +8"
+#define "#prot +2"
+#define "#str +1"
+#define "#def +2"
+#define "#mapmove 3"
+#define "#ap 30"
+#define "#gcost +20"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +4"
+#define "#weapon 55"
+#define "#flying"
+#tag "animal horse"
+#enditem
+
+#newitem
+#name "spider_small"
+#gameid -1
+#sprite /graphics/foulspawn/centauroid/legs/spider_small.png
+#needs overlay spider_small
+#define "#size 3"
+#define "#hp +2"
+#define "#prot +2"
+#define "#str -1"
+#define "#mapmove 2"
+#define "#ap 14"
+#define "#gcost +10"
+#define "#rcost +4"
+#define "#ressize 2"
+#define "#enc 2"
+#define "#stealthy +0"
+#define "#poisonres +10"
+#define "#maxage *0.5"
+#tag "animal spider"
+#enditem
+
+#newitem
+#name "ant"
+#gameid -1
+#sprite /graphics/foulspawn/centauroid/legs/ant.png
+#define "#size 2"
+#define "#hp -2"
+#define "#prot +2"
+#define "#str -2"
+#define "#mapmove 2"
+#define "#ap 8"
+#define "#weapon nostr_smallsting"
+#define "#gcost +5"
+#define "#enc 2"
+#define "#poisonres +10"
+#theme "animal ant"
+#define "#maxage *0.5"
+#enditem
+
+#newitem
+#name "lizard"
+#gameid -1
+#sprite /graphics/foulspawn/centauroid/legs/lizard.png
+#offsetx -11
+#offsety -14
+#define "#size 3"
+#define "#hp +10"
+#define "#prot +5"
+#define "#str +2"
+#define "#def +1"
+#define "#mapmove 2"
+#define "#ap 22"
+#define "#gcost +15"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +4"
+#define "#coldblooded"
+#tag "animal lizard"
+#define "#maxage *1.25"
+#enditem
+
+#newitem
+#name "serpent"
+#gameid -1
+#sprite /graphics/foulspawn/centauroid/legs/serpent.png
+#offsetx -13
+#define "#size 3"
+#define "#hp +12"
+#define "#prot +5"
+#define "#str +2"
+#define "#def -1"
+#define "#mapmove 2"
+#define "#ap 20"
+#define "#gcost +15"
+#define "#ressize 2"
+#define "#enc 3"
+#define "#rcost +4"
+#define "#weapon 589"
+#define "#coldblooded"
+#define "#swampsurvival"
+#tag "animal lizard"
+#define "#maxage *1.25
+#enditem
+
+#newitem
+#name "olm"
+#gameid -1
+#sprite /graphics/foulspawn/centauroid/legs/olm.png
+#offsetx 1
+#offsety -4
+#define "#size 3"
+#define "#hp +12"
+#define "#prot +2"
+#define "#def -2"
+#define "#mapmove 2"
+#define "#ap 7"
+#define "#gcost +15"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +4"
+#define "#coldblooded"
+#define "#amphibious"
+#define "#poisonres +10"
+#tag "animal worm"
+#define "#maxage *1.25"
+#enditem
+
+#newitem
+#name "naga"
+#gameid -1
+#sprite /graphics/foulspawn/centauroid/legs/naga.png
+#offsetx 1
+#offsety -5
+#define "#size 3"
+#define "#hp +4"
+#define "#prot +2"
+#define "#mapmove 2"
+#define "#ap 10"
+#define "#gcost +10"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +4"
+#define "#coldblooded"
+#define "#swampsurvival"
+#define "#poisonres +5"
+#tag "animal snake"
+#define "#maxage *1.25"
+#enditem
+
+#newitem
+#name "kraken"
+#gameid -1
+#sprite /graphics/foulspawn/centauroid/legs/kraken.png
+#offsetx 1
+#offsety -4
+#define "#size 3"
+#define "#hp +15"
+#define "#prot +2"
+#define "#str +3"
+#define "#def -4"
+#define "#mapmove 1"
+#define "#ap 6"
+#define "#gcost +20"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +8"
+#define "#weapon 85"
+#define "#weapon 85"
+#define "#heal"
+#define "#amphibious"
+#itemslot misc +1
+#define "#maxage *1.25"
+#enditem
+
+#newitem
+#name "spider"
+#gameid -1
+#sprite /graphics/foulspawn/centauroid/legs/spider.png
+#offsetx 34
+#offsety -8
+#needs overlay spider
+#define "#size 5"
+#define "#hp +12"
+#define "#str +1"
+#define "#prot +5"
+#define "#mapmove 2"
+#define "#ap 14"
+#define "#gcost +15"
+#define "#rcost +6"
+#define "#ressize 2"
+#define "#enc 2"
+#define "#weapon 261"
+#define "#poisonres +10"
+#define "#maxage *0.5"
+#tag "animal spider"
+#enditem
+
+#newitem
+#name "wyvern"
+#gameid -1
+#sprite /graphics/foulspawn/centauroid/legs/wyvern.png
+#offsetx 27
+#offsety -13
+#define "#size 4"
+#define "#hp +8"
+#define "#prot +5"
+#define "#str +1"
+#define "#def +1"
+#define "#mapmove 2"
+#define "#ap 22"
+#define "#gcost +20"
+#define "#ressize 2"
+#define "#enc 5"
+#define "#rcost +4"
+#define "#coldblooded"
+#define "#flying"
+#tag "animal lizard"
+#define "#maxage *1.25"
+#enditem
