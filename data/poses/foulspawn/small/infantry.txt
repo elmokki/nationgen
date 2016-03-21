@@ -1,17 +1,16 @@
 --- Montag poses
 
 #newpose
--- #basechance 500000000
-#basechance 0
+#basechance 500000000
+-- #basechance 0
 #name "foulspawn infantry"
 #role "infantry"
 #role "elite infantry"
 #role "sacred infantry"
 
-#montagpose "degenerate infantry" 1
-#montagpose "normal infantry" 2
-#montagpose "elite infantry" 0.5
-#montagpose "sacred infantry" 0.5
+#montagpose "degenerate infantry" 2
+#montagpose "normal infantry" 4
+#montagpose "winged infantry" 2
 
 #command "#gcost 10"
 #command "#rcost 10"
@@ -32,7 +31,10 @@
 
 #newpose
 #name "degenerate infantry"
+#basechance 0
 #role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
 
 #command "#undisciplined"
 #command "#gcost -4"
@@ -77,7 +79,6 @@
 #generateitem 1 debility
 #generateitem 1 offhand
 
-
 #maxvarieties 4
 
 #itemslot hand 0
@@ -90,7 +91,10 @@
 
 #newpose
 #name "normal infantry"
+#basechance 0
 #role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
 
 #renderorder "shadow basesprite rarm weapon rleg lleg larm head overlay shirt pants armor bonusweapon offhandw hands helmet offhanda"
 
@@ -113,7 +117,7 @@
 #load weapon /data/items/foulspawn/small/weapon.txt
 #load offhand /data/items/foulspawn/small/offhand.txt
 #load offhand /data/items/foulspawn/small/shield.txt
--- #load bonusweapon /data/items/foulspawn/small/bonusranged.txt
+#load bonusweapon /data/items/foulspawn/small/bonusranged.txt
 
 #load overlay /data/items/foulspawn/small/overlay.txt
 
@@ -135,14 +139,17 @@
 
 
 #newpose
-#name "elite infantry"
+#name "winged infantry"
+#basechance 0
+#role "infantry"
 #role "elite infantry"
+#role "sacred infantry"
 
-#renderorder "shadow basesprite rarm weapon rleg lleg larm head overlay shirt pants armor bonusweapon weapon offhandw hands helmet offhanda"
+#renderorder "shadow wings basesprite rarm weapon rleg lleg larm head shirt pants armor weapon offhandw hands helmet offhanda overlay"
 
 #no_free_fist
 
-#load basesprite /data/items/foulspawn/small/bases.txt
+#load basesprite /data/items/foulspawn/mounted/bases.txt
 #load rarm /data/items/foulspawn/small/rarm.txt
 #load larm /data/items/foulspawn/small/larm.txt
 #load rleg /data/items/foulspawn/small/rleg.txt
@@ -153,13 +160,13 @@
 #load pants /data/items/foulspawn/small/pants.txt
 #load hands /data/items/foulspawn/small/hands.txt
 
-#load armor /data/items/foulspawn/small/armor.txt
+#load armor /data/items/foulspawn/mounted/armor.txt
 #load helmet /data/items/foulspawn/small/helmet.txt
 
-#load weapon /data/items/foulspawn/small/weapon.txt
+#load weapon /data/items/foulspawn/mounted/weapon.txt
 #load offhand /data/items/foulspawn/small/offhand.txt
 #load offhand /data/items/foulspawn/small/shield.txt
--- #load bonusweapon /data/items/foulspawn/small/bonusranged.txt
+#load wings /data/items/foulspawn/small/wings.txt
 
 #load overlay /data/items/foulspawn/small/overlay.txt
 
@@ -170,6 +177,7 @@
 #generateitem 1 head
 #generateitem 1 lleg
 #generateitem 1 rleg
+#generateitem 1 wings
 
 #maxvarieties 2
 
@@ -179,51 +187,6 @@
 
 #endpose
 
-
-#newpose
-#name "sacred infantry"
-#role "sacred infantry"
-
-#renderorder "shadow basesprite rarm weapon rleg lleg larm head overlay shirt pants armor bonusweapon weapon offhandw hands helmet offhanda"
-
-#no_free_fist
-
-#load basesprite /data/items/foulspawn/small/bases.txt
-#load rarm /data/items/foulspawn/small/rarm.txt
-#load larm /data/items/foulspawn/small/larm.txt
-#load rleg /data/items/foulspawn/small/rleg.txt
-#load lleg /data/items/foulspawn/small/lleg.txt
-#load head /data/items/foulspawn/small/head.txt
-#load shadow /data/items/foulspawn/small/shadow.txt
-#load shirt /data/items/foulspawn/small/shirt.txt
-#load pants /data/items/foulspawn/small/pants.txt
-#load hands /data/items/foulspawn/small/hands.txt
-
-#load armor /data/items/foulspawn/small/armor.txt
-#load helmet /data/items/foulspawn/small/helmet.txt
-
-#load weapon /data/items/foulspawn/small/weapon.txt
-#load offhand /data/items/foulspawn/small/offhand.txt
-#load offhand /data/items/foulspawn/small/shield.txt
--- #load bonusweapon /data/items/foulspawn/small/bonusranged.txt
-
-#load overlay /data/items/foulspawn/small/overlay.txt
-
-#load headweapon /data/items/foulspawn/small/headweapon.txt
-
-#generateitem 1 pants
-#generateitem 1 shirt
-#generateitem 1 head
-#generateitem 1 lleg
-#generateitem 1 rleg
-
-#maxvarieties 1
-
-#itemslot hand 0
-#itemslot head 1
-#itemslot misc 2
-
-#endpose
 
 
 -------- Scout

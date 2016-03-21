@@ -1,27 +1,29 @@
 --- Montag poses
 
 #newpose
--- #basechance 500000000
-#basechance 0
+#basechance 500000000
+-- #basechance 0
 #name "foulspawn cavalry"
 #role "mounted"
 #role "elite mounted"
 #role "sacred mounted"
 
-#montagpose "normal cavalry" 2
-#montagpose "elite cavalry" 0.5
+#montagpose "normal cavalry" 4
+#montagpose "centauroid" 2
 
-#command "#gcost 20"
+#command "#gcost 25"
 #command "#rcost 15"
 
-#load basesprite /data/items/foulspawn/small/bases_infantry.txt
+#load basesprite /data/items/foulspawn/small/bases_cavalry.txt
+
+#load mount /data/items/foulspawn/small/stub_mounts.txt
 
 #load armor /data/items/foulspawn/small/armor_placeholder.txt
 #load helmet /data/items/foulspawn/small/helmet_placeholder.txt
 
 #load weapon /data/items/foulspawn/small/weapon_placeholder.txt
 
-#maxvarieties_override 8
+#maxvarieties_override 6
 
 #endpose
 
@@ -30,7 +32,10 @@
 
 #newpose
 #name "normal cavalry"
+#basechance 0
 #role "mounted"
+#role "elite mounted"
+#role "sacred mounted"
 
 #renderorder "shadow basesprite rarm weapon mount lleg larm head shirt pants armor bonusweapon offhandw hands helmet offhanda overlay"
 
@@ -75,7 +80,10 @@
 
 #newpose
 #name "centauroid"
+#basechance 0
 #role "mounted"
+#role "elite mounted"
+#role "sacred mounted"
 
 #renderorder "shadow underlay basesprite rarm weapon mount lleg larm head shirt pants armor bonusweapon offhandw hands helmet offhanda overlay"
 
