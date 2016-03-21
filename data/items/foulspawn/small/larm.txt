@@ -5,6 +5,7 @@
 #command "#hp +1"
 #itemslot hand +1
 #type onehand
+#needs hands humanoid
 #enditem
 
 #newitem
@@ -15,6 +16,7 @@
 #itemslot hand +1
 #type onehand
 #type claw
+#needs hands goblinoid
 #enditem
 
 #newitem
@@ -26,6 +28,7 @@
 #itemslot hand +1
 #type onehand
 #type claw
+#needs hands canid
 #enditem
 
 #newitem
@@ -35,6 +38,7 @@
 #command "#hp +2"
 #command "#str -1"
 #type tentacle
+#needs hands none
 #enditem
 
 #newitem
@@ -44,6 +48,7 @@
 #command "#hp +2"
 #command "#str -1"
 #type tentacle
+#needs hands none
 #enditem
 
 #newitem
@@ -53,4 +58,5 @@
 #command "#prot +2"
 #command "#hp +1"
 #type pincer
+#needs hands none
 #enditem
