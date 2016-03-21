@@ -257,7 +257,10 @@ public class TroopGenerator {
 		this.removeEliteSacred(u, u.guessRole());
 		
 
+		
 		unitGen.armorUnit(u, null, null, u.pose.getItems("armor"), null, false);
+		
+	
 		
 		String role = "infantry";
 		if(pose.roles.contains("mounted") || pose.roles.contains("sacred mounted") || pose.roles.contains("elite mounted"))
@@ -289,7 +292,8 @@ public class TroopGenerator {
 		if(u != null)
 			this.equipBonusWeapon(u, role, race, t);
 		
-		unitGen.handleExtraGeneration(u);
+		//unitGen.handleExtraGeneration(u);
+
 		
 		return u;
 	}
@@ -753,7 +757,7 @@ public class TroopGenerator {
 
 			
 			
-			unitGen.handleExtraGeneration(u);
+			//unitGen.handleExtraGeneration(u);
 			
 			
 		}

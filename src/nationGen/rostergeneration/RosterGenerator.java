@@ -49,6 +49,7 @@ public class RosterGenerator {
 	private List<Unit> ranged = new ArrayList<Unit>();
 	private List<Unit> cavalry = new ArrayList<Unit>();
 	private List<Unit> chariot = new ArrayList<Unit>();
+	private TroopGenerator tgen;
 	
 	public RosterGenerator(NationGen g, Nation n)
 	{
@@ -56,9 +57,20 @@ public class RosterGenerator {
 		nation = n;
 		this.r = new Random(n.random.nextInt());
 		chandler = new ChanceIncHandler(nation);
+		tgen = new TroopGenerator(nationGen, nation);
+
 	}
 	
-
+	private boolean canRollNewUnit(Race race)
+	{
+		boolean allzero = true;
+		for(double d : getChances(race))
+		{
+			if(d > 0)
+				allzero = false;
+		}
+		return !allzero;
+	}
 	
 	public void execute()
 	{
@@ -71,15 +83,17 @@ public class RosterGenerator {
 		int maxtroops = 10;
 		int mintroops = 6;
 		if(Generic.containsTag(primary.tags, "maxtroops"))
-			maxtroops += Integer.parseInt(Generic.getTagValue(primary.tags, "maxtroops"));
-		if(Generic.containsTag(secondary.tags, "mintroops"))
-			mintroops -= Integer.parseInt(Generic.getTagValue(primary.tags, "mintroops"));
+			maxtroops = Integer.parseInt(Generic.getTagValue(primary.tags, "maxtroops"));
+		if(Generic.containsTag(primary.tags, "mintroops"))
+			mintroops = Integer.parseInt(Generic.getTagValue(primary.tags, "mintroops"));
 		
-		
+
 		int max = mintroops + r.nextInt(maxtroops - mintroops + 1); // 6-10 by default
 		int units = 0;
 		int secs = 0;
 		int prims = 0;
+		
+
 		
 		double bonussecchance = 0.5;
 		if(Generic.containsTag(primary.tags, "secondaryracetroopmod"))
@@ -97,7 +111,7 @@ public class RosterGenerator {
 		if(Generic.containsTag(primary.tags, "maxsecaffinity"))
 			maxsecaffinity = Double.parseDouble(Generic.getTagValue(secondary.tags, "maxsecaffinity"));
 		
-		
+
 
 		
 		// Affinity
@@ -117,16 +131,10 @@ public class RosterGenerator {
 
 
 		// Amount
-		double secamount = max * 0.3;
-		if(r.nextDouble() < bonussecchance)
-		{
-			secamount+= max * 0.2;
-			if(r.nextDouble() < bonussecchance/2)
-				secamount+= max * 0.15;
-		}
+
 		
 
-		// Adjust secondary and primary amounts
+		// Primary amounts
 		if(Generic.containsTag(primary.tags, "minsecondaryracetroops"))
 			maxprimaries = max - Integer.parseInt(Generic.getTagValue(secondary.tags, "minsecondaryracetroops"));
 		if(Generic.containsTag(primary.tags, "minsecondaryracetroopshare"))
@@ -135,16 +143,34 @@ public class RosterGenerator {
 
 		
 		if(Generic.containsTag(primary.tags, "maxprimaryracetroops"))
-			maxprimaries = Integer.parseInt(Generic.getTagValue(secondary.tags, "maxprimaryracetroops"));
+		{
+			maxprimaries = Integer.parseInt(Generic.getTagValue(primary.tags, "maxprimaryracetroops"));
+			
+		}
 		if(Generic.containsTag(primary.tags, "maxprimaryracetroopshare"))
-			maxprimaries = (int)Math.round((max * Double.parseDouble(Generic.getTagValue(secondary.tags, "maxprimaryracetroopshare"))));
+			maxprimaries = (int)Math.round((max * Double.parseDouble(Generic.getTagValue(primary.tags, "maxprimaryracetroopshare"))));
+		
+		
+		// Secondary amount
+		double secamount = max * 0.3;
+		if(r.nextDouble() < bonussecchance)
+		{
+			secamount+= max * 0.2;
+			if(r.nextDouble() < bonussecchance/2)
+				secamount+= max * 0.1;
+		}
 		
 		
 		// Amount adjust
 		if(max - maxprimaries > 0)
 			secamount = Math.max(max - maxprimaries, secamount);
 		
-
+		
+		if(Generic.containsTag(secondary.tags, "maxthisracetroops_as_secondary"))
+		{
+			secamount = Math.min(secamount, Integer.parseInt(Generic.getTagValue(secondary.tags, "maxthisracetroops_as_secondary")));
+		}
+		
 		if(secaffinity == 0)
 			secamount = 0;
 
@@ -157,10 +183,13 @@ public class RosterGenerator {
 		else if(secaffinity > 0.3)
 			max = Math.min(10, max + 1);
 		
+
+		
 		if(secamount == 0)
 			max = Math.min(max, maxprimaries);
 		else
 			max = (int) Math.min(max, maxprimaries + secamount);
+	
 		
 		int maxamounts[] = {1, 8, 4, 2};  
 		
@@ -172,10 +201,8 @@ public class RosterGenerator {
 		
 		
 
-			
 		int cycles = 0;
 		int incs = 1;
-		TroopGenerator tgen = new TroopGenerator(nationGen, nation);
 		
 		while(units < max)
 		{
@@ -194,19 +221,31 @@ public class RosterGenerator {
 				race = primary;
 			}
 	
+
 			
-			boolean allzero = true;
-			for(double d : getChances(race))
-				if(d > 0)
-					allzero = false;
 			
-			if(allzero)
+			if(!canRollNewUnit(race))
 			{
 				if(race == primary)
-					race = secondary;
+				{
+					if(canRollNewUnit(secondary))
+						race = secondary;
+					else
+						break;
+				}
+				
 				else if(race == secondary)
-					race = primary;
+				{
+					if(canRollNewUnit(primary))
+						race = primary;
+					else
+						break;
+				}
 			}
+			
+
+			
+			
 			
 			cycles++;
 			if(cycles > 100 * incs)
@@ -225,9 +264,27 @@ public class RosterGenerator {
 			
 			
 			int[] amounts = {cavalry.size(), infantry.size(), ranged.size(), chariot.size()};
-			String roll = rollRole(getChances(race), maxamounts, amounts, race);
-		
 			
+
+			String roll = null;
+			int rolls = 0;
+			while(roll == null)
+			{
+				rolls++;
+				
+				roll = rollRole(getChances(race), maxamounts, amounts, race);
+				if(!tgen.canGetMoreUnits(race, roll))
+				{
+					roll = null;
+				}
+				
+				if(rolls > 100)
+					break;
+				
+			}
+			if(rolls > 100)
+				break;
+
 			List<Unit> target = null;
 			if(roll.equals("ranged") && maxamounts[0] > ranged.size())
 				target = ranged;
@@ -237,38 +294,34 @@ public class RosterGenerator {
 				target = cavalry;
 			else if(roll.equals("chariot") && maxamounts[3] > chariot.size())
 				target = chariot;
-
-						
-
+			
 			if(race != null && target != null && race.hasRole(roll))
 			{
 			
 				Unit u = tgen.generateUnit(roll, race);
 				
-		
-
 				if(u != null)
 				{
+
 					target.add(u);
+					
 					units++;
 					
 					if(race == primary)
 						prims++;
 					else if(race == secondary)
 						secs++;
+
 				}
 		
-	
+
 				
 			}
-		
+
 			
 
 		}
 		
-
-
-
 		
 		putToNation("ranged", sortToLists(ranged));
 		putToNation("infantry", sortToLists(infantry));
@@ -304,6 +357,14 @@ public class RosterGenerator {
 					chances[index] = Double.parseDouble(args.get(2));
 				}
 			}
+			
+		}
+		
+		for(int i = 0; i < slots.length; i++)
+		{
+			String role = slots[i];
+			if(!tgen.canGetMoreUnits(race, role))
+				chances[i] = 0;
 		}
 		
 		
@@ -311,6 +372,8 @@ public class RosterGenerator {
 			if(!race.hasRole(slots[i]))
 				chances[i] = 0;
 				
+	
+		
 		return chances;
 	}
 	
