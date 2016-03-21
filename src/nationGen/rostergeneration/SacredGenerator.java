@@ -384,6 +384,7 @@ public class SacredGenerator extends TroopGenerator {
 		if(race == null)
 			race = getRace(sacred);
 		
+		
 		Pose p = getPose(sacred, power, race);
 		
 		double epicchance = random.nextDouble() * 0.5 + power * 0.25 + 0.25;
