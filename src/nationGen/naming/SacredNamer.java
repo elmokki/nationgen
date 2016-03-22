@@ -78,8 +78,22 @@ public class SacredNamer {
 				toName.add(u);
 			}
 		
+		// #forcedname
+		List<Unit> forcednames = new ArrayList<Unit>();
+		for(Unit u : toName)
+			if(Generic.containsTag(Generic.getAllUnitTags(u), "forcedname"))
+				forcednames.add(u);
+		toName.removeAll(forcednames);
+		for(Unit u : forcednames)
+		{
+			u.name.setType(Generic.getTagValue(Generic.getAllUnitTags(u), "forcedname"));
+			Unit com = getMatchingCom(u, n);
+			if(com != null && Generic.containsTag(Generic.getAllUnitTags(com), "forcedname"))
+				com.name.setType(Generic.getTagValue(Generic.getAllUnitTags(com), "forcedname"));
 
+		}
 		
+		// Name units
 		for(Unit u : toName)
 		{
 

@@ -138,6 +138,10 @@ public class Settings {
 		settings.put("militiaGoldIntercept", 1.0);
 		settings.put("militiaLowGoldIntercept", 16.66);
 		
+		// Debug
+		
+		settings.put("debug", 0.0);
+
 		// Items
 		settings.put("weaponGenerationChance", 0.3);
 		

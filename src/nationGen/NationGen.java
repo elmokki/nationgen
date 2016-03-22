@@ -13,6 +13,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -205,6 +207,10 @@ public class NationGen {
 				newseed = random.nextInt();
 			else
 				newseed = seeds.get(i);
+			
+			if(settings.get("debug") == 1.0)
+				System.out.println(newseed + " on " + ZonedDateTime.now().toLocalTime().truncatedTo(ChronoUnit.SECONDS));
+
 			
 			Nation n = new Nation(this, idHandler.nextNationId(), newseed);
 

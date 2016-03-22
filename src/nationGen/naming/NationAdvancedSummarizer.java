@@ -441,7 +441,7 @@ public class NationAdvancedSummarizer {
 			int shape = -1;
 			for(Command c : u.getCommands())
 				if(c.command.equals("#montag"))
-					shape = -1 * Integer.parseInt(c.args.get(0));
+					shape = Integer.parseInt(c.args.get(0));
 			
 			if(shape != -1)
 				stuff.add("Has montag " + shape);

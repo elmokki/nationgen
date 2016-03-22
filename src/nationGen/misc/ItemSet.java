@@ -31,6 +31,21 @@ public class ItemSet extends ArrayList<Item> {
 	private static final long serialVersionUID = 1L;
 	public String slot = "";
 	
+	/**
+	 * Adds items of set to the new set
+	 * @param set
+	 */
+	public ItemSet(ItemSet set) {
+		this.addAll(set);
+	}
+
+
+
+	public ItemSet() {
+	}
+
+
+
 	// Overwriting add to avoid nulls
 	public boolean add(Item value)
 	{

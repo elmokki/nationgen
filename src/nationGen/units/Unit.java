@@ -913,15 +913,21 @@ public class Unit {
 		
 		
 		// Slot removal
+		List<String> removeslots = new ArrayList<String>();
 		for(String slot : this.slotmap.keySet())
 		{
 			if(getSlot(slot) != null)
 			{
 				for(String tag : getSlot(slot).tags)
 					if(tag.startsWith("noslot "))
-						this.setSlot(tag.split(" ")[1], null);
-			}
+					{
+						removeslots.add(tag.split(" ")[1]);
+					}
+				}
 		}
+		for(String slot : removeslots)
+			this.setSlot(slot, null);
+
 		
 		// +2hp to mounted
 		if(this.getSlot("mount") != null)
@@ -1639,7 +1645,7 @@ public class Unit {
 
 					
 	
-			if(s.equals("mount") || s.equals("overlay"))
+			if(s.equals("mount") || (s.equals("overlay") && u.getSlot(s) != null && u.getSlot("overlay").getOffsetX() == 0 && u.getSlot("overlay").getOffsetY() == 0))
 			{
 				renderSlot(g, this, s, false, offsetX);
 			}

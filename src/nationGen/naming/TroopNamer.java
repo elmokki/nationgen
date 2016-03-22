@@ -79,6 +79,19 @@ public class TroopNamer {
 		alltroops.addAll(n.combineTroopsToList("ranged"));
 		alltroops.addAll(n.combineTroopsToList("montagtroops"));
 
+		
+		// #forcedname
+		List<Unit> forcednames = new ArrayList<Unit>();
+		for(Unit u : alltroops)
+			if(Generic.containsTag(Generic.getAllUnitTags(u), "forcedname"))
+				forcednames.add(u);
+		alltroops.removeAll(forcednames);
+		for(Unit u : forcednames)
+		{
+			u.name.setType(Generic.getTagValue(Generic.getAllUnitTags(u), "forcedname"));
+		}
+		
+		
 		// Give misc guaranteed parts
 		setGuaranteedParts(alltroops, miscguaranteed);
 		

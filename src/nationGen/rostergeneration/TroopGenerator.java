@@ -105,24 +105,25 @@ public class TroopGenerator {
 		if(u.getSlot("mount") != null && Generic.getTagValue(u.getSlot("mount").tags, "maxvarieties") != null)
 			maxvar = Math.min(maxvar, Integer.parseInt(Generic.getTagValue(u.getSlot("mount").tags, "maxvarieties")));
 		
-		
-		
+
 		maxvar = Math.min(chandler.handleChanceIncs(u, u.pose.getItems("weapon")).size(), maxvar);
-		
+
 		for(Filter f : u.appliedFilters)
 			if(Generic.getTagValue(f.tags, "maxvarieties") != null)
 			{
-				maxvar = Integer.parseInt(Generic.getTagValue(f.tags, "maxvarieties"));
+				maxvar = Math.min(maxvar, Integer.parseInt(Generic.getTagValue(f.tags, "maxvarieties")));
 			}
-		
-		
+
+
 		if(u.pose.roles.contains("mounted"))
 			maxvar = Math.min(getCavVarieties(u.pose), maxvar);
 		
+
 		if(Generic.getTagValue(u.pose.tags, "maxvarieties_override") != null)
 		{
 			maxvar = Integer.parseInt(Generic.getTagValue(u.pose.tags, "maxvarieties_override"));
 		}
+		
 		return maxvar;
 
 	}
@@ -258,7 +259,9 @@ public class TroopGenerator {
 
 		
 		unitGen.armorUnit(u, null, null, u.pose.getItems("armor"), null, false);
-
+		
+	
+		
 		String role = "infantry";
 		if(pose.roles.contains("mounted") || pose.roles.contains("sacred mounted") || pose.roles.contains("elite mounted"))
 			role = "mounted";
@@ -283,13 +286,13 @@ public class TroopGenerator {
 		{
 			u = null;
 		}
-		
+
 		// Bonusweapon
 			
 		if(u != null)
 			this.equipBonusWeapon(u, role, race, t);
 		
-		unitGen.handleExtraGeneration(u);
+		//unitGen.handleExtraGeneration(u);
 
 		
 		return u;
@@ -362,7 +365,6 @@ public class TroopGenerator {
 				else
 					success = armCavalry(unit, t);
 			
-				
 				if(!success)
 				{
 					unit = null;
@@ -380,7 +382,10 @@ public class TroopGenerator {
 			if(unit == null)
 			{
 
+				
 				Template t = getNewTemplate(race, role);
+				
+				
 				if(t != null)
 					templates.add(t);
 				else
@@ -416,8 +421,8 @@ public class TroopGenerator {
 	
 	private boolean armInfantry(Unit unit, Template t)
 	{
-	
-		ItemSet possibleWeapons = t.template.pose.getItems("weapon").filterTheme("elite", false).filterTheme("sacred", false);
+
+		ItemSet possibleWeapons = t.template.pose.getItems("weapon");
 		if(possibleWeapons.possibleItems() - t.weapons.size() <= 0)
 		{
 			unit = null;
@@ -456,6 +461,60 @@ public class TroopGenerator {
 		return true;
 	}
 	
+	
+	
+	/**
+	 * Tells whether given race-role combo can get more units
+	 * @param race
+	 * @param role
+	 * @return
+	 */
+	public boolean canGetMoreUnits(Race race, String role)
+	{
+		List<Pose> poses = new ArrayList<Pose>();
+		poses.addAll(chandler.handleChanceIncs(race, role, race.getPoses(role)).keySet());
+		
+		int pos = 0;
+		for(Pose p : poses)
+		{
+			if(poseHasMaxUnits(p))
+				continue;
+			
+			pos++;
+				
+		}
+		
+		return(pos > 0);
+		
+	}
+	
+	/**
+	 * Tells whether given race can get more troops
+	 * @param race
+	 * @return
+	 */
+	public boolean canGetMoreUnits(Race race)
+	{
+		List<Pose> poses = new ArrayList<Pose>();
+		
+		String[] roles = {"infantry", "mounted", "ranged", "chariot"};
+		for(String role : roles)
+			poses.addAll(chandler.handleChanceIncs(race, role, race.getPoses(role)).keySet());
+		
+		int pos = 0;
+		for(Pose p : poses)
+		{
+			if(poseHasMaxUnits(p))
+				continue;
+			
+			pos++;
+				
+		}
+		
+		return(pos > 0);
+		
+	}
+	
 	/**
 	 * Ugly method for checking whether to skip, but this makes the main code clearer.
 	 * @param t
@@ -475,7 +534,7 @@ public class TroopGenerator {
 			}
 		
 		double rand = random.nextDouble();
-		if(occurances >= maxvarieties)
+		if(occurances >= getMaxUnits(t.pose))
 		{
 			return true;
 		}
@@ -510,7 +569,6 @@ public class TroopGenerator {
 	
 	private boolean armCavalry(Unit unit, Template t)
 	{
-		
 		
 			
 			boolean hasllance = false;
@@ -652,14 +710,13 @@ public class TroopGenerator {
 				List<Item> poseArmors = new ArrayList<Item>();
 				poseArmors.addAll(p.getItems("armor"));
 				poseArmors.removeAll(armors);
-				if(chandler.countPossibleFilters(poseArmors, dummy) > 0)
+				if(chandler.handleChanceIncs(race, role, poses).size() > 0)
 					poses.add(p);
 			}
 
-
-			if(poses.size() == 0)
+			if(chandler.handleChanceIncs(race, role, poses).size() == 0)
 				poses.addAll(getPosesWithoutMaxUnits(race.getPoses(role)));
-			if(poses.size() == 0)
+			if(chandler.handleChanceIncs(race, role, poses).size() == 0)
 				poses.addAll(race.getPoses(role));
 			
 			Pose p = chandler.getRandom(poses, race, role);
@@ -700,7 +757,7 @@ public class TroopGenerator {
 
 			
 			
-			unitGen.handleExtraGeneration(u);
+			//unitGen.handleExtraGeneration(u);
 			
 			
 		}
@@ -751,21 +808,31 @@ public class TroopGenerator {
 		return poses;
 		
 	}
-	private boolean poseHasMaxUnits(Pose p)
+	
+	
+	private int getMaxUnits(Pose p)
 	{
-		// Make sure #maxunits is taken into account
 		int maxunits = 100;
 		if(Generic.getTagValue(p.tags, "maxunits") != null)
 		{
 			maxunits = Integer.parseInt(Generic.getTagValue(p.tags, "maxunits"));
 		}	
+		return maxunits;
+	}
+	
+	public boolean poseHasMaxUnits(Pose p)
+	{
+		// Make sure #maxunits is taken into account
+		int maxunits = getMaxUnits(p);
 		
 		int count = 0;
 		for(Template t : this.templates)
 			if(t.pose.equals(p))
 				count++;
 		
-		if(count > maxunits)
+
+		
+		if(count >= maxunits)
 		{
 			return true;
 		}
