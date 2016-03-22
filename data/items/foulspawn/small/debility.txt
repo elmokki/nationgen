@@ -8,6 +8,27 @@
 #enditem
 
 #newitem
+#id beastial
+#basechance 2
+#gameid -1
+#command "#animal"
+#command "#mr *0.5"
+#enditem
+
+#newitem
+#id mindless
+#basechance 2
+#gameid -1
+#command "#mind"
+#command "#mr *0.5"
+#command "#mor 50"
+#command "#att -1"
+#command "#def -1"
+#command "#prec -2"
+#adjustmentcommand "#mor 50"
+#enditem
+
+#newitem
 #id doomed
 #gameid -1
 #command "#startingaff 2097152"
