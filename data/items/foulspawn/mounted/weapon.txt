@@ -42,9 +42,9 @@
 #newitem
 #id tentacle_tiny
 #gameid 672
-#gameid 672
 #smalltentacle
 #needstype rarm smalltentacle
+#needstype extraweapon tentacle_tiny
 #enditem
 
 #newitem
@@ -142,6 +142,7 @@
 #newitem
 #id greatclub
 #gameid 165
+#basechance 0.5
 #sprite /graphics/foulspawn/small/weapon/greatclub.png
 #twohand
 #theme "primitive"
@@ -153,6 +154,7 @@
 #newitem
 #id maul
 #gameid 14
+#basechance 0.5
 #sprite /graphics/foulspawn/small/weapon/maul.png
 #twohand
 #theme "primitive"
@@ -163,6 +165,7 @@
 #newitem
 #id greataxe
 #gameid 18
+#basechance 0.5
 #sprite /graphics/foulspawn/small/weapon/greataxe.png
 #chanceinc unittag irregular 8
 #twohand
@@ -175,6 +178,7 @@
 #newitem
 #id greatsword
 #gameid 11
+#basechance 0.5
 #sprite /graphics/foulspawn/small/weapon/greatsword.png
 #twohand
 #theme "iron"
@@ -185,6 +189,7 @@
 #newitem
 #id flail
 #gameid 16
+#basechance 0.5
 #sprite /graphics/advancedhuman/weapons/flail_1.png
 #offsetx -4
 #offsety -1
@@ -197,6 +202,7 @@
 #newitem
 #id lightlance
 #gameid 357
+#basechance 2
 #sprite /graphics/advancedhuman/weapons/spear.png
 #offsetx -5
 #theme "iron"
@@ -208,6 +214,7 @@
 #newitem
 #id lightlance
 #gameid 357
+#basechance 0.5
 #sprite /graphics/advancedhuman/weapons/spear.png
 #offsetx -4
 #offsety -1
@@ -231,6 +238,7 @@
 #newitem
 #id trident
 #gameid 3
+#basechance 0.5
 #sprite /graphics/advancedhuman/weapons/trident.png
 #offsetx -4
 #offsety -1
