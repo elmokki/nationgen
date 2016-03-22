@@ -46,6 +46,32 @@ public class CommanderGenerator extends TroopGenerator {
 		return newlist;
 	}
 	
+	
+	private void removeMontagUnits(List<Unit> possibleComs)
+	{
+		
+		List<Unit> tempComs = new ArrayList<Unit>();
+		for(Unit u : possibleComs)
+			if(u.tags.contains("montagunit"))
+				tempComs.add(u);
+
+		possibleComs.removeAll(tempComs);
+		tempComs.clear();
+	}
+	
+	private List<Unit> getListOfSuitableUnits(String role)
+	{
+		List<Unit> possibleComs = new ArrayList<Unit>();
+		possibleComs.addAll(nation.generateUnitList(role));
+		for(Unit u : nation.generateUnitList("montagtroops"))
+		{
+			if(u.guessRole().equals(role))
+				possibleComs.add(u);
+		}
+		possibleComs.addAll(nation.generateUnitList("montagsacreds"));
+		return possibleComs;
+	}
+	
 	public void generateComs()
 	{
 
@@ -58,12 +84,7 @@ public class CommanderGenerator extends TroopGenerator {
 		possibleComs.addAll(nation.generateUnitList("chariot"));
 		possibleComs.addAll(nation.generateUnitList("sacred"));
 		
-		
-		for(Unit u : possibleComs)
-			if(u.tags.contains("montagunit"))
-				tempComs.add(u);
-		possibleComs.removeAll(tempComs);
-		tempComs.clear();
+
 		
 		for(Unit u : nation.generateUnitList("montagtroops"))
 		{
@@ -180,7 +201,9 @@ public class CommanderGenerator extends TroopGenerator {
 
 		// Clear the list and add only infantry for first pass!
 		possibleComs.clear();
-		possibleComs.addAll(nation.generateUnitList("infantry"));
+		possibleComs.addAll(getListOfSuitableUnits("infantry"));
+		removeMontagUnits(possibleComs);
+		
 		
 		List<Unit> cantbes = this.getUnitsWithTag(possibleComs, "cannot_be_commander");
 		if(cantbes.size() < possibleComs.size())
@@ -193,7 +216,7 @@ public class CommanderGenerator extends TroopGenerator {
 		
 		
 		// Add one random infantry com
-		if(nation.generateUnitList("infantry").size() > 0)
+		if(getListOfSuitableUnits("infantry").size() > 0 && possibleComs.size() > 0)
 		{
 			Unit com = possibleComs.get(r.nextInt(possibleComs.size()));
 			tempComs.add(com);
@@ -203,9 +226,10 @@ public class CommanderGenerator extends TroopGenerator {
 			orig++;
 		
 		
-		possibleComs.addAll(nation.generateUnitList("mounted"));
-		possibleComs.addAll(nation.generateUnitList("chariot"));
-		possibleComs.addAll(nation.generateUnitList("sacred"));
+		possibleComs.addAll(getListOfSuitableUnits("chariot"));
+		possibleComs.addAll(getListOfSuitableUnits("mounted"));
+		possibleComs.addAll(getListOfSuitableUnits("sacred"));
+		removeMontagUnits(possibleComs);
 		
 		int minimumcoms = orig;
 	
