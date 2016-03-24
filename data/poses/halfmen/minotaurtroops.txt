@@ -6,7 +6,7 @@
 #role "infantry"
 #role "scout"
 
-#basedchance 2
+#basechance 2
 #theme "savage"
 
 #command "#trample"
@@ -34,7 +34,7 @@
 #role "infantry"
 #role "scout"
 
-#basedchance 0.5
+#basechance 0.5
 #theme "savage"
 
 #command "#trample"
@@ -126,7 +126,7 @@
 
 #renderorder "shadow bonusweapon weapon cloakb basesprite mount shirt legs armor cloakf quiver offhandw hands hair helmet offhanda overlay"
 
-#basedchance 0.5
+#basechance 0.5
 #theme "civilized"
 
 #command "#formationfighter +1"
@@ -147,5 +147,75 @@
 #load cloakb /data/items/halfmen/minotaur/cloakb.txt
 
 #maxunits 3
+
+#endpose
+
+
+
+-------- Minocentaur warriors  (available when minotaurs and centaurs are the primary + secondary races)
+
+#newpose
+#name "minocentaur warriors"
+#role "infantry"
+
+#basechance 0
+#chanceinc hastheme minotaur_primary +0.125
+#chanceinc hastheme minotaur_secondary +0.125
+#chanceinc hastheme centaur_primary +0.125
+#chanceinc hastheme centaur_secondary +0.125
+#chanceinc hastheme no_secondary *0
+#chanceinc hastheme satyr_primary *0
+#chanceinc hastheme satyr_secondary *0
+#theme "savage"
+
+#command "#trample"
+
+#load basesprite /data/items/halfmen/metis/bases_minocentaur.txt
+#load shadow /data/items/halfmen/centaur/shadow.txt 3 0
+#load hands /data/items/halfmen/minotaur/hafted_hands.txt -10 -2
+
+#load armor /data/items/halfmen/metis/armor_minocentaur_light.txt
+
+#load weapon /data/items/halfmen/metis/hafted_minocentaur.txt
+#load helmet /data/items/halfmen/minotaur/helmet.txt -10 -2
+
+#maxunits 1
+#maxvarieties 1
+
+#endpose
+
+
+-------- Minocentaur cataphracts (available when minotaurs and centaurs are the primary + secondary races)
+#newpose
+#name "minocentaur cataphracts"
+#role "infantry"
+
+#renderorder "shadow bonusweapon weapon cloakb basesprite mount shirt legs armor cloakf quiver offhandw hands hair helmet offhanda overlay"
+
+#basechance 0
+#chanceinc hastheme minotaur_primary +0.125
+#chanceinc hastheme minotaur_secondary +0.125
+#chanceinc hastheme centaur_primary +0.125
+#chanceinc hastheme centaur_secondary +0.125
+#chanceinc hastheme satyr_primary *0
+#chanceinc hastheme satyr_secondary *0
+#chanceinc hastheme no_secondary *0
+#theme "civilized"
+
+#command "#mor +1"
+
+#load basesprite /data/items/halfmen/metis/bases_minocentaur.txt
+#load shadow /data/items/halfmen/centaur/shadow.txt 3 0
+#load hands /data/items/halfmen/minotaur/1h_hands.txt -10 -2
+
+#load armor /data/items/halfmen/metis/armor_minocentaur.txt
+
+#load weapon /data/items/halfmen/metis/polearm_minocentaur.txt
+#load offhand /data/items/halfmen/metis/shields_minocentaur.txt
+#load bonusweapon /data/items/halfmen/minotaur/bonusranged.txt -11 -2
+#load helmet /data/items/halfmen/minotaur/helmet.txt -10 -2
+
+#maxunits 1
+#maxvarieties 1
 
 #endpose

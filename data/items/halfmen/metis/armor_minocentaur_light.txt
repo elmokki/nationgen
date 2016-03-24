@@ -1,0 +1,27 @@
+--- No armor
+
+#new
+#name "no armor"
+#gameid -1
+#theme "naked"
+#end
+
+--- Leather
+
+#newitem
+#name "furs"
+#gameid 44
+#sprite /graphics/halfmen/metis/armor/furs.png
+#armor
+#theme "primitive"
+#theme "leather"
+#enditem
+
+#newitem
+#name "leather barding"
+#gameid leather_barding
+#sprite /graphics/halfmen/metis/armor/barding_leather.png
+#armor
+#theme "leather"
+#theme "advanced"
+#enditem
