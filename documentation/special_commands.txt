@@ -218,7 +218,7 @@ random amount between the numbers.
 #maxunits <number>
 Only this many copies of this pose may be generated. For normal troops it is across all instances of normal troops. For montag units 
 as defined by #montagpose it is per pose defining montagposes - thus #maxunits 1 unit may appear multiple times, but not in the same
-montag.
+montag. It is not max unit amount per se, it is rather maximum armor varieties.
 
 #maxtroops <number>
 #mintroops <number>
@@ -278,7 +278,7 @@ Sets the weight of a certain magic path in mage generation. Default for all path
 
 #maxvarieties <number>
 How many varieties of certain armor level of this pose can exist. Defaults to 3. Overridden by ability template and armor versions of this command.
-
+#maxvarieties is the maximum number of weapon varieties per armor.
 
 #writeslot <slot>
 Writes weapon/armor of this slot to the unit. Should be for lanceslot in any cavalry pose.
