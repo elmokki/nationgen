@@ -13,6 +13,24 @@
 #command "#forestsurvival"
 #subrace vanara
 #theme lowland
+#enditem
+
+#newitem
+#name "winged sacred vanara basesprite"
+#gameid -1
+#sprite /graphics/monkey/vanara_base_white.png
+#needs hands vanara_hands
+#needs wings winged
+#command "#gcost 15"
+#command "#hp 10"
+#command "#mr 10"
+#command "#prot 1"
+#command "#mor 8"
+#command "#ap 10"
+#command "#maxage +10"
+#command "#animal"
+#command "#forestsurvival"
+#subrace "winged vanara"
 #theme winged
 #enditem
 
