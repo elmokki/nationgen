@@ -1,0 +1,462 @@
+
+-- Natural weapons
+
+#newitem
+#id fist
+#gameid 92
+#needstype rarm onehand
+#hand
+#enditem
+
+#newitem
+#id claw
+#gameid 29
+#needstype rarm claw
+#claw
+#enditem
+
+#newitem
+#id claw_stun
+#gameid 250
+#command "#gcost +1"
+#needstype rarm claw
+#claw
+#enditem
+
+#newitem
+#id claw_poison
+#gameid 248
+#command "#gcost +1"
+#needstype rarm claw
+#claw
+#enditem
+
+#newitem
+#id tentacle
+#gameid 85
+#type "tentacle"
+#tentacle
+#needstype rarm tentacle
+#enditem
+
+#newitem
+#id tentacle_sleep
+#gameid 387
+#tentacle
+#command "#gcost +1"
+#needstype rarm tentacle
+#enditem
+
+#newitem
+#id tentacle_strangle
+#gameid 116
+#tentacle
+#needstype rarm tentacle
+#enditem
+
+#newitem
+#id tentacle_disease
+#gameid 142
+#smalltentacle
+#command "#gcost +2"
+#needstype rarm tentacle
+#enditem
+
+#newitem
+#id tentacle_paralyze
+#gameid 282
+#smalltentacle
+#command "#gcost +1"
+#needstype rarm tentacle
+#enditem
+
+#newitem
+#id tentacle_poison
+#gameid 355
+#smalltentacle
+#command "#gcost +1"
+#needstype rarm tentacle
+#enditem
+
+#newitem
+#id pincer
+#gameid 273
+#pincer
+#needstype rarm pincer
+#enditem
+
+
+-- 1h weapons
+#newitem
+#id club
+#gameid 252
+#sprite /graphics/highmen/weapons/club.png
+#theme "primitive"
+#offsetx 1
+#offsety -1
+#onehand
+#theme "wood"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id spiked_club
+#gameid 593
+#sprite /graphics/highmen/weapons/spikedclub.png
+#theme "primitive"
+#offsetx 1
+#offsety -1
+#onehand
+#theme "wood"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/highmen/weapons/axe.png
+#theme "primitive"
+#offsetx 1
+#offsety -1
+#onehand
+#theme "iron"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id morningstar
+#gameid 15
+#sprite /graphics/highmen/weapons/morningstar.png
+#offsetx 1
+#offsety -1
+#onehand
+#theme "iron"
+#theme "advanced"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id hammer
+#gameid 13
+#sprite /graphics/highmen/weapons/hammer.png
+#offsetx 1
+#offsety -1
+#onehand
+#theme "iron"
+#theme "advanced"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/highmen/weapons/mace.png
+#theme "primitive"
+#offsetx 1
+#offsety -1
+#onehand
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id shortsword
+#gameid 6
+#sprite /graphics/highmen/weapons/shortsword.png
+#offsetx 1
+#offsety -1
+#onehand
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id broadsword
+#gameid 8
+#sprite /graphics/highmen/weapons/broadsword.png
+#offsetx 1
+#offsety -1
+#onehand
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#sprite /graphics/highmen/weapons/falchion.png
+#offsetx 1
+#offsety -1
+#onehand
+#needstype rarm onehand
+#enditem
+
+
+-- 2h weapons
+#newitem
+#id spear
+#gameid 1
+#sprite /graphics/highmen/weapons/spear.png
+#offsetx 1
+#offsety 0
+#needstype rarm onehand
+#needstype larm twohand
+#twohand
+#enditem
+
+#newitem
+#id long_spear
+#gameid 315
+#sprite /graphics/highmen/weapons/spear_long.png
+#offsetx 1
+#offsety 0
+#needstype rarm onehand
+#needstype larm twohand
+#twohand
+#enditem
+
+#newitem
+#id flail
+#gameid 16
+#sprite /graphics/highmen/weapons/flail.png
+#offsetx 1
+#offsety 0
+#needstype rarm onehand
+#needstype larm twohand
+#troopweapon
+#twohand
+#enditem
+
+#newitem
+#id greataxe
+#gameid 18
+#sprite /graphics/highmen/weapons/battleaxe.png
+#offsetx 1
+#offsety 0
+#needstype rarm onehand
+#needstype larm twohand
+#theme "primitive"
+#troopweapon
+#twohand
+#enditem
+
+#newitem
+#id great_club
+#gameid 165
+#sprite /graphics/highmen/weapons/greatclub.png
+#offsetx 1
+#offsety 0
+#needstype rarm onehand
+#needstype larm twohand
+#theme "primitive"
+#theme "wood"
+#enditem
+
+#newitem
+#id cudgel
+#gameid 363
+#sprite /graphics/highmen/weapons/ironcudgel.png
+#offsetx 2
+#offsety 0
+#theme "primitive"
+#theme "iron"
+#needstype rarm onehand
+#needstype larm twohand
+#troopweapon
+#enditem
+
+#newitem
+#id maul
+#gameid 14
+#sprite /graphics/highmen/weapons/maul.png
+#offsetx 1
+#offsety 0
+#theme "primitive"
+#needstype rarm onehand
+#needstype larm twohand
+#troopweapon
+#twohand
+#enditem
+
+#newitem
+#id claymore
+#gameid 258
+#sprite /graphics/highmen/weapons/greatsword.png
+#offsetx 2
+#offsety 0
+#needstype rarm onehand
+#needstype larm twohand
+#troopweapon
+#twohand
+#enditem
+
+#newitem
+#id quarterstaff
+#gameid 7
+#sprite /graphics/highmen/weapons/quarterstaff.png
+#offsetx 1
+#offsety 0
+#needstype rarm onehand
+#needstype larm twohand
+#troopweapon
+#twohand
+#enditem
+
+
+-- 3h weapons
+
+#newitem
+#id greatclub
+#gameid 165
+#basechance 0.5
+#sprite /graphics/foulspawn/small/weapon/greatclub.png
+#twohand
+#theme "primitive"
+#theme "wood"
+#needstype rarm twohand
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id maul
+#gameid 14
+#basechance 0.5
+#sprite /graphics/foulspawn/small/weapon/maul.png
+#twohand
+#theme "primitive"
+#needstype rarm twohand
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id greataxe
+#gameid 18
+#basechance 0.5
+#sprite /graphics/foulspawn/small/weapon/greataxe.png
+#chanceinc unittag irregular 8
+#twohand
+#theme "iron"
+#theme "primitive"
+#needstype rarm twohand
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id greatsword
+#gameid 11
+#basechance 0.5
+#sprite /graphics/foulspawn/small/weapon/greatsword.png
+#twohand
+#theme "iron"
+#needstype rarm twohand
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id flail
+#gameid 16
+#basechance 0.5
+#sprite /graphics/advancedhuman/weapons/flail_1.png
+#offsetx -4
+#offsety -1
+#twohand
+#theme "iron"
+#needstype rarm twohand
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id spear
+#gameid 1
+#basechance 0.5
+#sprite /graphics/advancedhuman/weapons/spear.png
+#offsetx -4
+#offsety -1
+#twohand
+#theme "iron"
+#theme formationfighter
+#needstype rarm twohand
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id longspear
+#gameid 28
+#basechance 0.5
+#sprite /graphics/advancedhuman/weapons/longspear.png
+#offsetx -4
+#offsety -1
+#twohand
+#theme "iron"
+#theme formationfighter
+#needstype rarm twohand
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id pike
+#gameid 2
+#basechance 0.5
+#sprite /graphics/advancedhuman/weapons/pike.png
+#offsetx -4
+#offsety -1
+#twohand
+#theme "iron"
+#theme formationfighter
+#needstype rarm twohand
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id halberd
+#gameid 5
+#basechance 0.5
+#sprite /graphics/advancedhuman/weapons/halberd.png
+#offsetx -4
+#offsety -1
+#twohand
+#theme "iron"
+#theme "advanced"
+#minprot 8
+#needstype rarm twohand
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id lucernehammer
+#gameid lucernehammer
+#basechance 0.5
+#sprite /graphics/advancedhuman/weapons/lucernehammer.png
+#offsetx -4
+#offsety -1
+#twohand
+#theme "advanced"
+#theme "iron"
+#minprot 8
+#needstype rarm twohand
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id bardiche
+#gameid bardiche
+#basechance 0.5
+#sprite /graphics/advancedhuman/weapons/bardiche.png
+#offsetx -4
+#offsety -1
+#twohand
+#theme "iron"
+#needstype rarm twohand
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id trident
+#gameid 3
+#basechance 0.5
+#sprite /graphics/advancedhuman/weapons/trident.png
+#offsetx -4
+#offsety -1
+#twohand
+#theme "iron"
+#theme formationfighter
+#needstype rarm twohand
+#ignore_dw_restrictions
+#enditem
