@@ -1,0 +1,114 @@
+#newitem
+#name "humanoid"
+#gameid -1
+#sprite /graphics/foulspawn/medium/larm/ogre.png
+#command "#gcost +3"
+#command "#hp +2"
+#command "#str +2"
+#itemslot hand +1
+#type onehand
+#type twohand
+#needs lhand humanoid
+#enditem
+
+#newitem
+#name "goblinoid"
+#gameid -1
+#sprite /graphics/foulspawn/medium/larm/bakemono.png
+#command "#gcost +3"
+#command "#hp +2"
+#command "#str +2"
+#itemslot hand +1
+#type onehand
+#type twohand
+#type claw
+#needs lhand goblinoid
+#enditem
+
+#newitem
+#name "shambler"
+#gameid -1
+#sprite /graphics/foulspawn/medium/larm/shambler.png
+#command "#gcost +2"
+#command "#hp +2"
+#command "#str +2"
+#itemslot hand +1
+#type onehand
+#type twohand
+#type claw
+#needs lhand shambler
+#enditem
+
+#newitem
+#name "canid"
+#gameid -1
+#sprite /graphics/foulspawn/medium/larm/canid.png
+#command "#gcost +2"
+#command "#hp +2"
+#command "#str +2"
+#itemslot hand +1
+#type onehand
+#type twohand
+#type claw
+#needs lhand canid
+#enditem
+
+#newitem
+#name "tentacle_green_hafted"
+#gameid -1
+#sprite /graphics/foulspawn/medium/larm/tentacle_green.png
+#command "#gcost +1"
+#command "#hp +3"
+#command "#str -1"
+#itemslot hand +1
+#type twohand
+#needs lhand tentacle_green
+#needs lhand_overlay tentacle_green
+#enditem
+
+#newitem
+#name "tentacle_pink_hafted"
+#gameid -1
+#sprite /graphics/foulspawn/medium/larm/tentacle_pink.png
+#command "#gcost +1"
+#command "#hp +3"
+#command "#str -1"
+#itemslot hand +1
+#type twohand
+#needs lhand tentacle_pink
+#needs lhand_overlay tentacle_pink
+#enditem
+
+#newitem
+#name "tentacle_green"
+#gameid -1
+#sprite /graphics/foulspawn/medium/larm/tentacle_green.png
+#command "#gcost +1"
+#command "#hp +3"
+#command "#str -1"
+#type tentacle
+#needs lhand tentacle_green
+#enditem
+
+#newitem
+#name "tentacle_pink"
+#gameid -1
+#sprite /graphics/foulspawn/medium/larm/tentacle_pink.png
+#command "#gcost +1"
+#command "#hp +3"
+#command "#str -1"
+#type tentacle
+#needs lhand tentacle_pink
+#enditem
+
+#newitem
+#name "scorpion"
+#gameid -1
+#sprite /graphics/foulspawn/medium/larm/scorpion.png
+#command "#gcost +3"
+#command "#prot +2"
+#command "#hp +2"
+#command "#str +1"
+#type pincer
+#needs lhand scorpion
+#enditem

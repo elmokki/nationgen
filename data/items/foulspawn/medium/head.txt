@@ -1,0 +1,469 @@
+#newitem
+#name "humanoid"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/ogre.png
+#command "#gcost +2"
+#command "#hp +3"
+#command "#prot +2"
+#command "#mr +2"
+#command "#mor +2"
+#command "#att +2"
+#command "#def +2"
+#command "#prec +0"
+#command "#ap +0"
+#itemslot head 1
+#type ogre
+#enditem
+
+#newitem
+#name "humanoids"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/ogres.png
+#command "#gcost +7"
+#command "#hp +5"
+#command "#prot +2"
+#command "#mr +6"
+#command "#mor +2"
+#command "#att +3"
+#command "#def +1"
+#command "#prec +5"
+#command "#ap +2"
+#command "#eyes 4"
+#itemslot head 2
+#type ogres
+#enditem
+
+#newitem
+#name "goblinoid"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/bakemono.png
+#command "#gcost +3"
+#command "#hp +4"
+#command "#prot +2"
+#command "#mr +2"
+#command "#mor +2"
+#command "#att +2"
+#command "#def +2"
+#command "#prec +0"
+#command "#ap +0"
+#command "#darkvision 50"
+#itemslot head 1
+#type ogre
+#enditem
+
+#newitem
+#name "goblinoids"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/bakemonos.png
+#command "#gcost +7"
+#command "#hp +6"
+#command "#prot +2"
+#command "#mr +6"
+#command "#mor +2"
+#command "#att +3"
+#command "#def +1"
+#command "#prec +5"
+#command "#ap +2"
+#command "#eyes 4"
+#command "#darkvision 50"
+#itemslot head 2
+#type ogres
+#enditem
+
+#newitem
+#name "canid"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/canid.png
+#command "#gcost +4"
+#command "#hp +2"
+#command "#prot +2"
+#command "#mr +2"
+#command "#mor +2"
+#command "#att +2"
+#command "#def +2"
+#command "#prec +0"
+#command "#ap +0"
+#itemslot head 1
+#needstype headweapon bite
+#type canid
+#enditem
+
+#newitem
+#name "shambler"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/shambler.png
+#command "#gcost +2"
+#command "#hp +2"
+#command "#prot +2"
+#command "#mr +2"
+#command "#mor +1"
+#command "#att +1"
+#command "#def +1"
+#command "#prec +0"
+#command "#ap +1"
+#command "#amphibian"
+#command "#darkvision 50"
+#itemslot head 1
+#type shambler
+#enditem
+
+#newitem
+#name "angler"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/angler.png
+#command "#gcost +2"
+#command "#hp +4"
+#command "#prot +3"
+#command "#mr -1"
+#command "#mor +4"
+#command "#att +1"
+#command "#def -1"
+#command "#prec +0"
+#command "#ap +2"
+#command "#amphibian"
+#command "#darkvision 100"
+#command "#fireres 2"
+#command "#coldres 2"
+#needstype headweapon bite
+#itemslot head 0
+#type barehead
+#enditem
+
+#newitem
+#name "muuch"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/muuch.png
+#command "#gcost +3"
+#command "#hp +4"
+#command "#prot +2"
+#command "#mr +2"
+#command "#mor +2"
+#command "#att +2"
+#command "#def +2"
+#command "#prec +0"
+#command "#ap +1"
+#command "#amphibian"
+#command "#darkvision 50"
+#itemslot head 0
+#type barehead
+#enditem
+
+#newitem
+#name "sakmuuch"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/sakmuuch.png
+#command "#gcost +3"
+#command "#hp +4"
+#command "#prot +2"
+#command "#mr +2"
+#command "#mor +2"
+#command "#att +2"
+#command "#def +2"
+#command "#prec +0"
+#command "#ap +1"
+#command "#amphibian"
+#command "#darkvision 100"
+#itemslot head 0
+#type barehead
+#enditem
+
+#newitem
+#name "bandar"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/bandar.png
+#command "#gcost +0"
+#command "#hp +1"
+#command "#prot +0"
+#command "#mr +0"
+#command "#mor +2"
+#command "#att +2"
+#command "#def +1"
+#command "#prec +1"
+#command "#ap -2"
+#itemslot head 1
+#type bandar
+#enditem
+
+#newitem
+#name "minotaur"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/minotaur.png
+#command "#gcost +10"
+#command "#hp +3"
+#command "#prot +1"
+#command "#mr +3"
+#command "#mor +3"
+#command "#att +0"
+#command "#def +0"
+#command "#prec +3"
+#command "#ap +0"
+#command "#berserk +2"
+#itemslot head 1
+#type minotaur
+#enditem
+
+#newitem
+#name "goat"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/goat.png
+#command "#gcost +0"
+#command "#hp +1"
+#command "#prot +1"
+#command "#mr -2"
+#command "#mor +0"
+#command "#att +1"
+#command "#def +1"
+#command "#prec +0"
+#command "#ap +2"
+#itemslot head 0
+#type barehead
+#enditem
+
+#newitem
+#name "bear"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/bear.png
+#command "#gcost +3"
+#command "#hp +3"
+#command "#prot +3"
+#command "#mr -2"
+#command "#mor +2"
+#command "#att +1"
+#command "#def +1"
+#command "#prec -3"
+#command "#ap +0"
+#needstype headweapon bite
+#itemslot head 0
+#type barehead
+#enditem
+
+#newitem
+#name "bat"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/bat.png
+#command "#gcost +0"
+#command "#hp +1"
+#command "#prot +0"
+#command "#mr +3"
+#command "#mor -1"
+#command "#att +1"
+#command "#def +2"
+#command "#prec -3"
+#command "#ap -2"
+#command "#blind 1"
+#itemslot head 0
+#type barehead
+#enditem
+
+#newitem
+#name "serpent"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/serpent.png
+#command "#gcost +1"
+#command "#hp +1"
+#command "#prot +0"
+#command "#mr +0"
+#command "#mor +2"
+#command "#att +1"
+#command "#def +1"
+#command "#prec -2"
+#command "#ap +2"
+#command "#poisonres 5"
+#needstype headweapon poison
+#itemslot head 0
+#type barehead
+#enditem
+
+#newitem
+#name "serpents"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/serpents.png
+#command "#gcost +4"
+#command "#hp +2"
+#command "#prot +0"
+#command "#mr +0"
+#command "#mor +2"
+#command "#att +2"
+#command "#def +0"
+#command "#prec +0"
+#command "#ap +2"
+#command "#poisonres 5"
+#command "#eyes 4"
+#needstype headweapon poison
+#needstype bonusweapon poison
+#itemslot head 0
+#type barehead
+#enditem
+
+#newitem
+#name "draconian"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/drake_swamp.png
+#command "#gcost +10"
+#command "#hp +6"
+#command "#prot +3"
+#command "#mr +4"
+#command "#mor +2"
+#command "#att +1"
+#command "#def +1"
+#command "#prec +2"
+#command "#ap +0"
+#command "#poisonres +5"
+#needstype headweapon poison
+#itemslot head 0
+#type barehead
+#enditem
+
+#newitem
+#name "firedrake"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/drake_fire.png
+#command "#gcost +14"
+#command "#hp +4"
+#command "#prot +3"
+#command "#mr +3"
+#command "#mor +4"
+#command "#att +2"
+#command "#def +0"
+#command "#prec +0"
+#command "#ap -2"
+#command "#enc +1"
+#command "#fireres +5"
+#command "#undisciplined"
+#command "#coldblood"
+#needstype headweapon firedrake
+#itemslot head 0
+#type barehead
+#enditem
+
+#newitem
+#name "frostdrake"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/drake_frost.png
+#command "#gcost +15"
+#command "#hp +6"
+#command "#prot +4"
+#command "#mr +3"
+#command "#mor +4"
+#command "#att +2"
+#command "#def +0"
+#command "#prec +0"
+#command "#ap -2"
+#command "#enc +1"
+#command "#coldres +5"
+#command "#undisciplined"
+#needstype headweapon frostdrake
+#itemslot head 0
+#type barehead
+#enditem
+
+#newitem
+#name "swampdrake"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/drake_swamp.png
+#command "#gcost +16"
+#command "#hp +7"
+#command "#prot +4"
+#command "#mr +3"
+#command "#mor +4"
+#command "#att +2"
+#command "#def +0"
+#command "#prec +0"
+#command "#ap -2"
+#command "#enc +1"
+#command "#poisonres +10"
+#command "#undisciplined"
+#command "#coldblood"
+#needstype headweapon swampdrake
+#itemslot head 0
+#type barehead
+#enditem
+
+#newitem
+#name "wyvern"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/wyvern.png
+#command "#gcost +13"
+#command "#hp +5"
+#command "#prot +3"
+#command "#mr +4"
+#command "#mor +3"
+#command "#att +3"
+#command "#def +1"
+#command "#prec +2"
+#command "#ap +0"
+#command "#poisonres +5"
+#command "#shockres +5"
+#command "#coldblood"
+#needstype headweapon bite
+#itemslot head 0
+#type barehead
+#enditem
+
+#newitem
+#name "octopus"
+#gameid -1
+#basechance 0.5
+#sprite /graphics/foulspawn/small/head/octopus.png
+#offsetx 2
+#offsety -17
+#command "#gcost +3"
+#command "#hp +0"
+#command "#prot +1"
+#command "#mr +4"
+#command "#mor +2"
+#command "#att +2"
+#command "#def +0"
+#command "#prec -2"
+#command "#ap +0"
+#command "#bluntres"
+#command "#darkvision 100"
+#itemslot head 0
+#type barehead
+#enditem
+
+#newitem
+#name "maw"
+#gameid -1
+#basechance 0.5
+#sprite /graphics/foulspawn/small/head/maw.png
+#offsetx 2
+#offsety -17
+#command "#gcost +2"
+#command "#hp +0"
+#command "#mr +4"
+#command "#mor +0"
+#command "#att +2"
+#command "#def +2"
+#command "#prec +0"
+#command "#ap +2"
+#command "#eyes 0"
+#command "#blind"
+#needstype headweapon maw
+#itemslot head 0
+#type barehead
+#enditem
+
+#newitem
+#name "eye"
+#gameid -1
+#basechance 0.5
+#sprite /graphics/foulspawn/small/head/eye.png
+#offsetx 2
+#offsety -17
+#command "#gcost +2"
+#command "#prot -2"
+#command "#hp -2"
+#command "#mr +6"
+#command "#mor +0"
+#command "#att +0"
+#command "#def +0"
+#command "#prec +0"
+#command "#ap +2"
+#command "#eyes 1"
+#command "#darkvision 100"
+#command "#neednoteat"
+#command "#amphibian"
+#itemslot head 0
+#type barehead
+#enditem

@@ -1,0 +1,108 @@
+#newitem
+#name "humanoid"
+#gameid -1
+#sprite /graphics/foulspawn/medium/rarm/ogre.png
+#command "#gcost +3"
+#command "#hp +2"
+#command "#str +2"
+#itemslot hand +1
+#type onehand
+#needs rhand humanoid
+#enditem
+
+#newitem
+#name "goblinoid"
+#gameid -1
+#sprite /graphics/foulspawn/medium/rarm/bakemono.png
+#command "#gcost +3"
+#command "#hp +2"
+#command "#str +2"
+#itemslot hand +1
+#type onehand
+#type claw
+#needs rhand goblinoid
+#enditem
+
+#newitem
+#name "shambler"
+#gameid -1
+#sprite /graphics/foulspawn/medium/rarm/shambler.png
+#command "#gcost +2"
+#command "#hp +2"
+#command "#str +2"
+#itemslot hand +1
+#type onehand
+#type claw
+#needs rhand shambler
+#enditem
+
+#newitem
+#name "canid"
+#gameid -1
+#sprite /graphics/foulspawn/medium/rarm/canid.png
+#command "#gcost +2"
+#command "#hp +2"
+#command "#str +2"
+#itemslot hand +1
+#type onehand
+#type claw
+#needs rhand canid
+#enditem
+
+#newitem
+#name "tentacle_green"
+#gameid -1
+#sprite /graphics/foulspawn/medium/rarm/tentacle_green.png
+#command "#gcost +1"
+#command "#hp +3"
+#command "#str -1"
+#type tentacle
+#needs rhand none
+#enditem
+
+#newitem
+#name "tentacle_pink"
+#gameid -1
+#sprite /graphics/foulspawn/medium/rarm/tentacle_pink.png
+#command "#gcost +1"
+#command "#hp +3"
+#command "#str -1"
+#type tentacle
+#needs rhand none
+#enditem
+
+#newitem
+#name "humanoid_arms"
+#gameid -1
+#sprite /graphics/foulspawn/medium/rarm/ogres.png
+#command "#gcost +5"
+#command "#hp +4"
+#command "#str +3"
+#itemslot hand +2
+#type twohand
+#needs rhand humanoids
+#enditem
+
+#newitem
+#name "goblinoid_arms"
+#gameid -1
+#sprite /graphics/foulspawn/medium/rarm/bakemonos.png
+#command "#gcost +5"
+#command "#hp +4"
+#command "#str +3"
+#itemslot hand +2
+#type twohand
+#needs rhand goblinoids
+#enditem
+
+#newitem
+#name "scorpion"
+#gameid -1
+#sprite /graphics/foulspawn/medium/rarm/scorpion.png
+#command "#gcost +3"
+#command "#prot +2"
+#command "#hp +2"
+#command "#str +1"
+#type pincer
+#needs rhand none
+#enditem

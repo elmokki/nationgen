@@ -1,0 +1,111 @@
+--- No armor
+
+#new
+#name "furs"
+#gameid 44
+#theme "naked"
+#theme "primitive"
+#no_armor
+#theme "stealthy"
+#end
+
+
+--- Iron Scale
+
+#newitem
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/ogre/armor/scale_cuirass.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "scale hauberk"
+#gameid 12
+#sprite /graphics/ogre/armor/scale_hauberk.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "full scale"
+#gameid 17
+#sprite /graphics/ogre/armor/scale_full.png
+#armor
+#basechance 0.5
+#theme "iron"
+#enditem
+
+
+--- Chain
+
+#newitem
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/ogre/armor/mail_cuirass.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "chain hauberk"
+#gameid 13
+#sprite /graphics/ogre/armor/mail_hauberk.png
+#armor
+#theme "iron"
+#enditem
+
+
+--- Iron Plate
+
+#newitem
+#name "plate cuirass"
+#gameid 9
+#sprite /graphics/ogre/armor/plate_cuirass.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "plate hauberk"
+#gameid 14
+#sprite /graphics/ogre/armor/plate_hauberk.png
+#armor
+#theme "iron"
+#enditem
+
+
+--- Exotic armor
+
+#newitem
+#name "ashigaru armor"
+#basechance 0.25
+#gameid 128
+#sprite /graphics/ogre/armor/ashigaruarmor.png
+#recolormask /graphics/ogre/armor/samuraiarmor_recolormask.png
+#tag "eliteversion 'samurai armor'"
+#theme oriental
+#armor
+#enditem
+
+#newitem
+#name "samurai armor"
+#basechance 0.25
+#gameid 129
+#sprite /graphics/ogre/armor/samuraiarmor.png
+#recolormask /graphics/ogre/armor/samuraiarmor_recolormask.png
+#tag "eliteversion 'heavy samurai armor'"
+#theme oriental
+#armor
+#enditem
+
+#newitem
+#name "heavy samurai armor"
+#basechance 0.125
+#gameid 130
+#sprite /graphics/ogre/armor/heavysamuraiarmor.png
+#recolormask /graphics/ogre/armor/samuraiarmor_recolormask.png
+#theme oriental
+#armor
+#enditem
