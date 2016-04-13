@@ -90,10 +90,8 @@
 #newitem
 #id club
 #gameid 252
-#sprite /graphics/highmen/weapons/club.png
+#sprite /graphics/ogre/weapon/club.png
 #theme "primitive"
-#offsetx 1
-#offsety -1
 #onehand
 #theme "wood"
 #needstype rarm onehand
@@ -102,10 +100,8 @@
 #newitem
 #id spiked_club
 #gameid 593
-#sprite /graphics/highmen/weapons/spikedclub.png
+#sprite /graphics/ogre/weapon/spikedclub.png
 #theme "primitive"
-#offsetx 1
-#offsety -1
 #onehand
 #theme "wood"
 #needstype rarm onehand
@@ -114,10 +110,8 @@
 #newitem
 #id axe
 #gameid 17
-#sprite /graphics/highmen/weapons/axe.png
+#sprite /graphics/ogre/weapon/hatchet.png
 #theme "primitive"
-#offsetx 1
-#offsety -1
 #onehand
 #theme "iron"
 #needstype rarm onehand
@@ -126,9 +120,7 @@
 #newitem
 #id morningstar
 #gameid 15
-#sprite /graphics/highmen/weapons/morningstar.png
-#offsetx 1
-#offsety -1
+#sprite /graphics/ogre/weapon/morningstar.png
 #onehand
 #theme "iron"
 #theme "advanced"
@@ -138,9 +130,7 @@
 #newitem
 #id hammer
 #gameid 13
-#sprite /graphics/highmen/weapons/hammer.png
-#offsetx 1
-#offsety -1
+#sprite /graphics/ogre/weapon/hammer.png
 #onehand
 #theme "iron"
 #theme "advanced"
@@ -150,10 +140,8 @@
 #newitem
 #id mace
 #gameid 12
-#sprite /graphics/highmen/weapons/mace.png
+#sprite /graphics/ogre/weapon/mace.png
 #theme "primitive"
-#offsetx 1
-#offsety -1
 #onehand
 #needstype rarm onehand
 #enditem
@@ -355,7 +343,7 @@
 #basechance 0.5
 #sprite /graphics/advancedhuman/weapons/flail_1.png
 #offsetx -4
-#offsety -1
+#offsety -6
 #twohand
 #theme "iron"
 #needstype rarm twohand
@@ -368,7 +356,7 @@
 #basechance 0.5
 #sprite /graphics/advancedhuman/weapons/spear.png
 #offsetx -4
-#offsety -1
+#offsety -6
 #twohand
 #theme "iron"
 #theme formationfighter
@@ -382,7 +370,7 @@
 #basechance 0.5
 #sprite /graphics/advancedhuman/weapons/longspear.png
 #offsetx -4
-#offsety -1
+#offsety -6
 #twohand
 #theme "iron"
 #theme formationfighter
@@ -396,7 +384,7 @@
 #basechance 0.5
 #sprite /graphics/advancedhuman/weapons/pike.png
 #offsetx -4
-#offsety -1
+#offsety -6
 #twohand
 #theme "iron"
 #theme formationfighter
@@ -410,7 +398,7 @@
 #basechance 0.5
 #sprite /graphics/advancedhuman/weapons/halberd.png
 #offsetx -4
-#offsety -1
+#offsety -6
 #twohand
 #theme "iron"
 #theme "advanced"
@@ -425,7 +413,7 @@
 #basechance 0.5
 #sprite /graphics/advancedhuman/weapons/lucernehammer.png
 #offsetx -4
-#offsety -1
+#offsety -6
 #twohand
 #theme "advanced"
 #theme "iron"
@@ -440,7 +428,7 @@
 #basechance 0.5
 #sprite /graphics/advancedhuman/weapons/bardiche.png
 #offsetx -4
-#offsety -1
+#offsety -6
 #twohand
 #theme "iron"
 #needstype rarm twohand
@@ -453,7 +441,7 @@
 #basechance 0.5
 #sprite /graphics/advancedhuman/weapons/trident.png
 #offsetx -4
-#offsety -1
+#offsety -6
 #twohand
 #theme "iron"
 #theme formationfighter
