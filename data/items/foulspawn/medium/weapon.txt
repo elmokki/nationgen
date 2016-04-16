@@ -6,6 +6,7 @@
 #gameid 92
 #needstype rarm onehand
 #hand
+#degenerate
 #enditem
 
 #newitem
@@ -13,6 +14,7 @@
 #gameid 29
 #needstype rarm claw
 #claw
+#degenerate
 #enditem
 
 #newitem
@@ -21,6 +23,7 @@
 #command "#gcost +1"
 #needstype rarm claw
 #claw
+#degenerate
 #enditem
 
 #newitem
@@ -29,59 +32,74 @@
 #command "#gcost +1"
 #needstype rarm claw
 #claw
+#degenerate
 #enditem
 
 #newitem
 #id tentacle
+#basechance 1.5
 #gameid 85
 #type "tentacle"
 #tentacle
+#degenerate
 #needstype rarm tentacle
 #enditem
 
 #newitem
 #id tentacle_sleep
+#basechance 1.5
 #gameid 387
 #tentacle
+#degenerate
 #command "#gcost +1"
 #needstype rarm tentacle
 #enditem
 
 #newitem
 #id tentacle_strangle
+#basechance 1.5
 #gameid 116
 #tentacle
+#degenerate
 #needstype rarm tentacle
 #enditem
 
 #newitem
 #id tentacle_disease
+#basechance 1.5
 #gameid 142
-#smalltentacle
+#tentacle
+#degenerate
 #command "#gcost +2"
 #needstype rarm tentacle
 #enditem
 
 #newitem
 #id tentacle_paralyze
+#basechance 1.5
 #gameid 282
-#smalltentacle
+#tentacle
+#degenerate
 #command "#gcost +1"
 #needstype rarm tentacle
 #enditem
 
 #newitem
 #id tentacle_poison
+#basechance 1.5
 #gameid 355
-#smalltentacle
+#tentacle
+#degenerate
 #command "#gcost +1"
 #needstype rarm tentacle
 #enditem
 
 #newitem
 #id pincer
+#basechance 3
 #gameid 273
 #pincer
+#degenerate
 #needstype rarm pincer
 #enditem
 
@@ -89,26 +107,31 @@
 -- 1h weapons
 #newitem
 #id club
+#basechance 0.5
 #gameid 252
 #sprite /graphics/ogre/weapon/club.png
 #theme "primitive"
 #onehand
+#degenerate
 #theme "wood"
 #needstype rarm onehand
 #enditem
 
 #newitem
 #id spiked_club
+#basechance 0.5
 #gameid 593
 #sprite /graphics/ogre/weapon/spikedclub.png
 #theme "primitive"
 #onehand
+#degenerate
 #theme "wood"
 #needstype rarm onehand
 #enditem
 
 #newitem
 #id axe
+#basechance 0.5
 #gameid 17
 #sprite /graphics/ogre/weapon/hatchet.png
 #theme "primitive"
@@ -119,6 +142,7 @@
 
 #newitem
 #id morningstar
+#basechance 0.5
 #gameid 15
 #sprite /graphics/ogre/weapon/morningstar.png
 #onehand
@@ -129,6 +153,7 @@
 
 #newitem
 #id hammer
+#basechance 0.5
 #gameid 13
 #sprite /graphics/ogre/weapon/hammer.png
 #onehand
@@ -139,15 +164,18 @@
 
 #newitem
 #id mace
+#basechance 0.5
 #gameid 12
 #sprite /graphics/ogre/weapon/mace.png
 #theme "primitive"
 #onehand
+#degenerate
 #needstype rarm onehand
 #enditem
 
 #newitem
 #id shortsword
+#basechance 0.5
 #gameid 6
 #sprite /graphics/highmen/weapons/shortsword.png
 #offsetx 1
@@ -158,6 +186,7 @@
 
 #newitem
 #id broadsword
+#basechance 0.5
 #gameid 8
 #sprite /graphics/highmen/weapons/broadsword.png
 #offsetx 1
@@ -168,6 +197,7 @@
 
 #newitem
 #id falchion
+#basechance 0.5
 #gameid 10
 #sprite /graphics/highmen/weapons/falchion.png
 #offsetx 1
@@ -180,8 +210,11 @@
 -- 2h weapons
 #newitem
 #id spear
+#basechance 0.5
 #gameid 1
 #sprite /graphics/highmen/weapons/spear.png
+#renderprio 6
+#renderslot "offhandw"
 #offsetx 1
 #offsety 0
 #needstype rarm onehand
@@ -191,8 +224,11 @@
 
 #newitem
 #id long_spear
+#basechance 0.5
 #gameid 315
 #sprite /graphics/highmen/weapons/spear_long.png
+#renderprio 6
+#renderslot "offhandw"
 #offsetx 1
 #offsety 0
 #needstype rarm onehand
@@ -202,8 +238,11 @@
 
 #newitem
 #id flail
+#basechance 0.5
 #gameid 16
 #sprite /graphics/highmen/weapons/flail.png
+#renderprio 6
+#renderslot "offhandw"
 #offsetx 1
 #offsety 0
 #needstype rarm onehand
@@ -214,8 +253,11 @@
 
 #newitem
 #id greataxe
+#basechance 0.5
 #gameid 18
 #sprite /graphics/highmen/weapons/battleaxe.png
+#renderprio 6
+#renderslot "offhandw"
 #offsetx 1
 #offsety 0
 #needstype rarm onehand
@@ -227,20 +269,27 @@
 
 #newitem
 #id great_club
+#basechance 0.5
 #gameid 165
 #sprite /graphics/highmen/weapons/greatclub.png
+#renderprio 6
+#renderslot "offhandw"
 #offsetx 1
 #offsety 0
 #needstype rarm onehand
 #needstype larm twohand
 #theme "primitive"
 #theme "wood"
+#degenerate
 #enditem
 
 #newitem
 #id cudgel
+#basechance 0.5
 #gameid 363
 #sprite /graphics/highmen/weapons/ironcudgel.png
+#renderprio 6
+#renderslot "offhandw"
 #offsetx 2
 #offsety 0
 #theme "primitive"
@@ -248,12 +297,16 @@
 #needstype rarm onehand
 #needstype larm twohand
 #troopweapon
+#degenerate
 #enditem
 
 #newitem
 #id maul
+#basechance 0.5
 #gameid 14
 #sprite /graphics/highmen/weapons/maul.png
+#renderprio 6
+#renderslot "offhandw"
 #offsetx 1
 #offsety 0
 #theme "primitive"
@@ -261,12 +314,16 @@
 #needstype larm twohand
 #troopweapon
 #twohand
+#degenerate
 #enditem
 
 #newitem
 #id claymore
+#basechance 0.5
 #gameid 258
 #sprite /graphics/highmen/weapons/greatsword.png
+#renderprio 6
+#renderslot "offhandw"
 #offsetx 2
 #offsety 0
 #needstype rarm onehand
@@ -277,8 +334,11 @@
 
 #newitem
 #id quarterstaff
+#basechance 0.5
 #gameid 7
 #sprite /graphics/highmen/weapons/quarterstaff.png
+#renderprio 6
+#renderslot "offhandw"
 #offsetx 1
 #offsety 0
 #needstype rarm onehand
@@ -295,7 +355,10 @@
 #gameid 165
 #basechance 0.5
 #sprite /graphics/foulspawn/small/weapon/greatclub.png
+#offsetx -2
+#offsety -7
 #twohand
+#degenerate
 #theme "primitive"
 #theme "wood"
 #needstype rarm twohand
@@ -307,7 +370,10 @@
 #gameid 14
 #basechance 0.5
 #sprite /graphics/foulspawn/small/weapon/maul.png
+#offsetx -2
+#offsety -7
 #twohand
+#degenerate
 #theme "primitive"
 #needstype rarm twohand
 #ignore_dw_restrictions
@@ -318,6 +384,8 @@
 #gameid 18
 #basechance 0.5
 #sprite /graphics/foulspawn/small/weapon/greataxe.png
+#offsetx -2
+#offsety -7
 #chanceinc unittag irregular 8
 #twohand
 #theme "iron"
@@ -331,6 +399,8 @@
 #gameid 11
 #basechance 0.5
 #sprite /graphics/foulspawn/small/weapon/greatsword.png
+#offsetx -2
+#offsety -7
 #twohand
 #theme "iron"
 #needstype rarm twohand
@@ -427,8 +497,8 @@
 #gameid bardiche
 #basechance 0.5
 #sprite /graphics/advancedhuman/weapons/bardiche.png
-#offsetx -4
-#offsety -6
+#offsetx -6
+#offsety -9
 #twohand
 #theme "iron"
 #needstype rarm twohand

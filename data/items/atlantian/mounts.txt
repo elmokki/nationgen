@@ -178,6 +178,32 @@
 
 
 #newitem
+#name "seadog"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/mounts/standard/seadog.png
+#armor
+#offsety -10
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 10"
+#define "#mounted"
+#define "#weapon nostr_bite_10"
+#define "#secondshape seadogmount"
+#define "#gcost +15"
+#define "#rcost +2"
+#define "#ressize 2"
+#define "#enc 4"
+#command "#amphibian"
+#theme "light"
+#tag "animal dog"
+#description "The loyal sea dog will continue to fight even if its rider dies."
+#tag "guaranteedprefix dog"
+#tag "minprot 0"
+#tag "maxprot 9"
+#enditem
+
+#newitem
 #name "jaguar"
 #basechance 0.5
 #gameid -1

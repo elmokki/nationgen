@@ -13,6 +13,7 @@
 #command "#ap +0"
 #itemslot head 1
 #type ogre
+#degenerate
 #enditem
 
 #newitem
@@ -31,6 +32,7 @@
 #command "#eyes 4"
 #itemslot head 2
 #type ogres
+#degenerate
 #enditem
 
 #newitem
@@ -49,6 +51,7 @@
 #command "#darkvision 50"
 #itemslot head 1
 #type ogre
+#degenerate
 #enditem
 
 #newitem
@@ -68,6 +71,7 @@
 #command "#darkvision 50"
 #itemslot head 2
 #type ogres
+#degenerate
 #enditem
 
 #newitem
@@ -86,6 +90,7 @@
 #itemslot head 1
 #needstype headweapon bite
 #type canid
+#degenerate
 #enditem
 
 #newitem
@@ -105,6 +110,7 @@
 #command "#darkvision 50"
 #itemslot head 1
 #type shambler
+#degenerate
 #enditem
 
 #newitem
@@ -128,6 +134,7 @@
 #needstype headweapon bite
 #itemslot head 0
 #type barehead
+#degenerate
 #enditem
 
 #newitem
@@ -148,6 +155,7 @@
 #command "#darkvision 50"
 #itemslot head 0
 #type barehead
+#degenerate
 #enditem
 
 #newitem
@@ -168,6 +176,7 @@
 #command "#darkvision 100"
 #itemslot head 0
 #type barehead
+#degenerate
 #enditem
 
 #newitem
@@ -185,6 +194,7 @@
 #command "#ap -2"
 #itemslot head 1
 #type bandar
+#degenerate
 #enditem
 
 #newitem
@@ -203,6 +213,7 @@
 #command "#berserk +2"
 #itemslot head 1
 #type minotaur
+#degenerate
 #enditem
 
 #newitem
@@ -221,6 +232,7 @@
 #command "#ap +2"
 #itemslot head 0
 #type barehead
+#degenerate
 #enditem
 
 #newitem
@@ -240,6 +252,7 @@
 #needstype headweapon bite
 #itemslot head 0
 #type barehead
+#degenerate
 #enditem
 
 #newitem
@@ -259,6 +272,7 @@
 #command "#blind 1"
 #itemslot head 0
 #type barehead
+#degenerate
 #enditem
 
 #newitem
@@ -279,6 +293,7 @@
 #needstype headweapon poison
 #itemslot head 0
 #type barehead
+#degenerate
 #enditem
 
 #newitem
@@ -297,10 +312,10 @@
 #command "#ap +2"
 #command "#poisonres 5"
 #command "#eyes 4"
-#needstype headweapon poison
-#needstype bonusweapon poison
+#needs headweapon bites_poison
 #itemslot head 0
 #type barehead
+#degenerate
 #enditem
 
 #newitem
@@ -341,7 +356,8 @@
 #command "#fireres +5"
 #command "#undisciplined"
 #command "#coldblood"
-#needstype headweapon firedrake
+#needstype headweapon bite
+#needs bonusweapon firedrake
 #itemslot head 0
 #type barehead
 #enditem
@@ -363,7 +379,8 @@
 #command "#enc +1"
 #command "#coldres +5"
 #command "#undisciplined"
-#needstype headweapon frostdrake
+#needstype headweapon bite
+#needs bonusweapon frostdrake
 #itemslot head 0
 #type barehead
 #enditem
@@ -386,7 +403,8 @@
 #command "#poisonres +10"
 #command "#undisciplined"
 #command "#coldblood"
-#needstype headweapon swampdrake
+#needstype headweapon bite
+#needs bonusweapon swampdrake
 #itemslot head 0
 #type barehead
 #enditem
@@ -418,7 +436,7 @@
 #gameid -1
 #basechance 0.5
 #sprite /graphics/foulspawn/small/head/octopus.png
-#offsetx 2
+#offsetx 4
 #offsety -17
 #command "#gcost +3"
 #command "#hp +0"
