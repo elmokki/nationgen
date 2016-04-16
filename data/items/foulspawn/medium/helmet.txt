@@ -6,6 +6,7 @@
 #theme "primitive"
 #theme "naked"
 #needstype head barehead
+#degenerate
 #enditem
 
 -- Minotaur helms
@@ -17,6 +18,7 @@
 #theme "primitive"
 #theme "naked"
 #needstype head minotaur
+#degenerate
 #enditem
 
 #newitem
@@ -80,6 +82,7 @@
 #theme "primitive"
 #theme "naked"
 #needstype head bandar
+#degenerate
 #enditem
 
 #newitem
@@ -171,6 +174,7 @@
 #theme "primitive"
 #theme "naked"
 #needstype head shambler
+#degenerate
 #enditem
 
 #newitem
@@ -222,6 +226,7 @@
 #theme "primitive"
 #theme "naked"
 #needstype head canid
+#degenerate
 #enditem
 
 #newitem
@@ -381,6 +386,7 @@
 #theme "primitive"
 #theme "naked"
 #needstype head ogre
+#degenerate
 #enditem
 
 #newitem
@@ -392,6 +398,7 @@
 #theme "naked"
 #needstype head ogre
 #needstype hair black
+#degenerate
 #enditem
 
 #newitem
@@ -557,6 +564,7 @@
 #theme "primitive"
 #theme "naked"
 #needstype head ogres
+#degenerate
 #enditem
 
 #newitem
@@ -636,20 +644,6 @@
 #armor
 #theme "oriental"
 #theme "iron"
-#minprot 12
-#needstype head ogres
-#enditem
-
-#newitem
-#basechance 0.1
-#id ogres_kabuto_elite
-#gameid 132
-#sprite /graphics/foulspawn/medium/helmet/kabuto_elite.png
-#eliteversion ogres_kabuto_elite
-#armor
-#theme "oriental"
-#theme "iron"
-#theme "elite"
 #minprot 12
 #needstype head ogres
 #enditem
