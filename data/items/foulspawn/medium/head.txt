@@ -94,6 +94,48 @@
 #enditem
 
 #newitem
+#name "canid-ogre"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/canid-ogre.png
+#command "#gcost +8"
+#command "#hp +4"
+#command "#prot +2"
+#command "#mr +6"
+#command "#mor +2"
+#command "#att +3"
+#command "#def +1"
+#command "#prec +5"
+#command "#ap +2"
+#command "#eyes 4"
+#itemslot head 2
+#needstype headweapon bite
+#type canids
+#degenerate
+#enditem
+
+#newitem
+#name "canid-serpent"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/canid-serpent.png
+#command "#gcost +8"
+#command "#hp +3"
+#command "#prot +2"
+#command "#mr +4"
+#command "#mor +2"
+#command "#att +3"
+#command "#def +1"
+#command "#prec +2"
+#command "#ap +2"
+#command "#poisonres 2"
+#command "#eyes 4"
+#itemslot head 1
+#needstype headweapon poison
+#needs bonusweapon bite
+#type canids
+#degenerate
+#enditem
+
+#newitem
 #name "shambler"
 #gameid -1
 #sprite /graphics/foulspawn/medium/head/shambler.png
@@ -160,6 +202,30 @@
 
 #newitem
 #basechance 2
+#name "muuch-serpent"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/muuch-serpent.png
+#command "#gcost +6"
+#command "#hp +5"
+#command "#prot +2"
+#command "#mr +4"
+#command "#mor +2"
+#command "#att +3"
+#command "#def +1"
+#command "#prec +0"
+#command "#ap +3"
+#command "#poisonres 2"
+#command "#pooramphibian"
+#command "#darkvision 50"
+#command "#eyes 4"
+#itemslot head 0
+#needstype headweapon poison
+#type barehead
+#degenerate
+#enditem
+
+#newitem
+#basechance 2
 #name "sakmuuch"
 #gameid -1
 #sprite /graphics/foulspawn/medium/head/sakmuuch.png
@@ -210,7 +276,7 @@
 #command "#def +0"
 #command "#prec +3"
 #command "#ap +0"
-#command "#berserk +2"
+#command "#berserk +0"
 #itemslot head 1
 #type minotaur
 #degenerate
@@ -233,6 +299,51 @@
 #itemslot head 0
 #type barehead
 #degenerate
+#enditem
+
+#newitem
+#basechance 1.75
+#name "goat-serpent"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/goat-serpent.png
+#command "#gcost +2"
+#command "#hp +2"
+#command "#prot +1"
+#command "#mr +0"
+#command "#mor +2"
+#command "#att +2"
+#command "#def +0"
+#command "#prec +0"
+#command "#ap +4"
+#command "#poisonres 5"
+#command "#eyes 4"
+#needstype headweapon poison
+#itemslot head 0
+#type barehead
+#degenerate
+#enditem
+
+#newitem
+#basechance 0.25
+#name "chimera"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/goat-serpent.png
+#command "#gcost +14"
+#command "#hp +4"
+#command "#prot +2"
+#command "#mr +6"
+#command "#mor +4"
+#command "#att +3"
+#command "#def +1"
+#command "#prec +2"
+#command "#ap +4"
+#command "#poisonres 5"
+#command "#fireres 5"
+#command "#eyes 4"
+#needstype headweapon poison
+#needs bonusweapon firedrake
+#itemslot head 0
+#type barehead
 #enditem
 
 #newitem

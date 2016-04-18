@@ -220,7 +220,7 @@
 -- Canid helmets
 #basechance 0.1
 #newitem
-#id barehead_cabid
+#id barehead_canid
 #gameid -1
 #armor
 #theme "primitive"
@@ -237,6 +237,7 @@
 #armor
 #tag "eliteversion highman_leathercap_crested"
 #tag "eliteversion highman_leathercap_reinforced"
+#offsetx 2
 #offsety -16
 #maxprot 12
 #theme "leather"
@@ -250,6 +251,7 @@
 #sprite /graphics/highmen/helmet/cap_leather_reinforced_hoburg.png
 #armor
 #tag "eliteversion highman_leathercap_crested"
+#offsetx 2
 #offsety -16
 #maxprot 12
 #theme "leather"
@@ -263,6 +265,7 @@
 #sprite /graphics/highmen/helmet/cap_leather_crested.png
 #recolormask /graphics/highmen/helmet/crest_recolormask.png
 #armor
+#offsetx 2
 #offsety -4
 #maxprot 12
 #theme "leather"
@@ -277,6 +280,7 @@
 #sprite /graphics/highmen/helmet/cap_iron_hoburg.png
 #armor
 #tag "eliteversion highman_ironcap_crested"
+#offsetx 2
 #offsety -16
 #theme "iron"
 #needstype head canid
@@ -289,6 +293,7 @@
 #sprite /graphics/highmen/helmet/cap_iron_crested.png
 #recolormask /graphics/highmen/helmet/crest_recolormask.png
 #armor
+#offsetx 2
 #offsety -4
 #theme "iron"
 #theme "elite"
@@ -303,6 +308,7 @@
 #tag "eliteversion highman_bascinet_crested"
 #armor
 #minprot 12
+#offsetx 2
 #offsety -4
 #theme "iron"
 #needstype head canid
@@ -316,6 +322,7 @@
 #recolormask /graphics/highmen/helmet/bascinet_crested_recolormask.png
 #armor
 #minprot 12
+#offsetx 2
 #offsety -4
 #theme "iron"
 #theme "elite"
@@ -329,6 +336,7 @@
 #sprite /graphics/highmen/helmet/halfhelm_iron_hoburg.png
 #armor
 #tag "eliteversion highman_halfhelm_iron_horned"
+#offsetx 2
 #offsety -16
 #minprot 12
 #theme "iron"
@@ -341,6 +349,7 @@
 #gameid 118
 #sprite /graphics/highmen/helmet/halfhelm_iron_horned_hoburg.png
 #armor
+#offsetx 2
 #offsety -16
 #minprot 12
 #theme "iron"
@@ -355,6 +364,7 @@
 #sprite /graphics/highmen/helmet/fullhelm_iron_hoburg.png
 #armor
 #tag "eliteversion highman_fullhelm_iron_horned"
+#offsetx 2
 #offsety -16
 #minprot 14
 #theme "iron"
@@ -368,12 +378,172 @@
 #gameid 21
 #sprite /graphics/highmen/helmet/fullhelm_iron_horned_hoburg.png
 #armor
+#offsetx 2
 #offsety -16
 #minprot 14
 #theme "iron"
 #theme "advanced"
 #theme "elite"
 #needstype head canid
+#enditem
+
+-- Canid-plus-something helmets
+#basechance 0.1
+#newitem
+#id barehead_canids
+#gameid -1
+#armor
+#theme "primitive"
+#theme "naked"
+#needstype head canids
+#degenerate
+#enditem
+
+#newitem
+#basechance 0.05
+#id canids_leathercap
+#gameid 120
+#sprite /graphics/highmen/helmet/cap_leather_hoburg.png
+#armor
+#tag "eliteversion canids_leathercap_crested"
+#tag "eliteversion canids_leathercap_reinforced"
+#offsety -16
+#maxprot 12
+#theme "leather"
+#needstype head canids
+#enditem
+
+#newitem
+#basechance 0.05
+#id canids_leathercap_reinforced
+#gameid 119
+#sprite /graphics/highmen/helmet/cap_leather_reinforced_hoburg.png
+#armor
+#tag "eliteversion canids_leathercap_crested"
+#offsety -16
+#maxprot 12
+#theme "leather"
+#needstype head canids
+#enditem
+
+#newitem
+#basechance 0.05
+#id canids_leathercap_crested
+#gameid 162
+#sprite /graphics/highmen/helmet/cap_leather_crested.png
+#recolormask /graphics/highmen/helmet/crest_recolormask.png
+#armor
+#offsety -4
+#maxprot 12
+#theme "leather"
+#theme "elite"
+#needstype head canids
+#enditem
+
+#newitem
+#basechance 0.05
+#id canids_ironcap
+#gameid 20
+#sprite /graphics/highmen/helmet/cap_iron_hoburg.png
+#armor
+#tag "eliteversion canids_ironcap_crested"
+#offsety -16
+#theme "iron"
+#needstype head canids
+#enditem
+
+#newitem
+#basechance 0.05
+#id canids_ironcap_crested
+#gameid 20
+#sprite /graphics/highmen/helmet/cap_iron_crested.png
+#recolormask /graphics/highmen/helmet/crest_recolormask.png
+#armor
+#offsety -4
+#theme "iron"
+#theme "elite"
+#needstype head canids
+#enditem
+
+#newitem
+#basechance 0.05
+#id canids_bascinet
+#gameid 118
+#sprite /graphics/highmen/helmet/bascinet.png
+#tag "eliteversion highman_bascinet_crested"
+#armor
+#minprot 12
+#offsety -4
+#theme "iron"
+#needstype head canids
+#enditem
+
+#newitem
+#basechance 0.05
+#id canids_bascinet_crested
+#gameid 118
+#sprite /graphics/highmen/helmet/bascinet_crested.png
+#recolormask /graphics/highmen/helmet/bascinet_crested_recolormask.png
+#armor
+#minprot 12
+#offsety -4
+#theme "iron"
+#theme "elite"
+#needstype head canids
+#enditem
+
+#newitem
+#basechance 0.05
+#id canids_halfhelm_iron
+#gameid 118
+#sprite /graphics/highmen/helmet/halfhelm_iron_hoburg.png
+#armor
+#tag "eliteversion canids_halfhelm_iron_horned"
+#offsety -16
+#minprot 12
+#theme "iron"
+#needstype head canids
+#enditem
+
+#newitem
+#basechance 0.05
+#id canids_halfhelm_iron_horned
+#gameid 118
+#sprite /graphics/highmen/helmet/halfhelm_iron_horned_hoburg.png
+#armor
+#offsety -16
+#minprot 12
+#theme "iron"
+#theme "elite"
+#needstype head canids
+#enditem
+
+#newitem
+#basechance 0.05
+#id canids_fullhelm_iron
+#gameid 21
+#sprite /graphics/highmen/helmet/fullhelm_iron_hoburg.png
+#armor
+#tag "eliteversion canids_fullhelm_iron_horned"
+#offsety -16
+#minprot 14
+#theme "iron"
+#theme "advanced"
+#needstype head canids
+#enditem
+
+#newitem
+#basechance 0.05
+#id canids_fullhelm_iron_horned
+#gameid 21
+#sprite /graphics/highmen/helmet/fullhelm_iron_horned_hoburg.png
+#armor
+#offsety -16
+#minprot 14
+#theme "iron"
+#theme "advanced"
+#theme "elite"
+#needstype head canids
 #enditem
 
 

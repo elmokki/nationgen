@@ -7,58 +7,61 @@
 -- Extra body parts
 
 #newitem
-#name "tentacle_green"
-#basechance 0
-#gameid 85
-#basechance 2
-#sprite /graphics/foulspawn/small/bonus/tentacles_green.png
-#tentacle
-#itemslot misc +1
-#enditem
-
-#newitem
-#name "tentacle_pink"
-#basechance 0
-#gameid 85
-#basechance 2
-#sprite /graphics/foulspawn/small/bonus/tentacles_pink.png
-#tentacle
-#itemslot misc +1
-#enditem
-
-#newitem
 #name "tail_monkey"
-#basechance 0
 #gameid -1
 #sprite /graphics/foulspawn/small/bonus/tail_monkey.png
+#offsetx 6
+#offsety -6
 #tail
 #itemslot misc +1
+#degenerate
 #enditem
 
 #newitem
 #name "tail_lion"
-#basechance 0
 #gameid -1
 #sprite /graphics/foulspawn/small/bonus/tail_lion.png
+#offsetx 6
+#offsety -6
 #tail
+#degenerate
 #enditem
 
 #newitem
 #name "tail_scorpion"
-#basechance 0
 #gameid 355
-#sprite /graphics/foulspawn/small/bonus/tail_scorpion.png
+#sprite /graphics/foulspawn/medium/extras/scorpion.png
 #tail
+#command "#gcost +4"
+#degenerate
 #enditem
 
 #newitem
-#name "tail_lizard"
-#basechance 0
-#gameid 589
-#sprite /graphics/foulspawn/small/bonus/tail_lizard.png
+#name "tail_wyvern"
+#gameid 203
+#sprite /graphics/foulspawn/medium/extras/wyvern.png
 #tail
+#command "#gcost +6"
 #enditem
 
+#newitem
+#name "tail_draconian"
+#gameid 589
+#sprite /graphics/foulspawn/medium/extras/draconian.png
+#tail
+#command "#gcost +2"
+#enditem
+
+
+------------------------------------------------
+
+#newitem
+#id bite
+#basechance 0
+#gameid 20
+#command "#gcost +2"
+#nogen
+#enditem
 
 -- Drake weapons
 
