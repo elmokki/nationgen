@@ -1,0 +1,43 @@
+-- Starchild-type elite-ish hybrid troops
+
+#newpose
+#name "advanced hybrid infantry"
+#role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
+#role "scout"
+
+#command "#gcost 14"
+#command "#hp 15"
+#command "#prot 2"
+#command "#mr 12"
+#command "#mor 10"
+#command "#str 11"
+#command "#att 10"
+#command "#def 9"
+#command "#prec 11"
+#command "#enc 3"
+#command "#ap 10"
+#command "#magiccommand +10"
+#command "#maxage 200"
+#command "#amphibious"
+-- #unittagcommand commander "#weapon 311"
+-- #unittagcommand commander "#gcost +6"
+#subrace hybrid
+#command "#descr 'Hybrids are a strange cross between a human, a Deep One or Illithid, and the obtuse influences of the void.'"
+#tag "noble"
+
+#renderorder "shadow basesprite armor weapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/illithid/starchild/bases.txt
+#load shadow /data/items/illithid/starchild/shadow.txt
+#load hands /data/items/illithid/starchild/hands.txt
+
+#load armor /data/items/illithid/starchild/armor.txt
+#load helmet /data/items/illithid/starchild/helmet.txt
+
+#load weapon /data/items/illithid/starchild/weapon.txt
+
+#maxvarieties 2
+
+#endpose
