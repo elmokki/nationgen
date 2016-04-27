@@ -1,0 +1,245 @@
+-- Bows
+
+#newitem
+#name "short bow"
+#gameid 23
+#sprite /graphics/weapon/bowman/shortbow.png
+#offsety 4
+#theme "wood"
+#command "#prec +1"
+#command "#mor -1"
+#command "#att -1"
+#command "#def -1"
+#needstype bonusweapon archer
+#needs offhand missile
+#needs quiver quiver
+#enditem
+
+#newitem
+#name "composite bow"
+#gameid 264
+#sprite /graphics/weapon/bowman/compositebow.png
+#offsety 4
+#theme "wood"
+#command "#prec +1"
+#command "#mor -1"
+#command "#att -1"
+#command "#def -1"
+#needstype bonusweapon archer
+#needs offhand missile
+#needs quiver quiver
+#enditem
+
+#newitem
+#name "long bow"
+#basechance 0.75
+#gameid 24
+#sprite /graphics/weapon/bowman/longbow.png
+#offsety 4
+#theme "wood"
+#command "#prec +1"
+#command "#mor -1"
+#command "#att -1"
+#command "#def -1"
+#needstype bonusweapon archer
+#needs offhand missile
+#needs quiver quiver
+#enditem
+
+
+-- Crossbows
+
+#newitem
+#name "light crossbow"
+#gameid light_crossbow
+#sprite /graphics/advancedhuman/weapons/crossbow.png
+#offsetx -4
+#offsety 5
+#theme "iron"
+#theme "advanced"
+#basechance 0.75
+#command "#gcost +2"
+#command "#prec +1"
+#command "#mor -1"
+#command "#att -1"
+#command "#def -1"
+#needstype bonusweapon archer
+#needs offhand missile
+#needs quiver quiver
+#enditem
+
+#newitem
+#name "crossbow"
+#gameid 25
+#sprite /graphics/advancedhuman/weapons/crossbow.png
+#offsetx -4
+#offsety 5
+#theme "iron"
+#theme "advanced"
+#command "#prec +1"
+#command "#mor -1"
+#command "#att -1"
+#command "#def -1"
+#needstype bonusweapon archer
+#needs offhand missile
+#needs quiver quiver
+#enditem
+
+#newitem
+#name "steel crossbow"
+#gameid steel_crossbow
+#sprite /graphics/advancedhuman/weapons/crossbow.png
+#offsetx -4
+#offsety 5
+#theme "iron"
+#theme "advanced"
+#basechance 0.75
+#command "#prec +1"
+#command "#mor -1"
+#command "#att -1"
+#command "#def -1"
+#needstype bonusweapon archer
+#needs offhand missile
+#needs quiver quiver
+#enditem
+
+#newitem
+#name "arbalest"
+#gameid 26
+#sprite /graphics/advancedhuman/weapons/arbalest.png
+#offsetx -2
+#offsety 5
+#theme "iron"
+#theme "advanced"
+#basechance 0.75
+#command "#prec +1"
+#command "#mor -1"
+#command "#att -1"
+#command "#def -1"
+#needstype bonusweapon archer
+#needs offhand missile
+#needs quiver quiver
+#enditem
+
+
+-- Natural weapons
+
+#newitem
+#id spit_poison_fixed
+#gameid 141
+#command "#gcost +1"
+#needstype bonusweapon visible
+#needstype offhand melee
+#needstype head poison
+#notepic
+#enditem
+
+#newitem
+#id spit_poison_magic
+#gameid 224
+#command "#gcost +2"
+#needstype bonusweapon visible
+#needstype offhand melee
+#needstype head poison
+#notepic
+#enditem
+
+#newitem
+#id spit_corrosive
+#gameid 599
+#command "#gcost +2"
+#needstype bonusweapon visible
+#needstype offhand melee
+#needstype head poison
+#notepic
+#enditem
+
+#newitem
+#id web
+#gameid 262
+#command "#gcost +5"
+#needstype bonusweapon visible
+#needstype offhand melee
+#needstype head poison
+#notepic
+#enditem
+
+#newitem
+#id mindblast
+#gameid 311
+#basechance 0.25
+#command "#gcost +35"
+#command "#mr +2"
+#needstype bonusweapon visible
+#needstype offhand melee
+#needstype head psychic
+#notepic
+#enditem
+
+#newitem
+#id mesmerize
+#gameid 403
+#basechance 0.25
+#command "#gcost +10"
+#command "#mr +2"
+#needstype bonusweapon visible
+#needstype offhand melee
+#needstype head psychic
+#notepic
+#enditem
+
+
+-- Thrown weapons
+
+#newitem
+#name "javelin"
+#gameid 21
+#sprite /graphics/weapon/standard/javelin1.png
+#renderprio 7
+#renderslot "quiver"
+#offsetx -1
+#offsety 4
+#needstype bonusweapon visible
+#needstype offhand melee
+#enditem
+
+#newitem
+#name "chakram"
+#gameid 362
+#sprite /graphics/weapon/standard/chakram.png
+#offsetx 1
+#offsety 14
+#theme "iron"
+#needstype bonusweapon archer
+#needstype offhand melee
+#enditem
+
+#newitem
+#name "throwing_axe"
+#gameid 260
+#sprite /graphics/vaettir/weapon/hatchet.png
+#offsetx -4
+#offsety 0
+#theme "iron"
+#theme "primitive"
+#needstype bonusweapon axe
+#needstype offhand melee
+#enditem
+
+#newitem
+#name "poison_darts"
+#gameid 500
+#command "#gcost +1"
+#needstype bonusweapon visible
+#needstype offhand melee
+#notepic
+#enditem
+
+#newitem
+#name "sticks_and_stones"
+#gameid 360
+#theme "primitive"
+#needstype bonusweapon visible
+#needstype offhand melee
+#notepic
+#enditem

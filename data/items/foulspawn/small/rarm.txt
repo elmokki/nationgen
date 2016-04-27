@@ -5,6 +5,7 @@
 #command "#hp +1"
 #itemslot hand +1
 #type onehand
+#needs rhand none
 #enditem
 
 #newitem
@@ -15,6 +16,7 @@
 #itemslot hand +1
 #type onehand
 #type claw
+#needs rhand none
 #enditem
 
 #newitem
@@ -26,6 +28,7 @@
 #itemslot hand +1
 #type onehand
 #type claw
+#needs rhand none
 #enditem
 
 #newitem
@@ -35,6 +38,7 @@
 #command "#hp +2"
 #command "#str -1"
 #type tentacle
+#needs rhand none
 #enditem
 
 #newitem
@@ -44,6 +48,7 @@
 #command "#hp +2"
 #command "#str -1"
 #type tentacle
+#needs rhand none
 #enditem
 
 
@@ -54,6 +59,7 @@
 #command "#hp +0"
 #command "#str -2"
 #type smalltentacle
+#needs rhand none
 #enditem
 
 #newitem
@@ -63,6 +69,7 @@
 #command "#hp +0"
 #command "#str -1"
 #type smalltentacle
+#needs rhand none
 #enditem
 
 #newitem
@@ -73,6 +80,7 @@
 #command "#str +1"
 #itemslot hand +2
 #type twohand
+#needs rhand none
 #enditem
 
 #newitem
@@ -83,6 +91,7 @@
 #command "#str +1"
 #itemslot hand +2
 #type twohand
+#needs rhand none
 #enditem
 
 #newitem
@@ -92,4 +101,61 @@
 #command "#prot +2"
 #command "#hp +1"
 #type pincer
+#needs rhand none
+#enditem
+
+
+-- Arms for ranged units (these will generate a right hand, which otherwise should never appear)
+
+#newitem
+#name "humanoid_missile"
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm/humanoid.png
+#command "#hp +1"
+#itemslot hand +1
+#type onehand_missile
+#needs rhand humanoid_missile
+#enditem
+
+#newitem
+#name "goblinoid_missile"
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm/goblinoid.png
+#command "#hp +1"
+#itemslot hand +1
+#type onehand_missile
+#type claw_missile
+#needs rhand goblinoid_missile
+#enditem
+
+#newitem
+#name "canid_missile"
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm/canid.png
+#command "#hp +1"
+#command "#str +1"
+#itemslot hand +1
+#type onehand_missile
+#type claw_missile
+#needs rhand canid_missile
+#enditem
+
+#newitem
+#name "tentacloid_missile"
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm/tentacle_green_missile.png
+#command "#hp +2"
+#command "#str -1"
+#type tentacle_missile
+#needs rhand tentacloid_missile
+#enditem
+
+#newitem
+#name "fleshblob_missile"
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm/tentacle_pink_missile.png
+#command "#hp +2"
+#command "#str -1"
+#type tentacle_missile
+#needs rhand fleshblob_missile
 #enditem

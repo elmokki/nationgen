@@ -1,0 +1,100 @@
+--- Montag poses
+
+#newpose
+#basechance 250000000
+#name "foulspawn ranged"
+#role "ranged"
+
+#forcedname "Foulspawn Ranged"
+
+#montagpose "normal ranged" 4
+
+#adjustmentcommand "#gcost 10"
+#command "#rcost 8"
+
+#load basesprite /data/items/foulspawn/small/bases_ranged.txt
+
+#load armor /data/items/foulspawn/small/armor_placeholder.txt
+#load helmet /data/items/foulspawn/small/helmet_placeholder.txt
+
+#load weapon /data/items/foulspawn/small/weapon_placeholder.txt
+
+#maxunits 1
+#endpose
+
+
+#newpose
+#basechance 250000000
+#name "foulspawn elite ranged"
+#role "elite ranged"
+#role "sacred ranged"
+
+#forcedname "Foulspawn Elite Ranged"
+
+#montagpose "normal ranged" 4
+
+#adjustmentcommand "#gcost 35"
+#command "#rcost 12"
+
+#load basesprite /data/items/foulspawn/small/bases_ranged.txt
+
+#load armor /data/items/foulspawn/small/armor_placeholder.txt
+#load helmet /data/items/foulspawn/small/helmet_placeholder.txt
+
+#load weapon /data/items/foulspawn/small/weapon_placeholder.txt
+
+#maxunits 1
+#endpose
+
+
+-------- Troop poses
+
+#newpose
+#name "normal ranged"
+#basechance 0
+#role "ranged"
+#role "elite ranged"
+#role "sacred ranged"
+
+#renderorder "shadow bonusweapon basesprite rarm rleg lleg larm quiver head overlay shirt pants armor weapon rhand offhandw lhand helmet offhanda"
+
+#no_free_fist
+
+#load basesprite /data/items/foulspawn/small/bases.txt
+#load rarm /data/items/foulspawn/small/rarm.txt
+#load larm /data/items/foulspawn/small/larm.txt
+#load rleg /data/items/foulspawn/small/rleg.txt
+#load lleg /data/items/foulspawn/small/lleg.txt
+#load head /data/items/foulspawn/small/head.txt
+#load shadow /data/items/foulspawn/small/shadow.txt
+#load shirt /data/items/foulspawn/small/shirt.txt
+#load pants /data/items/foulspawn/small/pants.txt
+#load lhand /data/items/foulspawn/small/lhand.txt
+#load rhand /data/items/foulspawn/small/rhand.txt
+
+#load armor /data/items/foulspawn/small/armor.txt
+#load helmet /data/items/foulspawn/small/helmet.txt
+
+#load weapon /data/items/foulspawn/small/missile.txt
+#load quiver /data/items/human/archer/humanbonusranged.txt -1 4
+#load offhand /data/items/foulspawn/small/offhand.txt
+#load offhand /data/items/foulspawn/small/shield.txt
+#load bonusweapon /data/items/foulspawn/small/archerweapon.txt
+
+#load overlay /data/items/foulspawn/small/overlay.txt
+
+#load headweapon /data/items/foulspawn/small/headweapon_missile.txt
+
+#generateitem 1 pants
+#generateitem 1 shirt
+#generateitem 1 head
+#generateitem 1 lleg
+#generateitem 1 rleg
+
+#maxvarieties 4
+
+#itemslot hand 0
+#itemslot head 1
+#itemslot misc 2
+
+#endpose

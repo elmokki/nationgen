@@ -1,0 +1,180 @@
+-- Robe templates of various colors and styles
+
+#newitem
+#name "robes_plain"
+#gameid -1
+#armor
+#eliteversion "robes_fancy"
+#eliteversion "robes_arco"
+#eliteversion "robes_rhaga"
+#eliteversion "tabard_plain"
+#tier 1
+#notfortier 2
+#notfortier 3
+#needstype belt belt
+#needstype breastplate tier1
+#enditem
+
+#newitem
+#name "robes_fancy"
+#gameid 158
+#armor
+#eliteversion "robes_ornate"
+#eliteversion "robes_arco"
+#eliteversion "robes_rhaga"
+#eliteversion "tabard_fancy"
+#notfortier 1
+#tier 2
+#tier 3
+#needstype belt belt
+#needstype icon nottier1
+#enditem
+
+#newitem
+#name "robes_ornate"
+#gameid 158
+#armor
+#eliteversion "robes_ornate"
+#eliteversion "robes_arco"
+#eliteversion "robes_rhaga"
+#eliteversion "tabard_ornate"
+#notfortier 1
+#tier 2
+#tier 3
+#needstype belt belt
+#needstype icon nottier1
+#needstype trim collar
+#enditem
+
+#newitem
+#name "robes_arco_simple"
+#basechance 0.25
+#gameid -1
+#armor
+#eliteversion "robes_arco"
+#eliteversion "robes_rhaga"
+#tier 1
+#notfortier 2
+#notfortier 3
+#needstype trim arco
+#needstype breastplate tier1
+#enditem
+
+
+#newitem
+#name "robes_arco"
+#gameid 158
+#armor
+#eliteversion "robes_arco"
+#eliteversion "robes_rhaga"
+#eliteversion "tabard_berytos"
+#notfortier 1
+#tier 2
+#tier 3
+#needstype trim arco
+#enditem
+
+#newitem
+#name "robes_rhaga_simple"
+#basechance 0.25
+#gameid -1
+#armor
+#eliteversion "robes_rhaga"
+#eliteversion "tabard_berytos"
+#tier 1
+#notfortier 2
+#notfortier 3
+#needstype trim rhaga
+#needstype breastplate tier1
+#enditem
+
+#newitem
+#name "robes_rhaga"
+#gameid 158
+#armor
+#eliteversion "robes_rhaga"
+#eliteversion "tabard_berytos"
+#eliteversion "tabard_gath"
+#notfortier 1
+#tier 2
+#tier 3
+#needstype trim rhaga
+#enditem
+
+#newitem
+#name "tabard_plain"
+#gameid -1
+#armor
+#eliteversion "tabard_fancy"
+#eliteversion "tabard_berytos"
+#tier 1
+#notfortier 2
+#notfortier 3
+#needstype tabard plain
+#needstype breastplate tier1
+#enditem
+
+#newitem
+#name "tabard_fancy"
+#gameid 158
+#armor
+#eliteversion "tabard_ornate"
+#eliteversion "tabard_berytos"
+#notfortier 1
+#tier 2
+#tier 3
+#needstype tabard plain
+#needstype icon nottier1
+#enditem
+
+#newitem
+#name "tabard_ornate"
+#gameid 158
+#armor
+#eliteversion "tabard_ornate"
+#eliteversion "tabard_berytos"
+#eliteversion "tabard_gath"
+#notfortier 1
+#tier 2
+#tier 3
+#needstype tabard plain
+#needstype belt belt
+#needstype icon nottier1
+#needstype trim collar
+#enditem
+
+#newitem
+#name "tabard_berytos_simple"
+#basechance 0.25
+#gameid -1
+#armor
+#eliteversion "tabard_berytos"
+#tier 1
+#notfortier 2
+#notfortier 3
+#needstype tabard berytos
+#needstype breastplate tier1
+#enditem
+
+#newitem
+#name "tabard_berytos"
+#gameid 158
+#armor
+#eliteversion "tabard_berytos"
+#eliteversion "tabard_gath"
+#notfortier 1
+#tier 2
+#tier 3
+#needstype tabard berytos
+#enditem
+
+#newitem
+#name "tabard_gath"
+#gameid 158
+#armor
+#eliteversion "tabard_gath"
+#notfortier 1
+#notfortier 2
+#tier 3
+#needstype tabard gath
+#enditem

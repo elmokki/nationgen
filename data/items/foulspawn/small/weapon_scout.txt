@@ -101,6 +101,41 @@
 -- 1h weapons
 
 #newitem
+#id club
+#gameid 252
+#sprite /graphics/dynastichuman/weapons/club1.png
+#offsetx -3
+#offsety 4
+#onehand
+#theme "wood"
+#theme "primitive"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id spiked_club
+#gameid 265
+#sprite /graphics/dynastichuman/weapons/club1.png
+#offsetx -3
+#offsety 4
+#onehand
+#theme "wood"
+#theme "primitive"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id dagger
+#gameid 9
+#sprite /graphics/advancedhuman/weapons/oh_dagger_elite.png
+#offsetx -13
+#offsety 5
+#onehand
+#theme "iron"
+#needstype rarm onehand
+#enditem
+
+#newitem
 #id shortsword
 #gameid 6
 #sprite /graphics/advancedhuman/weapons/shortsword.png
@@ -138,7 +173,7 @@
 #gameid 17
 #sprite /graphics/vaettir/weapon/hatchet.png
 #offsetx -4
-#offsety -1
+#offsety 0
 #onehand
 #theme "iron"
 #theme "primitive"

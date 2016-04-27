@@ -28,21 +28,27 @@
 #command "#descr 'Hybrids are a strange cross between a human, a Deep One or Illithid, and the obtuse influences of the void.'"
 #tag "noble"
 
-#renderorder "shadow basesprite armor tabard collar icon belt weapon offhandw hands helmet offhanda"
+#renderorder "shadow basesprite armor color pattern tabard trim icon belt breastplate weapon offhandw hands helmet offhanda"
 
-#load basesprite /data/items/illithid/starchild/bases_mage.txt
+#load basesprite /data/items/illithid/starchild/bases.txt
 #load shadow /data/items/illithid/starchild/shadow.txt
 #load hands /data/items/illithid/starchild/hands.txt
 
 #load armor /data/items/illithid/starchild/robes.txt
-#load helmet /data/items/illithid/starchild/hats.txt
-#load belt /data/items/illithid/starchild/belts.txt
-#load collar /data/items/illithid/starchild/collars.txt
-#load icon /data/items/illithid/starchild/icons.txt
-#load tabard /data/items/illithid/starchild/tabards.txt
+#load color /data/items/illithid/starchild/robes_color.txt
+#load pattern /data/items/illithid/starchild/robes_pattern.txt
+#load tabard /data/items/illithid/starchild/robes_tabard.txt
+#load trim /data/items/illithid/starchild/robe_trim.txt
+#load icon /data/items/illithid/starchild/robes_icon.txt
+#load belt /data/items/illithid/starchild/robes_belt.txt
+#load breastplate /data/items/illithid/starchild/robes_breastplate.txt
 
+#load helmet /data/items/illithid/starchild/hats.txt
 #load weapon /data/items/illithid/starchild/weapons_mage.txt
 #load offhand /data/items/illithid/starchild/offhands_mage.txt
+
+#generateitem 1 color
+#generateitem 1 pattern
 
 #tier 1
 #tier 2

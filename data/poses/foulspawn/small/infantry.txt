@@ -97,7 +97,7 @@
 #command "#mor -1"
 #command "#mr -1"
 
-#renderorder "shadow bonusweapon basesprite rarm weapon rleg lleg larm head overlay shirt pants armor weapon offhandw hands helmet offhanda"
+#renderorder "shadow bonusweapon basesprite rarm weapon rleg lleg larm head overlay shirt pants armor weapon rhand offhandw lhand helmet offhanda"
 
 #no_free_fist
 
@@ -110,7 +110,8 @@
 #load shadow /data/items/foulspawn/small/shadow.txt
 #load shirt /data/items/foulspawn/small/shirt.txt
 #load pants /data/items/foulspawn/small/pants.txt
-#load hands /data/items/foulspawn/small/hands.txt
+#load rhand /data/items/foulspawn/small/rhand.txt
+#load lhand /data/items/foulspawn/small/lhand.txt
 
 #load armor /data/items/foulspawn/small/armor_placeholder.txt
 #load helmet /data/items/foulspawn/small/helmet_placeholder.txt
@@ -150,7 +151,7 @@
 #role "elite infantry"
 #role "sacred infantry"
 
-#renderorder "shadow bonusweapon basesprite rarm weapon rleg lleg larm head overlay shirt pants armor offhandw hands helmet offhanda"
+#renderorder "shadow bonusweapon basesprite rarm weapon rhand rleg lleg larm head overlay shirt pants armor offhandw lhand helmet offhanda"
 
 #no_free_fist
 
@@ -163,7 +164,8 @@
 #load shadow /data/items/foulspawn/small/shadow.txt
 #load shirt /data/items/foulspawn/small/shirt.txt
 #load pants /data/items/foulspawn/small/pants.txt
-#load hands /data/items/foulspawn/small/hands.txt
+#load rhand /data/items/foulspawn/small/rhand.txt
+#load lhand /data/items/foulspawn/small/lhand.txt
 
 #load armor /data/items/foulspawn/small/armor.txt
 #load helmet /data/items/foulspawn/small/helmet.txt
@@ -200,7 +202,7 @@
 #role "elite infantry"
 #role "sacred infantry"
 
-#renderorder "shadow wings basesprite rarm weapon rleg lleg larm head shirt pants armor weapon offhandw hands helmet offhanda overlay"
+#renderorder "shadow wings basesprite rarm weapon rleg lleg larm head shirt pants armor weapon rhand offhandw lhand helmet offhanda overlay"
 
 #no_free_fist
 
@@ -213,7 +215,8 @@
 #load shadow /data/items/foulspawn/small/shadow.txt
 #load shirt /data/items/foulspawn/small/shirt.txt
 #load pants /data/items/foulspawn/small/pants.txt
-#load hands /data/items/foulspawn/small/hands.txt
+#load rhand /data/items/foulspawn/small/rhand.txt
+#load lhand /data/items/foulspawn/small/lhand.txt
 
 #load armor /data/items/foulspawn/mounted/armor.txt
 #load helmet /data/items/foulspawn/small/helmet.txt
@@ -362,7 +365,7 @@
 #name "scout"
 #role "scout"
 
-#renderorder "shadow bonusweapon cloakb basesprite rarm weapon rleg lleg larm head overlay shirt pants armor weapon offhandw hands cloakf helmet offhanda"
+#renderorder "shadow bonusweapon cloakb basesprite rarm weapon rleg lleg larm head overlay shirt pants armor weapon rhand offhandw lhand cloakf helmet offhanda"
 
 #no_free_fist
 
@@ -375,7 +378,8 @@
 #load shadow /data/items/foulspawn/small/shadow.txt
 #load shirt /data/items/foulspawn/small/shirt.txt
 #load pants /data/items/foulspawn/small/pants.txt
-#load hands /data/items/foulspawn/small/hands.txt
+#load rhand /data/items/foulspawn/small/rhand.txt
+#load lhand /data/items/foulspawn/small/lhand.txt
 
 #load armor /data/items/foulspawn/small/armor.txt
 #load helmet /data/items/foulspawn/small/helmet.txt
