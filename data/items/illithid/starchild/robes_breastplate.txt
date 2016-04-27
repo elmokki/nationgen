@@ -1,0 +1,161 @@
+-- None
+
+#newitem
+#name "robes"
+#gameid 158
+#basechance 27
+#armor
+#tier 1
+#tier 2
+#tier 3
+#type tier1
+#type nottier1
+#enditem
+
+-- Sharkskin armor
+
+#newitem
+#name "sharkskin_cuirass"
+#gameid 188
+#sprite /graphics/illithid/starchild/armor/sharkskin_cuirass.png
+#armor
+#theme "primitive"
+#theme "leather"
+#theme "amphibious"
+#tier 1
+#notfortier 2
+#notfortier 3
+#type tier1
+#enditem
+
+
+-- Shell armor
+
+#newitem
+#name "shell_armor"
+#gameid 140
+#sprite /graphics/illithid/starchild/armor/shell_cuirass.png
+#armor
+#theme "primitive"
+#theme "bone"
+#theme "amphibious"
+#tier 1
+#notfortier 2
+#notfortier 3
+#type tier1
+#enditem
+
+
+-- Coral armor
+
+#newitem
+#name "coral_cuirass"
+#gameid 22
+#sprite /graphics/illithid/starchild/armor/coral_cuirass.png
+#armor
+#define "#poisonarmor"
+#theme "coral"
+#theme "amphibious"
+#tier 1
+#notfortier 2
+#notfortier 3
+#type tier1
+#enditem
+
+
+-- Leather armor
+
+#newitem
+#name "leather_cuirass"
+#gameid 5
+#sprite /graphics/illithid/starchild/armor/leather_cuirass.png
+#armor
+#theme "primitive"
+#theme "leather"
+#theme "terrestrial"
+#tier 1
+#notfortier 2
+#notfortier 3
+#type tier1
+#enditem
+
+
+--- Bronze Scale
+
+#newitem
+#name "bronze_scale_cuirass"
+#gameid 142
+#sprite /graphics/illithid/starchild/armor/scale_bronze_cuirass.png
+#armor
+#theme "bronze"
+#theme "amphibious"
+#tier 1
+#notfortier 2
+#notfortier 3
+#type tier1
+#enditem
+
+
+--- Bronze Plate
+
+#newitem
+#name "bronze_plate_cuirass"
+#gameid 100
+#sprite /graphics/ichtyid/armor/plate_bronze_cuirass.png
+#tag "eliteversion bronze_cuirass_elite"
+#armor
+#theme "bronze"
+#theme "amphibious"
+#tier 1
+#notfortier 2
+#notfortier 3
+#type tier1
+#enditem
+
+
+--- Iron Scale
+
+#newitem
+#name "scale_cuirass"
+#gameid 7
+#sprite /graphics/illithid/starchild/armor/scale_cuirass.png
+#armor
+#theme "iron"
+#theme "terrestrial"
+#tier 1
+#notfortier 2
+#notfortier 3
+#type tier1
+#enditem
+
+
+--- Iron Plate
+
+#newitem
+#name "plate_cuirass"
+#gameid 9
+#sprite /graphics/ichtyid/armor/plate_cuirass.png
+#armor
+#theme "iron"
+#theme "terrestrial"
+#tier 1
+#notfortier 2
+#notfortier 3
+#type tier1
+#enditem
+
+
+--- Meteorite Plate
+
+#newitem
+#name "meteorite_cuirass"
+#gameid 210
+#sprite /graphics/ichtyid/armor/plate_cuirass.png
+#armor
+#theme "iron"
+#theme "amphibious"
+#tier 1
+#notfortier 2
+#notfortier 3
+#type tier1
+#enditem

@@ -1,0 +1,239 @@
+-- Generic theme with high diversity and low cohesion
+#newtheme
+#type techlevel
+#name default
+#basechance 4
+#themeinc theme iron *1
+#themeinc theme bronze *0.125
+#endtheme
+
+-- Weights: EA 1, MA 1, LA 0.5
+#newtheme
+#type techlevel
+#name primitive
+#basechance 1
+#chanceinc era 3 -0.5
+#themeinc theme advanced *0.05
+#themeinc theme iron *0.5
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *2
+#themeinc theme naked *2
+#themeinc theme primitive *2
+#endtheme
+
+-- Weights: EA 2, MA 1, LA 0.25
+#newtheme
+#type techlevel
+#name bronze
+#basechance 2
+#chanceinc era 2 -1
+#chanceinc era 3 -1.5
+#themeinc theme advanced *0.05
+#themeinc theme iron *0.25
+#themeinc theme bronze *2
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *0.5
+#themeinc theme primitive *0.5
+#endtheme
+
+-- Weights: EA 0.25, MA 1, LA 2
+#newtheme
+#type techlevel
+#name advanced
+#basechance 0.25
+#chanceinc era 3 1.75
+#chanceinc era 2 0.75
+#themeinc theme advanced *2
+#themeinc theme iron *2
+#themeinc theme bronze *0.05
+#themeinc theme wood *0.5
+#themeinc theme leather *0.5
+#themeinc theme naked *0.05
+#themeinc theme primitive *0.05
+#endtheme
+
+
+-- Language themes (mandatory)
+
+#newtheme
+#type language
+#name boreal_language
+#racedefinition "#longsyllables /data/names/nations/human/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/human/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/human/suffixes.txt"
+#racedefinition "#unitcommand '#nametype 102'"
+#racedefinition "#nationcommand '#gods europegods'"
+#endtheme
+
+#newtheme
+#type language
+#name austral_language
+#racedefinition "#longsyllables /data/names/nations/machakan/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/machakan/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/machakan/suffixes.txt"
+#racedefinition "#unitcommand '#nametype 126'"
+#racedefinition "#nationcommand '#gods southerngods'"
+#endtheme
+
+#newtheme
+#type language
+#name occidental_language
+#racedefinition "#longsyllables /data/names/nations/nahuatl/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/nahuatl/suffixes.txt"
+#racedefinition "#unitcommand '#nametype 123'"
+#racedefinition "#nationcommand '#gods westerngods'"
+#endtheme
+
+#newtheme
+#type language
+#name oriental_language
+#racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/oriental/suffixes.txt"
+#racedefinition "#unitcommand '#nametype 121'"
+#racedefinition "#nationcommand '#gods easterngods'"
+#endtheme
+
+#newtheme
+#type language
+#name central_language
+#racedefinition "#longsyllables /data/names/nations/amazon/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/amazon/shortsyllables.txt"
+#racedefinition "#unitcommand '#nametype 107'"
+#endtheme
+
+#newtheme
+#type language
+#name imperial_language
+#racedefinition "#longsyllables /data/names/nations/romance/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/romance/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/romance/suffixes.txt"
+#racedefinition "#unitcommand '#nametype 106'"
+#endtheme
+
+#newtheme
+#type language
+#name hoburg_language
+#racedefinition "#longsyllables /data/names/nations/hoburg/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/hoburg/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/hoburg/suffixes.txt"
+#racedefinition "#unitcommand '#nametype 104'"
+#endtheme
+
+#newtheme
+#type language
+#name abysian_language
+#racedefinition "#longsyllables /data/names/nations/abysian/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/abysian/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/abysian/suffixes.txt"
+#racedefinition "#unitcommand '#nametype 101'"
+#endtheme
+
+#newtheme
+#type language
+#name lizard_language
+#racedefinition "#longsyllables /data/names/nations/lizard/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/lizard/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/lizard/suffixes.txt"
+#racedefinition "#unitcommand '#nametype 113'"
+#racedefinition "#nationcommand '#gods lizardgods'"
+#endtheme
+
+#newtheme
+#type language
+#name celtic_language
+#racedefinition "#longsyllables /data/names/nations/fomorian/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/fomorian/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/fomorian/suffixes.txt"
+#racedefinition "#unitcommand '#nametype 142'"
+#racedefinition "#nationcommand '#gods europegods'"
+#endtheme
+
+#newtheme
+#type language
+#name avvite_language
+#racedefinition "#longsyllables /data/names/nations/avvite/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/avvite/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/avvite/suffixes.txt"
+#racedefinition "#unitcommand '#nametype 148'"
+#racedefinition "#nationcommand '#gods agarthagods'"
+#endtheme
+
+#newtheme
+#type language
+#name agarthan_language
+#racedefinition "#longsyllables /data/names/nations/agarthan/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/agarthan/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/agarthan/suffixes.txt"
+#racedefinition "#unitcommand '#nametype 100'"
+#racedefinition "#nationcommand '#gods agarthagods'"
+#endtheme
+
+#newtheme
+#type language
+#name caelian_language
+#racedefinition "#longsyllables /data/names/nations/caelian/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/caelian/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/caelian/suffixes.txt"
+#racedefinition "#unitcommand '#nametype 111'"
+#racedefinition "#nationcommand '#gods agarthagods'"
+#endtheme
+
+#newtheme
+#type language
+#name nordic_language
+#racedefinition "#longsyllables /data/names/nations/nordic/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/nordic/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/nordic/suffixes.txt"
+#racedefinition "#unitcommand '#nametype 115'"
+#endtheme
+
+#newtheme
+#type language
+#name enlightened_language
+#racedefinition "#longsyllables /data/names/nations/monkey/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/monkey/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/monkey/suffixes.txt"
+#racedefinition "#unitcommand '#nametype 129'"
+#racedefinition "#nationcommand '#gods monkeygods'"
+#endtheme
+
+#newtheme
+#type language
+#name sunken_language
+#racedefinition "#longsyllables /data/names/nations/atlantian/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/atlantian/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/atlantian/suffixes.txt"
+#racedefinition "#unitcommand '#nametype 117'"
+#endtheme
+
+
+-- Weights: EA 0.5, MA 0.5, LA 0.5
+#newtheme
+#type social
+#name slaver
+#basechance 0.05
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#themeinc theme slave *20
+#themeinc theme free *0.5
+#themeinc racename caveman *5
+#themeinc racename ape *5
+#themeinc racename human *5
+#themeinc racename hoburg *5
+#themeinc racename caelian *0.1
+#themeinc racename van *0.1
+#themeinc racename sidhe *0.1
+#themeinc racename tengu *0.1
+#secondaryracedefinition "#freetemplatefilter slavetemplate slave"
+#racedefinition "#secondaryracetroopmod 100"
+#racedefinition "#secondaryracemagemod -100"
+#endtheme

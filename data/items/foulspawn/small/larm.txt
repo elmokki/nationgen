@@ -5,7 +5,7 @@
 #command "#hp +1"
 #itemslot hand +1
 #type onehand
-#needs hands humanoid
+#needs lhand humanoid
 #enditem
 
 #newitem
@@ -16,7 +16,7 @@
 #itemslot hand +1
 #type onehand
 #type claw
-#needs hands goblinoid
+#needs lhand goblinoid
 #enditem
 
 #newitem
@@ -28,7 +28,41 @@
 #itemslot hand +1
 #type onehand
 #type claw
-#needs hands canid
+#needs lhand canid
+#enditem
+
+#newitem
+#name "humanoid_missile"
+#gameid -1
+#nogen
+#sprite /graphics/foulspawn/small/larm/humanoid_missile.png
+#command "#hp +1"
+#itemslot hand +1
+#type missile
+#needs lhand humanoid_missile
+#enditem
+
+#newitem
+#name "goblinoid_missile"
+#gameid -1
+#nogen
+#sprite /graphics/foulspawn/small/larm/goblinoid_missile.png
+#command "#hp +1"
+#itemslot hand +1
+#type missile
+#needs lhand goblinoid_missile
+#enditem
+
+#newitem
+#name "canid_missile"
+#gameid -1
+#nogen
+#sprite /graphics/foulspawn/small/larm/canid_missile.png
+#command "#hp +1"
+#command "#str +1"
+#itemslot hand +1
+#type missile
+#needs lhand canid_missile
 #enditem
 
 #newitem
@@ -38,7 +72,7 @@
 #command "#hp +2"
 #command "#str -1"
 #type tentacle
-#needs hands none
+#needs lhand none
 #enditem
 
 #newitem
@@ -48,7 +82,7 @@
 #command "#hp +2"
 #command "#str -1"
 #type tentacle
-#needs hands none
+#needs lhand none
 #enditem
 
 #newitem
@@ -58,5 +92,5 @@
 #command "#prot +2"
 #command "#hp +1"
 #type pincer
-#needs hands none
+#needs lhand none
 #enditem

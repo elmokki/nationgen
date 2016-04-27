@@ -39,7 +39,7 @@
 #role "elite mounted"
 #role "sacred mounted"
 
-#renderorder "shadow basesprite rarm weapon mount lleg larm head shirt pants armor bonusweapon offhandw hands helmet offhanda overlay"
+#renderorder "shadow basesprite rarm weapon mount lleg larm head shirt pants armor bonusweapon offhandw rhand lhand helmet offhanda overlay"
 
 #no_free_fist
 
@@ -51,7 +51,8 @@
 #load head /data/items/foulspawn/mounted/head.txt
 #load shirt /data/items/foulspawn/small/shirt.txt
 #load pants /data/items/foulspawn/mounted/pants.txt
-#load hands /data/items/foulspawn/small/hands.txt
+#load rhand /data/items/foulspawn/small/rhand.txt
+#load lhand /data/items/foulspawn/small/lhand.txt
 
 #load armor /data/items/foulspawn/small/armor.txt
 #load helmet /data/items/foulspawn/small/helmet.txt
@@ -89,7 +90,7 @@
 #role "elite mounted"
 #role "sacred mounted"
 
-#renderorder "shadow underlay basesprite rarm weapon mount lleg larm head shirt pants armor bonusweapon offhandw hands helmet offhanda overlay"
+#renderorder "shadow underlay basesprite rarm weapon mount lleg larm head shirt pants armor bonusweapon rhand offhandw lhand helmet offhanda overlay"
 
 #no_free_fist
 
@@ -99,7 +100,8 @@
 #load larm /data/items/foulspawn/small/larm.txt
 #load head /data/items/foulspawn/small/head.txt
 #load shirt /data/items/foulspawn/small/shirt.txt
-#load hands /data/items/foulspawn/small/hands.txt
+#load rhand /data/items/foulspawn/small/rhand.txt
+#load lhand /data/items/foulspawn/small/lhand.txt
 
 #load armor /data/items/foulspawn/mounted/armor.txt
 #load helmet /data/items/foulspawn/small/helmet.txt

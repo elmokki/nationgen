@@ -1,0 +1,228 @@
+--- None
+
+#newitem
+#id "none"
+#basechance 8
+#gameid -1
+#tier 1
+#tier 2
+#tier 3
+#type tier1
+#type nottier1
+#enditem
+
+
+-- Pure paths
+
+#newitem
+#id "fire"
+#basechance 0
+#chanceinc "personalmagic fire 2 1"
+#chanceinc "personalmagic fire 3 1"
+#sprite /graphics/illithid/starchild/robes/icon/fire.png
+#gameid -1
+#notfortier 1
+#tier 2
+#tier 3
+#type nottier1
+#enditem
+
+#newitem
+#id "water"
+#basechance 0
+#chanceinc "personalmagic water 2 1"
+#chanceinc "personalmagic water 3 1"
+#sprite /graphics/illithid/starchild/robes/icon/water.png
+#gameid -1
+#notfortier 1
+#tier 2
+#tier 3
+#type nottier1
+#enditem
+
+#newitem
+#id "lightning"
+#basechance 0
+#chanceinc "personalmagic air 2 1"
+#chanceinc "personalmagic air 3 1"
+#sprite /graphics/illithid/starchild/robes/icon/lightning.png
+#gameid -1
+#notfortier 1
+#tier 2
+#tier 3
+#type nottier1
+#enditem
+
+#newitem
+#id "rock"
+#basechance 0
+#chanceinc "personalmagic earth 2 1"
+#chanceinc "personalmagic earth 3 1"
+#sprite /graphics/illithid/starchild/robes/icon/rock.png
+#gameid -1
+#notfortier 1
+#tier 2
+#tier 3
+#type nottier1
+#enditem
+
+#newitem
+#id "star"
+#basechance 0
+#chanceinc "personalmagic astral 2 1"
+#chanceinc "personalmagic astral 3 1"
+#sprite /graphics/illithid/starchild/robes/icon/star.png
+#gameid -1
+#notfortier 1
+#tier 2
+#tier 3
+#type nottier1
+#enditem
+
+#newitem
+#id "skull"
+#basechance 0
+#chanceinc "personalmagic death 2 1"
+#chanceinc "personalmagic death 3 1"
+#sprite /graphics/illithid/starchild/robes/icon/skull.png
+#gameid -1
+#notfortier 1
+#tier 2
+#tier 3
+#type nottier1
+#enditem
+
+#newitem
+#id "tree"
+#basechance 0
+#chanceinc "personalmagic nature 2 1"
+#chanceinc "personalmagic nature 3 1"
+#sprite /graphics/illithid/starchild/robes/icon/tree.png
+#gameid -1
+#notfortier 1
+#tier 2
+#tier 3
+#type nottier1
+#enditem
+
+#newitem
+#id "blood"
+#basechance 0
+#chanceinc "personalmagic blood 2 1"
+#chanceinc "personalmagic blood 3 1"
+#sprite /graphics/illithid/starchild/robes/icon/blood.png
+#gameid -1
+#notfortier 1
+#tier 2
+#tier 3
+#type nottier1
+#enditem
+
+
+-- Mixed paths
+
+#newitem
+#id "eye"
+#basechance 0
+#chanceinc "personalmagic air 1 astral 1 0.5"
+#chanceinc "personalmagic air 1 nature 1 0.5"
+#chanceinc "personalmagic air 3 1"
+#sprite /graphics/illithid/starchild/robes/icon/eye.png
+#gameid -1
+#notfortier 1
+#tier 2
+#tier 3
+#type nottier1
+#enditem
+
+#newitem
+#id "sun"
+#basechance 0
+#chanceinc "personalmagic fire 1 astral 1 0.5"
+#chanceinc "personalmagic fire 1 air 1 0.5"
+#chanceinc "personalmagic fire 3 1"
+#sprite /graphics/illithid/starchild/robes/icon/sun.png
+#gameid -1
+#notfortier 1
+#tier 2
+#tier 3
+#type nottier1
+#enditem
+
+#newitem
+#id "crescent"
+#basechance 0
+#chanceinc "personalmagic water 1 astral 1 1"
+#chanceinc "personalmagic water 3 astral 1 1"
+#sprite /graphics/illithid/starchild/robes/icon/crescent.png
+#gameid -1
+#notfortier 1
+#tier 2
+#tier 3
+#type nottier1
+#enditem
+
+#newitem
+#id "moon"
+#basechance 0
+#chanceinc "personalmagic astral 2 death 1 1"
+#chanceinc "personalmagic astral 3 death 1 1"
+#sprite /graphics/illithid/starchild/robes/icon/moon.png
+#gameid -1
+#notfortier 1
+#tier 2
+#tier 3
+#type nottier1
+#enditem
+
+#newitem
+#id "frost"
+#basechance 0
+#chanceinc "personalmagic water 2 death 1 1"
+#chanceinc "personalmagic water 3 death 1 1"
+#sprite /graphics/illithid/starchild/robes/icon/frost.png
+#gameid -1
+#notfortier 1
+#tier 2
+#tier 3
+#type nottier1
+#enditem
+
+#newitem
+#id "banefire"
+#basechance 0
+#chanceinc "personalmagic death 2 fire 1 1"
+#chanceinc "personalmagic death 3 fire 1 1"
+#sprite /graphics/illithid/starchild/robes/icon/banefire.png
+#gameid -1
+#notfortier 1
+#tier 2
+#tier 3
+#type nottier1
+#enditem
+
+#newitem
+#id "chalice"
+#basechance 0
+#chanceinc "personalmagic nature 2 astral 1 1"
+#chanceinc "personalmagic nature 3 astral 1 1"
+#sprite /graphics/illithid/starchild/robes/icon/chalice.png
+#gameid -1
+#notfortier 1
+#tier 2
+#tier 3
+#type nottier1
+#enditem
+
+#newitem
+#id "gothic"
+#basechance 0
+#chanceinc "personalmagic blood 2 fire 1 1"
+#chanceinc "personalmagic blood 3 fire 1 1"
+#sprite /graphics/illithid/starchild/robes/icon/gothic.png
+#gameid -1
+#notfortier 1
+#tier 2
+#tier 3
+#type nottier1
+#enditem
