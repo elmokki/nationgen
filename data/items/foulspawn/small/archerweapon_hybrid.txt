@@ -6,7 +6,6 @@
 #gameid 92
 #needstype rarm onehand
 #hand
-#type visible
 #enditem
 
 #newitem
@@ -14,7 +13,6 @@
 #gameid 29
 #needstype rarm claw
 #claw
-#type visible
 #enditem
 
 #newitem
@@ -24,7 +22,6 @@
 #command "#gcost +1"
 #needstype rarm claw
 #claw
-#type visible
 #enditem
 
 #newitem
@@ -34,7 +31,6 @@
 #command "#gcost +1"
 #needstype rarm claw
 #claw
-#type visible
 #enditem
 
 #newitem
@@ -43,7 +39,6 @@
 #type "tentacle"
 #tentacle
 #needstype rarm tentacle
-#type visible
 #enditem
 
 #newitem
@@ -52,7 +47,6 @@
 #tentacle
 #command "#gcost +1"
 #needstype rarm tentacle
-#type visible
 #enditem
 
 #newitem
@@ -60,7 +54,6 @@
 #gameid 116
 #tentacle
 #needstype rarm tentacle
-#type visible
 #enditem
 
 #newitem
@@ -68,7 +61,6 @@
 #gameid 273
 #pincer
 #needstype rarm pincer
-#type visible
 #enditem
 
 
@@ -85,7 +77,6 @@
 #theme "wood"
 #theme "primitive"
 #needstype rarm onehand
-#type visible
 #enditem
 
 #newitem
@@ -98,7 +89,6 @@
 #theme "wood"
 #theme "primitive"
 #needstype rarm onehand
-#type visible
 #enditem
 
 #newitem
@@ -110,7 +100,6 @@
 #onehand
 #theme "iron"
 #needstype rarm onehand
-#type visible
 #enditem
 
 #newitem
@@ -122,7 +111,6 @@
 #onehand
 #theme "iron"
 #needstype rarm onehand
-#type visible
 #enditem
 
 #newitem
@@ -134,7 +122,6 @@
 #onehand
 #theme "iron"
 #needstype rarm onehand
-#type visible
 #enditem
 
 #newitem
@@ -146,7 +133,6 @@
 #onehand
 #theme "iron"
 #needstype rarm onehand
-#type visible
 #enditem
 
 #newitem
@@ -160,7 +146,6 @@
 #theme "primitive"
 #chanceinc unittag irregular 8
 #needstype rarm onehand
-#type visible
 #enditem
 
 #newitem
@@ -174,7 +159,6 @@
 #maxprot 15
 #chanceinc unittag irregular 8
 #needstype rarm onehand
-#type visible
 #enditem
 
 #newitem
@@ -186,7 +170,6 @@
 #onehand
 #theme "advanced"
 #needstype rarm onehand
-#type visible
 #enditem
 
 #newitem
@@ -198,158 +181,4 @@
 #onehand
 #theme "advanced"
 #needstype rarm onehand
-#type visible
-#enditem
-
-
--- Natural weapons (archer)
-
-#newitem
-#id fist
-#gameid 92
-#needstype rarm onehand_missile
-#hand
-#type archer
-#enditem
-
-#newitem
-#id claw
-#gameid 29
-#needstype rarm claw_missile
-#claw
-#type archer
-#enditem
-
-#newitem
-#id claw_stun
-#basechance 0.25
-#gameid 250
-#command "#gcost +1"
-#needstype rarm claw_missile
-#claw
-#type archer
-#enditem
-
-#newitem
-#id claw_poison
-#basechance 0.25
-#gameid 248
-#command "#gcost +1"
-#needstype rarm claw_missile
-#claw
-#type archer
-#enditem
-
-#newitem
-#id tentacle
-#gameid 85
-#type "tentacle"
-#tentacle
-#needstype rarm tentacle_missile
-#type archer
-#enditem
-
-#newitem
-#id tentacle_sleep
-#gameid 387
-#tentacle
-#command "#gcost +1"
-#needstype rarm tentacle_missile
-#type archer
-#enditem
-
-#newitem
-#id tentacle_strangle
-#gameid 116
-#tentacle
-#needstype rarm tentacle_missile
-#type archer
-#enditem
-
-
--- 1h weapons (archer)
-
-#newitem
-#id hatchet
-#gameid 253
-#theme "primitive"
-#theme "iron"
-#needstype rarm onehand_missile
-#type axe
-#enditem
-
-#newitem
-#id axe
-#gameid 17
-#theme "primitive"
-#theme "iron"
-#needstype rarm onehand_missile
-#type axe
-#enditem
-
-#newitem
-#id hatchet
-#gameid 253
-#theme "primitive"
-#theme "iron"
-#needstype rarm onehand_missile
-#type archer
-#enditem
-
-#newitem
-#id dagger
-#gameid 9
-#theme "iron"
-#needstype rarm onehand_missile
-#type archer
-#enditem
-
-#newitem
-#id kryss
-#gameid 256
-#theme "iron"
-#needstype rarm onehand_missile
-#type archer
-#enditem
-
-#newitem
-#id shortsword
-#gameid 6
-#theme "iron"
-#needstype rarm onehand_missile
-#type archer
-#enditem
-
-#newitem
-#id kopesh
-#gameid ironkopesh
-#theme "iron"
-#needstype rarm onehand_missile
-#type archer
-#enditem
-
-#newitem
-#id club
-#gameid 252
-#theme "primitive"
-#theme "wood"
-#needstype rarm onehand_missile
-#type archer
-#enditem
-
-#newitem
-#id spikedclub
-#gameid 265
-#theme "primitive"
-#theme "wood"
-#needstype rarm onehand_missile
-#type archer
-#enditem
-
-#newitem
-#id mace
-#gameid 12
-#theme "primitive"
-#needstype rarm onehand_missile
-#type archer
 #enditem
