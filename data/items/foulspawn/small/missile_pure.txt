@@ -1,0 +1,115 @@
+-- Bows
+
+#newitem
+#name "short bow"
+#gameid 23
+#sprite /graphics/weapon/bowman/shortbow.png
+#offsety 4
+#theme "wood"
+#command "#prec +1"
+#command "#mor -1"
+#command "#att -1"
+#command "#def -1"
+#needs quiver quiver
+#needstype larm missile
+#enditem
+
+#newitem
+#name "composite bow"
+#gameid 264
+#sprite /graphics/weapon/bowman/compositebow.png
+#offsety 4
+#theme "wood"
+#command "#prec +1"
+#command "#mor -1"
+#command "#att -1"
+#command "#def -1"
+#needs quiver quiver
+#needstype larm missile
+#enditem
+
+#newitem
+#name "long bow"
+#basechance 0.75
+#gameid 24
+#sprite /graphics/weapon/bowman/longbow.png
+#offsety 4
+#theme "wood"
+#command "#prec +1"
+#command "#mor -1"
+#command "#att -1"
+#command "#def -1"
+#needs quiver quiver
+#needstype larm missile
+#enditem
+
+
+-- Crossbows
+
+#newitem
+#name "light crossbow"
+#gameid light_crossbow
+#sprite /graphics/advancedhuman/weapons/crossbow.png
+#offsetx -4
+#offsety 5
+#theme "iron"
+#theme "advanced"
+#basechance 0.75
+#command "#gcost +2"
+#command "#prec +1"
+#command "#mor -1"
+#command "#att -1"
+#command "#def -1"
+#needs quiver quiver
+#needstype larm missile
+#enditem
+
+#newitem
+#name "crossbow"
+#gameid 25
+#sprite /graphics/advancedhuman/weapons/crossbow.png
+#offsetx -4
+#offsety 5
+#theme "iron"
+#theme "advanced"
+#command "#prec +1"
+#command "#mor -1"
+#command "#att -1"
+#command "#def -1"
+#needs quiver quiver
+#needstype larm missile
+#enditem
+
+#newitem
+#name "steel crossbow"
+#gameid steel_crossbow
+#sprite /graphics/advancedhuman/weapons/crossbow.png
+#offsetx -4
+#offsety 5
+#theme "iron"
+#theme "advanced"
+#basechance 0.75
+#command "#prec +1"
+#command "#mor -1"
+#command "#att -1"
+#command "#def -1"
+#needs quiver quiver
+#needstype larm missile
+#enditem
+
+#newitem
+#name "arbalest"
+#gameid 26
+#sprite /graphics/advancedhuman/weapons/arbalest.png
+#offsetx -2
+#offsety 5
+#theme "iron"
+#theme "advanced"
+#basechance 0.75
+#command "#prec +1"
+#command "#mor -1"
+#command "#att -1"
+#command "#def -1"
+#needs quiver quiver
+#needstype larm missile
+#enditem

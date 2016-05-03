@@ -1,0 +1,104 @@
+
+-- Natural weapons
+
+#newitem
+#id spit_poison_fixed
+#gameid 141
+#command "#gcost +1"
+#needstype head poison
+#notepic
+#enditem
+
+#newitem
+#id spit_poison_magic
+#gameid 224
+#command "#gcost +2"
+#needstype head poison
+#notepic
+#enditem
+
+#newitem
+#id spit_corrosive
+#gameid 599
+#command "#gcost +2"
+#needstype head poison
+#notepic
+#enditem
+
+#newitem
+#id web
+#gameid 262
+#command "#gcost +5"
+#needstype head poison
+#notepic
+#enditem
+
+#newitem
+#id mindblast
+#gameid 311
+#basechance 0.125
+#command "#gcost +35"
+#command "#mr +2"
+#needstype head psychic
+#notepic
+#enditem
+
+#newitem
+#id mesmerize
+#gameid 403
+#basechance 0.25
+#command "#gcost +10"
+#command "#mr +2"
+#needstype head psychic
+#notepic
+#enditem
+
+
+-- Thrown weapons
+
+#newitem
+#name "javelin"
+#gameid 21
+#sprite /graphics/weapon/standard/javelin1.png
+#renderprio 7
+#renderslot "quiver"
+#offsetx -1
+#offsety 4
+#enditem
+
+#newitem
+#name "chakram"
+#gameid 362
+#sprite /graphics/weapon/standard/chakram.png
+#renderprio 7
+#renderslot "bonusweapon"
+#offsetx 1
+#offsety 14
+#theme "iron"
+#enditem
+
+#newitem
+#name "throwing_axe"
+#gameid 260
+#sprite /graphics/vaettir/weapon/hatchet.png
+#renderprio 7
+#renderslot "bonusweapon"
+#offsetx -4
+#offsety 0
+#theme "iron"
+#theme "primitive"
+#enditem
+
+#newitem
+#name "poison_darts"
+#gameid 500
+#command "#gcost +1"
+#notepic
+#enditem
+
+#newitem
+#name "sticks_and_stones"
+#gameid 360
+#theme "primitive"
+#notepic
+#enditem
