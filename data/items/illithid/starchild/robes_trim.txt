@@ -1,0 +1,510 @@
+#newitem
+#id "none-T1"
+#gameid -1
+#basechance 1
+#tier 1
+#notfortier 2
+#notfortier 3
+#type collar
+#enditem
+
+#newitem
+#id "none-T2"
+#gameid -1
+#basechance 1
+#notfortier 1
+#tier 2
+#notfortier 3
+#type collar
+#enditem
+
+#newitem
+#id "none-T3"
+#gameid -1
+#basechance 1
+#notfortier 1
+#notfortier 2
+#tier 3
+#type collar
+#enditem
+
+
+
+
+-- Collars
+
+#newitem
+#id "collar_silver"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/silver.png
+#eliteversion collar_light
+#eliteversion collar_gold
+#notfortier 1
+#tier 2
+#tier 3
+#type trim
+#enditem
+
+#newitem
+#id "collar_gold"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/gold.png
+#eliteversion collar_dark
+#eliteversion collar_silver
+#notfortier 1
+#tier 2
+#tier 3
+#type trim
+#enditem
+
+#newitem
+#id "collar_light"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/light.png
+#recolormask self
+#eliteversion collar_silver
+#eliteversion collar_dark
+#notfortier 1
+#tier 2
+#tier 3
+#type trim
+#enditem
+
+#newitem
+#id "collar_dark"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/dark.png
+#recolormask self
+#eliteversion collar_gold
+#eliteversion collar_light
+#notfortier 1
+#tier 2
+#tier 3
+#type trim
+#enditem
+
+
+
+
+-- Rhaga-stle trim
+
+#newitem
+#id "rhaga1_light"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/rhaga1_silver.png
+#recolormask self
+#eliteversion rhaga2_light
+#eliteversion rhaga1_silver
+#eliteversion rhaga1_gold
+#tier 1
+#tier 2
+#notfortier 3
+#type rhaga
+#enditem
+
+#newitem
+#id "rhaga1_silver"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/rhaga1_silver.png
+#eliteversion rhaga1_light
+#eliteversion rhaga2_silver
+#eliteversion rhaga1_gold
+#tier 1
+#tier 2
+#notfortier 3
+#type rhaga
+#enditem
+
+#newitem
+#id "rhaga1_gold"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/rhaga1_gold.png
+#eliteversion rhaga1_light
+#eliteversion rhaga1_silver
+#eliteversion rhaga2_gold
+#notfortier 1
+#tier 2
+#tier 3
+#type rhaga
+#enditem
+
+#newitem
+#id "rhaga2_light"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/rhaga2_silver.png
+#recolormask self
+#eliteversion rhaga2_silver
+#eliteversion rhaga2_gold
+#notfortier 1
+#tier 2
+#tier 3
+#type rhaga
+#enditem
+
+#newitem
+#id "rhaga2_silver"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/rhaga2_silver.png
+#eliteversion rhaga2_light
+#eliteversion rhaga2_gold
+#notfortier 1
+#tier 2
+#tier 3
+#type rhaga
+#enditem
+
+#newitem
+#id "rhaga2_gold"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/rhaga2_gold.png
+#eliteversion rhaga2_light
+#eliteversion rhaga2_silver
+#notfortier 1
+#tier 2
+#tier 3
+#type rhaga
+#enditem
+
+
+
+
+-- Arco-stle trim
+
+#newitem
+#id "arco_white1"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_tin.png
+#eliteversion arco_silver2a
+#eliteversion arco_light2a
+#eliteversion arco_grey2a
+#tier 1
+#notfortier 2
+#notfortier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_black1"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_iron.png
+#eliteversion arco_silver2b
+#eliteversion arco_dark2a
+#eliteversion arco_grey2b
+#tier 1
+#notfortier 2
+#notfortier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_silver1"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_silver.png
+#eliteversion arco_light2b
+#eliteversion arco_gold2a
+#tier 1
+#notfortier 2
+#notfortier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_gold1"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_gold.png
+#eliteversion arco_dark2b
+#eliteversion arco_light2b
+#notfortier 1
+#tier 2
+#tier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_light1"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_tin.png
+#recolormask self
+#eliteversion arco_silver2c
+#eliteversion arco_medium2a
+#eliteversion arco_dark2c
+#tier 1
+#notfortier 2
+#notfortier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_dark1"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_iron.png
+#recolormask self
+#eliteversion arco_gold2b
+#eliteversion arco_medium2b
+#eliteversion arco_light2c
+#tier 1
+#notfortier 2
+#notfortier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_grey2a"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_silver.png
+#eliteversion arco_black3
+#eliteversion arco_medium3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_grey2b"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_silver.png
+#eliteversion arco_white3
+#eliteversion arco_medium3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_silver2a"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_silver.png
+#eliteversion arco_light3
+#eliteversion arco_gold3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_silver2b"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_silver.png
+#eliteversion arco_dark3
+#eliteversion arco_gold3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_silver2c"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_silver.png
+#eliteversion arco_gold3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_gold2a"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_gold.png
+#eliteversion arco_light3
+#eliteversion arco_dark3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_gold2b"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_gold.png
+#eliteversion arco_silver3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_light2a"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_tin.png
+#recolormask self
+#eliteversion arco_dark3
+#eliteversion arco_gold3
+#eliteversion arco_silver3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_light2b"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_tin.png
+#recolormask self
+#eliteversion arco_dark3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_light2c"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_tin.png
+#recolormask self
+#eliteversion arco_gold3
+#eliteversion arco_silver3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_medium2a"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_silver.png
+#recolormask self
+#eliteversion arco_dark3
+#eliteversion arco_gold3
+#eliteversion arco_silver3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_medium2b"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_silver.png
+#recolormask self
+#eliteversion arco_light3
+#eliteversion arco_gold3
+#eliteversion arco_silver3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_dark2a"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_iron.png
+#recolormask self
+#eliteversion arco_light3
+#eliteversion arco_gold3
+#eliteversion arco_silver3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_dark2b"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_iron.png
+#recolormask self
+#eliteversion arco_light3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_dark2c"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_iron.png
+#recolormask self
+#eliteversion arco_gold3
+#eliteversion arco_silver3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_white3"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_tin.png
+#notfortier 1
+#notfortier 2
+#tier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_black3"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_iron.png
+#notfortier 1
+#notfortier 2
+#tier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_silver3"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_silver.png
+#notfortier 1
+#notfortier 2
+#tier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_gold3"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_gold.png
+#notfortier 1
+#notfortier 2
+#tier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_light3"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_tin.png
+#recolormask self
+#notfortier 1
+#notfortier 2
+#tier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_medium3"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_silver.png
+#recolormask self
+#notfortier 1
+#notfortier 2
+#tier 3
+#type arco
+#enditem
+
+#newitem
+#id "arco_dark3"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/trim/arco_iron.png
+#recolormask self
+#notfortier 1
+#notfortier 2
+#tier 3
+#type arco
+#enditem
