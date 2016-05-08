@@ -1,0 +1,464 @@
+-- Weapons
+
+#newitem
+#id spear
+#gameid 1
+#sprite /graphics/illithid/starchild/weapon/spear.png
+#tag "tier 1"
+#theme "iron"
+#theme "terrestrial"
+#enditem
+
+#newitem
+#id trident
+#gameid 3
+#sprite /graphics/illithid/starchild/weapon/trident.png
+#tag "tier 1"
+#tag "tier 2"
+#theme "iron"
+#theme "terrestrial"
+#enditem
+
+#newitem
+#id glaive
+#gameid 308
+#sprite /graphics/illithid/starchild/weapon/glaive.png
+#tag "tier 1"
+#tag "tier 2"
+#theme "iron"
+#theme "terrestrial"
+#enditem
+
+#newitem
+#id prod
+#gameid 49
+#sprite /graphics/illithid/starchild/weapon/ironprod.png
+#tag "tier 1"
+#tag "tier 2"
+#theme "iron"
+#theme "terrestrial"
+#theme "primitive"
+#basechance 0.125
+#maxprot 10
+#enditem
+
+#newitem
+#id bronze_spear
+#gameid 643
+#sprite /graphics/illithid/starchild/weapon/spear_bronze.png
+#tag "tier 1"
+#theme "bronze"
+#theme "amphibious"
+#enditem
+
+#newitem
+#id bronze_trident
+#gameid 641
+#sprite /graphics/illithid/starchild/weapon/trident_bronze.png
+#tag "tier 1"
+#tag "tier 2"
+#theme "bronze"
+#theme "amphibious"
+#enditem
+
+#newitem
+#id bronze_glaive
+#gameid 673
+#sprite /graphics/illithid/starchild/weapon/glaive_bronze.png
+#tag "tier 1"
+#tag "tier 2"
+#theme "bronze"
+#theme "amphibious"
+#enditem
+
+#newitem
+#id coral_spear
+#gameid 31
+#sprite /graphics/illithid/starchild/weapon/spear_coral.png
+#tag "tier 1"
+#theme "coral"
+#theme "amphibious"
+#enditem
+
+#newitem
+#id coral_glaive
+#gameid 46
+#sprite /graphics/illithid/starchild/weapon/glaive_coral.png
+#tag "tier 1"
+#tag "tier 2"
+#theme "coral"
+#theme "amphibious"
+#enditem
+
+#newitem
+#id meteorite_trident
+#gameid 642
+#sprite /graphics/illithid/starchild/weapon/trident.png
+#tag "tier 1"
+#tag "tier 2"
+#theme "iron"
+#theme "amphibious"
+#enditem
+
+#newitem
+#id meteorite_glaive
+#gameid meteoriteglaive
+#sprite /graphics/illithid/starchild/weapon/glaive.png
+#tag "tier 1"
+#tag "tier 2"
+#theme "iron"
+#theme "amphibious"
+#enditem
+
+#newitem
+#id bone_spear
+#gameid 373
+#sprite /graphics/illithid/starchild/weapon/spear_bone.png
+#tag "tier 1"
+#theme "bone"
+#theme "primitive"
+#enditem
+
+#newitem
+#id bone_trident
+#gameid 3
+#sprite /graphics/illithid/starchild/weapon/trident_bone.png
+#tag "tier 1"
+#theme "bone"
+#theme "primitive"
+#enditem
+
+
+-- Staves, mostly
+
+#newitem
+#id quarterstaff
+#gameid 7
+#sprite /graphics/weapon/standard/quarterstaff.png
+#offsetx 1
+#tag "tier 2"
+#tag "eliteversion orbstaff"
+#tag "eliteversion serpentstaff"
+#tag "eliteversion skullstaff"
+#tag "eliteversion knobblystaff"
+#enditem
+
+#newitem
+#id serpentstaff
+#gameid 7
+#sprite /graphics/weapon/mage/serpentstaff.png
+#offsetx 1
+#offsety 2
+#theme "lizard"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id orb
+#gameid -1
+#sprite /graphics/weapon/mage/orb.png
+#recolormask self
+#offsety 4
+#tag "tier 3"
+#enditem
+
+#newitem
+#id orbstaff
+#gameid 7
+#sprite /graphics/weapon/mage/orbstaff.png
+#recolormask /graphics/weapon/mage/orbstaff_recolormask.png
+#offsety 6
+#tag "tier 3"
+#enditem
+
+#newitem
+#id sceptre
+#gameid 446
+#sprite /graphics/weapon/mage/sceptre.png
+#offsety 3
+#tag "tier 2"
+#tag "tier 3"
+#tag "eliteversion orbsceptre"
+#enditem
+
+#newitem
+#id orbsceptre
+#gameid 446
+#sprite /graphics/weapon/mage/sceptre_orb.png
+#recolormask /graphics/weapon/mage/sceptre_orb_recolormask.png
+#offsety 3
+#theme "superior"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id pestle
+#gameid 499
+#sprite /graphics/illithid/starchild/weapon/caster/pestle-mortar.png
+#tag "tier 1"
+#enditem
+
+#newitem
+#id pitcher
+#gameid 496
+#sprite /graphics/offhand/mage/pitcher.png
+#offsetx -14
+#offsety -7
+#enditem
+
+#newitem
+#id dagger
+#gameid 671
+#sprite /graphics/weapon/mage/sacrificialdagger.png
+#offsety 1
+#offsety 2
+#tag "tier 1"
+#enditem
+
+#newitem
+#id skullstaff
+#gameid 7
+#sprite /graphics/weapon/mage/skullstaff.png
+#offsetx 1
+#offsety 1
+#theme "primitive"
+#theme "death"
+#theme "nature"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id metalstaff
+#gameid 7
+#sprite /graphics/weapon/mage/metalstaff.png
+#tag "tier 2"
+#tag "tier 1"
+#tag "eliteversion metalstaff_bauble"
+#enditem
+
+#newitem
+#id metalstaff_bauble
+#gameid 7
+#sprite /graphics/weapon/mage/metalstaff_bauble.png
+#tag "tier 3"
+#enditem
+
+#newitem
+#id knobblystaff
+#gameid 7
+#sprite /graphics/weapon/mage/knobblystaff.png
+#offsetx 1
+#offsety 3
+#tag "tier 3"
+#enditem
+
+
+
+-- Assorted quirky stuff, usually with path requirements
+
+#newitem
+#id fire_bonds
+#basechance 0
+#chanceinc "personalmagic fire 2 0.25"
+#gameid 302
+#notfortier 1
+#notfortier 2
+#enditem
+
+#newitem
+#id astral_fetters
+#basechance 0
+#chanceinc "personalmagic astral 2 0.25"
+#gameid 416
+#notfortier 1
+#notfortier 2
+#enditem
+
+#newitem
+#id false_fetters
+#basechance 0
+#chanceinc "personalmagic air 2 0.25"
+#gameid 219
+#notfortier 1
+#notfortier 2
+#enditem
+
+#newitem
+#id twig
+#gameid 498
+#basechance 0
+#chanceinc "personalmagic nature 1 1"
+#sprite /graphics/illithid/starchild/weapon/caster/twig.png
+#eliteversion branch
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id branch
+#gameid 240
+#basechance 0
+#chanceinc "personalmagic nature 1 1"
+#sprite /graphics/illithid/starchild/weapon/caster/twig.png
+#notfortier 1
+#enditem
+
+#newitem
+#id torch
+#gameid 666
+#basechance 0
+#chanceinc "personalmagic fire 1 1"
+#sprite /graphics/illithid/starchild/weapon/caster/torch.png
+#notfortier 3
+#theme terrestrial
+#enditem
+
+#newitem
+#id sickle
+#gameid 57
+#basechance 0
+#chanceinc "personalmagic nature 1 earth 1 1"
+#sprite /graphics/illithid/starchild/weapon/caster/sickle.png
+#notfortier 1
+#enditem
+
+#newitem
+#id flask
+#gameid -1
+#basechance 0
+#chanceinc "personalmagic fire 1 water 1 1"
+#chanceinc "personalcommand '#alch' 10"
+#sprite /graphics/illithid/starchild/weapon/caster/flask.png
+#notfortier 3
+#enditem
+
+#newitem
+#id astrolabe
+#gameid -1
+#basechance 637
+#chanceinc "personalmagic air 1 astral 1 1"
+#chanceinc "personalmagic air 1 water 1 1"
+#chanceinc "personalmagic astral 2 1"
+#chanceinc "personalcommand #sailsz 10"
+#sprite /graphics/illithid/starchild/weapon/caster/astrolabe.png
+#enditem
+
+#newitem
+#id censer
+#gameid 516
+#basechance 0
+#chanceinc "personalmagic holy 1 1"
+#sprite /graphics/illithid/starchild/weapon/caster/censer.png
+#notfortier 1
+#enditem
+
+#newitem
+#id candle
+#gameid -1
+#basechance 0
+#chanceinc "personalmagic astral 1 1"
+#chanceinc "personalmagic death 1 1"
+#chanceinc "personalmagic blood 1 1"
+#sprite /graphics/illithid/starchild/weapon/caster/candle.png
+#notfortier 3
+#theme terrestrial
+#enditem
+
+#newitem
+#id scales
+#gameid 637
+#basechance 0
+#chanceinc "personalmagic astral 1 1"
+#chanceinc "personalcommand #alch 5"
+#sprite /graphics/illithid/starchild/weapon/caster/scales.png
+#notfortier 1
+#enditem
+
+#newitem
+#id square
+#gameid 638
+#basechance 0
+#chanceinc "personalmagic earth 1 1"
+#sprite /graphics/illithid/starchild/weapon/caster/square.png
+#enditem
+
+#newitem
+#id whip
+#gameid 40
+#sprite /graphics/illithid/starchild/weapon/caster/whip.png
+#command "#taskmaster +1"
+#notfortier 3
+#theme terrestrial
+#enditem
+
+#newitem
+#id whisk
+#gameid 502
+#sprite /graphics/illithid/starchild/weapon/caster/whisk.png
+#notfortier 3
+#theme terrestrial
+#enditem
+
+#newitem
+#id wisp
+#gameid -1
+#sprite /graphics/illithid/starchild/weapon/caster/wisp.png
+#recolormask self
+#notfortier 1
+#enditem
+
+#newitem
+#id pearl
+#gameid -1
+#basechance 0
+#chanceinc "personalmagic astral 1 water 1 1"
+#sprite /graphics/illithid/starchild/weapon/caster/pearl.png
+#notfortier 1
+#theme amphibious
+#enditem
+
+#newitem
+#id hammer
+#gameid 13
+#basechance 0
+#chanceinc "personalmagic earth 1 1"
+#chanceinc "personalcommand #fixforgebonus 10"
+#sprite /graphics/illithid/starchild/weapon/caster/hammer.png
+#enditem
+
+#newitem
+#id chalice
+#gameid -1
+#basechance 0
+#chanceinc "personalmagic nature 3 1"
+#chanceinc "personalmagic water 2 1"
+#chanceinc "personalmagic blood 2 1"
+#sprite /graphics/illithid/starchild/weapon/caster/chalice.png
+#notfortier 1
+#enditem
+
+#newitem
+#id lamp
+#gameid -1
+#sprite /graphics/illithid/starchild/weapon/caster/lamp.png
+#notfortier 1
+#theme terrestrial
+#enditem
+
+#newitem
+#id book
+#gameid -1
+#chanceinc "personalcommand #adept_research *2"
+#sprite /graphics/illithid/starchild/weapon/caster/book.png
+#notfortier 1
+#theme terrestrial
+#enditem
+
+#newitem
+#id cod
+#gameid 591
+#chanceinc "personalcommand #insane 5"
+#sprite /graphics/illithid/starchild/weapon/caster/cod.png
+#notfortier 2
+#notfortier 3
+#enditem

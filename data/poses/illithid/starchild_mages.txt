@@ -38,14 +38,12 @@
 #load color /data/items/illithid/starchild/robes_color.txt
 #load pattern /data/items/illithid/starchild/robes_pattern.txt
 #load tabard /data/items/illithid/starchild/robes_tabard.txt
-#load trim /data/items/illithid/starchild/robe_trim.txt
+#load trim /data/items/illithid/starchild/robes_trim.txt
 #load icon /data/items/illithid/starchild/robes_icon.txt
 #load belt /data/items/illithid/starchild/robes_belt.txt
 #load breastplate /data/items/illithid/starchild/robes_breastplate.txt
 
-#load helmet /data/items/illithid/starchild/hats.txt
 #load weapon /data/items/illithid/starchild/weapons_mage.txt
-#load offhand /data/items/illithid/starchild/offhands_mage.txt
 
 #generateitem 1 color
 #generateitem 1 pattern
@@ -53,6 +51,8 @@
 #tier 1
 #tier 2
 #tier 3
+
+#dontvaryhat
 
 #endpose
 
