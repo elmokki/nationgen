@@ -1,0 +1,703 @@
+#newitem
+#id "none-T1"
+#gameid -1
+#basechance 11
+#tier 1
+#notfortier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "none-T2"
+#gameid -1
+#basechance 7
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "none-T3"
+#gameid -1
+#basechance 3
+#notfortier 1
+#notfortier 2
+#tier 3
+#type belt
+#enditem
+
+
+-- Monochrome belts
+
+#newitem
+#id "white1"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/light.png
+#eliteversion silver
+#eliteversion grey2
+#eliteversion light2
+#eliteversion medium2a
+#eliteversion medium2b
+#eliteversion white-light
+#eliteversion white-medium
+#eliteversion white-dark
+#tier 1
+#notfortier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "grey1"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/medium.png
+#eliteversion silver
+#eliteversion white2
+#eliteversion black2
+#eliteversion medium2a
+#eliteversion medium2b
+#eliteversion grey-light
+#eliteversion grey-medium
+#eliteversion grey-dark
+#tier 1
+#notfortier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "black1"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/dark.png
+#eliteversion silver
+#eliteversion grey2
+#eliteversion medium2a
+#eliteversion medium2b
+#eliteversion dark2
+#eliteversion black-light
+#eliteversion black-medium
+#eliteversion black-dark
+#tier 1
+#notfortier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "white2"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/light.png
+#eliteversion gold
+#eliteversion light3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "grey2"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/medium.png
+#eliteversion gold
+#eliteversion medium3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "black2"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/dark.png
+#eliteversion gold
+#eliteversion dark3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+
+
+-- Fixed color belts
+
+#newitem
+#id "tan"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/tan.png
+#eliteversion tan-dark
+#eliteversion white2
+#eliteversion light2
+#eliteversion silver
+#tier 1
+#notfortier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "brown"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/brown.png
+#eliteversion brown-light
+#eliteversion black2
+#eliteversion dark2
+#eliteversion silver
+#tier 1
+#notfortier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "silver"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/silver.png
+#eliteversion gold
+#eliteversion gold-silver
+#eliteversion silver-gold
+#eliteversion silver-light
+#eliteversion silver-medium
+#eliteversion silver-dark
+#eliteversion light-silver
+#eliteversion medium-silver
+#eliteversion dark-silver
+#tier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "silver-gold"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/silver-gold.png
+#eliteversion gold
+#eliteversion gold-silver
+#eliteversion silver-gold
+#eliteversion silver-light
+#eliteversion silver-medium
+#eliteversion silver-dark
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "gold-silver"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/gold-silver.png
+#eliteversion gold
+#eliteversion light-silver
+#eliteversion medium-silver
+#eliteversion dark-silver
+#notfortier 1
+#tier 2
+#tier 3
+#type belt
+#enditem
+
+#newitem
+#id "gold"
+#gameid -1
+#recolormask /graphics/illithid/starchild/robes/belt/gold.png
+#notfortier 1
+#notfortier 2
+#tier 3
+#type belt
+#enditem
+
+
+
+-- Semi-fixed color belts
+
+#newitem
+#id "white-light"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/light.png
+#recolormask /graphics/illithid/starchild/robes/belt/trim_light_recolormask.png
+#eliteversion light3
+#eliteversion gold-light
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "grey-light"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/medium.png
+#recolormask /graphics/illithid/starchild/robes/belt/trim_light_recolormask.png
+#eliteversion medium3
+#eliteversion light3
+#eliteversion gold-light
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "black-light"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/dark.png
+#recolormask /graphics/illithid/starchild/robes/belt/trim_light_recolormask.png
+#eliteversion dark-light
+#eliteversion light3
+#eliteversion gold-light
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "white-medium"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/light.png
+#recolormask /graphics/illithid/starchild/robes/belt/trim_medium_recolormask.png
+#eliteversion medium3
+#eliteversion gold-medium
+#eliteversion dark-light
+#eliteversion light-dark
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "grey-medium"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/medium.png
+#recolormask /graphics/illithid/starchild/robes/belt/trim_medium_recolormask.png
+#eliteversion medium3
+#eliteversion gold-medium
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "black-medium"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/dark.png
+#recolormask /graphics/illithid/starchild/robes/belt/trim_medium_recolormask.png
+#eliteversion medium3
+#eliteversion gold-medium
+#eliteversion dark-light
+#eliteversion light-dark
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "white-dark"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/light.png
+#recolormask /graphics/illithid/starchild/robes/belt/trim_medium_recolormask.png
+#eliteversion light-dark
+#eliteversion dark3
+#eliteversion gold-dark
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "grey-dark"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/medium.png
+#recolormask /graphics/illithid/starchild/robes/belt/trim_medium_recolormask.png
+#eliteversion medium3
+#eliteversion dark3
+#eliteversion gold-dark
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "black-dark"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/dark.png
+#recolormask /graphics/illithid/starchild/robes/belt/trim_medium_recolormask.png
+#eliteversion dark3
+#eliteversion gold-dark
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "tan-dark"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/tan.png
+#recolormask /graphics/illithid/starchild/robes/belt/trim_dark_recolormask.png
+#eliteversion silver-dark
+#eliteversion silver-medium
+#eliteversion dark2
+#eliteversion dark3
+#tier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "brown-light"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/brown.png
+#recolormask /graphics/illithid/starchild/robes/belt/trim_light_recolormask.png
+#eliteversion silver-light
+#eliteversion silver-medium
+#eliteversion light2
+#eliteversion light3
+#tier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "silver-light"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/silver.png
+#recolormask /graphics/illithid/starchild/robes/belt/trim_light_recolormask.png
+#eliteversion gold-light
+#eliteversion dark-light
+#eliteversion dark3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "silver-medium"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/silver.png
+#recolormask /graphics/illithid/starchild/robes/belt/trim_medium_recolormask.png
+#eliteversion gold-light
+#eliteversion gold-medium
+#eliteversion gold-dark
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "silver-dark"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/silver.png
+#recolormask /graphics/illithid/starchild/robes/belt/trim_dark_recolormask.png
+#eliteversion gold-dark
+#eliteversion light-dark
+#eliteversion light3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "gold-light"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/gold.png
+#recolormask /graphics/illithid/starchild/robes/belt/trim_light_recolormask.png
+#eliteversion gold
+#eliteversion dark-light
+#notfortier 1
+#tier 2
+#tier 3
+#type belt
+#enditem
+
+#newitem
+#id "gold-medium"
+#gameid -1
+#recolormask /graphics/illithid/starchild/robes/belt/gold.png
+#recolormask /graphics/illithid/starchild/robes/belt/trim_medium_recolormask.png
+#eliteversion gold
+#eliteversion medium3
+#notfortier 1
+#tier 2
+#tier 3
+#type belt
+#enditem
+
+#newitem
+#id "gold-dark"
+#gameid -1
+#recolormask /graphics/illithid/starchild/robes/belt/gold.png
+#recolormask /graphics/illithid/starchild/robes/belt/trim_dark_recolormask.png
+#eliteversion gold
+#eliteversion light-dark
+#notfortier 1
+#tier 2
+#tier 3
+#type belt
+#enditem
+
+#newitem
+#id "light-silver"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/silver.png
+#recolormask /graphics/illithid/starchild/robes/belt/body_light_recolormask.png
+#eliteversion light-gold
+#eliteversion light-dark
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "medium-silver"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/silver.png
+#recolormask /graphics/illithid/starchild/robes/belt/body_medium_recolormask.png
+#eliteversion medium-gold
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "dark-silver"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/silver.png
+#recolormask /graphics/illithid/starchild/robes/belt/body_dark_recolormask.png
+#eliteversion dark-gold
+#eliteversion dark-light
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "light-gold"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/gold.png
+#recolormask /graphics/illithid/starchild/robes/belt/body_light_recolormask.png
+#eliteversion gold
+#eliteversion light-dark
+#notfortier 1
+#tier 2
+#tier 3
+#type belt
+#enditem
+
+#newitem
+#id "medium-gold"
+#gameid -1
+#recolormask /graphics/illithid/starchild/robes/belt/gold.png
+#recolormask /graphics/illithid/starchild/robes/belt/body_medium_recolormask.png
+#eliteversion gold
+#eliteversion light-dark
+#eliteversion dark-light
+#notfortier 1
+#tier 2
+#tier 3
+#type belt
+#enditem
+
+#newitem
+#id "dark-gold"
+#gameid -1
+#recolormask /graphics/illithid/starchild/robes/belt/gold.png
+#recolormask /graphics/illithid/starchild/robes/belt/body_dark_recolormask.png
+#eliteversion gold
+#eliteversion dark-light
+#notfortier 1
+#tier 2
+#tier 3
+#type belt
+#enditem
+
+
+-- Colored belts
+
+#newitem
+#id "light1"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/light.png
+#recolormask self
+#eliteversion silver
+#eliteversion medium2a
+#eliteversion white2
+#eliteversion grey2
+#eliteversion light-silver
+#eliteversion light-gold
+#tier 1
+#notfortier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "medium1"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/medium.png
+#recolormask self
+#eliteversion silver
+#eliteversion light2
+#eliteversion dark2
+#eliteversion medium-silver
+#eliteversion medium-gold
+#tier 1
+#notfortier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "dark1"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/dark.png
+#recolormask self
+#eliteversion silver
+#eliteversion medium2b
+#eliteversion black2
+#eliteversion grey2
+#eliteversion dark-silver
+#eliteversion dark-gold
+#tier 1
+#notfortier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "light2"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/light.png
+#recolormask self
+#eliteversion light-gold
+#eliteversion light-dark
+#eliteversion gold-light
+#eliteversion dark-light
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "medium2a"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/medium.png
+#recolormask self
+#eliteversion gold
+#eliteversion dark3
+#eliteversion medium-gold
+#eliteversion gold-medium
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "medium2b"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/medium.png
+#recolormask self
+#eliteversion gold
+#eliteversion light3
+#eliteversion medium-gold
+#eliteversion gold-medium
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "dark2"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/dark.png
+#recolormask self
+#eliteversion dark-gold
+#eliteversion dark-light
+#eliteversion gold-dark
+#eliteversion light-dark
+#notfortier 1
+#tier 2
+#notfortier 3
+#type belt
+#enditem
+
+#newitem
+#id "light3"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/light.png
+#recolormask self
+#notfortier 1
+#notfortier 2
+#tier 3
+#type belt
+#enditem
+
+#newitem
+#id "medium3"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/medium.png
+#recolormask self
+#notfortier 1
+#notfortier 2
+#tier 3
+#type belt
+#enditem
+
+#newitem
+#id "dark3"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/dark.png
+#recolormask self
+#notfortier 1
+#notfortier 2
+#tier 3
+#type belt
+#enditem
+
+#newitem
+#id "light-dark"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/light-dark.png
+#recolormask self
+#eliteversion dark-light
+#eliteversion light-gold
+#notfortier 1
+#tier 2
+#tier 3
+#type belt
+#enditem
+
+#newitem
+#id "dark-light"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/belt/light-dark.png
+#recolormask self
+#eliteversion light-dark
+#eliteversion dark-gold
+#notfortier 1
+#tier 2
+#tier 3
+#type belt
+#enditem

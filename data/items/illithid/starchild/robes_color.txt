@@ -1,0 +1,425 @@
+
+-- Monochrome
+
+#newitem
+#id robes_white
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/white.png
+#tag "eliteversion robes_grey2a"
+#tag "eliteversion robes_light1"
+#tag "tier 1"
+#tag "notfortier 2"
+#tag "notfortier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_grey
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/light.png
+#tag "eliteversion robes_greyer"
+#tag "eliteversion robes_medium1"
+#tag "tier 1"
+#tag "notfortier 2"
+#tag "notfortier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_black
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/black.png
+#tag "eliteversion robes_grey2b"
+#tag "eliteversion robes_dark1"
+#tag "tier 1"
+#tag "notfortier 2"
+#tag "notfortier 3"
+#armor
+#enditem
+
+#id robes_grey2a
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/medium.png
+#tag "eliteversion robes_black3"
+#tag "eliteversion robes_medium2"
+#tag "eliteversion robes_light2"
+#tag "eliteversion robes_light3"
+#tag "eliteversion robes_bright"
+#tag "eliteversion robes_lighter"
+#tag "notfortier 1"
+#tag "tier 2"
+#tag "notfortier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_greyer
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/medium.png
+#tag "eliteversion robes_greyest"
+#tag "eliteversion robes_medium2"
+#tag "eliteversion robes_medium3"
+#tag "eliteversion robes_lighter"
+#tag "eliteversion robes_darker"
+#tag "notfortier 1"
+#tag "tier 2"
+#tag "notfortier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_grey2b
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/medium.png
+#tag "eliteversion robes_white3"
+#tag "eliteversion robes_medium2"
+#tag "eliteversion robes_dark2"
+#tag "eliteversion robes_dark3"
+#tag "eliteversion robes_darker"
+#tag "eliteversion robes_dark"
+#tag "notfortier 1"
+#tag "tier 2"
+#tag "notfortier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_black3
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/black.png
+#tag "notfortier 1"
+#tag "notfortier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_greyest
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/dark.png
+#tag "notfortier 1"
+#tag "notfortier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_white3
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/white.png
+#tag "notfortier 1"
+#tag "notfortier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+
+
+-- Simple colors
+
+#newitem
+#id robes_light1
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/white.png
+#recolormask /graphics/illithid/starchild/robes/color/recolormask_light.png
+#tag "eliteversion robes_light2"
+#tag "tier 1"
+#tag "tier 2"
+#tag "notfortier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_medium1
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/medium.png
+#recolormask /graphics/illithid/starchild/robes/color/recolormask_light.png
+#tag "eliteversion robes_medium2"
+#tag "tier 1"
+#tag "tier 2"
+#tag "notfortier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_dark1
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/black.png
+#recolormask /graphics/illithid/starchild/robes/color/recolormask_light.png
+#tag "eliteversion robes_dark2"
+#tag "tier 1"
+#tag "tier 2"
+#tag "notfortier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_light2
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/white.png
+#recolormask /graphics/illithid/starchild/robes/color/recolormask_medium.png
+#tag "eliteversion robes_light3"
+#tag "eliteversion robes_white3"
+#tag "notfortier 1"
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_medium2
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/medium.png
+#recolormask /graphics/illithid/starchild/robes/color/recolormask_vivid.png
+#tag "eliteversion robes_medium3"
+#tag "eliteversion robes_greyest"
+#tag "notfortier 1"
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_dark2
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/black.png
+#recolormask /graphics/illithid/starchild/robes/color/recolormask_middling.png
+#recolormask self
+#tag "eliteversion robes_dark3"
+#tag "eliteversion robes_black3"
+#tag "notfortier 1"
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_light3
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/white.png
+#recolormask /graphics/illithid/starchild/robes/color/recolormask_dark.png
+#tag "notfortier 1"
+#tag "notfortier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_medium3
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/medium.png
+#recolormask /graphics/illithid/starchild/robes/color/recolormask_deep.png
+#tag "notfortier 1"
+#tag "notfortier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_dark3
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/black.png
+#recolormask /graphics/illithid/starchild/robes/color/recolormask_dark.png
+#tag "notfortier 1"
+#tag "notfortier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+
+
+-- Softer colors
+
+#newitem
+#id robes_pale
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/white.png
+#recolormask /graphics/illithid/starchild/robes/color/recolormask_dull.png
+#tag "eliteversion robes_light"
+#tag "tier 1"
+#tag "notfortier 2"
+#tag "notfortier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_paleish
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/medium.png
+#recolormask /graphics/illithid/starchild/robes/color/recolormask_pale.png
+#tag "eliteversion robes_lightish"
+#tag "tier 1"
+#tag "notfortier 2"
+#tag "notfortier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_dullish
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/medium.png
+#recolormask /graphics/illithid/starchild/robes/color/recolormask_dull.png
+#tag "eliteversion robes_darkish"
+#tag "tier 1"
+#tag "notfortier 2"
+#tag "notfortier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_dull
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/black.png
+#recolormask /graphics/illithid/starchild/robes/color/recolormask_dull.png
+#tag "eliteversion robes_dim"
+#tag "tier 1"
+#tag "notfortier 2"
+#tag "notfortier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_light
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/white.png
+#recolormask /graphics/illithid/starchild/robes/color/recolormask_pale.png
+#tag "eliteversion robes_bright"
+#tag "eliteversion robes_white3"
+#tag "notfortier 1"
+#tag "tier 2"
+#tag "notfortier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_lightish
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/medium.png
+#recolormask /graphics/illithid/starchild/robes/color/recolormask_light.png
+#tag "eliteversion robes_lighter"
+#tag "eliteversion robes_greyest"
+#tag "eliteversion robes_white3"
+#tag "notfortier 1"
+#tag "tier 2"
+#tag "notfortier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_darkish
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/medium.png
+#recolormask self
+#tag "eliteversion robes_darker"
+#tag "eliteversion robes_greyest"
+#tag "eliteversion robes_black3"
+#tag "notfortier 1"
+#tag "tier 2"
+#tag "notfortier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_dim
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/black.png
+#recolormask self
+#tag "eliteversion robes_dark"
+#tag "eliteversion robes_black3"
+#tag "notfortier 1"
+#tag "tier 2"
+#tag "notfortier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_bright
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/white.png
+#recolormask self
+#tag "notfortier 1"
+#tag "notfortier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_lighter
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/light.png
+#recolormask self
+#tag "notfortier 1"
+#tag "notfortier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_darker
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/dark.png
+#recolormask self
+#tag "notfortier 1"
+#tag "notfortier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_dark
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/black.png
+#recolormask /graphics/illithid/starchild/robes/color/recolormask_dark.png
+#tag "notfortier 1"
+#tag "notfortier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+
+
+-- Assorted colors
+
+#newitem
+#id robes_light_vivid
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/white.png
+#recolormask /graphics/illithid/starchild/robes/color/recolormask_vivid.png
+#tag "notfortier 1"
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_light_deep
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/light.png
+#recolormask /graphics/illithid/starchild/robes/color/recolormask_deep.png
+#tag "notfortier 1"
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_dark_vivid
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/dark.png
+#recolormask /graphics/illithid/starchild/robes/color/recolormask_vivid.png
+#tag "notfortier 1"
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#enditem
+
+#newitem
+#id robes_dark_deep
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/color/black.png
+#recolormask /graphics/illithid/starchild/robes/color/recolormask_deep.png
+#tag "notfortier 1"
+#tag "tier 2"
+#tag "tier 3"
+#armor
+#enditem
