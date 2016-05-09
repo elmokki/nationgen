@@ -257,12 +257,89 @@
 -- Assorted quirky stuff, usually with path requirements
 
 #newitem
+#id tentacle
+#gameid 85
+#tier 1
+#tier 2
+#tier 3
+#needs basesprite "starchild mindflayer basesprite"
+#enditem
+
+#newitem
+#id strangle
+#gameid 116
+#tier 1
+#tier 2
+#tier 3
+#needs basesprite "starchild mindflayer basesprite"
+#enditem
+
+#newitem
+#id lifedrain-T1
+#gameid 384
+#tier 1
+#notfortier 2
+#notfortier 3
+#needs basesprite "starchild mindflayer basesprite"
+#enditem
+
+#newitem
+#id lifedrain
+#gameid 63
+#notfortier 1
+#tier 2
+#tier 3
+#needs basesprite "starchild mindflayer basesprite"
+#enditem
+
+#newitem
+#id paralyze-T1
+#gameid 282
+#tier 1
+#notfortier 2
+#notfortier 3
+#needs basesprite "starchild mindflayer basesprite"
+#enditem
+
+#newitem
+#id paralyze
+#gameid 283
+#notfortier 1
+#tier 2
+#tier 3
+#needs basesprite "starchild mindflayer basesprite"
+#enditem
+
+#newitem
+#id sleeptouch
+#gameid 387
+#tier 1
+#tier 2
+#tier 3
+#needs basesprite "starchild mindflayer basesprite"
+#enditem
+
+#newitem
+#id rage
+#gameid 622
+#basechance 0
+#chanceinc "personalmagic nature 1 0.5"
+#chanceinc "personalmagic blood 1 0.5"
+#notfortier 1
+#tier 2
+#tier 3
+#needs basesprite "starchild mindflayer basesprite"
+#enditem
+
+#newitem
 #id fire_bonds
 #basechance 0
 #chanceinc "personalmagic fire 2 0.25"
 #gameid 302
 #notfortier 1
 #notfortier 2
+#tier 3
+#needs basesprite "starchild mindflayer basesprite"
 #enditem
 
 #newitem
@@ -272,6 +349,8 @@
 #gameid 416
 #notfortier 1
 #notfortier 2
+#tier 3
+#needs basesprite "starchild mindflayer basesprite"
 #enditem
 
 #newitem
@@ -281,6 +360,8 @@
 #gameid 219
 #notfortier 1
 #notfortier 2
+#tier 3
+#needs basesprite "starchild mindflayer basesprite"
 #enditem
 
 #newitem
@@ -290,6 +371,7 @@
 #chanceinc "personalmagic nature 1 1"
 #sprite /graphics/illithid/starchild/weapon/caster/twig.png
 #eliteversion branch
+#tier 1
 #notfortier 2
 #notfortier 3
 #enditem
@@ -301,6 +383,8 @@
 #chanceinc "personalmagic nature 1 1"
 #sprite /graphics/illithid/starchild/weapon/caster/twig.png
 #notfortier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
@@ -309,6 +393,8 @@
 #basechance 0
 #chanceinc "personalmagic fire 1 1"
 #sprite /graphics/illithid/starchild/weapon/caster/torch.png
+#tier 1
+#tier 2
 #notfortier 3
 #theme terrestrial
 #enditem
@@ -320,6 +406,8 @@
 #chanceinc "personalmagic nature 1 earth 1 1"
 #sprite /graphics/illithid/starchild/weapon/caster/sickle.png
 #notfortier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
@@ -329,6 +417,8 @@
 #chanceinc "personalmagic fire 1 water 1 1"
 #chanceinc "personalcommand '#alch' 10"
 #sprite /graphics/illithid/starchild/weapon/caster/flask.png
+#tier 1
+#tier 2
 #notfortier 3
 #enditem
 
@@ -341,6 +431,9 @@
 #chanceinc "personalmagic astral 2 1"
 #chanceinc "personalcommand #sailsz 10"
 #sprite /graphics/illithid/starchild/weapon/caster/astrolabe.png
+#tier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
@@ -350,6 +443,8 @@
 #chanceinc "personalmagic holy 1 1"
 #sprite /graphics/illithid/starchild/weapon/caster/censer.png
 #notfortier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
@@ -360,6 +455,8 @@
 #chanceinc "personalmagic death 1 1"
 #chanceinc "personalmagic blood 1 1"
 #sprite /graphics/illithid/starchild/weapon/caster/candle.png
+#tier 1
+#tier 2
 #notfortier 3
 #theme terrestrial
 #enditem
@@ -372,6 +469,8 @@
 #chanceinc "personalcommand #alch 5"
 #sprite /graphics/illithid/starchild/weapon/caster/scales.png
 #notfortier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
@@ -380,6 +479,9 @@
 #basechance 0
 #chanceinc "personalmagic earth 1 1"
 #sprite /graphics/illithid/starchild/weapon/caster/square.png
+#tier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
@@ -387,6 +489,8 @@
 #gameid 40
 #sprite /graphics/illithid/starchild/weapon/caster/whip.png
 #command "#taskmaster +1"
+#tier 1
+#tier 2
 #notfortier 3
 #theme terrestrial
 #enditem
@@ -395,6 +499,8 @@
 #id whisk
 #gameid 502
 #sprite /graphics/illithid/starchild/weapon/caster/whisk.png
+#tier 1
+#tier 2
 #notfortier 3
 #theme terrestrial
 #enditem
@@ -405,6 +511,8 @@
 #sprite /graphics/illithid/starchild/weapon/caster/wisp.png
 #recolormask self
 #notfortier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
@@ -414,6 +522,8 @@
 #chanceinc "personalmagic astral 1 water 1 1"
 #sprite /graphics/illithid/starchild/weapon/caster/pearl.png
 #notfortier 1
+#tier 2
+#tier 3
 #theme amphibious
 #enditem
 
@@ -424,6 +534,9 @@
 #chanceinc "personalmagic earth 1 1"
 #chanceinc "personalcommand #fixforgebonus 10"
 #sprite /graphics/illithid/starchild/weapon/caster/hammer.png
+#tier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
@@ -435,6 +548,8 @@
 #chanceinc "personalmagic blood 2 1"
 #sprite /graphics/illithid/starchild/weapon/caster/chalice.png
 #notfortier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
@@ -442,6 +557,8 @@
 #gameid -1
 #sprite /graphics/illithid/starchild/weapon/caster/lamp.png
 #notfortier 1
+#tier 2
+#tier 3
 #theme terrestrial
 #enditem
 
@@ -451,6 +568,8 @@
 #chanceinc "personalcommand #adept_research *2"
 #sprite /graphics/illithid/starchild/weapon/caster/book.png
 #notfortier 1
+#tier 2
+#tier 3
 #theme terrestrial
 #enditem
 
@@ -459,6 +578,7 @@
 #gameid 591
 #chanceinc "personalcommand #insane 5"
 #sprite /graphics/illithid/starchild/weapon/caster/cod.png
+#tier 1
 #notfortier 2
 #notfortier 3
 #enditem
