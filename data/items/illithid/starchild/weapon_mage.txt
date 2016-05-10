@@ -13,6 +13,7 @@
 #id trident
 #gameid 3
 #sprite /graphics/illithid/starchild/weapon/trident.png
+#eliteversion meteorite_trident-T3
 #tag "tier 1"
 #tag "tier 2"
 #theme "iron"
@@ -55,6 +56,7 @@
 #id bronze_trident
 #gameid 641
 #sprite /graphics/illithid/starchild/weapon/trident_bronze.png
+#eliteversion bronze_trident-T3
 #tag "tier 1"
 #tag "tier 2"
 #theme "bronze"
@@ -94,6 +96,7 @@
 #id meteorite_trident
 #gameid 642
 #sprite /graphics/illithid/starchild/weapon/trident.png
+#eliteversion meteorite_trident-T3
 #tag "tier 1"
 #tag "tier 2"
 #theme "iron"
@@ -141,6 +144,24 @@
 #tag "eliteversion serpentstaff"
 #tag "eliteversion skullstaff"
 #tag "eliteversion knobblystaff"
+#enditem
+
+#newitem
+#id bronze_trident-T3
+#gameid 641
+#sprite /graphics/weapon/mage/trident_bronze.png
+#tag "tier 3"
+#theme "bronze"
+#theme "amphibious"
+#enditem
+
+#newitem
+#id meteorite_trident-T3
+#gameid 642
+#sprite /graphics/weapon/mage/trident.png
+#tag "tier 3"
+#theme "iron"
+#theme "amphibious"
 #enditem
 
 #newitem
@@ -424,8 +445,8 @@
 
 #newitem
 #id astrolabe
-#gameid -1
-#basechance 637
+#gameid 637
+#basechance 0
 #chanceinc "personalmagic air 1 astral 1 1"
 #chanceinc "personalmagic air 1 water 1 1"
 #chanceinc "personalmagic astral 2 1"
