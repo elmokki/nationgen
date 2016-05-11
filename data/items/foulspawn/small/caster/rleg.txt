@@ -1,0 +1,46 @@
+#newitem
+#name "humanoid"
+#gameid -1
+#command "#gcost +1"
+#command "#hp +1"
+#command "#enc +1"
+#command "#ap +1"
+#enditem
+
+#newitem
+#name "goblinoid"
+#gameid -1
+#command "#gcost +1"
+#command "#hp +1"
+#command "#enc +1"
+#command "#ap +2"
+#enditem
+
+#newitem
+#name "canid"
+#gameid -1
+#command "#gcost +1"
+#command "#hp +1"
+#command "#enc +1"
+#command "#ap +2"
+#enditem
+
+#newitem
+#name "tentacloid"
+#gameid -1
+#command "#gcost +0"
+#command "#hp +2"
+#command "#enc +2"
+#command "#ap +1"
+#itemslot foot 0
+#enditem
+
+#newitem
+#name "fleshblob"
+#gameid -1
+#command "#gcost +0"
+#command "#hp +2"
+#command "#enc +2"
+#command "#ap +1"
+#itemslot foot 0
+#enditem
