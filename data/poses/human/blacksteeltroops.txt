@@ -1,0 +1,235 @@
+
+-------- Normal
+
+#newpose
+#basechance 4
+#name "blacksteel inf"
+#role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
+
+#load basesprite /data/items/human/normal/humanbases.txt
+#load shadow /data/items/human/normal/shadow.txt
+
+#load hands /data/items/human/normal/blacksteelhands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load shirt /data/items/human/normal/humanshirt.txt
+#load hair /data/items/human/normal/humanhair.txt
+
+#load armor /data/items/human/normal/blacksteelarmor.txt
+#load helmet /data/items/human/normal/blacksteelhelmet.txt
+#load legs /data/items/human/normal/blacksteellegs.txt
+
+#load weapon /data/items/human/normal/humanweapon.txt
+#load bonusweapon /data/items/human/normal/standards.txt
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt
+
+#load offhand /data/items/human/normal/humanoffhand.txt
+#load offhand /data/items/human/normal/shields.txt
+#load offhand /data/items/human/normal/towershields.txt
+
+#endpose
+
+
+
+-------- 2h infantry
+
+#newpose
+#basechance 2
+#name "2h blacksteel inf"
+#role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
+
+#load basesprite /data/items/human/2h/humanbases.txt
+#load shadow /data/items/human/normal/shadow.txt
+
+#load hands /data/items/human/2h/blacksteelhands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load shirt /data/items/human/2h/humanshirt.txt
+#load hair /data/items/human/normal/humanhair.txt
+
+#load armor /data/items/human/2h/blacksteelarmor.txt
+#load helmet /data/items/human/normal/blacksteelhelmet.txt
+#load legs /data/items/human/normal/blacksteellegs.txt
+
+#load weapon /data/items/human/2h/humanweapon.txt
+#load bonusweapon /data/items/human/2h/humanbonusranged.txt offsetx -1 offsety 0
+
+#maxvarieties 1
+#endpose
+
+
+------- Archer
+
+#newpose
+#name "blacksteel ranged"
+#role "ranged"
+#role "elite ranged"
+#role "sacred ranged"
+#basechance 2
+
+#renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/human/archer/humanbases.txt
+#load shadow /data/items/human/normal/shadow.txt
+
+#load hands /data/items/human/archer/blacksteelhands.txt
+
+#load armor /data/items/human/archer/blacksteelarmor.txt
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load hair /data/items/human/normal/humanhair.txt
+
+#load helmet /data/items/human/normal/blacksteelhelmet.txt
+#load legs /data/items/human/normal/blacksteellegs.txt
+#load shirt /data/items/human/archer/humanshirt.txt
+#load weapon /data/items/human/archer/bows.txt
+
+#load quiver /data/items/human/archer/humanbonusranged.txt
+#load bonusweapon /data/items/human/archer/archerweapon.txt
+
+#generateitem 1 bonusweapon
+#endpose
+
+------- crossbowman
+
+#newpose
+#theme advanced
+#name "blacksteel ranged"
+#role "ranged"
+#role "elite ranged"
+#role "sacred ranged"
+#basechance 4
+
+#load basesprite /data/items/human/crossbow/humanbases.txt
+#load shadow /data/items/human/normal/shadow.txt
+
+#load hands /data/items/human/crossbow/blacksteelhands.txt
+
+#load armor /data/items/human/crossbow/blacksteelarmor.txt
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load hair /data/items/human/normal/humanhair.txt
+
+#load helmet /data/items/human/normal/blacksteelhelmet.txt
+#load legs /data/items/human/normal/blacksteellegs.txt
+#load shirt /data/items/human/crossbow/humanshirt.txt
+#load weapon /data/items/human/crossbow/crossbows.txt
+
+#load bonusweapon /data/items/human/archer/archerweapon.txt
+
+#generateitem 1 bonusweapon
+#endpose
+
+
+------- Mounted 
+
+#newpose
+#name "blacksteel mounted"
+#role "mounted"
+#role "elite mounted"
+#role "sacred mounted"
+#basechance 1
+
+#renderorder "shadow cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/human/normal/humanbases.txt offsetx 5 offsety -15
+#load mount /data/items/human/human_mounted/humanmounts.txt
+
+#load hands /data/items/human/normal/blacksteelhands.txt offsetx 5 offsety -15
+
+#load cloakf /data/items/human/normal/humancloakf.txt offsetx 5 offsety -15
+#load cloakb /data/items/human/normal/humancloakb.txt offsetx 5 offsety -15
+#load shirt /data/items/human/normal/humanshirt.txt offsetx 5 offsety -15
+#load hair /data/items/human/normal/humanhair.txt offsetx 5 offsety -15
+
+#load armor /data/items/human/normal/blacksteelarmor.txt offsetx 5 offsety -15
+#load helmet /data/items/human/normal/blacksteelhelmet.txt offsetx 5 offsety -15
+#load legs /data/items/human/human_mounted/blacksteellegs.txt offsetx 4 offsety -15
+
+#load weapon /data/items/human/human_mounted/humanweapon.txt offsetx 5 offsety -15
+#load weapon /data/items/human/human_mounted/cavalryweapons.txt offsetx 5 offsety -15
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt offsetx 5 offsety -15
+#load lanceslot /data/items/human/human_mounted/lance.txt offsetx 5 offsety -15
+
+#load offhand /data/items/human/normal/shields.txt offsetx 5 offsety -15
+
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+
+#writeslot lanceslot
+#endpose
+
+------- Low mounted
+
+#newpose
+#basechance 0.5
+#name "blacksteel low mounted"
+#role "mounted"
+#role "elite mounted"
+#role "sacred mounted"
+
+#load basesprite /data/items/human/normal/humanbases.txt offsetx 5 offsety -15
+#load mount /data/items/human/human_mounted/humanmounts_low.txt
+
+#load hands /data/items/human/normal/blacksteelhands.txt offsetx 5 offsety -15
+
+#load cloakf /data/items/human/normal/humancloakf.txt offsetx 5 offsety -15
+#load cloakb /data/items/human/normal/humancloakb.txt offsetx 5 offsety -15
+#load shirt /data/items/human/normal/humanshirt.txt offsetx 5 offsety -15
+#load hair /data/items/human/normal/humanhair.txt offsetx 5 offsety -15
+
+#load armor /data/items/human/normal/blacksteelarmor.txt offsetx 5 offsety -15
+#load helmet /data/items/human/normal/blacksteelhelmet.txt offsetx 5 offsety -15
+#load legs /data/items/human/human_mounted/blacksteellegs.txt offsetx 5 offsety -18
+
+#load weapon /data/items/human/human_mounted/humanweapon.txt offsetx 5 offsety -15
+#load weapon /data/items/human/human_mounted/cavalryweapons.txt offsetx 5 offsety -15
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt offsetx 5 offsety -15
+#load lanceslot /data/items/human/human_mounted/lance.txt offsetx 5 offsety -15
+
+#load offhand /data/items/human/normal/shields.txt offsetx 5 offsety -15
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+
+#writeslot lanceslot
+#endpose
+
+
+----------- Charioteers
+
+#newpose
+#race 0
+#name "blacksteel chariot"
+#role "chariot"
+#role "elite chariot"
+#role "sacred chariot"
+#basechance 0.5
+
+#load basesprite /data/items/human/normal/humanbases.txt
+#load mount /data/items/human/human_mounted/humanbases_chariot.txt
+
+#load hands /data/items/human/normal/blacksteelhands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load shirt /data/items/human/normal/humanshirt.txt
+#load hair /data/items/human/normal/humanhair.txt
+
+#load armor /data/items/human/human_mounted/blacksteelarmor_chariot.txt
+#load helmet /data/items/human/normal/blacksteelhelmet.txt
+#load legs /data/items/human/normal/blacksteellegs.txt
+
+#load weapon /data/items/human/normal/humanweapon.txt
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt
+
+#load offhand /data/items/human/human_mounted/humanoffhand.txt
+#load offhand /data/items/human/normal/shields.txt
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+#endpose
