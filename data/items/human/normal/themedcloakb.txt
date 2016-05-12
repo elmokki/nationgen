@@ -1,0 +1,126 @@
+--- Fixed color cloaks selected based on unit attributes
+
+#newitem
+#name "fire cloak"
+#basechance 0
+#chanceinc "personalmagic fire 2 1"
+#chanceinc "personalcommand #firepower 1"
+#chanceinc "personalcommand #fireshield 0.5"
+#chanceinc "personalcommand #heat 0.5"
+#chanceinc "personalcommand #summerpower 1"
+#gameid -1
+#sprite /graphics/cloaks/themed/fire_b.png
+#needs cloakf "fire cloak"
+#enditem
+
+#newitem
+#name "air cloak"
+#basechance 0
+#chanceinc "personalmagic air 2 1"
+#chanceinc "personalcommand #illusion 1"
+#chanceinc "personalcommand #stormpower 1"
+#chanceinc "personalcommand #springpower 1"
+#gameid -1
+#sprite /graphics/cloaks/themed/air_b.png
+#needs cloakf "air cloak"
+#enditem
+
+#newitem
+#name "water cloak"
+#basechance 0
+#chanceinc "personalmagic water 2 1"
+#chanceinc "personalcommand #waterbreathing 1"
+#chanceinc "personalcommand #winterpower 1"
+#chanceinc "personalcommand #swampsurvival 1"
+#gameid -1
+#sprite /graphics/cloaks/themed/water_b.png
+#needs cloakf "water cloak"
+#enditem
+
+#newitem
+#name "earth cloak"
+#basechance 0
+#chanceinc "personalmagic earth 2 1"
+#chanceinc "personalcommand #reinvigoration 1"
+#chanceinc "personalcommand #fallpower 1"
+#chanceinc "personalcommand #mountainsurvival 1"
+#gameid -1
+#sprite /graphics/cloaks/themed/earth_b.png
+#needs cloakf "earth cloak"
+#enditem
+
+#newitem
+#name "blood cloak"
+#basechance 0
+#chanceinc "personalmagic blood 2 1"
+#chanceinc "personalcommand #berserk 1"
+#chanceinc "personalcommand #douse 1"
+#gameid -1
+#sprite /graphics/cloaks/themed/blood_b.png
+#needs cloakf "blood cloak"
+#enditem
+
+#newitem
+#name "shadow cloak"
+#basechance 0
+#chanceinc "personalmagic death 2 1"
+#chanceinc "personalcommand #ethereal 1"
+#chanceinc "personalcommand #stealthy 1"
+#chanceinc "personalcommand #assassin 1"
+#chanceinc "personalcommand #spy 1"
+#gameid -1
+#sprite /graphics/cloaks/themed/shadow_b.png
+#needs cloakf "shadow cloak"
+#enditem
+
+#newitem
+#name "leaf cloak"
+#basechance 0
+#chanceinc "personalmagic nature 2 1"
+#chanceinc "personalcommand #supplybonus 1"
+#chanceinc "personalcommand #springpower 1"
+#chanceinc "personalcommand #forestsurvival 2"
+#chanceinc "unittheme forest 5"
+#gameid -1
+#sprite /graphics/cloaks/themed/leaf_b.png
+#needs cloakf "leaf cloak"
+#enditem
+
+#newitem
+#name "sand cloak"
+#basechance 0
+#chanceinc "unittheme waste 5"
+#chanceinc "personalcommand #wastesurvival 2"
+#chanceinc "nationcommand #idealcold above -1 *0"
+#gameid -1
+#sprite /graphics/cloaks/themed/sand_b.png
+#needs cloakf "sand cloak"
+#enditem
+
+#newitem
+#name "stone cloak"
+#basechance 0
+#chanceinc "unittheme mountain 5"
+#chanceinc "personalcommand #mountainsurvival 2"
+#chanceinc "personalcommand #stealthy 1"
+#chanceinc "personalcommand #assassin 1"
+#chanceinc "personalcommand #spy 1"
+#gameid -1
+#sprite /graphics/cloaks/themed/stone_b.png
+#needs cloakf "stone cloak"
+#enditem
+
+#newitem
+#name "frost cloak"
+#basechance 0
+#chanceinc "unittheme waste 5"
+#chanceinc "personalcommand #wastesurvival 2"
+#chanceinc "nationcommand #idealcold below 1 *0"
+#chanceinc "personalcommand #coldpower 1"
+#chanceinc "personalcommand #iceprot 0.5"
+#chanceinc "personalcommand #cold 0.5"
+#chanceinc "personalcommand #winterpower 1"
+#gameid -1
+#sprite /graphics/cloaks/themed/frost_b.png
+#needs cloakf "frost cloak"
+#enditem
