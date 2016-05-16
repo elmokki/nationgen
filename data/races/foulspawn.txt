@@ -1,5 +1,6 @@
 #newrace
 #name "Foulspawn"
+-- #basechance 0.1
 #basechance 10000
 
 
@@ -26,7 +27,6 @@
 #mintroops 4
 
 #generationchance ranged 0.5
--- There are currently some issues with how I'm handling weapon selection for ranged units that does not interact well with the increased freedom afforded to sacred unit generation vs. normal unit generation
-#sacredrangedchance 0.00001
+#sacredrangedchance 0.1
 
 #endrace
