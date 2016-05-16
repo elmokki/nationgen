@@ -54,7 +54,7 @@
 
 #newpose
 #role "ranged"
-#renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver spaulder bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow cloakb basesprite mount shirt legs armor quiver cloakf spaulder bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/human/2h/humanbases.txt
 #load shadow /data/items/human/normal/shadow.txt
@@ -65,7 +65,7 @@
 #load spaulder /data/items/oriental/2h/spaulder.txt 1 0  -- to resolve cloak clipping with samurai armor
 
 #load weapon /data/items/human/archer/bows.txt 1 -2
-#load quiver /data/items/human/archer/humanbonusranged.txt
+#load quiver /data/items/oriental/archer/quiver.txt
 #load bonusweapon /data/items/oriental/archer/archerweapon.txt
 
 #load helmet /data/items/oriental/normal/helmet.txt 1 0

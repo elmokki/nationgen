@@ -1,0 +1,94 @@
+#newitem
+#name "humanoid"
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm_caster/humanoid.png
+#command "#hp +1"
+#itemslot hand +1
+#type onehand
+#type staff
+#type empty
+#needs rhand humanoid
+#enditem
+
+#newitem
+#name "goblinoid"
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm_caster/goblinoid.png
+#command "#hp +1"
+#itemslot hand +1
+#type onehand
+#type staff
+#type claw
+#type empty
+#needs rhand goblinoid
+#enditem
+
+#newitem
+#name "canid"
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm_caster/canid.png
+#command "#hp +1"
+#command "#str +1"
+#itemslot hand +1
+#type onehand
+#type staff
+#type claw
+#type empty
+#needs rhand canid
+#enditem
+
+#newitem
+#name "tentacloid"
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm_caster/tentacle_green.png
+#command "#hp +2"
+#command "#str -1"
+#itemslot hand +1
+#type staff
+#needs rhand tentacloid
+#enditem
+
+#newitem
+#name "tentacloid_empty"
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm_caster/tentacle_green_empty.png
+#command "#hp +2"
+#command "#str -1"
+#itemslot hand +1
+#type tentacle
+#type empty
+#needs rhand none
+#enditem
+
+#newitem
+#name "fleshblob"
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm_caster/tentacle_pink.png
+#command "#hp +2"
+#command "#str -1"
+#itemslot hand +1
+#type staff
+#needs rhand fleshblob
+#enditem
+
+#newitem
+#name "fleshblob_empty"
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm_caster/tentacle_pink_empty.png
+#command "#hp +2"
+#command "#str -1"
+#itemslot hand +1
+#type tentacle
+#needs rhand none
+#enditem
+
+#newitem
+#name "crab"
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm_caster/pincer.png
+#command "#prot +2"
+#command "#hp +1"
+#type pincer
+#type empty
+#needs rhand none
+#enditem

@@ -1,29 +1,52 @@
 
----------- Human Mages and Priests for testing
---- No legs, so do not use this pose for non-robe armors.
-
+---------- Foulspawn mages
 #newpose
+#name "foulspawn mages"
 #role "mage"
 #role "priest"
 
-#load basesprite /data/items/human/normal/humanbases.txt
-#load shadow /data/items/human/normal/shadow.txt
+#renderorder "shadow wings head basesprite armor color trim belt rarm weapon rhand larm helmet overlay"
 
-#load hands /data/items/human/normal/humanhands.txt
+#load basesprite /data/items/foulspawn/small/caster/bases.txt
+#load rarm /data/items/foulspawn/small/caster/rarm.txt
+#load larm /data/items/foulspawn/small/caster/larm.txt
+#load rleg /data/items/foulspawn/small/caster/rleg.txt
+#load lleg /data/items/foulspawn/small/caster/lleg.txt
+#load head /data/items/foulspawn/small/caster/head.txt
+#load shadow /data/items/foulspawn/small/shadow.txt
+#load rhand /data/items/foulspawn/small/caster/rhand.txt
 
-#load cloakf /data/items/human/normal/humancloakf.txt
-#load cloakb /data/items/human/normal/humancloakb.txt
-#load shirt /data/items/human/normal/humanshirt.txt
+#load armor /data/items/foulspawn/small/caster/robes.txt
+#load color /data/items/illithid/starchild/robes_color.txt
+#load trim /data/items/illithid/starchild/robes_trim.txt
+#load belt /data/items/illithid/starchild/robes_belt.txt
 
-#load hair /data/items/human/caster/hair.txt
-#load armor /data/items/human/caster/robes.txt
-#load armor /data/items/human/caster/whitespecific_robes.txt
-#load armor /data/items/human/caster/humanspecific_robes.txt
-#load weapon /data/items/human/caster/weapon.txt
-#load helmet /data/items/human/caster/helmet.txt
-#load helmet /data/items/human/caster/humanspecific_helmet.txt
-#load offhand /data/items/human/caster/offhands.txt
+-- #load helmet /data/items/foulspawn/small/caster/helmet.txt -- No helmets for now
 
-#mage_nolowtierhat
+#load weapon /data/items/foulspawn/small/caster/weapon.txt
+
+#load wings /data/items/foulspawn/small/wings.txt
+#load headweapon /data/items/foulspawn/small/headweapon.txt
+#load overlay /data/items/foulspawn/small/overlay.txt
+
+#generateitem 1 head
+#generateitem 1 larm
+#generateitem 1 rarm
+#generateitem 1 lleg
+#generateitem 1 rleg
+#generateitem 0.1 wings
+#generateitem 1 color
+
+#tier 1
+#tier 2
+#tier 3
+
+#dontvaryhat
+-- #mage_nolowtierhat
+
+#itemslot hand 0
+#itemslot head 1
+#itemslot misc 2
 
 #endpose
+
