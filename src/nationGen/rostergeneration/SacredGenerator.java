@@ -316,7 +316,10 @@ public class SacredGenerator extends TroopGenerator {
 
 		magicItems = ChanceIncHandler.retrieveFilters("magicitems", "defaultprimary", nationGen.magicitems, u.pose, u.race);
 
-		CustomItem item = ciGen.getMagicItem(u, u.getSlot("weapon"), power, random.nextDouble(), magicItems);
+		CustomItem item = null;
+		
+		if(!u.getSlot("weapon").tags.contains("notepic"))
+			item = ciGen.getMagicItem(u, u.getSlot("weapon"), power, random.nextDouble(), magicItems);
 		
 		if(item != null)
 		{
@@ -330,14 +333,14 @@ public class SacredGenerator extends TroopGenerator {
 		
 		}
 		
-		if(u.getSlot("bonusweapon") != null && (random.nextDouble() > 0.75 || u.getSlot("bonusweapon").tags.contains("guaranteedmagic")  || power >= 2))
+		if(u.getSlot("bonusweapon") != null && !u.getSlot("bonusweapon").tags.contains("notepic") && (random.nextDouble() > 0.75 || u.getSlot("bonusweapon").tags.contains("guaranteedmagic")  || power >= 2))
 		{
 			CustomItem item2 = ciGen.getMagicItem(u, u.getSlot("bonusweapon"), 1, random.nextDouble(), magicItems);
 			if(item2 != null)
 				u.setSlot("bonusweapon", item2);
 		}
 		
-		if(u.getSlot("offhand") != null && !u.getSlot("offhand").armor && (random.nextDouble() > 0.75 || u.getSlot("offhand").tags.contains("guaranteedmagic") || power >= 3))
+		if(u.getSlot("offhand") != null && !u.getSlot("offhand").tags.contains("notepic") && !u.getSlot("offhand").armor && (random.nextDouble() > 0.75 || u.getSlot("offhand").tags.contains("guaranteedmagic") || power >= 3))
 		{
 			CustomItem item2 = ciGen.getMagicItem(u, u.getSlot("offhand"), power, random.nextDouble(), magicItems);
 			if(item2 != null)
