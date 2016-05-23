@@ -77,29 +77,25 @@
 #role "sacred ranged"
 #basechance 2
 
-#renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
-#load basesprite /data/items/human/archer/humanbases.txt
-#load shadow /data/items/human/normal/shadow.txt
+#renderorder "shadow basesprite legs helmet armor weapon hands hair quiver"
 
-#load hands /data/items/human/archer/blacksteelhands.txt
+#load basesprite /data/items/human/boreal/ranged/bases.txt
+#load shadow /data/items/human/boreal/ranged/shadow.txt
 
-#load armor /data/items/human/archer/blacksteelarmor.txt
-#load cloakf /data/items/human/normal/humancloakf.txt
-#load cloakb /data/items/human/normal/humancloakb.txt
-#load cloakf /data/items/human/normal/themedcloakf.txt
-#load cloakb /data/items/human/normal/themedcloakb.txt
-#load hair /data/items/human/normal/humanhair.txt
+#load hands /data/items/human/boreal/ranged/blacksteelhands.txt
 
-#load helmet /data/items/human/normal/blacksteelhelmet.txt
-#load legs /data/items/human/normal/blacksteellegs.txt
-#load shirt /data/items/human/archer/humanshirt.txt
-#load weapon /data/items/human/archer/bows.txt
+#load armor /data/items/human/boreal/ranged/blacksteelarmor.txt
 
-#load quiver /data/items/human/archer/humanbonusranged.txt
+#load helmet /data/items/human/normal/blacksteelhelmet.txt 4 -2
+#load legs /data/items/human/boreal/ranged/legs.txt
+
+#load weapon /data/items/human/boreal/ranged/bows.txt
+#load quiver /data/items/human/boreal/ranged/quiver.txt
 #load bonusweapon /data/items/human/archer/archerweapon.txt
 
 #generateitem 1 bonusweapon
+
 #endpose
 
 ------- crossbowman
@@ -112,28 +108,25 @@
 #role "sacred ranged"
 #basechance 4
 
-#load basesprite /data/items/human/crossbow/humanbases.txt
-#load shadow /data/items/human/normal/shadow.txt
+#renderorder "shadow weapon basesprite legs helmet armor hands hair quiver"
 
-#load hands /data/items/human/crossbow/blacksteelhands.txt
+#load basesprite /data/items/human/boreal/ranged/bases.txt
+#load shadow /data/items/human/boreal/ranged/shadow.txt
 
-#load armor /data/items/human/crossbow/blacksteelarmor.txt
-#load cloakf /data/items/human/normal/humancloakf.txt
-#load cloakb /data/items/human/normal/humancloakb.txt
-#load cloakf /data/items/human/normal/themedcloakf.txt
-#load cloakb /data/items/human/normal/themedcloakb.txt
-#load hair /data/items/human/normal/humanhair.txt
+#load hands /data/items/human/boreal/ranged/blacksteelhands.txt
 
-#load helmet /data/items/human/normal/blacksteelhelmet.txt
-#load legs /data/items/human/normal/blacksteellegs.txt
-#load shirt /data/items/human/crossbow/humanshirt.txt
-#load weapon /data/items/human/crossbow/crossbows.txt
+#load armor /data/items/human/boreal/ranged/blacksteelarmor.txt
 
+#load helmet /data/items/human/normal/blacksteelhelmet.txt 4 -2
+#load legs /data/items/human/boreal/ranged/legs.txt
+
+#load weapon /data/items/human/boreal/ranged/crossbows.txt
+#load quiver /data/items/human/boreal/ranged/quiver.txt
 #load bonusweapon /data/items/human/archer/archerweapon.txt
 
 #generateitem 1 bonusweapon
-#endpose
 
+#endpose
 
 ------- Mounted 
 
