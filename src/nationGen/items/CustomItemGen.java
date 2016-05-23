@@ -236,8 +236,7 @@ public class CustomItemGen {
 
 				chances[2] *= 0.5;
 				int dmg = Integer.parseInt(i.values.get("dmg"));
-				if(dmg < 63)					// Weapons with dmg 64+ are (with one exception, the Deadliest Poison at 75) not actually damage, but instead special effects encoded as damage, so we don't want to screw them up
-					dmg++;
+				dmg++;
 				i.values.put("dmg", "" + dmg);
 				runs--;
 			}
