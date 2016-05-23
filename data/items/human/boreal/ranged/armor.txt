@@ -1,0 +1,162 @@
+--- Leather
+#newitem
+#id leathercuirass
+#basechance 2
+#gameid 5
+#sprite /graphics/boreal/ranged/armor/leather_cuirass.png
+#armor
+#theme "leather"
+#enditem
+
+#newitem
+#id leatherhauberk
+#basechance 2
+#gameid 10
+#sprite /graphics/boreal/ranged/armor/leather_hauberk.png
+#armor
+#theme "leather"
+#enditem
+
+#newitem -- full leather
+#id fullleather
+#gameid 15
+#sprite /graphics/boreal/ranged/armor/leather_full.png
+#armor
+#theme "leather"
+#enditem
+
+
+--- Ring
+#newitem
+#id ringcuirass
+#basechance 2
+#gameid 6
+#sprite /graphics/boreal/ranged/armor/ring_cuirass.png
+#armor
+#theme "leather"
+#theme "iron"
+#enditem
+
+#newitem
+#id ringhauberk
+#basechance 2
+#gameid 11
+#sprite /graphics/boreal/ranged/armor/ring_hauberk.png
+#armor
+#theme "leather"
+#theme "iron"
+#enditem
+
+#newitem -- full ring
+#id fullring
+#gameid 16
+#sprite /graphics/boreal/ranged/armor/ring_full.png
+#armor
+#theme "leather"
+#theme "iron"
+#enditem
+
+
+--- Scale
+#newitem
+#id scalecuirass
+#gameid 7
+#sprite /graphics/boreal/ranged/armor/scale_cuirass.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#id scalehauberk
+#gameid 12
+#sprite /graphics/boreal/ranged/armor/scale_hauberk.png
+#armor
+#basechance 0.5
+#theme "iron"
+#enditem
+
+#newitem -- full scale
+#id fullscale
+#gameid 17
+#sprite /graphics/boreal/ranged/armor/scale_full.png
+#armor
+#basechance 0.25
+#theme "iron"
+#enditem
+
+
+--- Chain Mail
+#newitem
+#id chaincuirass
+#gameid 8
+#sprite /graphics/boreal/ranged/armor/chain_cuirass.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#id chainhauberk_long
+#gameid 13
+#sprite /graphics/boreal/ranged/armor/chain_hauberk2.png
+#armor
+#basechance 0.25
+#theme "iron"
+#enditem
+
+#newitem
+#id chainhauberk
+#gameid 13
+#sprite /graphics/boreal/ranged/armor/chain_hauberk.png
+#armor
+#basechance 0.25
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem -- full chain
+#id fullchain_long
+#gameid 18
+#sprite /graphics/boreal/ranged/armor/chain_full2.png
+#armor
+#basechance 0.125
+#theme "iron"
+#enditem
+
+#newitem -- full chain
+#id fullchain
+#gameid 18
+#sprite /graphics/boreal/ranged/armor/chain_full.png
+#armor
+#basechance 0.125
+#theme "iron"
+#theme "advanced"
+#enditem
+
+
+--- Plate
+#newitem
+#id platecuirass
+#gameid 9
+#sprite /graphics/boreal/ranged/armor/plate_cuirass.png
+#armor
+#basechance 0.5
+#theme "iron"
+#enditem
+
+#newitem
+#id platehauberk
+#gameid 14
+#sprite /graphics/boreal/ranged/armor/plate_hauberk.png
+#armor
+#basechance 0.25
+#theme "iron"
+#enditem
+
+#newitem -- full plate
+#id fullplate
+#gameid 19
+#sprite /graphics/boreal/ranged/armor/plate_full.png
+#armor
+#basechance 0.125
+#theme "iron"
+#enditem
