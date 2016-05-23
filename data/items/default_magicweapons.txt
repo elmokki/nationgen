@@ -289,6 +289,24 @@
 #tag "weapon 16 awesomeflail"
 #end
 
+-- 544 shrink
+#new magicweapon
+#name "shrink"
+#unitname "prefix diminishing"
+#unitname "suffix of diminuation"
+#unitname "prefix reducing"
+#unitname "suffix of reduction"
+#unitname "prefix belittling"
+#basechance 0
+#chanceinc "magic nature 0.5"
+#chanceinc "magic blood 0.1"
+#eff 544
+#tag "path nature"
+#tag "gcost ranged +10"
+#tag "gcost melee +5"
+#power 2
+#end
+
 -- armor piercing
 #new magicweapon
 #name "ap"
