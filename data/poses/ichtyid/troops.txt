@@ -45,3 +45,24 @@
 #generateitem 1 scales
 
 #endpose
+
+
+---------- giants
+
+#newpose
+#name "giant infantry"
+#role "sacred"
+#role "elite"
+
+#basechance 0.1
+
+#renderorder "shadow basesprite weapon scales armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/ichtyid/giant/bases.txt
+#load shadow /data/items/ichtyid/giant/shadow.txt
+#load hands /data/items/ichtyid/giant/hands.txt
+#load weapon /data/items/ichtyid/giant/weapon.txt
+
+#load extraweapon /data/items/ichtyid/giant/extraweapon.txt
+
+#endpose
