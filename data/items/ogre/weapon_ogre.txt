@@ -1,0 +1,257 @@
+
+-- 1h weapons
+#newitem
+#id club
+#gameid 252
+#sprite /graphics/ogre/weapon/club.png
+#theme "primitive"
+#theme "wood"
+#enditem
+
+#newitem
+#id spiked_club
+#gameid 593
+#sprite /graphics/ogre/weapon/spikedclub.png
+#theme "primitive"
+#theme "wood"
+#enditem
+
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/ogre/weapon/hatchet.png
+#theme "iron"
+#enditem
+
+#newitem
+#id axe_bronze
+#gameid 675
+#sprite /graphics/ogre/weapon/hatchet_bronze.png
+#theme "bronze"
+#enditem
+
+#newitem
+#id morningstar
+#gameid 15
+#sprite /graphics/ogre/weapon/morningstar.png
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#id morningstar_bronze
+#gameid bronzemorningstar
+#sprite /graphics/ogre/weapon/morningstar_bronze.png
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+#newitem
+#id hammer
+#gameid 13
+#sprite /graphics/ogre/weapon/hammer.png
+#theme "iron"
+#enditem
+
+#newitem
+#id hammer_bronze
+#gameid bronzehammer
+#sprite /graphics/ogre/weapon/hammer_bronze.png
+#theme "bronze"
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/ogre/weapon/mace.png
+#enditem
+
+#newitem
+#id shortsword
+#gameid 6
+#sprite /graphics/highmen/weapons/shortsword.png
+#offsetx 1
+#offsety -1
+#theme "iron"
+#enditem
+
+#newitem
+#id shortsword_bronze
+#gameid 645
+#sprite /graphics/highmen/weapons/shortsword_bronze.png
+#offsetx 1
+#offsety -1
+#theme "bronze"
+#enditem
+
+#newitem
+#id broadsword
+#gameid 8
+#sprite /graphics/highmen/weapons/broadsword.png
+#offsetx 1
+#offsety -1
+#theme "iron"
+#enditem
+
+#newitem
+#id broadsword_bronze
+#gameid bronzebroadsword
+#sprite /graphics/highmen/weapons/broadsword_bronze.png
+#offsetx 1
+#offsety -1
+#theme "bronze"
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#sprite /graphics/highmen/weapons/falchion.png
+#offsetx 1
+#offsety -1
+#theme "iron"
+#enditem
+
+
+-- 2h weapons
+#newitem
+#id spear
+#gameid 1
+#sprite /graphics/highmen/weapons/spear.png
+#offsetx 1
+#offsety 0
+#theme "iron"
+#enditem
+
+#newitem
+#id longspear
+#gameid 315
+#sprite /graphics/highmen/weapons/spear_long.png
+#offsetx 1
+#offsety 0
+#theme "iron"
+#enditem
+
+#newitem
+#id spear_bronze
+#gameid 643
+#sprite /graphics/highmen/weapons/spear_bronze.png
+#offsetx 1
+#offsety 0
+#theme "bronze"
+#enditem
+
+#newitem
+#id longspear_bronze
+#gameid 644
+#sprite /graphics/highmen/weapons/spear_long_bronze.png
+#offsetx 1
+#offsety 0
+#theme "bronze"
+#enditem
+
+#newitem
+#id flail
+#gameid 16
+#sprite /graphics/highmen/weapons/flail.png
+#offsetx 1
+#offsety 0
+#troopweapon
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#id flail_bronze
+#gameid 16
+#sprite /graphics/highmen/weapons/flail_bronze.png
+#offsetx 1
+#offsety 0
+#troopweapon
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+#newitem
+#id greataxe
+#gameid 18
+#sprite /graphics/highmen/weapons/battleaxe.png
+#offsetx 1
+#offsety 0
+#theme "primitive"
+#theme "iron"
+#troopweapon
+#enditem
+
+#newitem
+#id greataxe_bronze
+#gameid bronzebattleaxe
+#sprite /graphics/highmen/weapons/battleaxe_bronze.png
+#offsetx 1
+#offsety 0
+#theme "primitive"
+#theme "bronze"
+#troopweapon
+#enditem
+
+#newitem
+#id great_club
+#gameid 165
+#sprite /graphics/highmen/weapons/greatclub.png
+#offsetx 1
+#offsety 0
+#theme "primitive"
+#theme "wood"
+#troopweapon
+#enditem
+
+#newitem
+#id cudgel
+#gameid 363
+#sprite /graphics/highmen/weapons/ironcudgel.png
+#offsetx 2
+#offsety 0
+#theme "primitive"
+#theme "iron"
+#troopweapon
+#enditem
+
+#newitem
+#id maul
+#gameid 14
+#sprite /graphics/highmen/weapons/maul.png
+#offsetx 1
+#offsety 0
+#theme "primitive"
+#troopweapon
+#enditem
+
+#newitem
+#id claymore
+#gameid 258
+#sprite /graphics/highmen/weapons/greatsword.png
+#offsetx 2
+#offsety 0
+#troopweapon
+#theme "iron"
+#enditem
+
+#newitem
+#id claymore_bronze
+#gameid bronzeclaymore
+#sprite /graphics/highmen/weapons/greatsword_bronze.png
+#offsetx 2
+#offsety 0
+#troopweapon
+#theme "bronze"
+#enditem
+
+#newitem
+#id quarterstaff
+#basechance 0.125
+#gameid 7
+#sprite /graphics/highmen/weapons/quarterstaff.png
+#offsetx 1
+#offsety 0
+#troopweapon
+#theme "wood"
+#enditem
