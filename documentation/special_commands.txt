@@ -15,6 +15,9 @@ Adds price modifier <price> to gcost if <command> is at/below/above (no default)
 Price modifier here should have "-", "+" or "*" in front of it as it is fed as a direct #gcosty <price> to units
 and not having a modifier will just set unit price and mess things up.
 
+#innate_sacred_power <power>
+Basically reduces <power> from sacred/elite power. Can't go below 1/0.
+
 --- Race
 #magepriestchance <chance>
 Chance to get primary race mage priests. Default is 0.3. Works for nationthemes and races. Highest value found is used.

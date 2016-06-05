@@ -402,9 +402,27 @@ public class SacredGenerator extends TroopGenerator {
 		
 		Pose p = getPose(sacred, power, race);
 		
+		List<String> tags = new ArrayList<String>();
+		
+
+		
 		double epicchance = random.nextDouble() * 0.5 + power * 0.25 + 0.25;
 
-		Unit u = this.getSacredUnit(race, p, power, sacred, epicchance);
+		Unit u = this.unitGen.generateUnit(race, p);
+
+		if(Generic.containsTag(Generic.getAllUnitTags(u), "innate_sacred_power"))
+		{
+			System.out.print(power);
+			power -= Integer.parseInt(Generic.getTagValue(Generic.getAllUnitTags(u), "innate_sacred_power"));
+			
+			if(sacred)
+				power = Math.max(1, power);
+			else
+				power = Math.max(0, power);
+			
+		}
+		
+		u = getSacredUnit(u, power, sacred, epicchance);
 		
 		if(unitGen.hasMontagPose(u))
 		{
