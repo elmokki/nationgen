@@ -33,7 +33,7 @@ public class MageGenerator extends TroopGenerator {
 	
 	
 	public MageGenerator(NationGen g, Nation n) {
-		super(g, n);
+		super(g, n, "magegen");
 	
 		loadPatterns();
 	}
@@ -305,7 +305,7 @@ public class MageGenerator extends TroopGenerator {
 		List<MagicPattern> available = getPatternsForTier(3, primaries);
 		
 		List<MagicPattern> primarypatterns = new ArrayList<MagicPattern>();
-		ChanceIncHandler chandler = new ChanceIncHandler(nation);
+		ChanceIncHandler chandler = new ChanceIncHandler(nation, "magegen");
 		MagicPattern primaryPattern = Entity.getRandom(this.random, chandler.handleChanceIncs(mages.get(2).get(0), available));
 
 
@@ -1031,7 +1031,7 @@ public class MageGenerator extends TroopGenerator {
 		
 		List<MagicPattern> available = getPatternsForTier(0, primaries);
 		
-		ChanceIncHandler chandler = new ChanceIncHandler(nation);
+		ChanceIncHandler chandler = new ChanceIncHandler(nation, "magegen");
 		MagicPattern pattern = Entity.getRandom(this.random, chandler.handleChanceIncs(available));
 
 		
@@ -1170,7 +1170,14 @@ public class MageGenerator extends TroopGenerator {
 			priestsFrom = r.nextInt(maxStrength + 1);
 		}
 		
+		int priestextracost = 0;
+		if(Generic.getTagValue(Generic.getAllNationTags(nation), "priestextracost") != null)
+		{
+			priestextracost = Integer.parseInt(Generic.getTagValue(Generic.getAllNationTags(nation), "priestextracost"));
+		}
 
+
+		
 		while(currentStrength > 0)
 		{
 			boolean done = false;
@@ -1187,8 +1194,8 @@ public class MageGenerator extends TroopGenerator {
 						u.commands.add(new Command("#holy"));
 						u.appliedFilters.add(this.getPriestPattern(currentStrength));
 						u.tags.add("magepriest");
-						u.commands.add(new Command("#gcost", "+" + 10*currentStrength));
-
+						u.commands.add(new Command("#gcost", "+" + 10*currentStrength + currentStrength * priestextracost));
+	
 					}
 					done = true;
 				}
@@ -1199,7 +1206,8 @@ public class MageGenerator extends TroopGenerator {
 						u.appliedFilters.add(this.getPriestPattern(currentStrength));
 						u.commands.add(new Command("#holy"));
 						u.tags.add("magepriest");
-						u.commands.add(new Command("#gcost", "+" + 10*currentStrength));
+						u.commands.add(new Command("#gcost", "+" + 10*currentStrength + currentStrength * priestextracost));
+
 
 					}
 					done = true;
@@ -1225,8 +1233,6 @@ public class MageGenerator extends TroopGenerator {
 				{
 					List<Unit> derp = new ArrayList<Unit>();
 					derp.add(priests.get(0));
-					
-					// FIX THIS
 					u = deriveBasesFrom(1, "priest", priests.get(0), priests.get(0).race, currentStrength + 1, currentStrength).get(0);
 				}
 				else
@@ -1237,11 +1243,12 @@ public class MageGenerator extends TroopGenerator {
 					
 					u = this.generateBases("priest", prace, 1, str).get(0);
 				}
-				
+				u.commands.add(new Command("#gcost", "+" + 10*currentStrength ));
+
 				u.color = priestcolor;
 				u.appliedFilters.add(this.getPriestPattern(currentStrength));
 				u.commands.add(new Command("#holy"));
-				u.commands.add(new Command("#gcost", "+" + (int)(Math.pow(2, currentStrength)*10)));
+				u.commands.add(new Command("#gcost", "+" + (int)(Math.pow(2, currentStrength)*10) + currentStrength * priestextracost));
 				u.tags.add("priest " + currentStrength);
 
 				
@@ -1425,7 +1432,7 @@ public class MageGenerator extends TroopGenerator {
 
 		
 		
-		ChanceIncHandler chandler = new ChanceIncHandler(nation);
+		ChanceIncHandler chandler = new ChanceIncHandler(nation, "magegen");
 
 		while(power > 0)
 		{
@@ -1502,7 +1509,7 @@ public class MageGenerator extends TroopGenerator {
 			// If all mages of tier have distinguishing paths and either luck or no common paths, separate filters are rolled. 
 			if(different)
 			{
-				int maxpower = 0;
+				double maxpower = 0;
 				for(Unit u : mages)
 				{
 					List<Filter> givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findDistinguishingPaths(u, mages), strict);
@@ -1774,7 +1781,7 @@ public class MageGenerator extends TroopGenerator {
 			return;
 		
 		
-		ChanceIncHandler chandler = new ChanceIncHandler(nation);
+		ChanceIncHandler chandler = new ChanceIncHandler(nation, "magegen");
 		while(power > 0)
 		{
 			List<Filter> moreFilters = ChanceIncHandler.getFiltersWithPower(power, power, filters);

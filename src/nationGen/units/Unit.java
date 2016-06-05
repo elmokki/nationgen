@@ -887,6 +887,9 @@ public class Unit {
 	
 	public void polish()
 	{
+		if(this.polished)
+			return;
+		
 		Unit u = this;
 	
 		handleLowEncCommandPolish(u.pose.tags);
@@ -1053,7 +1056,67 @@ public class Unit {
 		//u.commands.add(new Command("#gcost", "+10000"));
 
 
+		// #price_per_command
+		if(Generic.containsTag(Generic.getAllUnitTags(this), "price_per_command"))
+		{
+			List<String> pptags = Generic.getTags(Generic.getAllUnitTags(u), "price_per_command");
+
+			for(String tag : pptags)
+			{
+				List<String> args = Generic.parseArgs(tag);
+				int value = u.getCommandValue(args.get(1), 0);
+				double cost = Double.parseDouble(args.get(2));
+				int threshold = 0;
+				if(args.size() > 3)
+					threshold = Integer.parseInt(args.get(3));
+				
+			
+				
+				if(value > threshold)
+				{
+					value -= threshold;
+					
+					int total = (int)Math.round((double)value * cost);
+					
+					if(total > 0)
+						commands.add(new Command("#gcost", "+" + total));
+					else
+						commands.add(new Command("#gcost", "" + total));
+					
+
+				}
+				
+			}
+		}
 		
+		// #price_if_command
+		if(Generic.containsTag(Generic.getAllUnitTags(this), "price_if_command"))
+		{
+			List<String> pptags = Generic.getTags(Generic.getAllUnitTags(u), "price_if_command");
+
+			for(String tag : pptags)
+			{
+				List<String> args = Generic.parseArgs(tag);
+				
+				
+				int value = u.getCommandValue(args.get(args.size() - 3), 0);
+				int target = Integer.parseInt(args.get(args.size() - 2));
+				String cost = args.get(args.size() - 1);
+				
+				
+				boolean at = args.contains("at");
+				boolean below = args.contains("below");
+				boolean above = args.contains("above");
+				
+				if((value > target && above) || (value == target && at)  || (value < target) && below)
+				{
+					commands.add(new Command("#gcost", cost));
+				}
+				
+			}
+		}
+		
+
 		
 		// Clean up commands
 		List<Command> commands = u.getCommands();
@@ -1117,7 +1180,37 @@ public class Unit {
 
 
 
-
+		// Montag mean costs
+		if(Generic.containsTag(this.pose.tags, "montagpose") && Generic.containsTag(this.pose.tags, "no_montag_mean_costs") && getCommandValue("#firstshape", 0) < 0)
+		{
+			int n = 0;
+			int res = 0;
+			int gold = 0;
+			
+			int firstshape = -getCommandValue("#firstshape", 0);
+			for(List<Unit> lu : nation.unitlists.values())
+			{
+				for(Unit nu : lu)
+					if(nu.getCommandValue("#montag", 0) == firstshape)
+					{
+						nu.polish();
+						res += nu.getResCost(true);
+						gold += nu.getGoldCost();
+						n++;
+						
+					}
+			}
+			
+			if(n > 0)
+			{
+				res = (int)Math.round((double)res/(double)n) - getResCost(true);
+				gold = (int)Math.round((double)gold/(double)n);
+				this.handleCommand(commands, new Command("#gcost", "" + gold));
+				this.handleCommand(commands, new Command("#rcost", "" + res));
+			}
+			
+				
+		}
 		
 		// Separate loop to round gcost at the end
 		// Check for morale over 50

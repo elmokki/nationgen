@@ -32,6 +32,7 @@
 #themeinc "thisarmorenc 5 *1.5"
 #themeinc "thisarmorprot 15 *2"
 #themeinc "thisarmorprot 17 *4"
+#price_per_command #hp 1 20
 #tag "nopose ranged"
 #tag "nopose mounted"
 #power 2
@@ -300,6 +301,7 @@
 #command "#stealthy +0"
 #command "#gcost *1.2"
 #command "#gcost +23"
+#price_per_command #hp 1 10
 #tag "path air"
 #chanceinc "personalcommand #illusion -20"
 #chanceinc "race van -20"
@@ -604,6 +606,7 @@
 #command "#awe +1"
 #command "#gcost +20"
 #command "#gcost *1.25"
+#price_per_command #hp 1 10
 #chanceinc "prot 15 *0.125"
 #chanceinc "prot 12 *0.125"
 #power 3
@@ -683,6 +686,7 @@
 #basechance 0.5
 #command "#bluntres"
 #command "#gcost +5"
+#price_per_command #hp 0.5 20
 #end
 
 #new
@@ -691,6 +695,7 @@
 #basechance 0.5
 #command "#pierceres"
 #command "#gcost +5"
+#price_per_command #hp 0.5 20
 #end
 
 #new
@@ -699,6 +704,7 @@
 #basechance 0.5
 #command "#slashres"
 #command "#gcost +5"
+#price_per_command #hp 0.5 20
 #end
 
 #new
@@ -798,7 +804,8 @@
 #name "ethereal"
 #type "strong defensive"
 #command "#ethereal"
-#command "#gcost +30"
+#command "#gcost +25"
+#price_per_command #hp 1 10
 #basechance 0.05
 #chanceinc "astral 0.95"
 #chanceinc "prot 15 *0.05"

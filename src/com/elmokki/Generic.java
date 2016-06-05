@@ -8,6 +8,7 @@ import java.util.Random;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Theme;
+import nationGen.items.Item;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
@@ -173,6 +174,8 @@ public class Generic {
 			tags.addAll(f.tags);
 		for(Theme t : u.race.themefilters)
 			tags.addAll(t.tags);
+		for(Item i : u.slotmap.values())
+			tags.addAll(i.tags);
 		
 		return tags;
 	}

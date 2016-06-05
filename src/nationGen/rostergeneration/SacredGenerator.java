@@ -26,7 +26,7 @@ public class SacredGenerator extends TroopGenerator {
 
 	ItemSet usedItems = new ItemSet();
 	public SacredGenerator(NationGen g, Nation n) {
-		super(g, n);
+		super(g, n, "sacgen");
 		
 		String[] slots_array = {"armor", "weapon", "offhand", "bonusweapon", "helmet", "cloakb", "hair"};
 		for(Unit u : this.nation.generateTroopList())
@@ -42,138 +42,35 @@ public class SacredGenerator extends TroopGenerator {
 			}
 		}
 		
+		
 	}
 	
 	private void addEpicness(Unit u, boolean sacred, int power)
 	{
 
+		int origpower = power;
+		
+		// Determine stat boost amount
 		double extra = 0;
 		
 		
-		int powerups = Math.max(1, power - 2);
+		int powerups = 2;
 		
-		if(random.nextDouble() < 0.5)
+		if(random.nextDouble() < 0.25)
 		{
 			powerups++;
-			if(random.nextDouble() < 0.25)
-			{
-				powerups++;
-				if(random.nextDouble() < 0.125)
-					powerups++;
-			}
 		}
-		
-		if(power > 2 && random.nextBoolean())
+		if(random.nextDouble() < 0.25)
 		{
 			powerups++;
-			power--;
-			if(power > 2 && random.nextBoolean())
-			{
-				powerups++;
-				power--;
-			}
-
 		}
 		
 
-
-		
-		
-		int precadded = 0;
-		int encadded = 0;
-		String[] posup = {"#att", "#def", "#prec", "#enc", "#mr", "#hp"};
-		int[] defvals = {10, 10, 10, 3, 10, u.getCommandValue("#hp", 10)};
-		if(u.getCommandValue("#hp", 10) < 10)
-			defvals[5] = u.getCommandValue("#hp", 10) - Math.min(3, 10 - u.getCommandValue("#hp", 10));
-		
-		
-		
-		for(int i = 0; i < powerups; i++)
-		{
-			List<Filter> ups = new ArrayList<Filter>();
-			for(int j = 0; j < posup.length; j++)
-			{
-				String s = posup[j];
-
-				int dif = u.getCommandValue(s, defvals[j]) - defvals[j];
-
-				double chance = 1;
-				double scaler = 2;
-				
-				if(s.equals("#enc"))
-				{
-					dif = -dif;
-					scaler = 4;
-				}
-				
-				if(dif < 0 && !s.equals("#enc"))
-					chance = ((double)defvals[j] + Math.abs(Math.pow((double)dif, scaler))) /  (double)defvals[j];
-				else
-					chance = (double)defvals[j] / (Math.abs(((double)defvals[j] + Math.pow((double)dif, scaler))));
-				
-			
-				if(s.equals("#enc"))
-				{
-					chance = chance / 4;
-				}
-				
-				
-				
-				
-				if(u.getCommandValue("#enc", 3) < 2 || encadded > 1 && s.equals("#enc"))
-					chance = 0;
-				if(precadded > 0 && s.equals("#prec"))
-					chance = 0;
-				
-				
-				if(chance > 0)
-				{
-					Filter f = new Filter(nationGen);
-					f.name = s;
-					f.basechance = chance;
-					ups.add(f);
-				}
-
-			}
-			
-			for(int j = 0; j < Math.min(3, ups.size()); j++)
-			{
-				
-				Filter f = Entity.getRandom(random, ups);
-				ups.remove(f);
-				
-
-				if(f.name.equals("#enc"))
-				{
-					encadded++;
-					u.commands.add(new Command(f.name, "-1"));
-				}
-				else if(f.name.equals("#hp"))
-				{
-					double amount = Math.max(defvals[5] * 0.05, 1);
-					u.commands.add(new Command(f.name, "+" + (int)Math.round(amount)));
-				}
-				else
-				{
-					u.commands.add(new Command(f.name, "+1"));
-
-				}
-				if(f.name.equals("#prec"))
-					precadded++;
-				
-				extra += 0.33;
-			}
-			
-		}
-			
-
-		u.commands.add(new Command("#gcost", "+" + (int)Math.round(extra)));
-		
 		
 
-		
-		int mradd = power;
-		if(power > 5)
+		// Determine magic resistance
+		int mradd = power * 3/4;
+		if(mradd > 5)
 			mradd = 5;
 
 		
@@ -185,18 +82,20 @@ public class SacredGenerator extends TroopGenerator {
 		
 		u.commands.add(new Command("#mr", "+" + mradd));
 		
-		int morbonus = power + random.nextInt(2); 
-		if(random.nextDouble() > 0.25)
-			morbonus++;
-		if(random.nextDouble() > 0.25)
-			morbonus++;
 		
-	
+		// Determine morale
+		int origmor = u.getCommandValue("#morr", 10);
+		
+		int morbonus = power + random.nextInt(2); 
+		if(random.nextDouble() > 0.25 *  Math.max(1, 1 + (origmor - 10) / 4))
+			morbonus++;
+		if(random.nextDouble() > 0.25 *  Math.max(1, 1 + (origmor - 10) / 4))
+			morbonus++;
 		
 		u.commands.add(new Command("#mor", "+" + morbonus ));
 
 		
-		
+		// Filters and weapons
 		List<Filter> filters = new ArrayList<Filter>();
 		if(sacred)
 		{
@@ -216,7 +115,7 @@ public class SacredGenerator extends TroopGenerator {
 		int filterCount = 0;
 		boolean weapon = false;
 		
-		ChanceIncHandler chandler = new ChanceIncHandler(nation);
+
 		
 		int maxfilters = Math.max(Math.min(power / 2, 5), 3);
 		
@@ -241,6 +140,7 @@ public class SacredGenerator extends TroopGenerator {
 			}
 			
 			
+			
 			// Magic weapon is handled later since no weapons exist when this is run.
 			if((guaranteeds || (sacred && rand < 0.07 + power*0.03) || (chandler.countPossibleFilters(filters, u) == 0)) && !weapon)
 			{
@@ -250,7 +150,14 @@ public class SacredGenerator extends TroopGenerator {
 				power -= cost;
 
 			}
-			else // Filters
+			// Add more stat boosts
+			else if(random.nextDouble() < 1 - powerups / (double)origpower)
+			{
+				power--;
+				powerups++;
+			}
+			// Add a filter
+			else
 			{
 				
 
@@ -286,7 +193,6 @@ public class SacredGenerator extends TroopGenerator {
 				
 				if(chandler.countPossibleFilters(choices, u) == 0)	
 				{
-
 					break;
 				}
 				Filter f = Filter.getRandom(random, chandler.handleChanceIncs(u, choices));
@@ -298,11 +204,117 @@ public class SacredGenerator extends TroopGenerator {
 					u.tags.addAll(f.tags);
 					power -= f.power;
 					filterCount++;
-
+					
 				}
 				
 			}
 		}
+		
+		
+		
+		// Extra stats
+		powerups += power;
+		powerups *= 3;
+		
+		int precadded = 0;
+		int encadded = 0;
+		String[] posup = {"#att", "#def", "#prec", "#enc", "#mr", "#hp"};
+		int[] defvals = {10, 10, 10, 3, 10, u.getCommandValue("#hp", 10)};
+		if(u.getCommandValue("#hp", 10) < 10)
+			defvals[5] = u.getCommandValue("#hp", 10) - Math.min(3, 10 - u.getCommandValue("#hp", 10));
+		
+		
+		
+		while(powerups > 0)
+		{
+			// Generate probabilitites for powerups
+			List<Filter> ups = new ArrayList<Filter>();
+			for(int j = 0; j < posup.length; j++)
+			{
+				String s = posup[j];
+
+				double dif = u.getCommandValue(s, defvals[j]) - defvals[j];
+
+				// Lower enc is better
+				if(s.equals("#enc"))
+					dif = -dif;
+				
+				double price = 1;
+				double divisor = 2;
+		
+		
+				
+
+				if(dif > 0)
+					price *= (1 + Math.pow(dif/divisor, 2));
+				else if(dif < 0)
+					price *= 0.8 + 0.2/(1+Math.abs(dif));
+				
+
+
+		
+				if(s.equals("#enc"))
+					price *= 1.5;
+				
+				if(u.getCommandValue("#enc", 3) < 2 || encadded > 1 && s.equals("#enc"))
+					price = 100;
+				if(precadded > 0 && s.equals("#prec"))
+					price = 100;
+				
+
+				
+				if(price > 0 && price <= powerups)
+					
+				{
+					Filter f = new Filter(nationGen);
+					f.name = s;
+				
+					f.basechance = 1/(Math.pow(price, 2));
+					f.power = price;
+					
+					if(s.equals("#enc"))
+						f.basechance *= 0.5;
+					if(!u.isRanged() && s.equals("#prec"))
+						f.basechance *= 0.05;
+					
+					ups.add(f);
+				}
+
+			}
+			
+			if(ups.size() == 0)
+				break;
+			
+			Filter f = Entity.getRandom(random, ups);
+			
+			if(f.name.equals("#enc"))
+			{
+				encadded++;
+				u.commands.add(new Command(f.name, "-1"));
+			}
+			else if(f.name.equals("#hp"))
+			{
+				double amount = Math.max(defvals[5] * 0.05, 1);
+				u.commands.add(new Command(f.name, "+" + (int)Math.round(amount)));
+			}
+			else
+			{
+				u.commands.add(new Command(f.name, "+1"));
+
+			}
+			if(f.name.equals("#prec"))
+				precadded++;
+			
+			powerups -= f.power;
+			extra += 0.33;
+			
+			
+		}
+			
+
+		u.commands.add(new Command("#gcost", "+" + (int)Math.round(extra)));
+		
+		
 	}
 	
 	
@@ -325,7 +337,7 @@ public class SacredGenerator extends TroopGenerator {
 		{
 			u.setSlot("weapon", item);
 
-			int loss = 1;
+			double loss = 1;
 			if(item.magicItem != null)
 				loss = item.magicItem.power;
 			
@@ -610,8 +622,8 @@ public class SacredGenerator extends TroopGenerator {
 				highestcaponlychance = Double.parseDouble(str.substring(1));
 		}
 		
-		if(highestcaponlychance < ((power + rating) / 12 + 0.3))
-			highestcaponlychance = (power + rating) / 12 + 0.3;
+		if(highestcaponlychance < ((power + rating) / 10 + 0.3))
+			highestcaponlychance = (power + rating) / 10 + 0.3;
 		
 		if(random.nextDouble() < highestcaponlychance)
 			u.caponly = true;
