@@ -1,0 +1,30 @@
+#newpose
+#name "o-bakemono caster"
+#role "mage"
+#role "priest"
+
+#subrace "o-bakemono"
+
+#renderorder "shadow bonusweapon basesprite shirt armor sash weapon offhandw hands hair helmet offhanda"
+
+#load basesprite /data/items/ogre/bases_obakemono.txt
+#load shadow /data/items/ogre/shadow.txt
+#load hands /data/items/ogre/hands.txt
+
+#load armor /data/items/ogre/armor_obakemono.txt
+#load helmet /data/items/ogre/helmet_obakemono.txt
+
+#load weapon /data/items/ogre/weapon_obakemono.txt
+#load offhand /data/items/ogre/offhand_obakemono.txt
+
+#load hair /data/items/ogre/hair.txt
+#load shirt /data/items/ogre/shirt.txt
+#load sash /data/items/ogre/sash_casters.txt
+
+#generateitem sash 1
+
+#tier 1
+#tier 2
+#tier 3
+
+#endpose
