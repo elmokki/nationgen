@@ -128,8 +128,7 @@ public class TroopGenerator {
 
 	}
 	
-	
-	public TroopGenerator(NationGen g, Nation n)
+	public TroopGenerator(NationGen g, Nation n, String id)
 	{
 		nationGen = g;
 		nation = n;
@@ -138,8 +137,8 @@ public class TroopGenerator {
 
 		skipchance = 0.05 + random.nextDouble() * 0.15;
 		bonusrangedness = random.nextDouble() * 0.3;
-		chandler = new ChanceIncHandler(nation);
-		
+		chandler = new ChanceIncHandler(nation, id);
+		unitGen.chandler.identifier = id;
 		
 		// Maxtemplates distribution
 		//
@@ -152,6 +151,17 @@ public class TroopGenerator {
 			maxtemplates++;
 	}
 	
+	public TroopGenerator(NationGen g, Nation n)
+	{
+		this(g, n, "troopgen");
+	}
+	
+	
+	public void setIdentifier(String id)
+	{
+		this.chandler.identifier = id;
+		this.unitGen.chandler.identifier = id;
+	}
 	
 	protected boolean isDualWieldEligible(Unit u)
 	{

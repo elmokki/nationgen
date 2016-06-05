@@ -10,6 +10,11 @@ Chance for a troop to get at least one troop template. Defaults to 25%.
 Adds <price> of gcost to unit price per value of <command> if value is above [threshold] (optional, defaults to 0)
 Example: #price_per_command #hp 1 10 -> +1 to gcost for each point of hp above 10.
 
+#price_if_command <at and/or below and/or above> <command> <target> <price>
+Adds price modifier <price> to gcost if <command> is at/below/above (no default) <target>. You can use combinations of at/below/above
+Price modifier here should have "-", "+" or "*" in front of it as it is fed as a direct #gcosty <price> to units
+and not having a modifier will just set unit price and mess things up.
+
 --- Race
 #magepriestchance <chance>
 Chance to get primary race mage priests. Default is 0.3. Works for nationthemes and races. Highest value found is used.

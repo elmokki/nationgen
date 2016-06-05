@@ -26,7 +26,7 @@ public class SacredGenerator extends TroopGenerator {
 
 	ItemSet usedItems = new ItemSet();
 	public SacredGenerator(NationGen g, Nation n) {
-		super(g, n);
+		super(g, n, "sacgen");
 		
 		String[] slots_array = {"armor", "weapon", "offhand", "bonusweapon", "helmet", "cloakb", "hair"};
 		for(Unit u : this.nation.generateTroopList())
@@ -41,6 +41,7 @@ public class SacredGenerator extends TroopGenerator {
 					usedItems.add(i);
 			}
 		}
+		
 		
 	}
 	
@@ -114,7 +115,7 @@ public class SacredGenerator extends TroopGenerator {
 		int filterCount = 0;
 		boolean weapon = false;
 		
-		ChanceIncHandler chandler = new ChanceIncHandler(nation);
+
 		
 		int maxfilters = Math.max(Math.min(power / 2, 5), 3);
 		
