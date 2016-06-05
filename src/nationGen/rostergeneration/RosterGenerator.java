@@ -41,7 +41,6 @@ public class RosterGenerator {
 	NationGen nationGen;
 	Nation nation;
 	private Random r;
-	private ChanceIncHandler chandler = null;
 
 
 	
@@ -56,7 +55,6 @@ public class RosterGenerator {
 		nationGen = g;
 		nation = n;
 		this.r = new Random(n.random.nextInt());
-		chandler = new ChanceIncHandler(nation);
 		tgen = new TroopGenerator(nationGen, nation);
 
 	}

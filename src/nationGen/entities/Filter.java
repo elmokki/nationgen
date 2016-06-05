@@ -13,7 +13,7 @@ public class Filter extends Entity {
 	public List<String> chanceincs = new ArrayList<String>();
 	public List<String> themeincs = new ArrayList<String>();
 	public List<String> types = new ArrayList<String>();
-	public int power = 1;
+	public double power = 1;
 	public Filter(NationGen nationGen) {
 		super(nationGen);
 	}

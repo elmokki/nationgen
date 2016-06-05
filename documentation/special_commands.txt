@@ -2,8 +2,23 @@ This file lists special commands that can be used in race/pose/item/filter files
 Commands that appear in both races and poses prioritize using the one in the pose if both are found unless otherwise mentioned.
 
 
---- Race
+--- Anywhere relevant to units
+#trooptemplatechance <chance>
+Chance for a troop to get at least one troop template. Defaults to 25%. 
 
+#price_per_command <command> <price> [threshold]
+Adds <price> of gcost to unit price per value of <command> if value is above [threshold] (optional, defaults to 0)
+Example: #price_per_command #hp 1 10 -> +1 to gcost for each point of hp above 10.
+
+#price_if_command <at and/or below and/or above> <command> <target> <price>
+Adds price modifier <price> to gcost if <command> is at/below/above (no default) <target>. You can use combinations of at/below/above
+Price modifier here should have "-", "+" or "*" in front of it as it is fed as a direct #gcosty <price> to units
+and not having a modifier will just set unit price and mess things up.
+
+#innate_sacred_power <power>
+Basically reduces <power> from sacred/elite power. Can't go below 1/0.
+
+--- Race
 #magepriestchance <chance>
 Chance to get primary race mage priests. Default is 0.3. Works for nationthemes and races. Highest value found is used.
 
@@ -203,6 +218,8 @@ PD/start army amount multiplier. These stack like the above commands.
 
 --- Pose
 
+
+
 #forcedname <name>
 Forces the unit name to this. Works only for troops and sacredgenerator sacreds/elites.
 
@@ -214,6 +231,9 @@ purposes only. This was set so that multiple poses do not have to be made for mu
 #montagpose_max <number>
 Tells how many montag units to generate. Default for both is 10, which means always 10 units. Different minimum and maximum result in
 random amount between the numbers.
+
+#no_montag_mean_costs
+Disables montag pose feature of calculating mean gold/res cost of montag units as cost
 
 #maxunits <number>
 Only this many copies of this pose may be generated. For normal troops it is across all instances of normal troops. For montag units 

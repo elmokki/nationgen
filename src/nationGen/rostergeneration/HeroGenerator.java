@@ -78,7 +78,8 @@ public class HeroGenerator {
 	private Unit generateHero(boolean multihero)
 	{
 		SacredGenerator sacGen = new SacredGenerator(ng, n);
-
+		ChanceIncHandler chandler = new ChanceIncHandler(n, "herogen");
+		sacGen.setIdentifier("herogen");
 
 		int power = 5;
 		if(multihero)
@@ -113,7 +114,7 @@ public class HeroGenerator {
 				tier = 2;
 			
 			MageGenerator mg = new MageGenerator(ng, n);
-			ChanceIncHandler chandler = new ChanceIncHandler(n);
+			mg.setIdentifier("herogen");
 			
 			MagicPattern pat = Entity.getRandom(n.random, chandler.handleChanceIncs(hero, MageGenerator.getPatternsOfLevel(mg.possiblePatterns, tier)));
 			List<Integer> prio = this.getPrio(n.races.contains(hero.race));
@@ -140,9 +141,9 @@ public class HeroGenerator {
 		Race r = getRace("mage");
 		
 
-
+		ChanceIncHandler chandler = new ChanceIncHandler(n, "herogen");
 		MageGenerator mg = new MageGenerator(ng, n);
-
+		mg.chandler = chandler;
 
 		int tier = 3;
 		if(multihero && n.random.nextDouble() < 0.5)
@@ -167,7 +168,6 @@ public class HeroGenerator {
 		f.pattern = p;
 		
 		hero.appliedFilters.add(f);
-		List<Filter> filters = ChanceIncHandler.retrieveFilters("magefilters", "default_magefilters", ng.filters, hero.pose, hero.race);
 		
 		List<Unit> heroes = new ArrayList<Unit>();
 		heroes.add(hero);
@@ -320,7 +320,7 @@ public class HeroGenerator {
 	private Race getRace(String role)
 	{
 		double secamount = n.percentageOfRace(n.races.get(1));
-		ChanceIncHandler chandler = new ChanceIncHandler(n);
+		ChanceIncHandler chandler = new ChanceIncHandler(n, "herogen");
 		
 		Race r = null;
 		while(r == null)

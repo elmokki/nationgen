@@ -13,6 +13,8 @@
 #montagpose "normal cavalry" 4
 #montagpose "centauroid" 2
 
+#chanceinc moduleid herogen *0
+
 #command "#gcost 25"
 #command "#rcost 15"
 
@@ -42,6 +44,7 @@
 #renderorder "shadow basesprite rarm weapon mount lleg larm head shirt pants armor bonusweapon offhandw rhand lhand helmet offhanda overlay"
 
 #no_free_fist
+#chanceinc moduleid herogen 1
 
 #load basesprite /data/items/foulspawn/mounted/bases.txt
 #load mount /data/items/human/human_mounted/humanmounts.txt 2 -20
@@ -93,6 +96,7 @@
 #renderorder "shadow underlay basesprite rarm weapon mount lleg larm head shirt pants armor bonusweapon rhand offhandw lhand helmet offhanda overlay"
 
 #no_free_fist
+#chanceinc moduleid herogen 1
 
 #load basesprite /data/items/foulspawn/mounted/bases.txt
 #load mount /data/items/foulspawn/mounted/legs.txt
