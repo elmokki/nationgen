@@ -20,6 +20,8 @@
 
 #load weapon /data/items/foulspawn/small/weapon_placeholder.txt
 
+#chanceinc moduleid herogen *0
+
 #maxunits 1
 #endpose
 
@@ -45,6 +47,8 @@
 
 #load weapon /data/items/foulspawn/small/weapon_placeholder.txt
 
+#chanceinc moduleid herogen *0
+
 #maxunits 1
 #endpose
 
@@ -61,6 +65,9 @@
 #renderorder "shadow bonusweapon basesprite rarm rleg lleg larm quiver head overlay shirt pants armor weapon rhand offhandw lhand helmet offhanda"
 
 #no_free_fist
+
+#chanceinc moduleid herogen 1
+
 
 #load basesprite /data/items/foulspawn/small/bases.txt
 #load rarm /data/items/foulspawn/small/rarm.txt
@@ -112,6 +119,9 @@
 #renderorder "shadow basesprite rarm rleg lleg larm quiver head overlay shirt pants armor bonusweapon weapon rhand offhandw lhand helmet offhanda"
 
 #no_free_fist
+
+#chanceinc moduleid herogen 1
+
 
 #load basesprite /data/items/foulspawn/small/bases.txt
 #load rarm /data/items/foulspawn/small/rarm.txt

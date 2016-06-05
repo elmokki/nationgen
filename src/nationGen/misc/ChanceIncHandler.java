@@ -1020,9 +1020,12 @@ public class ChanceIncHandler {
 				if(args.get(0).equals("moduleid") && args.size() >= 3)
 				{
 					String id = args.get(1);
-					System.out.println(":)");
 					if(id.equals(this.identifier))
+					{
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+					}
+					
+					
 				}
 				
 				// Primary race theme
