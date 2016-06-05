@@ -1,4 +1,35 @@
 --- No armor
+#new
+#name "loincloth_fur"
+#gameid -1
+#basechance 1
+#theme "naked"
+#theme "primitive"
+#no_armor
+#militia
+#armor
+#theme "stealthy"
+#needs shirt loincloth_fur
+#tier 1
+#notfortier 2
+#notfortier 3
+#end
+
+#new
+#name "loincloth_leather"
+#gameid -1
+#basechance 1
+#theme "naked"
+#theme "advanced"
+#no_armor
+#militia
+#armor
+#theme "stealthy"
+#needs shirt loincloth_leather
+#tier 1
+#notfortier 2
+#notfortier 3
+#end
 
 #new
 #name "furs"
@@ -10,7 +41,55 @@
 #militia
 #armor
 #theme "stealthy"
+#needs shirt furs
+#tier 1
+#notfortier 2
+#notfortier 3
 #end
+
+
+--- Leather
+
+#newitem
+#name "leather cuirass"
+#gameid 5
+#sprite /graphics/ogre/armor/leather_cuirass_oriental.png
+#armor
+#militia
+#theme "leather"
+#theme "stealthy"
+#needs shirt loincloth_leather
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#name "leather hauberk"
+#gameid 10
+#sprite /graphics/ogre/armor/leather_hauberk_oriental.png
+#armor
+#militia
+#theme "leather"
+#theme "stealthy"
+#needs shirt loincloth_leather
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#name "full leather"
+#gameid 15
+#sprite /graphics/ogre/armor/leather_full_oriental.png
+#armor
+#militia
+#theme "leather"
+#theme "stealthy"
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
 
 
 --- Iron Scale
@@ -18,118 +97,134 @@
 #newitem
 #name "scale cuirass"
 #gameid 7
-#sprite /graphics/ogre/armor/scale_cuirass.png
+#sprite /graphics/ogre/armor/scale_cuirass_oriental.png
 #armor
 #theme "iron"
+#theme "stealthy"
+#needs shirt loincloth_leather
+#tier 1
+#notfortier 2
+#notfortier 3
 #enditem
 
 #newitem
 #name "scale hauberk"
 #gameid 12
-#sprite /graphics/ogre/armor/scale_hauberk.png
+#sprite /graphics/ogre/armor/scale_hauberk_oriental.png
 #armor
 #theme "iron"
+#tier 1
+#tier 2
+#notfortier 3
 #enditem
 
 #newitem
 #name "full scale"
 #gameid 17
-#basechance 0.5
-#sprite /graphics/ogre/armor/scale_full.png
+#sprite /graphics/ogre/armor/scale_full_oriental.png
 #armor
 #theme "iron"
-#theme "advanced"
+#tier 1
+#tier 2
+#notfortier 3
 #enditem
 
 
---- Bronze Scale
+--- Exotic armor
 
 #newitem
-#name "bronze scale cuirass"
-#gameid 142
-#sprite /graphics/ogre/armor/scale_bronze_cuirass.png
-#armor
-#theme "bronze"
-#enditem
-
-#newitem
-#name "bronze scale hauberk"
-#gameid 136
-#sprite /graphics/ogre/armor/scale_bronze_hauberk.png
-#armor
-#theme "bronze"
-#enditem
-
-#newitem
-#name "bronze full scale"
-#gameid bronzescale_full
-#basechance 0.5
-#sprite /graphics/ogre/armor/scale_bronze_full.png
-#armor
-#theme "bronze"
-#theme "advanced"
-#enditem
-
-
---- Chain
-
-#newitem
-#name "chain cuirass"
-#gameid 8
-#sprite /graphics/ogre/armor/mail_cuirass.png
-#armor
+#name "ashigaru armor"
+#gameid 128
+#sprite /graphics/ogre/armor/ashigaruarmor.png
+#recolormask /graphics/ogre/armor/samuraiarmor_recolormask.png
+#tag "eliteversion 'samurai armor'"
 #theme "iron"
+#armor
+#militia
+#tier 1
+#notfortier 2
+#notfortier 3
 #enditem
 
 #newitem
-#name "chain hauberk"
-#gameid 13
-#sprite /graphics/ogre/armor/mail_hauberk.png
-#armor
+#name "samurai armor"
+#gameid 129
+#sprite /graphics/ogre/armor/samuraiarmor.png
+#recolormask /graphics/ogre/armor/samuraiarmor_recolormask.png
+#tag "eliteversion 'elite samurai armor'"
+#tag "eliteversion 'heavy samurai armor'"
 #theme "iron"
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
 #enditem
 
-
---- Iron Plate
-
 #newitem
-#name "plate cuirass"
-#gameid 9
-#basechance 0.5
-#sprite /graphics/ogre/armor/plate_cuirass.png
-#armor
+#name "elite samurai armor"
+#gameid 129
+#sprite /graphics/ogre/armor/samuraiarmor_elite.png
+#recolormask /graphics/ogre/armor/samuraiarmor_elite_recolormask.png
+#tag "eliteversion 'elite heavy samurai armor'"
 #theme "iron"
-#theme "advanced"
+#theme "elite"
+#armor
+#notfortier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
-#name "plate hauberk"
-#gameid 14
-#basechance 0.5
-#sprite /graphics/ogre/armor/plate_hauberk.png
-#armor
+#name "heavy samurai armor"
+#gameid 130
+#sprite /graphics/ogre/armor/heavysamuraiarmor.png
+#recolormask /graphics/ogre/armor/samuraiarmor_recolormask.png
+#tag "eliteversion 'gilt samurai armor'"
+#tag "eliteversion 'elite heavy samurai armor'"
 #theme "iron"
-#theme "advanced"
-#enditem
-
-
---- Bronze Plate
-
-#newitem
-#name "bronze plate cuirass"
-#gameid 100
-#basechance 0.5
-#sprite /graphics/ogre/armor/plate_bronze_cuirass.png
 #armor
-#theme "bronze"
+#notfortier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
-#name "bronze plate hauberk"
-#gameid 101
-#basechance 0.5
-#sprite /graphics/ogre/armor/plate_bronze_hauberk.png
+#name "elite heavy samurai armor"
+#gameid 130
+#sprite /graphics/ogre/armor/heavysamuraiarmor_elite.png
+#recolormask /graphics/ogre/armor/samuraiarmor_elite_recolormask.png
+#tag "eliteversion 'elite gilt samurai armor'"
+#theme "iron"
+#theme "elite"
 #armor
-#theme "bronze"
-#theme "advanced"
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#name "gilt samurai armor"
+#gameid 130
+#sprite /graphics/ogre/armor/heavysamuraiarmor_gilt.png
+#recolormask /graphics/ogre/armor/samuraiarmor_recolormask.png
+#tag "eliteversion 'elite gilt samurai armor'"
+#theme "iron"
+#theme "elite"
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#name "elite heavy samurai armor"
+#gameid 130
+#sprite /graphics/ogre/armor/heavysamuraiarmor_gilt_elite.png
+#recolormask /graphics/ogre/armor/samuraiarmor_elite_recolormask.png
+#theme "iron"
+#theme "elite"
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
 #enditem

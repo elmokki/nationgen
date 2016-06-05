@@ -1,0 +1,64 @@
+#newpose
+#name "o-bakemono infantry"
+#role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
+
+#subrace "o-bakemono"
+
+#renderorder "shadow bonusweapon basesprite shirt armor sash weapon offhandw hands hair helmet offhanda"
+
+#load basesprite /data/items/ogre/bases_obakemono.txt
+#load shadow /data/items/ogre/shadow.txt
+#load hands /data/items/ogre/hands.txt
+
+#load armor /data/items/ogre/armor_obakemono.txt
+#load helmet /data/items/ogre/helmet_obakemono.txt
+
+#load weapon /data/items/ogre/weapon_obakemono.txt
+#load offhand /data/items/ogre/offhand_obakemono.txt
+#load offhand /data/items/ogre/shield_obakemono.txt
+#load bonusweapon /data/items/ogre/bonusweapon_obakemono.txt
+
+#load hair /data/items/ogre/hair.txt
+#load shirt /data/items/ogre/shirt.txt
+#load sash /data/items/ogre/sash_troops.txt
+
+#generateitem sash 1
+
+#maxunits 3
+
+#endpose
+
+
+
+
+-------- Scout
+
+#newpose
+#name "o-bakemono scout"
+#role "scout"
+
+#subrace "o-bakemono"
+
+#renderorder "shadow bonusweapon basesprite shirt armor sash weapon offhandw hands hair helmet offhanda"
+
+#load basesprite /data/items/ogre/bases_obakemono.txt
+#load shadow /data/items/ogre/shadow.txt
+#load hands /data/items/ogre/hands.txt
+
+#load armor /data/items/ogre/armor_obakemono.txt
+#load helmet /data/items/ogre/helmet_scout.txt
+
+#load weapon /data/items/ogre/weapon_obakemono.txt
+#load offhand /data/items/ogre/offhand_obakemono.txt
+#load bonusweapon /data/items/ogre/bonusweapon_obakemono.txt
+
+#load hair /data/items/ogre/hair.txt
+#load shirt /data/items/ogre/shirt.txt
+#load sash /data/items/ogre/sash_troops.txt
+
+#generateitem sash 1
+
+#endpose
+
