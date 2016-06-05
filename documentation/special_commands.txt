@@ -2,8 +2,11 @@ This file lists special commands that can be used in race/pose/item/filter files
 Commands that appear in both races and poses prioritize using the one in the pose if both are found unless otherwise mentioned.
 
 
---- Race
+--- Anywhere relevant
+#trooptemplatechance <chance>
+Chance for a troop to get at least one troop template. Defaults to 25%. 
 
+--- Race
 #magepriestchance <chance>
 Chance to get primary race mage priests. Default is 0.3. Works for nationthemes and races. Highest value found is used.
 

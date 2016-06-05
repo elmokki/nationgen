@@ -140,7 +140,14 @@ public class TroopGenerator {
 		bonusrangedness = random.nextDouble() * 0.3;
 		chandler = new ChanceIncHandler(nation);
 		
-		maxtemplates = 1 + random.nextInt(3); // 1-3
+		
+		// Maxtemplates distribution
+		//
+		// 1 template:  12.5%
+		// 2 templates: 37.5%
+		// 3 templates: 25%
+		// 4 templates: 25%
+		maxtemplates = 1 + random.nextInt(4); // 1-4
 		if(maxtemplates == 1 && random.nextBoolean())
 			maxtemplates++;
 	}
@@ -853,7 +860,6 @@ public class TroopGenerator {
 		possibleFilters.addAll(this.unitTemplates);
 		possibleFilters.removeAll(u.appliedFilters);
 		
-		
 		// Add unit template filter to available template filters
 		if(unitTemplates.size() < maxtemplates || possibleFilters.size() == 0)
 		{
@@ -941,12 +947,17 @@ public class TroopGenerator {
 		unitGen.addFreeTemplateFilters(u);
 
 		
+		double templatechance = 0.25;
+		if(Generic.getTagValue(Generic.getAllUnitTags(u), "trooptemplatechance") != null)
+		{
+			templatechance = Double.parseDouble(Generic.getTagValue(Generic.getAllUnitTags(u), "trooptemplatechance"));
+		}
 		
-		if((random.nextDouble() < 0.075 || appliedtemplates < maxtemplates) && canGetMoreFilters(u))
+		if((random.nextDouble() < templatechance || appliedtemplates < maxtemplates) && canGetMoreFilters(u))
 		{
 
 			addTemplateFilter(u, "trooptemplates", "default_templates");
-			if(random.nextDouble() < 0.25  && canGetMoreFilters(u))
+			if(random.nextDouble() < 0.125  && canGetMoreFilters(u))
 			{
 				addTemplateFilter(u, "trooptemplates", "default_templates");
 			}
