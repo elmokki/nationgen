@@ -1053,7 +1053,65 @@ public class Unit {
 		//u.commands.add(new Command("#gcost", "+10000"));
 
 
+		// #price_per_command
+		if(Generic.containsTag(Generic.getAllUnitTags(this), "price_per_command"))
+		{
+			List<String> pptags = Generic.getTags(Generic.getAllUnitTags(u), "price_per_command");
+
+			for(String tag : pptags)
+			{
+				List<String> args = Generic.parseArgs(tag);
+				int value = u.getCommandValue(args.get(1), 0);
+				double cost = Double.parseDouble(args.get(2));
+				int threshold = 0;
+				if(args.size() > 3)
+					threshold = Integer.parseInt(args.get(3));
+				
+			
+				
+				if(value > threshold)
+				{
+					value -= threshold;
+					
+					int total = (int)Math.round((double)value * cost);
+					
+					if(total > 0)
+						commands.add(new Command("#gcost", "+" + total));
+					else
+						commands.add(new Command("#gcost", "" + total));
+					
+
+				}
+				
+			}
+		}
 		
+		// #price_if_command
+		if(Generic.containsTag(Generic.getAllUnitTags(this), "price_if_command"))
+		{
+			List<String> pptags = Generic.getTags(Generic.getAllUnitTags(u), "price_if_command");
+
+			for(String tag : pptags)
+			{
+				List<String> args = Generic.parseArgs(tag);
+				
+				
+				int value = u.getCommandValue(args.get(args.size() - 3), 0);
+				int target = Integer.parseInt(args.get(args.size() - 2));
+				String cost = args.get(args.size() - 1);
+				
+				
+				boolean at = args.contains("at");
+				boolean below = args.contains("below");
+				boolean above = args.contains("above");
+				
+				if((value > target && above) || (value == target && at)  || (value < target) && below)
+				{
+					commands.add(new Command("#gcost", cost));
+				}
+				
+			}
+		}
 		
 		// Clean up commands
 		List<Command> commands = u.getCommands();
