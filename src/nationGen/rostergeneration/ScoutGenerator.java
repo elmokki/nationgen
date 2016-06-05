@@ -26,7 +26,7 @@ public class ScoutGenerator extends TroopGenerator {
 
 
 	public ScoutGenerator(NationGen g, Nation n) {
-		super(g, n);
+		super(g, n, "scoutgen");
 	}
 
 	public Unit generateScout(Race race)

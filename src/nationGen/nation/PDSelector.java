@@ -164,10 +164,11 @@ public class PDSelector {
 		List<Unit> units = n.combineTroopsToList("infantry");
 		units.addAll(n.combineTroopsToList("mounted"));
 		units.addAll(n.combineTroopsToList("ranged"));
+		units.addAll(n.combineTroopsToList("montagtroops"));
 		
 		List<Unit> unsuitable = new ArrayList<Unit>();
 		for(Unit u : units)
-			if(Generic.containsTag(Generic.getAllUnitTags(u), "cannot_be_pd"))
+			if(Generic.containsTag(Generic.getAllUnitTags(u), "cannot_be_pd") || Generic.containsTag(u.pose.tags, "montagpose"))
 				unsuitable.add(u);
 		
 		if(units.size() > unsuitable.size())

@@ -85,6 +85,7 @@
 #caponlychance 1
 #sacredcostmulti 1.2
 #sacredratingmulti 1.4
+#innate_sacred_power 2
 #enditem
 
 #newitem
@@ -119,6 +120,7 @@
 #caponlychance 1
 #sacredcostmulti 1.2
 #sacredratingmulti 1.4
+#innate_sacred_power 2
 #enditem
 
 #newitem
@@ -128,7 +130,7 @@
 #basechance 1
 #theme daeva
 #needs overlay daevawings
-#define "#gcost 45"
+#define "#gcost 55"
 #define "#hp +6"
 #define "#mr +4"
 #define "#mor +4"
@@ -145,12 +147,14 @@
 #define "#fear +5"
 #define "#demon"
 #define "#flying"
+#define "#reclimit 3"
 #subrace "Daeva"
 #tag "noble"
 #tag "winged"
 #caponlychance 1
 #sacredcostmulti 1.2
 #sacredratingmulti 1.4
+#innate_sacred_power 2
 #enditem
 
 #newitem
@@ -162,7 +166,7 @@
 #basechance 4
 #theme daeva
 #needs overlay daevawings
-#define "#gcost 45"
+#define "#gcost 55"
 #define "#hp +6"
 #define "#mr +4"
 #define "#mor +4"
@@ -179,12 +183,14 @@
 #define "#fear +5"
 #define "#demon"
 #define "#flying"
+#define "#reclimit 3"
 #subrace "Daeva"
 #tag "noble"
 #tag "winged"
 #caponlychance 1
 #sacredcostmulti 1.2
 #sacredratingmulti 1.4
+#innate_sacred_power 2
 #enditem
 
 #newitem

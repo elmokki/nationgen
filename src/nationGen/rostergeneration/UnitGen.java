@@ -43,7 +43,7 @@ public class UnitGen {
 	private NationGen nationGen;
 	private Random random;
 	private Nation nation;
-	private ChanceIncHandler chandler;
+	public ChanceIncHandler chandler;
 	
 	
 	
