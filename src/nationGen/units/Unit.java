@@ -887,6 +887,9 @@ public class Unit {
 	
 	public void polish()
 	{
+		if(this.polished)
+			return;
+		
 		Unit u = this;
 	
 		handleLowEncCommandPolish(u.pose.tags);
@@ -1113,6 +1116,8 @@ public class Unit {
 			}
 		}
 		
+
+		
 		// Clean up commands
 		List<Command> commands = u.getCommands();
 		
@@ -1175,7 +1180,37 @@ public class Unit {
 
 
 
-
+		// Montag mean costs
+		if(Generic.containsTag(this.pose.tags, "montagpose") && Generic.containsTag(this.pose.tags, "no_montag_mean_costs") && getCommandValue("#firstshape", 0) < 0)
+		{
+			int n = 0;
+			int res = 0;
+			int gold = 0;
+			
+			int firstshape = -getCommandValue("#firstshape", 0);
+			for(List<Unit> lu : nation.unitlists.values())
+			{
+				for(Unit nu : lu)
+					if(nu.getCommandValue("#montag", 0) == firstshape)
+					{
+						nu.polish();
+						res += nu.getResCost(true);
+						gold += nu.getGoldCost();
+						n++;
+						
+					}
+			}
+			
+			if(n > 0)
+			{
+				res = (int)Math.round((double)res/(double)n) - getResCost(true);
+				gold = (int)Math.round((double)gold/(double)n);
+				this.handleCommand(commands, new Command("#gcost", "" + gold));
+				this.handleCommand(commands, new Command("#rcost", "" + res));
+			}
+			
+				
+		}
 		
 		// Separate loop to round gcost at the end
 		// Check for morale over 50

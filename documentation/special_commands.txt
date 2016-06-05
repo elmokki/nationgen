@@ -215,6 +215,8 @@ PD/start army amount multiplier. These stack like the above commands.
 
 --- Pose
 
+
+
 #forcedname <name>
 Forces the unit name to this. Works only for troops and sacredgenerator sacreds/elites.
 
@@ -226,6 +228,9 @@ purposes only. This was set so that multiple poses do not have to be made for mu
 #montagpose_max <number>
 Tells how many montag units to generate. Default for both is 10, which means always 10 units. Different minimum and maximum result in
 random amount between the numbers.
+
+#no_montag_mean_costs
+Disables montag pose feature of calculating mean gold/res cost of montag units as cost
 
 #maxunits <number>
 Only this many copies of this pose may be generated. For normal troops it is across all instances of normal troops. For montag units 
