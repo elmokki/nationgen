@@ -13,6 +13,7 @@
 #power 3
 #theme "wolftotem"
 #theme "totemanimal"
+#price_if_command at #size 1 +5
 #end
 
 #new
@@ -31,6 +32,7 @@
 #description "shapeshifts into a werebear when damaged"
 #theme "beartotem"
 #theme "totemanimal"
+#price_if_command at #size 1 +5
 #end
 
 #new
@@ -56,6 +58,7 @@
 #chanceinc "pose mounted *0"
 #command "#secondshape hornedserpent"
 #command "#gcost +8"
+#price_if_command at #size 1 +3
 #chanceinc "pose mounted *0.25"
 #tag "path nature"
 #power 3
@@ -72,6 +75,7 @@
 #chanceinc "shape felemental 20"
 #command "#secondtmpshape minorfelemental"
 #command "#gcost +8"
+#price_if_command at #size 1 +4
 #tag "path fire"
 #power 3
 #end
@@ -86,6 +90,7 @@
 #chanceinc "shape eelemental 20"
 #command "#secondtmpshape minoreelemental"
 #command "#gcost +10"
+#price_if_command at #size 1 +5
 #tag "path earth"
 #power 3
 #end
@@ -100,6 +105,7 @@
 #chanceinc "command #flying 0.5"
 #command "#secondtmpshape minoraelemental"
 #command "#gcost +12"
+#price_if_command at #size 1 +6
 #tag "path air"
 #power 3
 #end
@@ -114,6 +120,7 @@
 #command "#secondtmpshape minorwelemental"
 #command "#gcost +8"
 #tag "path water"
+#price_if_command at #size 1 +6
 #power 3
 #end
 
@@ -129,6 +136,7 @@
 #command "#maxage 800"
 #tag "path earth"
 #power 3
+#price_if_command at #size 1 +5
 #end
 
 #new
@@ -144,6 +152,7 @@
 #tag "path nature"
 #theme "ivy"
 #power 2
+#price_if_command at #size 1 +5
 #end
 
 #new magefilter
@@ -154,6 +163,7 @@
 #chanceinc "pose mounted *0"
 #command "#secondshape greatboar"
 #command "#gcost +10"
+#price_if_command at #size 1 +5
 #description "shapeshifts into a great boar when damaged"
 #power 2
 #theme "boartotem"
@@ -170,6 +180,7 @@
 #chanceinc "pose mounted *0"
 #command "#secondshape toad"
 #command "#gcost +15"
+#price_if_command at #size 1 +5
 #tag "notfortier 1"
 #tag "notfortier 2"
 #description "shapeshifts into a giant toad when damaged"
@@ -187,6 +198,7 @@
 #chanceinc "pose mounted *0"
 #command "#secondshape smallerspider"
 #command "#gcost +15"
+#price_if_command at #size 1 +5
 #tag "notfortier 1"
 #tag "notfortier 2"
 #description "shapeshifts into a giant spider when damaged"

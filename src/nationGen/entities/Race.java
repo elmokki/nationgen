@@ -45,6 +45,7 @@ public class Race extends Filter {
 		addCommand("#def 10");
 		addCommand("#prec 10");
 		addCommand("#enc 3");
+		addCommand("#size 2");
 		addCommand("#maxage 50");
 	}
 	

@@ -2,9 +2,13 @@ This file lists special commands that can be used in race/pose/item/filter files
 Commands that appear in both races and poses prioritize using the one in the pose if both are found unless otherwise mentioned.
 
 
---- Anywhere relevant
+--- Anywhere relevant to units
 #trooptemplatechance <chance>
 Chance for a troop to get at least one troop template. Defaults to 25%. 
+
+#price_per_command <command> <price> [threshold]
+Adds <price> of gcost to unit price per value of <command> if value is above [threshold] (optional, defaults to 0)
+Example: #price_per_command #hp 1 10 -> +1 to gcost for each point of hp above 10.
 
 --- Race
 #magepriestchance <chance>
