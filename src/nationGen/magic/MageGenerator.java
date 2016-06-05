@@ -1509,7 +1509,7 @@ public class MageGenerator extends TroopGenerator {
 			// If all mages of tier have distinguishing paths and either luck or no common paths, separate filters are rolled. 
 			if(different)
 			{
-				int maxpower = 0;
+				double maxpower = 0;
 				for(Unit u : mages)
 				{
 					List<Filter> givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findDistinguishingPaths(u, mages), strict);
