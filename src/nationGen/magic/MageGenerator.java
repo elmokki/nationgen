@@ -1170,7 +1170,14 @@ public class MageGenerator extends TroopGenerator {
 			priestsFrom = r.nextInt(maxStrength + 1);
 		}
 		
+		int priestextracost = 0;
+		if(Generic.getTagValue(Generic.getAllNationTags(nation), "priestextracost") != null)
+		{
+			priestextracost = Integer.parseInt(Generic.getTagValue(Generic.getAllNationTags(nation), "priestextracost"));
+		}
 
+
+		
 		while(currentStrength > 0)
 		{
 			boolean done = false;
@@ -1187,8 +1194,8 @@ public class MageGenerator extends TroopGenerator {
 						u.commands.add(new Command("#holy"));
 						u.appliedFilters.add(this.getPriestPattern(currentStrength));
 						u.tags.add("magepriest");
-						u.commands.add(new Command("#gcost", "+" + 10*currentStrength));
-
+						u.commands.add(new Command("#gcost", "+" + 10*currentStrength + currentStrength * priestextracost));
+	
 					}
 					done = true;
 				}
@@ -1199,7 +1206,8 @@ public class MageGenerator extends TroopGenerator {
 						u.appliedFilters.add(this.getPriestPattern(currentStrength));
 						u.commands.add(new Command("#holy"));
 						u.tags.add("magepriest");
-						u.commands.add(new Command("#gcost", "+" + 10*currentStrength));
+						u.commands.add(new Command("#gcost", "+" + 10*currentStrength + currentStrength * priestextracost));
+
 
 					}
 					done = true;
@@ -1225,8 +1233,6 @@ public class MageGenerator extends TroopGenerator {
 				{
 					List<Unit> derp = new ArrayList<Unit>();
 					derp.add(priests.get(0));
-					
-					// FIX THIS
 					u = deriveBasesFrom(1, "priest", priests.get(0), priests.get(0).race, currentStrength + 1, currentStrength).get(0);
 				}
 				else
@@ -1237,11 +1243,12 @@ public class MageGenerator extends TroopGenerator {
 					
 					u = this.generateBases("priest", prace, 1, str).get(0);
 				}
-				
+				u.commands.add(new Command("#gcost", "+" + 10*currentStrength ));
+
 				u.color = priestcolor;
 				u.appliedFilters.add(this.getPriestPattern(currentStrength));
 				u.commands.add(new Command("#holy"));
-				u.commands.add(new Command("#gcost", "+" + (int)(Math.pow(2, currentStrength)*10)));
+				u.commands.add(new Command("#gcost", "+" + (int)(Math.pow(2, currentStrength)*10) + currentStrength * priestextracost));
 				u.tags.add("priest " + currentStrength);
 
 				
