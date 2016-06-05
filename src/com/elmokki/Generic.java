@@ -175,7 +175,8 @@ public class Generic {
 		for(Theme t : u.race.themefilters)
 			tags.addAll(t.tags);
 		for(Item i : u.slotmap.values())
-			tags.addAll(i.tags);
+			if(i != null)
+				tags.addAll(i.tags);
 		
 		return tags;
 	}
