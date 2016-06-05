@@ -33,7 +33,7 @@ public class MageGenerator extends TroopGenerator {
 	
 	
 	public MageGenerator(NationGen g, Nation n) {
-		super(g, n);
+		super(g, n, "magegen");
 	
 		loadPatterns();
 	}
@@ -305,7 +305,7 @@ public class MageGenerator extends TroopGenerator {
 		List<MagicPattern> available = getPatternsForTier(3, primaries);
 		
 		List<MagicPattern> primarypatterns = new ArrayList<MagicPattern>();
-		ChanceIncHandler chandler = new ChanceIncHandler(nation);
+		ChanceIncHandler chandler = new ChanceIncHandler(nation, "magegen");
 		MagicPattern primaryPattern = Entity.getRandom(this.random, chandler.handleChanceIncs(mages.get(2).get(0), available));
 
 
@@ -1031,7 +1031,7 @@ public class MageGenerator extends TroopGenerator {
 		
 		List<MagicPattern> available = getPatternsForTier(0, primaries);
 		
-		ChanceIncHandler chandler = new ChanceIncHandler(nation);
+		ChanceIncHandler chandler = new ChanceIncHandler(nation, "magegen");
 		MagicPattern pattern = Entity.getRandom(this.random, chandler.handleChanceIncs(available));
 
 		
@@ -1432,7 +1432,7 @@ public class MageGenerator extends TroopGenerator {
 
 		
 		
-		ChanceIncHandler chandler = new ChanceIncHandler(nation);
+		ChanceIncHandler chandler = new ChanceIncHandler(nation, "magegen");
 
 		while(power > 0)
 		{
@@ -1781,7 +1781,7 @@ public class MageGenerator extends TroopGenerator {
 			return;
 		
 		
-		ChanceIncHandler chandler = new ChanceIncHandler(nation);
+		ChanceIncHandler chandler = new ChanceIncHandler(nation, "magegen");
 		while(power > 0)
 		{
 			List<Filter> moreFilters = ChanceIncHandler.getFiltersWithPower(power, power, filters);

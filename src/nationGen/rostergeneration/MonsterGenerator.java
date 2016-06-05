@@ -32,7 +32,7 @@ public class MonsterGenerator {
 		r.unitcommands.clear();
 		r.name = "Monster";
 		r.visiblename = "Monster";
-		ChanceIncHandler chandler = new ChanceIncHandler(n);
+		ChanceIncHandler chandler = new ChanceIncHandler(n, "monstergen");
 		
 		List<ShapeShift> poses = ChanceIncHandler.retrieveFilters("monsters", "default_monsters", ng.monsters, null, n.races.get(0));
 		

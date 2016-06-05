@@ -65,7 +65,7 @@ public class CustomItemGen {
 			if(possibles.size() > 0)
 			{
 				
-				ChanceIncHandler chandler = new ChanceIncHandler(n);
+				ChanceIncHandler chandler = new ChanceIncHandler(n, "customitemgenerator");
 				LinkedHashMap<MagicItem, Double> itemMap = chandler.handleChanceIncs(u, possibles); 
 				
 				MagicItem mitem = MagicItem.getRandom(random, itemMap);

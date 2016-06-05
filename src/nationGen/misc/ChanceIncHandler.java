@@ -46,13 +46,23 @@ public class ChanceIncHandler {
 	
 	private Nation n;
 	private Random r;
+	public String identifier = "";
+	
+	public ChanceIncHandler(Nation n, String identifier)
+	{
+		this.identifier = identifier;
+		this.n = n;
+		this.r = new Random(n.random.nextInt());
+		
+
+
+	}
 	
 	public ChanceIncHandler(Nation n)
 	{
 		this.n = n;
 		this.r = new Random(n.random.nextInt());
 		
-
 
 	}
 	
@@ -1002,6 +1012,16 @@ public class ChanceIncHandler {
 					}
 					
 					if(canIncrease)
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+				}
+				
+				
+				// ModuleID
+				if(args.get(0).equals("moduleid") && args.size() >= 3)
+				{
+					String id = args.get(1);
+					System.out.println(":)");
+					if(id.equals(this.identifier))
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				

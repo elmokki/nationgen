@@ -25,7 +25,7 @@ public class CommanderGenerator extends TroopGenerator {
 
 	private Random r;
 	public CommanderGenerator(NationGen g, Nation n) {
-		super(g, n);
+		super(g, n, "commandergen");
 		r = new Random(n.random.nextInt());
 
 	}
