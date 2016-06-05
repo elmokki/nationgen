@@ -1,0 +1,135 @@
+--- No armor
+
+#new
+#name "furs"
+#gameid 44
+#basechance 3
+#theme "leather"
+#theme "primitive"
+#no_armor
+#militia
+#armor
+#theme "stealthy"
+#end
+
+
+--- Iron Scale
+
+#newitem
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/ogre/armor/scale_cuirass.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "scale hauberk"
+#gameid 12
+#sprite /graphics/ogre/armor/scale_hauberk.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "full scale"
+#gameid 17
+#basechance 0.5
+#sprite /graphics/ogre/armor/scale_full.png
+#armor
+#theme "iron"
+#theme "advanced"
+#enditem
+
+
+--- Bronze Scale
+
+#newitem
+#name "bronze scale cuirass"
+#gameid 142
+#sprite /graphics/ogre/armor/scale_bronze_cuirass.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#name "bronze scale hauberk"
+#gameid 136
+#sprite /graphics/ogre/armor/scale_bronze_hauberk.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#name "bronze full scale"
+#gameid bronzescale_full
+#basechance 0.5
+#sprite /graphics/ogre/armor/scale_bronze_full.png
+#armor
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+
+--- Chain
+
+#newitem
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/ogre/armor/mail_cuirass.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "chain hauberk"
+#gameid 13
+#sprite /graphics/ogre/armor/mail_hauberk.png
+#armor
+#theme "iron"
+#enditem
+
+
+--- Iron Plate
+
+#newitem
+#name "plate cuirass"
+#gameid 9
+#basechance 0.5
+#sprite /graphics/ogre/armor/plate_cuirass.png
+#armor
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "plate hauberk"
+#gameid 14
+#basechance 0.5
+#sprite /graphics/ogre/armor/plate_hauberk.png
+#armor
+#theme "iron"
+#theme "advanced"
+#enditem
+
+
+--- Bronze Plate
+
+#newitem
+#name "bronze plate cuirass"
+#gameid 100
+#basechance 0.5
+#sprite /graphics/ogre/armor/plate_bronze_cuirass.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#name "bronze plate hauberk"
+#gameid 101
+#basechance 0.5
+#sprite /graphics/ogre/armor/plate_bronze_hauberk.png
+#armor
+#theme "bronze"
+#theme "advanced"
+#enditem

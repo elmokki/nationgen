@@ -1,0 +1,95 @@
+#newitem
+#name "humanoid"
+#gameid -1
+#sprite /graphics/foulspawn/medium/lleg/ogre.png
+#command "#gcost +3"
+#command "#hp +3"
+#command "#enc +1"
+#command "#ap +5"
+#enditem
+
+#newitem
+#name "goblinoid"
+#gameid -1
+#sprite /graphics/foulspawn/medium/lleg/bakemono.png
+#command "#gcost +3"
+#command "#hp +3"
+#command "#enc +1"
+#command "#ap +5"
+#enditem
+
+#newitem
+#name "canid"
+#gameid -1
+#sprite /graphics/foulspawn/medium/lleg/canid.png
+#command "#gcost +2"
+#command "#hp +2"
+#command "#enc +1"
+#command "#ap +5"
+#enditem
+
+#newitem
+#name "muuch"
+#gameid -1
+#sprite /graphics/foulspawn/medium/lleg/muuch.png
+#command "#gcost +2"
+#command "#hp +2"
+#command "#enc +1"
+#command "#ap +3"
+#enditem
+
+#newitem
+#name "sakmuuch"
+#gameid -1
+#sprite /graphics/foulspawn/medium/lleg/sakmuuch.png
+#command "#gcost +2"
+#command "#hp +2"
+#command "#enc +1"
+#command "#ap +3"
+#enditem
+
+#newitem
+#name "bandar"
+#gameid -1
+#sprite /graphics/foulspawn/medium/lleg/bandar.png
+#command "#gcost +2"
+#command "#hp +2"
+#command "#enc +1"
+#command "#ap +3"
+#needs shadow large_shadow
+#enditem
+
+#newitem
+#name "minotaur"
+#gameid -1
+#sprite /graphics/foulspawn/medium/lleg/minotaur.png
+#command "#gcost +3"
+#command "#hp +3"
+#command "#enc +1"
+#command "#ap +5"
+#enditem
+
+#newitem
+#name "draconian"
+#gameid -1
+#sprite /graphics/foulspawn/medium/lleg/draconian.png
+#command "#gcost +5"
+#command "#prot +1"
+#command "#hp +6"
+#command "#enc +1"
+#command "#ap +3"
+#enditem
+
+#newitem
+#name "scorpion"
+#gameid -1
+#sprite /graphics/foulspawn/medium/lleg/scorpion.png
+#command "#gcost +4"
+#command "#prot +2"
+#command "#hp +4"
+#command "#def -1"
+#command "#enc +0"
+#command "#ap +3"
+#itemslot foot 0
+#needs shadow large_shadow
+#enditem

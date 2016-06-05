@@ -1,0 +1,206 @@
+#newitem
+#id none
+#gameid -1
+#nogen
+#needstype larm onehand
+#enditem
+
+-- Natural weapons
+
+#newitem
+#id fist
+#gameid 92
+#needstype larm onehand
+#hand
+#degenerate
+#theme "primitive"
+#enditem
+
+#newitem
+#id claw
+#gameid 29
+#needstype larm claw
+#claw
+#degenerate
+#theme "primitive"
+#enditem
+
+#newitem
+#id claw_stun
+#gameid 250
+#command "#gcost +1"
+#needstype larm claw
+#claw
+#degenerate
+#enditem
+
+#newitem
+#id claw_poison
+#gameid 248
+#command "#gcost +1"
+#needstype larm claw
+#claw
+#degenerate
+#enditem
+
+#newitem
+#id tentacle
+#basechance 1.5
+#gameid 85
+#type "tentacle"
+#tentacle
+#degenerate
+#needstype larm tentacle
+#enditem
+
+#newitem
+#id tentacle_sleep
+#basechance 1.5
+#gameid 387
+#tentacle
+#degenerate
+#command "#gcost +1"
+#needstype larm tentacle
+#enditem
+
+#newitem
+#id tentacle_strangle
+#basechance 1.5
+#gameid 116
+#tentacle
+#degenerate
+#needstype larm tentacle
+#enditem
+
+#newitem
+#id tentacle_disease
+#basechance 1.5
+#gameid 142
+#tentacle
+#degenerate
+#command "#gcost +2"
+#needstype larm tentacle
+#enditem
+
+#newitem
+#id tentacle_paralyze
+#basechance 1.5
+#gameid 282
+#tentacle
+#degenerate
+#command "#gcost +1"
+#needstype larm tentacle
+#enditem
+
+#newitem
+#id tentacle_poison
+#basechance 1.5
+#gameid 355
+#tentacle
+#degenerate
+#command "#gcost +1"
+#needstype larm tentacle
+#enditem
+
+#newitem
+#id pincer
+#basechance 3
+#gameid 273
+#pincer
+#degenerate
+#needstype larm pincer
+#enditem
+
+
+-- 1h weapons
+#newitem
+#id club
+#gameid 252
+#sprite /graphics/ogre/weapon/club_oh.png
+#theme "primitive"
+#onehand
+#degenerate
+#theme "wood"
+#needstype larm onehand
+#enditem
+
+#newitem
+#id spiked_club
+#gameid 593
+#sprite /graphics/ogre/weapon/spikedclub_oh.png
+#theme "primitive"
+#onehand
+#degenerate
+#theme "wood"
+#needstype larm onehand
+#enditem
+
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/ogre/weapon/hatchet_oh.png
+#theme "primitive"
+#onehand
+#theme "iron"
+#needstype larm onehand
+#enditem
+
+#newitem
+#id morningstar
+#gameid 15
+#sprite /graphics/ogre/weapon/morningstar_oh.png
+#onehand
+#theme "iron"
+#theme "advanced"
+#needstype larm onehand
+#enditem
+
+#newitem
+#id hammer
+#gameid 13
+#sprite /graphics/ogre/weapon/hammer_oh.png
+#onehand
+#theme "iron"
+#theme "advanced"
+#needstype larm onehand
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/ogre/weapon/mace_oh.png
+#theme "primitive"
+#onehand
+#degenerate
+#needstype larm onehand
+#enditem
+
+#newitem
+#id shortsword
+#gameid 6
+#sprite /graphics/highmen/weapons/offhand_shortsword.png
+#offsetx 4
+#offsety 2
+#onehand
+#needstype larm onehand
+#enditem
+
+#newitem
+#id broadsword
+#gameid 8
+#sprite /graphics/highmen/weapons/offhand_broadsword.png
+#offsetx 4
+#offsety 2
+#onehand
+#needstype larm onehand
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#sprite /graphics/highmen/weapons/offhand_falchion.png
+#offsetx 4
+#offsety 2
+#onehand
+#needstype larm onehand
+#enditem

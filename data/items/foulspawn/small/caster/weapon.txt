@@ -1,0 +1,532 @@
+--- Empty hands
+
+#newitem
+#id fist
+#gameid 92
+#tier 1
+#notfortier 2
+#notfortier 3
+#needstype rarm onehand
+#theme "primitive"
+#enditem
+
+#newitem
+#id claw
+#gameid 29
+#tier 1
+#notfortier 2
+#notfortier 3
+#needstype rarm claw
+#theme "primitive"
+#enditem
+
+#newitem
+#id claw_stun
+#tier 1
+#tier 2
+#notfortier 3
+#gameid 250
+#needstype rarm claw
+#theme "primitive"
+#enditem
+
+#newitem
+#id claw_poison
+#tier 1
+#tier 2
+#notfortier 3
+#gameid 248
+#needstype rarm claw
+#theme "primitive"
+#enditem
+
+#newitem
+#id tentacle
+#gameid 85
+#tier 1
+#notfortier 2
+#notfortier 3
+#needstype rarm tentacle
+#theme "primitive"
+#enditem
+
+#newitem
+#id tentacle_sleep
+#gameid 387
+#tier 1
+#tier 2
+#notfortier 3
+#needstype rarm tentacle
+#theme "primitive"
+#enditem
+
+#newitem
+#id tentacle_strangle
+#gameid 116
+#tier 1
+#tier 2
+#notfortier 3
+#needstype rarm tentacle
+#theme "primitive"
+#enditem
+
+#newitem
+#id tentacle_lifedrain
+#gameid 63
+#tier 1
+#tier 2
+#tier 3
+#needstype rarm tentacle
+#theme "primitive"
+#enditem
+
+#newitem
+#id tentacle_disease
+#gameid 142
+#tier 1
+#tier 2
+#tier 3
+#needstype rarm tentacle
+#theme "primitive"
+#enditem
+
+#newitem
+#id tentacle_paralyze
+#gameid 282
+#tier 1
+#tier 2
+#tier 3
+#needstype rarm tentacle
+#theme "primitive"
+#enditem
+
+#newitem
+#id tentacle_poison
+#gameid 355
+#tier 1
+#tier 2
+#tier 3
+#needstype rarm tentacle
+#theme "primitive"
+#enditem
+
+#newitem
+#id pincer
+#gameid 273
+#tier 1
+#tier 2
+#tier 3
+#needstype rarm pincer
+#enditem
+
+
+
+-- Staves, mostly
+
+#newitem
+#id quarterstaff
+#gameid 7
+#sprite /graphics/weapon/standard/quarterstaff.png
+#offsetx 1
+#tag "tier 2"
+#tag "eliteversion orbstaff"
+#tag "eliteversion serpentstaff"
+#tag "eliteversion skullstaff"
+#tag "eliteversion knobblystaff"
+#needstype rarm staff
+#enditem
+
+#newitem
+#id bronze_trident
+#gameid 641
+#sprite /graphics/weapon/mage/trident_bronze.png
+#tag "tier 2"
+#tag "tier 3"
+#theme "bronze"
+#theme "amphibious"
+#needstype rarm staff
+#enditem
+
+#newitem
+#id iron_trident
+#gameid 3
+#sprite /graphics/weapon/mage/trident.png
+#tag "tier 2"
+#tag "tier 3"
+#theme "iron"
+#theme "terrestrial"
+#needstype rarm staff
+#enditem
+
+#newitem
+#id serpentstaff
+#gameid 7
+#sprite /graphics/weapon/mage/serpentstaff.png
+#offsetx 1
+#offsety 2
+#theme "lizard"
+#tag "tier 3"
+#needstype rarm staff
+#enditem
+
+#newitem
+#id orb
+#gameid -1
+#sprite /graphics/weapon/mage/orb.png
+#recolormask self
+#offsety 4
+#tag "tier 3"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id orbstaff
+#gameid 7
+#sprite /graphics/weapon/mage/orbstaff.png
+#recolormask /graphics/weapon/mage/orbstaff_recolormask.png
+#offsety 6
+#tag "tier 3"
+#needstype rarm staff
+#enditem
+
+#newitem
+#id sceptre
+#gameid 446
+#sprite /graphics/weapon/mage/sceptre.png
+#offsety 3
+#tag "tier 2"
+#tag "tier 3"
+#tag "eliteversion orbsceptre"
+#needstype rarm staff
+#enditem
+
+#newitem
+#id orbsceptre
+#gameid 446
+#sprite /graphics/weapon/mage/sceptre_orb.png
+#recolormask /graphics/weapon/mage/sceptre_orb_recolormask.png
+#offsety 3
+#theme "superior"
+#tag "tier 3"
+#needstype rarm staff
+#enditem
+
+#newitem
+#id pestle
+#gameid 499
+#sprite /graphics/illithid/starchild/weapon/caster/pestle-mortar.png
+#tag "tier 1"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id pitcher
+#gameid 496
+#sprite /graphics/offhand/mage/pitcher.png
+#offsetx -14
+#offsety -7
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id dagger
+#gameid 671
+#sprite /graphics/weapon/mage/sacrificialdagger.png
+#offsety 1
+#offsety 2
+#tag "tier 1"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id skullstaff
+#gameid 7
+#sprite /graphics/weapon/mage/skullstaff.png
+#offsetx 1
+#offsety 1
+#theme "primitive"
+#theme "death"
+#theme "nature"
+#tag "tier 3"
+#needstype rarm staff
+#enditem
+
+#newitem
+#id metalstaff
+#gameid 7
+#sprite /graphics/weapon/mage/metalstaff.png
+#tag "tier 2"
+#tag "tier 1"
+#tag "eliteversion metalstaff_bauble"
+#needstype rarm staff
+#enditem
+
+#newitem
+#id metalstaff_bauble
+#gameid 7
+#sprite /graphics/weapon/mage/metalstaff_bauble.png
+#tag "tier 3"
+#needstype rarm staff
+#enditem
+
+#newitem
+#id knobblystaff
+#gameid 7
+#sprite /graphics/weapon/mage/knobblystaff.png
+#offsetx 1
+#offsety 3
+#tag "tier 3"
+#needstype rarm staff
+#enditem
+
+
+
+-- Assorted quirky stuff, usually with path requirements
+
+#newitem
+#id twig
+#gameid 498
+#basechance 0
+#chanceinc "personalmagic nature 1 1"
+#sprite /graphics/illithid/starchild/weapon/caster/twig.png
+#offsetx 1
+#eliteversion branch
+#tier 1
+#notfortier 2
+#notfortier 3
+#needstype rarm staff
+#enditem
+
+#newitem
+#id branch
+#gameid 240
+#basechance 0
+#chanceinc "personalmagic nature 1 1"
+#sprite /graphics/illithid/starchild/weapon/caster/twig.png
+#notfortier 1
+#tier 2
+#tier 3
+#needstype rarm staff
+#enditem
+
+#newitem
+#id torch
+#gameid 666
+#basechance 0
+#chanceinc "personalmagic fire 1 1"
+#sprite /graphics/illithid/starchild/weapon/caster/torch.png
+#offsetx 1
+#offsety 1
+#tier 1
+#tier 2
+#notfortier 3
+#theme terrestrial
+#needstype rarm staff
+#enditem
+
+#newitem
+#id sickle
+#gameid 57
+#basechance 0
+#chanceinc "personalmagic nature 1 earth 1 1"
+#sprite /graphics/illithid/starchild/weapon/caster/sickle.png
+#offsetx 1
+#notfortier 1
+#tier 2
+#tier 3
+#needstype rarm staff
+#enditem
+
+#newitem
+#id flask
+#gameid -1
+#basechance 0
+#chanceinc "personalmagic fire 1 water 1 1"
+#chanceinc "personalcommand '#alch' 10"
+#sprite /graphics/illithid/starchild/weapon/caster/flask.png
+#offsetx 1
+#offsety -1
+#tier 1
+#tier 2
+#notfortier 3
+#needstype rarm staff
+#enditem
+
+#newitem
+#id astrolabe
+#gameid 637
+#basechance 0
+#chanceinc "personalmagic air 1 astral 1 1"
+#chanceinc "personalmagic air 1 water 1 1"
+#chanceinc "personalmagic astral 2 1"
+#chanceinc "personalcommand #sailsz 10"
+#sprite /graphics/illithid/starchild/weapon/caster/astrolabe.png
+#tier 1
+#tier 2
+#tier 3
+#needstype rarm staff
+#enditem
+
+#newitem
+#id censer
+#gameid 516
+#basechance 0
+#chanceinc "personalmagic holy 1 1"
+#sprite /graphics/illithid/starchild/weapon/caster/censer.png
+#notfortier 1
+#tier 2
+#tier 3
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id candle
+#gameid -1
+#basechance 0
+#chanceinc "personalmagic astral 1 1"
+#chanceinc "personalmagic death 1 1"
+#chanceinc "personalmagic blood 1 1"
+#sprite /graphics/illithid/starchild/weapon/caster/candle.png
+#tier 1
+#tier 2
+#notfortier 3
+#theme terrestrial
+#needstype rarm staff
+#enditem
+
+#newitem
+#id scales
+#gameid 637
+#basechance 0
+#chanceinc "personalmagic astral 1 1"
+#chanceinc "personalcommand #alch 5"
+#sprite /graphics/illithid/starchild/weapon/caster/scales.png
+#notfortier 1
+#tier 2
+#tier 3
+#needstype rarm staff
+#enditem
+
+#newitem
+#id square
+#gameid 638
+#basechance 0
+#chanceinc "personalmagic earth 1 1"
+#sprite /graphics/illithid/starchild/weapon/caster/square.png
+#tier 1
+#tier 2
+#tier 3
+#needstype rarm staff
+#enditem
+
+#newitem
+#id whip
+#gameid 40
+#sprite /graphics/illithid/starchild/weapon/caster/whip.png
+#offsety 1
+#command "#taskmaster +1"
+#tier 1
+#tier 2
+#notfortier 3
+#theme terrestrial
+#needstype rarm staff
+#enditem
+
+#newitem
+#id whisk
+#gameid 502
+#sprite /graphics/illithid/starchild/weapon/caster/whisk.png
+#offsety 1
+#tier 1
+#tier 2
+#notfortier 3
+#theme terrestrial
+#needstype rarm staff
+#enditem
+
+#newitem
+#id wisp
+#gameid -1
+#sprite /graphics/illithid/starchild/weapon/caster/wisp.png
+#recolormask self
+#notfortier 1
+#tier 2
+#tier 3
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id pearl
+#gameid -1
+#basechance 0
+#chanceinc "personalmagic astral 1 water 1 1"
+#sprite /graphics/illithid/starchild/weapon/caster/pearl.png
+#notfortier 1
+#tier 2
+#tier 3
+#theme amphibious
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id hammer
+#gameid 13
+#basechance 0
+#chanceinc "personalmagic earth 1 1"
+#chanceinc "personalcommand #fixforgebonus 10"
+#sprite /graphics/illithid/starchild/weapon/caster/hammer.png
+#offsetx 1
+#tier 1
+#tier 2
+#tier 3
+#needstype rarm staff
+#enditem
+
+#newitem
+#id chalice
+#gameid -1
+#basechance 0
+#chanceinc "personalmagic nature 3 1"
+#chanceinc "personalmagic water 2 1"
+#chanceinc "personalmagic blood 2 1"
+#sprite /graphics/illithid/starchild/weapon/caster/chalice.png
+#notfortier 1
+#tier 2
+#tier 3
+#needstype rarm staff
+#enditem
+
+#newitem
+#id lamp
+#gameid -1
+#sprite /graphics/illithid/starchild/weapon/caster/lamp.png
+#notfortier 1
+#tier 2
+#tier 3
+#theme terrestrial
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id book
+#gameid -1
+#chanceinc "personalcommand #adept_research *2"
+#sprite /graphics/illithid/starchild/weapon/caster/book.png
+#notfortier 1
+#tier 2
+#tier 3
+#theme terrestrial
+#needstype rarm empty
+#needstype larm onehand
+#enditem
+
+#newitem
+#id cod
+#gameid 591
+#chanceinc "personalcommand #insane 5"
+#sprite /graphics/illithid/starchild/weapon/caster/cod.png
+#tier 1
+#notfortier 2
+#notfortier 3
+#needstype rarm onehand
+#enditem

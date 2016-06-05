@@ -1,0 +1,49 @@
+
+--- Hands belonging to an armor set should be given id of the lowest prot armor they go with if you want to avoid naked people with plate gloves.
+
+#newitem
+#id "none"
+#gameid -1
+#enditem
+
+#newitem
+#name "humanoid"
+#basechance 0
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm_caster/humanoid_overlay.png
+#nogen
+#enditem
+
+#newitem
+#name "goblinoid"
+#basechance 0
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm_caster/goblinoid_overlay.png
+#nogen
+#enditem
+
+#newitem
+#name "canid"
+#basechance 0
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm_caster/canid_overlay.png
+#nogen
+#enditem
+
+#newitem
+#name "tentacloid"
+#gameid -1
+#basechance 0
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm_caster/tentacle_green_overlay.png
+#nogen
+#enditem
+
+#newitem
+#name "fleshblob"
+#gameid -1
+#basechance 0
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm_caster/tentacle_pink_overlay.png
+#nogen
+#enditem

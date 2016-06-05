@@ -1,6 +1,29 @@
 
 -- Natural weapons
 
+#id club
+#gameid 252
+#sprite /graphics/dynastichuman/weapons/club1.png
+#offsetx -3
+#offsety 4
+#onehand
+#theme "wood"
+#theme "primitive"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id spiked_club
+#gameid 265
+#sprite /graphics/dynastichuman/weapons/club1.png
+#offsetx -3
+#offsety 4
+#onehand
+#theme "wood"
+#theme "primitive"
+#needstype rarm onehand
+#enditem
+
 #newitem
 #id fist
 #gameid 92

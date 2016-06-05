@@ -1,0 +1,497 @@
+
+-- Plain tabards
+
+#newitem
+#id "white"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/light.png
+#eliteversion light2
+#eliteversion medium2
+#tier 1
+#notfortier 2
+#notfortier 3
+#type plain
+#enditem
+
+#newitem
+#id "grey"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/medium.png
+#eliteversion light2
+#eliteversion medium2
+#eliteversion dark2
+#eliteversion gath
+#tier 1
+#notfortier 2
+#notfortier 3
+#type plain
+#enditem
+
+#newitem
+#id "black"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/dark.png
+#eliteversion medium2
+#eliteversion dark2
+#tier 1
+#notfortier 2
+#notfortier 3
+#type plain
+#enditem
+
+#newitem
+#id "light2"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/light.png
+#recolormask self
+#eliteversion light3
+#eliteversion berytos3_silver_light2
+#eliteversion berytos3_gold_light2
+#tier 1
+#tier 2
+#notfortier 3
+#type plain
+#enditem
+
+#newitem
+#id "medium2"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/medium.png
+#recolormask self
+#eliteversion light3
+#eliteversion medium3
+#eliteversion dark3
+#eliteversion berytos3_silver_medium2
+#eliteversion berytos3_gold_medium2
+#tier 1
+#tier 2
+#notfortier 3
+#type plain
+#enditem
+
+#newitem
+#id "dark2"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/dark.png
+#recolormask self
+#eliteversion dark3
+#eliteversion berytos3_silver_dark2
+#eliteversion berytos3_gold_dark2
+#tier 1
+#tier 2
+#notfortier 3
+#type plain
+#enditem
+
+#newitem
+#id "light3"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/light.png
+#recolormask self
+#eliteversion gath1
+#eliteversion gath2
+#eliteversion berytos3_silver_light3
+#eliteversion berytos3_gold_light3
+#notfortier 1
+#tier 2
+#tier 3
+#type plain
+#enditem
+
+#newitem
+#id "medium3"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/medium.png
+#recolormask self
+#eliteversion gath1
+#eliteversion gath2
+#eliteversion berytos3_silver_medium3
+#eliteversion berytos3_gold_medium3
+#notfortier 1
+#tier 2
+#tier 3
+#type plain
+#enditem
+
+#newitem
+#id "dark3"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/dark.png
+#recolormask self
+#eliteversion gath1
+#eliteversion gath2
+#eliteversion berytos3_silver_dark3
+#eliteversion berytos3_gold_dark3
+#notfortier 1
+#tier 2
+#tier 3
+#type plain
+#enditem
+
+
+
+
+-- Berytos-stle tabard
+
+#newitem
+#id "berytos1_grey"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/berytos1.png
+#eliteversion berytos3_silver
+#eliteversion berytos3_gold
+#eliteversion gath
+#tier 1
+#tier 2
+#notfortier 3
+#type berytos
+#enditem
+
+#newitem
+#id "berytos3_silver"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/berytos3_silver.png
+#eliteversion berytos3_gold
+#eliteversion berytos3_silver_light3
+#eliteversion berytos3_silver_medium3
+#eliteversion berytos3_silver_dark3
+#eliteversion gath
+#notfortier 1
+#tier 2
+#tier 3
+#type berytos
+#enditem
+
+#newitem
+#id "berytos3_gold"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/berytos3_gold.png
+#eliteversion berytos3_silver
+#eliteversion berytos3_gold_light3
+#eliteversion berytos3_gold_medium3
+#eliteversion berytos3_gold_dark3
+#eliteversion gath
+#notfortier 1
+#tier 2
+#tier 3
+#type berytos
+#enditem
+
+#newitem
+#id "berytos1"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/berytos1.png
+#recolormask /graphics/illithid/starchild/robes/tabard/berytos1_recolormask.png
+#eliteversion berytos2
+#tier 1
+#notfortier 2
+#notfortier 3
+#type berytos
+#enditem
+
+#newitem
+#id "berytos2"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/berytos1.png
+#recolormask /graphics/illithid/starchild/robes/tabard/berytos2_recolormask.png
+#eliteversion berytos3_silver_pale
+#eliteversion berytos3_silver_dull
+#eliteversion berytos3_silver_dim
+#eliteversion berytos3_silver_light2
+#eliteversion berytos3_silver_medium2
+#eliteversion berytos3_silver_dark2
+#eliteversion berytos3_silver_light3
+#eliteversion berytos3_silver_medium3
+#eliteversion berytos3_silver_dark3
+#eliteversion berytos3_gold_pale
+#eliteversion berytos3_gold_dull
+#eliteversion berytos3_gold_dim
+#eliteversion berytos3_gold_light2
+#eliteversion berytos3_gold_medium2
+#eliteversion berytos3_gold_dark2
+#eliteversion berytos3_gold_light3
+#eliteversion berytos3_gold_medium3
+#eliteversion berytos3_gold_dark3
+#tier 1
+#tier 2
+#notfortier 3
+#type berytos
+#enditem
+
+#newitem
+#id "berytos3_silver_pale"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/berytos3_silver.png
+#recolormask /graphics/illithid/starchild/robes/tabard/berytos3_recolormask3.png
+#eliteversion berytos3_silver_light3
+#eliteversion berytos3_gold_light3
+#eliteversion gath1
+#eliteversion gath2
+#notfortier 1
+#tier 2
+#notfortier 3
+#type berytos
+#enditem
+
+#newitem
+#id "berytos3_silver_dull"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/berytos3_silver.png
+#recolormask /graphics/illithid/starchild/robes/tabard/berytos3_recolormask4.png
+#eliteversion berytos3_silver_medium3
+#eliteversion berytos3_gold_medium3
+#eliteversion gath1
+#eliteversion gath2
+#notfortier 1
+#tier 2
+#notfortier 3
+#type berytos
+#enditem
+
+#newitem
+#id "berytos3_silver_dim"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/berytos3_silver.png
+#recolormask /graphics/illithid/starchild/robes/tabard/berytos3_recolormask5.png
+#eliteversion berytos3_silver_dark3
+#eliteversion berytos3_gold_dark3
+#eliteversion gath1
+#eliteversion gath2
+#notfortier 1
+#tier 2
+#notfortier 3
+#type berytos
+#enditem
+
+#newitem
+#id "berytos3_silver_light2"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/berytos3_silver.png
+#recolormask /graphics/illithid/starchild/robes/tabard/berytos3_recolormask3.png
+#eliteversion berytos3_gold_light3
+#eliteversion berytos3_silver_medium3
+#eliteversion berytos3_silver_dark3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type berytos
+#enditem
+
+#newitem
+#id "berytos3_silver_medium2"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/berytos3_silver.png
+#recolormask /graphics/illithid/starchild/robes/tabard/berytos3_recolormask4.png
+#eliteversion berytos3_silver_light3
+#eliteversion berytos3_gold_medium3
+#eliteversion berytos3_silver_dark3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type berytos
+#enditem
+
+#newitem
+#id "berytos3_silver_dark2"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/berytos3_silver.png
+#recolormask /graphics/illithid/starchild/robes/tabard/berytos3_recolormask5.png
+#eliteversion berytos3_silver_light3
+#eliteversion berytos3_silver_medium3
+#eliteversion berytos3_gold_dark3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type berytos
+#enditem
+
+#newitem
+#id "berytos3_silver_light3"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/berytos3_silver.png
+#recolormask /graphics/illithid/starchild/robes/tabard/berytos3_recolormask3.png
+#notfortier 1
+#notfortier 2
+#tier 3
+#type berytos
+#enditem
+
+#newitem
+#id "berytos3_silver_medium3"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/berytos3_silver.png
+#recolormask /graphics/illithid/starchild/robes/tabard/berytos3_recolormask4.png
+#notfortier 1
+#notfortier 2
+#tier 3
+#type berytos
+#enditem
+
+#newitem
+#id "berytos3_silver_dark3"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/berytos3_silver.png
+#recolormask /graphics/illithid/starchild/robes/tabard/berytos3_recolormask5.png
+#notfortier 1
+#notfortier 2
+#tier 3
+#type berytos
+#enditem
+
+
+#newitem
+#id "berytos3_gold_pale"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/berytos3_gold.png
+#recolormask /graphics/illithid/starchild/robes/tabard/berytos3_recolormask3.png
+#eliteversion berytos3_silver_light3
+#eliteversion berytos3_gold_light3
+#eliteversion gath1
+#eliteversion gath2
+#notfortier 1
+#tier 2
+#notfortier 3
+#type berytos
+#enditem
+
+#newitem
+#id "berytos3_gold_dull"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/berytos3_gold.png
+#recolormask /graphics/illithid/starchild/robes/tabard/berytos3_recolormask4.png
+#eliteversion berytos3_silver_medium3
+#eliteversion berytos3_gold_medium3
+#eliteversion gath1
+#eliteversion gath2
+#notfortier 1
+#tier 2
+#notfortier 3
+#type berytos
+#enditem
+
+#newitem
+#id "berytos3_gold_dim"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/berytos3_gold.png
+#recolormask /graphics/illithid/starchild/robes/tabard/berytos3_recolormask5.png
+#eliteversion berytos3_silver_dark3
+#eliteversion berytos3_gold_dark3
+#eliteversion gath1
+#eliteversion gath2
+#notfortier 1
+#tier 2
+#notfortier 3
+#type berytos
+#enditem
+
+#newitem
+#id "berytos3_gold_light2"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/berytos3_gold.png
+#recolormask /graphics/illithid/starchild/robes/tabard/berytos3_recolormask3.png
+#eliteversion berytos3_silver_light3
+#eliteversion berytos3_gold_medium3
+#eliteversion berytos3_gold_dark3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type berytos
+#enditem
+
+#newitem
+#id "berytos3_gold_medium2"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/berytos3_gold.png
+#recolormask /graphics/illithid/starchild/robes/tabard/berytos3_recolormask4.png
+#eliteversion berytos3_gold_light3
+#eliteversion berytos3_silver_medium3
+#eliteversion berytos3_gold_dark3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type berytos
+#enditem
+
+#newitem
+#id "berytos3_gold_dark2"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/berytos3_gold.png
+#recolormask /graphics/illithid/starchild/robes/tabard/berytos3_recolormask5.png
+#eliteversion berytos3_gold_light3
+#eliteversion berytos3_gold_medium3
+#eliteversion berytos3_silver_dark3
+#notfortier 1
+#tier 2
+#notfortier 3
+#type berytos
+#enditem
+
+#newitem
+#id "berytos3_gold_light3"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/berytos3_gold.png
+#recolormask /graphics/illithid/starchild/robes/tabard/berytos3_recolormask3.png
+#notfortier 1
+#notfortier 2
+#tier 3
+#type berytos
+#enditem
+
+#newitem
+#id "berytos3_gold_medium3"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/berytos3_gold.png
+#recolormask /graphics/illithid/starchild/robes/tabard/berytos3_recolormask4.png
+#notfortier 1
+#notfortier 2
+#tier 3
+#type berytos
+#enditem
+
+#newitem
+#id "berytos3_gold_dark3"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/berytos3_gold.png
+#recolormask /graphics/illithid/starchild/robes/tabard/berytos3_recolormask5.png
+#notfortier 1
+#notfortier 2
+#tier 3
+#type berytos
+#enditem
+
+
+
+-- Gath-stle tabard
+
+#newitem
+#id "gath"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/gath.png
+#eliteversion gath1
+#eliteversion gath2
+#notfortier 1
+#tier 2
+#notfortier 3
+#type gath
+#enditem
+
+#newitem
+#id "gath1"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/gath.png
+#recolormask /graphics/illithid/starchild/robes/tabard/gath_recolormask.png
+#notfortier 1
+#notfortier 2
+#tier 3
+#type gath
+#enditem
+
+#newitem
+#id "gath2"
+#gameid -1
+#sprite /graphics/illithid/starchild/robes/tabard/gath2.png
+#recolormask /graphics/illithid/starchild/robes/tabard/gath2_recolormask.png
+#notfortier 1
+#notfortier 2
+#tier 3
+#type gath
+#enditem

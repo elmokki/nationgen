@@ -1,0 +1,34 @@
+#newitem
+#name "light crossbow"
+#gameid light_crossbow
+#sprite /graphics/boreal/ranged/weapon/lightcrossbow.png
+#theme "advanced"
+#basechance 0.75
+#define "#gcost +2"
+#needs quiver quiver
+#enditem
+
+#newitem
+#name "crossbow"
+#gameid 25
+#sprite /graphics/boreal/ranged/weapon/crossbow.png
+#theme "advanced"
+#needs quiver quiver
+#enditem
+
+#newitem
+#name "steel crossbow"
+#gameid steel_crossbow
+#sprite /graphics/boreal/ranged/weapon/steelcrossbow.png
+#theme "advanced"
+#basechance 0.75
+#needs quiver steelcrossbow
+#enditem
+
+#newitem
+#name "arbalest"
+#gameid 26
+#sprite /graphics/boreal/ranged/weapon/arbalest.png
+#theme "advanced"
+#basechance 0.75
+#enditem

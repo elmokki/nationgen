@@ -1,0 +1,90 @@
+-- Robe templates of various colors and styles
+
+#newitem
+#name "robes_plain"
+#gameid -1
+#armor
+#eliteversion "robes_fancy"
+#eliteversion "robes_arco"
+#eliteversion "robes_rhaga"
+#tier 1
+#notfortier 2
+#notfortier 3
+#needstype belt belt
+#enditem
+
+#newitem
+#name "robes_fancy"
+#gameid 158
+#armor
+#eliteversion "robes_ornate"
+#eliteversion "robes_arco"
+#eliteversion "robes_rhaga"
+#notfortier 1
+#tier 2
+#tier 3
+#needstype belt belt
+#enditem
+
+#newitem
+#name "robes_ornate"
+#gameid 158
+#armor
+#eliteversion "robes_ornate"
+#eliteversion "robes_arco"
+#eliteversion "robes_rhaga"
+#notfortier 1
+#tier 2
+#tier 3
+#needstype belt belt
+#needstype trim collar
+#enditem
+
+#newitem
+#name "robes_arco_simple"
+#basechance 0.25
+#gameid -1
+#armor
+#eliteversion "robes_arco"
+#eliteversion "robes_rhaga"
+#tier 1
+#notfortier 2
+#notfortier 3
+#needstype trim arco
+#enditem
+
+
+#newitem
+#name "robes_arco"
+#gameid 158
+#armor
+#eliteversion "robes_arco"
+#eliteversion "robes_rhaga"
+#notfortier 1
+#tier 2
+#tier 3
+#needstype trim arco
+#enditem
+
+#newitem
+#name "robes_rhaga_simple"
+#basechance 0.25
+#gameid -1
+#armor
+#eliteversion "robes_rhaga"
+#tier 1
+#notfortier 2
+#notfortier 3
+#needstype trim rhaga
+#enditem
+
+#newitem
+#name "robes_rhaga"
+#gameid 158
+#armor
+#eliteversion "robes_rhaga"
+#notfortier 1
+#tier 2
+#tier 3
+#needstype trim rhaga
+#enditem

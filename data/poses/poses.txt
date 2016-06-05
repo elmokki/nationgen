@@ -5,6 +5,9 @@
 #load humancavalry ./data/poses/human/humancavalry.txt
 #load humanmage ./data/poses/human/humanmage.txt
 
+---- Boreal humans (Man/Ulm)
+#load blacksteeltroops ./data/poses/human/blacksteeltroops.txt
+
 ---- Machakan
 #load machakantroops ./data/poses/machakan/troops.txt
 #load machakanmages ./data/poses/machakan/mages.txt
@@ -154,8 +157,18 @@
 
 ---- Assorted "foulspawn"
 #load foulspawninfantry ./data/poses/foulspawn/small/infantry.txt
+#load foulspawnranged ./data/poses/foulspawn/small/ranged.txt
 #load foulspawncavalry ./data/poses/foulspawn/small/cavalry.txt
 #load foulspawnmages ./data/poses/foulspawn/small/mages.txt
+
+---- Illithids and various hybrids
+-- #load hybridtroops ./data/poses/illithid/hybrids.txt
+#load starchildtroops ./data/poses/illithid/starchild_troops.txt
+#load starchildmages ./data/poses/illithid/starchild_mages.txt
+
+---- Ogres and related oversized humanoids
+#load ogretroops ./data/poses/ogre/infantry_ogre.txt
+#load ogremages ./data/poses/ogre/caster_ogre.txt
 
 ---- Montag test
 #load bandartroopst ./data/poses/montagtest/bandarinfantry.txt

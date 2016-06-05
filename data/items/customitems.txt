@@ -266,6 +266,82 @@
 #command "#twohanded"
 #end
 
+
+--- Generic (and slightly nerfed) black steel armor
+
+#new customarmor
+#name blackmail_cuirass
+#armor
+#command "#type 5"
+#command "#prot 13"
+#command "#def -1"
+#command "#enc 1"
+#command "#rcost 10"
+#command "#ironarmor"
+#command "#name 'Black Steel Chain Cuirass'"
+#end
+
+#new customarmor
+#name blackmail_hauberk
+#armor
+#command "#type 5"
+#command "#prot 16"
+#command "#def -2"
+#command "#enc 2"
+#command "#rcost 14"
+#command "#ironarmor"
+#command "#name 'Black Steel Chain Hauberk'"
+#end
+
+#new customarmor
+#name blackmail_full
+#armor
+#command "#type 5"
+#command "#prot 19"
+#command "#def -3"
+#command "#enc 3"
+#command "#rcost 18"
+#command "#ironarmor"
+#command "#name 'Black Steel Full Chain'"
+#end
+
+#new customarmor
+#name blackplate_cuirass
+#armor
+#command "#type 5"
+#command "#prot 15"
+#command "#def -1"
+#command "#enc 2"
+#command "#rcost 16"
+#command "#ironarmor"
+#command "#name 'Black Steel Plate Cuirass'"
+#end
+
+#new customarmor
+#name blackplate_hauberk
+#armor
+#command "#type 5"
+#command "#prot 19"
+#command "#def -2"
+#command "#enc 3"
+#command "#rcost 21"
+#command "#ironarmor"
+#command "#name 'Black Steel Plate Hauberk'"
+#end
+
+#new customarmor
+#name blackplate_full
+#armor
+#command "#type 5"
+#command "#prot 22"
+#command "#def -3"
+#command "#enc 4"
+#command "#rcost 26"
+#command "#ironarmor"
+#command "#name 'Black Steel Full Plate'"
+#end
+
+
 --- Siddhe Golden Axe
 
 #new customweapon

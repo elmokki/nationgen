@@ -1,0 +1,171 @@
+-- Sharkskin armor
+
+#newitem
+#name "sharkskin_cuirass"
+#gameid 188
+#sprite /graphics/illithid/starchild/armor/sharkskin_cuirass.png
+#armor
+#theme "primitive"
+#theme "leather"
+#theme "amphibious"
+#enditem
+
+
+-- Shell armor
+
+#newitem
+#name "shell_armor"
+#gameid 140
+#sprite /graphics/illithid/starchild/armor/shell_cuirass.png
+#armor
+#theme "primitive"
+#theme "bone"
+#theme "amphibious"
+#enditem
+
+
+-- Coral armor
+
+#newitem
+#name "coral_cuirass"
+#gameid 22
+#sprite /graphics/illithid/starchild/armor/coral_cuirass.png
+#armor
+#define "#poisonarmor"
+#theme "coral"
+#theme "amphibious"
+#enditem
+
+
+-- Leather armor
+
+#newitem
+#name "leather_cuirass"
+#gameid 5
+#sprite /graphics/illithid/starchild/armor/leather_cuirass.png
+#armor
+#theme "primitive"
+#theme "leather"
+#theme "terrestrial"
+#enditem
+
+#newitem
+#name "leather_full"
+#gameid 15
+#sprite /graphics/illithid/starchild/armor/leather_full.png
+#armor
+#theme "primitive"
+#theme "leather"
+#theme "terrestrial"
+#enditem
+
+
+--- Bronze Scale
+
+#newitem
+#name "bronze_scale_cuirass"
+#gameid 142
+#sprite /graphics/illithid/starchild/armor/scale_bronze_cuirass.png
+#armor
+#theme "bronze"
+#theme "amphibious"
+#enditem
+
+#newitem
+#name "bronze_scale_full"
+#gameid bronzescale_full
+#sprite /graphics/illithid/starchild/armor/scale_bronze_full.png
+#armor
+#theme "bronze"
+#theme "advanced"
+#theme "amphibious"
+#enditem
+
+
+--- Bronze Plate
+
+#newitem
+#name "bronze_plate_cuirass"
+#gameid 100
+#sprite /graphics/illithid/starchild/armor/plate_bronze_cuirass.png
+#tag "eliteversion bronze_cuirass_elite"
+#armor
+#theme "bronze"
+#theme "amphibious"
+#enditem
+
+#newitem
+#name "bronze_plate_hauberk"
+#gameid 136
+#sprite /graphics/illithid/starchild/armor/plate_bronze_full.png
+#armor
+#theme "bronze"
+#theme "advanced"
+#theme "amphibious"
+#enditem
+
+
+--- Iron Scale
+
+#newitem
+#name "scale_cuirass"
+#gameid 7
+#sprite /graphics/illithid/starchild/armor/scale_cuirass.png
+#armor
+#theme "iron"
+#theme "terrestrial"
+#enditem
+
+#newitem
+#name "scale_full"
+#gameid 17
+#sprite /graphics/illithid/starchild/armor/scale_full.png
+#armor
+#theme "iron"
+#theme "advanced"
+#theme "terrestrial"
+#enditem
+
+
+--- Iron Plate
+
+#newitem
+#name "plate_cuirass"
+#gameid 9
+#sprite /graphics/illithid/starchild/armor/plate_cuirass.png
+#armor
+#theme "iron"
+#theme "terrestrial"
+#enditem
+
+#newitem
+#name "plate_full"
+#gameid 14
+#sprite /graphics/illithid/starchild/armor/plate_full.png
+#armor
+#theme "iron"
+#theme "advanced"
+#theme "terrestrial"
+#enditem
+
+
+--- Meteorite Plate
+
+#newitem
+#name "meteorite_cuirass"
+#gameid 210
+#sprite /graphics/illithid/starchild/armor/plate_cuirass.png
+#armor
+#theme "iron"
+#theme "amphibious"
+#enditem
+
+#newitem
+#name "meteorite_armor"
+#gameid 53
+#sprite /graphics/illithid/starchild/armor/plate_full.png
+#armor
+#theme "iron"
+#theme "advanced"
+#theme "amphibious"
+#enditem

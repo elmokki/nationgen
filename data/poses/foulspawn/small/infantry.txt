@@ -5,17 +5,69 @@
 -- #basechance 0
 #name "foulspawn infantry"
 #role "infantry"
-#role "elite infantry"
-#role "sacred infantry"
 
 #forcedname "Foulspawn Infantry"
 
 #montagpose "degenerate infantry" 2
 #montagpose "normal infantry" 4
 #montagpose "winged infantry" 2
+-- #montagpose "small centauroid" 1
 
-#command "#gcost 10"
+#adjustmentcommand "#gcost 10"
 #command "#rcost 10"
+
+#load basesprite /data/items/foulspawn/small/bases_infantry.txt
+
+#load armor /data/items/foulspawn/small/armor_placeholder.txt
+#load helmet /data/items/foulspawn/small/helmet_placeholder.txt
+
+#load weapon /data/items/foulspawn/small/weapon_placeholder.txt
+
+#maxunits 2
+#endpose
+
+#newpose
+#basechance 250000000
+-- #basechance 0
+#name "foulspawn heavy infantry"
+#role "infantry"
+
+#forcedname "Foulspawn Heavy Infantry"
+
+#montagpose "ogre degenerates" 3
+#montagpose "ogre infantry" 3
+-- #montagpose "small centauroid" 2
+
+#adjustmentcommand "#gcost 25"
+#command "#rcost 10"
+
+#load basesprite /data/items/foulspawn/medium/bases_infantry.txt
+
+#load armor /data/items/foulspawn/small/armor_placeholder.txt
+#load helmet /data/items/foulspawn/small/helmet_placeholder.txt
+
+#load weapon /data/items/foulspawn/small/weapon_placeholder.txt
+
+#maxunits 1
+#endpose
+
+#newpose
+#basechance 500000000
+-- #basechance 0
+#name "foulspawn elite infantry"
+#role "elite infantry"
+#role "sacred infantry"
+
+#forcedname "Foulspawn Elite Infantry"
+
+#montagpose "ogre degenerates" 3
+#montagpose "normal infantry" 6
+#montagpose "winged infantry" 3
+#montagpose "ogre infantry" 3
+-- #montagpose "small centauroid" 1
+
+#adjustmentcommand "#gcost 35"
+#command "#rcost 15"
 
 #load basesprite /data/items/foulspawn/small/bases_infantry.txt
 
@@ -45,7 +97,7 @@
 #command "#mor -1"
 #command "#mr -1"
 
-#renderorder "shadow bonusweapon basesprite rarm weapon rleg lleg larm head overlay shirt pants armor weapon offhandw hands helmet offhanda"
+#renderorder "shadow bonusweapon basesprite rarm weapon rleg lleg larm head overlay shirt pants armor rhand offhandw lhand helmet offhanda"
 
 #no_free_fist
 
@@ -58,7 +110,8 @@
 #load shadow /data/items/foulspawn/small/shadow.txt
 #load shirt /data/items/foulspawn/small/shirt.txt
 #load pants /data/items/foulspawn/small/pants.txt
-#load hands /data/items/foulspawn/small/hands.txt
+#load rhand /data/items/foulspawn/small/rhand.txt
+#load lhand /data/items/foulspawn/small/lhand.txt
 
 #load armor /data/items/foulspawn/small/armor_placeholder.txt
 #load helmet /data/items/foulspawn/small/helmet_placeholder.txt
@@ -98,7 +151,7 @@
 #role "elite infantry"
 #role "sacred infantry"
 
-#renderorder "shadow bonusweapon basesprite rarm weapon rleg lleg larm head overlay shirt pants armor offhandw hands helmet offhanda"
+#renderorder "shadow bonusweapon basesprite rarm weapon rhand rleg lleg larm head overlay shirt pants armor offhandw lhand helmet offhanda"
 
 #no_free_fist
 
@@ -111,7 +164,8 @@
 #load shadow /data/items/foulspawn/small/shadow.txt
 #load shirt /data/items/foulspawn/small/shirt.txt
 #load pants /data/items/foulspawn/small/pants.txt
-#load hands /data/items/foulspawn/small/hands.txt
+#load rhand /data/items/foulspawn/small/rhand.txt
+#load lhand /data/items/foulspawn/small/lhand.txt
 
 #load armor /data/items/foulspawn/small/armor.txt
 #load helmet /data/items/foulspawn/small/helmet.txt
@@ -148,7 +202,7 @@
 #role "elite infantry"
 #role "sacred infantry"
 
-#renderorder "shadow wings basesprite rarm weapon rleg lleg larm head shirt pants armor weapon offhandw hands helmet offhanda overlay"
+#renderorder "shadow wings basesprite rarm weapon rleg lleg larm head shirt pants armor rhand offhandw lhand helmet offhanda overlay"
 
 #no_free_fist
 
@@ -161,7 +215,8 @@
 #load shadow /data/items/foulspawn/small/shadow.txt
 #load shirt /data/items/foulspawn/small/shirt.txt
 #load pants /data/items/foulspawn/small/pants.txt
-#load hands /data/items/foulspawn/small/hands.txt
+#load rhand /data/items/foulspawn/small/rhand.txt
+#load lhand /data/items/foulspawn/small/lhand.txt
 
 #load armor /data/items/foulspawn/mounted/armor.txt
 #load helmet /data/items/foulspawn/small/helmet.txt
@@ -192,6 +247,117 @@
 #endpose
 
 
+#newpose
+#name "ogre degenerates"
+#basechance 0
+#role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
+
+#command "#undisciplined"
+#command "#gcost -5"
+#command "#hp +2"
+#command "#prot +2"
+#command "#att -1"
+#command "#def -2"
+#command "#mor -2"
+#command "#mr -4"
+
+#addthemeinc thisitemslottag not helmet degenerate *0
+#addthemeinc thisitemslottag not head degenerate *0
+#addthemeinc thisitemslottag not weapon degenerate *0
+#addthemeinc thisitemslottag not offhand degenerate *0
+#addthemeinc thisitemslottag not bonusweapon degenerate *0
+
+#renderorder "shadow bonusweapon basesprite rarm weapon rleg lleg larm head overlay armor offhandw rhand lhand lhand_overlay hair helmet offhanda"
+
+#no_free_fist
+
+#load basesprite /data/items/foulspawn/medium/bases.txt
+#load rarm /data/items/foulspawn/medium/rarm.txt
+#load larm /data/items/foulspawn/medium/larm.txt
+#load rleg /data/items/foulspawn/medium/rleg.txt
+#load lleg /data/items/foulspawn/medium/lleg.txt
+#load rhand /data/items/foulspawn/medium/rhand.txt
+#load lhand /data/items/foulspawn/medium/lhand.txt
+#load head /data/items/foulspawn/medium/head.txt
+#load shadow /data/items/foulspawn/medium/shadow.txt
+
+#load armor /data/items/foulspawn/medium/armor_placeholder.txt
+#load helmet /data/items/foulspawn/medium/helmet.txt
+
+#load weapon /data/items/foulspawn/medium/weapon.txt
+#load offhand /data/items/foulspawn/medium/offhand.txt
+
+#load bonusweapon /data/items/foulspawn/medium/bonusweapon.txt
+
+#load debility /data/items/foulspawn/small/debility.txt
+
+#load lhand_overlay /data/items/foulspawn/medium/lhand_overlay.txt
+#load headweapon /data/items/foulspawn/medium/headweapon.txt
+#load hair /data/items/foulspawn/medium/hair.txt
+
+#generateitem 1 debility
+#generateitem 1 offhand
+#generateitem 1 lleg
+#generateitem 1 rleg
+
+#maxvarieties 3
+
+#itemslot hand 0
+#itemslot head 1
+#itemslot misc 2
+
+#endpose
+
+
+
+#newpose
+#name "ogre infantry"
+#basechance 0
+#role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
+
+#renderorder "shadow bonusweapon basesprite rarm weapon rleg lleg larm head overlay armor offhandw rhand lhand lhand_overlay hair helmet offhanda"
+
+#no_free_fist
+
+#load basesprite /data/items/foulspawn/medium/bases.txt
+#load rarm /data/items/foulspawn/medium/rarm.txt
+#load larm /data/items/foulspawn/medium/larm.txt
+#load rleg /data/items/foulspawn/medium/rleg.txt
+#load lleg /data/items/foulspawn/medium/lleg.txt
+#load rhand /data/items/foulspawn/medium/rhand.txt
+#load lhand /data/items/foulspawn/medium/lhand.txt
+#load head /data/items/foulspawn/medium/head.txt
+#load shadow /data/items/foulspawn/medium/shadow.txt
+
+#load armor /data/items/foulspawn/medium/armor.txt
+#load helmet /data/items/foulspawn/medium/helmet.txt
+
+#load weapon /data/items/foulspawn/medium/weapon.txt
+#load offhand /data/items/foulspawn/medium/offhand.txt
+#load offhand /data/items/foulspawn/medium/shield.txt
+#load bonusweapon /data/items/foulspawn/medium/bonusweapon.txt
+
+#load lhand_overlay /data/items/foulspawn/medium/lhand_overlay.txt
+#load headweapon /data/items/foulspawn/medium/headweapon.txt
+#load hair /data/items/foulspawn/medium/hair.txt
+
+#generateitem 1 lleg
+#generateitem 1 rleg
+
+#maxvarieties 3
+
+#itemslot hand 0
+#itemslot head 1
+#itemslot misc 2
+
+#endpose
+
+
+
 
 -------- Scout
 
@@ -199,7 +365,7 @@
 #name "scout"
 #role "scout"
 
-#renderorder "shadow bonusweapon cloakb basesprite rarm weapon rleg lleg larm head overlay shirt pants armor weapon offhandw hands cloakf helmet offhanda"
+#renderorder "shadow bonusweapon cloakb basesprite rarm weapon rleg lleg larm head overlay shirt pants armor rhand offhandw lhand cloakf helmet offhanda"
 
 #no_free_fist
 
@@ -212,7 +378,8 @@
 #load shadow /data/items/foulspawn/small/shadow.txt
 #load shirt /data/items/foulspawn/small/shirt.txt
 #load pants /data/items/foulspawn/small/pants.txt
-#load hands /data/items/foulspawn/small/hands.txt
+#load rhand /data/items/foulspawn/small/rhand.txt
+#load lhand /data/items/foulspawn/small/lhand.txt
 
 #load armor /data/items/foulspawn/small/armor.txt
 #load helmet /data/items/foulspawn/small/helmet.txt

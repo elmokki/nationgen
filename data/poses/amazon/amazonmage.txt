@@ -55,6 +55,8 @@
 #load legs /data/items/amazon/caster/amazonrobes_warrior.txt
 #load cloakf /data/items/human/normal/humancloakf.txt
 #load cloakb /data/items/human/normal/humancloakb.txt
+#load cloakf /data/items/human/normal/themedcloakf.txt
+#load cloakb /data/items/human/normal/themedcloakb.txt
 
 #load hair /data/items/human/normal/humanhair.txt offsetx 0 offsety 1
 #load helmet /data/items/amazon/caster/amazonhelmet_caster.txt
@@ -84,7 +86,7 @@
 #renderorder "shadow cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/amazon/caster/amazonbases_caster.txt
-#load mount /data/items/amazon/caster/amazonmounts_caster.txt offsetx 5 offsety -18
+#load mount /data/items/amazon/caster/amazonmounts_caster.txt 5 -18
 
 #load hands /data/items/amazon/caster/amazonhands_caster.txt
 
@@ -105,8 +107,8 @@
 
 #load offhand /data/items/amazon/caster/amazonshield_caster.txt
 
-#load overlay /data/items/human/human_mounted/mountedoverlay.txt offsetx 5 offsety -18
-#load overlay /data/items/amazon/mounted/amazon_overlays.txt offsetx 5 offsety -18
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+#load overlay /data/items/amazon/mounted/amazon_overlays.txt
 
 #writeslot lanceslot
 #endpose
@@ -135,6 +137,8 @@
 #load legs /data/items/amazon/caster/amazonrobes_warrior.txt
 #load cloakf /data/items/human/normal/humancloakf.txt
 #load cloakb /data/items/human/normal/humancloakb.txt
+#load cloakf /data/items/human/normal/themedcloakf.txt
+#load cloakb /data/items/human/normal/themedcloakb.txt
 
 #load hair /data/items/human/normal/humanhair.txt offsetx 0 offsety 1
 #load helmet /data/items/amazon/caster/amazonhelmet_caster.txt
@@ -164,7 +168,7 @@
 #renderorder "shadow cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/amazon/caster/amazonbases_caster.txt
-#load mount /data/items/amazon/caster/amazonmounts_caster.txt offsetx 5 offsety -18
+#load mount /data/items/amazon/caster/amazonmounts_caster.txt 5 -18
 
 #load hands /data/items/amazon/caster/amazonhands_caster.txt
 
@@ -185,8 +189,8 @@
 
 #load offhand /data/items/amazon/caster/amazonshield_caster.txt
 
-#load overlay /data/items/human/human_mounted/mountedoverlay.txt offsetx 5 offsety -18
-#load overlay /data/items/amazon/mounted/amazon_overlays.txt offsetx 5 offsety -18
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+#load overlay /data/items/amazon/mounted/amazon_overlays.txt
 
 #writeslot lanceslot
 #endpose

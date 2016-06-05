@@ -1,0 +1,191 @@
+#newitem
+#basechance 1
+#id bald_ogre
+#gameid -1
+#armor
+#maxprot 12
+#theme "primitive"
+#theme "naked"
+#enditem
+
+#newitem
+#basechance 3
+#id barehead_ogre
+#gameid -1
+#armor
+#maxprot 12
+#theme "primitive"
+#theme "naked"
+#needstype hair black
+#enditem
+
+#newitem
+#basechance 1
+#id ogre_leathercap
+#gameid 120
+#sprite /graphics/ogre/helmet/leathercap.png
+#armor
+#tag "eliteversion ogre_leathercap_crested"
+#tag "eliteversion ogre_leathercap_reinforced"
+#maxprot 12
+#theme "leather"
+#enditem
+
+#newitem
+#basechance 1
+#id ogre_leathercap_reinforced
+#gameid 119
+#sprite /graphics/ogre/helmet/reinforcedcap.png
+#armor
+#tag "eliteversion ogre_leathercap_crested"
+#maxprot 12
+#theme "leather"
+#enditem
+
+#newitem
+#basechance 1
+#id ogre_leathercap_crested
+#gameid 162
+#sprite /graphics/ogre/helmet/leathercap_crested.png
+#recolormask /graphics/ogre/helmet/crest_recolormask.png
+#armor
+#maxprot 12
+#theme "leather"
+#theme "elite"
+#enditem
+
+#newitem
+#basechance 1
+#id ogre_ironcap
+#gameid 20
+#sprite /graphics/ogre/helmet/ironcap.png
+#armor
+#tag "eliteversion ogre_ironcap_crested"
+#theme "iron"
+#enditem
+
+#newitem
+#basechance 1
+#id ogre_ironcap_crested
+#gameid 20
+#sprite /graphics/ogre/helmet/ironcap_crested.png
+#recolormask /graphics/ogre/helmet/crest_recolormask.png
+#armor
+#theme "iron"
+#theme "elite"
+#enditem
+
+#newitem
+#basechance 1
+#id ogre_bronzecap
+#gameid 135
+#sprite /graphics/ogre/helmet/bronzecap.png
+#armor
+#tag "eliteversion ogre_bronzecap_crested"
+#theme "bronze"
+#enditem
+
+#newitem
+#basechance 1
+#id ogre_bronzecap_crested
+#gameid 135
+#sprite /graphics/ogre/helmet/bronzecap_crested.png
+#recolormask /graphics/ogre/helmet/crest_recolormask.png
+#armor
+#theme "bronze"
+#theme "elite"
+#enditem
+
+#newitem
+#basechance 1
+#id ogre_halfhelm
+#gameid 118
+#sprite /graphics/ogre/helmet/halfhelm.png
+#armor
+#tag "eliteversion ogre_halfhelm_crested"
+#minprot 12
+#theme "iron"
+#enditem
+
+#newitem
+#basechance 1
+#id ogre_halfhelm_crested
+#gameid 118
+#sprite /graphics/ogre/helmet/halfhelm_crested.png
+#recolormask /graphics/ogre/helmet/crest_recolormask.png
+#armor
+#minprot 12
+#theme "iron"
+#theme "elite"
+#enditem
+
+#newitem
+#basechance 1
+#id ogre_halfhelm_bronze
+#gameid bronzehalfhelmet
+#sprite /graphics/ogre/helmet/halfhelm_bronze.png
+#armor
+#tag "eliteversion ogre_halfhelm_bronze_crested"
+#minprot 12
+#theme "bronze"
+#enditem
+
+#newitem
+#basechance 1
+#id ogre_halfhelm_bronze_crested
+#gameid bronzehalfhelmet
+#sprite /graphics/ogre/helmet/halfhelm_bronze_crested.png
+#recolormask /graphics/ogre/helmet/crest_recolormask.png
+#armor
+#minprot 12
+#theme "bronze"
+#theme "elite"
+#enditem
+
+#newitem
+#basechance 1
+#id ogre_fullhelm
+#gameid 21
+#sprite /graphics/ogre/helmet/fullhelm.png
+#armor
+#tag "eliteversion ogre_fullhelm_crested"
+#minprot 14
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#basechance 1
+#id ogre_fullhelm_crested
+#gameid 21
+#sprite /graphics/ogre/helmet/fullhelm_crested.png
+#recolormask /graphics/ogre/helmet/crest_recolormask.png
+#armor
+#minprot 14
+#theme "iron"
+#theme "advanced"
+#theme "elite"
+#enditem
+
+#newitem
+#basechance 1
+#id ogre_fullhelm_bronze
+#gameid 123
+#sprite /graphics/ogre/helmet/fullhelm_bronze.png
+#armor
+#tag "eliteversion ogre_fullhelm_bronze_crested"
+#minprot 14
+#theme "bronze"
+#enditem
+
+#newitem
+#basechance 1
+#id ogre_fullhelm_bronze_crested
+#gameid 123
+#sprite /graphics/ogre/helmet/fullhelm_bronze_crested.png
+#recolormask /graphics/ogre/helmet/crest_recolormask.png
+#armor
+#minprot 14
+#theme "bronze"
+#theme "elite"
+#enditem

@@ -1,12 +1,14 @@
 #newrace
 #name "Foulspawn"
-#basechance 10000
+#basechance 0.1
+-- #basechance 10000
 
-#longsyllables /data/names/nations/human/longsyllables.txt
-#shortsyllables /data/names/nations/human/shortsyllables.txt
-#suffixes /data/names/nations/human/suffixes.txt
+
+#racethemes foulspawn_themes
+#freetheme language
 
 #pose foulspawninfantry
+#pose foulspawnranged
 #pose foulspawncavalry
 #pose foulspawnmages
 
@@ -18,9 +20,13 @@
 #magicpriority nature 2
 
 -- Change this later
-#maxprimaryracetroops 3
+#maxprimaryracetroops 4
 #maxthisracetroops_as_secondary 2
 
 #maxtroops 8
 #mintroops 4
+
+#generationchance ranged 0.5
+#sacredrangedchance 0.1
+
 #endrace

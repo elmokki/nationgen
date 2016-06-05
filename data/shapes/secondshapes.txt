@@ -1114,6 +1114,18 @@
 #end
 
 #new secondshape
+#name "seadogmount"
+#command "#copystats 1064"
+#command "#copyspr 1064"
+#command "#magicboost 53 -5"
+#command "#itemslots 12288"
+#command "#transformation 0"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
 #name "wingedlionmount"
 #command "#copystats 628"
 #command "#spr1 ./graphics/mounts/standard/wingedlion.png"

@@ -1,0 +1,178 @@
+-- Generic theme with high diversity and low cohesion
+#newtheme
+#type techlevel
+#name default
+#basechance 4
+#themeinc theme iron *1
+#themeinc theme bronze *0.125
+#endtheme
+
+-- Weights: EA 1, MA 1, LA 0.5
+#newtheme
+#type techlevel
+#name primitive
+#basechance 1
+#chanceinc era 3 -0.5
+#themeinc theme advanced *0.05
+#themeinc theme iron *0.5
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *2
+#themeinc theme naked *2
+#themeinc theme primitive *2
+#endtheme
+
+-- Weights: EA 2, MA 1, LA 0.25
+#newtheme
+#type techlevel
+#name bronze
+#basechance 2
+#chanceinc era 2 -1
+#chanceinc era 3 -1.5
+#themeinc theme advanced *0.05
+#themeinc theme iron *0.25
+#themeinc theme bronze *2
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *0.5
+#themeinc theme primitive *0.5
+#endtheme
+
+-- Weights: EA 0.25, MA 1, LA 2
+#newtheme
+#type techlevel
+#name advanced
+#basechance 0.25
+#chanceinc era 3 1.75
+#chanceinc era 2 0.75
+#themeinc theme advanced *2
+#themeinc theme iron *2
+#themeinc theme bronze *0.05
+#themeinc theme wood *0.5
+#themeinc theme leather *0.5
+#themeinc theme naked *0.05
+#themeinc theme primitive *0.05
+#endtheme
+
+
+-- Demographic themes (mandatory)
+
+-- Standard "northern European" ogres
+#newtheme
+#type demographic
+#name ogre
+#theme boreal
+#basechance 1
+#chanceinc primaryrace 'Boreal human' *5
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#themeinc theme boreal *1000
+#themeinc theme oriental *0.001
+#racedefinition "#longsyllables /data/names/nations/human/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/human/shortsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/human/suffixes.txt"
+#racedefinition "#nationcommand '#idealcold +1'"
+#racedefinition "#nationcommand '#gods europegods"
+#racedefinition "#boreal"
+#racedefinition "#pose ogretroops"
+#racedefinition "#pose ogremages"
+-- #racedefinition "#pose borealgiants"
+#endtheme
+
+-- O-Bakemono 
+#newtheme
+#type demographic
+#name bakemono
+#theme oriental
+#basechance 0
+#chanceinc primaryrace 'Oriental human' *5
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *0.001
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#themeinc theme oriental *1000
+#themeinc theme boreal *0.001
+#racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/oriental/suffixes.txt"
+#racedefinition "#nationcommand '#gods easterngods"
+#racedefinition "#oriental"
+#racedefinition "#visiblename 'O-Bakemono'"
+
+#racedefinition "#pose ogretroops"
+#racedefinition "#pose ogremages"
+
+-- #racedefinition "#pose obakemonotroops"
+-- #racedefinition "#pose obakemonomages"
+-- #racedefinition "#pose orientalgiants"
+#endtheme
+
+-- "northern European" ettin
+#newtheme
+#type demographic
+#name ettin
+#theme boreal
+#basechance 0
+#chanceinc primaryrace 'Boreal human' *5
+#themeinc theme advanced *0.5
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *2
+#themeinc theme boreal *1000
+#themeinc theme oriental *0.001
+#racedefinition "#longsyllables /data/names/nations/human/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/human/shortsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/human/suffixes.txt"
+#racedefinition "#nationcommand '#idealcold +1'"
+#racedefinition "#nationcommand '#gods europegods"
+#racedefinition "#boreal"
+#racedefinition "#visiblename 'Ettin'"
+
+#racedefinition "#pose ogretroops"
+#racedefinition "#pose ogremages"
+
+-- #racedefinition "#pose ettinlingtroops"
+-- #racedefinition "#pose ettinlingmages"
+-- #racedefinition "#pose ettins"
+#endtheme
+
+
+-- Social themes
+
+-- Weights: EA 0.5, MA 0.5, LA 0.5
+#newtheme
+#type social
+#name slaver
+#basechance 0.05
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#themeinc theme slave *20
+#themeinc theme free *0.5
+#themeinc racename caveman *5
+#themeinc racename primate *5
+#themeinc racename "Boreal human" *5
+#themeinc racename hoburg *5
+#themeinc racename caelian *0.1
+#themeinc racename van *0.1
+#themeinc racename sidhe *0.1
+#themeinc racename tengu *0.1
+#secondaryracedefinition "#freetemplatefilter slavetemplate slave"
+#racedefinition "#secondaryracetroopmod 100"
+#racedefinition "#secondaryracemagemod -100"
+#endtheme

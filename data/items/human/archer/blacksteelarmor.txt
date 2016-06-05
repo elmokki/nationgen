@@ -1,0 +1,86 @@
+
+--- Chain Mail
+#newitem
+#name "chain cuirass"
+#gameid blackmail_cuirass
+#sprite /graphics/bodyarmor/standard/blackmail_cuirass.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "chain hauberk short"
+#gameid blackmail_hauberk
+#basechance 0.25
+#sprite /graphics/bodyarmor/archer/blackmail_hauberk1.png
+#armor
+#needs hands mail
+#theme "iron"
+#enditem
+
+#newitem
+#name "chain hauberk long"
+#gameid blackmail_hauberk
+#basechance 0.5
+#sprite /graphics/bodyarmor/standard/blackmail_hauberk2.png
+#armor
+#theme "primitive"
+#theme "iron"
+#enditem
+
+#newitem
+#name "full chain"
+#gameid blackmail_full
+#basechance 0.125
+#sprite /graphics/bodyarmor/archer/blackmail_hauberk1.png
+#armor
+#needs hands full
+#needs legs platepants
+#theme "iron"
+#enditem
+
+#newitem
+#name "full chain long"
+#gameid blackmail_full
+#basechance 0.25
+#sprite /graphics/bodyarmor/archer/blackmail_hauberk3.png
+#armor
+#needs hands mail
+#theme "primitive"
+#theme "iron"
+#enditem
+
+
+--- Plate
+#newitem
+#name "plate cuirass"
+#gameid blackplate_cuirass
+#sprite /graphics/bodyarmor/standard/blackplate_cuirass.png
+#armor
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem
+#name "plate hauberk"
+#gameid blackplate_hauberk
+#basechance 0.25
+#sprite /graphics/bodyarmor/archer/blackplate_hauberk.png
+#armor
+#needs hands plate
+#theme "advanced"
+#theme "iron"
+#tag "name mounted knight"
+#enditem
+
+#newitem -- full plate
+#name "full plate"
+#gameid blackplate_full
+#basechance 0.125
+#sprite /graphics/bodyarmor/archer/blackplate_hauberk.png
+#armor
+#needs legs platepants
+#needs hands full
+#theme "advanced"
+#theme "iron"
+#enditem

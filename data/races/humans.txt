@@ -1,6 +1,9 @@
 #newrace
-#name "Human"
-#basechance 0.5
+#name "Boreal human"
+#visiblename "Human"
+#basechance 0.3
+
+#racethemes boreal_themes
 
 #all_troops_sacred
 #all_troops_elite
@@ -8,11 +11,10 @@
 #pose humaninfantry
 #pose humancavalry
 #pose humanranged
-
--- Temporarily including sleepers until barbarians are created
+#pose humanmage
 #pose sleepertroops
 
-#pose humanmage
+#spritegenpose blacksteeltroops
 
 #longsyllables /data/names/nations/human/longsyllables.txt
 #shortsyllables /data/names/nations/human/shortsyllables.txt
@@ -30,6 +32,7 @@
 
 #unitcommand "#nametype 102"
 
+#boreal
 #gods europegods
 #specialcommanderfilters default_specialcommanderfilters
 #specialcommanderfilters specialcommanderfilters_extended
