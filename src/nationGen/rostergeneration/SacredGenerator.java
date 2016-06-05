@@ -622,8 +622,8 @@ public class SacredGenerator extends TroopGenerator {
 				highestcaponlychance = Double.parseDouble(str.substring(1));
 		}
 		
-		if(highestcaponlychance < ((power + rating) / 12 + 0.3))
-			highestcaponlychance = (power + rating) / 12 + 0.3;
+		if(highestcaponlychance < ((power + rating) / 10 + 0.3))
+			highestcaponlychance = (power + rating) / 10 + 0.3;
 		
 		if(random.nextDouble() < highestcaponlychance)
 			u.caponly = true;
