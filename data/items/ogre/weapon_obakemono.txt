@@ -1,0 +1,141 @@
+
+-- 1h weapons
+#newitem
+#id club
+#gameid 252
+#sprite /graphics/ogre/weapon/club.png
+#theme "primitive"
+#theme "wood"
+#enditem
+
+#newitem
+#id spiked_club
+#gameid 593
+#sprite /graphics/ogre/weapon/spikedclub.png
+#theme "primitive"
+#theme "wood"
+#enditem
+
+#newitem
+#id hammer
+#gameid 13
+#sprite /graphics/ogre/weapon/hammer.png
+#theme "iron"
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/ogre/weapon/mace.png
+#enditem
+
+#newitem
+#id wakizashi
+#gameid 377
+#sprite /graphics/monkey/weapon/bandar/wakizashi.png
+#offsetx -1
+#offsety -8
+#theme "iron"
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#sprite /graphics/highmen/weapons/falchion.png
+#offsetx 1
+#offsety -1
+#theme "iron"
+#enditem
+
+
+-- 2h weapons
+#newitem
+#id spear
+#gameid 1
+#sprite /graphics/highmen/weapons/spear.png
+#offsetx 1
+#offsety 0
+#theme "iron"
+#enditem
+
+#newitem
+#id longspear
+#gameid 315
+#sprite /graphics/highmen/weapons/spear_long.png
+#offsetx 1
+#offsety 0
+#theme "iron"
+#enditem
+
+#newitem
+#id yari
+#gameid 376
+#sprite /graphics/monkey/weapon/bandar/longspear.png
+#offsetx 3
+#offsety -8
+#theme "iron"
+#enditem
+
+#newitem
+#id naginata
+#gameid 380
+#sprite /graphics/monkey/weapon/bandar/naginata.png
+#offsetx 1
+#offsety -9
+#theme "iron"
+#enditem
+
+#newitem
+#id great_club
+#gameid 165
+#sprite /graphics/highmen/weapons/greatclub.png
+#offsetx 1
+#offsety 0
+#theme "primitive"
+#theme "wood"
+#troopweapon
+#enditem
+
+#newitem
+#id cudgel
+#gameid 363
+#sprite /graphics/highmen/weapons/ironcudgel.png
+#offsetx 2
+#offsety 0
+#theme "primitive"
+#theme "iron"
+#troopweapon
+#enditem
+
+#newitem
+#id katana
+#gameid 378
+#sprite /graphics/tengu/weapons/oversized/katana_oh.png
+#offsetx 3
+#offsety 13
+#theme "iron"
+#troopweapon
+#needs offhand none
+#enditem
+
+#newitem
+#id nodachi
+#gameid 379
+#sprite /graphics/tengu/weapons/oversized/nodachi_oh.png
+#offsetx 3
+#offsety 13
+#theme "iron"
+#troopweapon
+#needs offhand none
+#enditem
+
+#newitem
+#id quarterstaff
+#basechance 0.125
+#gameid 7
+#sprite /graphics/highmen/weapons/quarterstaff.png
+#offsetx 1
+#offsety 0
+#troopweapon
+#theme "wood"
+#enditem
