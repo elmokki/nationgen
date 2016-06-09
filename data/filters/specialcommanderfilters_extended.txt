@@ -97,7 +97,7 @@
 #name "wolfherd"
 #command "#makemonsters1 284"
 #command "#gcost +30"
-#unitname "Woldherd"
+#unitname "Wolfherd"
 #unitname "Wolf Tamer"
 #basechance 0.1
 #chanceinc magic nature 0.5
@@ -146,6 +146,31 @@
 #chanceinc magic nature 0.5
 #caponlychance 0.95
 #description "is able to herd goats."
+#pose role infantry
+#themeinc theme herder *25
+#themeinc theme peasant *25
+#themeinc theme leather *10
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +40"
+#possiblecommand stealth "#gcost +20"
+#end
+
+#new
+#name "swanherd"
+#command "#makemonsters1 2929"
+#command "#gcost +30"
+#unitname "Swanherd"
+#unitname "Swan Keeper"
+#basechance 0.05
+#chanceinc magic nature water 0.5
+#caponlychance 0.99
+#description "is able to herd swans."
+#theme "fae"
+#theme "swantotem"
+#theme "birdtotem"
+#theme "totemanimal"
 #pose role infantry
 #themeinc theme herder *25
 #themeinc theme peasant *25

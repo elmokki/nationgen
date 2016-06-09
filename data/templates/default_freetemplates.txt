@@ -57,6 +57,30 @@
 #theme militia
 #end
 
+-- Undisciplined militia
+#new
+#basechance 0.5
+#name "militia"
+#maxvarieties 1
+#chanceinc "pose mounted *0"
+#chanceinc "pose chariot *0"
+#chanceinc "unittag noble *0"
+#chanceinc "itemtag  noble *0"
+#chanceinc "itemtag not undisciplined_militia *0"
+#chanceinc "tag cannot_be_militia *0"
+#command "#def -1"
+#command "#att -1"
+#command "#gcost *0.8"
+#command "#mor -2"
+#command "#prec -3"
+#command "#undisciplined"
+#themeinc "thisarmorprot 8 *0.50"
+#themeinc "thisarmorprot 10 *0.05"
+#themeinc "thisarmorprot 12 *0.01"
+#themeinc "thisitemtheme militia *10"
+#theme militia
+#end
+
 -- Normal militia
 #new
 #basechance 0.5

@@ -52,6 +52,50 @@
 #chanceinc "prot above 10 *0"
 #end
 
+----- Hoplite for heavy formation spears
+
+#new 
+#name "hoplite"
+#basechance 0
+
+#type weapon
+#chanceinc personalcommand #formationfighter 0.01
+-- Spear
+#chanceinc slot weapon 1 *50
+#chanceinc slot weapon 643 *50
+#chanceinc slot weapon 373 *50
+#chanceinc slot weapon giantspear *50
+#chanceinc slot weapon giantspear_bronze *50
+#chanceinc slot weapon giantmagicspear *50
+#chanceinc slot weapon 473 *50
+-- Coral Spears
+#chanceinc slot weapon 31 *50
+#chanceinc slot weapon corallongspear *150
+-- Long Spear
+#chanceinc slot weapon 28 *150
+#chanceinc slot weapon 644 *150
+#chanceinc slot weapon 485 *150
+#chanceinc slot weapon 234 *150
+#chanceinc slot weapon 315 *150
+-- Hoplonsand other shields
+#chanceinc slot offhand 181 *5
+#chanceinc slot offhand 209 *5
+#chanceinc slot offhand 2 *2
+#chanceinc slot offhand 25 *2
+#chanceinc slot offhand 112 *2
+#chanceinc slot offhand 155 *2
+#chanceinc slot offhand 168 *2
+#chanceinc slot offhand 189 *2
+#chanceinc slot offhand 208 *2
+-- Hoplite helms or fullhelms
+#chanceinc slot offhand 123 *2.5
+#chanceinc slot offhand 21 *1.5
+
+#chanceinc pose not infantry *0
+#chanceinc prot below 12 *0
+#chanceinc hastheme imperial *0
+
+#end
 
 ----- Misc ranged
 #new 

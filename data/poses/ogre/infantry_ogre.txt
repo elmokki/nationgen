@@ -4,23 +4,24 @@
 #role "elite infantry"
 #role "sacred infantry"
 
-#renderorder "shadow bonusweapon basesprite armor weapon offhandw hands hair helmet offhanda"
+#renderorder "shadow bonusweapon basesprite shirt armor weapon offhandw hands hair helmet offhanda"
 
 #load basesprite /data/items/ogre/bases_ogre.txt
 #load shadow /data/items/ogre/shadow.txt
 #load hands /data/items/ogre/hands.txt
 
-#load armor /data/items/ogre/armor_ettinling.txt
+#load armor /data/items/ogre/armor_ogre.txt
 #load helmet /data/items/ogre/helmet_ogre.txt
 
 #load weapon /data/items/ogre/weapon_ogre.txt
 #load offhand /data/items/ogre/offhand_ogre.txt
-#load offhand /data/items/ogre/shield.txt
+#load offhand /data/items/ogre/shield_ogre.txt
 #load bonusweapon /data/items/ogre/bonusweapon_ogre.txt
 
 #load hair /data/items/ogre/hair.txt
+#load shirt /data/items/ogre/shirt.txt
 
-#maxvarieties 3
+#maxunits 3
 
 #endpose
 
@@ -33,13 +34,13 @@
 #name "ogre scout"
 #role "scout"
 
-#renderorder "shadow bonusweapon basesprite armor weapon offhandw hands hair helmet offhanda"
+#renderorder "shadow bonusweapon basesprite shirt armor weapon offhandw hands hair helmet offhanda"
 
 #load basesprite /data/items/ogre/bases_ogre.txt
 #load shadow /data/items/ogre/shadow.txt
 #load hands /data/items/ogre/hands.txt
 
-#load armor /data/items/ogre/armor_ettinling.txt
+#load armor /data/items/ogre/armor_ogre.txt
 #load helmet /data/items/ogre/helmet_scout.txt
 
 #load weapon /data/items/ogre/weapon_ogre.txt
@@ -47,6 +48,7 @@
 #load bonusweapon /data/items/ogre/bonusweapon_ogre.txt
 
 #load hair /data/items/ogre/hair.txt
+#load shirt /data/items/ogre/shirt.txt
 
 #endpose
 

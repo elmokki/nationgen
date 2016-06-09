@@ -62,7 +62,7 @@
 #type demographic
 #name ogre
 #theme boreal
-#basechance 1
+#basechance 2
 #chanceinc primaryrace 'Boreal human' *5
 #themeinc theme advanced *1
 #themeinc theme iron *1
@@ -75,7 +75,7 @@
 #themeinc theme oriental *0.001
 #racedefinition "#longsyllables /data/names/nations/human/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/human/shortsyllables.txt"
-#racedefinition "#shortsyllables /data/names/nations/human/suffixes.txt"
+#racedefinition "#suffixes /data/names/nations/human/suffixes.txt"
 #racedefinition "#nationcommand '#idealcold +1'"
 #racedefinition "#nationcommand '#gods europegods"
 #racedefinition "#boreal"
@@ -89,8 +89,10 @@
 #type demographic
 #name bakemono
 #theme oriental
+-- #basechance 1
 #basechance 0
-#chanceinc primaryrace 'Oriental human' *5
+#chanceinc primaryrace 'Oriental human' *10
+#chanceinc primaryrace 'Bakemono' *20
 #themeinc theme advanced *1
 #themeinc theme iron *1
 #themeinc theme bronze *0.001
@@ -102,16 +104,12 @@
 #themeinc theme boreal *0.001
 #racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
-#racedefinition "#shortsyllables /data/names/nations/oriental/suffixes.txt"
+#racedefinition "#suffixes /data/names/nations/oriental/suffixes.txt"
 #racedefinition "#nationcommand '#gods easterngods"
 #racedefinition "#oriental"
-#racedefinition "#visiblename 'O-Bakemono'"
-
-#racedefinition "#pose ogretroops"
-#racedefinition "#pose ogremages"
-
--- #racedefinition "#pose obakemonotroops"
--- #racedefinition "#pose obakemonomages"
+#racedefinition "#visiblename 'Bakemono'"
+#racedefinition "#pose obakemonotroops"
+#racedefinition "#pose obakemonomages"
 -- #racedefinition "#pose orientalgiants"
 #endtheme
 
@@ -133,7 +131,7 @@
 #themeinc theme oriental *0.001
 #racedefinition "#longsyllables /data/names/nations/human/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/human/shortsyllables.txt"
-#racedefinition "#shortsyllables /data/names/nations/human/suffixes.txt"
+#racedefinition "#suffixes /data/names/nations/human/suffixes.txt"
 #racedefinition "#nationcommand '#idealcold +1'"
 #racedefinition "#nationcommand '#gods europegods"
 #racedefinition "#boreal"

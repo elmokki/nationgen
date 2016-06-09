@@ -224,6 +224,97 @@ public class ScoutGenerator extends TroopGenerator {
 		
 		}
 	
+		// Crude block to survival skills
+		boolean mounted = false;
+		boolean flying = false;
+		boolean amphibian = false;
+		boolean aquatic = false;
+		boolean mountain = false;
+		boolean forest = false;
+		boolean waste = false;
+		boolean swamp = false;
+		int survivals = 0;
+		for(Command c : template.getCommands())
+		{
+			if(c.command.equals("#mounted"))
+				mounted = true;
+			if(c.command.equals("#flying"))
+				flying = true;
+			if(c.command.equals("#amphibian"))
+				amphibian = true;
+			if(c.command.equals("#aquatic"))
+				aquatic = true;
+			if(c.command.equals("#mountainsurvival") && !mountain)
+			{
+				mountain = true;
+				survivals++;
+			}
+			if(c.command.equals("#forestsurvival") && !forest)
+			{
+				forest = true;
+				survivals++;
+			}
+			if(c.command.equals("#wastesurvival") && !waste)
+			{
+				waste = true;
+				survivals++;
+			}
+			if(c.command.equals("#swampsurvival") && !swamp)
+			{
+				swamp = true;
+				survivals++;
+			}
+		}
+		
+		// If we are a scout with no special movement type and no more than 2 survivals, ensure they end up with 2-3 survivals
+		if(!flying &&
+				!mounted &&
+				!aquatic &&
+				!amphibian &&
+				tier == 1 &&
+				survivals <= 2)
+		{
+
+			if(survivals == 0)
+			{
+				template.commands.add(new Command("#mountainsurvival"));
+				mountain = true;
+				template.commands.add(new Command("#forestsurvival"));
+				forest = true;
+			}
+			
+			if(survivals == 1)
+			{
+				if(mountain || swamp)
+				{
+					template.commands.add(new Command("#forestsurvival"));
+					forest = true;
+				}
+				else if(forest || waste)
+				{
+					template.commands.add(new Command("#mountainsurvival"));
+					mountain = true;
+				}
+			}
+			
+			double bonuschance = r.nextDouble();
+			if(mountain && forest)
+			{
+				if(bonuschance < 0.2)
+					template.commands.add(new Command("#wastesurvival"));
+				else if(bonuschance < 0.25)
+					template.commands.add(new Command("#swampsurvival"));					
+			}
+			else if(!mountain && bonuschance < 0.25)
+			{
+				template.commands.add(new Command("#mountainsurvival"));				
+			}
+			else if(!forest && bonuschance < 0.25)
+			{
+				template.commands.add(new Command("#forestsurvival"));				
+			}
+
+		}
 		
 		template.color = new Color(60, 60, 60);
 		
