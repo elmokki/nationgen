@@ -159,15 +159,6 @@
 #power 2
 #end
 
-#new
-#name "chaosrec5"
-#type "chaosrec"
-#basechance 0.2
-#command "#chaosrec %cost5"
-#chanceinc "command #chaosrec 100"
-#chanceinc "command #chaospower 100"
-#theme recruitment
-#end
 
 #new
 #name "chaosrec10"
@@ -192,10 +183,21 @@
 #end
 
 #new
+#name "deathrec_high"
+#type "chaosrec"
+#basechance 0.1
+#command "#deathrec %cost15"
+#chanceinc "command #deathrec 25"
+#chanceinc "command #deathpower 25"
+#chanceinc "magic death 0.1"
+#theme recruitment
+#end
+
+#new
 #name "chaosrec_high"
 #type "chaosrec"
 #basechance 0.05
-#command "#chaosrec %cost20"
+#command "#chaosrec %cost15"
 #chanceinc "command #chaosrec 25"
 #chanceinc "command #chaospower 25"
 #theme recruitment

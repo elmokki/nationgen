@@ -75,7 +75,8 @@ public class Unit {
 	public boolean polished = false;
 	public boolean invariantMonster = false;  // Is the unit a monster that must be used as-is instead of copying? (E.g., hydras)
 	private Nation nation = null;
-	
+	private List<Command> percentCostCommands = new ArrayList<Command>();
+
 	public Unit(NationGen nationGen, Race race, Pose pose)
 	{
 		this.nationGen = nationGen;
@@ -619,7 +620,6 @@ public class Unit {
 		List<Command> tempCommands = new ArrayList<Command>();
 		List<Command> allCommands = new ArrayList<Command>();
 		List<Command> multiCommands = new ArrayList<Command>();
-		List<Command> percentCostCommands = new ArrayList<Command>();
 		
 		if(polished)
 			return this.commands;
@@ -786,20 +786,7 @@ public class Unit {
 						gcost *= Double.parseDouble(c.args.get(0).substring(1));
 				}
 			
-			for(Command c : percentCostCommands)
-			{
-				double multi = 0;
-				
-				if(Generic.isNumeric(c.args.get(0).substring(5)))
-						multi = Double.parseDouble(c.args.get(0).substring(5)) / 100;
-				else if(c.args.size() > 1 && Generic.isNumeric(c.args.get(1)))
-						multi = Double.parseDouble(c.args.get(1)) / 100;
-				
-				
-				int price = (int)Math.round((double)gcost * multi);
-				Command d = new Command(c.command, price + "");
-				handleCommand(tempCommands, d);
-			}
+
 		}
 
 		
@@ -1180,6 +1167,8 @@ public class Unit {
 
 
 
+		
+
 		// Montag mean costs
 		if(Generic.containsTag(this.pose.tags, "montagpose") && Generic.containsTag(this.pose.tags, "no_montag_mean_costs") && getCommandValue("#firstshape", 0) < 0)
 		{
@@ -1210,6 +1199,30 @@ public class Unit {
 			}
 			
 				
+		}
+		
+		// %cost stuff
+		int gcost = 0;
+		
+		if(percentCostCommands.size() > 0)
+			gcost = this.getGoldCost();
+		
+		for(Command c : percentCostCommands)
+		{
+			if(gcost == 0)
+				continue;
+			
+			double multi = 0;
+			
+			if(Generic.isNumeric(c.args.get(0).substring(5)))
+					multi = Double.parseDouble(c.args.get(0).substring(5)) / 100;
+			else if(c.args.size() > 1 && Generic.isNumeric(c.args.get(1)))
+					multi = Double.parseDouble(c.args.get(1)) / 100;
+			
+			
+			int price = (int)Math.round((double)gcost * multi);
+			Command d = new Command(c.command, price + "");
+			handleCommand(commands, d);
 		}
 		
 		// Separate loop to round gcost at the end
