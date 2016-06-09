@@ -1499,6 +1499,18 @@ public class ChanceIncHandler {
 					if(canIncrease)
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
+				
+				// Random
+				canIncrease = false;
+				if(args.get(0).equals("random") && args.size() >= 3)
+				{
+					double res = Double.parseDouble(args.get(1));
+					if(r.nextDouble() < res)
+						canIncrease = true;
+					
+					if(canIncrease)
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+				}
 			}
 
 		}
