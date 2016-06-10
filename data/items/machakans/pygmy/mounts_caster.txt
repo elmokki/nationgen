@@ -274,6 +274,7 @@
 #define "#mapmove 2"
 #define "#ap 9"
 #define "#flying"
+#define "#sailing 2 2"
 #define "#mounted"
 #define "#weapon nostr_bite_5"
 #define "#gcost +5"
@@ -392,6 +393,7 @@
 #define "#mapmove 2"
 #define "#ap 5"
 #define "#mounted"
+#define "#sailing 2 2"
 #define "#flying"
 #define "#weapon nostr_bill_3"
 #define "#weapon nostr_wingbuff_3"
@@ -423,6 +425,7 @@
 #define "#mapmove 2"
 #define "#ap 5"
 #define "#mounted"
+#define "#sailing 2 2"
 #define "#flying"
 #define "#weapon nostr_bill_3"
 #define "#weapon nostr_wingbuff_3"
@@ -440,4 +443,72 @@
 #basechance 1
 #offsetx 0
 #offsety -5
+#enditem
+
+#newitem
+#name "swan chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/small_swan_bronze.png
+#needs overlay chariot_small_bronze_overlay
+#armor
+#define "#size 2"
+#define "#hp +3"
+#define "#mapmove 2"
+#define "#ap 5"
+#define "#mounted"
+#define "#sailing 2 2"
+#define "#trample"
+#define "#weapon nostr_bill_3"
+#define "#prot 4"
+#define "#gcost +10"
+#define "#rcost +5"
+#define "#ressize 1"
+#define "#enc 4"
+#tag "animal swan"
+#tag "chariot"
+#theme "swan"
+#theme "swantotem"
+#theme "birdtotem"
+#theme "totemanimal"
+#theme "bronze"
+#tag "maxprot 8"
+#tag "guaranteedprefix swan"
+#tag "animal swan"
+#basechance 1
+#offsetx 15
+#offsety -7
+#enditem
+
+#newitem
+#name "black swan chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/small_blackswan_bronze.png
+#needs overlay chariot_small_bronze_overlay
+#armor
+#define "#size 2"
+#define "#hp +3"
+#define "#mapmove 2"
+#define "#ap 5"
+#define "#mounted"
+#define "#sailing 2 2"
+#define "#trample"
+#define "#weapon nostr_bill_3"
+#define "#prot 4"
+#define "#gcost +10"
+#define "#rcost +5"
+#define "#ressize 1"
+#define "#enc 4"
+#tag "animal swan"
+#tag "chariot"
+#theme "swan"
+#theme "swantotem"
+#theme "birdtotem"
+#theme "totemanimal"
+#theme "bronze"
+#tag "maxprot 8"
+#tag "guaranteedprefix swan"
+#tag "animal swan"
+#basechance 1
+#offsetx 15
+#offsety -7
 #enditem

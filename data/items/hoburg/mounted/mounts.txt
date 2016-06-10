@@ -454,6 +454,80 @@
 #enditem
 
 #newitem
+#name "swan chariot"
+#gameid -1
+#basechance 0
+#sprite /graphics/mounts/chariots/small_swan_bronze.png
+#needs overlay chariot_small_bronze_overlay
+#armor
+#define "#size 2"
+#define "#hp +3"
+#define "#mapmove 2"
+#define "#ap 5"
+#define "#mounted"
+#define "#sailing 2 2"
+#define "#trample"
+#define "#weapon nostr_bill_3"
+#define "#prot 4"
+#define "#gcost +10"
+#define "#rcost +5"
+#define "#ressize 1"
+#define "#enc 5"
+#tag "animal swan"
+#tag "chariot"
+#theme "swan"
+#theme "swantotem"
+#theme "birdtotem"
+#theme "totemanimal"
+#theme "fae"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#theme "oriental"
+#tag "maxprot 12"
+#tag "guaranteedprefix swan"
+#tag "animal swan"
+#offsetx 16
+#offsety -4
+#enditem
+
+#newitem
+#name "black swan chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/small_blackswan_iron.png
+#needs overlay chariot_small_iron_overlay
+#armor
+#define "#size 2"
+#define "#hp +4"
+#define "#mapmove 2"
+#define "#ap 4"
+#define "#mounted"
+#define "#trample"
+#define "#weapon nostr_bill_3"
+#define "#prot 5"
+#define "#gcost +10"
+#define "#rcost +6"
+#define "#ressize 1"
+#define "#enc 5"
+#tag "animal swan"
+#tag "chariot"
+#theme "swan"
+#theme "swantotem"
+#theme "birdtotem"
+#theme "totemanimal"
+#theme "abysian"
+#theme "primitive"
+#tag "maxprot 14"
+#tag "guaranteedprefix swan"
+#tag "animal swan"
+#basechance 1
+#offsetx 16
+#offsety -4
+#enditem
+
+#newitem
 #name "vine nightmare"
 #gameid -1
 #basechance 0.33
