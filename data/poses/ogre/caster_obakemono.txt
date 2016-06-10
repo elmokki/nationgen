@@ -5,7 +5,7 @@
 
 #subrace "o-bakemono"
 
-#renderorder "shadow cloakb bonusweapon basesprite shirt armor sash weapon offhandw hands cloakf hair helmet offhanda"
+#renderorder "shadow bonusweapon cloakb basesprite shirt armor sash weapon offhandw hands cloakf hair helmet offhanda"
 
 #load basesprite /data/items/ogre/bases_obakemono.txt
 #load shadow /data/items/ogre/shadow.txt
@@ -14,9 +14,11 @@
 #load cloakf /data/items/ogre/cloakf_obakemono.txt
 #load cloakb /data/items/ogre/cloakb_obakemono.txt
 #load armor /data/items/ogre/armor_obakemono.txt
-#load helmet /data/items/ogre/helmet_obakemono.txt
+#load armor /data/items/ogre/robes.txt
+#load helmet /data/items/ogre/helmet_caster.txt
 
 #load weapon /data/items/ogre/weapon_obakemono.txt
+#load weapon /data/items/ogre/staves.txt
 #load offhand /data/items/ogre/offhand_obakemono.txt
 
 #load hair /data/items/ogre/hair.txt
