@@ -1172,7 +1172,6 @@ public class Unit {
 		// Montag mean costs
 		if(Generic.containsTag(this.pose.tags, "montagpose") && !Generic.containsTag(this.pose.tags, "no_montag_mean_costs") && getCommandValue("#firstshape", 0) < 0)
 		{
-			System.out.println("!");
 			int n = 0;
 			int res = 0;
 			int gold = 0;
