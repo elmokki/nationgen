@@ -16,7 +16,9 @@ public class TroopMontagTemplate extends MontagTemplate {
 	    while(tries < 100 && newunit == null)
 	    {
 	    	tries++;
-	    	newunit = tGen.generateUnit(p, u.race);
+	    	newunit = tGen.unitGen.generateUnit(u.race, p);
+	    	handleFilterInheritance(u, newunit);
+	    	newunit = tGen.equipUnit(newunit);
 	    }
 	    
 	    return newunit;

@@ -1180,7 +1180,7 @@ public class Unit {
 			for(List<Unit> lu : nation.unitlists.values())
 			{
 				for(Unit nu : lu)
-					if(nu.getCommandValue("#montag", 0) == firstshape)
+					if(nu.getCommandValue("#montag", 0) == firstshape && u != nu)
 					{
 						nu.polish();
 						res += nu.getResCost(true);

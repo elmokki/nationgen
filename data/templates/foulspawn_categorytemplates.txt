@@ -1,0 +1,72 @@
+
+------- For small infantry
+
+#new
+#name "Foul spawn infantry: heavy"
+#type infantry
+#themeinc thisarmorprot 10 *4
+#themeinc thisarmorprot 12 *4
+#themeinc thisarmorprot 14 *4
+#themeinc thisitemtag heavy *4
+#themeinc thisitemtag light *0.25
+#themeinc thisitemtag heavy_infantry_title 1
+#chanceinc anyunitfilter "Foul spawn infantry: heavy" *0
+#forcedname "Foulspawn Heavy Infantry"
+#end
+
+#new
+#name "Foul spawn infantry: light"
+#type infantry
+#themeinc thisarmorprot 10 *0.25
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 14 *0.25
+#themeinc thisitemtag heavy *0.25
+#themeinc thisitemtag light *4
+#themeinc thisitemtag light_infantry_title 1
+#chanceinc anyunitfilter "Foul spawn infantry: light" *0
+#forcedname "Foulspawn Light Infantry"
+#end
+
+#new
+#name "Foul spawn infantry: any"
+#type infantry
+#themeinc thisitemtag any_infantry_title 1
+#chanceinc anyunitfilter "Foul spawn infantry: any" *0
+#forcedname "Foulspawn Infantry"
+#end
+
+------ 
+
+#new
+#name "Foul spawn ogre infantry: heavy"
+#type infantry_ogre
+#themeinc thisarmorprot 10 *4
+#themeinc thisarmorprot 12 *4
+#themeinc thisarmorprot 14 *4
+#themeinc thisitemtag heavy *4
+#themeinc thisitemtag light *0.25
+#themeinc thisitemtag heavy_infantry_title 1
+#chanceinc anyunitfilter "Foul spawn ogre infantry: heavy" *0
+#forcedname "Foulspawn Heavy Ogre Infantry"
+#end
+
+#new
+#name "Foul spawn ogre infantry: light"
+#type infantry_ogre
+#themeinc thisarmorprot 10 *0.25
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 14 *0.25
+#themeinc thisitemtag heavy *0.25
+#themeinc thisitemtag light *4
+#themeinc thisitemtag light_infantry_title 1
+#chanceinc anyunitfilter "Foul spawn ogre infantry: light" *0
+#forcedname "Foulspawn Light Ogre Infantry"
+#end
+
+#new
+#name "Foul spawn ogre infantry: any"
+#type infantry_ogre
+#themeinc thisitemtag any_infantry_title 1
+#chanceinc anyunitfilter "Foul spawn ogre infantry: any" *0
+#forcedname "Foulspawn Ogre Infantry"
+#end
