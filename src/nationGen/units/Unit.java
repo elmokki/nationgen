@@ -400,7 +400,7 @@ public class Unit {
 			
 					if(pose.getItems(slot) == null)
 					{
-						System.out.println(command + " for " + slotname + ", type " + target + " and item " + getSlot(slotname).name + " on slot " + slot + " failed due to the slot having no items. Roles " + this.pose.roles + ", race " + race.name );
+						System.out.println(command + " for " + slotname + ", type " + target + " and item " + getSlot(slotname).name + " on slot " + slot + " failed due to the slot having no items: " + pose + ", "+ this.pose.roles + ", race " + race.name );
 						break;
 					}
 					

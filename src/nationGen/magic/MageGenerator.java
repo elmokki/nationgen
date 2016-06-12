@@ -24,6 +24,7 @@ import nationGen.misc.ItemSet;
 import nationGen.nation.Nation;
 import nationGen.rostergeneration.CommanderGenerator;
 import nationGen.rostergeneration.TroopGenerator;
+import nationGen.rostergeneration.montagtemplates.MageMontagTemplate;
 //import nationGen.rostergeneration.TroopGenerator.Template;
 import nationGen.units.Unit;
 
@@ -267,7 +268,7 @@ public class MageGenerator extends TroopGenerator {
 	{
 		
 
-		List<List<Unit>> mages = generateBases();
+		List<List<Unit>> mages = generateMageBases();
 		
 		
 		// Tag mages
@@ -505,6 +506,12 @@ public class MageGenerator extends TroopGenerator {
 		tagAll(list, "identifier schoolmage");
 		
 
+		// Handle montags
+		for(int i = 1; i <= 3; i++)
+			for(Unit u : this.getMagesOfTier(list, i))
+				unitGen.handleMontagUnits(u, new MageMontagTemplate(i), "montagmages");
+
+		
 		// Diagnostics
 		double[] picks = getAllPicks(list, true);
 		double[] norand_picks = getAllPicks(list, false);
@@ -585,12 +592,18 @@ public class MageGenerator extends TroopGenerator {
 			if(extramages.get(0).caponly == false && this.random.nextDouble() > 0.5)
 				extramages.get(0).commands.add(new Command("#slowrec"));
 		
+			for(Unit u : extramages)
+				unitGen.handleMontagUnits(u, new MageMontagTemplate(4), "montagmages");
 		
 			list.addAll(0, extramages);
 			
 			
 		}
 
+		// Handle montags
+	
+
+		
 		// Apply filters
 		applyMageFilters(list);
 		
@@ -1445,29 +1458,67 @@ public class MageGenerator extends TroopGenerator {
 			
 
 			
-
+			int rolls = 0;
+			List<Unit> mages = new ArrayList<Unit>();
 			
 			int tier = 3;
-			if(this.random.nextDouble() > 0.65)
-				tier = 2;
-			else if(this.random.nextDouble() > 0.875)
-				tier = 1;
 			
-			List<Unit> mages = getMagesOfTier(units, tier);
-			
-			
+			// Heroes and extra mages
+			if(getMagesOfTier(units, 1).size() == 0 && getMagesOfTier(units, 2).size() == 0 && getMagesOfTier(units, 3).size() == 0)
+			{
+				mages.addAll(units);
+				tier = 4;
+			}
+			// Other stuff
+			else
+			{
+				while(mages.size() == 0 && rolls < 50)
+				{
+				
+					tier = 3;
+					if(this.random.nextDouble() > 0.65)
+						tier = 2;
+					else if(this.random.nextDouble() > 0.875)
+						tier = 1;
+				
+					mages = getMagesOfTier(units, tier);
+					
+					rolls++;
+				}
+			}
+	
 
-			if(mages.size() == 0) // This happens for heroes and extra mages.
+			if(mages.size() == 0) // This happens for heroes and extra mages. An unlikely failsafe.
 			{
 				mages.addAll(units);
 				tier = 4;
 			}
 			
+
 			
 			// Figure whether to give different filters for mages of tier or not
 			boolean different = allHaveDistinguishingPath(mages);
 			boolean common = MageGenerator.findCommonPaths(mages).size() > 0;
 			different = different && (this.random.nextBoolean() || !common);
+			
+			// If montag on all units, they should get different filters
+			boolean montags = true;
+			for(Unit u : units)
+			{
+				boolean gotit = false;
+				for(Command c : u.getCommands())
+					if(c.command.equals("#montag"))
+						gotit = true;
+				
+				if(!gotit)
+				{
+					montags = false;
+					break;
+				}
+			}
+			
+			if(montags)
+				different = true;
 			
 			
 			// Get filters
@@ -1544,9 +1595,14 @@ public class MageGenerator extends TroopGenerator {
 					
 					if(f != null)
 					{
-						u.appliedFilters.add(f);
+						
+						if(!handleMontagFilters(u, power, defaults, lookfor))
+							u.appliedFilters.add(f);
+			
+						
 						handleGiveToAll(f, units, tier);
 	
+						
 						if(f.power > maxpower)
 							maxpower = f.power;
 					}
@@ -1599,8 +1655,10 @@ public class MageGenerator extends TroopGenerator {
 				Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(mages, givenFilters));
 				
 				for(Unit u : mages)
-					u.appliedFilters.add(f);
-				
+				{
+					if(!handleMontagFilters(u, power, defaults, lookfor))
+						u.appliedFilters.add(f);
+				}
 				
 				handleGiveToAll(f, units, tier);
 				
@@ -1613,13 +1671,29 @@ public class MageGenerator extends TroopGenerator {
 	}
 	
 	
+	private boolean handleMontagFilters(Unit u, int power, String[] defaults, String lookfor)
+	{
+		if(unitGen.getMontagUnits(u).size() == 0)
+		{
+			return false;
+		}
+		else
+		{
+			power = Math.max(1, power);
+			this.applyFilters(unitGen.getMontagUnits(u), power, defaults, lookfor);
+			
+			return true;
+		}
+
+	}
+	
 	private void handleGiveToAll(Filter f, List<Unit> units, int tier)
 	{
 		if(f.tags.contains("givetoall") && tier < 4 && tier > 0)
 			for(int i = 1; i <= 3; i++)
 			{
 				List<Unit> mages = getMagesOfTier(units, i);
-
+				mages.addAll(nation.generateUnitList("montagmage"));
 				for(Unit u : mages)
 				{
 					if(!u.appliedFilters.contains(f) && !f.tags.contains("notfortier " + i))
@@ -1859,7 +1933,7 @@ public class MageGenerator extends TroopGenerator {
 	
 
 
-	public List<List<Unit>> generateBases()
+	public List<List<Unit>> generateMageBases()
 	{
 
 		boolean primaryforeign = false;
@@ -2070,6 +2144,7 @@ public class MageGenerator extends TroopGenerator {
 		{
 			newpose = parent.pose;
 		}
+		
 		
 		for(int i = 0; i < amount; i++)
 		{
@@ -2298,7 +2373,11 @@ public class MageGenerator extends TroopGenerator {
 		
 	
 		Pose p = Entity.getRandom(this.random, chandler.handleChanceIncs(race, posename, getPossiblePoses(posename, race, tier)));
-		
+		if(p == null)
+			p = Entity.getRandom(this.random, chandler.handleChanceIncs(race, posename, getPossiblePoses(posename, race, tier - 1)));
+	
+		if(p == null)
+			amount = 0;
 
 		
 		for(int i = 0; i < amount; i++)
@@ -2452,8 +2531,12 @@ public class MageGenerator extends TroopGenerator {
 	
 		
 		List<String> possibleslots = this.getPossibleVarySlots(u);
+		
+		if(possibleslots.size() == 0)
+			return;
+		
 		String slot = possibleslots.get(this.random.nextInt(possibleslots.size()));
-	
+		
 		// Vary item
 		ItemSet stuff = u.pose.getItems(slot).filterTag("tier " + tier, true);
 		stuff.removeAll(exclusions);
@@ -2492,7 +2575,7 @@ public class MageGenerator extends TroopGenerator {
 
 
 	
-	protected void resolveAge(List<Unit> units)
+	public void resolveAge(List<Unit> units)
 	{
 		Random r = this.random;
 		double random = r.nextDouble();

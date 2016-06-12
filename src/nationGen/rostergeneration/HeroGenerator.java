@@ -38,13 +38,17 @@ public class HeroGenerator {
 	public List<Unit> generateHeroes(int count)
 	{
 		List<Unit> units = new ArrayList<Unit>();
-		for(int i = 0; i < count; i++)
-		{
+		int ticks = 0;
+		while(units.size() < count && ticks < 100)
+		{	
+			Unit u = null;
 			if(n.random.nextDouble() < 0.5)
-				units.add(generateMageHero(false));
+				u = (generateMageHero(false));
 			else
-				units.add(generateHero(false));
-	
+				u = (generateHero(false));
+			
+			if(u != null)
+				units.add(u);
 		}
 		
 		// Remove upkeep
@@ -150,6 +154,9 @@ public class HeroGenerator {
 			tier = 2;
 		
 		Unit hero = mg.generateBases("mage", r, 1, tier).get(0);
+		if(hero == null)
+			return null;
+		
 		this.addHeroFilter(hero);
 		
 		if(n.races.contains(r))

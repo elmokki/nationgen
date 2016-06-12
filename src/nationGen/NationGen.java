@@ -282,12 +282,13 @@ public class NationGen {
 			for(Site s : n.sites)
 				s.name = nGen.getSiteName(n.random, s.getPath(), s.getSecondaryPath());
 	
+	
 			// mages 
-			MageNamer mNamer = new MageNamer(n);
+			MageNamer mNamer = new MageNamer(this, n);
 			mNamer.execute();
 			
 			// priests
-			PriestNamer pNamer = new PriestNamer(n);
+			PriestNamer pNamer = new PriestNamer(n, this);
 			pNamer.execute();
 			
 			// sacreds and elites
