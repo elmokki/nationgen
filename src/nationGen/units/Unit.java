@@ -1170,7 +1170,7 @@ public class Unit {
 		
 
 		// Montag mean costs
-		if(Generic.containsTag(this.pose.tags, "montagpose") && Generic.containsTag(this.pose.tags, "no_montag_mean_costs") && getCommandValue("#firstshape", 0) < 0)
+		if(Generic.containsTag(this.pose.tags, "montagpose") && !Generic.containsTag(this.pose.tags, "no_montag_mean_costs") && getCommandValue("#firstshape", 0) < 0)
 		{
 			int n = 0;
 			int res = 0;
@@ -1180,7 +1180,7 @@ public class Unit {
 			for(List<Unit> lu : nation.unitlists.values())
 			{
 				for(Unit nu : lu)
-					if(nu.getCommandValue("#montag", 0) == firstshape)
+					if(nu.getCommandValue("#montag", 0) == firstshape && u != nu)
 					{
 						nu.polish();
 						res += nu.getResCost(true);

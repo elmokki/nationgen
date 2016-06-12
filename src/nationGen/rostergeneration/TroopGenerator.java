@@ -263,9 +263,10 @@ public class TroopGenerator {
 	
 	
 
-	public Unit generateUnit(Pose pose, Race race)
+	public Unit equipUnit(Unit u)
 	{
-		Unit u = this.unitGen.generateUnit(race, pose);
+		Pose pose = u.pose;
+		Race race = u.race;
 
 		unitGen.addFreeTemplateFilters(u);
 		if(random.nextDouble() < 0.1 && canGetMoreFilters(u))
@@ -982,6 +983,8 @@ public class TroopGenerator {
 		// Remove elite and sacred items
 		Filter tf = new Filter(nationGen);
 		tf.name = Generic.capitalize(role) + " unit";
+		
+		tf.tags.add("not_montag_inheritable");
 		
 		boolean elite = false;
 		boolean sacred = false;

@@ -655,11 +655,7 @@ public class SacredGenerator extends TroopGenerator {
 		}
 	}
 	
-	public Unit getSacredUnit(Race race, Pose p, int power, boolean sacred, double epicchance)
-	{
-		Unit u = this.unitGen.generateUnit(race, p);
-		return getSacredUnit(u, power, sacred, epicchance);
-	}
+
 	
 	public Unit getSacredUnit(Unit u, int power, boolean sacred, double epicchance)
 	{
@@ -706,6 +702,7 @@ public class SacredGenerator extends TroopGenerator {
 		else
 			tf.name = Generic.capitalize(role) + " elite";
 		
+		tf.tags.add("not_montag_inheritable");
 
 		if(sacred)
 		{

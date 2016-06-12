@@ -6,7 +6,7 @@
 #name "foulspawn infantry"
 #role "infantry"
 
-#forcedname "Foulspawn Infantry"
+#freetemplatefilter foulspawntemplate infantry
 
 #montagpose "degenerate infantry" 2
 #montagpose "normal infantry" 4
@@ -15,8 +15,7 @@
 
 #chanceinc moduleid herogen *0
 
-#adjustmentcommand "#gcost 10"
-#command "#rcost 10"
+
 
 #load basesprite /data/items/foulspawn/small/bases_infantry.txt
 
@@ -31,19 +30,19 @@
 #newpose
 #basechance 250000000
 -- #basechance 0
-#name "foulspawn heavy infantry"
+#name "foulspawn ogre infantry"
 #role "infantry"
 
 #chanceinc moduleid herogen *0
 
-#forcedname "Foulspawn Heavy Infantry"
+
+#freetemplatefilter foulspawntemplate infantry_ogre
 
 #montagpose "ogre degenerates" 3
 #montagpose "ogre infantry" 3
 -- #montagpose "small centauroid" 2
 
-#adjustmentcommand "#gcost 25"
-#command "#rcost 10"
+
 
 #load basesprite /data/items/foulspawn/medium/bases_infantry.txt
 
@@ -72,8 +71,7 @@
 #montagpose "ogre infantry" 3
 -- #montagpose "small centauroid" 1
 
-#adjustmentcommand "#gcost 35"
-#command "#rcost 15"
+
 
 #load basesprite /data/items/foulspawn/small/bases_infantry.txt
 
