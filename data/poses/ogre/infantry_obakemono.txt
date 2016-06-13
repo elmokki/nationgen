@@ -6,12 +6,14 @@
 
 #subrace "o-bakemono"
 
-#renderorder "shadow bonusweapon basesprite shirt armor sash weapon offhandw hands hair helmet offhanda"
+#renderorder "shadow cloakb bonusweapon basesprite shirt armor sash weapon offhandw hands cloakf hair helmet offhanda"
 
 #load basesprite /data/items/ogre/bases_obakemono.txt
 #load shadow /data/items/ogre/shadow.txt
 #load hands /data/items/ogre/hands.txt
 
+#load cloakf /data/items/ogre/cloakf_obakemono.txt
+#load cloakb /data/items/ogre/cloakb_obakemono.txt
 #load armor /data/items/ogre/armor_obakemono.txt
 #load helmet /data/items/ogre/helmet_obakemono.txt
 
@@ -24,7 +26,7 @@
 #load shirt /data/items/ogre/shirt.txt
 #load sash /data/items/ogre/sash_troops.txt
 
-#generateitem sash 1
+#generateitem 1 sash
 
 #maxunits 3
 
@@ -41,12 +43,14 @@
 
 #subrace "o-bakemono"
 
-#renderorder "shadow bonusweapon basesprite shirt armor sash weapon offhandw hands hair helmet offhanda"
+#renderorder "shadow cloakb bonusweapon basesprite shirt armor sash weapon offhandw hands cloakf hair helmet offhanda"
 
 #load basesprite /data/items/ogre/bases_obakemono.txt
 #load shadow /data/items/ogre/shadow.txt
 #load hands /data/items/ogre/hands.txt
 
+#load cloakf /data/items/ogre/cloakf_obakemono.txt
+#load cloakb /data/items/ogre/cloakb_obakemono.txt
 #load armor /data/items/ogre/armor_obakemono.txt
 #load helmet /data/items/ogre/helmet_scout.txt
 
@@ -58,7 +62,7 @@
 #load shirt /data/items/ogre/shirt.txt
 #load sash /data/items/ogre/sash_troops.txt
 
-#generateitem sash 1
+#generateitem 1 sash
 
 #endpose
 

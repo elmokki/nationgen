@@ -339,3 +339,73 @@
 #offsetx 1
 #offsety -4
 #enditem
+
+#newitem
+#name "swan"
+#gameid -1
+#basechance 0
+#sprite /graphics/mounts/standard/swan.png
+#needs overlay swan_overlay
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 5"
+#define "#mounted"
+#define "#sailing 2 2"
+#define "#flying"
+#define "#weapon nostr_bill_3"
+#define "#weapon nostr_wingbuff_3"
+#define "#gcost +10"
+#define "#ressize 1"
+#define "#enc 4"
+#tag "animal swan"
+#theme "swan"
+#theme "swantotem"
+#theme "birdtotem"
+#theme "totemanimal"
+#theme "fae"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#theme "oriental"
+#tag "maxprot 8"
+#tag "guaranteedprefix swan"
+#define "#secondtmpshape swanmount"
+#description "If the rider dies, the swan will carry on fighting until the end of the battle."
+#tag "animal swan"
+#offsetx 0
+#offsety -4
+#enditem
+
+#newitem
+#name "black swan"
+#gameid -1
+#sprite /graphics/mounts/standard/swan_black.png
+#needs overlay swan_black_overlay
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 5"
+#define "#mounted"
+#define "#sailing 2 2"
+#define "#flying"
+#define "#weapon nostr_bill_3"
+#define "#weapon nostr_wingbuff_3"
+#define "#gcost +7"
+#define "#ressize 1"
+#define "#enc 4"
+#tag "animal swan"
+#theme "swan"
+#theme "swantotem"
+#theme "birdtotem"
+#theme "totemanimal"
+#theme "abysian"
+#tag "maxprot 8"
+#tag "guaranteedprefix swan"
+#tag "animal swan"
+#basechance 1
+#offsetx 0
+#offsety -4
+#enditem

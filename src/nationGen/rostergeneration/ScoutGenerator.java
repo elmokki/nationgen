@@ -316,7 +316,7 @@ public class ScoutGenerator extends TroopGenerator {
 
 		}
 		
-		template.color = new Color(60, 60, 60);
+		template.color = new Color((150 - tier * 30), (150 - tier * 30), (150 - tier * 30));
 		
 		unitGen.handleExtraGeneration(template);
 		

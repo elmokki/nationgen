@@ -1,0 +1,36 @@
+--- These spells / spells sets are randomized in following way
+--- 1. handle chanceincs
+--- 2. pick a random set
+--- return to 1
+--- 
+--- Thus all sets that have a positive weight will be chosen, but if you make sets exclude other sets, they will not be picked even if they originally had a positive weight
+--- (No ways to do that as of now)
+---
+--- Some of the stuff here can also be in random spells for stuff that should occasionally be available for nearly any nation.
+--- Random spells is a better place for such stuff since that stuff is on a different quota.
+
+#new
+#name "Tengus"
+#spell "Summon Konoha Tengus"
+#spell "Contact Dai Tengu"
+#spell "Summon Karasu Tengus"
+#basechance 0
+#chanceinc race "Oriental human" 1
+#chanceinc random 0.25 *0
+#end
+
+#new
+#name "Divine Monkey Spells"
+#spell "Contact Yaksha"
+#spell "Contact Yakshini"
+#spell "Summon Gandharvas"
+#spell "Celestial Music"
+#spell "Summon Kinnara"
+#spell "Summon Siddha"
+#spell "Summon Rudra"
+#spell "Summon Devata"
+#spell "Summon Devala"
+#basechance 0
+#chanceinc race Primate 1
+#chanceinc random 0.25 *0
+#end

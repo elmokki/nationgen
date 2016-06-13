@@ -17,6 +17,14 @@
 #chanceinc pose not infantry *0
 #end
 
+-- Outlier chariots hiding in mounted poses
+#new 
+#name "chariot"
+#basechance 0
+#themeinc thisitemslottag mount chariot 100
+#chanceinc pose not mounted *0
+#end
+
 #new 
 #name "mind"
 #basechance 0

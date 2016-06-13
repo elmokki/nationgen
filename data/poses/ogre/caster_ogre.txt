@@ -3,16 +3,20 @@
 #role "mage"
 #role "priest"
 
-#renderorder "shadow bonusweapon basesprite shirt armor weapon offhandw hands hair helmet offhanda"
+#renderorder "shadow bonusweapon cloakb basesprite shirt armor weapon offhandw hands cloakf hair helmet offhanda"
 
 #load basesprite /data/items/ogre/bases_ogre.txt
 #load shadow /data/items/ogre/shadow.txt
 #load hands /data/items/ogre/hands.txt
 
-#load armor /data/items/ogre/armor_ogre.txt
-#load helmet /data/items/ogre/helmet_scout.txt
+#load cloakf /data/items/ogre/cloakf_ogre.txt
+#load cloakb /data/items/ogre/cloakb_ogre.txt
+#load armor /data/items/ogre/robes.txt
+#load helmet /data/items/ogre/helmet_caster.txt
 
 #load weapon /data/items/ogre/weapon_ogre.txt
+#load weapon /data/items/ogre/staves.txt
+#load offhand /data/items/ogre/offhand_caster.txt
 
 #load hair /data/items/ogre/hair.txt
 #load shirt /data/items/ogre/shirt.txt

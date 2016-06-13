@@ -1,0 +1,40 @@
+#new
+#name "Monster Boar"
+#spell "Monster Boar"
+#basechance 0.05
+#chanceinc magic nature *20
+#end
+
+#new
+#name "Sounder of Boars"
+#spell "Sounder of Boars"
+#basechance 0.05
+#chanceinc magic nature *20
+#end
+
+#new
+#name "Holy Pyre"
+#spell "Holy Pyre"
+#basechance 0.05
+#chanceinc magic fire *5
+#chanceinc magic fire holy *20
+#end
+
+#new
+#name "Contact Scorpion Man"
+#spell "Contact Scorpion Man"
+#basechance 0.05
+#chanceinc magic fire *5
+#chanceinc magic earth *5
+#chanceinc magic fire earth *7.5
+#end
+
+#new
+#basechance 0
+#name "Earth Communion"
+#customspell "Reader of Earth"
+#customspell "Supplicant of Earth"
+#chanceinc race Agarthan 0.2
+#chanceinc magic earth 0.025
+#chanceinc magic not earth *0  
+#end

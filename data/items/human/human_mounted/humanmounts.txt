@@ -39,6 +39,32 @@
 #define "#rcost +5"
 #tag "animal horse"
 #theme "heavy"
+#theme "iron"
+#tag "minprot 14"
+#define "#gcost +25"
+#epicness 0.25
+#tag "name commander 'knight'"
+#tag "name mounted knight"
+#enditem
+
+#newitem
+#name "armored horse bronze"
+#basechance 3
+#gameid -1
+#sprite /graphics/mounts/standard/armoredhorse1a.png
+#armor
+#needs overlay armoredhorse1aoverlay
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 20"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +5"
+#tag "animal horse"
+#theme "heavy"
+#theme "bronze"
 #tag "minprot 14"
 #define "#gcost +25"
 #epicness 0.25
@@ -63,6 +89,7 @@
 #define "#rcost +5"
 #tag "animal horse"
 #theme "heavy"
+#theme "bronze"
 #tag "minprot 12"
 #tag "maxprot 16"
 #define "#gcost +20"
@@ -71,7 +98,31 @@
 #tag "name mounted knight"
 #enditem
 
-
+#newitem
+#basechance 3
+#name "armored horse 2a"
+#gameid -1
+#sprite /graphics/mounts/standard/armoredhorse2a.png
+#armor
+#needs overlay armoredhorse2overlay
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 20"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +5"
+#tag "animal horse"
+#theme "heavy"
+#theme "iron"
+#tag "minprot 12"
+#tag "maxprot 16"
+#define "#gcost +20"
+#epicness 0.25
+#tag "name commander 'knight'"
+#tag "name mounted knight"
+#enditem
 
 #newitem
 #basechance 3
@@ -92,6 +143,7 @@
 #define "#rcost +5"
 #tag "animal horse"
 #theme "heavy"
+#theme "iron"
 #tag "minprot 12"
 #epicness 0.25
 #tag "name commander 'catapract commander'"
@@ -115,6 +167,7 @@
 #define "#ressize 2"
 #define "#enc 3"
 #tag "animal horse"
+#theme "iron"
 #tag "minprot 10"
 #tag "maxprot 14"
 #tag "name commander 'catapract commander'"
