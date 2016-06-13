@@ -216,8 +216,11 @@ public class NationGen {
 			newnation = new Nation(this, idHandler.nextNationId(), newseed);
 
 			newnation.name = "Nation " + (i + 1);
-			nations.add(newnation);
+			
 			System.gc();
+			
+			nations.add(newnation);
+
 			System.out.print(".");
 		}
 		System.out.println(" Done!");

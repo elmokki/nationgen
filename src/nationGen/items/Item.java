@@ -181,7 +181,7 @@ public class Item extends Filter {
 
 
 			drawRecolorMask(g, this, color, xoff, yoff);
-			
+			image = null;
 		}
 	}
 	
@@ -215,6 +215,8 @@ public class Item extends Filter {
 			}
 			
 			g.drawImage(targetImage, x, y, null);
+			targetImage = null;
+			image = null;
 		}
 	}
 	
