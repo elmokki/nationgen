@@ -324,7 +324,7 @@ public class RosterGenerator {
 		putToNation("mounted", sortToLists(cavalry));
 		putToNation("chariot", sortToLists(chariot));
 		
-
+		tgen = null;
 	
 	}
 	
