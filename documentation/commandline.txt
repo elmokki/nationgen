@@ -1,0 +1,9 @@
+Two examples should tell enough:
+
+For no preset nation seeds:
+java nationgen.jar -commandline -seed 1337 -amount 10 -modname Nationgen mod -settings 1
+
+For preset nation seeds:
+java nationgen.jar -commandline -nationseeds 13 -51 123 88555 -modname Whatever -settings 3
+
+Settings is the settings integer you see in the GUI. Better documentation may come at some point, but for now, look from there. It defaults to 0 which the GUI defaults as well.
