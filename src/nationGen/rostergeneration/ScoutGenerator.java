@@ -320,6 +320,8 @@ public class ScoutGenerator extends TroopGenerator {
 		
 		unitGen.handleExtraGeneration(template);
 		
+		chandler = null;
+		unitGen = null;
 		return template;
 	}
 	

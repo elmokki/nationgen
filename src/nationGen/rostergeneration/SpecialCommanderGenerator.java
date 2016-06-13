@@ -72,7 +72,8 @@ public class SpecialCommanderGenerator {
 
 				ug.armorUnit(u, null, null, targettag, mage);
 				ug.armUnit(u, null, null, targettag, mage);
-		
+				ug = null;
+				
 				// change color
 				double d = r.nextDouble();
 				if(d < 0.3)
@@ -138,6 +139,8 @@ public class SpecialCommanderGenerator {
 			}
 			
 		}
+		chandler = null;
+		
 		
 	}
 	

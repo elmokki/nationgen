@@ -475,6 +475,9 @@ public class CommanderGenerator extends TroopGenerator {
 			nation.comlists.put("commanders", new ArrayList<Unit>());
 		
 		nation.comlists.get("commanders").addAll(tempComs);
+		
+		chandler = null;
+		unitGen = null;
 	}
 	
 
