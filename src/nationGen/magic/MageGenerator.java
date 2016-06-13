@@ -1557,14 +1557,56 @@ public class MageGenerator extends TroopGenerator {
 			for(Unit u : units)
 				oldFilters.addAll(u.appliedFilters);
 
+			// Montags get totally random shit
+			if(montags)
+			{
+				double maxpower = 0;
+				for(Unit u : mages)
+				{
+					
+					List<Integer> paths = new ArrayList<Integer>();
+					int[] gotpicks = u.getMagicPicks(true);
+					
+					for(int i = 0; i < 8; i++)
+					{
+						if(gotpicks[i] > 1)
+							paths.add(i);
+					}
+					List<Filter> givenFilters = this.getPossibleFiltersByPaths(actualFilters, paths, false);
+					givenFilters.removeAll(u.appliedFilters);
+
+
+					if(chandler.countPossibleFilters(givenFilters, u) == 0)
+					{
+						givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findCommonPaths(mages), false);
+						givenFilters.removeAll(u.appliedFilters);
+
+					}
+					
+					Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(u, givenFilters));
+					if(f != null)
+					{
+						u.appliedFilters.add(f);
+						
+						if(f.power > maxpower)
+							maxpower = f.power;
+						
+
+					}
+			
+					
+					
+				}
+				power -= maxpower;
+
+			}
 			// If all mages of tier have distinguishing paths and either luck or no common paths, separate filters are rolled. 
-			if(different)
+			else if(different)
 			{
 				double maxpower = 0;
 				for(Unit u : mages)
 				{
 					List<Filter> givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findDistinguishingPaths(u, mages), strict);
-					
 					if(MageGenerator.findDistinguishingPaths(u, mages).size() == 0)
 						givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findCommonPaths(mages), false);
 					
@@ -1602,7 +1644,7 @@ public class MageGenerator extends TroopGenerator {
 					if(f != null)
 					{
 						
-						if(!handleMontagFilters(u, power, defaults, lookfor))
+						if(!handleMontagFilters(u, (int)Math.round(f.power), defaults, lookfor))
 							u.appliedFilters.add(f);
 			
 						
@@ -1662,7 +1704,7 @@ public class MageGenerator extends TroopGenerator {
 				
 				for(Unit u : mages)
 				{
-					if(!handleMontagFilters(u, power, defaults, lookfor))
+					if(!handleMontagFilters(u, (int)Math.round(f.power), defaults, lookfor))
 						u.appliedFilters.add(f);
 				}
 				
