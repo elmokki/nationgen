@@ -509,7 +509,7 @@ public class MageGenerator extends TroopGenerator {
 		// Handle montags
 		for(int i = 1; i <= 3; i++)
 			for(Unit u : this.getMagesOfTier(list, i))
-				unitGen.handleMontagUnits(u, new MageMontagTemplate(i), "montagmages");
+				unitGen.handleMontagUnits(u, new MageMontagTemplate(nation, nationGen, i), "montagmages");
 
 		
 		// Diagnostics
@@ -593,7 +593,7 @@ public class MageGenerator extends TroopGenerator {
 				extramages.get(0).commands.add(new Command("#slowrec"));
 		
 			for(Unit u : extramages)
-				unitGen.handleMontagUnits(u, new MageMontagTemplate(4), "montagmages");
+				unitGen.handleMontagUnits(u, new MageMontagTemplate(nation, nationGen, 4), "montagmages");
 		
 			list.addAll(0, extramages);
 			

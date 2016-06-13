@@ -8,9 +8,17 @@ import nationGen.units.Unit;
 
 public class TroopMontagTemplate extends MontagTemplate {
 	
-	public Unit generateUnit(Unit u, Pose p, Nation n, NationGen ngen)
+	private TroopGenerator tGen = null;
+	
+	public TroopMontagTemplate(NationGen ngen, Nation n)
 	{
-		TroopGenerator tGen = new TroopGenerator(ngen, n);
+			tGen = new TroopGenerator(ngen, n);
+	}
+
+
+	
+	public Unit generateUnit(Unit u, Pose p)
+	{
 	    Unit newunit = null;
 	    int tries = 0;
 	    while(tries < 100 && newunit == null)
@@ -19,6 +27,7 @@ public class TroopMontagTemplate extends MontagTemplate {
 	    	newunit = tGen.unitGen.generateUnit(u.race, p);
 	    	handleFilterInheritance(u, newunit);
 	    	newunit = tGen.equipUnit(newunit);
+
 	    }
 	    
 	    return newunit;

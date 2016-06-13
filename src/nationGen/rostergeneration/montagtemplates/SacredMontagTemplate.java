@@ -13,12 +13,18 @@ public class SacredMontagTemplate extends MontagTemplate {
 	
 	public int power = 1;
 	public boolean sacred = true;
+	private SacredGenerator sGen;
+	private Random r;
 	
-	public Unit generateUnit(Unit u, Pose p, Nation n, NationGen ngen)
+	public SacredMontagTemplate(Nation n, NationGen ngen)
 	{
-		SacredGenerator sGen = new SacredGenerator(ngen, n);
+		sGen = new SacredGenerator(ngen, n);
+		r = new Random(n.random.nextInt());
+	}
+	
+	public Unit generateUnit(Unit u, Pose p)
+	{
 		
-		Random r = new Random(n.random.nextInt());
 		double epicchance = r.nextDouble() * 0.5 + power * 0.25 + 0.25;
 		
 	    Unit newunit = null;

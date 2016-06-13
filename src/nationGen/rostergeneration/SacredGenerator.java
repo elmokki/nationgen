@@ -420,7 +420,6 @@ public class SacredGenerator extends TroopGenerator {
 
 		if(Generic.containsTag(Generic.getAllUnitTags(u), "innate_sacred_power"))
 		{
-			System.out.print(power);
 			power -= Integer.parseInt(Generic.getTagValue(Generic.getAllUnitTags(u), "innate_sacred_power"));
 			
 			if(sacred)
@@ -434,7 +433,7 @@ public class SacredGenerator extends TroopGenerator {
 		
 		if(unitGen.hasMontagPose(u))
 		{
-			SacredMontagTemplate template = new SacredMontagTemplate();
+			SacredMontagTemplate template = new SacredMontagTemplate(nation, nationGen);
 			template.power = power;
 			template.sacred = sacred;
 			unitGen.handleMontagUnits(u, template, "montagsacreds");

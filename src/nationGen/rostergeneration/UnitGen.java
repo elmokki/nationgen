@@ -1,9 +1,14 @@
 package nationGen.rostergeneration;
 
+import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Random;
+
+
+
 
 
 
@@ -963,12 +968,13 @@ public class UnitGen {
 		int tries = 0;
 		Pose p = null;
 		Unit newunit = null;
+		
 		while(list.size() < count && tries < 100)
 		{
 			tries++;
-			
+
 			p = Pose.getRandom(random, montagposes);
-			newunit = template.generateUnit(u, p, nation, nationGen);
+			newunit = template.generateUnit(u, p);
 			
 			if(newunit != null)
 			{
@@ -987,9 +993,9 @@ public class UnitGen {
 				if(unitcount >= maxunits)
 					montagposes.remove(p);
 			}
-			
-		}
 		
+		}
+
 		if(list.size() > 0)
 		{
 			int montag = nationGen.idHandler.nextMontagId();
@@ -1008,6 +1014,7 @@ public class UnitGen {
 			nation.unitlists.get(listname).addAll(list);
 		
 		
+		template = null;
 	}
 	
 	private void handlePossibleCommands(Unit u)
