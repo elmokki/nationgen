@@ -18,13 +18,12 @@ import nationGen.units.Unit;
 
 public class MageNamer extends Namer {
 	
-	private Random random;
+	protected Random random;
 	private NationGen ng;
-	public MageNamer(NationGen ng, Nation n) {
-		super(n);
-		random = new Random(n.random.nextInt());
+	public MageNamer(NationGen ng) {
 		this.ng = ng;
-		loadNameData();
+		
+
 	}
 
 
@@ -100,8 +99,13 @@ public class MageNamer extends Namer {
 	
 	
 	
-	public void execute()
+	public void execute(Nation n)
 	{
+		this.n = n;
+		random = new Random(n.random.nextInt());
+		loadNameData();
+		
+		
 		List<List<Unit>> all = n.getMagesInSeparateLists();
 		execute(all, 3);
 		

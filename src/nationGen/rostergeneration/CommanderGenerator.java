@@ -308,7 +308,12 @@ public class CommanderGenerator extends TroopGenerator {
 			
 			process(unit);
 			unit.color = u.color;
-			unit.commands.addAll(u.commands);
+			
+			for(Command c : u.commands)
+			{
+				if(!c.command.equals("#montag"))
+					unit.commands.add(c);
+			}
 			unit.appliedFilters.addAll(u.appliedFilters);
 			unit.caponly = u.caponly;
 			unit.tags.addAll(u.tags);
@@ -470,6 +475,9 @@ public class CommanderGenerator extends TroopGenerator {
 			nation.comlists.put("commanders", new ArrayList<Unit>());
 		
 		nation.comlists.get("commanders").addAll(tempComs);
+		
+		chandler = null;
+		unitGen = null;
 	}
 	
 

@@ -14,7 +14,8 @@
 -- #montagpose "small centauroid" 1
 
 #chanceinc moduleid herogen *0
-
+#montagpose_min 8
+#montagpose_max 8
 
 
 #load basesprite /data/items/foulspawn/small/bases_infantry.txt
@@ -50,7 +51,8 @@
 #load helmet /data/items/foulspawn/small/helmet_placeholder.txt
 
 #load weapon /data/items/foulspawn/small/weapon_placeholder.txt
-
+#montagpose_min 8
+#montagpose_max 8
 #maxunits 1
 #endpose
 
@@ -60,6 +62,10 @@
 #name "foulspawn elite infantry"
 #role "elite infantry"
 #role "sacred infantry"
+
+#montagpose_min 5
+#montagpose_max 5
+
 
 #chanceinc moduleid herogen *0
 

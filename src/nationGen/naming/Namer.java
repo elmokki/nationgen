@@ -12,9 +12,9 @@ import nationGen.units.Unit;
 public class Namer {
 	
 	Nation n;
-	public Namer(Nation n)
+	public Namer()
 	{
-		this.n = n;
+	
 	}
 	
 	protected List<Integer> getHighestPaths(Nation n)

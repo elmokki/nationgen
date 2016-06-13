@@ -354,18 +354,25 @@ public class Unit {
 		// This handles #needs
 		if(getSlot(slotname).dependencies.size() > 0)
 		{
+			String target = null;
+			String slot = null;
+			String command = null;
+			Item item = null;
+			List<Item> possibles = null;
+			
+			
 			for(ItemDependency d : getSlot(slotname).dependencies)
 			{
 				if(d.lagged != lagged)
 					continue;
 				
-				String target = d.target;
-				String slot = d.slot;
+				target = d.target;
+				slot = d.slot;
 				
 	
 				if(!d.type) // Handle needs and setslot
 				{
-					String command = "#needs";
+					command = "#needs";
 					if(lagged)
 						command = "#forceslot";
 					
@@ -375,7 +382,7 @@ public class Unit {
 						System.out.println(command + " for " + slotname + ", item " + target + " and item " + getSlot(slotname).name + " on slot " + slot + " failed. Roles " + this.pose.roles + ", race " + race.name );
 						break;
 					}
-					Item item = pose.getItems(slot).getItemWithName(target, slot);
+					item = pose.getItems(slot).getItemWithName(target, slot);
 					
 					
 					if(item != null)
@@ -391,7 +398,7 @@ public class Unit {
 				}
 				else if(this.nation != null) // Handle needstype and setslottype
 				{
-					String command = "#needstype";
+					command = "#needstype";
 					if(lagged)
 						command = "#forceslottype";
 					
@@ -405,8 +412,8 @@ public class Unit {
 					}
 					
 					
-					List<Item> possibles = ChanceIncHandler.getFiltersWithType(target, pose.getItems(slot));
-					Item item = Entity.getRandom(r, chandler.handleChanceIncs(this, possibles));
+					possibles = ChanceIncHandler.getFiltersWithType(target, pose.getItems(slot));
+					item = Entity.getRandom(r, chandler.handleChanceIncs(this, possibles));
 					
 					if(item != null)
 					{

@@ -129,6 +129,11 @@ public class PreviewGenerator {
 		
 		
 		javax.imageio.ImageIO.write(img, "png", new File(file));
+		
+		img = null;
+		g = null;
+		fg = null;
+		troops = null;
 	}
 	
 	private void drawList(int[][] map, int maxX, int maxY, List<Unit> troops, Graphics g) throws IOException

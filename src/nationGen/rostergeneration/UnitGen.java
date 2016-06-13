@@ -961,12 +961,14 @@ public class UnitGen {
 		
 		// Generate units
 		int tries = 0;
+		Pose p = null;
+		Unit newunit = null;
 		while(list.size() < count && tries < 100)
 		{
 			tries++;
 			
-			Pose p = Pose.getRandom(random, montagposes);
-			Unit newunit = template.generateUnit(u, p, nation, nationGen);
+			p = Pose.getRandom(random, montagposes);
+			newunit = template.generateUnit(u, p, nation, nationGen);
 			
 			if(newunit != null)
 			{
