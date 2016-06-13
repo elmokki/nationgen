@@ -209,13 +209,14 @@ public class NationGen {
 				newseed = seeds.get(i);
 			
 			if(settings.get("debug") == 1.0)
-				System.out.println(newseed + " on " + ZonedDateTime.now().toLocalTime().truncatedTo(ChronoUnit.SECONDS));
+				System.out.println(newseed + " (" + (i+1) + ") on " + ZonedDateTime.now().toLocalTime().truncatedTo(ChronoUnit.SECONDS));
 
 			
 			Nation n = new Nation(this, idHandler.nextNationId(), newseed);
 
 			n.name = "Nation " + (i + 1);
 			nations.add(n);
+			
 			System.out.print(".");
 		}
 		System.out.println(" Done!");
