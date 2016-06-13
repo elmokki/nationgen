@@ -332,7 +332,8 @@ public class TroopGenerator {
 		Unit unit = null;
 		
 		boolean isPrimaryRace = (race == nation.races.get(0));
-		
+		List<Template> temptemplates = new ArrayList<Template>();
+
 		int cycles = 0;
 		do
 		{
@@ -344,7 +345,7 @@ public class TroopGenerator {
 			}
 			
 	
-			List<Template> temptemplates = new ArrayList<Template>();
+			temptemplates = new ArrayList<Template>();
 			for(Template t : templates)
 				if(t.race == race && (isPrimaryRace || t.canBeSecondary))
 					temptemplates.add(t);
