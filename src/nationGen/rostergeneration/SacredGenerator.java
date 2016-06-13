@@ -411,7 +411,6 @@ public class SacredGenerator extends TroopGenerator {
 		
 		Pose p = getPose(sacred, power, race);
 		
-		List<String> tags = new ArrayList<String>();
 		
 
 		
