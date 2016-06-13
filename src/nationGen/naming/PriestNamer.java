@@ -2,21 +2,27 @@ package nationGen.naming;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import com.elmokki.Generic;
 
+import nationGen.NationGen;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
 public class PriestNamer extends MageNamer {
 
-	public PriestNamer(Nation n) {
-		super(n);
-		loadNameData();
+	public PriestNamer(NationGen ng) {
+		super(ng);
+		
 	}
 
-	public void execute()
+	public void execute(Nation n)
 	{
+		this.n = n;
+		this.random = new Random(n.random.nextInt());
+		loadNameData();
+		
 		List<Unit> priests = n.comlists.get("priests");
 		
 		List<Unit> primaries = new ArrayList<Unit>();

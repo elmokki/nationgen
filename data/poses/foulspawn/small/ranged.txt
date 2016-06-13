@@ -10,8 +10,6 @@
 #montagpose "pure ranged" 3
 #montagpose "hybrid ranged" 1
 
-#adjustmentcommand "#gcost 10"
-#command "#rcost 8"
 
 #load basesprite /data/items/foulspawn/small/bases_ranged.txt
 
@@ -21,6 +19,9 @@
 #load weapon /data/items/foulspawn/small/weapon_placeholder.txt
 
 #chanceinc moduleid herogen *0
+
+#montagpose_min 8
+#montagpose_max 8
 
 #maxunits 1
 #endpose
@@ -37,8 +38,8 @@
 #montagpose "pure ranged" 1
 #montagpose "hybrid ranged" 3
 
-#adjustmentcommand "#gcost 35"
-#command "#rcost 15"
+#montagpose_min 5
+#montagpose_max 5
 
 #load basesprite /data/items/foulspawn/small/bases_ranged.txt
 

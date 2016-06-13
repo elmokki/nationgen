@@ -8,19 +8,22 @@ import java.util.Random;
 
 import com.elmokki.Generic;
 
+import nationGen.NationGen;
 import nationGen.entities.Entity;
 import nationGen.magic.MageGenerator;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.nation.Nation;
+import nationGen.rostergeneration.UnitGen;
 import nationGen.units.Unit;
 
 public class MageNamer extends Namer {
 	
-	private Random random;
-	public MageNamer(Nation n) {
-		super(n);
-		random = new Random(n.random.nextInt());
-		loadNameData();
+	protected Random random;
+	private NationGen ng;
+	public MageNamer(NationGen ng) {
+		this.ng = ng;
+		
+
 	}
 
 
@@ -96,10 +99,25 @@ public class MageNamer extends Namer {
 	
 	
 	
-	public void execute()
+	public void execute(Nation n)
 	{
+		this.n = n;
+		random = new Random(n.random.nextInt());
+		loadNameData();
+		
+		
 		List<List<Unit>> all = n.getMagesInSeparateLists();
 		execute(all, 3);
+		
+		UnitGen ug = new UnitGen(ng, n);
+		for(List<Unit> l : all)
+			for(Unit u : l)
+			{
+				for(Unit mu : ug.getMontagUnits(u))
+				{
+					mu.name = u.name.getCopy();
+				}
+			}
 		
 	}
 	

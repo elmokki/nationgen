@@ -1,5 +1,43 @@
 
 ---------- Foulspawn mages
+
+
+
+#newpose
+#name "foulspawn main mage"
+#role "mage"
+#role "priest"
+
+#renderorder "shadow wings head basesprite armor color trim belt rarm weapon rhand larm helmet overlay"
+
+#load basesprite /data/items/foulspawn/small/caster/category_base.txt
+#load armor /data/items/foulspawn/small/caster/category_armor.txt
+
+#montagpose "foulspawn mages" 1
+#montagpose_min 3
+#montagpose_max 3
+
+#varyslot armor
+
+#tier 3
+
+
+#chanceinc moduleid herogen *0
+
+
+#dontvaryhat
+-- #mage_nolowtierhat
+
+#itemslot hand 0
+#itemslot head 1
+#itemslot misc 2
+
+#endpose
+
+
+
+--- Tier 1 and 2
+
 #newpose
 #name "foulspawn mages"
 #role "mage"
@@ -39,7 +77,6 @@
 
 #tier 1
 #tier 2
-#tier 3
 
 #dontvaryhat
 -- #mage_nolowtierhat

@@ -158,7 +158,9 @@ public class UnitGen {
 		{		
 			
 			List<String> args = Generic.parseArgs(str);
-			String type = args.get(args.size() - 1);
+			String type = null;
+			if(args.size() > 1)
+				type = args.get(args.size() - 1);
 			
 			String set = null;
 			if(args.size() > 0)
@@ -173,17 +175,26 @@ public class UnitGen {
 				
 				
 				if(nationGen.templates.get(set) == null)
-					System.out.println("No template filters were found for set + " + set + "!");
+					System.out.println("No template filters were found for set " + set + "!");
 				else
 					tFilters.addAll(nationGen.templates.get(set));
 
 
 			}
 				
-			List<Filter> possibles = ChanceIncHandler.getFiltersWithType(type, tFilters);
+			List<Filter> possibles = new ArrayList<Filter>();
+			possibles.addAll(tFilters);
+			
+			if(type != null)
+				possibles = ChanceIncHandler.getFiltersWithType(type, tFilters);
+			
 			if(possibles.size() == 0)
 			{
-				System.out.println("No template filters of type " + type + " were found for #freetemplatefilter " + type);
+				if(type != null)
+					System.out.println("No template filters of type " + type + " were found for #freetemplatefilter " + set + " " + type);
+				else
+					System.out.println("No template filters were found for #freetemplatefilter " + set);
+
 			}
 			else
 			{
@@ -538,7 +549,7 @@ public class UnitGen {
 		if(included == null)
 			included = new ItemSet();
 		
-		if(!hasItem(u, "weapon"))
+		if(!hasItem(u, "weapon") && u.pose.getItems("weapon") != null)
 		{
 			if(ignoreArmor)
 				u.setSlot("weapon", getSuitableItem("weapon", u, excluded, included, targettag));
@@ -560,6 +571,7 @@ public class UnitGen {
 					{
 						all = test;
 					}
+					
 				}
 				
 				all.removeAll(excluded);
@@ -911,6 +923,7 @@ public class UnitGen {
 		
 		for(String tag : Generic.getTags(u.pose.tags, "montagpose"))
 		{
+			
 			List<String> args = Generic.parseArgs(tag);
 
 			String name = args.get(1);
@@ -931,8 +944,10 @@ public class UnitGen {
 				}
 			
 		}
+		if(montagposes.size() == 0)
+			return;
+		
 		montagposes = chandler.handleChanceIncs(u, montagposes);
-
 		
 		// Determine unit amount
 		int min = 10;
@@ -946,12 +961,14 @@ public class UnitGen {
 		
 		// Generate units
 		int tries = 0;
+		Pose p = null;
+		Unit newunit = null;
 		while(list.size() < count && tries < 100)
 		{
 			tries++;
 			
-			Pose p = Pose.getRandom(random, montagposes);
-			Unit newunit = template.generateUnit(u, p, nation, nationGen);
+			p = Pose.getRandom(random, montagposes);
+			newunit = template.generateUnit(u, p, nation, nationGen);
 			
 			if(newunit != null)
 			{
@@ -1030,6 +1047,32 @@ public class UnitGen {
 		}
 	}
 
+	
+	public List<Unit> getMontagUnits(Unit u)
+	{
+
+		List<Unit> units = new ArrayList<Unit>();
+		if(Generic.containsTag(u.pose.tags, "montagpose") && !Generic.containsTag(u.pose.tags, "no_montag_mean_costs") && u.getCommandValue("#firstshape", 0) < 0)
+		{
+	
+			int firstshape = -u.getCommandValue("#firstshape", 0);
+			for(List<Unit> lu : nation.unitlists.values())
+			{
+				for(Unit nu : lu)
+					if(nu.getCommandValue("#montag", 0) == firstshape && u != nu)
+					{
+						units.add(nu);
+				
+					}
+			}
+			
+
+			
+				
+		}
+		
+		return units;
+	}
 
 	
 }

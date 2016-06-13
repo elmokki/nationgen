@@ -200,22 +200,27 @@ public class NationGen {
 		
 		System.out.print("Generating nations");
 		List<Nation> nations = new ArrayList<Nation>();
+		Nation newnation = null;
+		int newseed = 0;
 		for(int i = 0; i < amount; i++)
 		{
-			int newseed = 0;
 			if(!manyseeds)
 				newseed = random.nextInt();
 			else
 				newseed = seeds.get(i);
 			
 			if(settings.get("debug") == 1.0)
-				System.out.println(newseed + " on " + ZonedDateTime.now().toLocalTime().truncatedTo(ChronoUnit.SECONDS));
+				System.out.println(newseed + " (" + (i+1) + ") on " + ZonedDateTime.now().toLocalTime().truncatedTo(ChronoUnit.SECONDS));
 
 			
-			Nation n = new Nation(this, idHandler.nextNationId(), newseed);
+			newnation = new Nation(this, idHandler.nextNationId(), newseed);
 
-			n.name = "Nation " + (i + 1);
-			nations.add(n);
+			newnation.name = "Nation " + (i + 1);
+			
+			System.gc();
+			
+			nations.add(newnation);
+
 			System.out.print(".");
 		}
 		System.out.println(" Done!");
@@ -267,6 +272,11 @@ public class NationGen {
 		
 		System.out.print("Naming things");
 		
+		MageNamer mNamer = new MageNamer(this);
+		PriestNamer pNamer = new PriestNamer(this);
+		SacredNamer sNamer = new SacredNamer();
+		TroopNamer tnamer = new TroopNamer();
+
 		NameGenerator nGen = new NameGenerator(this);
 		for(Nation n : nations)
 		{
@@ -275,23 +285,20 @@ public class NationGen {
 
 			
 			// troops
-			TroopNamer tnamer = new TroopNamer(n);
-			tnamer.execute();
+			tnamer.execute(n);
 			
 			// sites
 			for(Site s : n.sites)
 				s.name = nGen.getSiteName(n.random, s.getPath(), s.getSecondaryPath());
 	
+	
 			// mages 
-			MageNamer mNamer = new MageNamer(n);
-			mNamer.execute();
+			mNamer.execute(n);
 			
 			// priests
-			PriestNamer pNamer = new PriestNamer(n);
-			pNamer.execute();
+			pNamer.execute(n);
 			
 			// sacreds and elites
-			SacredNamer sNamer = new SacredNamer(n);
 			sNamer.nameSacreds(n);
 
 			// Epithet

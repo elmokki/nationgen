@@ -4,6 +4,7 @@ import java.util.Random;
 
 import nationGen.NationGen;
 import nationGen.entities.Pose;
+import nationGen.entities.Race;
 import nationGen.nation.Nation;
 import nationGen.rostergeneration.SacredGenerator;
 import nationGen.units.Unit;
@@ -26,7 +27,12 @@ public class SacredMontagTemplate extends MontagTemplate {
 	    {
 	    	tries++;
 	    	int powernow = (int) Math.round(r.nextDouble() * (power + 2));
-	    	newunit = sGen.getSacredUnit(u.race, p, powernow, sacred, epicchance);
+	   
+	    	newunit = sGen.unitGen.generateUnit(u.race, p);
+	    	handleFilterInheritance(u, newunit);
+	    	newunit = sGen.getSacredUnit(newunit, powernow, sacred, epicchance);
+	    	
+	    	
 			sGen.calculatePower(u, power);
 
 	    }

@@ -1400,6 +1400,22 @@ public class ChanceIncHandler {
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
+				// any unit filter
+				canIncrease = false;
+				if(args.get(0).equals("anyunitfilter"))
+				{
+					for(Unit u : n.generateTroopList())
+						for(Filter fa : u.appliedFilters)
+							if(fa.name.equals(args.get(1)))
+								canIncrease = true;
+					for(Unit u : n.generateComList())
+						for(Filter fa : u.appliedFilters)
+							if(fa.name.equals(args.get(1)))
+								canIncrease = true;
+					
+					if(canIncrease)
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+				}
 				// nationtag
 				canIncrease = false;
 				if(args.get(0).equals("nationtag") && args.size() >= 3)

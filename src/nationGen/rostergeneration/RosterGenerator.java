@@ -284,23 +284,22 @@ public class RosterGenerator {
 				break;
 
 			List<Unit> target = null;
-			if(roll.equals("ranged") && maxamounts[0] > ranged.size())
+			if(roll.equals("ranged") && maxamounts[0] > ranged.size() && tgen.hasPosesWithoutMaxUnits(race, "ranged"))
 				target = ranged;
-			else if(roll.equals("infantry") && maxamounts[1] > infantry.size())
+			else if(roll.equals("infantry") && maxamounts[1] > infantry.size() && tgen.hasPosesWithoutMaxUnits(race, "infantry"))
 				target = infantry;
-			else if(roll.equals("mounted") && maxamounts[2] > cavalry.size())
+			else if(roll.equals("mounted") && maxamounts[2] > cavalry.size() && tgen.hasPosesWithoutMaxUnits(race, "mounted"))
 				target = cavalry;
-			else if(roll.equals("chariot") && maxamounts[3] > chariot.size())
+			else if(roll.equals("chariot") && maxamounts[3] > chariot.size() && tgen.hasPosesWithoutMaxUnits(race, "chariot"))
 				target = chariot;
 			
 			if(race != null && target != null && race.hasRole(roll))
 			{
 			
 				Unit u = tgen.generateUnit(roll, race);
-				
+
 				if(u != null)
 				{
-
 					target.add(u);
 					
 					units++;
@@ -311,7 +310,6 @@ public class RosterGenerator {
 						secs++;
 
 				}
-		
 
 				
 			}
@@ -326,7 +324,7 @@ public class RosterGenerator {
 		putToNation("mounted", sortToLists(cavalry));
 		putToNation("chariot", sortToLists(chariot));
 		
-
+		tgen = null;
 	
 	}
 	

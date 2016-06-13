@@ -107,7 +107,6 @@ public class Nation {
 		
 	}
 	
-	
 	public void generate()
 	{
 		colors[0] = Drawing.getColor(random);
@@ -209,16 +208,17 @@ public class Nation {
 		MageGenerator mageGen = new MageGenerator(nationGen, this);
 		comlists.get("mages").addAll(mageGen.generateMages());
 		comlists.get("priests").addAll(mageGen.generatePriests());
-		
+		mageGen = null;
 
 		// Troops
 		RosterGenerator g = new RosterGenerator(nationGen, this);
 		g.execute();
-
+		g = null;
+		
 		//// Sacreds and elites
 		SacredGenerator sacGen = new SacredGenerator(nationGen, this);
 		List<Unit> sacreds = new ArrayList<Unit>();
-
+		
 
 		// Elite
 		int sacredcount = 1;
@@ -313,6 +313,7 @@ public class Nation {
 		}
 		if(sacreds.size() > 0)
 			unitlists.put("sacreds", sacreds);
+		sacGen = null;
 		
 
 		// Scouts
@@ -323,7 +324,8 @@ public class Nation {
 			comlists.get("scouts").add(scoutgen.generateScout(races.get(0)));
 		else if(races.get(1).hasRole("scout") && !races.get(1).tags.contains("#no_scouts"))
 			comlists.get("scouts").add(scoutgen.generateScout(races.get(1)));
-
+		scoutgen = null;
+		
 		// Special commanders
 
 		double specialcomchance = 0.05;
@@ -334,12 +336,14 @@ public class Nation {
 		{
 			SpecialCommanderGenerator scg = new SpecialCommanderGenerator(this, nationGen);
 			scg.generate();
+			scg = null;
 		}
 
 
 		// Gods
 		GodGen gg = new GodGen(this);
 		this.gods.addAll(gg.giveGods());
+		gg = null;
 		
 		// Forts
 		List<Filter> possibleForts = ChanceIncHandler.retrieveFilters("forts", "default_forts", nationGen.miscdef, null, races.get(0));
@@ -352,7 +356,7 @@ public class Nation {
 		HeroGenerator hg = new HeroGenerator(nationGen, this);
 		int heroes = 1 + random.nextInt(3); // 1-3
 		this.heroes.addAll(hg.generateHeroes(heroes));
-
+		hg = null;
 		
 		// Nation wide filters
 		int count = 0;
@@ -369,7 +373,7 @@ public class Nation {
 		// Commanders
 		CommanderGenerator comgen = new CommanderGenerator(nationGen, this);
 		comgen.generateComs();
-		
+		comgen = null;
 
 		
 		// Monsters
@@ -386,12 +390,12 @@ public class Nation {
 				this.unitlists.put("monsters", new ArrayList<Unit>());
 				this.unitlists.get("monsters").add(monster);
 			}
-			
+			mGen = null;
 		}
 		
 		// Sites
 		SiteGenerator.generateSites(this);
-		
+	
 		// Nation filters
 		// Being replaced by addNationThemes() system as of 16.2.2016.
 		// Still here in case reverting is needed.
@@ -401,14 +405,16 @@ public class Nation {
 		// Flag
 		FlagGen fg = new FlagGen(this);
 		this.flag = fg.generateFlag(this);
+		fg = null;
 		
 		// Start affinity
 		int cycles = 2;
 		
 		List<Filter> posaff = ChanceIncHandler.retrieveFilters("startaffinities", "startaffinities", nationGen.miscdef, null, races.get(0));
+		Filter startaff = null;
 		while(cycles > 0)
 		{
-			Filter startaff = Filter.getRandom(random, chandler.handleChanceIncs(posaff));
+			startaff = Filter.getRandom(random, chandler.handleChanceIncs(posaff));
 			
 			if(startaff.getCommands().size() > 0)
 			{
@@ -447,6 +453,7 @@ public class Nation {
     			su.polish(nationGen, this);
         }
         
+        chandler = null;
        
 	}
 	
@@ -454,7 +461,8 @@ public class Nation {
 
 	private void addNationThemes()
 	{
-		Random r = new Random(this.random.nextInt());
+
+
 		Race race = this.races.get(0);
 		
 		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("nationthemes", "default_nationthemes", nationGen.themes, null, race);
@@ -468,7 +476,7 @@ public class Nation {
 			
 			if(frees.size() > 0)
 			{
-				t = Entity.getRandom(r, chandler.handleChanceIncs(frees));
+				t = Entity.getRandom(random, chandler.handleChanceIncs(frees));
 				if(t != null)
 				{
 				
@@ -510,7 +518,7 @@ public class Nation {
 			possibleThemes = ChanceIncHandler.getValidFilters(possibleThemes, race.themefilters);
 			if(possibleThemes.size() > 0)
 			{
-				Theme t = Theme.getRandom(r, chandler.handleChanceIncs(possibleThemes));
+				Theme t = Theme.getRandom(random, chandler.handleChanceIncs(possibleThemes));
 				if(t != null)
 				{
 					race.handleTheme(t);
@@ -527,7 +535,6 @@ public class Nation {
 	
 	private void addRaceThemes(Race race)
 	{
-		Random r = new Random(this.random.nextInt());
 		
 		
 		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("racethemes", "default_racethemes", nationGen.themes, null, race);
@@ -542,7 +549,7 @@ public class Nation {
 			
 			if(frees.size() > 0)
 			{
-				t = Entity.getRandom(r, chandler.handleChanceIncs(frees));
+				t = Entity.getRandom(random, chandler.handleChanceIncs(frees));
 				if(t != null)
 				{
 				
@@ -577,7 +584,7 @@ public class Nation {
 			possibleThemes = ChanceIncHandler.getValidFilters(possibleThemes, race.themefilters);
 			if(possibleThemes.size() > 0)
 			{
-				Theme t = Theme.getRandom(r, chandler.handleChanceIncs(possibleThemes));
+				Theme t = Theme.getRandom(random, chandler.handleChanceIncs(possibleThemes));
 				if(t != null)
 				{
 					race.themefilters.add(t);
@@ -591,9 +598,9 @@ public class Nation {
 		
 		// 10% chance for second theme
 		possibleThemes = ChanceIncHandler.getValidFilters(possibleThemes, race.themefilters);
-		if(possibleThemes.size() > 0 && r.nextDouble() < 0.1)
+		if(possibleThemes.size() > 0 && random.nextDouble() < 0.1)
 		{
-			Theme t = Theme.getRandom(r, chandler.handleChanceIncs(possibleThemes));
+			Theme t = Theme.getRandom(random, chandler.handleChanceIncs(possibleThemes));
 			if(t != null)
 			{
 				race.themefilters.add(t);
@@ -976,14 +983,21 @@ public class Nation {
 	{
 		List<Unit> unitlist = new ArrayList<Unit>();
 		Iterator<Entry<String, List<Unit>>> itr = unitlists.entrySet().iterator();
-		while(itr.hasNext())
+		
+		if(itr.hasNext())
 		{
 			Entry<String, List<Unit>> entry = itr.next();
-			if(entry.getKey().startsWith(role))
+	
+			do
 			{
-				for(Unit u : entry.getValue())
-					unitlist.add(u);
-			}
+				if(entry.getKey().startsWith(role))
+				{
+					for(Unit u : entry.getValue())
+						unitlist.add(u);
+				}
+				entry = itr.next();
+	
+			} while(itr.hasNext());
 		}
 		return unitlist;
 	}

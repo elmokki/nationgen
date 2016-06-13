@@ -354,18 +354,25 @@ public class Unit {
 		// This handles #needs
 		if(getSlot(slotname).dependencies.size() > 0)
 		{
+			String target = null;
+			String slot = null;
+			String command = null;
+			Item item = null;
+			List<Item> possibles = null;
+			
+			
 			for(ItemDependency d : getSlot(slotname).dependencies)
 			{
 				if(d.lagged != lagged)
 					continue;
 				
-				String target = d.target;
-				String slot = d.slot;
+				target = d.target;
+				slot = d.slot;
 				
 	
 				if(!d.type) // Handle needs and setslot
 				{
-					String command = "#needs";
+					command = "#needs";
 					if(lagged)
 						command = "#forceslot";
 					
@@ -375,7 +382,7 @@ public class Unit {
 						System.out.println(command + " for " + slotname + ", item " + target + " and item " + getSlot(slotname).name + " on slot " + slot + " failed. Roles " + this.pose.roles + ", race " + race.name );
 						break;
 					}
-					Item item = pose.getItems(slot).getItemWithName(target, slot);
+					item = pose.getItems(slot).getItemWithName(target, slot);
 					
 					
 					if(item != null)
@@ -391,7 +398,7 @@ public class Unit {
 				}
 				else if(this.nation != null) // Handle needstype and setslottype
 				{
-					String command = "#needstype";
+					command = "#needstype";
 					if(lagged)
 						command = "#forceslottype";
 					
@@ -400,13 +407,13 @@ public class Unit {
 			
 					if(pose.getItems(slot) == null)
 					{
-						System.out.println(command + " for " + slotname + ", type " + target + " and item " + getSlot(slotname).name + " on slot " + slot + " failed due to the slot having no items. Roles " + this.pose.roles + ", race " + race.name );
+						System.out.println(command + " for " + slotname + ", type " + target + " and item " + getSlot(slotname).name + " on slot " + slot + " failed due to the slot having no items: " + pose + ", "+ this.pose.roles + ", race " + race.name );
 						break;
 					}
 					
 					
-					List<Item> possibles = ChanceIncHandler.getFiltersWithType(target, pose.getItems(slot));
-					Item item = Entity.getRandom(r, chandler.handleChanceIncs(this, possibles));
+					possibles = ChanceIncHandler.getFiltersWithType(target, pose.getItems(slot));
+					item = Entity.getRandom(r, chandler.handleChanceIncs(this, possibles));
 					
 					if(item != null)
 					{
@@ -1170,7 +1177,7 @@ public class Unit {
 		
 
 		// Montag mean costs
-		if(Generic.containsTag(this.pose.tags, "montagpose") && Generic.containsTag(this.pose.tags, "no_montag_mean_costs") && getCommandValue("#firstshape", 0) < 0)
+		if(Generic.containsTag(this.pose.tags, "montagpose") && !Generic.containsTag(this.pose.tags, "no_montag_mean_costs") && getCommandValue("#firstshape", 0) < 0)
 		{
 			int n = 0;
 			int res = 0;
@@ -1180,7 +1187,7 @@ public class Unit {
 			for(List<Unit> lu : nation.unitlists.values())
 			{
 				for(Unit nu : lu)
-					if(nu.getCommandValue("#montag", 0) == firstshape)
+					if(nu.getCommandValue("#montag", 0) == firstshape && u != nu)
 					{
 						nu.polish();
 						res += nu.getResCost(true);
