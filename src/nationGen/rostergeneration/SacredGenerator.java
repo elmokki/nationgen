@@ -672,7 +672,8 @@ public class SacredGenerator extends TroopGenerator {
 
 		
 		// Add epic stuff
-		this.addEpicness(u, sacred, power);
+		if(!unitGen.hasMontagPose(u))
+			this.addEpicness(u, sacred, power);
 		
 		
 		// Equip

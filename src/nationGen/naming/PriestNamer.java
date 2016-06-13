@@ -5,13 +5,14 @@ import java.util.List;
 
 import com.elmokki.Generic;
 
+import nationGen.NationGen;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
 public class PriestNamer extends MageNamer {
 
-	public PriestNamer(Nation n) {
-		super(n);
+	public PriestNamer(Nation n, NationGen ng) {
+		super(ng, n);
 		loadNameData();
 	}
 

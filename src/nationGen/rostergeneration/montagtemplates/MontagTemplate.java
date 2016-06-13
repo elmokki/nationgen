@@ -17,7 +17,9 @@ public class MontagTemplate {
 		for(Filter f : from.appliedFilters)
 		{
 			if(!f.tags.contains("not_montag_inheritable") && !to.appliedFilters.contains(f))
+			{
 				to.appliedFilters.add(f);
+			}
 		}
 	}
 }
