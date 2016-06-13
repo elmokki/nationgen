@@ -1564,8 +1564,14 @@ public class MageGenerator extends TroopGenerator {
 				for(Unit u : mages)
 				{
 					List<Filter> givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findDistinguishingPaths(u, mages), strict);
+					
+					if(MageGenerator.findDistinguishingPaths(u, mages).size() == 0)
+						givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findCommonPaths(mages), false);
+					
 					givenFilters.removeAll(u.appliedFilters);
 	
+					
+						
 
 					if(chandler.countPossibleFilters(givenFilters, u) == 0)
 					{
@@ -1573,26 +1579,26 @@ public class MageGenerator extends TroopGenerator {
 						givenFilters.removeAll(u.appliedFilters);
 					}
 					
-					
+
 					// CanAdd check
 					givenFilters = ChanceIncHandler.getValidUnitFilters(givenFilters, mages);
 					
-					
+
 					// Use old filters when feasible!
 					List<Filter> tempFilters = new ArrayList<Filter>();
 					tempFilters.addAll(givenFilters);
 					tempFilters.retainAll(oldFilters);
 					tempFilters = ChanceIncHandler.getValidUnitFilters(tempFilters, mages);
 
+
 					if(chandler.countPossibleFilters(tempFilters, u) > 0 && this.random.nextDouble() > 0.25)
 						givenFilters = tempFilters;
-						
-					
+
+
 
 					
 					Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(u, givenFilters));
 
-					
 					if(f != null)
 					{
 						
@@ -1607,7 +1613,7 @@ public class MageGenerator extends TroopGenerator {
 							maxpower = f.power;
 					}
 					else
-						System.out.println("Nation " + nation.seed + " had a null filter for a mage.");
+						System.out.println("Nation " + nation.seed + " had a null filter for a mage. Power was " + power + " and tier " + tier + ".");
 					
 				}
 				power -= maxpower;
