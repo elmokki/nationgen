@@ -10,11 +10,7 @@
 #command "#att +2"
 #command "#def +2"
 #command "#prec +0"
-#type small
-#type small_canid
-#type small_canid_hybrid
-#type small_canid_large
-#type small_large
+#addthemeinc thisitemslottag not helmet small *0
 #enditem
 
 #newitem
@@ -29,11 +25,7 @@
 #command "#att +2"
 #command "#def +2"
 #command "#prec +2"
-#type small
-#type small_canid
-#type small_canid_hybrid
-#type small_canid_large
-#type small_large
+#addthemeinc thisitemslottag not helmet small *0
 #enditem
 
 #newitem
@@ -48,11 +40,7 @@
 #command "#att +2"
 #command "#def +2"
 #command "#prec +1"
-#type canid
-#type small_canid
-#type small_canid_hybrid
-#type small_canid_large
-#type barehead
+#addthemeinc thisitemslottag not helmet canid *0
 #enditem
 
 #newitem
@@ -67,10 +55,7 @@
 #command "#att +2"
 #command "#def +2"
 #command "#prec +1"
-#type large
-#type small_canid_large
-#type small_large
-#type barehead
+#addthemeinc thisitemslottag not helmet large *0
 #enditem
 
 #newitem
@@ -85,10 +70,7 @@
 #command "#att +2"
 #command "#def +2"
 #command "#prec +1"
-#type large
-#type small_canid_large
-#type small_large
-#type barehead
+#addthemeinc thisitemslottag not helmet large *0
 #enditem
 
 #newitem
@@ -106,7 +88,7 @@
 #command "#prec -1"
 #command "#darkvision 100"
 #command "#voidsanity 10"
-#type barehead
+#forceslot helmet none
 #itemslot head 0
 #enditem
 
@@ -123,7 +105,7 @@
 #command "#def +0"
 #command "#prec -2"
 #command "#poisonres +5"
-#type barehead
+#forceslot helmet none
 #itemslot head 0
 #enditem
 
@@ -141,7 +123,7 @@
 #command "#def +2"
 #command "#prec +0"
 #command "#darkvision 50"
-#type barehead
+#forceslot helmet none
 #itemslot head 0
 #enditem
 
@@ -160,7 +142,7 @@
 #command "#prec -2"
 #command "#bluntres"
 #command "#darkvision 100"
-#type barehead
+#forceslot helmet none
 #itemslot head 0
 #enditem
 
@@ -180,7 +162,7 @@
 #command "#prec -4"
 #command "#mind"
 #command "#poisonres +5"
-#type barehead
+#forceslot helmet none
 #itemslot head 0
 #enditem
 
@@ -199,7 +181,7 @@
 #command "#prec +2"
 #command "#ap +2"
 #command "#poisonres +5"
-#type barehead
+#forceslot helmet none
 #itemslot head 0
 #enditem
 
@@ -218,7 +200,7 @@
 #command "#eyes 0"
 #command "#blind"
 #command "#supply -1"
-#type barehead
+#forceslot helmet none
 #itemslot head 0
 #enditem
 
@@ -235,9 +217,7 @@
 #command "#def +2"
 #command "#prec +3"
 #command "#ap +1"
-#type hybrid
-#type small_canid_hybrid
-#type barehead
+#addthemeinc thisitemslottag not helmet hybrid *0
 #itemslot head 0
 #enditem
 
@@ -255,6 +235,6 @@
 #command "#prec +0"
 #command "#eyes 1"
 #command "#darkvision 100"
-#type barehead
+#forceslot helmet none
 #itemslot head 0
 #enditem

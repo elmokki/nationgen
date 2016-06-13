@@ -15,8 +15,8 @@
 
 #chanceinc moduleid herogen *0
 
--- #adjustmentcommand "#gcost 10"
--- #command "#rcost 10"
+#adjustmentcommand "#gcost 10"
+#command "#rcost 10"
 
 #load basesprite /data/items/foulspawn/small/bases_infantry.txt
 
@@ -42,8 +42,8 @@
 #montagpose "ogre infantry" 3
 -- #montagpose "small centauroid" 2
 
--- #adjustmentcommand "#gcost 25"
--- #command "#rcost 10"
+#adjustmentcommand "#gcost 25"
+#command "#rcost 10"
 
 #load basesprite /data/items/foulspawn/medium/bases_infantry.txt
 
@@ -72,8 +72,8 @@
 #montagpose "ogre infantry" 3
 -- #montagpose "small centauroid" 1
 
--- #adjustmentcommand "#gcost 35"
--- #command "#rcost 15"
+#adjustmentcommand "#gcost 35"
+#command "#rcost 15"
 
 #load basesprite /data/items/foulspawn/small/bases_infantry.txt
 
@@ -136,6 +136,7 @@
 
 #generateitem 1 pants
 #generateitem 1 shirt
+#generateitem 1 head
 #generateitem 1 lleg
 #generateitem 1 rleg
 #generateitem 1 debility
@@ -191,6 +192,7 @@
 
 #generateitem 1 pants
 #generateitem 1 shirt
+#generateitem 1 head
 #generateitem 1 lleg
 #generateitem 1 rleg
 
@@ -242,6 +244,7 @@
 
 #generateitem 1 pants
 #generateitem 1 shirt
+#generateitem 1 head
 #generateitem 1 lleg
 #generateitem 1 rleg
 #generateitem 1 wings
@@ -386,7 +389,7 @@
 #load larm /data/items/foulspawn/small/larm.txt
 #load rleg /data/items/foulspawn/small/rleg_scout.txt
 #load lleg /data/items/foulspawn/small/lleg_scout.txt
-#load head /data/items/foulspawn/small/head.txt
+#load head /data/items/foulspawn/small/head_scout.txt
 #load shadow /data/items/foulspawn/small/shadow.txt
 #load shirt /data/items/foulspawn/small/shirt.txt
 #load pants /data/items/foulspawn/small/pants.txt
@@ -410,6 +413,7 @@
 
 #generateitem 1 pants
 #generateitem 1 shirt
+#generateitem 1 head
 #generateitem 1 lleg
 #generateitem 1 rleg
 #generateitem 1 offhand

@@ -11,12 +11,7 @@
 #command "#def +2"
 #command "#prec +0"
 #command "#ap +1"
-#type small
-#type small_canid
-#type small_canid_hybrid
-#type small_canid_large
-#type small_large
-#theme stealthy
+#addthemeinc thisitemslottag not helmet small *0
 #enditem
 
 #newitem
@@ -32,12 +27,7 @@
 #command "#def +2"
 #command "#prec +2"
 #command "#ap +1"
-#type small
-#type small_canid
-#type small_canid_hybrid
-#type small_canid_large
-#type small_large
-#theme stealthy
+#addthemeinc thisitemslottag not helmet small *0
 #enditem
 
 #newitem
@@ -54,12 +44,7 @@
 #command "#prec +1"
 #command "#ap +1"
 #needstype headweapon bite
-#type canid
-#type small_canid
-#type small_canid_hybrid
-#type small_canid_large
-#type barehead
-#theme stealthy
+#addthemeinc thisitemslottag not helmet canid *0
 #enditem
 
 #newitem
@@ -75,11 +60,7 @@
 #command "#def +2"
 #command "#prec +1"
 #command "#ap +1"
-#type large
-#type small_canid_large
-#type small_large
-#type barehead
-#theme stealthy
+#addthemeinc thisitemslottag not helmet large *0
 #enditem
 
 #newitem
@@ -95,11 +76,7 @@
 #command "#def +2"
 #command "#prec +1"
 #command "#ap +1"
-#type large
-#type small_canid_large
-#type small_large
-#type barehead
-#theme stealthy
+#addthemeinc thisitemslottag not helmet large *0
 #enditem
 
 #newitem
@@ -119,7 +96,7 @@
 #command "#darkvision 100"
 #command "#voidsanity 10"
 #command "#amphibian"
-#type barehead
+#forceslot helmet none
 #itemslot head 0
 #enditem
 
@@ -137,7 +114,7 @@
 #command "#prec -2"
 #command "#ap +2"
 #command "#poisonres +5"
-#type barehead
+#forceslot helmet none
 #needstype headweapon poison
 #itemslot head 0
 #type poison
@@ -159,7 +136,7 @@
 #command "#ap +2"
 #command "#amphibian"
 #command "#darkvision 50"
-#type barehead
+#forceslot helmet none
 #needstype headweapon bite
 #itemslot head 0
 #enditem
@@ -181,7 +158,7 @@
 #command "#bluntres"
 #command "#darkvision 100"
 #command "#amphibian"
-#type barehead
+#forceslot helmet none
 #itemslot head 0
 #type psychic
 #enditem
@@ -203,7 +180,7 @@
 #command "#ap +2"
 #command "#mind"
 #command "#poisonres +5"
-#type barehead
+#forceslot helmet none
 #itemslot head 0
 #enditem
 
@@ -222,7 +199,7 @@
 #command "#prec +2"
 #command "#ap +2"
 #command "#poisonres +5"
-#type barehead
+#forceslot helmet none
 #needstype headweapon poison
 #itemslot head 0
 #type poison
@@ -244,7 +221,7 @@
 #command "#eyes 0"
 #command "#blind"
 #command "#supply -1"
-#type barehead
+#forceslot helmet none
 #needstype headweapon maw
 #itemslot head 0
 #type psychic
@@ -265,9 +242,7 @@
 #command "#prec +3"
 #command "#ap +1"
 #command "#amphibian"
-#type hybrid
-#type small_canid_hybrid
-#type barehead
+#addthemeinc thisitemslottag not helmet hybrid *0
 #itemslot head 0
 #type psychic
 #enditem
@@ -289,7 +264,7 @@
 #command "#darkvision 100"
 #command "#neednoteat"
 #command "#amphibian"
-#type barehead
+#forceslot helmet none
 #itemslot head 0
 #type psychic
 #enditem
