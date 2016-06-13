@@ -36,8 +36,13 @@ public class TroopNamer {
 	
 	private ChanceIncHandler chandler;
 	
-	public TroopNamer(Nation n)
+	public TroopNamer()
 	{
+
+
+	}
+	
+	public void execute(Nation n) {
 		this.n = n;
 		r = new Random(n.random.nextInt());
 		chandler = new ChanceIncHandler(n);
@@ -53,10 +58,7 @@ public class TroopNamer {
 		miscguaranteed = ChanceIncHandler.retrieveFilters("troopmiscguaranteedparts", "troopmiscguaranteedparts", n.nationGen.miscnames, null, n.races.get(0));
 		combases = ChanceIncHandler.retrieveFilters("commanderbasenames", "commanderbasenames", n.nationGen.miscnames, null, n.races.get(0));
 
-
-	}
-	
-	public void execute() {
+		
 		nameNation();
 	}
 	

@@ -26,13 +26,8 @@ public class SacredNamer {
 	
 	ChanceIncHandler chandler = null;
 
-	public SacredNamer(Nation n)
+	public SacredNamer()
 	{
-		chandler = new ChanceIncHandler(n);
-		parts = n.nationGen.miscnames.get("defaultparts");
-		bases = n.nationGen.miscnames.get("defaultbases");
-		combases = n.nationGen.miscnames.get("defaultcommandernames");
-		eliteparts = n.nationGen.miscnames.get("defaulteliteparts");
 
 	}
 	
@@ -58,7 +53,13 @@ public class SacredNamer {
 	
 	public void nameSacreds(Nation n)
 	{
-		this.r = n.random;
+		chandler = new ChanceIncHandler(n);
+		parts = n.nationGen.miscnames.get("defaultparts");
+		bases = n.nationGen.miscnames.get("defaultbases");
+		combases = n.nationGen.miscnames.get("defaultcommandernames");
+		eliteparts = n.nationGen.miscnames.get("defaulteliteparts");
+
+		this.r = new Random(n.random.nextInt());
 		
 		
 
