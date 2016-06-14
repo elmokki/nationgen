@@ -29,7 +29,7 @@ public class Item extends Filter {
 	public String mask = "";
 	public String id = "-1";
 	public boolean armor = false;
-	
+	public Filter filter = null;
 	
 	protected int offsetx = 0;
 	protected int offsety = 0;
@@ -89,6 +89,7 @@ public class Item extends Filter {
 		item.renderslot = renderslot;
 		item.renderprio = renderprio;
 		item.name = this.name;
+		item.filter = this.filter;
 		item.basechance = this.basechance;
 		item.tags.addAll(tags);
 		return item;
@@ -125,6 +126,24 @@ public class Item extends Filter {
 			this.offsetx = Integer.parseInt(args.get(1));
 		else if(args.get(0).equals("#offsety"))
 			this.offsety = Integer.parseInt(args.get(1));
+		else if(args.get(0).equals("#addthemeinc"))
+		{
+			if(this.filter == null)
+			{
+				this.filter = new Filter(nationGen);
+				filter.tags.add("do_not_show_in_descriptions");
+				if(this.name != null)
+					filter.name = "Item " + this.name + " generation effects";
+			}
+			args.remove(0);
+			this.filter.themeincs.add(Generic.listToString(args, " "));			
+		}
+		else if(args.get(0).equals("#name"))
+		{
+			if(filter != null)
+				filter.name = "Item " + args.get(1) + " generation effects";
+			super.handleOwnCommand(str);
+		}
 		else if(args.get(0).equals("#needs"))
 			this.dependencies.add(new ItemDependency(args.get(1), args.get(2), false, false));
 		else if(args.get(0).equals("#needstype"))

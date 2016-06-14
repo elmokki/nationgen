@@ -426,33 +426,38 @@ public class Unit {
 
 	}
 
-	
+
+	private void handleRemoveThemeinc(Item item)
+	{
+		if(item == null)
+			return;
+		
+		if(item.filter != null && appliedFilters.contains(item.filter))	
+		{
+			appliedFilters.remove(item.filter);
+		}
+		
+	}
 	private void handleAddThemeinc(Item item)
 	{
 		if(item == null)
 			return;
 		
-		List<String> tags = Generic.getTagValues(item.tags, "addthemeinc");
-		if(tags.size() == 0)
-			return;
+		if(item.filter != null && !appliedFilters.contains(item.filter))	
+		{
+			appliedFilters.add(item.filter);
+		}
 		
-		Filter f = new Filter(nationGen);
-		f.name = item.slot + " " + item.name + " generation effects";
-		f.tags.add("do_not_show_in_descriptions");
-		
-		for(String t : tags)
-			f.handleOwnCommand("#themeinc " + t);
-		
-		
-		this.appliedFilters.add(f);
 	}
 	
 	public void setSlot(String slotname, Item newitem)
 	{
 		
 	
-	
+		Item olditem = getSlot(slotname);
 		slotmap.put(slotname, newitem);
+		handleRemoveThemeinc(olditem);
+		
 		if(newitem == null)
 			return;
 

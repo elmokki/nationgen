@@ -80,15 +80,23 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
 
     
     private  NationGen n = null;
-    public static void main(String[] args) throws MalformedURLException
+    public static void main(String[] args) throws Exception
     {
     
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                GUI g = new GUI();
-                g.setVisible(true);
+    	
+    	if(args.length > 0 && args[0].equals("-commandline"))
+    		new CommandLine(args);
+    	else
+    	{
+    		SwingUtilities.invokeLater(new Runnable() {
+        		public void run() {
+            		GUI g = new GUI();
+                	g.setVisible(true);
             }
-        });
+        	});
+    	}
+    
+    
     }
     
     private void initGUI()

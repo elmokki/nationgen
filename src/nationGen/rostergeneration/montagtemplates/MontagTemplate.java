@@ -7,7 +7,10 @@ import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
 public class MontagTemplate {
-	public Unit generateUnit(Unit u, Pose p, Nation n, NationGen ngen)
+	
+
+	
+	public Unit generateUnit(Unit u, Pose p)
 	{
 		return null;
 	}

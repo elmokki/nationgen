@@ -20,7 +20,7 @@ public class Entity {
 
 	
 	public NationGen nationGen;
-	public String name;
+	public String name = null;
 	public double basechance = 1;
 	public List<String> tags = new ArrayList<String>();
 	public List<String> themes = new ArrayList<String>();
