@@ -27,7 +27,7 @@
 #unitcommand "#gcost 25"
 #unitcommand "#darkvision 50"
 #unitcommand "#illusion"
-#unitcommand "#stealthy 0"
+-- #unitcommand "#stealthy 0" -- granted by poses so chariots aren't stealthy
 #unitcommand "#maxage 1000"
 #unitcommand "#forestsurvival"
 #unitcommand "#ap 13"
@@ -62,6 +62,8 @@
 
 #sacredcostmulti 1.2
 #sacredratingmulti 1.4
+
+#generationchance chariot 0.0625
 
 #description "The Sidhe are a highly magical race, greatly superior to humans."
 #endrace
