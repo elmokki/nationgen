@@ -224,3 +224,26 @@
 #tag "minprot 8"
 #enditem
 
+
+#newitem
+#name "giant swan"
+#gameid -1
+#sprite /graphics/sidhe/mounts/giantswan.png
+#needs overlay giantswan_overlay
+#armor
+#offsetx -2
+#offsety 12
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 8"
+#define "#mounted"
+#define "#flying"
+#define "#sailing 3 3"
+#define "#weapon nostr_bill_10"
+#define "#gcost +50"
+#define "#ressize 2"
+#define "#enc 4"¨
+#theme "light"
+#tag "animal swan"
+#tag "maxprot 12"
+#enditem

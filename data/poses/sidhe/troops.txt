@@ -5,6 +5,8 @@
 #role "infantry"
 #role "scout"
 
+#define "#stealthy 0"
+
 #load basesprite /data/items/sidhe/bases.txt
 #load shadow /data/items/sidhe/shadow.txt
 #load cloakf /data/items/human/normal/humancloakf.txt 0 -3
@@ -29,6 +31,8 @@
 #role "mounted"
 #role "scout"
 
+#define "#stealthy 0"
+
 #load basesprite /data/items/sidhe/bases.txt
 #load mount /data/items/sidhe/sidhemounts.txt 5 -13
 #load cloakf /data/items/human/normal/humancloakf.txt 0 -3
@@ -44,6 +48,7 @@
 #load offhand /data/items/sidhe/shields.txt 0 -3
 #load hair /data/items/sidhe/hair.txt
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
+#load overlay /data/items/sidhe/sidhemounts_overlay.txt
 
 #writeslot lanceslot
 #endpose
@@ -54,6 +59,8 @@
 -- #renderorder "cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hair helmet offhanda overlay"
 #role "mounted"
 #role "scout"
+
+#define "#stealthy 0"
 
 #load basesprite /data/items/sidhe/bases.txt
 #load mount /data/items/sidhe/sidhemounts_low.txt 5 -13
@@ -70,6 +77,35 @@
 #load offhand /data/items/sidhe/shields.txt 0 -3
 #load hair /data/items/sidhe/hair.txt
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
+#load overlay /data/items/sidhe/sidhemounts_overlay.txt
 
 #writeslot lanceslot
+#endpose
+
+
+----------- Charioteers
+
+#newpose
+#race 0
+#role "chariot"
+#basechance 0.0625
+
+#load basesprite /data/items/sidhe/bases.txt
+#load mount /data/items/sidhe/sidhechariots.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt 0 -3
+#load cloakb /data/items/human/normal/humancloakb.txt 0 -3
+#load shirt /data/items/sidhe/shirt.txt
+#load hair /data/items/sidhe/hair.txt
+
+#load armor /data/items/sidhe/armor_infantry.txt
+#load helmet /data/items/sidhe/helmet.txt
+#load legs /data/items/sidhe/legs_infantry.txt
+#load weapon /data/items/sidhe/weapon.txt 0 -3
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt 0 -3
+#load offhand /data/items/sidhe/humanoffhand.txt 0 -3
+#load offhand /data/items/sidhe/shields.txt 0 -3
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+#load overlay /data/items/sidhe/sidhemounts_overlay.txt
 #endpose
