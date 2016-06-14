@@ -1,5 +1,7 @@
 package nationGen.rostergeneration;
 
+import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -23,15 +25,14 @@ import com.elmokki.Generic;
 
 
 
+
+
 import nationGen.NationGen;
-import nationGen.entities.Filter;
-import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.items.Item;
-import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
-import nationGen.misc.ItemSet;
 import nationGen.nation.Nation;
+import nationGen.rostergeneration.montagtemplates.TroopMontagTemplate;
 import nationGen.units.Unit;
 
 
@@ -318,11 +319,34 @@ public class RosterGenerator {
 
 		}
 		
+		//System.out.println("Start " + ZonedDateTime.now().toLocalTime().truncatedTo(ChronoUnit.SECONDS));
+
+		for(Unit unit : cavalry)
+			if(tgen.unitGen.hasMontagPose(unit))
+				tgen.unitGen.handleMontagUnits(unit, new TroopMontagTemplate(nationGen, nation), "montagtroops");
 		
+		for(Unit unit : chariot)
+			if(tgen.unitGen.hasMontagPose(unit))
+				tgen.unitGen.handleMontagUnits(unit, new TroopMontagTemplate(nationGen, nation), "montagtroops");
+		
+		for(Unit unit : ranged)
+			if(tgen.unitGen.hasMontagPose(unit))
+				tgen.unitGen.handleMontagUnits(unit, new TroopMontagTemplate(nationGen, nation), "montagtroops");
+		
+
+		for(Unit unit : infantry)
+			if(tgen.unitGen.hasMontagPose(unit))
+				tgen.unitGen.handleMontagUnits(unit, new TroopMontagTemplate(nationGen, nation), "montagtroops");
+		
+		//System.out.println("End " + ZonedDateTime.now().toLocalTime().truncatedTo(ChronoUnit.SECONDS));
+
 		putToNation("ranged", sortToLists(ranged));
 		putToNation("infantry", sortToLists(infantry));
 		putToNation("mounted", sortToLists(cavalry));
 		putToNation("chariot", sortToLists(chariot));
+		
+	
+	
 		
 		tgen = null;
 	
@@ -448,15 +472,13 @@ public class RosterGenerator {
 	{
 		List<List<Unit>> lists = this.sortToListsByBasesprite(templates);
 		
-
-		
 		List<List<Unit>> newlist = new ArrayList<List<Unit>>();
 		for(List<Unit> mlist : lists)
 		{
 			newlist.addAll(this.sortByArmor(mlist));
 		}
 		
-
+		lists = null;
 		return newlist;
 	}
 	

@@ -13,14 +13,17 @@ import nationGen.units.Unit;
 public class MageMontagTemplate extends MontagTemplate {
 	
 	private int tier;
-	public MageMontagTemplate(int tier)
+	private MageGenerator mGen = null;
+	public MageMontagTemplate(Nation n, NationGen ngen, int tier)
 	{
+		mGen = new MageGenerator(ngen, n);
 		this.tier = tier;
 	}
 	
-	public Unit generateUnit(Unit u, Pose p, Nation n, NationGen ngen)
+	
+	
+	public Unit generateUnit(Unit u, Pose p)
 	{
-		MageGenerator mGen = new MageGenerator(ngen, n);
 	    Unit newunit = null;
 	    int tries = 0;
 	    while(tries < 100 && newunit == null)

@@ -430,10 +430,7 @@ public class TroopGenerator {
 			this.cleanUnit(unit);
 
 
-			// Montag stuff
-			if(unitGen.hasMontagPose(unit))
-				unitGen.handleMontagUnits(unit, new TroopMontagTemplate(), "montagtroops");
-		
+	
 			
 			//System.out.println("CREATED A " + role + ": " + unit.getSlot("armor").name + " and " + unit.getSlot("weapon").name + " / " + unit.pose.roles + " | " + unit.pose.name);
 			//if(unit.getSlot("hands") != null)
