@@ -1,0 +1,91 @@
+#newitem
+#name "humanoid_heavy"
+#sprite /graphics/foulspawn/small/rarm/goblinoid.png
+#command "#gcost +1"
+#command "#hp +1"
+#command "#str +1"
+#command "#prec +0"
+#itemslot hand +1
+#type onehand
+#type claw
+#needs rhand none
+#enditem
+
+#newitem
+#name "humanoid_agile"
+#sprite /graphics/foulspawn/small/rarm/goblinoid.png
+#command "#gcost +0"
+#command "#hp +0"
+#command "#str +0"
+#command "#prec +1"
+#itemslot hand +1
+#type onehand
+#type claw
+#needs rhand none
+#enditem
+
+#newitem
+#name "tentacloid_heavy"
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm/tentacle_green.png
+#command "#gcost +1"
+#command "#hp +1"
+#command "#str +2"
+#command "#prec -1"
+#type tentacle
+#needs rhand none
+#enditem
+
+#newitem
+#name "tentacloid_agile"
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm/tentacle_green.png
+#command "#gcost +0"
+#command "#hp +1"
+#command "#str -1"
+#command "#prec +1"
+#type tentacle
+#needs rhand none
+#enditem
+
+#newitem
+#name "crab"
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm/pincer.png
+#command "#gcost +1"
+#command "#prot +1"
+#command "#str +1"
+#command "#hp +1"
+#command "#prec -1"
+#type pincer
+#needs rhand none
+#enditem
+
+
+-- Arms for ranged units (these will generate a right hand, which otherwise should never appear)
+
+#newitem
+#name "humanoid_missile"
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm/goblinoid.png
+#command "#gcost +0"
+#command "#hp +0"
+#command "#str +0"
+#command "#prec +1"
+#itemslot hand +1
+#type onehand_missile
+#type claw_missile
+#needs rhand goblinoid_missile
+#enditem
+
+#newitem
+#name "tentacloid_missile"
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm/tentacle_green_missile.png
+#command "#gcost +0"
+#command "#hp +1"
+#command "#str -1"
+#command "#prec +1"
+#type tentacle_missile
+#needs rhand tentacloid_missile
+#enditem

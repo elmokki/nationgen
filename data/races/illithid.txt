@@ -2,15 +2,19 @@
 #name "Illithid"
 #basechance 0.1
 
+#chanceinc era 1 *0.5
+#chanceinc era 3 *3
+
 #longsyllables /data/names/nations/atlantian/longsyllables.txt
 #shortsyllables /data/names/nations/atlantian/shortsyllables.txt
 #suffixes /data/names/nations/atlantian/suffixes.txt
 
--- #pose hybridtroops
+#pose hybridtroops
+#pose hybridcavalry
 #pose starchildtroops
 #pose starchildmages
 
-#generationchance mounted 0
+#generationchance mounted 0.05
 
 #nationcommand "#uwbuild 1"
 #nationcommand "#coastnation"
