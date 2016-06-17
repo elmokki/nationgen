@@ -1,0 +1,152 @@
+#newitem
+#id none
+#gameid -1
+#nogen
+#needstype larm onehand
+#enditem
+
+-- Natural weapons
+
+#newitem
+#id tentacle
+#gameid 85
+#tentacle
+#needstype larm tentacle
+#type melee
+#enditem
+
+#newitem
+#id tentacle_strangle
+#gameid 116
+#tentacle
+#needstype larm tentacle
+#type melee
+#enditem
+
+#newitem
+#id pincer
+#gameid 273
+#pincer
+#needstype larm pincer
+#type melee
+#enditem
+
+
+-- 1h weapons
+
+#newitem
+#id oh_coraldagger
+#gameid 32
+#sprite /graphics/atlantian/weapon/coralknifeleft.png
+#offsetx -6
+#offsety -2
+#theme "coral"
+#theme "amphibious"
+#needstype larm onehand
+#enditem
+
+#newitem
+#id oh_dagger
+#gameid 9
+#sprite /graphics/advancedhuman/weapons/oh_dagger.png
+#offsetx 2
+#offsety 6
+#needstype larm onehand
+#theme "iron"
+#theme "terrestrial"
+#type melee
+#enditem
+
+#newitem
+#id oh_bronzedagger
+#gameid 674
+#sprite graphics/ichtyid/weapon/bronze_dagger.png
+#offsetx 18
+#offsety 13
+#theme "bronze"
+#theme "amphibious"
+#needstype larm onehand
+#enditem
+
+#newitem
+#id oh_coralclub
+#gameid 45
+#sprite graphics/ichtyid/weapon/coral_club_oh.png
+#offsetx 11
+#offsety 6
+#theme "coral"
+#theme "primitive"
+#theme "amphibious"
+#needstype larm onehand
+#enditem
+
+#newitem
+#id oh_shortsword
+#gameid 6
+#sprite /graphics/advancedhuman/weapons/oh_shortsword.png
+#offsetx 2
+#offsety 6
+#needstype larm onehand
+#theme "iron"
+#theme "terrestrial"
+#type melee
+#enditem
+
+#newitem
+#id oh_ coralshortsword
+#gameid coralshortsword
+#sprite graphics/ichtyid/weapon/coral_shortsword_oh.png
+#offsetx 13
+#offsety 6
+#theme "coral"
+#theme "amphibious"
+#needstype larm onehand
+#enditem
+
+#newitem
+#id offhandshortsword_bronze
+#gameid 645
+#sprite graphics/ichtyid/weapon/bronze_shortsword_oh.png
+#offsetx 12
+#offsety 6
+#theme "bronze"
+#theme "amphibious"
+#needstype larm onehand
+#enditem
+
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/vaettir/offhand/hatchet.png
+#offsetx 2
+#offsety 1
+#onehand
+#theme "iron"
+#theme "terrestrial"
+#needstype larm onehand
+#type melee
+#enditem
+
+#newitem
+#id offhandhatchet
+#gameid 646
+#sprite /graphics/ichtyid/weapon/bronze_axe_oh.png
+#offsetx 12
+#offsety 6
+#theme "bronze"
+#theme "terrestrial"
+#needstype larm onehand
+#enditem
+
+#newitem
+#id oh_mace
+#gameid 12
+#sprite /graphics/advancedhuman/weapons/oh_mace.png
+#offsetx 2
+#offsety 6
+#needstype larm onehand
+#theme "primitive"
+#theme "terrestrial"
+#maxprot 15
+#type melee
+#enditem

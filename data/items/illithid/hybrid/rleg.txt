@@ -1,0 +1,42 @@
+#newitem
+#name "humanoid_heavy"
+#gameid -1
+#sprite /graphics/foulspawn/small/rleg/goblinoid.png
+#command "#gcost +0"
+#command "#hp +1"
+#command "#enc +1"
+#command "#ap +3"
+#enditem
+
+#newitem
+#name "humanoid_agile"
+#gameid -1
+#sprite /graphics/foulspawn/small/rleg/goblinoid.png
+#command "#gcost +1"
+#command "#hp +0"
+#command "#enc +0"
+#command "#ap +5"
+#enditem
+
+#newitem
+#name "tentacloid_heavy"
+#gameid -1
+#sprite /graphics/foulspawn/small/rleg/tentacle_green.png
+#command "#gcost +0"
+#command "#hp +2"
+#command "#prot +1"
+#command "#enc +1"
+#command "#ap +2"
+#itemslot foot 0
+#enditem
+
+#newitem
+#name "tentacloid_agile"
+#gameid -1
+#sprite /graphics/foulspawn/small/rleg/tentacle_green.png
+#command "#gcost +1"
+#command "#hp +1"
+#command "#enc +0"
+#command "#ap +4"
+#itemslot foot 0
+#enditem
