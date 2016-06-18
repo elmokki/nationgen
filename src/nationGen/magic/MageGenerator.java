@@ -1261,7 +1261,7 @@ public class MageGenerator extends TroopGenerator {
 				u.color = priestcolor;
 				u.appliedFilters.add(this.getPriestPattern(currentStrength));
 				u.commands.add(new Command("#holy"));
-				u.commands.add(new Command("#gcost", "+" + (int)(Math.pow(2, currentStrength)*10) + currentStrength * priestextracost));
+				u.commands.add(new Command("#gcost", "+" + ((int)(Math.pow(2, currentStrength))*10 + currentStrength * priestextracost)));
 				u.tags.add("priest " + currentStrength);
 
 				
