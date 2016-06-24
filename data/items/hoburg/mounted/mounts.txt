@@ -458,7 +458,7 @@
 #gameid -1
 #basechance 0
 #sprite /graphics/mounts/chariots/small_swan_bronze.png
-#needs overlay chariot_small_bronze_overlay
+#needs overlay chariot_swan_bronze_overlay
 #armor
 #define "#size 2"
 #define "#hp +3"
@@ -497,7 +497,7 @@
 #name "black swan chariot"
 #gameid -1
 #sprite /graphics/mounts/chariots/small_blackswan_iron.png
-#needs overlay chariot_small_iron_overlay
+#needs overlay chariot_swan_iron_overlay
 #armor
 #define "#size 2"
 #define "#hp +4"
@@ -522,9 +522,76 @@
 #tag "maxprot 14"
 #tag "guaranteedprefix swan"
 #tag "animal swan"
-#basechance 1
+#basechance 0.25
 #offsetx 16
 #offsety -4
+#enditem
+
+#newitem
+#name "giant rat chariot (iron)"
+#gameid -1
+#sprite /graphics/mounts/chariots/small_rat_iron.png
+#needs overlay chariot_small_iron_overlay
+#armor
+#define "#size 3"
+#define "#hp +6"
+#define "#mapmove 2"
+#define "#ap 10"
+#define "#mounted"
+#define "#trample"
+#define "#weapon nostr_diseasebite_12"
+#define "#prot 5"
+#define "#gcost +20"
+#define "#rcost +10"
+#define "#ressize 1"
+#define "#enc 4"
+#define "#diseaseres +10"
+#tag "animal rat"
+#tag "chariot"
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#theme "oriental"
+#theme "boreal"
+#tag "maxprot 14"
+#tag "guaranteedprefix rat"
+#tag "animal rat"
+#basechance 0.25
+#offsetx 19
+#offsety -5
+#enditem
+
+#newitem
+#name "giant rat chariot (bronze)"
+#gameid -1
+#sprite /graphics/mounts/chariots/small_rat_bronze.png
+#needs overlay chariot_small_bronze_overlay
+#armor
+#define "#size 3"
+#define "#hp +6"
+#define "#mapmove 2"
+#define "#ap 10"
+#define "#mounted"
+#define "#trample"
+#define "#weapon nostr_diseasebite_12"
+#define "#prot 5"
+#define "#gcost +20"
+#define "#rcost +10"
+#define "#ressize 1"
+#define "#enc 4"
+#define "#diseaseres +10"
+#tag "animal rat"
+#tag "chariot"
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#theme "central"
+#tag "maxprot 14"
+#tag "guaranteedprefix rat"
+#tag "animal rat"
+#basechance 0.25
+#offsetx 19
+#offsety -5
 #enditem
 
 #newitem

@@ -287,3 +287,32 @@
 #tag "minprot 8"
 #tag "maxprot 18"
 #enditem
+
+#newitem
+#name "giant rat"
+#gameid -1
+#sprite /graphics/mounts/standard/giantrat.png
+#armor
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 10"
+#define "#mounted"
+#define "#weapon nostr_diseasebite_12"
+#define "#gcost +20"
+#define "#diseaseres +10"
+#define "#ressize 1"
+#define "#enc 3"
+#define "#stealthy +0"
+#tag "animal rat"
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#tag "minprot 8"
+#tag "maxprot 18"
+#tag "guaranteedprefix rat"
+#define "#secondtmpshape ratmount"
+#description "If the rider dies, the rat will carry on fighting until the end of the battle."
+#basechance 1
+#offsetx 3
+#offsety -11
+#enditem

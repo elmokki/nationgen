@@ -409,3 +409,36 @@
 #offsetx 0
 #offsety -4
 #enditem
+
+#newitem
+#name "giant rat"
+#gameid -1
+#sprite /graphics/mounts/standard/giantrat.png
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 12"
+#define "#mounted"
+#define "#weapon nostr_diseasebite_12"
+#define "#gcost +15"
+#define "#diseaseres +10"
+#define "#ressize 1"
+#define "#enc 3"
+#tag "animal rat"
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#theme "oriental"
+#theme "abysian"
+#tag "guaranteedprefix rat"
+#define "#secondtmpshape ratmount"
+#description "If the rider dies, the rat will carry on fighting until the end of the battle."
+#basechance 1
+#offsetx 4
+#offsety -13
+#enditem
