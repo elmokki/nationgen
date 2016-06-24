@@ -70,6 +70,32 @@
 #enditem
 
 #newitem
+#name "giant rat"
+#gameid -1
+#sprite /graphics/mounts/standard/giantrat.png
+#armor
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 10"
+#define "#mounted"
+#define "#weapon nostr_diseasebite_12"
+#define "#gcost +20"
+#define "#diseaseres +10"
+#define "#ressize 2"
+#define "#enc 4"
+#tag "animal rat"
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#tag "guaranteedprefix rat"
+#define "#secondtmpshape ratmount"
+#description "If the rider dies, the rat will carry on fighting until the end of the battle."
+#basechance 1
+#offsetx 0
+#offsety -5
+#enditem
+
+#newitem
 #name "seadog"
 #gameid -1
 #sprite /graphics/mounts/standard/seadog.png
