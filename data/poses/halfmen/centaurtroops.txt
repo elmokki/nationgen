@@ -2,21 +2,22 @@
 -------- Light centaurs
 
 #newpose
-#name "warriors"
+#name "centaur warriors"
 #role "mounted"
 #role "scout"
 
-#basedchance 2
+#basedchance 3
 #theme "savage"
+#theme "male"
 
 #renderorder "shadow weapon mount basesprite armor quiver bonusweapon cloakf offhandw hands cloakb hair helmet offhanda overlay"
 
-#load basesprite /data/items/halfmen/centaur/bases.txt
+#load basesprite /data/items/halfmen/centaur/bases_centaur.txt
 #load mount /data/items/halfmen/centaur/legs.txt
 #load shadow /data/items/halfmen/centaur/shadow.txt
 #load hands /data/items/halfmen/centaur/hands.txt
 
-#load armor /data/items/halfmen/centaur/armor_light.txt
+#load armor /data/items/halfmen/centaur/armor_light_centaur.txt
 
 #load weapon /data/items/halfmen/centaur/weapon.txt
 #load offhand /data/items/halfmen/centaur/offhand.txt
@@ -33,23 +34,57 @@
 #endpose
 
 
+#newpose
+#name "centauride warriors"
+#role "mounted"
+#role "scout"
+
+#basedchance 2
+#theme "savage"
+#theme "female"
+
+#renderorder "shadow weapon mount basesprite armor quiver bonusweapon cloakf offhandw hands cloakb hair helmet offhanda overlay"
+
+#load basesprite /data/items/halfmen/centaur/bases_centauride.txt
+#load mount /data/items/halfmen/centaur/legs.txt
+#load shadow /data/items/halfmen/centaur/shadow.txt
+#load hands /data/items/halfmen/centaur/hands.txt 0 1
+
+#load armor /data/items/halfmen/centaur/armor_light_centauride.txt
+
+#load weapon /data/items/halfmen/centaur/weapon.txt 0 1
+#load offhand /data/items/halfmen/centaur/offhand.txt 0 1
+#load offhand /data/items/human/normal/shields.txt -7 -18
+#load offhand /data/items/amazon/normal/amazonshields.txt -7 -18
+#load bonusweapon /data/items/halfmen/centaur/bonusranged.txt 0 1
+#load helmet /data/items/halfmen/centaur/helmet_light.txt 0 1
+
+-- #load cloakf /data/items/halfmen/centaur/cloakf.txt
+-- #load cloakb /data/items/halfmen/centaur/cloakb.txt
+
+#maxunits 3
+
+#endpose
+
+
 -------- Heavy centaurs
 #newpose
-#name "soldiers"
+#name "centaur soldiers"
 #role "mounted"
 
 #renderorder "shadow weapon mount basesprite armor quiver bonusweapon cloakf offhandw hands cloakb hair helmet offhanda overlay"
 
-#basedchance 1
+#basedchance 1.5
 #theme "civilized"
+#theme "male"
 
 
-#load basesprite /data/items/halfmen/centaur/bases.txt
+#load basesprite /data/items/halfmen/centaur/bases_centaur.txt
 #load mount /data/items/halfmen/centaur/legs.txt
 #load shadow /data/items/halfmen/centaur/shadow.txt
 #load hands /data/items/halfmen/centaur/hands.txt
 
-#load armor /data/items/halfmen/centaur/armor.txt
+#load armor /data/items/halfmen/centaur/armor_centaur.txt
 
 #load weapon /data/items/halfmen/centaur/weapon.txt
 #load offhand /data/items/halfmen/centaur/offhand.txt
@@ -65,23 +100,55 @@
 #endpose
 
 
+#newpose
+#name "centauride soldiers"
+#role "mounted"
+
+#renderorder "shadow weapon mount basesprite armor quiver bonusweapon cloakf offhandw hands cloakb hair helmet offhanda overlay"
+
+#basedchance 1
+#theme "civilized"
+#theme "male"
+
+#load basesprite /data/items/halfmen/centaur/bases_centauride.txt
+#load mount /data/items/halfmen/centaur/legs.txt
+#load shadow /data/items/halfmen/centaur/shadow.txt
+#load hands /data/items/halfmen/centaur/hands.txt 0 1
+
+#load armor /data/items/halfmen/centaur/armor_centauride.txt
+
+#load weapon /data/items/halfmen/centaur/weapon.txt 0 1
+#load offhand /data/items/halfmen/centaur/offhand.txt 0 1
+#load offhand /data/items/human/normal/shields.txt -7 -18
+#load offhand /data/items/amazon/normal/amazonshields.txt -7 -18
+#load helmet /data/items/halfmen/centaur/helmet.txt 0 1
+
+-- #load cloakf /data/items/halfmen/centaur/cloakf.txt
+-- #load cloakb /data/items/halfmen/centaur/cloakb.txt
+
+#maxunits 3
+
+#endpose
+
+
 -------- Archers
 
 #newpose
-#name "archer"
+#name "centaur archer"
 #role "ranged"
 #role "scout"
 
 #renderorder "shadow weapon mount basesprite armor quiver bonusweapon cloakf offhandw hands cloakb hair helmet offhanda overlay"
 
 #basedchance 2
+#theme "male"
 
-#load basesprite /data/items/halfmen/centaur/bases.txt
+#load basesprite /data/items/halfmen/centaur/bases_centaur.txt
 #load mount /data/items/halfmen/centaur/legs.txt
 #load shadow /data/items/halfmen/centaur/shadow.txt
 #load hands /data/items/halfmen/centaur/hands.txt
 
-#load armor /data/items/halfmen/centaur/armor_light.txt
+#load armor /data/items/halfmen/centaur/armor_light_centaur.txt
 
 #load weapon /data/items/halfmen/centaur/bows.txt
 #load quiver /data/items/halfmen/centaur/quiver.txt
@@ -97,9 +164,40 @@
 #endpose
 
 
+#newpose
+#name "centauride archer"
+#role "ranged"
+#role "scout"
+
+#renderorder "shadow weapon mount basesprite armor quiver bonusweapon cloakf offhandw hands cloakb hair helmet offhanda overlay"
+
+#basedchance 3
+#theme "female"
+
+#load basesprite /data/items/halfmen/centaur/bases_centauride.txt
+#load mount /data/items/halfmen/centaur/legs.txt
+#load shadow /data/items/halfmen/centaur/shadow.txt
+#load hands /data/items/halfmen/centaur/hands.txt 0 1
+
+#load armor /data/items/halfmen/centaur/armor_light_centauride.txt
+
+#load weapon /data/items/halfmen/centaur/bows.txt 0 1
+#load quiver /data/items/halfmen/centaur/quiver.txt 0 1
+#load bonusweapon /data/items/human/archer/archerweapon.txt
+#load helmet /data/items/halfmen/centaur/helmet_light.txt 0 1
+
+-- #load cloakf /data/items/halfmen/centaur/cloakf.txt
+-- #load cloakb /data/items/halfmen/centaur/cloakb.txt
+
+#generateitem 1 bonusweapon
+
+#maxunits 2
+#endpose
+
+
 -------- Crossbowmen
 #newpose
-#name "crossbowmen"
+#name "centaur crossbowmen"
 #role "ranged"
 
 #renderorder "shadow mount basesprite armor quiver bonusweapon cloakf weapon offhandw hands cloakb hair helmet offhanda overlay"
@@ -107,18 +205,52 @@
 #basedchance 0.5
 #theme "civilized"
 #theme "advanced"
+#theme "male"
 
 #load basesprite /data/items/halfmen/centaur/bases.txt
 #load mount /data/items/halfmen/centaur/legs.txt
 #load shadow /data/items/halfmen/centaur/shadow.txt
 #load hands /data/items/halfmen/centaur/hands_crossbow.txt
 
-#load armor /data/items/halfmen/centaur/armor.txt
+#load armor /data/items/halfmen/centaur/armor_centaur.txt
 
 #load weapon /data/items/human/crossbow/crossbows.txt -7 -13
 #load quiver /data/items/halfmen/centaur/quiver.txt
 #load bonusweapon /data/items/human/archer/archerweapon.txt
 #load helmet /data/items/halfmen/centaur/helmet.txt
+
+-- #load cloakf /data/items/halfmen/centaur/cloakf.txt
+-- #load cloakb /data/items/halfmen/centaur/cloakb.txt
+
+#generateitem 1 bonusweapon
+
+#maxunits 1
+
+#endpose
+
+
+#newpose
+#name "centauride crossbowmaidens"
+#role "ranged"
+
+#renderorder "shadow mount basesprite armor quiver bonusweapon cloakf weapon offhandw hands cloakb hair helmet offhanda overlay"
+
+#basedchance 0.75
+#theme "civilized"
+#theme "advanced"
+#theme "female"
+
+#load basesprite /data/items/halfmen/centaur/bases_centauride.txt
+#load mount /data/items/halfmen/centaur/legs.txt
+#load shadow /data/items/halfmen/centaur/shadow.txt
+#load hands /data/items/halfmen/centaur/hands_crossbow.txt 0 1
+
+#load armor /data/items/halfmen/centaur/armor_centauride.txt
+
+#load weapon /data/items/human/crossbow/crossbows.txt -7 -12
+#load quiver /data/items/halfmen/centaur/quiver.txt 0 1
+#load bonusweapon /data/items/human/archer/archerweapon.txt
+#load helmet /data/items/halfmen/centaur/helmet.txt 0 1
 
 -- #load cloakf /data/items/halfmen/centaur/cloakf.txt
 -- #load cloakb /data/items/halfmen/centaur/cloakb.txt

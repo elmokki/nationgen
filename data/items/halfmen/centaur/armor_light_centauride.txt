@@ -1,0 +1,30 @@
+--- No armor
+
+#new
+#name "no armor"
+#gameid -1
+#theme "naked"
+#command "#stealthy +40"
+#end
+
+--- Leather
+
+#newitem
+#name "furs"
+#gameid 44
+#sprite /graphics/halfmen/centaur/armor/furs_centauride.png
+#armor
+#theme "primitive"
+#theme "leather"
+#command "#stealthy +40"
+#enditem
+
+#newitem
+#name "leather barding"
+#gameid leather_barding
+#sprite /graphics/halfmen/centaur/armor/barding_leather_centauride.png
+#armor
+#theme "leather"
+#theme "advanced"
+#command "#stealthy +40"
+#enditem
