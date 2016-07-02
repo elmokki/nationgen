@@ -1,0 +1,240 @@
+
+-- Polearms
+
+#newitem
+#id lance
+#gameid 357
+#sprite /graphics/illithid/hybrid/weapon/spear_iron.png
+#offsetx -5
+#theme "iron"
+#theme "terrestrial"
+#needstype rarm onehand
+#needstype offhand polearm
+#enditem
+
+#newitem
+#id bronze_lance
+#gameid 651
+#sprite /graphics/illithid/hybrid/weapon/spear_bronze.png
+#offsetx -5
+#theme "bronze"
+#theme "amphibious"
+#needstype rarm onehand
+#needstype offhand polearm
+#enditem
+
+#newitem
+#id coral_lance
+#gameid 577
+#sprite /graphics/illithid/hybrid/weapon/spear_coral.png
+#offsetx -5
+#theme "coral"
+#theme "amphibious"
+#needstype rarm onehand
+#needstype offhand polearm
+#enditem
+
+#newitem
+#id spear
+#gameid 1
+#sprite /graphics/illithid/hybrid/weapon/spear_iron.png
+#theme "iron"
+#theme "terrestrial"
+#needstype rarm onehand
+#needstype offhand polearm
+#enditem
+
+#newitem
+#id trident
+#gameid 3
+#sprite /graphics/illithid/hybrid/weapon/trident_iron.png
+#theme "iron"
+#theme "terrestrial"
+#needstype rarm onehand
+#needstype offhand polearm
+#enditem
+
+#newitem
+#id bronze_spear
+#gameid 643
+#sprite /graphics/illithid/hybrid/weapon/spear_bronze.png
+#theme "bronze"
+#theme "amphibious"
+#needstype rarm onehand
+#needstype offhand polearm
+#enditem
+
+#newitem
+#id bronze_trident
+#gameid 641
+#sprite /graphics/illithid/hybrid/weapon/trident_bronze.png
+#theme "bronze"
+#theme "amphibious"
+#needstype rarm onehand
+#needstype offhand polearm
+#enditem
+
+#newitem
+#id coral_spear
+#gameid 31
+#sprite /graphics/illithid/hybrid/weapon/spear_coral.png
+#theme "coral"
+#theme "amphibious"
+#needstype rarm onehand
+#needstype offhand polearm
+#enditem
+
+#newitem
+#id bone_spear
+#gameid 373
+#sprite /graphics/illithid/hybrid/weapon/spear_bone.png
+#theme "bone"
+#theme "primitive"
+#needstype rarm onehand
+#needstype offhand polearm
+#enditem
+
+#newitem
+#id bone_trident
+#gameid 3
+#sprite /graphics/illithid/hybrid/weapon/trident_bone.png
+#theme "bone"
+#theme "primitive"
+#needstype rarm onehand
+#needstype offhand polearm
+#enditem
+
+
+-- 1h weapons
+
+#newitem
+#id coralclub
+#gameid 45
+#sprite /graphics/ichtyid/weapon/coral_club.png
+#offsetx 2
+#offsety 10
+#theme "primitive"
+#theme "coral"
+#theme "amphibious"
+#needstype rarm onehand
+#enditem
+
+#id club
+#gameid 252
+#sprite /graphics/dynastichuman/weapons/club1.png
+#offsetx -3
+#offsety 4
+#onehand
+#theme "wood"
+#theme "primitive"
+#theme "terrestrial"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id spiked_club
+#gameid 265
+#sprite /graphics/dynastichuman/weapons/club1.png
+#offsetx -3
+#offsety 4
+#onehand
+#theme "wood"
+#theme "primitive"
+#theme "terrestrial"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id shortsword
+#gameid 6
+#sprite /graphics/advancedhuman/weapons/shortsword.png
+#offsetx -4
+#offsety 3
+#onehand
+#theme "iron"
+#theme "terrestrial"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id shortsword_bronze
+#gameid 645
+#sprite /graphics/ichtyid/weapon/bronze_shortsword.png
+#offsetx 3
+#offsety 12
+#theme "bronze"
+#theme "amphibious"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id coralshortsword
+#gameid coralshortsword
+#sprite /graphics/ichtyid/weapon/coral_shortsword.png
+#offsetx 3
+#offsety 12
+#theme "coral"
+#theme "amphibious"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id broadsword
+#gameid 8
+#sprite /graphics/advancedhuman/weapons/broadsword.png
+#offsetx -4
+#offsety 3
+#onehand
+#theme "iron"
+#theme "terrestrial"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#sprite /graphics/advancedhuman/weapons/falchion.png
+#offsetx -4
+#offsety 3
+#onehand
+#theme "iron"
+#theme "terrestrial"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/vaettir/weapon/hatchet.png
+#offsetx -4
+#offsety 0
+#onehand
+#theme "iron"
+#theme "terrestrial"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id axe_bronze
+#gameid 676
+#sprite /graphics/ichtyid/weapon/bronze_axe.png
+#offsetx 3
+#offsety 10
+#theme "bronze"
+#theme "terrestrial"
+#needstype rarm onehand
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/advancedhuman/weapons/mace.png
+#offsetx -6
+#offsety 2
+#onehand
+#theme "primitive"
+#theme "terrestrial"
+#maxprot 15
+#needstype rarm onehand
+#enditem
+

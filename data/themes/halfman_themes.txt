@@ -4,7 +4,47 @@
 #basechance 4
 #endtheme
 
--- Tech level themes
+-- Coloration themes: one of these is mandatory
+
+-- Weights: EA 1, MA 1, LA 1
+#newtheme
+#type coloration
+#name brown
+#themeinc theme brown *100
+#endtheme
+
+-- Weights: EA 1, MA 1, LA 1
+#newtheme
+#type coloration
+#name black
+#themeinc theme black *100
+#racedefinition "#magicpriority death 6"
+#racedefinition "#magicpriority blood 0.1"
+#racedefinition "#magicpriority earth 0.25"
+#endtheme
+
+-- Weights: EA 1, MA 1, LA 1
+#newtheme
+#type coloration
+#name white
+#themeinc theme white *100
+#racedefinition "#magicpriority water 6"
+#racedefinition "#magicpriority blood 0.1"
+#racedefinition "#magicpriority earth 0.25"
+#endtheme
+
+-- Weights: EA 1, MA 1, LA 1
+#newtheme
+#type coloration
+#name grey
+#themeinc theme grey *100
+#racedefinition "#magicpriority astral 10"
+#racedefinition "#magicpriority air 2"
+#racedefinition "#magicpriority blood 0.1"
+#racedefinition "#magicpriority earth 0.1"
+#endtheme
+
+-- Tech level themes: one of these is mandatory
 
 -- Weights: EA 2, MA 0.5, LA 0.25
 #newtheme
@@ -117,12 +157,31 @@
 #newtheme
 #type demographic_primary
 #name minotaur_primary
+#chanceinc racetheme minotaur_secondary *0
+#themeinc theme minotaur *7
+#themeinc theme centaur *0.01
+#themeinc theme satyr *0.01
+#racedefinition "#generationchance infantry 5"
+#racedefinition "#generationchance mounted 0.01"
+#racedefinition "#generationchance chariot 0.01"
+#racedefinition "#generationchance ranged 0.01"
+#racedefinition "#sacredinfantrychance 5"
 #endtheme
 
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
 #type demographic_primary
 #name centaur_primary
+#chanceinc racetheme centaur_secondary *0
+#themeinc theme minotaur *0.01
+#themeinc theme centaur *7
+#themeinc theme satyr *0.01
+#racedefinition "#generationchance infantry 4"
+#racedefinition "#generationchance mounted 1"
+#racedefinition "#generationchance chariot 1"
+#racedefinition "#generationchance ranged 5"
+#racedefinition "#sacredinfantrychance 2"
+#racedefinition "#sacredrangedchance 3"
 #endtheme
 
 -- Weights: EA 1, MA 1, LA 1
@@ -130,6 +189,8 @@
 #type demographic_secondary
 #name minotaur_secondary
 #chanceinc racetheme minotaur_primary *0
+#themeinc theme minotaur *300
+#racedefinition "#generationchance infantry 5"
 #endtheme
 
 -- Weights: EA 1, MA 1, LA 1
@@ -137,6 +198,10 @@
 #type demographic_secondary
 #name centaur_secondary
 #chanceinc racetheme centaur_primary *0
+#themeinc theme centaur *300
+#racedefinition "#generationchance mounted 1"
+#racedefinition "#generationchance chariot 1"
+#racedefinition "#generationchance ranged 2.5"
 #endtheme
 
 -- Weights: EA 1, MA 1, LA 1

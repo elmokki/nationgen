@@ -1,0 +1,336 @@
+--- No armor
+
+#new
+#name "nekkid"
+#basechance 18
+#gameid -1
+#armor
+#tier 1
+#notfortier 2
+#notfortier 3
+#end
+
+
+-- Greyscale cloaks
+
+#newitem
+#name "shortcloak_white"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/lightcloak_f.png
+#armor
+#needs extra "cloak_white"
+#tier 1
+#notfortier 2
+#notfortier 3
+#eliteversion shortcloak_light
+#eliteversion longcloak_white
+#enditem
+
+#newitem
+#name "shortcloak_grey"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/mediumcloak_f.png
+#armor
+#needs extra "cloak_grey"
+#tier 1
+#notfortier 2
+#notfortier 3
+#eliteversion shortcloak_medium
+#eliteversion longcloak_grey
+#enditem
+
+#newitem
+#name "shortcloak_black"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/darkcloak_f.png
+#recolormask self
+#armor
+#needs extra "cloak_black"
+#tier 1
+#notfortier 2
+#notfortier 3
+#eliteversion shortcloak_dark
+#eliteversion longcloak_black
+#enditem
+
+#newitem
+#name "longcloak_white"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/lightcloak_full_plain_f.png
+#armor
+#needs extra "cloak_white"
+#tier 1
+#tier 2
+#notfortier 3
+#eliteversion longcloak_light
+#eliteversion longcloak_white_fancy
+#enditem
+
+#newitem
+#name "longcloak_grey"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/mediumcloak_full_plain_f.png
+#armor
+#needs extra "cloak_grey"
+#tier 1
+#tier 2
+#notfortier 3
+#eliteversion longcloak_medium
+#eliteversion longcloak_grey_fancy
+#enditem
+
+#newitem
+#name "longcloak_black"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/darkcloak_full_plain_f.png
+#armor
+#needs extra "cloak_black"
+#tier 1
+#tier 2
+#notfortier 3
+#eliteversion longcloak_dark
+#eliteversion longcloak_black_fancy
+#enditem
+
+#newitem
+#name "longcloak_white_fancy"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/lightcloak_full_plain_f.png
+#recolormask /graphics/halfmen/centaur/cloak/trim_full_f_recolormask.png
+#armor
+#needs extra "cloak_white"
+#notfortier 1
+#tier 2
+#tier 3
+#eliteversion silvercloak_light
+#eliteversion goldcloak_light
+#enditem
+
+#newitem
+#name "longcloak_grey_fancy"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/mediumcloak_full_plain_f.png
+#recolormask /graphics/halfmen/centaur/cloak/trim_full_f_recolormask.png
+#armor
+#needs extra "cloak_grey"
+#notfortier 1
+#tier 2
+#tier 3
+#eliteversion silvercloak_medium
+#eliteversion goldcloak_medium
+#enditem
+
+#newitem
+#name "longcloak_black_fancy"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/darkcloak_full_plain_f.png
+#recolormask /graphics/halfmen/centaur/cloak/trim_full_f_recolormask.png
+#armor
+#needs extra "cloak_black"
+#notfortier 1
+#tier 2
+#tier 3
+#eliteversion silvercloak_dark
+#eliteversion goldcloak_dark
+#enditem
+
+
+-- Colored cloaks
+
+#newitem
+#name "shortcloak_light"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/lightcloak_f.png
+#recolormask self
+#armor
+#needs extra "cloak_light"
+#tier 1
+#notfortier 2
+#notfortier 3
+#eliteversion longcloak_light
+#enditem
+
+#newitem
+#name "shortcloak_medium"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/mediumcloak_f.png
+#recolormask self
+#armor
+#needs extra "cloak_medium"
+#tier 1
+#notfortier 2
+#notfortier 3
+#eliteversion longcloak_medium
+#enditem
+
+#newitem
+#name "shortcloak_dark"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/darkcloak_f.png
+#recolormask self
+#armor
+#needs extra "cloak_dark"
+#tier 1
+#notfortier 2
+#notfortier 3
+#eliteversion longcloak_dark
+#enditem
+
+#newitem
+#name "longcloak_light"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/lightcloak_full_plain_f.png
+#recolormask self
+#armor
+#needs extra "cloak_light"
+#tier 1
+#tier 2
+#notfortier 3
+#eliteversion fancycloak_light
+#enditem
+
+#newitem
+#name "longcloak_medium"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/mediumcloak_full_plain_f.png
+#recolormask self
+#armor
+#needs extra "cloak_medium"
+#tier 1
+#tier 2
+#notfortier 3
+#eliteversion fancycloak_medium
+#enditem
+
+#newitem
+#name "longcloak_dark"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/darkcloak_full_plain_f.png
+#recolormask self
+#armor
+#needs extra "cloak_dark"
+#tier 1
+#tier 2
+#notfortier 3
+#eliteversion fancycloak_dark
+#enditem
+
+#newitem
+#name "fancycloak_light"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/lightcloak_full_fancy_f.png
+#recolormask self
+#armor
+#needs extra "cloak_light"
+#notfortier 1
+#tier 2
+#notfortier 3
+#eliteversion silvercloak_light
+#eliteversion goldcloak_light
+#enditem
+
+#newitem
+#name "fancycloak_medium"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/mediumcloak_full_fancy_f.png
+#recolormask self
+#armor
+#needs extra "cloak_medium"
+#notfortier 1
+#tier 2
+#notfortier 3
+#eliteversion silvercloak_medium
+#eliteversion goldcloak_medium
+#enditem
+
+#newitem
+#name "fancycloak_dark"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/darkcloak_full_fancy_f.png
+#recolormask self
+#armor
+#needs extra "cloak_dark"
+#notfortier 1
+#tier 2
+#notfortier 3
+#eliteversion silvercloak_dark
+#eliteversion goldcloak_dark
+#enditem
+
+#newitem
+#name "silvercloak_light"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/cloak_full_silver_f.png
+#recolormask /graphics/halfmen/centaur/cloak/lightcloak_full_ornate_f_recolormask.png
+#armor
+#needs extra "cloak_light"
+#notfortier 1
+#tier 2
+#tier 3
+#eliteversion goldcloak_light
+#enditem
+
+#newitem
+#name "silvercloak_medium"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/cloak_full_silver_f.png
+#recolormask /graphics/halfmen/centaur/cloak/mediumcloak_full_ornate_f_recolormask.png
+#armor
+#needs extra "cloak_medium"
+#notfortier 1
+#tier 2
+#tier 3
+#eliteversion goldcloak_medium
+#enditem
+
+#newitem
+#name "silvercloak_dark"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/cloak_full_silver_f.png
+#recolormask /graphics/halfmen/centaur/cloak/darkcloak_full_ornate_f_recolormask.png
+#armor
+#needs extra "cloak_dark"
+#notfortier 1
+#tier 2
+#tier 3
+#eliteversion goldcloak_medium
+#enditem
+
+#newitem
+#name "goldcloak_light"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/cloak_full_gold_f.png
+#recolormask /graphics/halfmen/centaur/cloak/lightcloak_full_ornate_f_recolormask.png
+#armor
+#needs extra "cloak_light"
+#notfortier 1
+#tier 2
+#tier 3
+#eliteversion silvercloak_light
+#enditem
+
+#newitem
+#name "goldcloak_medium"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/cloak_full_gold_f.png
+#recolormask /graphics/halfmen/centaur/cloak/mediumcloak_full_ornate_f_recolormask.png
+#armor
+#needs extra "cloak_medium"
+#notfortier 1
+#tier 2
+#tier 3
+#eliteversion silvercloak_medium
+#enditem
+
+#newitem
+#name "goldcloak_dark"
+#gameid -1
+#sprite /graphics/halfmen/centaur/cloak/cloak_full_gold_f.png
+#recolormask /graphics/halfmen/centaur/cloak/darkcloak_full_ornate_f_recolormask.png
+#armor
+#needs extra "cloak_dark"
+#notfortier 1
+#tier 2
+#tier 3
+#eliteversion silvercloak_medium
+#enditem

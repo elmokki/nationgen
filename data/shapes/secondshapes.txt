@@ -1260,3 +1260,35 @@
 #nogcost
 #mount
 #end
+
+#new secondshape
+#name "ratmount"
+#command "#name 'Giant Rat'"
+#command "#spr1 ./graphics/mounts/standard/giantrat.png"
+#command "#spr2 shift"
+#command "#itemslots 12288"
+#command "#size 2"
+#command "#hp 12"
+#command "#prot 2"
+#command "#mr 5"
+#command "#mor 11"
+#command "#str 9"
+#command "#att 11"
+#command "#def 11"
+#command "#prec 5"
+#command "#ap 16"
+#command "#mapmove 3"
+#command "#enc 2"
+#command "#weapon nostr_diseasebite_12"
+#command "#diseaseres 50"
+#command "#stealthy 0"
+#command "#animal"
+#command "#undisciplined"
+#command "#swampsurvival"
+#command "#maxage 7"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#nowayback
+#nogcost
+#mount
+#end

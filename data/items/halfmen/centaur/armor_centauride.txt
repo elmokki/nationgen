@@ -1,0 +1,52 @@
+--- Leather
+
+#newitem
+#name "leather barding"
+#basechance 0.25
+#gameid leather_barding
+#sprite /graphics/halfmen/centaur/armor/barding_leather_centauride.png
+#armor
+#theme "leather"
+#theme "primitive"
+#command "#stealthy +40"
+#enditem
+
+
+--- Scale
+
+#newitem
+#name "bronze scale barding"
+#gameid bronzescale_barding
+#sprite /graphics/halfmen/centaur/armor/barding_bronzescale_centauride.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#name "iron scale barding"
+#gameid scale_barding
+#sprite /graphics/halfmen/centaur/armor/barding_scale_centauride.png
+#armor
+#theme "iron"
+#enditem
+
+
+--- Plate
+
+#newitem
+#name "bronze plate barding"
+#gameid bronze_barding
+#sprite /graphics/halfmen/centaur/armor/barding_bronze_centauride.png
+#armor
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "iron plate barding"
+#gameid plate_barding
+#sprite /graphics/halfmen/centaur/armor/barding_plate_centauride.png
+#armor
+#theme "iron"
+#theme "advanced"
+#enditem

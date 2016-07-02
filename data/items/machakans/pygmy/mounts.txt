@@ -344,7 +344,7 @@
 #name "swan chariot"
 #gameid -1
 #sprite /graphics/mounts/chariots/small_swan_bronze.png
-#needs overlay chariot_small_bronze_overlay
+#needs overlay chariot_swan_bronze_overlay
 #armor
 #define "#size 2"
 #define "#hp +3"
@@ -371,4 +371,61 @@
 #basechance 1
 #offsetx 15
 #offsety -7
+#enditem
+
+#newitem
+#name "giant rat"
+#gameid -1
+#sprite /graphics/mounts/standard/giantrat.png
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 12"
+#define "#mounted"
+#define "#weapon nostr_diseasebite_12"
+#define "#gcost +15"
+#define "#diseaseres +10"
+#define "#ressize 1"
+#define "#enc 3"
+#tag "animal rat"
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#tag "guaranteedprefix rat"
+#define "#secondtmpshape ratmount"
+#description "If the rider dies, the rat will carry on fighting until the end of the battle."
+#basechance 1
+#offsetx 1
+#offsety -11
+#enditem
+
+#newitem
+#name "giant rat chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/small_rat_iron.png
+#needs overlay chariot_small_iron_overlay
+#armor
+#define "#size 3"
+#define "#hp +6"
+#define "#mapmove 2"
+#define "#ap 10"
+#define "#mounted"
+#define "#trample"
+#define "#weapon nostr_diseasebite_12"
+#define "#prot 5"
+#define "#gcost +20"
+#define "#rcost +10"
+#define "#ressize 1"
+#define "#enc 4"
+#define "#diseaseres +10"
+#tag "animal rat"
+#tag "chariot"
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#tag "maxprot 14"
+#tag "guaranteedprefix rat"
+#tag "animal rat"
+#offsetx 21
+#offsety -8
 #enditem

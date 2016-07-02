@@ -1,0 +1,170 @@
+--- Base offsets are applied to everything except base and overlay
+
+#newitem
+#name "brown horse"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#offsety -20
+#armor
+#needs overlay 1
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 24"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#enc 3"
+#define "#gcost +15"
+#tag "animal horse"
+#theme "light"
+#tag "maxprot 11"
+#epicness 0.25
+#enditem
+
+#newitem
+#name "cavecow"
+#gameid -1
+#sprite /graphics/mounts/standard/cavecow.png
+#offsetx -0
+#offsety -12
+#armor
+#define "#size 4"
+#define "#mapmove 1"
+#define "#ap 8"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#weapon 599 -- Corrosive bite"
+#define "#secondtmpshape cavecowmount"
+#define "#gcost +30"
+#define "#prot +2"
+#define "#ressize 2"
+#define "#enc 4"¨
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#chanceinc primaryrace "Pale One" *100
+#enditem
+
+#newitem
+#name "serpent 1"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -0
+#offsety -5
+#needs overlay 6
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 494 --- Poisonous Bite"
+#define "#secondtmpshape serpent1"  -- 1179
+#define "#gcost +30"
+#define "#ressize 2"
+#define "#enc 3"
+#tag "animal serpent"
+#theme "light"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 13"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#enditem
+
+#newitem
+#name "giant rat"
+#gameid -1
+#sprite /graphics/mounts/standard/giantrat.png
+#armor
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 10"
+#define "#mounted"
+#define "#weapon nostr_diseasebite_12"
+#define "#gcost +20"
+#define "#diseaseres +10"
+#define "#ressize 2"
+#define "#enc 4"
+#tag "animal rat"
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#tag "guaranteedprefix rat"
+#define "#secondtmpshape ratmount"
+#description "If the rider dies, the rat will carry on fighting until the end of the battle."
+#basechance 1
+#offsetx 0
+#offsety -5
+#enditem
+
+#newitem
+#name "seadog"
+#gameid -1
+#sprite /graphics/mounts/standard/seadog.png
+#armor
+#offsety -13
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 10"
+#define "#mounted"
+#define "#weapon nostr_bite_10"
+#define "#secondshape seadogmount"
+#define "#gcost +15"
+#define "#rcost +2"
+#define "#ressize 2"
+#define "#enc 4"
+#command "#amphibian"
+#theme "light"
+#tag "animal dog"
+#description "The loyal sea dog will continue to fight even if its rider dies."
+#tag "guaranteedprefix dog"
+#tag "minprot 0"
+#tag "maxprot 9"
+#enditem
+
+#newitem
+#name "toad"
+#gameid -1
+#sprite /graphics/mounts/standard/toad_jaguar.png
+#armor
+#offsetx 0
+#offsety -13
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 6"
+#define "#mounted"
+#define "#weapon nostr_poisonspit"
+#define "#gcost +30"
+#define "#rcost +3"
+#define "#ressize 2"
+#define "#enc 3"
+#define "#secondtmpshape toad_jaguar_mount"
+#description "The giant toad will fight until the end of the battle should the rider die"
+#tag "animal 'giant toad'"
+#tag "guaranteedprefix toad"
+#tag "minprot 6"
+#tag "maxprot 14"
+#enditem
+
+#newitem
+#name "frog"
+#gameid -1
+#sprite /graphics/mounts/standard/toad_sapphire.png
+#armor
+#offsetx 0
+#offsety -13
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 9"
+#define "#mounted"
+#define "#weapon 236"
+#define "#gcost +30"
+#define "#rcost +3"
+#define "#ressize 2"
+#define "#enc 3"
+#command "#amphibian"
+#define "#secondtmpshape toad_sapphire_mount"
+#description "The giant frog will fight until the end of the battle should the rider die"
+#tag "animal 'giant frog'"
+#tag "guaranteedprefix frog"
+#tag "minprot 6"
+#tag "maxprot 14"
+#enditem

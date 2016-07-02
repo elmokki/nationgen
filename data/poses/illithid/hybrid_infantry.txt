@@ -1,0 +1,79 @@
+--- Montag poses
+
+#newpose
+#basechance 100
+#name "hybrid infantry"
+#role "infantry"
+
+#subrace hybrid
+
+#freetemplatefilter hybridtemplate infantry
+
+#montagpose "normal infantry" 4
+
+#chanceinc moduleid herogen *0
+
+#montagpose_min 4
+#montagpose_max 6
+
+#load basesprite /data/items/foulspawn/small/bases_infantry.txt
+
+#load armor /data/items/foulspawn/small/armor_placeholder.txt
+#load helmet /data/items/foulspawn/small/helmet_placeholder.txt
+
+#load weapon /data/items/foulspawn/small/weapon_placeholder.txt
+
+#maxunits 2
+#endpose
+
+
+-------- Troop poses
+
+#newpose
+#name "normal infantry"
+#basechance 0
+#role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
+
+#subrace hybrid
+
+#renderorder "shadow bonusweapon basesprite rarm weapon rhand rleg lleg larm head overlay shirt pants armor offhandw lhand helmet offhanda"
+
+#no_free_fist
+
+#chanceinc moduleid herogen 10
+
+#load basesprite /data/items/illithid/hybrid/bases.txt
+#load rarm /data/items/illithid/hybrid/rarm.txt
+#load larm /data/items/illithid/hybrid/larm.txt
+#load rleg /data/items/illithid/hybrid/rleg.txt
+#load lleg /data/items/illithid/hybrid/lleg.txt
+#load shadow /data/items/foulspawn/small/shadow.txt
+#load shirt /data/items/foulspawn/small/shirt.txt
+#load pants /data/items/foulspawn/small/pants.txt
+#load rhand /data/items/foulspawn/small/rhand.txt
+#load lhand /data/items/foulspawn/small/lhand.txt
+
+#load armor /data/items/illithid/hybrid/armor.txt
+#load helmet /data/items/illithid/hybrid/helmet.txt
+
+#load weapon /data/items/illithid/hybrid/weapon.txt
+#load offhand /data/items/illithid/hybrid/offhand.txt
+#load offhand /data/items/illithid/hybrid/shield.txt
+#load bonusweapon /data/items/foulspawn/small/bonusranged.txt
+
+#generateitem 1 pants
+#generateitem 1 shirt
+#generateitem 1 lleg
+#generateitem 1 rleg
+
+#maxvarieties 6
+
+#itemslot hand 0
+#itemslot head 1
+#itemslot misc 2
+
+#endpose
+
+

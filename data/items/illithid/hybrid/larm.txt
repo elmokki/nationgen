@@ -1,0 +1,78 @@
+#newitem
+#name "humanoid_heavy"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm/goblinoid.png
+#command "#gcost +1"
+#command "#hp +1"
+#command "#str +1"
+#command "#prec +0"
+#itemslot hand +1
+#type onehand
+#type claw
+#needs lhand goblinoid
+#enditem
+
+#newitem
+#name "humanoid_agile"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm/goblinoid.png
+#command "#gcost +0"
+#command "#hp +0"
+#command "#str +0"
+#command "#prec +1"
+#itemslot hand +1
+#type onehand
+#type claw
+#needs lhand goblinoid
+#enditem
+
+#newitem
+#name "tentacloid_heavy"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm/tentacle_green.png
+#command "#gcost +1"
+#command "#hp +1"
+#command "#str +2"
+#command "#prec -1"
+#type tentacle
+#needs lhand none
+#enditem
+
+#newitem
+#name "tentacloid_agile"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm/tentacle_green.png
+#command "#gcost +0"
+#command "#hp +1"
+#command "#str -1"
+#command "#prec +1"
+#type tentacle
+#needs lhand none
+#enditem
+
+#newitem
+#name "crab"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm/pincer.png
+#command "#gcost +1"
+#command "#prot +1"
+#command "#str +1"
+#command "#hp +1"
+#command "#prec -1"
+#type pincer
+#needs lhand none
+#enditem
+
+#newitem
+#name "humanoid_missile"
+#gameid -1
+#nogen
+#sprite /graphics/foulspawn/small/larm/goblinoid_missile.png
+#command "#gcost +0"
+#command "#hp +0"
+#command "#str +0"
+#command "#prec +1"
+#itemslot hand +1
+#type missile
+#needs lhand goblinoid_missile
+#enditem

@@ -1217,6 +1217,19 @@
 #end
 
 #new customweapon
+#name "nostr_bill_10"
+#command "#att 0"
+#command "#def -1"
+#command "#dmg 10"
+#command "#len 0"
+#command "#nostr"
+#command "#bonus"
+#command "#name 'Bill'"
+#command "#blunt"
+#command "#natural"
+#end
+
+#new customweapon
 #name "nostr_wingbuff_3"
 #command "#att -1"
 #command "#def -1"
@@ -1345,5 +1358,19 @@
 #command "#flyspr 313 1"
 #command "#secondaryeffect 515"
 #command "#name 'Corrosive Spit'"
+#command "#natural"
+#end
+
+#new customweapon
+#name nostr_diseasebite_12
+#command "#att 0"
+#command "#def -1"
+#command "#dmg 12"
+#command "#len 0"
+#command "#nostr"
+#command "#bonus"
+#command "#secondaryeffect 414"
+#command "#name 'Foul Bite'"
+#command "#slash"
 #command "#natural"
 #end
