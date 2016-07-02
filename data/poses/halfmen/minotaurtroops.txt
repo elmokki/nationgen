@@ -8,6 +8,7 @@
 
 #basechance 2
 #theme "savage"
+#theme "minotaur"
 
 #command "#trample"
 
@@ -36,6 +37,7 @@
 
 #basechance 0.5
 #theme "savage"
+#theme "minotaur"
 
 #command "#trample"
 
@@ -65,6 +67,7 @@
 #role "infantry"
 
 #basechance 3
+#theme "minotaur"
 
 #command "#trample"
 
@@ -95,6 +98,7 @@
 
 #basedchance 1
 #theme "civilized"
+#theme "minotaur"
 
 #command "#trample"
 #command "#def +1"
@@ -128,6 +132,7 @@
 
 #basechance 0.5
 #theme "civilized"
+#theme "minotaur"
 
 #command "#formationfighter +1"
 #command "#mor +1"
@@ -160,10 +165,10 @@
 #role "sacred infantry"
 
 #basechance 0
-#chanceinc hastheme minotaur_primary +0.125
-#chanceinc hastheme minotaur_secondary +0.125
-#chanceinc hastheme centaur_primary +0.125
-#chanceinc hastheme centaur_secondary +0.125
+#chanceinc hastheme minotaur_primary +3.5
+#chanceinc hastheme minotaur_secondary +3.5
+#chanceinc hastheme centaur_primary +3.5
+#chanceinc hastheme centaur_secondary +3.5
 #chanceinc hastheme no_secondary *0
 #chanceinc hastheme satyr_primary *0
 #chanceinc hastheme satyr_secondary *0
@@ -195,10 +200,10 @@
 #renderorder "shadow bonusweapon weapon cloakb basesprite mount shirt legs armor cloakf quiver offhandw hands hair helmet offhanda overlay"
 
 #basechance 0
-#chanceinc hastheme minotaur_primary +0.125
-#chanceinc hastheme minotaur_secondary +0.125
-#chanceinc hastheme centaur_primary +0.125
-#chanceinc hastheme centaur_secondary +0.125
+#chanceinc hastheme minotaur_primary +3.5
+#chanceinc hastheme minotaur_secondary +3.5
+#chanceinc hastheme centaur_primary +3.5
+#chanceinc hastheme centaur_secondary +3.5
 #chanceinc hastheme satyr_primary *0
 #chanceinc hastheme satyr_secondary *0
 #chanceinc hastheme no_secondary *0
