@@ -142,8 +142,8 @@
 #id axe
 #gameid 17
 #sprite /graphics/vaettir/weapon/hatchet.png
-#offsetx -8
-#offsety -19
+#offsetx -10
+#offsety -21
 #theme "primitive"
 #theme "iron"
 #maxprot 15
@@ -225,8 +225,8 @@
 #gameid 12
 #sprite /graphics/advancedhuman/weapons/mace.png
 #theme "primitive"
-#offsetx -8
-#offsety -17
+#offsetx -10
+#offsety -19
 #theme "iron"
 #maxprot 15
 #chanceinc unittag irregular 8
@@ -237,8 +237,8 @@
 #gameid 13
 #sprite /graphics/advancedhuman/weapons/hammer.png
 #chanceinc unittag irregular 8
-#offsetx -8
-#offsety -17
+#offsetx -9
+#offsety -18
 #theme "iron"
 #theme "advanced"
 #enditem
@@ -259,8 +259,10 @@
 #id maul
 #gameid 14
 #sprite /graphics/advancedhuman/weapons/maul.png
-#offsetx -4
-#offsety -16
+#offsetx -9
+#offsety -18
+#renderprio 7
+#renderslot "offhandw"
 #theme "primitive"
 #enditem
 
@@ -278,8 +280,10 @@
 #id greataxe
 #gameid 18
 #sprite /graphics/advancedhuman/weapons/greataxe.png
-#offsetx -4
-#offsety -16
+#offsetx -9
+#offsety -18
+#renderprio 7
+#renderslot "offhandw"
 #theme "iron"
 #theme "primitive"
 #chanceinc unittag irregular 8

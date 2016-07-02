@@ -1,0 +1,328 @@
+-- Bows
+
+#newitem
+#name "short bow"
+#gameid 23
+#basechance 4
+#sprite /graphics/halfmen/centaur/weapon/shortbow.png
+#needs quiver quiver
+#needs offhand none
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#name "long bow"
+#gameid 24
+#basechance 4
+#sprite /graphics/halfmen/centaur/weapon/longbow.png
+#needs quiver quiver
+#needs offhand none
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#name "composite bow"
+#gameid 264
+#basechance 2
+#sprite /graphics/halfmen/centaur/weapon/shortbow.png
+#needs quiver quiver
+#needs offhand none
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#name "enchanted bow"
+#gameid 613
+#sprite /graphics/halfmen/centaur/weapon/frostbow.png
+#needs quiver quiver
+#needs offhand none
+#tier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#name "vine bow"
+#gameid 303
+#basechance 0
+#chanceinc "personalmagic nature 1"
+#sprite /graphics/halfmen/centaur/weapon/vinebow.png
+#needs quiver quiver
+#needs offhand none
+#tier 1
+#tier 2
+#tier 3
+#theme "nature"
+#enditem
+
+#newitem
+#name "howling bow"
+#gameid 439
+#basechance 0
+#chanceinc "personalmagic death 1 nature 1 1"
+#sprite /graphics/halfmen/centaur/weapon/bonebow.png
+#needs quiver quiver
+#needs offhand none
+#notfortier 1
+#tier 2
+#tier 3
+#theme "nature"
+#theme "death"
+#enditem
+
+#newitem
+#name "banefire bow"
+#gameid 199
+#basechance 0
+#chanceinc "personalmagic fire 1 death 1 1"
+#sprite /graphics/halfmen/centaur/weapon/darkbow.png
+#needs quiver quiver
+#needs offhand none
+#notfortier 1
+#tier 2
+#tier 3
+#theme "fire"
+#theme "death"
+#enditem
+
+#newitem
+#name "frost bow"
+#gameid 606
+#basechance 0
+#chanceinc "personalmagic water 1 1"
+#sprite /graphics/halfmen/centaur/weapon/frostbow.png
+#needs quiver quiver
+#needs offhand none
+#notfortier 1
+#tier 2
+#tier 3
+#theme "water"
+#enditem
+
+
+-- Staves and such
+
+#newitem
+#id quarterstaff
+#gameid 7
+#basechance 3
+#sprite /graphics/sobek/weapon/quarterstaff.png
+#offsety -9
+#tag "tier 2"
+#tag "eliteversion serpentstaff2"
+#tag "eliteversion orbstaff2"
+#tag "eliteversion knobblystaff"
+#tag "eliteversion skullstaff"
+#tag "eliteversion gemstaff"
+#enditem
+
+#newitem
+#id serpentstaff1
+#gameid 318
+#sprite /graphics/weapon/mage/serpentstaff.png
+#offsetx -2
+#offsety -12
+#theme "lizard"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id serpentstaff2
+#gameid 7
+#sprite /graphics/sobek/weapon/serpentstaff.png
+#offsety -9
+#theme "lizard"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id orb
+#gameid -1
+#sprite /graphics/weapon/mage/orb.png
+#recolormask self
+#offsetx -3
+#offsety -6
+#tag "tier 3"
+#enditem
+
+#newitem
+#id orbstaff1
+#gameid 7
+#sprite /graphics/weapon/mage/orbstaff.png
+#recolormask /graphics/weapon/mage/orbstaff_recolormask.png
+#offsetx -3
+#offsety -7
+#tag "tier 3"
+#enditem
+
+#newitem
+#id orbstaff2
+#gameid 7
+#sprite /graphics/sobek/weapon/orbstaff.png
+#recolormask /graphics/sobek/weapon/orbstaff_recolormask.png
+#offsetx -4
+#offsety -13
+#tag "tier 3"
+#enditem
+
+#newitem
+#id gemstaff
+#gameid 7
+#sprite /graphics/sobek/weapon/gemstaff.png
+#recolormask /graphics/sobek/weapon/gemstaff_recolormask.png
+#offsetx -2
+#offsety -11
+#tag "tier 3"
+#enditem
+
+#newitem
+#id sceptre
+#gameid 446
+#sprite /graphics/weapon/mage/sceptre.png
+#offsetx -3
+#offsety -9
+#tag "tier 2"
+#tag "tier 3"
+#tag "eliteversion orbsceptre"
+#theme "advanced"
+#enditem
+
+#newitem
+#id orbsceptre
+#gameid 446
+#sprite /graphics/weapon/mage/sceptre_orb.png
+#recolormask /graphics/weapon/mage/sceptre_orb_recolormask.png
+#offsetx -3
+#offsety -9
+#theme "superior"
+#theme "advanced"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id pestle
+#gameid 499
+#needs offhand mortar
+#sprite /graphics/weapon/mage/pestle.png
+#offsetx -4
+#offsety -7
+#tag "tier 1"
+#enditem
+
+#newitem
+#id dagger
+#gameid 671
+#sprite /graphics/weapon/mage/dagger.png
+#offsetx -3
+#offsety -7
+#tag "tier 1"
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem
+#id knobblystaff
+#gameid 7
+#sprite /graphics/sobek/weapon/knobblystaff.png
+#offsety -9
+#theme "primitive"
+#theme "nature"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id skullstaff
+#gameid 7
+#sprite /graphics/sobek/weapon/skullstaff.png
+#offsety -9
+#theme "primitive"
+#theme "death"
+#theme "nature"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id metalstaff
+#gameid 7
+#sprite /graphics/sobek/weapon/metalstaff.png
+#offsety -9
+#tag "tier 2"
+#tag "eliteversion metalstaff_bauble"
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem
+#id metalstaff_bauble
+#gameid 7
+#sprite /graphics/sobek/weapon/metalstaff_bauble.png
+#offsety -9
+#tag "tier 3"
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem
+#id vinebonestaff
+#gameid 7
+#sprite /graphics/weapon/mage/staff_vinebone.png
+#offsetx -3
+#offsety -7
+#theme "primitive"
+#theme "death"
+#theme "nature"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id twig1
+#gameid 498
+#sprite /graphics/weapon/mage/twig1.png
+#offsetx -3
+#offsety -7
+#theme "primitive"
+#theme "nature"
+#tag "tier 1"
+#tag "eliteversion branch"
+#enditem
+
+#newitem
+#id twig2
+#gameid 498
+#sprite /graphics/weapon/mage/twig2.png
+#offsetx -3
+#offsety -7
+#theme "primitive"
+#theme "nature"
+#tag "tier 1"
+#tag "eliteversion branch"
+#enditem
+
+#newitem
+#id branch
+#gameid 240
+#sprite /graphics/weapon/mage/branch.png
+#offsetx -7
+#offsety -17
+#theme "primitive"
+#theme "nature"
+#tag "tier 2"
+#tag "eliteversion branchstaff"
+#enditem
+
+#newitem
+#id branchstaff
+#gameid 7
+#sprite /graphics/weapon/mage/staff_vinebone.png
+#offsetx -3
+#offsety -7
+#theme "primitive"
+#theme "nature"
+#tag "tier 3"
+#enditem

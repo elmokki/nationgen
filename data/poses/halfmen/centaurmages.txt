@@ -1,0 +1,64 @@
+#newpose
+#name "centaur casters"
+#role "mage"
+#role "priest"
+
+#tier 1
+#tier 2
+#tier 3
+
+#theme "male"
+#theme "centaur"
+
+#command "#stealthy +40"
+
+#renderorder "shadow weapon extra legs basesprite armor quiver bonusweapon cloakf offhandw hands cloakb hair helmet offhanda overlay"
+
+#load basesprite /data/items/halfmen/centaur/bases_centaur.txt
+#load legs /data/items/halfmen/centaur/legs.txt
+#load shadow /data/items/halfmen/centaur/shadow.txt
+#load hands /data/items/halfmen/centaur/hands.txt
+
+#load armor /data/items/halfmen/centaur/robes.txt
+
+#load weapon /data/items/halfmen/centaur/weapon_caster.txt
+#load offhand /data/items/halfmen/centaur/offhand_caster.txt
+#load helmet /data/items/halfmen/centaur/hair_caster_male.txt
+
+#load quiver /data/items/halfmen/centaur/quiver.txt
+#load extra /data/items/halfmen/centaur/extra.txt
+
+#endpose
+
+
+#newpose
+#name "centauride casters"
+#role "mage"
+#role "priest"
+
+#tier 1
+#tier 2
+#tier 3
+
+#theme "female"
+#theme "centaur"
+
+#command "#stealthy +40"
+
+#renderorder "shadow weapon extra legs basesprite armor quiver bonusweapon cloakf offhandw hands cloakb hair helmet offhanda overlay"
+
+#load basesprite /data/items/halfmen/centaur/bases_centauride.txt
+#load legs /data/items/halfmen/centaur/legs.txt
+#load shadow /data/items/halfmen/centaur/shadow.txt
+#load hands /data/items/halfmen/centaur/hands.txt 0 1
+
+#load armor /data/items/halfmen/centaur/robes.txt
+
+#load weapon /data/items/halfmen/centaur/weapon_caster.txt 0 1
+#load offhand /data/items/halfmen/centaur/offhand_caster.txt 0 1
+#load helmet /data/items/halfmen/centaur/hair_caster_female.txt
+
+#load quiver /data/items/halfmen/centaur/quiver.txt 0 1
+#load extra /data/items/halfmen/centaur/extra.txt
+
+#endpose
