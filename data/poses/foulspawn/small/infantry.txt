@@ -286,7 +286,7 @@
 #addthemeinc thisitemslottag not offhand degenerate *0
 #addthemeinc thisitemslottag not bonusweapon degenerate *0
 
-#renderorder "shadow bonusweapon basesprite rarm weapon rleg lleg larm head overlay armor offhandw rhand lhand lhand_overlay hair helmet offhanda"
+#renderorder "shadow bonusweapon basesprite shirt rarm weapon rleg lleg larm head overlay armor offhandw rhand lhand lhand_overlay hair helmet offhanda"
 
 #no_free_fist
 
@@ -299,6 +299,7 @@
 #load lhand /data/items/foulspawn/medium/lhand.txt
 #load head /data/items/foulspawn/medium/head.txt
 #load shadow /data/items/foulspawn/medium/shadow.txt
+#load shirt /data/items/foulspawn/medium/shirt.txt
 
 #load armor /data/items/foulspawn/medium/armor_placeholder.txt
 #load helmet /data/items/foulspawn/medium/helmet.txt
@@ -318,6 +319,7 @@
 #generateitem 1 offhand
 #generateitem 1 lleg
 #generateitem 1 rleg
+#generateitem 1 shirt
 
 #maxvarieties 3
 
@@ -336,7 +338,7 @@
 #role "elite infantry"
 #role "sacred infantry"
 
-#renderorder "shadow bonusweapon basesprite rarm weapon rleg lleg larm head overlay armor offhandw rhand lhand lhand_overlay hair helmet offhanda"
+#renderorder "shadow bonusweapon basesprite shirt rarm weapon rleg lleg larm head overlay armor offhandw rhand lhand lhand_overlay hair helmet offhanda"
 
 #no_free_fist
 
@@ -351,6 +353,7 @@
 #load lhand /data/items/foulspawn/medium/lhand.txt
 #load head /data/items/foulspawn/medium/head.txt
 #load shadow /data/items/foulspawn/medium/shadow.txt
+#load shirt /data/items/foulspawn/medium/shirt.txt
 
 #load armor /data/items/foulspawn/medium/armor.txt
 #load helmet /data/items/foulspawn/medium/helmet.txt
@@ -366,6 +369,7 @@
 
 #generateitem 1 lleg
 #generateitem 1 rleg
+#generateitem 1 shirt
 
 #maxvarieties 3
 
