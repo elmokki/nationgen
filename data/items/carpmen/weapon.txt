@@ -1,0 +1,190 @@
+#newitem
+#id spear
+#gameid 373
+#sprite /graphics/weapon/standard/spear.png
+#offsetx -5
+#tag "name infantry spearman"
+#theme "wood"
+#enditem
+
+#newitem
+#id bronze_longspear
+#gameid 644
+#sprite /graphics/carpmen/weapon/bronze_longspear.png
+#tag "name infantry spearman"
+#tag "name commander captain"
+#basechance 0.75
+#theme "bronze"
+#enditem
+
+#newitem
+#id bronze_spear
+#gameid 643
+#sprite /graphics/weapon/bronze/spear.png
+#offsetx -5
+#tag "name infantry spearman"
+#theme "bronze"
+#enditem
+
+#newitem
+#id trident
+#gameid 641
+#sprite /graphics/carpmen/weapon/bronze_trident.png
+#offsetx 0
+#tag "prefix trident"
+#basechance 0.75
+#theme "bronze"
+#enditem
+
+#newitem
+#id quarterstaff
+#gameid 7
+#sprite /graphics/weapon/standard/quarterstaff.png
+#offsetx -2
+#basechance 0.125
+#maxprot 10
+#theme "wood"
+#enditem
+
+-- Coral weapons
+
+#newitem
+#id coralspear
+#gameid 31
+#sprite /graphics/carpmen/weapon/coral_spear.png
+#tag "name infantry spearman"
+#theme "coral"
+#enditem
+
+#newitem
+#id corallongspear
+#gameid 580
+#sprite /graphics/atlantian/weapon/longspear.png
+#offsetx -1
+#tag "name infantry phalanx"
+#tag "advanced"
+#basechance 0.75
+#theme "coral"
+#enditem
+
+#newitem
+#id coralglaive
+#gameid 46
+#sprite /graphics/carpmen/weapon/coral_glaive.png
+#tag "advanced"
+#basechance 0.5
+#theme "coral"
+#enditem
+
+#newitem
+#id coralshortsword
+#gameid coralshortsword
+#sprite /graphics/carpmen/weapon/coral_shortsword.png
+#basechance 0.5
+#tag "name infantry swordmen"
+#theme "coral"
+#enditem
+
+#newitem
+#id coralclub
+#gameid 45
+#sprite /graphics/carpmen/weapon/coral_club.png
+#basechance 0.5
+#tag "name infantry clubber"
+#theme "primitive"
+#theme "coral"
+#maxprot 11
+#enditem
+
+-- "Terrestrial" weapons
+
+#newitem
+#id shortsword
+#gameid 645
+#sprite /graphics/carpmen/weapon/bronze_shortsword.png
+#basechance 0.5
+#tag "name infantry swordsman"
+#tag "name commander captain"
+#tag "name commander swordsmaster"
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id hatchet
+#gameid 646
+#sprite /graphics/carpmen/weapon/bronze_axe.png
+#basechance 0.5
+#tag "name infantry axeman"
+#tag "name commander warlord"
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id morningstar
+#gameid 15
+#sprite /graphics/carpmen/weapon/bronze_morningstar.png
+#basechance 0.25
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id flail
+#gameid 16
+#sprite /graphics/carpmen/weapon/bronze_flail.png
+#basechance 0.25
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id greataxe
+#gameid bronzebattleaxe
+#sprite /graphics/carpmen/weapon/bronze_greataxe.png
+#basechance 0.25
+#tag "name infantry axeman"
+#tag "name commander warlord"
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id halberd
+#gameid bronzehalberd
+#sprite /graphics/carpmen/weapon/bronze_halberd.png
+#basechance 0.25
+#tag "name infantry halberdier"
+#tag "name commander captain"
+#theme "advanced"
+#minprot 9
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id bardiche
+#gameid bronzebardiche
+#sprite /graphics/carpmen/weapon/bronze_bardiche.png
+#basechance 0.25
+#tag "name commander warchief"
+#tag "name commander warlord"
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id greatclub
+#gameid 165
+#sprite /graphics/weapon/2h/greatclub.png
+#basechance 0.5
+#offsetx -1
+#offsety 1
+#tag "name infantry clubber"
+#theme "primitive"
+#needs hands 2h_hands
+#maxprot 9
+#theme "wood"
+#theme "primitive"
+#enditem
