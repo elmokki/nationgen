@@ -1,0 +1,519 @@
+#newitem
+#id loincloth_fur
+#sprite /graphics/ogre/armor/loincloth_fur.png
+#gameid -1
+#armor
+#theme "naked"
+#theme "primitive"
+#needs shirt loincloth_fur
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id loincloth_leather
+#sprite /graphics/ogre/armor/loincloth_leather.png
+#gameid -1
+#armor
+#theme "naked"
+#needs shirt loincloth_leather
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id furs
+#sprite /graphics/ogre/armor/furs.png
+#eliteversion furs_bones
+#eliteversion furs_beads
+#gameid 44
+#armor
+#theme "leather"
+#theme "primitive"
+#needs shirt furs
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id furs_bones
+#sprite /graphics/ogre/armor/robes/furs_bones.png
+#gameid 44
+#armor
+#theme "leather"
+#theme "primitive"
+#theme "death"
+#notfortier 1
+#tier 2
+#notfortier 3
+#needs sash nosash
+#enditem
+
+#newitem
+#id furs_beads
+#sprite /graphics/ogre/armor/robes/furs_beads.png
+#recolormask /graphics/ogre/armor/robes/furs_beads_recolormask.png
+#gameid 44
+#armor
+#theme "leather"
+#theme "primitive"
+#notfortier 1
+#tier 2
+#notfortier 3
+#needs sash nosash
+#enditem
+
+
+
+-- Fur robes
+
+#newitem
+#id skirt_fur_light
+#sprite /graphics/ogre/armor/robes/skirt_fur_light_plain.png
+#eliteversion skirt_fur_light_fancy
+#eliteversion skirt_fur_mixed
+#eliteversion robe_fur_light
+#gameid 158
+#armor
+#theme "leather"
+#theme "primitive"
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id skirt_fur_light_fancy
+#sprite /graphics/ogre/armor/robes/skirt_fur_light_fancy.png
+#eliteversion skirt_fur_light_ornate
+#eliteversion skirt_fur_mixed_fancy
+#eliteversion robe_fur_light_fancy
+#gameid 158
+#armor
+#theme "leather"
+#theme "primitive"
+#tier 1
+#tier 2
+#notfortier 3
+#needs sash nosash
+#enditem
+
+#newitem
+#id skirt_fur_light_ornate
+#sprite /graphics/ogre/armor/robes/skirt_fur_light_ornate.png
+#eliteversion skirt_fur_mixed_ornate
+#eliteversion robe_fur_light_ornate
+#gameid 158
+#armor
+#theme "leather"
+#theme "primitive"
+#notfortier 1
+#tier 2
+#notfortier 3
+#needs sash nosash
+#enditem
+
+#newitem
+#id skirt_fur_dark
+#sprite /graphics/ogre/armor/robes/skirt_fur_dark_plain.png
+#eliteversion skirt_fur_dark_fancy
+#eliteversion skirt_fur_mixed
+#eliteversion robe_fur_dark
+#gameid 158
+#armor
+#theme "leather"
+#theme "primitive"
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id skirt_fur_dark_fancy
+#sprite /graphics/ogre/armor/robes/skirt_fur_dark_fancy.png
+#eliteversion skirt_fur_dark_ornate
+#eliteversion skirt_fur_mixed_fancy
+#eliteversion robe_fur_dark_fancy
+#gameid 158
+#armor
+#theme "leather"
+#theme "primitive"
+#tier 1
+#tier 2
+#notfortier 3
+#needs sash nosash
+#enditem
+
+#newitem
+#id skirt_fur_dark_ornate
+#sprite /graphics/ogre/armor/robes/skirt_fur_dark_ornate.png
+#eliteversion skirt_fur_mixed_ornate
+#eliteversion robe_fur_dark_ornate
+#gameid 158
+#armor
+#theme "leather"
+#theme "primitive"
+#notfortier 1
+#tier 2
+#notfortier 3
+#needs sash nosash
+#enditem
+
+#newitem
+#id skirt_fur_mixed
+#sprite /graphics/ogre/armor/robes/skirt_fur_mixed_plain.png
+#recolormask /graphics/ogre/armor/robes/robe_fur_mixed_recolormask.png
+#eliteversion skirt_fur_mixed_fancy
+#eliteversion robe_fur_mixed_plain
+#gameid 158
+#armor
+#theme "leather"
+#theme "primitive"
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id skirt_fur_mixed_fancy
+#sprite /graphics/ogre/armor/robes/skirt_fur_mixed_fancy.png
+#recolormask /graphics/ogre/armor/robes/robe_fur_mixed_recolormask.png
+#eliteversion skirt_fur_mixed_ornate
+#eliteversion robe_fur_mixed_fancy
+#gameid 158
+#armor
+#theme "leather"
+#theme "primitive"
+#notfortier 1
+#tier 2
+#notfortier 3
+#needs sash nosash
+#enditem
+
+#newitem
+#id skirt_fur_mixed_ornate
+#sprite /graphics/ogre/armor/robes/skirt_fur_mixed_ornate.png
+#recolormask /graphics/ogre/armor/robes/robe_fur_mixed_recolormask.png
+#eliteversion robe_fur_mixed_ornate
+#gameid 158
+#armor
+#theme "leather"
+#theme "primitive"
+#notfortier 1
+#tier 2
+#tier 3
+#needs sash nosash
+#enditem
+
+
+
+-- Fur robes
+
+#newitem
+#id robe_fur_light
+#sprite /graphics/ogre/armor/robes/robe_fur_light_plain.png
+#eliteversion robe_fur_light_fancy
+#eliteversion robe_fur_mixed
+#gameid 44
+#armor
+#theme "leather"
+#theme "primitive"
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id robe_fur_light_fancy
+#sprite /graphics/ogre/armor/robes/robe_fur_light_fancy.png
+#eliteversion robe_fur_light_ornate
+#eliteversion robe_fur_mixed_fancy
+#gameid 44
+#armor
+#theme "leather"
+#theme "primitive"
+#tier 1
+#tier 2
+#notfortier 3
+#needs sash nosash
+#enditem
+
+#newitem
+#id robe_fur_light_ornate
+#sprite /graphics/ogre/armor/robes/robe_fur_light_ornate.png
+#eliteversion robe_fur_mixed_ornate
+#gameid 44
+#armor
+#theme "leather"
+#theme "primitive"
+#notfortier 1
+#tier 2
+#tier 3
+#needs sash nosash
+#enditem
+
+#newitem
+#id robe_fur_dark
+#sprite /graphics/ogre/armor/robes/robe_fur_dark_plain.png
+#eliteversion robe_fur_dark_fancy
+#eliteversion robe_fur_mixed
+#gameid 44
+#armor
+#theme "leather"
+#theme "primitive"
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id robe_fur_dark_fancy
+#sprite /graphics/ogre/armor/robes/robe_fur_dark_fancy.png
+#eliteversion robe_fur_dark_ornate
+#eliteversion robe_fur_mixed_fancy
+#gameid 44
+#armor
+#theme "leather"
+#theme "primitive"
+#tier 1
+#tier 2
+#notfortier 3
+#needs sash nosash
+#enditem
+
+#newitem
+#id robe_fur_dark_ornate
+#sprite /graphics/ogre/armor/robes/robe_fur_dark_ornate.png
+#eliteversion robe_fur_mixed_ornate
+#gameid 44
+#armor
+#theme "leather"
+#theme "primitive"
+#notfortier 1
+#tier 2
+#tier 3
+#needs sash nosash
+#enditem
+
+#newitem
+#id robe_fur_mixed
+#sprite /graphics/ogre/armor/robes/robe_fur_mixed_plain.png
+#recolormask /graphics/ogre/armor/robes/robe_fur_mixed_recolormask.png
+#eliteversion robe_fur_mixed_fancy
+#gameid 44
+#armor
+#theme "leather"
+#theme "primitive"
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id robe_fur_mixed_fancy
+#sprite /graphics/ogre/armor/robes/robe_fur_mixed_fancy.png
+#recolormask /graphics/ogre/armor/robes/robe_fur_mixed_recolormask.png
+#eliteversion robe_fur_mixed_ornate
+#gameid 44
+#armor
+#theme "leather"
+#theme "primitive"
+#notfortier 1
+#tier 2
+#tier 3
+#needs sash nosash
+#enditem
+
+#newitem
+#id robe_fur_mixed_ornate
+#sprite /graphics/ogre/armor/robes/robe_fur_mixed_ornate.png
+#recolormask /graphics/ogre/armor/robes/robe_fur_mixed_recolormask.png
+#gameid 44
+#armor
+#theme "leather"
+#theme "primitive"
+#notfortier 1
+#notfortier 2
+#tier 3
+#needs sash nosash
+#enditem
+
+
+-- Advanced stuff
+
+#newitem
+#id shendyt_white
+#sprite /graphics/ogre/armor/robes/shendyt_light.png
+#eliteversion shendyt_faint
+#eliteversion toga_white
+#gameid -1
+#armor
+#theme "naked"
+#theme "advanced"
+#tier 1
+#notfortier 2
+#notfortier 3
+#needs sash nosash
+#enditem
+
+#newitem
+#id shendyt_black
+#sprite /graphics/ogre/armor/robes/shendyt_dark.png
+#eliteversion shendyt_dull
+#eliteversion toga_black
+#gameid -1
+#armor
+#theme "naked"
+#theme "advanced"
+#tier 1
+#notfortier 2
+#notfortier 3
+#needs sash nosash
+#enditem
+
+#newitem
+#id shendyt_faint
+#sprite /graphics/ogre/armor/robes/shendyt_light.png
+#recolormask /graphics/ogre/armor/robes/shendyt_faint_recolormask.png
+#eliteversion shendyt_light
+#eliteversion toga_faint
+#gameid -1
+#armor
+#theme "naked"
+#theme "advanced"
+#notfortier 1
+#tier 2
+#notfortier 3
+#needs sash nosash
+#enditem
+
+#newitem
+#id shendyt_dull
+#sprite /graphics/ogre/armor/robes/shendyt_dark.png
+#recolormask /graphics/ogre/armor/robes/shendyt_dull_recolormask.png
+#eliteversion shendyt_dark
+#eliteversion toga_dull
+#gameid -1
+#armor
+#theme "naked"
+#theme "advanced"
+#notfortier 1
+#tier 2
+#notfortier 3
+#needs sash nosash
+#enditem
+
+#newitem
+#id shendyt_light
+#sprite /graphics/ogre/armor/robes/shendyt_light.png
+#recolormask /graphics/ogre/armor/robes/shendyt_light_recolormask.png
+#eliteversion toga_light
+#gameid -1
+#armor
+#theme "naked"
+#theme "advanced"
+#notfortier 1
+#tier 2
+#tier 3
+#needs sash nosash
+#enditem
+
+#newitem
+#id shendyt_dark
+#sprite /graphics/ogre/armor/robes/shendyt_dark.png
+#recolormask /graphics/ogre/armor/robes/shendyt_dark_recolormask.png
+#eliteversion toga_dark
+#gameid -1
+#armor
+#theme "naked"
+#theme "advanced"
+#notfortier 1
+#tier 2
+#tier 3
+#needs sash nosash
+#enditem
+
+#newitem
+#id toga_white
+#sprite /graphics/ogre/armor/robes/toga_light.png
+#eliteversion toga_faint
+#gameid 158
+#armor
+#theme "advanced"
+#tier 1
+#tier 2
+#notfortier 3
+#needs sash nosash
+#enditem
+
+#newitem
+#id toga_black
+#sprite /graphics/ogre/armor/robes/toga_dark.png
+#eliteversion toga_dull
+#gameid 158
+#armor
+#theme "advanced"
+#tier 1
+#tier 2
+#notfortier 3
+#needs sash nosash
+#enditem
+
+#newitem
+#id toga_faint
+#sprite /graphics/ogre/armor/robes/toga_light.png
+#recolormask /graphics/ogre/armor/robes/toga_faint_recolormask.png
+#eliteversion toga_light
+#gameid 158
+#armor
+#theme "advanced"
+#notfortier 1
+#tier 2
+#tier 3
+#needs sash nosash
+#enditem
+
+#newitem
+#id toga_dull
+#sprite /graphics/ogre/armor/robes/toga_dark.png
+#recolormask /graphics/ogre/armor/robes/toga_dull_recolormask.png
+#eliteversion toga_dark
+#gameid 158
+#armor
+#theme "advanced"
+#notfortier 1
+#tier 2
+#tier 3
+#needs sash nosash
+#enditem
+
+#newitem
+#id toga_light
+#sprite /graphics/ogre/armor/robes/toga_light.png
+#recolormask self
+#eliteversion toga_light
+#gameid 158
+#armor
+#theme "advanced"
+#notfortier 1
+#notfortier 2
+#tier 3
+#needs sash nosash
+#enditem
+
+#newitem
+#id toga_dark
+#sprite /graphics/ogre/armor/robes/toga_dark.png
+#recolormask self
+#eliteversion toga_dark
+#gameid 158
+#armor
+#theme "advanced"
+#notfortier 1
+#notfortier 2
+#tier 3
+#needs sash nosash
+#enditem
