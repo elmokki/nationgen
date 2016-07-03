@@ -1163,7 +1163,6 @@ public class MageGenerator extends TroopGenerator {
 		}
 				
 		boolean magePriests = r.nextDouble() < magePriestChance;
-		System.out.println(magePriests + " - " + magePriestChance);
 		
 		// If we have extra mages, they can be priests 20% of the time if primary mages aren't
 		boolean compensationMagePriests = (!magePriests && r.nextDouble() < 0.20);
