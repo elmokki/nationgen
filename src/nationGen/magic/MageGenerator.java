@@ -1077,7 +1077,7 @@ public class MageGenerator extends TroopGenerator {
 		Random r = this.random;
 		
 		
-		double priestUpChance = 0.5;
+		double priestUpChance = 0.4;
 		if(Generic.containsTag(Generic.getAllNationTags(nation), "higherpriestlevelchance"))
 		{
 			List<String> possiblevalues = Generic.getTagValues(Generic.getAllNationTags(nation), "higherpriestlevelchance");
@@ -1111,7 +1111,19 @@ public class MageGenerator extends TroopGenerator {
 			maxStrength = highest;
 		}
 		
-	
+		int maxlevel = 10;
+		if(Generic.containsTag(Generic.getAllNationTags(nation), "maxpriestlevel"))
+		{
+			List<String> possiblevalues = Generic.getTagValues(Generic.getAllNationTags(nation), "highestpriestlevel");
+			int highest = 0;
+			for(String str : possiblevalues)
+			{
+				if(Integer.parseInt(str) > highest)
+					highest = Integer.parseInt(str);
+			}
+			maxlevel = highest;
+		}
+		maxStrength = Math.min(maxlevel, maxStrength);
 		
 		double magePriestChance = 0.3;
 		if(Generic.containsTag(Generic.getAllNationTags(nation), "magepriestchance"))
@@ -1131,7 +1143,6 @@ public class MageGenerator extends TroopGenerator {
 		// If we have extra mages, they can be priests 20% of the time if primary mages aren't
 		boolean compensationMagePriests = (!magePriests && r.nextDouble() < 0.20);
 
-		
 		int sacredMageTiers = 0;
 		if(r.nextDouble() < 0.5)
 		{
