@@ -1,0 +1,62 @@
+-- Robes
+
+#newitem
+#id robe_lighter
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_full_grey.png
+#needs helmet cowl_lighter
+#armor
+#enditem
+
+#newitem
+#id robe_darker
+#gameid 158
+#sprite /graphics/ichtyid/armor/robes/robes_full_dark.png
+#needs helmet cowl_darker
+#armor
+#enditem
+
+-- Leather armor
+
+#newitem
+#name "leather_cuirass"
+#gameid 5
+#sprite /graphics/ichtyid/armor/leather_cuirass.png
+#armor
+#theme "leather"
+#enditem
+
+#newitem
+#name "leather_hauberk"
+#gameid 10
+#sprite /graphics/ichtyid/armor/leather_hauberk.png
+#armor
+#theme "leather"
+#enditem
+
+#newitem
+#name "leather_full"
+#gameid 15
+#sprite /graphics/ichtyid/armor/leather_full.png
+#armor
+#theme "leather"
+#enditem
+
+
+--- Scale
+
+#newitem
+#name "scale_cuirass"
+#gameid 7
+#sprite /graphics/ichtyid/armor/scale_cuirass.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "scale_hauberk"
+#gameid 12
+#sprite /graphics/ichtyid/armor/scale_hauberk.png
+#armor
+#theme "iron"
+#enditem

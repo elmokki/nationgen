@@ -36,12 +36,12 @@
 #endtheme
 
 
--- Demographic themes (salty or muckdweller?): mandatory
+-- Demographic themes (salty, muckdweller, or fancy?): mandatory
 -- Weights for all are uniform across eras
 #newtheme
 #type demographic
 #name ichtyid
-#basechance 2
+#basechance 4
 #racedefinition "#pose ichtyidtroops"
 #racedefinition "#pose ichtyidmages"
 #racedefinition "#nationcommand #coastnation"
@@ -55,6 +55,20 @@
 #basechance 1
 #racedefinition "#pose carpmentroops"
 #racedefinition "#pose carpmenmages"
+#themeinc theme marine *0.01
+#endtheme
+
+#newtheme
+#type demographic
+#name  koid
+#basechance 1
+#racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/oriental/suffixes.txt"
+#racedefinition "#nationcommand '#gods easterngods"
+#racedefinition "#oriental"
+#racedefinition "#pose koitroops"
+#racedefinition "#pose koimages"
 #themeinc theme marine *0.01
 #endtheme
 

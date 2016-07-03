@@ -1,0 +1,96 @@
+-- Leather armor
+
+#newitem
+#name "leather_cuirass"
+#gameid 5
+#sprite /graphics/ichtyid/armor/leather_cuirass.png
+#armor
+#theme "leather"
+#enditem
+
+#newitem
+#name "leather_hauberk"
+#gameid 10
+#sprite /graphics/ichtyid/armor/leather_hauberk.png
+#armor
+#theme "leather"
+#enditem
+
+#newitem
+#name "leather_full"
+#gameid 15
+#sprite /graphics/ichtyid/armor/leather_full.png
+#armor
+#theme "leather"
+#enditem
+
+
+--- Scale
+
+#newitem
+#name "scale_cuirass"
+#gameid 7
+#sprite /graphics/ichtyid/armor/scale_cuirass.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "scale_hauberk"
+#gameid 12
+#sprite /graphics/ichtyid/armor/scale_hauberk.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "scale_full"
+#gameid 17
+#sprite /graphics/ichtyid/armor/scale_full.png
+#armor
+#theme "iron"
+#enditem
+
+
+--- Samurai armor
+
+#newitem
+#name "samuraiarmor"
+#gameid 129
+#sprite /graphics/ichtyid/armor/samuraiarmor.png
+#tag "eliteversion samuraiarmor_elite"
+#tag "eliteversion heavysamuraiarmor"
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "samuraiarmor_elite"
+#gameid 129
+#sprite /graphics/ichtyid/armor/samuraiarmor.png
+#recolormask /graphics/ichtyid/armor/samuraiarmor_recolormask.png
+#tag "eliteversion heavysamuraiarmor_elite"
+#armor
+#theme "iron"
+#theme "elite"
+#enditem
+
+#newitem
+#name "heavysamuraiarmor"
+#gameid 130
+#sprite /graphics/ichtyid/armor/heavysamuraiarmor.png
+#tag "eliteversion heavysamuraiarmor_elite"
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "heavysamuraiarmor_elite"
+#gameid 130
+#sprite /graphics/ichtyid/armor/heavysamuraiarmor.png
+#recolormask /graphics/ichtyid/armor/samuraiarmor_recolormask.png
+#tag "eliteversion heavysamuraiarmor_elite"
+#armor
+#theme "iron"
+#theme "elite"
+#enditem
