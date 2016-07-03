@@ -195,8 +195,6 @@ public class MageGenerator extends TroopGenerator {
 			}
 			
 	
-			System.out.println(Generic.integerToPath(i) + ": " + f.basechance);
-
 			orig.add(f);
 		}
 		
@@ -1148,7 +1146,6 @@ public class MageGenerator extends TroopGenerator {
 			if(highest > maxlevel)
 				maxlevel = highest;
 		}
-		System.out.println(maxStrength + " - " + maxlevel);
 
 		maxStrength = Math.min(maxlevel, maxStrength);
 
@@ -1166,6 +1163,7 @@ public class MageGenerator extends TroopGenerator {
 		}
 				
 		boolean magePriests = r.nextDouble() < magePriestChance;
+		System.out.println(magePriests + " - " + magePriestChance);
 		
 		// If we have extra mages, they can be priests 20% of the time if primary mages aren't
 		boolean compensationMagePriests = (!magePriests && r.nextDouble() < 0.20);
@@ -1246,7 +1244,7 @@ public class MageGenerator extends TroopGenerator {
 						u.commands.add(new Command("#holy"));
 						u.appliedFilters.add(this.getPriestPattern(currentStrength));
 						u.tags.add("magepriest");
-						u.commands.add(new Command("#gcost", "+" + 10*currentStrength + currentStrength * priestextracost));
+						u.commands.add(new Command("#gcost", "+" + (10*currentStrength + currentStrength * priestextracost)));
 	
 					}
 					done = true;
@@ -1258,7 +1256,7 @@ public class MageGenerator extends TroopGenerator {
 						u.appliedFilters.add(this.getPriestPattern(currentStrength));
 						u.commands.add(new Command("#holy"));
 						u.tags.add("magepriest");
-						u.commands.add(new Command("#gcost", "+" + 10*currentStrength + currentStrength * priestextracost));
+						u.commands.add(new Command("#gcost", "+" + (10*currentStrength + currentStrength * priestextracost)));
 
 
 					}
