@@ -36,6 +36,44 @@
 #end
 
 #new
+#name "werehyena"
+#type "shapeshift"
+#basechance 0.075
+#chanceinc "magic death 0.6"
+#chanceinc "shape werehyena 20"
+#command "#secondshape werehyena"
+#command "#gcost +10"
+#command "#maxage *2"
+#chanceinc "pose mounted *0"
+#chanceinc "pose chariot *0"
+#power 3
+#description "can shapeshift into a werehyena"
+#theme "hyenatotem"
+#theme "totemanimal"
+#price_if_command at #size 1 +5
+#end
+
+#new
+#name "wererat"
+#type "shapeshift"
+#basechance 0.025
+#chanceinc "magic nature 0.15"
+#chanceinc "magic death 0.15"
+#chanceinc "shape wererat 20"
+#command "#secondshape wererat"
+#command "#gcost +10"
+#command "#maxage *1.5"
+#command "#diseaseres 25"
+#chanceinc "pose mounted *0"
+#chanceinc "pose chariot *0"
+#power 3
+#description "can shapeshift into a wererat"
+#theme "rattotem"
+#theme "totemanimal"
+#price_if_command at #size 1 +5
+#end
+
+#new
 #name "ghoul"
 #type "shapeshift"
 #basechance 0.1
