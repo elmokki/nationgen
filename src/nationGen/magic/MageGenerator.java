@@ -133,9 +133,7 @@ public class MageGenerator extends TroopGenerator {
 			f.name = Generic.integerToPath(i);
 			if(old[i] > 0)
 			{
-				f.basechance = (double)1 / (3 * old[i]);
-				if(old[i] > 3)
-					f.basechance = 0;
+				f.basechance = (double)1 / (2 * old[i]);
 			}
 		
 			if(f.basechance > 0)
@@ -542,39 +540,54 @@ public class MageGenerator extends TroopGenerator {
 		
 		// Extra mage
 		boolean ok = false;
+		int checks = 0;
+		
 		if(diversity < 4 && ((norand_picks[4] == 0 && norand_picks[7] == 0) && this.random.nextDouble() < 0.8))
 		{
 			ok = true;
+			checks++;
 		}
 		if(max < 4 && norand_picks[4] == 0 && norand_picks[7] == 0 && diversity < 4) 
 		{
 			ok = true;
+			checks++;
 		}
 		if(diversity < 5 && norand_picks[4] == 0 && norand_picks[7] == 0 && this.random.nextDouble() < 0.1)
 		{
 			ok = true;
+			checks++;
 		}
 		if(max < 4 && atmax < 2 && norand_picks[4] == 0 && norand_picks[7] == 0 && this.random.nextDouble() < 0.5)
 		{
 			ok = true;
+			checks++;
 		}
 		if(norand_picks[4] == 0 && norand_picks[7] == 0 && diversity < 6 && this.random.nextDouble() < 0.05)
 		{
 			ok = true;
+			checks++;
 		}
 		if(norand_picks[4] == 0 && norand_picks[7] == 0 && atmax == 1 && diversity < 4 && this.random.nextDouble() < 0.65)
 		{
 			ok = true;
+			checks++;
 		}
 		if(norand_picks[4] < 2 && norand_picks[7] < 2 && atmax == 1 && diversity < 4 && this.random.nextDouble() < 0.35)
 		{
 			ok = true;
+			checks++;
 		}
 		
+		if(checks == 1 && random.nextBoolean())
+			ok = false;
+
+	
+		
 		List<Unit> extramages = new ArrayList<Unit>();
+		
 		if(ok)
 		{
-			extramages = this.generateExtraMages(primaries, this.getShuffledPrios(list));
+			extramages = this.generateExtraMages(primaries, this.getShuffledPrios(list), checks);
 			this.resolveAge(extramages);
 			this.tagAll(extramages, "extramage");
 			this.applyStats(extramages.get(0));
@@ -1025,7 +1038,7 @@ public class MageGenerator extends TroopGenerator {
 	
 
 	
-	private List<Unit> generateExtraMages(int primaries, List<Integer> prio)
+	private List<Unit> generateExtraMages(int primaries, List<Integer> prio, int power)
 	{
 		Race race = nation.races.get(0);
 		
@@ -1042,12 +1055,20 @@ public class MageGenerator extends TroopGenerator {
 
 		List<Unit> bases = generateBases("mage", race, 1, 2);
 		
-		List<MagicPattern> available = getPatternsForTier(0, primaries);
+		int tier = 1;
+		if(power >= 4 || (power >= 3 && random.nextBoolean()) || (power >= 2 && random.nextDouble() > 0.66) )
+			tier = 3;
+		else if(power > 1 || random.nextBoolean())
+			tier = 2;
+		else
+			tier = 1;	
+			
+		List<MagicPattern> available = getPatternsOfLevel(getPatternsForTier(0, primaries), tier);
 		
 		ChanceIncHandler chandler = new ChanceIncHandler(nation, "magegen");
 		MagicPattern pattern = Entity.getRandom(this.random, chandler.handleChanceIncs(available));
 
-		
+		pattern.getPathsAtleastAt(1);
 		if(prio == null)
 		{
 			prio = this.getPrios(bases.get(0));
