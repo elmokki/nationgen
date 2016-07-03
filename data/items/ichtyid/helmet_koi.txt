@@ -1,0 +1,124 @@
+#newitem
+#name "leathercap"
+#gameid 120
+#basechance 4
+#sprite /graphics/ichtyid/helmet/leather_cap.png
+#armor
+#tag "maxprot 11"
+#theme "leather"
+#enditem
+
+#newitem
+#name "shellcap"
+#gameid 134
+#sprite /graphics/ichtyid/helmet/shell_helmet.png
+#tag "eliteversion sharkskincap_fin"
+#tag "eliteversion sharkskincap_spiny"
+#tag "eliteversion sharkskincap_boney"
+#armor
+#tag "maxprot 13"
+#theme "shell"
+#enditem
+
+#newitem
+#name "shellcap_fin"
+#gameid 134
+#sprite /graphics/ichtyid/helmet/shell_helmet_crested.png
+#recolormask /graphics/ichtyid/helmet/fin_crest_recolormask.png
+#armor
+#theme "elite"
+#tag "maxprot 13"
+#theme "shell"
+#enditem
+
+#newitem
+#name "shellcap_spiny"
+#gameid 134
+#sprite /graphics/ichtyid/helmet/shell_helmet_spiny.png
+#recolormask /graphics/ichtyid/helmet/spiny_crest_recolormask.png
+#armor
+#theme "elite"
+#tag "maxprot 13"
+#theme "shell"
+#enditem
+
+#newitem
+#name "shellcap_boney"
+#gameid 134
+#sprite /graphics/ichtyid/helmet/shell_helmet_boney.png
+#recolormask /graphics/ichtyid/helmet/boney_crest_recolormask.png
+#armor
+#theme "elite"
+#tag "maxprot 13"
+#theme "shell"
+#enditem
+
+#newitem
+#id ironcap
+#gameid 20
+#sprite /graphics/ichtyid/helmet/iron_cap.png
+#tag "eliteversion ironcap_fin"
+#tag "eliteversion ironcap_spiny"
+#armor
+#tag "minprot 9"
+#tag "maxprot 14"
+#theme "iron"
+#enditem
+
+#newitem
+#id ironcap_fin
+#gameid 20
+#sprite /graphics/ichtyid/helmet/iron_cap_crested.png
+#recolormask /graphics/ichtyid/helmet/fin_crest_recolormask.png
+#armor
+#tag "minprot 9"
+#tag "maxprot 14"
+#theme "iron"
+#theme "elite"
+#enditem
+
+#newitem
+#id ironcap_spiny
+#gameid 20
+#sprite /graphics/ichtyid/helmet/iron_cap_spiny.png
+#recolormask /graphics/ichtyid/helmet/spiny_crest_recolormask.png
+#armor
+#tag "minprot 9"
+#tag "maxprot 14"
+#theme "iron"
+#theme "elite"
+#enditem
+
+#newitem
+#id kabuto
+#gameid 132
+#sprite /graphics/ichtyid/helmet/kabuto.png
+#tag "eliteversion kabuto_fin"
+#tag "eliteversion kabuto_elite"
+#armor
+#tag "minprot 14"
+#theme "iron"
+#enditem
+
+#newitem
+#id kabuto_fin
+#gameid 132
+#sprite /graphics/ichtyid/helmet/kabuto_fin.png
+#recolormask /graphics/ichtyid/helmet/kabuto_fin_recolormask.png
+#tag "eliteversion kabuto_fin"
+#armor
+#tag "minprot 14"
+#theme "iron"
+#theme "elite"
+#enditem
+
+#newitem
+#id kabuto_elite
+#gameid 132
+#sprite /graphics/ichtyid/helmet/kabuto_elite.png
+#tag "eliteversion kabuto_elite"
+#armor
+#tag "minprot 14"
+#theme "iron"
+#theme "elite"
+#enditem

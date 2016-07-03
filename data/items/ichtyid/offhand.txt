@@ -1,6 +1,16 @@
 --- Weapons
 
 #newitem
+#id offhandclub
+#gameid 252
+#sprite /graphics/ichtyid/weapon/club_oh.png
+#theme "wood"
+#theme "primitive"
+#theme "inland"
+#maxprot 9
+#enditem
+
+#newitem
 #id offhandhatchet
 #gameid 646
 #sprite /graphics/ichtyid/weapon/bronze_axe_oh.png
@@ -26,6 +36,7 @@
 #gameid coralshortsword
 #sprite graphics/ichtyid/weapon/coral_shortsword_oh.png
 #theme "coral"
+#theme "marine"
 #enditem
 
 #newitem
@@ -44,6 +55,7 @@
 #offsetx -6
 #offsety -2
 #theme "coral"
+#theme "marine"
 #enditem
 
 #newitem
@@ -52,4 +64,5 @@
 #sprite graphics/ichtyid/weapon/coral_club_oh.png
 #theme "coral"
 #theme "primitive"
+#theme "marine"
 #enditem

@@ -1,10 +1,11 @@
 #newrace
 #name "Ichtyid"
-#basechance 0.1
+#basechance 0.15
 #all_troops_elite
 
 #racethemes ichtyid_themes
 #freetheme demographic
+#freetheme coloration
 
 -- Mimicing Atlantian names because we don't have anything else for ichtyids right now
 #longsyllables /data/names/nations/atlantian/longsyllables.txt
@@ -13,16 +14,16 @@
 
 #nationcommand "#uwbuild 1"
 
-#nationcommand "#likespop 65"
-
-#pose ichtyidtroops
-#pose ichtyidmages
+#spritegenpose ichtyidtroops
+#spritegenpose ichtyidmages
+#spritegenpose carpmentroops
+#spritegenpose carpmenmages
+#spritegenpose koitroops
+#spritegenpose koimages
 
 #magicpriority water 6
 #magicpriority nature 4
 
 #monsterchance 0.01
-
-#description "Ichtyids are a race of fishmen that typically dwell along the coastlines, both in the water and on land."
 
 #endrace

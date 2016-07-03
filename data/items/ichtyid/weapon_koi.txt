@@ -1,0 +1,94 @@
+#newitem
+#id club
+#gameid 252
+#sprite /graphics/ichtyid/weapon/club.png
+#theme wood
+#theme primitive
+#maxprot 9
+#enditem
+
+#newitem
+#id wakizasi
+#gameid 377
+#sprite /graphics/ichtyid/weapon/wakizasi.png
+#theme iron
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#sprite /graphics/ichtyid/weapon/falchion.png
+#theme iron
+#enditem
+
+#newitem
+#id spear
+#gameid 1
+#sprite /graphics/ichtyid/weapon/spear.png
+#troopweapon
+#theme formationfighter
+#theme iron
+#needs offhand none
+#enditem
+
+#newitem
+#id yari
+#gameid 376
+#sprite /graphics/ichtyid/weapon/yari.png
+#troopweapon
+#theme formationfighter
+#theme iron
+#needs offhand none
+#enditem
+
+#newitem
+#id naginata
+#gameid 380
+#sprite /graphics/ichtyid/weapon/naginata.png
+#troopweapon
+#theme iron
+#needs offhand none
+#enditem
+
+#newitem
+#name "katana"
+#gameid 378
+#sprite /graphics/ichtyid/weapon/katana.png
+#theme iron
+#needs hands 2h_hands
+#needs offhand none
+#enditem
+
+#newitem
+#name "nodachi"
+#gameid 379
+#sprite /graphics/ichtyid/weapon/nodachi.png
+#theme iron
+#needs hands 2h_hands
+#needs offhand none
+#enditem
+
+#newitem
+#id quarterstaff
+#gameid 7
+#sprite /graphics/weapon/standard/quarterstaff.png
+#offsetx -2
+#basechance 0.125
+#maxprot 10
+#theme "wood"
+#needs offhand none
+#enditem
+
+#newitem
+#id greatclub
+#gameid 165
+#sprite /graphics/weapon/2h/greatclub.png
+#offsetx -1
+#offsety 1
+#theme "primitive"
+#needs hands 2h_hands
+#needs offhand none
+#maxprot 9
+#theme "wood"
+#theme "primitive"
+#enditem
