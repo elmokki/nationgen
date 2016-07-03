@@ -16,7 +16,28 @@
 #armor
 #enditem
 
--- Sharkskin armor
+-- Leather armor
+
+#newitem
+#name "leather_cuirass"
+#gameid 5
+#sprite /graphics/ichtyid/armor/leather_cuirass.png
+#armor
+#theme "primitive"
+#theme "leather"
+#theme "inland"
+#enditem
+
+#newitem
+#name "leather_hauberk"
+#gameid 10
+#sprite /graphics/ichtyid/armor/leather_armor.png
+#armor
+#theme "primitive"
+#theme "leather"
+#theme "inland"
+#basechance 0.5
+#enditem
 
 #newitem
 #name "sharkskin_cuirass"
@@ -25,6 +46,7 @@
 #armor
 #theme "primitive"
 #theme "leather"
+#theme "marine"
 #enditem
 
 #newitem
@@ -34,6 +56,7 @@
 #armor
 #theme "primitive"
 #theme "leather"
+#theme "marine"
 #basechance 0.5
 #enditem
 
@@ -68,6 +91,7 @@
 #sprite /graphics/ichtyid/armor/coral_cuirass.png
 #armor
 #theme "coral"
+#theme "marine"
 #basechance 0.5
 #define "#poisonarmor"
 #enditem
@@ -78,6 +102,7 @@
 #sprite /graphics/ichtyid/armor/coral_hauberk.png
 #armor
 #theme "coral"
+#theme "marine"
 #basechance 0.2
 #tag "eliteversion coral_hauberk_elite"
 #define "#poisonarmor"
