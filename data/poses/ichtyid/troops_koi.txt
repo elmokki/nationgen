@@ -1,0 +1,46 @@
+-------- Normal
+
+#newpose
+#name "koid infantry"
+#role "infantry"
+#role "sacred"
+#role "elite"
+
+#subrace koid
+
+#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/ichtyid/bases_koi.txt
+#load shadow /data/items/ichtyid/shadow.txt
+#load hands /data/items/ichtyid/hands_koi.txt
+#load armor /data/items/ichtyid/armor_koi.txt
+#load armor /data/items/ichtyid/naked.txt
+#load helmet /data/items/ichtyid/helmet_koi.txt
+#load weapon /data/items/ichtyid/weapon_koi.txt
+#load offhand /data/items/ichtyid/offhand_koi.txt
+#load bonusweapon /data/items/ichtyid/bonusrangedweapon.txt
+
+#endpose
+
+
+-------- scout
+
+#newpose
+#name "koid scout"
+#role "scout"
+
+#subrace koid
+
+#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/ichtyid/bases_koi.txt
+#load shadow /data/items/ichtyid/shadow.txt
+#load hands /data/items/ichtyid/hands_koi.txt
+#load armor /data/items/ichtyid/scoutarmor_koi.txt
+#load armor /data/items/ichtyid/naked.txt
+#load helmet /data/items/ichtyid/scouthelmet_koi.txt
+#load weapon /data/items/ichtyid/weapon_koi.txt
+#load offhand /data/items/ichtyid/offhand_koi.txt
+#load bonusweapon /data/items/ichtyid/bonusrangedweapon.txt
+
+#endpose
