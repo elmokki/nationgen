@@ -188,13 +188,15 @@ public class MageGenerator extends TroopGenerator {
 							// All paths need to be possible, so let's have a failsafe
 							if(f.basechance == 0)
 								f.basechance = 0.00001;
+						
 						}
 					}
 				}
 			}
 			
 	
-			
+			System.out.println(Generic.integerToPath(i) + ": " + f.basechance);
+
 			orig.add(f);
 		}
 		
@@ -1142,10 +1144,14 @@ public class MageGenerator extends TroopGenerator {
 				if(Integer.parseInt(str) > highest)
 					highest = Integer.parseInt(str);
 			}
-			maxlevel = highest;
+			
+			if(highest > maxlevel)
+				maxlevel = highest;
 		}
+		System.out.println(maxStrength + " - " + maxlevel);
+
 		maxStrength = Math.min(maxlevel, maxStrength);
-		
+
 		double magePriestChance = 0.3;
 		if(Generic.containsTag(Generic.getAllNationTags(nation), "magepriestchance"))
 		{
@@ -1164,6 +1170,7 @@ public class MageGenerator extends TroopGenerator {
 		// If we have extra mages, they can be priests 20% of the time if primary mages aren't
 		boolean compensationMagePriests = (!magePriests && r.nextDouble() < 0.20);
 
+		
 		int sacredMageTiers = 0;
 		if(r.nextDouble() < 0.5)
 		{
@@ -1288,12 +1295,12 @@ public class MageGenerator extends TroopGenerator {
 					
 					u = this.generateBases("priest", prace, 1, str).get(0);
 				}
-				u.commands.add(new Command("#gcost", "+" + (10*currentStrength - 5) ));
+				u.commands.add(new Command("#gcost", "+" + (20*currentStrength - 10) ));
 
 				u.color = priestcolor;
 				u.appliedFilters.add(this.getPriestPattern(currentStrength));
 				u.commands.add(new Command("#holy"));
-				u.commands.add(new Command("#gcost", "+" + ((int)(Math.pow(2, currentStrength))*15 + currentStrength * priestextracost)));
+				u.commands.add(new Command("#gcost", "+" + ((int)(Math.pow(2, currentStrength))*10 + currentStrength * priestextracost)));
 				u.tags.add("priest " + currentStrength);
 
 				
