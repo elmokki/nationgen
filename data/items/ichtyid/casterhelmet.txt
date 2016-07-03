@@ -70,12 +70,23 @@
 #enditem
 
 #newitem
+#name "leather_cap"
+#gameid 120
+#sprite /graphics/ichtyid/helmet/leather_cap.png
+#armor
+#tag "tier 1"
+#theme "primitive"
+#theme "inland"
+#enditem
+
+#newitem
 #id sharkskin_cap
 #gameid 152
 #sprite /graphics/ichtyid/helmet/sharkskin_cap.png
 #tag "eliteversion sharkskin_cap_boney"
 #tag "tier 1"
 #theme "primitive"
+#theme "marine"
 #armor
 #enditem
 
@@ -86,6 +97,7 @@
 #recolormask /graphics/ichtyid/helmet/boney_crest_recolormask.png
 #tag "tier 2"
 #theme "primitive"
+#theme "marine"
 #armor
 #enditem
 
@@ -96,6 +108,8 @@
 #tag "eliteversion coral_cap_high"
 #tag "tier 1"
 #tag "tier 2"
+#theme "marine"
+#theme "coral"
 #armor
 #enditem
 
@@ -108,6 +122,8 @@
 #tag "eliteversion coral_crown"
 #tag "tier 2"
 #tag "tier 3"
+#theme "marine"
+#theme "coral"
 #armor
 #enditem
 
@@ -117,6 +133,8 @@
 #sprite /graphics/ichtyid/helmet/coral_cap.png
 #recolormask /graphics/ichtyid/helmet/feathery_crest_recolormask.png
 #tag "tier 3"
+#theme "marine"
+#theme "coral"
 #armor
 #enditem
 
@@ -192,6 +210,8 @@
 #chanceinc "personalmagic water 1 nature 1 6"
 #chanceinc "personalmagic earth 1 *0.1"
 #tag "tier 3"
+#theme "marine"
+#theme "coral"
 #armor
 #enditem
 
@@ -282,6 +302,7 @@
 #tag "tier 3"
 #theme "primitive"
 #theme "blood"
+#theme "marine"
 #armor
 #enditem
 
@@ -295,5 +316,6 @@
 #tag "tier 3"
 #theme "primitive"
 #theme "astral"
+#theme "marine"
 #armor
 #enditem

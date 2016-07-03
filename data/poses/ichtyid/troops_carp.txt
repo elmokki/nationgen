@@ -1,0 +1,47 @@
+-------- Normal
+
+#newpose
+#name "carpman infantry"
+#role "infantry"
+#role "sacred"
+#role "elite"
+
+#subrace cyprinid
+
+#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/ichtyid/bases_carp.txt
+#load shadow /data/items/ichtyid/shadow_carp.txt
+#load hands /data/items/ichtyid/hands_carp.txt
+#load armor /data/items/ichtyid/armor.txt
+#load armor /data/items/ichtyid/naked.txt
+#load helmet /data/items/ichtyid/helmet.txt
+#load weapon /data/items/ichtyid/weapon.txt
+#load offhand /data/items/ichtyid/offhand.txt
+#load offhand /data/items/ichtyid/shield.txt
+#load bonusweapon /data/items/ichtyid/bonusrangedweapon.txt
+
+#endpose
+
+
+-------- scout
+
+#newpose
+#name "carpman scout"
+#role "scout"
+
+#subrace cyprinid
+
+#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/ichtyid/bases_carp.txt
+#load shadow /data/items/ichtyid/shadow_carp.txt
+#load hands /data/items/ichtyid/hands_carp.txt
+#load armor /data/items/ichtyid/scoutarmor.txt
+#load armor /data/items/ichtyid/naked.txt
+#load helmet /data/items/ichtyid/scouthelmet.txt
+#load weapon /data/items/ichtyid/scoutweapon.txt
+#load offhand /data/items/ichtyid/scoutoffhand.txt
+#load bonusweapon /data/items/ichtyid/bonusrangedweapon.txt
+
+#endpose
