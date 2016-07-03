@@ -295,7 +295,7 @@
 #racedefinition "#descr 'These vaettir have the strength and determination of the tiger, their tribal totem.  '"
 #endtheme
 
--- Weights: EA 1, MA 0.5, LA 0.5
+-- Weights: EA 1, MA 0.25, LA 0.125
 #newtheme
 #type tribal
 #name rabbit
@@ -325,6 +325,35 @@
 #racedefinition "#magicpriority astral 1"
 #racedefinition "#magicpriority blood 1"
 #racedefinition "#descr 'These vaettir have the fecundity and timid agility of the rabbit, their tribal totem. '"
+#endtheme
+
+-- Weights: EA 1, MA 0.5, LA 0.5
+#newtheme
+#type tribal
+#name rat
+#basechance 1
+#chanceinc era 2 -0.5
+#chanceinc era 3 -0.5
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#themeinc theme rat +3
+#themeinc theme totemanimal *0.25
+#themeinc theme rattotem *16
+#racedefinition "#unitcommand '#mor -1"
+#racedefinition "#unitcommand '#diseaseres 25'"
+#racedefinition "#unitcommand '#swampsurvival'"
+#racedefinition "#preferredmount rat"
+#racedefinition "#magicpriority death 10"
+#racedefinition "#magicpriority nature 5"
+#racedefinition "#magicpriority earth 1"
+#racedefinition "#magicpriority astral 1"
+#racedefinition "#magicpriority blood 1"
+#racedefinition "#descr 'These vaettir have the wary vigor of the rat, their tribal totem. '"
 #endtheme
 
 -- Weights: EA 0.5, MA 1.5, LA 4

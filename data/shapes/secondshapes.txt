@@ -433,6 +433,62 @@
 #command "#itemslots 12288"
 #end
 
+#new secondshape
+#name "werehyena"
+#command "#name 'Werehyena'"
+#command "#copyspr 2294"
+#command "#magicboost 53 -1"
+#command "#itemslots 12288"
+#command "#size 2"
+#command "#hp 16"
+#command "#prot 6"
+#command "#mr 17"
+#command "#mor 14"
+#command "#str 13"
+#command "#att 13"
+#command "#def 11"
+#command "#prec 8"
+#command "#ap 20"
+#command "#mapmove 2"
+#command "#enc 2"
+#command "#weapon 20"  -- Bite
+#command "#weapon 595"  -- Hypnotize
+#command "#stealthy 0"
+#command "#animal"
+#command "#wastesurvival"
+#command "#maxage 100"
+#nogcost
+#end
+
+#new secondshape
+#name "wererat"
+#command "#name 'Wererat'"
+#command "#spr1 ./graphics/mounts/standard/giantrat.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -1"
+#command "#itemslots 12288"
+#command "#size 2"
+#command "#hp 14"
+#command "#prot 4"
+#command "#mr 12"
+#command "#mor 12"
+#command "#str 10"
+#command "#att 12"
+#command "#def 12"
+#command "#prec 5"
+#command "#ap 18"
+#command "#mapmove 3"
+#command "#enc 2"
+#command "#weapon diseasebite"
+#command "#weapon 29"  -- Claw
+#command "#diseaseres 75"
+#command "#stealthy 0"
+#command "#animal"
+#command "#swampsurvival"
+#command "#maxage 75"
+#nogcost
+#end
+
 --- Mounts
 
 #new secondshape
