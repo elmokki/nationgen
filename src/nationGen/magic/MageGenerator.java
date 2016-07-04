@@ -140,7 +140,7 @@ public class MageGenerator extends TroopGenerator {
 			if(f.basechance > 0)
 				orig.add(f);
 		}
-		System.out.println(chandler.handleChanceIncs(orig));
+
 		while(newlist.size() < 2)
 		{
 
@@ -157,7 +157,6 @@ public class MageGenerator extends TroopGenerator {
 				f.basechance = 2*Math.sqrt(picks);
 			}
 		}
-		System.out.println(chandler.handleChanceIncs(orig));
 
 		while(orig.size() > 0)
 		{
