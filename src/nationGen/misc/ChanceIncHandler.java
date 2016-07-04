@@ -1015,7 +1015,20 @@ public class ChanceIncHandler {
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
-				
+				// Spell(sets)
+				canIncrease = false;
+				if(args.get(0).equals("spells") && args.size() >= 3)
+				{
+					String name = args.get(1);
+					for(Filter s : n.spells)
+					{
+						if(s.name.toLowerCase().equals(name.toLowerCase()))
+							canIncrease = true;
+					}
+					
+					if(canIncrease)
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+				}
 				// ModuleID
 				if(args.get(0).equals("moduleid") && args.size() >= 3)
 				{
