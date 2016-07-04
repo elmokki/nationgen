@@ -239,7 +239,7 @@ Info:	If the unit's name base (ie for Black Knight of the Dawn just Knight)
 
 Race
 ------------------------
-Usage:	#chanceinc race <race> <mod>
+Usage:	#chanceinc race [not] <race> <mod>
 Info:	If the unit's race equals <race>, apply modifier.
 
 
@@ -267,6 +267,33 @@ Magic
 Usage:	#chanceinc magic [not] <path1> [not] <path2> ... <mod>
 Info:	If the nation's highest paths contain <path>, apply modifier
 	You can add multiple paths. The optional not-switch is for each path separately.
+
+Any Magic
+------------------------
+Usage:	#chanceinc anymagic [not] <path1> <path2> ... <mod>
+Info:	If nation has any magic of path(s), apply modifier
+
+Mage with paths
+------------------------
+Usage:	#chanceinc magewithpaths [not] <path1> [not] <path2> ... <mod>
+Info:	If nation has a mage with given path setup, apply mod. Look at the above chanceinc for details.
+
+
+Magic diversity
+------------------------
+Usage:	#chanceinc magicdiversity [not] <diversity> <mod>
+Info:	Magic diversity number is the amount of paths at 2+ or astral or blood path at 1+ at 25% probability 
+	(ie 4 pick 100% random access or similar). If diversity is at least <diversity> (or not if [not]), 
+	apply modifier. 
+
+
+Picks at level
+------------------------
+Usage:	#chanceinc picksatlevel [not] <level> <amount> <mod>
+Info:	If nation has an access to <amount> paths at <level> or above, apply mod.
+	Just like in magic diversity, 25% chance per mage (4 pick 100% random for example) is enough.
+	Works only for magic levels 0 to 4.
+
 
 Shape
 ------------------------
@@ -346,7 +373,7 @@ Info:	If the nation has at least <amount>% units with race <race>, apply mod.
 
 Primary race
 ------------------------
-Usage:	#chanceinc primaryrace <race> <mod>
+Usage:	#chanceinc primaryrace [not] <race> <mod>
 Info:	If <race> is the nation's primary race, apply mod
 
 Race tag
@@ -356,8 +383,9 @@ Info:	If nation's primary race has tag <tag>, apply mod
 
 Nation tag
 ------------------------
-Usage:	#chanceinc primaryrace <race> <mod>
+Usage:	#chanceinc nationtag <race> <mod>
 Info:	If nation has tag <tag>, apply mod
+	Nation tag basically means primary race or nation theme containing the tag
 
 Average gold cost
 ------------------------
