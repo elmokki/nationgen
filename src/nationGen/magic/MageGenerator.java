@@ -1098,24 +1098,37 @@ public class MageGenerator extends TroopGenerator {
 		Random r = this.random;
 		
 		
-		double priestUpChance = 0.4;
-		if(Generic.containsTag(Generic.getAllNationTags(nation), "higherpriestlevelchance"))
+		double priest_H1_UpChance = 0.75;
+		if(Generic.containsTag(Generic.getAllNationTags(nation), "priest_H1_upgradechance"))
 		{
-			List<String> possiblevalues = Generic.getTagValues(Generic.getAllNationTags(nation), "higherpriestlevelchance");
+			List<String> possiblevalues = Generic.getTagValues(Generic.getAllNationTags(nation), "priest_H1_upgradechance");
 			double highest = 0;
 			for(String str : possiblevalues)
 			{
 				if(Double.parseDouble(str) > highest)
 					highest = Double.parseDouble(str);
 			}
-			priestUpChance = highest;
+			priest_H1_UpChance = highest;
+		}
+		
+		double priest_H2_UpChance = 0.25;
+		if(Generic.containsTag(Generic.getAllNationTags(nation), "priest_H2_upgradechance"))
+		{
+			List<String> possiblevalues = Generic.getTagValues(Generic.getAllNationTags(nation), "priest_H2_upgradechance");
+			double highest = 0;
+			for(String str : possiblevalues)
+			{
+				if(Double.parseDouble(str) > highest)
+					highest = Double.parseDouble(str);
+			}
+			priest_H2_UpChance = highest;
 		}
 		
 		int maxStrength = 1;
-		if(r.nextDouble() < priestUpChance)
+		if(r.nextDouble() < priest_H1_UpChance)
 		{
 			maxStrength++;
-			if(r.nextDouble() < priestUpChance)
+			if(r.nextDouble() < priest_H2_UpChance)
 				maxStrength++;
 		}
 		
@@ -1214,9 +1227,12 @@ public class MageGenerator extends TroopGenerator {
 		boolean doneWithMages = false;
 		
 		int priestsFrom = 0;
-		if(magePriests && maxStrength > 1 && r.nextDouble() < 0.25)
+		if(magePriests && maxStrength > 1 && r.nextDouble() < 0.75)
 		{
-			priestsFrom = r.nextInt(maxStrength + 1);
+			if(r.nextDouble() < 0.25)
+				priestsFrom = r.nextInt(maxStrength + 1);
+			else
+				priestsFrom = Math.min(2, maxStrength);
 		}
 		
 		int priestextracost = 0;
