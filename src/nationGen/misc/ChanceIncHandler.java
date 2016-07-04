@@ -1000,6 +1000,52 @@ public class ChanceIncHandler {
 					}
 				}
 				
+				// Mage with paths
+				canIncrease = false;
+				if(args.get(0).equals("magewithpaths") && args.size() >= 3)
+				{
+					for(Unit u : n.generateComList("mage"))
+					{
+						boolean fine = true;
+
+						boolean not = false;
+						for(int i = 1; i < args.size() - 1; i++)
+						{
+							if(args.get(i).equals("not"))
+							{
+								not = true;
+								continue;
+							}
+							
+							int path = Generic.PathToInteger(args.get(i));
+							int[] allpaths = u.getMagicPicks();
+							
+							
+									
+							if(allpaths[path] > 0 == not)
+							{
+								fine = false;
+								break;
+							}
+							
+							not = false;
+							
+						}
+						
+						if(fine)
+						{
+							canIncrease = true;
+							break;
+						}
+					}
+					
+					if(canIncrease)
+					{
+						System.out.println("Mage with paths!");
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+					}
+				}
+				
 				// Existing shapeshifts
 				canIncrease = false;
 				if(args.get(0).equals("shape") && args.size() >= 3)
