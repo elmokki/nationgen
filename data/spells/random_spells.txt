@@ -8,8 +8,8 @@
 #name "Orgy"
 #spell "Orgy"
 #basechance 0.0
-#chanceinc magic nature 0.125
-#chanceinc magic blood 0.125
+#chanceinc anymagic nature 0.125
+#chanceinc anymagic blood 0.125
 #chanceinc magic nature blood *2
 #chanceinc magewithpaths nature blood *5
 #chanceinc primaryrace "Halfmen" *10
@@ -19,8 +19,8 @@
 #new
 #name "Bind Harlequin"
 #spell "Bind Harlequin"
-#basechance 0.5
-#chanceinc magic not blood *0
+#basechance 0.25
+#chanceinc anymagic not blood *0
 #end
 
 #new
@@ -28,7 +28,7 @@
 #spell "Sanguine Heritage"
 #basechance 0
 #chanceinc magic blood 0.025
-#chanceinc magic death 0.025
+#chanceinc anymagic death 0.025
 #chanceinc magewithpaths death blood *10
 #chanceinc hasthemetheme not boreal *0
 #chanceinc nationtag not boreal *0
@@ -38,7 +38,8 @@
 #name "Reascendance"
 #spell "Reascendance"
 #basechance 0
-#chanceinc magic blood 0.025
+#chanceinc anymagic blood 0.025
+#chanceinc anymagic astral *2
 #chanceinc magic astral blood *4
 #chanceinc magewithpaths astral blood *10
 #end
@@ -49,7 +50,6 @@
 #spell "Wrath of the Ancestors"
 #spell "Call Ancestor"
 #basechance 0.125
-#chanceinc magic not death *0
 #chanceinc hasthemetheme oriental *2
 #chanceinc nationtag oriental *2
 #chanceinc hasthemetheme central *2
@@ -66,7 +66,7 @@
 #chanceinc nationtag boreal 0.125
 #chanceinc hasthemetheme fae 0.25
 #chanceinc nationtag fae 0.25
-#chanceinc magic not death *0
+#chanceinc anymagic not death *0
 #end
 
 #new
@@ -91,8 +91,8 @@
 #name "Contact Scorpion Man"
 #spell "Contact Scorpion Man"
 #basechance 0.1
-#chanceinc magic fire *2
-#chanceinc magic earth *0
+#chanceinc anymagic fire *2
+#chanceinc magic earth *2
 #chanceinc magewithpaths fire earth *5
 #chanceinc anymagic not earth *0
 #end
@@ -103,7 +103,7 @@
 #spell "Reawaken Fossil"
 #basechance 0.05
 #chanceinc magic earth *2
-#chanceinc magic death *2
+#chanceinc anymagic death *2
 #chanceinc magewithpaths death earth *5
 #chanceinc anymagic not earth *0
 #end
@@ -114,10 +114,11 @@
 #spell "Iron Darts"
 #spell "Iron Blizzard"
 #chanceinc magewithpaths earth holy 0.05
-#chanceinc diversity not 3 *4
-#chanceinc diversity not 2 *5
+#chanceinc diversity not 3 *10
+#chanceinc diversity not 2 *4
 #chanceinc picksatlevel 4 2 *0
 #chanceinc picksatlevel 4 1 *0.5
+#chanceinc picksatlevel not 3 2 *2
 #chanceinc diversity 4 *0.125
 #end
 
@@ -169,7 +170,7 @@
 #spell "Holy Pyre"
 #basechance 0.05
 #chanceinc magic fire *5
-#chanceinc magewithpaths fire holy *20
+#chanceinc magewithpaths fire holy *10
 #chanceinc magewithpaths blood *0.05
 #chanceinc magewithpaths death *0
 #chanceinc anymagic not fire *0
@@ -181,7 +182,7 @@
 #spell "Heavenly Wrath"
 #basechance 0.025
 #chanceinc magic fire *2
-#chanceinc magic astral *2
+#chanceinc anymagic astral *2
 #chanceinc magewithpaths fire astral *20
 #chanceinc anymagic not astral *0
 #end
@@ -205,7 +206,7 @@
 #spell "Living Mercury"
 #basechance 0.025
 #chanceinc magic water *2
-#chanceinc magic earth *2
+#chanceinc anymagic earth *2
 #chanceinc magewithpaths water earth *10
 #chanceinc anymagic not water *0
 #end
@@ -233,7 +234,7 @@
 #spell "Reader of Earth"
 #spell "Supplicant of Earth"
 #chanceinc primaryrace "Pale One" 0.125
-#chanceinc magic not earth *0  
-#chanceinc diversity not 3 *4
-#chanceinc diversity not 2 *5
+#chanceinc anymagic not earth *0  
+#chanceinc diversity not 3 *8
+#chanceinc diversity not 2 *4
 #end

@@ -94,7 +94,7 @@
 #chanceinc nationtag oriental 1
 #chanceinc hasthemetheme oriental 1
 #chanceinc random 0.75 *0
-#chanceinc magic death 1
+#chanceinc anymagic death 1
 #chanceinc random 0.25 *0
 #chanceinc nationtag not oriental *0
 #chanceinc hasthemetheme not oriental *0
@@ -206,7 +206,7 @@
 #spell "Call Greater Daeva"
 #spell "Call of the Drugvant"
 #basechance 0
-#chanceinc magic not death -0.5
+#chanceinc anymagic not death -0.5
 #chanceinc random 0.66 -0.5
 #chanceinc random 0.15 *0
 #chanceinc primaryrace not "Caelian" *0
@@ -220,7 +220,7 @@
 #spell "Call Celestial Yazad"
 #spell "Call Fravashi"
 #basechance 1
-#chanceinc magic not astral -0.5
+#chanceinc anymagic not astral -0.5
 #chanceinc random 0.66 -0.5
 #chanceinc random 0.15 *0
 #chanceinc primaryrace not "Caelian" *0
@@ -236,7 +236,7 @@
 #spell "Enliven Marble Oracle"
 #spell "Hall of Statues"
 #basechance 0
-#chanceinc magic not earth *0
+#chanceinc anymagic not earth *0
 #chanceinc random 0.25 *0
 #chanceinc primaryrace not "Pale one" *0
 #end
@@ -249,7 +249,7 @@
 #spell "Living Mercury"
 #basechance 1
 #chanceinc random 0.25 *0
-#chanceinc magic not earth *0
+#chanceinc anymagic not earth *0
 #chanceinc primaryrace not "Pale one" *0
 #end
 
@@ -284,7 +284,7 @@
 #spell "Summon Vetalas"
 #basechance 0
 #chanceinc primaryrace "Primate" 1
-#chanceinc magic not blood *0.5
+#chanceinc anymagic not blood *0.5
 #chanceinc random 0.5 -0.66
 #chanceinc random 0.33 *0
 #end
@@ -308,7 +308,7 @@
 #chanceinc primaryrace "Atlantian" 1
 #chanceinc primaryrace "Ichtyid" 1
 #chanceinc random 0.125 *0
-#chanceinc magic not death *0
+#chanceinc anymagic not death *0
 #end
 
 #new
@@ -318,5 +318,5 @@
 #chanceinc primaryrace "Atlantian" 1
 #chanceinc primaryrace "Ichtyid" 1
 #chanceinc random 0.125 *0
-#chanceinc magic not water *0
+#chanceinc anymagic not water *0
 #end
