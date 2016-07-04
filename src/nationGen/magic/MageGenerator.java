@@ -572,7 +572,7 @@ public class MageGenerator extends TroopGenerator {
 			checks++;
 		}
 		
-		if(diversity < 4 && norand_picks[4] == 0 && norand_picks[7] == 0 && this.random.nextDouble() < 0.1)
+		if(diversity < 4 && norand_picks[4] == 0 && norand_picks[7] == 0 && norand_picks[5] == 0 && norand_picks[3] == 0 && norand_picks[0] == 0 && this.random.nextDouble() < 0.1)
 		{
 			ok = true;
 			checks++;
@@ -583,26 +583,24 @@ public class MageGenerator extends TroopGenerator {
 			ok = true;
 			checks++;
 		}
-		else if(max < 3 && atmax < 3 && picks[4] == 0 && picks[7] == 0)
+		else if(max < 3 && atmax < 4 && picks[4] == 0 && picks[7] == 0)
 		{
 			ok = true;
 			checks++;
 		}
 		
-		if(norand_picks[4] == 0 && norand_picks[7] == 0 && diversity < 4 && this.random.nextDouble() < 0.05)
+		if(norand_picks[4] == 0 && norand_picks[7] == 0 && diversity < 4 && this.random.nextDouble() < 0.2)
 		{
 			ok = true;
 			checks++;
 		}
-		if(norand_picks[4] == 0 && norand_picks[7] == 0 && atmax == 1 && diversity < 2 && this.random.nextDouble() < 0.65)
+		if(norand_picks[4] == 0 && norand_picks[7] == 0 && atmax == 1 && diversity < 2 && this.random.nextDouble() < 0.8)
 		{
-			System.out.println("MG 6");
 			ok = true;
 			checks++;
 		}
-		if(norand_picks[4] < 2 && norand_picks[7] < 2 && atmax == 1 && diversity < 2 && this.random.nextDouble() < 0.35)
+		if(norand_picks[4] < 2 && norand_picks[7] < 2 && atmax == 1 && diversity < 2 && this.random.nextDouble() < 0.5)
 		{
-			System.out.println("MG 7");
 			ok = true;
 			checks++;
 		}
