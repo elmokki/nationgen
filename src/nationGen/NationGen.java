@@ -35,6 +35,7 @@ import nationGen.entities.Theme;
 import nationGen.items.CustomItem;
 import nationGen.items.Item;
 import nationGen.magic.MagicPattern;
+import nationGen.magic.Spell;
 import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
 import nationGen.misc.PreviewGenerator;
@@ -72,6 +73,7 @@ public class NationGen {
 	public ResourceStorage<Filter> descriptions = new ResourceStorage<Filter>(Filter.class, this);
 	public ResourceStorage<ShapeShift> monsters = new ResourceStorage<ShapeShift>(ShapeShift.class, this);
 	public ResourceStorage<Theme> themes = new ResourceStorage<Theme>(Theme.class, this);
+	public ResourceStorage<Filter> spells = new ResourceStorage<Filter>(Filter.class, this);
 
 	public List<String> secondShapeMountCommands = new ArrayList<String>();
 	public List<String> secondShapeNonMountCommands = new ArrayList<String>();
@@ -85,6 +87,7 @@ public class NationGen {
 
 	public Settings settings;
 	public List<CustomItem> customitems = new ArrayList<CustomItem>();
+	public List<Filter> customspells = new ArrayList<Filter>();
 	public List<ShapeShift> secondshapes = new ArrayList<ShapeShift>();
 	public List<Race> races = new ArrayList<Race>();
 	public IdHandler idHandler;
@@ -92,6 +95,8 @@ public class NationGen {
 	public List<ShapeChangeUnit> forms = new ArrayList<ShapeChangeUnit>();
 	public List<CustomItem> chosenCustomitems = new ArrayList<CustomItem>();
 	public List<CustomItem> pickedCustomitems = new ArrayList<CustomItem>();
+	public List<Spell> spellsToWrite = new ArrayList<Spell>();
+	public List<Spell> freeSpells = new ArrayList<Spell>();
 	
 	public NationGen() throws IOException
 	{
@@ -113,6 +118,7 @@ public class NationGen {
 			System.out.println("done!");
 	        System.out.print("Loading definitions... ");
 			customitems.addAll(Item.readFile(this, "./data/items/customitems.txt", CustomItem.class));
+			customspells.addAll(Item.readFile(this, "./data/spells/custom_spells.txt", Filter.class));
 			patterns.load("./data/magic/magicpatterns.txt");
 			poses.load("./data/poses/poses.txt");
 			filters.load("./data/filters/filters.txt");
@@ -121,7 +127,8 @@ public class NationGen {
 			templates.load("./data/templates/templates.txt");
 			descriptions.load("./data/descriptions/descriptions.txt");
 			themes.load("./data/themes/themes.txt");
-			
+			spells.load("./data/spells/spells.txt");
+
 			monsters.load("./data/monsters/monsters.txt");
 			loadRaces("./data/races/races.txt");
 			secondshapes = Entity.readFile(this, "./data/shapes/secondshapes.txt", ShapeShift.class);
@@ -358,7 +365,65 @@ public class NationGen {
 	}
 	
 	
+	/**
+	 * Handles spells
+	 * @param spells
+	 * @param n
+	 */
+	public void handleSpells(List<Filter> spells, Nation n)
+	{
+		int id = n.nationid;
+		for(Filter f : spells)
+		{
+			for(String s : Generic.getTagValues(f.tags, "spell"))
+			{
+				Spell spell = null;
+				
+				// check for existing free spell
+				for(Spell sp : this.freeSpells)
+					if(sp.name.equals(s))
+						spell = sp;
+					
+				// create a new spell
+				
+				// check for custom spells first
+				if(spell == null)
+				{
+					for(Filter sf : this.customspells)
+						if(sf.name.equals(s))
+						{
+							spell = new Spell(this);
+							spell.name = s;
+							spell.commands.addAll(sf.commands);
+							break;
+						}
+				}
+				// copy existing spell
+				if(spell == null)
+				{
+					spell = new Spell(this);
+					spell.name = s;
+					spell.commands.add(new Command("#copyspell", "\"" + s + "\""));
+					spell.commands.add(new Command("#name", "\"" + s + " \""));
 
+				}
+				
+				spell.nationids.add(id);
+				
+				// Handle existence in the list of spells with free space
+				if(!this.freeSpells.contains(spell))
+					this.freeSpells.add(spell);
+				
+				if(spell.nationids.size() >= settings.get("maxrestrictedperspell"))
+					this.freeSpells.remove(spell);
+				
+				// Add to spells to write
+				if(!this.spellsToWrite.contains(spell))
+					this.spellsToWrite.add(spell);
+				
+			}
+		}
+	}
 
 	private void loadRaces(String file) throws IOException
 	{
@@ -454,9 +519,10 @@ public class NationGen {
         
         // Write items!
         // This is a relic from Dom3 version, but oh well.
-		System.out.print("Writing items");
+		System.out.print("Writing items and spells");
 		this.writeCustomItems(tw);
-        for(Nation nation : nations)
+		this.writeSpells(tw);
+        for(int i = 0; i < nations.size(); i++)
         {
 			System.out.print(".");
 
@@ -569,13 +635,31 @@ public class NationGen {
 		
 	}
 	
+	public void writeSpells(PrintWriter tw)
+	{
+		if(spellsToWrite.size() == 0)
+			return;
+		
+		tw.println("--- Spells:");
+		for(Spell s : this.spellsToWrite)
+		{	
+			tw.println("#newspell");
+			for(Command c : s.commands)
+				tw.println(c);
+			for(int id : s.nationids)
+				tw.println("#restricted " + id);
+			tw.println("#end");
+			tw.println();
+		}
+	}
+	
 	
 	public void writeCustomItems(PrintWriter tw)
 	{
 		if(chosenCustomitems.size() == 0)
 			return;
 
-		tw.println("--- Generic custom items.");
+		tw.println("--- Generic custom items:");
 		for(CustomItem ci : this.chosenCustomitems)
 		{	
 			ci.write(tw);

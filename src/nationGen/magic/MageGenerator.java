@@ -133,9 +133,7 @@ public class MageGenerator extends TroopGenerator {
 			f.name = Generic.integerToPath(i);
 			if(old[i] > 0)
 			{
-				f.basechance = (double)1 / (3 * old[i]);
-				if(old[i] > 3)
-					f.basechance = 0;
+				f.basechance = (double)1 / (2 * old[i]);
 			}
 		
 			if(f.basechance > 0)
@@ -190,13 +188,13 @@ public class MageGenerator extends TroopGenerator {
 							// All paths need to be possible, so let's have a failsafe
 							if(f.basechance == 0)
 								f.basechance = 0.00001;
+						
 						}
 					}
 				}
 			}
 			
 	
-			
 			orig.add(f);
 		}
 		
@@ -542,39 +540,54 @@ public class MageGenerator extends TroopGenerator {
 		
 		// Extra mage
 		boolean ok = false;
+		int checks = 0;
+		
 		if(diversity < 4 && ((norand_picks[4] == 0 && norand_picks[7] == 0) && this.random.nextDouble() < 0.8))
 		{
 			ok = true;
+			checks++;
 		}
 		if(max < 4 && norand_picks[4] == 0 && norand_picks[7] == 0 && diversity < 4) 
 		{
 			ok = true;
+			checks++;
 		}
 		if(diversity < 5 && norand_picks[4] == 0 && norand_picks[7] == 0 && this.random.nextDouble() < 0.1)
 		{
 			ok = true;
+			checks++;
 		}
 		if(max < 4 && atmax < 2 && norand_picks[4] == 0 && norand_picks[7] == 0 && this.random.nextDouble() < 0.5)
 		{
 			ok = true;
+			checks++;
 		}
 		if(norand_picks[4] == 0 && norand_picks[7] == 0 && diversity < 6 && this.random.nextDouble() < 0.05)
 		{
 			ok = true;
+			checks++;
 		}
 		if(norand_picks[4] == 0 && norand_picks[7] == 0 && atmax == 1 && diversity < 4 && this.random.nextDouble() < 0.65)
 		{
 			ok = true;
+			checks++;
 		}
 		if(norand_picks[4] < 2 && norand_picks[7] < 2 && atmax == 1 && diversity < 4 && this.random.nextDouble() < 0.35)
 		{
 			ok = true;
+			checks++;
 		}
 		
+		if(checks == 1 && random.nextBoolean())
+			ok = false;
+
+	
+		
 		List<Unit> extramages = new ArrayList<Unit>();
+		
 		if(ok)
 		{
-			extramages = this.generateExtraMages(primaries, this.getShuffledPrios(list));
+			extramages = this.generateExtraMages(primaries, this.getShuffledPrios(list), checks);
 			this.resolveAge(extramages);
 			this.tagAll(extramages, "extramage");
 			this.applyStats(extramages.get(0));
@@ -1025,7 +1038,7 @@ public class MageGenerator extends TroopGenerator {
 	
 
 	
-	private List<Unit> generateExtraMages(int primaries, List<Integer> prio)
+	private List<Unit> generateExtraMages(int primaries, List<Integer> prio, int power)
 	{
 		Race race = nation.races.get(0);
 		
@@ -1042,12 +1055,20 @@ public class MageGenerator extends TroopGenerator {
 
 		List<Unit> bases = generateBases("mage", race, 1, 2);
 		
-		List<MagicPattern> available = getPatternsForTier(0, primaries);
+		int tier = 1;
+		if(power >= 4 || (power >= 3 && random.nextBoolean()) || (power >= 2 && random.nextDouble() > 0.66) )
+			tier = 3;
+		else if(power > 1 || random.nextBoolean())
+			tier = 2;
+		else
+			tier = 1;	
+			
+		List<MagicPattern> available = getPatternsOfLevel(getPatternsForTier(0, primaries), tier);
 		
 		ChanceIncHandler chandler = new ChanceIncHandler(nation, "magegen");
 		MagicPattern pattern = Entity.getRandom(this.random, chandler.handleChanceIncs(available));
 
-		
+		pattern.getPathsAtleastAt(1);
 		if(prio == null)
 		{
 			prio = this.getPrios(bases.get(0));
@@ -1077,24 +1098,37 @@ public class MageGenerator extends TroopGenerator {
 		Random r = this.random;
 		
 		
-		double priestUpChance = 0.5;
-		if(Generic.containsTag(Generic.getAllNationTags(nation), "higherpriestlevelchance"))
+		double priest_H1_UpChance = 0.75;
+		if(Generic.containsTag(Generic.getAllNationTags(nation), "priest_H1_upgradechance"))
 		{
-			List<String> possiblevalues = Generic.getTagValues(Generic.getAllNationTags(nation), "higherpriestlevelchance");
+			List<String> possiblevalues = Generic.getTagValues(Generic.getAllNationTags(nation), "priest_H1_upgradechance");
 			double highest = 0;
 			for(String str : possiblevalues)
 			{
 				if(Double.parseDouble(str) > highest)
 					highest = Double.parseDouble(str);
 			}
-			priestUpChance = highest;
+			priest_H1_UpChance = highest;
+		}
+		
+		double priest_H2_UpChance = 0.25;
+		if(Generic.containsTag(Generic.getAllNationTags(nation), "priest_H2_upgradechance"))
+		{
+			List<String> possiblevalues = Generic.getTagValues(Generic.getAllNationTags(nation), "priest_H2_upgradechance");
+			double highest = 0;
+			for(String str : possiblevalues)
+			{
+				if(Double.parseDouble(str) > highest)
+					highest = Double.parseDouble(str);
+			}
+			priest_H2_UpChance = highest;
 		}
 		
 		int maxStrength = 1;
-		if(r.nextDouble() < priestUpChance)
+		if(r.nextDouble() < priest_H1_UpChance)
 		{
 			maxStrength++;
-			if(r.nextDouble() < priestUpChance)
+			if(r.nextDouble() < priest_H2_UpChance)
 				maxStrength++;
 		}
 		
@@ -1111,8 +1145,23 @@ public class MageGenerator extends TroopGenerator {
 			maxStrength = highest;
 		}
 		
-	
-		
+		int maxlevel = 10;
+		if(Generic.containsTag(Generic.getAllNationTags(nation), "maxpriestlevel"))
+		{
+			List<String> possiblevalues = Generic.getTagValues(Generic.getAllNationTags(nation), "highestpriestlevel");
+			int highest = 0;
+			for(String str : possiblevalues)
+			{
+				if(Integer.parseInt(str) > highest)
+					highest = Integer.parseInt(str);
+			}
+			
+			if(highest > maxlevel)
+				maxlevel = highest;
+		}
+
+		maxStrength = Math.min(maxlevel, maxStrength);
+
 		double magePriestChance = 0.3;
 		if(Generic.containsTag(Generic.getAllNationTags(nation), "magepriestchance"))
 		{
@@ -1178,9 +1227,12 @@ public class MageGenerator extends TroopGenerator {
 		boolean doneWithMages = false;
 		
 		int priestsFrom = 0;
-		if(magePriests && maxStrength > 1 && r.nextDouble() < 0.25)
+		if(magePriests && maxStrength > 1 && r.nextDouble() < 0.75)
 		{
-			priestsFrom = r.nextInt(maxStrength + 1);
+			if(r.nextDouble() < 0.25)
+				priestsFrom = r.nextInt(maxStrength + 1);
+			else
+				priestsFrom = Math.min(2, maxStrength);
 		}
 		
 		int priestextracost = 0;
@@ -1207,7 +1259,7 @@ public class MageGenerator extends TroopGenerator {
 						u.commands.add(new Command("#holy"));
 						u.appliedFilters.add(this.getPriestPattern(currentStrength));
 						u.tags.add("magepriest");
-						u.commands.add(new Command("#gcost", "+" + 10*currentStrength + currentStrength * priestextracost));
+						u.commands.add(new Command("#gcost", "+" + (10*currentStrength + currentStrength * priestextracost)));
 	
 					}
 					done = true;
@@ -1219,7 +1271,7 @@ public class MageGenerator extends TroopGenerator {
 						u.appliedFilters.add(this.getPriestPattern(currentStrength));
 						u.commands.add(new Command("#holy"));
 						u.tags.add("magepriest");
-						u.commands.add(new Command("#gcost", "+" + 10*currentStrength + currentStrength * priestextracost));
+						u.commands.add(new Command("#gcost", "+" + (10*currentStrength + currentStrength * priestextracost)));
 
 
 					}
@@ -1256,7 +1308,7 @@ public class MageGenerator extends TroopGenerator {
 					
 					u = this.generateBases("priest", prace, 1, str).get(0);
 				}
-				u.commands.add(new Command("#gcost", "+" + 10*currentStrength ));
+				u.commands.add(new Command("#gcost", "+" + (20*currentStrength - 10) ));
 
 				u.color = priestcolor;
 				u.appliedFilters.add(this.getPriestPattern(currentStrength));

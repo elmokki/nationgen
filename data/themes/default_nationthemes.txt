@@ -133,7 +133,8 @@
 #command "#sacrificedom"
 #magicpriority blood 10000
 #magepriestchance 1
-#highestpriestlevel 3
+#priest_H1_upgradechance 1
+#priest_H2_upgradechance 0.9
 #desc "Priests are unable to preach but may perform blood sacrifices"
 #end
 
@@ -145,7 +146,8 @@
 #command "#sacrificedom"
 #primaryracedefinition "#magicpriority blood 4"
 #magepriestchance 0.6
-#higherpriestlevelchance 0.6
+#priest_H1_upgradechance 0.8
+#priest_H2_upgradechance 0.3
 #magicpriority blood 2
 #desc "Priests may perform blood sacrifices"
 #end
@@ -165,8 +167,8 @@
 #command "#zombiereanim"
 #magicpriority death 256
 #desc "Priests can reanimate ghouls, soulless and longdead infantry."
-#magepriestchance 0.6
-#higherpriestlevelchance 0.75
+#magepriestchance 0.95
+#maxpriestlevel 2
 #priestextracost 20
 #end
 
@@ -178,9 +180,9 @@
 #command "#horsereanim"
 #magicpriority death 256
 #desc "Priests can reanimate ghouls, soulless, and longdead infantry and cavalry."
-#higherpriestlevelchance 0.85
-#magepriestchance 0.85
-#priestextracost 30
+#maxpriestlevel 2
+#magepriestchance 0.95
+#priestextracost 20
 #end
 
 -- Disabled ATM because Dominions only allows adding this ability to a nation's undead/demonic priests
@@ -195,7 +197,6 @@
 #magicpriority death 256
 #magicpriority nature 256
 #desc "Priests can incite the nature to reanimate dead bodies to fight again. This causes some unrest amongst the population."
-#higherpriestlevelchance 0.75
 #magepriestchance 0.85
 #priestextracost 30
 #end
@@ -573,7 +574,7 @@
 #command "#guardspirit 396"
 #chanceinc primaryrace "Boreal human" 0.0125
 #chanceinc primaryrace "Advanced human" 0.0125
-#higherpriestlevelchance 0.75
+#priest_H1_upgradechance 1
 #desc "Nuns occasionally follow priests in battles"
 #end
 

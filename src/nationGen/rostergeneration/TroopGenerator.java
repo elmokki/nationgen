@@ -43,6 +43,7 @@ public class TroopGenerator {
 	
 	private List<Filter> unitTemplates = new ArrayList<Filter>();
 	private int maxtemplates = 0;
+	private int maxdifferenttemplates = 0;
 	private int appliedtemplates = 0;
 	
 	private double skipchance = 0.1;
@@ -144,11 +145,20 @@ public class TroopGenerator {
 		//
 		// 1 template:  12.5%
 		// 2 templates: 37.5%
-		// 3 templates: 25%
-		// 4 templates: 25%
+		// 3 templates: 25.0%
+		// 4 templates: 25.0%
 		maxtemplates = 1 + random.nextInt(4); // 1-4
 		if(maxtemplates == 1 && random.nextBoolean())
 			maxtemplates++;
+		
+		// Max different templates distribution
+		//
+		// 1 template:  16.7%
+		// 2 templates: 50.0%
+		// 3 templates: 33.3%
+		maxdifferenttemplates = 1 + random.nextInt(3); // 1-3
+		if(maxdifferenttemplates == 1 && random.nextBoolean())
+			maxdifferenttemplates++;
 	}
 	
 	public TroopGenerator(NationGen g, Nation n)
@@ -893,9 +903,10 @@ public class TroopGenerator {
 		possibleFilters.removeAll(u.appliedFilters);
 		
 		// Add unit template filter to available template filters
-		if(unitTemplates.size() < maxtemplates || possibleFilters.size() == 0)
+		if(unitTemplates.size() < maxdifferenttemplates || possibleFilters.size() == 0)
 		{
 			List<Filter> tFilters = ChanceIncHandler.retrieveFilters(query, defaultv, nationGen.templates, u.pose, u.race);
+			
 			possibleFilters.retainAll(tFilters);
 			
 			// Remove #onlyfilter
@@ -923,10 +934,8 @@ public class TroopGenerator {
 			tFilters.removeAll(removef);
 			
 			
-			
+
 			Filter t = chandler.getRandom(tFilters, u);
-			
-			
 			if(t != null)
 			{
 
@@ -936,12 +945,8 @@ public class TroopGenerator {
 		
 		}
 		
-
-		Filter f = chandler.getRandom(possibleFilters, u);
-		if(f != null)
-		{
-			appliedtemplates++;
-			u.appliedFilters.add(f);
+		List<Filter> match = new ArrayList<Filter>();
+		for(Filter f : possibleFilters)
 			if(Generic.containsTag(f.tags, "maxunits"))
 			{
 				int max = Integer.parseInt(Generic.getTagValue(f.tags, "maxunits"));
@@ -953,13 +958,16 @@ public class TroopGenerator {
 				
 				if(count >= max)
 				{
-					unitTemplates.remove(f);
-					maxtemplates--;
+					match.add(f);
 				}
 			}
-				
-				
-			
+		possibleFilters.removeAll(match);
+
+		Filter f = chandler.getRandom(possibleFilters, u);
+		if(f != null)
+		{
+			appliedtemplates++;
+			u.appliedFilters.add(f);
 		}
 	}
 	
