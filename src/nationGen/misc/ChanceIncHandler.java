@@ -1438,6 +1438,9 @@ public class ChanceIncHandler {
 						if(f2.tags.contains(args.get(1)))
 							canIncrease = true;
 					
+					if(n.races.size() > 0 && n.races.get(0).tags.contains(args.get(1)))
+						canIncrease = true;
+					
 					if(canIncrease)
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
