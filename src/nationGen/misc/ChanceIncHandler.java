@@ -1041,7 +1041,6 @@ public class ChanceIncHandler {
 					
 					if(canIncrease)
 					{
-						System.out.println("Mage with paths!");
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 					}
 				}
