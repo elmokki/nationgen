@@ -104,11 +104,11 @@ public class RosterGenerator {
 		
 		double minsecaffinity = 0;
 		if(Generic.containsTag(primary.tags, "minsecaffinity"))
-			minsecaffinity = Double.parseDouble(Generic.getTagValue(secondary.tags, "minsecaffinity"));
+			minsecaffinity = Double.parseDouble(Generic.getTagValue(primary.tags, "minsecaffinity"));
 		
 		double maxsecaffinity = 1000;
 		if(Generic.containsTag(primary.tags, "maxsecaffinity"))
-			maxsecaffinity = Double.parseDouble(Generic.getTagValue(secondary.tags, "maxsecaffinity"));
+			maxsecaffinity = Double.parseDouble(Generic.getTagValue(primary.tags, "maxsecaffinity"));
 		
 
 
@@ -119,7 +119,7 @@ public class RosterGenerator {
 
 		double nosecaffinitychance = 0.35;
 		if(Generic.containsTag(primary.tags, "nosecaffinitychance"))
-			nosecaffinitychance = Double.parseDouble(Generic.getTagValue(secondary.tags, "nosecaffinitychance"));
+			nosecaffinitychance = Double.parseDouble(Generic.getTagValue(primary.tags, "nosecaffinitychance"));
 		
 		if(r.nextDouble() < nosecaffinitychance)
 			secaffinity = 0;
@@ -135,9 +135,9 @@ public class RosterGenerator {
 
 		// Primary amounts
 		if(Generic.containsTag(primary.tags, "minsecondaryracetroops"))
-			maxprimaries = max - Integer.parseInt(Generic.getTagValue(secondary.tags, "minsecondaryracetroops"));
+			maxprimaries = max - Integer.parseInt(Generic.getTagValue(primary.tags, "minsecondaryracetroops"));
 		if(Generic.containsTag(primary.tags, "minsecondaryracetroopshare"))
-			maxprimaries = max - (int)Math.round((max * Double.parseDouble(Generic.getTagValue(secondary.tags, "minsecondaryracetroopshare"))));
+			maxprimaries = max - (int)Math.round((max * Double.parseDouble(Generic.getTagValue(primary.tags, "minsecondaryracetroopshare"))));
 		
 
 		
