@@ -1,11 +1,18 @@
---- Don't be afraid - they're only sacreds and mages.
-
-
 #newrace
 #name "Tengu"
 #basechance 0.1
+
+#oriental
+
 #pose tengumages
 #pose tengutroops
+
+#longsyllables /data/names/nations/oriental/longsyllables.txt
+#shortsyllables /data/names/nations/oriental/shortsyllables.txt
+#suffixes /data/names/nations/oriental/suffixes.txt
+
+#gods easterngods
+
 #unitcommand "#gcost 40"
 #unitcommand "#size 3"
 #unitcommand "#ressize 2"
@@ -13,16 +20,16 @@
 #unitcommand "#str 11"
 #unitcommand "#att 12"
 #unitcommand "#def 12"
-#unitcommand "#mr 12"
+#unitcommand "#mr 14"
+#unitcommand "#mor 13"
 #unitcommand "#enc 3"
-#unitcommand "#prec 11"
+#unitcommand "#prec 12"
 #unitcommand "#flying"
 #unitcommand "#stormflying"
+#unitcommand "#mountainsurvival"
 #unitcommand "#mapmove 3"
 #unitcommand "#ap 10"
 #unitcommand "#nametype 134"
-#secondary
-#oriental
 #specialcommand "#weapon 419 -- Lighting Strike (racial)"
 
 #innate_sacred_power 2
@@ -35,4 +42,17 @@
 
 #sacredcostmulti 1.2
 #sacredratingmulti 1.4
+
+#sacredrangedchance 0.05
+#sacredmountedchance 0.05
+#sacredchariotchance 0.05
+
+#minsecondaryracetroopshare 0.5
+#secondaryracesacredmod 0.25
+#secondaryracemagemod 0.5
+
+#magicpriority air 10
+#magicpriority nature 2
+#magicpriority earth 2
+
 #endrace
