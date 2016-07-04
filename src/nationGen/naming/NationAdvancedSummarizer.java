@@ -251,12 +251,34 @@ public class NationAdvancedSummarizer {
 			this.printPDInfo(tw, n);
 			tw.println();
 
+			// Spells
+			tw.println("National spells:");
+			tw.println("--------------");
+			String line = "";
+			for(Filter f : n.spells)
+			{
+				for(String str : Generic.getTagValues(f.tags, "spell"))
+				{
+					System.out.println(str);
+					if(line.length() == 0)
+						line = str;
+					else if(line.length() + str.length() + 2 <= 80)
+						line = line + ", " + str;
+					else
+					{
+						tw.println(line);
+						line = str;
+					}
+				}
+			}
+			tw.println(line);
+			tw.println();
+			
 			tw.println("Montag units:");
+			tw.println("--------------");
 			printUnits(tw, "montagmages", "Mages", n);
 			printUnits(tw, "montagsacreds", "Sacreds", n);
 			printUnits(tw, "montagtroops", "Troops", n);
-
-			
 			tw.println();
 			
 			
