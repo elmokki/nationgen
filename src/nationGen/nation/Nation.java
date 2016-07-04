@@ -24,6 +24,7 @@ import java.util.Map.Entry;
 
 
 
+
 import com.elmokki.Drawing;
 import com.elmokki.Generic;
 
@@ -34,6 +35,7 @@ import nationGen.entities.Race;
 import nationGen.entities.Theme;
 import nationGen.items.CustomItem;
 import nationGen.magic.MageGenerator;
+import nationGen.magic.SpellGen;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.misc.FlagGen;
@@ -76,6 +78,7 @@ public class Nation {
 	public List<Command> gods = new ArrayList<Command>();
 	public List<Site> sites = new ArrayList<Site>();
 	public List<Theme> nationthemes = new ArrayList<Theme>();
+	public List<Filter> spells = new ArrayList<Filter>();
 	
 	public LinkedHashMap <String, List<Unit>> unitlists = new LinkedHashMap <String, List<Unit>>();
 	public LinkedHashMap <String, List<Unit>> comlists = new LinkedHashMap <String, List<Unit>>();
@@ -396,6 +399,10 @@ public class Nation {
 		// Sites
 		SiteGenerator.generateSites(this);
 	
+		// Spells
+		SpellGen spellgenerator = new SpellGen(this.nationGen, this);
+		spellgenerator.execute();
+		
 		// Nation filters
 		// Being replaced by addNationThemes() system as of 16.2.2016.
 		// Still here in case reverting is needed.

@@ -6,6 +6,7 @@ import java.util.List;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.magic.Spell;
 import nationGen.misc.Command;
 
 public class Filter extends Entity {
@@ -26,7 +27,7 @@ public class Filter extends Entity {
 	
 		public <E extends Entity> void handleOwnCommand(String str)
 		{
-	
+
 			List<String> args = Generic.parseArgs(str);
 			
 			try
@@ -34,7 +35,8 @@ public class Filter extends Entity {
 			
 			if(args.get(0).equals("#command") || args.get(0).equals("#define"))
 			{
-				this.commands.add(Command.parseCommand(args.get(1)));
+				args.remove(0);
+				this.commands.add(Command.parseCommand(Generic.listToString(args, " ")));
 			}
 			else if(args.get(0).equals("#themeinc"))
 			{

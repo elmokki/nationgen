@@ -1,4 +1,9 @@
 #new
+#basechance 1
+#name "No spells"
+#end
+
+#new
 #name "Monster Boar"
 #spell "Monster Boar"
 #basechance 0.05
@@ -29,12 +34,12 @@
 #chanceinc magic fire earth *7.5
 #end
 
+--- Earth communion is, for now, pale one exclusive.
 #new
 #basechance 0
 #name "Earth Communion"
-#customspell "Reader of Earth"
-#customspell "Supplicant of Earth"
-#chanceinc race Agarthan 0.2
-#chanceinc magic earth 0.025
+#spell "Reader of Earth"
+#spell "Supplicant of Earth"
+#chanceinc race "Pale One" 0.25
 #chanceinc magic not earth *0  
 #end
