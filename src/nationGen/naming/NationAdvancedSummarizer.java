@@ -255,22 +255,20 @@ public class NationAdvancedSummarizer {
 			tw.println("National spells:");
 			tw.println("--------------");
 			String line = "";
-			for(Filter f : n.spells)
+	
+			for(String str : n.getSpells())
 			{
-				for(String str : Generic.getTagValues(f.tags, "spell"))
+				if(line.length() == 0)
+					line = str;
+				else if(line.length() + str.length() + 2 <= 160)
+					line = line + ", " + str;
+				else
 				{
-					System.out.println(str);
-					if(line.length() == 0)
-						line = str;
-					else if(line.length() + str.length() + 2 <= 80)
-						line = line + ", " + str;
-					else
-					{
-						tw.println(line);
-						line = str;
-					}
+					tw.println(line + ",");
+					line = str;
 				}
 			}
+			
 			tw.println(line);
 			tw.println();
 			

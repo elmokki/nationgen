@@ -9,15 +9,174 @@
 --- Some of the stuff here can also be in random spells for stuff that should occasionally be available for nearly any nation.
 --- Random spells is a better place for such stuff since that stuff is on a different quota.
 
+
+---------- Oriental
 #new
 #name "Tengus"
 #spell "Summon Konoha Tengus"
 #spell "Contact Dai Tengu"
 #spell "Summon Karasu Tengus"
 #basechance 0
-#chanceinc race "Oriental human" 1
+#chanceinc nationtag oriental 1
+#chanceinc hasthemetheme oriental 1
+#chanceinc random 0.5 *0
+#chanceinc spells "TC non-death spells" *0
+#end
+
+#new
+#name "TC ancestor spells"
+#spell "Call Ancestor"
+#spell "Wrath of the Ancestors"
+#basechance 0
+#chanceinc nationtag oriental 1
+#chanceinc hasthemetheme oriental 1
+#chanceinc random 0.5 *0
+#end
+
+#new
+#name "TC non-death spells"
+#spell "Call Celestial Soldiers"
+#spell "Celestial Chastisement"
+#spell "Celestial Hounds"
+#spell "Celestial Servant"
+#spell "Contact Huli Jing"
+#spell "Heavenly Fires"
+#spell "Heavenly Rivers"
+#spell "Internal Alchemy"
+#basechance 0
+#chanceinc nationtag oriental 1
+#chanceinc hasthemetheme oriental 1
+#chanceinc random 0.5 *0
+#chanceinc spells "Tengus" *0
+#chanceinc spells "Jomon Spells" *0
+#end
+
+#new
+#name "Yomi Spells"
+#spell "Ghost General"
+#spell "Summon Gozu Mezu"
+#spell "Summon Shikome"
+#basechance 0
+#chanceinc nationtag oriental 1
+#chanceinc hasthemetheme oriental 1
+#chanceinc random 0.5 *0
+#end
+
+#new
+#name "Jomon Spells"
+#spell "Contact Kaijin"
+#spell "Contact Nushi"
+#spell "Summon Kappa"
+#spell "Summon Kenzoku"
+#spell "Contact Mori-no-kami"
+#spell "Contact Kitsune"
+#spell "Contact Jigami"
+#spell "Contact Yama-no-kami"
+#spell "Contact Tatsu"
+#spell "Contact Ujigami"
+#basechance 0
+#chanceinc nationtag oriental 1
+#chanceinc hasthemetheme oriental 1
+#chanceinc random 0.5 *0
+#chanceinc spells "TC non-death spells" *0
+#end
+
+
+-- Low chance for all orientals
+-- High chance for orientals with death magic
+#new
+#name "Oni Summons"
+#spell "Summon Oni General"
+#spell "Summon Dai Oni"
+#spell "Summon Aka-Oni"
+#spell "Summon Ao-Oni"
+#basechance 0
+#chanceinc nationtag oriental 1
+#chanceinc hasthemetheme oriental 1
+#chanceinc random 0.75 *0
+#chanceinc anymagic death 1
+#chanceinc random 0.25 *0
+#chanceinc nationtag not oriental *0
+#chanceinc hasthemetheme not oriental *0
+#end
+
+- Occidental
+----------
+#new
+#name "Mictlan non-blood"
+#spell "Summon Tlaloque"
+#spell "Summon Jade Serpent"
+#spell "Summon Jaguars"
+#spell "Summon Monster Toad"
+#spell "Summon Jaguar Toad"
+#basechance 0
+#chanceinc nationtag occidental 1
+#chanceinc hasthemetheme occidental 1
+#chanceinc random 0.5 *0
+#end
+
+#new
+#name "Mictlan blood"
+#spell "Rain of Jaguars"
+#spell "Contact Onaqui"
+#spell "Bind Tzitzimitl"
+#spell "Contact Civateteo"
+#spell "Contact Tlahuelpuchi"
+#spell "Bind Jaguar Fiends"
+#spell "Bind Beast Bats"
+#basechance 0
+#chanceinc nationtag occidental 1
+#chanceinc hasthemetheme occidental 1
+#chanceinc random 0.5 *0
+#end
+
+#new
+#name "Zotz spells"
+#spell "Summon Balam"
+#spell "Break the Second Soul"
+#spell "Gift of the Second Soul"
+#spell "Break the Fourth Soul"
+#spell "Gift of the Fourth Soul"
+#spell "Break the First Soul"
+#spell "Gift of the First Soul"
+#spell "Break the Third Soul"
+#spell "Gift of the Third Soul"
+#spell "Summon Chaac"
+#basechance 0
+#chanceinc nationtag occidental 1
+#chanceinc hasthemetheme occidental 1
+#chanceinc random 0.5 *0
+#chanceinc primaryrace not zotz *0
+#end
+
+- Norse
+----------
+
+#new
+#name "Norse spells"
+#spell "Awaken Draugar"
+#spell "Summon Valkyries"
+#basechance 0
+#chanceinc nationtag nordic 1
+#chanceinc hasthemetheme nordic 1
 #chanceinc random 0.25 *0
 #end
+
+- Abysian
+-----------
+
+#new
+#name "Abysian spells"
+#spell "Inner Furnace"
+#spell "Summon Spectral Infantry"
+#basechance 0
+#chanceinc nationtag abysian 1
+#chanceinc hasthemetheme abysian 1
+#chanceinc random 0.25 *0
+#end
+
+- Enlightened
+----------
 
 #new
 #name "Divine Monkey Spells"
@@ -31,6 +190,133 @@
 #spell "Summon Devata"
 #spell "Summon Devala"
 #basechance 0
-#chanceinc race Primate 1
+#chanceinc nationtag enlightened 1 
+#chanceinc hasthemetheme enlightened 1
 #chanceinc random 0.25 *0
+#end
+
+- Caelum spells
+- Both sets are less likely without suitable path access
+--------------------------
+#new
+#name "Caelian death spells"
+#spell "Call Daevas"
+#spell "Call Jahi"
+#spell "Call Yata"
+#spell "Call Greater Daeva"
+#spell "Call of the Drugvant"
+#basechance 0
+#chanceinc anymagic not death -0.5
+#chanceinc random 0.66 -0.5
+#chanceinc random 0.15 *0
+#chanceinc primaryrace not "Caelian" *0
+#end
+
+#new
+#name "Caelian astral spells"
+#spell "Summon Yazatas"
+#spell "Call Amesha Spenta"
+#spell "Call Ahurani"
+#spell "Call Celestial Yazad"
+#spell "Call Fravashi"
+#basechance 1
+#chanceinc anymagic not astral -0.5
+#chanceinc random 0.66 -0.5
+#chanceinc random 0.15 *0
+#chanceinc primaryrace not "Caelian" *0
+#end
+
+- Pale one spells
+--------------------------
+#new
+#name "Pale one statue spells"
+#spell "Attentive Statues"
+#spell "Enliven Sentinel"
+#spell "Enliven Granite Guard"
+#spell "Enliven Marble Oracle"
+#spell "Hall of Statues"
+#basechance 0
+#chanceinc anymagic not earth *0
+#chanceinc random 0.25 *0
+#chanceinc primaryrace not "Pale one" *0
+#end
+
+#new
+#name "Pale one misc spells"
+#spell "Rhuax Pact"
+#spell "Barathrus Pact"
+#spell "Olm Conclave"
+#spell "Living Mercury"
+#basechance 1
+#chanceinc random 0.25 *0
+#chanceinc anymagic not earth *0
+#chanceinc primaryrace not "Pale one" *0
+#end
+
+-- Less likely without easy access to these
+#new
+#name "Pale one death spells"
+#spell "Awaken Shard Wights"
+#spell "Summon Penumbrals"
+#spell "Summon Umbrals"
+#basechance 0.5
+#chanceinc magewithpaths earth death 0.5
+#chanceinc random 0.33 -0.5
+#chanceinc random 0.25 *0
+#chanceinc primaryrace not "Pale one" *0
+#end
+
+- Monkey blood spells
+- Way more likely with blood access
+----------------------
+#new
+#name "Lanka spells"
+#spell "Summon Rakshasas"
+#spell "Feast of Flesh"
+#spell "Summon Asrapas"
+#spell "Summon Rakshasa Warriors"
+#spell "Summon Sandhyabalas"
+#spell "Summon Dakini"
+#spell "Summon Samanishada"
+#spell "Summon Mandeha"
+#spell "Summon Danavas"
+#spell "Host of Ganas"
+#spell "Summon Vetalas"
+#basechance 0
+#chanceinc primaryrace "Primate" 1
+#chanceinc anymagic not blood *0.5
+#chanceinc random 0.5 -0.66
+#chanceinc random 0.33 *0
+#end
+
+- C'tis
+----------------------
+#new
+#name "Lizard spells"
+#spell "Sacred Crocodile"
+#basechance 0
+#chanceinc primaryrace "Lizard" 1
+#chanceinc random 0.25 *0
+#end
+
+- Atlantian
+----------------------
+#new
+#name "Send Tupilak"
+#spell "Send Tupilak"
+#basechance 0
+#chanceinc primaryrace "Atlantian" 1
+#chanceinc primaryrace "Ichtyid" 1
+#chanceinc random 0.125 *0
+#chanceinc anymagic not death *0
+#end
+
+#new
+#name "Monster Fish"
+#spell "Summon Monster Fish"
+#basechance 0
+#chanceinc primaryrace "Atlantian" 1
+#chanceinc primaryrace "Ichtyid" 1
+#chanceinc random 0.125 *0
+#chanceinc anymagic not water *0
 #end

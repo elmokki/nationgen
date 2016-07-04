@@ -540,6 +540,17 @@ public class Nation {
 		
 	}
 	
+	public List<String> getSpells()
+	{
+		List<String> list = new ArrayList<String>();
+		for(Filter f : this.spells)
+			for(String str : Generic.getTagValues(f.tags, "spell"))
+				if(!list.contains(str))
+					list.add(str);
+		
+		return list;
+	}
+	
 	private void addRaceThemes(Race race)
 	{
 		

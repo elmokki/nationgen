@@ -133,15 +133,33 @@ public class MageGenerator extends TroopGenerator {
 			f.name = Generic.integerToPath(i);
 			if(old[i] > 0)
 			{
-				f.basechance = (double)1 / (2 * old[i]);
+				double oldvalue = Math.sqrt(old[i]);
+				f.basechance = (double)1 / (2*oldvalue);
 			}
 		
 			if(f.basechance > 0)
 				orig.add(f);
 		}
-		while(orig.size() > 0)
+
+		while(newlist.size() < 2)
 		{
 
+			Filter i = Filter.getRandom(this.random, orig);
+			orig.remove(i);
+			newlist.add(Generic.PathToInteger(i.name));
+		}
+		
+		for(Filter f : orig)
+		{
+			double picks = old[Generic.PathToInteger(f.name)];
+			if(picks > 0)
+			{
+				f.basechance = 2*Math.sqrt(picks);
+			}
+		}
+
+		while(orig.size() > 0)
+		{
 			Filter i = Filter.getRandom(this.random, orig);
 			orig.remove(i);
 			newlist.add(Generic.PathToInteger(i.name));
@@ -542,37 +560,46 @@ public class MageGenerator extends TroopGenerator {
 		boolean ok = false;
 		int checks = 0;
 		
-		if(diversity < 4 && ((norand_picks[4] == 0 && norand_picks[7] == 0) && this.random.nextDouble() < 0.8))
+		if(diversity < 3 && ((norand_picks[4] == 0 && norand_picks[7] == 0) && this.random.nextDouble() < 0.8))
 		{
 			ok = true;
 			checks++;
 		}
-		if(max < 4 && norand_picks[4] == 0 && norand_picks[7] == 0 && diversity < 4) 
+		
+		if(max < 4 && norand_picks[4] == 0 && norand_picks[7] == 0 && diversity < 3) 
 		{
 			ok = true;
 			checks++;
 		}
-		if(diversity < 5 && norand_picks[4] == 0 && norand_picks[7] == 0 && this.random.nextDouble() < 0.1)
+		
+		if(diversity < 4 && norand_picks[4] == 0 && norand_picks[7] == 0 && norand_picks[5] == 0 && norand_picks[3] == 0 && norand_picks[0] == 0 && this.random.nextDouble() < 0.1)
 		{
 			ok = true;
 			checks++;
 		}
-		if(max < 4 && atmax < 2 && norand_picks[4] == 0 && norand_picks[7] == 0 && this.random.nextDouble() < 0.5)
+		
+		if(max < 4 && atmax < 2 && picks[4] == 0 && picks[7] == 0 && this.random.nextDouble() < 0.5)
 		{
 			ok = true;
 			checks++;
 		}
-		if(norand_picks[4] == 0 && norand_picks[7] == 0 && diversity < 6 && this.random.nextDouble() < 0.05)
+		else if(max < 3 && atmax < 4 && picks[4] == 0 && picks[7] == 0)
 		{
 			ok = true;
 			checks++;
 		}
-		if(norand_picks[4] == 0 && norand_picks[7] == 0 && atmax == 1 && diversity < 4 && this.random.nextDouble() < 0.65)
+		
+		if(norand_picks[4] == 0 && norand_picks[7] == 0 && diversity < 4 && this.random.nextDouble() < 0.2)
 		{
 			ok = true;
 			checks++;
 		}
-		if(norand_picks[4] < 2 && norand_picks[7] < 2 && atmax == 1 && diversity < 4 && this.random.nextDouble() < 0.35)
+		if(norand_picks[4] == 0 && norand_picks[7] == 0 && atmax == 1 && diversity < 2 && this.random.nextDouble() < 0.8)
+		{
+			ok = true;
+			checks++;
+		}
+		if(norand_picks[4] < 2 && norand_picks[7] < 2 && atmax == 1 && diversity < 2 && this.random.nextDouble() < 0.5)
 		{
 			ok = true;
 			checks++;
@@ -599,12 +626,14 @@ public class MageGenerator extends TroopGenerator {
 				extramages.get(0).caponly = true;
 			else if(!caponlyprimaries)
 				extramages.get(0).caponly = true;
+			else if(extramages.get(0).getMagicAmount(0.25) > 6 || (extramages.get(0).getMagicAmount(0.25) > 5 && random.nextBoolean()))
+				extramages.get(0).caponly = true;
 			
-
-			
-			if(extramages.get(0).caponly == false && this.random.nextDouble() > 0.5)
+			if((extramages.get(0).caponly == false && this.random.nextDouble() > 0.125 && extramages.get(0).getMagicAmount(0.25) > 3))
 				extramages.get(0).commands.add(new Command("#slowrec"));
-		
+			else if(extramages.get(0).getMagicAmount(0.25) > 5 && this.random.nextDouble() > 0.5)
+				extramages.get(0).commands.add(new Command("#slowrec"));
+
 			for(Unit u : extramages)
 				unitGen.handleMontagUnits(u, new MageMontagTemplate(nation, nationGen, 4), "montagmages");
 		

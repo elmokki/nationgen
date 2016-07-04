@@ -58,8 +58,8 @@ import nationGen.units.Unit;
 
 
 public class NationGen {
-	public static String version = "0.6.12";
-	public static String date = "3rd of July 2016";
+	public static String version = "0.6.13";
+	public static String date = "4th of July 2016";
 	
 	public ResourceStorage<MagicPattern> patterns = new ResourceStorage<MagicPattern>(MagicPattern.class, this);
 	public ResourceStorage<Pose> poses = new ResourceStorage<Pose>(Pose.class, this);
@@ -373,56 +373,55 @@ public class NationGen {
 	public void handleSpells(List<Filter> spells, Nation n)
 	{
 		int id = n.nationid;
-		for(Filter f : spells)
-		{
-			for(String s : Generic.getTagValues(f.tags, "spell"))
-			{
-				Spell spell = null;
-				
-				// check for existing free spell
-				for(Spell sp : this.freeSpells)
-					if(sp.name.equals(s))
-						spell = sp;
-					
-				// create a new spell
-				
-				// check for custom spells first
-				if(spell == null)
-				{
-					for(Filter sf : this.customspells)
-						if(sf.name.equals(s))
-						{
-							spell = new Spell(this);
-							spell.name = s;
-							spell.commands.addAll(sf.commands);
-							break;
-						}
-				}
-				// copy existing spell
-				if(spell == null)
-				{
-					spell = new Spell(this);
-					spell.name = s;
-					spell.commands.add(new Command("#copyspell", "\"" + s + "\""));
-					spell.commands.add(new Command("#name", "\"" + s + " \""));
 
-				}
+		for(String s : n.getSpells())
+		{
+			Spell spell = null;
+			
+			// check for existing free spell
+			for(Spell sp : this.freeSpells)
+				if(sp.name.equals(s))
+					spell = sp;
 				
-				spell.nationids.add(id);
-				
-				// Handle existence in the list of spells with free space
-				if(!this.freeSpells.contains(spell))
-					this.freeSpells.add(spell);
-				
-				if(spell.nationids.size() >= settings.get("maxrestrictedperspell"))
-					this.freeSpells.remove(spell);
-				
-				// Add to spells to write
-				if(!this.spellsToWrite.contains(spell))
-					this.spellsToWrite.add(spell);
-				
+			// create a new spell
+			
+			// check for custom spells first
+			if(spell == null)
+			{
+				for(Filter sf : this.customspells)
+					if(sf.name.equals(s))
+					{
+						spell = new Spell(this);
+						spell.name = s;
+						spell.commands.addAll(sf.commands);
+						break;
+					}
 			}
+			// copy existing spell
+			if(spell == null)
+			{
+				spell = new Spell(this);
+				spell.name = s;
+				spell.commands.add(new Command("#copyspell", "\"" + s + "\""));
+				spell.commands.add(new Command("#name", "\"" + s + " \""));
+
+			}
+			
+			spell.nationids.add(id);
+			
+			// Handle existence in the list of spells with free space
+			if(!this.freeSpells.contains(spell))
+				this.freeSpells.add(spell);
+			
+			if(spell.nationids.size() >= settings.get("maxrestrictedperspell"))
+				this.freeSpells.remove(spell);
+			
+			// Add to spells to write
+			if(!this.spellsToWrite.contains(spell))
+				this.spellsToWrite.add(spell);
+			
 		}
+		
 	}
 
 	private void loadRaces(String file) throws IOException
