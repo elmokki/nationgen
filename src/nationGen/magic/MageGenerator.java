@@ -599,12 +599,12 @@ public class MageGenerator extends TroopGenerator {
 				extramages.get(0).caponly = true;
 			else if(!caponlyprimaries)
 				extramages.get(0).caponly = true;
+				extramages.get(0).caponly = true;
 			
-
-			
-			if(extramages.get(0).caponly == false && this.random.nextDouble() > 0.5)
+			if((extramages.get(0).caponly == false && this.random.nextDouble() > 0.125 && extramages.get(0).getMagicAmount(0.25) > 3))
 				extramages.get(0).commands.add(new Command("#slowrec"));
-		
+				extramages.get(0).commands.add(new Command("#slowrec"));
+
 			for(Unit u : extramages)
 				unitGen.handleMontagUnits(u, new MageMontagTemplate(nation, nationGen, 4), "montagmages");
 		
