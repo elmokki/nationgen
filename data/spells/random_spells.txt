@@ -3,43 +3,237 @@
 #name "No spells"
 #end
 
+-------- Blood
 #new
-#name "Monster Boar"
+#name "Orgy"
+#spell "Orgy"
+#basechance 0.0
+#chanceinc magic nature 0.125
+#chanceinc magic blood 0.125
+#chanceinc magic nature blood *2
+#chanceinc magewithpaths nature blood *5
+#chanceinc primaryrace "Halfmen" *10
+#chanceinc anymagic not blood *0
+#end
+
+#new
+#name "Bind Harlequin"
+#spell "Bind Harlequin"
+#basechance 0.5
+#chanceinc magic not blood *0
+#end
+
+#new
+#name "Sanguine Heritage"
+#spell "Sanguine Heritage"
+#basechance 0
+#chanceinc magic blood 0.025
+#chanceinc magic death 0.025
+#chanceinc magewithpaths death blood *10
+#chanceinc hasthemetheme not boreal *0
+#chanceinc nationtag not boreal *0
+#end
+
+#new
+#name "Reascendance"
+#spell "Reascendance"
+#basechance 0
+#chanceinc magic blood 0.025
+#chanceinc magic astral blood *4
+#chanceinc magewithpaths astral blood *10
+#end
+
+-------- Death
+#new
+#name "Ancestors"
+#spell "Wrath of the Ancestors"
+#spell "Call Ancestor"
+#basechance 0.125
+#chanceinc magic not death *0
+#chanceinc hasthemetheme oriental *2
+#chanceinc nationtag oriental *2
+#chanceinc hasthemetheme central *2
+#chanceinc nationtag central *2
+#chanceinc anymagic not death *0
+#end
+
+#new
+#name "Evil Dogs"
+#spell "Summon Black Dogs"
+#spell "Summon Barghests"
+#basechance 0
+#chanceinc hasthemetheme boreal 0.125
+#chanceinc nationtag boreal 0.125
+#chanceinc hasthemetheme fae 0.25
+#chanceinc nationtag fae 0.25
+#chanceinc magic not death *0
+#end
+
+#new
+#name "Morrigans"
+#spell "Summon Morrigan"
+#spell "Dance of the Morrigans"
+#basechance 0
+#chanceinc nationtag boreal 0.05
+#chanceinc hasthemetheme boreal 0.05
+#chanceinc nationtag nordic 0.05
+#chanceinc hasthemetheme nordic 0.05
+#chanceinc nationtag fae 0.05
+#chanceinc hasthemetheme fae 0.05
+#chanceinc magic death air *5
+#chanceinc magewithpaths death air *4
+#chanceinc anymagic not death *0
+#end
+
+-------- Earth
+
+#new
+#name "Contact Scorpion Man"
+#spell "Contact Scorpion Man"
+#basechance 0.1
+#chanceinc magic fire *2
+#chanceinc magic earth *0
+#chanceinc magewithpaths fire earth *5
+#chanceinc anymagic not earth *0
+#end
+
+
+#new
+#name "Reawaken Fossil"
+#spell "Reawaken Fossil"
+#basechance 0.05
+#chanceinc magic earth *2
+#chanceinc magic death *2
+#chanceinc magewithpaths death earth *5
+#chanceinc anymagic not earth *0
+#end
+
+#new
+#basechance 0
+#name "Iron Blizzard"
+#spell "Iron Darts"
+#spell "Iron Blizzard"
+#chanceinc magewithpaths earth holy 0.05
+#chanceinc diversity not 3 *4
+#chanceinc diversity not 2 *5
+#chanceinc picksatlevel 4 2 *0
+#chanceinc picksatlevel 4 1 *0.5
+#chanceinc diversity 4 *0.125
+#end
+
+-------- Nature
+#new
+#name "Boars"
 #spell "Monster Boar"
-#basechance 0.05
-#chanceinc magic nature *20
+#spell "Sounder of Boars"
+#basechance 0.5
+#chanceinc hasthemetheme boreal *2
+#chanceinc nationtag boreal *2
+#chanceinc anymagic not nature *0
 #end
 
 #new
-#name "Sounder of Boars"
-#spell "Sounder of Boars"
+#name "Herd of Elephants"
+#spell "Herd of Elephants"
 #basechance 0.05
-#chanceinc magic nature *20
+#chanceinc magic nature *10
+#chanceinc hasthemetheme austral *2
+#chanceinc nationtag austral *2
+#chanceinc anymagic not nature *0
 #end
 
+#new
+#name "Ambush of Tigers"
+#spell "Ambush of Tigers"
+#basechance 0.05
+#chanceinc magic nature *10
+#chanceinc hasthemetheme oriental *2
+#chanceinc nationtag oriental *2
+#chanceinc anymagic not nature *0
+#end
+
+#new
+#name "Songs"
+#spell "Healing Song"
+#spell "Song of Bravery"
+#spell "Soothing Song"
+#basechance 0.025
+#chanceinc magic nature *20
+#chanceinc anymagic not nature *0
+#end
+
+
+--- Fire
 #new
 #name "Holy Pyre"
 #spell "Holy Pyre"
 #basechance 0.05
 #chanceinc magic fire *5
-#chanceinc magic fire holy *20
+#chanceinc magewithpaths fire holy *20
+#chanceinc magewithpaths blood *0.05
+#chanceinc magewithpaths death *0
+#chanceinc anymagic not fire *0
+#end
+
+--- Astral
+#new
+#name "Heavenly Wrath"
+#spell "Heavenly Wrath"
+#basechance 0.025
+#chanceinc magic fire *2
+#chanceinc magic astral *2
+#chanceinc magewithpaths fire astral *20
+#chanceinc anymagic not astral *0
 #end
 
 #new
-#name "Contact Scorpion Man"
-#spell "Contact Scorpion Man"
-#basechance 0.05
-#chanceinc magic fire *5
-#chanceinc magic earth *5
-#chanceinc magic fire earth *7.5
+#name "Pile of Angels"
+#spell "Angelic Host"
+#spell "Contact Harbinger"
+#spell "Heavenly Choir"
+#basechance 0.005
+#chanceinc magic astral *2
+#chanceinc magewithpaths astral holy *4
+#chanceinc hasthemetheme not boreal *0
+#chanceinc nationtag not boreal *0
+#chanceinc anymagic not astral *0
 #end
 
---- Earth communion is, for now, pale one exclusive.
+--- Water
+#new
+#name "Living Mercury"
+#spell "Living Mercury"
+#basechance 0.025
+#chanceinc magic water *2
+#chanceinc magic earth *2
+#chanceinc magewithpaths water earth *10
+#chanceinc anymagic not water *0
+#end
+
+
+--- Holy
+#new
+#name "LA Ctis holy stuff"
+#spell "Power of the Grave"
+#spell "Protection of the Grave"
+#spell "Royal Power"
+#spell "Royal Protection"
+#basechance 0
+#chanceinc nationtag reanimation 0.075
+#chanceinc command #undead 0.025
+#chanceinc diversity not 3 *2
+#chanceinc diversity not 2 *2
+#end
+
+
+--- Custom spells
 #new
 #basechance 0
 #name "Earth Communion"
 #spell "Reader of Earth"
 #spell "Supplicant of Earth"
-#chanceinc race "Pale One" 0.25
+#chanceinc primaryrace "Pale One" 0.125
 #chanceinc magic not earth *0  
+#chanceinc diversity not 3 *4
+#chanceinc diversity not 2 *5
 #end
