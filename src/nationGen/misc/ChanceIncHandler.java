@@ -917,7 +917,7 @@ public class ChanceIncHandler {
 			for(String tag : u.tags)
 				if(tag.startsWith("schoolmage"))
 				{
-					int[] picks = u.getMagicPicks();
+					int[] picks = u.getMagicPicks(true);
 					for(int j = 0; j < 9; j++)
 					{
 						if(paths[j] < picks[j])
@@ -926,8 +926,35 @@ public class ChanceIncHandler {
 				}
 		}
 		
+		int[] nonrandom_paths = new int[9];
+		for(Unit u : tempmages)
+		{						
+			for(String tag : u.tags)
+				if(tag.startsWith("schoolmage"))
+				{
+					int[] picks = u.getMagicPicks(true);
+					for(int j = 0; j < 9; j++)
+					{
+						if(nonrandom_paths[j] < picks[j])
+							nonrandom_paths[j] = picks[j];
+					}
+				}
+		}
+		
 		List<Integer> atHighest = this.pathsAtHighest(paths);
 
+		int diversity = 0;
+		int[] at = new int[10];
+		for(int i = 0; i < 9; i++)
+		{
+			if(paths[i] > 1 || (i == 4 && paths[i] == 1) || (i == 7 && paths[i] == 1))
+				diversity++;
+		
+			if(i < 10)
+				at[i]++;
+		}
+		
+		
 		// Avg resources and gold
 		int unitCount = 0;
 		double totalgold = 0;
@@ -1045,6 +1072,27 @@ public class ChanceIncHandler {
 					}
 				}
 				
+				// Any magic
+				canIncrease = true;
+				if(args.get(0).equals("anymagic") && args.size() >= 3)
+				{
+					
+					boolean not = args.contains("not");
+					for(int i = 1; i < args.size(); i++)
+					{
+						int path = Generic.PathToInteger(args.get(args.size() - 2));
+						if(path < 0)
+							continue;
+						
+						if(nonrandom_paths[path] == 0)
+							canIncrease = false;	
+						
+					}
+				
+					if(canIncrease != not)
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+				}
+				
 				// Existing shapeshifts
 				canIncrease = false;
 				if(args.get(0).equals("shape") && args.size() >= 3)
@@ -1055,6 +1103,40 @@ public class ChanceIncHandler {
 						if(u.thisForm.name.equals(shape))
 							canIncrease = true;			
 					}
+					
+					if(canIncrease)
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+				}
+				
+				// Magic diversity
+				canIncrease = false;
+				if(args.get(0).equals("magicdiversity"))
+				{
+					int div = Integer.parseInt(args.get(args.size() - 2));
+					boolean not = args.contains("not");
+					
+					if((diversity >= div) != not)
+						canIncrease = true;
+					
+					if(canIncrease)
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+				}
+				
+				// Magic diversity
+				canIncrease = false;
+				if(args.get(0).equals("picksatlevel"))
+				{
+					int level = Integer.parseInt(args.get(args.size() - 3));
+					int amount = Integer.parseInt(args.get(args.size() - 2));
+
+					boolean not = args.contains("not");
+					
+					int picks = 0;
+					for(int z = level; z < 10; z++)
+						picks += at[z];
+					
+					if(level < 5 && (picks >= amount) != not)
+						canIncrease = true;
 					
 					if(canIncrease)
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
@@ -1439,11 +1521,12 @@ public class ChanceIncHandler {
 				canIncrease = false;
 				if(args.get(0).equals("primaryrace") && args.size() >= 3)
 				{
-					if(n.races.size() > 0 && n.races.get(0).name.toLowerCase().equals(args.get(1).toLowerCase()))
+					boolean not = args.contains("not");
+					if(n.races.size() > 0 && n.races.get(0).name.toLowerCase().equals(args.get(args.size() - 2).toLowerCase()))
 					{
 						canIncrease = true;
 					}
-					if(canIncrease)
+					if(canIncrease != not)
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
@@ -2244,11 +2327,12 @@ public class ChanceIncHandler {
 				else if(args.get(0).equals("race") && args.size() >= 3)
 				{
 					boolean canIncrease = false;
-					if(u.race.name.toLowerCase().equals(args.get(1).toLowerCase()))
+					boolean not = args.contains("not");
+					if(u.race.name.toLowerCase().equals(args.get(args.size() - 2).toLowerCase()))
 					{
 						canIncrease = true;
 					}
-					if(canIncrease)
+					if(canIncrease != not)
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				else if(args.get(0).equals("prot") && args.size() >= 3)
