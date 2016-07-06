@@ -189,6 +189,18 @@ public class CustomItemGen {
 			magic = true;
 		}
 		
+		// Add gold cost
+		int potentialcost = runs;
+		if(magic)
+			potentialcost = Math.max((int)Math.round(1.5 * (double)(potentialcost)), 3);
+		
+		
+		int gcost = u.getGoldCost();
+		if(gcost * 0.1 < potentialcost)
+			u.commands.add(new Command("#gcost","+" + potentialcost));
+		else
+			u.commands.add(new Command("#gcost","*1.1"));
+		
 		
 		double[] chances = {1, 1, 1, 1};
 		while(runs > 0)
