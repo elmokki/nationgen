@@ -1792,6 +1792,7 @@ public class ChanceIncHandler {
 							{
 								int level = 0;
 								boolean above = true;
+								boolean exact = false;
 								if(Generic.isNumeric(args.get(2)))
 								{
 									level = Integer.parseInt(args.get(2));
@@ -1800,6 +1801,8 @@ public class ChanceIncHandler {
 								{
 									if(args.contains("below"))
 										above = false;
+									else if(args.contains("exact"))
+										exact = true;
 									
 									level = Integer.parseInt(args.get(3));
 								}
@@ -1809,7 +1812,11 @@ public class ChanceIncHandler {
 								
 								if(!canIncrease)
 								{
-									if((Integer.parseInt(c.args.get(0)) >= level) == above)
+									if(!exact && (Integer.parseInt(c.args.get(0)) >= level) == above)
+									{
+										canIncrease = true;
+									}
+									else if(exact && (Integer.parseInt(c.args.get(0)) == level))
 									{
 										canIncrease = true;
 									}
