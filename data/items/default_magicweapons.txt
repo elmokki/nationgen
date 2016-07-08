@@ -395,12 +395,11 @@
 #unitname "prefix Acidic"
 #unitname "suffix of Acid"
 #unitname "prefix Sulphuric"
-#basechance 0.25
-#chanceinc "magic water 0.05"
-#chanceinc "magic fire 0.05"
-#chanceinc "magic water fire 1.5"
+#basechance 0.05
+#chanceinc "magic water fire 0.2"
 #command "#acid"
-#nopose ranged
-#tag "gcost melee +5"
+#command "#armorpiercing"
+#tag "gcost ranged +15"
+#tag "gcost melee +15"
 #power 2
 #end
