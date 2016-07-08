@@ -174,7 +174,7 @@ public class CustomItemGen {
 		}
 
 		
-		int runs = 2;
+		int runs = 1 + random.nextInt(1); // 1-2
 		if(random.nextDouble() > epicness)
 			runs++;
 		if(random.nextDouble() > epicness / 2)
@@ -218,12 +218,12 @@ public class CustomItemGen {
 			if(ranged || lowshots)
 				chances[1] = 0;
 		
-			if((runs <= 2 && ranged && !lowshots))
+			if((runs <= 2 && ranged))
 				chances[0] = 0;
 			
-			if(rand <= chances[0] && (!ranged || lowshots) || (runs > 2 && ranged && !lowshots))
+			if(rand <= chances[0] && !ranged || (runs > 2 && ranged))
 			{
-				chances[0] *= 0.5;
+				chances[0] *= 0.33;
 				int att = Integer.parseInt(i.values.get("att"));
 				att++;
 				i.values.put("att", "" + att);
@@ -233,10 +233,10 @@ public class CustomItemGen {
 				
 				runs--;
 			}
-			else if(rand <= chances[0] + chances[1] && !ranged && !lowshots)
+			else if(rand <= chances[0] + chances[1] && !ranged)
 			{
 
-				chances[1] *= 0.5;
+				chances[1] *= 0.33;
 				int def = Integer.parseInt(i.values.get("def"));
 				def++;
 				i.values.put("def", "" + def);
@@ -246,7 +246,7 @@ public class CustomItemGen {
 			else if(rand <= chances[0] + chances[1] + chances[2])
 			{
 
-				chances[2] *= 0.5;
+				chances[2] *= 0.33;
 				int dmg = Integer.parseInt(i.values.get("dmg"));
 				if(dmg < 63)					 // Weapons with dmg 64+ are (with one exception, the Deadliest Poison at 75) not actually damage, but instead special effects encoded as damage, so we don't want to screw them up
 					dmg++;
@@ -356,7 +356,8 @@ public class CustomItemGen {
 			newitem.values.put("name", "\"" + db.GetValue(item.id, "wpname") + "\"");
 			newitem.values.put("dmg", "" + db.GetValue(item.id, "dmg"));
 			newitem.values.put("att", "" + db.GetValue(item.id, "att"));
-			
+			newitem.values.put("rcost", "" + db.GetValue(item.id, "res"));
+
 			if(!db.GetValue(item.id, "def").equals(""))
 			{
 				newitem.values.put("def", "" + db.GetValue(item.id, "def"));

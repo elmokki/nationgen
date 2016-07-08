@@ -341,6 +341,11 @@ public class MagicPattern extends Filter {
 		}
 		
 		
+		// EXTRA STUFF
+		// Having blood is +20 gold.
+		if(paths[7] > 0)
+			price += 20;
+		
 		return price;
 	}
 	
