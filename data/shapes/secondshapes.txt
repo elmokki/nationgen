@@ -249,6 +249,20 @@
 #end
 
 #new secondshape
+#name "ghoul"
+#command "#copystats 198"
+#command "#spr1 ./graphics/shapes/ghoul_small_1.png"
+#command "#spr2 ./graphics/shapes/ghoul_small_2.png"
+#command "#magicboost 53 -1"
+#command "#gcost -40"
+#command "#hp 16"
+#nowayback
+#keepname
+#end
+
+
+
+#new secondshape
 #name "hornedserpent"
 #command "#copystats 403"
 #command "#copyspr 403"
@@ -380,6 +394,16 @@
 #name "metalman"
 #command "#copystats 532"
 #command "#copyspr 532"
+#command "#magicboost 53 -5"
+#command "#reinvigoration 5"
+#nowayback
+#end
+
+#new secondshape
+#name "metalman-small"
+#command "#copystats 532"
+#command "#spr1 ./graphics/shapes/mechanicalman_small_1.png"
+#command "#spr2 ./graphics/shapes/mechanicalman_small_2.png"
 #command "#magicboost 53 -5"
 #command "#reinvigoration 5"
 #nowayback
