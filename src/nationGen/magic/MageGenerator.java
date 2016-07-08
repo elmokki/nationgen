@@ -861,9 +861,9 @@ public class MageGenerator extends TroopGenerator {
 		{
 			list.clear();
 			list.add(extra);
-			power = this.random.nextInt(3) + 2; // 2 to 4
+			power = this.random.nextInt(4); // 0 to 3
 			if(this.random.nextBoolean())
-				power += this.random.nextInt(4); // 0 to 3;
+				power += this.random.nextInt(3); // 0 to 2;
 			
 			this.applyFilters(list, power, defaults, "magefilters");
 		}
