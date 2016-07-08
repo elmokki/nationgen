@@ -356,7 +356,8 @@ public class CustomItemGen {
 			newitem.values.put("name", "\"" + db.GetValue(item.id, "wpname") + "\"");
 			newitem.values.put("dmg", "" + db.GetValue(item.id, "dmg"));
 			newitem.values.put("att", "" + db.GetValue(item.id, "att"));
-			
+			newitem.values.put("rcost", "" + db.GetValue(item.id, "res"));
+
 			if(!db.GetValue(item.id, "def").equals(""))
 			{
 				newitem.values.put("def", "" + db.GetValue(item.id, "def"));
