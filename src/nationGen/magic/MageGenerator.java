@@ -1085,9 +1085,9 @@ public class MageGenerator extends TroopGenerator {
 		List<Unit> bases = generateBases("mage", race, 1, 2);
 		
 		int tier = 1;
-		if(power >= 4 || (power >= 3 && random.nextBoolean()) || (power >= 2 && random.nextDouble() > 0.66) )
+		if(power >= 5 || (power >= 4 && random.nextBoolean()) || (power >= 3 && random.nextDouble() > 0.66) | (power >= 2 && random.nextDouble() > 0.95))
 			tier = 3;
-		else if(power > 1 || random.nextBoolean())
+		else if(power > 2 || random.nextBoolean())
 			tier = 2;
 		else
 			tier = 1;	
