@@ -654,10 +654,10 @@ public class SacredGenerator extends TroopGenerator {
 			u.caponly = true;
 		else
 		{
-			if(u.getGoldCost() < 50)
-				u.commands.add(new Command("#gcost", "+5"));
+			if(u.getGoldCost() <= 50)
+				u.commands.add(new Command("#gcost", "+10"));
 			else
-				u.commands.add(new Command("#gcost", "*1.1"));
+				u.commands.add(new Command("#gcost", "*1.2"));
 
 		}
 	}
