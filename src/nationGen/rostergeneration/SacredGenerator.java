@@ -682,7 +682,6 @@ public class SacredGenerator extends TroopGenerator {
 		if(!unitGen.hasMontagPose(u))
 			this.addEpicness(u, sacred, power);
 		
-
 		// Equip
 		for(String r : u.pose.roles)
 			if(r.contains("infantry") || r.contains("sacred infantry"))
@@ -737,7 +736,7 @@ public class SacredGenerator extends TroopGenerator {
 		}
 		u.appliedFilters.add(tf);
 		
-		
+			
 		// Equip
 		unitGen.armorUnit(u, null, null, null, false);
 		unitGen.armUnit(u, null, null, null, false);
@@ -783,10 +782,16 @@ public class SacredGenerator extends TroopGenerator {
 		}
 
 		// Give magic weapons if they were promised:
-		if(Generic.containsTag(u.tags, "NEEDSMAGICWEAPON"))
+		if(Generic.containsTag(u.tags, "NEEDSMAGICWEAPON") || (chandler.identifier.equals("herogen") && random.nextDouble() > 0.15))
 		{
-			int cost = Integer.parseInt(Generic.getTagValue(u.tags, "NEEDSMAGICWEAPON"));
-			u.tags.remove("NEEDSMAGICWEAPON " + cost);
+			
+			int cost = 5;
+			
+			if(Generic.containsTag(u.tags, "NEEDSMAGICWEAPON"))
+			{
+				Integer.parseInt(Generic.getTagValue(u.tags, "NEEDSMAGICWEAPON"));
+				u.tags.remove("NEEDSMAGICWEAPON " + cost);
+			}
 			giveMagicWeapons(u, cost);
 		}
 
