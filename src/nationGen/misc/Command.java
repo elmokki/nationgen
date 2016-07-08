@@ -136,21 +136,16 @@ public class Command {
 	public static Command parseCommand(String str)
 	{
 
+		str = str.replaceAll("'", "\"");
+		str = str.replaceAll("\'", "\"");
+		
 		List<String> args = Generic.parseArgs(str);
-		List<String> newargs = new ArrayList<String>();
 		
 		String command = args.get(0);
 		args.remove(0);
 		
-		for(String arg : args)
-		{
-			arg = arg.replaceAll("'", "\"");
-			arg = arg.replaceAll("\'", "\"");
-			newargs.add(arg);
-		}
 		
-		
-		return new Command(command, newargs);
+		return new Command(command, args);
 		
 	}
 	
