@@ -34,6 +34,31 @@
 #end
 
 #new secondshape
+#name "werefox"
+#command "#spr1 ./graphics/shapes/werewolf_small_1.png"
+#command "#spr2 ./graphics/shapes/werewolf_small_2.png"
+#command "#magicboost 53 -1"
+#command "#name Werefox"
+#command "#weapon 20"
+#command "#weapon 29"
+#command "#weapon 29"
+#command "#size 1"
+#command "#hp 10"
+#command "#prot 2"
+#command "#mor 14"
+#command "#mr 14"
+#command "#enc 2"
+#command "#str 7"
+#command "#att 10"
+#command "#def 14"
+#command "#prec 5"
+#command "#mapmove 2"
+#command "#ap 12"
+#command "#regeneration 10"
+#command "#forestsurvival"
+#end
+
+#new secondshape
 #name "wolf"
 #command "#copystats 284"
 #command "#copyspr 284"
