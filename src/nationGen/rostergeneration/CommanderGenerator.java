@@ -107,6 +107,7 @@ public class CommanderGenerator extends TroopGenerator {
 		allFeatures.add("#swampsurvival");
 		allFeatures.add("#demon");
 		allFeatures.add("#undead");
+		allFeatures.add("#sailing");
 		allFeatures.add("#magicbeing");
 
 		int orig = 1;
@@ -172,6 +173,7 @@ public class CommanderGenerator extends TroopGenerator {
 					features.add("#undead");
 				}
 			}
+			
 			if(u.race.equals(nation.races.get(1)) && secondarySlaves)
 			{
 				hasSlaves = true;
@@ -187,6 +189,8 @@ public class CommanderGenerator extends TroopGenerator {
 				
 				if(c.command.equals("#slave") || (u.race.equals(nation.races.get(1)) && secondarySlaves))
 					hasSlaves = true;
+				
+
 				
 				if(allFeatures.contains(c.command) && !features.contains(c.command))
 				{

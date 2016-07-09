@@ -193,8 +193,8 @@ public class SacredGenerator extends TroopGenerator {
 
 				}
 				
+				choices = ChanceIncHandler.getValidUnitFilters(choices, u);
 
-				
 				if(choices.size() == 0)	
 				{
 					break;
