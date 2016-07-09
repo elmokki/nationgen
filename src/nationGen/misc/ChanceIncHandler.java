@@ -259,7 +259,7 @@ public class ChanceIncHandler {
 			return false;
 		}
 		
-		List<String> primaries = new ArrayList<String>();
+		List<String> primaries = new ArrayList<String>();		
 		if(Generic.containsTag(f.tags, "primarycommand"))
 		{
 			for(String tag : f.tags)
@@ -272,6 +272,14 @@ public class ChanceIncHandler {
 			}
 		}
 		
+		boolean shapeshift = false;
+		for(Command c : f.getCommands())
+			if(c.command.equals("#shapechange") || c.command.equals("#secondshape") || c.command.equals("#secondtmpshape"))
+			{
+				shapeshift = true;
+				break;
+			}
+			
 		boolean ok = false;
 		boolean primarycommandfail = false;
 		for(Command c : u.getCommands())
@@ -282,9 +290,15 @@ public class ChanceIncHandler {
 			{
 				primarycommandfail = true;
 				ok = false;
-
 				break;
 			}
+	
+			if(shapeshift && (c.command.equals("#shapechange") || c.command.equals("#secondshape") || c.command.equals("#secondtmpshape")))
+			{
+				ok = false;
+				break;
+			}
+			else if(shapeshift)
 
 			
 			for(Command fc : f.getCommands())
@@ -303,7 +317,7 @@ public class ChanceIncHandler {
 		
 
 		
-		if(f.getCommands().size() == 0 && Generic.containsTag(f.tags, "lowenctreshold") && !primarycommandfail)
+		if(f.getCommands().size() == 0 && Generic.containsTag(f.tags, "lowenctreshold") && !primarycommandfail && ok)
 		{
 			int treshold = Integer.parseInt(Generic.getTagValue(f.tags, "lowenctreshold"));
 			
