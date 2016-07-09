@@ -79,13 +79,16 @@
 #basechance 0.1
 #chanceinc "magic death 2"
 #chanceinc "shape ghoul 20"
+#chanceinc "shape ghoul-small 20"
 #chanceinc "pose mounted *0"
 #chanceinc personalcommand #size below 2 *0
 #command "#secondshape ghoul"
 #command "#gcost +5"
+#command "#undcommand +40"
+#command "#maxage 500"
 #tag "path death"
-#chanceinc "pose mounted *0.25"
 #power 1
+#description "has a pact with death, allowing it to live an another life as a ghoul after death"
 #end
 
 
@@ -95,13 +98,16 @@
 #basechance 0.1
 #chanceinc "magic death 2"
 #chanceinc "shape ghoul 20"
+#chanceinc "shape ghoul-small 20"
 #chanceinc "pose mounted *0"
 #chanceinc personalcommand #size above 2 *0
 #command "#secondshape ghoul-small"
 #command "#gcost +5"
+#command "#undcommand +40"
+#command "#maxage 800"
 #tag "path death"
-#chanceinc "pose mounted *0.25"
 #power 1
+#description "has a pact with death, allowing it to live an another life as a ghoul after death"
 #end
 
 #new
@@ -185,13 +191,16 @@
 #basechance 0.05
 #chanceinc "magic earth 0.45"
 #chanceinc "shape metalman 20"
+#chanceinc "shape metalman-small 20"
 #chanceinc personalcommand #size below 2 *0
 #command "#secondshape metalman"
 #command "#hp -5"
 #command "#gcost +30"
+#command "#magiccommand +10"
 #command "#maxage 800"
 #tag "path earth"
 #power 3
+#description "reveals its true shape of a metal man upon death"
 #end
 
 #new
@@ -200,13 +209,16 @@
 #basechance 0.05
 #chanceinc "magic earth 0.45"
 #chanceinc "shape metalman 20"
+#chanceinc "shape metalman-small 20"
 #chanceinc personalcommand #size above 2 *0
 #command "#secondshape metalman-small"
 #command "#hp -3"
 #command "#gcost +20"
+#command "#magiccommand +10"
 #command "#maxage 800"
 #tag "path earth"
 #power 3
+#description "reveals its true shape of a metal man upon death"
 #end
 
 #new
@@ -219,6 +231,7 @@
 #command "#secondshape vineman"
 #command "#gcost +20"
 #command "#maxage 1000"
+#command "#magiccommand +10"
 #tag "path nature"
 #theme "ivy"
 #power 2
