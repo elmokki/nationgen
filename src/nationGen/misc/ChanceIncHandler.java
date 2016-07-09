@@ -946,7 +946,7 @@ public class ChanceIncHandler {
 			for(String tag : u.tags)
 				if(tag.startsWith("schoolmage"))
 				{
-					int[] picks = u.getMagicPicks(true);
+					int[] picks = u.getMagicPicks(false);
 					for(int j = 0; j < 9; j++)
 					{
 						if(nonrandom_paths[j] < picks[j])
