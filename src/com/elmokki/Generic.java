@@ -392,7 +392,10 @@ public class Generic {
 		return string;
 	}
 	
-	
+	public static List<String> parseArgs(String str, String separator)
+	{
+		return parseArgs(str, separator, false);
+	}
 	/**
 	 * Parses args from string. Separator is space by default, but separator arg
 	 * Overrides, ie string DERP "HERP DURP" would result in args 
@@ -401,9 +404,13 @@ public class Generic {
 	 * @param separator
 	 * @return
 	 */
-	public static List<String> parseArgs(String str, String separator)
+	public static List<String> parseArgs(String str, String separator, boolean leaveseparator)
 	{
 		List<String> newlist = new ArrayList<String>();
+		
+		int offset = 0;
+		if(leaveseparator)
+			offset = 1;
 		
 		str = str.trim();
 		
@@ -420,7 +427,7 @@ public class Generic {
 					if(("" + str.charAt(i)).equals(separator))
 					{
 						// Found next separator
-						newlist.add(str.substring(1, i));
+						newlist.add(str.substring(1 - offset, i + offset));
 						str = str.substring(i + 1);
 
 						done = true;

@@ -73,7 +73,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
     List<JCheckBox> optionChecks = new ArrayList<JCheckBox>();
     Settings settings = new Settings();
     JCheckBox seedcheckbox = new JCheckBox("Use predefined nation seeds (separate by line change and/or comma)");
-    
+    RestrictionPane rpanel;
     JCheckBox hideVanillaNations = new JCheckBox("Hide vanilla nations");
     JSlider eraSlider = new JSlider(JSlider.HORIZONTAL, 1, 3, 2);
     JSlider spowerSlider = new JSlider(JSlider.HORIZONTAL, 1, 3, 1);
@@ -115,6 +115,17 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         JPanel panel = new JPanel(new BorderLayout(5, 5));
         JPanel options = new JPanel(new GridLayout(2,2));
         JPanel advoptions = new JPanel(new GridLayout(8,1));
+        
+        // Restrictions need nationgen;
+    	try {
+			n = new NationGen();
+			n.settings = settings;
+		} catch (IOException e) {
+			System.out.println("Error initializing NationGen.");
+        	startButton.setEnabled(false);
+			return;
+		}
+        rpanel = new RestrictionPane(n);
 
         // Main
         tabs.addTab("Main", panel);
@@ -293,7 +304,9 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         
         advoptions.add(spower);
         
-        
+        // Restrictions
+        tabs.addTab("Nation restrictions", rpanel);
+
         
         add(tabs);
 
@@ -319,8 +332,8 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
     boolean hasRun = false;
     public GUI() {
         setTitle("NationGen GUI");
-        this.setPreferredSize(new Dimension(1000, 350));
-        this.setResizable(false);
+        this.setPreferredSize(new Dimension(1000, 450));
+        this.setResizable(true);
         initGUI();
 
 
@@ -401,6 +414,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
     	try {
 			n = new NationGen();
 			n.settings = settings;
+			n.restrictions.addAll(rpanel.getRestrictions());
 		} catch (IOException e) {
 			System.out.println("Error initializing NationGen.");
         	startButton.setEnabled(false);

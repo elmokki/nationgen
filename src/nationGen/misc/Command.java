@@ -139,12 +139,11 @@ public class Command {
 		str = str.replaceAll("'", "\"");
 		str = str.replaceAll("\'", "\"");
 		
-		List<String> args = Generic.parseArgs(str);
+		List<String> args = Generic.parseArgs(str, "\"", true);
 		
 		String command = args.get(0);
 		args.remove(0);
-		
-		
+	
 		return new Command(command, args);
 		
 	}

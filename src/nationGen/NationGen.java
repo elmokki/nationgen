@@ -51,6 +51,7 @@ import nationGen.naming.PriestNamer;
 import nationGen.naming.SacredNamer;
 import nationGen.naming.TroopNamer;
 import nationGen.nation.Nation;
+import nationGen.restrictions.NationRestriction;
 import nationGen.units.ShapeChangeUnit;
 import nationGen.units.ShapeShift;
 import nationGen.units.Unit;
@@ -58,8 +59,10 @@ import nationGen.units.Unit;
 
 
 public class NationGen {
-	public static String version = "0.6.13b";
-	public static String date = "4th of July 2016";
+	public static String version = "0.6.14b";
+	public static String date = "10th of July 2016";
+	
+	public List<NationRestriction> restrictions = new ArrayList<NationRestriction>();
 	
 	public ResourceStorage<MagicPattern> patterns = new ResourceStorage<MagicPattern>(MagicPattern.class, this);
 	public ResourceStorage<Pose> poses = new ResourceStorage<Pose>(Pose.class, this);
@@ -202,35 +205,69 @@ public class NationGen {
 		if(!manyseeds)
 			System.out.println("Generating " + amount + " nations with seed " + seed + ".");
 		else
+		{
 			System.out.println("Generating " + amount + " nations with predefined seeds.");
-
+			
+			if(restrictions.size() > 0)
+			{
+				restrictions.clear();
+				System.out.println("Ignoring nation restrictions due to predefined seeds.");
+			}
+		}
 		
-		System.out.print("Generating nations");
+		System.out.println("Generating nations...");
 		List<Nation> nations = new ArrayList<Nation>();
 		Nation newnation = null;
 		int newseed = 0;
-		for(int i = 0; i < amount; i++)
+		
+		int count = 0;
+		while(nations.size() < amount)
 		{
+			count++;
 			if(!manyseeds)
 				newseed = random.nextInt();
 			else
-				newseed = seeds.get(i);
+				newseed = seeds.get(nations.size());
 			
+			System.out.print("- Generating nation " + (nations.size() + 1) + "/" + amount + " (seed " + newseed);
 			if(settings.get("debug") == 1.0)
-				System.out.println(newseed + " (" + (i+1) + ") on " + ZonedDateTime.now().toLocalTime().truncatedTo(ChronoUnit.SECONDS));
-
+				System.out.print(" / " + ZonedDateTime.now().toLocalTime().truncatedTo(ChronoUnit.SECONDS));
+			
+			System.out.print(")... ");
 			
 			newnation = new Nation(this, idHandler.nextNationId(), newseed);
 
-			newnation.name = "Nation " + (i + 1);
+			// Handle restrictions
+			boolean pass = true;
+			for(NationRestriction nr : restrictions)
+			{
+				if(!nr.doesThisPass(newnation))
+				{
+					pass = false;
+					System.out.println("FAILED RESTRICTION " + nr.toString().toUpperCase());
+					break;
+				}
+			}
 			
+			if(pass)
+			{
+				System.out.println("Done!");
+			}
+			else
+			{
+				continue;
+			}
+			
+			newnation.name = "Nation " + count;
+
 			System.gc();
-			
+
 			nations.add(newnation);
 
-			System.out.print(".");
+			
 		}
-		System.out.println(" Done!");
+		
+
 
 		
 

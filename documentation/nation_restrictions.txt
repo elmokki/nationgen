@@ -1,0 +1,75 @@
+General info
+------------------
+Nation restrictions function by discarding nations after generation if they do not match the restrictions. 
+This means that any restrictions are bound to increase generation time on average. It is also very easy to 
+set restrictions that are so strict that the program will simply run an eternal or at least a very long 
+loop before generating the wanted amount of nations.
+
+Nation seeds are compatible regardless of restrictions and generating from nation seeds disables restrictions.
+Main seed on the main tab is not the same for a given nation count with restrictions most of the time. This
+basically simply means that if your NationGen game allows you to generate your own nation, you can use the
+restrictions for that without problems.
+
+How do they function?
+------------------
+All nation restrictions need to apply for a nation to not be discarded. This means that adding multiple entries
+of the same restrictions functions as "and" operator. Generally, but not necessarily, it is enough for just one
+condition inside a restriction to hold, which functions as "or" operator.
+
+To illustrate this behavior, here are two examples:
+
+1. Magic access restriction for death magic at least level 3
+2. Second magic access restriction for air magic at least level 3
+-> These restrictions are passed only if the nation has air and death access at level 3.
+
+1. Restriction for air magic at 3 and death magic at 3 in one restriction
+-> It is enough for the nation to have air or death access at level 3.
+
+List of restrictions (hopefully up to date)
+--------------------
+
+Magic: Access
+-------------
+Checks whether a nation has magic access at given level on at least one of the given paths. This can be done with 25% probability 
+(100% random for 4 paths or better) or guaranteed.
+
+Magic: Mage with access
+-------------
+Same as Magic: Access, but all the listed picks must be on a single mage (ie this is not an or-operator)
+
+Nation or Primary Race Theme
+-------------
+Nation or primary race has to have a theme named like one of the listed themes. This means that it is not exact: Use a primary race 
+restriction if you want something very specific.
+
+No primary race
+-------------
+Primary race cannot be one of the listed races
+
+No unit of race
+-------------
+Nation cannot have units of given race. You can set this to match all/only troops/only commanders/only sacreds
+
+Primary race
+---------------
+Primary race has to be one of the listed races
+
+Sacred race
+---------------
+At least one sacred must be of one of the listed races. Unit of race restriction does the same job.
+
+Unit Command
+---------------
+At least one unit must have given command. If you do not specify arguments, any arguments are fine. If you specify
+arguments, they must match exactly. Example: #berserk accepts any berserking level, #berserk 2 requires exactly that.
+
+You can set this to match all/only troops/only commanders/only sacreds
+
+Unit Filter
+---------------
+At least one unit must have given filter. You can set this to match all/only troops/only commanders/only sacreds
+
+Unit of race
+---------------
+Nation must have at least one unit of given race. You can set this to match all/only troops/only commanders/only sacreds
+
