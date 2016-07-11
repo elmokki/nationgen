@@ -532,7 +532,7 @@ public class NationGen {
 		new File("./mods/" + dir).mkdir();
 		
 		FileWriter fstream = new FileWriter("./mods/nationgen_" + modname.toLowerCase().replaceAll(" ", "_") + ".dm");
-		PrintWriter tw = new PrintWriter(fstream);
+		PrintWriter tw = new PrintWriter(fstream, true);
 		
 		// Descriptions
 		writeDescriptions(tw, nations, modname);
