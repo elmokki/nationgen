@@ -1202,7 +1202,6 @@ public class Nation {
 					{
 						for(Unit u : unitlists.get(str + "-" + i))
 						{
-							boolean foreign = false;
 							for(String tag : foreigntags)
 								if(u.tags.contains(tag))
 								{
@@ -1212,7 +1211,6 @@ public class Nation {
 									}
 									else
 										tw.println("#" + tag+ " " + u.id);
-									foreign = true;
 								}
 							
 							if(!u.caponly)
@@ -1228,7 +1226,6 @@ public class Nation {
 					if(listname.startsWith(str))
 						for(Unit u : unitlists.get(listname))
 						{
-							boolean foreign = false;
 							for(String tag : foreigntags)
 								if(u.tags.contains(tag))
 								{
@@ -1236,7 +1233,6 @@ public class Nation {
 										tw.println("#" + tag.substring(0, tag.length() - 3) + "com " + u.id);
 									else
 										tw.println("#" + tag+ " " + u.id);
-									foreign = true;
 								}
 							
 							if(!u.caponly)

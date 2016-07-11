@@ -101,7 +101,6 @@ public class DescriptionReplacer {
 					{
 						if(!n.nationGen.weapondb.GetValue(i.id, "weapon_name").equals("") && !weapons.contains(n.nationGen.weapondb.GetValue(i.id, "weapon_name")))
 						{
-							String s = "";
 							List<String> tmp = new ArrayList<String>();
 							
 							if(n.nationGen.weapondb.GetValue(i.id, "dt_b").equals("1"))

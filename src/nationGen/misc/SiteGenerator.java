@@ -9,7 +9,6 @@ import com.elmokki.Generic;
 
 import nationGen.entities.Filter;
 import nationGen.nation.Nation;
-import nationGen.units.ShapeChangeUnit;
 import nationGen.units.Unit;
 
 
@@ -84,7 +83,7 @@ public class SiteGenerator {
 
 		while(stuff > 0)
 		{
-			int minstuff = StuffPerSite(sites, stuff);
+			//int minstuff = StuffPerSite(sites, stuff);
 			int added = 0;
 			Site s = new Site();
 			int max = 4 + random.nextInt(3);
@@ -248,10 +247,7 @@ public class SiteGenerator {
 		
 	}
 	
-	private static int StuffPerSite(int sites, int stuff)
-	{
-		return (int)Math.ceil((double)stuff / sites);
-	}
+
 	
 	private static HashMap<Integer, Integer> getTotalGems(Nation n)
 	{

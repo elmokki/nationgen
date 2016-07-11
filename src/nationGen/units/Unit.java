@@ -9,7 +9,6 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
@@ -779,27 +778,7 @@ public class Unit {
 		{
 			handleCommand(tempCommands, c);
 		}
-		// Stuff with %cost as argument
-		if(percentCostCommands.size() > 0)
-		{
-			int gcost = 0;
-			for(Command c : allCommands)
-				if(c.command.equals("#gcost") && c.args.size() > 0)
-				{
-					
-					if(!multiCommands.contains(c))
-					{
-						String arg = c.args.get(0);
-						if(arg.startsWith("+"))
-							arg = arg.substring(1);
-						gcost += Integer.parseInt(arg);
-					}
-					else if(!percentCostCommands.contains(c))
-						gcost *= Double.parseDouble(c.args.get(0).substring(1));
-				}
-			
 
-		}
 
 		
 		return tempCommands;

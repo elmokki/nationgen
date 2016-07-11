@@ -8,7 +8,6 @@ import com.elmokki.Generic;
 
 import nationGen.NationGen;
 import nationGen.misc.ChanceIncHandler;
-import nationGen.misc.Command;
 import nationGen.nation.Nation;
 
 public class EpithetGenerator {

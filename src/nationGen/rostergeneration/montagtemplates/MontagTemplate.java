@@ -1,9 +1,7 @@
 package nationGen.rostergeneration.montagtemplates;
 
-import nationGen.NationGen;
 import nationGen.entities.Filter;
 import nationGen.entities.Pose;
-import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
 public class MontagTemplate {

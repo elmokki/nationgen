@@ -4,7 +4,6 @@ import java.util.Random;
 
 import nationGen.NationGen;
 import nationGen.entities.Pose;
-import nationGen.entities.Race;
 import nationGen.nation.Nation;
 import nationGen.rostergeneration.SacredGenerator;
 import nationGen.units.Unit;

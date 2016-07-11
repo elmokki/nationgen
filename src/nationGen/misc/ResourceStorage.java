@@ -11,7 +11,6 @@ import java.util.List;
 
 import nationGen.NationGen;
 import nationGen.entities.Entity;
-import nationGen.entities.Filter;
 
 
 import com.elmokki.Generic;

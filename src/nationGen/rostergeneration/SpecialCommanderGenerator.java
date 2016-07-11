@@ -10,7 +10,6 @@ import nationGen.NationGen;
 import nationGen.entities.Filter;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
-import nationGen.magic.MageGenerator;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.naming.NamePart;

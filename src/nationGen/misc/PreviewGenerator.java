@@ -12,8 +12,6 @@ import java.util.List;
 
 import javax.imageio.ImageIO;
 
-import com.elmokki.Generic;
-
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
@@ -28,8 +26,8 @@ public class PreviewGenerator {
 		int maxY = 1;
 		
 		int neededBlocks = 0;
-		int totalNeededBlocks = 0;
-		int troopLines = 0;
+		//int totalNeededBlocks = 0;
+		//int troopLines = 0;
 
 		List<Unit> troops = n.generateUnitList("ranged");
 		troops.addAll(n.generateUnitList("infantry"));
@@ -51,9 +49,9 @@ public class PreviewGenerator {
 			neededBlocks += x*y;
 		}
 		
-		troopLines = (int) Math.ceil((double)neededBlocks / ((double)maxX + 1));
+		//troopLines = (int) Math.ceil((double)neededBlocks / ((double)maxX + 1));
 		maxY += (int) Math.ceil((double)neededBlocks / ((double)maxX + 1));
-		totalNeededBlocks += neededBlocks;
+		//totalNeededBlocks += neededBlocks;
 		neededBlocks = 0;
 		
 		for(Unit u : n.generateComList())
@@ -66,7 +64,7 @@ public class PreviewGenerator {
 			
 			neededBlocks += x*y;
 		}
-		totalNeededBlocks += neededBlocks;
+		//totalNeededBlocks += neededBlocks;
 
 
 		

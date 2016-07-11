@@ -2,14 +2,11 @@ package nationGen.naming;
 
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
-import java.util.Map.Entry;
 
 import com.elmokki.Generic;
 
-import nationGen.items.Item;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.nation.Nation;
@@ -181,7 +178,6 @@ public class TroopNamer {
 	{
 		List<Unit> units = new ArrayList<Unit>();
 		units.addAll(n.comlists.get("commanders"));
-		List<Unit> generics = new ArrayList<Unit>();
 		List<NamePart> used = new ArrayList<NamePart>();
 		
 		for(Unit u : units)
