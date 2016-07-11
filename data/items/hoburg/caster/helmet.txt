@@ -5,8 +5,6 @@
 #newitem
 #id bald
 #gameid -1
-#sprite /graphics/hoburg/helmet/caster/turban1.png
-#recolormask /graphics/hoburg/helmet/caster/turban1_recolormask.png
 #armor
 #tag "tier 1"
 #theme "austral"
@@ -40,6 +38,8 @@
 #tag "tier 1"
 #tag "eliteversion headdress_large"
 #theme "central"
+#theme "occidental"
+#theme "austral"
 #enditem
 
 #newitem
@@ -51,6 +51,8 @@
 #tag "tier 2"
 #tag "tier 3"
 #theme "central"
+#theme "occidental"
+#theme "austral"
 #enditem
 
 #newitem
@@ -62,6 +64,8 @@
 #armor
 #tag "tier 2"
 #theme "central"
+#theme "occidental"
+#theme "austral"
 #enditem
 
 #newitem
@@ -73,6 +77,8 @@
 #armor
 #tag "tier 3"
 #theme "central"
+#theme "occidental"
+#theme "austral"
 #enditem
 
 #newitem
@@ -84,6 +90,8 @@
 #armor
 #tag "tier 3"
 #theme "central"
+#theme "occidental"
+#theme "austral"
 #enditem
 
 
@@ -135,4 +143,31 @@
 #armor
 #tag "tier 3"
 #theme "boreal"
+#enditem
+
+#newitem
+#id hood_necromant
+#gameid -1
+#sprite /graphics/hoburg/helmet/caster/hood_necromant.png
+#recolormask self
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#enditem
+
+#newitem
+#id crown_count
+#gameid 148
+#sprite /graphics/hoburg/helmet/caster/crown_count.png
+#recolormask /graphics/hoburg/helmet/caster/crown_count_recolormask.png
+#armor
+#tag "tier 3"
+#theme "boreal"
+#theme "imperial"
+#theme "oriental"
 #enditem
