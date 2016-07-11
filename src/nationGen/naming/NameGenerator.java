@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.Set;
-import java.util.Map.Entry;
 
 import com.elmokki.Dom3DB;
 import com.elmokki.Generic;
@@ -15,7 +13,6 @@ import com.elmokki.Generic;
 import nationGen.NationGen;
 import nationGen.entities.Race;
 import nationGen.nation.Nation;
-import nationGen.units.Unit;
 
 
 

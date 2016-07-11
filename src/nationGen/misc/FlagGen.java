@@ -4,15 +4,13 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
+
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
+
 
 import javax.imageio.ImageIO;
 
@@ -20,13 +18,10 @@ import com.elmokki.Drawing;
 import com.elmokki.Generic;
 
 import nationGen.entities.Flag;
-import nationGen.magic.MagicPattern;
 import nationGen.nation.Nation;
-import nationGen.entities.Entity;
 
 public class FlagGen {
 	
-	private Nation n;
 	
 	public List<Flag> top = new ArrayList<Flag>();
 	public List<Flag> mid = new ArrayList<Flag>();
@@ -38,7 +33,6 @@ public class FlagGen {
 
 	public FlagGen(Nation n)
 	{
-		this.n = n; 
 		chandler = new ChanceIncHandler(n);
 		// Load data
 

@@ -9,7 +9,6 @@ import java.util.Random;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
-import nationGen.entities.Entity;
 import nationGen.magic.MageGenerator;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.nation.Nation;

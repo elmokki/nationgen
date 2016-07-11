@@ -25,6 +25,9 @@ import java.util.Map.Entry;
 
 
 
+
+
+
 import com.elmokki.Drawing;
 import com.elmokki.Generic;
 
@@ -110,7 +113,8 @@ public class Nation {
 		
 	}
 	
-	public void generate()
+	
+	private void getColors()
 	{
 		colors[0] = Drawing.getColor(random);
 
@@ -124,10 +128,10 @@ public class Nation {
 		colors[2] = Drawing.getColor(random);
 		colors[3] = Drawing.getColor(random);
 		colors[4] = Drawing.getColor(random);
-		
-		
-
-
+	}
+	
+	private void getRaces()
+	{
 		ChanceIncHandler chandler = new ChanceIncHandler(this);
 
 		// choose primary race
@@ -148,7 +152,6 @@ public class Nation {
 			this.handleCommand(commands, c);
 		
 
-		
 		// Add themes
 		addRaceThemes(races.get(0));
 		
@@ -202,22 +205,31 @@ public class Nation {
 				races.get(1).addCommand(Generic.listToString(args));
 			}
 		}
-		
 
-		
-
-		
+	}
+	
+	
+	private void generateMagesAndPriests()
+	{
 		// Mages and priests
 		MageGenerator mageGen = new MageGenerator(nationGen, this);
 		comlists.get("mages").addAll(mageGen.generateMages());
 		comlists.get("priests").addAll(mageGen.generatePriests());
 		mageGen = null;
-
+	}
+	
+	private void generateTroops()
+	{
 		// Troops
 		RosterGenerator g = new RosterGenerator(nationGen, this);
 		g.execute();
 		g = null;
+		System.gc();
 		
+	}
+	
+	private void generateSacreds()
+	{
 		//// Sacreds and elites
 		SacredGenerator sacGen = new SacredGenerator(nationGen, this);
 		List<Unit> sacreds = new ArrayList<Unit>();
@@ -317,8 +329,12 @@ public class Nation {
 		if(sacreds.size() > 0)
 			unitlists.put("sacreds", sacreds);
 		sacGen = null;
+		System.gc();
 		
-
+	}
+	
+	private void generateScouts()
+	{
 		// Scouts
 		
 		ScoutGenerator scoutgen = new ScoutGenerator(nationGen, this);
@@ -328,7 +344,12 @@ public class Nation {
 		else if(races.get(1).hasRole("scout") && !races.get(1).tags.contains("#no_scouts"))
 			comlists.get("scouts").add(scoutgen.generateScout(races.get(1)));
 		scoutgen = null;
-		
+		System.gc();
+	}
+	
+	private void generateSpecialComs()
+	{
+
 		// Special commanders
 
 		double specialcomchance = 0.05;
@@ -340,44 +361,52 @@ public class Nation {
 			SpecialCommanderGenerator scg = new SpecialCommanderGenerator(this, nationGen);
 			scg.generate();
 			scg = null;
+			System.gc();
 		}
-
-
+	}
+	
+	private void generateGods()
+	{
 		// Gods
 		GodGen gg = new GodGen(this);
 		this.gods.addAll(gg.giveGods());
 		gg = null;
-		
+	}
+	
+	private void getForts()
+	{
+		ChanceIncHandler chandler = new ChanceIncHandler(this);
+
 		// Forts
 		List<Filter> possibleForts = ChanceIncHandler.retrieveFilters("forts", "default_forts", nationGen.miscdef, null, races.get(0));
 		possibleForts = ChanceIncHandler.getFiltersWithType("era " + era, possibleForts);
 		Filter forts = chandler.getRandom(possibleForts);
 		this.commands.addAll(forts.commands);
-		
+	}
+	
+	private void generateHeroes()
+	{
 		// Heroes
 		
 		HeroGenerator hg = new HeroGenerator(nationGen, this);
 		int heroes = 1 + random.nextInt(3); // 1-3
 		this.heroes.addAll(hg.generateHeroes(heroes));
 		hg = null;
-		
-		// Nation wide filters
-		int count = 0;
-		if(random.nextDouble() < 0.33)
-		{
-			count++;
-			if(random.nextDouble() < 0.33)
-				count++;
-		}
-
-		applyNationWideFilter(count);
-		
-
+		System.gc();
+	}
+	
+	
+	private void generateComs()
+	{
 		// Commanders
 		CommanderGenerator comgen = new CommanderGenerator(nationGen, this);
 		comgen.generateComs();
 		comgen = null;
+		System.gc();
+	}
 
+	private void generateMonsters()
+	{
 		
 		// Monsters
 		double monsterchance = 0.05;
@@ -395,29 +424,35 @@ public class Nation {
 			}
 			mGen = null;
 		}
-		
-		// Sites
-		SiteGenerator.generateSites(this);
+		System.gc();
+	}
 	
+	private void generateSpells()
+	{
 		// Spells
 		SpellGen spellgenerator = new SpellGen(this.nationGen, this);
 		spellgenerator.execute();
-		
-		// Nation filters
-		// Being replaced by addNationThemes() system as of 16.2.2016.
-		// Still here in case reverting is needed.
-		//
-		// addFilters();
-		
+	}
+	
+	private void generateFlag()
+	{
 		// Flag
 		FlagGen fg = new FlagGen(this);
 		this.flag = fg.generateFlag(this);
 		fg = null;
 		
+	}
+	
+	private void getStartAffinity()
+	{
+		ChanceIncHandler chandler = new ChanceIncHandler(this);
+
 		// Start affinity
 		int cycles = 2;
 		
 		List<Filter> posaff = ChanceIncHandler.retrieveFilters("startaffinities", "startaffinities", nationGen.miscdef, null, races.get(0));
+
+		
 		Filter startaff = null;
 		while(cycles > 0)
 		{
@@ -434,13 +469,13 @@ public class Nation {
 			
 			cycles--;
 		}
-		
-		
-		
-		// Finalizing
-		finalizeUnits();
+		posaff = null;
+		System.gc();
+	}
 	
-		
+	
+	private void finalizeShapeShifts()
+	{
 		List<ShapeChangeUnit> sul = new ArrayList<ShapeChangeUnit>();
     	List<Unit> units = new ArrayList<Unit>();
     	for(List<Unit> list : this.comlists.values())
@@ -459,9 +494,33 @@ public class Nation {
         {	
     			su.polish(nationGen, this);
         }
+	}
+	
+	public void generate()
+	{
+		
+		getColors();
+		getRaces();
+		generateMagesAndPriests();
+		generateTroops();
+		generateSacreds();
+		generateScouts();
+		generateSpecialComs();
+		generateGods();
+		getForts();
+		generateHeroes();
+		applyNationWideFilter();
+		generateComs();
+		generateMonsters();
+		SiteGenerator.generateSites(this);
+		generateSpells();
+		generateFlag();	
+		getStartAffinity();
+		finalizeUnits();
+		finalizeShapeShifts();
+
         
-        chandler = null;
-       
+
 	}
 	
 	
@@ -691,9 +750,16 @@ public class Nation {
 	}
 
 	
-	private void applyNationWideFilter(int count)
+	private void applyNationWideFilter()
 	{
-
+		// Nation wide filters
+		int count = 0;
+		if(random.nextDouble() < 0.33)
+		{
+			count++;
+			if(random.nextDouble() < 0.33)
+				count++;
+		}
 		
 		List<Filter> possibles = ChanceIncHandler.retrieveFilters("nationwidefilters", "default_nationwidefilters", nationGen.filters, null, races.get(0));
 
@@ -1136,7 +1202,6 @@ public class Nation {
 					{
 						for(Unit u : unitlists.get(str + "-" + i))
 						{
-							boolean foreign = false;
 							for(String tag : foreigntags)
 								if(u.tags.contains(tag))
 								{
@@ -1146,7 +1211,6 @@ public class Nation {
 									}
 									else
 										tw.println("#" + tag+ " " + u.id);
-									foreign = true;
 								}
 							
 							if(!u.caponly)
@@ -1162,7 +1226,6 @@ public class Nation {
 					if(listname.startsWith(str))
 						for(Unit u : unitlists.get(listname))
 						{
-							boolean foreign = false;
 							for(String tag : foreigntags)
 								if(u.tags.contains(tag))
 								{
@@ -1170,7 +1233,6 @@ public class Nation {
 										tw.println("#" + tag.substring(0, tag.length() - 3) + "com " + u.id);
 									else
 										tw.println("#" + tag+ " " + u.id);
-									foreign = true;
 								}
 							
 							if(!u.caponly)

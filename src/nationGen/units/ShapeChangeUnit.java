@@ -97,14 +97,12 @@ public class ShapeChangeUnit extends Unit {
 		}
 		
 
-		boolean hasName = false;
 		
 		// Copy commands from this form
 		for(Command c : thisForm.commands)
 		{
 			if(c.command.equals("#name") && c.args.size() > 0)
 			{
-				hasName = true;
 				c.args.set(0, "\"" + Generic.capitalize(c.args.get(0).replaceAll("\"", "")) + "\"");
 				name = new Name();
 				

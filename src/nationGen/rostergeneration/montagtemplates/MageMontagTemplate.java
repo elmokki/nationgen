@@ -7,7 +7,6 @@ import nationGen.NationGen;
 import nationGen.entities.Pose;
 import nationGen.magic.MageGenerator;
 import nationGen.nation.Nation;
-import nationGen.rostergeneration.TroopGenerator;
 import nationGen.units.Unit;
 
 public class MageMontagTemplate extends MontagTemplate {

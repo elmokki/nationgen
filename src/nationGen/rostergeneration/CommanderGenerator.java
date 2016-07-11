@@ -9,11 +9,7 @@ import com.elmokki.Generic;
 import nationGen.NationGen;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
-import nationGen.entities.MagicFilter;
-import nationGen.entities.Race;
 import nationGen.items.Item;
-import nationGen.magic.MagicPattern;
-import nationGen.magic.RandomEntry;
 import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
 import nationGen.nation.Nation;
@@ -121,7 +117,7 @@ public class CommanderGenerator extends TroopGenerator {
 		
 		// Check to see if #secondaryracecommand is going to add #magicbeing, etc. to secondary race troops when they're finalized
 		
-		List<Command> all = new ArrayList<Command>();
+		//List<Command> all = new ArrayList<Command>();
 		Boolean secondaryMagicBeings = false;
 		Boolean secondaryDemons = false;
 		Boolean secondaryUndead = false;
@@ -685,7 +681,6 @@ public class CommanderGenerator extends TroopGenerator {
 			}
 		}
 		
-		Race race = u.race;
 		
 		Random r = nation.random;
 				

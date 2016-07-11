@@ -50,7 +50,6 @@ public class DatabaseConverter {
 	 */
 	private static void addArmorProt(Dom3DB db)
 	{
-		Dom3DB attr = null;
 
 		
         Scanner file = null;

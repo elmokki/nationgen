@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.elmokki.Drawing;
-import com.elmokki.Generic;
 
 import nationGen.NationGen;
 import nationGen.entities.Entity;

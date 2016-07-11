@@ -9,7 +9,6 @@ import com.elmokki.Generic;
 import nationGen.NationGen;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
-import nationGen.entities.MagicFilter;
 import nationGen.misc.Command;
 
 

@@ -19,18 +19,15 @@ import java.util.Random;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
-import nationGen.entities.AbilityTemplate;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
-import nationGen.entities.Theme;
 import nationGen.items.Item;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
 import nationGen.nation.Nation;
-import nationGen.rostergeneration.montagtemplates.TroopMontagTemplate;
 import nationGen.units.Unit;
 
 public class TroopGenerator {
