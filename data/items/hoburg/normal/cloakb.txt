@@ -28,8 +28,28 @@
 #enditem
 
 #newitem
+#name "cloak 3"
+#basechance 4
+#gameid -1
+#sprite /graphics/hoburg/cloak/cloak3_b.png
+#recolormask self
+#tag "eliteversion 'cloak 3 elite'"
+#needs cloakf "cloak 3"
+#enditem
+
+#newitem
+#name "cloak 3 elite"
+#basechance 4
+#gameid -1
+#sprite /graphics/hoburg/cloak/cloak3_b.png
+#recolormask self
+#needs cloakf "cloak 3 elite"
+#theme "elite"
+#enditem
+
+#newitem
 #name "boar cloak"
-#basechance 1
+#basechance 1.5
 #gameid -1
 #sprite /graphics/hoburg/cloak/bearcloak_b.png
 #needs cloakf "boar cloak"
@@ -40,7 +60,7 @@
 
 #newitem
 #name "wolf cloak"
-#basechance 1
+#basechance 1.5
 #gameid -1
 #sprite /graphics/hoburg/cloak/wolfcloak_b.png
 #needs cloakf "wolf cloak"

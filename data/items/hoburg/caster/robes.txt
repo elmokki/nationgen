@@ -100,6 +100,86 @@
 #theme "occidental"
 #enditem
 
+#newitem
+#id necromantrobe_black
+#gameid 158
+#sprite /graphics/hoburg/bodyarmor/robes/necromantrobe.png
+#tag "tier 1"
+#theme "boreal"
+#theme "imperial"
+#theme "oriental"
+#armor
+#tag "eliteversion necromantrobe_dull"
+#theme "death"
+#enditem
+
+#newitem
+#id necromantrobe_dull
+#gameid 158
+#sprite /graphics/hoburg/bodyarmor/robes/necromantrobe.png
+#recolormask /graphics/hoburg/bodyarmor/robes/necromantrobe_dull_recolormask.png
+#tag "tier 2"
+#theme "boreal"
+#theme "imperial"
+#theme "oriental"
+#armor
+#tag "eliteversion necromantrobe_dull"
+#theme "death"
+#enditem
+
+#newitem
+#id necromantrobe
+#gameid 158
+#sprite /graphics/hoburg/bodyarmor/robes/necromantrobe.png
+#recolormask self
+#tag "tier 3"
+#theme "boreal"
+#theme "imperial"
+#theme "oriental"
+#armor
+#theme "death"
+#enditem
+
+#newitem
+#id wightrobe_dull
+#gameid 158
+#sprite /graphics/hoburg/bodyarmor/robes/wightrobe.png
+#recolormask /graphics/hoburg/bodyarmor/robes/wightrobe_dull_recolormask.png
+#armor
+#tag "tier 1"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#tag "eliteversion wightrobe"
+#enditem
+
+#newitem
+#id wightrobe
+#gameid 158
+#sprite /graphics/hoburg/bodyarmor/robes/wightrobe.png
+#recolormask self
+#armor
+#tag "tier 2"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#tag "eliteversion wightrobe_fancy"
+#enditem
+
+#newitem
+#id wightrobe_fancy
+#gameid 158
+#sprite /graphics/hoburg/bodyarmor/robes/wightrobe_fancy.png
+#recolormask /graphics/hoburg/bodyarmor/robes/wightrobe_fancy_recolormask.png
+#armor
+#tag "tier 3"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#enditem
 
 #newitem
 #id evilrobe1a
@@ -160,7 +240,7 @@
 
 #newitem
 #id imperialrobe1
-#gameid 158
+#gameid 159
 #sprite /graphics/hoburg/bodyarmor/robes/imperialrobe-mid.png
 #recolormask /graphics/hoburg/bodyarmor/robes/imperialrobe-mid_recolormask.png
 #armor
@@ -173,7 +253,7 @@
 
 #newitem
 #id imperialrobe2
-#gameid 158
+#gameid 159
 #sprite /graphics/hoburg/bodyarmor/robes/imperialrobe-low.png
 #recolormask /graphics/hoburg/bodyarmor/robes/imperialrobe-low_recolormask.png
 #armor
@@ -187,11 +267,23 @@
 
 #newitem
 #id imperialrobe3
-#gameid 158
+#gameid 159
 #sprite /graphics/hoburg/bodyarmor/robes/imperialrobe-high.png
 #recolormask /graphics/hoburg/bodyarmor/robes/imperialrobe-high_recolormask.png
 #armor
 #tag "tier 3"
 #theme "boreal"
 #theme "oriental"
+#enditem
+
+#newitem
+#id vampire_breeches
+#gameid 5
+#sprite /graphics/hoburg/bodyarmor/robes/vampirebreeches.png
+#recolormask /graphics/hoburg/bodyarmor/robes/vampirebreeches_recolormask.png
+#armor
+#tag "tier 3"
+#theme "boreal"
+#theme "oriental"
+#theme "advanced"
 #enditem
