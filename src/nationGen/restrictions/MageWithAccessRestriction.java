@@ -83,18 +83,7 @@ public class MageWithAccessRestriction extends TwoListRestrictionWithComboBox<St
 		
 	
 
-		
-		int[] nonrandom_paths = new int[9];
-		for(Unit u : tempmages)
-		{						
-				int[] picks = u.getMagicPicks(true);
-				for(int j = 0; j < 9; j++)
-				{
-					if(nonrandom_paths[j] < picks[j])
-						nonrandom_paths[j] = picks[j];
-				}	
-		}
-		
+
 		if(neededPaths.size() == 0)
 		{
 			System.out.println("Magic: Mage with Access nation restriction has no paths set!");
