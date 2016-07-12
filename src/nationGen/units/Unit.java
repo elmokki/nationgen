@@ -1125,14 +1125,7 @@ public class Unit {
 					c.args.set(0, "1");
 				
 
-				// Second shapes
-				if(c.command.contains("shape") && !nationGen.hasShapeShift(c.args.get(0)))
-				{
-					if(c.command.equals("#firstshape") && u.tags.contains("montagunit"));
-					else
-						nationGen.handleShapeshift(c, u);
-				}
-				
+		
 				// Weapons
 				if(c.command.equals("#weapon"))
 				{	

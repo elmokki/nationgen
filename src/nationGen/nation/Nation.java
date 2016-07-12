@@ -474,27 +474,7 @@ public class Nation {
 	}
 	
 	
-	private void finalizeShapeShifts()
-	{
-		List<ShapeChangeUnit> sul = new ArrayList<ShapeChangeUnit>();
-    	List<Unit> units = new ArrayList<Unit>();
-    	for(List<Unit> list : this.comlists.values())
-    		units.addAll(list);
-    	for(List<Unit> list : this.unitlists.values())
-    		units.addAll(list);
-    	units.addAll(this.heroes);
-    	
-        for(ShapeChangeUnit su : nationGen.forms)
-        {
-        	if(units.contains(su.otherForm))
-        		sul.add(su);
-        }
-        
-        for(ShapeChangeUnit su : sul)
-        {	
-    			su.polish(nationGen, this);
-        }
-	}
+
 	
 	public void generate()
 	{
@@ -516,8 +496,7 @@ public class Nation {
 		generateSpells();
 		generateFlag();	
 		getStartAffinity();
-		finalizeUnits();
-		finalizeShapeShifts();
+		//finalizeUnits();
 
         
 
@@ -689,7 +668,7 @@ public class Nation {
 		
 	}
 	
-	private void finalizeUnits()
+	public void finalizeUnits()
 	{
 		List<Command> conditional = new ArrayList<Command>();
 		
@@ -1336,7 +1315,21 @@ public class Nation {
 
 		return units;
 	}
-	
+
+	public List<Unit> generateUnitList()
+	{
+		List<Unit> units = new ArrayList<Unit>();
+		
+		Iterator<List<Unit>> itr = comlists.values().iterator();
+		while(itr.hasNext())
+			units.addAll(itr.next());
+		
+		itr = unitlists.values().iterator();
+		while(itr.hasNext())
+			units.addAll(itr.next());
+
+		return units;
+	}
 	
 	public List<Unit> generateComList()
 	{
