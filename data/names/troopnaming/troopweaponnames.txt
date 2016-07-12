@@ -490,7 +490,6 @@
 #new 
 #name "boulder thrower"
 #basechance 0
-
 #type weapon
 #chanceinc slotname weapon boulder 1
 #end
@@ -498,25 +497,27 @@
 #new 
 #name "rock thrower"
 #basechance 0
-
 #type weapon
 #chanceinc slotname weapon large_rock 1
 #end
 
+-- Ranged only javelins
 #new 
 #name "javelin thrower"
 #basechance 0
-
 #type weapon
 #chanceinc slotname weapon agarthan_javelin 1
+#chanceinc slotname weapon javelin 1
+#chanceinc pose not ranged *0
 #end
 
 #new 
 #name "javelineer"
 #basechance 0
-
 #type weapon
 #chanceinc slotname weapon agarthan_javelin 0.5
+#chanceinc slotname weapon javelin 0.5
+#chanceinc pose not ranged *0
 #end
 
 
