@@ -117,7 +117,6 @@ public class SpellGen {
 			}
 		}
 		
-		ng.handleSpells(n.spells, n);
 		
 	}
 }

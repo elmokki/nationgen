@@ -75,26 +75,7 @@ public class ShapeChangeUnit extends Unit {
 			}
 		}
 		
-		// Handle custom weapons
-		for(Command c : thisForm.commands)
-		{
-			// Weapons
-			if(c.command.equals("#weapon"))
-			{
-				String realarg = c.args.get(0);
-				if(realarg.contains(" "))
-					realarg = realarg.split(" ")[0];
-				
-				try
-				{
-					Integer.parseInt(realarg);
-				}
-				catch(Exception e)
-				{
-					c.args.set(0, n.getCustomItemId(c.args.get(0)) + "");
-				}
-			}
-		}
+	
 		
 
 		

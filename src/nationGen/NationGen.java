@@ -252,6 +252,10 @@ public class NationGen {
 				continue;
 			}
 			
+			
+			// Handle loose ends
+			this.polishNation(newnation);
+			
 			newnation.name = "Nation " + count;
 
 			System.gc();
@@ -707,6 +711,7 @@ public class NationGen {
 		}
 	}
 	
+	
 	public CustomItem getCustomItem(String name)
 	{
 		CustomItem citem = null;
@@ -813,8 +818,73 @@ public class NationGen {
 		return false;
 	}
 	
-	public void handleShapeshift(Command c, Unit u)
+	
+	private void polishNation(Nation n)
+	{
+		n.finalizeUnits();
+		handleShapeshifts(n);
+		handleSpells(n.spells, n);
+	}
+	
+	private void handleShapeshifts(Nation n)
+	{
+	       
+		List<Unit> units = n.generateUnitList();
+		units.addAll(n.heroes);
+		List<ShapeChangeUnit> sul = new ArrayList<ShapeChangeUnit>();
+
+			
+        for(ShapeChangeUnit su : forms)
+        {
+        	if(units.contains(su.otherForm))
+        		sul.add(su);
+        }
+        
+        for(ShapeChangeUnit su : sul)
+        {	
+    			su.polish(this, n);
+    		
+    			// Replace command
+    			for(Command c : su.thisForm.commands)
+    			{
+    				// Weapons
+    				if(c.command.equals("#weapon"))
+    				{
+    					String realarg = c.args.get(0);
+    					if(realarg.contains(" "))
+    						realarg = realarg.split(" ")[0];
+    					
+    					try
+    					{
+    						Integer.parseInt(realarg);
+    					}
+    					catch(Exception e)
+    					{
+    						c.args.set(0, getCustomItemId(c.args.get(0)) + "");
+    					}
+    				}
+    			}
+        }
+        
+ 
+		for(Unit u : units)
+			for(Command c : u.commands)
+				if(c.command.contains("shape") && !hasShapeShift(c.args.get(0)))
+				{
+					if(c.command.equals("#firstshape") && u.tags.contains("montagunit"));
+					else
+						handleShapeshift(c, u);
+				}
+		
+		
+
+	}
+	
+	private void handleShapeshift(Command c, Unit u)
 	{		
+
+		
+		
 		ShapeShift shift = null;
 		for(ShapeShift s : secondshapes)
 		{
