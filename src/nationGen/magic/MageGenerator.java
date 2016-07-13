@@ -10,7 +10,6 @@ import java.util.Random;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
-import nationGen.entities.AbilityTemplate;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.MagicFilter;
@@ -1351,7 +1350,7 @@ public class MageGenerator extends TroopGenerator {
 				
 
 				
-				List<String> body = new ArrayList<String>();	// Set a temporary null description for priests
+				//List<String> body = new ArrayList<String>();	// Set a temporary null description for priests
 				(new CommanderGenerator(this.nationGen, this.nation)).generateDescription(u, false, false, false);
 				//body.add();					
 		
@@ -2065,7 +2064,6 @@ public class MageGenerator extends TroopGenerator {
 	public List<List<Unit>> generateMageBases()
 	{
 
-		boolean primaryforeign = false;
 		
 		// PRIMARIES
 		Race race = nation.races.get(0);
@@ -2086,8 +2084,7 @@ public class MageGenerator extends TroopGenerator {
 		else if(!nation.races.get(0).hasRole("mage")) // This hopefully never happens since it can cause issues unless handled very delicately.
 			race = nation.races.get(1);
 		
-		if(race == nation.races.get(1))
-			primaryforeign = true;
+	
 		
 		int primaryamount = 1;
 		

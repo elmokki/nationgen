@@ -1,7 +1,5 @@
 package nationGen.rostergeneration;
 
-import java.time.ZonedDateTime;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -29,7 +27,6 @@ import java.util.Random;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
-import nationGen.entities.AbilityTemplate;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Pose;
@@ -40,7 +37,6 @@ import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
 import nationGen.nation.Nation;
-import nationGen.rostergeneration.TroopGenerator.Template;
 import nationGen.rostergeneration.montagtemplates.MontagTemplate;
 import nationGen.units.Unit;
 

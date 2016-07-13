@@ -17,7 +17,6 @@ import nationGen.items.Item;
 
 
 
-import nationGen.nation.Nation;
 
 import com.elmokki.Dom3DB;
 import com.elmokki.Generic;

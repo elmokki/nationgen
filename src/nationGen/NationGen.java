@@ -30,26 +30,19 @@ import nationGen.entities.Flag;
 import nationGen.entities.MagicItem;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
-import nationGen.entities.AbilityTemplate;
 import nationGen.entities.Theme;
 import nationGen.items.CustomItem;
 import nationGen.items.Item;
 import nationGen.magic.MagicPattern;
 import nationGen.magic.Spell;
 import nationGen.misc.Command;
-import nationGen.misc.ItemSet;
 import nationGen.misc.PreviewGenerator;
 import nationGen.misc.ResourceStorage;
 import nationGen.misc.Site;
-import nationGen.naming.EpithetGenerator;
-import nationGen.naming.MageNamer;
 import nationGen.naming.NamePart;
 import nationGen.naming.NameGenerator;
+import nationGen.naming.NamingHandler;
 import nationGen.naming.NationAdvancedSummarizer;
-import nationGen.naming.NationDescriber;
-import nationGen.naming.PriestNamer;
-import nationGen.naming.SacredNamer;
-import nationGen.naming.TroopNamer;
 import nationGen.nation.Nation;
 import nationGen.restrictions.NationRestriction;
 import nationGen.units.ShapeChangeUnit;
@@ -156,7 +149,8 @@ public class NationGen {
 			else
 				this.weapondb.addToMap(ci.name, ci.getHashMap());
 
-		
+		System.gc();
+
 		
 		//this.writeDebugInfo();
 	}
@@ -258,6 +252,10 @@ public class NationGen {
 				continue;
 			}
 			
+			
+			// Handle loose ends
+			this.polishNation(newnation);
+			
 			newnation.name = "Nation " + count;
 
 			System.gc();
@@ -269,7 +267,6 @@ public class NationGen {
 		
 
 
-		
 
 		System.out.print("Giving ids");
 		for(Nation n : nations)
@@ -316,20 +313,19 @@ public class NationGen {
 		
 		System.out.print("Naming things");
 		
-		MageNamer mNamer = new MageNamer(this);
-		PriestNamer pNamer = new PriestNamer(this);
-		SacredNamer sNamer = new SacredNamer();
-		TroopNamer tnamer = new TroopNamer();
+
 
 		NameGenerator nGen = new NameGenerator(this);
+		NamingHandler nHandler = new NamingHandler(this);
 		for(Nation n : nations)
 		{
+			
 			n.name = nGen.generateNationName(n.races.get(0), n);
 			n.nationalitysuffix = nGen.getNationalitySuffix(n, n.name);
 
 			
 			// troops
-			tnamer.execute(n);
+			nHandler.nameTroops(n);
 			
 			// sites
 			for(Site s : n.sites)
@@ -337,28 +333,26 @@ public class NationGen {
 	
 	
 			// mages 
-			mNamer.execute(n);
+			nHandler.nameMages(n);
 			
 			// priests
-			pNamer.execute(n);
+			nHandler.namePriests(n);
 			
 			// sacreds and elites
-			sNamer.nameSacreds(n);
+			nHandler.nameSacreds(n);
 
 			// Epithet
-			EpithetGenerator epiGen = new EpithetGenerator(this);
-			epiGen.giveEpithet(n);
+			nHandler.giveEpithet(n);
 			
 			// Unit descriptions
-			new NationDescriber(n);
+			nHandler.describeNation(n);
 			
 			// Summaries
 			n.summary.update();
 			
 			System.out.print(".");		
 		}
-		
-
+		nHandler = null;
 		
 		// Get mod name if not custom
 		if(modname.equals(""))
@@ -369,7 +363,8 @@ public class NationGen {
 			else
 				modname = nations.get(0).name;
 		}
-		
+		nGen = null;
+
 		System.out.println(" Done!");
 
 		
@@ -379,6 +374,7 @@ public class NationGen {
 		} catch (IOException e) {
 			System.out.println("Error writing mod: " + e.getMessage());
 		}
+
 		
         System.out.println("------------------------------------------------------------------");
         System.out.println("Finished generating " + amount + " nations to file nationgen_" + filename + ".dm!");
@@ -506,6 +502,32 @@ public class NationGen {
 				System.out.println(r.name + ": " + (r.basechance / total));
 	}
 
+	private void writeDescriptions(PrintWriter tw, List<Nation> nations, String modname) throws IOException
+	{
+		NationAdvancedSummarizer nDesc = new NationAdvancedSummarizer(armordb, weapondb);
+		if(settings.get("advancedDescs") == 1.0)
+			nDesc.writeAdvancedDescriptionFile(nations, modname);
+		if(settings.get("basicDescs") == 1.0)
+			nDesc.writeDescriptionFile(nations, modname);
+		nDesc = null;
+		
+	}
+	
+	private void drawPreviews(List<Nation> nations, String dir) throws IOException
+	{
+        if(settings.get("drawPreview") == 1)
+        {
+
+    		System.out.print("Drawing previews");
+			PreviewGenerator pGen = new PreviewGenerator();
+			for(Nation n : nations)
+			{
+				pGen.savePreview(n, "./mods/" + dir + "/preview_" + n.nationid + "_" + n.name.toLowerCase().replaceAll(" ", "_") + ".png");
+				System.out.print(".");
+			}
+			System.out.println(" Done!");
+		}
+	}
 	
 	public void write(List<Nation> nations, String modname) throws IOException
 	{
@@ -514,14 +536,10 @@ public class NationGen {
 		new File("./mods/" + dir).mkdir();
 		
 		FileWriter fstream = new FileWriter("./mods/nationgen_" + modname.toLowerCase().replaceAll(" ", "_") + ".dm");
-		PrintWriter tw = new PrintWriter(fstream);
+		PrintWriter tw = new PrintWriter(fstream, true);
 		
 		// Descriptions
-		NationAdvancedSummarizer nDesc = new NationAdvancedSummarizer(armordb, weapondb);
-		if(settings.get("advancedDescs") == 1.0)
-			nDesc.writeAdvancedDescriptionFile(nations, modname);
-		if(settings.get("basicDescs") == 1.0)
-			nDesc.writeDescriptionFile(nations, modname);
+		writeDescriptions(tw, nations, modname);
 		
 		// Description!
 		tw.println("-- NationGen - " + modname);
@@ -613,18 +631,7 @@ public class NationGen {
 		System.out.println(" Done!");
         
         // Draw previews
-        if(settings.get("drawPreview") == 1)
-        {
-
-    		System.out.print("Drawing previews");
-			PreviewGenerator pGen = new PreviewGenerator();
-			for(Nation n : nations)
-			{
-				pGen.savePreview(n, "./mods/" + dir + "/preview_" + n.nationid + "_" + n.name.toLowerCase().replaceAll(" ", "_") + ".png");
-				System.out.print(".");
-			}
-			System.out.println(" Done!");
-		}
+		drawPreviews(nations, dir);
         
 		if(settings.get("hidevanillanations") == 1)
 			hideVanillaNations(tw, nations.size());
@@ -633,6 +640,7 @@ public class NationGen {
 		
         tw.flush();
         tw.close();
+        fstream.close();
         
         // Displays mage names
         /*
@@ -702,6 +710,7 @@ public class NationGen {
 			//tw.println("");
 		}
 	}
+	
 	
 	public CustomItem getCustomItem(String name)
 	{
@@ -809,8 +818,73 @@ public class NationGen {
 		return false;
 	}
 	
-	public void handleShapeshift(Command c, Unit u)
+	
+	private void polishNation(Nation n)
+	{
+		n.finalizeUnits();
+		handleShapeshifts(n);
+		handleSpells(n.spells, n);
+	}
+	
+	private void handleShapeshifts(Nation n)
+	{
+	       
+		List<Unit> units = n.generateUnitList();
+		units.addAll(n.heroes);
+		List<ShapeChangeUnit> sul = new ArrayList<ShapeChangeUnit>();
+
+			
+        for(ShapeChangeUnit su : forms)
+        {
+        	if(units.contains(su.otherForm))
+        		sul.add(su);
+        }
+        
+        for(ShapeChangeUnit su : sul)
+        {	
+    			su.polish(this, n);
+    		
+    			// Replace command
+    			for(Command c : su.thisForm.commands)
+    			{
+    				// Weapons
+    				if(c.command.equals("#weapon"))
+    				{
+    					String realarg = c.args.get(0);
+    					if(realarg.contains(" "))
+    						realarg = realarg.split(" ")[0];
+    					
+    					try
+    					{
+    						Integer.parseInt(realarg);
+    					}
+    					catch(Exception e)
+    					{
+    						c.args.set(0, getCustomItemId(c.args.get(0)) + "");
+    					}
+    				}
+    			}
+        }
+        
+ 
+		for(Unit u : units)
+			for(Command c : u.commands)
+				if(c.command.contains("shape") && !hasShapeShift(c.args.get(0)))
+				{
+					if(c.command.equals("#firstshape") && u.tags.contains("montagunit"));
+					else
+						handleShapeshift(c, u);
+				}
+		
+		
+
+	}
+	
+	private void handleShapeshift(Command c, Unit u)
 	{		
+
+		
+		
 		ShapeShift shift = null;
 		for(ShapeShift s : secondshapes)
 		{

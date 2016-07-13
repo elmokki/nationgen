@@ -7,7 +7,6 @@ import java.util.List;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
-import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.misc.Command;
 

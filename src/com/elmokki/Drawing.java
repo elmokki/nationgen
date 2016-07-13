@@ -192,17 +192,7 @@ public class Drawing {
 	    LookupTable lookupTable = new ShortLookupTable(0, data);
 	    return new LookupOp(lookupTable, null);
 	}
-	
-	private static short limitRange(int c)
-	{
-		if(c > 255)
-			c = 255;
-		if(c < 1)
-			c = 1;
-		
-		return (short)c;
-	}
-	
+
 	
 
 	private static LookupOp createRemoveBlackOp() {

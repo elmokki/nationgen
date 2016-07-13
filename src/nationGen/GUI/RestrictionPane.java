@@ -3,7 +3,6 @@ package nationGen.GUI;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -28,6 +27,7 @@ import javax.swing.event.ListSelectionListener;
 import nationGen.NationGen;
 import nationGen.restrictions.MagicAccessRestriction;
 import nationGen.restrictions.MageWithAccessRestriction;
+import nationGen.restrictions.MagicDiversityRestriction;
 import nationGen.restrictions.NationThemeRestriction;
 import nationGen.restrictions.NoPrimaryRaceRestriction;
 import nationGen.restrictions.NoUnitOfRaceRestriction;
@@ -69,6 +69,7 @@ public class RestrictionPane extends JPanel implements ActionListener, ListSelec
 		// Please keep this is alphabetic order
 		NationRestriction[] stuff = {
 			new MagicAccessRestriction(ng), 		// "Magic: Access"
+			new MagicDiversityRestriction(ng),		// "Magic: Diversity"
 			new MageWithAccessRestriction(ng),		// "Magic: Mage with access"
 			new NationThemeRestriction(ng),
 			new NoPrimaryRaceRestriction(ng),

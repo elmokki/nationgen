@@ -6,7 +6,6 @@ import java.util.List;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
-import nationGen.magic.Spell;
 import nationGen.misc.Command;
 
 public class Filter extends Entity {
