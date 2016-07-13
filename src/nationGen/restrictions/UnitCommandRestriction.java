@@ -69,7 +69,6 @@ public class UnitCommandRestriction extends TextBoxListRestriction {
 			pass = checkUnits(n.generateUnitList("sacred"));
 		
 		
-		System.out.println(pass);
 		return pass;
 	}
 	
