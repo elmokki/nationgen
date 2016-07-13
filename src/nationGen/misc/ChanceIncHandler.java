@@ -1543,6 +1543,18 @@ public class ChanceIncHandler {
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 				}
 				
+				canIncrease = false;
+				if(args.get(0).equals("secondaryrace") && args.size() >= 3)
+				{
+					boolean not = args.contains("not");
+					if(n.races.size() > 1 && n.races.get(1).name.toLowerCase().equals(args.get(args.size() - 2).toLowerCase()))
+					{
+						canIncrease = true;
+					}
+					if(canIncrease != not)
+						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+				}
+				
 				// racetag
 				canIncrease = false;
 				if(args.get(0).equals("racetag") && args.size() >= 3 && n.races.size() > 0)
