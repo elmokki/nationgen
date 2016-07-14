@@ -1,3 +1,26 @@
+-------- Agarthan thralls
+#newpose
+#name "pale one thrall"
+#role "infantry"
+
+#basechance 0
+#chanceinc "secondaryrace 'Pale One' 1"
+#chanceinc "hastheme illithid_hybrid *5"
+#chanceinc "hastheme illithid *10"
+
+#freetemplatefilter slavetemplate lobo
+#maxunits 1
+
+#load basesprite /data/items/illithid/slave/thrall_agarthan.txt
+#load shadow /data/items/agarthan/generic/shadow.txt
+#load armor /data/items/illithid/slave/armor_thrall.txt
+#load weapon /data/items/illithid/slave/weapon_thrall.txt
+
+#forcedname "Pale One Thrall"
+
+#endpose
+
+
 -------- Atlantian thralls
 #newpose
 #name "atlantian thrall"
@@ -14,7 +37,9 @@
 #load basesprite /data/items/illithid/slave/thrall_atlantian.txt
 #load shadow /data/items/illithid/slave/shadow_atlantian.txt
 #load armor /data/items/illithid/slave/armor_thrall.txt
-#load weapon /data/items/illithid/slave/claw.txt
+#load weapon /data/items/illithid/slave/weapon_thrall.txt
+
+#forcedname "Atlantian Thrall"
 
 #endpose
 
@@ -35,7 +60,9 @@
 #load basesprite /data/items/illithid/slave/thrall_muuch.txt
 #load shadow /data/items/illithid/slave/shadow_atlantian.txt
 #load armor /data/items/illithid/slave/armor_thrall.txt
-#load weapon /data/items/illithid/slave/claw.txt
+#load weapon /data/items/illithid/slave/weapon_thrall.txt
+
+#forcedname "Muuch Thrall"
 
 #endpose
 
@@ -61,6 +88,8 @@
 #load basesprite /data/items/illithid/slave/thrall_human.txt
 #load shadow /data/items/illithid/slave/shadow_human.txt
 #load armor /data/items/illithid/slave/armor_thrall.txt
-#load weapon /data/items/illithid/slave/claw.txt
+#load weapon /data/items/illithid/slave/weapon_thrall.txt
+
+#forcedname "Human Thrall"
 
 #endpose
