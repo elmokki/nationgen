@@ -270,7 +270,7 @@ public class NationAdvancedSummarizer {
 			tw.println("Montag units:");
 			tw.println("--------------");
 			printUnits(tw, "montagmages", "Mages", n);
-			printUnits(tw, "montagsacreds", "Sacreds", n);
+			printUnits(tw, "montagsacreds", "Sacreds and Elites", n);
 			printUnits(tw, "montagtroops", "Troops", n);
 			tw.println();
 			

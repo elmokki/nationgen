@@ -26,9 +26,31 @@
 #command "#ap *0.75"
 #command "#mind"
 #command "#magicbeing"
-#command "#descr 'These unfortunate beings are controlled by parasitic vines that dull their wills and senses. '"
+#description "These unfortunate beings are controlled by parasitic vines that dull their wills and senses. "
 #theme parasitic_vines
 #cannot_be_commander
 #onlyfilter
 #theme podslave
+#end
+
+#new
+#name "lobo"
+#type lobo
+#basechance 0.001
+#command "#gcost *0.5"
+#command "#hp *1.1"
+#command "#mr *0.5"
+#adjustmentcommand "#mor 50"
+#command "#str +1"
+#command "#att -1"
+#command "#def -2"
+#command "#prec *0.5"
+#command "#mapmove 2"
+#command "#ap *0.75"
+#command "#mind"
+#command "#magicbeing"
+#description "Slaves whose minds have broken under mental abuse, they serve without thought or question. "
+#theme lobo
+#cannot_be_commander
+#onlyfilter
 #end

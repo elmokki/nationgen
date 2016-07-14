@@ -1,0 +1,85 @@
+#newitem
+#name "amazon thrall"
+#chanceinc "secondaryrace 'Amazon human' *1000"
+#gameid -1
+#sprite /graphics/illithid/slave/thrall_human_amazon.png
+#command "#gcost 10"
+#command "#hp 10"
+#command "#size 2"
+#command "#prot 0"
+#command "#mr 10"
+#command "#mor 50"
+#command "#str 9"
+#command "#att 10"
+#command "#def 10"
+#command "#prec 12"
+#command "#enc 3"
+#command "#ap 12"
+#command "#maxage 50"
+#command "#female"
+#needs shadow shadow_female
+#enditem
+
+#newitem
+#name "austral thrall"
+#chanceinc "secondaryrace 'Austral human' *1000"
+#gameid -1
+#sprite /graphics/illithid/slave/thrall_human_austral.png
+#command "#gcost 10"
+#command "#hp 10"
+#command "#size 2"
+#command "#prot 0"
+#command "#mr 10"
+#command "#mor 50"
+#command "#str 10"
+#command "#att 10"
+#command "#def 10"
+#command "#prec 10"
+#command "#enc 2"
+#command "#ap 13"
+#command "#maxage 50"
+#enditem
+
+#newitem
+#name "occidental thrall"
+#chanceinc "secondaryrace 'Advanced human' *1000"
+#chanceinc "secondaryrace 'Amazon human' 1000"
+#chanceinc "secondaryrace 'Boreal human' 1000"
+#chanceinc "secondaryrace 'Oriental human' 1000"
+#gameid -1
+#sprite /graphics/illithid/slave/thrall_human_occidental.png
+#command "#gcost 10"
+#command "#hp 10"
+#command "#size 2"
+#command "#prot 0"
+#command "#mr 10"
+#command "#mor 50"
+#command "#str 10"
+#command "#att 10"
+#command "#def 10"
+#command "#prec 10"
+#command "#enc 3"
+#command "#ap 12"
+#command "#maxage 50"
+#enditem
+
+#newitem
+#name "dynastic thrall"
+#chanceinc "secondaryrace 'Dynastic human' 1000"
+#gameid -1
+#sprite /graphics/illithid/slave/thrall_human_dynastic.png
+#command "#gcost 10"
+#command "#hp 10"
+#command "#size 2"
+#command "#prot 0"
+#command "#mr 10"
+#command "#mor 50"
+#command "#str 11"
+#command "#att 10"
+#command "#def 10"
+#command "#prec 10"
+#command "#enc 3"
+#command "#ap 10"
+#define "#fireres 5"
+#command "#maxage 50"
+#enditem
