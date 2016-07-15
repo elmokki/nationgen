@@ -183,17 +183,28 @@ public class TroopNamer {
 	
 	private void addNationalPrefix(List<Unit> units)
 	{
-
-
+		
 		for(Unit u : units)
 		{
 			String part = "";
-			if(!u.race.visiblename.equals(n.races.get(0).visiblename))
+			
+			// Horribly unclear conditional parses out as follows:
+			// 		Does the unit have a #subraceprefix? 
+			//			If so, do the primary race + themes have a (different) #raceprefix, or if there is no #raceprefix, is the visible name different from #subraceprefix?
+			//		Else, is the unit's visible name different than the primary race's visible name?
+			
+			if(Generic.containsTag(Generic.getAllUnitTags(u), "subraceprefix") && 
+						((!Generic.containsTag(Generic.getAllNationTags(n), "raceprefix") && !Generic.getTagValue(Generic.getAllUnitTags(u), "subraceprefix").equals(n.races.get(0).visiblename))
+								|| !Generic.getTagValue(Generic.getAllUnitTags(u), "subraceprefix").equals(Generic.getTagValue(Generic.getAllNationTags(n), "raceprefix"))))
+			{
+				part = Generic.getTagValue(Generic.getAllUnitTags(u), "subraceprefix");
+				u.name.setPrefixprefix(part);
+			}
+			else if(!u.race.visiblename.equals(n.races.get(0).visiblename))
 			{
 				part = u.race.visiblename;
 				u.name.setPrefixprefix(part);
 			}
-
 		}
 			
 	}
