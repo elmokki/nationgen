@@ -7,6 +7,7 @@
 #chanceinc slotname armor 'medium clockwork armor' 1
 #chanceinc slotname armor 'heavy clockwork armor' 1
 #prefix
+#neverredundant
 #end
 
 #new 
@@ -15,6 +16,7 @@
 #chanceinc slotname weapon standard 50
 #chanceinc slotname bonusweapon standard 50
 #chanceinc pose not infantry *0
+#neverredundant
 #end
 
 
@@ -24,6 +26,7 @@
 #basechance 0
 #themeinc thisitemslottag mount chariot 100
 #chanceinc pose not mounted *0
+#neverredundant
 #end
 
 
@@ -34,6 +37,7 @@
 #chanceinc slottag weapon 'mind' 1
 #chanceinc pose not ranged *0
 #prefix
+#neverredundant
 #end
 
 #new 
@@ -42,6 +46,7 @@
 #chanceinc slottag weapon 'soul' 1
 #chanceinc pose not ranged *0
 #prefix
+#neverredundant
 #end
 
 #new 
@@ -50,6 +55,7 @@
 #chanceinc slottag weapon 'spirit' 1
 #chanceinc pose not ranged *0
 #prefix
+#neverredundant
 #end
 
 #new 
@@ -58,4 +64,6 @@
 #chanceinc slottag weapon 'will' 1
 #chanceinc pose not ranged *0
 #prefix
+#neverredundant
+#neverredundant
 #end

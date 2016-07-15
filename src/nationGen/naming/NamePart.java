@@ -145,6 +145,10 @@ public class NamePart extends Filter {
 		part.weak = this.weak;
 		part.elements.addAll(this.elements);
 		part.minimumelements = this.minimumelements;
+		part.types.addAll(this.types);
+		part.tags.addAll(this.tags);
+		part.themes.addAll(this.themes);
+
 		return part;
 	}
 	

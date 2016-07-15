@@ -384,3 +384,13 @@ Uses this name instead if race/pose has given tag.
 
 #commandvariant <command> [positive/negative] <name>
 Uses this name instead if unit has given command. Positive/negative can be used to require a negative or a positive value for the command (such as #fireres)
+
+-- Troop naming
+#neverredundant 
+If this is on a troop name, it will not be removed (it may be replaced though). Meaningful only on prefix / prefixprefix for files that 
+are run in differentiation naming mode: weaponname and miscitemprefixes.
+
+#type <type>
+No two name parts of same type should appear
+
+
