@@ -78,7 +78,7 @@ public class TroopNamer {
 		alltroops.addAll(n.combineTroopsToList("ranged"));
 		alltroops.addAll(n.combineTroopsToList("montagtroops"));
 
-		
+	
 		// #forcedname
 		List<Unit> forcednames = new ArrayList<Unit>();
 		for(Unit u : alltroops)
@@ -90,6 +90,9 @@ public class TroopNamer {
 			u.name.setType(Generic.getTagValue(Generic.getAllUnitTags(u), "forcedname"));
 		}
 		
+		// Give special parts
+		setGuaranteedParts(alltroops, specialnames);
+		setGuaranteedParts(alltroops, specialprefixes);
 		
 		// Give misc guaranteed parts
 		setGuaranteedParts(alltroops, miscguaranteed);
@@ -100,13 +103,19 @@ public class TroopNamer {
 		parts.addAll(miscitemprefixes);
 		differentiateNames(alltroops, parts);
 		
-		// Give special parts
-		setGuaranteedParts(alltroops, specialnames);
-		setGuaranteedParts(alltroops, specialprefixes);
-		
+
 		// If we have overwritten a prefix we may want to differentiate infantry with weapon names
 		differentiateNames(n.combineTroopsToList("infantry"), weaponnames);
 		differentiateNames(n.combineTroopsToList("montagtroops"), weaponnames);
+		
+
+		// Remove as much as we can to keep things simple
+		removeRedundantParts(n.combineTroopsToList("infantry"));
+		removeRedundantParts(n.combineTroopsToList("mounted"));
+		removeRedundantParts(n.combineTroopsToList("ranged"));
+		removeRedundantParts(n.combineTroopsToList("montagtroops"));
+
+	
 
 		
 		// National prefix/suffix
@@ -117,6 +126,10 @@ public class TroopNamer {
 		addHeavyLightPrefix(n.combineTroopsToList("mounted"));
 		addHeavyLightPrefix(n.combineTroopsToList("ranged"));
 		addHeavyLightPrefix(n.combineTroopsToList("montagtroops"));
+		
+		// Nation name ("Ulmish" etc)
+		addNationPrefix(alltroops);
+				
 
 		
 		nameCommanders(n);
@@ -125,6 +138,14 @@ public class TroopNamer {
 	
 	
 
+	private void addNationPrefix(List<Unit> units)
+	{
+		for(Unit unit : units)
+		{
+			unit.name.setRankPrefix(Generic.capitalize(n.name) + n.nationalitysuffix);
+		}
+	}
+	
 
 	private void addHeavyLightPrefix(List<Unit> units)
 	{
@@ -137,13 +158,21 @@ public class TroopNamer {
 					if(unit.getTotalProt() < named.getTotalProt() && named.isHeavy())
 					{
 						String part = "Heavy";
-						named.name.setRankPrefix(part);
+						if(named.name.prefixprefix == null)
+							named.name.setPrefixprefix(part);
+						else
+							named.name.setPrefixprefixprefix(part);
 						break;
 					}
 					else if(unit.getTotalProt() > named.getTotalProt() && named.isLight())
 					{
 						String part = "Light";
-						named.name.setRankPrefix(part);
+						
+						if(named.name.prefixprefix == null)
+							named.name.setPrefixprefix(part);
+						else
+							named.name.setPrefixprefixprefix(part);
+						
 						break;
 					}
 
@@ -155,15 +184,10 @@ public class TroopNamer {
 	private void addNationalPrefix(List<Unit> units)
 	{
 
-	
-		
+
 		for(Unit u : units)
 		{
-
-			
 			String part = "";
-			
-	
 			if(!u.race.visiblename.equals(n.races.get(0).visiblename))
 			{
 				part = u.race.visiblename;
@@ -533,7 +557,8 @@ public class TroopNamer {
 							if(p2 != null && p2.types.contains(t))
 								pointlessParts.add(p);
 				
-
+				
+				
 				for(NamePart p : possibleParts)
 				{
 					
@@ -563,6 +588,8 @@ public class TroopNamer {
 					
 				possibleParts.removeAll(pointlessParts);
 				possibleParts.removeAll(u.name.getAsNamePartList());
+				
+				
 				// If we have possible parts, set one.
 				if(possibleParts.size() > 0)
 				{
@@ -581,12 +608,80 @@ public class TroopNamer {
 							setNamePart(u2, p);
 						}
 					}
+					
+					
 				}
 					
 				
 			}
 			
 		}
+	}
+	
+	private void removeRedundantParts(List<Unit> units)
+	{
+		
+		// Prefix prefix
+		for(Unit u : units)
+		{
+
+			if(u.name.prefixprefix == null)
+				continue;
+			
+			Name ntemp = u.name.getCopy();
+			ntemp.prefixprefix = null;
+			boolean canremove = true;
+			
+			for(Unit u2 : units)
+			{
+				Name ntemp2 = u2.name.getCopy();
+				ntemp2.prefixprefix = null;
+			
+				if(ntemp2.toString().equals(ntemp.toString()) && u != u2)
+				{
+					canremove = false;
+				}
+			}
+			if(canremove && !Generic.containsTag(u.name.prefixprefix.tags, "neverredundant"));
+			{
+				u.name.prefixprefix = null;
+			}
+			
+			
+		}
+		
+		
+		// Prefix
+		for(Unit u : units)
+		{
+
+			if(u.name.prefix == null)
+				continue;
+			
+			Name ntemp = u.name.getCopy();
+			ntemp.prefix = null;
+			boolean canremove = true;
+			
+			for(Unit u2 : units)
+			{
+				Name ntemp2 = u2.name.getCopy();
+				ntemp2.prefix = null;
+				
+				if(ntemp2.toString().equals(ntemp.toString())  && u != u2)
+				{
+					canremove = false;
+				}
+			}
+			if(canremove && !Generic.containsTag(u.name.prefix.tags, "neverredundant"))
+			{
+				u.name.prefix = null;
+			}
+			
+		}
+
+
+
+		
 	}
 	
 	private void setGuaranteedParts(List<Unit> units, List<NamePart> all)
@@ -614,7 +709,7 @@ public class TroopNamer {
 			if(part != null)
 			{
 				setNamePart(u, part);
-
+				
 			}
 			
 			

@@ -17,6 +17,7 @@ public class Name  {
 	public NamePart rankprefix;
 	public NamePart prefix;
 	public NamePart prefixprefix;
+	public NamePart prefixprefixprefix;
 	public NamePart suffixprefix;
 	public NamePart suffix;
 	
@@ -37,6 +38,10 @@ public class Name  {
 	public void setPrefixprefix(String str)
 	{
 		this.prefixprefix = NamePart.newNamePart(str, null);
+	}
+	public void setPrefixprefixprefix(String str)
+	{
+		this.prefixprefixprefix = NamePart.newNamePart(str, null);
 	}
 	public void setSuffixprefix(String str)
 	{
@@ -63,6 +68,7 @@ public class Name  {
 	{
 		Name name = new Name();
 		name.rankprefix = rankprefix;
+		name.prefixprefixprefix = prefixprefixprefix;
 		name.prefixprefix = prefixprefix;
 		name.prefix = prefix;
 		name.type = type;
@@ -81,7 +87,8 @@ public class Name  {
 		
 		if(rankprefix != null)
 			str = str + rankprefix.toString(u) + " ";
-		
+		if(prefixprefixprefix != null)
+			str = str + prefixprefixprefix.toString(u) + " ";
 		if(prefixprefix != null)
 			str = str + prefixprefix.toString(u) + " ";
 		if(prefix != null)
@@ -105,7 +112,6 @@ public class Name  {
 		if(str.endsWith(" "))
 			str = str.substring(0, str.length() - 1);
 		
-		
 
 		return NameGenerator.capitalize(str);
 	}
@@ -120,13 +126,19 @@ public class Name  {
 		String str = "";
 		if(rankprefix != null)
 			str = str + rankprefix + " ";
+		
+		if(prefixprefixprefix != null)
+			str = str + prefixprefixprefix + " ";
+		
 		if(prefixprefix != null)
 			str = str + prefixprefix + " ";
+		
 		if(prefix != null)
 			str = str + prefix + " ";
 		
 		if(suffixprefix != null)
 			str = str + suffixprefix + " ";
+		
 		if(suffix != null)
 			str = str + suffix + " ";
 		
@@ -158,6 +170,7 @@ public class Name  {
 		list.add(suffixprefix);
 		list.add(suffix);
 		
+		list.remove(null);
 		list.remove(null);
 		list.remove(null);
 		list.remove(null);

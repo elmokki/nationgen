@@ -25,9 +25,11 @@ import javax.imageio.ImageIO;
 
 
 
+
 import com.elmokki.Dom3DB;
 import com.elmokki.Drawing;
 import com.elmokki.Generic;
+
 
 
 
@@ -928,6 +930,7 @@ public class Unit {
 			{
 
 				Item ti = i.getCopy();
+				ti.tags.add("OLDID " + i.id);
 				ti.id = nationGen.getCustomItemId(i.id);
 				this.setSlot(str, ti);
 			}

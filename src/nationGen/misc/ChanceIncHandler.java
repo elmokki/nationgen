@@ -30,6 +30,7 @@ import com.elmokki.Generic;
 
 
 
+
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Pose;
@@ -1969,7 +1970,6 @@ public class ChanceIncHandler {
 				}
 				else if(args.get(0).equals("slot") && args.size() > 3)
 				{
-
 					boolean not = args.contains("not");
 					boolean armor = args.contains("armor");
 					boolean weapon = args.contains("weapon");
@@ -1977,18 +1977,28 @@ public class ChanceIncHandler {
 					Item i = u.getSlot(args.get(args.size() - 3));
 					if(i != null)
 					{
+					
 						if(i.id.equals(args.get(args.size() - 2)))
 						{
 							contains = true;
 						}
 						else if(i.getClass() == CustomItem.class)
 						{
+				
 							CustomItem ci = (CustomItem)i;
 							if(ci.olditem != null && ci.olditem.id != null && ci.olditem.id.equals(args.get(args.size() - 2)))
 							{
 								contains = true;
 							}
+							else if((Integer.parseInt(i.id) >= 700 && !i.armor) || ((Integer.parseInt(i.id) >= 250 && i.armor)))
+							{
+								if(Generic.containsTag(i.tags, "OLDID") && Generic.getTagValue(i.tags, "OLDID").equals(args.get(args.size() - 2)))
+								{
+									contains = true;
+								}
+							}
 						}
+				
 						
 						if(contains)
 						{
