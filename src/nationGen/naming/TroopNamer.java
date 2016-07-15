@@ -90,6 +90,9 @@ public class TroopNamer {
 			u.name.setType(Generic.getTagValue(Generic.getAllUnitTags(u), "forcedname"));
 		}
 		
+		// Give special parts
+		setGuaranteedParts(alltroops, specialnames);
+		setGuaranteedParts(alltroops, specialprefixes);
 		
 		// Give misc guaranteed parts
 		setGuaranteedParts(alltroops, miscguaranteed);
@@ -113,9 +116,7 @@ public class TroopNamer {
 		removeRedundantParts(n.combineTroopsToList("montagtroops"));
 
 	
-		// Give special parts
-		setGuaranteedParts(alltroops, specialnames);
-		setGuaranteedParts(alltroops, specialprefixes);
+
 		
 		// National prefix/suffix
 		addNationalPrefix(alltroops);
