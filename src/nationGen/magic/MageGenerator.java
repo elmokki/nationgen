@@ -349,12 +349,15 @@ public class MageGenerator extends TroopGenerator {
 		// A setting here is probably a good idea as well.
 		if(secondaries > 1)
 		{
+			List<MagicPattern> derp = new ArrayList<MagicPattern>();
 			int lowlim = 2;
-			while(secs.size() == 0 || lowlim == 2 && lowlim < 12)
+			while((derp.size() == 0 && random.nextBoolean()) || lowlim == 2 && lowlim < 12)
 			{
-				secs = getPatternsWithSpread(secs, 0, lowlim);
+				derp = getPatternsWithSpread(secs, 0, lowlim);
 				lowlim++;
 			}
+			
+			secs = derp;
 		}
 
 		if(secs.size() == 0)
@@ -403,9 +406,8 @@ public class MageGenerator extends TroopGenerator {
 		int maxSpread = 8;
 		if(tertiaries == secondaries)
 			for(MagicPattern p : secondarypatterns)
-				if(p.getPathsAtleastAt(1) < maxSpread)
-					maxSpread = p.getPathsAtleastAt(1);
-		
+				if(p.getPathsAtleastAt(1) + 1 < maxSpread)
+					maxSpread = p.getPathsAtleastAt(1) + 1;
 		
 		
 		List<MagicPattern> terts = getPatternsWithPicks(this.getPatternsForTier(1, primaries), 0, maxPicks);
