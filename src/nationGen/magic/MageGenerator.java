@@ -477,7 +477,7 @@ public class MageGenerator extends TroopGenerator {
 
 				
 				
-				double slowrecmod = mages.get(i).get(j).getMagicAmount(0.25) / 8 + 0.25;
+				double slowrecmod = mages.get(i).get(j).getMagicAmount(0.25) / 10 + 0.25;
 			
 				int highpicks = all.get(i).get(j).getPathsAtleastAt(3, 0.25);
 				if(highpicks > 2)
@@ -494,8 +494,6 @@ public class MageGenerator extends TroopGenerator {
 				{
 					mages.get(i).get(j).caponly = true;
 				}
-				else if(i == 2)
-					slowrecmod *= 1.5;
 
 				if(slowrecrand < slowrecmod && i == 2)
 				{
@@ -2709,7 +2707,7 @@ public class MageGenerator extends TroopGenerator {
 		{
 			
 			double picks = u.getMagicAmount(20);
-			double limit = 0.1 + (picks - 2) * 0.2; 
+			double limit = 0.05 + (picks - 2) * 0.1; 
 			if(picks < 4)
 				limit = 0;
 			
@@ -2719,15 +2717,15 @@ public class MageGenerator extends TroopGenerator {
 			}
 			else if(picks > 6)
 			{
-				u.commands.add(new Command("#older", "-15"));
+				u.commands.add(new Command("#older", "-20"));
 			}
 			else if(picks > 5)
 			{
-				u.commands.add(new Command("#older", "-10"));
+				u.commands.add(new Command("#older", "-15"));
 			}
 			else if(picks > 4)
 			{
-				u.commands.add(new Command("#older", "-5"));
+				u.commands.add(new Command("#older", "-10"));
 			}
 
 		}
