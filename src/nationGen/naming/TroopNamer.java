@@ -131,8 +131,6 @@ public class TroopNamer {
 		addNationPrefix(alltroops);
 				
 
-		for(Unit u : n.generateTroopList())
-			System.out.println(u.name);
 		
 		nameCommanders(n);
 		
@@ -711,7 +709,7 @@ public class TroopNamer {
 			if(part != null)
 			{
 				setNamePart(u, part);
-
+				
 			}
 			
 			
