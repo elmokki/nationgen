@@ -5,6 +5,8 @@
 #role "infantry"
 #role "scout"
 #subrace "sobek"
+#subraceprefix "sobek"
+
 #renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
 
 #load basesprite /data/items/sobek/sobek/bases.txt
@@ -30,6 +32,8 @@
 #role "elite infantry"
 #name "sobek infantry"
 #subrace "sobek"
+#subraceprefix "sobek"
+
 #renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
 
 #load basesprite /data/items/sobek/sobek/bases.txt
@@ -58,8 +62,9 @@
 #role "sacred chariot"
 #name "sobek chariot"
 #basechance 0.2
-
 #subrace "sobek"
+#subraceprefix "sobek"
+
 #renderorder "shadow mount weapon bonusweapon cloakb basesprite shirt legs armor cloakf offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/sobek/sobek/bases.txt

@@ -50,8 +50,16 @@ We use weapon names (not prefixes) found from #troopweaponnames to differentiate
 differentiated "Sword Warriors" and "Spear Warriors" can end up to "Clockwork Warriors" or "Mountain Warriors" in steps 3 and 4. Here we
 make them Clockwork Swordsman and Clockwork Spearman instead if feasible.
 
-Bonus part: Commander naming
+Bonus part #1: Commander naming
 ----------------------------------
 Commanders get a name from #commanderbasenames. #tier 1-3 can be added. Tier of a commander is partially random but also based on leadership 
 abilities. If #generic is added, commander may get a #troopweaponprefix or a #troopspecialprefix. Commanders do always get #troopmiscguaranteedparts
 like troops in step 3 if eligible. This may cause issues that may have to be remedied at some point, but not now.
+
+Bonus part #2: Racial troop prefixes
+----------------------------------
+One way that various poses are differentiated is by adding a racial prefix to secondary-race troops. This will normally be based on the unit's race's
+#visiblename. However, if a (primary-race or secondary-race) unit has a #subraceprefix defined and the nation or one of its themes has a different #raceprefix defined,
+the unit's #subraceprefix will be used in place of the #visiblename. If the nation has no #raceprefix defined, but the unit has a #subraceprefix
+and the #subraceprefix does not match the primary race's #visiblename, the #subraceprefix will also be used.
+#subraceprefix
