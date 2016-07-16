@@ -76,11 +76,13 @@ public class UnitFilterRestriction extends TwoListRestrictionWithComboBox<String
 		{
 			for(String str : possibleRaceNames)
 			{
-				String[] args = str.split(": ");
+				int index = str.indexOf(": ");
+				String comp = str.substring(index + 2);
 				for(Filter f : u.appliedFilters)
-					if(f.toString().equals(args[1]))
+				{
+					if(f.toString().equals(comp))
 						return true;
-				
+				}
 				
 			}
 		}
