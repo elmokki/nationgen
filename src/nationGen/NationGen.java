@@ -833,11 +833,26 @@ public class NationGen {
 		units.addAll(n.heroes);
 		List<ShapeChangeUnit> sul = new ArrayList<ShapeChangeUnit>();
 
-			
+
+		
+		for(Unit u : units)
+			for(Command c : u.commands)
+				if(c.command.contains("shape") && !hasShapeShift(c.args.get(0)))
+				{
+					if(c.command.equals("#firstshape") && u.tags.contains("montagunit"));
+					else
+						handleShapeshift(c, u);
+				}
+		
+		
+	
+		
         for(ShapeChangeUnit su : forms)
         {
         	if(units.contains(su.otherForm))
+        	{
         		sul.add(su);
+        	}
         }
         
         for(ShapeChangeUnit su : sul)
@@ -867,14 +882,7 @@ public class NationGen {
         }
         
  
-		for(Unit u : units)
-			for(Command c : u.commands)
-				if(c.command.contains("shape") && !hasShapeShift(c.args.get(0)))
-				{
-					if(c.command.equals("#firstshape") && u.tags.contains("montagunit"));
-					else
-						handleShapeshift(c, u);
-				}
+
 		
 		
 
@@ -883,7 +891,6 @@ public class NationGen {
 	private void handleShapeshift(Command c, Unit u)
 	{		
 
-		
 		
 		ShapeShift shift = null;
 		for(ShapeShift s : secondshapes)
@@ -939,6 +946,8 @@ public class NationGen {
 		
 		c.args.set(0, "" + su.id);
 		forms.add(su);
+		
+
 
 	}
 	
