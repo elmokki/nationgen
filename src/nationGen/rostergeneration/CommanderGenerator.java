@@ -221,6 +221,17 @@ public class CommanderGenerator extends TroopGenerator {
 			Unit com = possibleComs.get(r.nextInt(possibleComs.size()));
 			tempComs.add(com);
 			possibleComs.remove(com);
+			
+			if(com != null)
+			{
+				for(Command c : com.getCommands())
+				{
+						if(allFeatures.contains(c.command))
+						{
+							features.remove(c.command);
+						}
+				}
+			}
 		}
 		else
 			orig++;
@@ -256,19 +267,38 @@ public class CommanderGenerator extends TroopGenerator {
 			else
 				temps.addAll(possibleComs);
 			
+			temps.removeAll(tempComs);
+			
 			Unit u = null;
+			
+			
 			if(features.size() > 0)
 			{
 				do
 				{
 					u = getUnitWith(features, allFeatures, temps);
+
 					if(u == null)
 					{
+
 						u = getUnitWith(features, allFeatures, possibleComs);
+
 						if(u == null)
 						{
 							features.clear();
 							break;
+						}
+					}
+					
+					
+					if(u != null)
+					{
+						for(Command c : u.getCommands())
+						{
+								if(allFeatures.contains(c.command))
+								{
+									features.remove(c.command);
+								}
 						}
 					}
 				} 
@@ -276,7 +306,7 @@ public class CommanderGenerator extends TroopGenerator {
 			}
 			else
 			{
-
+				possibleComs.removeAll(getListOfSuitableUnits("sacred"));
 				do
 				{
 
@@ -300,23 +330,20 @@ public class CommanderGenerator extends TroopGenerator {
 			//part.text = "Commander";
 			
 	
-			Unit unit = this.unitGen.generateUnit(u.race, u.pose);
-			for(String str : u.slotmap.keySet())
-				unit.setSlot(str, u.getSlot(str));
+			Unit unit = u.getCopy();
 			
-			
-			
-			process(unit);
-			unit.color = u.color;
-			
-			for(Command c : u.commands)
+			// Remove montags
+			List<Command> toremove = new ArrayList<Command>();
+			for(Command c : unit.commands)
 			{
-				if(!c.command.equals("#montag"))
-					unit.commands.add(c);
+				if(c.command.equals("#montag"))
+					toremove.add(c);
 			}
-			unit.appliedFilters.addAll(u.appliedFilters);
-			unit.caponly = u.caponly;
-			unit.tags.addAll(u.tags);
+			unit.commands.removeAll(toremove);
+
+			// Elitefy
+			process(unit);
+
 			
 			//unit.name.type = part;
 			//unit.commands.add(new Command("#gcost", "+20"));
@@ -628,28 +655,30 @@ public class CommanderGenerator extends TroopGenerator {
 	private Unit getUnitWith(List<String> features, List<String> allFeatures, List<Unit> possibleComs)
 	{
 		Unit unit = null;
+		int highest = 0;
+		
+		
 		for(Unit u : possibleComs)
 		{
+			int count = 0;
 			for(Command c : u.getCommands())
 			{
-					if(features.contains(c.command))
-						unit = u; 
+				for(String feature : features)
+				{
+					if(feature.equals(c.command))
+						count++;
+				}
+			}
+			
+			if(count > 0 && count > highest)
+			{
+				unit = u;
+				highest = count;
 			}
 		}
 		
-		if(unit == null)
-		{
-			return unit;
-		}
-		
 
-		for(Command c : unit.getCommands())
-		{
-				if(allFeatures.contains(c.command))
-				{
-					features.remove(c.command);
-				}
-		}
+
 		
 		return unit;
 	}
@@ -681,9 +710,7 @@ public class CommanderGenerator extends TroopGenerator {
 			}
 		}
 		
-		
-		Random r = nation.random;
-				
+						
 		int stuffmask = r.nextInt(3) + 1;
 		
 		if(strength == 1)

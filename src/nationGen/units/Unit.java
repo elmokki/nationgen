@@ -110,6 +110,10 @@ public class Unit {
 		{
 			unit.setSlot(slot, this.getSlot(slot));
 		}
+		for(String slot : this.slotmemory.keySet())
+		{
+			unit.slotmemory.put(slot, this.slotmemory.get(slot));
+		}
 		
 		unit.color = color;
 		unit.nation = nation;
