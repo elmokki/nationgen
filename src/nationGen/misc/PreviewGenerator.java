@@ -227,10 +227,11 @@ public class PreviewGenerator {
 		int w = Math.max(64, base.getWidth());
 		int h = Math.max(64, base.getHeight());
 		
+		String mountslot = u.getMountOffsetSlot();
 
-		if(u.slotmap.get("mount") != null)
+		if(u.slotmap.get(mountslot) != null)
 		{
-			base = ImageIO.read(new File("./", u.slotmap.get("mount").sprite));
+			base = ImageIO.read(new File("./", u.slotmap.get(mountslot).sprite));
 			w = Math.max(64, base.getWidth());
 			h = Math.max(64, base.getHeight());
 		}
