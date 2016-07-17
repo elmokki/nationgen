@@ -4,6 +4,9 @@
 Code
 ----------------------------------------------------------
 - Foul spawn centaur graphics were generated completely wrongly
+- Item dependencies are reset when original item is removed
+	- For example: Archers generally get quivers with their bows. If the bow is for some reason removed, so is the quiver.
+	- Mostly there to hopefully fix a fairly rare commander overlay bug: Item removal or replacement in general are fairly rare
 
 
 0.6.16 (17th of July 2016)

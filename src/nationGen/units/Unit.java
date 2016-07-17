@@ -66,6 +66,8 @@ public class Unit {
 	public Race race;
 	public Pose pose;
 	public LinkedHashMap<String, Item> slotmap = new LinkedHashMap<String, Item>();
+	public LinkedHashMap<String, Item> slotmemory = new LinkedHashMap<String, Item>();
+
 	public Color color = Color.white;
 	public int id = -1;
 	public List<Command> commands = new ArrayList<Command>();
@@ -339,6 +341,35 @@ public class Unit {
 		return false;
 	}
 	
+	
+	private void handleRemoveDependency(Item i)
+	{
+	
+		if(i == null)
+			return;
+		
+		if(i.dependencies.size() > 0)
+		{
+			String slot = null;
+			for(ItemDependency d : i.dependencies)
+			{
+				if(d.lagged)
+					continue;
+				
+				slot = d.slot;
+				
+				Item n = null;
+				n = this.slotmemory.get(slot);
+				System.out.println(getSlot(slot) + " -> " + n);
+
+				setSlot(slot, n); 
+				
+			}
+		}
+		
+
+	}
+	
 	private void handleDependency(String slotname, boolean lagged)
 	{
 		if(getSlot(slotname) == null)
@@ -456,11 +487,19 @@ public class Unit {
 		
 	
 		Item olditem = getSlot(slotname);
+		
 		slotmap.put(slotname, newitem);
-		handleRemoveThemeinc(olditem);
+		
+		if(olditem != null)
+		{
+			handleRemoveThemeinc(olditem);
+			handleRemoveDependency(olditem);
+			slotmemory.put(slotname, olditem);
+		}
 		
 		if(newitem == null)
 			return;
+		
 
 
 		handleDependency(slotname, false);
