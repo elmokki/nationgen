@@ -181,10 +181,35 @@
 #define "#enc 4"
 #define "#rcost +4"
 #define "#coldblooded"
-#define "#amphibious"
+#define "#amphibian"
 #define "#poisonres +10"
 #tag "animal worm"
 #define "#maxage *1.25"
+#enditem
+
+#newitem
+#name "olm_winged"
+#gameid -1
+#sprite /graphics/foulspawn/centauroid/legs/olm.png
+#offsetx 1
+#offsety -4
+#needs overlay olm_winged
+#needs underlay goat_winged
+#define "#size 4"
+#define "#hp +8"
+#define "#prot +0"
+#define "#def -2"
+#define "#mapmove 3"
+#define "#ap 6"
+#define "#gcost +15"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +5"
+#define "#amphibian"
+#define "#flying"
+#define "#poisonres +5"
+#define "#gcost +15"
+#tag "animal worm"
 #enditem
 
 #newitem
@@ -229,7 +254,7 @@
 #define "#weapon 85"
 #define "#weapon 85"
 #define "#heal"
-#define "#amphibious"
+#define "#amphibian"
 #itemslot misc +1
 #define "#maxage *1.25"
 #enditem
