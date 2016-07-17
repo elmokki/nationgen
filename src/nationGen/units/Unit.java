@@ -360,7 +360,6 @@ public class Unit {
 				
 				Item n = null;
 				n = this.slotmemory.get(slot);
-				System.out.println(getSlot(slot) + " -> " + n);
 
 				setSlot(slot, n); 
 				
@@ -497,8 +496,10 @@ public class Unit {
 			slotmemory.put(slotname, olditem);
 		}
 		
+		
 		if(newitem == null)
 			return;
+		
 		
 
 
