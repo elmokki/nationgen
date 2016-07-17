@@ -1683,6 +1683,17 @@ public class Unit {
 		return render(0);
 	}
 	
+	public String getMountOffsetSlot()
+	{
+		
+		String mountslot = "mount";
+		if(Generic.containsTag(Generic.getAllUnitTags(this), "mount_offset_slot"))
+		{
+			mountslot = Generic.getTagValue(Generic.getAllUnitTags(this), "mount_offset_slot");
+		}
+		return mountslot;
+	}
+	
 	public BufferedImage render(int offsetX) throws IOException
 	{
 		if(this.getClass() == ShapeChangeUnit.class)
@@ -1715,10 +1726,11 @@ public class Unit {
 		int h = base.getHeight();
 		
 		
-
-		if(slotmap.get("mount") != null && !slotmap.get("mount").sprite.equals(""))
+		
+		String mountslot = getMountOffsetSlot();
+		if(slotmap.get(mountslot) != null && !slotmap.get(mountslot).sprite.equals(""))
 		{
-			base = ImageIO.read(new File("./", u.slotmap.get("mount").sprite));
+			base = ImageIO.read(new File("./", u.slotmap.get(mountslot).sprite));
 			w = base.getWidth();
 			h = base.getHeight();
 		}
@@ -1738,11 +1750,11 @@ public class Unit {
 
 					
 	
-			if(s.equals("mount") || (s.equals("overlay") && u.getSlot(s) != null && u.getSlot("overlay").getOffsetX() == 0 && u.getSlot("overlay").getOffsetY() == 0))
+			if(s.equals(mountslot) || (s.equals("overlay") && u.getSlot(s) != null && u.getSlot("overlay").getOffsetX() == 0 && u.getSlot("overlay").getOffsetY() == 0))
 			{
 				renderSlot(g, this, s, false, offsetX);
 			}
-			else if(s.equals("basesprite") && u.slotmap.get("mount") == null)
+			else if(s.equals("basesprite") && u.slotmap.get(mountslot) == null)
 				renderSlot(g, this, s, false, offsetX);
 			else if(s.equals("offhandw") && (getSlot("offhand") != null && !getSlot("offhand").armor))
 				renderSlot(g, this, "offhand", true, offsetX);
@@ -1794,19 +1806,23 @@ public class Unit {
 		if(i == null)
 			return;
 		
-
-		
-		int offsetx = 0;
-		int offsety = 0;
-		if(this.getSlot("mount") != null)
+		if(useoffset)
 		{
-			offsetx += getSlot("mount").getOffsetX();
-			offsety += getSlot("mount").getOffsetY();
-		}
-
-		if(!useoffset)
-			i.render(g, false, 0, 0, this.color, extraX);
-		else
+			String mountslot = getMountOffsetSlot();
+			
+			int offsetx = 0;
+			int offsety = 0;
+			if(this.getSlot(mountslot) != null)
+			{
+				offsetx += getSlot(mountslot).getOffsetX();
+				offsety += getSlot(mountslot).getOffsetY();
+			}
+			
 			i.render(g, true, offsetx, offsety, this.color, extraX);
+
+		}
+		else
+			i.render(g, false, 0, 0, this.color, extraX);
+		
 	}
 }
