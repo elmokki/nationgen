@@ -21,6 +21,7 @@
 #endpose
 
 
+
 -------- Atlantian thralls
 #newpose
 #name "atlantian thrall"
@@ -44,6 +45,7 @@
 #endpose
 
 
+
 -------- Muuch thralls
 #newpose
 #name "muuch thrall"
@@ -65,6 +67,7 @@
 #forcedname "Muuch Thrall"
 
 #endpose
+
 
 
 -------- Human thralls
@@ -94,6 +97,8 @@
 
 #endpose
 
+
+
 -------- Primate thralls
 #newpose
 #name "vanara thrall"
@@ -113,5 +118,29 @@
 #load weapon /data/items/illithid/slave/weapon_thrall.txt
 
 #forcedname "Vanara Thrall"
+
+#endpose
+
+
+
+-------- Hoburg thralls
+#newpose
+#name "hoburg thrall"
+#role "infantry"
+
+#basechance 0
+#chanceinc "secondaryrace 'hoburg' 1"
+#chanceinc "hastheme illithid_hybrid *5"
+#chanceinc "hastheme illithid *10"
+
+#freetemplatefilter slavetemplate lobo
+#maxunits 1
+
+#load basesprite /data/items/illithid/slave/thrall_hoburg.txt
+#load shadow /data/items/hoburg/normal/shadow.txt
+#load armor /data/items/illithid/slave/armor_thrall.txt
+#load weapon /data/items/illithid/slave/weapon_thrall.txt
+
+#forcedname "Hoburg Thrall"
 
 #endpose
