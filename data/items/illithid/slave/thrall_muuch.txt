@@ -19,6 +19,7 @@
 #command "#maxage 500"
 #command "#darkvision 50"
 #command "#amphibian"
+#has_claws
 #enditem
 
 #newitem
@@ -42,6 +43,7 @@
 #command "#maxage 500"
 #command "#darkvision 50"
 #command "#amphibian"
+#has_claws
 #enditem
 
 #newitem
@@ -66,7 +68,7 @@
 #define "#poisonskin 20"
 #command "#darkvision 50"
 #command "#amphibian"
-#needs weapon claw_poisoned
+#has_poison_claws
 #enditem
 
 #newitem
@@ -90,4 +92,5 @@
 #command "#maxage 500"
 #command "#darkvision 100"
 #command "#amphibian"
+#has_claws
 #enditem
