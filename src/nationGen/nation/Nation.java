@@ -60,7 +60,7 @@ import nationGen.units.Unit;
 
 public class Nation {
 	public Color[] colors = new Color[5];
-	public int nationid = 92;
+	public int nationid;
 	public int era = 2;
 	public String name = "UNNAMED";
 	public String epithet = "NO EPITHET";
@@ -95,9 +95,9 @@ public class Nation {
 	
 	public BufferedImage flag = null;
 
-	public Nation(NationGen ngen, int id, int seed)
+	public Nation(NationGen ngen, int seed)
 	{
-		this.nationid = id;
+
 		this.nationGen = ngen;
 		this.random = new Random(seed);
 		this.seed = seed;
