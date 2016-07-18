@@ -229,7 +229,7 @@ public class NationGen {
 			
 			System.out.print(")... ");
 			
-			newnation = new Nation(this, idHandler.nextNationId(), newseed);
+			newnation = new Nation(this, newseed);
 
 			// Handle restrictions
 			boolean pass = true;
@@ -254,6 +254,7 @@ public class NationGen {
 			
 			
 			// Handle loose ends
+			newnation.nationid = idHandler.nextNationId();
 			this.polishNation(newnation);
 			
 			newnation.name = "Nation " + count;
