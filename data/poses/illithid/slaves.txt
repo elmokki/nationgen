@@ -93,3 +93,25 @@
 #forcedname "Human Thrall"
 
 #endpose
+
+-------- Primate thralls
+#newpose
+#name "vanara thrall"
+#role "infantry"
+
+#basechance 0
+#chanceinc "secondaryrace 'Primate' 1"
+#chanceinc "hastheme illithid_hybrid *5"
+#chanceinc "hastheme illithid *10"
+
+#freetemplatefilter slavetemplate lobo
+#maxunits 1
+
+#load basesprite /data/items/illithid/slave/thrall_vanara.txt
+#load shadow /data/items/illithid/slave/shadow_vanara.txt
+#load armor /data/items/illithid/slave/armor_thrall.txt
+#load weapon /data/items/illithid/slave/weapon_thrall.txt
+
+#forcedname "Vanara Thrall"
+
+#endpose
