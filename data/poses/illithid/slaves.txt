@@ -120,6 +120,29 @@
 
 
 
+-------- Ichtyid thralls
+#newpose
+#name "ichtyid thrall"
+#role "infantry"
+
+#basechance 0
+#chanceinc "secondaryrace ichtyid 1"
+#chanceinc "hastheme illithid_hybrid *5"
+#chanceinc "hastheme illithid *10"
+
+#freetemplatefilter slavetemplate lobo
+#maxunits 1
+
+#load basesprite /data/items/illithid/slave/thrall_ichtyid.txt
+#load armor /data/items/illithid/slave/armor_thrall.txt
+#load weapon /data/items/illithid/slave/weapon_thrall.txt
+
+#forcedname "Ichtyid Thrall"
+
+#endpose
+
+
+
 -------- Lizard thralls
 #newpose
 #name "lizard thrall"
