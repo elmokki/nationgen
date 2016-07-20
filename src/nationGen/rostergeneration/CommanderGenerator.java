@@ -377,6 +377,7 @@ public class CommanderGenerator extends TroopGenerator {
 			boolean demonud = false;
 			boolean slave = false;
 			boolean animal = false;
+			boolean mindless = false;
 			
 			for(Command c : com.getCommands())
 			{
@@ -390,6 +391,14 @@ public class CommanderGenerator extends TroopGenerator {
 					slave = true;
 				else if(c.command.equals("#animal"))
 					animal = true;
+				else if(c.command.equals("#mind"))
+					mindless = true;
+			}
+			
+			// Mindless magical beings can be inspiring, but others cannot
+			if(magicbeing && mindless)
+			{
+				mindless = false;
 			}
 			
 			if((i == 0 || r.nextDouble() < 0.2) && hasSlaves)
@@ -412,22 +421,22 @@ public class CommanderGenerator extends TroopGenerator {
 				com.commands.add(new Command("#gcost", "+50"));
 				com.commands.add(new Command("#expertleader"));
 				
-				if(r.nextDouble() > 0.5)
+				if(r.nextDouble() > 0.5 && !mindless)
 				{
 					com.commands.add(new Command("#inspirational", "+1"));
 					com.commands.add(new Command("#gcost", "+10"));
 				}
 			
-				if(r.nextDouble() > 0.75)
+				if(r.nextDouble() > 0.75 && !mindless)
 				{
 					com.commands.add(new Command("#inspirational", "+1"));
 					com.commands.add(new Command("#gcost", "+10"));
 				}
 				
-				if((r.nextDouble() < 0.25 && hasSlaves) || slave)
+				if((r.nextDouble() < 0.25 && hasSlaves) || (slave && !mindless))
 				{
 					int amount = r.nextInt(2);
-					if(slave)
+					if(slave && !mindless)
 					{
 						amount = Math.min(0, (r.nextInt(4) - 1));
 						if(amount > 0)
@@ -452,10 +461,10 @@ public class CommanderGenerator extends TroopGenerator {
 					}
 				}
 				
-				if((r.nextDouble() < 0.25 && hasAnimals) || animal)
+				if((r.nextDouble() < 0.25 && hasAnimals) || (animal && !mindless))
 				{
 					int amount = r.nextInt(2) + 1;
-					if(animal)
+					if(animal && !mindless)
 					{
 						amount = Math.min(0, (r.nextInt(6) - 2));
 						if(amount > 0)
@@ -490,7 +499,7 @@ public class CommanderGenerator extends TroopGenerator {
 				com.commands.add(new Command("#gcost", "+20"));
 				com.commands.add(new Command("#goodleader"));
 				
-				if(r.nextDouble() > 0.65)
+				if(r.nextDouble() > 0.65 && !mindless)
 				{
 					com.commands.add(new Command("#inspirational", "+1"));
 					com.commands.add(new Command("#gcost", "+10"));
@@ -512,7 +521,7 @@ public class CommanderGenerator extends TroopGenerator {
 			{
 				com.commands.add(new Command("#okleader"));
 
-				if(r.nextDouble() > 0.75)
+				if(r.nextDouble() > 0.75 && !mindless)
 				{
 					com.commands.add(new Command("#inspirational", "+1"));
 					com.commands.add(new Command("#gcost", "+10"));
