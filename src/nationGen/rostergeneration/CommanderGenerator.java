@@ -108,6 +108,7 @@ public class CommanderGenerator extends TroopGenerator {
 
 		int orig = 1;
 		boolean hasSlaves = false;
+		boolean hasAnimals = false;
 		
 		if(r.nextBoolean())
 		{
@@ -122,6 +123,7 @@ public class CommanderGenerator extends TroopGenerator {
 		Boolean secondaryDemons = false;
 		Boolean secondaryUndead = false;
 		Boolean secondarySlaves = false;
+		Boolean secondaryAnimals = false;
 		
 		for(String tag : nation.races.get(0).tags)
 		{
@@ -134,6 +136,7 @@ public class CommanderGenerator extends TroopGenerator {
 				secondaryDemons = (c.command.equals("#demon") || secondaryDemons);
 				secondaryUndead = (c.command.equals("#undead") || secondaryUndead);
 				secondarySlaves = (c.command.equals("#slave") || secondarySlaves);
+				secondaryAnimals = (c.command.equals("#animal") || secondaryAnimals);
 			}
 		}
 
@@ -174,6 +177,11 @@ public class CommanderGenerator extends TroopGenerator {
 			{
 				hasSlaves = true;
 			}
+			if(u.race.equals(nation.races.get(1)) && secondaryAnimals)
+			{
+				hasAnimals = true;
+			}
+			
 			for(Command c : u.getCommands())
 			{
 				if(c.command.equals("#magicbeing") && !(u.race.equals(nation.races.get(1)) || secondaryMagicBeings))  // Make sure we don't double-count
@@ -185,6 +193,8 @@ public class CommanderGenerator extends TroopGenerator {
 				
 				if(c.command.equals("#slave") || (u.race.equals(nation.races.get(1)) && secondarySlaves))
 					hasSlaves = true;
+				if(c.command.equals("#animal") || (u.race.equals(nation.races.get(1)) && secondaryAnimals))
+					hasAnimals = true;
 				
 
 				
@@ -322,8 +332,6 @@ public class CommanderGenerator extends TroopGenerator {
 			//unit.commands.add(new Command("#gcost", "+20"));
 			coms.add(unit);
 			
-			
-			
 			// Add stuff to sacreds sometimes
 			boolean priest = false;
 			boolean stealthy = false;
@@ -365,6 +373,24 @@ public class CommanderGenerator extends TroopGenerator {
 		{
 			Unit com = tempComs.get(i);
 			
+			boolean magicbeing = false;
+			boolean demonud = false;
+			boolean slave = false;
+			boolean animal = false;
+			
+			for(Command c : com.getCommands())
+			{
+				if(c.command.equals("#magicbeing"))
+					magicbeing = true;
+				else if(c.command.equals("#demon"))
+					demonud = true;
+				else if(c.command.equals("#undead"))
+					demonud = true;
+				else if(c.command.equals("#slave"))
+					slave = true;
+				else if(c.command.equals("#animal"))
+					animal = true;
+			}
 			
 			if((i == 0 || r.nextDouble() < 0.2) && hasSlaves)
 			{
@@ -398,10 +424,61 @@ public class CommanderGenerator extends TroopGenerator {
 					com.commands.add(new Command("#gcost", "+10"));
 				}
 				
-				if(r.nextDouble() < 0.25 && hasSlaves)
+				if((r.nextDouble() < 0.25 && hasSlaves) || slave)
+				{
+					int amount = r.nextInt(2);
+					if(slave)
+					{
+						amount = Math.min(0, (r.nextInt(4) - 1));
+						if(amount > 0)
+						{
+							com.commands.add(new Command("#taskmaster", "+" + amount));
+							com.commands.add(new Command("#gcost", "+" + (amount * 5)));
+							
+							amount = r.nextInt(amount + 1);
+							
+							if(amount > 0)
+							{
+								com.commands.add(new Command("#inspirational", "-" + amount));
+								com.commands.add(new Command("#gcost", "-" + (amount * 10)));
+							}
+							
+						}
+					}
+					else
+					{
+						com.commands.add(new Command("#taskmaster", "+" +amount + 1));
+						com.commands.add(new Command("#gcost", "+" + (amount * 5)));
+					}
+				}
+				
+				if((r.nextDouble() < 0.25 && hasAnimals) || animal)
 				{
 					int amount = r.nextInt(2) + 1;
-					com.commands.add(new Command("#taskmaster", "+" + amount));
+					if(animal)
+					{
+						amount = Math.min(0, (r.nextInt(6) - 2));
+						if(amount > 0)
+						{
+							com.commands.add(new Command("#beastmaster", "+" + amount));
+							com.commands.add(new Command("#gcost", "+" + (amount * 5)));
+							
+							amount = r.nextInt(amount + 1);
+							
+							if(amount > 0)
+							{
+								com.commands.add(new Command("#inspirational", "-" + amount));
+								com.commands.add(new Command("#gcost", "-" + (amount * 10)));
+							}
+							
+						}
+					}
+					else
+					{
+						com.commands.add(new Command("#beastmaster", "+" +amount));
+						com.commands.add(new Command("#gcost", "+" + (amount * 5)));
+					}
+					
 				}
 				
 		
@@ -428,6 +505,7 @@ public class CommanderGenerator extends TroopGenerator {
 				{
 					int amount = r.nextInt(2) + 1;
 					com.commands.add(new Command("#taskmaster", "+" + amount));
+					com.commands.add(new Command("#gcost", "+" + (amount * 5)));
 				}
 			}
 			else
@@ -451,19 +529,6 @@ public class CommanderGenerator extends TroopGenerator {
 			}
 			
 			// Magic leadership
-			boolean magicbeing = false;
-			boolean demonud = false;
-			
-			for(Command c : com.getCommands())
-			{
-				if(c.command.equals("#magicbeing"))
-					magicbeing = true;
-				else if(c.command.equals("#demon"))
-					demonud = true;
-				else if(c.command.equals("#undead"))
-					demonud = true;
-			}
-				
 			assignMagicUDLeadership(com, power, magicbeing, magicshare, "magic");
 			assignMagicUDLeadership(com, power, demonud, udshare, "undead");
 			
