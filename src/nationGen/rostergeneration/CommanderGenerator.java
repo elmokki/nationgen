@@ -435,10 +435,9 @@ public class CommanderGenerator extends TroopGenerator {
 				
 				if((r.nextDouble() < 0.25 && hasSlaves) || (slave && !mindless))
 				{
-					int amount = r.nextInt(2);
 					if(slave && !mindless)
 					{
-						amount = Math.min(0, (r.nextInt(4) - 1));
+						int amount = Math.min(0, (r.nextInt(4) - 1));
 						if(amount > 0)
 						{
 							com.commands.add(new Command("#taskmaster", "+" + amount));
@@ -456,6 +455,7 @@ public class CommanderGenerator extends TroopGenerator {
 					}
 					else
 					{
+						int amount = r.nextInt(2);
 						com.commands.add(new Command("#taskmaster", "+" +amount + 1));
 						com.commands.add(new Command("#gcost", "+" + (amount * 5)));
 					}
@@ -463,10 +463,9 @@ public class CommanderGenerator extends TroopGenerator {
 				
 				if((r.nextDouble() < 0.25 && hasAnimals) || (animal && !mindless))
 				{
-					int amount = r.nextInt(2) + 1;
 					if(animal && !mindless)
 					{
-						amount = Math.min(0, (r.nextInt(6) - 2));
+						int amount = Math.min(0, (r.nextInt(6) - 2));
 						if(amount > 0)
 						{
 							com.commands.add(new Command("#beastmaster", "+" + amount));
@@ -484,6 +483,7 @@ public class CommanderGenerator extends TroopGenerator {
 					}
 					else
 					{
+						int amount = r.nextInt(2) + 1;
 						com.commands.add(new Command("#beastmaster", "+" +amount));
 						com.commands.add(new Command("#gcost", "+" + (amount * 5)));
 					}
