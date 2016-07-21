@@ -64,12 +64,14 @@ public class DescriptionReplacer {
 	{
 		List<String> weapons = new ArrayList<String>();
 		List<String> weapons_plural = new ArrayList<String>();
+		String[] slots = {"weapon", "offhand"};
 
 	
 		for(Unit u : units)
 		{
-			for(Item i : u.slotmap.values())
+			for(String str : slots)
 			{
+				Item i = u.getSlot(str);
 				if(i != null && !i.armor && !i.id.equals("-1"))
 				{
 					if(!n.nationGen.weapondb.GetValue(i.id, "weapon_name").equals("") && !weapons.contains(n.nationGen.weapondb.GetValue(i.id, "weapon_name")))
@@ -78,7 +80,7 @@ public class DescriptionReplacer {
 						weapons_plural.add(NameGenerator.plural(n.nationGen.weapondb.GetValue(i.id, "weapon_name").toLowerCase()));
 
 					}
-					else
+					else if(!weapons.contains(n.nationGen.weapondb.GetValue(i.id, "weapon_name")))
 					{
 						weapons.add("NOT IN WEAPONDB: " + i.name + " in " + i.slot);
 						weapons_plural.add("NOT IN WEAPONDB: " + i.name + " in " + i.slot);	
@@ -95,20 +97,26 @@ public class DescriptionReplacer {
 			
 			for(Unit u : units)
 			{
-				for(Item i : u.slotmap.values())
+				for(String slot : slots)
 				{
+
+					Item i = u.getSlot(slot);
 					if(i != null && !i.armor && !i.id.equals("-1"))
 					{
+
 						if(!n.nationGen.weapondb.GetValue(i.id, "weapon_name").equals("") && !weapons.contains(n.nationGen.weapondb.GetValue(i.id, "weapon_name")))
 						{
+							
+
 							List<String> tmp = new ArrayList<String>();
 							
-							if(n.nationGen.weapondb.GetValue(i.id, "dt_b").equals("1"))
+							if(n.nationGen.weapondb.GetValue(i.id, "dt_blunt").equals("1"))
 								tmp.add("blunt");
-							if(n.nationGen.weapondb.GetValue(i.id, "dt_s").equals("1"))
+							if(n.nationGen.weapondb.GetValue(i.id, "dt_slash").equals("1"))
 								tmp.add("slashing");
-							if(n.nationGen.weapondb.GetValue(i.id, "dt_p").equals("1"))
+							if(n.nationGen.weapondb.GetValue(i.id, "dt_pierce").equals("1"))
 								tmp.add("piercing");
+							
 							
 							for(String str : tmp)
 								if(!str.equals("") && !weapons.contains(str))
@@ -119,7 +127,6 @@ public class DescriptionReplacer {
 				}
 			}
 			
-		
 			
 			if(weapons.size() < 3)
 			{
@@ -138,7 +145,10 @@ public class DescriptionReplacer {
 			descs.put("%weapons%", NameGenerator.writeAsList(weapons, false, "or"));
 			descs.put("%weapons_plural%", NameGenerator.writeAsList(weapons_plural, false));
 		}
-		weapons.clear();
+		
+		
+		
+		weapons.clear();	
 		int minprot = 100;
 		int maxprot = 0;
 		
@@ -153,20 +163,22 @@ public class DescriptionReplacer {
 			{
 				prot = n.nationGen.armordb.GetInteger(i.id, "prot", 0);
 
-				/*if(!n.nationGen.weapondb.GetValue(i.id, "armorname").equals("") && !weapons.contains(n.nationGen.weapondb.GetValue(i.id, "armorname")))
-					weapons.add(n.nationGen.weapondb.GetValue(i.id, "armorname"));
-				else
-					weapons.add("NOT IN ARMORDB: " + i.name + " in " + i.slot);	*/
 				if(!n.nationGen.armordb.GetValue(i.id, "armorname").equals("") && !weapons.contains(n.nationGen.armordb.GetValue(i.id, "armorname")))
+				{
 					weapons.add(n.nationGen.armordb.GetValue(i.id, "armorname"));
-				else
+				}
+				else if(!weapons.contains(n.nationGen.armordb.GetValue(i.id, "armorname")))
+				{
 					weapons.add("NOT IN ARMORDB: " + i.name + " in " + i.slot);	
+				}
+				
+				
 			}
 		
 			
 			if(prot < minprot)
 				minprot = prot;
-			else if(prot > maxprot)
+			if(prot > maxprot)
 				maxprot = prot;
 			
 			
@@ -186,8 +198,7 @@ public class DescriptionReplacer {
 		if(maxprot > 15)
 			weapons.add("heavy");
 
-		
-		if(weapons.size() >= 3)
+		if(weapons.size() >= 3 || weapons.size() == 0)
 		{
 			weapons.clear();
 			weapons.add("all kinds of");
@@ -195,6 +206,7 @@ public class DescriptionReplacer {
 		
 		descs.put("%armortypes%",  NameGenerator.writeAsList(weapons, false));
 		
+		System.out.println(descs);
 		
 	}
 }
