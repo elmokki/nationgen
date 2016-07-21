@@ -219,7 +219,13 @@ PD/start army amount multiplier. These stack like the above commands.
 
 --- Pose
 
+#non_mount_overlay
+Normally overlay ignores the offsets mounts have. This makes them pretty
 
+#mount_offset_slot <slot>
+Normally mount offsets are used to move all other slots except overlay around instead of moving the mount around.
+This is so that you can use practically normal infantry poses by simply changing the legs and setting suitable offsets.
+With this command you can change whatever slot to do that, which is useful for centaurs for example.
 
 #forcedname <name>
 Forces the unit name to this. Works only for troops and sacredgenerator sacreds/elites.

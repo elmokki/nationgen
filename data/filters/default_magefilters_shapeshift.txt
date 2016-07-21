@@ -24,6 +24,7 @@
 #description "can shapeshift into a werewolf"
 #tag "notfortier 2"
 #command "#maxage *2"
+#command "#gcost *1.1"
 #power 2
 #theme "wolftotem"
 #theme "totemanimal"
@@ -55,6 +56,7 @@
 #chanceinc "personalcommand mounted *0"
 #chanceinc "race not Vaetti *0"
 #command "#shapechange werewolf"
+#command "#gcost *1.2"
 #tag "notfortier 1"
 #description "can shapeshift into a werewolf"
 #tag "notfortier 2"
@@ -72,7 +74,7 @@
 #chanceinc "personalcommand #mounted *0"
 #chanceinc "race not Vaetti *0"
 #command "#shapechange werewolf"
-#command "#gcost *1.2"
+#command "#gcost *1.1"
 #tag "notfortier 1"
 #description "can shapeshift into a werewolf"
 #tag "notfortier 3"
@@ -123,6 +125,7 @@
 #basechance 0.05
 #chanceinc "personalmagic nature 0.5"
 #chanceinc "personalcommand #mounted *0"
+#command "#gcost *1.2"
 #command "#shapechange werebear"
 #tag "notfortier 1"
 #tag "notfortier 2"
@@ -188,7 +191,8 @@
 #command "#maxage 1000"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#command "#gcost +45"
+#command "#gcost +35"
+#command "#gcost *1.2"
 #description "can shapeshift into a devil"
 #tag "personalmagic blood"
 #power 2
@@ -242,7 +246,8 @@
 #command "#maxage 1000"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#command "#gcost +45"
+#command "#gcost +35"
+#command "#gcost *1.2"
 #description "can shapeshift into a frost fiend"
 #tag "personalmagic blood"
 #power 2
@@ -333,7 +338,7 @@
 #chanceinc "personalmagic death 2"
 #chanceinc personalcommand #size below 2 *0
 #command "#secondshape ghoul"
-#command "#gcost *1.2"
+#command "#gcost *1.1"
 #command "#undcommand +40"
 #command "#maxage 500"
 #tag "personalmagic death"
@@ -349,7 +354,7 @@
 #chanceinc "personalmagic death 2"
 #chanceinc personalcommand #size above 2 *0
 #command "#secondshape ghoul-small"
-#command "#gcost *1.2"
+#command "#gcost *1.1"
 #command "#undcommand +40"
 #command "#maxage 800"
 #tag "personalmagic death"
@@ -439,6 +444,7 @@
 #chanceinc personalcommand #size below 2 *0
 #command "#hp -5"
 #command "#gcost +30"
+#command "#gcost *1.2"
 #command "#secondtmpshape metalman"
 #description "reveals its true shape of a metal man upon death"
 #power 2
@@ -454,6 +460,7 @@
 #chanceinc personalcommand #size above 2 *0
 #command "#hp -3"
 #command "#gcost +20"
+#command "#gcost *1.15"
 #command "#secondtmpshape metalman-small"
 #description "reveals its true shape of a metal man upon death"
 #power 2

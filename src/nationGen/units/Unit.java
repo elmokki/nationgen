@@ -110,6 +110,10 @@ public class Unit {
 		{
 			unit.setSlot(slot, this.getSlot(slot));
 		}
+		for(String slot : this.slotmemory.keySet())
+		{
+			unit.slotmemory.put(slot, this.slotmemory.get(slot));
+		}
 		
 		unit.color = color;
 		unit.nation = nation;
@@ -1790,7 +1794,7 @@ public class Unit {
 
 					
 	
-			if(s.equals(mountslot) || (s.equals("overlay") && u.getSlot(s) != null && u.getSlot("overlay").getOffsetX() == 0 && u.getSlot("overlay").getOffsetY() == 0))
+			if(s.equals(mountslot) || (!u.pose.tags.contains("non_mount_overlay") && s.equals("overlay") && u.getSlot(s) != null && u.getSlot("overlay").getOffsetX() == 0 && u.getSlot("overlay").getOffsetY() == 0))
 			{
 				renderSlot(g, this, s, false, offsetX);
 			}
