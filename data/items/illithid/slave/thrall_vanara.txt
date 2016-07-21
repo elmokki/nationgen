@@ -1,0 +1,90 @@
+#newitem
+#name "lowland vanara"
+#chanceinc "secondaryracetheme lowland *100"
+#gameid -1
+#sprite /graphics/illithid/slave/thrall_vanara_lowland.png
+#command "#gcost 9"
+#command "#hp 10"
+#command "#size 2"
+#command "#mr 8"
+#command "#prot 1"
+#command "#mor 50"
+#command "#str 10"
+#command "#att 10"
+#command "#def 10"
+#command "#prec 10"
+#command "#enc 3"
+#command "#mapmove 2"
+#command "#ap 10"
+#command "#animal"
+#command "#maxage 30"
+#bitey
+#enditem
+
+#newitem
+#name "wingless vanara"
+#chanceinc "secondaryracetheme winged *100"
+#gameid -1
+#sprite /graphics/illithid/slave/thrall_vanara_wingless.png
+#command "#gcost 9"
+#command "#hp 10"
+#command "#mr 10"
+#command "#prot 1"
+#command "#mor 50"
+#command "#str 10"
+#command "#att 10"
+#command "#def 10"
+#command "#prec 10"
+#command "#enc 3"
+#command "#mapmove 2"
+#command "#ap 10"
+#command "#maxage 40"
+#command "#animal"
+#command "#startingaff 67108864"
+#bitey
+#enditem
+
+#newitem
+#name "vanarabred"
+#chanceinc "secondaryracetheme vanarabred *100"
+#gameid -1
+#sprite /graphics/illithid/slave/thrall_vanara_vanarabred.png
+#command "#gcost 11"
+#command "#hp 12"
+#command "#mr 9"
+#command "#prot 1"
+#command "#mor 50"
+#command "#str 11"
+#command "#att 10"
+#command "#def 9"
+#command "#prec 8"
+#command "#enc 3"
+#command "#mapmove 2"
+#command "#ap 9"
+#command "#maxage 24"
+#command "#fireres 15"
+#bitey
+#enditem
+
+#newitem
+#name "alpine vanara"
+#chanceinc "secondaryracetheme alpine *100"
+#gameid -1
+#sprite /graphics/illithid/slave/thrall_vanara_alpine.png
+#command "#gcost 10"
+#command "#hp 10"
+#command "#mr 9"
+#command "#prot 2"
+#command "#mor 50"
+#command "#str 10"
+#command "#att 10"
+#command "#def 10"
+#command "#prec 10"
+#command "#enc 3"
+#command "#mapmove 2"
+#command "#ap 10"
+#command "#maxage 30"
+#command "#animal"
+#command "#coldres 15"
+#bitey
+#enditem

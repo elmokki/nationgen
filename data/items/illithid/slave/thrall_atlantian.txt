@@ -1,6 +1,6 @@
 #newitem
 #name "reef atlantian"
-#chanceinc "secondaryracetheme reef *20"
+#chanceinc "secondaryracetheme reef *100"
 #gameid -1
 #sprite /graphics/illithid/slave/thrall_atlantian_reef.png
 #command "#gcost 10"
@@ -14,15 +14,17 @@
 #command "#def 9"
 #command "#prec 8"
 #command "#enc 3"
+#command "#mapmove 2"
 #command "#ap 12"
 #command "#maxage 500"
 #command "#darkvision 50"
 #command "#amphibian"
+#has_claws
 #enditem
 
 #newitem
 #name "marine atlantian"
-#chanceinc "secondaryracetheme marine *20"
+#chanceinc "secondaryracetheme marine *100"
 #gameid -1
 #sprite /graphics/illithid/slave/thrall_atlantian_marine.png
 #command "#gcost 10"
@@ -36,15 +38,17 @@
 #command "#def 9"
 #command "#prec 8"
 #command "#enc 3"
+#command "#mapmove 2"
 #command "#ap 10"
 #command "#maxage 500"
 #command "#darkvision 50"
 #command "#amphibian"
+#has_claws
 #enditem
 
 #newitem
 #name "deep atlantian"
-#chanceinc "secondaryracetheme deep *20"
+#chanceinc "secondaryracetheme deep *100"
 #gameid -1
 #sprite /graphics/illithid/slave/thrall_atlantian_deep.png
 #command "#gcost 10"
@@ -58,10 +62,12 @@
 #command "#def 8"
 #command "#prec 7"
 #command "#enc 3"
+#command "#mapmove 1"
 #command "#ap 9"
 #command "#maxage 500"
 #command "#resfire 5"
 #command "#rescold 5"
 #command "#darkvision 100"
 #command "#amphibian"
+#bitey
 #enditem

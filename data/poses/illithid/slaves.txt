@@ -12,13 +12,13 @@
 #maxunits 1
 
 #load basesprite /data/items/illithid/slave/thrall_agarthan.txt
-#load shadow /data/items/agarthan/generic/shadow.txt
 #load armor /data/items/illithid/slave/armor_thrall.txt
 #load weapon /data/items/illithid/slave/weapon_thrall.txt
 
 #forcedname "Pale One Thrall"
 
 #endpose
+
 
 
 -------- Atlantian thralls
@@ -35,7 +35,6 @@
 #maxunits 1
 
 #load basesprite /data/items/illithid/slave/thrall_atlantian.txt
-#load shadow /data/items/illithid/slave/shadow_atlantian.txt
 #load armor /data/items/illithid/slave/armor_thrall.txt
 #load weapon /data/items/illithid/slave/weapon_thrall.txt
 
@@ -44,27 +43,53 @@
 #endpose
 
 
--------- Muuch thralls
+
+-------- Caelian thralls
 #newpose
-#name "muuch thrall"
+#name "caelian thrall"
 #role "infantry"
 
 #basechance 0
-#chanceinc "secondaryrace muuch 1"
+#chanceinc "secondaryrace 'caelian' 1"
+#chanceinc "secondaryracetheme yazata *0"
+#chanceinc "secondaryracetheme daeva *0"
 #chanceinc "hastheme illithid_hybrid *5"
 #chanceinc "hastheme illithid *10"
 
 #freetemplatefilter slavetemplate lobo
 #maxunits 1
 
-#load basesprite /data/items/illithid/slave/thrall_muuch.txt
-#load shadow /data/items/illithid/slave/shadow_atlantian.txt
+#load basesprite /data/items/illithid/slave/thrall_caelian.txt
 #load armor /data/items/illithid/slave/armor_thrall.txt
 #load weapon /data/items/illithid/slave/weapon_thrall.txt
 
-#forcedname "Muuch Thrall"
+#forcedname "Caelian Thrall"
 
 #endpose
+
+
+
+-------- Hoburg thralls
+#newpose
+#name "hoburg thrall"
+#role "infantry"
+
+#basechance 0
+#chanceinc "secondaryrace 'hoburg' 1"
+#chanceinc "hastheme illithid_hybrid *5"
+#chanceinc "hastheme illithid *10"
+
+#freetemplatefilter slavetemplate lobo
+#maxunits 1
+
+#load basesprite /data/items/illithid/slave/thrall_hoburg.txt
+#load armor /data/items/illithid/slave/armor_thrall.txt
+#load weapon /data/items/illithid/slave/weapon_thrall.txt
+
+#forcedname "Hoburg Thrall"
+
+#endpose
+
 
 
 -------- Human thralls
@@ -86,10 +111,102 @@
 #maxunits 1
 
 #load basesprite /data/items/illithid/slave/thrall_human.txt
-#load shadow /data/items/illithid/slave/shadow_human.txt
 #load armor /data/items/illithid/slave/armor_thrall.txt
 #load weapon /data/items/illithid/slave/weapon_thrall.txt
 
 #forcedname "Human Thrall"
+
+#endpose
+
+
+
+-------- Ichtyid thralls
+#newpose
+#name "ichtyid thrall"
+#role "infantry"
+
+#basechance 0
+#chanceinc "secondaryrace ichtyid 1"
+#chanceinc "hastheme illithid_hybrid *5"
+#chanceinc "hastheme illithid *10"
+
+#freetemplatefilter slavetemplate lobo
+#maxunits 1
+
+#load basesprite /data/items/illithid/slave/thrall_ichtyid.txt
+#load armor /data/items/illithid/slave/armor_thrall.txt
+#load weapon /data/items/illithid/slave/weapon_thrall.txt
+
+#forcedname "Ichtyid Thrall"
+
+#endpose
+
+
+
+-------- Lizard thralls
+#newpose
+#name "lizard thrall"
+#role "infantry"
+
+#basechance 0
+#chanceinc "secondaryrace 'lizard' 1"
+#chanceinc "secondaryracetheme sobek *0"
+#chanceinc "hastheme illithid_hybrid *5"
+#chanceinc "hastheme illithid *10"
+
+#freetemplatefilter slavetemplate lobo
+#maxunits 1
+
+#load basesprite /data/items/illithid/slave/thrall_lizard.txt
+#load armor /data/items/illithid/slave/armor_thrall.txt
+#load weapon /data/items/illithid/slave/weapon_thrall.txt
+
+#forcedname "Lizard Thrall"
+
+#endpose
+
+
+
+-------- Muuch thralls
+#newpose
+#name "muuch thrall"
+#role "infantry"
+
+#basechance 0
+#chanceinc "secondaryrace muuch 1"
+#chanceinc "hastheme illithid_hybrid *5"
+#chanceinc "hastheme illithid *10"
+
+#freetemplatefilter slavetemplate lobo
+#maxunits 1
+
+#load basesprite /data/items/illithid/slave/thrall_muuch.txt
+#load armor /data/items/illithid/slave/armor_thrall.txt
+#load weapon /data/items/illithid/slave/weapon_thrall.txt
+
+#forcedname "Muuch Thrall"
+
+#endpose
+
+
+
+-------- Primate thralls
+#newpose
+#name "vanara thrall"
+#role "infantry"
+
+#basechance 0
+#chanceinc "secondaryrace 'Primate' 1"
+#chanceinc "hastheme illithid_hybrid *5"
+#chanceinc "hastheme illithid *10"
+
+#freetemplatefilter slavetemplate lobo
+#maxunits 1
+
+#load basesprite /data/items/illithid/slave/thrall_vanara.txt
+#load armor /data/items/illithid/slave/armor_thrall.txt
+#load weapon /data/items/illithid/slave/weapon_thrall.txt
+
+#forcedname "Vanara Thrall"
 
 #endpose

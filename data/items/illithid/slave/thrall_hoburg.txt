@@ -1,0 +1,73 @@
+#newitem
+#name "occidental hoburg thrall"
+#chanceinc "secondaryracetheme boreal *1000"
+#chanceinc "secondaryracetheme central *1000"
+#chanceinc "secondaryracetheme imperial *1000"
+#chanceinc "secondaryracetheme occidental *1000"
+#chanceinc "secondaryracetheme oriental *1000"
+#gameid -1
+#sprite /graphics/illithid/slave/thrall_hoburg_occidental.png
+#command "#gcost 8"
+#command "#hp 5"
+#command "#size 1"
+#command "#prot 0"
+#command "#mr 14"
+#command "#mor 50"
+#command "#str 6"
+#command "#att 10"
+#command "#def 12"
+#command "#prec 11"
+#command "#enc 4"
+#command "#mapmove 1"
+#command "#ap 8"
+#command "#supplybonus -1"
+#command "#maxage 80"
+#bitey
+#enditem
+
+#newitem
+#name "austral hoburg thrall"
+#chanceinc "secondaryracetheme austral *1000"
+#gameid -1
+#sprite /graphics/illithid/slave/thrall_hoburg_austral.png
+#command "#gcost 8"
+#command "#hp 5"
+#command "#size 1"
+#command "#prot 0"
+#command "#mr 14"
+#command "#mor 50"
+#command "#str 6"
+#command "#att 10"
+#command "#def 12"
+#command "#prec 11"
+#command "#enc 4"
+#command "#mapmove 1"
+#command "#ap 8"
+#command "#supplybonus -1"
+#command "#maxage 80"
+#bitey
+#enditem
+
+#newitem
+#name "hoburgbred thrall"
+#chanceinc "secondaryracetheme abysian *1000"
+#gameid -1
+#sprite /graphics/illithid/slave/thrall_hoburg_hoburgbred.png
+#command "#gcost 10"
+#command "#hp 7"
+#command "#size 1"
+#command "#prot 0"
+#command "#mr 14"
+#command "#mor 50"
+#command "#str 8"
+#command "#att 10"
+#command "#def 10"
+#command "#prec 9"
+#command "#enc 4"
+#command "#mapmove 1"
+#command "#ap 10"
+#command "#fireres 15"
+#command "#supplybonus -1"
+#command "#maxage 64"
+#bitey
+#enditem

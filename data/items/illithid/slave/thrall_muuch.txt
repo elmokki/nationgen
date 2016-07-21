@@ -14,10 +14,12 @@
 #command "#def 9"
 #command "#prec 8"
 #command "#enc 4"
+#command "#mapmove 2"
 #command "#ap 12"
 #command "#maxage 500"
 #command "#darkvision 50"
 #command "#amphibian"
+#has_claws
 #enditem
 
 #newitem
@@ -36,10 +38,12 @@
 #command "#def 9"
 #command "#prec 8"
 #command "#enc 4"
+#command "#mapmove 2"
 #command "#ap 12"
 #command "#maxage 500"
 #command "#darkvision 50"
 #command "#amphibian"
+#has_claws
 #enditem
 
 #newitem
@@ -58,12 +62,13 @@
 #command "#def 9"
 #command "#prec 9"
 #command "#enc 4"
+#command "#mapmove 2"
 #command "#ap 12"
 #command "#maxage 500"
 #define "#poisonskin 20"
 #command "#darkvision 50"
 #command "#amphibian"
-#needs weapon claw_poisoned
+#has_poison_claws
 #enditem
 
 #newitem
@@ -82,8 +87,10 @@
 #command "#def 9"
 #command "#prec 8"
 #command "#enc 4"
+#command "#mapmove 2"
 #command "#ap 12"
 #command "#maxage 500"
 #command "#darkvision 100"
 #command "#amphibian"
+#has_claws
 #enditem
