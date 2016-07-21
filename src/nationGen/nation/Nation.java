@@ -95,9 +95,10 @@ public class Nation {
 	
 	public BufferedImage flag = null;
 
-	public Nation(NationGen ngen, int seed)
+	public Nation(NationGen ngen, int seed, int tempid)
 	{
 
+		this.nationid = tempid;
 		this.nationGen = ngen;
 		this.random = new Random(seed);
 		this.seed = seed;
