@@ -238,8 +238,13 @@ public class ChanceIncHandler {
 	public static boolean suitableFor(Unit u, Filter f, Nation n)
 	{
 		for(String role : u.pose.roles)
-			if(f.tags.contains("nopose " + role))
-				return false;
+		{
+			List<String> noposes = Generic.getTagValues(f.tags, "nopose");
+			for(String nopose : noposes)
+				if(role.contains(nopose))
+					return false;
+
+		}
 		
 		if(n != null && n.races.size() > 0)
 		{
