@@ -206,7 +206,6 @@ public class DescriptionReplacer {
 		
 		descs.put("%armortypes%",  NameGenerator.writeAsList(weapons, false));
 		
-		System.out.println(descs);
 		
 	}
 }
