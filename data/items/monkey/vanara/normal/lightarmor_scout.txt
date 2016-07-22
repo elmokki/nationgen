@@ -1,0 +1,214 @@
+--- Leather
+
+#newitem
+#basechance 3
+#name "naked"
+#gameid -1
+#armor
+#theme "enlightened"
+#theme "imperial"
+#theme "oriental"
+#theme "naked"
+#theme "primitive"
+#command "#stealthy +0"
+#enditem
+
+#newitem
+#basechance 3
+#name "imperial tunic"
+#gameid -1
+#sprite /graphics/monkey/armor/vanara/tunic_imperial.png
+#recolormask /graphics/monkey/armor/vanara/tunic_imperial_recolormask.png
+#armor
+#theme "imperial"
+#theme "naked"
+#enditem
+
+#newitem
+#name "ronin armor"
+#gameid 158
+#sprite /graphics/monkey/armor/vanara/ronin.png
+#armor
+#theme "oriental"
+#theme "leather"
+#command "#stealthy +0"
+#enditem
+
+#newitem
+#basechance 3
+#name "furs"
+#gameid 44
+#sprite /graphics/monkey/armor/vanara/furs.png
+#armor
+#theme "austral"
+#theme "primitive"
+#theme "leather"
+#command "#stealthy +0"
+#enditem
+
+
+-- Imperial
+#newitem
+#name "imperial leather"
+#basechance 6
+#gameid 10
+#sprite /graphics/monkey/armor/vanara/leatherhauberk_imperial.png
+#recolormask /graphics/monkey/armor/vanara/imperial_recolormask.png
+#armor
+#theme "imperial"
+#theme "leather"
+#enditem
+
+#newitem
+#name "imperial ring"
+#basechance 4
+#gameid 11
+#sprite /graphics/monkey/armor/vanara/ringhauberk_imperial.png
+#recolormask /graphics/monkey/armor/vanara/imperial_recolormask.png
+#armor
+#theme "imperial"
+#theme "leather"
+#theme "iron"
+#enditem
+
+#newitem
+#name "lorica hamata"
+#basechance 2
+#gameid 116
+#sprite /graphics/monkey/armor/vanara/lorica_hamata.png
+#recolormask /graphics/monkey/armor/vanara/imperial_recolormask.png
+#armor
+#theme "imperial"
+#theme "iron"
+#theme "advanced"
+#enditem
+
+
+-- Oriental
+#newitem
+#name "oriental leather cuirass"
+#basechance 6
+#gameid 5
+#sprite /graphics/monkey/armor/vanara/leathercuirass_oriental.png
+#armor
+#theme "oriental"
+#theme "leather"
+#enditem
+
+#newitem
+#name "oriental leather hauberk"
+#basechance 4
+#gameid 10
+#sprite /graphics/monkey/armor/vanara/leatherhauberk_oriental.png
+#recolormask /graphics/monkey/armor/vanara/hauberk_oriental_recolormask.png
+#armor
+#theme "oriental"
+#theme "leather"
+#enditem
+
+-- Monkey ninja stuff
+
+#newitem
+#basechance 0.05
+#chanceinc unittheme not oriental *0
+#name "ninja-none"
+#gameid -1
+#armor
+#sprite /graphics/monkey/armor/vanara/shirt_dark.png
+#theme "naked"
+#theme "oriental"
+#theme "spy"
+#theme "assassin"
+#needstype helmet hidden
+#ninja
+#enditem
+
+#newitem
+#basechance 0.1
+#chanceinc unittheme not oriental *0
+#name "ninja-leathercuirass"
+#gameid 5
+#armor
+#sprite /graphics/monkey/armor/vanara/shirt_dark.png
+#theme "leather"
+#theme "oriental"
+#theme "spy"
+#theme "assassin"
+#needstype helmet hidden
+#ninja
+#enditem
+
+#newitem
+#basechance 0.05
+#chanceinc unittheme not oriental *0
+#name "ninja-leatherhauberk"
+#gameid 10
+#armor
+#sprite /graphics/monkey/armor/vanara/shirt_dark.png
+#theme "leather"
+#theme "oriental"
+#theme "spy"
+#theme "assassin"
+#needstype helmet hidden
+#ninja
+#enditem
+
+#newitem
+#basechance 0.1
+#chanceinc unittheme not oriental *0
+#name "ninja-ringcuirass"
+#gameid 6
+#armor
+#sprite /graphics/monkey/armor/vanara/shirt_dark.png
+#theme "leather"
+#theme "oriental"
+#theme "spy"
+#theme "assassin"
+#needstype helmet hidden
+#ninja
+#enditem
+
+#newitem
+#basechance 0.05
+#chanceinc unittheme not oriental *0
+#name "ninja-ringhauberk"
+#gameid 11
+#armor
+#sprite /graphics/monkey/armor/vanara/shirt_dark.png
+#theme "leather"
+#theme "oriental"
+#theme "spy"
+#theme "assassin"
+#needstype helmet hidden
+#ninja
+#enditem
+
+#newitem
+#basechance 0.1
+#chanceinc unittheme not oriental *0
+#name "ninja-scalecuirass"
+#gameid 7
+#armor
+#sprite /graphics/monkey/armor/vanara/shirt_dark.png
+#theme "iron"
+#theme "oriental"
+#theme "spy"
+#theme "assassin"
+#needstype helmet hidden
+#ninja
+#enditem
+
+#newitem
+#basechance 0.1
+#chanceinc unittheme not oriental *0
+#name "ninja-chaincuirass"
+#gameid 8
+#armor
+#sprite /graphics/monkey/armor/vanara/shirt_dark.png
+#theme "iron"
+#theme "oriental"
+#theme "spy"
+#theme "assassin"
+#needstype helmet hidden
+#ninja
+#enditem
