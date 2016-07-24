@@ -464,14 +464,50 @@ public class MageGenerator extends TroopGenerator {
 				mages.get(i).get(j).name.setType(all.get(i).get(j).toString(derp));
 				
 			
-				
-				
-				if(i == 2 && leaderrandom1 > 0.9)
-					mages.get(i).get(j).commands.add(new Command("#goodleader"));
-				else if(i == 2 && leaderrandom1 > 0.6){/*do nothing*/}
-				else if(i == 1 && leaderrandom1 > 0.9 && leaderrandom2 > 0.5){/*do nothing*/}
+				if(mages.get(i).get(j).tags.contains("warriormage"))
+				{
+					if(leaderrandom1 > 0.95)
+					{
+						mages.get(i).get(j).commands.add(new Command("#expertleader"));
+						mages.get(i).get(j).commands.add(new Command("#gcost +50"));
+					}
+					else if(leaderrandom1 > 0.8)
+					{
+						mages.get(i).get(j).commands.add(new Command("#goodleader"));
+						mages.get(i).get(j).commands.add(new Command("#gcost +30"));
+					}
+					else if(leaderrandom1 > 0.5)
+					{
+						mages.get(i).get(j).commands.add(new Command("#okayleader"));
+						mages.get(i).get(j).commands.add(new Command("#command +20"));
+						mages.get(i).get(j).commands.add(new Command("#gcost +10"));
+					}
+					else if(leaderrandom1 > 0.25)
+					{
+						mages.get(i).get(j).commands.add(new Command("#okayleader"));
+					}
+					else if(leaderrandom1 > 0.0625)
+					{
+						mages.get(i).get(j).commands.add(new Command("#poorleader"));
+						mages.get(i).get(j).commands.add(new Command("#command +30"));
+					}
+					else
+					{
+						mages.get(i).get(j).commands.add(new Command("#poorleader"));
+						mages.get(i).get(j).commands.add(new Command("#gcost -5"));
+					}
+
+				}
+					
 				else
-					mages.get(i).get(j).commands.add(new Command("#poorleader"));
+				{
+					if(i == 2 && leaderrandom1 > 0.9)
+						mages.get(i).get(j).commands.add(new Command("#goodleader"));
+					else if(i == 2 && leaderrandom1 > 0.6){/*do nothing*/}
+					else if(i == 1 && leaderrandom1 > 0.9 && leaderrandom2 > 0.5){/*do nothing*/}
+					else
+						mages.get(i).get(j).commands.add(new Command("#poorleader"));
+				}
 
 					
 					
@@ -1427,8 +1463,41 @@ public class MageGenerator extends TroopGenerator {
 				if(r.nextDouble() > 0.9)
 					u.commands.add(new Command("#slowrec"));
 			}
-			
-			if(currentStrength == 3 && r.nextDouble() > 0.75){/*do nothing*/}
+
+			if(u.tags.contains("warriormage"))
+			{
+				double leaderrandom = r.nextDouble();
+				if(leaderrandom > 0.95)
+				{
+					u.commands.add(new Command("#expertleader"));
+					u.commands.add(new Command("#gcost +80"));
+				}
+				else if(leaderrandom > 0.8)
+				{
+					u.commands.add(new Command("#goodleader"));
+					u.commands.add(new Command("#gcost +40"));
+				}
+				else if(leaderrandom > 0.5)
+				{
+					u.commands.add(new Command("#okayleader"));
+					u.commands.add(new Command("#command +20"));
+					u.commands.add(new Command("#gcost +20"));
+				}
+				else if(leaderrandom > 0.25)
+				{
+					u.commands.add(new Command("#okayleader"));
+					u.commands.add(new Command("#gcost +10"));
+				}
+				else if(leaderrandom > 0.0675)
+				{
+					u.commands.add(new Command("#poorleader"));
+					u.commands.add(new Command("#command +30"));
+					u.commands.add(new Command("#gcost +5"));
+				}
+				else
+					u.commands.add(new Command("#poorleader"));
+			}
+			else if(currentStrength == 3 && r.nextDouble() > 0.75){/*do nothing*/}
 			else if(currentStrength == 2 && r.nextDouble() > 0.85){/*do nothing*/}
 			else
 			{

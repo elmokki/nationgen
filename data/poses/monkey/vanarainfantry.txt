@@ -46,7 +46,6 @@
 
 #newpose
 #name "vanara light infantry"
-#role "scout"
 #role "infantry"
 #basechance 0.5
 #theme "imperial"
@@ -83,6 +82,44 @@
 #endpose
 
 
+-------- Scouts
+
+#newpose
+#name "vanara scouts"
+#role "scout"
+#theme "imperial"
+#theme "enlightened"
+#theme "oriental"
+#theme "lowland"
+#theme "winged"
+#theme "abysian"
+#theme "alpine"
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/monkey/vanara/normal/bases.txt
+#load shadow /data/items/monkey/vanara/normal/shadow.txt
+
+#load hands /data/items/monkey/vanara/normal/hands.txt
+
+#load cloakf /data/items/monkey/vanara/normal/cloakf.txt
+#load cloakb /data/items/monkey/vanara/normal/cloakb.txt
+
+#load armor /data/items/monkey/vanara/normal/lightarmor.txt
+#load armor /data/items/monkey/vanara/normal/lightarmor_scout.txt
+#load helmet /data/items/monkey/vanara/normal/helmet_scout.txt
+
+#load weapon /data/items/monkey/vanara/normal/weapon.txt
+#load bonusweapon /data/items/monkey/vanara/normal/lightbonusranged.txt 0 1
+
+#load offhand /data/items/monkey/vanara/normal/offhand.txt
+
+#load wings /data/items/monkey/vanara/normal/wings.txt
+#load overlay /data/items/monkey/vanara/normal/overlay.txt
+
+#command "#maxage 30"
+#endpose
+
 
 -------- Archer
 
@@ -116,7 +153,6 @@
 #load weapon /data/items/monkey/vanara/normal/bows.txt -3 3
 #load bonusweapon /data/items/monkey/bandar/normal/archerweapon.txt
 
-
 #load strap /data/items/monkey/vanara/normal/strap.txt
 #load quiver /data/items/monkey/vanara/normal/quiver.txt
 
@@ -127,6 +163,7 @@
 #generateitem 1 shirt
 #command "#maxage 30"
 #endpose
+
 
 -------- Archer
 

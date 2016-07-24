@@ -1,0 +1,183 @@
+#newitem
+#id none
+#gameid -1
+#basechance 4
+#armor
+#theme "enlightened"
+#theme "imperial"
+#theme "naked"
+#theme "primitive"
+#enditem
+
+#newitem
+#id hood
+#gameid 121
+#basechance 4
+#sprite /graphics/monkey/helmet/vanara/cowl_scout.png
+#recolormask self
+#armor
+#theme "enlightened"
+#theme "imperial"
+#theme "oriental"
+#theme "naked"
+#theme "advanced"
+#enditem
+
+#newitem
+#id ironcap
+#gameid 20
+#sprite /graphics/monkey/helmet/vanara/ironcap.png
+#armor
+#theme "enlightened"
+#theme "iron"
+#enditem
+
+#newitem
+#id bronzecap
+#gameid 135
+#sprite /graphics/monkey/helmet/vanara/bronzecap.png
+#armor
+#theme "enlightened"
+#theme "bronze"
+#enditem
+
+
+
+--- Imperial helms
+#newitem
+#id leathercap_imperial
+#gameid 119
+#sprite /graphics/monkey/helmet/vanara/reinforcedhelm.png
+#armor
+#theme "imperial"
+#theme "leather"
+#maxprot 10
+#enditem
+
+#newitem
+#id ironcap_imperial
+#gameid 20
+#sprite /graphics/monkey/helmet/vanara/ironcap.png
+#armor
+#theme "imperial"
+#theme "iron"
+#maxprot 10
+#enditem
+
+#newitem
+#id legionaryhelmet
+#gameid 126
+#sprite /graphics/monkey/helmet/vanara/legionaryhelm.png
+#armor
+#theme "imperial"
+#theme "iron"
+#minprot 8
+#enditem
+
+--- Oriental helms
+
+#newitem
+#id jingasa
+#gameid 131
+#sprite /graphics/helmet/standard/jingasa2.png
+#recolormask /graphics/helmet/standard/jingasa2_recolormask.png
+#theme "oriental"
+#theme "iron"
+#offsetx 2
+#offsety 1
+#armor
+#theme peasant
+#enditem
+
+#newitem
+#id leathercap_oriental
+#gameid 120
+#sprite /graphics/tengu/helmet/reinforcedcap.png
+#theme "oriental"
+#theme "leather"
+#offsetx 3
+#armor
+#enditem
+
+#newitem
+#id reinforcedcap_oriental
+#gameid 119
+#sprite /graphics/tengu/helmet/reinforcedcap.png
+#theme "oriental"
+#theme "leather"
+#offsetx 3
+#armor
+#enditem
+
+#newitem
+#id ironcap_oriental
+#gameid 20
+#sprite /graphics/tengu/helmet/tienchihelmet.png
+#theme "oriental"
+#theme "iron"
+#offsetx 3
+#armor
+#enditem
+
+
+-- Ninja cowls
+
+#newitem
+#id bare
+#gameid -1
+#basechance 0.05
+#chanceinc slottag not armor ninja *0
+#armor
+#sprite /graphics/monkey/helmet/vanara/cowl_ninja.png
+#type "hidden"
+#theme "naked"
+#theme "oriental"
+#enditem
+
+#newitem
+#id leatherhood
+#gameid 121
+#basechance 0.05
+#chanceinc slottag not armor ninja *0
+#armor
+#sprite /graphics/monkey/helmet/vanara/cowl_ninja.png
+#type "hidden"
+#theme "leather"
+#theme "oriental"
+#enditem
+
+#newitem
+#id leathercap
+#gameid 120
+#basechance 0.05
+#chanceinc slottag not armor ninja *0
+#armor
+#sprite /graphics/monkey/helmet/vanara/cowl_ninja.png
+#type "hidden"
+#theme "leather"
+#theme "oriental"
+#enditem
+
+#newitem
+#id reinforcedcap
+#gameid 119
+#basechance 0.025
+#chanceinc slottag not armor ninja *0
+#armor
+#sprite /graphics/monkey/helmet/vanara/cowl_ninja.png
+#type "hidden"
+#theme "leather"
+#theme "oriental"
+#enditem
+
+#newitem
+#id ironcap
+#gameid 20
+#basechance 0.025
+#chanceinc slottag not armor ninja *0
+#armor
+#sprite /graphics/monkey/helmet/vanara/cowl_ninja.png
+#type "hidden"
+#theme "iron"
+#theme "oriental"
+#enditem
