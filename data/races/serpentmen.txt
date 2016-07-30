@@ -1,0 +1,44 @@
+#newrace
+#name "Serpentman"
+
+#basechance 0.2
+
+#racethemes serpentman_themes
+#freetheme demographic
+
+#spritegenpose serpentmantroops
+#spritegenpose serpentmanmages
+
+#longsyllables /data/names/nations/lizard/longsyllables.txt
+#shortsyllables /data/names/nations/lizard/shortsyllables.txt
+#suffixes /data/names/nations/lizard/suffixes.txt
+
+#unitcommand "#prot 3"
+#unitcommand "#coldblooded"
+#unitcommand "#gcost 10"
+#unitcommand "#hp 11"
+#unitcommand "#mr 12"
+#unitcommand "#mor 9"
+#unitcommand "#enc 4"
+#unitcommand "#poisonres 5"
+#unitcommand "#swampsurvival"
+#unitcommand "#ap 10"
+#unitcommand "#nametype 113"
+#unitcommand "#maxage 75"
+#nationcommand "#idealcold -1"
+
+#magicpatterns defaultprimary
+#magicpatterns defaultsecondary
+#magicpatterns defaulttertiary
+
+#gods lizardgods
+
+#magicpriority death 4
+#magicpriority nature 6
+#magicpriority water 5
+
+#chanceinc "primaryrace van *0.1"
+#chanceinc primaryrace "Austral human" *3
+#chanceinc race "Dynastic human" *3"
+
+#endrace

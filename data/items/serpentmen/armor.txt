@@ -1,0 +1,104 @@
+--- Leather
+#newitem
+#name "leather cuirass 1"
+#gameid 5
+#sprite /graphics/serpentmen/armor/leathercuirass.png
+#armor
+#theme "leather"
+#enditem
+
+#newitem
+#name "leather hauberk 1"
+#gameid 10
+#sprite /graphics/serpentmen/armor/leatherhauberk.png
+#armor
+#theme "leather"
+#enditem
+
+--- Ring
+#newitem
+#name "ring cuirass"
+#gameid 6
+#sprite /graphics/serpentmen/armor/ringcuirass.png
+#armor
+#basechance 2
+#theme "leather"
+#theme "iron"
+#enditem
+
+#newitem
+#name "ring hauberk short"
+#gameid 11
+#sprite /graphics/serpentmen/armor/ringhauberk.png
+#armor
+#theme "leather"
+#theme "iron"
+#enditem
+
+--- Scale
+
+#newitem
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/serpentmen/armor/scalecuirass.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "scale hauberk"
+#gameid 12
+#sprite /graphics/serpentmen/armor/scalehauberk.png
+#armor
+#basechance 0.5
+#theme "iron"
+#enditem
+
+#newitem -- full scale
+#name "full scale"
+#gameid 17
+#sprite /graphics/serpentmen/armor/fullscale.png
+#armor
+#theme "advanced"
+#theme "iron"
+#enditem
+
+--- Chain Mail
+
+#newitem
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/serpentmen/armor/mailcuirass.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "chain hauberk short"
+#gameid 13
+#sprite /graphics/serpentmen/armor/mailhauberk1.png
+#basechance 0.5
+#armor
+#theme "iron"
+#enditem
+
+--- Plate
+
+#newitem
+#name "plate cuirass"
+#gameid 9
+#sprite /graphics/serpentmen/armor/platecuirass.png
+#armor
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem
+#name "plate hauberk"
+#gameid 14
+#sprite /graphics/serpentmen/armor/platehauberk.png
+#armor
+#theme "advanced"
+#theme "iron"
+#tag "name mounted knight"
+#enditem
