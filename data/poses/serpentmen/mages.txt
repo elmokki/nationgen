@@ -1,0 +1,30 @@
+--- priest
+
+#newpose
+#role "priest"
+
+#load basesprite /data/items/serpentmen/serpentmenbases.txt
+#load shadow /data/items/serpentmen/shadow.txt
+#load armor /data/items/serpentmen/magerobe.txt
+#load helmet /data/items/serpentmen/magehelmet.txt
+#load weapon /data/items/serpentmen/mageweapon.txt
+
+#mage_nolowtierhat
+
+#endpose
+
+
+--- mage 
+
+#newpose
+#role "mage"
+
+#renderorder "shadow basesprite armor helmet weapon"
+#load basesprite /data/items/serpentmen/serpentmenbases.txt
+#load shadow /data/items/serpentmen/shadow.txt
+#load armor /data/items/serpentmen/magerobe.txt
+#load helmet /data/items/serpentmen/magehelmet.txt
+#load weapon /data/items/serpentmen/mageweapon.txt
+
+#mage_nolowtierhat
+#endpose
