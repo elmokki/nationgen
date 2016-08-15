@@ -229,7 +229,7 @@ public class NationGen {
 			
 			System.out.print(")... ");
 			
-			newnation = new Nation(this, newseed);
+			newnation = new Nation(this, newseed, count);
 
 			// Handle restrictions
 			boolean pass = true;
