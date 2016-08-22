@@ -3,15 +3,42 @@
 #name "Supplicant of Earth"
 #command #copyspell 'Communion Slave'
 #command #name 'Supplicant of Earth'
-#command #path 1 3
-#command #descr 'The caster surrenders itself to the earth, connecting through the immeasurable mass through anyone who is willing to listen (communion slave)'
+#command #path 0 3
+#command #descr 'The caster surrenders themself to the earth, connecting through the immeasurable mass through anyone who is willing to listen (communion slave)'
 #end
 
---- Earth communion slave
+--- Earth communion master
 #new
 #name "Reader of Earth"
 #command "#copyspell 'Communion Master'"
 #command "#name 'Reader of Earth'"
-#command "#path 1 3"
+#command "#path 0 3"
 #command "#descr 'The caster listens to the earth, connecting to anyone willing to surrender themselves to it (communion master)'"
+#end
+
+
+--- Natural cross breeding
+#new
+#name "Accelerated Breeding"
+#command "#copyspell 'Cross Breeding'"
+#command "#name 'Accelerated Breeding'"
+#command "#school 4"
+#command "#path 0 6"
+#command "#path 1 -1"
+#command "#pathlevel 0 2"
+#command "#nreff 2021"
+#command "#descr 'The cycle of life is accelerated among the residents of the province. As a result, many simple-minded but loyal Foul Spawn will be born and grow to maturity in the span of a month. With luck, some may even grow well beyond their natural size.'"
+#end
+
+--- Natural improved cross breeding
+#new
+#name "Improved Accelerated Breeding"
+#command "#copyspell 'Improved Cross Breeding'"
+#command "#name 'Improved Accelerated Breeding'"
+#command "#school 4"
+#command "#path 0 6"
+#command "#path 1 -1"
+#command "#pathlevel 0 3"
+#command "#nreff 4038"
+#command "#descr 'The cycle of life is accelerated among the residents of the province. As a result, many simple-minded but loyal Foul Spawn will be born and grow to maturity in the span of a month. With luck, some may even grow well beyond their natural size.'"
 #end
