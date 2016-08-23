@@ -464,7 +464,7 @@ public class CommanderGenerator extends TroopGenerator {
 				{
 					magicpower = power++;
 					if(powerpenalty == 0 && magicbeing)
-						powerpenalty = r.nextInt(Math.min(0, 4) - 1);
+						powerpenalty = Math.min(0, r.nextInt(4) - 1);
 					else if(powerpenalty == 0)
 						powerpenalty = Math.min(0, (r.nextInt(3) - 1));
 				}
@@ -476,7 +476,7 @@ public class CommanderGenerator extends TroopGenerator {
 				{
 					demonpower = power++;
 					if(powerpenalty == 0 && demon)
-						powerpenalty = r.nextInt(Math.min(0, 5) - 3);
+						powerpenalty = Math.min(0, r.nextInt(5) - 3);
 					else if(powerpenalty == 0)
 						powerpenalty = Math.min(0, (r.nextInt(3) - 1));
 				}
