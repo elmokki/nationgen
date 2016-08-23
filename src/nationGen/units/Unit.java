@@ -266,15 +266,17 @@ public class Unit {
 		{
 			slots = 0;
 
-			ArrayList<String> tags =  (ArrayList<String>) Generic.getAllUnitTags(this);
+			ArrayList<String> unitTags =  (ArrayList<String>) Generic.getAllUnitTags(this);
+			
+			ArrayList<String> itemTags =  new ArrayList<String>();
 			if(this.slotmap.get("basesprite") != null)
-				tags.addAll(this.slotmap.get("basesprite").tags);
+				itemTags.addAll(this.slotmap.get("basesprite").tags);
 
 			for(Item i : this.slotmap.values())
 				if(i != null && i != this.slotmap.get("basesprite"))
-					tags.addAll(i.tags);
+					itemTags.addAll(i.tags);
 			
-			tags.addAll(this.tags);
+			// itemTags.addAll(this.tags);
 			
 			
 			int head = 1;
@@ -283,8 +285,8 @@ public class Unit {
 			int hand = 2;
 			int misc = 2;
 			
-			List<String> args = Generic.getTagValues(tags, "itemslot");
-			for(String arg : args)
+			List<String> unitArgs = Generic.getTagValues(unitTags, "baseitemslot");
+			for(String arg : unitArgs)
 			{
 				if(arg.split(" ")[0].equals("head"))
 					head = handleModifier(arg.split(" ")[1], head);
@@ -298,7 +300,22 @@ public class Unit {
 					feet = handleModifier(arg.split(" ")[1], feet);			
 			}
 			
-			head = Math.min(head, 1);
+			List<String> args = Generic.getTagValues(tags, "itemslot");
+			for(String arg : args)
+			{
+				if(arg.split(" ")[0].equals("head"))
+					head += handleModifier(arg.split(" ")[1], head);
+				else if(arg.split(" ")[0].equals("misc"))
+					misc += handleModifier(arg.split(" ")[1], misc);
+				else if(arg.split(" ")[0].equals("body"))
+					body += handleModifier(arg.split(" ")[1], body);
+				else if(arg.split(" ")[0].equals("hand"))
+					hand += handleModifier(arg.split(" ")[1], hand);
+				else if(arg.split(" ")[0].equals("feet"))
+					feet += handleModifier(arg.split(" ")[1], feet);			
+			}
+			
+			head = Math.min(head, 2);
 			misc = Math.min(misc, 5);
 			body = Math.min(body, 1);
 			hand = Math.min(hand, 4);

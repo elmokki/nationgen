@@ -1,16 +1,31 @@
-0.6.17 (x th of July 2016)
+0.6.17b (15th of August 2016)
+----------------------------------------------------------
+
+Code
+----------------------------------------------------------
+- The .jar was compiled from earlier codebase
+
+
+0.6.17 (15th of August 2016)
 ----------------------------------------------------------
 
 Code
 ----------------------------------------------------------
 - Fixed a bug where commander versions of units, mostly foul spawn, wouldn't follow equipment-affecting modifiers
 - Tweaked commander selection criteria to prioritize units that fill many of the commands that should be filled at once
+- Tweaked commander leadership assignment so that animals/slaves may have reduced leadership/inspiration, offset by an increased chance for beastmaster/taskmaster
+- Tweaked commander leadership assignment so "non-standard" leaders are more likely to get more and better leadership, and "normals" are slightly less likely
+- Tweaked mage/priest leadership for units derived from "warrior-priest" archtypes
 - Nation ids were handed to nations discarded by seeds. 
 	- Many mods with strict restrictions were unplayable even if they had just a few nations due to nation ids being higher than the game allows.
+- Fixed a bug where Foulspawn units had erratic amounts of item slots not always corresponding to how many and which limbs they had
 
 Content
 ----------------------------------------------------------
 - Illithid thralls actually enabled!
+- Added the possibility of vanara ninjas for oriental primates
+- Some fairly disparate graphics tweaks
+- Foulspawn nations can get some of the big Crossbreeding results as fixed monster picks
 
 0.6.16c (17th of July 2016)
 ----------------------------------------------------------

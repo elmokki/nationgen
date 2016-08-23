@@ -1,0 +1,104 @@
+#newitem
+#name "swamp serpentman"
+#theme swamp_serpent
+#gameid -1
+#sprite /graphics/serpentmen/serpentman_swamp_base.png
+#define "#gcost +5"
+#define "#poisonres +10"
+#define "#poisoncloud +3"
+#define "#swampsurvival"
+#define "#coldblooded"
+#define "#pooramphibian"
+#enditem
+
+#newitem
+#name "sea serpentman"
+#theme sea_serpent
+#gameid -1
+#sprite /graphics/serpentmen/serpentman_sea_base.png
+#define "#prot -4"
+#define "#mapmove 1"
+#define "#ap +4"
+#define "#coldblooded"
+#define "#amphibian"
+#enditem
+
+#newitem
+#name "jungle serpentman"
+#theme jungle_serpent
+#gameid -1
+#sprite /graphics/serpentmen/serpentman_jungle_base.png
+#define "#gcost -1"
+#define "#heal"
+#define "#forestsurvival"
+#define "#coldblooded"
+#enditem
+
+#newitem
+#name "mountain serpentman"
+#theme mountain_serpent
+#gameid -1
+#sprite /graphics/serpentmen/serpentman_mountain_base.png
+#define "#prot +3"
+#define "#coldres +5"
+#define "#mountainsurvival"
+#enditem
+
+#newitem
+#name "deep serpentman"
+#theme deep_serpent
+#gameid -1
+#sprite /graphics/serpentmen/serpentman_deep_base.png
+#define "#gcost +1"
+#define "#str -1"
+#define "#att -1"
+#define "#def -1"
+#define "#ap -2"
+#define "#stealthy +0"
+#define "#darkpower +2"
+#define "#darkvision 100"
+#define "#coldblooded"
+#enditem
+
+#newitem
+#name "blind serpentman"
+#theme blind_serpent
+#gameid -1
+#sprite /graphics/serpentmen/serpentman_blind_base.png
+#define "#gcost +1"
+#define "#prot -4"
+#define "#siegebonus +1"
+#define "#blind 1"
+#define "#pooramphibian"
+#define "#eyes 0"
+#define "#coldblooded"
+#enditem
+
+#newitem
+#name "tundra serpentman"
+#theme tundra_serpent
+#gameid -1
+#sprite /graphics/serpentmen/serpentman_frost_base.png
+#define "#gcost +2"
+#define "#prot -2"
+#define "#fireres -5"
+#define "#coldres +15"
+#define "#cold +3"
+#define "#coldpower +1"
+#define "#iceprot +1"
+#define "#wastesurvival"
+#enditem
+
+#newitem
+#name "desert serpentman"
+#theme desert_serpent
+#gameid -1
+#sprite /graphics/serpentmen/serpentman_flame_base.png
+#define "#gcost +2"
+#define "#prot -2"
+#define "#fireres +15"
+#define "#heat +3"
+#define "#firepower +1"
+#define "#coldblooded"
+#define "#wastesurvival"
+#enditem
