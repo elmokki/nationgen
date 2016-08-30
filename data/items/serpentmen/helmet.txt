@@ -1,8 +1,13 @@
+-- Iron helms
 #newitem
 #name "ironcap"
 #gameid 20
 #sprite /graphics/serpentmen/head/ironcap.png
+#eliteversion ironcap-elite
 #armor
+#theme "iron"
+#theme "terrestrial"
+#theme "dynastic"
 #enditem
 
 #newitem
@@ -11,8 +16,222 @@
 #sprite /graphics/serpentmen/head/ironcap2.png
 #recolormask /graphics/serpentmen/head/ironcap2_recolormask.png
 #armor
+#theme "iron"
+#theme "terrestrial"
+#theme "dynastic"
+#theme "elite"
+#enditem
+
+#newitem
+#name "halfhelm"
+#gameid 118
+#sprite /graphics/serpentmen/head/halfhelm1.png
+#eliteversion halfhelm-elite
+#armor
+#theme "iron"
+#theme "terrestrial"
+#theme "dynastic"
+#enditem
+
+#newitem
+#name "halfhelm-elite"
+#gameid 118
+#sprite /graphics/serpentmen/head/halfhelm2.png
+#recolormask /graphics/serpentmen/head/ironcap2_recolormask.png
+#armor
+#theme "iron"
+#theme "terrestrial"
+#theme "dynastic"
+#theme "elite"
+#enditem
+
+#newitem
+#name "fullhelm"
+#gameid 19
+#sprite /graphics/serpentmen/head/fullhelm1.png
+#eliteversion fullhelm-elite
+#armor
+#theme "iron"
+#theme "terrestrial"
+#theme "dynastic"
+#enditem
+
+#newitem
+#name "fullhelm-elite"
+#gameid 19
+#sprite /graphics/serpentmen/head/fullhelm2.png
+#recolormask /graphics/serpentmen/head/ironcap2_recolormask.png
+#armor
+#theme "iron"
+#theme "terrestrial"
+#theme "dynastic"
 #theme "elite"
 #enditem
 
 
+-- Bronze helms
+#newitem
+#name "bronzecap"
+#gameid 135
+#sprite /graphics/serpentmen/head/bronzecap.png
+#eliteversion bronzecap-elite
+#armor
+#theme "bronze"
+#theme "terrestrial"
+#theme "marine"
+#theme "dynastic"
+#enditem
 
+#newitem
+#name "bronzecap-elite"
+#gameid 20
+#sprite /graphics/serpentmen/head/bronzecap2.png
+#recolormask /graphics/serpentmen/head/bronzecap2_recolormask.png
+#armor
+#theme "bronze"
+#theme "terrestrial"
+#theme "dynastic"
+#theme "elite"
+#enditem
+
+#newitem
+#name "bronze halfhelm"
+#gameid bronzehalfhelmet
+#sprite /graphics/serpentmen/head/bronzehelm1.png
+#eliteversion "bronze halfhelm-elite"
+#armor
+#theme "bronze"
+#theme "terrestrial"
+#theme "marine"
+#theme "dynastic"
+#enditem
+
+#newitem
+#name "bronze halfhelm-elite"
+#gameid bronzehalfhelmet
+#sprite /graphics/serpentmen/head/bronzehelm2.png
+#recolormask /graphics/serpentmen/head/ironcap2_recolormask.png
+#armor
+#theme "bronze"
+#theme "terrestrial"
+#theme "dynastic"
+#theme "elite"
+#enditem
+
+#newitem
+#name "bronze fullhelm"
+#gameid 123
+#sprite /graphics/serpentmen/head/hoplitehelm1.png
+#eliteversion "bronze fullhelm-elite"
+#armor
+#theme "bronze"
+#theme "terrestrial"
+#theme "marine"
+#theme "dynastic"
+#enditem
+
+#newitem
+#name "bronze fullhelm-elite"
+#gameid 123
+#sprite /graphics/serpentmen/head/hoplitehelm2.png
+#recolormask /graphics/serpentmen/head/ironcap2_recolormask.png
+#armor
+#theme "bronze"
+#theme "terrestrial"
+#theme "dynastic"
+#theme "elite"
+#enditem
+
+-- Ice helms
+#newitem
+#name "icecap"
+#gameid 29
+#sprite /graphics/serpentmen/head/icecap.png
+#armor
+#theme "ice"
+#theme "terrestrial"
+#theme "boreal"
+#enditem
+
+#newitem
+#name "ice halfhelm"
+#gameid 124
+#sprite /graphics/serpentmen/head/icehelmet.png
+#armor
+#theme "ice"
+#theme "terrestrial"
+#theme "boreal"
+#enditem
+
+#newitem
+#name "ice fullhelm"
+#gameid icehelmet_full
+#sprite /graphics/serpentmen/head/icefullhelm.png
+#armor
+#theme "ice"
+#theme "terrestrial"
+#theme "boreal"
+#enditem
+
+#newitem
+#name "icecap_oriental"
+#gameid 29
+#sprite /graphics/serpentmen/head/icecap_oriental.png
+#armor
+#theme "ice"
+#theme "terrestrial"
+#theme "oriental"
+#enditem
+
+#newitem
+#name "ice halfhelm_oriental"
+#gameid 124
+#sprite /graphics/serpentmen/head/icehelm_oriental.png
+#eliteversion "elite ice halfhelm_oriental"
+#armor
+#theme "ice"
+#theme "terrestrial"
+#theme "oriental"
+#enditem
+
+#newitem
+#name "elite ice halfhelm_oriental"
+#gameid icehelmet_full
+#sprite /graphics/serpentmen/head/icehelm_oriental_elite.png
+#armor
+#theme "ice"
+#theme "terrestrial"
+#theme "oriental"
+#enditem
+
+
+-- Marine caps
+#newitem
+#name "shellcap"
+#gameid 134
+#sprite /graphics/serpentmen/head/shellcap.png
+#armor
+#theme "terrestrial"
+#theme "marine"
+#theme "dynastic"
+#enditem
+
+#newitem
+#name "coralcap"
+#gameid 24
+#sprite /graphics/serpentmen/head/coralcap.png
+#armor
+#theme "coral"
+#theme "marine"
+#theme "dynastic"
+#enditem
+
+#newitem
+#name "sharkskincap"
+#gameid 24
+#sprite /graphics/serpentmen/head/sharkskincap.png
+#armor
+#theme "leather"
+#theme "marine"
+#theme "dynastic"
+#enditem
