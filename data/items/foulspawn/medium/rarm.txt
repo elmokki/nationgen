@@ -76,6 +76,32 @@
 #enditem
 
 #newitem
+#name "tentacles_blue"
+#gameid -1
+#sprite /graphics/foulspawn/medium/rarm/tentacles_blue.png
+#command "#gcost +5"
+#command "#hp +2"
+#command "#str -2"
+#type tentacle
+#needs rhand none
+#needstype bonustentacle1 tentacle
+#itemslot misc +1
+#enditem
+
+#newitem
+#name "tentacles_pink"
+#gameid -1
+#sprite /graphics/foulspawn/medium/rarm/tentacles_pink.png
+#command "#gcost +5"
+#command "#hp +2"
+#command "#str -2"
+#type tentacle
+#needs rhand none
+#needstype bonustentacle1 tentacle
+#itemslot misc +1
+#enditem
+
+#newitem
 #name "humanoid_arms"
 #gameid -1
 #sprite /graphics/foulspawn/medium/rarm/ogres.png
