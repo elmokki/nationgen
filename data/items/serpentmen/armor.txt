@@ -103,7 +103,6 @@
 
 
 --- Scale
-
 #newitem
 #name "scale cuirass"
 #gameid 7
@@ -167,7 +166,6 @@
 
 
 --- Chain Mail
-
 #newitem
 #name "chain cuirass"
 #gameid 8
@@ -175,6 +173,7 @@
 #armor
 #theme "iron"
 #theme "terrestrial"
+#chanceinc hastheme oriental *0
 #enditem
 
 #newitem
@@ -185,10 +184,12 @@
 #armor
 #theme "iron"
 #theme "terrestrial"
+#theme "dynastic"
 #enditem
 
---- Plate
 
+
+--- Plate
 #newitem
 #name "plate cuirass"
 #gameid 9
@@ -197,6 +198,7 @@
 #theme "advanced"
 #theme "iron"
 #theme "terrestrial"
+#theme "dynastic"
 #enditem
 
 #newitem
@@ -207,6 +209,7 @@
 #theme "advanced"
 #theme "iron"
 #theme "terrestrial"
+#theme "dynastic"
 #enditem
 
 #newitem
@@ -218,6 +221,7 @@
 #theme "bronze"
 #theme "terrestrial"
 #theme "marine"
+#theme "dynastic"
 #enditem
 
 #newitem
@@ -228,6 +232,36 @@
 #theme "advanced"
 #theme "bronze"
 #theme "terrestrial"
+#theme "marine"
+#theme "dynastic"
+#enditem
+
+#newitem
+#name "bronze plate hauberk"
+#gameid 101
+#sprite /graphics/serpentmen/armor/bronzeplatehauberk.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "terrestrial"
+#theme "marine"
+#theme "dynastic"
+#enditem
+
+#newitem
+#name "shell hauberk"
+#gameid 114
+#sprite /graphics/serpentmen/armor/shellhauberk.png
+#armor
+#theme "primitive"
+#theme "marine"
+#enditem
+
+#newitem
+#name "shell armor"
+#gameid 140
+#sprite /graphics/serpentmen/armor/shellarmor.png
+#armor
 #theme "marine"
 #enditem
 
@@ -263,6 +297,7 @@
 #armor
 #theme "coral"
 #theme "marine"
+#define "#barbs"
 #enditem
 
 #newitem
@@ -272,6 +307,72 @@
 #armor
 #theme "coral"
 #theme "marine"
+#define "#barbs"
+#enditem
+
+
+-- Oriental armor
+#newitem
+#name "ashigaru armor"
+#gameid 128
+#basechance 0.001
+#sprite /graphics/serpentmen/armor/ashigaru.png
+#tag "eliteversion 'samurai armor'"
+#theme "iron"
+#theme "terrestrial"
+#theme "oriental"
+#armor
+#militia
+#enditem
+
+#newitem
+#name "samurai armor"
+#gameid 129
+#basechance 0.001
+#sprite /graphics/serpentmen/armor/samurai.png
+#tag "eliteversion 'elite samurai armor'"
+#tag "eliteversion 'heavy samurai armor'"
+#theme "iron"
+#theme "terrestrial"
+#theme "oriental"
+#armor
+#enditem
+
+#newitem
+#name "elite samurai armor"
+#gameid 129
+#basechance 0.001
+#sprite /graphics/serpentmen/armor/samurai2.png
+#tag "eliteversion 'elite heavy samurai armor'"
+#theme "iron"
+#theme "terrestrial"
+#theme "oriental"
+#theme "elite"
+#armor
+#enditem
+
+#newitem
+#name "heavy samurai armor"
+#gameid 130
+#basechance 0.001
+#sprite /graphics/serpentmen/armor/heavysamurai.png
+#tag "eliteversion 'elite heavy samurai armor'"
+#theme "iron"
+#theme "terrestrial"
+#theme "oriental"
+#armor
+#enditem
+
+#newitem
+#name "elite heavy samurai armor"
+#gameid 130
+#basechance 0.001
+#sprite /graphics/serpentmen/armor/heavysamuraiarmor2.png
+#theme "iron"
+#theme "terrestrial"
+#theme "oriental"
+#theme "elite"
+#armor
 #enditem
 
 
@@ -307,6 +408,7 @@
 #armor
 #theme "ice"
 #theme "terrestrial"
+#theme "boreal"
 #define "#iceprot +2"
 #chanceinc "personalcommand below #coldres 5 *0"
 #enditem
@@ -318,8 +420,10 @@
 #armor
 #theme "ice"
 #theme "terrestrial"
+#theme "boreal"
 #define "#iceprot +2"
 #chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc hastheme oriental *0
 #enditem
 
 #newitem
@@ -329,8 +433,10 @@
 #armor
 #theme "ice"
 #theme "terrestrial"
+#theme "boreal"
 #define "#iceprot +2"
 #chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc hastheme oriental *0
 #enditem
 
 #newitem
@@ -340,6 +446,35 @@
 #armor
 #theme "ice"
 #theme "terrestrial"
+#theme "boreal"
+#define "#iceprot +2"
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc hastheme oriental *0
+#enditem
+
+#newitem
+#name "ice samurai armor"
+#gameid 26
+#basechance 0.001
+#sprite /graphics/serpentmen/armor/icecuirass_oriental.png
+#tag "eliteversion 'ice heavy samurai armor'"
+#armor
+#theme "ice"
+#theme "terrestrial"
+#theme "oriental"
+#define "#iceprot +2"
+#chanceinc "personalcommand below #coldres 5 *0"
+#enditem
+
+#newitem
+#name "ice heavy samurai armor"
+#gameid 27
+#basechance 0.001
+#sprite /graphics/serpentmen/armor/icehauberk_oriental.png
+#armor
+#theme "ice"
+#theme "terrestrial"
+#theme "oriental"
 #define "#iceprot +2"
 #chanceinc "personalcommand below #coldres 5 *0"
 #enditem
