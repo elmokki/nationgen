@@ -97,7 +97,6 @@
 #theme "austral"
 #theme "central"
 #theme "imperial"
-#theme "occidental"
 #enditem
 
 #newitem
@@ -286,4 +285,413 @@
 #theme "boreal"
 #theme "oriental"
 #theme "advanced"
+#enditem
+
+
+-- Nazca robes
+
+#newitem
+#id nazcahalfrobe_brown
+#gameid -1
+#basechance 0.5
+#sprite /graphics/hoburg/legs/nazcahalfrobe1a.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcahalfrobe1_recolormask.png
+#tag "eliteversion nazcahalfrobe_white"
+#tag "eliteversion nazcahalfrobe_black"
+#tag "eliteversion nazcahalfrobe_colored"
+#armor
+#tag "tier 1"
+#theme "occidental"
+#tag "brown"
+#tag "dark"
+#enditem
+
+#newitem
+#id nazcahalfrobe_white
+#gameid -1
+#basechance 0.5
+#sprite /graphics/hoburg/legs/nazcahalfrobe1b.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcahalfrobe1_recolormask.png
+#tag "eliteversion nazcahalfrobe_colored"
+#tag "eliteversion nazcahalfrobe_silver3"
+#tag "eliteversion nazcahalfrobe_gold3"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "occidental"
+#tag "white"
+#tag "dark"
+#enditem
+
+#newitem
+#id nazcahalfrobe_black
+#gameid -1
+#basechance 0.5
+#sprite /graphics/hoburg/legs/nazcahalfrobe1c.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcahalfrobe1_recolormask.png
+#tag "eliteversion nazcahalfrobe_colored"
+#tag "eliteversion nazcahalfrobe_silver1"
+#tag "eliteversion nazcahalfrobe_gold1"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#theme "occidental"
+#tag "black"
+#tag "dark"
+#enditem
+
+#newitem
+#id nazcahalfrobe_colored
+#gameid -1
+#basechance 0.1
+#sprite /graphics/hoburg/legs/nazcahalfrobe3.png
+#recolormask self
+#tag "eliteversion nazcahalfrobe_silver1"
+#tag "eliteversion nazcahalfrobe_silver2"
+#tag "eliteversion nazcahalfrobe_silver3"
+#tag "eliteversion nazcahalfrobe_gold1"
+#tag "eliteversion nazcahalfrobe_gold2"
+#tag "eliteversion nazcahalfrobe_gold3"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "occidental"
+#tag "light"
+#tag "dark"
+#enditem
+
+#newitem
+#id nazcahalfrobe_silver1
+#gameid -1
+#basechance 0.1
+#sprite /graphics/hoburg/legs/nazcahalfrobe2a.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcahalfrobe2_recolormask1.png
+#tag "eliteversion nazcarobe_silver1"
+#tag "eliteversion nazcahalfrobe_gold1"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "occidental"
+#tag "silver"
+#tag "dark"
+#enditem
+
+#newitem
+#id nazcahalfrobe_silver2
+#gameid -1
+#basechance 0.1
+#sprite /graphics/hoburg/legs/nazcahalfrobe2a.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcahalfrobe2_recolormask2.png
+#tag "eliteversion nazcarobe_silver2"
+#tag "eliteversion nazcahalfrobe_gold2"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "occidental"
+#tag "silver"
+#tag "dark"
+#enditem
+
+#newitem
+#id nazcahalfrobe_silver3
+#gameid -1
+#basechance 0.1
+#sprite /graphics/hoburg/legs/nazcahalfrobe2a.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcahalfrobe2_recolormask3.png
+#tag "eliteversion nazcarobe_silver3"
+#tag "eliteversion nazcahalfrobe_gold3"
+#tag "eliteversion nazcahalfrobe_colored"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "occidental"
+#tag "silver"
+#tag "dark"
+#enditem
+
+#newitem
+#id nazcahalfrobe_gold1
+#gameid -1
+#basechance 0.1
+#sprite /graphics/hoburg/legs/nazcahalfrobe2b.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcahalfrobe2_recolormask1.png
+#tag "eliteversion nazcarobe_gold1"
+#tag "eliteversion nazcahalfrobe_silver1"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "occidental"
+#tag "gold"
+#tag "dark"
+#enditem
+
+#newitem
+#id nazcahalfrobe_silver2
+#gameid -1
+#basechance 0.1
+#sprite /graphics/hoburg/legs/nazcahalfrobe2a.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcahalfrobe2_recolormask2.png
+#tag "eliteversion nazcarobe_gold2"
+#tag "eliteversion nazcahalfrobe_silver2"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "occidental"
+#tag "gold"
+#tag "dark"
+#enditem
+
+#newitem
+#id nazcahalfrobe_silver3
+#gameid -1
+#basechance 0.1
+#sprite /graphics/hoburg/legs/nazcahalfrobe2a.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcahalfrobe2_recolormask3.png
+#tag "eliteversion nazcarobe_gold3"
+#tag "eliteversion nazcahalfrobe_silver3"
+#tag "eliteversion nazcahalfrobe_colored"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "occidental"
+#tag "gold"
+#tag "dark"
+#enditem
+
+#newitem
+#id nazcarobe_brown
+#gameid 158
+#basechance 0.5
+#sprite /graphics/hoburg/legs/nazcarobe1a.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcarobe1_recolormask.png
+#tag "eliteversion nazcarobe_white"
+#tag "eliteversion nazcarobe_black"
+#tag "eliteversion nazcarobe_colored"
+#tag "eliteversion nazcarobe_twotonebrown1"
+#tag "eliteversion nazcarobe_twotonebrown2"
+#armor
+#tag "tier 1"
+#theme "occidental"
+#tag "brown"
+#tag "dark"
+#enditem
+
+#newitem
+#id nazcarobe_white
+#gameid 158
+#basechance 0.25
+#sprite /graphics/hoburg/legs/nazcarobe1b.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcarobe1_recolormask.png
+#tag "eliteversion nazcarobe_colored"
+#tag "eliteversion nazcarobe_silver3"
+#tag "eliteversion nazcarobe_gold3"
+#tag "eliteversion nazcarobe_twotonewhite"
+#armor
+#tag "tier 2"
+#theme "occidental"
+#tag "white"
+#tag "dark"
+#enditem
+
+#newitem
+#id nazcarobe_black
+#gameid 158
+#basechance 0.25
+#sprite /graphics/hoburg/legs/nazcarobe1c.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcarobe1_recolormask.png
+#tag "eliteversion nazcarobe_colored"
+#tag "eliteversion nazcarobe_silver1"
+#tag "eliteversion nazcarobe_gold1"
+#tag "eliteversion nazcarobe_twotoneblack"
+#armor
+#tag "tier 2"
+#theme "occidental"
+#tag "black"
+#tag "dark"
+#enditem
+
+#newitem
+#id nazcarobe_colored
+#gameid 158
+#basechance 0.1
+#sprite /graphics/hoburg/legs/nazcarobe3.png
+#recolormask self
+#tag "eliteversion nazcarobe_silver1"
+#tag "eliteversion nazcarobe_silver2"
+#tag "eliteversion nazcarobe_silver3"
+#tag "eliteversion nazcarobe_gold1"
+#tag "eliteversion nazcarobe_gold2"
+#tag "eliteversion nazcarobe_gold3"
+#tag "eliteversion nazcarobe_twotonewhite"
+#tag "eliteversion nazcarobe_twotoneblack"
+#tag "eliteversion nazcarobe_twotonelight"
+#tag "eliteversion nazcarobe_twotonedark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "occidental"
+#tag "light"
+#tag "dark"
+#enditem
+
+#newitem
+#id nazcarobe_silver1
+#gameid 158
+#basechance 0.125
+#sprite /graphics/hoburg/legs/nazcarobe2a.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcarobe2_recolormask1.png
+#armor
+#tag "tier 3"
+#theme "occidental"
+#tag "silver"
+#tag "dark"
+#enditem
+
+#newitem
+#id nazcarobe_silver2
+#gameid 158
+#basechance 0.125
+#sprite /graphics/hoburg/legs/nazcarobe2a.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcarobe2_recolormask2.png
+#armor
+#tag "tier 3"
+#theme "occidental"
+#tag "silver"
+#tag "dark"
+#enditem
+
+#newitem
+#id nazcarobe_silver3
+#gameid 158
+#basechance 0.125
+#sprite /graphics/hoburg/legs/nazcarobe2a.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcarobe2_recolormask3.png
+#armor
+#tag "tier 3"
+#theme "occidental"
+#tag "silver"
+#tag "dark"
+#enditem
+
+#newitem
+#id nazcarobe_gold1
+#gameid 158
+#basechance 0.125
+#sprite /graphics/hoburg/legs/nazcarobe2b.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcarobe2_recolormask1.png
+#armor
+#tag "tier 3"
+#theme "occidental"
+#tag "gold"
+#tag "dark"
+#enditem
+
+#newitem
+#id nazcarobe_silver2
+#gameid 158
+#basechance 0.125
+#sprite /graphics/hoburg/legs/nazcarobe2a.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcarobe2_recolormask2.png
+#armor
+#tag "tier 3"
+#theme "occidental"
+#tag "gold"
+#tag "dark"
+#enditem
+
+#newitem
+#id nazcarobe_silver3
+#gameid 158
+#basechance 0.125
+#sprite /graphics/hoburg/legs/nazcarobe2a.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcarobe2_recolormask3.png
+#armor
+#tag "tier 3"
+#theme "occidental"
+#tag "gold"
+#tag "dark"
+#enditem
+
+#newitem
+#id nazcarobe_twotonebrown1
+#gameid 158
+#basechance 0.25
+#sprite /graphics/hoburg/legs/nazcarobe4a.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcarobe4_recolormask1.png
+#tag "eliteversion nazcarobe_twotoneblack"
+#tag "eliteversion nazcarobe_twotonedark"
+#armor
+#tag "tier 2"
+#theme "occidental"
+#tag "brown"
+#tag "dark"
+#enditem
+
+#newitem
+#id nazcarobe_twotonebrown2
+#gameid 158
+#basechance 0.25
+#sprite /graphics/hoburg/legs/nazcarobe4a.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcarobe4_recolormask2.png
+#tag "eliteversion nazcarobe_twotonewhite"
+#tag "eliteversion nazcarobe_twotonelight"
+#armor
+#tag "tier 2"
+#theme "occidental"
+#tag "brown"
+#tag "light"
+#enditem
+
+#newitem
+#id nazcarobe_twotoneblack
+#gameid 158
+#basechance 0.1
+#sprite /graphics/hoburg/legs/nazcarobe4b.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcarobe4_recolormask1.png
+#tag "eliteversion nazcarobe_twotonedark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "occidental"
+#tag "black"
+#tag "dark"
+#enditem
+
+#newitem
+#id nazcarobe_twotonewhite
+#gameid 158
+#basechance 0.1
+#sprite /graphics/hoburg/legs/nazcarobe4c.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcarobe4_recolormask2.png
+#tag "eliteversion nazcarobe_twotonelight"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "occidental"
+#tag "white"
+#tag "light"
+#enditem
+
+#newitem
+#id nazcarobe_twotonedark
+#gameid 158
+#basechance 0.125
+#sprite /graphics/hoburg/legs/nazcarobe4b.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcarobe4_recolormask3.png
+#armor
+#tag "tier 3"
+#theme "occidental"
+#tag "dark"
+#enditem
+
+#newitem
+#id nazcarobe_twotonelight
+#gameid 158
+#basechance 0.125
+#sprite /graphics/hoburg/legs/nazcarobe4c.png
+#recolormask /graphics/hoburg/bodyarmor/robes/nazcarobe4_recolormask4.png
+#armor
+#tag "tier 3"
+#theme "occidental"
+#tag "light"
 #enditem
