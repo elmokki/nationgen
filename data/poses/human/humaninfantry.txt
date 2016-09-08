@@ -75,6 +75,47 @@
 #endpose
 
 
+-------- Ghoul infantry
+
+#newpose
+#name "ghoul infantry"
+#role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
+#role "scout"
+#tag "ghoul"
+#sacred
+
+#basechance 0
+#chanceinc anymagic death 0.2
+#chanceinc magic death *2.5
+
+#renderorder "shadow cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon cloakf offhandw hands helmet offhanda overlay"
+
+#load basesprite /data/items/human/boreal/ghoul/bases.txt
+#load shadow /data/items/human/normal/shadow.txt 2 0
+
+#load hands /data/items/human/boreal/ghoul/hands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt 2 0
+#load cloakb /data/items/human/normal/humancloakb.txt 2 0
+
+#load armor /data/items/advancedhuman/normal/armor.txt
+#load helmet /data/items/advancedhuman/normal/helmet.txt
+
+#load weapon /data/items/advancedhuman/normal/weapon.txt
+#load weapon /data/items/human/boreal/ghoul/claw.txt
+
+#load offhand /data/items/advancedhuman/normal/offhand.txt
+#load offhand /data/items/human/boreal/ghoul/claw_oh.txt
+#load offhand /data/items/advancedhuman/normal/shields.txt
+#load offhand /data/items/advancedhuman/normal/towershields.txt
+
+#maxvarieties 2
+#maxunits 1
+
+#endpose
+
 ------------- scout
 
 #newpose
