@@ -1,6 +1,4 @@
-
---- Leather
-
+---- Caelian robes (more or less)
 #newitem
 #id simplerobe
 #gameid 158
@@ -58,4 +56,727 @@
 #tag "tier 3"
 #tag "tier 2"
 #tag "tier 1"
+#enditem
+
+
+---- Nazca robes: monochrome
+#newitem
+#id nazcarobe_brown
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_brown.png
+#tag "eliteversion nazcarobe_brown_dark"
+#tag "eliteversion nazcarobe_brown_medium"
+#tag "eliteversion nazcarobe_brown_light"
+#tag "eliteversion nazcarobe_dark"
+#tag "eliteversion nazcarobe_medium"
+#tag "eliteversion nazcarobe_light"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id nazcarobe_black
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_black.png
+#tag "eliteversion nazcarobe_black_dark"
+#tag "eliteversion nazcarobe_black_medium"
+#tag "eliteversion nazcarobe_black_light"
+#tag "eliteversion nazcarobe_black_gold"
+#tag "eliteversion nazcarobe_dark"
+#tag "eliteversion nazcarobe_dim"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id nazcarobe_grey
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_grey.png
+#tag "eliteversion nazcarobe_grey_dark"
+#tag "eliteversion nazcarobe_grey_medium"
+#tag "eliteversion nazcarobe_grey_light"
+#tag "eliteversion nazcarobe_grey_gold"
+#tag "eliteversion nazcarobe_medium"
+#tag "eliteversion nazcarobe_subdued"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id nazcarobe_white
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_white.png
+#tag "eliteversion nazcarobe_white_dark"
+#tag "eliteversion nazcarobe_white_medium"
+#tag "eliteversion nazcarobe_white_light"
+#tag "eliteversion nazcarobe_white_gold"
+#tag "eliteversion nazcarobe_light"
+#tag "eliteversion nazcarobe_pale"
+#tag "eliteversion nazcarobe_faint"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id nazcarobe_dull
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_black.png
+#recolormask /graphics/caelian/armor/robes/nazca_grey_recolormask1.png
+#tag "eliteversion nazcarobe_dim"
+#tag "eliteversion nazcarobe_twotone_dull1"
+#tag "eliteversion nazcarobe_twotone_dull2"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id nazcarobe_muted
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_grey.png
+#recolormask /graphics/caelian/armor/robes/nazca_grey_recolormask1.png
+#tag "eliteversion nazcarobe_subdued"
+#tag "eliteversion nazcarobe_twotone_muted1"
+#tag "eliteversion nazcarobe_twotone_muted2"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id nazcarobe_faint
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_white.png
+#recolormask /graphics/caelian/armor/robes/nazca_grey_recolormask1.png
+#tag "eliteversion nazcarobe_pale"
+#tag "eliteversion nazcarobe_twotone_faint1"
+#tag "eliteversion nazcarobe_twotone_faint2"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id nazcarobe_dim
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_black.png
+#recolormask /graphics/caelian/armor/robes/nazca_black_recolormask1.png
+#tag "eliteversion nazcarobe_dark"
+#tag "eliteversion nazcarobe_twotone_dim1"
+#tag "eliteversion nazcarobe_twotone_dim2"
+#tag "eliteversion nazcarobe_dark_gold"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id nazcarobe_subdued
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_grey.png
+#recolormask /graphics/caelian/armor/robes/nazca_black_recolormask1.png
+#tag "eliteversion nazcarobe_medium"
+#tag "eliteversion nazcarobe_twotone_subdued1"
+#tag "eliteversion nazcarobe_twotone_subdued2"
+#tag "eliteversion nazcarobe_medium_gold"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id nazcarobe_pale
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_white.png
+#recolormask /graphics/caelian/armor/robes/nazca_black_recolormask1.png
+#tag "eliteversion nazcarobe_light"
+#tag "eliteversion nazcarobe_twotone_pale1"
+#tag "eliteversion nazcarobe_twotone_pale2"
+#tag "eliteversion nazcarobe_light_gold"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id nazcarobe_dark
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_black.png
+#recolormask self
+#tag "eliteversion nazcarobe_dark_medium"
+#tag "eliteversion nazcarobe_dark_light"
+#tag "eliteversion nazcarobe_twotone_dim1"
+#tag "eliteversion nazcarobe_twotone_dim2"
+#tag "eliteversion nazcarobe_dark_gold"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_medium
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_grey.png
+#recolormask self
+#tag "eliteversion nazcarobe_medium_dark"
+#tag "eliteversion nazcarobe_medium_light"
+#tag "eliteversion nazcarobe_twotone_subdued1"
+#tag "eliteversion nazcarobe_twotone_subdued2"
+#tag "eliteversion nazcarobe_medium_gold"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_light
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_white.png
+#recolormask self
+#tag "eliteversion nazcarobe_light_dark"
+#tag "eliteversion nazcarobe_light_medium"
+#tag "eliteversion nazcarobe_twotone_pale1"
+#tag "eliteversion nazcarobe_twotone_pale2"
+#tag "eliteversion nazcarobe_dark_gold"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+
+---- Nazca robes: twotone
+#newitem
+#id nazcarobe_brown_dark
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_brown.png
+#recolormask /graphics/caelian/armor/robes/nazca_trim_dark.png
+#tag "eliteversion nazcarobe_medium_dark"
+#tag "eliteversion nazcarobe_light_dark"
+#tag "eliteversion nazcarobe_dark"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id nazcarobe_brown_medium
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_brown.png
+#recolormask /graphics/caelian/armor/robes/nazca_trim_medium.png
+#tag "eliteversion nazcarobe_dark_medium"
+#tag "eliteversion nazcarobe_light_medium"
+#tag "eliteversion nazcarobe_medium"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id nazcarobe_brown_light
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_brown.png
+#recolormask /graphics/caelian/armor/robes/nazca_trim_light.png
+#tag "eliteversion nazcarobe_dark_light"
+#tag "eliteversion nazcarobe_medium_light"
+#tag "eliteversion nazcarobe_light"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id nazcarobe_black_grey
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_black_grey.png
+#tag "eliteversion nazcarobe_black_gold"
+#tag "eliteversion nazcarobe_dark_medium"
+#tag "eliteversion nazcarobe_twotone_dull1"
+#tag "eliteversion nazcarobe_twotone_dim1"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id nazcarobe_black_white
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_black_white.png
+#tag "eliteversion nazcarobe_black_gold"
+#tag "eliteversion nazcarobe_dark_light"
+#tag "eliteversion nazcarobe_twotone_dull2"
+#tag "eliteversion nazcarobe_twotone_dim2"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id nazcarobe_black_dark
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_black.png
+#recolormask /graphics/caelian/armor/robes/nazca_trim_dark.png
+#tag "eliteversion nazcarobe_dark"
+#tag "eliteversion nazcarobe_black_gold"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_black_medium
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_black.png
+#recolormask /graphics/caelian/armor/robes/nazca_trim_medium.png
+#tag "eliteversion nazcarobe_dark_medium"
+#tag "eliteversion nazcarobe_black_gold"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_black_light
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_black.png
+#recolormask /graphics/caelian/armor/robes/nazca_trim_light.png
+#tag "eliteversion nazcarobe_dark_light"
+#tag "eliteversion nazcarobe_black_gold"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_black_gold
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_black_gold.png
+#tag "eliteversion nazcarobe_dark_gold"
+#tag "eliteversion nazcarobe_medium_gold"
+#tag "eliteversion nazcarobe_light_gold"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_grey_black
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_grey_black.png
+#tag "eliteversion nazcarobe_grey_gold"
+#tag "eliteversion nazcarobe_medium_dark"
+#tag "eliteversion nazcarobe_twotone_muted1"
+#tag "eliteversion nazcarobe_twotone_subdued1"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id nazcarobe_grey_white
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_grey_white.png
+#tag "eliteversion nazcarobe_grey_gold"
+#tag "eliteversion nazcarobe_medium_light"
+#tag "eliteversion nazcarobe_twotone_muted2"
+#tag "eliteversion nazcarobe_twotone_subdued2"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id nazcarobe_grey_dark
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_grey.png
+#recolormask /graphics/caelian/armor/robes/nazca_trim_dark.png
+#tag "eliteversion nazcarobe_medium_dark"
+#tag "eliteversion nazcarobe_grey_gold"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_grey_medium
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_grey.png
+#recolormask /graphics/caelian/armor/robes/nazca_trim_medium.png
+#tag "eliteversion nazcarobe_medium"
+#tag "eliteversion nazcarobe_grey_gold"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_grey_light
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_grey.png
+#recolormask /graphics/caelian/armor/robes/nazca_trim_light.png
+#tag "eliteversion nazcarobe_medium_light"
+#tag "eliteversion nazcarobe_grey_gold"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_grey_gold
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_grey_gold.png
+#tag "eliteversion nazcarobe_dark_gold"
+#tag "eliteversion nazcarobe_medium_gold"
+#tag "eliteversion nazcarobe_light_gold"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_white_black
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_white_black.png
+#tag "eliteversion nazcarobe_white_gold"
+#tag "eliteversion nazcarobe_light_dark"
+#tag "eliteversion nazcarobe_twotone_faint1"
+#tag "eliteversion nazcarobe_twotone_pale1"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id nazcarobe_white_grey
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_white_grey.png
+#recolormask self
+#tag "eliteversion nazcarobe_light_gold"
+#tag "eliteversion nazcarobe_light_medium"
+#tag "eliteversion nazcarobe_twotone_faint2"
+#tag "eliteversion nazcarobe_twotone_pale2"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id nazcarobe_white_dark
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_white.png
+#recolormask /graphics/caelian/armor/robes/nazca_trim_dark.png
+#tag "eliteversion nazcarobe_light_dark"
+#tag "eliteversion nazcarobe_white_gold"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_white_medium
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_white.png
+#recolormask /graphics/caelian/armor/robes/nazca_trim_medium.png
+#tag "eliteversion nazcarobe_light_medium"
+#tag "eliteversion nazcarobe_white_gold"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_white_light
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_white.png
+#recolormask /graphics/caelian/armor/robes/nazca_trim_light.png
+#tag "eliteversion nazcarobe_light"
+#tag "eliteversion nazcarobe_white_gold"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_white_gold
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_white_gold.png
+#tag "eliteversion nazcarobe_dark_gold"
+#tag "eliteversion nazcarobe_medium_gold"
+#tag "eliteversion nazcarobe_light_gold"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_dark_medium
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_black_grey.png
+#recolormask self
+#tag "eliteversion nazcarobe_dark_gold"
+#tag "eliteversion nazcarobe_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_dark_light
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_black_white.png
+#recolormask self
+#tag "eliteversion nazcarobe_dark_gold"
+#tag "eliteversion nazcarobe_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_dark_gold
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_black_gold.png
+#recolormask /graphics/caelian/armor/robes/nazca_body_dark.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_medium_dark
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_grey_black.png
+#recolormask self
+#tag "eliteversion nazcarobe_medium_gold"
+#tag "eliteversion nazcarobe_medium"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_medium_light
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_grey_white.png
+#recolormask self
+#tag "eliteversion nazcarobe_medium_gold"
+#tag "eliteversion nazcarobe_medium"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_medium_gold
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_grey_gold.png
+#recolormask /graphics/caelian/armor/robes/nazca_body_medium.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_light_dark
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_white_black.png
+#recolormask self
+#tag "eliteversion nazcarobe_light_gold"
+#tag "eliteversion nazcarobe_light"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_light_medium
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_white_grey.png
+#recolormask self
+#tag "eliteversion nazcarobe_light_gold"
+#tag "eliteversion nazcarobe_light"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_light_gold
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_white_gold.png
+#recolormask /graphics/caelian/armor/robes/nazca_body_light.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_twotone_dull1
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_black_grey.png
+#recolormask /graphics/caelian/armor/robes/nazca_grey_recolormask2.png
+#tag "eliteversion nazcarobe_twotone_dim1"
+#tag "eliteversion nazcarobe_dark_medium"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id nazcarobe_twotone_dull2
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_black_white.png
+#recolormask /graphics/caelian/armor/robes/nazca_grey_recolormask2.png
+#tag "eliteversion nazcarobe_twotone_dim2"
+#tag "eliteversion nazcarobe_dark_light"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id nazcarobe_twotone_muted1
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_grey_black.png
+#recolormask /graphics/caelian/armor/robes/nazca_grey_recolormask2.png
+#tag "eliteversion nazcarobe_twotone_subdued1"
+#tag "eliteversion nazcarobe_medium_dark"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id nazcarobe_twotone_muted2
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_grey_white.png
+#recolormask /graphics/caelian/armor/robes/nazca_grey_recolormask2.png
+#tag "eliteversion nazcarobe_twotone_subdued2"
+#tag "eliteversion nazcarobe_medium_light"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id nazcarobe_twotone_faint1
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_white_black.png
+#recolormask /graphics/caelian/armor/robes/nazca_grey_recolormask2.png
+#tag "eliteversion nazcarobe_twotone_pale1"
+#tag "eliteversion nazcarobe_light_dark"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id nazcarobe_twotone_faint2
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_white_grey.png
+#recolormask /graphics/caelian/armor/robes/nazca_grey_recolormask2.png
+#tag "eliteversion nazcarobe_twotone_pale2"
+#tag "eliteversion nazcarobe_light_medium"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id nazcarobe_twotone_dim1
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_black_grey.png
+#recolormask /graphics/caelian/armor/robes/nazca_black_recolormask2.png
+#tag "eliteversion nazcarobe_dark_medium"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_twotone_dim2
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_black_white.png
+#recolormask /graphics/caelian/armor/robes/nazca_black_recolormask2.png
+#tag "eliteversion nazcarobe_dark_light"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_twotone_subdued1
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_grey_black.png
+#recolormask /graphics/caelian/armor/robes/nazca_black_recolormask2.png
+#tag "eliteversion nazcarobe_medium_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_twotone_subdued2
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_grey_white.png
+#recolormask /graphics/caelian/armor/robes/nazca_black_recolormask2.png
+#tag "eliteversion nazcarobe_medium_light"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_twotone_pale1
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_white_black.png
+#recolormask /graphics/caelian/armor/robes/nazca_black_recolormask2.png
+#tag "eliteversion nazcarobe_light_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id nazcarobe_twotone_pale2
+#gameid 158
+#basechance 0.1
+#sprite /graphics/caelian/armor/robes/nazca_white_medium.png
+#recolormask /graphics/caelian/armor/robes/nazca_black_recolormask2.png
+#tag "eliteversion nazcarobe_light_medium"
+#armor
+#tag "tier 2"
+#tag "tier 3"
 #enditem
