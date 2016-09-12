@@ -1,0 +1,44 @@
+#newrace
+#name "Enlightened humans"
+#basechance 0.2
+
+#racethemes enlightened_themes
+#freetheme techlevel
+#freetheme demographic
+#freetheme divinity
+
+#theme enlightened
+#enlightened
+
+-- There are other poses defined, but they're all subsets of these pose sets
+#spritegenpose celestialmages
+#spritegenpose yakshamages
+#spritegenpose yakshatroops
+#spritegenpose enlightenedmages
+#spritegenpose enlightenedtroops
+
+#longsyllables /data/names/nations/monkey/longsyllables.txt
+#shortsyllables /data/names/nations/monkey/shortsyllables.txt
+#suffixes /data/names/nations/monkey/suffixes.txt
+
+#generationchance chariot 0.5
+#generationchance cavalry 0.001
+
+#sacredchariotchance 0.1
+#monsterchance 0.01
+
+#gods monkeygods
+
+#chanceinc "race van *0.1"
+#chanceinc "race sidhe *0.1"
+#chanceinc "race caelian *0.1"
+#chanceinc "race 'Austral human' *3"
+#chanceinc "race lizard *3"
+
+#chanceinc era 1 +0.1
+#chanceinc era 3 -0.1
+
+#specialcommanderfilters default_specialcommanderfilters
+#specialcommanderfilters specialcommanderfilters_extended
+
+#endrace
