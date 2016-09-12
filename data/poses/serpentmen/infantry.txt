@@ -2,7 +2,9 @@
 #newpose
 #name "normal infantry"
 #role "infantry"
-#role "sacred"
+#role "sacred infantry"
+#role "elite infantry"
+
 #load basesprite /data/items/serpentmen/serpentmenbases.txt
 #load shadow /data/items/serpentmen/shadow.txt
 #load armor /data/items/serpentmen/armor.txt
@@ -14,16 +16,18 @@
 
 #endpose
 
+
+
 -------- scout
 
 #newpose
 #role "scout"
 #load basesprite /data/items/serpentmen/serpentmenbases.txt
 #load shadow /data/items/serpentmen/shadow.txt
-#load armor /data/items/serpentmen/scoutarmor.txt
+--#load armor /data/items/serpentmen/scoutarmor.txt
 #load helmet /data/items/serpentmen/helmet.txt
-#load weapon /data/items/serpentmen/scoutweapon.txt
-#load offhand /data/items/serpentmen/scoutshield.txt
+--#load weapon /data/items/serpentmen/scoutweapon.txt
+--#load offhand /data/items/serpentmen/scoutshield.txt
 #load bonusweapon /data/items/serpentmen/bonusrangedweapon.txt
 
 #endpose

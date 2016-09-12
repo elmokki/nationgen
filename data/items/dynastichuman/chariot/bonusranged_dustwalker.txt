@@ -1,0 +1,77 @@
+#newitem
+#name "javelin 1"
+#gameid 209
+#sprite /graphics/weapon/standard/javelin1.png
+#offsetx 1
+#offsety -2
+#define "#rcost +2"
+#basechance 0.5
+#enditem
+
+#newitem
+#name "javelin 2"
+#gameid 209
+#sprite /graphics/weapon/standard/javelin2.png
+#offsetx 1
+#offsety -3
+#define "#rcost +2"
+#basechance 0.5
+#enditem
+
+#newitem
+#name "poison short bow"
+#gameid 594
+#sprite /graphics/weapon/standard/bonusshortbow.png
+#needs quiver quiver
+#basechance 0.66
+#enditem
+
+#newitem
+#name "flaming short bow"
+#gameid 211
+#sprite /graphics/weapon/standard/bonusshortbow.png
+#needs quiver quiver
+#define "#rcost +4"
+#basechance 0.66
+#enditem
+
+#newitem
+#name "banefire short bow"
+#gameid 199
+#sprite /graphics/weapon/standard/bonusshortbow.png
+#needs quiver quiver
+#define "#rcost +5"
+#basechance 0.66
+#enditem
+
+#newitem
+#name "poison composite bow"
+#gameid 372
+#sprite /graphics/weapon/standard/bonusshortbow.png
+#needs quiver quiver
+#basechance 1
+#enditem
+
+#newitem
+#name "flaming composite bow"
+#gameid 356
+#sprite /graphics/weapon/standard/bonusshortbow.png
+#needs quiver quiver
+#define "#rcost +5"
+#basechance 1
+#enditem
+
+#newitem
+#name "poison sling"
+#gameid 167
+#maxprot 9
+#basechance 0.5
+#enditem
+
+#newitem
+#name "flaming sling"
+#gameid 210
+#define "#rcost +2"
+#maxprot 9
+#basechance 0.5
+#enditem

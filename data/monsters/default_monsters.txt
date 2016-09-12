@@ -26,11 +26,75 @@
 #end
 
 #new
+#name "elephant_human_4"
+#basechance 0
+#chanceinc race "Austral human" 2
+#command "#copystats 2307"
+#command "#copyspr 2307"
+#end
+
+#new
+#name "elephant_human_5"
+#basechance 0
+#basechance 0
+#chanceinc primaryrace "Dynastic human" 4
+#chanceinc racetheme dustwalkers_only *0
+#chanceinc racetheme dustwalkers_slaves *0
+#command "#copystats 150"
+#command "#spr1 ./graphics/monsters/elephant_dynastic1.png"
+#command "#spr2 shift"
+#end
+
+#new
+#name "elephant_human_6"
+#basechance 0
+#chanceinc primaryrace "Dynastic human" 0.25
+#chanceinc era 3 1.75
+#chanceinc racetheme imperial *2
+#chanceinc racetheme dustwalkers_only *0
+#chanceinc racetheme dustwalkers_slaves *0
+#command "#copystats 1555"
+#command "#spr1 ./graphics/monsters/elephant_dynastic2.png"
+#command "#spr2 shift"
+#end
+
+#new
+#name "elephant_humanbred_1"
+#basechance 0
+#basechance 0
+#chanceinc primaryrace "Abysian" 4
+#chanceinc racetheme primal *0
+#command "#copystats 150"
+#command "#spr1 ./graphics/monsters/elephant_humanbred1.png"
+#command "#spr2 shift"
+#end
+
+#new
+#name "elephant_humanbred_2"
+#basechance 0
+#chanceinc primaryrace "Abysian" 0.25
+#chanceinc era 3 3.75
+#chanceinc racetheme advanced *2
+#chanceinc racetheme primal *0
+#command "#copystats 1555"
+#command "#copyspr 2586"
+#end
+
+#new
 #name "elephant_monkey"
 #basechance 0
 #chanceinc primaryrace Primate 2
 #command "#copystats 1147"
 #command "#copyspr 1147"
+#end
+
+#new
+#name "elephant_naga"
+#basechance 0
+#chanceinc primaryrace Naga 2
+#command "#copystats 1147"
+#command "#spr1 ./graphics/monsters/elephant_naga.png"
+#command "#spr2 shift"
 #end
 
 #new
@@ -220,82 +284,6 @@
 #command "#copystats 330"
 #command "#copyspr 330"
 #command "#gcost 100"
-#command "#rcost 1"
-#command "#reclimit 1"
-#command "#slow_to_recruit"
-#caponlychance 1
-#end
-
-
--- Temporary, until-FS-monsters-are-added FS-only uglies
-#new
-#name "Foul Spawn"
-#basechance 0
-#chanceinc primaryrace foulspawn 2
-#command "#copystats 530"
-#command "#copyspr 530"
-#command "#gcost 100"
-#command "#rcost 1"
-#command "#reclimit 2"
-#caponlychance 0.8
-#end
-
-#new
-#name "Foul Beast"
-#basechance 0
-#chanceinc primaryrace foulspawn 2
-#command "#copystats 467"
-#command "#copyspr 467"
-#command "#gcost 80"
-#command "#rcost 1"
-#command "#reclimit 3"
-#caponlychance 0.8
-#end
-
-#new
-#name "Ettin"
-#basechance 0
-#chanceinc primaryrace foulspawn 4
-#command "#copystats 488"
-#command "#copyspr 488"
-#command "#gcost 100"
-#command "#reclimit 1"
-#caponlychance 0.5
-#end
-
-#new
-#name "Draco Lion"
-#basechance 0
-#chanceinc primaryrace foulspawn 0.5
-#command "#copystats 637"
-#command "#copyspr 637"
-#command "#gcost 150"
-#command "#rcost 1"
-#command "#reclimit 1"
-#command "#slow_to_recruit"
-#caponlychance 1
-#end
-
-#new
-#name "Chimera"
-#basechance 0
-#chanceinc primaryrace foulspawn 0.5
-#command "#copystats 487"
-#command "#copyspr 487"
-#command "#gcost 150"
-#command "#rcost 1"
-#command "#reclimit 1"
-#command "#slow_to_recruit"
-#caponlychance 1
-#end
-
-#new
-#name "Grotesque"
-#basechance 0
-#chanceinc primaryrace foulspawn 0.5
-#command "#copystats 659"
-#command "#copyspr 659"
-#command "#gcost 150"
 #command "#rcost 1"
 #command "#reclimit 1"
 #command "#slow_to_recruit"
