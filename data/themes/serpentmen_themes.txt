@@ -22,7 +22,7 @@
 #themeinc theme primitive *2
 #endtheme
 
--- Weights: EA 2, MA 1, LA 0.25
+-- Weights: EA 2, MA 1, LA 0.5
 #newtheme
 #type techlevel
 #name bronze
@@ -54,7 +54,195 @@
 #themeinc theme primitive *0.05
 #endtheme
 
--- Weights: EA 0.5, MA 0.5, LA 0.5
+
+-- Demographic themes (mandatory)
+#newtheme
+#type demographic
+#name swamp_serpent
+#theme swamp_serpent
+#basechance 1
+#themeinc theme swamp_serpent *1000
+#themeinc theme marine *0.5
+#themeinc theme terrestrial *2
+#themeinc theme advanced *1
+#themeinc theme iron *0.5
+#themeinc theme bronze *2
+#themeinc theme leather *2
+#themeinc theme wood *1
+#themeinc theme coral *0.1
+#themeinc theme ice *0.01
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#racedefinition "#nationcommand '#idealcold -1'"
+#racedefinition "#magicpriority water 2"
+#racedefinition "#magicpriority nature 4"
+#racedefinition "#magicpriority death 4"
+#endtheme
+
+#newtheme
+#type demographic
+#name sea_serpent
+#theme sea_serpent
+#basechance 1
+#themeinc theme sea_serpent *1000
+#themeinc theme marine *100
+#themeinc theme advanced *1
+#themeinc theme iron *0.5
+#themeinc theme bronze *2
+#themeinc theme leather *1
+#themeinc theme wood *0.5
+#themeinc theme coral *2
+#themeinc theme ice *0.1
+#themeinc theme naked *2
+#themeinc theme primitive *1
+#racedefinition "#nationcommand '#idealcold -1'"
+#racedefinition "#magicpriority water 6"
+#racedefinition "#magicpriority air *0.5"
+#racedefinition "#magicpriority nature 4"
+#racedefinition "#nationcommand #coastnation"
+#racedefinition "#nationcommand '#uwbuild 1'"
+#endtheme
+
+#newtheme
+#type demographic
+#name jungle_serpent
+#theme jungle_serpent
+#basechance 1
+#themeinc theme jungle_serpent *1000
+#themeinc theme terrestrial *100
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme leather *2
+#themeinc theme wood *2
+#themeinc theme coral *0.01
+#themeinc theme ice *0.01
+#themeinc theme naked *2
+#themeinc theme primitive *1
+#racedefinition "#nationcommand '#idealcold -2'"
+#racedefinition "#magicpriority water 2"
+#racedefinition "#magicpriority nature 8"
+#endtheme
+
+#newtheme
+#type demographic
+#name mountain_serpent
+#theme mountain_serpent
+#basechance 1
+#themeinc theme mountain_serpent *1000
+#themeinc theme terrestrial *100
+#themeinc theme advanced *2
+#themeinc theme iron *2
+#themeinc theme bronze *2
+#themeinc theme leather *1
+#themeinc theme wood *1
+#themeinc theme coral *0.01
+#themeinc theme ice *1
+#themeinc theme naked *0.5
+#themeinc theme primitive *0.5
+#racedefinition "#nationcommand '#idealcold +1'"
+#racedefinition "#magicpriority earth 4"
+#racedefinition "#magicpriority water 2"
+#racedefinition "#magicpriority air 2"
+#endtheme
+
+#newtheme
+#type demographic
+#name deep_serpent
+#theme deep_serpent
+#basechance 1
+#themeinc theme deep_serpent *1000
+#themeinc theme terrestrial *100
+#themeinc theme advanced *1
+#themeinc theme iron *2
+#themeinc theme bronze *1
+#themeinc theme leather *0.5
+#themeinc theme wood *0.1
+#themeinc theme coral *0.01
+#themeinc theme ice *0.01
+#themeinc theme naked *2
+#themeinc theme primitive *1
+#racedefinition "#nationcommand '#idealcold -1'"
+#racedefinition "#magicpriority earth 4"
+#racedefinition "#magicpriority air 0.5"
+#racedefinition "#magicpriority nature 0.5"
+#racedefinition "#magicpriority death 6"
+#endtheme
+
+#newtheme
+#type demographic
+#name blind_serpent
+#theme blind_serpent
+#basechance 1
+#themeinc theme blind_serpent *1000
+#themeinc theme marine *0.5
+#themeinc theme terrestrial *2
+#themeinc theme advanced *1
+#themeinc theme iron *0.5
+#themeinc theme bronze *2
+#themeinc theme leather *0.5
+#themeinc theme wood *0.1
+#themeinc theme coral *0.1
+#themeinc theme ice *0.01
+#themeinc theme naked *4
+#themeinc theme primitive *1
+#racedefinition "#nationcommand '#idealcold -1'"
+#racedefinition "#magicpriority earth 4"
+#racedefinition "#magicpriority water 4"
+#racedefinition "#magicpriority fire 2"
+#racedefinition "#magicpriority air 0.5"
+#racedefinition "#nationcommand '#uwbuild 1'"
+#endtheme
+
+#newtheme
+#type demographic
+#name desert_serpent
+#theme desert_serpent
+#basechance 1
+#themeinc theme desert_serpent *1000
+#themeinc theme terrestrial *1000
+#themeinc theme advanced *1
+#themeinc theme iron *2
+#themeinc theme bronze *2
+#themeinc theme leather *0.01
+#themeinc theme wood *0.01
+#themeinc theme coral *0.01
+#themeinc theme ice *0.01
+#themeinc theme naked *2
+#themeinc theme primitive *1
+#racedefinition "#nationcommand '#idealcold +3'"
+#racedefinition "#magicpriority fire 8"
+#racedefinition "#magicpriority water 0.1"
+#racedefinition "#magicpriority air 2"
+#racedefinition "#magicpriority death 2"
+#endtheme
+
+#newtheme
+#type demographic
+#name tundra_serpent
+#theme tundra_serpent
+#basechance 1
+#themeinc theme tundra_serpent *1000
+#themeinc theme terrestrial *100
+#themeinc theme advanced *1
+#themeinc theme iron *0.1
+#themeinc theme bronze *0.1
+#themeinc theme leather *2
+#themeinc theme wood *1
+#themeinc theme coral *0.01
+#themeinc theme ice *5
+#themeinc theme naked *0.1
+#themeinc theme primitive *1
+#racedefinition "#nationcommand '#idealcold -3'"
+#racedefinition "#magicpriority water 8"
+#racedefinition "#magicpriority fire 0.1"
+#racedefinition "#magicpriority earth 2"
+#racedefinition "#magicpriority death 2"
+#endtheme
+
+
+
+-- Weights: EA 0.05, MA 0.05, LA 0.05
 #newtheme
 #type social
 #name slaver
@@ -79,4 +267,28 @@
 #secondaryracedefinition "#freetemplatefilter slavetemplate slave"
 #racedefinition "#secondaryracetroopmod 100"
 #racedefinition "#secondaryracemagemod -100"
+#endtheme
+
+-- Weights: EA 0.25, MA 0.25, LA 0.25
+#newtheme
+#type regional
+#name oriental
+#theme oriental
+#basechance 0.25
+#themeinc theme advanced *1
+#themeinc theme iron *4
+#themeinc theme bronze *0.125
+#themeinc theme wood *2
+#themeinc theme leather *1
+#themeinc theme naked *0.05
+#themeinc theme primitive *0.5
+#themeinc theme oriental *1000
+#themeinc theme dynastic *0.001
+#themeinc theme boreal *0.001
+#racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/oriental/suffixes.txt"
+#racedefinition "#unitcommand '#nametype 121'"
+#racedefinition "#nationcommand '#gods easterngods"
+#racedefinition "#oriental"
 #endtheme

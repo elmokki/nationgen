@@ -349,3 +349,42 @@
 #load bonusweapon /data/items/hoburg/normal/bonusranged.txt 0 14
 
 #endpose
+
+
+-------- Ghouls (boreal)
+#newpose
+#basechance 0
+#chanceinc anymagic death 0.02
+#chanceinc magic death *3
+
+#name "stealthy ghoul infantry"
+#role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
+#role "scout"
+#theme "boreal"
+#tag "ghoul"
+#subrace ghoul
+
+#command "#stealthy 0"
+
+#load basesprite /data/items/hoburg/ghoul/bases.txt
+#load shadow /data/items/hoburg/normal/shadow.txt
+#load shirt /data/items/hoburg/normal/shirt.txt
+#load hands /data/items/hoburg/ghoul/hands.txt
+
+#load cloakf /data/items/hoburg/normal/cloakf.txt
+#load cloakb /data/items/hoburg/normal/cloakb.txt
+
+#load armor /data/items/hoburg/normal/armor_light.txt
+#load helmet /data/items/hoburg/normal/helmet.txt
+#load legs /data/items/hoburg/normal/legs.txt
+
+#load weapon /data/items/hoburg/normal/weapon.txt
+#load weapon /data/items/hoburg/ghoul/claw.txt
+#load bonusweapon /data/items/hoburg/normal/bonusranged.txt 0 14
+#load bonusweapon /data/items/hoburg/normal/stealthy_sacredbonusweapons.txt
+
+#load offhand /data/items/hoburg/normal/shields.txt
+#load offhand /data/items/hoburg/ghoul/claw_oh.txt
+#endpose

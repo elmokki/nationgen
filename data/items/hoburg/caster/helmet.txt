@@ -359,3 +359,112 @@
 #theme "imperial"
 #theme "oriental"
 #enditem
+
+
+-- Nazca caps
+#newitem
+#id nazcacap_brown
+#gameid -1
+#sprite /graphics/hoburg/helmet/caster/nazcacap_brown.png
+#armor
+#tag "tier 1"
+#tag "eliteversion nazcacap_white"
+#tag "eliteversion nazcacap_black"
+#tag "eliteversion nazcacap_light"
+#tag "eliteversion nazcacap_dark"
+#theme "occidental"
+#enditem
+
+#newitem
+#id nazcacap_white
+#gameid -1
+#basechance 0.25
+#chanceinc slottag armor white *20
+#sprite /graphics/hoburg/helmet/caster/nazcacap_white.png
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#tag "eliteversion nazcacap_light"
+#tag "eliteversion nazcacap_silver"
+#tag "eliteversion nazcacap_gold"
+#tag "eliteversion nazcacap_bone"
+#theme "occidental"
+#enditem
+
+#newitem
+#id nazcacap_black
+#gameid -1
+#basechance 0.25
+#chanceinc slottag armor black *20
+#sprite /graphics/hoburg/helmet/caster/nazcacap_black.png
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#tag "eliteversion nazcacap_dark"
+#tag "eliteversion nazcacap_silver"
+#tag "eliteversion nazcacap_gold"
+#tag "eliteversion nazcacap_bone"
+#theme "occidental"
+#enditem
+
+#newitem
+#id nazcacap_light
+#gameid -1
+#chanceinc slottag armor light *5
+#sprite /graphics/hoburg/helmet/caster/nazcacap_light.png
+#recolormask self
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#tag "eliteversion nazcacap_silver"
+#tag "eliteversion nazcacap_gold"
+#tag "eliteversion nazcacap_bone"
+#theme "occidental"
+#enditem
+
+#newitem
+#id nazcacap_dark
+#gameid -1
+#chanceinc slottag armor dark *5
+#sprite /graphics/hoburg/helmet/caster/nazcacap_dark.png
+#recolormask self
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#tag "eliteversion nazcacap_silver"
+#tag "eliteversion nazcacap_gold"
+#tag "eliteversion nazcacap_bone"
+#theme "occidental"
+#enditem
+
+#newitem
+#id nazcacap_bone
+#gameid 150
+#basechance 0.05
+#chanceinc personalmagic death 2 *100 
+#sprite /graphics/hoburg/helmet/caster/nazcacap_bone.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "occidental"
+#enditem
+
+#newitem
+#id nazcacap_silver
+#gameid 148
+#chanceinc slottag armor silver *5
+#sprite /graphics/hoburg/helmet/caster/nazcacap_silver.png
+#armor
+#tag "tier 3"
+#theme "occidental"
+#enditem
+
+#newitem
+#id nazcacap_gold
+#gameid 148
+#chanceinc slottag armor gold *5
+#sprite /graphics/hoburg/helmet/caster/nazcacap_gold.png
+#armor
+#tag "tier 3"
+#theme "occidental"
+#enditem

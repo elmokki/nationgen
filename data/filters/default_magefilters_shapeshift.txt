@@ -6,7 +6,7 @@
 #basechance 0.025
 #chanceinc "personalmagic nature 0.3"
 #chanceinc "personalmagic air 0.3"
-#chanceinc "personalcommand #mounted *0"
+#chanceinc "personalcommand mounted *0"
 #command "#shapechange turkey"
 #tag "notfortier 1"
 #description "can shapeshift into a turkey"
@@ -18,7 +18,7 @@
 #basechance 0.05
 #chanceinc "personalmagic nature 0.5"
 #chanceinc "personalcommand mounted *0"
-#chanceinc "personalcommand #size below 2 *0"
+#chanceinc "personalcommand size below 2 *0"
 #command "#shapechange werewolf"
 #tag "notfortier 1"
 #description "can shapeshift into a werewolf"
@@ -35,8 +35,8 @@
 #name "werewolf2"
 #basechance 0.05
 #chanceinc "personalmagic nature 0.25"
-#chanceinc "personalcommand #mounted *0"
-#chanceinc "personalcommand #size below 2 *0"
+#chanceinc "personalcommand mounted *0"
+#chanceinc "personalcommand size below 2 *0"
 #command "#shapechange werewolf"
 #command "#gcost *1.2"
 #tag "notfortier 1"
@@ -71,7 +71,7 @@
 #name "werewolf2-vaetti"
 #basechance 0.05
 #chanceinc "personalmagic nature 0.25"
-#chanceinc "personalcommand #mounted *0"
+#chanceinc "personalcommand mounted *0"
 #chanceinc "race not Vaetti *0"
 #command "#shapechange werewolf"
 #command "#gcost *1.1"
@@ -90,7 +90,7 @@
 #basechance 0.05
 #chanceinc "personalmagic nature 0.5"
 #chanceinc "personalcommand mounted *0"
-#chanceinc "personalcommand #size above 1 *0"
+#chanceinc "personalcommand size above 1 *0"
 #command "#shapechange werefox"
 #tag "notfortier 1"
 #description "can shapeshift into a werefox"
@@ -106,8 +106,8 @@
 #name "werefox2"
 #basechance 0.05
 #chanceinc "personalmagic nature 0.25"
-#chanceinc "personalcommand #mounted *0"
-#chanceinc "personalcommand #size above 1 *0"
+#chanceinc "personalcommand mounted *0"
+#chanceinc "personalcommand size above 1 *0"
 #command "#shapechange werefox"
 #command "#gcost *1.2"
 #tag "notfortier 1"
@@ -124,7 +124,7 @@
 #name "werebear"
 #basechance 0.05
 #chanceinc "personalmagic nature 0.5"
-#chanceinc "personalcommand #mounted *0"
+#chanceinc "personalcommand mounted *0"
 #command "#gcost *1.2"
 #command "#shapechange werebear"
 #tag "notfortier 1"
@@ -141,7 +141,7 @@
 #name "werebear2"
 #basechance 0.05
 #chanceinc "personalmagic nature 0.5"
-#chanceinc "personalcommand #mounted *0"
+#chanceinc "personalcommand mounted *0"
 #command "#shapechange werebear"
 #command "#gcost *1.2"
 #tag "notfortier 1"
@@ -158,7 +158,7 @@
 #name "wolf"
 #basechance 0.05
 #chanceinc "personalmagic nature 1"
-#chanceinc "personalcommand #mounted *0"
+#chanceinc "personalcommand mounted *0"
 #command "#shapechange wolf"
 #description "can shapeshift into a wolf"
 #tag "notfortier 1"
@@ -173,7 +173,8 @@
 #basechance 0.05
 #chanceinc "personalmagic nature 0.75"
 #chanceinc "personalmagic air 0.75"
-#chanceinc "personalcommand #mounted *0"
+#chanceinc "personalcommand mounted *0"
+#chanceinc "personalcommand size above 3 *0"
 #command "#shapechange wingedmonkey"
 #description "can shapeshift into a winged monkey"
 #tag "notfortier 1"
@@ -185,7 +186,7 @@
 #basechance 0.0
 #chanceinc "personalmagic blood 0.2"
 #chanceinc "personalmagic blood fire 3"
-#chanceinc "personalcommand #mounted *0"
+#chanceinc "personalcommand mounted *0"
 #command "#shapechange devil"
 #command "#demon"
 #command "#maxage 1000"
@@ -205,7 +206,7 @@
 #chanceinc "personalmagic nature 1"
 #chanceinc "shape vineman 20"
 #chanceinc "shape vineman-small 20"
-#chanceinc personalcommand #size below 2 *0
+#chanceinc personalcommand size below 2 *0
 #command "#secondshape vineman"
 #command "#gcost +25"
 #command "#maxage 1000"
@@ -223,7 +224,7 @@
 #chanceinc "personalmagic nature 1"
 #chanceinc "shape vineman 20"
 #chanceinc "shape vineman-small 20"
-#chanceinc personalcommand #size above 2 *0
+#chanceinc personalcommand size above 2 *0
 #command "#secondshape vineman-small"
 #command "#gcost +20"
 #command "#maxage 1000"
@@ -240,7 +241,7 @@
 #basechance 0.0
 #chanceinc "personalmagic blood 0.2"
 #chanceinc "personalmagic blood water 3"
-#chanceinc "personalcommand #mounted *0"
+#chanceinc "personalcommand mounted *0"
 #command "#shapechange frostfiend"
 #command "#demon"
 #command "#maxage 1000"
@@ -258,7 +259,8 @@
 #name "greatbear"
 #basechance 0.025
 #chanceinc "personalmagic nature 1"
-#chanceinc "personalcommand #mounted *0"
+#chanceinc "personalcommand mounted *0"
+#chanceinc "personalcommand size below 2 *0"
 #command "#shapechange greatbear"
 #tag "personalmagic nature"
 #description "can shapeshift into a great bear"
@@ -271,7 +273,7 @@
 #name "bear"
 #basechance 0.05
 #chanceinc "personalmagic nature 1"
-#chanceinc "personalcommand #mounted *0"
+#chanceinc "personalcommand mounted *0"
 #command "#shapechange bear"
 #tag "personalmagic nature"
 #description "can shapeshift into a bear"
@@ -284,7 +286,7 @@
 #name "jaguar"
 #basechance 0.025
 #chanceinc "personalmagic nature 1"
-#chanceinc "personalcommand #mounted *0"
+#chanceinc "personalcommand mounted *0"
 #command "#shapechange jaguar"
 #description "can shapeshift into a jaguar"
 #theme "jaguartotem"
@@ -296,7 +298,12 @@
 #name "deepone"
 #basechance 0.0
 #chanceinc "personalmagic water 1"
-#chanceinc "personalcommand #mounted *0"
+#chanceinc "personalcommand mounted *0"
+#chanceinc "personalcommand size above 3 *0"
+#chanceinc "personalcommand pooramphibian *2"
+#chanceinc "personalcommand amphibian *0.5"
+#chanceinc "race Atlantian *0"
+#chanceinc "race Muuch *0"
 #command "#shapechange deepone"
 #command "#maxage 500"
 #tag "notfortier 1"
@@ -336,7 +343,9 @@
 #type "shapeshift"
 #basechance 0.0
 #chanceinc "personalmagic death 2"
-#chanceinc personalcommand #size below 2 *0
+#chanceinc "personalcommand size below 2 *0"
+#chanceinc "personalcommand undead *0"
+#chanceinc "posetag ghoul *0"
 #command "#secondshape ghoul"
 #command "#gcost *1.1"
 #command "#undcommand +40"
@@ -352,7 +361,9 @@
 #type "shapeshift"
 #basechance 0.0
 #chanceinc "personalmagic death 2"
-#chanceinc personalcommand #size above 2 *0
+#chanceinc "personalcommand size above 2 *0"
+#chanceinc "personalcommand undead *0"
+#chanceinc "posetag ghoul *0"
 #command "#secondshape ghoul-small"
 #command "#gcost *1.1"
 #command "#undcommand +40"
@@ -441,7 +452,7 @@
 #basechance 0.05
 #chanceinc "personalmagic earth 0.95"
 #chanceinc "command #secondshape -0.7"
-#chanceinc personalcommand #size below 2 *0
+#chanceinc personalcommand size below 2 *0
 #command "#hp -5"
 #command "#gcost +30"
 #command "#secondtmpshape metalman"
@@ -456,7 +467,7 @@
 #basechance 0.05
 #chanceinc "personalmagic earth 0.95"
 #chanceinc "command #secondshape -0.7"
-#chanceinc personalcommand #size above 2 *0
+#chanceinc personalcommand size above 2 *0
 #command "#hp -3"
 #command "#gcost +20"
 #command "#secondtmpshape metalman-small"
@@ -470,8 +481,8 @@
 #name "hugemantis"
 #basechance 0.05
 #chanceinc "personalmagic nature 0.25"
-#chanceinc "personalcommand #mounted *0"
-#chanceinc "personalcommand above #size 3 *0"
+#chanceinc "personalcommand mounted *0"
+#chanceinc "personalcommand above size 3 *0"
 #command "#hp -3"
 #command "#gcost +30"
 #command "#secondtmpshape hugemantis"
@@ -507,6 +518,7 @@
 #chanceinc "command darkvision 1"
 #chanceinc "personalcommand darkvision 1"
 #chanceinc "personalcommand mounted *0"
+#chanceinc "personalcommand size below 2 *0"
 #command "#shapechange cavecrab"
 #command "#gcost +15"
 #tag "notfortier 1"
@@ -573,7 +585,7 @@
 #name "spider"
 #basechance 0.05
 #chanceinc "personalmagic nature 1"
-#chanceinc "personalcommand #poisonres 1"
+#chanceinc "personalcommand poisonres 1"
 #chanceinc "personalcommand mounted *0"
 #command "#shapechange smallerspider"
 #command "#gcost +15"

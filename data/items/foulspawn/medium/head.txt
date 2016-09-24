@@ -430,6 +430,57 @@
 #enditem
 
 #newitem
+#name "tentacle-blue"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/tentacle_blue.png
+#command "#gcost +10"
+#command "#hp +0"
+#command "#prot +0"
+#command "#mr +4"
+#command "#mor +2"
+#command "#att +2"
+#command "#def +2"
+#command "#prec +0"
+#command "#ap +2"
+#command "#maxage *2"
+#command "#darkvision 100"
+#command "#voidsanity 20"
+#command "#neednoteat"
+#command "#pooramphibian"
+#command "#eyes 10"
+#itemslot head 0
+#needstype headweapon tentacle_large
+#type barehead
+#degenerate
+#enditem
+
+#newitem
+#name "tentacle-pink"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/tentacle_pink.png
+#command "#gcost +10"
+#command "#hp +8"
+#command "#prot +0"
+#command "#mr -2"
+#command "#mor +4"
+#command "#att +2"
+#command "#def +2"
+#command "#prec +0"
+#command "#ap +2"
+#command "#maxage *0.5"
+#command "#darkvision 100"
+#command "#bluntres"
+#command "#neednoteat"
+#command "#eyes 10"
+#itemslot head 0
+#needstype headweapon tentacle_large
+#type barehead
+#degenerate
+#enditem
+
+#newitem
 #basechance 0.5
 #name "draconian"
 #gameid -1

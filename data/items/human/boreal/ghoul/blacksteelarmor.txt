@@ -1,0 +1,64 @@
+
+--- Chain Mail
+#newitem
+#name "chain cuirass"
+#gameid blackmail_cuirass
+#basechance 0.2
+#sprite /graphics/boreal/ghoul/blackmail_cuirass.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "chain hauberk short"
+#gameid blackmail_hauberk
+#basechance 1
+#sprite /graphics/boreal/ghoul/blackmail_hauberk.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "full chain"
+#gameid blackmail_full
+#basechance 2
+#sprite /graphics/boreal/ghoul/blackmail_full.png
+#armor
+#theme "iron"
+#enditem
+
+
+--- Plate
+#newitem
+#name "plate cuirass"
+#gameid blackplate_cuirass
+#basechance 0.2
+#sprite /graphics/boreal/ghoul/blackplate_cuirass.png
+#armor
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem
+#name "plate hauberk"
+#gameid blackplate_hauberk
+#basechance 0.4
+#sprite /graphics/boreal/ghoul/blackplate_hauberk.png
+#armor
+#needs hands plate
+#theme "advanced"
+#theme "iron"
+#tag "name mounted knight"
+#enditem
+
+#newitem -- full plate
+#name "full plate"
+#gameid blackplate_full
+#basechance 0.8
+#sprite /graphics/boreal/ghoul/blackplate_full.png
+#armor
+#needs legs platepants
+#needs hands full
+#theme "advanced"
+#theme "iron"
+#enditem

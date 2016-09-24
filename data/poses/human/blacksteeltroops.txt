@@ -236,3 +236,46 @@
 
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
 #endpose
+
+-------- Ghoul infantry
+
+#newpose
+#name "blacksteel ghoul infantry"
+#role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
+#tag "ghoul"
+#subrace ghoul
+
+#basechance 0
+#chanceinc anymagic death 0.1
+#chanceinc magic death *2.5
+
+#renderorder "shadow cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon cloakf offhandw hands helmet offhanda overlay"
+
+#load basesprite /data/items/human/boreal/ghoul/bases.txt
+#load shadow /data/items/human/normal/shadow.txt 2 0
+
+#load hands /data/items/human/boreal/ghoul/hands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt 2 0
+#load cloakb /data/items/human/normal/humancloakb.txt 2 0
+
+#load armor /data/items/human/boreal/ghoul/blacksteelarmor.txt
+#load helmet /data/items/human/boreal/ghoul/blacksteelhelmet.txt
+
+#load shirt /data/items/human/boreal/ghoul/shirt.txt
+#load legs /data/items/human/boreal/ghoul/legs.txt
+
+#load weapon /data/items/advancedhuman/normal/weapon.txt
+#load weapon /data/items/human/boreal/ghoul/claw.txt
+
+#load offhand /data/items/advancedhuman/normal/offhand.txt
+#load offhand /data/items/human/boreal/ghoul/claw_oh.txt
+#load offhand /data/items/advancedhuman/normal/shields.txt
+#load offhand /data/items/advancedhuman/normal/towershields.txt
+
+#maxvarieties 1
+#maxunits 1
+
+#endpose
