@@ -88,6 +88,8 @@
 #sacred
 #basechance 0.125
 
+#renderorder "shadow underlay cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
 #load basesprite /data/items/human/normal/humanbases.txt
 #load mount /data/items/human/human_mounted/humanbases_chariot.txt
 
@@ -110,10 +112,12 @@
 
 #load weapon /data/items/human/normal/humanweapon.txt
 #load weapon /data/items/human/normal/humanweapon_bronze.txt
+#load weapon /data/items/human/human_mounted/whip.txt
 #load bonusweapon /data/items/human/normal/humanbonusranged.txt
 
 #load offhand /data/items/human/human_mounted/humanoffhand.txt
 #load offhand /data/items/human/normal/shields.txt
 
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
+#load underlay /data/items/human/human_mounted/underlay.txt
 #endpose

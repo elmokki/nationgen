@@ -210,6 +210,8 @@
 #role "elite chariot"
 #role "sacred chariot"
 
+#renderorder "shadow underlay cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
 #load basesprite /data/items/dynastichuman/bases_dynastic_2h.txt
 #load mount /data/items/dynastichuman/chariot/bases_chariot.txt
 
@@ -223,6 +225,7 @@
 #load legs /data/items/dynastichuman/legs.txt
 
 #load weapon /data/items/dynastichuman/scout/weapon.txt
+#load weapon /data/items/human/human_mounted/whip.txt 0 -2
 #load offhand /data/items/dynastichuman/scout/offhand.txt
 #load offhand /data/items/dynastichuman/normal/shields.txt
 
@@ -231,6 +234,7 @@
 #generateitem 1 bonusweapon
 
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
+#load underlay /data/items/human/human_mounted/underlay.txt 0 -2
 #endpose
 
 
