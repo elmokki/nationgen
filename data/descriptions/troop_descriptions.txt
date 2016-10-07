@@ -1,3 +1,8 @@
+----- Any role
+#new
+#name "%nation% fields %armortypes% %role% wielding %weapons_plural%."
+#end
+
 ----- Footmen
 #new
 #name "The %role% of %nation% wear %armortypes% armor and are armed with %weapons%."
@@ -17,6 +22,17 @@
 #nopose chariot
 #end
 
+#new
+#name "The %role% of %nation% are clad in %armortypes% armor and fight with %weapons%."
+#nopose mounted
+#nopose chariot
+#end
+
+#new
+#name "%nation%'s %role% are outfitted with %weapons% and %armortypes% armor."
+#nopose mounted
+#nopose chariot
+#end
 
 ---- Chariots
 
@@ -27,10 +43,24 @@
 #nopose ranged
 #end
 
+#new
+#name "%nation% fields %armortypes% %mount%-drawn chariots to overrun their foes."
+#nopose infantry
+#nopose mounted
+#nopose ranged
+#end
+
 ---- Archers only
 
 #new
 #name "The archers of %nation% are armored with %armortypes% armor and shoot their enemies with %weapons%."
+#nopose infantry
+#nopose mounted
+#nopose chariot
+#end
+
+#new
+#name "%unitname_plural% support the armies of %nation% with their %weapons%."
 #nopose infantry
 #nopose mounted
 #nopose chariot
@@ -48,6 +78,21 @@
 
 #new
 #name "The cavalry of %nation% is armored with %armortypes% armor. The %unitname_plural% are mounted on %mount_plural%."
+#nopose infantry
+#nopose ranged
+#nopose chariot
+#end
+
+#new
+#name "The %unitname_plural% of %nation% ride into battle clad in %armortypes% armor astride %mount_plural%."
+#nopose infantry
+#nopose ranged
+#nopose chariot
+#end
+
+
+#new
+#name "%unitname_plural% ride down the foes of %nation% atop war-trained %mount_plural%."
 #nopose infantry
 #nopose ranged
 #nopose chariot
