@@ -316,15 +316,15 @@ public class CommanderGenerator extends TroopGenerator {
 				} 
 				while(tempComs.contains(u));
 			}
-			else
+			else 
 			{
 				possibleComs.removeAll(getListOfSuitableUnits("sacred"));
-				do
-				{
-
-					u = possibleComs.get(r.nextInt(possibleComs.size()));
-				} 
-				while(u == null || tempComs.contains(u) || (shouldReRoll(u, tempComs) && r.nextBoolean()));
+				if(possibleComs.size() > 0)
+					do
+					{
+						u = possibleComs.get(r.nextInt(possibleComs.size()));
+					} 
+					while(u == null || tempComs.contains(u) || (shouldReRoll(u, tempComs) && r.nextBoolean()));
 			}
 			
 			if(u != null)
