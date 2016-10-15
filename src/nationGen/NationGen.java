@@ -16,9 +16,14 @@ import java.io.PrintWriter;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.concurrent.ForkJoinPool;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.function.BiFunction;
 
 import com.elmokki.Dom3DB;
 import com.elmokki.Drawing;
@@ -149,7 +154,7 @@ public class NationGen {
 			else
 				this.weapondb.addToMap(ci.name, ci.getHashMap());
 
-		System.gc();
+		//System.gc();
 
 		
 		//this.writeDebugInfo();
@@ -209,73 +214,124 @@ public class NationGen {
 			}
 		}
 		
-		System.out.println("Generating nations in parallel...");
-		List<Nation> multiNations = new ArrayList<Nation>();
-		
-		// Robb's experimental stuff
-		List<Integer> multiSeeds = new ArrayList<Integer>();
+		// Robb's experimental stuff		
+		final List<Integer> multiSeeds;		
 		if(manyseeds)
 		{
-			multiSeeds = seeds;
+			multiSeeds = Collections.unmodifiableList(new ArrayList<Integer>(seeds));
 		}
 		else
 		{
 			Random multiRandom = new Random(seed);
+			List<Integer> tmp = new ArrayList<Integer>();
 			for(int i = 0; i < amount; i++)
 			{
-				multiSeeds.add(multiRandom.nextInt());
+				tmp.add(multiRandom.nextInt());
 			}
+			multiSeeds = Collections.unmodifiableList(tmp);
 		}
 		
-		// Parallel loop through all seeds
-		for (int nationID = 0; nationID < amount; nationID++)
+		// Lambda function that uses a base seed to generate nations until one passes every restriction
+		// The returned Nation has Nation.nationid == id
+		BiFunction<Integer, Integer, Nation> generateUntilRestrictionsPassed = (baseSeed, id)->
 		{
-			Random nationRandom = new Random(multiSeeds.get(nationID));
-			boolean pass = false;
-			while(!pass)
+			Random nationRandom = new Random(baseSeed);
+			System.out.println("Nation " + (id + 1) + ": Starting generation with base seed " + baseSeed + "...");
+			Nation newNation = null;
+			int nextSeed = 0;
+			int iterations = 0;
+			while(newNation == null)
 			{
-				int nextSeed = nationRandom.nextInt();
-				System.out.print("- Generating nation " + (nationID + 1) + "/" + amount + " (seed " + nextSeed);
-				if(settings.get("debug") == 1.0)
-					System.out.print(" / " + ZonedDateTime.now().toLocalTime().truncatedTo(ChronoUnit.SECONDS));
-				
-				System.out.print(")... ");
-				
-				Nation newnation = new Nation(this, nextSeed, nationID);
+				iterations++;
+				nextSeed = nationRandom.nextInt();
+				System.out.println("\tNation " + (id + 1) + ": trying seed " + nextSeed);
+				newNation = new Nation(this, nextSeed, id);
 
 				// Handle restrictions
-				pass = true;
 				for(NationRestriction nr : restrictions)
 				{
-					if(!nr.doesThisPass(newnation))
+					if(!nr.doesThisPass(newNation))
 					{
-						pass = false;
-						System.out.println("FAILED RESTRICTION " + nr.toString().toUpperCase());
+						newNation = null;
+						System.out.println("\tNation " + (id + 1) + ": SEED " + nextSeed + " FAILED RESTRICTION " + nr.toString().toUpperCase());
 						break;
 					}
 				}
-				
-				if(pass)
-				{
-					System.out.println("Done!");
-				}
-				else
-				{
-					continue;
-				}
-				
-				
-				// Handle loose ends
-				newnation.nationid = idHandler.nextNationId();
-				this.polishNation(newnation);
-				
-				newnation.name = "Nation " + nationID;
-
-				multiNations.add(newnation);
 			}
+			// Handle loose ends
+			newNation.nationid = idHandler.nextNationId();
+			this.polishNation(newNation);
+			
+			newNation.name = "Nation " + id;
+			
+			System.out.println("Nation " + (id + 1) + " with base seed " + baseSeed + " finished after " + iterations + " iterations with seed " + nextSeed);
+			return(newNation);
+		};
+		
+		System.out.println("\n-- Generating nations using parallel stream...");
+		double startTime = System.nanoTime();
+		System.out.println("Number of available threads: " + ForkJoinPool.commonPool().getParallelism());
+		List<Nation> parallelNations = IntStream.range(0, multiSeeds.size()).parallel().mapToObj(i -> generateUntilRestrictionsPassed.apply(multiSeeds.get(i), i)).collect(Collectors.toList());
+		System.out.println("\n-- Done! Time taken: " + ((System.nanoTime() - startTime) * 1e-9));
+		
+		System.out.println("\n-- Generating nations using sequential stream...");
+		startTime = System.nanoTime();
+		List<Nation> sequentialNations = IntStream.range(0, multiSeeds.size()).sequential().mapToObj(i -> generateUntilRestrictionsPassed.apply(multiSeeds.get(i), i)).collect(Collectors.toList());
+		System.out.println("\n-- Done! Time taken: " + ((System.nanoTime() - startTime) * 1e-9));	
+		
+		// old loop with new seeds
+		
+		System.out.println("\n-- Generating nations using for loop with new seeds...");
+		startTime = System.nanoTime();
+		
+		List<Nation> nationsSeeded = new ArrayList<Nation>();
+		for(int id = 0; id < multiSeeds.size(); id++)
+		{
+			int baseSeed = multiSeeds.get(id);
+			Random nationRandom = new Random(baseSeed);
+			System.out.println("Nation " + (id + 1) + ": Starting generation with base seed " + baseSeed + "...");
+			Nation newNation = null;
+			int nextSeed = 0;
+			int iterations = 0;
+			while(newNation == null)
+			{
+				iterations++;
+				nextSeed = nationRandom.nextInt();
+				System.out.println("\tNation " + (id + 1) + ": trying seed " + nextSeed);
+				newNation = new Nation(this, nextSeed, id);
+
+				// Handle restrictions
+				for(NationRestriction nr : restrictions)
+				{
+					if(!nr.doesThisPass(newNation))
+					{
+						newNation = null;
+						System.out.println("\tNation " + (id + 1) + ": SEED " + nextSeed + " FAILED RESTRICTION " + nr.toString().toUpperCase());
+						break;
+					}
+				}
+			}
+			// Handle loose ends
+			newNation.nationid = idHandler.nextNationId();
+			this.polishNation(newNation);
+			
+			newNation.name = "Nation " + id;
+			
+			System.out.println("Nation " + (id + 1) + " with base seed " + baseSeed + " finished after " + iterations + " iterations with seed " + nextSeed);
+			nationsSeeded.add(newNation);
 		}
 		
-		System.out.println("Generating nations...");
+		System.out.println("\n-- Done! Time taken: " + ((System.nanoTime() - startTime) * 1e-9));	
+		
+		// check that new and old stuff are equivalent
+		//parallelNations.compare(sequentialNations);
+		//sequentialNations.compare(oldNations);
+		
+		// end of Robb's experiment
+		
+		System.out.println("\n-- Generating nations using the old loop...");
+		startTime = System.nanoTime();
+		
 		List<Nation> nations = new ArrayList<Nation>();
 		Nation newnation = null;
 		int newseed = 0;
@@ -325,14 +381,14 @@ public class NationGen {
 			
 			newnation.name = "Nation " + count;
 
-			System.gc();
+			//System.gc();
 
 			nations.add(newnation);
 
 			
 		}
 		
-
+		System.out.println("\n-- Done! Time taken: " + ((System.nanoTime() - startTime) * 1e-9));	
 
 
 		System.out.print("Giving ids");

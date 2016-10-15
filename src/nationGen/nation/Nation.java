@@ -225,7 +225,7 @@ public class Nation {
 		RosterGenerator g = new RosterGenerator(nationGen, this);
 		g.execute();
 		g = null;
-		System.gc();
+		//System.gc();
 		
 	}
 	
@@ -330,7 +330,7 @@ public class Nation {
 		if(sacreds.size() > 0)
 			unitlists.put("sacreds", sacreds);
 		sacGen = null;
-		System.gc();
+		//System.gc();
 		
 	}
 	
@@ -345,7 +345,7 @@ public class Nation {
 		else if(races.get(1).hasRole("scout") && !races.get(1).tags.contains("#no_scouts"))
 			comlists.get("scouts").add(scoutgen.generateScout(races.get(1)));
 		scoutgen = null;
-		System.gc();
+		//System.gc();
 	}
 	
 	private void generateSpecialComs()
@@ -362,7 +362,7 @@ public class Nation {
 			SpecialCommanderGenerator scg = new SpecialCommanderGenerator(this, nationGen);
 			scg.generate();
 			scg = null;
-			System.gc();
+			//System.gc();
 		}
 	}
 	
@@ -393,7 +393,7 @@ public class Nation {
 		int heroes = 1 + random.nextInt(3); // 1-3
 		this.heroes.addAll(hg.generateHeroes(heroes));
 		hg = null;
-		System.gc();
+		//System.gc();
 	}
 	
 	
@@ -403,7 +403,7 @@ public class Nation {
 		CommanderGenerator comgen = new CommanderGenerator(nationGen, this);
 		comgen.generateComs();
 		comgen = null;
-		System.gc();
+		//System.gc();
 	}
 
 	private void generateMonsters()
@@ -425,7 +425,7 @@ public class Nation {
 			}
 			mGen = null;
 		}
-		System.gc();
+		//System.gc();
 	}
 	
 	private void generateSpells()
@@ -471,7 +471,7 @@ public class Nation {
 			cycles--;
 		}
 		posaff = null;
-		System.gc();
+		//System.gc();
 	}
 	
 	
