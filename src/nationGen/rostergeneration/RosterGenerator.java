@@ -80,6 +80,7 @@ public class RosterGenerator {
 		if(Generic.containsTag(secondary.tags, "primaryracetroopmod"))
 			bonussecchance -= Double.parseDouble(Generic.getTagValue(secondary.tags, "primaryracetroopmod"));
 		
+
 		int maxprimaries = 100;
 		
 		double minsecaffinity = 0;
@@ -95,13 +96,18 @@ public class RosterGenerator {
 		
 		// Affinity
 		double secaffinity = r.nextDouble() * bonussecchance;	
-		
+
 
 		double nosecaffinitychance = 0.35;
 		if(Generic.containsTag(primary.tags, "nosecaffinitychance"))
 			nosecaffinitychance = Double.parseDouble(Generic.getTagValue(primary.tags, "nosecaffinitychance"));
 		
-		if(r.nextDouble() < nosecaffinitychance)
+		if((Generic.containsTag(primary.tags, "minsecondaryracetroops") && Integer.parseInt(Generic.getTagValue(primary.tags, "minsecondaryracetroops")) > 0) ||
+		   (Generic.containsTag(primary.tags, "minsecondaryracetroopshare") && Double.parseDouble(Generic.getTagValue(primary.tags, "minsecondaryracetroopshare")) > 0))
+		{
+			// Can't set sac affinity to zero
+		}
+		else if(r.nextDouble() < nosecaffinitychance)
 			secaffinity = 0;
 		
 	
@@ -116,19 +122,20 @@ public class RosterGenerator {
 		// Primary amounts
 		if(Generic.containsTag(primary.tags, "minsecondaryracetroops"))
 			maxprimaries = max - Integer.parseInt(Generic.getTagValue(primary.tags, "minsecondaryracetroops"));
-		if(Generic.containsTag(primary.tags, "minsecondaryracetroopshare"))
+		else if(Generic.containsTag(primary.tags, "minsecondaryracetroopshare"))
 			maxprimaries = max - (int)Math.round((max * Double.parseDouble(Generic.getTagValue(primary.tags, "minsecondaryracetroopshare"))));
 		
 
-		
 		if(Generic.containsTag(primary.tags, "maxprimaryracetroops"))
 		{
 			maxprimaries = Integer.parseInt(Generic.getTagValue(primary.tags, "maxprimaryracetroops"));
-			
 		}
+		
+		
 		if(Generic.containsTag(primary.tags, "maxprimaryracetroopshare"))
 			maxprimaries = (int)Math.round((max * Double.parseDouble(Generic.getTagValue(primary.tags, "maxprimaryracetroopshare"))));
 		
+
 		
 		// Secondary amount
 		double secamount = max * 0.3;
@@ -139,11 +146,10 @@ public class RosterGenerator {
 				secamount+= max * 0.1;
 		}
 		
-		
 		// Amount adjust
 		if(max - maxprimaries > 0)
-			secamount = Math.max(max - maxprimaries, secamount);
-		
+			secamount = Math.max(max - maxprimaries, Math.round(secamount));
+
 		
 		if(Generic.containsTag(secondary.tags, "maxthisracetroops_as_secondary"))
 		{
@@ -153,7 +159,10 @@ public class RosterGenerator {
 		if(secaffinity == 0)
 			secamount = 0;
 
+
+		
 		// Max
+
 		if(secaffinity > 0.5)
 		{
 			max = Math.min(10, max + 2);
@@ -169,7 +178,7 @@ public class RosterGenerator {
 		else
 			max = (int) Math.min(max, maxprimaries + secamount);
 	
-		
+
 		int maxamounts[] = {1, 8, 4, 2};  
 		
 		// Random chariot maximum

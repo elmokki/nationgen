@@ -8,6 +8,8 @@
 
 #theme "herbivore"
 
+#renderorder "shadow underlay cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
 #load basesprite /data/items/lizard/normal/lizardbases.txt
 #load mount /data/items/lizard/normal/lizardbases_chariot.txt
 
@@ -25,10 +27,12 @@
 #load legs /data/items/lizard/normal/lizardlegs.txt
 
 #load weapon /data/items/human/normal/humanweapon.txt offsetx -1 offsety -2
+#load weapon /data/items/human/human_mounted/whip.txt offsetx -1 offsety -2
 #load bonusweapon /data/items/human/normal/humanbonusranged.txt offsetx -1 offsety -2
 
 #load offhand /data/items/human/human_mounted/humanoffhand.txt offsetx -1 offsety -2
 #load offhand /data/items/human/normal/shields.txt offsetx -1 offsety -2
 
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
+#load underlay /data/items/human/human_mounted/underlay.txt offsetx -1 offsety -2
 #endpose

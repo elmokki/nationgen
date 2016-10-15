@@ -284,6 +284,7 @@ public class CustomItemGen {
 		
 		n.customitems.add(i);
 		n.nationGen.customitems.add(i);
+		n.nationGen.weapondb.addToMap(i.id, i.getHashMap());
 		
 
 		return i;
