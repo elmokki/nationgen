@@ -209,6 +209,72 @@ public class NationGen {
 			}
 		}
 		
+		System.out.println("Generating nations in parallel...");
+		List<Nation> multiNations = new ArrayList<Nation>();
+		
+		// Robb's experimental stuff
+		List<Integer> multiSeeds = new ArrayList<Integer>();
+		if(manyseeds)
+		{
+			multiSeeds = seeds;
+		}
+		else
+		{
+			Random multiRandom = new Random(seed);
+			for(int i = 0; i < amount; i++)
+			{
+				multiSeeds.add(multiRandom.nextInt());
+			}
+		}
+		
+		// Parallel loop through all seeds
+		for (int nationID = 0; nationID < amount; nationID++)
+		{
+			Random nationRandom = new Random(multiSeeds.get(nationID));
+			boolean pass = false;
+			while(!pass)
+			{
+				int nextSeed = nationRandom.nextInt();
+				System.out.print("- Generating nation " + (nationID + 1) + "/" + amount + " (seed " + nextSeed);
+				if(settings.get("debug") == 1.0)
+					System.out.print(" / " + ZonedDateTime.now().toLocalTime().truncatedTo(ChronoUnit.SECONDS));
+				
+				System.out.print(")... ");
+				
+				Nation newnation = new Nation(this, nextSeed, nationID);
+
+				// Handle restrictions
+				pass = true;
+				for(NationRestriction nr : restrictions)
+				{
+					if(!nr.doesThisPass(newnation))
+					{
+						pass = false;
+						System.out.println("FAILED RESTRICTION " + nr.toString().toUpperCase());
+						break;
+					}
+				}
+				
+				if(pass)
+				{
+					System.out.println("Done!");
+				}
+				else
+				{
+					continue;
+				}
+				
+				
+				// Handle loose ends
+				newnation.nationid = idHandler.nextNationId();
+				this.polishNation(newnation);
+				
+				newnation.name = "Nation " + nationID;
+
+				multiNations.add(newnation);
+			}
+		}
+		
 		System.out.println("Generating nations...");
 		List<Nation> nations = new ArrayList<Nation>();
 		Nation newnation = null;
