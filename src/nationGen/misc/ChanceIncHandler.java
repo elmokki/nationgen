@@ -2122,11 +2122,14 @@ public class ChanceIncHandler {
 					boolean not = args.contains("not");
 					boolean contains = false;
 					for(Item i : u.slotmap.values())
-						if(Generic.containsTag(i.themes, args.get(args.size() - 2)))
+					{
+						// Items can be null if they're removed, offhand for example.
+						if(i != null && Generic.containsTag(i.themes, args.get(args.size() - 2)))
 						{
 							contains = true;
 							break;
 						}
+					}
 					
 					if(contains != not)
 					{
