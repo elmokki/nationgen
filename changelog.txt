@@ -1,10 +1,20 @@
-0.6.19 (??th of ?? 2016)
+0.6.19 (18th of October 2016)
 ----------------------------------------------------------
+Code
+----------------------------------------------------------
+- Magic weapons weren't being stored in the weapon DB during generation, leading to weirdness
+- Several new failsafes added for commander gen and naming that fix rare crashes
+- Montag units could potentially use up all unit ids in very large mods
 
 Content
 ----------------------------------------------------------
+- Fixed a number of non-crash bugs involving typos, oversights, and missing files; thanks to everyone who reported them
 - Brown and red muuch shamblers and demographic themes
-
+- Feather-bedecked cavemen mounts for occidental hoburgs
+- Certain varieties of charioteers can have whips for weapons
+- Tengu roster size fix
+- A handful of new troop descriptions, sacred troop names, and national epithets
+- Strabo's serpentmen added as a minor race. Visually they're based on lesser hydras, mechanically on herbivore lizards. There was a fair amount of clutter added onto the mostly-done race base Strabo provided, primarily in adding demographic and regional variations. Nonetheless, they're a bit flat with only infantry, scouts, and casters, and they may possibly be unbalanced as well. Archers, chariots, and more variety for mages would make for good additions at some point down the line.
 
 
 0.6.18 (12th of September 2016)
