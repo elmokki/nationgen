@@ -23,6 +23,50 @@ public class Entity {
 	public List<String> tags = new ArrayList<String>();
 	public List<String> themes = new ArrayList<String>();
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		long temp;
+		temp = Double.doubleToLongBits(basechance);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((tags == null) ? 0 : tags.hashCode());
+		result = prime * result + ((themes == null) ? 0 : themes.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Entity other = (Entity) obj;
+		if (Double.doubleToLongBits(basechance) != Double.doubleToLongBits(other.basechance))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (tags == null) {
+			if (other.tags != null)
+				return false;
+		} else if (!tags.equals(other.tags))
+			return false;
+		if (themes == null) {
+			if (other.themes != null)
+				return false;
+		} else if (!themes.equals(other.themes))
+			return false;
+		return true;
+	}
+
+
 	public Entity(NationGen nationGen)
 	{
 		this.nationGen = nationGen;

@@ -24,6 +24,67 @@ public class Site {
 	public String name = "UNNAMED";
 	public int level = 0;
 	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((appliedfilters == null) ? 0 : appliedfilters.hashCode());
+		result = prime * result + ((coms == null) ? 0 : coms.hashCode());
+		result = prime * result + ((gemMap == null) ? 0 : gemMap.hashCode());
+		result = prime * result + id;
+		result = prime * result + level;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((othercommands == null) ? 0 : othercommands.hashCode());
+		result = prime * result + ((troops == null) ? 0 : troops.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Site other = (Site) obj;
+		if (appliedfilters == null) {
+			if (other.appliedfilters != null)
+				return false;
+		} else if (!appliedfilters.equals(other.appliedfilters))
+			return false;
+		if (coms == null) {
+			if (other.coms != null)
+				return false;
+		} else if (!coms.equals(other.coms))
+			return false;
+		if (gemMap == null) {
+			if (other.gemMap != null)
+				return false;
+		} else if (!gemMap.equals(other.gemMap))
+			return false;
+		if (id != other.id)
+			return false;
+		if (level != other.level)
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (othercommands == null) {
+			if (other.othercommands != null)
+				return false;
+		} else if (!othercommands.equals(other.othercommands))
+			return false;
+		if (troops == null) {
+			if (other.troops != null)
+				return false;
+		} else if (!troops.equals(other.troops))
+			return false;
+		return true;
+	}
+
 	public Site()
 	{
 		for(int i = 0; i < 8; i++)

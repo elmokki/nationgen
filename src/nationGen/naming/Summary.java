@@ -21,6 +21,49 @@ public class Summary {
 	
 	private Nation n;
 	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((magic == null) ? 0 : magic.hashCode());
+		result = prime * result + ((military == null) ? 0 : military.hashCode());
+		result = prime * result + ((priest == null) ? 0 : priest.hashCode());
+		result = prime * result + ((race == null) ? 0 : race.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Summary other = (Summary) obj;
+		if (magic == null) {
+			if (other.magic != null)
+				return false;
+		} else if (!magic.equals(other.magic))
+			return false;
+		if (military == null) {
+			if (other.military != null)
+				return false;
+		} else if (!military.equals(other.military))
+			return false;
+		if (priest == null) {
+			if (other.priest != null)
+				return false;
+		} else if (!priest.equals(other.priest))
+			return false;
+		if (race == null) {
+			if (other.race != null)
+				return false;
+		} else if (!race.equals(other.race))
+			return false;
+		return true;
+	}
+
 	public Summary(Nation nation) {
 		this.n = nation;
 	}

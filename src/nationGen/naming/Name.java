@@ -57,6 +57,71 @@ public class Name  {
 	public boolean pluralsuffix = false;
 	public boolean definitesuffix = false;
 	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (definitesuffix ? 1231 : 1237);
+		result = prime * result + (pluralsuffix ? 1231 : 1237);
+		result = prime * result + ((prefix == null) ? 0 : prefix.hashCode());
+		result = prime * result + ((prefixprefix == null) ? 0 : prefixprefix.hashCode());
+		result = prime * result + ((prefixprefixprefix == null) ? 0 : prefixprefixprefix.hashCode());
+		result = prime * result + ((rankprefix == null) ? 0 : rankprefix.hashCode());
+		result = prime * result + ((suffix == null) ? 0 : suffix.hashCode());
+		result = prime * result + ((suffixprefix == null) ? 0 : suffixprefix.hashCode());
+		result = prime * result + ((type == null) ? 0 : type.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Name other = (Name) obj;
+		if (definitesuffix != other.definitesuffix)
+			return false;
+		if (pluralsuffix != other.pluralsuffix)
+			return false;
+		if (prefix == null) {
+			if (other.prefix != null)
+				return false;
+		} else if (!prefix.equals(other.prefix))
+			return false;
+		if (prefixprefix == null) {
+			if (other.prefixprefix != null)
+				return false;
+		} else if (!prefixprefix.equals(other.prefixprefix))
+			return false;
+		if (prefixprefixprefix == null) {
+			if (other.prefixprefixprefix != null)
+				return false;
+		} else if (!prefixprefixprefix.equals(other.prefixprefixprefix))
+			return false;
+		if (rankprefix == null) {
+			if (other.rankprefix != null)
+				return false;
+		} else if (!rankprefix.equals(other.rankprefix))
+			return false;
+		if (suffix == null) {
+			if (other.suffix != null)
+				return false;
+		} else if (!suffix.equals(other.suffix))
+			return false;
+		if (suffixprefix == null) {
+			if (other.suffixprefix != null)
+				return false;
+		} else if (!suffixprefix.equals(other.suffixprefix))
+			return false;
+		if (type == null) {
+			if (other.type != null)
+				return false;
+		} else if (!type.equals(other.type))
+			return false;
+		return true;
+	}
 	public Name()
 	{
 		String temp = new String();

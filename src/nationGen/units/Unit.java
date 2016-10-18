@@ -80,6 +80,97 @@ public class Unit {
 	private Nation nation = null;
 	private List<Command> percentCostCommands = new ArrayList<Command>();
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((appliedFilters == null) ? 0 : appliedFilters.hashCode());
+		result = prime * result + (caponly ? 1231 : 1237);
+		result = prime * result + ((color == null) ? 0 : color.hashCode());
+		result = prime * result + ((commands == null) ? 0 : commands.hashCode());
+		result = prime * result + id;
+		result = prime * result + (invariantMonster ? 1231 : 1237);
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((percentCostCommands == null) ? 0 : percentCostCommands.hashCode());
+		result = prime * result + (polished ? 1231 : 1237);
+		result = prime * result + ((pose == null) ? 0 : pose.hashCode());
+		result = prime * result + ((race == null) ? 0 : race.hashCode());
+		result = prime * result + ((slotmap == null) ? 0 : slotmap.hashCode());
+		result = prime * result + ((slotmemory == null) ? 0 : slotmemory.hashCode());
+		result = prime * result + ((tags == null) ? 0 : tags.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Unit other = (Unit) obj;
+		if (appliedFilters == null) {
+			if (other.appliedFilters != null)
+				return false;
+		} else if (!appliedFilters.equals(other.appliedFilters))
+			return false;
+		if (caponly != other.caponly)
+			return false;
+		if (color == null) {
+			if (other.color != null)
+				return false;
+		} else if (!color.equals(other.color))
+			return false;
+		if (commands == null) {
+			if (other.commands != null)
+				return false;
+		} else if (!commands.equals(other.commands))
+			return false;
+		if (id != other.id)
+			return false;
+		if (invariantMonster != other.invariantMonster)
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (percentCostCommands == null) {
+			if (other.percentCostCommands != null)
+				return false;
+		} else if (!percentCostCommands.equals(other.percentCostCommands))
+			return false;
+		if (polished != other.polished)
+			return false;
+		if (pose == null) {
+			if (other.pose != null)
+				return false;
+		} else if (!pose.equals(other.pose))
+			return false;
+		if (race == null) {
+			if (other.race != null)
+				return false;
+		} else if (!race.equals(other.race))
+			return false;
+		if (slotmap == null) {
+			if (other.slotmap != null)
+				return false;
+		} else if (!slotmap.equals(other.slotmap))
+			return false;
+		if (slotmemory == null) {
+			if (other.slotmemory != null)
+				return false;
+		} else if (!slotmemory.equals(other.slotmemory))
+			return false;
+		if (tags == null) {
+			if (other.tags != null)
+				return false;
+		} else if (!tags.equals(other.tags))
+			return false;
+		return true;
+	}
+
 	public Unit(NationGen nationGen, Race race, Pose pose)
 	{
 		this.nationGen = nationGen;

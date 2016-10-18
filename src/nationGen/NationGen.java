@@ -41,6 +41,7 @@ import nationGen.items.Item;
 import nationGen.magic.MagicPattern;
 import nationGen.magic.Spell;
 import nationGen.misc.Command;
+import nationGen.misc.ShapeshiftCommand;
 import nationGen.misc.PreviewGenerator;
 import nationGen.misc.ResourceStorage;
 import nationGen.misc.Site;
@@ -390,6 +391,7 @@ public class NationGen {
 		
 		System.out.println("\n-- Done! Time taken: " + ((System.nanoTime() - startTime) * 1e-9));	
 
+		System.out.println("\n-- Parallel nations equal to sequential? " + parallelNations.equals(sequentialNations));
 
 		System.out.print("Giving ids");
 		for(Nation n : nations)
@@ -956,7 +958,22 @@ public class NationGen {
 		units.addAll(n.heroes);
 		List<ShapeChangeUnit> sul = new ArrayList<ShapeChangeUnit>();
 
-
+		// Replace each shapeshifter Command with a ShapeshiftCommand,
+		// so that the second form's name is remembered and can be used to check equality
+		{
+			for(Unit u : units)
+			{
+				List<Command> tmp = new ArrayList<Command>();
+				for(Command c : u.commands)
+				{
+					if(c.command.contains("shape") && !hasShapeShift(c.args.get(0)))
+						tmp.add(new ShapeshiftCommand(c));
+					else
+						tmp.add(c);
+				}
+				u.commands = tmp;
+			}
+		}
 		
 		for(Unit u : units)
 			for(Command c : u.commands)

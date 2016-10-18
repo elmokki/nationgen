@@ -11,7 +11,39 @@ import com.elmokki.Generic;
 public class Command {
 	public String command = "";
 	public List<String> args = new ArrayList<String>();
-	
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((args == null) ? 0 : args.hashCode());
+		result = prime * result + ((command == null) ? 0 : command.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Command other = (Command) obj;
+		if (args == null) {
+			if (other.args != null)
+				return false;
+		} else if (!args.equals(other.args))
+			return false;
+		if (command == null) {
+			if (other.command != null)
+				return false;
+		} else if (!command.equals(other.command))
+			return false;
+		return true;
+	}
+
 	public static void handleCommand(List<Command> commands, Command c, NationGen nationGen)
 	{
 

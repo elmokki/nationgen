@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -94,6 +95,138 @@ public class Nation {
 	public Summary summary = new Summary(this);
 	
 	public BufferedImage flag = null;
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((castles == null) ? 0 : castles.hashCode());
+		result = prime * result + Arrays.hashCode(colors);
+		result = prime * result + ((comlists == null) ? 0 : comlists.hashCode());
+		result = prime * result + ((commands == null) ? 0 : commands.hashCode());
+		result = prime * result + ((customitems == null) ? 0 : customitems.hashCode());
+		result = prime * result + ((epithet == null) ? 0 : epithet.hashCode());
+		result = prime * result + era;
+		result = prime * result + ((gods == null) ? 0 : gods.hashCode());
+		result = prime * result + ((heroes == null) ? 0 : heroes.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((nationalitysuffix == null) ? 0 : nationalitysuffix.hashCode());
+		result = prime * result + ((nationthemes == null) ? 0 : nationthemes.hashCode());
+		result = prime * result + ((races == null) ? 0 : races.hashCode());
+		result = prime * result + ((secondshapes == null) ? 0 : secondshapes.hashCode());
+		result = prime * result + seed;
+		result = prime * result + ((sites == null) ? 0 : sites.hashCode());
+		result = prime * result + ((spells == null) ? 0 : spells.hashCode());
+		result = prime * result + ((unitlists == null) ? 0 : unitlists.hashCode());
+		result = prime * result + ((usedItems == null) ? 0 : usedItems.hashCode());
+		result = prime * result + ((usedcustomitems == null) ? 0 : usedcustomitems.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {	
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Nation other = (Nation) obj;
+		if (castles == null) {
+			if (other.castles != null)
+				return false;
+		} else if (!castles.equals(other.castles))
+			return false;
+		if (!Arrays.equals(colors, other.colors))
+			return false;
+		if (comlists == null) {
+			if (other.comlists != null)
+				return false;
+		} else if (!comlists.equals(other.comlists))
+			return false;
+		if (commands == null) {
+			if (other.commands != null)
+				return false;
+		} else if (!commands.equals(other.commands))
+			return false;
+		if (customitems == null) {
+			if (other.customitems != null)
+				return false;
+		} else if (!customitems.equals(other.customitems))
+			return false;
+		if (epithet == null) {
+			if (other.epithet != null)
+				return false;
+		} else if (!epithet.equals(other.epithet))
+			return false;
+		if (era != other.era)
+			return false;
+		if (gods == null) {
+			if (other.gods != null)
+				return false;
+		} else if (!gods.equals(other.gods))
+			return false;
+		if (heroes == null) {
+			if (other.heroes != null)
+				return false;
+		} else if (!heroes.equals(other.heroes))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (nationalitysuffix == null) {
+			if (other.nationalitysuffix != null)
+				return false;
+		} else if (!nationalitysuffix.equals(other.nationalitysuffix))
+			return false;
+		if (nationthemes == null) {
+			if (other.nationthemes != null)
+				return false;
+		} else if (!nationthemes.equals(other.nationthemes))
+			return false;
+		if (races == null) {
+			if (other.races != null)
+				return false;
+		} else if (!races.equals(other.races))
+			return false;
+		if (secondshapes == null) {
+			if (other.secondshapes != null)
+				return false;
+		} else if (!secondshapes.equals(other.secondshapes))
+			return false;
+		if (seed != other.seed)
+			return false;
+		if (sites == null) {
+			if (other.sites != null)
+				return false;
+		} else if (!sites.equals(other.sites))
+			return false;
+		if (spells == null) {
+			if (other.spells != null)
+				return false;
+		} else if (!spells.equals(other.spells))
+			return false;
+		if (unitlists == null) {
+			if (other.unitlists != null)
+				return false;
+		} else if (!unitlists.equals(other.unitlists))
+			return false;
+		if (usedItems == null) {
+			if (other.usedItems != null)
+				return false;
+		} else if (!usedItems.equals(other.usedItems))
+			return false;
+		if (usedcustomitems == null) {
+			if (other.usedcustomitems != null)
+				return false;
+		} else if (!usedcustomitems.equals(other.usedcustomitems))
+			return false;
+		return true;
+	}
+
 
 	public Nation(NationGen ngen, int seed, int tempid)
 	{
