@@ -978,12 +978,17 @@ public class NationGen {
 		
 		for(Unit u : units)
 			for(Command c : u.commands)
+			{	
 				if(c.command.contains("shape") && !hasShapeShift(c.args.get(0)))
 				{
-					if(c.command.equals("#firstshape") && u.tags.contains("montagunit"));
+					if((c.command.equals("#firstshape") && u.tags.contains("montagunit")))
+						handleMontag(c, u, units);
 					else
 						handleShapeshift(c, u);
 				}
+				else if(c.command.equals("#montag"))
+					handleMontag(c, u, units);
+			}	
 		
 		
 	
@@ -1026,6 +1031,27 @@ public class NationGen {
 
 		
 		
+
+	}
+	
+	
+	private HashMap<String, Integer> montagmap = new HashMap<String, Integer>();
+	private void handleMontag(Command c, Unit u, List<Unit> units)
+	{
+		Integer montag = montagmap.get(c.args.get(0));
+		if(montag == null)
+		{
+
+			montag = idHandler.nextMontagId();
+			montagmap.put(c.args.get(0), montag);
+			System.out.println("Added "  + montag + " for " + c.args.get(0));
+
+		}
+		
+		if(c.command.equals("#firstshape"))
+			c.args.set(0, "-" + montag);
+		else if(c.command.equals("#montag"))
+			c.args.set(0, "" + montag);
 
 	}
 	
