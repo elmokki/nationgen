@@ -48,7 +48,6 @@ public class UnitGen {
 	
 	
 	
-	
 	public UnitGen(NationGen gen, Nation n)
 	{
 		this.nationGen = gen;
@@ -994,13 +993,13 @@ public class UnitGen {
 
 		if(list.size() > 0)
 		{
-			int montag = nationGen.idHandler.nextMontagId();
+			String montag = "montag" + nation.nationid + "_" + nation.mockid--;
 			for(Unit nu : list)
 			{
 				nu.tags.add("hasmontag");
 				nu.commands.add(new Command("#montag", ""+montag));
 			}
-			u.commands.add(new Command("#firstshape", "-"+montag));
+			u.commands.add(new Command("#firstshape", ""+montag));
 			u.tags.add("montagunit");
 		}
 				
@@ -1055,20 +1054,25 @@ public class UnitGen {
 	{
 
 		List<Unit> units = new ArrayList<Unit>();
-		if(Generic.containsTag(u.pose.tags, "montagpose") && !Generic.containsTag(u.pose.tags, "no_montag_mean_costs") && u.getCommandValue("#firstshape", 0) < 0)
+		if(Generic.containsTag(u.pose.tags, "montagpose"))
 		{
 	
-			int firstshape = -u.getCommandValue("#firstshape", 0);
+			String firstshape = u.getStringCommandValue("#firstshape", "");
+			boolean numeric = Generic.isNumeric(firstshape);
+			
+			
 			for(List<Unit> lu : nation.unitlists.values())
 			{
 				for(Unit nu : lu)
-					if(nu.getCommandValue("#montag", 0) == firstshape && u != nu)
-					{
+				{	
+					if(!numeric && nu.getStringCommandValue("#montag", "").equals(firstshape) && u != nu)
 						units.add(nu);
-				
-					}
+					else if(numeric && ("-" + nu.getStringCommandValue("#montag", "")).equals(firstshape))
+						units.add(nu);
+					
+					
+				}	
 			}
-			
 
 			
 				

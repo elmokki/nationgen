@@ -1218,17 +1218,17 @@ public class Unit {
 		
 
 		// Montag mean costs
-		if(Generic.containsTag(this.pose.tags, "montagpose") && !Generic.containsTag(this.pose.tags, "no_montag_mean_costs") && getCommandValue("#firstshape", 0) < 0)
+		if(Generic.containsTag(this.pose.tags, "montagpose") && !Generic.containsTag(this.pose.tags, "no_montag_mean_costs"))
 		{
 			int n = 0;
 			int res = 0;
 			int gold = 0;
 			
-			int firstshape = -getCommandValue("#firstshape", 0);
+			String firstshape = getStringCommandValue("#firstshape", "");
 			for(List<Unit> lu : nation.unitlists.values())
 			{
 				for(Unit nu : lu)
-					if(nu.getCommandValue("#montag", 0) == firstshape && u != nu)
+					if(nu.getStringCommandValue("#montag", "").equals(firstshape) && u != nu)
 					{
 						nu.polish();
 						res += nu.getResCost(true);
@@ -1673,6 +1673,18 @@ public class Unit {
 		}
 		return value;
 	}
+	
+	public String getStringCommandValue(String command, String defaultv)
+	{
+		String value = defaultv;
+		for(Command c : this.getCommands())
+		{
+			if(c.command.equals(command) && c.args.size() > 0)
+				value = c.args.get(0);
+		}
+		return value;
+	}
+	
 	
 	// 20150522EA : my OOP prof back in undergrad would probably shoot me for this method...
 	public void setCommandValue(String command, int argIndex, String newValue)
