@@ -397,6 +397,7 @@
 #newitem
 #name "icecap"
 #gameid 29
+#basechance 0.01
 #sprite /graphics/serpentmen/head/icecap.png
 #armor
 #theme "ice"
@@ -405,12 +406,16 @@
 #theme occidental
 #theme austral
 #theme central
-#themeinc thisitemslottheme armor ice *10
+#themeinc thisitemslottheme armor ice *1000
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
 #enditem
 
 #newitem
 #name "ice halfhelm"
 #gameid 124
+#basechance 0.01
 #sprite /graphics/serpentmen/head/icehelmet.png
 #armor
 #theme "ice"
@@ -419,12 +424,16 @@
 #theme occidental
 #theme austral
 #theme central
-#themeinc thisitemslottheme armor ice *10
+#themeinc thisitemslottheme armor ice *1000
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
 #enditem
 
 #newitem
 #name "ice fullhelm"
 #gameid icehelmet_full
+#basechance 0.01
 #sprite /graphics/serpentmen/head/icefullhelm.png
 #armor
 #theme "ice"
@@ -433,24 +442,32 @@
 #theme occidental
 #theme austral
 #theme central
-#themeinc thisitemslottheme armor ice *10
+#themeinc thisitemslottheme armor ice *1000
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
 #enditem
 
 #newitem
 #name "icecap_oriental"
 #gameid 29
+#basechance 0.01
 #sprite /graphics/serpentmen/head/icecap_oriental.png
 #armor
 #theme "ice"
 #theme "terrestrial"
 #theme "marine"
 #theme "oriental"
-#themeinc thisitemslottheme armor ice *10
+#themeinc thisitemslottheme armor ice *1000
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
 #enditem
 
 #newitem
 #name "ice halfhelm_oriental"
 #gameid 124
+#basechance 0.01
 #sprite /graphics/serpentmen/head/icehelm_oriental.png
 #eliteversion "elite ice halfhelm_oriental"
 #armor
@@ -458,19 +475,26 @@
 #theme "terrestrial"
 #theme "marine"
 #theme "oriental"
-#themeinc thisitemslottheme armor ice *10
+#themeinc thisitemslottheme armor ice *1000
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
 #enditem
 
 #newitem
 #name "elite ice halfhelm_oriental"
 #gameid icehelmet_full
+#basechance 0.01
 #sprite /graphics/serpentmen/head/icehelm_oriental_elite.png
 #armor
 #theme "ice"
 #theme "terrestrial"
 #theme "marine"
 #theme "oriental"
-#themeinc thisitemslottheme armor ice *10
+#themeinc thisitemslottheme armor ice *1000
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
 #enditem
 
 
@@ -499,6 +523,7 @@
 #theme oriental
 #theme austral
 #theme central
+#themeinc thisitemslottheme not armor coral *0.1
 #enditem
 
 #newitem

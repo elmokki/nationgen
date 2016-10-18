@@ -211,7 +211,7 @@
 #gameid 105
 #basechance 4
 #sprite /graphics/serpentmen/shield/hideshield_austral.png
-#recolormask /graphics/serpentmen/shieldhideshield_austral_recolormask.png
+#recolormask /graphics/serpentmen/shield/hideshield_austral_recolormask.png
 #armor
 #theme "leather"
 #theme austral
@@ -232,6 +232,7 @@
 #newitem
 #id iceshield1
 #gameid 28
+#basechance 0.01
 #sprite /graphics/serpentmen/shield/iceshield1.png
 #armor
 #theme ice
@@ -241,11 +242,16 @@
 #theme oriental
 #theme terrestrial
 #theme marine
+#themeinc thisitemslottheme armor ice *1000
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
 #enditem
 
 #newitem
 #id iceshield2
 #gameid 28
+#basechance 0.01
 #sprite /graphics/serpentmen/shield/iceshield2.png
 #armor
 #theme ice
@@ -255,11 +261,16 @@
 #theme oriental
 #theme terrestrial
 #theme marine
+#themeinc thisitemslottheme armor ice *1000
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
 #enditem
 
 #newitem
 #id iceshield3
 #gameid 28
+#basechance 0.01
 #sprite /graphics/serpentmen/shield/iceshield3.png
 #armor
 #theme ice
@@ -269,54 +280,74 @@
 #theme oriental
 #theme terrestrial
 #theme marine
+#themeinc thisitemslottheme armor ice *1000
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
 #enditem
 
 #newitem
 #id iceshield_austral
 #gameid 28
-#basechance 3
+#basechance 0.03
 #sprite /graphics/serpentmen/shield/iceshield_austral.png
 #armor
 #theme ice
 #theme austral
 #theme terrestrial
 #theme marine
+#themeinc thisitemslottheme armor ice *1000
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
 #enditem
 
 #newitem
 #id iceshield_central
 #gameid 28
-#basechance 3
+#basechance 0.03
 #sprite /graphics/serpentmen/shield/icehoplon.png
 #armor
 #theme ice
 #theme central
 #theme terrestrial
 #theme marine
+#themeinc thisitemslottheme armor ice *1000
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
 #enditem
 
 #newitem
 #id iceshield_occidental
 #gameid 28
-#basechance 3
+#basechance 0.03
 #sprite /graphics/serpentmen/shield/iceshield_occidental.png
 #armor
 #theme ice
 #theme occidental
 #theme terrestrial
 #theme marine
+#themeinc thisitemslottheme armor ice *1000
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
 #enditem
 
 #newitem
 #id iceshield_oriental
 #gameid 28
-#basechance 3
+#basechance 0.03
 #sprite /graphics/serpentmen/shield/icetowershield.png
 #armor
 #theme ice
 #theme oriental
 #theme terrestrial
 #theme marine
+#themeinc thisitemslottheme armor ice *1000
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
 #enditem
 
 

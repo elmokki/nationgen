@@ -2,7 +2,7 @@
 
 #newpose
 #role "priest"
-
+#renderorder "shadow basesprite armor helmet weapon hands"
 #load basesprite /data/items/serpentmen/serpentmenbases.txt
 #load hands /data/items/serpentmen/hands.txt
 #load shadow /data/items/serpentmen/shadow.txt
@@ -20,7 +20,7 @@
 #newpose
 #role "mage"
 
-#renderorder "shadow basesprite armor helmet weapon"
+#renderorder "shadow basesprite armor helmet weapon hands"
 #load basesprite /data/items/serpentmen/serpentmenbases.txt
 #load hands /data/items/serpentmen/hands.txt
 #load shadow /data/items/serpentmen/shadow.txt

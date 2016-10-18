@@ -308,7 +308,7 @@
 #newitem
 #id coralspear
 #gameid 31
-#sprite/graphics/serpentmen/weapon/coralspear.png
+#sprite /graphics/serpentmen/weapon/coralspear.png
 #theme occidental
 #theme oriental
 #theme austral
@@ -321,7 +321,7 @@
 #newitem
 #id corallongspear
 #gameid 580
-#sprite/graphics/serpentmen/weapon/corallongspear.png
+#sprite /graphics/serpentmen/weapon/corallongspear.png
 #theme oriental
 #theme austral
 #theme central
@@ -333,7 +333,7 @@
 #newitem
 #id coralglaive
 #gameid 46
-#sprite/graphics/serpentmen/weapon/coralglaive.png
+#sprite /graphics/serpentmen/weapon/coralglaive.png
 #theme austral
 #theme central
 #theme marine
@@ -344,7 +344,7 @@
 #newitem
 #id coralnaginata
 #gameid 46
-#sprite/graphics/serpentmen/weapon/coralnaginata.png
+#sprite /graphics/serpentmen/weapon/coralnaginata.png
 #theme occidental
 #theme oriental
 #theme marine
@@ -366,6 +366,8 @@
 #theme ice
 #theme primitive
 #chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
 #enditem
 
 #newitem
@@ -381,6 +383,8 @@
 #theme ice
 #theme formationfighter
 #chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
 #enditem
 
 #newitem
@@ -393,6 +397,8 @@
 #theme terrestrial
 #theme ice
 #chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
 #enditem
 
 #newitem
@@ -403,6 +409,8 @@
 #theme terrestrial
 #theme ice
 #chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
 #enditem
 
 #newitem
@@ -415,6 +423,8 @@
 #theme terrestrial
 #theme ice
 #chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
 #enditem
 
 #newitem
@@ -427,6 +437,8 @@
 #theme marine
 #theme ice
 #chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
 #enditem
 
 #newitem
@@ -439,4 +451,6 @@
 #theme marine
 #theme ice
 #chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
 #enditem
