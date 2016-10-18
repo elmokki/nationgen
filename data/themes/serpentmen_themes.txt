@@ -55,12 +55,92 @@
 #endtheme
 
 
+-- Regional themes (mandatory)
+#newtheme
+#type regional
+#name austral
+#theme austral
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#themeinc theme austral *1000
+#racedefinition "#longsyllables /data/names/nations/lizard/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/lizard/shortsyllables.txt"
+#racedefinition "#unitcommand '#nametype 113'"
+#racedefinition "#nationcommand '#gods lizardgods"
+#racedefinition "#austral"
+#endtheme
+
+#newtheme
+#type regional
+#name central
+#theme central
+#themeinc theme advanced *0.5
+#themeinc theme iron *1
+#themeinc theme bronze *2
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *0.25
+#themeinc theme central *1000
+#racedefinition "#longsyllables /data/names/nations/amazon/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/amazon/shortsyllables.txt"
+#racedefinition "#unitcommand '#nametype 136'"
+#racedefinition "#nationcommand '#gods lizardgods"
+#racedefinition "#central"
+#endtheme
+
+#newtheme
+#type regional
+#name occidental
+#theme occidental
+#themeinc theme advanced *0.125
+#themeinc theme iron *0.5
+#themeinc theme bronze *2
+#themeinc theme wood *2
+#themeinc theme leather *2
+#themeinc theme naked *4
+#themeinc theme primitive *2
+#themeinc theme occidental *1000
+#racedefinition "#longsyllables /data/names/nations/nahuatl/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
+#racedefinition "#unitcommand '#nametype 123'"
+#racedefinition "#nationcommand '#gods westerngods"
+#racedefinition "#occidental"
+#endtheme
+
+#newtheme
+#type regional
+#name oriental
+#theme oriental
+#themeinc theme advanced *1
+#themeinc theme iron *4
+#themeinc theme bronze *0.125
+#themeinc theme wood *2
+#themeinc theme leather *1
+#themeinc theme naked *0.25
+#themeinc theme primitive *0.5
+#themeinc theme oriental *1000
+#racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
+#racedefinition "#unitcommand '#nametype 121'"
+#racedefinition "#nationcommand '#gods easterngods"
+#racedefinition "#oriental"
+#endtheme
+
+
 -- Demographic themes (mandatory)
 #newtheme
 #type demographic
 #name swamp_serpent
 #theme swamp_serpent
 #basechance 1
+#chanceinc racetheme central *4
+#chanceinc racetheme occidental *2
 #themeinc theme swamp_serpent *1000
 #themeinc theme marine *0.5
 #themeinc theme terrestrial *2
@@ -83,7 +163,7 @@
 #type demographic
 #name sea_serpent
 #theme sea_serpent
-#basechance 1
+#basechance 2
 #themeinc theme sea_serpent *1000
 #themeinc theme marine *100
 #themeinc theme advanced *1
@@ -97,7 +177,7 @@
 #themeinc theme primitive *1
 #racedefinition "#nationcommand '#idealcold -1'"
 #racedefinition "#magicpriority water 6"
-#racedefinition "#magicpriority air *0.5"
+#racedefinition "#magicpriority air 0.5"
 #racedefinition "#magicpriority nature 4"
 #racedefinition "#nationcommand #coastnation"
 #racedefinition "#nationcommand '#uwbuild 1'"
@@ -108,6 +188,8 @@
 #name jungle_serpent
 #theme jungle_serpent
 #basechance 1
+#chanceinc racetheme austral *2
+#chanceinc racetheme occidental *4
 #themeinc theme jungle_serpent *1000
 #themeinc theme terrestrial *100
 #themeinc theme advanced *1
@@ -129,6 +211,8 @@
 #name mountain_serpent
 #theme mountain_serpent
 #basechance 1
+#chanceinc racetheme oriental *4
+#chanceinc racetheme occidental *2
 #themeinc theme mountain_serpent *1000
 #themeinc theme terrestrial *100
 #themeinc theme advanced *2
@@ -140,7 +224,7 @@
 #themeinc theme ice *1
 #themeinc theme naked *0.5
 #themeinc theme primitive *0.5
-#racedefinition "#nationcommand '#idealcold +1'"
+#racedefinition "#nationcommand '#idealcold 1'"
 #racedefinition "#magicpriority earth 4"
 #racedefinition "#magicpriority water 2"
 #racedefinition "#magicpriority air 2"
@@ -150,7 +234,7 @@
 #type demographic
 #name deep_serpent
 #theme deep_serpent
-#basechance 1
+#basechance 2
 #themeinc theme deep_serpent *1000
 #themeinc theme terrestrial *100
 #themeinc theme advanced *1
@@ -173,7 +257,7 @@
 #type demographic
 #name blind_serpent
 #theme blind_serpent
-#basechance 1
+#basechance 2
 #themeinc theme blind_serpent *1000
 #themeinc theme marine *0.5
 #themeinc theme terrestrial *2
@@ -199,6 +283,7 @@
 #name desert_serpent
 #theme desert_serpent
 #basechance 1
+#chanceinc racetheme austral *4
 #themeinc theme desert_serpent *1000
 #themeinc theme terrestrial *1000
 #themeinc theme advanced *1
@@ -210,7 +295,7 @@
 #themeinc theme ice *0.01
 #themeinc theme naked *2
 #themeinc theme primitive *1
-#racedefinition "#nationcommand '#idealcold +3'"
+#racedefinition "#nationcommand '#idealcold 3'"
 #racedefinition "#magicpriority fire 8"
 #racedefinition "#magicpriority water 0.1"
 #racedefinition "#magicpriority air 2"
@@ -222,6 +307,8 @@
 #name tundra_serpent
 #theme tundra_serpent
 #basechance 1
+#chanceinc racetheme central *2
+#chanceinc racetheme oriental *2
 #themeinc theme tundra_serpent *1000
 #themeinc theme terrestrial *100
 #themeinc theme advanced *1
@@ -241,7 +328,7 @@
 #endtheme
 
 
-
+-- Misc themes
 -- Weights: EA 0.05, MA 0.05, LA 0.05
 #newtheme
 #type social
@@ -269,26 +356,17 @@
 #racedefinition "#secondaryracemagemod -100"
 #endtheme
 
--- Weights: EA 0.25, MA 0.25, LA 0.25
 #newtheme
-#type regional
-#name oriental
-#theme oriental
-#basechance 0.25
-#themeinc theme advanced *1
-#themeinc theme iron *4
-#themeinc theme bronze *0.125
-#themeinc theme wood *2
-#themeinc theme leather *1
-#themeinc theme naked *0.05
-#themeinc theme primitive *0.5
-#themeinc theme oriental *1000
-#themeinc theme dynastic *0.001
-#themeinc theme boreal *0.001
-#racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
-#racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
-#racedefinition "#suffixes /data/names/nations/oriental/suffixes.txt"
-#racedefinition "#unitcommand '#nametype 121'"
-#racedefinition "#nationcommand '#gods easterngods"
-#racedefinition "#oriental"
+#type social
+#name amazon
+#basechance 0.1
+#chanceinc racetheme central *20
+#racedefinition "#unitcommand '#hp +2'"
+#racedefinition "#unitcommand '#ap -2'"
+#racedefinition "#unitcommand '#female'"
+#racedefinition "#unitcommand '#nametype 135'"
+#racedefinition "#nationcommand '#likespop 40'"
+#racedefinition "#nationcommand '#likespop 41'"
+#racedefinition "#nationcommand '#likespop 42'"
+#racedefinition "#nationcommand '#likespop 43'"
 #endtheme

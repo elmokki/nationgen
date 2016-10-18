@@ -47,6 +47,8 @@
 #recolormask /graphics/serpentmen/head/magefeather2_recolormask.png
 #tag "tier 2"
 #tag "tier 3"
+#offsetx -1
+#offsety 1
 #enditem
 
 #newitem
@@ -55,6 +57,7 @@
 #sprite /graphics/serpentmen/head/magefeather3.png
 #recolormask /graphics/serpentmen/head/magefeather3_recolormask.png
 #tag "tier 3"
+#offsetx -2
 #enditem
 
 #newitem
@@ -67,7 +70,7 @@
 #enditem
 
 #newitem
-#id mageantler1
+#id mageantler2
 #gameid 24
 #sprite /graphics/serpentmen/head/mageprim2.png
 #armor
@@ -101,6 +104,7 @@
 #gameid -1
 #sprite /graphics/serpentmen/head/mageaurat2-4.png
 #tag "tier 2"
+#offsety -1
 #enditem
 
 #newitem
@@ -129,6 +133,7 @@
 #id mageaurat3-3
 #gameid -1
 #sprite /graphics/atlantian/head/mageaurat3-3.png
+#offsety -6
 #tag "tier 3"
 #enditem
 
