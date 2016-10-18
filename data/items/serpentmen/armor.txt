@@ -1,3 +1,34 @@
+-- Nada
+#newitem
+#name "nothing_terrestrial"
+#basechance 1
+#gameid -1
+#armor
+#theme "terrestrial"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#theme naked
+#theme primitive
+#milita
+#enditem
+
+#newitem
+#name "nothing_marine"
+#basechance 2
+#gameid -1
+#armor
+#theme "marine"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#theme naked
+#milita
+#enditem
+
+
 --- Leather
 #newitem
 #name "leather cuirass"
@@ -6,6 +37,10 @@
 #armor
 #theme "leather"
 #theme "terrestrial"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -15,6 +50,10 @@
 #armor
 #theme "leather"
 #theme "terrestrial"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -24,6 +63,10 @@
 #armor
 #theme "leather"
 #theme "marine"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -33,6 +76,10 @@
 #armor
 #theme "leather"
 #theme "marine"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
 #enditem
 
 --- Ring
@@ -45,6 +92,8 @@
 #theme "leather"
 #theme "iron"
 #theme "terrestrial"
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -55,6 +104,8 @@
 #theme "leather"
 #theme "iron"
 #theme "terrestrial"
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -66,6 +117,8 @@
 #theme "leather"
 #theme "bronze"
 #theme "terrestrial"
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -76,6 +129,8 @@
 #theme "leather"
 #theme "bronze"
 #theme "terrestrial"
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -87,6 +142,8 @@
 #theme "bronze"
 #theme "marine"
 #theme "advanced"
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -99,6 +156,8 @@
 #theme "bronze"
 #theme "marine"
 #theme "advanced"
+#theme austral
+#theme central
 #enditem
 
 
@@ -110,6 +169,9 @@
 #armor
 #theme "iron"
 #theme "terrestrial"
+#theme occidental
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -120,6 +182,9 @@
 #basechance 0.5
 #theme "iron"
 #theme "terrestrial"
+#theme occidental
+#theme austral
+#theme central
 #enditem
 
 #newitem -- full scale
@@ -130,6 +195,8 @@
 #theme "advanced"
 #theme "iron"
 #theme "terrestrial"
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -140,6 +207,9 @@
 #theme "bronze"
 #theme "terrestrial"
 #theme "marine"
+#theme occidental
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -151,6 +221,9 @@
 #theme "bronze"
 #theme "terrestrial"
 #theme "marine"
+#theme occidental
+#theme austral
+#theme central
 #enditem
 
 #newitem -- full scale
@@ -162,6 +235,8 @@
 #theme "bronze"
 #theme "terrestrial"
 #theme "marine"
+#theme austral
+#theme central
 #enditem
 
 
@@ -173,7 +248,8 @@
 #armor
 #theme "iron"
 #theme "terrestrial"
-#chanceinc hastheme oriental *0
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -184,7 +260,8 @@
 #armor
 #theme "iron"
 #theme "terrestrial"
-#theme "dynastic"
+#theme austral
+#theme central
 #enditem
 
 
@@ -198,7 +275,8 @@
 #theme "advanced"
 #theme "iron"
 #theme "terrestrial"
-#theme "dynastic"
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -209,43 +287,34 @@
 #theme "advanced"
 #theme "iron"
 #theme "terrestrial"
-#theme "dynastic"
+#theme austral
+#theme central
 #enditem
 
 #newitem
 #name "bronze plate cuirass"
 #gameid 100
-#sprite /graphics/serpentmen/armor/bronzeplatecuirass.png
+#sprite /graphics/serpentmen/armor/bronzecuirass.png
 #armor
 #theme "advanced"
 #theme "bronze"
 #theme "terrestrial"
 #theme "marine"
-#theme "dynastic"
+#theme austral
+#theme central
 #enditem
 
 #newitem
 #name "bronze plate hauberk"
 #gameid 101
-#sprite /graphics/serpentmen/armor/bronzeplatehauberk.png
+#sprite /graphics/serpentmen/armor/bronzehauberk.png
 #armor
 #theme "advanced"
 #theme "bronze"
 #theme "terrestrial"
 #theme "marine"
-#theme "dynastic"
-#enditem
-
-#newitem
-#name "bronze plate hauberk"
-#gameid 101
-#sprite /graphics/serpentmen/armor/bronzeplatehauberk.png
-#armor
-#theme "advanced"
-#theme "bronze"
-#theme "terrestrial"
-#theme "marine"
-#theme "dynastic"
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -255,6 +324,10 @@
 #armor
 #theme "primitive"
 #theme "marine"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -263,6 +336,10 @@
 #sprite /graphics/serpentmen/armor/shellarmor.png
 #armor
 #theme "marine"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
 #enditem
 
 
@@ -276,6 +353,8 @@
 #theme "coral"
 #theme "marine"
 #theme "advanced"
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -288,6 +367,8 @@
 #theme "coral"
 #theme "marine"
 #theme "advanced"
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -298,6 +379,10 @@
 #theme "coral"
 #theme "marine"
 #define "#barbs"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -308,6 +393,10 @@
 #theme "coral"
 #theme "marine"
 #define "#barbs"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
 #enditem
 
 
@@ -315,7 +404,7 @@
 #newitem
 #name "ashigaru armor"
 #gameid 128
-#basechance 0.001
+#basechance 1
 #sprite /graphics/serpentmen/armor/ashigaru.png
 #tag "eliteversion 'samurai armor'"
 #theme "iron"
@@ -328,7 +417,7 @@
 #newitem
 #name "samurai armor"
 #gameid 129
-#basechance 0.001
+#basechance 1
 #sprite /graphics/serpentmen/armor/samurai.png
 #tag "eliteversion 'elite samurai armor'"
 #tag "eliteversion 'heavy samurai armor'"
@@ -341,7 +430,7 @@
 #newitem
 #name "elite samurai armor"
 #gameid 129
-#basechance 0.001
+#basechance 1
 #sprite /graphics/serpentmen/armor/samurai2.png
 #tag "eliteversion 'elite heavy samurai armor'"
 #theme "iron"
@@ -354,7 +443,7 @@
 #newitem
 #name "heavy samurai armor"
 #gameid 130
-#basechance 0.001
+#basechance 1
 #sprite /graphics/serpentmen/armor/heavysamurai.png
 #tag "eliteversion 'elite heavy samurai armor'"
 #theme "iron"
@@ -366,7 +455,7 @@
 #newitem
 #name "elite heavy samurai armor"
 #gameid 130
-#basechance 0.001
+#basechance 1
 #sprite /graphics/serpentmen/armor/heavysamurai2.png
 #theme "iron"
 #theme "terrestrial"
@@ -385,6 +474,8 @@
 #theme "ice"
 #theme "leather"
 #theme "terrestrial"
+#theme austral
+#theme central
 #define "#iceprot +1"
 #chanceinc "personalcommand below #coldres 5 *0"
 #enditem
@@ -397,6 +488,8 @@
 #theme "ice"
 #theme "leather"
 #theme "terrestrial"
+#theme austral
+#theme central
 #define "#iceprot +1"
 #chanceinc "personalcommand below #coldres 5 *0"
 #enditem
@@ -408,7 +501,8 @@
 #armor
 #theme "ice"
 #theme "terrestrial"
-#theme "boreal"
+#theme austral
+#theme central
 #define "#iceprot +2"
 #chanceinc "personalcommand below #coldres 5 *0"
 #enditem
@@ -420,10 +514,10 @@
 #armor
 #theme "ice"
 #theme "terrestrial"
-#theme "boreal"
+#theme austral
+#theme central
 #define "#iceprot +2"
 #chanceinc "personalcommand below #coldres 5 *0"
-#chanceinc hastheme oriental *0
 #enditem
 
 #newitem
@@ -433,10 +527,12 @@
 #armor
 #theme "ice"
 #theme "terrestrial"
-#theme "boreal"
+#theme "marine"
+#theme occidental
+#theme austral
+#theme central
 #define "#iceprot +2"
 #chanceinc "personalcommand below #coldres 5 *0"
-#chanceinc hastheme oriental *0
 #enditem
 
 #newitem
@@ -446,21 +542,24 @@
 #armor
 #theme "ice"
 #theme "terrestrial"
-#theme "boreal"
+#theme "marine"
+#theme occidental
+#theme austral
+#theme central
 #define "#iceprot +2"
 #chanceinc "personalcommand below #coldres 5 *0"
-#chanceinc hastheme oriental *0
 #enditem
 
 #newitem
 #name "ice samurai armor"
 #gameid 26
-#basechance 0.001
+#basechance 1
 #sprite /graphics/serpentmen/armor/icecuirass_oriental.png
 #tag "eliteversion 'ice heavy samurai armor'"
 #armor
 #theme "ice"
 #theme "terrestrial"
+#theme "marine"
 #theme "oriental"
 #define "#iceprot +2"
 #chanceinc "personalcommand below #coldres 5 *0"
@@ -469,11 +568,12 @@
 #newitem
 #name "ice heavy samurai armor"
 #gameid 27
-#basechance 0.001
+#basechance 1
 #sprite /graphics/serpentmen/armor/icehauberk_oriental.png
 #armor
 #theme "ice"
 #theme "terrestrial"
+#theme "marine"
 #theme "oriental"
 #define "#iceprot +2"
 #chanceinc "personalcommand below #coldres 5 *0"

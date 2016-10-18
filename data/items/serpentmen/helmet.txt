@@ -1,3 +1,33 @@
+-- No helm
+#newitem
+#name "nothing_terrestrial"
+#basechance 0.5
+#gameid -1
+#armor
+#theme "terrestrial"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#theme naked
+#theme primitive
+#milita
+#enditem
+
+#newitem
+#name "nothing_marine"
+#basechance 2
+#gameid -1
+#armor
+#theme "marine"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#theme naked
+#milita
+#enditem
+
 -- Iron helms
 #newitem
 #name "ironcap"
@@ -7,7 +37,8 @@
 #armor
 #theme "iron"
 #theme "terrestrial"
-#theme "dynastic"
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -18,7 +49,8 @@
 #armor
 #theme "iron"
 #theme "terrestrial"
-#theme "dynastic"
+#theme austral
+#theme central
 #theme "elite"
 #enditem
 
@@ -30,7 +62,8 @@
 #armor
 #theme "iron"
 #theme "terrestrial"
-#theme "dynastic"
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -41,7 +74,8 @@
 #armor
 #theme "iron"
 #theme "terrestrial"
-#theme "dynastic"
+#theme austral
+#theme central
 #theme "elite"
 #enditem
 
@@ -53,7 +87,9 @@
 #armor
 #theme "iron"
 #theme "terrestrial"
-#theme "dynastic"
+#theme "advanced"
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -64,7 +100,9 @@
 #armor
 #theme "iron"
 #theme "terrestrial"
-#theme "dynastic"
+#theme "advanced"
+#theme austral
+#theme central
 #theme "elite"
 #enditem
 
@@ -73,24 +111,26 @@
 #newitem
 #name "bronzecap"
 #gameid 135
-#sprite /graphics/serpentmen/head/bronzecap.png
+#sprite /graphics/serpentmen/head/bronzecap1.png
 #eliteversion bronzecap-elite
 #armor
 #theme "bronze"
 #theme "terrestrial"
 #theme "marine"
-#theme "dynastic"
+#theme austral
+#theme central
 #enditem
 
 #newitem
 #name "bronzecap-elite"
 #gameid 20
 #sprite /graphics/serpentmen/head/bronzecap2.png
-#recolormask /graphics/serpentmen/head/bronzecap2_recolormask.png
+#recolormask /graphics/serpentmen/head/ironcap2_recolormask.png
 #armor
 #theme "bronze"
 #theme "terrestrial"
-#theme "dynastic"
+#theme austral
+#theme central
 #theme "elite"
 #enditem
 
@@ -103,7 +143,8 @@
 #theme "bronze"
 #theme "terrestrial"
 #theme "marine"
-#theme "dynastic"
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -114,7 +155,8 @@
 #armor
 #theme "bronze"
 #theme "terrestrial"
-#theme "dynastic"
+#theme austral
+#theme central
 #theme "elite"
 #enditem
 
@@ -127,7 +169,9 @@
 #theme "bronze"
 #theme "terrestrial"
 #theme "marine"
-#theme "dynastic"
+#theme "advanced"
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -138,9 +182,216 @@
 #armor
 #theme "bronze"
 #theme "terrestrial"
-#theme "dynastic"
+#theme "advanced"
+#theme austral
+#theme central
 #theme "elite"
 #enditem
+
+-- Occidental/austral feathered helms
+#newitem
+#name "leathercap_feathered"
+#gameid 120
+#sprite /graphics/serpentmen/head/magefeathert1-1.png
+#recolormask self
+#eliteversion leathercap_feathered-elite
+#armor
+#theme "leather"
+#theme "terrestrial"
+#theme "primitive"
+#theme occidental
+#enditem
+
+#newitem
+#name "leathercap_feathered-elite"
+#gameid 120
+#sprite /graphics/serpentmen/head/magefeather2.png
+#recolormask /graphics/serpentmen/head/magefeather2_recolormask.png
+#armor
+#theme "leather"
+#theme "terrestrial"
+#theme "primitive"
+#theme occidental
+#theme "elite"
+#enditem
+
+#newitem
+#name "reinforcedcap_feathered"
+#gameid 119
+#sprite /graphics/serpentmen/head/magefeathert1-1.png
+#recolormask self
+#eliteversion reinforcedcap_feathered-elite
+#armor
+#theme "leather"
+#theme "terrestrial"
+#theme "primitive"
+#theme occidental
+#enditem
+
+#newitem
+#name "reinforcedcap_feathered-elite"
+#gameid 119
+#sprite /graphics/serpentmen/head/magefeather2.png
+#recolormask /graphics/serpentmen/head/magefeather2_recolormask.png
+#armor
+#theme "leather"
+#theme "terrestrial"
+#theme "primitive"
+#theme occidental
+#theme "elite"
+#enditem
+
+#newitem
+#name "bronzecap_feathered"
+#gameid 135
+#sprite /graphics/serpentmen/head/magefeathert1-1.png
+#recolormask self
+#eliteversion bronzecap_feathered-elite
+#armor
+#theme "bronze"
+#theme "terrestrial"
+#theme "primitive"
+#theme austral
+#theme occidental
+#enditem
+
+#newitem
+#name "bronzecap_feathered-elite"
+#gameid 135
+#sprite /graphics/serpentmen/head/magefeather2.png
+#recolormask /graphics/serpentmen/head/magefeather2_recolormask.png
+#armor
+#theme "bronze"
+#theme "terrestrial"
+#theme "primitive"
+#theme austral
+#theme occidental
+#theme "elite"
+#enditem
+
+#newitem
+#name "ironcap_feathered"
+#gameid 20
+#sprite /graphics/serpentmen/head/magefeathert1-1.png
+#recolormask self
+#eliteversion ironcap_feathered-elite
+#armor
+#theme "iron"
+#theme "terrestrial"
+#theme "primitive"
+#theme austral
+#theme occidental
+#enditem
+
+#newitem
+#name "ironcap_feathered-elite"
+#gameid 20
+#sprite /graphics/serpentmen/head/magefeather2.png
+#recolormask /graphics/serpentmen/head/magefeather2_recolormask.png
+#armor
+#theme "iron"
+#theme "terrestrial"
+#theme "primitive"
+#theme austral
+#theme occidental
+#theme "elite"
+#enditem
+
+
+-- Oriental helms
+#newitem
+#name "leathercap_oriental"
+#gameid 120
+#sprite /graphics/serpentmen/head/leathercap_oriental.png
+#eliteversion leathercap_oriental-elite
+#armor
+#theme "leather"
+#theme "terrestrial"
+#theme oriental
+#militia
+#enditem
+
+#newitem
+#name "leathercap_oriental-elite"
+#gameid 120
+#sprite /graphics/serpentmen/head/leathercap_oriental_elite.png
+#recolormask /graphics/serpentmen/head/cap_oriental_elite_recolormask.png
+#armor
+#theme "leather"
+#theme "terrestrial"
+#theme oriental
+#theme "elite"
+#enditem
+
+#newitem
+#name "ironcap_oriental"
+#gameid 20
+#sprite /graphics/serpentmen/head/ironcap_oriental.png
+#eliteversion ironcap_oriental-elite
+#armor
+#theme "iron"
+#theme "terrestrial"
+#theme oriental
+#enditem
+
+#newitem
+#name "ironcap_oriental-elite"
+#gameid 20
+#sprite /graphics/serpentmen/head/ironcap_oriental_elite.png
+#recolormask /graphics/serpentmen/head/cap_oriental_elite_recolormask.png
+#armor
+#theme "iron"
+#theme "terrestrial"
+#theme oriental
+#theme "elite"
+#enditem
+
+#newitem
+#name "jingasa1"
+#gameid 131
+#sprite /graphics/serpentmen/head/jingasa.png
+#recolormask /graphics/serpentmen/head/jingasa_recolormask.png
+#armor
+#theme "iron"
+#theme "terrestrial"
+#theme oriental
+#militia
+#enditem
+
+#newitem
+#name "jingasa1"
+#gameid 131
+#sprite /graphics/serpentmen/head/jingasa.png
+#recolormask /graphics/serpentmen/head/jingasa_recolormask2.png
+#armor
+#theme "iron"
+#theme "terrestrial"
+#theme oriental
+#militia
+#enditem
+
+#newitem
+#name "kabuto"
+#gameid 132
+#sprite /graphics/serpentmen/head/kabuto.png
+#eliteversion kabuto-elite
+#armor
+#theme "iron"
+#theme "terrestrial"
+#theme oriental
+#enditem
+
+#newitem
+#name "kabuto-elite"
+#gameid 132
+#sprite /graphics/serpentmen/head/kabuto_elite.png
+#armor
+#theme "iron"
+#theme "terrestrial"
+#theme oriental
+#theme "elite"
+#enditem
+
 
 -- Ice helms
 #newitem
@@ -150,7 +401,11 @@
 #armor
 #theme "ice"
 #theme "terrestrial"
-#theme "boreal"
+#theme "marine"
+#theme occidental
+#theme austral
+#theme central
+#themeinc thisitemslottheme armor ice *10
 #enditem
 
 #newitem
@@ -160,7 +415,11 @@
 #armor
 #theme "ice"
 #theme "terrestrial"
-#theme "boreal"
+#theme "marine"
+#theme occidental
+#theme austral
+#theme central
+#themeinc thisitemslottheme armor ice *10
 #enditem
 
 #newitem
@@ -170,7 +429,11 @@
 #armor
 #theme "ice"
 #theme "terrestrial"
-#theme "boreal"
+#theme "marine"
+#theme occidental
+#theme austral
+#theme central
+#themeinc thisitemslottheme armor ice *10
 #enditem
 
 #newitem
@@ -180,7 +443,9 @@
 #armor
 #theme "ice"
 #theme "terrestrial"
+#theme "marine"
 #theme "oriental"
+#themeinc thisitemslottheme armor ice *10
 #enditem
 
 #newitem
@@ -191,7 +456,9 @@
 #armor
 #theme "ice"
 #theme "terrestrial"
+#theme "marine"
 #theme "oriental"
+#themeinc thisitemslottheme armor ice *10
 #enditem
 
 #newitem
@@ -201,7 +468,9 @@
 #armor
 #theme "ice"
 #theme "terrestrial"
+#theme "marine"
 #theme "oriental"
+#themeinc thisitemslottheme armor ice *10
 #enditem
 
 
@@ -213,7 +482,10 @@
 #armor
 #theme "terrestrial"
 #theme "marine"
-#theme "dynastic"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -223,7 +495,10 @@
 #armor
 #theme "coral"
 #theme "marine"
-#theme "dynastic"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
 #enditem
 
 #newitem
@@ -233,5 +508,8 @@
 #armor
 #theme "leather"
 #theme "marine"
-#theme "dynastic"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
 #enditem

@@ -2,9 +2,8 @@
 #name "harpoon"
 #gameid 452
 #sprite /graphics/atlantian/weapon/backharpoon.png
-#tag "name infantry 'Harponeer'"
 #tag "maxprot 14"
-#basechance 0.6
+#basechance 3
 #enditem
 
 #newitem
@@ -12,7 +11,23 @@
 #gameid 263
 #sprite /graphics/atlantian/weapon/offhandnet-s2.png
 #tag "maxprot 12"
-#basechance 0.4
+#basechance 2
+#tag "tierunique"
+#tag "notepic"
+#enditem
+
+#newitem
+#id darts
+#gameid 620
+#tag "maxprot 9"
+#tag "tierunique"
+#tag "notepic"
+#enditem
+
+#newitem
+#id blowpipe
+#gameid 34
+#tag "maxprot 9"
 #tag "tierunique"
 #tag "notepic"
 #enditem

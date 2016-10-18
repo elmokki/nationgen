@@ -1,0 +1,381 @@
+-- No shield
+#newitem
+#id noshield_terrestrial
+#gameid -1
+#armor
+#theme naked
+#theme primitive
+#theme austral
+#theme central
+#theme occidental
+#theme terrestrial
+#militia
+#enditem
+
+#newitem
+#id noshield_oriental_terrestrial
+#gameid -1
+#basechance 2
+#armor
+#theme oriental
+#theme terrestrial
+#militia
+#enditem
+
+#newitem
+#id noshield_marine
+#gameid -1
+#basechance 2
+#armor
+#theme naked
+#theme austral
+#theme central
+#theme occidental
+#theme terrestrial
+#militia
+#enditem
+
+#newitem
+#id noshield_oriental_marine
+#gameid -1
+#basechance 4
+#armor
+#theme oriental
+#theme marine
+#militia
+#enditem
+
+
+-- Standard shields
+#newitem
+#id shield1
+#gameid 2
+#sprite /graphics/serpentmen/shield/shield1.png
+#armor
+#theme "wood"
+#theme austral
+#theme central
+#theme terrestrial
+#enditem
+
+#newitem
+#id shield2
+#gameid 208
+#sprite /graphics/serpentmen/shield/shield2.png
+#armor
+#theme "iron"
+#theme austral
+#theme central
+#theme terrestrial
+#enditem
+
+#newitem
+#id shield3
+#gameid 2
+#sprite /graphics/serpentmen/shield/shield3.png
+#armor
+#theme "wood"
+#theme austral
+#theme central
+#theme occidental
+#theme terrestrial
+#enditem
+
+#newitem
+#id shield4_iron
+#gameid 208
+#basechance 2
+#sprite /graphics/serpentmen/shield/shield4.png
+#armor
+#theme "iron"
+#theme austral
+#theme central
+#theme occidental
+#theme terrestrial
+#enditem
+
+#newitem
+#id shield4_bronze
+#gameid 209
+#basechance 2
+#sprite /graphics/serpentmen/shield/bronzeshield4.png
+#armor
+#theme "iron"
+#theme austral
+#theme central
+#theme occidental
+#theme terrestrial
+#enditem
+
+#newitem
+#id shield5
+#gameid 2
+#sprite /graphics/serpentmen/shield/shield5.png
+#armor
+#theme "wood"
+#theme austral
+#theme central
+#theme terrestrial
+#enditem
+
+#newitem
+#id shield6_iron1
+#gameid 208
+#sprite /graphics/serpentmen/shield/shield6.png
+#armor
+#theme "iron"
+#theme austral
+#theme central
+#theme occidental
+#theme oriental
+#theme terrestrial
+#enditem
+
+#newitem
+#id shield6_iron2
+#gameid 208
+#sprite /graphics/serpentmen/shield/shield6.png
+#recolormask /graphics/serpentmen/shield/shield6_recolormask.png
+#armor
+#theme "iron"
+#theme austral
+#theme central
+#theme occidental
+#theme oriental
+#theme terrestrial
+#enditem
+
+#newitem
+#id shield6_bronze1
+#gameid 209
+#sprite /graphics/serpentmen/shield/bronzeshield6.png
+#armor
+#theme "bronze"
+#theme austral
+#theme central
+#theme occidental
+#theme terrestrial
+#theme marine
+#enditem
+
+#newitem
+#id shield6_bronze2
+#gameid 209
+#sprite /graphics/serpentmen/shield/bronzeshield6.png
+#recolormask /graphics/serpentmen/shield/shield6_recolormask.png
+#armor
+#theme "bronze"
+#theme austral
+#theme central
+#theme occidental
+#theme terrestrial
+#theme marine
+#enditem
+
+#newitem
+#newitem
+#id hoplon_iron
+#gameid 208
+#sprite /graphics/serpentmen/shield/hoplon_iron.png
+#armor
+#theme "iron"
+#theme central
+#theme terrestrial
+#enditem
+
+#newitem
+#id hoplon_bronze
+#gameid 209
+#sprite /graphics/serpentmen/shield/hoplon_bronze.png
+#armor
+#theme "bronze"
+#theme central
+#theme terrestrial
+#theme marine
+#enditem
+
+#newitem
+#id towershield
+#gameid 4
+#sprite /graphics/serpentmen/shield/towershield.png
+#recolormask self
+#armor
+#theme "iron"
+#theme central
+#theme oriental
+#theme terrestrial
+#enditem
+
+#newitem
+#id hideshield_austral
+#gameid 105
+#basechance 4
+#sprite /graphics/serpentmen/shield/hideshield_austral.png
+#recolormask /graphics/serpentmen/shieldhideshield_austral_recolormask.png
+#armor
+#theme "leather"
+#theme austral
+#theme terrestrial
+#enditem
+
+#newitem
+#id hideshield_occidental
+#gameid 105
+#basechance 4
+#sprite /graphics/serpentmen/shield/hideshield_occidental.png
+#armor
+#theme "leather"
+#theme occidental
+#theme terrestrial
+#enditem
+
+#newitem
+#id iceshield1
+#gameid 28
+#sprite /graphics/serpentmen/shield/iceshield1.png
+#armor
+#theme ice
+#theme austral
+#theme central
+#theme occidental
+#theme oriental
+#theme terrestrial
+#theme marine
+#enditem
+
+#newitem
+#id iceshield2
+#gameid 28
+#sprite /graphics/serpentmen/shield/iceshield2.png
+#armor
+#theme ice
+#theme austral
+#theme central
+#theme occidental
+#theme oriental
+#theme terrestrial
+#theme marine
+#enditem
+
+#newitem
+#id iceshield3
+#gameid 28
+#sprite /graphics/serpentmen/shield/iceshield3.png
+#armor
+#theme ice
+#theme austral
+#theme central
+#theme occidental
+#theme oriental
+#theme terrestrial
+#theme marine
+#enditem
+
+#newitem
+#id iceshield_austral
+#gameid 28
+#basechance 3
+#sprite /graphics/serpentmen/shield/iceshield_austral.png
+#armor
+#theme ice
+#theme austral
+#theme terrestrial
+#theme marine
+#enditem
+
+#newitem
+#id iceshield_central
+#gameid 28
+#basechance 3
+#sprite /graphics/serpentmen/shield/icehoplon.png
+#armor
+#theme ice
+#theme central
+#theme terrestrial
+#theme marine
+#enditem
+
+#newitem
+#id iceshield_occidental
+#gameid 28
+#basechance 3
+#sprite /graphics/serpentmen/shield/iceshield_occidental.png
+#armor
+#theme ice
+#theme occidental
+#theme terrestrial
+#theme marine
+#enditem
+
+#newitem
+#id iceshield_oriental
+#gameid 28
+#basechance 3
+#sprite /graphics/serpentmen/shield/icetowershield.png
+#armor
+#theme ice
+#theme oriental
+#theme terrestrial
+#theme marine
+#enditem
+
+
+-- Marine shields
+#new
+#name "conch shield"
+#gameid atl_conchshield
+#sprite /graphics/atlantian/shield/conchshield.png
+#armor
+#offsetx -5
+#offsety 3
+#theme austral
+#theme central
+#theme occidental
+#theme oriental
+#theme marine
+#theme primitive
+#end
+
+#new
+#name "big shell shield"
+#gameid 25
+#sprite /graphics/atlantian/shield/turtleshellshield.png
+#armor
+#offsetx -5
+#offsety 3
+#theme austral
+#theme central
+#theme occidental
+#theme oriental
+#theme marine
+#end
+
+#new
+#name "small shell shield"
+#gameid 25
+#sprite /graphics/atlantian/shield/aspturtleshellshield.png
+#armor
+#offsetx -5
+#offsety 3
+#theme austral
+#theme central
+#theme occidental
+#theme oriental
+#theme marine
+#end
+
+#new
+#name "atl_carapaceshield"
+#gameid atl_carapaceshield
+#basechance 0.5
+#sprite /graphics/atlantian/shield/lobstercarapaceshield.png
+#armor
+#offsetx -5
+#offsety 3
+#theme austral
+#theme central
+#theme occidental
+#theme oriental
+#theme marine
+#theme advanced
+#end

@@ -2,15 +2,15 @@
 #name "Ophidian"
 
 #basechance 0.1
+#basechance 10000
 
 #racethemes serpentman_themes
 #freetheme demographic
+#freetheme regional
 
-#spritegenpose serpenttroops
-#spritegenpose serpentmages
+#pose serpenttroops
+#pose serpentmages
 
-#longsyllables /data/names/nations/lizard/longsyllables.txt
-#shortsyllables /data/names/nations/lizard/shortsyllables.txt
 #suffixes /data/names/nations/lizard/suffixes.txt
 
 #unitcommand "#prot 5"
@@ -27,8 +27,6 @@
 #magicpatterns defaultprimary
 #magicpatterns defaultsecondary
 #magicpatterns defaulttertiary
-
-#gods lizardgods
 
 #magicpriority death 4
 #magicpriority nature 6
