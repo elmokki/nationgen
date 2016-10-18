@@ -1,7 +1,5 @@
 package nationGen.misc;
 
-import java.util.List;
-
 // The purpose of this subclass is to store the original name of the second form of a shapeshifter,
 // e.g. "wyvern" for a unit that turns into a wyvern.
 // This is useful since the args of the command changes to an id later, but we might still want to
