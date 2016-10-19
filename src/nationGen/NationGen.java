@@ -905,7 +905,7 @@ public class NationGen {
 
 			montag = idHandler.nextMontagId();
 			montagmap.put(c.args.get(0), montag);
-			System.out.println("Added "  + montag + " for " + c.args.get(0));
+			// System.out.println("Added "  + montag + " for " + c.args.get(0));
 
 		}
 		
