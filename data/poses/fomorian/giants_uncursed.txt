@@ -1,7 +1,7 @@
 -------- Elite Troop
 
 #newpose
-#name "elite cursed giants"
+#name "elite uncursed giants"
 #role "elite infantry"
 #basechance 1
 #chanceinc era 2 *0.5
@@ -11,7 +11,7 @@
 
 #renderorder "shadow extra1 cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda"
 
-#load basesprite /data/items/fomorian/giant/bases.txt
+#load basesprite /data/items/fomorian/giant/bases_uncursed.txt
 #load shadow /data/items/fomorian/giant/shadow.txt
 #load hands /data/items/fomorian/giant/hands.txt
 
@@ -38,7 +38,7 @@
 -------- Sacred Troop
 
 #newpose
-#name "sacred cursed giants"
+#name "sacred uncursed giants"
 #role "sacred infantry"
 #basechance 2
 #chanceinc era 1 *2
@@ -48,7 +48,7 @@
 
 #renderorder "shadow extra1 cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda"
 
-#load basesprite /data/items/fomorian/giant/bases.txt
+#load basesprite /data/items/fomorian/giant/bases_uncursed.txt
 #load shadow /data/items/fomorian/giant/shadow.txt
 #load hands /data/items/fomorian/giant/hands.txt
 
@@ -76,7 +76,7 @@
 -------- Mage
 
 #newpose
-#name "cursed giant casters"
+#name "uncursed giant casters"
 #role "mage"
 #basechance 0.6
 #chanceinc era 1 *2
@@ -91,7 +91,7 @@
 #magefilters default_magefilters_strongdefence_expensive
 
 
-#load basesprite /data/items/fomorian/giant/bases.txt
+#load basesprite /data/items/fomorian/giant/bases_uncursed.txt
 #load shadow /data/items/fomorian/giant/shadow.txt
 #load hands /data/items/fomorian/giant/hands.txt
 
@@ -110,7 +110,5 @@
 #notfortier 2
 #notfortier 1
 
-
 #dontvaryhat
 #endpose
-

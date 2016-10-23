@@ -1,12 +1,12 @@
 #newpose
-#name "tier 1-2 goat headed mage"
+#name "tier 1-2 mage"
 #role "mage"
 #role "priest"
 
 
-#load basesprite /data/items/fomorian/bases.txt
+#load basesprite /data/items/fomorian/bases_uncursed.txt
 #load shadow /data/items/fomorian/shadow.txt
-#load hands /data/items/fomorian/hands.txt
+#load hands /data/items/fomorian/hands_uncursed.txt
 
 #load armor /data/items/fomorian/robes.txt
 
@@ -25,19 +25,20 @@
 
 
 #newpose
-#basechance 0.3
+#basechance 0.5
 #chanceinc era 1 *0.5
 #chanceinc era 3 *3
-#name "tier 3 goat headed mage"
+#name "tier 3 mage"
 #role "mage"
 #role "priest"
 
 
-#load basesprite /data/items/fomorian/bases.txt
+#load basesprite /data/items/fomorian/bases_uncursed.txt
 #load shadow /data/items/fomorian/shadow.txt
-#load hands /data/items/fomorian/hands.txt
+#load hands /data/items/fomorian/hands_uncursed.txt
 
 #load armor /data/items/fomorian/robes.txt
+#load helmet /data/items/fomorian/helmet_caster.txt
 
 #load weapon /data/items/fomorian/weapon_caster.txt
 
