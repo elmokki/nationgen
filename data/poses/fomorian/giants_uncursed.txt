@@ -1,0 +1,114 @@
+-------- Elite Troop
+
+#newpose
+#name "elite uncursed giants"
+#role "elite infantry"
+#basechance 1
+#chanceinc era 2 *0.5
+#chanceinc era 3 *0.05
+#subrace giant
+#subraceprefix "giant"
+
+#renderorder "shadow extra1 cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda"
+
+#load basesprite /data/items/fomorian/giant/bases_uncursed.txt
+#load shadow /data/items/fomorian/giant/shadow.txt
+#load hands /data/items/fomorian/giant/hands.txt
+
+
+#load armor /data/items/fomorian/giant/armor.txt
+
+#load weapon /data/items/fomorian/giant/weapon.txt
+#load offhand /data/items/fomorian/giant/offhands.txt
+#load offhand /data/items/fomorian/giant/shields.txt
+#load bonusweapon /data/items/fomorian/giant/bonusranged.txt
+
+
+#load cloakf /data/items/fomorian/giant/cloakf.txt
+#load cloakb /data/items/fomorian/giant/cloakb.txt
+
+#caponlychance 0.75
+#sacredratingmulti 1.5
+
+#cannot_be_pd
+
+#endpose
+
+
+-------- Sacred Troop
+
+#newpose
+#name "sacred uncursed giants"
+#role "sacred infantry"
+#basechance 2
+#chanceinc era 1 *2
+#chanceinc era 3 *0.125
+#subrace giant
+#subraceprefix "giant"
+
+#renderorder "shadow extra1 cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda"
+
+#load basesprite /data/items/fomorian/giant/bases_uncursed.txt
+#load shadow /data/items/fomorian/giant/shadow.txt
+#load hands /data/items/fomorian/giant/hands.txt
+
+
+#load armor /data/items/fomorian/giant/armor.txt
+
+#load weapon /data/items/fomorian/giant/weapon.txt
+#load offhand /data/items/fomorian/giant/offhands.txt
+#load offhand /data/items/fomorian/giant/shields.txt
+#load bonusweapon /data/items/fomorian/giant/bonusranged.txt
+
+
+#load cloakf /data/items/fomorian/giant/cloakf.txt
+#load cloakb /data/items/fomorian/giant/cloakb.txt
+
+#caponlychance 0.95
+#sacredratingmulti 1.5
+
+#cannot_be_pd
+
+#endpose
+
+
+
+-------- Mage
+
+#newpose
+#name "uncursed giant casters"
+#role "mage"
+#basechance 0.6
+#chanceinc era 1 *2
+#chanceinc era 3 *0.5
+#subrace giant
+#subraceprefix "giant"
+#warriormage
+
+#renderorder "shadow extra1 cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda"
+
+#magefilters default_magefilters
+#magefilters default_magefilters_strongdefence_expensive
+
+
+#load basesprite /data/items/fomorian/giant/bases_uncursed.txt
+#load shadow /data/items/fomorian/giant/shadow.txt
+#load hands /data/items/fomorian/giant/hands.txt
+
+#load armor /data/items/fomorian/giant/armor.txt
+
+#load weapon /data/items/fomorian/giant/weapon_caster.txt
+#load offhand /data/items/fomorian/giant/offhands.txt
+#load offhand /data/items/fomorian/giant/shields.txt
+#load bonusweapon /data/items/fomorian/giant/bonusranged.txt
+#load helmet /data/items/fomorian/giant/helmet.txt
+
+#load cloakf /data/items/fomorian/giant/cloakf.txt
+#load cloakb /data/items/fomorian/giant/cloakb.txt
+
+#tier 3
+#notfortier 2
+#notfortier 1
+
+#dontvaryhat
+#endpose

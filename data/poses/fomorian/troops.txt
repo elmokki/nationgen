@@ -2,6 +2,7 @@
 -------- Normal
 
 #newpose
+#name "afflicted goat-headed troops"
 #role "infantry"
 #role "scout"
 
@@ -21,11 +22,15 @@
 #load cloakb /data/items/fomorian/cloakb.txt
 
 #command "#startaff 20"
+
+#maxvarieties 2
+
 #endpose
 
 --------- Sacred/Elite version
 
 #newpose
+#name "unafflicted goat-headed troops"
 #role "scout"
 #role "elite infantry"
 #role "sacred infantry"
