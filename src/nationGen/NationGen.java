@@ -59,8 +59,8 @@ import nationGen.units.Unit;
 
 
 public class NationGen {
-	public static String version = "0.6.18";
-	public static String date = "12th of September 2016";
+	public static String version = "0.6.19";
+	public static String date = "18th of October 2016";
 	
 	public List<NationRestriction> restrictions = new ArrayList<NationRestriction>();
 	
@@ -1044,7 +1044,7 @@ public class NationGen {
 
 			montag = idHandler.nextMontagId();
 			montagmap.put(c.args.get(0), montag);
-			System.out.println("Added "  + montag + " for " + c.args.get(0));
+			// System.out.println("Added "  + montag + " for " + c.args.get(0));
 
 		}
 		
