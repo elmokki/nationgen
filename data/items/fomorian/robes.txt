@@ -1,65 +1,410 @@
+-- Fancy robes
 #newitem
-#id fancyrobe
-#gameid 158
-#sprite /graphics/fomorian/robes/fancyrobe.png
-#recolormask /graphics/fomorian/robes/fancyrobe_recolormask.png
-#armor
-#tag "tier 3"
-#tag "tier 2"
-#enditem
-
-#newitem
-#id fancyrobe_sliver
+#id fancyrobe_silver1
 #gameid 158
 #sprite /graphics/fomorian/robes/fancyrobe_silver.png
 #recolormask /graphics/fomorian/robes/fancyrobe_recolormask.png
 #armor
-#tag "tier 2"
 #tag "tier 1"
-#eliteversion fancyrobe
+#tag "tier 2"
+#eliteversion fancyrobe_gold1
+#eliteversion fancyrobe_silver2
 #enditem
 
 #newitem
-#id fancyrobe_invert
+#id fancyrobe_gold1
+#gameid 158
+#sprite /graphics/fomorian/robes/fancyrobe.png
+#recolormask /graphics/fomorian/robes/fancyrobe_recolormask.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#eliteversion fancyrobe_gold2
+#enditem
+
+#newitem
+#id fancyrobe_silver2
+#gameid 158
+#sprite /graphics/fomorian/robes/fancyrobe_silver.png
+#recolormask /graphics/fomorian/robes/fancyrobe_recolormask3.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#eliteversion fancyrobe_gold2
+#enditem
+
+#newitem
+#id fancyrobe_gold2
+#gameid 158
+#sprite /graphics/fomorian/robes/fancyrobe.png
+#recolormask /graphics/fomorian/robes/fancyrobe_recolormask3.png
+#armor
+#tag "tier 3"
+#eliteversion fancyrobe_gold2
+#enditem
+
+#newitem
+#id fancyrobe_silver3
+#gameid 158
+#sprite /graphics/fomorian/robes/fancyrobe_silver.png
+#recolormask /graphics/fomorian/robes/fancyrobe_recolormask2.png
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#eliteversion fancyrobe_gold3
+#eliteversion fancyrobe_silver4
+#enditem
+
+#newitem
+#id fancyrobe_gold3
+#gameid 158
+#sprite /graphics/fomorian/robes/fancyrobe.png
+#recolormask /graphics/fomorian/robes/fancyrobe_recolormask2.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#eliteversion fancyrobe_gold4
+#enditem
+
+#newitem
+#id fancyrobe_silver4
+#gameid 158
+#sprite /graphics/fomorian/robes/fancyrobe_silver.png
+#recolormask /graphics/fomorian/robes/fancyrobe_recolormask4.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#eliteversion fancyrobe_gold4
+#enditem
+
+#newitem
+#id fancyrobe_gold4
+#gameid 158
+#sprite /graphics/fomorian/robes/fancyrobe.png
+#recolormask /graphics/fomorian/robes/fancyrobe_recolormask4.png
+#armor
+#tag "tier 3"
+#eliteversion fancyrobe_gold4
+#enditem
+
+
+-- Inverted fancy robes
+#newitem
+#id fancyrobe_invert_gold1
 #gameid 158
 #sprite /graphics/fomorian/robes/fancyrobe_inverted.png
 #recolormask /graphics/fomorian/robes/fancyrobe_inverted_recolormask.png
 #armor
 #tag "tier 1"
-#tag "tier 2"
-#eliteversion fancyrobe_invert
+#eliteversion fancyrobe_invert_gold2
 #enditem
 
 #newitem
-#id fancyrobe_invert_silver
+#id fancyrobe_invert_gold2
+#gameid 158
+#sprite /graphics/fomorian/robes/fancyrobe_inverted.png
+#recolormask /graphics/fomorian/robes/fancyrobe_inverted_recolormask4.png
+#armor
+#tag "tier 2"
+#eliteversion fancyrobe_invert_silver1
+#enditem
+
+#newitem
+#id fancyrobe_invert_silver1
 #gameid 158
 #sprite /graphics/fomorian/robes/fancyrobe_inverted_silver.png
-#recolormask /graphics/fomorian/robes/fancyrobe_inverted_recolormask.png
+#recolormask /graphics/fomorian/robes/fancyrobe_inverted_recolormask4.png
 #armor
 #tag "tier 3"
-#tag "tier 2"
 #enditem
 
 #newitem
-#id longrobe_sliver
+#id fancyrobe_invert_gold3
+#gameid 158
+#sprite /graphics/fomorian/robes/fancyrobe_inverted2.png
+#recolormask /graphics/fomorian/robes/fancyrobe_inverted_recolormask2.png
+#armor
+#tag "tier 1"
+#eliteversion fancyrobe_invert_gold4
+#enditem
+
+#newitem
+#id fancyrobe_invert_gold4
+#gameid 158
+#sprite /graphics/fomorian/robes/fancyrobe_inverted2.png
+#recolormask /graphics/fomorian/robes/fancyrobe_inverted_recolormask5.png
+#armor
+#tag "tier 2"
+#eliteversion fancyrobe_invert_silver2
+#enditem
+
+#newitem
+#id fancyrobe_invert_silver2
+#gameid 158
+#sprite /graphics/fomorian/robes/fancyrobe_inverted_silver2.png
+#recolormask /graphics/fomorian/robes/fancyrobe_inverted_recolormask5.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id fancyrobe_invert_gold5
+#gameid 158
+#sprite /graphics/fomorian/robes/fancyrobe_inverted3.png
+#recolormask /graphics/fomorian/robes/fancyrobe_inverted_recolormask3.png
+#armor
+#tag "tier 1"
+#eliteversion fancyrobe_invert_gold6
+#enditem
+
+#newitem
+#id fancyrobe_invert_gold6
+#gameid 158
+#sprite /graphics/fomorian/robes/fancyrobe_inverted3.png
+#recolormask /graphics/fomorian/robes/fancyrobe_inverted_recolormask6.png
+#armor
+#tag "tier 2"
+#eliteversion fancyrobe_invert_silver3
+#enditem
+
+#newitem
+#id fancyrobe_invert_silver3
+#gameid 158
+#sprite /graphics/fomorian/robes/fancyrobe_inverted_silver3.png
+#recolormask /graphics/fomorian/robes/fancyrobe_inverted_recolormask6.png
+#armor
+#tag "tier 3"
+#enditem
+
+
+-- Long robes
+#newitem
+#id greenrobe_silver1
+#basechance 0.25
+#gameid 158
+#sprite /graphics/fomorian/robes/longrobe_silver.png
+#recolormask /graphics/fomorian/robes/longrobe_recolormask6.png
+#armor
+#tag "tier 1"
+#eliteversion longrobe_silver1
+#eliteversion greenrobe_gold1
+#eliteversion fancyrobe_silver1
+#eliteversion fancyrobe_silver3
+#enditem
+
+#newitem
+#id greenrobe_gold1
+#basechance 0.25
+#gameid 158
+#sprite /graphics/fomorian/robes/longrobe.png
+#recolormask /graphics/fomorian/robes/longrobe_recolormask6.png
+#armor
+#tag "tier 2"
+#eliteversion longrobe_gold1
+#eliteversion fancyrobe_gold1
+#eliteversion fancyrobe_gold3
+#enditem
+
+#newitem
+#id bluerobe_silver1
+#basechance 0.25
+#gameid 158
+#sprite /graphics/fomorian/robes/longrobe2_silver.png
+#recolormask /graphics/fomorian/robes/longrobe_recolormask6.png
+#armor
+#tag "tier 1"
+#eliteversion longrobe_silver1
+#eliteversion bluerobe_gold1
+#eliteversion fancyrobe_silver1
+#eliteversion fancyrobe_silver3
+#enditem
+
+#newitem
+#id bluerobe_gold1
+#basechance 0.25
+#gameid 158
+#sprite /graphics/fomorian/robes/longrobe2.png
+#recolormask /graphics/fomorian/robes/longrobe_recolormask6.png
+#armor
+#tag "tier 2"
+#eliteversion longrobe_gold1
+#eliteversion fancyrobe_gold1
+#eliteversion fancyrobe_gold3
+#enditem
+
+#newitem
+#id longrobe_silver1
+#basechance 0.5
+#gameid 158
+#sprite /graphics/fomorian/robes/longrobe_silver.png
+#recolormask /graphics/fomorian/robes/longrobe_recolormask3.png
+#armor
+#tag "tier 2"
+#eliteversion longrobe_gold1
+#eliteversion fancyrobe_gold1
+#eliteversion fancyrobe_gold3
+#enditem
+
+#newitem
+#id longrobe_gold1
+#basechance 0.5
+#gameid 158
+#sprite /graphics/fomorian/robes/longrobe.png
+#recolormask /graphics/fomorian/robes/longrobe_recolormask3.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id greenrobe_silver2
+#basechance 0.25
+#gameid 158
+#sprite /graphics/fomorian/robes/longrobe_silver.png
+#recolormask /graphics/fomorian/robes/longrobe_recolormask4.png
+#armor
+#tag "tier 1"
+#eliteversion longrobe_silver2
+#eliteversion greenrobe_gold2
+#eliteversion fancyrobe_silver1
+#eliteversion fancyrobe_silver3
+#enditem
+
+#newitem
+#id greenrobe_gold2
+#basechance 0.25
+#gameid 158
+#sprite /graphics/fomorian/robes/longrobe.png
+#recolormask /graphics/fomorian/robes/longrobe_recolormask4.png
+#armor
+#tag "tier 2"
+#eliteversion longrobe_gold2
+#eliteversion fancyrobe_gold1
+#eliteversion fancyrobe_gold3
+#enditem
+
+#newitem
+#id bluerobe_silver2
+#basechance 0.25
+#gameid 158
+#sprite /graphics/fomorian/robes/longrobe2_silver.png
+#recolormask /graphics/fomorian/robes/longrobe_recolormask4.png
+#armor
+#tag "tier 1"
+#eliteversion longrobe_silver2
+#eliteversion bluerobe_gold2
+#eliteversion fancyrobe_silver1
+#eliteversion fancyrobe_silver3
+#enditem
+
+#newitem
+#id bluerobe_gold2
+#basechance 0.25
+#gameid 158
+#sprite /graphics/fomorian/robes/longrobe2.png
+#recolormask /graphics/fomorian/robes/longrobe_recolormask4.png
+#armor
+#tag "tier 2"
+#eliteversion longrobe_gold2
+#eliteversion fancyrobe_gold1
+#eliteversion fancyrobe_gold3
+#enditem
+
+#newitem
+#id longrobe_silver2
+#basechance 0.5
 #gameid 158
 #sprite /graphics/fomorian/robes/longrobe_silver.png
 #recolormask /graphics/fomorian/robes/longrobe_recolormask.png
 #armor
-#tag "tier 1"
 #tag "tier 2"
-#eliteversion longrobe
-#eliteversion fancyrobe
+#eliteversion longrobe_gold2
+#eliteversion fancyrobe_gold1
+#eliteversion fancyrobe_gold3
 #enditem
 
-
 #newitem
-#id longrobe
+#id longrobe_gold2
+#basechance 0.5
 #gameid 158
 #sprite /graphics/fomorian/robes/longrobe.png
 #recolormask /graphics/fomorian/robes/longrobe_recolormask.png
 #armor
-#tag "tier 2"
 #tag "tier 3"
-#eliteversion fancyrobe
+#enditem
+
+#newitem
+#id greenrobe_silver3
+#basechance 0.25
+#gameid 158
+#sprite /graphics/fomorian/robes/longrobe_silver.png
+#recolormask /graphics/fomorian/robes/longrobe_recolormask5.png
+#armor
+#tag "tier 1"
+#eliteversion longrobe_silver3
+#eliteversion greenrobe_gold3
+#eliteversion fancyrobe_silver1
+#eliteversion fancyrobe_silver3
+#enditem
+
+#newitem
+#id greenrobe_gold3
+#basechance 0.25
+#gameid 158
+#sprite /graphics/fomorian/robes/longrobe.png
+#recolormask /graphics/fomorian/robes/longrobe_recolormask5.png
+#armor
+#tag "tier 2"
+#eliteversion longrobe_gold3
+#eliteversion fancyrobe_gold1
+#eliteversion fancyrobe_gold3
+#enditem
+
+#newitem
+#id bluerobe_silver3
+#basechance 0.25
+#gameid 158
+#sprite /graphics/fomorian/robes/longrobe2_silver.png
+#recolormask /graphics/fomorian/robes/longrobe_recolormask5.png
+#armor
+#tag "tier 1"
+#eliteversion longrobe_silver3
+#eliteversion bluerobe_gold3
+#eliteversion fancyrobe_silver1
+#eliteversion fancyrobe_silver3
+#enditem
+
+#newitem
+#id bluerobe_gold3
+#basechance 0.25
+#gameid 158
+#sprite /graphics/fomorian/robes/longrobe2.png
+#recolormask /graphics/fomorian/robes/longrobe_recolormask5.png
+#armor
+#tag "tier 2"
+#eliteversion longrobe_gold3
+#eliteversion fancyrobe_gold1
+#eliteversion fancyrobe_gold3
+#enditem
+
+#newitem
+#id longrobe_silver3
+#basechance 0.25
+#gameid 158
+#sprite /graphics/fomorian/robes/longrobe_silver.png
+#recolormask /graphics/fomorian/robes/longrobe_recolormask2.png
+#armor
+#tag "tier 2"
+#eliteversion longrobe_gold3
+#eliteversion fancyrobe_gold1
+#eliteversion fancyrobe_gold3
+#enditem
+
+#newitem
+#id longrobe_gold3
+#basechance 0.5
+#gameid 158
+#sprite /graphics/fomorian/robes/longrobe.png
+#recolormask /graphics/fomorian/robes/longrobe_recolormask2.png
+#armor
+#tag "tier 3"
 #enditem
