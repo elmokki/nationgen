@@ -3,10 +3,8 @@
 #gameid 17
 #sprite /graphics/fomorian/weapon/axe.png
 #theme "primitive"
-#tag "name infantry axeman"
 #tier 1
 #tier 2
-#tier 3
 #theme "iron"
 #enditem
 
@@ -15,10 +13,8 @@
 #gameid 675
 #sprite /graphics/fomorian/weapon/hatchet.png
 #theme "primitive"
-#tag "name infantry axeman"
 #tier 1
 #tier 2
-#tier 3
 #theme "bronze"
 #enditem
 
@@ -27,7 +23,6 @@
 #id elitelongspear
 #gameid 234
 #sprite /graphics/fomorian/weapon/longspear_elite.png
-#tag "name infantry spearman"
 #tier 2
 #tier 3
 #eliteversion epicgoldenstaff
@@ -41,7 +36,6 @@
 #id elitelongspear_bronze
 #gameid 485
 #sprite /graphics/fomorian/weapon/longspear_bronze_elite.png
-#tag "name infantry spearman"
 #tier 2
 #tier 3
 #eliteversion epicgoldenstaff
@@ -55,11 +49,11 @@
 #id elitespear
 #gameid 485
 #sprite /graphics/fomorian/weapon/spear_elite.png
-#tag "name infantry spearman"
 #eliteversion goldenstaff
 #eliteversion woodenstaff
 #eliteversion woodenstaff_bauble
 #eliteversion elitelongspear
+#eliteversion trident_iron
 #tier 1
 #theme "iron"
 #enditem
@@ -69,11 +63,11 @@
 #id elitespear_bronze
 #gameid 485
 #sprite /graphics/fomorian/weapon/spear_bronze_elite.png
-#tag "name infantry spearman"
 #eliteversion goldenstaff
 #eliteversion woodenstaff
 #eliteversion woodenstaff_bauble
 #eliteversion elitelongspear_bronze
+#eliteversion trident_bronze
 #tier 1
 #theme "bronze"
 #enditem
@@ -82,12 +76,8 @@
 #id broadsword
 #gameid 8
 #sprite /graphics/fomorian/weapon/sword.png
-#tag "name infantry swordsman"
-#tag "name commander captain"
-#tag "name commander swordsmaster"
 #tier 1
 #tier 2
-#tier 3
 #theme "iron"
 #enditem
 
@@ -95,12 +85,26 @@
 #id broadsword_bronze
 #gameid bronzebroadsword
 #sprite /graphics/fomorian/weapon/sword_bronze.png
-#tag "name infantry swordsman"
-#tag "name commander captain"
-#tag "name commander swordsmaster"
 #tier 1
 #tier 2
-#tier 3
+#theme "bronze"
+#enditem
+
+#newitem
+#id trident_iron
+#gameid 3
+#sprite /graphics/fomorian/weapon/caster/trident_iron.png
+#tier 1
+#tier 2
+#theme "iron"
+#enditem
+
+#newitem
+#id trident_bronze
+#gameid 641
+#sprite /graphics/fomorian/weapon/caster/trident_bronze.png
+#tier 1
+#tier 2
 #theme "bronze"
 #enditem
 
@@ -136,6 +140,8 @@
 #eliteversion goldenstaff
 #eliteversion woodenstaff_bauble
 #eliteversion woodenorbstaff
+#eliteversion light_crook
+#eliteversion heavy_crook
 #offsetx 35
 #offsety 45
 #enditem
@@ -149,4 +155,85 @@
 #eliteversion epicbaubledstaff
 #offsetx 35
 #offsety 45
+#enditem
+
+#newitem
+#id light_crook
+#gameid 7
+#sprite /graphics/fomorian/weapon/caster/crook.png
+#tag "tier 2"
+#tag "tier 1"
+#eliteversion heavy_crook
+#eliteversion sicklestaff_iron
+#eliteversion sicklestaff_bronze
+#enditem
+
+#newitem
+#id heavy_crook
+#gameid 7
+#sprite /graphics/fomorian/weapon/caster/crook2.png
+#tag "tier 2"
+#tag "tier 3"
+#eliteversion sicklestaff_iron
+#eliteversion sicklestaff_bronze
+#enditem
+
+#newitem
+#id sicklestaff_iron
+#gameid 493
+#sprite /graphics/fomorian/weapon/caster/sicklestaff_iron.png
+#tag "tier 3"
+#theme iron
+#enditem
+
+#newitem
+#id sicklestaff_bronze
+#gameid 493
+#sprite /graphics/fomorian/weapon/caster/sicklestaff_bronze.png
+#tag "tier 3"
+#theme bronze
+#enditem
+
+#newitem
+#id branch
+#gameid 240
+#sprite /graphics/fomorian/weapon/caster/branch.png
+#tag "tier 1"
+#tag "tier 2"
+#eliteversion gnobblystaff
+#eliteversion gnarledstaff
+#theme nature
+#enditem
+
+#newitem
+#id gnobblystaff
+#gameid 7
+#sprite /graphics/fomorian/weapon/caster/gnobbly.png
+#tag "tier 2"
+#eliteversion gnarledstaff
+#theme nature
+#enditem
+
+#newitem
+#id gnarledstaff
+#gameid 7
+#sprite /graphics/fomorian/weapon/caster/gnarled.png
+#tag "tier 3"
+#theme nature
+#enditem
+
+#newitem
+#id skullstaff
+#gameid 7
+#sprite /graphics/fomorian/weapon/caster/skullstaff.png
+#tag "tier 3"
+#theme "primitive"
+#enditem
+
+#newitem
+#id hornedstaff
+#gameid 7
+#sprite /graphics/fomorian/weapon/caster/skullstaff_horned.png
+#tag "tier 3"
+#theme "primitive"
 #enditem
