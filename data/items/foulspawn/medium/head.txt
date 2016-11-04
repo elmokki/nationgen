@@ -136,6 +136,25 @@
 #enditem
 
 #newitem
+#name "ichtyid"
+#gameid -1
+#sprite /graphics/foulspawn/small/head/ichtyid.png
+#command "#gcost -2"
+#command "#hp -1"
+#command "#prot +0"
+#command "#mr +0"
+#command "#mor +2"
+#command "#att +0"
+#command "#def +0"
+#command "#prec -1"
+#command "#ap -1"
+#command "#amphibian"
+#itemslot head 0
+#type barehead
+#degenerate
+#enditem
+
+#newitem
 #name "shambler"
 #gameid -1
 #sprite /graphics/foulspawn/medium/head/shambler.png
