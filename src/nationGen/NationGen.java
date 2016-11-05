@@ -216,6 +216,8 @@ public class NationGen {
 		int newseed = 0;
 		
 		int count = 0;
+		int failedcount = 0;
+		int totalfailed = 0;
 		while(nations.size() < amount)
 		{
 			count++;
@@ -239,13 +241,16 @@ public class NationGen {
 				if(!nr.doesThisPass(newnation))
 				{
 					pass = false;
-					System.out.println("FAILED RESTRICTION " + nr.toString().toUpperCase());
+					++failedcount;
+					System.out.println("try "+ String.valueOf(failedcount) + ", FAILED RESTRICTION "  + nr.toString().toUpperCase());
 					break;
 				}
 			}
 			
 			if(pass)
 			{
+				totalfailed += failedcount;
+				failedcount = 0;
 				System.out.println("Done!");
 			}
 			else
@@ -268,7 +273,7 @@ public class NationGen {
 		}
 		
 
-
+		System.out.println("Total nations that did not pass restrictions: " + String.valueOf(totalfailed));
 
 		System.out.print("Giving ids");
 		for(Nation n : nations)
