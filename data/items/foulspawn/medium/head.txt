@@ -138,7 +138,7 @@
 #newitem
 #name "ichtyid"
 #gameid -1
-#sprite /graphics/foulspawn/small/head/ichtyid.png
+#sprite /graphics/foulspawn/medium/head/ichtyid.png
 #command "#gcost -2"
 #command "#hp -1"
 #command "#prot +0"
@@ -363,6 +363,23 @@
 #needs bonusweapon firedrake
 #itemslot head 0
 #type barehead
+#enditem
+
+#newitem
+#name "horse"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/horse.png
+#command "#gcost +0"
+#command "#hp +2"
+#command "#prot +0"
+#command "#mr +0"
+#command "#mor -1"
+#command "#att +0"
+#command "#def +0"
+#command "#prec -3"
+#itemslot head 1
+#type horse
+#degenerate
 #enditem
 
 #newitem
@@ -677,6 +694,31 @@
 #command "#darkvision 100"
 #command "#neednoteat"
 #command "#amphibian"
+#itemslot head 0
+#type barehead
+#enditem
+
+#newitem
+#name "grub"
+#gameid -1
+#basechance 0.25
+#sprite /graphics/foulspawn/medium/head/grub.png
+#command "#gcost +7"
+#command "#prot -2"
+#command "#hp +6"
+#command "#mr +0"
+#command "#mor +4"
+#command "#att +2"
+#command "#def -1"
+#command "#prec -3"
+#command "#ap -3"
+#command "#enc +1"
+#command "#siegebonus +5"
+#command "#eyes 0"
+#command "#coldblood"
+#command "#neednoteat"
+#command "#blind 1"
+#needstype headweapon corrosivebite
 #itemslot head 0
 #type barehead
 #enditem
