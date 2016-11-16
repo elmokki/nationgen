@@ -1,0 +1,94 @@
+-- Generic theme with high diversity and low cohesion
+#newtheme
+#name default
+#basechance 4
+#endtheme
+
+-- Techlevel (mandatory)
+-- Weights: EA 2, MA 1, LA 0.5
+#newtheme
+#type techlevel
+#name primitive
+#basechance 2
+#chanceinc era 2 -1
+#chanceinc era 3 -1.5
+#chanceinc hastheme "primitive" *10
+#chanceinc hastheme "bronze" *1
+#chanceinc hastheme "iron" *0.5
+#chanceinc hastheme "advanced" *0.1
+#themeinc theme advanced *0.01
+#themeinc theme iron *0.01
+#themeinc theme bronze *1
+#themeinc theme wood *2
+#themeinc theme leather *2
+#themeinc theme naked *2
+#themeinc theme primitive *3
+#endtheme
+
+-- Weights: EA 2, MA 3, LA 5
+#newtheme
+#type techlevel
+#name bronze
+#basechance 3
+#chanceinc era 1 -1
+#chanceinc era 3 +2
+#chanceinc hastheme "primitive" *0.1
+#chanceinc hastheme "bronze" *10
+#chanceinc hastheme "iron" *0.5
+#chanceinc hastheme "advanced" *0.5
+#themeinc theme advanced *0.5
+#themeinc theme iron *0.01
+#themeinc theme bronze *3
+#themeinc theme wood *0.5
+#themeinc theme leather *1
+#themeinc theme naked *0.25
+#themeinc theme primitive *1
+#endtheme
+
+-- Weights: EA 0.05, MA 0.25, LA 0.5
+#newtheme
+#type techlevel
+#name iron
+#basechance 0.25
+#chanceinc era 1 *0.5
+#chanceinc era 3 *2
+#chanceinc hastheme "primitive" *0.1
+#chanceinc hastheme "bronze" *0.5
+#chanceinc hastheme "iron" *10
+#chanceinc hastheme "advanced" *5
+#chanceinc hastheme "fae" *0
+#chanceinc racetag "fae" *0
+#themeinc theme advanced *2
+#themeinc theme iron *3
+#themeinc theme bronze *0.01
+#themeinc theme wood *0.01
+#themeinc theme leather *1
+#themeinc theme naked *0.25
+#themeinc theme primitive *1
+#endtheme
+
+
+-- Weights: EA 0.25, MA 0.25, LA 0.25
+#newtheme
+#type social
+#name slaver
+#basechance 0.25
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#themeinc theme slave *20
+#themeinc theme free *0.5
+#themeinc racename "Boreal human" *10
+#themeinc racename hoburg *5
+#themeinc racename caelian *0.1
+#themeinc racename van *0.1
+#themeinc racename sidhe *0.1
+#themeinc racename tengu *0.1
+#secondaryracedefinition "#freetemplatefilter slavetemplate slave"
+#racedefinition "#secondaryracetroopmod 100"
+#racedefinition "#secondaryracemagemod -100"
+#endtheme
