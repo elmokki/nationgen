@@ -1,0 +1,47 @@
+#newrace
+#name "Fir Bolg"
+#basechance 0.1
+
+#chanceinc era 1 *2
+#chanceinc era 3 *0.5
+
+#chanceinc hasprimaryrace *2
+#chanceinc primaryrace "Fomorian" *10
+#chanceinc primaryrace "Sidhe" *10
+#chanceinc primaryrace "Van" *2
+#chanceinc primaryrace "Boreal human" *2
+#chanceinc primaryrace "Ogre" *2
+#chanceinc hastheme "boreal" *2
+
+#racethemes firbolg_themes
+#freetheme techlevel
+
+#all_troops_sacred
+#all_troops_elite
+
+#pose firbolgtroops
+#pose firbolgmages
+
+#longsyllables /data/names/nations/fomorian/longsyllables.txt
+#shortsyllables /data/names/nations/fomorian/shortsyllables.txt
+#suffixes /data/names/nations/fomorian/suffixes.txt
+
+#unitcommand "#nametype 142"
+
+#nationcommand "#likespop 89"
+
+#magicpriority air 4
+#magicpriority water 2
+#magicpriority earth 2
+#magicpriority nature 2
+
+-- Canonically, fir bolgs are not exactly dominant
+#maxprimaryracetroops 6
+#maxthisracetroops_as_secondary 4
+#primaryracesacredmod 2
+#primaryracemagemod 2
+#secondaryracetertiarymagemod 4
+#sacredrangerchance 0.1
+
+#monsterchance 0.01
+#endrace
