@@ -266,6 +266,18 @@
 #command "#twohanded"
 #end
 
+#new customweapon
+#name throwinghatchet
+#command "#att -4"
+#command "#dmg 5"
+#command "#range -1"
+#command "#ammo 2"
+#command "#rcost 2"
+#command "#flyspr 411 1"
+#command "#name 'Bronze Throwing Hatchet'"
+#command "#slash"
+#end
+
 
 --- Generic (and slightly nerfed) black steel armor
 
@@ -1150,6 +1162,7 @@
 #command "#ammo 12"
 #command "#rcost 1"
 #command "#flyspr 110 1"
+#command "#sound 19"
 #command "#name 'Javelins'"
 #command "#twohanded"
 #command "#pierce"
