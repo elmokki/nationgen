@@ -1,8 +1,16 @@
 #newitem
+#id pike
+#gameid 2
+#sprite /graphics/weapon/standard/pike.png
+#offsetx -2
+#troopweapon
+#theme formationfighter
+#enditem
+
+#newitem
 #id longspear
 #gameid 28
 #sprite /graphics/weapon/standard/longspear.png
-#tag "name infantry spearman"
 #offsetx -2
 #troopweapon
 #theme formationfighter
@@ -12,17 +20,22 @@
 #id spear
 #gameid 1
 #sprite /graphics/weapon/standard/spear.png
-#tag "name infantry spearman"
 #offsetx -2
 #troopweapon
 #theme formationfighter
 #enditem
 
 #newitem
+#id glaive
+#gameid 308
+#sprite /graphics/tengu/weapons/glaive.png
+#troopweapon
+#enditem
+
+#newitem
 #id falchion
 #gameid 10
 #sprite /graphics/weapon/standard/falchion.png
-#tag "name infantry falchioneer"
 #offsetx -2
 #enditem
 
