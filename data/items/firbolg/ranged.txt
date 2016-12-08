@@ -19,3 +19,24 @@
 #basechance 2
 #theme "leather"
 #enditem
+
+#newitem
+#name "bow"
+#gameid 22
+#sprite /graphics/firbolg/weapon/bow.png
+#basechance 0.5
+#theme "wood"
+#theme "advanced"
+#needs quiver quiver
+#enditem
+
+#newitem
+#name "blowpipe"
+#gameid 34
+#sprite /graphics/firbolg/weapon/blowpipe.png
+#basechance 0.5
+#tag "tierunique"
+#tag "notepic"
+#theme "wood"
+#theme "primitive"
+#enditem

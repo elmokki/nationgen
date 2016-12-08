@@ -1,0 +1,241 @@
+#newitem
+#basechance 3
+#name "brown horse"
+#basechance 2
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#armor
+#offsety 1
+#needs overlay 1
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 24"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#enc 3"
+#define "#gcost +15"
+#tag "animal horse"
+#theme "light"
+#tag "maxprot 11"
+#epicness 0.25
+#enditem
+
+#newitem
+#name "armored horse"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/mounts/standard/armoredhorse1.png
+#armor
+#needs overlay 2
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 20"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +5"
+#tag "animal horse"
+#theme "heavy"
+#theme "iron"
+#tag "minprot 14"
+#define "#gcost +25"
+#epicness 0.25
+#tag "name commander 'knight'"
+#tag "name mounted knight"
+#enditem
+
+#newitem
+#name "armored horse bronze"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/mounts/standard/armoredhorse1a.png
+#armor
+#needs overlay armoredhorse1aoverlay
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 20"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +5"
+#tag "animal horse"
+#theme "heavy"
+#theme "bronze"
+#tag "minprot 14"
+#define "#gcost +25"
+#epicness 0.25
+#tag "name commander 'knight'"
+#tag "name mounted knight"
+#enditem
+
+#newitem
+#name "armored horse 2"
+#basechance 1
+#gameid -1
+#sprite /graphics/mounts/standard/armoredhorse2.png
+#armor
+#needs overlay armoredhorse2overlay
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 20"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +5"
+#tag "animal horse"
+#theme "heavy"
+#theme "bronze"
+#tag "minprot 12"
+#tag "maxprot 16"
+#define "#gcost +20"
+#epicness 0.25
+#tag "name commander 'knight'"
+#tag "name mounted knight"
+#enditem
+
+#newitem
+#name "armored horse 2a"
+#basechance 1
+#gameid -1
+#sprite /graphics/mounts/standard/armoredhorse2a.png
+#armor
+#offsety 1
+#needs overlay armoredhorse2overlay
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 20"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +5"
+#tag "animal horse"
+#theme "heavy"
+#theme "iron"
+#tag "minprot 12"
+#tag "maxprot 16"
+#define "#gcost +20"
+#epicness 0.25
+#tag "name commander 'knight'"
+#tag "name mounted knight"
+#enditem
+
+#newitem
+#name "fayhorse"
+#gameid -1
+#sprite /graphics/mounts/standard/fayhorse.png
+#armor
+#offsety 1
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 28"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#gcost +20"
+#define "#ressize 2"
+#define "#enc 3"¨
+#tag "animal horse"
+#tag "minprot 6"
+#tag "maxprot 16"
+#basechance 0.1
+#chanceinc racetag "fae" *50
+#enditem
+
+#newitem
+#name "pegasus"
+#gameid -1
+#sprite /graphics/mounts/standard/pegasus.png
+#armor
+#offsetx 28
+#offsety 64
+#needs overlay 8
+#define "#size 4"
+#define "#mapmove 3"
+#define "#ap 22"
+#define "#mounted"
+#define "#flying"
+#define "#weapon 56 --- Hoof"
+#define "#gcost +50"
+#define "#ressize 2"
+#define "#enc 4"
+#theme "flying"
+#tag "animal pegasus"
+#tag "guaranteedprefix pegasus"
+#sacredextra 0.7
+#basechance 0.1
+#chanceinc racetag "fae" *50
+#enditem
+
+#newitem
+#name "unicorn"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#offsety 1
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 28"
+#define "#mounted"
+#define "#weapon 330 --- Alicorn"
+#define "#weapon 56 --- Hoof"
+#define "#gcost +30"
+#define "#ressize 2"
+#define "#enc 3"
+#define "#heal"
+#tag "minprot 6"
+#tag "maxprot 16"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#basechance 0.1
+#chanceinc racetag "fae" *50
+#enditem
+
+#newitem
+#name "cu sidhe"
+#gameid -1
+#sprite /graphics/sidhe/mounts/cusidhe.png
+#armor
+#offsety 1
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 28"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#gcost +20"
+#define "#ressize 2"
+#define "#patrolbonus 1"
+#define "#enc 3"¨
+#tag "animal dog"
+#tag "guaranteedprefix 'cu sidhe'"
+#tag "maxprot 5"
+#tag "maxprot 12"
+#basechance 0.25
+#chanceinc racetag "fae" *20
+#enditem
+
+#newitem
+#name "barghest"
+#gameid -1
+#sprite /graphics/hoburg/mounts/barghest.png
+#armor
+#offsety 1
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 26"
+#define "#mounted"
+#define "#weapon 447 --- Venomous Bite"
+#define "#gcost +20"
+#define "#ressize 2"
+#define "#darkpower 1"
+#define "#enc 3"
+#tag "animal dog"
+#tag "guaranteedprefix barghest"
+#tag "maxprot 5"
+#tag "maxprot 12"
+#basechance 0.25
+#chanceinc racetag "fae" *10
+#enditem
