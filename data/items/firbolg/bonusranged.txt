@@ -1,0 +1,51 @@
+#newitem
+#name "javelin_bronze"
+#gameid 21
+#sprite /graphics/firbolg/weapon/javelin_bronze.png
+#basechance 2
+#theme "bronze"
+#enditem
+
+#newitem
+#name "javelin_iron"
+#gameid 21
+#sprite /graphics/firbolg/weapon/javelin_iron.png
+#basechance 2
+#theme "iron"
+#enditem
+
+#newitem 
+#name "throwing hatchet"
+#gameid throwinghatchet
+#basechance 2
+#chanceinc unittag irregular 4
+#theme "bronze"
+#enditem
+
+#newitem 
+#name "throwing axe"
+#gameid 260
+#basechance 2
+#chanceinc unittag irregular 4
+#theme "iron"
+#enditem
+
+#newitem
+#name "sticksandstones"
+#gameid 360
+#basechance 0.25
+#theme "primitive"
+#tag "maxprot 9"
+#tag "notepic"
+#enditem
+
+#newitem
+#name "harpoon"
+#gameid 452
+#sprite /graphics/firbolg/weapon/javelin_iron.png
+#tag "maxprot 9"
+#tag "tierunique"
+#tag "notepic"
+#basechance 0.5
+#chanceinc unittag irregular 1.5
+#enditem

@@ -1,8 +1,9 @@
 #newitem
-#id nothing
-#gameid -1
-#theme "naked"
+#id leathercap_horned
+#gameid 120
+#sprite /graphics/fomorian/helmet/leathercap_horned.png
 #armor
+#theme "primitive"
 #enditem
 
 #newitem
@@ -24,7 +25,7 @@
 #gameid -1
 #basechance 0
 #chanceinc "personalmagic nature 4"
-#chanceinc "personalmagic death *0.125"
+#chanceinc "personalmagic death *0.5"
 #sprite /graphics/fomorian/helmet/laurel.png
 #theme "nature"
 #armor

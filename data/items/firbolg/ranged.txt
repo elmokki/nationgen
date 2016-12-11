@@ -1,0 +1,42 @@
+#newitem
+#name "javelins_bronze"
+#gameid agarthan_javelin
+#sprite /graphics/firbolg/weapon/javelins_bronze.png
+#theme "bronze"
+#enditem
+
+#newitem
+#name "javelins_iron"
+#gameid agarthan_javelin
+#sprite /graphics/firbolg/weapon/javelins_iron.png
+#theme "iron"
+#enditem
+
+#newitem
+#name "sling"
+#gameid 22
+#sprite /graphics/firbolg/weapon/sling.png
+#basechance 2
+#theme "leather"
+#enditem
+
+#newitem
+#name "bow"
+#gameid 22
+#sprite /graphics/firbolg/weapon/bow.png
+#basechance 0.5
+#theme "wood"
+#theme "advanced"
+#needs quiver quiver
+#enditem
+
+#newitem
+#name "blowpipe"
+#gameid 34
+#sprite /graphics/firbolg/weapon/blowpipe.png
+#basechance 0.5
+#tag "tierunique"
+#tag "notepic"
+#theme "wood"
+#theme "primitive"
+#enditem

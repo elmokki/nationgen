@@ -72,6 +72,51 @@
 #needstype head minotaur
 #enditem
 
+-- Horse helms
+#newitem
+#basechance 0.25
+#id barehead_horse
+#gameid -1
+#armor
+#theme "primitive"
+#theme "naked"
+#needstype head horse
+#degenerate
+#enditem
+
+#newitem
+#basechance 0.1
+#id ironcap
+#gameid 20
+#sprite /graphics/foulspawn/medium/helmet/horse_iron.png
+#theme "iron"
+#armor
+#needstype head horse
+#enditem
+
+#newitem
+#basechance 0.1
+#id ironhelm
+#gameid 118
+#sprite /graphics/foulspawn/medium/helmet/horse_iron.png
+#theme "iron"
+#armor
+#minprot 12
+#needstype head horse
+#enditem
+
+#newitem
+#basechance 0.05
+#id ironhelm_full
+#gameid 21
+#sprite /graphics/foulspawn/medium/helmet/horse_iron_full.png
+#recolormask /graphics/foulspawn/medium/helmet/horse_full_recolormask.png
+#theme "iron"
+#armor
+#minprot 16
+#needstype head horse
+#enditem
+
 
 -- Bandar helms
 #newitem

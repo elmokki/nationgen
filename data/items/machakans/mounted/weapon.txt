@@ -84,6 +84,7 @@
 #sprite /graphics/weapon/standard/spear.png
 #tag "name infantry spearman"
 #eliteversion elitespear
+#lightlance
 #enditem
 
 #newitem
@@ -93,6 +94,7 @@
 #recolormask /graphics/machakans/weapon/spear_elite_recolormask.png
 #tag "name infantry spearman"
 #elite
+#lightlance
 #enditem
 
 #newitem
@@ -101,6 +103,7 @@
 #sprite /graphics/weapon/standard/trident.png
 #tag "prefix trident"
 #basechance 0.0125
+#lightlance
 #enditem
 
 
@@ -110,6 +113,7 @@
 #sprite /graphics/weapon/standard/quarterstaff.png
 #basechance 0.05
 #maxprot 10
+#lightlance
 #enditem
 
 #newitem
@@ -121,6 +125,7 @@
 #elite
 #eliteversion elitemachakanspear
 #basechance 6
+#lightlance
 #enditem
 
 
@@ -134,4 +139,5 @@
 #tag "name commander captain"
 #elite
 #eliteversion elitemachakanspear
+#lightlance
 #enditem

@@ -1,0 +1,285 @@
+--- Druid duds
+
+#newitem
+#name druid_leather
+#gameid 5
+#armor
+#sprite /graphics/firbolg/armor/robes/druid.png
+#eliteversion "druid_cloth_pale"
+#eliteversion "druid_cloth_bright"
+#eliteversion "druid_iron"
+#eliteversion "druid_bronze"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#name druid_bronze
+#basechance 0.5
+#gameid 6
+#armor
+#sprite /graphics/firbolg/armor/robes/druid_ring_bronze.png
+#eliteversion "druid_cloth_bright"
+#tag "tier 2"
+#tag "tier 3"
+#theme "bronze"
+#enditem
+
+#newitem
+#name druid_iron
+#basechance 0.5
+#gameid 6
+#armor
+#sprite /graphics/firbolg/armor/robes/druid_ring_iron.png
+#eliteversion "druid_cloth_bright"
+#tag "tier 2"
+#tag "tier 3"
+#theme "iron"
+#enditem
+
+#newitem
+#name druid_cloth_pale
+#gameid 158
+#armor
+#sprite /graphics/firbolg/armor/robes/druid.png
+#recolormask /graphics/firbolg/armor/robes/druid_recolormask1.png
+#eliteversion "druid_cloth_bright"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#name druid_cloth_bright
+#gameid 158
+#armor
+#sprite /graphics/firbolg/armor/robes/druid.png
+#recolormask /graphics/firbolg/armor/robes/druid_recolormask2.png
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+
+--- Robes
+
+#newitem
+#name robes_monk_brown
+#sprite /graphics/firbolg/armor/robes/monk.png
+#recolormask /graphics/firbolg/armor/robes/monk_recolormask1.png
+#eliteversion "robes_monk_dull"
+#gameid 158
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#name robes_monk_dull
+#sprite /graphics/firbolg/armor/robes/monk.png
+#recolormask /graphics/firbolg/armor/robes/monk_recolormask2.png
+#eliteversion "robes_monk_dim"
+#eliteversion "robes_magister_dull"
+#gameid 158
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#name robes_monk_dim
+#sprite /graphics/firbolg/armor/robes/monk.png
+#recolormask /graphics/firbolg/armor/robes/monk_recolormask3.png
+#eliteversion "robes_magister_dark"
+#gameid 158
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name robes_magister_brown
+#sprite /graphics/firbolg/armor/robes/magister.png
+#eliteversion "robes_magister_dull"
+#gameid 158
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#name robes_magister_dull
+#sprite /graphics/firbolg/armor/robes/magister.png
+#recolormask /graphics/firbolg/armor/robes/magister_recolormask1.png
+#eliteversion "robes_magister_dark"
+#gameid 158
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name robes_magister_dark
+#sprite /graphics/firbolg/armor/robes/magister.png
+#recolormask /graphics/firbolg/armor/robes/magister_recolormask2.png
+#eliteversion "robes_nemidian_monochrome"
+#eliteversion "robes_nemidian_dull"
+#eliteversion "robes_nemidian_dark"
+#gameid 158
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name robes_nemidian_monochrome
+#sprite /graphics/firbolg/armor/robes/nemidian.png
+#recolormask /graphics/firbolg/armor/robes/nemidian_recolormask1.png
+#eliteversion "robes_nemidian_dull"
+#eliteversion "robes_nemidian_dark"
+#gameid 158
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name robes_nemidian_dull
+#sprite /graphics/firbolg/armor/robes/nemidian.png
+#recolormask /graphics/firbolg/armor/robes/nemidian_recolormask2.png
+#eliteversion "robes_nemidian_dark"
+#gameid 158
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#name robes_nemidian_dark
+#sprite /graphics/firbolg/armor/robes/nemidian.png
+#recolormask /graphics/firbolg/armor/robes/nemidian_recolormask3.png
+#gameid 158
+#armor
+#tag "tier 3"
+#enditem
+
+
+
+--- Imperial robes (monochrome)
+#newitem
+#id robes_ermor_brown
+#gameid 158
+#sprite /graphics/firbolg/armor/robes/ermor_brown.png
+#eliteversion "robes_ermor_pale"
+#eliteversion "robes_ermor_middling"
+#eliteversion "robes_ermor_dull"
+#eliteversion "robes_ermor_muddled"
+#armor
+#tag "tier 1"
+#theme "advanced"
+#enditem
+
+#newitem
+#id robes_ermor_white
+#gameid 158
+#sprite /graphics/firbolg/armor/robes/ermor_white.png
+#eliteversion "robes_ermor_pale"
+#eliteversion "robes_ermor_middling"
+#armor
+#tag "tier 1"
+#theme "advanced"
+#enditem
+
+#newitem
+#id robes_ermor_grey
+#gameid 158
+#sprite /graphics/firbolg/armor/robes/ermor_grey.png
+#eliteversion "robes_ermor_pale"
+#eliteversion "robes_ermor_middling"
+#eliteversion "robes_ermor_dull"
+#armor
+#tag "tier 1"
+#theme "advanced"
+#enditem
+
+#newitem
+#id robes_ermor_black
+#gameid 158
+#sprite /graphics/firbolg/armor/robes/ermor_black.png
+#eliteversion "robes_ermor_middling"
+#eliteversion "robes_ermor_dull"
+#armor
+#tag "tier 1"
+#theme "advanced"
+#enditem
+
+#newitem
+#id robes_ermor_muddled
+#gameid 158
+#sprite /graphics/firbolg/armor/robes/ermor_brown.png
+#recolormask /graphics/firbolg/armor/robes/ermor_middling_recolormask.png
+#eliteversion "robes_ermor_dark"
+#armor
+#tag "tier 2"
+#theme "advanced"
+#enditem
+
+#newitem
+#id robes_ermor_pale
+#gameid 158
+#sprite /graphics/firbolg/armor/robes/ermor_white.png
+#recolormask /graphics/firbolg/armor/robes/ermor_pale_recolormask.png
+#eliteversion "robes_ermor_light"
+#armor
+#tag "tier 2"
+#theme "advanced"
+#enditem
+
+#newitem
+#id robes_ermor_middling
+#gameid 158
+#sprite /graphics/firbolg/armor/robes/ermor_grey.png
+#recolormask /graphics/firbolg/armor/robes/ermor_middling_recolormask.png
+#eliteversion "robes_ermor_light"
+#eliteversion "robes_ermor_medium"
+#eliteversion "robes_ermor_dark"
+#armor
+#tag "tier 2"
+#theme "advanced"
+#enditem
+
+#newitem
+#id robes_ermor_dull
+#gameid 158
+#sprite /graphics/firbolg/armor/robes/ermor_black.png
+#recolormask /graphics/firbolg/armor/robes/ermor_dull_recolormask.png
+#eliteversion "robes_ermor_dark"
+#armor
+#tag "tier 2"
+#theme "advanced"
+#enditem
+
+#newitem
+#id robes_ermor_light
+#gameid 158
+#sprite /graphics/firbolg/armor/robes/ermor_white.png
+#recolormask /graphics/firbolg/armor/robes/ermor_light_recolormask.png
+#armor
+#tag "tier 3"
+#theme "advanced"
+#enditem
+
+#newitem
+#id robes_ermor_medium
+#gameid 158
+#sprite /graphics/firbolg/armor/robes/ermor_grey.png
+#recolormask /graphics/firbolg/armor/robes/ermor_medium_recolormask.png
+#armor
+#tag "tier 3"
+#theme "advanced"
+#enditem
+
+#newitem
+#id robes_ermor_dark
+#gameid 158
+#sprite /graphics/firbolg/armor/robes/ermor_black.png
+#recolormask /graphics/firbolg/armor/robes/ermor_dark_recolormask.png
+#armor
+#tag "tier 3"
+#theme "advanced"
+#enditem

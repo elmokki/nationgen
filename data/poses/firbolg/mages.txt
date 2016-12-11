@@ -1,0 +1,92 @@
+--- Mage-priest
+#newpose
+#role "mage"
+#role "priest"
+#name "non-combatant caster"
+-- #renderorder "shadow cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hair helmet offhanda"
+
+#tier 1
+#tier 2
+#tier 3
+
+#dontvaryhat
+
+#load basesprite /data/items/firbolg/bases.txt
+#load shadow /data/items/firbolg/shadow.txt
+#load hands /data/items/firbolg/hands.txt
+#load cloakf /data/items/firbolg/cloakf.txt
+#load cloakb /data/items/firbolg/cloakb.txt
+#load armor /data/items/firbolg/robes.txt
+#load weapon /data/items/human/caster/weapon.txt 3 -4
+#load offhand /data/items/human/caster/offhands.txt  2 -3
+-- #load weapon /data/items/firbolg/weapon_mages.txt
+-- #load offhand /data/items/firbolg/offhand_mages.txt
+#load hair /data/items/firbolg/hair.txt
+
+#generateitem 1 hair
+#endpose
+
+
+
+
+#newpose
+#role "mage"
+#role "priest"
+#name "unmounted warrior-caster"
+-- #renderorder "shadow cloakb mount basesprite legs shirt armor cloakf bonusweapon weapon offhandw hair helmet offhanda overlay"
+
+#chanceinc hasprimaryrace *0.2
+#chanceinc racetag "fae" *10
+
+#tier 1
+#tier 2
+#warriormage
+
+#load basesprite /data/items/firbolg/bases.txt
+#load shadow /data/items/firbolg/shadow.txt
+#load hands /data/items/firbolg/hands.txt
+#load cloakf /data/items/firbolg/cloakf.txt
+#load cloakb /data/items/firbolg/cloakb.txt
+#load armor /data/items/firbolg/armor_caster.txt
+#load helmet /data/items/firbolg/helmet_caster.txt
+#load weapon /data/items/firbolg/weapon_caster.txt
+#load offhand /data/items/firbolg/shields.txt
+#load hair /data/items/firbolg/hair.txt
+
+#generateitem 1 hair
+
+#endpose
+
+
+#newpose
+#role "mage"
+#role "priest"
+#name "mounted warrior-caster"
+-- #renderorder "shadow cloakb mount basesprite legs shirt armor cloakf bonusweapon weapon offhandw hair helmet offhanda"
+
+#chanceinc hasprimaryrace *0.2
+#chanceinc racetag "fae" *10
+
+#tier 2
+#tier 3
+#warriormage
+
+#load basesprite /data/items/firbolg/bases_mounted.txt
+#load mount /data/items/firbolg/mounts.txt
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt 
+#load hands /data/items/firbolg/hands.txt
+#load cloakf /data/items/firbolg/cloakf.txt
+#load cloakb /data/items/firbolg/cloakb.txt
+#load armor /data/items/firbolg/armor_mounted.txt
+#load helmet /data/items/firbolg/helmet_caster.txt
+#load weapon /data/items/firbolg/weapon_mounted.txt
+#load offhand /data/items/firbolg/shields.txt
+#load hair /data/items/firbolg/hair.txt
+
+#generateitem 1 hair
+#endpose
+
+
+
+
+
