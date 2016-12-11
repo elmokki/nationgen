@@ -1309,7 +1309,7 @@ public class ChanceIncHandler {
 					coms.addAll(n.races.get(0).nationcommands);
 					for(Command c : coms)
 					{
-						if(c.command.equals(command))
+						if(c.command.equals(command) || c.command.equals("#" + command))
 						{
 							
 							String arg = c.args.get(0);
@@ -1383,7 +1383,7 @@ public class ChanceIncHandler {
 					List<Command> coms = n.races.get(0).getCommands();
 					for(Command c : coms)
 					{
-						if(c.command.equals(command))
+						if(c.command.equals(command) || c.command.equals("#" + command))
 						{
 							
 							String arg = c.args.get(0);
@@ -1428,7 +1428,7 @@ public class ChanceIncHandler {
 					{
 						for(Command c : u.getCommands())
 						{
-							if(c.command.equals(command))
+							if(c.command.equals(command) || c.command.equals("#" + command))
 							{
 								if(args.size() > 3)
 								{
@@ -1491,7 +1491,7 @@ public class ChanceIncHandler {
 						all++;
 						for(Command c : u.getCommands())
 						{
-							if(c.command.equals(command))
+							if(c.command.equals(command) || c.command.equals("#" + command))
 							{
 								found++;
 							}
@@ -1815,9 +1815,11 @@ public class ChanceIncHandler {
 
 					boolean canIncrease = false;
 					String command = args.get(1);
+
 					for(Command c : u.getCommands())
 					{
-						if(c.command.equals(command))
+
+						if(c.command.equals(command) || c.command.equals("#" + command))
 						{
 							if(args.size() > 3)
 							{
@@ -1863,7 +1865,7 @@ public class ChanceIncHandler {
 					}
 					if(canIncrease)
 					{
-						
+
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
 						continue;
 					}
