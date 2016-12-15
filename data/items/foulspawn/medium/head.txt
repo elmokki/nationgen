@@ -424,6 +424,27 @@
 
 #newitem
 #basechance 2
+#name "rat"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/rat.png
+#command "#gcost +2"
+#command "#hp +1"
+#command "#prot +0"
+#command "#mr -2"
+#command "#mor -2"
+#command "#att +2"
+#command "#def +3"
+#command "#prec -3"
+#command "#ap +0"
+#command "#darkvision 50"
+#command "#diseaseres 25"
+#needstype headweapon mightbite
+#itemslot head 0
+#type barehead
+#degenerate
+#enditem
+
+#newitem
 #name "elephant"
 #gameid -1
 #sprite /graphics/foulspawn/medium/head/elephant.png
