@@ -424,6 +424,25 @@
 
 #newitem
 #basechance 2
+#name "elephant"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/elephant.png
+#command "#gcost +3"
+#command "#hp +6"
+#command "#prot +3"
+#command "#mr -2"
+#command "#mor -1"
+#command "#att +2"
+#command "#def -1"
+#command "#prec +0"
+#command "#ap +0"
+#needstype headweapon tusk
+#itemslot head 0
+#type barehead
+#enditem
+
+#newitem
+#basechance 2
 #name "serpent"
 #gameid -1
 #sprite /graphics/foulspawn/medium/head/serpent.png
