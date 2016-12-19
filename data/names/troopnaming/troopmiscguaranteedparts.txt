@@ -41,6 +41,15 @@
 #end
 
 #new 
+#name "thought"
+#basechance 0
+#chanceinc slottag weapon 'thought' 1
+#chanceinc pose not ranged *0
+#prefix
+#neverredundant
+#end
+
+#new 
 #name "soul"
 #basechance 0
 #chanceinc slottag weapon 'soul' 1
