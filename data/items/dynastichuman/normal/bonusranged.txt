@@ -4,7 +4,6 @@
 #sprite /graphics/weapon/standard/javelin1.png
 #offsetx 1
 #offsety -2
-#tag "name infantry 'Javelineer'"
 #basechance 0.75
 #enditem
 
@@ -14,15 +13,21 @@
 #sprite /graphics/weapon/standard/javelin2.png
 #offsetx 1
 #offsety -3
-#tag "name infantry 'Javelineer'"
 #basechance 0.75
 #enditem
 
-#newitem -- Throwing axe
+#newitem 
+#name "throwing hatchet"
+#gameid throwinghatchet
+#basechance 1.5
+#chanceinc unittag irregular 4
+#theme "bronze"
+#enditem
+
+#newitem
 #name "throwing axe"
 #gameid 260
 #theme "iron"
-#tag "name infantry 'Axe Thrower'"
 #basechance 1.5
 #chanceinc unittag irregular 4
 #enditem
@@ -34,7 +39,6 @@
 #offsetx 2
 #offsety -2
 #basechance 1
-#tag "name infantry 'Ranger'"
 #enditem
 
 #newitem
@@ -46,7 +50,6 @@
 #tag "maxprot 12"
 #tag "tierunique"
 #tag "noslot offhand"
-#tag "name infantry 'Trapper'"
 #tag "notepic"
 #basechance 0.25
 #chanceinc unittag irregular 1.5

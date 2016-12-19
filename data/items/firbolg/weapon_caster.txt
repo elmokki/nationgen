@@ -1,61 +1,11 @@
 #newitem
-#id club
-#gameid 252
-#sprite /graphics/firbolg/weapon/club.png
-#theme "wood"
-#theme "primitive"
-#militia
-#enditem
-
-#newitem
-#id club_spiked
-#gameid 265
-#sprite /graphics/firbolg/weapon/club_spiked.png
-#theme "wood"
-#theme "primitive"
-#militia
-#enditem
-
-#newitem
-#id greatclub
-#gameid 165
-#sprite /graphics/firbolg/weapon/greatclub.png
-#theme "wood"
-#theme "primitive"
-#militia
-#enditem
-
-#newitem
-#id quarterstaff
-#gameid 7
-#sprite /graphics/firbolg/weapon/quarterstaff.png
-#theme "wood"
-#militia
-#enditem
-
-#newitem
-#id hatchet_bronze
-#gameid 646
-#sprite /graphics/firbolg/weapon/axe_bronze.png
-#theme "bronze"
-#theme "primitive"
-#militia
-#enditem
-
-#newitem
-#id hatchet
-#gameid 253
-#sprite /graphics/firbolg/weapon/axe_iron.png
-#theme "iron"
-#theme "primitive"
-#militia
-#enditem
-
-#newitem
 #id axe_bronze
 #gameid 675
 #sprite /graphics/firbolg/weapon/axe_bronze.png
 #theme "bronze"
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
 #enditem
 
 #newitem
@@ -63,6 +13,9 @@
 #gameid 17
 #sprite /graphics/firbolg/weapon/axe_iron.png
 #theme "iron"
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
 #enditem
 
 #newitem
@@ -70,6 +23,9 @@
 #gameid 645
 #sprite /graphics/firbolg/weapon/sword_bronze.png
 #theme "bronze"
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
 #enditem
 
 #newitem
@@ -77,6 +33,9 @@
 #gameid 6
 #sprite /graphics/firbolg/weapon/sword_iron.png
 #theme "iron"
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
 #enditem
 
 #newitem
@@ -85,6 +44,9 @@
 #sprite /graphics/firbolg/weapon/sword_bronze.png
 #theme "bronze"
 #theme "advanced"
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
 #enditem
 
 #newitem
@@ -93,6 +55,9 @@
 #sprite /graphics/firbolg/weapon/sword_iron.png
 #theme "iron"
 #theme "advanced"
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
 #enditem
 
 #newitem
@@ -100,6 +65,9 @@
 #gameid bronzebattleaxe
 #sprite /graphics/firbolg/weapon/battleaxe_bronze.png
 #theme "bronze"
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
 #enditem
 
 #newitem
@@ -107,6 +75,9 @@
 #gameid 18
 #sprite /graphics/firbolg/weapon/battleaxe_iron.png
 #theme "iron"
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
 #enditem
 
 #newitem
@@ -115,6 +86,9 @@
 #sprite /graphics/firbolg/weapon/claymore_bronze.png
 #theme "bronze"
 #theme "advanced"
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
 #enditem
 
 #newitem
@@ -123,15 +97,9 @@
 #sprite /graphics/firbolg/weapon/claymore_iron.png
 #theme "iron"
 #theme "advanced"
-#enditem
-
-#newitem
-#id spear_stone
-#gameid 373
-#sprite /graphics/firbolg/weapon/spear_iron.png
-#theme "stone"
-#theme "primitive"
-#militia
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
 #enditem
 
 #newitem
@@ -139,7 +107,9 @@
 #gameid 643
 #sprite /graphics/firbolg/weapon/spear_bronze.png
 #theme "bronze"
-#militia
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
 #enditem
 
 #newitem
@@ -147,19 +117,50 @@
 #gameid 1
 #sprite /graphics/firbolg/weapon/spear_iron.png
 #theme "iron"
-#militia
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
 #enditem
 
 #newitem
-#id longspear_bronze
-#gameid 644
-#sprite /graphics/firbolg/weapon/longspear_bronze.png
-#theme "bronze"
+#id goldenspear
+#gameid 473
+#chanceinc "personalcommand #mounted *0"
+#sprite /graphics/firbolg/weapon/lance_gold.png
+#theme "elite"
+#theme "fae"
+#tag "tier 1"
+#tag "tier 2"
 #enditem
 
 #newitem
-#id longspear
-#gameid 28
-#sprite /graphics/firbolg/weapon/longspear_iron.png
-#theme "iron"
+#id goldenlance
+#gameid 475
+#basechance 0
+#chanceinc "personalcommand #mounted 1"
+#sprite /graphics/firbolg/weapon/spear_gold.png
+#theme "elite"
+#theme "fae"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id goldensword
+#gameid 474
+#sprite /graphics/firbolg/weapon/sword_gold.png
+#theme "elite"
+#theme "fae"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id goldenaxe
+#gameid goldenaxe
+#sprite /graphics/firbolg/weapon/axe_gold.png
+#theme "elite"
+#theme "fae"
+#tag "tier 2"
+#tag "tier 3"
 #enditem
