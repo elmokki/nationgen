@@ -7,8 +7,8 @@
 #load basesprite /data/items/firbolg/bases.txt
 #load shadow /data/items/firbolg/shadow.txt
 #load hands /data/items/firbolg/hands.txt
-#load cloakf /data/items/firbolg/cloakf.txt
-#load cloakb /data/items/firbolg/cloakb.txt
+#load cloakf /data/items/firbolg/cloakf.txt 1 0
+#load cloakb /data/items/firbolg/cloakb.txt 1 0
 #load armor /data/items/firbolg/armor_infantry.txt
 #load helmet /data/items/firbolg/helmet.txt
 #load weapon /data/items/firbolg/weapon.txt
@@ -27,11 +27,11 @@
 #chanceinc hasprimaryrace *0.2
 
 #load basesprite /data/items/firbolg/bases_mounted.txt
-#load mount /data/items/firbolg/mounts.txt 5 -13
+#load mount /data/items/firbolg/mounts.txt 0 -14
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt 
 #load hands /data/items/firbolg/hands.txt
-#load cloakf /data/items/firbolg/cloakf.txt
-#load cloakb /data/items/firbolg/cloakb.txt
+#load cloakf /data/items/firbolg/cloakf.txt 1 0
+#load cloakb /data/items/firbolg/cloakb.txt 1 0
 #load armor /data/items/firbolg/armor_mounted.txt
 #load helmet /data/items/firbolg/helmet.txt
 #load weapon /data/items/firbolg/weapon_mounted.txt
@@ -51,13 +51,13 @@
 #role "ranged"
 #role "scout"
 
-#renderorder "shadow quiver cloakb basesprite armor cloakf bonusweapon weapon hair helmet"
+#renderorder "shadow quiver cloakb basesprite armor cloakf bonusweapon weapon hands hair helmet"
 
 #load basesprite /data/items/firbolg/bases.txt
 #load shadow /data/items/firbolg/shadow.txt
 #load hands /data/items/firbolg/hands.txt
-#load cloakf /data/items/firbolg/cloakf.txt
-#load cloakb /data/items/firbolg/cloakb.txt
+#load cloakf /data/items/firbolg/cloakf.txt 1 0
+#load cloakb /data/items/firbolg/cloakb.txt 1 0
 #load armor /data/items/firbolg/armor_ranged.txt
 #load helmet /data/items/firbolg/helmet.txt
 #load weapon /data/items/firbolg/ranged.txt

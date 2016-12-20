@@ -2234,9 +2234,9 @@ public class MageGenerator extends TroopGenerator {
 		// Tertiaries might be of secondary race if primaries aren't.
 		bonussecchance = 1;
 		if(Generic.containsTag(race.tags, "secondaryracetertiarymagemod"))
-			bonussecchance += Double.parseDouble(Generic.getTagValue(race.tags, "secondaryracemagemod"));
+			bonussecchance += Double.parseDouble(Generic.getTagValue(race.tags, "secondaryracetertiarymagemod"));
 		if(Generic.containsTag(nation.races.get(1).tags, "primaryracetertiarymagemod"))
-			bonussecchance -= Double.parseDouble(Generic.getTagValue(nation.races.get(1).tags, "primaryracemagemod"));
+			bonussecchance -= Double.parseDouble(Generic.getTagValue(nation.races.get(1).tags, "primaryracetertiarymagemod"));
 		
 		if((0.05 * bonussecchance > this.random.nextDouble() && hasPoseForTier("mage", nation.races.get(1), 1)) || !hasPoseForTier("mage", nation.races.get(0), 1) || changed_at_secondary)
 			race = nation.races.get(1);
