@@ -10,11 +10,11 @@
 
 #dontvaryhat
 
-#load basesprite /data/items/firbolg/bases.txt
+#load basesprite /data/items/firbolg/bases_caster.txt
 #load shadow /data/items/firbolg/shadow.txt
 #load hands /data/items/firbolg/hands.txt
-#load cloakf /data/items/firbolg/cloakf.txt
-#load cloakb /data/items/firbolg/cloakb.txt
+#load cloakf /data/items/firbolg/cloakf.txt 1 0
+#load cloakb /data/items/firbolg/cloakb.txt 1 0
 #load armor /data/items/firbolg/robes.txt
 #load weapon /data/items/human/caster/weapon.txt 3 -4
 #load offhand /data/items/human/caster/offhands.txt  2 -3
@@ -43,8 +43,8 @@
 #load basesprite /data/items/firbolg/bases.txt
 #load shadow /data/items/firbolg/shadow.txt
 #load hands /data/items/firbolg/hands.txt
-#load cloakf /data/items/firbolg/cloakf.txt
-#load cloakb /data/items/firbolg/cloakb.txt
+#load cloakf /data/items/firbolg/cloakf.txt 1 0
+#load cloakb /data/items/firbolg/cloakb.txt 1 0
 #load armor /data/items/firbolg/armor_caster.txt
 #load helmet /data/items/firbolg/helmet_caster.txt
 #load weapon /data/items/firbolg/weapon_caster.txt
@@ -68,11 +68,11 @@
 #warriormage
 
 #load basesprite /data/items/firbolg/bases_mounted.txt
-#load mount /data/items/firbolg/mounts.txt
+#load mount /data/items/firbolg/mounts.txt 0 -14
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt 
 #load hands /data/items/firbolg/hands.txt
-#load cloakf /data/items/firbolg/cloakf.txt
-#load cloakb /data/items/firbolg/cloakb.txt
+#load cloakf /data/items/firbolg/cloakf.txt 1 0
+#load cloakb /data/items/firbolg/cloakb.txt 1 0
 #load armor /data/items/firbolg/armor_caster.txt
 #load helmet /data/items/firbolg/helmet_caster.txt
 #load weapon /data/items/firbolg/weapon_caster.txt
