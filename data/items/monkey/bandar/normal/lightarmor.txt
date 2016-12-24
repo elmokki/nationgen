@@ -9,6 +9,7 @@
 #theme "enlightened"
 #theme "imperial"
 #theme "oriental"
+#theme "austral"
 #theme "naked"
 #theme "primitive"
 #enditem
@@ -21,6 +22,7 @@
 #recolormask self
 #armor
 #theme "enlightened"
+#theme "austral"
 #theme "naked"
 #enditem
 
@@ -53,6 +55,17 @@
 #armor
 #theme "imperial"
 #theme "enlightened"
+#theme "primitive"
+#theme "leather"
+#enditem
+
+#newitem
+#basechance 3
+#name "austral furs"
+#gameid 44
+#sprite /graphics/monkey/armor/bandar/furs_austral.png
+#armor
+#theme "austral"
 #theme "primitive"
 #theme "leather"
 #enditem
@@ -101,6 +114,42 @@
 #enditem
 
 #newitem
+#name "austral leather cuirass"
+#gameid 5
+#basechance 2
+#sprite /graphics/monkey/armor/bandar/leathercuirass_austral.png
+#armor
+#needstype shirt austral_shirt
+#theme "austral"
+#theme "leather"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "austral leather hauberk"
+#gameid 10
+#basechance 2
+#sprite /graphics/monkey/armor/bandar/leatherhauberk_austral.png
+#armor
+#needstype shirt austral_shirt
+#theme "austral"
+#theme "leather"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "austral full leather"
+#gameid 15
+#needstype shirt austral_shirt
+#basechance 2
+#sprite /graphics/monkey/armor/bandar/fullleather_austral.png
+#armor
+#theme "austral"
+#theme "leather"
+#theme "advanced"
+#enditem
+
+#newitem
 #name "imperial ring"
 #basechance 4
 #gameid 11
@@ -120,6 +169,18 @@
 #recolormask /graphics/monkey/armor/bandar/lorica_hamata_recolormask.png
 #armor
 #theme "imperial"
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "austral scale cuirass"
+#gameid 7
+#basechance 0.5
+#sprite /graphics/monkey/armor/bandar/scalecuirass_austral.png
+#armor
+#needstype shirt austral_shirt
+#theme "austral"
 #theme "iron"
 #theme "advanced"
 #enditem

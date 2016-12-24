@@ -5,19 +5,46 @@
 #command "#gcost 35"
 #command "#hp 36"
 #command "#size 4"
-#command "#prot 4"
-#command "#mr 12"
-#command "#mor 13"
+#command "#prot 8"
+#command "#mr 10"
+#command "#mor 14"
 #command "#str 20"
-#command "#att 12"
-#command "#def 9"
+#command "#att 13"
+#command "#def 11"
 #command "#prec 10"
-#command "#enc 2"
-#command "#mapmove 3"
-#command "#ap 12"
-#command "#maxage 90"
+#define "#mapmove 3"
+#define "#ap 14"
+#define "#maxage 90"
 #command "#forestsurvival"
 #noble
-#subrace colossi
 #subraceprefix colossi
+#theme lowland
+#mapmovepenaltyenc 7
+#mapmovepenaltyprot 16
+#enditem
+
+#newitem
+#name "winged colossi basesprite"
+#gameid -1
+#sprite /graphics/monkey/yeti/colossi_base.png
+#needs wings winged
+#command "#gcost 50"
+#command "#hp 36"
+#command "#size 4"
+#command "#prot 8"
+#command "#mr 12"
+#command "#mor 12"
+#command "#str 18"
+#command "#att 13"
+#command "#def 11"
+#command "#prec 10"
+#define "#mapmove 3"
+#define "#ap 12"
+#define "#maxage 100"
+#command "#forestsurvival"
+#noble
+#subraceprefix colossi
+#subrace "winged colossi"
+#theme winged
+#mapmovepenaltyenc 5
 #enditem

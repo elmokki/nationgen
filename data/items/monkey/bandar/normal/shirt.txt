@@ -1,0 +1,27 @@
+#newitem
+#name "none"
+#basechance 1000
+#gameid -1
+#enditem
+
+#newitem
+#name "furs"
+#gameid -1
+#basechance 0.001
+#chanceinc racetheme bronze *0.2
+#chanceinc racetheme iron *0.1
+#chanceinc racetheme advanced *0.01
+#chanceinc posetag light *5
+#sprite /graphics/monkey/armor/bandar/furs_austral.png
+#type austral_shirt
+#enditem
+
+#newitem
+#name "loincloth"
+#gameid -1
+#basechance 0.001
+#chanceinc racetheme primitive *0.01
+#sprite /graphics/monkey/armor/bandar_mage/loincloth.png
+#recolormask self
+#type austral_shirt
+#enditem
