@@ -1,61 +1,116 @@
 #newitem
-#id ice_mace
-#gameid 44
-#sprite /graphics/monkey/yeti/icemace.png
+#id chakram
+#gameid 362
+#sprite /graphics/monkey/giant/chakram.png
 #enditem
 
 #newitem
-#id ice_scepter
-#gameid 44
-#sprite /graphics/monkey/yeti/icescepter.png
-#recolormask /graphics/monkey/yeti/icescepter_recolormask.png
+#id shortsword
+#gameid 6
+#sprite /graphics/monkey/giant/shortsword.png
 #enditem
 
 #newitem
-#id iceorb
+#id axe
+#gameid 17
+#sprite /graphics/monkey/giant/axe.png
+#theme "primitive"
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/monkey/giant/mace.png
+#enditem
+
+#newitem
+#id hammer
+#gameid 14
+#sprite /graphics/monkey/giant/mace.png
+#enditem
+
+#newitem
+#id skullclub
+#gameid 579
+#sprite /graphics/monkey/giant/skullclub.png
+#theme "primitive"
+#theme "death"
+#enditem
+
+#newitem
+#id scepter
+#gameid 172
+#sprite /graphics/monkey/giant/scepter.png
+#recolormask /graphics/monkey/giant/icescepter_recolormask.png
+#eliteversion orbstaff
+#enditem
+
+#newitem
+#id orb
 #gameid -1
-#sprite /graphics/monkey/yeti/iceorb.png
-#enditem
-
-#newitem
-#id icestaff
-#gameid 124
-#sprite /graphics/monkey/yeti/icestaff.png
-#enditem
-
-#newitem
-#id orbstaff
-#gameid 124
-#sprite /graphics/monkey/yeti/orbstaff.png
-#recolormask /graphics/monkey/yeti/orbstaff_recolormask.png
-#enditem
-
-#newitem
-#id iciclestaff
-#gameid 124
-#sprite /graphics/monkey/yeti/iciclestaff.png
+#sprite /graphics/monkey/giant/iceorb.png
+#recolormask self
 #enditem
 
 #newitem
 #id woodstaff
 #gameid 7
-#sprite /graphics/monkey/yeti/woodstaff.png
+#sprite /graphics/monkey/giant/woodstaff.png
+#eliteversion orbstaff
+#eliteversion dynastic_staff1
+#eliteversion skullstaff1
+#eliteversion gnarledstaff
 #enditem
 
 #newitem
 #id gnarledstaff
 #gameid 7
-#sprite /graphics/monkey/yeti/gnarledstaff.png
+#sprite /graphics/monkey/giant/gnarledstaff.png
+#enditem
+
+#newitem
+#id knobblystaff
+#gameid 165
+#sprite /graphics/monkey/giant/knobblystaff.png
 #enditem
 
 #newitem
 #id skullstaff1
 #gameid 7
-#sprite /graphics/monkey/yeti/skullstaff.png
+#sprite /graphics/monkey/giant/skullstaff.png
+#theme "primitive"
+#theme "death"
 #enditem
 
 #newitem
 #id skullstaff2
 #gameid 7
-#sprite /graphics/monkey/yeti/skullstaff2.png
+#sprite /graphics/monkey/giant/skullstaff2.png
+#theme "primitive"
+#theme "death"
+#enditem
+
+#newitem
+#id orbstaff
+#gameid 7
+#sprite /graphics/monkey/giant/woodstaff.png
+#recolormask /graphics/monkey/giant/orbstaff_recolormask.png
+#enditem
+
+#newitem
+#id dynastic_staff1
+#gameid 7
+#sprite /graphics/monkey/giant/dynasticstaff1.png
+#eliteversion dynastic_staff2
+#theme "advanced"
+#theme "dynastic"
+#enditem
+
+#newitem
+#id dynastic_staff2
+#gameid 7
+#sprite /graphics/monkey/giant/dynasticstaff2.png
+#eliteversion dynastic_staff2
+#theme "advanced"
+#theme "dynastic"
 #enditem

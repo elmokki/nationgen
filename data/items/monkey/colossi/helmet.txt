@@ -1,36 +1,162 @@
 #newitem
 #id nothing
 #gameid -1
+#basechance 8
+#armor
+#tag "eliteversion headdress_simple_grey"
+#tag "eliteversion headdress_simple_medium"
+#tag "eliteversion ironcap"
+#tag "eliteversion giltcap"
+#naked
+#maxprot 13
+#enditem
+
+
+-- Light headdresses
+
+#newitem
+#id headdress_short_grey
+#gameid -1
 #basechance 4
+#sprite /graphics/monkey/giant/headdress_simple.png
 #armor
-#enditem
-
-
---- Ice hats
-#newitem
-#id icecap
-#gameid 29
-#sprite /graphics/monkey/yeti/icecap.png
-#armor
-#enditem
-
-#newitem
-#id icecrown
-#gameid 29
-#sprite /graphics/monkey/yeti/icecrown.png
-#armor
+#tag "eliteversion headdress_simple_medium"
+#tag "eliteversion headdress_white"
+#tag "eliteversion headdress_offwhite"
+#tag "eliteversion headdress_grey"
+#tag "eliteversion headdress_black"
+#theme "primitive"
+#maxprot 14
 #enditem
 
 #newitem
-#id icecone
-#gameid 29
-#sprite /graphics/monkey/yeti/icecone.png
+#id headdress_short_medium
+#gameid -1
+#basechance 4
+#sprite /graphics/monkey/giant/headdress_simple.png
+#recolormask self
 #armor
+#tag "eliteversion headdress_simple_medium"
+#tag "eliteversion headdress_light"
+#tag "eliteversion headdress_dim"
+#tag "eliteversion headdress_dull"
+#tag "eliteversion headdress_dark"
+#theme "primitive"
+#maxprot 14
 #enditem
 
 #newitem
-#id icecone_tall
-#gameid 29
-#sprite /graphics/monkey/yeti/icecone_tall.png
+#id headdress_white
+#gameid 120
+#sprite /graphics/monkey/giant/headdress_tall4.png
 #armor
+#tag "eliteversion headdress_white"
+#tag "eliteversion headdress_light"
+#enditem
+
+#newitem
+#id headdress_offwhite
+#gameid 120
+#sprite /graphics/monkey/giant/headdress_tall3.png
+#armor
+#tag "eliteversion headdress_white"
+#tag "eliteversion headdress_dim"
+#enditem
+
+#newitem
+#id headdress_grey
+#gameid 120
+#sprite /graphics/monkey/giant/headdress_tall2.png
+#armor
+#tag "eliteversion headdress_black"
+#tag "eliteversion headdress_dull"
+#enditem
+
+#newitem
+#id headdress_black
+#gameid 120
+#sprite /graphics/monkey/giant/headdress_tall1.png
+#armor
+#tag "eliteversion headdress_black"
+#tag "eliteversion headdress_dark"
+#enditem
+
+#newitem
+#id headdress_light
+#gameid 120
+#sprite /graphics/monkey/giant/headdress_tall4.png
+#recolormask self
+#armor
+#tag "eliteversion headdress_light"
+#enditem
+
+#newitem
+#id headdress_dim
+#gameid 120
+#sprite /graphics/monkey/giant/headdress_tall3.png
+#recolormask self
+#armor
+#tag "eliteversion headdress_light"
+#enditem
+
+#newitem
+#id headdress_dull
+#gameid 120
+#sprite /graphics/monkey/giant/headdress_tall2.png
+#recolormask self
+#armor
+#tag "eliteversion headdress_dark"
+#enditem
+
+#newitem
+#id headdress_dark
+#gameid 120
+#sprite /graphics/monkey/giant/headdress_tall1.png
+#recolormask self
+#armor
+#tag "eliteversion headdress_dark"
+#enditem
+
+
+
+-- Iron caps
+
+#newitem
+#id ironcap
+#gameid 20
+#basechance 2
+#sprite /graphics/monkey/giant/cap_iron.png
+#armor
+#tag "eliteversion giltcap"
+#tag "eliteversion headdress_silver"
+#theme "iron"
+#enditem
+
+#newitem
+#id giltcap
+#gameid 20
+#sprite /graphics/monkey/giant/cap_gold.png
+#tag "eliteversion headdress_gold"
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#id headdress_silver
+#gameid 20
+#sprite /graphics/monkey/giant/headdress_silver.png
+#recolormask /graphics/monkey/giant/headdress_recolormask.png
+#armor
+#tag "eliteversion headdress_gold"
+#theme "iron"
+#enditem
+
+#newitem
+#id headdress_gold
+#gameid 20
+#sprite /graphics/monkey/giant/headdress_gold.png
+#recolormask /graphics/monkey/giant/headdress_recolormask.png
+#armor
+#tag "eliteversion headdress_gold"
+#theme "iron"
 #enditem
