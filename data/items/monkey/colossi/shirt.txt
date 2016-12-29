@@ -1,0 +1,99 @@
+#newitem
+#name "none"
+#basechance 0
+#gameid -1
+#enditem
+
+#newitem
+#name "furs"
+#gameid -1
+#basechance 5
+#chanceinc racetheme bronze *0.2
+#chanceinc racetheme iron *0.1
+#chanceinc racetheme advanced *0.01
+#sprite /graphics/monkey/giant/furs.png
+#type long
+#enditem
+
+#newitem
+#name "loincloth"
+#gameid -1
+#basechance 3
+#chanceinc racetheme bronze *0.66
+#chanceinc racetheme iron *0.33
+#chanceinc racetheme advanced *0.01
+#sprite /graphics/monkey/giant/loincloth.png
+#recolormask /graphics/monkey/giant/loincloth_recolormask.png
+#type short
+#enditem
+
+#newitem
+#name "shendyt_white"
+#gameid -1
+#basechance 0.5
+#chanceinc racetheme bronze *10
+#chanceinc racetheme iron *5
+#chanceinc racetheme advanced *2
+#sprite /graphics/monkey/giant/shendyt_light.png
+#type short
+#enditem
+
+#newitem
+#name "shendyt_light"
+#gameid -1
+#basechance 0.75
+#chanceinc racetheme bronze *10
+#chanceinc racetheme iron *5
+#chanceinc racetheme advanced *2
+#sprite /graphics/monkey/giant/shendyt_light.png
+#recolormask /graphics/monkey/giant/shendyt_recolormask_pale.png
+#type short
+#enditem
+
+#newitem
+#name "shendyt_dark"
+#gameid -1
+#basechance 0.75
+#chanceinc racetheme bronze *10
+#chanceinc racetheme iron *5
+#chanceinc racetheme advanced *2
+#sprite /graphics/monkey/giant/shendyt_dark.png
+#recolormask /graphics/monkey/giant/shendyt_recolormask_dim.png
+#type short
+#enditem
+
+#newitem
+#name "tunic_dark"
+#gameid -1
+#basechance 0.05
+#chanceinc racetheme bronze *5
+#chanceinc racetheme iron *50
+#chanceinc racetheme advanced *100
+#sprite /graphics/monkey/giant/tunic.png
+#recolormask /graphics/monkey/giant/tunic_recolormask1.png
+#type long
+#enditem
+
+#newitem
+#name "tunic_medium"
+#gameid -1
+#basechance 0.05
+#chanceinc racetheme bronze *5
+#chanceinc racetheme iron *50
+#chanceinc racetheme advanced *100
+#sprite /graphics/monkey/giant/tunic.png
+#recolormask /graphics/monkey/giant/tunic_recolormask2.png
+#type long
+#enditem
+
+#newitem
+#name "tunic_light"
+#gameid -1
+#basechance 0.05
+#chanceinc racetheme bronze *5
+#chanceinc racetheme iron *50
+#chanceinc racetheme advanced *100
+#sprite /graphics/monkey/giant/tunic.png
+#recolormask self
+#type long
+#enditem

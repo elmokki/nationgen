@@ -1,0 +1,107 @@
+-------- Troop
+
+#newpose
+#name "colossi"
+#role "elite infantry"
+#basechance 0.5
+#theme "austral"
+#theme "lowland"
+#theme "winged"
+#cannot_be_militia
+#cannot_be_pd
+
+#subrace "bandar colossi"
+#subraceprefix colossi
+
+#command "#gcost +10"
+
+#renderorder "shadow wings extra1 cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda"
+
+#load basesprite /data/items/monkey/colossi/bases.txt
+#load wings /data/items/monkey/colossi/wings.txt
+#load shadow /data/items/monkey/colossi/shadow.txt
+#load hands /data/items/monkey/colossi/hands.txt
+
+#load armor /data/items/monkey/colossi/armor.txt
+#load helmet /data/items/monkey/colossi/helmet.txt
+#load shirt /data/items/monkey/colossi/shirt.txt
+
+#load weapon /data/items/monkey/colossi/weapon.txt
+#load offhand /data/items/monkey/colossi/shields.txt
+#load bonusweapon /data/items/monkey/colossi/bonusranged.txt
+
+#caponlychance 1
+
+#maxunits 2
+#maxvarieties 1
+
+#endpose
+
+
+#newpose
+#name "sacred colossi"
+#role "sacred infantry"
+#basechance 1
+#theme "austral"
+#theme "lowland"
+#theme "winged"
+#cannot_be_militia
+#cannot_be_pd
+
+#subrace "bandar colossi"
+#subraceprefix colossi
+
+#renderorder "shadow wings extra1 cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda"
+
+#load basesprite /data/items/monkey/colossi/bases.txt
+#load wings /data/items/monkey/colossi/wings.txt
+#load shadow /data/items/monkey/colossi/shadow.txt
+#load hands /data/items/monkey/colossi/hands.txt
+
+#load armor /data/items/monkey/colossi/armor.txt
+#load helmet /data/items/monkey/colossi/helmet.txt
+#load shirt /data/items/monkey/colossi/shirt.txt
+
+#load weapon /data/items/monkey/colossi/weapon.txt
+#load offhand /data/items/monkey/colossi/shields.txt
+#load bonusweapon /data/items/monkey/colossi/bonusranged.txt
+
+#caponlychance 0.9
+#sacredratingmulti 1.25
+#endpose
+
+
+-------- Mage
+#newpose
+#name "colossi mage"
+#role "mage"
+#basechance 1
+#theme "austral"
+#theme "lowland"
+#theme "winged"
+
+#subrace "bandar colossi"
+#subraceprefix colossi
+
+#renderorder "shadow wings extra1 cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda"
+
+#magefilters default_magefilters
+#magefilters default_magefilters_strongdefence_expensive
+
+#load basesprite /data/items/monkey/colossi/bases.txt
+#load wings /data/items/monkey/colossi/wings.txt
+#load shadow /data/items/monkey/colossi/shadow.txt
+#load hands /data/items/monkey/colossi/hands_mage.txt
+
+#load helmet /data/items/monkey/colossi/helmet.txt
+#load armor /data/items/monkey/colossi/robes.txt
+
+#load weapon /data/items/monkey/colossi/weapon_caster.txt
+
+#tier 3
+#notfortier 2
+#notfortier 1
+
+#dontvaryhat
+#endpose
+

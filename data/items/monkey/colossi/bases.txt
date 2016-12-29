@@ -1,7 +1,7 @@
 #newitem
 #name "colossi basesprite"
 #gameid -1
-#sprite /graphics/monkey/yeti/colossi_base.png
+#sprite /graphics/monkey/giant/colossi_base.png
 #command "#gcost 35"
 #command "#hp 36"
 #command "#size 4"
@@ -26,7 +26,7 @@
 #newitem
 #name "winged colossi basesprite"
 #gameid -1
-#sprite /graphics/monkey/yeti/colossi_base.png
+#sprite /graphics/monkey/giant/colossi_base.png
 #needs wings winged
 #command "#gcost 50"
 #command "#hp 36"
@@ -41,6 +41,7 @@
 #define "#mapmove 3"
 #define "#ap 12"
 #define "#maxage 100"
+#command "#flying"
 #command "#forestsurvival"
 #noble
 #subraceprefix colossi

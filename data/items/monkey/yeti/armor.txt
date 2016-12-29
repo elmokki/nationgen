@@ -1,20 +1,52 @@
--- No armor
 #newitem
 #name none
-#basechance 10
+#basechance 8
 #chanceinc racetheme advanced *0.1
 #gameid -1
 #theme "naked"
 #armor
 #enditem
 
+#newitem
+#name furs
+#basechance 4
+#chanceinc racetheme advanced *0.1
+#gameid 44
+#sprite /graphics/monkey/giant/furs.png
+#theme "leather"
+#armor
+#enditem
+
+-- Ice studded armor
+#newitem
+#name ice_studded_fur
+#basechance 2
+#chanceinc racetheme advanced *0.1
+#gameid 52
+#sprite /graphics/monkey/giant/icestudded_furs.png
+#armor
+#theme "ice"
+#define "#iceprot 1"
+#enditem
+
+#newitem
+#name ice_studded
+#basechance 0
+#chanceinc racetheme advanced 3
+#gameid 52
+#sprite /graphics/monkey/giant/icestudded.png
+#armor
+#theme "ice"
+#define "#iceprot 1"
+#enditem
+
 -- Icicle armor
 #newitem
 #name icicle_cuirass
-#basechance 1.5
+#basechance 1
 #chanceinc racetheme primitive *0
 #gameid icicle_cuirass
-#sprite /graphics/monkey/yeti/iciclecuirass.png
+#sprite /graphics/monkey/giant/iciclecuirass.png
 #armor
 #theme "ice"
 #define "#iceprot 2"
@@ -25,7 +57,30 @@
 #basechance 0.5
 #chanceinc racetheme primitive *0
 #gameid 133
-#sprite /graphics/monkey/yeti/iciclemail.png
+#sprite /graphics/monkey/giant/iciclemail.png
+#armor
+#theme "ice"
+#define "#iceprot 2"
+#enditem
+
+-- Ice armor
+#newitem
+#name ice_cuirass
+#basechance 0
+#chanceinc racetheme advanced 1
+#gameid 26
+#sprite /graphics/monkey/giant/icecuirass.png
+#armor
+#theme "ice"
+#define "#iceprot 2"
+#enditem
+
+#newitem
+#name ice_hauberk
+#basechance 0
+#chanceinc racetheme advanced 0.5
+#gameid 27
+#sprite /graphics/monkey/giant/icehauberk.png
 #armor
 #theme "ice"
 #define "#iceprot 2"

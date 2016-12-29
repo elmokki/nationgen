@@ -12,7 +12,17 @@
 #basechance 1
 #chanceinc racetheme primitive *10
 #chanceinc racetheme advanced *0
-#sprite /graphics/monkey/yeti/club.png
+#sprite /graphics/monkey/giant/club.png
+#theme "primitive"
+#enditem
+
+#newitem
+#id skull_club
+#gameid 579
+#basechance 1
+#chanceinc racetheme primitive *5
+#chanceinc racetheme advanced *0
+#sprite /graphics/monkey/giant/skullclub.png
 #theme "primitive"
 #enditem
 
@@ -20,7 +30,7 @@
 #id great_club
 #basechance 5
 #gameid 165
-#sprite /graphics/monkey/yeti/greatclub.png
+#sprite /graphics/monkey/giant/greatclub.png
 #theme "primitive"
 #enditem
 
@@ -28,7 +38,7 @@
 #id stone_spear
 #basechance 5
 #gameid 373
-#sprite /graphics/monkey/yeti/stonespear.png
+#sprite /graphics/monkey/giant/stonespear.png
 #theme "primitive"
 #troopweapon
 #enditem
@@ -39,7 +49,17 @@
 #chanceinc racetheme primitive *0
 #chanceinc racetheme advanced *10
 #gameid 44
-#sprite /graphics/monkey/yeti/icemace.png
+#sprite /graphics/monkey/giant/icemace.png
+#theme "ice"
+#enditem
+
+#newitem
+#id iceblade
+#basechance 1
+#chanceinc racetheme primitive *0
+#chanceinc racetheme advanced *10
+#gameid 612
+#sprite /graphics/monkey/giant/iceblade.png
 #theme "ice"
 #enditem
 
@@ -49,16 +69,16 @@
 #chanceinc racetheme primitive *0
 #chanceinc racetheme advanced *10
 #gameid 611
-#sprite /graphics/monkey/yeti/icespear.png
+#sprite /graphics/monkey/giant/icespear.png
 #theme "ice"
 #enditem
 
 #newitem
 #id iceglaive
-#basechance 0.5
+#basechance 1
 #chanceinc racetheme primitive *0
 #chanceinc racetheme advanced *10
 #gameid 454
-#sprite /graphics/monkey/yeti/iceglaive.png
+#sprite /graphics/monkey/giant/iceglaive.png
 #theme "ice"
 #enditem
