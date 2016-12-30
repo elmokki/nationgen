@@ -16,10 +16,8 @@
 #load cloakf /data/items/firbolg/cloakf.txt 1 0
 #load cloakb /data/items/firbolg/cloakb.txt 1 0
 #load armor /data/items/firbolg/robes.txt
-#load weapon /data/items/human/caster/weapon.txt 3 -4
+#load weapon /data/items/firbolg/weapon_mages.txt
 #load offhand /data/items/human/caster/offhands.txt  2 -3
--- #load weapon /data/items/firbolg/weapon_mages.txt
--- #load offhand /data/items/firbolg/offhand_mages.txt
 #load hair /data/items/firbolg/hair.txt
 
 #generateitem 1 hair
@@ -62,6 +60,7 @@
 
 #chanceinc hasprimaryrace *0.2
 #chanceinc racetag "fae" *10
+#chanceinc moduleid herogen *5
 
 #tier 2
 #tier 3
