@@ -81,7 +81,7 @@ public class Item extends Filter {
 		item.armor = armor;
 		item.offsetx = offsetx;
 		item.offsety = offsety;
-		dependencies.addAll(dependencies);
+		item.dependencies.addAll(dependencies);
 		item.commands.addAll(commands);
 		item.slot = slot;
 		item.set = set;
