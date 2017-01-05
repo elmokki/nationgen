@@ -2411,19 +2411,27 @@ public class MageGenerator extends TroopGenerator {
 			tagAll(followers, "varyslot " + newslot);
 		}
 		
+		
+
 		ItemSet used = new ItemSet();
 		for(int k = 0; k < max; k++)
 		{
 			Unit u = parents.get(k); // Old unit
 			Unit nu = followers.get(k); // New unit
 			
-			for(String slot : u.slotmap.keySet())
+			String[] deriveslots = {"weapon", "offhand", "helmet", "armor", "hair", "cloakb", "mount"};
+			if(Generic.containsTag(nu.pose.tags, "deriveslots"))
+				deriveslots = Generic.listToString(Generic.getTagValues(nu.pose.tags, "deriveslots"), " ").split(" ");
+			else if(Generic.containsTag(nu.race.tags, "deriveslots"))
+				deriveslots = Generic.listToString(Generic.getTagValues(nu.race.tags, "deriveslots"), " ").split(" ");
+			
+			
+			for(String slot : deriveslots)
 			{
-				if(slot.equals("overlay"))
-					continue;
 				
 				if(u.pose.getItems(slot) == null || nu.pose.getItems(slot) == null || nu.getSlot(slot) != null)
 					continue;
+				
 				
 				// Just targeted tier		
 				ItemSet all = nu.pose.getItems(slot).filterTag("tier " + toTier, true);

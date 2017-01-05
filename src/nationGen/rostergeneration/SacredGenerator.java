@@ -54,7 +54,7 @@ public class SacredGenerator extends TroopGenerator {
 		double extra = 0;
 		
 
-		int powerups = 2;
+		int powerups = 1;
 		
 		if(random.nextDouble() < 0.25)
 		{
@@ -63,15 +63,22 @@ public class SacredGenerator extends TroopGenerator {
 		if(random.nextDouble() < 0.25)
 		{
 			powerups++;
+		}
+		
+		if(random.nextDouble() < 0.07)
+		{
+			powerups -= 2;
+			power++;
+			origpower++;
 		}
 		
 
 		
 
 		// Determine magic resistance
-		int mradd = power * 3/4;
-		if(mradd > 5)
-			mradd = 5;
+		int mradd = power * 1/2;
+		if(mradd > 4)
+			mradd = 4;
 
 		
 		int origmr = u.getCommandValue("#mr", 10);
@@ -84,7 +91,7 @@ public class SacredGenerator extends TroopGenerator {
 		
 		
 		// Determine morale
-		int origmor = u.getCommandValue("#morr", 10);
+		int origmor = u.getCommandValue("#mor", 10);
 		
 		int morbonus = power + random.nextInt(2); 
 		if(random.nextDouble() > 0.25 *  Math.max(1, 1 + (origmor - 10) / 4))
@@ -92,6 +99,9 @@ public class SacredGenerator extends TroopGenerator {
 		if(random.nextDouble() > 0.25 *  Math.max(1, 1 + (origmor - 10) / 4))
 			morbonus++;
 		
+		if(origmor + morbonus > 16)
+			morbonus -= (origmor + morbonus - 16) / 2;
+			
 		u.commands.add(new Command("#mor", "+" + morbonus ));
 
 
@@ -155,7 +165,7 @@ public class SacredGenerator extends TroopGenerator {
 
 			}
 			// Add more stat boosts
-			else if(random.nextDouble() < 1 - powerups / (double)origpower)
+			else if(random.nextDouble() < 1.1 - powerups / (double)origpower)
 			{
 
 				power--;
@@ -221,6 +231,7 @@ public class SacredGenerator extends TroopGenerator {
 		// Extra stats
 		powerups += power;
 		powerups *= 3;
+		powerups = (int) Math.round(0.5*(double)powerups + 0.75*random.nextDouble()*(double)powerups);
 		
 		int precadded = 0;
 		int encadded = 0;
