@@ -15,6 +15,7 @@
 #sprite /graphics/monkey/offhand/bandar/woodbuckler.png
 #armor
 #theme "enlightened"
+#theme "austral"
 #theme "primitive"
 #theme "wood"
 #enditem
@@ -53,6 +54,7 @@
 #armor
 #theme "enlightened"
 #theme "imperial"
+#theme "austral"
 #theme "iron"
 #enditem
 
@@ -67,4 +69,26 @@
 #theme "imperial"
 #theme "iron"
 #theme "elite"
+#enditem
+
+#newitem
+#basechance 6
+#id hideshield
+#gameid 105
+#sprite /graphics/monkey/offhand/bandar/hideshield.png
+#recolormask /graphics/monkey/offhand/bandar/hideshield_recolormask.png
+#armor
+#theme "austral"
+#theme "leather"
+#enditem
+
+#newitem
+#basechance 6
+#id greathideshield
+#gameid 112
+#sprite /graphics/monkey/offhand/bandar/greathideshield.png
+#recolormask /graphics/monkey/offhand/bandar/greathideshield_recolormask.png
+#armor
+#theme "austral"
+#theme "leather"
 #enditem

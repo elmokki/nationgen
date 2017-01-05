@@ -7,6 +7,7 @@
 #theme "imperial"
 #theme "enlightened"
 #theme "oriental"
+#theme "austral"
 #enditem
 
 
@@ -41,6 +42,7 @@
 #armor
 #tag "tier 3"
 #theme "enlightened"
+#theme "austral"
 #enditem
 
 #newitem
@@ -51,6 +53,7 @@
 #tag "tier 3"
 #theme "enlightened"
 #theme "imperial"
+#theme "austral"
 #enditem
 
 #newitem
@@ -58,10 +61,15 @@
 #gameid -1
 #sprite /graphics/monkey/helmet/bandar_mage/nemes.png
 #recolormask /graphics/monkey/helmet/bandar_mage/nemes_recolormask.png
+#eliteversion "nemes"
+#eliteversion "nemes_ornate"
+#eliteversion "khepresh"
 #armor
 #tag "tier 3"
 #theme "enlightened"
 #theme "imperial"
+#theme "austral"
+#theme "dynastic"
 #enditem
 
 
@@ -559,6 +567,102 @@
 #recolormask /graphics/monkey/helmet/bandar_mage/cap_rahaga2_recolormask.png
 #armor
 #theme "oriental"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+
+-- Austral hats
+#newitem
+#id ironcap_austral
+#gameid 20
+#sprite /graphics/monkey/helmet/bandar/ironcap.png
+#tag "eliteversion giltcap_austral"
+#armor
+#theme "austral"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id giltcap_austral
+#gameid 20
+#sprite /graphics/monkey/helmet/bandar/cap_gilt.png
+#tag "eliteversion crown_machakan"
+#armor
+#theme "austral"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id crown_machakan
+#gameid 148
+#sprite /graphics/monkey/helmet/bandar_mage/crown_machakan.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme "austral"
+#enditem
+
+#newitem
+#id headdress_short
+#gameid -1
+#basechance 5
+#sprite /graphics/monkey/helmet/bandar/headdress.png
+#recolormask self
+#armor
+#tag "eliteversion headdress_short"
+#tag "eliteversion headdress_white"
+#tag "eliteversion headdress_black"
+#tag "eliteversion headdress_dark"
+#tag "eliteversion headdress_light"
+#theme "austral"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id headdress_white
+#gameid 121
+#sprite /graphics/monkey/helmet/bandar/headdress_light.png
+#armor
+#tag "eliteversion headdress_white"
+#tag "eliteversion headdress_light"
+#theme "austral"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id headdress_black
+#gameid 121
+#sprite /graphics/monkey/helmet/bandar/headdress_dark.png
+#armor
+#tag "eliteversion headdress_black"
+#tag "eliteversion headdress_dark"
+#theme "austral"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id headdress_light
+#gameid 121
+#sprite /graphics/monkey/helmet/bandar/headdress_light.png
+#recolormask self
+#armor
+#tag "eliteversion headdress_light"
+#theme "austral"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id headdress_dark
+#gameid 121
+#sprite /graphics/monkey/helmet/bandar/headdress_dark.png
+#recolormask self
+#armor
+#tag "eliteversion headdress_dark"
+#theme "austral"
 #tag "tier 2"
 #tag "tier 3"
 #enditem

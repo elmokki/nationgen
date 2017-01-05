@@ -103,7 +103,6 @@
 #gameid -1
 #sprite /graphics/mounts/standard/armoredhorse2a.png
 #armor
-#offsety 1
 #needs overlay armoredhorse2overlay
 #define "#size 3"
 #define "#mapmove 2"
@@ -129,7 +128,6 @@
 #gameid -1
 #sprite /graphics/mounts/standard/fayhorse.png
 #armor
-#offsety 1
 #define "#size 3"
 #define "#mapmove 3"
 #define "#ap 28"
@@ -175,7 +173,6 @@
 #gameid -1
 #sprite /graphics/mounts/standard/unicorn.png
 #armor
-#offsety 1
 #define "#size 3"
 #define "#mapmove 3"
 #define "#ap 28"
@@ -199,7 +196,8 @@
 #gameid -1
 #sprite /graphics/sidhe/mounts/cusidhe.png
 #armor
-#offsety 1
+#offsetx -5
+#offsety 2
 #define "#size 3"
 #define "#mapmove 3"
 #define "#ap 28"
@@ -222,7 +220,8 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/barghest.png
 #armor
-#offsety 1
+#offsetx -5
+#offsety 2
 #define "#size 3"
 #define "#mapmove 2"
 #define "#ap 26"

@@ -1,33 +1,194 @@
--- No armor
+--- Loinclothes and shendyts
 #newitem
-#name none
-#basechance 10
-#chanceinc racetheme advanced *0.1
+#id greatest_loincloth
 #gameid -1
-#theme "naked"
+#basechance 0.5
+#sprite /graphics/monkey/giant/loincloth.png
+#recolormask self
 #armor
+#theme primitive
 #enditem
 
---- Loincloth
 #newitem
-#id loincloth
-#basechance 5
-#chanceinc racetheme primitive *0.2
-#chanceinc racetheme advanced *2
+#id great_loincloth
 #gameid -1
-#sprite /graphics/monkey/armor/yeti/loincloth.png
-#sprite /graphics/monkey/armor/yeti/loincloth_recolormask.png
+#basechance 0.5
+#sprite /graphics/monkey/giant/loincloth.png
+#recolormask /graphics/monkey/giant/loincloth_recolormask.png
 #armor
+#theme primitive
 #enditem
 
---- Toga
+#newitem
+#id shendyt_fancy_white
+#gameid -1
+#basechance 0.1
+#sprite /graphics/monkey/giant/shendyt_light.png
+#armor
+#theme dynastic
+#enditem
+
+#newitem
+#id shendyt_fancy_grey
+#gameid -1
+#basechance 0.1
+#sprite /graphics/monkey/giant/shendyt_dark.png
+#armor
+#theme dynastic
+#enditem
+
+#newitem
+#id shendyt_fancy_light
+#gameid -1
+#basechance 0.2
+#sprite /graphics/monkey/giant/shendyt_light.png
+#recolormask /graphics/monkey/giant/shendyt_recolormask_pale.png
+#armor
+#theme dynastic
+#enditem
+
+#newitem
+#id shendyt_fancy_pale
+#gameid -1
+#basechance 0.2
+#sprite /graphics/monkey/giant/shendyt_light.png
+#recolormask /graphics/monkey/giant/shendyt_recolormask_dim.png
+#armor
+#theme dynastic
+#enditem
+
+#newitem
+#id shendyt_fancy_dim
+#gameid -1
+#basechance 0.2
+#sprite /graphics/monkey/giant/shendyt_dark.png
+#recolormask /graphics/monkey/giant/shendyt_recolormask_pale.png
+#armor
+#theme dynastic
+#enditem
+
+#newitem
+#id shendyt_fancy_medium
+#gameid -1
+#basechance 0.2
+#sprite /graphics/monkey/giant/shendyt_dark.png
+#recolormask /graphics/monkey/giant/shendyt_recolormask_dim.png
+#armor
+#theme dynastic
+#enditem
+
+#newitem
+#id shendyt_ornate
+#gameid -1
+#basechance 0.25
+#sprite /graphics/monkey/giant/shendyt_ornate1.png
+#recolormask /graphics/monkey/giant/shendyt_ornate1_recolormask.png
+#armor
+#theme dynastic
+#enditem
+
+#newitem
+#id shendyt_ornate_blue
+#gameid -1
+#basechance 0.25
+#sprite /graphics/monkey/giant/shendyt_ornate2.png
+#recolormask /graphics/monkey/giant/shendyt_ornate2_recolormask.png
+#armor
+#theme dynastic
+#blue
+#enditem
+
+
+--- Togas, tunics, and furs
+#newitem
+#id furs
+#gameid 44
+#sprite /graphics/monkey/giant/furs.png
+#recolormask /graphics/monkey/giant/tunic_recolormask1.png
+#armor
+#theme primitive
+#enditem
+
 #newitem
 #id toga
-#basechance 1
-#chanceinc racetheme primitive *0.1
-#chanceinc racetheme advanced *10
-#gameid 158
-#sprite /graphics/monkey/armor/yeti/toga.png
-#sprite /graphics/monkey/armor/yeti/toga_recolormask.png
+#gameid 44
+#sprite /graphics/monkey/giant/toga.png
+#recolormask /graphics/monkey/giant/toga_recolormask3.png
 #armor
+#theme primitive
+#enditem
+
+#newitem
+#id great_toga
+#gameid 158
+#sprite /graphics/monkey/giant/toga.png
+#recolormask self
+#armor
+#enditem
+
+#newitem
+#id tunic_bright
+#gameid 158
+#basechance 0.33
+#sprite /graphics/monkey/giant/tunic.png
+#recolormask self
+#armor
+#enditem
+
+#newitem
+#id tunic_dim
+#gameid 158
+#basechance 0.33
+#sprite /graphics/monkey/giant/tunic.png
+#recolormask /graphics/monkey/giant/tunic_recolormask2.png
+#armor
+#enditem
+
+#newitem
+#id tunic_dull
+#gameid 158
+#basechance 0.33
+#sprite /graphics/monkey/giant/tunic.png
+#recolormask /graphics/monkey/giant/tunic_recolormask1.png
+#armor
+#enditem
+
+#newitem
+#id fancy_toga_white
+#gameid 158
+#basechance 0.25
+#sprite /graphics/monkey/giant/fancytoga_light.png
+#recolormask self
+#armor
+#theme advanced
+#enditem
+
+#newitem
+#id fancy_toga_black
+#gameid 158
+#basechance 0.25
+#sprite /graphics/monkey/giant/fancytoga_dark.png
+#recolormask self
+#armor
+#theme advanced
+#enditem
+
+#newitem
+#id fancy_toga_light
+#gameid 158
+#basechance 0.25
+#sprite /graphics/monkey/giant/fancytoga_light.png
+#recolormask self
+#armor
+#theme advanced
+#enditem
+
+#newitem
+#id fancy_toga_dark
+#gameid 158
+#basechance 0.25
+#sprite /graphics/monkey/giant/fancytoga_dark.png
+#recolormask self
+#armor
+#theme advanced
 #enditem

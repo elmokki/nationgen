@@ -22,7 +22,7 @@
 #enditem
 
 #newitem
-#id none_bronze
+#id none_iron
 #gameid -1
 #basechance 2
 #eliteversion ironcap_elite
@@ -32,7 +32,7 @@
 #enditem
 
 #newitem
-#id none_iron
+#id none_bronze
 #gameid -1
 #basechance 2
 #eliteversion bronzecap_elite
@@ -40,6 +40,187 @@
 #theme "enlightened"
 #theme "bronze"
 #enditem
+
+#newitem
+#id none_austral
+#gameid -1
+#basechance 8
+#armor
+#tag "eliteversion headdress_short"
+#tag "eliteversion headdress_white"
+#tag "eliteversion headdress_black"
+#tag "eliteversion headdress_dark"
+#tag "eliteversion headdress_light"
+#tag "eliteversion ironcap_plain"
+#tag "eliteversion ironcap_white"
+#tag "eliteversion ironcap_black"
+#tag "eliteversion ironcap_dark"
+#tag "eliteversion ironcap_light"
+#theme "austral"
+#theme "naked"
+#enditem
+
+
+-- Austral helmets
+
+#newitem
+#id leathercap_plain
+#gameid 120
+#basechance 2
+#sprite /graphics/monkey/helmet/bandar/leathercap.png
+#armor
+#tag "eliteversion headdress_white"
+#tag "eliteversion headdress_black"
+#tag "eliteversion headdress_dark"
+#tag "eliteversion headdress_light"
+#tag "eliteversion ironcap_plain"
+#theme "austral"
+#theme "leather"
+#maxprot 10
+#enditem
+
+#newitem
+#id ironcap_plain
+#gameid 20
+#basechance 4
+#sprite /graphics/monkey/helmet/bandar/ironcap.png
+#armor
+#tag "eliteversion ironcap_plain"
+#tag "eliteversion ironcap_white"
+#tag "eliteversion ironcap_black"
+#tag "eliteversion ironcap_dark"
+#tag "eliteversion ironcap_light"
+#theme "austral"
+#theme "iron"
+#minprot 10
+#enditem
+
+#newitem
+#id headdress_short
+#gameid -1
+#basechance 5
+#sprite /graphics/monkey/helmet/bandar/headdress.png
+#recolormask self
+#armor
+#tag "eliteversion headdress_short"
+#tag "eliteversion headdress_white"
+#tag "eliteversion headdress_black"
+#tag "eliteversion headdress_dark"
+#tag "eliteversion headdress_light"
+#theme "austral"
+#theme "primitive"
+#enditem
+
+#newitem
+#id headdress_white
+#gameid 120
+#basechance 2
+#sprite /graphics/monkey/helmet/bandar/headdress_light.png
+#armor
+#tag "eliteversion headdress_white"
+#tag "eliteversion headdress_light"
+#tag "eliteversion ironcap_white"
+#tag "eliteversion ironcap_light"
+#theme "austral"
+#theme "leather"
+#maxprot 14
+#enditem
+
+#newitem
+#id headdress_black
+#gameid 120
+#basechance 2
+#sprite /graphics/monkey/helmet/bandar/headdress_dark.png
+#armor
+#tag "eliteversion headdress_black"
+#tag "eliteversion headdress_dark"
+#tag "eliteversion ironcap_black"
+#tag "eliteversion ironcap_dark"
+#theme "austral"
+#theme "leather"
+#maxprot 14
+#enditem
+
+#newitem
+#id headdress_light
+#gameid 120
+#sprite /graphics/monkey/helmet/bandar/headdress_light.png
+#recolormask self
+#armor
+#tag "eliteversion headdress_light"
+#tag "eliteversion ironcap_light"
+#theme "austral"
+#theme "leather"
+#maxprot 14
+#enditem
+
+#newitem
+#id headdress_dark
+#gameid 120
+#sprite /graphics/monkey/helmet/bandar/headdress_dark.png
+#recolormask self
+#armor
+#tag "eliteversion headdress_dark"
+#tag "eliteversion ironcap_dark"
+#theme "austral"
+#theme "leather"
+#maxprot 14
+#enditem
+
+#newitem
+#id ironcap_white
+#gameid 20
+#basechance 2
+#sprite /graphics/monkey/helmet/bandar/headdress_light.png
+#armor
+#tag "eliteversion ironcap_white"
+#tag "eliteversion ironcap_light"
+#theme "austral"
+#theme "iron"
+#theme "elite"
+#minprot 10
+#enditem
+
+#newitem
+#id ironcap_black
+#gameid 20
+#basechance 2
+#sprite /graphics/monkey/helmet/bandar/headdress_dark.png
+#armor
+#tag "eliteversion ironcap_black"
+#tag "eliteversion ironcap_dark"
+#theme "austral"
+#theme "iron"
+#theme "elite"
+#minprot 10
+#enditem
+
+#newitem
+#id ironcap_light
+#gameid 20
+#sprite /graphics/monkey/helmet/bandar/headdress_light.png
+#recolormask self
+#armor
+#tag "eliteversion ironcap_light"
+#theme "austral"
+#theme "iron"
+#theme "elite"
+#minprot 10
+#enditem
+
+#newitem
+#id ironcap_dark
+#gameid 20
+#sprite /graphics/monkey/helmet/bandar/headdress_dark.png
+#recolormask self
+#armor
+#tag "eliteversion ironcap_dark"
+#theme "austral"
+#theme "iron"
+#theme "elite"
+#minprot 10
+#enditem
+
 
 
 -- Enlightened helms

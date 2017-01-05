@@ -5,6 +5,7 @@
 #theme "primitive"
 #theme "enlightened"
 #theme "imperial"
+#theme "austral"
 #theme "iron"
 #enditem
 
@@ -24,6 +25,7 @@
 #sprite /graphics/monkey/weapon/bandar/battleaxe.png
 #theme "enlightened"
 #theme "imperial"
+#theme "austral"
 #theme "iron"
 #troopweapon
 #enditem
@@ -45,6 +47,7 @@
 #theme "primitive"
 #theme "enlightened"
 #theme "imperial"
+#theme "austral"
 #enditem
 
 #newitem
@@ -88,11 +91,22 @@
 #enditem
 
 #newitem
+#id machaka_spear
+#gameid 315
+#basechance 9
+#sprite /graphics/monkey/weapon/bandar/longspear.png
+#recolormask /graphics/monkey/weapon/bandar/machakaspear_recolormask.png
+#theme "austral"
+#theme formationfighter
+#enditem
+
+#newitem
 #id shortsword
 #gameid 6
 #sprite /graphics/monkey/weapon/bandar/shortsword.png
 #theme "iron"
 #theme "imperial"
+#theme "austral"
 #enditem
 
 #newitem
@@ -119,6 +133,7 @@
 #theme "iron"
 #theme "enlightened"
 #theme "oriental"
+#theme "austral"
 #enditem
 
 #newitem
@@ -128,6 +143,7 @@
 #theme "primitive"
 #theme "wood"
 #theme "enlightened"
+#theme "austral"
 #troopweapon
 #enditem
 
@@ -138,6 +154,7 @@
 #theme "iron"
 #theme "enlightened"
 #theme "oriental"
+#theme "austral"
 #troopweapon
 #enditem
 
@@ -155,6 +172,7 @@
 #gameid 16
 #sprite /graphics/monkey/weapon/bandar/flail.png
 #theme "imperial"
+#theme "austral"
 #theme "iron"
 #troopweapon
 #enditem

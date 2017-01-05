@@ -36,14 +36,32 @@
 #enditem
 
 #newitem
-#id great_loincloth
+#id greatest_loincloth
 #gameid -1
 #sprite /graphics/monkey/armor/bandar_mage/loincloth_gold_best.png
 #recolormask /graphics/monkey/armor/bandar_mage/loincloth_gold_recolormask.png
 #armor
 #tag "tier 2"
+#tag "tier 3"
 #eliteversion "great_toga"
+#eliteversion "shendyt_fancy_light"
+#eliteversion "shendyt_fancy_medium"
+#eliteversion "shendyt_fancy_dark"
 #theme "enlightened"
+#theme "austral"
+#enditem
+
+#newitem
+#id great_loincloth
+#gameid -1
+#sprite /graphics/monkey/armor/bandar_mage/loincloth_gold_better.png
+#recolormask /graphics/monkey/armor/bandar_mage/loincloth_gold_recolormask.png
+#armor
+#tag "tier 2"
+#eliteversion "great_toga"
+#eliteversion "greatest_loincloth"
+#theme "enlightened"
+#theme "austral"
 #enditem
 
 #newitem
@@ -57,7 +75,11 @@
 #eliteversion "great_toga"
 #eliteversion "great_loincloth"
 #eliteversion "toga"
+#eliteversion "shendyt_fancy_light"
+#eliteversion "shendyt_fancy_medium"
+#eliteversion "shendyt_fancy_dark"
 #theme "enlightened"
+#theme "austral"
 #enditem
 
 #newitem
@@ -71,7 +93,11 @@
 #eliteversion "great_loincloth"
 #eliteversion "toga"
 #eliteversion "great_toga"
+#eliteversion "shendyt_light"
+#eliteversion "shendyt_medium"
+#eliteversion "shendyt_dark"
 #theme "enlightened"
+#theme "austral"
 #enditem
 
 
@@ -562,4 +588,134 @@
 #tag "tier 2"
 #tag "tier 3"
 #theme "imperial"
+#enditem
+
+
+
+-- Shendyts
+
+#newitem
+#id shendyt_white
+#gameid -1
+#sprite /graphics/monkey/armor/bandar_mage/shendyt_plain_white.png
+#eliteversion "shendyt_light"
+#eliteversion "shendyt_fancy_white"
+#armor
+#tag "tier 1"
+#theme "austral"
+#enditem
+
+#newitem
+#id shendyt_grey
+#gameid -1
+#sprite /graphics/monkey/armor/bandar_mage/shendyt_plain_grey.png
+#eliteversion "shendyt_medium"
+#eliteversion "shendyt_fancy_grey"
+#armor
+#tag "tier 1"
+#theme "austral"
+#enditem
+
+#newitem
+#id shendyt_black
+#gameid -1
+#sprite /graphics/monkey/armor/bandar_mage/shendyt_plain_black.png
+#eliteversion "shendyt_dark"
+#eliteversion "shendyt_fancy_black"
+#armor
+#tag "tier 1"
+#theme "austral"
+#enditem
+
+#newitem
+#id shendyt_fancy_white
+#gameid -1
+#sprite /graphics/monkey/armor/bandar_mage/shendyt_fancy_white.png
+#eliteversion "shendyt_fancy_light"
+#armor
+#tag "tier 2"
+#theme "austral"
+#enditem
+
+#newitem
+#id shendyt_fancy_grey
+#gameid -1
+#sprite /graphics/monkey/armor/bandar_mage/shendyt_fancy_grey.png
+#eliteversion "shendyt_fancy_medium"
+#armor
+#tag "tier 2"
+#theme "austral"
+#enditem
+
+#newitem
+#id shendyt_fancy_black
+#gameid -1
+#sprite /graphics/monkey/armor/bandar_mage/shendyt_fancy_black.png
+#eliteversion "shendyt_fancy_dark"
+#armor
+#tag "tier 2"
+#theme "austral"
+#enditem
+
+#newitem
+#id shendyt_light
+#gameid -1
+#sprite /graphics/monkey/armor/bandar_mage/shendyt_plain_white.png
+#recolormask self
+#eliteversion "shendyt_fancy_light"
+#armor
+#tag "tier 2"
+#theme "austral"
+#enditem
+
+#newitem
+#id shendyt_medium
+#gameid -1
+#sprite /graphics/monkey/armor/bandar_mage/shendyt_plain_grey.png
+#recolormask self
+#eliteversion "shendyt_fancy_medium"
+#armor
+#tag "tier 2"
+#theme "austral"
+#enditem
+
+#newitem
+#id shendyt_dark
+#gameid -1
+#sprite /graphics/monkey/armor/bandar_mage/shendyt_plain_black.png
+#recolormask self
+#eliteversion "shendyt_fancy_dark"
+#armor
+#tag "tier 2"
+#theme "austral"
+#enditem
+
+#newitem
+#id shendyt_fancy_light
+#gameid -1
+#sprite /graphics/monkey/armor/bandar_mage/shendyt_fancy_white.png
+#recolormask /graphics/monkey/armor/bandar_mage/shendyt_fancy_light_recolormask.png
+#armor
+#tag "tier 3"
+#theme "austral"
+#enditem
+
+#newitem
+#id shendyt_fancy_medium
+#gameid -1
+#sprite /graphics/monkey/armor/bandar_mage/shendyt_fancy_grey.png
+#recolormask /graphics/monkey/armor/bandar_mage/shendyt_fancy_medium_recolormask.png
+#armor
+#tag "tier 3"
+#theme "austral"
+#enditem
+
+#newitem
+#id shendyt_fancy_dark
+#gameid -1
+#sprite /graphics/monkey/armor/bandar_mage/shendyt_fancy_black.png
+#recolormask /graphics/monkey/armor/bandar_mage/shendyt_fancy_dark_recolormask.png
+#armor
+#tag "tier 3"
+#theme "austral"
 #enditem

@@ -408,6 +408,17 @@
 #end
 
 #new customweapon
+#name "giantfalchion"
+#command "#natt 1"
+#command "#dmg 10"
+#command "#len 3"
+#command "#rcost 4"
+#command "#name 'Giant Falchion'"
+#command "#slash"
+#command "#ironweapon"
+#end
+
+#new customweapon
 #name "giantgreataxe"
 #command "#natt 1"
 #command "#att +1"
@@ -792,7 +803,6 @@
 #name steel_crossbow
 #command "#att 2"
 #command "#def -2"
-#command "#prec 2"
 #command "#nratt -2"
 #command "#dmg 13"
 #command "#range 35"
@@ -811,13 +821,12 @@
 --- Heavy sling
 #new customweapon
 #name heavy_sling
-#command "#att 1"
+#command "#att -2"
 #command "#dmg 11"
 #command "#range 30"
-#command "#prec -2"
 #command "#ammo 15"
 #command "#twohanded"
-#command "#rcost 2"
+#command "#rcost 1"
 #command "#nostr"
 #command "#flyspr 111 1"
 #command "#sound 15"

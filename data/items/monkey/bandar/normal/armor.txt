@@ -305,3 +305,67 @@
 #theme "iron"
 #theme "elite"
 #enditem
+
+
+-- Austral armor
+#newitem
+#name "austral scale cuirass"
+#gameid 7
+#basechance 0.5
+#sprite /graphics/monkey/armor/bandar/scalecuirass_austral.png
+#armor
+#needstype shirt austral_shirt
+#theme "austral"
+#enditem
+
+#newitem
+#name "austral scale hauberk"
+#gameid 12
+#basechance 0.5
+#sprite /graphics/monkey/armor/bandar/scalehauberk_austral.png
+#armor
+#needstype shirt austral_shirt
+#theme "austral"
+#enditem
+
+#newitem
+#name "austral full scale"
+#gameid 17
+#basechance 0.5
+#sprite /graphics/monkey/armor/bandar/fullscale_austral.png
+#armor
+#theme "austral"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "austral plate cuirass"
+#gameid 9
+#basechance 1.5
+#sprite /graphics/monkey/armor/bandar/platecuirass_austral.png
+#armor
+#needstype shirt austral_shirt
+#theme "austral"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "plate hauberk short"
+#gameid 14
+#basechance 1.5
+#sprite /graphics/monkey/armor/bandar/platehauberk_austral.png
+#armor
+#needstype shirt austral_shirt
+#theme "austral"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "austral full plate"
+#gameid 19
+#basechance 1.5
+#sprite /graphics/monkey/armor/bandar/fullplate_austral.png
+#armor
+#theme "austral"
+#theme "advanced"
+#enditem

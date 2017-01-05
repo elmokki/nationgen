@@ -1,0 +1,85 @@
+#newitem
+#id "nothing"
+#basechance 6
+#gameid -1
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id "hubris"
+#basechance 0.4
+#gameid -1
+#armor
+#theme "fae"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id "bronzecap"
+#gameid 135
+#sprite /graphics/firbolg/helmet/bronzecap.png
+#eliteversion bronzecap_elite
+#theme "bronze"
+#theme "advanced"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id "bronzecap_elite"
+#gameid 135
+#sprite /graphics/firbolg/helmet/bronzecap_elite.png
+#theme "bronze"
+#theme "advanced"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id "ironcap"
+#gameid 20
+#sprite /graphics/firbolg/helmet/ironcap.png
+#eliteversion ironcap_elite
+#theme "iron"
+#theme "advanced"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id "ironcap_elite"
+#gameid 20
+#sprite /graphics/firbolg/helmet/ironcap_elite.png
+#theme "iron"
+#theme "advanced"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id "goldcap"
+#gameid 122
+#basechance 0.1
+#sprite /graphics/firbolg/helmet/goldcap.png
+#eliteversion goldhelm
+#theme "fae"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id "goldhelm"
+#gameid 213
+#basechance 0.2
+#sprite /graphics/firbolg/helmet/goldcap_elite.png
+#theme "fae"
+#armor
+#tag "tier 3"
+#enditem

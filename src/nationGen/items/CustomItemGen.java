@@ -306,6 +306,8 @@ public class CustomItemGen {
 		newitem.sprite = item.sprite;
 		newitem.mask = item.mask;
 		newitem.commands.addAll(item.commands);
+		newitem.tags.addAll(item.tags);
+		newitem.dependencies.addAll(item.dependencies);
 		newitem.setOffsetX(item.getOffsetX());
 		newitem.setOffsetY(item.getOffsetY());
 		newitem.slot = item.slot;

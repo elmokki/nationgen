@@ -1,32 +1,86 @@
--- No armor
 #newitem
-#name none
-#basechance 10
-#chanceinc racetheme advanced *0.1
-#gameid -1
-#theme "naked"
+#name furs
+#gameid 44
+#sprite /graphics/monkey/giant/furs.png
 #armor
-#enditem
-
--- Icicle armor
-#newitem
-#name icicle_cuirass
-#basechance 1.5
-#chanceinc racetheme primitive *0
-#gameid icicle_cuirass
-#sprite /graphics/monkey/armor/yeti/iciclecuirass.png
-#armor
-#theme "ice"
-#define "#iceprot 2"
+#theme "primitive"
+#theme "leather"
+#needs shirt none
 #enditem
 
 #newitem
-#name icicle_mail
-#basechance 0.5
-#chanceinc racetheme primitive *0
-#gameid 133
-#sprite /graphics/monkey/armor/yeti/iciclemail.png
+#name leather_cuirass
+#gameid 5
+#sprite /graphics/monkey/giant/leather_cuirass.png
 #armor
-#theme "ice"
-#define "#iceprot 2"
+#theme "leather"
+#needstype shirt any
+#enditem
+
+#newitem
+#name leather_hauberk
+#gameid 10
+#sprite /graphics/monkey/giant/leather_hauberk.png
+#armor
+#theme "leather"
+#needs shirt none
+#enditem
+
+#newitem
+#name ring_cuirass
+#gameid 6
+#sprite /graphics/monkey/giant/ring_cuirass.png
+#armor
+#theme "leather"
+#theme "iron"
+#needstype shirt any
+#enditem
+
+#newitem
+#name ring_hauberk
+#gameid 11
+#sprite /graphics/monkey/giant/ring_hauberk.png
+#armor
+#theme "leather"
+#theme "iron"
+#needs shirt none
+#enditem
+
+#newitem
+#name scale_cuirass
+#gameid 7
+#sprite /graphics/monkey/giant/scale_cuirass.png
+#armor
+#theme "iron"
+#needstype shirt long
+#enditem
+
+#newitem
+#name scale_hauberk
+#gameid 12
+#chanceinc racetheme winged *0.75
+#sprite /graphics/monkey/giant/scale_hauberk.png
+#armor
+#theme "iron"
+#needstype shirt any
+#enditem
+
+#newitem
+#name plate_cuirass
+#gameid 9
+#chanceinc racetheme winged *0.5
+#sprite /graphics/monkey/giant/plate_cuirass.png
+#armor
+#theme "iron"
+#needstype shirt any
+#enditem
+
+#newitem
+#name plate_hauberk
+#gameid 14
+#chanceinc racetheme winged *0.25
+#sprite /graphics/monkey/giant/plate_hauberk.png
+#armor
+#theme "iron"
+#needs shirt none
 #enditem

@@ -1,64 +1,172 @@
 #newitem
-#id rock
-#gameid 553
-#basechance 0
-#chanceinc racetheme primitive 10
-#theme "primitive"
-#enditem
-
-#newitem
 #id club
 #gameid 252
 #basechance 1
-#chanceinc racetheme primitive *10
-#chanceinc racetheme advanced *0
-#sprite /graphics/monkey/yeti/club.png
+#sprite /graphics/monkey/giant/club.png
 #theme "primitive"
+#theme "wood"
+#enditem
+
+#newitem
+#id skull_club
+#gameid 579
+#basechance 0.5
+#sprite /graphics/monkey/giant/skullclub.png
+#theme "primitive"
+#theme "wood"
 #enditem
 
 #newitem
 #id great_club
-#basechance 5
+#basechance 1
 #gameid 165
-#sprite /graphics/monkey/yeti/greatclub.png
+#sprite /graphics/monkey/giant/greatclub.png
 #theme "primitive"
+#theme "wood"
+#troopweapon
+#needs hands hands_2h
+#needs offhand none
 #enditem
 
 #newitem
 #id stone_spear
-#basechance 5
+#basechance 2
 #gameid 373
-#sprite /graphics/monkey/yeti/stonespear.png
+#sprite /graphics/monkey/giant/stonespear.png
 #theme "primitive"
+#theme "wood"
 #troopweapon
+#needs hands hands_2h
 #enditem
 
 #newitem
-#id ice_mace
+#id spear
+#basechance 2
+#gameid 28
+#sprite /graphics/monkey/giant/longspear.png
+#recolormask /graphics/monkey/giant/longspear_recolormask.png
+#theme "iron"
+#theme "formationfighter"
+#troopweapon
+#needs hands hands_2h
+#enditem
+
+#newitem
+#id longspear
+#basechance 2
+#gameid giantspear
+#sprite /graphics/monkey/giant/longspear.png
+#recolormask /graphics/monkey/giant/longspear_recolormask.png
+#theme "iron"
+#theme "advanced"
+#theme "formationfighter"
+#troopweapon
+#needs hands hands_2h
+#enditem
+
+#newitem
+#id mace
+#basechance 2
+#gameid 12
+#sprite /graphics/monkey/giant/mace.png
+#theme "iron"
+#enditem
+
+#newitem
+#id cudgel
 #basechance 1
-#chanceinc racetheme primitive *0
-#chanceinc racetheme advanced *10
-#gameid 44
-#sprite /graphics/monkey/yeti/icemace.png
-#theme "ice"
+#gameid 363
+#sprite /graphics/monkey/giant/cudgel.png
+#theme "iron"
+#troopweapon
+#needs hands hands_2h
+#needs offhand none
 #enditem
 
 #newitem
-#id ice_spear
+#id flail
 #basechance 1
-#chanceinc racetheme primitive *0
-#chanceinc racetheme advanced *10
-#gameid 611
-#sprite /graphics/monkey/yeti/icespear.png
-#theme "ice"
+#gameid 16
+#sprite /graphics/monkey/giant/flail.png
+#theme "iron"
+#theme "advanced"
+#troopweapon
+#needs hands hands_2h
+#needs offhand none
 #enditem
 
 #newitem
-#id iceglaive
-#basechance 0.5
-#chanceinc racetheme primitive *0
-#chanceinc racetheme advanced *10
-#gameid 454
-#sprite /graphics/monkey/yeti/iceglaive.png
-#theme "ice"
+#id hatchet
+#basechance 1
+#gameid 17
+#sprite /graphics/monkey/giant/axe.png
+#theme "primitive"
+#theme "iron"
+#enditem
+
+#newitem
+#id axe
+#basechance 1
+#gameid giantaxe
+#sprite /graphics/monkey/giant/axe.png
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem
+#id battleaxe
+#basechance 1
+#gameid 18
+#sprite /graphics/monkey/giant/battleaxe.png
+#theme "primitive"
+#theme "iron"
+#troopweapon
+#needs hands hands_2h
+#needs offhand none
+#enditem
+
+#newitem
+#id greataxe
+#basechance 1
+#gameid giantgreataxe
+#sprite /graphics/monkey/giant/battleaxe.png
+#theme "advanced"
+#theme "iron"
+#troopweapon
+#needs hands hands_2h
+#needs offhand none
+#enditem
+
+#newitem
+#id shortsword
+#basechance 1
+#gameid 8
+#sprite /graphics/monkey/giant/shortsword.png
+#theme "iron"
+#enditem
+
+#newitem
+#id broadsword
+#basechance 1
+#gameid giantsword
+#sprite /graphics/monkey/giant/broadsword.png
+#theme "advanced"
+#theme "iron"
+#enditem
+
+#newitem
+#id shortfalchion
+#basechance 1
+#gameid 10
+#sprite /graphics/monkey/giant/shortfalchion.png
+#theme "iron"
+#enditem
+
+#newitem
+#id falchion
+#basechance 1
+#gameid giantfalchion
+#sprite /graphics/monkey/giant/falchion.png
+#theme "advanced"
+#theme "iron"
 #enditem

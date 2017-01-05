@@ -5,6 +5,7 @@
 #theme "imperial"
 #theme "enlightened"
 #theme "oriental"
+#theme "austral"
 #theme "lowland"
 #theme "winged"
 #theme "abysian"
@@ -20,7 +21,7 @@
 #load cloakf /data/items/monkey/bandar/normal/cloakf.txt
 #load cloakb /data/items/monkey/bandar/normal/cloakb.txt
 
-
+#load shirt /data/items/monkey/bandar/normal/shirt.txt
 #load armor /data/items/monkey/bandar/normal/armor.txt
 #load helmet /data/items/monkey/bandar/normal/helmet.txt
 
@@ -43,9 +44,11 @@
 #theme "imperial"
 #theme "enlightened"
 #theme "oriental"
+#theme "austral"
 #theme "lowland"
 #theme "winged"
 #theme "alpine"
+#light
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap bonusweapon quiver armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
@@ -57,7 +60,7 @@
 #load cloakf /data/items/monkey/bandar/normal/cloakf.txt
 #load cloakb /data/items/monkey/bandar/normal/cloakb.txt
 
-
+#load shirt /data/items/monkey/bandar/normal/shirt.txt
 #load armor /data/items/monkey/bandar/normal/lightarmor.txt
 #load helmet /data/items/monkey/bandar/normal/helmet.txt
 
@@ -80,6 +83,7 @@
 #theme "imperial"
 #theme "enlightened"
 #theme "oriental"
+#theme "austral"
 #theme "lowland"
 #theme "winged"
 #theme "alpine"
@@ -94,7 +98,7 @@
 #load cloakf /data/items/monkey/bandar/normal/cloakf.txt
 #load cloakb /data/items/monkey/bandar/normal/cloakb.txt
 
-
+#load shirt /data/items/monkey/bandar/normal/shirt.txt
 #load armor /data/items/monkey/bandar/normal/armor.txt
 #load helmet /data/items/monkey/bandar/normal/helmet.txt
 
@@ -121,6 +125,8 @@
 #theme "abysian"
 #cannot_be_pd
 #basechance 0.5
+#chanceinc moduleid herogen *0
+#light
 
 #freetemplatefilter gladiatortemplate gladiator
 
@@ -134,7 +140,7 @@
 #load cloakf /data/items/monkey/bandar/normal/cloakf.txt
 #load cloakb /data/items/monkey/bandar/normal/cloakb.txt
 
-
+#load shirt /data/items/monkey/bandar/normal/shirt_gladiator.txt
 #load armor /data/items/monkey/bandar/normal/lightarmor.txt
 #load helmet /data/items/monkey/bandar/normal/helmet.txt
 
