@@ -819,12 +819,12 @@ public class SacredGenerator extends TroopGenerator {
 	private void adjustGoldCost(Unit u, boolean sacred)
 	{
 		if(u.pose.types.contains("ranged") || u.pose.types.contains("elite ranged") || u.pose.types.contains("sacred ranged"))
-			if(u.getGoldCost() < 15)
+			if(u.getGoldCost() < 15 && u.getResCost(true) < 15)
 				u.commands.add(new Command("#gcost", "+10"));
 			
 		int cgcost = u.getGoldCost();
 		
-		cgcost -= 75;
+		cgcost -= 70;
 		
 		if(cgcost <= 0)
 		{
@@ -835,12 +835,9 @@ public class SacredGenerator extends TroopGenerator {
 		int newprice = (int) Math.round(Math.pow(cgcost, 0.965));
 		int discount = cgcost - newprice;
 		
-		if(sacred)
-			discount = (int)Math.round(discount * (1/1.3));
-		
-		if(u.isRanged() && u.getGoldCost() - discount > 60)
+		if(u.isRanged() && u.getSlot("mount") == null && u.getGoldCost() - discount > 60)
 		{
-			discount += Math.sqrt(u.getGoldCost() - discount) * 2;
+			discount += (u.getGoldCost() - discount) / 5;
 		}
 	
 		
