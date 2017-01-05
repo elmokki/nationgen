@@ -272,8 +272,8 @@ public class NationGen {
 			
 		}
 		
-
-		System.out.println("Total nations that did not pass restrictions: " + String.valueOf(totalfailed));
+		if(restrictions.size() > 0)
+			System.out.println("Total nations that did not pass restrictions: " + String.valueOf(totalfailed));
 
 		System.out.print("Giving ids");
 		for(Nation n : nations)
