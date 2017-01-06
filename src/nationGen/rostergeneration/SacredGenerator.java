@@ -76,15 +76,16 @@ public class SacredGenerator extends TroopGenerator {
 		
 
 		// Determine magic resistance
-		int mradd = power * 1/2;
+		// Maximum raw addition is 4
+		int mradd = Math.round(power * 1/2);
 		if(mradd > 4)
 			mradd = 4;
 
-		
+		// Any mr above 11 is halved: 13 becomes 12, 15 becomes 13 and so on
 		int origmr = u.getCommandValue("#mr", 10);
-		if(origmr - 10 > 0)
+		if(origmr - 11 > 0)
 		{
-			mradd = mradd - ((origmr - 10) / 2);
+			mradd = mradd - ((origmr - 11) / 2);
 		}
 		
 		u.commands.add(new Command("#mr", "+" + mradd));
@@ -93,12 +94,21 @@ public class SacredGenerator extends TroopGenerator {
 		// Determine morale
 		int origmor = u.getCommandValue("#mor", 10);
 		
-		int morbonus = power + random.nextInt(2); 
-		if(random.nextDouble() > 0.25 *  Math.max(1, 1 + (origmor - 10) / 4))
+		// 50% of power + 50% of 0 to power + 2
+		int morbonus = (int)Math.round(0.5*(double)power + 0.5*(double)random.nextInt(power + 1) + 2); 
+		
+		
+		// At 18 morale, 0% chance
+		// At 16 morale, 6.25% chance
+		// At 14 morale, 12.5% chance
+		// At 12 morale, 18.75% chance
+		// At 10 morale, 25% chance
+		if(random.nextDouble() < (1 - (origmor + morbonus - 10)/8) / 4)
 			morbonus++;
-		if(random.nextDouble() > 0.25 *  Math.max(1, 1 + (origmor - 10) / 4))
+		if(random.nextDouble() < (1 - (origmor + morbonus - 10)/8) / 4)
 			morbonus++;
 		
+		// Morale above 16 gets halved, ie 18 -> 17, 20 -> 18 and so on.
 		if(origmor + morbonus > 16)
 			morbonus -= (origmor + morbonus - 16) / 2;
 			
