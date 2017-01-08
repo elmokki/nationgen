@@ -20,6 +20,10 @@ and not having a modifier will just set unit price and mess things up.
 Basically reduces <power> from sacred/elite power. Can't go below 1/0.
 
 --- Race
+#deriveslots <slots>
+Slots mages can try to downgrade based on higher tier mage equipment. Defaults to "weapon offhand helmet armor hair cloakb mount" without the parentheses.
+This can also be in pose in which case it is prioritized.
+
 #magepriestchance <chance>
 Chance to get primary race mage priests. Default is 0.3. Works for nationthemes and races. Highest value found is used.
 
@@ -218,6 +222,10 @@ stacks multiplicatively.
 PD/start army amount multiplier. These stack like the above commands. 
 
 --- Pose
+
+#deriveslots <slots>
+Slots mages can try to downgrade based on higher tier mage equipment. Defaults to "weapon offhand helmet armor hair cloakb mount" without the parentheses.
+This can also be in race in which case it is ignored if there is an entry in pose as well.
 
 #non_mount_overlay
 Normally overlay ignores the offsets mounts have. This makes them pretty
