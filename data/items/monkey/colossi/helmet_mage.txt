@@ -303,6 +303,7 @@
 #theme dynastic
 #enditem
 
+#newitem
 #id nemes_fancy_blue
 #gameid 148
 #basechance 0.1
@@ -367,9 +368,10 @@
 #basechance 0.1
 #chanceinc slottag body blue 1.9
 #sprite /graphics/monkey/giant/khepresh.png
-#recolormask /graphics/monkey/giant/khepresh_recolormask1.png
+#recolormask /graphics/monkey/giant/khepresh_usekh_recolormask.png
 #armor
 #tag "eliteversion khepresh"
+#tag "eliteversion khepresh_fancy_blue"
 #tag "eliteversion nemes_ornate_blue"
 #notfortier 1
 #tier 2
@@ -383,12 +385,44 @@
 #basechance 0.9
 #chanceinc slottag body blue -0.8
 #sprite /graphics/monkey/giant/khepresh.png
-#recolormask /graphics/monkey/giant/khepresh_recolormask2.png
+#recolormask /graphics/monkey/giant/khepresh_simple_recolormask.png
 #armor
-#tag "eliteversion khepresh"
+#tag "eliteversion khepresh_fancy"
 #tag "eliteversion nemes_ornate"
 #notfortier 1
 #tier 2
+#tier 3
+#theme dynastic
+#enditem
+
+#newitem
+#id khepresh_fancy_blue
+#gameid 148
+#basechance 0.1
+#chanceinc slottag body blue 1.9
+#sprite /graphics/monkey/giant/khepresh_fancy.png
+#recolormask /graphics/monkey/giant/khepresh_usekh_recolormask.png
+#armor
+#tag "eliteversion khepresh_fancy"
+#tag "eliteversion nemes_ornate_blue"
+#notfortier 1
+#notfortier 2
+#tier 3
+#theme dynastic
+#enditem
+
+#newitem
+#id khepresh_fancy
+#gameid 148
+#basechance 0.9
+#chanceinc slottag body blue -0.8
+#sprite /graphics/monkey/giant/khepresh_fancy.png
+#recolormask /graphics/monkey/giant/khepresh_fancy_recolormask.png
+#armor
+#tag "eliteversion khepresh_fancy"
+#tag "eliteversion nemes_ornate"
+#notfortier 1
+#notfortier 2
 #tier 3
 #theme dynastic
 #enditem
