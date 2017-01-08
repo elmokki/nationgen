@@ -43,3 +43,27 @@
 #recolormask /graphics/monkey/giant/toga_recolormask.png
 #armor
 #enditem
+
+--- Ahura skirt
+#newitem
+#id skirt
+#basechance 0.5
+#chanceinc racetheme primitive *0.1
+#chanceinc racetheme advanced *5
+#gameid -1
+#sprite /graphics/monkey/giant/skirt_ahura.png
+#recolormask /graphics/monkey/giant/skirt_ahura_recolormask_light.png
+#eliteversion fancy_skirt
+#armor
+#enditem
+
+#newitem
+#id fancy_skirt
+#basechance 0.25
+#chanceinc racetheme primitive *0.1
+#chanceinc racetheme advanced *5
+#gameid -1
+#sprite /graphics/monkey/giant/skirt_ahura_fancy.png
+#recolormask /graphics/monkey/giant/skirt_ahura_fancy_recolormask_light.png
+#armor
+#enditem
