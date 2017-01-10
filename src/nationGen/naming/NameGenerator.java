@@ -193,9 +193,11 @@ public class NameGenerator {
 	}
 	
 	public List<String> usedSites = new ArrayList<String>();
-	public String getSiteName(Random r, int prim, int sec)
+	public String getSiteName(Random r2, int prim, int sec)
 	{
 
+		Random r = new Random(r2.nextInt());
+		
 		String primary = Generic.integerToPath(prim);
 		String secondary = Generic.integerToPath(sec);
 		

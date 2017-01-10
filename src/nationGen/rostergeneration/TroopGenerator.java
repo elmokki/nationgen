@@ -269,7 +269,11 @@ public class TroopGenerator {
 	}
 	
 	
-
+	/** 
+	 * For montag units
+	 * @param u
+	 * @return
+	 */
 	public Unit equipUnit(Unit u)
 	{
 
@@ -298,7 +302,7 @@ public class TroopGenerator {
 		
 		
 		boolean success = false;
-		if(role.equals("mounted"))
+		if(!role.equals("mounted"))
 		{
 			success = armInfantry(u, t);
 			
@@ -608,7 +612,9 @@ public class TroopGenerator {
 			boolean hasllance = false;
 			
 			ItemSet tempweps = new ItemSet();
-			tempweps.addAll(t.weapons);
+			ItemSet oldweps = new ItemSet();
+			
+			oldweps.addAll(t.weapons);
 			ItemSet lances = new ItemSet();
 			for(Item i : tempweps)
 			{
@@ -618,46 +624,47 @@ public class TroopGenerator {
 					hasllance = true;
 				}
 			}
-			tempweps.removeAll(lances);
+			oldweps.removeAll(lances);
 			
-			boolean has1h = has1H(tempweps);
-			boolean has2h = (!has1H(tempweps) && tempweps.size() > 0);
+			boolean has1h = has1H(oldweps);
+			boolean has2h = (!has1H(oldweps) && oldweps.size() > 0);
 			
 			boolean done = false;
 			int r = -1;
-			tempweps.clear();
 			
+			tempweps.clear();
+
 			while(!done)
 			{
-
 		
-				r = random.nextInt(3);
-
-				if(r == 0 && !has1h) // 1h
+				r = random.nextInt(6);
+				if((r == 0 || r == 1 || r == 2) && !has1h) // 1h
 				{
 
-					tempweps.addAll(t.pose.getItems("weapon").filterTheme("elite", false).filterTheme("sacred", false).filterDom3DB("2h", "0", true, nationGen.weapondb));
-					for(Item i : t.pose.getItems("weapon").filterTheme("elite", false).filterTheme("sacred", false))
+					tempweps.addAll(t.pose.getItems("weapon").filterDom3DB("2h", "0", true, nationGen.weapondb));
+					tempweps.remove(oldweps);
+					for(Item i : t.pose.getItems("weapon"))
 					{
 						if(i.id.equals("357") || i.tags.contains("lightlance"))
-							tempweps.add(i);
+							tempweps.remove(i);
 					}
 					done = true;
 				}
-				else if(r == 1 && !has2h) // 2h
+				else if(r == 3 && !has2h) // 2h
 				{
 
-					tempweps.addAll(t.pose.getItems("weapon").filterTheme("elite", false).filterTheme("sacred", false).filterDom3DB("2h", "1", true, nationGen.weapondb));
-					for(Item i : t.pose.getItems("weapon").filterTheme("elite", false).filterTheme("sacred", false))
+					tempweps.addAll(t.pose.getItems("weapon").filterDom3DB("2h", "1", true, nationGen.weapondb));
+					tempweps.remove(oldweps);
+					for(Item i : t.pose.getItems("weapon"))
 					{
 						if(i.id.equals("357") || i.tags.contains("lightlance"))
-							tempweps.add(i);
+							tempweps.remove(i);
 					}
 					done = true;
 				}
-				else if(r == 2 && !hasllance) // lightlance
+				else if((r == 4 || r == 5) && !hasllance) // lightlance
 				{
-					for(Item i : t.pose.getItems("weapon").filterTheme("elite", false).filterTheme("sacred", false))
+					for(Item i : t.pose.getItems("weapon"))
 					{
 						if(i.id.equals("357") || i.tags.contains("lightlance"))
 						{
@@ -679,9 +686,9 @@ public class TroopGenerator {
 			
 			
 			// Lance
-			
-			if(r == 1 && t.pose.getItems("lanceslot") != null)
+			if(r < 3 && t.pose.getItems("lanceslot") != null)
 			{
+				
 				int ap = 0;
 				for(Command c : t.template.getSlot("mount").commands)
 				{
@@ -694,7 +701,7 @@ public class TroopGenerator {
 					lancelimit = lancelimit * 2;
 
 				boolean getsLance = (ap >= lancelimit);
-				
+				getsLance = true;
 				if(getsLance && t.pose.getItems("lanceslot").size() > 0)
 				{
 					tempweps.clear();
@@ -707,11 +714,11 @@ public class TroopGenerator {
 		
 					Item lance = this.getNewItem("lanceslot", "mounted", unit, tempweps, null);
 					unit.setSlot("lanceslot", lance);
+
 				}
 				
 				
 			}
-				
 
 			
 			return true;
