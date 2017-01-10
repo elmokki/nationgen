@@ -10,9 +10,9 @@ public class TroopMontagTemplate extends MontagTemplate {
 	
 	private TroopGenerator tGen = null;
 	
-	public TroopMontagTemplate(NationGen ngen, Nation n)
+	public TroopMontagTemplate(NationGen ngen, Nation n, TroopGenerator tGen)
 	{
-			tGen = new TroopGenerator(ngen, n);
+			this.tGen = tGen; //new TroopGenerator(ngen, n);
 	}
 
 
