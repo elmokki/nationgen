@@ -269,7 +269,11 @@ public class TroopGenerator {
 	}
 	
 	
-
+	/** 
+	 * For montag units
+	 * @param u
+	 * @return
+	 */
 	public Unit equipUnit(Unit u)
 	{
 
@@ -298,7 +302,7 @@ public class TroopGenerator {
 		
 		
 		boolean success = false;
-		if(role.equals("mounted"))
+		if(!role.equals("mounted"))
 		{
 			success = armInfantry(u, t);
 			

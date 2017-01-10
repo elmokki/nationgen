@@ -981,15 +981,17 @@ public class Unit {
 		}
 		
 		// Handle custom equipment
-		for(String str : this.slotmap.keySet())
+		List<String> slots = new ArrayList<String>();
+		slots.addAll(this.slotmap.keySet());
+		for(String str : slots)
 		{
+			
 			Item i = this.slotmap.get(str);
 			if(i == null)
 				continue;
 			
 			if(!Generic.isNumeric(i.id))
 			{
-
 				Item ti = i.getCopy();
 				ti.tags.add("OLDID " + i.id);
 				ti.id = nationGen.getCustomItemId(i.id);
