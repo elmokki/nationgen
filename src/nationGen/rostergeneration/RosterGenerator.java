@@ -312,20 +312,20 @@ public class RosterGenerator {
 
 		for(Unit unit : cavalry)
 			if(tgen.unitGen.hasMontagPose(unit))
-				tgen.unitGen.handleMontagUnits(unit, new TroopMontagTemplate(nationGen, nation), "montagtroops");
+				tgen.unitGen.handleMontagUnits(unit, new TroopMontagTemplate(nationGen, nation, tgen), "montagtroops");
 		
 		for(Unit unit : chariot)
 			if(tgen.unitGen.hasMontagPose(unit))
-				tgen.unitGen.handleMontagUnits(unit, new TroopMontagTemplate(nationGen, nation), "montagtroops");
+				tgen.unitGen.handleMontagUnits(unit, new TroopMontagTemplate(nationGen, nation, tgen), "montagtroops");
 		
 		for(Unit unit : ranged)
 			if(tgen.unitGen.hasMontagPose(unit))
-				tgen.unitGen.handleMontagUnits(unit, new TroopMontagTemplate(nationGen, nation), "montagtroops");
+				tgen.unitGen.handleMontagUnits(unit, new TroopMontagTemplate(nationGen, nation, tgen), "montagtroops");
 		
 
 		for(Unit unit : infantry)
 			if(tgen.unitGen.hasMontagPose(unit))
-				tgen.unitGen.handleMontagUnits(unit, new TroopMontagTemplate(nationGen, nation), "montagtroops");
+				tgen.unitGen.handleMontagUnits(unit, new TroopMontagTemplate(nationGen, nation, tgen), "montagtroops");
 		
 		//System.out.println("End " + ZonedDateTime.now().toLocalTime().truncatedTo(ChronoUnit.SECONDS));
 
