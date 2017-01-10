@@ -25,6 +25,7 @@
 #sprite /graphics/sidhe/mounts/cusidhe.png
 #needs overlay no_overlay
 #armor
+#offsetx -5
 #offsety 1
 #define "#size 3"
 #define "#mapmove 3"
@@ -194,7 +195,7 @@
 #define "#enc 4"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety -2
-#offsetx -1
+#offsetx -5
 #tag "animal bear"
 #tag "name commander beastmaster"
 #tag "guaranteedprefix bear"
@@ -217,7 +218,7 @@
 #define "#enc 4"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety 4
-#offsetx -1
+#offsetx -5
 #tag "animal bear"
 #tag "name commander beastmaster"
 #tag "guaranteedprefix bear"

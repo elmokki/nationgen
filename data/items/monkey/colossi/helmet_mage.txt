@@ -224,7 +224,6 @@
 
 
 -- Crowns
-
 #newitem
 #id crown_silver
 #gameid 148
@@ -237,11 +236,37 @@
 #enditem
 
 #newitem
-#id crown
+#id crown_gold
 #gameid 148
 #sprite /graphics/monkey/giant/crown_gold.png
 #armor
-#tag "eliteversion crown"
+#tag "eliteversion crown_annunaki"
+#tag "eliteversion crown_ahura"
+#tag "eliteversion crown_gold"
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id crown_ahura
+#gameid 148
+#sprite /graphics/monkey/giant/crown_ahura.png
+#armor
+#tag "eliteversion crown_annunaki"
+#tag "eliteversion crown_ahura"
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id crown_annunaki
+#gameid 148
+#sprite /graphics/monkey/giant/crown_annunaki.png
+#armor
+#tag "eliteversion crown_annunaki"
+#tag "eliteversion crown_ahura"
 #notfortier 1
 #notfortier 2
 #tier 3
@@ -254,6 +279,7 @@
 #chanceinc slottag body blue 1.9
 #sprite /graphics/monkey/giant/nemes.png
 #armor
+#tag "eliteversion nemes_fancy_blue"
 #tag "eliteversion nemes_ornate_blue"
 #tier 1
 #tier 2
@@ -270,9 +296,39 @@
 #recolormask /graphics/monkey/giant/nemes_recolormask.png
 #armor
 #tag "eliteversion nemes_ornate"
+#tag "eliteversion nemes_fancy"
 #tier 1
 #tier 2
 #notfortier 3
+#theme dynastic
+#enditem
+
+#newitem
+#id nemes_fancy_blue
+#gameid 148
+#basechance 0.1
+#chanceinc slottag body blue 1.9
+#sprite /graphics/monkey/giant/nemes_fancy.png
+#armor
+#tag "eliteversion nemes_ornate_blue"
+#notfortier 1
+#tier 2
+#tier 3
+#theme dynastic
+#enditem
+
+#newitem
+#id nemes_fancy
+#gameid 148
+#basechance 0.9
+#chanceinc slottag body blue -0.8
+#sprite /graphics/monkey/giant/nemes_fancy.png
+#recolormask /graphics/monkey/giant/nemes_fancy_recolormask.png
+#armor
+#tag "eliteversion nemes_ornate"
+#notfortier 1
+#tier 2
+#tier 3
 #theme dynastic
 #enditem
 
@@ -312,9 +368,10 @@
 #basechance 0.1
 #chanceinc slottag body blue 1.9
 #sprite /graphics/monkey/giant/khepresh.png
-#recolormask /graphics/monkey/giant/khepresh_recolormask1.png
+#recolormask /graphics/monkey/giant/khepresh_usekh_recolormask.png
 #armor
 #tag "eliteversion khepresh"
+#tag "eliteversion khepresh_fancy_blue"
 #tag "eliteversion nemes_ornate_blue"
 #notfortier 1
 #tier 2
@@ -328,12 +385,133 @@
 #basechance 0.9
 #chanceinc slottag body blue -0.8
 #sprite /graphics/monkey/giant/khepresh.png
-#recolormask /graphics/monkey/giant/khepresh_recolormask2.png
+#recolormask /graphics/monkey/giant/khepresh_simple_recolormask.png
 #armor
-#tag "eliteversion khepresh"
+#tag "eliteversion khepresh_fancy"
 #tag "eliteversion nemes_ornate"
 #notfortier 1
 #tier 2
+#tier 3
+#theme dynastic
+#enditem
+
+#newitem
+#id khepresh_fancy_blue
+#gameid 148
+#basechance 0.1
+#chanceinc slottag body blue 1.9
+#sprite /graphics/monkey/giant/khepresh_fancy.png
+#recolormask /graphics/monkey/giant/khepresh_usekh_recolormask.png
+#armor
+#tag "eliteversion khepresh_fancy"
+#tag "eliteversion nemes_ornate_blue"
+#notfortier 1
+#notfortier 2
+#tier 3
+#theme dynastic
+#enditem
+
+#newitem
+#id khepresh_fancy
+#gameid 148
+#basechance 0.9
+#chanceinc slottag body blue -0.8
+#sprite /graphics/monkey/giant/khepresh_fancy.png
+#recolormask /graphics/monkey/giant/khepresh_fancy_recolormask.png
+#armor
+#tag "eliteversion khepresh_fancy"
+#tag "eliteversion nemes_ornate"
+#notfortier 1
+#notfortier 2
+#tier 3
+#theme dynastic
+#enditem
+
+#newitem
+#id hedjet_white
+#gameid 148
+#basechance 0.25
+#sprite /graphics/monkey/giant/hedjet_white.png
+#armor
+#tag "eliteversion hedjet_pale"
+#tag "eliteversion hedjet_dull"
+#tag "eliteversion hedjet_fancy_white"
+#tier 1
+#notfortier 2
+#notfortier 3
+#theme dynastic
+#enditem
+
+#newitem
+#id hedjet_pale
+#gameid 148
+#basechance 0.25
+#sprite /graphics/monkey/giant/hedjet.png
+#recolormask /graphics/monkey/giant/hedjet_recolormask1.png
+#armor
+#tag "eliteversion hedjet_fancy_pale"
+#tag "eliteversion hedjet_fancy_white"
+#notfortier 1
+#tier 2
+#notfortier 3
+#theme dynastic
+#enditem
+
+#newitem
+#id hedjet_dull
+#gameid 148
+#basechance 0.25
+#sprite /graphics/monkey/giant/hedjet.png
+#recolormask /graphics/monkey/giant/hedjet_recolormask2.png
+#armor
+#tag "eliteversion hedjet_fancy_dull"
+#tag "eliteversion hedjet_fancy_white"
+#notfortier 1
+#tier 2
+#notfortier 3
+#theme dynastic
+#enditem
+
+#newitem
+#id hedjet_fancy_white
+#gameid 148
+#basechance 0.25
+#sprite /graphics/monkey/giant/hedjet_fancy_white.png
+#armor
+#tag "eliteversion hedjet_fancy_pale"
+#tag "eliteversion hedjet_fancy_dull"
+#notfortier 1
+#tier 2
+#tier 3
+#theme dynastic
+#enditem
+
+#newitem
+#id hedjet_fancy_pale
+#gameid 148
+#basechance 0.25
+#sprite /graphics/monkey/giant/hedjet_fancy.png
+#recolormask /graphics/monkey/giant/hedjet_fancy_recolormask1.png
+#armor
+#tag "eliteversion hedjet_fancy_pale"
+#tag "eliteversion hedjet_fancy_white"
+#notfortier 1
+#notfortier 2
+#tier 3
+#theme dynastic
+#enditem
+
+#newitem
+#id hedjet_fancy_dull
+#gameid 148
+#basechance 0.25
+#sprite /graphics/monkey/giant/hedjet_fancy.png
+#recolormask /graphics/monkey/giant/hedjet_fancy_recolormask2.png
+#armor
+#tag "eliteversion hedjet_fancy_dull"
+#tag "eliteversion hedjet_fancy_white"
+#notfortier 1
+#notfortier 2
 #tier 3
 #theme dynastic
 #enditem
