@@ -3,39 +3,24 @@
 #visiblename "Human"
 #basechance 0.3
 
-#pose amazoninfantry
-#pose amazonranged
-#pose amazonmage
-#pose amazoncavalry
-#pose meticinfantry
-#pose meticranged
+#spritegenpose amazoninfantry
+#spritegenpose amazonranged
+#spritegenpose amazonmage
+#spritegenpose amazoncavalry
+#spritegenpose meticinfantry
+#spritegenpose meticranged
 
-#raceprefix amazon
 #central
 
 #racethemes amazon_themes
 #freetheme techlevel
+#freetheme demographic
+#freetheme tribal
 
 #longsyllables /data/names/nations/amazon/longsyllables.txt
 #shortsyllables /data/names/nations/amazon/shortsyllables.txt
 #suffixes /data/names/nations/amazon/suffixes.txt
 
-#unitcommand "#str 9"
-#unitcommand "#att 11"
-#unitcommand "#def 11"
-#unitcommand "#mor 11"
-#unitcommand "#prec 12"
-#unitcommand "#gcost 12"
-#unitcommand "#nametype 135"
-
 #generateitem 1 hair
-
-#generationchance mounted 1.5
-#generationchance ranged 1.25
-#sacredmountedchance 5
-
-#tag "preferredmount serpent"
-#tag "preferredmount lizard"
-#tag "preferredmount horse"
 
 #endrace
