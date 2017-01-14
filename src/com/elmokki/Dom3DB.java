@@ -9,7 +9,18 @@ public class Dom3DB {
 	
 	public HashMap<String, String> entryMap = new HashMap<String, String>();
     private String[] definition;
-
+    private List<String> booleanargs;
+    
+    public String[] getDefinition()
+    {
+    	return definition;
+    }
+    
+    public List<String> getBooleanArgs()
+    {
+    	return booleanargs;
+    }
+    
     public int getSize()
     {
     	return entryMap.size();
@@ -78,7 +89,27 @@ public class Dom3DB {
         file.close();
         
 
-
+        // Find out boolean args
+    	booleanargs = new ArrayList<String>();
+    	for(String str : definition)
+    	{
+    		boolean isBool = true;
+    		for(String id : entryMap.keySet())
+    		{
+    			if(this.GetValue(id, str).equals("") || this.GetValue(id, str).equals("0") || this.GetValue(id, str).equals("1"))
+    			{
+    				// Do nothing
+    			}
+    			else
+    			{
+    				isBool = false;
+    				break;
+    			}
+    		}
+    		
+    		if(isBool)
+    			booleanargs.add(str);
+    	}
     }
     
     
