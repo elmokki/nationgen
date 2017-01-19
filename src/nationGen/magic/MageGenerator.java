@@ -502,11 +502,27 @@ public class MageGenerator extends TroopGenerator {
 				else
 				{
 					if(i == 2 && leaderrandom1 > 0.9)
+					{
 						mages.get(i).get(j).commands.add(new Command("#goodleader"));
-					else if(i == 2 && leaderrandom1 > 0.6){/*do nothing*/}
-					else if(i == 1 && leaderrandom1 > 0.9 && leaderrandom2 > 0.5){/*do nothing*/}
-					else
+						mages.get(i).get(j).commands.add(new Command("#gcost +40"));
+					}
+					else if(i == 2 && leaderrandom1 > 0.6)
+					{
+						mages.get(i).get(j).commands.add(new Command("#gcost +20"));
+					}
+					else if(i == 1 && leaderrandom1 > 0.9 && leaderrandom2 > 0.5)
+					{
+						mages.get(i).get(j).commands.add(new Command("#gcost +20"));
+					}
+					else if(leaderrandom2 > 0.3 || leaderrandom1 > 0.3 || i > 0)
+					{
 						mages.get(i).get(j).commands.add(new Command("#poorleader"));
+						mages.get(i).get(j).commands.add(new Command("#gcost +5"));
+					}
+					else
+					{
+						mages.get(i).get(j).commands.add(new Command("#noleader"));
+					}
 				}
 
 					
