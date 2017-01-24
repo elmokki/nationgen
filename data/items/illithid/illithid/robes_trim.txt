@@ -1,0 +1,67 @@
+#newitem
+#id "silver"
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/trim/silver.png
+#eliteversion fancy
+#eliteversion gold
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id "gold"
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/trim/gold.png
+#eliteversion fancy
+#eliteversion ornate
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id "faint"
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/trim/silver.png
+#recolormask /graphics/illithid/illithid/robes/trim/faint.png
+#eliteversion fancy
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id "faded"
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/trim/silver.png
+#recolormask /graphics/illithid/illithid/robes/trim/faded.png
+#eliteversion fancy
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id "fancy"
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/trim/fancy.png
+#recolormask self
+#eliteversion fancy
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id "ornate"
+#gameid -1
+#chanceinc 0.5
+#chanceinc moduleid herogen *10
+#sprite /graphics/illithid/illithid/robes/trim/ornate.png
+#recolormask self
+#eliteversion ornate
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem

@@ -1,0 +1,15 @@
+--- Hands belonging to an armor set should be given id of the lowest prot armor they go with if you want to avoid naked people with plate gloves.
+
+#newitem
+#id "normal_hands"
+#gameid -1
+#sprite /graphics/illithid/illithid/hands_hafted.png
+#enditem
+
+#newitem
+#id "mindflayer_hands"
+#basechance 0
+#nogen
+#gameid -1
+#sprite /graphics/illithid/illithid/hands_reaching.png
+#enditem

@@ -1,0 +1,190 @@
+-- Illithid mages
+
+#newpose
+#name "illithid mages T2"
+#role "mage"
+
+#chanceinc 2
+
+#command "#gcost 50"
+#command "#hp 30"
+#command "#size 4"
+#command "#prot 5"
+#adjustmentcommand "#mr 18"
+#adjustmentcommand "#mor 9"
+#command "#str 16"
+#command "#att 11"
+#command "#def 7"
+#command "#prec 12"
+#command "#enc 2"
+#command "#ap 8"
+#command "#magiccommand +60"
+#command "#maxage 3000"
+#command "#darkvision 100"
+#command "#voidsanity 10"
+#command "#bluntres"
+#command "#magicbeing"
+#command "#amphibian"
+#command "#weapon 86"
+#subrace illithid
+#command "#descr 'Illithids are pink masses of writhing tentacles, said to be from a distant star.'"
+
+#renderorder "shadow color pattern trim armor basesprite weapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/illithid/illithid/bases.txt
+#load shadow /data/items/illithid/illithid/shadow.txt
+#load hands /data/items/illithid/illithid/hands.txt
+
+#load armor /data/items/illithid/illithid/robes.txt
+#load color /data/items/illithid/illithid/robes_color.txt
+#load pattern /data/items/illithid/illithid/robes_pattern.txt
+#load trim /data/items/illithid/illithid/robes_trim.txt
+#load helmet /data/items/illithid/illithid/head.txt
+
+#load weapon /data/items/illithid/illithid/weapon_mage.txt
+
+#generateitem 1 color
+#generateitem 1 pattern
+#generateitem 1 trim
+
+#notfortier 1
+#tier 2
+#notfortier 3
+
+#dontvaryweapon
+
+#varyslot color
+#varyslot pattern
+#varyslot trim
+
+#endpose
+
+
+
+#newpose
+#name "illithid mages T3"
+#role "mage"
+
+#chanceinc 5
+#chanceinc moduleid herogen *200
+
+#command "#gcost 50"
+#command "#hp 26"
+#command "#size 4"
+#command "#prot 5"
+#adjustmentcommand "#mr 20"
+#adjustmentcommand "#mor 9"
+#command "#str 15"
+#command "#att 10"
+#command "#def 6"
+#command "#prec 12"
+#command "#enc 2"
+#command "#ap 8"
+#command "#magiccommand +80"
+#command "#maxage 3000"
+#command "#darkvision 100"
+#command "#voidsanity 10"
+#command "#bluntres"
+#command "#magicbeing"
+#command "#amphibian"
+#command "#weapon 86"
+#subrace illithid
+#command "#descr 'Illithids are pink masses of writhing tentacles, said to be from a distant star.'"
+
+#strongmagicpatterns
+
+#renderorder "shadow color pattern trim armor basesprite weapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/illithid/illithid/bases.txt
+#load shadow /data/items/illithid/illithid/shadow.txt
+#load hands /data/items/illithid/illithid/hands.txt
+
+#load armor /data/items/illithid/illithid/robes.txt
+#load color /data/items/illithid/illithid/robes_color.txt
+#load pattern /data/items/illithid/illithid/robes_pattern.txt
+#load trim /data/items/illithid/illithid/robes_trim.txt
+#load helmet /data/items/illithid/illithid/head.txt
+
+#load weapon /data/items/illithid/illithid/weapon_mage.txt
+
+#generateitem 1 color
+#generateitem 1 pattern
+#generateitem 1 trim
+
+#notfortier 1
+#notfortier 2
+#tier 3
+
+#dontvaryweapon
+
+#varyslot color
+#varyslot pattern
+#varyslot trim
+
+#endpose
+
+
+
+#newpose
+#name "illithid summoner"
+#role "mage"
+
+#chanceinc 1
+#chanceinc moduleid herogen *200
+
+#command "#gcost 50"
+#command "#hp 30"
+#command "#size 4"
+#command "#prot 5"
+#adjustmentcommand "#mr 18"
+#adjustmentcommand "#mor 9"
+#command "#str 16"
+#command "#att 11"
+#command "#def 7"
+#command "#prec 12"
+#command "#enc 2"
+#command "#ap 8"
+#command "#magiccommand +40"
+#command "#maxage 3000"
+#command "#darkvision 100"
+#command "#voidsanity 10"
+#command "#voidsum 3"
+#command "#bluntres"
+#command "#magicbeing"
+#command "#amphibian"
+#command "#weapon 86"
+#subrace illithid
+#command "#descr 'Illithids are pink masses of writhing tentacles, said to be from a distant star.'"
+
+#weakmagicpatterns
+#magicpriority astral *10
+
+#renderorder "shadow color pattern trim armor basesprite weapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/illithid/illithid/bases.txt
+#load shadow /data/items/illithid/illithid/shadow.txt
+#load hands /data/items/illithid/illithid/hands.txt
+
+#load armor /data/items/illithid/illithid/robes.txt
+#load color /data/items/illithid/illithid/robes_color.txt
+#load pattern /data/items/illithid/illithid/robes_pattern.txt
+#load trim /data/items/illithid/illithid/robes_trim.txt
+#load helmet /data/items/illithid/illithid/head.txt
+
+#load weapon /data/items/illithid/illithid/weapon_mage.txt
+
+#generateitem 1 color
+#generateitem 1 pattern
+#generateitem 1 trim
+
+#notfortier 1
+#tier 2
+#notfortier 3
+
+#dontvaryweapon
+
+#varyslot color
+#varyslot pattern
+#varyslot trim
+
+#endpose

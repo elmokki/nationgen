@@ -1,0 +1,143 @@
+
+-- Simple colors
+
+#newitem
+#id robes_light1
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/color/white.png
+#recolormask /graphics/illithid/illithid/robes/color/recolormask_light.png
+#tag "eliteversion robes_light2"
+#armor
+#enditem
+
+#newitem
+#id robes_medium1
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/color/medium.png
+#recolormask /graphics/illithid/illithid/robes/color/recolormask_light.png
+#tag "eliteversion robes_medium2"
+#armor
+#enditem
+
+#newitem
+#id robes_dark1
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/color/black.png
+#recolormask /graphics/illithid/illithid/robes/color/recolormask_light.png
+#tag "eliteversion robes_dark2"
+#armor
+#enditem
+
+#newitem
+#id robes_light2
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/color/white.png
+#recolormask /graphics/illithid/illithid/robes/color/recolormask_medium.png
+#tag "eliteversion robes_light3"
+#tag "eliteversion robes_white3"
+#armor
+#enditem
+
+#newitem
+#id robes_medium2
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/color/medium.png
+#recolormask /graphics/illithid/illithid/robes/color/recolormask_vivid.png
+#tag "eliteversion robes_medium3"
+#tag "eliteversion robes_greyest"
+#armor
+#enditem
+
+#newitem
+#id robes_dark2
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/color/black.png
+#recolormask /graphics/illithid/illithid/robes/color/recolormask_middling.png
+#recolormask self
+#tag "eliteversion robes_dark3"
+#tag "eliteversion robes_black3"
+#armor
+#enditem
+
+
+
+
+-- Softer colors
+
+#newitem
+#id robes_pale
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/color/white.png
+#recolormask /graphics/illithid/illithid/robes/color/recolormask_dull.png
+#tag "eliteversion robes_light"
+#armor
+#enditem
+
+#newitem
+#id robes_paleish
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/color/medium.png
+#recolormask /graphics/illithid/illithid/robes/color/recolormask_pale.png
+#tag "eliteversion robes_lightish"
+#armor
+#enditem
+
+#newitem
+#id robes_dullish
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/color/medium.png
+#recolormask /graphics/illithid/illithid/robes/color/recolormask_dull.png
+#tag "eliteversion robes_darkish"
+#armor
+#enditem
+
+#newitem
+#id robes_dull
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/color/black.png
+#recolormask /graphics/illithid/illithid/robes/color/recolormask_dull.png
+#tag "eliteversion robes_dim"
+#armor
+#enditem
+
+#newitem
+#id robes_light
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/color/white.png
+#recolormask /graphics/illithid/illithid/robes/color/recolormask_pale.png
+#tag "eliteversion robes_bright"
+#tag "eliteversion robes_white3"
+#armor
+#enditem
+
+#newitem
+#id robes_lightish
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/color/medium.png
+#recolormask /graphics/illithid/illithid/robes/color/recolormask_light.png
+#tag "eliteversion robes_lighter"
+#tag "eliteversion robes_greyest"
+#tag "eliteversion robes_white3"
+#armor
+#enditem
+
+#newitem
+#id robes_darkish
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/color/medium.png
+#recolormask self
+#tag "eliteversion robes_darker"
+#tag "eliteversion robes_greyest"
+#tag "eliteversion robes_black3"
+#armor
+#enditem
+
+#newitem
+#id robes_dim
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/color/black.png
+#recolormask self
+#tag "eliteversion robes_dark"
+#tag "eliteversion robes_black3"
+#armor
+#enditem

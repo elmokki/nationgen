@@ -1,0 +1,67 @@
+---------- Mages and Priests - these are standard mages
+--- No legs, so do not use this pose for non-robe armors.
+
+#newpose
+#role "mage"
+#role "priest"
+
+#tier 1
+#tier 2
+#tier 3
+
+#renderorder "shadow cloakb basesprite armor cloakf bonusweapon weapon offhand hands hair helmet"
+
+#load basesprite /data/items/amazon/caster/lamiabases_caster.txt
+#load shadow /data/items/amazon/normal/shadow.txt
+
+#load hands /data/items/amazon/caster/amazonhands_caster.txt
+
+#load armor /data/items/amazon/caster/amazonrobes.txt
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakf /data/items/amazon/normal/amazoncloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load cloakb /data/items/amazon/normal/amazoncloakb.txt
+
+#load hair /data/items/amazon/caster/amazonhair.txt
+#load weapon /data/items/human/caster/weapon.txt
+#load helmet /data/items/amazon/caster/amazonhat_caster.txt
+#load offhand /data/items/human/caster/offhands.txt
+
+#endpose
+
+
+---- Warrior-mages
+--- these use a caster "armor" sprite as legs
+
+#newpose
+#role "mage"
+#role "priest"
+#name "warrior-mage"
+#basechance 0.25
+#warriormage
+
+#tier 1
+#tier 2
+#tier 3
+
+#load basesprite /data/items/amazon/caster/lamiabases_caster.txt
+#load shadow /data/items/amazon/normal/shadow.txt
+
+#load hands /data/items/amazon/caster/amazonhands_caster.txt
+
+#load armor /data/items/amazon/caster/amazonarmor_caster.txt
+#load legs /data/items/amazon/caster/amazonrobes_warrior.txt
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+#load cloakf /data/items/human/normal/themedcloakf.txt
+#load cloakb /data/items/human/normal/themedcloakb.txt
+
+#load hair /data/items/human/normal/humanhair.txt offsetx 0 offsety 1
+#load helmet /data/items/amazon/caster/amazonhelmet_caster.txt
+#load weapon /data/items/amazon/caster/amazonweapon_caster.txt
+#load offhand /data/items/amazon/caster/amazonoffhand_caster.txt
+#load weapon /data/items/amazon/caster/amazonweapon_caster_bronze.txt
+#load offhand /data/items/amazon/caster/amazonoffhand_caster_bronze.txt
+#load offhand /data/items/amazon/caster/amazonshield_caster.txt
+
+#endpose

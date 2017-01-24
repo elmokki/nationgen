@@ -1,0 +1,82 @@
+#newitem
+#id "none"
+#gameid -1
+#basechance 0.25
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id "faint"
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/pattern/blank.png
+#recolormask /graphics/illithid/illithid/robes/pattern/faint.png
+#eliteversion bright
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id "dim"
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/pattern/blank.png
+#recolormask /graphics/illithid/illithid/robes/pattern/dim.png
+#eliteversion dull
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id "middling"
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/pattern/starspawn_middling.png
+#recolormask self
+#eliteversion dull
+#eliteversion bright
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id "bright"
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/pattern/starspawn_bright.png
+#recolormask self
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id "dull"
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/pattern/starspawn_dull.png
+#recolormask self
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id "silver"
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/pattern/starspawn_silver.png
+#eliteversion gold
+#eliteversion bright
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id "gold"
+#gameid -1
+#sprite /graphics/illithid/illithid/robes/pattern/starspawn_gold.png
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem

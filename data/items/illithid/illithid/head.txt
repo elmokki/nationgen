@@ -1,0 +1,84 @@
+#newitem
+#name "none"
+#gameid -1
+#basechance 6
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#eliteversion squid
+#eliteversion nautilus
+#enditem
+
+#newitem
+#name crown_coral
+#gameid 148
+#sprite /graphics/illithid/illithid/helmet/crown_coral.png
+#eliteversion crown_gold
+#theme coral
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#name crown_silver
+#gameid 148
+#sprite /graphics/illithid/illithid/helmet/crown_iron.png
+#eliteversion crown_gold
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#name crown_gold
+#gameid 148
+#sprite /graphics/illithid/illithid/helmet/crown_gold.png
+#eliteversion squid
+#eliteversion nautilus
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#name squid
+#gameid -1
+#chanceinc moduleid herogen *5
+#sprite /graphics/illithid/illithid/helmet/head_squid.png
+#eliteversion evilsquid
+#eliteversion nautilus
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#name nautilus
+#gameid 122
+#chanceinc moduleid herogen *5
+#sprite /graphics/illithid/illithid/helmet/head_nautilus.png
+#eliteversion evilsquid
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#name evilsquid
+#gameid -1
+#basechance 0.25
+#chanceinc moduleid herogen *40
+#sprite /graphics/illithid/illithid/helmet/head_evilsquid.png
+#eliteversion evilsquid
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem

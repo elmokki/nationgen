@@ -6,7 +6,6 @@
 
 
 -- Tech level themes
-
 -- Weights: EA 1, MA 1, LA 0.5
 #newtheme
 #type techlevel
@@ -73,7 +72,71 @@
 #endtheme
 
 
+
+-- Demographic themes
+#newtheme
+#type demographic
+#name matriarchal
+#basechance 2.5
+#racedefinition "#raceprefix amazon"
+#racedefinition "#pose amazoninfantry"
+#racedefinition "#pose amazonranged"
+#racedefinition "#pose amazonmage"
+#racedefinition "#pose amazoncavalry"
+#racedefinition "#pose meticinfantry"
+#racedefinition "#pose meticranged"
+#racedefinition "#generationchance mounted 1.5"
+#racedefinition "#generationchance ranged 1.25"
+#racedefinition "#sacredmountedchance 5"
+#racedefinition "#preferredmount serpent"
+#racedefinition "#preferredmount lizard"
+#racedefinition "#preferredmount horse"
+#endtheme
+
+#newtheme
+#type demographic
+#name patriarchal
+-- #basechance 0.375
+#basechance 0
+-- #racedefinition "#pose centralinfantry"
+-- #racedefinition "#pose centralranged"
+-- #racedefinition "#pose centralcavalry"
+-- #racedefinition "#pose centralmages"
+#endtheme
+
+#newtheme
+#type demographic
+#name lamia
+-- #basechance 0.125
+#basechance 0.5
+#racedefinition "#name Lamia"
+#racedefinition "#visiblename Lamia"
+#racedefinition "#pose lamiatroops"
+#racedefinition "#pose lamiamage"
+#racedefinition "#magicpriority death 6"
+#racedefinition "#magicpriority nature 3"
+#racedefinition "#magicpriority blood 1.5"
+#racedefinition "#magicpriority water 1.5"
+#endtheme
+
+
 -- Tribal themes
+-- Weights: EA 0.5, MA 1, LA 3
+#newtheme
+#type tribal
+#name civilized
+#basechance 2
+#chanceinc era 1 -1.5
+#chanceinc era 2 -1
+#chanceinc racetheme lamia *5
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *0.25
+#themeinc theme primitive *0.25
+#endtheme
 
 -- Weights: EA 2, MA 1, LA 0.5
 #newtheme
@@ -82,6 +145,7 @@
 #basechance 2
 #chanceinc era 2 -1
 #chanceinc era 3 -1.5
+#chanceinc racetheme patriarchal *0
 #themeinc theme advanced *1
 #themeinc theme iron *0.5
 #themeinc theme bronze *0.5
@@ -106,6 +170,7 @@
 #basechance 2
 #chanceinc era 2 -1
 #chanceinc era 3 -1.5
+#chanceinc racetheme patriarchal *0
 #themeinc theme advanced *1
 #themeinc theme iron *1
 #themeinc theme bronze *2
@@ -113,7 +178,6 @@
 #themeinc theme leather *0.5
 #themeinc theme naked *0.5
 #themeinc theme primitive *1
-#themeinc racename "Boreal human"bred *4
 #themeinc racename abysian *2
 #racedefinition "#unitcommand #wastelandsurvival"
 #racedefinition "#nationcommand '#idealcold -1'"
@@ -136,6 +200,7 @@
 #basechance 2
 #chanceinc era 2 -1
 #chanceinc era 3 -1.5
+#chanceinc racetheme patriarchal *0
 #themeinc theme advanced *1
 #themeinc theme iron *1
 #themeinc theme bronze *1
@@ -159,6 +224,7 @@
 #basechance 2
 #chanceinc era 2 -1
 #chanceinc era 3 -1.5
+#chanceinc racetheme patriarchal *0
 #themeinc theme advanced *1.5
 #themeinc theme iron *2
 #themeinc theme bronze *1
@@ -182,6 +248,7 @@
 #basechance 1
 #chanceinc era 2 -0.75
 #chanceinc era 3 -0.875
+#chanceinc racetheme patriarchal *0
 #themeinc theme advanced *0.5
 #themeinc theme iron *0.5
 #themeinc theme bronze *0.5
@@ -211,6 +278,7 @@
 #basechance 1
 #chanceinc era 2 -0.75
 #chanceinc era 3 -0.875
+#chanceinc racetheme patriarchal *0
 #themeinc theme advanced *0.5
 #themeinc theme iron *1
 #themeinc theme bronze *0.5
@@ -240,6 +308,7 @@
 #basechance 1
 #chanceinc era 2 -0.75
 #chanceinc era 3 -0.875
+#chanceinc racetheme patriarchal *0
 #themeinc theme advanced *0.5
 #themeinc theme iron *1
 #themeinc theme bronze *0.5
@@ -269,6 +338,7 @@
 #basechance 1
 #chanceinc era 2 -0.75
 #chanceinc era 3 -0.875
+#chanceinc racetheme patriarchal *0
 #themeinc theme advanced *0.5
 #themeinc theme iron *0.5
 #themeinc theme bronze *0.5
@@ -296,7 +366,6 @@
 
 
 -- Social themes
-
 -- Weights: EA 0.5, MA 0.5, LA 0.5
 #newtheme
 #type social

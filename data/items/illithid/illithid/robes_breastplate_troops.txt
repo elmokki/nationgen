@@ -1,0 +1,95 @@
+-- None
+#newitem
+#name "glamour"
+#gameid 158
+#basechance 0.5
+#armor
+#command "#illusion"
+#enditem
+
+#newitem
+#name "invulnerability"
+#gameid 158
+#basechance 0.5
+#armor
+#command "#invulnerable 12"
+#command "#gcost +5"
+#enditem
+
+#newitem
+#name "strong invulnerability"
+#gameid 158
+#basechance 0.5
+#armor
+#command "#invulnerable 18"
+#command "#gcost +10"
+#enditem
+
+#newitem
+#name "awe"
+#gameid 158
+#basechance 0.5
+#armor
+#command "#awe +1"
+#command "#gcost +20"
+#enditem
+
+#newitem
+#name "ethereal body"
+#gameid 158
+#basechance 0.5
+#armor
+#command "#ethereal"
+#command "#gcost +25"
+#enditem
+
+
+-- Shell armor
+#newitem
+#name "shell armor"
+#gameid 140
+#sprite /graphics/illithid/illithid/armor/cuirass_shell.png
+#armor
+#theme "primitive"
+#theme "bone"
+#theme "amphibious"
+#needs helmet shell
+#enditem
+
+
+-- Coral armor
+#newitem
+#name "coral cuirass"
+#gameid 22
+#sprite /graphics/illithid/illithid/armor/cuirass_coral.png
+#armor
+#define "#poisonarmor"
+#theme "coral"
+#theme "amphibious"
+#needs helmet coral
+#enditem
+
+
+--- Bronze Plate
+#newitem
+#name "bronze cuirass"
+#gameid 100
+#sprite /graphics/illithid/illithid/armor/cuirass_bronze.png
+#armor
+#theme "bronze"
+#theme "amphibious"
+#needs helmet bronze
+#enditem
+
+
+--- Meteorite Plate
+#newitem
+#name "meteorite cuirass"
+#gameid 210
+#sprite /graphics/illithid/illithid/armor/cuirass_iron.png
+#armor
+#command "#mr +1"
+#theme "iron"
+#theme "amphibious"
+#needs helmet iron
+#enditem
