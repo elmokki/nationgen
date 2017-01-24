@@ -1,0 +1,112 @@
+-- Illithid soldiers - elite infantry that's size 3 but eat like size 4, and are formation fighters
+
+#newpose
+#name "soldier"
+#role "elite infantry"
+#role "sacred infantry"
+
+#command "#gcost 50"
+#command "#hp 28"
+#command "#size 3"
+#command "#prot 5"
+#command "#mr 15"
+#command "#mor 10"
+#command "#str 15"
+#command "#att 10"
+#command "#def 6"
+#command "#prec 12"
+#command "#enc 2"
+#command "#ap 9"
+#command "#magiccommand +40"
+#command "#maxage 1000"
+#command "#darkvision 100"
+#command "#voidsanity 10"
+#command "#supplybonus -1"
+#command "#formationfighter 1"
+#command "#bluntres"
+#command "#magicbeing"
+#command "#amphibian"
+#subrace illithid
+#command "#descr 'Illithids are pink masses of writhing tentacles, said to be from a distant star.'"
+#tag "noble"
+
+#renderorder "shadow color pattern trim armor basesprite weapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/illithid/illithid/bases.txt
+#load shadow /data/items/illithid/illithid/shadow.txt
+#load hands /data/items/illithid/illithid/hands_troops.txt
+
+#load color /data/items/illithid/illithid/robes_color_troops.txt
+#load pattern /data/items/illithid/illithid/robes_pattern_troops.txt
+#load trim /data/items/illithid/illithid/robes_trim_troops.txt
+#load armor /data/items/illithid/illithid/robes_breastplate_troops.txt
+#load helmet /data/items/illithid/illithid/helmet.txt
+
+#load weapon /data/items/illithid/illithid/weapon.txt
+#load bonusweapon /data/items/illithid/illithid/weapon_bonus.txt
+
+#generateitem 1 color
+#generateitem 1 pattern
+#generateitem 1 trim
+#generateitem 1 bonusweapon
+
+#maxunits 1
+#maxvarieties 1
+
+#endpose
+
+
+-- Illithid "artillery"
+
+#newpose
+#name "mindflayer"
+#role "ranged"
+
+#basechance 2
+
+#command "#gcost 50"
+#command "#hp 28"
+#command "#size 4"
+#command "#prot 5"
+#command "#mr 15"
+#command "#mor 10"
+#command "#str 15"
+#command "#att 10"
+#command "#def 6"
+#command "#prec 12"
+#command "#enc 2"
+#command "#ap 9"
+#command "#magiccommand +40"
+#command "#maxage 1000"
+#command "#darkvision 100"
+#command "#voidsanity 10"
+#command "#bluntres"
+#command "#magicbeing"
+#command "#amphibian"
+#subrace illithid
+#command "#descr 'Illithids are pink masses of writhing tentacles, said to be from a distant star.'"
+#tag "noble"
+
+#renderorder "shadow color pattern trim armor basesprite weapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/illithid/illithid/bases.txt
+#load shadow /data/items/illithid/illithid/shadow.txt
+#load hands /data/items/illithid/illithid/hands_troops.txt
+
+#load armor /data/items/illithid/illithid/robes.txt
+#load color /data/items/illithid/illithid/robes_color_troops.txt
+#load pattern /data/items/illithid/illithid/robes_pattern_troops.txt
+#load trim /data/items/illithid/illithid/robes_trim_troops.txt
+
+#load weapon /data/items/illithid/illithid/mental_attack.txt
+#load bonusweapon /data/items/illithid/illithid/weapon_mindflayer.txt
+
+#generateitem 1 color
+#generateitem 1 pattern
+#generateitem 1 trim
+#generateitem 1 bonusweapon
+
+#maxunits 1
+#maxvarieties 1
+
+#endpose

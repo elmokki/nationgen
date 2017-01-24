@@ -5,7 +5,7 @@
 #role "mage"
 #role "priest"
 
-#chanceinc moduleid herogen *100
+#basechance 5
 
 #command "#gcost 20"
 #command "#hp 14"
@@ -51,6 +51,66 @@
 #generateitem 1 pattern
 
 #tier 1
+#notfortier 2
+#notfortier 3
+
+#dontvaryhat
+
+#endpose
+
+
+-- Starchild-type hybrid casters
+#newpose
+#name "starchildren"
+#role "mage"
+#role "priest"
+
+#basechance 1
+
+#command "#gcost 20"
+#command "#hp 14"
+#command "#prot 2"
+#command "#mr 13"
+#command "#mor 10"
+#command "#str 11"
+#command "#att 10"
+#command "#def 9"
+#command "#prec 11"
+#command "#enc 3"
+#command "#ap 10"
+#command "#magiccommand +10"
+#command "#maxage 200"
+#command "#darkvision 100"
+#command "#voidsanity 5"
+#command "#bluntres"
+#command "#amphibian"
+#command "#weapon 311"
+
+#subrace hybrid
+#command "#descr 'Hybrids are a strange cross between a human, a Deep One or Illithid, and the obtuse influences of the void.'"
+#tag "noble"
+
+#renderorder "shadow basesprite armor color pattern tabard trim icon belt breastplate weapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/illithid/starchild/bases.txt
+#load shadow /data/items/illithid/starchild/shadow.txt
+#load hands /data/items/illithid/starchild/hands.txt
+
+#load armor /data/items/illithid/starchild/robes.txt
+#load color /data/items/illithid/starchild/robes_color.txt
+#load pattern /data/items/illithid/starchild/robes_pattern.txt
+#load tabard /data/items/illithid/starchild/robes_tabard.txt
+#load trim /data/items/illithid/starchild/robes_trim.txt
+#load icon /data/items/illithid/starchild/robes_icon.txt
+#load belt /data/items/illithid/starchild/robes_belt.txt
+#load breastplate /data/items/illithid/starchild/robes_breastplate.txt
+
+#load weapon /data/items/illithid/starchild/weapon_mage.txt
+
+#generateitem 1 color
+#generateitem 1 pattern
+
+#notfortier 1
 #tier 2
 #tier 3
 

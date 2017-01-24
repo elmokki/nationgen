@@ -510,6 +510,30 @@
 #command "#magic"
 #end
 
+#new customweapon
+#name "giantpillar"
+#command "#name 'Stone Pillar'"
+#command "#dmg 19"
+#command "#att -3"
+#command "#def -5"
+#command "#len 3"
+#command "#natt 1"
+#command "#twohanded"
+#command "#blunt"
+#end
+
+#new customweapon
+#name "giantlog"
+#command "#name 'Tree Trunk'"
+#command "#dmg 17"
+#command "#att -2"
+#command "#def -3"
+#command "#len 3"
+#command "#natt 1"
+#command "#twohanded"
+#command "#blunt"
+#end
+
 --- CBM warhorse hoof (should be unused currently)
 
 #new customweapon
@@ -1127,9 +1151,9 @@
 #end
  
 #new customarmor
+#name atl_carapaceshield
 #armor
 #command "#type 4"
-#name atl_carapaceshield
 #command "#prot 20"
 #command "#def 4"
 #command "#enc 2"
@@ -1138,8 +1162,8 @@
 #end
 
 #new customarmor
-#armor
 #name atl_basaltcap-s
+#armor
 #command "#type 6"
 #command "#prot 17"
 #command "#def 0"
