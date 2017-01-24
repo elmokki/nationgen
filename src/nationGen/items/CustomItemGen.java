@@ -360,7 +360,7 @@ public class CustomItemGen {
 				else if(def.equals("dt_slash"))
 				{
 					if(db.GetValue(item.id, def).equals("1"))
-									newitem.values.put("slash", "");
+					newitem.values.put("slash", "");
 				}
 				else if(def.equals("dt_pierce"))
 				{
@@ -374,30 +374,22 @@ public class CustomItemGen {
 				}
 				else if(def.equals("rng"))
 				{
-					if(!db.GetValue(item.id, "rng").equals(""))
-						if(db.GetValue(item.id, "rng").startsWith("str"))
-						{
-							String str = db.GetValue(item.id, "rng");
-							if(str.startsWith("str/"))
-							{
-								newitem.values.put("range", "-" + str.charAt(str.length() - 1));
-							}
-							else
-								newitem.values.put("range", "-1");
-						}
-						else if(db.GetInteger(item.id, "rng") > 0)
-							newitem.values.put("range", db.GetValue(item.id, "rng"));
-				
+					if(db.GetInteger(item.id, "rng") != 0)
+					{
+						
+						newitem.values.put("range", db.GetValue(item.id, "rng"));
+
+					}
 				}
 				
 				else if(def.equals("#att"))
 				{
-					if(db.GetValue(item.id, "#att").equals("1"))
+					if(db.GetInteger(item.id, "#att") != 1)
 						newitem.values.put("nratt", db.GetValue(item.id, "#att"));
 				}
 				else if(def.equals("shots"))
 				{
-					if(!db.GetValue(item.id, "shots").equals(""))
+					if(db.GetInteger(item.id, "shots") > 0)
 						newitem.values.put("ammo", db.GetValue(item.id, "shots"));
 
 				}
