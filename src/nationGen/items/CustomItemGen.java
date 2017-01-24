@@ -323,119 +323,155 @@ public class CustomItemGen {
 		else
 			db = n.nationGen.weapondb;
 		
+		
+		
 		if(!item.armor)
 		{
-			
+			List<String> boolargs = db.getBooleanArgs();
 			
 			if(db.GetValue(item.id, "weapon_name").equals(""))
 			{
 				return null;
 			}
 			
-			
-			if(db.GetValue(item.id, "dt_blunt").equals("1"))
-				newitem.values.put("blunt", "");
-			if(db.GetValue(item.id, "dt_slash").equals("1"))
-				newitem.values.put("slash", "");
-			if(db.GetValue(item.id, "dt_pierce").equals("1"))
-				newitem.values.put("pierce", "");
-			if(db.GetValue(item.id, "magic").equals("1"))
-				newitem.values.put("magic", "");
-			if(db.GetValue(item.id, "cold").equals("1"))
-				newitem.values.put("cold", "");
-			if(db.GetValue(item.id, "shock").equals("1"))
-				newitem.values.put("shock", "");
-			if(db.GetValue(item.id, "poison").equals("1"))
-				newitem.values.put("poison", "");
-			if(db.GetValue(item.id, "fire").equals("1"))
-				newitem.values.put("fire", "");
-			if(db.GetValue(item.id, "acid").equals("1"))
-				newitem.values.put("acid", "");
-			if(db.GetValue(item.id, "flail").equals("1"))
-				newitem.values.put("flail", "");
-			if(db.GetValue(item.id, "nostr").equals("1"))
-				newitem.values.put("nostr", "");
-			
-			newitem.values.put("name", "\"" + db.GetValue(item.id, "wpname") + "\"");
-			newitem.values.put("dmg", "" + db.GetValue(item.id, "dmg"));
-			newitem.values.put("att", "" + db.GetValue(item.id, "att"));
-			newitem.values.put("rcost", "" + db.GetValue(item.id, "res"));
 
-			if(!db.GetValue(item.id, "def").equals(""))
+			for(String def : db.getDefinition())
 			{
-				newitem.values.put("def", "" + db.GetValue(item.id, "def"));
-			}
-			if(db.GetInteger(item.id, "lgt") > 0)
-				newitem.values.put("len", "" + db.GetValue(item.id, "lgt"));
-
-			
-			if(!db.GetValue(item.id, "rng").equals(""))
-			{
-				if(db.GetValue(item.id, "rng").startsWith("str"))
-				{
-					String str = db.GetValue(item.id, "rng");
-					if(str.startsWith("str/"))
-					{
-						newitem.values.put("range", "-" + str.charAt(str.length() - 1));
-					}
-					else
-						newitem.values.put("range", "-1");
-				}
-				else
-					newitem.values.put("range", db.GetValue(item.id, "rng"));
-			
-			}
-			
-			if(!db.GetValue(item.id, "#att").equals("1"))
-				newitem.values.put("nratt", db.GetValue(item.id, "#att"));
-			if(!db.GetValue(item.id, "shots").equals(""))
-				newitem.values.put("ammo", db.GetValue(item.id, "shots"));
-			if(db.GetValue(item.id, "2h").equals("1"))
-				newitem.values.put("twohanded", "");
-			if(!db.GetValue(item.id, "dt_cap").equals("0"))
-				newitem.values.put("dt_cap", "");
-			
-			if(db.GetValue(item.id, "nostr").equals("nostr"))
-				newitem.values.put("nostr", "");
-			
-			if(!db.GetValue(item.id, "flyspr", "derp").equals("derp"))
-			{
-				String flyspr = db.GetValue(item.id, "flyspr");
-				String speed = db.GetValue(item.id, "animlength", "derp");
-				if(speed.equals("derp"))
-					speed = "1";
 				
-				newitem.values.put("flyspr", flyspr + " " + speed);
+	
+				if(def.equals("id"))
+				{
+					// do nothing
+				}
+				else if(def.equals("weapon_name"))
+				{
+					newitem.values.put("name", "\"" + db.GetValue(item.id, "weapon_name") + "\"");
+				}
+				else if(def.equals("res"))
+				{
+					newitem.values.put("rcost", "" + db.GetValue(item.id, "res"));
+				}
+	
+				else if(def.equals("dt_blunt"))
+				{	
+					if(db.GetValue(item.id, def).equals("1"))
+						newitem.values.put("blunt", "");
+				}	
+				else if(def.equals("dt_slash"))
+				{
+					if(db.GetValue(item.id, def).equals("1"))
+									newitem.values.put("slash", "");
+				}
+				else if(def.equals("dt_pierce"))
+				{
+					if(db.GetValue(item.id, def).equals("1"))
+						newitem.values.put("pierce", "");
+				}
+				else if(def.equals("lgt"))
+				{
+					if(db.GetInteger(item.id, "lgt") > 0)
+						newitem.values.put("len", "" + db.GetValue(item.id, "lgt"));
+				}
+				else if(def.equals("rng"))
+				{
+					if(!db.GetValue(item.id, "rng").equals(""))
+						if(db.GetValue(item.id, "rng").startsWith("str"))
+						{
+							String str = db.GetValue(item.id, "rng");
+							if(str.startsWith("str/"))
+							{
+								newitem.values.put("range", "-" + str.charAt(str.length() - 1));
+							}
+							else
+								newitem.values.put("range", "-1");
+						}
+						else if(db.GetInteger(item.id, "rng") > 0)
+							newitem.values.put("range", db.GetValue(item.id, "rng"));
+				
+				}
+				
+				else if(def.equals("#att"))
+				{
+					if(db.GetValue(item.id, "#att").equals("1"))
+						newitem.values.put("nratt", db.GetValue(item.id, "#att"));
+				}
+				else if(def.equals("shots"))
+				{
+					if(!db.GetValue(item.id, "shots").equals(""))
+						newitem.values.put("ammo", db.GetValue(item.id, "shots"));
+
+				}
+				else if(def.equals("2h"))
+				{
+					if(db.GetValue(item.id, "2h").equals("1"))
+						newitem.values.put("twohanded", "");
+				}
+				
+				else if(def.equals("flyspr"))
+				{
+					if(!db.GetValue(item.id, "flyspr", "derp").equals("derp"))
+					{
+						String flyspr = db.GetValue(item.id, "flyspr");
+						String speed = db.GetValue(item.id, "animlength", "derp");
+						if(speed.equals("derp"))
+							speed = "1";
+						
+						newitem.values.put("flyspr", flyspr + " " + speed);
+					}
+				}
+				
+
+				// Obsolete?
+				else if(def.equals("onestrike"))
+				{
+					if(db.GetValue(item.id, "onestrike").equals("1"))
+						newitem.values.put("ammo", "1");
+				}
+				else if(def.equals("ap"))
+				{
+					if(db.GetValue(item.id, "ap").equals("1"))
+						newitem.values.put("armorpiercing", "");
+				}
+				else if(def.equals("an"))
+				{
+					if(db.GetValue(item.id, "an").equals("1"))
+						newitem.values.put("armornegating", "");
+				}
+				
+				// Skippable stuff
+				else if(def.equals("effect_record_id"));
+				else if(def.equals("secondaryeffect") && db.GetValue(item.id, def).equals("0"));
+				else if(def.equals("secondaryeffectalways") && db.GetValue(item.id, def).equals("0"));
+				else if(def.equals("animlength"));
+				else if(def.equals("dt_norm"));
+				else if(def.equals("aoe") && db.GetValue(item.id, def).equals("0"));
+
+						
+				// Generic handle for boolean args
+				else if(boolargs.contains(def))
+				{
+					if(db.GetValue(item.id, def).equals("1"))
+					{
+						newitem.values.put(def, "");
+					}
+				}
+				// Handle non-boolean args
+				else if(!db.GetValue(item.id, def).equals(""))
+				{
+					newitem.values.put(def, db.GetValue(item.id, def));
+				}
+		
+				
 			}
 			
-			if(db.GetValue(item.id, "charge").equals("1"))
-				newitem.values.put("charge", null);
 			
-			if(db.GetValue(item.id, "bonus").equals("1"))
-				newitem.values.put("bonus", null);
-			
-			// Obsolete?
-			if(db.GetValue(item.id, "onestrike").equals("1"))
-				newitem.values.put("ammo", "1");
-			
-			if(db.GetValue(item.id, "magic").equals("1"))
-				newitem.values.put("magic", "");
-			if(db.GetValue(item.id, "ap").equals("1"))
-				newitem.values.put("armorpiercing", "");
-			
-			if(db.GetValue(item.id, "an").equals("1"))
-				newitem.values.put("armornegating", "");
-			
-			if(!db.GetValue(item.id, "secondaryeffect").equals("0") && !db.GetValue(item.id, "2nd_effect").equals(""))
-				newitem.values.put("secondaryeffect", db.GetValue(item.id, "2nd_effect"));
-			
-			if(!db.GetValue(item.id, "secondaryeffectalways").equals("0") && !db.GetValue(item.id, "effauto").equals(""))
-				newitem.values.put("secondaryeffectalways", db.GetValue(item.id, "effauto"));
-			
+
+			// No magic item from spc damage items
 			if(newitem.values.get("dmg").equals("spc") || item.id.equals("-1"))
 				return null;
-			
 		}
+		
+		
 		else
 		{
 			// ARMOR, not done

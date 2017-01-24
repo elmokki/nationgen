@@ -26,9 +26,11 @@ import javax.imageio.ImageIO;
 
 
 
+
 import com.elmokki.Dom3DB;
 import com.elmokki.Drawing;
 import com.elmokki.Generic;
+
 
 
 
@@ -1291,7 +1293,7 @@ public class Unit {
 				
 				if(cost > 30)
 				{
-					cost = Math.round(cost / 5) * 5;
+					cost = (int)Math.round((double)cost / 5) * 5;
 					c.args.set(0, "" + cost);
 				}
 			}
