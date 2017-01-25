@@ -550,7 +550,7 @@ public class Nation {
 		if(Generic.getTagValue(race.tags, "guaranteednationthemes") != null)
 			guaranteedthemes = Integer.parseInt(Generic.getTagValue(race.tags, "guaranteednationthemes"));
 		
-		if(random.nextDouble() > 0.80)
+		if(random.nextDouble() > 0.7)
 		{	
 			guaranteedthemes++;
 			if(random.nextDouble() > 0.9)
@@ -563,7 +563,7 @@ public class Nation {
 		for(int i = 0; i < guaranteedthemes; i++)
 		{
 	
-			possibleThemes = ChanceIncHandler.getValidFilters(possibleThemes, race.themefilters);
+			possibleThemes = ChanceIncHandler.getValidFilters(possibleThemes, this.nationthemes);
 			if(possibleThemes.size() > 0)
 			{
 				Theme t = Theme.getRandom(random, chandler.handleChanceIncs(possibleThemes));
@@ -574,7 +574,6 @@ public class Nation {
 					for(Command c : t.commands)
 						this.handleCommand(commands, c);
 					this.nationthemes.add(t);
-
 				}
 			}
 		}	

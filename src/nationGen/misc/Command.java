@@ -170,7 +170,18 @@ public class Command {
 	
 	public Command(String cmd)
 	{
-		this.command = cmd;
+		if(cmd.indexOf(" ") > -1)
+		{
+			String[] stuff = cmd.split(" ");
+			this.command = stuff[0];		
+			for(int i = 1; i < stuff.length; i++)
+			{
+				args.add(stuff[i]);
+			}
+
+		}
+		else	
+			this.command = cmd;
 	}
 	
 	
