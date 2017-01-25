@@ -1,0 +1,261 @@
+-- Fists/elemental fists/thrown elements
+
+#newitem
+#id fist
+#gameid 92
+#enditem
+
+#newitem
+#id grab
+#gameid 609
+#basechance 0
+#chanceinc "personalmagic blood 3 2"
+#enditem
+
+#newitem
+#id flaming_fist
+#gameid 320
+#basechance 0
+#chanceinc "personalmagic fire 3 2"
+#sprite /graphics/avvim/nephilim/weapon/flames.png
+#needs overlay fire_overlay
+#needs hands none
+#enditem
+
+#newitem
+#id thrown_flames
+#gameid 383
+#basechance 0
+#chanceinc "personalmagic fire 3 2"
+#sprite /graphics/avvim/nephilim/weapon/flames.png
+#needs overlay fire_overlay
+#needs hands none
+#enditem
+
+#newitem
+#id frost_fist
+#gameid 69
+#basechance 0
+#chanceinc "personalmagic water 3 2"
+#sprite /graphics/avvim/nephilim/weapon/frost.png
+#needs overlay frost_overlay
+#needs hands none
+#enditem
+
+#newitem
+#id thrown_frost
+#gameid 131
+#basechance 0
+#chanceinc "personalmagic water 3 2"
+#sprite /graphics/avvim/nephilim/weapon/frost.png
+#needs overlay frost_overlay
+#needs hands none
+#enditem
+
+#newitem
+#id lifedrain
+#gameid 63
+#basechance 0
+#chanceinc "personalmagic death 3 2"
+#sprite /graphics/avvim/nephilim/weapon/banefire.png
+#needs overlay banefire_overlay
+#needs hands none
+#enditem
+
+#newitem
+#id lightning_fist
+#gameid 231
+#basechance 0
+#chanceinc "personalmagic air 3 2"
+#sprite /graphics/avvim/nephilim/weapon/fist_lightning.png
+#enditem
+
+#newitem
+#id lightning
+#gameid 584
+#basechance 0
+#chanceinc "personalmagic air 3 2"
+#sprite /graphics/avvim/nephilim/weapon/fist_lightning.png
+#enditem
+
+
+-- 1h weapons
+
+#newitem
+#id firebrand
+#gameid 80
+#basechance 0
+#chanceinc "personalmagic fire 3 2"
+#sprite /graphics/avvim/nephilim/weapon/sword_fire.png
+#needs overlay fire_overlay
+#needs hands_overlay 1h
+#enditem
+
+#newitem
+#id fire_whip
+#gameid 277
+#basechance 0
+#chanceinc "personalmagic fire 3 2"
+#chanceinc "personalmagic blood 3 2"
+#sprite /graphics/avvim/nephilim/weapon/firewhip.png
+#needs overlay fire_overlay
+#needs hands_overlay 1h
+#enditem
+
+#newitem
+#id fire_staff
+#gameid 650
+#basechance 0
+#chanceinc "personalmagic fire 3 2"
+#sprite /graphics/avvim/nephilim/weapon/staff_fire.png
+#needs overlay fire_overlay
+#needs hands_overlay 1h
+#enditem
+
+#newitem
+#id frostbrand
+#gameid 82
+#basechance 0
+#chanceinc "personalmagic water 3 2"
+#sprite /graphics/avvim/nephilim/weapon/sword_frost.png
+#needs overlay frost_overlay
+#needs hands_overlay 1h
+#enditem
+
+#newitem
+#id baneblade
+#gameid 42
+#basechance 0
+#chanceinc "personalmagic death 3 2"
+#sprite /graphics/avvim/nephilim/weapon/sword_banefire.png
+#needs overlay banefire_overlay
+#needs hands_overlay 1h
+#enditem
+
+#newitem
+#id banefire_staff
+#gameid 392
+#basechance 0
+#chanceinc "personalmagic blood 3 2"
+#sprite /graphics/avvim/nephilim/weapon/staff_banefire.png
+#needs overlay banefire_overlay
+#needs hands_overlay 1h
+#enditem
+
+#newitem
+#id storm_staff
+#gameid 105
+#basechance 0
+#chanceinc "personalmagic air 3 2"
+#sprite /graphics/avvim/nephilim/weapon/staff_lightning.png
+#needs overlay frost_overlay
+#needs hands_overlay 1h
+#enditem
+
+#newitem
+#id club
+#gameid 165
+#sprite /graphics/avvim/nephilim/weapon/club.png
+#needs hands_overlay 1h
+#theme primitive
+#theme wood
+#enditem
+
+#newitem
+#id spiritclub
+#gameid 563
+#sprite /graphics/avvim/nephilim/weapon/club.png
+#needs hands_overlay 1h
+#theme primitive
+#theme wood
+#enditem
+
+#newitem
+#id gold_sickle
+#gameid 523
+#basechance 0
+#chanceinc "personalmagic nature 3 2"
+#sprite /graphics/avvim/nephilim/weapon/sickle_gold.png
+#needs hands_overlay 1h
+#enditem
+
+#newitem
+#id silver_sickle
+#gameid 299
+#basechance 0
+#chanceinc "personalmagic nature 3 2"
+#sprite /graphics/avvim/nephilim/weapon/sickle_gold.png
+#needs hands_overlay 1h
+#enditem
+
+#newitem
+#id spear
+#gameid giantmagicspear
+#sprite /graphics/avvim/nephilim/weapon/spear.png
+#needs hands_overlay 1h
+#theme iron
+#enditem
+
+#newitem
+#id spear_gold
+#gameid giantmagicspear
+#sprite /graphics/avvim/nephilim/weapon/spear_gold.png
+#needs hands_overlay 1h
+#enditem
+
+#newitem
+#id staff_crescent
+#gameid 290
+#basechance 0
+#chanceinc "personalmagic astral 3 2"
+#sprite /graphics/avvim/nephilim/weapon/staff_crescent.png
+#needs hands_overlay 1h
+#enditem
+
+#newitem
+#id staff_orb
+#gameid 238
+#sprite /graphics/avvim/nephilim/weapon/staff_orb.png
+#recolormask /graphics/avvim/nephilim/weapon/staff_orb_recolormask.png
+#needs hands_overlay 1h
+#enditem
+
+#newitem
+#id sword_dawn
+#gameid 520
+#basechance 0
+#chanceinc "personalmagic blood 3 2"
+#sprite /graphics/avvim/nephilim/weapon/sword.png
+#needs hands_overlay 1h
+#enditem
+
+#newitem
+#id sword
+#gameid giantmagicsword
+#sprite /graphics/avvim/nephilim/weapon/sword.png
+#needs hands_overlay 1h
+#theme iron
+#enditem
+
+
+-- 2h weapons
+
+#newitem
+#id pillar
+#gameid giantpillar
+#basechance 0
+#chanceinc "personalmagic earth 3 2"
+#sprite /graphics/avvim/nephilim/weapon/pillar.png
+#needs hands_overlay 2h
+#needs hands none
+#enditem
+
+#newitem
+#id log
+#gameid giantlog
+#basechance 0
+#chanceinc "personalmagic nature 3 2"
+#sprite /graphics/avvim/nephilim/weapon/log.png
+#needs hands_overlay 2h
+#needs hands none
+#enditem
