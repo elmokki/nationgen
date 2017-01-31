@@ -232,22 +232,14 @@ public class NationGen {
 			
 			System.out.print(")... ");
 			
-			newnation = new Nation(this, newseed, count);
-
-			// Handle restrictions
-			boolean pass = true;
-			for(NationRestriction nr : restrictions)
-			{
-				if(!nr.doesThisPass(newnation))
-				{
-					pass = false;
-					++failedcount;
-					System.out.println("try "+ String.valueOf(failedcount) + ", FAILED RESTRICTION "  + nr.toString().toUpperCase());
-					break;
-				}
-			}
+			newnation = new Nation(this, newseed, count, restrictions);
+                        if(!newnation.passed)
+                        {
+                            ++failedcount;
+                            System.out.println("try "+ String.valueOf(failedcount) + ", FAILED RESTRICTION "  + newnation.restrictionFailed);
+                        }
 			
-			if(pass)
+			if(newnation.passed)
 			{
 				totalfailed += failedcount;
 				failedcount = 0;
@@ -257,7 +249,6 @@ public class NationGen {
 			{
 				continue;
 			}
-			
 			
 			// Handle loose ends
 			newnation.nationid = idHandler.nextNationId();
