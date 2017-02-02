@@ -92,6 +92,15 @@ public class ShapeChangeUnit extends Unit {
 			
 			if(!c.command.startsWith("#spr"))
 				sf.commands.add(c);
+			if(c.command.equals("#gcost") && thisForm.tags.contains("specifiedgcost"))
+			{
+				
+				//System.out.println(c.args.get(0) + " ADDED " + " / " + otherForm.getGoldCost_DEBUG());
+				sf.commands.add(c);
+				gcost = Integer.parseInt(c.args.get(0));
+
+
+			}
 		
 		}
 		
@@ -341,6 +350,8 @@ public class ShapeChangeUnit extends Unit {
 
 		List<Command> commands = getCommands();
 		
+		boolean hasDescriptionSpecified = false;
+		
 		// Own non-gcost commands first due to #copystats
 		for(Command c : commands)
 		{
@@ -348,11 +359,17 @@ public class ShapeChangeUnit extends Unit {
 			{
 				tw.println(c.command + " " + Generic.listToString(c.args));
 			}
-		
+			if(c.command.equals("#descr") && thisForm.tags.contains("specifieddescr"))
+			{
+				hasDescriptionSpecified = true;
+			}
 		}
 		
 
-		tw.println("#descr \"No description\"");		
+		if(!hasDescriptionSpecified)
+		{
+			tw.println("#descr \"No description\"");		
+		}
 
 		//tw.println("#maxage 1000");
 		
