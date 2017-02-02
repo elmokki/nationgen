@@ -294,11 +294,11 @@
 #name "feral giant hoburg"
 #basechance 0
 #chanceinc "primaryrace hoburg 1"
-#chanceinc "racetheme not feral *0"
-#chanceinc "racetheme abysian *0"
-#chanceinc "racetheme austral *0"
-#chanceinc "racetheme oriental *0"
-#chanceinc "racetheme fae *0"
+#chanceinc "unittheme not feral *0"
+#chanceinc "unittheme abysian *0"
+#chanceinc "unittheme austral *0"
+#chanceinc "unittheme oriental *0"
+#chanceinc "unittheme fae *0"
 #command "#copystats 2261"
 #command "#spr1 ./graphics/hoburg/giant/giant_feral_boreal.png"
 #command "#spr2 shift"
@@ -331,15 +331,17 @@
 #command "#reclimit 5"
 #command "#descr 'Occasionally a hoburg is born with an outrageous appetite even by their standards. They usually starve early in their childhood, but should they manage to get more than their fair share of food and survive, they will never stop growing and can reach terrifying sizes. At that point, anything smaller than them becomes a potential meal...'"
 #caponlychance 1
+#specifiedgcost
+#specifieddescr
 #end
 
 #new
 #name "feral giant oriental hoburg"
 #basechance 0
 #chanceinc "primaryrace hoburg 1"
-#chanceinc "racetheme not feral *0"
-#chanceinc "racetheme not oriental *0"
-#chanceinc "racetheme fae *0"
+#chanceinc "unittheme not feral *0"
+#chanceinc "unittheme not oriental *0"
+#chanceinc "unittheme fae *0"
 #command "#spr1 ./graphics/hoburg/giant/giant_feral_oriental.png"
 #command "#spr2 shift"
 #command "#name 'Giant Hoburg'"
@@ -371,15 +373,17 @@
 #command "#reclimit 5"
 #command "#descr 'Occasionally a hoburg is born with an outrageous appetite even by their standards. They usually starve early in their childhood, but should they manage to get more than their fair share of food and survive, they will never stop growing and can reach terrifying sizes. At that point, anything smaller than them becomes a potential meal...'"
 #caponlychance 1
+#specifiedgcost
+#specifieddescr
 #end
 
 #new
 #name "feral giant austral hoburg"
 #basechance 0
 #chanceinc "primaryrace hoburg 1"
-#chanceinc "racetheme not feral *0"
-#chanceinc "racetheme not austral *0"
-#chanceinc "racetheme fae *0"
+#chanceinc "unittheme not feral *0"
+#chanceinc "unittheme not austral *0"
+#chanceinc "unittheme fae *0"
 #command "#spr1 ./graphics/hoburg/giant/giant_feral_austral.png"
 #command "#spr2 shift"
 #command "#name 'Giant Hoburg'"
@@ -412,4 +416,6 @@
 #command "#reclimit 5"
 #command "#descr 'Occasionally a hoburg is born with an outrageous appetite even by their standards. They usually starve early in their childhood, but should they manage to get more than their fair share of food and survive, they will never stop growing and can reach terrifying sizes. At that point, anything smaller than them becomes a potential meal...'"
 #caponlychance 1
+#specifiedgcost
+#specifieddescr
 #end
