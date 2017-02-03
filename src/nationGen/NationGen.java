@@ -808,7 +808,11 @@ public class NationGen
         }
         else
         {
-            realid = Integer.parseInt(id);
+            boolean isNumeric = id.chars().allMatch( Character::isDigit );
+            if (isNumeric) 
+            {
+                realid = Integer.parseInt(id);    
+            }
         }
 
         for(ShapeChangeUnit su : this.forms)
@@ -887,7 +891,11 @@ public class NationGen
                     }
                     else
                     {
-                        Integer.parseInt(realarg);
+                        boolean isNumeric = realarg.chars().allMatch( Character::isDigit );
+                        if (isNumeric) 
+                        {
+                            Integer.parseInt(realarg);
+                        }
                     }
                 }
             }
