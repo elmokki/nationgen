@@ -19,7 +19,8 @@ public class Flag extends Filter {
 	public String shading = "";
 	public List<String> allowed = new ArrayList<String>();
 	
-	public <E extends Entity> void handleOwnCommand(String str)
+        @Override
+	public <Entity> void handleOwnCommand(String str)
 	{
 
 		List<String> args = Generic.parseArgs(str);

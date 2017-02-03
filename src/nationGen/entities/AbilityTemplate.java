@@ -19,7 +19,9 @@ public class AbilityTemplate extends Filter {
 	
 	String desc = "";
 	List<String> addTags = new ArrayList<String>();
-	public <E extends Entity> void handleOwnCommand(String str)
+        
+        @Override
+	public <Entity> void handleOwnCommand(String str)
 	{
 		
 		List<String> args = Generic.parseArgs(str);
