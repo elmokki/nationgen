@@ -24,7 +24,6 @@ import java.util.Scanner;
 import com.elmokki.Dom3DB;
 import com.elmokki.Drawing;
 import com.elmokki.Generic;
-import java.util.function.Consumer;
 
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
@@ -178,7 +177,7 @@ public class NationGen
     private void generate(int amount, int seed, List<Integer> seeds) throws IOException
     {
         this.seed = seed;
-
+        
         Random random = new Random(seed);
 
         // If there's a list of seeds.
@@ -216,6 +215,7 @@ public class NationGen
         int count = 0;
         int failedcount = 0;
         int totalfailed = 0;
+        
         while(generatedNations.size() < amount)
         {
             count++;
@@ -347,7 +347,6 @@ public class NationGen
 
             System.out.print(".");		
         }
-        nHandler = null;
 
         // Get mod name if not custom
         if(modname.equals(""))
@@ -361,7 +360,6 @@ public class NationGen
                 modname = generatedNations.get(0).name;
             }
         }
-        nGen = null;
 
         System.out.println(" Done!");
 
@@ -378,7 +376,6 @@ public class NationGen
         System.out.println("------------------------------------------------------------------");
         System.out.println("Finished generating " + amount + " nations to file nationgen_" + filename + ".dm!");
 
-        seed = 0;
         modname = "";
     }
 
@@ -472,14 +469,14 @@ public class NationGen
         while ((strLine = br.readLine()) != null)   
         {
             List<String> args = Generic.parseArgs(strLine);
-            if(args.size() == 0)
+            if(args.isEmpty())
             {
                 continue;
             }
 
             if(args.get(0).equals("#load"))
             {
-                List<Race> items = new ArrayList<Race>();
+                List<Race> items = new ArrayList<>();
                 items.addAll(Item.readFile(this, args.get(1), Race.class));
                 races.addAll(items);
             }
@@ -583,7 +580,7 @@ public class NationGen
         System.out.print("Writing items and spells");
         this.writeCustomItems(tw);
         this.writeSpells(tw);
-        for(int i = 0; i < nations.size(); i++)
+        for (Nation nation : nations) 
         {
             System.out.print(".");
         }
@@ -672,7 +669,7 @@ public class NationGen
 	
     public void writeSpells(PrintWriter tw)
     {
-        if(spellsToWrite.size() == 0)
+        if(spellsToWrite.isEmpty())
         {
             return;
         }
@@ -696,7 +693,7 @@ public class NationGen
 	
     public void writeCustomItems(PrintWriter tw)
     {
-        if(chosenCustomitems.size() == 0)
+        if(chosenCustomitems.isEmpty())
         {
             return;
         }
@@ -772,13 +769,16 @@ public class NationGen
         {
             if(str.equals("secondaryeffect") || str.equals("secondaryeffectalways"))
             {
-                try
+                String customItemSecondaryEffect = citem.values.get(str);
+                boolean isNumeric = customItemSecondaryEffect.chars().allMatch( Character::isDigit );
+                if (isNumeric)
                 {
-                    Integer.parseInt(citem.values.get(str));
+                    Integer.parseInt(customItemSecondaryEffect);
                 }
-                catch(Exception e)
+                else
                 {
-                    String id = getCustomItemId(citem.values.get(str));
+                    String id;
+                    id = getCustomItemId(customItemSecondaryEffect);
                     citem.values.put(str, id);
                 }
             }
@@ -835,11 +835,11 @@ public class NationGen
     private void handleShapeshifts(Nation n)
     {
 	       
-        List<Unit> units = n.generateUnitList();
-        units.addAll(n.heroes);
-        List<ShapeChangeUnit> sul = new ArrayList<ShapeChangeUnit>();
+        List<Unit> shapeshiftUnits = n.generateUnitList();
+        shapeshiftUnits.addAll(n.heroes);
+        List<ShapeChangeUnit> sul = new ArrayList<>();
 
-        for(Unit u : units)
+        for(Unit u : shapeshiftUnits)
         {
             for(Command c : u.commands)
             {	
@@ -847,7 +847,7 @@ public class NationGen
                 {
                     if((c.command.equals("#firstshape") && u.tags.contains("montagunit")))
                     {
-                        handleMontag(c, u, units);
+                        handleMontag(c, u, shapeshiftUnits);
                     }
                     else
                     {
@@ -856,14 +856,14 @@ public class NationGen
                 }
                 else if(c.command.equals("#montag"))
                 {
-                    handleMontag(c, u, units);
+                    handleMontag(c, u, shapeshiftUnits);
                 }
             }
         }
 		
         for(ShapeChangeUnit su : forms)
         {
-            if(units.contains(su.otherForm))
+            if(shapeshiftUnits.contains(su.otherForm))
             {
                 sul.add(su);
             }
@@ -902,7 +902,6 @@ public class NationGen
         }
     }
 	
-	
     private HashMap<String, Integer> montagmap = new HashMap<>();
     private void handleMontag(Command c, Unit u, List<Unit> units)
     {
@@ -926,7 +925,9 @@ public class NationGen
 	
     private void handleShapeshift(Command c, Unit u)
     {		
-        ShapeShift shift = null;
+        ShapeShift shift;
+        shift = null;
+        
         for(ShapeShift s : secondshapes)
         {
             if(s.name.equals(c.args.get(0)))
@@ -945,37 +946,34 @@ public class NationGen
 
         su.id = idHandler.nextUnitId();
 
-        if(c.command.equals("#shapechange"))
+        switch (c.command) 
         {
-            su.shiftcommand = "#shapechange";
-        }
-        else if(c.command.equals("#secondshape"))
-        {
-            su.shiftcommand = "#firstshape";
-        }
-        else if(c.command.equals("#firstshape"))
-        {
-            su.shiftcommand = "#secondshape";
-        }
-        else if(c.command.equals("#secondtmpshape"))
-        {
-            su.shiftcommand = "";
-        }
-        else if(c.command.equals("#landshape"))
-        {
-            su.shiftcommand = "#watershape";
-        }
-        else if(c.command.equals("#watershape"))
-        {
-            su.shiftcommand = "#landshape";
-        }
-        else if(c.command.equals("#forestshape"))
-        {
-            su.shiftcommand = "#plainshape";
-        }
-        else if(c.command.equals("#plainshape"))
-        {
-            su.shiftcommand = "#forestshape";
+            case "#shapechange":
+                su.shiftcommand = "#shapechange";
+                break;
+            case "#secondshape":
+                su.shiftcommand = "#firstshape";
+                break;
+            case "#firstshape":
+                su.shiftcommand = "#secondshape";
+                break;
+            case "#secondtmpshape":
+                su.shiftcommand = "";
+                break;
+            case "#landshape":
+                su.shiftcommand = "#watershape";
+                break;
+            case "#watershape":
+                su.shiftcommand = "#landshape";
+                break;
+            case "#forestshape":
+                su.shiftcommand = "#plainshape";
+                break;
+            case "#plainshape":
+                su.shiftcommand = "#forestshape";
+                break;
+            default:
+                break;
         }
 
         c.args.set(0, "" + su.id);
@@ -1012,7 +1010,7 @@ public class NationGen
             }
 
             List<String> args = Generic.parseArgs(line);
-            if(args.size() == 0)
+            if(args.isEmpty())
             {
                 continue;
             }
