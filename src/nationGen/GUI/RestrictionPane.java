@@ -87,10 +87,10 @@ public class RestrictionPane extends JPanel implements ActionListener, ListSelec
 	{
 
         all = getAllRestrictions();
-		possibles = new JList<NationRestriction>(all);
+		possibles = new JList<>(all);
 		possibles.setPreferredSize(new Dimension(100,100));
 
-		chosen = new JList<NationRestriction>(model);
+		chosen = new JList<>(model);
 		chosen.setPreferredSize(new Dimension(200,100));
 		chosen.addListSelectionListener(this);
 		
@@ -146,7 +146,7 @@ public class RestrictionPane extends JPanel implements ActionListener, ListSelec
 
 	public List<NationRestriction> getRestrictions()
 	{
-		List<NationRestriction> list = new ArrayList<NationRestriction>();
+		List<NationRestriction> list = new ArrayList<>();
 		for(int i = 0; i < model.size(); i++)
 		{
 			NationRestriction nrg = model.getElementAt(i);

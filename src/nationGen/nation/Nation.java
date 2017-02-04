@@ -148,22 +148,22 @@ public class Nation {
 		ChanceIncHandler chandler = new ChanceIncHandler(this);
 
 		// choose primary race
-		List<Race> allRaces = new ArrayList<Race>();
-		allRaces.addAll(nationGen.races);
+		List<Race> allRaces = new ArrayList<>();
 
-		Race race;
-		do
-		{
-			race = chandler.getRandom(allRaces);
-			allRaces.remove(race);
-
-		} while(race.tags.contains("secondary"));
-
+                for(Race r : nationGen.races)
+                {
+                    if (!r.tags.contains("secondary")) 
+                    {
+                        allRaces.add(r);
+                    }
+                }
+                Race race;
+                race = chandler.getRandom(allRaces);
+                
 		races.add(race.getCopy());
 		
 		for(Command c : races.get(0).nationcommands)
 			this.handleCommand(commands, c);
-		
 
 		// Add themes
 		addRaceThemes(races.get(0));
@@ -1471,7 +1471,7 @@ public class Nation {
 
 
 		// List of commands that may appear more than once per nation
-		List<String> uniques = new ArrayList<String>();
+		List<String> uniques = new ArrayList<>();
 		
 		c = new Command(c.command, c.args);
 		Command old = null;

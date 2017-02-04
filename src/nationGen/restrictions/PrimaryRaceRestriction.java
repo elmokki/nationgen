@@ -9,7 +9,7 @@ import nationGen.entities.Race;
 import nationGen.nation.Nation;
 
 public class PrimaryRaceRestriction extends TwoListRestriction<Race>  {
-	public List<String> possibleRaceNames = new ArrayList<String>();
+	public List<String> possibleRaceNames = new ArrayList<>();
 	
 	
 	private NationGen ng;
@@ -19,7 +19,11 @@ public class PrimaryRaceRestriction extends TwoListRestriction<Race>  {
 		this.ng = ng;
 		
 		for(Race r : ng.races)
-			rmodel.addElement(r);
+                    if (r.tags.contains("secondary")) 
+                    {
+                        	rmodel.addElement(r);
+                    }
+		
 		
 		
 	}
@@ -39,7 +43,7 @@ public class PrimaryRaceRestriction extends TwoListRestriction<Race>  {
 
 	@Override
 	public boolean doesThisPass(Nation n) {
-		if(possibleRaceNames.size() == 0)
+		if(possibleRaceNames.isEmpty())
 		{
 			System.out.println("Primary Race nation restriction has no races set!");
 			return true;

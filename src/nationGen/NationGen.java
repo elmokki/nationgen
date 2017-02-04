@@ -238,6 +238,7 @@ public class NationGen
             System.out.print(")... ");
 
             newnation = new Nation(this, newseed, count, restrictions);
+            
             if(!newnation.passed)
             {
                 ++failedcount;
