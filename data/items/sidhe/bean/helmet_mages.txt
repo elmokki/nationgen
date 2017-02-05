@@ -1,0 +1,70 @@
+#newitem
+#id "leather cap"
+#gameid 120
+#sprite /graphics/sidhe/bean/helmet/leathercap.png
+#armor
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id "bronzecap"
+#gameid 135
+#sprite /graphics/sidhe/bean/helmet/bronzecap.png
+#eliteversion bronzecap_elite
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id "bronzecap_elite"
+#gameid 135
+#sprite /graphics/sidhe/bean/helmet/bronzecap_elite.png
+#eliteversion goldcap_elite
+#eliteversion tiara
+#eliteversion crown
+#armor
+#tier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id "goldcap_elite"
+#gameid 135
+#sprite /graphics/sidhe/bean/helmet/goldenhelmet.png
+#eliteversion tiara
+#eliteversion crown
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id "tiara"
+#gameid 148
+#sprite /graphics/sidhe/bean/helmet/tiara.png
+#recolormask /graphics/sidhe/bean/helmet/tiara_recolormask.png
+#eliteversion crown
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#needs hair thickhair
+#enditem
+
+#newitem
+#id "crown"
+#gameid 148
+#sprite /graphics/sidhe/bean/helmet/crown.png
+#eliteversion crown
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#needs hair thickhair
+#enditem

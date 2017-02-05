@@ -5,6 +5,8 @@
 #role "infantry"
 #role "scout"
 
+#generateitem 1 shirt
+#generateitem 0.5 hair
 #define "#stealthy 0"
 
 #load basesprite /data/items/sidhe/bases.txt
@@ -17,7 +19,7 @@
 #load legs /data/items/sidhe/legs_infantry.txt
 #load weapon /data/items/sidhe/weapon.txt 0 -3
 #load bonusweapon /data/items/human/normal/humanbonusranged.txt 0 -3
-#load offhand /data/items/sidhe/humanoffhand.txt 0 -3
+#load offhand /data/items/sidhe/offhand.txt 0 -3
 #load offhand /data/items/sidhe/shields.txt 0 -3
 #load hair /data/items/sidhe/hair.txt
 #endpose
@@ -31,6 +33,8 @@
 #role "mounted"
 #role "scout"
 
+#generateitem 1 shirt
+#generateitem 0.5 hair
 #define "#stealthy 0"
 
 #load basesprite /data/items/sidhe/bases.txt
@@ -44,7 +48,7 @@
 #load weapon /data/items/sidhe/weapon.txt 0 -3
 #load bonusweapon /data/items/human/normal/humanbonusranged.txt 0 -3
 #load lanceslot /data/items/sidhe/bonusweapon.txt 0 -3
-#load offhand /data/items/sidhe/humanoffhand.txt 0 -3
+#load offhand /data/items/sidhe/offhand.txt 0 -3
 #load offhand /data/items/sidhe/shields.txt 0 -3
 #load hair /data/items/sidhe/hair.txt
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
@@ -60,6 +64,8 @@
 #role "mounted"
 #role "scout"
 
+#generateitem 1 shirt
+#generateitem 0.5 hair
 #define "#stealthy 0"
 
 #load basesprite /data/items/sidhe/bases.txt
@@ -73,7 +79,7 @@
 #load weapon /data/items/sidhe/weapon.txt 0 -3
 #load bonusweapon /data/items/human/normal/humanbonusranged.txt 0 -3
 #load lanceslot /data/items/sidhe/bonusweapon.txt 0 -3
-#load offhand /data/items/sidhe/humanoffhand.txt 0 -3
+#load offhand /data/items/sidhe/offhand.txt 0 -3
 #load offhand /data/items/sidhe/shields.txt 0 -3
 #load hair /data/items/sidhe/hair.txt
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
@@ -90,6 +96,9 @@
 #role "chariot"
 #basechance 0.0625
 
+#generateitem 1 shirt
+#generateitem 0.5 hair
+
 #load basesprite /data/items/sidhe/bases.txt
 #load mount /data/items/sidhe/sidhechariots.txt
 
@@ -103,7 +112,7 @@
 #load legs /data/items/sidhe/legs_infantry.txt
 #load weapon /data/items/sidhe/weapon.txt 0 -3
 #load bonusweapon /data/items/human/normal/humanbonusranged.txt 0 -3
-#load offhand /data/items/sidhe/humanoffhand.txt 0 -3
+#load offhand /data/items/sidhe/offhand.txt 0 -3
 #load offhand /data/items/sidhe/shields.txt 0 -3
 
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt

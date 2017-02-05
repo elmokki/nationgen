@@ -10,9 +10,9 @@
 #tier 2
 #warriormage
 
+#generateitem 1 shirt
+#generateitem 0.5 hair
 #define "#stealthy 0"
-
-#mage_nolowtierhat
 
 #load basesprite /data/items/sidhe/bases.txt
 #load shadow /data/items/sidhe/shadow.txt
@@ -24,8 +24,8 @@
 #load legs /data/items/sidhe/legs_infantry.txt
 #load weapon /data/items/sidhe/weapon_mages.txt 0 -3
 #load bonusweapon /data/items/human/normal/humanbonusranged.txt 0 -3
-#load offhand /data/items/sidhe/offhand_mages.txt 0 -3
-#load offhand /data/items/sidhe/shields_mages.txt 0 -3
+#load offhand /data/items/sidhe/offhand.txt 0 -3
+#load offhand /data/items/sidhe/shields.txt 0 -3
 #load hair /data/items/sidhe/hair.txt
 #endpose
 
@@ -41,6 +41,8 @@
 #tier 3
 #warriormage
 
+#generateitem 1 shirt
+#generateitem 0.5 hair
 #define "#stealthy 0"
 
 #load basesprite /data/items/sidhe/bases.txt
@@ -54,8 +56,8 @@
 #load legs /data/items/sidhe/legs_mounted.txt 0 -1
 #load weapon /data/items/sidhe/weapon.txt 0 -3
 #load bonusweapon /data/items/human/normal/humanbonusranged.txt 0 -3
-#load offhand /data/items/sidhe/offhand_mages.txt 0 -3
-#load offhand /data/items/sidhe/shields_mages.txt 0 -3
+#load offhand /data/items/sidhe/offhand.txt 0 -3
+#load offhand /data/items/sidhe/shields.txt 0 -3
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
 #load overlay /data/items/sidhe/sidhemounts_overlay.txt
 #load hair /data/items/sidhe/hair.txt
@@ -74,6 +76,8 @@
 
 #chanceinc moduleid herogen *2
 
+#generateitem 1 shirt
+#generateitem 0.5 hair
 #define "#stealthy 0"
 
 #load basesprite /data/items/sidhe/bases.txt
@@ -87,8 +91,8 @@
 #load legs /data/items/sidhe/legs_mounted.txt 0 -1
 #load weapon /data/items/sidhe/weapon.txt 0 -3
 #load bonusweapon /data/items/human/normal/humanbonusranged.txt 0 -3
-#load offhand /data/items/sidhe/offhand_mages.txt 0 -3
-#load offhand /data/items/sidhe/shields_mages.txt 0 -3
+#load offhand /data/items/sidhe/offhand.txt 0 -3
+#load offhand /data/items/sidhe/shields.txt 0 -3
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
 #load overlay /data/items/sidhe/sidhemounts_overlay.txt
 #load hair /data/items/sidhe/hair.txt

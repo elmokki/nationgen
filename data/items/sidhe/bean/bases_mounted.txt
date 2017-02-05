@@ -1,7 +1,8 @@
 #newitem
-#id sidhebase
+#id beansidhebase
 #gameid -1
-#sprite /graphics/sidhe/sidhe_basesprite.png
+#sprite /graphics/sidhe/bean/basesprite_mounted.png
+#recolormask /graphics/sidhe/bean/basesprite_mounted_recolormask.png
 #tag "noble"
 #define "#hp 13"
 #define "#enc 3"
@@ -18,5 +19,6 @@
 #define "#maxage 1000"
 #define "#forestsurvival"
 #define "#ap 13"
-#define "#nametype 142"
+#define "#female"
+#define "#nametype 143"
 #enditem

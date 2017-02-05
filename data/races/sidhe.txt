@@ -2,11 +2,17 @@
 #name "Sidhe"
 #basechance 0.05
 
-#pose sidhemages
-#pose sidhetroops
+#chanceinc era 1 *3
+#chanceinc era 3 *0.5
 
-#generateitem 1 shirt
-#generateitem 0.5 hair
+#racethemes sidhe_themes
+#freetheme demographic
+#freetheme cultural
+
+#spritegenpose sidhemages
+#spritegenpose sidhetroops
+#spritegenpose beansidhetroops
+#spritegenpose beansidhemages
 
 #all_troops_sacred
 #all_troops_elite
@@ -18,23 +24,6 @@
 #suffixes /data/names/nations/fomorian/suffixes.txt
 
 #tag "preferredmount fay horse"
-#unitcommand "#hp 13"
-#unitcommand "#enc 3"
-#unitcommand "#mr 14"
-#unitcommand "#mor 12"
-#unitcommand "#str 12"
-#unitcommand "#att 12"
-#unitcommand "#def 13"
-#unitcommand "#prec 12"
-#unitcommand "#gcost 25"
-#unitcommand "#darkvision 50"
-#unitcommand "#illusion"
--- #unitcommand "#stealthy 0" -- granted by poses so chariots aren't stealthy
-#unitcommand "#maxage 1000"
-#unitcommand "#forestsurvival"
-#unitcommand "#ap 13"
-#unitcommand "#nametype 142"
-
 #nationcommand "#likespop 89"
 
 #innate_sacred_power 2
@@ -53,10 +42,8 @@
 #chanceinc "hasprimaryrace *0.25"
 #chanceinc "primaryrace abysian *0.1"
 #chanceinc "primaryrace hoburg *6"
-#chanceinc "primaryrace "Boreal human" *2"
-
-#chanceinc era 1 *3
-#chanceinc era 3 *0.5
+#chanceinc "primaryrace 'Boreal human' *2"
+#chanceinc "primaryrace firbolg *2"
 
 #gods europegods
 
@@ -67,5 +54,5 @@
 
 #generationchance chariot 0.0625
 
-#description "The Sidhe are a highly magical race, greatly superior to humans."
+#description "The Daoine Sidhe are an ancient magical race, greatly superior to humans."
 #endrace
