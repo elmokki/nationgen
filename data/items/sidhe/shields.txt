@@ -1,6 +1,5 @@
 --- Shields
 
-
 #newitem
 #id bronzebuckler
 #gameid 1
@@ -32,7 +31,14 @@
 #armor
 #enditem
 
-
+#newitem
+#id goldenkite
+#gameid 155
+#sprite /graphics/offhand/sacred/goldenkite2.png
+#theme "elite"
+#theme "advanced"
+#armor
+#enditem
 
 #newitem
 #id kite1
@@ -44,7 +50,6 @@
 #recolormask /graphics/offhand/standard/kite1_recolormask.png
 #enditem
 
-
 #newitem
 #id kite2
 #basechance 0.025
@@ -53,4 +58,23 @@
 #armor
 #theme "advanced"
 #recolormask /graphics/offhand/standard/kite2_recolormask.png
+#enditem
+
+#newitem
+#id kite3
+#basechance 0.025
+#gameid 209
+#sprite /graphics/offhand/standard/kite8_bronze.png
+#armor
+#theme "advanced"
+#enditem
+
+#newitem
+#id kite4
+#basechance 0.025
+#gameid 209
+#sprite /graphics/offhand/standard/kite8_bronze.png
+#armor
+#theme "advanced"
+#recolormask /graphics/offhand/standard/kite8_recolormask.png
 #enditem
