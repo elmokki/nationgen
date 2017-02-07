@@ -1,0 +1,233 @@
+#new
+#name "pygmy_elephant_central_1"
+#basechance 0
+#chanceinc "racetheme central 1"
+#command "#copystats 150"
+#command "#spr1 ./graphics/monsters/hoburg/elephant_central.png"
+#command "#spr2 shift"
+#command "#name 'Pygmy War Elephant'"
+#command "#gcost 40"
+#command "#rcost 15"
+#command "#hp 32"
+#command "#size 3"
+#command "#prot 6"
+#command "#str 15"
+#command "#ap 16"
+#command "#weapon 397" -- Kick
+#specifiedgcost
+#end
+
+#new
+#name "pygmy_elephant_austral_1"
+#basechance 0
+#chanceinc "racetheme austral 1"
+#command "#copystats 2307"
+#command "#spr1 ./graphics/monsters/hoburg/elephant_austral.png"
+#command "#spr2 shift"
+#command "#name 'Pygmy War Elephant'"
+#command "#gcost 40"
+#command "#rcost 15"
+#command "#hp 32"
+#command "#size 3"
+#command "#prot 6"
+#command "#str 15"
+#command "#ap 16"
+#command "#weapon 397" -- Kick
+#specifiedgcost
+#end
+
+#new
+#name "hydra"
+#basechance 0.25
+#invariantid 1831
+#command "#gcost 250" -- Specified for documentation generation
+#command "#rcost 1"
+#end
+
+#new
+#name "hydra hatchling"
+#basechance 0.25
+#invariantid 1840
+#command "#gcost 35" -- Specified for documentation generation
+#command "#rcost 1"
+#end
+
+#new
+#name "troglodyte"
+#basechance 0.5
+#command "#copystats 447"
+#command "#copyspr 447"
+#end
+
+#new
+#name "sirrush"
+#basechance 0.5
+#command "#copystats 1347"
+#command "#copyspr 1347"
+#caponlychance 1
+#end
+
+#new
+#name "vine men"
+#basechance 0
+#chanceinc racetheme vinegrower 10
+#command "#copystats 361"
+#command "#copyspr 361"
+#command "#gcost 20"
+#command "#rcost 1"
+#command "#reclimit 3"
+#caponlychance 0.75
+#end
+
+#new
+#name "vine ogres"
+#basechance 0
+#chanceinc racetheme vinegrower 5
+#command "#copystats 362"
+#command "#copyspr 362"
+#command "#gcost 40"
+#command "#rcost 1"
+#command "#reclimit 1"
+#caponlychance 0.9
+#end
+
+#new
+#name "dark vines"
+#basechance 0
+#chanceinc racetheme podslaver 5
+#command "#copystats 330"
+#command "#copyspr 330"
+#command "#gcost 100"
+#command "#rcost 1"
+#command "#reclimit 1"
+#command "#slow_to_recruit"
+#caponlychance 1
+#end
+
+#new
+#name "feral giant hoburg"
+#basechance 0
+#chanceinc "racetheme  boreal 1"
+#chanceinc "racetheme  central 1"
+#chanceinc "racetheme  imperial 0.5"
+#chanceinc "racetheme  occidental 1"
+#chanceinc "unittheme not feral *0"
+#chanceinc "racetheme  fae *0"
+#command "#copystats 2261"
+#command "#spr1 ./graphics/monsters/hoburg/giant_feral_boreal.png"
+#command "#spr2 shift"
+#command "#name 'Giant Hoburg'"
+#command "#gcost 100"
+#command "#rcost 1"
+#command "#hp 53"
+#command "#size 4"
+#command "#prot 4"
+#command "#mr 12"
+#command "#mor 14"
+#command "#str 20"
+#command "#att 13"
+#command "#def 11"
+#command "#prec 9"
+#command "#enc 4"
+#command "#mapmove 2"
+#command "#ap 12"
+#command "#maxage 80"
+#command "#weapon 92"
+#command "#weapon 92"
+#command "#undisciplined"
+#command "#poorleader"
+#command "#trample"
+#command "#trampswallow"
+#command "#aciddigest 5"
+#command "#supplybonus -20"
+#command "#pillagebonus 5"
+#command "#incunrest 2"
+#command "#reclimit 5"
+#command "#descr 'Occasionally a hoburg is born with an outrageous appetite even by their standards. They usually starve early in their childhood, but should they manage to get more than their fair share of food and survive, they will never stop growing and can reach terrifying sizes. At that point, anything smaller than them becomes a potential meal...'"
+#caponlychance 1
+#specifiedgcost
+#specifieddescr
+#end
+
+#new
+#name "feral giant oriental hoburg"
+#basechance 0
+#chanceinc "racetheme oriental 1"
+#chanceinc "unittheme not feral *0"
+#chanceinc "racetheme fae *0"
+#command "#spr1 ./graphics/monsters/hoburg/giant_feral_oriental.png"
+#command "#spr2 shift"
+#command "#name 'Giant Hoburg'"
+#command "#gcost 100"
+#command "#rcost 1"
+#command "#hp 53"
+#command "#size 4"
+#command "#prot 4"
+#command "#mr 12"
+#command "#mor 14"
+#command "#str 20"
+#command "#att 13"
+#command "#def 11"
+#command "#prec 9"
+#command "#enc 4"
+#command "#mapmove 2"
+#command "#ap 12"
+#command "#maxage 80"
+#command "#weapon 92"
+#command "#weapon 92"
+#command "#undisciplined"
+#command "#poorleader"
+#command "#trample"
+#command "#trampswallow"
+#command "#aciddigest 5"
+#command "#supplybonus -20"
+#command "#pillagebonus 5"
+#command "#incunrest 2"
+#command "#reclimit 5"
+#command "#descr 'Occasionally a hoburg is born with an outrageous appetite even by their standards. They usually starve early in their childhood, but should they manage to get more than their fair share of food and survive, they will never stop growing and can reach terrifying sizes. At that point, anything smaller than them becomes a potential meal...'"
+#caponlychance 1
+#specifiedgcost
+#specifieddescr
+#end
+
+#new
+#name "feral giant austral hoburg"
+#basechance 0
+#chanceinc "racetheme austral 1"
+#chanceinc "unittheme not feral *0"
+#chanceinc "racetheme fae *0"
+#command "#spr1 ./graphics/monsters/hoburg/giant_feral_austral.png"
+#command "#spr2 shift"
+#command "#name 'Giant Hoburg'"
+#command "#gcost 100"
+#command "#rcost 1"
+#command "#hp 53"
+#command "#size 4"
+#command "#prot 4"
+#command "#mr 12"
+#command "#mor 14"
+#command "#str 20"
+#command "#att 13"
+#command "#def 11"
+#command "#prec 9"
+#command "#enc 3"
+#command "#mapmove 3"
+#command "#ap 13"
+#command "#maxage 80"
+#command "#weapon 92"
+#command "#weapon 92"
+#command "#undisciplined"
+#command "#forestsurvival"
+#command "#poorleader"
+#command "#trample"
+#command "#trampswallow"
+#command "#aciddigest 5"
+#command "#supplybonus -20"
+#command "#pillagebonus 5"
+#command "#incunrest 2"
+#command "#reclimit 5"
+#command "#descr 'Occasionally a hoburg is born with an outrageous appetite even by their standards. They usually starve early in their childhood, but should they manage to get more than their fair share of food and survive, they will never stop growing and can reach terrifying sizes. At that point, anything smaller than them becomes a potential meal...'"
+#caponlychance 1
+#specifiedgcost
+#specifieddescr
+#end
