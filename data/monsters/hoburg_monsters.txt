@@ -2,6 +2,7 @@
 #name "pygmy_elephant_central_1"
 #basechance 0
 #chanceinc "racetheme central 1"
+#chanceinc "racetheme imperial 1"
 #command "#copystats 150"
 #command "#spr1 ./graphics/monsters/hoburg/elephant_central.png"
 #command "#spr2 shift"
@@ -10,9 +11,10 @@
 #command "#rcost 15"
 #command "#hp 32"
 #command "#size 3"
-#command "#prot 6"
+#command "#prot 8"
 #command "#str 15"
 #command "#ap 16"
+#command "#supplybonus -3"
 #command "#weapon 397" -- Kick
 #specifiedgcost
 #end
@@ -29,9 +31,30 @@
 #command "#rcost 15"
 #command "#hp 32"
 #command "#size 3"
-#command "#prot 6"
+#command "#prot 8"
 #command "#str 15"
 #command "#ap 16"
+#command "#supplybonus -3"
+#command "#weapon 397" -- Kick
+#specifiedgcost
+#end
+
+#new
+#name "pygmy_elephant_oriental_1"
+#basechance 0
+#chanceinc "racetheme oriental 1"
+#command "#copystats 150"
+#command "#spr1 ./graphics/monsters/hoburg/elephant_oriental.png"
+#command "#spr2 shift"
+#command "#name 'Pygmy War Elephant'"
+#command "#gcost 40"
+#command "#rcost 15"
+#command "#hp 32"
+#command "#size 3"
+#command "#prot 8"
+#command "#str 15"
+#command "#ap 16"
+#command "#supplybonus -3"
 #command "#weapon 397" -- Kick
 #specifiedgcost
 #end

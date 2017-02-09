@@ -1,7 +1,7 @@
 
 
 #new
-#name "elephant_human_1"
+#name "elephant_human_boreal_1"
 #basechance 0
 #chanceinc primaryrace "Boreal human" 1
 #command "#copystats 2261"
@@ -9,7 +9,7 @@
 #end
 
 #new
-#name "elephant_human_2"
+#name "elephant_human_boreal_2"
 #basechance 0
 #chanceinc primaryrace "Boreal human" 0.25
 #chanceinc era 3 3.75
@@ -18,7 +18,7 @@
 #end
 
 #new
-#name "elephant_human_3"
+#name "elephant_human_boreal_3"
 #basechance 0
 #chanceinc primaryrace "Boreal human" 2
 #command "#copystats 150"
@@ -26,7 +26,7 @@
 #end
 
 #new
-#name "elephant_human_4"
+#name "elephant_human_austral"
 #basechance 0
 #chanceinc race "Austral human" 2
 #command "#copystats 2307"
@@ -34,7 +34,16 @@
 #end
 
 #new
-#name "elephant_human_5"
+#name "elephant_human_oriental"
+#basechance 0
+#chanceinc primaryrace "Oriental human" 2
+#command "#copystats 150"
+#command "#spr1 ./graphics/monsters/elephant_human_oriental.png"
+#command "#spr2 shift"
+#end
+
+#new
+#name "elephant_human_dynastic_1"
 #basechance 0
 #basechance 0
 #chanceinc primaryrace "Dynastic human" 4
@@ -46,7 +55,7 @@
 #end
 
 #new
-#name "elephant_human_6"
+#name "elephant_human_dynastic_2"
 #basechance 0
 #chanceinc primaryrace "Dynastic human" 0.25
 #chanceinc era 3 1.75
@@ -60,7 +69,6 @@
 
 #new
 #name "elephant_humanbred_1"
-#basechance 0
 #basechance 0
 #chanceinc primaryrace "Abysian" 4
 #chanceinc racetheme primal *0
