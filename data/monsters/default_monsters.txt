@@ -1,5 +1,3 @@
-
-
 #new
 #name "elephant_human_boreal_1"
 #basechance 0
@@ -44,7 +42,6 @@
 
 #new
 #name "elephant_human_dynastic_1"
-#basechance 0
 #basechance 0
 #chanceinc primaryrace "Dynastic human" 4
 #chanceinc racetheme dustwalkers_only *0
@@ -113,6 +110,7 @@
 #command "#spr1 ./graphics/monsters/elephant_avvite.png"
 #command "#spr2 shift"
 #recolormask /graphics/monsters/elephant_avvite_recolormask.png
+#command "#weapon 437" -- Longspear
 #end
 
 #new
@@ -259,6 +257,31 @@
 #command "#copystats 1085"
 #command "#copyspr 1085"
 #caponlychance 0.5
+#end
+
+#new
+#name "pygmy_mammoth_vaetti"
+#basechance 0
+#chanceinc "primaryrace vaetti 10"
+#chanceinc "nationcommand idealcold below 2 *0.5"
+#chanceinc "nationcommand idealcold below 1 *0.2"
+#chanceinc "nationcommand idealcold below 0 *0.2"
+#chanceinc "nationcommand idealcold below -1 *0.25"
+#command "#copystats 419"
+#command "#spr1 ./graphics/monsters/mammoth_pygmy_vaetti.png"
+#command "#spr2 shift"
+#command "#name 'Pygmy Mammoth'"
+#command "#gcost 50"
+#command "#rcost 15"
+#command "#hp 36"
+#command "#size 3"
+#command "#prot 10"
+#command "#str 16"
+#command "#def 6"
+#command "#ap 16"
+#command "#weapon 397" -- Kick
+#command "#weapon bonus_shortbow"
+#specifiedgcost
 #end
 
 #new
