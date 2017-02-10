@@ -1215,7 +1215,6 @@
 
 -- Zotz custom items
 
-
 #new customarmor -- renamed Mictlan Armor
 #name zotz_mictlanarmor
 #armor
@@ -1260,6 +1259,53 @@
 #command "#name 'Obsidian Armor'"
 #end
 
+--- Bonus missle attacks for pachyderm howdahs
+#new customweapon
+#name bonus_shortbow
+#command "#rcost 3"
+#command "#dmg 9"
+#command "#range 32"
+#command "#ammo 24"
+#command "#flyspr 109 1"
+#command "#sound 14"
+#command "#name 'Short Bow'"
+#command "#twohanded"
+#command "#bonus"
+#command "#nostr"
+#command "#pierce"
+#command "#woodenweapon"
+#command "#range050"
+#end
+
+#new customweapon
+#name bonus_sling
+#command "#dmg 8"
+#command "#range 22"
+#command "#ammo 30"
+#command "#flyspr 111 1"
+#command "#sound 15"
+#command "#name 'Sling'"
+#command "#bonus"
+#command "#nostr"
+#command "#blunt"
+#command "#range050"
+#end
+
+#new customweapon
+#name bonus_javelins
+#command "#att -2"
+#command "#dmg 9"
+#command "#range 9"
+#command "#ammo 12"
+#command "#rcost 2"
+#command "#flyspr 110 1"
+#command "#sound 19"
+#command "#name 'Javelins'"
+#command "#bonus"
+#command "#nostr"
+#command "#pierce"
+#command "#range0"
+#end
 
 --- NOSTR mount attacks
 
@@ -1447,3 +1493,4 @@
 #command "#slash"
 #command "#natural"
 #end
+
