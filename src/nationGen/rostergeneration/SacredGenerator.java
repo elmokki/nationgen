@@ -816,6 +816,8 @@ public class SacredGenerator extends TroopGenerator {
 			giveMagicWeapons(u, cost);
 		}
 
+		this.armSpecialSlot(u, null, usedItems);
+		
 		// Clean up
 		cleanUnit(u);
 
