@@ -1,9 +1,12 @@
 package nationGen.rostergeneration;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Random;
+
+
 
 
 
@@ -60,7 +63,7 @@ public class TroopGenerator {
 		int dws = 0;
 		ItemSet weapons = new ItemSet();
 		ItemSet bonusweapons = new ItemSet();
-		int occurances = 0;
+		List<Unit> units = new ArrayList<Unit>();
 		
 		public Template(Item armor, Race race, Unit template, String role, Pose pose)
 		{
@@ -300,14 +303,14 @@ public class TroopGenerator {
 		
 		Template t = new Template(u.getSlot("armor"), race, u, role, u.pose);
 		
-		
+	
 		boolean success = false;
 		if(!role.equals("mounted"))
 		{
 			success = armInfantry(u, t);
 			
 		}
-		else
+		else 
 			success = armCavalry(u, t);
 	
 
@@ -323,6 +326,7 @@ public class TroopGenerator {
 			this.equipBonusWeapon(u, role, race, t);
 		
 		//unitGen.handleExtraGeneration(u);
+		this.armSpecialSlot(u, null, used);
 
 
 		return u;
@@ -388,6 +392,7 @@ public class TroopGenerator {
 	
 		
 				boolean success = false;
+				System.out.println(unit.pose + " - " + unit.getSlot("weapon"));
 				if(!role.equals("mounted"))
 				{
 					success = armInfantry(unit, t);
@@ -403,16 +408,20 @@ public class TroopGenerator {
 				}
 				else if(unit != null)
 				{
-					t.occurances++;
+					t.units.add(unit);
 				}
 				
 				// Bonusweapon
 					
 				if(unit != null)
 					this.equipBonusWeapon(unit, role, race, t);
+				
+				this.armSpecialSlot(unit, t, used);
+
 
 			}
 
+			
 			
 			if(unit == null)
 			{
@@ -433,6 +442,7 @@ public class TroopGenerator {
 		
 		if(unit != null)
 		{
+
 			
 			// Add everything to used;
 			addToUsed(unit);
@@ -548,6 +558,72 @@ public class TroopGenerator {
 		
 	}
 	
+	
+	public boolean armSpecialSlot(Unit u, Template t, ItemSet used)
+	{
+		
+		List<String> tags = new ArrayList<String>();
+		tags.addAll(u.pose.tags);
+		tags.addAll(u.race.tags);
+		for(Item i : u.slotmap.values())
+			if(i != null)
+				tags.addAll(i.tags);
+		for(Filter f : u.appliedFilters)
+			tags.addAll(f.tags);
+		
+		
+		
+		for(String tag : tags)
+		{
+			List<String> args = Generic.parseArgs(tag);
+			if(args.get(0).equals("additionalweaponslot"))
+			{
+				String slot = args.get(args.size() - 1);
+				
+
+				double chance = 1;
+				if(args.size() > 2)
+					chance = Double.parseDouble(args.get(1));
+			
+				if(random.nextDouble() < chance)
+				{
+										
+					ItemSet newused = used.filterSlot(slot).filterForPose(u.pose);
+					List<Item> oldItems = new ArrayList<Item>();
+					
+					if(t != null)
+					{
+						for(Unit unit : t.units)
+						{
+							if(unit.getSlot(slot) != null)
+								oldItems.add(unit.getSlot(slot));
+						}
+					}
+					
+					newused.removeAll(oldItems);
+					
+					ItemSet select;
+					if(newused.size() > 0)
+						select = newused;
+					else
+					{
+						select = new ItemSet();
+						select.addAll(u.pose.getItems(slot));
+						select.removeAll(oldItems);
+					}
+					
+					if(select.size() > 0)
+					{
+						Item newitem = chandler.getRandom(select, u);
+						u.setSlot(slot, newitem);
+					}
+				}
+			}
+		}
+		
+		return true;
+	}
+	
 	/**
 	 * Ugly method for checking whether to skip, but this makes the main code clearer.
 	 * @param t
@@ -564,7 +640,7 @@ public class TroopGenerator {
 		{
 			if(t.armor.id.equals(t2.armor.id) && Math.abs(t.template.getHP() - t2.template.getHP()) < 4 && t.role.equals(t2.role) && t.template.getSlot("mount") == t2.template.getSlot("mount"))
 			{
-				occurances += t.occurances;
+				occurances += t.units.size();
 			}
 		}
 				
@@ -604,6 +680,8 @@ public class TroopGenerator {
 		
 		return false;
 	}
+	
+
 	
 	private boolean armCavalry(Unit unit, Template t)
 	{
@@ -776,7 +854,6 @@ public class TroopGenerator {
 
 			// Remove armors that are on poses of the same type
 			ItemSet pointless = new ItemSet();
-			
 			for(Template t : templates)
 			{
 
