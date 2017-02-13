@@ -313,8 +313,7 @@ public class TroopGenerator {
 		else 
 			success = armCavalry(u, t);
 	
-
-
+	
 		if(!success)
 		{
 			u = null;
@@ -328,7 +327,10 @@ public class TroopGenerator {
 		//unitGen.handleExtraGeneration(u);
 		this.armSpecialSlot(u, null, used);
 
+		cleanUnit(u);
+		
 
+		
 		return u;
 	}
 	
@@ -392,7 +394,6 @@ public class TroopGenerator {
 	
 		
 				boolean success = false;
-				System.out.println(unit.pose + " - " + unit.getSlot("weapon"));
 				if(!role.equals("mounted"))
 				{
 					success = armInfantry(unit, t);
@@ -401,6 +402,8 @@ public class TroopGenerator {
 				else
 					success = armCavalry(unit, t);
 			
+				
+				
 				if(!success)
 				{
 					unit = null;
@@ -465,6 +468,8 @@ public class TroopGenerator {
 	private boolean armInfantry(Unit unit, Template t)
 	{
 
+
+		
 		ItemSet possibleWeapons = t.template.pose.getItems("weapon");
 		if(possibleWeapons.possibleItems() - t.weapons.size() <= 0)
 		{
@@ -482,10 +487,9 @@ public class TroopGenerator {
 			
 	
 			
-			
-			
 			Item weapon = this.getNewItem("weapon", t.role, unit, null, tempweps);
 			unit.setSlot("weapon", weapon);
+
 			t.weapons.add(weapon);
 			
 
@@ -497,6 +501,8 @@ public class TroopGenerator {
 					
 				{
 					this.equipOffhand(unit, t.role, unit.race, t);
+					
+				
 				}
 			}
 		
