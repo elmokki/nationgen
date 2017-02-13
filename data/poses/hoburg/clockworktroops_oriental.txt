@@ -91,7 +91,7 @@
 #generateitem 1 headslot -- used to define commander helmet slots
 #generateitem 1 handslots -- used to define commander hand slots
 -- #generateitem 1 specialweapon
-#generateitem 1 specialslot
+#additionalweaponslot 1 specialslot
 
 #endpose
 
@@ -130,7 +130,7 @@
 #generateitem 1 handslots -- used to define commander hand slots
 
 -- #generateitem 1 specialweapon
-#generateitem 0.2 specialslot
+#additionalweaponslot 0.2 specialslot
 
 #maxvarieties 2
 #maxunits 1
@@ -172,6 +172,6 @@
 #load specialslot /data/items/hoburg/clockwork/oriental/specialslots_clockwork_heavy.txt
 
 -- #generateitem 1 handslots -- used to define commander hand slots
-#generateitem 1 specialslot
+#additionalweaponslot 1 specialslot
 
 #endpose

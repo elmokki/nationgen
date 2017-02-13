@@ -289,8 +289,17 @@ Sets the tiers the pose is available for in mage and priest generation. Tier 1 i
 the most powerful mages and H3 priests. Tier 2 is used for everything in between and extra mages.
 
 #generateitem <probability> <slot> 
-Generates an item in roster generation to given slot at given probability. Current use is mostly to generate a guaranteed bonusweapon
-to ranged units so they have something other than a fist for melee.
+Generates an item to given slot at given probability. Current use is mostly to generate a guaranteed bonusweapon
+to ranged units so they have something other than a fist for melee. This happens very early in the generation and thus items generated
+to slots such as weapon may be replaced. Consider looking into either #forceslot or #additionalweaponslot.
+
+#additionalweaponslot <probability> <slot>
+As above, but with three differences:
+1) This is done late, so it can replace weapons and such without issues
+2) It works only for troops, ie troops, sacreds, elites and such
+3) It treats variety like for weapons: If you have 3 units with the same exact armor, the item from this command will vary if possible and try 
+   to primarily use items from other armor levels of the same pose if such exist.
+For mages and priests consider playing around with #forceslot. It does pretty much the same thing when you don't need to vary equipment. 
 
 #possiblecommandset <setname> <probability> 
 Defines a new set of commands that is given to units with given probability. Works on most filters as well.
