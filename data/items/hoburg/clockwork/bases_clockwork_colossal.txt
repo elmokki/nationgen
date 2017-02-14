@@ -1,0 +1,31 @@
+#newitem
+#name "hoburg_pilot_nosprite"
+#sprite /graphics/hoburg/giant/clockwork/basesprite.png
+#gameid -1
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#theme "oriental"
+#theme "austral"
+#chanceinc theme abysian *0.1
+#cannot_be_pd
+#enditem
+
+#newitem
+#name "hoburgbred_pilot_nosprite"
+#sprite /graphics/hoburg/giant/clockwork/basesprite.png
+#gameid -1
+#theme "abysian"
+#chanceinc theme not abysian *0.1
+#define "#gcost +3"
+#define "#hp +2"
+#define "#mor +2"
+#define "#str +2"
+#define "#def -2"
+#define "#prec -2"
+#define "#ap +2"
+#define "#fireres 15"
+#define "#maxage *0.8"
+#command "#descr 'Hoburgbred Abysians are the result of ill-conceived crossbreeding experiments aiming to combine the best traits of the two races. They are fire resistant, stronger, and more arrogant than typical hoburgs.'"
+#cannot_be_pd
+#enditem
