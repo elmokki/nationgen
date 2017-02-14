@@ -1,0 +1,41 @@
+
+-- Giant clockwork armor
+
+#newitem 
+#name "giant clockwork armor"
+#gameid 130
+#sprite /graphics/hoburg/giant/clockwork/colossus_oriental.png
+#armor
+#theme "advanced"
+
+#define "#gcost +90"
+#define "#rcost +75"
+#define "#size 5"
+#define "#ressize 5"
+#adjustmentcommand "#enc 0"
+#define "#hp +36"
+#define "#prot 18"
+#define "#str +19"
+#define "#att -2"
+#define "#def -7"
+#define "#prec +2"
+#adjustmentcommand "#mor 30"
+#define "#mapmove 3"
+#define "#ap +4"
+#define "#fireres +15"
+#define "#coldres +15"
+#define "#shockres +15"
+#define "#poisonres +25"
+#define "#slashres"
+#define "#pierceres"
+#define "#woundfend 75"
+#define "#inspirational +1"
+#define "#mounted"
+#define "#trample"
+#define "#itemslots +61446"
+
+#description "Their colossal armor is driven by complex clockwork mechanisms that vastly increase their strength and can run almost indefinitely"
+
+#tag "guaranteedprefix clockwork"
+#enditem
+
