@@ -414,8 +414,6 @@ public class Generic {
 		
 		str = str.trim();
 		
-		str = str.replaceAll("\t", " ");
-		
 		while(str.length() > 0)
 		{
 			boolean done = false;
