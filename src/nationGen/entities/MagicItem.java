@@ -20,7 +20,8 @@ public class MagicItem extends Filter {
 	public String effect = "-1";
 	public boolean always = false;
 	
-	public <E extends Entity> void handleOwnCommand(String str)
+        @Override
+	public <Entity> void handleOwnCommand(String str)
 	{
 
 		List<String> args = Generic.parseArgs(str);

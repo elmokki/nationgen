@@ -127,7 +127,9 @@ public class Pose extends Filter {
 		
 		return str;
 	}
-	public <E extends Entity> void handleOwnCommand(String str)
+        
+        @Override
+	public <Entity> void handleOwnCommand(String str)
 	{
 		List<String> args = Generic.parseArgs(str);
 		if(args.size() == 0)

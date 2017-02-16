@@ -162,8 +162,8 @@ public class Race extends Filter {
 	}
 	
 	
-	
-	public <E extends Entity> void handleOwnCommand(String str)
+	@Override
+	public <Entity> void handleOwnCommand(String str)
 	{
 		List<String> args = Generic.parseArgs(str);
 		if(args.size() == 0)
