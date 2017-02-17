@@ -400,8 +400,9 @@ public class TroopGenerator {
 					
 				}
 				else
+				{
 					success = armCavalry(unit, t);
-			
+				}
 				
 				
 				if(!success)
@@ -465,7 +466,7 @@ public class TroopGenerator {
 		return unit;
 	}
 	
-	private boolean armInfantry(Unit unit, Template t)
+	protected boolean armInfantry(Unit unit, Template t)
 	{
 
 
@@ -689,7 +690,7 @@ public class TroopGenerator {
 	
 
 	
-	private boolean armCavalry(Unit unit, Template t)
+	protected boolean armCavalry(Unit unit, Template t)
 	{
 		
 			
@@ -700,7 +701,7 @@ public class TroopGenerator {
 			
 			oldweps.addAll(t.weapons);
 			ItemSet lances = new ItemSet();
-			for(Item i : tempweps)
+			for(Item i : oldweps)
 			{
 				if(i.id.equals("357") || i.tags.contains("lightlance"))
 				{

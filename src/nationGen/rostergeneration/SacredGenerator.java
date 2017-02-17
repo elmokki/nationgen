@@ -19,6 +19,7 @@ import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
 import nationGen.nation.Nation;
+import nationGen.rostergeneration.TroopGenerator.Template;
 import nationGen.rostergeneration.montagtemplates.SacredMontagTemplate;
 import nationGen.units.Unit;
 
@@ -760,8 +761,14 @@ public class SacredGenerator extends TroopGenerator {
 			
 		// Equip
 		unitGen.armorUnit(u, null, null, null, false);
-		unitGen.armUnit(u, null, null, null, false);
 		
+		Template t = new Template(u.getSlot("armor"), race, u, role, u.pose);
+
+		if(role.equals("mounted"))
+			this.armCavalry(u, t);
+		else
+			this.armInfantry(u, t);
+			
 		if(u.pose.getItems("offhand") != null && u.pose.getItems("offhand").possibleItems() > 0 && isDualWieldEligible(u) && (u.getSlot("offhand") == null || u.getSlot("offhand").armor))
 		{
 			ItemSet items = fetchItems(u, "offhand", sacred, epicchance);
