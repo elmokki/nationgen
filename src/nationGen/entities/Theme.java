@@ -22,7 +22,8 @@ public class Theme extends Filter {
 		super(nationGen);
 	}
 	
-	public <E extends Entity> void handleOwnCommand(String str)
+        @Override
+	public <Entity> void handleOwnCommand(String str)
 	{
 
 		List<String> args = Generic.parseArgs(str);

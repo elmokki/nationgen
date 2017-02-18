@@ -46,16 +46,12 @@ import nationGen.Settings;
 
 public class GUI extends JFrame implements ActionListener, ItemListener, ChangeListener 
 {
+    private static final long serialVersionUID = 1L;
 	
-
-
-	private static final long serialVersionUID = 1L;
-	
-	JTextPane textPane = new JTextPane();
+    JTextPane textPane = new JTextPane();
     JProgressBar progress = new JProgressBar(0, 100);
     JButton startButton;
     JTabbedPane tabs = new JTabbedPane();
-    
     
     JTextField settingtext = new JTextField("0");
     JTextArea amount = new JTextArea("1");
@@ -67,33 +63,29 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
     JCheckBox advDesc = new JCheckBox("Write advanced descriptions");
     JCheckBox basicDesc = new JCheckBox("Write basic descriptions");
     JCheckBox preview = new JCheckBox("Draw sprite review image");
-    List<JCheckBox> optionChecks = new ArrayList<JCheckBox>();
+    List<JCheckBox> optionChecks = new ArrayList<>();
     Settings settings = new Settings();
     JCheckBox seedcheckbox = new JCheckBox("Use predefined nation seeds (separate by line change and/or comma)");
     RestrictionPane rpanel;
     JCheckBox hideVanillaNations = new JCheckBox("Hide vanilla nations");
     JSlider eraSlider = new JSlider(JSlider.HORIZONTAL, 1, 3, 2);
     JSlider spowerSlider = new JSlider(JSlider.HORIZONTAL, 1, 3, 1);
-
     
     private  NationGen n = null;
+    
     public static void main(String[] args) throws Exception
     {
-    
-    	
     	if(args.length > 0 && args[0].equals("-commandline"))
-    		new CommandLine(args);
+        {
+            new CommandLine(args);
+        }
     	else
     	{
-    		SwingUtilities.invokeLater(new Runnable() {
-        		public void run() {
-            		GUI g = new GUI();
-                	g.setVisible(true);
-            }
-        	});
+            SwingUtilities.invokeLater(() -> {
+                GUI g = new GUI();
+                g.setVisible(true);
+            });
     	}
-    
-    
     }
     
     private void initGUI()
@@ -114,14 +106,17 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         JPanel advoptions = new JPanel(new GridLayout(8,1));
         
         // Restrictions need nationgen;
-    	try {
-			n = new NationGen();
-			n.settings = settings;
-		} catch (IOException e) {
-			System.out.println("Error initializing NationGen.");
-        	startButton.setEnabled(false);
-			return;
-		}
+    	try 
+        {
+            n = new NationGen();
+            n.settings = settings;
+        } 
+        catch (IOException e) 
+        {
+            System.out.println("Error initializing NationGen.");
+            startButton.setEnabled(false);
+            return;
+        }
         rpanel = new RestrictionPane(n);
 
         // Main
@@ -146,9 +141,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         
         redirectSystemStreams();
         
-
         JPanel east = new JPanel(new GridLayout(12, 1));
-        
         JPanel ncount = new JPanel(new GridLayout(1, 3));
         ncount.add(new JLabel("Nation amount"));
         amount.setBorder(BorderFactory.createMatteBorder(1,1,1,1,Color.black));
@@ -170,24 +163,12 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         east.add(ncount);
         east.add(seedpanel);
         east.add(modnamepanel);
-        east.add(new JPanel());
-        east.add(new JPanel());
-        east.add(new JPanel());
-        east.add(new JPanel());
-        east.add(new JPanel());
-        east.add(new JPanel());
-        east.add(new JPanel());
-        east.add(new JPanel());
         east.add(startButton);
      
-        
-        
         panel.setBorder(new EmptyBorder(new Insets(5, 5, 5, 5)));
         //panel.add(progress, BorderLayout.SOUTH);
         panel.add(sp, BorderLayout.WEST);
         panel.add(east, BorderLayout.CENTER);
-        
-   
         
         // Options
         tabs.addTab("Options", options);
@@ -203,67 +184,58 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         options.add(descs, BorderLayout.NORTH);
 
         // Seeds
-        JPanel seeds = new JPanel(new BorderLayout(5,5));
+        JPanel predefinedSeeds = new JPanel(new BorderLayout(5,5));
         seedcheckbox.addItemListener(this);
         this.seeds.setBorder(BorderFactory.createMatteBorder(1,1,1,1,Color.black));
-        seeds.add(seedcheckbox, BorderLayout.NORTH);
-        seeds.add(this.seeds, BorderLayout.CENTER);
+        predefinedSeeds.add(seedcheckbox, BorderLayout.NORTH);
+        predefinedSeeds.add(this.seeds, BorderLayout.CENTER);
         this.seeds.setEnabled(false);
-        options.add(seeds);
-
-
+        options.add(predefinedSeeds);
         
         // Advanced options
         tabs.addTab("Advanced options", advoptions);
         advoptions.add(new JLabel("WARNING! Changing these options changes the setting code. Seeds produce same nations only under the same setting code and program version."));
 
-       
-        
         JPanel scodep = new JPanel(new GridLayout(1,2));
         settingtext.setText("" + settings.getSettingInteger());
         settingtext.addActionListener(this);
 
-        settingtext.getDocument().addDocumentListener(new DocumentListener() {
+        settingtext.getDocument().addDocumentListener(new DocumentListener() 
+        {
         	  
-        	@Override
-        	public void changedUpdate(DocumentEvent e) {}
+            @Override
+            public void changedUpdate(DocumentEvent e) {}
 
-			@Override
-			public void insertUpdate(DocumentEvent arg0) {
-				handleUpdate();
-			}
-			@Override
-			public void removeUpdate(DocumentEvent arg0) {
-				handleUpdate();
-				
-			}
+            @Override
+            public void insertUpdate(DocumentEvent arg0) 
+            {
+                handleUpdate();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent arg0) 
+            {
+                handleUpdate();
+            }
 			
-			private void handleUpdate()
-			{
-			
-				
-				
-				// Change color when non-numeric settingtext
-				if(Generic.isNumeric(settingtext.getText()))
-					settingtext.setForeground(Color.BLACK);
-				if(!Generic.isNumeric(settingtext.getText()))
-					settingtext.setForeground(Color.RED);
-			
-		
-			
-				if(settingtext.getText().length() > 0 && Generic.isNumeric(settingtext.getText()))
-				{
-					int i = Integer.parseInt(settingtext.getText());
-					settings.setSettingInteger(i);
-					updateAdvancedSettings();
-					
-					
-				}				
-
-				
-			}
-
-        	});
+            private void handleUpdate()
+            {
+                // Change color when non-numeric settingtext
+                if(Generic.isNumeric(settingtext.getText()))
+                {
+                    settingtext.setForeground(Color.BLACK);
+                }
+                if(!Generic.isNumeric(settingtext.getText()))
+                {
+                    settingtext.setForeground(Color.RED);
+                }
+                if(settingtext.getText().length() > 0 && Generic.isNumeric(settingtext.getText()))
+                {
+                    int i = Integer.parseInt(settingtext.getText());
+                    settings.setSettingInteger(i);
+                    updateAdvancedSettings();
+                }				
+            }
+        });
         
         scodep.add(new JLabel("Setting code:"));
         scodep.add(this.settingtext);
@@ -272,13 +244,12 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         // Era
         JPanel era = new JPanel(new GridLayout(1,2));
         eraSlider.addChangeListener(this);
-        Hashtable<Integer, JLabel> eraLabelTable = new Hashtable<Integer, JLabel>();
-        eraLabelTable.put(new Integer(1), new JLabel("Early"));
-        eraLabelTable.put(new Integer(2), new JLabel("Middle"));
-        eraLabelTable.put(new Integer(3), new JLabel("Late"));
+        Hashtable<Integer, JLabel> eraLabelTable = new Hashtable<>();
+        eraLabelTable.put(1, new JLabel("Early"));
+        eraLabelTable.put(2, new JLabel("Middle"));
+        eraLabelTable.put(3, new JLabel("Late"));
         eraSlider.setLabelTable(eraLabelTable);
         eraSlider.setPaintLabels(true);
-        
 
         era.add(new JLabel("Era:"));
         era.add(eraSlider);
@@ -288,14 +259,13 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         // Sacred power
         JPanel spower = new JPanel(new GridLayout(1,2));
         spowerSlider.addChangeListener(this);
-        Hashtable<Integer, JLabel> spowerLabelTable = new Hashtable<Integer, JLabel>();
-        spowerLabelTable.put(new Integer(1), new JLabel("Normal"));
-        spowerLabelTable.put(new Integer(2), new JLabel("High"));
-        spowerLabelTable.put(new Integer(3), new JLabel("Batshit Insane"));
+        Hashtable<Integer, JLabel> spowerLabelTable = new Hashtable<>();
+        spowerLabelTable.put(1, new JLabel("Normal"));
+        spowerLabelTable.put(2, new JLabel("High"));
+        spowerLabelTable.put(3, new JLabel("Batshit Insane"));
         spowerSlider.setLabelTable(spowerLabelTable);
         spowerSlider.setPaintLabels(true);
         
-
         spower.add(new JLabel("Sacred Power:"));
         spower.add(spowerSlider);
         
@@ -303,19 +273,15 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         
         // Restrictions
         tabs.addTab("Nation restrictions", rpanel);
-
-        
         add(tabs);
 
         pack();
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        
 		
         System.out.println("Dominions 4 NationGen version " + NationGen.version + " (" + NationGen.date + ")");
         System.out.println("------------------------------------------------------------------");
-
     }
     
     
@@ -332,262 +298,267 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         this.setPreferredSize(new Dimension(1000, 450));
         this.setResizable(true);
         initGUI();
-
-
-
     	
     	if(this.settings.get("drawPreview") == 1.0)
-    		preview.setSelected(true);
+        {
+            preview.setSelected(true);
+        }
     	if(this.settings.get("advancedDescs") == 1.0)
-    		advDesc.setSelected(true);
+        {
+            advDesc.setSelected(true);
+        }
     	if(this.settings.get("basicDescs") == 1.0)
-    		basicDesc.setSelected(true);
+        {
+            basicDesc.setSelected(true);
+        }
     	if(this.settings.get("hidevanillanations") == 1.0)
-    		hideVanillaNations.setSelected(true);
+        {
+            hideVanillaNations.setSelected(true);
+        }
     	this.eraSlider.setValue((int)Math.round(this.settings.get("era")));
      }
     
-
-    private void updateTextPane(final String text) {
-    	  SwingUtilities.invokeLater(new Runnable() {
-    	    public void run() {
-    	      Document doc = textPane.getDocument();
-    	      try {
-    	        doc.insertString(doc.getLength(), text, null);
-    	      } catch (BadLocationException e) {
-    	        throw new RuntimeException(e);
-    	      }
-    	      textPane.setCaretPosition(doc.getLength() - 1);
-    	    }
-    	  });
-    	}
-    
+    private void updateTextPane(final String text) 
+    {
+        SwingUtilities.invokeLater(() -> 
+        {
+            Document doc = textPane.getDocument();
+            try
+            {
+                doc.insertString(doc.getLength(), text, null);
+            }
+            catch (BadLocationException e)
+            {
+                throw new RuntimeException(e);
+            }
+            textPane.setCaretPosition(doc.getLength() - 1);
+        });
+    }
     
     private List<Integer> parseSeeds()
     {
-    	List<Integer> l = new ArrayList<Integer>();
+    	List<Integer> l = new ArrayList<>();
     	String text = seeds.getText();
     	
     	String[] parts = text.split(",");
     	for(String str : parts)
     	{
-    		String[] parts2 = str.split("\n");
-    		for(String str2 : parts2)
-    			if(Generic.isNumeric(str2.trim()))
-    			{
-    				l.add(Integer.parseInt(str2.trim()));
-    			}
+            String[] parts2 = str.split("\n");
+            for(String str2 : parts2)
+            {
+                if(Generic.isNumeric(str2.trim()))
+                {
+                    l.add(Integer.parseInt(str2.trim()));
+                }
+            }
     	}
-    	
     	return l;
-    	
-    	
     }
-    private void redirectSystemStreams() {
-    	  OutputStream out = new OutputStream() {
+    
+    private void redirectSystemStreams() 
+    {
+        OutputStream out = new OutputStream() 
+        {
     	    @Override
-    	    public void write(final int b) throws IOException {
-    	      updateTextPane(String.valueOf((char) b));
+    	    public void write(final int b) throws IOException 
+            {
+                updateTextPane(String.valueOf((char) b));
     	    }
     	 
     	    @Override
-    	    public void write(byte[] b, int off, int len) throws IOException {
-    	      updateTextPane(new String(b, off, len));
+    	    public void write(byte[] b, int off, int len) throws IOException 
+            {
+                updateTextPane(new String(b, off, len));
     	    }
     	 
     	    @Override
-    	    public void write(byte[] b) throws IOException {
-    	      write(b, 0, b.length);
+    	    public void write(byte[] b) throws IOException 
+            {
+                write(b, 0, b.length);
     	    }
-    	  };
+        };
     	 
-    	  System.setOut(new PrintStream(out, true));
-    	  System.setErr(new PrintStream(out, true));
-    	}
+        System.setOut(new PrintStream(out, true));
+        System.setErr(new PrintStream(out, true));
+    }
 
 
     private void process()
     {
-    	try {
-			n = new NationGen();
-			n.settings = settings;
-			n.restrictions.addAll(rpanel.getRestrictions());
-		} catch (IOException e) {
-			System.out.println("Error initializing NationGen.");
-        	startButton.setEnabled(false);
-			return;
-		}
-    	
-	    Thread thread = new Thread() {
-	        public void run() {
-	        	startButton.setEnabled(false);
-	
-
-	        	if(!modNameRandom.isSelected())
-	        		n.modname = modname.getText();
-
-	        	try {
-	        		if(seedcheckbox.isSelected())
-	        		{
-	        			n.generate(parseSeeds());
-	        		}
-	        		else
-	        		{
-			        	if(!seedRandom.isSelected())
-			        		n.generate(Integer.parseInt(amount.getText()), Integer.parseInt(seed.getText()));
-			        	else
-			        		n.generate(Integer.parseInt(amount.getText()));
-	        		}
-				} catch (NumberFormatException | IOException e) {
-					e.printStackTrace();
-				}
-	        	
-
-	        	 
-	        	startButton.setEnabled(true);
+    	try 
+        {
+            n = new NationGen();
+            n.settings = settings;
+            n.restrictions.addAll(rpanel.getRestrictions());
+        } 
+        catch (IOException e) 
+        {
+            System.out.println("Error initializing NationGen.");
+            startButton.setEnabled(false);
+            return;
+        }
+        Thread thread = new Thread() 
+        {
+            @Override
+            public void run() 
+            {
+                startButton.setEnabled(false);
+                if(!modNameRandom.isSelected())
+                {
+                    n.modname = modname.getText();
+                }
+                try 
+                {
+                    if(seedcheckbox.isSelected())
+                    {
+                        n.generate(parseSeeds());
+                    }
+                    else
+                    {
+                        if(!seedRandom.isSelected())
+                        {
+                            n.generate(Integer.parseInt(amount.getText()), Integer.parseInt(seed.getText()));
+                        }
+                        else
+                        {
+                            n.generate(Integer.parseInt(amount.getText()));
+                        }
+                    }
+                }
+                catch (NumberFormatException | IOException e) 
+                {
+                    e.printStackTrace();
+                }
+                startButton.setEnabled(true);
 	   
-	        }
-	    };
-	    thread.start();
-	    hasRun = true;
+            }
+        };
+        thread.start();
+        hasRun = true;
     }
     
-	@Override
-	public void actionPerformed(ActionEvent e) {
+    @Override
+    public void actionPerformed(ActionEvent e) 
+    {
+        if(e.getSource().equals(startButton))
+        {
+            if(modname.getText().length() == 0)
+            {
+            System.out.println("Please enter a mod name.");
+                    //modNameRandom.setSelected(true);
+            return;
+            }
 
-		
-		if(e.getSource().equals(startButton))
-		{
-			if(modname.getText().length() == 0)
-			{
-        		System.out.println("Please enter a mod name.");
-				//modNameRandom.setSelected(true);
-        		return;
-			}
-			
-			if(!seedcheckbox.isSelected())
-			{
-				if(!(Generic.isNumeric(seed.getText()) || seed.getText().equals("Random")))
-				{
-					System.out.println("Please enter a numeric seed.");
-					//seedRandom.setSelected(true);
-					return;
-				}
+            if(!seedcheckbox.isSelected())
+            {
+                    if(!(Generic.isNumeric(seed.getText()) || seed.getText().equals("Random")))
+                    {
+                            System.out.println("Please enter a numeric seed.");
+                            //seedRandom.setSelected(true);
+                            return;
+                    }
 
-				if(!Generic.isNumeric(amount.getText()) || Integer.parseInt(amount.getText()) < 1)
-				{
-	        		System.out.println("Please enter a numeric nation amount.");
-	        		return;
-				}
-		
-		
-			}
-			else if(this.seedcheckbox.isSelected() && parseSeeds().size() == 0)
-			{
-				System.out.println("Please specify numeric seeds or disable predefined seeds.");
-				return;
-			}
-			
-			settingtext.setText(settings.getSettingInteger() + "");
-
-			
-			process();
-		}
-		
-		if(e.getSource().equals(settingtext))
-		{
-			settingtext.setText(settings.getSettingInteger() + "");
-		}
-
-	}
+                    if(!Generic.isNumeric(amount.getText()) || Integer.parseInt(amount.getText()) < 1)
+                    {
+                    System.out.println("Please enter a numeric nation amount.");
+                    return;
+                    }
+            }
+            else if(this.seedcheckbox.isSelected() && parseSeeds().isEmpty())
+            {
+                    System.out.println("Please specify numeric seeds or disable predefined seeds.");
+                    return;
+            }
+            settingtext.setText(settings.getSettingInteger() + "");
+            process();
+        }
+        if(e.getSource().equals(settingtext))
+        {
+            settingtext.setText(settings.getSettingInteger() + "");
+        }
+    }
 	
-		
-	
-	
-	@Override
-	public void itemStateChanged(ItemEvent e)
-	{
-	    Object source = e.getItemSelectable();
-	    
-	    
-	    // Main screen settings
-	    JTextArea target = null;
-		if(source == this.modNameRandom)
-		{
-			target = this.modname;
-		}
-		else if(source == this.seedRandom)
-		{
-			target = this.seed;
-		}
-		
-		if(target != null)
-		{
-	        if (e.getStateChange() == ItemEvent.DESELECTED) 
-	        {
-	            target.setEnabled(true);
-	            if(target == this.seed)
-	            {
-	        		Random r = new Random();
-	        		target.setText(r.nextInt() + "");
-	            }
-	        }
-	        else if (e.getStateChange() == ItemEvent.SELECTED) 
-	        {
-	            target.setEnabled(false);
-	            target.setText("Random");
-	        }
-		}
-		
-		
-		
-		// Options settings
-		if(this.optionChecks.contains(source))
-		{
-			double value = 0;
-			if(e.getStateChange() == ItemEvent.SELECTED) 
-				value = 1;
-			
+    @Override
+    public void itemStateChanged(ItemEvent e)
+    {
+        Object source = e.getItemSelectable();
 
-			if(source == this.preview)
-				settings.put("drawPreview", value);
-			if(source == this.advDesc)
-				settings.put("advancedDescs", value);
-			if(source == this.basicDesc)
-				settings.put("basicDescs", value);
-			if(source == this.hideVanillaNations)
-				settings.put("hidevanillanations", value);
+        // Main screen settings
+        JTextArea target = null;
+        if(source == this.modNameRandom)
+        {
+            target = this.modname;
+        }
+        else if(source == this.seedRandom)
+        {
+            target = this.seed;
+        }
 
-			
-			if(source == this.seedcheckbox)
-			{
-				this.seeds.setEnabled(e.getStateChange() == ItemEvent.SELECTED);
-				this.seedRandom.setSelected(true);
-				this.seedRandom.setEnabled(e.getStateChange() != ItemEvent.SELECTED);
-				this.amount.setEnabled(e.getStateChange() != ItemEvent.SELECTED);
-			
-			}
-	
-		}
-		
-		
-	}
+        if(target != null)
+        {
+            if (e.getStateChange() == ItemEvent.DESELECTED) 
+            {
+                target.setEnabled(true);
+                if(target == this.seed)
+                {
+                    Random r = new Random();
+                    target.setText(r.nextInt() + "");
+                }
+            }
+            else if (e.getStateChange() == ItemEvent.SELECTED) 
+            {
+                target.setEnabled(false);
+                target.setText("Random");
+            }
+        }
 
-	@Override
-	public void stateChanged(ChangeEvent e) {
-		
-		Object source = e.getSource();
-		
-		if(source == this.eraSlider && eraSlider.getValueIsAdjusting())
-		{
-			settings.put("era", eraSlider.getValue());
-			settingtext.setText(settings.getSettingInteger() + "");
-		}
-		if(source == this.spowerSlider && spowerSlider.getValueIsAdjusting())
-		{
-			settings.put("sacredpower", spowerSlider.getValue());
-			settingtext.setText(settings.getSettingInteger() + "");
-		}
-		
-	}
+        // Options settings
+        if(this.optionChecks.contains(source))
+        {
+            double value = 0;
+            if(e.getStateChange() == ItemEvent.SELECTED) 
+            {
+                value = 1;
+            }
+            if(source == this.preview)
+            {
+                settings.put("drawPreview", value);
+            }
+            if(source == this.advDesc)
+            {
+                settings.put("advancedDescs", value);
+            }
+            if(source == this.basicDesc)
+            {
+                settings.put("basicDescs", value);
+            }
+            if(source == this.hideVanillaNations)
+            {
+                settings.put("hidevanillanations", value);
+            }
+            if(source == this.seedcheckbox)
+            {
+                this.seeds.setEnabled(e.getStateChange() == ItemEvent.SELECTED);
+                this.seedRandom.setSelected(true);
+                this.seedRandom.setEnabled(e.getStateChange() != ItemEvent.SELECTED);
+                this.amount.setEnabled(e.getStateChange() != ItemEvent.SELECTED);
+            }
+        }
+    }
+
+    @Override
+    public void stateChanged(ChangeEvent e) 
+    {
+        Object source = e.getSource();
+        if(source == this.eraSlider && eraSlider.getValueIsAdjusting())
+        {
+            settings.put("era", eraSlider.getValue());
+            settingtext.setText(settings.getSettingInteger() + "");
+        }
+        if(source == this.spowerSlider && spowerSlider.getValueIsAdjusting())
+        {
+            settings.put("sacredpower", spowerSlider.getValue());
+            settingtext.setText(settings.getSettingInteger() + "");
+        }
+    }
 }

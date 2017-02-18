@@ -92,7 +92,7 @@ public class Entity {
 	}
 	
 	
-	public <E extends Entity> void handleOwnCommand(String str)
+	public <Entity> void handleOwnCommand(String str)
 	{
 		List<String> args = Generic.parseArgs(str);
 		if(args.get(0).equals("#id") || args.get(0).equals("#name"))
