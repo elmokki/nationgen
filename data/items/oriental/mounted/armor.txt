@@ -82,3 +82,29 @@
 #recolormask /graphics/tengu/armor/mounted/fullscale_recolormask.png
 #armor
 #enditem
+
+-- Advanced-only plate armor
+
+#newitem
+#name "nanban hauberk"
+#gameid 14
+#basechance 0
+#chanceinc racetheme advanced 0.5
+#sprite /graphics/tengu/armor/mounted/nanban.png
+#recolormask /graphics/tengu/armor/mounted/samurai_recolormask.png
+#tag "eliteversion 'nanban hauberk elite'"
+#needs legs jomonpants
+#armor
+#enditem
+
+#newitem
+#name "nanban hauberk elite"
+#gameid 14
+#basechance 0
+#chanceinc racetheme advanced 0.5
+#sprite /graphics/tengu/armor/mounted/nanban_elite.png
+#recolormask /graphics/tengu/armor/mounted/samurai_elite_recolormask.png
+#theme "elite"
+#needs legs jomonpants
+#armor
+#enditem
