@@ -33,6 +33,8 @@
 #generateitem 1 hair
 #define "#stealthy 0"
 
+#baseitemslot feet 0
+
 #load basesprite /data/items/sidhe/bean/bases_mounted.txt
 #load mount /data/items/sidhe/sidhemounts.txt 3 -14
 #load cloakf /data/items/human/normal/humancloakf.txt 0 -3
@@ -61,6 +63,8 @@
 #generateitem 1 hair
 #define "#stealthy 0"
 
+#baseitemslot feet 0
+
 #load basesprite /data/items/sidhe/bean/bases_mounted.txt
 #load mount /data/items/sidhe/sidhemounts_low.txt 3 -15
 #load cloakf /data/items/human/normal/humancloakf.txt 0 -3
@@ -88,6 +92,8 @@
 #basechance 0.0625
 
 #generateitem 1 hair
+
+#baseitemslot feet 0
 
 #load basesprite /data/items/sidhe/bean/bases.txt
 #load mount /data/items/sidhe/sidhechariots.txt
