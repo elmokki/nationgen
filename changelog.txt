@@ -1,3 +1,30 @@
+0.6.22 (???th of ??? 2017) - current through 19 Feb 17
+----------------------------------------------------------
+Code
+----------------------------------------------------------
+- A huge pile of refactoring and optimization
+- Added handling for #specifiedgcost and #specifieddescr to monster definitions
+- Added handling for #additionalweaponslot to troop (not caster) pose definitions; this is much like #generateitem, but it happens late in generation and is less likely to be overridden
+- Better unit finalizing for montag units
+- Another round of double lance fixes
+
+
+Content
+----------------------------------------------------------
+- Further restrictions on "complex" weapons (e.g., poison slings) to prevent them from getting inadvertently upgraded into superweapons
+- Giant feral hoburg monsters had neither shadows nor gcosts nor descriptions
+- Bean sidhe, plus themes allowing sidhe nations to be either patriarchal (daoine sidhe), matriarchal (bean sidhe), or mixed (both men and women of the mounds)
+- Some new Ysian shields for standard shieldsets as well as for sidhe and amazons
+- Pygmy elephants and mammoths for hoburgs and vaettir, with regional variants
+- Elephants for oriental human nations, as well as one or two minor pachydermal tweaks
+- Variable pants for oriental human and tengu troops
+- Fixed wonky fire/shock lance generation on hoburg clockworks via #additionalweaponslot
+- Basic hero-only hoburg clockwork colossi
+- Fixed overeating nephilim (1200/mo -> 120/mo)
+- Cavalry/chariots no longer have feet slots
+
+
+
 0.6.21c (25th of January 2017)
 ----------------------------------------------------------
 Code
@@ -8,8 +35,6 @@ Content
 ----------------------------------------------------------
 - Prevented the generation of "magic" mental attacks on assorted illithid troops which were making mindblasts behave badly
 - Nephilim as heroes - and only as heroes - for Avvite nations
-
-
 
 0.6.21b (24th of January 2017)
 ----------------------------------------------------------
