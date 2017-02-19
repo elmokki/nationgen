@@ -50,6 +50,7 @@ import nationGen.naming.Summary;
 import nationGen.restrictions.MagicAccessRestriction;
 import nationGen.restrictions.MageWithAccessRestriction;
 import nationGen.restrictions.MagicDiversityRestriction;
+import nationGen.restrictions.NationRestriction;
 import nationGen.restrictions.NationThemeRestriction;
 import nationGen.restrictions.NoPrimaryRaceRestriction;
 import nationGen.restrictions.NoUnitOfRaceRestriction;
@@ -492,22 +493,7 @@ public class Nation {
 	public void generate(List restrictions)
 	{
             //
-            //There's probably a cleaner way to do this with lists instead of a unique boolean for each
-            //
-            boolean isMageWithAccessRestricted = false;
-            boolean isMagicAccessRestricted = false;
-            boolean isMagicDiversityRestricted = false;
-            boolean isNationThemeRestricted = false;
-            boolean isNoPrimaryRaceRestricted = false;
-            boolean isNoUnitOfRaceRestricted= false;
-            boolean isPrimaryRaceRestricted = false;
-            boolean isSacredRaceRestricted = false;
-            boolean isUnitCommandRestricted = false;
-            boolean isUnitFilterRestricted = false;
-            boolean isUnitOfRaceRestricted = false;
-            
-            //
-            // Same as above, possibly an array of these?
+            // Easiest way I found to get the Class information for doing a comparsion; might be an easier way?
             //
             MageWithAccessRestriction mageWithAccessRestriction = new MageWithAccessRestriction(nationGen);
             MagicAccessRestriction magicAccessRestriction = new MagicAccessRestriction(nationGen);
@@ -520,164 +506,46 @@ public class Nation {
             UnitCommandRestriction unitCommandRestriction = new UnitCommandRestriction(nationGen);
             UnitFilterRestriction unitFilterRestriction = new UnitFilterRestriction(nationGen);
             UnitOfRaceRestriction unitOfRaceRestriction = new UnitOfRaceRestriction(nationGen);
-            
-            //
-            //Prep for checking restrictions farther down
-            //
-            for(int index = 0; index < restrictions.size(); index++)
-            {
-                if(restrictions.get(index).getClass().equals(mageWithAccessRestriction.getClass()))
-                {
-                    isMageWithAccessRestricted = true;
-                    mageWithAccessRestriction = (MageWithAccessRestriction) restrictions.get(index);                    
-                    continue;
-                }
-                if(restrictions.get(index).getClass().equals(magicAccessRestriction.getClass()))
-                {
-                    isMagicAccessRestricted = true;
-                    magicAccessRestriction = (MagicAccessRestriction) restrictions.get(index);
-                    continue;
-                }
-                if(restrictions.get(index).getClass().equals(magicDiversityRestriction.getClass()))
-                {
-                    isMagicDiversityRestricted = true;
-                    magicDiversityRestriction = (MagicDiversityRestriction) restrictions.get(index);
-                    continue;
-                }
-                if(restrictions.get(index).getClass().equals(nationThemeRestriction.getClass()))
-                {
-                    isNationThemeRestricted = true;
-                    nationThemeRestriction = (NationThemeRestriction) restrictions.get(index);
-                    continue;
-                }
-                if(restrictions.get(index).getClass().equals(noPrimaryRaceRestriction.getClass()))
-                {
-                    isNoPrimaryRaceRestricted = true;
-                    noPrimaryRaceRestriction = (NoPrimaryRaceRestriction) restrictions.get(index);
-                    continue;
-                }
-                if(restrictions.get(index).getClass().equals(noUnitOfRaceRestriction.getClass()))
-                {
-                    isNoUnitOfRaceRestricted = true;
-                    noUnitOfRaceRestriction = (NoUnitOfRaceRestriction) restrictions.get(index);
-                    continue;
-                }
-                if(restrictions.get(index).getClass().equals(primaryRaceRestriction.getClass()))
-                {
-                    isPrimaryRaceRestricted = true;
-                    primaryRaceRestriction = (PrimaryRaceRestriction) restrictions.get(index);
-                    continue;
-                }
-                if(restrictions.get(index).getClass().equals(sacredRaceRestriction.getClass()))
-                {
-                    isSacredRaceRestricted = true;
-                    sacredRaceRestriction = (SacredRaceRestriction) restrictions.get(index);
-                    continue;
-                }
-                if(restrictions.get(index).getClass().equals(unitCommandRestriction.getClass()))
-                {
-                    isUnitCommandRestricted = true;
-                    unitCommandRestriction = (UnitCommandRestriction) restrictions.get(index);
-                    continue;
-                }
-                if(restrictions.get(index).getClass().equals(unitFilterRestriction.getClass()))
-                {
-                    isUnitFilterRestricted = true;
-                    unitFilterRestriction = (UnitFilterRestriction) restrictions.get(index);
-                    continue;
-                }
-                if(restrictions.get(index).getClass().equals(unitOfRaceRestriction.getClass()))
-                {
-                    isUnitOfRaceRestricted = true;
-                    unitOfRaceRestriction = (UnitOfRaceRestriction) restrictions.get(index);
-                }
-            }
+
+            List<Class> restrictionTypes = new ArrayList<>();
+            restrictionTypes.add(primaryRaceRestriction.getClass());
+            restrictionTypes.add(noPrimaryRaceRestriction.getClass());
+            restrictionTypes.add(nationThemeRestriction.getClass());
             
             getColors();
             getRaces();
-
-            //
-            // Check race restrictions here
-            //
-            if(isNationThemeRestricted)
+            
+            if (!checkRestrictions(restrictions, restrictionTypes)) 
             {
-
-                if(!nationThemeRestriction.doesThisPass(this))
-                {
-                    this.passed = false;
-                    this.restrictionFailed = nationThemeRestriction.toString().toUpperCase();
-                    return;
-                }
+                return;
             }
-            if(isNoPrimaryRaceRestricted)
-            {
-                
-                if(!noPrimaryRaceRestriction.doesThisPass(this))
-                {
-                    this.passed = false;
-                    this.restrictionFailed = noPrimaryRaceRestriction.toString().toUpperCase();
-                    return;
-                }
-            }
-            if(isPrimaryRaceRestricted)
-            {
-                if(!primaryRaceRestriction.doesThisPass(this))
-                {
-                    this.passed = false;
-                    this.restrictionFailed = primaryRaceRestriction.toString().toUpperCase();
-                    return;
-                }
-            }   
+            restrictionTypes.clear();
+            restrictionTypes.add(mageWithAccessRestriction.getClass());
+            restrictionTypes.add(magicAccessRestriction.getClass());
+            restrictionTypes.add(primaryRaceRestriction.getClass());
+            
             generateMagesAndPriests();
             
-            //
-            // Check magic restrictions here
-            //
-            if(isMageWithAccessRestricted)
+            if (!checkRestrictions(restrictions, restrictionTypes)) 
             {
-
-                if(!mageWithAccessRestriction.doesThisPass(this))
-                {
-                    this.passed = false;
-                    this.restrictionFailed = mageWithAccessRestriction.toString().toUpperCase();
-                    return;
-                }
+                return;
             }
-            if(isMagicAccessRestricted)
-            {
-
-                if(!magicAccessRestriction.doesThisPass(this))
-                {
-                    this.passed = false;
-                    this.restrictionFailed = magicAccessRestriction.toString().toUpperCase();
-                    return;
-                }
-            }
-            if(isMagicDiversityRestricted)
-            {
-
-                if(!magicDiversityRestriction.doesThisPass(this))
-                {
-                    this.passed = false;
-                    this.restrictionFailed = magicDiversityRestriction.toString().toUpperCase();
-                    return;
-                }
-            }
+            restrictionTypes.clear();
+            restrictionTypes.add(sacredRaceRestriction.getClass());
+            
             generateTroops();
             generateSacreds();
-
-            //
-            // Check sacred race restrictions here
-            //
-            if(isSacredRaceRestricted)
+            
+            if (!checkRestrictions(restrictions, restrictionTypes)) 
             {
-                if(!sacredRaceRestriction.doesThisPass(this))
-                {
-                    this.passed = false;
-                    this.restrictionFailed = sacredRaceRestriction.toString().toUpperCase();
-                    return;
-                } 
+                return;
             }
+            restrictionTypes.clear();
+            restrictionTypes.add(unitCommandRestriction.getClass());
+            restrictionTypes.add(unitFilterRestriction.getClass());
+            restrictionTypes.add(unitOfRaceRestriction.getClass());
+            restrictionTypes.add(noUnitOfRaceRestriction.getClass());
+            
             generateScouts();
             generateSpecialComs();
             generateGods();
@@ -685,53 +553,18 @@ public class Nation {
             generateHeroes();
             applyNationWideFilter();
             generateComs();
-
-            //
-            //Check unit restrictions here
-            //
-
             
-            if(isNoUnitOfRaceRestricted)
+            if (!checkRestrictions(restrictions, restrictionTypes)) 
             {
-                if(!noUnitOfRaceRestriction.doesThisPass(this))
-                {
-                    this.passed = false;
-                    this.restrictionFailed = noUnitOfRaceRestriction.toString().toUpperCase();
-                    return;
-                } 
+                return;
             }
-            if(isUnitCommandRestricted)
-            {
-                if(!unitCommandRestriction.doesThisPass(this))
-                {
-                    this.passed = false;
-                    this.restrictionFailed = unitCommandRestriction.toString().toUpperCase();
-                    return;
-                } 
-            }
-            if(isUnitFilterRestricted)
-            {
-                if(!unitFilterRestriction.doesThisPass(this))
-                {
-                    this.passed = false;
-                    this.restrictionFailed = unitFilterRestriction.toString().toUpperCase();
-                    return;
-                } 
-            }
-            if(isUnitOfRaceRestricted)
-            {
-                if(!unitOfRaceRestriction.doesThisPass(this))
-                {
-                    this.passed = false;
-                    this.restrictionFailed = unitOfRaceRestriction.toString().toUpperCase();
-                    return;
-                } 
-            }
+            
             generateMonsters();
             SiteGenerator.generateSites(this);
             generateSpells();
             generateFlag();	
             getStartAffinity();
+            
             //finalizeUnits();
 	}
 	
@@ -1662,8 +1495,32 @@ public class Nation {
 			site.write(tw);
 	}
 	
-
-	
-	
-
+    public boolean checkRestrictions(List restrictions, List<Class> restrictionTypes)
+    {
+        for(int index = 0; index < restrictions.size(); index++)
+        {
+            NationRestriction n = (NationRestriction) restrictions.get(index);
+            boolean isRestrictionType = false;
+            
+            for(Class restrictionType : restrictionTypes)
+            {
+                if (n.getClass() == restrictionType) 
+                {
+                    isRestrictionType = true;
+                }
+            }
+            
+            if (!isRestrictionType) 
+            {
+                continue;
+            }
+            if (!n.doesThisPass(this)) 
+            {
+                this.passed = false;
+                this.restrictionFailed = n.toString().toUpperCase();
+                return false;
+            }
+        }
+        return true;
+    }
 }
