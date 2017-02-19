@@ -534,6 +534,15 @@
 #end
 
 #new magefilter
+#name "airshield"
+#basechance 0
+#command "#airshield +30"
+#chanceinc "personalmagic air 2"
+#chanceinc "personalcommand #illusion 2"
+#tag "notfortier 1"
+#end
+
+#new magefilter
 #name "nobadevents1"
 #basechance 0.2
 #command "#nobadevents +5"
