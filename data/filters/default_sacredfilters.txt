@@ -177,8 +177,9 @@
 #basechance 0.1
 #command "#deathrec %cost10"
 #chanceinc "command #deathrec 100"
-#chanceinc "command #deathpower 100"
+#chanceinc "command above #deathpower 0 100"
 #chanceinc "magic death 0.1"
+#chanceinc "command below #deathpower 0 *0"
 #theme recruitment
 #end
 
@@ -188,8 +189,9 @@
 #basechance 0.1
 #command "#deathrec %cost15"
 #chanceinc "command #deathrec 25"
-#chanceinc "command #deathpower 25"
+#chanceinc "command above #deathpower 0 25"
 #chanceinc "magic death 0.1"
+#chanceinc "command below #deathpower 0 *0"
 #theme recruitment
 #end
 
@@ -216,8 +218,30 @@
 #basechance 0.1
 #command "#deathpower 1"
 #chanceinc "command #deathrec 100"
-#chanceinc "command #deathpower 100"
+#chanceinc "command above #deathpower 0 100"
+#chanceinc "command #springpower 5"
+#chanceinc "command #summerpower 5"
+#chanceinc "command #fallpower 10"
+#chanceinc "command #winterpower 10"
+#chanceinc "command #darkpower 5"
 #chanceinc "magic death 5"
+#chanceinc "command below #deathpower 0 *0"
+#end
+
+#new
+#name "growthpower"
+#basechance 0.1
+#command "#deathpower -1"
+#chanceinc "command below #deathpower 0 100"
+#chanceinc "command #springpower 5"
+#chanceinc "command #summerpower 5"
+#chanceinc "command #fallpower *0"
+#chanceinc "command #winterpower *0"
+#chanceinc "magic nature 5"
+#chanceinc "command #deathrec *0"
+#chanceinc "command above #deathpower 0 *0"
+#theme ivy
+#theme vine
 #end
 
 #new
@@ -238,7 +262,7 @@
 #command "#fireshield 4"
 #command "#speciallook 1"
 #chanceinc "command #fireshield 1"
-#chanceinc "command fire 1"
+#chanceinc "magic fire 1"
 #power 2
 #end
 
@@ -249,12 +273,44 @@
 #command "#fireshield 6"
 #command "#speciallook 1"
 #chanceinc "command #fireshield 0.5"
-#chanceinc "command fire 0.5"
+#chanceinc "magic fire 0.5"
 #chanceinc "prot 8 *0.5"
 #chanceinc "prot 10 *0.25"
 #chanceinc "prot 12 *0.125"
 #chanceinc "prot 15 *0"
 #power 3
+#end
+
+#new
+#name "airshield20"
+#type "airshield"
+#basechance 0.0
+#command "#airshield +20"
+#chanceinc "command #airshield 2"
+#chanceinc "magic air 2"
+#chanceinc "personalcommand #illusion *2"
+#end
+
+#new
+#name "airshield40"
+#type "airshield"
+#basechance 0.0
+#command "#airshield +40"
+#chanceinc "command #airshield 1"
+#chanceinc "magic air 1"
+#chanceinc "personalcommand #illusion *2"
+#power 1
+#end
+
+#new
+#name "airshield60"
+#type "airshield"
+#basechance 0.0
+#command "#airshield +60"
+#chanceinc "command #airshield 0.5"
+#chanceinc "magic air 0.5"
+#chanceinc "personalcommand #illusion *2"
+#power 2
 #end
 
 #new
@@ -758,6 +814,30 @@
 #command "#poisonarmor"
 #command "#gcost +5"
 #tag "path nature"
+#end
+
+#new
+#name "overcharged10"
+#type overcharged
+#basechance 0.0
+#chanceinc "magic air 2"
+#command "#overcharged 10"
+#tag "path air"
+#price_if_command above #prot 20 +5
+#price_if_command above #hp 39 +5
+#price_if_command above #hp 19 *1.1
+#end
+
+#new
+#name "overcharged20"
+#type overcharged
+#basechance 0.0
+#chanceinc "magic air 1"
+#command "#overcharged 20"
+#tag "path air"
+#price_if_command above #prot 15 +5
+#price_if_command above #hp 39 +10
+#price_if_command above #hp 19 *1.2
 #end
 
 #new
