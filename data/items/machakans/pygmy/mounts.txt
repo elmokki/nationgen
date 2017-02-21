@@ -431,3 +431,32 @@
 #offsetx 21
 #offsety -8
 #enditem
+
+#newitem
+#name "dwarf elephant"
+#gameid -1
+#sprite /graphics/mounts/standard/elephant_dwarf.png
+#needs overlay dwarf_elephant_overlay
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 12"
+#define "#mounted"
+#define "#weapon nostr_tusk_10" 
+#define "#gcost +15"
+#define "#trample"
+#define "#ressize 1"
+#define "#supplybonus -1"
+#define "#enc 3"
+#define "#xploss 100"
+#tag "animal elephant"
+#theme "elephant"
+#theme "elephanttotem"
+#theme "totemanimal"
+#tag "guaranteedprefix elephant"
+#define "#secondshape dwarfelephantremount"
+#description "If the rider dies, the loyal elephant will fight on, and should it survive, another rider will be found."
+#basechance 1
+#offsetx -1
+#offsety -15
+#enditem

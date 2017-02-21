@@ -1601,3 +1601,52 @@
 #nogcost
 #mount
 #end
+
+#new secondshape
+#name "dwarfelephantmount"
+#command "#name 'Dwarf Elephant'"
+#command "#spr1 ./graphics/mounts/standard/elephant_dwarf.png"
+#command "#spr2 shift"
+#command "#copystats 2307"
+#command "#itemslots 12288"
+#command "#size 2"
+#command "#hp 12"
+#command "#prot 5"
+#command "#mor 9"
+#command "#str 10"
+#command "#def 10"
+#command "#ap 12"
+#command "#mapmove 2"
+#command "#enc 2"
+#command "#undisciplined"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#nowayback
+#nogcost
+#mount
+#end
+
+---- Version of dwarf elephants that can have their riders replaced
+
+#new secondshape
+#name "dwarfelephantremount"
+#command "#name 'Dwarf Elephant'"
+#command "#spr1 ./graphics/mounts/standard/elephant_dwarf.png"
+#command "#spr2 shift"
+#command "#copystats 2307"
+#command "#itemslots 12288"
+#command "#size 2"
+#command "#hp 12"
+#command "#prot 5"
+#command "#mor 9"
+#command "#str 10"
+#command "#def 10"
+#command "#ap 12"
+#command "#mapmove 2"
+#command "#enc 2"
+#command "#undisciplined"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#nogcost
+#mount
+#end
