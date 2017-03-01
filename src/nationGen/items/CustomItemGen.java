@@ -334,6 +334,9 @@ public class CustomItemGen {
 				return null;
 			}
 			
+			newitem.values.put("att", "0");
+			newitem.values.put("len", "0");
+			newitem.values.put("dmg", "0");
 
 			for(String def : db.getDefinition())
 			{
