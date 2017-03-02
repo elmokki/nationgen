@@ -12,7 +12,7 @@
 #basechance 0.5
 #command "#idealcold +1"
 #chanceinc "nationcommand #idealcold above 2 *0"
-#chanceinc "primaryracecommand #coldblooded *0.1"
+#chanceinc "primaryracecommand #coldblood *0.1"
 #bothracedefinition "#command coldres +3"
 #desc "Prefers slightly colder climate than usual for the race"
 #magicpriority water 2
@@ -25,7 +25,7 @@
 #command "#idealcold +2"
 #bothracedefinition "#command coldres +3"
 #chanceinc "nationcommand #idealcold above 1 *0"
-#chanceinc "primaryracecommand #coldblooded *0"
+#chanceinc "primaryracecommand #coldblood *0"
 #bothracedefinition "#command coldres +3"
 #desc "Prefers one considerably colder climate than usual for the race"
 #magicpriority water 4
@@ -37,7 +37,7 @@
 #basechance 0.05
 #command "#idealcold +3"
 #chanceinc "nationcommand #idealcold above 0 *0"
-#chanceinc "primaryracecommand #coldblooded *0"
+#chanceinc "primaryracecommand #coldblood *0"
 #bothracedefinition "#command coldres +3"
 #magicpriority water 10
 #end
