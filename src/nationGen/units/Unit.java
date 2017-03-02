@@ -1613,15 +1613,15 @@ public class Unit {
 		tw.println("--- OFFSET DEBUG: ");
 		if(this.getSlot("weapon") != null)
 		{
-			tw.println("- Weapon: " + this.getSlot("weapon").getOffsetX() + ", " + this.getSlot("weapon").getOffsetY());
+			tw.println("-- Weapon: " + this.getSlot("weapon").getOffsetX() + ", " + this.getSlot("weapon").getOffsetY());
 		}
 		if(this.getSlot("armor") != null)
 		{
-			tw.println("- Armor: " + this.getSlot("armor").getOffsetX() + ", " + this.getSlot("armor").getOffsetY());
+			tw.println("-- Armor: " + this.getSlot("armor").getOffsetX() + ", " + this.getSlot("armor").getOffsetY());
 		}
 		if(this.getSlot("offhand") != null)
 		{
-			tw.println("- Offhand: " + this.getSlot("offhand").getOffsetX() + ", " + this.getSlot("offhand").getOffsetY());
+			tw.println("-- Offhand: " + this.getSlot("offhand").getOffsetX() + ", " + this.getSlot("offhand").getOffsetY());
 		}
 		tw.print("--- Generation tags: ");
 		for(String str : this.tags)
