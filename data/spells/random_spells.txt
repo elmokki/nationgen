@@ -123,10 +123,12 @@
 #end
 
 -------- Nature
+
+-------- Sounder of Boars is specified by number to avoid the unresearchable combat summon effect earlier in the spell list
 #new
 #name "Boars"
 #spell "Monster Boar"
-#spell "Sounder of Boars"
+#spell "172"
 #basechance 0.5
 #chanceinc hasthemetheme boreal *2
 #chanceinc nationtag boreal *2
