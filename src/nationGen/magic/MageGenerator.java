@@ -596,7 +596,12 @@ public class MageGenerator extends TroopGenerator {
 				max = (int)picks[i];
 				atmax = 1;
 			}
-			else if(picks[i] == max)
+			 
+		}
+		
+		for(int i = 0; i < 9; i++)
+		{
+			if(picks[i] == max)
 			{
 				atmax++;
 			}
@@ -623,11 +628,17 @@ public class MageGenerator extends TroopGenerator {
 			checks++;
 		}
 		
-		if(diversity < 4 && norand_picks[4] == 0 && norand_picks[7] == 0 && norand_picks[5] == 0 && norand_picks[3] == 0 && norand_picks[0] == 0 && this.random.nextDouble() < 0.1)
+		if(diversity < 4 && norand_picks[4] == 0 && norand_picks[7] == 0 && this.random.nextDouble() < 0.5)
 		{
 			ok = true;
 			checks++;
 		}
+		else if(diversity < 4 && norand_picks[4] == 0 && norand_picks[7] == 0 && norand_picks[3] == 0 && norand_picks[0] == 0 && this.random.nextDouble() < 0.2)
+		{
+			ok = true;
+			checks++;
+		}
+		
 		
 		if(max < 4 && atmax < 2 && picks[4] == 0 && picks[7] == 0 && this.random.nextDouble() < 0.5)
 		{
@@ -656,11 +667,15 @@ public class MageGenerator extends TroopGenerator {
 			checks++;
 		}
 		
-		if(checks == 1 && random.nextBoolean())
-			ok = false;
-
-	
-		
+		if(primaries == 1 && secondaries == 1 && !(norand_picks[4] > 0 || norand_picks[7] > 0))
+		{
+			if((checks == 0 && random.nextDouble() < 0.7) || (checks == 1 && random.nextDouble() < 0.3))
+			{	
+				ok = true;
+				checks++;
+			}
+		}
+				
 		List<Unit> extramages = new ArrayList<Unit>();
 		
 		if(ok)
@@ -1138,7 +1153,7 @@ public class MageGenerator extends TroopGenerator {
 		int tier = 1;
 		if(power >= 5 || (power >= 4 && random.nextBoolean()) || (power >= 3 && random.nextDouble() > 0.66) | (power >= 2 && random.nextDouble() > 0.95))
 			tier = 3;
-		else if(power > 2 || random.nextBoolean())
+		else if(power > 2 || (random.nextBoolean() && power != 1) || random.nextDouble() > 0.90)
 			tier = 2;
 		else
 			tier = 1;	
