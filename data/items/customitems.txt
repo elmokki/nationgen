@@ -98,6 +98,50 @@
 #command "#name 'Ice Full Helmet'"
 #end
 
+--- Argarthan stone armors (used for both granite and onyx)
+
+#new customarmor
+#name stonehauberk
+#armor
+#command "#type 5"
+#command "#prot 16"
+#command "#def -2"
+#command "#enc 3"
+#command "#rcost 15"
+#command "#name 'Stone Hauberk'"
+#end
+
+#new customarmor
+#name stonearmor
+#armor
+#command "#type 5"
+#command "#prot 20"
+#command "#def -4"
+#command "#enc 6"
+#command "#rcost 30"
+#command "#name 'Stone Armor'"
+#end
+
+#new customarmor
+#armor
+#name stonecap
+#command "#type 6"
+#command "#prot 16"
+#command "#rcost 3"
+#command "#name 'Stone Helmet'"
+#end
+
+#new customarmor
+#name stonebuckler
+#armor
+#command "#type 4"
+#command "#prot 16"
+#command "#def 4"
+#command "#enc 2"
+#command "#rcost 6"
+#command "#name 'Stone Buckler'"
+#end
+
 --- Additional bronze armors
 
 #new customarmor
