@@ -36,10 +36,7 @@ public class CustomItem extends Item {
 	public CustomItem(NationGen nationGen) {
 		super(nationGen);
 		this.values.put("rcost", "0");
-		this.values.put("att", "0");
 		this.values.put("def", "0");
-		this.values.put("len", "0");
-		this.values.put("dmg", "0");
 	}
 	
 	

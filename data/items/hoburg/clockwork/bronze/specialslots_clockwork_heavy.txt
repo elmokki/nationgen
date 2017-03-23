@@ -42,8 +42,8 @@
 #basechance 1
 #gameid -1
 #armor
-#define "#supply +3"
-#define "gcost +5"
+#define "#supplybonus +3"
+#define "#gcost +5"
 #description "the armor has large compartments to store foodstuffs"
 #enditem
 
@@ -53,7 +53,7 @@
 #gameid -1
 #armor
 #define "#heal"
-#define "rcost +5"
+#define "#rcost +5"
 #description "the armor is designed so that damaged parts can eventually be replaced"
 #enditem
 
@@ -63,7 +63,7 @@
 #gameid -1
 #armor
 #define "#darkvision 100"
-#define "rcost +5"
+#define "#rcost +5"
 #description "the armor has complex optical systems which allow it to operate normally in total darkness"
 #enditem
 
@@ -102,7 +102,7 @@
 #define "#mapmove +1"
 #define "#deathfire 2"
 #define "#fireres -5"
-#define "rcost +10"
+#define "#rcost +10"
 #description "the armor is driven by an internal engine instead of clockworks, giving it more endurance; however, it is also prone to explode when heavily damaged"
 #enditem
 

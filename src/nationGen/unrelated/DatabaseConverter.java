@@ -147,20 +147,20 @@ public class DatabaseConverter {
 				String attr_key = attr.GetValue(attr_id, "attribute_number");
 
 				if(attr_key.equals("266") || attr_key.equals("267"))
-					db.setValue(key, "1", "ferrous");
+					db.setValue(key, "1", "ironweapon");
 				else
-					db.setValue(key, "0", "ferrous");
+					db.setValue(key, "0", "ironweapon");
 
 				if(attr_key.equals("268") || attr_key.equals("269"))
-					db.setValue(key, "1", "flammable");
+					db.setValue(key, "1", "woodenweapon");
 				else
-					db.setValue(key, "0", "flammable");
+					db.setValue(key, "0", "woodenweapon");
 
 			}
 			else
 			{
-				db.setValue(key, "0", "flammable");
-				db.setValue(key, "0", "ferrous");
+				db.setValue(key, "0", "woodenweapon");
+				db.setValue(key, "0", "ironweapon");
 			}
 		}
 	}
