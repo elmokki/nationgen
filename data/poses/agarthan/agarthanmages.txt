@@ -63,6 +63,7 @@
 #name olmspawn_warriormage
 #basechance 0.1
 #chanceinc moduleid herogen *2
+#chanceinc secondaryrace olm *4
 #role "mage"
 #role "priest"
 #warriormage
@@ -70,21 +71,7 @@
 #subrace "olmspawn"
 #subraceprefix "olmspawn"
 
-#command "#prot +2"
-#command "#gcost +24"
-#command "#hp +6"
-#command "#att +1"
-#command "#def +1"
-#command "#prec +1"
-#command "#ap 7"
-#command "#mr +2"
-#command "#mor +2"
-#command "#coldres 5"
-#command "#poisonres 15"
-#command "#holy"
-#command "#itemslots 13446"
-
-#load basesprite /data/items/agarthan/generic/bases.txt
+#load basesprite /data/items/agarthan/olmspawn/bases.txt
 #load shadow /data/items/agarthan/olmspawn/shadow.txt
 #load hands /data/items/agarthan/generic/hands.txt
 #load legs /data/items/agarthan/olmspawn/legs.txt
@@ -108,29 +95,16 @@
 #name olmspawn_caster
 #basechance 0.2
 #chanceinc moduleid herogen *2
+#chanceinc secondaryrace olm *3
 #role "mage"
 #role "priest"
 
 #subrace "olmspawn"
 #subraceprefix "olmspawn"
 
-#command "#prot +2"
-#command "#gcost +24"
-#command "#hp +6"
-#command "#att +1"
-#command "#def +1"
-#command "#prec +1"
-#command "#ap 7"
-#command "#mr +2"
-#command "#mor +2"
-#command "#coldres 5"
-#command "#poisonres 15"
-#command "#holy"
-#command "#itemslots 13446"
-
 #renderorder "shadow weapon cloakb basesprite legs armor cloakf offhandw hands hair helmet offhanda overlay"
 
-#load basesprite /data/items/agarthan/generic/bases.txt
+#load basesprite /data/items/agarthan/olmspawn/bases.txt
 #load shadow /data/items/agarthan/olmspawn/shadow.txt
 #load hands /data/items/agarthan/generic/hands.txt
 #load legs /data/items/agarthan/olmspawn/legs.txt
@@ -144,4 +118,36 @@
 
 #tier 2
 #tier 3
+#endpose
+
+--------  Ancient Olmspawn caster
+
+#newpose
+#name ancient_olmspawn_caster
+#basechance 0.01
+#chanceinc moduleid herogen *2
+#chanceinc secondaryrace olm *25
+#role "mage"
+#role "priest"
+#warriormage
+
+#subrace "ancient olmspawn"
+#subraceprefix "ancient olmspawn"
+
+#renderorder "shadow weapon cloakb basesprite legs armor cloakf offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/agarthan/generic_big/bases_olmspawn.txt
+#load shadow /data/items/agarthan/generic_big/shadow_olmspawn.txt
+#load hands /data/items/agarthan/generic_big/hands.txt 6 55
+#load legs /data/items/agarthan/generic_big/legs_olmspawn.txt
+
+#load armor /data/items/agarthan/generic_big/magearmor.txt 6 55
+#load helmet /data/items/agarthan/generic_big/magehelmets.txt 6 55
+#load weapon /data/items/agarthan/generic_big/mageweapons.txt 6 55
+
+#load cloakf /data/items/agarthan/generic_big/cloakf.txt 6 55
+#load cloakb /data/items/agarthan/generic_big/cloakb.txt 6 55
+
+#tier 3
+
 #endpose
