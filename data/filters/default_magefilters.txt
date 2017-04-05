@@ -1,4 +1,24 @@
 #new magefilter
+#name "highupkeep"
+#basechance 1
+#command "#addupkeep +50"
+#notfortier 1
+#power -1
+#theme upkeep
+#desc "Greedy"
+#end
+
+#new magefilter
+#name "lowupkeep"
+#basechance 1
+#command "#addupkeep -50"
+#notfortier 1
+#power 1
+#theme upkeep
+#desc "Altruistic"
+#end
+
+#new magefilter
 #name "poisonres"
 #basechance 0.1
 #command "#poisonres +5"

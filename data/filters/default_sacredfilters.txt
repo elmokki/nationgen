@@ -1,3 +1,19 @@
+#new
+#name "ascetic-15"
+#basechance 0.25
+#chanceinc personalcommand gcost below 15 *0
+#chanceinc personalcommand gcost above 30 *0
+#command "#addupkeep -15"
+#command "#neednoteat"
+#end
+
+#new
+#name "ascetic-30"
+#basechance 0.125
+#chanceinc personalcommand gcost below 30 *0
+#command "#addupkeep -30"
+#command "#neednoteat"
+#end
 
 #new
 #name "reinvig 2"
