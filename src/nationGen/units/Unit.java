@@ -830,8 +830,6 @@ public class Unit {
 		for(Command c : allCommands)
 			if(c.args.size() > 0 && c.args.get(0).startsWith("*") && Generic.isNumeric(c.args.get(0).substring(1)))
 				multiCommands.add(c);
-			else if(c.args.size() > 0 && c.args.get(0).startsWith("%cost") && (Generic.isNumeric(c.args.get(0).substring(5)) || (c.args.size() > 1 && Generic.isNumeric(c.args.get(1)))))
-				percentCostCommands.add(c);
 			else
 				handleCommand(tempCommands, c);
 
@@ -1254,22 +1252,27 @@ public class Unit {
 		}
 		
 		// %cost stuff
+			
+		for(Command c : commands)
+			if(c.args.size() > 0 && c.args.get(0).startsWith("%cost") && (Generic.isNumeric(c.args.get(0).substring(5)) || (c.args.size() > 1 && Generic.isNumeric(c.args.get(1)))))
+				percentCostCommands.add(c);
+
 		int gcost = 0;
-		
 		if(percentCostCommands.size() > 0)
 			gcost = this.getGoldCost();
 		
 		for(Command c : percentCostCommands)
 		{
+			
 			if(gcost == 0)
 				continue;
 			
 			double multi = 0;
 			
 			if(Generic.isNumeric(c.args.get(0).substring(5)))
-					multi = Double.parseDouble(c.args.get(0).substring(5)) / 100;
+				multi = Double.parseDouble(c.args.get(0).substring(5)) / 100;
 			else if(c.args.size() > 1 && Generic.isNumeric(c.args.get(1)))
-					multi = Double.parseDouble(c.args.get(1)) / 100;
+				multi = Double.parseDouble(c.args.get(1)) / 100;
 			
 			
 			int price = (int)Math.round((double)gcost * multi);
@@ -1388,7 +1391,10 @@ public class Unit {
 
 					try
 					{
-						oldarg = "" + (Integer.parseInt(oldarg) + Integer.parseInt(arg));
+						if(oldarg.startsWith("%"))
+							oldarg = "" + Integer.parseInt(arg);
+						else
+							oldarg = "" + (Integer.parseInt(oldarg) + Integer.parseInt(arg));
 						old.args.set(i, oldarg);
 					}
 					catch(NumberFormatException e)
@@ -1405,7 +1411,10 @@ public class Unit {
 					arg = arg.substring(1);
 					try
 					{
-						oldarg = "" + (int)(Integer.parseInt(oldarg) * Double.parseDouble(arg));
+						if(oldarg.startsWith("%"))
+							oldarg = "0";
+						else
+							oldarg = "" + (int)(Integer.parseInt(oldarg) * Double.parseDouble(arg));
 						old.args.set(i, oldarg);
 					}
 					catch(Exception e)

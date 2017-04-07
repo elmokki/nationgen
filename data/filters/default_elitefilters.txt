@@ -107,19 +107,9 @@
 #end
 
 #new
-#name "loyal-10"
+#name "zealous"
 #basechance 0.25
-#chanceinc personalcommand gcost below 15 *0
-#chanceinc personalcommand gcost above 30 *0
-#command "#addupkeep -10"
-#command "#mor +1"
-#end
-
-#new
-#name "loyal-20"
-#basechance 0.25
-#chanceinc personalcommand gcost below 30 *0
-#command "#addupkeep -20"
+#command "#addupkeep %cost-30"
 #command "#mor +1"
 #end
 
