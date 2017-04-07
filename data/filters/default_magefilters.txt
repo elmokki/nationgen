@@ -1,9 +1,7 @@
 #new magefilter
 #name "highupkeep"
-#basechance 1
-#command "#addupkeep +%value%"
-#basevalue 0
-#valuemulti 20
+#basechance 0.5
+#command "#addupkeep %cost20"
 #power -1
 #theme upkeep
 #desc "Greedy"
@@ -11,10 +9,8 @@
 
 #new magefilter
 #name "lowupkeep"
-#basechance 1
-#command "#addupkeep -%value%"
-#basevalue 0
-#valuemulti 20
+#basechance 0.5
+#command "#addupkeep %cost-20"
 #power 1
 #theme upkeep
 #desc "Altruistic"
