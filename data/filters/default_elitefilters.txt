@@ -190,3 +190,61 @@
 #basechance 1
 #command "#pillagebonus 3"
 #end
+
+#new
+#name "bloodguard-low"
+#type "berserk"
+#basechance 0
+#chanceinc "magic blood 0.5"
+#chanceinc "anymagic blood 0.125"
+#chanceinc "racetag human *2"
+#chanceinc "personalcommand size above 3 *0.5"
+#chanceinc "personalcommand size above 3 *0.125"
+#chanceinc "personalcommand undead *0"
+#chanceinc "personalcommand demon *0"
+#chanceinc "personalcommand magicbeing *0"
+#command "#hp +2"
+#command "#mr +1"
+#command "#mor +2"
+#command "#str +1"
+#command "#att +1"
+#command "#berserk +2"
+#command "#homesick 5"
+#command "#reclimit 20"
+#description "Bound to their homeland in exchange for power"
+#tag "nopose ranged"
+#tag "nopose chariot"
+#caponlychance 0.5
+#path blood
+#end
+
+#new
+#name "bloodguard-high"
+#type "berserk"
+#basechance 0
+#chanceinc "magic blood 0.125"
+#chanceinc "racetag human *2"
+#chanceinc "personalcommand size above 3 *0.125"
+#chanceinc "personalcommand undead *0"
+#chanceinc "personalcommand demon *0"
+#chanceinc "personalcommand magicbeing *0"
+#command "#hp +2"
+#command "#hp *1.2"
+#command "#mr +3"
+#command "#mor +2"
+#command "#mor *1.2"
+#command "#str +1"
+#command "#str *1.2"
+#command "#att +1"
+#command "#att *1.2"
+#command "#def +1"
+#command "#enc -1"
+#command "#berserk +4"
+#command "#homesick 10"
+#command "#reclimit 10"
+#description "Bound to their homeland in exchange for great power"
+#tag "nopose ranged"
+#tag "nopose chariot"
+#caponlychance 1
+#path blood
+#end
