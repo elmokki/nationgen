@@ -282,8 +282,15 @@
 #new
 #name "Hardy"
 #chance 0.05
-#command "#woundfend 25"
+#command "#woundfend 20"
 #description "Hardy"
+#end
+
+#new
+#name "Frail"
+#chance 0.05
+#command "#woundfend -20"
+#description "Frail"
 #end
 
 #new

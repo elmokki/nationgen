@@ -19,7 +19,6 @@
 #neverredundant
 #end
 
-
 -- Outlier chariots hiding in mounted poses
 #new 
 #name "chariot"
@@ -74,5 +73,133 @@
 #chanceinc pose not ranged *0
 #prefix
 #neverredundant
+#neverredundant
+#end
+
+
+-- "Bloodguard" prefixes
+#new 
+#name "blood"
+#basechance 0
+#chanceinc filter bloodguard-low 6.5
+#chanceinc filter bloodguard-high 6.5
+#prefix
+#neverredundant
+#end
+
+#new 
+#name "bound"
+#basechance 0
+#chanceinc filter bloodguard-low 0.5
+#chanceinc filter bloodguard-high 0.5
+#prefix
+#neverredundant
+#end
+
+#new 
+#name "bloodpact"
+#basechance 0
+#chanceinc filter bloodguard-low 0.5
+#chanceinc filter bloodguard-high 0.5
+#prefix
+#neverredundant
+#end
+
+#new 
+#name "damned"
+#basechance 0
+#chanceinc filter bloodguard-low 0.5
+#chanceinc filter bloodguard-high 0.5
+#prefix
+#neverredundant
+#end
+
+#new 
+#name "doomed"
+#basechance 0
+#chanceinc filter bloodguard-low 0.5
+#chanceinc filter bloodguard-high 0.5
+#prefix
+#neverredundant
+#end
+
+#new 
+#name "accursed"
+#basechance 0
+#chanceinc filter bloodguard-low 0.5
+#chanceinc filter bloodguard-high 0.5
+#prefix
+#neverredundant
+#end
+
+#new 
+#name "foresaken"
+#basechance 0
+#chanceinc filter bloodguard-low 0.5
+#chanceinc filter bloodguard-high 0.5
+#prefix
+#neverredundant
+#end
+
+#new 
+#name "condemned"
+#basechance 0
+#chanceinc filter bloodguard-low 0.5
+#chanceinc filter bloodguard-high 0.5
+#prefix
+#neverredundant
+#end
+
+#new 
+#name "lost"
+#basechance 0
+#chanceinc filter bloodguard-low 0.5
+#chanceinc filter bloodguard-high 0.5
+#prefix
+#neverredundant
+#end
+
+#new 
+#name "infernal"
+#basechance 0
+#chanceinc filter bloodguard-low 0.5
+#chanceinc filter bloodguard-high 0.5
+#prefix
+#neverredundant
+#end
+
+#new 
+#name "bedeviled"
+#basechance 0
+#chanceinc filter bloodguard-low 0.5
+#chanceinc filter bloodguard-high 0.5
+#prefix
+#neverredundant
+#end
+
+#new 
+#name "tainted"
+#basechance 0
+#chanceinc filter bloodguard-low 0.5
+#chanceinc filter bloodguard-high 0.5
+#prefix
+#neverredundant
+#end
+
+#new 
+#name "blighted"
+#basechance 0
+#chanceinc filter bloodguard-low 0.5
+#chanceinc filter bloodguard-high 0.5
+#prefix
+#neverredundant
+#end
+
+#new 
+#name "ill-fated"
+#basechance 0
+#chanceinc filter bloodguard-low 0.5
+#chanceinc filter bloodguard-high 0.5
+#prefix
 #neverredundant
 #end
