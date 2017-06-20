@@ -1,0 +1,62 @@
+-- Elite warrior societies (cf Moon Warriors)
+#newpose
+#name "society elites"
+#role "elite infantry"
+
+#renderorder "shadow basesprite shirt armor weapon bonusweapon offhandw hands offhanda"
+
+#load basesprite /data/items/occidental/warriorsociety/bases.txt
+#load shadow /data/items/occidental/warriorsociety/shadow.txt
+#load hands /data/items/occidental/warriorsociety/hands.txt
+#load shirt /data/items/occidental/warriorsociety/shirt.txt
+#load armor /data/items/occidental/warriorsociety/armor.txt
+#load helmet /data/items/occidental/warriorsociety/helmet.txt
+#load weapon /data/items/occidental/warriorsociety/weapon.txt
+#load bonusweapon /data/items/occidental/warriorsociety/bonusranged.txt
+#load offhand /data/items/occidental/warriorsociety/shields.txt
+
+#endpose
+
+#forcedname "Pale One Thrall"
+
+-- Sacred warrior societies (cf Jaguar/Sun Warriors)
+#newpose
+#name "society sacreds"
+#role "sacred infantry"
+
+#renderorder "shadow basesprite shirt armor weapon bonusweapon offhandw hands offhanda"
+
+#load basesprite /data/items/occidental/warriorsociety/bases.txt
+#load shadow /data/items/occidental/warriorsociety/shadow.txt
+#load hands /data/items/occidental/warriorsociety/hands.txt
+#load shirt /data/items/occidental/warriorsociety/shirt.txt
+#load armor /data/items/occidental/warriorsociety/armor.txt
+#load helmet /data/items/occidental/warriorsociety/helmet.txt
+#load weapon /data/items/occidental/warriorsociety/weapon.txt
+#load bonusweapon /data/items/occidental/warriorsociety/bonusranged.txt
+#load offhand /data/items/occidental/warriorsociety/shields.txt
+
+#endpose
+
+
+
+-- Sacred flying warrior societies (cf Eagle Warriors)
+#newpose
+#name "flying society sacreds"
+#role "sacred infantry"
+
+#renderorder "shadow underlay basesprite shirt armor weapon bonusweapon offhandw hands offhanda overlay"
+
+#load basesprite /data/items/occidental/warriorsociety/bases_flying.txt
+#load shadow /data/items/occidental/warriorsociety/shadow.txt
+#load hands /data/items/occidental/warriorsociety/hands.txt
+#load underlay /data/items/occidental/warriorsociety/underlay.txt
+#load overlay /data/items/occidental/warriorsociety/overlay.txt
+#load shirt /data/items/occidental/warriorsociety/shirt.txt
+#load armor /data/items/occidental/warriorsociety/armor.txt
+#load helmet /data/items/occidental/warriorsociety/helmet.txt
+#load weapon /data/items/occidental/warriorsociety/weapon.txt
+#load bonusweapon /data/items/occidental/warriorsociety/bonusranged.txt
+#load offhand /data/items/occidental/warriorsociety/offhand.txt
+
+#endpose
