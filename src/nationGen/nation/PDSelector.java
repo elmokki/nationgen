@@ -78,18 +78,18 @@ public class PDSelector {
 		List<Unit> others = new ArrayList<Unit>();
 		if(startarmy)
 		{
-			others.add(getMilitia(1, 1));
-			others.add(getMilitia(1, 2));
+			others.add(getMilitia(1, 1, !startarmy));
+			others.add(getMilitia(1, 2, !startarmy));
 		}
 		else if(rank == 1)
 		{
-			others.add(getMilitia(1, 1));
-			others.add(getMilitia(2, 1));
+			others.add(getMilitia(1, 1, !startarmy));
+			others.add(getMilitia(2, 1, !startarmy));
 		}
 		else if(rank == 2)
 		{
-			others.add(getMilitia(1, 1));
-			others.add(getMilitia(2, 1));
+			others.add(getMilitia(1, 1, !startarmy));
+			others.add(getMilitia(2, 1, !startarmy));
 		}
 		
 		boolean ud_demon = false;
@@ -165,13 +165,19 @@ public class PDSelector {
 		return com;
 	}
 	
+	
+	public Unit getMilitia(int rank, int tier)
+	{
+		return getMilitia(rank, tier, true);
+	}
+	
 	/**
 	 * Gets the rank:th best militia unit of tier:th tier
 	 * @param rank rankth best (1-2)
 	 * @param tier tier increases possible resource cost.
 	 * @return
 	 */
-	public Unit getMilitia(int rank, int tier)
+	public Unit getMilitia(int rank, int tier, boolean montag_chassis_allowed)
 	{
 		
 		if(rank < 1)
@@ -185,10 +191,12 @@ public class PDSelector {
 		List<Unit> units = n.combineTroopsToList("infantry");
 		units.addAll(n.combineTroopsToList("mounted"));
 		units.addAll(n.combineTroopsToList("ranged"));
+		if(!montag_chassis_allowed)
+			units.addAll(n.combineTroopsToList("montagtroops"));
 		
 		List<Unit> unsuitable = new ArrayList<Unit>();
 		for(Unit u : units)
-			if(Generic.containsTag(Generic.getAllUnitTags(u), "cannot_be_pd"))
+			if(Generic.containsTag(Generic.getAllUnitTags(u), "cannot_be_pd") || (Generic.containsTag(u.pose.tags, "montagpose") && !montag_chassis_allowed))
 				unsuitable.add(u);
 		
 		if(units.size() > unsuitable.size())

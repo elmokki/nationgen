@@ -19,7 +19,7 @@ import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
 import nationGen.nation.Nation;
-import nationGen.rostergeneration.TroopGenerator.Template;
+import nationGen.rostergeneration.TroopTemplate;
 import nationGen.rostergeneration.montagtemplates.SacredMontagTemplate;
 import nationGen.units.Unit;
 
@@ -762,7 +762,7 @@ public class SacredGenerator extends TroopGenerator {
 		// Equip
 		unitGen.armorUnit(u, null, null, null, false);
 		
-		Template t = new Template(u.getSlot("armor"), race, u, role, u.pose);
+		TroopTemplate t = TroopTemplate.getNew(u.getSlot("armor"), race, u, role, u.pose, this);
 
 		if(role.equals("mounted"))
 			this.armCavalry(u, t);

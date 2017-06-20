@@ -62,7 +62,19 @@ public class ItemSet extends ArrayList<Item> {
 		return filterProt(armordb, min, max, false);
 	}
 	
-	public ItemSet filterSameSprite(ItemSet old)
+	public ItemSet filterKeepSameSprite(ItemSet old)
+	{
+		ItemSet newlist = new ItemSet();
+		
+		for(Item i : this)
+			for(Item i2 : old)
+				if(i.sprite.equals(i2.sprite))
+					newlist.add(i);
+		
+		return newlist;
+	}
+	
+	public ItemSet filterRemoveSameSprite(ItemSet old)
 	{
 		ItemSet newlist = new ItemSet();
 		newlist.addAll(this);
