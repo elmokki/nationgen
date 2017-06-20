@@ -2565,12 +2565,12 @@ public class MageGenerator extends TroopGenerator {
 			used = new ItemSet();
 	
 
-		ItemSet items = u.pose.getItems(item.slot).filterSameSprite(exclusions);
+		ItemSet items = u.pose.getItems(item.slot).filterRemoveSameSprite(exclusions);
 		items.removeAll(exclusions);
 		
 		if(chandler.countPossibleFilters(items, u) == 0)
 		{
-			items = u.pose.getItems(item.slot).filterSameSprite(exclusions);
+			items = u.pose.getItems(item.slot).filterRemoveSameSprite(exclusions);
 		}
 		
 		ItemSet possibles = new ItemSet();

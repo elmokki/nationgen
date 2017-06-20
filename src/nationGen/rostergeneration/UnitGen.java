@@ -255,9 +255,10 @@ public class UnitGen {
 			int prot = nationGen.armordb.GetInteger(u.getSlot("armor").id, "prot");
 			
 			ItemSet possibleMounts = included.filterSlot("mount").filterForPose(u.pose).filterMinMaxProt(prot);
+			possibleMounts.addAll(u.pose.getItems("mount").filterMinMaxProt(prot).filterKeepSameSprite(included.filterSlot("mount").filterMinMaxProt(prot)));
 			
 
-			if(chandler.countPossibleFilters(possibleMounts, u) == 0 || random.nextDouble() > 0.66)
+			if(chandler.countPossibleFilters(possibleMounts, u) == 0 || random.nextDouble() > 0.8)
 			{
 				possibleMounts = u.pose.getItems("mount").filterMinMaxProt(prot);
 				if(possibleMounts.possibleItems() == 0)
