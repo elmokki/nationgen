@@ -1,0 +1,83 @@
+-- Generic theme with high diversity and low cohesion
+#newtheme
+#type techlevel
+#name default
+#basechance 4
+#endtheme
+
+
+-- Demographic themes
+#newtheme
+#type demographic
+#name daoine_sidhe
+#basechance 3
+#endtheme
+
+-- #newtheme
+-- #type demographic
+-- #name daoine_lir
+-- #basechance 0 --1
+-- #endtheme
+
+
+-- Cultural themes
+#newtheme
+#type cultural
+#name traditional
+#basechance 4
+#racedefinition "#pose sidhetroops"
+#racedefinition "#pose sidhemages"
+#endtheme
+
+#newtheme
+#type cultural
+#name patriarchal
+#basechance 3
+#racedefinition "#pose sidhetroops"
+#racedefinition "#pose sidhemages"
+#endtheme
+
+#newtheme
+#type cultural
+#name matriarchal
+#basechance 3
+#racedefinition "#pose beansidhetroops"
+#racedefinition "#pose beansidhemages"
+#endtheme
+
+#newtheme
+#type cultural
+#name egalitarian
+#basechance 2
+#racedefinition "#pose sidhetroops"
+#racedefinition "#pose sidhemages"
+#racedefinition "#pose beansidhetroops"
+#racedefinition "#pose beansidhemages"
+#endtheme
+
+
+-- Weights: EA 0.1, MA 0.1, LA 0.1
+#newtheme
+#type social
+#name slaver
+#basechance 0.1
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#themeinc theme slave *20
+#themeinc theme free *0.5
+#themeinc racename caveman *5
+#themeinc racename firbolg *5
+#themeinc racename "Boreal human" *5
+#themeinc racename hoburg *5
+#themeinc racename caelian *0.1
+#themeinc racename van *0.1
+#themeinc racename tengu *0.1
+#secondaryracedefinition "#freetemplatefilter slavetemplate slave"
+#racedefinition "#secondaryracetroopmod 100"
+#racedefinition "#secondaryracemagemod -100"
+#endtheme

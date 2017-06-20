@@ -1,0 +1,44 @@
+
+#newrace
+#name "Olm"
+#basechance 0.1
+
+#chanceinc racetag subterranean *5
+#chanceinc primaryrace "Pale One" *10
+
+#subterranean
+#secondary
+
+#all_troops_elite
+#all_troops_sacred
+
+#unitcommand "#gcost 50"
+#unitcommand "#size 3"
+#unitcommand "#hp 23"
+#unitcommand "#prot 5"
+#unitcommand "#mr 14"
+#unitcommand "#mor 12"
+#unitcommand "#str 11"
+#unitcommand "#att 8"
+#unitcommand "#def 8"
+#unitcommand "#prec 12"
+#unitcommand "#enc 4"
+#unitcommand "#ap 7"
+#unitcommand "#magiccommand 10"
+#unitcommand "#maxage 1000"
+#unitcommand "#coldres 5"
+#unitcommand "#poisonres 15"
+#unitcommand "#nametype 153"
+#unitcommand "#amphibian"
+#unitcommand "#neednoteat"
+#unitcommand "#blind 1"
+
+#pose olmtroops
+#pose olmmages
+
+#magicpriority water 5
+#magicpriority earth 4
+
+#description "Since time immemorial pale amphibians with external gills have lived in the watery caverns of the deeper earth. Olms communicate wordlessly and can project images and emotions to other sentient beings. This power can also be used to overwhelm and harm an enemy."
+
+#endrace

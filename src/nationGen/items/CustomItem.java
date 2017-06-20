@@ -36,15 +36,12 @@ public class CustomItem extends Item {
 	public CustomItem(NationGen nationGen) {
 		super(nationGen);
 		this.values.put("rcost", "0");
-		this.values.put("att", "0");
 		this.values.put("def", "0");
-		this.values.put("len", "0");
-		this.values.put("dmg", "0");
 	}
 	
 	
-	
-	public <E extends Entity> void handleOwnCommand(String str)
+	@Override
+	public <Entity> void handleOwnCommand(String str)
 	{
 		List<String> args = Generic.parseArgs(str);
 		if(args.get(0).equals("#command") && args.size() > 1)

@@ -421,7 +421,7 @@ public class CommanderGenerator extends TroopGenerator {
 					slave = true;
 				else if(c.command.equals("#animal"))
 					animal = true;
-				else if(c.command.equals("#mind"))
+				else if(c.command.equals("#mor") && c.args.get(0).trim() == "50")
 					mindless = true;
 			}
 			

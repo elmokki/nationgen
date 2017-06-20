@@ -20,7 +20,10 @@ public class NoPrimaryRaceRestriction extends TwoListRestriction<Race>  {
 		this.ng = ng;
 		
 		for(Race r : ng.races)
-			rmodel.addElement(r);
+                    if (!r.tags.contains("secondary")) 
+                    {
+                    			rmodel.addElement(r);
+                    }
 		
 		
 	}

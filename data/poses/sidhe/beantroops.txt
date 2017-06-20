@@ -1,0 +1,114 @@
+-- Normal
+#newpose
+#name "infantry"
+-- #renderorder "shadow cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hair helmet offhanda"
+#role "infantry"
+#role "scout"
+
+#generateitem 1 hair
+#define "#stealthy 0"
+
+#load basesprite /data/items/sidhe/bean/bases.txt
+#load shadow /data/items/sidhe/bean/shadow.txt
+#load cloakf /data/items/human/normal/humancloakf.txt 0 -3
+#load cloakb /data/items/human/normal/humancloakb.txt 0 -3
+#load armor /data/items/sidhe/bean/armor_infantry.txt
+#load helmet /data/items/sidhe/bean/helmet.txt
+#load weapon /data/items/sidhe/weapon.txt -2 -6
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt -1 -2
+#load offhand /data/items/sidhe/bean/offhand.txt 0 -3
+#load offhand /data/items/sidhe/shields.txt
+#load hair /data/items/sidhe/bean/hair.txt
+#endpose
+
+
+
+-- Cavalry (regular)
+#newpose
+#name "cavalry"
+-- #renderorder "cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hair helmet offhanda overlay"
+#role "mounted"
+#role "scout"
+
+#generateitem 1 hair
+#define "#stealthy 0"
+
+#baseitemslot feet 0
+
+#load basesprite /data/items/sidhe/bean/bases_mounted.txt
+#load mount /data/items/sidhe/sidhemounts.txt 3 -14
+#load cloakf /data/items/human/normal/humancloakf.txt 0 -3
+#load cloakb /data/items/human/normal/humancloakb.txt 0 -3
+#load armor /data/items/sidhe/bean/armor_mounted.txt
+#load helmet /data/items/sidhe/bean/helmet.txt
+#load weapon /data/items/sidhe/weapon.txt -2 -6
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt -1 -2
+#load lanceslot /data/items/sidhe/bonusweapon.txt -2 -6
+#load offhand /data/items/sidhe/bean/offhand.txt 0 -3
+#load offhand /data/items/sidhe/shields.txt
+#load hair /data/items/sidhe/bean/hair.txt
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+#load overlay /data/items/sidhe/sidhemounts_overlay.txt
+
+#writeslot lanceslot
+#endpose
+
+-- Cavalry (low)
+#newpose
+#name "cavalry (low mount)"
+-- #renderorder "cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hair helmet offhanda overlay"
+#role "mounted"
+#role "scout"
+
+#generateitem 1 hair
+#define "#stealthy 0"
+
+#baseitemslot feet 0
+
+#load basesprite /data/items/sidhe/bean/bases_mounted.txt
+#load mount /data/items/sidhe/sidhemounts_low.txt 3 -15
+#load cloakf /data/items/human/normal/humancloakf.txt 0 -3
+#load cloakb /data/items/human/normal/humancloakb.txt 0 -3
+#load armor /data/items/sidhe/bean/armor_mounted.txt
+#load helmet /data/items/sidhe/bean/helmet.txt
+#load weapon /data/items/sidhe/weapon.txt -2 -6
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt -1 -2
+#load lanceslot /data/items/sidhe/bonusweapon.txt -2 -6
+#load offhand /data/items/sidhe/bean/offhand.txt 0 -3
+#load offhand /data/items/sidhe/shields.txt
+#load hair /data/items/sidhe/bean/hair.txt
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+#load overlay /data/items/sidhe/sidhemounts_overlay.txt
+
+#writeslot lanceslot
+#endpose
+
+
+----------- Charioteers
+
+#newpose
+#race 0
+#role "chariot"
+#basechance 0.0625
+
+#generateitem 1 hair
+
+#baseitemslot feet 0
+
+#load basesprite /data/items/sidhe/bean/bases.txt
+#load mount /data/items/sidhe/sidhechariots.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt 0 -3
+#load cloakb /data/items/human/normal/humancloakb.txt 0 -3
+#load hair /data/items/sidhe/bean/hair.txt
+
+#load armor /data/items/sidhe/bean/armor_infantry.txt
+#load helmet /data/items/sidhe/bean/helmet.txt
+#load weapon /data/items/sidhe/weapon.txt -2 -6
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt -1 -2
+#load offhand /data/items/sidhe/bean/offhand.txt 0 -3
+#load offhand /data/items/sidhe/shields.txt
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+#load overlay /data/items/sidhe/sidhemounts_overlay.txt
+#endpose

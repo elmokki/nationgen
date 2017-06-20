@@ -124,7 +124,7 @@
 -------- sacred (Bronze)
 
 #newpose
-#name ancient_melee
+#name ancient_bronze
 #chanceinc moduleid herogen *2
 #role "sacred infantry"
 
@@ -142,6 +142,35 @@
 #load offhand /data/items/agarthan/generic_big/shields.txt
 
 #load weapon /data/items/agarthan/generic_big/weapons.txt
+
+#load cloakf /data/items/agarthan/generic_big/cloakf.txt
+#load cloakb /data/items/agarthan/generic_big/cloakb.txt
+
+#cannot_be_pd
+
+#endpose
+
+-------- sacred (Steel)
+
+#newpose
+#name ancient_steel
+#chanceinc moduleid herogen *2
+#role "sacred infantry"
+
+#command "#coldblood"
+#subrace "ancient one"
+#subraceprefix "ancient"
+
+#load basesprite /data/items/agarthan/generic_big/bases.txt
+#load shadow /data/items/agarthan/generic_big/shadow.txt
+#load hands /data/items/agarthan/generic_big/hands.txt
+#load legs /data/items/agarthan/generic_big/legs.txt
+
+#load armor /data/items/agarthan/generic_big/armor_steel.txt
+#load helmet /data/items/agarthan/generic_big/helmets_steel.txt
+#load offhand /data/items/agarthan/generic_big/shields_steel.txt
+
+#load weapon /data/items/agarthan/generic_big/weapons_steel.txt
 
 #load cloakf /data/items/agarthan/generic_big/cloakf.txt
 #load cloakb /data/items/agarthan/generic_big/cloakb.txt
@@ -198,21 +227,7 @@
 #subrace "olmspawn"
 #subraceprefix "olmspawn"
 
-#command "#prot +2"
-#command "#gcost +24"
-#command "#hp +10"
-#command "#att +1"
-#command "#def +1"
-#command "#prec +1"
-#command "#ap 7"
-#command "#mr +2"
-#command "#mor +2"
-#command "#coldres 5"
-#command "#poisonres 15"
-#command "#holy"
-#command "#itemslots 13446"
-
-#load basesprite /data/items/agarthan/generic/bases.txt
+#load basesprite /data/items/agarthan/olmspawn/bases.txt
 #load shadow /data/items/agarthan/olmspawn/shadow.txt
 #load hands /data/items/agarthan/generic/hands.txt
 #load legs /data/items/agarthan/olmspawn/legs.txt
@@ -243,21 +258,7 @@
 #subrace "olmspawn"
 #subraceprefix "olmspawn"
 
-#command "#prot +2"
-#command "#gcost +24"
-#command "#hp +6"
-#command "#att +1"
-#command "#def +1"
-#command "#prec +1"
-#command "#ap 7"
-#command "#mr +2"
-#command "#mor +2"
-#command "#coldres 5"
-#command "#poisonres 15"
-#command "#holy"
-#command "#itemslots 13446"
-
-#load basesprite /data/items/agarthan/generic/bases.txt
+#load basesprite /data/items/agarthan/olmspawn/bases.txt
 #load shadow /data/items/agarthan/olmspawn/shadow.txt
 #load hands /data/items/agarthan/generic/hands.txt
 #load legs /data/items/agarthan/olmspawn/legs.txt
@@ -277,6 +278,39 @@
 
 #endpose
 
+
+-------- Ancient olmspawn (Bronze)
+
+#newpose
+#name ancient_olmspawn
+#basechance 0.05
+#chanceinc secondaryrace olm *10
+#chanceinc moduleid herogen *2
+#role "sacred infantry"
+
+#subrace "ancient olmspawn"
+#subraceprefix "ancient olmspawn"
+
+#load basesprite /data/items/agarthan/generic_big/bases_olmspawn.txt
+#load shadow /data/items/agarthan/generic_big/shadow_olmspawn.txt
+#load hands /data/items/agarthan/generic_big/hands.txt 6 55
+#load legs /data/items/agarthan/generic_big/legs_olmspawn.txt
+
+#load armor /data/items/agarthan/generic_big/armor.txt 6 55
+#load helmet /data/items/agarthan/generic_big/helmets.txt 6 55
+#load offhand /data/items/agarthan/generic_big/shields.txt 6 55
+
+#load weapon /data/items/agarthan/generic_big/weapons.txt 6 55
+
+#load cloakf /data/items/agarthan/generic_big/cloakf.txt 6 55
+#load cloakb /data/items/agarthan/generic_big/cloakb.txt 6 55
+
+#cannot_be_pd
+#noble
+
+#endpose
+
+
 -------------- Mounted
 
 
@@ -288,6 +322,8 @@
 #role "mounted"
 
 #command "#coldblood"
+
+#baseitemslot feet 0
 
 #load basesprite /data/items/agarthan/generic/bases.txt
 #load hands /data/items/agarthan/generic/hands.txt
@@ -316,6 +352,8 @@
 
 #command "#coldblood"
 
+#baseitemslot feet 0
+
 #load basesprite /data/items/agarthan/generic/bases.txt
 
 #load hands /data/items/agarthan/generic/hands.txt
@@ -343,21 +381,7 @@
 #subrace "olmspawn"
 #subraceprefix "olmspawn"
 
-#command "#prot +2"
-#command "#gcost +24"
-#command "#hp +6"
-#command "#att +1"
-#command "#def +1"
-#command "#prec +1"
-#command "#ap 7"
-#command "#mr +2"
-#command "#mor +2"
-#command "#coldres 5"
-#command "#poisonres 15"
-#command "#holy"
-#command "#itemslots 13446"
-
-#load basesprite /data/items/agarthan/generic/bases.txt
+#load basesprite /data/items/agarthan/olmspawn/bases.txt
 #load shadow /data/items/agarthan/olmspawn/shadow.txt
 #load hands /data/items/agarthan/generic/hands.txt
 #load legs /data/items/agarthan/olmspawn/legs.txt

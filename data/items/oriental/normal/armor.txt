@@ -19,6 +19,7 @@
 #recolormask /graphics/tengu/armor/samuraiarmor_recolormask.png
 #tag "eliteversion 'samurai armor elite'"
 #tag "eliteversion 'samurai armor elite2'"
+#needs legs jomonpants
 #armor
 #enditem
 
@@ -28,6 +29,7 @@
 #sprite /graphics/tengu/armor/samuraiarmor_elite.png
 #recolormask /graphics/tengu/armor/samuraiarmor_elite_recolormask.png
 #theme "elite"
+#needs legs jomonpants
 #armor
 #enditem
 
@@ -37,10 +39,9 @@
 #sprite /graphics/tengu/armor/samuraiarmor_elite2.png
 #recolormask /graphics/tengu/armor/samuraiarmor_elite2_recolormask.png
 #theme "elite"
+#needs legs jomonpants
 #armor
 #enditem
-
---- Samurai
 
 #newitem
 #name "heavy samurai armor"
@@ -49,6 +50,7 @@
 #recolormask /graphics/tengu/armor/samuraiarmor_recolormask.png
 #tag "eliteversion 'heavy samurai armor elite'"
 #tag "eliteversion 'heavy samurai armor elite2'"
+#needs legs jomonpants
 #armor
 #enditem
 
@@ -58,6 +60,7 @@
 #sprite /graphics/tengu/armor/heavysamuraiarmor_elite.png
 #recolormask /graphics/tengu/armor/samuraiarmor_elite_recolormask.png
 #theme "elite"
+#needs legs jomonpants
 #armor
 #enditem
 
@@ -67,6 +70,7 @@
 #sprite /graphics/tengu/armor/heavysamuraiarmor_elite2.png
 #recolormask /graphics/tengu/armor/heavysamuraiarmor_elite2_recolormask.png
 #theme "elite"
+#needs legs jomonpants
 #armor
 #enditem
 
@@ -102,6 +106,7 @@
 #gameid 128
 #sprite /graphics/tengu/armor/ashigaruarmor.png
 #recolormask /graphics/tengu/armor/ashigaruarmor_recolormask.png
+#needs legs jomonpants
 #armor
 #enditem
 
@@ -117,6 +122,56 @@
 #name "full scale"
 #gameid 17
 #sprite /graphics/tengu/armor/fullscale.png
-#recolormask /graphics/tengu/armor/tc_recolormask.png
+#recolormask /graphics/tengu/armor/tc_recolormask2.png
+#armor
+#enditem
+
+-- Advanced-only plate armor
+
+#newitem
+#name "nanban hauberk"
+#gameid 14
+#basechance 0
+#chanceinc racetheme advanced 0.5
+#sprite /graphics/tengu/armor/nanban_hauberk.png
+#recolormask /graphics/tengu/armor/samuraiarmor_recolormask.png
+#tag "eliteversion 'nanban hauberk elite'"
+#needs legs jomonpants
+#armor
+#enditem
+
+#newitem
+#name "nanban hauberk elite"
+#gameid 14
+#basechance 0
+#chanceinc racetheme advanced 0.5
+#sprite /graphics/tengu/armor/nanban_hauberk_elite.png
+#recolormask /graphics/tengu/armor/samuraiarmor_elite_recolormask.png
+#theme "elite"
+#needs legs jomonpants
+#armor
+#enditem
+
+#newitem
+#name "nanban full"
+#gameid 19
+#basechance 0
+#chanceinc racetheme advanced 0.25
+#sprite /graphics/tengu/armor/nanban_full.png
+#recolormask /graphics/tengu/armor/samuraiarmor_recolormask.png
+#tag "eliteversion 'nanban full elite'"
+#needs legs jomonpants
+#armor
+#enditem
+
+#newitem
+#name "nanban full elite"
+#gameid 19
+#basechance 0
+#chanceinc racetheme advanced 0.25
+#sprite /graphics/tengu/armor/nanban_full_elite.png
+#recolormask /graphics/tengu/armor/samuraiarmor_elite_recolormask.png
+#theme "elite"
+#needs legs jomonpants
 #armor
 #enditem

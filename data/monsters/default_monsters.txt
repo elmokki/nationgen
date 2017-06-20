@@ -1,7 +1,5 @@
-
-
 #new
-#name "elephant_human_1"
+#name "elephant_human_boreal_1"
 #basechance 0
 #chanceinc primaryrace "Boreal human" 1
 #command "#copystats 2261"
@@ -9,7 +7,7 @@
 #end
 
 #new
-#name "elephant_human_2"
+#name "elephant_human_boreal_2"
 #basechance 0
 #chanceinc primaryrace "Boreal human" 0.25
 #chanceinc era 3 3.75
@@ -18,7 +16,7 @@
 #end
 
 #new
-#name "elephant_human_3"
+#name "elephant_human_boreal_3"
 #basechance 0
 #chanceinc primaryrace "Boreal human" 2
 #command "#copystats 150"
@@ -26,7 +24,7 @@
 #end
 
 #new
-#name "elephant_human_4"
+#name "elephant_human_austral"
 #basechance 0
 #chanceinc race "Austral human" 2
 #command "#copystats 2307"
@@ -34,8 +32,16 @@
 #end
 
 #new
-#name "elephant_human_5"
+#name "elephant_human_oriental"
 #basechance 0
+#chanceinc primaryrace "Oriental human" 2
+#command "#copystats 150"
+#command "#spr1 ./graphics/monsters/elephant_human_oriental.png"
+#command "#spr2 shift"
+#end
+
+#new
+#name "elephant_human_dynastic_1"
 #basechance 0
 #chanceinc primaryrace "Dynastic human" 4
 #chanceinc racetheme dustwalkers_only *0
@@ -46,7 +52,7 @@
 #end
 
 #new
-#name "elephant_human_6"
+#name "elephant_human_dynastic_2"
 #basechance 0
 #chanceinc primaryrace "Dynastic human" 0.25
 #chanceinc era 3 1.75
@@ -60,7 +66,6 @@
 
 #new
 #name "elephant_humanbred_1"
-#basechance 0
 #basechance 0
 #chanceinc primaryrace "Abysian" 4
 #chanceinc racetheme primal *0
@@ -105,6 +110,7 @@
 #command "#spr1 ./graphics/monsters/elephant_avvite.png"
 #command "#spr2 shift"
 #recolormask /graphics/monsters/elephant_avvite_recolormask.png
+#command "#weapon 437" -- Longspear
 #end
 
 #new
@@ -208,6 +214,7 @@
 #basechance 0
 #chanceinc primaryrace "Pale One" 6
 #chanceinc primaryrace zotz 4
+#chanceinc secondaryrace olm *0
 #command "#copystats 2492"
 #command "#copyspr 2492"
 #caponlychance 0.85
@@ -216,10 +223,8 @@
 #new
 #name "olm"
 #basechance 0
-#chanceinc primaryrace "Pale One" 4
-#chanceinc primaryrace zotz 6
-#chanceinc primaryrace muuch 4
-#chanceinc primaryrace abysian 5
+#chanceinc racetag subterranean 4
+#chanceinc secondaryrace olm *0
 #command "#copystats 2492"
 #command "#copyspr 2492"
 #caponlychance 1
@@ -227,10 +232,9 @@
 
 #new
 #name "troglodyte"
-#basechance 0.5
-#chanceinc primaryrace "Pale One" 9.5
-#chanceinc primaryrace zotz 5.5
-#chanceinc primaryrace muuch 5.5
+#basechance 0
+#chanceinc racetag subterranean 5
+#chanceinc primaryrace "Pale One" *2
 #command "#copystats 447"
 #command "#copyspr 447"
 #end
@@ -251,6 +255,31 @@
 #command "#copystats 1085"
 #command "#copyspr 1085"
 #caponlychance 0.5
+#end
+
+#new
+#name "pygmy_mammoth_vaetti"
+#basechance 0
+#chanceinc "primaryrace vaetti 10"
+#chanceinc "nationcommand idealcold below 2 *0.5"
+#chanceinc "nationcommand idealcold below 1 *0.2"
+#chanceinc "nationcommand idealcold below 0 *0.2"
+#chanceinc "nationcommand idealcold below -1 *0.25"
+#command "#copystats 419"
+#command "#spr1 ./graphics/monsters/mammoth_pygmy_vaetti.png"
+#command "#spr2 shift"
+#command "#name 'Pygmy Mammoth'"
+#command "#gcost 50"
+#command "#rcost 15"
+#command "#hp 36"
+#command "#size 3"
+#command "#prot 10"
+#command "#str 16"
+#command "#def 6"
+#command "#ap 16"
+#command "#weapon 397" -- Kick
+#command "#weapon bonus_shortbow"
+#specifiedgcost
 #end
 
 #new
@@ -287,129 +316,5 @@
 #command "#rcost 1"
 #command "#reclimit 1"
 #command "#slow_to_recruit"
-#caponlychance 1
-#end
-
-#new
-#name "feral giant hoburg"
-#basechance 0
-#chanceinc "primaryrace hoburg 1"
-#chanceinc "racetheme not feral *0"
-#chanceinc "racetheme abysian *0"
-#chanceinc "racetheme austral *0"
-#chanceinc "racetheme oriental *0"
-#chanceinc "racetheme fae *0"
-#command "#copystats 2261"
-#command "#spr1 ./graphics/hoburg/giant/giant_feral_boreal.png"
-#command "#spr2 shift"
-#command "#name 'Giant Hoburg'"
-#command "#gcost 100"
-#command "#rcost 1"
-#command "#hp 53"
-#command "#size 4"
-#command "#prot 4"
-#command "#mr 12"
-#command "#mor 14"
-#command "#str 20"
-#command "#att 13"
-#command "#def 11"
-#command "#prec 9"
-#command "#enc 4"
-#command "#mapmove 2"
-#command "#ap 12"
-#command "#maxage 80"
-#command "#weapon 92"
-#command "#weapon 92"
-#command "#undisciplined"
-#command "#poorleader"
-#command "#trample"
-#command "#trampswallow"
-#command "#aciddigest 5"
-#command "#supplybonus -20"
-#command "#pillagebonus 5"
-#command "#incunrest 2"
-#command "#reclimit 5"
-#command "#descr 'Occasionally a hoburg is born with an outrageous appetite even by their standards. They usually starve early in their childhood, but should they manage to get more than their fair share of food and survive, they will never stop growing and can reach terrifying sizes. At that point, anything smaller than them becomes a potential meal...'"
-#caponlychance 1
-#end
-
-#new
-#name "feral giant oriental hoburg"
-#basechance 0
-#chanceinc "primaryrace hoburg 1"
-#chanceinc "racetheme not feral *0"
-#chanceinc "racetheme not oriental *0"
-#chanceinc "racetheme fae *0"
-#command "#spr1 ./graphics/hoburg/giant/giant_feral_oriental.png"
-#command "#spr2 shift"
-#command "#name 'Giant Hoburg'"
-#command "#gcost 100"
-#command "#rcost 1"
-#command "#hp 53"
-#command "#size 4"
-#command "#prot 4"
-#command "#mr 12"
-#command "#mor 14"
-#command "#str 20"
-#command "#att 13"
-#command "#def 11"
-#command "#prec 9"
-#command "#enc 4"
-#command "#mapmove 2"
-#command "#ap 12"
-#command "#maxage 80"
-#command "#weapon 92"
-#command "#weapon 92"
-#command "#undisciplined"
-#command "#poorleader"
-#command "#trample"
-#command "#trampswallow"
-#command "#aciddigest 5"
-#command "#supplybonus -20"
-#command "#pillagebonus 5"
-#command "#incunrest 2"
-#command "#reclimit 5"
-#command "#descr 'Occasionally a hoburg is born with an outrageous appetite even by their standards. They usually starve early in their childhood, but should they manage to get more than their fair share of food and survive, they will never stop growing and can reach terrifying sizes. At that point, anything smaller than them becomes a potential meal...'"
-#caponlychance 1
-#end
-
-#new
-#name "feral giant austral hoburg"
-#basechance 0
-#chanceinc "primaryrace hoburg 1"
-#chanceinc "racetheme not feral *0"
-#chanceinc "racetheme not austral *0"
-#chanceinc "racetheme fae *0"
-#command "#spr1 ./graphics/hoburg/giant/giant_feral_austral.png"
-#command "#spr2 shift"
-#command "#name 'Giant Hoburg'"
-#command "#gcost 100"
-#command "#rcost 1"
-#command "#hp 53"
-#command "#size 4"
-#command "#prot 4"
-#command "#mr 12"
-#command "#mor 14"
-#command "#str 20"
-#command "#att 13"
-#command "#def 11"
-#command "#prec 9"
-#command "#enc 3"
-#command "#mapmove 3"
-#command "#ap 13"
-#command "#maxage 80"
-#command "#weapon 92"
-#command "#weapon 92"
-#command "#undisciplined"
-#command "#forestsurvival"
-#command "#poorleader"
-#command "#trample"
-#command "#trampswallow"
-#command "#aciddigest 5"
-#command "#supplybonus -20"
-#command "#pillagebonus 5"
-#command "#incunrest 2"
-#command "#reclimit 5"
-#command "#descr 'Occasionally a hoburg is born with an outrageous appetite even by their standards. They usually starve early in their childhood, but should they manage to get more than their fair share of food and survive, they will never stop growing and can reach terrifying sizes. At that point, anything smaller than them becomes a potential meal...'"
 #caponlychance 1
 #end

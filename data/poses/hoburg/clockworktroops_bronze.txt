@@ -152,7 +152,7 @@
 #role "elite infantry"
 #role "sacred infantry"
 #basechance 0.05
-#chanceinc moduleid herogen *5
+#chanceinc moduleid herogen *10
 
 #sacredratingmulti 0.75
 #sacredcostmulti 1.25
@@ -183,5 +183,56 @@
 -- #generateitem 1 handslots -- used to define commander hand slots
 -- #generateitem 1 specialweapon
 #additionalweaponslot 1 specialslot
+
+#endpose
+
+---- Giant clockwork troop (heroic)
+#newpose
+#name "clockwork colossus"
+#role "elite infantry"
+#role "sacred infantry"
+#role "priest"
+#role "mage"
+#basechance 0
+#chanceinc moduleid herogen 0.25
+
+#sacredratingmulti 0.75
+#sacredcostmulti 1.25
+#caponlychance 1
+
+#theme "mechanical"
+#theme "occidental"
+#theme "central"
+#theme "imperial"
+
+#magefilters default_magefilters
+#magefilters default_magefilters_strongdefence_expensive
+#notfortier 1
+#notfortier 2
+#tier 3
+#dontvaryhat
+#dontvaryweapon
+
+#renderorder "shadow cloakb mount specialslot basesprite hair shirt legs helmet armor cloakf quiver bonusweapon weapon offhandw specialweapon hands offhanda overlay"
+
+#load basesprite /data/items/hoburg/clockwork/bases_clockwork_colossal.txt
+#load shadow /data/items/hoburg/clockwork/shadow_clockwork_colossal.txt
+-- #load hands /data/items/hoburg/clockwork/bronze/hands_clockwork_heavy.txt
+
+#load armor /data/items/hoburg/clockwork/bronze/armor_clockwork_colossal.txt
+-- #load helmet /data/items/hoburg/clockwork/bronze/helmet_clockwork_colossal.txt
+
+#load weapon /data/items/hoburg/clockwork/bronze/weapon_clockwork_colossal.txt
+-- #load specialweapon /data/items/hoburg/clockwork/bronze/specialweapon_clockwork_heavy.txt
+
+#load offhand /data/items/hoburg/clockwork/bronze/offhand_clockwork_colossal.txt
+-- #load offhand /data/items/hoburg/clockwork/bronze/shields_clockwork_heavy.txt
+
+-- #load handslots /data/items/hoburg/clockwork/handslots_clockwork_heavy.txt
+-- #load specialslot /data/items/hoburg/clockwork/bronze/specialslots_clockwork_heavy.txt
+
+-- #generateitem 1 handslots -- used to define commander hand slots
+-- #generateitem 1 specialweapon
+-- #additionalweaponslot 1 specialslot
 
 #endpose

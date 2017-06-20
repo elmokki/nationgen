@@ -1,4 +1,22 @@
 #new magefilter
+#name "highupkeep"
+#basechance 0.5
+#command "#addupkeep %cost20"
+#power -1
+#theme upkeep
+#desc "Greedy"
+#end
+
+#new magefilter
+#name "lowupkeep"
+#basechance 0.5
+#command "#addupkeep %cost-20"
+#power 1
+#theme upkeep
+#desc "Altruistic"
+#end
+
+#new magefilter
 #name "poisonres"
 #basechance 0.1
 #command "#poisonres +5"
@@ -530,6 +548,15 @@
 #basechance 0
 #command "#poisonarmor"
 #chanceinc "personalmagic nature 2"
+#tag "notfortier 1"
+#end
+
+#new magefilter
+#name "airshield"
+#basechance 0
+#command "#airshield +30"
+#chanceinc "personalmagic air 2"
+#chanceinc "personalcommand #illusion 2"
 #tag "notfortier 1"
 #end
 

@@ -1,4 +1,4 @@
---- #new initializes both armors and weapons
+﻿--- #new initializes both armors and weapons
 --- #armor will indicate that the item is armor
 --- Use exact syntax you'd use for dom3 except for #newweapon, #newarmor and #end
 --- Remember #type for armor.
@@ -96,6 +96,50 @@
 #command "#enc 0"
 #command "#rcost 9"
 #command "#name 'Ice Full Helmet'"
+#end
+
+--- Argarthan stone armors (used for both granite and onyx)
+
+#new customarmor
+#name stonehauberk
+#armor
+#command "#type 5"
+#command "#prot 16"
+#command "#def -2"
+#command "#enc 3"
+#command "#rcost 15"
+#command "#name 'Stone Hauberk'"
+#end
+
+#new customarmor
+#name stonearmor
+#armor
+#command "#type 5"
+#command "#prot 20"
+#command "#def -4"
+#command "#enc 6"
+#command "#rcost 30"
+#command "#name 'Stone Armor'"
+#end
+
+#new customarmor
+#armor
+#name stonecap
+#command "#type 6"
+#command "#prot 16"
+#command "#rcost 3"
+#command "#name 'Stone Helmet'"
+#end
+
+#new customarmor
+#name stonebuckler
+#armor
+#command "#type 4"
+#command "#prot 16"
+#command "#def 4"
+#command "#enc 2"
+#command "#rcost 6"
+#command "#name 'Stone Buckler'"
 #end
 
 --- Additional bronze armors
@@ -678,7 +722,7 @@
 #command "#bonus"
 #command "#name 'Great Club'"
 #command "#blunt"
-#command "#woodweapon"
+#command "#woodenweapon"
 #end
 
 #new customweapon
@@ -1088,6 +1132,7 @@
 #command "#name 'Meteorite Glaive'"
 #command "#slash"
 #command "#pierce"
+#command "#magic"
 #end
 
 
@@ -1204,7 +1249,7 @@
 
 #new customweapon
 #name "large_rock"
-#command "#ammo 12"�
+#command "#ammo 12"¨
 #command "#range -2"
 #command "#dmg 8"
 #command "#flyspr 100 1"
@@ -1214,7 +1259,6 @@
 #end
 
 -- Zotz custom items
-
 
 #new customarmor -- renamed Mictlan Armor
 #name zotz_mictlanarmor
@@ -1260,6 +1304,53 @@
 #command "#name 'Obsidian Armor'"
 #end
 
+--- Bonus missle attacks for pachyderm howdahs
+#new customweapon
+#name bonus_shortbow
+#command "#rcost 3"
+#command "#dmg 9"
+#command "#range 32"
+#command "#ammo 24"
+#command "#flyspr 109 1"
+#command "#sound 14"
+#command "#name 'Short Bow'"
+#command "#twohanded"
+#command "#bonus"
+#command "#nostr"
+#command "#pierce"
+#command "#woodenweapon"
+#command "#range050"
+#end
+
+#new customweapon
+#name bonus_sling
+#command "#dmg 8"
+#command "#range 22"
+#command "#ammo 30"
+#command "#flyspr 111 1"
+#command "#sound 15"
+#command "#name 'Sling'"
+#command "#bonus"
+#command "#nostr"
+#command "#blunt"
+#command "#range050"
+#end
+
+#new customweapon
+#name bonus_javelins
+#command "#att -2"
+#command "#dmg 9"
+#command "#range 9"
+#command "#ammo 12"
+#command "#rcost 2"
+#command "#flyspr 110 1"
+#command "#sound 19"
+#command "#name 'Javelins'"
+#command "#bonus"
+#command "#nostr"
+#command "#pierce"
+#command "#range0"
+#end
 
 --- NOSTR mount attacks
 
@@ -1445,5 +1536,27 @@
 #command "#secondaryeffect 414"
 #command "#name 'Foul Bite'"
 #command "#slash"
+#command "#natural"
+#end
+
+#new customweapon
+#name "nostr_tusk_10"
+#command "#dmg 10"
+#command "#len 0"
+#command "#nostr"
+#command "#bonus"
+#command "#name 'Tusk'"
+#command "#pierce"
+#command "#natural"
+#end
+
+#new customweapon
+#name "nostr_tusk_15"
+#command "#dmg 15"
+#command "#len 0"
+#command "#nostr"
+#command "#bonus"
+#command "#name 'Tusk'"
+#command "#pierce"
 #command "#natural"
 #end

@@ -5,6 +5,8 @@
 #sacred
 #basechance 0.25
 
+#baseitemslot feet 0
+
 #renderorder "shadow cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/human/normal/humanbases.txt offsetx 5 offsety -15
@@ -45,6 +47,8 @@
 #basechance 0.125
 #role "mounted"
 #sacred
+
+#baseitemslot feet 0
 
 #load basesprite /data/items/human/normal/humanbases.txt offsetx 5 offsety -15
 #load mount /data/items/human/human_mounted/humanmounts_low.txt
@@ -87,6 +91,8 @@
 #role "chariot"
 #sacred
 #basechance 0.125
+
+#baseitemslot feet 0
 
 #renderorder "shadow underlay cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
