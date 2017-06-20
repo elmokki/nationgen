@@ -1034,15 +1034,15 @@ public class Nation {
         
       
         tw.println("");
-        tw.println("#defcom1 " + pds.getPDCommander(1).id);
-        tw.println("#defunit1 " + pds.getMilitia(1, 1).id);
+        tw.println("#defcom1 " + pds.getIDforPD(pds.getPDCommander(1)));
+        tw.println("#defunit1 " + pds.getIDforPD(pds.getMilitia(1, 1)));
         tw.println("#defmult1 " + pds.getMilitiaAmount(pds.getMilitia(1, 1)));
-        tw.println("#defunit1b " + pds.getMilitia(2, 1).id);
+        tw.println("#defunit1b " + pds.getIDforPD(pds.getMilitia(2, 1)));
         tw.println("#defmult1b " + pds.getMilitiaAmount(pds.getMilitia(2, 1)));
-        tw.println("#defcom2 " + pds.getPDCommander(2).id);
-        tw.println("#defunit2 " + pds.getMilitia(1, 2).id);
+        tw.println("#defcom2 " + pds.getIDforPD(pds.getPDCommander(2)));
+        tw.println("#defunit2 " + pds.getIDforPD(pds.getMilitia(1, 2)));
         tw.println("#defmult2 " + pds.getMilitiaAmount(pds.getMilitia(1, 2)));
-        tw.println("#defunit2b " + pds.getMilitia(2, 2).id);
+        tw.println("#defunit2b " + pds.getIDforPD(pds.getMilitia(2, 2)));
         tw.println("#defmult2b " + pds.getMilitiaAmount(pds.getMilitia(2, 2)));
         tw.println("");
         
