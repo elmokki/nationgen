@@ -1055,11 +1055,11 @@ public class Nation {
         	tw.println("#startscout " + pds.getPDCommander(2).id);
     
         
-        tw.println("#startunittype1 " + pds.getMilitia(1, 1).id);
-        tw.println("#startunittype2 " + pds.getMilitia(1, 2).id);
-        int amount1 = (int)(pds.getStartArmyAmount(pds.getMilitia(1, 1)));
+        tw.println("#startunittype1 " + pds.getMilitia(1, 1, false).id);
+        tw.println("#startunittype2 " + pds.getMilitia(1, 2, false).id);
+        int amount1 = (int)(pds.getStartArmyAmount(pds.getMilitia(1, 1, false)));
         tw.println("#startunitnbrs1 " + amount1);
-        int amount2 = (int)(pds.getStartArmyAmount(pds.getMilitia(1, 2)));
+        int amount2 = (int)(pds.getStartArmyAmount(pds.getMilitia(1, 2, false)));
         tw.println("#startunitnbrs2 " + amount2);
         tw.println("");
         
