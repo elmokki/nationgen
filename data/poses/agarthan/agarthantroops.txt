@@ -6,6 +6,7 @@
 #basechance 0.125
 #role "infantry"
 #role "scout"
+#theme "bronze"
 
 #command "#coldblood"
 
@@ -34,6 +35,7 @@
 #basechance 0.125
 #role "infantry"
 #role "sacred"
+#theme "iron"
 
 #command "#coldblood"
 
@@ -61,6 +63,7 @@
 #name ranged_bronze
 #basechance 0.125
 #role "ranged"
+#theme "bronze"
 
 #command "#coldblood"
 
@@ -94,6 +97,7 @@
 #basechance 0.125
 #role "sacred"
 #role "ranged"
+#theme "iron"
 
 #command "#coldblood"
 
@@ -127,6 +131,8 @@
 #name ancient_bronze
 #chanceinc moduleid herogen *2
 #role "sacred infantry"
+#theme "ancient"
+#theme "bronze"
 
 #command "#coldblood"
 #subrace "ancient one"
@@ -156,6 +162,8 @@
 #name ancient_steel
 #chanceinc moduleid herogen *2
 #role "sacred infantry"
+#theme "ancient"
+#theme "iron"
 
 #command "#coldblood"
 #subrace "ancient one"
@@ -185,6 +193,8 @@
 #newpose
 #name ancient_ranged
 #role "sacred ranged"
+#theme "ancient"
+#theme "bronze"
 
 #command "#coldblood"
 #subrace "ancient one"
@@ -221,8 +231,10 @@
 #newpose
 #name olmspawn_bronze
 #basechance 0.25
+#chanceinc secondaryrace olm *4
 #chanceinc moduleid herogen *2
 #role "sacred infantry"
+#theme "bronze"
 
 #subrace "olmspawn"
 #subraceprefix "olmspawn"
@@ -252,8 +264,10 @@
 #newpose
 #name olmspawn_steel
 #basechance 0.25
+#chanceinc secondaryrace olm *4
 #chanceinc moduleid herogen *2
 #role "sacred infantry"
+#theme "iron"
 
 #subrace "olmspawn"
 #subraceprefix "olmspawn"
@@ -287,6 +301,8 @@
 #chanceinc secondaryrace olm *10
 #chanceinc moduleid herogen *2
 #role "sacred infantry"
+#theme "ancient"
+#theme "bronze"
 
 #subrace "ancient olmspawn"
 #subraceprefix "ancient olmspawn"
@@ -320,6 +336,7 @@
 #name mounted_bronze
 #basechance 0.1
 #role "mounted"
+#theme "bronze"
 
 #command "#coldblood"
 
@@ -349,6 +366,7 @@
 #name mounted_steel
 #basechance 0.1
 #role "mounted"
+#theme "iron"
 
 #command "#coldblood"
 
@@ -377,6 +395,7 @@
 #basechance 0.01
 #role "scout"
 #tag "cannot_be_scout"
+#chanceinc secondaryrace olm *2
 
 #subrace "olmspawn"
 #subraceprefix "olmspawn"
