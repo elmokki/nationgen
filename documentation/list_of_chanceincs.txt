@@ -66,6 +66,25 @@ Weapon db
 Usage:	#themeinc thisweapondb [below] <query> <value> <mod>
 Info: 	If an item is weapon and value queried from weapons.csv is at least <query>, apply modifier
 
+Ferrous item
+------------------------
+Usage: 	#themeinc isferrousitem [not] <mod>
+Info: 	If item is armor with value ferrous = 1 in database, apply mod. 
+	If item is weapon with ironweapon = 1 in database, apply mod.
+	The program determines whether item is armor or not based on whether item has #armor or not.
+
+Weapon UW penalty
+-------------------------
+Usage:	#themeinc weaponuwpenalty [below] <value> <mod>
+Info:	If weapon has UW penalty precisely or above (or below if switch is used) value, apply mod
+	Penalty for non-piercing weapons is length
+	Penalty for slash-piercing or blunt-piercing is length/2
+	Penalty for piercing weapons is 0
+
+
+Weapon UW penalty
+-------------------------
+Usage: 
 
 Generic
 ----------------------------------------------------
