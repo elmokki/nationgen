@@ -12,6 +12,11 @@
 #chanceinc era 1 *2
 #chanceinc era 3 *0.5
 #themeinc theme ancient *1.5
+#racedefinition "#pose agarthantroops"
+#racedefinition "#pose agarthanmages"
+#racedefinition "#magicpriority earth 8"
+#racedefinition "#magicpriority water 4"
+#racedefinition "#magicpriority fire 2"
 #endtheme
 
 #newtheme
@@ -19,6 +24,12 @@
 #name zenith
 #basechance 6
 #themeinc theme ancient *3
+#racedefinition "#pose agarthantroops"
+#racedefinition "#pose agarthanmages"
+#racedefinition "#magicpriority earth 8"
+#racedefinition "#magicpriority water 2"
+#racedefinition "#magicpriority fire 2"
+#racedefinition "#magicpriority death 2"
 #endtheme
 
 #newtheme
@@ -28,14 +39,21 @@
 #chanceinc era 1 *0.25
 #chanceinc era 3 *4
 #themeinc theme ancient *0.25
--- #racedefinition "#pose cavernwights"
+#themeinc theme undead *0.25
+#racedefinition "#pose agarthantroops"
+#racedefinition "#pose agarthanmages"
+#racedefinition "#pose cavernwights"
+#racedefinition "#magicpriority earth 8"
+#racedefinition "#magicpriority death 4"
 #endtheme
 
 #newtheme
 #type cultural
 #name nadir
 #basechance 1
--- #racedefinition "#pose cavernwights"
+#racedefinition "#pose cavernwights"
+#racedefinition "#magicpriority earth 4"
+#racedefinition "#magicpriority death 8"
 #endtheme
 
 
