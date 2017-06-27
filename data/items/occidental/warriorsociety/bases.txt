@@ -1,0 +1,42 @@
+#newitem
+#name "brown basesprite"
+#gameid -1
+#sprite /graphics/muuch/basesprite_brown_small.png
+#needs hands brown
+#theme "brown"
+#define "#stealthy 0"
+#define "#darkvision 50"
+#define "#forestsurvival"
+#enditem
+
+#newitem
+#name "green basesprite"
+#gameid -1
+#sprite /graphics/muuch/basesprite_green_small.png
+#needs hands green
+#theme "green"
+#define "#darkvision 50"
+#enditem
+
+#newitem
+#name "red basesprite"
+#gameid -1
+#sprite /graphics/muuch/basesprite_red_small.png
+#needs hands red
+#theme "red"
+#define "#gcost +5"
+#define "#mr +1"
+#define "#mor +1"
+#define "#prec +1"
+#define "#poisonskin 20"
+#define "#darkvision 50"
+#enditem
+
+#newitem
+#name "white basesprite"
+#gameid -1
+#sprite /graphics/muuch/basesprite_white_small.png
+#needs hands white
+#theme "white"
+#define "#darkvision 100"
+#enditem

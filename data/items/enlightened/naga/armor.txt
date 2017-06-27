@@ -1,0 +1,596 @@
+-- Nada
+#newitem
+#name "nothing_terrestrial"
+#basechance 1
+#gameid -1
+#armor
+#theme "terrestrial"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#theme naked
+#theme primitive
+#milita
+#enditem
+
+#newitem
+#name "nothing_marine"
+#basechance 2
+#gameid -1
+#armor
+#theme "marine"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#theme naked
+#milita
+#enditem
+
+
+--- Leather
+#newitem
+#name "leather cuirass"
+#gameid 5
+#sprite /graphics/serpentmen/armor/leathercuirass.png
+#armor
+#theme "leather"
+#theme "terrestrial"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#name "leather hauberk"
+#gameid 10
+#sprite /graphics/serpentmen/armor/leatherhauberk.png
+#armor
+#theme "leather"
+#theme "terrestrial"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#name "sharkskin cuirass"
+#gameid 188
+#sprite /graphics/serpentmen/armor/sharkskincuirass.png
+#armor
+#theme "leather"
+#theme "marine"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#name "sharkskin hauberk"
+#gameid 151
+#sprite /graphics/serpentmen/armor/sharkskinhauberk.png
+#armor
+#theme "leather"
+#theme "marine"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#enditem
+
+--- Ring
+#newitem
+#name "ring cuirass"
+#gameid 6
+#sprite /graphics/serpentmen/armor/ringcuirass.png
+#armor
+#basechance 2
+#theme "leather"
+#theme "iron"
+#theme "terrestrial"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#name "ring hauberk"
+#gameid 11
+#sprite /graphics/serpentmen/armor/ringhauberk.png
+#armor
+#theme "leather"
+#theme "iron"
+#theme "terrestrial"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#name "bronze ring cuirass"
+#gameid 6
+#sprite /graphics/serpentmen/armor/bronzeringcuirass.png
+#armor
+#basechance 2
+#theme "leather"
+#theme "bronze"
+#theme "terrestrial"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#name "bronze ring hauberk"
+#gameid 11
+#sprite /graphics/serpentmen/armor/bronzeringhauberk.png
+#armor
+#theme "leather"
+#theme "bronze"
+#theme "terrestrial"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#name "sharkskin ring cuirass"
+#gameid 6
+#sprite /graphics/serpentmen/armor/sharkringcuirass.png
+#armor
+#theme "leather"
+#theme "bronze"
+#theme "marine"
+#theme "advanced"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#name "sharkskin ring hauberk"
+#gameid 11
+#basechance 0.5
+#sprite /graphics/serpentmen/armor/sharkringhauberk.png
+#armor
+#theme "leather"
+#theme "bronze"
+#theme "marine"
+#theme "advanced"
+#theme austral
+#theme central
+#enditem
+
+
+--- Scale
+#newitem
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/serpentmen/armor/scalecuirass.png
+#armor
+#theme "iron"
+#theme "terrestrial"
+#theme occidental
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#name "scale hauberk"
+#gameid 12
+#sprite /graphics/serpentmen/armor/scalehauberk.png
+#armor
+#basechance 0.5
+#theme "iron"
+#theme "terrestrial"
+#theme occidental
+#theme austral
+#theme central
+#enditem
+
+#newitem -- full scale
+#name "full scale"
+#gameid 17
+#sprite /graphics/serpentmen/armor/fullscale.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "terrestrial"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#name "bronze scale cuirass"
+#gameid 142
+#sprite /graphics/serpentmen/armor/bronzescalecuirass.png
+#armor
+#theme "bronze"
+#theme "terrestrial"
+#theme "marine"
+#theme occidental
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#name "bronze scale hauberk"
+#gameid 136
+#sprite /graphics/serpentmen/armor/bronzescalehauberk.png
+#armor
+#basechance 0.5
+#theme "bronze"
+#theme "terrestrial"
+#theme "marine"
+#theme occidental
+#theme austral
+#theme central
+#enditem
+
+#newitem -- full scale
+#name "bronze full scale"
+#gameid bronzescale_full
+#sprite /graphics/serpentmen/armor/fullbronzescale.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "terrestrial"
+#theme "marine"
+#theme austral
+#theme central
+#enditem
+
+
+--- Chain Mail
+#newitem
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/serpentmen/armor/mailcuirass.png
+#armor
+#theme "iron"
+#theme "terrestrial"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#name "chain hauberk"
+#gameid 13
+#sprite /graphics/serpentmen/armor/mailhauberk1.png
+#basechance 0.5
+#armor
+#theme "iron"
+#theme "terrestrial"
+#theme austral
+#theme central
+#enditem
+
+
+
+--- Plate
+#newitem
+#name "plate cuirass"
+#gameid 9
+#sprite /graphics/serpentmen/armor/platecuirass.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "terrestrial"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#name "plate hauberk"
+#gameid 14
+#sprite /graphics/serpentmen/armor/platehauberk.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "terrestrial"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#name "bronze plate cuirass"
+#gameid 100
+#sprite /graphics/serpentmen/armor/bronzecuirass.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "terrestrial"
+#theme "marine"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#name "bronze plate hauberk"
+#gameid 101
+#sprite /graphics/serpentmen/armor/bronzehauberk.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "terrestrial"
+#theme "marine"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#name "shell hauberk"
+#gameid 114
+#sprite /graphics/serpentmen/armor/shellhauberk.png
+#armor
+#theme "primitive"
+#theme "marine"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#name "shell armor"
+#gameid 140
+#sprite /graphics/serpentmen/armor/shellarmor.png
+#armor
+#theme "marine"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#enditem
+
+
+-- Coral armor
+#newitem
+#name "coral ring cuirass"
+#gameid 6
+#sprite /graphics/serpentmen/armor/coralringcuirass.png
+#armor
+#theme "leather"
+#theme "coral"
+#theme "marine"
+#theme "advanced"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#name "coral ring hauberk"
+#gameid 11
+#basechance 0.5
+#sprite /graphics/serpentmen/armor/coralringhauberk.png
+#armor
+#theme "leather"
+#theme "coral"
+#theme "marine"
+#theme "advanced"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#name "coral cuirass"
+#gameid 22
+#sprite /graphics/serpentmen/armor/coralcuirass.png
+#armor
+#theme "coral"
+#theme "marine"
+#define "#poisonarmor"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#name "coral hauberk"
+#gameid 23
+#sprite /graphics/serpentmen/armor/coralhauberk.png
+#armor
+#theme "coral"
+#theme "marine"
+#define "#poisonarmor"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#enditem
+
+
+-- Oriental armor
+#newitem
+#name "ashigaru armor"
+#gameid 128
+#basechance 1
+#sprite /graphics/serpentmen/armor/ashigaru.png
+#tag "eliteversion 'samurai armor'"
+#theme "iron"
+#theme "terrestrial"
+#theme "oriental"
+#armor
+#militia
+#enditem
+
+#newitem
+#name "samurai armor"
+#gameid 129
+#basechance 1
+#sprite /graphics/serpentmen/armor/samurai.png
+#tag "eliteversion 'elite samurai armor'"
+#tag "eliteversion 'heavy samurai armor'"
+#theme "iron"
+#theme "terrestrial"
+#theme "oriental"
+#armor
+#enditem
+
+#newitem
+#name "elite samurai armor"
+#gameid 129
+#basechance 1
+#sprite /graphics/serpentmen/armor/samurai2.png
+#tag "eliteversion 'elite heavy samurai armor'"
+#theme "iron"
+#theme "terrestrial"
+#theme "oriental"
+#theme "elite"
+#armor
+#enditem
+
+#newitem
+#name "heavy samurai armor"
+#gameid 130
+#basechance 1
+#sprite /graphics/serpentmen/armor/heavysamurai.png
+#tag "eliteversion 'elite heavy samurai armor'"
+#theme "iron"
+#theme "terrestrial"
+#theme "oriental"
+#armor
+#enditem
+
+#newitem
+#name "elite heavy samurai armor"
+#gameid 130
+#basechance 1
+#sprite /graphics/serpentmen/armor/heavysamurai2.png
+#theme "iron"
+#theme "terrestrial"
+#theme "oriental"
+#theme "elite"
+#armor
+#enditem
+
+
+-- Ice armor
+#newitem
+#name "ice studded cuirass"
+#gameid icestudded_cuirass
+#sprite /graphics/serpentmen/armor/icestuddedcuirass.png
+#armor
+#theme "ice"
+#theme "leather"
+#theme "terrestrial"
+#theme austral
+#theme central
+#define "#iceprot +1"
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
+#enditem
+
+#newitem
+#name "ice studded hauberk"
+#gameid 52
+#sprite /graphics/serpentmen/armor/icestuddedhauberk.png
+#armor
+#theme "ice"
+#theme "leather"
+#theme "terrestrial"
+#theme austral
+#theme central
+#define "#iceprot +1"
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
+#enditem
+
+#newitem
+#name "icicle cuirass"
+#gameid icicle_cuirass
+#sprite /graphics/serpentmen/armor/iciclecuirass.png
+#armor
+#theme "ice"
+#theme "terrestrial"
+#theme austral
+#theme central
+#define "#iceprot +2"
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
+#enditem
+
+#newitem
+#name "icicle hauberk"
+#gameid 133
+#sprite /graphics/serpentmen/armor/iciclehauberk.png
+#armor
+#theme "ice"
+#theme "terrestrial"
+#theme austral
+#theme central
+#define "#iceprot +2"
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
+#enditem
+
+#newitem
+#name "ice cuirass"
+#gameid 26
+#sprite /graphics/serpentmen/armor/icecuirass.png
+#armor
+#theme "ice"
+#theme "terrestrial"
+#theme "marine"
+#theme occidental
+#theme austral
+#theme central
+#define "#iceprot +2"
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
+#enditem
+
+#newitem
+#name "ice hauberk"
+#gameid 27
+#sprite /graphics/serpentmen/armor/icehauberk.png
+#armor
+#theme "ice"
+#theme "terrestrial"
+#theme "marine"
+#theme occidental
+#theme austral
+#theme central
+#define "#iceprot +2"
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
+#enditem
+
+#newitem
+#name "ice samurai armor"
+#gameid 26
+#basechance 1
+#sprite /graphics/serpentmen/armor/icecuirass_oriental.png
+#tag "eliteversion 'ice heavy samurai armor'"
+#armor
+#theme "ice"
+#theme "terrestrial"
+#theme "marine"
+#theme "oriental"
+#define "#iceprot +2"
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
+#enditem
+
+#newitem
+#name "ice heavy samurai armor"
+#gameid 27
+#basechance 1
+#sprite /graphics/serpentmen/armor/icehauberk_oriental.png
+#armor
+#theme "ice"
+#theme "terrestrial"
+#theme "marine"
+#theme "oriental"
+#define "#iceprot +2"
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
+#enditem

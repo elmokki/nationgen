@@ -1,0 +1,182 @@
+#newitem
+#id blowpipe
+#gameid 34
+#sprite /graphics/serpentmen/weapon/blowpipe.png
+#define "#weapon 576"
+#define "#gcost +6"
+#define "#prec +2"
+#theme occidental
+#theme austral
+#theme terrestrial
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/serpentmen/weapon/mace.png
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#theme terrestrial
+#theme primitive
+#enditem
+
+#newitem
+#id shortsword
+#gameid 6
+#sprite /graphics/serpentmen/weapon/shortsword.png
+#theme austral
+#theme central
+#theme terrestrial
+#theme iron
+#enditem
+
+#newitem
+#id broadsword
+#gameid 8
+#sprite /graphics/serpentmen/weapon/broadsword.png
+#theme austral
+#theme central
+#theme terrestrial
+#theme iron
+#theme advanced
+#enditem
+
+#newitem
+#id shortsword_bronze
+#gameid 645
+#sprite /graphics/serpentmen/weapon/shortsword_bronze.png
+#theme occidental
+#theme austral
+#theme central
+#theme terrestrial
+#theme marine
+#theme bronze
+#enditem
+
+#newitem
+#id broadsword_bronze
+#gameid bronzebroadsword
+#sprite /graphics/serpentmen/weapon/broadsword_bronze.png
+#theme austral
+#theme central
+#theme terrestrial
+#theme bronze
+#theme advanced
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#sprite /graphics/serpentmen/weapon/falchion.png
+#theme austral
+#theme central
+#theme oriental
+#theme terrestrial
+#theme iron
+#enditem
+
+#newitem
+#id kopesh
+#gameid 513
+#sprite /graphics/serpentmen/weapon/kopesh.png
+#theme austral
+#theme central
+#theme occidental
+#theme terrestrial
+#theme bronze
+#enditem
+
+#newitem
+#id wakizashi
+#gameid 377
+#sprite /graphics/serpentmen/weapon/wakizashi.png
+#theme oriental
+#theme terrestrial
+#theme iron
+#enditem
+
+#newitem
+#id clubsword
+#gameid 451
+#sprite /graphics/serpentmen/weapon/clubsword.png
+#theme occidental
+#theme terrestrial
+#enditem
+
+-- Coral weapons
+#newitem
+#id coralmace
+#gameid 45
+#sprite /graphics/serpentmen/weapon/coralmace.png
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#theme marine
+#theme coral
+#theme primitive
+#enditem
+
+#newitem
+#id coralshortsword
+#gameid coralshortsword
+#sprite /graphics/serpentmen/weapon/coralshortsword.png
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#theme marine
+#theme coral
+#enditem
+
+
+-- Ice weapons
+#newitem
+#id icemace
+#gameid 44
+#sprite /graphics/serpentmen/weapon/icemace.png
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#theme terrestrial
+#theme ice
+#theme primitive
+#chanceinc "personalcommand below #coldres 5 *0"
+#enditem
+
+#newitem
+#id icesword
+#gameid 612
+#sprite /graphics/serpentmen/weapon/icesword.png
+#theme occidental
+#theme austral
+#theme central
+#theme terrestrial
+#theme ice
+#chanceinc "personalcommand below #coldres 5 *0"
+#enditem
+
+#newitem
+#id icewakizashi
+#gameid 35
+#sprite /graphics/serpentmen/weapon/icewakizashi.png
+#theme oriental
+#theme terrestrial
+#theme ice
+#chanceinc "personalcommand below #coldres 5 *0"
+#enditem
+
+#newitem
+#id icefalchion
+#gameid 37
+#sprite /graphics/serpentmen/weapon/icefalchion.png
+#theme oriental
+#theme austral
+#theme central
+#theme terrestrial
+#theme ice
+#chanceinc "personalcommand below #coldres 5 *0"
+#enditem
