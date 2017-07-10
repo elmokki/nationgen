@@ -11,21 +11,79 @@
 #end
 
 #new
+#sprite "./graphics/flags/top/flame_pyre.png"
+#basechance 0.1
+#chanceinc "magic fire 2.9"
+#chanceinc "racetag central *2"
+#chanceinc "racetag imperial *2"
+#end
+
+#new
+#sprite "./graphics/flags/top/angel.png"
+#basechance 0.05
+#chanceinc "magic fire astral 4.95"
+#chanceinc "race avvim 4.95"
+#chanceinc "hastheme advanced *0"
+#end
+
+#new
+#sprite "./graphics/flags/top/scroll.png"
+#basechance 0.05
+#chanceinc "magic astral 4.95"
+#chanceinc "race avvim 4.95"
+#end
+
+#new
 #sprite "./graphics/flags/top/crossedswords.png"
 #basechance 1
 #end
 
-
 #new
-#sprite "./graphics/flags/top/helmet.png"
-#basechance 1
+#sprite "./graphics/flags/top/crossedaxes.png"
+#basechance 0.25
+#chanceinc "racetag boreal 2.75"
+#chanceinc "hastheme primitive *2"
 #end
 
+#new
+#sprite "./graphics/flags/top/helmet_iron.png"
+#basechance 1
+#chanceinc "racetag central *3"
+#chanceinc "hastheme primitive *0.1"
+#chanceinc "hastheme advanced *2"
+#end
+
+#new
+#sprite "./graphics/flags/top/helmet_bronze.png"
+#basechance 1
+#chanceinc "racetag central *3"
+#chanceinc "hastheme primitive *0.1"
+#chanceinc "hastheme advanced *0.5"
+#end
+
+#new
+#sprite "./graphics/flags/top/ivy.png"
+#basechance 0
+#chanceinc "magic nature 2"
+#chanceinc "hastheme primitive *2"
+#end
 
 #new
 #sprite "./graphics/flags/top/horns.png"
 #basechance 1
-#chanceinc "magic nature 6"
+#chanceinc "magic nature 3"
+#chanceinc "hastheme primitive *2"
+#chanceinc "hastheme advanced *0.1"
+#chanceinc "race halfman *2"
+#end
+
+#new
+#sprite "./graphics/flags/top/horns_bloody.png"
+#basechance 1
+#chanceinc "magic nature blood 3"
+#chanceinc "hastheme primitive *3"
+#chanceinc "hastheme advanced *0.1"
+#chanceinc "race halfman *2"
 #end
 
 #new
@@ -33,6 +91,19 @@
 #basechance 0.5
 #chanceinc "magic nature 0.5"
 #chanceinc "race lizard 7"
+#chanceinc "race ophidian 7"
+#chanceinc "race naga 4"
+#chanceinc "hastheme lamia 4"
+#end
+
+#new
+#sprite "./graphics/flags/top/serpent_bone.png"
+#basechance 0.05
+#chanceinc "magic death 0.95"
+#chanceinc "race lizard *7"
+#chanceinc "race ophidian *7"
+#chanceinc "race naga *4"
+#chanceinc "hastheme lamia *4"
 #end
 
 #new
@@ -41,6 +112,41 @@
 #chanceinc "magic death 7.9"
 #end
 
+#new
+#sprite "./graphics/flags/top/skull_walrus.png"
+#basechance 0
+#chanceinc "racetag amphibian 4"
+#chanceinc "magic not death *0"
+#end
+
+#new
+#sprite "./graphics/flags/top/skull2.png"
+#basechance 0.1
+#chanceinc "magic death 3.9"
+#chanceinc "hastheme primitive *2"
+#end
+
+#new
+#sprite "./graphics/flags/top/skull2_gold.png"
+#basechance 0.1
+#chanceinc "magic death 0.9"
+#chanceinc "racetag occidental *4"
+#end
+
+#new
+#sprite "./graphics/flags/top/skull2_iron.png"
+#basechance 0.1
+#chanceinc "magic death 0.9"
+#end
+
+#new
+#sprite "./graphics/flags/top/skull2_blood.png"
+#basechance 0.1
+#chanceinc "magic death 0.45"
+#chanceinc "magic blood 0.45"
+#chanceinc "magic death blood 4"
+#chanceinc "hastheme primitive *2"
+#end
 
 #new
 #sprite "./graphics/flags/top/tree.png"
@@ -49,11 +155,34 @@
 #end
 
 #new
+#sprite "./graphics/flags/top/tree_dead.png"
+#basechance 0.1
+#chanceinc "magic nature death 7.9"
+#end
+
+#new
 #sprite "./graphics/flags/top/burningskull.png"
 #basechance 0.0
 #chanceinc "magic fire 0.25"
 #chanceinc "magic death 0.25"
 #chanceinc "magic death fire 16"
+#end
+
+#new
+#sprite "./graphics/flags/top/burningskull_demon1.png"
+#basechance 0.0
+#chanceinc "magic blood 2"
+#chanceinc "magic fire blood 6"
+#end
+
+#new
+#sprite "./graphics/flags/top/burningskull_demon2.png"
+#basechance 0.0
+#chanceinc "race halfman 2"
+#chanceinc "magic not fire *0"
+#chanceinc "magic blood 1"
+#chanceinc "magic blood death 3"
+#chanceinc "magic fire blood 4"
 #end
 
 #new
@@ -67,18 +196,407 @@
 #end
 
 #new
-#sprite "./graphics/flags/top/harp.png"
+#sprite "./graphics/flags/top/unicorn.png"
 #basechance 0
-#chanceinc "race sidhe 7.5"
+#chanceinc "race sidhe 0.5"
 #chanceinc "magic nature 0.5"
+#chanceinc "racetag fae 4"
+#chanceinc "racetag boreal *2"
 #end
 
 #new
 #sprite "./graphics/flags/top/harp.png"
 #basechance 0
-#chanceinc "race sidhe 7.5"
+#chanceinc "race firbolg 1.5"
+#chanceinc "race sidhe 3.5"
 #chanceinc "magic nature 0.5"
+#chanceinc "racetag boreal 0.5"
+#chanceinc "racetag fae 4"
 #end
+
+#new
+#sprite "./graphics/flags/top/celticknot_bronze.png"
+#basechance 0
+#chanceinc "race firbolg 4"
+#chanceinc "race sidhe 4"
+#chanceinc "race fomorian 4"
+#chanceinc "race merrow 2"
+#chanceinc "racetag fae 4"
+#chanceinc "hastheme bronze *2"
+#end
+
+#new
+#sprite "./graphics/flags/top/celticknot_iron.png"
+#basechance 0
+#chanceinc "race firbolg 4"
+#chanceinc "race fomorian 4"
+#chanceinc "race merrow 2"
+#chanceinc "racetag fae *0"
+#chanceinc "hastheme bronze *0.5"
+#end
+
+#new
+#sprite "./graphics/flags/top/cave.png"
+#basechance 0.0
+#chanceinc "racetag subterranean 10"
+#chanceinc "hastheme not primitive *0.25"
+#chanceinc "magic not earth *0.1"
+#end
+
+#new
+#sprite "./graphics/flags/top/cavern.png"
+#basechance 0.0
+#chanceinc "racetag subterranean 10"
+#chanceinc "hastheme primitive *0.25"
+#chanceinc "magic not earth *0.1"
+#end
+
+#new
+#sprite "./graphics/flags/top/chains_iron.png"
+#basechance 0
+#chanceinc "racetag slaver 4"
+#chanceinc "hastheme slaver 4"
+#chanceinc "hastheme bronze *0.1"
+#end
+
+#new
+#sprite "./graphics/flags/top/chains_gold.png"
+#basechance 0
+#chanceinc "racetag slaver 4"
+#chanceinc "hastheme slaver 4"
+#end
+
+#new
+#sprite "./graphics/flags/top/gem.png"
+#recolormask "./graphics/flags/top/gem_recolormask.png"
+#basechance 0.25
+#chanceinc "magic earth 0.25"
+#end
+
+#new
+#sprite "./graphics/flags/top/crown.png"
+#recolormask "./graphics/flags/top/crown_recolormask.png"
+#basechance 0.25
+#chanceinc "racetag boreal 0.75"
+#chanceinc "hastheme primitive *0"
+#end
+
+#new
+#sprite "./graphics/flags/top/condor_gold.png"
+#basechance 0.1
+#chanceinc "racetag occidental 0.9"
+#chanceinc "magic air *8"
+#end
+
+#new
+#sprite "./graphics/flags/top/condor_silver.png"
+#basechance 0.1
+#chanceinc "racetag occidental 0.9"
+#chanceinc "magic air *8"
+#end
+
+#new
+#sprite "./graphics/flags/top/eagle_imperial1a.png"
+#basechance 0.1
+#chanceinc "racetag imperial 7.9"
+#end
+
+#new
+#sprite "./graphics/flags/top/eagle_imperial1b.png"
+#basechance 0.1
+#chanceinc "racetag imperial 7.9"
+#end
+
+#new
+#sprite "./graphics/flags/top/eagle_imperial2a.png"
+#basechance 0.05
+#chanceinc "racetag imperial 3.95"
+#end
+
+#new
+#sprite "./graphics/flags/top/eagle_imperial2b.png"
+#basechance 0.05
+#chanceinc "racetag imperial 3.95"
+#end
+
+#new
+#sprite "./graphics/flags/top/eagle_dead.png"
+#basechance 0
+#chanceinc "racetag imperial 16"
+#chanceinc "magic not death *0"
+#chanceinc "magic death air 4"
+#end
+
+#new
+#sprite "./graphics/flags/top/eagle_solar.png"
+#basechance 0
+#chanceinc "racetag imperial 12"
+#chanceinc "magic not fire *0"
+#chanceinc "magic fire air 8"
+#chanceinc "magic fire astral 2"
+#end
+
+#new
+#sprite "./graphics/flags/top/horror.png"
+#basechance 0
+#chanceinc "race illithid 1"
+#chanceinc "magic not astral *0.25"
+#end
+
+#new
+#sprite "./graphics/flags/top/ironhalo.png"
+#basechance 0.25
+#chanceinc "hastheme primitive 3.75"
+#chanceinc "magic nature *0.1"
+#chanceinc "magic water *0.1"
+#chanceinc "hastheme bronze *0"
+#end
+
+#new
+#sprite "./graphics/flags/top/ironthorns.png"
+#basechance 0.25
+#chanceinc "hastheme primitive 3.75"
+#chanceinc "magic nature earth *2"
+#chanceinc "magic water *0.1"
+#chanceinc "hastheme bronze *0"
+#end
+
+#new
+#sprite "./graphics/flags/top/lightning_crossed_gold.png"
+#basechance 0.1
+#chanceinc "racetag central 0.9"
+#chanceinc "magic air *10"
+#end
+
+#new
+#sprite "./graphics/flags/top/lightning_crossed_gem.png"
+#recolormask "./graphics/flags/top/lightning_crossed_gem_recolormask.png"
+#basechance 0.1
+#chanceinc "racetag central 0.9"
+#chanceinc "magic air *10"
+#end
+
+#new
+#sprite "./graphics/flags/top/lightning_crossed_star.png"
+#basechance 0.1
+#chanceinc "racetag central 0.9"
+#chanceinc "magic air astral *20"
+#end
+
+#new
+#sprite "./graphics/flags/top/pyramid_dynastic.png"
+#basechance 0
+#chanceinc "racetag dynastic 10"
+#end
+
+#new
+#sprite "./graphics/flags/top/pyramid_occidental.png"
+#basechance 0
+#chanceinc "racetag occidental 10"
+#end
+
+#new
+#sprite "./graphics/flags/top/plumage_bloody.png"
+#recolormask "./graphics/flags/top/plumage_bloody_recolormask.png"
+#basechance 0.1
+#chanceinc "racetag occidental 9.9"
+#chanceinc "racetag austral 9.9"
+#chanceinc "hastheme primitive 0.9"
+#chanceinc "magic not blood *0"
+#end
+
+#new
+#sprite "./graphics/flags/top/plumage_fancy.png"
+#recolormask "./graphics/flags/top/plumage_fancy_recolormask.png"
+#basechance 0.1
+#chanceinc "racetag occidental 7.9"
+#chanceinc "racetag austral 7.9"
+#chanceinc "hastheme primitive 0.9"
+#end
+
+#new
+#sprite "./graphics/flags/top/plumage_occidental.png"
+#basechance 0
+#chanceinc "racetag occidental 1"
+#chanceinc "racetag austral 1"
+#chanceinc "hastheme primitive 0.1"
+#end
+
+#new
+#sprite "./graphics/flags/top/plumage_occidental.png"
+#recolormask "./graphics/flags/top/plumage_occidental_recolormask1.png"
+#basechance 0
+#chanceinc "racetag occidental 3"
+#chanceinc "racetag austral 3"
+#chanceinc "hastheme primitive 0.3"
+#end
+
+#new
+#sprite "./graphics/flags/top/plumage_occidental.png"
+#recolormask "./graphics/flags/top/plumage_occidental_recolormask2.png"
+#basechance 0
+#chanceinc "racetag occidental 3"
+#chanceinc "racetag austral 3"
+#chanceinc "hastheme primitive 0.3"
+#end
+
+#new
+#sprite "./graphics/flags/top/plumage_occidental.png"
+#recolormask "./graphics/flags/top/plumage_occidental_recolormask3.png"
+#basechance 0
+#chanceinc "racetag occidental 3"
+#chanceinc "racetag austral 3"
+#chanceinc "hastheme primitive 0.3"
+#end
+
+#new
+#sprite "./graphics/flags/top/plumage_occidental_black.png"
+#basechance 0
+#chanceinc "racetag occidental 0.5"
+#chanceinc "racetag austral 0.5"
+#chanceinc "hastheme primitive 0.1"
+#end
+
+#new
+#sprite "./graphics/flags/top/plumage_occidental_black.png"
+#recolormask "./graphics/flags/top/plumage_occidental_recolormask1.png"
+#basechance 0
+#chanceinc "racetag occidental 1"
+#chanceinc "racetag austral 1"
+#chanceinc "hastheme primitive 0.1"
+#end
+
+#new
+#sprite "./graphics/flags/top/plumage_occidental_black.png"
+#recolormask "./graphics/flags/top/plumage_occidental_recolormask2.png"
+#basechance 0
+#chanceinc "racetag occidental 1"
+#chanceinc "racetag austral 1"
+#chanceinc "hastheme primitive 0.1"
+#end
+
+#new
+#sprite "./graphics/flags/top/plumage_occidental_black.png"
+#recolormask "./graphics/flags/top/plumage_occidental_recolormask3.png"
+#basechance 0
+#chanceinc "racetag occidental 1"
+#chanceinc "racetag austral 1"
+#chanceinc "hastheme primitive 0.1"
+#end
+
+#new
+#sprite "./graphics/flags/top/plumage_occidental_white.png"
+#basechance 0
+#chanceinc "racetag occidental 0.5"
+#chanceinc "racetag austral 0.5"
+#chanceinc "hastheme primitive 0.1"
+#end
+
+#new
+#sprite "./graphics/flags/top/plumage_occidental_white.png"
+#recolormask "./graphics/flags/top/plumage_occidental_recolormask1.png"
+#basechance 0
+#chanceinc "racetag occidental 1"
+#chanceinc "racetag austral 1"
+#chanceinc "hastheme primitive 0.1"
+#end
+
+#new
+#sprite "./graphics/flags/top/plumage_occidental_white.png"
+#recolormask "./graphics/flags/top/plumage_occidental_recolormask2.png"
+#basechance 0
+#chanceinc "racetag occidental 1"
+#chanceinc "racetag austral 1"
+#chanceinc "hastheme primitive 0.1"
+#end
+
+#new
+#sprite "./graphics/flags/top/plumage_occidental_white.png"
+#recolormask "./graphics/flags/top/plumage_occidental_recolormask3.png"
+#basechance 0
+#chanceinc "racetag occidental 1"
+#chanceinc "racetag austral 1"
+#chanceinc "hastheme primitive 0.1"
+#end
+
+#new
+#sprite "./graphics/flags/top/snowflake.png"
+#basechance 0
+#chanceinc "nationcommand #idealcold above 1 5"
+#chanceinc "magic not water *0.1"
+#end
+
+#new
+#sprite "./graphics/flags/top/spider.png"
+#basechance 0.05
+#chanceinc "magic nature death *2"
+#chanceinc "hastheme primitive *2"
+#chanceinc "hastheme spider *100"
+#end
+
+#new
+#sprite "./graphics/flags/top/wolf_white.png"
+#basechance 0.25
+#chanceinc "hastheme wolf *40"
+#chanceinc "race vaettir *4"
+#end
+
+#new
+#sprite "./graphics/flags/top/wolf_bloody.png"
+#basechance 0.1
+#chanceinc "hastheme wolf *40"
+#chanceinc "race vaettir *4"
+#chanceinc "magic not blood *0.1"
+#chanceinc "magic blood nature *2"
+#end
+
+#new
+#sprite "./graphics/flags/top/tentacle1.png"
+#basechance 0
+#chanceinc "race illithid 8"
+#chanceinc "race foulspawn 4"
+#end
+
+#new
+#sprite "./graphics/flags/top/tentacle2.png"
+#basechance 0
+#chanceinc "race illithid 4"
+#chanceinc "race foulspawn 2"
+#end
+
+#new
+#sprite "./graphics/flags/top/trident.png"
+#basechance 0.05
+#chanceinc "racetag amphibian 4.95"
+#chanceinc "hastheme bronze *2"
+#end
+
+#new
+#sprite "./graphics/flags/top/vine_horns.png"
+#basechance 0
+#chanceinc "magic nature 2"
+#chanceinc "hastheme primitive *2"
+#chanceinc "hastheme advanced *0.1"
+#chanceinc "race halfman *2"
+#end
+
+#new
+#sprite "./graphics/flags/top/vine_bloodyhorns.png"
+#basechance 0
+#chanceinc "magic nature blood 2"
+#chanceinc "hastheme primitive *3"
+#chanceinc "hastheme advanced *0.1"
+#chanceinc "race halfman *2"
+#end
+
+#new
+#sprite "./graphics/flags/top/vine.png"
+#basechance 0
+#chanceinc "magic nature 4"
+#chanceinc "hastheme primitive *2"
+#chanceinc "hastheme advanced *0.1"
+#end
+
 
 ---- Flag parts by Flypaper
 

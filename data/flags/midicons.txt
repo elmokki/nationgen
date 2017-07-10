@@ -46,6 +46,12 @@
 #end
 
 #new
+#sprite "./graphics/flags/center/storm.png"
+#chanceinc "magic air 3.75"
+#basechance 0.25
+#end
+
+#new
 #sprite "./graphics/flags/center/book.png"
 #basechance 1
 #chanceinc "magic astral 1"
@@ -150,4 +156,60 @@
 #sprite "./graphics/flags/center/ouroboros.png"
 #basechance 1
 #allowed baseflag1
+#end
+
+#new
+#sprite "./graphics/flags/center/bear.png"
+#basechance 0
+#chanceinc "hastheme bear 4"
+#chanceinc "hastheme primitive 1"
+#end
+
+#new
+#sprite "./graphics/flags/center/elephant.png"
+#basechance 0
+#chanceinc "hastheme elephant 4"
+#chanceinc "racetag austral 1"
+#chanceinc "racetag enlightened 1"
+#end
+
+#new
+#sprite "./graphics/flags/center/comet.png"
+#basechance 0
+#chanceinc "magic astral 2"
+#end
+
+#new
+#sprite "./graphics/flags/center/meteor.png"
+#basechance 0
+#chanceinc "magic astral 1"
+#chanceinc "magic astral earth 2"
+#end
+
+#new
+#sprite "./graphics/flags/center/rainbow.png"
+#basechance 0.1
+#chanceinc "magicdiversity 5 3.9"
+#chanceinc "racetag fae 1.9"
+#allowed baseflag1
+#allowed baseflag2
+#end
+
+#new
+#sprite "./graphics/flags/center/spiral_rainbow.png"
+#basechance 0.1
+#chanceinc "magicdiversity 4 0.9"
+#end
+
+#new
+#sprite "./graphics/flags/center/spiral_red.png"
+#basechance 0.1
+#chanceinc "magic fire 0.4"
+#end
+
+#new
+#sprite "./graphics/flags/center/spiral_blue.png"
+#basechance 0.1
+#chanceinc "magic astral 0.4"
+#chanceinc "magic water 0.4"
 #end
