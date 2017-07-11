@@ -240,6 +240,47 @@
 #end
 
 #new
+#name "ageless pale one"
+#basechance 0
+#chanceinc primaryrace "Pale One" 10
+#chanceinc racetheme waxing *0.5
+#chanceinc racetheme waning *0.1
+#chanceinc racetheme nadir *0
+#command "#spr1 ./graphics/agarthan/big/basesprite_ageless.png"
+#command "#spr2 shift"
+#command "#name 'Ageless One'"
+#command "#gcost 100"
+#command "#rcost 1"
+#command "#hp 120"
+#command "#prot 5"
+#command "#mr 15"
+#command "#mor 16"
+#command "#str 24"
+#command "#att 10"
+#command "#def 10"
+#command "#prec 7"
+#command "#mapmove 2"
+#command "#ap 16"
+#command "#weapon 92"
+#command "#weapon 90"
+#command "#earthattuned 20"
+#command "#goodleader"
+#command "#standard 1"
+#command "#maxage 800"
+#command "#darkvision 100"
+#command "#siegebonus 25"
+#command "#eyes 1"
+#command "#coldblood"
+#command "#amphibian"
+#command "#neednoteat"
+#command "#holy"
+#command "#slowrec"
+#command "#reclimit 1"
+#specifiedgcost
+#caponlychance 1
+#end
+
+#new
 #name "sirrush"
 #basechance 0.5
 #chanceinc primaryrace lizard 5.5
