@@ -2,28 +2,45 @@
 #newpose
 #name "naga infantry"
 #role "infantry"
+#role "scout"
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs strap quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/enlightened/naga/bases.txt
 #load shadow /data/items/enlightened/naga/shadow.txt
 
-#load hands /data/items/enlightened/naga/hands.txt
+#load cloakf /data/items/enlightened/naga/cloakf.txt
+#load cloakb /data/items/enlightened/naga/cloakb.txt
+#load cloakb /data/items/enlightened/naga/sacredwings.txt
+
+#load armor /data/items/enlightened/naga/armor.txt
+
+#load weapon /data/items/enlightened/naga/weapon.txt
+
+#load offhand /data/items/enlightened/naga/shield.txt
+#load offhand /data/items/enlightened/naga/offhand.txt
+
+#endpose
+
+
+-------- Infantry (2h)
+#newpose
+#name "naga 2h infantry"
+#role "infantry"
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/enlightened/naga/bases_archers.txt
+#load shadow /data/items/enlightened/naga/shadow.txt
 
 #load cloakf /data/items/enlightened/naga/cloakf.txt
 #load cloakb /data/items/enlightened/naga/cloakb.txt
+#load cloakb /data/items/enlightened/naga/sacredwings.txt
 
-#load armor /data/items/enlightened/naga/sacredarmor.txt
-#load shirt /data/items/enlightened/naga/shirt.txt
-#load helmet /data/items/enlightened/naga/helmet.txt
+#load armor /data/items/enlightened/naga/armor.txt
 
-#load weapon /data/items/enlightened/naga/weapon.txt
-#load bonusweapon /data/items/enlightened/naga/bonusranged.txt 0 1
+#load weapon /data/items/enlightened/naga/weapon_2h.txt
 
-#load offhand /data/items/enlightened/naga/shields_elite.txt
-#load offhand /data/items/enlightened/naga/offhand.txt
-
-#generateitem 1 bonusweapon
 #endpose
 
 
@@ -32,26 +49,24 @@
 #newpose
 #name "naga archer"
 #role "ranged"
+#role "scout"
 
-#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap bonusweapon weapon quiver armor cloakf offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow wings cloakb mount bag quiver basesprite shirt legs strap bonusweapon weapon armor cloakf offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/enlightened/naga/bases_archers.txt
 #load shadow /data/items/enlightened/naga/shadow.txt
 
-#load hands /data/items/enlightened/naga/hands.txt
-
 #load cloakf /data/items/enlightened/naga/cloakf.txt
 #load cloakb /data/items/enlightened/naga/cloakb.txt
 
-#load armor /data/items/enlightened/naga/sacredarmor.txt
-#load shirt /data/items/enlightened/naga/shirt.txt
-#load helmet /data/items/enlightened/naga/helmet.txt
+#load armor /data/items/enlightened/naga/armor.txt
 
-#load weapon /data/items/enlightened/naga/bows.txt -3 3
-#load bonusweapon /data/items/enlightened/naga/archerweapon.txt
+#load weapon /data/items/enlightened/naga/weapon_ranged.txt
+#load bonusweapon /data/items/enlightened/naga/rangedmelee.txt
 
 #load strap /data/items/enlightened/naga/strap.txt
 #load quiver /data/items/enlightened/naga/quiver.txt
+
 #generateitem 1 bonusweapon
 #endpose
 
@@ -62,24 +77,16 @@
 #role "chariot"
 #basechance 0.25
 
-#baseitemslot feet 0
-
 #load mount /data/items/enlightened/naga/bases_chariot.txt
 
 #load basesprite /data/items/enlightened/naga/bases_charioteers.txt
-#load shadow /data/items/enlightened/naga/shadow.txt
-
-#load hands /data/items/enlightened/naga/hands.txt
 
 #load cloakf /data/items/enlightened/naga/cloakf.txt
 #load cloakb /data/items/enlightened/naga/cloakb.txt
 
 #load armor /data/items/enlightened/naga/armor.txt
-#load shirt /data/items/enlightened/naga/shirt.txt
-#load helmet /data/items/enlightened/naga/helmet.txt
 
 #load weapon /data/items/enlightened/naga/weapon.txt
-#load bonusweapon /data/items/enlightened/naga/bonusranged.txt 0 1
 
 #load offhand /data/items/enlightened/naga/shields.txt
 
