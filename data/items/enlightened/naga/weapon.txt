@@ -1,108 +1,95 @@
 #newitem
 #id mace
 #gameid 12
-#sprite /graphics/serpentmen/weapon/mace.png
-#theme occidental
-#theme oriental
-#theme austral
-#theme central
-#theme terrestrial
-#theme primitive
+#sprite /graphics/enlightened/naga/weapon/mace.png
+#eliteversion mace_gold
 #enditem
 
 #newitem
-#id shortsword
-#gameid 6
-#sprite /graphics/serpentmen/weapon/shortsword.png
-#theme austral
-#theme central
-#theme terrestrial
+#id mace_gold
+#gameid 12
+#sprite /graphics/enlightened/naga/weapon/mace_gold.png
+#theme elite
+#enditem
+
+#newitem
+#id axe_iron
+#gameid 17
+#sprite /graphics/enlightened/naga/weapon/axe.png
+#eliteversion axe_iron_elite
 #theme iron
 #enditem
 
 #newitem
-#id broadsword
-#gameid 8
-#sprite /graphics/serpentmen/weapon/broadsword.png
-#theme austral
-#theme central
-#theme terrestrial
+#id axe_iron_elite
+#gameid 17
+#sprite /graphics/enlightened/naga/weapon/axe_gold.png
+#theme elite
 #theme iron
-#theme advanced
 #enditem
 
 #newitem
-#id shortsword_bronze
-#gameid 645
-#sprite /graphics/serpentmen/weapon/shortsword_bronze.png
-#theme occidental
-#theme austral
-#theme central
-#theme terrestrial
-#theme marine
+#id axe_bronze
+#gameid 675
+#sprite /graphics/enlightened/naga/weapon/axe_bronze.png
+#eliteversion axe_bronze_elite
 #theme bronze
 #enditem
 
 #newitem
-#id broadsword_bronze
-#gameid bronzebroadsword
-#sprite /graphics/serpentmen/weapon/broadsword_bronze.png
-#theme austral
-#theme central
-#theme terrestrial
+#id axe_bronze_elite
+#gameid 675
+#sprite /graphics/enlightened/naga/weapon/axe_gold.png
+#theme elite
 #theme bronze
-#theme advanced
 #enditem
 
 #newitem
 #id falchion
 #gameid 10
-#sprite /graphics/serpentmen/weapon/falchion.png
-#theme austral
-#theme central
-#theme oriental
-#theme terrestrial
+#sprite /graphics/enlightened/naga/weapon/falchion.png
+#eliteversion falchion_gold
+#theme iron
+#enditem
+
+#newitem
+#id falchion_gold
+#gameid 10
+#sprite /graphics/enlightened/naga/weapon/falchion_gold.png
+#theme elite
 #theme iron
 #enditem
 
 #newitem
 #id kopesh
 #gameid 513
-#sprite /graphics/serpentmen/weapon/kopesh.png
-#theme austral
-#theme central
-#theme occidental
-#theme terrestrial
+#sprite /graphics/enlightened/naga/weapon/kopesh.png
+#eliteversion kopesh_gold
 #theme bronze
 #enditem
 
 #newitem
-#id wakizashi
-#gameid 377
-#sprite /graphics/serpentmen/weapon/wakizashi.png
-#theme oriental
-#theme terrestrial
-#theme iron
+#id kopesh_gold
+#gameid 513
+#sprite /graphics/enlightened/naga/weapon/falchion_gold.png
+#theme elite
+#theme bronze
 #enditem
 
 #newitem
-#id clubsword
-#gameid 451
-#basechance 2
-#sprite /graphics/serpentmen/weapon/clubsword.png
-#theme occidental
-#theme terrestrial
-#enditem
-
-#newitem
-#id spear
+#id spear_iron
 #gameid 1
-#sprite /graphics/serpentmen/weapon/spear.png
-#theme occidental
-#theme oriental
-#theme austral
-#theme central
-#theme terrestrial
+#sprite /graphics/enlightened/naga/weapon/spear.png
+#eliteversion spear_iron_elite
+#theme iron
+#theme formationfighter
+#enditem
+
+#newitem
+#id spear_iron_elite
+#gameid 1
+#sprite /graphics/enlightened/naga/weapon/spear_gold.png
+#theme elite
 #theme iron
 #theme formationfighter
 #enditem
@@ -110,51 +97,35 @@
 #newitem
 #id spear_bronze
 #gameid 643
-#sprite /graphics/serpentmen/weapon/spear_bronze.png
-#theme occidental
-#theme austral
-#theme central
-#theme terrestrial
-#theme marine
+#sprite /graphics/enlightened/naga/weapon/spear_bronze.png
+#eliteversion spear_bronze_elite
 #theme bronze
 #theme formationfighter
 #enditem
 
 #newitem
-#id spear_stone
-#gameid 373
-#sprite /graphics/serpentmen/weapon/spear.png
-#theme occidental
-#theme oriental
-#theme austral
-#theme central
-#theme terrestrial
-#theme marine
-#theme primitive
+#id spear_bronze_elite
+#gameid 643
+#sprite /graphics/enlightened/naga/weapon/spear_gold.png
+#theme elite
+#theme bronze
 #theme formationfighter
 #enditem
 
 #newitem
-#id longspear
+#id longspear_iron
 #gameid 28
-#sprite /graphics/serpentmen/weapon/longspear.png
-#eliteversion longspear_elite
-#theme austral
-#theme central
-#theme terrestrial
+#sprite /graphics/enlightened/naga/weapon/longspear.png
+#eliteversion longspear_iron_elite
 #theme iron
 #theme formationfighter
 #enditem
 
 #newitem
-#id longspear_elite
+#id longspear_iron_elite
 #gameid 28
-#sprite /graphics/serpentmen/weapon/longspear_elite.png
-#recolormask /graphics/serpentmen/weapon/longspear_elite_recolormask.png
+#sprite /graphics/enlightened/naga/weapon/longspear_gold.png
 #theme elite
-#theme austral
-#theme central
-#theme terrestrial
 #theme iron
 #theme formationfighter
 #enditem
@@ -162,295 +133,49 @@
 #newitem
 #id longspear_bronze
 #gameid 644
-#sprite /graphics/serpentmen/weapon/longspear_bronze.png
-#theme austral
-#theme central
-#theme terrestrial
-#theme marine
+#sprite /graphics/enlightened/naga/weapon/longspear_bronze.png
+#eliteversion longspear_bronze_elite
 #theme bronze
 #theme formationfighter
 #enditem
 
 #newitem
-#id yari
-#gameid 376
-#sprite /graphics/serpentmen/weapon/longspear.png
-#theme oriental
-#theme terrestrial
-#theme iron
-#theme formationfighter
-#enditem
-
-#newitem
-#id pike
-#gameid 2
-#sprite /graphics/serpentmen/weapon/longspear.png
-#theme austral
-#theme central
-#theme terrestrial
-#theme iron
-#theme advanced
-#theme formationfighter
-#enditem
-
-#newitem
-#id glaive
-#gameid 308
-#sprite /graphics/serpentmen/weapon/glaive.png
-#eliteversion glaive_elite
-#theme austral
-#theme central
-#theme terrestrial
-#theme iron
-#enditem
-
-#newitem
-#id glaive_elite
-#gameid 308
-#sprite /graphics/serpentmen/weapon/glaive_elite.png
-#recolormask /graphics/serpentmen/weapon/glaive_elite_recolormask.png
+#id longspear_bronze_elite
+#gameid 644
+#sprite /graphics/enlightened/naga/weapon/longspear_gold.png
 #theme elite
-#theme austral
-#theme central
-#theme terrestrial
-#theme iron
-#enditem
-
-#newitem
-#id glaive_bronze
-#gameid 673
-#sprite /graphics/serpentmen/weapon/glaive_bronze.png
-#theme occidental
-#theme austral
-#theme central
-#theme terrestrial
-#theme marine
 #theme bronze
+#theme formationfighter
 #enditem
 
 #newitem
-#id glaive_TC
-#gameid 308
-#sprite /graphics/serpentmen/weapon/naginata.png
-#theme oriental
-#theme terrestrial
-#theme iron
-#enditem
-
-#newitem
-#id naginata
-#gameid 380
-#sprite /graphics/serpentmen/weapon/naginata.png
-#theme oriental
-#theme terrestrial
-#theme iron
-#enditem
-
-#newitem
-#id trident
+#id trident_iron
 #gameid 3
-#sprite /graphics/serpentmen/weapon/trident.png
-#theme austral
-#theme central
-#theme terrestrial
+#sprite /graphics/enlightened/naga/weapon/trident.png
+#eliteversion trident_iron_elite
+#theme iron
+#enditem
+
+#newitem
+#id trident_iron_elite
+#gameid 3
+#sprite /graphics/enlightened/naga/weapon/trident_gold.png
+#theme elite
 #theme iron
 #enditem
 
 #newitem
 #id trident_bronze
 #gameid 641
-#sprite /graphics/serpentmen/weapon/trident_bronze.png
-#theme austral
-#theme central
-#theme terrestrial
-#theme marine
+#sprite /graphics/enlightened/naga/weapon/trident_bronze.png
+#eliteversion trident_bronze_elite
 #theme bronze
 #enditem
 
 #newitem
-#id trident_bone
-#gameid 670
-#sprite /graphics/serpentmen/weapon/trident_bone.png
-#theme austral
-#theme central
-#theme terrestrial
-#theme marine
-#theme primitive
-#enditem
-
-
--- Coral weapons
-#newitem
-#id coralmace
-#gameid 45
-#sprite /graphics/serpentmen/weapon/coralmace.png
-#theme occidental
-#theme oriental
-#theme austral
-#theme central
-#theme marine
-#theme coral
-#theme primitive
-#enditem
-
-#newitem
-#id coralshortsword
-#gameid coralshortsword
-#sprite /graphics/serpentmen/weapon/coralshortsword.png
-#theme occidental
-#theme oriental
-#theme austral
-#theme central
-#theme marine
-#theme coral
-#enditem
-
-#newitem
-#id coralspear
-#gameid 31
-#sprite /graphics/serpentmen/weapon/coralspear.png
-#theme occidental
-#theme oriental
-#theme austral
-#theme central
-#theme marine
-#theme coral
-#theme formationfighter
-#enditem
-
-#newitem
-#id corallongspear
-#gameid 580
-#sprite /graphics/serpentmen/weapon/corallongspear.png
-#theme oriental
-#theme austral
-#theme central
-#theme marine
-#theme coral
-#theme formationfighter
-#enditem
-
-#newitem
-#id coralglaive
-#gameid 46
-#sprite /graphics/serpentmen/weapon/coralglaive.png
-#theme austral
-#theme central
-#theme marine
-#theme coral
-#theme advanced
-#enditem
-
-#newitem
-#id coralnaginata
-#gameid 46
-#sprite /graphics/serpentmen/weapon/coralnaginata.png
-#theme occidental
-#theme oriental
-#theme marine
-#theme coral
-#theme advanced
-#enditem
-
-
--- Ice weapons
-#newitem
-#id icemace
-#gameid 44
-#sprite /graphics/serpentmen/weapon/icemace.png
-#theme occidental
-#theme oriental
-#theme austral
-#theme central
-#theme terrestrial
-#theme ice
-#theme primitive
-#chanceinc "personalcommand below #coldres 5 *0"
-#chanceinc racetheme jungle_serpent *0.01
-#chanceinc racetheme desert_serpent *0
-#enditem
-
-#newitem
-#id icespear
-#gameid 611
-#sprite /graphics/serpentmen/weapon/icespear.png
-#theme occidental
-#theme oriental
-#theme austral
-#theme central
-#theme terrestrial
-#theme marine
-#theme ice
-#theme formationfighter
-#chanceinc "personalcommand below #coldres 5 *0"
-#chanceinc racetheme jungle_serpent *0.01
-#chanceinc racetheme desert_serpent *0
-#enditem
-
-#newitem
-#id icesword
-#gameid 612
-#sprite /graphics/serpentmen/weapon/icesword.png
-#theme occidental
-#theme austral
-#theme central
-#theme terrestrial
-#theme ice
-#chanceinc "personalcommand below #coldres 5 *0"
-#chanceinc racetheme jungle_serpent *0.01
-#chanceinc racetheme desert_serpent *0
-#enditem
-
-#newitem
-#id icewakizashi
-#gameid 35
-#sprite /graphics/serpentmen/weapon/icewakizashi.png
-#theme oriental
-#theme terrestrial
-#theme ice
-#chanceinc "personalcommand below #coldres 5 *0"
-#chanceinc racetheme jungle_serpent *0.01
-#chanceinc racetheme desert_serpent *0
-#enditem
-
-#newitem
-#id icefalchion
-#gameid 37
-#sprite /graphics/serpentmen/weapon/icefalchion.png
-#theme oriental
-#theme austral
-#theme central
-#theme terrestrial
-#theme ice
-#chanceinc "personalcommand below #coldres 5 *0"
-#chanceinc racetheme jungle_serpent *0.01
-#chanceinc racetheme desert_serpent *0
-#enditem
-
-#newitem
-#id iceglaive
-#gameid 454
-#sprite /graphics/serpentmen/weapon/iceglaive.png
-#theme austral
-#theme central
-#theme terrestrial
-#theme marine
-#theme ice
-#chanceinc "personalcommand below #coldres 5 *0"
-#chanceinc racetheme jungle_serpent *0.01
-#chanceinc racetheme desert_serpent *0
-#enditem
-
-#newitem
-#id icenaginata
-#gameid 454
-#sprite /graphics/serpentmen/weapon/icenaginata.png
-#theme occidental
-#theme oriental
-#theme terrestrial
-#theme marine
-#theme ice
-#chanceinc "personalcommand below #coldres 5 *0"
-#chanceinc racetheme jungle_serpent *0.01
-#chanceinc racetheme desert_serpent *0
+#id trident_bronze_elite
+#gameid 641
+#sprite /graphics/enlightened/naga/weapon/trident_gold.png
+#theme elite
+#theme bronze
 #enditem

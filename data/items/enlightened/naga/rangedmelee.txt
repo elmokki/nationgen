@@ -1,6 +1,78 @@
 #newitem
-#id shortsword
-#gameid shortsword
-#sprite /graphics/serpentmen/weapon/shortsword-a.png
-#basechance 0.5
+#id hatchet
+#gameid 253
+#chanceinc "slottag weapon skirmisher *0.1"
+#theme "primitive"
+#theme "iron"
+#eliteversion axe_iron
+#enditem
+
+#newitem
+#id hatchet_bronze
+#gameid 646
+#chanceinc "slottag weapon skirmisher *0.1"
+#theme "primitive"
+#theme "bronze"
+#eliteversion axe_bronze
+#enditem
+
+#newitem
+#id kryss
+#gameid 256
+#chanceinc "slottag weapon skirmisher *0.1"
+#theme "iron"
+#enditem
+
+#newitem
+#id dagger_bronze
+#gameid 674
+#chanceinc "slottag weapon skirmisher *0.1"
+#theme "bronze"
+#enditem
+
+#newitem
+#id club
+#gameid 252
+#chanceinc "slottag weapon skirmisher *0.1"
+#theme "primitive"
+#theme "wood"
+#eliteversion mace
+#enditem
+
+#newitem
+#id spikedclub
+#gameid 265
+#chanceinc "slottag weapon skirmisher *0.1"
+#theme "primitive"
+#theme "wood"
+#eliteversion mace
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#enditem
+
+#newitem
+#id axe_iron
+#gameid 17
+#theme iron
+#enditem
+
+#newitem
+#id axe_bronze
+#gameid 675
+#theme bronze
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#theme iron
+#enditem
+
+#newitem
+#id kopesh
+#gameid 513
+#theme bronze
 #enditem
