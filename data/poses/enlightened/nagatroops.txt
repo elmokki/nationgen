@@ -4,14 +4,13 @@
 #role "infantry"
 #role "scout"
 
-#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow wings cloakb bonusweapon mount bag basesprite shirt legs strap quiver armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/enlightened/naga/bases.txt
 #load shadow /data/items/enlightened/naga/shadow.txt
 
 #load cloakf /data/items/enlightened/naga/cloakf.txt
 #load cloakb /data/items/enlightened/naga/cloakb.txt
-#load cloakb /data/items/enlightened/naga/sacredwings.txt
 
 #load armor /data/items/enlightened/naga/armor.txt
 
@@ -19,6 +18,8 @@
 
 #load offhand /data/items/enlightened/naga/shield.txt
 #load offhand /data/items/enlightened/naga/offhand.txt
+
+#load bonusweapon /data/items/enlightened/naga/sacredwings.txt
 
 #endpose
 
@@ -28,18 +29,19 @@
 #name "naga 2h infantry"
 #role "infantry"
 
-#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow wings cloakb bonusweapon mount bag basesprite shirt legs strap quiver armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/enlightened/naga/bases_archers.txt
 #load shadow /data/items/enlightened/naga/shadow.txt
 
 #load cloakf /data/items/enlightened/naga/cloakf.txt
 #load cloakb /data/items/enlightened/naga/cloakb.txt
-#load cloakb /data/items/enlightened/naga/sacredwings.txt
 
 #load armor /data/items/enlightened/naga/armor.txt
 
 #load weapon /data/items/enlightened/naga/weapon_2h.txt
+
+#load bonusweapon /data/items/enlightened/naga/sacredwings.txt
 
 #endpose
 
@@ -88,7 +90,7 @@
 
 #load weapon /data/items/enlightened/naga/weapon.txt
 
-#load offhand /data/items/enlightened/naga/shields.txt
+#load offhand /data/items/enlightened/naga/shield.txt
 
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
 

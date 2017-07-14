@@ -149,6 +149,29 @@
 #end
 
 #new
+#sprite "./graphics/flags/top/skull2_blood_winged.png"
+#basechance 0.05
+#chanceinc "magic death 0.225"
+#chanceinc "magic blood 0.225"
+#chanceinc "magic death blood 2"
+#chanceinc "race zotz *2"
+#end
+
+#new
+#sprite "./graphics/flags/top/skull2_winged.png"
+#basechance 0.05
+#chanceinc "magic death 0.25"
+#chanceinc "race zotz *4"
+#end
+
+#new
+#sprite "./graphics/flags/top/bat.png"
+#basechance 0.1
+#chanceinc "magic blood death 1.9"
+#chanceinc "race zotz *5"
+#end
+
+#new
 #sprite "./graphics/flags/top/tree.png"
 #basechance 0.5
 #chanceinc "magic nature 7.5"
@@ -249,6 +272,14 @@
 #chanceinc "racetag subterranean 10"
 #chanceinc "hastheme primitive *0.25"
 #chanceinc "magic not earth *0.1"
+#end
+
+#new
+#sprite "./graphics/flags/top/cavern_skull.png"
+#basechance 0.0
+#chanceinc "racetag subterranean 10"
+#chanceinc "hastheme primitive *0.25"
+#chanceinc "magic not death *0.1"
 #end
 
 #new

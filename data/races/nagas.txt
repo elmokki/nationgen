@@ -1,0 +1,44 @@
+#newrace
+#name "Naga"
+#basechance 0.1
+
+#chanceinc era 1 *2
+
+#all_troops_elite
+#all_troops_sacred
+
+#theme enlightened
+#enlightened
+#subterranean
+#amphibian
+
+#longsyllables /data/names/nations/monkey/longsyllables.txt
+#shortsyllables /data/names/nations/monkey/shortsyllables.txt
+#suffixes /data/names/nations/monkey/suffixes.txt
+
+#pose nagatroops
+#pose nagamages
+
+#magicpatterns defaultprimary
+#magicpatterns defaultsecondary
+#magicpatterns defaulttertiary
+
+#magicpriority water 6
+#magicpriority earth 6
+
+#strongmagicpatterns
+
+#sacredchariotchance 0.1
+
+#gods monkeygods
+
+#chanceinc "race van *0.1"
+#chanceinc "race sidhe *0.1"
+#chanceinc "race caelian *0.1"
+#chanceinc "race primate *3"
+#chanceinc "race lizard *3"
+
+#specialcommanderfilters default_specialcommanderfilters
+#specialcommanderfilters specialcommanderfilters_extended
+
+#endrace
