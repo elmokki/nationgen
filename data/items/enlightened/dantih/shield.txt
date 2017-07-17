@@ -1,0 +1,64 @@
+-- Bucklers
+#newitem
+#id buckler_bronze
+#gameid 1
+#sprite /graphics/enlightened/naga/offhand/buckler_bronze.png
+#eliteversion buckler_elite
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id buckler_iron
+#gameid 1
+#sprite /graphics/enlightened/naga/offhand/buckler_iron.png
+#eliteversion buckler_elite
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#id buckler_elite
+#gameid 1
+#sprite /graphics/enlightened/naga/offhand/buckler_gilt.png
+#armor
+#theme "elite"
+#enditem
+
+
+-- Standard shields
+#newitem
+#id shield_bronze
+#gameid 209
+#sprite /graphics/enlightened/naga/offhand/shield_bronze.png
+#eliteversion shield_bronze_elite
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id shield_bronze_elite
+#gameid 209
+#sprite /graphics/enlightened/naga/offhand/shield_gilt.png
+#armor
+#theme "elite"
+#theme "bronze"
+#enditem
+
+#newitem
+#id shield_iron
+#gameid 208
+#sprite /graphics/enlightened/naga/offhand/shield_iron.png
+#eliteversion shield_iron_elite
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#id shield_iron_elite
+#gameid 208
+#sprite /graphics/enlightened/naga/offhand/shield_gilt.png
+#armor
+#theme "elite"
+#theme "iron"
+#enditem
