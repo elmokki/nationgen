@@ -36,7 +36,6 @@ public class NationDescriber {
 			if(Generic.getTagValue(u.race.tags, "description") != null)
 				desc = Generic.getTagValue(u.race.tags, "description") + " ";
 			
-			System.out.println(desc);
 
 			
 			if(descf != null)
