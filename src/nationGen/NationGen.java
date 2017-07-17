@@ -54,7 +54,7 @@ import nationGen.units.Unit;
 
 public class NationGen 
 {
-    public static String version = "0.6.22";
+    public static String version = "0.6.23";
     public static String date = "17th of July 2017";
 
     public List<NationRestriction> restrictions = new ArrayList<>();
