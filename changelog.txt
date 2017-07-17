@@ -1,8 +1,8 @@
-0.6.22 (???th of ??? 2017)
+0.6.22 (17th of July 2017)
 ----------------------------------------------------------
 Code
 ----------------------------------------------------------
-- A huge pile of refactoring and optimization
+- A huge pile of refactoring and optimization, by Freykin
 - Added handling for #specifiedgcost and #specifieddescr to monster definitions
 - Added handling for #additionalweaponslot to troop (not caster) pose definitions; this is much like #generateitem, but it happens late in generation and is less likely to be overridden
 - Better unit finalizing for montag units
@@ -13,7 +13,7 @@ Code
 
 Content
 ----------------------------------------------------------
-- Countless dumb typos fixed
+- Countless dumb typos and oversights fixed
 - Further restrictions on "complex" weapons (e.g., poison slings) to prevent them from getting inadvertently upgraded into superweapons
 - Giant feral hoburg monsters had neither shadows nor gcosts nor descriptions
 - Bean sidhe, plus themes allowing sidhe nations to be either patriarchal (daoine sidhe), matriarchal (bean sidhe), or mixed (both men and women of the mounds)
@@ -40,6 +40,7 @@ Content
 - Filters for reduced/increased mage/elite/sacred costs
 - Filter for Bloodguard-style berserking strong homesick elites, with fancy specific names
 - "Troglotyid" cavefishmen demographic theme for ichtyids
+- Nagas added as a full race; note that (for now) these are humble nagas w/o leg envy, so their mages don't shapechange
 
 
 
