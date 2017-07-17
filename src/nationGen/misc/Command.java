@@ -152,6 +152,9 @@ public class Command {
 	{
 		args.remove(0);
 		String asd = Generic.listToString(args);
+		
+		if(asd.startsWith("'") && asd.endsWith("'"))
+			asd = asd.substring(1, asd.length() - 1);
 		return parseCommand(asd);
 		
 	}
