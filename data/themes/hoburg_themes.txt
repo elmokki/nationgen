@@ -9,7 +9,7 @@
 -- Weights: EA 1.5, MA 0.5, LA 0.25
 #newtheme
 #type techlevel
-#name primitive
+#name feral
 #basechance 0.5
 #chanceinc era 3 -0.25
 #chanceinc era 1 +1
@@ -38,6 +38,7 @@
 #racedefinition "#monsterchance 0.25"
 #racedefinition "#generationchance ranged 2"
 #racedefinition "#generationchance mounted 2"
+#racedefinition "#theme 'primitive'"
 #endtheme
 
 -- Weights: EA 1, MA 1, LA 0.5
@@ -65,12 +66,13 @@
 #racedefinition "#pose stealthyhoburgmages"
 #racedefinition "#pose stealthyhoburgtroops"
 #racedefinition "#tag 'preferredmount hog'"
+#racedefinition "#theme 'primitive'"
 #endtheme
 
 -- Weights: EA 0.10, MA 1, LA 2
 #newtheme
 #type techlevel
-#name advanced
+#name traditional
 #basechance 0.10
 #chanceinc era 3 1.9
 #chanceinc era 2 0.9
@@ -90,6 +92,7 @@
 #racedefinition "#pose clockworktroops"
 #racedefinition "#pose clockworktroops_oriental"
 #racedefinition "#pose clockworktroops_bronze"
+#racedefinition "#theme 'advanced'"
 #endtheme
 
 -- Weights: EA 0.025, MA 0.3, LA 1
@@ -123,19 +126,20 @@
 #racedefinition "#pose clockworktroops_oriental"
 #racedefinition "#pose clockworktroops_bronze"
 #racedefinition "#tag 'preferredmount mechanical'"
+#racedefinition "#theme 'advanced'"
 #endtheme
 
 
 --- Cultural themes (mandatory)
 
 -- Standard "northern European" hoburgs
--- Weights: primitive 1, agrarian 4, advanced 4, industrial 4
+-- Weights: feral 1, agrarian 4, traditional 4, industrial 4
 #newtheme
 #type cultural
 #name boreal
 #theme boreal
 #basechance 4
-#chanceinc racetheme primitive *0.25
+#chanceinc racetheme feral *0.25
 #chanceinc primaryrace 'Boreal human' *5
 #themeinc theme mechanical *1
 #themeinc theme advanced *1.5
@@ -153,15 +157,15 @@
 #endtheme
 
 --"Asian neo-Jomonese" hoburgs 
--- Weights: primitive 0.5, agrarian 1, advanced 2, industrial 4
+-- Weights: feral 0.5, agrarian 1, traditional 2, industrial 4
 #newtheme
 #type cultural
 #name oriental
 #theme oriental
 #basechance 1
-#chanceinc racetheme primitive *0.5
+#chanceinc racetheme feral *0.5
 #chanceinc racetheme agrarian *1
-#chanceinc racetheme advanced *2
+#chanceinc racetheme traditional *2
 #chanceinc racetheme industrial *4
 #chanceinc primaryrace 'Oriental human' *5
 #chanceinc primaryrace primate *2.5
@@ -185,15 +189,15 @@
 #endtheme
 
 --"Mesoamerican proto-Mictlanese" hoburgs 
--- Weights: primitive 4, agrarian 2, advanced 0.5, industrial 0.25
+-- Weights: feral 4, agrarian 2, traditional 0.5, industrial 0.25
 #newtheme
 #type cultural
 #name occidental
 #theme occidental
 #basechance 1
-#chanceinc racetheme primitive *4
+#chanceinc racetheme feral *4
 #chanceinc racetheme agrarian *2
-#chanceinc racetheme advanced *0.5
+#chanceinc racetheme traditional *0.5
 #chanceinc racetheme industrial *0.25
 #chanceinc primaryrace 'Oriental human' *0.5
 #chanceinc primaryrace primate *0.5
@@ -219,15 +223,15 @@
 #endtheme
 
 -- "African quasi-Machakan" hoburgs 
--- Weights: primitive 1, agrarian 3, advanced 3, industrial 1
+-- Weights: feral 1, agrarian 3, traditional 3, industrial 1
 #newtheme
 #type cultural
 #name austral
 #theme austral
 #basechance 1
-#chanceinc racetheme primitive *1
+#chanceinc racetheme feral *1
 #chanceinc racetheme agrarian *3
-#chanceinc racetheme advanced *3
+#chanceinc racetheme traditional *3
 #chanceinc racetheme industrial *1
 #chanceinc primaryrace 'Austral human' *5
 #chanceinc primaryrace Lizard *2.5
@@ -255,15 +259,15 @@
 #endtheme
 
 -- "Hellenic quasi-Arco" hoburgs 
--- Weights: primitive 0.25, agrarian 4, advanced 2, industrial 0.25
+-- Weights: feral 0.25, agrarian 4, traditional 2, industrial 0.25
 #newtheme
 #type cultural
 #name central
 #theme central
 #basechance 1
-#chanceinc racetheme primitive *0.25
+#chanceinc racetheme feral *0.25
 #chanceinc racetheme agrarian *4
-#chanceinc racetheme advanced *2
+#chanceinc racetheme traditional *2
 #chanceinc racetheme industrial *0.25
 #chanceinc primaryrace 'Amazon human' *5
 #chanceinc primaryrace Minotaur *5
@@ -288,15 +292,15 @@
 #endtheme
 
 -- "Imperial quasi-Ermorian" hoburgs 
--- Weights: primitive 0.25, agrarian 3, advanced 3, industrial 0.25
+-- Weights: feral 0.25, agrarian 3, traditional 3, industrial 0.25
 #newtheme
 #type cultural
 #name imperial
 #theme imperial
 #basechance 1
-#chanceinc racetheme primitive *0.25
+#chanceinc racetheme feral *0.25
 #chanceinc racetheme agrarian *3
-#chanceinc racetheme advanced *3
+#chanceinc racetheme traditional *3
 #chanceinc racetheme industrial *0.25
 #chanceinc primaryrace Lizard *2
 #themeinc theme mechanical *0.5
@@ -322,15 +326,15 @@
 #endtheme
 
 -- "Hoburgbred" Abysians 
--- Weights: primitive 0.5, agrarian 1, advanced 2, industrial 2
+-- Weights: feral 0.5, agrarian 1, traditional 2, industrial 2
 #newtheme
 #type cultural
 #name abysian
 #theme abysian
 #basechance 1
-#chanceinc racetheme primitive *0.5
+#chanceinc racetheme feral *0.5
 #chanceinc racetheme agrarian *1
-#chanceinc racetheme advanced *2
+#chanceinc racetheme traditional *2
 #chanceinc racetheme industrial *2
 #chanceinc primaryrace Abysian *20
 #themeinc theme mechanical *2
@@ -356,27 +360,27 @@
 
 
 --- Social themes
--- Weights: primitive 1, agrarian 1, advanced 0.25, industrial 0.05
+-- Weights: feral 1, agrarian 1, traditional 0.25, industrial 0.05
 #newtheme
 #type social
 #name cavemen_allies
 #basechance 0.5
-#chanceinc racetheme primitive *2
+#chanceinc racetheme feral *2
 #chanceinc racetheme agrarian *2
-#chanceinc racetheme advanced *0.5
+#chanceinc racetheme traditional *0.5
 #chanceinc racetheme industrial *0.1
 #racedefinition "#pose cavemanallies"
 #racedefinition "#tag 'preferredmount caveman'"
 #endtheme
 
--- Weights: primitive 1, agrarian 0.5, advanced 0.0625, industrial 0.025
+-- Weights: feral 1, agrarian 0.5, traditional 0.0625, industrial 0.025
 #newtheme
 #type social
 #name fae
 #basechance 0.25
-#chanceinc racetheme primitive *4
+#chanceinc racetheme feral *4
 #chanceinc racetheme agrarian *2
-#chanceinc racetheme advanced *0.25
+#chanceinc racetheme traditional *0.25
 #chanceinc racetheme industrial *0.1
 #themeinc theme iron *0.1
 #themeinc theme bronze *2
@@ -402,40 +406,40 @@
 #racedefinition "#unitcommand '#nametype 142'"
 #endtheme
 
--- Weights: primitive 0.01, agrarian 0.2, advanced 0.2, industrial 0.4
+-- Weights: feral 0.01, agrarian 0.2, traditional 0.2, industrial 0.4
 #newtheme
 #type social
 #name lesser_golem_cult
 #basechance 0.1
 #chanceinc racetheme primitive *0.1
 #chanceinc racetheme agrarian *2
-#chanceinc racetheme advanced *2
+#chanceinc racetheme traditional *2
 #chanceinc racetheme industrial *4
 #themeinc theme mechanical *2
 #racedefinition "#nationcommand '#golemhp 5'"
 #racedefinition "#magicpriority earth 8"
 #endtheme
 
--- Weights: primitive 0.005, agrarian 0.1, advanced 0.1, industrial 0.2
+-- Weights: feral 0.005, agrarian 0.1, traditional 0.1, industrial 0.2
 #newtheme
 #type social
 #name greater_golem_cult
 #basechance 0.05
 #chanceinc racetheme primitive *0.1
 #chanceinc racetheme agrarian *2
-#chanceinc racetheme advanced *2
+#chanceinc racetheme traditional *2
 #chanceinc racetheme industrial *4
 #themeinc theme mechanical *3
 #racedefinition "#nationcommand '#golemhp 10'"
 #racedefinition "#magicpriority earth 10"
 #endtheme
 
--- Weights: primitive 0.01, agrarian 0.01, advanced 0.05, industrial 0.1
+-- Weights: feral 0.01, agrarian 0.01, traditional 0.05, industrial 0.1
 #newtheme
 #type social
 #name slaver
 #basechance 0.01
-#chanceinc racetheme advanced *5
+#chanceinc racetheme traditional *5
 #chanceinc racetheme industrial *10
 #themeinc theme advanced *1
 #themeinc theme iron *1
@@ -458,14 +462,14 @@
 #racedefinition "#secondaryracemagemod -100"
 #endtheme
 
--- Weights: primitive 0.25, agrarian 0.5, advanced 0, industrial 0
+-- Weights: feral 0.25, agrarian 0.5, traditional 0, industrial 0
 #newtheme
 #type social
 #name podslaver
 ---- #basechance 0.25
 #basechance 0
 #chanceinc racetheme agrarian *2
-#chanceinc racetheme advanced *0
+#chanceinc racetheme traditional *0
 #chanceinc racetheme industrial *0
 #themeinc theme advanced *0.25
 #themeinc theme iron *0.25
@@ -495,13 +499,13 @@
 ---- #racedefinition "#pose vinetroops"
 #endtheme
 
--- Weights: primitive 0.5, agrarian 0.5, advanced 0, industrial 0
+-- Weights: feral 0.5, agrarian 0.5, traditional 0, industrial 0
 #newtheme
 #type social
 #name vinegrower
 ---- #basechance 0.5
 #basechance 0
-#chanceinc racetheme advanced *0
+#chanceinc racetheme traditional *0
 #chanceinc racetheme industrial *0
 #chanceinc racetheme abysian *0.1
 #themeinc theme advanced *0.25
