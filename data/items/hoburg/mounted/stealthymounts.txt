@@ -442,3 +442,30 @@
 #offsetx 4
 #offsety -13
 #enditem
+
+#newitem
+#name "dwarf elephant"
+#gameid -1
+#sprite /graphics/mounts/standard/elephant_dwarf.png
+#needs overlay elephant_dwarf_overlay
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 14"
+#define "#mounted"
+#define "#trample"
+#define "#weapon nostr_tusk_10"
+#define "#gcost +20"
+#define "#hp +3"
+#define "#prot 4"
+#define "#ressize 1"
+#define "#rcost +4"
+#define "#enc 3"
+#tag "animal elephant"
+#tag "guaranteedprefix elephant"
+#theme "elephant"
+#theme "primitive"
+#offsety -15
+#offsetx 0
+#theme "austral"
+#enditem

@@ -36,6 +36,8 @@ public class NationDescriber {
 			if(Generic.getTagValue(u.race.tags, "description") != null)
 				desc = Generic.getTagValue(u.race.tags, "description") + " ";
 			
+
+			
 			if(descf != null)
 			{
 				desc = desc + descf.name + " ";
@@ -71,11 +73,11 @@ public class NationDescriber {
 					tmpDesc = c;
 			}
 			
+			
 			if(tmpDesc != null)
 			{
-				desc += tmpDesc.args.get(0);	
+				desc += " " + tmpDesc.args.get(0).replaceAll("\"", "");	
 			}
-		
 			
 			for(Filter f : u.appliedFilters)
 			{
@@ -95,7 +97,8 @@ public class NationDescriber {
 			}
 			
 			desc = dr.replace(desc);
-			
+			desc = desc.replaceAll("\"", "");
+
 			if(tmpDesc != null)
 				u.setCommandValue("#descr", 0, "\"" + desc + "\"");
 			else
@@ -200,7 +203,8 @@ public class NationDescriber {
 				
 				
 				desc = dr.replace(desc);
-				
+				desc = desc.replaceAll("\"", "");
+
 				if(tmpDesc != null)
 					u.setCommandValue("#descr", 0, "\"" + desc + "\"");
 				else

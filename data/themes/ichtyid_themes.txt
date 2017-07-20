@@ -36,7 +36,7 @@
 #endtheme
 
 
--- Demographic themes (salty, muckdweller, or fancy?): mandatory
+-- Demographic themes (salty, cavefish, muckdweller, or fancy?): mandatory
 -- Weights for all are uniform across eras
 #newtheme
 #type demographic
@@ -47,6 +47,17 @@
 #racedefinition "#nationcommand #coastnation"
 #racedefinition "#nationcommand '#likespop 65'"
 #themeinc theme inland *0.01
+#endtheme
+
+#newtheme
+#type demographic
+#name  troglotyid
+#basechance 1
+#racedefinition "#pose cavefishtroops"
+#racedefinition "#pose cavefishmages"
+#racedefinition "#subterranean"
+#racedefinition "#magicpriority earth 2"
+#themeinc theme marine *0.01
 #endtheme
 
 #newtheme

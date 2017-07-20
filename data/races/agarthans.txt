@@ -3,7 +3,16 @@
 #name "Pale One"
 #basechance 0.3
 
+#racethemes agarthan_themes
+#freetheme cultural
+#freetheme techlevel
+
+#spritegenpose agarthantroops
+#spritegenpose agarthanmages
+#spritegenpose cavernwights
+
 #subterranean
+#amphibian
 
 #all_troops_elite
 
@@ -40,13 +49,7 @@
 
 #nationcommand "#uwbuild 1"
 
-#pose agarthantroops
-#pose agarthanmages
-
 #gods agarthagods
-
-#magicpriority earth 7
-#magicpriority death 2
 
 #secondaryracecommand_conditional "#darkvision +50"
 

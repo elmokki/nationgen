@@ -1,30 +1,54 @@
-0.6.22 (???th of ??? 2017) - current through 19 Feb 17
+0.6.23 (17th of July 2017)
 ----------------------------------------------------------
 Code
 ----------------------------------------------------------
-- A huge pile of refactoring and optimization
+- Fixed Zotz description misspecification causing crashes
+- Fixed a minor bug that resulted in some units such as minotaurs getting only partial descriptions.
+- Fixed a bug that occasionally prevented primary race-inherited commands such as fire resistance to secondary races of Abysian nations from being printed to .dm
+
+0.6.22 (17th of July 2017)
+----------------------------------------------------------
+Code
+----------------------------------------------------------
+- A huge pile of refactoring and optimization, by Freykin
 - Added handling for #specifiedgcost and #specifieddescr to monster definitions
 - Added handling for #additionalweaponslot to troop (not caster) pose definitions; this is much like #generateitem, but it happens late in generation and is less likely to be overridden
 - Better unit finalizing for montag units
 - Another round of double lance fixes
+- Extra mages more common
+- Montag PD support 
 
 
 Content
 ----------------------------------------------------------
+- Countless dumb typos and oversights fixed
 - Further restrictions on "complex" weapons (e.g., poison slings) to prevent them from getting inadvertently upgraded into superweapons
 - Giant feral hoburg monsters had neither shadows nor gcosts nor descriptions
 - Bean sidhe, plus themes allowing sidhe nations to be either patriarchal (daoine sidhe), matriarchal (bean sidhe), or mixed (both men and women of the mounds)
 - Some new Ysian shields for standard shieldsets as well as for sidhe and amazons
 - Pygmy elephants and mammoths for hoburgs and vaettir, with regional variants
+- Dwarf elephant cavalry (and cataphracts) for hoburgs
 - Elephants for oriental human nations, as well as one or two minor pachydermal tweaks
 - Variable pants for oriental human and tengu troops
 - Fixed wonky fire/shock lance generation on hoburg clockworks via #additionalweaponslot
 - Basic hero-only hoburg clockwork colossi
 - Fixed overeating nephilim (1200/mo -> 120/mo)
-- Cavalry/chariots no longer have feet slots
+- Cavalry/chariots no longer have feet slots, nor do serpentmen or purebred illithids
 - New unit filters: growthpower, airshield, and overcharged for sacreds; airshield for mages
-
-
+- A bunch of new flag graphics contributed by AlStar
+- A miniscule number of other flag graphics
+- Faster (giant) swan chariots
+- Stray pixels on small pale one shadows should finally be gone
+- Ancient pale one graphics cleaned up a bit
+- Steel gear for ancient pale ones
+- Ancient olmspawn
+- Techlevel and cultural decay themes for pale ones
+- Gold-recruitable cavern wights for pale one cultures whose birthrates have fallen too low (or mortality rates have grown too high); may be horribly unbalanced
+- Hero and monster ageless pale ones - really, REALLY big sacks of sacred HP 
+- Filters for reduced/increased mage/elite/sacred costs
+- Filter for Bloodguard-style berserking strong homesick elites, with fancy specific names
+- "Troglotyid" cavefishmen demographic theme for ichtyids
+- Nagas added as a full race; note that (for now) these are humble nagas w/o leg envy, so their mages don't shapechange
 
 0.6.21c (25th of January 2017)
 ----------------------------------------------------------

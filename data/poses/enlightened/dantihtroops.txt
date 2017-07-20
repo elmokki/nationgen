@@ -1,0 +1,56 @@
+-------- Infantry
+#newpose
+#name "tusked one infantry"
+#role "infantry"
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/enlightened/dantih/sacredbases.txt
+#load shadow /data/items/enlightened/dantih/shadow.txt
+
+#load hands /data/items/enlightened/dantih/hands.txt
+
+#load cloakf /data/items/enlightened/dantih/cloakf.txt
+#load cloakb /data/items/enlightened/dantih/cloakb.txt
+
+#load armor /data/items/enlightened/dantih/sacredarmor.txt
+#load shirt /data/items/enlightened/dantih/shirt.txt
+#load helmet /data/items/enlightened/dantih/helmet.txt
+
+#load weapon /data/items/enlightened/dantih/weapon.txt
+#load bonusweapon /data/items/enlightened/dantih/bonusranged.txt 0 1
+
+#load offhand /data/items/enlightened/dantih/shields_elite.txt
+#load offhand /data/items/enlightened/dantih/offhand.txt
+
+#generateitem 1 bonusweapon
+#endpose
+
+
+
+-------- Archers
+#newpose
+#name "tusked one archer"
+#role "ranged"
+
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap bonusweapon weapon quiver armor cloakf offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/enlightened/dantih/sacredbases.txt
+#load shadow /data/items/enlightened/dantih/shadow.txt
+
+#load hands /data/items/enlightened/dantih/hands.txt
+
+#load cloakf /data/items/enlightened/dantih/cloakf.txt
+#load cloakb /data/items/enlightened/dantih/cloakb.txt
+
+#load armor /data/items/enlightened/dantih/sacredarmor.txt
+#load shirt /data/items/enlightened/dantih/shirt.txt
+#load helmet /data/items/enlightened/dantih/helmet.txt
+
+#load weapon /data/items/enlightened/dantih/bows.txt -3 3
+#load bonusweapon /data/items/enlightened/dantih/archerweapon.txt
+
+#load strap /data/items/enlightened/dantih/strap.txt
+#load quiver /data/items/enlightened/dantih/quiver.txt
+#generateitem 1 bonusweapon
+#endpose

@@ -492,7 +492,7 @@
 #define "#size 2"
 #define "#hp +3"
 #define "#mapmove 2"
-#define "#ap 6"
+#define "#ap 8"
 #define "#mounted"
 #define "#sailing 2 2"
 #define "#trample"
@@ -531,7 +531,7 @@
 #define "#size 2"
 #define "#hp +3"
 #define "#mapmove 2"
-#define "#ap 6"
+#define "#ap 8"
 #define "#mounted"
 #define "#sailing 2 2"
 #define "#trample"
@@ -651,4 +651,65 @@
 #offsety -12
 #offsetx 1
 #tag "minprot 10"
+#enditem
+
+#newitem
+#name "dwarf elephant"
+#gameid -1
+#sprite /graphics/mounts/standard/elephant_dwarf.png
+#needs overlay elephant_dwarf_overlay
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 14"
+#define "#mounted"
+#define "#trample"
+#define "#weapon nostr_tusk_10"
+#define "#gcost +20"
+#define "#hp +3"
+#define "#prot 4"
+#define "#ressize 1"
+#define "#rcost +4"
+#define "#enc 3"
+#tag "animal elephant"
+#tag "guaranteedprefix elephant"
+#theme "elephant"
+#theme "primitive"
+#offsety -15
+#offsetx 0
+#theme "austral"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#enditem
+
+#newitem
+#name "armored dwarf elephant"
+#gameid -1
+#sprite /graphics/mounts/standard/elephant_dwarf_armored.png
+#needs overlay elephant_dwarf_armored_overlay
+#armor
+#define "#size 2"
+#define "#mapmove 2"
+#define "#ap 12"
+#define "#mounted"
+#define "#trample"
+#define "#weapon nostr_tusk_10"
+#define "#gcost +20"
+#define "#hp +4"
+#define "#prot 6"
+#define "#ressize 1"
+#define "#rcost +9"
+#define "#enc 4"
+#tag "animal elephant"
+#tag "guaranteedprefix elephant"
+#theme "elephant"
+#theme "bronze"
+#tag "minprot 12"
+#offsety -15
+#offsetx 0
+#theme "austral"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
 #enditem

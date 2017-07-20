@@ -1,0 +1,240 @@
+
+-------- normal (Bronze)
+#newpose
+#name infantry_bronze
+#basechance 0.125
+#role "infantry"
+#role "scout"
+#theme "bronze"
+#theme "undead"
+
+#subrace "cavernwight"
+#subraceprefix "cavernwight"
+
+#load basesprite /data/items/agarthan/generic/bases_cavernwight.txt
+#load shadow /data/items/agarthan/generic/shadow.txt
+#load hands /data/items/agarthan/generic/hands_cavernwight.txt
+#load legs /data/items/agarthan/generic/legs_cavernwight.txt
+
+#load armor /data/items/agarthan/normal_bronze/armor.txt
+#load helmet /data/items/agarthan/normal_bronze/helmets.txt
+#load offhand /data/items/agarthan/normal_bronze/shields.txt
+
+#load weapon /data/items/agarthan/normal_bronze/weapons.txt
+#load weapon /data/items/agarthan/normal_bronze/swords.txt
+#load bonusweapon /data/items/agarthan/generic/bonusweapons.txt
+
+#load cloakf /data/items/agarthan/generic/cloakf.txt
+#load cloakb /data/items/agarthan/generic/cloakb.txt
+
+#endpose
+
+-------- normal (Steel)
+#newpose
+#name infantry_steel
+#basechance 0.125
+#role "infantry"
+#role "sacred"
+#theme "iron"
+#theme "undead"
+
+#subrace "cavernwight"
+#subraceprefix "cavernwight"
+
+#load basesprite /data/items/agarthan/generic/bases_cavernwight.txt
+#load shadow /data/items/agarthan/generic/shadow.txt
+#load hands /data/items/agarthan/generic/hands_cavernwight.txt
+#load legs /data/items/agarthan/generic/legs_cavernwight.txt
+
+#load armor /data/items/agarthan/normal_steel/armor.txt
+#load helmet /data/items/agarthan/normal_steel/helmets.txt
+#load offhand /data/items/agarthan/normal_steel/shields.txt
+
+#load weapon /data/items/agarthan/normal_steel/weapons.txt
+#load weapon /data/items/agarthan/normal_steel/swords.txt
+#load bonusweapon /data/items/agarthan/generic/bonusweapons.txt
+
+#load cloakf /data/items/agarthan/generic/cloakf.txt
+#load cloakb /data/items/agarthan/generic/cloakb.txt
+#endpose
+
+
+-------- sacred (Bronze)
+#newpose
+#name ancient_bronze
+#chanceinc moduleid herogen *2
+#role "sacred infantry"
+#theme "ancient"
+#theme "bronze"
+#theme "undead"
+
+#subrace "ancient cavernwight"
+#subraceprefix "ancient cavernwight"
+
+#load basesprite /data/items/agarthan/generic_big/bases_cavernwight.txt
+#load shadow /data/items/agarthan/generic_big/shadow.txt
+#load hands /data/items/agarthan/generic_big/hands_cavernwight.txt
+#load legs /data/items/agarthan/generic_big/legs_cavernwight.txt
+
+#load armor /data/items/agarthan/generic_big/armor.txt
+#load helmet /data/items/agarthan/generic_big/helmets.txt
+#load offhand /data/items/agarthan/generic_big/shields.txt
+
+#load weapon /data/items/agarthan/generic_big/weapons.txt
+
+#load cloakf /data/items/agarthan/generic_big/cloakf.txt
+#load cloakb /data/items/agarthan/generic_big/cloakb.txt
+
+#cannot_be_pd
+
+#endpose
+
+-------- sacred (Steel)
+#newpose
+#name ancient_steel
+#chanceinc moduleid herogen *2
+#role "sacred infantry"
+#theme "ancient"
+#theme "iron"
+#theme "undead"
+
+#subrace "ancient cavernwight"
+#subraceprefix "ancient cavernwight"
+
+#load basesprite /data/items/agarthan/generic_big/bases_cavernwight.txt
+#load shadow /data/items/agarthan/generic_big/shadow.txt
+#load hands /data/items/agarthan/generic_big/hands_cavernwight.txt
+#load legs /data/items/agarthan/generic_big/legs_cavernwight.txt
+
+#load armor /data/items/agarthan/generic_big/armor_steel.txt
+#load helmet /data/items/agarthan/generic_big/helmets_steel.txt
+#load offhand /data/items/agarthan/generic_big/shields_steel.txt
+
+#load weapon /data/items/agarthan/generic_big/weapons_steel.txt
+
+#load cloakf /data/items/agarthan/generic_big/cloakf.txt
+#load cloakb /data/items/agarthan/generic_big/cloakb.txt
+
+#cannot_be_pd
+
+#endpose
+
+
+-------------- Mounted
+-------- normal (Bronze)
+#newpose
+#name mounted_bronze
+#basechance 0.05
+#role "mounted"
+#theme "bronze"
+#theme "undead"
+
+#subrace "cavernwight"
+#subraceprefix "cavernwight"
+
+#baseitemslot feet 0
+
+#load basesprite /data/items/agarthan/generic/bases_cavernwight.txt
+#load hands /data/items/agarthan/generic/hands_cavernwight.txt
+#load legs /data/items/agarthan/mounted/legs_cavernwight.txt
+
+#load armor /data/items/agarthan/normal_bronze/armor.txt
+#load helmet /data/items/agarthan/normal_bronze/helmets.txt
+#load offhand /data/items/agarthan/normal_bronze/shields.txt
+
+#load mount /data/items/agarthan/mounted/mounts.txt
+
+#load weapon /data/items/agarthan/normal_bronze/weapons.txt
+#load bonusweapon /data/items/agarthan/generic/bonusweapons.txt
+
+#load cloakf /data/items/agarthan/generic/cloakf.txt
+#load cloakb /data/items/agarthan/generic/cloakb.txt
+
+#endpose
+
+-------- normal (Steel)
+#newpose
+#name mounted_steel
+#basechance 0.05
+#role "mounted"
+#theme "iron"
+#theme "undead"
+
+#subrace "cavernwight"
+#subraceprefix "cavernwight"
+
+#baseitemslot feet 0
+
+#load basesprite /data/items/agarthan/generic/bases_cavernwight.txt
+
+#load hands /data/items/agarthan/generic/hands_cavernwight.txt
+#load legs /data/items/agarthan/mounted/legs_cavernwight.txt
+#load mount /data/items/agarthan/mounted/mounts.txt
+#load armor /data/items/agarthan/normal_steel/armor.txt
+#load helmet /data/items/agarthan/normal_steel/helmets.txt
+#load offhand /data/items/agarthan/normal_steel/shields.txt
+
+#load weapon /data/items/agarthan/normal_steel/weapons.txt
+#load bonusweapon /data/items/agarthan/generic/bonusweapons.txt
+
+#load cloakf /data/items/agarthan/generic/cloakf.txt
+#load cloakb /data/items/agarthan/generic/cloakb.txt
+#endpose
+
+
+------ Mage priest
+#newpose
+#name young_caster
+#role "mage"
+#role "priest"
+#theme "undead"
+
+#subrace "cavernwight"
+#subraceprefix "cavernwight"
+
+#renderorder "shadow weapon cloakb basesprite legs armor cloakf offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/agarthan/generic/bases_cavernwight.txt
+#load shadow /data/items/agarthan/generic/shadow.txt
+#load hands /data/items/agarthan/generic/hands_cavernwight.txt
+#load legs /data/items/agarthan/generic/legs_cavernwight.txt
+
+#load armor /data/items/agarthan/mage/armor.txt
+#load helmet /data/items/agarthan/mage/helmets.txt
+#load weapon /data/items/agarthan/mage/weapons.txt
+
+#load cloakf /data/items/agarthan/generic/cloakf.txt
+#load cloakb /data/items/agarthan/generic/cloakb.txt
+
+#mage_nolowtierhat
+#tier 1
+#tier 2
+#endpose
+
+------ Mage priest - big
+#newpose
+#name ancient_caster
+#role "mage"
+#role "priest"
+#warriormage
+#chanceinc moduleid herogen *2
+#theme "undead"
+
+#subrace "ancient cavernwight"
+#subraceprefix "ancient cavernwight"
+
+#renderorder "shadow weapon cloakb basesprite legs armor cloakf offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/agarthan/generic_big/bases_cavernwight.txt
+#load shadow /data/items/agarthan/generic_big/shadow.txt
+#load hands /data/items/agarthan/generic_big/hands_cavernwight.txt
+#load legs /data/items/agarthan/generic_big/legs_cavernwight.txt
+
+#load armor /data/items/agarthan/generic_big/magearmor.txt
+#load helmet /data/items/agarthan/generic_big/magehelmets.txt
+#load weapon /data/items/agarthan/generic_big/mageweapons.txt
+
+#load cloakf /data/items/agarthan/generic_big/cloakf.txt
+#load cloakb /data/items/agarthan/generic_big/cloakb.txt
+#tier 3
+#endpose

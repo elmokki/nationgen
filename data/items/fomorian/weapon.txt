@@ -18,6 +18,7 @@
 #id greataxe
 #gameid 18
 #sprite /graphics/fomorian/weapon/battleaxe.png
+#eliteversion elitegreataxe
 #theme "primitive"
 #theme "iron"
 #enditem
@@ -26,36 +27,59 @@
 #id greataxe_bronze
 #gameid bronzebattleaxe
 #sprite /graphics/fomorian/weapon/battleaxe_bronze.png
+#eliteversion elitegreataxe_bronze
 #theme "primitive"
 #theme "bronze"
 #enditem
 
 #newitem
+#id elitegreataxe
+#gameid giantgreataxe
+#sprite /graphics/fomorian/weapon/battleaxe_elite.png
+#theme "primitive"
+#theme "iron"
+#theme "elite"
+#enditem
+
+#newitem
+#id elitegreataxe_bronze
+#gameid giantgreataxe_bronze
+#sprite /graphics/fomorian/weapon/battleaxe_bronze_elite.png
+#theme "primitive"
+#theme "bronze"
+#theme "elite"
+#enditem
+
+#newitem
 #id elitespear
-#gameid 234
+#gameid giantspear
 #sprite /graphics/fomorian/weapon/spear_elite.png
 #theme "iron"
+#theme "elite"
 #enditem
 
 #newitem
 #id elitespear_bronze
-#gameid 485
+#gameid giantspear_bronze
 #sprite /graphics/fomorian/weapon/spear_bronze_elite.png
 #theme "bronze"
+#theme "elite"
 #enditem
 
 #newitem
 #id elitelongspear
-#gameid 234
+#gameid giantlongspear
 #sprite /graphics/fomorian/weapon/longspear_elite.png
 #theme "iron"
+#theme "elite"
 #enditem
 
 #newitem
 #id elitelongspear_bronze
-#gameid 485
+#gameid giantlongspear_bronze
 #sprite /graphics/fomorian/weapon/longspear_bronze_elite.png
 #theme "bronze"
+#theme "elite"
 #enditem
 
 #newitem
@@ -89,19 +113,19 @@
 #enditem
 
 #newitem
-#id elitespear
-#gameid 1
-#sprite /graphics/fomorian/weapon/spear_elite.png
+#id longspear
+#gameid 28
+#sprite /graphics/fomorian/weapon/longspear.png
+#eliteversion elitelongspear
 #theme "iron"
-#elite
 #enditem
 
 #newitem
-#id elitespear_bronze
-#gameid 643
-#sprite /graphics/fomorian/weapon/spear_bronze_elite.png
+#id longspear_bronze
+#gameid 644
+#sprite /graphics/fomorian/weapon/longspear_bronze.png
+#eliteversion elitelongspear_bronze
 #theme "bronze"
-#elite
 #enditem
 
 #newitem

@@ -1,0 +1,183 @@
+--- Nekkid
+
+#newitem
+#name "nekkid"
+#gameid -1
+#armor
+#theme "primitive"
+#theme "naked"
+#enditem
+
+--- Leather
+
+#newitem
+#name "leather cuirass"
+#basechance 1
+#notepic
+#gameid 5
+#sprite /graphics/muuch/armor/small/leather_cuirass.png
+#armor
+#theme "primitive"
+#enditem
+
+#newitem
+#name "leather cuirass dyed"
+#basechance 2
+#gameid 5
+#sprite /graphics/muuch/armor/small/leather_cuirass.png
+#recolormask /graphics/muuch/armor/small/leather_cuirass_recolormask.png
+#armor
+#theme "primitive"
+#enditem
+
+#newitem
+#name "leather hauberk"
+#basechance 1
+#notepic
+#gameid 10
+#sprite /graphics/muuch/armor/small/leather_hauberk.png
+#armor
+#theme "primitive"
+#enditem
+
+#newitem
+#name "leather hauberk dyed"
+#basechance 2
+#gameid 10
+#sprite /graphics/muuch/armor/small/leather_hauberk.png
+#recolormask /graphics/muuch/armor/small/leather_hauberk_recolormask.png
+#armor
+#theme "primitive"
+#enditem
+
+#newitem -- reinforced full leather (Mictlan armor)
+#newitem
+#name "reinforced leather"
+#gameid zotz_mictlanarmor
+#sprite /graphics/muuch/armor/small/ring_hauberk.png
+#recolormask /graphics/muuch/armor/small/fringe_recolormask.png
+#armor
+#theme "primitive"
+#enditem
+
+--- Bronze 
+
+#newitem
+#name "bronze scale cuirass"
+#gameid 142
+#sprite /graphics/muuch/armor/small/bronzescale_cuirass.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#name "bronze scale hauberk"
+#gameid 136
+#sprite /graphics/muuch/armor/small/bronzescale_hauberk.png
+#recolormask /graphics/muuch/armor/small/fringe_recolormask.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#basechance 0.5
+#name "bronze cuirass"
+#gameid 100
+#sprite /graphics/muuch/armor/small/bronze_cuirass.png
+#armor
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+#newitem
+#basechance 0.5
+#name "bronze hauberk"
+#gameid 101
+#sprite /graphics/muuch/armor/small/bronze_hauberk.png
+#recolormask /graphics/muuch/armor/small/fringe_recolormask.png
+#armor
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+
+--- Iron
+
+#newitem
+#basechance 0.5
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/muuch/armor/small/scale_cuirass.png
+#armor
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#basechance 0.5
+#name "scale hauberk"
+#gameid 12
+#sprite /graphics/muuch/armor/small/scale_hauberk.png
+#recolormask /graphics/muuch/armor/small/fringe_recolormask.png
+#armor
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem 
+#basechance 0.25
+#name "plate cuirass"
+#gameid 9
+#sprite /graphics/muuch/armor/small/plate_cuirass.png
+#armor
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#basechance 0.25
+#name "plate hauberk"
+#gameid 14
+#sprite /graphics/muuch/armor/small/plate_hauberk.png
+#recolormask /graphics/muuch/armor/small/fringe_recolormask.png
+#armor
+#theme "iron"
+#theme "advanced"
+#enditem
+
+
+-- Low probability special armors
+
+#newitem
+#basechance 0.05
+#name "obsidian cuirass"
+#gameid 206
+#sprite /graphics/muuch/armor/small/obsidian_cuirass.png
+#armor
+#tag "tierunique"
+#chanceinc "personalcommand #sacred *5"
+#theme "obsidian"
+#enditem
+
+#newitem
+#basechance 0.025
+#name "obsidian armor"
+#gameid zotz_obsarmor
+#sprite /graphics/muuch/armor/small/obsidian.png
+#armor
+#tag "tierunique"
+#chanceinc "personalcommand #sacred *5"
+#theme "obsidian"
+#enditem
+
+#newitem
+#basechance 0.025
+#name "meteorite armor"
+#gameid 53
+#sprite /graphics/muuch/armor/small/meteorite.png
+#armor
+#tag "tierunique"
+#chanceinc "personalcommand #sacred *2"
+#theme "iron"
+#theme "advanced"
+#enditem

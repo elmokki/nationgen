@@ -57,6 +57,37 @@
 #endpose
 
 
+------ Mage priest - biggest (hero only)
+
+#newpose
+#name ageless_caster
+#role "mage"
+#role "priest"
+#warriormage
+#basechance 0
+#chanceinc moduleid herogen 1
+#chanceinc racetheme waxing *0.5
+#chanceinc racetheme waning *0.25
+#chanceinc racetheme nadir *0.1
+
+#tierunique
+#tier 3
+
+#command "#coldblood"
+#subrace "ageless one"
+#subraceprefix "ageless"
+
+#renderorder "shadow weapon cloakb basesprite legs armor cloakf offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/agarthan/generic_big/bases_ageless.txt
+
+#load armor /data/items/agarthan/generic_big/magearmor_ageless.txt
+
+#load cloakf /data/items/agarthan/generic_big/cloakf_ageless.txt
+#load cloakb /data/items/agarthan/generic_big/cloakb_ageless.txt
+
+#endpose
+
 --------  Warrior-mage (Olmspawn)
 
 #newpose
