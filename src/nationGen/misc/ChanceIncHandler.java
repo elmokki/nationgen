@@ -1991,7 +1991,27 @@ public class ChanceIncHandler {
 				else if(args.get(0).equals("racetheme") && args.size() > 2)
 				{
 
-					boolean contains = Generic.containsTag(u.race.themes, args.get(1));					
+					
+					boolean contains = Generic.containsTag(u.race.themes, args.get(1));		
+					if(!contains)
+					{
+						for(Filter fs : u.race.themefilters)
+						{
+							if(fs.name.equals(args.get(1)))
+							{
+								contains = true;
+								break;
+							}
+							else if(fs.themes.contains(args.get(1)))
+							{
+								contains = true;
+								break;
+							}
+							
+						}
+					}
+
+					
 					if(contains)
 					{
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));

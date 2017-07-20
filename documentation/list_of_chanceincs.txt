@@ -189,7 +189,10 @@ Info:	Applies modifier if item in given slot has given tag with given value.
 Race theme
 ------------------------
 Usage:	#chanceinc racetheme <theme> <mod>
-Info:	If the race of the unit in  question  has given tag, modifier is added.
+Info:	If the race of the unit in  question has any of following, modifier is added:
+	- Race has #theme <theme>
+	- Race has a theme filter called <theme>
+	- Race has a theme filter with theme <theme>	
 
 Unit theme
 ------------------------
