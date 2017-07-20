@@ -28,6 +28,7 @@ import java.util.Map.Entry;
 
 
 
+
 import com.elmokki.Drawing;
 import com.elmokki.Generic;
 
@@ -507,7 +508,8 @@ public class Nation {
             UnitFilterRestriction unitFilterRestriction = new UnitFilterRestriction(nationGen);
             UnitOfRaceRestriction unitOfRaceRestriction = new UnitOfRaceRestriction(nationGen);
 
-            List<Class> restrictionTypes = new ArrayList<>();
+            @SuppressWarnings("rawtypes")
+			List<Class> restrictionTypes = new ArrayList<>();
             restrictionTypes.add(primaryRaceRestriction.getClass());
             restrictionTypes.add(noPrimaryRaceRestriction.getClass());
             restrictionTypes.add(nationThemeRestriction.getClass());
@@ -522,6 +524,7 @@ public class Nation {
             restrictionTypes.clear();
             restrictionTypes.add(mageWithAccessRestriction.getClass());
             restrictionTypes.add(magicAccessRestriction.getClass());
+            restrictionTypes.add(magicDiversityRestriction.getClass());
             restrictionTypes.add(primaryRaceRestriction.getClass());
             
             generateMagesAndPriests();
