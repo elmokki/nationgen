@@ -152,10 +152,11 @@
 #chanceinc racetheme vinegrower 10
 #command "#copystats 361"
 #command "#copyspr 361"
-#command "#gcost 20"
+#command "#gcost 10"
 #command "#rcost 1"
 #command "#reclimit 3"
 #caponlychance 0.75
+#specifiedgcost
 #end
 
 #new
@@ -164,10 +165,11 @@
 #chanceinc racetheme vinegrower 5
 #command "#copystats 362"
 #command "#copyspr 362"
-#command "#gcost 40"
+#command "#gcost 25"
 #command "#rcost 1"
 #command "#reclimit 1"
 #caponlychance 0.9
+#specifiedgcost
 #end
 
 #new
@@ -176,11 +178,12 @@
 #chanceinc racetheme podslaver 5
 #command "#copystats 330"
 #command "#copyspr 330"
-#command "#gcost 100"
+#command "#gcost 50"
 #command "#rcost 1"
 #command "#reclimit 1"
 #command "#slow_to_recruit"
 #caponlychance 1
+#specifiedgcost
 #end
 
 #new
