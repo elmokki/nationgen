@@ -1,0 +1,460 @@
+--- Usable special stuff that may be badly documented
+--
+-- #pose role/name <thing>
+-- Uses poses of <thing> name or role
+--
+-- #requiredposetag <tag>
+-- #requiredposetheme <theme>
+-- Excludes poses without this tag/theme
+--
+-- #equipmenttargettag <tag>
+-- Equipment will have to have this tag when it is available. 
+-- This is for "tier 1-3" for mage/priest type poses, but themeincs work well as well.
+--
+-- #troop
+-- This is a troop instead of commander (I'm looking at you, communion slave)
+--
+-- Extra tip: #generateitem works here like it should in all filters/equipment
+-- Extra tip: Special commanders get #poorleader or #noleader if nothing is specified
+
+#new
+#name "forager-troop-stealthy"
+#command "#supplybonus +6"
+#command "#pillagebonus +1"
+#command "#stealthy +0"
+#command "#gcost +6"
+#command "#reclimit 3"
+#caponlychance 0
+#unitname "Hunter"
+#unitname "Forager"
+#unitname "Poacher"
+#unitname "Raider"
+#unitname "Bushwacker"
+#unitname "Skulker"
+#unitname "Bandit"
+#basechance 0.5
+#description "is skilled at acquiring supplies by means both fair and foul."
+#pose role ranged
+#equipmenttargettag light
+#generateitem 1 cloakb
+#troop
+#end
+
+#new
+#name "forager-troop-mounted"
+#command "#supplybonus +8"
+#command "#pillagebonus +1"
+#command "#gcost +8"
+#command "#reclimit 3"
+#caponlychance 0
+#unitname "Hunter"
+#unitname "Forager"
+#unitname "Outrider"
+#unitname "Raider"
+#unitname "Bandit"
+#basechance 0.5
+#description "is skilled at acquiring supplies by means both fair and foul."
+#pose role mounted
+#equipmenttargettag light
+#generateitem 1 cloakb
+#troop
+#end
+
+#new
+#name "frog summoner"
+#command "#makemonsters2 2222"
+#command "#batstartsum1 2222"
+#command "#supplybonus +10"
+#command "#magiccommand 5"
+#command "#gcost +30"
+#unitname "Frogherd"
+#unitname "Frog Farmer"
+#basechance 0.05
+#chanceinc magic nature 0.5
+#caponlychance 0.9
+#description "raises frogs for food and war."
+#theme occidental
+#theme austral
+#theme oriental
+#theme boreal
+#theme central
+#theme "toadtotem"
+#theme "totemanimal"
+#pose role scout
+#themeinc theme herder *25
+#themeinc theme peasant *25
+#themeinc theme leather *10
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +40"
+#possiblecommand stealth "#gcost +20"
+#end
+
+#new
+#name "wolfherd"
+#command "#makemonsters1 284"
+#command "#batstartsum1 284"
+#command "#supplybonus +10"
+#command "#gcost +30"
+#unitname "Wolfherd"
+#unitname "Wolf Trainer"
+#basechance 0.1
+#chanceinc magic nature 0.5
+#caponlychance 0.99
+#description "raises wolves for food and war."
+#theme occidental
+#theme austral
+#theme oriental
+#theme boreal
+#theme central
+#theme imperial
+#theme "wolftotem"
+#theme "totemanimal"
+#pose role scout
+#themeinc theme herder *25
+#themeinc theme peasant *25
+#themeinc theme leather *10
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +40"
+#possiblecommand stealth "#gcost +20"
+#end
+
+#new
+#name "dogherd"
+#command "#makemonsters1 1560"
+#command "#batstartsum1 1560"
+#command "#supplybonus +10"
+#command "#gcost +30"
+#unitname "Houndsmaster"
+#unitname "Dog Trainer"
+#basechance 0.2
+#chanceinc magic nature 0.5
+#caponlychance 0.95
+#description "raises dogs for food and war."
+#theme occidental
+#theme austral
+#theme oriental
+#theme boreal
+#theme central
+#theme imperial
+#pose role scout
+#themeinc theme herder *25
+#themeinc theme peasant *25
+#themeinc theme leather *10
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +40"
+#possiblecommand stealth "#gcost +20"
+#end
+
+#new
+#name "goatherd"
+#command "#makemonsters1 2227"
+#command "#batstartsum1 2227"
+#command "#supplybonus +15"
+#command "#gcost +30"
+#unitname "Shepherd"
+#unitname "Goatherd"
+#basechance 0.15
+#chanceinc magic nature 0.5
+#caponlychance 0.95
+#description "raises goats for food and war."
+#theme occidental
+#theme austral
+#theme oriental
+#theme boreal
+#theme central
+#theme imperial
+#pose role scout
+#themeinc theme herder *25
+#themeinc theme peasant *25
+#themeinc theme leather *10
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +40"
+#possiblecommand stealth "#gcost +20"
+#end
+
+#new
+#name "swanherd"
+#command "#makemonsters1 2929"
+#command "#batstartsum1 2929"
+#command "#supplybonus +15"
+#command "#gcost +30"
+#unitname "Swanherd"
+#unitname "Swan Keeper"
+#basechance 0.05
+#chanceinc magic nature water 0.5
+#caponlychance 0.99
+#description "raises swans for food and war."
+#theme boreal
+#theme imperial
+#theme "fae"
+#theme "swantotem"
+#theme "birdtotem"
+#theme "totemanimal"
+#pose role scout
+#themeinc theme herder *25
+#themeinc theme peasant *25
+#themeinc theme leather *10
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +40"
+#possiblecommand stealth "#gcost +20"
+#end
+
+#new
+#name "falconer"
+#command "#makemonsters1 517"
+#command "#batstartsum1 517"
+#command "#supplybonus +5"
+#command "#gcost +30"
+#unitname "Falconer"
+#unitname "Hawk Keeper"
+#unitname "Master of the Mews"
+#basechance 0.05
+#chanceinc magic air 0.5
+#caponlychance 0.99
+#description "raises hawks for food and war."
+#theme occidental
+#theme boreal
+#theme central
+#theme imperial
+#theme "hawktotem"
+#theme "birdtotem"
+#theme "totemanimal"
+#pose role scout
+#themeinc theme herder *25
+#themeinc theme peasant *25
+#themeinc theme leather *10
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +40"
+#possiblecommand stealth "#gcost +20"
+#end
+
+#new
+#name "monkey breeder"
+#command "#makemonsters1 1116"
+#command "#batstartsum1 1116"
+#command "#supplybonus +15"
+#command "#gcost +30"
+#unitname "Monkey Breeder"
+#unitname "Monkey Trainer"
+#basechance 0.05
+#chanceinc magic nature 0.5
+#caponlychance 0.9
+#description "raises small monkeys for food and war."
+#theme occidental
+#theme austral
+#theme oriental
+#theme imperial
+#theme "monkeytotem"
+#theme "totemanimal"
+#pose role scout
+#themeinc theme herder *25
+#themeinc theme peasant *25
+#themeinc theme leather *10
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +40"
+#possiblecommand stealth "#gcost +20"
+#end
+
+#new
+#name "ant summoner"
+#command "#makemonsters3 1087"
+#command "#batstartsum1 1087"
+#command "#supplybonus +10"
+#command "#magiccommand 5"
+#command "#gcost +30"
+#unitname "Antherd"
+#unitname "Ant Farmer"
+#basechance 0.0
+#chanceinc magic nature 0.125
+#caponlychance 0.8
+#description "raises large ants for food and war."
+#theme occidental
+#theme austral
+#theme oriental
+#theme boreal
+#theme central
+#theme imperial
+#theme abysian
+#theme "anttotem"
+#theme "totemanimal"
+#pose role scout
+#themeinc theme herder *25
+#themeinc theme peasant *25
+#themeinc theme leather *10
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +40"
+#possiblecommand stealth "#gcost +20"
+#end
+
+#new
+#name "red ant summoner"
+#command "#makemonsters2 2224"
+#command "#batstartsum1 2224"
+#command "#supplybonus +15"
+#command "#magiccommand 5"
+#command "#gcost +30"
+#unitname "Antherd"
+#unitname "Ant Farmer"
+#basechance 0.0
+#chanceinc magic nature 0.125
+#chanceinc magic fire 0.125
+#caponlychance 0.8
+#description "raises enormous ants for food and war."
+#theme occidental
+#theme austral
+#theme abysian
+#theme "anttotem"
+#theme "totemanimal"
+#pose role scout
+#themeinc theme herder *25
+#themeinc theme peasant *25
+#themeinc theme leather *10
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +40"
+#possiblecommand stealth "#gcost +20"
+#end
+
+#new
+#name "fly summoner"
+#command "#makemonsters3 2218"
+#command "#batstartsum1 2218"
+#command "#supplybonus +5"
+#command "#magiccommand 5"
+#command "#gcost +30"
+#unitname "Lord of the Flies"
+#unitname "Beetle Farmer"
+#unitname "Beetle Juicer"
+#basechance 0.0
+#chanceinc magic nature 0.125
+#chanceinc magic death 0.05
+#chanceinc magic nature death 1
+#caponlychance 0.8
+#description "raises enormous bugs for food and war."
+#theme occidental
+#theme austral
+#theme central
+#theme abysian
+#pose role scout
+#themeinc theme herder *25
+#themeinc theme peasant *25
+#themeinc theme leather *10
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +40"
+#possiblecommand stealth "#gcost +20"
+#end
+
+#new
+#name "dragonfly summoner"
+#command "#makemonsters3 591"
+#command "#batstartsum1 591"
+#command "#supplybonus +5"
+#command "#magiccommand 5"
+#command "#gcost +30"
+#unitname "Lord of the Dragonflies"
+#unitname "Dragonfly Keeper"
+#basechance 0.0
+#chanceinc magic nature 0.5
+#caponlychance 0.8
+#description "raises enormous dragonflies for food and war."
+#theme occidental
+#theme austral
+#theme oriental
+#theme boreal
+#theme central
+#theme imperial
+#theme fae
+#pose role scout
+#themeinc theme herder *25
+#themeinc theme peasant *25
+#themeinc theme leather *10
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +40"
+#possiblecommand stealth "#gcost +20"
+#end
+
+#new
+#name "spider summoner"
+#command "#makemonsters3 2223"
+#command "#batstartsum1 2223"
+#command "#supplybonus +10"
+#command "#magiccommand 5"
+#command "#gcost +30"
+#unitname "Spiderbreeder"
+#unitname "Web Master"
+#unitname "Lord of Spiders"
+#basechance 0.0
+#chanceinc magic nature 0.125
+#chanceinc "command #poisonres 0.075"
+#caponlychance 0.9
+#description "raises large spiders for food and war."
+#theme occidental
+#theme austral
+#theme "spidertotem"
+#theme "totemanimal"
+#pose role scout
+#themeinc theme herder *25
+#themeinc theme peasant *25
+#themeinc theme leather *10
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +40"
+#possiblecommand stealth "#gcost +20"
+#end
+
+#new
+#name "scorpion summoner"
+#command "#makemonsters3 2232"
+#command "#batstartsum1 2232"
+#command "#supplybonus +5"
+#command "#magiccommand 5"
+#command "#gcost +30"
+#unitname "Scorpion Trainer"
+#unitname "Scorpion Master"
+#unitname "Scorpionherd"
+#basechance 0.0
+#chanceinc magic earth 0.125
+#chanceinc magic death 0.05
+#chanceinc magic fire 0.05
+#chanceinc magic earth death 0.5
+#chanceinc magic earth fire 0.5
+#chanceinc "command #poisonres 0.075"
+#caponlychance 0.99
+#description "raises oversized scorpions for food and war."
+#theme occidental
+#theme austral
+#theme abysian
+#theme "scorpiontotem"
+#theme "totemanimal"
+#pose role scout
+#themeinc theme herder *25
+#themeinc theme peasant *25
+#themeinc theme leather *10
+#themeinc thisarmorprot 12 *0.25
+#themeinc thisarmorprot 10 *0.25
+#possiblecommandset stealth 0.25
+#possiblecommand stealth "#stealthy +40"
+#possiblecommand stealth "#gcost +20"
+#end

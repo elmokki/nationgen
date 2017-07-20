@@ -55,14 +55,13 @@
 #new
 #name "imp summoner"
 #command "#makemonsters1 303"
+#command "#poorundeadleader"
 #command "#gcost +30"
 #unitname "Imp Summoner"
 #basechance 0
 #chanceinc magic blood 0.5
 #caponlychance 1
 #description "is able to summon imps via ancient rituals."
-#theme "toadtotem"
-#theme "totemanimal"
 #pose role mage
 #themeinc theme cultist *10
 #themeinc thisitemtag "tier 1" *100
@@ -73,6 +72,7 @@
 #new
 #name "frog summoner"
 #command "#makemonsters2 2222"
+#command "#magiccommand 5"
 #command "#gcost +30"
 #unitname "Frogherd"
 #unitname "Frog Tamer"
@@ -185,6 +185,7 @@
 #new
 #name "ant summoner"
 #command "#makemonsters3 1087"
+#command "#magiccommand 5"
 #command "#gcost +30"
 #unitname "Antherd"
 #unitname "Ant Tamer"
@@ -209,6 +210,7 @@
 #new
 #name "fly summoner"
 #command "#makemonsters3 2218"
+#command "#magiccommand 5"
 #command "#gcost +30"
 #unitname "Lord of the Flies"
 #basechance 0.0
@@ -231,6 +233,7 @@
 #new
 #name "spider summoner"
 #command "#makemonsters3 2223"
+#command "#magiccommand 5"
 #command "#gcost +30"
 #unitname "Spiderbreeder"
 #unitname "Web Master"
@@ -256,6 +259,7 @@
 #new
 #name "scorpion summoner"
 #command "#makemonsters3 2232"
+#command "#magiccommand 5"
 #command "#gcost +30"
 #unitname "Scorpion Trainer"
 #unitname "Scorpion Master"
