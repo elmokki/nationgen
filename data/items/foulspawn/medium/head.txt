@@ -155,6 +155,27 @@
 #enditem
 
 #newitem
+#name "koi"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/koi.png
+#command "#gcost +0"
+#command "#hp +3"
+#command "#prot +0"
+#command "#mr +1"
+#command "#mor +3"
+#command "#att +0"
+#command "#def -1"
+#command "#prec -1"
+#command "#ap +0"
+#command "#amphibian"
+#command "#supplybonus -1"
+#needstype headweapon mightbite
+#itemslot head 0
+#type barehead
+#degenerate
+#enditem
+
+#newitem
 #name "shambler"
 #gameid -1
 #sprite /graphics/foulspawn/medium/head/shambler.png
@@ -363,6 +384,26 @@
 #needs bonusweapon firedrake
 #itemslot head 0
 #type barehead
+#enditem
+
+#newitem
+#basechance 2
+#name "ram"
+#gameid -1
+#sprite /graphics/foulspawn/medium/head/ram.png
+#command "#gcost +0"
+#command "#hp +1"
+#command "#prot +1"
+#command "#mr -2"
+#command "#mor +0"
+#command "#att +1"
+#command "#def +1"
+#command "#prec +0"
+#command "#ap +2"
+#needstype headweapon butt
+#itemslot head 0
+#type barehead
+#degenerate
 #enditem
 
 #newitem

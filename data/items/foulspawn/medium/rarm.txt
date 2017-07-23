@@ -138,3 +138,16 @@
 #type pincer
 #needs rhand none
 #enditem
+
+#newitem
+#name "mantis"
+#gameid -1
+#sprite /graphics/foulspawn/medium/rarm/mantis.png
+#command "#gcost +2"
+#command "#prot +2"
+#command "#hp -2"
+#command "#str -1"
+#command "#att +1"
+#type mantis
+#needs rhand none
+#enditem
