@@ -1394,6 +1394,20 @@
 
 --- NOSTR mount attacks
 
+-- Currently just camels, hence the length and modifiers
+#new customweapon
+#name "nostr_kick_12"
+#command "#att -1"
+#command "#def -1"
+#command "#dmg 12"
+#command "#len 2"
+#command "#nostr"
+#command "#bonus"
+#command "#name 'Kick'"
+#command "#blunt"
+#command "#natural"
+#end
+
 #new customweapon
 #name "nostr_bill_3"
 #command "#att 0"

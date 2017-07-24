@@ -616,6 +616,146 @@
 #theme "enlightened"
 #enditem
 
+#newitem
+#name "camel"
+#basechance 0.5
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/standard/camel.png
+#armor
+#offsetx 0
+#offsety 53
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 24"
+#define "#mounted"
+#define "#weapon nostr_kick_12"
+#define "#gcost +15"
+#define "#att +2"  --- Elevation
+#define "#def -1"  --- Wobbling gait
+#define "#prec -1"  --- Wobbling gait
+#define "#ressize 2"
+#define "#enc 3"
+#define "#supplybonus +1"
+#define "#wastesurvival"
+#tag "animal camel"
+#tag "maxprot 11"
+#theme "light"
+#epicness 0.25
+#theme "imperial"
+#theme "austral"
+#theme "oriental"
+#theme "enlightened"
+#enditem
+
+#newitem
+#name "barded camel"
+#basechance 0.5
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/standard/camel_barded.png
+#recolormask /graphics/mounts/standard/camel_barded_recolormask.png
+#armor
+#offsetx 0
+#offsety 53
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 24"
+#define "#mounted"
+#define "#weapon nostr_kick_12"
+#define "#gcost +15"
+#define "#att +2"  --- Elevation
+#define "#def -1"  --- Wobbling gait
+#define "#prec -1"  --- Wobbling gait
+#define "#ressize 2"
+#define "#enc 3"
+#define "#supplybonus +1"
+#define "#wastesurvival"
+#tag "animal camel"
+#tag "minprot 8"
+#tag "maxprot 12"
+#epicness 0.25
+#theme "imperial"
+#theme "austral"
+#theme "oriental"
+#theme "enlightened"
+#enditem
+
+#newitem
+#name "armored camel (iron)"
+#basechance 0.5
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/standard/camel_armored_iron.png
+#recolormask /graphics/mounts/standard/camel_armored_recolormask.png
+#armor
+#offsetx 0
+#offsety 53
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 20"
+#define "#mounted"
+#define "#weapon nostr_kick_12"
+#define "#gcost +25"
+#define "#rcost +5"
+#define "#att +2"  --- Elevation
+#define "#def -1"  --- Wobbling gait
+#define "#prec -1"  --- Wobbling gait
+#define "#ressize 2"
+#define "#enc 4"
+#define "#wastesurvival"
+#tag "animal camel"
+#theme "heavy"
+#theme "iron"
+#theme "imperial"
+#theme "austral"
+#theme "oriental"
+#theme "enlightened"
+#tag "minprot 12"
+#tag "maxprot 16"
+#enditem
+
+#newitem
+#name "armored camel (bronze)"
+#basechance 0.5
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/standard/camel_armored_bronze.png
+#recolormask /graphics/mounts/standard/camel_armored_recolormask.png
+#armor
+#offsetx 0
+#offsety 53
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 20"
+#define "#mounted"
+#define "#weapon nostr_kick_12"
+#define "#gcost +25"
+#define "#rcost +5"
+#define "#att +2"  --- Elevation
+#define "#def -1"  --- Wobbling gait
+#define "#prec -1"  --- Wobbling gait
+#define "#ressize 2"
+#define "#enc 4"
+#define "#wastesurvival"
+#tag "animal camel"
+#theme "heavy"
+#theme "bronze"
+#theme "imperial"
+#theme "austral"
+#theme "oriental"
+#theme "enlightened"
+#tag "minprot 12"
+#tag "maxprot 16"
+#enditem
 
 #newitem
 #basechance 0.1

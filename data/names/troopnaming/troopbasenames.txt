@@ -46,6 +46,7 @@
 #name "cavalier"
 #basechance 0
 #chanceinc "pose mounted 2"
+#chanceinc slottagvalue mount animal 'camel' *0
 #theme advanced
 #end
 
@@ -61,6 +62,7 @@
 #name "cavalry"
 #basechance 0
 #chanceinc "pose mounted 1"
+#chanceinc slottagvalue mount animal 'camel' *0
 #end
 
 #new 
@@ -68,6 +70,33 @@
 #basechance 0
 #chanceinc slottagvalue mount animal 'horse' 1
 #commandvariant #female horsemaiden
+#end
+
+#new 
+#name "equite"
+#basechance 0
+#chanceinc slottagvalue mount animal 'horse' 1
+#chanceinc racetheme not imperial *0
+#end
+
+#new 
+#name "camelry"
+#basechance 0
+#chanceinc slottagvalue mount animal 'camel' 1
+#end
+
+#new 
+#name "camelier"
+#basechance 0
+#chanceinc slottagvalue mount animal 'camel' 2
+#theme advanced
+#end
+
+#new 
+#name "dromedarii"
+#basechance 0
+#chanceinc slottagvalue mount animal 'camel' 4
+#chanceinc racetheme not imperial *0
 #end
 
 

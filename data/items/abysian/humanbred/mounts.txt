@@ -382,3 +382,59 @@
 #tag "name mounted cataphract"
 #epicness 0.25
 #enditem
+
+-- Camels
+
+#newitem
+#name "camel"
+#basechance 1
+#gameid -1
+#sprite /graphics/mounts/standard/camel.png
+#armor
+#offsetx 5
+#offsety 52
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 24"
+#define "#mounted"
+#define "#weapon nostr_kick_12"
+#define "#gcost +15"
+#define "#att +2"  --- Elevation
+#define "#def -1"  --- Wobbling gait
+#define "#prec -1"  --- Wobbling gait
+#define "#ressize 2"
+#define "#enc 3"
+#define "#supplybonus +1"
+#define "#wastesurvival"
+#tag "animal camel"
+#tag "maxprot 11"
+#theme "light"
+#enditem
+
+#newitem
+#name "armored camel"
+#basechance 1
+#gameid -1
+#sprite /graphics/mounts/standard/camel_armored_iron.png
+#recolormask /graphics/mounts/standard/camel_armored_recolormask.png
+#armor
+#offsetx 5
+#offsety 52
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 20"
+#define "#mounted"
+#define "#weapon nostr_kick_12"
+#define "#gcost +25"
+#define "#rcost +5"
+#define "#att +2"  --- Elevation
+#define "#def -1"  --- Wobbling gait
+#define "#prec -1"  --- Wobbling gait
+#define "#ressize 2"
+#define "#enc 4"
+#define "#wastesurvival"
+#tag "animal camel"
+#theme "heavy"
+#tag "minprot 12"
+#tag "maxprot 16"
+#enditem
