@@ -71,8 +71,6 @@
 #tag "name mounted knight"
 #enditem
 
-
-
 #newitem
 #basechance 0.4
 #name "catapract horse"
@@ -146,7 +144,6 @@
 #sacredextra 0.7
 #enditem
 
-
 #newitem
 #basechance 0.1
 #name "red guard horse"
@@ -169,6 +166,98 @@
 #theme "elite"
 #theme "heavy"
 #tag "minprot 12"
+#enditem
+
+#newitem
+#name "camel"
+#basechance 1.5
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/standard/camel.png
+#armor
+#offsetx 5
+#offsety 52
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 24"
+#define "#mounted"
+#define "#weapon nostr_kick_12"
+#define "#gcost +15"
+#define "#att +2"  --- Elevation
+#define "#def -1"  --- Wobbling gait
+#define "#prec -1"  --- Wobbling gait
+#define "#ressize 2"
+#define "#enc 3"
+#define "#supplybonus +1"
+#define "#wastesurvival"
+#tag "animal camel"
+#tag "maxprot 11"
+#theme "light"
+#epicness 0.25
+#enditem
+
+#newitem
+#name "barded camel"
+#basechance 1.5
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/standard/camel_barded.png
+#recolormask /graphics/mounts/standard/camel_barded_recolormask.png
+#armor
+#offsetx 5
+#offsety 52
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 24"
+#define "#mounted"
+#define "#weapon nostr_kick_12"
+#define "#gcost +15"
+#define "#att +2"  --- Elevation
+#define "#def -1"  --- Wobbling gait
+#define "#prec -1"  --- Wobbling gait
+#define "#ressize 2"
+#define "#enc 3"
+#define "#supplybonus +1"
+#define "#wastesurvival"
+#tag "animal camel"
+#tag "minprot 8"
+#tag "maxprot 12"
+#epicness 0.25
+#enditem
+
+#newitem
+#name "armored camel"
+#basechance 0.5
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/standard/camel_armored_iron.png
+#recolormask /graphics/mounts/standard/camel_armored_recolormask.png
+#armor
+#offsetx 5
+#offsety 52
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 20"
+#define "#mounted"
+#define "#weapon nostr_kick_12"
+#define "#gcost +25"
+#define "#rcost +5"
+#define "#att +2"  --- Elevation
+#define "#def -1"  --- Wobbling gait
+#define "#prec -1"  --- Wobbling gait
+#define "#ressize 2"
+#define "#enc 4"
+#define "#wastesurvival"
+#tag "animal camel"
+#theme "heavy"
+#tag "minprot 12"
+#tag "maxprot 16"
 #enditem
 
 #newitem
@@ -195,7 +284,6 @@
 #tag "guaranteedprefix unicorn"
 #basechance 0.5
 #enditem
-
 
 #newitem
 #name "unicorn"

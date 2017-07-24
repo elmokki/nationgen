@@ -22,6 +22,35 @@
 #enditem
 
 #newitem
+#name "camel"
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/standard/camel.png
+#armor
+#offsetx 5
+#offsety 35
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 24"
+#define "#mounted"
+#define "#weapon nostr_kick_12"
+#define "#gcost +15"
+#define "#att +2"  --- Elevation
+#define "#def -1"  --- Wobbling gait
+#define "#prec -1"  --- Wobbling gait
+#define "#ressize 2"
+#define "#enc 3"
+#define "#supplybonus +1"
+#define "#wastesurvival"
+#tag "animal camel"
+#tag "maxprot 11"
+#theme "light"
+#epicness 0.25
+#enditem
+
+#newitem
 #name "cavecow"
 #gameid -1
 #sprite /graphics/mounts/standard/cavecow.png
