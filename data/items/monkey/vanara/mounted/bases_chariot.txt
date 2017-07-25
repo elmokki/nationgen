@@ -50,6 +50,70 @@
 #enditem
 
 #newitem
+#name "camel chariot (iron)"
+#basechance 0.75
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel.png
+#armor
+#needs overlay chariot_camel_iron
+#offsetx 67
+#offsety -8
+#define "#trample"
+#define "#mounted"
+#define "#weapon nostr_kick_12"
+#define "#size 4"
+#define "#prot 5"
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#ressize 2"
+#define "#gcost +25"
+#define "#rcost +10"
+#define "#enc 4"
+#define "#supplybonus +1"
+#define "#wastesurvival"
+#tag "chariot"
+#tag "minprot 10"
+#tag "maxprot 15"
+#tag "animal 'camel'"
+#theme "iron"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "camel chariot (bronze)"
+#basechance 0.75
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel.png
+#armor
+#needs overlay chariot_camel_bronze
+#offsetx 67
+#offsety -8
+#define "#trample"
+#define "#mounted"
+#define "#weapon nostr_kick_12"
+#define "#size 4"
+#define "#prot 5"
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#ressize 2"
+#define "#gcost +25"
+#define "#rcost +10"
+#define "#enc 4"
+#define "#supplybonus +1"
+#define "#wastesurvival"
+#tag "chariot"
+#tag "minprot 10"
+#tag "maxprot 15"
+#tag "animal 'camel'"
+#theme "bronze"
+#theme "imperial"
+#enditem
+
+#newitem
 #name "lizard chariot h"
 #gameid -1
 #sprite /graphics/mounts/chariots/lizard.png
@@ -124,6 +188,38 @@
 #tag "minprot 10"
 #tag "maxprot 15"
 #tag "animal 'horse'"
+#theme "enlightened"
+#theme "oriental"
+#enditem
+
+#newitem
+#name "camel chariot (oriental)"
+#basechance 0.75
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel_oriental.png
+#armor
+#needs overlay chariot_camel_gilt
+#offsetx 67
+#offsety -8
+#define "#trample"
+#define "#mounted"
+#define "#weapon nostr_kick_12"
+#define "#size 4"
+#define "#prot 5"
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#ressize 2"
+#define "#gcost +25"
+#define "#rcost +10"
+#define "#enc 4"
+#define "#supplybonus +1"
+#define "#wastesurvival"
+#tag "chariot"
+#tag "minprot 10"
+#tag "maxprot 15"
+#tag "animal 'camel'"
 #theme "enlightened"
 #theme "oriental"
 #enditem
@@ -264,6 +360,67 @@
 #enditem
 
 #newitem
+#name "camel chariot iron he"
+#basechance 0.75
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel.png
+#armor
+#needs overlay chariot_camel_iron
+#offsetx 67
+#offsety -8
+#define "#trample"
+#define "#mounted"
+#define "#weapon nostr_kick_12"
+#define "#size 4"
+#define "#prot 5"
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#ressize 2"
+#define "#gcost +40"
+#define "#rcost +15"
+#define "#enc 5"
+#define "#wastesurvival"
+#tag "minprot 16"
+#tag "chariot"
+#tag "animal 'camel'"
+#theme "iron"
+#theme "imperial"
+#enditem
+
+
+#newitem
+#name "camel chariot bronze he"
+#basechance 0.75
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel.png
+#armor
+#needs overlay chariot_camel_bronze
+#offsetx 67
+#offsety -8
+#define "#trample"
+#define "#mounted"
+#define "#weapon nostr_kick_12"
+#define "#size 4"
+#define "#prot 5"
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#ressize 2"
+#define "#gcost +40"
+#define "#rcost +15"
+#define "#enc 5"
+#define "#wastesurvival"
+#tag "minprot 16"
+#tag "chariot"
+#tag "animal 'camel'"
+#theme "bronze"
+#theme "imperial"
+#enditem
+
+#newitem
 #name "lizard chariot he"
 #gameid -1
 #sprite /graphics/mounts/chariots/lizard.png
@@ -335,6 +492,36 @@
 #tag "chariot"
 #tag "minprot 16"
 #tag "animal 'horse'"
+#theme "enlightened"
+#theme "oriental"
+#enditem
+
+#newitem
+#name "camel chariot oriental he"
+#basechance 0.75
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel_oriental.png
+#armor
+#needs overlay chariot_camel_gilt
+#offsetx 67
+#offsety -8
+#define "#trample"
+#define "#mounted"
+#define "#weapon nostr_kick_12"
+#define "#size 4"
+#define "#prot 5"
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#ressize 2"
+#define "#gcost +40"
+#define "#rcost +15"
+#define "#enc 5"
+#define "#wastesurvival"
+#tag "minprot 16"
+#tag "chariot"
+#tag "animal 'camel'"
 #theme "enlightened"
 #theme "oriental"
 #enditem
