@@ -119,7 +119,7 @@
 #type demographic
 #name ettin
 #theme boreal
-#basechance 0
+#basechance 0.5
 #chanceinc primaryrace 'Boreal human' *5
 #themeinc theme advanced *0.5
 #themeinc theme iron *1
@@ -136,13 +136,9 @@
 #racedefinition "#nationcommand '#idealcold +1'"
 #racedefinition "#nationcommand '#gods europegods"
 #racedefinition "#boreal"
-#racedefinition "#visiblename 'Ettin'"
-
-#racedefinition "#pose ogretroops"
-#racedefinition "#pose ogremages"
-
--- #racedefinition "#pose ettinlingtroops"
--- #racedefinition "#pose ettinlingmages"
+#racedefinition "#visiblename 'Ettinling'"
+#racedefinition "#pose ettinlingtroops"
+#racedefinition "#pose ettinlingmages"
 -- #racedefinition "#pose ettins"
 #endtheme
 

@@ -1,0 +1,35 @@
+#newitem
+#id simple_orbstaff
+#gameid 7
+#sprite /graphics/avvim/weapon/caster/staff_orb_plain.png
+#offsetx 1
+#tag "eliteversion glowing_orbstaff"
+#tag "tier 2"
+#tag "tier 3"
+#renderprio 7
+#renderslot "bonusweapon"
+#enditem
+
+#newitem
+#id glowing_orbstaff
+#gameid 7
+#sprite /graphics/avvim/weapon/caster/staff_orb_plain.png
+#recolormask /graphics/avvim/weapon/caster/staff_orb_plain_recolormask.png
+#offsetx 1
+#tag "tier 3"
+#needs offhand none
+#renderprio 7
+#renderslot "bonusweapon"
+#enditem
+
+#newitem
+#id crook
+#gameid 7
+#sprite /graphics/avvim/weapon/caster/staff_crook.png
+#offsetx 2
+#offsety 1
+#tag "tier 2"
+#needs offhand none
+#renderprio 7
+#renderslot "bonusweapon"
+#enditem

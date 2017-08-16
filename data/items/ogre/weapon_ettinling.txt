@@ -1,0 +1,155 @@
+-- 3h weapons
+#newitem
+#id greatclub
+#gameid 165
+#basechance 0.5
+#sprite /graphics/ogre/weapon/greatclub_3h.png
+#offsetx -2
+#offsety -7
+#twohand
+#theme "primitive"
+#theme "wood"
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id maul
+#gameid 14
+#basechance 0.5
+#sprite /graphics/foulspawn/small/weapon/maul.png
+#offsetx -2
+#offsety -7
+#twohand
+#theme "primitive"
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id greataxe
+#gameid 18
+#basechance 0.5
+#sprite /graphics/foulspawn/small/weapon/greataxe.png
+#offsetx -2
+#offsety -7
+#chanceinc unittag irregular 8
+#twohand
+#theme "iron"
+#theme "primitive"
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id greatsword
+#gameid 11
+#basechance 0.5
+#sprite /graphics/foulspawn/small/weapon/greatsword.png
+#offsetx -2
+#offsety -7
+#twohand
+#theme "iron"
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id flail
+#gameid 16
+#basechance 0.5
+#sprite /graphics/advancedhuman/weapons/flail_1.png
+#offsetx -4
+#offsety -6
+#twohand
+#theme "iron"
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id spear
+#gameid 1
+#basechance 0.5
+#sprite /graphics/advancedhuman/weapons/spear.png
+#offsetx -4
+#offsety -6
+#twohand
+#theme "iron"
+#theme formationfighter
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id longspear
+#gameid 28
+#basechance 0.5
+#sprite /graphics/advancedhuman/weapons/longspear.png
+#offsetx -4
+#offsety -6
+#twohand
+#theme "iron"
+#theme formationfighter
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id pike
+#gameid 2
+#basechance 0.5
+#sprite /graphics/advancedhuman/weapons/pike.png
+#offsetx -4
+#offsety -6
+#twohand
+#theme "iron"
+#theme formationfighter
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id halberd
+#gameid 5
+#basechance 0.5
+#sprite /graphics/advancedhuman/weapons/halberd.png
+#offsetx -4
+#offsety -6
+#twohand
+#theme "iron"
+#theme "advanced"
+#minprot 8
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id lucernehammer
+#gameid lucernehammer
+#basechance 0.5
+#sprite /graphics/advancedhuman/weapons/lucernehammer.png
+#offsetx -4
+#offsety -6
+#twohand
+#theme "advanced"
+#theme "iron"
+#minprot 8
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id bardiche
+#gameid bardiche
+#basechance 0.5
+#sprite /graphics/advancedhuman/weapons/bardiche.png
+#offsetx -6
+#offsety -9
+#twohand
+#theme "iron"
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id trident
+#gameid 3
+#basechance 0.5
+#sprite /graphics/advancedhuman/weapons/trident.png
+#offsetx -4
+#offsety -6
+#twohand
+#theme "iron"
+#theme formationfighter
+#ignore_dw_restrictions
+#enditem

@@ -1,0 +1,82 @@
+-- Natural weapons
+
+#newitem
+#id fist
+#gameid 92
+#theme "primitive"
+#enditem
+
+-- 1h weapons
+#newitem
+#id club
+#gameid 252
+#sprite /graphics/ogre/weapon/club_oh.png
+#theme "primitive"
+#theme "wood"
+#enditem
+
+#newitem
+#id spiked_club
+#gameid 593
+#sprite /graphics/ogre/weapon/spikedclub_oh.png
+#theme "primitive"
+#theme "wood"
+#enditem
+
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/ogre/weapon/hatchet_oh.png
+#theme "primitive"
+#theme "iron"
+#enditem
+
+#newitem
+#id morningstar
+#gameid 15
+#sprite /graphics/ogre/weapon/morningstar_oh.png
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#id hammer
+#gameid 13
+#sprite /graphics/ogre/weapon/hammer_oh.png
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/ogre/weapon/mace_oh.png
+#theme "primitive"
+#enditem
+
+#newitem
+#id shortsword
+#gameid 6
+#sprite /graphics/highmen/weapons/offhand_shortsword.png
+#offsetx 4
+#offsety 2
+#theme "iron"
+#enditem
+
+#newitem
+#id broadsword
+#gameid 8
+#sprite /graphics/highmen/weapons/offhand_broadsword.png
+#offsetx 4
+#offsety 2
+#theme "iron"
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#sprite /graphics/highmen/weapons/offhand_falchion.png
+#offsetx 4
+#offsety 2
+#theme "iron"
+#enditem
