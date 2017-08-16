@@ -1,10 +1,28 @@
 #newitem
-#basechance 3
+#basechance 8
 #id barehead_ogres
 #gameid -1
 #armor
+#maxprot 12
 #theme "primitive"
 #theme "naked"
+#tier1
+#tier2
+#tier3
+#enditem
+
+#newitem
+#basechance 4
+#id hood
+#gameid 121
+#sprite /graphics/ogre/helmet/scouthood_ettinling.png
+#recolormask self
+#armor
+#maxprot 12
+#theme "leather"
+#notfortier1
+#tier2
+#tier3
 #enditem
 
 #newitem
@@ -15,17 +33,9 @@
 #armor
 #maxprot 12
 #theme "leather"
-#enditem
-
-#newitem
-#basechance 1
-#id ogres_leathercap_reinforced
-#gameid 119
-#sprite /graphics/foulspawn/medium/helmet/reinforcedcap.png
-#command "#rcost +1"
-#armor
-#maxprot 12
-#theme "leather"
+#tier1
+#notfortier2
+#notfortier3
 #enditem
 
 #newitem
@@ -36,33 +46,12 @@
 #command "#rcost +2"
 #armor
 #theme "iron"
+#notfortier1
+#tier2
+#tier3
 #enditem
 
 #newitem
-#basechance 0.5
-#id ogres_halfhelm
-#gameid 118
-#sprite /graphics/foulspawn/medium/helmet/halfhelm.png
-#command "#rcost +3"
-#armor
-#minprot 12
-#theme "iron"
-#enditem
-
-#newitem
-#basechance 0.5
-#id ogres_fullhelm
-#gameid 21
-#sprite /graphics/foulspawn/medium/helmet/fullhelm.png
-#command "#rcost +5"
-#armor
-#minprot 14
-#theme "iron"
-#theme "advanced"
-#enditem
-
-#newitem
-#basechance 0.5
 #id ogres_jingasa
 #gameid 131
 #sprite /graphics/foulspawn/medium/helmet/jingasa.png
@@ -72,11 +61,14 @@
 #armor
 #theme "oriental"
 #theme "iron"
+#minprot 9
 #maxprot 12
+#tier1
+#notfortier2
+#notfortier3
 #enditem
 
 #newitem
-#basechance 0.5
 #id ogres_kabuto
 #gameid 132
 #sprite /graphics/foulspawn/medium/helmet/kabuto.png
@@ -84,5 +76,8 @@
 #armor
 #theme "oriental"
 #theme "iron"
-#minprot 12
+#minprot 14
+#tier1
+#tier2
+#notfortier3
 #enditem

@@ -1,0 +1,37 @@
+#newitem
+#basechance 9
+#id hood
+#gameid 121
+#sprite /graphics/ogre/helmet/scouthood_ettinling.png
+#recolormask self
+#armor
+#theme "leather"
+#enditem
+
+#newitem
+#basechance 3
+#id barehead
+#gameid -1
+#armor
+#theme "primitive"
+#theme "naked"
+#enditem
+
+#newitem
+#basechance 1
+#id leathercaps
+#gameid 120
+#sprite /graphics/foulspawn/medium/helmet/leathercap.png
+#armor
+#theme "leather"
+#enditem
+
+#newitem
+#basechance 1
+#id leathercaps_reinforced
+#gameid 119
+#sprite /graphics/foulspawn/medium/helmet/reinforcedcap.png
+#command "#rcost +1"
+#armor
+#theme "iron"
+#enditem
