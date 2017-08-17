@@ -85,6 +85,26 @@ public class CustomItem extends Item {
 				continue;
 			
 
+			if(str.equals("blunt"))
+			{
+				str = "dt_blunt";
+				arg = "1";
+			}
+			if(str.equals("pierce"))
+			{
+				str = "dt_pierce";
+				arg = "1";
+			}
+			if(str.equals("slash"))
+			{
+				str = "dt_slash";
+				arg = "1";
+			}
+			if(str.equals("ironarmor"))
+			{
+				str = "ferrous";
+				arg = "1";
+			}
 			if(str.equals("secondaryeffectalways"))
 			{
 				str = "aeff#";
