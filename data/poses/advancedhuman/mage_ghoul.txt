@@ -1,0 +1,57 @@
+---------- Priests
+--- No legs, so do not use this pose for non-robe armors.
+
+#newpose
+#name "ghoul priest"
+#role "priest"
+
+#tier 1
+#tier 2
+#tier 3
+
+#load basesprite /data/items/advancedhuman/caster/bases_ghoul.txt
+#load shadow /data/items/human/normal/shadow.txt 1 0
+
+#load hands /data/items/advancedhuman/caster/hands_ghoul.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt 3 -2
+#load cloakb /data/items/human/normal/humancloakb.txt 3 -2
+
+#load helmet /data/items/human/caster/helmet.txt 3 -1
+#load helmet /data/items/advancedhuman/caster/priesthelmet.txt 3 -1
+#load armor /data/items/advancedhuman/caster/priestrobes.txt
+
+
+#load weapon /data/items/human/caster/weapon.txt 1 2
+#load offhand /data/items/human/caster/offhands.txt 2 0
+
+#endpose
+
+---------- Mages
+--- No legs, so do not use this pose for non-robe armors.
+
+#newpose
+#name "ghoul mage"
+#role "mage"
+
+#tier 1
+#tier 2
+#tier 3
+
+#load basesprite /data/items/advancedhuman/caster/bases_ghoul.txt
+#load shadow /data/items/advancedhuman/normal/shadow.txt 1 0
+
+#load hands /data/items/advancedhuman/caster/hands_ghoul.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt 3 -2
+#load cloakb /data/items/human/normal/humancloakb.txt 3 -2
+
+#load helmet /data/items/human/caster/helmet.txt 3 -1
+#load helmet /data/items/advancedhuman/caster/magehelmet.txt 3 -1
+#load helmet /data/items/advancedhuman/caster/priesthelmet.txt 3 -1
+#load armor /data/items/advancedhuman/caster/magerobes.txt
+
+#load weapon /data/items/human/caster/weapon.txt 1 2
+#load offhand /data/items/human/caster/offhands.txt 2 0
+
+#endpose

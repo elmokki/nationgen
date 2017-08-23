@@ -8,16 +8,18 @@
 #armor
 #theme "primitive"
 
-#define "#gcost +15"
+#define "#gcost +20"
 #define "#rcost +5"
 #define "#size 2"
 #define "#ressize 2"
 #define "#enc 1"
-#define "#hp +5"
+#define "#hp +25"
+#define "#hp *0.5"
 #define "#prot +8"
-#define "#str +5"
+#define "#str +7"
 #define "#def -5"
 #define "#mor 50"
+#adjustmentcommand "#mor 50"
 #define "#mapmove 3"
 #define "#prec *0.5"
 #define "#supplybonus *0"
@@ -26,8 +28,9 @@
 #define "#mounted"
 #define "#forestsurvival"
 #define "#neednoteat"
+#define "#mind"
 #define "#magicbeing"
-#define "#maxage *1.5"
+#define "#maxage *0.5"
 #description "These hoburgs have been infested with parasitic vines that sap their will but grant them strength and protection. "
 
 #needs hands parasite_hands

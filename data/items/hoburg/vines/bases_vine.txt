@@ -2,36 +2,33 @@
 #name "vine basesprite"
 #gameid -1
 #sprite /graphics/hoburg/basehoburg_clockwork_medium.png
-#recolormask /graphics/hoburg/basehoburg_clockwork_medium_recolormask.png
 #offsety 3
 #theme "boreal"
 #theme "central"
 #theme "occidental"
 #theme "oriental"
 #basechance 1
-#chanceinc theme austral *0.1
-#chanceinc theme abysian *0.1
+#chanceinc theme austral *0.01
+#chanceinc theme abysian *0.01
 #enditem
 
 #newitem
 #name "austral vine basesprite"
 #gameid -1
 #sprite /graphics/hoburg/basehoburg_clockwork_medium_austral.png
-#recolormask /graphics/hoburg/basehoburg_clockwork_medium_recolormask.png
 #offsety 3
 #theme "austral"
 #basechance 1
-#chanceinc theme not austral *0.1
+#chanceinc theme not austral *0.01
 #enditem
 
 #newitem
 #name "hoburgbred vine basesprite"
 #gameid -1
 #sprite /graphics/hoburg/basehoburg_clockwork_medium_hoburgbred.png
-#recolormask /graphics/hoburg/basehoburg_clockwork_medium_recolormask.png
 #offsety 3
 #theme "abysian"
-#chanceinc theme not abysian *0.1
+#chanceinc theme not abysian *0.01
 #basechance 1
 #define "#gcost +3"
 #define "#hp +2"

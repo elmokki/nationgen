@@ -1,0 +1,34 @@
+------- Mounted
+
+#newpose
+#name "ghoul cav"
+#role "mounted"
+#role "elite mounted"
+#role "sacred mounted"
+#sacred
+#basechance 0.375
+
+#baseitemslot feet 0
+
+#renderorder "shadow  weapon cloakb mount basesprite shirt legs armor cloakf bonusweapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/advancedhuman/mounted/bases_ghoul.txt 1 -4
+#load mount /data/items/advancedhuman/mounted/mounts_ghoul.txt
+
+#load cloakf /data/items/advancedhuman/mounted/cloakf.txt 1 -3
+#load cloakb /data/items/advancedhuman/mounted/cloakb.txt 1 -3
+
+#load armor /data/items/advancedhuman/mounted/armor.txt 1 -4
+#load helmet /data/items/advancedhuman/normal/helmet.txt 4 -16
+
+#load weapon /data/items/advancedhuman/mounted/weapon.txt 4 -21
+#load weapon /data/items/human/human_mounted/cavalryweapons.txt  5 -13
+#load bonusweapon /data/items/advancedhuman/mounted/bonusranged.txt 4 -16
+#load lanceslot /data/items/human/human_mounted/lance.txt 5 -13
+
+#load offhand /data/items/advancedhuman/normal/shields.txt -2 -18
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+
+#writeslot lanceslot
+#endpose
