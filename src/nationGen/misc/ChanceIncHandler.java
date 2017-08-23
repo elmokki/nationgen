@@ -768,6 +768,59 @@ public class ChanceIncHandler {
 						}
 					}
 				}
+				else if(args.get(0).equals("isferrousitem") && args.size() >= 2 && f.name != null)
+				{
+					boolean not = args.contains("not");
+					if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
+					{
+						Item i = (Item)f;
+						if(i.armor)
+						{
+							int ferrous = n.nationGen.armordb.GetInteger(i.id, "ferrous", 0);
+							if((ferrous == 1) != not)
+							{
+								applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+							}
+						}
+						else
+						{
+							int ferrous = n.nationGen.weapondb.GetInteger(i.id, "ironweapon", 0);
+							if((ferrous == 1) != not)
+							{
+								applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+							}
+						}
+					}
+				}
+				else if(args.get(0).equals("weaponuwpenalty") && args.size() >= 3 && f.name != null)
+				{
+					boolean below = args.contains("below");
+					if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
+					{
+						Item i = (Item)f;
+
+						int value = Integer.parseInt(args.get(args.size() - 2));
+						int penalty = 0;
+						
+						if(!i.armor)
+						{
+							int slash = n.nationGen.weapondb.GetInteger(i.id, "dt_slash", 0);
+							int blunt = n.nationGen.weapondb.GetInteger(i.id, "dt_blunt", 0);
+							int pierce = n.nationGen.weapondb.GetInteger(i.id, "dt_pierce", 0);
+							int lgt = n.nationGen.weapondb.GetInteger(i.id, "lgt", 0);
+
+							if(pierce == 0 && (blunt == 1 || slash == 1))
+								penalty = lgt;
+							else if(pierce == 1 && (blunt == 1 || slash == 1))
+								penalty = (int) Math.round((double)lgt / 2);
+							
+							if((penalty >= value) != below)
+							{
+								applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+							}
+						}
+					}
+				}
 				else if(args.get(0).equals("thisarmorprot") && args.size() >= 3 && f.name != null)
 				{
 					boolean below = args.contains("below");
@@ -1938,7 +1991,27 @@ public class ChanceIncHandler {
 				else if(args.get(0).equals("racetheme") && args.size() > 2)
 				{
 
-					boolean contains = Generic.containsTag(u.race.themes, args.get(1));					
+					
+					boolean contains = Generic.containsTag(u.race.themes, args.get(1));		
+					if(!contains)
+					{
+						for(Filter fs : u.race.themefilters)
+						{
+							if(fs.name.equals(args.get(1)))
+							{
+								contains = true;
+								break;
+							}
+							else if(fs.themes.contains(args.get(1)))
+							{
+								contains = true;
+								break;
+							}
+							
+						}
+					}
+
+					
 					if(contains)
 					{
 						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
