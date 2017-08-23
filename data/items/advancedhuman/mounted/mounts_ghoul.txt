@@ -1,0 +1,295 @@
+--- Base offsets are applied to everything except base and overlay
+
+
+#newitem
+#basechance 2
+#name "brown horse"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#armor
+#needs overlay 1
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 24"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#enc 2"
+#define "#gcost +15"
+#tag "animal horse"
+#theme "light"
+#tag "maxprot 11"
+#epicness 0.25
+#enditem
+
+#newitem
+#name "armored horse"
+#basechance 2
+#gameid -1
+#sprite /graphics/mounts/standard/armoredhorse1.png
+#armor
+#needs overlay 2
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 20"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#enc 3"
+#define "#rcost +5"
+#tag "animal horse"
+#theme "heavy"
+#theme "iron"
+#tag "minprot 14"
+#define "#gcost +25"
+#epicness 0.25
+#tag "name commander 'knight'"
+#tag "name mounted knight"
+#enditem
+
+#newitem
+#basechance 3
+#name "ghoul horse"
+#gameid -1
+#sprite /graphics/mounts/standard/ghoulhorse.png
+#armor
+#needs overlay ghoulhorse_overlay
+#define "#size 3"
+#define "#hp +4"
+#define "#mr -2"
+#define "#mapmove 3"
+#define "#ap 24"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#ressize 2"
+#define "#enc 0"
+#define "#gcost +15"
+#tag "animal horse"
+#theme "light"
+#tag "maxprot 11"
+#enditem
+
+#newitem
+#name "armored ghoul horse"
+#basechance 3
+#gameid -1
+#sprite /graphics/mounts/standard/ghoulhorse_armored.png
+#armor
+#needs overlay ghoulhorse_armored_overlay
+#define "#size 3"
+#define "#hp +6"
+#define "#mr -2"
+#define "#mapmove 2"
+#define "#ap 20"
+#define "#mounted"
+#define "#weapon 19 --- Bite"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#enc 0"
+#define "#rcost +5"
+#tag "animal horse"
+#theme "heavy"
+#theme "iron"
+#tag "minprot 14"
+#define "#gcost +25"
+#enditem
+
+#newitem
+#name " longdead horse"
+#gameid -1
+#offsetx 0
+#offsety 2
+#sprite /graphics/amazon/mounts/nightmare_equine.png
+#armor
+#needs overlay longdead_overlay
+#define "#size 3"
+#define "#mr -3"
+#define "#mapmove 4"
+#define "#ap 26"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#enc 0"
+#define "#gcost +15"
+#basechance 0.5
+#tag "animal horse"
+#theme "light"
+#tag "maxprot 13"
+#enditem
+
+#newitem
+#name "armored longdead horse"
+#gameid -1
+#offsetx 0
+#offsety 2
+#sprite /graphics/amazon/mounts/nightmare_equine_fullbarded2.png
+#armor
+#needs overlay longdead_armored_overlay
+#define "#size 3"
+#define "#hp +2"
+#define "#mr -3"
+#define "#mapmove 3"
+#define "#ap 25"
+#define "#mounted"
+#define "#weapon 56 --- Hoof"
+#define "#ressize 2"
+#define "#rcost +5"
+#define "#enc 0"
+#define "#gcost +25"
+#basechance 0.25
+#tag "animal horse"
+#theme "heavy"
+#theme "iron"
+#tag "minprot 14"
+#enditem
+
+#newitem
+#name "nightmare"
+#gameid -1
+#sprite /graphics/mounts/standard/nightmare.png
+#armor
+#offsety 1
+#define "#size 3"
+#define "#mapmove 4"
+#define "#ap 25"
+#define "#mounted"
+#define "#weapon 615 --- Heavy Hoof"
+#define "#secondtmpshape nightmare"
+#define "#gcost +40"
+#define "#ressize 2"
+#define "#enc 3"
+#define "#float"
+#tag "animal nightmare"
+#description "Leaves a nightmare behind when the rider dies"
+#basechance 0.25
+#tag "minprot 10"
+#sacredextra 0.5
+#enditem
+
+#newitem
+#name "great bear"
+#gameid -1
+#sprite /graphics/mounts/standard/bear.png
+#armor
+#define "#size 4"
+#define "#mapmove 3"
+#define "#ap 16"
+#define "#mounted"
+#define "#weapon 237 --- Bite"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape bearmount"
+#define "#gcost +40"
+#define "#ressize 2"
+#define "#enc 3"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#offsety -2
+#offsetx -1
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#enditem
+
+#newitem
+#name "bear"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_small.png
+#armor
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 14"
+#define "#mounted"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape smallbearmount"
+#define "#gcost +30"
+#define "#ressize 2"
+#define "#enc 3"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#offsety 6
+#offsetx -1
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 8"
+#enditem
+
+#newitem
+#basechance 0.1
+#name "scorpion"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 15
+#offsety 42
+#define "#size 5"
+#define "#mapmove 2"
+#define "#ap 8"
+#define "#mounted"
+#define "#weapon nostr_pincer"
+#define "#weapon nostr_scorpiontail"
+#define "#secondshape scorpionmount"
+#define "#gcost +50"
+#define "#ressize 2"
+#define "#enc 2"
+#define "#rcost +5"
+#tag "animal scorpion"
+#theme "heavy"
+#description "Leaves a giant scorpion behind when the rider dies"
+#tag "guaranteedprefix scorpion"
+#tag "minprot 10"
+#tag "maxprot 100"
+#chanceinc primaryrace abysian *100
+#enditem
+
+#newitem
+#basechance 0.1
+#name "fossil"
+#gameid -1
+#sprite /graphics/abysian/mounts/fossil.png
+#armor
+#needs overlay fossil_overlay
+#offsetx 34
+#offsety 31
+#define "#size 4"
+#define "#mapmove 3"
+#define "#ap 8"
+#define "#mounted"
+#define "#prot 5"
+#define "#okundeadleader"
+#define "#weapon nostr_fossilsword"
+#define "#secondshape fossilmount"
+#define "#gcost +50"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#rcost +5"
+#tag "animal fossil"
+#theme "heavy"
+#description "Leaves a fossilized giant behind when the rider dies"
+#tag "guaranteedprefix fossil"
+#tag "minprot 10"
+#tag "maxprot 100"
+#enditem
+
+#newitem
+#name "dire wolf"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#needs overlay direwolf1_overlay
+#define "#size 3"
+#define "#mapmove 2"
+#define "#ap 22"
+#define "#mounted"
+#define "#weapon 237 --- bite"
+#define "#secondtmpshape direwolf1mount"
+#define "#gcost +25"
+#define "#ressize 2"
+#define "#enc 3"
+#tag "animal wolf"
+#theme "light"
+#tag "maxprot 11"
+#tag "guaranteedprefix wolf"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#offsety 2
+#offsetx -7
+#enditem

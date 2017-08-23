@@ -81,6 +81,42 @@
 #basechance 0.25
 #end
 
+#new
+#name "exalted"
+#tag "notsuffix"
+#basechance 0.25
+#end
+
+#new
+#name "stalwart"
+#tag "notsuffix"
+#basechance 0.1
+#end
+
+#new
+#name "unyielding"
+#tag "notsuffix"
+#basechance 0.1
+#end
+
+#new
+#name "unwavering"
+#tag "notsuffix"
+#basechance 0.1
+#end
+
+#new
+#name "invincible"
+#tag "notsuffix"
+#basechance 0.1
+#end
+
+#new
+#name "immortal"
+#tag "notsuffix"
+#basechance 0.1
+#end
+
 
 --- Path specific
 
@@ -161,7 +197,7 @@
 #basechance 0
 #chanceinc "magic air 0.5"
 #chanceinc "taggedmagic air 2"
-#chanceinc "personalcommand #glamour 10"
+#chanceinc "personalcommand #illusion 10"
 #end
 
 #new
@@ -170,7 +206,7 @@
 #chanceinc "magic air 0.25"
 #chanceinc "taggedmagic air 1"
 #tag "notsuffix"
-#chanceinc "personalcommand #glamour 10"
+#chanceinc "personalcommand #illusion 10"
 #end
 
 #new
@@ -179,7 +215,7 @@
 #chanceinc "magic air 0.25"
 #chanceinc "taggedmagic air 1"
 #tag "notprefix"
-#chanceinc "personalcommand #glamour 10"
+#chanceinc "personalcommand #illusion 10"
 #end
 
 - Water
@@ -539,6 +575,20 @@
 #tag "notsuffix"
 #end
 
+#new
+#name "depraved"
+#basechance 0
+#chanceinc "magic blood 0.5"
+#chanceinc "taggedmagic blood 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "depravity"
+#basechance 0
+#chanceinc "magic blood 0.5"
+#chanceinc "taggedmagic blood 2"
+#end
 
 #new
 #name "blood"
@@ -579,6 +629,22 @@
 #end
 
 
+--- Crosspaths
+#new
+#name "inferno"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic blood fire 3"
+#chanceinc "taggedmagic blood fire 15"
+#end
+
+#new
+#name "steam"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic fire air 3"
+#chanceinc "taggedmagic fire air 15"
+#end
 
 #new
 #name "acid"
@@ -629,28 +695,6 @@
 #chanceinc "taggedmagic earth nature 15"
 #end
 
-
-
---- Crosspaths
-
-#new
-#name "inferno"
-#basechance 0
-#tag "notsuffix"
-#chanceinc "magic blood fire 3"
-#chanceinc "taggedmagic blood fire 15"
-#end
-
-#new
-#name "steam"
-#basechance 0
-#tag "notsuffix"
-#chanceinc "magic fire air 3"
-#chanceinc "taggedmagic fire air 15"
-#end
-
-
-
 #new
 #name "firstborn"
 #basechance 0
@@ -660,12 +704,28 @@
 #end
 
 #new
+#name "foul"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic blood nature 3"
+#chanceinc "taggedmagic blood nature 15"
+#end
+
+#new
+#name "debauchery"
+#basechance 0
+#chanceinc "magic blood nature 3"
+#chanceinc "taggedmagic blood nature 15"
+#end
+
+#new
 #name "ancient"
 #basechance 0
 #chanceinc "magic nature blood 3"
 #chanceinc "taggedmagic nature blood 15"
 #tag "notsuffix"
 #end
+
 
 --- Other
 
@@ -700,7 +760,6 @@
 #tag "notsuffix"
 #end
 
-
 #new
 #name "night"
 #basechance 0
@@ -719,6 +778,79 @@
 #name "translucent"
 #basechance 0
 #chanceinc "personalcommand #ethereal 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "abstract"
+#basechance 0
+#chanceinc "personalcommand #ethereal 5"
+#tag "notsuffix"
+#end
+
+#new
+#name "ethereal"
+#basechance 0
+#chanceinc "personalcommand #ethereal 5"
+#tag "notsuffix"
+#end
+
+#new
+#name "ephemeral"
+#basechance 0
+#chanceinc "personalcommand #ethereal 5"
+#tag "notsuffix"
+#end
+
+#new
+#name "vague"
+#basechance 0
+#chanceinc "personalcommand #ethereal 5"
+#tag "notsuffix"
+#end
+
+#new
+#name "illusory"
+#basechance 0
+#chanceinc "personalcommand #illusion 5"
+#chanceinc "race vanir *0.2"
+#chanceinc "race sidhe *0.2"
+#tag "notsuffix"
+#end
+
+#new
+#name "enigmatic"
+#basechance 0
+#chanceinc "personalcommand #illusion 5"
+#chanceinc "race vanir *0.2"
+#chanceinc "race sidhe *0.2"
+#tag "notsuffix"
+#end
+
+#new
+#name "fair"
+#basechance 0
+#chanceinc "personalcommand #illusion 5"
+#chanceinc "race vanir *0.1"
+#chanceinc "race sidhe *2"
+#tag "notsuffix"
+#end
+
+#new
+#name "obscure"
+#basechance 0
+#chanceinc "personalcommand #illusion 5"
+#chanceinc "race vanir *0.2"
+#chanceinc "race sidhe *0.2"
+#tag "notsuffix"
+#end
+
+#new
+#name "abstruse"
+#basechance 0
+#chanceinc "personalcommand #illusion 5"
+#chanceinc "race vanir *0.2"
+#chanceinc "race sidhe *0.2"
 #tag "notsuffix"
 #end
 
@@ -775,14 +907,12 @@
 #tag "notsuffix"
 #end
 
-
 #new
 #name "primal"
 #basechance 0
 #chanceinc "personalcommand #berserk 10"
 #tag "notsuffix"
 #end
-
 
 #new
 #name "furious"

@@ -3,32 +3,22 @@
 #visiblename "Human"
 #basechance 0.25
 
-#all_troops_sacred
-#all_troops_elite
+#racethemes advancedhuman_themes
+#freetheme demographic
 
-#pose advancedinfantry
-#pose advancedranged
-#pose advancedcavalry
-#pose advancedmage
-
-#longsyllables /data/names/nations/romance/longsyllables.txt
-#shortsyllables /data/names/nations/romance/shortsyllables.txt
-#suffixes /data/names/nations/romance/suffixes.txt
-
--- Always have shirt, 5% chance for hair
-#generateitem 1 shirt
-#generateitem 0.05 hair
+#spritegenpose advancedinfantry
+#spritegenpose advancedranged
+#spritegenpose advancedcavalry
+#spritegenpose advancedmage
+#spritegenpose ghoulinfantry
+#spritegenpose ghoulcavalry
+#spritegenpose ghoulmage
 
 #preferredmount horse
 
 #magicpatterns defaultprimary
 #magicpatterns defaultsecondary
 #magicpatterns defaulttertiary
-
-#magicpriority earth 4
-#magicpriority nature 0.075
-
-#unitcommand "#nametype 114"
 
 #gods europegods
 

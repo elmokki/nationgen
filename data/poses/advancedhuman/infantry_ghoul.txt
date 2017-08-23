@@ -1,0 +1,97 @@
+
+-------- Normal
+
+#newpose
+#name "ghoul inf"
+#role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
+#sacred
+
+#renderorder "shadow cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon cloakf offhandw hands helmet offhanda overlay"
+
+#load basesprite /data/items/advancedhuman/normal/bases_ghoul.txt
+#load shadow /data/items/human/normal/shadow.txt 2 0
+
+#load hands /data/items/advancedhuman/normal/hands_ghoul.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt 2 0
+#load cloakb /data/items/human/normal/humancloakb.txt 2 0
+#load shirt /data/items/advancedhuman/normal/shirt.txt
+
+#load armor /data/items/advancedhuman/normal/armor.txt
+#load armor /data/items/advancedhuman/normal/armor_elite.txt
+#load armor /data/items/advancedhuman/normal/orientalarmor.txt
+#load helmet /data/items/advancedhuman/normal/helmet.txt
+#load legs /data/items/advancedhuman/normal/legs.txt
+
+#load weapon /data/items/advancedhuman/normal/weapon.txt
+#load weapon /data/items/human/normal/standards.txt 5 0
+#load bonusweapon /data/items/advancedhuman/normal/bonusranged.txt 2 1
+
+#load offhand /data/items/advancedhuman/normal/offhand.txt
+#load offhand /data/items/advancedhuman/normal/shields.txt
+#load offhand /data/items/human/sacredstuff/sacredoffhand.txt 3 1
+#load offhand /data/items/advancedhuman/normal/towershields.txt
+
+#endpose
+
+
+-------- Degenerates
+
+#newpose
+#name "ghoul militia"
+#role "infantry"
+
+#renderorder "shadow cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon cloakf offhandw hands helmet offhanda overlay"
+
+#load basesprite /data/items/advancedhuman/normal/bases_ghoul_degenerate.txt
+#load shadow /data/items/human/normal/shadow.txt 2 0
+
+#load hands /data/items/advancedhuman/normal/hands_ghoul.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt 2 0
+#load cloakb /data/items/human/normal/humancloakb.txt 2 0
+
+#load armor /data/items/advancedhuman/normal/armor.txt
+#load helmet /data/items/advancedhuman/normal/helmet.txt
+#load legs /data/items/advancedhuman/normal/legs.txt
+
+#load weapon /data/items/advancedhuman/normal/weapon.txt
+#load weapon /data/items/advancedhuman/normal/claw.txt
+
+#load offhand /data/items/advancedhuman/normal/offhand.txt
+#load weapon /data/items/advancedhuman/normal/claw_oh.txt
+
+#endpose
+
+
+------------- scout
+
+#newpose
+#name "ghoul scout"
+#role "scout"
+
+#renderorder "shadow cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon cloakf helmet offhandw hands offhanda overlay"
+
+#load basesprite /data/items/advancedhuman/normal/bases_ghoul.txt
+#load shadow /data/items/human/normal/shadow.txt 2 0
+
+#load hands /data/items/advancedhuman/normal/hands_ghoul.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt 2 0
+#load cloakb /data/items/human/normal/humancloakb.txt 2 0
+#load shirt /data/items/advancedhuman/normal/shirt.txt
+
+#load armor /data/items/advancedhuman/normal/armor.txt
+#load helmet /data/items/advancedhuman/scout/helmet.txt
+#load legs /data/items/advancedhuman/normal/legs.txt
+
+#load weapon /data/items/advancedhuman/normal/weapon.txt
+#load weapon /data/items/advancedhuman/normal/claw.txt
+#load bonusweapon /data/items/advancedhuman/normal/bonusranged.txt 2 1
+
+#load offhand /data/items/advancedhuman/normal/offhand.txt
+#load weapon /data/items/advancedhuman/normal/claw_oh.txt
+
+#endpose
