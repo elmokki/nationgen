@@ -93,8 +93,7 @@ public class PreviewGenerator {
 			}
 		}
 	
-		FlagGen fg = new FlagGen(n);
-		BufferedImage flag = fg.generateFlag(n);
+		BufferedImage flag = n.flag;
 
 		g.setColor(new Color(0, 0, 0));
 		g.fillRect(0, 0, 256, 64);
@@ -130,7 +129,6 @@ public class PreviewGenerator {
 		
 		img = null;
 		g = null;
-		fg = null;
 		troops = null;
 	}
 	
