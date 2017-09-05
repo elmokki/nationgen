@@ -62,6 +62,29 @@
 #command "#name 'Bronze Scale Barding'"
 #end
 
+--- Additional bone armors
+
+#new customarmor
+#name bone_hauberk
+#armor
+#command "#type 5"
+#command "#prot 13"
+#command "#def -2"
+#command "#enc 2"
+#command "#rcost 6"
+#command "#name 'Bone Hauberk'"
+#end
+
+#new customarmor
+#name bone_full
+#armor
+#command "#type 5"
+#command "#prot 15"
+#command "#def -3"
+#command "#enc 3"
+#command "#rcost 9"
+#command "#name 'Heavy Bone Armor'"
+#end
 
 --- Additional ice armors
 
