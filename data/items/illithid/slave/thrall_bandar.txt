@@ -1,0 +1,90 @@
+#newitem
+#name "lowland bandar"
+#chanceinc "secondaryracetheme lowland *1000"
+#gameid -1
+#sprite /graphics/illithid/slave/thrall_bandar_lowland.png
+#command "#gcost 18"
+#command "#hp 18"
+#command "#size 3"
+#command "#mr 8"
+#command "#prot 3"
+#command "#mor 50"
+#command "#str 15"
+#command "#att 11"
+#command "#def 9"
+#command "#prec 9"
+#command "#enc 3"
+#command "#mapmove 2"
+#command "#ap 10"
+#command "#animal"
+#command "#maxage 50"
+#bitey
+#enditem
+
+#newitem
+#name "wingless bandar"
+#chanceinc "secondaryracetheme winged *1000"
+#gameid -1
+#sprite /graphics/illithid/slave/thrall_bandar_wingless.png
+#command "#gcost 18"
+#command "#hp 18"
+#command "#mr 10"
+#command "#prot 3"
+#command "#mor 50"
+#command "#str 14"
+#command "#att 11"
+#command "#def 9"
+#command "#prec 9"
+#command "#enc 3"
+#command "#mapmove 2"
+#command "#ap 10"
+#command "#maxage 55"
+#command "#animal"
+#command "#startingaff 67108864"
+#bitey
+#enditem
+
+#newitem
+#name "bandarbred"
+#chanceinc "secondaryracetheme abysian *1000"
+#gameid -1
+#sprite /graphics/illithid/slave/thrall_bandar_bandarbred.png
+#command "#gcost 21"
+#command "#hp 20"
+#command "#mr 9"
+#command "#prot 3"
+#command "#mor 50"
+#command "#str 16"
+#command "#att 11"
+#command "#def 8"
+#command "#prec 7"
+#command "#enc 3"
+#command "#mapmove 2"
+#command "#ap 10"
+#command "#maxage 40"
+#command "#fireres 15"
+#bitey
+#enditem
+
+#newitem
+#name "alpine bandar"
+#chanceinc "secondaryracetheme alpine *1000"
+#gameid -1
+#sprite /graphics/illithid/slave/thrall_bandar_alpine.png
+#command "#gcost 19"
+#command "#hp 18"
+#command "#mr 9"
+#command "#prot 4"
+#command "#mor 50"
+#command "#str 15"
+#command "#att 11"
+#command "#def 9"
+#command "#prec 9"
+#command "#enc 3"
+#command "#mapmove 2"
+#command "#ap 10"
+#command "#maxage 50"
+#command "#animal"
+#command "#coldres 15"
+#bitey
+#enditem

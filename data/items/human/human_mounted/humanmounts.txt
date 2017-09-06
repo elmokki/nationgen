@@ -200,6 +200,31 @@
 #enditem
 
 #newitem
+#name "peryton"
+#basechance 0.25
+#gameid -1
+#sprite /graphics/mounts/standard/peryton2.png
+#needs overlay peryton2_overlay
+#armor
+#offsetx -2
+#offsety 2
+#define "#size 4"
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#mounted"
+#define "#flying"
+#define "#weapon 354 --- Antlers"
+#define "#gcost +50"
+#define "#ressize 2"
+#define "#enc 4"
+#theme "flying"
+#tag "animal peryton"
+#tag "name commander windlord"
+#tag "guaranteedprefix peryton"
+#sacredextra 0.7
+#enditem
+
+#newitem
 #basechance 3
 #name "red guard horse"
 #gameid -1
@@ -499,6 +524,31 @@
 #description "Leaves a moose behind when the rider dies"
 #enditem
 
+#newitem
+#name "elk"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/mounts/standard/elk.png
+#needs overlay elk_overlay
+#armor
+#offsetx -2
+#offsety 2
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 354"
+#define "#gcost +20"
+#define "#ressize 2"
+#define "#rcost +4"
+#define "#enc 4"
+#define "#secondtmpshape elk"
+#tag "animal elk"
+#tag "minprot 0"
+#tag "maxprot 14"
+#tag "guaranteedprefix elk"
+#description "Leaves an elk behind when the rider dies"
+#enditem
 
 #newitem
 #name "nightmare"
@@ -527,6 +577,31 @@
 #name "great bear"
 #gameid -1
 #sprite /graphics/mounts/standard/bear.png
+#armor
+#define "#size 4"
+#define "#mapmove 3"
+#define "#ap 16"
+#define "#mounted"
+#define "#weapon 237 --- Bite"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape bearmount"
+#define "#gcost +40"
+#define "#ressize 2"
+#define "#enc 4"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#offsety -2
+#offsetx -1
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#enditem
+
+#newitem
+#name "ice bear"
+#gameid -1
+#chanceinc "nationcommand #idealcold below 2 *0"
+#sprite /graphics/mounts/standard/bear_polar.png
 #armor
 #define "#size 4"
 #define "#mapmove 3"
