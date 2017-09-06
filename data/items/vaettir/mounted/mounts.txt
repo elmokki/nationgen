@@ -85,6 +85,37 @@
 #enditem
 
 #newitem
+#name "elk"
+#basechance 0.25
+#gameid -1
+#sprite /graphics/mounts/standard/elk.png
+#needs overlay elk_overlay
+#armor
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 22"
+#define "#mounted"
+#define "#weapon 354 --- antlers"
+#define "#gcost +20"
+#define "#ressize 1"
+#define "#rcost +4"
+#define "#enc 3"
+#define "#secondtmpshape elk"
+#tag "animal elk"
+#theme "heavy"
+#theme "deer"
+#theme "deertotem"
+#theme "totemanimal"
+#tag "minprot 8"
+#tag "maxprot 18"
+#tag "guaranteedprefix elk"
+#define "#stealthy +0"
+#description "Leaves an elk behind when the rider dies"
+#offsety -20
+#offsetx 0
+#enditem
+
+#newitem
 #name "deer"
 #gameid -1
 #sprite /graphics/hoburg/mounts/deer.png

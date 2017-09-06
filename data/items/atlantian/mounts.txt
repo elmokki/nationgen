@@ -27,6 +27,32 @@
 #enditem
 
 #newitem
+#name "elk"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/mounts/standard/elk.png
+#needs overlay elk_overlay
+#armor
+#offsetx 0
+#offsety -14
+#define "#size 3"
+#define "#mapmove 3"
+#define "#ap 18"
+#define "#mounted"
+#define "#weapon 354"
+#define "#gcost +20"
+#define "#ressize 2"
+#define "#rcost +4"
+#define "#enc 4"
+#define "#secondtmpshape elk"
+#tag "animal elk"
+#tag "minprot 0"
+#tag "maxprot 14"
+#tag "guaranteedprefix elk"
+#description "Leaves an elk behind when the rider dies"
+#enditem
+
+#newitem
 #name "great bear"
 #gameid -1
 #sprite /graphics/mounts/standard/bear.png
@@ -40,6 +66,30 @@
 #define "#weapon 237 --- Bite"
 #define "#weapon 236 -- Claw"
 #define "#secondtmpshape bearmount"
+#define "#gcost +40"
+#define "#ressize 2"
+#define "#enc 4"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#enditem
+
+#newitem
+#name "polar bear"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_polar.png
+#offsetx -4
+#offsety -19
+#armor
+#define "#size 4"
+#define "#mapmove 3"
+#define "#ap 16"
+#define "#mounted"
+#define "#weapon 237 --- Bite"
+#define "#weapon 236 -- Claw"
+#define "#secondtmpshape bearmount_polar"
 #define "#gcost +40"
 #define "#ressize 2"
 #define "#enc 4"

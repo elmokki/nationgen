@@ -1094,6 +1094,37 @@
 #end
 
 #new secondshape
+#name "bearmount_polar"
+#command "#spr1 ./graphics/mounts/standard/bear_polar.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Ice Bear'"
+#command "#weapon 20 --- Bite"
+#command "#weapon 29 -- Claw"
+#command "#size 4"
+#command "#hp 40"
+#command "#prot 8"
+#command "#mr 8"
+#command "#mor 13"
+#command "#str 19"
+#command "#att 9"
+#command "#def 7"
+#command "#prec 5"
+#command "#enc 3"
+#command "#mapmove 3"
+#command "#ap 16"
+#command "#animal"
+#command "#undisciplined"
+#command "#coldres 25"
+#command "#wastesurvival"
+#command "#itemslots 12288"
+#command "#transformation 0"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
 #name "smallbearmount"
 #command "#spr1 ./graphics/mounts/standard/bear_small.png"
 #command "#spr2 ./graphics/mounts/standard/bear_small_upright.png"
@@ -1155,6 +1186,38 @@
 #command "#copyspr 1084"
 #command "#itemslots 12288"
 #command "#magicboost 53 -5"
+#command "#transformation 0"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "elk"
+#command "#spr1 ./graphics/mounts/standard/elk.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Elk'"
+#command "#weapon 397 --- Kick"
+#command "#weapon 354 -- Antlers"
+#command "#size 3"
+#command "#hp 25"
+#command "#prot 3"
+#command "#mr 5"
+#command "#mor 8"
+#command "#str 12"
+#command "#att 9"
+#command "#def 9"
+#command "#prec 5"
+#command "#enc 3"
+#command "#mapmove 3"
+#command "#ap 23"
+#command "#maxage 14"
+#command "#stealthy 0"
+#command "#animal"
+#command "#undisciplined"
+#command "#forestsurvival"
+#command "#itemslots 12288"
 #command "#transformation 0"
 #nowayback
 #nogcost
