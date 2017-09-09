@@ -506,7 +506,7 @@
 #sprite /graphics/mounts/standard/bigspider.png
 #armor
 #offsetx 35
-#offsety -8
+#offsety 58
 #define "#size 6"
 #define "#mapmove 2"
 #define "#ap 14"
@@ -858,8 +858,9 @@
 #gameid -1
 #sprite /graphics/abysian/mounts/scorpion.png
 #armor
-#offsetx 15
-#offsety 42
+#offsetx 20
+#offsety 6
+#needs overlay scorpion_overlay
 #define "#size 5"
 #define "#mapmove 2"
 #define "#ap 8"
