@@ -304,7 +304,7 @@
 #sprite /graphics/mounts/standard/bigspider.png
 #armor
 #offsetx 35
-#offsety -8
+#offsety 58
 #define "#size 6"
 #define "#mapmove 2"
 #define "#ap 14"
@@ -324,7 +324,33 @@
 #sacredextra nonholyshape 0.7
 #enditem
 
-
+#newitem
+#name "scorpion"
+#gameid -1
+#chanceinc "nationcommand #idealcold above 0 *0"
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 23
+#offsety 6
+#needs overlay scorpion_overlay
+#define "#size 5"
+#define "#mapmove 2"
+#define "#ap 8"
+#define "#mounted"
+#define "#weapon nostr_pincer"
+#define "#weapon nostr_scorpiontail"
+#define "#secondshape scorpionmount"
+#define "#gcost +50"
+#define "#ressize 2"
+#define "#enc 3"
+#define "#rcost +5"
+#tag "animal scorpion"
+#theme "heavy"
+#description "Leaves a giant scorpion behind when the rider dies"
+#tag "guaranteedprefix scorpion"
+#tag "minprot 10"
+#tag "maxprot 100"
+#enditem
 
 
 #newitem
