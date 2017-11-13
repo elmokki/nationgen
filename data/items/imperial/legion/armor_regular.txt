@@ -1,0 +1,212 @@
+--- Leather
+#newitem
+#name "nothing"
+#gameid -1
+#armor
+#theme naked
+#theme primitive
+#theme light
+#enditem
+
+#newitem
+#name "tunic"
+#gameid -1
+#armor
+#theme cloth
+#theme light
+#eliteversion "linen cuirass gilt"
+#eliteversion "leather cuirass gilt"
+#enditem
+
+#newitem
+#name "furs"
+#gameid 44
+#sprite /graphics/imperial/legion/armor/furs.png
+#armor
+#theme primitive
+#theme light
+#enditem
+
+#newitem
+#name "linen cuirass"
+#gameid 183
+#sprite /graphics/imperial/legion/armor/linen_cuirass.png
+#armor
+#theme cloth
+#theme light
+#eliteversion "linen cuirass gilt"
+#eliteversion "leather cuirass gilt"
+#enditem
+
+#newitem
+#name "linen cuirass gilt"
+#gameid 183
+#sprite /graphics/imperial/legion/armor/linen_cuirass_gilt.png
+#armor
+#theme cloth
+#theme elite
+#theme light
+#eliteversion "plate cuirass gilt"
+#enditem
+
+#newitem
+#name "leather cuirass"
+#gameid 5
+#sprite /graphics/imperial/legion/armor/leather_cuirass.png
+#armor
+#theme leather
+#theme light
+#eliteversion "leather cuirass gilt"
+#eliteversion "leather hauberk gilt"
+#enditem
+
+#newitem
+#name "leather cuirass gilt"
+#gameid 5
+#sprite /graphics/imperial/legion/armor/leather_cuirass_gilt.png
+#armor
+#theme leather
+#theme elite
+#theme light
+#eliteversion "leather hauberk gilt"
+#eliteversion "plate cuirass gilt"
+#enditem
+
+#newitem
+#name "leather hauberk"
+#gameid 10
+#sprite /graphics/imperial/legion/armor/leather_hauberk.png
+#armor
+#theme leather
+#theme light
+#theme medium
+#eliteversion "leather hauberk gilt"
+#eliteversion "plate cuirass gilt"
+#enditem
+
+#newitem
+#name "leather hauberk gilt"
+#gameid 10
+#sprite /graphics/imperial/legion/armor/leather_hauberk_gilt.png
+#armor
+#theme leather
+#theme elite
+#theme light
+#theme medium
+#eliteversion "plate cuirass gilt"
+#enditem
+
+--- Lorica
+#newitem
+#name "lorica hamata"
+#gameid 116
+#sprite /graphics/imperial/legion/armor/lorica_hamata.png
+#armor
+#theme iron
+#theme light
+#theme medium
+#eliteversion "plate cuirass gilt"
+#eliteversion "plate cuirass gold"
+#enditem
+
+#newitem
+#name "lorica squamata"
+#gameid 117
+#sprite /graphics/imperial/legion/armor/lorica_squamata.png
+#armor
+#theme iron
+#theme medium
+#eliteversion "plate cuirass gilt"
+#eliteversion "plate cuirass gold"
+#enditem
+
+#newitem
+#name "lorica segmentata"
+#gameid 99
+#sprite /graphics/imperial/legion/armor/lorica_segmentata.png
+#armor
+#theme iron
+#theme medium
+#theme heavy
+#eliteversion "plate cuirass gilt"
+#eliteversion "plate cuirass gold"
+#enditem
+
+
+--- Plate
+#newitem
+#name "plate cuirass"
+#gameid 9
+#sprite /graphics/imperial/legion/armor/plate_cuirass.png
+#armor
+#theme iron
+#theme advanced
+#theme heavy
+#eliteversion "plate cuirass gilt"
+#eliteversion "plate cuirass gold"
+#eliteversion "plate hauberk gilt"
+#enditem
+
+#newitem
+#name "plate cuirass gilt"
+#gameid 9
+#sprite /graphics/imperial/legion/armor/plate_cuirass_gilt.png
+#armor
+#theme iron
+#theme advanced
+#theme elite
+#theme heavy
+#eliteversion "plate cuirass gold"
+#enditem
+
+#newitem
+#name "plate cuirass gold"
+#gameid 9
+#sprite /graphics/imperial/legion/armor/plate_cuirass_gold.png
+#armor
+#theme iron
+#theme advanced
+#theme elite
+#theme heavy
+#eliteversion "plate cuirass gold"
+#eliteversion "plate hauberk gold"
+#enditem
+
+#newitem
+#name "plate hauberk"
+#gameid 14
+#basechance 0.5
+#sprite /graphics/imperial/legion/armor/plate_hauberk.png
+#armor
+#theme iron
+#theme advanced
+#theme heavy
+#eliteversion "plate hauberk gilt"
+#eliteversion "plate hauberk gold"
+#enditem
+
+#newitem
+#name "plate hauberk gilt"
+#gameid 14
+#basechance 0.5
+#sprite /graphics/imperial/legion/armor/plate_hauberk_gilt.png
+#armor
+#theme iron
+#theme advanced
+#theme elite
+#theme heavy
+#eliteversion "plate hauberk gold"
+#enditem
+
+#newitem
+#name "plate hauberk gold"
+#gameid 14
+#basechance 0.5
+#sprite /graphics/imperial/legion/armor/plate_hauberk_gold.png
+#armor
+#theme iron
+#theme advanced
+#theme elite
+#theme heavy
+#eliteversion "plate hauberk gold"
+#enditem

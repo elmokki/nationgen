@@ -1,0 +1,198 @@
+---- Fixed legion structure poses - these are primary race only and will be the first four poses any imperials have
+----   Secondary race imperials will have a mix of different troop types including duplicates of these poses
+
+-------- Velite
+
+#newpose
+#name "velite"
+#role "infantry"
+
+#basechance 9999999999
+#maxunits 1
+#maxvarieties 1
+#primaryraceonly
+#cannot_be_commander
+#legion_rank0
+
+#renderorder "shadow weapon underlay basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/imperial/legion/bases_light.txt
+#load shadow /data/items/imperial/legion/shadow.txt
+#load hands /data/items/imperial/legion/hands_light.txt
+
+#load armor /data/items/imperial/legion/armor_light.txt
+#load underlay /data/items/imperial/legion/armor_light_underlay.txt
+#load helmet /data/items/imperial/legion/helmet_light.txt
+
+#load weapon /data/items/imperial/legion/weapon_light.txt
+#load bonusweapon /data/items/imperial/legion/bonusranged.txt
+
+#load offhand /data/items/imperial/legion/shields_light.txt
+
+#generateitem 1 bonusweapon
+
+#forcedname "Velite"
+
+#endpose
+
+
+-------- Militia
+
+#newpose
+#name "milite"
+#role "infantry"
+
+#basechance 999999999
+#maxunits 1
+#maxvarieties 1
+#primaryraceonly
+#cannot_be_commander
+#legion_militia
+
+#renderorder "shadow weapon underlay basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/imperial/legion/bases_light.txt
+#load shadow /data/items/imperial/legion/shadow.txt
+#load hands /data/items/imperial/legion/hands_light.txt
+
+#load armor /data/items/imperial/legion/armor_light.txt
+#load underlay /data/items/imperial/legion/armor_light_underlay.txt
+#load helmet /data/items/imperial/legion/helmet_light.txt
+
+#load weapon /data/items/imperial/legion/weapon_light.txt
+#load bonusweapon /data/items/imperial/legion/bonusranged.txt
+
+#load offhand /data/items/imperial/legion/shields_light.txt
+
+#forcedname "Milite"
+
+#endpose
+
+
+------- Hastatus
+
+#newpose
+#name "hastatus"
+#role "infantry"
+
+#basechance 99999999
+#maxunits 1
+#maxvarieties 1
+#primaryraceonly
+#cannot_be_commander
+#legion_rank1
+
+#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/imperial/legion/bases_regular.txt
+#load shadow /data/items/imperial/legion/shadow.txt
+#load hands /data/items/imperial/legion/hands_regular.txt
+
+#load armor /data/items/imperial/legion/armor_regular.txt
+#load helmet /data/items/imperial/legion/helmet_regular.txt
+
+#load weapon /data/items/imperial/legion/weapon_regular.txt
+#load bonusweapon /data/items/imperial/legion/bonusranged.txt
+
+#load offhand /data/items/imperial/legion/shields_regular.txt
+
+#generateitem 1 bonusweapon
+
+#forcedname "Hastatus"
+
+#endpose
+
+-------- Principe
+
+#newpose
+#name "principe"
+#role "infantry"
+
+#basechance 999999
+#maxunits 1
+#maxvarieties 1
+#primaryraceonly
+#cannot_be_pd
+#legion_rank2
+
+#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/imperial/legion/bases_regular.txt
+#load shadow /data/items/imperial/legion/shadow.txt
+#load hands /data/items/imperial/legion/hands_regular.txt
+
+#load armor /data/items/imperial/legion/armor_regular.txt
+#load helmet /data/items/imperial/legion/helmet_regular.txt
+
+#load weapon /data/items/imperial/legion/weapon_regular.txt
+#load bonusweapon /data/items/imperial/legion/bonusranged.txt
+
+#load offhand /data/items/imperial/legion/shields_regular.txt
+
+#forcedname "Principe"
+
+#endpose
+
+-------- Triarius
+
+#newpose
+#name "triarius"
+#role "infantry"
+
+#basechance 9999
+#maxunits 1
+#maxvarieties 1
+#primaryraceonly
+#cannot_be_pd
+#legion_rank3
+
+#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/imperial/legion/bases_regular.txt
+#load shadow /data/items/imperial/legion/shadow.txt
+#load hands /data/items/imperial/legion/hands_regular.txt
+
+#load armor /data/items/imperial/legion/armor_regular.txt
+#load helmet /data/items/imperial/legion/helmet_regular.txt
+
+#load weapon /data/items/imperial/legion/weapon_regular.txt
+
+#load offhand /data/items/imperial/legion/shields_regular.txt
+
+#forcedname "Triarius"
+
+#endpose
+
+-------- Standard
+
+#newpose
+#name "standard"
+#role "infantry"
+
+#basechance 999
+#maxunits 1
+#maxvarieties 1
+#primaryraceonly
+#cannot_be_commander
+#cannot_be_pd
+#legion_rank1
+
+#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/imperial/legion/bases_regular.txt
+#load shadow /data/items/imperial/legion/shadow.txt
+#load hands /data/items/imperial/legion/hands_regular.txt
+
+#load armor /data/items/imperial/legion/armor_regular.txt
+#load helmet /data/items/imperial/legion/helmet_regular.txt
+
+#load weapon /data/items/imperial/legion/standard.txt
+#load bonusweapon /data/items/imperial/legion/bonusranged.txt
+
+#load offhand /data/items/imperial/legion/shields_regular.txt
+
+#generateitem 1 bonusweapon
+
+#forcedname "Standard"
+
+#endpose
