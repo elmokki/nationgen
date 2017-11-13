@@ -1,0 +1,17 @@
+#newitem
+#name "skirmisher"
+#gameid -1
+#sprite /graphics/imperial/legion/basesprite_light.png
+#recolormask /graphics/imperial/legion/basesprite_light_recolormask.png
+#enditem
+
+#newitem
+#name "primitive skirmisher"
+#gameid -1
+#basechance 0
+#sprite /graphics/imperial/legion/basesprite_primitive_light.png
+#command "#mor -1"
+#command "#str +1"
+#command "#stealthy 0"
+#theme primitive
+#enditem
