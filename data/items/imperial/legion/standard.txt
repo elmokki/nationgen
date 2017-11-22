@@ -1,8 +1,38 @@
 #newitem
-#id standard
+#id standard1
 #gameid 100
 #sprite /graphics/imperial/legion/weapon/standard.png
 #recolormask /graphics/imperial/legion/weapon/standard_recolormask1.png
 #notepic
+#define "#gcost +10"
+#define "#standard +1"
+#define "#formationfighter"
 #define "#aisinglerec"
+#theme "aesthetic_1"
+#enditem
+
+#newitem
+#id standard2
+#gameid 100
+#sprite /graphics/imperial/legion/weapon/standard.png
+#recolormask /graphics/imperial/legion/weapon/standard_recolormask2.png
+#notepic
+#define "#gcost +10"
+#define "#standard +1"
+#define "#formationfighter"
+#define "#aisinglerec"
+#theme "aesthetic_2"
+#enditem
+
+#newitem
+#id standard3
+#gameid 100
+#sprite /graphics/imperial/legion/weapon/standard.png
+#recolormask /graphics/imperial/legion/weapon/standard_recolormask3.png
+#notepic
+#define "#gcost +10"
+#define "#standard +1"
+#define "#formationfighter"
+#define "#aisinglerec"
+#theme "aesthetic_3"
 #enditem
