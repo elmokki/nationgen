@@ -177,7 +177,7 @@
 #cannot_be_pd
 #legion_rank1
 
-#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda shield"
 
 #load basesprite /data/items/imperial/legion/bases_regular.txt
 #load shadow /data/items/imperial/legion/shadow.txt
@@ -189,9 +189,10 @@
 #load weapon /data/items/imperial/legion/standard.txt
 #load bonusweapon /data/items/imperial/legion/bonusranged.txt
 
-#load offhand /data/items/imperial/legion/shields_regular.txt
+#load shield /data/items/imperial/legion/shields_regular.txt
 
 #generateitem 1 bonusweapon
+#generateitem 1 shield
 
 #forcedname "Standard"
 

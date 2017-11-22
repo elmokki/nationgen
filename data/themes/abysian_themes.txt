@@ -64,6 +64,10 @@
 #racedefinition "#nationcommand '#spreadheat +1'"
 #racedefinition "#secondaryracecommand_conditional '#fireres 5'"
 #racedefinition "#subterranean"
+-- 15% H1/25% H2/60% H3 max priest level
+#racedefinition "#priest_H1_upgradechance 0.85"
+#racedefinition "#priest_H2_upgradechance 0.7"
+#racedefinition "#magepriestchance 0.6"
 #raceprefix abysian
 #endtheme
 
@@ -95,6 +99,10 @@
 #racedefinition "#magicpriority blood 3"
 #racedefinition "#nationcommand '#idealcold -3'"
 #racedefinition "#secondaryracecommand_conditional '#fireres 5'"
+-- 20% H1/32% H2/48% H3 max priest level
+#racedefinition "#priest_H1_upgradechance 0.8"
+#racedefinition "#priest_H2_upgradechance 0.6"
+#racedefinition "#magepriestchance 0.5"
 #raceprefix abysian
 #endtheme
 
@@ -127,6 +135,9 @@
 #racedefinition "#nationcommand '#idealcold -2'"
 #racedefinition "#secondaryracecommand_conditional '#fireres 5'"
 #racedefinition "#monsterchance 0.05"
+-- 25% H1/45% H2/30% H3 max priest level
+#racedefinition "#priest_H2_upgradechance 0.4"
+#racedefinition "#magepriestchance 0.4"
 #raceprefix humanbred
 #endtheme
 
@@ -153,6 +164,7 @@
 #racedefinition "#magicpriority blood 5"
 #racedefinition "#nationcommand '#idealcold -2'"
 #racedefinition "#monsterchance 0.15"
+-- 25% H1/56% H2/19% H3 max priest level (default)
 #raceprefix humanbred
 #endtheme
 
