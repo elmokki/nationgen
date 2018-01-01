@@ -2,7 +2,7 @@
 #name "Imperial human"
 #visiblename "Human"
 #basechance 0.3
--- #basechance 10000
+#basechance 10000
 #all_troops_sacred
 #all_troops_elite
 
@@ -17,12 +17,14 @@
 #pose imperiallegion
 -- #pose imperialinfantry
 -- #pose imperialcavalry
--- #pose imperialranged
+#pose imperialranged
 #pose imperialmage
 
-#longsyllables /data/names/nations/human/longsyllables.txt
-#shortsyllables /data/names/nations/human/shortsyllables.txt
-#suffixes /data/names/nations/human/suffixes.txt
+#longsyllables /data/names/nations/amazon/longsyllables.txt
+#shortsyllables /data/names/nations/amazon/shortsyllables.txt
+#suffixes /data/names/nations/amazon/suffixes.txt
+
+#gods imperialgods
 
 #magicpatterns defaultprimary
 #magicpatterns defaultsecondary
@@ -31,7 +33,6 @@
 #unitcommand "#nametype 106"
 
 #imperial
-#gods europegods
 #specialcommanderfilters default_specialcommanderfilters
 #specialcommanderfilters specialcommanderfilters_extended
 

@@ -1,0 +1,28 @@
+-------- Ranged unit
+
+#newpose
+#name "ranged auxiliary"
+#role "ranged"
+
+#basechance 1
+#maxunits 1
+#maxvarieties 1
+#cannot_be_commander
+
+#renderorder "shadow quiver underlay basesprite armor weapon hands helmet offhanda"
+
+#load basesprite /data/items/imperial/legion/bases_light.txt
+#load shadow /data/items/imperial/legion/shadow.txt
+#load hands /data/items/imperial/legion/hands_light.txt
+
+#load armor /data/items/imperial/legion/armor_light.txt
+#load underlay /data/items/imperial/legion/armor_light_underlay.txt
+#load helmet /data/items/imperial/legion/helmet_light.txt
+
+#load weapon /data/items/imperial/legion/weapon_ranged.txt
+#load bonusweapon /data/items/imperial/legion/weapon_secondary.txt
+#load quiver /data/items/imperial/legion/quiver.txt
+
+#generateitem 1 bonusweapon
+
+#endpose
