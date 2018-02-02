@@ -46,7 +46,32 @@
 #command "#prec *0.5"
 #command "#ap *0.75"
 #command "#magicbeing"
+#command "#slave"
 #description "Slaves whose minds have broken under mental abuse, they serve without thought or question. "
+#theme lobo
+#cannot_be_commander
+#onlyfilter
+#end
+
+#new
+#name "lobo_large"
+#type lobo
+#basechance 0.001
+#chanceinc "personalcommand size below 3 *0"
+#command "#gcost *1"
+#command "#hp *1.1"
+#command "#prot *1.2"
+#command "#mr *0.5"
+#adjustmentcommand "#mor 50"
+#command "#str *1.1"
+#command "#att *0.9"
+#command "#def *0.9"
+#command "#prec *0.5"
+#command "#ap *0.9"
+#command "#magicbeing"
+#command "#trample"
+#command "#slave"
+#description "Hulking slaves whose minds have broken under mental abuse, they serve without thought or question. "
 #theme lobo
 #cannot_be_commander
 #onlyfilter

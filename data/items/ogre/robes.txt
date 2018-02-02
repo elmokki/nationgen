@@ -71,12 +71,12 @@
 -- Fur robes
 
 #newitem
-#id skirt_fur_light
-#sprite /graphics/ogre/armor/robes/skirt_fur_light_plain.png
+#id skirt_fur_short
+#sprite /graphics/ogre/armor/robes/skirt_fur_short.png
 #eliteversion skirt_fur_light_fancy
+#eliteversion skirt_fur_dark_fancy
 #eliteversion skirt_fur_mixed
-#eliteversion robe_fur_light
-#gameid 158
+#gameid -1
 #armor
 #theme "leather"
 #theme "primitive"
@@ -211,6 +211,21 @@
 
 
 -- Fur robes
+
+#newitem
+#id robe_fur_short
+#sprite /graphics/ogre/armor/robes/robe_fur_short.png
+#eliteversion robe_fur_light_fancy
+#eliteversion robe_fur_dark_fancy
+#eliteversion robe_fur_mixed
+#gameid 44
+#armor
+#theme "leather"
+#theme "primitive"
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
 
 #newitem
 #id robe_fur_light

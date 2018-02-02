@@ -75,3 +75,29 @@
 #command "#trampswallow"
 #bitey
 #enditem
+
+#newitem
+#name "troglotyid thrall"
+#chanceinc "secondaryracetheme troglotyid *1000"
+#gameid -1
+#sprite /graphics/illithid/slave/thrall_ichtyid_cavefish.png
+#recolormask /graphics/illithid/slave/thrall_ichtyid_cavefish_recolormask.png
+#command "#gcost 10"
+#command "#hp 16"
+#command "#size 2"
+#command "#prot 5"
+#command "#mr 10"
+#command "#mor 50"
+#command "#str 11"
+#command "#att 8"
+#command "#def 8"
+#command "#prec 5"
+#command "#enc 3"
+#command "#mapmove 2"
+#command "#ap 8"
+#command "#amphibian"
+#command "#blind"
+#command "#patrolbonus -1"
+#command "#maxage 50"
+#bitey
+#enditem

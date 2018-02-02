@@ -1,0 +1,163 @@
+-- Primitive weapons
+
+#newitem
+#id spear_stone
+#gameid 373
+#chanceinc posetag legion_rank1 *10
+#sprite /graphics/imperial/legion/weapon/spear.png
+#theme "stone"
+#theme "primitive"
+#enditem
+
+#newitem
+#id trident_bone
+#gameid 670
+#chanceinc posetag legion_rank1 *10
+#chanceinc posetag legion_rank3 *4
+#sprite /graphics/imperial/legion/weapon/trident.png
+#theme "bone"
+#theme "primitive"
+#basechance 0.5
+#enditem
+
+#newitem
+#id club
+#gameid 252
+#chanceinc posetag legion_rank2 *10
+#sprite /graphics/imperial/legion/weapon/club.png
+#theme "wood"
+#theme "primitive"
+#enditem
+
+#newitem
+#id spikedclub
+#gameid 265
+#chanceinc posetag legion_rank2 *10
+#chanceinc posetag legion_rank3 *4
+#sprite /graphics/imperial/legion/weapon/spikedclub.png
+#theme "wood"
+#theme "primitive"
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#chanceinc posetag legion_rank2 *10
+#chanceinc posetag legion_rank3 *8
+#sprite /graphics/imperial/legion/weapon/mace.png
+#theme "primitive"
+#basechance 0.25
+#enditem
+
+
+-- Normal weapons
+
+#newitem
+#id spear
+#gameid 1
+#chanceinc posetag legion_rank1 *20
+#chanceinc posetag legion_rank3 *0.5
+#sprite /graphics/imperial/legion/weapon/spear.png
+#theme "iron"
+#enditem
+
+#newitem
+#id longspear
+#gameid 28
+#chanceinc posetag legion_rank1 *5
+#chanceinc posetag legion_rank3 *8
+#sprite /graphics/imperial/legion/weapon/longspear.png
+#theme "iron"
+#enditem
+
+#newitem
+#id trident
+#gameid 3
+#chanceinc posetag legion_rank1 *20
+#chanceinc posetag legion_rank3 *8
+#sprite /graphics/imperial/legion/weapon/trident.png
+#theme "iron"
+#basechance 0.25
+#enditem
+
+#newitem
+#id spetum
+#gameid 639
+#chanceinc posetag legion_rank1 *20
+#chanceinc posetag legion_rank3 *8
+#sprite /graphics/imperial/legion/weapon/spetum.png
+#theme "iron"
+#basechance 0.25
+#enditem
+
+#newitem
+#id shortsword
+#gameid 6
+#chanceinc posetag legion_rank2 *20
+#chanceinc posetag legion_rank3 *0.5
+#sprite /graphics/imperial/legion/weapon/shortsword.png
+#theme "iron"
+#enditem
+
+#newitem
+#id broadsword
+#gameid 8
+#chanceinc posetag legion_rank2 *20
+#chanceinc posetag legion_rank3 *8
+#sprite /graphics/imperial/legion/weapon/broadsword.png
+#theme "iron"
+#basechance 0.5
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#chanceinc posetag legion_rank2 *20
+#chanceinc posetag legion_rank3 *8
+#sprite /graphics/imperial/legion/weapon/falchion.png
+#theme "iron"
+#basechance 0.25
+#enditem
+
+#newitem
+#id axe
+#gameid 17
+#chanceinc posetag legion_rank2 *20
+#chanceinc posetag legion_rank3 *8
+#sprite /graphics/imperial/legion/weapon/axe.png
+#theme "iron"
+#basechance 0.25
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#chanceinc posetag legion_rank2 *20
+#chanceinc posetag legion_rank3 *4
+#sprite /graphics/imperial/legion/weapon/mace.png
+#maxprot 15
+#basechance 0.25
+#enditem
+
+#newitem
+#id hammer
+#gameid 13
+#chanceinc posetag legion_rank2 *20
+#chanceinc posetag legion_rank3 *8
+#sprite /graphics/imperial/legion/weapon/hammer.png
+#theme "iron"
+#theme "advanced"
+#basechance 0.25
+#enditem
+
+#newitem
+#id morningstar
+#gameid 15
+#chanceinc posetag legion_rank2 *20
+#chanceinc posetag legion_rank3 *8
+#sprite /graphics/imperial/legion/weapon/morningstar.png
+#theme "iron"
+#theme "advanced"
+#basechance 0.25
+#enditem
+

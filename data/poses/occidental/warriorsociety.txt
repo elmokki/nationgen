@@ -5,9 +5,9 @@
 
 #renderorder "shadow basesprite shirt armor weapon bonusweapon offhandw hands offhanda"
 
-#load basesprite /data/items/occidental/warriorsociety/bases.txt
-#load shadow /data/items/occidental/warriorsociety/shadow.txt
-#load hands /data/items/occidental/warriorsociety/hands.txt
+#load basesprite /data/items/occidental/warriorsociety/bases_elite.txt
+#load shadow /data/items/occidental/shadow.txt
+#load hands /data/items/occidental/hands.txt
 #load shirt /data/items/occidental/warriorsociety/shirt.txt
 #load armor /data/items/occidental/warriorsociety/armor.txt
 #load helmet /data/items/occidental/warriorsociety/helmet.txt
@@ -15,9 +15,9 @@
 #load bonusweapon /data/items/occidental/warriorsociety/bonusranged.txt
 #load offhand /data/items/occidental/warriorsociety/shields.txt
 
-#endpose
+#load society /data/items/occidental/warriorsociety/society.txt
 
-#forcedname "Pale One Thrall"
+#endpose
 
 -- Sacred warrior societies (cf Jaguar/Sun Warriors)
 #newpose
@@ -26,15 +26,17 @@
 
 #renderorder "shadow basesprite shirt armor weapon bonusweapon offhandw hands offhanda"
 
-#load basesprite /data/items/occidental/warriorsociety/bases.txt
-#load shadow /data/items/occidental/warriorsociety/shadow.txt
-#load hands /data/items/occidental/warriorsociety/hands.txt
+#load basesprite /data/items/occidental/warriorsociety/bases_sacred.txt
+#load shadow /data/items/occidental/shadow.txt
+#load hands /data/items/occidental/hands.txt
 #load shirt /data/items/occidental/warriorsociety/shirt.txt
 #load armor /data/items/occidental/warriorsociety/armor.txt
 #load helmet /data/items/occidental/warriorsociety/helmet.txt
 #load weapon /data/items/occidental/warriorsociety/weapon.txt
 #load bonusweapon /data/items/occidental/warriorsociety/bonusranged.txt
 #load offhand /data/items/occidental/warriorsociety/shields.txt
+
+#load society /data/items/occidental/warriorsociety/society.txt
 
 #endpose
 
@@ -48,8 +50,8 @@
 #renderorder "shadow underlay basesprite shirt armor weapon bonusweapon offhandw hands offhanda overlay"
 
 #load basesprite /data/items/occidental/warriorsociety/bases_flying.txt
-#load shadow /data/items/occidental/warriorsociety/shadow.txt
-#load hands /data/items/occidental/warriorsociety/hands.txt
+#load shadow /data/items/occidental/shadow.txt
+#load hands /data/items/occidental/hands.txt
 #load underlay /data/items/occidental/warriorsociety/underlay.txt
 #load overlay /data/items/occidental/warriorsociety/overlay.txt
 #load shirt /data/items/occidental/warriorsociety/shirt.txt
@@ -58,5 +60,8 @@
 #load weapon /data/items/occidental/warriorsociety/weapon.txt
 #load bonusweapon /data/items/occidental/warriorsociety/bonusranged.txt
 #load offhand /data/items/occidental/warriorsociety/offhand.txt
+
+#maxunits 1
+#maxposes 1
 
 #endpose

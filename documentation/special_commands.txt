@@ -30,8 +30,12 @@ Chance to get primary race mage priests. Default is 0.3. Works for nationthemes 
 #highestpriestlevel <level>
 Manually sets the level of highest priests in the nation. Works for nationthemes and races. Highest value found is used.
 
-#higherpriestlevelchance <chance>
-Chance of highest priest level in a nation is [1 - chance] for lvl 1, [chance - chance^2] for level 2, and [chance^2] for level 3. Default is 0.5, ie 50% for 1, 25% for 2 and 25% for 3. Highest value found is used.
+#priest_H1_upgradechance <chance>
+#priest_H2_upgradechance <chance>
+Chance that level of highest priests in the nation is 1 is [1 - priest_H1_upgradechance]. Chance that level of highest priests in the
+nation is 2 is [priest_H1_upgradechance * (1 - priest_H2_upgradechance)]. Chance that level of highest priests in the nation is 3 is
+[priest_H1_upgradechance * priest_H2_upgradechance].  Default for priest_H1_upgradechance is 0.75. Default for priest_H2_upgradechance
+is 0.25. Works for nationthemes and races. Highest values found are used.
 
 #priestextracost <cost>
 Increases priest costs by <cost> per level of holy.

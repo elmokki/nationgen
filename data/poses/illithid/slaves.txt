@@ -206,6 +206,7 @@
 
 #basechance 0
 #chanceinc "secondaryrace 'Primate' 1"
+#chanceinc "secondaryracetheme austral *0"
 #chanceinc "hastheme illithid_hybrid *5"
 #chanceinc "hastheme illithid *10"
 
@@ -217,5 +218,27 @@
 #load weapon /data/items/illithid/slave/weapon_thrall.txt
 
 #forcedname "Vanara Thrall"
+
+#endpose
+
+#newpose
+#name "bandar thrall"
+#role "infantry"
+#subrace "bandar"
+
+#basechance 0
+#chanceinc "secondaryrace 'Primate' 1"
+#chanceinc "secondaryracetheme occidental *0"
+#chanceinc "hastheme illithid_hybrid *5"
+#chanceinc "hastheme illithid *10"
+
+#freetemplatefilter slavetemplate lobo_large
+#maxunits 1
+
+#load basesprite /data/items/illithid/slave/thrall_bandar.txt
+#load armor /data/items/illithid/slave/armor_thrall.txt
+#load weapon /data/items/illithid/slave/weapon_thrall.txt
+
+#forcedname "Bandar Thrall"
 
 #endpose

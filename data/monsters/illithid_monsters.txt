@@ -1,0 +1,29 @@
+#new
+#name "troglodyte thrall"
+#basechance 0
+#chanceinc "secondaryrace 'Pale One' 0.25"
+#chanceinc "hastheme illithid_hybrid *10"
+#chanceinc "hastheme illithid *20"
+#command "#copystats 447"
+#command "#spr1 ./graphics/illithid/slave/thrall_troglodyte.png"
+#command "#spr2 shift"
+#command "#name 'Troglodyte Thrall'"
+#command "#gcost 60"
+#command "#hp 41"
+#command "#prot 6"
+#command "#mr 8"
+#command "#mor 50"
+#adjustmentcommand "#mor 50"
+#command "#str 26"
+#command "#att 9"
+#command "#def 8"
+#command "#prec 4"
+#command "#mapmove 2"
+#command "#ap 14"
+#command "#magicbeing"
+#command "#slave"
+#specifiedgcost
+#specifieddescr
+#descr "Hulking troglodyte slaves whose minds have broken under mental abuse, they serve without thought or question. "
+#theme lobo
+#end

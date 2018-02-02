@@ -1,0 +1,44 @@
+-- Primitive weapons
+
+#newitem
+#id spear_stone
+#gameid 373
+#sprite /graphics/imperial/legion/weapon/spear.png
+#theme "stone"
+#theme "primitive"
+#enditem
+
+#newitem
+#id trident_bone
+#gameid 670
+#sprite /graphics/imperial/legion/weapon/trident.png
+#theme "bone"
+#theme "primitive"
+#basechance 0.5
+#enditem
+
+
+-- Normal weapons
+
+#newitem
+#id spear
+#gameid 1
+#sprite /graphics/imperial/legion/weapon/spear.png
+#theme "iron"
+#enditem
+
+#newitem
+#id trident
+#gameid 3
+#sprite /graphics/imperial/legion/weapon/trident.png
+#theme "iron"
+#basechance 0.5
+#enditem
+
+#newitem
+#id spetum
+#gameid 639
+#sprite /graphics/imperial/legion/weapon/spetum.png
+#theme "iron"
+#basechance 0.5
+#enditem

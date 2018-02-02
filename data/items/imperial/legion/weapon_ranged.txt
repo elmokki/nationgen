@@ -1,0 +1,111 @@
+-- Primitive weapons
+
+#newitem
+#id rocks
+#gameid large_rock
+#sprite /graphics/imperial/legion/weapon/rocks.png
+#theme "stone"
+#theme "primitive"
+#notepic
+#enditem
+
+#newitem
+#id javelins
+#gameid agarthan_javelin
+#sprite /graphics/imperial/legion/weapon/javelins.png
+#theme "wood"
+#theme "primitive"
+#needs quiver javelins
+#enditem
+
+#newitem
+#id axes
+#gameid 260
+#sprite /graphics/imperial/legion/weapon/axes.png
+#theme "iron"
+#theme "primitive"
+#needs quiver axes
+#enditem
+
+#newitem
+#id sling
+#gameid 22
+#sprite /graphics/imperial/legion/weapon/sling.png
+#theme "leather"
+#theme "primitive"
+#enditem
+
+
+-- Normal missiles
+
+#newitem
+#id javelins
+#gameid agarthan_javelin
+#sprite /graphics/imperial/legion/weapon/javelins.png
+#theme "wood"
+#needs quiver javelins
+#enditem
+
+#newitem
+#id axes
+#gameid 260
+#sprite /graphics/imperial/legion/weapon/axes.png
+#theme "iron"
+#needs quiver axes
+#enditem
+
+#newitem
+#id sling
+#gameid 22
+#sprite /graphics/imperial/legion/weapon/sling.png
+#theme "leather"
+#enditem
+
+#newitem
+#id shortbow
+#gameid 23
+#sprite /graphics/imperial/legion/weapon/shortbow.png
+#theme "wood"
+#needs quiver quiver
+#enditem
+
+#newitem
+#id compositebow
+#gameid 264
+#sprite /graphics/imperial/legion/weapon/compositebow.png
+#theme "wood"
+#needs quiver quiver
+#enditem
+
+#newitem
+#id longbow
+#gameid 24
+#sprite /graphics/imperial/legion/weapon/longbow.png
+#theme "advanced"
+#theme "wood"
+#needs quiver quiver
+#enditem
+
+#newitem
+#name "light crossbow"
+#gameid light_crossbow
+#sprite /graphics/weapon/crossbow/lightcrossbow.png
+#theme "advanced"
+#theme "iron"
+#basechance 0
+#chanceinc era 3 0.25
+#define "#gcost +2"
+#needs quiver quiver
+#enditem
+
+#newitem
+#name "crossbow"
+#gameid 25
+#sprite /graphics/weapon/crossbow/crossbow.png
+#theme "advanced"
+#theme "iron"
+#basechance 0
+#chanceinc era 3 0.25
+#define "#gcost +2"
+#needs quiver quiver
+#enditem
