@@ -106,7 +106,7 @@ public class PreviewGenerator {
 		g.drawString(n.name, 96, 48);
 		g.setFont(f);
 		g.setColor(Color.white);
-		g.drawImage(flag, 16, 0, null);
+		g.drawImage(flag, 16, 0, 64, 64, null);
 			
 		drawList(map, maxX, maxY, troops, g);
 		
