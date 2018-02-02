@@ -1017,71 +1017,7 @@ public class Unit {
 		
 		
 		
-		// Mapmove
-		if(this.getSlot("mount") == null)
-		{
-			int MM = 2;
-				
-			for(Command c : race.unitcommands)
-				if(c.command.equals("#mapmove"))
-					MM = Integer.parseInt(c.args.get(0));
-			
-			for(Command c : pose.getCommands())
-				if(c.command.equals("#mapmove"))
-				{
-					if(c.args.get(0).startsWith("-") || c.args.get(0).startsWith("+"))
-					{
-						String str = c.args.get(0);
-						if(c.args.get(0).startsWith("+"))
-							str = c.args.get(0).substring(1);
-						
-						MM += Integer.parseInt(str);
-					}
-					else
-						MM = Integer.parseInt(c.args.get(0));
-				}
-			
-			int origMM = MM;
-			
-			int enc = 0;
-			for(String slot : slotmap.keySet())
-			{
-				if(getSlot(slot) != null && getSlot(slot).armor && !getSlot(slot).id.equals("-1"))
-				{
-					enc += nationGen.armordb.GetInteger(getSlot(slot).id, "enc", 0);
-				}
-			}
-			
-			
-			int prot = this.getTotalProt(false);
-			
-			int enclimit = 4;
-			if(Generic.containsTag(pose.tags, "mapmovepenaltyenc"))
-				enclimit = Integer.parseInt(Generic.getTagValue(pose.tags, "mapmovepenaltyenc"));
-			else if(Generic.containsTag(race.tags, "mapmovepenaltyenc"))
-				enclimit = Integer.parseInt(Generic.getTagValue(race.tags, "mapmovepenaltyenc"));
 
-			int protlimit = 14;
-			if(Generic.containsTag(pose.tags, "mapmovepenaltyprot"))
-				protlimit = Integer.parseInt(Generic.getTagValue(pose.tags, "mapmovepenaltyprot"));
-			else if(Generic.containsTag(race.tags, "mapmovepenaltyprot"))
-				protlimit = Integer.parseInt(Generic.getTagValue(race.tags, "mapmovepenaltyprot"));
-			
-			int penalty = 1;
-			if(Generic.containsTag(pose.tags, "mapmovepenaltyamount"))
-				penalty = Integer.parseInt(Generic.getTagValue(pose.tags, "mapmovepenaltyamount"));
-			else if(Generic.containsTag(race.tags, "mapmovepenaltyamount"))
-				penalty = Integer.parseInt(Generic.getTagValue(race.tags, "mapmovepenaltyamount"));
-			
-			if(enc >= enclimit || prot >= protlimit)
-				MM = Math.max(1, MM - penalty);
-			
-			if(MM < origMM)
-			{
-				this.commands.add(new Command("#mapmove", "-" + (origMM - MM)));
-			}
-			
-		}
 		
 		// Fist for things without proper weapons
 		if(!Generic.containsTag(pose.tags, "no_free_fist") && !copystats && getClass() != ShapeChangeUnit.class)
