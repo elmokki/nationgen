@@ -197,7 +197,7 @@ public class Nation {
 		addRaceThemes(races.get(0));
 		
 		// Add nation themes
-		addNationThemes();
+		addNationThemes(restrictions);
 
 		// Secondary race after themes since themes may affect it
 		allRaces.clear();
@@ -599,13 +599,31 @@ public class Nation {
 	
 	
 
-	private void addNationThemes()
+	private void addNationThemes(List restrictions)
 	{
-
-
 		Race race = this.races.get(0);
 		
 		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("nationthemes", "default_nationthemes", nationGen.themes, null, race);
+		List<Theme> mandatoryThemes = possibleThemes;
+		
+		//Get mandatory themes, if such exist
+		NationThemeRestriction mustHaveTheme = new NationThemeRestriction(nationGen);
+		for(Object r : restrictions) 
+		{
+			if(r instanceof NationThemeRestriction) {
+				mustHaveTheme = (NationThemeRestriction) r;
+			}
+		}
+		if(mustHaveTheme.possibleRaceNames.size() > 0) {
+			Iterator<Theme> iter = mandatoryThemes.iterator();
+			while(iter.hasNext()) {
+				Theme t = iter.next();
+				if(!mustHaveTheme.possibleRaceNames.contains(t.name)) {
+					iter.remove();
+				}
+			}
+		}
+		
 		ChanceIncHandler chandler = new ChanceIncHandler(this);
 		List<String> freeThemes = Generic.getTagValues(race.tags, "freenationtheme");
 		
@@ -651,8 +669,27 @@ public class Nation {
 			}
 		}
 		
+		// Mandatory themes
+		int i = 0;
+		mandatoryThemes = ChanceIncHandler.getValidFilters(mandatoryThemes, this.nationthemes);
+		if(mandatoryThemes.size() > 0)
+		{
+			Theme t = Theme.getRandom(random, chandler.handleChanceIncs(mandatoryThemes));
+			if(t != null) 
+			{
+				race.handleTheme(t);
+				possibleThemes.remove(t);
+				for(Command c : t.commands) 
+				{
+					this.handleCommand(commands, c);
+				}
+				this.nationthemes.add(t);
+				i++;
+			}
+		}
+		
 		// Guaranteed themes
-		for(int i = 0; i < guaranteedthemes; i++)
+		for(int j = i; j < guaranteedthemes; j++)
 		{
 	
 			possibleThemes = ChanceIncHandler.getValidFilters(possibleThemes, this.nationthemes);
