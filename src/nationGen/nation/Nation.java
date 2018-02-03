@@ -11,24 +11,6 @@ import java.util.List;
 import java.util.Random;
 import java.util.Map.Entry;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import com.elmokki.Drawing;
 import com.elmokki.Generic;
 
@@ -145,23 +127,67 @@ public class Nation {
 		colors[4] = Drawing.getColor(random);
 	}
 	
-	private void getRaces()
+	private void getRaces(List restrictions)
 	{
 		ChanceIncHandler chandler = new ChanceIncHandler(this);
 
 		// choose primary race
 		List<Race> allRaces = new ArrayList<>();
+		
+        for(Race r : nationGen.races)
+        {
+			if (!r.tags.contains("secondary")) 
+            {
+				allRaces.add(r);
+            }
+        }
+        
+        // Get race restrictions from restriction list
+        PrimaryRaceRestriction raceMustBe = new PrimaryRaceRestriction(nationGen);
+        NoPrimaryRaceRestriction raceMustntBe = new NoPrimaryRaceRestriction(nationGen);
+        for(Object r: restrictions)
+        {
+        	if(r instanceof PrimaryRaceRestriction) {
+        		raceMustBe = (PrimaryRaceRestriction) r;
+        	}
+        	if(r instanceof NoPrimaryRaceRestriction) {
+        		raceMustntBe = (NoPrimaryRaceRestriction) r;
+        	}
+        }
 
-                for(Race r : nationGen.races)
-                {
-                    if (!r.tags.contains("secondary")) 
-                    {
-                        allRaces.add(r);
-                    }
-                }
-                Race race;
-                race = chandler.getRandom(allRaces);
-                
+        List<Race> restrictedPrimaryRaces = new ArrayList<>();
+        restrictedPrimaryRaces = allRaces;
+        
+		// If primary race has Must Bes, remove races not matching them from the race list from which to select primary race.
+		if(raceMustBe.possibleRaceNames.size() > 0)
+		{
+			Iterator<Race> iter = restrictedPrimaryRaces.iterator();
+			while(iter.hasNext()) 
+			{
+				Race r = iter.next();
+				if(!raceMustBe.possibleRaceNames.contains(r.name))
+				{
+					iter.remove();
+				}
+			}
+		}
+		
+		// If primary race has Must Not Bes, remove them from the race list from which to select primary race.
+		if(raceMustntBe.possibleRaceNames.size() > 0)
+		{
+			Iterator<Race> iter = restrictedPrimaryRaces.iterator();
+			while (iter.hasNext()) 
+			{
+				Race r = iter.next();
+				if(raceMustntBe.possibleRaceNames.contains(r.name)) {
+					iter.remove();
+				}
+			}
+		}
+		
+        Race race;
+        race = chandler.getRandom(restrictedPrimaryRaces);
+        
 		races.add(race.getCopy());
 		
 		for(Command c : races.get(0).nationcommands)
@@ -171,7 +197,7 @@ public class Nation {
 		addRaceThemes(races.get(0));
 		
 		// Add nation themes
-		addNationThemes();
+		addNationThemes(restrictions);
 
 		// Secondary race after themes since themes may affect it
 		allRaces.clear();
@@ -515,7 +541,7 @@ public class Nation {
             restrictionTypes.add(nationThemeRestriction.getClass());
             
             getColors();
-            getRaces();
+            getRaces(restrictions);
             
             if (!checkRestrictions(restrictions, restrictionTypes)) 
             {
@@ -573,13 +599,31 @@ public class Nation {
 	
 	
 
-	private void addNationThemes()
+	private void addNationThemes(List restrictions)
 	{
-
-
 		Race race = this.races.get(0);
 		
 		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("nationthemes", "default_nationthemes", nationGen.themes, null, race);
+		List<Theme> mandatoryThemes = possibleThemes;
+		
+		//Get mandatory themes, if such exist
+		NationThemeRestriction mustHaveTheme = new NationThemeRestriction(nationGen);
+		for(Object r : restrictions) 
+		{
+			if(r instanceof NationThemeRestriction) {
+				mustHaveTheme = (NationThemeRestriction) r;
+			}
+		}
+		if(mustHaveTheme.possibleRaceNames.size() > 0) {
+			Iterator<Theme> iter = mandatoryThemes.iterator();
+			while(iter.hasNext()) {
+				Theme t = iter.next();
+				if(!mustHaveTheme.possibleRaceNames.contains(t.name)) {
+					iter.remove();
+				}
+			}
+		}
+		
 		ChanceIncHandler chandler = new ChanceIncHandler(this);
 		List<String> freeThemes = Generic.getTagValues(race.tags, "freenationtheme");
 		
@@ -625,8 +669,27 @@ public class Nation {
 			}
 		}
 		
+		// Mandatory themes
+		int i = 0;
+		mandatoryThemes = ChanceIncHandler.getValidFilters(mandatoryThemes, this.nationthemes);
+		if(mandatoryThemes.size() > 0)
+		{
+			Theme t = Theme.getRandom(random, chandler.handleChanceIncs(mandatoryThemes));
+			if(t != null) 
+			{
+				race.handleTheme(t);
+				possibleThemes.remove(t);
+				for(Command c : t.commands) 
+				{
+					this.handleCommand(commands, c);
+				}
+				this.nationthemes.add(t);
+				i++;
+			}
+		}
+		
 		// Guaranteed themes
-		for(int i = 0; i < guaranteedthemes; i++)
+		for(int j = i; j < guaranteedthemes; j++)
 		{
 	
 			possibleThemes = ChanceIncHandler.getValidFilters(possibleThemes, this.nationthemes);
