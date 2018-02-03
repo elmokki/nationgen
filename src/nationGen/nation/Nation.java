@@ -11,24 +11,6 @@ import java.util.List;
 import java.util.Random;
 import java.util.Map.Entry;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import com.elmokki.Drawing;
 import com.elmokki.Generic;
 
@@ -145,23 +127,67 @@ public class Nation {
 		colors[4] = Drawing.getColor(random);
 	}
 	
-	private void getRaces()
+	private void getRaces(List restrictions)
 	{
 		ChanceIncHandler chandler = new ChanceIncHandler(this);
 
 		// choose primary race
 		List<Race> allRaces = new ArrayList<>();
+		
+        for(Race r : nationGen.races)
+        {
+			if (!r.tags.contains("secondary")) 
+            {
+				allRaces.add(r);
+            }
+        }
+        
+        // Get race restrictions from restriction list
+        PrimaryRaceRestriction raceMustBe = new PrimaryRaceRestriction(nationGen);
+        NoPrimaryRaceRestriction raceMustntBe = new NoPrimaryRaceRestriction(nationGen);
+        for(Object r: restrictions)
+        {
+        	if(r instanceof PrimaryRaceRestriction) {
+        		raceMustBe = (PrimaryRaceRestriction) r;
+        	}
+        	if(r instanceof NoPrimaryRaceRestriction) {
+        		raceMustntBe = (NoPrimaryRaceRestriction) r;
+        	}
+        }
 
-                for(Race r : nationGen.races)
-                {
-                    if (!r.tags.contains("secondary")) 
-                    {
-                        allRaces.add(r);
-                    }
-                }
-                Race race;
-                race = chandler.getRandom(allRaces);
-                
+        List<Race> restrictedPrimaryRaces = new ArrayList<>();
+        restrictedPrimaryRaces = allRaces;
+        
+		// If primary race has Must Bes, remove races not matching them from the race list from which to select primary race.
+		if(raceMustBe.possibleRaceNames.size() > 0)
+		{
+			Iterator<Race> iter = restrictedPrimaryRaces.iterator();
+			while(iter.hasNext()) 
+			{
+				Race r = iter.next();
+				if(!raceMustBe.possibleRaceNames.contains(r.name))
+				{
+					iter.remove();
+				}
+			}
+		}
+		
+		// If primary race has Must Not Bes, remove them from the race list from which to select primary race.
+		if(raceMustntBe.possibleRaceNames.size() > 0)
+		{
+			Iterator<Race> iter = restrictedPrimaryRaces.iterator();
+			while (iter.hasNext()) 
+			{
+				Race r = iter.next();
+				if(raceMustntBe.possibleRaceNames.contains(r.name)) {
+					iter.remove();
+				}
+			}
+		}
+		
+        Race race;
+        race = chandler.getRandom(restrictedPrimaryRaces);
+        
 		races.add(race.getCopy());
 		
 		for(Command c : races.get(0).nationcommands)
@@ -515,7 +541,7 @@ public class Nation {
             restrictionTypes.add(nationThemeRestriction.getClass());
             
             getColors();
-            getRaces();
+            getRaces(restrictions);
             
             if (!checkRestrictions(restrictions, restrictionTypes)) 
             {
