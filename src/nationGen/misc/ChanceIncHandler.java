@@ -980,6 +980,9 @@ public class ChanceIncHandler {
 
 	}
 	
+	
+	
+	
 	private <T extends Filter> void handleNationIncs(LinkedHashMap<T, Double> filters,  Nation n, List<String> miscincs, Race race)
 	{
 
@@ -1820,6 +1823,504 @@ public class ChanceIncHandler {
 	}
 	
 	
+	/**
+	 * Checks a single chanceinc for Unit-related incs
+	 * @param chanceinc
+	 * @param u
+	 * @param miscincs
+	 * @param race
+	 * @return
+	 */
+	private <T extends Filter> Boolean checkUnitInc(String chanceinc, Unit u, List<String> miscincs, Race race)
+	{
+		// Poses
+		
+		
+		
+		List<String> args = Generic.parseArgs(chanceinc, "'");
+		String lastarg = args.get(args.size() - 1);
+		
+		
+		if(args.get(0).equals("pose") && args.size() > 1)
+		{
+			if(u.pose.roles.contains(lastarg) || u.pose.roles.contains("elite " + lastarg) || u.pose.roles.contains("sacred " + lastarg))
+			{
+				return true;
+			}
+			
+			return false;
+		
+		}
+		else if(args.get(0).equals("personalcommand") && args.size() > 1)
+		{
+
+			String command = args.get(1);
+
+			for(Command c : u.getCommands())
+			{
+
+				if(c.command.equals(command) || c.command.equals("#" + command))
+				{
+					
+					if(Generic.isNumeric(lastarg)) // We are querying an argument
+					{
+						if(args.contains("below"))
+							return Integer.parseInt(c.args.get(0)) < Integer.parseInt(lastarg);
+						else if(args.contains("above"))
+							return Integer.parseInt(c.args.get(0)) > Integer.parseInt(lastarg);
+						else
+							return Integer.parseInt(c.args.get(0)) == Integer.parseInt(lastarg);
+					}	
+					else // We are not querying argument and found the command
+					{
+						return true;
+					}
+				}
+				
+			}
+			
+			return false;
+		}
+		else if(args.get(0).equals("personalshape") && args.size() > 1)
+		{
+			String shape = lastarg;
+			for(ShapeChangeUnit u2 : n.secondshapes)
+			{
+				if(u2.thisForm.name.equals(shape) && u2.otherForm.equals(u))
+					return true;		
+			}
+			
+			return false;
+
+		}
+		else if(args.get(0).equals("filter") && args.size() > 1)
+		{
+			for(Filter f2 : u.appliedFilters)
+			{
+				if(f2.name.equals(lastarg))
+					return true;
+			}
+			
+			return false;
+	
+		}
+		else if(args.get(0).equals("unittag") || args.get(0).equals("tag") && args.size() > 1)
+		{
+			
+			return Generic.containsTag(Generic.getAllUnitTags(u), lastarg);					
+		}
+		else if(args.get(0).equals("racetag") && args.size() > 1)
+		{
+
+			boolean contains = Generic.containsTag(u.race.tags, lastarg);					
+			return contains;
+		}
+		else if(args.get(0).equals("unittheme") && args.size() > 1)
+		{
+
+			
+			boolean contains = Generic.containsTag(u.race.themes, lastarg);		
+			contains = contains || Generic.containsTag(u.pose.themes, lastarg);
+			
+			for(Filter fs : u.race.themefilters)
+				if(Generic.containsTag(fs.themes, lastarg))
+					contains = true;
+			
+			for(Filter fs : u.appliedFilters)
+				if(Generic.containsTag(fs.themes, lastarg))
+					contains = true;
+			
+			return contains;
+		}
+		else if(args.get(0).equals("racetheme") && args.size() > 1)
+		{
+
+			
+			boolean contains = Generic.containsTag(u.race.themes, lastarg);		
+			if(!contains)
+			{
+				for(Filter fs : u.race.themefilters)
+				{
+					if(fs.name.equals(args.get(1)))
+					{
+						return true;
+					}
+					else if(fs.themes.contains(args.get(1)))
+					{
+						return true;
+					}
+					
+				}
+			}
+			return contains;
+
+		}
+		else if(args.get(0).equals("posetag") && args.size() > 1)
+		{
+
+			return Generic.containsTag(u.pose.tags, lastarg);					
+			
+		}
+		else if(args.get(0).equals("posetheme") && args.size() > 1)
+		{
+
+			return Generic.containsTag(u.pose.themes, lastarg);					
+			
+		}
+
+		else if(args.get(0).equals("slot") && args.size() > 1)
+		{
+			boolean armor = args.contains("armor");
+			boolean weapon = args.contains("weapon");
+			boolean contains = false;
+			
+			Item i = u.getSlot(args.get(1));
+			if(i != null)
+			{
+				// No id specified
+				if(lastarg.equals("armor") || lastarg.equals("not") || lastarg.equals("weapon") || args.size() == 2)
+				{
+					contains = true;
+				}
+				// Id specified
+				else if(i.id.equals(lastarg))
+				{
+					contains = true;
+				}
+				// Custom items
+				else if(i.getClass() == CustomItem.class)
+				{
+		
+					CustomItem ci = (CustomItem)i;
+					if(ci.olditem != null && ci.olditem.id != null && ci.olditem.id.equals(lastarg))
+					{
+						contains = true;
+					}
+					else if((Integer.parseInt(i.id) >= 800 && !i.armor) || ((Integer.parseInt(i.id) >= 250 && i.armor)))
+					{
+						if(Generic.containsTag(i.tags, "OLDID") && Generic.getTagValue(i.tags, "OLDID").equals(lastarg))
+						{
+							contains = true;
+						}
+					}
+				}
+				
+		
+				
+				if(contains)
+				{
+					if(armor && !i.armor)
+						contains = false;
+					if(weapon && i.armor)
+						contains = false;
+					
+					return contains;
+				}
+			}
+
+			return false;
+		}
+		else if(args.get(0).equals("slotname") && args.size() > 1)
+		{
+			boolean armor = args.contains("armor");
+			boolean weapon = args.contains("weapon");
+			boolean contains = false;
+			
+			Item i = u.getSlot(args.get(1));
+			if(i != null)
+			{
+				// No id specified
+				if(lastarg.equals("armor") || lastarg.equals("not") || lastarg.equals("weapon") || args.size() == 2)
+				{
+					contains = true;
+				}
+				// Id specified
+				else if(i.name.equals(lastarg))
+				{
+					contains = true;
+				}
+
+					
+				if(contains)
+				{
+					if(armor && !i.armor)
+						contains = false;
+					if(weapon && i.armor)
+						contains = false;
+					
+					return contains;
+				}
+			}
+			
+			return false;
+
+	
+		}
+		else if(args.get(0).equals("slottag") && args.size() > 2)
+		{
+
+			Item i = u.getSlot(args.get(1));
+			if(i != null)
+			{
+				if(i.tags.contains(lastarg))
+				{
+					return true;
+				}
+			}
+			
+			return false;
+		
+		}
+		else if(args.get(0).equals("slottagvalue") && args.size() > 3)
+		{
+
+			Item i = u.getSlot(args.get(1));
+			if(i != null)
+			{
+				String value = Generic.getTagValue(i.tags, args.get(args.size() - 2));
+				if(value != null && lastarg.equals(value))
+				{
+					return true;
+				}
+			}
+			
+			return false;
+			
+		}
+		else if(args.get(0).equals("itemtag") && args.size() > 1)
+		{
+
+			for(Item i : u.slotmap.values())
+				if(i != null)
+					if(Generic.containsTag(i.tags, lastarg))
+					{
+						return true;
+					}
+			
+
+			return false;
+		}
+		else if(args.get(0).equals("itemtheme") && args.size() > 1)
+		{
+
+			for(Item i : u.slotmap.values())
+			{
+				// Items can be null if they're removed, offhand for example.
+				if(i != null && Generic.containsTag(i.themes, args.get(args.size() - 2)))
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+		else if(args.get(0).equals("poseitemtheme") && args.size() > 2)
+		{
+			
+			ItemSet stuff = u.pose.getItems(args.get(1));
+			if(stuff != null)
+			{
+				for(Item i : stuff)
+					if(Generic.containsTag(i.themes, lastarg))
+					{
+						return true;
+					}
+			}
+			return false;
+			
+	
+		}
+		else if(args.get(0).equals("taggedmagic") && args.size() > 1)
+		{
+	
+			List<String> tags = new ArrayList<String>();
+			
+			tags.addAll(u.tags);
+			for(Filter fu : u.appliedFilters)
+				tags.addAll(fu.tags);
+			for(String slot : u.slotmap.keySet())
+			{
+				if(u.slotmap.get(slot) != null)
+					tags.addAll(u.slotmap.get(slot).tags);
+			}
+			
+			boolean contains = true;
+			for(int i = 1; i < args.size(); i++)
+			{
+				String path = args.get(i);
+				if(!tags.contains("path " + path) && !path.equals("not"))
+					contains = false;
+			}
+			
+			
+			return contains;
+			
+		}
+		// "comparemagic earth above air 1"
+		// "comparemagic earth equal air 1"
+		// "comparemagic earth below air 1"
+		else if(args.get(0).equals("comparemagic") && args.size() > 3)
+		{
+			int path1 = Generic.PathToInteger(args.get(1));
+			int path2 = Generic.PathToInteger(lastarg);
+			
+
+			int[] picks = u.getMagicPicks();
+			
+			boolean check = false;
+			
+			if(args.get(2).equals("below"))
+				check = (picks[path1] < picks[path2]);
+			else if(args.get(2).equals("above"))
+				check = (picks[path1] > picks[path2]);
+			else
+				check = (picks[path1] == picks[path2]);
+
+			return check;				
+			
+		}
+		else if(args.get(0).equals("personalmagic") && args.size() > 1)
+		{
+			
+
+			boolean contains = true;
+			int level = 1;
+			
+			int step = 0;
+			int path = -1;
+			boolean not = false;
+
+			for(int i = 1; i < args.size(); i++)
+			{
+				
+				if(step == 0)
+				{
+					path = Generic.PathToInteger(args.get(i));
+					
+
+					
+					// If there's no level specified
+					if((i < args.size() - 1 && !Generic.isNumeric(args.get(i + 1)) && !args.get(i+1).equals("below")) || i == args.size() - 1)
+					{
+						if(u.getMagicPicks()[path] < 1)
+						{
+							contains = false;
+							break;
+						}	
+					}
+					else
+					{
+				
+						step++;
+					}
+					
+					
+				}
+				else if(step == 1)
+				{
+
+					if(args.get(i).equals("below"))
+					{
+						if(i != args.size() - 1)
+						{
+							level = Integer.parseInt(args.get(i+1));
+						}
+						else
+						{
+							System.out.println("Error in chanceinc " + chanceinc + ". Need a path level after keyword 'below'");
+							level = 0;
+						}
+						not = true;
+						continue;
+					}
+					else
+						level = Integer.parseInt(args.get(i));		
+
+
+					if((u.getMagicPicks()[path] < level) != not)
+					{
+						contains = false;
+						not = false;
+						break;
+					}
+					step--;
+				}
+	
+
+			}
+			
+			if(contains)
+			{
+
+				return true;
+			}
+			else
+				return false;
+		}
+	
+			
+		else if(args.get(0).equals("origname") && args.size() > 1)
+		{
+
+			if(u.name.type.equals(lastarg))
+				return true;
+			else
+				return false;
+		}
+		else if(args.get(0).equals("race") && args.size() > 1)
+		{
+			if(u.race.name.toLowerCase().equals(args.get(args.size() - 2).toLowerCase()))
+			{
+				return true;
+			}
+			else
+				return false;
+		
+		}
+		else if(args.get(0).equals("prot") && args.size() >= 2)
+		{
+			
+			boolean below = false;
+			if(args.contains("below"))
+				below = true;
+			
+			if(!below && u.getTotalProt(true) >= Integer.parseInt(lastarg))
+			{
+				return true;
+			}
+			else if(below && u.getTotalProt(true) < Integer.parseInt(lastarg))
+			{
+				return true;
+			}
+			else
+				return false;
+		
+		}
+		else if(args.get(0).equals("enc") && args.size() >= 2)
+		{
+			
+			boolean below = false;
+			if(args.contains("below"))
+				below = true;
+			
+			int enc = u.getTotalEnc();
+			
+			
+			if(!below && enc >= Integer.parseInt(lastarg))
+			{
+				return true;
+			}
+			else if(below && enc < Integer.parseInt(lastarg))
+			{
+				return true;
+			}
+			else
+				return false;
+		
+		}
+		
+		return null;
+	}
+	
 	private <T extends Filter> void handleUnitIncs(LinkedHashMap<T, Double> filters,  Unit u, List<String> miscincs, Race race)
 	{
 
@@ -1844,668 +2345,21 @@ public class ChanceIncHandler {
 			
 			for(String str : chanceincs)
 			{
-		
-				// Poses
-				List<String> args = Generic.parseArgs(str, "'");
-				if(args.get(0).equals("pose") && args.size() > 2)
-				{
-				
+					List<String> args = Generic.parseArgs(str);
+					String value = args.get(args.size() - 1);
 					boolean not = args.contains("not");
-					boolean contains = false;
-					if(u.pose.roles.contains(args.get(args.size() - 2)) || u.pose.roles.contains("elite " + args.get(args.size() - 2)) || u.pose.roles.contains("sacred " + args.get(args.size() - 2)))
-					{
-						contains = true;
-					}
+					args.remove(args.size() - 1);
+					str = Generic.listToString(args);
+					Boolean success = checkUnitInc(str, u, miscincs, race);
 					
-				
-					
-					if(contains != not)
+					if(success == null)
+						continue;
+					else if(success != not)
 					{
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+						applyChanceInc(filters, f,  value);
 						continue;
 					}
-				}
-				else if(args.get(0).equals("personalcommand") && args.size() > 2)
-				{
-
-					boolean canIncrease = false;
-					String command = args.get(1);
-
-					for(Command c : u.getCommands())
-					{
-
-						if(c.command.equals(command) || c.command.equals("#" + command))
-						{
-							if(args.size() > 3)
-							{
-								int level = 0;
-								boolean above = true;
-								boolean exact = false;
-								if(Generic.isNumeric(args.get(2)))
-								{
-									level = Integer.parseInt(args.get(2));
-								}
-								else if(args.size() > 4)
-								{
-									if(args.contains("below"))
-										above = false;
-									else if(args.contains("exact"))
-										exact = true;
-									
-									level = Integer.parseInt(args.get(3));
-								}
-								else
-									canIncrease = true;
-								
-								
-								if(!canIncrease)
-								{
-									if(!exact && (Integer.parseInt(c.args.get(0)) >= level) == above)
-									{
-										canIncrease = true;
-									}
-									else if(exact && (Integer.parseInt(c.args.get(0)) == level))
-									{
-										canIncrease = true;
-									}
-
-									
-								}
-								
-							}
-							else
-								canIncrease = true;
-						}
-						
-					}
-					if(canIncrease)
-					{
-
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-						continue;
-					}
-				}
-				if(args.get(0).equals("personalshape") && args.size() >= 3)
-				{
-					boolean contains = false;
-					String shape = args.get(1);
-					for(ShapeChangeUnit u2 : n.secondshapes)
-					{
-						if(u2.thisForm.name.equals(shape) && u2.otherForm.equals(u))
-							contains = true;			
-					}
-					
-					if(contains)
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-				}
-				if(args.get(0).equals("filter") && args.size() >= 3)
-				{
-					boolean contains = false;
-					for(Filter f2 : u.appliedFilters)
-					{
-						if(f2.name.equals(args.get(1)))
-							contains = true;
-					}
-					if(contains)
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-				}
-				else if(args.get(0).equals("unittag") && args.size() > 2)
-				{
-					
-					boolean contains = Generic.containsTag(Generic.getAllUnitTags(u), args.get(1));					
-					if(contains)
-					{
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-						continue;
-					}
-				}
-				else if(args.get(0).equals("racetag") && args.size() > 2)
-				{
-
-					boolean contains = Generic.containsTag(u.race.tags, args.get(1));					
-					if(contains)
-					{
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-						continue;
-					}
-				}
-				else if(args.get(0).equals("unittheme") && args.size() > 2)
-				{
-
-					boolean not = args.contains("not");
-					
-					boolean contains = Generic.containsTag(u.race.themes, args.get(args.size() - 2));		
-					
-					for(Filter fs : u.race.themefilters)
-						if(Generic.containsTag(fs.themes, args.get(args.size() - 2)))
-							contains = true;
-					
-					for(Filter fs : u.appliedFilters)
-						if(Generic.containsTag(fs.themes, args.get(args.size() - 2)))
-							contains = true;
-					
-					if(contains != not)
-					{
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-						continue;
-					}
-				}
-				else if(args.get(0).equals("racetheme") && args.size() > 2)
-				{
-
-					
-					boolean contains = Generic.containsTag(u.race.themes, args.get(1));		
-					if(!contains)
-					{
-						for(Filter fs : u.race.themefilters)
-						{
-							if(fs.name.equals(args.get(1)))
-							{
-								contains = true;
-								break;
-							}
-							else if(fs.themes.contains(args.get(1)))
-							{
-								contains = true;
-								break;
-							}
-							
-						}
-					}
-
-					
-					if(contains)
-					{
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-						continue;
-					}
-				}
-				else if(args.get(0).equals("posetag") && args.size() > 2)
-				{
-
-					boolean contains = Generic.containsTag(u.pose.tags, args.get(1));					
-					if(contains)
-					{
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-						continue;
-					}
-				}
-				else if(args.get(0).equals("posetheme") && args.size() > 2)
-				{
-
-					boolean contains = Generic.containsTag(u.pose.themes, args.get(1));					
-					if(contains)
-					{
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-						continue;
-					}
-				}
-				else if(args.get(0).equals("tag") && args.size() > 2)
-				{
-
-					boolean contains = Generic.containsTag(u.race.tags, args.get(1)) || Generic.containsTag(u.tags, args.get(1)) || Generic.containsTag(u.pose.tags, args.get(1));					
-					if(contains)
-					{
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-						continue;
-					}
-				}
-				else if(args.get(0).equals("slot") && args.size() > 3)
-				{
-					boolean not = args.contains("not");
-					boolean armor = args.contains("armor");
-					boolean weapon = args.contains("weapon");
-					boolean contains = false;
-					Item i = u.getSlot(args.get(args.size() - 3));
-					if(i != null)
-					{
-					
-						if(i.id.equals(args.get(args.size() - 2)))
-						{
-							contains = true;
-						}
-						else if(i.getClass() == CustomItem.class)
-						{
-				
-							CustomItem ci = (CustomItem)i;
-							if(ci.olditem != null && ci.olditem.id != null && ci.olditem.id.equals(args.get(args.size() - 2)))
-							{
-								contains = true;
-							}
-							else if((Integer.parseInt(i.id) >= 700 && !i.armor) || ((Integer.parseInt(i.id) >= 250 && i.armor)))
-							{
-								if(Generic.containsTag(i.tags, "OLDID") && Generic.getTagValue(i.tags, "OLDID").equals(args.get(args.size() - 2)))
-								{
-									contains = true;
-								}
-							}
-						}
-				
-						
-						if(contains)
-						{
-							if(armor && !i.armor)
-								contains = false;
-							if(weapon && i.armor)
-								contains = false;
-						}
-					}
-
-					
-					if(contains != not)
-					{
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-						continue;
-					}
-				}
-				else if(args.get(0).equals("slotname") && args.size() > 3)
-				{
-					boolean not = args.contains("not");
-					boolean armor = args.contains("armor");
-					boolean weapon = args.contains("weapon");
-					boolean contains = false;
-					Item i = u.getSlot(args.get(args.size() - 3));
-					if(i != null)
-					{
-						if(i.name.equals(args.get(args.size() - 2)))
-						{
-							contains = true;
-						}
-		
-						
-						if(contains)
-						{
-							if(armor && !i.armor)
-								contains = false;
-							if(weapon && i.armor)
-								contains = false;
-						}
-					}
-
-					
-					if(contains != not)
-					{
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-						continue;
-					}
-				}
-				else if(args.get(0).equals("slottag") && args.size() > 3)
-				{
-
-					boolean not = args.contains("not");
-					boolean contains = false;
-					Item i = u.getSlot(args.get(args.size() - 3));
-					if(i != null)
-					{
-						if(i.tags.contains(args.get(args.size() - 2)))
-						{
-							contains = true;
-						}
-					}
-
-					
-					if(contains != not)
-					{
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-						continue;
-					}
-				}
-				else if(args.get(0).equals("slottagvalue") && args.size() > 4)
-				{
-
-					boolean not = args.contains("not");
-					boolean contains = false;
-					Item i = u.getSlot(args.get(args.size() - 4));
-					if(i != null)
-					{
-
-						String value = Generic.getTagValue(i.tags, args.get(args.size() - 3));
-
-						if(value != null && args.get(args.size() - 2).equals(value))
-						{
-							contains = true;
-						}
-					}
-					
-					
-					if(contains != not)
-					{
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-						continue;
-					}
-				}
-				else if(args.get(0).equals("itemtag") && args.size() > 2)
-				{
-
-					boolean not = args.contains("not");
-					boolean contains = false;
-					for(Item i : u.slotmap.values())
-						if(i != null)
-							if(Generic.containsTag(i.tags, args.get(args.size() - 2)))
-							{
-								contains = true;
-								break;
-							}
-					
-					if(contains != not)
-					{
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-						continue;
-					}
-				}
-				else if(args.get(0).equals("itemtheme") && args.size() > 2)
-				{
-
-					boolean not = args.contains("not");
-					boolean contains = false;
-					for(Item i : u.slotmap.values())
-					{
-						// Items can be null if they're removed, offhand for example.
-						if(i != null && Generic.containsTag(i.themes, args.get(args.size() - 2)))
-						{
-							contains = true;
-							break;
-						}
-					}
-					
-					if(contains != not)
-					{
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-						continue;
-					}
-				}
-				else if(args.get(0).equals("poseitemtheme") && args.size() > 3)
-				{
-
-					boolean not = args.contains("not");
-					boolean contains = false;
-					
-					ItemSet stuff = u.pose.getItems(args.get(args.size() - 3));
-					if(stuff == null)
-						contains = false;
-					else
-					{
-						for(Item i : stuff)
-							if(Generic.containsTag(i.themes, args.get(args.size() - 2)))
-							{
-								contains = true;
-								break;
-							}
-					}
-					
-					if(contains != not)
-					{
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-						continue;
-					}
-				}
-				else if(args.get(0).equals("hasitem") && args.size() > 3)
-				{
-
-					boolean not = args.contains("not");
-					boolean contains = u.getSlot(args.get(args.size() - 3)).equals(args.get(args.size() - 2));
-					
-					if(contains != not)
-					{
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-						continue;
-					}
-				}
-				else if(args.get(0).equals("taggedmagic") && args.size() > 1)
-				{
 			
-					List<String> tags = new ArrayList<String>();
-					
-					tags.addAll(u.tags);
-					for(Filter fu : u.appliedFilters)
-						tags.addAll(fu.tags);
-					for(String slot : u.slotmap.keySet())
-					{
-						if(u.slotmap.get(slot) != null)
-							tags.addAll(u.slotmap.get(slot).tags);
-					}
-					
-					boolean contains = true;
-					for(int i = 1; i < args.size() - 1; i++)
-					{
-						String path = args.get(i);
-						if(!tags.contains("path " + path))
-							contains = false;
-					}
-					
-					
-					if(contains)
-					{
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-						continue;
-					}
-					
-				}
-				// "comparemagic earth above air 1"
-				// "comparemagic earth equal air 1"
-				// "comparemagic earth below air 1"
-				else if(args.get(0).equals("comparemagic") && args.size() > 4)
-				{
-					int path1 = Generic.PathToInteger(args.get(1));
-					int path2 = Generic.PathToInteger(args.get(3));
-					
-		
-					int[] picks = u.getMagicPicks();
-					
-					boolean check = false;
-					
-					if(args.get(2).equals("below")  && args.size() <= 5)
-						check = (picks[path1] < picks[path2]);
-					else if(args.get(2).equals("above") && args.size() <= 5)
-						check = (picks[path1] > picks[path2]);
-					else if(args.get(2).equals("equal"))
-						check = (picks[path1] == picks[path2]);
-					else if(args.size() > 5 && args.get(2).equals("below"))
-					{
-						int amount = Integer.parseInt(args.get(4));
-						check = (picks[path2] - picks[path1] <= amount) && picks[path2] > picks[path1];
-					}
-					else if(args.size() > 5 && args.get(2).equals("above"))
-					{
-						int amount = Integer.parseInt(args.get(4));
-						check = (picks[path1] - picks[path2] <= amount) && picks[path2] < picks[path1];
-					}	
-					
-					else
-						System.out.println("Error with " + str + ". No keyword below/above/equal was found.");
-
-					
-					if(check)
-					{
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-						continue;
-					}
-						
-					
-				}
-				else if(args.get(0).equals("personalmagic") && args.size() > 1)
-				{
-					
-	
-					
-					boolean contains = true;
-					int level = 1;
-					
-					int step = 0;
-					int path = -1;
-					boolean not = false;
-
-					for(int i = 1; i < args.size() - 1; i++)
-					{
-						
-						if(step == 0)
-						{
-							path = Generic.PathToInteger(args.get(i));
-							
-
-							
-							// If there's no level specified
-							if((i < args.size() - 2 && !Generic.isNumeric(args.get(i + 1)) && !args.get(i+1).equals("below")) || i == args.size() - 2)
-							{
-								if(u.getMagicPicks()[path] < 1)
-								{
-									contains = false;
-									break;
-								}	
-							}
-							else
-							{
-						
-								step++;
-							}
-							
-							
-						}
-						else if(step == 1)
-						{
-
-							if(args.get(i).equals("below"))
-							{
-								if(i != args.size() - 2)
-								{
-									level = Integer.parseInt(args.get(i+1));
-								}
-								else
-								{
-									System.out.println("Error in chanceinc " + str + ". Need a path level after keyword 'below'");
-									level = 0;
-								}
-								not = true;
-								continue;
-							}
-							else
-								level = Integer.parseInt(args.get(i));		
-
-		
-							if((u.getMagicPicks()[path] < level) != not)
-							{
-								contains = false;
-								not = false;
-								break;
-							}
-							step--;
-						}
-			
-		
-					}
-					
-					if(contains)
-					{
-
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-						continue;
-					}
-				}
-				else if(args.get(0).equals("magicbelow") && args.size() > 1)
-				{
-
-					boolean contains = true;
-					int level = 1;
-					
-					int step = 0;
-					int path = -1;
-					for(int i = 1; i < args.size() - 1; i++)
-					{
-						if(step == 0)
-						{
-							path = Generic.PathToInteger(args.get(i));
-							step++;
-						}
-						else if(step == 1)
-						{
-							level = Integer.parseInt(args.get(i));		
-							if(u.getMagicPicks()[path] > level)
-							{
-								contains = false;
-								break;
-							}
-							step--;
-						}
-			
-		
-					}
-					
-					if(contains)
-					{
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-						continue;
-					}
-				}
-				
-				else if(args.get(0).equals("origname") && args.size() > 1)
-				{
-
-					boolean contains = false;
-					if(u.name.type.equals(args.get(1)))
-						contains = true;
-					
-					if(contains)
-					{
-						
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-						continue;
-					}
-				}
-				else if(args.get(0).equals("race") && args.size() >= 3)
-				{
-					boolean canIncrease = false;
-					boolean not = args.contains("not");
-					if(u.race.name.toLowerCase().equals(args.get(args.size() - 2).toLowerCase()))
-					{
-						canIncrease = true;
-					}
-					if(canIncrease != not)
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-				}
-				else if(args.get(0).equals("prot") && args.size() >= 3)
-				{
-					boolean canIncrease = false;
-					
-					boolean below = false;
-					if(args.contains("below"))
-						below = true;
-					
-					if(!below && u.getTotalProt(true) >= Integer.parseInt(args.get(args.size() - 2)))
-					{
-						canIncrease = true;
-					}
-					else if(below && u.getTotalProt(true) < Integer.parseInt(args.get(args.size() - 2)))
-					{
-						canIncrease = true;
-					}
-					if(canIncrease)
-					{
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-					}
-				}
-				else if(args.get(0).equals("enc") && args.size() >= 2)
-				{
-					boolean canIncrease = false;
-					
-					boolean below = false;
-					if(args.contains("below"))
-						below = true;
-					
-					int enc = u.getTotalEnc();
-					
-					
-					if(!below && enc >= Integer.parseInt(args.get(args.size() - 2)))
-					{
-						canIncrease = true;
-					}
-					else if(below && enc < Integer.parseInt(args.get(args.size() - 2)))
-					{
-						canIncrease = true;
-					}
-					if(canIncrease)
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-				}
-				
 				
 			}
 			

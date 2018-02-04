@@ -1,0 +1,55 @@
+Unit-based chanceincs
+-----------------------------------
+
+Race:		race [not] <race>
+		True if unit is of given race
+Pose: 		pose [not] <pose role>
+		True if unit pose supports given role (ranged/infantry/cavalry/chariot)
+Command:	personalcommand <command> [below/above/not] [command value]
+		True if command exists or if a value is defined, is above/below/precisely the value
+Second shape:	personalshape [not] <shape name>
+		True if unit has second shape of given name
+Filter:		filter [not] <filter name>
+		True if unit has a filter of given name
+Tag:		unittag [not] <tag>
+		True if unit (including stuff it contains, poses, filters etc) has given tag
+		Alternative call of #tag is supported.Race tag:	#racetag [not] <tag>
+		True if unit's race has given tag
+Unit theme:	unittheme [not] <theme>
+		True if unit (including stuff it contains, poses, filters etc) has given theme tag (defined by #theme)
+Race theme:	racetheme [not] <theme>
+		True if unit's race has a racial theme of given name or contains given theme tag
+Pose tag:	posetag [not] <tag>
+		True if unit's pose has given tag
+Pose theme:	posetheme [not] <theme>
+		True if unit's theme has given theme tag
+Slot id:	slot <slot> [not] [armor/weapon] <id>
+		True if given slot of unit is filled with something. Leave id out for any id, add armor/weapon to limit checking to armor/weapon. 
+		Leave both out to check if there is anything in the slot. Id check should also check for the id a magic weapon of a sacred is based on.
+Slot name:	slotname <slot> [not] [armor/weapon] <name>
+		As above but looks for item names (as defined in NationGen, not in game)
+Slot tag:	slottag <slot> [not] <tag>
+		True if item in given slot contains given tag
+Slot tag value:	slottag <slot> [not] <tag> <value>
+		True if item in given slot contains given tag that has a value (#tag animal horse is tag "animal" with value "horse")
+Item tag:	itemtag [not] <tag>
+		True if any item an unit is wearing has given tag
+Item theme:	itemtheme [not] <theme>
+		As above but for theme tags
+Pose itm theme:	poseitemtheme <slot> [not] <theme>
+		True if unit's pose has items of given slot that have given theme tag
+Tagged magic:	taggedmagic [not] <path1> [path2] [path3]...
+		True if unit has been tagged with magic of given path or paths. This is supposed to be used with items and filters that have
+		"#path <path>" defined in them. Used for some sacred naming stuff, probably.
+Compare magic:	comparemahic <path1> [not] [above/below] <path2>
+		True if path1 is above/below/equal to path2 on given unit.
+Magic levels:	personalmagic <path> [below] <level>	
+		If the unit has magic path <path> at least/below <level>, true.
+		You can add multiple <path> [below] <level> sequences before <mod> for multiple
+		checks.	
+Original name:	origname [not] <name>
+		Checks unit base name (ie for Hammer Soldier it is Soldier). This is used for sacred commander naming.
+Protection:	prot [not/below] <value>
+		Checks if unit protection is at least given value. Generation order matters: Before getting armor an unit has less prot.
+Encumberance:	enc [not/below] <value>
+		As above but for encumberance. Generation order matters: Before getting armor an unit has less enc.
