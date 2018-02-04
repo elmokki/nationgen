@@ -54,8 +54,8 @@ import nationGen.units.Unit;
 
 public class NationGen 
 {
-    public static String version = "0.6.24";
-    public static String date = "6th of September 2017";
+    public static String version = "0.7.0-RC1";
+    public static String date = "2nd of February 2018";
 
     public List<NationRestriction> restrictions = new ArrayList<>();
 
@@ -1049,19 +1049,19 @@ public class NationGen
 
         g.setColor(new Color(0, 0, 0));
         g.fillRect(0, 0, 256, 64);
-        g.drawImage(flag, 0, -4, null);
+        g.drawImage(flag, 0, -4, 64, 64, null);
 
         g.setColor(Color.DARK_GRAY);
 
         Font f = g.getFont();
-        Font d = f.deriveFont(20f);
+        Font d = f.deriveFont(18f);
         f = f.deriveFont(24f);
         g.setFont(d);
 
-        g.drawString("NationGen:", 64, 24);
+        g.drawString("NationGen " + version + ":", 64, 18);
 
         g.setFont(f);
-        g.drawString(name, 64, 56);
+        g.drawString(name, 64, 48);
         
         Drawing.writeTGA(combined, "./mods/" + output);
     }

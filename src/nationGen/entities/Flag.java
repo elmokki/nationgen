@@ -8,15 +8,13 @@ import com.elmokki.Generic;
 import nationGen.NationGen;
 
 
-public class Flag extends Filter {
+public class Flag extends Drawable {
 
 	public Flag(NationGen nationGen) {
 		super(nationGen);
 	}
 	
-	public String sprite = "";
-	public String recolormask = "";
-	public String shading = "";
+
 	public List<String> allowed = new ArrayList<String>();
 	
         @Override
@@ -28,13 +26,8 @@ public class Flag extends Filter {
 		try
 		{
 		
-		if(args.get(0).equals("#sprite"))
-			this.sprite = args.get(1);
-		else if(args.get(0).equals("#recolormask"))
-			this.recolormask = args.get(1);
-		else if(args.get(0).equals("#shading"))
-			this.shading = args.get(1);
-		else if(args.get(0).equals("#allowed"))
+
+		if(args.get(0).equals("#allowed"))
 			this.allowed.add(args.get(1));
 		else
 			super.handleOwnCommand(str);

@@ -3,12 +3,18 @@ package com.elmokki;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.color.ColorSpace;
 import java.awt.image.BufferedImage;
 import java.awt.image.BufferedImageOp;
 import java.awt.image.ColorConvertOp;
+import java.awt.image.FilteredImageSource;
+import java.awt.image.ImageFilter;
+import java.awt.image.ImageProducer;
 import java.awt.image.LookupOp;
 import java.awt.image.LookupTable;
+import java.awt.image.RGBImageFilter;
 import java.awt.image.RescaleOp;
 import java.awt.image.ShortLookupTable;
 import java.io.BufferedOutputStream;
@@ -16,12 +22,53 @@ import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Random;
+
+import javax.imageio.ImageIO;
 
 
 
 
 public class Drawing {
+	
+	private static class ColorMapper
+	extends LookupTable {
+
+	    private final int[] from;
+	    private final int[] to;
+
+	    public ColorMapper(Color from,
+	                       Color to) {
+	        super(0, 4);
+
+	        this.from = new int[] {
+	            from.getRed(),
+	            from.getGreen(),
+	            from.getBlue(),
+	            from.getAlpha(),
+	        };
+	        this.to = new int[] {
+	            to.getRed(),
+	            to.getGreen(),
+	            to.getBlue(),
+	            to.getAlpha(),
+	        };
+	    }
+
+	    @Override
+	    public int[] lookupPixel(int[] src,
+	                             int[] dest) {
+	        if (dest == null) {
+	            dest = new int[src.length];
+	        }
+
+	        int[] newColor = (Arrays.equals(src, from) ? to : src);
+	        System.arraycopy(newColor, 0, dest, 0, newColor.length);
+
+	        return dest;
+	    }
+	}
 	
 
 	public static BufferedImage greyscale(BufferedImage image, int units)
@@ -144,7 +191,38 @@ public class Drawing {
 	    LookupTable lookupTable = new ShortLookupTable(0, data);
 	    return new LookupOp(lookupTable, null);
 	}
-
+	
+	
+		
+		
+	   public static BufferedImage blackToTransparent(BufferedImage image)
+	   {
+		   Color from = new Color(0, 0, 0, 255);
+		   Color to = new Color(0, 0, 0, 0);
+		   BufferedImageOp lookup = new LookupOp(new ColorMapper(from, to), null);
+		   BufferedImage convertedImage = lookup.filter(image, null);
+		   
+		   return convertedImage;
+	   }
+	   
+	   
+	   public static BufferedImage convertImageToRGBA(BufferedImage image)
+	   {
+			// Convert to RGBA
+			BufferedImage img = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_ARGB);
+			img.createGraphics().drawImage(image, 0, 0, null);
+			return img;
+	   }
+	   
+	   public static BufferedImage purpleToShadow(BufferedImage image)
+	   {
+		   Color from = new Color(248, 0, 248, 255);
+		   Color to = new Color(0, 0, 0, 128);
+		   BufferedImageOp lookup = new LookupOp(new ColorMapper(from, to), null);
+		   BufferedImage convertedImage = lookup.filter(image, null);
+		   
+		   return convertedImage;
+	   }
 	
 	public static short calcColor(short i, short R1)
 	{
