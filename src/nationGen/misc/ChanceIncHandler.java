@@ -32,6 +32,8 @@ import com.elmokki.Generic;
 
 
 
+
+
 import nationGen.entities.Drawable;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
@@ -107,8 +109,7 @@ public class ChanceIncHandler {
 	
 	public <T extends Filter> LinkedHashMap<T, Double> handleChanceIncs(List<T> filters)
 	{
-		List<Unit> units = new ArrayList<Unit>();
-		return handleChanceIncs(units, filters);
+		return handleChanceIncs(null, filters);
 	}
 	
 	
@@ -125,34 +126,15 @@ public class ChanceIncHandler {
 	
 	public <T extends Filter> LinkedHashMap<T, Double> handleChanceIncs(Unit u, List<T> filters, List<String> extraincs)
 	{
-		List<Unit> units = new ArrayList<Unit>();
-		units.add(u);
-		return handleChanceIncs(units, filters, extraincs);
-	}
-	
-	public <T extends Filter> LinkedHashMap<T, Double> handleChanceIncs(List<Unit> u, List<T> filters)
-	{
-		return handleChanceIncs(u, filters, null);
-	}
-	
-	/**
-	 * The main method for handling chanceincs. This uses basechances.
-	 * @param u
-	 * @param filters
-	 * @return
-	 */
-	public <T extends Filter> LinkedHashMap<T, Double> handleChanceIncs(List<Unit> u, List<T> filters, List<String> extraincs)
-	{
-		
 		LinkedHashMap<T, Double> set = new LinkedHashMap<T, Double>();
 		for(T t : filters)
-		{
 			set.put(t, t.basechance);
-		}
-
+			
 		return handleChanceIncs(u, set, extraincs);
 	}
+
 	
+
 	
 	
 	/**
@@ -163,9 +145,8 @@ public class ChanceIncHandler {
 	 */
 	public <T extends Filter> LinkedHashMap<T, Double> handleChanceIncs(Unit u, LinkedHashMap<T, Double> filters)
 	{
-		ArrayList<Unit> list = new ArrayList<Unit>();
-		list.add(u);
-		return handleChanceIncs(list, filters, null);
+
+		return handleChanceIncs(u, filters, null);
 	}
 	
 	/**
@@ -175,13 +156,13 @@ public class ChanceIncHandler {
 	 * @param extraincs
 	 * @return
 	 */
-	public <T extends Filter> LinkedHashMap<T, Double> handleChanceIncs(List<Unit> u, LinkedHashMap<T, Double> set, List<String> extraincs)
+	public <T extends Filter> LinkedHashMap<T, Double> handleChanceIncs(Unit u, LinkedHashMap<T, Double> set, List<String> extraincs)
 	{
 		
 	
 		Race race = null;
-		if(u.size() > 0 && getRaceThemeIncs(u.get(0).race) != null)
-			race = u.get(0).race;
+		if(u != null && getRaceThemeIncs(u.race) != null)
+			race = u.race;
 		else if(n.races.size() > 0 && getRaceThemeIncs(n.races.get(0)) != null)
 			race = n.races.get(0);
 		
@@ -193,27 +174,23 @@ public class ChanceIncHandler {
 		if(extraincs != null)
 			miscincs.addAll(extraincs);
 		
-		for(Unit un : u)
+	
+		if(u != null)
 		{
-			for(Filter f : un.appliedFilters)
+			for(Filter f : u.appliedFilters)
 				miscincs.addAll(f.themeincs);
-		}
 		
-		handleNationIncs(set, n, miscincs, race);
+			List<String> unit_miscincs = new ArrayList<String>();
+			for(Filter f : u.appliedFilters)
+				unit_miscincs.addAll(f.themeincs);
+		}
 
 		
 		// Actually handle the stuff
-		for(Unit un : u)
-		{
-			
-			List<String> unit_miscincs = new ArrayList<String>();
-			for(Filter f : un.appliedFilters)
-				unit_miscincs.addAll(f.themeincs);
-			
-			handleUnitIncs(set, un, unit_miscincs, race);
-		}
+
 		
 		
+		processChanceIncs(set, n, miscincs, race, u);
 		handleThemeIncs(set, miscincs, race);
 
 
@@ -654,6 +631,254 @@ public class ChanceIncHandler {
 			
 	}
 	
+	
+	private Boolean checkThemeInc(String themeinc, Filter f, Race r)
+	{
+		List<String> args = Generic.parseArgs(themeinc, "'");
+		String lastarg = args.get(args.size() - 1);
+		
+		// Theme
+		if(args.get(0).equals("theme") && args.size() >= 2)
+		{
+			return (f.themes.contains(lastarg));
+			
+		}
+		else if(args.get(0).equals("owntag") && args.size() >= 2)
+		{
+			return (f.tags.contains(lastarg));
+			
+		}
+		else if(args.get(0).equals("racename") && args.size() >= 2 && f.name != null)
+		{
+
+			if(f.name.toLowerCase().equals(lastarg.toLowerCase()))
+			{
+				if(f.getClass().equals(Race.class))
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+		}
+		else if(args.get(0).equals("thisitemtag") && args.size() >= 2 && f.name != null)
+		{
+			if(f.tags.contains(lastarg))
+			{
+				if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+
+				}
+			}
+		}
+		else if(args.get(0).equals("thisitemslottag") && args.size() >= 2 && f.name != null)
+		{
+			if(f.tags.contains(lastarg))
+			{
+				if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
+				{
+					Item i = (Item)f;
+					if(i.slot.equals(args.get(args.size() - 2)))
+					{
+						return true;
+					}
+					else
+					{
+						return false;
+
+					}
+				}
+			}
+		}
+		else if(args.get(0).equals("thisitemtheme") && args.size() >= 2 && f.name != null)
+		{
+
+			if(f.themes.contains(lastarg))
+			{
+				if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+		}
+		else if(args.get(0).equals("thisitemslottheme") && args.size() >= 3 && f.name != null)
+		{
+			if(f.themes.contains(lastarg))
+			{
+				if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
+				{
+					Item i = (Item)f;
+					if(i.slot.equals(args.get(args.size() - 2)))
+					{
+							return true;
+					}
+					else
+					{
+						return false;
+
+					}
+				}
+			}
+		}
+		else if(args.get(0).equals("isferrousitem") && args.size() >= 1 && f.name != null)
+		{
+			if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
+			{
+				Item i = (Item)f;
+				if(i.armor)
+				{
+					int ferrous = n.nationGen.armordb.GetInteger(i.id, "ferrous", 0);
+					if((ferrous == 1))
+					{
+						return true;
+					}
+				}
+				else
+				{
+					int ferrous = n.nationGen.weapondb.GetInteger(i.id, "ironweapon", 0);
+					if((ferrous == 1))
+					{
+						return true;
+					}
+				}
+			}
+		}
+		else if(args.get(0).equals("weaponuwpenalty") && args.size() >= 2 && f.name != null)
+		{
+			boolean below = args.contains("below");
+			if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
+			{
+				Item i = (Item)f;
+
+				int value = Integer.parseInt(lastarg);
+				int penalty = 0;
+				
+				if(!i.armor)
+				{
+					int slash = n.nationGen.weapondb.GetInteger(i.id, "dt_slash", 0);
+					int blunt = n.nationGen.weapondb.GetInteger(i.id, "dt_blunt", 0);
+					int pierce = n.nationGen.weapondb.GetInteger(i.id, "dt_pierce", 0);
+					int lgt = n.nationGen.weapondb.GetInteger(i.id, "lgt", 0);
+
+					if(pierce == 0 && (blunt == 1 || slash == 1))
+						penalty = lgt;
+					else if(pierce == 1 && (blunt == 1 || slash == 1))
+						penalty = (int) Math.round((double)lgt / 2);
+					
+					if((penalty >= value) != below)
+					{	
+						return true;
+					}
+					else
+					{
+						return false;
+					}
+				}
+			}
+		}
+		else if(args.get(0).equals("thisarmorprot") && args.size() >= 2 && f.name != null)
+		{
+			boolean below = args.contains("below");
+
+			if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
+			{
+				int value = Integer.parseInt(lastarg);
+				Item i = (Item)f;
+				
+				if(i.armor && !i.slot.equals("offhand"))
+				{
+					int prot = n.nationGen.armordb.GetInteger(i.id, "prot", 0);
+					if((prot >= value) != below)
+					{
+						return true;
+					}
+					else
+						return false;
+				}
+			}
+		}
+		else if(args.get(0).equals("thisarmorenc") && args.size() >= 2 && f.name != null)
+		{
+			boolean below = args.contains("below");
+
+			if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
+			{
+				int value = Integer.parseInt(lastarg);
+				Item i = (Item)f;
+				
+				if(i.armor && !i.slot.equals("offhand"))
+				{
+					int prot = n.nationGen.armordb.GetInteger(i.id, "enc", 0);
+					if((prot >= value) != below)
+					{
+						return true;
+					}
+					else
+						return false;
+				}
+			}
+		}
+		else if(args.get(0).equals("thisarmordb") && args.size() >= 3 && f.name != null)
+		{
+			boolean below = args.contains("below");
+			String query = args.get(args.size() - 2);
+			
+			if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
+			{
+				int value = Integer.parseInt(args.get(args.size() - 1));
+				Item i = (Item)f;
+				
+				if(i.armor)
+				{
+					int gotvalue = n.nationGen.armordb.GetInteger(i.id, query);
+					
+					if((gotvalue >= value) != below)
+					{
+						return true;
+					}
+					else
+						return false;
+				}
+			}
+		}
+		else if(args.get(0).equals("thisweapondb") && args.size() >= 3 && f.name != null)
+		{
+			boolean below = args.contains("below");
+			String query = args.get(args.size() - 2);
+			
+			if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
+			{
+				int value = Integer.parseInt(args.get(args.size() - 1));
+				Item i = (Item)f;
+				
+				if(!i.armor)
+				{
+					int gotvalue = n.nationGen.weapondb.GetInteger(i.id, query);
+					
+					if((gotvalue >= value) != below)
+					{
+						return true;
+					}
+					else
+						return false;
+				}
+			}
+		}
+		
+		return null;
+	}
+	
 	/**
 	 * This is a separate method for chanceincs that target the filter/item/whatever itself - ie stuff that is relevant 
 	 * for themes only since in general targetting the thing itself is pointless.
@@ -682,226 +907,24 @@ public class ChanceIncHandler {
 		
 		for(T f : filters.keySet())
 		{
-	
+			Checker c = new ThemeIncChecker(this, f, r);
+
 			for(String str : chanceincs)
 			{
-				List<String> args = Generic.parseArgs(str, "'");
-	
-				// Theme
-				if(args.get(0).equals("theme") && args.size() >= 3)
-				{
-					boolean not = args.contains("not");
-					if(f.themes.contains(args.get(args.size() - 2)) != not)
-					{
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-					}
-				}
-				else if(args.get(0).equals("owntag") && args.size() >= 3)
-				{
-					boolean not = args.contains("not");
-					if(f.tags.contains(args.get(args.size() - 2)) != not)
-					{
-						applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-					}
-				}
-				else if(args.get(0).equals("racename") && args.size() >= 3 && f.name != null)
-				{
-					boolean not = args.contains("not");
-	
-					if(f.name.toLowerCase().equals(args.get(args.size() - 2).toLowerCase()) != not)
-					{
-						if(f.getClass().equals(Race.class))
-						{
-							applyChanceInc(filters, f,  (args.get(args.size() - 1)));
+				List<String> args = Generic.parseArgs(str);
+				String value = args.get(args.size() - 1);
+				boolean not = args.contains("not");
+				args.remove(args.size() - 1);
+				str = Generic.listToString(args);
+				Boolean success = checkChanceInc(str, c);
 
-						}
-					}
-				}
-				else if(args.get(0).equals("thisitemtag") && args.size() >= 3 && f.name != null)
+				
+				if(success == null)
+					continue;
+				else if(success != not)
 				{
-					boolean not = args.contains("not");
-					if(f.tags.contains(args.get(args.size() - 2)) != not)
-					{
-						if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
-						{
-							applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-						}
-					}
-				}
-				else if(args.get(0).equals("thisitemslottag") && args.size() >= 3 && f.name != null)
-				{
-					boolean not = args.contains("not");
-					if(f.tags.contains(args.get(args.size() - 2)) != not)
-					{
-						if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
-						{
-							Item i = (Item)f;
-							if(i.slot.equals(args.get(args.size() - 3)))
-							{
-								applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-							}
-						}
-					}
-				}
-				else if(args.get(0).equals("thisitemtheme") && args.size() >= 3 && f.name != null)
-				{
-					boolean not = args.contains("not");
-	
-					if(f.themes.contains(args.get(args.size() - 2)) != not)
-					{
-						if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
-						{
-							applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-						}
-					}
-				}
-				else if(args.get(0).equals("thisitemslottheme") && args.size() >= 3 && f.name != null)
-				{
-					boolean not = args.contains("not");
-					if(f.themes.contains(args.get(args.size() - 2)) != not)
-					{
-						if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
-						{
-							Item i = (Item)f;
-							if(i.slot.equals(args.get(args.size() - 3)))
-							{
-								applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-							}
-						}
-					}
-				}
-				else if(args.get(0).equals("isferrousitem") && args.size() >= 2 && f.name != null)
-				{
-					boolean not = args.contains("not");
-					if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
-					{
-						Item i = (Item)f;
-						if(i.armor)
-						{
-							int ferrous = n.nationGen.armordb.GetInteger(i.id, "ferrous", 0);
-							if((ferrous == 1) != not)
-							{
-								applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-							}
-						}
-						else
-						{
-							int ferrous = n.nationGen.weapondb.GetInteger(i.id, "ironweapon", 0);
-							if((ferrous == 1) != not)
-							{
-								applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-							}
-						}
-					}
-				}
-				else if(args.get(0).equals("weaponuwpenalty") && args.size() >= 3 && f.name != null)
-				{
-					boolean below = args.contains("below");
-					if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
-					{
-						Item i = (Item)f;
-
-						int value = Integer.parseInt(args.get(args.size() - 2));
-						int penalty = 0;
-						
-						if(!i.armor)
-						{
-							int slash = n.nationGen.weapondb.GetInteger(i.id, "dt_slash", 0);
-							int blunt = n.nationGen.weapondb.GetInteger(i.id, "dt_blunt", 0);
-							int pierce = n.nationGen.weapondb.GetInteger(i.id, "dt_pierce", 0);
-							int lgt = n.nationGen.weapondb.GetInteger(i.id, "lgt", 0);
-
-							if(pierce == 0 && (blunt == 1 || slash == 1))
-								penalty = lgt;
-							else if(pierce == 1 && (blunt == 1 || slash == 1))
-								penalty = (int) Math.round((double)lgt / 2);
-							
-							if((penalty >= value) != below)
-							{
-								applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-							}
-						}
-					}
-				}
-				else if(args.get(0).equals("thisarmorprot") && args.size() >= 3 && f.name != null)
-				{
-					boolean below = args.contains("below");
-
-					if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
-					{
-						int value = Integer.parseInt(args.get(args.size() - 2));
-						Item i = (Item)f;
-						
-						if(i.armor && !i.slot.equals("offhand"))
-						{
-							int prot = n.nationGen.armordb.GetInteger(i.id, "prot", 0);
-							if((prot >= value) != below)
-							{
-								applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-							}
-						}
-					}
-				}
-				else if(args.get(0).equals("thisarmorenc") && args.size() >= 3 && f.name != null)
-				{
-					boolean below = args.contains("below");
-
-					if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
-					{
-						int value = Integer.parseInt(args.get(args.size() - 2));
-						Item i = (Item)f;
-						
-						if(i.armor && !i.slot.equals("offhand"))
-						{
-							int prot = n.nationGen.armordb.GetInteger(i.id, "enc", 0);
-							if((prot >= value) != below)
-							{
-								applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-							}
-						}
-					}
-				}
-				else if(args.get(0).equals("thisarmordb") && args.size() >= 3 && f.name != null)
-				{
-					boolean below = args.contains("below");
-					String query = args.get(args.size() - 3);
-					
-					if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
-					{
-						int value = Integer.parseInt(args.get(args.size() - 2));
-						Item i = (Item)f;
-						
-						if(i.armor)
-						{
-							int gotvalue = n.nationGen.armordb.GetInteger(i.id, query);
-							
-							if((gotvalue >= value) != below)
-							{
-								applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-							}
-						}
-					}
-				}
-				else if(args.get(0).equals("thisweapondb") && args.size() >= 3 && f.name != null)
-				{
-					boolean below = args.contains("below");
-					String query = args.get(args.size() - 3);
-					
-					if(f.getClass().equals(Item.class) || f.getClass().equals(CustomItem.class))
-					{
-						int value = Integer.parseInt(args.get(args.size() - 2));
-						Item i = (Item)f;
-						
-						if(!i.armor)
-						{
-							int gotvalue = n.nationGen.weapondb.GetInteger(i.id, query);
-							
-							if((gotvalue >= value) != below)
-							{
-								applyChanceInc(filters, f,  (args.get(args.size() - 1)));
-							}
-						}
-					}
+					applyChanceInc(filters, f,  value);
+					continue;
 				}
 		
 			}
@@ -938,7 +961,7 @@ public class ChanceIncHandler {
 	
 	public <T extends Filter> T getRandom(List<T> list, List<Unit> units)
 	{
-		return Entity.getRandom(r, this.handleChanceIncs(units, list));
+		return Entity.getRandom(r, this.handleChanceIncs(units.get(0), list));
 	}
 	
 	public <T extends Filter> T getRandom(List<T> list, Unit u)
@@ -981,7 +1004,7 @@ public class ChanceIncHandler {
 	}
 	
 	
-	private Boolean checkNationInc(String chanceinc, Nation n, List<String> miscincs, Race race)
+	private Boolean checkNationInc(String chanceinc, Nation n, Race race)
 	{
 		List<String> args = Generic.parseArgs(chanceinc, "'");
 		String lastarg = args.get(args.size() - 1);
@@ -1001,8 +1024,7 @@ public class ChanceIncHandler {
 				
 				int path = Generic.PathToInteger(args.get(i));
 				
-				
-				if(atHighest.contains(path) == not)
+				if(atHighest.contains(path) == not && path > -1)
 				{
 					canIncrease = false;
 					break;
@@ -1096,11 +1118,8 @@ public class ChanceIncHandler {
 		// Magic diversity
 		else if(args.get(0).equals("magicdiversity"))
 		{
-			boolean canIncrease = false;
 
 			int div = Integer.parseInt(args.get(args.size() - 2));
-			
-			
 			return (diversity >= div);
 		}
 		
@@ -1259,18 +1278,19 @@ public class ChanceIncHandler {
 				if(c.command.equals(command) || c.command.equals("#" + command))
 				{
 					
-					String arg = c.args.get(0);
-
+					String arg = null;
+					if(c.args.size() > 0)
+						arg = c.args.get(0);
 					
-					if(dir == -1 && Integer.parseInt(arg) < Integer.parseInt(lastarg))
+					if(arg != null && dir == -1 && Integer.parseInt(arg) < Integer.parseInt(lastarg))
 					{
 						canIncrease = true;
 					}
-					else if(dir == 1 && Integer.parseInt(arg) > Integer.parseInt(lastarg))
+					else if(arg != null && dir == 1 && Integer.parseInt(arg) > Integer.parseInt(lastarg))
 					{
 						canIncrease = true;
 					}
-					else if(dir == 0 && Integer.parseInt(arg) == Integer.parseInt(lastarg))
+					else if(arg != null && dir == 0 && Generic.isNumeric(lastarg) && Integer.parseInt(arg) == Integer.parseInt(lastarg))
 					{
 						canIncrease = true;
 					}
@@ -1329,18 +1349,19 @@ public class ChanceIncHandler {
 				if(c.command.equals(command) || c.command.equals("#" + command))
 				{
 					
-					String arg = c.args.get(0);
-
+					String arg = null;
+					if(c.args.size() > 0)
+						arg = c.args.get(0);
 					
-					if(dir == -1 && Integer.parseInt(arg) < Integer.parseInt(lastarg))
+					if(arg != null && dir == -1 && Integer.parseInt(arg) < Integer.parseInt(lastarg))
 					{
 						canIncrease = true;
 					}
-					else if(dir == 1 && Integer.parseInt(arg) > Integer.parseInt(lastarg))
+					else if(arg != null && dir == 1 && Integer.parseInt(arg) > Integer.parseInt(lastarg))
 					{
 						canIncrease = true;
 					}
-					else if(dir == 0 && Integer.parseInt(arg) == Integer.parseInt(lastarg))
+					else if(arg != null && dir == 0 && Generic.isNumeric(lastarg) && Integer.parseInt(arg) == Integer.parseInt(lastarg))
 					{
 						canIncrease = true;
 					}
@@ -1379,18 +1400,19 @@ public class ChanceIncHandler {
 				{
 					if(c.command.equals(command) || c.command.equals("#" + command))
 					{
-						String arg = c.args.get(0);
-
+						String arg = null;
+						if(c.args.size() > 0)
+							arg = c.args.get(0);
 						
-						if(dir == -1 && Integer.parseInt(arg) < Integer.parseInt(lastarg))
+						if(arg != null && dir == -1 && Integer.parseInt(arg) < Integer.parseInt(lastarg))
 						{
 							canIncrease = true;
 						}
-						else if(dir == 1 && Integer.parseInt(arg) > Integer.parseInt(lastarg))
+						else if(arg != null && dir == 1 && Integer.parseInt(arg) > Integer.parseInt(lastarg))
 						{
 							canIncrease = true;
 						}
-						else if(dir == 0 && Integer.parseInt(arg) == Integer.parseInt(lastarg))
+						else if(arg != null && dir == 0 && Generic.isNumeric(lastarg) && Integer.parseInt(arg) == Integer.parseInt(lastarg))
 						{
 							canIncrease = true;
 						}
@@ -1637,7 +1659,8 @@ public class ChanceIncHandler {
 	private int[] nonrandom_paths;
 	private List<Integer> atHighest;
 	
-	private <T extends Filter> void handleNationIncs(LinkedHashMap<T, Double> filters,  Nation n, List<String> miscincs, Race race)
+	
+	private <T extends Filter> void processChanceIncs(LinkedHashMap<T, Double> filters,  Nation n, List<String> miscincs, Race race, Unit un)
 	{
 
 		List<Unit> tempmages = n.generateComList("mage");
@@ -1706,12 +1729,12 @@ public class ChanceIncHandler {
 		avggold = totalgold / unitCount;
 		
 		
+		ChanceIncChecker c = new ChanceIncChecker(this, n, race, un);
 
-		
 		// Do chanceincs!
 		for(T f : filters.keySet())
 		{
-			
+
 			List<String> chanceincs = new ArrayList<String>();
 			chanceincs.addAll(f.chanceincs);
 			chanceincs.addAll(miscincs);
@@ -1729,8 +1752,8 @@ public class ChanceIncHandler {
 				boolean not = args.contains("not") && !str.contains("magic") && !str.contains("magewithpaths") ;
 				args.remove(args.size() - 1);
 				str = Generic.listToString(args);
-				Boolean success = checkNationInc(str, n, miscincs, race);
-				
+				Boolean success = checkChanceInc(str, c);
+							
 				if(success == null)
 					continue;
 				else if(success != not)
@@ -1810,15 +1833,15 @@ public class ChanceIncHandler {
 	 * @param race
 	 * @return
 	 */
-	private <T extends Filter> Boolean checkUnitInc(String chanceinc, Unit u, List<String> miscincs, Race race)
+	private <T extends Filter> Boolean checkUnitInc(String chanceinc, Unit u, Race race)
 	{
 		// Poses
-		
 		
 		
 		List<String> args = Generic.parseArgs(chanceinc, "'");
 		String lastarg = args.get(args.size() - 1);
 		
+
 		
 		if(args.get(0).equals("pose") && args.size() > 1)
 		{
@@ -2159,7 +2182,6 @@ public class ChanceIncHandler {
 		}
 		else if(args.get(0).equals("personalmagic") && args.size() > 1)
 		{
-			
 
 			boolean contains = true;
 			int level = 1;
@@ -2229,11 +2251,12 @@ public class ChanceIncHandler {
 			
 			if(contains)
 			{
-
 				return true;
 			}
 			else
+			{
 				return false;
+			}
 		}
 	
 			
@@ -2300,53 +2323,225 @@ public class ChanceIncHandler {
 		return null;
 	}
 	
-	private <T extends Filter> void handleUnitIncs(LinkedHashMap<T, Double> filters,  Unit u, List<String> miscincs, Race race)
+	
+		
+
+	
+	
+
+	/**
+	 * Interface to simply checking complex theme/chanceincs
+	 * @author Antti
+	 *
+	 */
+	abstract class Checker
+	{
+		abstract Boolean check(String s);
+	}
+	
+	/**
+	 * Themeinc parser
+	 * @author Antti
+	 *
+	 */
+	private class ThemeIncChecker extends Checker
+	{
+		private ChanceIncHandler ch;
+		private Filter f;
+		private Race r;
+		public <T extends Filter> ThemeIncChecker (ChanceIncHandler ch, T f, Race r)
+		{
+			this.ch = ch;
+			this.f = f;
+			this.r = r;
+		}
+		
+		@Override
+		public Boolean check(String s) {
+			return ch.checkThemeInc(s, f, r);
+		}
+		
+	}
+	
+	/**
+	 * Nation chanceinc parser
+	 * @author Antti
+	 *
+	 */
+	private class ChanceIncChecker extends Checker
+	{
+		private ChanceIncHandler ch;
+		private Nation n;
+		private Race r;
+		Unit u;
+		public ChanceIncChecker(ChanceIncHandler ch, Nation n, Race r, Unit u)
+		{
+			this.ch = ch;
+			this.n = n;
+			this.r = r;
+			this.u = u;
+		}
+		
+		@Override
+		public Boolean check(String s) {
+			Boolean t1 = ch.checkNationInc(s, n, r);
+			Boolean t2 = false;
+			if(u != null)
+			{
+				t2 = ch.checkUnitInc(s, u, r);
+			}			
+			if((t1 != null && t1) || (t2 != null && t2))
+				return true;
+			else 
+				return false;
+		}
+		
+	}
+	
+
+	
+	public boolean checkChanceInc(String str, Checker c)
+	{
+		List<String> chanceincs = partitionChanceInc(str);
+		return validateChanceInc(chanceincs, c);
+	}
+	
+	public List<String> partitionChanceInc(String str)
+	{
+		List<String> stuff = Generic.parseArgs(str);
+		List<String> chanceincs = new ArrayList<String>();
+		
+		String con = "";
+		boolean par = false;
+		int open = 0;
+		for(String s : stuff)
+		{
+			if(par)
+			{
+				if(s.endsWith(")"))
+				{
+					open--;
+					if(open == 0)
+					{
+						par = false;
+						con = (con + " " + s.substring(0,s.length()-1)).trim();
+					}
+					else
+					{
+						con = (con + " " + s).trim();
+					}
+				}
+				else
+				{
+					con = (con + " " + s).trim();
+				}
+			}
+			else
+			{
+				if(s.startsWith("("))
+				{
+					open++;
+					if(open == 1)
+					{
+						par = true;
+						con = (con + " " + s.substring(1)).trim();
+					}
+					else
+					{
+						con = (con + " " + s).trim();
+					}
+				}
+				else if(s.equals("and") || s.equals("or"))
+				{
+					chanceincs.add(con);
+					chanceincs.add(s);
+					con = "";
+				}
+				else
+				{
+					con = (con + " " + s).trim();
+				}
+			}
+		}
+		if(con.length() > 0)
+			chanceincs.add(con);
+
+		return chanceincs;
+	}
+	
+	
+
+	private boolean fixNullBoolean(Boolean success, String str)
+	{
+		boolean not = Generic.parseArgs(str).contains("not");
+		
+		if(success == null)
+		{
+			return false;
+		}
+		else if(success != not)
+		{
+			return true;
+		}
+		return false;
+	}
+	public boolean validateChanceInc(List<String> chanceincs, Checker c)
 	{
 
-		if(u == null)
-			return;
-
-		for(T f : filters.keySet())
-		{	
+		
+		boolean istrue = false;
+		String operator = "";
+		
+		for(String s : chanceincs)
+		{
 			
-
-
-			
-			List<String> chanceincs = new ArrayList<String>();
-			chanceincs.addAll(f.chanceincs);
-			chanceincs.addAll(miscincs);
-
-			
-			// Should never be null.
-			if(race != null)
-				chanceincs.addAll(getRaceThemeIncs(race));
-			
-			
-			for(String str : chanceincs)
+			// If it used to be within (meaningful) parentheses we solve it separately
+			if(!s.equals("or") && !s.equals("and") && (s.contains(" or ") || s.contains(" and ")))
 			{
-					List<String> args = Generic.parseArgs(str);
-					String value = args.get(args.size() - 1);
-					boolean not = args.contains("not") && !str.contains("taggedmagic");
-					args.remove(args.size() - 1);
-					str = Generic.listToString(args);
-					Boolean success = checkUnitInc(str, u, miscincs, race);
-					
-					if(success == null)
-						continue;
-					else if(success != not)
-					{
-						applyChanceInc(filters, f,  value);
-						continue;
-					}
-			
+
+				List<String> tincs = partitionChanceInc(s);
+				boolean check = validateChanceInc(tincs, c);
+				 
+				if(check)
+					s = "true";
+				else
+					s = "false";
 				
 			}
 			
+			
+			
+			// If it is a logical operator
+			if(s.equals("or") || s.equals("and"))
+			{
+				operator = s;
+			}
+			// If it is normal chanceinc
+			else
+			{
+				if(operator.equals(""))
+					istrue = fixNullBoolean(c.check(s), s);
+				else
+				{
+					if(operator.equals("or"))
+					{
+						istrue = istrue || fixNullBoolean(c.check(s), s);
+					}
+					else if(operator.equals("and"))
+					{
+						istrue = istrue && fixNullBoolean(c.check(s), s);
+					}
+					operator = "";
+				}
+				
+
+			}
 
 		}
-		
-
-		
+	
+		return istrue;
 	}
+
+
 	
 }

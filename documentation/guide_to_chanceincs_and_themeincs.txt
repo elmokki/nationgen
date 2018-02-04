@@ -1,3 +1,57 @@
+Basics
+-----------------------------------
+Chanceincs and themeincs both modify the probability distributions for generation. Chanceincs do it by modifying the probability
+of the entity it is written on while themeincs modify it for everything else when the entity it is on has been selected. In terms 
+of syntax, the only difference is that chanceincs start with #chanceinc and themeincs with #themeinc. The following examples will 
+use #chanceinc.
+
+To use a chanceinc your syntax is #chanceinc <chanceinc> <modifier>. Chanceincs can be found in the list below, let us use the first
+one for example. Modifiers determine how the weight of an item is modified: Modifier of 2 changes the weight to 2, modifier of +2 adds
+2 to the weight, modifier of *2 doubles the weight and so on. If we wanted to increase the weight of an entity, for example
+a certain shapeshift filter, for lizards by 100%, we would write:
+
+#chanceinc race lizard *2
+
+If we wanted to do this for all races except oriental humans, we would write:
+
+#chanceinc race not "Oriental human" *2
+
+The not-modifier is optional, signified by [square brackets] in documentation and generally negates the outcome. The quotation marks for the race
+are used to signify that Oriental human is a single argument rather than Oriental and human being separate arguments. This is generally required
+almost solely for some races.
+
+
+Logical operators
+-----------------------------------
+As of 0.7.0-RC2 there is support for logical operators, allowing more complexity to chanceincs and themeincs. The simplest of these is the NOT-operator
+in the example above. Generally you have to put the operator in a specified place in the chanceinc for it to work, usually but not always as the first argument.
+For the NOT-operator you should look at the documentation.
+
+The more general operators are AND and OR. These should be fairly clear to any programmer, but simply put they allow you to tie things together. For example,
+if we want to double the weight of an entity if the race of the unit choosing it is either lizard or human, we could write:
+
+#chanceinc race human OR race lizard *2
+
+Alternatively, we could, for example, make a lizard flag part available to any nation that either has lizards as primary race or has a theme "serpent cult":
+
+#chanceinc primaryrace lizard OR hastheme "serpent cult" *2
+
+As for AND, if we wanted an unit to be lizard AND have flying, we could write:
+
+#chanceinc race lizard AND personalcommand flying *2
+
+These can also be chained, for example:
+
+#chanceinc primaryrace lizard OR hastheme "serpent cult" AND race lizard *2
+
+The operators are read from left to right. For example, if we have true OR false AND true, it is processed as follows:
+1. (true OR false) AND true
+2. (true AND true)
+3. true
+
+If you wish to change the processing order, you can add parentheses, for example: 
+#chanceinc primaryrace lizard OR (hastheme "serpent cult" AND race lizard) *2
+
 Unit-based chanceincs
 -----------------------------------
 Unit-based chanceincs require an unit to be in the scope of chanceinc. These tend to be in items or filters for units and such.
@@ -129,3 +183,36 @@ True:		true
 		Always true
 False:		false
 		Always false
+
+Themeincs
+-----------------------------------
+While chanceincs modify probabilities of the entities they are written on, themeincs are added to units and/or nations and affect probabilities 
+of other entities, should they fill the conditions: For example, a chanceinc on a sword might decrease the probability of it being generated for an UW nation
+while a themeinc on UW nation might decrease probability of all UW-unsuitable weapons with a single command.
+
+Theme:		theme [not] <theme>
+		True if the entity has a theme tag (#theme foo) specified.
+Tag:		owntag [not] <tag>
+		True if the entity has a tag (#tag foo or otherwise unused #foo) specified.
+Race name:	racename [not] <race>
+		True if the entity is race named <race>. Useful for primary races, primary race themes and such when determining secondary race
+Item tag:	thisitemtag [not] <tag>
+		True if the entity is an item and has given tag
+Item theme:	thisitemtheme [not] <theme>
+		As above but for theme tags.
+Item tag (slot) thisitemslottag [not] <slot> <tag>
+		As above for tags, but also requires them item to be for given slot
+Item thm (slot)	thisitemslottheme [not] <slot> <tag>
+		As above, but for theme tags
+Ferrous:	isferrousitem [not]
+		True if item is tagged as ferrous
+UW penalty:	weaponuwpenalty [not] [below] <value>
+		True if item is a weapon that gives at least value amount of attack penalty while under water
+Armor prot:	thisarmorprot [not] [below] <value>
+		True if item is non-shield armor that has prot of at least value
+Armor enc:	thisarmorenc [not] [below] <value>
+		True if item is non-shield armor that has enc of at least value
+Armor db value:	thisarmordb [not] [below] <db column> <value>
+		True if queried value for attribute of armor in database is at least value
+Weap. db value:	thisweapondb [not] [below] <db column> <value>
+		True if queried value for attribute of weapon in database is at least value
