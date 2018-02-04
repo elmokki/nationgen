@@ -1,5 +1,6 @@
 Unit-based chanceincs
 -----------------------------------
+Unit-based chanceincs require an unit to be in the scope of chanceinc. These tend to be in items or filters for units and such.
 
 Race:		race [not] <race>
 		True if unit is of given race
@@ -53,3 +54,78 @@ Protection:	prot [not/below] <value>
 		Checks if unit protection is at least given value. Generation order matters: Before getting armor an unit has less prot.
 Encumberance:	enc [not/below] <value>
 		As above but for encumberance. Generation order matters: Before getting armor an unit has less enc.
+
+
+Nation-based chanceincs
+-----------------------------------
+Nation-based chanceincs are always checked and contain nation-level aggregate statistics and nation-specific features.
+
+Primary magic:	magic [not] <path1> [not] [path2] ...
+		Given path or paths is among the highest the nation can reach with recruits semi-reliably
+Mage w. paths:	magewithpaths [not] <path1> [not] [path2] ...
+		Nation has a mage with semi-reliable access to given path or paths
+Any magic:	anymagic [not] <path>
+		True if nation has any recruitable non-random access at all to given path
+Shapeshift:	shape [not] <shape>
+		True if nation has any unit with ability to shift to given shape
+Magic divers.:	magicdiversity [not] <value>
+		True if nation has magic diversity score of at least value. Diversity score is calculated from reliable random access on
+		recruitable mages. Add 1 for each path above 2 except blood and astral and add 1 for any access to blood or astral.
+Picks at level:	picksatlevel [not] <level> <amount>
+		True if nation has reliable access to amount paths of at least given level
+Spell sets:	spells [not] <name>
+		True if nation has access to a spell set of given name
+Module ID:	moduleid [not] <id>
+		True if current step of generation is given module. See chanceinc_moduleids.txt
+P. race theme:	hastheme [not] <name>
+		True if primary race has a race theme of given name.
+Theme theme:	hasthemetheme [not] <name>
+		True if primary race has a race theme that contains given theme tag
+Any theme:	anytheme [not] <name>
+		True if either of the above two would be true.
+S. race theme:	secondaryracetheme [not] <name>
+		True if secondary race has a race theme of given name.
+S. Theme theme:	secondarythemetheme [not] <name>
+		True if secondary race has a race theme that contains given theme tag
+Era:		era [not] <name>
+		True if nation is of given era (as number)
+Has p. race:	hasprimaryrace [not]
+		True if nation has a primary race.
+Nation command: nationcommand <command> [not] [above/below] [value]
+		Checks if nation has given command at above/below given level. If value is left empty, any argument is fine.
+Magic priority:	magicpriority <path> [not/below] <value>
+		Checks if nation has a magic priority or given path at at least given value 
+P. race. cmd:	primaryracecommand <command> [not/above/below] [value]	
+		Checks if primary race gives given command at above/below given level. If value is left empty, any argument is fine.
+Any unit cmd:	command <command> [not/above/below] [value]	
+		As above but checks all units of the nation
+% of command:	percentageofcommand <command> <not/below> <value>
+		True if at least value % of units of the nation have given command
+% of race:	percentageofrace <race> <not/below> <value>
+		True if at least value % of units of the nation are of given race
+Primary race:	primaryrace [not] <race>
+		True if primary race of nation is given race
+Sec. race:	secondaryrace [not] <race>
+		True if secondary race of nation is given race	
+P. race tag:	racetag [not] <tag>
+		True if primary race has given tag
+Any unit filter anyunitfilter [not] <filter>
+		True if any unit of the nation has given filter
+Nation tag:	nationtag [not] <tag>
+		True if nation or any of nation themes has given tag
+Avg. gold:	avggold [not] <value>
+		True if gold cost of troops is at average at least value
+Avg. res:	avgres [not] <value>
+		True if resource cost of troops is at average at least value
+Cap res. over:	caponlyunitswithresabove [not/below] <res> <amount>
+		True if nation has at least amount of cap only troops with res cost of at least res
+Res. over:	unitswithresabove [below] <res> <amount>
+		True if nation has at least amount of troops with res cost of at least res
+Units of size:	unitswithsize [not/below] <size> amount>
+		As above but for size
+Random:		random <threshold>
+		True if random number between 0 and 1 is below threshold.
+True:		true
+		Always true
+False:		false
+		Always false
