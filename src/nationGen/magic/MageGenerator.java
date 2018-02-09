@@ -1880,7 +1880,7 @@ public class MageGenerator extends TroopGenerator {
 					
 
 				
-				Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(mages, givenFilters));
+				Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(mages.get(0), givenFilters));
 				
 				for(Unit u : mages)
 				{
@@ -2089,15 +2089,15 @@ public class MageGenerator extends TroopGenerator {
 			List<Filter> moreFilters = ChanceIncHandler.getFiltersWithPower(power, power, filters);
 			
 
-			if(chandler.handleChanceIncs(units, moreFilters).size() == 0 || this.random.nextDouble() > 0.7)
+			if(chandler.handleChanceIncs(units.get(0), moreFilters).size() == 0 || this.random.nextDouble() > 0.7)
 				moreFilters = ChanceIncHandler.getFiltersWithPower(power - 1, power, filters);
-			if(chandler.handleChanceIncs(units, moreFilters).size() == 0 || power == 1)
+			if(chandler.handleChanceIncs(units.get(0), moreFilters).size() == 0 || power == 1)
 				moreFilters = ChanceIncHandler.getFiltersWithPower(-100, power, filters);
-			if(chandler.handleChanceIncs(units, moreFilters).size() == 0)
+			if(chandler.handleChanceIncs(units.get(0), moreFilters).size() == 0)
 				break;
 			
 
-			Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(units, moreFilters));
+			Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(units.get(0), moreFilters));
 			
 			
 			// validate

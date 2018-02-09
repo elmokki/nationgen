@@ -46,10 +46,8 @@ public class MonsterGenerator {
 		
 		Pose pose = new Pose(ng);
 		
-		List<Unit> units = new ArrayList<Unit>();
 		Unit templateUnit = new Unit(ng, n.races.get(0), pose);  // Set a dummy unit with race[0] so the monster will know where to get its themeincs
-		units.add(templateUnit);
-		ShapeShift p = ShapeShift.getRandom(rand, chandler.handleChanceIncs(units, poses, null));
+		ShapeShift p = ShapeShift.getRandom(rand, chandler.handleChanceIncs(templateUnit, poses, null));
 	
 		
 		ShapeChangeUnit u = new ShapeChangeUnit(ng, r, pose, null, p);

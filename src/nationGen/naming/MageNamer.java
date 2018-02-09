@@ -128,7 +128,7 @@ public class MageNamer extends Namer {
 		List<Unit> primaries = all.get(0);
 		List<Unit> secondaries = all.get(1);
 		List<Unit> tertiaries = all.get(2);
-		
+				
 		List<Unit> extras = null;
 		if(all.size() > 3)
 			extras = all.get(3);
@@ -144,15 +144,14 @@ public class MageNamer extends Namer {
 		boolean suffix = random.nextBoolean();
 		
 		
-		
 		generateNewNames(primaries, startTier, prefixrank, suffix);
-		
 
-		deriveNames(primaries, secondaries, startTier - 1, prefixrank, suffix);
+		if(secondaries.size() > 0)
+			deriveNames(primaries, secondaries, startTier - 1, prefixrank, suffix);
 		
-		if(secondaries.size() > 0 && secondaries.size() <= primaries.size())
+		if(secondaries.size() > 0 && secondaries.size() <= primaries.size() && tertiaries.size() > 0)
 			deriveNames(secondaries, tertiaries, startTier - 2, prefixrank, suffix);
-		else
+		else if(tertiaries.size() > 0)
 			deriveNames(primaries, tertiaries, startTier - 2, prefixrank, suffix);
 		
 		
@@ -172,7 +171,8 @@ public class MageNamer extends Namer {
 					u.name.setPrefix(n.name + n.nationalitysuffix);
 		}
 		
-		if(extras != null)
+	
+		if(extras != null && extras.size() > 0)
 			generateNewNames(extras, 2, false, random.nextBoolean());
 
 		
@@ -214,10 +214,10 @@ public class MageNamer extends Namer {
 		
 		do
 		{	
-			filters = cha.handleChanceIncs(to, this.filterByRank(source, rank));
+			filters = cha.handleChanceIncs(to.get(0), this.filterByRank(source, rank));
 			if(filters.size() == 0)
 			{
-				filters = cha.handleChanceIncs(to, source);
+				filters = cha.handleChanceIncs(to.get(0), source);
 			}
 			
 			ff = NamePart.getRandom(random, filters);
@@ -301,6 +301,7 @@ public class MageNamer extends Namer {
 				if(available.size() == 0)
 					available.addAll(source);
 				
+		
 				NamePart ff2 = null;
 				do
 				{	
@@ -309,7 +310,6 @@ public class MageNamer extends Namer {
 					{
 						filters = cha.handleChanceIncs(u, available);
 					}
-					
 					ff2 = NamePart.getRandom(random, filters);
 				} while(used.contains(ff2.getCopy()));
 				
@@ -442,13 +442,12 @@ public class MageNamer extends Namer {
 		boolean strict = random.nextBoolean();
 		
 
-		
-		LinkedHashMap<NamePart, Double> filters = cha.handleChanceIncs(primaries, filterByPaths(source, commons, strict));
+		LinkedHashMap<NamePart, Double> filters = cha.handleChanceIncs(primaries.get(0), filterByPaths(source, commons, strict));
 
 
 		if(filters.size() == 0)
 		{
-			filters = cha.handleChanceIncs(primaries, source);
+			filters = cha.handleChanceIncs(primaries.get(0), source);
 
 		}
 		NamePart ff = NamePart.getRandom(random, filters);
@@ -485,9 +484,9 @@ public class MageNamer extends Namer {
 		if(prefixrank)
 		{
 
-			filters = cha.handleChanceIncs(primaries, filterByRank(rankedprefix, rank));
+			filters = cha.handleChanceIncs(primaries.get(0), filterByRank(rankedprefix, rank));
 			if(filters.size() == 0)
-				filters = cha.handleChanceIncs(primaries, rankedprefix);
+				filters = cha.handleChanceIncs(primaries.get(0), rankedprefix);
 			
 			NamePart prefixf = NamePart.getRandom(random, filters);
 			for(Unit u : primaries)
@@ -519,9 +518,9 @@ public class MageNamer extends Namer {
 				source2.addAll(extraparts_n);
 			}
 						
-			filters = cha.handleChanceIncs(primaries, filterByPaths(source2, commons, false));
+			filters = cha.handleChanceIncs(primaries.get(0), filterByPaths(source2, commons, false));
 			if(filters.size() == 0)
-				filters = cha.handleChanceIncs(primaries, source2);
+				filters = cha.handleChanceIncs(primaries.get(0), source2);
 			extra = NamePart.getRandom(random, filters);
 		}
 		
@@ -538,20 +537,20 @@ public class MageNamer extends Namer {
 				filters = cha.handleChanceIncs(u, filterByPaths(names, d, true));
 
 				if(filters.size() == 0)
-					filters = cha.handleChanceIncs(primaries, names);
+					filters = cha.handleChanceIncs(primaries.get(0), names);
 				
 			}
 			else if(noun)
 			{
 				filters = cha.handleChanceIncs(u, filterByPaths(nouns, d, false));
 				if(filters.size() == 0)
-					filters = cha.handleChanceIncs(primaries, nouns);
+					filters = cha.handleChanceIncs(primaries.get(0), nouns);
 			}
 			else
 			{
 				filters = cha.handleChanceIncs(u, filterByPaths(adjectives, d, false));
 				if(filters.size() == 0)
-					filters = cha.handleChanceIncs(primaries, adjectives);
+					filters = cha.handleChanceIncs(primaries.get(0), adjectives);
 			}
 
 			NamePart suffixpart = NamePart.getRandom(random, filters);

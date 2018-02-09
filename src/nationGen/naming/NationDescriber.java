@@ -144,7 +144,7 @@ public class NationDescriber {
 			Filter descf = null;
 			if(possibles.size() > 0)
 			{
-				descf = Filter.getRandom(random, chandler.handleChanceIncs(units, possibles));
+				descf = Filter.getRandom(random, chandler.handleChanceIncs(units.get(0), possibles));
 
 			}
 
