@@ -2,7 +2,8 @@
 #name "cavernwight basesprite"
 #gameid -1
 #sprite /graphics/agarthan/big/basesprite_cavernwight.png
-#define "#gcost +51"
+#define "#gcost 40"
+#define "#rpcost 20000"
 #define "#size 4"
 #define "#hp 66"
 #define "#prot 5"
@@ -12,12 +13,13 @@
 #define "#att 11"
 #define "#def 11"
 #define "#enc 0"
-#define "#mapmove 3"
+#define "#mapmove 22"
 #define "#ap 12"
 #define "#maxage 500"
 #define "#coldres 25"
 #define "#poisonres 25"
 #define "#cold 3"
 #define "#undead"
+#define "#spiritsight"
 #tag "noble"
 #enditem
