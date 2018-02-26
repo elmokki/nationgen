@@ -511,7 +511,9 @@ public class CommanderGenerator extends TroopGenerator {
 				{
 					com.commands.add(new Command("#command", "-40"));
 					com.commands.add(new Command("#gcost", "-20"));
-				} 
+				}
+				else
+					com.commands.add(new Command("#rpcost 2"));
 				
 				if(r.nextDouble() > 0.5 && !mindless)
 				{
