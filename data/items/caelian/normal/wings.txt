@@ -124,7 +124,8 @@
 #basechance 1
 #theme mairya
 #needs overlay mairyawings
-#define "#gcost 16"
+#define "#gcost 15"
+#define "#rpcost 15000"
 #define "#hp +2"
 #define "#mor +2"
 #define "#str +1"
@@ -147,7 +148,8 @@
 #basechance 10000
 #theme mairya
 #needs overlay mairyawings
-#define "#gcost 16"
+#define "#gcost 15"
+#define "#rpcost 15000"
 #define "#hp +2"
 #define "#mor +2"
 #define "#str +1"
@@ -210,8 +212,8 @@
 #define "#mor +4"
 #define "#str -1"
 #define "#enc -1"
-#unitcommand "#mapmove 2"
-#unitcommand "#ap 12"
+#define "#mapmove 16"
+#define "#ap 12"
 #subrace "Wingless"
 #define "#descr 'The Wingless are misshapen, scorned Caelians born without wings. Though they are frail and have little tolerance for cold, they are ferocious fighters who do not falter in the face of an often-welcome death.'"
 #subraceprefix "wingless"
@@ -230,8 +232,8 @@
 #define "#mor +4"
 #define "#str -1"
 #define "#enc -1"
-#unitcommand "#mapmove 2"
-#unitcommand "#ap 12"
+#define "#mapmove 16"
+#define "#ap 12"
 #subrace "Wingless"
 #define "#descr 'The Wingless are misshapen, scorned Caelians born without wings. Though they are frail and have little tolerance for cold, they are ferocious fighters who do not falter in the face of an often-welcome death.'"
 #subraceprefix "wingless"
