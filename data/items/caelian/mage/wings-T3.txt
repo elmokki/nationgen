@@ -136,7 +136,7 @@
 #basechance 5000
 #theme mairya
 #needs overlay mairyawings
-#define "#gcost 16"
+#define "#gcost 15"
 #define "#hp +2"
 #define "#mor +2"
 #define "#str +1"
@@ -185,8 +185,8 @@
 #define "#mor +4"
 #define "#str -1"
 #define "#enc -1"
-#unitcommand "#mapmove 2"
-#unitcommand "#ap 12"
+#define "#mapmove 16"
+#define "#ap 12"
 #subrace "Wingless"
 #notfortier 1
 #notfortier 2
