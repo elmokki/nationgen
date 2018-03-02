@@ -3,7 +3,8 @@
 #chanceinc "secondaryracetheme lowland *1000"
 #gameid -1
 #sprite /graphics/illithid/slave/thrall_vanara_lowland.png
-#command "#gcost 9"
+#command "#gcost 8"
+#command "#rpcost 9000"
 #command "#hp 10"
 #command "#size 2"
 #command "#mr 8"
@@ -14,7 +15,7 @@
 #command "#def 10"
 #command "#prec 10"
 #command "#enc 3"
-#command "#mapmove 2"
+#command "#mapmove 16"
 #command "#ap 10"
 #command "#animal"
 #command "#maxage 30"
@@ -26,7 +27,8 @@
 #chanceinc "secondaryracetheme winged *1000"
 #gameid -1
 #sprite /graphics/illithid/slave/thrall_vanara_wingless.png
-#command "#gcost 9"
+#command "#gcost 8"
+#command "#rpcost 9000"
 #command "#hp 10"
 #command "#mr 10"
 #command "#prot 1"
@@ -36,7 +38,7 @@
 #command "#def 10"
 #command "#prec 10"
 #command "#enc 3"
-#command "#mapmove 2"
+#command "#mapmove 16"
 #command "#ap 10"
 #command "#maxage 40"
 #command "#animal"
@@ -49,7 +51,8 @@
 #chanceinc "secondaryracetheme abysian *1000"
 #gameid -1
 #sprite /graphics/illithid/slave/thrall_vanara_vanarabred.png
-#command "#gcost 11"
+#command "#gcost 10"
+#command "#rpcost 11000"
 #command "#hp 12"
 #command "#mr 9"
 #command "#prot 1"
@@ -59,7 +62,7 @@
 #command "#def 9"
 #command "#prec 8"
 #command "#enc 3"
-#command "#mapmove 2"
+#command "#mapmove 16"
 #command "#ap 9"
 #command "#maxage 24"
 #command "#fireres 15"
@@ -71,7 +74,8 @@
 #chanceinc "secondaryracetheme alpine *1000"
 #gameid -1
 #sprite /graphics/illithid/slave/thrall_vanara_alpine.png
-#command "#gcost 10"
+#command "#gcost 9"
+#command "#rpcost 10000"
 #command "#hp 10"
 #command "#mr 9"
 #command "#prot 2"
@@ -81,7 +85,7 @@
 #command "#def 10"
 #command "#prec 10"
 #command "#enc 3"
-#command "#mapmove 2"
+#command "#mapmove 16"
 #command "#ap 10"
 #command "#maxage 30"
 #command "#animal"

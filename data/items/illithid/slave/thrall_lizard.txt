@@ -5,6 +5,7 @@
 #gameid -1
 #sprite /graphics/illithid/slave/thrall_lizard_predator.png
 #command "#gcost 13"
+#command "#rpcost 14000"
 #command "#hp 13"
 #command "#size 2"
 #command "#mr 11"
@@ -15,11 +16,11 @@
 #command "#def 9"
 #command "#prec 10"
 #command "#enc 4"
-#command "#mapmove 2"
+#command "#mapmove 14"
 #command "#ap 11"
 #command "#poisonres 5"
 #command "#coldblood"
-#command "#maxage 75"
+#command "#maxage 50"
 #bitey
 #enditem
 
@@ -32,6 +33,7 @@
 #gameid -1
 #sprite /graphics/illithid/slave/thrall_lizard_herbivore.png
 #command "#gcost 10"
+#command "#rpcost 10000"
 #command "#hp 11"
 #command "#size 2"
 #command "#mr 12"
@@ -42,10 +44,10 @@
 #command "#def 10"
 #command "#prec 10"
 #command "#enc 4"
-#command "#mapmove 2"
+#command "#mapmove 14"
 #command "#ap 10"
 #command "#poisonres 5"
 #command "#coldblood"
-#command "#maxage 75"
+#command "#maxage 50"
 #bitey
 #enditem
