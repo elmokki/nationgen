@@ -3,7 +3,8 @@
 #chanceinc "secondaryracetheme lowland *1000"
 #gameid -1
 #sprite /graphics/illithid/slave/thrall_bandar_lowland.png
-#command "#gcost 18"
+#command "#gcost 16"
+#command "#rpcost 16000"
 #command "#hp 18"
 #command "#size 3"
 #command "#mr 8"
@@ -14,7 +15,7 @@
 #command "#def 9"
 #command "#prec 9"
 #command "#enc 3"
-#command "#mapmove 2"
+#command "#mapmove 14"
 #command "#ap 10"
 #command "#animal"
 #command "#maxage 50"
@@ -26,7 +27,8 @@
 #chanceinc "secondaryracetheme winged *1000"
 #gameid -1
 #sprite /graphics/illithid/slave/thrall_bandar_wingless.png
-#command "#gcost 18"
+#command "#gcost 16"
+#command "#rpcost 16000"
 #command "#hp 18"
 #command "#mr 10"
 #command "#prot 3"
@@ -36,7 +38,7 @@
 #command "#def 9"
 #command "#prec 9"
 #command "#enc 3"
-#command "#mapmove 2"
+#command "#mapmove 14"
 #command "#ap 10"
 #command "#maxage 55"
 #command "#animal"
@@ -49,7 +51,8 @@
 #chanceinc "secondaryracetheme abysian *1000"
 #gameid -1
 #sprite /graphics/illithid/slave/thrall_bandar_bandarbred.png
-#command "#gcost 21"
+#command "#gcost 19"
+#command "#rpcost 19000"
 #command "#hp 20"
 #command "#mr 9"
 #command "#prot 3"
@@ -59,7 +62,7 @@
 #command "#def 8"
 #command "#prec 7"
 #command "#enc 3"
-#command "#mapmove 2"
+#command "#mapmove 14"
 #command "#ap 10"
 #command "#maxage 40"
 #command "#fireres 15"
@@ -71,7 +74,8 @@
 #chanceinc "secondaryracetheme alpine *1000"
 #gameid -1
 #sprite /graphics/illithid/slave/thrall_bandar_alpine.png
-#command "#gcost 19"
+#command "#gcost 17"
+#command "#rpcost 17000"
 #command "#hp 18"
 #command "#mr 9"
 #command "#prot 4"
@@ -81,7 +85,7 @@
 #command "#def 9"
 #command "#prec 9"
 #command "#enc 3"
-#command "#mapmove 2"
+#command "#mapmove 14"
 #command "#ap 10"
 #command "#maxage 50"
 #command "#animal"
