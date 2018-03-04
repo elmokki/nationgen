@@ -1657,7 +1657,6 @@ public class Unit {
 		}
 		//tw.println("#descr \"" + desc + "\"");
 		
-		writeCommands(tw);
 		
 		// Write all instead of just some stuff (14.3.2014)
 		for(String slot : slotmap.keySet())
@@ -1667,6 +1666,10 @@ public class Unit {
 				writeSlot(slot, tw);
 			}
 		}
+		
+		writeCommands(tw);
+		
+
 		
 		tw.println("#end");
 		tw.println("");
@@ -1719,7 +1722,6 @@ public class Unit {
 
 		
 		handleBodytype(tw);
-		tw.println("#itemslots " + this.getItemSlots());
 
 		for(Command c : tempCommands)
 		{
@@ -1746,6 +1748,9 @@ public class Unit {
 			else
 				tw.println(c.command);
 		}
+		
+		tw.println("#itemslots " + this.getItemSlots());
+
 	
 		
 	}
