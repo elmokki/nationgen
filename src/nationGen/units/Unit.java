@@ -256,6 +256,53 @@ public class Unit {
 		return value;
 	}
 	
+	
+	private void handleBodytype(PrintWriter tw)
+	{
+		String[] coms = {"#lizard", "#quadruped", "#bird", "#snake", "#djinn", "#miscshape", "#humanoid", "#mountedhumanoid", "#troglodyte", "#naga", "#copystats"};
+		for(String str : coms)
+			if(this.hasCommand(str))
+				return;
+		
+		boolean mounted = this.getSlot("mount") != null;
+		int slots = this.getItemSlots();
+		
+		// has feet and an arm
+		if(	Generic.containsBitmask(slots, 2048) && Generic.containsBitmask(slots, 2))
+		{
+			// has head
+			if(Generic.containsBitmask(slots, 128))
+				tw.println("#humanoid");
+			else
+				tw.println("#troglodyte");
+
+		}
+		// no feet, but arm
+		else if (Generic.containsBitmask(slots, 2))
+		{
+			if(mounted)
+				tw.println("#mountedhumanoid");
+			else
+				tw.println("#naga");
+
+		}
+		// feet, no arm
+		else if(Generic.containsBitmask(slots, 2048))
+		{
+			tw.println("#quadruped");
+
+		}
+		// no feet nor arm
+		else
+		{
+			tw.println("#miscshape");
+		}
+			
+		
+		
+		
+	}
+	
 	public int getItemSlots()
 	{
 		
@@ -616,6 +663,20 @@ public class Unit {
 		
 		return level;
 	}
+	
+	public boolean hasCommand(String cmd)
+	{		
+		for(Command c : this.getCommands())
+		{
+			if(c.command.equals(cmd))
+				return true;
+
+		}
+		
+		return false;		
+	}
+	
+	
 	
 	
 	public boolean hasLeaderLevel(String prefix)
@@ -1017,71 +1078,7 @@ public class Unit {
 		
 		
 		
-		// Mapmove
-		if(this.getSlot("mount") == null)
-		{
-			int MM = 2;
-				
-			for(Command c : race.unitcommands)
-				if(c.command.equals("#mapmove"))
-					MM = Integer.parseInt(c.args.get(0));
-			
-			for(Command c : pose.getCommands())
-				if(c.command.equals("#mapmove"))
-				{
-					if(c.args.get(0).startsWith("-") || c.args.get(0).startsWith("+"))
-					{
-						String str = c.args.get(0);
-						if(c.args.get(0).startsWith("+"))
-							str = c.args.get(0).substring(1);
-						
-						MM += Integer.parseInt(str);
-					}
-					else
-						MM = Integer.parseInt(c.args.get(0));
-				}
-			
-			int origMM = MM;
-			
-			int enc = 0;
-			for(String slot : slotmap.keySet())
-			{
-				if(getSlot(slot) != null && getSlot(slot).armor && !getSlot(slot).id.equals("-1"))
-				{
-					enc += nationGen.armordb.GetInteger(getSlot(slot).id, "enc", 0);
-				}
-			}
-			
-			
-			int prot = this.getTotalProt(false);
-			
-			int enclimit = 4;
-			if(Generic.containsTag(pose.tags, "mapmovepenaltyenc"))
-				enclimit = Integer.parseInt(Generic.getTagValue(pose.tags, "mapmovepenaltyenc"));
-			else if(Generic.containsTag(race.tags, "mapmovepenaltyenc"))
-				enclimit = Integer.parseInt(Generic.getTagValue(race.tags, "mapmovepenaltyenc"));
 
-			int protlimit = 14;
-			if(Generic.containsTag(pose.tags, "mapmovepenaltyprot"))
-				protlimit = Integer.parseInt(Generic.getTagValue(pose.tags, "mapmovepenaltyprot"));
-			else if(Generic.containsTag(race.tags, "mapmovepenaltyprot"))
-				protlimit = Integer.parseInt(Generic.getTagValue(race.tags, "mapmovepenaltyprot"));
-			
-			int penalty = 1;
-			if(Generic.containsTag(pose.tags, "mapmovepenaltyamount"))
-				penalty = Integer.parseInt(Generic.getTagValue(pose.tags, "mapmovepenaltyamount"));
-			else if(Generic.containsTag(race.tags, "mapmovepenaltyamount"))
-				penalty = Integer.parseInt(Generic.getTagValue(race.tags, "mapmovepenaltyamount"));
-			
-			if(enc >= enclimit || prot >= protlimit)
-				MM = Math.max(1, MM - penalty);
-			
-			if(MM < origMM)
-			{
-				this.commands.add(new Command("#mapmove", "-" + (origMM - MM)));
-			}
-			
-		}
 		
 		// Fist for things without proper weapons
 		if(!Generic.containsTag(pose.tags, "no_free_fist") && !copystats && getClass() != ShapeChangeUnit.class)
@@ -1721,6 +1718,7 @@ public class Unit {
 		List<Command> tempCommands = this.commands;
 
 		
+		handleBodytype(tw);
 		tw.println("#itemslots " + this.getItemSlots());
 
 		for(Command c : tempCommands)

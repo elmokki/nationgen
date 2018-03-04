@@ -1,11 +1,32 @@
-0.7.0 (th of  201)
-----------------------------------------------------------
-Code
+0.7.0-RC2
 ----------------------------------------------------------
 
+Code
+----------------------------------------------------------
+- Fixed the id ranges the program is allowed to use to conform to Dominions 5
+- Large rewrite of the probability modifier handling system
+	- Added basic logical operators for probability modifiers
+	- Please report if you find something unusually weird in equipment or names or such things that are chosen from lists.
 
 Content
 ----------------------------------------------------------
+
+
+0.7.0-RC1 (2nd of February 2018)
+----------------------------------------------------------
+
+This is the first release for Dominions 5 and just a very, very basic conversion. It utilizes the ability of Dom5 to automatically
+convert some of the unit stats for Dom5 and there may be wonkiness due to this. Feedback is appreciated.
+
+Databases are not updated to Dominions 5 yet. It is very unlikely that this would cause any issues for generation, however.
+
+Code
+----------------------------------------------------------
+- MOVED TO DOMINIONS 5 (though apart from flags everything should still work in Dom4 too)! 
+
+Content
+----------------------------------------------------------
+- Dominions 5 flags
 - Sirrush -> Mushussu
 - Stricter rules against mounted berserkers because of Dom5 changes
 - Mount graphics fixes

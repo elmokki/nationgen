@@ -1,0 +1,218 @@
+Basics
+-----------------------------------
+Chanceincs and themeincs both modify the probability distributions for generation. Chanceincs do it by modifying the probability
+of the entity it is written on while themeincs modify it for everything else when the entity it is on has been selected. In terms 
+of syntax, the only difference is that chanceincs start with #chanceinc and themeincs with #themeinc. The following examples will 
+use #chanceinc.
+
+To use a chanceinc your syntax is #chanceinc <chanceinc> <modifier>. Chanceincs can be found in the list below, let us use the first
+one for example. Modifiers determine how the weight of an item is modified: Modifier of 2 changes the weight to 2, modifier of +2 adds
+2 to the weight, modifier of *2 doubles the weight and so on. If we wanted to increase the weight of an entity, for example
+a certain shapeshift filter, for lizards by 100%, we would write:
+
+#chanceinc race lizard *2
+
+If we wanted to do this for all races except oriental humans, we would write:
+
+#chanceinc race not "Oriental human" *2
+
+The not-modifier is optional, signified by [square brackets] in documentation and generally negates the outcome. The quotation marks for the race
+are used to signify that Oriental human is a single argument rather than Oriental and human being separate arguments. This is generally required
+almost solely for some races.
+
+
+Logical operators
+-----------------------------------
+As of 0.7.0-RC2 there is support for logical operators, allowing more complexity to chanceincs and themeincs. The simplest of these is the NOT-operator
+in the example above. Generally you have to put the operator in a specified place in the chanceinc for it to work, usually but not always as the first argument.
+For the NOT-operator you should look at the documentation.
+
+The more general operators are AND and OR. These should be fairly clear to any programmer, but simply put they allow you to tie things together. For example,
+if we want to double the weight of an entity if the race of the unit choosing it is either lizard or human, we could write:
+
+#chanceinc race human OR race lizard *2
+
+Alternatively, we could, for example, make a lizard flag part available to any nation that either has lizards as primary race or has a theme "serpent cult":
+
+#chanceinc primaryrace lizard OR hastheme "serpent cult" *2
+
+As for AND, if we wanted an unit to be lizard AND have flying, we could write:
+
+#chanceinc race lizard AND personalcommand flying *2
+
+These can also be chained, for example:
+
+#chanceinc primaryrace lizard OR hastheme "serpent cult" AND race lizard *2
+
+The operators are read from left to right. For example, if we have true OR false AND true, it is processed as follows:
+1. (true OR false) AND true
+2. (true AND true)
+3. true
+
+If you wish to change the processing order, you can add parentheses, for example: 
+#chanceinc primaryrace lizard OR (hastheme "serpent cult" AND race lizard) *2
+
+Unit-based chanceincs
+-----------------------------------
+Unit-based chanceincs require an unit to be in the scope of chanceinc. These tend to be in items or filters for units and such.
+
+Race:		race [not] <race>
+		True if unit is of given race
+Pose: 		pose [not] <pose role>
+		True if unit pose supports given role (ranged/infantry/cavalry/chariot)
+Command:	personalcommand <command> [below/above/not] [command value]
+		True if command exists or if a value is defined, is above/below/precisely the value
+Second shape:	personalshape [not] <shape name>
+		True if unit has second shape of given name
+Filter:		filter [not] <filter name>
+		True if unit has a filter of given name
+Tag:		unittag [not] <tag>
+		True if unit (including stuff it contains, poses, filters etc) has given tag
+		Alternative call of #tag is supported.Race tag:	#racetag [not] <tag>
+		True if unit's race has given tag
+Unit theme:	unittheme [not] <theme>
+		True if unit (including stuff it contains, poses, filters etc) has given theme tag (defined by #theme)
+Race theme:	racetheme [not] <theme>
+		True if unit's race has a racial theme of given name or contains given theme tag
+Pose tag:	posetag [not] <tag>
+		True if unit's pose has given tag
+Pose theme:	posetheme [not] <theme>
+		True if unit's theme has given theme tag
+Slot id:	slot <slot> [not] [armor/weapon] <id>
+		True if given slot of unit is filled with something. Leave id out for any id, add armor/weapon to limit checking to armor/weapon. 
+		Leave both out to check if there is anything in the slot. Id check should also check for the id a magic weapon of a sacred is based on.
+Slot name:	slotname <slot> [not] [armor/weapon] <name>
+		As above but looks for item names (as defined in NationGen, not in game)
+Slot tag:	slottag <slot> [not] <tag>
+		True if item in given slot contains given tag
+Slot tag value:	slottag <slot> [not] <tag> <value>
+		True if item in given slot contains given tag that has a value (#tag animal horse is tag "animal" with value "horse")
+Item tag:	itemtag [not] <tag>
+		True if any item an unit is wearing has given tag
+Item theme:	itemtheme [not] <theme>
+		As above but for theme tags
+Pose itm theme:	poseitemtheme <slot> [not] <theme>
+		True if unit's pose has items of given slot that have given theme tag
+Tagged magic:	taggedmagic [not] <path1> [path2] [path3]...
+		True if unit has been tagged with magic of given path or paths. This is supposed to be used with items and filters that have
+		"#path <path>" defined in them. Used for some sacred naming stuff, probably.
+Compare magic:	comparemahic <path1> [not] [above/below] <path2>
+		True if path1 is above/below/equal to path2 on given unit.
+Magic levels:	personalmagic <path> [below] <level>	
+		If the unit has magic path <path> at least/below <level>, true.
+		You can add multiple <path> [below] <level> sequences before <mod> for multiple
+		checks.	
+Original name:	origname [not] <name>
+		Checks unit base name (ie for Hammer Soldier it is Soldier). This is used for sacred commander naming.
+Protection:	prot [not/below] <value>
+		Checks if unit protection is at least given value. Generation order matters: Before getting armor an unit has less prot.
+Encumberance:	enc [not/below] <value>
+		As above but for encumberance. Generation order matters: Before getting armor an unit has less enc.
+
+
+Nation-based chanceincs
+-----------------------------------
+Nation-based chanceincs are always checked and contain nation-level aggregate statistics and nation-specific features.
+
+Primary magic:	magic [not] <path1> [not] [path2] ...
+		Given path or paths is among the highest the nation can reach with recruits semi-reliably
+Mage w. paths:	magewithpaths [not] <path1> [not] [path2] ...
+		Nation has a mage with semi-reliable access to given path or paths
+Any magic:	anymagic [not] <path>
+		True if nation has any recruitable non-random access at all to given path
+Shapeshift:	shape [not] <shape>
+		True if nation has any unit with ability to shift to given shape
+Magic divers.:	magicdiversity [not] <value>
+		True if nation has magic diversity score of at least value. Diversity score is calculated from reliable random access on
+		recruitable mages. Add 1 for each path above 2 except blood and astral and add 1 for any access to blood or astral.
+Picks at level:	picksatlevel [not] <level> <amount>
+		True if nation has reliable access to amount paths of at least given level
+Spell sets:	spells [not] <name>
+		True if nation has access to a spell set of given name
+Module ID:	moduleid [not] <id>
+		True if current step of generation is given module. See chanceinc_moduleids.txt
+P. race theme:	hastheme [not] <name>
+		True if primary race has a race theme of given name.
+Theme theme:	hasthemetheme [not] <name>
+		True if primary race has a race theme that contains given theme tag
+Any theme:	anytheme [not] <name>
+		True if either of the above two would be true.
+S. race theme:	secondaryracetheme [not] <name>
+		True if secondary race has a race theme of given name.
+S. Theme theme:	secondarythemetheme [not] <name>
+		True if secondary race has a race theme that contains given theme tag
+Era:		era [not] <name>
+		True if nation is of given era (as number)
+Has p. race:	hasprimaryrace [not]
+		True if nation has a primary race.
+Nation command: nationcommand <command> [not] [above/below] [value]
+		Checks if nation has given command at above/below given level. If value is left empty, any argument is fine.
+Magic priority:	magicpriority <path> [not/below] <value>
+		Checks if nation has a magic priority or given path at at least given value 
+P. race. cmd:	primaryracecommand <command> [not/above/below] [value]	
+		Checks if primary race gives given command at above/below given level. If value is left empty, any argument is fine.
+Any unit cmd:	command <command> [not/above/below] [value]	
+		As above but checks all units of the nation
+% of command:	percentageofcommand <command> <not/below> <value>
+		True if at least value % of units of the nation have given command
+% of race:	percentageofrace <race> <not/below> <value>
+		True if at least value % of units of the nation are of given race
+Primary race:	primaryrace [not] <race>
+		True if primary race of nation is given race
+Sec. race:	secondaryrace [not] <race>
+		True if secondary race of nation is given race	
+P. race tag:	racetag [not] <tag>
+		True if primary race has given tag
+Any unit filter anyunitfilter [not] <filter>
+		True if any unit of the nation has given filter
+Nation tag:	nationtag [not] <tag>
+		True if nation or any of nation themes has given tag
+Avg. gold:	avggold [not] <value>
+		True if gold cost of troops is at average at least value
+Avg. res:	avgres [not] <value>
+		True if resource cost of troops is at average at least value
+Cap res. over:	caponlyunitswithresabove [not/below] <res> <amount>
+		True if nation has at least amount of cap only troops with res cost of at least res
+Res. over:	unitswithresabove [below] <res> <amount>
+		True if nation has at least amount of troops with res cost of at least res
+Units of size:	unitswithsize [not/below] <size> amount>
+		As above but for size
+Random:		random <threshold>
+		True if random number between 0 and 1 is below threshold.
+True:		true
+		Always true
+False:		false
+		Always false
+
+Themeincs
+-----------------------------------
+While chanceincs modify probabilities of the entities they are written on, themeincs are added to units and/or nations and affect probabilities 
+of other entities, should they fill the conditions: For example, a chanceinc on a sword might decrease the probability of it being generated for an UW nation
+while a themeinc on UW nation might decrease probability of all UW-unsuitable weapons with a single command.
+
+Theme:		theme [not] <theme>
+		True if the entity has a theme tag (#theme foo) specified.
+Tag:		owntag [not] <tag>
+		True if the entity has a tag (#tag foo or otherwise unused #foo) specified.
+Race name:	racename [not] <race>
+		True if the entity is race named <race>. Useful for primary races, primary race themes and such when determining secondary race
+Item tag:	thisitemtag [not] <tag>
+		True if the entity is an item and has given tag
+Item theme:	thisitemtheme [not] <theme>
+		As above but for theme tags.
+Item tag (slot) thisitemslottag [not] <slot> <tag>
+		As above for tags, but also requires them item to be for given slot
+Item thm (slot)	thisitemslottheme [not] <slot> <tag>
+		As above, but for theme tags
+Ferrous:	isferrousitem [not]
+		True if item is tagged as ferrous
+UW penalty:	weaponuwpenalty [not] [below] <value>
+		True if item is a weapon that gives at least value amount of attack penalty while under water
+Armor prot:	thisarmorprot [not] [below] <value>
+		True if item is non-shield armor that has prot of at least value
+Armor enc:	thisarmorenc [not] [below] <value>
+		True if item is non-shield armor that has enc of at least value
+Armor db value:	thisarmordb [not] [below] <db column> <value>
+		True if queried value for attribute of armor in database is at least value
+Weap. db value:	thisweapondb [not] [below] <db column> <value>
+		True if queried value for attribute of weapon in database is at least value

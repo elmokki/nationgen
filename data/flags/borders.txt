@@ -1,66 +1,9 @@
 
 
---- Baseflag 1 only
 
 #new
-#sprite "./graphics/flags/borders/borders_baseflag_1.png"
-#recolormask self
-#basechance 3
-#allowed baseflag1
-#end
-
-#new
-#sprite "./graphics/flags/borders/borders_baseflag_1_thin.png"
-#recolormask self
-#basechance 2
-#allowed baseflag1
-#end
-
-#new
-#sprite "./graphics/flags/borders/borders_baseflag_1_slot.png"
+#sprite "./graphics/flags/borders/borders.png"
 #recolormask self
 #basechance 1
-#allowed baseflag1
-#end
-
-
---- Baseflag 2 only
-
-#new
-#sprite "./graphics/flags/borders/borders_baseflag_2.png"
-#recolormask self
-#basechance 3
-#allowed baseflag2
-#end
-
-#new
-#sprite "./graphics/flags/borders/borders_baseflag_2_thin.png"
-#recolormask self
-#basechance 2
-#allowed baseflag2
-#end
-
-#new
-#sprite "./graphics/flags/borders/borders_baseflag_2_slot.png"
-#recolormask self
-#basechance 1
-#allowed baseflag2
-#end
-
-
-
---- Baseflag 3 only
-
-#new
-#sprite "./graphics/flags/borders/borders_baseflag_3.png"
-#recolormask self
-#basechance 3
-#allowed baseflag3
-#end
-
-#new
-#sprite "./graphics/flags/borders/borders_baseflag_3_thin.png"
-#recolormask self
-#basechance 2
-#allowed baseflag3
+#convert_to_alpha
 #end
