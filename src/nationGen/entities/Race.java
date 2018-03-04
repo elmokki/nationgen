@@ -35,8 +35,9 @@ public class Race extends Filter {
 		super(nationGen);
 
 		addCommand("#gcost 10");
+		addCommand("#rpcost 10000");
 		addCommand("#ap 12");
-		addCommand("#mapmove 2");
+		addCommand("#mapmove 16");
 		addCommand("#mor 10");
 		addCommand("#mr 10");
 		addCommand("#hp 10");

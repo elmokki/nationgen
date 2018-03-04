@@ -6,6 +6,7 @@
 #needstype armor dustwalker
 #needstype legs dustwalker
 #define "#gcost 50"
+#define "#rpcost 10000"
 #define "#size 2"
 #define "#hp 25"
 #define "#prot 5"
@@ -15,7 +16,7 @@
 #define "#att 11"
 #define "#def 11"
 #define "#prec 10"
-#define "#mapmove 3"
+#define "#mapmove 22"
 #define "#ap 10"
 #define "#maxage 500"
 #define "#fireres 25"
@@ -28,7 +29,7 @@
 #define "#wastesurvival"
 #define "#descr 'Dust Walkers are risen ancients entombed by long-dead desert dynasties. Their bony, leathery bodies are surrounded by a dry, parching wind. "
 #define "#nametype 113"
-#define "#reclimit 2"
+-- #define "#reclimit 2"
 #subrace "dustwalker"
 #subraceprefix "dustwalker"
 #tag "noble"
