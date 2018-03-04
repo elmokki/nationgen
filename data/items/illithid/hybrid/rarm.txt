@@ -2,9 +2,10 @@
 #name "humanoid_heavy"
 #sprite /graphics/foulspawn/small/rarm/goblinoid.png
 #command "#gcost +1"
+#command "#rpcost +1000"
 #command "#hp +1"
 #command "#str +1"
-#command "#prec +0"
+-- #command "#prec +0"
 #itemslot hand +1
 #type onehand
 #type claw
@@ -14,9 +15,9 @@
 #newitem
 #name "humanoid_agile"
 #sprite /graphics/foulspawn/small/rarm/goblinoid.png
-#command "#gcost +0"
-#command "#hp +0"
-#command "#str +0"
+-- #command "#gcost +0"
+-- #command "#hp +0"
+-- #command "#str +0"
 #command "#prec +1"
 #itemslot hand +1
 #type onehand
@@ -29,6 +30,7 @@
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/tentacle_green.png
 #command "#gcost +1"
+#command "#rpcost +1000"
 #command "#hp +1"
 #command "#str +2"
 #command "#prec -1"
@@ -40,7 +42,7 @@
 #name "tentacloid_agile"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/tentacle_green.png
-#command "#gcost +0"
+-- #command "#gcost +0"
 #command "#hp +1"
 #command "#str -1"
 #command "#prec +1"
@@ -53,6 +55,7 @@
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/pincer.png
 #command "#gcost +1"
+#command "#rpcost +1000"
 #command "#prot +1"
 #command "#str +1"
 #command "#hp +1"
@@ -68,9 +71,9 @@
 #name "humanoid_missile"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/goblinoid.png
-#command "#gcost +0"
-#command "#hp +0"
-#command "#str +0"
+-- #command "#gcost +0"
+-- #command "#hp +0"
+-- #command "#str +0"
 #command "#prec +1"
 #itemslot hand +1
 #type onehand_missile
@@ -82,7 +85,7 @@
 #name "tentacloid_missile"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/tentacle_green_missile.png
-#command "#gcost +0"
+-- #command "#gcost +0"
 #command "#hp +1"
 #command "#str -1"
 #command "#prec +1"

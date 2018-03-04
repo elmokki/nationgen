@@ -65,7 +65,8 @@
 #basechance 1
 #theme yazata
 #needs overlay yazatawings
-#define "#gcost 45"
+#define "#gcost 40"
+#define "#rpost 40020"
 #define "#hp +6"
 #define "#mr +4"
 #define "#mor +4"
@@ -101,7 +102,8 @@
 #basechance 4
 #theme yazata
 #needs overlay yazatawings
-#define "#gcost 45"
+#define "#gcost 40"
+#define "#rpost 40020"
 #define "#hp +6"
 #define "#mr +4"
 #define "#mor +4"
@@ -135,7 +137,8 @@
 #basechance 1
 #theme daeva
 #needs overlay daevawings
-#define "#gcost 55"
+#define "#gcost 50"
+#define "#rpcost 50030"
 #define "#hp +6"
 #define "#mr +4"
 #define "#mor +4"
@@ -152,7 +155,7 @@
 #define "#fear +5"
 #define "#demon"
 #define "#flying"
-#define "#reclimit 3"
+-- #define "#reclimit 3"
 #subrace "Daeva"
 #subraceprefix "daeva"
 #tag "noble"
@@ -172,7 +175,8 @@
 #basechance 4
 #theme daeva
 #needs overlay daevawings
-#define "#gcost 55"
+#define "#gcost 50"
+#define "#rpcost 50030"
 #define "#hp +6"
 #define "#mr +4"
 #define "#mor +4"
@@ -189,7 +193,7 @@
 #define "#fear +5"
 #define "#demon"
 #define "#flying"
-#define "#reclimit 3"
+-- #define "#reclimit 3"
 #subrace "Daeva"
 #subraceprefix "daeva"
 #tag "noble"
@@ -209,7 +213,8 @@
 #basechance 1
 #theme mairya
 #needs overlay mairyawings
-#define "#gcost 16"
+#define "#gcost 15"
+#define "#rpcost 15000"
 #define "#hp +2"
 #define "#mor +2"
 #define "#str +1"
@@ -255,8 +260,8 @@
 #define "#mor +4"
 #define "#str -1"
 #define "#enc -1"
-#unitcommand "#mapmove 2"
-#unitcommand "#ap 12"
+#define "#mapmove 16"
+#define "#ap 12"
 #subrace "Wingless"
 #subraceprefix "wingless"
 #enditem

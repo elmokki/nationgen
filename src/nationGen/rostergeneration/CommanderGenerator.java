@@ -440,6 +440,9 @@ public class CommanderGenerator extends TroopGenerator {
 			else
 				power = 1;
 			
+			// Unless we see a reason not to, rec points will be 1
+			com.commands.add(new Command("#rpcost 1"));
+			
 			
 			// Are we or most of our troops "special" beings, and if so will we get better special leadership and/or worse normal?
 			int magicpower = power - (r.nextInt(1));
@@ -511,7 +514,9 @@ public class CommanderGenerator extends TroopGenerator {
 				{
 					com.commands.add(new Command("#command", "-40"));
 					com.commands.add(new Command("#gcost", "-20"));
-				} 
+				}
+				else
+					com.commands.add(new Command("#rpcost 2"));
 				
 				if(r.nextDouble() > 0.5 && !mindless)
 				{
