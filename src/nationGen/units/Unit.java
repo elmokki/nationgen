@@ -256,6 +256,53 @@ public class Unit {
 		return value;
 	}
 	
+	
+	private void handleBodytype(PrintWriter tw)
+	{
+		String[] coms = {"#lizard", "#quadruped", "#bird", "#snake", "#djinn", "#miscshape", "#humanoid", "#mountedhumanoid", "#troglodyte", "#naga", "#copystats"};
+		for(String str : coms)
+			if(this.hasCommand(str))
+				return;
+		
+		boolean mounted = this.getSlot("mount") != null;
+		int slots = this.getItemSlots();
+		
+		// has feet and an arm
+		if(	Generic.containsBitmask(slots, 2048) && Generic.containsBitmask(slots, 2))
+		{
+			// has head
+			if(Generic.containsBitmask(slots, 128))
+				tw.println("#humanoid");
+			else
+				tw.println("#troglodyte");
+
+		}
+		// no feet, but arm
+		else if (Generic.containsBitmask(slots, 2))
+		{
+			if(mounted)
+				tw.println("#mountedhumanoid");
+			else
+				tw.println("#naga");
+
+		}
+		// feet, no arm
+		else if(Generic.containsBitmask(slots, 2048))
+		{
+			tw.println("#quadruped");
+
+		}
+		// no feet nor arm
+		else
+		{
+			tw.println("#miscshape");
+		}
+			
+		
+		
+		
+	}
+	
 	public int getItemSlots()
 	{
 		
@@ -616,6 +663,20 @@ public class Unit {
 		
 		return level;
 	}
+	
+	public boolean hasCommand(String cmd)
+	{		
+		for(Command c : this.getCommands())
+		{
+			if(c.command.equals(cmd))
+				return true;
+
+		}
+		
+		return false;		
+	}
+	
+	
 	
 	
 	public boolean hasLeaderLevel(String prefix)
@@ -1596,7 +1657,6 @@ public class Unit {
 		}
 		//tw.println("#descr \"" + desc + "\"");
 		
-		writeCommands(tw);
 		
 		// Write all instead of just some stuff (14.3.2014)
 		for(String slot : slotmap.keySet())
@@ -1606,6 +1666,10 @@ public class Unit {
 				writeSlot(slot, tw);
 			}
 		}
+		
+		writeCommands(tw);
+		
+
 		
 		tw.println("#end");
 		tw.println("");
@@ -1657,7 +1721,7 @@ public class Unit {
 		List<Command> tempCommands = this.commands;
 
 		
-		tw.println("#itemslots " + this.getItemSlots());
+		handleBodytype(tw);
 
 		for(Command c : tempCommands)
 		{
@@ -1684,6 +1748,9 @@ public class Unit {
 			else
 				tw.println(c.command);
 		}
+		
+		tw.println("#itemslots " + this.getItemSlots());
+
 	
 		
 	}
