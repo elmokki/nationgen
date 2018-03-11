@@ -4,6 +4,7 @@
 #gameid -1
 #sprite /graphics/serpentmen/serpentman_swamp_base.png
 #define "#gcost +5"
+#define "#rpcost +5000"
 #define "#poisonres +10"
 #define "#poisoncloud +3"
 #define "#swampsurvival"
@@ -18,7 +19,7 @@
 #gameid -1
 #sprite /graphics/serpentmen/serpentman_sea_base.png
 #define "#prot -4"
-#define "#mapmove 1"
+#define "#mapmove -2"
 #define "#ap +4"
 #define "#coldblood"
 #define "#amphibian"
@@ -53,6 +54,7 @@
 #gameid -1
 #sprite /graphics/serpentmen/serpentman_deep_base.png
 #define "#gcost +1"
+#define "#rpcost +1000"
 #define "#str -1"
 #define "#att -1"
 #define "#def -1"
@@ -70,6 +72,7 @@
 #gameid -1
 #sprite /graphics/serpentmen/serpentman_blind_base.png
 #define "#gcost +2"
+#define "#rpcost +2000"
 #define "#prot -4"
 #define "#siegebonus +1"
 #define "#blind"
@@ -85,6 +88,7 @@
 #gameid -1
 #sprite /graphics/serpentmen/serpentman_frost_base.png
 #define "#gcost +2"
+#define "#rpcost +2000"
 #define "#prot -2"
 #define "#fireres -5"
 #define "#coldres +15"
@@ -101,6 +105,7 @@
 #gameid -1
 #sprite /graphics/serpentmen/serpentman_flame_base.png
 #define "#gcost +2"
+#define "#rpcost +2000"
 #define "#fireres +15"
 #define "#heat +3"
 #define "#firepower +1"

@@ -25,16 +25,18 @@
 #shortsyllables /data/names/nations/agarthan/shortsyllables.txt
 #suffixes /data/names/nations/agarthan/suffixes.txt
 
-#unitcommand "#prot 3"
+#unitcommand "#prot 2"
 #unitcommand "#gcost 9"
+#unitcommand "#rpcost 9000"
 #unitcommand "#hp 18"
-#unitcommand "#str 14"
+#unitcommand "#str 12"
 #unitcommand "#prec 8"
 #unitcommand "#att 8"
 #unitcommand "#def 8"
 #unitcommand "#ap 10"
+#unitcommand "#mapmove 14"
 #unitcommand "#mr 12"
-#unitcommand "#amphibian"
+-- #unitcommand "#amphibian" -- declared in the poses files to avoid odd amphibian mounts
 #unitcommand "#neednoteat"
 -- #unitcommand "#coldblood" -- declared in the poses files to avoid coldblooded olmspawn
 #unitcommand "#mountainsurvival"
@@ -42,6 +44,7 @@
 #unitcommand "#darkvision 100"
 #unitcommand "#eyes 1"
 #unitcommand "#size 3"
+#unitcommand "#startage 75"
 #unitcommand "#maxage 400"
 #unitcommand "#nametype 100"
 

@@ -3,8 +3,19 @@
 #gameid -1
 #sprite /graphics/sobek/runner_mounted.png
 #armor
-#command "#hp -1"
-#command "#enc -1"
-#command "#mapmove +1"
-#command "#ap +5"
+#command "#gcost 13"
+#command "#rpcost 14000"
+#command "#hp 12"
+#command "#prot 3"
+#command "#mr 11"
+#command "#mor 11"
+#command "#str 11"
+#command "#att 11"
+#command "#def 9"
+#command "#mapmove 18"
+#command "#ap 16"
+#command "#enc 3"
+#command "#weapon 20 --- Bite"
+#command "#maxage 75"
+#command "#poisonres 5"
 #enditem
