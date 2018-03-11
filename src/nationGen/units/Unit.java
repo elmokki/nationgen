@@ -1714,6 +1714,35 @@ public class Unit {
 		}
 	}
 	
+	/**
+	 * Calculates recruitment point cost as gcost from race+pose+basesprite
+	 * @param tw
+	 */
+	private void handleRecpoints(PrintWriter tw)
+	{
+		if(this.hasCommand("#rpcost"))
+			return;
+		
+		int baserp = 0;
+		
+		List<Command> clist = new ArrayList<Command>();
+		clist.addAll(this.race.unitcommands);
+		clist.addAll(this.pose.getCommands());
+		clist.addAll(this.getSlot("basesprite").commands);
+		
+		
+		for(Command c : clist)
+		{
+			if(c.command.equals("#gcost"))
+			{
+				baserp = handleModifier(c.args.get(0), baserp);
+			}
+		}
+		
+		tw.println("#rpcost " + (baserp * 1000));
+		
+	}
+	
 	private void writeCommands(PrintWriter tw)
 	{
 	
@@ -1722,6 +1751,8 @@ public class Unit {
 
 		
 		handleBodytype(tw);
+		
+		handleRecpoints(tw);
 
 		for(Command c : tempCommands)
 		{

@@ -1,0 +1,9 @@
+- Replace all csv files here except output_armor and output_weapon from Dom5Inspector GitHub
+- Run unrelated.DatabaseConverter
+- Remove column "end" from both output_armor and output_weapon
+- Copy columns flyspr and animlength from old weapon.csv to output_weapon
+- Copy headers from armor.csv and weapon.csv to output_armor and output_weapon
+- Replace armor.csv and weapon.csv with output versions
+
+- Copy BaseU.csv from Dom5Inspector GitHub and rename to units.csv
+- Copy nations.csv, sites.csv and realms.csv directly
