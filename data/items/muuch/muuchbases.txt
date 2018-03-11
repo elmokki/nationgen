@@ -7,6 +7,7 @@
 #define "#stealthy 0"
 #define "#darkvision 50"
 #define "#forestsurvival"
+#define "#startage 20"
 #enditem
 
 #newitem
@@ -16,6 +17,7 @@
 #needs hands green
 #theme "green"
 #define "#darkvision 50"
+#define "#startage 20"
 #enditem
 
 #newitem
@@ -24,12 +26,14 @@
 #sprite /graphics/muuch/basesprite_red_small.png
 #needs hands red
 #theme "red"
-#define "#gcost +5"
+#define "#gcost +2"
+#define "#rpcost +2000"
 #define "#mr +1"
 #define "#mor +1"
 #define "#prec +1"
 #define "#poisonskin 20"
 #define "#darkvision 50"
+#define "#startage 20"
 #enditem
 
 #newitem
@@ -39,4 +43,5 @@
 #needs hands white
 #theme "white"
 #define "#darkvision 100"
+#define "#startage 20"
 #enditem

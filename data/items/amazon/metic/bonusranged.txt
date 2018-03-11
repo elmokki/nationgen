@@ -2,7 +2,6 @@
 #name "javelin 1"
 #gameid 21
 #sprite /graphics/weapon/standard/javelin1.png
-#tag "name infantry 'Javelineer'"
 #basechance 2
 #enditem
 
@@ -10,7 +9,6 @@
 #name "javelin 2"
 #gameid 21
 #sprite /graphics/weapon/standard/javelin2.png
-#tag "name infantry 'Javelineer'"
 #basechance 2
 #enditem
 
@@ -18,7 +16,16 @@
 #name "throwing axe"
 #gameid 260
 #theme "primitive"
-#tag "name infantry 'Axe Thrower'"
+#theme "iron"
+#basechance 2
+#chanceinc unittag irregular 4
+#enditem
+
+#newitem 
+#name "throwing hatchet"
+#gameid throwinghatchet
+#theme "primitive"
+#theme "bronze"
 #basechance 2
 #chanceinc unittag irregular 4
 #enditem
@@ -28,7 +35,6 @@
 #gameid 23
 #sprite /graphics/weapon/standard/bonusshortbow.png
 #basechance 0.5
-#tag "name infantry 'Ranger'"
 #enditem
 
 #newitem
@@ -44,7 +50,6 @@
 #name "harpoon"
 #gameid 452
 #sprite /graphics/weapon/standard/javelin1.png
-#tag "name infantry 'Harponeer'"
 #tag "maxprot 14"
 #tag "tierunique"
 #basechance 0.5
@@ -54,7 +59,6 @@
 #newitem
 #name "blowpipe"
 #gameid 34
-#tag "name infantry 'Poisoner'"
 #tag "maxprot 12"
 #tag "tierunique"
 #basechance 0.5
@@ -68,8 +72,18 @@
 #tag "maxprot 12"
 #tag "tierunique"
 #tag "noslot offhand"
-#tag "name infantry 'Trapper'"
 #tag "notepic"
 #basechance 0.5
 #chanceinc unittag irregular 1.5
+#enditem
+
+#newitem
+#name "sling"
+#gameid 22
+#basechance 0.5
+#enditem
+
+#newitem
+#name "discus"
+#gameid 723
 #enditem

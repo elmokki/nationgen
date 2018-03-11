@@ -5,6 +5,7 @@
 #sprite /graphics/hoburg/weapon/crossbow/crossbow.png
 #theme "advanced"
 #theme "iron"
+#basechance 0.5
 #theme "austral"
 #theme "boreal"
 #theme "central"
@@ -12,6 +13,21 @@
 #theme "oriental"
 #theme "abysian"
 #light
+#enditem
+
+#newitem
+#name "crossbow"
+#gameid 25
+#sprite /graphics/hoburg/weapon/crossbow/crossbow.png
+#theme "advanced"
+#theme "iron"
+#basechance 1
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#theme "abysian"
 #enditem
 
 #newitem

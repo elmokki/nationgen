@@ -3,6 +3,7 @@
 #gameid -1
 #sprite /graphics/monkey/markata_base_archer.png
 #command "#gcost 5"
+#command "#rpcost 5000"
 #command "#hp 5"
 #command "#mr 7"
 #command "#animal"
@@ -13,6 +14,7 @@
 #command "#def 14"
 #command "#att 10"
 #command "#str 5"
+#command "#mapmove 16"
 #command "#ap 14"
 #command "#enc 2"
 #command "#size 1"
@@ -26,7 +28,8 @@
 #gameid -1
 #sprite /graphics/monkey/markata_base_archer.png
 #needs wings winged
-#command "#gcost 10"
+#command "#gcost 9"
+#command "#rpcost 9000"
 #command "#hp 5"
 #command "#mr 9"
 #command "#mor 6"
@@ -34,10 +37,10 @@
 #command "#def 14"
 #command "#att 10"
 #command "#str 5"
+#command "#mapmove 24"
 #command "#ap 14"
 #command "#enc 2"
 #command "#size 1"
-#command "#mapmove 3"
 #command "#maxage +5"
 #command "#flying"
 #command "#animal"
@@ -53,6 +56,7 @@
 #gameid -1
 #sprite /graphics/monkey/markata_base_markatabred_archer.png
 #command "#gcost 6"
+#command "#rpcost 6000"
 #command "#hp 6"
 #command "#mr 8"
 #command "#mor 7"
@@ -60,6 +64,7 @@
 #command "#def 13"
 #command "#att 10"
 #command "#str 6"
+#command "#mapmove 16"
 #command "#ap 11"
 #command "#enc 2"
 #command "#size 1"
@@ -78,10 +83,10 @@
 #gameid -1
 #sprite /graphics/monkey/markata_base_alpine_archer.png
 #command "#gcost 6"
+#command "#rpcost 6000"
 #command "#hp 5"
 #command "#mr 8"
 #command "#animal"
-#command "#forestsurvival"
 #command "#mountainsurvival"
 #command "#undisciplined"
 #command "#mor 8"
@@ -89,6 +94,7 @@
 #command "#def 14"
 #command "#att 10"
 #command "#str 5"
+#command "#mapmove 16"
 #command "#ap 14"
 #command "#enc 2"
 #command "#size 1"

@@ -2,16 +2,26 @@
 #name "javelin 1"
 #gameid 21
 #sprite /graphics/weapon/standard/javelin1.png
-#tag "name infantry 'Javelineer'"
 #basechance 2
+#theme "occidental"
+#theme "boreal"
+#theme "austral"
+#theme "oriental"
+#theme "central"
+#theme "imperial"
 #enditem
 
 #newitem
 #name "javelin 2"
 #gameid 21
-#sprite /graphics/weapon/standard/javelin2.png
-#tag "name infantry 'Javelineer'"
 #basechance 2
+#sprite /graphics/weapon/standard/javelin2.png
+#theme "occidental"
+#theme "boreal"
+#theme "austral"
+#theme "oriental"
+#theme "central"
+#theme "imperial"
 #enditem
 
 #newitem
@@ -20,16 +30,36 @@
 #sprite /graphics/weapon/standard/bonuscrossbow.png
 #basechance 0.5
 #theme "advanced"
-#tag "name infantry 'Ranger'"
+#theme "iron"
+#theme "boreal"
+#theme "oriental"
+#theme "central"
+#theme "imperial"
 #enditem
 
 #newitem -- Throwing axe
 #name "throwing axe"
 #gameid 260
-#theme "primitive"
-#tag "name infantry 'Axe Thrower'"
 #basechance 2
 #chanceinc unittag irregular 4
+#theme "primitive"
+#theme "iron"
+#theme "boreal"
+#theme "central"
+#theme "enlightened"
+#enditem
+
+#newitem
+#name "throwing hatchet"
+#gameid throwinghatchet
+#basechance 2
+#chanceinc unittag irregular 4
+#theme "primitive"
+#theme "bronze"
+#theme "occidental"
+#theme "central"
+#theme "imperial"
+#theme "enlightened"
 #enditem
 
 #newitem
@@ -37,48 +67,104 @@
 #gameid 23
 #sprite /graphics/weapon/standard/bonusshortbow.png
 #basechance 0.5
-#tag "name infantry 'Ranger'"
+#theme "wood"
+#theme "occidental"
+#theme "boreal"
+#theme "austral"
+#theme "oriental"
+#theme "central"
+#theme "imperial"
+#theme "enlightened"
+#enditem
+
+#newitem
+#name "poison shortbow"
+#gameid 594
+#sprite /graphics/weapon/standard/bonusshortbow.png
+#basechance 0.5
+#theme "wood"
+#theme "poison"
+#theme "occidental"
+#theme "austral"
+#theme "oriental"
+#theme "central"
+#theme "enlightened"
+#enditem
+
+#newitem
+#name "bonus sling"
+#gameid 594
+#sprite /graphics/weapon/standard/bonusshortbow.png
+#basechance 0.5
+#theme "leather"
+#theme "occidental"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#enditem
+
+#newitem
+#name "poison sling"
+#gameid 167
+#basechance 0.5
+#theme "leather"
+#theme "poison"
+#theme "occidental"
+#theme "central"
+#notepic
 #enditem
 
 #newitem
 #name "chakram"
 #gameid 362
 #sprite /graphics/weapon/standard/chakram.png
-#renderprio 7 
+#renderprio 7
 #renderslot "weapon"
-#tag "name infantry 'Chakram Thrower'"
-#tag "tierunique"
 #basechance 0.25
+#tag "tierunique"
+#theme "iron"
+#theme "central"
+#theme "oriental"
+#theme "enlightened"
 #enditem
 
 #newitem
 #name "sticksandstones"
 #gameid 360
 #basechance 0.25
-#theme "primitive"
-#tag "maxprot 14"
 #tag "notepic"
+#tag "maxprot 14"
+#theme "primitive"
+#theme "occidental"
+#theme "austral"
+#theme "enlightened"
 #enditem
 
 #newitem
 #name "harpoon"
 #gameid 452
 #sprite /graphics/weapon/standard/javelin1.png
-#tag "name infantry 'Harponeer'"
 #tag "maxprot 14"
 #tag "tierunique"
 #basechance 0.5
 #chanceinc unittag irregular 1.5
+#theme "occidental"
+#theme "boreal"
+#theme "oriental"
 #enditem
 
 #newitem
 #name "blowpipe"
 #gameid 34
-#tag "name infantry 'Poisoner'"
 #tag "maxprot 12"
 #tag "tierunique"
 #basechance 0.5
 #chanceinc unittag irregular 1.5
+#theme "poison"
+#theme "occidental"
+#theme "austral"
+#theme "oriental"
+#notepic
 #enditem
 
 #newitem
@@ -88,8 +174,23 @@
 #tag "maxprot 12"
 #tag "tierunique"
 #tag "noslot offhand"
-#tag "name infantry 'Trapper'"
 #tag "notepic"
 #basechance 0.5
 #chanceinc unittag irregular 1.5
+#theme "occidental"
+#theme "boreal"
+#theme "austral"
+#theme "central"
+#theme "imperial"
+#theme "enlightened"
+#enditem
+
+#newitem
+#name "discus"
+#gameid 723
+#tag "maxprot 9"
+#basechance 0.25
+#theme "bronze"
+#theme "central"
+#theme "imperial"
 #enditem

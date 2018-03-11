@@ -2,21 +2,26 @@
 #name "javelin 1"
 #gameid 21
 #sprite /graphics/weapon/standard/javelin1.png
-#tag "name infantry 'Javelineer'"
 #enditem
 
 #newitem
 #name "javelin 2"
 #gameid 21
 #sprite /graphics/weapon/standard/javelin2.png
-#tag "name infantry 'Javelineer'"
 #enditem
 
 #newitem -- Throwing axe
 #name "throwing axe"
 #gameid 260
 #theme "primitive"
-#tag "name infantry 'Axe Thrower'"
+#theme "iron"
+#enditem
+
+#newitem 
+#name "throwing hatchet"
+#gameid throwinghatchet
+#theme "primitive"
+#theme "bronze"
 #enditem
 
 #newitem
@@ -39,7 +44,6 @@
 #name "harpoon"
 #gameid 452
 #sprite /graphics/weapon/standard/javelin1.png
-#tag "name infantry 'Harponeer'"
 #tag "maxprot 12"
 #tag "tierunique"
 #basechance 0.5
@@ -48,9 +52,15 @@
 #newitem
 #name "blowpipe"
 #gameid 34
-#tag "name infantry 'Poisoner'"
 #tag "maxprot 10"
 #tag "tierunique"
 #define "#gcost +2"
 #basechance 0.5
+#enditem
+
+#newitem
+#name "discus"
+#gameid 723
+#basechance 0.5
+#theme "bronze"
 #enditem
