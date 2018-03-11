@@ -160,8 +160,8 @@ public class DatabaseConverter {
 			}
 			else
 			{
-				db.setValue(key, "0", "flammable");
 				db.setValue(key, "0", "ferrous");
+				db.setValue(key, "0", "flammable");
 			}
 		}
 	}
