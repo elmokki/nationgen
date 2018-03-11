@@ -77,6 +77,9 @@ public class DatabaseConverter {
             // Set units[id] to line of that unit.
             if(line.length() > 0 && line.split(";").length > 0)
             	lines.add(line);
+            else if(line.length() > 0 && line.split("\t").length > 0)
+            	lines.add(line);
+
         }
 
         file.close();
@@ -87,6 +90,9 @@ public class DatabaseConverter {
 			for(String str : lines)
 			{
 				String[] stuff = str.split(";");
+				if(stuff.length < 2)
+					stuff = str.split("\t");
+				
 				if(stuff[2].equals(key))
 				{
 					int zonenbr = Integer.parseInt(stuff[0]);
@@ -132,35 +138,30 @@ public class DatabaseConverter {
 	 */
 	private static void addAttributes(Dom3DB db, Dom3DB attributes_by)
 	{
-		Dom3DB attr = null;
-		try {
-			attr = new Dom3DB("db_conversion/attributes.csv");
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
+
+		System.out.println(db.entryMap.keySet());
 		
 		for(String key : db.entryMap.keySet())
 		{
-			String attr_id = attributes_by.GetValue(key, "attribute_record_id");
-			if(attr_id != "")
+			String attr= attributes_by.GetValue(key, "attribute");
+			if(attr != "")
 			{
-				String attr_key = attr.GetValue(attr_id, "attribute_number");
-
-				if(attr_key.equals("266") || attr_key.equals("267"))
-					db.setValue(key, "1", "ironweapon");
+				if(attr.equals("266") || attr.equals("267"))
+				
+					db.setValue(key, "1", "ferrous");
 				else
-					db.setValue(key, "0", "ironweapon");
+					db.setValue(key, "0", "ferrous");
 
-				if(attr_key.equals("268") || attr_key.equals("269"))
-					db.setValue(key, "1", "woodenweapon");
+				if(attr.equals("268") || attr.equals("269"))
+					db.setValue(key, "1", "flammable");
 				else
-					db.setValue(key, "0", "woodenweapon");
+					db.setValue(key, "0", "flammable");
 
 			}
 			else
 			{
-				db.setValue(key, "0", "woodenweapon");
-				db.setValue(key, "0", "ironweapon");
+				db.setValue(key, "0", "flammable");
+				db.setValue(key, "0", "ferrous");
 			}
 		}
 	}
@@ -184,10 +185,8 @@ public class DatabaseConverter {
 			String attr_id = db.GetValue(key, "effect_record_id");
 			
 			// Damage
-			
 			db.setValue(key, attr.GetValue(attr_id, "raw_argument"), "dmg");
 
-			
 			// Effect numbers
 			int effnbr = Integer.parseInt(attr.GetValue(attr_id, "effect_number"));
 			if(effnbr == 2)
