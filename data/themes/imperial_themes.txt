@@ -1,10 +1,6 @@
--- Generic theme with high diversity and low cohesion
 #newtheme
-#type techlevel
 #name default
 #basechance 4
-#themeinc theme iron *1
-#themeinc theme bronze *0.125
 #endtheme
 
 -- Weights: EA 1, MA 1, LA 0.5
@@ -14,9 +10,11 @@
 #basechance 1
 #chanceinc era 3 -0.5
 #themeinc theme advanced *0.05
-#themeinc theme iron *0.5
+#themeinc theme iron *0.05
 #themeinc theme bronze *1
 #themeinc theme wood *1
+#themeinc theme stone *1
+#themeinc theme bone *1
 #themeinc theme leather *2
 #themeinc theme naked *2
 #themeinc theme primitive *2
@@ -33,9 +31,28 @@
 #themeinc theme iron *0.25
 #themeinc theme bronze *2
 #themeinc theme wood *1
+#themeinc theme stone *0.05
+#themeinc theme bone *0.05
 #themeinc theme leather *1
 #themeinc theme naked *0.5
 #themeinc theme primitive *0.5
+#endtheme
+
+-- Weights: EA 1, MA 2, LA 1
+#newtheme
+#type techlevel
+#name iron
+#basechance 1
+#chanceinc era 2 *2
+#themeinc theme advanced *0.5
+#themeinc theme iron *2
+#themeinc theme bronze *0.25
+#themeinc theme wood *1
+#themeinc theme stone *0.01
+#themeinc theme bone *0.01
+#themeinc theme leather *0.5
+#themeinc theme naked *0.1
+#themeinc theme primitive *0.1
 #endtheme
 
 -- Weights: EA 0.25, MA 1, LA 2
@@ -49,6 +66,8 @@
 #themeinc theme iron *2
 #themeinc theme bronze *0.05
 #themeinc theme wood *0.5
+#themeinc theme stone *0.005
+#themeinc theme bone *0.005
 #themeinc theme leather *0.5
 #themeinc theme naked *0.05
 #themeinc theme primitive *0.05
@@ -81,7 +100,7 @@
 #newtheme
 #type missile_preference
 #name missilepreference_javelin
-#basechance 1
+#basechance 2
 #themeinc theme missilepreference_javelin *1000
 #endtheme
 
@@ -97,6 +116,15 @@
 #name missilepreference_chakram
 #basechance 1
 #themeinc theme missilepreference_chakram *1000
+#theme iron
+#endtheme
+
+#newtheme
+#type missile_preference
+#name missilepreference_discus
+#basechance 1
+#themeinc theme missilepreference_discus *1000
+#theme bronze
 #endtheme
 
 #newtheme
@@ -104,6 +132,7 @@
 #name missilepreference_rock
 #basechance 1
 #themeinc theme missilepreference_rock *1000
+#theme stone
 #endtheme
 
 #newtheme
@@ -126,13 +155,6 @@
 #type social
 #name slaver
 #basechance 0.05
-#themeinc theme advanced *1
-#themeinc theme iron *1
-#themeinc theme bronze *1
-#themeinc theme wood *1
-#themeinc theme leather *1
-#themeinc theme naked *1
-#themeinc theme primitive *1
 #themeinc theme slave *20
 #themeinc theme free *0.5
 #themeinc racename caveman *5

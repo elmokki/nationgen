@@ -4,6 +4,8 @@
 #sprite /graphics/sidhe/bean/basesprite_mounted.png
 #recolormask /graphics/sidhe/bean/basesprite_mounted_recolormask.png
 #tag "noble"
+#define "#gcost 25"
+#define "#rpcost 25000"
 #define "#hp 13"
 #define "#enc 3"
 #define "#mr 14"
@@ -12,12 +14,12 @@
 #define "#att 12"
 #define "#def 13"
 #define "#prec 12"
-#define "#gcost 25"
 #define "#darkvision 50"
 #define "#illusion"
 -- #define "#stealthy 0" -- granted by poses so chariots aren't stealthy
 #define "#maxage 1000"
 #define "#forestsurvival"
+#define "#mapmove 14"
 #define "#ap 13"
 #define "#female"
 #define "#nametype 143"

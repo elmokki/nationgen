@@ -3,15 +3,19 @@
 #gameid -1
 #sprite /graphics/predatorlizard_base.png
 #armor
-#command "#att +1"
-#command "#def -1"
-#command "#gcost +3"
-#command "#prot -2"
-#command "#mr -1"
-#command "#slave"
-#command "#ap +1"
-#command "#hp +2"
-#command "#str +1"
+#command "#gcost 13"
+#command "#rpcost 14000"
+#command "#hp 13"
+#command "#prot 3"
+#command "#mr 11"
+#command "#mor 8"
+#command "#str 11"
+#command "#att 11"
+#command "#def 9"
+#command "#ap 11"
 #command "#weapon 20 --- Bite"
+#command "#slave"
+#command "#maxage 75"
+#command "#poisonres 5"
 #guaranteedprefix slave
 #enditem

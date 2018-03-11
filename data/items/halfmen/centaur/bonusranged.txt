@@ -32,9 +32,17 @@
 #gameid 260
 #theme "primitive"
 #theme "iron"
-#tag "name infantry 'Axe Thrower'"
 #basechance 2
 #chanceinc unittag irregular 4
+#enditem
+
+#newitem 
+#name "throwing hatchet"
+#gameid throwinghatchet
+#basechance 2
+#chanceinc unittag irregular 4
+#theme "primitive"
+#theme "bronze"
 #enditem
 
 #newitem
@@ -76,4 +84,11 @@
 #basechance 0.5
 #chanceinc unittag irregular 1.5
 #theme "primitive"
+#enditem
+
+
+#newitem 
+#name "discus"
+#gameid 723
+#theme "bronze"
 #enditem

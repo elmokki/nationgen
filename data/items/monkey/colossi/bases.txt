@@ -2,7 +2,8 @@
 #name "colossi basesprite"
 #gameid -1
 #sprite /graphics/monkey/giant/colossi_base.png
-#command "#gcost 35"
+#command "#gcost 30"
+#command "#rpcost 30000"
 #command "#hp 36"
 #command "#size 4"
 #command "#prot 8"
@@ -12,9 +13,9 @@
 #command "#att 13"
 #command "#def 11"
 #command "#prec 10"
-#define "#mapmove 3"
-#define "#ap 14"
-#define "#maxage 90"
+#command "#mapmove 20"
+#command "#ap 14"
+#command "#maxage 90"
 #command "#forestsurvival"
 #noble
 #subraceprefix colossi
@@ -28,8 +29,9 @@
 #gameid -1
 #sprite /graphics/monkey/giant/colossi_base.png
 #needs wings winged
-#command "#gcost 50"
-#command "#hp 36"
+#command "#gcost 45"
+#command "#rpcost 45000"
+#command "#hp 34"
 #command "#size 4"
 #command "#prot 8"
 #command "#mr 12"
@@ -38,9 +40,9 @@
 #command "#att 13"
 #command "#def 11"
 #command "#prec 10"
-#define "#mapmove 3"
-#define "#ap 12"
-#define "#maxage 100"
+#command "#mapmove 24"
+#command "#ap 12"
+#command "#maxage 100"
 #command "#flying"
 #command "#forestsurvival"
 #noble
