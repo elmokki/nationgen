@@ -24,7 +24,7 @@ public class DatabaseConverter {
 		// Weapons
 		Dom3DB base = new Dom3DB("db_conversion/weapons.csv");
 		
-		addAttributes(base, new Dom3DB("db_conversion/attributes_by_weapon.csv"));
+		addAttributes(base, "db_conversion/attributes_by_weapon.csv");
 		addEffects(base);
 		
 		base.saveToFile("db_conversion/output_weapon.csv");
@@ -32,7 +32,7 @@ public class DatabaseConverter {
 		
 		// Armor 
 		base = new Dom3DB("db_conversion/armors.csv");
-		addAttributes(base, new Dom3DB("db_conversion/attributes_by_armor.csv"));
+		addAttributes(base, "db_conversion/attributes_by_armor.csv");
 		addArmorProt(base);
 		base.saveToFile("db_conversion/output_armor.csv");
 
@@ -136,34 +136,57 @@ public class DatabaseConverter {
 	 * @param db
 	 * @param attributes_by
 	 */
-	private static void addAttributes(Dom3DB db, Dom3DB attributes_by)
+	private static void addAttributes(Dom3DB db, String fname)
 	{
-
-		System.out.println(db.entryMap.keySet());
+        Scanner file = null;
+		try {
+			file = new Scanner(new FileInputStream(fname));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		file.nextLine();
 		
 		for(String key : db.entryMap.keySet())
 		{
-			String attr= attributes_by.GetValue(key, "attribute");
+			db.setValue(key, "0", "ferrous");
+			db.setValue(key, "0", "flammable");
+			db.setValue(key, "0", "mmpenalty");
+
+		}
+		
+		
+        while (file.hasNextLine())
+        {
+            // Read line
+        	String ssgd = file.nextLine();
+            String[] line = ssgd.split("\t");
+            
+            
+            if(!db.entryMap.keySet().contains(line[0]))
+            	continue;
+            
+            String key = line[0];
+    		String attr = line[1];
+
 			if(attr != "")
 			{
 				if(attr.equals("266") || attr.equals("267"))
 				
 					db.setValue(key, "1", "ferrous");
-				else
-					db.setValue(key, "0", "ferrous");
 
+			
 				if(attr.equals("268") || attr.equals("269"))
 					db.setValue(key, "1", "flammable");
-				else
-					db.setValue(key, "0", "flammable");
+		
+				if(attr.equals("582"))
+					db.setValue(key, line[2], "mmpenalty");
 
 			}
-			else
-			{
-				db.setValue(key, "0", "ferrous");
-				db.setValue(key, "0", "flammable");
-			}
-		}
+
+
+        }
+		
 	}
 
 	

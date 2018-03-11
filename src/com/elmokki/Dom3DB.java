@@ -240,7 +240,6 @@ public class Dom3DB {
         String[] crap = new String[definition.length];
         String[] stuff = line.split(";");
 
-        System.out.println(line.split(";").length + " vs " + definition.length + " | " + definition[0] + " / " + definition[1]);
         for(int i = 0; i < stuff.length; i++)
         	crap[i] = stuff[i];
 
