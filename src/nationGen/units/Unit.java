@@ -257,13 +257,15 @@ public class Unit {
 	}
 	
 	
-	private void handleBodytype(PrintWriter tw)
+	protected void handleBodytype(PrintWriter tw)
 	{
 		String[] coms = {"#lizard", "#quadruped", "#bird", "#snake", "#djinn", "#miscshape", "#humanoid", "#mountedhumanoid", "#troglodyte", "#naga", "#copystats"};
 		for(String str : coms)
 			if(this.hasCommand(str))
+			{
 				return;
-		
+			}
+
 		boolean mounted = this.getSlot("mount") != null;
 		int slots = this.getItemSlots();
 		
@@ -1718,9 +1720,9 @@ public class Unit {
 	 * Calculates recruitment point cost as gcost from race+pose+basesprite
 	 * @param tw
 	 */
-	private void handleRecpoints(PrintWriter tw)
+	protected void handleRecpoints(PrintWriter tw)
 	{
-		if(this.hasCommand("#rpcost"))
+		if(this.hasCommand("#rpcost") || this.hasCommand("#copystats"))
 			return;
 		
 		int baserp = 0;
@@ -1728,9 +1730,10 @@ public class Unit {
 		List<Command> clist = new ArrayList<Command>();
 		clist.addAll(this.race.unitcommands);
 		clist.addAll(this.pose.getCommands());
-		clist.addAll(this.getSlot("basesprite").commands);
 		
-		
+		if(this.getSlot("basesprite") != null)
+			clist.addAll(this.getSlot("basesprite").commands);
+	
 		for(Command c : clist)
 		{
 			if(c.command.equals("#gcost"))
@@ -1739,7 +1742,8 @@ public class Unit {
 			}
 		}
 		
-		tw.println("#rpcost " + (baserp * 1000));
+		tw.println("#rpcost " + (baserp * 1000));		
+
 		
 	}
 	

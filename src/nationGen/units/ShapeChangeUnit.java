@@ -351,14 +351,24 @@ public class ShapeChangeUnit extends Unit {
 		List<Command> commands = getCommands();
 		
 		boolean hasDescriptionSpecified = false;
-		
+		boolean hasItemSlots = false;
+
 		// Own non-gcost commands first due to #copystats
 		for(Command c : commands)
 		{
-			if(!c.command.equals("#gcost"))
+			if(c.command.equals("#gcost"))
+			{
+				// Do nothing
+			}
+			else if(c.command.equals("#itemslots"))
+			{
+				hasItemSlots = true;
+			}
+			else
 			{
 				tw.println(c.command + " " + Generic.listToString(c.args));
 			}
+			
 			if(c.command.equals("#descr") && thisForm.tags.contains("specifieddescr"))
 			{
 				hasDescriptionSpecified = true;
@@ -386,6 +396,14 @@ public class ShapeChangeUnit extends Unit {
 		
 		if(gcost != 0)
 			tw.println("#gcost " + gcost);
+
+		
+		// If there's no #copystats or defined body type, define body type (as probably humanoid unless shenanigans have been done)
+		this.handleBodytype(tw);
+		
+		// Write itemslots if they were skipped before
+		if(hasItemSlots)
+			tw.println("#itemslots " + this.getItemSlots());
 
 		
 		tw.println("#end");
