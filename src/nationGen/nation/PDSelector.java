@@ -55,6 +55,9 @@ public class PDSelector {
 		}
 	}
 	
+
+	
+	
 	private Unit getCommander(int rank, boolean startarmy)
 	{
 		if(rank < 1)
@@ -165,6 +168,134 @@ public class PDSelector {
 		return com;
 	}
 	
+	public Unit getWallUnit(boolean montag_chassis_allowed)
+	{
+	
+		// Ranged units and infantry with decent ranged weapons
+		List<Unit> units = n.combineTroopsToList("ranged");
+		List<Unit> tempunits = n.combineTroopsToList("infantry");
+		for(Unit u : tempunits)
+		{
+			if(u.getSlot("bonusweapon") != null)
+			{
+				if(n.nationGen.weapondb.GetInteger(u.getSlot("bonusweapon").id, "rng", 0) > 15)
+				{
+					units.add(u);
+				}
+				
+			}
+		}
+		if(!montag_chassis_allowed)
+		{
+			tempunits = n.combineTroopsToList("montagtroops");
+				for(Unit u : tempunits)
+				{
+	
+							
+					if(u.getSlot("bonusweapon") != null && n.nationGen.weapondb.GetInteger(u.getSlot("bonusweapon").id, "rng", 0) > 15)
+					{
+						units.add(u);
+					}
+					if(u.getSlot("weapon") != null && n.nationGen.weapondb.GetInteger(u.getSlot("weapon").id, "rng", 0) > 15)
+					{
+						units.add(u);
+					}		
+
+				}
+		}
+		
+		List<Unit> unsuitable = new ArrayList<Unit>();
+		for(Unit u : units)
+			if(Generic.containsTag(Generic.getAllUnitTags(u), "cannot_be_pd") || (Generic.containsTag(u.pose.tags, "montagpose") && !montag_chassis_allowed))
+				unsuitable.add(u);
+		
+		if(units.size() > unsuitable.size())
+			units.removeAll(unsuitable);
+		
+		// No options: Any infantry with any ranged
+		if(units.size() == 0)
+		{
+			tempunits = n.combineTroopsToList("infantry");
+			for(Unit u : tempunits)
+			{
+				if(u.getSlot("bonusweapon") != null)
+				{
+					if(n.nationGen.weapondb.GetInteger(u.getSlot("bonusweapon").id, "rng", 0) != 0)
+					{
+						units.add(u);
+					}
+					
+				}
+			}
+			
+			unsuitable = new ArrayList<Unit>();
+			for(Unit u : units)
+				if(Generic.containsTag(Generic.getAllUnitTags(u), "cannot_be_pd") || (Generic.containsTag(u.pose.tags, "montagpose") && !montag_chassis_allowed))
+					unsuitable.add(u);
+			
+			if(units.size() > unsuitable.size())
+				units.removeAll(unsuitable);
+		}
+		
+		// No options: Any infantry
+		if(units.size() == 0)
+		{
+			units = n.combineTroopsToList("infantry");
+			unsuitable = new ArrayList<Unit>();
+			for(Unit u : units)
+				if(Generic.containsTag(Generic.getAllUnitTags(u), "cannot_be_pd") || (Generic.containsTag(u.pose.tags, "montagpose") && !montag_chassis_allowed))
+					unsuitable.add(u);
+			
+			if(units.size() > unsuitable.size())
+				units.removeAll(unsuitable);
+		}
+		// Try to get unit
+		Unit unit = getWallUnit(units);
+		
+		// Failsafe: Just get something
+		if(unit == null)
+		{
+
+			units = n.combineTroopsToList("infantry");
+			units.addAll(n.combineTroopsToList("mounted"));
+			units.addAll(n.combineTroopsToList("ranged"));
+			if(!montag_chassis_allowed)
+				units.addAll(n.combineTroopsToList("montagtroops"));
+			
+			 unit = getWallUnit(units);
+		}
+		
+		return unit;
+
+	}
+	
+	public Unit getWallUnit(List<Unit> units)
+	{
+		double totalr = 0;
+		double totalg = 0;
+		for(Unit u : units)
+		{
+			totalr += u.getResCost(true);
+			totalg += u.getGoldCost();
+		}
+		double targetgcost = (totalg / units.size());
+		double targetrcost = (totalr / units.size());
+		
+		Unit best = units.get(0);
+		double bestscore = scoreForMilitia(best, targetrcost, targetgcost);
+		for(Unit u : units)
+		{
+			double score = scoreForMilitia(u, targetrcost, targetgcost);
+			if(bestscore >= score)
+			{
+				bestscore = score;
+				best = u;
+			}		
+		}
+		
+		return best;
+		
+	}
 	
 	public Unit getMilitia(int rank, int tier)
 	{
