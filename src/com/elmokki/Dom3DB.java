@@ -7,6 +7,7 @@ import java.util.*;
 
 public class Dom3DB {
 	
+	private boolean convert = false;
 	public HashMap<String, String> entryMap = new HashMap<String, String>();
     private String[] definition;
     private List<String> booleanargs;
@@ -66,8 +67,14 @@ public class Dom3DB {
 	
 		file = new Scanner(new FileInputStream(System.getProperty("user.dir") + "/" + filename));
 
-			
-		definition = file.nextLine().split(";");
+		String rawdef = file.nextLine();
+		definition = rawdef.split(";");
+		if(definition.length < 2)
+		{
+			convert = true;
+			rawdef = rawdef.replaceAll("\t", ";");
+			definition = rawdef.split(";");
+		}
 
         String line;
 
@@ -77,6 +84,9 @@ public class Dom3DB {
         {
             // Read line
             line = file.nextLine();
+            
+            if(convert)
+            	line = line.replaceAll("\t", ";");
             
             // Set units[id] to line of that unit.
             if(line.length() > 0 && line.split(";").length > 0)
@@ -187,10 +197,10 @@ public class Dom3DB {
 		
 		tw.println(def);
 		
-		for(int i = 0; i < 700; i++)
+		for(int i = 0; i < 5000; i++)
 		{
 			if(entryMap.keySet().contains("" + i))
-				tw.println(entryMap.get("" + i));
+				tw.println(entryMap.get("" + i).replaceAll("\t", ";"));
 
 		}
 
@@ -269,9 +279,6 @@ public class Dom3DB {
 
     	String line = entryMap.get(id);
     	
-    	//System.out.println(value + " / " + line + " / " + id);
-    	//System.out.println(definition[2]);
-    	
     	if(id.equals("-1") || line == null || line.equals(""))
     	{
     		return defaultvalue;
@@ -287,9 +294,14 @@ public class Dom3DB {
                 break;
             }
         }
+        
+
         if(placeOfValue == -1)
+        {
         	return defaultvalue;
-      
+        }
+    
+        
        try
        {
         if(getValue(line, placeOfValue).equals(""))

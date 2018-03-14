@@ -24,7 +24,7 @@ public class DatabaseConverter {
 		// Weapons
 		Dom3DB base = new Dom3DB("db_conversion/weapons.csv");
 		
-		addAttributes(base, new Dom3DB("db_conversion/attributes_by_weapon.csv"));
+		addAttributes(base, "db_conversion/attributes_by_weapon.csv");
 		addEffects(base);
 		
 		base.saveToFile("db_conversion/output_weapon.csv");
@@ -32,7 +32,7 @@ public class DatabaseConverter {
 		
 		// Armor 
 		base = new Dom3DB("db_conversion/armors.csv");
-		addAttributes(base, new Dom3DB("db_conversion/attributes_by_armor.csv"));
+		addAttributes(base, "db_conversion/attributes_by_armor.csv");
 		addArmorProt(base);
 		base.saveToFile("db_conversion/output_armor.csv");
 
@@ -77,6 +77,9 @@ public class DatabaseConverter {
             // Set units[id] to line of that unit.
             if(line.length() > 0 && line.split(";").length > 0)
             	lines.add(line);
+            else if(line.length() > 0 && line.split("\t").length > 0)
+            	lines.add(line);
+
         }
 
         file.close();
@@ -87,6 +90,9 @@ public class DatabaseConverter {
 			for(String str : lines)
 			{
 				String[] stuff = str.split(";");
+				if(stuff.length < 2)
+					stuff = str.split("\t");
+				
 				if(stuff[2].equals(key))
 				{
 					int zonenbr = Integer.parseInt(stuff[0]);
@@ -130,39 +136,57 @@ public class DatabaseConverter {
 	 * @param db
 	 * @param attributes_by
 	 */
-	private static void addAttributes(Dom3DB db, Dom3DB attributes_by)
+	private static void addAttributes(Dom3DB db, String fname)
 	{
-		Dom3DB attr = null;
+        Scanner file = null;
 		try {
-			attr = new Dom3DB("db_conversion/attributes.csv");
+			file = new Scanner(new FileInputStream(fname));
 		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		file.nextLine();
 		
 		for(String key : db.entryMap.keySet())
 		{
-			String attr_id = attributes_by.GetValue(key, "attribute_record_id");
-			if(attr_id != "")
-			{
-				String attr_key = attr.GetValue(attr_id, "attribute_number");
+			db.setValue(key, "0", "ferrous");
+			db.setValue(key, "0", "flammable");
+			db.setValue(key, "0", "mmpenalty");
 
-				if(attr_key.equals("266") || attr_key.equals("267"))
-					db.setValue(key, "1", "ironweapon");
-				else
-					db.setValue(key, "0", "ironweapon");
-
-				if(attr_key.equals("268") || attr_key.equals("269"))
-					db.setValue(key, "1", "woodenweapon");
-				else
-					db.setValue(key, "0", "woodenweapon");
-
-			}
-			else
-			{
-				db.setValue(key, "0", "woodenweapon");
-				db.setValue(key, "0", "ironweapon");
-			}
 		}
+		
+		
+        while (file.hasNextLine())
+        {
+            // Read line
+        	String ssgd = file.nextLine();
+            String[] line = ssgd.split("\t");
+            
+            
+            if(!db.entryMap.keySet().contains(line[0]))
+            	continue;
+            
+            String key = line[0];
+    		String attr = line[1];
+
+			if(attr != "")
+			{
+				if(attr.equals("266") || attr.equals("267"))
+				
+					db.setValue(key, "1", "ferrous");
+
+			
+				if(attr.equals("268") || attr.equals("269"))
+					db.setValue(key, "1", "flammable");
+		
+				if(attr.equals("582"))
+					db.setValue(key, line[2], "mmpenalty");
+
+			}
+
+
+        }
+		
 	}
 
 	
@@ -184,10 +208,8 @@ public class DatabaseConverter {
 			String attr_id = db.GetValue(key, "effect_record_id");
 			
 			// Damage
-			
 			db.setValue(key, attr.GetValue(attr_id, "raw_argument"), "dmg");
 
-			
 			// Effect numbers
 			int effnbr = Integer.parseInt(attr.GetValue(attr_id, "effect_number"));
 			if(effnbr == 2)

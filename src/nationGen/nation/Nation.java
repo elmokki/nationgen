@@ -1034,7 +1034,7 @@ public class Nation {
         
         // PD
         PDSelector pds = new PDSelector(this, nationGen);
-        
+                
       
         tw.println("");
         tw.println("#defcom1 " + pds.getIDforPD(pds.getPDCommander(1)));
@@ -1048,7 +1048,13 @@ public class Nation {
         tw.println("#defunit2b " + pds.getIDforPD(pds.getMilitia(2, 2)));
         tw.println("#defmult2b " + pds.getMilitiaAmount(pds.getMilitia(2, 2)));
         tw.println("");
+    
+        // Wall units
         
+        tw.println("#wallcom " + pds.getIDforPD(pds.getPDCommander(1)));
+        tw.println("#wallunit " + pds.getIDforPD(pds.getWallUnit(true)));
+        tw.println("#wallmult " + pds.getMilitiaAmount(pds.getWallUnit(true)));
+
         
         // Start army
         tw.println("#startcom " + pds.getStartArmyCommander().id);
