@@ -246,6 +246,7 @@ public class UnitGen {
 				all = u.pose.getItems("armor");
 			
 			Item armor = getSuitableItem("armor", u, excluded, included, all, targettag);
+
 			u.setSlot("armor", armor);
 		}
 		
@@ -856,11 +857,16 @@ public class UnitGen {
 		
 
 		
-
 		Item newitem = chandler.getRandom(chosen, u);
 
+		// Pile of failsafes.
+		if(newitem == null)
+			newitem = chandler.getRandom(included);
+		if(newitem == null)
+			newitem = chandler.getRandom(all);
+		if(newitem == null)
+			newitem = chandler.getRandom(u.pose.getItems(slot));
 
-		
 		return newitem;
 		
 		
