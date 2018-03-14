@@ -699,7 +699,7 @@ public class RosterGenerator {
 	
 	private double[] getChances(Race race)
 	{
-		double chances[] = {0.25, 1, 0.25, 0.125};
+		double chances[] = {0.4, 1, 0.3, 0.125};
 		String[] slots = {"ranged", "infantry", "mounted", "chariot"};
 		for(String tag : race.tags)
 		{
