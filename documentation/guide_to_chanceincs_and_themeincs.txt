@@ -14,7 +14,7 @@ a certain shapeshift filter, for lizards by 100%, we would write:
 
 If we wanted to do this for all races except oriental humans, we would write:
 
-#chanceinc race not "Oriental human" *2
+#chanceinc not race "Oriental human" *2
 
 The not-modifier is optional, signified by [square brackets] in documentation and generally negates the outcome. The quotation marks for the race
 are used to signify that Oriental human is a single argument rather than Oriental and human being separate arguments. This is generally required
@@ -56,27 +56,27 @@ Unit-based chanceincs
 -----------------------------------
 Unit-based chanceincs require an unit to be in the scope of chanceinc. These tend to be in items or filters for units and such.
 
-Race:		race [not] <race>
+Race:		race <race>
 		True if unit is of given race
-Pose: 		pose [not] <pose role>
+Pose: 		pose <pose role>
 		True if unit pose supports given role (ranged/infantry/cavalry/chariot)
 Command:	personalcommand <command> [below/above/not] [command value]
 		True if command exists or if a value is defined, is above/below/precisely the value
-Second shape:	personalshape [not] <shape name>
+Second shape:	personalshape <shape name>
 		True if unit has second shape of given name
-Filter:		filter [not] <filter name>
+Filter:		filter <filter name>
 		True if unit has a filter of given name
-Tag:		unittag [not] <tag>
+Tag:		unittag <tag>
 		True if unit (including stuff it contains, poses, filters etc) has given tag
 		Alternative call of #tag is supported.Race tag:	#racetag [not] <tag>
 		True if unit's race has given tag
-Unit theme:	unittheme [not] <theme>
+Unit theme:	unittheme <theme>
 		True if unit (including stuff it contains, poses, filters etc) has given theme tag (defined by #theme)
-Race theme:	racetheme [not] <theme>
+Race theme:	racetheme <theme>
 		True if unit's race has a racial theme of given name or contains given theme tag
-Pose tag:	posetag [not] <tag>
+Pose tag:	posetag  <tag>
 		True if unit's pose has given tag
-Pose theme:	posetheme [not] <theme>
+Pose theme:	posetheme <theme>
 		True if unit's theme has given theme tag
 Slot id:	slot <slot> [not] [armor/weapon] <id>
 		True if given slot of unit is filled with something. Leave id out for any id, add armor/weapon to limit checking to armor/weapon. 
@@ -87,11 +87,11 @@ Slot tag:	slottag <slot> [not] <tag>
 		True if item in given slot contains given tag
 Slot tag value:	slottag <slot> [not] <tag> <value>
 		True if item in given slot contains given tag that has a value (#tag animal horse is tag "animal" with value "horse")
-Item tag:	itemtag [not] <tag>
+Item tag:	itemtag <tag>
 		True if any item an unit is wearing has given tag
-Item theme:	itemtheme [not] <theme>
+Item theme:	itemtheme <theme>
 		As above but for theme tags
-Pose itm theme:	poseitemtheme <slot> [not] <theme>
+Pose itm theme:	poseitemtheme <slot> <theme>
 		True if unit's pose has items of given slot that have given theme tag
 Tagged magic:	taggedmagic [not] <path1> [path2] [path3]...
 		True if unit has been tagged with magic of given path or paths. This is supposed to be used with items and filters that have
@@ -102,11 +102,11 @@ Magic levels:	personalmagic <path> [below] <level>
 		If the unit has magic path <path> at least/below <level>, true.
 		You can add multiple <path> [below] <level> sequences before <mod> for multiple
 		checks.	
-Original name:	origname [not] <name>
+Original name:	origname <name>
 		Checks unit base name (ie for Hammer Soldier it is Soldier). This is used for sacred commander naming.
-Protection:	prot [not/below] <value>
+Protection:	prot [below] <value>
 		Checks if unit protection is at least given value. Generation order matters: Before getting armor an unit has less prot.
-Encumberance:	enc [not/below] <value>
+Encumberance:	enc [below] <value>
 		As above but for encumberance. Generation order matters: Before getting armor an unit has less enc.
 
 
@@ -200,9 +200,9 @@ Item tag:	thisitemtag [not] <tag>
 		True if the entity is an item and has given tag
 Item theme:	thisitemtheme [not] <theme>
 		As above but for theme tags.
-Item tag (slot) thisitemslottag [not] <slot> <tag>
+Item tag (slot) thisitemslottag <slot> [not] <tag>
 		As above for tags, but also requires them item to be for given slot
-Item thm (slot)	thisitemslottheme [not] <slot> <tag>
+Item thm (slot)	thisitemslottheme <slot> [not] <tag>
 		As above, but for theme tags
 Ferrous:	isferrousitem [not]
 		True if item is tagged as ferrous

@@ -72,7 +72,7 @@ public class TroopGenerator {
 				maxvar = 1;
 		}
 
-		if(Generic.getTagValue(u.getSlot("armor").tags, "maxvarieties") != null)
+		if(u.getSlot("armor") != null && Generic.getTagValue(u.getSlot("armor").tags, "maxvarieties") != null)
 			maxvar = Math.min(maxvar, Integer.parseInt(Generic.getTagValue(u.getSlot("armor").tags, "maxvarieties")));
 		
 		if(u.getSlot("mount") != null && Generic.getTagValue(u.getSlot("mount").tags, "maxvarieties") != null)
@@ -130,6 +130,7 @@ public class TroopGenerator {
 		maxdifferenttemplates = 1 + random.nextInt(3); // 1-3
 		if(maxdifferenttemplates == 1 && random.nextBoolean())
 			maxdifferenttemplates++;
+		
 	}
 	
 	public TroopGenerator(NationGen g, Nation n)
@@ -262,8 +263,8 @@ public class TroopGenerator {
 		
 
 		
-		unitGen.armorUnit(u, null, null, u.pose.getItems("armor"), null, false);
-		
+		unitGen.armorUnit(u, u.pose.getItems("armor"), null, null, false);
+
 	
 		
 		String role = "infantry";
@@ -273,7 +274,6 @@ public class TroopGenerator {
 			role = "ranged";
 		
 		TroopTemplate t = TroopTemplate.getNew(u.getSlot("armor"), race, u, role, u.pose, this);
-		
 	
 		boolean success = false;
 		if(!role.equals("mounted"))
