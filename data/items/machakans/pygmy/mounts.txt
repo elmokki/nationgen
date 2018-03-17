@@ -6,7 +6,7 @@
 #sprite /graphics/mounts/standard/hyena.png
 #armor
 #define "#size 2"
-#define "#mapmove 2"
+#define "#mapmove 20"
 #define "#ap 20"
 #define "#mounted"
 #define "#weapon 237 --- bite"
@@ -32,7 +32,7 @@
 #needs overlay giant_parrot_overlay
 #armor
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 30"
 #define "#ap 6"
 #define "#flying"
 #define "#mounted"
@@ -61,7 +61,7 @@
 #needs overlay giant_parrot_overlay
 #armor
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 30"
 #define "#ap 6"
 #define "#flying"
 #define "#mounted"
@@ -89,7 +89,7 @@
 #needs overlay redant_overlay
 #armor
 #define "#size 2"
-#define "#mapmove 2"
+#define "#mapmove 14"
 #define "#ap 8"
 #define "#mounted"
 #define "#weapon nostr_smallsting"
@@ -116,7 +116,7 @@
 #offsetx -1
 #armor
 #define "#size 2"
-#define "#mapmove 3"
+#define "#mapmove 18"
 #define "#ap 22"
 #define "#mounted"
 #define "#weapon nostr_bite_5"
@@ -141,7 +141,7 @@
 #offsety -2
 #needs overlay spider2_overlay
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 18"
 #define "#ap 12"
 #define "#mounted"
 #define "#weapon 313 --- Fangs"
@@ -167,7 +167,7 @@
 #offsety -7
 #armor
 #define "#size 3"
-#define "#mapmove 1"
+#define "#mapmove 8"
 #define "#ap 8"
 #define "#sailing 3 3"
 #define "#mounted"
@@ -177,6 +177,8 @@
 #define "#ressize 1"
 #define "#enc 3"
 #define "#swampsurvival"
+#define "#swimming"
+#define "#nomovepen"
 #define "#secondtmpshape crocodilemount"
 #description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
 #tag "animal crocodile"
@@ -196,7 +198,7 @@
 #needs overlay flyingfish_overlay
 #armor
 #define "#size 2"
-#define "#mapmove 2"
+#define "#mapmove 18"
 #define "#ap 9"
 #define "#flying"
 #define "#sailing 2 2"
@@ -207,6 +209,7 @@
 #define "#enc 5"
 #define "#swampsurvival"
 #define "#pooramphibian"
+#define "#swimming"
 #tag "animal fish"
 #theme "fish"
 #theme "fishtotem"
@@ -227,7 +230,7 @@
 #sprite /graphics/machakans/mounts/snail.png
 #armor
 #define "#size 1"
-#define "#mapmove 1"
+#define "#mapmove 6"
 #define "#ap 6"
 #define "#mounted"
 #define "#weapon nostr_bite_5"
@@ -237,6 +240,8 @@
 #define "#enc 3"
 #define "#swampsurvival"
 #define "#pooramphibian"
+#define "#swimming"
+#define "#nomovepen"
 #tag "animal snail"
 #theme "snail"
 #theme "snailtotem"
@@ -258,7 +263,7 @@
 #needs overlay hugelocust_overlay
 #armor
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 22"
 #define "#ap 12"
 #define "#flying"
 #define "#mounted"
@@ -287,7 +292,7 @@
 #sprite /graphics/mounts/standard/hugemantis.png
 #armor
 #define "#size 2"
-#define "#mapmove 2"
+#define "#mapmove 16"
 #define "#ap 12"
 #define "#mounted"
 #define "#weapon nostr_claws_10"
@@ -317,7 +322,7 @@
 #needs overlay swan_overlay
 #armor
 #define "#size 2"
-#define "#mapmove 2"
+#define "#mapmove 22"
 #define "#ap 5"
 #define "#mounted"
 #define "#sailing 2 2"
@@ -327,6 +332,7 @@
 #define "#gcost +10"
 #define "#ressize 1"
 #define "#enc 4"
+#define "#swimming"
 #tag "animal swan"
 #theme "swan"
 #theme "swantotem"
@@ -350,7 +356,7 @@
 #armor
 #define "#size 2"
 #define "#hp +3"
-#define "#mapmove 2"
+#define "#mapmove 14"
 #define "#ap 7"
 #define "#mounted"
 #define "#sailing 2 2"
@@ -361,6 +367,8 @@
 #define "#rcost +5"
 #define "#ressize 1"
 #define "#enc 4"
+#define "#swimming"
+#define "#nomovepen"
 #tag "animal swan"
 #tag "chariot"
 #theme "swan"
@@ -381,7 +389,7 @@
 #sprite /graphics/mounts/standard/giantrat.png
 #armor
 #define "#size 2"
-#define "#mapmove 2"
+#define "#mapmove 22"
 #define "#ap 12"
 #define "#mounted"
 #define "#weapon nostr_diseasebite_12"
@@ -389,6 +397,7 @@
 #define "#diseaseres +10"
 #define "#ressize 1"
 #define "#enc 3"
+#define "#swimming"
 #tag "animal rat"
 #theme "rat"
 #theme "rattotem"
@@ -409,7 +418,7 @@
 #armor
 #define "#size 3"
 #define "#hp +6"
-#define "#mapmove 2"
+#define "#mapmove 14"
 #define "#ap 10"
 #define "#mounted"
 #define "#trample"
@@ -439,7 +448,7 @@
 #needs overlay dwarf_elephant_overlay
 #armor
 #define "#size 2"
-#define "#mapmove 2"
+#define "#mapmove 14"
 #define "#ap 12"
 #define "#mounted"
 #define "#weapon nostr_tusk_10" 

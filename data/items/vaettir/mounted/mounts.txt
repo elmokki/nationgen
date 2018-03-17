@@ -6,7 +6,7 @@
 #sprite /graphics/hoburg/mounts/wolf.png
 #armor
 #define "#size 2"
-#define "#mapmove 2"
+#define "#mapmove 22"
 #define "#ap 22"
 #define "#mounted"
 #define "#weapon nostr_bite_10 --- bite"
@@ -34,7 +34,7 @@
 #armor
 #needs overlay direwolf2_overlay
 #define "#size 2"
-#define "#mapmove 3"
+#define "#mapmove 22"
 #define "#ap 26"
 #define "#mounted"
 #define "#weapon 237 --- bite"
@@ -65,7 +65,7 @@
 #offsetx -2
 #offsety -18
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 22"
 #define "#ap 18"
 #define "#mounted"
 #define "#weapon 352 --- Nostr Gore"
@@ -92,7 +92,7 @@
 #needs overlay elk_overlay
 #armor
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 22"
 #define "#ap 22"
 #define "#mounted"
 #define "#weapon 354 --- antlers"
@@ -121,7 +121,7 @@
 #sprite /graphics/hoburg/mounts/deer.png
 #armor
 #define "#size 2"
-#define "#mapmove 3"
+#define "#mapmove 20"
 #define "#ap 22"
 #define "#mounted"
 #define "#weapon 354 --- antlers"
@@ -147,7 +147,7 @@
 #armor
 #needs overlay hawkoverlay
 #define "#size 2"
-#define "#mapmove 3"
+#define "#mapmove 22"
 #define "#ap 6"
 #define "#flying"
 #define "#mounted"
@@ -176,7 +176,7 @@
 #offsety -2
 #needs overlay spider2_overlay
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 18"
 #define "#ap 12"
 #define "#mounted"
 #define "#weapon 313 --- Fangs"
@@ -203,7 +203,7 @@
 #sprite /graphics/mounts/standard/bear.png
 #armor
 #define "#size 4"
-#define "#mapmove 3"
+#define "#mapmove 20"
 #define "#ap 16"
 #define "#mounted"
 #define "#weapon 237 --- Bite"
@@ -234,7 +234,7 @@
 #sprite /graphics/mounts/standard/bear_small.png
 #armor
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 20"
 #define "#ap 14"
 #define "#mounted"
 #define "#weapon 236 -- Claw"
@@ -265,7 +265,7 @@
 #offsetx -2
 #offsety -18
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 22"
 #define "#ap 18"
 #define "#mounted"
 #define "#weapon 236"
@@ -295,7 +295,7 @@
 #sprite /graphics/mounts/standard/lion_asian.png
 #armor
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 18"
 #define "#ap 18"
 #define "#mounted"
 #define "#weapon 237 --- Bite"
@@ -325,7 +325,7 @@
 #sprite /graphics/mounts/standard/giantrat.png
 #armor
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 20"
 #define "#ap 10"
 #define "#mounted"
 #define "#weapon nostr_diseasebite_12"
@@ -334,6 +334,7 @@
 #define "#ressize 1"
 #define "#enc 3"
 #define "#stealthy +0"
+#define "#swimming"
 #tag "animal rat"
 #theme "rat"
 #theme "rattotem"
