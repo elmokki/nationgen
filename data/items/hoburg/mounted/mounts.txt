@@ -7,7 +7,7 @@
 #sprite /graphics/hoburg/mounts/boar.png
 #armor
 #define "#size 2"
-#define "#mapmove 2"
+#define "#mapmove 14"
 #define "#ap 14"
 #define "#mounted"
 #define "#weapon 352 --- Gore"
@@ -35,11 +35,11 @@
 #sprite /graphics/hoburg/mounts/demonbred_hog.png
 #armor
 #define "#size 2"
-#define "#mapmove 2"
+#define "#mapmove 16"
 #define "#ap 14"
 #define "#mounted"
 #define "#weapon 352 --- Gore"
-#define "#gcost +17"
+#define "#gcost +18"
 #define "#ressize 1"
 #define "#rcost +4"
 #define "#enc 4"
@@ -57,7 +57,7 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/goat.png
 #armor
-#define "#size 2"
+#define "#size 16"
 #define "#mapmove 2"
 #define "#ap 10"
 #define "#mounted"
@@ -88,11 +88,11 @@
 #sprite /graphics/hoburg/mounts/goat_black.png
 #armor
 #define "#size 2"
-#define "#mapmove 2"
+#define "#mapmove 18"
 #define "#ap 10"
 #define "#mounted"
 #define "#weapon 352 --- gore"
-#define "#gcost +12"
+#define "#gcost +13"
 #define "#ressize 1"
 #define "#mountainsurvival"
 #define "#enc 3"
@@ -115,7 +115,7 @@
 #needs overlay giant_macaw_overlay
 #armor
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 30"
 #define "#ap 6"
 #define "#flying"
 #define "#mounted"
@@ -147,7 +147,7 @@
 #needs overlay colorful_macaw_overlay
 #armor
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 30"
 #define "#ap 6"
 #define "#flying"
 #define "#mounted"
@@ -178,7 +178,7 @@
 #needs overlay giant_parrot_overlay
 #armor
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 30"
 #define "#ap 6"
 #define "#flying"
 #define "#mounted"
@@ -211,7 +211,7 @@
 #needs overlay giant_parrot_overlay
 #armor
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 30"
 #define "#ap 6"
 #define "#flying"
 #define "#mounted"
@@ -242,7 +242,7 @@
 #sprite /graphics/hoburg/mounts/caveman.png
 #armor
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 14"
 #define "#ap 14"
 #define "#mounted"
 #define "#gcost +45"
@@ -273,7 +273,7 @@
 #recolormask /graphics/hoburg/mounts/caveman_occidental_recolormask.png
 #armor
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 14"
 #define "#ap 14"
 #define "#mounted"
 #define "#gcost +40"
@@ -300,7 +300,7 @@
 #sprite /graphics/hoburg/mounts/mech_ant.png
 #armor
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 20"
 #define "#ap 14"
 #define "#mounted"
 #define "#gcost +28"
@@ -314,6 +314,7 @@
 #offsety -18
 #offsetx -3
 #minprot 10
+#define "#nomovepen"
 #theme "advanced"
 #theme "mechanical"
 #theme "iron"
@@ -335,7 +336,7 @@
 #tag "guaranteedprefix 'mechanized'"
 #needs overlay "mechspider_overlay"
 #define "#size 2"
-#define "#mapmove 3"
+#define "#mapmove 20"
 #define "#ap 12"
 #define "#mounted"
 #define "#gcost +32"
@@ -347,6 +348,7 @@
 #offsety -5
 #offsetx 5
 #minprot 10
+#define "#nomovepen"
 #theme "advanced"
 #theme "mechanical"
 #theme "iron"
@@ -367,7 +369,7 @@
 #tag "guaranteedprefix 'mechanized'"
 #needs overlay "mechmosquito_overlay"
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 26"
 #define "#ap 12"
 #define "#flying"
 #define "#mounted"
@@ -379,6 +381,7 @@
 #offsety -15
 #offsetx -14
 #minprot 10
+#define "#nomovepen"
 #theme "advanced"
 #theme "mechanical"
 #theme "iron"
@@ -399,7 +402,7 @@
 #offsety -7
 #armor
 #define "#size 3"
-#define "#mapmove 1"
+#define "#mapmove 8"
 #define "#ap 8"
 #define "#sailing 3 3"
 #define "#mounted"
@@ -409,6 +412,8 @@
 #define "#ressize 1"
 #define "#enc 3"
 #define "#swampsurvival"
+#define "#swimming"
+#define "#nomovepen"
 #define "#secondtmpshape crocodilemount"
 #description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
 #tag "animal crocodile"
@@ -432,7 +437,7 @@
 #sprite /graphics/mounts/standard/hyena.png
 #armor
 #define "#size 2"
-#define "#mapmove 2"
+#define "#mapmove 20"
 #define "#ap 20"
 #define "#mounted"
 #define "#weapon 237 --- bite"
@@ -470,7 +475,7 @@
 #offsetx 5
 #offsety 27
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 18"
 #define "#ap 7"
 #define "#mounted"
 #define "#prot 4"
@@ -500,8 +505,8 @@
 #armor
 #define "#size 2"
 #define "#hp +3"
-#define "#mapmove 2"
-#define "#ap 8"
+#define "#mapmove 14"
+#define "#ap 10"
 #define "#mounted"
 #define "#sailing 2 2"
 #define "#trample"
@@ -511,6 +516,9 @@
 #define "#rcost +5"
 #define "#ressize 1"
 #define "#enc 5"
+#define "#unsurr 1"
+#define "#swimming"
+#define "#nomovepen"
 #tag "animal swan"
 #tag "chariot"
 #theme "swan"
@@ -539,17 +547,19 @@
 #armor
 #define "#size 2"
 #define "#hp +3"
-#define "#mapmove 2"
-#define "#ap 8"
+#define "#mapmove 16"
+#define "#ap 10"
 #define "#mounted"
 #define "#sailing 2 2"
 #define "#trample"
 #define "#weapon nostr_bill_3"
 #define "#prot 5"
-#define "#gcost +10"
+#define "#gcost +11"
 #define "#rcost +6"
 #define "#ressize 1"
 #define "#enc 5"
+#define "#unsurr 1"
+#define "#swimming"
 #tag "animal swan"
 #tag "chariot"
 #theme "swan"
@@ -574,7 +584,7 @@
 #armor
 #define "#size 3"
 #define "#hp +6"
-#define "#mapmove 2"
+#define "#mapmove 14"
 #define "#ap 10"
 #define "#mounted"
 #define "#trample"
@@ -584,6 +594,8 @@
 #define "#rcost +10"
 #define "#ressize 1"
 #define "#enc 4"
+#define "#unsurr 1"
+#define "#nomovepen"
 #define "#diseaseres +10"
 #tag "animal rat"
 #tag "chariot"
@@ -608,7 +620,7 @@
 #armor
 #define "#size 3"
 #define "#hp +6"
-#define "#mapmove 2"
+#define "#mapmove 14"
 #define "#ap 10"
 #define "#mounted"
 #define "#trample"
@@ -618,6 +630,8 @@
 #define "#rcost +10"
 #define "#ressize 1"
 #define "#enc 4"
+#define "#unsurr 1"
+#define "#nomovepen"
 #define "#diseaseres +10"
 #tag "animal rat"
 #tag "chariot"
@@ -641,7 +655,7 @@
 #needs overlay vine_nightmare_overlay
 #armor
 #define "#size 2"
-#define "#mapmove 2"
+#define "#mapmove 20"
 #define "#ap 14"
 #define "#prot 2"
 #define "#mounted"
@@ -669,7 +683,7 @@
 #needs overlay elephant_dwarf_overlay
 #armor
 #define "#size 2"
-#define "#mapmove 2"
+#define "#mapmove 14"
 #define "#ap 14"
 #define "#mounted"
 #define "#trample"
@@ -699,7 +713,7 @@
 #needs overlay elephant_dwarf_armored_overlay
 #armor
 #define "#size 2"
-#define "#mapmove 2"
+#define "#mapmove 14"
 #define "#ap 12"
 #define "#mounted"
 #define "#trample"

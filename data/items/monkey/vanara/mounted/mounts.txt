@@ -10,7 +10,7 @@
 #offsetx -4
 #offsety 4
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 22"
 #define "#ap 18"
 #define "#mounted"
 #define "#weapon 236"
@@ -42,7 +42,7 @@
 #offsetx -4
 #offsety 7
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 22"
 #define "#ap 18"
 #define "#mounted"
 #define "#weapon 236"
@@ -70,7 +70,7 @@
 #sprite /graphics/mounts/standard/direwolf1.png
 #armor
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 18"
 #define "#ap 22"
 #define "#mounted"
 #define "#weapon 237 --- bite"
@@ -97,7 +97,7 @@
 #sprite /graphics/mounts/standard/lion_asian.png
 #armor
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 18"
 #define "#ap 18"
 #define "#mounted"
 #define "#weapon 237 --- Bite"
@@ -124,7 +124,7 @@
 #offsetx -7
 #offsety 14
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 20"
 #define "#ap 18"
 #define "#mounted"
 #define "#weapon 19 --- Bite"
@@ -151,7 +151,7 @@
 #offsetx -5
 #offsety 13
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 20"
 #define "#ap 16"
 #define "#mounted"
 #define "#weapon 19 --- Bite"
@@ -181,7 +181,7 @@
 #offsetx -5
 #offsety 3
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 22"
 #define "#ap 18"
 #define "#mounted"
 #define "#weapon 19 --- Bite"
@@ -209,7 +209,7 @@
 #offsetx 8
 #offsety 11
 #define "#size 4"
-#define "#mapmove 1"
+#define "#mapmove 8"
 #define "#ap 7"
 #define "#mounted"
 #define "#weapon 417 --- Bite"
@@ -218,6 +218,7 @@
 #define "#ressize 2"
 #define "#rcost +5"
 #define "#enc 4"
+#define "#nomovepen"
 #tag "animal drake"
 #theme "specialmount"
 #description "The cave drake will persist even if the rider dies."
@@ -243,7 +244,7 @@
 #offsety 7
 #needs overlay spider_overlay
 #define "#size 5"
-#define "#mapmove 2"
+#define "#mapmove 18"
 #define "#ap 13"
 #define "#mounted"
 #define "#weapon 262"
@@ -274,7 +275,7 @@
 #offsety 7
 #needs overlay spider_overlay
 #define "#size 5"
-#define "#mapmove 2"
+#define "#mapmove 18"
 #define "#ap 13"
 #define "#mounted"
 #define "#weapon 262 --- Web Spit"
@@ -304,7 +305,7 @@
 #offsetx -4
 #offsety 4
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 22"
 #define "#ap 18"
 #define "#mounted"
 #define "#weapon 236"
@@ -333,7 +334,7 @@
 #offsetx -4
 #offsety 4
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 22"
 #define "#ap 18"
 #define "#mounted"
 #define "#weapon 236"
@@ -364,7 +365,7 @@
 #offsetx -4
 #offsety 4
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 22"
 #define "#ap 18"
 #define "#mounted"
 #define "#weapon 236"
@@ -390,7 +391,7 @@
 #sprite /graphics/mounts/standard/direwolf1.png
 #armor
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 18"
 #define "#ap 22"
 #define "#mounted"
 #define "#weapon 237 --- bite"
@@ -418,7 +419,7 @@
 #sprite /graphics/mounts/standard/lion_asian.png
 #armor
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 18"
 #define "#ap 18"
 #define "#mounted"
 #define "#weapon 237 --- Bite"
@@ -446,7 +447,7 @@
 #needs overlay wingedlion_overlay
 #armor
 #define "#size 4"
-#define "#mapmove 3"
+#define "#mapmove 26"
 #define "#ap 22"
 #define "#mounted"
 #define "#weapon 237 --- Bite"
@@ -476,7 +477,7 @@
 #sprite /graphics/mounts/standard/bear_small.png
 #armor
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 20"
 #define "#ap 14"
 #define "#mounted"
 #define "#weapon 236 -- Claw"
@@ -508,7 +509,7 @@
 #offsetx 35
 #offsety 58
 #define "#size 6"
-#define "#mapmove 2"
+#define "#mapmove 20"
 #define "#ap 14"
 #define "#mounted"
 #define "#weapon 313 --- Spider Fangs"
@@ -540,7 +541,7 @@
 #offsety 13
 #needs overlay 13
 #define "#size 4"
-#define "#mapmove 3"
+#define "#mapmove 26"
 #define "#flying"
 #define "#ap 10"
 #define "#mounted"
@@ -571,7 +572,7 @@
 #sprite /graphics/mounts/standard/brownhorse.png
 #armor
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 22"
 #define "#ap 24"
 #define "#mounted"
 #define "#weapon 56 --- Hoof"
@@ -599,7 +600,7 @@
 #offsety 64
 #needs overlay 8
 #define "#size 4"
-#define "#mapmove 3"
+#define "#mapmove 28"
 #define "#ap 22"
 #define "#mounted"
 #define "#flying"
@@ -627,7 +628,7 @@
 #armor
 #offsetx 0
 #offsety 53
-#define "#size 3"
+#define "#size 20"
 #define "#mapmove 3"
 #define "#ap 24"
 #define "#mounted"
@@ -663,7 +664,7 @@
 #offsetx 0
 #offsety 53
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 20"
 #define "#ap 24"
 #define "#mounted"
 #define "#weapon nostr_kick_12"
@@ -698,7 +699,7 @@
 #offsetx 0
 #offsety 53
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 20"
 #define "#ap 20"
 #define "#mounted"
 #define "#weapon nostr_kick_12"
@@ -734,7 +735,7 @@
 #offsetx 0
 #offsety 53
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 20"
 #define "#ap 20"
 #define "#mounted"
 #define "#weapon nostr_kick_12"
@@ -765,7 +766,7 @@
 #armor
 #offsety 1
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 28"
 #define "#ap 28"
 #define "#mounted"
 #define "#weapon 330 --- Alicorn"
@@ -793,7 +794,7 @@
 #armor
 #offsety 1
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 28"
 #define "#ap 28"
 #define "#mounted"
 #define "#weapon 330 --- Alicorn"
@@ -824,7 +825,7 @@
 #offsety 69
 #needs overlay 14
 #define "#size 4"
-#define "#mapmove 3"
+#define "#mapmove 22"
 #define "#ap 22"
 #define "#mounted"
 #define "#flying"
@@ -862,7 +863,7 @@
 #offsety 6
 #needs overlay scorpion_overlay
 #define "#size 5"
-#define "#mapmove 2"
+#define "#mapmove 8"
 #define "#ap 8"
 #define "#mounted"
 #define "#weapon nostr_pincer"
@@ -872,6 +873,7 @@
 #define "#ressize 2"
 #define "#enc 3"
 #define "#rcost +5"
+#define "#nomovepen"
 #tag "animal scorpion"
 #theme "heavy"
 #description "Leaves a giant scorpion behind when the rider dies"
@@ -894,7 +896,7 @@
 #sprite /graphics/mounts/standard/cavecow.png
 #armor
 #define "#size 4"
-#define "#mapmove 1"
+#define "#mapmove 8"
 #define "#ap 8"
 #define "#mounted"
 #define "#weapon 19 --- Bite"
@@ -904,6 +906,7 @@
 #define "#prot +2"
 #define "#ressize 2"
 #define "#enc 4"¨
+#define "#nomovepen"
 #description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
 #offsetx -8
 #offsety 6

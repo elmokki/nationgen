@@ -10,7 +10,7 @@
 #offsety 20
 #needs overlay scorpion_overlay
 #define "#size 5"
-#define "#mapmove 2"
+#define "#mapmove 8"
 #define "#ap 8"
 #define "#mounted"
 #define "#weapon nostr_pincer"
@@ -20,6 +20,7 @@
 #define "#ressize 1"
 #define "#enc 3"
 #define "#rcost +5"
+#define "#nomovepen"
 #tag "animal scorpion"
 #theme "heavy"
 #description "Leaves a giant scorpion behind when the rider dies"
@@ -37,7 +38,7 @@
 #offsetx 6
 #offsety 15
 #define "#size 2"
-#define "#mapmove 2"
+#define "#mapmove 20"
 #define "#ap 18"
 #define "#mounted"
 #define "#weapon 236"
@@ -66,7 +67,7 @@
 #offsetx 48
 #offsety 25
 #define "#size 4"
-#define "#mapmove 1"
+#define "#mapmove 8"
 #define "#ap 5"
 #define "#mounted"
 #define "#weapon 603"
@@ -74,6 +75,7 @@
 #define "#rcost +3"
 #define "#ressize 1"
 #define "#enc 3"
+#define "#nomovepen"
 #tag "animal 'cave grub'"
 #tag "guaranteedprefix grub"
 #tag "name commander beastmaster"
@@ -93,7 +95,7 @@
 #offsety 20
 #needs overlay spider_overlay
 #define "#size 4"
-#define "#mapmove 2"
+#define "#mapmove 18"
 #define "#ap 14"
 #define "#mounted"
 #define "#weapon 262 --- Web Spit"
@@ -117,7 +119,7 @@
 #sprite /graphics/mounts/standard/giantrat.png
 #armor
 #define "#size 2"
-#define "#mapmove 2"
+#define "#mapmove 20"
 #define "#ap 12"
 #define "#mounted"
 #define "#weapon nostr_diseasebite_12"

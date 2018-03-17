@@ -250,6 +250,7 @@
 #command "#spr2 shift"
 #command "#name 'Ageless One'"
 #command "#gcost 100"
+#command "#rpcost 28028"
 #command "#rcost 1"
 #command "#hp 120"
 #command "#prot 5"
@@ -259,7 +260,7 @@
 #command "#att 10"
 #command "#def 10"
 #command "#prec 7"
-#command "#mapmove 2"
+#command "#mapmove 20"
 #command "#ap 16"
 #command "#weapon 92"
 #command "#weapon 90"
@@ -275,7 +276,6 @@
 #command "#neednoteat"
 #command "#holy"
 #command "#slowrec"
-#command "#reclimit 1"
 #specifiedgcost
 #caponlychance 1
 #end
@@ -330,6 +330,7 @@
 #command "#copystats 361"
 #command "#copyspr 361"
 #command "#gcost 10"
+#command "#rpcost 1"
 #command "#rcost 1"
 #command "#reclimit 3"
 #caponlychance 0.75
@@ -343,6 +344,7 @@
 #command "#copystats 362"
 #command "#copyspr 362"
 #command "#gcost 25"
+#command "#rpcost 1"
 #command "#rcost 1"
 #command "#reclimit 1"
 #caponlychance 0.9
@@ -356,6 +358,7 @@
 #command "#copystats 330"
 #command "#copyspr 330"
 #command "#gcost 50"
+#command "#rpcost 1"
 #command "#rcost 1"
 #command "#reclimit 1"
 #command "#slow_to_recruit"
@@ -371,8 +374,8 @@
 #command "#copystats 530"
 #command "#copyspr 530"
 #command "#gcost 100"
+#command "#rpcost 50"
 #command "#rcost 1"
-#command "#reclimit 2"
 #caponlychance 0.8
 #specifiedgcost
 #end
@@ -384,8 +387,8 @@
 #command "#copystats 467"
 #command "#copyspr 467"
 #command "#gcost 80"
+#command "#rpcost 40"
 #command "#rcost 1"
-#command "#reclimit 3"
 #caponlychance 0.8
 #specifiedgcost
 #end
@@ -397,7 +400,8 @@
 #command "#copystats 488"
 #command "#copyspr 488"
 #command "#gcost 100"
-#command "#reclimit 1"
+#command "#rpcost 50"
+#command "#rcost 1"
 #caponlychance 0.5
 #specifiedgcost
 #end
@@ -409,8 +413,8 @@
 #command "#copystats 637"
 #command "#copyspr 637"
 #command "#gcost 150"
+#command "#rpcost 75"
 #command "#rcost 1"
-#command "#reclimit 1"
 #command "#slow_to_recruit"
 #caponlychance 1
 #specifiedgcost
@@ -423,8 +427,8 @@
 #command "#copystats 487"
 #command "#copyspr 487"
 #command "#gcost 150"
+#command "#rpcost 75"
 #command "#rcost 1"
-#command "#reclimit 1"
 #command "#slow_to_recruit"
 #caponlychance 1
 #specifiedgcost
@@ -437,8 +441,8 @@
 #command "#copystats 659"
 #command "#copyspr 659"
 #command "#gcost 150"
+#command "#rpcost 75"
 #command "#rcost 1"
-#command "#reclimit 1"
 #command "#slow_to_recruit"
 #caponlychance 1
 #specifiedgcost
