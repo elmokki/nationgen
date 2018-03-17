@@ -280,7 +280,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 		
-        System.out.println("Dominions 4 NationGen version " + NationGen.version + " (" + NationGen.date + ")");
+        System.out.println("Dominions 5 NationGen version " + NationGen.version + " (" + NationGen.date + ")");
         System.out.println("------------------------------------------------------------------");
     }
     
