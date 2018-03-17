@@ -6,6 +6,7 @@
 #command "#gcost +1"
 #command "#hp +1"
 #command "#enc +1"
+#command "#mapmove +6"
 #command "#ap +1"
 #enditem
 
@@ -17,6 +18,7 @@
 #command "#gcost +1"
 #command "#hp +1"
 #command "#enc +1"
+#command "#mapmove +6"
 #command "#ap +2"
 #enditem
 
@@ -27,6 +29,7 @@
 #command "#gcost +1"
 #command "#hp +1"
 #command "#enc +1"
+#command "#mapmove +7"
 #command "#ap +2"
 #enditem
 
@@ -39,6 +42,7 @@
 #command "#hp +2"
 #command "#enc +2"
 #command "#ap +1"
+#command "#mapmove +2"
 #itemslot foot -1
 #enditem
 
@@ -50,6 +54,7 @@
 #command "#gcost +0"
 #command "#hp +2"
 #command "#enc +2"
+#command "#mapmove +2"
 #command "#ap +1"
 #itemslot foot -1
 #enditem
@@ -60,11 +65,12 @@
 #gameid -1
 #sprite /graphics/foulspawn/small/rleg/crab.png
 #needs shadow large_shadow
-#command "#gcost +3"
+#command "#gcost +2"
 #command "#prot +2"
 #command "#hp +2"
 #command "#def +1"
 #command "#enc +1"
+#command "#mapmove +3"
 #command "#ap +2"
 #itemslot foot -1
 #enditem

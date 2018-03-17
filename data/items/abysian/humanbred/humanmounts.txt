@@ -9,7 +9,7 @@
 #armor
 #needs overlay 1
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 22"
 #define "#ap 24"
 #define "#mounted"
 #define "#weapon 56 --- Hoof"
@@ -30,7 +30,7 @@
 #armor
 #needs overlay 2
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 22"
 #define "#ap 20"
 #define "#mounted"
 #define "#weapon 56 --- Hoof"
@@ -54,7 +54,7 @@
 #armor
 #needs overlay armoredhorse2overlay
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 22"
 #define "#ap 20"
 #define "#mounted"
 #define "#weapon 56 --- Hoof"
@@ -82,7 +82,7 @@
 #offsetx -3
 #needs overlay 4
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 22"
 #define "#ap 22"
 #define "#mounted"
 #define "#weapon 56 --- Hoof"
@@ -107,7 +107,7 @@
 #offsetx -3
 #needs overlay 5
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 22"
 #define "#ap 24"
 #define "#mounted"
 #define "#weapon 56 --- Hoof"
@@ -131,7 +131,7 @@
 #offsety 64
 #needs overlay 8
 #define "#size 4"
-#define "#mapmove 3"
+#define "#mapmove 28"
 #define "#ap 22"
 #define "#mounted"
 #define "#flying"
@@ -157,7 +157,7 @@
 #needs overlay redguardoverlay
 #offsety 1
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 22"
 #define "#ap 24"
 #define "#mounted"
 #define "#weapon 56 --- Hoof"
@@ -177,7 +177,7 @@
 #armor
 #offsety 1
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 28"
 #define "#ap 28"
 #define "#mounted"
 #define "#weapon 330 --- Alicorn"
@@ -202,7 +202,7 @@
 #armor
 #offsety 1
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 28"
 #define "#ap 28"
 #define "#mounted"
 #define "#weapon 330 --- Alicorn"
@@ -227,7 +227,7 @@
 #armor
 #offsety 1
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 28"
 #define "#ap 28"
 #define "#mounted"
 #define "#weapon 56 --- Hoof"
@@ -250,7 +250,7 @@
 #offsety 69
 #needs overlay 14
 #define "#size 4"
-#define "#mapmove 3"
+#define "#mapmove 22"
 #define "#ap 22"
 #define "#mounted"
 #define "#flying"
@@ -282,7 +282,7 @@
 #offsetx 30
 #offsety 45
 #define "#size 4"
-#define "#mapmove 3"
+#define "#mapmove 22"
 #define "#ap 18"
 #define "#mounted"
 #define "#weapon 353"
@@ -307,7 +307,7 @@
 #armor
 #offsety 1
 #define "#size 3"
-#define "#mapmove 4"
+#define "#mapmove 26"
 #define "#ap 25"
 #define "#mounted"
 #define "#weapon 615 --- Heavy Hoof"
@@ -329,7 +329,7 @@
 #sprite /graphics/mounts/standard/bear.png
 #armor
 #define "#size 4"
-#define "#mapmove 2"
+#define "#mapmove 20"
 #define "#ap 16"
 #define "#mounted"
 #define "#weapon 19 --- Bite"
@@ -353,7 +353,7 @@
 #sprite /graphics/mounts/standard/lion.png
 #armor
 #define "#size 4"
-#define "#mapmove 2"
+#define "#mapmove 16"
 #define "#ap 18"
 #define "#mounted"
 #define "#weapon 19 --- Bite"
@@ -379,17 +379,17 @@
 #offsetx 15
 #offsety 42
 #define "#size 5"
-#define "#mapmove 2"
+#define "#mapmove 8"
 #define "#ap 8"
 #define "#mounted"
 #define "#weapon nostr_pincer"
-
 #define "#weapon nostr_scorpiontail"
 #define "#secondshape scorpionmount"
 #define "#gcost +50"
 #define "#ressize 2"
 #define "#enc 3"
 #define "#rcost +5"
+#define "#nomovepen"
 #tag "animal scorpion"
 #theme "heavy"
 #description "Leaves a giant scorpion behind when the rider dies"
@@ -408,17 +408,14 @@
 #gameid -1
 #sprite /graphics/abysian/mounts/fossil.png
 #armor
-
 #needs overlay fossil_overlay
 #offsetx 34
 #offsety 31
 #define "#size 4"
-#define "#mapmove 3"
+#define "#mapmove 16"
 #define "#ap 8"
 #define "#mounted"
-
 #define "#prot 5"
-
 #define "#okundeadleader"
 #define "#weapon nostr_fossilsword"
 #define "#secondshape fossilmount"
@@ -430,7 +427,6 @@
 #theme "heavy"
 #description "Leaves a fossilized giant behind when the rider dies"
 #tag "guaranteedprefix fossil"
-
 #tag "minprot 10"
 #tag "maxprot 100"
 #chanceinc primaryrace abysian *100
@@ -444,7 +440,7 @@
 #sprite /graphics/mounts/standard/cavecow.png
 #armor
 #define "#size 4"
-#define "#mapmove 1"
+#define "#mapmove 8"
 #define "#ap 8"
 #define "#mounted"
 #define "#weapon 19 --- Bite"
@@ -454,6 +450,7 @@
 #define "#prot +2"
 #define "#ressize 2"
 #define "#enc 4"¨
+#define "#nomovepen"
 #description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
 #offsetx -8
 #offsety 6
@@ -469,7 +466,7 @@
 #armor
 #needs overlay direwolf1_overlay
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 16"
 #define "#ap 22"
 #define "#mounted"
 #define "#weapon 237 --- bite"

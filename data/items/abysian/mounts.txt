@@ -7,7 +7,7 @@
 #offsetx -7
 #offsety 16
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 8"
 #define "#ap 9"
 #define "#mounted"
 #define "#weapon 567 --- Drake Fire"
@@ -15,6 +15,7 @@
 #define "#gcost +55"
 #define "#ressize 2"
 #define "#enc 5"
+#define "#nomovepen"
 #tag "animal drake"
 #tag "minprot 10"
 #tag "maxprot 100"
@@ -28,7 +29,7 @@
 #offsetx -7
 #offsety 14
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 12"
 #define "#ap 10"
 #define "#mounted"
 #define "#weapon 48 --- Fire Flare"
@@ -49,7 +50,7 @@
 #offsety 6
 #needs overlay scorpion_overlay
 #define "#size 5"
-#define "#mapmove 2"
+#define "#mapmove 8"
 #define "#ap 8"
 #define "#mounted"
 #define "#weapon nostr_pincer"
@@ -59,6 +60,7 @@
 #define "#ressize 2"
 #define "#enc 3"
 #define "#rcost +5"
+#define "#nomovepen"
 #tag "animal scorpion"
 #theme "heavy"
 #description "Leaves a giant scorpion behind when the rider dies"
@@ -78,7 +80,7 @@
 #offsetx 34
 #offsety 31
 #define "#size 4"
-#define "#mapmove 3"
+#define "#mapmove 16"
 #define "#ap 8"
 #define "#mounted"
 #define "#prot 5"
@@ -105,7 +107,7 @@
 #offsetx -2
 #offsety 2
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 18"
 #define "#ap 18"
 #define "#mounted"
 #define "#weapon nostr_poisongore"
@@ -127,7 +129,7 @@
 #armor
 #offsety -2
 #define "#size 3"
-#define "#mapmove 4"
+#define "#mapmove 26"
 #define "#ap 25"
 #define "#mounted"
 #define "#weapon 615 --- Heavy Hoof"

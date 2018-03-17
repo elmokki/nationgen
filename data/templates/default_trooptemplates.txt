@@ -18,7 +18,7 @@
 #command "#mor -2"
 #command "#prec -1"
 #command "#mapmove *0"
-#command "#mapmove +1"
+#command "#mapmove 12"
 #themeinc "thisarmorprot 8 *0.50"
 #themeinc "thisarmorprot 10 *0.05"
 #themeinc "thisarmorprot 12 *0.01"
@@ -97,7 +97,7 @@
 #basechance 0.125
 #name "formationfighter"
 #type formationfighter
-#command "#formationfighter"
+#command "#formationfighter +1"
 #themeinc thisitemtheme formationfighter *1000
 #chanceinc pose not infantry *0
 #chanceinc poseitemtheme not weapon formationfighter *0
@@ -415,8 +415,6 @@
 #primarycommand #stealthy
 #end
 
-
-
 #new
 #basechance 0.125
 #type pillager
@@ -427,7 +425,6 @@
 #chanceinc pose ranged *0
 #chanceinc pose chariot *0
 #command "#pillagebonus +2"
-#command "#stealthy +0"
 #tag "bonusweaponchance 0.5"
 #themeinc theme irregular *4
 #themeinc thisarmorprot below 13 *2
@@ -437,8 +434,8 @@
 #generateitem 1 cloakb
 #theme pillager
 #end
-#new
 
+#new
 #basechance 0.125
 #type pillager
 #type stealthy
@@ -459,6 +456,50 @@
 #themeinc theme advanced *0.25
 #generateitem 1 cloakb
 #theme pillager
+#theme stealthy
+#primarycommand #stealthy
+#end
+
+#new
+#basechance 0.125
+#type skirmisher
+#name "skirmisher"
+#maxvarieties 1
+#maxunits 2
+#chanceinc pose mounted *0
+#chanceinc pose ranged *0
+#chanceinc pose chariot *0
+#command "#skirmisher +1"
+#tag "bonusweaponchance 0.9"
+#themeinc theme irregular *4
+#themeinc thisarmorprot below 11 *2
+#themeinc thisarmorprot below 9 *2
+#themeinc theme heavy *0.1
+#themeinc theme advanced *0.5
+#theme skirmisher
+#end
+
+#new
+#basechance 0.125
+#type skirmisher
+#type stealthy
+#name "skirmisher stealthy"
+#maxvarieties 1
+#maxunits 2
+#chanceinc pose mounted *0
+#chanceinc pose ranged *0
+#chanceinc pose chariot *0
+#command "#skirmisher +1"
+#command "#stealthy +0"
+#command "#gcost *1.2"
+#tag "bonusweaponchance 0.9"
+#themeinc theme irregular *4
+#themeinc thisarmorprot below 11 *2
+#themeinc thisarmorprot below 9 *2
+#themeinc theme heavy *0.1
+#themeinc theme advanced *0.5
+#generateitem 1 cloakb
+#theme skirmisher
 #theme stealthy
 #primarycommand #stealthy
 #end

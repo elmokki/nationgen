@@ -9,7 +9,7 @@
 #offsetx 35
 #offsety 33
 #define "#size 4"
-#define "#mapmove 3"
+#define "#mapmove 20"
 #define "#ap 18"
 #define "#mounted"
 #define "#weapon 353"
@@ -18,6 +18,7 @@
 #define "#ressize 2"
 #define "#rcost +4"
 #define "#enc 4"
+#define "#swimming"
 #define "#secondtmpshape moose"
 #tag "animal moose"
 #tag "minprot 0"
@@ -36,7 +37,7 @@
 #offsetx 0
 #offsety -14
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 18"
 #define "#ap 18"
 #define "#mounted"
 #define "#weapon 354"
@@ -60,7 +61,7 @@
 #offsety -19
 #armor
 #define "#size 4"
-#define "#mapmove 3"
+#define "#mapmove 20"
 #define "#ap 16"
 #define "#mounted"
 #define "#weapon 237 --- Bite"
@@ -84,7 +85,7 @@
 #offsety -19
 #armor
 #define "#size 4"
-#define "#mapmove 3"
+#define "#mapmove 20"
 #define "#ap 16"
 #define "#mounted"
 #define "#weapon 237 --- Bite"
@@ -93,6 +94,7 @@
 #define "#gcost +40"
 #define "#ressize 2"
 #define "#enc 4"
+#define "#swimming"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #tag "animal bear"
 #tag "name commander beastmaster"
@@ -108,7 +110,7 @@
 #offsety -11
 #armor
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 18"
 #define "#ap 14"
 #define "#mounted"
 #define "#weapon 236 -- Claw"
@@ -132,7 +134,7 @@
 #offsety -10
 #armor
 #define "#size 4"
-#define "#mapmove 1"
+#define "#mapmove 8"
 #define "#ap 8"
 #define "#mounted"
 #define "#weapon 19 --- Bite"
@@ -142,6 +144,7 @@
 #define "#prot +2"
 #define "#ressize 2"
 #define "#enc 4"¨
+#define "#nomovepen"
 #description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
 #tag "animal 'cave cow'"
 #tag "guaranteedprefix 'cave cow'"
@@ -158,7 +161,7 @@
 #armor
 #needs overlay direwolf2_overlay
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 16"
 #define "#ap 22"
 #define "#mounted"
 #define "#weapon 237 --- bite"
@@ -183,7 +186,7 @@
 #offsety -2
 #needs overlay 6
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 20"
 #define "#ap 18"
 #define "#mounted"
 #define "#weapon 494 --- Poisonous Bite"
@@ -209,7 +212,7 @@
 #offsetx -3
 #offsety -11
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 22"
 #define "#ap 18"
 #define "#mounted"
 #define "#weapon 236"
@@ -218,6 +221,7 @@
 #define "#rcost +5"
 #define "#ressize 2"
 #define "#enc 3"
+#define "#swimming"
 #theme "specialmount"
 #theme "light"
 #tag "animal tiger"
@@ -244,6 +248,7 @@
 #define "#rcost +2"
 #define "#ressize 2"
 #define "#enc 4"
+#define "#swimming"
 #command "#amphibian"
 #theme "light"
 #tag "animal dog"
@@ -262,7 +267,7 @@
 #offsetx -6
 #offsety -9
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 20"
 #define "#ap 18"
 #define "#mounted"
 #define "#weapon 236"
@@ -272,6 +277,7 @@
 #define "#rcost +5"
 #define "#ressize 2"
 #define "#enc 3"
+#define "#swimming"
 #theme "specialmount"
 #theme "light"
 #tag "animal jaguar"
@@ -290,7 +296,7 @@
 #offsetx 38
 #offsety -2
 #define "#size 4"
-#define "#mapmove 1"
+#define "#mapmove 8"
 #define "#ap 5"
 #define "#mounted"
 #define "#weapon 603"
@@ -298,6 +304,7 @@
 #define "#rcost +3"
 #define "#ressize 2"
 #define "#enc 3"
+#define "#nomovepen"
 #define "#secondtmpshape cavegrubmount"
 #description "The cave grub will fight until the end of the battle should the rider die"
 #tag "animal 'cave grub'"
@@ -318,7 +325,7 @@
 #offsetx 2
 #offsety -9
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 18"
 #define "#ap 6"
 #define "#mounted"
 #define "#weapon nostr_poisonspit"
@@ -326,6 +333,7 @@
 #define "#rcost +3"
 #define "#ressize 2"
 #define "#enc 3"
+#define "#swimming"
 #define "#secondtmpshape toad_jaguar_mount"
 #description "The giant toad will fight until the end of the battle should the rider die"
 #tag "animal 'giant toad'"
@@ -344,7 +352,7 @@
 #offsetx 2
 #offsety -9
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 18"
 #define "#ap 9"
 #define "#mounted"
 #define "#weapon 236"
@@ -352,6 +360,7 @@
 #define "#rcost +3"
 #define "#ressize 2"
 #define "#enc 3"
+#define "#swimming"
 #command "#amphibian"
 #define "#secondtmpshape toad_sapphire_mount"
 #description "The giant frog will fight until the end of the battle should the rider die"
