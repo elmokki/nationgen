@@ -3,6 +3,7 @@
 #gameid -1
 #sprite /graphics/foulspawn/small/torso/humanoid.png
 #command "#gcost 4"
+#command "#rpcost 12000"
 #command "#hp 5"
 #command "#size 2"
 #command "#prot 0"
@@ -13,6 +14,7 @@
 #command "#def 8"
 #command "#prec 8"
 #command "#enc 1"
+#command "#mapmove 4"
 #command "#ap 4"
 #command "#maxage 50"
 #enditem
@@ -22,6 +24,7 @@
 #gameid -1
 #sprite /graphics/foulspawn/small/torso/goblinoid.png
 #command "#gcost 5"
+#command "#rpcost 12000"
 #command "#hp 6"
 #command "#size 2"
 #command "#prot 1"
@@ -32,6 +35,7 @@
 #command "#def 8"
 #command "#prec 8"
 #command "#enc 1"
+#command "#mapmove 4"
 #command "#ap 6"
 #command "#maxage 50"
 #enditem
@@ -41,6 +45,7 @@
 #gameid -1
 #sprite /graphics/foulspawn/small/torso/canid.png
 #command "#gcost 5"
+#command "#rpcost 12000"
 #command "#hp 6"
 #command "#size 2"
 #command "#prot 2"
@@ -51,6 +56,7 @@
 #command "#def 8"
 #command "#prec 8"
 #command "#enc 0"
+#command "#mapmove 4"
 #command "#ap 5"
 #command "#maxage 50"
 #enditem
@@ -60,6 +66,7 @@
 #gameid -1
 #sprite /graphics/foulspawn/small/torso/tentacloid.png
 #command "#gcost 6"
+#command "#rpcost 14000"
 #command "#hp 7"
 #command "#size 2"
 #command "#prot 4"
@@ -70,6 +77,7 @@
 #command "#def 8"
 #command "#prec 8"
 #command "#enc 2"
+#command "#mapmove 3"
 #command "#ap 3"
 #command "#maxage 50"
 #enditem
@@ -79,6 +87,7 @@
 #gameid -1
 #sprite /graphics/foulspawn/small/torso/fleshblob.png
 #command "#gcost 5"
+#command "#rpcost 14000"
 #command "#hp 7"
 #command "#size 2"
 #command "#prot 0"
@@ -89,6 +98,7 @@
 #command "#def 8"
 #command "#prec 8"
 #command "#enc 2"
+#command "#mapmove 3"
 #command "#ap 3"
 #command "#maxage 50"
 #enditem
@@ -99,6 +109,7 @@
 #sprite /graphics/foulspawn/small/torso/turtle.png
 #needs overlay turtle_overlay
 #command "#gcost 10"
+#command "#rpcost 16000"
 #command "#hp 7"
 #command "#size 2"
 #command "#prot 12"
@@ -109,6 +120,7 @@
 #command "#def 7"
 #command "#prec 8"
 #command "#enc 2"
+#command "#mapmove 3"
 #command "#ap 4"
 #command "#maxage 75"
 #itemslot body 0

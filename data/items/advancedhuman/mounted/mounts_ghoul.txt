@@ -9,7 +9,7 @@
 #armor
 #needs overlay 1
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 22"
 #define "#ap 24"
 #define "#mounted"
 #define "#weapon 56 --- Hoof"
@@ -30,7 +30,7 @@
 #armor
 #needs overlay 2
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 22"
 #define "#ap 20"
 #define "#mounted"
 #define "#weapon 56 --- Hoof"
@@ -57,7 +57,7 @@
 #define "#size 3"
 #define "#hp +4"
 #define "#mr -2"
-#define "#mapmove 3"
+#define "#mapmove 22"
 #define "#ap 24"
 #define "#mounted"
 #define "#weapon 19 --- Bite"
@@ -79,7 +79,7 @@
 #define "#size 3"
 #define "#hp +6"
 #define "#mr -2"
-#define "#mapmove 2"
+#define "#mapmove 22"
 #define "#ap 20"
 #define "#mounted"
 #define "#weapon 19 --- Bite"
@@ -104,7 +104,7 @@
 #needs overlay longdead_overlay
 #define "#size 3"
 #define "#mr -3"
-#define "#mapmove 4"
+#define "#mapmove 22"
 #define "#ap 26"
 #define "#mounted"
 #define "#weapon 56 --- Hoof"
@@ -128,7 +128,7 @@
 #define "#size 3"
 #define "#hp +2"
 #define "#mr -3"
-#define "#mapmove 3"
+#define "#mapmove 22"
 #define "#ap 25"
 #define "#mounted"
 #define "#weapon 56 --- Hoof"
@@ -150,7 +150,7 @@
 #armor
 #offsety 1
 #define "#size 3"
-#define "#mapmove 4"
+#define "#mapmove 26"
 #define "#ap 25"
 #define "#mounted"
 #define "#weapon 615 --- Heavy Hoof"
@@ -172,7 +172,7 @@
 #sprite /graphics/mounts/standard/bear.png
 #armor
 #define "#size 4"
-#define "#mapmove 3"
+#define "#mapmove 18"
 #define "#ap 16"
 #define "#mounted"
 #define "#weapon 237 --- Bite"
@@ -196,7 +196,7 @@
 #sprite /graphics/mounts/standard/bear_small.png
 #armor
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 18"
 #define "#ap 14"
 #define "#mounted"
 #define "#weapon 236 -- Claw"
@@ -222,7 +222,7 @@
 #offsetx 15
 #offsety 42
 #define "#size 5"
-#define "#mapmove 2"
+#define "#mapmove 8"
 #define "#ap 8"
 #define "#mounted"
 #define "#weapon nostr_pincer"
@@ -232,6 +232,7 @@
 #define "#ressize 2"
 #define "#enc 2"
 #define "#rcost +5"
+#define "#nomovepen"
 #tag "animal scorpion"
 #theme "heavy"
 #description "Leaves a giant scorpion behind when the rider dies"
@@ -251,7 +252,7 @@
 #offsetx 34
 #offsety 31
 #define "#size 4"
-#define "#mapmove 3"
+#define "#mapmove 16"
 #define "#ap 8"
 #define "#mounted"
 #define "#prot 5"
@@ -277,7 +278,7 @@
 #armor
 #needs overlay direwolf1_overlay
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 18"
 #define "#ap 22"
 #define "#mounted"
 #define "#weapon 237 --- bite"

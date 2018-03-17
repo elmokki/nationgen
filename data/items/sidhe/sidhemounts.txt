@@ -6,7 +6,7 @@
 #armor
 #offsety 1
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 28"
 #define "#ap 28"
 #define "#mounted"
 #define "#weapon 56 --- Hoof"
@@ -28,7 +28,7 @@
 #offsetx -5
 #offsety 1
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 18"
 #define "#ap 28"
 #define "#mounted"
 #define "#weapon 19 --- Bite"
@@ -52,7 +52,7 @@
 #offsety 64
 #needs overlay 8
 #define "#size 4"
-#define "#mapmove 3"
+#define "#mapmove 28"
 #define "#ap 22"
 #define "#mounted"
 #define "#flying"
@@ -77,7 +77,7 @@
 #offsetx -2
 #offsety 2
 #define "#size 4"
-#define "#mapmove 3"
+#define "#mapmove 28"
 #define "#ap 18"
 #define "#mounted"
 #define "#flying"
@@ -100,7 +100,7 @@
 #armor
 #offsety 1
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 28"
 #define "#ap 28"
 #define "#mounted"
 #define "#weapon 330 --- Alicorn"
@@ -127,7 +127,7 @@
 #offsety 69
 #needs overlay 14
 #define "#size 4"
-#define "#mapmove 3"
+#define "#mapmove 22"
 #define "#ap 22"
 #define "#mounted"
 #define "#flying"
@@ -160,7 +160,7 @@
 #offsetx 30
 #offsety 45
 #define "#size 4"
-#define "#mapmove 3"
+#define "#mapmove 22"
 #define "#ap 18"
 #define "#mounted"
 #define "#weapon 353"
@@ -169,6 +169,7 @@
 #define "#ressize 2"
 #define "#rcost +4"
 #define "#enc 4"
+#define "#swimming"
 #define "#secondtmpshape moose"
 #tag "animal moose"
 #tag "minprot 0"
@@ -187,7 +188,7 @@
 #offsetx -2
 #offsety 2
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 20"
 #define "#ap 18"
 #define "#mounted"
 #define "#weapon 354"
@@ -211,7 +212,7 @@
 #armor
 #offsety 1
 #define "#size 3"
-#define "#mapmove 4"
+#define "#mapmove 26"
 #define "#ap 25"
 #define "#mounted"
 #define "#weapon 615 --- Heavy Hoof"
@@ -233,7 +234,7 @@
 #sprite /graphics/mounts/standard/bear.png
 #armor
 #define "#size 4"
-#define "#mapmove 3"
+#define "#mapmove 20"
 #define "#ap 16"
 #define "#mounted"
 #define "#weapon 237 --- Bite"
@@ -257,7 +258,7 @@
 #sprite /graphics/mounts/standard/bear_small.png
 #armor
 #define "#size 3"
-#define "#mapmove 2"
+#define "#mapmove 18"
 #define "#ap 14"
 #define "#mounted"
 #define "#weapon 236 -- Claw"
@@ -284,7 +285,7 @@
 #offsetx -2
 #offsety 12
 #define "#size 3"
-#define "#mapmove 3"
+#define "#mapmove 26"
 #define "#ap 8"
 #define "#mounted"
 #define "#flying"
@@ -292,7 +293,8 @@
 #define "#weapon nostr_bill_10"
 #define "#gcost +50"
 #define "#ressize 2"
-#define "#enc 4"¨
+#define "#enc 4"
+#define "#swimming"
 #theme "light"
 #tag "animal swan"
 #tag "maxprot 12"
