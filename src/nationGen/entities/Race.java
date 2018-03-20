@@ -125,7 +125,6 @@ public class Race extends Filter {
 		
 		tags.removeAll(toBeRemoved);
 
-		
 		this.handleOwnCommand(str);
 		
 	}
@@ -178,7 +177,10 @@ public class Race extends Filter {
 		else if(args.get(0).equals("#visiblename"))
 			this.visiblename = args.get(1);
 		else if(args.get(0).equals("#nationcommand"))
-			this.nationcommands.add(Command.parseCommandFromDefinition(args));
+		{
+			Command c = Command.parseCommandFromDefinition(args);
+			this.nationcommands.add(c);
+		}
 		else if(args.get(0).equals("#unitcommand"))
 		{			
 			args.remove(0);
