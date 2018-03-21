@@ -54,8 +54,8 @@ import nationGen.units.Unit;
 
 public class NationGen 
 {
-    public static String version = "0.7.0-RC1";
-    public static String date = "2nd of February 2018";
+    public static String version = "0.7.0-RC2";
+    public static String date = "17th of March 2018";
 
     public List<NationRestriction> restrictions = new ArrayList<>();
 
@@ -107,7 +107,7 @@ public class NationGen
 
         try 
         {
-            System.out.print("Loading Larzm42's Dom4 Mod Inspector database... ");
+            System.out.print("Loading Larzm42's Dom5 Mod Inspector database... ");
             loadDom3DB();
             System.out.println("done!");
             System.out.print("Loading definitions... ");

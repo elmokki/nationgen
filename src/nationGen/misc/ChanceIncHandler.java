@@ -640,15 +640,18 @@ public class ChanceIncHandler {
 		if(args.get(0).equals("not"))
 			args.remove(0);
 		
+		boolean realnot = args.contains("not");
+		
+		
 		// Theme
 		if(args.get(0).equals("theme") && args.size() >= 2)
 		{
-			return (f.themes.contains(lastarg));
+			return (f.themes.contains(lastarg))  != realnot;
 			
 		}
 		else if(args.get(0).equals("owntag") && args.size() >= 2)
 		{
-			return (f.tags.contains(lastarg));
+			return (f.tags.contains(lastarg))  != realnot;
 			
 		}
 		else if(args.get(0).equals("racename") && args.size() >= 2 && f.name != null)
@@ -658,11 +661,11 @@ public class ChanceIncHandler {
 			{
 				if(f.getClass().equals(Race.class))
 				{
-					return true;
+					return true  != realnot;
 				}
 				else
 				{
-					return false;
+					return false  != realnot;
 				}
 			}
 		}
@@ -755,7 +758,7 @@ public class ChanceIncHandler {
 					int ferrous = n.nationGen.armordb.GetInteger(i.id, "ferrous", 0);
 					if((ferrous == 1))
 					{
-						return true;
+						return true  != realnot;
 					}
 				}
 				else
@@ -763,7 +766,7 @@ public class ChanceIncHandler {
 					int ferrous = n.nationGen.weapondb.GetInteger(i.id, "ironweapon", 0);
 					if((ferrous == 1))
 					{
-						return true;
+						return true  != realnot;
 					}
 				}
 			}
@@ -792,11 +795,11 @@ public class ChanceIncHandler {
 					
 					if((penalty >= value) != below)
 					{	
-						return true;
+						return true  != realnot;
 					}
 					else
 					{
-						return false;
+						return false  != realnot;
 					}
 				}
 			}
@@ -815,10 +818,10 @@ public class ChanceIncHandler {
 					int prot = n.nationGen.armordb.GetInteger(i.id, "prot", 0);
 					if((prot >= value) != below)
 					{
-						return true;
+						return true  != realnot;
 					}
 					else
-						return false;
+						return false  != realnot;
 				}
 			}
 		}
@@ -836,10 +839,10 @@ public class ChanceIncHandler {
 					int prot = n.nationGen.armordb.GetInteger(i.id, "enc", 0);
 					if((prot >= value) != below)
 					{
-						return true;
+						return true  != realnot;
 					}
 					else
-						return false;
+						return false  != realnot;
 				}
 			}
 		}
@@ -859,10 +862,10 @@ public class ChanceIncHandler {
 					
 					if((gotvalue >= value) != below)
 					{
-						return true;
+						return true  != realnot;
 					}
 					else
-						return false;
+						return false  != realnot;
 				}
 			}
 		}
@@ -882,10 +885,10 @@ public class ChanceIncHandler {
 					
 					if((gotvalue >= value) != below)
 					{
-						return true;
+						return true  != realnot;
 					}
 					else
-						return false;
+						return false  != realnot;
 				}
 			}
 		}
@@ -1027,6 +1030,8 @@ public class ChanceIncHandler {
 		if(args.get(0).equals("not"))
 			args.remove(0);
 
+		boolean realnot = args.contains("not");
+
 		// Magic paths
 		if(args.get(0).equals("magic") && args.size() >= 2)
 		{
@@ -1115,7 +1120,7 @@ public class ChanceIncHandler {
 				
 			}
 		
-			return canIncrease;
+			return canIncrease != realnot;
 		}
 		
 		// Existing shapeshifts
@@ -1130,7 +1135,7 @@ public class ChanceIncHandler {
 					canIncrease = true;			
 			}
 			
-			return canIncrease;
+			return canIncrease != realnot;
 		}
 		
 		// Magic diversity
@@ -1138,7 +1143,7 @@ public class ChanceIncHandler {
 		{
 
 			int div = Integer.parseInt(args.get(args.size() - 2));
-			return (diversity >= div);
+			return (diversity >= div) != realnot;
 		}
 		
 		else if(args.get(0).equals("picksatlevel"))
@@ -1171,7 +1176,7 @@ public class ChanceIncHandler {
 					canIncrease = true;
 			}
 			
-			return canIncrease;
+			return canIncrease  != realnot;
 		}
 		// ModuleID
 		else if(args.get(0).equals("moduleid") && args.size() >= 2)
@@ -1195,7 +1200,7 @@ public class ChanceIncHandler {
 					canIncrease = true;			
 			}
 			
-			return canIncrease;
+			return canIncrease  != realnot;
 		}
 		
 		// Theme in a primary race theme
@@ -1212,7 +1217,7 @@ public class ChanceIncHandler {
 			if(n.races.get(0).themes.contains(theme))
 				canIncrease = true;		
 			
-			return canIncrease;
+			return canIncrease  != realnot;
 		}
 		
 		// Theme tag in a primary race theme
@@ -1226,7 +1231,7 @@ public class ChanceIncHandler {
 					canIncrease = true;			
 			}
 			
-			return canIncrease;
+			return canIncrease  != realnot;
 		}
 		
 		// Theme in a secondary race theme
@@ -1241,7 +1246,7 @@ public class ChanceIncHandler {
 					canIncrease = true;			
 			}
 			
-			return canIncrease;
+			return canIncrease  != realnot;
 		}
 		
 		// SecondaryRaceTheme
@@ -1257,22 +1262,21 @@ public class ChanceIncHandler {
 					canIncrease = true;			
 			}
 			
-			return canIncrease;
+			return canIncrease  != realnot;
 		}
 		
 		// Era
 		else if(args.get(0).equals("era") && args.size() >= 2)
 		{
-			boolean canIncrease = false;
 
 			int era = Integer.parseInt(args.get(1));
-			return (era == n.era);
+			return (era == n.era)  != realnot;
 		}
 		
 		// Primary race
 		else if(args.get(0).equals("hasprimaryrace") && args.size() >= 1)
 		{
-			return (n.races.size() > 0);	
+			return (n.races.size() > 0) != realnot;	
 		}
 		
 		// Nation commands
@@ -1319,7 +1323,7 @@ public class ChanceIncHandler {
 				}
 			}
 			
-			return canIncrease;
+			return canIncrease != realnot;
 		}
 		
 
@@ -1391,7 +1395,7 @@ public class ChanceIncHandler {
 				}
 			}
 			
-			return canIncrease;
+			return canIncrease  != realnot;
 		}
 		
 		// Unit commands
@@ -1443,7 +1447,7 @@ public class ChanceIncHandler {
 				}
 			}
 			
-			return canIncrease;
+			return canIncrease  != realnot;
 		}
 		
 		// Percentage of command
@@ -1478,7 +1482,7 @@ public class ChanceIncHandler {
 			if((share < required) == below)
 				canIncrease = true;
 			
-			return canIncrease;
+			return canIncrease  != realnot;
 		}
 		
 		// Percentage of race
@@ -1511,7 +1515,7 @@ public class ChanceIncHandler {
 			{
 				canIncrease = true;
 			}
-			return canIncrease;
+			return canIncrease  != realnot;
 		}
 		
 		else if(args.get(0).equals("secondaryrace") && args.size() >= 2)
@@ -1522,14 +1526,14 @@ public class ChanceIncHandler {
 			{
 				canIncrease = true;
 			}
-			return canIncrease;
+			return canIncrease  != realnot;
 		}
 		
 		// racetag
 		else if(args.get(0).equals("racetag") && args.size() >= 2 && n.races.size() > 0)
 		{
 
-			return (n.races.get(0).tags.contains(lastarg));
+			return (n.races.get(0).tags.contains(lastarg))  != realnot;
 		}
 		
 		// any unit filter
@@ -1546,7 +1550,7 @@ public class ChanceIncHandler {
 					if(fa.name.equals(lastarg))
 						canIncrease = true;
 			
-			return canIncrease;
+			return canIncrease  != realnot;
 		}
 		// nationtag
 		else if(args.get(0).equals("nationtag") && args.size() >= 2)
@@ -1559,7 +1563,7 @@ public class ChanceIncHandler {
 			if(n.races.size() > 0 && n.races.get(0).tags.contains(args.get(1)))
 				canIncrease = true;
 			
-			return canIncrease;
+			return canIncrease  != realnot;
 		}
 		
 		// Average gold and res
@@ -1571,7 +1575,7 @@ public class ChanceIncHandler {
 			if(avggold >= gold)
 				canIncrease = true;
 			
-			return canIncrease;
+			return canIncrease  != realnot;
 		}
 		
 		else if(args.get(0).equals("avgres") && args.size() >= 2)
@@ -1582,7 +1586,7 @@ public class ChanceIncHandler {
 			if(avgres >= res)
 				canIncrease = true;
 			
-			return canIncrease;
+			return canIncrease  != realnot;
 
 		}
 		
@@ -1604,7 +1608,7 @@ public class ChanceIncHandler {
 			if((counted >= count) != below)
 				canIncrease = true;
 			
-			return canIncrease;
+			return canIncrease  != realnot;
 		}
 		
 		else if(args.get(0).equals("caponlyunitswithresabove") && args.size() >= 3)
@@ -1624,7 +1628,7 @@ public class ChanceIncHandler {
 			if((counted >= count) != below)
 				canIncrease = true;
 			
-			return canIncrease;
+			return canIncrease  != realnot;
 		}
 		
 		
@@ -1645,7 +1649,7 @@ public class ChanceIncHandler {
 			if((counted >= count) != below)
 				canIncrease = true;
 			
-			return canIncrease;
+			return canIncrease  != realnot;
 		}
 		
 		// Random
@@ -1864,17 +1868,17 @@ public class ChanceIncHandler {
 		
 		if(args.get(0).equals("not"))
 			args.remove(0);
-		
+		boolean realnot = args.contains("not");
 		
 		
 		if(args.get(0).equals("pose") && args.size() > 1)
 		{
 			if(u.pose.roles.contains(lastarg) || u.pose.roles.contains("elite " + lastarg) || u.pose.roles.contains("sacred " + lastarg))
 			{
-				return true;
+				return true  != realnot;
 			}
 			
-			return false;
+			return false  != realnot;
 		
 		}
 		else if(args.get(0).equals("personalcommand") && args.size() > 1)
@@ -1891,21 +1895,21 @@ public class ChanceIncHandler {
 					if(Generic.isNumeric(lastarg)) // We are querying an argument
 					{
 						if(args.contains("below"))
-							return Integer.parseInt(c.args.get(0)) < Integer.parseInt(lastarg);
+							return Integer.parseInt(c.args.get(0)) < Integer.parseInt(lastarg)  != realnot;
 						else if(args.contains("above"))
-							return Integer.parseInt(c.args.get(0)) > Integer.parseInt(lastarg);
+							return Integer.parseInt(c.args.get(0)) > Integer.parseInt(lastarg)  != realnot;
 						else
-							return Integer.parseInt(c.args.get(0)) == Integer.parseInt(lastarg);
+							return Integer.parseInt(c.args.get(0)) == Integer.parseInt(lastarg)  != realnot;
 					}	
 					else // We are not querying argument and found the command
 					{
-						return true;
+						return true  != realnot;
 					}
 				}
 				
 			}
 			
-			return false;
+			return false  != realnot;
 		}
 		else if(args.get(0).equals("personalshape") && args.size() > 1)
 		{
@@ -1913,10 +1917,10 @@ public class ChanceIncHandler {
 			for(ShapeChangeUnit u2 : n.secondshapes)
 			{
 				if(u2.thisForm.name.equals(shape) && u2.otherForm.equals(u))
-					return true;		
+					return true  != realnot;		
 			}
 			
-			return false;
+			return false  != realnot;
 
 		}
 		else if(args.get(0).equals("filter") && args.size() > 1)
@@ -1924,21 +1928,21 @@ public class ChanceIncHandler {
 			for(Filter f2 : u.appliedFilters)
 			{
 				if(f2.name.equals(lastarg))
-					return true;
+					return true  != realnot;
 			}
 			
-			return false;
+			return false  != realnot;
 	
 		}
 		else if(args.get(0).equals("unittag") || args.get(0).equals("tag") && args.size() > 1)
 		{
 			
-			return Generic.containsTag(Generic.getAllUnitTags(u), lastarg);					
+			return Generic.containsTag(Generic.getAllUnitTags(u), lastarg)  != realnot;					
 		}
 		else if(args.get(0).equals("racetag") && args.size() > 1)
 		{
 
-			boolean contains = Generic.containsTag(u.race.tags, lastarg);					
+			boolean contains = Generic.containsTag(u.race.tags, lastarg)  != realnot;					
 			return contains;
 		}
 		else if(args.get(0).equals("unittheme") && args.size() > 1)
@@ -1956,7 +1960,7 @@ public class ChanceIncHandler {
 				if(Generic.containsTag(fs.themes, lastarg))
 					contains = true;
 			
-			return contains;
+			return contains  != realnot;
 		}
 		else if(args.get(0).equals("racetheme") && args.size() > 1)
 		{
@@ -1969,28 +1973,28 @@ public class ChanceIncHandler {
 				{
 					if(fs.name.equals(args.get(1)))
 					{
-						return true;
+						return true  != realnot;
 					}
 					else if(fs.themes.contains(args.get(1)))
 					{
-						return true;
+						return true  != realnot;
 					}
 					
 				}
 			}
-			return contains;
+			return contains  != realnot;
 
 		}
 		else if(args.get(0).equals("posetag") && args.size() > 1)
 		{
 
-			return Generic.containsTag(u.pose.tags, lastarg);					
+			return Generic.containsTag(u.pose.tags, lastarg)  != realnot;					
 			
 		}
 		else if(args.get(0).equals("posetheme") && args.size() > 1)
 		{
 
-			return Generic.containsTag(u.pose.themes, lastarg);					
+			return Generic.containsTag(u.pose.themes, lastarg)  != realnot;					
 			
 		}
 
@@ -2124,11 +2128,11 @@ public class ChanceIncHandler {
 				if(i != null)
 					if(Generic.containsTag(i.tags, lastarg))
 					{
-						return true;
+						return true  != realnot;
 					}
 			
 
-			return false;
+			return false  != realnot;
 		}
 		else if(args.get(0).equals("itemtheme") && args.size() > 1)
 		{
@@ -2138,10 +2142,10 @@ public class ChanceIncHandler {
 				// Items can be null if they're removed, offhand for example.
 				if(i != null && Generic.containsTag(i.themes, args.get(args.size() - 2)))
 				{
-					return true;
+					return true  != realnot;
 				}
 			}
-			return false;
+			return false  != realnot;
 		}
 		else if(args.get(0).equals("poseitemtheme") && args.size() > 2)
 		{
@@ -2152,10 +2156,10 @@ public class ChanceIncHandler {
 				for(Item i : stuff)
 					if(Generic.containsTag(i.themes, lastarg))
 					{
-						return true;
+						return true  != realnot;
 					}
 			}
-			return false;
+			return false  != realnot;
 			
 	
 		}
@@ -2292,18 +2296,18 @@ public class ChanceIncHandler {
 		{
 
 			if(u.name.type.equals(lastarg))
-				return true;
+				return true  != realnot;
 			else
-				return false;
+				return false  != realnot;
 		}
 		else if(args.get(0).equals("race") && args.size() > 1)
 		{
 			if(u.race.name.toLowerCase().equals(args.get(args.size() - 2).toLowerCase()))
 			{
-				return true;
+				return true  != realnot;
 			}
 			else
-				return false;
+				return false  != realnot;
 		
 		}
 		else if(args.get(0).equals("prot") && args.size() >= 2)
@@ -2315,14 +2319,14 @@ public class ChanceIncHandler {
 			
 			if(!below && u.getTotalProt(true) >= Integer.parseInt(lastarg))
 			{
-				return true;
+				return true  != realnot;
 			}
 			else if(below && u.getTotalProt(true) < Integer.parseInt(lastarg))
 			{
-				return true;
+				return true  != realnot;
 			}
 			else
-				return false;
+				return false  != realnot;
 		
 		}
 		else if(args.get(0).equals("enc") && args.size() >= 2)
@@ -2337,14 +2341,14 @@ public class ChanceIncHandler {
 			
 			if(!below && enc >= Integer.parseInt(lastarg))
 			{
-				return true;
+				return true != realnot;
 			}
 			else if(below && enc < Integer.parseInt(lastarg))
 			{
-				return true;
+				return true != realnot;
 			}
 			else
-				return false;
+				return false != realnot;
 		
 			
 		}

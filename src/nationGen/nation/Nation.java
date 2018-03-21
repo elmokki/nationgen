@@ -164,15 +164,19 @@ public class Nation {
                 
 		races.add(race.getCopy());
 		
-		for(Command c : races.get(0).nationcommands)
-			this.handleCommand(commands, c);
 
 		// Add themes
 		addRaceThemes(races.get(0));
-		
+	
+		// Handle possible newly added racial commands
+		for(Command c : races.get(0).nationcommands)
+		{
+			this.handleCommand(commands, c);
+		}
+
 		// Add nation themes
 		addNationThemes();
-
+		
 		// Secondary race after themes since themes may affect it
 		allRaces.clear();
 		allRaces.addAll(nationGen.races);
@@ -638,7 +642,9 @@ public class Nation {
 					race.handleTheme(t);
 					possibleThemes.remove(t);
 					for(Command c : t.commands)
+					{
 						this.handleCommand(commands, c);
+					}
 					this.nationthemes.add(t);
 				}
 			}
@@ -1334,7 +1340,11 @@ public class Nation {
 				if(arg.startsWith("+") || arg.startsWith("-"))
 				{
 					if(arg.startsWith("+"))
+					{
 						arg = arg.substring(1);
+					}
+				
+					
 					
 					if(old != null && !uniques.contains(c.command))
 					{
@@ -1373,7 +1383,11 @@ public class Nation {
 		}	
 		else
 		{
-
+			// If there's no existing copy and the command starts with +, remove +.
+			if(c.args.size() > 0 && c.args.get(0).startsWith("+"))
+			{
+				c.args.set(0, c.args.get(0).substring(1));
+			}
 			commands.add(c);
 		}
 
