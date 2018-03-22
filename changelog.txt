@@ -1,3 +1,17 @@
+0.7.0-RC3 (?th of March 2018)
+----------------------------------------------------------
+
+Code
+----------------------------------------------------------
+- ...
+
+Content
+-----------------------------------------------------------
+- Minimal implementation of imperial nations; these are an incomplete WIP, but functional
+- Custom missiles and armors updated to reflect range/damage changes and #magic tags on armor
+
+
+
 0.7.0-RC2 (17th of March 2018)
 ----------------------------------------------------------
 
@@ -322,7 +336,7 @@ Content
 
 Code
 ----------------------------------------------------------
-- Custom spells were read in a manner where quotation marks were left missing on copyspell and name commands, resulting in a något gick fel
+- Custom spells were read in a manner where quotation marks were left missing on copyspell and name commands, resulting in a nÃ¥got gick fel
 
 0.6.14 (9th of July 2016)
 ----------------------------------------------------------
@@ -352,7 +366,7 @@ Code
 
 Content
 ----------------------------------------------------------
-- Wrong spell name for Summon Ujigami was causing något gick fel
+- Wrong spell name for Summon Ujigami was causing nÃ¥got gick fel
 
 
 0.6.13 (4th of July 2016)
@@ -774,10 +788,13 @@ version 0.5.0.03E (12th of November 2014)
 - reduced base stats for Amazon "metics": -1 to Att/Def/Mor/Gold - still better than militia, but no longer just "normal human" soldiers
 version 0.5.0.02E (5th of October 2014)
 - added predator/sobek lizard race
-- added #primaryraceonly to Amazon "metic" units, Machakan pygmies, markata, and predator lizard slaves
+
+- added #primaryraceonly to Amazon "metic" units, Machakan pygmies, markata, and predator lizard slaves
 - fixed typo with #makepearls in ./data/filters/
-- added #primaryraceonly command to exclude poses from generating as auxiliaries (there may still be bugs with commanders, but I think I got them all)
-- re-enabled Amazons (with stopgap mage hair solutions and mounted casters temporarily disabled)
+
+- added #primaryraceonly command to exclude poses from generating as auxiliaries (there may still be bugs with commanders, but I think I got them all)
+
+- re-enabled Amazons (with stopgap mage hair solutions and mounted casters temporarily disabled)
 version 0.5.0.01E (25th of September 2014)
 - fixed bug allowing for #fortera 4 to be assigned to nations
 - added additional naming data
