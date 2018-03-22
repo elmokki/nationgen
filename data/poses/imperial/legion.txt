@@ -224,3 +224,43 @@
 #forcedname "Standard"
 
 #endpose
+
+-------- Guard (elite)
+#newpose
+#name "corhors"
+#role "sacred infantry"
+#role "elite infantry"
+
+#basechance 1
+#cannot_be_pd
+#legion_rank2
+#sacred
+#elite
+
+#command "#gcost +5"
+#command "#hp +2"
+#command "#mor +3"
+#command "#att +2"
+#command "#def +2"
+#command "#prec +1"
+#command "#older +15"
+#command "#bodyguard +3"
+#theme bodyguard
+#theme veteran
+
+#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/imperial/legion/bases_regular.txt
+#load shadow /data/items/imperial/legion/shadow.txt
+#load hands /data/items/imperial/legion/hands_regular.txt
+
+#load armor /data/items/imperial/legion/armor_regular.txt
+#load helmet /data/items/imperial/legion/helmet_regular.txt
+
+#load weapon /data/items/imperial/legion/weapon_regular.txt
+
+#load offhand /data/items/imperial/legion/shields_regular.txt
+
+-- #forcedname "Guard"
+
+#endpose
