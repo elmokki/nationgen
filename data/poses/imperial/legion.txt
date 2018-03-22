@@ -2,7 +2,6 @@
 ----   Secondary race imperials will have a mix of different troop types including duplicates of these poses
 
 -------- Velite
-
 #newpose
 #name "velite"
 #role "infantry"
@@ -13,6 +12,9 @@
 #primaryraceonly
 #cannot_be_commander
 #legion_rank0
+
+#command "#skirmisher +1"
+#theme irregular
 
 #renderorder "shadow weapon underlay basesprite armor bonusweapon offhandw hands helmet offhanda"
 
@@ -37,7 +39,6 @@
 
 
 -------- Militia
-
 #newpose
 #name "milite"
 #role "infantry"
@@ -48,6 +49,8 @@
 #primaryraceonly
 #cannot_be_commander
 #legion_militia
+
+#command "#mapmove +2"
 
 #renderorder "shadow weapon underlay basesprite armor bonusweapon offhandw hands helmet offhanda"
 
@@ -70,7 +73,6 @@
 
 
 ------- Hastatus
-
 #newpose
 #name "hastatus"
 #role "infantry"
@@ -78,9 +80,14 @@
 #basechance 99999999
 #maxunits 1
 #maxvarieties 1
-#primaryraceonly
+-- #primaryraceonly
 #cannot_be_commander
 #legion_rank1
+
+
+#command "#gcost +1"
+#command "#mor +1"
+#command "#older +2"
 
 #renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
 
@@ -103,7 +110,6 @@
 #endpose
 
 -------- Principe
-
 #newpose
 #name "principe"
 #role "infantry"
@@ -114,6 +120,15 @@
 #primaryraceonly
 #cannot_be_pd
 #legion_rank2
+
+#command "#gcost +4"
+#command "#hp +1"
+#command "#mor +2"
+#command "#att +1"
+#command "#def +1"
+#command "#prec +1"
+#command "#older +15"
+#theme veteran
 
 #renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
 
@@ -134,7 +149,6 @@
 #endpose
 
 -------- Triarius
-
 #newpose
 #name "triarius"
 #role "infantry"
@@ -145,6 +159,17 @@
 #primaryraceonly
 #cannot_be_pd
 #legion_rank3
+
+#command "#gcost +5"
+#command "#hp +2"
+#command "#mor +3"
+#command "#att +2"
+#command "#def +2"
+#command "#prec +1"
+#command "#older +30"
+#command "#formationfighter +1"
+#theme formationfighter
+#theme veteran
 
 #renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
 
@@ -164,7 +189,6 @@
 #endpose
 
 -------- Standard
-
 #newpose
 #name "standard"
 #role "infantry"
@@ -176,6 +200,9 @@
 #cannot_be_commander
 #cannot_be_pd
 #legion_rank1
+
+#command "#older +5"
+#theme veteran
 
 #renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda shield"
 
