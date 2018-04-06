@@ -3,7 +3,7 @@
 #name "tusked one infantry"
 #role "infantry"
 
-#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow wings cloakb mount bag quiver basesprite shirt legs strap bonusweapon bling armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/enlightened/dantih/sacredbases.txt
 #load shadow /data/items/enlightened/dantih/shadow.txt
@@ -23,6 +23,9 @@
 #load offhand /data/items/enlightened/dantih/shields_elite.txt
 #load offhand /data/items/enlightened/dantih/offhand.txt
 
+#load bling /data/items/enlightened/dantih/bling.txt
+#generateitem 0.5 bling
+
 #generateitem 1 bonusweapon
 #endpose
 
@@ -33,7 +36,7 @@
 #name "tusked one archer"
 #role "ranged"
 
-#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap bonusweapon weapon quiver armor cloakf offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow wings cloakb mount bag quiver basesprite shirt legs strap bonusweapon bling weapon armor cloakf offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/enlightened/dantih/sacredbases.txt
 #load shadow /data/items/enlightened/dantih/shadow.txt
@@ -49,6 +52,9 @@
 
 #load weapon /data/items/enlightened/dantih/bows.txt -3 3
 #load bonusweapon /data/items/enlightened/dantih/archerweapon.txt
+
+#load bling /data/items/enlightened/dantih/bling.txt
+#generateitem 0.5 bling
 
 #load strap /data/items/enlightened/dantih/strap.txt
 #load quiver /data/items/enlightened/dantih/quiver.txt
