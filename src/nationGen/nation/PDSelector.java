@@ -313,8 +313,8 @@ public class PDSelector {
 		
 		if(rank < 1)
 			rank = 1;
-		if(rank > 2)
-			rank = 2;
+		if(rank > 4)
+			rank = 4;
 		
 		
 		List<List<Unit>> militia = new ArrayList<List<Unit>>();
@@ -413,7 +413,7 @@ public class PDSelector {
 			}
 			
 
-			if(rankunits.size() < 2)
+			while(rankunits.size() < 4)
 			{
 				//System.out.println("MILITIA PROBLEM - FAILSAFE INITIATED FOR RACE " + this.races.get(0).name + " NATION " + this.nationid);
 				rankunits.add(rankunits.get(0));

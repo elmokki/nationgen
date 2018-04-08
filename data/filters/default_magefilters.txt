@@ -516,6 +516,19 @@
 #end
 
 #new magefilter
+#name "sun awe"
+#basechance 0.1
+#command "#sunawe +1"
+#chanceinc personalmagic astral OR personalmagic fire 0.4
+#chanceinc personalmagic astral fire *2
+#chanceinc personalmagic holy *2
+#chanceinc personalmagic death -0.5
+#chanceinc personalmagic blood -0.5
+#chanceinc personalmagic astral death AND comparemagic astral above death *0
+#power 2
+#end
+
+#new magefilter
 #name "fear"
 #basechance 0.2
 #command "#fear +5"
@@ -704,8 +717,8 @@
 #new magefilter
 #name "warriormage"
 #basechance 0.25
-#chanceinc "posetag warriormage 0.25"
-#chanceinc "personalcommand mounted *2"
+#chanceinc posetag warriormage 0.25
+#chanceinc personalcommand mounted *2
 #command "#str +2"
 #command "#att +2"
 #command "#def +2"
@@ -717,10 +730,10 @@
 #new magefilter
 #name "combatcaster"
 #basechance 0
-#chanceinc "posetag warriormage 0.1"
-#chanceinc "prot 13 0.1"
-#chanceinc "personalcommand size above 3 0.1"
-#chanceinc "personalcommand mounted *2"
+#chanceinc posetag warriormage 0.1
+#chanceinc prot 13 0.1
+#chanceinc personalcommand size above 3 AND personalcommand not mounted 0.1
+#chanceinc personalcommand mounted *2
 #command "#combatcaster"
 #command "#att +1"
 #command "#def +1"

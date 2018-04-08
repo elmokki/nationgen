@@ -682,6 +682,22 @@
 #power 3
 #end
 
+#new magefilter
+#name "sun awe"
+#basechance 0.1
+#chanceinc magic astral OR magic fire 0.1
+#chanceinc magic astral fire 0.1
+#chanceinc "command #sunawe +1"
+#command "#sunawe +1"
+#command "#gcost +15"
+#command "#gcost *1.2"
+#price_per_command #hp 1 10
+#themeinc thisarmorprot 18 *0.125
+#themeinc thisarmorprot 15 *0.125
+#themeinc thisarmorprot 12 *0.125
+#power 3
+#end
+
 #new
 #name "regen10"
 #basechance 0.2
