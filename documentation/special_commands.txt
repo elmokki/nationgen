@@ -54,6 +54,10 @@ stacks multiplicatively.
 #startarmy_amountmulti <multi>
 PD/start army amount multiplier. These stack like the above commands. 
 
+#extrapdmulti <multi>
+Multiplies the probability of a nation having more than 2 units of PD units. Default chance is 0.2 for a 3nd unit, and 0.05 for a 4th iff there was
+already a 3rd unit. 
+
 #troopdescriptions <file>
 Uses this file (load files at /data/descriptions/descriptions.txt) for troop descriptions.
 
