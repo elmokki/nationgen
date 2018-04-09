@@ -519,12 +519,12 @@
 #name "sun awe"
 #basechance 0.1
 #command "#sunawe +1"
-#chanceinc personalmagic astral OR personalmagic fire 0.4
+#chanceinc personalmagic astral 0.4
+#chanceinc personalmagic fire 0.4
 #chanceinc personalmagic astral fire *2
 #chanceinc personalmagic holy *2
 #chanceinc personalmagic death -0.5
 #chanceinc personalmagic blood -0.5
-#chanceinc personalmagic astral death AND comparemagic astral above death *0
 #power 2
 #end
 
