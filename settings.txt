@@ -28,21 +28,21 @@ era 2
 -- 20 / (rescost + goldcost) * 10 * militiaMultiplier = amount of specified unit in militia
 militiaMultiplier 1.0
 
--- If resource is as treshold or above, change is applied
-resUpperTreshold 14
-resUpperTresholdChange -2
+-- If resource is as threshold or above, change is applied (but value will not be changed such that it would not have triggered the threshold)
+resUpperTreshold 10
+resUpperTresholdChange -6
 -- Same as above but for gold
-goldUpperTreshold 10
-goldUpperTresholdChange 0
+goldUpperTreshold 29
+goldUpperTresholdChange 10
 -- Above stuff but for lower bounds
-resLowerTreshold 10
-resLowerTresholdChange 0
-goldLowerTreshold 10
-goldLowerTresholdChange 0
+resLowerTreshold 6
+resLowerTresholdChange 3
+goldLowerTreshold 6
+goldLowerTresholdChange 3
 
--- Multiplies any resources above 10 by resMulti if rescost is at least at treshold
--- Done after the additive tresholds above.
-resMultiTreshold 10
+-- Multiplies any resources above threshold by resMulti if rescost is at least at threshold
+-- Done after the additive thresholds above.
+resMultiTreshold 16
 resMulti 0.7
 
 

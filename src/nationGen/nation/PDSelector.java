@@ -493,17 +493,26 @@ public class PDSelector {
 		int res = u.getResCost(true);
 		int gold = u.getGoldCost();
 		
-		if(res >= ng.settings.get("resUpperTreshold"))
+		if(res > ng.settings.get("resUpperTreshold") && ng.settings.get("resUpperTresholdChange") < 0)
+			res = Math.max((int)(res + ng.settings.get("resUpperTresholdChange")), (int)(0 + ng.settings.get("resUpperTreshold")));
+		else if(res > ng.settings.get("resUpperTreshold") && ng.settings.get("resUpperTresholdChange") > 0)
 			res += ng.settings.get("resUpperTresholdChange");
-		if(res <= ng.settings.get("resLowerTreshold"))
+		if(res < ng.settings.get("resLowerTreshold") && ng.settings.get("resLowerTresholdChange") > 0)
+			res = Math.min((int)(res + ng.settings.get("resLowerTresholdChange")), (int)(0 + ng.settings.get("resLowerTreshold")));
+		else if(res < ng.settings.get("resLowerTreshold") && ng.settings.get("resLowerTresholdChange") < 0)
 			res += ng.settings.get("resLowerTresholdChange");
-		if(gold >= ng.settings.get("goldUpperTreshold"))
+		if(gold > ng.settings.get("goldUpperTreshold") && ng.settings.get("goldUpperTresholdChange") < 0)
+			gold = Math.max((int)(gold + ng.settings.get("goldUpperTresholdChange")), (int)(0 + ng.settings.get("goldUpperTreshold")));
+		else if(gold > ng.settings.get("goldUpperTreshold") && ng.settings.get("goldUpperTresholdChange") > 0)
 			gold += ng.settings.get("goldUpperTresholdChange");
-		if(gold <= ng.settings.get("goldLowerTreshold"))
+		if(gold < ng.settings.get("goldLowerTreshold") && ng.settings.get("goldLowerTresholdChange") > 0)
+			gold = Math.min((int)(gold + ng.settings.get("goldLowerTresholdChange")), (int)(0 + ng.settings.get("goldLowerTreshold")));
+		else if(gold < ng.settings.get("goldLowerTreshold") && ng.settings.get("goldLowerTresholdChange") < 0)
 			gold += ng.settings.get("goldLowerTresholdChange");
 		
-		if(res >= ng.settings.get("resMultiTreshold"))
-			res *= ng.settings.get("resMulti");
+		
+		if(res > ng.settings.get("resMultiTreshold"))
+			res = (int)(ng.settings.get("resMultiTreshold") + (res - ng.settings.get("resMultiTreshold")) * ng.settings.get("resMulti"));
 		
 		// The higher the score, the smaller your starting army will be:
 		// 20 / (rescost + goldcost) * 10 * militiaMultiplier = amount of specified unit in militia
