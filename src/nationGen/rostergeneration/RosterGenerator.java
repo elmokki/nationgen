@@ -302,7 +302,7 @@ public class RosterGenerator {
 			
 				TroopTemplate t = this.chooseTemplate(race, roll);
 				Unit u = tgen.generateUnit(t);
-
+				
 				if(u != null)
 				{
 					target.add(u);
@@ -699,7 +699,7 @@ public class RosterGenerator {
 	
 	private double[] getChances(Race race)
 	{
-		double chances[] = {0.4, 1, 0.3, 0.125};
+		double chances[] = {0.66, 1, 0.3, 0.125};
 		String[] slots = {"ranged", "infantry", "mounted", "chariot"};
 		for(String tag : race.tags)
 		{
@@ -718,6 +718,7 @@ public class RosterGenerator {
 				{
 					chances[index] = Double.parseDouble(args.get(2));
 				}
+				
 			}
 			
 		}
