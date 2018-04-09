@@ -92,6 +92,19 @@
 #end
 
 #new magefilter
+#name "sun awe"
+#basechance 0.1
+#command "#sunawe +1"
+#chanceinc personalmagic astral 0.4
+#chanceinc personalmagic fire 0.4
+#chanceinc personalmagic astral fire *2
+#chanceinc personalmagic holy *2
+#chanceinc personalmagic death -0.5
+#chanceinc personalmagic blood -0.5
+#power 2
+#end
+
+#new magefilter
 #name "fear"
 #basechance 0.2
 #command "#fear +5"

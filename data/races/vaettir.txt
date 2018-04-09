@@ -38,6 +38,8 @@
 #unitcommand "#maxage 50"
 #unitcommand "#forestsurvival"
 -- Stealth is given on a per-pose basis as some mounted units aren't stealthy
+#unitcommand "#twiceborn 2190"
+-- Vaettir turn into draugs because it seems reasonable, mostly, even if the description is off
 
 #nationcommand "#idealcold +2"
 #gods europegods
@@ -57,7 +59,9 @@
 #magicpriority blood 4
 
 -- Typically just mooses, but still
-#monsterchance 0.5 
+#monsterchance 0.5
+
+#extrapdmulti 4
 
 #description "The Vaettir are a race of forest-dwelling goblins. They are small and stealthy and can hide in enemy territory."
 

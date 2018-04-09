@@ -111,6 +111,8 @@ public class Nation {
 	public Summary summary = new Summary(this);
 	
 	public BufferedImage flag = null;
+	
+	public int PDRanks = 2;
 
 	public Nation(NationGen ngen, int seed, int tempid, List restrictions)
 	{
@@ -571,6 +573,18 @@ public class Nation {
             generateSpells();
             generateFlag();	
             getStartAffinity();
+
+            double extraPDMulti = 1;
+    		if(Generic.containsTag(this.races.get(0).tags, "extrapdmulti"))
+    			extraPDMulti = Double.parseDouble(Generic.getTagValue(this.races.get(0).tags, "extrapdmulti"));
+
+            if(random.nextDouble() < 0.1 * extraPDMulti)
+            {
+            	if(random.nextDouble() < 0.02 * extraPDMulti)
+            		PDRanks = 4;
+            	else
+            		PDRanks = 3;
+            }
             
             //finalizeUnits();
 	}
@@ -1048,6 +1062,17 @@ public class Nation {
         tw.println("#defmult1 " + pds.getMilitiaAmount(pds.getMilitia(1, 1)));
         tw.println("#defunit1b " + pds.getIDforPD(pds.getMilitia(2, 1)));
         tw.println("#defmult1b " + pds.getMilitiaAmount(pds.getMilitia(2, 1)));
+        if(PDRanks > 2)
+        {
+            tw.println("#defunit1c " + pds.getIDforPD(pds.getMilitia(3, 1)));
+            tw.println("#defmult1c " + pds.getMilitiaAmount(pds.getMilitia(3, 1)));
+            
+            if(PDRanks > 3)
+            {
+                tw.println("#defunit1d " + pds.getIDforPD(pds.getMilitia(4, 1)));
+                tw.println("#defmult1d " + pds.getMilitiaAmount(pds.getMilitia(4, 1)));
+            }
+        }
         tw.println("#defcom2 " + pds.getIDforPD(pds.getPDCommander(2)));
         tw.println("#defunit2 " + pds.getIDforPD(pds.getMilitia(1, 2)));
         tw.println("#defmult2 " + pds.getMilitiaAmount(pds.getMilitia(1, 2)));

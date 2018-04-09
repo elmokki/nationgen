@@ -109,6 +109,20 @@
 #end
 
 #new magefilter
+#name "sun awe"
+#basechance 0.1
+#command "#sunawe +1"
+#command "#gcost *1.1"
+#chanceinc personalmagic fire 0.4
+#chanceinc personalmagic astral 0.4
+#chanceinc personalmagic astral fire *2
+#chanceinc personalmagic holy *2
+#chanceinc personalmagic death -0.5
+#chanceinc personalmagic blood -0.5
+#power 4
+#end
+
+#new magefilter
 #name "fear"
 #type "strongdefence"
 #basechance 0.2

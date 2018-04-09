@@ -168,6 +168,7 @@
 #racedefinition "#magicpriority fire 5"
 #racedefinition "#magicpriority astral 5"
 #racedefinition "#slaver"
+#racedefinition "#human"
 #endtheme
 
 -- Just humans
@@ -194,6 +195,7 @@
 #racedefinition "#magicpriority earth 2.5"
 #racedefinition "#magicpriority fire 5"
 #racedefinition "#magicpriority astral 7.5"
+#racedefinition "#human"
 #endtheme
 
 
@@ -243,10 +245,9 @@
 #themeinc theme naked *1
 #themeinc theme primitive *0.1
 #themeinc theme imperial *10000
-#racedefinition "#tag 'imperial'"
-#tag "imperial"
+#racedefinition #imperial
+#racedefinition "#extrapdmulti 6"
+#theme imperial
 #endtheme
 
 -- TODO: predator lizard slaves social theme?
-
--- TODO: imperial human colonization social theme? Addendum TODO: make imperial humans :p

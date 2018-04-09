@@ -29,7 +29,7 @@
 
 #newitem
 #id greataxe_bronze
-#gameid bronzebattleaxe
+#gameid 698
 #sprite /graphics/monkey/weapon/vanara/battleaxe_bronze.png
 #theme "imperial"
 #theme "enlightened"
@@ -101,11 +101,29 @@
 #enditem
 
 #newitem
+#id short_trident
+#gameid 679
+#sprite /graphics/monkey/weapon/vanara/trident.png
+#theme "imperial"
+#theme "iron"
+#theme formationfighter
+#enditem
+
+#newitem
 #id trident
 #gameid 3
 #sprite /graphics/monkey/weapon/vanara/trident.png
 #theme "imperial"
 #theme "iron"
+#theme formationfighter
+#enditem
+
+#newitem
+#id short_trident_bronze
+#gameid 680
+#sprite /graphics/monkey/weapon/vanara/trident_bronze.png
+#theme "imperial"
+#theme "bronze"
 #theme formationfighter
 #enditem
 
