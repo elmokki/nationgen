@@ -578,13 +578,14 @@ public class Nation {
     		if(Generic.containsTag(this.races.get(0).tags, "extrapdmulti"))
     			extraPDMulti = Double.parseDouble(Generic.getTagValue(this.races.get(0).tags, "extrapdmulti"));
 
-            if(random.nextDouble() < 0.1 * extraPDMulti)
+    		//PD ranks will always equal 2 right now, as there is a serious bug in Dom5 when land PD has more than 2 ranks
+            /*if(random.nextDouble() < 0.1 * extraPDMulti)
             {
             	if(random.nextDouble() < 0.02 * extraPDMulti)
             		PDRanks = 4;
             	else
             		PDRanks = 3;
-            }
+            }*/
             
             //finalizeUnits();
 	}
