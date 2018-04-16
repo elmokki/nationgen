@@ -1,0 +1,168 @@
+-- Nothing
+
+#newitem
+#id none
+#gameid -1
+#basechance 4
+#armor
+#theme "primitive"
+#theme "naked"
+#theme "militia"
+#enditem
+
+#newitem
+#id none
+#gameid -1
+#basechance 2
+#armor
+#tag "eliteversion cap_gold"
+#theme "primitive"
+#theme "naked"
+#theme "militia"
+#enditem
+
+#newitem
+#id none_iron
+#gameid -1
+#basechance 2
+#eliteversion ironcap_gilt
+#eliteversion cap_gold
+#armor
+#theme "iron"
+#theme "militia"
+#enditem
+
+#newitem
+#id none_bronze
+#gameid -1
+#basechance 2
+#eliteversion bronzecap_gilt
+#eliteversion cap_gold
+#armor
+#theme "bronze"
+#theme "militia"
+#enditem
+
+
+-- Enlightened helms
+
+#newitem
+#id bronzecap
+#gameid 135
+#sprite /graphics/enlightened/dantih/helmet/cap_bronze.png
+#eliteversion bronzecap_gilt
+#eliteversion halfhelmet_bronze
+#eliteversion cone_bronze
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id bronzecap_gilt
+#gameid 135
+#sprite /graphics/enlightened/dantih/helmet/cap_gilt.png
+#eliteversion halfhelmet_bronze_gilt
+#eliteversion cone_gold
+#armor
+#theme "elite"
+#theme "bronze"
+#enditem
+
+#newitem
+#id cone_bronze
+#gameid 135
+#sprite /graphics/enlightened/dantih/helmet/caster/crown_copper.png
+#eliteversion cone_gold
+#armor
+#theme "elite"
+#theme "bronze"
+#enditem
+
+#newitem
+#id ironcap
+#gameid 20
+#sprite /graphics/enlightened/dantih/helmet/cap_iron.png
+#eliteversion ironcap_gilt
+#eliteversion halfhelmet_iron
+#eliteversion cone_iron
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#id ironcap_gilt
+#gameid 20
+#sprite /graphics/enlightened/dantih/helmet/cap_gilt.png
+#eliteversion halfhelmet_iron_gilt
+#eliteversion cone_gold
+#armor
+#elite
+#theme "elite"
+#theme "iron"
+#enditem
+
+#newitem
+#id cone_iron
+#gameid 20
+#sprite /graphics/enlightened/dantih/helmet/caster/crown_iron.png
+#eliteversion cone_gold
+#armor
+#theme "elite"
+#theme "iron"
+#enditem
+
+#newitem
+#id halfhelmet_iron
+#gameid 118
+#sprite /graphics/enlightened/dantih/helmet/halfhelm_iron.png
+#eliteversion halfhelmet_iron_gilt
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#id halfhelmet_bronze
+#gameid bronzehalfhelmet
+#sprite /graphics/enlightened/dantih/helmet/halfhelm_iron.png
+#eliteversion halfhelmet_bronze_gilt
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id halfhelmet_iron_gilt
+#gameid 118
+#sprite /graphics/enlightened/dantih/helmet/halfhelm_gilt.png
+#eliteversion cone_gold
+#armor
+#theme "elite"
+#theme "iron"
+#enditem
+
+#newitem
+#id halfhelmet_bronze_gilt
+#gameid bronzehalfhelmet
+#sprite /graphics/enlightened/dantih/helmet/halfhelm_gilt.png
+#eliteversion cone_gold
+#armor
+#theme "elite"
+#theme "bronze"
+#enditem
+
+#newitem
+#id cap_gold
+#gameid 148
+#sprite /graphics/enlightened/dantih/helmet/caster/crown_gold_small.png
+#eliteversion cone_gold
+#armor
+#theme "elite"
+#enditem
+
+#newitem
+#id cone_gold
+#gameid 148
+#sprite /graphics/enlightened/dantih/helmet/caster/crown_gold.png
+#eliteversion cone_gold
+#armor
+#theme "elite"
+#enditem
