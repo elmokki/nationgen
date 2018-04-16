@@ -1,107 +1,89 @@
 #newitem
 #id battleaxe_iron
 #gameid 18
-#sprite /graphics/enlightened/naga/weapon/battleaxe.png
-#eliteversion battleaxe_iron_elite
+#sprite /graphics/enlightened/dantih/weapon/battleaxe.png
+#eliteversion battleaxe_iron_gilt
 #theme iron
+#needs hands hand_2h
 #enditem
 
 #newitem
-#id battleaxe_iron_elite
+#id battleaxe_iron_gilt
 #gameid 18
-#sprite /graphics/enlightened/naga/weapon/battleaxe_gold.png
+#sprite /graphics/enlightened/dantih/weapon/battleaxe_gilt.png
 #theme elite
 #theme iron
+#needs hands hand_2h
 #enditem
 
 #newitem
 #id battleaxe_bronze
 #gameid 698
-#sprite /graphics/enlightened/naga/weapon/battleaxe_bronze.png
-#eliteversion battleaxe_bronze_elite
+#sprite /graphics/enlightened/dantih/weapon/battleaxe_bronze.png
+#eliteversion battleaxe_bronze_gilt
 #theme bronze
+#needs hands hand_2h
 #enditem
 
 #newitem
-#id battleaxe_bronze_elite
+#id battleaxe_bronze_gilt
 #gameid 698
-#sprite /graphics/enlightened/naga/weapon/battleaxe_gold.png
+#sprite /graphics/enlightened/dantih/weapon/battleaxe_gilt.png
 #theme elite
 #theme bronze
-#enditem
-
-#newitem
-#id flail_iron
-#gameid 16
-#sprite /graphics/enlightened/naga/weapon/flail.png
-#eliteversion battleaxe_iron_elite
-#theme iron
-#theme advanced
-#enditem
-
-#newitem
-#id flail_iron_elite
-#gameid 16
-#sprite /graphics/enlightened/naga/weapon/flail_gold.png
-#theme elite
-#theme iron
-#theme advanced
-#enditem
-
-#newitem
-#id flail_bronze
-#gameid 16
-#sprite /graphics/enlightened/naga/weapon/flail_bronze.png
-#eliteversion flail_bronze_elite
-#theme bronze
-#theme advanced
-#enditem
-
-#newitem
-#id flail_bronze_elite
-#gameid 16
-#sprite /graphics/enlightened/naga/weapon/flail_gold.png
-#theme elite
-#theme bronze
-#theme advanced
+#needs hands hand_2h
 #enditem
 
 #id cudgel_iron
 #gameid 363
-#sprite /graphics/enlightened/naga/weapon/ironcudgel.png
-#eliteversion cudgel_gold
+#sprite /graphics/enlightened/dantih/weapon/cudgel_iron.png
+#eliteversion cudgel_gilt
 #theme iron
 #theme primitive
+#needs hands hand_2h
 #enditem
 
 #newitem
-#id cudgel_gold
+#id cudgel_gilt
 #gameid 363
-#sprite /graphics/enlightened/naga/weapon/goldcudgel.png
+#sprite /graphics/enlightened/dantih/weapon/cudgel_gilt.png
 #theme elite
 #theme iron
 #theme primitive
+#needs hands hand_2h
 #enditem
 
 #newitem
 #id maul
 #gameid 14
-#sprite /graphics/enlightened/naga/weapon/maul.png
+#sprite /graphics/enlightened/dantih/weapon/caster/maul.png
 #theme primitive
 #enditem
 
 #newitem
 #id greatclub
 #gameid 165
-#sprite /graphics/enlightened/naga/weapon/greatclub.png
+#sprite /graphics/enlightened/dantih/weapon/greatclub.png
 #theme wood
 #theme primitive
+#eliteversion log
+#needs hands hand_2h
+#enditem
+
+#newitem
+#id log
+#gameid giantlog
+#sprite /graphics/enlightened/dantih/weapon/caster/log.png
+#theme wood
+#theme primitive
+#theme elite
 #enditem
 
 #newitem
 #id quarterstaff
 #gameid 7
-#sprite /graphics/enlightened/naga/weapon/quarterstaff.png
+#sprite /graphics/enlightened/dantih/weapon/caster/staff_wood_light.png
 #theme wood
 #theme primitive
+#basechance 0.5
 #enditem

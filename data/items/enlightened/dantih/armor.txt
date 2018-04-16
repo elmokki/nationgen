@@ -1,7 +1,7 @@
 -- Nada
 #newitem
 #name "nothing"
-#basechance 2
+#basechance 4
 #gameid -1
 #armor
 #theme naked
@@ -9,13 +9,72 @@
 #milita
 #enditem
 
+-- Furs
+#newitem
+#name "furs"
+#basechance 2
+#gameid 44
+#armor
+#needs shirt noshirt
+#theme primitive
+#milita
+#enditem
+
+
+--- Ring
+#newitem
+#name "ring cuirass"
+#gameid 7
+#sprite /graphics/enlightened/dantih/armor/ringcuirass_iron.png
+#recolormask /graphics/enlightened/dantih/armor/ring_enlightened_recolormask.png
+#armor
+#theme "iron"
+#theme "leather"
+#eliteversion "ring hauberk"
+#enditem
+
+#newitem
+#name "ring hauberk"
+#gameid 12
+#sprite /graphics/enlightened/dantih/armor/ringhauberk_iron.png
+#recolormask /graphics/enlightened/dantih/armor/ring_enlightened_recolormask.png
+#armor
+#theme "iron"
+#theme "leather"
+#eliteversion "ring hauberk"
+#enditem
+
+#newitem
+#name "bronze ring cuirass"
+#gameid 142
+#sprite /graphics/enlightened/dantih/armor/ringcuirass_bronze.png
+#recolormask /graphics/enlightened/dantih/armor/ring_enlightened_recolormask.png
+#armor
+#theme "bronze"
+#theme "leather"
+#eliteversion "bronze ring cuirass"
+#enditem
+
+#newitem
+#name "bronze ring hauberk"
+#gameid 136
+#sprite /graphics/enlightened/dantih/armor/ringhauberk_bronze.png
+#recolormask /graphics/enlightened/dantih/armor/ring_enlightened_recolormask.png
+#armor
+#theme "bronze"
+#theme "leather"
+#eliteversion "bronze ring hauberk"
+#enditem
+
 
 --- Scale
 #newitem
 #name "scale cuirass"
 #gameid 7
-#sprite /graphics/enlightened/naga/armor/scalecuirass_iron.png
+#sprite /graphics/enlightened/dantih/armor/scalecuirass_enlightened_iron.png
+#recolormask /graphics/enlightened/dantih/armor/scale_enlightened_recolormask.png
 #armor
+#needs shirt noshirt
 #theme "iron"
 #eliteversion "elite scale cuirass"
 #enditem
@@ -23,17 +82,22 @@
 #newitem
 #name "elite scale cuirass"
 #gameid 7
-#sprite /graphics/enlightened/naga/armor/scalecuirass_gilt.png
+#sprite /graphics/enlightened/dantih/armor/scalecuirass_enlightened_gilt.png
+#recolormask /graphics/enlightened/dantih/armor/scale_enlightened_recolormask.png
 #armor
+#needs shirt noshirt
 #theme "iron"
 #theme "elite"
+#eliteversion "elite scale hauberk"
 #enditem
 
 #newitem
 #name "scale hauberk"
 #gameid 12
-#sprite /graphics/enlightened/naga/armor/scalehauberk_iron.png
+#sprite /graphics/enlightened/dantih/armor/scalehauberk_enlightened_iron.png
+#recolormask /graphics/enlightened/dantih/armor/scale_enlightened_recolormask.png
 #armor
+#needs shirt noshirt
 #theme "iron"
 #eliteversion "elite scale hauberk"
 #enditem
@@ -41,8 +105,10 @@
 #newitem
 #name "elite scale hauberk"
 #gameid 12
-#sprite /graphics/enlightened/naga/armor/scalehauberk_gilt.png
+#sprite /graphics/enlightened/dantih/armor/scalehauberk_enlightened_gilt.png
+#recolormask /graphics/enlightened/dantih/armor/scale_enlightened_recolormask.png
 #armor
+#needs shirt noshirt
 #theme "iron"
 #theme "elite"
 #enditem
@@ -50,8 +116,10 @@
 #newitem
 #name "bronze scale cuirass"
 #gameid 142
-#sprite /graphics/enlightened/naga/armor/scalecuirass_bronze.png
+#sprite /graphics/enlightened/dantih/armor/scalecuirass_enlightened_bronze.png
+#recolormask /graphics/enlightened/dantih/armor/scale_enlightened_recolormask.png
 #armor
+#needs shirt noshirt
 #theme "bronze"
 #eliteversion "elite bronze scale cuirass"
 #enditem
@@ -59,17 +127,22 @@
 #newitem
 #name "elite bronze scale cuirass"
 #gameid 142
-#sprite /graphics/enlightened/naga/armor/scalecuirass_gilt.png
+#sprite /graphics/enlightened/dantih/armor/scalecuirass_enlightened_gilt.png
+#recolormask /graphics/enlightened/dantih/armor/scale_enlightened_recolormask.png
 #armor
+#needs shirt noshirt
 #theme "bronze"
 #theme "elite"
+#eliteversion "elite bronze scale hauberk"
 #enditem
 
 #newitem
 #name "bronze scale hauberk"
 #gameid 136
-#sprite /graphics/enlightened/naga/armor/scalehauberk_bronze.png
+#sprite /graphics/enlightened/dantih/armor/scalehauberk_enlightened_bronze.png
+#recolormask /graphics/enlightened/dantih/armor/scale_enlightened_recolormask.png
 #armor
+#needs shirt noshirt
 #theme "bronze"
 #eliteversion "elite bronze scale hauberk"
 #enditem
@@ -77,10 +150,64 @@
 #newitem
 #name "elite bronze scale hauberk"
 #gameid 136
-#sprite /graphics/enlightened/naga/armor/scalehauberk_gilt.png
+#sprite /graphics/enlightened/dantih/armor/scalehauberk_enlightened_gilt.png
+#recolormask /graphics/enlightened/dantih/armor/scale_enlightened_recolormask.png
 #armor
+#needs shirt noshirt
 #theme "bronze"
 #theme "elite"
+#enditem
+
+--- Chain
+#newitem
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/enlightened/dantih/armor/chaincuirass_enlightened.png
+#recolormask /graphics/enlightened/dantih/armor/chaincuirass_enlightened_recolormask.png
+#armor
+#needs shirt noshirt
+#theme "iron"
+#theme "advanced"
+#eliteversion "chain hauberk"
+#eliteversion "elite chain cuirass"
+#enditem
+
+#newitem
+#name "elite chain cuirass"
+#gameid 13
+#sprite /graphics/enlightened/dantih/armor/chaincuirass_enlightened_plated.png
+#recolormask /graphics/enlightened/dantih/armor/chaincuirass_enlightened_recolormask.png
+#armor
+#needs shirt noshirt
+#theme "iron"
+#theme "advanced"
+#theme "elite"
+#eliteversion "elite chain hauberk"
+#enditem
+
+#newitem
+#name "chain hauberk"
+#gameid 12
+#sprite /graphics/enlightened/dantih/armor/chainhauberk_enlightened.png
+#recolormask /graphics/enlightened/dantih/armor/chainhauberk_enlightened_recolormask.png
+#armor
+#needs shirt noshirt
+#theme "iron"
+#theme "advanced"
+#eliteversion "elite chain hauberk"
+#enditem
+
+#newitem
+#name "elite chain hauberk"
+#gameid 18
+#sprite /graphics/enlightened/dantih/armor/chainhauberk_enlightened_plated.png
+#recolormask /graphics/enlightened/dantih/armor/chainhauberk_enlightened_recolormask.png
+#armor
+#needs shirt noshirt
+#theme "iron"
+#theme "advanced"
+#theme "elite"
+#eliteversion "elite chain hauberk"
 #enditem
 
 
@@ -88,7 +215,7 @@
 #newitem
 #name "plate cuirass"
 #gameid 9
-#sprite /graphics/enlightened/naga/armor/platecuirass_iron.png
+#sprite /graphics/enlightened/dantih/armor/scalecuirass_iron.png
 #armor
 #theme "iron"
 #eliteversion "elite plate cuirass"
@@ -97,7 +224,7 @@
 #newitem
 #name "elite plate cuirass"
 #gameid 9
-#sprite /graphics/enlightened/naga/armor/platecuirass_gilt.png
+#sprite /graphics/enlightened/dantih/armor/scalecuirass_gilt.png
 #armor
 #theme "iron"
 #theme "elite"
@@ -106,8 +233,10 @@
 #newitem
 #name "plate hauberk"
 #gameid 14
-#sprite /graphics/enlightened/naga/armor/platehauberk_iron.png
+#sprite /graphics/enlightened/dantih/armor/platehauberk_enlightened_iron.png
+#recolormask /graphics/enlightened/dantih/armor/platehauberk_enlightened_recolormask.png
 #armor
+#needs shirt noshirt
 #theme "iron"
 #eliteversion "elite plate hauberk"
 #enditem
@@ -115,8 +244,10 @@
 #newitem
 #name "elite plate hauberk"
 #gameid 14
-#sprite /graphics/enlightened/naga/armor/platehauberk_gilt.png
+#sprite /graphics/enlightened/dantih/armor/platehauberk_enlightened_gilt.png
+#recolormask /graphics/enlightened/dantih/armor/platehauberk_enlightened_recolormask.png
 #armor
+#needs shirt noshirt
 #theme "iron"
 #theme "elite"
 #enditem
@@ -124,7 +255,7 @@
 #newitem
 #name "bronze plate cuirass"
 #gameid 100
-#sprite /graphics/enlightened/naga/armor/platecuirass_bronze.png
+#sprite /graphics/enlightened/dantih/armor/scalecuirass_bronze.png
 #armor
 #theme "bronze"
 #eliteversion "elite bronze plate cuirass"
@@ -133,7 +264,7 @@
 newitem
 #name "elite bronze plate cuirass"
 #gameid 100
-#sprite /graphics/enlightened/naga/armor/platecuirass_gilt.png
+#sprite /graphics/enlightened/dantih/armor/scalecuirass_gilt.png
 #armor
 #theme "bronze"
 #theme "elite"
@@ -142,8 +273,10 @@ newitem
 #newitem
 #name "bronze plate hauberk"
 #gameid 101
-#sprite /graphics/enlightened/naga/armor/platehauberk_bronze.png
+#sprite /graphics/enlightened/dantih/armor/platehauberk_enlightened_bronze.png
+#recolormask /graphics/enlightened/dantih/armor/platehauberk_enlightened_recolormask.png
 #armor
+#needs shirt noshirt
 #theme "bronze"
 #eliteversion "elite bronze plate hauberk"
 #enditem
@@ -151,8 +284,10 @@ newitem
 #newitem
 #name "elite bronze plate hauberk"
 #gameid 101
-#sprite /graphics/enlightened/naga/armor/platehauberk_gilt.png
+#sprite /graphics/enlightened/dantih/armor/platehauberk_enlightened_gilt.png
+#recolormask /graphics/enlightened/dantih/armor/platehauberk_enlightened_recolormask.png
 #armor
+#needs shirt noshirt
 #theme "bronze"
 #theme "elite"
 #enditem

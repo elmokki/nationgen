@@ -3,9 +3,9 @@
 #name "tusked one infantry"
 #role "infantry"
 
-#renderorder "shadow wings cloakb mount bag quiver basesprite shirt legs strap bonusweapon bling armor cloakf weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow cloakb quiver bonusweapon basesprite shirt bling weapon armor cloakf offhandw hands helmet offhanda"
 
-#load basesprite /data/items/enlightened/dantih/sacredbases.txt
+#load basesprite /data/items/enlightened/dantih/bases.txt
 #load shadow /data/items/enlightened/dantih/shadow.txt
 
 #load hands /data/items/enlightened/dantih/hands.txt
@@ -13,20 +13,20 @@
 #load cloakf /data/items/enlightened/dantih/cloakf.txt
 #load cloakb /data/items/enlightened/dantih/cloakb.txt
 
-#load armor /data/items/enlightened/dantih/sacredarmor.txt
+#load armor /data/items/enlightened/dantih/armor.txt
 #load shirt /data/items/enlightened/dantih/shirt.txt
 #load helmet /data/items/enlightened/dantih/helmet.txt
+#generateitem 1 shirt
 
 #load weapon /data/items/enlightened/dantih/weapon.txt
-#load bonusweapon /data/items/enlightened/dantih/bonusranged.txt 0 1
+#load bonusweapon /data/items/enlightened/dantih/sacredwings.txt
 
-#load offhand /data/items/enlightened/dantih/shields_elite.txt
+#load offhand /data/items/enlightened/dantih/shield.txt
 #load offhand /data/items/enlightened/dantih/offhand.txt
 
 #load bling /data/items/enlightened/dantih/bling.txt
 #generateitem 0.5 bling
 
-#generateitem 1 bonusweapon
 #endpose
 
 
@@ -36,9 +36,9 @@
 #name "tusked one archer"
 #role "ranged"
 
-#renderorder "shadow wings cloakb mount bag quiver basesprite shirt legs strap bonusweapon bling weapon armor cloakf offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow cloakb quiver bonusweapon basesprite shirt bling weapon armor cloakf offhandw hands helmet offhanda"
 
-#load basesprite /data/items/enlightened/dantih/sacredbases.txt
+#load basesprite /data/items/enlightened/dantih/bases.txt
 #load shadow /data/items/enlightened/dantih/shadow.txt
 
 #load hands /data/items/enlightened/dantih/hands.txt
@@ -46,17 +46,18 @@
 #load cloakf /data/items/enlightened/dantih/cloakf.txt
 #load cloakb /data/items/enlightened/dantih/cloakb.txt
 
-#load armor /data/items/enlightened/dantih/sacredarmor.txt
+#load armor /data/items/enlightened/dantih/armor.txt
 #load shirt /data/items/enlightened/dantih/shirt.txt
 #load helmet /data/items/enlightened/dantih/helmet.txt
+#generateitem 1 shirt
 
-#load weapon /data/items/enlightened/dantih/bows.txt -3 3
-#load bonusweapon /data/items/enlightened/dantih/archerweapon.txt
+#load weapon /data/items/enlightened/dantih/weapon_ranged.txt
+#load bonusweapon /data/items/enlightened/dantih/rangedmelee.txt
+#load bonusweapon /data/items/enlightened/dantih/sacredwings.txt
 
 #load bling /data/items/enlightened/dantih/bling.txt
 #generateitem 0.5 bling
 
-#load strap /data/items/enlightened/dantih/strap.txt
 #load quiver /data/items/enlightened/dantih/quiver.txt
 #generateitem 1 bonusweapon
 #endpose
