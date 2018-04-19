@@ -1,0 +1,78 @@
+-- Nada
+#newitem
+#name "nothing"
+#basechance 6
+#gameid -1
+#armor
+#theme naked
+#theme primitive
+#enditem
+
+#newitem
+#name "pants"
+#basechance 3
+#sprite /graphics/enlightened/dantih/pants_youth.png
+#recolormask self
+#gameid -1
+#armor
+#theme naked
+#enditem
+
+#newitem
+#name "shirt"
+#basechance 3
+#sprite /graphics/enlightened/dantih/shirt_youth.png
+#recolormask self
+#gameid -1
+#armor
+#theme naked
+#theme "advanced"
+#enditem
+
+-- Armor
+
+#newitem
+#name "leather cuirass"
+#gameid 5
+#sprite /graphics/enlightened/dantih/shirt_youth.png
+#recolormask self
+#armor
+#theme "leather"
+#enditem
+
+#newitem
+#name "ring cuirass"
+#gameid 6
+#sprite /graphics/enlightened/dantih/shirt_youth.png
+#recolormask self
+#armor
+#theme "leather"
+#enditem
+
+#newitem
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/enlightened/dantih/shirt_youth.png
+#recolormask self
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "bronze scale cuirass"
+#gameid 142
+#sprite /graphics/enlightened/dantih/shirt_youth.png
+#recolormask self
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/enlightened/dantih/shirt_youth.png
+#recolormask self
+#armor
+#theme "iron"
+#theme "advanced"
+#enditem
