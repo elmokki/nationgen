@@ -2,6 +2,8 @@
 #newpose
 #name "tusked one infantry"
 #role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
 
 #renderorder "shadow cloakb quiver bonusweapon basesprite shirt bling weapon armor cloakf offhandw hands helmet offhanda"
 
@@ -36,6 +38,8 @@
 #newpose
 #name "tusked one archer"
 #role "ranged"
+#role "elite ranged"
+#role "sacred ranged"
 
 #renderorder "shadow cloakb quiver bonusweapon basesprite shirt bling weapon armor cloakf offhandw hands helmet offhanda"
 
@@ -61,4 +65,37 @@
 
 #load quiver /data/items/enlightened/dantih/quiver.txt
 #generateitem 1 bonusweapon
+#endpose
+
+
+-------- Skirmishers
+#newpose
+#name "tusked one youths"
+#role "infantry"
+#role "scout"
+
+#command "#skirmisher +1"
+#theme irregular
+
+#basechance 0.1
+
+#renderorder "shadow cloakb quiver bonusweapon basesprite shirt bling weapon armor cloakf offhandw hands helmet offhanda"
+
+#load basesprite /data/items/enlightened/dantih/youth/bases.txt
+#load shadow /data/items/enlightened/dantih/youth/shadow.txt
+
+#load hands /data/items/enlightened/dantih/youth/hands.txt
+
+#load cloakf /data/items/enlightened/dantih/youth/cloakf.txt
+#load cloakb /data/items/enlightened/dantih/youth/cloakb.txt
+
+#load armor /data/items/enlightened/dantih/youth/armor.txt
+
+#load weapon /data/items/enlightened/dantih/youth/weapon.txt
+#load bonusweapon /data/items/enlightened/dantih/youth/bonusweapon.txt
+#load offhand /data/items/enlightened/dantih/youth/offhand.txt
+
+#maxvarieties 1
+#maxunits 1
+
 #endpose
