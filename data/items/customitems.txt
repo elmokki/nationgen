@@ -344,11 +344,44 @@
 #command "#range -1"
 #command "#ammo 2"
 #command "#rcost 2"
-#command "#flyspr 411 1"
+#command "#flyspr 411 4"
 #command "#name 'Bronze Throwing Hatchet'"
 #command "#slash"
 #end
 
+#new customweapon
+#name bronzechakram
+#command "#dmg 3"
+#command "#range -1"
+#command "#ammo 2"
+#command "#rcost 2"
+#command "#flyspr 442 1"
+#command "#name 'Bronze Chakram'"
+#command "#slash"
+#end
+
+#new customweapon
+#name bronzechakram_multi
+#command "#dmg 3"
+#command "#range -1"
+#command "#ammo 6"
+#command "#rcost 6"
+#command "#flyspr 442 1"
+#command "#name 'Bronze Chakram'"
+#command "#slash"
+#end
+
+
+#new customweapon
+#name ironchakram_multi
+#command "#dmg 4"
+#command "#range -1"
+#command "#ammo 6"
+#command "#rcost 6"
+#command "#flyspr 442 1"
+#command "#name 'Chakram'"
+#command "#slash"
+#end
 
 --- Generic (and slightly nerfed) black steel armor
 #new customarmor
