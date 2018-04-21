@@ -1,1057 +1,684 @@
--- Just jewelery
-
 #newitem
-#id bellychains_gold
+#id naked
 #gameid -1
 #armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold.png
-#eliteversion bracelets_bellychains_gold
-#eliteversion necklace_bellychains_gold
-#eliteversion bellychains_gold_white
-#eliteversion bellychains_gold_grey
-#eliteversion bellychains_gold_black
+#basechance 3
 #tier 1
 #notfortier 2
 #notfortier 3
+#theme primitive
+#theme naked
 #enditem
 
 #newitem
-#id bracelets_gold
+#id pants_black
 #gameid -1
+#sprite /graphics/enlightened/dantih/pants_dark.png
+#eliteversion pants_dark
 #armor
-#sprite /graphics/enlightened/naga/armor/caster/bracelets_gold.png
-#eliteversion necklace_bracelets_gold
-#eliteversion bracelets_bellychains_gold
 #tier 1
 #notfortier 2
 #notfortier 3
+#theme naked
 #enditem
 
 #newitem
-#id bracelets_silver
+#id pants_grey
 #gameid -1
+#sprite /graphics/enlightened/dantih/pants_medium.png
+#eliteversion pants_medium
 #armor
-#sprite /graphics/enlightened/naga/armor/caster/bracelets_silver.png
-#eliteversion necklace_bracelets_silver
 #tier 1
 #notfortier 2
 #notfortier 3
+#theme naked
 #enditem
 
 #newitem
-#id bracelets_bellychains_gold
+#id pants_white
 #gameid -1
+#sprite /graphics/enlightened/dantih/pants_light.png
+#eliteversion pants_light
 #armor
-#sprite /graphics/enlightened/naga/armor/caster/bracelets_bellychains_gold.png
-#eliteversion necklace_bracelets_bellychains_gold
-#eliteversion bracelets_bellychains_gold_white
-#eliteversion bracelets_bellychains_gold_grey
-#eliteversion bracelets_bellychains_gold_black
-#tier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id necklace_bellychains_gold
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/necklace_bellychains_gold.png
-#eliteversion necklace_bracelets_bellychains_gold
-#tier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id necklace_bracelets_gold
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/necklace_bracelets_gold.png
-#eliteversion necklace_bracelets_bellychains_gold
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id necklace_bracelets_silver
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/necklace_bracelets_silver.png
-#eliteversion necklaces_bracelets_silver
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id necklace_bracelets_bellychains_gold
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/necklace_bracelets_bellychains_gold.png
-#eliteversion necklace_bracelets_bellychains_gold_white
-#eliteversion necklace_bracelets_bellychains_gold_grey
-#eliteversion necklace_bracelets_bellychains_gold_black
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-#newitem
-#id necklaces_bracelets_gold
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/necklaces_bracelets_gold.png
-#eliteversion necklace_bracelets_bellychains_gold
-#notfortier 1
-#notfortier 2
-#tier 3
-#enditem
-
-#newitem
-#id necklaces_bracelets_silver
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/necklaces_bracelets_silver.png
-#notfortier 1
-#notfortier 2
-#tier 3
-#enditem
-
-
-
--- Bellycloths without jewelery
-
-#newitem
-#id cloth_white
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_white.png
-#eliteversion bellychains_gold_white
-#eliteversion cloth_faint
-#eliteversion cloth_pale
 #tier 1
 #notfortier 2
 #notfortier 3
+#theme naked
 #enditem
 
 #newitem
-#id cloth_grey
+#id pants_dark
+#gameid -1
+#sprite /graphics/enlightened/dantih/pants_dark.png
+#recolormask /graphics/enlightened/dantih/pants_recolormask.png
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#theme naked
+#enditem
+
+#newitem
+#id pants_medium
+#gameid -1
+#sprite /graphics/enlightened/dantih/pants_medium.png
+#recolormask /graphics/enlightened/dantih/pants_recolormask.png
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#theme naked
+#enditem
+
+#newitem
+#id pants_light
+#gameid -1
+#sprite /graphics/enlightened/dantih/pants_light.png
+#recolormask /graphics/enlightened/dantih/pants_recolormask.png
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#theme naked
+#enditem
+
+#newitem
+#id furs_half
 #gameid -1
 #armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_grey.png
-#eliteversion bellychains_gold_grey
-#eliteversion cloth_middling
-#eliteversion cloth_subdued
+#sprite /graphics/enlightened/dantih/armor/furs_loincloth.png
+#eliteversion furs
 #tier 1
 #notfortier 2
 #notfortier 3
+#theme primitive
+#theme leather
 #enditem
 
 #newitem
-#id cloth_black
-#gameid -1
+#id furs
+#gameid 44
 #armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_black.png
-#eliteversion bellychains_gold_black
-#eliteversion cloth_dull
-#eliteversion cloth_dim
+#sprite /graphics/enlightened/dantih/armor/furs.png
 #tier 1
-#notfortier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id cloth_faint
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_white.png
-#recolormask /graphics/enlightened/naga/armor/caster/cloth_recolormask1.png
-#eliteversion bellychains_gold_faint
-#eliteversion cloth_light
-#notfortier 1
 #tier 2
 #notfortier 3
+#theme primitive
+#theme leather
 #enditem
 
 #newitem
-#id cloth_pale
+#id shendyt_white_red
 #gameid -1
 #armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_white.png
-#recolormask /graphics/enlightened/naga/armor/caster/cloth_recolormask2.png
-#eliteversion bellychains_gold_pale
-#eliteversion cloth_light
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id cloth_middling
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_grey.png
-#recolormask /graphics/enlightened/naga/armor/caster/cloth_recolormask1.png
-#eliteversion bellychains_gold_middling
-#eliteversion cloth_medium
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id cloth_subdued
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_grey.png
-#recolormask /graphics/enlightened/naga/armor/caster/cloth_recolormask2.png
-#eliteversion bellychains_gold_subdued
-#eliteversion cloth_medium
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id cloth_dull
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_black.png
-#recolormask /graphics/enlightened/naga/armor/caster/cloth_recolormask1.png
-#eliteversion bellychains_gold_dull
-#eliteversion cloth_dark
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id cloth_dim
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_black.png
-#recolormask /graphics/enlightened/naga/armor/caster/cloth_recolormask2.png
-#eliteversion bellychains_gold_dim
-#eliteversion cloth_dark
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id cloth_light
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_white.png
-#recolormask self
-#eliteversion bellychains_gold_light
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-#newitem
-#id cloth_medium
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_grey.png
-#recolormask self
-#eliteversion bellychains_gold_medium
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-#newitem
-#id cloth_dark
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_black.png
-#recolormask self
-#eliteversion bellychains_gold_dark
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-
-
--- Bellycloths with jewelery -------- WIP
-
-#newitem
-#id bellychains_gold_white
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_white.png
-#eliteversion bracelets_bellychains_gold_white
-#eliteversion necklace_bellychains_gold_white
-#eliteversion bellychains_gold_faint
-#eliteversion bellychains_gold_pale
+#sprite /graphics/enlightened/dantih/armor/robes/shendyt.png
+#eliteversion shendyt_colored_red
+#eliteversion shendyt_white_colored
 #tier 1
 #tier 2
 #notfortier 3
 #enditem
 
 #newitem
-#id bellychains_gold_grey
+#id shendyt_colored_red
 #gameid -1
 #armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_grey.png
-#eliteversion bracelets_bellychains_gold_grey
-#eliteversion necklace_bellychains_gold_grey
-#eliteversion bellychains_gold_middling
-#eliteversion bellychains_gold_subdued
-#tier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id bellychains_gold_black
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_black.png
-#eliteversion bracelets_bellychains_gold_black
-#eliteversion necklace_bellychains_gold_black
-#eliteversion bellychains_gold_dull
-#eliteversion bellychains_gold_dim
-#tier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id bellychains_gold_faint
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_white.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask1.png
-#eliteversion bellychains_gold_light
-#eliteversion bracelets_bellychains_gold_faint
-#eliteversion necklace_bellychains_gold_faint
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id bellychains_gold_pale
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_white.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask2.png
-#eliteversion bellychains_gold_light
-#eliteversion bracelets_bellychains_gold_pale
-#eliteversion necklace_bellychains_gold_pale
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id bellychains_gold_middling
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_grey.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask1.png
-#eliteversion bellychains_gold_medium
-#eliteversion bracelets_bellychains_gold_middling
-#eliteversion necklace_bellychains_gold_middling
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id bellychains_gold_subdued
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_grey.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask2.png
-#eliteversion bellychains_gold_medium
-#eliteversion bracelets_bellychains_gold_subdued
-#eliteversion necklace_bellychains_gold_subdued
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id bellychains_gold_dull
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_black.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask1.png
-#eliteversion bellychains_gold_dark
-#eliteversion bracelets_bellychains_gold_dull
-#eliteversion necklace_bellychains_gold_dull
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id bellychains_gold_dim
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_black.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask2.png
-#eliteversion bellychains_gold_dark
-#eliteversion bracelets_bellychains_gold_dim
-#eliteversion necklace_bellychains_gold_dim
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id bellychains_gold_light
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_white.png
-#recolormask self
-#eliteversion bracelets_bellychains_gold_light
-#eliteversion necklace_bellychains_gold_light
+#sprite /graphics/enlightened/dantih/armor/robes/shendyt.png
+#recolormask /graphics/enlightened/dantih/armor/robes/shendyt_recolormask3.png
+#eliteversion shendyt_colored
 #notfortier 1
 #tier 2
 #tier 3
 #enditem
 
 #newitem
-#id bellychains_gold_medium
+#id shendyt_white_colored
 #gameid -1
 #armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_grey.png
-#recolormask self
-#eliteversion bracelets_bellychains_gold_medium
-#eliteversion necklace_bellychains_gold_medium
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-#newitem
-#id bellychains_gold_dark
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_black.png
-#recolormask self
-#eliteversion bracelets_bellychains_gold_dark
-#eliteversion necklace_bellychains_gold_dark
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-#newitem
-#id cloth_white
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_white.png
-#eliteversion bellychains_gold_white
-#eliteversion cloth_faint
-#eliteversion cloth_pale
-#tier 1
-#notfortier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id cloth_grey
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_grey.png
-#eliteversion bellychains_gold_grey
-#eliteversion cloth_middling
-#eliteversion cloth_subdued
-#tier 1
-#notfortier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id cloth_black
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_black.png
-#eliteversion bellychains_gold_black
-#eliteversion cloth_dull
-#eliteversion cloth_dim
-#tier 1
-#notfortier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id cloth_faint
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_white.png
-#recolormask /graphics/enlightened/naga/armor/caster/cloth_recolormask1.png
-#eliteversion bellychains_gold_faint
-#eliteversion cloth_light
+#sprite /graphics/enlightened/dantih/armor/robes/shendyt.png
+#recolormask /graphics/enlightened/dantih/armor/robes/shendyt_recolormask1.png
+#eliteversion shendyt_colored
 #notfortier 1
 #tier 2
 #notfortier 3
 #enditem
 
 #newitem
-#id cloth_pale
+#id shendyt_colored
 #gameid -1
 #armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_white.png
-#recolormask /graphics/enlightened/naga/armor/caster/cloth_recolormask2.png
-#eliteversion bellychains_gold_pale
-#eliteversion cloth_light
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id cloth_middling
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_grey.png
-#recolormask /graphics/enlightened/naga/armor/caster/cloth_recolormask1.png
-#eliteversion bellychains_gold_middling
-#eliteversion cloth_medium
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id cloth_subdued
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_grey.png
-#recolormask /graphics/enlightened/naga/armor/caster/cloth_recolormask2.png
-#eliteversion bellychains_gold_subdued
-#eliteversion cloth_medium
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id cloth_dull
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_black.png
-#recolormask /graphics/enlightened/naga/armor/caster/cloth_recolormask1.png
-#eliteversion bellychains_gold_dull
-#eliteversion cloth_dark
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id cloth_dim
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_black.png
-#recolormask /graphics/enlightened/naga/armor/caster/cloth_recolormask2.png
-#eliteversion bellychains_gold_dim
-#eliteversion cloth_dark
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id cloth_light
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_white.png
-#recolormask self
-#eliteversion bellychains_gold_light
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-#newitem
-#id cloth_medium
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_grey.png
-#recolormask self
-#eliteversion bellychains_gold_medium
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-#newitem
-#id cloth_dark
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/cloth_black.png
-#recolormask self
-#eliteversion bellychains_gold_dark
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-
-
--- Bellycloths with jewelery -------- WIP
-
-#newitem
-#id bellychains_gold_white
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_white.png
-#eliteversion bracelets_bellychains_gold_white
-#eliteversion necklace_bellychains_gold_white
-#eliteversion bellychains_gold_faint
-#eliteversion bellychains_gold_pale
-#tier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id bellychains_gold_grey
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_grey.png
-#eliteversion bracelets_bellychains_gold_grey
-#eliteversion necklace_bellychains_gold_grey
-#eliteversion bellychains_gold_middling
-#eliteversion bellychains_gold_subdued
-#tier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id bellychains_gold_black
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_black.png
-#eliteversion bracelets_bellychains_gold_black
-#eliteversion necklace_bellychains_gold_black
-#eliteversion bellychains_gold_dull
-#eliteversion bellychains_gold_dim
-#tier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id bellychains_gold_faint
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_white.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask1.png
-#eliteversion bellychains_gold_light
-#eliteversion bracelets_bellychains_gold_faint
-#eliteversion necklace_bellychains_gold_faint
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id bellychains_gold_pale
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_white.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask2.png
-#eliteversion bellychains_gold_light
-#eliteversion bracelets_bellychains_gold_pale
-#eliteversion necklace_bellychains_gold_pale
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id bellychains_gold_middling
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_grey.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask1.png
-#eliteversion bellychains_gold_medium
-#eliteversion bracelets_bellychains_gold_middling
-#eliteversion necklace_bellychains_gold_middling
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id bellychains_gold_subdued
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_grey.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask2.png
-#eliteversion bellychains_gold_medium
-#eliteversion bracelets_bellychains_gold_subdued
-#eliteversion necklace_bellychains_gold_subdued
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id bellychains_gold_dull
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_black.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask1.png
-#eliteversion bellychains_gold_dark
-#eliteversion bracelets_bellychains_gold_dull
-#eliteversion necklace_bellychains_gold_dull
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id bellychains_gold_dim
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_black.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask2.png
-#eliteversion bellychains_gold_dark
-#eliteversion bracelets_bellychains_gold_dim
-#eliteversion necklace_bellychains_gold_dim
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id bellychains_gold_light
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_white.png
-#recolormask self
-#eliteversion bracelets_bellychains_gold_light
-#eliteversion necklace_bellychains_gold_light
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-#newitem
-#id bellychains_gold_medium
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_grey.png
-#recolormask self
-#eliteversion bracelets_bellychains_gold_medium
-#eliteversion necklace_bellychains_gold_medium
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-#newitem
-#id bellychains_gold_dark
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_black.png
-#recolormask self
-#eliteversion bracelets_bellychains_gold_dark
-#eliteversion necklace_bellychains_gold_dark
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-
-#newitem
-#id bracelets_bellychains_gold_white
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bracelets_bellychains_gold_cloth_white.png
-#eliteversion bracelets_bellychains_gold_faint
-#eliteversion bracelets_bellychains_gold_pale
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id bracelets_bellychains_gold_grey
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bracelets_bellychains_gold_cloth_grey.png
-#eliteversion bracelets_bellychains_gold_middling
-#eliteversion bracelets_bellychains_gold_subdued
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id bracelets_bellychains_gold_black
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bracelets_bellychains_gold_cloth_black.png
-#eliteversion bracelets_bellychains_gold_dull
-#eliteversion bracelets_bellychains_gold_dim
-#notfortier 1
-#tier 2
-#notfortier 3
-#enditem
-
-#newitem
-#id bracelets_bellychains_gold_faint
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bracelets_bellychains_gold_cloth_white.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask1.png
-#eliteversion bracelets_bellychains_gold_light
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-#newitem
-#id bracelets_bellychains_gold_pale
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bracelets_bellychains_gold_cloth_white.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask2.png
-#eliteversion bracelets_bellychains_gold_light
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-#newitem
-#id bracelets_bellychains_gold_middling
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bracelets_bellychains_gold_cloth_grey.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask1.png
-#eliteversion bracelets_bellychains_gold_medium
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-#newitem
-#id bracelets_bellychains_gold_subdued
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bracelets_bellychains_gold_cloth_grey.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask2.png
-#eliteversion bracelets_bellychains_gold_medium
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-#newitem
-#id bracelets_bellychains_gold_dull
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bracelets_bellychains_gold_cloth_black.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask1.png
-#eliteversion bracelets_bellychains_gold_dark
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-#newitem
-#id bracelets_bellychains_gold_dim
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bracelets_bellychains_gold_cloth_black.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask2.png
-#eliteversion bracelets_bellychains_gold_dark
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-#newitem
-#id bracelets_bellychains_gold_light
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bracelets_bellychains_gold_cloth_white.png
-#recolormask self
-#eliteversion bracelets_bracelets_bellychains_gold_light
-#notfortier 1
-#notfortier 2
-#tier 3
-#enditem
-
-#newitem
-#id bracelets_bellychains_gold_medium
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bracelets_bellychains_gold_cloth_grey.png
-#recolormask self
-#eliteversion bracelets_bracelets_bellychains_gold_medium
-#notfortier 1
-#notfortier 2
-#tier 3
-#enditem
-
-#newitem
-#id bracelets_bellychains_gold_dark
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/bracelets_bellychains_gold_cloth_black.png
-#recolormask self
-#eliteversion bracelets_bracelets_bellychains_gold_dark
+#sprite /graphics/enlightened/dantih/armor/robes/shendyt.png
+#recolormask /graphics/enlightened/dantih/armor/robes/shendyt_recolormask2.png
+#eliteversion shendyt_colored
 #notfortier 1
 #notfortier 2
 #tier 3
 #enditem
 
 
+-- Various robes and half-robes
+
 #newitem
-#id necklace_bellychains_gold_white
+#id halfrobe_black
 #gameid -1
+#sprite /graphics/enlightened/dantih/armor/robes/halfrobe_dark.png
+#eliteversion halfrobe_dark
+#eliteversion robe_black
 #armor
-#sprite /graphics/enlightened/naga/armor/caster/necklace_bracelets_bellychains_gold_cloth_white.png
-#eliteversion necklace_bellychains_gold_faint
-#eliteversion necklace_bellychains_gold_pale
-#notfortier 1
-#tier 2
+#tier 1
+#notfortier 2
 #notfortier 3
 #enditem
 
 #newitem
-#id necklace_bellychains_gold_grey
+#id halfrobe_grey
 #gameid -1
+#sprite /graphics/enlightened/dantih/armor/robes/halfrobe_medium.png
+#eliteversion halfrobe_medium
+#eliteversion robe_grey
 #armor
-#sprite /graphics/enlightened/naga/armor/caster/necklace_bracelets_bellychains_gold_cloth_grey.png
-#eliteversion necklace_bellychains_gold_middling
-#eliteversion necklace_bellychains_gold_subdued
-#notfortier 1
-#tier 2
+#tier 1
+#notfortier 2
 #notfortier 3
 #enditem
 
 #newitem
-#id necklace_bellychains_gold_black
+#id halfrobe_white
 #gameid -1
+#sprite /graphics/enlightened/dantih/armor/robes/halfrobe_light.png
+#eliteversion halfrobe_light
+#eliteversion robe_white
 #armor
-#sprite /graphics/enlightened/naga/armor/caster/necklace_bracelets_bellychains_gold_cloth_black.png
-#eliteversion necklace_bellychains_gold_dull
-#eliteversion necklace_bellychains_gold_dim
-#notfortier 1
-#tier 2
+#tier 1
+#notfortier 2
 #notfortier 3
 #enditem
 
 #newitem
-#id necklace_bellychains_gold_faint
+#id halfrobe_dark
 #gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/necklace_bracelets_bellychains_gold_cloth_white.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask1.png
-#eliteversion necklace_bellychains_gold_light
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-#newitem
-#id necklace_bellychains_gold_pale
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/necklace_bracelets_bellychains_gold_cloth_white.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask2.png
-#eliteversion necklace_bellychains_gold_light
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-#newitem
-#id necklace_bellychains_gold_middling
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/necklace_bracelets_bellychains_gold_cloth_grey.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask1.png
-#eliteversion necklace_bellychains_gold_medium
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-#newitem
-#id necklace_bellychains_gold_subdued
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/necklace_bracelets_bellychains_gold_cloth_grey.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask2.png
-#eliteversion necklace_bellychains_gold_medium
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-#newitem
-#id necklace_bellychains_gold_dull
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/necklace_bracelets_bellychains_gold_cloth_black.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask1.png
-#eliteversion necklace_bellychains_gold_dark
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-#newitem
-#id necklace_bellychains_gold_dim
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/necklace_bracelets_bellychains_gold_cloth_black.png
-#recolormask /graphics/enlightened/naga/armor/caster/bellychains_gold_cloth_recolormask2.png
-#eliteversion necklace_bellychains_gold_dark
-#notfortier 1
-#tier 2
-#tier 3
-#enditem
-
-#newitem
-#id necklace_bellychains_gold_light
-#gameid -1
-#armor
-#sprite /graphics/enlightened/naga/armor/caster/necklace_bracelets_bellychains_gold_cloth_white.png
+#sprite /graphics/enlightened/dantih/armor/robes/halfrobe_dark.png
 #recolormask self
-#eliteversion necklace_bellychains_gold_light
+#eliteversion robe_dark
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id halfrobe_medium
+#gameid -1
+#sprite /graphics/enlightened/dantih/armor/robes/halfrobe_medium.png
+#recolormask self
+#eliteversion robe_medium
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id halfrobe_light
+#gameid -1
+#sprite /graphics/enlightened/dantih/armor/robes/robe_light.png
+#recolormask self
+#eliteversion robe_light
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id robe_black
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/robe_dark.png
+#eliteversion robe_dark
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id robe_grey
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/robe_medium.png
+#eliteversion robe_medium
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id robe_white
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/robe_light.png
+#eliteversion robe_light
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id robe_dark
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/robe_dark.png
+#recolormask self
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id robe_medium
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/robe_medium.png
+#recolormask self
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id robe_light
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/robe_light.png
+#recolormask self
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id halfrobe_carp1
+#gameid -1
+#sprite /graphics/enlightened/dantih/armor/robes/halfrobe_carp.png
+#recolormask /graphics/enlightened/dantih/armor/robes/halfrobe_carp_recolormask1.png
+#eliteversion halfrobe_carp2
+#eliteversion halfrobe_carp3
+#eliteversion halfrobe_carp4
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id halfrobe_carp2
+#gameid -1
+#sprite /graphics/enlightened/dantih/armor/robes/halfrobe_carp.png
+#recolormask /graphics/enlightened/dantih/armor/robes/halfrobe_carp_recolormask2.png
+#eliteversion halfrobe_carp1
+#eliteversion halfrobe_carp3
+#eliteversion halfrobe_carp4
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id halfrobe_carp3
+#gameid -1
+#sprite /graphics/enlightened/dantih/armor/robes/halfrobe_carp.png
+#recolormask /graphics/enlightened/dantih/armor/robes/halfrobe_carp_recolormask3.png
+#eliteversion halfrobe_carp1
+#eliteversion halfrobe_carp2
+#eliteversion halfrobe_carp4
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id halfrobe_carp4
+#gameid -1
+#sprite /graphics/enlightened/dantih/armor/robes/halfrobe_carp.png
+#recolormask /graphics/enlightened/dantih/armor/robes/halfrobe_carp_recolormask4.png
+#eliteversion halfrobe_carp1
+#eliteversion halfrobe_carp2
+#eliteversion halfrobe_carp3
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id kimono_sash
+#gameid -1
+#sprite /graphics/enlightened/dantih/armor/robes/kimono_sash.png
+#recolormask self
+#eliteversion kimono_skirt3
+#eliteversion kimono_skirt4
+#eliteversion kimono_skirt5
+#armor
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id kimono_skirt3
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/kimono_skirt.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_skirt_recolormask3.png
+#eliteversion kimono1
+#eliteversion kimono2
+#eliteversion kimono_dark3
+#eliteversion kimono_light3
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id kimono_skirt4
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/kimono_skirt.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_skirt_recolormask4.png
+#eliteversion kimono1
+#eliteversion kimono2
+#eliteversion kimono_dark4
+#eliteversion kimono_light4
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id kimono_skirt5
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/kimono_skirt.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_skirt_recolormask5.png
+#eliteversion kimono1
+#eliteversion kimono2
+#eliteversion kimono_dark5
+#eliteversion kimono_light5
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id kimono1
+#gameid 159
+#sprite /graphics/enlightened/dantih/armor/robes/kimono1.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_recolormask1.png
+#eliteversion kimono2
+#eliteversion kimono_dark3
+#eliteversion kimono_dark4
+#eliteversion kimono_dark5
+#armor
 #notfortier 1
 #notfortier 2
 #tier 3
 #enditem
 
 #newitem
-#id necklace_bellychains_gold_medium
-#gameid -1
+#id kimono2
+#gameid 159
+#sprite /graphics/enlightened/dantih/armor/robes/kimono2.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_recolormask2.png
+#eliteversion kimono1
+#eliteversion kimono_light3
+#eliteversion kimono_light4
+#eliteversion kimono_light5
 #armor
-#sprite /graphics/enlightened/naga/armor/caster/necklace_bracelets_bellychains_gold_cloth_grey.png
-#recolormask self
-#eliteversion necklace_bellychains_gold_medium
 #notfortier 1
 #notfortier 2
 #tier 3
 #enditem
 
 #newitem
-#id necklace_bellychains_gold_dark
-#gameid -1
+#id kimono_dark3
+#gameid 159
+#sprite /graphics/enlightened/dantih/armor/robes/kimono1.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_recolormask3.png
+#eliteversion kimono1
+#eliteversion kimono_light3
 #armor
-#sprite /graphics/enlightened/naga/armor/caster/necklace_bracelets_bellychains_gold_cloth_black.png
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id kimono_light3
+#gameid 159
+#sprite /graphics/enlightened/dantih/armor/robes/kimono2.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_recolormask3.png
+#eliteversion kimono2
+#eliteversion kimono_dark3
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id kimono_dark4
+#gameid 159
+#sprite /graphics/enlightened/dantih/armor/robes/kimono1.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_recolormask4.png
+#eliteversion kimono1
+#eliteversion kimono_light4
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id kimono_light4
+#gameid 159
+#sprite /graphics/enlightened/dantih/armor/robes/kimono2.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_recolormask4.png
+#eliteversion kimono2
+#eliteversion kimono_dark4
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id kimono_dark5
+#gameid 159
+#sprite /graphics/enlightened/dantih/armor/robes/kimono1.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_recolormask5.png
+#eliteversion kimono1
+#eliteversion kimono_light5
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id kimono_light5
+#gameid 159
+#sprite /graphics/enlightened/dantih/armor/robes/kimono2.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_recolormask5.png
+#eliteversion kimono2
+#eliteversion kimono_dark5
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id ermorrobe_black
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_black.png
+#eliteversion ermorrobe_grey
+#eliteversion ermorrobe_white
+#eliteversion ermorrobe_dark_dull
+#eliteversion ermorrobe_dark_muted
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id ermorrobe_grey
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_medium.png
+#eliteversion ermorrobe_black
+#eliteversion ermorrobe_white
+#eliteversion ermorrobe_medium_dull
+#eliteversion ermorrobe_medium_muted
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id ermorrobe_white
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_white.png
+#eliteversion ermorrobe_grey
+#eliteversion ermorrobe_black
+#eliteversion ermorrobe_light_dull
+#eliteversion ermorrobe_light_muted
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id ermorrobe_dark_dull
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_dark.png
+#recolormask /graphics/enlightened/dantih/armor/robes/ermor_dull_recolormask.png
+#eliteversion ermorrobe_light_dull
+#eliteversion ermorrobe_medium_dull
+#eliteversion ermorrobe_dark
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id ermorrobe_dark_muted
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_dark.png
+#recolormask /graphics/enlightened/dantih/armor/robes/ermor_muted_recolormask.png
+#eliteversion ermorrobe_light_muted
+#eliteversion ermorrobe_medium_muted
+#eliteversion ermorrobe_dark
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id ermorrobe_medium_dull
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_medium.png
+#recolormask /graphics/enlightened/dantih/armor/robes/ermor_dull_recolormask.png
+#eliteversion ermorrobe_light_dull
+#eliteversion ermorrobe_dark_dull
+#eliteversion ermorrobe_medium
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id ermorrobe_medium_muted
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_medium.png
+#recolormask /graphics/enlightened/dantih/armor/robes/ermor_muted_recolormask.png
+#eliteversion ermorrobe_light_muted
+#eliteversion ermorrobe_dark_muted
+#eliteversion ermorrobe_medium
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id ermorrobe_light_dull
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_light.png
+#recolormask /graphics/enlightened/dantih/armor/robes/ermor_dull_recolormask.png
+#eliteversion ermorrobe_medium_dull
+#eliteversion ermorrobe_dark_dull
+#eliteversion ermorrobe_light
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id ermorrobe_light_muted
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_light.png
+#recolormask /graphics/enlightened/dantih/armor/robes/ermor_muted_recolormask.png
+#eliteversion ermorrobe_medium_muted
+#eliteversion ermorrobe_dark_muted
+#eliteversion ermorrobe_light
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id ermorrobe_dark
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_dark.png
 #recolormask self
-#eliteversion necklace_bellychains_gold_dark
+#eliteversion ermorrobe_light
+#eliteversion ermorrobe_medium
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id ermorrobe_medium
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_medium.png
+#recolormask self
+#eliteversion ermorrobe_light
+#eliteversion ermorrobe_dark
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id ermorrobe_light
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_light.png
+#recolormask self
+#eliteversion ermorrobe_medium
+#eliteversion ermorrobe_dark
+#armor
 #notfortier 1
 #notfortier 2
 #tier 3

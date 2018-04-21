@@ -28,7 +28,7 @@
 #enditem
 
 #newitem
-#name "light shirt"
+#name "light vest"
 #gameid -1
 #sprite /graphics/enlightened/dantih/shirt_light.png
 #recolormask self
@@ -36,17 +36,44 @@
 #enditem
 
 #newitem
-#name "medium shirt"
+#name "medium vest"
 #gameid -1
-#sprite /graphics/enlightened/dantih/shirt_light.png
+#sprite /graphics/enlightened/dantih/shirt_medium.png
 #recolormask self
 #theme advanced
 #enditem
 
 #newitem
-#name "dark shirt"
+#name "dark vest"
 #gameid -1
-#sprite /graphics/enlightened/dantih/shirt_light.png
+#sprite /graphics/enlightened/dantih/shirt_dark.png
+#recolormask self
+#theme advanced
+#enditem
+
+#newitem
+#name "light coat"
+#basechance 0.25
+#gameid -1
+#sprite /graphics/enlightened/dantih/shirt_light_sleeves.png
+#recolormask self
+#theme advanced
+#enditem
+
+#newitem
+#name "medium coat"
+#basechance 0.25
+#gameid -1
+#sprite /graphics/enlightened/dantih/shirt_medium_sleeves.png
+#recolormask self
+#theme advanced
+#enditem
+
+#newitem
+#name "dark coat"
+#basechance 0.25
+#gameid -1
+#sprite /graphics/enlightened/dantih/shirt_dark_sleeves.png
 #recolormask self
 #theme advanced
 #enditem
