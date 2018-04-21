@@ -5,7 +5,7 @@
 #role "elite infantry"
 #role "sacred infantry"
 
-#renderorder "shadow cloakb quiver bonusweapon basesprite shirt bling weapon armor cloakf offhandw hands helmet offhanda"
+#renderorder "shadow cloakb quiver bonusweapon basesprite shirt bling armor cloakf weapon offhandw hands helmet offhanda"
 
 #load basesprite /data/items/enlightened/dantih/bases.txt
 #load shadow /data/items/enlightened/dantih/shadow.txt
@@ -41,7 +41,7 @@
 #role "elite ranged"
 #role "sacred ranged"
 
-#renderorder "shadow cloakb quiver bonusweapon basesprite shirt bling weapon armor cloakf offhandw hands helmet offhanda"
+#renderorder "shadow cloakb quiver bonusweapon basesprite shirt bling armor cloakf weapon offhandw hands helmet offhanda"
 
 #load basesprite /data/items/enlightened/dantih/bases.txt
 #load shadow /data/items/enlightened/dantih/shadow.txt
@@ -79,7 +79,7 @@
 
 #basechance 0.1
 
-#renderorder "shadow cloakb quiver bonusweapon basesprite shirt bling weapon armor cloakf offhandw hands helmet offhanda"
+#renderorder "shadow cloakb quiver bonusweapon basesprite shirt bling armor cloakf weapon offhandw hands helmet offhanda"
 
 #load basesprite /data/items/enlightened/dantih/youth/bases.txt
 #load shadow /data/items/enlightened/dantih/youth/shadow.txt
@@ -97,5 +97,7 @@
 
 #maxvarieties 1
 #maxunits 1
+#primaryraceonly
+#cannot_be_commander
 
 #endpose
