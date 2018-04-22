@@ -1,5 +1,8 @@
----- #tag "gcost <any/ranged/melee/lowshots> <price>" gives price increases.
----- Multiple such lines per item are fine.
+---- #tag "gcost <any/ranged/melee/lowshots> <price>" gives price increases
+----  in terms of gold. As no offset to rpcost is added, this will also 
+----  increase rpcost. Multiple such lines per item are fine.
+---- #tag "rcost <any/ranged/melee/lowshots> <price>" gives price increases
+----  in terms of resources. Multiple such lines per item are fine.
 ---- #magictagmulti <value>
 ---- #magictagchance <value>
 ---- 
@@ -16,8 +19,8 @@
 #basechance 0.25
 #chanceinc "magic death 0.5"
 #chanceinc "magic nature 1"
-#tag "gcost ranged +10"
-#tag "gcost melee +5"
+#tag "gcost ranged +2"
+#tag "rcost ranged +2"
 #eff 50
 #end
 
@@ -29,7 +32,8 @@
 #chanceinc "magic death 0.25"
 #chanceinc "magic nature 0.5"
 #tag "no ranged"
-#tag "gcost melee +5"
+#tag "gcost melee +2"
+#tag "rcost melee +3"
 #power 2
 #eff 51
 #end
@@ -43,8 +47,10 @@
 #chanceinc "magic nature 0.1"
 #chanceinc "magic water 0.1"
 #chanceinc "magic fire water 1"
-#tag "gcost ranged +15"
-#tag "gcost melee +5"
+#tag "gcost ranged +5"
+#tag "rcost ranged +5"
+#tag "gcost melee +2"
+#tag "rcost melee +3"
 #power 3
 #eff 515
 #end
@@ -58,8 +64,10 @@
 #chanceinc "magic death 0.25"
 #chanceinc "magic nature 0.5"
 #eff 53
-#tag "gcost ranged +10"
-#tag "gcost melee +5"
+#tag "gcost ranged +2"
+#tag "rcost ranged +2"
+#tag "gcost melee +1"
+#tag "rcost melee +2"
 #tag "weapon 8 banebroadsword"
 #tag "weapon 513 banekopesh"
 #tag "weapon 16 awesomeflail"
@@ -76,8 +84,10 @@
 #chanceinc "magic nature 0.5"
 #tag "no ranged"
 #tag "no melee"
-#tag "gcost ranged +10"
-#tag "gcost melee +5"
+#tag "gcost ranged +3"
+#tag "rcost ranged +3"
+#tag "gcost melee +2"
+#tag "rcost melee +3"
 #tag "weapon 8 banebroadsword"
 #tag "weapon 513 banekopesh"
 #tag "weapon 16 awesomeflail"
@@ -97,8 +107,10 @@
 #chanceinc "magic death astral 0.8"
 #chanceinc "magic blood 0.1"
 #tag "path death"
-#tag "gcost ranged +5"
-#tag "gcost melee +5"
+#tag "gcost ranged +1"
+#tag "rcost ranged +2"
+#tag "gcost melee +1"
+#tag "rcost melee +2"
 #tag "weapon 8 banebroadsword"
 #tag "weapon 513 banekopesh"
 #tag "weapon 16 awesomeflail"
@@ -122,30 +134,13 @@
 #chanceinc "magic blood 0.1"
 #tag "path death"
 #no ranged
-#tag "gcost melee +5"
+#tag "gcost melee +1"
+#tag "rcost melee +2"
 #tag "weapon 8 banebroadsword"
 #tag "weapon 513 banekopesh"
 #tag "weapon 16 awesomeflail"
 #power 2
 #eff 64
-#end
-
--- 432: small area decay
-#new magicweapon
-#name "aoedecay"
-#unitname "prefix decaying"
-#unitname "prefix bane"
-#unitname "suffix 'of greater decay'"
-#unitname "prefix banefire"
-#basechance 0
-#chanceinc "magic death 0.4"
-#chanceinc "magic death fire 0.8"
-#chanceinc "magic blood 0.1"
-#tag "path death"
-#tag "no ranged"
-#tag "no melee"
-#tag "gcost lowshots +3"
-#eff 432
 #end
 
 -- 160: Cold
@@ -157,8 +152,10 @@
 #unitname "suffix 'of ice'"
 #basechance 0.1
 #chanceinc "magic water 0.75"
-#tag "gcost ranged +5"
-#tag "gcost melee +2"
+#tag "gcost ranged +1"
+#tag "rcost ranged +3"
+#tag "gcost melee +1"
+#tag "rcost melee +1"
 #eff 160
 #tag "path water"
 #power 3
@@ -173,8 +170,10 @@
 #basechance 0.1
 #chanceinc "magic fire 0.75"
 #tag "path fire"
-#tag "gcost ranged +10"
-#tag "gcost melee +5"
+#tag "gcost ranged +2"
+#tag "rcost ranged +4"
+#tag "gcost melee +2"
+#tag "rcost melee +2"
 #tag "weapon 6 fieryshortsword"
 #tag "weapon 513 fierykopesh"
 #tag "weapon 10 fieryfalchion"
@@ -197,8 +196,10 @@
 #chanceinc "magic death 1"
 #eff 285
 #tag "path death"
-#tag "gcost ranged +10"
-#tag "gcost melee +5"
+#tag "gcost ranged +2"
+#tag "rcost ranged +2"
+#tag "gcost melee +2"
+#tag "rcost melee +1"
 #tag "weapon 8 banebroadsword"
 #tag "weapon 513 banekopesh"
 #tag "weapon 16 awesomeflail"
@@ -231,6 +232,39 @@
 #eff 302
 #end
 
+-- 421 limp
+#new magicweapon
+#name "limp"
+#unitname "prefix severing"
+#unitname "prefix slaughtering"
+#basechance 0.15
+#tag "gcost ranged +2"
+#tag "rcost ranged +2"
+#tag "gcost melee +1"
+#tag "rcost melee +1"
+#eff 421
+#power 2
+#end
+
+-- 432: small area decay
+#new magicweapon
+#name "aoedecay"
+#unitname "prefix decaying"
+#unitname "prefix bane"
+#unitname "suffix 'of greater decay'"
+#unitname "prefix banefire"
+#basechance 0
+#chanceinc "magic death 0.4"
+#chanceinc "magic death fire 0.8"
+#chanceinc "magic blood 0.1"
+#tag "path death"
+#tag "no ranged"
+#tag "no melee"
+#tag "gcost lowshots +1"
+#tag "rcost lowshots +1"
+#eff 432
+#end
+
 -- 440 lesser fear
 #new magicweapon
 #name "lesserfear"
@@ -242,24 +276,25 @@
 #chanceinc "magic death 1"
 #chanceinc "magic blood 0.25"
 #tag "path death"
-#tag "gcost ranged +10"
-#tag "gcost melee +10"
+#tag "gcost ranged +6"
+#tag "rcost ranged +2"
+#tag "gcost melee +6"
+#tag "rcost melee +2"
 #tag "weapon 8 banebroadsword"
 #tag "weapon 513 banekopesh"
 #tag "weapon 16 awesomeflail"
 #eff 440
 #end
 
--- 421 limp
+-- 460 stop the dead
 #new magicweapon
-#name "limp"
-#unitname "prefix severing"
-#unitname "prefix slaughtering"
-#basechance 0.15
-#tag "gcost ranged +6"
-#tag "gcost melee +3"
-#eff 421
-#power 2
+#name "stopthedead"
+#unitname "prefix holy"
+#unitname "prefix blessed"
+#basechance 0.75
+#tag "rcost ranged +1"
+#tag "rcost melee +1"
+#eff 460
 #end
 
 -- 468 halt demon
@@ -268,21 +303,39 @@
 #unitname "prefix divine"
 #unitname "prefix sacred"
 #basechance 0.75
-#tag "gcost ranged +2"
-#tag "gcost melee +1"
+#tag "rcost ranged +1"
+#tag "rcost melee +1"
 #eff 468
 #end
 
--- 480 halt sacred
+-- 509 halt sacred
 #new magicweapon
 #name "haltsacred"
+#unitname "prefix unholy"
+#unitname "prefix profane"
+#unitname "prefix depraved"
+#basechance 1
+#tag "gcost ranged +4"
+#tag "rcost ranged +4"
+#tag "gcost melee +4"
+#tag "rcost melee +4"
+#eff 480
+#power 3
+#tag "weapon 8 banebroadsword"
+#tag "weapon 513 banekopesh"
+#tag "weapon 16 awesomeflail"
+#end
+
+-- 509 bane of heresy
+#new magicweapon
+#name "baneofheresy"
 #unitname "prefix black"
 #unitname "prefix cursed"
 #unitname "prefix dark"
 #basechance 1
-#tag "gcost ranged +2"
-#tag "gcost melee +1"
-#eff 480
+#tag "rcost ranged +4"
+#tag "rcost melee +4"
+#eff 509
 #power 2
 #tag "weapon 8 banebroadsword"
 #tag "weapon 513 banekopesh"
@@ -302,9 +355,47 @@
 #chanceinc "magic blood 0.1"
 #eff 544
 #tag "path nature"
-#tag "gcost ranged +10"
-#tag "gcost melee +5"
+#tag "gcost ranged +2"
+#tag "rcost ranged +4"
+#tag "gcost melee +1"
+#tag "rcost melee +2"
 #power 2
+#end
+
+-- 686: Ice Mist
+#new magicweapon
+#name "icemist"
+#unitname "prefix chilling"
+#unitname "prefix numbing"
+#unitname "suffix 'of chilling'"
+#unitname "suffix 'of numbness'"
+#basechance 0.1
+#chanceinc magic water 0.4
+#chanceinc magic water AND magic air *2
+#tag "rcost ranged +2"
+#tag "rcost melee +2"
+#eff 686
+#tag "path water"
+#power 2
+#end
+
+-- 690 draw blood
+#new magicweapon
+#name "drawblood"
+#unitname "prefix thirsty"
+#unitname "prefix insatiable"
+#unitname "prefix ravenous"
+#unitname "prefix voracious"
+#unitname "suffix of bloodletting"
+#basechance 0.1
+#chanceinc "magic blood 0.9"
+#eff 690
+#tag "path blood"
+#tag "gcost ranged +2"
+#tag "rcost ranged +4"
+#tag "gcost melee +2"
+#tag "rcost melee +3"
+#power 3
 #end
 
 -- armor piercing
@@ -316,8 +407,10 @@
 #unitname "suffix 'of planeshift'"
 #basechance 0.1
 #command "#armorpiercing"
-#tag "gcost ranged +15"
-#tag "gcost melee +15"
+#tag "gcost ranged +2"
+#tag "rcost ranged +3"
+#tag "gcost melee +2"
+#tag "rcost melee +3"
 #power 3
 #end
 
@@ -329,8 +422,8 @@
 #unitname "prefix smiting"
 #basechance 0.75
 #command "#dt_demon"
-#tag "gcost ranged +2"
-#tag "gcost melee +1"
+#tag "rcost ranged +2"
+#tag "rcost melee +1"
 #end
 
 -- holy
@@ -342,8 +435,8 @@
 #unitname "prefix smiting"
 #basechance 0.75
 #command "#dt_holy"
-#tag "gcost ranged +2"
-#tag "gcost melee +1"
+#tag "rcost ranged +2"
+#tag "rcost melee +1"
 #end
 
 -- antimagic
@@ -354,8 +447,8 @@
 #unitname "prefix moon"
 #basechance 0.5
 #command "#dt_magic"
-#tag "gcost ranged +2"
-#tag "gcost melee +1"
+#tag "rcost ranged +2"
+#tag "rcost melee +1"
 #power 2
 #end
 
@@ -371,8 +464,10 @@
 #chanceinc "magic death 2"
 #command "#dt_raise"
 #tag "path death"
-#tag "gcost melee +10"
-#tag "gcost ranged +30"
+#tag "gcost ranged +12"
+#tag "rcost ranged +6"
+#tag "gcost melee +3"
+#tag "rcost melee +6"
 #tag "weapon 8 banebroadsword"
 #tag "weapon 513 banekopesh"
 #tag "weapon 16 awesomeflail"
@@ -382,10 +477,12 @@
 -- shieldbonus
 #new magicweapon
 #name "flail"
+#unitname "prefix seeking"
+#unitname "prefix dancing"
 #basechance 0.15
 #command "#flail"
-#tag "gcost ranged +5"
-#tag "gcost ranged *1.2"
+#tag "gcost ranged +2"
+#tag "rcost ranged +3"
 #end
 
 
@@ -395,11 +492,14 @@
 #unitname "prefix Acidic"
 #unitname "suffix of Acid"
 #unitname "prefix Sulphuric"
+#unitname "prefix vitriolic"
 #basechance 0.05
 #chanceinc "magic water fire 0.2"
 #command "#acid"
 #command "#armorpiercing"
-#tag "gcost ranged +15"
-#tag "gcost melee +15"
+#tag "gcost ranged +4"
+#tag "rcost ranged +4"
+#tag "gcost melee +4"
+#tag "rcost melee +4"
 #power 2
 #end
