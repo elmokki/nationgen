@@ -842,8 +842,10 @@ public class SacredGenerator extends TroopGenerator {
 				u.commands.add(new Command("#gcost", "+10"));
 			
 		int cgcost = u.getGoldCost();
+		int costThreshold = u.getCommandValue("#size", 2) * 25;
 		
-		cgcost -= 70;
+		
+		cgcost -= costThreshold;
 		
 		if(cgcost <= 0)
 		{
@@ -854,7 +856,7 @@ public class SacredGenerator extends TroopGenerator {
 		int newprice = (int) Math.round(Math.pow(cgcost, 0.965));
 		int discount = cgcost - newprice;
 		
-		if(u.isRanged() && u.getSlot("mount") == null && u.getGoldCost() - discount > 60)
+		if(u.isRanged() && u.getSlot("mount") == null && u.getGoldCost() - discount > (costThreshold * 0.8))
 		{
 			discount += (u.getGoldCost() - discount) / 5;
 		}
