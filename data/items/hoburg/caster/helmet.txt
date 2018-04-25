@@ -98,6 +98,22 @@
 --- Caster hats
 
 #newitem
+#id plaguedoctor_mask
+#gameid 145
+#basechance 0.1
+#chanceinc "personalcommand autodishealer *10"
+#sprite /graphics/hoburg/helmet/caster/plaguedoctor_mask.png
+#recolormask /graphics/hoburg/helmet/caster/plaguedoctor_mask_recolormask.png
+#command "#diseaseres +10"
+#armor
+#tier 2
+#tier 3
+#theme "advanced"
+#theme "boreal"
+#theme "imperial"
+#enditem
+
+#newitem
 #id cap_gnome
 #gameid -1
 #sprite /graphics/hoburg/helmet/caster/cap_gnome.png
