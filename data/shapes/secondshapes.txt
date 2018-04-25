@@ -1164,7 +1164,22 @@
 #new secondshape
 #name "caveman"
 #command "#copystats 2018"
-#command "#copyspr 2019"
+#command "#spr1 ./graphics/hoburg/mounts/caveman.png"
+#command "#spr2 shift" 
+#command "#magicboost 53 -5"
+#command "#name 'Cave Man'"
+#command "#gcost 20"
+#command "#armor 44"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "caveman_occidental"
+#command "#copystats 2018"
+#command "#spr1 ./graphics/hoburg/mounts/caveman_occidental.png"
+#command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#name 'Cave Man'"
 #command "#gcost 20"
