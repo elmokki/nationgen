@@ -5,8 +5,10 @@
 #basechance 0.5
 #name "freeman inf"
 #role "infantry"
+
 #theme "free"
 #subraceprefix freeman
+#cannot_be_commander
 
 #load basesprite /data/items/amazon/metic/standard_bases.txt
 #load shadow /data/items/amazon/normal/shadow.txt
@@ -51,8 +53,10 @@
 #basechance 0.2
 #name "2h freeman inf"
 #role "infantry"
+
 #theme "free"
 #subraceprefix freeman
+#cannot_be_commander
 
 #load basesprite /data/items/amazon/metic2h/2h_bases.txt
 #load shadow /data/items/amazon/normal/shadow.txt
@@ -90,6 +94,8 @@
 #name "slave inf"
 #role "infantry"
 #theme "slave"
+
+#cannot_be_commander
 
 #command "#mor -1"
 #command "#slave"
@@ -139,6 +145,8 @@
 #name "2h slave inf"
 #role "infantry"
 #theme "slave"
+
+#cannot_be_commander
 
 #command "#mor -1"
 #command "#slave"

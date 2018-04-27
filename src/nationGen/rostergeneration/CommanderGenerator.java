@@ -407,7 +407,10 @@ public class CommanderGenerator extends TroopGenerator {
 			boolean undead = false;
 			boolean slave = false;
 			boolean animal = false;
+			boolean undisciplined = false;
 			boolean mindless = false;
+			boolean good_leader = com.tags.contains("#good_leader");
+			boolean superior_leader = com.tags.contains("#superior_leader");
 			
 			for(Command c : com.getCommands())
 			{
@@ -421,9 +424,13 @@ public class CommanderGenerator extends TroopGenerator {
 					slave = true;
 				else if(c.command.equals("#animal"))
 					animal = true;
+				else if(c.command.equals("#undisciplined"))
+					undisciplined = true;
 				else if(c.command.equals("#mor") && c.args.get(0).trim() == "50")
 					mindless = true;
 			}
+			
+
 			
 			// Mindless magical beings can be inspiring, but others cannot
 			if(magicbeing && mindless)
@@ -433,12 +440,19 @@ public class CommanderGenerator extends TroopGenerator {
 			
 			// Determine eventual base leadership level
 			double random = r.nextDouble();
-			if(random > 1 - 0.125 * i)
+			if((random > 1 - 0.125 * i) 
+					|| (superior_leader && r.nextDouble() < 0.5))
 				power = 3;
-			else if(random > 0.25 - 0.05 * i)
+			else if((random > 0.25 - 0.05 * i) 
+					|| (superior_leader && r.nextDouble() < 0.75)
+					|| (good_leader && r.nextDouble() < 0.5))
 				power = 2;
 			else
 				power = 1;
+			
+			// Undisciplined troops are more likely to make for less talented commanders
+			if(power > 1 && undisciplined && r.nextDouble() < 0.5)
+				power -= 1;
 			
 			// Unless we see a reason not to, rec points will be 1
 			com.commands.add(new Command("#rpcost 1"));
@@ -589,22 +603,30 @@ public class CommanderGenerator extends TroopGenerator {
 				
 			}
 			// Goodleader
-			else if(power == 1)
-			{
-				power = 2;
-				com.commands.add(new Command("#gcost", "+20"));
-				com.commands.add(new Command("#goodleader"));
-				
+			else if(power == 2)
+			{						
 				if(powerpenalty == 2)
 				{
+					com.commands.add(new Command("#goodleader"));
 					com.commands.add(new Command("#command", "-70"));
-					com.commands.add(new Command("#gcost", "-20"));
 				}
 				else if(powerpenalty == 1)
 				{
+					com.commands.add(new Command("#goodleader"));
 					com.commands.add(new Command("#command", "-40"));
-					com.commands.add(new Command("#gcost", "-10"));
-				} 
+					com.commands.add(new Command("#gcost", "+10"));
+				}
+				else if((animal || mindless || slave) && r.nextDouble() > 0.25)
+				{
+					com.commands.add(new Command("#okleader"));
+					com.commands.add(new Command("#command", "+40"));
+					com.commands.add(new Command("#gcost", "+10"));
+				}
+				else
+				{
+					com.commands.add(new Command("#goodleader"));
+					com.commands.add(new Command("#gcost", "+20"));
+				}
 				
 				if(r.nextDouble() > 0.65 && !mindless)
 				{
