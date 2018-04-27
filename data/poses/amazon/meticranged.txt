@@ -4,8 +4,10 @@
 #basechance 0.75
 #role "ranged"
 #name "freeman bowman"
+
 #theme "free"
 #subraceprefix freeman
+#cannot_be_commander
 
 #renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -46,8 +48,10 @@
 #basechance 0.25
 #role "ranged"
 #name "freeman Xbowman"
+
 #theme "free"
 #subraceprefix freeman
+#cannot_be_commander
 
 #load basesprite /data/items/amazon/metic/xbow_bases.txt
 #load shadow /data/items/amazon/normal/shadow.txt
@@ -90,6 +94,7 @@
 #command "#mor -1"
 #command "#slave"
 #guaranteedprefix slave
+#cannot_be_commander
 
 #renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -135,6 +140,7 @@
 #command "#mor -1"
 #command "#slave"
 #guaranteedprefix slave
+#cannot_be_commander
 
 #load basesprite /data/items/amazon/metic/xbow_bases.txt
 #load shadow /data/items/amazon/normal/shadow.txt

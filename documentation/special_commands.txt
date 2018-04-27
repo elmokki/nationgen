@@ -345,6 +345,18 @@ Mage variants vary one of the slots defined by the #varyslot command. Overrides 
 #primaryraceonly
 This pose will not be eligible for selection as a secondary race pose
 
+#cannot_be_commander
+This pose will not be eligible for selection as a commander if at all possible
+
+#should_be_commander
+This pose will be given priority for selection as a commander
+
+#superior_leader
+Commanders generated from this pose are more likely to be very good commanders
+
+#good_leader
+Commanders generated from this pose are more likely to be good commanders
+
 --- Item
 #recolormask <sprite filename/self>
 Draws the given sprite or the sprite itself if argument is self on top of the item sprite with national color recolor.

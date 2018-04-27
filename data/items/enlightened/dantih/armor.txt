@@ -11,12 +11,24 @@
 
 -- Furs
 #newitem
+#name "half-furs"
+#gameid -1
+#sprite /graphics/enlightened/dantih/armor/furs_loincloth.png
+#armor
+#theme naked
+#theme primitive
+#needs shirt noshirt
+#milita
+#enditem
+
+#newitem
 #name "furs"
 #basechance 2
 #gameid 44
+#sprite /graphics/enlightened/dantih/armor/furs.png
 #armor
-#needs shirt noshirt
 #theme primitive
+#needs shirt noshirt
 #milita
 #enditem
 
