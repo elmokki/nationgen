@@ -1,0 +1,38 @@
+#newitem
+#name "wings"
+#gameid -1
+#basechance 0.5
+#sprite /graphics/lizard/wings.png
+#define "#flying"
+#define "#gcost *1.5"
+#define "size 3"
+#define "ressize 2"
+#define "#mapmove +6"
+#theme "sacred"
+#renderprio 7
+#renderslot "cloakb"
+#description "Has wings and is thus able to fly"
+#tag "winged"
+#define "#twiceborn 3180"
+#enditem
+
+#newitem
+#name "hypnosis"
+#gameid 595
+#basechance 0.1
+#theme "sacred"
+#enditem
+
+#newitem
+#name "poison spit"
+#gameid 167
+#basechance 0.1
+#theme "sacred"
+#enditem
+
+#newitem
+#name "poisonous bite"
+#gameid 495
+#basechance 0.1
+#theme "sacred"
+#enditem
