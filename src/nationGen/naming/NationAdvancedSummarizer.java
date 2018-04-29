@@ -127,6 +127,22 @@ public class NationAdvancedSummarizer {
 				{
 					traits.add("Can build forts underwater");
 				}
+				else if(c.command.equals("#buildfort") && c.args.get(0).equals("11"))
+				{
+					traits.add("Fortified cities");
+				}
+				else if(c.command.equals("#buildfort") && c.args.get(0).equals("15"))
+				{
+					traits.add("Giant forts");
+				}
+				else if(c.command.equals("#buildfort") && c.args.get(0).equals("20"))
+				{
+					traits.add("Ice forts");
+				}
+				else if(c.command.equals("#buildfort") && c.args.get(0).equals("27"))
+				{
+					traits.add("Fortified villages");
+				}
 			
 			
 			for(Theme f : n.nationthemes)

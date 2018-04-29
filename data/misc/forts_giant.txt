@@ -1,0 +1,132 @@
+---- Standard giant forts
+----
+--- Early age Standard giant forts
+#new
+#name "0: Giant palisades only"
+#type "era 1"
+#basechance 0.1
+#chanceinc anytheme primitive *4
+#command "#fortera 0"
+#command "#buildfort 15"
+#end
+
+#new
+#name "1: Standard giant forts for early era"
+#type "era 1"
+#basechance 1
+#chanceinc era 1 10
+#chanceinc era 2 2.5
+#chanceinc era 3 0.5
+#command "#fortera 1"
+#command "#buildfort 15"
+#end
+
+#new
+#name "2: Standard giant forts for middle era"
+#type "era 1"
+#basechance 0.25
+#chanceinc era 2 10
+#chanceinc era 1 2.5
+#chanceinc era 3 2.5
+#command "#fortera 2"
+#command "#buildfort 15"
+#chanceinc anytheme advanced *8
+#end
+
+#new
+#name "3: Standard giant forts for late era"
+#type "era 1"
+#basechance 0.05
+#chanceinc anytheme advanced *8
+#command "#fortera 3"
+#command "#buildfort 15"
+#end
+
+
+
+-- Middle age Standard giant forts
+
+#new
+#name "0: Giant palisades only"
+#type "era 2"
+#basechance 0.1
+#chanceinc anytheme primitive *4
+#command "#fortera 0"
+#command "#buildfort 15"
+#end
+
+#new
+#name "1: Standard giant forts for early era"
+#type "era 2"
+#basechance 0.25
+#chanceinc era 1 10
+#chanceinc era 2 2.5
+#chanceinc era 3 0.5
+#command "#fortera 1"
+#command "#buildfort 15"
+#chanceinc anytheme primitive *8
+#end
+
+#new
+#name "2: Standard giant forts for middle era"
+#type "era 2"
+#basechance 1
+#chanceinc era 2 10
+#chanceinc era 1 2.5
+#chanceinc era 3 2.5
+#command "#fortera 2"
+#command "#buildfort 15"
+#end
+
+#new
+#name "3: Standard giant forts for late era"
+#type "era 2"
+#basechance 0.25
+#chanceinc anytheme advanced *8
+#command "#fortera 3"
+#command "#buildfort 15"
+#end
+
+
+-- Late age Standard giant forts
+
+#new
+#name "0: Giant palisades only"
+#type "era 3"
+#basechance 0.05
+#chanceinc anytheme primitive *2
+#command "#fortera 0"
+#command "#buildfort 15"
+#end
+
+#new
+#name "1: Standard giant forts for early era"
+#type "era 3"
+#basechance 0.25
+#chanceinc era 1 10
+#chanceinc era 2 2.5
+#chanceinc era 3 0.5
+#command "#fortera 1"
+#command "#buildfort 15"
+#chanceinc anytheme primitive *8
+#end
+
+#new
+#name "2: Standard giant forts for middle era"
+#type "era 3"
+#basechance 0.5
+#chanceinc era 2 10
+#chanceinc era 1 2.5
+#chanceinc era 3 2.5
+#command "#fortera 2"
+#command "#buildfort 15"
+#chanceinc anytheme primitive *4
+#end
+
+#new
+#name "3: Standard giant forts for late era"
+#type "era 3"
+#basechance 1
+#command "#fortera 3"
+#command "#buildfort 15"
+#end

@@ -1,0 +1,155 @@
+---- Ice forts
+----
+--- Early age
+#new
+#name "0: Ice walls only"
+#type "era 1"
+#basechance 1
+#chanceinc nationcommand #idealcold below 2 *0.001
+#chanceinc nationcommand #idealcold below 1 *0.001
+#chanceinc anytheme primitive *4
+#command "#fortera 0"
+#command "#buildfort 20"
+#end
+
+#new
+#name "1: Standard ice forts for early era"
+#type "era 1"
+#basechance 10
+#chanceinc nationcommand #idealcold below 2 *0.001
+#chanceinc nationcommand #idealcold below 1 *0.001
+#chanceinc era 1 10
+#chanceinc era 2 2.5
+#chanceinc era 3 0.5
+#command "#fortera 1"
+#command "#buildfort 20"
+#end
+
+#new
+#name "2: Standard ice forts for middle era"
+#type "era 1"
+#basechance 2.5
+#chanceinc nationcommand #idealcold below 2 *0.001
+#chanceinc nationcommand #idealcold below 1 *0.001
+#chanceinc era 2 10
+#chanceinc era 1 2.5
+#chanceinc era 3 2.5
+#command "#fortera 2"
+#command "#buildfort 20"
+#chanceinc anytheme advanced *8
+#end
+
+#new
+#name "3: Standard ice forts for late era"
+#type "era 1"
+#basechance 0.5
+#chanceinc nationcommand #idealcold below 2 *0.001
+#chanceinc nationcommand #idealcold below 1 *0.001
+#chanceinc anytheme advanced *8
+#command "#fortera 3"
+#command "#buildfort 20"
+#end
+
+
+-- Middle age
+
+#new
+#name "0: Ice walls only"
+#type "era 2"
+#basechance 1
+#chanceinc nationcommand #idealcold below 2 *0.001
+#chanceinc nationcommand #idealcold below 1 *0.001
+#chanceinc anytheme primitive *4
+#command "#fortera 0"
+#command "#buildfort 20"
+#end
+
+#new
+#name "1: Standard ice forts for early era"
+#type "era 2"
+#basechance 2.5
+#chanceinc nationcommand #idealcold below 2 *0.001
+#chanceinc nationcommand #idealcold below 1 *0.001
+#chanceinc era 1 10
+#chanceinc era 2 2.5
+#chanceinc era 3 0.5
+#command "#fortera 1"
+#command "#buildfort 20"
+#chanceinc anytheme primitive *8
+#end
+
+#new
+#name "2: Standard ice forts for middle era"
+#type "era 2"
+#basechance 10
+#chanceinc nationcommand #idealcold below 2 *0.001
+#chanceinc nationcommand #idealcold below 1 *0.001
+#chanceinc era 2 10
+#chanceinc era 1 2.5
+#chanceinc era 3 2.5
+#command "#fortera 2"
+#command "#buildfort 20"
+#end
+
+#new
+#name "3: Standard ice forts for late era"
+#type "era 2"
+#basechance 2.5
+#chanceinc nationcommand #idealcold below 2 *0.001
+#chanceinc nationcommand #idealcold below 1 *0.001
+#chanceinc anytheme advanced *8
+#command "#fortera 3"
+#command "#buildfort 20"
+#end
+
+
+-- Late age
+
+#new
+#name "0: Ice walls only"
+#type "era 3"
+#basechance 0.5
+#chanceinc nationcommand #idealcold below 2 *0.001
+#chanceinc nationcommand #idealcold below 1 *0.001
+#chanceinc anytheme primitive *2
+#command "#fortera 0"
+#command "#buildfort 20"
+#end
+
+#new
+#name "1: Standard ice forts for early era"
+#type "era 3"
+#basechance 2.5
+#chanceinc nationcommand #idealcold below 2 *0.001
+#chanceinc nationcommand #idealcold below 1 *0.001
+#chanceinc era 1 10
+#chanceinc era 2 2.5
+#chanceinc era 3 0.5
+#command "#fortera 1"
+#command "#buildfort 20"
+#chanceinc anytheme primitive *8
+#end
+
+#new
+#name "2: Standard ice forts for middle era"
+#type "era 3"
+#basechance 5
+#chanceinc nationcommand #idealcold below 2 *0.001
+#chanceinc nationcommand #idealcold below 1 *0.001
+#chanceinc era 2 10
+#chanceinc era 1 2.5
+#chanceinc era 3 2.5
+#command "#fortera 2"
+#command "#buildfort 20"
+#chanceinc anytheme primitive *4
+#end
+
+#new
+#name "3: Standard ice forts for late era"
+#type "era 3"
+#basechance 10
+#chanceinc nationcommand #idealcold below 2 *0.001
+#chanceinc nationcommand #idealcold below 1 *0.001
+#command "#fortera 3"
+#command "#buildfort 20"
+#end
