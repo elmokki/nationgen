@@ -4,7 +4,7 @@
 #new
 #name "0: Palisades only"
 #type "era 1"
-#basechance 0.1
+#basechance 0.25
 #chanceinc anytheme primitive *4
 #command "#fortera 0"
 #end
@@ -36,6 +36,14 @@
 #basechance 0.05
 #chanceinc anytheme advanced *8
 #command "#fortera 3"
+#end
+
+#new
+#name "4: Advanced forts for late era"
+#type "era 1"
+#basechance 0.005
+#chanceinc anytheme advanced *10
+#command "#fortera 4"
 #end
 
 
@@ -79,6 +87,14 @@
 #command "#fortera 3"
 #end
 
+#new
+#name "4: Advanced forts for late era"
+#type "era 2"
+#basechance 0.05
+#chanceinc anytheme advanced *8
+#command "#fortera 4"
+#end
+
 
 -- Late age
 
@@ -117,4 +133,51 @@
 #type "era 3"
 #basechance 1
 #command "#fortera 3"
+#end
+
+#new
+#name "4: Advanced forts for late era"
+#type "era 3"
+#basechance 0.25
+#chanceinc anytheme advanced *4
+#command "#fortera 4"
+#end
+
+
+-- Fortified villages
+
+#new
+#name "0: Fortified villages for early era"
+#type "era 1"
+#basechance 0.25
+#chanceinc anytheme tribal *4
+#chanceinc anytheme primitive *4
+#chanceinc anytheme advanced *0.1
+#command "#fortera 0"
+#command "#buildfort 27"
+#command "#homefort 28"
+#end
+
+#new
+#name "1: Fortified villages for middle era"
+#type "era 2"
+#basechance 0.1
+#chanceinc anytheme tribal *4
+#chanceinc anytheme primitive *2
+#chanceinc anytheme advanced *0.05
+#command "#fortera 1"
+#command "#buildfort 27"
+#command "#homefort 28"
+#end
+
+#new
+#name "1: Fortified villages for late era"
+#type "era 3"
+#basechance 0.05
+#chanceinc anytheme tribal *2
+#chanceinc anytheme primitive *2
+#chanceinc anytheme advanced *0.01
+#command "#fortera 2"
+#command "#buildfort 27"
+#command "#homefort 28"
 #end
