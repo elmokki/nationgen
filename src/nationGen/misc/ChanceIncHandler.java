@@ -2296,7 +2296,7 @@ public class ChanceIncHandler {
 		}
 		else if(args.get(0).equals("race") && args.size() > 1)
 		{
-			if(u.race.name.toLowerCase().equals(args.get(args.size() - 2).toLowerCase()))
+			if(u.race.name.toLowerCase().equals(lastarg))
 			{
 				return true  != realnot;
 			}
