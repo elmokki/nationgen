@@ -1,0 +1,187 @@
+#newitem
+#name "wings_lizard"
+#gameid -1
+#basechance 0
+#chanceinc race Lizard 0.01
+#sprite /graphics/scouts/extras/wings_lizard.png
+#define "#flying"
+#define "#gcost +20"
+#define "size 3"
+#define "ressize 2"
+#define "#mapmove +6"
+#define "#scalewalls"
+#tag "winged"
+#define "#twiceborn 3180"
+#theme "winged"
+#theme "lizard"
+#enditem
+
+#newitem
+#name "wings_demondbred"
+#gameid -1
+#basechance 0.01
+#chanceinc race Abysian AND racetheme primal 1
+#chanceinc race Abysian AND racetheme tainted 0.25
+#chanceinc race Abysian AND racetheme diluted 0.1
+#chanceinc race Abysian AND racetheme degenerate 0.01
+#sprite /graphics/scouts/extras/wings_demon.png
+#define "#flying"
+#define "#gcost +20"
+#define "#hp +2"
+#define "#prot +3"
+#define "#mor +2"
+#define "#darkvision +50"
+#define "size 3"
+#define "ressize 2"
+#define "#mapmove +6"
+#define "#scalewalls"
+#tag "winged"
+#define "#twiceborn 3180"
+#theme "winged"
+#theme "abysian"
+#enditem
+
+#newitem
+#name "hypnosis"
+#gameid 595
+#define "#gcost +10"
+#basechance 0.05
+#theme "serpent"
+#enditem
+
+#newitem
+#name "throw flames"
+#gameid 383
+#basechance 0
+#chanceinc race Abysian AND racetheme primal 0.25
+#chanceinc race Abysian AND racetheme tainted 0.01
+#chanceinc magic fire 0.01
+#define "#gcost +10"
+#theme "fire"
+#theme "abysian"
+#enditem
+
+#newitem
+#name "cave fire"
+#gameid 601
+#define "#gcost +10"
+#basechance 0.01
+#theme "acid"
+#theme "alchemy"
+#theme "advanced"
+#enditem
+
+#newitem
+#name "koppo"
+#gameid 420
+#define "#gcost +10"
+#basechance 0.01
+#theme "oriental"
+#enditem
+
+#newitem
+#name "chi kick"
+#gameid 175
+#define "#gcost +10"
+#basechance 0.01
+#theme "oriental"
+#enditem
+
+#newitem
+#name "tail slap"
+#gameid 589
+#basechance 0.01
+#theme "lizard"
+#enditem
+
+#newitem
+#name "bite"
+#gameid 576
+#basechance 0.01
+#theme "lizard"
+#enditem
+
+#newitem
+#name "kick"
+#gameid 397
+#basechance 0.03
+#theme "boreal"
+#theme "austral"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#theme "oriental"
+#theme "merrow"
+#enditem
+
+#newitem
+#name "head butt"
+#gameid 300
+#basechance 0.01
+#theme "boreal"
+#theme "austral"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#theme "oriental"
+#theme "merrow"
+#enditem
+
+#newitem
+#name "poison darts"
+#gameid 500
+#basechance 0.05
+#theme "boreal"
+#theme "austral"
+#theme "boreal"
+#theme "poison"
+#theme "imperial"
+#theme "lizard"
+#theme "oriental"
+#enditem
+
+#newitem
+#name "strangulation"
+#gameid 116
+#basechance 0.05
+#theme "boreal"
+#theme "austral"
+#theme "boreal"
+#theme "imperial"
+#theme "lizard"
+#theme "oriental"
+#theme "merrow"
+#theme "abysian"
+#enditem
+
+#newitem
+#name "patience"
+#gameid -1
+#define "#patience +3"
+#basechance 0.05
+#theme "boreal"
+#theme "austral"
+#theme "boreal"
+#theme "imperial"
+#theme "lizard"
+#theme "oriental"
+#theme "merrow"
+#theme "abysian"
+#enditem
+
+#newitem
+#name "stealth"
+#gameid -1
+#define "#stealthy +20"
+#basechance 0.05
+#theme "boreal"
+#theme "austral"
+#theme "boreal"
+#theme "imperial"
+#theme "lizard"
+#theme "oriental"
+#theme "merrow"
+#theme "abysian"
+#enditem

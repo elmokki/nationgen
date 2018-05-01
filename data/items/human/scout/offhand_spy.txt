@@ -1,0 +1,356 @@
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/scouts/offhand/axe_iron1.png
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#enditem
+
+#newitem
+#id axe_bronze
+#gameid 675
+#sprite /graphics/scouts/offhand/axe_bronze1.png
+#theme "bronze"
+#theme "boreal"
+#theme "merrow"
+#enditem
+
+#newitem
+#id hatchet
+#gameid 253
+#sprite /graphics/scouts/offhand/axe_iron1.png
+#theme "iron"
+#theme "primitive"
+#theme "austral"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#theme "imperial"
+#enditem
+
+#newitem
+#id hatchet_bronze
+#gameid 646
+#sprite /graphics/scouts/offhand/axe_bronze1.png
+#theme "bronze"
+#theme "primitive"
+#theme "boreal"
+#theme "merrow"
+#enditem
+
+#newitem
+#id hammer
+#gameid 13
+#basechance 0.5
+#sprite /graphics/scouts/offhand/hammer_iron1.png
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#theme "advanced"
+#enditem
+
+#newitem
+#id hammer_bronze
+#gameid bronzehammer
+#basechance 0.25
+#sprite /graphics/scouts/offhand/hammer_bronze1.png
+#theme "bronze"
+#theme "boreal"
+#theme "merrow"
+#theme "advanced"
+#enditem
+
+#newitem
+#id mace
+#gameid 8
+#sprite /graphics/scouts/offhand/mace1.png
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#enditem
+
+#newitem
+#id mace_ice
+#gameid 44
+#basechance 0.01
+#chanceinc magic water *5
+#chanceinc command #iceforging *10
+#chanceinc command #iceprot *5
+#chanceinc nationcommand #idealcold below 1 *0
+#sprite /graphics/scouts/offhand/mace_ice1.png
+#theme "ice"
+#theme "boreal"
+#theme "imperial"
+#enditem
+
+#newitem
+#id sickle_iron
+#gameid 57
+#basechance 0.0125
+#chanceinc magic death *2
+#chanceinc magic nature *2
+#sprite /graphics/scouts/offhand/sickle1.png
+#theme "death"
+#theme "nature"
+#theme "assassin"
+#theme "primitive"
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "imperial"
+#theme "lizard"
+#enditem
+
+#newitem
+#id sword_iron
+#gameid 8
+#sprite /graphics/scouts/offhand/sword_iron1.png
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#enditem
+
+#newitem
+#id sword_bronze
+#gameid bronzebroadsword
+#sprite /graphics/scouts/offhand/sword_bronze1.png
+#theme "bronze"
+#theme "boreal"
+#theme "merrow"
+#theme "amphibious"
+#enditem
+
+#newitem
+#id sword_coral
+#gameid coralbroadsword
+#basechance 0.1
+#chanceinc magic water nature *10
+#sprite /graphics/scouts/offhand/sword_coral1.png
+#theme "coral"
+#theme "merrow"
+#theme "amphibious"
+#enditem
+
+#newitem
+#id sword_pearl
+#gameid 665
+#basechance 0.1
+#chanceinc magic water astral *10
+#sprite /graphics/scouts/offhand/sword_pearl1.png
+#theme "pearl"
+#theme "merrow"
+#theme "amphibious"
+#enditem
+
+#newitem
+#id sword_bane
+#gameid 42
+#basechance 0.005
+#chanceinc magic death *10
+#sprite /graphics/scouts/offhand/sword_bane1.png
+#theme "death"
+#theme "assassin"
+#theme "austral"
+#theme "boreal"
+#theme "imperial"
+#theme "lizard"
+#enditem
+
+#newitem
+#id sword_ice
+#gameid 37
+#basechance 0.01
+#chanceinc magic water *5
+#chanceinc command #iceforging *10
+#chanceinc command #iceprot *5
+#chanceinc nationcommand #idealcold below 1 *0
+#sprite /graphics/scouts/offhand/sword_ice1.png
+#theme "ice"
+#theme "boreal"
+#theme "imperial"
+#theme "merrow"
+#enditem
+
+#newitem
+#id sword_short_iron
+#gameid 6
+#sprite /graphics/scouts/offhand/sword_short_iron1.png
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#enditem
+
+#newitem
+#id sword_short_bronze
+#gameid 645
+#sprite /graphics/scouts/offhand/sword_short_bronze1.png
+#theme "bronze"
+#theme "boreal"
+#theme "merrow"
+#theme "amphibious"
+#enditem
+
+#newitem
+#id sword_short_coral
+#gameid coralshortsword
+#basechance 0.1
+#chanceinc magic water nature *10
+#sprite /graphics/scouts/offhand/sword_short_coral1.png
+#theme "coral"
+#theme "merrow"
+#theme "amphibious"
+#enditem
+
+#newitem
+#id wakizashi
+#gameid 379
+#sprite /graphics/scouts/offhand/wakizashi1.png
+#theme "iron"
+#theme "oriental"
+#enditem
+
+#newitem
+#id ninjato
+#gameid 378
+#sprite /graphics/scouts/offhand/ninjato1.png
+#theme "iron"
+#theme "oriental"
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#sprite /graphics/scouts/offhand/falchion1.png
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#theme "oriental"
+#enditem
+
+#newitem
+#id kopesh
+#gameid 513
+#sprite /graphics/scouts/offhand/kopesh1.png
+#theme "bronze"
+#theme "boreal"
+#theme "lizard"
+#theme "merrow"
+#enditem
+
+#newitem
+#id dagger
+#gameid 9
+#sprite /graphics/scouts/offhand/dagger_iron1.png
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#theme "oriental"
+#enditem
+
+#newitem
+#id dagger_bronze
+#gameid 674
+#sprite /graphics/scouts/offhand/dagger_bronze1.png
+#theme "bronze"
+#theme "boreal"
+#theme "merrow"
+#theme "amphibious"
+#enditem
+
+#newitem
+#id dagger_bloody
+#gameid 671
+#basechance 0.01
+#chanceinc magic blood *10
+#sprite /graphics/scouts/offhand/dagger_blood1.png
+#theme "assassin"
+#theme "primitive"
+#theme "boreal"
+#theme "austral"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#theme "oriental"
+#theme "merrow"
+#theme "amphibious"
+#enditem
+
+#newitem
+#id dagger_poison
+#gameid 126
+#basechance 0.1
+#sprite /graphics/scouts/offhand/dagger_poison1.png
+#theme "assassin"
+#theme "boreal"
+#theme "austral"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#theme "oriental"
+#enditem
+
+#newitem
+#id dagger_coral
+#gameid 32
+#basechance 0.1
+#chanceinc magic water nature *10
+#sprite /graphics/scouts/offhand/dagger_coral1.png
+#theme "coral"
+#theme "merrow"
+#theme "amphibious"
+#enditem
+
+#newitem
+#id dagger_ice
+#gameid 35
+#basechance 0.01
+#chanceinc magic water *5
+#chanceinc command #iceforging *10
+#chanceinc command #iceprot *5
+#chanceinc nationcommand #idealcold below 1 *0
+#sprite /graphics/scouts/offhand/dagger_ice1.png
+#theme "ice"
+#theme "boreal"
+#theme "imperial"
+#theme "merrow"
+#theme "amphibious"
+#enditem
+
+#newitem
+#id dagger_bane
+#gameid 312
+#basechance 0.005
+#chanceinc magic death *10
+#sprite /graphics/scouts/offhand/dagger_bane1.png
+#theme "death"
+#theme "assassin"
+#theme "austral"
+#theme "boreal"
+#theme "imperial"
+#theme "lizard"
+#enditem

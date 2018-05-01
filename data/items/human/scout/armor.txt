@@ -1,0 +1,319 @@
+--- Concealed armor
+#newitem
+#name "nothing"
+#gameid -1
+#basechance 2
+#armor
+#theme "naked"
+#theme "austral"
+#theme "abysian"
+#theme "lizard"
+#theme "merrow"
+#enditem
+
+#newitem
+#name "leather cuirass"
+#gameid 5
+#basechance 2
+#armor
+#theme "leather"
+#theme "austral"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#theme "oriental"
+#enditem
+
+#newitem
+#name "leather hauberk"
+#gameid 10
+#basechance 0.5
+#armor
+#theme "leather"
+#theme "austral"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#theme "oriental"
+#enditem
+
+#newitem
+#name "full leather"
+#gameid 15
+#basechance 0.25
+#armor
+#theme "leather"
+#theme "austral"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#theme "oriental"
+#enditem
+
+#newitem
+#name "ring cuirass"
+#gameid 6
+#armor
+#basechance 2
+#theme "leather"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#enditem
+
+#newitem
+#name "ring hauberk"
+#gameid 11
+#basechance 0.5
+#armor
+#theme "leather"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#enditem
+
+#newitem
+#name "full ring"
+#gameid 16
+#basechance 0.25
+#armor
+#theme "leather"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#enditem
+
+#newitem
+#name "linen cuirass"
+#gameid 183
+#basechance 2
+#armor
+#theme "cloth"
+#theme "imperial"
+#theme "lizard"
+#enditem
+
+#newitem
+#name "sharkskin cuirass"
+#gameid 188
+#armor
+#basechance 2
+#theme "leather"
+#theme "amphibious"
+#theme "merrow"
+#enditem
+
+#newitem
+#name "sharkskin hauberk"
+#gameid 151
+#basechance 0.5
+#armor
+#theme "leather"
+#theme "amphibious"
+#theme "merrow"
+#enditem
+
+#newitem
+#name "icestudded cuirass"
+#gameid icestudded_cuirass
+#basechance 0.01
+#chanceinc magic water *5
+#chanceinc command #iceforging *10
+#chanceinc command #iceprot *5
+#chanceinc thisitemslottheme weapon ice *5
+#chanceinc nationcommand #idealcold below 1 *0
+#chanceinc "personalcommand below #coldres 5 *0"
+#armor
+#define "#iceprot 1"
+#theme "leather"
+#theme "ice"
+#theme "boreal"
+#theme "imperial"
+#theme "merrow"
+#theme "amphibious"
+#ice
+#enditem
+
+
+
+--- Visible armor
+#newitem
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/scouts/armor/scale_iron.png
+#armor
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#theme "oriental"
+#enditem
+
+#newitem
+#name "bronze scale cuirass"
+#gameid 142
+#sprite /graphics/scouts/armor/scale_bronze.png
+#armor
+#theme "bronze"
+#theme "boreal"
+#theme "merrow"
+#theme "amphibious"
+#enditem
+
+#newitem
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/scouts/armor/chain_iron.png
+#armor
+#theme "iron"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#theme "oriental"
+#enditem
+
+#newitem
+#name "blackmail cuirass"
+#gameid blackmail_cuirass
+#basechance 0
+#chanceinc racetheme blacksteel 4
+#sprite /graphics/scouts/armor/chain_blacksteel.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "boreal"
+#enditem
+
+#newitem
+#name "blackplate cuirass"
+#gameid blackplate_cuirass
+#basechance 0
+#chanceinc racetheme blacksteel 4
+#sprite /graphics/scouts/armor/plate_blacksteel.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "boreal"
+#enditem
+
+#newitem
+#name "plate cuirass"
+#gameid 9
+#basechance 0.25
+#sprite /graphics/scouts/armor/plate_iron.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#enditem
+
+#newitem
+#name "bronze plate cuirass"
+#gameid 100
+#basechance 0.25
+#sprite /graphics/scouts/armor/plate_bronze.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "boreal"
+#theme "merrow"
+#theme "amphibious"
+#enditem
+
+#newitem
+#name "icicle cuirass"
+#gameid icicle_cuirass
+#basechance 0.01
+#chanceinc magic water *5
+#chanceinc command #iceforging *10
+#chanceinc command #iceprot *5
+#chanceinc thisitemslottheme weapon ice *5
+#chanceinc nationcommand #idealcold below 1 *0
+#chanceinc "personalcommand below #coldres 5 *0"
+#sprite /graphics/scouts/armor/mail_ice.png
+#armor
+#define "#iceprot 2"
+#theme "ice"
+#theme "boreal"
+#theme "imperial"
+#theme "merrow"
+#theme "amphibious"
+#ice
+#enditem
+
+#newitem
+#name "ice cuirass"
+#gameid 26
+#basechance 0.01
+#chanceinc magic water *5
+#chanceinc command #iceforging *10
+#chanceinc command #iceprot *5
+#chanceinc thisitemslottheme weapon ice *5
+#chanceinc nationcommand #idealcold below 1 *0
+#chanceinc "personalcommand below #coldres 5 *0"
+#sprite /graphics/scouts/armor/plate_ice.png
+#armor
+#define "#iceprot 2"
+#theme "ice"
+#theme "boreal"
+#theme "imperial"
+#theme "merrow"
+#theme "amphibious"
+#ice
+#enditem
+
+#newitem
+#name "bone cuirass"
+#gameid 149
+#basechance 0.05
+#chanceinc magic death *10
+#sprite /graphics/scouts/armor/armor_bone.png
+#armor
+#theme "death"
+#theme "bone"
+#theme "primitive"
+#theme "austral"
+#theme "boreal"
+#theme "imperial"
+#theme "lizard"
+#theme "merrow"
+#theme "amphibious"
+#enditem
+
+#newitem
+#name "shell cuirass"
+#gameid 140
+#basechance 0.1
+#sprite /graphics/scouts/armor/armor_shell.png
+#armor
+#theme "shell"
+#theme "merrow"
+#theme "amphibious"
+#enditem
+
+#newitem
+#name "coral cuirass"
+#gameid 22
+#basechance 0.1
+#chanceinc magic water nature *10
+#chanceinc thisitemslottheme weapon coral *2
+#sprite /graphics/scouts/armor/armor_coral.png
+#armor
+#define "#poisonarmor"
+#theme "coral"
+#theme "merrow"
+#theme "amphibious"
+#enditem
