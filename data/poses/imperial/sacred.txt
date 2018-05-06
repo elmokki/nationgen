@@ -1,0 +1,36 @@
+-------- Lictor-style sacreds
+#newpose
+#name "lictor"
+#role "sacred infantry"
+#role "elite infantry"
+
+#sacred
+#elite
+
+#command "#gcost +5"
+#command "#hp +2"
+#command "#mor +2"
+#command "#str +1"
+#command "#att +1"
+#command "#def +1"
+
+#renderorder "shadow cloakb bonusweapon basesprite shirt armor weapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/imperial/civil/bases_lictor.txt
+#load shadow /data/items/imperial/civil/shadow_lictor.txt
+#load hands /data/items/imperial/civil/hands_lictor.txt
+
+#load armor /data/items/imperial/civil/armor_lictor.txt
+#load shirt /data/items/imperial/civil/shirt_lictor.txt
+#load helmet /data/items/imperial/civil/helmet_lictor.txt
+
+#load weapon /data/items/imperial/civil/weapon_lictor.txt
+
+#load cloakf /data/items/imperial/civil/cloakf_lictor.txt
+#load cloakb /data/items/imperial/civil/cloakb_lictor.txt
+
+#load bonusweapon /data/items/imperial/civil/bonusranged_lictor.txt
+
+#generateitem 1 shirt
+
+#endpose
