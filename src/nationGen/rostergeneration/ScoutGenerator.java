@@ -328,7 +328,12 @@ public class ScoutGenerator extends TroopGenerator {
 	private void addStats(Unit u, int tier)
 	{
 		Filter tf = new Filter(nationGen);
-		tf.name = "Scout";
+		if(tier == 3)
+			tf.name = "Assassin";
+		else if(tier == 2)
+			tf.name = "Spy";
+		else
+			tf.name = "Scout";
 		
 		boolean elite = false;
 		boolean sacred = false;
