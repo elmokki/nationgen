@@ -1,20 +1,6 @@
 #newitem
-#name "javelin 1"
+#name "javelin"
 #gameid 21
-#sprite /graphics/weapon/standard/javelin1.png
-#basechance 0.5
-#theme "occidental"
-#theme "boreal"
-#theme "austral"
-#theme "oriental"
-#theme "central"
-#theme "imperial"
-#enditem
-
-#newitem
-#name "javelin 2"
-#gameid 21
-#basechance 0.5
 #sprite /graphics/weapon/standard/javelin2.png
 #theme "occidental"
 #theme "boreal"
@@ -28,6 +14,7 @@
 #name "bonus crossbow"
 #gameid 25
 #sprite /graphics/weapon/standard/bonuscrossbow.png
+#offsety 1
 #basechance 0.5
 #theme "advanced"
 #theme "iron"
@@ -40,11 +27,13 @@
 #newitem -- Throwing axe
 #name "throwing axe"
 #gameid 260
-#theme "primitive"
 #theme "iron"
+#theme "primitive"
+#theme "austral"
 #theme "boreal"
-#theme "central"
-#theme "enlightened"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
 #enditem
 
 #newitem
@@ -52,149 +41,110 @@
 #gameid throwinghatchet
 #theme "primitive"
 #theme "bronze"
-#theme "occidental"
-#theme "central"
-#theme "imperial"
-#theme "enlightened"
+#theme "boreal"
 #enditem
 
 #newitem
 #name "bonus shortbow"
 #gameid 23
 #sprite /graphics/weapon/standard/bonusshortbow.png
-#basechance 0.5
 #theme "wood"
-#theme "occidental"
-#theme "boreal"
 #theme "austral"
-#theme "oriental"
-#theme "central"
+#theme "boreal"
 #theme "imperial"
-#theme "enlightened"
 #enditem
 
 #newitem
 #name "poison shortbow"
 #gameid 594
 #sprite /graphics/weapon/standard/bonusshortbow.png
-#basechance 0.5
 #theme "wood"
 #theme "poison"
-#theme "occidental"
 #theme "austral"
-#theme "oriental"
-#theme "central"
-#theme "enlightened"
 #enditem
 
 #newitem
 #name "bonus sling"
 #gameid 22
-#sprite /graphics/weapon/standard/bonusshortbow.png
-#basechance 0.5
 #theme "leather"
-#theme "occidental"
 #theme "boreal"
-#theme "central"
 #theme "imperial"
+#theme "lizard"
 #enditem
 
 #newitem
 #name "poison sling"
 #gameid 167
-#basechance 0.5
+#basechance 0.25
 #theme "leather"
 #theme "poison"
-#theme "occidental"
-#theme "central"
-#notepic
+#theme "imperial"
+#theme "lizard"
 #enditem
 
 #newitem
 #name "chakram"
 #gameid 362
-#sprite /graphics/weapon/standard/chakram.png
-#renderprio 7
-#renderslot "weapon"
 #basechance 0.25
 #theme "iron"
-#theme "central"
-#theme "oriental"
-#theme "enlightened"
-#enditem
-
-#newitem
-#name "sticksandstones"
-#gameid 360
-#basechance 0.25
-#tag "notepic"
-#theme "primitive"
-#theme "occidental"
 #theme "austral"
-#theme "enlightened"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#theme "oriental"
 #enditem
 
 #newitem
 #name "harpoon"
 #gameid 452
 #sprite /graphics/weapon/standard/javelin1.png
-#theme "occidental"
+#offsety 1
+#theme "austral"
 #theme "boreal"
-#theme "oriental"
+#theme "merrow"
 #enditem
 
 #newitem
 #name "blowpipe"
 #gameid 34
-#tag "tierunique"
-#basechance 0.5
 #theme "poison"
-#theme "occidental"
 #theme "austral"
+#theme "lizard"
 #theme "oriental"
-#notepic
 #enditem
 
 #newitem
 #name "net"
 #gameid 263
-#sprite /graphics/weapon/standard/net.png
+#sprite /graphics/scouts/extras/net.png
 #tag "noslot offhand"
-#tag "notepic"
-#basechance 0.5
-#theme "occidental"
-#theme "boreal"
-#theme "austral"
-#theme "central"
+#renderprio 7
+#renderslot "offhandw"
+#theme "merrow"
 #theme "imperial"
-#theme "enlightened"
 #enditem
 
 #newitem
 #name "poison dart"
 #gameid 620
-#basechance 0.5
-#theme "primitive"
-#theme "poison"
-#theme "occidental"
 #theme "austral"
+#theme "boreal"
+#theme "imperial"
+#theme "lizard"
 #theme "oriental"
-#theme "enlightened"
 #enditem
 
 #newitem
 #name "shuriken"
 #gameid 382
-#basechance 0.5
 #theme "poison"
 #theme "oriental"
-#theme "enlightened"
 #enditem
 
 #newitem
 #name "discus"
 #gameid 723
 #theme "bronze"
-#theme "central"
 #theme "imperial"
 #enditem

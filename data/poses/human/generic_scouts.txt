@@ -1,0 +1,58 @@
+
+------------- spy
+
+#newpose
+#name generic_spies
+#role "scout"
+#basechance 5
+#chanceinc racetheme primitive *0.01
+#chanceinc racetheme advanced *2
+#cannot_be_scout
+#cannot_be_assassin
+
+#renderorder "shadow weapon_underlay bonusweapon basesprite helmet armor weapon offhandw hands"
+
+#load basesprite /data/items/human/scout/bases_spy.txt
+#load shadow /data/items/human/scout/shadow.txt
+
+#load hands /data/items/human/scout/hands.txt
+
+#load helmet /data/items/human/scout/helmet.txt
+#load armor /data/items/human/scout/armor.txt
+
+#load weapon /data/items/human/scout/weapon.txt
+#load bonusweapon /data/items/human/scout/bonusranged_spy.txt
+
+#load offhand /data/items/human/scout/offhand_spy.txt
+
+#endpose
+
+
+------------- assassin
+
+#newpose
+#name generic_assassins
+#role "scout"
+#basechance 5
+#chanceinc racetheme primitive *0.01
+#chanceinc racetheme advanced *2
+#cannot_be_scout
+#cannot_be_spy
+
+#renderorder "shadow weapon_underlay bonusweapon basesprite helmet armor weapon offhandw hands"
+
+#load basesprite /data/items/human/scout/bases_assassin.txt
+#load shadow /data/items/human/scout/shadow.txt
+
+#load hands /data/items/human/scout/hands.txt
+
+#load helmet /data/items/human/scout/helmet.txt
+#load armor /data/items/human/scout/armor.txt
+
+#load weapon /data/items/human/scout/weapon.txt
+#load bonusweapon /data/items/human/scout/bonusranged_spy.txt
+#load bonusweapon /data/items/human/scout/bonusranged_assassin.txt
+
+#load offhand /data/items/human/scout/offhand_assassin.txt
+
+#endpose
