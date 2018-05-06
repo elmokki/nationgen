@@ -1,0 +1,113 @@
+#newitem
+#id none
+#gameid -1
+#basechance 0.25
+#armor
+#theme "naked"
+#enditem
+
+#newitem
+#id leathercap
+#gameid 120
+#basechance 0.25
+#sprite /graphics/imperial/legion/helmet/cap_leather.png
+#offsetx 2
+#armor
+#theme "leather"
+#enditem
+
+#newitem
+#id reinforcedcap
+#gameid 119
+#basechance 0.25
+#sprite /graphics/imperial/legion/helmet/cap_leather.png
+#offsetx 2
+#armor
+#theme "leather"
+#enditem
+
+#newitem
+#id ironcap
+#gameid 20
+#basechance 0.25
+#sprite /graphics/imperial/legion/helmet/cap_legionary_iron.png
+#offsetx 2
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#id wolf_leather
+#gameid 119
+#basechance 0.25
+#sprite /graphics/imperial/legion/helmet/furs_light_wolf.png
+#offsetx 2
+#armor
+#theme "leather"
+#theme "primitive"
+#theme "wolf"
+#enditem
+
+#newitem
+#id wolf_iron
+#gameid 20
+#basechance 0.25
+#sprite /graphics/imperial/legion/helmet/furs_light_wolf.png
+#offsetx 2
+#armor
+#theme "iron"
+#theme "primitive"
+#theme "wolf"
+#enditem
+
+#newitem
+#id laurel_green
+#gameid -1
+#basechance 4
+#sprite /graphics/imperial/sacred/helmet/laurel_green.png
+#armor
+#enditem
+
+#newitem
+#id laurel_gold
+#gameid -1
+#basechance 3
+#sprite /graphics/imperial/sacred/helmet/laurel_gold.png
+#armor
+#enditem
+
+#newitem
+#id laurel_tinted
+#gameid -1
+#basechance 1
+#sprite /graphics/imperial/sacred/helmet/laurel_colored.png
+#recolormask /graphics/imperial/sacred/helmet/laurel_colored_recolormask.png
+#armor
+#enditem
+
+#newitem
+#id laurel_ivy
+#gameid -1
+#basechance 0
+#chanceinc magic nature 2
+#sprite /graphics/imperial/sacred/helmet/laurel_green.png
+#armor
+#enditem
+
+#newitem
+#id laurel_deadivy
+#gameid -1
+#basechance 0
+#chanceinc magic nature death 2
+#sprite /graphics/imperial/sacred/helmet/laurel_brown.png
+#armor
+#enditem
+
+#newitem
+#id laurel_evil
+#gameid -1
+#basechance 0
+#chanceinc magic death 2
+#sprite /graphics/imperial/sacred/helmet/laurel_purple.png
+#armor
+#enditem

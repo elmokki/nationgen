@@ -527,6 +527,59 @@
 #command "#magic"
 #end
 
+--- 2h Spears, with stats based on short-vs-reg-tridents
+#new customweapon
+#name "2hspear"
+#command "#natt 1"
+#command "#dmg 5"
+#command "#att +1"
+#command "#def +1"
+#command "#len 3"
+#command "#rcost 2"
+#command "#name 'Heavy Spear'"
+#command "#pierce"
+#command "#ironweapon"
+#command "#twohanded"
+#end
+
+#new customweapon
+#name "2hlongspear"
+#command "#natt 1"
+#command "#dmg 5"
+#command "#att +1"
+#command "#len 4"
+#command "#rcost 2"
+#command "#name 'Heavy Longspear'"
+#command "#pierce"
+#command "#ironweapon"
+#command "#twohanded"
+#end
+
+#new customweapon
+#name "2hbronzespear"
+#command "#natt 1"
+#command "#dmg 5"
+#command "#att +1"
+#command "#def +1"
+#command "#len 3"
+#command "#rcost 2"
+#command "#name 'Heavy Bronze Spear'"
+#command "#pierce"
+#command "#twohanded"
+#end
+
+#new customweapon
+#name "2hbronzelongspear"
+#command "#natt 1"
+#command "#dmg 5"
+#command "#att +1"
+#command "#len 4"
+#command "#rcost 2"
+#command "#name 'Heavy Bronze Longspear'"
+#command "#pierce"
+#command "#twohanded"
+#end
+
 
 --- Sidhe Golden Stuff
 
@@ -1448,6 +1501,19 @@
 #command "#name 'Large Rock'"
 #command "#twohanded"
 #command "#blunt"
+#end
+
+#new customweapon
+#name "boulder_melee"
+#command "#dmg 0"
+#command "#att -2"
+#command "#def -2"
+#command "#len 0"
+#command "#name 'Boulder'"
+#command "#twohanded"
+#command "#blunt"
+#command "#armorpiercing"
+#command "#norepel"
 #end
 
 -- Zotz custom items
