@@ -153,6 +153,8 @@ public class PDSelector {
 		{
 			failsafe = true;
 			validComs = commanders;
+			if(commanders.size() == 1 && rank == 2)
+				rank = 1;
 		}
 
 		
@@ -285,7 +287,7 @@ public class PDSelector {
 		double bestscore = scoreForMilitia(best, targetrcost, targetgcost);
 		for(Unit u : units)
 		{
-			double score = scoreForMilitia(u, targetrcost, targetgcost) * (u.getCommandValue("#castledef", 0) + 1);
+			double score = scoreForMilitia(u, targetrcost, targetgcost) * ((u.getCommandValue("#castledef", 0) + 1));
 			if(bestscore >= score)
 			{
 				bestscore = score;
