@@ -33,12 +33,14 @@
 #new 
 #name "master"
 #commandvariant #female "mistress"
+#racetagvariant imperial magister
 #basechance 1
 #end
 
 #new 
 #name "lord"
 #commandvariant #female "lady"
+#racetagvariant imperial tribune
 #basechance 1
 #end
 
@@ -49,6 +51,7 @@
 #chanceinc "origpart disciple 3"
 #chanceinc "origpart follower 3"
 #chanceinc "origpart apostle 3"
+#racetagvariant imperial censor
 #end
 
 #new 
@@ -64,6 +67,7 @@
 #name "knight"
 #basechance 0
 #chanceinc "origpart cavalier 3"
+#racetagvariant imperial legate
 #end
 
 #new 
@@ -73,6 +77,7 @@
 #chanceinc "origpart ranger 3"
 #chanceinc "origpart sniper 1"
 #chanceinc "origpart marksman 1"
+#racetagvariant imperial quaestor
 #end
 
 #new 
@@ -97,4 +102,22 @@
 #name "daimyo"
 #basechance 0
 #chanceinc "origpart samurai 5"
+#end
+
+#new 
+#name "censor"
+#basechance 0
+#chanceinc "origpart lictor 5"
+#end
+
+#new 
+#name "quaestor"
+#basechance 0
+#chanceinc "origpart lictor 5"
+#end
+
+#new 
+#name "aedile"
+#basechance 0
+#chanceinc "origpart lictor 5"
 #end

@@ -260,11 +260,27 @@
 #tier 3
 #end
 
+-- Imperial commanders
+
+#new 
+#name "tribune"
+#basechance 0
+#chanceinc hastheme imperial 50
+#theme commander
+#tier 2
+#tier 3
+#end
+
 #new 
 #name "centurion"
 #basechance 0
 #chanceinc hastheme imperial 10
 #chanceinc origname legionary 40
+#chanceinc origname hastatus 40
+#chanceinc origname princepe 40
+#chanceinc origname triarius 40
+#chanceinc origname milite 10
+#chanceinc origname velite 10
 #chanceinc origname auxiliary 10
 #theme commander
 #tier 1
@@ -276,8 +292,102 @@
 #basechance 0
 #chanceinc hastheme imperial 10
 #chanceinc origname legionary 90
+#chanceinc origname hastatus 90
+#chanceinc origname princepe 90
+#chanceinc origname triarius 90
+#chanceinc origname milite *0
+#chanceinc origname velite *0
 #chanceinc origname auxiliary *0
 #theme commander
 #tier 3
 #end
 
+#new 
+#name "proconsul"
+#basechance 0
+#chanceinc hastheme imperial 10
+#chanceinc origname legionary 60
+#chanceinc origname hastatus 60
+#chanceinc origname princepe 60
+#chanceinc origname triarius 60
+#chanceinc origname milite *0
+#chanceinc origname velite *0
+#chanceinc origname auxiliary *0
+#theme commander
+#tier 2
+#end
+
+#new 
+#name "consul"
+#basechance 0
+#chanceinc hastheme imperial 10
+#chanceinc origname legionary 90
+#chanceinc origname hastatus 90
+#chanceinc origname princepe 90
+#chanceinc origname triarius 90
+#chanceinc origname milite *0
+#chanceinc origname velite *0
+#chanceinc origname auxiliary *0
+#theme commander
+#tier 3
+#end
+
+#new 
+#name "propraetor"
+#basechance 0
+#chanceinc hastheme imperial 10
+#chanceinc origname legionary 60
+#chanceinc origname hastatus 60
+#chanceinc origname princepe 60
+#chanceinc origname triarius 60
+#chanceinc origname milite *0
+#chanceinc origname velite *0
+#chanceinc origname auxiliary *0
+#theme commander
+#tier 2
+#end
+
+#new 
+#name "praetor"
+#basechance 0
+#chanceinc hastheme imperial 10
+#chanceinc origname legionary 90
+#chanceinc origname hastatus 90
+#chanceinc origname princepe 90
+#chanceinc origname triarius 90
+#chanceinc origname milite *0
+#chanceinc origname velite *0
+#chanceinc origname auxiliary *0
+#theme commander
+#tier 3
+#end
+
+#new 
+#name "promagistrate"
+#basechance 0
+#chanceinc hastheme imperial 10
+#chanceinc origname legionary 60
+#chanceinc origname hastatus 60
+#chanceinc origname princepe 60
+#chanceinc origname triarius 60
+#chanceinc origname milite *0
+#chanceinc origname velite *0
+#chanceinc origname auxiliary *0
+#theme commander
+#tier 2
+#end
+
+#new 
+#name "magistrate"
+#basechance 0
+#chanceinc hastheme imperial 10
+#chanceinc origname legionary 90
+#chanceinc origname hastatus 90
+#chanceinc origname princepe 90
+#chanceinc origname triarius 90
+#chanceinc origname milite *0
+#chanceinc origname velite *0
+#chanceinc origname auxiliary *0
+#theme commander
+#tier 3
+#end
