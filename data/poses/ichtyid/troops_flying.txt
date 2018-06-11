@@ -1,0 +1,55 @@
+-------- Normal
+
+#newpose
+#name "exocoetid infantry"
+#role "infantry"
+#role "sacred"
+#role "elite"
+
+#subrace exocoetid
+
+#renderorder "shadow weapon basesprite wings armor bonusweapon offhandw hands helmet offhanda overlay"
+
+#load basesprite /data/items/ichtyid/bases_flying.txt
+#load shadow /data/items/ichtyid/shadow.txt
+#load hands /data/items/ichtyid/hands_flying.txt
+#load armor /data/items/ichtyid/armor.txt
+#load armor /data/items/ichtyid/naked.txt
+#load helmet /data/items/ichtyid/helmet.txt
+#load weapon /data/items/ichtyid/weapon.txt
+#load offhand /data/items/ichtyid/offhand.txt
+#load offhand /data/items/ichtyid/shield.txt
+#load bonusweapon /data/items/ichtyid/bonusrangedweapon.txt
+#load wings /data/items/ichtyid/wings.txt
+#load overlay /data/items/ichtyid/overlay.txt
+
+#generateitem 1 wings
+
+#endpose
+
+
+-------- scout
+
+#newpose
+#name "exocoetid scout"
+#role "scout"
+
+#subrace exocoetid
+
+#renderorder "shadow weapon basesprite wings armor bonusweapon offhandw hands helmet offhanda overlay"
+
+#load basesprite /data/items/ichtyid/bases_flying.txt
+#load shadow /data/items/ichtyid/shadow.txt
+#load hands /data/items/ichtyid/hands_flying.txt
+#load armor /data/items/ichtyid/scoutarmor.txt
+#load armor /data/items/ichtyid/naked.txt
+#load helmet /data/items/ichtyid/scouthelmet.txt
+#load weapon /data/items/ichtyid/scoutweapon.txt
+#load offhand /data/items/ichtyid/scoutoffhand.txt
+#load bonusweapon /data/items/ichtyid/bonusrangedweapon.txt
+#load wings /data/items/ichtyid/wings.txt
+#load overlay /data/items/ichtyid/overlay.txt
+
+#generateitem 1 wings
+
+#endpose

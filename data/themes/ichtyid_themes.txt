@@ -40,8 +40,8 @@
 -- Weights for all are uniform across eras
 #newtheme
 #type demographic
-#name ichtyid
-#basechance 4
+#name fishmen
+#basechance 12
 #racedefinition "#pose ichtyidtroops"
 #racedefinition "#pose ichtyidmages"
 #racedefinition "#nationcommand #coastnation"
@@ -51,7 +51,7 @@
 
 #newtheme
 #type demographic
-#name  troglotyid
+#name  cavefishmen
 #basechance 1
 #racedefinition "#pose cavefishtroops"
 #racedefinition "#pose cavefishmages"
@@ -62,7 +62,7 @@
 
 #newtheme
 #type demographic
-#name  cyprinid
+#name  carpmen
 #basechance 1
 #racedefinition "#pose carpmentroops"
 #racedefinition "#pose carpmenmages"
@@ -71,7 +71,7 @@
 
 #newtheme
 #type demographic
-#name  koyid
+#name  koimen
 #basechance 1
 #racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
@@ -81,6 +81,116 @@
 #racedefinition "#pose koitroops"
 #racedefinition "#pose koimages"
 #themeinc theme marine *0.01
+#endtheme
+
+#newtheme
+#type demographic
+#name  clownfishmen
+#basechance 1
+#racedefinition "#pose amphiprionidtroops"
+#racedefinition "#pose amphiprionidmages"
+#racedefinition "#magicpriority fire 2"
+#themeinc theme inland *0.01
+#themeinc theme common_pigment *500
+#themeinc theme faint_pigment *5000
+#themeinc theme light_pigment *5000
+#endtheme
+
+#newtheme
+#type demographic
+#name  piranhamen
+#basechance 1
+#racedefinition "#longsyllables /data/names/nations/nahuatl/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/nahuatl/suffixes.txt"
+#racedefinition "#nationcommand '#gods westerngods"
+#racedefinition "#occidental"
+#racedefinition "#nationcommand '#idealcold -1'"
+#racedefinition "#pose piranhidtroops"
+#racedefinition "#pose piranhidmages"
+#themeinc theme marine *0.01
+#endtheme
+
+#newtheme
+#type demographic
+#name  sharkmen
+#basechance 1
+#racedefinition "#pose selachidtroops"
+#racedefinition "#pose selachidmages"
+#themeinc theme inland *0.01
+#themeinc theme enclosed_helm *0.001
+#endtheme
+
+#newtheme
+#type demographic
+#name  pikemen
+#basechance 1
+#racedefinition "#pose esoxidtroops"
+#racedefinition "#pose esoxidmages"
+#themeinc theme marine *0.01
+#themeinc theme enclosed_helm *0.001
+#endtheme
+
+#newtheme
+#type demographic
+#name  perchmen
+#basechance 1
+#racedefinition "#pose percidtroops"
+#racedefinition "#pose percidmages"
+#themeinc theme marine *0.01
+#endtheme
+
+#newtheme
+#type demographic
+#name  catfishmen_oriental
+#basechance 0.5
+#racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/oriental/suffixes.txt"
+#racedefinition "#nationcommand '#gods easterngods"
+#racedefinition "#oriental"
+#racedefinition "#pose siluriformidtroops"
+#racedefinition "#pose siluriformidmages"
+#themeinc theme marine *0.01
+#themeinc theme oriental *1000
+#themeinc theme enclosed_helm *0.001
+#endtheme
+
+#newtheme
+#type demographic
+#name  catfishmen_occidental
+#basechance 0.5
+#racedefinition "#longsyllables /data/names/nations/nahuatl/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
+#racedefinition "#suffixes /data/names/nations/nahuatl/suffixes.txt"
+#racedefinition "#nationcommand '#gods westerngods"
+#racedefinition "#occidental"
+#racedefinition "#pose siluriformidtroops"
+#racedefinition "#pose siluriformidmages"
+#themeinc theme marine *0.01
+#themeinc theme occidental *1000
+#themeinc theme enclosed_helm *0.001
+#endtheme
+
+#newtheme
+#type demographic
+#name  anglerfishmen
+#basechance 1
+#racedefinition "#pose lophiiformidtroops"
+#racedefinition "#pose lophiiformidmages"
+#racedefinition "#subterranean"
+#themeinc theme inland *0.01
+#themeinc theme enclosed_helm *0.001
+#endtheme
+
+#newtheme
+#type demographic
+#name  flyingfishmen
+#basechance 1
+#racedefinition "#pose flyingtroops"
+#racedefinition "#pose flyingmages"
+#themeinc theme inland *0.01
+#themeinc theme light *3
 #endtheme
 
 

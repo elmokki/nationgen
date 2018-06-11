@@ -1613,6 +1613,50 @@
 #command "#range0"
 #end
 
+--- Fish bites: these will only sometimes be used, but are used in place of the first normal weapon
+#new customweapon
+#name "bite_50"
+#command "#att 0"
+#command "#def -1"
+#command "#dmg 2"
+#command "#len -1"
+#command "#norepel"
+#command "#bonus"
+#command "#melee50"
+#command "#skip"
+#command "#name 'Reckless Bite'"
+#command "#slash"
+#command "#natural"
+#end
+
+#new customweapon
+#name "strongbite_50"
+#command "#att 0"
+#command "#def -1"
+#command "#dmg 5"
+#command "#len -1"
+#command "#norepel"
+#command "#bonus"
+#command "#melee50"
+#command "#skip"
+#command "#name 'Reckless Bite'"
+#command "#slash"
+#command "#natural"
+#end
+
+#new customweapon
+#name "strongbite"
+#command "#att 0"
+#command "#def -1"
+#command "#dmg 5"
+#command "#len -1"
+#command "#norepel"
+#command "#bonus"
+#command "#name 'Bite'"
+#command "#slash"
+#command "#natural"
+#end
+
 --- NOSTR mount attacks
 
 -- Currently just camels, hence the length and modifiers
