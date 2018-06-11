@@ -1,0 +1,83 @@
+--- caster 
+
+#newpose
+#name "T1 piranhid caster"
+#role "mage"
+#role "priest"
+
+#tier 1
+#notfortier 2
+#notfortier 3
+
+#subrace piranhid
+
+#command "#weapon strongbite_50"
+
+#command "#mr +1"
+#command "#researchbonus -2"
+
+#renderorder "shadow weapon basesprite armor offhandw hands offhanda helmet"
+
+#load basesprite /data/items/ichtyid/bases_piranhid.txt
+#load shadow /data/items/ichtyid/shadow.txt
+#load hands /data/items/ichtyid/hands_piranhid.txt
+#load armor /data/items/ichtyid/casterrobe.txt
+#load helmet /data/items/ichtyid/casterhelmet.txt
+#load weapon /data/items/ichtyid/casterweapon.txt
+
+#endpose
+
+
+#newpose
+#name "T2 piranhid caster"
+#role "mage"
+#role "priest"
+
+#tier 2
+#notfortier 1
+#notfortier 3
+
+#subrace piranhid
+
+#command "#weapon strongbite"
+
+#command "#mr +2"
+#command "#researchbonus -1"
+
+#renderorder "shadow weapon basesprite armor offhandw hands offhanda helmet"
+
+#load basesprite /data/items/ichtyid/bases_piranhid.txt
+#load shadow /data/items/ichtyid/shadow.txt
+#load hands /data/items/ichtyid/hands_piranhid.txt
+#load armor /data/items/ichtyid/casterrobe.txt
+#load helmet /data/items/ichtyid/casterhelmet.txt
+#load weapon /data/items/ichtyid/casterweapon.txt
+
+#endpose
+
+
+#newpose
+#name "T3 piranhid caster"
+#role "mage"
+#role "priest"
+
+#tier 3
+#notfortier 1
+#notfortier 2
+
+#subrace piranhid
+
+#command "#weapon strongbite"
+
+#command "#mr +3"
+
+#renderorder "shadow weapon basesprite armor offhandw hands offhanda helmet"
+
+#load basesprite /data/items/ichtyid/bases_piranhid.txt
+#load shadow /data/items/ichtyid/shadow.txt
+#load hands /data/items/ichtyid/hands_piranhid.txt
+#load armor /data/items/ichtyid/casterrobe.txt
+#load helmet /data/items/ichtyid/casterhelmet.txt
+#load weapon /data/items/ichtyid/casterweapon.txt
+
+#endpose

@@ -1,0 +1,77 @@
+--- caster 
+
+#newpose
+#name "T1 silurid caster"
+#role "mage"
+#role "priest"
+
+#tier 1
+#notfortier 2
+#notfortier 3
+
+#subrace silurid
+
+#command "#mr +1"
+#command "#researchbonus -2"
+
+#renderorder "shadow weapon basesprite armor offhandw hands offhanda helmet"
+
+#load basesprite /data/items/ichtyid/bases_siluriformid.txt
+#load shadow /data/items/ichtyid/shadow.txt
+#load hands /data/items/ichtyid/hands_siluriformid.txt
+#load armor /data/items/ichtyid/casterrobe.txt
+#load helmet /data/items/ichtyid/casterhelmet.txt
+#load weapon /data/items/ichtyid/casterweapon.txt
+
+#endpose
+
+
+#newpose
+#name "T2 silurid caster"
+#role "mage"
+#role "priest"
+
+#tier 2
+#notfortier 1
+#notfortier 3
+
+#subrace silurid
+
+#command "#mr +2"
+#command "#researchbonus -1"
+
+#renderorder "shadow weapon basesprite armor offhandw hands offhanda helmet"
+
+#load basesprite /data/items/ichtyid/bases_siluriformid.txt
+#load shadow /data/items/ichtyid/shadow.txt
+#load hands /data/items/ichtyid/hands_siluriformid.txt
+#load armor /data/items/ichtyid/casterrobe.txt
+#load helmet /data/items/ichtyid/casterhelmet.txt
+#load weapon /data/items/ichtyid/casterweapon.txt
+
+#endpose
+
+
+#newpose
+#name "T3 silurid caster"
+#role "mage"
+#role "priest"
+
+#tier 3
+#notfortier 1
+#notfortier 2
+
+#subrace silurid
+
+#command "#mr +3"
+
+#renderorder "shadow weapon basesprite armor offhandw hands offhanda helmet"
+
+#load basesprite /data/items/ichtyid/bases_siluriformid.txt
+#load shadow /data/items/ichtyid/shadow.txt
+#load hands /data/items/ichtyid/hands_siluriformid.txt
+#load armor /data/items/ichtyid/casterrobe.txt
+#load helmet /data/items/ichtyid/casterhelmet.txt
+#load weapon /data/items/ichtyid/casterweapon.txt
+
+#endpose
