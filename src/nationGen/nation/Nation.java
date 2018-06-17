@@ -60,6 +60,7 @@ import nationGen.restrictions.SacredRaceRestriction;
 import nationGen.restrictions.UnitCommandRestriction;
 import nationGen.restrictions.UnitFilterRestriction;
 import nationGen.restrictions.UnitOfRaceRestriction;
+import nationGen.restrictions.RecAnywhereSacredsRestriction;
 import nationGen.rostergeneration.CommanderGenerator;
 import nationGen.rostergeneration.HeroGenerator;
 import nationGen.rostergeneration.MonsterGenerator;
@@ -510,10 +511,12 @@ public class Nation {
             NoUnitOfRaceRestriction noUnitOfRaceRestriction = new NoUnitOfRaceRestriction(nationGen);
             PrimaryRaceRestriction primaryRaceRestriction = new PrimaryRaceRestriction(nationGen);
             SacredRaceRestriction sacredRaceRestriction = new SacredRaceRestriction(nationGen);
+            RecAnywhereSacredsRestriction recAnywhereSacredRestriction = new RecAnywhereSacredsRestriction(nationGen);
             UnitCommandRestriction unitCommandRestriction = new UnitCommandRestriction(nationGen);
             UnitFilterRestriction unitFilterRestriction = new UnitFilterRestriction(nationGen);
             UnitOfRaceRestriction unitOfRaceRestriction = new UnitOfRaceRestriction(nationGen);
-
+            	
+            
             @SuppressWarnings("rawtypes")
 			List<Class> restrictionTypes = new ArrayList<>();
             restrictionTypes.add(primaryRaceRestriction.getClass());
@@ -541,6 +544,7 @@ public class Nation {
             }
             restrictionTypes.clear();
             restrictionTypes.add(sacredRaceRestriction.getClass());
+            restrictionTypes.add(recAnywhereSacredRestriction.getClass());
             
             generateTroops();
             generateSacreds();

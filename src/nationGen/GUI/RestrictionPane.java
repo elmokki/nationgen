@@ -25,18 +25,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import nationGen.NationGen;
-import nationGen.restrictions.MagicAccessRestriction;
-import nationGen.restrictions.MageWithAccessRestriction;
-import nationGen.restrictions.MagicDiversityRestriction;
-import nationGen.restrictions.NationThemeRestriction;
-import nationGen.restrictions.NoPrimaryRaceRestriction;
-import nationGen.restrictions.NoUnitOfRaceRestriction;
-import nationGen.restrictions.PrimaryRaceRestriction;
-import nationGen.restrictions.SacredRaceRestriction;
-import nationGen.restrictions.NationRestriction;
-import nationGen.restrictions.UnitCommandRestriction;
-import nationGen.restrictions.UnitFilterRestriction;
-import nationGen.restrictions.UnitOfRaceRestriction;
+import nationGen.restrictions.*;
 
 public class RestrictionPane extends JPanel implements ActionListener, ListSelectionListener {
 
@@ -75,6 +64,7 @@ public class RestrictionPane extends JPanel implements ActionListener, ListSelec
 			new NoPrimaryRaceRestriction(ng),
 			new NoUnitOfRaceRestriction(ng),
 			new PrimaryRaceRestriction(ng),
+			new RecAnywhereSacredsRestriction(ng),
 			new SacredRaceRestriction(ng),			// "Sacred: Race"
 			new UnitCommandRestriction(ng),
 			new UnitFilterRestriction(ng),
