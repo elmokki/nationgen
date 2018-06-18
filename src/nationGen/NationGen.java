@@ -215,6 +215,7 @@ public class NationGen
         int count = 0;
         int failedcount = 0;
         int totalfailed = 0;
+        boolean isDebug = settings.get("debug") == 1.0;
         
         while(generatedNations.size() < amount)
         {
@@ -222,43 +223,56 @@ public class NationGen
             if(!manyseeds)
             {
                 newseed = random.nextInt();
-            }
+            } 
             else
             {
                 newseed = seeds.get(generatedNations.size());
             }
 
-            System.out.print("- Generating nation " + (generatedNations.size() + 1) + "/" + amount + " (seed " + newseed);
-            
-            if(settings.get("debug") == 1.0)
+            if (isDebug)
             {
+                System.out.print("- Generating nation " + (generatedNations.size() + 1) + "/" + amount + " (seed " + newseed);
                 System.out.print(" / " + ZonedDateTime.now().toLocalTime().truncatedTo(ChronoUnit.SECONDS));
+                System.out.print(")... ");
             }
-
-            System.out.print(")... ");
 
             newnation = new Nation(this, newseed, count, restrictions);
-            
-            if(!newnation.passed)
-            {
-                ++failedcount;
-                System.out.println("try "+ String.valueOf(failedcount) + ", FAILED RESTRICTION "  + newnation.restrictionFailed);
-            }
 
-            if(newnation.passed)
+            if (newnation.passed)
             {
+                if (restrictions.size() == 0)
+                {
+                    System.out.format("- Successfully generated nation %d/%d (seed %d)\n",
+                            generatedNations.size() + 1, amount, newseed);
+                } 
+                else
+                {
+                    System.out.format("- After failing %d attempt(s), successfully generated nation %d/%d (seed %d)\n",
+                            failedcount, generatedNations.size() + 1, amount, newseed);
+                }
                 totalfailed += failedcount;
                 failedcount = 0;
-                System.out.println("Done!");
             }
             else
             {
+                ++failedcount;
+                if (isDebug)
+                {
+                    System.out.println("try " + failedcount + ", FAILED RESTRICTION " + newnation.restrictionFailed);
+                } 
+                else if (failedcount % 250 == 0)
+                {
+                    // This is honestly a workaround to showing progress without destroying the UI.
+                    // Ideally, there'd be a label that shows the current gen. But, I'm saving a UI
+                    // rewrite for a future date.
+                    System.out.format("- Failed to generate nation after %d attempts.\n", failedcount);
+                }
                 continue;
             }
 
             // Handle loose ends
             newnation.nationid = idHandler.nextNationId();
-            this.polishNation(newnation);
+            polishNation(newnation);
 
             newnation.name = "Nation " + count;
 
