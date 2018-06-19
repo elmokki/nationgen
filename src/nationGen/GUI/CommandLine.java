@@ -10,9 +10,9 @@ import nationGen.NationGen;
 public class CommandLine {
 	public CommandLine (String[] args) throws Exception
 	{
-		Integer seed = null;
+		Long seed = null;
 		int amount = 0;
-		List<Integer> seeds = new ArrayList<Integer>();
+		List<Long> seeds = new ArrayList<Long>();
 		int settings = 0;
 		boolean nextseed = false;
 		boolean nextamount = false;
@@ -54,13 +54,13 @@ public class CommandLine {
 			else if(Generic.isNumeric(str))
 			{
 				if(nextseed)
-					seed = Integer.parseInt(str);
+					seed = Long.parseLong(str);
 				if(nextamount)
 					amount = Integer.parseInt(str);
 				if(nextsettings)
 					settings = Integer.parseInt(str);
 				if(nextnseed)
-					seeds.add(Integer.parseInt(str));
+					seeds.add(Long.parseLong(str));
 					
 			}
 			else if(nextname)

@@ -17,8 +17,8 @@ public class ConsoleGUI {
 		
 		NationGen nationGen = new NationGen();
 
-		List<Integer> seeds = new ArrayList<Integer>();
-		seeds.add(-216802392);
+		List<Long> seeds = new ArrayList<Long>();
+		seeds.add(-216802392L);
 		
 		//nationGen.settings.put("era", 2.0);
 		nationGen.settings.put("drawPreview", 1.0);

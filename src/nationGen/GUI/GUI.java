@@ -348,9 +348,9 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         });
     }
     
-    private List<Integer> parseSeeds()
+    private List<Long> parseSeeds()
     {
-    	List<Integer> l = new ArrayList<>();
+    	List<Long> l = new ArrayList<>();
     	String text = seeds.getText();
     	
     	String[] parts = text.split(",");
@@ -361,7 +361,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
             {
                 if(Generic.isNumeric(str2.trim()))
                 {
-                    l.add(Integer.parseInt(str2.trim()));
+                    l.add(Long.parseLong(str2.trim()));
                 }
             }
     	}
@@ -432,7 +432,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
                     {
                         if(!seedRandom.isSelected())
                         {
-                            n.generate(Integer.parseInt(amount.getText()), Integer.parseInt(seed.getText()));
+                            n.generate(Integer.parseInt(amount.getText()), Long.parseLong(seed.getText()));
                         }
                         else
                         {
