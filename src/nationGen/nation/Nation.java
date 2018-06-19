@@ -84,7 +84,7 @@ public class Nation {
         public boolean passed = true;
         public String restrictionFailed = "";
 	public NationGen nationGen;
-	public int seed = 0;
+	private long seed = 0;
 	
 	public ItemSet usedItems = new ItemSet();
 	public Random random;
@@ -115,7 +115,7 @@ public class Nation {
 	
 	public int PDRanks = 2;
 
-	public Nation(NationGen ngen, int seed, int tempid, List restrictions)
+	public Nation(NationGen ngen, long seed, int tempid, List<NationRestriction> restrictions)
 	{
 		this.nationid = tempid;
 		this.nationGen = ngen;
@@ -131,6 +131,10 @@ public class Nation {
 		generate(restrictions);
 	}
 	
+	public long getSeed()
+	{
+	    return seed;
+	}
 	
 	private void getColors()
 	{

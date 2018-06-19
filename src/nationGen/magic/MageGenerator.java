@@ -1924,7 +1924,7 @@ public class MageGenerator extends TroopGenerator {
 							maxpower = f.power;
 					}
 					else
-						System.out.println("Nation " + nation.seed + " had a null filter for a mage. Power was " + power + " and tier " + tier + ".");
+						System.out.println("Nation " + nation.getSeed() + " had a null filter for a mage. Power was " + power + " and tier " + tier + ".");
 					
 				}
 				power -= maxpower;
@@ -2802,7 +2802,7 @@ public class MageGenerator extends TroopGenerator {
 		
 		if(possibles.size() == 0)
 		{
-			System.out.println("CRITICAL ERROR: No possible pose for " + race.name + " " + posename + " for tier " + tier + ". Nation seed: " + nation.seed +  " and main race " + nation.races.get(0));
+			System.out.println("CRITICAL ERROR: No possible pose for " + race.name + " " + posename + " for tier " + tier + ". Nation seed: " + nation.getSeed() +  " and main race " + nation.races.get(0));
 		}
 		return possibles;
 			

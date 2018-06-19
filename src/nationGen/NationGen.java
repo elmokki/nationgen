@@ -164,28 +164,28 @@ public class NationGen
         //this.writeDebugInfo();
     }
 	
-    public int seed = 0;
+    public long seed = 0;
     public String modname = "";
     public boolean manyseeds = false;
 
     public void generate(int amount) throws IOException
     {
         Random random = new Random();
-        generate(amount, random.nextInt(), null);
+        generate(amount, random.nextLong(), null);
     }
     
-    public void generate(int amount, int seed) throws IOException
+    public void generate(int amount, long seed) throws IOException
     {
         generate(amount, seed, null);
     }
     
-    public void generate(List<Integer> seeds) throws IOException
+    public void generate(List<Long> seeds) throws IOException
     {
         Random random = new Random();
-        generate(1, random.nextInt(), seeds);
+        generate(1, random.nextLong(), seeds);
     }
 	
-    private void generate(int amount, int seed, List<Integer> seeds) throws IOException
+    private void generate(int amount, long seed, List<Long> seeds) throws IOException
     {
         shouldAbort = false; // Don't abort before you even start.
         
@@ -223,7 +223,7 @@ public class NationGen
         System.out.println("Generating nations...");
         List<Nation> generatedNations = new ArrayList<>();
         Nation newnation = null;
-        int newseed = 0;
+        long newseed = 0;
 
         int count = 0;
         int failedcount = 0;
@@ -247,8 +247,8 @@ public class NationGen
             count++;
             if(!manyseeds)
             {
-                newseed = random.nextInt();
-            } 
+                newseed = random.nextLong();
+            }
             else
             {
                 newseed = seeds.get(generatedNations.size());
@@ -607,7 +607,7 @@ public class NationGen
 
         for(Nation n : nations)
         {
-            tw.println("-- Nation " + n.nationid + ": " + n.name + " generated with seed " + n.seed);
+            tw.println("-- Nation " + n.nationid + ": " + n.name + " generated with seed " + n.getSeed());
         }
         tw.println("-----------------------------------");
         tw.println();
