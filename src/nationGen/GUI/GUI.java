@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.locks.ReentrantLock;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -47,10 +48,15 @@ import nationGen.Settings;
 public class GUI extends JFrame implements ActionListener, ItemListener, ChangeListener 
 {
     private static final long serialVersionUID = 1L;
-	
+	private static final String startText = "Start!";
+	private static final String abortText = "Stop and Export";
+	private static final String pauseText = "Pause";
+	private static final String unpauseText = "Unpause";
+    
     JTextPane textPane = new JTextPane();
     JProgressBar progress = new JProgressBar(0, 100);
     JButton startButton;
+    JButton pauseButton;
     JTabbedPane tabs = new JTabbedPane();
     
     JTextField settingtext = new JTextField("0");
@@ -71,6 +77,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
     JSlider eraSlider = new JSlider(JSlider.HORIZONTAL, 1, 3, 2);
     JSlider spowerSlider = new JSlider(JSlider.HORIZONTAL, 1, 3, 1);
     
+    private ReentrantLock pauseLock;
     private  NationGen n = null;
     
     public static void main(String[] args) throws Exception
@@ -105,10 +112,12 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         JPanel options = new JPanel(new GridLayout(2,2));
         JPanel advoptions = new JPanel(new GridLayout(8,1));
         
+        pauseLock = new ReentrantLock();
+        
         // Restrictions need nationgen;
     	try 
         {
-            n = new NationGen();
+            n = new NationGen(pauseLock);
             n.settings = settings;
         } 
         catch (IOException e) 
@@ -122,8 +131,11 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         // Main
         tabs.addTab("Main", panel);
         
-        startButton = new JButton("Start!");
+        startButton = new JButton(startText);
         startButton.addActionListener(this);
+        pauseButton = new JButton(pauseText);
+        pauseButton.setEnabled(false);
+        pauseButton.addActionListener(this);
         seedRandom.addItemListener(this);
         modNameRandom.addItemListener(this);
         advDesc.addItemListener(this);
@@ -164,6 +176,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         east.add(seedpanel);
         east.add(modnamepanel);
         east.add(startButton);
+        east.add(pauseButton);
      
         panel.setBorder(new EmptyBorder(new Insets(5, 5, 5, 5)));
         //panel.add(progress, BorderLayout.SOUTH);
@@ -387,7 +400,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
     {
     	try 
         {
-            n = new NationGen();
+            n = new NationGen(pauseLock);
             n.settings = settings;
             n.restrictions.addAll(rpanel.getRestrictions());
         } 
@@ -402,7 +415,9 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
             @Override
             public void run() 
             {
-                startButton.setEnabled(false);
+                startButton.setText(abortText);
+                pauseButton.setEnabled(true);
+                
                 if(!modNameRandom.isSelected())
                 {
                     n.modname = modname.getText();
@@ -429,8 +444,16 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
                 {
                     e.printStackTrace();
                 }
-                startButton.setEnabled(true);
-	   
+                finally
+                {
+                    // Reset start button to default state.
+                    startButton.setText(startText);
+                    startButton.setEnabled(true);
+                    
+                    // Reset pause button to default state.
+                    pauseButton.setEnabled(false);
+                    pauseButton.setText(pauseText);
+                }
             }
         };
         thread.start();
@@ -442,39 +465,64 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
     {
         if(e.getSource().equals(startButton))
         {
-            if(modname.getText().length() == 0)
+            if (startButton.getText().equals(startText))
             {
-            System.out.println("Please enter a mod name.");
+                if(modname.getText().length() == 0)
+                {
+                    System.out.println("Please enter a mod name.");
                     //modNameRandom.setSelected(true);
-            return;
-            }
-
-            if(!seedcheckbox.isSelected())
-            {
-                    if(!(Generic.isNumeric(seed.getText()) || seed.getText().equals("Random")))
-                    {
-                            System.out.println("Please enter a numeric seed.");
-                            //seedRandom.setSelected(true);
-                            return;
-                    }
-
-                    if(!Generic.isNumeric(amount.getText()) || Integer.parseInt(amount.getText()) < 1)
-                    {
-                    System.out.println("Please enter a numeric nation amount.");
                     return;
-                    }
+                }
+    
+                if(!seedcheckbox.isSelected())
+                {
+                        if(!(Generic.isNumeric(seed.getText()) || seed.getText().equals("Random")))
+                        {
+                                System.out.println("Please enter a numeric seed.");
+                                //seedRandom.setSelected(true);
+                                return;
+                        }
+    
+                        if(!Generic.isNumeric(amount.getText()) || Integer.parseInt(amount.getText()) < 1)
+                        {
+                        System.out.println("Please enter a numeric nation amount.");
+                        return;
+                        }
+                }
+                else if(this.seedcheckbox.isSelected() && parseSeeds().isEmpty())
+                {
+                        System.out.println("Please specify numeric seeds or disable predefined seeds.");
+                        return;
+                }
+                settingtext.setText(settings.getSettingInteger() + "");
+                process();
             }
-            else if(this.seedcheckbox.isSelected() && parseSeeds().isEmpty())
+            else /*if (startButton.getText().equals(abortText)) */
             {
-                    System.out.println("Please specify numeric seeds or disable predefined seeds.");
-                    return;
+                // Abort! But, we must unpause before we abort, else the other thread will be RIP
+                if (pauseLock.isHeldByCurrentThread())
+                {
+                    pauseLock.unlock();
+                }
+                n.abortNationGeneration();
             }
-            settingtext.setText(settings.getSettingInteger() + "");
-            process();
         }
         if(e.getSource().equals(settingtext))
         {
             settingtext.setText(settings.getSettingInteger() + "");
+        }
+        if(e.getSource().equals(pauseButton))
+        {
+            if (pauseButton.getText().equals(pauseText))
+            {
+                pauseButton.setText(unpauseText);
+                pauseLock.lock();
+            }
+            else
+            {
+                pauseButton.setText(pauseText);
+                pauseLock.unlock();
+            }
         }
     }
 	

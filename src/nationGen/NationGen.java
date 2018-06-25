@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.concurrent.locks.ReentrantLock;
 
 import com.elmokki.Dom3DB;
 import com.elmokki.Drawing;
@@ -96,8 +97,18 @@ public class NationGen
     public List<Spell> spellsToWrite = new ArrayList<>();
     public List<Spell> freeSpells = new ArrayList<>();
 
+    private ReentrantLock pauseLock;
+    private boolean shouldAbort = false;
+    
     public NationGen() throws IOException
     {
+        // For versions of this that don't need pausing, simply create a dummy lock object to be used.
+        this(new ReentrantLock());
+    }
+    
+    public NationGen(ReentrantLock pauseLock) throws IOException
+    {
+        this.pauseLock = pauseLock;
         //System.out.println("Dominions 4 NationGen version " + version + " (" + date + ")");
         //System.out.println("------------------------------------------------------------------");
 
@@ -176,6 +187,8 @@ public class NationGen
 	
     private void generate(int amount, int seed, List<Integer> seeds) throws IOException
     {
+        shouldAbort = false; // Don't abort before you even start.
+        
         this.seed = seed;
         
         Random random = new Random(seed);
@@ -218,7 +231,19 @@ public class NationGen
         boolean isDebug = settings.get("debug") == 1.0;
         
         while(generatedNations.size() < amount)
-        {
+        {  
+            // Anyhow, a simple way to handle pausing is just to acquire a lock (which will be locked in the UI thread).
+            pauseLock.lock();
+            
+            // Then, to avoid hanging the UI thread during generation, we immediately release the lock.
+            pauseLock.unlock();
+            
+            // Check abort after unpausing so that if you pause and then abort, you don't generate a nation.
+            if (shouldAbort)
+            {
+                 break;
+            }
+            
             count++;
             if(!manyseeds)
             {
@@ -278,7 +303,13 @@ public class NationGen
 
             System.gc();
 
-            generatedNations.add(newnation);
+            generatedNations.add(newnation);          
+        }
+        
+        if (generatedNations.size() == 0)
+        {
+            System.out.format("Failed to generate any nations while having %d not pass restrictions.\n", totalfailed);
+            return;
         }
 
         if(restrictions.size() > 0)
@@ -389,7 +420,7 @@ public class NationGen
         }
 
         System.out.println("------------------------------------------------------------------");
-        System.out.println("Finished generating " + amount + " nations to file nationgen_" + filename + ".dm!");
+        System.out.println("Finished generating " + generatedNations.size() + " nations to file nationgen_" + filename + ".dm!");
 
         modname = "";
     }
@@ -1091,5 +1122,13 @@ public class NationGen
         {
             race.poses.addAll(race.spriteGenPoses);
         }
+    }
+    
+    /**
+     * Aborts the nation generating process. This var is reset when the next set starts to generate.
+     */
+    public void abortNationGeneration()
+    {
+        shouldAbort = true;
     }
 }
