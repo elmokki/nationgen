@@ -1613,7 +1613,7 @@
 #command "#range0"
 #end
 
---- Fish bites: these will only sometimes be used, but are used in place of the first normal weapon
+--- Fish bites and gores: these will only sometimes be used, but are used in place of the first normal weapon
 #new customweapon
 #name "bite_50"
 #command "#att 0"
@@ -1654,6 +1654,34 @@
 #command "#bonus"
 #command "#name 'Bite'"
 #command "#slash"
+#command "#natural"
+#end
+
+#new customweapon
+#name "swordbill_50"
+#command "#att 1"
+#command "#def -1"
+#command "#dmg 2"
+#command "#len 1"
+#command "#bonus"
+#command "#melee50"
+#command "#skip"
+#command "#name 'Reckless Swordbill Gore'"
+#command "#slash"
+#command "#pierce"
+#command "#natural"
+#end
+
+#new customweapon
+#name "swordbill"
+#command "#att 1"
+#command "#def -1"
+#command "#dmg 2"
+#command "#len 1"
+#command "#bonus"
+#command "#name 'Swordbill Gore'"
+#command "#slash"
+#command "#pierce"
 #command "#natural"
 #end
 

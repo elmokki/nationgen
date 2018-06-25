@@ -1,8 +1,56 @@
 #newitem
-#name "selachid basesprite"
+#name "selachid basesprite - common"
 #gameid -1
 #sprite /graphics/ichtyid/selachid_base.png
-#recolormask /graphics/ichtyid/selachid_base_recolormask.png
+#recolormask /graphics/ichtyid/selachid_base_recolormask1.png
+#slow_militia
+#define "#gcost 14"
+#define "#rpcost 14000"
+#define "#hp 18"
+#define "#prot 6"
+#define "#mr 8"
+#define "#mor 13"
+#define "#str 12"
+#define "#att 9"
+#define "#def 8"
+#define "#prec 7"
+#define "#enc 3"
+#define "#ap 10"
+#define "#amphibian"
+#define "#nametype 117"
+#define "#maxage 75"
+#define "#descr 'Selachids are a race of sharkmen that typically dwell along the coastlines and in the open sea. They are strong and bloodthirsty.'"
+#enditem
+
+#newitem
+#name "selachid basesprite - light"
+#gameid -1
+#sprite /graphics/ichtyid/selachid_base.png
+#recolormask /graphics/ichtyid/selachid_base_recolormask2.png
+#slow_militia
+#define "#gcost 14"
+#define "#rpcost 14000"
+#define "#hp 18"
+#define "#prot 6"
+#define "#mr 8"
+#define "#mor 13"
+#define "#str 12"
+#define "#att 9"
+#define "#def 8"
+#define "#prec 7"
+#define "#enc 3"
+#define "#ap 10"
+#define "#amphibian"
+#define "#nametype 117"
+#define "#maxage 75"
+#define "#descr 'Selachids are a race of sharkmen that typically dwell along the coastlines and in the open sea. They are strong and bloodthirsty.'"
+#enditem
+
+#newitem
+#name "selachid basesprite - faint"
+#gameid -1
+#sprite /graphics/ichtyid/selachid_base.png
+#recolormask /graphics/ichtyid/selachid_base_recolormask3.png
 #slow_militia
 #define "#gcost 14"
 #define "#rpcost 14000"

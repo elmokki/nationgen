@@ -1,0 +1,75 @@
+-------- Normal
+
+#newpose
+#name "xiphiid infantry"
+#role "infantry"
+
+#subrace xiphiid
+
+#command "#weapon swordbill_50"
+
+#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/ichtyid/bases_xiphiid.txt
+#load shadow /data/items/ichtyid/shadow.txt
+#load hands /data/items/ichtyid/hands_xiphiid.txt
+#load armor /data/items/ichtyid/armor.txt
+#load armor /data/items/ichtyid/naked.txt
+#load helmet /data/items/ichtyid/helmet.txt
+#load weapon /data/items/ichtyid/weapon.txt
+#load offhand /data/items/ichtyid/offhand.txt
+#load offhand /data/items/ichtyid/shield.txt
+#load bonusweapon /data/items/ichtyid/bonusrangedweapon.txt
+
+#endpose
+
+-------- Trained elites
+
+#newpose
+#name "xiphiid elites"
+#role "sacred infantry"
+#role "elite infantry"
+
+#subrace xiphiid
+
+#command "#weapon swordbill"
+
+#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/ichtyid/bases_xiphiid.txt
+#load shadow /data/items/ichtyid/shadow.txt
+#load hands /data/items/ichtyid/hands_xiphiid.txt
+#load armor /data/items/ichtyid/armor.txt
+#load armor /data/items/ichtyid/naked.txt
+#load helmet /data/items/ichtyid/helmet.txt
+#load weapon /data/items/ichtyid/weapon.txt
+#load offhand /data/items/ichtyid/offhand.txt
+#load offhand /data/items/ichtyid/shield.txt
+#load bonusweapon /data/items/ichtyid/bonusrangedweapon.txt
+
+#endpose
+
+
+-------- scout
+
+#newpose
+#name "xiphiid scout"
+#role "scout"
+
+#subrace xiphiid
+
+#command "#weapon swordbill"
+
+#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/ichtyid/bases_xiphiid.txt
+#load shadow /data/items/ichtyid/shadow.txt
+#load hands /data/items/ichtyid/hands_xiphiid.txt
+#load armor /data/items/ichtyid/scoutarmor.txt
+#load armor /data/items/ichtyid/naked.txt
+#load helmet /data/items/ichtyid/scouthelmet.txt
+#load weapon /data/items/ichtyid/scoutweapon.txt
+#load offhand /data/items/ichtyid/scoutoffhand.txt
+#load bonusweapon /data/items/ichtyid/bonusrangedweapon.txt
+
+#endpose

@@ -51,7 +51,7 @@
 
 #newtheme
 #type demographic
-#name  cavefishmen
+#name cavefishmen
 #basechance 1
 #racedefinition "#pose cavefishtroops"
 #racedefinition "#pose cavefishmages"
@@ -62,7 +62,7 @@
 
 #newtheme
 #type demographic
-#name  carpmen
+#name carpmen
 #basechance 1
 #racedefinition "#pose carpmentroops"
 #racedefinition "#pose carpmenmages"
@@ -71,7 +71,7 @@
 
 #newtheme
 #type demographic
-#name  koimen
+#name koimen
 #basechance 1
 #racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
@@ -85,20 +85,20 @@
 
 #newtheme
 #type demographic
-#name  clownfishmen
+#name clownfishmen
 #basechance 1
 #racedefinition "#pose amphiprionidtroops"
 #racedefinition "#pose amphiprionidmages"
 #racedefinition "#magicpriority fire 2"
 #themeinc theme inland *0.01
-#themeinc theme common_pigment *500
-#themeinc theme faint_pigment *5000
-#themeinc theme light_pigment *5000
+#themeinc theme common_pigment *1000
+#themeinc theme faint_pigment *2500
+#themeinc theme light_pigment *2500
 #endtheme
 
 #newtheme
 #type demographic
-#name  piranhamen
+#name piranhamen
 #basechance 1
 #racedefinition "#longsyllables /data/names/nations/nahuatl/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
@@ -113,17 +113,20 @@
 
 #newtheme
 #type demographic
-#name  sharkmen
+#name sharkmen
 #basechance 1
 #racedefinition "#pose selachidtroops"
 #racedefinition "#pose selachidmages"
 #themeinc theme inland *0.01
 #themeinc theme enclosed_helm *0.001
+#themeinc theme common_pigment *5000
+#themeinc theme faint_pigment *2500
+#themeinc theme light_pigment *2500
 #endtheme
 
 #newtheme
 #type demographic
-#name  pikemen
+#name pikemen
 #basechance 1
 #racedefinition "#pose esoxidtroops"
 #racedefinition "#pose esoxidmages"
@@ -133,7 +136,7 @@
 
 #newtheme
 #type demographic
-#name  perchmen
+#name perchmen
 #basechance 1
 #racedefinition "#pose percidtroops"
 #racedefinition "#pose percidmages"
@@ -142,7 +145,7 @@
 
 #newtheme
 #type demographic
-#name  catfishmen_oriental
+#name catfishmen_oriental
 #basechance 0.5
 #racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
@@ -158,7 +161,7 @@
 
 #newtheme
 #type demographic
-#name  catfishmen_occidental
+#name catfishmen_occidental
 #basechance 0.5
 #racedefinition "#longsyllables /data/names/nations/nahuatl/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
@@ -174,7 +177,7 @@
 
 #newtheme
 #type demographic
-#name  anglerfishmen
+#name anglerfishmen
 #basechance 1
 #racedefinition "#pose lophiiformidtroops"
 #racedefinition "#pose lophiiformidmages"
@@ -185,12 +188,44 @@
 
 #newtheme
 #type demographic
-#name  flyingfishmen
+#name flyingfishmen
 #basechance 1
 #racedefinition "#pose flyingtroops"
 #racedefinition "#pose flyingmages"
 #themeinc theme inland *0.01
 #themeinc theme light *3
+#endtheme
+
+#newtheme
+#type demographic
+#name tunamen
+#basechance 1
+#racedefinition "#pose thunninidtroops"
+#racedefinition "#pose thunninidmages"
+#themeinc theme inland *0.01
+#themeinc theme enclosed_helm *0.001
+#themeinc theme common_pigment *1000
+#themeinc theme light_pigment *5000
+#endtheme
+
+#newtheme
+#type demographic
+#name sailfishmen
+#basechance 1
+#racedefinition "#pose istiophoridtroops"
+#racedefinition "#pose istiophoridmages"
+#themeinc theme inland *0.01
+#themeinc theme enclosed_helm *0.001
+#endtheme
+
+#newtheme
+#type demographic
+#name swordfishmen
+#basechance 1
+#racedefinition "#pose xiphiidtroops"
+#racedefinition "#pose xiphiidmages"
+#themeinc theme inland *0.01
+#themeinc theme enclosed_helm *0.001
 #endtheme
 
 

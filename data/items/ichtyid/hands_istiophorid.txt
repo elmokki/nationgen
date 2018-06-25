@@ -1,0 +1,16 @@
+--- Hands belonging to an armor set should be given id of the lowest prot armor they go with if you want to avoid naked people with plate gloves.
+
+#newitem
+#id "normal_hands"
+#gameid -1
+#sprite /graphics/ichtyid/hands/hands_istiophorid.png
+#recolormask self
+#enditem
+
+#newitem
+#id "2h_hands"
+#gameid -1
+#basechance 0
+#sprite /graphics/ichtyid/hands/hands_istiophorid_2h.png
+#recolormask self
+#enditem
