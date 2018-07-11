@@ -82,7 +82,6 @@ public class NationGen
     public Dom3DB armordb;
     public Dom3DB units;
     public Dom3DB sites;
-    public Dom3DB nations;
 
     public Settings settings;
     private CustomItemsHandler customItemsHandler;
@@ -424,7 +423,6 @@ public class NationGen
             armordb = new Dom3DB("armor.csv");
             weapondb = new Dom3DB("weapon.csv");
             sites = new Dom3DB("sites.csv");
-            nations = new Dom3DB("nations.csv");
     }
 	
     /**
