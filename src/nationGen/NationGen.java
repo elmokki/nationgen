@@ -581,8 +581,8 @@ public class NationGen
     public void write(List<Nation> nations, String modname) throws IOException
     {
         String dir = "nationgen_" + modname.toLowerCase().replaceAll(" ", "_") + "/"; // nation.name.toLowerCase().replaceAll(" ", "_")
-        new File("./mods/" + dir).mkdir();
-
+        new File("./mods/" + dir).mkdirs();
+        
         FileWriter fstream = new FileWriter("./mods/nationgen_" + modname.toLowerCase().replaceAll(" ", "_") + ".dm");
         PrintWriter tw = new PrintWriter(fstream, true);
 
