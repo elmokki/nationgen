@@ -178,7 +178,7 @@ public class Pose extends Filter {
 				if(!Generic.isNumeric(i.id))
 				{
 					
-					CustomItem citem = nationGen.getCustomItem(i.id);
+					CustomItem citem = nationGen.GetCustomItemsHandler().getCustomItem(i.id);
 					if(!citem.armor)
 						nationGen.weapondb.addToMap(i.id, citem.getHashMap());
 					else
