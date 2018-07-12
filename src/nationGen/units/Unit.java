@@ -1057,7 +1057,7 @@ public class Unit {
 			{
 				Item ti = i.getCopy();
 				ti.tags.add("OLDID " + i.id);
-				ti.id = nationGen.getCustomItemId(i.id);
+				ti.id = nationGen.GetCustomItemsHandler().getCustomItemId(i.id);
 				this.setSlot(str, ti);
 			}
 		}
@@ -1205,7 +1205,7 @@ public class Unit {
 					}
 					catch(Exception e)
 					{
-						c.args.set(0, nationGen.getCustomItemId(c.args.get(0)) + "");
+						c.args.set(0, nationGen.GetCustomItemsHandler().getCustomItemId(c.args.get(0)) + "");
 					}
 		
 				}

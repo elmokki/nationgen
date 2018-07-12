@@ -82,18 +82,15 @@ public class NationGen
     public Dom3DB armordb;
     public Dom3DB units;
     public Dom3DB sites;
-    public Dom3DB nations;
 
     public Settings settings;
-    public List<CustomItem> customitems = new ArrayList<>();
+    private CustomItemsHandler customItemsHandler;
     public List<Filter> customspells = new ArrayList<>();
     public List<ShapeShift> secondshapes = new ArrayList<>();
     public List<Race> races = new ArrayList<>();
     public IdHandler idHandler;
 
     public List<ShapeChangeUnit> forms = new ArrayList<>();
-    public List<CustomItem> chosenCustomitems = new ArrayList<>();
-    public List<CustomItem> pickedCustomitems = new ArrayList<>();
     public List<Spell> spellsToWrite = new ArrayList<>();
     public List<Spell> freeSpells = new ArrayList<>();
 
@@ -115,15 +112,16 @@ public class NationGen
         System.out.print("Loading settings... ");
         settings = new Settings();
         System.out.println("done!");
-
+                
         try 
         {
             System.out.print("Loading Larzm42's Dom5 Mod Inspector database... ");
             loadDom3DB();
             System.out.println("done!");
             System.out.print("Loading definitions... ");
-            customitems.addAll(Item.readFile(this, "./data/items/customitems.txt", CustomItem.class));
             customspells.addAll(Item.readFile(this, "./data/spells/custom_spells.txt", Filter.class));
+            customItemsHandler = new CustomItemsHandler(
+                   Item.readFile(this, "./data/items/customitems.txt", CustomItem.class), weapondb, armordb);
             patterns.load("./data/magic/magicpatterns.txt");
             poses.load("./data/poses/poses.txt");
             filters.load("./data/filters/filters.txt");
@@ -149,17 +147,6 @@ public class NationGen
             System.out.println("Error loading file " + e.getMessage());
         }
 
-        this.customitems.forEach((CustomItem ci) -> 
-        {
-            if (ci.armor) 
-            {
-                NationGen.this.armordb.addToMap(ci.name, ci.getHashMap());
-            } 
-            else 
-            {
-                NationGen.this.weapondb.addToMap(ci.name, ci.getHashMap());
-            }
-        });
         System.gc();
         //this.writeDebugInfo();
     }
@@ -204,7 +191,9 @@ public class NationGen
         // Start
         idHandler = new IdHandler();
         idHandler.loadFile("forbidden_ids.txt");
-
+        
+        customItemsHandler.UpdateIDHandler(idHandler);
+        
         if(!manyseeds)
         {
             System.out.println("Generating " + amount + " nations with seed " + seed + ".");
@@ -434,7 +423,6 @@ public class NationGen
             armordb = new Dom3DB("armor.csv");
             weapondb = new Dom3DB("weapon.csv");
             sites = new Dom3DB("sites.csv");
-            nations = new Dom3DB("nations.csv");
     }
 	
     /**
@@ -624,7 +612,7 @@ public class NationGen
         // Write items!
         // This is a relic from Dom3 version, but oh well.
         System.out.print("Writing items and spells");
-        this.writeCustomItems(tw);
+        customItemsHandler.writeCustomItems(tw);
         this.writeSpells(tw);
         for (Nation nation : nations) 
         {
@@ -736,115 +724,7 @@ public class NationGen
             tw.println();
         }
     }
-	
-    public void writeCustomItems(PrintWriter tw)
-    {
-        if(chosenCustomitems.isEmpty())
-        {
-            return;
-        }
-
-        tw.println("--- Generic custom items:");
-        for(CustomItem ci : this.chosenCustomitems)
-        {	
-            ci.write(tw);
-            //tw.println("");
-        }
-    }
-
-    public CustomItem getCustomItem(String name)
-    {
-        CustomItem citem = null;
-        for(CustomItem ci : this.customitems)
-        {
-            if(ci.name.equals(name) && !this.chosenCustomitems.contains(ci))
-            {
-                citem = ci;
-                break;
-            }
-        }
-        return citem;
-    }
-	
-    public String getCustomItemId(String name)
-    {
-        for(CustomItem ci : this.chosenCustomitems)
-        {
-            if(ci.name.equals(name))
-            {
-                return ci.id;
-            }  
-        }
-
-        CustomItem citem = null;
-        for(CustomItem ci : this.customitems)
-        {
-            if(ci.name.equals(name) && !chosenCustomitems.contains(ci))
-            {
-                citem = ci.getCopy();
-                break;
-            }
-        }
-
-        if(citem == null)
-        {
-            System.out.println("WARNING: No custom item named " + name + " was found!");
-            return "-1";
-        }
-		
-        if(idHandler != null)
-        {
-            if(citem.armor)
-            {
-                citem.id = idHandler.nextArmorId() + "";
-            }
-            else
-            {
-                citem.id = idHandler.nextWeaponId() + "";
-            }
-        }
-        else
-        {
-            System.out.println("ERROR: idHandler was not initialized!");
-            citem.id = "-1";
-        }
-		
-        // -521978361
-        // Check references!
-        for(String str : citem.values.keySet())
-        {
-            if(str.equals("secondaryeffect") || str.equals("secondaryeffectalways"))
-            {
-                String customItemSecondaryEffect = citem.values.get(str);
-                boolean isNumeric = customItemSecondaryEffect.chars().allMatch( Character::isDigit );
-                if (isNumeric)
-                {
-                    Integer.parseInt(customItemSecondaryEffect);
-                }
-                else
-                {
-                    String id;
-                    id = getCustomItemId(customItemSecondaryEffect);
-                    citem.values.put(str, id);
-                }
-            }
-        }
-		
-        this.chosenCustomitems.add(citem);
-        //this.customitems.remove(citem);
-
-        if(!citem.armor)
-        {
-            weapondb.addToMap(citem.id, citem.getHashMap());
-        }
-        else
-        {
-            armordb.addToMap(citem.id, citem.getHashMap());
-        }
-
-        return citem.id;
-    }
-
+    
     public boolean hasShapeShift(String id)
     {
         int realid = -1;
@@ -933,7 +813,7 @@ public class NationGen
                             
                     if (realarg.isEmpty()) 
                     {
-                        c.args.set(0, getCustomItemId(c.args.get(0)) + "");
+                        c.args.set(0, customItemsHandler.getCustomItemId(c.args.get(0)) + "");
                     }
                     else
                     {
@@ -1130,5 +1010,10 @@ public class NationGen
     public void abortNationGeneration()
     {
         shouldAbort = true;
+    }
+    
+    public CustomItemsHandler GetCustomItemsHandler()
+    {
+        return customItemsHandler;
     }
 }
