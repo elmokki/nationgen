@@ -71,7 +71,6 @@ public class NationGen
     public ResourceStorage<Filter> templates = new ResourceStorage<>(Filter.class, this);
     public ResourceStorage<Filter> descriptions = new ResourceStorage<>(Filter.class, this);
     public ResourceStorage<ShapeShift> monsters = new ResourceStorage<>(ShapeShift.class, this);
-    public ResourceStorage<Theme> themes = new ResourceStorage<>(Theme.class, this);
 
     public List<String> secondShapeMountCommands = new ArrayList<>();
     public List<String> secondShapeNonMountCommands = new ArrayList<>();
@@ -129,7 +128,6 @@ public class NationGen
             miscnames.load("./data/names/naming.txt");
             templates.load("./data/templates/templates.txt");
             descriptions.load("./data/descriptions/descriptions.txt");
-            themes.load("./data/themes/themes.txt");
             monsters.load("./data/monsters/monsters.txt");
             loadRaces("./data/races/races.txt");
             secondshapes = Entity.readFile(this, "./data/shapes/secondshapes.txt", ShapeShift.class);

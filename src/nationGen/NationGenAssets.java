@@ -3,6 +3,7 @@ package nationGen;
 import java.io.IOException;
 
 import nationGen.entities.Filter;
+import nationGen.entities.Theme;
 import nationGen.magic.MagicPattern;
 import nationGen.misc.ResourceStorage;
 
@@ -18,11 +19,13 @@ public class NationGenAssets
 {
     public ResourceStorage<MagicPattern> patterns;
     
+    public ResourceStorage<Theme> themes;
     public ResourceStorage<Filter> spells;
     
     public NationGenAssets(NationGen gen)
     {
         patterns = new ResourceStorage<>(MagicPattern.class, gen);
+        themes = new ResourceStorage<>(Theme.class, gen);
         spells = new ResourceStorage<>(Filter.class, gen);
         
         Init();
@@ -33,6 +36,7 @@ public class NationGenAssets
         try
         {
             patterns.load("./data/magic/magicpatterns.txt");
+            themes.load("./data/themes/themes.txt");
             spells.load("./data/spells/spells.txt");
         } catch (IOException e)
         {

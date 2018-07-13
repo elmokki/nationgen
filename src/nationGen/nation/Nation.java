@@ -514,7 +514,7 @@ public class Nation {
             MageWithAccessRestriction mageWithAccessRestriction = new MageWithAccessRestriction(nationGen);
             MagicAccessRestriction magicAccessRestriction = new MagicAccessRestriction(nationGen);
             MagicDiversityRestriction magicDiversityRestriction = new MagicDiversityRestriction(nationGen);
-            NationThemeRestriction nationThemeRestriction = new NationThemeRestriction(nationGen);
+            NationThemeRestriction nationThemeRestriction = new NationThemeRestriction(nationGen, assets);
             NoPrimaryRaceRestriction noPrimaryRaceRestriction = new NoPrimaryRaceRestriction(nationGen);
             NoUnitOfRaceRestriction noUnitOfRaceRestriction = new NoUnitOfRaceRestriction(nationGen);
             PrimaryRaceRestriction primaryRaceRestriction = new PrimaryRaceRestriction(nationGen);
@@ -609,7 +609,7 @@ public class Nation {
 
 		Race race = this.races.get(0);
 		
-		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("nationthemes", "default_nationthemes", nationGen.themes, null, race);
+		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("nationthemes", "default_nationthemes", assets.themes, null, race);
 		ChanceIncHandler chandler = new ChanceIncHandler(this);
 		List<String> freeThemes = Generic.getTagValues(race.tags, "freenationtheme");
 		
@@ -693,7 +693,7 @@ public class Nation {
 	{
 		
 		
-		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("racethemes", "default_racethemes", nationGen.themes, null, race);
+		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("racethemes", "default_racethemes", assets.themes, null, race);
 		ChanceIncHandler chandler = new ChanceIncHandler(this);
 		
 		List<String> freeThemes = Generic.getTagValues(race.tags, "freetheme");

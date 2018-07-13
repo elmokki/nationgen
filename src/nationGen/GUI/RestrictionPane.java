@@ -25,6 +25,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.restrictions.*;
 
 public class RestrictionPane extends JPanel implements ActionListener, ListSelectionListener {
@@ -40,13 +41,14 @@ public class RestrictionPane extends JPanel implements ActionListener, ListSelec
 	private static final long serialVersionUID = 1L;
 
 	private NationGen ng;
-	
+	private NationGenAssets assets;
 
 
 
-	public RestrictionPane(NationGen ng) {
+	public RestrictionPane(NationGen ng, NationGenAssets assets) {
 		super(new GridLayout(1,2,5,5));
 		this.ng = ng;
+		this.assets = assets;
 		init();
 	}
 	
@@ -60,7 +62,7 @@ public class RestrictionPane extends JPanel implements ActionListener, ListSelec
 			new MagicAccessRestriction(ng), 		// "Magic: Access"
 			new MagicDiversityRestriction(ng),		// "Magic: Diversity"
 			new MageWithAccessRestriction(ng),		// "Magic: Mage with access"
-			new NationThemeRestriction(ng),
+			new NationThemeRestriction(ng, assets),
 			new NoPrimaryRaceRestriction(ng),
 			new NoUnitOfRaceRestriction(ng),
 			new PrimaryRaceRestriction(ng),
