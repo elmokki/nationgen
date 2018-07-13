@@ -1,6 +1,7 @@
 package nationGen.naming;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.nation.Nation;
 
 public class NamingHandler {
@@ -43,9 +44,9 @@ public class NamingHandler {
 		epiGen.giveEpithet(n);
 	}
 	
-	public void describeNation(Nation n)
+	public void describeNation(Nation n, NationGenAssets assets)
 	{
-		new NationDescriber(n);
+		new NationDescriber(n, assets);
 	}
 	
 

@@ -20,6 +20,7 @@ public class NationGenAssets
 {
     public ResourceStorage<MagicPattern> patterns;
     
+    public ResourceStorage<Filter> descriptions;
     public ResourceStorage<ShapeShift> monsters;
     public ResourceStorage<Theme> themes;
     public ResourceStorage<Filter> spells;
@@ -27,6 +28,7 @@ public class NationGenAssets
     public NationGenAssets(NationGen gen)
     {
         patterns = new ResourceStorage<>(MagicPattern.class, gen);
+        descriptions = new ResourceStorage<>(Filter.class, gen);
         monsters = new ResourceStorage<>(ShapeShift.class, gen);
         themes = new ResourceStorage<>(Theme.class, gen);
         spells = new ResourceStorage<>(Filter.class, gen);
@@ -39,6 +41,7 @@ public class NationGenAssets
         try
         {
             patterns.load("./data/magic/magicpatterns.txt");
+            descriptions.load("./data/descriptions/descriptions.txt");
             monsters.load("./data/monsters/monsters.txt");
             themes.load("./data/themes/themes.txt");
             spells.load("./data/spells/spells.txt");

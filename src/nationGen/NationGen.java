@@ -69,7 +69,6 @@ public class NationGen
     public ResourceStorage<MagicItem> magicitems = new ResourceStorage<>(MagicItem.class, this);
     public ResourceStorage<NamePart> miscnames = new ResourceStorage<>(NamePart.class, this);
     public ResourceStorage<Filter> templates = new ResourceStorage<>(Filter.class, this);
-    public ResourceStorage<Filter> descriptions = new ResourceStorage<>(Filter.class, this);
 
     public List<String> secondShapeMountCommands = new ArrayList<>();
     public List<String> secondShapeNonMountCommands = new ArrayList<>();
@@ -126,7 +125,6 @@ public class NationGen
             magenames.load("./data/names/magenames/magenames.txt");
             miscnames.load("./data/names/naming.txt");
             templates.load("./data/templates/templates.txt");
-            descriptions.load("./data/descriptions/descriptions.txt");
             loadRaces("./data/races/races.txt");
             secondshapes = Entity.readFile(this, "./data/shapes/secondshapes.txt", ShapeShift.class);
             miscdef.load("./data/misc/miscdef.txt");
@@ -370,7 +368,7 @@ public class NationGen
             nHandler.giveEpithet(n);
 
             // Unit descriptions
-            nHandler.describeNation(n);
+            nHandler.describeNation(n, assets);
 
             // Summaries
             n.summary.update();
