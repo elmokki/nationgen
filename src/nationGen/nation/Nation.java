@@ -33,6 +33,7 @@ import com.elmokki.Drawing;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Race;
@@ -84,6 +85,8 @@ public class Nation {
         public boolean passed = true;
         public String restrictionFailed = "";
 	public NationGen nationGen;
+	private NationGenAssets assets;
+	
 	private long seed = 0;
 	
 	public ItemSet usedItems = new ItemSet();
@@ -115,13 +118,14 @@ public class Nation {
 	
 	public int PDRanks = 2;
 
-	public Nation(NationGen ngen, long seed, int tempid, List<NationRestriction> restrictions)
+	public Nation(NationGen ngen, long seed, int tempid, List<NationRestriction> restrictions, NationGenAssets assets)
 	{
 		this.nationid = tempid;
 		this.nationGen = ngen;
 		this.random = new Random(seed);
 		this.seed = seed;
 		this.era = (int)Math.round(nationGen.settings.get("era"));
+		this.assets = assets;
 		
 		comlists.put("scouts", new ArrayList<Unit>());
 		comlists.put("commanders", new ArrayList<Unit>());
@@ -238,7 +242,7 @@ public class Nation {
 	private void generateMagesAndPriests()
 	{
 		// Mages and priests
-		MageGenerator mageGen = new MageGenerator(nationGen, this);
+		MageGenerator mageGen = new MageGenerator(nationGen, this, assets);
 		comlists.get("mages").addAll(mageGen.generateMages());
 		comlists.get("priests").addAll(mageGen.generatePriests());
 		mageGen = null;
@@ -414,7 +418,7 @@ public class Nation {
 	{
 		// Heroes
 		
-		HeroGenerator hg = new HeroGenerator(nationGen, this);
+		HeroGenerator hg = new HeroGenerator(nationGen, this, assets);
 		int heroes = 1 + random.nextInt(3); // 1-3
 		this.heroes.addAll(hg.generateHeroes(heroes));
 		hg = null;

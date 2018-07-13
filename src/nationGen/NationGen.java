@@ -60,7 +60,7 @@ public class NationGen
 
     public List<NationRestriction> restrictions = new ArrayList<>();
 
-    public ResourceStorage<MagicPattern> patterns = new ResourceStorage<>(MagicPattern.class, this);
+    private NationGenAssets assets;
     public ResourceStorage<Pose> poses = new ResourceStorage<>(Pose.class, this);
     public ResourceStorage<Filter> filters = new ResourceStorage<>(Filter.class, this);
     public ResourceStorage<NamePart> magenames = new ResourceStorage<>(NamePart.class, this);
@@ -119,10 +119,11 @@ public class NationGen
             loadDom3DB();
             System.out.println("done!");
             System.out.print("Loading definitions... ");
+            assets = new NationGenAssets(this);
+            
             customspells.addAll(Item.readFile(this, "./data/spells/custom_spells.txt", Filter.class));
             customItemsHandler = new CustomItemsHandler(
                    Item.readFile(this, "./data/items/customitems.txt", CustomItem.class), weapondb, armordb);
-            patterns.load("./data/magic/magicpatterns.txt");
             poses.load("./data/poses/poses.txt");
             filters.load("./data/filters/filters.txt");
             magenames.load("./data/names/magenames/magenames.txt");
@@ -250,7 +251,7 @@ public class NationGen
                 System.out.print(")... ");
             }
 
-            newnation = new Nation(this, newseed, count, restrictions);
+            newnation = new Nation(this, newseed, count, restrictions, assets);
 
             if (newnation.passed)
             {
@@ -430,7 +431,7 @@ public class NationGen
      * @param spells
      * @param n
      */
-    public void handleSpells(List<Filter> spells, Nation n)
+    private void handleSpells(List<Filter> spells, Nation n)
     {
         int id = n.nationid;
 
@@ -701,7 +702,7 @@ public class NationGen
         }
     }
 	
-    public void writeSpells(PrintWriter tw)
+    private void writeSpells(PrintWriter tw)
     {
         if(spellsToWrite.isEmpty())
         {
