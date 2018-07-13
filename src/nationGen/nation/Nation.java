@@ -460,8 +460,8 @@ public class Nation {
 	private void generateSpells()
 	{
 		// Spells
-		SpellGen spellgenerator = new SpellGen(this.nationGen, this);
-		spellgenerator.execute();
+		SpellGen spellgenerator = new SpellGen(this);
+		spellgenerator.execute(assets);
 	}
 	
 	private void generateFlag()
@@ -506,7 +506,7 @@ public class Nation {
 	
 
 	
-	public void generate(List restrictions)
+	public void generate(List<NationRestriction> restrictions)
 	{
             //
             // Easiest way I found to get the Class information for doing a comparsion; might be an easier way?
