@@ -445,7 +445,7 @@ public class Nation {
 		
 		if(random.nextDouble() < monsterchance)
 		{
-			MonsterGenerator mGen = new MonsterGenerator(this, this.nationGen);
+			MonsterGenerator mGen = new MonsterGenerator(this, this.nationGen, assets);
 			Unit monster = mGen.generateMonster();
 			if(monster != null)
 			{
