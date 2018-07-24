@@ -43,7 +43,7 @@ public class NationGen
     public static String version = "0.7.0-RC7";
     public static String date = "6th of May 2018";
 
-    public List<NationRestriction> restrictions = new ArrayList<>();
+    private List<NationRestriction> restrictions = new ArrayList<>();
 
     private NationGenAssets assets;
    
@@ -54,11 +54,11 @@ public class NationGen
 
     public Settings settings;
     private CustomItemsHandler customItemsHandler;
-    public IdHandler idHandler;
+    private IdHandler idHandler;
 
     public List<ShapeChangeUnit> forms = new ArrayList<>();
-    public List<Spell> spellsToWrite = new ArrayList<>();
-    public List<Spell> freeSpells = new ArrayList<>();
+    private List<Spell> spellsToWrite = new ArrayList<>();
+    private List<Spell> freeSpells = new ArrayList<>();
 
     private ReentrantLock pauseLock;
     private boolean shouldAbort = false;
@@ -66,12 +66,15 @@ public class NationGen
     public NationGen() throws IOException
     {
         // For versions of this that don't need pausing, simply create a dummy lock object to be used.
-        this(new ReentrantLock());
+        this(new ReentrantLock(), new Settings(), new ArrayList<>());
     }
     
-    public NationGen(ReentrantLock pauseLock) throws IOException
+    public NationGen(ReentrantLock pauseLock, Settings settings, List<NationRestriction> restrictions) throws IOException
     {
         this.pauseLock = pauseLock;
+        this.settings = settings;
+        this.restrictions = restrictions;
+        
         //System.out.println("Dominions 4 NationGen version " + version + " (" + date + ")");
         //System.out.println("------------------------------------------------------------------");
 

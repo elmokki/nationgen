@@ -119,8 +119,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         // Restrictions need nationgen;
     	try 
         {
-            n = new NationGen(pauseLock);
-            n.settings = settings;
+            n = new NationGen(pauseLock, settings, new ArrayList<>());
         } 
         catch (IOException e) 
         {
@@ -404,9 +403,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
     {
     	try 
         {
-            n = new NationGen(pauseLock);
-            n.settings = settings;
-            n.restrictions.addAll(rpanel.getRestrictions());
+            n = new NationGen(pauseLock, settings, rpanel.getRestrictions());
         } 
         catch (IOException e) 
         {
