@@ -7,6 +7,7 @@ import java.util.List;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.MagicItem;
@@ -26,8 +27,9 @@ import nationGen.units.Unit;
 public class SacredGenerator extends TroopGenerator {
 
 	ItemSet usedItems = new ItemSet();
-	public SacredGenerator(NationGen g, Nation n) {
-		super(g, n, "sacgen");
+	
+	public SacredGenerator(NationGen g, Nation n, NationGenAssets assets) {
+		super(g, n, assets, "sacgen");
 		
 		String[] slots_array = {"armor", "weapon", "offhand", "bonusweapon", "helmet", "cloakb", "hair"};
 		for(Unit u : this.nation.generateTroopList())
@@ -455,7 +457,7 @@ public class SacredGenerator extends TroopGenerator {
 		
 		if(unitGen.hasMontagPose(u))
 		{
-			SacredMontagTemplate template = new SacredMontagTemplate(nation, nationGen);
+			SacredMontagTemplate template = new SacredMontagTemplate(nation, nationGen, assets);
 			template.power = power;
 			template.sacred = sacred;
 			unitGen.handleMontagUnits(u, template, "montagsacreds");

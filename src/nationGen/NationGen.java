@@ -68,8 +68,7 @@ public class NationGen
     public ResourceStorage<Flag> flagparts = new ResourceStorage<>(Flag.class, this);
     public ResourceStorage<MagicItem> magicitems = new ResourceStorage<>(MagicItem.class, this);
     public ResourceStorage<NamePart> miscnames = new ResourceStorage<>(NamePart.class, this);
-    public ResourceStorage<Filter> templates = new ResourceStorage<>(Filter.class, this);
-
+    
     public List<String> secondShapeMountCommands = new ArrayList<>();
     public List<String> secondShapeNonMountCommands = new ArrayList<>();
     public List<String> secondShapeRacePoseCommands = new ArrayList<>();
@@ -124,7 +123,6 @@ public class NationGen
             filters.load("./data/filters/filters.txt");
             magenames.load("./data/names/magenames/magenames.txt");
             miscnames.load("./data/names/naming.txt");
-            templates.load("./data/templates/templates.txt");
             loadRaces("./data/races/races.txt");
             secondshapes = Entity.readFile(this, "./data/shapes/secondshapes.txt", ShapeShift.class);
             miscdef.load("./data/misc/miscdef.txt");
@@ -356,7 +354,7 @@ public class NationGen
 
 
             // mages 
-            nHandler.nameMages(n);
+            nHandler.nameMages(n, assets);
 
             // priests
             nHandler.namePriests(n);

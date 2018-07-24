@@ -30,7 +30,7 @@ public class HeroGenerator {
 	
 	public HeroGenerator(NationGen g, Nation n, NationGenAssets assets) {
 		this.mageGen = new MageGenerator(g, n, assets);
-		this.sacGen = new SacredGenerator(g, n);
+		this.sacGen = new SacredGenerator(g, n, assets);
 		this.n = n;
 		this.ng = g;
 		this.assets = assets;
@@ -84,7 +84,7 @@ public class HeroGenerator {
 	
 	private Unit generateHero(boolean multihero)
 	{
-		SacredGenerator sacGen = new SacredGenerator(ng, n);
+		SacredGenerator sacGen = new SacredGenerator(ng, n, assets);
 		ChanceIncHandler chandler = new ChanceIncHandler(n, "herogen");
 		sacGen.setIdentifier("herogen");
 

@@ -3,6 +3,7 @@ package nationGen.rostergeneration.montagtemplates;
 import java.util.Random;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.entities.Pose;
 import nationGen.nation.Nation;
 import nationGen.rostergeneration.SacredGenerator;
@@ -15,9 +16,9 @@ public class SacredMontagTemplate extends MontagTemplate {
 	private SacredGenerator sGen;
 	private Random r;
 	
-	public SacredMontagTemplate(Nation n, NationGen ngen)
+	public SacredMontagTemplate(Nation n, NationGen ngen, NationGenAssets assets)
 	{
-		sGen = new SacredGenerator(ngen, n);
+		sGen = new SacredGenerator(ngen, n, assets);
 		r = new Random(n.random.nextInt());
 	}
 	

@@ -251,7 +251,7 @@ public class Nation {
 	private void generateTroops()
 	{
 		// Troops
-		RosterGenerator g = new RosterGenerator(nationGen, this);
+		RosterGenerator g = new RosterGenerator(nationGen, this, assets);
 		g.execute();
 		g = null;
 		System.gc();
@@ -261,7 +261,7 @@ public class Nation {
 	private void generateSacreds()
 	{
 		//// Sacreds and elites
-		SacredGenerator sacGen = new SacredGenerator(nationGen, this);
+		SacredGenerator sacGen = new SacredGenerator(nationGen, this, assets);
 		List<Unit> sacreds = new ArrayList<Unit>();
 		
 
@@ -367,7 +367,7 @@ public class Nation {
 	{
 		// Scouts
 		
-		ScoutGenerator scoutgen = new ScoutGenerator(nationGen, this);
+		ScoutGenerator scoutgen = new ScoutGenerator(nationGen, this, assets);
 		
 		if(races.get(0).hasRole("scout") && !races.get(0).tags.contains("#no_scouts"))
 			comlists.get("scouts").add(scoutgen.generateScout(races.get(0)));
@@ -388,7 +388,7 @@ public class Nation {
 		
 		if(random.nextDouble() < specialcomchance)
 		{
-			SpecialCommanderGenerator scg = new SpecialCommanderGenerator(this, nationGen);
+			SpecialCommanderGenerator scg = new SpecialCommanderGenerator(this, nationGen, assets);
 			scg.generate();
 			scg = null;
 			System.gc();
@@ -429,7 +429,7 @@ public class Nation {
 	private void generateComs()
 	{
 		// Commanders
-		CommanderGenerator comgen = new CommanderGenerator(nationGen, this);
+		CommanderGenerator comgen = new CommanderGenerator(nationGen, this, assets);
 		comgen.generateComs();
 		comgen = null;
 		System.gc();

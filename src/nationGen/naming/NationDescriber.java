@@ -23,6 +23,7 @@ public class NationDescriber {
 	{
 		random = new Random(n.random.nextInt());
 		this.n = n;
+		this.assets = assets;
 		describeTroops();
 		describeCommanders();
 	}

@@ -9,6 +9,7 @@ import java.util.Random;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.magic.MageGenerator;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.nation.Nation;
@@ -98,7 +99,7 @@ public class MageNamer extends Namer {
 	
 	
 	
-	public void execute(Nation n)
+	public void execute(Nation n, NationGenAssets assets)
 	{
 		this.n = n;
 		random = new Random(n.random.nextInt());
@@ -108,7 +109,7 @@ public class MageNamer extends Namer {
 		List<List<Unit>> all = n.getMagesInSeparateLists();
 		execute(all, 3);
 		
-		UnitGen ug = new UnitGen(ng, n);
+		UnitGen ug = new UnitGen(ng, n, assets);
 		for(List<Unit> l : all)
 			for(Unit u : l)
 			{

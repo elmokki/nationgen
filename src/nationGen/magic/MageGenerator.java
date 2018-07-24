@@ -35,7 +35,7 @@ public class MageGenerator extends TroopGenerator {
 	private NationGenAssets assets;
 	
 	public MageGenerator(NationGen g, Nation n, NationGenAssets assets) {
-		super(g, n, "magegen");
+		super(g, n, assets, "magegen");
 	
 		this.assets = assets;
 		loadPatterns();
@@ -1427,7 +1427,7 @@ public class MageGenerator extends TroopGenerator {
 
 				
 				//List<String> body = new ArrayList<String>();	// Set a temporary null description for priests
-				(new CommanderGenerator(this.nationGen, this.nation)).generateDescription(u, false, false, false);
+				(new CommanderGenerator(this.nationGen, this.nation, assets)).generateDescription(u, false, false, false);
 				//body.add();					
 		
 				//body.add("\"No description\"");

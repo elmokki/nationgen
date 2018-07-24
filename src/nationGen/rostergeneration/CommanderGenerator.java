@@ -7,6 +7,7 @@ import java.util.Random;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.items.Item;
@@ -20,8 +21,8 @@ import nationGen.units.Unit;
 public class CommanderGenerator extends TroopGenerator {
 
 	private Random r;
-	public CommanderGenerator(NationGen g, Nation n) {
-		super(g, n, "commandergen");
+	public CommanderGenerator(NationGen g, Nation n, NationGenAssets assets) {
+		super(g, n, assets, "commandergen");
 		r = new Random(n.random.nextInt());
 
 	}

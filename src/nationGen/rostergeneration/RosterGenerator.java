@@ -9,6 +9,7 @@ import java.util.Random;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.items.Item;
@@ -37,12 +38,12 @@ public class RosterGenerator {
 	private double skipchance = 0.05;
 	private List<TroopTemplate> templates = new ArrayList<TroopTemplate>();
 
-	public RosterGenerator(NationGen g, Nation n)
+	public RosterGenerator(NationGen g, Nation n, NationGenAssets assets)
 	{
 		nationGen = g;
 		nation = n;
 		this.r = new Random(n.random.nextInt());
-		tgen = new TroopGenerator(nationGen, nation);
+		tgen = new TroopGenerator(nationGen, nation, assets);
 		tgen.setTemplates(this.templates);
 		this.chandler = new ChanceIncHandler(n, "rostergen");
 		skipchance = r.nextDouble()*0.1 + 0.05;

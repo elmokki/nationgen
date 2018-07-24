@@ -13,10 +13,10 @@ public class NamingHandler {
 		this.ng = ng;
 	}
 
-	public void nameMages(Nation n)
+	public void nameMages(Nation n, NationGenAssets assets)
 	{
 		MageNamer mNamer = new MageNamer(ng);
-		mNamer.execute(n);
+		mNamer.execute(n, assets);
 	}
 	
 	public void namePriests(Nation n)
