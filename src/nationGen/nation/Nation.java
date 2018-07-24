@@ -467,7 +467,7 @@ public class Nation {
 	private void generateFlag()
 	{
 		// Flag
-		FlagGen fg = new FlagGen(this);
+		FlagGen fg = new FlagGen(this, assets);
 		this.flag = fg.generateFlag(this);
 		fg = null;
 		

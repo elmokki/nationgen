@@ -3,20 +3,16 @@ package nationGen.misc;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.io.File;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-
-import javax.imageio.ImageIO;
-
-import com.elmokki.Drawing;
 import com.elmokki.Generic;
 
+import nationGen.NationGenAssets;
 import nationGen.entities.Flag;
 import nationGen.nation.Nation;
 
@@ -28,9 +24,9 @@ public class FlagGen {
 	public List<Flag> border = new ArrayList<Flag>();
 	public List<Flag> bases = new ArrayList<Flag>();
 
-    ChanceIncHandler chandler;
+    private ChanceIncHandler chandler;
 
-	public FlagGen(Nation n)
+	public FlagGen(Nation n, NationGenAssets assets)
 	{
 		chandler = new ChanceIncHandler(n);
 		// Load data
@@ -41,24 +37,24 @@ public class FlagGen {
 			{
 				List<String> args = Generic.parseArgs(tag);
 				if(args.get(0).equals("flagtops") && args.size() > 1)
-					top.addAll(n.nationGen.flagparts.get(args.get(1)));
+					top.addAll(assets.flagparts.get(args.get(1)));
 				if(args.get(0).equals("flagborders") && args.size() > 1)
-					border.addAll(n.nationGen.flagparts.get(args.get(1)));
+					border.addAll(assets.flagparts.get(args.get(1)));
 				if(args.get(0).equals("flagbases") && args.size() > 1)
-					bases.addAll(n.nationGen.flagparts.get(args.get(1)));
+					bases.addAll(assets.flagparts.get(args.get(1)));
 				if(args.get(0).equals("flagpoles") && args.size() > 1)
-					poles.addAll(n.nationGen.flagparts.get(args.get(1)));
+					poles.addAll(assets.flagparts.get(args.get(1)));
 			}
 		}
 		
 		if(top.size() == 0)
-			top.addAll(n.nationGen.flagparts.get("topicons"));
+			top.addAll(assets.flagparts.get("topicons"));
 		if(poles.size() == 0)
-			poles.addAll(n.nationGen.flagparts.get("poles"));
+			poles.addAll(assets.flagparts.get("poles"));
 		if(border.size() == 0)
-			border.addAll(n.nationGen.flagparts.get("borders"));
+			border.addAll(assets.flagparts.get("borders"));
 		if(bases.size() == 0)
-			bases.addAll(n.nationGen.flagparts.get("baseflags"));
+			bases.addAll(assets.flagparts.get("baseflags"));
 
 	}
 	

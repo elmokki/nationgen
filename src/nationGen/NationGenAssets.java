@@ -3,6 +3,7 @@ package nationGen;
 import java.io.IOException;
 
 import nationGen.entities.Filter;
+import nationGen.entities.Flag;
 import nationGen.entities.MagicItem;
 import nationGen.entities.Theme;
 import nationGen.magic.MagicPattern;
@@ -28,6 +29,7 @@ public class NationGenAssets
     public ResourceStorage<Theme> themes;
     public ResourceStorage<Filter> spells;
     public ResourceStorage<NamePart> miscnames;
+    public ResourceStorage<Flag> flagparts;
     public ResourceStorage<MagicItem> magicitems;
     
     public NationGenAssets(NationGen gen)
@@ -39,6 +41,7 @@ public class NationGenAssets
         themes = new ResourceStorage<>(Theme.class, gen);
         spells = new ResourceStorage<>(Filter.class, gen);
         miscnames = new ResourceStorage<>(NamePart.class, gen);
+        flagparts = new ResourceStorage<>(Flag.class, gen);
         magicitems = new ResourceStorage<>(MagicItem.class, gen);
 
         Init();
@@ -56,6 +59,7 @@ public class NationGenAssets
             spells.load("./data/spells/spells.txt");
             
             miscnames.load("./data/names/naming.txt");
+            flagparts.load("./data/flags/flagdef.txt");
             magicitems.load("./data/items/magicweapons.txt");
         } catch (IOException e)
         {
