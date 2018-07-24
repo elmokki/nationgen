@@ -25,6 +25,7 @@ import com.elmokki.Drawing;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.items.Item;
@@ -94,6 +95,7 @@ public class SpriteGen extends JFrame implements ActionListener, ItemListener{
 	
 	
 	NationGen nGen;
+	NationGenAssets assets;
     JComboBox<Race> racecombo = new JComboBox<Race>();
     JComboBox<Pose> posecombo = new JComboBox<Pose>();
     List<SGEntry> slots = new ArrayList<SGEntry>();
@@ -123,6 +125,7 @@ public class SpriteGen extends JFrame implements ActionListener, ItemListener{
 	
     public SpriteGen() throws IOException {
     	nGen = new NationGen();
+    	assets = new NationGenAssets(nGen);
     	nGen.setSpriteGenPoses();
     	
     	dummy = new Item(nGen);
@@ -168,7 +171,7 @@ public class SpriteGen extends JFrame implements ActionListener, ItemListener{
         JPanel racepanel = new JPanel(new BorderLayout(5,5));
         JLabel racelbl = new JLabel("Race");
         racepanel.add(racelbl, BorderLayout.NORTH);
-        for(Race r : nGen.races)
+        for(Race r : assets.races)
         	racecombo.addItem(r);
         racecombo.addItemListener(this);
         racepanel.add(racecombo, BorderLayout.SOUTH);

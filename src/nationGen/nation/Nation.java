@@ -163,7 +163,7 @@ public class Nation {
 		// choose primary race
 		List<Race> allRaces = new ArrayList<>();
 
-                for(Race r : nationGen.races)
+                for(Race r : assets.races)
                 {
                     if (!r.tags.contains("secondary")) 
                     {
@@ -190,7 +190,7 @@ public class Nation {
 		
 		// Secondary race after themes since themes may affect it
 		allRaces.clear();
-		allRaces.addAll(nationGen.races);
+		allRaces.addAll(assets.races);
 		allRaces.remove(race);
 		
 		race = Race.getRandom(random, chandler.handleChanceIncs(allRaces));
@@ -515,14 +515,14 @@ public class Nation {
             MagicAccessRestriction magicAccessRestriction = new MagicAccessRestriction(nationGen);
             MagicDiversityRestriction magicDiversityRestriction = new MagicDiversityRestriction(nationGen);
             NationThemeRestriction nationThemeRestriction = new NationThemeRestriction(nationGen, assets);
-            NoPrimaryRaceRestriction noPrimaryRaceRestriction = new NoPrimaryRaceRestriction(nationGen);
-            NoUnitOfRaceRestriction noUnitOfRaceRestriction = new NoUnitOfRaceRestriction(nationGen);
-            PrimaryRaceRestriction primaryRaceRestriction = new PrimaryRaceRestriction(nationGen);
-            SacredRaceRestriction sacredRaceRestriction = new SacredRaceRestriction(nationGen);
+            NoPrimaryRaceRestriction noPrimaryRaceRestriction = new NoPrimaryRaceRestriction(nationGen, assets);
+            NoUnitOfRaceRestriction noUnitOfRaceRestriction = new NoUnitOfRaceRestriction(nationGen, assets);
+            PrimaryRaceRestriction primaryRaceRestriction = new PrimaryRaceRestriction(nationGen, assets);
+            SacredRaceRestriction sacredRaceRestriction = new SacredRaceRestriction(nationGen, assets);
             RecAnywhereSacredsRestriction recAnywhereSacredRestriction = new RecAnywhereSacredsRestriction(nationGen);
             UnitCommandRestriction unitCommandRestriction = new UnitCommandRestriction(nationGen);
             UnitFilterRestriction unitFilterRestriction = new UnitFilterRestriction(nationGen, assets);
-            UnitOfRaceRestriction unitOfRaceRestriction = new UnitOfRaceRestriction(nationGen);
+            UnitOfRaceRestriction unitOfRaceRestriction = new UnitOfRaceRestriction(nationGen, assets);
             	
             
             @SuppressWarnings("rawtypes")

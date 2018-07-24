@@ -335,10 +335,10 @@ public class HeroGenerator {
 		Race r = null;
 		while(r == null)
 		{
-			if(n.random.nextDouble() < 0.05 && ng.races.size() > 2)
+			if(n.random.nextDouble() < 0.05 && assets.races.size() > 2)
 			{
 				List<Race> races = new ArrayList<Race>();
-				races.addAll(ng.races);
+				races.addAll(assets.races);
 				races.removeAll(n.races);
 				r = Entity.getRandom(n.random, chandler.handleChanceIncs(races));
 				

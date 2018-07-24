@@ -74,7 +74,6 @@ public class NationGen
     public Settings settings;
     private CustomItemsHandler customItemsHandler;
     public List<ShapeShift> secondshapes = new ArrayList<>();
-    public List<Race> races = new ArrayList<>();
     public IdHandler idHandler;
 
     public List<ShapeChangeUnit> forms = new ArrayList<>();
@@ -109,7 +108,7 @@ public class NationGen
             customItemsHandler = new CustomItemsHandler(
                     Item.readFile(this, "./data/items/customitems.txt", CustomItem.class), weapondb, armordb);
             assets = new NationGenAssets(this);
-            loadRaces("./data/races/races.txt");
+            assets.loadRaces("./data/races/races.txt", this); // ugh.  Looks like *somehow* assets is circularly depended in races.
             secondshapes = Entity.readFile(this, "./data/shapes/secondshapes.txt", ShapeShift.class);
             loadSecondShapeInheritance("/data/shapes/secondshapeinheritance.txt");
 
@@ -466,37 +465,11 @@ public class NationGen
             }
         }
     }
-
-    private void loadRaces(String file) throws IOException
-    {
-        FileInputStream fstream = new FileInputStream(file);
-        DataInputStream in = new DataInputStream(fstream);
-        BufferedReader br = new BufferedReader(new InputStreamReader(in));
-
-        String strLine;
-
-        while ((strLine = br.readLine()) != null)   
-        {
-            List<String> args = Generic.parseArgs(strLine);
-            if(args.isEmpty())
-            {
-                continue;
-            }
-
-            if(args.get(0).equals("#load"))
-            {
-                List<Race> items = new ArrayList<>();
-                items.addAll(Item.readFile(this, args.get(1), Race.class));
-                races.addAll(items);
-            }
-        }
-        in.close();
-    }
 	
     public void writeDebugInfo()
     { 
         double total = 0;
-        for(Race r : races)
+        for(Race r : assets.races)
         {
             if(!r.tags.contains("secondary"))
             {
@@ -504,7 +477,7 @@ public class NationGen
             }
         }
 
-        for(Race r : races)
+        for(Race r : assets.races)
         {
             if(!r.tags.contains("secondary"))
             {
@@ -973,7 +946,7 @@ public class NationGen
      */
     public void setSpriteGenPoses()
     {
-        for(Race race : races)
+        for(Race race : assets.races)
         {
             race.poses.addAll(race.spriteGenPoses);
         }

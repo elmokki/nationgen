@@ -63,14 +63,14 @@ public class RestrictionPane extends JPanel implements ActionListener, ListSelec
 			new MagicDiversityRestriction(ng),		// "Magic: Diversity"
 			new MageWithAccessRestriction(ng),		// "Magic: Mage with access"
 			new NationThemeRestriction(ng, assets),
-			new NoPrimaryRaceRestriction(ng),
-			new NoUnitOfRaceRestriction(ng),
-			new PrimaryRaceRestriction(ng),
+			new NoPrimaryRaceRestriction(ng, assets),
+			new NoUnitOfRaceRestriction(ng, assets),
+			new PrimaryRaceRestriction(ng, assets),
 			new RecAnywhereSacredsRestriction(ng),
-			new SacredRaceRestriction(ng),			// "Sacred: Race"
+			new SacredRaceRestriction(ng, assets),			// "Sacred: Race"
 			new UnitCommandRestriction(ng),
 			new UnitFilterRestriction(ng, assets),
-			new UnitOfRaceRestriction(ng)
+			new UnitOfRaceRestriction(ng, assets)
 		};
 		return stuff;
 	}

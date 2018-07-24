@@ -1,13 +1,20 @@
 package nationGen;
 
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.elmokki.Generic;
 
 import nationGen.entities.Filter;
 import nationGen.entities.Flag;
 import nationGen.entities.MagicItem;
 import nationGen.entities.Pose;
+import nationGen.entities.Race;
 import nationGen.entities.Theme;
 import nationGen.items.Item;
 import nationGen.magic.MagicPattern;
@@ -29,6 +36,7 @@ public class NationGenAssets
     
     public ResourceStorage<Filter> templates;
     public ResourceStorage<Filter> descriptions;
+    public List<Race> races;
     public ResourceStorage<ShapeShift> monsters;
     public ResourceStorage<Pose> poses;
     public ResourceStorage<Filter> filters;
@@ -46,6 +54,7 @@ public class NationGenAssets
         patterns = new ResourceStorage<>(MagicPattern.class, gen);
         templates = new ResourceStorage<>(Filter.class, gen);
         descriptions = new ResourceStorage<>(Filter.class, gen);
+        races = new ArrayList<>();
         monsters = new ResourceStorage<>(ShapeShift.class, gen);
         poses = new ResourceStorage<>(Pose.class, gen);
         filters = new ResourceStorage<>(Filter.class, gen);
@@ -85,5 +94,31 @@ public class NationGenAssets
             e.printStackTrace();
             System.out.println("Error loading file " + e.getMessage());
         }
+    }
+    
+    public void loadRaces(String file, NationGen gen) throws IOException
+    {
+        FileInputStream fstream = new FileInputStream(file);
+        DataInputStream in = new DataInputStream(fstream);
+        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+
+        String strLine;
+
+        while ((strLine = br.readLine()) != null)   
+        {
+            List<String> args = Generic.parseArgs(strLine);
+            if(args.isEmpty())
+            {
+                continue;
+            }
+
+            if(args.get(0).equals("#load"))
+            {
+                List<Race> items = new ArrayList<>();
+                items.addAll(Item.readFile(gen, args.get(1), Race.class));
+                races.addAll(items);
+            }
+        }
+        in.close();
     }
 }
