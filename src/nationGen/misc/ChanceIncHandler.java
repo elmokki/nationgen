@@ -35,7 +35,6 @@ import com.elmokki.Generic;
 
 
 
-import nationGen.entities.Drawable;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Pose;

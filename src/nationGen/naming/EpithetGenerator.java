@@ -6,7 +6,6 @@ import java.util.Random;
 
 import com.elmokki.Generic;
 
-import nationGen.NationGen;
 import nationGen.NationGenAssets;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.nation.Nation;

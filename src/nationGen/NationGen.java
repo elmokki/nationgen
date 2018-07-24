@@ -5,8 +5,6 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,12 +14,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 import java.util.concurrent.locks.ReentrantLock;
 
 import com.elmokki.Dom3DB;
 import com.elmokki.Drawing;
-import com.elmokki.Generic;
 
 import nationGen.entities.Filter;
 import nationGen.entities.Race;
