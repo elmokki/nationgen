@@ -52,7 +52,7 @@ public class MonsterGenerator {
 		ShapeShift p = ShapeShift.getRandom(rand, chandler.handleChanceIncs(templateUnit, poses, null));
 	
 		
-		ShapeChangeUnit u = new ShapeChangeUnit(ng, r, pose, null, p);
+		ShapeChangeUnit u = new ShapeChangeUnit(ng, assets, r, pose, null, p);
 		
 		double chance = 0.95;
 		if(Generic.containsTag(p.tags, "caponlychance"))

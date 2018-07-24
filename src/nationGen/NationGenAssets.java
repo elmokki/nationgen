@@ -3,13 +3,16 @@ package nationGen;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import com.elmokki.Generic;
 
+import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Flag;
 import nationGen.entities.MagicItem;
@@ -49,6 +52,11 @@ public class NationGenAssets
     public ResourceStorage<Flag> flagparts;
     public ResourceStorage<MagicItem> magicitems;
     
+    public List<ShapeShift> secondshapes;
+    public List<String> secondShapeMountCommands = new ArrayList<>();
+    public List<String> secondShapeNonMountCommands = new ArrayList<>();
+    public List<String> secondShapeRacePoseCommands = new ArrayList<>();
+    
     public NationGenAssets(NationGen gen)
     {
         patterns = new ResourceStorage<>(MagicPattern.class, gen);
@@ -67,6 +75,7 @@ public class NationGenAssets
         flagparts = new ResourceStorage<>(Flag.class, gen);
         magicitems = new ResourceStorage<>(MagicItem.class, gen);
 
+        secondshapes = new ArrayList<>();
         Init(gen);
     }
     
@@ -89,6 +98,9 @@ public class NationGenAssets
             miscdef.load("./data/misc/miscdef.txt");
             flagparts.load("./data/flags/flagdef.txt");
             magicitems.load("./data/items/magicweapons.txt");
+            
+            secondshapes = Entity.readFile(gen, "./data/shapes/secondshapes.txt", ShapeShift.class);
+            loadSecondShapeInheritance("/data/shapes/secondshapeinheritance.txt");
         } catch (IOException e)
         {
             e.printStackTrace();
@@ -121,4 +133,66 @@ public class NationGenAssets
         }
         in.close();
     }
+    
+    /**
+     * Loads the list of commands that second shapes should inherit from the primary shape
+     * @param filename
+     * @return
+     */
+    private int loadSecondShapeInheritance(String filename)
+    {
+        int amount = 0;
+        
+        Scanner file;
+        
+        try 
+        {
+            file = new Scanner(new FileInputStream(System.getProperty("user.dir") + "/" + filename));
+        } 
+        catch (FileNotFoundException e) 
+        {
+            e.printStackTrace();
+            return 0;
+        }
+
+        while(file.hasNextLine())
+        {
+            String line = file.nextLine();
+            if(line.startsWith("-"))
+            {
+                continue; 
+            }
+
+            List<String> args = Generic.parseArgs(line);
+            if(args.isEmpty())
+            {
+                continue;
+            }
+
+            if(args.get(0).equals("all") && args.size() > 0)
+            {
+                secondShapeMountCommands.add(args.get(1));
+                secondShapeNonMountCommands.add(args.get(1));
+                amount++;
+            }
+            else if(args.get(0).equals("mount") && args.size() > 0)
+            {
+                secondShapeMountCommands.add(args.get(1));
+                amount++;
+            }
+            else if(args.get(0).equals("nonmount") && args.size() > 0)
+            {
+                secondShapeNonMountCommands.add(args.get(1));
+                amount++;
+            }
+            else if(args.get(0).equals("racepose") && args.size() > 0)
+            {
+                secondShapeRacePoseCommands.add(args.get(1));
+                amount++;
+            }
+        }  
+        file.close();
+        return amount;
+    }
+
 }

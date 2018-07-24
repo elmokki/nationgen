@@ -4,14 +4,11 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.io.BufferedReader;
-import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
@@ -26,22 +23,14 @@ import com.elmokki.Dom3DB;
 import com.elmokki.Drawing;
 import com.elmokki.Generic;
 
-import nationGen.entities.Entity;
 import nationGen.entities.Filter;
-import nationGen.entities.Flag;
-import nationGen.entities.MagicItem;
-import nationGen.entities.Pose;
 import nationGen.entities.Race;
-import nationGen.entities.Theme;
 import nationGen.items.CustomItem;
 import nationGen.items.Item;
-import nationGen.magic.MagicPattern;
 import nationGen.magic.Spell;
 import nationGen.misc.Command;
 import nationGen.misc.PreviewGenerator;
-import nationGen.misc.ResourceStorage;
 import nationGen.misc.Site;
-import nationGen.naming.NamePart;
 import nationGen.naming.NameGenerator;
 import nationGen.naming.NamingHandler;
 import nationGen.naming.NationAdvancedSummarizer;
@@ -61,11 +50,7 @@ public class NationGen
     public List<NationRestriction> restrictions = new ArrayList<>();
 
     private NationGenAssets assets;
-    
-    public List<String> secondShapeMountCommands = new ArrayList<>();
-    public List<String> secondShapeNonMountCommands = new ArrayList<>();
-    public List<String> secondShapeRacePoseCommands = new ArrayList<>();
-
+   
     public Dom3DB weapondb;
     public Dom3DB armordb;
     public Dom3DB units;
@@ -73,7 +58,6 @@ public class NationGen
 
     public Settings settings;
     private CustomItemsHandler customItemsHandler;
-    public List<ShapeShift> secondshapes = new ArrayList<>();
     public IdHandler idHandler;
 
     public List<ShapeChangeUnit> forms = new ArrayList<>();
@@ -109,9 +93,8 @@ public class NationGen
                     Item.readFile(this, "./data/items/customitems.txt", CustomItem.class), weapondb, armordb);
             assets = new NationGenAssets(this);
             assets.loadRaces("./data/races/races.txt", this); // ugh.  Looks like *somehow* assets is circularly depended in races.
-            secondshapes = Entity.readFile(this, "./data/shapes/secondshapes.txt", ShapeShift.class);
-            loadSecondShapeInheritance("/data/shapes/secondshapeinheritance.txt");
-
+            // Oh, it's totally because of the getassets method causing dependency shenanigans.
+            
             System.out.println("done!");
         } 
         catch (Exception e) 
@@ -802,7 +785,7 @@ public class NationGen
         ShapeShift shift;
         shift = null;
         
-        for(ShapeShift s : secondshapes)
+        for(ShapeShift s : assets.secondshapes)
         {
             if(s.name.equals(c.args.get(0)))
             {
@@ -816,7 +799,7 @@ public class NationGen
             System.out.println("Shapeshift named " + c.args.get(0) + " could not be found.");
             return;
         }
-        ShapeChangeUnit su = new ShapeChangeUnit(this, u.race, u.pose, u, shift);
+        ShapeChangeUnit su = new ShapeChangeUnit(this, assets, u.race, u.pose, u, shift);
 
         su.id = idHandler.nextUnitId();
 
@@ -854,67 +837,6 @@ public class NationGen
         forms.add(su);
     }
 	
-    /**
-     * Loads the list of commands that second shapes should inherit from the primary shape
-     * @param filename
-     * @return
-     */
-    public int loadSecondShapeInheritance(String filename)
-    {
-        int amount = 0;
-		
-        Scanner file;
-		
-        try 
-        {
-            file = new Scanner(new FileInputStream(System.getProperty("user.dir") + "/" + filename));
-        } 
-        catch (FileNotFoundException e) 
-        {
-            e.printStackTrace();
-            return 0;
-        }
-
-        while(file.hasNextLine())
-        {
-            String line = file.nextLine();
-            if(line.startsWith("-"))
-            {
-                continue; 
-            }
-
-            List<String> args = Generic.parseArgs(line);
-            if(args.isEmpty())
-            {
-                continue;
-            }
-
-            if(args.get(0).equals("all") && args.size() > 0)
-            {
-                secondShapeMountCommands.add(args.get(1));
-                secondShapeNonMountCommands.add(args.get(1));
-                amount++;
-            }
-            else if(args.get(0).equals("mount") && args.size() > 0)
-            {
-                secondShapeMountCommands.add(args.get(1));
-                amount++;
-            }
-            else if(args.get(0).equals("nonmount") && args.size() > 0)
-            {
-                secondShapeNonMountCommands.add(args.get(1));
-                amount++;
-            }
-            else if(args.get(0).equals("racepose") && args.size() > 0)
-            {
-                secondShapeRacePoseCommands.add(args.get(1));
-                amount++;
-            }
-        }  
-        file.close();
-        return amount;
-    }
-
     public static void generateBanner(Color c, String name, String output, BufferedImage flag) throws IOException
     {
         BufferedImage combined = new BufferedImage(256, 64, BufferedImage.TYPE_INT_RGB);
