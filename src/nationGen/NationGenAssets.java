@@ -6,6 +6,7 @@ import nationGen.entities.Filter;
 import nationGen.entities.Theme;
 import nationGen.magic.MagicPattern;
 import nationGen.misc.ResourceStorage;
+import nationGen.naming.NamePart;
 import nationGen.units.ShapeShift;
 
 /**
@@ -25,6 +26,7 @@ public class NationGenAssets
     public ResourceStorage<ShapeShift> monsters;
     public ResourceStorage<Theme> themes;
     public ResourceStorage<Filter> spells;
+    public ResourceStorage<NamePart> miscnames;
     
     public NationGenAssets(NationGen gen)
     {
@@ -34,6 +36,7 @@ public class NationGenAssets
         monsters = new ResourceStorage<>(ShapeShift.class, gen);
         themes = new ResourceStorage<>(Theme.class, gen);
         spells = new ResourceStorage<>(Filter.class, gen);
+        miscnames = new ResourceStorage<>(NamePart.class, gen);
         
         Init();
     }
@@ -48,6 +51,8 @@ public class NationGenAssets
             monsters.load("./data/monsters/monsters.txt");
             themes.load("./data/themes/themes.txt");
             spells.load("./data/spells/spells.txt");
+            
+            miscnames.load("./data/names/naming.txt");
         } catch (IOException e)
         {
             e.printStackTrace();

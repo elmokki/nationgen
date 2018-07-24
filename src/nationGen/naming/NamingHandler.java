@@ -7,13 +7,15 @@ import nationGen.nation.Nation;
 public class NamingHandler {
 	
 	private NationGen ng;
+	private NationGenAssets assets;
 
-	public NamingHandler(NationGen ng)
+	public NamingHandler(NationGen ng, NationGenAssets assets)
 	{
 		this.ng = ng;
+		this.assets = assets;
 	}
 
-	public void nameMages(Nation n, NationGenAssets assets)
+	public void nameMages(Nation n)
 	{
 		MageNamer mNamer = new MageNamer(ng);
 		mNamer.execute(n, assets);
@@ -29,22 +31,22 @@ public class NamingHandler {
 	public void nameSacreds(Nation n)
 	{
 		SacredNamer sNamer = new SacredNamer();
-		sNamer.nameSacreds(n);
+		sNamer.nameSacreds(n, assets);
 	}
 	
 	public void nameTroops(Nation n)
 	{
 		TroopNamer tnamer = new TroopNamer();
-		tnamer.execute(n);
+		tnamer.execute(n, assets);
 	}
 	
 	public void giveEpithet(Nation n)
 	{
 		EpithetGenerator epiGen = new EpithetGenerator(ng);
-		epiGen.giveEpithet(n);
+		epiGen.giveEpithet(n, assets);
 	}
 	
-	public void describeNation(Nation n, NationGenAssets assets)
+	public void describeNation(Nation n)
 	{
 		new NationDescriber(n, assets);
 	}
