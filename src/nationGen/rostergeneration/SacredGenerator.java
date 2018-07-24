@@ -123,13 +123,13 @@ public class SacredGenerator extends TroopGenerator {
 		if(sacred)
 		{
 			String[] defaults = {"default_sacredfilters", "default_sacredfilters_shapeshift"};
-			filters = ChanceIncHandler.retrieveFilters("sacredfilters", defaults, nationGen.filters, u.pose, u.race);
+			filters = ChanceIncHandler.retrieveFilters("sacredfilters", defaults, assets.filters, u.pose, u.race);
 		
 		}
 		else
 		{
 			String[] defaults = {"default_elitefilters", "default_elitefilters_shapeshift"};
-			filters = ChanceIncHandler.retrieveFilters("elitefilters", defaults, nationGen.filters, u.pose, u.race);
+			filters = ChanceIncHandler.retrieveFilters("elitefilters", defaults, assets.filters, u.pose, u.race);
 		}
 		
 		filters = ChanceIncHandler.getValidUnitFilters(filters, u);

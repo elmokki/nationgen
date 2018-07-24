@@ -61,7 +61,6 @@ public class NationGen
     public List<NationRestriction> restrictions = new ArrayList<>();
 
     private NationGenAssets assets;
-    public ResourceStorage<Filter> filters = new ResourceStorage<>(Filter.class, this);
     
     public List<String> secondShapeMountCommands = new ArrayList<>();
     public List<String> secondShapeNonMountCommands = new ArrayList<>();
@@ -110,7 +109,6 @@ public class NationGen
             customItemsHandler = new CustomItemsHandler(
                     Item.readFile(this, "./data/items/customitems.txt", CustomItem.class), weapondb, armordb);
             assets = new NationGenAssets(this);
-            filters.load("./data/filters/filters.txt");
             loadRaces("./data/races/races.txt");
             secondshapes = Entity.readFile(this, "./data/shapes/secondshapes.txt", ShapeShift.class);
             loadSecondShapeInheritance("/data/shapes/secondshapeinheritance.txt");

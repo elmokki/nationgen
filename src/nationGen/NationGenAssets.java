@@ -31,6 +31,7 @@ public class NationGenAssets
     public ResourceStorage<Filter> descriptions;
     public ResourceStorage<ShapeShift> monsters;
     public ResourceStorage<Pose> poses;
+    public ResourceStorage<Filter> filters;
     public ResourceStorage<Theme> themes;
     public ResourceStorage<Filter> spells;
     public List<Filter> customspells;
@@ -47,6 +48,7 @@ public class NationGenAssets
         descriptions = new ResourceStorage<>(Filter.class, gen);
         monsters = new ResourceStorage<>(ShapeShift.class, gen);
         poses = new ResourceStorage<>(Pose.class, gen);
+        filters = new ResourceStorage<>(Filter.class, gen);
         themes = new ResourceStorage<>(Theme.class, gen);
         spells = new ResourceStorage<>(Filter.class, gen);
         customspells = new ArrayList<>();
@@ -68,6 +70,7 @@ public class NationGenAssets
             descriptions.load("./data/descriptions/descriptions.txt");
             monsters.load("./data/monsters/monsters.txt");
             poses.load("./data/poses/poses.txt");
+            filters.load("./data/filters/filters.txt");
             themes.load("./data/themes/themes.txt");
             spells.load("./data/spells/spells.txt");
             customspells.addAll(Item.readFile(gen, "./data/spells/custom_spells.txt", Filter.class)); // ugh why you break pattern?

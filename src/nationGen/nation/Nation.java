@@ -521,7 +521,7 @@ public class Nation {
             SacredRaceRestriction sacredRaceRestriction = new SacredRaceRestriction(nationGen);
             RecAnywhereSacredsRestriction recAnywhereSacredRestriction = new RecAnywhereSacredsRestriction(nationGen);
             UnitCommandRestriction unitCommandRestriction = new UnitCommandRestriction(nationGen);
-            UnitFilterRestriction unitFilterRestriction = new UnitFilterRestriction(nationGen);
+            UnitFilterRestriction unitFilterRestriction = new UnitFilterRestriction(nationGen, assets);
             UnitOfRaceRestriction unitOfRaceRestriction = new UnitOfRaceRestriction(nationGen);
             	
             
@@ -840,7 +840,7 @@ public class Nation {
 				count++;
 		}
 		
-		List<Filter> possibles = ChanceIncHandler.retrieveFilters("nationwidefilters", "default_nationwidefilters", nationGen.filters, null, races.get(0));
+		List<Filter> possibles = ChanceIncHandler.retrieveFilters("nationwidefilters", "default_nationwidefilters", assets.filters, null, races.get(0));
 
 		ChanceIncHandler chandler = new ChanceIncHandler(this);
 		boolean primary = true;
@@ -848,7 +848,7 @@ public class Nation {
 		
 		if(random.nextDouble() < this.percentageOfRace(races.get(1)))
 		{
-			possibles.retainAll(ChanceIncHandler.retrieveFilters("nationwidefilters", "default_nationwidefilters", nationGen.filters, null, races.get(1)));
+			possibles.retainAll(ChanceIncHandler.retrieveFilters("nationwidefilters", "default_nationwidefilters", assets.filters, null, races.get(1)));
 			if(possibles.size() > 0 && random.nextDouble() < 0.1)
 			{
 				both = true;
@@ -856,7 +856,7 @@ public class Nation {
 			else
 			{
 				primary = false;
-				possibles = ChanceIncHandler.retrieveFilters("nationwidefilters", "default_nationwidefilters", nationGen.filters, null, races.get(1));
+				possibles = ChanceIncHandler.retrieveFilters("nationwidefilters", "default_nationwidefilters", assets.filters, null, races.get(1));
 			}
 		}
 		

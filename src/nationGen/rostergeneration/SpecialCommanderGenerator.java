@@ -47,7 +47,7 @@ public class SpecialCommanderGenerator {
 		
 		Unit u = null;
 		
-		List<Filter> possibles = ChanceIncHandler.retrieveFilters("specialcommanderfilters", "default_specialcommanderfilters", ng.filters, null, race);
+		List<Filter> possibles = ChanceIncHandler.retrieveFilters("specialcommanderfilters", "default_specialcommanderfilters", assets.filters, null, race);
 		while(u == null)
 		{
 			if(chandler.countPossibleFilters(possibles) == 0)

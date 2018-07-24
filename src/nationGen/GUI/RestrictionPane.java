@@ -69,7 +69,7 @@ public class RestrictionPane extends JPanel implements ActionListener, ListSelec
 			new RecAnywhereSacredsRestriction(ng),
 			new SacredRaceRestriction(ng),			// "Sacred: Race"
 			new UnitCommandRestriction(ng),
-			new UnitFilterRestriction(ng),
+			new UnitFilterRestriction(ng, assets),
 			new UnitOfRaceRestriction(ng)
 		};
 		return stuff;

@@ -1794,7 +1794,7 @@ public class MageGenerator extends TroopGenerator {
 			
 			
 			// Get filters
-			List<Filter> filters = ChanceIncHandler.retrieveFilters(lookfor, defaults, nationGen.filters, mages.get(mages.size() - 1).pose, mages.get(mages.size() - 1).race);
+			List<Filter> filters = ChanceIncHandler.retrieveFilters(lookfor, defaults, assets.filters, mages.get(mages.size() - 1).pose, mages.get(mages.size() - 1).race);
 
 			int at = this.random.nextInt(power + 6) - 5; // -4 to power
 			while(moreFilters.size() == 0 && at >= -5)
