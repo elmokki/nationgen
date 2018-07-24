@@ -11,10 +11,13 @@ import com.elmokki.Generic;
 
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
 
 public class Race extends Filter {
+    private NationGenAssets assets;
+    
 	public String longsyllables = "";
 	public String shortsyllables = "";
 	public String namesuffixes = "";
@@ -34,6 +37,7 @@ public class Race extends Filter {
 
 		super(nationGen);
 
+		assets = nationGen.getAssets();
 		addCommand("#gcost 10");
 		addCommand("#ap 12");
 		addCommand("#mapmove 16");
@@ -190,7 +194,7 @@ public class Race extends Filter {
 			this.specialcommands.add(Command.parseCommandFromDefinition(args));
 		else if(args.get(0).equals("#pose"))
 		{
-			List<Pose> set = nationGen.poses.get(args.get(1));
+			List<Pose> set = assets.poses.get(args.get(1));
 			if(set == null)
 			{
 				System.out.println("Pose set " + args.get(1) + " was not found.");
@@ -202,7 +206,7 @@ public class Race extends Filter {
 		}
 		else if(args.get(0).equals("#spritegenpose"))
 		{
-			List<Pose> set = nationGen.poses.get(args.get(1));
+			List<Pose> set = assets.poses.get(args.get(1));
 			if(set == null)
 			{
 				System.out.println("Pose set " + args.get(1) + " was not found.");

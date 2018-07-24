@@ -61,7 +61,6 @@ public class NationGen
     public List<NationRestriction> restrictions = new ArrayList<>();
 
     private NationGenAssets assets;
-    public ResourceStorage<Pose> poses = new ResourceStorage<>(Pose.class, this);
     public ResourceStorage<Filter> filters = new ResourceStorage<>(Filter.class, this);
     
     public List<String> secondShapeMountCommands = new ArrayList<>();
@@ -108,11 +107,9 @@ public class NationGen
             loadDom3DB();
             System.out.println("done!");
             System.out.print("Loading definitions... ");
-            assets = new NationGenAssets(this);
-            
             customItemsHandler = new CustomItemsHandler(
-                   Item.readFile(this, "./data/items/customitems.txt", CustomItem.class), weapondb, armordb);
-            poses.load("./data/poses/poses.txt");
+                    Item.readFile(this, "./data/items/customitems.txt", CustomItem.class), weapondb, armordb);
+            assets = new NationGenAssets(this);
             filters.load("./data/filters/filters.txt");
             loadRaces("./data/races/races.txt");
             secondshapes = Entity.readFile(this, "./data/shapes/secondshapes.txt", ShapeShift.class);
@@ -995,5 +992,15 @@ public class NationGen
     public CustomItemsHandler GetCustomItemsHandler()
     {
         return customItemsHandler;
+    }
+    
+    /**
+     * This function *will* be refactored out.  But, race is a pain to do only half measured refactorings.
+     * Eventually, entity/filter will need to be redone.
+     * @return
+     */
+    public NationGenAssets getAssets()
+    {
+        return assets;
     }
 }

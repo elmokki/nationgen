@@ -7,6 +7,7 @@ import java.util.List;
 import nationGen.entities.Filter;
 import nationGen.entities.Flag;
 import nationGen.entities.MagicItem;
+import nationGen.entities.Pose;
 import nationGen.entities.Theme;
 import nationGen.items.Item;
 import nationGen.magic.MagicPattern;
@@ -29,6 +30,7 @@ public class NationGenAssets
     public ResourceStorage<Filter> templates;
     public ResourceStorage<Filter> descriptions;
     public ResourceStorage<ShapeShift> monsters;
+    public ResourceStorage<Pose> poses;
     public ResourceStorage<Theme> themes;
     public ResourceStorage<Filter> spells;
     public List<Filter> customspells;
@@ -44,6 +46,7 @@ public class NationGenAssets
         templates = new ResourceStorage<>(Filter.class, gen);
         descriptions = new ResourceStorage<>(Filter.class, gen);
         monsters = new ResourceStorage<>(ShapeShift.class, gen);
+        poses = new ResourceStorage<>(Pose.class, gen);
         themes = new ResourceStorage<>(Theme.class, gen);
         spells = new ResourceStorage<>(Filter.class, gen);
         customspells = new ArrayList<>();
@@ -64,6 +67,7 @@ public class NationGenAssets
             templates.load("./data/templates/templates.txt");
             descriptions.load("./data/descriptions/descriptions.txt");
             monsters.load("./data/monsters/monsters.txt");
+            poses.load("./data/poses/poses.txt");
             themes.load("./data/themes/themes.txt");
             spells.load("./data/spells/spells.txt");
             customspells.addAll(Item.readFile(gen, "./data/spells/custom_spells.txt", Filter.class)); // ugh why you break pattern?
