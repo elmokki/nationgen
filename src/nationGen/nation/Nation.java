@@ -398,7 +398,7 @@ public class Nation {
 	private void generateGods()
 	{
 		// Gods
-		GodGen gg = new GodGen(this);
+		GodGen gg = new GodGen(this, assets);
 		this.gods.addAll(gg.giveGods());
 		gg = null;
 	}
@@ -408,7 +408,7 @@ public class Nation {
 		ChanceIncHandler chandler = new ChanceIncHandler(this);
 
 		// Forts
-		List<Filter> possibleForts = ChanceIncHandler.retrieveFilters("forts", "default_forts", nationGen.miscdef, null, races.get(0));
+		List<Filter> possibleForts = ChanceIncHandler.retrieveFilters("forts", "default_forts", assets.miscdef, null, races.get(0));
 		possibleForts = ChanceIncHandler.getFiltersWithType("era " + era, possibleForts);
 		Filter forts = chandler.getRandom(possibleForts);
 		this.commands.addAll(forts.commands);
@@ -480,7 +480,7 @@ public class Nation {
 		// Start affinity
 		int cycles = 2;
 		
-		List<Filter> posaff = ChanceIncHandler.retrieveFilters("startaffinities", "startaffinities", nationGen.miscdef, null, races.get(0));
+		List<Filter> posaff = ChanceIncHandler.retrieveFilters("startaffinities", "startaffinities", assets.miscdef, null, races.get(0));
 
 		
 		Filter startaff = null;
@@ -581,7 +581,7 @@ public class Nation {
             }
             
             generateMonsters();
-            SiteGenerator.generateSites(this);
+            SiteGenerator.generateSites(this, assets);
             generateSpells();
             generateFlag();	
             getStartAffinity();

@@ -64,7 +64,6 @@ public class NationGen
     public ResourceStorage<Pose> poses = new ResourceStorage<>(Pose.class, this);
     public ResourceStorage<Filter> filters = new ResourceStorage<>(Filter.class, this);
     public ResourceStorage<NamePart> magenames = new ResourceStorage<>(NamePart.class, this);
-    public ResourceStorage<Filter> miscdef = new ResourceStorage<>(Filter.class, this);
     
     public List<String> secondShapeMountCommands = new ArrayList<>();
     public List<String> secondShapeNonMountCommands = new ArrayList<>();
@@ -121,7 +120,6 @@ public class NationGen
             magenames.load("./data/names/magenames/magenames.txt");
             loadRaces("./data/races/races.txt");
             secondshapes = Entity.readFile(this, "./data/shapes/secondshapes.txt", ShapeShift.class);
-            miscdef.load("./data/misc/miscdef.txt");
             loadSecondShapeInheritance("/data/shapes/secondshapeinheritance.txt");
 
             System.out.println("done!");

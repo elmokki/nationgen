@@ -29,6 +29,7 @@ public class NationGenAssets
     public ResourceStorage<Theme> themes;
     public ResourceStorage<Filter> spells;
     public ResourceStorage<NamePart> miscnames;
+    public ResourceStorage<Filter> miscdef;
     public ResourceStorage<Flag> flagparts;
     public ResourceStorage<MagicItem> magicitems;
     
@@ -41,6 +42,7 @@ public class NationGenAssets
         themes = new ResourceStorage<>(Theme.class, gen);
         spells = new ResourceStorage<>(Filter.class, gen);
         miscnames = new ResourceStorage<>(NamePart.class, gen);
+        miscdef = new ResourceStorage<>(Filter.class, gen);
         flagparts = new ResourceStorage<>(Flag.class, gen);
         magicitems = new ResourceStorage<>(MagicItem.class, gen);
 
@@ -59,6 +61,7 @@ public class NationGenAssets
             spells.load("./data/spells/spells.txt");
             
             miscnames.load("./data/names/naming.txt");
+            miscdef.load("./data/misc/miscdef.txt");
             flagparts.load("./data/flags/flagdef.txt");
             magicitems.load("./data/items/magicweapons.txt");
         } catch (IOException e)
