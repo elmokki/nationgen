@@ -66,7 +66,6 @@ public class NationGen
     public ResourceStorage<NamePart> magenames = new ResourceStorage<>(NamePart.class, this);
     public ResourceStorage<Filter> miscdef = new ResourceStorage<>(Filter.class, this);
     public ResourceStorage<Flag> flagparts = new ResourceStorage<>(Flag.class, this);
-    public ResourceStorage<MagicItem> magicitems = new ResourceStorage<>(MagicItem.class, this);
     
     public List<String> secondShapeMountCommands = new ArrayList<>();
     public List<String> secondShapeNonMountCommands = new ArrayList<>();
@@ -125,7 +124,6 @@ public class NationGen
             secondshapes = Entity.readFile(this, "./data/shapes/secondshapes.txt", ShapeShift.class);
             miscdef.load("./data/misc/miscdef.txt");
             flagparts.load("./data/flags/flagdef.txt");
-            magicitems.load("./data/items/magicweapons.txt");
             loadSecondShapeInheritance("/data/shapes/secondshapeinheritance.txt");
 
             System.out.println("done!");
