@@ -17,7 +17,8 @@ import nationGen.units.Unit;
 public class TroopNamer {
 
 	private Nation n;
-
+	private NationGenAssets assets;
+	
 	List<String> given = new ArrayList<String>();
 	private Random r;
 	
@@ -34,13 +35,12 @@ public class TroopNamer {
 	
 	private ChanceIncHandler chandler;
 	
-	public TroopNamer()
+	public TroopNamer(NationGenAssets assets)
 	{
-
-
+	    this.assets = assets;
 	}
 	
-	public void execute(Nation n, NationGenAssets assets) {
+	public void execute(Nation n) {
 		this.n = n;
 		r = new Random(n.random.nextInt());
 		chandler = new ChanceIncHandler(n);

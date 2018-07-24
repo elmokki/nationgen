@@ -24,12 +24,13 @@ public class SacredNamer {
 	List<NamePart> combases = new ArrayList<NamePart>();
 	List<NamePart> eliteparts = new ArrayList<NamePart>();
 	private Random r;
+	private NationGenAssets assets;
 	
 	ChanceIncHandler chandler = null;
 
-	public SacredNamer()
+	public SacredNamer(NationGenAssets assets)
 	{
-
+	    this.assets = assets;
 	}
 	
 
@@ -52,7 +53,7 @@ public class SacredNamer {
 		return Generic.containsTag(u.tags, "elite");
 	}
 	
-	public void nameSacreds(Nation n, NationGenAssets assets)
+	public void nameSacreds(Nation n)
 	{
 		chandler = new ChanceIncHandler(n);
 		parts = assets.miscnames.get("defaultparts");

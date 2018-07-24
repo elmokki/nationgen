@@ -63,7 +63,6 @@ public class NationGen
     private NationGenAssets assets;
     public ResourceStorage<Pose> poses = new ResourceStorage<>(Pose.class, this);
     public ResourceStorage<Filter> filters = new ResourceStorage<>(Filter.class, this);
-    public ResourceStorage<NamePart> magenames = new ResourceStorage<>(NamePart.class, this);
     
     public List<String> secondShapeMountCommands = new ArrayList<>();
     public List<String> secondShapeNonMountCommands = new ArrayList<>();
@@ -115,7 +114,6 @@ public class NationGen
                    Item.readFile(this, "./data/items/customitems.txt", CustomItem.class), weapondb, armordb);
             poses.load("./data/poses/poses.txt");
             filters.load("./data/filters/filters.txt");
-            magenames.load("./data/names/magenames/magenames.txt");
             loadRaces("./data/races/races.txt");
             secondshapes = Entity.readFile(this, "./data/shapes/secondshapes.txt", ShapeShift.class);
             loadSecondShapeInheritance("/data/shapes/secondshapeinheritance.txt");

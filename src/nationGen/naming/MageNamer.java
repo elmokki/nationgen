@@ -20,9 +20,11 @@ public class MageNamer extends Namer {
 	
 	protected Random random;
 	private NationGen ng;
-	public MageNamer(NationGen ng) {
+	protected NationGenAssets assets;
+	
+	public MageNamer(NationGen ng, NationGenAssets assets) {
 		this.ng = ng;
-		
+		this.assets = assets;
 
 	}
 
@@ -47,59 +49,59 @@ public class MageNamer extends Namer {
 			List<String> args = Generic.parseArgs(tag);
 			if(args.get(0).equals("magenames"))
 			{
-				names.addAll(n.nationGen.magenames.get(args.get(1)));
+				names.addAll(assets.magenames.get(args.get(1)));
 			}
 			else if(args.get(0).equals("mageadjectives"))
 			{
-				adjectives.addAll(n.nationGen.magenames.get(args.get(1)));
+				adjectives.addAll(assets.magenames.get(args.get(1)));
 			}
 			else if(args.get(0).equals("magenouns"))
 			{
-				nouns.addAll(n.nationGen.magenames.get(args.get(1)));
+				nouns.addAll(assets.magenames.get(args.get(1)));
 			}
 			else if(args.get(0).equals("tieredpriestnames"))
 			{
-				tieredpriest.addAll(n.nationGen.magenames.get(args.get(1)));
+				tieredpriest.addAll(assets.magenames.get(args.get(1)));
 			}
 			else if(args.get(0).equals("tieredmagenames"))
 			{
-				tieredmage.addAll(n.nationGen.magenames.get(args.get(1)));
+				tieredmage.addAll(assets.magenames.get(args.get(1)));
 			}
 			else if(args.get(0).equals("magerankedprefixes"))
 			{
-				rankedprefix.addAll(n.nationGen.magenames.get(args.get(1)));
+				rankedprefix.addAll(assets.magenames.get(args.get(1)));
 			}
 			else if(args.get(0).equals("extranamenouns"))
 			{
-				extraparts_n.addAll(n.nationGen.magenames.get(args.get(1)));
+				extraparts_n.addAll(assets.magenames.get(args.get(1)));
 			}
 			else if(args.get(0).equals("extranameadjectives"))
 			{
-				extraparts_a.addAll(n.nationGen.magenames.get(args.get(1)));
+				extraparts_a.addAll(assets.magenames.get(args.get(1)));
 			}
 		}
 		
 		if(names.size() == 0)
-			names = n.nationGen.magenames.get("defaultnames");
+			names = assets.magenames.get("defaultnames");
 		if(adjectives.size() == 0)
-			adjectives = n.nationGen.magenames.get("defaultadjectives");
+			adjectives = assets.magenames.get("defaultadjectives");
 		if(nouns.size() == 0)
-			nouns = n.nationGen.magenames.get("defaultnouns");
+			nouns = assets.magenames.get("defaultnouns");
 		if(tieredpriest.size() == 0)
-			tieredpriest = n.nationGen.magenames.get("defaulttieredpriestnames");
+			tieredpriest = assets.magenames.get("defaulttieredpriestnames");
 		if(tieredmage.size() == 0)
-			tieredmage = n.nationGen.magenames.get("defaulttieredmagenames");
+			tieredmage = assets.magenames.get("defaulttieredmagenames");
 		if(rankedprefix.size() == 0)
-			rankedprefix = n.nationGen.magenames.get("defaultprefixranks");
+			rankedprefix = assets.magenames.get("defaultprefixranks");
 		if(extraparts_n.size() == 0)
-			extraparts_n = n.nationGen.magenames.get("defaultextranamenouns");
+			extraparts_n = assets.magenames.get("defaultextranamenouns");
 		if(extraparts_a.size() == 0)
-			extraparts_a = n.nationGen.magenames.get("defaultextranameadjectives");
+			extraparts_a = assets.magenames.get("defaultextranameadjectives");
 	}
 	
 	
 	
-	public void execute(Nation n, NationGenAssets assets)
+	public void execute(Nation n)
 	{
 		this.n = n;
 		random = new Random(n.random.nextInt());

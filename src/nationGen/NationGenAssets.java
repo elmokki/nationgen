@@ -32,6 +32,7 @@ public class NationGenAssets
     public ResourceStorage<Theme> themes;
     public ResourceStorage<Filter> spells;
     public List<Filter> customspells;
+    public ResourceStorage<NamePart> magenames;
     public ResourceStorage<NamePart> miscnames;
     public ResourceStorage<Filter> miscdef;
     public ResourceStorage<Flag> flagparts;
@@ -46,6 +47,7 @@ public class NationGenAssets
         themes = new ResourceStorage<>(Theme.class, gen);
         spells = new ResourceStorage<>(Filter.class, gen);
         customspells = new ArrayList<>();
+        magenames = new ResourceStorage<>(NamePart.class, gen);
         miscnames = new ResourceStorage<>(NamePart.class, gen);
         miscdef = new ResourceStorage<>(Filter.class, gen);
         flagparts = new ResourceStorage<>(Flag.class, gen);
@@ -66,6 +68,7 @@ public class NationGenAssets
             spells.load("./data/spells/spells.txt");
             customspells.addAll(Item.readFile(gen, "./data/spells/custom_spells.txt", Filter.class)); // ugh why you break pattern?
             
+            magenames.load("./data/names/magenames/magenames.txt");
             miscnames.load("./data/names/naming.txt");
             miscdef.load("./data/misc/miscdef.txt");
             flagparts.load("./data/flags/flagdef.txt");
