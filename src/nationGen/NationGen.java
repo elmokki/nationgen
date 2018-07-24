@@ -76,7 +76,6 @@ public class NationGen
 
     public Settings settings;
     private CustomItemsHandler customItemsHandler;
-    public List<Filter> customspells = new ArrayList<>();
     public List<ShapeShift> secondshapes = new ArrayList<>();
     public List<Race> races = new ArrayList<>();
     public IdHandler idHandler;
@@ -112,7 +111,6 @@ public class NationGen
             System.out.print("Loading definitions... ");
             assets = new NationGenAssets(this);
             
-            customspells.addAll(Item.readFile(this, "./data/spells/custom_spells.txt", Filter.class));
             customItemsHandler = new CustomItemsHandler(
                    Item.readFile(this, "./data/items/customitems.txt", CustomItem.class), weapondb, armordb);
             poses.load("./data/poses/poses.txt");
@@ -435,7 +433,7 @@ public class NationGen
             // check for custom spells first
             if(spell == null)
             {
-                for(Filter sf : this.customspells)
+                for(Filter sf : assets.customspells)
                 {
                     if(sf.name.equals(s))
                     {
