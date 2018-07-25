@@ -3,7 +3,6 @@ package nationGen;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -19,25 +18,52 @@ import java.util.Scanner;
 
 import com.elmokki.Generic;
 
-
-
-
 public class Settings {
-	
+	public enum SettingsType {
+	    advancedDescs,
+	    basicDescs,
+	    separateSeeds,
+	    seedsFromFile,
+	    maxrestrictedperspell,
+	    era,
+	    sacredpower,
+	    militiaMultiplier,
+	    resUpperTreshold,
+	    resUpperTresholdChange,
+	    goldUpperTreshold,
+	    goldUpperTresholdChange,
+	    resLowerTreshold,
+	    resLowerTresholdChange,
+	    goldLowerTreshold,
+	    goldLowerTresholdChange,
+	    resMultiTreshold,
+	    resMulti,
+	    desiredBaseSize,
+	    desiredRandom,
+	    cavalryPower,
+	    chariotPower,
+	    rangedPower,
+	    infantryPower,
+	    newArmorChance,
+	    debug,
+	    drawPreview,
+	    hidevanillanations;
+	 }
+    
 	private class SettingEntry {
-		public String key;
+		public SettingsType key;
 		public Double value;
 		
-		public SettingEntry(String k, Double v)
+		public SettingEntry(SettingsType k, Double v)
 		{
-			key = k;
-			value = v;
+            key = k;
+            value = v;  
 		}
 
 	}
 
 	
-	public HashMap<String, Double> settings = new HashMap<String, Double>();
+	public HashMap<SettingsType, Double> settings = new HashMap<SettingsType, Double>();
 	public HashMap<String, String> descs = new HashMap<String, String>();
 	
 	public LinkedList<SettingEntry> exportvalues = new LinkedList<SettingEntry>();
@@ -53,18 +79,18 @@ public class Settings {
 		// Settings
 		
 		// 1: Early era
-		exportvalues.add(new SettingEntry("era", 1.0));
+		exportvalues.add(new SettingEntry(SettingsType.era, 1.0));
 		// 2: Late era
-		exportvalues.add(new SettingEntry("era", 3.0));
+		exportvalues.add(new SettingEntry(SettingsType.era, 3.0));
 		// 4: Powerful sacreds
-		exportvalues.add(new SettingEntry("sacredpower", 2.0));
+		exportvalues.add(new SettingEntry(SettingsType.sacredpower, 2.0));
 		// 8: Batshit insane sacreds
-		exportvalues.add(new SettingEntry("sacredpower", 3.0));
+		exportvalues.add(new SettingEntry(SettingsType.sacredpower, 3.0));
 
 		
 		// Defaults
-		defaultvalues.add(new SettingEntry("era", 2.0));
-		defaultvalues.add(new SettingEntry("sacredpower", 1.0));
+		defaultvalues.add(new SettingEntry(SettingsType.era, 2.0));
+		defaultvalues.add(new SettingEntry(SettingsType.sacredpower, 1.0));
 
 	}
 	
@@ -129,36 +155,20 @@ public class Settings {
 	public Settings()
 	{
 		setExportValues();
-
-		// Militia
-		settings.put("militiaResMulti", -0.1333);
-		settings.put("militiaLowResMulti", -0.125);
-		settings.put("militiaResIntercept", 1.333);
-		settings.put("militiaLowResIntercept", 2.5);
-		
-		settings.put("militiaGoldMulti", -0.1);
-		settings.put("militiaLowGoldMulti", -1.666);
-		settings.put("militiaGoldIntercept", 1.0);
-		settings.put("militiaLowGoldIntercept", 16.66);
-		
 		
 		// spells
-		settings.put("maxrestrictedperspell", 8.0);
+		settings.put(SettingsType.maxrestrictedperspell, 8.0);
 		
-		// Debug
-		
-		settings.put("debug", 0.0);
-
-		// Items
-		settings.put("weaponGenerationChance", 0.3);
+		// Debug	
+		settings.put(SettingsType.debug, 0.0);
 		
 		// POWER (ranges from 1 to 3, integers only)
-		settings.put("sacredpower", 1.0);
+		settings.put(SettingsType.sacredpower, 1.0);
 		
-		settings.put("drawPreview", 0.0);
+		settings.put(SettingsType.drawPreview, 0.0);
 
-		settings.put("era", 2.0);
-		settings.put("hidevanillanations", 1.0);
+		settings.put(SettingsType.era, 2.0);
+		settings.put(SettingsType.hidevanillanations, 1.0);
 
         Scanner file;
 		
@@ -178,7 +188,7 @@ public class Settings {
 				continue;
 			
 			
-			settings.put(args.get(0), Double.parseDouble(args.get(1)));
+			settings.put(SettingsType.valueOf(args.get(0)), Double.parseDouble(args.get(1)));
 		}
 		
 		file.close();
@@ -204,7 +214,7 @@ public class Settings {
                 continue;
             }
             
-            String key = args.get(0);
+            SettingsType key = SettingsType.valueOf(args.get(0));
             String val = args.get(1);
             
             if (settings.containsKey(key) && Double.parseDouble(val) != settings.get(key))
@@ -223,9 +233,9 @@ public class Settings {
 	}
 	
 	
-	public void put(String name, double value)
+	public void put(SettingsType key, double value)
 	{
-		settings.put(name, value);
+		settings.put(key, value);
         try
         {
             write();
@@ -235,13 +245,13 @@ public class Settings {
         }
 	}
 	
-	public Double get(String name)
+	public Double get(SettingsType key)
 	{
 		Double d = 0.0;
-		if(settings.get(name) != null)
-			d = settings.get(name);
+		if(settings.get(key) != null)
+			d = settings.get(key);
 		else
-			System.out.println("SETTING " + name + " WAS NOT DEFINED!");
+			System.out.println("SETTING " + key + " WAS NOT DEFINED!");
 		
 		return d;
 	}
