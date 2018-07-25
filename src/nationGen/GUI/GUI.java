@@ -279,6 +279,8 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         spowerSlider.setLabelTable(spowerLabelTable);
         spowerSlider.setPaintLabels(true);
         
+        updateAdvancedSettings();
+        
         spower.add(new JLabel("Sacred Power:"));
         spower.add(spowerSlider);
         

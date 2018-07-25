@@ -2,6 +2,11 @@ package nationGen;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -168,7 +173,7 @@ public class Settings {
 		{
 			List<String> args = Generic.parseArgs(file.nextLine());
 			
-	
+			
 			if(args.size() < 2 || args.get(0).startsWith("-"))
 				continue;
 			
@@ -177,17 +182,57 @@ public class Settings {
 		}
 		
 		file.close();
-		
-		
-
-
-
+	}
+	
+	/**
+	 * There is probably *way* more efficient ways to handle settings. But, here's a WORKING write.
+	 * @throws IOException
+	 */
+	public void write() throws IOException
+	{   
+        int lineNum = 0;
+        Path path = Paths.get(System.getProperty("user.dir") + "/settings.txt");
+        List<String> lines = Files.readAllLines(path);
+        boolean changes = false;
+        for (String line : lines)
+        {
+            List<String> args = Generic.parseArgs(line);         
+            
+            if(args.size() < 2 || args.get(0).startsWith("-"))
+            {
+                lineNum++;
+                continue;
+            }
+            
+            String key = args.get(0);
+            String val = args.get(1);
+            
+            if (settings.containsKey(key) && Double.parseDouble(val) != settings.get(key))
+            {
+                lines.set(lineNum, key + " " + settings.get(key).toString());
+                changes = true;
+            }
+            
+            lineNum++;
+        }
+        
+        if (changes)
+        {
+            Files.write(path, lines);
+        }
 	}
 	
 	
 	public void put(String name, double value)
 	{
 		settings.put(name, value);
+        try
+        {
+            write();
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        }
 	}
 	
 	public Double get(String name)
