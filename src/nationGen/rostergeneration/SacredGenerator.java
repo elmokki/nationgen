@@ -7,6 +7,7 @@ import java.util.List;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.Settings.SettingsType;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.MagicItem;
@@ -513,7 +514,7 @@ public class SacredGenerator extends TroopGenerator {
 	public Pose getPose(boolean sacred, int power, Race race)
 	{
 		// Handle sacred power settings
-		double extrapower = this.nationGen.settings.get("sacredpower") - 1;
+		double extrapower = this.nationGen.settings.get(SettingsType.sacredpower) - 1;
 	
 		
 		power = (int) (power + power * extrapower * (1 + random.nextDouble() * 0.5) + extrapower);
