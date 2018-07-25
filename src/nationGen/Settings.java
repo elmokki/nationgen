@@ -63,11 +63,10 @@ public class Settings {
 	}
 
 	
-	public HashMap<SettingsType, Double> settings = new HashMap<SettingsType, Double>();
-	public HashMap<String, String> descs = new HashMap<String, String>();
+	private HashMap<SettingsType, Double> settings = new HashMap<SettingsType, Double>();
 	
-	public LinkedList<SettingEntry> exportvalues = new LinkedList<SettingEntry>();
-	public LinkedList<SettingEntry> defaultvalues = new LinkedList<SettingEntry>();
+	private LinkedList<SettingEntry> exportvalues = new LinkedList<SettingEntry>();
+	private LinkedList<SettingEntry> defaultvalues = new LinkedList<SettingEntry>();
 	
 	
 	/**
