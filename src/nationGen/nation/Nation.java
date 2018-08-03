@@ -34,6 +34,7 @@ import com.elmokki.Generic;
 
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
+import nationGen.Settings.SettingsType;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Race;
@@ -124,8 +125,8 @@ public class Nation {
 		this.nationGen = ngen;
 		this.random = new Random(seed);
 		this.seed = seed;
-		this.era = (int)Math.round(nationGen.settings.get("era"));
 		this.assets = assets;
+		this.era = (int)Math.round(nationGen.settings.get(SettingsType.era));
 		
 		comlists.put("scouts", new ArrayList<Unit>());
 		comlists.put("commanders", new ArrayList<Unit>());

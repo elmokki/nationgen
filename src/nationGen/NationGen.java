@@ -19,6 +19,8 @@ import java.util.concurrent.locks.ReentrantLock;
 import com.elmokki.Dom3DB;
 import com.elmokki.Drawing;
 
+import nationGen.Settings.SettingsType;
+import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Race;
 import nationGen.items.CustomItem;
@@ -172,7 +174,7 @@ public class NationGen
         int count = 0;
         int failedcount = 0;
         int totalfailed = 0;
-        boolean isDebug = settings.get("debug") == 1.0;
+        boolean isDebug = settings.get(SettingsType.debug) == 1.0;
         
         while(generatedNations.size() < amount)
         {  
@@ -435,7 +437,7 @@ public class NationGen
                 this.freeSpells.add(spell);
             }
 
-            if(spell.nationids.size() >= settings.get("maxrestrictedperspell"))
+            if(spell.nationids.size() >= settings.get(SettingsType.maxrestrictedperspell))
             {
                 this.freeSpells.remove(spell);
             }
@@ -471,11 +473,11 @@ public class NationGen
     private void writeDescriptions(PrintWriter tw, List<Nation> nations, String modname) throws IOException
     {
         NationAdvancedSummarizer nDesc = new NationAdvancedSummarizer(armordb, weapondb);
-        if(settings.get("advancedDescs") == 1.0)
+        if(settings.get(SettingsType.advancedDescs) == 1.0)
         {
             nDesc.writeAdvancedDescriptionFile(nations, modname);
         }
-        if(settings.get("basicDescs") == 1.0)
+        if(settings.get(SettingsType.basicDescs) == 1.0)
         {
             nDesc.writeDescriptionFile(nations, modname);
         }   
@@ -483,7 +485,7 @@ public class NationGen
 	
     private void drawPreviews(List<Nation> nations, String dir) throws IOException
     {
-        if(settings.get("drawPreview") == 1)
+        if(settings.get(SettingsType.drawPreview) == 1)
         {
             System.out.print("Drawing previews");
             PreviewGenerator pGen = new PreviewGenerator();
@@ -589,7 +591,7 @@ public class NationGen
         // Draw previews
         drawPreviews(nations, dir);
         
-        if(settings.get("hidevanillanations") == 1)
+        if(settings.get(SettingsType.hidevanillanations) == 1)
         {
             hideVanillaNations(tw, nations.size());
         }

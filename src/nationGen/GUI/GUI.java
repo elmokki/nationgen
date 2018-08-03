@@ -45,6 +45,7 @@ import com.elmokki.Generic;
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
 import nationGen.Settings;
+import nationGen.Settings.SettingsType;
 
 public class GUI extends JFrame implements ActionListener, ItemListener, ChangeListener 
 {
@@ -282,6 +283,8 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         spowerSlider.setLabelTable(spowerLabelTable);
         spowerSlider.setPaintLabels(true);
         
+        updateAdvancedSettings();
+        
         spower.add(new JLabel("Sacred Power:"));
         spower.add(spowerSlider);
         
@@ -303,8 +306,8 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
     
     private void updateAdvancedSettings()
     {
-    	this.eraSlider.setValue(settings.get("era").intValue());
-    	this.spowerSlider.setValue(settings.get("sacredpower").intValue());
+    	this.eraSlider.setValue(settings.get(SettingsType.era).intValue());
+    	this.spowerSlider.setValue(settings.get(SettingsType.sacredpower).intValue());
 
     }
     
@@ -315,23 +318,23 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         this.setResizable(true);
         initGUI();
     	
-    	if(this.settings.get("drawPreview") == 1.0)
+    	if(this.settings.get(SettingsType.drawPreview) == 1.0)
         {
             preview.setSelected(true);
         }
-    	if(this.settings.get("advancedDescs") == 1.0)
+    	if(this.settings.get(SettingsType.advancedDescs) == 1.0)
         {
             advDesc.setSelected(true);
         }
-    	if(this.settings.get("basicDescs") == 1.0)
+    	if(this.settings.get(SettingsType.basicDescs) == 1.0)
         {
             basicDesc.setSelected(true);
         }
-    	if(this.settings.get("hidevanillanations") == 1.0)
+    	if(this.settings.get(SettingsType.hidevanillanations) == 1.0)
         {
             hideVanillaNations.setSelected(true);
         }
-    	this.eraSlider.setValue((int)Math.round(this.settings.get("era")));
+    	this.eraSlider.setValue((int)Math.round(this.settings.get(SettingsType.era)));
      }
     
     private void updateTextPane(final String text) 
@@ -571,19 +574,19 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
             }
             if(source == this.preview)
             {
-                settings.put("drawPreview", value);
+                settings.put(SettingsType.drawPreview, value);
             }
             if(source == this.advDesc)
             {
-                settings.put("advancedDescs", value);
+                settings.put(SettingsType.advancedDescs, value);
             }
             if(source == this.basicDesc)
             {
-                settings.put("basicDescs", value);
+                settings.put(SettingsType.basicDescs, value);
             }
             if(source == this.hideVanillaNations)
             {
-                settings.put("hidevanillanations", value);
+                settings.put(SettingsType.hidevanillanations, value);
             }
             if(source == this.seedcheckbox)
             {
@@ -601,12 +604,12 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         Object source = e.getSource();
         if(source == this.eraSlider && eraSlider.getValueIsAdjusting())
         {
-            settings.put("era", eraSlider.getValue());
+            settings.put(SettingsType.era, eraSlider.getValue());
             settingtext.setText(settings.getSettingInteger() + "");
         }
         if(source == this.spowerSlider && spowerSlider.getValueIsAdjusting())
         {
-            settings.put("sacredpower", spowerSlider.getValue());
+            settings.put(SettingsType.sacredpower, spowerSlider.getValue());
             settingtext.setText(settings.getSettingInteger() + "");
         }
     }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import nationGen.NationGen;
+import nationGen.Settings.SettingsType;
 
 public class ConsoleGUI {
 	
@@ -21,8 +22,8 @@ public class ConsoleGUI {
 		seeds.add(-216802392L);
 		
 		//nationGen.settings.put("era", 2.0);
-		nationGen.settings.put("drawPreview", 1.0);
-		nationGen.settings.put("debug", 1.0);
+		nationGen.settings.put(SettingsType.drawPreview, 1.0);
+		nationGen.settings.put(SettingsType.debug, 1.0);
 		nationGen.generate(seeds);
 		//nationGen.generate(10, 403);
 	}
