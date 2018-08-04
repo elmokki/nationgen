@@ -1,6 +1,5 @@
 package nationGen.rostergeneration;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -550,7 +549,7 @@ public class TroopGenerator {
 				{
 
 					tempweps.addAll(t.pose.getItems("weapon").filterDom3DB("2h", "0", true, nationGen.weapondb));
-					tempweps.remove(oldweps);
+					tempweps.removeAll(oldweps);
 					for(Item i : t.pose.getItems("weapon"))
 					{
 						if(i.id.equals("357") || i.tags.contains("lightlance"))
@@ -562,7 +561,7 @@ public class TroopGenerator {
 				{
 
 					tempweps.addAll(t.pose.getItems("weapon").filterDom3DB("2h", "1", true, nationGen.weapondb));
-					tempweps.remove(oldweps);
+					tempweps.removeAll(oldweps);
 					for(Item i : t.pose.getItems("weapon"))
 					{
 						if(i.id.equals("357") || i.tags.contains("lightlance"))

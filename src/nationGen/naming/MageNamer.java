@@ -314,7 +314,7 @@ public class MageNamer extends Namer {
 						filters = cha.handleChanceIncs(u, available);
 					}
 					ff2 = NamePart.getRandom(random, filters);
-				} while(used.contains(ff2.getCopy()));
+				} while(used.contains(ff2.toString()));
 				
 				used.add(ff2.toString());
 				
