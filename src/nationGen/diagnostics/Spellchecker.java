@@ -8,12 +8,14 @@ import com.elmokki.Dom3DB;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.entities.Filter;
 
 public class Spellchecker {
 	public static void main(String[] args) throws FileNotFoundException
 	{
 		NationGen ng = null;
+		NationGenAssets assets = new NationGenAssets(ng);
 		try {
 			ng = new NationGen();
 		} catch (IOException e) {
@@ -23,9 +25,9 @@ public class Spellchecker {
 		
 		Dom3DB spells = new Dom3DB("spells.csv");
 		List<String> names = spells.getColumn("name");
-		for(String str : ng.spells.keySet())
+		for(String str : assets.spells.keySet())
 		{
-			for(Filter f : ng.spells.get(str))
+			for(Filter f : assets.spells.get(str))
 			{
 				for(String sp : Generic.getTagValues(f.tags, "spell"))
 					if(!names.contains(sp))

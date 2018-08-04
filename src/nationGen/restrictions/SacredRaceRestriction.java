@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.entities.Race;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
@@ -14,12 +15,14 @@ public class SacredRaceRestriction extends TwoListRestriction<Race> {
 	public List<String> possibleRaceNames = new ArrayList<String>();
 	
 	private NationGen ng;
-	public SacredRaceRestriction(NationGen ng)
+	private NationGenAssets assets;
+	public SacredRaceRestriction(NationGen ng, NationGenAssets assets)
 	{
 		super(ng, "Nation needs to have at least one sacred unit of a race on the right box", "Sacred: Race");
 		this.ng = ng;
+		this.assets = assets;
 		
-		for(Race r : ng.races)
+		for(Race r : assets.races)
 			rmodel.addElement(r);
 		
 		
@@ -29,7 +32,7 @@ public class SacredRaceRestriction extends TwoListRestriction<Race> {
 
 	@Override
 	public NationRestriction getRestriction() {
-		SacredRaceRestriction res = new SacredRaceRestriction(ng);
+		SacredRaceRestriction res = new SacredRaceRestriction(ng, assets);
 		for(int i =0; i < chosen.getModel().getSize(); i++)
 			res.possibleRaceNames.add(chosen.getModel().getElementAt(i).name);
 		return res;
@@ -55,7 +58,7 @@ public class SacredRaceRestriction extends TwoListRestriction<Race> {
 	
 	@Override
 	public NationRestriction getInstanceOf() {
-		return new SacredRaceRestriction(ng);
+		return new SacredRaceRestriction(ng, assets);
 	}
 	
 }

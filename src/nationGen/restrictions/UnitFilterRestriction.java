@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.entities.Filter;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
@@ -16,15 +17,18 @@ public class UnitFilterRestriction extends TwoListRestrictionWithComboBox<String
 	public List<String> possibleRaceNames = new ArrayList<String>();
 	
 	private NationGen ng;
+	private NationGenAssets assets;
+	
 	private String[] ownoptions = {"All", "Troops", "Commanders", "Sacred troops"};
-	public UnitFilterRestriction(NationGen ng)
+	public UnitFilterRestriction(NationGen ng, NationGenAssets assets)
 	{
 		super(ng, "<html>Nation needs to have at least one unit with a filter on the right box.</html>", "Unit filter");
 		this.ng = ng;
+		this.assets = assets;
 		
 		this.comboboxlabel = "Units to match:";
-		for(String str : ng.filters.keySet())
-			for(Filter f : ng.filters.get(str))
+		for(String str : assets.filters.keySet())
+			for(Filter f : assets.filters.get(str))
 				rmodel.addElement(str + ": " + f);
 		
 		this.comboboxoptions = ownoptions;
@@ -36,7 +40,7 @@ public class UnitFilterRestriction extends TwoListRestrictionWithComboBox<String
 
 	@Override
 	public NationRestriction getRestriction() {
-		UnitFilterRestriction res = new UnitFilterRestriction(ng);
+		UnitFilterRestriction res = new UnitFilterRestriction(ng, assets);
 		for(int i =0; i < chosen.getModel().getSize(); i++)
 			res.possibleRaceNames.add(chosen.getModel().getElementAt(i));
 		
@@ -91,7 +95,7 @@ public class UnitFilterRestriction extends TwoListRestrictionWithComboBox<String
 	
 	@Override
 	public NationRestriction getInstanceOf() {
-		return new UnitFilterRestriction(ng);
+		return new UnitFilterRestriction(ng, assets);
 	}
 	
 }

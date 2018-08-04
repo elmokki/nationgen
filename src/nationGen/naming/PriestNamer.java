@@ -7,13 +7,14 @@ import java.util.Random;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
 public class PriestNamer extends MageNamer {
 
-	public PriestNamer(NationGen ng) {
-		super(ng);
+	public PriestNamer(NationGen ng, NationGenAssets assets) {
+		super(ng, assets);
 		
 	}
 
@@ -90,36 +91,36 @@ public class PriestNamer extends MageNamer {
 			List<String> args = Generic.parseArgs(tag);
 			if(args.get(0).equals("priestnames"))
 			{
-				names.addAll(n.nationGen.magenames.get(args.get(1)));
+				names.addAll(assets.magenames.get(args.get(1)));
 			}
 			else if(args.get(0).equals("priestadjectives"))
 			{
-				adjectives.addAll(n.nationGen.magenames.get(args.get(1)));
+				adjectives.addAll(assets.magenames.get(args.get(1)));
 			}
 			else if(args.get(0).equals("priestnouns"))
 			{
-				nouns.addAll(n.nationGen.magenames.get(args.get(1)));
+				nouns.addAll(assets.magenames.get(args.get(1)));
 			}
 			else if(args.get(0).equals("tieredpriestnames"))
 			{
-				tieredmage.addAll(n.nationGen.magenames.get(args.get(1)));
+				tieredmage.addAll(assets.magenames.get(args.get(1)));
 			}
 			else if(args.get(0).equals("priestrankedprefixes"))
 			{
-				rankedprefix.addAll(n.nationGen.magenames.get(args.get(1)));
+				rankedprefix.addAll(assets.magenames.get(args.get(1)));
 			}
 		}
 		
 		if(names.size() == 0)
-			names = n.nationGen.magenames.get("defaultnames");
+			names = assets.magenames.get("defaultnames");
 		if(adjectives.size() == 0)
-			adjectives = n.nationGen.magenames.get("defaultadjectives");
+			adjectives = assets.magenames.get("defaultadjectives");
 		if(nouns.size() == 0)
-			nouns = n.nationGen.magenames.get("defaultnouns");
+			nouns = assets.magenames.get("defaultnouns");
 		if(tieredmage.size() == 0)
-			tieredmage = n.nationGen.magenames.get("defaulttieredpriestnames");
+			tieredmage = assets.magenames.get("defaulttieredpriestnames");
 		if(rankedprefix.size() == 0)
-			rankedprefix = n.nationGen.magenames.get("defaultprefixranks");
+			rankedprefix = assets.magenames.get("defaultprefixranks");
 		
 	
 	}

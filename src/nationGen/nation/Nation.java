@@ -33,6 +33,7 @@ import com.elmokki.Drawing;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.Settings.SettingsType;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
@@ -85,6 +86,8 @@ public class Nation {
         public boolean passed = true;
         public String restrictionFailed = "";
 	public NationGen nationGen;
+	private NationGenAssets assets;
+	
 	private long seed = 0;
 	
 	public ItemSet usedItems = new ItemSet();
@@ -116,12 +119,13 @@ public class Nation {
 	
 	public int PDRanks = 2;
 
-	public Nation(NationGen ngen, long seed, int tempid, List<NationRestriction> restrictions)
+	public Nation(NationGen ngen, long seed, int tempid, List<NationRestriction> restrictions, NationGenAssets assets)
 	{
 		this.nationid = tempid;
 		this.nationGen = ngen;
 		this.random = new Random(seed);
 		this.seed = seed;
+		this.assets = assets;
 		this.era = (int)Math.round(nationGen.settings.get(SettingsType.era));
 		
 		comlists.put("scouts", new ArrayList<Unit>());
@@ -160,7 +164,7 @@ public class Nation {
 		// choose primary race
 		List<Race> allRaces = new ArrayList<>();
 
-                for(Race r : nationGen.races)
+                for(Race r : assets.races)
                 {
                     if (!r.tags.contains("secondary")) 
                     {
@@ -187,7 +191,7 @@ public class Nation {
 		
 		// Secondary race after themes since themes may affect it
 		allRaces.clear();
-		allRaces.addAll(nationGen.races);
+		allRaces.addAll(assets.races);
 		allRaces.remove(race);
 		
 		race = Race.getRandom(random, chandler.handleChanceIncs(allRaces));
@@ -239,7 +243,7 @@ public class Nation {
 	private void generateMagesAndPriests()
 	{
 		// Mages and priests
-		MageGenerator mageGen = new MageGenerator(nationGen, this);
+		MageGenerator mageGen = new MageGenerator(nationGen, this, assets);
 		comlists.get("mages").addAll(mageGen.generateMages());
 		comlists.get("priests").addAll(mageGen.generatePriests());
 		mageGen = null;
@@ -248,7 +252,7 @@ public class Nation {
 	private void generateTroops()
 	{
 		// Troops
-		RosterGenerator g = new RosterGenerator(nationGen, this);
+		RosterGenerator g = new RosterGenerator(nationGen, this, assets);
 		g.execute();
 		g = null;
 		System.gc();
@@ -258,7 +262,7 @@ public class Nation {
 	private void generateSacreds()
 	{
 		//// Sacreds and elites
-		SacredGenerator sacGen = new SacredGenerator(nationGen, this);
+		SacredGenerator sacGen = new SacredGenerator(nationGen, this, assets);
 		List<Unit> sacreds = new ArrayList<Unit>();
 		
 
@@ -364,7 +368,7 @@ public class Nation {
 	{
 		// Scouts
 		
-		ScoutGenerator scoutgen = new ScoutGenerator(nationGen, this);
+		ScoutGenerator scoutgen = new ScoutGenerator(nationGen, this, assets);
 		
 		if(races.get(0).hasRole("scout") && !races.get(0).tags.contains("#no_scouts"))
 			comlists.get("scouts").add(scoutgen.generateScout(races.get(0)));
@@ -385,7 +389,7 @@ public class Nation {
 		
 		if(random.nextDouble() < specialcomchance)
 		{
-			SpecialCommanderGenerator scg = new SpecialCommanderGenerator(this, nationGen);
+			SpecialCommanderGenerator scg = new SpecialCommanderGenerator(this, nationGen, assets);
 			scg.generate();
 			scg = null;
 			System.gc();
@@ -395,7 +399,7 @@ public class Nation {
 	private void generateGods()
 	{
 		// Gods
-		GodGen gg = new GodGen(this);
+		GodGen gg = new GodGen(this, assets);
 		this.gods.addAll(gg.giveGods());
 		gg = null;
 	}
@@ -405,7 +409,7 @@ public class Nation {
 		ChanceIncHandler chandler = new ChanceIncHandler(this);
 
 		// Forts
-		List<Filter> possibleForts = ChanceIncHandler.retrieveFilters("forts", "default_forts", nationGen.miscdef, null, races.get(0));
+		List<Filter> possibleForts = ChanceIncHandler.retrieveFilters("forts", "default_forts", assets.miscdef, null, races.get(0));
 		possibleForts = ChanceIncHandler.getFiltersWithType("era " + era, possibleForts);
 		Filter forts = chandler.getRandom(possibleForts);
 		this.commands.addAll(forts.commands);
@@ -415,7 +419,7 @@ public class Nation {
 	{
 		// Heroes
 		
-		HeroGenerator hg = new HeroGenerator(nationGen, this);
+		HeroGenerator hg = new HeroGenerator(nationGen, this, assets);
 		int heroes = 1 + random.nextInt(3); // 1-3
 		this.heroes.addAll(hg.generateHeroes(heroes));
 		hg = null;
@@ -426,7 +430,7 @@ public class Nation {
 	private void generateComs()
 	{
 		// Commanders
-		CommanderGenerator comgen = new CommanderGenerator(nationGen, this);
+		CommanderGenerator comgen = new CommanderGenerator(nationGen, this, assets);
 		comgen.generateComs();
 		comgen = null;
 		System.gc();
@@ -442,7 +446,7 @@ public class Nation {
 		
 		if(random.nextDouble() < monsterchance)
 		{
-			MonsterGenerator mGen = new MonsterGenerator(this, this.nationGen);
+			MonsterGenerator mGen = new MonsterGenerator(this, this.nationGen, assets);
 			Unit monster = mGen.generateMonster();
 			if(monster != null)
 			{
@@ -457,14 +461,14 @@ public class Nation {
 	private void generateSpells()
 	{
 		// Spells
-		SpellGen spellgenerator = new SpellGen(this.nationGen, this);
-		spellgenerator.execute();
+		SpellGen spellgenerator = new SpellGen(this);
+		spellgenerator.execute(assets);
 	}
 	
 	private void generateFlag()
 	{
 		// Flag
-		FlagGen fg = new FlagGen(this);
+		FlagGen fg = new FlagGen(this, assets);
 		this.flag = fg.generateFlag(this);
 		fg = null;
 		
@@ -477,7 +481,7 @@ public class Nation {
 		// Start affinity
 		int cycles = 2;
 		
-		List<Filter> posaff = ChanceIncHandler.retrieveFilters("startaffinities", "startaffinities", nationGen.miscdef, null, races.get(0));
+		List<Filter> posaff = ChanceIncHandler.retrieveFilters("startaffinities", "startaffinities", assets.miscdef, null, races.get(0));
 
 		
 		Filter startaff = null;
@@ -503,7 +507,7 @@ public class Nation {
 	
 
 	
-	public void generate(List restrictions)
+	public void generate(List<NationRestriction> restrictions)
 	{
             //
             // Easiest way I found to get the Class information for doing a comparsion; might be an easier way?
@@ -511,15 +515,15 @@ public class Nation {
             MageWithAccessRestriction mageWithAccessRestriction = new MageWithAccessRestriction(nationGen);
             MagicAccessRestriction magicAccessRestriction = new MagicAccessRestriction(nationGen);
             MagicDiversityRestriction magicDiversityRestriction = new MagicDiversityRestriction(nationGen);
-            NationThemeRestriction nationThemeRestriction = new NationThemeRestriction(nationGen);
-            NoPrimaryRaceRestriction noPrimaryRaceRestriction = new NoPrimaryRaceRestriction(nationGen);
-            NoUnitOfRaceRestriction noUnitOfRaceRestriction = new NoUnitOfRaceRestriction(nationGen);
-            PrimaryRaceRestriction primaryRaceRestriction = new PrimaryRaceRestriction(nationGen);
-            SacredRaceRestriction sacredRaceRestriction = new SacredRaceRestriction(nationGen);
+            NationThemeRestriction nationThemeRestriction = new NationThemeRestriction(nationGen, assets);
+            NoPrimaryRaceRestriction noPrimaryRaceRestriction = new NoPrimaryRaceRestriction(nationGen, assets);
+            NoUnitOfRaceRestriction noUnitOfRaceRestriction = new NoUnitOfRaceRestriction(nationGen, assets);
+            PrimaryRaceRestriction primaryRaceRestriction = new PrimaryRaceRestriction(nationGen, assets);
+            SacredRaceRestriction sacredRaceRestriction = new SacredRaceRestriction(nationGen, assets);
             RecAnywhereSacredsRestriction recAnywhereSacredRestriction = new RecAnywhereSacredsRestriction(nationGen);
             UnitCommandRestriction unitCommandRestriction = new UnitCommandRestriction(nationGen);
-            UnitFilterRestriction unitFilterRestriction = new UnitFilterRestriction(nationGen);
-            UnitOfRaceRestriction unitOfRaceRestriction = new UnitOfRaceRestriction(nationGen);
+            UnitFilterRestriction unitFilterRestriction = new UnitFilterRestriction(nationGen, assets);
+            UnitOfRaceRestriction unitOfRaceRestriction = new UnitOfRaceRestriction(nationGen, assets);
             	
             
             @SuppressWarnings("rawtypes")
@@ -578,7 +582,7 @@ public class Nation {
             }
             
             generateMonsters();
-            SiteGenerator.generateSites(this);
+            SiteGenerator.generateSites(this, assets);
             generateSpells();
             generateFlag();	
             getStartAffinity();
@@ -606,7 +610,7 @@ public class Nation {
 
 		Race race = this.races.get(0);
 		
-		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("nationthemes", "default_nationthemes", nationGen.themes, null, race);
+		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("nationthemes", "default_nationthemes", assets.themes, null, race);
 		ChanceIncHandler chandler = new ChanceIncHandler(this);
 		List<String> freeThemes = Generic.getTagValues(race.tags, "freenationtheme");
 		
@@ -690,7 +694,7 @@ public class Nation {
 	{
 		
 		
-		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("racethemes", "default_racethemes", nationGen.themes, null, race);
+		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("racethemes", "default_racethemes", assets.themes, null, race);
 		ChanceIncHandler chandler = new ChanceIncHandler(this);
 		
 		List<String> freeThemes = Generic.getTagValues(race.tags, "freetheme");
@@ -837,7 +841,7 @@ public class Nation {
 				count++;
 		}
 		
-		List<Filter> possibles = ChanceIncHandler.retrieveFilters("nationwidefilters", "default_nationwidefilters", nationGen.filters, null, races.get(0));
+		List<Filter> possibles = ChanceIncHandler.retrieveFilters("nationwidefilters", "default_nationwidefilters", assets.filters, null, races.get(0));
 
 		ChanceIncHandler chandler = new ChanceIncHandler(this);
 		boolean primary = true;
@@ -845,7 +849,7 @@ public class Nation {
 		
 		if(random.nextDouble() < this.percentageOfRace(races.get(1)))
 		{
-			possibles.retainAll(ChanceIncHandler.retrieveFilters("nationwidefilters", "default_nationwidefilters", nationGen.filters, null, races.get(1)));
+			possibles.retainAll(ChanceIncHandler.retrieveFilters("nationwidefilters", "default_nationwidefilters", assets.filters, null, races.get(1)));
 			if(possibles.size() > 0 && random.nextDouble() < 0.1)
 			{
 				both = true;
@@ -853,7 +857,7 @@ public class Nation {
 			else
 			{
 				primary = false;
-				possibles = ChanceIncHandler.retrieveFilters("nationwidefilters", "default_nationwidefilters", nationGen.filters, null, races.get(1));
+				possibles = ChanceIncHandler.retrieveFilters("nationwidefilters", "default_nationwidefilters", assets.filters, null, races.get(1));
 			}
 		}
 		

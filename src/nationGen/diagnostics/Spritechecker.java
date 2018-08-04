@@ -7,6 +7,7 @@ import java.util.List;
 import javax.imageio.ImageIO;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.entities.Pose;
 import nationGen.items.Item;
 
@@ -14,6 +15,7 @@ public class Spritechecker {
 	public static void main(String[] args)
 	{
 		NationGen ng = null;
+		NationGenAssets assets;
 		try {
 			ng = new NationGen();
 		} catch (IOException e) {
@@ -21,13 +23,11 @@ public class Spritechecker {
 			e.printStackTrace();
 		}
 		
+        assets = new NationGenAssets(ng);
 		
-		for(String str : ng.poses.keySet())
+		for(String str : assets.poses.keySet())
 		{
-
-
-
-			List<Pose> pl = ng.poses.get(str);
+			List<Pose> pl = assets.poses.get(str);
 			for(Pose p : pl)
 			{
 				for(String slot : p.renderorder.split(" "))

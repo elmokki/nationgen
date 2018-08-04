@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.entities.Race;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
@@ -14,14 +15,17 @@ public class UnitOfRaceRestriction extends TwoListRestrictionWithComboBox<Race, 
 	public List<String> possibleRaceNames = new ArrayList<String>();
 	
 	private NationGen ng;
+	private NationGenAssets assets;
+	
 	private String[] ownoptions = {"All", "Troops", "Commanders", "Sacred troops"};
-	public UnitOfRaceRestriction(NationGen ng)
+	public UnitOfRaceRestriction(NationGen ng, NationGenAssets assets)
 	{
 		super(ng, "Nation needs to have at least one unit of a race on the right box", "Unit of race");
 		this.ng = ng;
+		this.assets = assets;
 		
 		this.comboboxlabel = "Units to match:";
-		for(Race r : ng.races)
+		for(Race r : assets.races)
 			rmodel.addElement(r);
 		
 		this.comboboxoptions = ownoptions;
@@ -33,7 +37,7 @@ public class UnitOfRaceRestriction extends TwoListRestrictionWithComboBox<Race, 
 
 	@Override
 	public NationRestriction getRestriction() {
-		UnitOfRaceRestriction res = new UnitOfRaceRestriction(ng);
+		UnitOfRaceRestriction res = new UnitOfRaceRestriction(ng, assets);
 		for(int i =0; i < chosen.getModel().getSize(); i++)
 			res.possibleRaceNames.add(chosen.getModel().getElementAt(i).name);
 		
@@ -74,7 +78,7 @@ public class UnitOfRaceRestriction extends TwoListRestrictionWithComboBox<Race, 
 	
 	@Override
 	public NationRestriction getInstanceOf() {
-		return new UnitOfRaceRestriction(ng);
+		return new UnitOfRaceRestriction(ng, assets);
 	}
 	
 }

@@ -7,6 +7,7 @@ import java.util.List;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.Settings.SettingsType;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
@@ -27,8 +28,9 @@ import nationGen.units.Unit;
 public class SacredGenerator extends TroopGenerator {
 
 	ItemSet usedItems = new ItemSet();
-	public SacredGenerator(NationGen g, Nation n) {
-		super(g, n, "sacgen");
+	
+	public SacredGenerator(NationGen g, Nation n, NationGenAssets assets) {
+		super(g, n, assets, "sacgen");
 		
 		String[] slots_array = {"armor", "weapon", "offhand", "bonusweapon", "helmet", "cloakb", "hair"};
 		for(Unit u : this.nation.generateTroopList())
@@ -122,13 +124,13 @@ public class SacredGenerator extends TroopGenerator {
 		if(sacred)
 		{
 			String[] defaults = {"default_sacredfilters", "default_sacredfilters_shapeshift"};
-			filters = ChanceIncHandler.retrieveFilters("sacredfilters", defaults, nationGen.filters, u.pose, u.race);
+			filters = ChanceIncHandler.retrieveFilters("sacredfilters", defaults, assets.filters, u.pose, u.race);
 		
 		}
 		else
 		{
 			String[] defaults = {"default_elitefilters", "default_elitefilters_shapeshift"};
-			filters = ChanceIncHandler.retrieveFilters("elitefilters", defaults, nationGen.filters, u.pose, u.race);
+			filters = ChanceIncHandler.retrieveFilters("elitefilters", defaults, assets.filters, u.pose, u.race);
 		}
 		
 		filters = ChanceIncHandler.getValidUnitFilters(filters, u);
@@ -358,7 +360,7 @@ public class SacredGenerator extends TroopGenerator {
 		CustomItemGen ciGen = new CustomItemGen(nation);
 		List<MagicItem> magicItems = new ArrayList<MagicItem>();
 
-		magicItems = ChanceIncHandler.retrieveFilters("magicitems", "defaultprimary", nationGen.magicitems, u.pose, u.race);
+		magicItems = ChanceIncHandler.retrieveFilters("magicitems", "defaultprimary", assets.magicitems, u.pose, u.race);
 
 		CustomItem item = null;
 		
@@ -456,7 +458,7 @@ public class SacredGenerator extends TroopGenerator {
 		
 		if(unitGen.hasMontagPose(u))
 		{
-			SacredMontagTemplate template = new SacredMontagTemplate(nation, nationGen);
+			SacredMontagTemplate template = new SacredMontagTemplate(nation, nationGen, assets);
 			template.power = power;
 			template.sacred = sacred;
 			unitGen.handleMontagUnits(u, template, "montagsacreds");

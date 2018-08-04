@@ -14,7 +14,6 @@ import com.elmokki.Drawing;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
-import nationGen.items.Item;
 
 
 public class Drawable extends Filter {

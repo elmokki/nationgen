@@ -75,7 +75,6 @@ public class CustomItemsHandler
     /**
      *  The idea is that we first see if the name is already chosen, and return its chosen ID if so.
      *  Else, if the item exists in the superset [customItems], we generate its ID & add it to chosen items.
-     *  [The secondary effects loop confuses me but such is coding - flash]
      */
     public String getCustomItemId(String name)
     {
@@ -128,12 +127,7 @@ public class CustomItemsHandler
             {
                 String customItemSecondaryEffect = citem.values.get(str);
                 boolean isNumeric = customItemSecondaryEffect.chars().allMatch( Character::isDigit );
-                if (isNumeric)
-                {
-                    // Why does this code exist when it's *clearly* not used? TODO: Investigate.
-                    Integer.parseInt(customItemSecondaryEffect);
-                }
-                else
+                if (!isNumeric)
                 {
                     String id;
                     id = getCustomItemId(customItemSecondaryEffect);

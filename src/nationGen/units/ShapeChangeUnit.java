@@ -14,6 +14,7 @@ import com.elmokki.Drawing;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.entities.Filter;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
@@ -31,13 +32,14 @@ public class ShapeChangeUnit extends Unit {
 	boolean sacred = false;
 	public String shiftcommand = "#firstshape";
 	private int gcost = 0;
+	private NationGenAssets assets;
 	
-	public ShapeChangeUnit(NationGen nationGen, Race race, Pose pose, Unit otherForm, ShapeShift thisForm)
+	public ShapeChangeUnit(NationGen nationGen, NationGenAssets assets, Race race, Pose pose, Unit otherForm, ShapeShift thisForm)
 	{
 		super(nationGen, race, pose);
+		this.assets = assets;
 		this.otherForm = otherForm;
 		this.thisForm = thisForm.getCopy();
-
 	}
 
 
@@ -140,7 +142,7 @@ public class ShapeChangeUnit extends Unit {
 				clist.addAll(otherForm.pose.getCommands());
 			for(Command c : clist)
 			{
-				if(n.secondShapeRacePoseCommands.contains(c.command))
+				if(assets.secondShapeRacePoseCommands.contains(c.command))
 				{	
 					sf.commands.add(c);
 					//handleCommand(commands, c);
@@ -163,13 +165,13 @@ public class ShapeChangeUnit extends Unit {
 				for(Command c : f.getCommands())
 				{
 			
-					if(n.secondShapeNonMountCommands.contains(c.command) && !thisForm.tags.contains("mount"))
+					if(assets.secondShapeNonMountCommands.contains(c.command) && !thisForm.tags.contains("mount"))
 					{	
 						sf.commands.add(c);
 						//handleCommand(commands, c);
 					}
 					
-					if(n.secondShapeMountCommands.contains(c.command) && thisForm.tags.contains("mount"))
+					if(assets.secondShapeMountCommands.contains(c.command) && thisForm.tags.contains("mount"))
 					{
 						sf.commands.add(c);
 						//handleCommand(commands, c);

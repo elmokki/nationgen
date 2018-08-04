@@ -43,6 +43,7 @@ import javax.swing.text.Document;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.Settings;
 import nationGen.Settings.SettingsType;
 
@@ -80,6 +81,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
     
     private ReentrantLock pauseLock;
     private  NationGen n = null;
+    private NationGenAssets assets;
     
     public static void main(String[] args) throws Exception
     {
@@ -118,8 +120,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         // Restrictions need nationgen;
     	try 
         {
-            n = new NationGen(pauseLock);
-            n.settings = settings;
+            n = new NationGen(pauseLock, settings, new ArrayList<>());
         } 
         catch (IOException e) 
         {
@@ -127,7 +128,9 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
             startButton.setEnabled(false);
             return;
         }
-        rpanel = new RestrictionPane(n);
+    	
+    	assets = new NationGenAssets(n);
+        rpanel = new RestrictionPane(n, assets);
 
         // Main
         tabs.addTab("Main", panel);
@@ -403,9 +406,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
     {
     	try 
         {
-            n = new NationGen(pauseLock);
-            n.settings = settings;
-            n.restrictions.addAll(rpanel.getRestrictions());
+            n = new NationGen(pauseLock, settings, rpanel.getRestrictions());
         } 
         catch (IOException e) 
         {

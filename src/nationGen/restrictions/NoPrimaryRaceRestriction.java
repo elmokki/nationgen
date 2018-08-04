@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.entities.Race;
 import nationGen.nation.Nation;
 
@@ -14,24 +15,27 @@ public class NoPrimaryRaceRestriction extends TwoListRestriction<Race>  {
 	
 	
 	private NationGen ng;
-	public NoPrimaryRaceRestriction(NationGen ng)
+	private NationGenAssets assets;
+	
+	public NoPrimaryRaceRestriction(NationGen ng, NationGenAssets assets)
 	{
 		super(ng, "Nation needs to not have one of the races in the right box as primary race", "No primary race");
 		this.ng = ng;
+		this.assets = assets;
 		
-		for(Race r : ng.races)
-                    if (!r.tags.contains("secondary")) 
-                    {
-                    			rmodel.addElement(r);
-                    }
-		
-		
+		for(Race r : assets.races)
+		{
+            if (!r.tags.contains("secondary")) 
+            {
+                rmodel.addElement(r);
+            }   
+		}
 	}
 	
 
 	@Override
 	public NationRestriction getRestriction() {
-		NoPrimaryRaceRestriction res = new NoPrimaryRaceRestriction(ng);
+		NoPrimaryRaceRestriction res = new NoPrimaryRaceRestriction(ng, assets);
 		for(int i =0; i < chosen.getModel().getSize(); i++)
 			res.possibleRaceNames.add(chosen.getModel().getElementAt(i).name);
 		return res;
@@ -51,7 +55,7 @@ public class NoPrimaryRaceRestriction extends TwoListRestriction<Race>  {
 
 	@Override
 	public NationRestriction getInstanceOf() {
-		return new NoPrimaryRaceRestriction(ng);
+		return new NoPrimaryRaceRestriction(ng, assets);
 	}
 
 	

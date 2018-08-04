@@ -7,6 +7,7 @@ import java.util.Random;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.entities.Filter;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
@@ -22,8 +23,9 @@ public class SpecialCommanderGenerator {
 	NationGen ng;
 	ChanceIncHandler chandler;
 	Random r;
+	private NationGenAssets assets;
 	
-	public SpecialCommanderGenerator(Nation n, NationGen ng)
+	public SpecialCommanderGenerator(Nation n, NationGen ng, NationGenAssets assets)
 	{
 		this.n = n;
 		this.ng = ng;
@@ -45,7 +47,7 @@ public class SpecialCommanderGenerator {
 		
 		Unit u = null;
 		
-		List<Filter> possibles = ChanceIncHandler.retrieveFilters("specialcommanderfilters", "default_specialcommanderfilters", ng.filters, null, race);
+		List<Filter> possibles = ChanceIncHandler.retrieveFilters("specialcommanderfilters", "default_specialcommanderfilters", assets.filters, null, race);
 		while(u == null)
 		{
 			if(chandler.countPossibleFilters(possibles) == 0)
@@ -62,7 +64,7 @@ public class SpecialCommanderGenerator {
 				Pose p = chandler.getRandom(possiblePoses);
 				
 				// generate unit
-				UnitGen ug = new UnitGen(ng, n);
+				UnitGen ug = new UnitGen(ng, n, assets);
 				u = ug.generateUnit(race, p);
 				u.appliedFilters.add(f);
 				
