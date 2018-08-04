@@ -20,7 +20,6 @@ import com.elmokki.Dom3DB;
 import com.elmokki.Drawing;
 
 import nationGen.Settings.SettingsType;
-import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Race;
 import nationGen.items.CustomItem;
