@@ -5,7 +5,6 @@ import java.awt.LayoutManager;
 
 import javax.swing.JPanel;
 
-import nationGen.NationGen;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
@@ -16,10 +15,8 @@ import nationGen.units.Unit;
  */
 public class RecAnywhereSacredsRestriction implements NationRestriction {
 
-	private NationGen ng; //everyone else needs one of these boys. May as well have it I suppose.
-	public RecAnywhereSacredsRestriction(NationGen nationGen)
+	public RecAnywhereSacredsRestriction()
 	{
-		this.ng = nationGen;
 	}
 	
 	@Override
@@ -29,7 +26,7 @@ public class RecAnywhereSacredsRestriction implements NationRestriction {
 
 	@Override
 	public NationRestriction getRestriction() {
-		return new RecAnywhereSacredsRestriction(ng);
+		return new RecAnywhereSacredsRestriction();
 	}
 
 	@Override
@@ -59,5 +56,4 @@ public class RecAnywhereSacredsRestriction implements NationRestriction {
     {
         return RestrictionType.RecAnywhereSacreds;
     }
-
 }

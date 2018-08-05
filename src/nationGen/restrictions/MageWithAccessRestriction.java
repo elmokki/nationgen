@@ -7,20 +7,17 @@ import java.util.ArrayList;
 
 import com.elmokki.Generic;
 
-import nationGen.NationGen;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
 public class MageWithAccessRestriction extends TwoListRestrictionWithComboBox<String, String>  {
 	public List<String> neededPaths = new ArrayList<String>();
 	
-	
-	private NationGen ng;
-	public MageWithAccessRestriction(NationGen ng)
+
+	public MageWithAccessRestriction()
 	{
-		super(ng, "<html>Nation needs have 1 in 4 (100% random for 4 paths or better) access to at least one of the paths listed in the right box on a single mage</html>", "Magic: Mage with access");
-		this.ng = ng;
-		
+		super("<html>Nation needs have 1 in 4 (100% random for 4 paths or better) access to at least one of the paths listed in the right box on a single mage</html>", "Magic: Mage with access");
+	
 		this.extraTextField = true;
 		this.textfieldDefaultText = "1";
 		this.textFieldLabel = "Minimum magic level for added paths";
@@ -30,18 +27,14 @@ public class MageWithAccessRestriction extends TwoListRestrictionWithComboBox<St
 		this.comboboxoptions = ops;
 		
 		for(int i = 0; i < 8; i++)
-			rmodel.addElement(Generic.integerToPath(i));
-		
-			
-		
-		
+			rmodel.addElement(Generic.integerToPath(i));		
 	}
 	
 
 
 	@Override
 	public NationRestriction getRestriction() {
-		MageWithAccessRestriction res = new MageWithAccessRestriction(ng);
+		MageWithAccessRestriction res = new MageWithAccessRestriction();
 		
 		for(int i = 0; i < chosen.getModel().getSize(); i++)
 			res.neededPaths.add(chosen.getModel().getElementAt(i));
@@ -80,9 +73,6 @@ public class MageWithAccessRestriction extends TwoListRestrictionWithComboBox<St
 	public boolean doesThisPass(Nation n) {
 		
 		List<Unit> tempmages = n.generateComList("mage");
-		
-	
-
 
 		if(neededPaths.size() == 0)
 		{
@@ -115,6 +105,4 @@ public class MageWithAccessRestriction extends TwoListRestrictionWithComboBox<St
     {
         return RestrictionType.MageWithAccess;
     }
-
-	
 }

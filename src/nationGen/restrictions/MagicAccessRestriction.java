@@ -6,20 +6,15 @@ import java.util.List;
 import java.util.ArrayList;
 
 import com.elmokki.Generic;
-
-import nationGen.NationGen;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
 public class MagicAccessRestriction extends TwoListRestrictionWithComboBox<String, String>  {
 	public List<String> neededPaths = new ArrayList<String>();
 	
-	
-	private NationGen ng;
-	public MagicAccessRestriction(NationGen ng)
+	public MagicAccessRestriction()
 	{
-		super(ng, "<html>Nation needs have 1 in 4 (100% random for 4 paths or better) access to at least one of the paths listed in the right box</html>", "Magic: Access");
-		this.ng = ng;
+		super("<html>Nation needs have 1 in 4 (100% random for 4 paths or better) access to at least one of the paths listed in the right box</html>", "Magic: Access");
 		
 		this.extraTextField = true;
 		this.textfieldDefaultText = "1";
@@ -41,7 +36,7 @@ public class MagicAccessRestriction extends TwoListRestrictionWithComboBox<Strin
 
 	@Override
 	public NationRestriction getRestriction() {
-		MagicAccessRestriction res = new MagicAccessRestriction(ng);
+		MagicAccessRestriction res = new MagicAccessRestriction();
 		
 		for(int i = 0; i < chosen.getModel().getSize(); i++)
 			res.neededPaths.add(chosen.getModel().getElementAt(i));
@@ -119,6 +114,4 @@ public class MagicAccessRestriction extends TwoListRestrictionWithComboBox<Strin
     {
         return RestrictionType.MageWithAccess;
     }
-
-	
 }

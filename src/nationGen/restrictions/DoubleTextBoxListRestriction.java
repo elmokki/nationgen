@@ -1,18 +1,10 @@
 package nationGen.restrictions;
 
-
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-
-
-
-
-
-
 
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
@@ -26,9 +18,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
-import nationGen.NationGen;
-import nationGen.nation.Nation;
-
 /**
  * Class for generic restrictions that contain two text boxes which users use to add entries to list
  * - Contains optional combobox!
@@ -41,7 +30,6 @@ public abstract class DoubleTextBoxListRestriction<E> implements NationRestricti
 
 	protected String text = "";
 	protected String name = "Generic text box restriction";
-	protected NationGen ng;
 	
 	protected String textFieldLabel = "Undefined label";
 	protected String textfieldDefaultText = "";
@@ -54,11 +42,10 @@ public abstract class DoubleTextBoxListRestriction<E> implements NationRestricti
 	protected String[] comboboxoptions = null;
 	public String comboselection = null;
 	
-	public DoubleTextBoxListRestriction(NationGen ng, String text, String name)
+	public DoubleTextBoxListRestriction(String text, String name)
 	{
 		this.name = name;
 		this.text = text;
-		this.ng = ng;
 	}
 	
 	@Override
@@ -143,7 +130,6 @@ public abstract class DoubleTextBoxListRestriction<E> implements NationRestricti
 	}
 
 
-
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		
@@ -164,18 +150,11 @@ public abstract class DoubleTextBoxListRestriction<E> implements NationRestricti
 		}
 	}
 
-	
-	@Override
-	public boolean doesThisPass(Nation n) {
-		return true;
-	}
-
 	@Override
 	public void itemStateChanged(ItemEvent arg0) {
 		
 		if(arg0.getStateChange() == 1)
 			this.comboselection = (String)combobox.getSelectedItem();
 		
-	}
-	
+	}	
 }

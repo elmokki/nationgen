@@ -1,18 +1,10 @@
 package nationGen.restrictions;
 
-
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-
-
-
-
-
-
 
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
@@ -26,9 +18,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
-import nationGen.NationGen;
-import nationGen.nation.Nation;
-
 /**
  * Class for generic restrictions that contain a text box which users use to add entries to list
  * - Contains optional combobox!
@@ -39,8 +28,7 @@ public abstract class TextBoxListRestriction implements NationRestriction, Actio
 	
 	protected String text = "";
 	protected String name = "Generic text box restriction";
-	protected NationGen ng;
-	
+
 	protected String textFieldLabel = "Undefined label";
 	protected String textfieldDefaultText = "";
 
@@ -50,11 +38,10 @@ public abstract class TextBoxListRestriction implements NationRestriction, Actio
 	protected String[] comboboxoptions = null;
 	public String comboselection = null;
 	
-	public TextBoxListRestriction(NationGen ng, String text, String name)
+	public TextBoxListRestriction(String text, String name)
 	{
 		this.name = name;
 		this.text = text;
-		this.ng = ng;
 	}
 	
 	@Override
@@ -150,12 +137,6 @@ public abstract class TextBoxListRestriction implements NationRestriction, Actio
 		{
 			rmodel.remove(chosen.getSelectedIndex());
 		}
-	}
-
-	
-	@Override
-	public boolean doesThisPass(Nation n) {
-		return true;
 	}
 
 	@Override

@@ -1,10 +1,8 @@
 package nationGen.restrictions;
 
-
 import java.util.List;
 import java.util.ArrayList;
 
-import nationGen.NationGen;
 import nationGen.NationGenAssets;
 import nationGen.entities.Theme;
 import nationGen.nation.Nation;
@@ -14,10 +12,9 @@ public class NationThemeRestriction extends TwoListRestriction<String>  {
 	
 	
 	private NationGenAssets assets;
-	public NationThemeRestriction(NationGen ng, NationGenAssets assets)
+	public NationThemeRestriction(NationGenAssets assets)
 	{
-		super(ng, "Nation or primary race needs to have a theme named like one of the themes in the right box", "Nation or primary race theme");
-		this.ng = ng;
+		super("Nation or primary race needs to have a theme named like one of the themes in the right box", "Nation or primary race theme");
 		this.assets = assets;
 		
 		for(String str : assets.themes.keySet())
@@ -26,19 +23,14 @@ public class NationThemeRestriction extends TwoListRestriction<String>  {
 		
 		
 	}
-	
-
 
 	@Override
 	public NationRestriction getRestriction() {
-		NationThemeRestriction res = new NationThemeRestriction(ng, assets);
+		NationThemeRestriction res = new NationThemeRestriction(assets);
 		for(int i =0; i < chosen.getModel().getSize(); i++)
 			res.possibleRaceNames.add(chosen.getModel().getElementAt(i));
 		return res;
 	}
-
-
-
 
 	@Override
 	public boolean doesThisPass(Nation n) {
@@ -85,6 +77,4 @@ public class NationThemeRestriction extends TwoListRestriction<String>  {
     {
         return RestrictionType.NationTheme;
     }
-
-	
 }

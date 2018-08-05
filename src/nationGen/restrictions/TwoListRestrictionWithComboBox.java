@@ -1,20 +1,9 @@
 package nationGen.restrictions;
 
-
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-
-
-
-
-
-
-
-
-
 
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
@@ -27,9 +16,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
-
-import nationGen.NationGen;
-
 /**
  * Extension for TwoListRestriction with a custom-type combo box!
  * @author Elmokki
@@ -38,9 +24,9 @@ import nationGen.NationGen;
 public abstract class TwoListRestrictionWithComboBox<E, F> extends TwoListRestriction<E> implements ActionListener, ItemListener  {
 	
 
-	public TwoListRestrictionWithComboBox(NationGen ng, String text, String name)
+	public TwoListRestrictionWithComboBox(String text, String name)
 	{
-		super(ng, text, name);
+		super(text, name);
 	}
 	
 	@Override
