@@ -18,6 +18,7 @@ public class NationThemeRestriction extends TwoListRestriction<String>  {
 	{
 		super(ng, "Nation or primary race needs to have a theme named like one of the themes in the right box", "Nation or primary race theme");
 		this.ng = ng;
+		this.assets = assets;
 		
 		for(String str : assets.themes.keySet())
 			for(Theme t : assets.themes.get(str))
