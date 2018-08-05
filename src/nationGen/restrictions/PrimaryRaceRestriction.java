@@ -59,5 +59,13 @@ public class PrimaryRaceRestriction extends TwoListRestriction<Race>  {
 		return new PrimaryRaceRestriction(ng, assets);
 	}
 
+
+
+    @Override
+    public RestrictionType getType()
+    {
+        return RestrictionType.PrimaryRace;
+    }
+
 	
 }

@@ -9,6 +9,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 import java.util.Map.Entry;
 
 
@@ -50,19 +51,8 @@ import nationGen.misc.ItemSet;
 import nationGen.misc.Site;
 import nationGen.misc.SiteGenerator;
 import nationGen.naming.Summary;
-import nationGen.restrictions.MagicAccessRestriction;
-import nationGen.restrictions.MageWithAccessRestriction;
-import nationGen.restrictions.MagicDiversityRestriction;
 import nationGen.restrictions.NationRestriction;
-import nationGen.restrictions.NationThemeRestriction;
-import nationGen.restrictions.NoPrimaryRaceRestriction;
-import nationGen.restrictions.NoUnitOfRaceRestriction;
-import nationGen.restrictions.PrimaryRaceRestriction;
-import nationGen.restrictions.SacredRaceRestriction;
-import nationGen.restrictions.UnitCommandRestriction;
-import nationGen.restrictions.UnitFilterRestriction;
-import nationGen.restrictions.UnitOfRaceRestriction;
-import nationGen.restrictions.RecAnywhereSacredsRestriction;
+import nationGen.restrictions.NationRestriction.RestrictionType;
 import nationGen.rostergeneration.CommanderGenerator;
 import nationGen.rostergeneration.HeroGenerator;
 import nationGen.rostergeneration.MonsterGenerator;
@@ -83,8 +73,9 @@ public class Nation {
 	public String name = "UNNAMED";
 	public String epithet = "NO EPITHET";
 	
-        public boolean passed = true;
-        public String restrictionFailed = "";
+    public boolean passed = true;
+    public String restrictionFailed = "";
+    
 	public NationGen nationGen;
 	private NationGenAssets assets;
 	
@@ -498,109 +489,74 @@ public class Nation {
 				posaff.remove(startaff);
 			}
 			
-			cycles--;
 		}
+		cycles--;
 		posaff = null;
 		System.gc();
 	}
 	
 	
+    public void generate(List<NationRestriction> restrictions)
+    {
+        getColors();
+        getRaces();
 
-	
-	public void generate(List<NationRestriction> restrictions)
-	{
-            //
-            // Easiest way I found to get the Class information for doing a comparsion; might be an easier way?
-            //
-            MageWithAccessRestriction mageWithAccessRestriction = new MageWithAccessRestriction(nationGen);
-            MagicAccessRestriction magicAccessRestriction = new MagicAccessRestriction(nationGen);
-            MagicDiversityRestriction magicDiversityRestriction = new MagicDiversityRestriction(nationGen);
-            NationThemeRestriction nationThemeRestriction = new NationThemeRestriction(nationGen, assets);
-            NoPrimaryRaceRestriction noPrimaryRaceRestriction = new NoPrimaryRaceRestriction(nationGen, assets);
-            NoUnitOfRaceRestriction noUnitOfRaceRestriction = new NoUnitOfRaceRestriction(nationGen, assets);
-            PrimaryRaceRestriction primaryRaceRestriction = new PrimaryRaceRestriction(nationGen, assets);
-            SacredRaceRestriction sacredRaceRestriction = new SacredRaceRestriction(nationGen, assets);
-            RecAnywhereSacredsRestriction recAnywhereSacredRestriction = new RecAnywhereSacredsRestriction(nationGen);
-            UnitCommandRestriction unitCommandRestriction = new UnitCommandRestriction(nationGen);
-            UnitFilterRestriction unitFilterRestriction = new UnitFilterRestriction(nationGen, assets);
-            UnitOfRaceRestriction unitOfRaceRestriction = new UnitOfRaceRestriction(nationGen, assets);
-            	
-            
-            @SuppressWarnings("rawtypes")
-			List<Class> restrictionTypes = new ArrayList<>();
-            restrictionTypes.add(primaryRaceRestriction.getClass());
-            restrictionTypes.add(noPrimaryRaceRestriction.getClass());
-            restrictionTypes.add(nationThemeRestriction.getClass());
-            
-            getColors();
-            getRaces();
-            
-            if (!checkRestrictions(restrictions, restrictionTypes)) 
-            {
-                return;
-            }
-            restrictionTypes.clear();
-            restrictionTypes.add(mageWithAccessRestriction.getClass());
-            restrictionTypes.add(magicAccessRestriction.getClass());
-            restrictionTypes.add(magicDiversityRestriction.getClass());
-            restrictionTypes.add(primaryRaceRestriction.getClass());
-            
-            generateMagesAndPriests();
-            
-            if (!checkRestrictions(restrictions, restrictionTypes)) 
-            {
-                return;
-            }
-            restrictionTypes.clear();
-            restrictionTypes.add(sacredRaceRestriction.getClass());
-            restrictionTypes.add(recAnywhereSacredRestriction.getClass());
-            
-            generateTroops();
-            generateSacreds();
-            
-            if (!checkRestrictions(restrictions, restrictionTypes)) 
-            {
-                return;
-            }
-            restrictionTypes.clear();
-            restrictionTypes.add(unitCommandRestriction.getClass());
-            restrictionTypes.add(unitFilterRestriction.getClass());
-            restrictionTypes.add(unitOfRaceRestriction.getClass());
-            restrictionTypes.add(noUnitOfRaceRestriction.getClass());
-            
-            generateScouts();
-            generateSpecialComs();
-            generateGods();
-            getForts();
-            generateHeroes();
-            applyNationWideFilter();
-            generateComs();
-            
-            if (!checkRestrictions(restrictions, restrictionTypes)) 
-            {
-                return;
-            }
-            
-            generateMonsters();
-            SiteGenerator.generateSites(this, assets);
-            generateSpells();
-            generateFlag();	
-            getStartAffinity();
+        if (!checkRestrictions(restrictions, RestrictionType.NoPrimaryRace, RestrictionType.PrimaryRace,
+                RestrictionType.NationTheme))
+        {
+            return;
+        }
 
-            double extraPDMulti = 1;
-    		if(Generic.containsTag(this.races.get(0).tags, "extrapdmulti"))
-    			extraPDMulti = Double.parseDouble(Generic.getTagValue(this.races.get(0).tags, "extrapdmulti"));
+        generateMagesAndPriests();
 
-    		if(random.nextDouble() < 0.1 * extraPDMulti)
-            {
-            	if(random.nextDouble() < 0.02 * extraPDMulti)
-            		PDRanks = 4;
-            	else
-            		PDRanks = 3;
-            }
-            
-            //finalizeUnits();
-	}
+        if (!checkRestrictions(restrictions, RestrictionType.MageWithAccess, RestrictionType.MagicAccess,
+                RestrictionType.MagicDiversity, RestrictionType.PrimaryRace))
+        {
+            return;
+        }
+
+        generateTroops();
+        generateSacreds();
+
+        if (!checkRestrictions(restrictions, RestrictionType.SacredRace, RestrictionType.RecAnywhereSacreds))
+        {
+            return;
+        }
+
+        generateScouts();
+        generateSpecialComs();
+        generateGods();
+        getForts();
+        generateHeroes();
+        applyNationWideFilter();
+        generateComs();
+
+        if (!checkRestrictions(restrictions, RestrictionType.UnitCommand, RestrictionType.UnitFilter,
+                RestrictionType.UnitRace, RestrictionType.NoUnitOfRace))
+        {
+            return;
+        }
+
+        generateMonsters();
+        SiteGenerator.generateSites(this, assets);
+        generateSpells();
+        generateFlag();
+        getStartAffinity();
+
+        double extraPDMulti = 1;
+        if (Generic.containsTag(this.races.get(0).tags, "extrapdmulti"))
+            extraPDMulti = Double.parseDouble(Generic.getTagValue(this.races.get(0).tags, "extrapdmulti"));
+
+        if (random.nextDouble() < 0.1 * extraPDMulti)
+        {
+            if (random.nextDouble() < 0.02 * extraPDMulti)
+                PDRanks = 4;
+            else
+                PDRanks = 3;
+        }
+
+        // finalizeUnits();
+    }
 	
 	
 
@@ -1556,29 +1512,14 @@ public class Nation {
 			site.write(tw);
 	}
 	
-    public boolean checkRestrictions(List restrictions, List<Class> restrictionTypes)
+    public boolean checkRestrictions(List<NationRestriction> restrictions, RestrictionType... restrictionTypes)
     {
-        for(int index = 0; index < restrictions.size(); index++)
+        for(var restriction: restrictions)
         {
-            NationRestriction n = (NationRestriction) restrictions.get(index);
-            boolean isRestrictionType = false;
-            
-            for(Class restrictionType : restrictionTypes)
+            if (Set.of(restrictionTypes).contains(restriction.getType()) && !restriction.doesThisPass(this)) 
             {
-                if (n.getClass() == restrictionType) 
-                {
-                    isRestrictionType = true;
-                }
-            }
-            
-            if (!isRestrictionType) 
-            {
-                continue;
-            }
-            if (!n.doesThisPass(this)) 
-            {
-                this.passed = false;
-                this.restrictionFailed = n.toString().toUpperCase();
+                passed = false;
+                restrictionFailed = restriction.toString().toUpperCase();
                 return false;
             }
         }

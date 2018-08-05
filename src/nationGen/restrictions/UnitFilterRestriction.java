@@ -97,5 +97,13 @@ public class UnitFilterRestriction extends TwoListRestrictionWithComboBox<String
 	public NationRestriction getInstanceOf() {
 		return new UnitFilterRestriction(ng, assets);
 	}
+
+
+
+    @Override
+    public RestrictionType getType()
+    {
+        return RestrictionType.UnitFilter;
+    }
 	
 }

@@ -35,7 +35,7 @@ import nationGen.NationGen;
  * @author Elmokki
  *
  */
-public class TwoListRestrictionWithComboBox<E, F> extends TwoListRestriction<E> implements ActionListener, ItemListener  {
+public abstract class TwoListRestrictionWithComboBox<E, F> extends TwoListRestriction<E> implements ActionListener, ItemListener  {
 	
 
 	public TwoListRestrictionWithComboBox(NationGen ng, String text, String name)
@@ -110,13 +110,6 @@ public class TwoListRestrictionWithComboBox<E, F> extends TwoListRestriction<E> 
 	}
 
 	@Override
-	public NationRestriction getRestriction() {
-		TwoListRestrictionWithComboBox<E, F> res = new TwoListRestrictionWithComboBox<E, F>(ng, text, name);
-		return res;
-	}
-
-
-	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		
 		// Add button
@@ -134,15 +127,6 @@ public class TwoListRestrictionWithComboBox<E, F> extends TwoListRestriction<E> 
 			rmodel2.remove(chosen.getSelectedIndex());
 		}
 	}
-
-	
-
-	@Override
-	public NationRestriction getInstanceOf() {
-		return new TwoListRestrictionWithComboBox<E, F>(ng, text, name);
-	}
-
-	
 
 	@SuppressWarnings("unchecked")
 	@Override

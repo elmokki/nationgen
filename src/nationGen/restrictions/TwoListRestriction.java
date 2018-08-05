@@ -32,7 +32,7 @@ import nationGen.nation.Nation;
  * @author Elmokki
  *
  */
-public class TwoListRestriction<E> extends NationRestriction implements ActionListener  {
+public abstract class TwoListRestriction<E> implements NationRestriction, ActionListener  {
 	
 	protected String text = "";
 	protected String name = "Generic two list restriction";
@@ -118,12 +118,6 @@ public class TwoListRestriction<E> extends NationRestriction implements ActionLi
 	}
 
 	@Override
-	public NationRestriction getRestriction() {
-		TwoListRestriction<E> res = new TwoListRestriction<E>(ng, text, name);
-		return res;
-	}
-
-	@Override
 	public LayoutManager getLayout() {
 		return new BorderLayout();
 	}
@@ -154,11 +148,5 @@ public class TwoListRestriction<E> extends NationRestriction implements ActionLi
 	public boolean doesThisPass(Nation n) {
 		return true;
 	}
-
-	@Override
-	public NationRestriction getInstanceOf() {
-		return new TwoListRestriction<E>(ng, text, name);
-	}
-
 	
 }

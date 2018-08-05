@@ -14,7 +14,7 @@ import nationGen.units.Unit;
  * @author Flashfire
  * Class intends to filter out nations that have recruit anywhere sacreds.
  */
-public class RecAnywhereSacredsRestriction extends NationRestriction {
+public class RecAnywhereSacredsRestriction implements NationRestriction {
 
 	private NationGen ng; //everyone else needs one of these boys. May as well have it I suppose.
 	public RecAnywhereSacredsRestriction(NationGen nationGen)
@@ -58,5 +58,11 @@ public class RecAnywhereSacredsRestriction extends NationRestriction {
 	public NationRestriction getInstanceOf() {
 		return new RecAnywhereSacredsRestriction(ng);
 	}
+
+    @Override
+    public RestrictionType getType()
+    {
+        return RestrictionType.RecAnywhereSacreds;
+    }
 
 }

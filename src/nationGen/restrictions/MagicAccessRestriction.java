@@ -119,5 +119,13 @@ public class MagicAccessRestriction extends TwoListRestrictionWithComboBox<Strin
 		return new MagicAccessRestriction(ng);
 	}
 
+
+
+    @Override
+    public RestrictionType getType()
+    {
+        return RestrictionType.MageWithAccess;
+    }
+
 	
 }

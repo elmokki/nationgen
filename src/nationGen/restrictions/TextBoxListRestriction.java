@@ -35,7 +35,7 @@ import nationGen.nation.Nation;
  * @author Elmokki
  *
  */
-public class TextBoxListRestriction extends NationRestriction implements ActionListener, ItemListener  {
+public abstract class TextBoxListRestriction implements NationRestriction, ActionListener, ItemListener  {
 	
 	protected String text = "";
 	protected String name = "Generic text box restriction";
@@ -128,12 +128,6 @@ public class TextBoxListRestriction extends NationRestriction implements ActionL
 	}
 
 	@Override
-	public NationRestriction getRestriction() {
-		TextBoxListRestriction res = new TextBoxListRestriction(ng, text, name);
-		return res;
-	}
-
-	@Override
 	public LayoutManager getLayout() {
 		return new BorderLayout();
 	}
@@ -162,11 +156,6 @@ public class TextBoxListRestriction extends NationRestriction implements ActionL
 	@Override
 	public boolean doesThisPass(Nation n) {
 		return true;
-	}
-
-	@Override
-	public NationRestriction getInstanceOf() {
-		return new TextBoxListRestriction(ng, text, name);
 	}
 
 	@Override

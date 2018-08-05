@@ -85,5 +85,13 @@ public class NationThemeRestriction extends TwoListRestriction<String>  {
 		return new NationThemeRestriction(ng, assets);
 	}
 
+
+
+    @Override
+    public RestrictionType getType()
+    {
+        return RestrictionType.NationTheme;
+    }
+
 	
 }

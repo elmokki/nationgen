@@ -80,5 +80,13 @@ public class NoUnitOfRaceRestriction extends TwoListRestrictionWithComboBox<Race
 	public NationRestriction getInstanceOf() {
 		return new NoUnitOfRaceRestriction(ng, assets);
 	}
+
+
+
+    @Override
+    public RestrictionType getType()
+    {
+        return RestrictionType.NoUnitOfRace;
+    }
 	
 }

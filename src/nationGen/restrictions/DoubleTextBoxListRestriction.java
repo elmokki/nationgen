@@ -35,7 +35,7 @@ import nationGen.nation.Nation;
  * @author Elmokki
  *
  */
-public class DoubleTextBoxListRestriction<E> extends NationRestriction implements ActionListener, ItemListener  {
+public abstract class DoubleTextBoxListRestriction<E> implements NationRestriction, ActionListener, ItemListener  {
 	
 	
 
@@ -138,12 +138,6 @@ public class DoubleTextBoxListRestriction<E> extends NationRestriction implement
 	}
 
 	@Override
-	public NationRestriction getRestriction() {
-		DoubleTextBoxListRestriction<E> res = new DoubleTextBoxListRestriction<E>(ng, text, name);
-		return res;
-	}
-
-	@Override
 	public LayoutManager getLayout() {
 		return new BorderLayout();
 	}
@@ -174,11 +168,6 @@ public class DoubleTextBoxListRestriction<E> extends NationRestriction implement
 	@Override
 	public boolean doesThisPass(Nation n) {
 		return true;
-	}
-
-	@Override
-	public NationRestriction getInstanceOf() {
-		return new DoubleTextBoxListRestriction<E>(ng, text, name);
 	}
 
 	@Override

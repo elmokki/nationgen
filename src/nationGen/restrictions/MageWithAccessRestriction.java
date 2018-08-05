@@ -115,5 +115,13 @@ public class MageWithAccessRestriction extends TwoListRestrictionWithComboBox<St
 		return new MageWithAccessRestriction(ng);
 	}
 
+
+
+    @Override
+    public RestrictionType getType()
+    {
+        return RestrictionType.MageWithAccess;
+    }
+
 	
 }
