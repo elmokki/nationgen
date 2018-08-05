@@ -104,13 +104,6 @@ public class UnitCommandRestriction extends TextBoxListRestriction {
 		}
 		return false;
 	}
-	
-	@Override
-	public NationRestriction getInstanceOf() {
-		return new UnitCommandRestriction(ng);
-	}
-
-
 
     @Override
     public RestrictionType getType()

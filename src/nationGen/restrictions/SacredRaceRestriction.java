@@ -55,13 +55,6 @@ public class SacredRaceRestriction extends TwoListRestriction<Race> {
 		
 		return pass;
 	}
-	
-	@Override
-	public NationRestriction getInstanceOf() {
-		return new SacredRaceRestriction(ng, assets);
-	}
-
-
 
     @Override
     public RestrictionType getType()

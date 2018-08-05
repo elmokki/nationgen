@@ -53,12 +53,6 @@ public class NoPrimaryRaceRestriction extends TwoListRestriction<Race>  {
 		return !possibleRaceNames.contains(n.races.get(0).name);
 	}
 
-	@Override
-	public NationRestriction getInstanceOf() {
-		return new NoPrimaryRaceRestriction(ng, assets);
-	}
-
-
     @Override
     public RestrictionType getType()
     {

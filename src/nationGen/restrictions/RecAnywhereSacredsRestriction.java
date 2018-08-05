@@ -54,11 +54,6 @@ public class RecAnywhereSacredsRestriction implements NationRestriction {
 		return "Recruit Anywhere Sacred";
 	}
 
-	@Override
-	public NationRestriction getInstanceOf() {
-		return new RecAnywhereSacredsRestriction(ng);
-	}
-
     @Override
     public RestrictionType getType()
     {

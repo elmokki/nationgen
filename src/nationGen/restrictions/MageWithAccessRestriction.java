@@ -110,13 +110,6 @@ public class MageWithAccessRestriction extends TwoListRestrictionWithComboBox<St
 		return false;
 	}
 
-	@Override
-	public NationRestriction getInstanceOf() {
-		return new MageWithAccessRestriction(ng);
-	}
-
-
-
     @Override
     public RestrictionType getType()
     {

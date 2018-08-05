@@ -75,13 +75,6 @@ public class UnitOfRaceRestriction extends TwoListRestrictionWithComboBox<Race, 
 
 		return pass;
 	}
-	
-	@Override
-	public NationRestriction getInstanceOf() {
-		return new UnitOfRaceRestriction(ng, assets);
-	}
-
-
 
     @Override
     public RestrictionType getType()

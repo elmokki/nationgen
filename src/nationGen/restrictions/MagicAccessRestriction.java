@@ -112,14 +112,7 @@ public class MagicAccessRestriction extends TwoListRestrictionWithComboBox<Strin
 		}
 		
 		return pass;
-	}
-
-	@Override
-	public NationRestriction getInstanceOf() {
-		return new MagicAccessRestriction(ng);
-	}
-
-
+	}	
 
     @Override
     public RestrictionType getType()

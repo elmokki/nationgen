@@ -154,7 +154,8 @@ public class RestrictionPane extends JPanel implements ActionListener, ListSelec
 		if(arg0.getSource().equals(addButton) && possibles.getSelectedIndex() > -1)
 		{
 			
-			NationRestriction newres = possibles.getSelectedValue().getInstanceOf();
+		    NationRestriction newres = NationRestrictionFactory.getSameTypedInstance(ng, assets, possibles.getSelectedValue());
+		    
 			if(newres != null && !model.contains(newres));
 			{
 				model.addElement(newres);

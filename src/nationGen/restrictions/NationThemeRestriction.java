@@ -80,13 +80,6 @@ public class NationThemeRestriction extends TwoListRestriction<String>  {
 		return ok;
 	}
 
-	@Override
-	public NationRestriction getInstanceOf() {
-		return new NationThemeRestriction(ng, assets);
-	}
-
-
-
     @Override
     public RestrictionType getType()
     {

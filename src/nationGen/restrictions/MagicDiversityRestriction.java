@@ -132,13 +132,6 @@ public class MagicDiversityRestriction extends DoubleTextBoxListRestriction<Rest
 		}
 	}
 	
-	@Override
-	public NationRestriction getInstanceOf() {
-		return new MagicDiversityRestriction(ng);
-	}
-
-
-
     @Override
     public RestrictionType getType()
     {

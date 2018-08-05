@@ -12,24 +12,6 @@ import java.util.Random;
 import java.util.Set;
 import java.util.Map.Entry;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import com.elmokki.Drawing;
 import com.elmokki.Generic;
 
@@ -87,7 +69,6 @@ public class Nation {
 	public List<Unit> heroes = new ArrayList<Unit>();
 
 	public List<Command> commands = new ArrayList<Command>();
-	//public List<Filter> appliedfilters = new ArrayList<Filter>();
 	public List<CustomItem> usedcustomitems = new ArrayList<CustomItem>();
 	public List<ShapeChangeUnit> secondshapes = new ArrayList<ShapeChangeUnit>();
 	public List<CustomItem> customitems = new ArrayList<CustomItem>();
@@ -155,15 +136,15 @@ public class Nation {
 		// choose primary race
 		List<Race> allRaces = new ArrayList<>();
 
-                for(Race r : assets.races)
-                {
-                    if (!r.tags.contains("secondary")) 
-                    {
-                        allRaces.add(r);
-                    }
-                }
-                Race race;
-                race = chandler.getRandom(allRaces);
+        for(Race r : assets.races)
+        {
+            if (!r.tags.contains("secondary")) 
+            {
+                allRaces.add(r);
+            }
+        }
+        Race race;
+        race = chandler.getRandom(allRaces);
                 
 		races.add(race.getCopy());
 		
