@@ -127,8 +127,8 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
             return;
         }
     	
-    	// Again, ideally, n.getAssets would never be required.
-        rpanel = new RestrictionPane(n, n.getAssets());
+    	// Again, ideally, n.getAssets would never be required. But, at least restriction pane no longer depends on Nationgen.
+        rpanel = new RestrictionPane(n.getAssets());
 
         // Main
         tabs.addTab("Main", panel);

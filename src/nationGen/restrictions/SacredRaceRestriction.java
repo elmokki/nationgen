@@ -1,11 +1,8 @@
 package nationGen.restrictions;
 
-
-
 import java.util.List;
 import java.util.ArrayList;
 
-import nationGen.NationGen;
 import nationGen.NationGenAssets;
 import nationGen.entities.Race;
 import nationGen.nation.Nation;
@@ -14,27 +11,26 @@ import nationGen.units.Unit;
 public class SacredRaceRestriction extends TwoListRestriction<Race> {
 	public List<String> possibleRaceNames = new ArrayList<String>();
 	
-	private NationGen ng;
 	private NationGenAssets assets;
-	public SacredRaceRestriction(NationGen ng, NationGenAssets assets)
+	public SacredRaceRestriction(NationGenAssets assets)
 	{
-		super(ng, "Nation needs to have at least one sacred unit of a race on the right box", "Sacred: Race");
-		this.ng = ng;
+		super("Nation needs to have at least one sacred unit of a race on the right box", "Sacred: Race");
 		this.assets = assets;
 		
 		for(Race r : assets.races)
+		{
 			rmodel.addElement(r);
-		
-		
+		}
 	}
-	
-
 
 	@Override
 	public NationRestriction getRestriction() {
-		SacredRaceRestriction res = new SacredRaceRestriction(ng, assets);
+		SacredRaceRestriction res = new SacredRaceRestriction(assets);
 		for(int i =0; i < chosen.getModel().getSize(); i++)
+		{
 			res.possibleRaceNames.add(chosen.getModel().getElementAt(i).name);
+		}
+		
 		return res;
 	}
 	
@@ -46,19 +42,19 @@ public class SacredRaceRestriction extends TwoListRestriction<Race> {
 			return true;
 		}
 		
-		boolean pass = false;
 		for(Unit u : n.generateUnitList("sacred"))
+		{
 			if(possibleRaceNames.contains(u.race.name))
-				pass = true;
-		
-	
-		
-		return pass;
+			{
+				return true;
+			}
+		}	
+		return false;
 	}
-	
-	@Override
-	public NationRestriction getInstanceOf() {
-		return new SacredRaceRestriction(ng, assets);
-	}
-	
+
+    @Override
+    public RestrictionType getType()
+    {
+        return RestrictionType.SacredRace;
+    }	
 }

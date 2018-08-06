@@ -1,11 +1,8 @@
 package nationGen.restrictions;
 
-
-
 import java.util.List;
 import java.util.ArrayList;
 
-import nationGen.NationGen;
 import nationGen.NationGenAssets;
 import nationGen.entities.Race;
 import nationGen.nation.Nation;
@@ -13,31 +10,27 @@ import nationGen.units.Unit;
 
 public class NoUnitOfRaceRestriction extends TwoListRestrictionWithComboBox<Race, String> {
 	public List<String> possibleRaceNames = new ArrayList<String>();
-	
-	private NationGen ng;
+
 	private NationGenAssets assets;
 	
 	private String[] ownoptions = {"All", "Troops", "Commanders", "Sacred troops"};
-	public NoUnitOfRaceRestriction(NationGen ng, NationGenAssets assets)
+	public NoUnitOfRaceRestriction(NationGenAssets assets)
 	{
-		super(ng, "Nation needs to not have any units of a race on the right box", "No unit of race");
-		this.ng = ng;
+		super("Nation needs to not have any units of a race on the right box", "No unit of race");
 		this.assets = assets;
 		
 		this.comboboxlabel = "Units to match:";
 		for(Race r : assets.races)
+		{
 			rmodel.addElement(r);
+		}
 		
 		this.comboboxoptions = ownoptions;
-		
-		
 	}
 	
-
-
 	@Override
 	public NationRestriction getRestriction() {
-		NoUnitOfRaceRestriction res = new NoUnitOfRaceRestriction(ng, assets);
+		NoUnitOfRaceRestriction res = new NoUnitOfRaceRestriction(assets);
 		for(int i =0; i < chosen.getModel().getSize(); i++)
 			res.possibleRaceNames.add(chosen.getModel().getElementAt(i).name);
 		
@@ -70,15 +63,14 @@ public class NoUnitOfRaceRestriction extends TwoListRestrictionWithComboBox<Race
 		if(!pass && comboselection.equals("Sacred troops"))
 			for(Unit u : n.generateUnitList("sacred"))
 				if(possibleRaceNames.contains(u.race.name))
-					pass = true;
-		
+					pass = true;	
 
 		return !pass;
 	}
-	
-	@Override
-	public NationRestriction getInstanceOf() {
-		return new NoUnitOfRaceRestriction(ng, assets);
-	}
-	
+
+    @Override
+    public RestrictionType getType()
+    {
+        return RestrictionType.NoUnitOfRace;
+    }
 }

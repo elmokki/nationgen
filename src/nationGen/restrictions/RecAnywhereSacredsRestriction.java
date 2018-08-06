@@ -5,7 +5,6 @@ import java.awt.LayoutManager;
 
 import javax.swing.JPanel;
 
-import nationGen.NationGen;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
@@ -14,12 +13,10 @@ import nationGen.units.Unit;
  * @author Flashfire
  * Class intends to filter out nations that have recruit anywhere sacreds.
  */
-public class RecAnywhereSacredsRestriction extends NationRestriction {
+public class RecAnywhereSacredsRestriction implements NationRestriction {
 
-	private NationGen ng; //everyone else needs one of these boys. May as well have it I suppose.
-	public RecAnywhereSacredsRestriction(NationGen nationGen)
+	public RecAnywhereSacredsRestriction()
 	{
-		this.ng = nationGen;
 	}
 	
 	@Override
@@ -29,7 +26,7 @@ public class RecAnywhereSacredsRestriction extends NationRestriction {
 
 	@Override
 	public NationRestriction getRestriction() {
-		return new RecAnywhereSacredsRestriction(ng);
+		return new RecAnywhereSacredsRestriction();
 	}
 
 	@Override
@@ -54,9 +51,9 @@ public class RecAnywhereSacredsRestriction extends NationRestriction {
 		return "Recruit Anywhere Sacred";
 	}
 
-	@Override
-	public NationRestriction getInstanceOf() {
-		return new RecAnywhereSacredsRestriction(ng);
-	}
-
+    @Override
+    public RestrictionType getType()
+    {
+        return RestrictionType.RecAnywhereSacreds;
+    }
 }
