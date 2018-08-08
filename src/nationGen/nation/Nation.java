@@ -469,9 +469,9 @@ public class Nation {
 				}
 				posaff.remove(startaff);
 			}
-			
+		
+		    cycles--;
 		}
-		cycles--;
 		posaff = null;
 		System.gc();
 	}
