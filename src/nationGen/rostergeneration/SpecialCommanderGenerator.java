@@ -29,6 +29,7 @@ public class SpecialCommanderGenerator {
 	{
 		this.n = n;
 		this.ng = ng;
+		this.assets = assets;
 		this.chandler = new ChanceIncHandler(n);
 		this.r = new Random(n.random.nextInt());
 	}
