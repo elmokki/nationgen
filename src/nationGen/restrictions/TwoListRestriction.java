@@ -14,6 +14,8 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 /**
  * Class for generic restrictions that contain picking options from list.
@@ -77,6 +79,19 @@ public abstract class TwoListRestriction<E> implements NationRestriction, Action
 			textfield = new JTextField(textfieldDefaultText);
 			tpanel.add(textfield);
 			top.add(tpanel);
+			
+	         // Listen for changes in the text. UGH
+            textfield.getDocument().addDocumentListener(new DocumentListener() {
+              public void changedUpdate(DocumentEvent e) {
+                  textFieldUpdate();
+              }
+              public void removeUpdate(DocumentEvent e) {
+                  textFieldUpdate();
+              }
+              public void insertUpdate(DocumentEvent e) {
+                  textFieldUpdate();
+              }
+            });
 		}
 		
 		addButton = new JButton("Add");
@@ -132,4 +147,6 @@ public abstract class TwoListRestriction<E> implements NationRestriction, Action
 		}
 	}
 	
+	protected void textFieldUpdate() 
+	{}
 }

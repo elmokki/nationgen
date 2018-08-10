@@ -15,6 +15,8 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 /**
  * Extension for TwoListRestriction with a custom-type combo box!
@@ -68,6 +70,19 @@ public abstract class TwoListRestrictionWithComboBox<E, F> extends TwoListRestri
 			textfield = new JTextField(textfieldDefaultText);
 			tpanel.add(textfield);
 			top.add(tpanel);
+			
+	        // Listen for changes in the text.
+	        textfield.getDocument().addDocumentListener(new DocumentListener() {
+	          public void changedUpdate(DocumentEvent e) {
+	              textFieldUpdate();
+	          }
+	          public void removeUpdate(DocumentEvent e) {
+	              textFieldUpdate();
+	          }
+	          public void insertUpdate(DocumentEvent e) {
+	              textFieldUpdate();
+	          }
+	        });
 		}
 		
 		addButton = new JButton("Add");

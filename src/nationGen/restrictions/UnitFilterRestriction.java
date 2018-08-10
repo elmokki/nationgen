@@ -25,8 +25,8 @@ public class UnitFilterRestriction extends TwoListRestrictionWithComboBox<String
 				rmodel.addElement(str + ": " + f);
 		
 		this.comboboxoptions = ownoptions;
-		
-		
+		this.extraTextField = true;
+		this.textFieldLabel = "Search:";
 	}
 	
 
@@ -92,4 +92,20 @@ public class UnitFilterRestriction extends TwoListRestrictionWithComboBox<String
         return RestrictionType.UnitFilter;
     }
 	
+    @Override
+    protected void textFieldUpdate()
+    {       
+        rmodel.clear();
+        for(String str : assets.filters.keySet())
+        {
+            for(Filter f : assets.filters.get(str))
+            {
+                String add = str + ": " + f;
+                if (add.contains(textfield.getText()) || textfield.getText().length() == 0)
+                {
+                    rmodel.addElement(add);
+                }
+            }
+        }
+    }
 }
