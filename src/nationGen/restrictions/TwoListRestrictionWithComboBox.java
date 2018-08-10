@@ -38,6 +38,7 @@ public abstract class TwoListRestrictionWithComboBox<E, F> extends TwoListRestri
 	protected JComboBox<F> combobox = null;
 	protected String comboboxlabel = "Undefined label";
 	protected F[] comboboxoptions = null;
+	private int index = 0;
 	public F comboselection = null;
 	@Override
 	public void getGUI(JPanel panel) {
@@ -56,6 +57,7 @@ public abstract class TwoListRestrictionWithComboBox<E, F> extends TwoListRestri
 		tpanel2.add(new JLabel(comboboxlabel));
 		combobox = new JComboBox<F>(comboboxoptions);
 		combobox.addItemListener(this);
+	    combobox.setSelectedIndex(index);
 		tpanel2.add(combobox);
 		top.add(tpanel2);
 		
@@ -119,7 +121,10 @@ public abstract class TwoListRestrictionWithComboBox<E, F> extends TwoListRestri
 	public void itemStateChanged(ItemEvent arg0) {
 		
 		if(arg0.getStateChange() == 1)
+		{
 			this.comboselection = (F)combobox.getSelectedItem();
+			this.index = combobox.getSelectedIndex();
+		}
 		
 	}
 
