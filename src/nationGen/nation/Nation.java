@@ -882,38 +882,6 @@ public class Nation {
 
 	}
 	
-	/*
-	private void addFilters()
-	{
-		ChanceIncHandler chandler = new ChanceIncHandler(this);
-		List<Filter> filters = ChanceIncHandler.retrieveFilters("nationfilters", "default_nationfilters", this.nationGen.filters, null, this.races.get(0));
-		
-		int count = 0;
-		if(random.nextDouble() > 0.5)
-		{	
-			count++;
-			if(random.nextDouble() > 0.75)
-			{	
-				count++;
-			}
-		}
-		
-		for(int i = 0; i < count; i++)
-		{
-			if(filters.size() == 0)
-				break;
-			
-			Filter f = Filter.getRandom(random, chandler.handleChanceIncs(filters));
-			chandler.removeRelated(f, filters);
-			this.appliedfilters.add(f);
-			for(Command c : f.getCommands())
-				this.handleCommand(this.commands, c);
-
-		}
-		
-	}
-	*/
-	
 	public List<List<Unit>> getMagesInSeparateLists()
 	{
 		List<Unit> all = this.generateComList("mages");
