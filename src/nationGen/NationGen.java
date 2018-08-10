@@ -186,6 +186,7 @@ public class NationGen
             // Check abort after unpausing so that if you pause and then abort, you don't generate a nation.
             if (shouldAbort)
             {
+                 totalfailed += failedcount;
                  break;
             }
             

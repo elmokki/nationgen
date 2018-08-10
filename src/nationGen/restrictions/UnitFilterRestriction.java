@@ -9,7 +9,7 @@ import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
 public class UnitFilterRestriction extends TwoListRestrictionWithComboBox<String, String> {
-	public List<String> possibleRaceNames = new ArrayList<String>();
+	public List<String> possibleFilterNames = new ArrayList<String>();
 	
 	private NationGenAssets assets;
 	
@@ -25,8 +25,8 @@ public class UnitFilterRestriction extends TwoListRestrictionWithComboBox<String
 				rmodel.addElement(str + ": " + f);
 		
 		this.comboboxoptions = ownoptions;
-		
-		
+		this.extraTextField = true;
+		this.textFieldLabel = "Search:";
 	}
 	
 
@@ -35,7 +35,7 @@ public class UnitFilterRestriction extends TwoListRestrictionWithComboBox<String
 	public NationRestriction getRestriction() {
 		UnitFilterRestriction res = new UnitFilterRestriction(assets);
 		for(int i =0; i < chosen.getModel().getSize(); i++)
-			res.possibleRaceNames.add(chosen.getModel().getElementAt(i));
+			res.possibleFilterNames.add(chosen.getModel().getElementAt(i));
 		
 		res.comboselection = this.comboselection;
 		return res;
@@ -43,9 +43,9 @@ public class UnitFilterRestriction extends TwoListRestrictionWithComboBox<String
 	
 	@Override
 	public boolean doesThisPass(Nation n) {
-		if(possibleRaceNames.size() == 0)
+		if(possibleFilterNames.size() == 0)
 		{
-			System.out.println("Units of filter nation restriction has no races set!");
+			System.out.println("Units of filter restriction has no filters set!");
 			return true;
 		}
 		
@@ -71,7 +71,7 @@ public class UnitFilterRestriction extends TwoListRestrictionWithComboBox<String
 	{
 		for(Unit u : list)
 		{
-			for(String str : possibleRaceNames)
+			for(String str : possibleFilterNames)
 			{
 				int index = str.indexOf(": ");
 				String comp = str.substring(index + 2);
@@ -92,4 +92,20 @@ public class UnitFilterRestriction extends TwoListRestrictionWithComboBox<String
         return RestrictionType.UnitFilter;
     }
 	
+    @Override
+    protected void textFieldUpdate()
+    {       
+        rmodel.clear();
+        for(String str : assets.filters.keySet())
+        {
+            for(Filter f : assets.filters.get(str))
+            {
+                String add = str + ": " + f;
+                if (add.contains(textfield.getText()) || textfield.getText().length() == 0)
+                {
+                    rmodel.addElement(add);
+                }
+            }
+        }
+    }
 }

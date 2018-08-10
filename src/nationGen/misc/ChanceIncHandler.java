@@ -178,10 +178,6 @@ public class ChanceIncHandler {
 		{
 			for(Filter f : u.appliedFilters)
 				miscincs.addAll(f.themeincs);
-		
-			List<String> unit_miscincs = new ArrayList<String>();
-			for(Filter f : u.appliedFilters)
-				unit_miscincs.addAll(f.themeincs);
 		}
 
 		

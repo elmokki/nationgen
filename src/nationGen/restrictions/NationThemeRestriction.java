@@ -22,6 +22,8 @@ public class NationThemeRestriction extends TwoListRestriction<String>  {
 				rmodel.addElement(str + " - " + t.toString());
 		
 		
+		this.extraTextField = true;
+	    this.textFieldLabel = "Search:";
 	}
 
 	@Override
@@ -76,5 +78,22 @@ public class NationThemeRestriction extends TwoListRestriction<String>  {
     public RestrictionType getType()
     {
         return RestrictionType.NationTheme;
+    }
+    
+    @Override
+    protected void textFieldUpdate()
+    {
+        rmodel.clear();
+        for(String str : assets.themes.keySet())
+        {
+            for(Theme t : assets.themes.get(str))
+            {
+                String add = str + " - " + t.toString();
+                if (add.contains(textfield.getText()) || textfield.getText().length() == 0)
+                {
+                    rmodel.addElement(add);
+                }
+            }
+        }
     }
 }
