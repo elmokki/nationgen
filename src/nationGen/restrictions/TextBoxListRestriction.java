@@ -36,6 +36,7 @@ public abstract class TextBoxListRestriction implements NationRestriction, Actio
 	protected JComboBox<String> combobox = null;
 	protected String comboboxlabel = "Undefined label";
 	protected String[] comboboxoptions = null;
+	private int index = 0;
 	public String comboselection = null;
 	
 	public TextBoxListRestriction(String text, String name)
@@ -80,6 +81,7 @@ public abstract class TextBoxListRestriction implements NationRestriction, Actio
 			combobox = new JComboBox<String>(comboboxoptions);
 			tpanel2.add(combobox);
 			top.add(tpanel2);
+			combobox.setSelectedIndex(index);
 			combobox.addItemListener(this);
 		}
 		
@@ -143,7 +145,10 @@ public abstract class TextBoxListRestriction implements NationRestriction, Actio
 	public void itemStateChanged(ItemEvent arg0) {
 		
 		if(arg0.getStateChange() == 1)
+		{
 			this.comboselection = (String)combobox.getSelectedItem();
+			index = combobox.getSelectedIndex();
+		}
 		
 	}
 	
