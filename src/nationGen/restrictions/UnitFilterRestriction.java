@@ -14,7 +14,7 @@ public class UnitFilterRestriction extends TwoListRestrictionWithComboBox<String
 
 	private NationGenAssets assets;
 
-	private String[] ownoptions = { "All", "Troops", "Commanders", "Sacred troops", "None" };
+	private String[] ownoptions = { "All", "Troops", "Commanders", "Sacred troops", "No Troops", "No Commanders" };
 
 	public UnitFilterRestriction(NationGenAssets assets)
 	{
@@ -51,27 +51,22 @@ public class UnitFilterRestriction extends TwoListRestrictionWithComboBox<String
 			return true;
 		}
 
-		String targs = comboselection; // what the filter TARGetS (None applies to "all" of the units)
 		if (comboselection == null)
 		{
-			comboselection = targs = "All";
-		}
-		else if (comboselection.equals("None"))
-		{
-			targs = "All";
+			comboselection = "All";
 		}
 
 		boolean pass = false;
-		if (targs.equals("Troops") || targs.equals("All"))
+		if (comboselection.equals("Troops") || comboselection.equals("No Troops") || comboselection.equals("All"))
 			pass = checkUnits(n.generateTroopList());
 
-		if (!pass && (targs.equals("Commanders") || targs.equals("All")))
+		if (!pass && (comboselection.equals("Commanders") || comboselection.equals("No Commanders") || comboselection.equals("All")))
 			pass = checkUnits(n.generateComList());
 
-		if (!pass && targs.equals("Sacred troops"))
+		if (!pass && comboselection.equals("Sacred troops"))
 			pass = checkUnits(n.generateUnitList("sacred"));
 
-		if (comboselection.equals("None"))
+		if (comboselection.equals("No Commanders") || comboselection.equals("No Troops"))
 		{
 			return !pass;
 		}
