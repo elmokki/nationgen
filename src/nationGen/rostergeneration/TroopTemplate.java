@@ -3,11 +3,9 @@ package nationGen.rostergeneration;
 import java.util.ArrayList;
 import java.util.List;
 
-import nationGen.entities.Entity;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.items.Item;
-import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.ItemSet;
 import nationGen.units.Unit;
 

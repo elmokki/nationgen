@@ -10,6 +10,7 @@ import java.util.Random;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.MagicFilter;
@@ -31,10 +32,12 @@ public class MageGenerator extends TroopGenerator {
 	
 	public List<MagicPattern> possiblePatterns = new ArrayList<MagicPattern>();
 	
+	private NationGenAssets assets;
 	
-	public MageGenerator(NationGen g, Nation n) {
-		super(g, n, "magegen");
+	public MageGenerator(NationGen g, Nation n, NationGenAssets assets) {
+		super(g, n, assets, "magegen");
 	
+		this.assets = assets;
 		loadPatterns();
 	}
 
@@ -580,7 +583,7 @@ public class MageGenerator extends TroopGenerator {
 		// Handle montags
 		for(int i = 1; i <= 3; i++)
 			for(Unit u : this.getMagesOfTier(list, i))
-				unitGen.handleMontagUnits(u, new MageMontagTemplate(nation, nationGen, i), "montagmages");
+				unitGen.handleMontagUnits(u, new MageMontagTemplate(nation, nationGen, assets, i), "montagmages");
 
 		
 		// Diagnostics
@@ -707,7 +710,7 @@ public class MageGenerator extends TroopGenerator {
 				extramages.get(0).commands.add(new Command("#rpcost 2"));
 
 			for(Unit u : extramages)
-				unitGen.handleMontagUnits(u, new MageMontagTemplate(nation, nationGen, 4), "montagmages");
+				unitGen.handleMontagUnits(u, new MageMontagTemplate(nation, nationGen, assets, 4), "montagmages");
 		
 			list.addAll(0, extramages);
 			
@@ -1129,7 +1132,7 @@ public class MageGenerator extends TroopGenerator {
 		
 		for(String set : patternsets)
 		{
-			List<MagicPattern> fetch = nationGen.patterns.get(set);;
+			List<MagicPattern> fetch = assets.patterns.get(set);
 			if(fetch == null)
 				System.out.println("WARNING: Magic path pattern set " + set + " could not be found.");
 			else
@@ -1424,7 +1427,7 @@ public class MageGenerator extends TroopGenerator {
 
 				
 				//List<String> body = new ArrayList<String>();	// Set a temporary null description for priests
-				(new CommanderGenerator(this.nationGen, this.nation)).generateDescription(u, false, false, false);
+				(new CommanderGenerator(this.nationGen, this.nation, assets)).generateDescription(u, false, false, false);
 				//body.add();					
 		
 				//body.add("\"No description\"");
@@ -1791,7 +1794,7 @@ public class MageGenerator extends TroopGenerator {
 			
 			
 			// Get filters
-			List<Filter> filters = ChanceIncHandler.retrieveFilters(lookfor, defaults, nationGen.filters, mages.get(mages.size() - 1).pose, mages.get(mages.size() - 1).race);
+			List<Filter> filters = ChanceIncHandler.retrieveFilters(lookfor, defaults, assets.filters, mages.get(mages.size() - 1).pose, mages.get(mages.size() - 1).race);
 
 			int at = this.random.nextInt(power + 6) - 5; // -4 to power
 			while(moreFilters.size() == 0 && at >= -5)
@@ -1924,7 +1927,7 @@ public class MageGenerator extends TroopGenerator {
 							maxpower = f.power;
 					}
 					else
-						System.out.println("Nation " + nation.seed + " had a null filter for a mage. Power was " + power + " and tier " + tier + ".");
+						System.out.println("Nation " + nation.getSeed() + " had a null filter for a mage. Power was " + power + " and tier " + tier + ".");
 					
 				}
 				power -= maxpower;
@@ -2802,7 +2805,7 @@ public class MageGenerator extends TroopGenerator {
 		
 		if(possibles.size() == 0)
 		{
-			System.out.println("CRITICAL ERROR: No possible pose for " + race.name + " " + posename + " for tier " + tier + ". Nation seed: " + nation.seed +  " and main race " + nation.races.get(0));
+			System.out.println("CRITICAL ERROR: No possible pose for " + race.name + " " + posename + " for tier " + tier + ". Nation seed: " + nation.getSeed() +  " and main race " + nation.races.get(0));
 		}
 		return possibles;
 			

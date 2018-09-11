@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.locks.ReentrantLock;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -43,14 +44,20 @@ import com.elmokki.Generic;
 
 import nationGen.NationGen;
 import nationGen.Settings;
+import nationGen.Settings.SettingsType;
 
 public class GUI extends JFrame implements ActionListener, ItemListener, ChangeListener 
 {
     private static final long serialVersionUID = 1L;
-	
+	private static final String startText = "Start!";
+	private static final String abortText = "Stop and Export";
+	private static final String pauseText = "Pause";
+	private static final String unpauseText = "Unpause";
+    
     JTextPane textPane = new JTextPane();
     JProgressBar progress = new JProgressBar(0, 100);
     JButton startButton;
+    JButton pauseButton;
     JTabbedPane tabs = new JTabbedPane();
     
     JTextField settingtext = new JTextField("0");
@@ -71,8 +78,9 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
     JSlider eraSlider = new JSlider(JSlider.HORIZONTAL, 1, 3, 2);
     JSlider spowerSlider = new JSlider(JSlider.HORIZONTAL, 1, 3, 1);
     
+    private ReentrantLock pauseLock;
     private  NationGen n = null;
-    
+
     public static void main(String[] args) throws Exception
     {
     	if(args.length > 0 && args[0].equals("-commandline"))
@@ -105,11 +113,12 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         JPanel options = new JPanel(new GridLayout(2,2));
         JPanel advoptions = new JPanel(new GridLayout(8,1));
         
+        pauseLock = new ReentrantLock();
+        
         // Restrictions need nationgen;
     	try 
         {
-            n = new NationGen();
-            n.settings = settings;
+            n = new NationGen(pauseLock, settings, new ArrayList<>());
         } 
         catch (IOException e) 
         {
@@ -117,13 +126,18 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
             startButton.setEnabled(false);
             return;
         }
-        rpanel = new RestrictionPane(n);
+    	
+    	// Again, ideally, n.getAssets would never be required. But, at least restriction pane no longer depends on Nationgen.
+        rpanel = new RestrictionPane(n.getAssets());
 
         // Main
         tabs.addTab("Main", panel);
         
-        startButton = new JButton("Start!");
+        startButton = new JButton(startText);
         startButton.addActionListener(this);
+        pauseButton = new JButton(pauseText);
+        pauseButton.setEnabled(false);
+        pauseButton.addActionListener(this);
         seedRandom.addItemListener(this);
         modNameRandom.addItemListener(this);
         advDesc.addItemListener(this);
@@ -164,6 +178,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         east.add(seedpanel);
         east.add(modnamepanel);
         east.add(startButton);
+        east.add(pauseButton);
      
         panel.setBorder(new EmptyBorder(new Insets(5, 5, 5, 5)));
         //panel.add(progress, BorderLayout.SOUTH);
@@ -266,6 +281,8 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         spowerSlider.setLabelTable(spowerLabelTable);
         spowerSlider.setPaintLabels(true);
         
+        updateAdvancedSettings();
+        
         spower.add(new JLabel("Sacred Power:"));
         spower.add(spowerSlider);
         
@@ -287,8 +304,8 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
     
     private void updateAdvancedSettings()
     {
-    	this.eraSlider.setValue(settings.get("era").intValue());
-    	this.spowerSlider.setValue(settings.get("sacredpower").intValue());
+    	this.eraSlider.setValue(settings.get(SettingsType.era).intValue());
+    	this.spowerSlider.setValue(settings.get(SettingsType.sacredpower).intValue());
 
     }
     
@@ -299,23 +316,23 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         this.setResizable(true);
         initGUI();
     	
-    	if(this.settings.get("drawPreview") == 1.0)
+    	if(this.settings.get(SettingsType.drawPreview) == 1.0)
         {
             preview.setSelected(true);
         }
-    	if(this.settings.get("advancedDescs") == 1.0)
+    	if(this.settings.get(SettingsType.advancedDescs) == 1.0)
         {
             advDesc.setSelected(true);
         }
-    	if(this.settings.get("basicDescs") == 1.0)
+    	if(this.settings.get(SettingsType.basicDescs) == 1.0)
         {
             basicDesc.setSelected(true);
         }
-    	if(this.settings.get("hidevanillanations") == 1.0)
+    	if(this.settings.get(SettingsType.hidevanillanations) == 1.0)
         {
             hideVanillaNations.setSelected(true);
         }
-    	this.eraSlider.setValue((int)Math.round(this.settings.get("era")));
+    	this.eraSlider.setValue((int)Math.round(this.settings.get(SettingsType.era)));
      }
     
     private void updateTextPane(final String text) 
@@ -335,9 +352,9 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         });
     }
     
-    private List<Integer> parseSeeds()
+    private List<Long> parseSeeds()
     {
-    	List<Integer> l = new ArrayList<>();
+    	List<Long> l = new ArrayList<>();
     	String text = seeds.getText();
     	
     	String[] parts = text.split(",");
@@ -348,7 +365,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
             {
                 if(Generic.isNumeric(str2.trim()))
                 {
-                    l.add(Integer.parseInt(str2.trim()));
+                    l.add(Long.parseLong(str2.trim()));
                 }
             }
     	}
@@ -387,9 +404,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
     {
     	try 
         {
-            n = new NationGen();
-            n.settings = settings;
-            n.restrictions.addAll(rpanel.getRestrictions());
+            n = new NationGen(pauseLock, settings, rpanel.getRestrictions());
         } 
         catch (IOException e) 
         {
@@ -402,7 +417,9 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
             @Override
             public void run() 
             {
-                startButton.setEnabled(false);
+                startButton.setText(abortText);
+                pauseButton.setEnabled(true);
+                
                 if(!modNameRandom.isSelected())
                 {
                     n.modname = modname.getText();
@@ -417,7 +434,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
                     {
                         if(!seedRandom.isSelected())
                         {
-                            n.generate(Integer.parseInt(amount.getText()), Integer.parseInt(seed.getText()));
+                            n.generate(Integer.parseInt(amount.getText()), Long.parseLong(seed.getText()));
                         }
                         else
                         {
@@ -429,8 +446,16 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
                 {
                     e.printStackTrace();
                 }
-                startButton.setEnabled(true);
-	   
+                finally
+                {
+                    // Reset start button to default state.
+                    startButton.setText(startText);
+                    startButton.setEnabled(true);
+                    
+                    // Reset pause button to default state.
+                    pauseButton.setEnabled(false);
+                    pauseButton.setText(pauseText);
+                }
             }
         };
         thread.start();
@@ -442,39 +467,64 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
     {
         if(e.getSource().equals(startButton))
         {
-            if(modname.getText().length() == 0)
+            if (startButton.getText().equals(startText))
             {
-            System.out.println("Please enter a mod name.");
+                if(modname.getText().length() == 0)
+                {
+                    System.out.println("Please enter a mod name.");
                     //modNameRandom.setSelected(true);
-            return;
-            }
-
-            if(!seedcheckbox.isSelected())
-            {
-                    if(!(Generic.isNumeric(seed.getText()) || seed.getText().equals("Random")))
-                    {
-                            System.out.println("Please enter a numeric seed.");
-                            //seedRandom.setSelected(true);
-                            return;
-                    }
-
-                    if(!Generic.isNumeric(amount.getText()) || Integer.parseInt(amount.getText()) < 1)
-                    {
-                    System.out.println("Please enter a numeric nation amount.");
                     return;
-                    }
+                }
+    
+                if(!seedcheckbox.isSelected())
+                {
+                        if(!(Generic.isNumeric(seed.getText()) || seed.getText().equals("Random")))
+                        {
+                                System.out.println("Please enter a numeric seed.");
+                                //seedRandom.setSelected(true);
+                                return;
+                        }
+    
+                        if(!Generic.isNumeric(amount.getText()) || Integer.parseInt(amount.getText()) < 1)
+                        {
+                        System.out.println("Please enter a numeric nation amount.");
+                        return;
+                        }
+                }
+                else if(this.seedcheckbox.isSelected() && parseSeeds().isEmpty())
+                {
+                        System.out.println("Please specify numeric seeds or disable predefined seeds.");
+                        return;
+                }
+                settingtext.setText(settings.getSettingInteger() + "");
+                process();
             }
-            else if(this.seedcheckbox.isSelected() && parseSeeds().isEmpty())
+            else /*if (startButton.getText().equals(abortText)) */
             {
-                    System.out.println("Please specify numeric seeds or disable predefined seeds.");
-                    return;
+                // Abort! But, we must unpause before we abort, else the other thread will be RIP
+                if (pauseLock.isHeldByCurrentThread())
+                {
+                    pauseLock.unlock();
+                }
+                n.abortNationGeneration();
             }
-            settingtext.setText(settings.getSettingInteger() + "");
-            process();
         }
         if(e.getSource().equals(settingtext))
         {
             settingtext.setText(settings.getSettingInteger() + "");
+        }
+        if(e.getSource().equals(pauseButton))
+        {
+            if (pauseButton.getText().equals(pauseText))
+            {
+                pauseButton.setText(unpauseText);
+                pauseLock.lock();
+            }
+            else
+            {
+                pauseButton.setText(pauseText);
+                pauseLock.unlock();
+            }
         }
     }
 	
@@ -522,19 +572,19 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
             }
             if(source == this.preview)
             {
-                settings.put("drawPreview", value);
+                settings.put(SettingsType.drawPreview, value);
             }
             if(source == this.advDesc)
             {
-                settings.put("advancedDescs", value);
+                settings.put(SettingsType.advancedDescs, value);
             }
             if(source == this.basicDesc)
             {
-                settings.put("basicDescs", value);
+                settings.put(SettingsType.basicDescs, value);
             }
             if(source == this.hideVanillaNations)
             {
-                settings.put("hidevanillanations", value);
+                settings.put(SettingsType.hidevanillanations, value);
             }
             if(source == this.seedcheckbox)
             {
@@ -552,12 +602,12 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         Object source = e.getSource();
         if(source == this.eraSlider && eraSlider.getValueIsAdjusting())
         {
-            settings.put("era", eraSlider.getValue());
+            settings.put(SettingsType.era, eraSlider.getValue());
             settingtext.setText(settings.getSettingInteger() + "");
         }
         if(source == this.spowerSlider && spowerSlider.getValueIsAdjusting())
         {
-            settings.put("sacredpower", spowerSlider.getValue());
+            settings.put(SettingsType.sacredpower, spowerSlider.getValue());
             settingtext.setText(settings.getSettingInteger() + "");
         }
     }

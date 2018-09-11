@@ -6,6 +6,7 @@ import java.util.Random;
 
 import com.elmokki.Generic;
 
+import nationGen.NationGenAssets;
 import nationGen.entities.Filter;
 import nationGen.items.Item;
 import nationGen.misc.ChanceIncHandler;
@@ -16,10 +17,13 @@ import nationGen.units.Unit;
 public class NationDescriber {
 	private Nation n;
 	private Random random;
-	public NationDescriber(Nation n)
+	private NationGenAssets assets;
+	
+	public NationDescriber(Nation n, NationGenAssets assets)
 	{
 		random = new Random(n.random.nextInt());
 		this.n = n;
+		this.assets = assets;
 		describeTroops();
 		describeCommanders();
 	}
@@ -112,7 +116,7 @@ public class NationDescriber {
 		String[] roles = {"ranged", "infantry", "mounted", "chariot", "sacred"};
 		
 		ChanceIncHandler chandler = new ChanceIncHandler(n);
-		List<Filter> descs = ChanceIncHandler.retrieveFilters("troopdescriptions", "troopdescs", n.nationGen.descriptions, null, n.races.get(0));
+		List<Filter> descs = ChanceIncHandler.retrieveFilters("troopdescriptions", "troopdescs", assets.descriptions, null, n.races.get(0));
 		
 		DescriptionReplacer dr = new DescriptionReplacer(n);
 		for(String role : roles)

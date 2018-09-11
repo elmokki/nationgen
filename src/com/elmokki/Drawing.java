@@ -3,18 +3,12 @@ package com.elmokki;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Toolkit;
 import java.awt.color.ColorSpace;
 import java.awt.image.BufferedImage;
 import java.awt.image.BufferedImageOp;
 import java.awt.image.ColorConvertOp;
-import java.awt.image.FilteredImageSource;
-import java.awt.image.ImageFilter;
-import java.awt.image.ImageProducer;
 import java.awt.image.LookupOp;
 import java.awt.image.LookupTable;
-import java.awt.image.RGBImageFilter;
 import java.awt.image.RescaleOp;
 import java.awt.image.ShortLookupTable;
 import java.io.BufferedOutputStream;
@@ -24,8 +18,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Random;
-
-import javax.imageio.ImageIO;
 
 
 

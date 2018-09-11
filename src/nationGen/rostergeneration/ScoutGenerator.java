@@ -9,6 +9,7 @@ import java.util.Random;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Pose;
@@ -25,8 +26,8 @@ public class ScoutGenerator extends TroopGenerator {
 
 
 
-	public ScoutGenerator(NationGen g, Nation n) {
-		super(g, n, "scoutgen");
+	public ScoutGenerator(NationGen g, Nation n, NationGenAssets assets) {
+		super(g, n, assets, "scoutgen");
 	}
 
 	public Unit generateScout(Race race)

@@ -7,6 +7,7 @@ import java.util.Random;
 
 import com.elmokki.Generic;
 
+import nationGen.NationGenAssets;
 import nationGen.entities.Filter;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
@@ -15,7 +16,7 @@ import nationGen.units.Unit;
 
 public class SiteGenerator {
 
-	public static void generateSites(Nation n)
+	public static void generateSites(Nation n, NationGenAssets assets)
 	{
 		Random random = new Random(n.random.nextInt());
 		
@@ -71,7 +72,7 @@ public class SiteGenerator {
 		
 		Filter f = null;
 		ChanceIncHandler chandler = new ChanceIncHandler(n);
-		List<Filter> filters = ChanceIncHandler.retrieveFilters("sitefeatures", "default_sitefeatures", n.nationGen.miscdef, null, n.races.get(0));
+		List<Filter> filters = ChanceIncHandler.retrieveFilters("sitefeatures", "default_sitefeatures", assets.miscdef, null, n.races.get(0));
 		f = chandler.getRandom(filters);
 		if(!f.name.equals("nothing"))
 			stuff++;

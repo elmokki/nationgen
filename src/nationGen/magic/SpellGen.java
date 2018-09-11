@@ -7,7 +7,7 @@ import java.util.Random;
 
 import com.elmokki.Generic;
 
-import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.misc.ChanceIncHandler;
@@ -16,23 +16,21 @@ import nationGen.units.Unit;
 
 public class SpellGen {
 	private Nation n;
-	private NationGen ng;
 	private Random r;
 	
-	public SpellGen(NationGen ng, Nation n)
+	public SpellGen(Nation n)
 	{
 		this.n = n;
-		this.ng = ng;
 		this.r = new Random(n.random.nextInt());
 	}
 	
 	
-	public void execute()
+	public void execute(NationGenAssets assets)
 	{
 		
 		// Guaranteed spells
 		List<Filter> possible = new ArrayList<Filter>();
-		possible.addAll(ChanceIncHandler.retrieveFilters("guaranteedspells", "guaranteedspells_default", ng.spells, null, n.races.get(0)));
+		possible.addAll(ChanceIncHandler.retrieveFilters("guaranteedspells", "guaranteedspells_default", assets.spells, null, n.races.get(0)));
 		ChanceIncHandler chandler = new ChanceIncHandler(n);
 		
 		LinkedHashMap<Filter, Double> map = chandler.handleChanceIncs(possible);
@@ -105,7 +103,7 @@ public class SpellGen {
 		
 		
 		possible.clear();
-		possible.addAll(ChanceIncHandler.retrieveFilters("randomspells", "randomspells_default", ng.spells, null, n.races.get(0)));
+		possible.addAll(ChanceIncHandler.retrieveFilters("randomspells", "randomspells_default", assets.spells, null, n.races.get(0)));
 		for(int i = 0; i < randompicks; i++)
 		{
 			Filter f = chandler.getRandom(possible);
