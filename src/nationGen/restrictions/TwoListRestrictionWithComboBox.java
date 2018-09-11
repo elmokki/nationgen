@@ -1,20 +1,9 @@
 package nationGen.restrictions;
 
-
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-
-
-
-
-
-
-
-
-
 
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
@@ -26,21 +15,20 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
-
-
-import nationGen.NationGen;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 /**
  * Extension for TwoListRestriction with a custom-type combo box!
  * @author Elmokki
  *
  */
-public class TwoListRestrictionWithComboBox<E, F> extends TwoListRestriction<E> implements ActionListener, ItemListener  {
+public abstract class TwoListRestrictionWithComboBox<E, F> extends TwoListRestriction<E> implements ActionListener, ItemListener  {
 	
 
-	public TwoListRestrictionWithComboBox(NationGen ng, String text, String name)
+	public TwoListRestrictionWithComboBox(String text, String name)
 	{
-		super(ng, text, name);
+		super(text, name);
 	}
 	
 	@Override
@@ -52,6 +40,7 @@ public class TwoListRestrictionWithComboBox<E, F> extends TwoListRestriction<E> 
 	protected JComboBox<F> combobox = null;
 	protected String comboboxlabel = "Undefined label";
 	protected F[] comboboxoptions = null;
+	private int index = 0;
 	public F comboselection = null;
 	@Override
 	public void getGUI(JPanel panel) {
@@ -70,6 +59,7 @@ public class TwoListRestrictionWithComboBox<E, F> extends TwoListRestriction<E> 
 		tpanel2.add(new JLabel(comboboxlabel));
 		combobox = new JComboBox<F>(comboboxoptions);
 		combobox.addItemListener(this);
+	    combobox.setSelectedIndex(index);
 		tpanel2.add(combobox);
 		top.add(tpanel2);
 		
@@ -80,6 +70,19 @@ public class TwoListRestrictionWithComboBox<E, F> extends TwoListRestriction<E> 
 			textfield = new JTextField(textfieldDefaultText);
 			tpanel.add(textfield);
 			top.add(tpanel);
+			
+	        // Listen for changes in the text.
+	        textfield.getDocument().addDocumentListener(new DocumentListener() {
+	          public void changedUpdate(DocumentEvent e) {
+	              textFieldUpdate();
+	          }
+	          public void removeUpdate(DocumentEvent e) {
+	              textFieldUpdate();
+	          }
+	          public void insertUpdate(DocumentEvent e) {
+	              textFieldUpdate();
+	          }
+	        });
 		}
 		
 		addButton = new JButton("Add");
@@ -110,13 +113,6 @@ public class TwoListRestrictionWithComboBox<E, F> extends TwoListRestriction<E> 
 	}
 
 	@Override
-	public NationRestriction getRestriction() {
-		TwoListRestrictionWithComboBox<E, F> res = new TwoListRestrictionWithComboBox<E, F>(ng, text, name);
-		return res;
-	}
-
-
-	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		
 		// Add button
@@ -135,21 +131,15 @@ public class TwoListRestrictionWithComboBox<E, F> extends TwoListRestriction<E> 
 		}
 	}
 
-	
-
-	@Override
-	public NationRestriction getInstanceOf() {
-		return new TwoListRestrictionWithComboBox<E, F>(ng, text, name);
-	}
-
-	
-
 	@SuppressWarnings("unchecked")
 	@Override
 	public void itemStateChanged(ItemEvent arg0) {
 		
 		if(arg0.getStateChange() == 1)
+		{
 			this.comboselection = (F)combobox.getSelectedItem();
+			this.index = combobox.getSelectedIndex();
+		}
 		
 	}
 

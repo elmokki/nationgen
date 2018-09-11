@@ -4,14 +4,9 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.io.BufferedReader;
-import java.io.DataInputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
@@ -19,28 +14,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
+import java.util.concurrent.locks.ReentrantLock;
 
 import com.elmokki.Dom3DB;
 import com.elmokki.Drawing;
-import com.elmokki.Generic;
 
-import nationGen.entities.Entity;
+import nationGen.Settings.SettingsType;
 import nationGen.entities.Filter;
-import nationGen.entities.Flag;
-import nationGen.entities.MagicItem;
-import nationGen.entities.Pose;
 import nationGen.entities.Race;
-import nationGen.entities.Theme;
 import nationGen.items.CustomItem;
 import nationGen.items.Item;
-import nationGen.magic.MagicPattern;
 import nationGen.magic.Spell;
 import nationGen.misc.Command;
 import nationGen.misc.PreviewGenerator;
-import nationGen.misc.ResourceStorage;
 import nationGen.misc.Site;
-import nationGen.naming.NamePart;
 import nationGen.naming.NameGenerator;
 import nationGen.naming.NamingHandler;
 import nationGen.naming.NationAdvancedSummarizer;
@@ -57,79 +44,57 @@ public class NationGen
     public static String version = "0.7.0-RC7";
     public static String date = "6th of May 2018";
 
-    public List<NationRestriction> restrictions = new ArrayList<>();
+    private List<NationRestriction> restrictions = new ArrayList<>();
 
-    public ResourceStorage<MagicPattern> patterns = new ResourceStorage<>(MagicPattern.class, this);
-    public ResourceStorage<Pose> poses = new ResourceStorage<>(Pose.class, this);
-    public ResourceStorage<Filter> filters = new ResourceStorage<>(Filter.class, this);
-    public ResourceStorage<NamePart> magenames = new ResourceStorage<>(NamePart.class, this);
-    public ResourceStorage<Filter> miscdef = new ResourceStorage<>(Filter.class, this);
-    public ResourceStorage<Flag> flagparts = new ResourceStorage<>(Flag.class, this);
-    public ResourceStorage<MagicItem> magicitems = new ResourceStorage<>(MagicItem.class, this);
-    public ResourceStorage<NamePart> miscnames = new ResourceStorage<>(NamePart.class, this);
-    public ResourceStorage<Filter> templates = new ResourceStorage<>(Filter.class, this);
-    public ResourceStorage<Filter> descriptions = new ResourceStorage<>(Filter.class, this);
-    public ResourceStorage<ShapeShift> monsters = new ResourceStorage<>(ShapeShift.class, this);
-    public ResourceStorage<Theme> themes = new ResourceStorage<>(Theme.class, this);
-    public ResourceStorage<Filter> spells = new ResourceStorage<>(Filter.class, this);
-
-    public List<String> secondShapeMountCommands = new ArrayList<>();
-    public List<String> secondShapeNonMountCommands = new ArrayList<>();
-    public List<String> secondShapeRacePoseCommands = new ArrayList<>();
-
+    private NationGenAssets assets;
+   
     public Dom3DB weapondb;
     public Dom3DB armordb;
     public Dom3DB units;
     public Dom3DB sites;
-    public Dom3DB nations;
 
     public Settings settings;
-    public List<CustomItem> customitems = new ArrayList<>();
-    public List<Filter> customspells = new ArrayList<>();
-    public List<ShapeShift> secondshapes = new ArrayList<>();
-    public List<Race> races = new ArrayList<>();
-    public IdHandler idHandler;
+    private CustomItemsHandler customItemsHandler;
+    private IdHandler idHandler;
 
     public List<ShapeChangeUnit> forms = new ArrayList<>();
-    public List<CustomItem> chosenCustomitems = new ArrayList<>();
-    public List<CustomItem> pickedCustomitems = new ArrayList<>();
-    public List<Spell> spellsToWrite = new ArrayList<>();
-    public List<Spell> freeSpells = new ArrayList<>();
+    private List<Spell> spellsToWrite = new ArrayList<>();
+    private List<Spell> freeSpells = new ArrayList<>();
 
+    private ReentrantLock pauseLock;
+    private boolean shouldAbort = false;
+    
     public NationGen() throws IOException
     {
+        // For versions of this that don't need pausing, simply create a dummy lock object to be used.
+        this(new ReentrantLock(), new Settings(), new ArrayList<>());
+    }
+    
+    public NationGen(ReentrantLock pauseLock, Settings settings, List<NationRestriction> restrictions) throws IOException
+    {
+        this.pauseLock = pauseLock;
+        this.settings = settings;
+        this.restrictions = restrictions;
+        
         //System.out.println("Dominions 4 NationGen version " + version + " (" + date + ")");
         //System.out.println("------------------------------------------------------------------");
 
         System.out.print("Loading settings... ");
         settings = new Settings();
         System.out.println("done!");
-
+                
         try 
         {
             System.out.print("Loading Larzm42's Dom5 Mod Inspector database... ");
             loadDom3DB();
             System.out.println("done!");
             System.out.print("Loading definitions... ");
-            customitems.addAll(Item.readFile(this, "./data/items/customitems.txt", CustomItem.class));
-            customspells.addAll(Item.readFile(this, "./data/spells/custom_spells.txt", Filter.class));
-            patterns.load("./data/magic/magicpatterns.txt");
-            poses.load("./data/poses/poses.txt");
-            filters.load("./data/filters/filters.txt");
-            magenames.load("./data/names/magenames/magenames.txt");
-            miscnames.load("./data/names/naming.txt");
-            templates.load("./data/templates/templates.txt");
-            descriptions.load("./data/descriptions/descriptions.txt");
-            themes.load("./data/themes/themes.txt");
-            spells.load("./data/spells/spells.txt");
-            monsters.load("./data/monsters/monsters.txt");
-            loadRaces("./data/races/races.txt");
-            secondshapes = Entity.readFile(this, "./data/shapes/secondshapes.txt", ShapeShift.class);
-            miscdef.load("./data/misc/miscdef.txt");
-            flagparts.load("./data/flags/flagdef.txt");
-            magicitems.load("./data/items/magicweapons.txt");
-            loadSecondShapeInheritance("/data/shapes/secondshapeinheritance.txt");
-
+            customItemsHandler = new CustomItemsHandler(
+                    Item.readFile(this, "./data/items/customitems.txt", CustomItem.class), weapondb, armordb);
+            assets = new NationGenAssets(this);
+            assets.loadRaces("./data/races/races.txt", this); // ugh.  Looks like *somehow* assets is circularly depended in races.
+            // Oh, it's totally because of the getassets method causing dependency shenanigans.
+            
             System.out.println("done!");
         } 
         catch (Exception e) 
@@ -138,44 +103,35 @@ public class NationGen
             System.out.println("Error loading file " + e.getMessage());
         }
 
-        this.customitems.forEach((CustomItem ci) -> 
-        {
-            if (ci.armor) 
-            {
-                NationGen.this.armordb.addToMap(ci.name, ci.getHashMap());
-            } 
-            else 
-            {
-                NationGen.this.weapondb.addToMap(ci.name, ci.getHashMap());
-            }
-        });
         System.gc();
         //this.writeDebugInfo();
     }
 	
-    public int seed = 0;
+    public long seed = 0;
     public String modname = "";
     public boolean manyseeds = false;
 
     public void generate(int amount) throws IOException
     {
         Random random = new Random();
-        generate(amount, random.nextInt(), null);
+        generate(amount, random.nextLong(), null);
     }
     
-    public void generate(int amount, int seed) throws IOException
+    public void generate(int amount, long seed) throws IOException
     {
         generate(amount, seed, null);
     }
     
-    public void generate(List<Integer> seeds) throws IOException
+    public void generate(List<Long> seeds) throws IOException
     {
         Random random = new Random();
-        generate(1, random.nextInt(), seeds);
+        generate(1, random.nextLong(), seeds);
     }
 	
-    private void generate(int amount, int seed, List<Integer> seeds) throws IOException
+    private void generate(int amount, long seed, List<Long> seeds) throws IOException
     {
+        shouldAbort = false; // Don't abort before you even start.
+        
         this.seed = seed;
         
         Random random = new Random(seed);
@@ -191,7 +147,9 @@ public class NationGen
         // Start
         idHandler = new IdHandler();
         idHandler.loadFile("forbidden_ids.txt");
-
+        
+        customItemsHandler.UpdateIDHandler(idHandler);
+        
         if(!manyseeds)
         {
             System.out.println("Generating " + amount + " nations with seed " + seed + ".");
@@ -210,61 +168,94 @@ public class NationGen
         System.out.println("Generating nations...");
         List<Nation> generatedNations = new ArrayList<>();
         Nation newnation = null;
-        int newseed = 0;
+        long newseed = 0;
 
         int count = 0;
         int failedcount = 0;
         int totalfailed = 0;
+        boolean isDebug = settings.get(SettingsType.debug) == 1.0;
         
         while(generatedNations.size() < amount)
-        {
+        {  
+            // Anyhow, a simple way to handle pausing is just to acquire a lock (which will be locked in the UI thread).
+            pauseLock.lock();
+            
+            // Then, to avoid hanging the UI thread during generation, we immediately release the lock.
+            pauseLock.unlock();
+            
+            // Check abort after unpausing so that if you pause and then abort, you don't generate a nation.
+            if (shouldAbort)
+            {
+                 totalfailed += failedcount;
+                 break;
+            }
+            
             count++;
             if(!manyseeds)
             {
-                newseed = random.nextInt();
+                newseed = random.nextLong();
             }
             else
             {
                 newseed = seeds.get(generatedNations.size());
             }
 
-            System.out.print("- Generating nation " + (generatedNations.size() + 1) + "/" + amount + " (seed " + newseed);
-            
-            if(settings.get("debug") == 1.0)
+            if (isDebug)
             {
+                System.out.print("- Generating nation " + (generatedNations.size() + 1) + "/" + amount + " (seed " + newseed);
                 System.out.print(" / " + ZonedDateTime.now().toLocalTime().truncatedTo(ChronoUnit.SECONDS));
+                System.out.print(")... ");
             }
 
-            System.out.print(")... ");
+            newnation = new Nation(this, newseed, count, restrictions, assets);
 
-            newnation = new Nation(this, newseed, count, restrictions);
-            
-            if(!newnation.passed)
+            if (newnation.passed)
             {
-                ++failedcount;
-                System.out.println("try "+ String.valueOf(failedcount) + ", FAILED RESTRICTION "  + newnation.restrictionFailed);
-            }
-
-            if(newnation.passed)
-            {
+                if (restrictions.size() == 0)
+                {
+                    System.out.format("- Successfully generated nation %d/%d (seed %d)\n",
+                            generatedNations.size() + 1, amount, newseed);
+                } 
+                else
+                {
+                    System.out.format("- After failing %d attempt(s), successfully generated nation %d/%d (seed %d)\n",
+                            failedcount, generatedNations.size() + 1, amount, newseed);
+                }
                 totalfailed += failedcount;
                 failedcount = 0;
-                System.out.println("Done!");
             }
             else
             {
+                ++failedcount;
+                if (isDebug)
+                {
+                    System.out.println("try " + failedcount + ", FAILED RESTRICTION " + newnation.restrictionFailed);
+                } 
+                else if (failedcount % 250 == 0)
+                {
+                    // This is honestly a workaround to showing progress without destroying the UI.
+                    // Ideally, there'd be a label that shows the current gen. But, I'm saving a UI
+                    // rewrite for a future date.
+                    System.out.format("- Failed to generate nation after %d attempts.\n", failedcount);
+                }
                 continue;
             }
 
             // Handle loose ends
             newnation.nationid = idHandler.nextNationId();
-            this.polishNation(newnation);
+            polishNation(newnation);
 
             newnation.name = "Nation " + count;
 
             System.gc();
 
-            generatedNations.add(newnation);
+            generatedNations.add(newnation);          
+        }
+        
+        if (generatedNations.size() == 0)
+        {
+            System.out.format("Failed to generate any nations while having %d not pass restrictions.\n", totalfailed);
+            return;
         }
 
         if(restrictions.size() > 0)
@@ -313,7 +304,7 @@ public class NationGen
         System.out.print("Naming things");
 
         NameGenerator nGen = new NameGenerator(this);
-        NamingHandler nHandler = new NamingHandler(this);
+        NamingHandler nHandler = new NamingHandler(this, assets);
         for(Nation n : generatedNations)
         {
             n.name = nGen.generateNationName(n.races.get(0), n);
@@ -325,8 +316,9 @@ public class NationGen
 
             // sites
             for(Site s : n.sites)
-                    s.name = nGen.getSiteName(n.random, s.getPath(), s.getSecondaryPath());
-
+            {
+                s.name = nGen.getSiteName(n.random, s.getPath(), s.getSecondaryPath());
+            }
 
             // mages 
             nHandler.nameMages(n);
@@ -375,7 +367,7 @@ public class NationGen
         }
 
         System.out.println("------------------------------------------------------------------");
-        System.out.println("Finished generating " + amount + " nations to file nationgen_" + filename + ".dm!");
+        System.out.println("Finished generating " + generatedNations.size() + " nations to file nationgen_" + filename + ".dm!");
 
         modname = "";
     }
@@ -389,7 +381,6 @@ public class NationGen
             armordb = new Dom3DB("armor.csv");
             weapondb = new Dom3DB("weapon.csv");
             sites = new Dom3DB("sites.csv");
-            nations = new Dom3DB("nations.csv");
     }
 	
     /**
@@ -397,7 +388,7 @@ public class NationGen
      * @param spells
      * @param n
      */
-    public void handleSpells(List<Filter> spells, Nation n)
+    private void handleSpells(List<Filter> spells, Nation n)
     {
         int id = n.nationid;
 
@@ -418,7 +409,7 @@ public class NationGen
             // check for custom spells first
             if(spell == null)
             {
-                for(Filter sf : this.customspells)
+                for(Filter sf : assets.customspells)
                 {
                     if(sf.name.equals(s))
                     {
@@ -446,7 +437,7 @@ public class NationGen
                 this.freeSpells.add(spell);
             }
 
-            if(spell.nationids.size() >= settings.get("maxrestrictedperspell"))
+            if(spell.nationids.size() >= settings.get(SettingsType.maxrestrictedperspell))
             {
                 this.freeSpells.remove(spell);
             }
@@ -458,37 +449,11 @@ public class NationGen
             }
         }
     }
-
-    private void loadRaces(String file) throws IOException
-    {
-        FileInputStream fstream = new FileInputStream(file);
-        DataInputStream in = new DataInputStream(fstream);
-        BufferedReader br = new BufferedReader(new InputStreamReader(in));
-
-        String strLine;
-
-        while ((strLine = br.readLine()) != null)   
-        {
-            List<String> args = Generic.parseArgs(strLine);
-            if(args.isEmpty())
-            {
-                continue;
-            }
-
-            if(args.get(0).equals("#load"))
-            {
-                List<Race> items = new ArrayList<>();
-                items.addAll(Item.readFile(this, args.get(1), Race.class));
-                races.addAll(items);
-            }
-        }
-        in.close();
-    }
 	
     public void writeDebugInfo()
     { 
         double total = 0;
-        for(Race r : races)
+        for(Race r : assets.races)
         {
             if(!r.tags.contains("secondary"))
             {
@@ -496,7 +461,7 @@ public class NationGen
             }
         }
 
-        for(Race r : races)
+        for(Race r : assets.races)
         {
             if(!r.tags.contains("secondary"))
             {
@@ -508,11 +473,11 @@ public class NationGen
     private void writeDescriptions(PrintWriter tw, List<Nation> nations, String modname) throws IOException
     {
         NationAdvancedSummarizer nDesc = new NationAdvancedSummarizer(armordb, weapondb);
-        if(settings.get("advancedDescs") == 1.0)
+        if(settings.get(SettingsType.advancedDescs) == 1.0)
         {
             nDesc.writeAdvancedDescriptionFile(nations, modname);
         }
-        if(settings.get("basicDescs") == 1.0)
+        if(settings.get(SettingsType.basicDescs) == 1.0)
         {
             nDesc.writeDescriptionFile(nations, modname);
         }   
@@ -520,7 +485,7 @@ public class NationGen
 	
     private void drawPreviews(List<Nation> nations, String dir) throws IOException
     {
-        if(settings.get("drawPreview") == 1)
+        if(settings.get(SettingsType.drawPreview) == 1)
         {
             System.out.print("Drawing previews");
             PreviewGenerator pGen = new PreviewGenerator();
@@ -536,8 +501,8 @@ public class NationGen
     public void write(List<Nation> nations, String modname) throws IOException
     {
         String dir = "nationgen_" + modname.toLowerCase().replaceAll(" ", "_") + "/"; // nation.name.toLowerCase().replaceAll(" ", "_")
-        new File("./mods/" + dir).mkdir();
-
+        new File("./mods/" + dir).mkdirs();
+        
         FileWriter fstream = new FileWriter("./mods/nationgen_" + modname.toLowerCase().replaceAll(" ", "_") + ".dm");
         PrintWriter tw = new PrintWriter(fstream, true);
 
@@ -562,7 +527,7 @@ public class NationGen
 
         for(Nation n : nations)
         {
-            tw.println("-- Nation " + n.nationid + ": " + n.name + " generated with seed " + n.seed);
+            tw.println("-- Nation " + n.nationid + ": " + n.name + " generated with seed " + n.getSeed());
         }
         tw.println("-----------------------------------");
         tw.println();
@@ -579,7 +544,7 @@ public class NationGen
         // Write items!
         // This is a relic from Dom3 version, but oh well.
         System.out.print("Writing items and spells");
-        this.writeCustomItems(tw);
+        customItemsHandler.writeCustomItems(tw);
         this.writeSpells(tw);
         for (Nation nation : nations) 
         {
@@ -626,7 +591,7 @@ public class NationGen
         // Draw previews
         drawPreviews(nations, dir);
         
-        if(settings.get("hidevanillanations") == 1)
+        if(settings.get(SettingsType.hidevanillanations) == 1)
         {
             hideVanillaNations(tw, nations.size());
         }
@@ -668,7 +633,7 @@ public class NationGen
         }
     }
 	
-    public void writeSpells(PrintWriter tw)
+    private void writeSpells(PrintWriter tw)
     {
         if(spellsToWrite.isEmpty())
         {
@@ -691,115 +656,7 @@ public class NationGen
             tw.println();
         }
     }
-	
-    public void writeCustomItems(PrintWriter tw)
-    {
-        if(chosenCustomitems.isEmpty())
-        {
-            return;
-        }
-
-        tw.println("--- Generic custom items:");
-        for(CustomItem ci : this.chosenCustomitems)
-        {	
-            ci.write(tw);
-            //tw.println("");
-        }
-    }
-
-    public CustomItem getCustomItem(String name)
-    {
-        CustomItem citem = null;
-        for(CustomItem ci : this.customitems)
-        {
-            if(ci.name.equals(name) && !this.chosenCustomitems.contains(ci))
-            {
-                citem = ci;
-                break;
-            }
-        }
-        return citem;
-    }
-	
-    public String getCustomItemId(String name)
-    {
-        for(CustomItem ci : this.chosenCustomitems)
-        {
-            if(ci.name.equals(name))
-            {
-                return ci.id;
-            }  
-        }
-
-        CustomItem citem = null;
-        for(CustomItem ci : this.customitems)
-        {
-            if(ci.name.equals(name) && !chosenCustomitems.contains(ci))
-            {
-                citem = ci.getCopy();
-                break;
-            }
-        }
-
-        if(citem == null)
-        {
-            System.out.println("WARNING: No custom item named " + name + " was found!");
-            return "-1";
-        }
-		
-        if(idHandler != null)
-        {
-            if(citem.armor)
-            {
-                citem.id = idHandler.nextArmorId() + "";
-            }
-            else
-            {
-                citem.id = idHandler.nextWeaponId() + "";
-            }
-        }
-        else
-        {
-            System.out.println("ERROR: idHandler was not initialized!");
-            citem.id = "-1";
-        }
-		
-        // -521978361
-        // Check references!
-        for(String str : citem.values.keySet())
-        {
-            if(str.equals("secondaryeffect") || str.equals("secondaryeffectalways"))
-            {
-                String customItemSecondaryEffect = citem.values.get(str);
-                boolean isNumeric = customItemSecondaryEffect.chars().allMatch( Character::isDigit );
-                if (isNumeric)
-                {
-                    Integer.parseInt(customItemSecondaryEffect);
-                }
-                else
-                {
-                    String id;
-                    id = getCustomItemId(customItemSecondaryEffect);
-                    citem.values.put(str, id);
-                }
-            }
-        }
-		
-        this.chosenCustomitems.add(citem);
-        //this.customitems.remove(citem);
-
-        if(!citem.armor)
-        {
-            weapondb.addToMap(citem.id, citem.getHashMap());
-        }
-        else
-        {
-            armordb.addToMap(citem.id, citem.getHashMap());
-        }
-
-        return citem.id;
-    }
-
+    
     public boolean hasShapeShift(String id)
     {
         int realid = -1;
@@ -888,7 +745,7 @@ public class NationGen
                             
                     if (realarg.isEmpty()) 
                     {
-                        c.args.set(0, getCustomItemId(c.args.get(0)) + "");
+                        c.args.set(0, customItemsHandler.getCustomItemId(c.args.get(0)) + "");
                     }
                     else
                     {
@@ -929,7 +786,7 @@ public class NationGen
         ShapeShift shift;
         shift = null;
         
-        for(ShapeShift s : secondshapes)
+        for(ShapeShift s : assets.secondshapes)
         {
             if(s.name.equals(c.args.get(0)))
             {
@@ -943,7 +800,7 @@ public class NationGen
             System.out.println("Shapeshift named " + c.args.get(0) + " could not be found.");
             return;
         }
-        ShapeChangeUnit su = new ShapeChangeUnit(this, u.race, u.pose, u, shift);
+        ShapeChangeUnit su = new ShapeChangeUnit(this, assets, u.race, u.pose, u, shift);
 
         su.id = idHandler.nextUnitId();
 
@@ -981,67 +838,6 @@ public class NationGen
         forms.add(su);
     }
 	
-    /**
-     * Loads the list of commands that second shapes should inherit from the primary shape
-     * @param filename
-     * @return
-     */
-    public int loadSecondShapeInheritance(String filename)
-    {
-        int amount = 0;
-		
-        Scanner file;
-		
-        try 
-        {
-            file = new Scanner(new FileInputStream(System.getProperty("user.dir") + "/" + filename));
-        } 
-        catch (FileNotFoundException e) 
-        {
-            e.printStackTrace();
-            return 0;
-        }
-
-        while(file.hasNextLine())
-        {
-            String line = file.nextLine();
-            if(line.startsWith("-"))
-            {
-                continue; 
-            }
-
-            List<String> args = Generic.parseArgs(line);
-            if(args.isEmpty())
-            {
-                continue;
-            }
-
-            if(args.get(0).equals("all") && args.size() > 0)
-            {
-                secondShapeMountCommands.add(args.get(1));
-                secondShapeNonMountCommands.add(args.get(1));
-                amount++;
-            }
-            else if(args.get(0).equals("mount") && args.size() > 0)
-            {
-                secondShapeMountCommands.add(args.get(1));
-                amount++;
-            }
-            else if(args.get(0).equals("nonmount") && args.size() > 0)
-            {
-                secondShapeNonMountCommands.add(args.get(1));
-                amount++;
-            }
-            else if(args.get(0).equals("racepose") && args.size() > 0)
-            {
-                secondShapeRacePoseCommands.add(args.get(1));
-                amount++;
-            }
-        }  
-        file.close();
-        return amount;
-    }
-
     public static void generateBanner(Color c, String name, String output, BufferedImage flag) throws IOException
     {
         BufferedImage combined = new BufferedImage(256, 64, BufferedImage.TYPE_INT_RGB);
@@ -1073,9 +869,32 @@ public class NationGen
      */
     public void setSpriteGenPoses()
     {
-        for(Race race : races)
+        for(Race race : assets.races)
         {
             race.poses.addAll(race.spriteGenPoses);
         }
+    }
+    
+    /**
+     * Aborts the nation generating process. This var is reset when the next set starts to generate.
+     */
+    public void abortNationGeneration()
+    {
+        shouldAbort = true;
+    }
+    
+    public CustomItemsHandler GetCustomItemsHandler()
+    {
+        return customItemsHandler;
+    }
+    
+    /**
+     * This function *will* be refactored out.  But, race is a pain to do only half measured refactorings.
+     * Eventually, entity/filter will need to be redone.
+     * @return
+     */
+    public NationGenAssets getAssets()
+    {
+        return assets;
     }
 }

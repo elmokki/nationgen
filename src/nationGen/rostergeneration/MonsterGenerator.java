@@ -1,12 +1,12 @@
 package nationGen.rostergeneration;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.misc.ChanceIncHandler;
@@ -19,11 +19,13 @@ public class MonsterGenerator {
 	
 	Nation n;
 	NationGen ng;
+	private NationGenAssets assets;
 	
-	public MonsterGenerator(Nation n, NationGen ng)
+	public MonsterGenerator(Nation n, NationGen ng, NationGenAssets assets)
 	{
 		this.n = n;
 		this.ng = ng;
+		this.assets = assets;
 	}
 	
 	public Unit generateMonster()
@@ -34,7 +36,7 @@ public class MonsterGenerator {
 		r.visiblename = "Monster";
 		ChanceIncHandler chandler = new ChanceIncHandler(n, "monstergen");
 		
-		List<ShapeShift> poses = ChanceIncHandler.retrieveFilters("monsters", "default_monsters", ng.monsters, null, n.races.get(0));
+		List<ShapeShift> poses = ChanceIncHandler.retrieveFilters("monsters", "default_monsters", assets.monsters, null, n.races.get(0));
 		
 		if(poses.size() == 0)
 		{
@@ -50,7 +52,7 @@ public class MonsterGenerator {
 		ShapeShift p = ShapeShift.getRandom(rand, chandler.handleChanceIncs(templateUnit, poses, null));
 	
 		
-		ShapeChangeUnit u = new ShapeChangeUnit(ng, r, pose, null, p);
+		ShapeChangeUnit u = new ShapeChangeUnit(ng, assets, r, pose, null, p);
 		
 		double chance = 0.95;
 		if(Generic.containsTag(p.tags, "caponlychance"))

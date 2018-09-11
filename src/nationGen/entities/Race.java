@@ -11,6 +11,7 @@ import com.elmokki.Generic;
 
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
 
@@ -190,7 +191,7 @@ public class Race extends Filter {
 			this.specialcommands.add(Command.parseCommandFromDefinition(args));
 		else if(args.get(0).equals("#pose"))
 		{
-			List<Pose> set = nationGen.poses.get(args.get(1));
+			List<Pose> set = nationGen.getAssets().poses.get(args.get(1));
 			if(set == null)
 			{
 				System.out.println("Pose set " + args.get(1) + " was not found.");
@@ -202,7 +203,7 @@ public class Race extends Filter {
 		}
 		else if(args.get(0).equals("#spritegenpose"))
 		{
-			List<Pose> set = nationGen.poses.get(args.get(1));
+			List<Pose> set = nationGen.getAssets().poses.get(args.get(1));
 			if(set == null)
 			{
 				System.out.println("Pose set " + args.get(1) + " was not found.");

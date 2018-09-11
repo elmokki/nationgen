@@ -6,12 +6,6 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
-
-
-
-
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,19 +18,8 @@ import javax.swing.JScrollPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import nationGen.NationGen;
-import nationGen.restrictions.MagicAccessRestriction;
-import nationGen.restrictions.MageWithAccessRestriction;
-import nationGen.restrictions.MagicDiversityRestriction;
-import nationGen.restrictions.NationThemeRestriction;
-import nationGen.restrictions.NoPrimaryRaceRestriction;
-import nationGen.restrictions.NoUnitOfRaceRestriction;
-import nationGen.restrictions.PrimaryRaceRestriction;
-import nationGen.restrictions.SacredRaceRestriction;
-import nationGen.restrictions.NationRestriction;
-import nationGen.restrictions.UnitCommandRestriction;
-import nationGen.restrictions.UnitFilterRestriction;
-import nationGen.restrictions.UnitOfRaceRestriction;
+import nationGen.NationGenAssets;
+import nationGen.restrictions.*;
 
 public class RestrictionPane extends JPanel implements ActionListener, ListSelectionListener {
 
@@ -50,14 +33,13 @@ public class RestrictionPane extends JPanel implements ActionListener, ListSelec
 
 	private static final long serialVersionUID = 1L;
 
-	private NationGen ng;
-	
+	private NationGenAssets assets;
 
 
 
-	public RestrictionPane(NationGen ng) {
+	public RestrictionPane(NationGenAssets assets) {
 		super(new GridLayout(1,2,5,5));
-		this.ng = ng;
+		this.assets = assets;
 		init();
 	}
 	
@@ -68,17 +50,18 @@ public class RestrictionPane extends JPanel implements ActionListener, ListSelec
 	{
 		// Please keep this is alphabetic order
 		NationRestriction[] stuff = {
-			new MagicAccessRestriction(ng), 		// "Magic: Access"
-			new MagicDiversityRestriction(ng),		// "Magic: Diversity"
-			new MageWithAccessRestriction(ng),		// "Magic: Mage with access"
-			new NationThemeRestriction(ng),
-			new NoPrimaryRaceRestriction(ng),
-			new NoUnitOfRaceRestriction(ng),
-			new PrimaryRaceRestriction(ng),
-			new SacredRaceRestriction(ng),			// "Sacred: Race"
-			new UnitCommandRestriction(ng),
-			new UnitFilterRestriction(ng),
-			new UnitOfRaceRestriction(ng)
+			new MagicAccessRestriction(), 		// "Magic: Access"
+			new MagicDiversityRestriction(),		// "Magic: Diversity"
+			new MageWithAccessRestriction(),		// "Magic: Mage with access"
+			new NationThemeRestriction(assets),
+			new NoPrimaryRaceRestriction(assets),
+			new NoUnitOfRaceRestriction(assets),
+			new PrimaryRaceRestriction(assets),
+			new RecAnywhereSacredsRestriction(),
+			new SacredRaceRestriction(assets),			// "Sacred: Race"
+			new UnitCommandRestriction(),
+			new UnitFilterRestriction(assets),
+			new UnitOfRaceRestriction(assets)
 		};
 		return stuff;
 	}
@@ -162,7 +145,8 @@ public class RestrictionPane extends JPanel implements ActionListener, ListSelec
 		if(arg0.getSource().equals(addButton) && possibles.getSelectedIndex() > -1)
 		{
 			
-			NationRestriction newres = possibles.getSelectedValue().getInstanceOf();
+		    NationRestriction newres = NationRestrictionFactory.getSameTypedInstance(assets, possibles.getSelectedValue());
+		    
 			if(newres != null && !model.contains(newres));
 			{
 				model.addElement(newres);

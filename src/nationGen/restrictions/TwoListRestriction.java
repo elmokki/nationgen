@@ -7,12 +7,6 @@ import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
-
-
-
-
-
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -20,9 +14,8 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
-
-import nationGen.NationGen;
-import nationGen.nation.Nation;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 /**
  * Class for generic restrictions that contain picking options from list.
@@ -32,22 +25,20 @@ import nationGen.nation.Nation;
  * @author Elmokki
  *
  */
-public class TwoListRestriction<E> extends NationRestriction implements ActionListener  {
+public abstract class TwoListRestriction<E> implements NationRestriction, ActionListener  {
 	
 	protected String text = "";
 	protected String name = "Generic two list restriction";
-	protected NationGen ng;
 	
 	// Extra text field
 	protected boolean extraTextField = false;
 	protected String textFieldLabel = "Undefined label";
 	protected String textfieldDefaultText = "";
 
-	public TwoListRestriction(NationGen ng, String text, String name)
+	public TwoListRestriction(String text, String name)
 	{
 		this.name = name;
 		this.text = text;
-		this.ng = ng;
 	}
 	
 	@Override
@@ -88,6 +79,19 @@ public class TwoListRestriction<E> extends NationRestriction implements ActionLi
 			textfield = new JTextField(textfieldDefaultText);
 			tpanel.add(textfield);
 			top.add(tpanel);
+			
+	         // Listen for changes in the text. UGH
+            textfield.getDocument().addDocumentListener(new DocumentListener() {
+              public void changedUpdate(DocumentEvent e) {
+                  textFieldUpdate();
+              }
+              public void removeUpdate(DocumentEvent e) {
+                  textFieldUpdate();
+              }
+              public void insertUpdate(DocumentEvent e) {
+                  textFieldUpdate();
+              }
+            });
 		}
 		
 		addButton = new JButton("Add");
@@ -118,12 +122,6 @@ public class TwoListRestriction<E> extends NationRestriction implements ActionLi
 	}
 
 	@Override
-	public NationRestriction getRestriction() {
-		TwoListRestriction<E> res = new TwoListRestriction<E>(ng, text, name);
-		return res;
-	}
-
-	@Override
 	public LayoutManager getLayout() {
 		return new BorderLayout();
 	}
@@ -148,17 +146,7 @@ public class TwoListRestriction<E> extends NationRestriction implements ActionLi
 			rmodel2.remove(chosen.getSelectedIndex());
 		}
 	}
-
 	
-	@Override
-	public boolean doesThisPass(Nation n) {
-		return true;
-	}
-
-	@Override
-	public NationRestriction getInstanceOf() {
-		return new TwoListRestriction<E>(ng, text, name);
-	}
-
-	
+	protected void textFieldUpdate() 
+	{}
 }

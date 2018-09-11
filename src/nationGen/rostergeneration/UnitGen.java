@@ -27,6 +27,7 @@ import java.util.Random;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Pose;
@@ -44,14 +45,16 @@ public class UnitGen {
 	private NationGen nationGen;
 	private Random random;
 	private Nation nation;
+	private NationGenAssets assets;
 	public ChanceIncHandler chandler;
 	
 	
 	
-	public UnitGen(NationGen gen, Nation n)
+	public UnitGen(NationGen gen, Nation n, NationGenAssets assets)
 	{
 		this.nationGen = gen;
 		this.nation = n;
+		this.assets = assets;
 		this.random = new Random(n.random.nextInt());
 		this.chandler = new ChanceIncHandler(n);
 	}
@@ -125,7 +128,7 @@ public class UnitGen {
 	public void addTemplateFilter(Unit u, String query, String defaultv)
 	{
 	
-			List<Filter> tFilters = ChanceIncHandler.retrieveFilters(query, defaultv, nationGen.templates, u.pose, u.race);
+			List<Filter> tFilters = ChanceIncHandler.retrieveFilters(query, defaultv, assets.templates, u.pose, u.race);
 			tFilters.removeAll(u.appliedFilters);			
 			tFilters = ChanceIncHandler.getValidUnitFilters(tFilters, u);
 			Filter t = chandler.getRandom(tFilters, u);
@@ -168,16 +171,16 @@ public class UnitGen {
 			
 			List<Filter> tFilters = null;
 			if(set == null)
-				tFilters = ChanceIncHandler.retrieveFilters("freetemplatefilters", "default_freetemplatefilters", nationGen.templates, u.pose, u.race);
+				tFilters = ChanceIncHandler.retrieveFilters("freetemplatefilters", "default_freetemplatefilters", assets.templates, u.pose, u.race);
 			else
 			{
 				tFilters = new ArrayList<Filter>();
 				
 				
-				if(nationGen.templates.get(set) == null)
+				if(assets.templates.get(set) == null)
 					System.out.println("No template filters were found for set " + set + "!");
 				else
-					tFilters.addAll(nationGen.templates.get(set));
+					tFilters.addAll(assets.templates.get(set));
 
 
 			}

@@ -299,7 +299,7 @@ public class CustomItemGen {
 			i.tags.addAll(i.magicItem.tags);
 		
 		n.customitems.add(i);
-		n.nationGen.customitems.add(i);
+		n.nationGen.GetCustomItemsHandler().AddCustomItem(i);
 		n.nationGen.weapondb.addToMap(i.id, i.getHashMap());
 		
 

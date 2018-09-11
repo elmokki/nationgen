@@ -35,7 +35,6 @@ import com.elmokki.Generic;
 
 
 
-import nationGen.entities.Drawable;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Pose;
@@ -179,10 +178,6 @@ public class ChanceIncHandler {
 		{
 			for(Filter f : u.appliedFilters)
 				miscincs.addAll(f.themeincs);
-		
-			List<String> unit_miscincs = new ArrayList<String>();
-			for(Filter f : u.appliedFilters)
-				unit_miscincs.addAll(f.themeincs);
 		}
 
 		

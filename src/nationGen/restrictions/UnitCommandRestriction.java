@@ -1,14 +1,8 @@
 package nationGen.restrictions;
 
-
-
 import java.util.List;
 import java.util.ArrayList;
 
-
-
-
-import nationGen.NationGen;
 import nationGen.misc.Command;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
@@ -16,15 +10,11 @@ import nationGen.units.Unit;
 public class UnitCommandRestriction extends TextBoxListRestriction {
 	public List<String> possibleRaceNames = new ArrayList<String>();
 	
-	private NationGen ng;
-	public UnitCommandRestriction(NationGen ng)
+	public UnitCommandRestriction()
 	{
-		super(ng, "<html>Nation needs to have at least one unit with a command on the right box. If you leave arguments empty, arguments on unit do not matter. "
+		super("<html>Nation needs to have at least one unit with a command on the right box. If you leave arguments empty, arguments on unit do not matter. "
 				+ "If you specify arguments, they need to match exactly.</html>", "Unit command");
-		this.ng = ng;
-		
 
-		
 		this.hascombobox = true;
 		String[] ops = {"All", "Troops", "Commanders", "Sacred troops"};
 		this.comboboxoptions = ops;
@@ -38,7 +28,7 @@ public class UnitCommandRestriction extends TextBoxListRestriction {
 
 	@Override
 	public NationRestriction getRestriction() {
-		UnitCommandRestriction res = new UnitCommandRestriction(ng);
+		UnitCommandRestriction res = new UnitCommandRestriction();
 		for(int i =0; i < chosen.getModel().getSize(); i++)
 			res.possibleRaceNames.add(chosen.getModel().getElementAt(i));
 		
@@ -104,10 +94,11 @@ public class UnitCommandRestriction extends TextBoxListRestriction {
 		}
 		return false;
 	}
-	
-	@Override
-	public NationRestriction getInstanceOf() {
-		return new UnitCommandRestriction(ng);
-	}
+
+    @Override
+    public RestrictionType getType()
+    {
+        return RestrictionType.UnitCommand;
+    }
 	
 }

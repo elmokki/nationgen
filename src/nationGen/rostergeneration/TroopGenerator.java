@@ -1,6 +1,5 @@
 package nationGen.rostergeneration;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -22,6 +21,7 @@ import java.util.Random;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Pose;
@@ -37,6 +37,7 @@ public class TroopGenerator {
 	public NationGen nationGen;
 	public Nation nation;
 	public UnitGen unitGen;
+	protected NationGenAssets assets;
 	public ItemSet used = new ItemSet();
 	public ItemSet exclusions = new ItemSet();
 	private double bonusrangedness = 0;
@@ -101,11 +102,12 @@ public class TroopGenerator {
 
 	}
 	
-	public TroopGenerator(NationGen g, Nation n, String id)
+	public TroopGenerator(NationGen g, Nation n, NationGenAssets assets, String id)
 	{
 		nationGen = g;
 		nation = n;
-		unitGen = new UnitGen(g, n);
+		this.assets = assets;
+		unitGen = new UnitGen(g, n, assets);
 		random = new Random(n.random.nextInt());
 
 		bonusrangedness = random.nextDouble() * 0.3;
@@ -133,9 +135,9 @@ public class TroopGenerator {
 		
 	}
 	
-	public TroopGenerator(NationGen g, Nation n)
+	public TroopGenerator(NationGen g, Nation n, NationGenAssets assets)
 	{
-		this(g, n, "troopgen");
+		this(g, n, assets, "troopgen");
 	}
 	
 	
@@ -547,7 +549,7 @@ public class TroopGenerator {
 				{
 
 					tempweps.addAll(t.pose.getItems("weapon").filterDom3DB("2h", "0", true, nationGen.weapondb));
-					tempweps.remove(oldweps);
+					tempweps.removeAll(oldweps);
 					for(Item i : t.pose.getItems("weapon"))
 					{
 						if(i.id.equals("357") || i.tags.contains("lightlance"))
@@ -559,7 +561,7 @@ public class TroopGenerator {
 				{
 
 					tempweps.addAll(t.pose.getItems("weapon").filterDom3DB("2h", "1", true, nationGen.weapondb));
-					tempweps.remove(oldweps);
+					tempweps.removeAll(oldweps);
 					for(Item i : t.pose.getItems("weapon"))
 					{
 						if(i.id.equals("357") || i.tags.contains("lightlance"))
@@ -656,7 +658,7 @@ public class TroopGenerator {
 		// Add unit template filter to available template filters
 		if(unitTemplates.size() < maxdifferenttemplates || possibleFilters.size() == 0)
 		{
-			List<Filter> tFilters = ChanceIncHandler.retrieveFilters(query, defaultv, nationGen.templates, u.pose, u.race);
+			List<Filter> tFilters = ChanceIncHandler.retrieveFilters(query, defaultv, assets.templates, u.pose, u.race);
 			
 			possibleFilters.retainAll(tFilters);
 			

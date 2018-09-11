@@ -67,11 +67,11 @@ public class Summary {
 			for(Unit u : list)
 			{
 
-				if(u.tags.contains("elite") && !elites.contains(u.name.type))
+				if(u.tags.contains("elite") && !elites.contains(u.name.type.toString()))
 				{
 					elites.add(u.name.type.toString());
 				}
-				else if(!rangeds.contains(u.name.type))
+				else if(!rangeds.contains(u.name.type.toString()))
 					rangeds.add(u.name.type.toString());	
 			}
 		}
