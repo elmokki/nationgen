@@ -289,3 +289,52 @@
 #notfortier 1
 #notfortier 2
 #end
+
+-- Race-specific dom-summons and monster training
+
+#new magefilter
+#name "rabblerouser"
+#type "leadership"
+#basechance 0
+#chanceinc "personalcommand #goodleader 0.1"
+#chanceinc "personalcommand #expertleader 0.1"
+#chanceinc "personalcommand #superiorleader 0.2"
+#chanceinc "racetag not #human OR racetag #dynastic OR racetag #austral *0"
+#command "#gcost +30"
+#command "#domsummon20 217"
+#notfortier 1
+#notfortier 2
+#description " Attracts zealots to their side."
+#end
+
+#new magefilter
+#name "cult leader"
+#type "leadership"
+#basechance 0
+#chanceinc "personalcommand #goodleader 0.1"
+#chanceinc "personalcommand #expertleader 0.1"
+#chanceinc "personalcommand #superiorleader 0.2"
+#chanceinc "racetag not #illithid *0"
+#command "#gcost +30"
+#command "#domsummon20 1640"
+#notfortier 1
+#notfortier 2
+#description " Attracts mad cultists to their side."
+#end
+
+#new magefilter
+#name "spirit caller"
+#type "leadership"
+#basechance 0
+#chanceinc "personalcommand #okundeadleader 0.05"
+#chanceinc "personalcommand #goodundeadleader 0.05"
+#chanceinc "personalcommand #expertundeadleader 0.1"
+#chanceinc "personalcommand #superiorundeadleader 0.1"
+#chanceinc "personalcommand #undead *2"
+#chanceinc "racetag not #oriental AND racetheme not primitive *0.1"
+#command "#gcost +30"
+#command "#domsummon20 1363"
+#notfortier 1
+#notfortier 2
+#description " Attracts revered ancestral spirits to their side."
+#end

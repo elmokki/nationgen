@@ -93,6 +93,12 @@
 #end
 
 #new
+#name postulant
+#rank 1
+#basechance 1
+#end
+
+#new
 #name deacon
 #rank 1
 #basechance 1
@@ -174,6 +180,7 @@
 #name prior
 #rank 2
 #basechance 1
+#commandvariant #female prioress
 #end
 
 #new
@@ -186,6 +193,13 @@
 #name anointed
 #rank 2
 #basechance 1
+#end
+
+#new
+#name "knight-chaplain"
+#rank 2
+#basechance 0
+#chanceinc "posetag #warriormage 1"
 #end
 
 #new
@@ -230,6 +244,14 @@
 #rank 3
 #basechance 0.5
 #commandvariant #female matron
+#end
+
+#new
+#name "grand master"
+#rank 3
+#basechance 0
+#chanceinc "posetag #warriormage 1"
+#commandvariant #female "grand mistress"
 #end
 
 --- Racial priest names ---
