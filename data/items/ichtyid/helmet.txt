@@ -104,6 +104,19 @@
 #enditem
 
 #newitem
+#name "shellcap_feathers"
+#gameid 224
+#sprite /graphics/ichtyid/helmet/shell_helmet_feathers.png
+#recolormask /graphics/ichtyid/helmet/feathers_recolormask.png
+#armor
+#theme "elite"
+#tag "maxprot 13"
+#theme "shell"
+#basechance 2
+#chanceinc "racetag NOT occidental *0.01"
+#enditem
+
+#newitem
 #name "coralcap"
 #gameid 24
 #sprite /graphics/ichtyid/helmet/coral_cap.png
@@ -187,6 +200,19 @@
 #tag "minprot 9"
 #theme "bronze"
 #theme "elite"
+#enditem
+
+#newitem
+#id bronzecap_feathers
+#gameid 135
+#sprite /graphics/ichtyid/helmet/bronze_cap_feathers.png
+#recolormask /graphics/ichtyid/helmet/feathers_recolormask.png
+#armor
+#tag "minprot 9"
+#theme "bronze"
+#theme "elite"
+#basechance 2
+#chanceinc "racetag NOT occidental *0.01"
 #enditem
 
 #newitem
