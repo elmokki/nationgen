@@ -34,6 +34,9 @@
 #new 
 #name "guard"
 #basechance 2
+#chanceinc "personalcommand #bodyguard 3"
+#chanceinc "personalcommand #castledef 3"
+#chanceinc "personalcommand #patrolbonus 1"
 #end
 
 #new 
@@ -44,6 +47,8 @@
 
 #new 
 #name "guardian"
+#chanceinc "personalcommand #bodyguard 1"
+#chanceinc "personalcommand #castledef 1"
 #basechance 1
 #end
 
@@ -135,12 +140,19 @@
 #end
 
 #new 
+#name "protector"
+#basechance 1
+#chanceinc "taggedmagic holy 1"
+#end
+
+#new 
 #name "follower"
 #basechance 1
 #end
 
 #new 
 #name "companion"
+#chanceinc "personalcommand #bodyguard 2"
 #basechance 0.5
 #end
 
@@ -193,6 +205,7 @@
 #name "hand"
 #basechance 0.5
 #chanceinc "pose ranged -100"
+#racetagvariant imperial lictor
 #end
 
 #new 
@@ -340,9 +353,16 @@
 
 #new 
 #name "warden"
-#basechance 0.5
-#chanceinc "personalcommand #patrolbonus 2"
-#chanceinc "personalcommand #castledef 3"
+#chanceinc "personalcommand #bodyguard 1.6"
+#chanceinc "personalcommand #patrolbonus 2.1"
+#chanceinc "personalcommand #castledef 2.6"
+#basechance 0.4
+#end
+
+#new 
+#name "warder"
+#chanceinc "personalcommand #bodyguard 0.4"
+#basechance 0.1
 #end
 
 #new
