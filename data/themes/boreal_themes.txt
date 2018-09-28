@@ -58,7 +58,7 @@
 #newtheme
 #type social
 #name slaver
-#basechance 0.1
+#basechance 0.2
 #themeinc theme advanced *1
 #themeinc theme iron *1
 #themeinc theme bronze *1
@@ -80,28 +80,90 @@
 #racedefinition "#secondaryracemagemod -100"
 #endtheme
 
--- Weights: EA 0.05, MA 0.1, LA 0.2
+-- Weights: EA 0.1, MA 0.2, LA 0.3
 #newtheme
 #type social
 #name blacksteel
-#basechance 0.1
-#chanceinc era 1 0.5
-#chanceinc era 3 2
+#basechance 0.2
+#chanceinc era 1 -0.1
+#chanceinc era 3 0.1
 #chanceinc racetheme primitive *0.5
 #chanceinc racetheme bronze *0.125
 #chanceinc racetheme default *1
 #chanceinc racetheme advanced *2
 #themeinc theme advanced *2
 #themeinc theme iron *5
-#chanceinc racetheme bronze *0.125
+#themeinc theme bronze *0.125
 #themeinc theme wood *0.5
 #themeinc theme leather *0.25
 #themeinc theme naked *0.125
 #themeinc theme primitive *0.5
 #racedefinition "#pose blacksteeltroops"
 #racedefinition "#magicpriority earth 3"
-#racedefinition "#unitcommand '#hp +2'
-#racedefinition "#unitcommand '#str +1'
-#racedefinition "#unitcommand '#mr -2'
-#racedefinition "#unitcommand '#enc -1'
+#racedefinition "#unitcommand '#hp +2'"
+#racedefinition "#unitcommand '#str +1'"
+#racedefinition "#unitcommand '#mr -2'"
+#racedefinition "#unitcommand '#enc -1'"
+#racedefinition "#unitcommand '#nametype 104'"
+#endtheme
+
+-- Weights: EA 0.1, MA 0.05, LA 0
+#newtheme
+#type social
+#name fae_seelie
+#basechance 0.1
+#chanceinc era 2 -0.05
+#chanceinc era 3 -0.1
+#chanceinc racetheme primitive *2
+#chanceinc racetheme bronze *3
+#chanceinc racetheme default *0.5
+#chanceinc racetheme advanced *0
+#themeinc theme advanced *0.125
+#themeinc theme iron *0.25
+#themeinc theme bronze *2
+#themeinc theme wood *2
+#themeinc theme leather *2
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#racedefinition "#fae"
+#racedefinition "#magicpriority nature 4"
+#racedefinition "#unitcommand '#mr +1'"
+#racedefinition "#unitcommand '#spellsinger'"
+#racedefinition "#unitcommand '#nametype 142'"
+#endtheme
+
+-- Weights: EA 0.1, MA 0.05, LA 0
+#newtheme
+#type social
+#name fae_unseelie
+#basechance 0.1
+#chanceinc era 2 -0.05
+#chanceinc era 3 -0.1
+#chanceinc racetheme primitive *2
+#chanceinc racetheme bronze *3
+#chanceinc racetheme default *0.5
+#chanceinc racetheme advanced *0
+#themeinc theme advanced *0.125
+#themeinc theme iron *0.5
+#themeinc theme bronze *2
+#themeinc theme wood *2
+#themeinc theme leather *2
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#racedefinition "#fae"
+#racedefinition "#magicpriority death 4"
+#racedefinition "#magicpriority nature 2"
+#racedefinition "#unitcommand '#mr +1'"
+#racedefinition "#unitcommand '#spellsinger'"
+#racedefinition "#unitcommand '#nametype 142'"
+#endtheme
+
+-- Weights: EA 0.1, MA 0.1, LA 0.1
+#newtheme
+#type social
+#name spellsingers
+#basechance 0.1
+#racedefinition "#magicpriority death 2"
+#racedefinition "#magicpriority nature 2"
+#racedefinition "#unitcommand '#spellsinger'"
 #endtheme

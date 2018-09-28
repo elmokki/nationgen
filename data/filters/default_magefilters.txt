@@ -29,6 +29,7 @@
 #chanceinc "personalmagic air *5"
 #chanceinc "personalmagic earth *2"
 #chanceinc "personalmagic water *0"
+#chanceinc "personalcommand aquatic *0"
 #command "#uwdamage 100"
 #notfortier 3
 #notfortier 2
@@ -107,6 +108,16 @@
 #chanceinc "personalmagic water 0.5"
 #chanceinc "personalmagic astral 0.5"
 #chanceinc "personalmagic water astral 0.8"
+#power 1
+#end
+
+#new magefilter
+#name "carcasscollector"
+#basechance 0.2
+#command "#carcasscollector 3"
+#chanceinc "personalmagic nature 0.5"
+#chanceinc "personalmagic death 0.5"
+#chanceinc "personalmagic nature death 0.8"
 #power 1
 #end
 
@@ -191,6 +202,7 @@
 #tag "personalmagic holy"
 #chanceinc "personalmagic holy 1.5"
 #command "#elegist +1"
+#command "#spellsinger"
 #notfortier 3
 #notfortier 2
 #end
@@ -202,6 +214,7 @@
 #chanceinc "personalmagic holy 0.8"
 #command "#elegist +2"
 #command "#gcost +5"
+#command "#spellsinger"
 #notfortier 1
 #end
 
@@ -212,6 +225,7 @@
 #chanceinc "personalmagic holy 0.8"
 #command "#elegist +3"
 #command "#gcost +25"
+#command "#spellsinger"
 #notfortier 1
 #notfortier 2
 #power 2
@@ -325,7 +339,7 @@
 
 #new magefilter
 #name "illusion"
-#basechance 0.0
+#basechance 0
 #command "#illusion"
 #command "#stealthy +0"
 #command "#gcost *1.05"
@@ -337,6 +351,19 @@
 #end
 
 #new magefilter
+#name "spellsinger"
+#basechance 0.2
+#command "#spellsinger"
+#primarycommand #spellsinger
+#chanceinc "personalmagic astral 0.3"
+#chanceinc "personalmagic death 0.3"
+#chanceinc "personalmagic nature 1.3"
+#power 1
+#chanceinc "race sidhe -20"
+#chanceinc "nationtag fae OR hasthemetheme fae -20"
+#end
+
+#new magefilter
 #name "holy"
 #basechance 0.2
 #primarycommand "#holy"
@@ -345,7 +372,7 @@
 
 #new magefilter
 #name "amphibian"
-#basechance 0.0
+#basechance 0
 #command "#amphibian"
 #chanceinc "personalmagic water 1"
 #tag "personalmagic water"

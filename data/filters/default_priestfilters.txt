@@ -338,3 +338,331 @@
 #notfortier 2
 #description " Attracts revered ancestral spirits to their side."
 #end
+
+#new magefilter
+#name "serpent trainer"
+#type "leadership"
+#basechance 0.05
+#chanceinc "racetheme totemanimal OR unittheme totemanimal AND racetheme NOT snaketotem AND unittheme NOT snaketotem *0"
+#chanceinc "primaryrace 'Dynastic human' 0.25"
+#chanceinc "anymagic not nature *0"
+#chanceinc "primaryrace lizard 1"
+#command "#templetrainer 295"
+#notfortier 1
+#notfortier 3
+#description " Can train sacred serpents in temples."
+#theme "snaketotem"
+#theme "totemanimal"
+#end
+
+#new magefilter
+#name "hydra trainer"
+#type "leadership"
+#basechance 0.05
+#chanceinc "racetheme totemanimal OR unittheme totemanimal AND racetheme NOT snaketotem AND unittheme NOT snaketotem *0"
+#chanceinc "anymagic not nature *0"
+#command "#templetrainer 1859"
+#notfortier 1
+#notfortier 3
+#description " Can train sacred hydras in temples."
+#theme "snaketotem"
+#theme "totemanimal"
+#end
+
+#new magefilter
+#name "jaguar trainer"
+#type "leadership"
+#basechance 0.05
+#chanceinc "nationtag occidental 0.95"
+#chanceinc "racetheme totemanimal OR unittheme totemanimal AND racetheme NOT jaguartotem AND unittheme NOT jaguartotem *0"
+#chanceinc "anymagic not nature *0"
+#command "#gcost +20"
+#command "#templetrainer 859"
+#notfortier 1
+#notfortier 3
+#description " Can train sacred jaguars in temples."
+#theme "jaguartotem"
+#theme "totemanimal"
+#end
+
+#new magefilter
+#name "toad trainer"
+#type "leadership"
+#basechance 0.05
+#chanceinc "nationtag occidental 0.95"
+#chanceinc "racetheme totemanimal OR unittheme totemanimal AND racetheme NOT toadtotem AND unittheme NOT toadtotem *0"
+#chanceinc "anymagic not nature *0"
+#chanceinc "primaryrace muuch 1"
+#command "#gcost +20"
+#command "#templetrainer 1359"
+#notfortier 1
+#notfortier 3
+#description " Can train sacred toads in temples."
+#theme "toadtotem"
+#theme "totemanimal"
+#end
+
+#new magefilter
+#name "wolf trainer"
+#type "leadership"
+#basechance 0.05
+#chanceinc "nationtag boreal OR nationtag nordic 0.45"
+#chanceinc "racetheme totemanimal OR unittheme totemanimal AND racetheme NOT wolftotem AND unittheme NOT wolftotem *0"
+#chanceinc "anymagic not nature *0"
+#chanceinc "primaryrace vaettir 0.45"
+#command "#gcost +30"
+#command "#templetrainer 1309"
+#notfortier 1
+#notfortier 3
+#description " Can train sacred wolves in temples."
+#theme "wolftotem"
+#theme "totemanimal"
+#end
+
+#new magefilter
+#name "bear trainer"
+#type "leadership"
+#basechance 0.05
+#chanceinc "nationtag boreal OR nationtag nordic 0.45"
+#chanceinc "racetheme totemanimal OR unittheme totemanimal AND racetheme NOT beartotem AND unittheme NOT beartotem *0"
+#chanceinc "anymagic not nature *0"
+#command "#gcost +30"
+#command "#templetrainer 3003"
+#notfortier 1
+#notfortier 3
+#description " Can train sacred bears in temples."
+#theme "beartotem"
+#theme "totemanimal"
+#end
+
+#new magefilter
+#name "boar trainer"
+#type "leadership"
+#basechance 0.05
+#chanceinc "nationtag boreal 0.95"
+#chanceinc "racetheme totemanimal OR unittheme totemanimal AND racetheme NOT boartotem AND unittheme NOT boartotem *0"
+#chanceinc "anymagic not nature *0"
+#chanceinc "primaryrace hoburg 0.25"
+#command "#gcost +20"
+#command "#templetrainer 1807"
+#notfortier 1
+#notfortier 3
+#description " Can train sacred boars in temples."
+#theme "boartotem"
+#theme "totemanimal"
+#end
+
+#new magefilter
+#name "scorpion trainer"
+#type "leadership"
+#basechance 0.05
+#chanceinc "nationtag occidental 0.45"
+#chanceinc "racetheme totemanimal OR unittheme totemanimal AND racetheme NOT scorpiontotem AND unittheme NOT scorpiontotem *0"
+#chanceinc "anymagic not earth *0"
+#chanceinc "primaryrace zotz 0.5"
+#chanceinc "primaryrace Abysian 0.25"
+#command "#gcost +40"
+#command "#templetrainer 2690"
+#notfortier 1
+#notfortier 3
+#description " Can train sacred scorpions in temples."
+#theme "scopriontotem"
+#theme "totemanimal"
+#end
+
+#new magefilter
+#name "scorpion trainer"
+#type "leadership"
+#basechance 0.05
+#chanceinc "nationtag occidental 0.45"
+#chanceinc "racetheme totemanimal OR unittheme totemanimal AND racetheme NOT scorpiontotem AND unittheme NOT scorpiontotem *0"
+#chanceinc "primaryrace 'Dynastic human' 0.25"
+#chanceinc "anymagic not earth *0"
+#chanceinc "primaryrace zotz 0.5"
+#chanceinc "primaryrace Abysian 0.25"
+#command "#gcost +40"
+#command "#templetrainer 2690"
+#notfortier 1
+#notfortier 3
+#description " Can train sacred scorpions in temples."
+#theme "scopriontotem"
+#theme "totemanimal"
+#end
+
+#new magefilter
+#name "condor trainer"
+#type "leadership"
+#basechance 0.05
+#chanceinc "nationtag occidental 0.95"
+#chanceinc "racetheme totemanimal OR unittheme totemanimal AND racetheme NOT birdtotem AND unittheme NOT birdtotem *0"
+#chanceinc "anymagic not air *0"
+#chanceinc "primaryrace Caelian 0.25"
+#command "#gcost +20"
+#command "#templetrainer 2694"
+#notfortier 1
+#notfortier 3
+#description " Can train sacred condors in temples."
+#theme "condortotem"
+#theme "totemanimal"
+#end
+
+#new magefilter
+#name "gloso trainer"
+#type "leadership"
+#basechance 0.05
+#chanceinc "nationtag nordic 0.45"
+#chanceinc "nationtag boreal 0.05"
+#chanceinc "racetheme totemanimal OR unittheme totemanimal AND racetheme NOT boartotem AND unittheme NOT boartotem *0"
+#chanceinc "primaryrace Abysian 0.45"
+#chanceinc "primaryrace hoburg 0.20"
+#chanceinc "anymagic not death *0"
+#command "#gcost +30"
+#command "#templetrainer 2363"
+#notfortier 1
+#notfortier 3
+#description " Can train sacred black sows in temples."
+#theme "boartotem"
+#theme "totemanimal"
+#end
+
+#new magefilter
+#name "iron pig trainer"
+#type "leadership"
+#basechance 0
+#chanceinc "primaryrace hoburg 0.25"
+#chanceinc "racetheme industrial 0.25"
+#chanceinc "racetheme feral OR racetheme agrarian OR racetheme fae *0"
+#chanceinc "racetheme lesser_golem_cult 0.25"
+#chanceinc "racetheme greater_golem_cult 0.5"
+#command "#gcost +30"
+#command "#templetrainer 1808"
+#notfortier 1
+#notfortier 3
+#description " Can rivet metal plates onto blessed hogs in temples."
+#theme "boartotem"
+#theme "totemanimal"
+#end
+
+#new magefilter
+#name "seelie dog trainer"
+#type "leadership"
+#basechance 0
+#chanceinc "nationtag boreal 0.05"
+#chanceinc "#chanceinc nationtag fae OR hasthemetheme fae 0.25"
+#chanceinc "primaryrace Sidhe 0.25"
+#chanceinc "primaryrace 'Fir Bolg' 0.1"
+#chanceinc "magic not nature *0"
+#command "#gcost +30"
+#command "#templetrainer 1770"
+#notfortier 1
+#notfortier 3
+#description " Can train sacred fae hounds in temples."
+#theme "fae"
+#theme "nature"
+#end
+
+#new magefilter
+#name "unseelie dog trainer"
+#type "leadership"
+#basechance 0
+#chanceinc "nationtag boreal 0.05"
+#chanceinc "#chanceinc nationtag fae OR hasthemetheme fae 0.25"
+#chanceinc "primaryrace Sidhe OR primaryrace Fomorian 0.25"
+#chanceinc "primaryrace 'Fir Bolg' 0.1"
+#chanceinc "magic not death *0"
+#command "#gcost +30"
+#command "#templetrainer 1768"
+#notfortier 1
+#notfortier 3
+#description " Can train sacred fae hounds in temples."
+#theme "fae"
+#theme "death"
+#end
+
+#new magefilter
+#name "teacher of Truths"
+#type "leadership"
+#basechance 0
+#chanceinc "primaryrace Primate AND hasthemetheme lowland AND hasthemetheme enlightened 0.25"
+#chanceinc "magic not astral AND magic not nature OR anymagic blood *0"
+#command "#gcost +30"
+#command "#templetrainer 2271"
+#notfortier 1
+#notfortier 3
+#description " Can teach pious ascetics in temples."
+#theme "enlightened"
+#end
+
+#new magefilter
+#name "Smoulderghost caller"
+#type "leadership"
+#basechance 0
+#chanceinc "nationtag abysian OR hasthemetheme abysian 0.1"
+#chanceinc "magic not death *0"
+#chanceinc "primaryrace Abysian AND anymagic death 0.25"
+#command "#gcost +30"
+#command "#undeadcommand 10"
+#command "#templetrainer 1971"
+#notfortier 1
+#notfortier 3
+#description " Can recall sacred Lavaborn ancestors in temples."
+#theme "abysian"
+#theme "death"
+#end
+
+#new magefilter
+#name "statue sculptor"
+#type "leadership"
+#basechance 0
+#chanceinc "primaryrace "Boreal human" OR primaryrace "Advanced human" OR primaryrace "Oriental human" AND magic earth 0.25"
+#chanceinc "primaryrace "Imperial human" OR primaryrace "Austral human" OR primaryrace "Amazon human" AND magic earth 0.1"
+#chanceinc "nationcommand golemhp above 4 *2"
+#chanceinc "nationcommand golemhp above 9 *2"
+#command "#gcost +10"
+#command "#magiccommand 10"
+#command "#templetrainer 1497"
+#notfortier 1
+#notfortier 3
+#description " Can sculpt animate statues in temples."
+#theme "human"
+#theme "earth"
+#theme "golem"
+#end
+
+#new magefilter
+#name "large statue sculptor"
+#type "leadership"
+#basechance 0
+#chanceinc "primaryrace "Imperial human" OR primaryrace "Austral human" OR primaryrace "Amazon human" AND magic earth 0.25"
+#chanceinc "primaryrace "Boreal human" OR primaryrace "Advanced human" OR primaryrace "Oriental human" AND magic earth 0.1"
+#chanceinc "nationcommand golemhp above 4 *2"
+#chanceinc "nationcommand golemhp above 9 *2"
+#command "#gcost +10"
+#command "#magiccommand 10"
+#command "#templetrainer 474"
+#notfortier 1
+#notfortier 3
+#description " Can sculpt large animate statues in temples."
+#theme "human"
+#theme "earth"
+#theme "golem"
+#end
+
+#new magefilter
+#name "Sentinel sculptor"
+#type "leadership"
+#basechance 0
+#chanceinc "primaryrace Agarthan AND magic earth AND hasthemetheme not nadir 0.25"
+#chanceinc "hasthemetheme waxing -0.15"
+#chanceinc "nationcommand golemhp above 4 *2"
+#chanceinc "nationcommand golemhp above 9 *2"
+#command "#gcost +30"
+#command "#magiccommand 10"
+#command "#templetrainer 1496"
+#notfortier 1
+#notfortier 3
+#description " Can sculpt sacred statues in temples."
+#theme "agarthan"
+#theme "earth"
+#theme "golem"
+#end

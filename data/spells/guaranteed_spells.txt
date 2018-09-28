@@ -266,7 +266,7 @@
 #chanceinc primaryrace not "Pale one" *0
 #end
 
-- Monkey blood spells
+- Enlightened blood spells
 - Way more likely with blood access
 ----------------------
 #new
@@ -283,7 +283,8 @@
 #spell "Host of Ganas"
 #spell "Summon Vetalas"
 #basechance 0
-#chanceinc primaryrace "Primate" 1
+#chanceinc nationtag enlightened 1 
+#chanceinc hasthemetheme enlightened 1
 #chanceinc anymagic not blood *0.5
 #chanceinc random 0.5 -0.66
 #chanceinc random 0.33 *0
@@ -319,4 +320,65 @@
 #chanceinc primaryrace "Ichtyid" 1
 #chanceinc random 0.125 *0
 #chanceinc anymagic not water *0
+#end
+
+- Fae spells
+------------------------
+#new
+#name "Fae spells - Nature"
+#spell "Contact Cu Sidhe"
+#spell "Contact Bean Sidhe"
+#basechance 0
+#chanceinc primaryrace "Sidhe" 1
+#chanceinc nationtag fae 1
+#chanceinc hasthemetheme fae 1
+#chanceinc random 0.25 *0
+#chanceinc anymagic not nature *0
+#end
+
+#new
+#name "Fae spells - Air"
+#spell "Contact Baobhan Sidhe"
+#spell "Summon Morrigan"
+#spell "Dance of the Morrigans"
+#basechance 0
+#chanceinc primaryrace "Sidhe" 1
+#chanceinc nationtag fae 1
+#chanceinc hasthemetheme fae 1
+#chanceinc random 0.25 *0
+#chanceinc anymagic not air *0
+#chanceinc anymagic not death AND random 0.5 *0
+#end
+
+#new
+#name "Fae spells - Death"
+#spell "Summon Black Dogs"
+#spell "Summon Barghests"
+#spell "Summon Bean Sidhe"
+#basechance 0
+#chanceinc primaryrace "Sidhe" 1
+#chanceinc nationtag fae 1
+#chanceinc hasthemetheme fae 1
+#chanceinc random 0.25 *0
+#chanceinc anymagic not death *0
+#end
+
+#new
+#name "Communion Choruses - nature"
+#spell "Chorus Master"
+#spell "Chorus Slave"
+#basechance 0
+#chanceinc command "#spellsinger" 1
+#chanceinc primaryrace "Sidhe" AND random 0.5 OR random 0.5 *0
+#chanceinc magic not nature *0
+#end
+
+#new
+#name "Communion Choruses - death"
+#spell "Dirge Master"
+#spell "Dirge Slave"
+#basechance 0
+#chanceinc command "#spellsinger" 1
+#chanceinc primaryrace "Sidhe" AND random 0.5 OR random 0.5 *0
+#chanceinc magic not death *0
 #end
