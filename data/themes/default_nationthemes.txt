@@ -122,8 +122,6 @@
 - Dominion effects
 -----------
 
-
-
 #new
 #name "nopreach"
 #type "bloodsac"
@@ -201,6 +199,24 @@
 #desc "Priests can incite the nature to reanimate dead bodies to fight again. This causes some unrest amongst the population."
 #magepriestchance 0.85
 #priestextracost 30
+#end
+
+#new
+#name "golemcult_5"
+#type "dominion"
+#basechance 0.06
+#command "#golemhp 5"
+#magicpriority earth 4
+#desc "Inanimate creations are stronger in this dominion"
+#end
+
+#new
+#name "golemcult_10"
+#type "dominion"
+#basechance 0.03
+#command "#golemhp 10"
+#magicpriority earth 10
+#desc "Inanimate creations are much stronger in this dominion"
 #end
 
 #new

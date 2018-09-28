@@ -42,3 +42,43 @@
 #command "#nreff 4038"
 #command "#descr 'The cycle of life is accelerated among the residents of the province. As a result, many simple-minded but loyal Foul Spawn will be born and grow to maturity in the span of a month. With luck, some may even grow well beyond their natural size.'"
 #end
+
+--- Fae summons
+#new
+#name "Contact Bean Sidhe"
+#command "#copyspell 'Summon Bean Sidhe'"
+#command "#name 'Contact Bean Sidhe'"
+#command "#path 0 6"
+#command "#path 1 -1"
+#command "#pathlevel 0 1"
+#command "#descr 'The caster summons a reclusive Sidhe woman from the wilderness where she practices her arts. These sorceresses rarely join or lead armies, but are skilled in the crafts, poetry and magic of the Sidhe.'"
+#end
+
+#new
+#name "Contact Baobhan Sidhe"
+#command "#copyspell 'Summon Bean Sidhe'"
+#command "#name 'Contact Baobhan Sidhe'"
+#command "#path 0 1"
+#command "#path 1 -1"
+#command "#pathlevel 0 1"
+#command "#descr 'The caster summons a Sidhe descendant of the Morrigans. Baobhan Sidhe are seductresses and blood drinkers who haunt the wilderness in the form of stunningly beautiful maidens and lure humans to their deadly embrace.'"
+#end
+
+--- Death mirrors of Nature Choruses
+#new
+#name "Dirge Master"
+#command "#copyspell 'Chorus Master'"
+#command "#name 'Dirge Master'"
+#command "#path 0 5"
+#command "#path 1 -1"
+#command "#pathlevel 0 1"
+#end
+
+#new
+#name "Dirge Slave"
+#command "#copyspell 'Chorus Master'"
+#command "#name 'Dirge Slave'"
+#command "#path 0 5"
+#command "#path 1 -1"
+#command "#pathlevel 0 1"
+#end

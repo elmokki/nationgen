@@ -68,6 +68,7 @@
 #description "Fae blood"
 #chance 0.3
 #command "#mr +1"
+#command "#spellsinger"
 #end
 
 #new
@@ -282,15 +283,8 @@
 #new
 #name "Hardy"
 #chance 0.05
-#command "#woundfend 20"
+#command "#woundfend +1"
 #description "Hardy"
-#end
-
-#new
-#name "Frail"
-#chance 0.05
-#command "#woundfend -20"
-#description "Frail"
 #end
 
 #new
