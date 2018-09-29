@@ -135,7 +135,7 @@ public class CommanderGenerator extends TroopGenerator {
 				Command c = Command.parseCommand(args.get(1));
 				secondaryMagicBeings = (c.command.equals("#magicbeing") || secondaryMagicBeings);
 				secondaryDemons = (c.command.equals("#demon") || secondaryDemons);
-				secondaryUndead = (c.command.equals("#undead") || secondaryUndead);
+				secondaryUndead = (c.command.equals("#undead") || (c.command.equals("#almostundead") || secondaryUndead);
 				secondarySlaves = (c.command.equals("#slave") || secondarySlaves);
 				secondaryAnimals = (c.command.equals("#animal") || secondaryAnimals);
 			}
@@ -189,7 +189,7 @@ public class CommanderGenerator extends TroopGenerator {
 					magicbeings++;
 				if(c.command.equals("#demon") && !(u.race.equals(nation.races.get(1)) || secondaryDemons))  // Make sure we don't double-count
 					demons++;
-				if(c.command.equals("#undead")&& !(u.race.equals(nation.races.get(1)) || secondaryUndead))  // Make sure we don't double-count
+				if((c.command.equals("#undead") || c.command.equals("#almostundead")) && !(u.race.equals(nation.races.get(1)) || secondaryUndead))  // Make sure we don't double-count
 					undeadbeings++;
 				
 				if(c.command.equals("#slave") || (u.race.equals(nation.races.get(1)) && secondarySlaves))
@@ -419,7 +419,7 @@ public class CommanderGenerator extends TroopGenerator {
 					magicbeing = true;
 				else if(c.command.equals("#demon"))
 					demon = true;
-				else if(c.command.equals("#undead"))
+				else if(c.command.equals("#undead") || c.command.equals("#almostundead"))
 					undead = true;
 				else if(c.command.equals("#slave"))
 					slave = true;
