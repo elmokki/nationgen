@@ -1665,6 +1665,8 @@ public class MageGenerator extends TroopGenerator {
 				isUndead = true;
 				others.add("undead");
 			}
+			else if (c.command.equals("#almostundead"))
+				others.add("undead");
 			else if (c.command.equals("#demon"))
 				others.add("undead");
 			else if(c.command.equals("#magicbeing"))

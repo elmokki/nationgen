@@ -102,7 +102,7 @@ public class PDSelector {
 		for(Unit u : others)
 			for(Command c : u.commands)
 			{
-				if(c.command.equals("#undead") || c.command.equals("#demon"))
+				if(c.command.equals("#undead") || c.command.equals("#demon") || c.command.equals("#almostundead"))
 					ud_demon = true;
 				else if(c.command.equals("#magicbeing"))
 					magicbeing = true;
