@@ -371,6 +371,7 @@
 #chanceinc command "#spellsinger" 1
 #chanceinc primaryrace "Sidhe" AND random 0.5 OR random 0.5 *0
 #chanceinc magic not nature *0
+#chanceinc spells "Communion Choruses - death" *0
 #end
 
 #new
@@ -381,4 +382,5 @@
 #chanceinc command "#spellsinger" 1
 #chanceinc primaryrace "Sidhe" AND random 0.5 OR random 0.5 *0
 #chanceinc magic not death *0
+#chanceinc spells "Communion Choruses - nature" *0
 #end
