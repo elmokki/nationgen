@@ -16,6 +16,20 @@
 #command "#descr 'The caster listens to the earth, connecting to anyone willing to surrender themselves to it (communion master)'"
 #end
 
+--- Full battlefield Awaken Tattoos
+#new
+#name "Enliven Tattoos"
+#command "#copyspell 'Awaken Tattoos'"
+#command "#name 'Enliven Tattoos'"
+#command "#path 0 6"
+#command "#path 1 8"
+#command "#pathlevel 0 3"
+#command "#pathlevel 1 1"
+#command "#fatiguecost 100"
+#command "#aoe 666"
+#command "#casttime 150"
+#end
+
 
 --- Natural cross breeding
 #new

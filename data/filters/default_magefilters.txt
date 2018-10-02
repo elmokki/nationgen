@@ -731,6 +731,10 @@
 #basechance 0.075
 #chanceinc "personalmagic earth 0.15"
 #command "#darkvision +50"
+#primarycommand blind
+#primarycommand demon
+#primarycommand undead
+#primarycommand spiritsight
 #end
 
 #new magefilter
@@ -739,6 +743,11 @@
 #basechance 0.05
 #chanceinc "personalmagic earth 0.15"
 #command "#darkvision 100"
+#primarycommand blind
+#primarycommand darkvision
+#primarycommand demon
+#primarycommand undead
+#primarycommand spiritsight
 #end
 
 #new magefilter
@@ -1024,15 +1033,6 @@
 #power 2
 #end
 
-
-#new magefilter
-#name "crossbreeder"
-#basechance 0.0
-#chanceinc "personalmagic nature blood 4"
-#command "#crossbreeder 4"
-#description "excellent at crossbreeding."
-#end
-
 #new magefilter
 #name "lesser_otherness"
 #type "familiar"
@@ -1120,4 +1120,159 @@
 #notfortier 3
 #theme smith
 #theme resources
+#end
+
+#new magefilter
+#name "crossbreeder 3"
+#type "summoning"
+#basechance 0.0
+#chanceinc "personalmagic nature blood 4"
+#command "#crossbreeder +3"
+#description " Skilled at crossbreeding."
+#end
+
+#new magefilter
+#name "crossbreeder 6"
+#type "summoning"
+#basechance 0.0
+#chanceinc "personalmagic nature above 1 AND personalmagic blood above 1 2"
+#command "#crossbreeder +6"
+#notfortier1
+#description " Excellent at crossbreeding."
+#end
+
+#new magefilter
+#name "crossbreeder 9"
+#type "summoning"
+#basechance 0.0
+#chanceinc "personalmagic nature above 2 AND personalmagic blood above 2 2"
+#command "#crossbreeder +9"
+#notfortier1
+#notfortier2
+#description " Masterful at crossbreeding."
+#end
+
+#new magefilter
+#name "ivylord 1"
+#type "summoning"
+#basechance 0
+#chanceinc "personalmagic nature 4"
+#command "#ivylord +1"
+#notfortier 3
+#theme nature
+#theme ivy
+#end
+
+#new magefilter
+#name "ivylord 2"
+#type "summoning"
+#basechance 0
+#chanceinc "personalmagic nature above 1 4"
+#command "#ivylord +2"
+#notfortier 1
+#theme nature
+#theme ivy
+#end
+
+#new magefilter
+#name "ivylord 3"
+#type "summoning"
+#basechance 0
+#chanceinc "personalmagic nature above 2 2"
+#command "#ivylord +3"
+#notfortier 1
+#notfortier 2
+#theme nature
+#theme ivy
+#end
+
+#new magefilter
+#name "dragonlord 1"
+#type "summoning"
+#basechance 0
+#chanceinc "personalmagic nature above 1 AND personalmagic water 0.25"
+#chanceinc "personalmagic water above 1 0.25"
+#chanceinc "personalmagic fire above 1 0.25"
+#chanceinc "personalmagic earth above 1 0.25"
+#chanceinc "personalmagic air above 1 0.25"
+#command "#dragonlord +1"
+#theme dragon
+#theme draketotem
+#end
+
+#new magefilter
+#name "dragonlord 2"
+#type "summoning"
+#basechance 0
+#chanceinc "personalmagic nature above 2 AND personalmagic water 0.125"
+#chanceinc "personalmagic water above 2 0.125"
+#chanceinc "personalmagic fire above 2 0.125"
+#chanceinc "personalmagic earth above 2 0.125"
+#chanceinc "personalmagic air above 2 0.125"
+#command "#dragonlord +2"
+#notfortier 1
+#theme dragon
+#theme draketotem
+#end
+
+#new magefilter
+#name "lamialord 2"
+#type "summoning"
+#basechance 0
+#chanceinc "personalmagic nature above 2 0.1"
+#command "#lamialord +2"
+#description " Esteemed by lamia-kind."
+#notfortier 1
+#theme serpent
+#theme snaketotem
+#end
+
+#new magefilter
+#name "lamialord 4"
+#type "summoning"
+#basechance 0
+#chanceinc "personalmagic nature above 3 0.1"
+#command "#lamialord +4"
+#description " Revered by lamia-kind."
+#notfortier 1
+#notfortier 2
+#theme serpent
+#theme snaketotem
+#end
+
+#new magefilter
+#name "corpselord 2"
+#type "summoning"
+#basechance 0
+#chanceinc "personalmagic air death 4"
+#command "#corpselord +2"
+#description " Proficient at reanimating corpses with electricity."
+#notfortier 3
+#theme death
+#theme construction
+#end
+
+#new magefilter
+#name "corpselord 4"
+#type "summoning"
+#basechance 0
+#chanceinc "personalmagic air above 1 OR personalmagic death above 1 AND personalmagic air death 2"
+#command "#corpselord +4"
+#description " Talented at reanimating corpses with electricity."
+#notfortier 1
+#theme death
+#theme construction
+#end
+
+#new magefilter
+#name "corpselord 6"
+#type "summoning"
+#basechance 0
+#chanceinc "personalmagic air above 2 OR personalmagic death above 2 AND personalmagic air death 2"
+#command "#corpselord +6"
+#description " Masterful at reanimating corpses with electricity."
+#notfortier 1
+#notfortier 2
+#theme death
+#theme construction
 #end
