@@ -91,6 +91,7 @@
 #racedefinition "#preferredmount serpent"
 #racedefinition "#preferredmount lizard"
 #racedefinition "#preferredmount horse"
+#racedefinition "#human"
 #endtheme
 
 #newtheme
@@ -102,6 +103,7 @@
 -- #racedefinition "#pose centralranged"
 -- #racedefinition "#pose centralcavalry"
 -- #racedefinition "#pose centralmages"
+-- #racedefinition "#human"
 #endtheme
 
 #newtheme
@@ -109,7 +111,6 @@
 #name lamia
 -- #basechance 0.125
 #basechance 0.5
-#racedefinition "#name Lamia"
 #racedefinition "#visiblename Lamia"
 #racedefinition "#pose lamiatroops"
 #racedefinition "#pose lamiamage"
@@ -117,6 +118,9 @@
 #racedefinition "#magicpriority nature 3"
 #racedefinition "#magicpriority blood 1.5"
 #racedefinition "#magicpriority water 1.5"
+#racedefinition "#theme serpent"
+#racedefinition "#theme lamia"
+#racedefinition "#theme coldblooded"
 #endtheme
 
 
@@ -136,6 +140,8 @@
 #themeinc theme leather *1
 #themeinc theme naked *0.25
 #themeinc theme primitive *0.25
+#racedefinition "#forts default_forts"
+#racedefinition "#forts city_forts"
 #endtheme
 
 -- Weights: EA 2, MA 1, LA 0.5

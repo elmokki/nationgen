@@ -1,4 +1,7 @@
 ---- Don't use just tab, you need to have at least one space bar between the arguments.
+----- Multiracial poses
+#load  generic_scouts ./data/poses/human/generic_scouts.txt
+
 ---- Human poses
 #load humaninfantry ./data/poses/human/humaninfantry.txt
 #load humanranged ./data/poses/human/humanranged.txt
@@ -53,7 +56,7 @@
 
 ---- Imperial humans ("legion" poses provide a fairly rigid primary-race troop structure)
 #load imperiallegion ./data/poses/imperial/legion.txt
--- #load imperialinfantry ./data/poses/imperial/infantry.txt
+#load imperialsacred ./data/poses/imperial/sacred.txt
 -- #load imperialcavalry ./data/poses/imperial/cavalry.txt
 #load imperialranged ./data/poses/imperial/ranged.txt
 #load imperialmage ./data/poses/imperial/mage.txt
@@ -170,6 +173,28 @@
 #load carpmenmages ./data/poses/ichtyid/mages_carp.txt
 #load koitroops ./data/poses/ichtyid/troops_koi.txt
 #load koimages ./data/poses/ichtyid/mages_koi.txt
+#load amphiprionidtroops ./data/poses/ichtyid/troops_amphiprionid.txt
+#load amphiprionidmages ./data/poses/ichtyid/mages_amphiprionid.txt
+#load piranhidtroops ./data/poses/ichtyid/troops_piranhid.txt
+#load piranhidmages ./data/poses/ichtyid/mages_piranhid.txt
+#load selachidtroops ./data/poses/ichtyid/troops_selachid.txt
+#load selachidmages ./data/poses/ichtyid/mages_selachid.txt
+#load esoxidtroops ./data/poses/ichtyid/troops_esoxid.txt
+#load esoxidmages ./data/poses/ichtyid/mages_esoxid.txt
+#load percidtroops ./data/poses/ichtyid/troops_percid.txt
+#load percidmages ./data/poses/ichtyid/mages_percid.txt
+#load siluriformidtroops ./data/poses/ichtyid/troops_siluriformid.txt
+#load siluriformidmages ./data/poses/ichtyid/mages_siluriformid.txt
+#load lophiiformidtroops ./data/poses/ichtyid/troops_lophiiformid.txt
+#load lophiiformidmages ./data/poses/ichtyid/mages_lophiiformid.txt
+#load flyingtroops ./data/poses/ichtyid/troops_flying.txt
+#load flyingmages ./data/poses/ichtyid/mages_flying.txt
+#load thunninidtroops ./data/poses/ichtyid/troops_thunninid.txt
+#load thunninidmages ./data/poses/ichtyid/mages_thunninid.txt
+#load istiophoridtroops ./data/poses/ichtyid/troops_istiophorid.txt
+#load istiophoridmages ./data/poses/ichtyid/mages_istiophorid.txt
+#load xiphiidtroops ./data/poses/ichtyid/troops_xiphiid.txt
+#load xiphiidmages ./data/poses/ichtyid/mages_xiphiid.txt
 
 ---- Avvim and other such giants
 #load avviteinfantry ./data/poses/avvim/avviteinfantry.txt
@@ -216,3 +241,5 @@
 ---- Random non-primate Desi races
 #load nagatroops ./data/poses/enlightened/nagatroops.txt
 #load nagamages ./data/poses/enlightened/nagamages.txt
+#load dantihtroops ./data/poses/enlightened/dantihtroops.txt
+#load dantihmages ./data/poses/enlightened/dantihmages.txt

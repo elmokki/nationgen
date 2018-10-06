@@ -9,30 +9,15 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 import java.util.Map.Entry;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 import com.elmokki.Drawing;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
+import nationGen.Settings.SettingsType;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Race;
@@ -48,18 +33,8 @@ import nationGen.misc.ItemSet;
 import nationGen.misc.Site;
 import nationGen.misc.SiteGenerator;
 import nationGen.naming.Summary;
-import nationGen.restrictions.MagicAccessRestriction;
-import nationGen.restrictions.MageWithAccessRestriction;
-import nationGen.restrictions.MagicDiversityRestriction;
 import nationGen.restrictions.NationRestriction;
-import nationGen.restrictions.NationThemeRestriction;
-import nationGen.restrictions.NoPrimaryRaceRestriction;
-import nationGen.restrictions.NoUnitOfRaceRestriction;
-import nationGen.restrictions.PrimaryRaceRestriction;
-import nationGen.restrictions.SacredRaceRestriction;
-import nationGen.restrictions.UnitCommandRestriction;
-import nationGen.restrictions.UnitFilterRestriction;
-import nationGen.restrictions.UnitOfRaceRestriction;
+import nationGen.restrictions.NationRestriction.RestrictionType;
 import nationGen.rostergeneration.CommanderGenerator;
 import nationGen.rostergeneration.HeroGenerator;
 import nationGen.rostergeneration.MonsterGenerator;
@@ -80,10 +55,13 @@ public class Nation {
 	public String name = "UNNAMED";
 	public String epithet = "NO EPITHET";
 	
-        public boolean passed = true;
-        public String restrictionFailed = "";
+    public boolean passed = true;
+    public String restrictionFailed = "";
+    
 	public NationGen nationGen;
-	public int seed = 0;
+	private NationGenAssets assets;
+	
+	private long seed = 0;
 	
 	public ItemSet usedItems = new ItemSet();
 	public Random random;
@@ -91,7 +69,6 @@ public class Nation {
 	public List<Unit> heroes = new ArrayList<Unit>();
 
 	public List<Command> commands = new ArrayList<Command>();
-	//public List<Filter> appliedfilters = new ArrayList<Filter>();
 	public List<CustomItem> usedcustomitems = new ArrayList<CustomItem>();
 	public List<ShapeChangeUnit> secondshapes = new ArrayList<ShapeChangeUnit>();
 	public List<CustomItem> customitems = new ArrayList<CustomItem>();
@@ -111,14 +88,17 @@ public class Nation {
 	public Summary summary = new Summary(this);
 	
 	public BufferedImage flag = null;
+	
+	public int PDRanks = 2;
 
-	public Nation(NationGen ngen, int seed, int tempid, List restrictions)
+	public Nation(NationGen ngen, long seed, int tempid, List<NationRestriction> restrictions, NationGenAssets assets)
 	{
 		this.nationid = tempid;
 		this.nationGen = ngen;
 		this.random = new Random(seed);
 		this.seed = seed;
-		this.era = (int)Math.round(nationGen.settings.get("era"));
+		this.assets = assets;
+		this.era = (int)Math.round(nationGen.settings.get(SettingsType.era));
 		
 		comlists.put("scouts", new ArrayList<Unit>());
 		comlists.put("commanders", new ArrayList<Unit>());
@@ -128,6 +108,10 @@ public class Nation {
 		generate(restrictions);
 	}
 	
+	public long getSeed()
+	{
+	    return seed;
+	}
 	
 	private void getColors()
 	{
@@ -152,15 +136,15 @@ public class Nation {
 		// choose primary race
 		List<Race> allRaces = new ArrayList<>();
 
-                for(Race r : nationGen.races)
-                {
-                    if (!r.tags.contains("secondary")) 
-                    {
-                        allRaces.add(r);
-                    }
-                }
-                Race race;
-                race = chandler.getRandom(allRaces);
+        for(Race r : assets.races)
+        {
+            if (!r.tags.contains("secondary")) 
+            {
+                allRaces.add(r);
+            }
+        }
+        Race race;
+        race = chandler.getRandom(allRaces);
                 
 		races.add(race.getCopy());
 		
@@ -179,7 +163,7 @@ public class Nation {
 		
 		// Secondary race after themes since themes may affect it
 		allRaces.clear();
-		allRaces.addAll(nationGen.races);
+		allRaces.addAll(assets.races);
 		allRaces.remove(race);
 		
 		race = Race.getRandom(random, chandler.handleChanceIncs(allRaces));
@@ -231,7 +215,7 @@ public class Nation {
 	private void generateMagesAndPriests()
 	{
 		// Mages and priests
-		MageGenerator mageGen = new MageGenerator(nationGen, this);
+		MageGenerator mageGen = new MageGenerator(nationGen, this, assets);
 		comlists.get("mages").addAll(mageGen.generateMages());
 		comlists.get("priests").addAll(mageGen.generatePriests());
 		mageGen = null;
@@ -240,7 +224,7 @@ public class Nation {
 	private void generateTroops()
 	{
 		// Troops
-		RosterGenerator g = new RosterGenerator(nationGen, this);
+		RosterGenerator g = new RosterGenerator(nationGen, this, assets);
 		g.execute();
 		g = null;
 		System.gc();
@@ -250,7 +234,7 @@ public class Nation {
 	private void generateSacreds()
 	{
 		//// Sacreds and elites
-		SacredGenerator sacGen = new SacredGenerator(nationGen, this);
+		SacredGenerator sacGen = new SacredGenerator(nationGen, this, assets);
 		List<Unit> sacreds = new ArrayList<Unit>();
 		
 
@@ -356,7 +340,7 @@ public class Nation {
 	{
 		// Scouts
 		
-		ScoutGenerator scoutgen = new ScoutGenerator(nationGen, this);
+		ScoutGenerator scoutgen = new ScoutGenerator(nationGen, this, assets);
 		
 		if(races.get(0).hasRole("scout") && !races.get(0).tags.contains("#no_scouts"))
 			comlists.get("scouts").add(scoutgen.generateScout(races.get(0)));
@@ -377,7 +361,7 @@ public class Nation {
 		
 		if(random.nextDouble() < specialcomchance)
 		{
-			SpecialCommanderGenerator scg = new SpecialCommanderGenerator(this, nationGen);
+			SpecialCommanderGenerator scg = new SpecialCommanderGenerator(this, nationGen, assets);
 			scg.generate();
 			scg = null;
 			System.gc();
@@ -387,7 +371,7 @@ public class Nation {
 	private void generateGods()
 	{
 		// Gods
-		GodGen gg = new GodGen(this);
+		GodGen gg = new GodGen(this, assets);
 		this.gods.addAll(gg.giveGods());
 		gg = null;
 	}
@@ -397,7 +381,7 @@ public class Nation {
 		ChanceIncHandler chandler = new ChanceIncHandler(this);
 
 		// Forts
-		List<Filter> possibleForts = ChanceIncHandler.retrieveFilters("forts", "default_forts", nationGen.miscdef, null, races.get(0));
+		List<Filter> possibleForts = ChanceIncHandler.retrieveFilters("forts", "default_forts", assets.miscdef, null, races.get(0));
 		possibleForts = ChanceIncHandler.getFiltersWithType("era " + era, possibleForts);
 		Filter forts = chandler.getRandom(possibleForts);
 		this.commands.addAll(forts.commands);
@@ -407,7 +391,7 @@ public class Nation {
 	{
 		// Heroes
 		
-		HeroGenerator hg = new HeroGenerator(nationGen, this);
+		HeroGenerator hg = new HeroGenerator(nationGen, this, assets);
 		int heroes = 1 + random.nextInt(3); // 1-3
 		this.heroes.addAll(hg.generateHeroes(heroes));
 		hg = null;
@@ -418,7 +402,7 @@ public class Nation {
 	private void generateComs()
 	{
 		// Commanders
-		CommanderGenerator comgen = new CommanderGenerator(nationGen, this);
+		CommanderGenerator comgen = new CommanderGenerator(nationGen, this, assets);
 		comgen.generateComs();
 		comgen = null;
 		System.gc();
@@ -434,7 +418,7 @@ public class Nation {
 		
 		if(random.nextDouble() < monsterchance)
 		{
-			MonsterGenerator mGen = new MonsterGenerator(this, this.nationGen);
+			MonsterGenerator mGen = new MonsterGenerator(this, this.nationGen, assets);
 			Unit monster = mGen.generateMonster();
 			if(monster != null)
 			{
@@ -449,14 +433,14 @@ public class Nation {
 	private void generateSpells()
 	{
 		// Spells
-		SpellGen spellgenerator = new SpellGen(this.nationGen, this);
-		spellgenerator.execute();
+		SpellGen spellgenerator = new SpellGen(this);
+		spellgenerator.execute(assets);
 	}
 	
 	private void generateFlag()
 	{
 		// Flag
-		FlagGen fg = new FlagGen(this);
+		FlagGen fg = new FlagGen(this, assets);
 		this.flag = fg.generateFlag(this);
 		fg = null;
 		
@@ -469,7 +453,7 @@ public class Nation {
 		// Start affinity
 		int cycles = 2;
 		
-		List<Filter> posaff = ChanceIncHandler.retrieveFilters("startaffinities", "startaffinities", nationGen.miscdef, null, races.get(0));
+		List<Filter> posaff = ChanceIncHandler.retrieveFilters("startaffinities", "startaffinities", assets.miscdef, null, races.get(0));
 
 		
 		Filter startaff = null;
@@ -485,95 +469,75 @@ public class Nation {
 				}
 				posaff.remove(startaff);
 			}
-			
-			cycles--;
+		
+		    cycles--;
 		}
 		posaff = null;
 		System.gc();
 	}
 	
 	
+    public void generate(List<NationRestriction> restrictions)
+    {
+        getColors();
+        getRaces();
 
-	
-	public void generate(List restrictions)
-	{
-            //
-            // Easiest way I found to get the Class information for doing a comparsion; might be an easier way?
-            //
-            MageWithAccessRestriction mageWithAccessRestriction = new MageWithAccessRestriction(nationGen);
-            MagicAccessRestriction magicAccessRestriction = new MagicAccessRestriction(nationGen);
-            MagicDiversityRestriction magicDiversityRestriction = new MagicDiversityRestriction(nationGen);
-            NationThemeRestriction nationThemeRestriction = new NationThemeRestriction(nationGen);
-            NoPrimaryRaceRestriction noPrimaryRaceRestriction = new NoPrimaryRaceRestriction(nationGen);
-            NoUnitOfRaceRestriction noUnitOfRaceRestriction = new NoUnitOfRaceRestriction(nationGen);
-            PrimaryRaceRestriction primaryRaceRestriction = new PrimaryRaceRestriction(nationGen);
-            SacredRaceRestriction sacredRaceRestriction = new SacredRaceRestriction(nationGen);
-            UnitCommandRestriction unitCommandRestriction = new UnitCommandRestriction(nationGen);
-            UnitFilterRestriction unitFilterRestriction = new UnitFilterRestriction(nationGen);
-            UnitOfRaceRestriction unitOfRaceRestriction = new UnitOfRaceRestriction(nationGen);
+        if (!checkRestrictions(restrictions, RestrictionType.NoPrimaryRace, RestrictionType.PrimaryRace,
+                RestrictionType.NationTheme))
+        {
+            return;
+        }
 
-            @SuppressWarnings("rawtypes")
-			List<Class> restrictionTypes = new ArrayList<>();
-            restrictionTypes.add(primaryRaceRestriction.getClass());
-            restrictionTypes.add(noPrimaryRaceRestriction.getClass());
-            restrictionTypes.add(nationThemeRestriction.getClass());
-            
-            getColors();
-            getRaces();
-            
-            if (!checkRestrictions(restrictions, restrictionTypes)) 
-            {
-                return;
-            }
-            restrictionTypes.clear();
-            restrictionTypes.add(mageWithAccessRestriction.getClass());
-            restrictionTypes.add(magicAccessRestriction.getClass());
-            restrictionTypes.add(magicDiversityRestriction.getClass());
-            restrictionTypes.add(primaryRaceRestriction.getClass());
-            
-            generateMagesAndPriests();
-            
-            if (!checkRestrictions(restrictions, restrictionTypes)) 
-            {
-                return;
-            }
-            restrictionTypes.clear();
-            restrictionTypes.add(sacredRaceRestriction.getClass());
-            
-            generateTroops();
-            generateSacreds();
-            
-            if (!checkRestrictions(restrictions, restrictionTypes)) 
-            {
-                return;
-            }
-            restrictionTypes.clear();
-            restrictionTypes.add(unitCommandRestriction.getClass());
-            restrictionTypes.add(unitFilterRestriction.getClass());
-            restrictionTypes.add(unitOfRaceRestriction.getClass());
-            restrictionTypes.add(noUnitOfRaceRestriction.getClass());
-            
-            generateScouts();
-            generateSpecialComs();
-            generateGods();
-            getForts();
-            generateHeroes();
-            applyNationWideFilter();
-            generateComs();
-            
-            if (!checkRestrictions(restrictions, restrictionTypes)) 
-            {
-                return;
-            }
-            
-            generateMonsters();
-            SiteGenerator.generateSites(this);
-            generateSpells();
-            generateFlag();	
-            getStartAffinity();
-            
-            //finalizeUnits();
-	}
+        generateMagesAndPriests();
+
+        if (!checkRestrictions(restrictions, RestrictionType.MageWithAccess, RestrictionType.MagicAccess,
+                RestrictionType.MagicDiversity, RestrictionType.PrimaryRace))
+        {
+            return;
+        }
+
+        generateTroops();
+        generateSacreds();
+
+        if (!checkRestrictions(restrictions, RestrictionType.SacredRace, RestrictionType.RecAnywhereSacreds))
+        {
+            return;
+        }
+
+        generateScouts();
+        generateSpecialComs();
+        generateGods();
+        getForts();
+        generateHeroes();
+        applyNationWideFilter();
+        generateComs();
+
+        if (!checkRestrictions(restrictions, RestrictionType.UnitCommand, RestrictionType.UnitFilter,
+                RestrictionType.UnitRace, RestrictionType.NoUnitOfRace))
+        {
+            return;
+        }
+
+        generateMonsters();
+        SiteGenerator.generateSites(this, assets);
+        generateSpells();
+        generateFlag();
+        getStartAffinity();
+
+        double extraPDMulti = 1;
+        if (Generic.containsTag(this.races.get(0).tags, "extrapdmulti"))
+            extraPDMulti = Double.parseDouble(Generic.getTagValue(this.races.get(0).tags, "extrapdmulti"));
+
+        if (random.nextDouble() < 0.1 * extraPDMulti)
+        {
+            if (random.nextDouble() < 0.02 * extraPDMulti)
+                PDRanks = 4;
+            else
+                PDRanks = 3;
+        }
+
+        // finalizeUnits();
+    }
 	
 	
 
@@ -583,7 +547,7 @@ public class Nation {
 
 		Race race = this.races.get(0);
 		
-		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("nationthemes", "default_nationthemes", nationGen.themes, null, race);
+		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("nationthemes", "default_nationthemes", assets.themes, null, race);
 		ChanceIncHandler chandler = new ChanceIncHandler(this);
 		List<String> freeThemes = Generic.getTagValues(race.tags, "freenationtheme");
 		
@@ -667,7 +631,7 @@ public class Nation {
 	{
 		
 		
-		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("racethemes", "default_racethemes", nationGen.themes, null, race);
+		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("racethemes", "default_racethemes", assets.themes, null, race);
 		ChanceIncHandler chandler = new ChanceIncHandler(this);
 		
 		List<String> freeThemes = Generic.getTagValues(race.tags, "freetheme");
@@ -814,7 +778,7 @@ public class Nation {
 				count++;
 		}
 		
-		List<Filter> possibles = ChanceIncHandler.retrieveFilters("nationwidefilters", "default_nationwidefilters", nationGen.filters, null, races.get(0));
+		List<Filter> possibles = ChanceIncHandler.retrieveFilters("nationwidefilters", "default_nationwidefilters", assets.filters, null, races.get(0));
 
 		ChanceIncHandler chandler = new ChanceIncHandler(this);
 		boolean primary = true;
@@ -822,7 +786,7 @@ public class Nation {
 		
 		if(random.nextDouble() < this.percentageOfRace(races.get(1)))
 		{
-			possibles.retainAll(ChanceIncHandler.retrieveFilters("nationwidefilters", "default_nationwidefilters", nationGen.filters, null, races.get(1)));
+			possibles.retainAll(ChanceIncHandler.retrieveFilters("nationwidefilters", "default_nationwidefilters", assets.filters, null, races.get(1)));
 			if(possibles.size() > 0 && random.nextDouble() < 0.1)
 			{
 				both = true;
@@ -830,7 +794,7 @@ public class Nation {
 			else
 			{
 				primary = false;
-				possibles = ChanceIncHandler.retrieveFilters("nationwidefilters", "default_nationwidefilters", nationGen.filters, null, races.get(1));
+				possibles = ChanceIncHandler.retrieveFilters("nationwidefilters", "default_nationwidefilters", assets.filters, null, races.get(1));
 			}
 		}
 		
@@ -917,38 +881,6 @@ public class Nation {
 		}
 
 	}
-	
-	/*
-	private void addFilters()
-	{
-		ChanceIncHandler chandler = new ChanceIncHandler(this);
-		List<Filter> filters = ChanceIncHandler.retrieveFilters("nationfilters", "default_nationfilters", this.nationGen.filters, null, this.races.get(0));
-		
-		int count = 0;
-		if(random.nextDouble() > 0.5)
-		{	
-			count++;
-			if(random.nextDouble() > 0.75)
-			{	
-				count++;
-			}
-		}
-		
-		for(int i = 0; i < count; i++)
-		{
-			if(filters.size() == 0)
-				break;
-			
-			Filter f = Filter.getRandom(random, chandler.handleChanceIncs(filters));
-			chandler.removeRelated(f, filters);
-			this.appliedfilters.add(f);
-			for(Command c : f.getCommands())
-				this.handleCommand(this.commands, c);
-
-		}
-		
-	}
-	*/
 	
 	public List<List<Unit>> getMagesInSeparateLists()
 	{
@@ -1048,6 +980,17 @@ public class Nation {
         tw.println("#defmult1 " + pds.getMilitiaAmount(pds.getMilitia(1, 1)));
         tw.println("#defunit1b " + pds.getIDforPD(pds.getMilitia(2, 1)));
         tw.println("#defmult1b " + pds.getMilitiaAmount(pds.getMilitia(2, 1)));
+        if(PDRanks > 2)
+        {
+            tw.println("#defunit1c " + pds.getIDforPD(pds.getMilitia(3, 1)));
+            tw.println("#defmult1c " + pds.getMilitiaAmount(pds.getMilitia(3, 1)));
+            
+            if(PDRanks > 3)
+            {
+                tw.println("#defunit1d " + pds.getIDforPD(pds.getMilitia(4, 1)));
+                tw.println("#defmult1d " + pds.getMilitiaAmount(pds.getMilitia(4, 1)));
+            }
+        }
         tw.println("#defcom2 " + pds.getIDforPD(pds.getPDCommander(2)));
         tw.println("#defunit2 " + pds.getIDforPD(pds.getMilitia(1, 2)));
         tw.println("#defmult2 " + pds.getMilitiaAmount(pds.getMilitia(1, 2)));
@@ -1518,29 +1461,14 @@ public class Nation {
 			site.write(tw);
 	}
 	
-    public boolean checkRestrictions(List restrictions, List<Class> restrictionTypes)
+    public boolean checkRestrictions(List<NationRestriction> restrictions, RestrictionType... restrictionTypes)
     {
-        for(int index = 0; index < restrictions.size(); index++)
+        for(var restriction: restrictions)
         {
-            NationRestriction n = (NationRestriction) restrictions.get(index);
-            boolean isRestrictionType = false;
-            
-            for(Class restrictionType : restrictionTypes)
+            if (Set.of(restrictionTypes).contains(restriction.getType()) && !restriction.doesThisPass(this)) 
             {
-                if (n.getClass() == restrictionType) 
-                {
-                    isRestrictionType = true;
-                }
-            }
-            
-            if (!isRestrictionType) 
-            {
-                continue;
-            }
-            if (!n.doesThisPass(this)) 
-            {
-                this.passed = false;
-                this.restrictionFailed = n.toString().toUpperCase();
+                passed = false;
+                restrictionFailed = restriction.toString().toUpperCase();
                 return false;
             }
         }

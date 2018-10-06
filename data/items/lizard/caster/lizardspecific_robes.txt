@@ -26,7 +26,7 @@
 
 #newitem
 #id imperialrobe1
-#gameid 158
+#gameid 159
 #sprite /graphics/bodyarmor/robes/imperialrobe1.png
 #recolormask /graphics/bodyarmor/robes/imperialrobe1_recolormask.png
 #offsetx -1
@@ -39,7 +39,7 @@
 
 #newitem
 #id imperialrobe2
-#gameid 158
+#gameid 159
 #sprite /graphics/bodyarmor/robes/imperialrobe2.png
 #recolormask /graphics/bodyarmor/robes/imperialrobe2_recolormask.png
 #offsetx -1
@@ -54,13 +54,49 @@
 
 #newitem
 #id imperialrobe3
-#gameid 158
+#gameid 159
 #sprite /graphics/bodyarmor/robes/imperialrobe3.png
 #recolormask /graphics/bodyarmor/robes/imperialrobe3_recolormask.png
 #offsetx -1
 #offsety -2
 #armor
 #tag "tier 3"
+#theme "advanced"
+#enditem
+
+#newitem
+#id kamirobe1
+#gameid 159
+#sprite /graphics/bodyarmor/ctis_robes/kamirobe.png
+#recolormask /graphics/bodyarmor/ctis_robes/kamirobe_recolormask1.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#tag "eliteversion kamirobe2"
+#theme "advanced"
+#enditem
+
+#newitem
+#id kamirobe2
+#gameid 159
+#sprite /graphics/bodyarmor/ctis_robes/kamirobe.png
+#recolormask /graphics/bodyarmor/ctis_robes/kamirobe_recolormask2.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#tag "eliteversion kamirobe3"
+#theme "advanced"
+#enditem
+
+#newitem
+#id kamirobe3
+#gameid 159
+#sprite /graphics/bodyarmor/ctis_robes/kamirobe.png
+#recolormask /graphics/bodyarmor/ctis_robes/kamirobe_recolormask3.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#tag "eliteversion kamirobe1"
 #theme "advanced"
 #enditem
 
@@ -308,4 +344,46 @@
 #armor
 #tag "tier 3"
 #theme "primitive"
+#enditem
+
+#newitem
+#id shorttoga_white
+#gameid 158
+#sprite /graphics/bodyarmor/ctis_robes/toga2_white.png
+#tag "eliteversion toga2_light"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id shorttoga_light
+#gameid 158
+#sprite /graphics/bodyarmor/ctis_robes/toga2_white.png
+#recolormask /graphics/bodyarmor/ctis_robes/toga2_light_recolormask.png
+#tag "eliteversion toga2_dark"
+#armor
+#tag "tier 3"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id shorttoga_black
+#gameid 158
+#sprite /graphics/bodyarmor/ctis_robes/toga2_black.png
+#tag "eliteversion toga2_dark"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id shorttoga_dark
+#gameid 158
+#sprite /graphics/bodyarmor/ctis_robes/toga2_black.png
+#recolormask /graphics/bodyarmor/ctis_robes/toga2_dark_recolormask.png
+#tag "eliteversion toga2_light"
+#armor
+#tag "tier 3"
+#tag "tier 2"
 #enditem

@@ -171,7 +171,6 @@
 #power 2
 #end
 
-
 #new
 #name "chaosrec10"
 #type "chaosrec"
@@ -262,7 +261,7 @@
 #basechance 0.0
 #command "#fireshield 2"
 #command "#speciallook 1"
-#chanceinc "command #fireshield 2"
+#chanceinc "command #fireshield +2"
 #chanceinc "magic fire 1"
 #power 1
 #end
@@ -271,7 +270,7 @@
 #name "fireshield4"
 #type "fireshield"
 #basechance 0.0
-#command "#fireshield 4"
+#command "#fireshield +4"
 #command "#speciallook 1"
 #chanceinc "command #fireshield 1"
 #chanceinc "magic fire 1"
@@ -282,7 +281,7 @@
 #name "fireshield6"
 #type "fireshield"
 #basechance 0.0
-#command "#fireshield 6"
+#command "#fireshield +6"
 #command "#speciallook 1"
 #chanceinc "command #fireshield 0.5"
 #chanceinc "magic fire 0.5"
@@ -466,6 +465,7 @@
 #new
 #name "recup"
 #basechance 0.0
+#primarycommand "#heal"
 #chanceinc "magic nature 1"
 #chanceinc "command #heal 10"
 #command "#heal"
@@ -682,6 +682,22 @@
 #power 3
 #end
 
+#new magefilter
+#name "sun awe"
+#basechance 0.1
+#chanceinc magic astral OR magic fire 0.1
+#chanceinc magic astral fire 0.1
+#chanceinc "command #sunawe +1"
+#command "#sunawe +1"
+#command "#gcost +15"
+#command "#gcost *1.2"
+#price_per_command #hp 1 10
+#themeinc thisarmorprot 18 *0.125
+#themeinc thisarmorprot 15 *0.125
+#themeinc thisarmorprot 12 *0.125
+#power 3
+#end
+
 #new
 #name "regen10"
 #basechance 0.2
@@ -700,7 +716,7 @@
 #chanceinc "personalcommand #fireres 0.2"
 #chanceinc "magic fire 0.25"
 #command "#heat +3"
-#command "#fireres +5"
+#command "#fireres +15"
 #command "#gcost +10"
 #chanceinc "nationcommand #idealcold above 0 -5"
 #chanceinc "nationcommand #idealcold below 0 1"
@@ -720,7 +736,7 @@
 #chanceinc "personalcommand #coldres 0.2"
 #chanceinc "magic water 0.25"
 #command "#cold +3"
-#command "#coldres +5"
+#command "#coldres +15"
 #command "#gcost +10"
 #chanceinc "command #coldblood -5"
 #chanceinc "nationcommand #idealcold below 0 -5"
@@ -740,7 +756,7 @@
 #chanceinc "command #poisonres 4"
 #chanceinc "magic nature 1"
 #command "#poisoncloud +3"
-#command "#poisonres +5"
+#command "#poisonres +25"
 #command "#gcost +20"
 #chanceinc "pose mounted *0.025"
 #tag "nopose chariot"
@@ -753,6 +769,7 @@
 #type "resist"
 #name "bluntres"
 #basechance 0.5
+#primarycommand "#bluntres"
 #command "#bluntres"
 #command "#gcost +5"
 #price_per_command #hp 0.5 20
@@ -762,6 +779,7 @@
 #type "resist"
 #name "pierceres"
 #basechance 0.5
+#primarycommand "#pierceres"
 #command "#pierceres"
 #command "#gcost +5"
 #price_per_command #hp 0.5 20
@@ -771,6 +789,7 @@
 #type "resist"
 #name "slashres"
 #basechance 0.5
+#primarycommand "#slashres"
 #command "#slashres"
 #command "#gcost +5"
 #price_per_command #hp 0.5 20
@@ -821,7 +840,7 @@
 #name "poisonarmor"
 #basechance 0.0
 #chanceinc "magic nature 3"
-#command "#poisonarmor"
+#command "#poisonarmor +5"
 #command "#gcost +5"
 #tag "path nature"
 #end
@@ -831,7 +850,7 @@
 #type overcharged
 #basechance 0.0
 #chanceinc "magic air 2"
-#command "#overcharged 10"
+#command "#overcharged +10"
 #tag "path air"
 #price_if_command above #prot 20 +5
 #price_if_command above #hp 39 +5
@@ -843,7 +862,7 @@
 #type overcharged
 #basechance 0.0
 #chanceinc "magic air 1"
-#command "#overcharged 20"
+#command "#overcharged +20"
 #tag "path air"
 #price_if_command above #prot 15 +5
 #price_if_command above #hp 39 +10
@@ -896,6 +915,7 @@
 #new
 #name "ethereal"
 #type "strong defensive"
+#primarycommand "#ethereal"
 #command "#ethereal"
 #command "#gcost +25"
 #price_per_command #hp 1 10

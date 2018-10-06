@@ -1,0 +1,49 @@
+#newrace
+#name "Dantih"
+#visiblename "Tusked One"
+#basechance 0.1
+
+#theme enlightened
+#enlightened
+
+#pose dantihmages
+#pose dantihtroops
+
+#longsyllables /data/names/nations/monkey/longsyllables.txt
+#shortsyllables /data/names/nations/monkey/shortsyllables.txt
+#suffixes /data/names/nations/monkey/suffixes.txt
+
+#generationchance chariot 0.001
+#generationchance cavalry 0.001
+
+#gods monkeygods
+#forts giant_forts
+
+#chanceinc "race van *0.1"
+#chanceinc "race sidhe *0.1"
+#chanceinc "race caelian *0.1"
+#chanceinc "race primate *3"
+#chanceinc "race naga *3"
+
+#chanceinc era 1 +0.1
+#chanceinc era 3 -0.05
+
+#nationcommand "#idealcold -1"
+#nationcommand "#riverstart"
+
+#maxprimaryracetroops 5
+#maxthisracetroops_as_secondary 5
+
+#magicpriority astral 5
+#magicpriority earth 5
+#magicpriority nature 3
+
+#strongmagicpatterns
+
+#pd_amountmulti 1.6
+#startarmy_amountmulti 1.6
+
+#specialcommanderfilters default_specialcommanderfilters
+#specialcommanderfilters specialcommanderfilters_extended
+
+#endrace

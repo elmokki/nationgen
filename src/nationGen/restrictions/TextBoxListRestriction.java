@@ -1,18 +1,10 @@
 package nationGen.restrictions;
 
-
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-
-
-
-
-
-
 
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
@@ -26,21 +18,17 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
-import nationGen.NationGen;
-import nationGen.nation.Nation;
-
 /**
  * Class for generic restrictions that contain a text box which users use to add entries to list
  * - Contains optional combobox!
  * @author Elmokki
  *
  */
-public class TextBoxListRestriction extends NationRestriction implements ActionListener, ItemListener  {
+public abstract class TextBoxListRestriction implements NationRestriction, ActionListener, ItemListener  {
 	
 	protected String text = "";
 	protected String name = "Generic text box restriction";
-	protected NationGen ng;
-	
+
 	protected String textFieldLabel = "Undefined label";
 	protected String textfieldDefaultText = "";
 
@@ -48,13 +36,13 @@ public class TextBoxListRestriction extends NationRestriction implements ActionL
 	protected JComboBox<String> combobox = null;
 	protected String comboboxlabel = "Undefined label";
 	protected String[] comboboxoptions = null;
+	private int index = 0;
 	public String comboselection = null;
 	
-	public TextBoxListRestriction(NationGen ng, String text, String name)
+	public TextBoxListRestriction(String text, String name)
 	{
 		this.name = name;
 		this.text = text;
-		this.ng = ng;
 	}
 	
 	@Override
@@ -93,6 +81,7 @@ public class TextBoxListRestriction extends NationRestriction implements ActionL
 			combobox = new JComboBox<String>(comboboxoptions);
 			tpanel2.add(combobox);
 			top.add(tpanel2);
+			combobox.setSelectedIndex(index);
 			combobox.addItemListener(this);
 		}
 		
@@ -128,12 +117,6 @@ public class TextBoxListRestriction extends NationRestriction implements ActionL
 	}
 
 	@Override
-	public NationRestriction getRestriction() {
-		TextBoxListRestriction res = new TextBoxListRestriction(ng, text, name);
-		return res;
-	}
-
-	@Override
 	public LayoutManager getLayout() {
 		return new BorderLayout();
 	}
@@ -158,22 +141,14 @@ public class TextBoxListRestriction extends NationRestriction implements ActionL
 		}
 	}
 
-	
-	@Override
-	public boolean doesThisPass(Nation n) {
-		return true;
-	}
-
-	@Override
-	public NationRestriction getInstanceOf() {
-		return new TextBoxListRestriction(ng, text, name);
-	}
-
 	@Override
 	public void itemStateChanged(ItemEvent arg0) {
 		
 		if(arg0.getStateChange() == 1)
+		{
 			this.comboselection = (String)combobox.getSelectedItem();
+			index = combobox.getSelectedIndex();
+		}
 		
 	}
 	

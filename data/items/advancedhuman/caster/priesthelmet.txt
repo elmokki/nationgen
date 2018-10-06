@@ -55,3 +55,29 @@
 #tag "tier 2"
 #tag "tier 3"
 #enditem
+
+#newitem
+#id plaguedoctor_maskT1
+#gameid 145
+#chanceinc "personalcommand autodishealer *5"
+#sprite /graphics/advancedhuman/helmets/caster/plaguedoctor_mask.png
+#offsetx -3
+#offsety +1
+#command "#diseaseres +10"
+#armor
+#tier 1
+#enditem
+
+#newitem
+#id plaguedoctor_maskT2
+#gameid 145
+#chanceinc "personalcommand autodishealer *5"
+#sprite /graphics/advancedhuman/helmets/caster/plaguedoctor_mask.png
+#recolormask /graphics/advancedhuman/helmets/caster/plaguedoctor_mask_recolormask.png
+#offsetx -3
+#offsety +1
+#command "#diseaseres +10"
+#armor
+#tier 2
+#tier 3
+#enditem

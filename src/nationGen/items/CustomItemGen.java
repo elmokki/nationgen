@@ -168,6 +168,13 @@ public class CustomItemGen {
 						i.commands.add(new Command("#gcost", args.get(2)));
 					else if(!ranged && args.get(0).equals("gcost") && args.get(1).equals("melee"))
 						i.commands.add(new Command("#gcost", args.get(2)));
+					
+					if(ranged && !lowshots && args.get(0).equals("rcost") && args.get(1).equals("ranged"))
+						i.commands.add(new Command("#rcost", args.get(2)));
+					else if(ranged && lowshots && args.get(0).equals("rcost") && args.get(1).equals("lowshots"))
+						i.commands.add(new Command("#rcost", args.get(2)));
+					else if(!ranged && args.get(0).equals("rcost") && args.get(1).equals("melee"))
+						i.commands.add(new Command("#rcost", args.get(2)));
 				}
 				i.tags.addAll(mitem.tags);
 			}
@@ -190,17 +197,26 @@ public class CustomItemGen {
 		}
 		
 		// Add gold cost
-		int potentialcost = runs;
+		int potentialgcost = runs;
 		if(magic)
-			potentialcost = Math.max((int)Math.round(1.5 * (double)(potentialcost)), 3);
-		
-		
+			potentialgcost = Math.max((int)Math.round(1.5 * (double)(potentialgcost)), 3);
+
 		int gcost = u.getGoldCost();
-		if(gcost * 0.1 < potentialcost)
-			u.commands.add(new Command("#gcost","+" + potentialcost));
+		if(gcost * 0.1 < potentialgcost)
+			u.commands.add(new Command("#gcost","+" + potentialgcost));
 		else
 			u.commands.add(new Command("#gcost","*1.1"));
 		
+		// Add res cost
+		int potentialrcost = runs;
+		if(magic)
+			potentialrcost = Math.max((int)Math.round(1.5 * (double)(potentialrcost)), 3);
+		
+		int rcost = u.getResCost(true);
+		if(rcost * 0.1 < potentialrcost)
+			u.commands.add(new Command("#rcost","+" + potentialrcost));
+		else
+			u.commands.add(new Command("#rcost","*1.1"));
 		
 		double[] chances = {1, 1, 1, 1};
 		while(runs > 0)
@@ -283,7 +299,7 @@ public class CustomItemGen {
 			i.tags.addAll(i.magicItem.tags);
 		
 		n.customitems.add(i);
-		n.nationGen.customitems.add(i);
+		n.nationGen.GetCustomItemsHandler().AddCustomItem(i);
 		n.nationGen.weapondb.addToMap(i.id, i.getHashMap());
 		
 

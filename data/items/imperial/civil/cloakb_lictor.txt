@@ -1,0 +1,42 @@
+#newitem
+#newitem
+#name "none"
+#gameid -1
+#armor
+#enditem
+
+#name "cloak_light"
+#gameid -1
+#sprite /graphics/imperial/sacred/cloak/cloak_light_b.png
+#recolormask self
+#armor
+#needs cloakf cloak_light
+#enditem
+
+#newitem
+#name "cloak_medium"
+#gameid -1
+#sprite /graphics/imperial/sacred/cloak/cloak_medium_b.png
+#recolormask self
+#armor
+#needs cloakf cloak_medium
+#enditem
+
+#newitem
+#name "cloak_dark"
+#gameid -1
+#sprite /graphics/imperial/sacred/cloak/cloak_dark_b.png
+#recolormask self
+#armor
+#needs cloakf cloak_dark
+#enditem
+
+#newitem
+#name "cloak_wolf"
+#gameid -1
+#sprite /graphics/imperial/sacred/cloak/furs_b.png
+#armor
+#theme primitive
+#theme wolf
+#needs cloakf cloak_wolf
+#enditem

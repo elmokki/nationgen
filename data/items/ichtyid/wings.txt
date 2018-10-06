@@ -1,0 +1,15 @@
+--- Hands belonging to an armor set should be given id of the lowest prot armor they go with if you want to avoid naked people with plate gloves.
+
+-- Militia-tier SH don't have stormimmune - let them have it anyway?
+#newitem
+#id ichtyidwings
+#gameid -1
+#sprite /graphics/ichtyid/flying_ichtyid_wings.png
+#recolormask self
+#basechance 100
+#theme flying
+#needs overlay ichtyidwings
+#define "#flying"
+#subrace "Flying"
+#tag "winged"
+#enditem

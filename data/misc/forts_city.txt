@@ -1,0 +1,159 @@
+---- Fortified cities
+----
+--- Early age
+#new
+#name "0: City palisades only"
+#type "era 1"
+#basechance 0.75
+#chanceinc anytheme primitive *4
+#command "#fortera 0"
+#command "#buildfort 11"
+#end
+
+#new
+#name "1: Standard cities for early era"
+#type "era 1"
+#basechance 3
+#chanceinc era 1 10
+#chanceinc era 2 2.5
+#chanceinc era 3 0.5
+#command "#fortera 1"
+#command "#buildfort 11"
+#end
+
+#new
+#name "2: Standard cities for middle era"
+#type "era 1"
+#basechance 0.75
+#chanceinc era 2 10
+#chanceinc era 1 2.5
+#chanceinc era 3 2.5
+#command "#fortera 2"
+#command "#buildfort 11"
+#chanceinc anytheme advanced *8
+#end
+
+#new
+#name "3: Standard cities for late era"
+#type "era 1"
+#basechance 0.15
+#chanceinc anytheme advanced *8
+#command "#fortera 3"
+#command "#buildfort 11"
+#end
+
+
+
+-- Middle age
+
+#new
+#name "0: City palisades only"
+#type "era 2"
+#basechance 0.3
+#chanceinc anytheme primitive *4
+#command "#fortera 0"
+#command "#buildfort 11"
+#end
+
+#new
+#name "1: Standard cities for early era"
+#type "era 2"
+#basechance 0.75
+#chanceinc era 1 10
+#chanceinc era 2 2.5
+#chanceinc era 3 0.5
+#command "#fortera 1"
+#command "#buildfort 11"
+#chanceinc anytheme primitive *8
+#end
+
+#new
+#name "2: Standard cities for middle era"
+#type "era 2"
+#basechance 3
+#chanceinc era 2 10
+#chanceinc era 1 2.5
+#chanceinc era 3 2.5
+#command "#fortera 2"
+#command "#buildfort 11"
+#end
+
+#new
+#name "3: Standard cities for late era"
+#type "era 2"
+#basechance 0.75
+#chanceinc anytheme advanced *8
+#command "#fortera 3"
+#command "#buildfort 11"
+#end
+
+
+-- Late age
+
+#new
+#name "0: City palisades only"
+#type "era 3"
+#basechance 0.15
+#chanceinc anytheme primitive *2
+#command "#fortera 0"
+#command "#buildfort 11"
+#end
+
+#new
+#name "1: Standard cities for early era"
+#type "era 3"
+#basechance 0.75
+#chanceinc era 1 10
+#chanceinc era 2 2.5
+#chanceinc era 3 0.5
+#command "#fortera 1"
+#command "#buildfort 11"
+#chanceinc anytheme primitive *8
+#end
+
+#new
+#name "2: Standard cities for middle era"
+#type "era 3"
+#basechance 1.5
+#chanceinc era 2 10
+#chanceinc era 1 2.5
+#chanceinc era 3 2.5
+#command "#fortera 2"
+#command "#buildfort 11"
+#chanceinc anytheme primitive *4
+#end
+
+#new
+#name "3: Standard cities for late era"
+#type "era 3"
+#basechance 3
+#command "#fortera 3"
+#command "#buildfort 11"
+#end
+
+-- Era-standard cities plus great city capital
+#new
+#name "1: Standard for early era plus great city"
+#type "era 1"
+#basechance 0.75
+#chanceinc era 1 2
+#chanceinc era 2 0.5
+#chanceinc era 3 0.25
+#command "#fortera 1"
+#command "#buildfort 11"
+#command "#homefort 14"
+#chanceinc anytheme advanced *4
+#end
+
+#new
+#name "2: Standard for middle era plus great city"
+#type "era 2"
+#basechance 0.75
+#chanceinc era 2 2
+#chanceinc era 1 0.25
+#chanceinc era 3 0.5
+#command "#fortera 2"
+#command "#buildfort 11"
+#command "#homefort 14"
+#chanceinc anytheme advanced *8
+#end

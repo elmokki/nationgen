@@ -16,9 +16,9 @@
 #type "shapeshift"
 #name "werewolf"
 #basechance 0.05
-#chanceinc "personalmagic nature 0.5"
-#chanceinc "personalcommand mounted *0"
-#chanceinc "personalcommand size below 2 *0"
+#chanceinc personalmagic nature 0.5
+#chanceinc personalcommand mounted *0
+#chanceinc personalcommand size below 2 AND race not Vaetti *0
 #command "#shapechange werewolf"
 #tag "notfortier 1"
 #description "can shapeshift into a werewolf"
@@ -34,47 +34,11 @@
 #type "shapeshift"
 #name "werewolf2"
 #basechance 0.05
-#chanceinc "personalmagic nature 0.25"
-#chanceinc "personalcommand mounted *0"
-#chanceinc "personalcommand size below 2 *0"
+#chanceinc personalmagic nature 0.25
+#chanceinc personalcommand mounted *0
+#chanceinc personalcommand size below 2 AND race not Vaetti *0
 #command "#shapechange werewolf"
 #command "#gcost *1.2"
-#tag "notfortier 1"
-#description "can shapeshift into a werewolf"
-#tag "notfortier 3"
-#command "#maxage *2"
-#power 2
-#theme "wolftotem"
-#theme "totemanimal"
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "werewolf-vaetti"
-#basechance 0.05
-#chanceinc "personalmagic nature 0.5"
-#chanceinc "personalcommand mounted *0"
-#chanceinc "race not Vaetti *0"
-#command "#shapechange werewolf"
-#command "#gcost *1.2"
-#tag "notfortier 1"
-#description "can shapeshift into a werewolf"
-#tag "notfortier 2"
-#command "#maxage *2"
-#power 2
-#theme "wolftotem"
-#theme "totemanimal"
-#end
-
-#new magefilter
-#type "shapeshift"
-#name "werewolf2-vaetti"
-#basechance 0.05
-#chanceinc "personalmagic nature 0.25"
-#chanceinc "personalcommand mounted *0"
-#chanceinc "race not Vaetti *0"
-#command "#shapechange werewolf"
-#command "#gcost *1.1"
 #tag "notfortier 1"
 #description "can shapeshift into a werewolf"
 #tag "notfortier 3"

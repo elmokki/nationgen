@@ -35,7 +35,6 @@ import com.elmokki.Generic;
 
 
 
-import nationGen.entities.Drawable;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Pose;
@@ -179,10 +178,6 @@ public class ChanceIncHandler {
 		{
 			for(Filter f : u.appliedFilters)
 				miscincs.addAll(f.themeincs);
-		
-			List<String> unit_miscincs = new ArrayList<String>();
-			for(Filter f : u.appliedFilters)
-				unit_miscincs.addAll(f.themeincs);
 		}
 
 		
@@ -935,10 +930,8 @@ public class ChanceIncHandler {
 				str = Generic.listToString(args);
 				Boolean success = checkChanceInc(str, c);
 
-				
-				if(success == null)
-					continue;
-				else if(success)
+
+				if(success)
 				{
 					applyChanceInc(filters, f,  value);
 					continue;
@@ -1778,10 +1771,8 @@ public class ChanceIncHandler {
 				
 				Boolean success = checkChanceInc(str, c);
 				
-				
-				if(success == null)
-					continue;
-				else if(success)
+	
+				if(success)
 				{
 					applyChanceInc(filters, f,  value);
 					continue;
@@ -2229,8 +2220,6 @@ public class ChanceIncHandler {
 				{
 					path = Generic.PathToInteger(args.get(i));
 					
-
-					
 					// If there's no level specified
 					if((i < args.size() - 1 && !Generic.isNumeric(args.get(i + 1)) && !args.get(i+1).equals("below")) || i == args.size() - 1)
 					{
@@ -2302,7 +2291,7 @@ public class ChanceIncHandler {
 		}
 		else if(args.get(0).equals("race") && args.size() > 1)
 		{
-			if(u.race.name.toLowerCase().equals(args.get(args.size() - 2).toLowerCase()))
+			if(u.race.name.toLowerCase().equals(lastarg.toLowerCase()))
 			{
 				return true  != realnot;
 			}
@@ -2444,6 +2433,7 @@ public class ChanceIncHandler {
 	
 	public List<String> partitionChanceInc(String str)
 	{
+
 		List<String> stuff = Generic.parseArgs(str);
 		List<String> chanceincs = new ArrayList<String>();
 		
@@ -2487,7 +2477,7 @@ public class ChanceIncHandler {
 						con = (con + " " + s).trim();
 					}
 				}
-				else if(s.equals("and") || s.equals("or"))
+				else if(s.toLowerCase().equals("and") || s.toLowerCase().equals("or"))
 				{
 					chanceincs.add(con);
 					chanceincs.add(s);
@@ -2501,7 +2491,9 @@ public class ChanceIncHandler {
 		}
 		if(con.length() > 0)
 			chanceincs.add(con);
+		
 
+		
 		return chanceincs;
 	}
 	
@@ -2509,11 +2501,11 @@ public class ChanceIncHandler {
 
 	private Boolean fixNullBoolean(Boolean success, String str)
 	{
-		boolean not = Generic.parseArgs(str).contains("not");
+		boolean not = Generic.parseArgs(str).get(0).toLowerCase().equals("not");
 		
 		if(success == null)
 		{
-			return null;
+			return false;
 		}
 		else if(success != not)
 		{
@@ -2524,7 +2516,6 @@ public class ChanceIncHandler {
 	public Boolean validateChanceInc(List<String> chanceincs, Checker c)
 	{
 
-		
 		Boolean istrue = false;
 		String operator = "";
 		
@@ -2532,7 +2523,7 @@ public class ChanceIncHandler {
 		{
 			
 			// If it used to be within (meaningful) parentheses we solve it separately
-			if(!s.equals("or") && !s.equals("and") && (s.contains(" or ") || s.contains(" and ")))
+			if(!s.toLowerCase().equals("or") && !s.toLowerCase().equals("and") && (s.toLowerCase().contains(" or ") || s.toLowerCase().contains(" and ")))
 			{
 
 				List<String> tincs = partitionChanceInc(s);
@@ -2548,25 +2539,31 @@ public class ChanceIncHandler {
 			
 			
 			// If it is a logical operator
-			if(s.equals("or") || s.equals("and"))
+			if(s.toLowerCase().equals("or") || s.toLowerCase().equals("and"))
 			{
 				operator = s;
 			}
 			// If it is normal chanceinc
 			else
 			{
+	
 				if(operator.equals(""))
+				{
 					istrue = fixNullBoolean(c.check(s), s);
+				}
 				else
 				{
-					if(operator.equals("or"))
+			
+					if(operator.toLowerCase().equals("or"))
 					{
 						istrue = istrue || fixNullBoolean(c.check(s), s);
 					}
-					else if(operator.equals("and"))
+					else if(operator.toLowerCase().equals("and"))
 					{
 						istrue = istrue && fixNullBoolean(c.check(s), s);
 					}
+					
+			
 					operator = "";
 				}
 				
@@ -2574,6 +2571,7 @@ public class ChanceIncHandler {
 			}
 
 		}
+
 	
 		return istrue;
 	}

@@ -24,6 +24,14 @@
 #command "#gcost +10"
 #unitname "Administrator"
 #unitname "Governor"
+#unitname "Viceroy"
+#unitname "Minister"
+#unitname "Consul"
+#unitname "Legate"
+#unitname "Magistrate"
+#unitname "Chancellor"
+#unitname "Steward"
+#unitname "Chamberlain"
 #description "is able to collect taxes in distant lands and train militia."
 #pose role infantry
 #themeinc theme official *50
@@ -37,6 +45,11 @@
 #command "#gold 5"
 #command "#nobadevents 5"
 #unitname "Oracle"
+#unitname "Oracle"
+#unitname "Seer"
+#unitname "Soothsayer"
+#unitname "Prognosticator"
+#unitname "Fortuneteller"
 #description "brings fortune to any province he lives in."
 #pose role mage
 #themeinc theme mystic *50
@@ -57,8 +70,11 @@
 #command "#incunrest -20"
 #command "#gcost +40"
 #command "#okleader"
-#unitname "Sherrif"
+#unitname "Sheriff"
 #unitname "Constable"
+#unitname "Bailiff"
+#unitname "Warden"
+#unitname "Judge"
 #unitname "Captain of the Guard"
 #description "is skilled in preventing dissent."
 #pose role infantry
@@ -81,7 +97,27 @@
 #pose role mage
 #themeinc theme official *50
 #themeinc theme administrator *50
+#themeinc theme engineer *50
 #caponlychance 0.1
+#end
+
+#new
+#name "mason"
+#basechance 0
+#chanceinc racetheme advanced 1
+#command "#siegebonus 20"
+#command "#castledef 20"
+#command "#mason"
+#command "#gcost +20"
+#unitname "Master Mason"
+#unitname "Architect"
+#description "is skilled in advanced construction techniques, as well as siege warfare."
+#pose role infantry
+#pose role mage
+#themeinc theme official *50
+#themeinc theme administrator *50
+#themeinc theme engineer *50
+#caponlychance 1
 #end
 
 #new
@@ -92,6 +128,12 @@
 #unitname "Heretic"
 #unitname "Atheist"
 #unitname "Agnostic"
+#unitname "Iconoclast"
+#unitname "Skeptic"
+#unitname "Sophist"
+#unitname "Charlatan"
+#unitname "Mountebank"
+#unitname "Prevaricator"
 #caponlychance 0.1
 #description "uses false logic to preach against any religion."
 #pose role priest
@@ -106,6 +148,7 @@
 #command "#gcost +30"
 #unitname "Reanimator"
 #unitname "Animator"
+#unitname "Resurrectionist"
 #basechance 0
 #chanceinc magic death 1
 #caponlychance 0.8
@@ -120,6 +163,13 @@
 #command "#inspiringres 1"
 #command "#gcost +10"
 #unitname "Librarian"
+#unitname "Librarian"
+#unitname "Librarian"
+#unitname "Library-Keeper"
+#unitname "Archivist"
+#unitname "Annalist"
+#unitname "Curator"
+#unitname "Bibliothecary"
 #basechance 1
 #chanceinc magic astral 0.5
 #description "is not skilled in magical research, but has an extensive knowledge of arcane literature, and is able to help researchers."

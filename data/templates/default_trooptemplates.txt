@@ -95,10 +95,11 @@
 - Needs unit to have a weapon with theme formationfighter available
 #new
 #basechance 0.125
-#name "formationfighter"
+#name "formationfighter 2"
 #type formationfighter
-#command "#formationfighter +1"
+#command "#formationfighter +2"
 #themeinc thisitemtheme formationfighter *1000
+#chanceinc personalcommand size not 2 *0
 #chanceinc pose not infantry *0
 #chanceinc poseitemtheme not weapon formationfighter *0
 #maxunits 1
@@ -107,6 +108,140 @@
 #primarycommand #formationfighter
 #end
 
+#new
+#basechance 0.125
+#name "formationfighter 3"
+#type formationfighter
+#command "#formationfighter +3"
+#themeinc thisitemtheme formationfighter *1000
+#chanceinc personalcommand size not 3 *0
+#chanceinc pose not infantry *0
+#chanceinc poseitemtheme not weapon formationfighter *0
+#maxunits 1
+#maxvarieties 2
+#theme formationfighter
+#primarycommand #formationfighter
+#end
+
+#new
+#basechance 0.125
+#name "formationfighter 4"
+#type formationfighter
+#command "#formationfighter +4"
+#themeinc thisitemtheme formationfighter *1000
+#chanceinc personalcommand size not 4 *0
+#chanceinc pose not infantry *0
+#chanceinc poseitemtheme not weapon formationfighter *0
+#maxunits 1
+#maxvarieties 2
+#theme formationfighter
+#primarycommand #formationfighter
+#end
+
+#new
+#basechance 0.125
+#name "formationfighter 5"
+#type formationfighter
+#command "#formationfighter +5"
+#themeinc thisitemtheme formationfighter *1000
+#chanceinc personalcommand size not 5 *0
+#chanceinc pose not infantry *0
+#chanceinc poseitemtheme not weapon formationfighter *0
+#maxunits 1
+#maxvarieties 2
+#theme formationfighter
+#primarycommand #formationfighter
+#end
+
+#new
+#basechance 0.125
+#name "formationfighter 6"
+#type formationfighter
+#command "#formationfighter +6"
+#themeinc thisitemtheme formationfighter *1000
+#chanceinc personalcommand size not 6 *0
+#chanceinc pose not infantry *0
+#chanceinc poseitemtheme not weapon formationfighter *0
+#maxunits 1
+#maxvarieties 2
+#theme formationfighter
+#primarycommand #formationfighter
+#end
+
+#new
+#basechance 0.00625
+#name "formationfighter 2x2"
+#type formationfighter
+#command "#formationfighter +4"
+#themeinc thisitemtheme formationfighter *1000
+#chanceinc personalcommand size not 2 *0
+#chanceinc pose not infantry *0
+#chanceinc poseitemtheme not weapon formationfighter *0
+#maxunits 1
+#maxvarieties 1
+#theme formationfighter
+#primarycommand #formationfighter
+#end
+
+#new
+#basechance 0.00625
+#name "formationfighter 3x2"
+#type formationfighter
+#command "#formationfighter +6"
+#themeinc thisitemtheme formationfighter *1000
+#chanceinc personalcommand size not 3 *0
+#chanceinc pose not infantry *0
+#chanceinc poseitemtheme not weapon formationfighter *0
+#maxunits 1
+#maxvarieties 1
+#theme formationfighter
+#primarycommand #formationfighter
+#end
+
+#new
+#basechance 0.00625
+#name "formationfighter 4x2"
+#type formationfighter
+#command "#formationfighter +8"
+#themeinc thisitemtheme formationfighter *1000
+#chanceinc personalcommand size not 4 *0
+#chanceinc pose not infantry *0
+#chanceinc poseitemtheme not weapon formationfighter *0
+#maxunits 1
+#maxvarieties 1
+#theme formationfighter
+#primarycommand #formationfighter
+#end
+
+#new
+#basechance 0.00625
+#name "formationfighter 5x2"
+#type formationfighter
+#command "#formationfighter +10"
+#themeinc thisitemtheme formationfighter *1000
+#chanceinc personalcommand size not 5 *0
+#chanceinc pose not infantry *0
+#chanceinc poseitemtheme not weapon formationfighter *0
+#maxunits 1
+#maxvarieties 1
+#theme formationfighter
+#primarycommand #formationfighter
+#end
+
+#new
+#basechance 0.00625
+#name "formationfighter 6x2"
+#type formationfighter
+#command "#formationfighter +12"
+#themeinc thisitemtheme formationfighter *1000
+#chanceinc personalcommand size not 6 *0
+#chanceinc pose not infantry *0
+#chanceinc poseitemtheme not weapon formationfighter *0
+#maxunits 1
+#maxvarieties 1
+#theme formationfighter
+#primarycommand #formationfighter
+#end
 
 #new
 #basechance 1.5

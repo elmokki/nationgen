@@ -44,6 +44,15 @@ public class NationAdvancedSummarizer {
         
 		tw.println("* Troop 1a: " + pds.getMilitia(1, 1).name + " - "  + pds.getStartArmyAmount(pds.getMilitia(1, 1)) + " per 10 PD");
 		tw.println("* Troop 1b: " + pds.getMilitia(2, 1).name + " - " + pds.getStartArmyAmount(pds.getMilitia(2, 1)) + " per 10 PD");
+		if(n.PDRanks > 2)
+		{
+			tw.println("* Troop 1c: " + pds.getMilitia(3, 1).name + " - " + pds.getStartArmyAmount(pds.getMilitia(3, 1)) + " per 10 PD");
+			if(n.PDRanks > 3)
+			{
+				tw.println("* Troop 1d: " + pds.getMilitia(4, 1).name + " - " + pds.getStartArmyAmount(pds.getMilitia(4, 1)) + " per 10 PD");
+			}
+		}
+		
 		tw.println("* Troop 2a: " + pds.getMilitia(1, 2).name + " - " + pds.getStartArmyAmount(pds.getMilitia(1, 2)) + " per 10 PD");
 		tw.println("* Troop 2b: " + pds.getMilitia(2, 2).name + " - " + pds.getStartArmyAmount(pds.getMilitia(2, 2)) + " per 10 PD");
 		
@@ -117,6 +126,22 @@ public class NationAdvancedSummarizer {
 				else if(c.command.equals("#uwbuild") && c.args.get(0).equals("1"))
 				{
 					traits.add("Can build forts underwater");
+				}
+				else if(c.command.equals("#buildfort") && c.args.get(0).equals("11"))
+				{
+					traits.add("Fortified cities");
+				}
+				else if(c.command.equals("#buildfort") && c.args.get(0).equals("15"))
+				{
+					traits.add("Giant forts");
+				}
+				else if(c.command.equals("#buildfort") && c.args.get(0).equals("20"))
+				{
+					traits.add("Ice forts");
+				}
+				else if(c.command.equals("#buildfort") && c.args.get(0).equals("27"))
+				{
+					traits.add("Fortified villages");
 				}
 			
 			

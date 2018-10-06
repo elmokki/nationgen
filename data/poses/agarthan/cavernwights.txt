@@ -76,6 +76,7 @@
 
 #subrace "ancient cavernwight"
 #subraceprefix "ancient cavernwight"
+#good_leader
 
 #load basesprite /data/items/agarthan/generic_big/bases_cavernwight.txt
 #load shadow /data/items/agarthan/generic_big/shadow.txt
@@ -108,6 +109,7 @@
 
 #subrace "ancient cavernwight"
 #subraceprefix "ancient cavernwight"
+#good_leader
 
 #load basesprite /data/items/agarthan/generic_big/bases_cavernwight.txt
 #load shadow /data/items/agarthan/generic_big/shadow.txt
@@ -197,7 +199,7 @@
 #role "priest"
 #theme "undead"
 
-#define "#reanimpriest"
+#define "#reanimpriest 1"
 #define "#amphibian"
 
 #subrace "cavernwight"
@@ -231,7 +233,7 @@
 #chanceinc moduleid herogen *2
 #theme "undead"
 
-#define "#reanimpriest"
+#define "#reanimpriest 1"
 #define "#amphibian"
 
 #subrace "ancient cavernwight"

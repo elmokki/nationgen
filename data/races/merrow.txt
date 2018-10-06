@@ -1,0 +1,50 @@
+#newrace
+#name "Merrow"
+#basechance 0.1
+
+#chanceinc hasprimaryrace *2
+#chanceinc primaryrace "Fomorian" *10
+#chanceinc primaryrace "Sidhe" *10
+#chanceinc primaryrace "Van" *2
+#chanceinc primaryrace "Boreal human" *2
+#chanceinc primaryrace "Fir bolg" *2
+#chanceinc primaryrace "Ogre" *2
+#chanceinc hastheme "boreal" *2
+
+-- #racethemes firbolg_themes
+-- #freetheme techlevel
+
+-- 40% H1/48% H2/12% H3 max priest level
+#priest_H1_upgradechance 0.6
+#priest_H2_upgradechance 0.2
+#magepriestchance 0.5
+
+#all_troops_sacred
+#all_troops_elite
+
+#pose merrowinfantry
+#pose merrowcavalry_land
+#pose merrowmages
+
+#longsyllables /data/names/nations/fomorian/longsyllables.txt
+#shortsyllables /data/names/nations/fomorian/shortsyllables.txt
+#suffixes /data/names/nations/fomorian/suffixes.txt
+
+#unitcommand "#nametype 142"
+
+#nationcommand "#likespop 97"
+
+#magicpriority water 6
+#magicpriority earth 6
+#magicpriority nature 2
+#magicpriority astral 2
+
+#sacredrangerchance 0.1
+#monsterchance 0.01
+
+#nationcommand "#uwbuild 1"
+#nationcommand "#riverstart"
+#amphibian
+#boreal
+
+#endrace

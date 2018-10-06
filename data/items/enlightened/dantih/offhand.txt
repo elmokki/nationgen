@@ -1,15 +1,15 @@
 #newitem
 #id kryss
 #gameid 256
-#sprite /graphics/enlightened/naga/offhand/kriss.png
-#eliteversion kriss_gold
+#sprite /graphics/enlightened/dantih/weapon/oh_kryss.png
+#eliteversion kryss_gilt
 #theme "iron"
 #enditem
 
 #newitem
-#id kryss_gold
+#id kryss_gilt
 #gameid 256
-#sprite /graphics/enlightened/naga/offhand/kriss_gold.png
+#sprite /graphics/enlightened/dantih/weapon/oh_kryss_gilt.png
 #theme elite
 #theme "iron"
 #enditem
@@ -17,45 +17,64 @@
 #newitem
 #id dagger_bronze
 #gameid 674
-#sprite /graphics/enlightened/naga/offhand/kriss_bronze.png
-#eliteversion dagger_gold
+#sprite /graphics/enlightened/dantih/weapon/oh_kryss_bronze.png
+#eliteversion dagger_gilt
 #theme "bronze"
 #enditem
 
 #newitem
-#id dagger_gold
+#id dagger_gilt
 #gameid 674
-#sprite /graphics/enlightened/naga/offhand/kriss_gold.png
+#sprite /graphics/enlightened/dantih/weapon/oh_kryss_gilt.png
 #theme elite
 #theme "bronze"
 #enditem
 
 #newitem
-#id mace
-#gameid 12
-#sprite /graphics/enlightened/naga/offhand/mace.png
-#eliteversion mace_gold
+#id club
+#gameid 252
+#sprite /graphics/enlightened/dantih/weapon/oh_club.png
+#eliteversion club_spiked
+#eliteversion mace
+#theme "primitive"
+#theme "wood"
 #enditem
 
 #newitem
-#id mace_gold
+#id club_spiked
+#gameid 265
+#sprite /graphics/enlightened/dantih/weapon/oh_club_spiked.png
+#eliteversion mace
+#theme "primitive"
+#theme "wood"
+#enditem
+
+#newitem
+#id mace
 #gameid 12
-#sprite /graphics/enlightened/naga/offhand/mace_gold.png
+#sprite /graphics/enlightened/dantih/weapon/oh_mace.png
+#eliteversion mace_gilt
+#enditem
+
+#newitem
+#id mace_gilt
+#gameid 12
+#sprite /graphics/enlightened/dantih/weapon/oh_mace_gilt.png
 #theme elite
 #enditem
 
 #newitem
 #id falchion
 #gameid 10
-#sprite /graphics/enlightened/naga/offhand/falchion.png
-#eliteversion falchion_gold
+#sprite /graphics/enlightened/dantih/weapon/oh_falchion.png
+#eliteversion falchion_gilt
 #theme iron
 #enditem
 
 #newitem
-#id falchion_gold
+#id falchion_gilt
 #gameid 10
-#sprite /graphics/enlightened/naga/offhand/falchion_gold.png
+#sprite /graphics/enlightened/dantih/weapon/oh_falchion_gilt.png
 #theme elite
 #theme iron
 #enditem
@@ -63,15 +82,47 @@
 #newitem
 #id kopesh
 #gameid 513
-#sprite /graphics/enlightened/naga/offhand/kopesh.png
-#eliteversion kopesh_gold
+#sprite /graphics/enlightened/dantih/weapon/oh_falchion_bronze.png
+#eliteversion khopesh_gilt
 #theme bronze
 #enditem
 
 #newitem
-#id kopesh_gold
+#id kopesh_gilt
 #gameid 513
-#sprite /graphics/enlightened/naga/offhand/falchion_gold.png
+#sprite /graphics/enlightened/dantih/weapon/oh_falchion_gilt.png
+#theme elite
+#theme bronze
+#enditem
+
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/enlightened/dantih/weapon/oh_axe.png
+#eliteversion axe_gilt
+#theme iron
+#enditem
+
+#newitem
+#id axe_gilt
+#gameid 17
+#sprite /graphics/enlightened/dantih/weapon/oh_axe_gilt.png
+#theme elite
+#theme iron
+#enditem
+
+#newitem
+#id axe_bronze
+#gameid 675
+#sprite /graphics/enlightened/dantih/weapon/oh_axe_bronze.png
+#eliteversion axe_bronze_gilt
+#theme bronze
+#enditem
+
+#newitem
+#id axe_bronze_gilt
+#gameid 675
+#sprite /graphics/enlightened/dantih/weapon/oh_axe_gilt.png
 #theme elite
 #theme bronze
 #enditem

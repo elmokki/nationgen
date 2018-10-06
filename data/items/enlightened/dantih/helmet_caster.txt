@@ -1,0 +1,421 @@
+-- Nothing
+#newitem
+#id nothing-T1
+#gameid -1
+#basechance 9
+#tier 1
+#notfortier 2
+#notfortier 3
+#theme "primitive"
+#enditem
+
+#newitem
+#id nothing-T2
+#gameid -1
+#basechance 3
+#notfortier 1
+#tier 2
+#notfortier 3
+#theme "primitive"
+#enditem
+
+
+
+-- Headdresses
+
+#newitem
+#id headdress_green
+#gameid -1
+#sprite /graphics/enlightened/dantih/helmet/caster/feathers_green.png
+#eliteversion headdress_green_medium
+#eliteversion headdress_green_light
+#eliteversion headdress_green_dark
+#armor
+#theme "primitive"
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id headdress_white
+#gameid -1
+#sprite /graphics/enlightened/dantih/helmet/caster/feathers_white.png
+#eliteversion headdress_white_medium
+#eliteversion headdress_white_light
+#eliteversion headdress_white_dark
+#armor
+#theme "primitive"
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id headdress_black
+#gameid -1
+#sprite /graphics/enlightened/dantih/helmet/caster/feathers_black.png
+#eliteversion headdress_black_medium
+#eliteversion headdress_black_light
+#eliteversion headdress_black_dark
+#armor
+#theme "primitive"
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id headdress_green_medium
+#gameid -1
+#sprite /graphics/enlightened/dantih/helmet/caster/feathers_green.png
+#recolormask /graphics/enlightened/dantih/helmet/caster/feathers_recolormask1.png
+#armor
+#theme "primitive"
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id headdress_green_light
+#gameid -1
+#sprite /graphics/enlightened/dantih/helmet/caster/feathers_green.png
+#recolormask /graphics/enlightened/dantih/helmet/caster/feathers_recolormask2.png
+#armor
+#theme "primitive"
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id headdress_green_dark
+#gameid -1
+#sprite /graphics/enlightened/dantih/helmet/caster/feathers_green.png
+#recolormask /graphics/enlightened/dantih/helmet/caster/feathers_recolormask3.png
+#armor
+#theme "primitive"
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id headdress_white_medium
+#gameid -1
+#sprite /graphics/enlightened/dantih/helmet/caster/feathers_white.png
+#recolormask /graphics/enlightened/dantih/helmet/caster/feathers_recolormask1.png
+#armor
+#theme "primitive"
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id headdress_white_light
+#gameid -1
+#sprite /graphics/enlightened/dantih/helmet/caster/feathers_white.png
+#recolormask /graphics/enlightened/dantih/helmet/caster/feathers_recolormask2.png
+#armor
+#theme "primitive"
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id headdress_white_dark
+#gameid -1
+#sprite /graphics/enlightened/dantih/helmet/caster/feathers_white.png
+#recolormask /graphics/enlightened/dantih/helmet/caster/feathers_recolormask3.png
+#armor
+#theme "primitive"
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id headdress_black_medium
+#gameid -1
+#sprite /graphics/enlightened/dantih/helmet/caster/feathers_black.png
+#recolormask /graphics/enlightened/dantih/helmet/caster/feathers_recolormask1.png
+#armor
+#theme "primitive"
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id headdress_black_light
+#gameid -1
+#sprite /graphics/enlightened/dantih/helmet/caster/feathers_black.png
+#recolormask /graphics/enlightened/dantih/helmet/caster/feathers_recolormask2.png
+#armor
+#theme "primitive"
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id headdress_black_dark
+#gameid -1
+#sprite /graphics/enlightened/dantih/helmet/caster/feathers_black.png
+#recolormask /graphics/enlightened/dantih/helmet/caster/feathers_recolormask3.png
+#armor
+#theme "primitive"
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+
+-- Caps
+
+#newitem
+#id bronzecap
+#gameid 135
+#sprite /graphics/enlightened/dantih/helmet/cap_bronze.png
+#eliteversion bronzecap_gilt
+#eliteversion cone_bronze
+#armor
+#theme "bronze"
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id bronzecap_gilt
+#gameid 135
+#sprite /graphics/enlightened/dantih/helmet/cap_gilt.png
+#eliteversion cone_gold
+#armor
+#theme "bronze"
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id cone_bronze
+#gameid 135
+#sprite /graphics/enlightened/dantih/helmet/caster/crown_copper.png
+#eliteversion cone_gold
+#armor
+#theme "bronze"
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id ironcap
+#gameid 20
+#sprite /graphics/enlightened/dantih/helmet/cap_iron.png
+#eliteversion ironcap_gilt
+#eliteversion cone_iron
+#armor
+#theme "iron"
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id ironcap_gilt
+#gameid 20
+#sprite /graphics/enlightened/dantih/helmet/cap_gilt.png
+#eliteversion cone_gold
+#armor
+#theme "iron"
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id cone_iron
+#gameid 20
+#sprite /graphics/enlightened/dantih/helmet/caster/crown_iron.png
+#eliteversion cone_gold
+#armor
+#theme "iron"
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id cap_gold
+#gameid 148
+#sprite /graphics/enlightened/dantih/helmet/caster/crown_gold_small.png
+#eliteversion cone_gold
+#armor
+#theme "elite"
+#enditem
+
+
+
+-- Crowns
+
+#newitem
+#id cone_gold_small
+#gameid 148
+#sprite /graphics/enlightened/dantih/helmet/caster/crown_gold_small.png
+#eliteversion cone_gold
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id cone_silver
+#gameid 148
+#sprite /graphics/enlightened/dantih/helmet/caster/crown_silver.png
+#eliteversion cone_gold
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id cone_gold
+#gameid 148
+#sprite /graphics/enlightened/dantih/helmet/caster/crown_gold.png
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id hedjet_plain
+#gameid 148
+#sprite /graphics/enlightened/dantih/helmet/caster/crown_hedjet.png
+#eliteversion hedjet_colored
+#eliteversion hedjet_fancy_plain
+#armor
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id hedjet_colored
+#gameid 148
+#sprite /graphics/enlightened/dantih/helmet/caster/crown_hedjet.png
+#recolormask /graphics/enlightened/dantih/helmet/caster/crown_hedjet_recolormask.png
+#eliteversion hedjet_fancy_colored
+#eliteversion cone_gold
+#eliteversion khepresh
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id hedjet_fancy_plain
+#gameid 148
+#sprite /graphics/enlightened/dantih/helmet/caster/crown_hedjet_fancy.png
+#eliteversion hedjet_fancy_colored
+#eliteversion cone_gold
+#eliteversion khepresh
+#eliteversion crown_isis
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id hedjet_fancy_colored
+#gameid 148
+#sprite /graphics/enlightened/dantih/helmet/caster/crown_hedjet_fancy.png
+#recolormask /graphics/enlightened/dantih/helmet/caster/crown_hedjet_fancy_recolormask.png
+#eliteversion cone_gold
+#eliteversion khepresh
+#eliteversion crown_isis
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id khepresh
+#gameid 148
+#sprite /graphics/enlightened/dantih/helmet/caster/crown_khepresh.png
+#recolormask self
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id crown_isis
+#gameid 148
+#sprite /graphics/enlightened/dantih/helmet/caster/crown_isis.png
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id crown_silver
+#gameid -1
+#sprite /graphics/enlightened/dantih/helmet/caster/crown2_silver.png
+#eliteversion crown_gold
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id crown_gold
+#gameid -1
+#sprite /graphics/enlightened/dantih/helmet/caster/crown2_gold.png
+#eliteversion crown_kali
+#eliteversion crown_annunaki
+#eliteversion crown_ahura
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id crown_kali
+#gameid -1
+#sprite /graphics/enlightened/dantih/helmet/caster/crown_kali.png
+#recolormask /graphics/enlightened/dantih/helmet/caster/crown_kali_recolormask.png
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id crown_annunaki
+#gameid -1
+#sprite /graphics/enlightened/dantih/helmet/caster/crown_annunaki.png
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id crown_ahura
+#gameid -1
+#sprite /graphics/enlightened/dantih/helmet/caster/crown_ahura.png
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem

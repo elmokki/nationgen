@@ -97,6 +97,7 @@
 #command "#enc 0"
 #command "#rcost 3"
 #command "#name 'Ice Studded Cuirass'"
+#command "#magic"
 #end
 
 #new customarmor
@@ -108,6 +109,7 @@
 #command "#enc 1"
 #command "#rcost 7"
 #command "#name 'Icicle Mail Cuirass'"
+#command "#magic"
 #end
 
 #new customarmor
@@ -119,6 +121,7 @@
 #command "#enc 0"
 #command "#rcost 9"
 #command "#name 'Ice Full Helmet'"
+#command "#magic"
 #end
 
 --- Argarthan stone armors (used for both granite and onyx)
@@ -217,7 +220,7 @@
 #command "#att 1"
 #command "#def -2"
 #command "#dmg 5"
-#command "#len 2"
+#command "#len 1"
 #command "#rcost 3"
 #command "#name 'Morningstar'"
 #command "#pierce"
@@ -229,7 +232,7 @@
 #name "bronzebroadsword"
 #command "#def 1"
 #command "#dmg 5"
-#command "#len 2"
+#command "#len 1"
 #command "#rcost 4"
 #command "#name 'Bronze Broad Sword'"
 #command "#slash"
@@ -240,18 +243,19 @@
 #command "#att 1"
 #command "#def 1"
 #command "#dmg 9"
-#command "#len 3"
+#command "#len 2"
 #command "#rcost 6"
 #command "#name 'Bronze Claymore'"
 #command "#slash"
 #command "#twohanded"
 #end
 
+--- This should be deprecated in favor of 698
 #new customweapon
 #name "bronzebattleaxe"
 #command "#att 1"
 #command "#dmg 8"
-#command "#len 3"
+#command "#len 2"
 #command "#rcost 4"
 #command "#name 'Bronze Battleaxe'"
 #command "#slash"
@@ -263,7 +267,7 @@
 #command "#att -1"
 #command "#def 1"
 #command "#dmg 9"
-#command "#len 4"
+#command "#len 3"
 #command "#rcost 5"
 #command "#name 'Bronze Halberd'"
 #command "#slash"
@@ -275,7 +279,7 @@
 #name "bronzebardiche"
 #command "#def -1"
 #command "#dmg 5"
-#command "#len 5"
+#command "#len 4"
 #command "#rcost 5"
 #command "#name 'Bronze Bardiche'"
 #command "#slash"
@@ -287,7 +291,7 @@
 #command "#rcost 2"
 #command "#dmg 6"
 #command "#att 1"
-#command "#len 4"
+#command "#len 3"
 #command "#nratt 1"
 #command "#singleuse"
 #command "#norepel"
@@ -301,7 +305,7 @@
 #new customweapon
 #name "ironkopesh"
 #command "#dmg 6"
-#command "#len 2"
+#command "#len 1"
 #command "#rcost 2"
 #command "#name 'Iron Kopesh'"
 #command "#slash"
@@ -312,7 +316,7 @@
 #name "lucernehammer"
 #command "#att 1"
 #command "#dmg 7"
-#command "#len 4"
+#command "#len 3"
 #command "#rcost 4"
 #command "#name 'Lucerne Hammer'"
 #command "#pierce"
@@ -325,7 +329,7 @@
 #name "bronzelucernehammer"
 #command "#att 1"
 #command "#dmg 6"
-#command "#len 4"
+#command "#len 3"
 #command "#rcost 5"
 #command "#name 'Bronze Lucerne Hammer'"
 #command "#pierce"
@@ -340,13 +344,110 @@
 #command "#range -1"
 #command "#ammo 2"
 #command "#rcost 2"
-#command "#flyspr 411 1"
+#command "#flyspr 411 4"
 #command "#name 'Bronze Throwing Hatchet'"
 #command "#slash"
 #end
 
+#new customweapon
+#name bronzechakram
+#command "#dmg 3"
+#command "#range -1"
+#command "#ammo 2"
+#command "#rcost 2"
+#command "#flyspr 442 1"
+#command "#name 'Bronze Chakram'"
+#command "#slash"
+#end
+
+#new customweapon
+#name bronzechakram_multi
+#command "#dmg 3"
+#command "#range -1"
+#command "#ammo 6"
+#command "#rcost 6"
+#command "#flyspr 442 1"
+#command "#name 'Bronze Chakram'"
+#command "#slash"
+#end
+
+
+#new customweapon
+#name ironchakram_multi
+#command "#dmg 4"
+#command "#range -1"
+#command "#ammo 6"
+#command "#rcost 6"
+#command "#flyspr 442 1"
+#command "#name 'Chakram'"
+#command "#slash"
+#end
 
 --- Generic (and slightly nerfed) black steel armor
+#new customarmor
+#name blacksteel_shield
+#armor
+#command "#type 4"
+#command "#prot 21"
+#command "#def 4"
+#command "#enc 1"
+#command "#rcost 4"
+#command "#name 'Blacksteel Shield'"
+#command "#magic"
+#command "#ironarmor"
+#end
+
+#new customarmor
+#name blacksteel_kite
+#armor
+#command "#type 4"
+#command "#prot 21"
+#command "#def 6"
+#command "#enc 2"
+#command "#rcost 5"
+#command "#name 'Blacksteel Kite Shield'"
+#command "#magic"
+#command "#ironarmor"
+#end
+ 
+#new customarmor
+#name blacksteel_tower
+#armor
+#command "#type 4"
+#command "#prot 18"
+#command "#def 7"
+#command "#enc 2"
+#command "#rcost 4"
+#command "#name 'Blacksteel Tower Shield'"
+#command "#magic"
+#command "#ironarmor"
+#end
+
+#new customarmor
+#name blacksteel_halfhelm
+#armor
+#command "#type 6"
+#command "#prot 19"
+#command "#def 0"
+#command "#enc 0"
+#command "#rcost 4"
+#command "#name 'Blacksteel Half Helmet'"
+#command "#magic"
+#command "#ironarmor"
+#end
+
+#new customarmor
+#name blacksteel_fullhelm
+#armor
+#command "#type 6"
+#command "#prot 22"
+#command "#def -1"
+#command "#enc 0"
+#command "#rcost 6"
+#command "#name 'Blacksteel Full Helmet'"
+#command "#magic"
+#command "#ironarmor"
+#end
 
 #new customarmor
 #name blackmail_cuirass
@@ -357,7 +458,8 @@
 #command "#enc 1"
 #command "#rcost 10"
 #command "#ironarmor"
-#command "#name 'Black Steel Chain Cuirass'"
+#command "#name 'Blacksteel Chain Cuirass'"
+#command "#magic"
 #end
 
 #new customarmor
@@ -369,7 +471,8 @@
 #command "#enc 2"
 #command "#rcost 14"
 #command "#ironarmor"
-#command "#name 'Black Steel Chain Hauberk'"
+#command "#name 'Blacksteel Chain Hauberk'"
+#command "#magic"
 #end
 
 #new customarmor
@@ -381,7 +484,8 @@
 #command "#enc 3"
 #command "#rcost 18"
 #command "#ironarmor"
-#command "#name 'Black Steel Full Chain'"
+#command "#name 'Blacksteel Full Chain'"
+#command "#magic"
 #end
 
 #new customarmor
@@ -393,7 +497,8 @@
 #command "#enc 2"
 #command "#rcost 16"
 #command "#ironarmor"
-#command "#name 'Black Steel Plate Cuirass'"
+#command "#name 'Blacksteel Plate Cuirass'"
+#command "#magic"
 #end
 
 #new customarmor
@@ -405,7 +510,8 @@
 #command "#enc 3"
 #command "#rcost 21"
 #command "#ironarmor"
-#command "#name 'Black Steel Plate Hauberk'"
+#command "#name 'Blacksteel Plate Hauberk'"
+#command "#magic"
 #end
 
 #new customarmor
@@ -417,7 +523,61 @@
 #command "#enc 4"
 #command "#rcost 26"
 #command "#ironarmor"
-#command "#name 'Black Steel Full Plate'"
+#command "#name 'Blacksteel Full Plate'"
+#command "#magic"
+#end
+
+--- 2h Spears, with stats based on short-vs-reg-tridents
+#new customweapon
+#name "2hspear"
+#command "#natt 1"
+#command "#dmg 5"
+#command "#att +1"
+#command "#def +1"
+#command "#len 3"
+#command "#rcost 2"
+#command "#name 'Heavy Spear'"
+#command "#pierce"
+#command "#ironweapon"
+#command "#twohanded"
+#end
+
+#new customweapon
+#name "2hlongspear"
+#command "#natt 1"
+#command "#dmg 5"
+#command "#att +1"
+#command "#len 4"
+#command "#rcost 2"
+#command "#name 'Heavy Longspear'"
+#command "#pierce"
+#command "#ironweapon"
+#command "#twohanded"
+#end
+
+#new customweapon
+#name "2hbronzespear"
+#command "#natt 1"
+#command "#dmg 5"
+#command "#att +1"
+#command "#def +1"
+#command "#len 3"
+#command "#rcost 2"
+#command "#name 'Heavy Bronze Spear'"
+#command "#pierce"
+#command "#twohanded"
+#end
+
+#new customweapon
+#name "2hbronzelongspear"
+#command "#natt 1"
+#command "#dmg 5"
+#command "#att +1"
+#command "#len 4"
+#command "#rcost 2"
+#command "#name 'Heavy Bronze Longspear'"
+#command "#pierce"
+#command "#twohanded"
 #end
 
 
@@ -441,7 +601,7 @@
 #command "#rcost 6"
 #command "#dmg 8"
 #command "#att 1"
-#command "#len 4"
+#command "#len 3"
 #command "#nratt 1"
 #command "#singleuse"
 #command "#norepel"
@@ -461,7 +621,7 @@
 #command "#natt 1"
 #command "#def -1"
 #command "#dmg 7"
-#command "#len 3"
+#command "#len 1"
 #command "#rcost 2"
 #command "#name 'Giant Axe'"
 #command "#slash"
@@ -472,7 +632,7 @@
 #name "giantspear"
 #command "#natt 1"
 #command "#dmg 3"
-#command "#len 5"
+#command "#len 3"
 #command "#rcost 1"
 #command "#name 'Giant Spear'"
 #command "#pierce"
@@ -484,7 +644,7 @@
 #command "#natt 1"
 #command "#dmg 3"
 #command "#def -1"
-#command "#len 6"
+#command "#len 4"
 #command "#rcost 2"
 #command "#name 'Giant Longspear'"
 #command "#pierce"
@@ -496,7 +656,7 @@
 #command "#natt 1"
 #command "#def 1"
 #command "#dmg 9"
-#command "#len 3"
+#command "#len 1"
 #command "#rcost 3"
 #command "#name 'Giant Longsword'"
 #command "#slash"
@@ -507,7 +667,7 @@
 #name "giantfalchion"
 #command "#natt 1"
 #command "#dmg 10"
-#command "#len 3"
+#command "#len 1"
 #command "#rcost 4"
 #command "#name 'Giant Falchion'"
 #command "#slash"
@@ -519,7 +679,7 @@
 #command "#natt 1"
 #command "#att 1"
 #command "#dmg 9"
-#command "#len 4"
+#command "#len 2"
 #command "#rcost 3"
 #command "#name 'Giant Greataxe'"
 #command "#slash"
@@ -532,7 +692,7 @@
 #command "#natt 1"
 #command "#def -1"
 #command "#dmg 6"
-#command "#len 3"
+#command "#len 1"
 #command "#rcost 3"
 #command "#name 'Giant Bronze Axe'"
 #command "#slash"
@@ -542,7 +702,7 @@
 #name "giantspear_bronze"
 #command "#natt 1"
 #command "#dmg 3"
-#command "#len 5"
+#command "#len 3"
 #command "#rcost 1"
 #command "#name 'Giant Bronze Spear'"
 #command "#pierce"
@@ -553,7 +713,7 @@
 #command "#natt 1"
 #command "#dmg 3"
 #command "#def -1"
-#command "#len 6"
+#command "#len 4"
 #command "#rcost 2"
 #command "#name 'Giant Bronze Longspear'"
 #command "#pierce"
@@ -564,7 +724,7 @@
 #command "#natt 1"
 #command "#def 1"
 #command "#dmg 7"
-#command "#len 3"
+#command "#len 1"
 #command "#rcost 3"
 #command "#name 'Giant Bronze Sword'"
 #command "#slash"
@@ -575,7 +735,7 @@
 #command "#natt 1"
 #command "#att 1"
 #command "#dmg 8"
-#command "#len 4"
+#command "#len 2"
 #command "#rcost 4"
 #command "#name 'Giant Bronze Greataxe'"
 #command "#slash"
@@ -587,7 +747,7 @@
 #command "#natt 1"
 #command "#def -1"
 #command "#dmg 9"
-#command "#len 3"
+#command "#len 1"
 #command "#rcost 5"
 #command "#name 'Giant Magic Axe'"
 #command "#slash"
@@ -598,7 +758,7 @@
 #name "giantmagicspear"
 #command "#natt 1"
 #command "#dmg 5"
-#command "#len 5"
+#command "#len 3"
 #command "#rcost 3"
 #command "#name 'Giant Magic Spear'"
 #command "#pierce"
@@ -610,7 +770,7 @@
 #command "#natt 1"
 #command "#def 1"
 #command "#dmg 11"
-#command "#len 3"
+#command "#len 1"
 #command "#rcost 6"
 #command "#name 'Giant Magic Sword'"
 #command "#slash"
@@ -639,6 +799,19 @@
 #command "#natt 1"
 #command "#twohanded"
 #command "#blunt"
+#end
+
+--- Short version of Bone Tridents
+
+#new customweapon
+#name "shorttrident_bone"
+#command "#name 'Short Bone Trident'"
+#command "#rcost 1"
+#command "#dmg 3"
+#command "#att -1"
+#command "#len 3"
+#command "#natt 1"
+#command "#pierce"
 #end
 
 --- CBM warhorse hoof (should be unused currently)
@@ -780,7 +953,7 @@
 #command "#att -1"
 #command "#def -1"
 #command "#dmg 24"
-#command "#len 3"
+#command "#len 2"
 #command "#nostr"
 #command "#bonus"
 #command "#name 'Great Club'"
@@ -792,7 +965,7 @@
 #name "nostr_fossilclub"
 #command "#att -1"
 #command "#dmg 27"
-#command "#len 3"
+#command "#len 2"
 #command "#nostr"
 #command "#bonus"
 #command "#name 'Stone Club'"
@@ -807,7 +980,7 @@
 #command "#dmg 8"
 #command "#ammo 1"
 #command "#norepel"
-#command "#len 4"
+#command "#len 3"
 #command "#nratt 1"
 #command "#nostr"
 #command "#bonus"
@@ -826,7 +999,7 @@
 #command "#ammo 1"
 #command "#unrepel"
 #command "#norepel"
-#command "#len 4"
+#command "#len 3"
 #command "#nratt 1"
 #command "#aoe 1"
 #command "#nostr"
@@ -844,7 +1017,7 @@
 #command "#rcost 4"
 #command "#dmg 8"
 #command "#norepel"
-#command "#len 4"
+#command "#len 3"
 #command "#nratt 1"
 #command "#nostr"
 #command "#bonus"
@@ -861,7 +1034,7 @@
 #command "#rcost 4"
 #command "#dmg 12"
 #command "#norepel"
-#command "#len 4"
+#command "#len 3"
 #command "#nratt 1"
 #command "#nostr"
 #command "#bonus"
@@ -914,12 +1087,12 @@
 #new customweapon
 #name light_crossbow
 #command "#att 1"
-#command "#dmg 8"
-#command "#range 25"
+#command "#dmg 5"
+#command "#range 30"
 #command "#ammo 12"
 #command "#twohanded"
 #command "#rcost 2"
-#command "#nostr"
+#command "#bowstr"
 #command "#armorpiercing"
 #command "#flyspr 109 1"
 #command "#sound 13"
@@ -935,12 +1108,12 @@
 #command "#att 2"
 #command "#def -2"
 #command "#nratt -2"
-#command "#dmg 13"
-#command "#range 35"
+#command "#dmg 10"
+#command "#range 40"
 #command "#ammo 12"
 #command "#twohanded"
 #command "#rcost 5"
-#command "#nostr"
+#command "#bowstr"
 #command "#armorpiercing"
 #command "#flyspr 109 1"
 #command "#sound 13"
@@ -953,12 +1126,12 @@
 #new customweapon
 #name heavy_sling
 #command "#att -2"
-#command "#dmg 11"
-#command "#range 30"
+#command "#dmg 8"
+#command "#range 40"
 #command "#ammo 15"
 #command "#twohanded"
 #command "#rcost 1"
-#command "#nostr"
+#command "#bowstr"
 #command "#flyspr 111 1"
 #command "#sound 15"
 #command "#name 'Heavy Sling'"
@@ -997,13 +1170,13 @@
 #new customweapon
 #name hoburg_crossbow
 #command "#att 2"
-#command "#dmg 8"
+#command "#dmg 5"
 #command "#nratt -2"
-#command "#range 30"
+#command "#range 35"
 #command "#ammo 12"
 #command "#twohanded"
 #command "#rcost 2"
-#command "#nostr"
+#command "#bowstr"
 #command "#armorpiercing"
 #command "#flyspr 109 1"
 #command "#name 'Small Crossbow'"
@@ -1013,13 +1186,13 @@
 #new customweapon
 #name hoburg_arbalest
 #command "#att 1"
-#command "#dmg 12"
+#command "#dmg 9"
 #command "#nratt -3"
-#command "#range 40"
+#command "#range 45"
 #command "#ammo 12"
 #command "#twohanded"
 #command "#rcost 3"
-#command "#nostr"
+#command "#bowstr"
 #command "#armorpiercing"
 #command "#flyspr 109 1"
 #command "#name 'Small Arbalest'"
@@ -1149,12 +1322,13 @@
 #command "#blunt"
 #end
 
+-- Should be deprecated in favor of id 580
 #new customweapon
 #name corallongspear
 #command "#att 0"
 #command "#def -1"
 #command "#dmg 3"
-#command "#len 5"
+#command "#len 4"
 #command "#rcost 3"
 #command "#secondaryeffect 50"
 #command "#name 'Coral Long Spear'"
@@ -1166,7 +1340,7 @@
 #command "#att 0"
 #command "#def 1"
 #command "#dmg 6"
-#command "#len 2"
+#command "#len 1"
 #command "#rcost 4"
 #command "#secondaryeffect 50"
 #command "#name 'Coral Broad Sword'"
@@ -1190,7 +1364,7 @@
 #command "#att -1"
 #command "#def -1"
 #command "#dmg 11"
-#command "#len 4"
+#command "#len 3"
 #command "#rcost 5"
 #command "#name 'Meteorite Glaive'"
 #command "#slash"
@@ -1213,6 +1387,7 @@
 #command "#name 'Poison Fish'"
 #end
 
+--- Old Atlantian ice armors should be deprecated in favor of ids 26, 27, 28
 
 #new customarmor
 #name atl_icecuirass
@@ -1223,6 +1398,7 @@
 #command "#enc 2"
 #command "#rcost 12"
 #command "#name 'Ice Cuirass'"
+#command "#magic"
 #end
 
 #new customarmor
@@ -1234,6 +1410,7 @@
 #command "#enc 3"
 #command "#rcost 18"
 #command "#name 'Ice Hauberk'"
+#command "#magic"
 #end
 
 #new customarmor
@@ -1245,7 +1422,10 @@
 #command "#enc 1"
 #command "#rcost 6"
 #command "#name 'Ice Aegis'"
+#command "#magic"
 #end
+
+---
 
 #new customarmor
 #name atl_conchshield
@@ -1278,9 +1458,10 @@
 #command "#enc 0"
 #command "#rcost 2"
 #command "#name 'Basalt Cap'"
+#command "#magic"
 #end
 
--- Should be depricated everywhere in favor of id 211
+-- Should be deprecated everywhere in favor of id 211
 #new customarmor
 #armor
 #name atl_meteoritecap-s
@@ -1290,6 +1471,7 @@
 #command "#enc 0"
 #command "#rcost 2"
 #command "#name 'Meteorite Cap'"
+#command "#magic"
 #end
 
 --- Agarthan primary weapon javelin and rock
@@ -1304,7 +1486,7 @@
 #command "#rcost 1"
 #command "#flyspr 110 1"
 #command "#sound 19"
-#command "#name 'Javelins'"
+#command "#name 'Javelin'"
 #command "#twohanded"
 #command "#pierce"
 #end
@@ -1319,6 +1501,19 @@
 #command "#name 'Large Rock'"
 #command "#twohanded"
 #command "#blunt"
+#end
+
+#new customweapon
+#name "boulder_melee"
+#command "#dmg 0"
+#command "#att -2"
+#command "#def -2"
+#command "#len 0"
+#command "#name 'Boulder'"
+#command "#twohanded"
+#command "#blunt"
+#command "#armorpiercing"
+#command "#norepel"
 #end
 
 -- Zotz custom items
@@ -1343,6 +1538,7 @@
 #command "#enc 2"
 #command "#rcost 14"
 #command "#name 'Golden Cuirass'"
+#command "#magic"
 #end
 
 #new customarmor -- renamed Xibalba Armor of the Sun
@@ -1354,6 +1550,7 @@
 #command "#enc 3"
 #command "#rcost 20"
 #command "#name 'Golden Armor'"
+#command "#magic"
 #end
 
 #new customarmor
@@ -1365,6 +1562,7 @@
 #command "#enc 4"
 #command "#rcost 26"
 #command "#name 'Obsidian Armor'"
+#command "#magic"
 #end
 
 --- Bonus missle attacks for pachyderm howdahs
@@ -1372,7 +1570,7 @@
 #name bonus_shortbow
 #command "#rcost 3"
 #command "#dmg 9"
-#command "#range 32"
+#command "#range 37"
 #command "#ammo 24"
 #command "#flyspr 109 1"
 #command "#sound 14"
@@ -1388,7 +1586,7 @@
 #new customweapon
 #name bonus_sling
 #command "#dmg 8"
-#command "#range 22"
+#command "#range 32"
 #command "#ammo 30"
 #command "#flyspr 111 1"
 #command "#sound 15"
@@ -1408,11 +1606,83 @@
 #command "#rcost 2"
 #command "#flyspr 110 1"
 #command "#sound 19"
-#command "#name 'Javelins'"
+#command "#name 'Javelin'"
 #command "#bonus"
 #command "#nostr"
 #command "#pierce"
 #command "#range0"
+#end
+
+--- Fish bites and gores: these will only sometimes be used, but are used in place of the first normal weapon
+#new customweapon
+#name "bite_50"
+#command "#att 0"
+#command "#def -1"
+#command "#dmg 2"
+#command "#len -1"
+#command "#norepel"
+#command "#bonus"
+#command "#melee50"
+#command "#skip"
+#command "#name 'Reckless Bite'"
+#command "#slash"
+#command "#natural"
+#end
+
+#new customweapon
+#name "strongbite_50"
+#command "#att 0"
+#command "#def -1"
+#command "#dmg 5"
+#command "#len -1"
+#command "#norepel"
+#command "#bonus"
+#command "#melee50"
+#command "#skip"
+#command "#name 'Reckless Bite'"
+#command "#slash"
+#command "#natural"
+#end
+
+#new customweapon
+#name "strongbite"
+#command "#att 0"
+#command "#def -1"
+#command "#dmg 5"
+#command "#len -1"
+#command "#norepel"
+#command "#bonus"
+#command "#name 'Bite'"
+#command "#slash"
+#command "#natural"
+#end
+
+#new customweapon
+#name "swordbill_50"
+#command "#att 1"
+#command "#def -1"
+#command "#dmg 2"
+#command "#len 1"
+#command "#bonus"
+#command "#melee50"
+#command "#skip"
+#command "#name 'Reckless Swordbill Gore'"
+#command "#slash"
+#command "#pierce"
+#command "#natural"
+#end
+
+#new customweapon
+#name "swordbill"
+#command "#att 1"
+#command "#def -1"
+#command "#dmg 2"
+#command "#len 1"
+#command "#bonus"
+#command "#name 'Swordbill Gore'"
+#command "#slash"
+#command "#pierce"
+#command "#natural"
 #end
 
 --- NOSTR mount attacks

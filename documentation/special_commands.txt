@@ -54,6 +54,10 @@ stacks multiplicatively.
 #startarmy_amountmulti <multi>
 PD/start army amount multiplier. These stack like the above commands. 
 
+#extrapdmulti <multi>
+Multiplies the probability of a nation having more than 2 units of PD units. Default chance is 0.1 for a 3nd unit, and 0.05 for a 4th iff there was
+already a 3rd unit. 
+
 #troopdescriptions <file>
 Uses this file (load files at /data/descriptions/descriptions.txt) for troop descriptions.
 
@@ -169,9 +173,6 @@ Loads start affinities from given definition set
 
 #nationwidefilters <set>
 Loads nation wide filters from given definition set. This is stuff like "all units are myopic"
-
-#nationfilters <set>
-Loads nation filters from given definition set. This stuff is like "nation gets blood sacrifice"
 
 #startaffinities <set>
 Loads start affinities from given definition set
@@ -340,6 +341,18 @@ Mage variants vary one of the slots defined by the #varyslot command. Overrides 
 
 #primaryraceonly
 This pose will not be eligible for selection as a secondary race pose
+
+#cannot_be_commander
+This pose will not be eligible for selection as a commander if at all possible (e.g., gladiators)
+
+#should_be_commander
+This pose will be given priority for selection as a commander
+
+#superior_leader
+Commanders generated from this pose are more likely to be very good commanders
+
+#good_leader
+Commanders generated from this pose are more likely to be good commanders
 
 --- Item
 #recolormask <sprite filename/self>

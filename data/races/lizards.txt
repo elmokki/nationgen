@@ -20,6 +20,7 @@
 #spritegenpose sobekshamans
 #spritegenpose sobeks
 #spritegenpose sobekmages
+#spritegenpose generic_scouts
 
 #longsyllables /data/names/nations/lizard/longsyllables.txt
 #shortsyllables /data/names/nations/lizard/shortsyllables.txt
@@ -40,10 +41,12 @@
 #unitcommand "#swampsurvival"
 #unitcommand "#coldblood"
 #unitcommand "#swimming"
+#unitcommand "#twiceborn 3180"
 #nationcommand "#idealcold -2"
 #tag "preferredmount serpent"
 #tag "preferredmount lizard"
 
+#nationcommand "#riverstart"
 
 #generationchance chariot 0.25
 #generationchance ranged 0.125
@@ -57,6 +60,8 @@
 #magicpatterns defaulttertiary
 
 #gods lizardgods
+#forts default_forts
+#forts city_forts
 
 #magicpriority death 6
 #magicpriority nature 4
@@ -67,5 +72,6 @@
 #chanceinc race "Dynastic human" *3"
 
 #dynastic
+#serpent
 
 #endrace

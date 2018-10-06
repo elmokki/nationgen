@@ -2,10 +2,12 @@
 #newpose
 #name "tusked one infantry"
 #role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
 
-#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow cloakb quiver bonusweapon basesprite shirt bling armor cloakf weapon offhandw hands helmet offhanda"
 
-#load basesprite /data/items/enlightened/dantih/sacredbases.txt
+#load basesprite /data/items/enlightened/dantih/bases.txt
 #load shadow /data/items/enlightened/dantih/shadow.txt
 
 #load hands /data/items/enlightened/dantih/hands.txt
@@ -13,17 +15,21 @@
 #load cloakf /data/items/enlightened/dantih/cloakf.txt
 #load cloakb /data/items/enlightened/dantih/cloakb.txt
 
-#load armor /data/items/enlightened/dantih/sacredarmor.txt
+#load armor /data/items/enlightened/dantih/armor.txt
 #load shirt /data/items/enlightened/dantih/shirt.txt
 #load helmet /data/items/enlightened/dantih/helmet.txt
+#generateitem 1 shirt
 
 #load weapon /data/items/enlightened/dantih/weapon.txt
-#load bonusweapon /data/items/enlightened/dantih/bonusranged.txt 0 1
+#load weapon /data/items/enlightened/dantih/weapon_2h.txt
+#load bonusweapon /data/items/enlightened/dantih/sacredwings.txt
 
-#load offhand /data/items/enlightened/dantih/shields_elite.txt
+#load offhand /data/items/enlightened/dantih/shield.txt
 #load offhand /data/items/enlightened/dantih/offhand.txt
 
-#generateitem 1 bonusweapon
+#load bling /data/items/enlightened/dantih/bling.txt
+#generateitem 0.5 bling
+
 #endpose
 
 
@@ -32,10 +38,12 @@
 #newpose
 #name "tusked one archer"
 #role "ranged"
+#role "elite ranged"
+#role "sacred ranged"
 
-#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap bonusweapon weapon quiver armor cloakf offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow cloakb quiver bonusweapon basesprite shirt bling armor cloakf weapon offhandw hands helmet offhanda"
 
-#load basesprite /data/items/enlightened/dantih/sacredbases.txt
+#load basesprite /data/items/enlightened/dantih/bases.txt
 #load shadow /data/items/enlightened/dantih/shadow.txt
 
 #load hands /data/items/enlightened/dantih/hands.txt
@@ -43,14 +51,53 @@
 #load cloakf /data/items/enlightened/dantih/cloakf.txt
 #load cloakb /data/items/enlightened/dantih/cloakb.txt
 
-#load armor /data/items/enlightened/dantih/sacredarmor.txt
+#load armor /data/items/enlightened/dantih/armor.txt
 #load shirt /data/items/enlightened/dantih/shirt.txt
 #load helmet /data/items/enlightened/dantih/helmet.txt
+#generateitem 1 shirt
 
-#load weapon /data/items/enlightened/dantih/bows.txt -3 3
-#load bonusweapon /data/items/enlightened/dantih/archerweapon.txt
+#load weapon /data/items/enlightened/dantih/weapon_ranged.txt
+#load bonusweapon /data/items/enlightened/dantih/rangedmelee.txt
+#load bonusweapon /data/items/enlightened/dantih/sacredwings.txt
 
-#load strap /data/items/enlightened/dantih/strap.txt
+#load bling /data/items/enlightened/dantih/bling.txt
+#generateitem 0.5 bling
+
 #load quiver /data/items/enlightened/dantih/quiver.txt
 #generateitem 1 bonusweapon
+#endpose
+
+
+-------- Skirmishers
+#newpose
+#name "tusked one youths"
+#role "infantry"
+#role "scout"
+
+#command "#skirmisher +1"
+#theme irregular
+
+#basechance 0.1
+
+#renderorder "shadow cloakb quiver bonusweapon basesprite shirt bling armor cloakf weapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/enlightened/dantih/youth/bases.txt
+#load shadow /data/items/enlightened/dantih/youth/shadow.txt
+
+#load hands /data/items/enlightened/dantih/youth/hands.txt
+
+#load cloakf /data/items/enlightened/dantih/youth/cloakf.txt
+#load cloakb /data/items/enlightened/dantih/youth/cloakb.txt
+
+#load armor /data/items/enlightened/dantih/youth/armor.txt
+
+#load weapon /data/items/enlightened/dantih/youth/weapon.txt
+#load bonusweapon /data/items/enlightened/dantih/youth/bonusweapon.txt
+#load offhand /data/items/enlightened/dantih/youth/offhand.txt
+
+#maxvarieties 1
+#maxunits 1
+#primaryraceonly
+#cannot_be_commander
+
 #endpose

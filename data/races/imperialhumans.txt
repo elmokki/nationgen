@@ -2,9 +2,6 @@
 #name "Imperial human"
 #visiblename "Human"
 #basechance 0.3
-#basechance 0
-#all_troops_sacred
-#all_troops_elite
 
 #racethemes imperial_themes
 #freetheme techlevel
@@ -16,10 +13,13 @@
 #priest_H2_upgradechance 0.6
 
 #pose imperiallegion
--- #pose imperialinfantry
+#pose imperialsacred
 -- #pose imperialcavalry
 #pose imperialranged
 #pose imperialmage
+#pose generic_scouts
+
+#extrapdmulti 8
 
 #longsyllables /data/names/nations/amazon/longsyllables.txt
 #shortsyllables /data/names/nations/amazon/shortsyllables.txt
@@ -33,6 +33,7 @@
 
 #unitcommand "#nametype 106"
 
+#human
 #imperial
 #specialcommanderfilters default_specialcommanderfilters
 #specialcommanderfilters specialcommanderfilters_extended

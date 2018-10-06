@@ -6,25 +6,24 @@ import java.util.Random;
 
 import com.elmokki.Generic;
 
-import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.nation.Nation;
 
 public class EpithetGenerator {
-	private NationGen ngen;
+	private NationGenAssets assets;
 	
 	List<NamePart> mageepithetparts = new ArrayList<NamePart>();
 	
-	public EpithetGenerator(NationGen ngen)
+	public EpithetGenerator(NationGenAssets assets)
 	{
-		this.ngen = ngen;
-	
+		this.assets = assets;
 	}
 	
 	public void giveEpithet(Nation n)
 	{
 		Random random = new Random(n.random.nextInt());
-		mageepithetparts = ChanceIncHandler.retrieveFilters("epithet_era_names", "default_epithet_parts", ngen.miscnames, null, n.races.get(0));
+		mageepithetparts = ChanceIncHandler.retrieveFilters("epithet_era_names", "default_epithet_parts", assets.miscnames, null, n.races.get(0));
 
 		
 		String epithet = "";

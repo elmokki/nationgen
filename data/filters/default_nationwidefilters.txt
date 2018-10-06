@@ -25,6 +25,10 @@
 #new
 #name "darkvision 50"
 #primarycommand "#darkvision"
+#primarycommand "#blind"
+#primarycommand "#spiritsight"
+#primarycommand "#undead"
+#primarycommand "#demon"
 #description "Dark vision (50)"
 #chance 0.5
 #command "#darkvision +50"
@@ -67,7 +71,9 @@
 #tag "faeblood"
 #description "Fae blood"
 #chance 0.3
+#primarycommand #illusion
 #command "#mr +1"
+#command "#spellsinger"
 #end
 
 #new
@@ -119,6 +125,7 @@
 #new
 #name "Myopic"
 #chance 0.3
+#primarycommand #blind
 #command "#prec -1"
 #description "Myopic"
 #end
@@ -126,6 +133,7 @@
 #new
 #name "Keen eyed"
 #chance 0.3
+#primarycommand #blind
 #command "#prec +1"
 #description "Keen eyed"
 #end
@@ -168,8 +176,9 @@
 #end
 
 #new
-#name "Sick"
+#name "Sickly"
 #chance 0.015
+#primarycommand "#heal"
 #command "#startaff +10"
 #description "Sick"
 #end
@@ -195,10 +204,17 @@
 #new
 #name "blind"
 #chance 0.025
-#primarycommand "#darkvision"
 #primarycommand "#blind"
 #command "#blind"
 #description "Blind"
+#end
+
+#new
+#name "spiritsight"
+#chance 0.025
+#primarycommand "#spiritsight"
+#command "#Spiritsight"
+#description "Sees the true nature of things"
 #end
 
 #new
@@ -226,7 +242,6 @@
 #name "pooramphibian"
 #chance 0.0
 #chanceinc "magic water 0.006125"
-#nocommand #amphibian
 #primarycommand "#pooramphibian"
 #primarycommand "#amphibian"
 #command "#pooramphibian"
@@ -282,22 +297,15 @@
 #new
 #name "Hardy"
 #chance 0.05
-#command "#woundfend 20"
+#command "#woundfend +1"
 #description "Hardy"
-#end
-
-#new
-#name "Frail"
-#chance 0.05
-#command "#woundfend -20"
-#description "Frail"
 #end
 
 #new
 #name "Resilient"
 #chance 0.05
-#nocommand #demon
-#nocommand #undead
+#primarycommand #demon
+#primarycommand #undead
 #command "#diseaseres 25"
 #description "Resilient"
 #end
@@ -320,6 +328,7 @@
 #new
 #name "golem"
 #chance 0.00625
+#primarycommand "#stonebeing"
 #command "#stonebeing"
 #command "#ap -4"
 #command "#prot +4"
@@ -329,6 +338,7 @@
 #new
 #name "golem"
 #chance 0.00625
+#primarycommand "#stonebeing"
 #command "#stonebeing"
 #command "#ap -2"
 #command "#prot +2"

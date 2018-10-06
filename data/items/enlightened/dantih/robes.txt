@@ -1,0 +1,713 @@
+#newitem
+#id naked
+#gameid -1
+#armor
+#basechance 3
+#tier 1
+#notfortier 2
+#notfortier 3
+#theme primitive
+#theme naked
+#enditem
+
+#newitem
+#id pants_black
+#gameid -1
+#sprite /graphics/enlightened/dantih/pants_dark.png
+#eliteversion pants_dark
+#armor
+#tier 1
+#notfortier 2
+#notfortier 3
+#theme naked
+#enditem
+
+#newitem
+#id pants_grey
+#gameid -1
+#sprite /graphics/enlightened/dantih/pants_medium.png
+#eliteversion pants_medium
+#armor
+#tier 1
+#notfortier 2
+#notfortier 3
+#theme naked
+#enditem
+
+#newitem
+#id pants_white
+#gameid -1
+#sprite /graphics/enlightened/dantih/pants_light.png
+#eliteversion pants_light
+#armor
+#tier 1
+#notfortier 2
+#notfortier 3
+#theme naked
+#enditem
+
+#newitem
+#id pants_dark
+#gameid -1
+#sprite /graphics/enlightened/dantih/pants_dark.png
+#recolormask /graphics/enlightened/dantih/pants_recolormask.png
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#theme naked
+#enditem
+
+#newitem
+#id pants_medium
+#gameid -1
+#sprite /graphics/enlightened/dantih/pants_medium.png
+#recolormask /graphics/enlightened/dantih/pants_recolormask.png
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#theme naked
+#enditem
+
+#newitem
+#id pants_light
+#gameid -1
+#sprite /graphics/enlightened/dantih/pants_light.png
+#recolormask /graphics/enlightened/dantih/pants_recolormask.png
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#theme naked
+#enditem
+
+#newitem
+#id furs_half
+#gameid -1
+#armor
+#sprite /graphics/enlightened/dantih/armor/furs_loincloth.png
+#eliteversion furs
+#tier 1
+#notfortier 2
+#notfortier 3
+#theme primitive
+#theme leather
+#enditem
+
+#newitem
+#id furs
+#gameid 44
+#armor
+#sprite /graphics/enlightened/dantih/armor/furs.png
+#tier 1
+#tier 2
+#notfortier 3
+#theme primitive
+#theme leather
+#enditem
+
+#newitem
+#id shendyt_white_red
+#gameid -1
+#armor
+#sprite /graphics/enlightened/dantih/armor/robes/shendyt.png
+#eliteversion shendyt_colored_red
+#eliteversion shendyt_white_colored
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id shendyt_colored_red
+#gameid -1
+#armor
+#sprite /graphics/enlightened/dantih/armor/robes/shendyt.png
+#recolormask /graphics/enlightened/dantih/armor/robes/shendyt_recolormask3.png
+#eliteversion shendyt_colored
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id shendyt_white_colored
+#gameid -1
+#armor
+#sprite /graphics/enlightened/dantih/armor/robes/shendyt.png
+#recolormask /graphics/enlightened/dantih/armor/robes/shendyt_recolormask1.png
+#eliteversion shendyt_colored
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id shendyt_colored
+#gameid -1
+#armor
+#sprite /graphics/enlightened/dantih/armor/robes/shendyt.png
+#recolormask /graphics/enlightened/dantih/armor/robes/shendyt_recolormask2.png
+#eliteversion shendyt_colored
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+
+-- Various robes and half-robes
+
+#newitem
+#id halfrobe_black
+#gameid -1
+#sprite /graphics/enlightened/dantih/armor/robes/halfrobe_dark.png
+#eliteversion halfrobe_dark
+#eliteversion robe_black
+#armor
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id halfrobe_grey
+#gameid -1
+#sprite /graphics/enlightened/dantih/armor/robes/halfrobe_medium.png
+#eliteversion halfrobe_medium
+#eliteversion robe_grey
+#armor
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id halfrobe_white
+#gameid -1
+#sprite /graphics/enlightened/dantih/armor/robes/halfrobe_light.png
+#eliteversion halfrobe_light
+#eliteversion robe_white
+#armor
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id halfrobe_dark
+#gameid -1
+#sprite /graphics/enlightened/dantih/armor/robes/halfrobe_dark.png
+#recolormask self
+#eliteversion robe_dark
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id halfrobe_medium
+#gameid -1
+#sprite /graphics/enlightened/dantih/armor/robes/halfrobe_medium.png
+#recolormask self
+#eliteversion robe_medium
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id halfrobe_light
+#gameid -1
+#sprite /graphics/enlightened/dantih/armor/robes/robe_light.png
+#recolormask self
+#eliteversion robe_light
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id robe_black
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/robe_dark.png
+#eliteversion robe_dark
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id robe_grey
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/robe_medium.png
+#eliteversion robe_medium
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id robe_white
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/robe_light.png
+#eliteversion robe_light
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id robe_dark
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/robe_dark.png
+#recolormask self
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id robe_medium
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/robe_medium.png
+#recolormask self
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id robe_light
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/robe_light.png
+#recolormask self
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id halfrobe_carp1
+#gameid -1
+#sprite /graphics/enlightened/dantih/armor/robes/halfrobe_carp.png
+#recolormask /graphics/enlightened/dantih/armor/robes/halfrobe_carp_recolormask1.png
+#eliteversion halfrobe_carp2
+#eliteversion halfrobe_carp3
+#eliteversion halfrobe_carp4
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id halfrobe_carp2
+#gameid -1
+#sprite /graphics/enlightened/dantih/armor/robes/halfrobe_carp.png
+#recolormask /graphics/enlightened/dantih/armor/robes/halfrobe_carp_recolormask2.png
+#eliteversion halfrobe_carp1
+#eliteversion halfrobe_carp3
+#eliteversion halfrobe_carp4
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id halfrobe_carp3
+#gameid -1
+#sprite /graphics/enlightened/dantih/armor/robes/halfrobe_carp.png
+#recolormask /graphics/enlightened/dantih/armor/robes/halfrobe_carp_recolormask3.png
+#eliteversion halfrobe_carp1
+#eliteversion halfrobe_carp2
+#eliteversion halfrobe_carp4
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id halfrobe_carp4
+#gameid -1
+#sprite /graphics/enlightened/dantih/armor/robes/halfrobe_carp.png
+#recolormask /graphics/enlightened/dantih/armor/robes/halfrobe_carp_recolormask4.png
+#eliteversion halfrobe_carp1
+#eliteversion halfrobe_carp2
+#eliteversion halfrobe_carp3
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id kimono_sash
+#gameid -1
+#sprite /graphics/enlightened/dantih/armor/robes/kimono_sash.png
+#recolormask self
+#eliteversion kimono_skirt3
+#eliteversion kimono_skirt4
+#eliteversion kimono_skirt5
+#armor
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id kimono_skirt3
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/kimono_skirt.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_skirt_recolormask3.png
+#eliteversion kimono1
+#eliteversion kimono2
+#eliteversion kimono_dark3
+#eliteversion kimono_light3
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id kimono_skirt4
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/kimono_skirt.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_skirt_recolormask4.png
+#eliteversion kimono1
+#eliteversion kimono2
+#eliteversion kimono_dark4
+#eliteversion kimono_light4
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id kimono_skirt5
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/kimono_skirt.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_skirt_recolormask5.png
+#eliteversion kimono1
+#eliteversion kimono2
+#eliteversion kimono_dark5
+#eliteversion kimono_light5
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id kimono1
+#gameid 159
+#sprite /graphics/enlightened/dantih/armor/robes/kimono1.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_recolormask1.png
+#eliteversion kimono2
+#eliteversion kimono_dark3
+#eliteversion kimono_dark4
+#eliteversion kimono_dark5
+#eliteversion kimono_dark6
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id kimono2
+#gameid 159
+#sprite /graphics/enlightened/dantih/armor/robes/kimono2.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_recolormask2.png
+#eliteversion kimono1
+#eliteversion kimono_light3
+#eliteversion kimono_light4
+#eliteversion kimono_light5
+#eliteversion kimono_light6
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id kimono_dark3
+#gameid 159
+#sprite /graphics/enlightened/dantih/armor/robes/kimono1.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_recolormask3.png
+#eliteversion kimono1
+#eliteversion kimono_light3
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id kimono_light3
+#gameid 159
+#sprite /graphics/enlightened/dantih/armor/robes/kimono2.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_recolormask3.png
+#eliteversion kimono2
+#eliteversion kimono_dark3
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id kimono_dark4
+#gameid 159
+#sprite /graphics/enlightened/dantih/armor/robes/kimono1.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_recolormask4.png
+#eliteversion kimono1
+#eliteversion kimono_light4
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id kimono_light4
+#gameid 159
+#sprite /graphics/enlightened/dantih/armor/robes/kimono2.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_recolormask4.png
+#eliteversion kimono2
+#eliteversion kimono_dark4
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id kimono_dark5
+#gameid 159
+#sprite /graphics/enlightened/dantih/armor/robes/kimono1.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_recolormask5.png
+#eliteversion kimono1
+#eliteversion kimono_light5
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id kimono_light5
+#gameid 159
+#sprite /graphics/enlightened/dantih/armor/robes/kimono2.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_recolormask5.png
+#eliteversion kimono2
+#eliteversion kimono_dark5
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id kimono_dark6
+#gameid 159
+#sprite /graphics/enlightened/dantih/armor/robes/kimono1.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_recolormask6.png
+#eliteversion kimono1
+#eliteversion kimono_light6
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id kimono_light6
+#gameid 159
+#sprite /graphics/enlightened/dantih/armor/robes/kimono2.png
+#recolormask /graphics/enlightened/dantih/armor/robes/kimono_recolormask6.png
+#eliteversion kimono2
+#eliteversion kimono_dark6
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id ermorrobe_black
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_black.png
+#eliteversion ermorrobe_grey
+#eliteversion ermorrobe_white
+#eliteversion ermorrobe_dark_dull
+#eliteversion ermorrobe_dark_muted
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id ermorrobe_grey
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_medium.png
+#eliteversion ermorrobe_black
+#eliteversion ermorrobe_white
+#eliteversion ermorrobe_medium_dull
+#eliteversion ermorrobe_medium_muted
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id ermorrobe_white
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_white.png
+#eliteversion ermorrobe_grey
+#eliteversion ermorrobe_black
+#eliteversion ermorrobe_light_dull
+#eliteversion ermorrobe_light_muted
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id ermorrobe_dark_dull
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_dark.png
+#recolormask /graphics/enlightened/dantih/armor/robes/ermor_dull_recolormask.png
+#eliteversion ermorrobe_light_dull
+#eliteversion ermorrobe_medium_dull
+#eliteversion ermorrobe_dark
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id ermorrobe_dark_muted
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_dark.png
+#recolormask /graphics/enlightened/dantih/armor/robes/ermor_muted_recolormask.png
+#eliteversion ermorrobe_light_muted
+#eliteversion ermorrobe_medium_muted
+#eliteversion ermorrobe_dark
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id ermorrobe_medium_dull
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_medium.png
+#recolormask /graphics/enlightened/dantih/armor/robes/ermor_dull_recolormask.png
+#eliteversion ermorrobe_light_dull
+#eliteversion ermorrobe_dark_dull
+#eliteversion ermorrobe_medium
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id ermorrobe_medium_muted
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_medium.png
+#recolormask /graphics/enlightened/dantih/armor/robes/ermor_muted_recolormask.png
+#eliteversion ermorrobe_light_muted
+#eliteversion ermorrobe_dark_muted
+#eliteversion ermorrobe_medium
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id ermorrobe_light_dull
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_light.png
+#recolormask /graphics/enlightened/dantih/armor/robes/ermor_dull_recolormask.png
+#eliteversion ermorrobe_medium_dull
+#eliteversion ermorrobe_dark_dull
+#eliteversion ermorrobe_light
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id ermorrobe_light_muted
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_light.png
+#recolormask /graphics/enlightened/dantih/armor/robes/ermor_muted_recolormask.png
+#eliteversion ermorrobe_medium_muted
+#eliteversion ermorrobe_dark_muted
+#eliteversion ermorrobe_light
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id ermorrobe_dark
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_dark.png
+#recolormask self
+#eliteversion ermorrobe_light
+#eliteversion ermorrobe_medium
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id ermorrobe_medium
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_medium.png
+#recolormask self
+#eliteversion ermorrobe_light
+#eliteversion ermorrobe_dark
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id ermorrobe_light
+#gameid 158
+#sprite /graphics/enlightened/dantih/armor/robes/ermor_light.png
+#recolormask self
+#eliteversion ermorrobe_medium
+#eliteversion ermorrobe_dark
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem

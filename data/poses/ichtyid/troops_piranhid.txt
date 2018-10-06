@@ -1,0 +1,105 @@
+-------- Normal
+
+#newpose
+#name "piranhid infantry"
+#role "infantry"
+
+#subrace piranhid
+
+#command "#weapon strongbite_50"
+
+#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/ichtyid/bases_piranhid.txt
+#load shadow /data/items/ichtyid/shadow.txt
+#load hands /data/items/ichtyid/hands_piranhid.txt
+#load armor /data/items/ichtyid/armor.txt
+#load armor /data/items/ichtyid/naked.txt
+#load helmet /data/items/ichtyid/helmet.txt
+#load weapon /data/items/ichtyid/weapon.txt
+#load offhand /data/items/ichtyid/offhand.txt
+#load offhand /data/items/ichtyid/shield.txt
+#load bonusweapon /data/items/ichtyid/bonusrangedweapon.txt
+
+#endpose
+
+-------- Trained elite
+
+#newpose
+#name "piranhid elites"
+#role "sacred infantry"
+#role "elite infantry"
+
+#subrace piranhid
+
+#command "#weapon strongbite"
+
+#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/ichtyid/bases_piranhid.txt
+#load shadow /data/items/ichtyid/shadow.txt
+#load hands /data/items/ichtyid/hands_piranhid.txt
+#load armor /data/items/ichtyid/armor.txt
+#load armor /data/items/ichtyid/naked.txt
+#load helmet /data/items/ichtyid/helmet.txt
+#load weapon /data/items/ichtyid/weapon.txt
+#load offhand /data/items/ichtyid/offhand.txt
+#load offhand /data/items/ichtyid/shield.txt
+#load bonusweapon /data/items/ichtyid/bonusrangedweapon.txt
+
+#endpose
+
+
+-------- Savage elite
+
+#newpose
+#name "piranhid elites"
+#role "sacred infantry"
+#role "elite infantry"
+
+#theme primitive
+#theme blood
+
+#subrace piranhid
+
+#command "#weapon strongbite_50"
+#command "#berserk +0"
+
+#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/ichtyid/bases_piranhid.txt
+#load shadow /data/items/ichtyid/shadow.txt
+#load hands /data/items/ichtyid/hands_piranhid.txt
+#load armor /data/items/ichtyid/armor.txt
+#load armor /data/items/ichtyid/naked.txt
+#load helmet /data/items/ichtyid/helmet.txt
+#load weapon /data/items/ichtyid/weapon.txt
+#load offhand /data/items/ichtyid/offhand.txt
+#load offhand /data/items/ichtyid/shield.txt
+#load bonusweapon /data/items/ichtyid/bonusrangedweapon.txt
+
+#endpose
+
+-------- scout
+
+#newpose
+#name "piranhid scout"
+#role "scout"
+
+#subrace piranhid
+
+#command "#weapon strongbite"
+
+#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/ichtyid/bases_piranhid.txt
+#load shadow /data/items/ichtyid/shadow.txt
+#load hands /data/items/ichtyid/hands_piranhid.txt
+#load armor /data/items/ichtyid/scoutarmor.txt
+#load armor /data/items/ichtyid/naked.txt
+#load helmet /data/items/ichtyid/scouthelmet.txt
+#load weapon /data/items/ichtyid/scoutweapon.txt
+#load offhand /data/items/ichtyid/scoutoffhand.txt
+#load bonusweapon /data/items/ichtyid/bonusrangedweapon.txt
+
+#endpose

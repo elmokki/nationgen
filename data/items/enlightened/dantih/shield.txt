@@ -1,9 +1,30 @@
 -- Bucklers
 #newitem
+#id buckler_wood
+#gameid 1
+#sprite /graphics/enlightened/dantih/offhand/buckler_wood.png
+#eliteversion buckler_painted
+#armor
+#theme "wood"
+#theme "primitive"
+#enditem
+
+#newitem
+#id buckler_painted
+#gameid 1
+#sprite /graphics/enlightened/dantih/offhand/buckler_wood.png
+#recolormask self
+#eliteversion buckler_gilt
+#armor
+#theme "wood"
+#theme "primitive"
+#enditem
+
+#newitem
 #id buckler_bronze
 #gameid 1
-#sprite /graphics/enlightened/naga/offhand/buckler_bronze.png
-#eliteversion buckler_elite
+#sprite /graphics/enlightened/dantih/offhand/buckler_bronze.png
+#eliteversion buckler_gilt
 #armor
 #theme "bronze"
 #enditem
@@ -11,16 +32,16 @@
 #newitem
 #id buckler_iron
 #gameid 1
-#sprite /graphics/enlightened/naga/offhand/buckler_iron.png
-#eliteversion buckler_elite
+#sprite /graphics/enlightened/dantih/offhand/buckler_iron.png
+#eliteversion buckler_gilt
 #armor
 #theme "iron"
 #enditem
 
 #newitem
-#id buckler_elite
+#id buckler_gilt
 #gameid 1
-#sprite /graphics/enlightened/naga/offhand/buckler_gilt.png
+#sprite /graphics/enlightened/dantih/offhand/buckler_gilt.png
 #armor
 #theme "elite"
 #enditem
@@ -28,18 +49,49 @@
 
 -- Standard shields
 #newitem
+#id shield_wood
+#gameid 1
+#sprite /graphics/enlightened/dantih/offhand/shield_wood.png
+#eliteversion buckler_painted
+#armor
+#theme "wood"
+#theme "primitive"
+#enditem
+
+#newitem
+#id shield_painted
+#gameid 1
+#sprite /graphics/enlightened/dantih/offhand/shield_wood.png
+#recolormask self
+#eliteversion shield_gilt
+#armor
+#theme "wood"
+#theme "primitive"
+#enditem
+
+#newitem
+#id shield_gilt
+#gameid 1
+#sprite /graphics/enlightened/dantih/offhand/shield_gilt.png
+#armor
+#theme "wood"
+#theme "primitive"
+#theme "elite"
+#enditem
+
+#newitem
 #id shield_bronze
 #gameid 209
-#sprite /graphics/enlightened/naga/offhand/shield_bronze.png
-#eliteversion shield_bronze_elite
+#sprite /graphics/enlightened/dantih/offhand/shield_bronze.png
+#eliteversion shield_bronze_gilt
 #armor
 #theme "bronze"
 #enditem
 
 #newitem
-#id shield_bronze_elite
+#id shield_bronze_gilt
 #gameid 209
-#sprite /graphics/enlightened/naga/offhand/shield_gilt.png
+#sprite /graphics/enlightened/dantih/offhand/shield_gilt.png
 #armor
 #theme "elite"
 #theme "bronze"
@@ -48,17 +100,46 @@
 #newitem
 #id shield_iron
 #gameid 208
-#sprite /graphics/enlightened/naga/offhand/shield_iron.png
-#eliteversion shield_iron_elite
+#sprite /graphics/enlightened/dantih/offhand/shield_iron.png
+#eliteversion shield_iron_gilt
 #armor
 #theme "iron"
 #enditem
 
 #newitem
-#id shield_iron_elite
+#id shield_iron_gilt
 #gameid 208
-#sprite /graphics/enlightened/naga/offhand/shield_gilt.png
+#sprite /graphics/enlightened/dantih/offhand/shield_gilt.png
 #armor
 #theme "elite"
+#theme "iron"
+#enditem
+
+#newitem
+#id shield_bronze
+#gameid 209
+#sprite /graphics/enlightened/dantih/offhand/shield_bronze.png
+#eliteversion shield_bronze_gilt
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id targe_bronze
+#gameid 209
+#sprite /graphics/enlightened/dantih/offhand/targe_bronze.png
+#recolormask /graphics/enlightened/dantih/offhand/targe_recolormask.png
+#eliteversion shield_bronze_gilt
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id targe_iron
+#gameid 208
+#sprite /graphics/enlightened/dantih/offhand/targe_iron.png
+#recolormask /graphics/enlightened/dantih/offhand/targe_recolormask.png
+#eliteversion shield_iron_gilt
+#armor
 #theme "iron"
 #enditem

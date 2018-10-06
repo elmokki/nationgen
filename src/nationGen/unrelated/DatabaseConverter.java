@@ -286,11 +286,28 @@ public class DatabaseConverter {
 			
 			long effbm = Long.parseLong(attr.GetValue(attr_id, "modifiers_mask"));
 			
-			if(Generic.containsLongBitmask(effbm, 1))
-				db.setValue(key, "0", "nostr");
-			else
-				db.setValue(key, "1", "nostr");
 			
+			if(Generic.containsLongBitmask(effbm, 1))
+			{	
+				db.setValue(key, "0", "nostr");
+				db.setValue(key, "0", "bowstr");
+
+			}
+			else
+			{
+		
+				if(!Generic.containsLongBitmask(effbm, 134217728) && Integer.parseInt(attr.GetValue(attr_id, "range_base", "0")) > 0)
+				{
+					db.setValue(key, "0", "nostr");
+					db.setValue(key, "1", "bowstr");
+				}
+				else
+				{
+					db.setValue(key, "1", "nostr");
+					db.setValue(key, "0", "bowstr");
+
+				}
+			}
 			if(Generic.containsLongBitmask(effbm, 2))
 				db.setValue(key, "1", "2h");
 			else

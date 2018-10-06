@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.entities.Pose;
 import nationGen.magic.MageGenerator;
 import nationGen.nation.Nation;
@@ -13,9 +14,9 @@ public class MageMontagTemplate extends MontagTemplate {
 	
 	private int tier;
 	private MageGenerator mGen = null;
-	public MageMontagTemplate(Nation n, NationGen ngen, int tier)
+	public MageMontagTemplate(Nation n, NationGen ngen, NationGenAssets assets, int tier)
 	{
-		mGen = new MageGenerator(ngen, n);
+		mGen = new MageGenerator(ngen, n, assets);
 		this.tier = tier;
 	}
 	

@@ -16,6 +16,7 @@
 #racedefinition "#pose advancedranged"
 #racedefinition "#pose advancedcavalry"
 #racedefinition "#pose advancedmage"
+#racedefinition "#pose generic_scouts"
 #racedefinition "#longsyllables /data/names/nations/romance/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/romance/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/romance/suffixes.txt"
@@ -26,6 +27,7 @@
 #racedefinition "#magicpriority earth 4"
 #racedefinition "#magicpriority nature 0.075"
 #racedefinition "#unitcommand '#nametype 114'"
+#racedefinition "#human"
 #endtheme
 
 -- Weights: EA 1, MA 1, LA 1
@@ -43,8 +45,9 @@
 #racedefinition "#magicpriority death 4"
 #racedefinition "#magicpriority nature 0.075"
 #racedefinition "#unitcommand '#nametype 105'"
-#racedefinition "#name Ghoul"
 #racedefinition "#visiblename Ghoul"
+#racedefinition "#theme undead"
+#racedefinition "#theme ghoul"
 #endtheme
 
 -- Weights: EA 0.5, MA 0.5, LA 0.5

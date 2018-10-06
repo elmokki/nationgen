@@ -73,6 +73,8 @@
 #racedefinition "#unitcommand '#nametype 113'"
 #racedefinition "#nationcommand '#gods lizardgods"
 #racedefinition "#austral"
+#racedefinition "#forts default_forts"
+#racedefinition "#forts city_forts"
 #endtheme
 
 #newtheme
@@ -91,6 +93,8 @@
 #racedefinition "#shortsyllables /data/names/nations/amazon/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 136'"
 #racedefinition "#nationcommand '#gods lizardgods"
+#racedefinition "#forts default_forts"
+#racedefinition "#forts city_forts"
 #racedefinition "#central"
 #endtheme
 
@@ -111,6 +115,8 @@
 #racedefinition "#unitcommand '#nametype 123'"
 #racedefinition "#nationcommand '#gods westerngods"
 #racedefinition "#occidental"
+#racedefinition "#forts default_forts"
+#racedefinition "#forts city_forts"
 #endtheme
 
 #newtheme
@@ -129,6 +135,8 @@
 #racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 121'"
 #racedefinition "#nationcommand '#gods easterngods"
+#racedefinition "#forts default_forts"
+#racedefinition "#forts city_forts"
 #racedefinition "#oriental"
 #endtheme
 
@@ -154,10 +162,12 @@
 #themeinc theme naked *1
 #themeinc theme primitive *1
 #racedefinition "#nationcommand '#idealcold -1'"
+#racedefinition "#nationcommand '#riverstart'"
 #racedefinition "#magicpriority water 2"
 #racedefinition "#magicpriority nature 4"
 #racedefinition "#magicpriority death 4"
 #racedefinition "#amphibian"
+#racedefinition "#secondaryracecommand_conditional '#poisonres 5'"
 #endtheme
 
 #newtheme
@@ -182,6 +192,7 @@
 #racedefinition "#magicpriority nature 4"
 #racedefinition "#nationcommand #coastnation"
 #racedefinition "#nationcommand '#uwbuild 1'"
+#racedefinition "#nationcommand '#riverstart'"
 #racedefinition "#amphibian"
 #endtheme
 
@@ -204,6 +215,7 @@
 #themeinc theme naked *2
 #themeinc theme primitive *1
 #racedefinition "#nationcommand '#idealcold -2'"
+#racedefinition "#nationcommand '#riverstart'"
 #racedefinition "#magicpriority water 2"
 #racedefinition "#magicpriority nature 8"
 #endtheme
@@ -227,6 +239,7 @@
 #themeinc theme naked *0.5
 #themeinc theme primitive *0.5
 #racedefinition "#nationcommand '#idealcold 1'"
+#racedefinition "#nationcommand '#riverstart'"
 #racedefinition "#magicpriority earth 4"
 #racedefinition "#magicpriority water 2"
 #racedefinition "#magicpriority air 2"
@@ -249,6 +262,7 @@
 #themeinc theme naked *2
 #themeinc theme primitive *1
 #racedefinition "#nationcommand '#idealcold -1'"
+#racedefinition "#nationcommand '#riverstart'"
 #racedefinition "#magicpriority earth 4"
 #racedefinition "#magicpriority air 0.5"
 #racedefinition "#magicpriority nature 0.5"
@@ -274,6 +288,7 @@
 #themeinc theme naked *4
 #themeinc theme primitive *1
 #racedefinition "#nationcommand '#idealcold -1'"
+#racedefinition "#nationcommand '#riverstart'"
 #racedefinition "#magicpriority earth 4"
 #racedefinition "#magicpriority water 4"
 #racedefinition "#magicpriority fire 2"
@@ -330,6 +345,9 @@
 #racedefinition "#magicpriority fire 0.1"
 #racedefinition "#magicpriority earth 2"
 #racedefinition "#magicpriority death 2"
+#racedefinition "#forts ice_forts"
+#racedefinition "#forts ice_forts"
+#racedefinition "#forts default_forts"
 #endtheme
 
 

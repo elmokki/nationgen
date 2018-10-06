@@ -5,6 +5,7 @@ import java.io.IOException;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.entities.Race;
 import nationGen.naming.NameGenerator;
 
@@ -12,9 +13,10 @@ public class NameGen {
 	public static void main(String[] args) throws IOException
 	{
 		NationGen ng = new NationGen();
+		NationGenAssets assets = new NationGenAssets(ng);
 		NameGenerator nameg = new NameGenerator(ng);
 		
-		for(Race r : ng.races)
+		for(Race r : assets.races)
 		{
 			if(!Generic.containsTag(r.tags, "secondary"))
 			{

@@ -7,6 +7,7 @@ import java.util.Random;
 
 import com.elmokki.Generic;
 
+import nationGen.NationGenAssets;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.nation.Nation;
@@ -16,7 +17,8 @@ import nationGen.units.Unit;
 public class TroopNamer {
 
 	private Nation n;
-
+	private NationGenAssets assets;
+	
 	List<String> given = new ArrayList<String>();
 	private Random r;
 	
@@ -33,10 +35,9 @@ public class TroopNamer {
 	
 	private ChanceIncHandler chandler;
 	
-	public TroopNamer()
+	public TroopNamer(NationGenAssets assets)
 	{
-
-
+	    this.assets = assets;
 	}
 	
 	public void execute(Nation n) {
@@ -44,16 +45,16 @@ public class TroopNamer {
 		r = new Random(n.random.nextInt());
 		chandler = new ChanceIncHandler(n);
 		
-		basenames = ChanceIncHandler.retrieveFilters("troopbasenames", "troopbasenames", n.nationGen.miscnames, null, n.races.get(0));
-		weaponnames = ChanceIncHandler.retrieveFilters("troopweaponnames", "troopweaponnames", n.nationGen.miscnames, null, n.races.get(0));
-		weaponprefixes = ChanceIncHandler.retrieveFilters("troopweaponprefixes", "troopweaponprefixes", n.nationGen.miscnames, null, n.races.get(0));
-		mountprefixes = ChanceIncHandler.retrieveFilters("troopmountprefixes", "troopmountprefixes", n.nationGen.miscnames, null, n.races.get(0));
-		specialprefixes = ChanceIncHandler.retrieveFilters("troopspecialprefixes", "troopspecialprefixes", n.nationGen.miscnames, null, n.races.get(0));
-		specialnames = ChanceIncHandler.retrieveFilters("troopspecialnames", "troopspecialnames", n.nationGen.miscnames, null, n.races.get(0));
-		miscitemnames = ChanceIncHandler.retrieveFilters("troopmiscitemnames", "troopmiscitemnames", n.nationGen.miscnames, null, n.races.get(0));
-		miscitemprefixes = ChanceIncHandler.retrieveFilters("troopmiscitemprefixes", "troopmiscitemprefixes", n.nationGen.miscnames, null, n.races.get(0));
-		miscguaranteed = ChanceIncHandler.retrieveFilters("troopmiscguaranteedparts", "troopmiscguaranteedparts", n.nationGen.miscnames, null, n.races.get(0));
-		combases = ChanceIncHandler.retrieveFilters("commanderbasenames", "commanderbasenames", n.nationGen.miscnames, null, n.races.get(0));
+		basenames = ChanceIncHandler.retrieveFilters("troopbasenames", "troopbasenames", assets.miscnames, null, n.races.get(0));
+		weaponnames = ChanceIncHandler.retrieveFilters("troopweaponnames", "troopweaponnames", assets.miscnames, null, n.races.get(0));
+		weaponprefixes = ChanceIncHandler.retrieveFilters("troopweaponprefixes", "troopweaponprefixes", assets.miscnames, null, n.races.get(0));
+		mountprefixes = ChanceIncHandler.retrieveFilters("troopmountprefixes", "troopmountprefixes", assets.miscnames, null, n.races.get(0));
+		specialprefixes = ChanceIncHandler.retrieveFilters("troopspecialprefixes", "troopspecialprefixes", assets.miscnames, null, n.races.get(0));
+		specialnames = ChanceIncHandler.retrieveFilters("troopspecialnames", "troopspecialnames", assets.miscnames, null, n.races.get(0));
+		miscitemnames = ChanceIncHandler.retrieveFilters("troopmiscitemnames", "troopmiscitemnames", assets.miscnames, null, n.races.get(0));
+		miscitemprefixes = ChanceIncHandler.retrieveFilters("troopmiscitemprefixes", "troopmiscitemprefixes", assets.miscnames, null, n.races.get(0));
+		miscguaranteed = ChanceIncHandler.retrieveFilters("troopmiscguaranteedparts", "troopmiscguaranteedparts", assets.miscnames, null, n.races.get(0));
+		combases = ChanceIncHandler.retrieveFilters("commanderbasenames", "commanderbasenames", assets.miscnames, null, n.races.get(0));
 
 		
 		nameNation();

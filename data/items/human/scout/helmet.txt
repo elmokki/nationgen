@@ -1,0 +1,160 @@
+#newitem
+#name "nothing_high"
+#basechance 4
+#gameid -1
+#armor
+#theme "naked"
+#theme "austral"
+#theme "abysian"
+#theme "lizard"
+#theme "merrow"
+#theme "oriental"
+#enditem
+
+#newitem
+#name "nothing_low"
+#gameid -1
+#armor
+#theme "naked"
+#theme "boreal"
+#theme "imperial"
+#enditem
+
+#newitem
+#id leatherhood
+#gameid 121
+#basechance 4
+#armor
+#theme "leather"
+#theme "austral"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#enditem
+
+#newitem
+#id leathercap
+#gameid 120
+#basechance 2
+#armor
+#theme "leather"
+#theme "austral"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#theme "oriental"
+#enditem
+
+#newitem
+#name "reinforcedcap"
+#gameid 119
+#armor
+#theme "leather"
+#theme "austral"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#theme "oriental"
+#enditem
+
+#newitem
+#id bronzecap
+#gameid 135
+#chanceinc thisitemslottheme not armor bronze *0
+#armor
+#theme "bronze"
+#theme "boreal"
+#theme "merrow"
+#theme "amphibious"
+#enditem
+
+#newitem
+#id ironcap
+#gameid 20
+#chanceinc thisitemslottheme not armor iron *0
+#armor
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "abysian"
+#theme "imperial"
+#theme "lizard"
+#theme "oriental"
+#enditem
+
+#newitem
+#name "icecap"
+#gameid 29
+#chanceinc thisitemslottheme not armor ice *0
+#chanceinc nationcommand #idealcold below 1 *0
+#chanceinc "personalcommand below #coldres 5 *0"
+#armor
+#theme "ice"
+#theme "boreal"
+#theme "imperial"
+#theme "merrow"
+#theme "amphibious"
+#enditem
+
+#newitem
+#name "shellcap"
+#gameid 224
+#chanceinc thisitemslottheme not armor shell *0
+#armor
+#theme "shell"
+#theme "merrow"
+#theme "amphibious"
+#enditem
+
+#newitem
+#name "coralcap"
+#gameid 24
+#chanceinc thisitemslottheme not armor coral *0
+#armor
+#theme "coral"
+#theme "merrow"
+#theme "amphibious"
+#enditem
+
+#newitem
+#name "sharkskincap"
+#gameid 152
+#armor
+#theme "leather"
+#theme "merrow"
+#theme "amphibious"
+#enditem
+
+#newitem
+#id skullface
+#gameid 125
+#basechance 0.005
+#chanceinc magic death *4
+#chanceinc thisitemslottheme weapon death *4
+#chanceinc thisitemslottheme armor death *4
+#sprite /graphics/scouts/extras/mask_skull.png
+#armor
+#theme "assassin"
+#theme "death"
+#theme "primitive"
+#theme "austral"
+#theme "boreal"
+#theme "imperial"
+#theme "merrow"
+#enditem
+
+#newitem
+#id shadows
+#gameid 145
+#basechance 0.05
+#sprite /graphics/scouts/extras/mask_shadow.png
+#armor
+#theme "assassin"
+#theme "austral"
+#theme "boreal"
+#theme "imperial"
+#theme "merrow"
+#enditem

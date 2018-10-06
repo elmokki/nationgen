@@ -6,6 +6,7 @@ import java.util.List;
 import com.elmokki.Drawing;
 
 import nationGen.NationGen;
+import nationGen.NationGenAssets;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.MagicFilter;
@@ -25,11 +26,14 @@ public class HeroGenerator {
 	MageGenerator mageGen;
 	Nation n;
 	NationGen ng;
-	public HeroGenerator(NationGen g, Nation n) {
-		this.mageGen = new MageGenerator(g, n);
-		this.sacGen = new SacredGenerator(g, n);
+	private NationGenAssets assets;
+	
+	public HeroGenerator(NationGen g, Nation n, NationGenAssets assets) {
+		this.mageGen = new MageGenerator(g, n, assets);
+		this.sacGen = new SacredGenerator(g, n, assets);
 		this.n = n;
 		this.ng = g;
+		this.assets = assets;
 	}
 	
 
@@ -80,7 +84,7 @@ public class HeroGenerator {
 	
 	private Unit generateHero(boolean multihero)
 	{
-		SacredGenerator sacGen = new SacredGenerator(ng, n);
+		SacredGenerator sacGen = new SacredGenerator(ng, n, assets);
 		ChanceIncHandler chandler = new ChanceIncHandler(n, "herogen");
 		sacGen.setIdentifier("herogen");
 
@@ -116,7 +120,7 @@ public class HeroGenerator {
 			if(n.random.nextBoolean())
 				tier = 2;
 			
-			MageGenerator mg = new MageGenerator(ng, n);
+			MageGenerator mg = new MageGenerator(ng, n, assets);
 			mg.setIdentifier("herogen");
 			
 			MagicPattern pat = Entity.getRandom(n.random, chandler.handleChanceIncs(hero, MageGenerator.getPatternsOfLevel(mg.possiblePatterns, tier)));
@@ -145,7 +149,7 @@ public class HeroGenerator {
 		
 
 		ChanceIncHandler chandler = new ChanceIncHandler(n, "herogen");
-		MageGenerator mg = new MageGenerator(ng, n);
+		MageGenerator mg = new MageGenerator(ng, n, assets);
 		mg.chandler = chandler;
 
 		int tier = 3;
@@ -331,10 +335,10 @@ public class HeroGenerator {
 		Race r = null;
 		while(r == null)
 		{
-			if(n.random.nextDouble() < 0.05 && ng.races.size() > 2)
+			if(n.random.nextDouble() < 0.05 && assets.races.size() > 2)
 			{
 				List<Race> races = new ArrayList<Race>();
-				races.addAll(ng.races);
+				races.addAll(assets.races);
 				races.removeAll(n.races);
 				r = Entity.getRandom(n.random, chandler.handleChanceIncs(races));
 				

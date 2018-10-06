@@ -128,6 +128,9 @@
 #racedefinition "#nationcommand '#idealcold 2'"
 #racedefinition "#nationcommand '#magicpriority air 4'"
 #racedefinition "#nationcommand '#magicpriority water 4'"
+#racedefinition "#forts default_forts"
+#racedefinition "#forts ice_forts"
+#racedefinition "#forts ice_forts"
 #endtheme
 
 
@@ -163,6 +166,9 @@
 #racedefinition "#shortsyllables /data/names/nations/monkey/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/monkey/suffixes.txt"
 #racedefinition "#tag 'enlightened'"
+#racedefinition "#extrapdmulti 9"
+#racedefinition "#forts default_forts"
+#racedefinition "#forts city_forts"
 #endtheme
 
 --"Oriental" primates - full range of subtypes
@@ -196,7 +202,10 @@
 #racedefinition "#suffixes /data/names/nations/oriental/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 134'"
 #racedefinition "#nationcommand '#gods easterngods"
+#racedefinition "#forts default_forts"
+#racedefinition "#forts city_forts"
 #racedefinition "#tag 'oriental'"
+#racedefinition "#extrapdmulti 6"
 #endtheme
 
 --"Occidental" primates - no bandar
@@ -226,9 +235,12 @@
 #racedefinition "#suffixes /data/names/nations/nahuatl/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 123'"
 #racedefinition "#nationcommand '#gods westerngods"
+#racedefinition "#forts default_forts"
+#racedefinition "#forts city_forts"
 #racedefinition "#nationcommand '#likespop 82'"
 #racedefinition "#tag 'occidental'"
 #raceprefix vanara
+#racedefinition "#extrapdmulti 8"
 #endtheme
 
 -- "Austral" primates - no vanara
@@ -257,9 +269,12 @@
 #racedefinition "#suffixes /data/names/nations/machakan/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 126'"
 #racedefinition "#nationcommand '#gods southerngods"
+#racedefinition "#forts default_forts"
+#racedefinition "#forts giant_forts"
 #racedefinition "#nationcommand '#likespop 80'"
 #racedefinition "#tag 'austral'"
 #raceprefix bandar
+#racedefinition "#extrapdmulti 3"
 #endtheme
 
 -- "Imperial vanara" - subordinate bandar, no markata 
@@ -295,6 +310,7 @@
 #racedefinition "#sacredinfantrychance 2.5"
 #racedefinition "#tag 'imperial'"
 #raceprefix vanara
+#racedefinition "#extrapdmulti 8"
 #endtheme
 
 -- "Imperial bandar" - subordinate vanara, no markata 
@@ -328,4 +344,5 @@
 #racedefinition "#sacredinfantrychance 5"
 #racedefinition "#tag 'imperial'"
 #raceprefix bandar
+#racedefinition "#extrapdmulti 5"
 #endtheme

@@ -1,61 +1,48 @@
 #newitem
+#id club
+#gameid 252
+#sprite /graphics/enlightened/dantih/weapon/club.png
+#eliteversion club_spiked
+#eliteversion mace
+#theme "primitive"
+#theme "wood"
+#enditem
+
+#newitem
+#id club_spiked
+#gameid 265
+#sprite /graphics/enlightened/dantih/weapon/club_spiked.png
+#eliteversion mace
+#theme "primitive"
+#theme "wood"
+#enditem
+
+#newitem
 #id mace
 #gameid 12
-#sprite /graphics/enlightened/naga/weapon/mace.png
-#eliteversion mace_gold
+#sprite /graphics/enlightened/dantih/weapon/mace.png
+#eliteversion mace_gilt
 #enditem
 
 #newitem
-#id mace_gold
+#id mace_gilt
 #gameid 12
-#sprite /graphics/enlightened/naga/weapon/mace_gold.png
+#sprite /graphics/enlightened/dantih/weapon/mace_gilt.png
 #theme elite
-#enditem
-
-#newitem
-#id axe_iron
-#gameid 17
-#sprite /graphics/enlightened/naga/weapon/axe.png
-#eliteversion axe_iron_elite
-#theme iron
-#enditem
-
-#newitem
-#id axe_iron_elite
-#gameid 17
-#sprite /graphics/enlightened/naga/weapon/axe_gold.png
-#theme elite
-#theme iron
-#enditem
-
-#newitem
-#id axe_bronze
-#gameid 675
-#sprite /graphics/enlightened/naga/weapon/axe_bronze.png
-#eliteversion axe_bronze_elite
-#theme bronze
-#enditem
-
-#newitem
-#id axe_bronze_elite
-#gameid 675
-#sprite /graphics/enlightened/naga/weapon/axe_gold.png
-#theme elite
-#theme bronze
 #enditem
 
 #newitem
 #id falchion
 #gameid 10
-#sprite /graphics/enlightened/naga/weapon/falchion.png
-#eliteversion falchion_gold
+#sprite /graphics/enlightened/dantih/weapon/falchion.png
+#eliteversion falchion_gilt
 #theme iron
 #enditem
 
 #newitem
-#id falchion_gold
+#id falchion_gilt
 #gameid 10
-#sprite /graphics/enlightened/naga/weapon/falchion_gold.png
+#sprite /graphics/enlightened/dantih/weapon/falchion_gilt.png
 #theme elite
 #theme iron
 #enditem
@@ -63,15 +50,47 @@
 #newitem
 #id kopesh
 #gameid 513
-#sprite /graphics/enlightened/naga/weapon/kopesh.png
-#eliteversion kopesh_gold
+#sprite /graphics/enlightened/dantih/weapon/falchion_bronze.png
+#eliteversion khopesh_gilt
 #theme bronze
 #enditem
 
 #newitem
-#id kopesh_gold
+#id kopesh_gilt
 #gameid 513
-#sprite /graphics/enlightened/naga/weapon/falchion_gold.png
+#sprite /graphics/enlightened/dantih/weapon/falchion_gilt.png
+#theme elite
+#theme bronze
+#enditem
+
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/enlightened/dantih/weapon/axe.png
+#eliteversion axe_gilt
+#theme iron
+#enditem
+
+#newitem
+#id axe_gilt
+#gameid 17
+#sprite /graphics/enlightened/dantih/weapon/axe_gilt.png
+#theme elite
+#theme iron
+#enditem
+
+#newitem
+#id axe_bronze
+#gameid 675
+#sprite /graphics/enlightened/dantih/weapon/axe_bronze.png
+#eliteversion axe_bronze_gilt
+#theme bronze
+#enditem
+
+#newitem
+#id axe_bronze_gilt
+#gameid 675
+#sprite /graphics/enlightened/dantih/weapon/axe_gilt.png
 #theme elite
 #theme bronze
 #enditem
@@ -79,16 +98,16 @@
 #newitem
 #id spear_iron
 #gameid 1
-#sprite /graphics/enlightened/naga/weapon/spear.png
-#eliteversion spear_iron_elite
+#sprite /graphics/enlightened/dantih/weapon/spear.png
+#eliteversion spear_iron_gilt
 #theme iron
 #theme formationfighter
 #enditem
 
 #newitem
-#id spear_iron_elite
+#id spear_iron_gilt
 #gameid 1
-#sprite /graphics/enlightened/naga/weapon/spear_gold.png
+#sprite /graphics/enlightened/dantih/weapon/spear_gilt.png
 #theme elite
 #theme iron
 #theme formationfighter
@@ -97,16 +116,16 @@
 #newitem
 #id spear_bronze
 #gameid 643
-#sprite /graphics/enlightened/naga/weapon/spear_bronze.png
-#eliteversion spear_bronze_elite
+#sprite /graphics/enlightened/dantih/weapon/spear_bronze.png
+#eliteversion spear_bronze_gilt
 #theme bronze
 #theme formationfighter
 #enditem
 
 #newitem
-#id spear_bronze_elite
+#id spear_bronze_gilt
 #gameid 643
-#sprite /graphics/enlightened/naga/weapon/spear_gold.png
+#sprite /graphics/enlightened/dantih/weapon/spear_gilt.png
 #theme elite
 #theme bronze
 #theme formationfighter
@@ -115,16 +134,16 @@
 #newitem
 #id longspear_iron
 #gameid 28
-#sprite /graphics/enlightened/naga/weapon/longspear.png
-#eliteversion longspear_iron_elite
+#sprite /graphics/enlightened/dantih/weapon/longspear.png
+#eliteversion longspear_iron_gilt
 #theme iron
 #theme formationfighter
 #enditem
 
 #newitem
-#id longspear_iron_elite
+#id longspear_iron_gilt
 #gameid 28
-#sprite /graphics/enlightened/naga/weapon/longspear_gold.png
+#sprite /graphics/enlightened/dantih/weapon/longspear_gilt.png
 #theme elite
 #theme iron
 #theme formationfighter
@@ -133,49 +152,17 @@
 #newitem
 #id longspear_bronze
 #gameid 644
-#sprite /graphics/enlightened/naga/weapon/longspear_bronze.png
-#eliteversion longspear_bronze_elite
+#sprite /graphics/enlightened/dantih/weapon/longspear_bronze.png
+#eliteversion longspear_bronze_gilt
 #theme bronze
 #theme formationfighter
 #enditem
 
 #newitem
-#id longspear_bronze_elite
+#id longspear_bronze_gilt
 #gameid 644
-#sprite /graphics/enlightened/naga/weapon/longspear_gold.png
+#sprite /graphics/enlightened/dantih/weapon/longspear_gilt.png
 #theme elite
 #theme bronze
 #theme formationfighter
-#enditem
-
-#newitem
-#id trident_iron
-#gameid 3
-#sprite /graphics/enlightened/naga/weapon/trident.png
-#eliteversion trident_iron_elite
-#theme iron
-#enditem
-
-#newitem
-#id trident_iron_elite
-#gameid 3
-#sprite /graphics/enlightened/naga/weapon/trident_gold.png
-#theme elite
-#theme iron
-#enditem
-
-#newitem
-#id trident_bronze
-#gameid 641
-#sprite /graphics/enlightened/naga/weapon/trident_bronze.png
-#eliteversion trident_bronze_elite
-#theme bronze
-#enditem
-
-#newitem
-#id trident_bronze_elite
-#gameid 641
-#sprite /graphics/enlightened/naga/weapon/trident_gold.png
-#theme elite
-#theme bronze
 #enditem

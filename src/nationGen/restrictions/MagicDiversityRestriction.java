@@ -1,33 +1,20 @@
 package nationGen.restrictions;
 
-
-
 import java.awt.event.ActionEvent;
 import java.util.List;
 import java.util.ArrayList;
 
-
-
-
-
-
-import nationGen.NationGen;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
 public class MagicDiversityRestriction extends DoubleTextBoxListRestriction<RestrictionMagicEntry> {
 	
-	
-
-	
 	public List<RestrictionMagicEntry> possibleRaceNames = new ArrayList<RestrictionMagicEntry>();
 	
-	private NationGen ng;
-	public MagicDiversityRestriction(NationGen ng)
+	public MagicDiversityRestriction()
 	{
-		super(ng, "<html>Nation needs to have x magic paths at at least level y.</html>", "Magic: Diversity");
-		this.ng = ng;
-		
+		super("<html>Nation needs to have x magic paths at at least level y.</html>", "Magic: Diversity");
+
 		this.comboboxlabel = "25% probability randoms allowed";
 		String[] ops = {"True", "False"};
 		this.comboboxoptions = ops;
@@ -39,11 +26,9 @@ public class MagicDiversityRestriction extends DoubleTextBoxListRestriction<Rest
 		
 	}
 	
-
-
 	@Override
 	public NationRestriction getRestriction() {
-		MagicDiversityRestriction res = new MagicDiversityRestriction(ng);
+		MagicDiversityRestriction res = new MagicDiversityRestriction();
 		for(int i =0; i < chosen.getModel().getSize(); i++)
 			res.possibleRaceNames.add(chosen.getModel().getElementAt(i));
 		
@@ -107,9 +92,6 @@ public class MagicDiversityRestriction extends DoubleTextBoxListRestriction<Rest
 		return false;
 	}
 	
-
-	
-	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		
@@ -132,9 +114,9 @@ public class MagicDiversityRestriction extends DoubleTextBoxListRestriction<Rest
 		}
 	}
 	
-	@Override
-	public NationRestriction getInstanceOf() {
-		return new MagicDiversityRestriction(ng);
-	}
-	
+    @Override
+    public RestrictionType getType()
+    {
+        return RestrictionType.MagicDiversity;
+    }
 }

@@ -60,7 +60,7 @@
 
 #newitem
 #name "shellcap"
-#gameid 134
+#gameid 224
 #sprite /graphics/ichtyid/helmet/shell_helmet.png
 #tag "eliteversion sharkskincap_fin"
 #tag "eliteversion sharkskincap_spiny"
@@ -72,7 +72,7 @@
 
 #newitem
 #name "shellcap_fin"
-#gameid 134
+#gameid 224
 #sprite /graphics/ichtyid/helmet/shell_helmet_crested.png
 #recolormask /graphics/ichtyid/helmet/fin_crest_recolormask.png
 #armor
@@ -83,7 +83,7 @@
 
 #newitem
 #name "shellcap_spiny"
-#gameid 134
+#gameid 224
 #sprite /graphics/ichtyid/helmet/shell_helmet_spiny.png
 #recolormask /graphics/ichtyid/helmet/spiny_crest_recolormask.png
 #armor
@@ -94,13 +94,26 @@
 
 #newitem
 #name "shellcap_boney"
-#gameid 134
+#gameid 224
 #sprite /graphics/ichtyid/helmet/shell_helmet_boney.png
 #recolormask /graphics/ichtyid/helmet/boney_crest_recolormask.png
 #armor
 #theme "elite"
 #tag "maxprot 13"
 #theme "shell"
+#enditem
+
+#newitem
+#name "shellcap_feathers"
+#gameid 224
+#sprite /graphics/ichtyid/helmet/shell_helmet_feathers.png
+#recolormask /graphics/ichtyid/helmet/feathers_recolormask.png
+#armor
+#theme "elite"
+#tag "maxprot 13"
+#theme "shell"
+#basechance 2
+#chanceinc "racetag NOT occidental *0.01"
 #enditem
 
 #newitem
@@ -190,6 +203,19 @@
 #enditem
 
 #newitem
+#id bronzecap_feathers
+#gameid 135
+#sprite /graphics/ichtyid/helmet/bronze_cap_feathers.png
+#recolormask /graphics/ichtyid/helmet/feathers_recolormask.png
+#armor
+#tag "minprot 9"
+#theme "bronze"
+#theme "elite"
+#basechance 2
+#chanceinc "racetag NOT occidental *0.01"
+#enditem
+
+#newitem
 #id halfhelm
 #gameid bronzehalfhelmet
 #sprite /graphics/ichtyid/helmet/bronze_halfhelm.png
@@ -248,6 +274,7 @@
 #tag "minprot 12"
 #theme "advanced"
 #theme "bronze"
+#theme "enclosed_helm"
 #enditem
 
 #newitem
@@ -260,6 +287,7 @@
 #theme "advanced"
 #theme "bronze"
 #theme "elite"
+#theme "enclosed_helm"
 #enditem
 
 #newitem
@@ -271,6 +299,7 @@
 #theme "advanced"
 #theme "bronze"
 #theme "elite"
+#theme "enclosed_helm"
 #enditem
 
 #newitem
@@ -283,4 +312,5 @@
 #theme "advanced"
 #theme "bronze"
 #theme "elite"
+#theme "enclosed_helm"
 #enditem

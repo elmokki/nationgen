@@ -4,15 +4,17 @@
 #role "mage"
 #role "priest"
 
+#renderorder "shadow basesprite bling armor weapon offhandw hands helmet"
+
 #load basesprite /data/items/enlightened/dantih/bases.txt
 #load shadow /data/items/enlightened/dantih/shadow.txt
-#load hands /data/items/enlightened/dantih/hands.txt
+#load hands /data/items/enlightened/dantih/hands_caster.txt
 
 #load armor /data/items/enlightened/dantih/robes.txt
-#load helmet /data/items/enlightened/dantih/helmet.txt
-#load weapon /data/items/enlightened/dantih/weapon.txt
-#load offhand /data/items/enlightened/dantih/offhands.txt
+#load helmet /data/items/enlightened/dantih/helmet_caster.txt
+#load weapon /data/items/enlightened/dantih/weapon_caster.txt
 
-#mage_nolowtierhat
+#load bling /data/items/enlightened/dantih/bling_caster.txt
+#generateitem 0.5 bling
 
 #endpose

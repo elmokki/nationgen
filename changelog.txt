@@ -1,3 +1,115 @@
+ï»¿0.7.0-RC8 (6th of May 2018)
+----------------------------------------------------------
+
+Code
+----------------------------------------------------------
+- More variety in number of ranks of PD (TODO: more variety in PD/castle commanders)
+-...
+
+Content
+-----------------------------------------------------------
+- More ichtyid subtypes from Strabo: clownfishmen, pikemen, flying-fishmen, sailfishmen, anglerfishmen, perchmen, piranamen, sharkmen, catfishmen, tunamen, and swordfishmen
+- Lictor-style non-legionaire sacreds for imperial nations
+- A whole bunch of possible templetrainer priests, and some straight-up domsummon priests
+- Sidhe, fae-blooded nations, and elegists are spellsingers; boreal humans are occassionally spellsingers; other mages can have it as a filter
+- Some new spellsets for fae nations - seelie, unseelie, and old-fashioned-unseelie
+- Communion Choruses or Communion Dirges possible for nature or death nations with spellsingers
+- Some new commander & priest names
+- Last small bows should be gone
+- Assorted small bugfixes
+
+
+
+0.7.0-RC7 (6th of May 2018)
+----------------------------------------------------------
+
+Code
+----------------------------------------------------------
+- Support for commanders with better leadership
+- Advanced descriptions will now indicate if a nation has non-standard forts
+- Chanceinc bugfixes
+- PD/wall unit generation bugfixes
+
+Content
+-----------------------------------------------------------
+- Mason special commanders
+- More titles for special commanders
+- Increased chance for certain races to have better leadership
+- Added possibility for nations to use giant, city, ice, and village forts
+- Updated Formation Fighter to the Dom5 version of the command
+- Added a "generic spy/assassin" pose that is an option for most humans, Abysians, lizards, and merrow (not that the
+  latter are added yet); this may be expanded as it seems to work fairly well...
+
+
+0.7.0-RC6 (25nd of April 2018)
+----------------------------------------------------------
+
+Code
+----------------------------------------------------------
+- Sacred pricing more flexible; notably, larger sacreds should cost a bit more
+
+Content
+-----------------------------------------------------------
+- Fixed missing secondshape for occidental hoburg cavemen mounts
+- Some small graphic fixes
+- Dantih balancing: -3 supply, maxage 75->120; str 24->20; PD/starting army amounts increased slightly
+- Added plague doctor robes and masks to advanced humans and masks to hoburgs (based on the unused LA Marignon hero)
+
+0.7.0-RC5 (22nd of April 2018)
+----------------------------------------------------------
+
+Code
+----------------------------------------------------------
+- Support for sacred custom weapons that cost more resources
+
+Content
+-----------------------------------------------------------
+- Most sacred custom weapons now take less gold but a noticable amount of resources
+- A few new sacred weapon effects
+- Fixed bad gcosts for 2h lesser lamia poses
+- Fixed bad undead priest reanimation, added a priest reanimation filter
+- Fixed graphics error with some bean sidhe casters
+- NEW RACE: Elephantmen/Tusked Ones/Dantih ("tusked ones") - giant pachydermal humanoids (size 5) of a Desi ("enlightened" in NG terms)
+  flavor. Probably totally unbalanced, and mammothmen/other themes aren't done
+
+0.7.0-RC4 (11th of April 2018)
+----------------------------------------------------------
+
+Code
+----------------------------------------------------------
+- Fixed custom sacred missile flysprites
+- Fixed custom sacred missiles getting #nostr instead of #bowstr
+- Fixed some errors with conditional chanceinc commands
+- Revised PD quantity formulas; there should be more consistent amounts of PD across nations with fewer extremely large numbers of very cheap units
+- ~~Allow for more than two ranks of PD occasionally~~ Currently disabled because of serious error with the relevant mod commands
+
+Content
+-----------------------------------------------------------
+- Fixed NG-specific missiles getting #nostr instead of #bowstr
+- Custom twiceborn shapes
+- Fixed some elite shapeshifters starting in their shifted form
+- Added a small number of mage filters
+- Mekone-style togas for boreal, austral, and lizard mages
+- Kami-of-the-Moon-style kimonos for human and lizard mages
+- Adjusted custom weapon lengths to Dom5 standards
+- Deprecated small bows
+- Added short tridents to various weapon lists; also added spetums to predators
+- Pale ones and lizards significantly less likely to be naked since their high rec points makes this a lot worse than it had been
+- Updated some documentation
+
+0.7.0-RC3 (22nd of March 2018)
+----------------------------------------------------------
+
+Code
+----------------------------------------------------------
+- Fixed very broken chanceinc handling that, among other things, gave some spells to nations that did not deserve them
+- Fixed nation commands in racial themes not being processed (for example, Caelian subculture temperature preferences)
+
+Content
+-----------------------------------------------------------
+- Minimal implementation of imperial nations; these are an incomplete WIP, but functional
+- Custom missiles and armors updated to reflect range/damage changes and #magic tags on armor
+
 0.7.0-RC2 (17th of March 2018)
 ----------------------------------------------------------
 
@@ -322,7 +434,7 @@ Content
 
 Code
 ----------------------------------------------------------
-- Custom spells were read in a manner where quotation marks were left missing on copyspell and name commands, resulting in a något gick fel
+- Custom spells were read in a manner where quotation marks were left missing on copyspell and name commands, resulting in a nÃ¥got gick fel
 
 0.6.14 (9th of July 2016)
 ----------------------------------------------------------
@@ -352,7 +464,7 @@ Code
 
 Content
 ----------------------------------------------------------
-- Wrong spell name for Summon Ujigami was causing något gick fel
+- Wrong spell name for Summon Ujigami was causing nÃ¥got gick fel
 
 
 0.6.13 (4th of July 2016)
@@ -774,10 +886,13 @@ version 0.5.0.03E (12th of November 2014)
 - reduced base stats for Amazon "metics": -1 to Att/Def/Mor/Gold - still better than militia, but no longer just "normal human" soldiers
 version 0.5.0.02E (5th of October 2014)
 - added predator/sobek lizard race
-- added #primaryraceonly to Amazon "metic" units, Machakan pygmies, markata, and predator lizard slaves
+
+- added #primaryraceonly to Amazon "metic" units, Machakan pygmies, markata, and predator lizard slaves
 - fixed typo with #makepearls in ./data/filters/
-- added #primaryraceonly command to exclude poses from generating as auxiliaries (there may still be bugs with commanders, but I think I got them all)
-- re-enabled Amazons (with stopgap mage hair solutions and mounted casters temporarily disabled)
+
+- added #primaryraceonly command to exclude poses from generating as auxiliaries (there may still be bugs with commanders, but I think I got them all)
+
+- re-enabled Amazons (with stopgap mage hair solutions and mounted casters temporarily disabled)
 version 0.5.0.01E (25th of September 2014)
 - fixed bug allowing for #fortera 4 to be assigned to nations
 - added additional naming data

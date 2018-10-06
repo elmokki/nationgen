@@ -6,7 +6,7 @@ import java.util.List;
 
 import com.elmokki.Generic;
 
-
+import nationGen.NationGenAssets;
 import nationGen.entities.Filter;
 import nationGen.nation.Nation;
 
@@ -15,11 +15,11 @@ import nationGen.nation.Nation;
 
 public class GodGen extends ChanceIncHandler {
 	
-	Nation n;
-	List<Filter> orig;
-	List<Filter> add;
+	private Nation n;
+	private List<Filter> orig;
+	private List<Filter> add;
 	
-	public GodGen(Nation n) {
+	public GodGen(Nation n, NationGenAssets assets) {
 		super(n);
 		this.n = n;
 		
@@ -30,15 +30,15 @@ public class GodGen extends ChanceIncHandler {
 			List<String> args = Generic.parseArgs(tag);
 			if(args.get(0).equals("gods"))
 			{
-				orig.addAll(n.nationGen.miscdef.get(args.get(1)));
+				orig.addAll(assets.miscdef.get(args.get(1)));
 			}
 			if(args.get(0).equals("additionalgods"))
 			{
-				add.addAll(n.nationGen.miscdef.get(args.get(1)));
+				add.addAll(assets.miscdef.get(args.get(1)));
 			}
 		}
 		if(orig.size() == 0)
-			orig.addAll(n.nationGen.miscdef.get("defaultgods"));
+			orig.addAll(assets.miscdef.get("defaultgods"));
 
 	}
 	

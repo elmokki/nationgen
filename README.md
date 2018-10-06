@@ -1,2 +1,2 @@
 # nationgen
-Dominions 4 procedural content generation program
+Dominions 5 procedural content generation program.

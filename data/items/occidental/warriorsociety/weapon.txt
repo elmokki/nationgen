@@ -81,12 +81,32 @@
 #enditem
 
 #newitem
+#id short_trident
+#basechance 0.5
+#gameid 680
+#sprite /graphics/muuch/weapons/trident.png
+#theme "bronze"
+#tag "eliteversion short_trident_elite"
+#enditem
+
+#newitem
 #id trident
 #basechance 0.5
 #gameid 641
 #sprite /graphics/muuch/weapons/trident.png
 #theme "bronze"
 #tag "eliteversion trident_elite"
+#enditem
+
+#newitem
+#id short_trident_elite
+#gameid 680
+#sprite /graphics/muuch/weapons/trident-elite.png
+#recolormask /graphics/muuch/weapons/trident-elite_recolormask.png
+#theme "bronze"
+#offsetx -3
+#offsety -1
+#theme "elite"
 #enditem
 
 #newitem
@@ -160,7 +180,7 @@
 
 #newitem
 #id greataxe
-#gameid bronzebattleaxe
+#gameid 698
 #sprite /graphics/muuch/weapons/battleaxe.png
 #tag "name infantry axeman"
 #tag "name commander batab"

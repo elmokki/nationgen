@@ -27,7 +27,17 @@
 #enditem
 
 #newitem
-#id trident
+#id short_bronze_trident
+#gameid 680
+#sprite /graphics/ichtyid/weapon/bronze_trident.png
+#offsetx 0
+#tag "prefix trident"
+#basechance 0.75
+#theme "bronze"
+#enditem
+
+#newitem
+#id bronze_trident
 #gameid 641
 #sprite /graphics/ichtyid/weapon/bronze_trident.png
 #offsetx 0
@@ -115,6 +125,14 @@
 #enditem
 
 #newitem
+#id clubsword
+#gameid 451
+#sprite /graphics/ichtyid/weapon/clubsword.png
+#theme "inland"
+#chanceinc "racetag NOT occidental *0.01"
+#enditem
+
+#newitem
 #id shortsword
 #gameid 645
 #sprite /graphics/ichtyid/weapon/bronze_shortsword.png
@@ -157,7 +175,7 @@
 
 #newitem
 #id greataxe
-#gameid bronzebattleaxe
+#gameid 698
 #sprite /graphics/ichtyid/weapon/bronze_greataxe.png
 #basechance 0.25
 #tag "name infantry axeman"

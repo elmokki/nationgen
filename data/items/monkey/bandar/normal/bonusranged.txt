@@ -17,7 +17,13 @@
 #gameid 260
 #theme "primitive"
 #theme "iron"
-#tag "name infantry 'Axe Thrower'"
+#enditem
+
+#newitem -- Throwing axe
+#name "bronze throwing axe"
+#gameid throwinghatchet
+#theme "primitive"
+#theme "bronze"
 #enditem
 
 
@@ -28,7 +34,19 @@
 #sprite /graphics/weapon/standard/chakram.png
 #renderprio 7
 #renderslot "weapon"
-#tag "name infantry 'Chakram Thrower'"
+#tag "tierunique"
+#offsetx -4
+#offsety 14
+#theme "iron"
+#enditem
+
+#newitem
+#basechance 6
+#name "chakram"
+#gameid bronzechakram
+#sprite /graphics/weapon/standard/chakram_bronze.png
+#renderprio 7
+#renderslot "weapon"
 #tag "tierunique"
 #offsetx -4
 #offsety 14

@@ -11,13 +11,18 @@
 #id spear
 #gameid 1
 #sprite /graphics/weapon/standard/predator_spear.png
-#tag "name infantry spearman"
 #enditem
 
 #newitem
 #id trident
 #gameid 3
+#sprite /graphics/weapon/standard/predator_spetum.png
+#basechance 0.25
+#enditem
+
+#newitem
+#id spetum
+#gameid 639
 #sprite /graphics/weapon/standard/predator_trident.png
-#tag "prefix trident"
 #basechance 0.25
 #enditem

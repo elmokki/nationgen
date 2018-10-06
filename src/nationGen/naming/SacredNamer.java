@@ -7,6 +7,7 @@ import java.util.Random;
 
 import com.elmokki.Generic;
 
+import nationGen.NationGenAssets;
 import nationGen.entities.Filter;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
@@ -23,12 +24,13 @@ public class SacredNamer {
 	List<NamePart> combases = new ArrayList<NamePart>();
 	List<NamePart> eliteparts = new ArrayList<NamePart>();
 	private Random r;
+	private NationGenAssets assets;
 	
 	ChanceIncHandler chandler = null;
 
-	public SacredNamer()
+	public SacredNamer(NationGenAssets assets)
 	{
-
+	    this.assets = assets;
 	}
 	
 
@@ -54,10 +56,10 @@ public class SacredNamer {
 	public void nameSacreds(Nation n)
 	{
 		chandler = new ChanceIncHandler(n);
-		parts = n.nationGen.miscnames.get("defaultparts");
-		bases = n.nationGen.miscnames.get("defaultbases");
-		combases = n.nationGen.miscnames.get("defaultcommandernames");
-		eliteparts = n.nationGen.miscnames.get("defaulteliteparts");
+		parts = assets.miscnames.get("defaultparts");
+		bases = assets.miscnames.get("defaultbases");
+		combases = assets.miscnames.get("defaultcommandernames");
+		eliteparts = assets.miscnames.get("defaulteliteparts");
 
 		this.r = new Random(n.random.nextInt());
 		

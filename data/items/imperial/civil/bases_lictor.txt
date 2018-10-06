@@ -1,0 +1,18 @@
+#newitem
+#name "lictor"
+#gameid -1
+#sprite /graphics/imperial/sacred/basesprite_sacred.png
+#enditem
+
+#newitem
+#name "lictor_primitive"
+#gameid -1
+#basechance 0
+#sprite /graphics/imperial/sacred/basesprite_sacred.png
+#command "#mor -1"
+#command "#str +1"
+#command "#stealthy 0"
+#theme primitive
+#theme naked
+#needs shirt none
+#enditem

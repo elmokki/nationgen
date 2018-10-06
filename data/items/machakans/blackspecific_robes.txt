@@ -29,3 +29,242 @@
 #tag "tier 2"
 #tag "tier 1"
 #enditem
+
+
+-- Togas and half-togas
+#newitem
+#basechance 0.33
+#id halftoga_white
+#gameid -1
+#sprite /graphics/bodyarmor/robes/halftoga_white_machakan.png
+#tag "eliteversion shorttoga_light"
+#tag "eliteversion halftoga_light"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#basechance 0.33
+#id halftoga_black
+#gameid -1
+#sprite /graphics/bodyarmor/robes/halftoga_black_machakan.png
+#tag "eliteversion shorttoga_dark"
+#tag "eliteversion halftoga_dark"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#basechance 0.33
+#id halftoga_grey
+#gameid 158
+#sprite /graphics/bodyarmor/robes/halftoga_grey_machakan.png
+#tag "eliteversion shorttoga_medium"
+#tag "eliteversion halftoga_medium"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#basechance 0.33
+#id halftoga_light
+#gameid 158
+#sprite /graphics/bodyarmor/robes/halftoga_white_machakan.png
+#recolormask /graphics/bodyarmor/robes/halftoga_light_recolormask.png
+#tag "eliteversion shorttoga_light"
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#basechance 0.33
+#id halftoga_dark
+#gameid 158
+#sprite /graphics/bodyarmor/robes/halftoga_black_machakan.png
+#recolormask /graphics/bodyarmor/robes/halftoga_dark_recolormask.png
+#tag "eliteversion shorttoga_dark"
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#basechance 0.33
+#id halftoga_medium
+#gameid 158
+#sprite /graphics/bodyarmor/robes/halftoga_grey_machakan.png
+#recolormask /graphics/bodyarmor/robes/halftoga_middling_recolormask.png
+#tag "eliteversion shorttoga_medium"
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#basechance 0.33
+#id shorttoga_white
+#gameid 158
+#sprite /graphics/bodyarmor/robes/toga2_white_machakan.png
+#tag "eliteversion shorttoga_light"
+#tag "eliteversion shorttoga_trim_light"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#basechance 0.33
+#id shorttoga_black
+#gameid 158
+#sprite /graphics/bodyarmor/robes/toga2_black_machakan.png
+#tag "eliteversion shorttoga_dark"
+#tag "eliteversion shorttoga_trim_dark"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#basechance 0.33
+#id shorttoga_grey
+#gameid 158
+#sprite /graphics/bodyarmor/robes/toga2_grey_machakan.png
+#tag "eliteversion shorttoga_medium"
+#tag "eliteversion shorttoga_trim_medium"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#basechance 0.33
+#id shorttoga_light
+#gameid 158
+#sprite /graphics/bodyarmor/robes/toga2_white_machakan.png
+#recolormask /graphics/bodyarmor/robes/toga2_light_recolormask.png
+#tag "eliteversion shorttoga_trim_white"
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#basechance 0.33
+#id shorttoga_dark
+#gameid 158
+#sprite /graphics/bodyarmor/robes/toga2_black_machakan.png
+#recolormask /graphics/bodyarmor/robes/toga2_dark_recolormask.png
+#tag "eliteversion shorttoga_trim_black"
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#basechance 0.33
+#id shorttoga_medium
+#gameid 158
+#sprite /graphics/bodyarmor/robes/toga2_grey_machakan.png
+#recolormask /graphics/bodyarmor/robes/toga2_middling_recolormask.png
+#tag "eliteversion shorttoga_trim_grey"
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#basechance 0.33
+#id shorttoga_trim_light
+#gameid 158
+#sprite /graphics/bodyarmor/robes/toga2_white_machakan.png
+#recolormask /graphics/bodyarmor/robes/toga2_trim1_recolormask.png
+#tag "eliteversion shorttoga_fancy_light"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#basechance 0.33
+#id shorttoga_trim_dark
+#gameid 158
+#sprite /graphics/bodyarmor/robes/toga2_black_machakan.png
+#recolormask /graphics/bodyarmor/robes/toga2_trim1_recolormask.png
+#tag "eliteversion shorttoga_fancy_dark"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#basechance 0.33
+#id shorttoga_trim_medium
+#gameid 158
+#sprite /graphics/bodyarmor/robes/toga2_grey_machakan.png
+#recolormask /graphics/bodyarmor/robes/toga2_trim1_recolormask.png
+#tag "eliteversion shorttoga_fancy_medium"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#basechance 0.33
+#id shorttoga_trim_white
+#gameid 158
+#sprite /graphics/bodyarmor/robes/toga2_white_machakan.png
+#recolormask /graphics/bodyarmor/robes/toga2_trim2_recolormask.png
+#tag "eliteversion shorttoga_fancy_light"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#basechance 0.33
+#id shorttoga_trim_black
+#gameid 158
+#sprite /graphics/bodyarmor/robes/toga2_black_machakan.png
+#recolormask /graphics/bodyarmor/robes/toga2_trim2_recolormask.png
+#tag "eliteversion shorttoga_fancy_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#basechance 0.33
+#id shorttoga_trim_grey
+#gameid 158
+#sprite /graphics/bodyarmor/robes/toga2_grey_machakan.png
+#recolormask /graphics/bodyarmor/robes/toga2_trim2_recolormask.png
+#tag "eliteversion shorttoga_fancy_medium"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#basechance 0.33
+#id shorttoga_fancy_light
+#gameid 158
+#sprite /graphics/bodyarmor/robes/toga2_white_machakan.png
+#recolormask /graphics/bodyarmor/robes/toga2_trim3_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#basechance 0.33
+#id shorttoga_fancy_dark
+#gameid 158
+#sprite /graphics/bodyarmor/robes/toga2_black_machakan.png
+#recolormask /graphics/bodyarmor/robes/toga2_trim3_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#basechance 0.33
+#id shorttoga_fancy_medium
+#gameid 158
+#sprite /graphics/bodyarmor/robes/toga2_grey_machakan.png
+#recolormask /graphics/bodyarmor/robes/toga2_trim3_recolormask.png
+#armor
+#tag "tier 3"
+#enditem
