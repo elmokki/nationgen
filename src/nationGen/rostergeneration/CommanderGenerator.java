@@ -135,7 +135,7 @@ public class CommanderGenerator extends TroopGenerator {
 				Command c = Command.parseCommand(args.get(1));
 				secondaryMagicBeings = (c.command.equals("#magicbeing") || secondaryMagicBeings);
 				secondaryDemons = (c.command.equals("#demon") || secondaryDemons);
-				secondaryUndead = (c.command.equals("#undead") || (c.command.equals("#almostundead") || secondaryUndead);
+				secondaryUndead = (c.command.equals("#undead") || (c.command.equals("#almostundead") || secondaryUndead));
 				secondarySlaves = (c.command.equals("#slave") || secondarySlaves);
 				secondaryAnimals = (c.command.equals("#animal") || secondaryAnimals);
 			}

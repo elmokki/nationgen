@@ -2,7 +2,6 @@
 #name "javelin"
 #gameid 21
 #sprite /graphics/fomorian/weapon/javelin_bronze.png
-#tag "name infantry 'Javelineer'"
 #theme "bronze"
 #enditem
 
@@ -10,7 +9,6 @@
 #name "javelin"
 #gameid 21
 #sprite /graphics/fomorian/weapon/javelin.png
-#tag "name infantry 'Javelineer'"
 #theme "iron"
 #enditem
 
@@ -19,16 +17,20 @@
 #name "throwing axe"
 #gameid 260
 #basechance 0.5
-#tag "name infantry 'Axe Thrower'"
 #theme "iron"
 #enditem
 
+#newitem 
+#name "throwing hatchet"
+#gameid throwinghatchet
+#basechance 0.5
+#theme "bronze"
+#enditem
 
 #newitem
 #name "harpoon"
 #gameid 452
 #sprite /graphics/fomorian/weapon/javelin_bronze.png
-#tag "name infantry 'Harponeer'"
 #tag "maxprot 12"
 #tag "tierunique"
 #basechance 0.125
@@ -37,7 +39,6 @@
 #newitem
 #name "blowpipe"
 #gameid 34
-#tag "name infantry 'Poisoner'"
 #tag "maxprot 10"
 #tag "tierunique"
 #basechance 0.125

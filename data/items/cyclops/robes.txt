@@ -1,0 +1,375 @@
+-- Furs
+#newitem
+#id furs_half
+#gameid -1
+#armor
+#tier 1
+#notfortier 2
+#notfortier 3
+#eliteversion furs_basic
+#eliteversion furs_half_dark
+#eliteversion furs_half_light
+#theme primitive
+#enditem
+
+#newitem
+#id furs_basic
+#gameid 44
+#sprite /graphics/cyclops/armor/furs.png
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#eliteversion furs_dark
+#eliteversion furs_dark_long
+#eliteversion furs_light
+#eliteversion furs_light_long
+#theme primitive
+#enditem
+
+#newitem
+#id furs_half_dark
+#gameid -1
+#sprite /graphics/cyclops/armor/robe/furs_dark_short.png
+#armor
+#tier 1
+#notfortier 2
+#notfortier 3
+#eliteversion furs_dark
+#theme primitive
+#enditem
+
+#newitem
+#id furs_half_light
+#gameid -1
+#sprite /graphics/cyclops/armor/robe/furs_light_short.png
+#armor
+#tier 1
+#notfortier 2
+#notfortier 3
+#eliteversion furs_light
+#theme primitive
+#enditem
+
+#newitem
+#id furs_dark
+#gameid 44
+#sprite /graphics/cyclops/armor/robe/furs_dark.png
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#eliteversion furs_dark_long
+#theme primitive
+#enditem
+
+#newitem
+#id furs_light
+#gameid -1
+#sprite /graphics/cyclops/armor/robe/furs_light.png
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#eliteversion furs_light_long
+#theme primitive
+#enditem
+
+#newitem
+#id furs_dark_long
+#gameid 44
+#sprite /graphics/cyclops/armor/robe/furs_dark_long.png
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#eliteversion furs_mixed
+#theme primitive
+#enditem
+
+#newitem
+#id furs_light_long
+#gameid -1
+#sprite /graphics/cyclops/armor/robe/furs_light_long.png
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#eliteversion furs_mixed
+#theme primitive
+#enditem
+
+#newitem
+#id furs_mixed
+#gameid -1
+#sprite /graphics/cyclops/armor/robe/furs_mixed.png
+#recolormask /graphics/cyclops/armor/robe/furs_mixed_recolormask.png
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#theme primitive
+#enditem
+
+
+-- Robes
+
+#newitem
+#id himation_white
+#gameid 158
+#sprite /graphics/cyclops/armor/robe/himation_white.png
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#eliteversion himation_light
+#eliteversion himation_grey
+#eliteversion himation_white_trim
+#eliteversion himation_light_black
+#theme advanced
+#enditem
+
+#newitem
+#id himation_grey
+#gameid 158
+#sprite /graphics/cyclops/armor/robe/himation_grey.png
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#eliteversion himation_white
+#eliteversion himation_black
+#eliteversion himation_medium
+#eliteversion himation_grey_trim
+#eliteversion himation_medium_black
+#eliteversion himation_medium_white
+#theme advanced
+#enditem
+
+#newitem
+#id himation_black
+#gameid 158
+#sprite /graphics/cyclops/armor/robe/himation_black.png
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#eliteversion himation_dark
+#eliteversion himation_grey
+#eliteversion himation_black_trim
+#eliteversion himation_dark_white
+#theme advanced
+#enditem
+
+#newitem
+#id himation_light_black
+#gameid 158
+#sprite /graphics/cyclops/armor/robe/himation_black.png
+#recolormask /graphics/cyclops/armor/robe/himation_light_recolormask.png
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#eliteversion himation_light_trim
+#eliteversion himation_light_fancy
+#theme advanced
+#enditem
+
+#newitem
+#id himation_medium_black
+#gameid 158
+#sprite /graphics/cyclops/armor/robe/himation_black.png
+#recolormask /graphics/cyclops/armor/robe/himation_medium_recolormask.png
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#eliteversion himation_medium_trim
+#eliteversion himation_medium_fancy
+#theme advanced
+#enditem
+
+#newitem
+#id himation_medium_white
+#gameid 158
+#sprite /graphics/cyclops/armor/robe/himation_white.png
+#recolormask /graphics/cyclops/armor/robe/himation_medium_recolormask.png
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#eliteversion himation_medium_trim
+#eliteversion himation_medium_fancy
+#theme advanced
+#enditem
+
+#newitem
+#id himation_dark_white
+#gameid 158
+#sprite /graphics/cyclops/armor/robe/himation_white.png
+#recolormask /graphics/cyclops/armor/robe/himation_dark_recolormask.png
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#eliteversion himation_dark_trim
+#eliteversion himation_dark_fancy
+#theme advanced
+#enditem
+
+#newitem
+#id himation_white_trim
+#gameid 158
+#sprite /graphics/cyclops/armor/robe/himation_light_bordered.png
+#recolormask /graphics/cyclops/armor/robe/himation_border_medium.png
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#eliteversion himation_light_trim
+#theme advanced
+#enditem
+
+#newitem
+#id himation_grey_trim
+#gameid 158
+#sprite /graphics/cyclops/armor/robe/himation_medium_bordered.png
+#recolormask /graphics/cyclops/armor/robe/himation_border_light.png
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#eliteversion himation_medium_trim
+#theme advanced
+#enditem
+
+#newitem
+#id himation_black_trim
+#gameid 158
+#sprite /graphics/cyclops/armor/robe/himation_dark_bordered.png
+#recolormask /graphics/cyclops/armor/robe/himation_border_light.png
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#eliteversion himation_dark_trim
+#theme advanced
+#enditem
+
+#newitem
+#id himation_light
+#gameid 158
+#sprite /graphics/cyclops/armor/robe/himation_white.png
+#recolormask self
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#eliteversion himation_light_fancy
+#eliteversion himation_light_trim
+#eliteversion himation_medium
+#theme advanced
+#enditem
+
+#newitem
+#id himation_medium
+#gameid 158
+#sprite /graphics/cyclops/armor/robe/himation_grey.png
+#recolormask self
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#eliteversion himation_light
+#eliteversion himation_dark
+#eliteversion himation_medium_fancy
+#eliteversion himation_medium_trim
+#theme advanced
+#enditem
+
+#newitem
+#id himation_dark
+#gameid 158
+#sprite /graphics/cyclops/armor/robe/himation_black.png
+#recolormask self
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#eliteversion himation_dark_fancy
+#eliteversion himation_dark_trim
+#eliteversion himation_medium
+#theme advanced
+#enditem
+
+#newitem
+#id himation_light_trim
+#gameid 158
+#sprite /graphics/cyclops/armor/robe/himation_light_bordered.png
+#recolormask self
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#theme advanced
+#enditem
+
+#newitem
+#id himation_medium_trim
+#gameid 158
+#sprite /graphics/cyclops/armor/robe/himation_medium_bordered.png
+#recolormask self
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#theme advanced
+#enditem
+
+#newitem
+#id himation_dark_trim
+#gameid 158
+#sprite /graphics/cyclops/armor/robe/himation_dark_bordered.png
+#recolormask self
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#theme advanced
+#enditem
+
+#newitem
+#id himation_light_fancy
+#gameid 158
+#sprite /graphics/cyclops/armor/robe/himation_white_fancy.png
+#recolormask /graphics/cyclops/armor/robe/himation_light_recolormask.png
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#theme advanced
+#enditem
+
+#newitem
+#id himation_medium_fancy
+#gameid 158
+#sprite /graphics/cyclops/armor/robe/himation_grey_fancy.png
+#recolormask /graphics/cyclops/armor/robe/himation_medium_recolormask.png
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#theme advanced
+#enditem
+
+#newitem
+#id himation_dark_fancy
+#gameid 158
+#sprite /graphics/cyclops/armor/robe/himation_black_fancy.png
+#recolormask /graphics/cyclops/armor/robe/himation_dark_recolormask.png
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#theme advanced
+#enditem

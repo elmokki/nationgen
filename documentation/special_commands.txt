@@ -66,7 +66,7 @@ All troop poses can be used to generate a sacred / elite unit. Without this only
 will be considered.
 
 #generationchance <role> <number> 
-Changes the weight of certain role in troop roster generation. Defaults are 0.25, 1, 0.33, 0.125 for ranger, infantry, mounted and chariot
+Changes the weight of certain role in troop roster generation. Defaults are 0.25, 1, 0.33, 0.125 for ranged, infantry, mounted and chariot
 respectively
 
 #magicpriority <path> <number>
@@ -74,7 +74,7 @@ Sets the weight of a certain magic path in mage generation. Default for all path
 
 #sacred<role>chance <number>
 Sets the weight of a certain role (either just the "role" or "sacred role", ie "infantry" or "sacred infantry") to given number. Defaults are 
-0.125, 1, 0.25, 0.05 for ranger, infantry, mounted and chariot
+0.125, 1, 0.25, 0.05 for ranged, infantry, mounted and chariot
 
 #mapmovepenaltyenc <amount>
 The amount of encumberance from equipment before getting mapmove penalty. Won't affect mounted units. Default is 4.
