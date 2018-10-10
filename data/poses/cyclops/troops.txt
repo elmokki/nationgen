@@ -1,0 +1,77 @@
+
+-------- Infantry
+
+#newpose
+#name "cyclops infantry"
+#role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
+#role "scout"
+
+#load basesprite /data/items/cyclops/bases.txt
+#load shadow /data/items/cyclops/shadow.txt
+#load hands /data/items/cyclops/hands.txt
+
+#load armor /data/items/cyclops/armor.txt
+
+#load weapon /data/items/cyclops/weapon.txt
+#load offhand /data/items/cyclops/shields.txt
+#load bonusweapon /data/items/cyclops/bonusranged.txt
+#load helmet /data/items/cyclops/helmet.txt
+
+#load cloakf /data/items/cyclops/cloakf.txt
+#load cloakb /data/items/cyclops/cloakb.txt
+
+#maxvarieties 2
+
+#endpose
+
+
+-------- Ranged
+#newpose
+#name "cyclops ranged"
+#role "ranged"
+#role "elite ranged"
+#role "sacred ranged"
+
+#cannot_be_commander
+
+#load basesprite /data/items/cyclops/bases.txt
+#load shadow /data/items/cyclops/shadow.txt
+#load hands /data/items/cyclops/hands_ranged.txt
+
+#load armor /data/items/cyclops/armor_ranged.txt
+
+#load weapon /data/items/cyclops/missile.txt
+#load bonusweapon /data/items/cyclops/weapon_ranged.txt
+#load helmet /data/items/cyclops/helmet.txt
+
+#load cloakf /data/items/cyclops/cloakf.txt
+#load cloakb /data/items/cyclops/cloakb.txt
+
+#generateitem 1 bonusweapon
+
+#maxvarieties 1
+#maxunits 1
+
+#endpose
+
+-------- Scout
+#newpose
+#name "cyclops scout"
+#role "scout"
+
+#load basesprite /data/items/cyclops/bases.txt
+#load shadow /data/items/cyclops/shadow.txt
+#load hands /data/items/cyclops/hands.txt
+
+#load armor /data/items/cyclops/armor_ranged.txt
+
+#load weapon /data/items/cyclops/weapon.txt
+#load bonusweapon /data/items/cyclops/bonusranged.txt
+#load helmet /data/items/cyclops/helmet.txt
+
+#load cloakf /data/items/cyclops/cloakf.txt
+#load cloakb /data/items/cyclops/cloakb.txt
+
+#endpose

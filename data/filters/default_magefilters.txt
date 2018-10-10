@@ -93,7 +93,6 @@
 #power 2
 #end
 
-
 #new magefilter
 #type research
 #name "sloth researcher +1"
@@ -145,7 +144,6 @@
 #command "#allrange +2"
 #power 2
 #end
-
 
 #new magefilter
 #name "floating"
@@ -380,7 +378,7 @@
 
 #new magefilter
 #name "flying"
-#basechance 0.0
+#basechance 0
 #command "#flying"
 #chanceinc "personalmagic air 1"
 #tag "personalmagic air"
@@ -401,7 +399,7 @@
 
 #new magefilter
 #name "forestsurvival"
-#basechance 0.0
+#basechance 0
 #command "#forestsurvival"
 #chanceinc "personalmagic nature 0.5"
 #tag "notfortier 3"
@@ -409,7 +407,7 @@
 
 #new magefilter
 #name "mountainsurvival"
-#basechance 0.0
+#basechance 0
 #command "#mountainsurvival"
 #chanceinc "personalmagic nature 0.25"
 #chanceinc "personalmagic earth 0.25"
@@ -418,7 +416,7 @@
 
 #new magefilter
 #name "swampsurvival"
-#basechance 0.0
+#basechance 0
 #command "#swampsurvival"
 #chanceinc "personalmagic nature 0.25"
 #chanceinc "personalmagic water 0.25"
@@ -427,7 +425,7 @@
 
 #new magefilter
 #name "wastesurvival"
-#basechance 0.0
+#basechance 0
 #command "#wastesurvival"
 #chanceinc "personalmagic nature 0.25"
 #chanceinc "personalmagic fire 0.25"
@@ -436,14 +434,14 @@
 
 #new magefilter
 #name "forestsurvival all"
-#basechance 0.0
+#basechance 0
 #command "#forestsurvival"
 #chanceinc "personalmagic nature 0.25"
 #end
 
 #new magefilter
 #name "mountainsurvival all"
-#basechance 0.0
+#basechance 0
 #command "#mountainsurvival"
 #chanceinc "personalmagic nature 0.125"
 #chanceinc "personalmagic earth 0.125"
@@ -451,7 +449,7 @@
 
 #new magefilter
 #name "swampsurvival all"
-#basechance 0.0
+#basechance 0
 #command "#swampsurvival"
 #chanceinc "personalmagic nature 0.125"
 #chanceinc "personalmagic water 0.125"
@@ -459,7 +457,7 @@
 
 #new magefilter
 #name "wastesurvival all"
-#basechance 0.0
+#basechance 0
 #command "#wastesurvival"
 #chanceinc "personalmagic nature 0.125"
 #chanceinc "personalmagic fire 0.125"
@@ -628,7 +626,7 @@
 
 #new magefilter
 #name "inquisitor"
-#basechance 0.0
+#basechance 0
 #command "#inquisitor"
 #chanceinc "personalmagic holy 2"
 #tag "personalmagic holy"
@@ -853,7 +851,7 @@
 
 #new magefilter
 #name "chargedbody"
-#basechance 0.0
+#basechance 0
 #command "#onebattlespell 500"
 #chanceinc "personalmagic air 0.5"
 #description "has charged body"
@@ -1125,7 +1123,7 @@
 #new magefilter
 #name "crossbreeder 3"
 #type "summoning"
-#basechance 0.0
+#basechance 0
 #chanceinc "personalmagic nature blood 4"
 #command "#crossbreeder +3"
 #description " Skilled at crossbreeding."
@@ -1134,8 +1132,8 @@
 #new magefilter
 #name "crossbreeder 6"
 #type "summoning"
-#basechance 0.0
-#chanceinc "personalmagic nature above 1 AND personalmagic blood above 1 2"
+#basechance 0
+#chanceinc "personalmagic nature 2 AND personalmagic blood 2 2"
 #command "#crossbreeder +6"
 #notfortier1
 #description " Excellent at crossbreeding."
@@ -1144,8 +1142,8 @@
 #new magefilter
 #name "crossbreeder 9"
 #type "summoning"
-#basechance 0.0
-#chanceinc "personalmagic nature above 2 AND personalmagic blood above 2 2"
+#basechance 0
+#chanceinc "personalmagic nature 3 AND personalmagic blood 3 2"
 #command "#crossbreeder +9"
 #notfortier1
 #notfortier2
@@ -1167,7 +1165,7 @@
 #name "ivylord 2"
 #type "summoning"
 #basechance 0
-#chanceinc "personalmagic nature above 1 4"
+#chanceinc "personalmagic nature 2 4"
 #command "#ivylord +2"
 #notfortier 1
 #theme nature
@@ -1178,7 +1176,7 @@
 #name "ivylord 3"
 #type "summoning"
 #basechance 0
-#chanceinc "personalmagic nature above 2 2"
+#chanceinc "personalmagic nature 3 2"
 #command "#ivylord +3"
 #notfortier 1
 #notfortier 2
@@ -1190,11 +1188,11 @@
 #name "dragonlord 1"
 #type "summoning"
 #basechance 0
-#chanceinc "personalmagic nature above 1 AND personalmagic water 0.25"
-#chanceinc "personalmagic water above 1 0.25"
-#chanceinc "personalmagic fire above 1 0.25"
-#chanceinc "personalmagic earth above 1 0.25"
-#chanceinc "personalmagic air above 1 0.25"
+#chanceinc "personalmagic nature 2 AND personalmagic water 0.25"
+#chanceinc "personalmagic water 2 0.25"
+#chanceinc "personalmagic fire 2 0.25"
+#chanceinc "personalmagic earth 2 0.25"
+#chanceinc "personalmagic air 2 0.25"
 #command "#dragonlord +1"
 #theme dragon
 #theme draketotem
@@ -1204,11 +1202,11 @@
 #name "dragonlord 2"
 #type "summoning"
 #basechance 0
-#chanceinc "personalmagic nature above 2 AND personalmagic water 0.125"
-#chanceinc "personalmagic water above 2 0.125"
-#chanceinc "personalmagic fire above 2 0.125"
-#chanceinc "personalmagic earth above 2 0.125"
-#chanceinc "personalmagic air above 2 0.125"
+#chanceinc "personalmagic nature 3 AND personalmagic water 0.125"
+#chanceinc "personalmagic water 3 0.125"
+#chanceinc "personalmagic fire 3 0.125"
+#chanceinc "personalmagic earth 3 0.125"
+#chanceinc "personalmagic air 3 0.125"
 #command "#dragonlord +2"
 #notfortier 1
 #theme dragon
@@ -1219,7 +1217,7 @@
 #name "lamialord 2"
 #type "summoning"
 #basechance 0
-#chanceinc "personalmagic nature above 2 0.1"
+#chanceinc "personalmagic nature 3 0.1"
 #command "#lamialord +2"
 #description " Esteemed by lamia-kind."
 #notfortier 1
@@ -1231,7 +1229,7 @@
 #name "lamialord 4"
 #type "summoning"
 #basechance 0
-#chanceinc "personalmagic nature above 3 0.1"
+#chanceinc "personalmagic nature 3 0.1"
 #command "#lamialord +4"
 #description " Revered by lamia-kind."
 #notfortier 1
@@ -1256,7 +1254,7 @@
 #name "corpselord 4"
 #type "summoning"
 #basechance 0
-#chanceinc "personalmagic air above 1 OR personalmagic death above 1 AND personalmagic air death 2"
+#chanceinc "personalmagic air 2 OR personalmagic death 2 AND personalmagic air death 2"
 #command "#corpselord +4"
 #description " Talented at reanimating corpses with electricity."
 #notfortier 1
@@ -1268,7 +1266,7 @@
 #name "corpselord 6"
 #type "summoning"
 #basechance 0
-#chanceinc "personalmagic air above 2 OR personalmagic death above 2 AND personalmagic air death 2"
+#chanceinc "personalmagic air 3 OR personalmagic death 3 AND personalmagic air death 2"
 #command "#corpselord +6"
 #description " Masterful at reanimating corpses with electricity."
 #notfortier 1
@@ -1276,3 +1274,4 @@
 #theme death
 #theme construction
 #end
+

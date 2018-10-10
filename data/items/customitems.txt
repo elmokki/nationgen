@@ -614,13 +614,13 @@
 #end
 
 
---- Generic giant weapons (for larger giants such as Fomorians)
+--- Generic giant weapons (for larger giants such as Fomorians - following Dom5 length changes, these should all be deprecated except giant falchion and the loggy stuff)
 
 #new customweapon
 #name "giantaxe"
 #command "#natt 1"
 #command "#def -1"
-#command "#dmg 7"
+#command "#dmg 8"
 #command "#len 1"
 #command "#rcost 2"
 #command "#name 'Giant Axe'"
@@ -666,10 +666,11 @@
 #new customweapon
 #name "giantfalchion"
 #command "#natt 1"
+#command "#def -1"
 #command "#dmg 10"
 #command "#len 1"
-#command "#rcost 4"
-#command "#name 'Giant Falchion'"
+#command "#rcost 5"
+#command "#name 'Tegha'"
 #command "#slash"
 #command "#ironweapon"
 #end
@@ -1496,7 +1497,7 @@
 #name "large_rock"
 #command "#ammo 12"¨
 #command "#range -2"
-#command "#dmg 8"
+#command "#dmg 5"
 #command "#flyspr 100 1"
 #command "#name 'Large Rock'"
 #command "#twohanded"

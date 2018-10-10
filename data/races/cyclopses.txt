@@ -1,0 +1,63 @@
+#newrace
+#name "Cyclops"
+#basechance 0.15
+
+#racethemes cyclops_themes
+#freetheme civilization
+#freetheme techlevel
+
+-- 40% H1/48% H2/12% H3 max priest level
+#priest_H1_upgradechance 0.6
+#priest_H2_upgradechance 0.2
+#magepriestchance 0.5
+
+#pose cyclopstroops
+#pose cyclopsmages
+-- #pose eldercyclopses
+
+#longsyllables /data/names/nations/amazon/longsyllables.txt
+#shortsyllables /data/names/nations/amazon/shortsyllables.txt
+#suffixes /data/names/nations/amazon/suffixes.txt
+
+#unitcommand "#gcost 35"
+#unitcommand "#rpcost 35000"
+#unitcommand "#size 4"
+#unitcommand "#hp 42"
+#unitcommand "#prot 5"
+#unitcommand "#str 22"
+#unitcommand "#att 10"
+#unitcommand "#def 9"
+#unitcommand "#mr 9"
+#unitcommand "#mor 13"
+#unitcommand "#enc 2"
+#unitcommand "#prec 7"
+#unitcommand "#mapmove 18"
+#unitcommand "#ap 17"
+#unitcommand "#maxage 150"
+#unitcommand "#supplybonus -1"
+#unitcommand "#eyes 1"
+#unitcommand "#nametype 107"
+#unitcommand "#twiceborn 3179"
+
+#maxprimaryracetroops 5
+#maxthisracetroops_as_secondary 5
+
+#generationchance ranged 0.5
+#sacredrangedchance 0.05
+
+#extrapdmulti 0.5
+
+#gods imperialgods
+#forts giant_forts
+
+#mapmovepenaltyenc 7
+#mapmovepenaltyprot 16
+
+#oneprimarychance 0.85
+#twoprimarychance 0.125
+#threeprimarychance 0.025
+
+#monsterchance 0.01
+#central
+
+#endrace

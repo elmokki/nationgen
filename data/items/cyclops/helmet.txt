@@ -1,0 +1,319 @@
+#newitem
+#id none
+#gameid -1
+#theme naked
+#theme primitive
+#armor
+#maxprot 8
+#enditem
+
+
+-- Caps
+#newitem
+#id leathercap
+#gameid 120
+#sprite /graphics/cyclops/helmet/cap_leather.png
+#theme leather
+#armor
+#maxprot 10
+#enditem
+
+#newitem
+#id reinforcedcap
+#gameid 119
+#sprite /graphics/cyclops/helmet/cap_reinforced.png
+#theme leather
+#eliteversion crestedhelm
+#armor
+#maxprot 10
+#enditem
+
+#newitem
+#id bronzecap
+#gameid 135
+#sprite /graphics/cyclops/helmet/cap_bronze.png
+#theme bronze
+#armor
+#maxprot 12
+#enditem
+
+#newitem
+#id ironcap
+#gameid 20
+#sprite /graphics/cyclops/helmet/cap_iron.png
+#theme iron
+#armor
+#maxprot 13
+#enditem
+
+#newitem
+#id crestedhelm
+#gameid 163
+#sprite /graphics/cyclops/helmet/helm_leather_elite.png
+#recolormask /graphics/cyclops/helmet/helm_elite_recolormask.png
+#theme leather
+#theme elite
+#armor
+#maxprot 14
+#enditem
+
+
+-- Bronze helms
+#newitem
+#id bronzehalfhelm
+#gameid bronzehalfhelmet
+#sprite /graphics/cyclops/helmet/halfhelm_bronze.png
+#theme bronze
+#eliteversion bronzehalfhelm_elite
+#eliteversion bronzefullhelm
+#eliteversion goldhalfhelm_bronze
+#armor
+#minprot 9
+#maxprot 14
+#enditem
+
+#newitem
+#id bronzehalfhelm_elite
+#gameid bronzehalfhelmet
+#sprite /graphics/cyclops/helmet/halfhelm_bronze_elite.png
+#recolormask /graphics/cyclops/helmet/helm_elite_recolormask.png
+#theme bronze
+#theme elite
+#eliteversion bronzefullhelm_elite
+#eliteversion goldhalfhelm_bronze_elite
+#armor
+#minprot 9
+#maxprot 14
+#enditem
+
+#newitem
+#id goldhalfhelm_bronze
+#gameid bronzehalfhelmet
+#sprite /graphics/cyclops/helmet/halfhelm_gold.png
+#theme bronze
+#theme elite
+#eliteversion goldfullhelm_bronze
+#eliteversion goldhalfhelm_bronze_elite
+#armor
+#minprot 9
+#maxprot 14
+#enditem
+
+#newitem
+#id goldhalfhelm_bronze_elite
+#gameid bronzehalfhelmet
+#sprite /graphics/cyclops/helmet/halfhelm_gold_elite.png
+#recolormask /graphics/cyclops/helmet/helm_elite_recolormask.png
+#theme bronze
+#theme elite
+#eliteversion goldfullhelm_bronze_elite
+#armor
+#minprot 9
+#maxprot 14
+#enditem
+
+#newitem
+#id bronzefullhelm
+#gameid 123
+#sprite /graphics/cyclops/helmet/fullhelm_bronze.png
+#theme bronze
+#eliteversion bronzefullhelm_elite
+#eliteversion goldfullhelm_bronze
+#eliteversion gleamingfullhelm
+#armor
+#minprot 12
+#maxprot 17
+#enditem
+
+#newitem
+#id bronzefullhelm_elite
+#gameid 123
+#sprite /graphics/cyclops/helmet/fullhelm_bronze_elite.png
+#recolormask /graphics/cyclops/helmet/helm_elite_recolormask.png
+#theme bronze
+#theme elite
+#eliteversion goldfullhelm_bronze_elite
+#eliteversion gleamingfullhelm_elite
+#armor
+#minprot 12
+#maxprot 17
+#enditem
+
+#newitem
+#id goldfullhelm_bronze
+#gameid 123
+#sprite /graphics/cyclops/helmet/fullhelm_gold.png
+#theme bronze
+#theme elite
+#eliteversion goldfullhelm_bronze_elite
+#eliteversion gleamingfullhelm
+#armor
+#minprot 12
+#maxprot 17
+#enditem
+
+#newitem
+#id goldfullhelm_bronze_elite
+#gameid 123
+#sprite /graphics/cyclops/helmet/fullhelm_gold_elite.png
+#recolormask /graphics/cyclops/helmet/helm_elite_recolormask.png
+#theme bronze
+#theme elite
+#eliteversion gleamingfullhelm_elite
+#armor
+#minprot 12
+#maxprot 17
+#enditem
+
+-- Iron helms
+#newitem
+#id ironhalfhelm
+#gameid 118
+#sprite /graphics/cyclops/helmet/halfhelm_iron.png
+#theme iron
+#eliteversion ironhalfhelm_elite
+#eliteversion ironfullhelm
+#eliteversion goldhalfhelm_iron
+#armor
+#minprot 10
+#maxprot 15
+#enditem
+
+#newitem
+#id ironhalfhelm_elite
+#gameid 118
+#sprite /graphics/cyclops/helmet/halfhelm_iron_elite.png
+#recolormask /graphics/cyclops/helmet/helm_elite_recolormask.png
+#theme iron
+#theme elite
+#eliteversion ironfullhelm_elite
+#eliteversion goldhalfhelm_iron_elite
+#armor
+#minprot 10
+#maxprot 15
+#enditem
+
+#newitem
+#id goldhalfhelm_iron
+#gameid 118
+#sprite /graphics/cyclops/helmet/halfhelm_gold.png
+#theme iron
+#theme elite
+#eliteversion goldfullhelm_iron
+#eliteversion goldhalfhelm_iron_elite
+#armor
+#minprot 10
+#maxprot 15
+#enditem
+
+#newitem
+#id goldhalfhelm_iron_elite
+#gameid 118
+#sprite /graphics/cyclops/helmet/halfhelm_gold_elite.png
+#recolormask /graphics/cyclops/helmet/helm_elite_recolormask.png
+#theme iron
+#theme elite
+#eliteversion goldfullhelm_iron_elite
+#armor
+#minprot 10
+#maxprot 15
+#enditem
+
+#newitem
+#id ironfullhelm
+#gameid 21
+#sprite /graphics/cyclops/helmet/fullhelm_iron.png
+#theme iron
+#eliteversion ironfullhelm_elite
+#eliteversion goldfullhelm_iron
+#eliteversion cyclopefullhelm
+#armor
+#minprot 13
+#maxprot 18
+#enditem
+
+#newitem
+#id ironfullhelm_elite
+#gameid 21
+#sprite /graphics/cyclops/helmet/fullhelm_iron_elite.png
+#recolormask /graphics/cyclops/helmet/helm_elite_recolormask.png
+#theme iron
+#theme elite
+#eliteversion goldfullhelm_iron_elite
+#eliteversion cyclopefullhelm_elite
+#armor
+#minprot 13
+#maxprot 18
+#enditem
+
+#newitem
+#id goldfullhelm_iron
+#gameid 21
+#sprite /graphics/cyclops/helmet/fullhelm_gold.png
+#theme iron
+#theme elite
+#eliteversion goldfullhelm_iron_elite
+#eliteversion cyclopefullhelm
+#armor
+#minprot 13
+#maxprot 18
+#enditem
+
+#newitem
+#id goldfullhelm_iron_elite
+#gameid 21
+#sprite /graphics/cyclops/helmet/fullhelm_gold_elite.png
+#recolormask /graphics/cyclops/helmet/helm_elite_recolormask.png
+#theme iron
+#theme elite
+#eliteversion cyclopefullhelm_elite
+#armor
+#minprot 13
+#maxprot 18
+#enditem
+
+-- Advanced helms
+#newitem
+#id cyclopefullhelm
+#gameid 248
+#sprite /graphics/cyclops/helmet/fullhelm_iron.png
+#theme advanced
+#theme sacred
+#eliteversion cyclopefullhelm_elite
+#armor
+#minprot 15
+#enditem
+
+#newitem
+#id cyclopefullhelm_elite
+#gameid 248
+#sprite /graphics/cyclops/helmet/fullhelm_iron_elite.png
+#recolormask /graphics/cyclops/helmet/helm_elite_recolormask.png
+#theme advanced
+#theme sacred
+#eliteversion gleamingfullhelm_elite
+#armor
+#minprot 15
+#enditem
+
+#newitem
+#id gleamingfullhelm
+#gameid 239
+#sprite /graphics/cyclops/helmet/fullhelm_gold.png
+#theme advanced
+#theme sacred
+#eliteversion gleamingfullhelm_elite
+#armor
+#minprot 12
+#enditem
+
+#newitem
+#id gleamingfullhelm_elite
+#gameid 239
+#sprite /graphics/cyclops/helmet/fullhelm_gold_elite.png
+#recolormask /graphics/cyclops/helmet/helm_elite_recolormask.png
+#theme advanced
+#theme sacred
+#armor
+#minprot 12
+#enditem

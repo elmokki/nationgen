@@ -1,0 +1,124 @@
+-------- Elite Troop
+
+#newpose
+#name "elite elder cyclopses"
+#role "elite infantry"
+#basechance 0.25
+#chanceinc era 2 *0.6
+#chanceinc era 3 *0.2
+#subrace "elder cyclopes"
+#subraceprefix "elder"
+
+#renderorder "shadow extra1 cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda"
+
+#load basesprite /data/items/cyclops/giant/bases.txt
+#load shadow /data/items/cyclops/giant/shadow.txt
+#load hands /data/items/cyclops/giant/hands.txt
+
+
+#load armor /data/items/cyclops/giant/armor.txt
+
+#load weapon /data/items/cyclops/giant/weapon.txt
+#load offhand /data/items/cyclops/giant/offhands.txt
+#load offhand /data/items/cyclops/giant/shields.txt
+#load bonusweapon /data/items/cyclops/giant/bonusranged.txt
+
+
+#load cloakf /data/items/cyclops/giant/cloakf.txt
+#load cloakb /data/items/cyclops/giant/cloakb.txt
+
+#caponlychance 0.9
+#sacredratingmulti 1.5
+
+#cannot_be_pd
+#good_leader
+
+#endpose
+
+
+-------- Sacred Troop
+
+#newpose
+#name "sacred elder cyclopses"
+#role "sacred infantry"
+#basechance 0.5
+#chanceinc era 2 *0.4
+#chanceinc era 3 *0.1
+#chanceinc moduleid herogen *2
+#subrace "elder cyclopes"
+#subraceprefix "elder"
+
+#renderorder "shadow extra1 cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda"
+
+#load basesprite /data/items/cyclops/giant/bases.txt
+#load shadow /data/items/cyclops/giant/shadow.txt
+#load hands /data/items/cyclops/giant/hands.txt
+
+
+#load armor /data/items/cyclops/giant/armor.txt
+
+#load weapon /data/items/cyclops/giant/weapon.txt
+#load offhand /data/items/cyclops/giant/offhands.txt
+#load offhand /data/items/cyclops/giant/shields.txt
+#load bonusweapon /data/items/cyclops/giant/bonusranged.txt
+
+
+#load cloakf /data/items/cyclops/giant/cloakf.txt
+#load cloakb /data/items/cyclops/giant/cloakb.txt
+
+#caponlychance 1
+#sacredratingmulti 1.5
+
+#cannot_be_pd
+#good_leader
+
+#endpose
+
+
+
+-------- Mage
+
+#newpose
+#name "elder cyclopses casters"
+#role "mage"
+#basechance 1
+#chanceinc era 1 *2
+#chanceinc era 3 *0.5
+#chanceinc moduleid herogen *2
+#subrace "elder cyclopes"
+#subraceprefix "elder"
+
+#renderorder "shadow extra1 cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda"
+
+#magefilters default_magefilters
+#magefilters default_magefilters_strongdefence_expensive
+
+
+#load basesprite /data/items/cyclops/giant/bases.txt
+#load shadow /data/items/cyclops/giant/shadow.txt
+#load hands /data/items/cyclops/giant/hands.txt
+
+#load armor /data/items/cyclops/giant/armor.txt
+
+#load weapon /data/items/cyclops/giant/weapon_caster.txt
+#load offhand /data/items/cyclops/giant/offhands.txt
+#load offhand /data/items/cyclops/giant/shields.txt
+#load bonusweapon /data/items/cyclops/giant/bonusranged.txt
+#load helmet /data/items/cyclops/giant/helmet.txt
+
+#load cloakf /data/items/cyclops/giant/cloakf.txt
+#load cloakb /data/items/cyclops/giant/cloakb.txt
+
+#tier 3
+#notfortier 2
+#notfortier 1
+
+#dontvaryhat
+
+#magicpriority earth 9
+#magicpriority fire 6
+#magicpriority air 3
+#magicpriority water 3
+
+#endpose
+
