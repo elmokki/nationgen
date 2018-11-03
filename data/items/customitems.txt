@@ -338,6 +338,31 @@
 #end
 
 #new customweapon
+#name "billhook"
+#command "#def 1"
+#command "#dmg 8"
+#command "#len 3"
+#command "#rcost 3"
+#command "#name 'Bill-Hook'"
+#command "#pierce"
+#command "#slash"
+#command "#twohanded"
+#command "#ironweapon"
+#end
+
+#new customweapon
+#name "bronzebillhook"
+#command "#def 1"
+#command "#dmg 7"
+#command "#len 3"
+#command "#rcost 4"
+#command "#name 'Bronze Bill-Hook'"
+#command "#pierce"
+#command "#slash"
+#command "#twohanded"
+#end
+
+#new customweapon
 #name throwinghatchet
 #command "#att -4"
 #command "#dmg 5"

@@ -70,6 +70,34 @@
 #enditem
 
 #newitem
+#name "pigasus"
+#gameid -1
+#sprite /graphics/hoburg/mounts/pigasus.png
+#armor
+#needs overlay pigasus_overlay
+#define "#size 3"
+#define "#mapmove 20"
+#define "#ap 14"
+#define "#mounted"
+#define "#weapon 352 --- Gore"
+#define "#gcost +30"
+#define "#ressize 1"
+#define "#rcost +4"
+#define "#enc 4"
+#tag "animal pigasus"
+#tag "guaranteedprefix pigasus"
+#theme "boar"
+#tag "maxprot 14"
+#basechance 0.33
+#offsety -12
+#offsetx 1
+#theme "austral"
+#theme "central"
+#theme "imperial"
+#light
+#enditem
+
+#newitem
 #name "ozelotl"
 #gameid -1
 #sprite /graphics/hoburg/mounts/ozelotl.png
