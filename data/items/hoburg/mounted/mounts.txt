@@ -242,7 +242,7 @@
 #sprite /graphics/hoburg/mounts/caveman.png
 #armor
 #define "#size 3"
-#define "#mapmove 14"
+#define "#mapmove 18"
 #define "#ap 14"
 #define "#mounted"
 #define "#gcost +45"
@@ -255,7 +255,7 @@
 #needs overlay caveman_overlay
 #define "#weapon nostr_greatclub"
 #tag "animal caveman"
-#tag "guaranteedprefix 'cave man'"
+#tag "guaranteedprefix 'caveman'"
 #offsety 29
 #offsetx 6
 #theme "primitive"
@@ -273,7 +273,7 @@
 #recolormask /graphics/hoburg/mounts/caveman_occidental_recolormask.png
 #armor
 #define "#size 3"
-#define "#mapmove 14"
+#define "#mapmove 18"
 #define "#ap 14"
 #define "#mounted"
 #define "#gcost +40"
@@ -286,12 +286,39 @@
 #needs overlay caveman_occidental_overlay
 #define "#weapon nostr_greatclub"
 #tag "animal caveman"
-#tag "guaranteedprefix 'cave man'"
+#tag "guaranteedprefix 'caveman'"
 #offsety 29
 #offsetx 6
 #theme "primitive"
 #theme "caveman"
 #theme "occidental"
+#enditem
+
+#newitem
+#name "hellbred caveman"
+#gameid -1
+#sprite /graphics/hoburg/mounts/horite.png
+#armor
+#define "#size 3"
+#define "#mapmove 18"
+#define "#ap 14"
+#define "#mounted"
+#define "#gcost +40"
+#define "#ressize 1"
+#define "#rcost +6"
+#define "#secondshape caveman_hellbred"
+#define "#enc 4"
+#description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
+#basechance 0.33
+#needs overlay caveman_hellbred_overlay
+#define "#weapon nostr_greatclub"
+#tag "animal caveman"
+#tag "guaranteedprefix 'caveman'"
+#offsety 29
+#offsetx 6
+#theme "primitive"
+#theme "caveman"
+#theme "abysian"
 #enditem
 
 #newitem

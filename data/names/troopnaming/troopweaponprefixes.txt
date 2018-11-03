@@ -22,6 +22,8 @@
 #chanceinc slot weapon 268 1
 #chanceinc slot weapon giantsword 1
 #chanceinc slot weapon giantsword_bronze 1
+-- Cyclope Sword
+#chanceinc slot weapon 734 1
 -- Obsidian Club Swords
 #chanceinc slot weapon 288 1
 #chanceinc slot weapon 451 1
@@ -86,6 +88,7 @@
 #chanceinc slot weapon giantspear 1
 #chanceinc slot weapon giantspear_bronze 1
 #chanceinc slot weapon 473 1
+#chanceinc slot weapon 733 1
 -- Coral Spears
 #chanceinc slot weapon 31 1
 #chanceinc slot weapon corallongspear 1
@@ -113,6 +116,9 @@
 -- Axe
 #chanceinc slot weapon 17 1
 #chanceinc slot weapon 675 1
+#chanceinc slot weapon 707 1
+#chanceinc slot weapon 711 1
+#chanceinc slot weapon 728 1
 #chanceinc slot weapon goldenaxe 1
 -- Battleaxe
 #chanceinc slot weapon 18 1
@@ -202,6 +208,40 @@
 #prefix
 #end
 
+-- Bill-hook
+#new 
+#name "bill-hook"
+#basechance 0
+
+#type weapon
+
+#chanceinc slot weapon billhook 1
+#chanceinc slot weapon bronzebillhook 1
+#prefix
+#end
+
+-- pick axe
+#new 
+#name "pick"
+#basechance 0
+
+#type weapon
+
+#chanceinc slot weapon 267 0.8
+#prefix
+#end
+
+-- pick axe
+#new 
+#name "pick axe"
+#basechance 0
+
+#type weapon
+
+#chanceinc slot weapon 267 0.2
+#prefix
+#end
+
 ----- Generic "polearm" - about 1/6th the chance of specific arms
 
 #new 
@@ -215,6 +255,12 @@
 -- Bardiche
 #chanceinc slot weapon 257 0.2
 #chanceinc slot weapon bronzebardiche 0.2
+-- Lucerne Hammer
+#chanceinc slot weapon lucernehammer 0.2
+#chanceinc slot weapon bronzelucernehammer 0.2
+-- Bill-hook
+#chanceinc slot weapon billhook 0.2
+#chanceinc slot weapon bronzebillhook 0.2
 -- Glaive
 #chanceinc slot weapon 308 0.2
 #chanceinc slot weapon 46 0.2

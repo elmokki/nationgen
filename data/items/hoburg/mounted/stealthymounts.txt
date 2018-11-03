@@ -70,6 +70,34 @@
 #enditem
 
 #newitem
+#name "pigasus"
+#gameid -1
+#sprite /graphics/hoburg/mounts/pigasus.png
+#armor
+#needs overlay pigasus_overlay
+#define "#size 3"
+#define "#mapmove 20"
+#define "#ap 14"
+#define "#mounted"
+#define "#weapon 352 --- Gore"
+#define "#gcost +30"
+#define "#ressize 1"
+#define "#rcost +4"
+#define "#enc 4"
+#tag "animal pigasus"
+#tag "guaranteedprefix pigasus"
+#theme "boar"
+#tag "maxprot 14"
+#basechance 0.33
+#offsety -12
+#offsetx 1
+#theme "austral"
+#theme "central"
+#theme "imperial"
+#light
+#enditem
+
+#newitem
 #name "ozelotl"
 #gameid -1
 #sprite /graphics/hoburg/mounts/ozelotl.png
@@ -91,7 +119,7 @@
 #define "#enc 3"
 #define "#secondtmpshape ozelotl"
 #tag "animal ozelotl"
-#description "The ozelotl fight until the end of the battle if the rider perishes"
+#description "The ozelotl will fight until the end of the battle if the rider perishes"
 #tag "maxprot 14"
 #tag "guaranteedprefix ozelotl"
 #basechance 0.33
@@ -100,6 +128,37 @@
 #theme "jaguar"
 #theme "jaguartotem"
 #theme "totemanimal"
+#enditem
+
+#newitem
+#name "hellspawn"
+#gameid -1
+#sprite /graphics/hoburg/mounts/hellspawn.png
+#armor
+#offsety 31
+#offsetx 31
+#needs overlay hellspawn_overlay
+#define "#size 4"
+#define "#mapmove 22"
+#define "#ap 8"
+#define "#flying"
+#define "#mounted"
+#define "#weapon 48"
+#define "#weapon 19"
+#define "#gcost +60"
+#define "#hp +2"
+#define "#ressize 1"
+#define "#rcost +4"
+#define "#enc 15"
+#define "#fireres +5"
+#define "#heat +6"
+#define "#secondtmpshape hellspawn"
+#tag "animal hellspawn"
+#description "The hellspawn will fight until the end of the battle if the rider perishes"
+#tag "maxprot 16"
+#tag "guaranteedprefix hellspawn"
+#basechance 0.33
+#theme "abysian"
 #enditem
 
 #newitem

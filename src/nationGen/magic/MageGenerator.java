@@ -820,7 +820,7 @@ public class MageGenerator extends TroopGenerator {
 			if(power == 0 && this.random.nextDouble() > 0.85)
 				power = this.random.nextInt(3) + 2; // 2 to 4 
 				
-			String[] defaults = {"default_priestfilters"};
+			String[] defaults = {"default_priestfilters", "default_priestfilters_summons"};
 			this.applyFilters(list, power, defaults, "priestfilters");
 
 		}
