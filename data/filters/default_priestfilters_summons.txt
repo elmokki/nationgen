@@ -412,8 +412,8 @@
 #name "statue sculptor"
 #type "summoning"
 #basechance 0
-#chanceinc "primaryrace "Boreal human" OR primaryrace "Advanced human" OR primaryrace "Oriental human" AND magic earth 0.25"
-#chanceinc "primaryrace "Imperial human" OR primaryrace "Austral human" OR primaryrace "Amazon human" AND magic earth 0.1"
+#chanceinc "primaryrace 'Boreal human' OR primaryrace 'Advanced human' OR primaryrace 'Oriental human' AND magic earth 0.25"
+#chanceinc "primaryrace 'Imperial human' OR primaryrace 'Austral human' OR primaryrace 'Amazon human' AND magic earth 0.1"
 #chanceinc "nationcommand golemhp above 4 *2"
 #chanceinc "nationcommand golemhp above 9 *2"
 #command "#gcost +10"
@@ -431,8 +431,8 @@
 #name "large statue sculptor"
 #type "summoning"
 #basechance 0
-#chanceinc "primaryrace "Imperial human" OR primaryrace "Austral human" OR primaryrace "Amazon human" AND magic earth 0.25"
-#chanceinc "primaryrace "Boreal human" OR primaryrace "Advanced human" OR primaryrace "Oriental human" AND magic earth 0.1"
+#chanceinc "primaryrace 'Imperial human' OR primaryrace 'Austral human' OR primaryrace 'Amazon human' AND magic earth 0.25"
+#chanceinc "primaryrace 'Boreal human' OR primaryrace 'Advanced human' OR primaryrace 'Oriental human' AND magic earth 0.1"
 #chanceinc "nationcommand golemhp above 4 *2"
 #chanceinc "nationcommand golemhp above 9 *2"
 #command "#gcost +10"
@@ -464,3 +464,4 @@
 #theme "earth"
 #theme "golem"
 #end
+
