@@ -55,7 +55,7 @@ public class MageDescriber {
 		
 		List<Unit> compensationMages = new ArrayList<Unit>();
 		for(Unit u : n.generateComList())
-			if(u.tags.contains("extranmage"))
+			if(u.tags.contains("extramage"))
 			{
 				compensationMages.add(u);
 			}
