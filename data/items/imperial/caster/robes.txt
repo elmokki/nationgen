@@ -1,0 +1,872 @@
+--- Primitive junk - TBD; silly furs to go with silly fur-clad "legionaires?
+
+--- Less "imperial" robes and immodest half-robes - these will be most common on #extramages and in era 3
+
+#newitem
+#id cultist_halfrobe_plain
+#gameid -1
+#sprite /graphics/imperial/caster/robes/halfrobe_cultist_plain.png
+#recolormask /graphics/imperial/caster/robes/halfrobe_cultist_plain_recolormask.png
+#tag "eliteversion cultist_halfrobe_fancy"
+#tag "eliteversion cultist_robe_fancy"
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id cultist_halfrobe_fancy
+#gameid -1
+#sprite /graphics/imperial/caster/robes/halfrobe_cultist_fancy.png
+#recolormask /graphics/imperial/caster/robes/halfrobe_cultist_fancy_recolormask.png
+#tag "eliteversion cultist_robe_fancy"
+#tag "eliteversion shendyt_dyed"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id cultist_robe_plain
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_cultist_plain.png
+#recolormask /graphics/imperial/caster/robes/robe_cultist_plain_recolormask.png
+#tag "eliteversion cultist_robe_fancy"
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id cultist_robe_fancy
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_cultist_fancy.png
+#recolormask /graphics/imperial/caster/robes/robe_cultist_fancy_recolormask.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id shendyt_white
+#gameid -1
+#sprite /graphics/imperial/caster/robes/shendyt_long_white.png
+#tag "eliteversion shendyt_dyed"
+#tag "eliteversion robe_spectator_white"
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id shendyt_dyed
+#gameid -1
+#sprite /graphics/imperial/caster/robes/shendyt_long_white.png
+#recolormask /graphics/imperial/caster/robes/shendyt_long_recolormask.png
+#tag "eliteversion robe_spectator_light"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id himation_white
+#gameid 158
+#sprite /graphics/imperial/caster/robes/himation_white.png
+#tag "eliteversion himation_dyed"
+#armor
+#tag "tier 2"
+#tag "tier 1"
+#enditem
+
+#newitem
+#id himation_dyed
+#gameid 158
+#sprite /graphics/imperial/caster/robes/himation_white.png
+#recolormask /graphics/imperial/caster/robes/himation_recolormask.png
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+
+--- Togas - imperial mainstays
+
+#newitem
+#id toga_white
+#gameid 158
+#sprite /graphics/imperial/caster/robes/toga_white.png
+#tag "eliteversion toga_light"
+#tag "eliteversion toga_lightwhite"
+#tag "eliteversion toga_whitelight"
+#tag "eliteversion toga_mediumwhite"
+#tag "eliteversion toga_whitemedium"
+#tag "eliteversion toga_darkwhite"
+#tag "eliteversion toga_whitedark"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id toga_grey
+#gameid 158
+#sprite /graphics/imperial/caster/robes/toga_grey.png
+#tag "eliteversion toga_medium"
+#tag "eliteversion toga_lightgrey"
+#tag "eliteversion toga_greylight"
+#tag "eliteversion toga_mediumgrey"
+#tag "eliteversion toga_greymedium"
+#tag "eliteversion toga_darkgrey"
+#tag "eliteversion toga_greydark"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id toga_black
+#gameid 158
+#sprite /graphics/imperial/caster/robes/toga_black.png
+#tag "eliteversion toga_dark"
+#tag "eliteversion toga_lightblack"
+#tag "eliteversion toga_blacklight"
+#tag "eliteversion toga_mediumblack"
+#tag "eliteversion toga_blackmedium"
+#tag "eliteversion toga_darkblack"
+#tag "eliteversion toga_blackdark"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id toga_whitelight
+#gameid 158
+#chanceinc 0.33
+#sprite /graphics/imperial/caster/robes/toga_white.png
+#recolormask /graphics/imperial/caster/robes/toga_recolormask_lower_light.png
+#tag "eliteversion toga_light"
+#tag "eliteversion toga_lightdark"
+#tag "eliteversion toga_darklight"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id toga_lightwhite
+#gameid 158
+#chanceinc 0.33
+#sprite /graphics/imperial/caster/robes/toga_white.png
+#recolormask /graphics/imperial/caster/robes/toga_recolormask_upper_light.png
+#tag "eliteversion toga_light"
+#tag "eliteversion toga_lightdark"
+#tag "eliteversion toga_darklight"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id toga_whitemedium
+#gameid 158
+#chanceinc 0.33
+#sprite /graphics/imperial/caster/robes/toga_white.png
+#recolormask /graphics/imperial/caster/robes/toga_recolormask_lower_medium.png
+#tag "eliteversion toga_medium"
+#tag "eliteversion toga_lightdark"
+#tag "eliteversion toga_darklight"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id toga_mediumwhite
+#gameid 158
+#chanceinc 0.33
+#sprite /graphics/imperial/caster/robes/toga_white.png
+#recolormask /graphics/imperial/caster/robes/toga_recolormask_upper_medium.png
+#tag "eliteversion toga_medium"
+#tag "eliteversion toga_lightdark"
+#tag "eliteversion toga_darklight"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id toga_whitedark
+#gameid 158
+#chanceinc 0.33
+#sprite /graphics/imperial/caster/robes/toga_white.png
+#recolormask /graphics/imperial/caster/robes/toga_recolormask_lower_dark.png
+#tag "eliteversion toga_dark"
+#tag "eliteversion toga_lightdark"
+#tag "eliteversion toga_darklight"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id toga_darkwhite
+#gameid 158
+#chanceinc 0.33
+#sprite /graphics/imperial/caster/robes/toga_white.png
+#recolormask /graphics/imperial/caster/robes/toga_recolormask_upper_dark.png
+#tag "eliteversion toga_dark"
+#tag "eliteversion toga_lightdark"
+#tag "eliteversion toga_darklight"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id toga_greylight
+#gameid 158
+#chanceinc 0.33
+#sprite /graphics/imperial/caster/robes/toga_grey.png
+#recolormask /graphics/imperial/caster/robes/toga_recolormask_lower_light.png
+#tag "eliteversion toga_light"
+#tag "eliteversion toga_lightdark"
+#tag "eliteversion toga_darklight"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id toga_lightgrey
+#gameid 158
+#chanceinc 0.33
+#sprite /graphics/imperial/caster/robes/toga_grey.png
+#recolormask /graphics/imperial/caster/robes/toga_recolormask_upper_light.png
+#tag "eliteversion toga_light"
+#tag "eliteversion toga_lightdark"
+#tag "eliteversion toga_darklight"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id toga_greymedium
+#gameid 158
+#chanceinc 0.33
+#sprite /graphics/imperial/caster/robes/toga_grey.png
+#recolormask /graphics/imperial/caster/robes/toga_recolormask_lower_medium.png
+#tag "eliteversion toga_medium"
+#tag "eliteversion toga_lightdark"
+#tag "eliteversion toga_darklight"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id toga_mediumgrey
+#gameid 158
+#chanceinc 0.33
+#sprite /graphics/imperial/caster/robes/toga_grey.png
+#recolormask /graphics/imperial/caster/robes/toga_recolormask_upper_medium.png
+#tag "eliteversion toga_medium"
+#tag "eliteversion toga_lightdark"
+#tag "eliteversion toga_darklight"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id toga_greydark
+#gameid 158
+#chanceinc 0.33
+#sprite /graphics/imperial/caster/robes/toga_grey.png
+#recolormask /graphics/imperial/caster/robes/toga_recolormask_lower_dark.png
+#tag "eliteversion toga_dark"
+#tag "eliteversion toga_lightdark"
+#tag "eliteversion toga_darklight"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id toga_darkgrey
+#gameid 158
+#chanceinc 0.33
+#sprite /graphics/imperial/caster/robes/toga_grey.png
+#recolormask /graphics/imperial/caster/robes/toga_recolormask_upper_dark.png
+#tag "eliteversion toga_dark"
+#tag "eliteversion toga_lightdark"
+#tag "eliteversion toga_darklight"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id toga_blacklight
+#gameid 158
+#chanceinc 0.33
+#sprite /graphics/imperial/caster/robes/toga_black.png
+#recolormask /graphics/imperial/caster/robes/toga_recolormask_lower_light.png
+#tag "eliteversion toga_light"
+#tag "eliteversion toga_lightdark"
+#tag "eliteversion toga_darklight"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id toga_lightblack
+#gameid 158
+#chanceinc 0.33
+#sprite /graphics/imperial/caster/robes/toga_black.png
+#recolormask /graphics/imperial/caster/robes/toga_recolormask_upper_light.png
+#tag "eliteversion toga_light"
+#tag "eliteversion toga_lightdark"
+#tag "eliteversion toga_darklight"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id toga_blackmedium
+#gameid 158
+#chanceinc 0.33
+#sprite /graphics/imperial/caster/robes/toga_black.png
+#recolormask /graphics/imperial/caster/robes/toga_recolormask_lower_medium.png
+#tag "eliteversion toga_medium"
+#tag "eliteversion toga_lightdark"
+#tag "eliteversion toga_darklight"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id toga_mediumblack
+#gameid 158
+#chanceinc 0.33
+#sprite /graphics/imperial/caster/robes/toga_black.png
+#recolormask /graphics/imperial/caster/robes/toga_recolormask_upper_medium.png
+#tag "eliteversion toga_medium"
+#tag "eliteversion toga_lightdark"
+#tag "eliteversion toga_darklight"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id toga_blackdark
+#gameid 158
+#chanceinc 0.33
+#sprite /graphics/imperial/caster/robes/toga_black.png
+#recolormask /graphics/imperial/caster/robes/toga_recolormask_lower_dark.png
+#tag "eliteversion toga_dark"
+#tag "eliteversion toga_lightdark"
+#tag "eliteversion toga_darklight"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id toga_darkblack
+#gameid 158
+#chanceinc 0.33
+#sprite /graphics/imperial/caster/robes/toga_black.png
+#recolormask /graphics/imperial/caster/robes/toga_recolormask_upper_dark.png
+#tag "eliteversion toga_dark"
+#tag "eliteversion toga_lightdark"
+#tag "eliteversion toga_darklight"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id toga_light
+#gameid 158
+#sprite /graphics/imperial/caster/robes/toga_white.png
+#recolormask /graphics/imperial/caster/robes/toga_recolormask_light.png
+#tag "eliteversion toga_dark"
+#tag "eliteversion toga_lightdark"
+#tag "eliteversion toga_darklight"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id toga_medium
+#gameid 158
+#sprite /graphics/imperial/caster/robes/toga_grey.png
+#recolormask /graphics/imperial/caster/robes/toga_recolormask_medium.png
+#tag "eliteversion toga_light"
+#tag "eliteversion toga_dark"
+#tag "eliteversion toga_lightdark"
+#tag "eliteversion toga_darklight"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id toga_dark
+#gameid 158
+#sprite /graphics/imperial/caster/robes/toga_black.png
+#recolormask /graphics/imperial/caster/robes/toga_recolormask_dark.png
+#tag "eliteversion toga_light"
+#tag "eliteversion toga_lightdark"
+#tag "eliteversion toga_darklight"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id toga_lightdark
+#gameid 158
+#sprite /graphics/imperial/caster/robes/toga_white.png
+#recolormask /graphics/imperial/caster/robes/toga_recolormask_lightdark.png
+#tag "eliteversion toga_darklight"
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id toga_darklight
+#gameid 158
+#sprite /graphics/imperial/caster/robes/toga_black.png
+#recolormask /graphics/imperial/caster/robes/toga_recolormask_darklight.png
+#tag "eliteversion toga_lightdark"
+#armor
+#tag "tier 3"
+#enditem
+
+
+--- Spectator robes - progress marches on
+
+#newitem
+#id robe_spectator_white
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_spectator_white.png
+#tag "eliteversion robe_spectator_light"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_spectator_grey
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_spectator_grey.png
+#tag "eliteversion robe_spectator_medium"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_spectator_black
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_spectator_black.png
+#tag "eliteversion robe_spectator_dark"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_spectator_light
+#gameid 158
+#basechance 0.5
+#sprite /graphics/imperial/caster/robes/robe_spectator_white.png
+#recolormask /graphics/imperial/caster/robes/robe_spectator_recolormask_light.png
+#tag "eliteversion robe_spectator_dark2"
+#tag "eliteversion robe_spectator_medium2"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id robe_spectator_medium
+#gameid 158
+#basechance 0.5
+#sprite /graphics/imperial/caster/robes/robe_spectator_grey.png
+#recolormask /graphics/imperial/caster/robes/robe_spectator_recolormask_medium.png
+#tag "eliteversion robe_spectator_light2"
+#tag "eliteversion robe_spectator_dark2"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id robe_spectator_dark
+#gameid 158
+#basechance 0.5
+#sprite /graphics/imperial/caster/robes/robe_spectator_black.png
+#recolormask /graphics/imperial/caster/robes/robe_spectator_recolormask_dark.png
+#tag "eliteversion robe_spectator_light2"
+#tag "eliteversion robe_spectator_medium2"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id robe_spectator_light2
+#gameid 158
+#basechance 0.5
+#sprite /graphics/imperial/caster/robes/robe_spectator_dark.png
+#recolormask /graphics/imperial/caster/robes/robe_spectator_recolormask_light.png
+#tag "eliteversion robe_spectator_dark"
+#tag "eliteversion robe_spectator_medium"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id robe_spectator_medium2
+#gameid 158
+#basechance 0.5
+#sprite /graphics/imperial/caster/robes/robe_spectator_dark.png
+#recolormask /graphics/imperial/caster/robes/robe_spectator_recolormask_medium.png
+#tag "eliteversion robe_spectator_light"
+#tag "eliteversion robe_spectator_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id robe_spectator_dark2
+#gameid 158
+#basechance 0.5
+#sprite /graphics/imperial/caster/robes/robe_spectator_dark.png
+#recolormask /graphics/imperial/caster/robes/robe_spectator_recolormask_dark.png
+#tag "eliteversion robe_spectator_light"
+#tag "eliteversion robe_spectator_medium"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+
+--- Lemurian robes - these may get chest emblems if I'm ambitious
+
+#newitem
+#id robe_lemurian_white
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_lemurian_white.png
+#tag "eliteversion robe_lemurian_light"
+#tag "eliteversion robe_lemurian_white_darkbelt"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_lemurian_grey
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_lemurian_grey.png
+#tag "eliteversion robe_lemurian_medium"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_lemurian_black
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_lemurian_black.png
+#tag "eliteversion robe_lemurian_dark"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_lemurian_white_darkbelt
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_lemurian_white.png
+#recolormask /graphics/imperial/caster/robes/robe_lemurian_belt_dark.png
+#tag "eliteversion robe_lemurian_lightdark"
+#tag "eliteversion robe_lemurian_white"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_lemurian_grey_lightbelt
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_lemurian_grey.png
+#recolormask /graphics/imperial/caster/robes/robe_lemurian_belt_light.png
+#tag "eliteversion robe_lemurian_mediumlight"
+#tag "eliteversion robe_lemurian_grey"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_lemurian_black_lightbelt
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_lemurian_black.png
+#recolormask /graphics/imperial/caster/robes/robe_lemurian_belt_light.png
+#tag "eliteversion robe_lemurian_darklight"
+#tag "eliteversion robe_lemurian_black"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_lemurian_light
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_lemurian_white.png
+#recolormask /graphics/imperial/caster/robes/robe_lemurian_recolormask_light.png
+#tag "eliteversion robe_lemurian_lightdark"
+#armor
+#tag "tier 3"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_lemurian_medium
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_lemurian_grey.png
+#recolormask /graphics/imperial/caster/robes/robe_lemurian_recolormask_medium.png
+#tag "eliteversion robe_lemurian_mediumlight"
+#armor
+#tag "tier 3"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_lemurian_dark
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_lemurian_black.png
+#recolormask /graphics/imperial/caster/robes/robe_lemurian_recolormask_dark.png
+#tag "eliteversion robe_lemurian_darklight"
+#armor
+#tag "tier 3"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_lemurian_lightdark
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_lemurian_white.png
+#recolormask /graphics/imperial/caster/robes/robe_lemurian_recolormask_lightdark.png
+#tag "eliteversion robe_lemurian_darklight"
+#tag "eliteversion robe_lemurian_mediumlight"
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id robe_lemurian_mediumlight
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_lemurian_grey.png
+#recolormask /graphics/imperial/caster/robes/robe_lemurian_recolormask_mediumlight.png
+#tag "eliteversion robe_lemurian_darklight"
+#tag "eliteversion robe_lemurian_lightdark"
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id robe_lemurian_darklight
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_lemurian_black.png
+#recolormask /graphics/imperial/caster/robes/robe_lemurian_recolormask_darklight.png
+#tag "eliteversion robe_lemurian_lightdark"
+#tag "eliteversion robe_lemurian_mediumlight"
+#armor
+#tag "tier 3"
+#enditem
+
+
+
+--- Theurg robes - these shouldn't be bog-standard, but not exotic either
+
+#newitem
+#id robe_theurg_white
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_theurg_white.png
+#tag "eliteversion robe_theurg_whitetrim"
+#tag "eliteversion robe_archtheurg_white"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id robe_theurg_grey
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_theurg_grey.png
+#tag "eliteversion robe_theurg_greytrim"
+#tag "eliteversion robe_archtheurg_grey"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id robe_theurg_black
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_theurg_black.png
+#tag "eliteversion robe_theurg_blacktrim"
+#tag "eliteversion robe_archtheurg_black"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id robe_theurg_whitetrim
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_theurg_white.png
+#recolormask /graphics/imperial/caster/robes/robe_theurg_recolormask_trim.png
+#tag "eliteversion robe_theurg_light"
+#tag "eliteversion robe_archtheurg_whitetrim"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_theurg_greytrim
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_theurg_grey.png
+#recolormask /graphics/imperial/caster/robes/robe_theurg_recolormask_trim.png
+#tag "eliteversion robe_theurg_medium"
+#tag "eliteversion robe_archtheurg_greytrim"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_theurg_blacktrim
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_theurg_black.png
+#recolormask /graphics/imperial/caster/robes/robe_theurg_recolormask_trim.png
+#tag "eliteversion robe_theurg_dark"
+#tag "eliteversion robe_archtheurg_blacktrim"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_theurg_light
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_theurg_white.png
+#recolormask /graphics/imperial/caster/robes/robe_theurg_recolormask_light.png
+#tag "eliteversion robe_archtheurg_light"
+#armor
+#tag "tier 3"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_theurg_medium
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_theurg_grey.png
+#recolormask /graphics/imperial/caster/robes/robe_theurg_recolormask_medium.png
+#tag "eliteversion robe_archtheurg_medium"
+#armor
+#tag "tier 3"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_theurg_dark
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_theurg_black.png
+#recolormask /graphics/imperial/caster/robes/robe_theurg_recolormask_dark.png
+#tag "eliteversion robe_archtheurg_dark"
+#armor
+#tag "tier 3"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_archtheurg_white
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_archtheurg_white.png
+#tag "eliteversion robe_archtheurg_whitetrim"
+#tag "eliteversion robe_archtheurg_light"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_archtheurg_grey
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_archtheurg_grey.png
+#tag "eliteversion robe_archtheurg_greytrim"
+#tag "eliteversion robe_archtheurg_medium"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_archtheurg_black
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_archtheurg_black.png
+#tag "eliteversion robe_archtheurg_blacktrim"
+#tag "eliteversion robe_archtheurg_dark"
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_archtheurg_whitetrim
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_archtheurg_white.png
+#recolormask /graphics/imperial/caster/robes/robe_archtheurg_recolormask_trim.png
+#tag "eliteversion robe_archtheurg_light"
+#armor
+#tag "tier 3"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_archtheurg_greytrim
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_archtheurg_grey.png
+#recolormask /graphics/imperial/caster/robes/robe_archtheurg_recolormask_trim.png
+#tag "eliteversion robe_archtheurg_medium"
+#armor
+#tag "tier 3"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_archtheurg_blacktrim
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_archtheurg_black.png
+#recolormask /graphics/imperial/caster/robes/robe_archtheurg_recolormask_trim.png
+#tag "eliteversion robe_archtheurg_dark"
+#armor
+#tag "tier 3"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id robe_archtheurg_light
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_archtheurg_white.png
+#recolormask /graphics/imperial/caster/robes/robe_archtheurg_recolormask_light.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id robe_archtheurg_medium
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_archtheurg_grey.png
+#recolormask /graphics/imperial/caster/robes/robe_archtheurg_recolormask_medium.png
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#id robe_archtheurg_dark
+#gameid 158
+#sprite /graphics/imperial/caster/robes/robe_archtheurg_black.png
+#recolormask /graphics/imperial/caster/robes/robe_archtheurg_recolormask_dark.png
+#armor
+#tag "tier 3"
+#enditem

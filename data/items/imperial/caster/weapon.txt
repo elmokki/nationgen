@@ -1,0 +1,249 @@
+#newitem
+#id broadsword
+#gameid 8
+#sprite /graphics/weapon/standard/broadsword.png
+#tag "tier 3"
+#tag "tier 2"
+#theme "iron"
+#enditem
+
+#newitem
+#id broadsword_bronze
+#gameid bronzebroadsword
+#sprite /graphics/weapon/bronze/broadsword.png
+#tag "tier 3"
+#tag "tier 2"
+#theme "bronze"
+#enditem
+
+#newitem
+#id hammer
+#gameid 13
+#sprite /graphics/weapon/standard/hammer.png
+#tag "tier 3"
+#tag "tier 2"
+#tag "tier 1"
+#theme "iron"
+#enditem
+
+#newitem
+#id hammer_bronze
+#gameid bronzehammer
+#sprite /graphics/weapon/bronze/hammer.png
+#tag "tier 3"
+#tag "tier 2"
+#tag "tier 1"
+#theme "bronze"
+#enditem
+
+#newitem
+#id shortsword
+#gameid 6
+#sprite /graphics/weapon/standard/shortsword.png
+#tag "eliteversion broadsword"
+#tag "tier 3"
+#tag "tier 2"
+#tag "tier 1"
+#theme "iron"
+#enditem
+
+#newitem
+#id shortsword_bronze
+#gameid 645
+#sprite /graphics/weapon/bronze/shortsword.png
+#tag "eliteversion broadsword_bronze"
+#tag "tier 3"
+#tag "tier 2"
+#tag "tier 1"
+#theme "bronze"
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#sprite /graphics/weapon/standard/falchion.png
+#tag "tier 3"
+#tag "tier 2"
+#theme "iron"
+#enditem
+
+#newitem
+#id kopesh
+#gameid 513
+#sprite /graphics/weapon/bronze/kopesh.png
+#tag "tier 3"
+#tag "tier 2"
+#theme "bronze"
+#enditem
+
+#newitem
+#id trident
+#gameid 3
+#sprite /graphics/weapon/mage/trident.png
+#tag "tier 3"
+#tag "tier 2"
+#theme "iron"
+#theme "water"
+#enditem
+
+#newitem
+#id trident_bronze
+#gameid 641
+#sprite /graphics/weapon/mage/trident_bronze.png
+#tag "tier 3"
+#tag "tier 2"
+#theme "bronze"
+#theme "water"
+#enditem
+
+#newitem
+#id quarterstaff
+#gameid 7
+#sprite /graphics/weapon/standard/quarterstaff.png
+#tag "tier 2"
+#tag "eliteversion orbstaff"
+#tag "eliteversion serpentstaff"
+#tag "eliteversion skullstaff"
+#tag "eliteversion knobblystaff"
+#enditem
+
+#newitem
+#id serpentstaff
+#gameid 7
+#sprite /graphics/weapon/mage/serpentstaff.png
+#theme "lizard"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id orb
+#gameid -1
+#sprite /graphics/weapon/mage/orb.png
+#recolormask self
+#tag "tier 3"
+#enditem
+
+#newitem
+#id orbstaff
+#gameid 7
+#sprite /graphics/weapon/mage/orbstaff.png
+#recolormask /graphics/weapon/mage/orbstaff_recolormask.png
+#tag "tier 3"
+#enditem
+
+#newitem
+#id sceptre
+#gameid 446
+#sprite /graphics/weapon/mage/sceptre.png
+#tag "tier 2"
+#tag "tier 3"
+#tag "eliteversion orbsceptre"
+#enditem
+
+#newitem
+#id orbsceptre
+#gameid 446
+#sprite /graphics/weapon/mage/sceptre_orb.png
+#recolormask /graphics/weapon/mage/sceptre_orb_recolormask.png
+#theme "superior"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id pestle
+#gameid 499
+#needs offhand mortar
+#sprite /graphics/weapon/mage/pestle.png
+#tag "tier 1"
+#enditem
+
+#newitem
+#id dagger
+#gameid 671
+#sprite /graphics/weapon/mage/dagger.png
+#tag "tier 1"
+#enditem
+
+#newitem
+#id skullstaff
+#gameid 7
+#sprite /graphics/weapon/mage/skullstaff.png
+#theme "primitive"
+#theme "death"
+#theme "nature"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id metalstaff
+#gameid 7
+#sprite /graphics/weapon/mage/metalstaff.png
+#tag "tier 2"
+#tag "tier 1"
+#tag "eliteversion metalstaff_bauble"
+#enditem
+
+#newitem
+#id metalstaff_bauble
+#gameid 7
+#sprite /graphics/weapon/mage/metalstaff_bauble.png
+#tag "tier 3"
+#enditem
+
+#newitem
+#id knobblystaff
+#gameid 7
+#sprite /graphics/weapon/mage/knobblystaff.png
+#tag "tier 3"
+#enditem
+
+#newitem
+#id vinebonestaff
+#gameid 7
+#sprite /graphics/weapon/mage/staff_vinebone.png
+#theme "primitive"
+#theme "death"
+#theme "nature"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id twig1
+#gameid 498
+#sprite /graphics/weapon/mage/twig1.png
+#theme "primitive"
+#theme "nature"
+#tag "tier 1"
+#tag "eliteversion branch"
+#enditem
+
+#newitem
+#id twig2
+#gameid 498
+#sprite /graphics/weapon/mage/twig2.png
+#theme "primitive"
+#theme "nature"
+#tag "tier 1"
+#tag "eliteversion branch"
+#enditem
+
+#newitem
+#id branch
+#gameid 240
+#sprite /graphics/weapon/mage/branch.png
+#offsetx -4
+#offsety -11
+#theme "primitive"
+#theme "nature"
+#tag "tier 2"
+#tag "eliteversion branchstaff"
+#enditem
+
+#newitem
+#id branchstaff
+#gameid 7
+#sprite /graphics/weapon/mage/staff_branch.png
+#theme "primitive"
+#theme "nature"
+#tag "tier 3"
+#enditem
