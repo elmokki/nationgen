@@ -1,0 +1,120 @@
+
+#newitem
+#id orb
+#gameid -1
+#sprite /graphics/offhand/mage/orb.png
+#recolormask self
+#armor
+#enditem
+
+
+#newitem
+#id mortar
+#gameid -1
+#sprite /graphics/offhand/mage/mortar.png
+#armor
+#enditem
+
+#newitem
+#id skull
+#gameid -1
+#sprite /graphics/offhand/mage/skull.png
+#armor
+#enditem
+
+#newitem
+#id pitcher
+#gameid 496
+#sprite /graphics/offhand/mage/pitcher.png
+#enditem
+
+#newitem
+#id sutra
+#gameid 459
+#enditem
+
+
+--- Lower-probability touch attacks
+
+#newitem
+#id shrinking_slap
+#basechance 0
+#chanceinc "magic nature 0.375"
+#chanceinc "magic blood 0.125"
+#gameid 543
+#enditem
+
+#newitem
+#id fire_bonds
+#basechance 0
+#chanceinc "personalmagic fire 2 0.25"
+#gameid 302
+#notfortier 1
+#notfortier 2
+#enditem
+
+#newitem
+#id astral_fetters
+#basechance 0
+#chanceinc "personalmagic astral 2 0.25"
+#gameid 416
+#notfortier 1
+#notfortier 2
+#enditem
+
+#newitem
+#id false_fetters
+#basechance 0
+#chanceinc "personalmagic air 2 0.25"
+#gameid 219
+#notfortier 1
+#notfortier 2
+#enditem
+
+#newitem
+#id halt_dead
+#basechance 0
+#chanceinc "personalmagic holy 0.25"
+#chanceinc "personalmagic death -0.25"
+#gameid 460
+#enditem
+
+#newitem
+#id halt_dead
+#basechance 0
+#chanceinc "personalmagic death 0.25"
+#gameid 460
+#enditem
+
+#newitem
+#id halt_demon
+#basechance 0
+#chanceinc "personalmagic holy 0.25"
+#chanceinc "personalmagic blood -0.25"
+#gameid 468
+#enditem
+
+#newitem
+#id halt_demon
+#basechance 0
+#chanceinc "personalmagic blood 0.25"
+#gameid 468
+#enditem
+
+#newitem
+#id halt_sacred
+#basechance 0
+#chanceinc "personalmagic holy 0.25"
+#gameid 480
+#notfortier 1
+#enditem
+
+#newitem
+#id bane_of_heresy
+#basechance 0
+#chanceinc "personalmagic holy 0.25"
+#gameid 509
+#notfortier 1
+#notfortier 2
+#enditem
+
