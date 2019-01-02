@@ -1,0 +1,21 @@
+-- Normal
+#newpose
+#name "infantry"
+#renderorder "shadow bonusweapon basesprite shirt armor weapon offhandw helmet offhanda"
+#role "infantry"
+#role "scout"
+
+#load basesprite /data/items/merrow/bases.txt
+#load hands /data/items/merrow/hands.txt
+#load shadow /data/items/merrow/shadow.txt
+
+#load armor /data/items/merrow/armor.txt
+#load shirt /data/items/merrow/skirt.txt
+#load helmet /data/items/merrow/helmet.txt
+#load offhand /data/items/merrow/shields.txt
+#load weapon /data/items/merrow/weapon.txt
+#load bonusweapon /data/items/merrow/bonusranged.txt
+
+#generateitem 1 shirt
+
+#endpose

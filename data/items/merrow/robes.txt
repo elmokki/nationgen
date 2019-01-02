@@ -1,0 +1,618 @@
+--- Boring old merrow loincloths and kilts
+
+#newitem
+#id loincloth_dark
+#gameid -1
+#sprite /graphics/merrow/armor/robes/loincloth_dark.png
+#recolormask self
+#tag "eliteversion kilt_dark"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id loincloth_medium
+#gameid -1
+#sprite /graphics/merrow/armor/robes/loincloth_medium.png
+#recolormask self
+#tag "eliteversion kilt_medium"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id loincloth_light
+#gameid -1
+#sprite /graphics/merrow/armor/robes/loincloth_light.png
+#recolormask self
+#tag "eliteversion kilt_light"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id kilt_dark
+#gameid -1
+#sprite /graphics/merrow/armor/robes/kilt_dark.png
+#recolormask self
+#tag "eliteversion kilt_long_dark"
+#tag "eliteversion kilt_long_dull"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id kilt_medium
+#gameid -1
+#sprite /graphics/merrow/armor/robes/kilt_medium.png
+#recolormask self
+#tag "eliteversion kilt_long_dull"
+#tag "eliteversion kilt_long_pale"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id kilt_light
+#gameid -1
+#sprite /graphics/merrow/armor/robes/kilt_light.png
+#recolormask self
+#tag "eliteversion kilt_long_light"
+#tag "eliteversion kilt_long_pale"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id kilt_long_brown
+#gameid -1
+#sprite /graphics/merrow/armor/robes/kilt_long_brown.png
+#tag "eliteversion kilt_long_dark"
+#tag "eliteversion kilt_long_dull"
+#tag "eliteversion kilt_long_pale"
+#tag "eliteversion kilt_long_light"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id kilt_long_dark
+#gameid -1
+#sprite /graphics/merrow/armor/robes/kilt_long_dark.png
+#recolormask self
+#tag "eliteversion kilt_long_light"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id kilt_long_dull
+#gameid -1
+#sprite /graphics/merrow/armor/robes/kilt_long_dark.png
+#recolormask /graphics/merrow/armor/robes/kilt_long_recolormask_dull.png
+#tag "eliteversion kilt_long_dull"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id kilt_long_pale
+#gameid -1
+#sprite /graphics/merrow/armor/robes/kilt_long_light.png
+#recolormask /graphics/merrow/armor/robes/kilt_long_recolormask_pale.png
+#tag "eliteversion kilt_long_dull"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id kilt_long_light
+#gameid -1
+#sprite /graphics/merrow/armor/robes/kilt_long_light.png
+#recolormask self
+#tag "eliteversion kilt_long_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+
+
+--- Cultist halfrobes
+
+#newitem
+#id cultist_halfrobe_plain_coral
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_cultist_coral.png
+#recolormask /graphics/merrow/armor/robes/halfrobe_cultist_recolormask4.png
+#tag "eliteversion cultist_halfrobe_fancy_coral"
+#tag "eliteversion cultist_halfrobe_fancier_coral"
+#armor
+#tag "tier 1"
+#theme coral
+#enditem
+
+#newitem
+#id cultist_halfrobe_fancy_coral
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_cultist_coral.png
+#recolormask /graphics/merrow/armor/robes/halfrobe_cultist_recolormask3.png
+#tag "eliteversion cultist_halfrobe_fancier_coral"
+#tag "eliteversion cultist_halfrobe_ornate_coral"
+#armor
+#tag "tier 2"
+#theme coral
+#enditem
+
+#newitem
+#id cultist_halfrobe_fancier_coral
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_cultist_coral.png
+#recolormask /graphics/merrow/armor/robes/halfrobe_cultist_recolormask2.png
+#tag "eliteversion cultist_halfrobe_ornate_coral"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme coral
+#enditem
+
+#newitem
+#id cultist_halfrobe_ornate_coral
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_cultist_coral.png
+#recolormask /graphics/merrow/armor/robes/halfrobe_cultist_recolormask1.png
+#armor
+#tag "tier 3"
+#theme coral
+#enditem
+
+#newitem
+#id cultist_halfrobe_plain_silver
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_cultist_silver.png
+#recolormask /graphics/merrow/armor/robes/halfrobe_cultist_recolormask4.png
+#tag "eliteversion cultist_halfrobe_fancy_silver"
+#tag "eliteversion cultist_halfrobe_fancier_silver"
+#tag "eliteversion cultist_halfrobe_fancy_gold"
+#tag "eliteversion cultist_halfrobe_fancier_gold"
+#armor
+#tag "tier 1"
+#theme bronze
+#enditem
+
+#newitem
+#id cultist_halfrobe_fancy_silver
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_cultist_silver.png
+#recolormask /graphics/merrow/armor/robes/halfrobe_cultist_recolormask3.png
+#tag "eliteversion cultist_halfrobe_fancier_silver"
+#tag "eliteversion cultist_halfrobe_ornate_silver"
+#tag "eliteversion cultist_halfrobe_fancier_gold"
+#tag "eliteversion cultist_halfrobe_ornate_gold"
+#armor
+#tag "tier 2"
+#theme bronze
+#enditem
+
+#newitem
+#id cultist_halfrobe_fancier_silver
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_cultist_silver.png
+#recolormask /graphics/merrow/armor/robes/halfrobe_cultist_recolormask2.png
+#tag "eliteversion cultist_halfrobe_ornate_silver"
+#tag "eliteversion cultist_halfrobe_ornate_gold"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme bronze
+#enditem
+
+#newitem
+#id cultist_halfrobe_ornate_silver
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_cultist_silver.png
+#recolormask /graphics/merrow/armor/robes/halfrobe_cultist_recolormask1.png
+#tag "eliteversion cultist_halfrobe_ornate_gold"
+#armor
+#tag "tier 3"
+#theme bronze
+#enditem
+
+#newitem
+#id cultist_halfrobe_plain_gold
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_cultist_gold.png
+#recolormask /graphics/merrow/armor/robes/halfrobe_cultist_recolormask4.png
+#tag "eliteversion cultist_halfrobe_fancy_gold"
+#tag "eliteversion cultist_halfrobe_fancier_gold"
+#armor
+#tag "tier 1"
+#theme bronze
+#enditem
+
+#newitem
+#id cultist_halfrobe_fancy_gold
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_cultist_gold.png
+#recolormask /graphics/merrow/armor/robes/halfrobe_cultist_recolormask3.png
+#tag "eliteversion cultist_halfrobe_fancier_gold"
+#tag "eliteversion cultist_halfrobe_ornate_gold"
+#armor
+#tag "tier 2"
+#theme bronze
+#enditem
+
+#newitem
+#id cultist_halfrobe_fancier_gold
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_cultist_gold.png
+#recolormask /graphics/merrow/armor/robes/halfrobe_cultist_recolormask2.png
+#tag "eliteversion cultist_halfrobe_ornate_gold"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#theme bronze
+#enditem
+
+#newitem
+#id cultist_halfrobe_ornate_gold
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_cultist_gold.png
+#recolormask /graphics/merrow/armor/robes/halfrobe_cultist_recolormask1.png
+#armor
+#tag "tier 3"
+#theme bronze
+#enditem
+
+
+
+--- Wizard halfrobes
+#newitem
+#id halfrobe_wizard_brown
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_wizard_brown.png
+#tag "eliteversion halfrobe_wizard_black"
+#tag "eliteversion halfrobe_wizard_grey"
+#tag "eliteversion halfrobe_wizard_white"
+#tag "eliteversion halfrobe_wizard_dark"
+#tag "eliteversion halfrobe_wizard_medium"
+#tag "eliteversion halfrobe_wizard_light"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id halfrobe_wizard_black
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_wizard_black.png
+#tag "eliteversion halfrobe_wizard_dark"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id halfrobe_wizard_grey
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_wizard_grey.png
+#tag "eliteversion halfrobe_wizard_medium"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id halfrobe_wizard_white
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_wizard_white.png
+#tag "eliteversion halfrobe_wizard_light"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id halfrobe_wizard_dark
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_wizard_black.png
+#recolormask self
+#tag "eliteversion halfrobe_wizard_medium"
+#tag "eliteversion halfrobe_wizard_light"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id halfrobe_wizard_medium
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_wizard_grey.png
+#recolormask self
+#tag "eliteversion halfrobe_wizard_dark"
+#tag "eliteversion halfrobe_wizard_light"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id halfrobe_wizard_light
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_wizard_white.png
+#recolormask self
+#tag "eliteversion halfrobe_wizard_medium"
+#tag "eliteversion halfrobe_wizard_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+
+
+--- Monk halfrobes (plain)
+#newitem
+#id halfrobe_plain_brown
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_plain_brown.png
+#tag "eliteversion halfrobe_plain_black"
+#tag "eliteversion halfrobe_plain_grey"
+#tag "eliteversion halfrobe_plain_white"
+#tag "eliteversion halfrobe_plain_dark"
+#tag "eliteversion halfrobe_plain_medium"
+#tag "eliteversion halfrobe_plain_light"
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id halfrobe_plain_black
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_plain_dark.png
+#tag "eliteversion halfrobe_plain_dark"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id halfrobe_plain_grey
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_plain_medium.png
+#tag "eliteversion halfrobe_plain_medium"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id halfrobe_plain_white
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_plain_light.png
+#tag "eliteversion halfrobe_plain_light"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#id halfrobe_plain_dark
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_plain_dark.png
+#recolormask self
+#tag "eliteversion halfrobe_plain_medium"
+#tag "eliteversion halfrobe_plain_light"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id halfrobe_plain_medium
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_plain_medium.png
+#recolormask self
+#tag "eliteversion halfrobe_plain_dark"
+#tag "eliteversion halfrobe_plain_light"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#id halfrobe_plain_light
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_plain_light.png
+#recolormask self
+#tag "eliteversion halfrobe_plain_medium"
+#tag "eliteversion halfrobe_plain_dark"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+
+
+--- Monk halfrobes (belted)
+#newitem
+#id halfrobe_belt_brown
+#basechance 0.25
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_belt_brown.png
+#tag "eliteversion halfrobe_belt_black"
+#tag "eliteversion halfrobe_belt_grey"
+#tag "eliteversion halfrobe_belt_white"
+#tag "eliteversion halfrobe_belt_dark"
+#tag "eliteversion halfrobe_belt_medium"
+#tag "eliteversion halfrobe_belt_light"
+#tag "eliteversion halfrobe_belt_black_fancy"
+#tag "eliteversion halfrobe_belt_grey_fancy"
+#tag "eliteversion halfrobe_belt_white_fancy"
+#tag "eliteversion halfrobe_belt_dark_fancy"
+#tag "eliteversion halfrobe_belt_medium_fancy"
+#tag "eliteversion halfrobe_belt_light_fancy"
+#armor
+#tag "tier 1"
+#needstype belt fixed
+#enditem
+
+#newitem
+#id halfrobe_belt_black
+#basechance 0.25
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_belt_black.png
+#tag "eliteversion halfrobe_belt_dark"
+#tag "eliteversion halfrobe_belt_black_fancy"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#needstype belt fixed
+#enditem
+
+#newitem
+#id halfrobe_belt_grey
+#basechance 0.25
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_belt_grey.png
+#tag "eliteversion halfrobe_belt_medium"
+#tag "eliteversion halfrobe_belt_grey_fancy"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#needstype belt fixed
+#enditem
+
+#newitem
+#id halfrobe_belt_white
+#basechance 0.25
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_belt_white.png
+#tag "eliteversion halfrobe_belt_light"
+#tag "eliteversion halfrobe_belt_white_fancy"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#needstype belt fixed
+#enditem
+
+#newitem
+#id halfrobe_belt_dark
+#basechance 0.25
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_belt_black.png
+#recolormask /graphics/merrow/armor/robes/halfrobe_belt_recolormask_dark.png
+#tag "eliteversion halfrobe_belt_medium"
+#tag "eliteversion halfrobe_belt_light"
+#tag "eliteversion halfrobe_belt_dark_fancy"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#needstype belt fixed
+#enditem
+
+#newitem
+#id halfrobe_belt_medium
+#basechance 0.25
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_belt_grey.png
+#recolormask /graphics/merrow/armor/robes/halfrobe_belt_recolormask_medium.png
+#tag "eliteversion halfrobe_belt_dark"
+#tag "eliteversion halfrobe_belt_light"
+#tag "eliteversion halfrobe_belt_medium_fancy"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#needstype belt fixed
+#enditem
+
+#newitem
+#id halfrobe_belt_light
+#basechance 0.25
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_belt_white.png
+#recolormask /graphics/merrow/armor/robes/halfrobe_belt_recolormask_light.png
+#tag "eliteversion halfrobe_belt_medium"
+#tag "eliteversion halfrobe_belt_dark"
+#tag "eliteversion halfrobe_belt_light_fancy"
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#needstype belt fixed
+#enditem
+
+#newitem
+#id halfrobe_belt_black_fancy
+#basechance 0.25
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_belt_black.png
+#tag "eliteversion halfrobe_belt_dark"
+#tag "eliteversion halfrobe_belt_dark_fancy"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#needstype belt colored
+#enditem
+
+#newitem
+#id halfrobe_belt_grey_fancy
+#basechance 0.25
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_belt_grey.png
+#tag "eliteversion halfrobe_belt_medium"
+#tag "eliteversion halfrobe_belt_medium_fancy"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#needstype belt colored
+#enditem
+
+#newitem
+#id halfrobe_belt_white_fancy
+#basechance 0.25
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_belt_white.png
+#tag "eliteversion halfrobe_belt_light"
+#tag "eliteversion halfrobe_belt_light_fancy"
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#needstype belt colored
+#enditem
+
+#newitem
+#id halfrobe_belt_dark_fancy
+#basechance 0.25
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_belt_black.png
+#recolormask /graphics/merrow/armor/robes/halfrobe_belt_recolormask_dark.png
+#armor
+#tag "tier 3"
+#needstype belt colored
+#enditem
+
+#newitem
+#id halfrobe_belt_medium_fancy
+#basechance 0.25
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_belt_grey.png
+#recolormask /graphics/merrow/armor/robes/halfrobe_belt_recolormask_medium.png
+#armor
+#tag "tier 3"
+#needstype belt colored
+#enditem
+
+#newitem
+#id halfrobe_belt_light_fancy
+#basechance 0.25
+#gameid -1
+#sprite /graphics/merrow/armor/robes/halfrobe_belt_white.png
+#recolormask /graphics/merrow/armor/robes/halfrobe_belt_recolormask_light.png
+#armor
+#tag "tier 3"
+#needstype belt colored
+#enditem
