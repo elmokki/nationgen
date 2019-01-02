@@ -1,0 +1,75 @@
+#newitem
+#id hair
+#gameid -1
+#sprite /graphics/merrow/hair/hair.png
+#armor
+#maxprot 8
+#basechance 0.5
+#enditem
+
+#newitem
+#id "leather cap"
+#gameid 120
+#sprite /graphics/merrow/helmet/cap_leather.png
+#armor
+#theme leather
+#maxprot 10
+#enditem
+
+#newitem
+#id "sharkskin cap"
+#gameid 152
+#sprite /graphics/merrow/helmet/cap_sharkskin.png
+#armor
+#theme sharkskin
+#maxprot 10
+#enditem
+
+#newitem
+#id "shell cap"
+#gameid 224
+#sprite /graphics/merrow/helmet/cap_shell.png
+#armor
+#theme shell
+#maxprot 10
+#enditem
+
+#newitem
+#id "coral cap"
+#gameid 24
+#sprite /graphics/merrow/helmet/cap_coral.png
+#armor
+#eliteversion coralcap_elite
+#theme coral
+#minprot 9
+#enditem
+
+#newitem
+#id coralcap_elite
+#gameid 24
+#sprite /graphics/merrow/helmet/cap_coral_elite.png
+#armor
+#theme coral
+#theme elite
+#minprot 9
+#enditem
+
+#newitem
+#id "bronze cap"
+#gameid 135
+#sprite /graphics/merrow/helmet/cap_bronze.png
+#armor
+#eliteversion bronzecap_elite
+#theme bronze
+#minprot 9
+#enditem
+
+#newitem
+#id bronzecap_elite
+#gameid 135
+#sprite /graphics/merrow/helmet/cap_bronze_elite.png
+#armor
+#theme bronze
+#theme elite
+#minprot 9
+#enditem

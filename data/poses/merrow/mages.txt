@@ -1,0 +1,31 @@
+
+--- Mage-priest
+#newpose
+#role "mage"
+#role "priest"
+#name "merrow caster"
+#renderorder "shadow basesprite shirt armor belt weapon hands helmet"
+#tier 1
+#tier 2
+#tier 3
+
+#load basesprite /data/items/merrow/bases.txt
+#load shadow /data/items/merrow/shadow.txt
+#load hands /data/items/merrow/hands.txt
+
+#load helmet /data/items/merrow/helmet_mages.txt
+#load shirt /data/items/merrow/bling.txt
+#load belt /data/items/merrow/belt.txt
+#load armor /data/items/merrow/robes.txt
+#load weapon /data/items/merrow/weapon_mage.txt
+
+#generateitem 1 shirt
+
+#dontvaryhat
+
+#endpose
+
+
+
+
+

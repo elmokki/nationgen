@@ -8,11 +8,12 @@
 #chanceinc primaryrace "Van" *2
 #chanceinc primaryrace "Boreal human" *2
 #chanceinc primaryrace "Fir bolg" *2
-#chanceinc primaryrace "Ogre" *2
+#chanceinc primaryrace "Ogre" AND hastheme "boreal *2
 #chanceinc hastheme "boreal" *2
 
--- #racethemes firbolg_themes
--- #freetheme techlevel
+#racethemes merrow_themes
+#freetheme techlevel
+#freetheme habitat
 
 -- 40% H1/48% H2/12% H3 max priest level
 #priest_H1_upgradechance 0.6
@@ -22,9 +23,10 @@
 #all_troops_sacred
 #all_troops_elite
 
-#pose merrowinfantry
-#pose merrowcavalry_land
+#pose merrowtroops
 #pose merrowmages
+#pose merrowcavalry_land
+#pose generic_scouts
 
 #longsyllables /data/names/nations/fomorian/longsyllables.txt
 #shortsyllables /data/names/nations/fomorian/shortsyllables.txt

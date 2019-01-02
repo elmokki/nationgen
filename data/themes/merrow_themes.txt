@@ -1,0 +1,99 @@
+-- Generic "blank" theme to make sure merrow aren't always slavers
+#newtheme
+#name default
+#basechance 4
+#endtheme
+
+-- Techlevel (shell, coral, bronze)
+-- Weights: EA 2, MA 1, LA 0.5
+#newtheme
+#type techlevel
+#name shell
+#basechance 1
+#chanceinc era 1 1
+#chanceinc era 3 -0.5
+#themeinc bronze *0.001
+#themeinc stone *2
+#themeinc coral *0.1
+#theme primitive
+#endtheme
+
+-- Weights: EA 2, MA 1, LA 0.5
+#newtheme
+#type techlevel
+#name coral
+#basechance 1
+#chanceinc era 1 1
+#chanceinc era 3 -0.5
+#themeinc bronze *0.001
+#themeinc stone *0.5
+#themeinc shell *0.1
+#theme primitive
+#endtheme
+
+-- Weights: EA 1, MA 2, LA 4
+#newtheme
+#type techlevel
+#name bronze
+#basechance 2
+#chanceinc era 3 2
+#chanceinc era 1 -1
+#themeinc stone *0.001
+#themeinc naked *0.001
+#themeinc shell *0.01
+#themeinc coral *0.01
+#themeinc primitive *0.1
+#theme advanced
+#endtheme
+
+
+-- Habitat (terrestrial, marine)
+#newtheme
+#type habitat
+#name terrestrial
+#basechance 1
+#themeinc sharkskin *0.001
+#themeinc bronze *2
+#themeinc shell *0.5
+#themeinc coral *0.25
+#themeinc marine *0.001
+#endtheme
+
+#newtheme
+#type habitat
+#name marine
+#basechance 1
+#chanceinc racetheme primitive *5
+#themeinc leather *0.001
+#themeinc blunt *0.25
+#themeinc terrestrial *0.001
+#endtheme
+
+-- Weights: EA 0.5, MA 0.5, LA 0.5
+#newtheme
+#type social
+#name slaver
+#basechance 0.05
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#themeinc theme slave *20
+#themeinc theme free *0.5
+#themeinc racename caveman *5
+#themeinc racename primate *5
+#themeinc racename "Boreal human" *5
+#themeinc racename hoburg *5
+#themeinc racename caelian *0.1
+#themeinc racename van *0.1
+#themeinc racename sidhe *0.1
+#themeinc racename tengu *0.1
+#secondaryracedefinition "#freetemplatefilter slavetemplate slave"
+#racedefinition "#secondaryracetroopmod 100"
+#racedefinition "#secondaryracemagemod -100"
+#racedefinition "#forts default_forts"
+#racedefinition "#forts city_forts"
+#endtheme
