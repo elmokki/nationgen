@@ -5,6 +5,8 @@
 #armor
 #theme primitive
 #theme naked
+#themeinc theme stone *3
+#themeinc theme naked *3
 #enditem
 
 --- just land
@@ -14,6 +16,7 @@
 #sprite /graphics/merrow/armor/leather_cuirass.png
 #armor
 #theme leather
+#themeinc theme leather *2
 #enditem
 
 #newitem
@@ -22,6 +25,7 @@
 #sprite /graphics/merrow/armor/leather_hauberk.png
 #armor
 #theme leather
+#themeinc theme leather *2
 #enditem
 
 #newitem
@@ -30,6 +34,7 @@
 #sprite /graphics/merrow/armor/leather_full.png
 #armor
 #theme leather
+#themeinc theme leather *2
 #enditem
 
 #newitem
@@ -38,6 +43,7 @@
 #sprite /graphics/merrow/armor/ring_cuirass.png
 #armor
 #theme leather
+#themeinc theme leather *2
 #enditem
 
 #newitem
@@ -46,6 +52,7 @@
 #sprite /graphics/merrow/armor/ring_hauberk.png
 #armor
 #theme leather
+#themeinc theme leather *2
 #enditem
 
 #newitem
@@ -54,6 +61,7 @@
 #sprite /graphics/merrow/armor/ring_full.png
 #armor
 #theme leather
+#themeinc theme leather *2
 #enditem
 
 
@@ -64,6 +72,7 @@
 #sprite /graphics/merrow/armor/sharkskin_cuirass.png
 #armor
 #theme sharkskin
+#themeinc theme sharkskin *2
 #enditem
 
 #newitem
@@ -72,6 +81,7 @@
 #sprite /graphics/merrow/armor/sharkskin_armor.png
 #armor
 #theme sharkskin
+#themeinc theme sharkskin *2
 #enditem
 
 #newitem
@@ -80,6 +90,7 @@
 #sprite /graphics/merrow/armor/sharkring_cuirass.png
 #armor
 #theme sharkskin
+#themeinc theme sharkskin *2
 #enditem
 
 #newitem
@@ -88,6 +99,7 @@
 #sprite /graphics/merrow/armor/sharkring_hauberk.png
 #armor
 #theme sharkskin
+#themeinc theme sharkskin *2
 #enditem
 
 #newitem
@@ -96,6 +108,8 @@
 #sprite /graphics/merrow/armor/coral_cuirass.png
 #armor
 #theme coral
+#themeinc theme coral *2
+#define "#poisonarmor 5"
 #enditem
 
 #newitem
@@ -104,6 +118,8 @@
 #sprite /graphics/merrow/armor/coral_hauberk.png
 #armor
 #theme coral
+#themeinc theme coral *2
+#define "#poisonarmor 5"
 #enditem
 
 #newitem
@@ -112,6 +128,7 @@
 #sprite /graphics/merrow/armor/shell_hauberk.png
 #armor
 #theme shell
+#themeinc theme shell *2
 #enditem
 
 
@@ -122,6 +139,7 @@
 #sprite /graphics/merrow/armor/bronzescale_cuirass.png
 #armor
 #theme bronze
+#themeinc theme bronze *2
 #enditem
 
 #newitem
@@ -130,6 +148,7 @@
 #sprite /graphics/merrow/armor/bronzescale_hauberk.png
 #armor
 #theme bronze
+#themeinc theme bronze *2
 #enditem
 
 #newitem
@@ -139,6 +158,7 @@
 #armor
 #theme bronze
 #basechance 0.5
+#themeinc theme bronze *2
 #enditem
 
 #newitem
@@ -147,6 +167,7 @@
 #sprite /graphics/merrow/armor/bronze_cuirass.png
 #armor
 #theme bronze
+#themeinc theme bronze *2
 #enditem
 
 #newitem
@@ -155,6 +176,7 @@
 #sprite /graphics/merrow/armor/bronze_hauberk.png
 #armor
 #theme bronze
+#themeinc theme bronze *2
 #enditem
 
 #newitem
@@ -164,4 +186,5 @@
 #armor
 #theme bronze
 #basechance 0.5
+#themeinc theme bronze *2
 #enditem
