@@ -14,8 +14,13 @@
 #chanceinc era 3 -0.5
 #themeinc bronze *0.001
 #themeinc stone *2
-#themeinc coral *0.1
+#themeinc shell *2
+#themeinc coral *0
 #theme primitive
+#racedefinition "#magicpriority water 6"
+#racedefinition "#magicpriority earth 4"
+#racedefinition "#magicpriority nature 2"
+#racedefinition "#magicpriority astral 2"
 #endtheme
 
 -- Weights: EA 2, MA 1, LA 0.5
@@ -26,9 +31,13 @@
 #chanceinc era 1 1
 #chanceinc era 3 -0.5
 #themeinc bronze *0.001
-#themeinc stone *0.5
-#themeinc shell *0.1
-#theme primitive
+#themeinc stone *0.1
+#themeinc shell *0.5
+#themeinc coral *2
+#racedefinition "#magicpriority water 4"
+#racedefinition "#magicpriority earth 2"
+#racedefinition "#magicpriority nature 4"
+#racedefinition "#magicpriority astral 2"
 #endtheme
 
 -- Weights: EA 1, MA 2, LA 4
@@ -38,12 +47,16 @@
 #basechance 2
 #chanceinc era 3 2
 #chanceinc era 1 -1
+#themeinc bronze *2
 #themeinc stone *0.001
 #themeinc naked *0.001
 #themeinc shell *0.01
-#themeinc coral *0.01
+#themeinc coral *0
 #themeinc primitive *0.1
 #theme advanced
+#racedefinition "#magicpriority water 4"
+#racedefinition "#magicpriority earth 6"
+#racedefinition "#magicpriority astral 2"
 #endtheme
 
 
@@ -52,7 +65,8 @@
 #type habitat
 #name terrestrial
 #basechance 1
-#themeinc sharkskin *0.001
+#chanceinc racetheme coral *0.5
+#themeinc sharkskin *0
 #themeinc bronze *2
 #themeinc shell *0.5
 #themeinc coral *0.25
@@ -63,8 +77,9 @@
 #type habitat
 #name marine
 #basechance 1
-#chanceinc racetheme primitive *5
-#themeinc leather *0.001
+#chanceinc racetheme shell *2
+#chanceinc racetheme coral *5
+#themeinc leather *0
 #themeinc blunt *0.25
 #themeinc terrestrial *0.001
 #endtheme

@@ -6,6 +6,7 @@
 #armor
 #theme leather
 #basechance 0.5
+#themeinc theme leather *2
 #enditem
 
 #newitem
@@ -14,6 +15,7 @@
 #sprite /graphics/merrow/armor/leather_hauberk_mounted.png
 #armor
 #theme leather
+#themeinc theme leather *2
 #enditem
 
 #newitem
@@ -22,6 +24,7 @@
 #sprite /graphics/merrow/armor/leather_full_mounted.png
 #armor
 #theme leather
+#themeinc theme leather *2
 #enditem
 
 #newitem
@@ -31,6 +34,7 @@
 #armor
 #theme leather
 #basechance 0.5
+#themeinc theme leather *2
 #enditem
 
 #newitem
@@ -39,6 +43,7 @@
 #sprite /graphics/merrow/armor/ring_hauberk_mounted.png
 #armor
 #theme leather
+#themeinc theme leather *2
 #enditem
 
 #newitem
@@ -47,6 +52,7 @@
 #sprite /graphics/merrow/armor/ring_full_mounted.png
 #armor
 #theme leather
+#themeinc theme leather *2
 #enditem
 
 
@@ -58,6 +64,7 @@
 #armor
 #theme sharkskin
 #basechance 0.5
+#themeinc theme sharkskin *2
 #enditem
 
 #newitem
@@ -66,6 +73,7 @@
 #sprite /graphics/merrow/armor/sharkskin_armor_mounted.png
 #armor
 #theme sharkskin
+#themeinc theme sharkskin *2
 #enditem
 
 #newitem
@@ -75,6 +83,7 @@
 #armor
 #theme sharkskin
 #basechance 0.5
+#themeinc theme sharkskin *2
 #enditem
 
 #newitem
@@ -83,6 +92,7 @@
 #sprite /graphics/merrow/armor/sharkring_hauberk_mounted.png
 #armor
 #theme sharkskin
+#themeinc theme sharkskin *2
 #enditem
 
 #newitem
@@ -91,6 +101,8 @@
 #sprite /graphics/merrow/armor/coral_cuirass.png
 #armor
 #theme coral
+#themeinc theme coral *2
+#define "#poisonarmor 5"
 #enditem
 
 #newitem
@@ -99,6 +111,8 @@
 #sprite /graphics/merrow/armor/coral_hauberk_mounted.png
 #armor
 #theme coral
+#themeinc theme coral *2
+#define "#poisonarmor 5"
 #enditem
 
 #newitem
@@ -107,6 +121,7 @@
 #sprite /graphics/merrow/armor/shell_hauberk_mounted.png
 #armor
 #theme shell
+#themeinc theme shell *2
 #enditem
 
 
@@ -117,6 +132,7 @@
 #sprite /graphics/merrow/armor/bronzescale_cuirass.png
 #armor
 #theme bronze
+#themeinc theme bronze *2
 #enditem
 
 #newitem
@@ -125,6 +141,7 @@
 #sprite /graphics/merrow/armor/bronzescale_hauberk_mounted.png
 #armor
 #theme bronze
+#themeinc theme bronze *2
 #enditem
 
 #newitem
@@ -133,6 +150,7 @@
 #sprite /graphics/merrow/armor/bronzescale_full_mounted.png
 #armor
 #theme bronze
+#themeinc theme bronze *2
 #enditem
 
 #newitem
@@ -141,6 +159,7 @@
 #sprite /graphics/merrow/armor/bronze_cuirass.png
 #armor
 #theme bronze
+#themeinc theme bronze *2
 #enditem
 
 #newitem
@@ -149,6 +168,7 @@
 #sprite /graphics/merrow/armor/bronze_hauberk_mounted.png
 #armor
 #theme bronze
+#themeinc theme bronze *2
 #enditem
 
 #newitem
@@ -157,4 +177,5 @@
 #sprite /graphics/merrow/armor/bronze_full_mounted.png
 #armor
 #theme bronze
+#themeinc theme bronze *2
 #enditem

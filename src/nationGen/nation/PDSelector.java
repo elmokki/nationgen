@@ -69,14 +69,17 @@ public class PDSelector {
 		List<Unit> commanders = n.generateComList("commander");
 		
 		
-		// Chance to get a priest as potential commander for PD
+		// Chance to get a priest as potential commander for PD; ~75% of Dom5 nations have a caster (usually priest or mage-priest as PD rank 2)
+		// For now, there's a small chance to a T2 - and a very good chance to get a T1 - for rank 2, and much smaller chances a T1 for rank 1
 		if(!startarmy)
 		{
 			double rand = r.nextDouble();
-			if(rand < 0.025)
-				commanders.add(rank - 1, n.generateComList("priest").get(0));
-			else if(rand < 0.1)
-				commanders.add(rank, n.generateComList("priest").get(0));
+			if(rank == 1 && rand < 0.05)
+				commanders.add(0, n.generateComList("priest").get(0));
+			else if(rank == 2 && rand < 0.15 && n.generateComList("priest").size() > 1)
+				commanders.add(1, n.generateComList("priest").get(1));
+			else if(rank == 2 && rand < 0.75)
+				commanders.add(1, n.generateComList("priest").get(0));
 		}
 		
 		List<Unit> others = new ArrayList<Unit>();
