@@ -539,7 +539,7 @@ public class Summary {
 		
 		// Get features 
 		boolean nopreach = false; // #nopreach
-		boolean reanim = false; // #zombiereanim
+		boolean reanim = false; // #priestreanim
 		boolean bloodsac = false; // #sacrificedom
 		boolean manikin = false; // #manikinreanim
 		int templecost = 400;
@@ -550,7 +550,7 @@ public class Summary {
 		{
 			if(c.command.equals("#nopreach"))
 				nopreach = true;
-			if(c.command.equals("#zombiereanim"))
+			if(c.command.equals("#priestreanim"))
 				reanim = true;
 			if(c.command.equals("#sacrificedom"))
 				bloodsac = true;
