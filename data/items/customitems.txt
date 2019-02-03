@@ -840,6 +840,58 @@
 #command "#pierce"
 #end
 
+--- Weird missile weapons for lamias and suchlike
+#new customweapon
+#name "viperbow"
+#command "#rcost 5"
+#command "#ammo 8"
+#command "#range 30"
+#command "#dmg 100"
+#command "#att -1"
+#command "#secondaryeffect 127"
+#command "#flyspr 109 1"
+#command "#sound 50"
+#command "#name 'Serpent Bow'"
+#command "#natt 1"
+#command "#twohanded"
+#command "#blunt"
+#command "#dt_realstun"
+#end
+
+#new customweapon
+#name "boabow"
+#command "#rcost 5"
+#command "#ammo 8"
+#command "#range 30"
+#command "#dmg 100"
+#command "#att -1"
+#command "#secondaryeffect 116"
+#command "#flyspr 109 1"
+#command "#sound 50"
+#command "#name 'Constrictor Bow'"
+#command "#natt 1"
+#command "#twohanded"
+#command "#blunt"
+#command "#dt_realstun"
+#end
+
+#new customweapon
+#name "bolas"
+#command "#ammo 3"
+#command "#range -1"
+#command "#dmg 100"
+#command "#att 2"
+#command "#secondaryeffect 116"
+#command "#flyspr 304 4"
+#command "#sound 15"
+#command "#name 'Bolas'"
+#command "#natt 1"
+#command "#bonus"
+#command "#blunt"
+#command "#dt_realstun"
+#command "#sizeresist"
+#end
+
 --- CBM warhorse hoof (should be unused currently)
 
 #new customweapon
