@@ -1,4 +1,11 @@
 #newitem
+#name "none"
+#basechance 2
+#gameid -1
+#armor
+#enditem
+
+#newitem
 #name "dark cloak"
 #gameid -1
 #sprite /graphics/imperial/caster/cloak/cloak_spactator_dark_b.png
@@ -18,6 +25,7 @@
 
 #newitem
 #name "dark laena"
+#basechance 0.2
 #gameid -1
 #armor
 #needs cloakf "dark laena"
@@ -25,6 +33,7 @@
 
 #newitem
 #name "light laena"
+#basechance 0.2
 #gameid -1
 #armor
 #needs cloakf "light laena"
