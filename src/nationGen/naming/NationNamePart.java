@@ -36,7 +36,8 @@ public class NationNamePart {
 	
 	public static NationNamePart fromLine(String line)
 	{
-		String[] vowels = { "a", "e", "i", "o", "u", "y", "å", "ä", "ö", "ü" };
+		String[] vowels = { "a", "e", "i", "o", "u", "y", "\u00E5" /* a with circle above */,
+				"\u00E4" /* a with umlaut */, "\u00F6" /* o with umlaut */, "\u00FC" /* u with umlaut */ };
 		String[] consonants = { "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "w", "v", "x", "z" };
 		String[] softconsonants = { "f", "h", "j", "l", "m", "n", "r", "s", "w", "v", "x", "z" };
 		String[] hardconsonants = { "b", "c", "d", "g", "k", "p", "q", "t"  };

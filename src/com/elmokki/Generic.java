@@ -15,23 +15,6 @@ import nationGen.units.Unit;
 public class Generic {
 	
 	
-	public static String sanitize(String str)
-	{
-		str = str.replaceAll(" ", "");
-		str = str.replaceAll("-", "");
-		str = str.replaceAll("'", "");
-		str = str.replaceAll("\"", "");
-		str = str.replaceAll("Ä", "");
-		str = str.replaceAll("ä", "");
-		str = str.replaceAll("Ö", "");
-		str = str.replaceAll("ö", "");
-		str = str.replaceAll("Å", "");
-		str = str.replaceAll("å", "");
-		return str;
-
-	}
-	
-	
 	public static List<String> getLeadershipLevels()
 	{
 		List<String> levels = new ArrayList<String>();

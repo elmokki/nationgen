@@ -377,10 +377,10 @@ public class NationGen
      */
     private void loadDom3DB() throws Exception
     {
-            units = new Dom3DB("units.csv");
-            armordb = new Dom3DB("armor.csv");
-            weapondb = new Dom3DB("weapon.csv");
-            sites = new Dom3DB("sites.csv");
+            units = new Dom3DB("db/units.csv");
+            armordb = new Dom3DB("db/armor.csv");
+            weapondb = new Dom3DB("db/weapon.csv");
+            sites = new Dom3DB("db/sites.csv");
     }
 	
     /**
