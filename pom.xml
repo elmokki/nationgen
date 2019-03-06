@@ -7,9 +7,18 @@
 	<groupId>nationGen</groupId>
 	<artifactId>NationGen</artifactId>
 	<version>0.7.0-RC9</version>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 	<properties>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<build>
@@ -34,7 +43,7 @@
 							<goal>exec</goal>
 						</goals>
 						<configuration>
-							<executable>${basedir}/release.bat</executable>
+							<executable>${basedir}/release-all.bat</executable>
 							<arguments>
 								<argument>${java.home}</argument>
 								<argument>${build.finalName}</argument>

@@ -4,8 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.ZonedDateTime;
@@ -17,7 +15,6 @@ import java.util.Random;
 import java.util.concurrent.locks.ReentrantLock;
 
 import com.elmokki.Dom3DB;
-import com.elmokki.Drawing;
 
 import nationGen.Settings.SettingsType;
 import nationGen.entities.Filter;
@@ -26,6 +23,7 @@ import nationGen.items.CustomItem;
 import nationGen.items.Item;
 import nationGen.magic.Spell;
 import nationGen.misc.Command;
+import nationGen.misc.FileUtil;
 import nationGen.misc.PreviewGenerator;
 import nationGen.misc.Site;
 import nationGen.naming.NameGenerator;
@@ -64,13 +62,13 @@ public class NationGen
     private ReentrantLock pauseLock;
     private boolean shouldAbort = false;
     
-    public NationGen() throws IOException
+    public NationGen()
     {
         // For versions of this that don't need pausing, simply create a dummy lock object to be used.
         this(new ReentrantLock(), new Settings(), new ArrayList<>());
     }
     
-    public NationGen(ReentrantLock pauseLock, Settings settings, List<NationRestriction> restrictions) throws IOException
+    public NationGen(ReentrantLock pauseLock, Settings settings, List<NationRestriction> restrictions)
     {
         this.pauseLock = pauseLock;
         this.settings = settings;
@@ -78,30 +76,18 @@ public class NationGen
         
         //System.out.println("Dominions 4 NationGen version " + version + " (" + date + ")");
         //System.out.println("------------------------------------------------------------------");
-
-        System.out.print("Loading settings... ");
-        settings = new Settings();
+        
+        System.out.print("Loading Larzm42's Dom5 Mod Inspector database... ");
+        loadDom3DB();
         System.out.println("done!");
-                
-        try 
-        {
-            System.out.print("Loading Larzm42's Dom5 Mod Inspector database... ");
-            loadDom3DB();
-            System.out.println("done!");
-            System.out.print("Loading definitions... ");
-            customItemsHandler = new CustomItemsHandler(
-                    Item.readFile(this, "./data/items/customitems.txt", CustomItem.class), weapondb, armordb);
-            assets = new NationGenAssets(this);
-            assets.loadRaces("./data/races/races.txt", this); // ugh.  Looks like *somehow* assets is circularly depended in races.
-            // Oh, it's totally because of the getassets method causing dependency shenanigans.
-            
-            System.out.println("done!");
-        } 
-        catch (Exception e) 
-        {
-            e.printStackTrace();
-            System.out.println("Error loading file " + e.getMessage());
-        }
+        System.out.print("Loading definitions... ");
+        customItemsHandler = new CustomItemsHandler(
+                Item.readFile(this, "./data/items/customitems.txt", CustomItem.class), weapondb, armordb);
+        assets = new NationGenAssets(this);
+        assets.loadRaces("./data/races/races.txt", this); // ugh.  Looks like *somehow* assets is circularly depended in races.
+        // Oh, it's totally because of the getassets method causing dependency shenanigans.
+        
+        System.out.println("done!");
 
         System.gc();
         //this.writeDebugInfo();
@@ -146,7 +132,7 @@ public class NationGen
 
         // Start
         idHandler = new IdHandler();
-        idHandler.loadFile("forbidden_ids.txt");
+        idHandler.loadFile("/forbidden_ids.txt");
         
         customItemsHandler.UpdateIDHandler(idHandler);
         
@@ -375,12 +361,12 @@ public class NationGen
     /**
      * Loads data from Dom3DB
      */
-    private void loadDom3DB() throws Exception
+    private void loadDom3DB()
     {
-            units = new Dom3DB("db/units.csv");
-            armordb = new Dom3DB("db/armor.csv");
-            weapondb = new Dom3DB("db/weapon.csv");
-            sites = new Dom3DB("db/sites.csv");
+            units = new Dom3DB("/db/units.csv");
+            armordb = new Dom3DB("/db/armor.csv");
+            weapondb = new Dom3DB("/db/weapon.csv");
+            sites = new Dom3DB("/db/sites.csv");
     }
 	
     /**
@@ -470,7 +456,7 @@ public class NationGen
         }
     }
 
-    private void writeDescriptions(PrintWriter tw, List<Nation> nations, String modname) throws IOException
+    private void writeDescriptions(List<Nation> nations, String modname) throws IOException
     {
         NationAdvancedSummarizer nDesc = new NationAdvancedSummarizer(armordb, weapondb);
         if(settings.get(SettingsType.advancedDescs) == 1.0)
@@ -483,7 +469,7 @@ public class NationGen
         }   
     }
 	
-    private void drawPreviews(List<Nation> nations, String dir) throws IOException
+    private void drawPreviews(List<Nation> nations, String dir)
     {
         if(settings.get(SettingsType.drawPreview) == 1)
         {
@@ -501,13 +487,12 @@ public class NationGen
     public void write(List<Nation> nations, String modname) throws IOException
     {
         String dir = "nationgen_" + modname.toLowerCase().replaceAll(" ", "_") + "/"; // nation.name.toLowerCase().replaceAll(" ", "_")
-        new File("./mods/" + dir).mkdirs();
+        FileUtil.createDirectory("/mods/" + dir);
         
-        FileWriter fstream = new FileWriter("./mods/nationgen_" + modname.toLowerCase().replaceAll(" ", "_") + ".dm");
-        PrintWriter tw = new PrintWriter(fstream, true);
+        PrintWriter tw = FileUtil.getPrintWriter("/mods/nationgen_" + modname.toLowerCase().replaceAll(" ", "_") + ".dm");
 
         // Descriptions
-        writeDescriptions(tw, nations, modname);
+        writeDescriptions(nations, modname);
 
         // Description!
         tw.println("-- NationGen - " + modname);
@@ -556,7 +541,7 @@ public class NationGen
         System.out.print("Writing units");
         for(Nation nation : nations)
         {
-            new File("./mods/" + dir + "/" + nation.nationid + "-" + nation.name.toLowerCase().replaceAll(" ", "_") + "/").mkdir();
+            FileUtil.createDirectory("/mods/" + dir + "/" + nation.nationid + "-" + nation.name.toLowerCase().replaceAll(" ", "_") + "/");
 
             // Unit definitions
             nation.writeUnits(tw, dir + "/" + nation.nationid + "-" + nation.name.toLowerCase().replaceAll(" ", "_") + "/");
@@ -580,7 +565,7 @@ public class NationGen
         for(Nation nation : nations)
         {
             // Flag
-            Drawing.writeTGA(nation.flag, "mods/" + dir + "/" + nation.nationid + "-" + nation.name.toLowerCase().replaceAll(" ", "_") + "/flag.tga");
+            FileUtil.writeTGA(nation.flag, "mods/" + dir + "/" + nation.nationid + "-" + nation.name.toLowerCase().replaceAll(" ", "_") + "/flag.tga");
 
             // Nation definitions
             nation.write(tw, dir + "/" + nation.nationid + "-" + nation.name.toLowerCase().replaceAll(" ", "_") + "/");
@@ -598,7 +583,6 @@ public class NationGen
 		
         tw.flush();
         tw.close();
-        fstream.close();
         
         // Displays mage names
         /*
@@ -838,7 +822,7 @@ public class NationGen
         forms.add(su);
     }
 	
-    public static void generateBanner(Color c, String name, String output, BufferedImage flag) throws IOException
+    public static void generateBanner(Color c, String name, String output, BufferedImage flag)
     {
         BufferedImage combined = new BufferedImage(256, 64, BufferedImage.TYPE_INT_RGB);
         Graphics g = combined.getGraphics();
@@ -859,13 +843,11 @@ public class NationGen
         g.setFont(f);
         g.drawString(name, 64, 48);
         
-        Drawing.writeTGA(combined, "./mods/" + output);
+        FileUtil.writeTGA(combined, "./mods/" + output);
     }
 	
     /**
      * Copies any poses from each race's spriteGenPoses list into its poses list
-     * @param filename
-     * @return
      */
     public void setSpriteGenPoses()
     {

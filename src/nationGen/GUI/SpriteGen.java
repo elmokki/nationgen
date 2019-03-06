@@ -9,7 +9,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +20,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
-import com.elmokki.Drawing;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
@@ -29,6 +27,7 @@ import nationGen.NationGenAssets;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.items.Item;
+import nationGen.misc.FileUtil;
 import nationGen.units.Unit;
 
 public class SpriteGen extends JFrame implements ActionListener, ItemListener{
@@ -103,16 +102,10 @@ public class SpriteGen extends JFrame implements ActionListener, ItemListener{
 
 	public static void main(String[] args)
 	{
-        SwingUtilities.invokeLater(() -> {
-			try {
-				new SpriteGen().setVisible(true);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		});
+        SwingUtilities.invokeLater(() -> new SpriteGen().setVisible(true));
 	}
 	
-    public SpriteGen() throws IOException {
+    public SpriteGen() {
     	nGen = new NationGen();
     	assets = nGen.getAssets();
     	nGen.setSpriteGenPoses();
@@ -140,12 +133,7 @@ public class SpriteGen extends JFrame implements ActionListener, ItemListener{
     	if(unit == null || g == null)
     		return;
     	
-    	try {
-			g.drawImage(unit.render(), 0, 0, null);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		g.drawImage(unit.render(), 0, 0, null);
     }
 
     public void initGUI()
@@ -322,12 +310,7 @@ public class SpriteGen extends JFrame implements ActionListener, ItemListener{
 		}
 		else // save
 		{
-			try {
-				Drawing.writeTGA(unit.render(), filename.getText());
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+			FileUtil.writeTGA(unit.render(), filename.getText());
 		}
 		
 	}

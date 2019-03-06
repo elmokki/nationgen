@@ -1,10 +1,5 @@
 package nationGen.entities;
 
-import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -13,6 +8,8 @@ import java.util.Random;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.misc.FileUtil;
+
 
 public class Entity {
 
@@ -29,32 +26,12 @@ public class Entity {
 	}
 
 	
-	public static <E extends Entity> List<E> readFile(NationGen nationGen, String file, Class<E> c) throws IOException
+	public static <E extends Entity> List<E> readFile(NationGen nationGen, String file, Class<E> c)
 	{
 		List<E> list = new ArrayList<E>();
 		
-		BufferedReader br = null;
-		DataInputStream in = null;
-		try
-		{
-			FileInputStream fstream = new FileInputStream(file);
-			in = new DataInputStream(fstream);
-			br = new BufferedReader(new InputStreamReader(in));
-		}
-		catch(IOException e)
-		{
-			System.out.println("ERROR LOADING DATA FROM FILE " + file +".");
-			return list;
-		}
-		
-
-		
-		String strLine;
-		
-
-		
 		E instance = null;
-		while ((strLine = br.readLine()) != null)   
+		for (String strLine : FileUtil.readLines(file))
 		{
 			
 			if(strLine.trim().toLowerCase().startsWith("#new"))
@@ -85,8 +62,6 @@ public class Entity {
 			}
 
 		}
-			
-		in.close();
 		
 		return list;
 	}

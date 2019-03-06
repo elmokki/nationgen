@@ -1,8 +1,6 @@
 package nationGen.naming;
 
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +10,7 @@ import nationGen.entities.Race;
 import nationGen.entities.Theme;
 import nationGen.items.Item;
 import nationGen.misc.Command;
+import nationGen.misc.FileUtil;
 import nationGen.misc.Site;
 import nationGen.nation.Nation;
 import nationGen.nation.PDSelector;
@@ -84,11 +83,10 @@ public class NationAdvancedSummarizer {
 
 	}
 			
-	public void writeDescriptionFile(List<Nation> nations, String modname) throws IOException
+	public void writeDescriptionFile(List<Nation> nations, String modname)
 	{
-		String dir = "/nationgen_" + modname.toLowerCase().replaceAll(" ", "_") + "/";
-		FileWriter fstream = new FileWriter("mods/" + dir + "descriptions.txt");
-		PrintWriter tw = new PrintWriter(fstream);
+		String dir = "/mods/nationgen_" + modname.toLowerCase().replaceAll(" ", "_") + "/";
+		PrintWriter tw = FileUtil.getPrintWriter(dir + "descriptions.txt");
 		
 		System.out.print("Writing descriptions");
 		for(Nation n : nations)
@@ -102,13 +100,10 @@ public class NationAdvancedSummarizer {
 		tw.close();
 	}
 	
-	public void writeAdvancedDescriptionFile(List<Nation> nations, String modname) throws IOException
+	public void writeAdvancedDescriptionFile(List<Nation> nations, String modname)
 	{
-		String dir = "/nationgen_" + modname.toLowerCase().replaceAll(" ", "_") + "/";
-		FileWriter fstream = new FileWriter("mods/" + dir + "advanceddescriptions.txt");
-		PrintWriter tw = new PrintWriter(fstream);
-		
-		
+		String dir = "/mods/nationgen_" + modname.toLowerCase().replaceAll(" ", "_") + "/";
+		PrintWriter tw = FileUtil.getPrintWriter(dir + "advanceddescriptions.txt");
 		
 		System.out.print("Writing advanced descriptions");
 		for(Nation n : nations)
@@ -117,7 +112,7 @@ public class NationAdvancedSummarizer {
 			tw.println("-----------------------------------");
 
 
-			List<String> traits = new ArrayList<String>();
+			List<String> traits = new ArrayList<>();
 			for(Command c : n.getCommands())
 				if(c.command.equals("#idealcold"))
 				{

@@ -1,23 +1,33 @@
 
-It's recommended that you let maven run this script, since it knows what parameters to use from the pom.xml.  To do
+It's recommended that you let maven run these scripts, since it knows what parameters to use from the pom.xml.  To do
 this, simply make sure the maven project is imported into your IDE (which hopefully has native support for it, and if
 not, find a plugin), and then run the "package" step, and it will build, run tests, create the jar, and afterwards use
 this script to create the runtime image, which will appear in the "target" folder alongside the jar.
 
 However, if you don't want to use maven, you can run this manually after compiling the jar to the "target" folder.
 
-Argument 1: Path to the JDK (example: "C:\Program Files\Java\jdk-11.0.2")
+release-all.bat:
+
+Argument 1: Path to this platform's JDK (example: "C:\Program Files\Java\jdk-11.0.2")
 Argument 2: The name of the jar, which will be the name of the resulting runtime image (example: NationGen-0.7.0-RC9).
 
 Example:
 D:\Code\Dominions\nationgen>release "C:\Program Files\Java\jdk-11.0.2" NationGen-0.7.0-RC9
 
-The above would produce a full runtime image folder at D:\Code\Dominions\nationgen\target\NationGen-0.7.0-RC9.
+The above would produce a full windows runtime image folder at D:\Code\Dominions\nationgen\target\runtime-images\windows
+\NationGen-0.7.0-RC9.  If there exist files at \local\linux-java-home.txt and/or \local\osx-java-home.txt, runtime
+images will also be created for linux and/or osx using the path found in those files as the path to the java home of
+those target platforms. The release-all.bat script calls release.bat.
+
+release.bat:
+
+Argument 1: Path to this platform's JDK (example: "C:\Program Files\Java\jdk-11.0.2")
+Argument 2: Path to the target platform's JDK (example: "C:\Program Files\Java\jdk-11.0.2" again)
+Argument 3: Either 'windows', 'linux', or 'osx' for what the target platform is
+Argument 4: The name of the jar, which will be the name of the resulting runtime image (example: NationGen-0.7.0-RC9).
+
 
 Note that since this project hasn't yet been converted to a java module project, the jlink command only "links" the
 java modules required by our code, java.base and java.desktop. Afterwards, the jar is copied into the image along with
-all the data files. Finally, two bat are created which will launch NationGen and SpriteGen by invoking the contained
+all the data files. Finally, two scripts are created which will launch NationGen and SpriteGen by invoking the contained
 java executable using the jar on the classpath and specifying the proper main class.
-
-IMPORTANT: This image only works on Windows!  To create separate runtimes for other platforms, jlink would have to be
-used from a JDK on a different platform.
