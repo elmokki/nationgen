@@ -46,7 +46,7 @@ public class Pose extends Filter {
 	 * @param file
 	 * @throws IOException
 	 */
-	private ItemSet loadItems(String file, int offsetx, int offsety, String slot) throws IOException
+	private ItemSet loadItems(String file, int offsetx, int offsety, String slot)
 	{
 
 
@@ -158,19 +158,8 @@ public class Pose extends Filter {
 				offsetx = Integer.parseInt(args.get(3));
 				offsety = Integer.parseInt(args.get(4));
 			}
-			
-			if(!args.get(2).startsWith("."))
-				args.set(2, "." + args.get(2));
-			
 	
-			ItemSet set = null;
-			try {
-				set = loadItems(args.get(2), offsetx, offsety, args.get(1));
-			} catch (Exception e) {
-				e.printStackTrace();
-				System.out.println("Error loading items from " + args.get(2) + " because of " + e.getCause() + ": " + e.getMessage());
-				return;
-			}
+			ItemSet set = loadItems(args.get(2), offsetx, offsety, args.get(1));
 			
 			for(Item i : set)
 			{

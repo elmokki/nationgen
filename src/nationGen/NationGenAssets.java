@@ -1,14 +1,7 @@
 package nationGen;
 
-import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 import com.elmokki.Generic;
 
@@ -21,6 +14,7 @@ import nationGen.entities.Race;
 import nationGen.entities.Theme;
 import nationGen.items.Item;
 import nationGen.magic.MagicPattern;
+import nationGen.misc.FileUtil;
 import nationGen.misc.ResourceStorage;
 import nationGen.naming.NamePart;
 import nationGen.units.ShapeShift;
@@ -81,42 +75,29 @@ public class NationGenAssets
     
     public void Init(NationGen gen)
     {
-        try
-        {
-            patterns.load("./data/magic/magicpatterns.txt");
-            templates.load("./data/templates/templates.txt");
-            descriptions.load("./data/descriptions/descriptions.txt");
-            monsters.load("./data/monsters/monsters.txt");
-            poses.load("./data/poses/poses.txt");
-            filters.load("./data/filters/filters.txt");
-            themes.load("./data/themes/themes.txt");
-            spells.load("./data/spells/spells.txt");
-            customspells.addAll(Item.readFile(gen, "./data/spells/custom_spells.txt", Filter.class)); // ugh why you break pattern?
-            
-            magenames.load("./data/names/magenames/magenames.txt");
-            miscnames.load("./data/names/naming.txt");
-            miscdef.load("./data/misc/miscdef.txt");
-            flagparts.load("./data/flags/flagdef.txt");
-            magicitems.load("./data/items/magicweapons.txt");
-            
-            secondshapes = Entity.readFile(gen, "./data/shapes/secondshapes.txt", ShapeShift.class);
-            loadSecondShapeInheritance("/data/shapes/secondshapeinheritance.txt");
-        } catch (IOException e)
-        {
-            e.printStackTrace();
-            System.out.println("Error loading file " + e.getMessage());
-        }
+        patterns.load("/data/magic/magicpatterns.txt");
+        templates.load("/data/templates/templates.txt");
+        descriptions.load("/data/descriptions/descriptions.txt");
+        monsters.load("/data/monsters/monsters.txt");
+        poses.load("/data/poses/poses.txt");
+        filters.load("/data/filters/filters.txt");
+        themes.load("/data/themes/themes.txt");
+        spells.load("/data/spells/spells.txt");
+        customspells.addAll(Item.readFile(gen, "/data/spells/custom_spells.txt", Filter.class)); // ugh why you break pattern?
+        
+        magenames.load("/data/names/magenames/magenames.txt");
+        miscnames.load("/data/names/naming.txt");
+        miscdef.load("/data/misc/miscdef.txt");
+        flagparts.load("/data/flags/flagdef.txt");
+        magicitems.load("/data/items/magicweapons.txt");
+        
+        secondshapes = Entity.readFile(gen, "/data/shapes/secondshapes.txt", ShapeShift.class);
+        loadSecondShapeInheritance("/data/shapes/secondshapeinheritance.txt");
     }
     
-    public void loadRaces(String file, NationGen gen) throws IOException
+    public void loadRaces(String file, NationGen gen)
     {
-        FileInputStream fstream = new FileInputStream(file);
-        DataInputStream in = new DataInputStream(fstream);
-        BufferedReader br = new BufferedReader(new InputStreamReader(in));
-
-        String strLine;
-
-        while ((strLine = br.readLine()) != null)   
+        for (String strLine : FileUtil.readLines(file))
         {
             List<String> args = Generic.parseArgs(strLine);
             if(args.isEmpty())
@@ -131,7 +112,6 @@ public class NationGenAssets
                 races.addAll(items);
             }
         }
-        in.close();
     }
     
     /**
@@ -142,22 +122,9 @@ public class NationGenAssets
     private int loadSecondShapeInheritance(String filename)
     {
         int amount = 0;
-        
-        Scanner file;
-        
-        try 
-        {
-            file = new Scanner(new FileInputStream(System.getProperty("user.dir") + "/" + filename));
-        } 
-        catch (FileNotFoundException e) 
-        {
-            e.printStackTrace();
-            return 0;
-        }
 
-        while(file.hasNextLine())
+        for(String line : FileUtil.readLines(filename))
         {
-            String line = file.nextLine();
             if(line.startsWith("-"))
             {
                 continue; 
@@ -191,7 +158,7 @@ public class NationGenAssets
                 amount++;
             }
         }  
-        file.close();
+        
         return amount;
     }
 

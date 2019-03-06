@@ -1,11 +1,10 @@
 package nationGen;
 
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import nationGen.misc.FileUtil;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 
 public class IdHandler {
@@ -81,7 +80,7 @@ public class IdHandler {
 	private List<String> parseLine(String line, String c)
 	{
 
-		List<String> args = new ArrayList<String>();
+		List<String> args = new ArrayList<>();
 				
 		do
 		{
@@ -94,20 +93,8 @@ public class IdHandler {
 	
 	public void loadFile(String filename)
 	{
-
-		
-        Scanner file;
-		
-		try {
-			file = new Scanner(new FileInputStream(System.getProperty("user.dir") + "/" + filename));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-			return;
-		}
-		
-		while(file.hasNextLine())
+		for(String line : FileUtil.readLines(filename))
 		{
-			String line = file.nextLine().toLowerCase();
 			if(line.length() == 0 || line.startsWith("-"))
 				continue;
 
@@ -246,8 +233,6 @@ public class IdHandler {
 				}
 			}
 		}
-		
-		file.close();
 	}
 	
 	public void addRange(List<Integer> list, int from, int to)

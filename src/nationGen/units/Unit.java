@@ -1,9 +1,7 @@
 package nationGen.units;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -12,23 +10,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Random;
 
-import javax.imageio.ImageIO;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 import com.elmokki.Dom3DB;
-import com.elmokki.Drawing;
 import com.elmokki.Generic;
 
 
@@ -57,6 +40,7 @@ import nationGen.items.ItemDependency;
 import nationGen.magic.MageGenerator;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
+import nationGen.misc.FileUtil;
 import nationGen.naming.Name;
 import nationGen.nation.Nation;
 
@@ -1465,7 +1449,6 @@ public class Unit {
 		
 	/**
 	 * Returns unit hp, only basesprite and race count.
-	 * @param u
 	 * @return
 	 */
 	public int getHP()
@@ -1790,19 +1773,19 @@ public class Unit {
 		
 	}
 	
-	public void draw(String spritedir) throws IOException
+	public void draw(String spritedir)
 	{
 		if(getSlot("basesprite") == null)
 			return;
 		
-		Drawing.writeTGA(this.render(0), "./mods/" + spritedir + "unit_" + this.id + "_a.tga");
+		FileUtil.writeTGA(this.render(0), "./mods/" + spritedir + "unit_" + this.id + "_a.tga");
 
 		// The super awesome attack sprite generation:
-		Drawing.writeTGA(this.render(-5), "./mods/" + spritedir + "unit_" + this.id + "_b.tga");
+		FileUtil.writeTGA(this.render(-5), "./mods/" + spritedir + "unit_" + this.id + "_b.tga");
 	}
 	
 	
-	public BufferedImage render() throws IOException
+	public BufferedImage render()
 	{
 		return render(0);
 	}
@@ -1818,7 +1801,7 @@ public class Unit {
 		return mountslot;
 	}
 	
-	public BufferedImage render(int offsetX) throws IOException
+	public BufferedImage render(int offsetX)
 	{
 		if(this.getClass() == ShapeChangeUnit.class)
 			return null;
@@ -1827,47 +1810,16 @@ public class Unit {
 		Unit u = this;
 
 		// Get width and height;
+		Dimension d = getSpriteDimensions();
 		
-	
-		BufferedImage base;
-		try
-		{ 
-			base = ImageIO.read(new File("./", u.slotmap.get("basesprite").sprite));
-		}
-		catch(Exception e)
-		{
-			System.out.println("No base sprite for " + pose.roles + " unit of " + race.name + ", id " + id + ".");
-			if(u.slotmap.get("basesprite") != null)
-				System.out.println("Tried to open " + u.slotmap.get("basesprite").sprite);
-			else
-				System.out.println("Unit had no basesprite.");
-			
-			base = new BufferedImage(64, 64, BufferedImage.TYPE_3BYTE_BGR);
-		}
-	
-		// create the new image, canvas size is the max of both image sizes
-		int w = base.getWidth();
-		int h = base.getHeight();
-		
-		
-		
-		String mountslot = getMountOffsetSlot();
-		if(slotmap.get(mountslot) != null && !slotmap.get(mountslot).sprite.equals(""))
-		{
-			base = ImageIO.read(new File("./", u.slotmap.get(mountslot).sprite));
-			w = base.getWidth();
-			h = base.getHeight();
-		}
-	
-		
-		BufferedImage combined = new BufferedImage(w, h, BufferedImage.TYPE_3BYTE_BGR);
+		BufferedImage combined = new BufferedImage(d.width, d.height, BufferedImage.TYPE_3BYTE_BGR);
 		// paint both images, preserving the alpha channels
 		Graphics g = combined.getGraphics();
 		g.setColor(Color.black);
-		g.fillRect(0, 0, w, h);
+		g.fillRect(0, 0, d.width, d.height);
 		
-
 		
+		String mountslot = getMountOffsetSlot();
 
 		for(String s : pose.renderorder.split(" "))
 		{
@@ -1894,10 +1846,10 @@ public class Unit {
 		return combined; 
 	}
 	
-	private void renderSlot(Graphics g, Unit u, String slot, boolean useoffset, int extraX) throws IOException
+	private void renderSlot(Graphics g, Unit u, String slot, boolean useoffset, int extraX)
 	{
 		
-		List<Item> possibleitems = new ArrayList<Item>();
+		List<Item> possibleitems = new ArrayList<>();
 		
 		Iterator<Item> itr = slotmap.values().iterator();
 		while(itr.hasNext())
@@ -1925,7 +1877,7 @@ public class Unit {
 	}
 	
 	
-	private void renderItem(Graphics g, Item i, boolean useoffset, int extraX) throws IOException
+	private void renderItem(Graphics g, Item i, boolean useoffset, int extraX)
 	{
 		if(i == null)
 			return;
@@ -1948,5 +1900,30 @@ public class Unit {
 		else
 			i.render(g, false, 0, 0, this.color, extraX);
 		
+	}
+	
+	public Dimension getSpriteDimensions()
+	{
+		int w = 64;
+		int h = 64;
+		
+		String mountslot = getMountOffsetSlot();
+		if(this.slotmap.get(mountslot) != null)
+		{
+			BufferedImage base = FileUtil.readImage(this.slotmap.get(mountslot).sprite);
+			w = Math.max(w, base.getWidth());
+			h = Math.max(h, base.getHeight());
+		}
+		else if (this.slotmap.get("basesprite") != null)
+		{
+			BufferedImage base = FileUtil.readImage(this.slotmap.get("basesprite").sprite);
+			w = Math.max(w, base.getWidth());
+			h = Math.max(h, base.getHeight());
+		}
+		else {
+			System.out.println("No base sprite for " + pose.roles + " unit of " + race.name + ", id " + id + ".");
+		}
+		
+		return new Dimension(w, h);
 	}
 }

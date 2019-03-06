@@ -2,13 +2,9 @@ package nationGen.units;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.imageio.ImageIO;
 
 import com.elmokki.Drawing;
 import com.elmokki.Generic;
@@ -19,6 +15,7 @@ import nationGen.entities.Filter;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.misc.Command;
+import nationGen.misc.FileUtil;
 import nationGen.naming.Name;
 import nationGen.naming.NamePart;
 import nationGen.nation.Nation;
@@ -221,52 +218,25 @@ public class ShapeChangeUnit extends Unit {
 	private void copyImage(String orig, String dest, int xoffset)
 	{
 
-		dest = "./mods/" + dest;
-		BufferedImage image = null;
-		try
-		{
-			image = ImageIO.read(new File("./", orig));
-		}
-		catch(IOException e)
-		{
-			System.out.println("CRITICAL FAILURE, IMAGE FILE " + orig + " CANNOT BE FOUND.");
-			return;
-		}
+		BufferedImage image = FileUtil.readImage(orig);
+		
 		
 		BufferedImage base = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_3BYTE_BGR);
 		Graphics g = base.getGraphics();
 		g.drawImage(image, xoffset, 0, null);
 		
-
+		
 		
 		if(Generic.containsTag(thisForm.tags, "recolormask"))
 		{
-			BufferedImage mask = null;
 			String file = Generic.getTagValue(thisForm.tags, "recolormask");
-			try {
-				mask = ImageIO.read(new File("./", file));
-				Drawing.recolor(mask, this.color);
-
-			} catch (IOException e) {
-				System.out.println("CRITICAL FAILURE, IMAGE FILE " + file + " CANNOT BE FOUND.");
-				return;
-			}
-			g.drawImage(mask, xoffset, 0, null);
-
+			BufferedImage mask = FileUtil.readImage(file);
+			Drawing.recolor(mask, this.color);
 			
-
+			g.drawImage(mask, xoffset, 0, null);
 		}
 		
-		try
-		{
-			Drawing.writeTGA(base, dest);
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-			System.out.println("Unable to write to " + dest + " from " + orig + "!");
-		}
-		
+		FileUtil.writeTGA(base, "/mods/" + dest);
 	}
 	
 	public void write(PrintWriter tw, String spritedir)
@@ -292,14 +262,8 @@ public class ShapeChangeUnit extends Unit {
 					if(c.args.size() > 1)
 						greyscaleunits = Integer.parseInt(c.args.get(1));
 					
-			
-					try {
-						BufferedImage image = otherForm.render();
-						Drawing.writeTGA(Drawing.greyscale(image, greyscaleunits), "./mods/" + spritedir + "/shapechange_" + id + "_a.tga");
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-					
+					BufferedImage image = otherForm.render();
+					FileUtil.writeTGA(Drawing.greyscale(image, greyscaleunits), "./mods/" + spritedir + "/shapechange_" + id + "_a.tga");
 				}
 				else
 				{
@@ -332,13 +296,8 @@ public class ShapeChangeUnit extends Unit {
 			copyImage(spr1path, spritedir + "/shapechange_" + id + "_b.tga", -5);
 		else if(doShift && greyscale)
 		{
-			try {
-				BufferedImage image = otherForm.render(-5);
-				Drawing.writeTGA(Drawing.greyscale(image, greyscaleunits), "./mods/" + spritedir + "/shapechange_" + id + "_b.tga");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			
+			BufferedImage image = otherForm.render(-5);
+			FileUtil.writeTGA(Drawing.greyscale(image, greyscaleunits), "./mods/" + spritedir + "/shapechange_" + id + "_b.tga");
 		}
 
 		// Write the unit text

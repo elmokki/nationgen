@@ -1,6 +1,7 @@
 package com.elmokki;
 
-import java.io.*;
+import nationGen.misc.FileUtil;
+
 import java.util.*;
 
 
@@ -58,16 +59,13 @@ public class Dom3DB {
 
 
     
-    public Dom3DB(String filename) throws FileNotFoundException
+    public Dom3DB(String filename)
     {
        // System.out.print("Reading Dom3DB from " + filename + "... ");
         
-        Scanner file;
+        List<String> lines = FileUtil.readLines(filename);
 
-	
-		file = new Scanner(new FileInputStream(System.getProperty("user.dir") + "/" + filename));
-
-		String rawdef = file.nextLine();
+		String rawdef = lines.remove(0);
 		definition = rawdef.split(";");
 		if(definition.length < 2)
 		{
@@ -76,14 +74,10 @@ public class Dom3DB {
 			definition = rawdef.split(";");
 		}
 
-        String line;
-
         // Let's read the unit data then.
 
-        while (file.hasNextLine())
+        for (String line : lines)
         {
-            // Read line
-            line = file.nextLine();
             
             if(convert)
             	line = line.replaceAll("\t", ";");
@@ -95,9 +89,7 @@ public class Dom3DB {
      
         }
 
-       // System.out.println(derp + " definitions loaded!");      
-        file.close();
-        
+       // System.out.println(derp + " definitions loaded!");
 
         // Find out boolean args
     	booleanargs = new ArrayList<String>();
@@ -185,28 +177,24 @@ public class Dom3DB {
     }
     
     
-    public void saveToFile(String filename) throws IOException
+    public void saveToFile(String filename)
     {
 		
-		FileWriter fstream = new FileWriter(filename);
-		PrintWriter tw = new PrintWriter(fstream);
+		StringBuilder def = new StringBuilder();
+		for (String s : definition)
+			def.append(s).append(";");
 		
-		String def = "";
-		for(int i = 0; i < definition.length; i++)
-			def = def + definition[i] + ";";
-		
-		tw.println(def);
+		List<String> lines = new ArrayList<>();
+		lines.add(def.toString());
 		
 		for(int i = 0; i < 5000; i++)
 		{
 			if(entryMap.keySet().contains("" + i))
-				tw.println(entryMap.get("" + i).replaceAll("\t", ";"));
+				lines.add(entryMap.get("" + i).replaceAll("\t", ";"));
 
 		}
 
-		tw.flush();
-		tw.close();
-		fstream.close();
+		FileUtil.writeLines(filename, lines);
 
     }
     

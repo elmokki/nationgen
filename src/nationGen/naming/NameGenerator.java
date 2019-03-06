@@ -1,17 +1,16 @@
 package nationGen.naming;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
+import java.util.stream.Collectors;
 
 import com.elmokki.Dom3DB;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
 import nationGen.entities.Race;
+import nationGen.misc.FileUtil;
 import nationGen.nation.Nation;
 
 
@@ -61,64 +60,29 @@ public class NameGenerator {
 	public NameGenerator(NationGen nGen)
 	{
 		fillSiteBlackList(nGen.sites);
-		
-		
-        Scanner file;
-
 				
 		// DERP DURP LOAD SITE NAMING STUFF
 		
-		try {
-			file = new Scanner(new FileInputStream(System.getProperty("user.dir") + "/data/names/siteadjectives.txt"));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-			return;
-		}
-		
-		while(file.hasNextLine())
+		for(String line : FileUtil.readLines("/data/names/siteadjectives.txt"))
 		{
-			NamePart part = NamePart.fromLine(file.nextLine(), nGen);
+			NamePart part = NamePart.fromLine(line, nGen);
 			if(part != null)
 				this.siteadjectives.add(part);
 		}
-			
-
 		
-		file.close();
-		
-		try {
-			file = new Scanner(new FileInputStream(System.getProperty("user.dir") + "/data/names/sitenouns.txt"));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-			return;
-		}
-		
-		while(file.hasNextLine())
+		for(String line : FileUtil.readLines("/data/names/sitenouns.txt"))
 		{
-			NamePart part = NamePart.fromLine(file.nextLine(), nGen);
+			NamePart part = NamePart.fromLine(line, nGen);
 			if(part != null)
 				this.sitenouns.add(part);
 		}
 		
-		file.close();
-
-		
-		try {
-			file = new Scanner(new FileInputStream(System.getProperty("user.dir") + "/data/names/siteplaces.txt"));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-			return;
-		}
-		
-		while(file.hasNextLine())
+		for(String line : FileUtil.readLines("/data/names/siteplaces.txt"))
 		{
-			NamePart part = NamePart.fromLine(file.nextLine(), nGen);
+			NamePart part = NamePart.fromLine(line, nGen);
 			if(part != null)
 				this.siteplaces.add(part);
 		}
-		
-		file.close();
-
 	}
 	
 	public void fillSiteBlackList(Dom3DB sites)
@@ -134,40 +98,36 @@ public class NameGenerator {
 
 		
 		
-		List<NationNamePart> longsyllables = new ArrayList<NationNamePart>();
-		List<NationNamePart> shortsyllables = new ArrayList<NationNamePart>();
-		List<NationNamePart> suffixes = new ArrayList<NationNamePart>();
+		List<NationNamePart> longsyllables = new ArrayList<>();
+		List<NationNamePart> shortsyllables = new ArrayList<>();
+		List<NationNamePart> suffixes = new ArrayList<>();
 		
 		
-		List<String> list = this.loadList(race.longsyllables);
-		for(String str : list)
+		for(String str : FileUtil.readLines(race.longsyllables))
 		{
 			NationNamePart part = NationNamePart.fromLine(str);
 			if(part != null)
 				longsyllables.add(part);
 		}
 		
-		list = this.loadList(race.shortsyllables);
-		for(String str : list)
+		for(String str : FileUtil.readLines(race.shortsyllables))
 		{
 			NationNamePart part = NationNamePart.fromLine(str);
 			if(part != null)
 				shortsyllables.add(part);
 		}
 		
-		list = this.loadList(race.namesuffixes);
-		for(String str : list)
+		for(String str : FileUtil.readLines(race.namesuffixes))
 		{
 			NationNamePart part = NationNamePart.fromLine(str);
 			if(part != null)
 				suffixes.add(part);
 		}
 
-		String str = "";
+		String str;
 		do
 		{
-			str = "";
-			List<NationNamePart> name = new ArrayList<NationNamePart>();
+			List<NationNamePart> name = new ArrayList<>();
 			name.add(longsyllables.get(r.nextInt(longsyllables.size())));
 			if(r.nextDouble() > 0.75)
 			{
@@ -183,16 +143,15 @@ public class NameGenerator {
 			} while(!newPart.canBeAfter(name.get(name.size() - 1)) || !name.get(name.size() - 1).canBeAfter(newPart));
 			name.add(newPart);
 			
-
-			for(NationNamePart part : name)
-				str = str + part.text;
+			str = name.stream().map(part -> part.text).collect(Collectors.joining());
+			
 		} while(!validateNationName(str));
 		
 		return capitalizeFirst(str);
 		
 	}
 	
-	public List<String> usedSites = new ArrayList<String>();
+	public List<String> usedSites = new ArrayList<>();
 	public String getSiteName(Random r2, int prim, int sec)
 	{
 
@@ -315,27 +274,6 @@ public class NameGenerator {
 		}	
 		
 		return newlist;
-	}
-	
-	private List<String> loadList(String filename)
-	{
-		List<String> list = new ArrayList<String>();
-		// ---------------------
-        Scanner file;
-		try {
-			file = new Scanner(new FileInputStream(System.getProperty("user.dir") + filename));
-		} catch (FileNotFoundException e) {
-			System.out.println("ERROR WITH " + filename);
-			e.printStackTrace();
-			return list;
-		}
-		
-		while(file.hasNextLine())
-			list.add(file.nextLine());
-		
-		file.close();
-		return list;
-
 	}
 	
 

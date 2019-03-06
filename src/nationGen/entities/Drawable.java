@@ -4,16 +4,13 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.awt.image.BufferedImageOp;
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
-
-import javax.imageio.ImageIO;
 
 import com.elmokki.Drawing;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.misc.FileUtil;
 
 
 public class Drawable extends Filter {
@@ -88,7 +85,7 @@ public class Drawable extends Filter {
 	}
 	
 	
-	public void render(Graphics g, Color c) throws IOException
+	public void render(Graphics g, Color c)
 	{
 		render(g, false, 0, 0, c, 0);
 	}
@@ -102,7 +99,7 @@ public class Drawable extends Filter {
 	    return image;
 	}
 	
-	public void render(Graphics g, boolean useoffsets, int offsetx, int offsety, Color color, int extraX) throws IOException
+	public void render(Graphics g, boolean useoffsets, int offsetx, int offsety, Color color, int extraX)
 	{				
 		Drawable i = this;
 		if(i == null || i.sprite == null || i.sprite.equals(""))
@@ -115,23 +112,11 @@ public class Drawable extends Filter {
 			xoff = extraX;
 			yoff = 0;
 		}
-		String path = "./";
-		BufferedImage image = null;
 		
 		if(i != null)
 		{
 			
-			// Draw image
-			try
-			{
-				image = ImageIO.read(new File(path, i.sprite));
-			}
-			catch(IOException e)
-			{
-				System.out.println("CRITICAL FAILURE, IMAGE FILE " + i.sprite + " CANNOT BE FOUND.");
-				return;
-			}
-			
+			BufferedImage image = FileUtil.readImage(i.sprite);
 			
 			// Handle "black_to_alpha"
 			if(this.tags.contains("convert_to_alpha"))
@@ -139,48 +124,34 @@ public class Drawable extends Filter {
 			
 			g.drawImage(image, xoff, yoff, null);
 			drawRecolorMask(g, this, color, xoff, yoff);
-			
-
-			image = null;
 		}
 	}
 	
 	
-	private void drawRecolorMask(Graphics g, Drawable i, Color c, int x, int y) throws IOException
+	private void drawRecolorMask(Graphics g, Drawable i, Color c, int x, int y)
 	{
 		if(!i.mask.equals(""))
 		{
 			if(i.mask.equals("self"))
 				i.mask = i.sprite;
 			
-			BufferedImage image;
+			BufferedImage image = FileUtil.readImage(i.mask);
 			BufferedImageOp colorizeFilter;
-			BufferedImage targetImage = null;
-			try
-			{
-				image = ImageIO.read(new File("./", i.mask));
-				
 	
-				// Handle "black_to_alpha"
-				if(this.tags.contains("convert_to_alpha"))
-					image = convertToAlpha(image);
+			// Handle "black_to_alpha"
+			if(this.tags.contains("convert_to_alpha"))
+				image = convertToAlpha(image);
 
-				if(i.tags.contains("alternaterecolor"))
-					colorizeFilter =  Drawing.createColorizeOp_alt(c);
-				else
-					colorizeFilter = Drawing.createColorizeOp(c);
-				
-				
-				targetImage = colorizeFilter.filter(image, image);
-			}
-			catch(Exception e)
-			{
-				System.out.println(e);
-			}
+			if(i.tags.contains("alternaterecolor"))
+				colorizeFilter =  Drawing.createColorizeOp_alt(c);
+			else
+				colorizeFilter = Drawing.createColorizeOp(c);
+			
+			
+			BufferedImage targetImage = colorizeFilter.filter(image, image);
+			
 			
 			g.drawImage(targetImage, x, y, null);
-			targetImage = null;
-			image = null;
 		}
 	}
 	
