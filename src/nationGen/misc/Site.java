@@ -30,49 +30,53 @@ public class Site {
 			gemMap.put(i, 0);
 	}
 	
-	public void write(PrintWriter tw)
+	public List<String> writeLines()
 	{
 		if(id == -1)
 		{
-			System.out.println("TERRIBLE SITE ID! PROGRAMMING ERROR! ARRRRGH! EVERYTHING FALLS APART!");
-			return;
+			throw new IllegalStateException("Site ID is -1");
 		}
-		else if(name.equals("UNNAMED"))
-		{
-			//System.out.println("TERRIBLE SITE NAME! PROGRAMMING ERROR! ARRRRGH! EVERYTHING DOES NOT FALL APART THOUGH!");
-		}
+//		if(name.equals("UNNAMED"))
+//		{
+//			throw new IllegalStateException("Site name is 'UNNAMED'");
+//		}
 		
-		tw.println("#newsite " + id);
-		tw.println("#level " + level);
-		tw.println("#rarity 5");
-		tw.println("#path " + getPath()); 
-		tw.println("#name \"" + name + "\"");
+		List<String> lines = new ArrayList<>();
 		
-		writeFeatures(tw);
+		lines.add("#newsite " + id);
+		lines.add("#level " + level);
+		lines.add("#rarity 5");
+		lines.add("#path " + getPath());
+		lines.add("#name \"" + name + "\"");
 		
-		tw.println("#end");
-		tw.println("");
+		lines.addAll(writeFeatureLines());
+		
+		lines.add("#end");
+		lines.add("");
+		
+		return lines;
 	}
 	
-	private void writeFeatures(PrintWriter tw)
+	private List<String> writeFeatureLines()
 	{
+		List<String> lines = new ArrayList<>();
+		
 		for(Unit u : coms)
-			tw.println("#homecom " + u.id + " --- " + u.name);
+			lines.add("#homecom " + u.id + " --- " + u.name);
 		for(Unit u : troops)
-			tw.println("#homemon " + u.id + " --- " + u.name);
+			lines.add("#homemon " + u.id + " --- " + u.name);
 		for(Command str : othercommands)
-			tw.println(str);
+			lines.add(str.toString());
 		for(Filter f : this.appliedfilters)
 			for(Command str : f.commands)
-				tw.println(str);
-		
-		Iterator<Entry<Integer, Integer>> itr = gemMap.entrySet().iterator();
-		while(itr.hasNext())
+				lines.add(str.toString());
+			
+		for (Entry<Integer, Integer> entry : gemMap.entrySet())
 		{
-			Entry<Integer, Integer> entry = itr.next();
 			if(entry.getValue() > 0)
-				tw.println("#gems " + entry.getKey() + " " + entry.getValue());
+				lines.add("#gems " + entry.getKey() + " " + entry.getValue());
 		}
+		return lines;
 	}
 	
 	

@@ -2,32 +2,12 @@ package nationGen.units;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
+import java.util.*;
 import java.util.List;
-import java.util.Random;
-
+import java.util.stream.Collectors;
 
 import com.elmokki.Dom3DB;
 import com.elmokki.Generic;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 import nationGen.NationGen;
 import nationGen.entities.Entity;
@@ -51,20 +31,20 @@ public class Unit {
 	public Name name = new Name();
 	public Race race;
 	public Pose pose;
-	public LinkedHashMap<String, Item> slotmap = new LinkedHashMap<String, Item>();
-	public LinkedHashMap<String, Item> slotmemory = new LinkedHashMap<String, Item>();
+	public LinkedHashMap<String, Item> slotmap = new LinkedHashMap<>();
+	public LinkedHashMap<String, Item> slotmemory = new LinkedHashMap<>();
 
 	public Color color = Color.white;
 	public int id = -1;
-	public List<Command> commands = new ArrayList<Command>();
+	public List<Command> commands = new ArrayList<>();
 	public NationGen nationGen;
 	public boolean caponly = false;
-	public List<String> tags = new ArrayList<String>();
-	public List<Filter> appliedFilters = new ArrayList<Filter>();
+	public List<String> tags = new ArrayList<>();
+	public List<Filter> appliedFilters = new ArrayList<>();
 	public boolean polished = false;
 	public boolean invariantMonster = false;  // Is the unit a monster that must be used as-is instead of copying? (E.g., hydras)
 	private Nation nation = null;
-	private List<Command> percentCostCommands = new ArrayList<Command>();
+	private List<Command> percentCostCommands = new ArrayList<>();
 
 	public Unit(NationGen nationGen, Race race, Pose pose)
 	{
@@ -241,16 +221,15 @@ public class Unit {
 	}
 	
 	
-	protected void handleBodytype(PrintWriter tw)
+	protected Optional<String> writeBodytypeLine()
 	{
 		String[] coms = {"#lizard", "#quadruped", "#bird", "#snake", "#djinn", "#miscshape", "#humanoid", "#mountedhumanoid", "#troglodyte", "#naga", "#copystats"};
 		for(String str : coms)
 			if(this.hasCommand(str))
 			{
-				return;
+				return Optional.empty();
 			}
 
-		boolean mounted = this.getSlot("mount") != null;
 		int slots = this.getItemSlots();
 		
 		// has feet and an arm
@@ -258,34 +237,32 @@ public class Unit {
 		{
 			// has head
 			if(Generic.containsBitmask(slots, 128))
-				tw.println("#humanoid");
+				return Optional.of("#humanoid");
 			else
-				tw.println("#troglodyte");
+				return Optional.of("#troglodyte");
 
 		}
 		// no feet, but arm
 		else if (Generic.containsBitmask(slots, 2))
 		{
+			boolean mounted = this.getSlot("mount") != null;
 			if(mounted)
-				tw.println("#mountedhumanoid");
+				return Optional.of("#mountedhumanoid");
 			else
-				tw.println("#naga");
+				return Optional.of("#naga");
 
 		}
 		// feet, no arm
 		else if(Generic.containsBitmask(slots, 2048))
 		{
-			tw.println("#quadruped");
+			return Optional.of("#quadruped");
 
 		}
 		// no feet nor arm
 		else
 		{
-			tw.println("#miscshape");
+			return Optional.of("#miscshape");
 		}
-			
-		
-		
 		
 	}
 	
@@ -1475,20 +1452,15 @@ public class Unit {
 			return 10;
 	}
 	
-	public void writeSlot(String slot, PrintWriter tw)
+	public String writeSlotLine(Item i)
 	{
-		Item i = getSlot(slot);
-		
-		if(i == null || Integer.parseInt(i.id) < 1)
-			return;
-		
 		Dom3DB armordb = nationGen.armordb;
 		Dom3DB weapondb = nationGen.weapondb;
 		
 		if(i.armor)
-			tw.println("#armor " + i.id + " --- " + armordb.GetValue(i.id, "armorname") + " / " + i.name);
+			return "#armor " + i.id + " --- " + armordb.GetValue(i.id, "armorname") + " / " + i.name;
 		else
-			tw.println("#weapon " + i.id + " --- " + weapondb.GetValue(i.id, "wpname") + " / " + i.name);
+			return "#weapon " + i.id + " --- " + weapondb.GetValue(i.id, "wpname") + " / " + i.name;
 		
 	}
 	
@@ -1596,69 +1568,60 @@ public class Unit {
 	}
 	
 	
-	public void write(PrintWriter tw, String spritedir) throws IOException
+	public List<String> writeLines(String spritedir)
 	{ 
+		List<String> lines = new ArrayList<>();
 
-
-		tw.println("--- " + getName() + " (" + race.name + "), Gold: " + getGoldCost() + ", Resources: " + getResCost(true) + ", Roles: " + pose.roles + " (" + pose.name + ")");
-		tw.println("--- OFFSET DEBUG: ");
+		lines.add("--- " + getName() + " (" + race.name + "), Gold: " + getGoldCost() + ", Resources: " + getResCost(true) + ", Roles: " + pose.roles + " (" + pose.name + ")");
+		lines.add("--- OFFSET DEBUG: ");
 		if(this.getSlot("weapon") != null)
 		{
-			tw.println("-- Weapon: " + this.getSlot("weapon").getOffsetX() + ", " + this.getSlot("weapon").getOffsetY());
+			lines.add("-- Weapon: " + this.getSlot("weapon").getOffsetX() + ", " + this.getSlot("weapon").getOffsetY());
 		}
 		if(this.getSlot("armor") != null)
 		{
-			tw.println("-- Armor: " + this.getSlot("armor").getOffsetX() + ", " + this.getSlot("armor").getOffsetY());
+			lines.add("-- Armor: " + this.getSlot("armor").getOffsetX() + ", " + this.getSlot("armor").getOffsetY());
 		}
 		if(this.getSlot("offhand") != null)
 		{
-			tw.println("-- Offhand: " + this.getSlot("offhand").getOffsetX() + ", " + this.getSlot("offhand").getOffsetY());
+			lines.add("-- Offhand: " + this.getSlot("offhand").getOffsetX() + ", " + this.getSlot("offhand").getOffsetY());
 		}
-		tw.print("--- Generation tags: ");
-		for(String str : this.tags)
-			tw.print(str + ", ");
-		tw.println();
-		tw.print("--- Applied filters: ");
-		for(Filter f : this.appliedFilters)
-		{
-			if(f.name.equals("MAGICPICKS"))
-				tw.print(f.name + " (" + ((MagicFilter)f).pattern.getPrice() + "), ");
-			else
-				tw.print(f.name + ", ");
-		}
-		tw.println();
+		lines.add("--- Generation tags: " + String.join(", ", this.tags));
 		
-		tw.println("#newmonster " + id);
+		lines.add("--- Applied filters: " + this.appliedFilters.stream()
+				.map(f -> f.name + (f.name.equals("MAGICPICKS") ? " (" + ((MagicFilter)f).pattern.getPrice() + ")" : ""))
+				.collect(Collectors.joining(", ")));
+		
+		lines.add("#newmonster " + id);
 		
 		if(!this.name.toString(this).equals("UNNAMED"))
 		{
-			tw.println("#name \"" + name.toString(this) +  "\"");
+			lines.add("#name \"" + name.toString(this) +  "\"");
 		}
 		
 		if(this.getSlot("basesprite") != null)
 		{
-			tw.println("#spr1 \"" + (spritedir + "unit_" + this.id + "_a.tga\""));
-			tw.println("#spr2 \"" + (spritedir + "unit_" + this.id + "_b.tga\""));
+			lines.add("#spr1 \"" + (spritedir + "unit_" + this.id + "_a.tga\""));
+			lines.add("#spr2 \"" + (spritedir + "unit_" + this.id + "_b.tga\""));
 		}
-		//tw.println("#descr \"" + desc + "\"");
+		//lines.add("#descr \"" + desc + "\"");
 		
 		
 		// Write all instead of just some stuff (14.3.2014)
 		for(String slot : slotmap.keySet())
 		{
-			if(slotmap.get(slot) != null)
-			{
-				writeSlot(slot, tw);
-			}
+			Item i = getSlot(slot);
+			
+			if(i != null && Integer.parseInt(i.id) > 0)
+				lines.add(writeSlotLine(i));
 		}
 		
-		writeCommands(tw);
+		lines.addAll(writeCommandLines());
 		
-
+		lines.add("#end");
+		lines.add("");
 		
-		tw.println("#end");
-		tw.println("");
-		
+		return lines;
 	}
 	
 	public int getCommandValue(String command, int defaultv)
@@ -1701,22 +1664,26 @@ public class Unit {
 	
 	/**
 	 * Calculates recruitment point cost as gcost from race+pose+basesprite
-	 * @param tw
 	 */
-	protected void handleRecpoints(PrintWriter tw)
+	protected Optional<String> writeRecpointsLine()
 	{
 		if(this.hasCommand("#rpcost") || this.hasCommand("#copystats"))
-			return;
+			return Optional.empty();
 		
+		
+		return Optional.of("#rpcost " + (calculateRp() * 1000));
+	}
+	
+	private int calculateRp() {
 		int baserp = 0;
 		
-		List<Command> clist = new ArrayList<Command>();
+		List<Command> clist = new ArrayList<>();
 		clist.addAll(this.race.unitcommands);
 		clist.addAll(this.pose.getCommands());
 		
 		if(this.getSlot("basesprite") != null)
 			clist.addAll(this.getSlot("basesprite").commands);
-	
+		
 		for(Command c : clist)
 		{
 			if(c.command.equals("#gcost"))
@@ -1725,63 +1692,57 @@ public class Unit {
 			}
 		}
 		
-		tw.println("#rpcost " + (baserp * 1000));		
-
-		
+		return baserp;
 	}
 	
-	private void writeCommands(PrintWriter tw)
+	private List<String> writeCommandLines()
 	{
-	
-
-		List<Command> tempCommands = this.commands;
-
 		
-		handleBodytype(tw);
+		List<String> lines = new ArrayList<>();
 		
-		handleRecpoints(tw);
+		writeBodytypeLine().ifPresent(lines::add);
+		
+		writeRecpointsLine().ifPresent(lines::add);
 
-		for(Command c : tempCommands)
+		for(Command c : this.commands)
 		{
 			if(c.args.size() > 0)
 			{
-				if(c.command.toString().startsWith("#descr"))
+				if(c.command.startsWith("#descr"))
 				{
-					if(Generic.listToString(c.args).startsWith("\""))
-						tw.print(c.command + " " + Generic.listToString(c.args));
-					else
-						tw.print(c.command + " \"" + Generic.listToString(c.args));
-					if(Generic.listToString(c.args).endsWith("\""))
-						tw.print("\n");
-					else
-						tw.println("\"");
+					String argString = Generic.listToString(c.args);
+					
+					if(!argString.startsWith("\"")) argString = "\"" + argString;
+					if(!argString.endsWith("\"")) argString = argString + "\"";
+					
+					lines.add(c.command + " " + argString);
 				}
 				else if(c.command.equals("#itemslots"))
 				{
 					// Skipped here
 				}
 				else
-					tw.println(c.command + " " + Generic.listToString(c.args));
+					lines.add(c.command + " " + Generic.listToString(c.args));
 			}
 			else
-				tw.println(c.command);
+				lines.add(c.command);
 		}
 		
-		tw.println("#itemslots " + this.getItemSlots());
+		lines.add("#itemslots " + this.getItemSlots());
 
-	
-		
+		return lines;
 	}
 	
-	public void draw(String spritedir)
+	public void writeSprites(String spritedir)
 	{
-		if(getSlot("basesprite") == null)
-			return;
+		if(getSlot("basesprite") == null) {
+			throw new IllegalStateException("Unit " + this.name + " has no basesprite and can't be rendered!");
+		}
 		
-		FileUtil.writeTGA(this.render(0), "./mods/" + spritedir + "unit_" + this.id + "_a.tga");
+		FileUtil.writeTGA(this.render(0), "/mods/" + spritedir + "/unit_" + this.id + "_a.tga");
 
 		// The super awesome attack sprite generation:
-		FileUtil.writeTGA(this.render(-5), "./mods/" + spritedir + "unit_" + this.id + "_b.tga");
+		FileUtil.writeTGA(this.render(-5), "/mods/" + spritedir + "/unit_" + this.id + "_b.tga");
 	}
 	
 	
@@ -1824,7 +1785,7 @@ public class Unit {
 		for(String s : pose.renderorder.split(" "))
 		{
 
-					
+			
 	
 			if(s.equals(mountslot) || (!u.pose.tags.contains("non_mount_overlay") && s.equals("overlay") && u.getSlot(s) != null && u.getSlot("overlay").getOffsetX() == 0 && u.getSlot("overlay").getOffsetY() == 0))
 			{

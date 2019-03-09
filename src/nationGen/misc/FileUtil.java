@@ -33,7 +33,10 @@ public final class FileUtil {
 		try {
 			image = ImageIO.read(getExistingPath(filepath).toFile());
 		} catch (IOException ioe) {
-			throw new IllegalArgumentException("File '" + filepath + "' can't be read into an image.", ioe);
+			throw new IllegalArgumentException("File '" + filepath + "' can't be read.", ioe);
+		}
+		if (image == null) {
+			throw new IllegalArgumentException("File '" + filepath + "' can't be read into an image.");
 		}
 		return image;
 	}
@@ -69,25 +72,15 @@ public final class FileUtil {
 	/**
 	 * Creates a directory at the given path.
 	 * @param path The path to create
-	 * @throws IllegalStateException If the directory couldn't be created
+	 * @throws IllegalStateException If the directory couldn't be created or already exists
 	 */
 	public static void createDirectory(String path) {
-		if (!getPath(path).toFile().mkdirs()) {
+		final File file = getPath(path).toFile();
+		if (!file.mkdirs()) {
+			if (file.exists()) {
+				throw new IllegalStateException("Directory '" + path + "' already exists.");
+			}
 			throw new IllegalStateException("Directory '" + path + "' could not be created.");
-		}
-	}
-	
-	/**
-	 * Gets a suitable {@link PrintWriter} for writing to a file.
-	 * @param filepath The path to the file to write
-	 * @return The {@link PrintWriter}
-	 * @throws IllegalStateException if the writer could not be created
-	 */
-	public static PrintWriter getPrintWriter(String filepath) {
-		try {
-			return new PrintWriter(new FileWriter(getPath(filepath).toFile()), true);
-		} catch (IOException e) {
-			throw new IllegalStateException("Couldn't create FileWriter for file '" + filepath + "'.");
 		}
 	}
 	

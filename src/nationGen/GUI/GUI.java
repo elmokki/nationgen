@@ -9,7 +9,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
@@ -420,7 +419,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
                     }
                 }
             }
-            catch (NumberFormatException | IOException e)
+            catch (Exception e)
             {
                 e.printStackTrace();
             }
