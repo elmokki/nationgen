@@ -1,7 +1,6 @@
 package nationGen.entities;
 
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -44,7 +43,6 @@ public class Pose extends Filter {
 	/**
 	 * Loads item definitions from file.
 	 * @param file
-	 * @throws IOException
 	 */
 	private ItemSet loadItems(String file, int offsetx, int offsety, String slot)
 	{

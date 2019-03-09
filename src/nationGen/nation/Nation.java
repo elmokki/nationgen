@@ -2,8 +2,6 @@ package nationGen.nation;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -55,9 +53,9 @@ public class Nation {
 	public String name = "UNNAMED";
 	public String epithet = "NO EPITHET";
 	
-    public boolean passed = true;
-    public String restrictionFailed = "";
-    
+	public boolean passed = true;
+	public String restrictionFailed = "";
+	
 	public NationGen nationGen;
 	private NationGenAssets assets;
 	
@@ -110,7 +108,7 @@ public class Nation {
 	
 	public long getSeed()
 	{
-	    return seed;
+		return seed;
 	}
 	
 	private void getColors()
@@ -136,16 +134,16 @@ public class Nation {
 		// choose primary race
 		List<Race> allRaces = new ArrayList<>();
 
-        for(Race r : assets.races)
-        {
-            if (!r.tags.contains("secondary")) 
-            {
-                allRaces.add(r);
-            }
-        }
-        Race race;
-        race = chandler.getRandom(allRaces);
-                
+		for(Race r : assets.races)
+		{
+			if (!r.tags.contains("secondary")) 
+			{
+				allRaces.add(r);
+			}
+		}
+		Race race;
+		race = chandler.getRandom(allRaces);
+				
 		races.add(race.getCopy());
 		
 
@@ -442,7 +440,6 @@ public class Nation {
 		// Flag
 		FlagGen fg = new FlagGen(this, assets);
 		this.flag = fg.generateFlag(this);
-		fg = null;
 		
 	}
 	
@@ -470,74 +467,74 @@ public class Nation {
 				posaff.remove(startaff);
 			}
 		
-		    cycles--;
+			cycles--;
 		}
 		posaff = null;
 		System.gc();
 	}
 	
 	
-    public void generate(List<NationRestriction> restrictions)
-    {
-        getColors();
-        getRaces();
+	public void generate(List<NationRestriction> restrictions)
+	{
+		getColors();
+		getRaces();
 
-        if (!checkRestrictions(restrictions, RestrictionType.NoPrimaryRace, RestrictionType.PrimaryRace,
-                RestrictionType.NationTheme))
-        {
-            return;
-        }
+		if (!checkRestrictions(restrictions, RestrictionType.NoPrimaryRace, RestrictionType.PrimaryRace,
+				RestrictionType.NationTheme))
+		{
+			return;
+		}
 
-        generateMagesAndPriests();
+		generateMagesAndPriests();
 
-        if (!checkRestrictions(restrictions, RestrictionType.MageWithAccess, RestrictionType.MagicAccess,
-                RestrictionType.MagicDiversity, RestrictionType.PrimaryRace))
-        {
-            return;
-        }
+		if (!checkRestrictions(restrictions, RestrictionType.MageWithAccess, RestrictionType.MagicAccess,
+				RestrictionType.MagicDiversity, RestrictionType.PrimaryRace))
+		{
+			return;
+		}
 
-        generateTroops();
-        generateSacreds();
+		generateTroops();
+		generateSacreds();
 
-        if (!checkRestrictions(restrictions, RestrictionType.SacredRace, RestrictionType.RecAnywhereSacreds))
-        {
-            return;
-        }
+		if (!checkRestrictions(restrictions, RestrictionType.SacredRace, RestrictionType.RecAnywhereSacreds))
+		{
+			return;
+		}
 
-        generateScouts();
-        generateSpecialComs();
-        generateGods();
-        getForts();
-        generateHeroes();
-        applyNationWideFilter();
-        generateComs();
+		generateScouts();
+		generateSpecialComs();
+		generateGods();
+		getForts();
+		generateHeroes();
+		applyNationWideFilter();
+		generateComs();
 
-        if (!checkRestrictions(restrictions, RestrictionType.UnitCommand, RestrictionType.UnitFilter,
-                RestrictionType.UnitRace, RestrictionType.NoUnitOfRace))
-        {
-            return;
-        }
+		if (!checkRestrictions(restrictions, RestrictionType.UnitCommand, RestrictionType.UnitFilter,
+				RestrictionType.UnitRace, RestrictionType.NoUnitOfRace))
+		{
+			return;
+		}
 
-        generateMonsters();
-        SiteGenerator.generateSites(this, assets);
-        generateSpells();
-        generateFlag();
-        getStartAffinity();
+		generateMonsters();
+		SiteGenerator.generateSites(this, assets);
+		generateSpells();
+		generateFlag();
+		getStartAffinity();
 
-        double extraPDMulti = 1;
-        if (Generic.containsTag(this.races.get(0).tags, "extrapdmulti"))
-            extraPDMulti = Double.parseDouble(Generic.getTagValue(this.races.get(0).tags, "extrapdmulti"));
+		double extraPDMulti = 1;
+		if (Generic.containsTag(this.races.get(0).tags, "extrapdmulti"))
+			extraPDMulti = Double.parseDouble(Generic.getTagValue(this.races.get(0).tags, "extrapdmulti"));
 
-        if (random.nextDouble() < 0.1 * extraPDMulti)
-        {
-            if (random.nextDouble() < 0.02 * extraPDMulti)
-                PDRanks = 4;
-            else
-                PDRanks = 3;
-        }
+		if (random.nextDouble() < 0.1 * extraPDMulti)
+		{
+			if (random.nextDouble() < 0.02 * extraPDMulti)
+				PDRanks = 4;
+			else
+				PDRanks = 3;
+		}
 
-        // finalizeUnits();
-    }
+		// finalizeUnits();
+	}
 	
 	
 
@@ -910,269 +907,267 @@ public class Nation {
 	}
 	
 	/**
-     * Writes the nation
-     * @param tw
-     * @throws IOException
-     */
-    public void write(PrintWriter tw, String spritedir) throws IOException
-    {
+	 * Writes the nation
+	 */
+	public List<String> writeLines(String spritedir)
+	{
 
-        Color c = colors[0];
+		Color c = colors[0];
 
-        double r = (double)(Math.round((double)c.getRed()/255*10)) / 10;
-        double b = (double)(Math.round((double)c.getBlue()/255*10)) / 10;
-        double g = (double)(Math.round((double)c.getGreen()/255*10)) / 10;
-    
+		double r = (double)(Math.round((double)c.getRed()/255*10)) / 10;
+		double b = (double)(Math.round((double)c.getBlue()/255*10)) / 10;
+		double g = (double)(Math.round((double)c.getGreen()/255*10)) / 10;
+	
+		List<String> lines = new ArrayList<>();
+		lines.add("");
+		lines.add("-- Nation " + nationid + ": " + this.name + ", " + this.epithet);
+		lines.add("---------------------------------------------------------------");
+		lines.add("-- Generated with themes: " + this.nationthemes);
+		lines.add("-- Generated with " + races.get(0) + " race themes: " + races.get(0).themefilters);
+		lines.add("-- Generated with " + races.get(1) + " race themes: " + races.get(1).themefilters);
+		lines.add("---------------------------------------------------------------");
 
-        tw.println();
-        tw.println("-- Nation " + nationid + ": " + this.name + ", " + this.epithet);
-        tw.println("---------------------------------------------------------------");
-        tw.println("-- Generated with themes: " + this.nationthemes);
-        tw.println("-- Generated with " + races.get(0) + " race themes: " + races.get(0).themefilters);
-        tw.println("-- Generated with " + races.get(1) + " race themes: " + races.get(1).themefilters);
-        tw.println("---------------------------------------------------------------");
-
-        //writeNationInfo(tw);
-        tw.println("#selectnation " + nationid);
-        tw.println("#clear");
-        tw.println("#era " + era);
-        tw.println("#name \"" + name + "\"");
-        tw.println("#epithet \"" + epithet + "\"");
-        
-        
-		tw.println("#descr \"" + "A glorious NationGen nation! Generated from seed " + seed + " with settings integer " + 
+		//writeNationInfo(tw);
+		lines.add("#selectnation " + nationid);
+		lines.add("#clear");
+		lines.add("#era " + era);
+		lines.add("#name \"" + name + "\"");
+		lines.add("#epithet \"" + epithet + "\"");
+	
+	
+		lines.add("#descr \"" + "A glorious NationGen nation! Generated from seed " + seed + " with settings integer " + 
 				   nationGen.settings.getSettingInteger() + "\"");
+	
+		lines.add("#summary \"" + summary + "\"");
+		lines.add("#brief \"No description\"");
+		lines.add("#color " + (r) + " " + (b) + " " + (g)); 
 		
-        tw.println("#summary \"" + summary + "\"");
-        tw.println("#brief \"No description\"");
-        tw.println("#color " + (r) + " " + (b) + " " + (g)); 
-        
-        //Generic.generateFlag(this, spritedir + "/flag.tga");
-        
-
-        tw.println("#flag \"" + spritedir + "/flag.tga\"");
-        tw.println("");
-        // Sites
-        tw.println("#clearsites");
+		//Generic.generateFlag(this, spritedir + "/flag.tga");
+		
+		
+		lines.add("#flag \"" + spritedir + "/flag.tga\"");
+		lines.add("");
+		// Sites
+		lines.add("#clearsites");
  
-       
-        for(Site site : this.sites)
-        {
-        	tw.println("#startsite \"" + site.name +  "\"");
-        }
-        tw.println("");
-       
-        
-        // Add recruitables
-        tw.println("#clearrec");
-        
-        writeRecs(false, unitlists, tw);
-        writeRecs(true, comlists, tw);
+	   
+		for(Site site : this.sites)
+		{
+			lines.add("#startsite \"" + site.name +  "\"");
+		}
+		lines.add("");
+	   
+		
+		// Add recruitables
+		lines.add("#clearrec");
+		
+		lines.addAll(writeRecLines(false, unitlists));
+		lines.addAll(writeRecLines(true, comlists));
 
-        
-        // PD
-        PDSelector pds = new PDSelector(this, nationGen);
-                
-      
-        tw.println("");
-        tw.println("#defcom1 " + pds.getIDforPD(pds.getPDCommander(1)));
-        tw.println("#defunit1 " + pds.getIDforPD(pds.getMilitia(1, 1)));
-        tw.println("#defmult1 " + pds.getMilitiaAmount(pds.getMilitia(1, 1)));
-        tw.println("#defunit1b " + pds.getIDforPD(pds.getMilitia(2, 1)));
-        tw.println("#defmult1b " + pds.getMilitiaAmount(pds.getMilitia(2, 1)));
-        if(PDRanks > 2)
-        {
-            tw.println("#defunit1c " + pds.getIDforPD(pds.getMilitia(3, 1)));
-            tw.println("#defmult1c " + pds.getMilitiaAmount(pds.getMilitia(3, 1)));
-            
-            if(PDRanks > 3)
-            {
-                tw.println("#defunit1d " + pds.getIDforPD(pds.getMilitia(4, 1)));
-                tw.println("#defmult1d " + pds.getMilitiaAmount(pds.getMilitia(4, 1)));
-            }
-        }
-        tw.println("#defcom2 " + pds.getIDforPD(pds.getPDCommander(2)));
-        tw.println("#defunit2 " + pds.getIDforPD(pds.getMilitia(1, 2)));
-        tw.println("#defmult2 " + pds.getMilitiaAmount(pds.getMilitia(1, 2)));
-        tw.println("#defunit2b " + pds.getIDforPD(pds.getMilitia(2, 2)));
-        tw.println("#defmult2b " + pds.getMilitiaAmount(pds.getMilitia(2, 2)));
-        tw.println("");
-    
-        // Wall units
-        
-        tw.println("#wallcom " + pds.getIDforPD(pds.getPDCommander(1)));
-        tw.println("#wallunit " + pds.getIDforPD(pds.getWallUnit(true)));
-        tw.println("#wallmult " + pds.getMilitiaAmount(pds.getWallUnit(true)));
+		
+		// PD
+		PDSelector pds = new PDSelector(this, nationGen);
+		
+		
+		lines.add("");
+		lines.add("#defcom1 " + pds.getIDforPD(pds.getPDCommander(1)));
+		lines.add("#defunit1 " + pds.getIDforPD(pds.getMilitia(1, 1)));
+		lines.add("#defmult1 " + pds.getMilitiaAmount(pds.getMilitia(1, 1)));
+		lines.add("#defunit1b " + pds.getIDforPD(pds.getMilitia(2, 1)));
+		lines.add("#defmult1b " + pds.getMilitiaAmount(pds.getMilitia(2, 1)));
+		if(PDRanks > 2)
+		{
+			lines.add("#defunit1c " + pds.getIDforPD(pds.getMilitia(3, 1)));
+			lines.add("#defmult1c " + pds.getMilitiaAmount(pds.getMilitia(3, 1)));
+			
+			if(PDRanks > 3)
+			{
+				lines.add("#defunit1d " + pds.getIDforPD(pds.getMilitia(4, 1)));
+				lines.add("#defmult1d " + pds.getMilitiaAmount(pds.getMilitia(4, 1)));
+			}
+		}
+		lines.add("#defcom2 " + pds.getIDforPD(pds.getPDCommander(2)));
+		lines.add("#defunit2 " + pds.getIDforPD(pds.getMilitia(1, 2)));
+		lines.add("#defmult2 " + pds.getMilitiaAmount(pds.getMilitia(1, 2)));
+		lines.add("#defunit2b " + pds.getIDforPD(pds.getMilitia(2, 2)));
+		lines.add("#defmult2b " + pds.getMilitiaAmount(pds.getMilitia(2, 2)));
+		lines.add("");
+	
+		// Wall units
+		
+		lines.add("#wallcom " + pds.getIDforPD(pds.getPDCommander(1)));
+		lines.add("#wallunit " + pds.getIDforPD(pds.getWallUnit(true)));
+		lines.add("#wallmult " + pds.getMilitiaAmount(pds.getWallUnit(true)));
 
-        
-        // Start army
-        tw.println("#startcom " + pds.getStartArmyCommander().id);
-        if(comlists.get("scouts").size() > 0)
-        	tw.println("#startscout " + comlists.get("scouts").get(0).id);
-        else
-        	tw.println("#startscout " + pds.getPDCommander(2).id);
-    
-        
-        tw.println("#startunittype1 " + pds.getMilitia(1, 1, false).id);
-        tw.println("#startunittype2 " + pds.getMilitia(1, 2, false).id);
-        int amount1 = (int)(pds.getStartArmyAmount(pds.getMilitia(1, 1, false)));
-        tw.println("#startunitnbrs1 " + amount1);
-        int amount2 = (int)(pds.getStartArmyAmount(pds.getMilitia(1, 2, false)));
-        tw.println("#startunitnbrs2 " + amount2);
-        tw.println("");
-        
-        // Heroes
-        for(int i = 0; i < heroes.size(); i++)
-        {
-        	tw.println("#hero" + (i+1) + " " + heroes.get(i).id);
-        }
+		
+		// Start army
+		lines.add("#startcom " + pds.getStartArmyCommander().id);
+		if(comlists.get("scouts").size() > 0)
+			lines.add("#startscout " + comlists.get("scouts").get(0).id);
+		else
+			lines.add("#startscout " + pds.getPDCommander(2).id);
+		
+		
+		lines.add("#startunittype1 " + pds.getMilitia(1, 1, false).id);
+		lines.add("#startunittype2 " + pds.getMilitia(1, 2, false).id);
+		int amount1 = pds.getStartArmyAmount(pds.getMilitia(1, 1, false));
+		lines.add("#startunitnbrs1 " + amount1);
+		int amount2 = pds.getStartArmyAmount(pds.getMilitia(1, 2, false));
+		lines.add("#startunitnbrs2 " + amount2);
+		lines.add("");
+		
+		// Heroes
+		for(int i = 0; i < heroes.size(); i++)
+		{
+			lines.add("#hero" + (i+1) + " " + heroes.get(i).id);
+		}
+		
+		
+		lines.add("");
 
-        
-        tw.println("");
+		// Custom coms
+		
+		for(Command cmd : this.getCommands())
+		{
+			lines.add(cmd.command + " " + Generic.listToString(cmd.args));
+		}
+		
+		
+		lines.add("");
+		
+		// Gods
+		for(Command cmd : this.gods)
+			lines.add(cmd.command + " " + Generic.listToString(cmd.args));
+		
+		
+		
+		lines.add("");
+		
+		
+		lines.add("#templepic " + random.nextInt(19));
+		lines.add("");
+		
+		
+		lines.add("#end");
+		lines.add("");
+		
+		lines.add("");
+		
 
-        // Custom coms
-        
-        for(Command cmd : this.getCommands())
-        {
-            tw.println(cmd.command + " " + Generic.listToString(cmd.args));
-        }
-        
-        
-        tw.println("");
-        
-        // Gods
-        for(Command cmd : this.gods)
-        	tw.println(cmd.command + " " + Generic.listToString(cmd.args));
-     
- 
-        
-        tw.println("");
-        
-        
-        tw.println("#templepic " + random.nextInt(19));
-        tw.println("");
-        
-
-        tw.println("#end");
-        tw.println("");
-        
-        tw.println("");
-        
-
-        
-
-
-    }
-    
-    
+		return lines;
+	}
+	
+	
 	public List<Unit> combineTroopsToList(String role)
 	{
-		List<Unit> unitlist = new ArrayList<Unit>();
-		Iterator<Entry<String, List<Unit>>> itr = unitlists.entrySet().iterator();
+		List<Unit> unitlist = new ArrayList<>();
 		
-		if(itr.hasNext())
+		for(Entry<String, List<Unit>> entry  : unitlists.entrySet())
 		{
-			Entry<String, List<Unit>> entry = itr.next();
-	
-			do
+			if(entry.getKey().startsWith(role))
 			{
-				if(entry.getKey().startsWith(role))
-				{
-					for(Unit u : entry.getValue())
-						unitlist.add(u);
-				}
-				entry = itr.next();
-	
-			} while(itr.hasNext());
+				unitlist.addAll(entry.getValue());
+			}
 		}
 		return unitlist;
 	}
-    
-
-
-
 	
-    
-	public void writeUnits(PrintWriter tw, String spritedir) throws IOException
+	public List<ShapeChangeUnit> getShapeChangeUnits() {
+		List<Unit> units = new ArrayList<>();
+		for(List<Unit> list : this.comlists.values())
+			units.addAll(list);
+		for(List<Unit> list : this.unitlists.values())
+			units.addAll(list);
+		units.addAll(heroes);
+		
+		List<ShapeChangeUnit> sus = new ArrayList<>();
+		for(ShapeChangeUnit su : nationGen.forms)
+		{
+			if(units.contains(su.otherForm))
+				sus.add(su);
+		}
+		
+		return sus;
+	}
+	
+	public void writeSprites(String spritedir)
 	{
+		for(ShapeChangeUnit su : getShapeChangeUnits())
+		{
+			su.writeSprites(spritedir);
+		}
+		
+		for(List<Unit> list : unitlists.values()) {
+			for (Unit u : list) {
+				if (u.color == Color.white) {
+					u.color = colors[0];
+				}
+				
+				if(!u.invariantMonster) {
+					u.writeSprites(spritedir);
+				}
+			}
+		}
+		for(List<Unit> list : comlists.values()) {
+			for (Unit u : list) {
+				if (u.color == Color.white) {
+					u.color = colors[0];
+				}
+				
+				u.writeSprites(spritedir);
+			}
+		}
+		for(Unit u : heroes)
+		{
+			u.writeSprites(spritedir);
+		}
+	}
 	
-        tw.println("");
-        tw.println("--- Unit definitions for " + this.name);	
-        tw.println("");
-        
-    	List<Unit> units = new ArrayList<Unit>();
-    	for(List<Unit> list : this.comlists.values())
-    		units.addAll(list);
-    	for(List<Unit> list : this.unitlists.values())
-    		units.addAll(list);
-    	units.addAll(heroes);
-    
-    	List<ShapeChangeUnit> sus = new ArrayList<ShapeChangeUnit>();
-        for(ShapeChangeUnit su : nationGen.forms)
-        {
-        	if(units.contains(su.otherForm))
-        		sus.add(su);
-        }
-        
-        for(ShapeChangeUnit su : sus)
-        {
-        	su.write(tw, spritedir);
-        }
+	public List<String> writeUnitsLines(String spritedir)
+	{
+		List<String> lines = new ArrayList<>();
+		lines.add("");
+		lines.add("--- Unit definitions for " + this.name);
+		lines.add("");
+		
+		for(ShapeChangeUnit su : getShapeChangeUnits())
+		{
+			lines.addAll(su.writeLines(spritedir));
+		}
    
-	    Iterator<List<Unit>> itr = unitlists.values().iterator();
-	    while(itr.hasNext())
-	    {
-	    	List<Unit> list = (List<Unit>)itr.next();
-        	for(Unit u : list)
-        	{
-        		if(u.color == Color.white)
-        			u.color = colors[0];
-	
-        		//if(nationGen.settings.get("skipSprites") == 0)
-        		
+		for(List<Unit> list : unitlists.values())
+		{
+			for(Unit u : list)
+			{
 				if(!u.invariantMonster)
 				{
-	        		u.draw(spritedir);
-	        		u.write(tw, spritedir);
+					lines.addAll(u.writeLines(spritedir));
 				}
 				else  // The monster uses in-game graphics and stats; just print out name, ID, and costs
 				{
-					tw.println("--- " + u.name + " (Unit ID " + u.id + "), Gold: " + u.getGoldCost() + ", Resources: " + u.getResCost(true) + "\n");
+					lines.add("--- " + u.name + " (Unit ID " + u.id + "), Gold: " + u.getGoldCost() + ", Resources: " + u.getResCost(true) + "\n");
 				}
-        	}
-	    }
-
-
-	    itr = comlists.values().iterator();
-	    while(itr.hasNext())
-	    {
-	    	List<Unit> list = (List<Unit>)itr.next();
-        	for(Unit u : list)
-        	{
-        		if(u.color == Color.white)
-        			u.color = colors[0];
-        		
-        		//if(nationGen.settings.get("skipSprites") == 0)
-        			u.draw(spritedir);
-        		u.write(tw, spritedir);
-        	}
-	    }
-	    
-	    for(Unit u : heroes)
-	    {
-	    	u.draw(spritedir);
-	    	u.write(tw, spritedir);
-	    }
-	    
-	    
-
-
-
-        
+			}
+		}
+		
+		for(List<Unit> list : comlists.values())
+		{
+			for(Unit u : list)
+			{
+				lines.addAll(u.writeLines(spritedir));
+			}
+		}
+		
+		for(Unit u : heroes)
+		{
+			lines.addAll(u.writeLines(spritedir));
+		}
+		
+		return lines;
 	}
 	
 
-	private void writeRecs(boolean coms, LinkedHashMap<String, List<Unit>> unitlists, PrintWriter tw)
+	private List<String> writeRecLines(boolean coms, LinkedHashMap<String, List<Unit>> unitlists)
 	{
 		List<String> order = Generic.parseArgs("ranged infantry mounted chariot special sacred monsters");
 		if(coms)
@@ -1184,72 +1179,69 @@ public class Nation {
 		if(!coms)
 			line = "#addrecunit";
 		
-		List<String> foreigntags = new ArrayList<String>();
+		List<String> foreigntags = new ArrayList<>();
 		foreigntags.add("forestrec");
 		foreigntags.add("mountainrec");
 		foreigntags.add("swamprec");
 		foreigntags.add("wasterec");
 		foreigntags.add("caverec");
 		
+		List<String> lines = new ArrayList<>();
 
-		List<String> listnames = new ArrayList<String>();
-		listnames.addAll(unitlists.keySet());
+		List<String> listnames = new ArrayList<>(unitlists.keySet());
 		for(String str : order)
 		{
-			if(true)
+			for(int i = 1; i <= 10; i++)
 			{
-				for(int i = 1; i <= 10; i++)
+				if(listnames.contains(str + "-" + i))
 				{
-					if(listnames.contains(str + "-" + i))
+					for(Unit u : unitlists.get(str + "-" + i))
 					{
-						for(Unit u : unitlists.get(str + "-" + i))
-						{
-							for(String tag : foreigntags)
-								if(u.tags.contains(tag))
+						for(String tag : foreigntags)
+							if(u.tags.contains(tag))
+							{
+								if(coms)
 								{
-									if(coms)
-									{
-										tw.println("#" + tag.substring(0, tag.length() - 3) + "com " + u.id);
-									}
-									else
-										tw.println("#" + tag+ " " + u.id);
+									lines.add("#" + tag.substring(0, tag.length() - 3) + "com " + u.id);
 								}
-							
-							if(!u.caponly)
-								tw.println(line + " " + u.id);
-						}
+								else
+									lines.add("#" + tag + " " + u.id);
+							}
 						
-						listnames.remove((str + "-" + i));
+						if(!u.caponly)
+							lines.add(line + " " + u.id);
 					}
-				}
-				
-				for(String listname : listnames)
-				{
-					if(listname.startsWith(str))
-						for(Unit u : unitlists.get(listname))
-						{
-							for(String tag : foreigntags)
-								if(u.tags.contains(tag))
-								{
-									if(coms)
-										tw.println("#" + tag.substring(0, tag.length() - 3) + "com " + u.id);
-									else
-										tw.println("#" + tag+ " " + u.id);
-								}
-							
-							if(!u.caponly)
-								tw.println(line + " " + u.id);
-						}
+					
+					listnames.remove((str + "-" + i));
 				}
 			}
 			
+			for(String listname : listnames)
+			{
+				if(listname.startsWith(str))
+					for(Unit u : unitlists.get(listname))
+					{
+						for(String tag : foreigntags)
+							if(u.tags.contains(tag))
+							{
+								if(coms)
+									lines.add("#" + tag.substring(0, tag.length() - 3) + "com " + u.id);
+								else
+									lines.add("#" + tag+ " " + u.id);
+							}
+						
+						if(!u.caponly)
+							lines.add(line + " " + u.id);
+					}
+			}
+			
 		}
-		
+		return lines;
 	}
-    
+	
 	public List<Command> getCommands()
 	{
-		List<Command> coms  = new ArrayList<Command>();
+		List<Command> coms  = new ArrayList<>();
 		for(Command c : this.commands)
 		{
 			this.handleCommand(coms, c);
@@ -1454,24 +1446,26 @@ public class Nation {
 			
 	}
 	
-	public void writeSites(PrintWriter tw)
+	public List<String> writeSitesLines()
 	{
-		tw.println("--- Sites for nation " + nationid + ": " + name);
+		List<String> lines = new ArrayList<>();
+		lines.add("--- Sites for nation " + nationid + ": " + name);
 		for(Site site : sites)
-			site.write(tw);
+			lines.addAll(site.writeLines());
+		return lines;
 	}
 	
-    public boolean checkRestrictions(List<NationRestriction> restrictions, RestrictionType... restrictionTypes)
-    {
-        for(var restriction: restrictions)
-        {
-            if (Set.of(restrictionTypes).contains(restriction.getType()) && !restriction.doesThisPass(this)) 
-            {
-                passed = false;
-                restrictionFailed = restriction.toString().toUpperCase();
-                return false;
-            }
-        }
-        return true;
-    }
+	public boolean checkRestrictions(List<NationRestriction> restrictions, RestrictionType... restrictionTypes)
+	{
+		for(var restriction: restrictions)
+		{
+			if (Set.of(restrictionTypes).contains(restriction.getType()) && !restriction.doesThisPass(this)) 
+			{
+				passed = false;
+				restrictionFailed = restriction.toString().toUpperCase();
+				return false;
+			}
+		}
+		return true;
+	}
 }

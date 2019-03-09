@@ -2,7 +2,6 @@ package nationGen.units;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -215,11 +214,8 @@ public class ShapeChangeUnit extends Unit {
 	
 
 	
-	private void copyImage(String orig, String dest, int xoffset)
+	private BufferedImage copyImage(BufferedImage image, int xoffset)
 	{
-
-		BufferedImage image = FileUtil.readImage(orig);
-		
 		
 		BufferedImage base = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_3BYTE_BGR);
 		Graphics g = base.getGraphics();
@@ -236,77 +232,65 @@ public class ShapeChangeUnit extends Unit {
 			g.drawImage(mask, xoffset, 0, null);
 		}
 		
-		FileUtil.writeTGA(base, "/mods/" + dest);
+		return base;
 	}
 	
-	public void write(PrintWriter tw, String spritedir)
-	{
-
-		
+	@Override
+	public void writeSprites(String spritedir) {
 		// Handle sprites
-		String spr1path = "";
-		boolean doShift = false;
-		boolean greyscale = false;
-		int greyscaleunits = 0;
-		List<Command> ignore = new ArrayList<Command>();
-		for(Command c : thisForm.commands)
-		{
+		
+		BufferedImage spr1 = null;
+		for(Command c : thisForm.commands) {
 			// First sprite
-			if(c.command.equals("#spr1"))
-			{
-				if(c.args.get(0).equals("greyscale"))
-				{
-					greyscale = true;
+			if (c.command.equals("#spr1")) {
+				if (c.args.get(0).equals("greyscale")) {
 					
-					
-					if(c.args.size() > 1)
+					int greyscaleunits = 0;
+					if (c.args.size() > 1)
 						greyscaleunits = Integer.parseInt(c.args.get(1));
 					
-					BufferedImage image = otherForm.render();
-					FileUtil.writeTGA(Drawing.greyscale(image, greyscaleunits), "./mods/" + spritedir + "/shapechange_" + id + "_a.tga");
+					spr1 = Drawing.greyscale(otherForm.render(), greyscaleunits);
+				} else {
+					spr1 = copyImage(FileUtil.readImage(c.args.get(0)), 0);
 				}
-				else
-				{
-					spr1path = c.args.get(0);
-					copyImage(spr1path, spritedir + "/shapechange_" + id + "_a.tga", 0);
-				}
-				ignore.add(c);
-				
-				this.commands.add(new Command(c.command, "\"" + spritedir + "/shapechange_" + id + "_a.tga" + "\""));
-			}
-			else if(c.command.equals("#spr2"))
-			{
-				if(c.args.get(0).equals("shift"))
-				{
-					doShift = true;
-					ignore.add(c);
-					this.commands.add(new Command(c.command, "\"" + spritedir + "/shapechange_" + id + "_b.tga" + "\""));
-				}
-				else
-				{
-					copyImage(c.args.get(0), spritedir + "/shapechange_" + id + "_b.tga", 0);
-					ignore.add(c);
-					this.commands.add(new Command(c.command, "\"" + spritedir + "/shapechange_" + id + "_b.tga" + "\""));
-				}
+				FileUtil.writeTGA(spr1, "/mods/" + spritedir + "/shapechange_" + id + "_a.tga");
 			}
 		}
 		
-		// To handle #spr2 even if #spr1 wasn't there yet:
-		if(doShift && !spr1path.equals("") && !greyscale)
-			copyImage(spr1path, spritedir + "/shapechange_" + id + "_b.tga", -5);
-		else if(doShift && greyscale)
-		{
-			BufferedImage image = otherForm.render(-5);
-			FileUtil.writeTGA(Drawing.greyscale(image, greyscaleunits), "./mods/" + spritedir + "/shapechange_" + id + "_b.tga");
+		for (Command c : thisForm.commands) {
+			if(c.command.equals("#spr2"))
+			{
+				BufferedImage spr2;
+				if(c.args.get(0).equals("shift"))
+				{
+					if (spr1 == null) {
+						throw new IllegalStateException("Can't shift attack sprite because no #spr1 command found for shapechange unit!");
+					}
+					
+					spr2 = copyImage(spr1, -5);
+				}
+				else
+				{
+					spr2 = copyImage(FileUtil.readImage(c.args.get(0)), 0);
+				}
+				FileUtil.writeTGA(spr2, "/mods/" + spritedir + "/shapechange_" + id + "_b.tga");
+			}
 		}
+	}
+	
+	@Override
+	public List<String> writeLines(String spritedir)
+	{
+		
+		List<String> lines = new ArrayList<>();
 
 		// Write the unit text
 		if(otherForm != null)
-			tw.println("--- Shapechange form for " + otherForm.getName());
+			lines.add("--- Shapechange form for " + otherForm.getName());
 		else
-			tw.println("--- Special unit " + getName());
+			lines.add("--- Special unit " + getName());
 		
-		tw.println("#newmonster " + id);
+		lines.add("#newmonster " + id);
 
 
 		List<Command> commands = getCommands();
@@ -327,7 +311,7 @@ public class ShapeChangeUnit extends Unit {
 			}
 			else
 			{
-				tw.println(c.command + " " + Generic.listToString(c.args));
+				lines.add(c.command + " " + Generic.listToString(c.args));
 			}
 			
 			if(c.command.equals("#descr") && thisForm.tags.contains("specifieddescr"))
@@ -335,40 +319,45 @@ public class ShapeChangeUnit extends Unit {
 				hasDescriptionSpecified = true;
 			}
 		}
-		
+		if (thisForm.commands.stream().anyMatch(c -> c.command.equals("#spr1"))) {
+			lines.add("#spr1 \"" + spritedir + "/shapechange_" + id + "_a.tga" + "\"");
+		}
+		if (thisForm.commands.stream().anyMatch(c -> c.command.equals("#spr2"))) {
+			lines.add("#spr2 \"" + spritedir + "/shapechange_" + id + "_b.tga" + "\"");
+		}
 
 		if(!hasDescriptionSpecified)
 		{
-			tw.println("#descr \"No description\"");		
+			lines.add("#descr \"No description\"");
 		}
-
-		//tw.println("#maxage 1000");
 		
 		if(thisForm.keepname && otherForm != null)
-			tw.println("#name \"" + otherForm.name + "\"");
+			lines.add("#name \"" + otherForm.name + "\"");
 		
 
 		if(!shiftcommand.equals("") && !thisForm.tags.contains("nowayback") && otherForm != null)
 		{
-			tw.println(shiftcommand + " " + otherForm.id);
+			lines.add(shiftcommand + " " + otherForm.id);
 		}
 		if(sacred)
-			tw.println("#holy");
+			lines.add("#holy");
 		
 		if(gcost != 0)
-			tw.println("#gcost " + gcost);
+			lines.add("#gcost " + gcost);
 
 		
 		// If there's no #copystats or defined body type, define body type (as probably humanoid unless shenanigans have been done)
-		this.handleBodytype(tw);
+		writeBodytypeLine().ifPresent(lines::add);
 		
 		// Write itemslots if they were skipped before
 		if(hasItemSlots)
-			tw.println("#itemslots " + this.getItemSlots());
+			lines.add("#itemslots " + this.getItemSlots());
 
 		
-		tw.println("#end");
-		tw.println("");	
+		lines.add("#end");
+		lines.add("");
+		
+		return lines;
 	}
 	
 

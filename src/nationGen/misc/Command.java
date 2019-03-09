@@ -173,13 +173,13 @@ public class Command {
 	
 	public Command(String cmd)
 	{
-		if(cmd.indexOf(" ") > -1)
+		if(cmd.contains(" "))
 		{
 			String[] stuff = cmd.split(" ");
 			this.command = stuff[0];		
 			for(int i = 1; i < stuff.length; i++)
 			{
-				args.add(stuff[i]);
+				this.args.add(stuff[i]);
 			}
 
 		}
