@@ -1,14 +1,12 @@
 package nationGen.unrelated;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 import com.elmokki.Dom3DB;
 import com.elmokki.Generic;
+import nationGen.misc.FileUtil;
+
 
 /**
  * Converts LarzM's mod inspector database files to weapons/armor files for nationgen
@@ -18,23 +16,23 @@ import com.elmokki.Generic;
  */
 public class DatabaseConverter {
 
-	public static void main(String[] args) throws IOException
+	public static void main(String[] args)
 	{
 		
 		// Weapons
-		Dom3DB base = new Dom3DB("db_conversion/weapons.csv");
+		Dom3DB base = new Dom3DB("/db_conversion/weapons.csv");
 		
-		addAttributes(base, "db_conversion/attributes_by_weapon.csv");
+		addAttributes(base, "/db_conversion/attributes_by_weapon.csv");
 		addEffects(base);
 		
-		base.saveToFile("db_conversion/output_weapon.csv");
+		base.saveToFile("/db_conversion/output_weapon.csv");
 		
 		
 		// Armor 
-		base = new Dom3DB("db_conversion/armors.csv");
-		addAttributes(base, "db_conversion/attributes_by_armor.csv");
+		base = new Dom3DB("/db_conversion/armors.csv");
+		addAttributes(base, "/db_conversion/attributes_by_armor.csv");
 		addArmorProt(base);
-		base.saveToFile("db_conversion/output_armor.csv");
+		base.saveToFile("/db_conversion/output_armor.csv");
 
 
 	}
@@ -52,28 +50,15 @@ public class DatabaseConverter {
 	{
 
 		
-        Scanner file = null;
+        List<String> fileLines = FileUtil.readLines("/db_conversion/protections_by_armor.csv");
+		
+		fileLines.remove(0);
 
-    	
-		try {
-			file = new Scanner(new FileInputStream("db_conversion/protections_by_armor.csv"));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		file.nextLine();
-
-        String line;
-
-        List<String> lines = new ArrayList<String>();
+        List<String> lines = new ArrayList<>();
         // Let's read the unit data then.
 
-        while (file.hasNextLine())
+        for (String line : fileLines)
         {
-            // Read line
-            line = file.nextLine();
-            
             // Set units[id] to line of that unit.
             if(line.length() > 0 && line.split(";").length > 0)
             	lines.add(line);
@@ -81,8 +66,6 @@ public class DatabaseConverter {
             	lines.add(line);
 
         }
-
-        file.close();
 		
 		for(String key : db.entryMap.keySet())
 		{
@@ -134,19 +117,10 @@ public class DatabaseConverter {
 	/**
 	 * Handles attributes.csv
 	 * @param db
-	 * @param attributes_by
+	 * @param fname
 	 */
 	private static void addAttributes(Dom3DB db, String fname)
 	{
-        Scanner file = null;
-		try {
-			file = new Scanner(new FileInputStream(fname));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		file.nextLine();
-		
 		for(String key : db.entryMap.keySet())
 		{
 			db.setValue(key, "0", "ferrous");
@@ -155,11 +129,12 @@ public class DatabaseConverter {
 
 		}
 		
+		List<String> lines = FileUtil.readLines(fname);
 		
-        while (file.hasNextLine())
+		lines.remove(0);
+		
+		for (String ssgd : lines)
         {
-            // Read line
-        	String ssgd = file.nextLine();
             String[] line = ssgd.split("\t");
             
             
@@ -169,7 +144,7 @@ public class DatabaseConverter {
             String key = line[0];
     		String attr = line[1];
 
-			if(attr != "")
+			if(!"".equals(attr))
 			{
 				if(attr.equals("266") || attr.equals("267"))
 				
@@ -196,12 +171,7 @@ public class DatabaseConverter {
 	 */
 	private static void addEffects(Dom3DB db)
 	{
-		Dom3DB attr = null;
-		try {
-			attr = new Dom3DB("db_conversion/effects.csv");
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
+		Dom3DB attr = new Dom3DB("/db_conversion/effects.csv");
 		
 		for(String key : db.entryMap.keySet())
 		{

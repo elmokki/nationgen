@@ -206,21 +206,21 @@ public class CustomItem extends Item {
 	}
 	
 	
-	public void write(PrintWriter tw)
+	public List<String> writeLines()
 	{
-
-		if(armor)
-			tw.println("#newarmor " + id);
-		else
-			tw.println("#newweapon " + id);
 		
-		List<String> lines = new ArrayList<String>();
+		List<String> lines = new ArrayList<>();
+		
+		if(armor)
+			lines.add("#newarmor " + id);
+		else
+			lines.add("#newweapon " + id);
 		
 		for(String command : values.keySet())
 		{
 			if(command.equals("name"))
 			{
-				tw.println("#name " + values.get("name"));
+				lines.add("#name " + values.get("name"));
 			}
 		}
 		
@@ -239,17 +239,12 @@ public class CustomItem extends Item {
 
 			
 			lines.add("#" + command + arg);
-				
-		}
-			
-		for(String str : lines)
-		{			
-			tw.println(str);
 		}
 		
+		lines.add("#end");
+		lines.add("");
 		
-		tw.println("#end");
-		tw.println();
+		return lines;
 	}
 
 }

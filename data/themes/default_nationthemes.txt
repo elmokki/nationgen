@@ -159,10 +159,10 @@
 #end
 
 #new
-#name "zombiereanim"
+#name "priestreanim"
 #type "reanim"
 #basechance 0.05
-#command "#zombiereanim"
+#command "#priestreanim"
 #magicpriority death 256
 #desc "Priests can reanimate ghouls, soulless and longdead infantry."
 #magepriestchance 0.95
@@ -175,7 +175,7 @@
 #name "horsereanim"
 #type "reanim"
 #basechance 0.025
-#command "#zombiereanim"
+#command "#priestreanim"
 #command "#horsereanim"
 #magicpriority death 256
 #desc "Priests can reanimate ghouls, soulless, and longdead infantry and cavalry."

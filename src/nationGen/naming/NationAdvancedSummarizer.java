@@ -1,17 +1,18 @@
 package nationGen.naming;
 
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import nationGen.entities.Filter;
 import nationGen.entities.Race;
 import nationGen.entities.Theme;
 import nationGen.items.Item;
 import nationGen.misc.Command;
+import nationGen.misc.FileUtil;
 import nationGen.misc.Site;
 import nationGen.nation.Nation;
 import nationGen.nation.PDSelector;
@@ -24,8 +25,8 @@ import com.elmokki.Generic;
 public class NationAdvancedSummarizer {
 	
 	
-	Dom3DB weapondb;
-	Dom3DB armordb;
+	private Dom3DB weapondb;
+	private Dom3DB armordb;
 	
 	public NationAdvancedSummarizer(Dom3DB armor, Dom3DB weapon)
 	{
@@ -34,90 +35,95 @@ public class NationAdvancedSummarizer {
 	}
 	
 
-	private void printPDInfo(PrintWriter tw, Nation n)
+	private List<String> printPDInfo(Nation n)
 	{
 		PDSelector pds = new PDSelector(n, n.nationGen);
 		
-		tw.println("Province defence:");
-        tw.println("* Commander 1: " + pds.getPDCommander(1).name);
-        tw.println("* Commander 2: " + pds.getPDCommander(2).name);
-        
-		tw.println("* Troop 1a: " + pds.getMilitia(1, 1).name + " - "  + pds.getStartArmyAmount(pds.getMilitia(1, 1)) + " per 10 PD");
-		tw.println("* Troop 1b: " + pds.getMilitia(2, 1).name + " - " + pds.getStartArmyAmount(pds.getMilitia(2, 1)) + " per 10 PD");
+		List<String> lines = new ArrayList<>();
+		lines.add("Province defence:");
+        lines.add("* Commander 1: " + pds.getPDCommander(1).name);
+		lines.add("* Commander 2: " + pds.getPDCommander(2).name);
+		
+		lines.add("* Troop 1a: " + pds.getMilitia(1, 1).name + " - "  + pds.getStartArmyAmount(pds.getMilitia(1, 1)) + " per 10 PD");
+		lines.add("* Troop 1b: " + pds.getMilitia(2, 1).name + " - " + pds.getStartArmyAmount(pds.getMilitia(2, 1)) + " per 10 PD");
 		if(n.PDRanks > 2)
 		{
-			tw.println("* Troop 1c: " + pds.getMilitia(3, 1).name + " - " + pds.getStartArmyAmount(pds.getMilitia(3, 1)) + " per 10 PD");
+			lines.add("* Troop 1c: " + pds.getMilitia(3, 1).name + " - " + pds.getStartArmyAmount(pds.getMilitia(3, 1)) + " per 10 PD");
 			if(n.PDRanks > 3)
 			{
-				tw.println("* Troop 1d: " + pds.getMilitia(4, 1).name + " - " + pds.getStartArmyAmount(pds.getMilitia(4, 1)) + " per 10 PD");
+				lines.add("* Troop 1d: " + pds.getMilitia(4, 1).name + " - " + pds.getStartArmyAmount(pds.getMilitia(4, 1)) + " per 10 PD");
 			}
 		}
 		
-		tw.println("* Troop 2a: " + pds.getMilitia(1, 2).name + " - " + pds.getStartArmyAmount(pds.getMilitia(1, 2)) + " per 10 PD");
-		tw.println("* Troop 2b: " + pds.getMilitia(2, 2).name + " - " + pds.getStartArmyAmount(pds.getMilitia(2, 2)) + " per 10 PD");
+		lines.add("* Troop 2a: " + pds.getMilitia(1, 2).name + " - " + pds.getStartArmyAmount(pds.getMilitia(1, 2)) + " per 10 PD");
+		lines.add("* Troop 2b: " + pds.getMilitia(2, 2).name + " - " + pds.getStartArmyAmount(pds.getMilitia(2, 2)) + " per 10 PD");
 		
-		
-
+		return lines;
 	}
 	
 	
-	private void printUnits(PrintWriter tw, String role, String tag, Nation n)
+	private List<String> printUnits(String role, String tag, Nation n)
 	{
+		List<String> lines = new ArrayList<>();
 		if(n.generateUnitList(role).size() > 0)
 		{
-			tw.println("- " + tag + ":");
+			lines.add("- " + tag + ":");
 			for(Unit u : n.generateUnitList(role))
-				getTroopInfo(u, tw);
+				lines.addAll(getTroopInfo(u));
 		}
+		return lines;
 	}
 	
 
 	
-	private void writeDescription(Nation n, PrintWriter tw)
+	private List<String> writeDescription(Nation n)
 	{
-		tw.println("Nation " + n.nationid + ": " + n.name);
-		tw.println("-----------------------------------");
-		tw.println(n.summary.race);
-		tw.println(n.summary.military);
-		tw.println(n.summary.magic);
-		tw.println(n.summary.priest);
-
+		return List.of("Nation " + n.nationid + ": " + n.name,
+			"-----------------------------------",
+			n.summary.race,
+			n.summary.military,
+			n.summary.magic,
+			n.summary.priest);
 	}
 			
-	public void writeDescriptionFile(List<Nation> nations, String modname) throws IOException
+	public void writeDescriptionFile(List<Nation> nations, String modDirectory)
 	{
-		String dir = "/nationgen_" + modname.toLowerCase().replaceAll(" ", "_") + "/";
-		FileWriter fstream = new FileWriter("mods/" + dir + "descriptions.txt");
-		PrintWriter tw = new PrintWriter(fstream);
-		
+		FileUtil.writeLines("/mods/" + modDirectory + "/descriptions.txt", writeDescriptionLines(nations));
+	}
+	
+	List<String> writeDescriptionLines(List<Nation> nations)
+	{
 		System.out.print("Writing descriptions");
+		
+		List<String> lines = new ArrayList<>();
 		for(Nation n : nations)
 		{
-			writeDescription(n, tw);
-			tw.println();
+			lines.addAll(writeDescription(n));
+			lines.add("");
 			System.out.print(".");
 		}
 		System.out.println(" Done!");
-		tw.flush();
-		tw.close();
+		
+		return lines;
 	}
 	
-	public void writeAdvancedDescriptionFile(List<Nation> nations, String modname) throws IOException
+	public void writeAdvancedDescriptionFile(List<Nation> nations, String modDirectory)
 	{
-		String dir = "/nationgen_" + modname.toLowerCase().replaceAll(" ", "_") + "/";
-		FileWriter fstream = new FileWriter("mods/" + dir + "advanceddescriptions.txt");
-		PrintWriter tw = new PrintWriter(fstream);
-		
-		
-		
+		FileUtil.writeLines("/mods/" + modDirectory + "/advanceddescriptions.txt", writeAdvancedDescriptionLines(nations));
+	}
+	
+	List<String> writeAdvancedDescriptionLines(List<Nation> nations)
+	{
 		System.out.print("Writing advanced descriptions");
+		
+		List<String> lines = new ArrayList<>();
 		for(Nation n : nations)
 		{
-			writeDescription(n, tw);
-			tw.println("-----------------------------------");
+			lines.addAll(writeDescription(n));
+			lines.add("-----------------------------------");
 
 
-			List<String> traits = new ArrayList<String>();
+			List<String> traits = new ArrayList<>();
 			for(Command c : n.getCommands())
 				if(c.command.equals("#idealcold"))
 				{
@@ -157,55 +163,45 @@ public class NationAdvancedSummarizer {
 
 			if(traits.size() > 0)
 			{
-				tw.println("National traits:");
+				lines.add("National traits:");
 				for(String trait : traits)
-					tw.println("- " + trait);
-				tw.println();
+					lines.add("- " + trait);
+				lines.add("");
 			}
 			
 			// Write themes
 			for(Race r : n.races)
 			{
-				tw.print(r.name + " themes: ");
-				String str = "";
-				for(Filter f : r.themefilters)
-				{
-					
-					if(Generic.containsTag(f.tags, "desc"))
-						str = str + Generic.getTagValue(f.tags, "desc") + ", ";
-					else
-						str = str + f.name + ", ";
-				}
-				if(str.length() > 0)
-					str = str.substring(0, str.length() - 2);
-				tw.println(str);
+				lines.add(r.name + " themes: " + r.themefilters.stream()
+						.map(f -> Generic.containsTag(f.tags, "desc") ? Generic.getTagValue(f.tags, "desc") : f.name)
+						.collect(Collectors.joining(", ")));
 			}
-			tw.println();
+			lines.add("");
 			
 			// Site features
-			List<String> sitef = new ArrayList<String>();
+			List<String> sitef = new ArrayList<>();
 			for(Site s : n.sites)
 				for(Filter f : s.appliedfilters)
 					sitef.add(f.toString());
 			
 			if(sitef.size() > 0)
 			{
-				tw.println("Magic site features: " + Generic.listToString(sitef, ","));
-				tw.println();
+				lines.add("Magic site features: " + Generic.listToString(sitef, ","));
+				lines.add("");
 			}
 				
 			
 			
 			// Units
-			tw.println("Troops:");
+			lines.add("Troops:");
 			
-			printUnits(tw, "ranged", "Ranged", n);
-			printUnits(tw, "infantry", "Infantry", n);
-			printUnits(tw, "mounted", "Cavalry", n);
-			printUnits(tw, "chariot", "Chariots", n);
-			printUnits(tw, "special", "Special units", n);
-			printUnits(tw, "sacred", "Sacreds", n);
-			printUnits(tw, "monsters", "Monsters", n);
+			lines.addAll(printUnits("ranged", "Ranged", n));
+			lines.addAll(printUnits("infantry", "Infantry", n));
+			lines.addAll(printUnits("mounted", "Cavalry", n));
+			lines.addAll(printUnits("chariot", "Chariots", n));
+			lines.addAll(printUnits("special", "Special units", n));
+			lines.addAll(printUnits("sacred", "Sacreds", n));
+			lines.addAll(printUnits("monsters", "Monsters", n));
 			
 
 			
@@ -241,39 +237,39 @@ public class NationAdvancedSummarizer {
 				}				
 			}
 			*/
-			tw.println();
-			tw.println("Commanders:");
-			tw.println("- Scouts:");
+			lines.add("");
+			lines.add("Commanders:");
+			lines.add("- Scouts:");
 			for(Unit u : n.generateComList("scout"))
-				getTroopInfo(u, tw);
-			tw.println("- Commanders:");
+				lines.addAll(getTroopInfo(u));
+			lines.add("- Commanders:");
 			for(Unit u : n.generateComList("commander"))
-				getTroopInfo(u, tw);
+				lines.addAll(getTroopInfo(u));
 			if(n.generateComList("specialcoms").size() > 0)
 			{
-				tw.println("- Special commanders:");
+				lines.add("- Special commanders:");
 				for(Unit u : n.generateComList("specialcoms"))
-					getTroopInfo(u, tw);
+					lines.addAll(getTroopInfo(u));
 			}
-			tw.println("- Priests:");
+			lines.add("- Priests:");
 			for(Unit u : n.generateComList("priest"))
-				getTroopInfo(u, tw);
-			tw.println("- Mages:");
+				lines.addAll(getTroopInfo(u));
+			lines.add("- Mages:");
 			for(Unit u : n.generateComList("mage"))
-				getTroopInfo(u, tw);
-			tw.println();
-			tw.println("Heroes:");
+				lines.addAll(getTroopInfo(u));
+			lines.add("");
+			lines.add("Heroes:");
 			for(Unit u : n.heroes)
-				getTroopInfo(u, tw);
-			tw.println();
+				lines.addAll(getTroopInfo(u));
+			lines.add("");
 
 		
-			this.printPDInfo(tw, n);
-			tw.println();
+			lines.addAll(printPDInfo(n));
+			lines.add("");
 
 			// Spells
-			tw.println("National spells:");
-			tw.println("--------------");
+			lines.add("National spells:");
+			lines.add("--------------");
 			String line = "";
 	
 			for(String str : n.getSpells())
@@ -284,35 +280,30 @@ public class NationAdvancedSummarizer {
 					line = line + ", " + str;
 				else
 				{
-					tw.println(line + ",");
+					lines.add(line + ",");
 					line = str;
 				}
 			}
 			
-			tw.println(line);
-			tw.println();
+			lines.add(line);
+			lines.add("");
 			
-			tw.println("Montag units:");
-			tw.println("--------------");
-			printUnits(tw, "montagmages", "Mages", n);
-			printUnits(tw, "montagsacreds", "Sacreds and Elites", n);
-			printUnits(tw, "montagtroops", "Troops", n);
-			tw.println();
+			lines.add("Montag units:");
+			lines.add("--------------");
+			lines.addAll(printUnits("montagmages", "Mages", n));
+			lines.addAll(printUnits("montagsacreds", "Sacreds and Elites", n));
+			lines.addAll(printUnits("montagtroops", "Troops", n));
+			lines.add("");
 			
 			
 			System.out.print(".");
 		}
 		System.out.println(" Done!");
-		tw.flush();
-		tw.close();
+		
+		return lines;
 	}
 	
-	
-	private String getTroopInfo(Unit u, PrintWriter tw)
-	{
-		// Gear
-		String line = "** " + u.getName();
-		
+	private String getSubrace(Unit u) {
 		String subrace = null;
 		
 		for(String str : u.slotmap.keySet())
@@ -323,68 +314,93 @@ public class NationAdvancedSummarizer {
 				subrace = Generic.getTagValue(u.getSlot(str).tags, "subrace");
 		}
 		
-		if(subrace != null)
-			line = line + " (" + u.race.name  + " - " + subrace +  "), ";
-		else if(Generic.containsTag(u.pose.tags, "subrace"))
-			line = line + " (" + u.race.name  + " - " + Generic.getTagValue(u.pose.tags, "subrace") +  "), ";
-		else
-			line = line + " (" + u.race.name +  "), ";
+		if (subrace == null && Generic.containsTag(u.pose.tags, "subrace")) {
+			
+			subrace = Generic.getTagValue(u.pose.tags, "subrace");
+		}
 		
-		
-		line = line + u.getGoldCost() + "g, " + u.getResCost(true) + "r, ";
-		
-
-		
+		return subrace;
+	}
+	
+	private List<String> getWeaponNames(Unit u) {
+		List<String> weaponNames = new ArrayList<>();
 		for(String str : u.slotmap.keySet())
 		{
 			if(u.getSlot(str) == null)
 				continue;
 			
 			if(!u.getSlot(str).armor && !u.getSlot(str).id.equals("-1"))
-				line = line + weapondb.GetValue(u.getSlot(str).id, "weapon_name") + ", ";
-
+				weaponNames.add(weapondb.GetValue(u.getSlot(str).id, "weapon_name"));
+			
 		}
-		
+		return weaponNames;
+	}
+	
+	private List<String> getArmorNames(Unit u) {
+		List<String> armorNames = new ArrayList<>();
 		for(String str : u.slotmap.keySet())
 		{
 			if(u.getSlot(str) == null)
 				continue;
 			if(u.getSlot(str).armor && !u.getSlot(str).id.equals("-1"))
-				line = line + armordb.GetValue(u.getSlot(str).id, "armorname") + ", ";
+				armorNames.add(armordb.GetValue(u.getSlot(str).id, "armorname"));
 		}
-		
-		
+		return armorNames;
+	}
+	
+	private Optional<String> getMountName(Unit u) {
 		if(u.getSlot("mount") != null)
 		{
-			String mountname = "";
 			for(String tag : u.getSlot("mount").tags)
 				if(tag.startsWith("animal"))
 				{
-					mountname =	Generic.getTagValue(u.getSlot("mount").tags, "animal");
+					String mountname =	Generic.getTagValue(u.getSlot("mount").tags, "animal");
+					
+					return Optional.of(NameGenerator.capitalize(mountname) + " mount");
 				}
-			line = line + NameGenerator.capitalize(mountname) + " mount, ";
+			
+			throw new IllegalStateException("Mount of unit " + u + " doesn't have an 'animal' tag");
 		}
+		return Optional.empty();
+	}
+	
+	private String getTroopNameCostGear(Unit u)
+	{
+		StringBuilder line = new StringBuilder("** " + u.getName());
+		
+		String subrace = getSubrace(u);
+		
+		line.append(" (").append(u.race.name);
+		if(subrace != null) line.append(" - ").append(subrace);
+		line.append("), ");
 		
 		
+		line.append(u.getGoldCost()).append("g, ").append(u.getResCost(true)).append("r, ");
 		
-		line = line.substring(0, line.length() - 2) + ".";
+		List<String> gear = new ArrayList<>();
 		
-		tw.println(line);
+		gear.addAll(getWeaponNames(u));
+		gear.addAll(getArmorNames(u));
+		getMountName(u).ifPresent(gear::add);
 		
-		// Commands
+		line.append(String.join(", ", gear)).append(".");
 		
+		return line.toString();
+	}
+	
+	private Optional<String> getTroopMagicStuff(Unit u) {
 		// Magic things!
 		int[] paths = new int[10];
 		double rand = 0;
 		List<String> randoms = new ArrayList<String>();
 		
-
+		
 		boolean links = false;
 		for(Filter f : u.appliedFilters)
 		{
 			if(f.name.equals("MAGICPICKS") || f.name.equals("PRIESTPICKS"))
 			{
-
+				
 				for(Command c : f.getCommands())
 				{
 					if(c.command.equals("#magicskill"))
@@ -401,7 +417,7 @@ public class NationAdvancedSummarizer {
 						
 						if(Double.parseDouble(c.args.get(0).split(" ")[1]) / 100 > 1)
 							links = true;
-
+						
 					}
 				}
 			}
@@ -414,16 +430,16 @@ public class NationAdvancedSummarizer {
 		{
 			if(paths[i] > 0 || (i == 9 && rand > 0))
 			{
-	
+				
 				if(rand > paths[i] && i == 9)
 					magicstuff = magicstuff + rand + pathnames[i];
 				else
-					magicstuff = magicstuff + paths[i] + pathnames[i];	
-				magicstuff = magicstuff + " ";	
+					magicstuff = magicstuff + paths[i] + pathnames[i];
+				magicstuff = magicstuff + " ";
 			}
 		}
 		magicstuff = magicstuff.trim();
-
+		
 		
 		if(randoms.size() > 0)
 		{
@@ -438,20 +454,22 @@ public class NationAdvancedSummarizer {
 		}
 		magicstuff = magicstuff + ". ";
 		
-
+		
 		if(!magicstuff.equals(". "))
 		{
 			magicstuff = magicstuff.trim();
-			tw.println("--- " + magicstuff);
+			return Optional.of(magicstuff);
 		}
-		
-		
-		
+		return Optional.empty();
+	}
+	
+	private List<String> getTroopSpecialFeatures(Unit u)
+	{
 		// Filters and item special things
-		List<String> stuff = new ArrayList<String>();
+		List<String> stuff = new ArrayList<>();
 		if(u.caponly)
 			stuff.add("Capital only");
-
+		
 		boolean str = false;
 		boolean holy = false;
 		for(Command c : u.getCommands())
@@ -465,7 +483,7 @@ public class NationAdvancedSummarizer {
 			stuff.add("Slow to recruit");
 		if(holy)
 			stuff.add("Sacred");
-
+		
 		if(Generic.containsTag(u.tags, "montagunit"))
 		{
 			int shape = -1;
@@ -477,7 +495,7 @@ public class NationAdvancedSummarizer {
 				stuff.add("Becomes unit of montag " + shape + " when recruited");
 		}
 		
-
+		
 		if(Generic.containsTag(u.tags, "hasmontag"))
 		{
 			int shape = -1;
@@ -500,20 +518,18 @@ public class NationAdvancedSummarizer {
 				text = Generic.getTagValue(f.tags, "description");
 			
 			if(text == null)
-				text = f.name;	
+				text = f.name;
 			
 			if(text != null)
 				stuff.add(text);
-	
+			
 		}
 		
-
-		
-		if(stuff.size() > 0)
-			tw.println("--- " + writeAsList(stuff, false));
-		
-		stuff.clear();
-		
+		return stuff;
+	}
+	
+	private List<String> getTroopItemDescriptions(Unit u) {
+		List<String> descriptions = new ArrayList<>();
 		for(Item item : u.slotmap.values())
 		{
 			if(item == null)
@@ -521,21 +537,39 @@ public class NationAdvancedSummarizer {
 			
 			for(String tag : item.tags)
 			{
-
-				
 				List<String> args = Generic.parseArgs(tag);
 				if(args.get(0).equals("description") && args.size() > 1)
 				{
-					stuff.add(args.get(1));
+					descriptions.add(args.get(1));
 				}
 			}
 		}
+		return descriptions;
+	}
+	
+	private List<String> getTroopInfo(Unit u)
+	{
+		// Gear
+		List<String> lines = new ArrayList<>();
+		lines.add(getTroopNameCostGear(u));
 		
-		if(stuff.size() > 0)
-			tw.println("--- " + writeAsList(stuff, false));
+		// Commands
+		
+		getTroopMagicStuff(u).ifPresent(magic -> lines.add("--- " + magic));
 		
 		
-		return line;
+		List<String> features = getTroopSpecialFeatures(u);
+		if(!features.isEmpty())
+			lines.add("--- " + writeAsList(features, false));
+		
+		
+		List<String> itemDescriptions = getTroopItemDescriptions(u);
+		
+		if(!itemDescriptions.isEmpty())
+			lines.add("--- " + writeAsList(itemDescriptions, false));
+		
+		
+		return lines;
 	}
 
 	

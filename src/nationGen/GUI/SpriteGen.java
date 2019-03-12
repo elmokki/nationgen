@@ -9,7 +9,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +20,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
-import com.elmokki.Drawing;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
@@ -29,6 +27,7 @@ import nationGen.NationGenAssets;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.items.Item;
+import nationGen.misc.FileUtil;
 import nationGen.units.Unit;
 
 public class SpriteGen extends JFrame implements ActionListener, ItemListener{
@@ -38,7 +37,7 @@ public class SpriteGen extends JFrame implements ActionListener, ItemListener{
 	private class SGEntry implements ActionListener, ItemListener {
 		JTextField offsetx = new JTextField("0");
 		JTextField offsety = new JTextField("0");
-		JComboBox<Item> items = new JComboBox<Item>();
+		JComboBox<Item> items = new JComboBox<>();
 		JLabel lbl = new JLabel();
 		private SpriteGen sGen;
 
@@ -54,7 +53,6 @@ public class SpriteGen extends JFrame implements ActionListener, ItemListener{
 
 		}
 
-
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
@@ -66,10 +64,8 @@ public class SpriteGen extends JFrame implements ActionListener, ItemListener{
 					sGen.unit.getSlot(this.lbl.getText()).setOffsetY(Integer.parseInt(((JTextField)e.getSource()).getText()));
 				
 				sGen.drawUnit();
-			}	
-			
+			}
 		}
-
 
 		@Override
 		public void itemStateChanged(ItemEvent e) {
@@ -88,44 +84,30 @@ public class SpriteGen extends JFrame implements ActionListener, ItemListener{
 			    sGen.drawUnit();
 			}
 		}
-
-
-	
 	}
 	
-	
-	NationGen nGen;
-	NationGenAssets assets;
-    JComboBox<Race> racecombo = new JComboBox<Race>();
-    JComboBox<Pose> posecombo = new JComboBox<Pose>();
-    List<SGEntry> slots = new ArrayList<SGEntry>();
-    Unit unit = null;
-    JPanel itempanel = new JPanel(new GridLayout(20,1));
-    JPanel drawpanel = new JPanel();
-	Item dummy;
-    JTextField greenf = new JTextField("255");
-    JTextField redf = new JTextField("255");
-    JTextField bluef = new JTextField("255");
-    JTextField filename = new JTextField("derp.tga");
+	private NationGen nGen;
+	private NationGenAssets assets;
+	private JComboBox<Race> racecombo = new JComboBox<>();
+	private JComboBox<Pose> posecombo = new JComboBox<>();
+	private List<SGEntry> slots = new ArrayList<>();
+	private Unit unit = null;
+	private JPanel itempanel = new JPanel(new GridLayout(20,1));
+	private JPanel drawpanel = new JPanel();
+	private Item dummy;
+	private JTextField greenf = new JTextField("255");
+	private JTextField redf = new JTextField("255");
+	private JTextField bluef = new JTextField("255");
+	private JTextField filename = new JTextField("derp.tga");
 
 	public static void main(String[] args)
 	{
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                SpriteGen g;
-				try {
-					g = new SpriteGen();
-	                g.setVisible(true);
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-            }
-        });
+        SwingUtilities.invokeLater(() -> new SpriteGen().setVisible(true));
 	}
 	
-    public SpriteGen() throws IOException {
+    public SpriteGen() {
     	nGen = new NationGen();
-    	assets = new NationGenAssets(nGen);
+    	assets = nGen.getAssets();
     	nGen.setSpriteGenPoses();
     	
     	dummy = new Item(nGen);
@@ -144,8 +126,6 @@ public class SpriteGen extends JFrame implements ActionListener, ItemListener{
 
     public void drawUnit()
     {
-
-    	
     	System.out.println("Drawing.");
 
     	Graphics g = drawpanel.getGraphics();
@@ -153,13 +133,7 @@ public class SpriteGen extends JFrame implements ActionListener, ItemListener{
     	if(unit == null || g == null)
     		return;
     	
-    	try {
-			g.drawImage(unit.render(), 0, 0, null);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+		g.drawImage(unit.render(), 0, 0, null);
     }
 
     public void initGUI()
@@ -203,7 +177,6 @@ public class SpriteGen extends JFrame implements ActionListener, ItemListener{
         greenf.addActionListener(this);
         colorpanel.add(greenf);
         
-
         
         // Combine race, colors and  pose
         JPanel toppanel = new JPanel(new BorderLayout(5,5));
@@ -233,9 +206,6 @@ public class SpriteGen extends JFrame implements ActionListener, ItemListener{
         bottompanel.add(derp);
         
         panel.add(bottompanel, BorderLayout.SOUTH);
-        
-        
-
 
         add(panel);
     }
@@ -277,7 +247,6 @@ public class SpriteGen extends JFrame implements ActionListener, ItemListener{
     		slots.add(se);
     	}
     	
-    	
         JPanel tp = new JPanel(new GridLayout(1,4));
         tp.add(new JLabel("Slot"));
         tp.add(new JLabel("Item"));
@@ -298,8 +267,6 @@ public class SpriteGen extends JFrame implements ActionListener, ItemListener{
         
         this.validate();
         this.repaint();
-    	
- 
     }
     
 	@Override
@@ -343,12 +310,7 @@ public class SpriteGen extends JFrame implements ActionListener, ItemListener{
 		}
 		else // save
 		{
-			try {
-				Drawing.writeTGA(unit.render(), filename.getText());
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+			FileUtil.writeTGA(unit.render(), filename.getText());
 		}
 		
 	}

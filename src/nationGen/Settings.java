@@ -1,24 +1,18 @@
 package nationGen;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Scanner;
-
-
-
-
 
 import com.elmokki.Generic;
+import nationGen.misc.FileUtil;
+
 
 public class Settings {
+	
+	private static final String FILE_PATH = "/settings.txt";
+	
 	public enum SettingsType {
 	    advancedDescs,
 	    basicDescs,
@@ -153,6 +147,8 @@ public class Settings {
 	
 	public Settings()
 	{
+		System.out.print("Loading settings... ");
+		
 		setExportValues();
 		
 		// spells
@@ -168,19 +164,10 @@ public class Settings {
 
 		settings.put(SettingsType.era, 2.0);
 		settings.put(SettingsType.hidevanillanations, 1.0);
-
-        Scanner file;
 		
-		try {
-			file = new Scanner(new FileInputStream(System.getProperty("user.dir") + "/settings.txt"));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-			return;
-		}
-		
-		while(file.hasNextLine())
+		for(String line : FileUtil.readLines(FILE_PATH))
 		{
-			List<String> args = Generic.parseArgs(file.nextLine());
+			List<String> args = Generic.parseArgs(line);
 			
 			
 			if(args.size() < 2 || args.get(0).startsWith("-"))
@@ -189,19 +176,16 @@ public class Settings {
 			
 			settings.put(SettingsType.valueOf(args.get(0)), Double.parseDouble(args.get(1)));
 		}
-		
-		file.close();
+		System.out.println("done!");
 	}
 	
 	/**
 	 * There is probably *way* more efficient ways to handle settings. But, here's a WORKING write.
-	 * @throws IOException
 	 */
-	public void write() throws IOException
+	public void write()
 	{   
         int lineNum = 0;
-        Path path = Paths.get(System.getProperty("user.dir") + "/settings.txt");
-        List<String> lines = Files.readAllLines(path);
+        List<String> lines = FileUtil.readLines(FILE_PATH);
         boolean changes = false;
         for (String line : lines)
         {
@@ -227,7 +211,7 @@ public class Settings {
         
         if (changes)
         {
-            Files.write(path, lines);
+            FileUtil.writeLines(FILE_PATH, lines);
         }
 	}
 	
@@ -235,13 +219,7 @@ public class Settings {
 	public void put(SettingsType key, double value)
 	{
 		settings.put(key, value);
-        try
-        {
-            write();
-        } catch (IOException e)
-        {
-            e.printStackTrace();
-        }
+        write();
 	}
 	
 	public Double get(SettingsType key)
