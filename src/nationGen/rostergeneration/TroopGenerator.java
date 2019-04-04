@@ -1,37 +1,23 @@
 package nationGen.rostergeneration;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Random;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 import com.elmokki.Generic;
-
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
-import nationGen.entities.Entity;
+import nationGen.chances.EntityChances;
+import nationGen.chances.ThemeInc;
 import nationGen.entities.Filter;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.items.Item;
-import nationGen.misc.ChanceIncHandler;
-import nationGen.misc.Command;
-import nationGen.misc.ItemSet;
+import nationGen.misc.*;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.Random;
 
 public class TroopGenerator {
 	public NationGen nationGen;
@@ -60,43 +46,47 @@ public class TroopGenerator {
 	
 	public int getMaxVarieties(Unit u)
 	{
-		int maxvar = 3;
-		
-		if(Generic.getTagValue(u.pose.tags, "maxvarieties") != null)
-			maxvar = Integer.parseInt(Generic.getTagValue(u.pose.tags, "maxvarieties"));
-		else
-		{
+		int maxvar;
+		Optional<Integer> maxvarieties = u.pose.tags.getInt("maxvarieties");
+		if(maxvarieties.isPresent()) {
+			maxvar = maxvarieties.get();
+		} else if(u.pose.roles.contains("chariot")) {
+			maxvar = 1;
+		} else if(u.pose.roles.contains("mounted")) {
+			maxvar = 2;
+		} else {
 			maxvar = 3;
-			if(u.pose.roles.contains("mounted"))
-				maxvar = 2;
-			if(u.pose.roles.contains("chariot"))
-				maxvar = 1;
 		}
 
-		if(u.getSlot("armor") != null && Generic.getTagValue(u.getSlot("armor").tags, "maxvarieties") != null)
-			maxvar = Math.min(maxvar, Integer.parseInt(Generic.getTagValue(u.getSlot("armor").tags, "maxvarieties")));
-		
-		if(u.getSlot("mount") != null && Generic.getTagValue(u.getSlot("mount").tags, "maxvarieties") != null)
-			maxvar = Math.min(maxvar, Integer.parseInt(Generic.getTagValue(u.getSlot("mount").tags, "maxvarieties")));
-		
-
-		maxvar = Math.min(chandler.handleChanceIncs(u, u.pose.getItems("weapon")).size(), maxvar);
-
-		for(Filter f : u.appliedFilters)
-			if(Generic.getTagValue(f.tags, "maxvarieties") != null)
-			{
-				maxvar = Math.min(maxvar, Integer.parseInt(Generic.getTagValue(f.tags, "maxvarieties")));
+		if(u.getSlot("armor") != null) {
+			Optional<Integer> armorMaxVarieties = u.getSlot("armor").tags.getInt("maxvarieties");
+			if (armorMaxVarieties.isPresent()) {
+				maxvar = Math.min(maxvar, armorMaxVarieties.get());
 			}
+		}
+		
+		if(u.getSlot("mount") != null) {
+			Optional<Integer> mountMaxVarieties = u.getSlot("mount").tags.getInt("maxvarieties");
+			if (mountMaxVarieties.isPresent()) {
+				maxvar = Math.min(maxvar, mountMaxVarieties.get());
+			}
+		}
+		
 
+		maxvar = Math.min(chandler.handleChanceIncs(u, u.pose.getItems("weapon")).countPossible(), maxvar);
+
+		for(Filter f : u.appliedFilters) {
+			Optional<Integer> filterMaxVarieties = f.tags.getInt("maxvarieties");
+			if (filterMaxVarieties.isPresent()) {
+				maxvar = Math.min(maxvar, filterMaxVarieties.get());
+			}
+		}
 
 		if(u.pose.roles.contains("mounted"))
 			maxvar = Math.min(getCavVarieties(u.pose), maxvar);
 		
 
-		if(Generic.getTagValue(u.pose.tags, "maxvarieties_override") != null)
-		{
-			maxvar = Integer.parseInt(Generic.getTagValue(u.pose.tags, "maxvarieties_override"));
-		}
+		maxvar = u.pose.tags.getInt("maxvarieties_override").orElse(maxvar);
 		
 		return maxvar;
 
@@ -156,7 +146,7 @@ public class TroopGenerator {
 		if(it == null)
 				return false;
 			
-		List<String> tags = Generic.getAllUnitTags(u);
+		Tags tags = Generic.getAllUnitTags(u);
 		for(Item i : u.slotmap.values())
 			if(i != null)
 			{
@@ -164,57 +154,27 @@ public class TroopGenerator {
 			}
 				
 		
-		int dw_maxlength = 2;
-		if(Generic.containsTag(tags, "dw_maxlength"))
-			dw_maxlength = Integer.parseInt(Generic.getTagValue(tags, "dw_maxlength"));
-		
-		boolean regularok = true;
-		if((nationGen.weapondb.GetInteger(it.id, "lgt") > dw_maxlength) || nationGen.weapondb.GetInteger(it.id, "2h") == 1)
-		{
-			regularok = false;
-		}
-		
-		if(Generic.containsTag(tags, "ignore_dw_restrictions"))
-			regularok = true;
+		int dw_maxlength = tags.getInt("dw_maxlength").orElse(2);
 		
 		// System.out.println(regularok + " - " + i.tags);
-		return regularok;
+		return tags.containsName("ignore_dw_restrictions")
+				|| (nationGen.weapondb.GetInteger(it.id, "lgt") <= dw_maxlength
+					&& nationGen.weapondb.GetInteger(it.id, "2h") != 1);
 		
 	}
 	
 	protected double getDualWieldChance(Unit u, double basechance)
 	{
 		
-		double local_dwchance = basechance;
-
-		List<String> tags = Generic.getAllUnitTags(u); 
-				
+		Tags tags = Generic.getAllUnitTags(u);
 		
-		List<String> values = Generic.getTagValues(tags, "dwchance");
-		if(values.size() > 0)
-		{
-			List<Double> intvalues = new ArrayList<Double>();
-			for(String s : values)
-				intvalues.add(Double.parseDouble(s));
-			
-			
-			double largest = intvalues.get(0);
-			for(double d : intvalues)
-				if(d > largest)
-					largest = d;
-			
-			local_dwchance = largest;
-		}
+		double local_dwchance = tags.getAllDoubles("dwchance").stream().max(Double::compareTo).orElse(basechance);
 		
-		values = Generic.getTagValues(tags, "dwchancebonus");
-		if(values.size() > 0)
-		{
-			for(String s : values)
-				local_dwchance +=  Double.parseDouble(s);	
+		for(Double value : tags.getAllDoubles("dwchancebonus")) {
+			local_dwchance += value;
 		}
 		
 		return local_dwchance;
-	
 	}
 	
 	private int getCavVarieties(Pose p)
@@ -226,7 +186,7 @@ public class TroopGenerator {
 		tempweps.addAll(p.getItems("weapon"));
 		for(Item i : tempweps)
 		{
-			if(i.id.equals("357") || i.tags.contains("lightlance"))
+			if(i.id.equals("357") || i.tags.containsName("lightlance"))
 			{
 				removethese.add(i);
 				stuff = 1;
@@ -309,12 +269,7 @@ public class TroopGenerator {
 	
 	/**
 	 * Generates an unit
-	 * @param role
-	 * @param race
-	 * @param amount
-	 * @param minprot
-	 * @param maxprot
-	 * @param isPrimaryRace
+	 * @param t
 	 * @return
 	 */
 	public Unit generateUnit(TroopTemplate t)
@@ -402,7 +357,6 @@ public class TroopGenerator {
 		ItemSet possibleWeapons = t.template.pose.getItems("weapon");
 		if(possibleWeapons.possibleItems() - t.weapons.size() <= 0)
 		{
-			unit = null;
 			return false;
 		}
 		else
@@ -446,7 +400,7 @@ public class TroopGenerator {
 	public boolean armSpecialSlot(Unit u, TroopTemplate t, ItemSet used)
 	{
 		
-		List<String> tags = new ArrayList<String>();
+		Tags tags = new Tags();
 		tags.addAll(u.pose.tags);
 		tags.addAll(u.race.tags);
 		for(Item i : u.slotmap.values())
@@ -457,50 +411,45 @@ public class TroopGenerator {
 		
 		
 		
-		for(String tag : tags)
+		for(Args args : tags.getAllArgs("additionalweaponslot"))
 		{
-			List<String> args = Generic.parseArgs(tag);
-			if(args.get(0).equals("additionalweaponslot"))
-			{
-				String slot = args.get(args.size() - 1);
-				
-
-				double chance = 1;
-				if(args.size() > 2)
-					chance = Double.parseDouble(args.get(1));
+			String slot = args.get(args.size() - 1).get();
 			
-				if(random.nextDouble() < chance)
+			double chance = 1;
+			if(args.size() > 2)
+				chance = args.get(0).getDouble();
+		
+			if(random.nextDouble() < chance)
+			{
+				
+				ItemSet newused = used.filterSlot(slot).filterForPose(u.pose);
+				List<Item> oldItems = new ArrayList<>();
+				
+				if(t != null)
 				{
-										
-					ItemSet newused = used.filterSlot(slot).filterForPose(u.pose);
-					List<Item> oldItems = new ArrayList<Item>();
-					
-					if(t != null)
+					for(Unit unit : t.units)
 					{
-						for(Unit unit : t.units)
-						{
-							if(unit.getSlot(slot) != null)
-								oldItems.add(unit.getSlot(slot));
-						}
+						if(unit.getSlot(slot) != null)
+							oldItems.add(unit.getSlot(slot));
 					}
-					
-					newused.removeAll(oldItems);
-					
-					ItemSet select;
-					if(newused.size() > 0)
-						select = newused;
-					else
-					{
-						select = new ItemSet();
-						select.addAll(u.pose.getItems(slot));
-						select.removeAll(oldItems);
-					}
-					
-					if(select.size() > 0)
-					{
-						Item newitem = chandler.getRandom(select, u);
-						u.setSlot(slot, newitem);
-					}
+				}
+				
+				newused.removeAll(oldItems);
+				
+				ItemSet select;
+				if(newused.size() > 0)
+					select = newused;
+				else
+				{
+					select = new ItemSet();
+					select.addAll(u.pose.getItems(slot));
+					select.removeAll(oldItems);
+				}
+				
+				if(select.size() > 0)
+				{
+					Item newitem = chandler.getRandom(select, u);
+					u.setSlot(slot, newitem);
 				}
 			}
 		}
@@ -525,7 +474,7 @@ public class TroopGenerator {
 			ItemSet lances = new ItemSet();
 			for(Item i : oldweps)
 			{
-				if(i.id.equals("357") || i.tags.contains("lightlance"))
+				if(i.id.equals("357") || i.tags.containsName("lightlance"))
 				{
 					lances.add(i);
 					hasllance = true;
@@ -552,7 +501,7 @@ public class TroopGenerator {
 					tempweps.removeAll(oldweps);
 					for(Item i : t.pose.getItems("weapon"))
 					{
-						if(i.id.equals("357") || i.tags.contains("lightlance"))
+						if(i.id.equals("357") || i.tags.containsName("lightlance"))
 							tempweps.remove(i);
 					}
 					done = true;
@@ -564,7 +513,7 @@ public class TroopGenerator {
 					tempweps.removeAll(oldweps);
 					for(Item i : t.pose.getItems("weapon"))
 					{
-						if(i.id.equals("357") || i.tags.contains("lightlance"))
+						if(i.id.equals("357") || i.tags.containsName("lightlance"))
 							tempweps.remove(i);
 					}
 					done = true;
@@ -573,7 +522,7 @@ public class TroopGenerator {
 				{
 					for(Item i : t.pose.getItems("weapon"))
 					{
-						if(i.id.equals("357") || i.tags.contains("lightlance"))
+						if(i.id.equals("357") || i.tags.containsName("lightlance"))
 						{
 							tempweps.add(i);
 						}
@@ -600,7 +549,7 @@ public class TroopGenerator {
 				for(Command c : t.template.getSlot("mount").commands)
 				{
 					if(c.command.equals("#ap"))
-						ap = Integer.parseInt(c.args.get(0));
+						ap = c.args.get(0).getInt();
 				}
 				
 				int lancelimit = 5 + random.nextInt(25);
@@ -614,7 +563,7 @@ public class TroopGenerator {
 					tempweps.clear();
 					for(Item i : t.pose.getItems("lanceslot"))
 					{
-						if(!i.id.equals("4") && !i.tags.contains("lance"))
+						if(!i.id.equals("4") && !i.tags.containsName("lance"))
 							tempweps.add(i);
 					}
 					
@@ -669,7 +618,7 @@ public class TroopGenerator {
 			match.retainAll(tFilters);
 			
 			for(Filter f : tFilters)
-				if(f.tags.contains("onlyfilter") && match.size() > 0)
+				if(f.tags.containsName("onlyfilter") && match.size() > 0)
 					removef.add(f);
 			
 
@@ -700,9 +649,7 @@ public class TroopGenerator {
 		
 		List<Filter> match = new ArrayList<Filter>();
 		for(Filter f : possibleFilters)
-			if(Generic.containsTag(f.tags, "maxunits"))
-			{
-				int max = Integer.parseInt(Generic.getTagValue(f.tags, "maxunits"));
+			f.tags.getInt("maxunits").ifPresent(max -> {
 				int count = 1;
 				for(TroopTemplate t : this.templates)
 					if(t.template.appliedFilters.contains(f))
@@ -713,7 +660,7 @@ public class TroopGenerator {
 				{
 					match.add(f);
 				}
-			}
+			});
 		possibleFilters.removeAll(match);
 
 		Filter f = chandler.getRandom(possibleFilters, u);
@@ -727,12 +674,11 @@ public class TroopGenerator {
 	
 	private boolean canGetMoreFilters(Unit u)
 	{
-		boolean ok = true;
 		for(Filter f : u.appliedFilters)
-			if(f.tags.contains("onlyfilter"))
-				ok = false;
+			if(f.tags.containsName("onlyfilter"))
+				return false;
 		
-		return ok;
+		return true;
 	}
 	public void addInitialFilters(Unit u, String role)
 	{
@@ -740,11 +686,7 @@ public class TroopGenerator {
 		unitGen.addFreeTemplateFilters(u);
 
 		
-		double templatechance = 0.25;
-		if(Generic.getTagValue(Generic.getAllUnitTags(u), "trooptemplatechance") != null)
-		{
-			templatechance = Double.parseDouble(Generic.getTagValue(Generic.getAllUnitTags(u), "trooptemplatechance"));
-		}
+		double templatechance = Generic.getAllUnitTags(u).getDouble("trooptemplatechance").orElse(0.25);
 		
 		if((random.nextDouble() < templatechance || appliedtemplates < maxtemplates) && canGetMoreFilters(u))
 		{
@@ -766,15 +708,15 @@ public class TroopGenerator {
 		Filter tf = new Filter(nationGen);
 		tf.name = Generic.capitalize(role) + " unit";
 		
-		tf.tags.add("not_montag_inheritable");
+		tf.tags.addName("not_montag_inheritable");
 		
 		boolean elite = false;
 		boolean sacred = false;
 		for(Filter f : u.appliedFilters)
 		{
-			if(f.tags.contains("alloweliteitems"))
+			if(f.tags.containsName("alloweliteitems"))
 				elite = true;
-			if(f.tags.contains("allowsacreditems"))
+			if(f.tags.containsName("allowsacreditems"))
 				sacred = true;
 		}
 		
@@ -783,14 +725,13 @@ public class TroopGenerator {
 
 			if(!elite)
 			{
-				tf.themeincs.add("thisitemtag elite *0");
-				tf.themeincs.add("thisitemtheme elite *0");
+				tf.themeincs.add(ThemeInc.parse("thisitemtag elite *0"));
+				tf.themeincs.add(ThemeInc.parse("thisitemtheme elite *0"));
 			}
 			if(!sacred)
 			{
-				tf.themeincs.add("thisitemtag sacred *0");
-				tf.themeincs.add("thisitemtheme sacred *0");
-
+				tf.themeincs.add(ThemeInc.parse("thisitemtag sacred *0"));
+				tf.themeincs.add(ThemeInc.parse("thisitemtheme sacred *0"));
 			}
 			
 		}	
@@ -835,7 +776,7 @@ public class TroopGenerator {
 		
 		if(stuff.possibleItems() > 0)
 		{
-			Item wep = Entity.getRandom(random, chandler.handleChanceIncs(u, stuff));
+			Item wep = chandler.handleChanceIncs(u, stuff).getRandom(random);
 			u.setSlot("offhand", wep);
 		}
 		
@@ -844,30 +785,12 @@ public class TroopGenerator {
 	
 	protected double getBonusWeaponChance(Unit u)
 	{
-		double local_bwchance = 0;
-		List<String> tags = Generic.getAllUnitTags(u);
-		List<String> values = Generic.getTagValues(tags, "bonusweaponchance");
-		if(values.size() > 0)
-		{
-			List<Double> intvalues = new ArrayList<Double>();
-			for(String s : values)
-				intvalues.add(Double.parseDouble(s));
-			
-			
-			double largest = intvalues.get(0);
-			for(double d : intvalues)
-				if(d > largest)
-					largest = d;
-			
-			local_bwchance = largest;
-		}
+		Tags tags = Generic.getAllUnitTags(u);
+		double local_bwchance = tags.getAllDoubles("bonusweaponchance").stream()
+				.max(Double::compareTo).orElse(0D);
 		
-		values = Generic.getTagValues(tags, "bonusweaponchancebonus");
-		if(values.size() > 0)
-		{
-			for(String s : values)
-				local_bwchance +=  Double.parseDouble(s);	
-		}
+		for(Double d : tags.getAllDoubles("bonusweaponchancebonus"))
+			local_bwchance += d;
 		
 		return local_bwchance;
 	
@@ -888,12 +811,12 @@ public class TroopGenerator {
 		
 		bonuses = bonuses.filterForPose(t.pose);
 		
-		Item bonusweapon = Entity.getRandom(random, chandler.handleChanceIncs(u, bonuses));
+		Item bonusweapon = chandler.handleChanceIncs(u, bonuses).getRandom(random);
 		if(bonusweapon == null)
 			return;
 		
 		// Tieruniqueness.
-		if(bonusweapon.tags.contains("tierunique"))
+		if(bonusweapon.tags.containsName("tierunique"))
 		{
 			for(TroopTemplate t2 : templates)
 			{
@@ -905,17 +828,11 @@ public class TroopGenerator {
 		}
 		
 		// Prot level
-		int maxprot = 100;
-		int minprot = 0;
+		int maxprot = bonusweapon.tags.getInt("maxprot").orElse(100);
+		int minprot = bonusweapon.tags.getInt("minprot").orElse(0);
 		int totalprot = u.getTotalProt(false);
 		
-
-		if(Generic.containsTag(u.race.tags, "zeroarmor"))
-			totalprot -= Integer.parseInt(Generic.getTagValue(u.race.tags, "zeroarmor"));
-		if(Generic.containsTag(bonusweapon.tags, "maxprot"))
-			maxprot = Integer.parseInt(Generic.getTagValue(bonusweapon.tags, "maxprot"));
-		if(Generic.containsTag(bonusweapon.tags, "minprot"))
-			minprot = Integer.parseInt(Generic.getTagValue(bonusweapon.tags, "minprot"));
+		totalprot -= u.race.tags.getInt("zeroarmor").orElse(0);
 		totalprot = Math.max(0, totalprot);
 		
 		if(totalprot < minprot || totalprot > maxprot)
@@ -1057,7 +974,7 @@ public class TroopGenerator {
 		ItemSet select = old;
 		
 		// Check whether we should ditch using old
-		LinkedHashMap<Item, Double> map = null;
+		EntityChances<Item> map;
 		if(u != null)
 			map = chandler.handleChanceIncs(u, p.getItems(slot));
 		else
@@ -1065,12 +982,12 @@ public class TroopGenerator {
 	
 		double allsum = 0;
 		double oldsum = 0;
-		for(Item i : map.keySet())
+		for(Item i : map.getPossible())
 		{
 			if(old.contains(i))
-				oldsum += map.get(i);
+				oldsum += map.getChance(i);
 			if(p.getItems(slot).contains(i))
-				allsum += map.get(i);
+				allsum += map.getChance(i);
 		}
 		
 
@@ -1099,9 +1016,9 @@ public class TroopGenerator {
 		
 		
 		if(u != null)
-			return Entity.getRandom(random, chandler.handleChanceIncs(u, select));
+			return chandler.handleChanceIncs(u, select).getRandom(random);
 		else
-			return Entity.getRandom(random, chandler.handleChanceIncs(new Unit(nationGen, race, p, nation), select));
+			return chandler.handleChanceIncs(new Unit(nationGen, race, p, nation), select).getRandom(random);
 
 	}
 	
@@ -1157,7 +1074,7 @@ public class TroopGenerator {
 	{
 	
 
-		List<Item> items = new ArrayList<Item>();
+		List<Item> items = new ArrayList<>();
 		
 		for(Item item2 : p.getItems(item.slot))
 		{
@@ -1186,7 +1103,7 @@ public class TroopGenerator {
 					
 			}
 			
-		return Entity.getRandom(random, chandler.handleChanceIncs(items));
+		return chandler.handleChanceIncs(items).getRandom(random);
 	}
 	
 	

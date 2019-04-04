@@ -1,27 +1,27 @@
 package nationGen.entities;
 
 
+import com.elmokki.Generic;
+import nationGen.NationGen;
+import nationGen.items.CustomItem;
+import nationGen.items.Item;
+import nationGen.misc.ArgParser;
+import nationGen.misc.Command;
+import nationGen.misc.ItemSet;
+import nationGen.units.Unit;
+
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Set;
 
-import com.elmokki.Generic;
-
-import nationGen.NationGen;
-import nationGen.items.CustomItem;
-import nationGen.items.Item;
-import nationGen.misc.Command;
-import nationGen.misc.ItemSet;
-import nationGen.units.Unit;
-
 
 public class Pose extends Filter {
 	
-	private LinkedHashMap<String, ItemSet> items = new LinkedHashMap<String, ItemSet>();
-	public List<String> roles = new ArrayList<String>();
+	private LinkedHashMap<String, ItemSet> items = new LinkedHashMap<>();
+	public List<String> roles = new ArrayList<>();
 	public String renderorder = "shadow cloakb mount basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay extra1 extra2 extra3";
-	public List<AbilityTemplate> templates = new ArrayList<AbilityTemplate>();
+	public List<AbilityTemplate> templates = new ArrayList<>();
 	
 	public Pose(NationGen nationGen)
 	{
@@ -126,64 +126,53 @@ public class Pose extends Filter {
 		return str;
 	}
         
-        @Override
-	public <Entity> void handleOwnCommand(String str)
+	@Override
+	public void handleOwnCommand(Command str)
 	{
-		List<String> args = Generic.parseArgs(str);
-		if(args.size() == 0)
-			return;
-		
-		if(args.get(0).equals("#role"))
-		{
-			this.roles.add(args.get(1));
-		}
-		else if(args.get(0).equals("#renderorder"))
-		{
-			this.renderorder = args.get(1);
-		}
-		else if(args.get(0).equals("#command"))
-		{
-			this.commands.add(Command.parseCommand(args.get(1)));
-		}
-		else if(args.get(0).equals("#load"))
-		{
-
-			int offsetx = Generic.getNextArgument(args, "offsetx", 0);
-			int offsety = Generic.getNextArgument(args, "offsety", 0);
-			
-			if(offsety == 0 && offsetx == 0 && args.size() >= 5)
-			{
-				offsetx = Integer.parseInt(args.get(3));
-				offsety = Integer.parseInt(args.get(4));
-			}
-	
-			ItemSet set = loadItems(args.get(2), offsetx, offsety, args.get(1));
-			
-			for(Item i : set)
-			{
+		switch (str.command) {
+			case "#role":
+				this.roles.add(str.args.get(0).get());
+				break;
+			case "#renderorder":
+				this.renderorder = str.args.get(0).get();
+				break;
+			case "#command":
+				this.commands.add(str.args.get(0).getCommand());
+				break;
+			case "#load":
+				ArgParser parser = str.args.parse();
+				String slot = parser.nextString();
+				String file = parser.nextString();
+				parser.nextOptionalFlag("offsetx");
+				int offsetx = parser.nextOptionalInt().orElse(0);
+				parser.nextOptionalFlag("offsety");
+				int offsety = parser.nextOptionalInt().orElse(0);
 				
-				if(!Generic.isNumeric(i.id))
+				ItemSet set = loadItems(file, offsetx, offsety, slot);
+				
+				for(Item i : set)
 				{
-					
-					CustomItem citem = nationGen.GetCustomItemsHandler().getCustomItem(i.id);
-					if(!citem.armor)
-						nationGen.weapondb.addToMap(i.id, citem.getHashMap());
-					else
+					if(!Generic.isNumeric(i.id))
 					{
-						nationGen.armordb.addToMap(i.id, citem.getHashMap());
+						CustomItem citem = nationGen.GetCustomItemsHandler().getCustomItem(i.id);
+						if(!citem.armor)
+							nationGen.weapondb.addToMap(i.id, citem.getHashMap());
+						else
+						{
+							nationGen.armordb.addToMap(i.id, citem.getHashMap());
+						}
 					}
 				}
-			}
-			
-			// Put itemset to it's place
-			if(items.get(args.get(1)) == null)
-				this.items.put(args.get(1), set);
-			else
-				items.get(args.get(1)).addAll(set);
-		
+				
+				// Put itemset to it's place
+				if(items.get(slot) == null)
+					this.items.put(slot, set);
+				else
+					items.get(slot).addAll(set);
+				
+				break;
+			default:
+				super.handleOwnCommand(str);
 		}
-		else
-			super.handleOwnCommand(str);
-
 	}
 }

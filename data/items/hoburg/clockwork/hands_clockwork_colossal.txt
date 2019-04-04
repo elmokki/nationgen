@@ -10,8 +10,8 @@
 #theme "occidental"
 #theme "oriental"
 #basechance 1
-#chanceinc theme austral *0.1
-#chanceinc theme abysian *0.1
+#chanceinc racetheme austral *0.1
+#chanceinc racetheme abysian *0.1
 #enditem
 
 #newitem
@@ -20,7 +20,7 @@
 #sprite /graphics/hoburg/giant/clockwork/hands_austral.png
 #theme "austral"
 #basechance 1
-#chanceinc theme not austral *0.1
+#chanceinc racetheme not austral *0.1
 #enditem
 
 #newitem
@@ -29,6 +29,6 @@
 #sprite /graphics/hoburg/giant/clockwork/hands_hoburgbred.png
 #theme "abysian"
 #basechance 1
-#chanceinc theme not abysian *0.1
+#chanceinc racetheme not abysian *0.1
 #enditem
 

@@ -1,7 +1,5 @@
 package nationGen.GUI;
 
-import com.elmokki.Generic;
-
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
 import nationGen.entities.Race;
@@ -16,7 +14,7 @@ public class NameGen {
 		
 		for(Race r : assets.races)
 		{
-			if(!Generic.containsTag(r.tags, "secondary"))
+			if(!r.tags.containsName("secondary"))
 			{
 				System.out.print(r.visiblename + ": ");
 				for(int i = 0; i < 10; i++)

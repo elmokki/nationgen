@@ -1,16 +1,18 @@
 package com.elmokki;
 
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Theme;
 import nationGen.items.Item;
+import nationGen.misc.Tags;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
 
 public class Generic {
 	
@@ -25,46 +27,6 @@ public class Generic {
 		levels.add("expert");
 		levels.add("superior");
 		return levels;
-	}
-	
-	public static String integerToPath(int integer)
-	{
-		String[] paths = { "fire", "air", "water", "earth", "astral", "death", "nature", "blood", "holy" };
-		return paths[integer];	
-	}
-	
-	public static int PathToInteger(String path)
-	{
-		String[] paths = { "fire", "air", "water", "earth", "astral", "death", "nature", "blood", "holy" };
-		path = path.toLowerCase().trim();
-		for(int i = 0; i < 9; i++)
-		{
-			if(paths[i].equals(path))
-			{
-				return i;
-			}
-		}
-		
-		return -1;	
-	}
-	
-	public static String integerToShortPath(int integer)
-	{
-		String[] paths = { "F", "A", "W", "E", "S", "D", "N", "B", "H" };
-		return paths[integer];	
-	}
-	
-	public static int getNextArgument(List<String> args, String arg, int defaultvalue)
-	{
-		int integer = defaultvalue; 
-		if(args.contains(arg))
-		{
-			if(args.size() > args.indexOf(arg) + 1)
-			{
-				integer = Integer.parseInt(args.get(args.indexOf(arg) + 1));
-			}
-		}
-		return integer;
 	}
 	
 	public static <E extends Entity> E getRandom(List<E> list, Random r)
@@ -91,25 +53,6 @@ public class Generic {
 		
 	}
 	
-	public static List<String> getListOfPathsInMask(int mask)
-	{
-		int[] masks = {128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768};
-		String[] paths = { "fire", "air", "water", "earth", "astral", "death", "nature", "blood", "holy" };
-
-		List<String> list = new ArrayList<String>();
-		for(int i = masks.length - 1; i >= 0; i--)
-		{
-			if(mask >= masks[i])
-			{
-				list.add(paths[i]);
-				mask = mask - masks[i];
-			}
-		}
-		
-
-		return list;
-	}
-	
 	public static List<String> parseArgs(String str)
 	{
 		return parseArgs(str, "\"");
@@ -117,40 +60,9 @@ public class Generic {
 	
 	
 	
-	public static boolean containsTag(List<String> tags, String tag)
+	public static Tags getAllUnitTags(Unit u)
 	{
-		for(String str : tags)
-		{
-			List<String> args = parseArgs(str);
-			if(args.get(0).equals(tag))
-				return true;
-		}
-		
-		return false;
-	}
-	
-	public static String getTagValue(List<String> tags, String tag)
-	{
-		for(String str : tags)
-		{
-			List<String> args = parseArgs(str);
-
-			if(args.get(0).equals(tag))
-			{
-
-				args.remove(0);
-				return listToString(args, "", "\"");
-			}
-		
-		}
-		
-		return null;
-	}
-	
-	
-	public static List<String> getAllUnitTags(Unit u)
-	{
-		List<String> tags = new ArrayList<String>();
+		Tags tags = new Tags();
 		tags.addAll(u.race.tags);
 		tags.addAll(u.pose.tags);
 		for(Filter f : u.appliedFilters)
@@ -164,9 +76,9 @@ public class Generic {
 		return tags;
 	}
 	
-	public static List<String> getAllNationTags(Nation n)
+	public static Tags getAllNationTags(Nation n)
 	{
-		List<String> tags = new ArrayList<String>();
+		Tags tags = new Tags();
 
 		if(n.races.get(0) != null)
 		{
@@ -178,50 +90,6 @@ public class Generic {
 			tags.addAll(f.tags);
 		
 		return tags;
-	}
-	
-	public static List<String> getTagValues(List<String> tags, String tag)
-	{
-		List<String> values = new ArrayList<String>();
-		
-		for(String str : tags)
-		{
-			List<String> args = parseArgs(str);
-
-			if(args.get(0).equals(tag))
-			{
-
-				args.remove(0);
-				values.add(Generic.listToString(args, "", "\""));
-			}
-		
-		}
-		
-		return values;
-	}
-	
-	/**
-	 * Returns all tags of certain type, for example all lines with #magicpriority <path> <number)
-	 * @param tags The source of tags
-	 * @param tag The tag to fetch, for example #magicpriority
-	 * @return
-	 */
-	public static List<String> getTags(List<String> tags, String tag)
-	{
-		List<String> values = new ArrayList<String>();
-		
-		for(String str : tags)
-		{
-			List<String> args = parseArgs(str);
-
-			if(args.get(0).equals(tag))
-			{
-				values.add(str);
-			}
-		
-		}
-		
-		return values;
 	}
 	
 	public static boolean isNumeric(String str)
@@ -239,23 +107,11 @@ public class Generic {
 	}
 	public static String listToString(List<String> list, String separator, String multiwordid)
 	{
-		String result = "";
-		for(String str : list)
-		{
-			
-			
-			if(result.length() != 0)
-				result = result + separator + " ";
-			
-			if(str.contains(" ") && list.size() > 1)
-				result = result + multiwordid;
-			result = result + str;
-			if(str.contains(" ")  && list.size() > 1)
-				result = result + multiwordid;
-			
-		}
-		
-		return result;
+		return list.stream()
+				.map(str -> (str.contains(" ") && list.size() > 1)
+						? (multiwordid + str + multiwordid)
+						: str)
+				.collect(Collectors.joining(separator + " "));
 	}
 	
 	public static String listToString(List<String> list, String separator)
@@ -282,22 +138,7 @@ public class Generic {
    
    public static int AmountOfVariables(int bitmask)
    {
-	   int vars = 0;
-	   int pos = 1;
-	   
-	   while(bitmask > 0)
-	   {
-		   if(containsBitmask(bitmask, pos))
-		   {
-			   vars++;
-			   bitmask -= pos;
-		   }
-		   pos *= 2;
-	   }
-	   
-	   return vars;
-	   
-	   
+	   return Integer.bitCount(bitmask);
    }
    
    
@@ -435,48 +276,16 @@ public class Generic {
 				
 	}
 	
-    /**
-     * Gets the position of the highest double in an array
-     * @param array
-     * @return
-     */
-    public static int GetHighestPosition(double[] array)
-    {
-        double highestvalue = array[0];
-        int highest = 0;
-
-        for (int i = 0; i < array.length; i++)
-        {
-            if (highestvalue < array[i])
-            {
-                highestvalue = array[i];
-                highest = i;
-            }
-        }
-        return highest;
-    }
-    
-    /**
-     * Gets the position of the highest int in an array
-     * @param array
-     * @return
-     */
-    public static int GetHighestPosition(int[] array)
-    {
-        int highestvalue = array[0];
-        int highest = 0;
-
-        for (int i = 0; i < array.length; i++)
-        {
-            if (highestvalue < array[i])
-            {
-                highestvalue = array[i];
-                highest = i;
-            }
-        }
-        return highest;
-    }
+	public static boolean containsSpace(String str) {
+		for (char c : str.toCharArray()) {
+			if (Character.isWhitespace(c)) {
+				return true;
+			}
+		}
+		return false;
+	}
 	
-	
-
+	public static String quote(String arg, char quote) {
+		return quote + arg.replaceAll("\\\\", "\\\\").replaceAll("" + quote, "\\" + quote) + quote;
+	}
 }

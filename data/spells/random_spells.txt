@@ -114,12 +114,12 @@
 #spell "Iron Darts"
 #spell "Iron Blizzard"
 #chanceinc magewithpaths earth holy 0.05
-#chanceinc diversity not 3 *10
-#chanceinc diversity not 2 *4
+#chanceinc magicdiversity not 3 *10
+#chanceinc magicdiversity not 2 *4
 #chanceinc picksatlevel 4 2 *0
 #chanceinc picksatlevel 4 1 *0.5
 #chanceinc picksatlevel not 3 2 *2
-#chanceinc diversity 4 *0.125
+#chanceinc magicdiversity 4 *0.125
 #end
 
 -------- Nature
@@ -215,8 +215,8 @@
 #basechance 0
 #chanceinc nationtag reanimation 0.075
 #chanceinc command #undead 0.025
-#chanceinc diversity not 3 *2
-#chanceinc diversity not 2 *2
+#chanceinc magicdiversity not 3 *2
+#chanceinc magicdiversity not 2 *2
 #end
 
 
@@ -228,8 +228,8 @@
 #spell "Supplicant of Earth"
 #chanceinc primaryrace "Pale One" 0.125
 #chanceinc anymagic not earth *0  
-#chanceinc diversity not 3 *8
-#chanceinc diversity not 2 *4
+#chanceinc magicdiversity not 3 *8
+#chanceinc magicdiversity not 2 *4
 #end
 
 
@@ -241,6 +241,6 @@
 #chanceinc primaryrace "Foulspawn" 0.5
 #chanceinc magic not nature *0
 #chanceinc anymagic blood *0.25
-#chanceinc diversity not 3 *4
-#chanceinc diversity not 2 *8
+#chanceinc magicdiversity not 3 *4
+#chanceinc magicdiversity not 2 *8
 #end

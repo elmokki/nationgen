@@ -1,17 +1,17 @@
 package nationGen.naming;
 
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
 import com.elmokki.Generic;
-
 import nationGen.NationGenAssets;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.Random;
 
 
 public class TroopNamer {
@@ -83,12 +83,12 @@ public class TroopNamer {
 		// #forcedname
 		List<Unit> forcednames = new ArrayList<Unit>();
 		for(Unit u : alltroops)
-			if(Generic.containsTag(Generic.getAllUnitTags(u), "forcedname"))
+			if(Generic.getAllUnitTags(u).containsName("forcedname"))
 				forcednames.add(u);
 		alltroops.removeAll(forcednames);
 		for(Unit u : forcednames)
 		{
-			u.name.setType(Generic.getTagValue(Generic.getAllUnitTags(u), "forcedname"));
+			u.name.setType(Generic.getAllUnitTags(u).getValue("forcedname").orElseThrow().get());
 		}
 		
 		// Give special parts
@@ -184,27 +184,24 @@ public class TroopNamer {
 	
 	private void addNationalPrefix(List<Unit> units)
 	{
+		String racePrefixOrVisibleName = Generic.getAllNationTags(n).getString("raceprefix")
+				.orElseGet(() -> n.races.get(0).visiblename);
 		
 		for(Unit u : units)
 		{
-			String part = "";
-			
+			Optional<String> subraceprefix = Generic.getAllUnitTags(u).getString("subraceprefix");
 			// Horribly unclear conditional parses out as follows:
 			// 		Does the unit have a #subraceprefix? 
 			//			If so, do the primary race + themes have a (different) #raceprefix, or if there is no #raceprefix, is the visible name different from #subraceprefix?
 			//		Else, is the unit's visible name different than the primary race's visible name?
 			
-			if(Generic.containsTag(Generic.getAllUnitTags(u), "subraceprefix") && 
-						((!Generic.containsTag(Generic.getAllNationTags(n), "raceprefix") && !Generic.getTagValue(Generic.getAllUnitTags(u), "subraceprefix").equals(n.races.get(0).visiblename))
-								|| !Generic.getTagValue(Generic.getAllUnitTags(u), "subraceprefix").equals(Generic.getTagValue(Generic.getAllNationTags(n), "raceprefix"))))
+			if(subraceprefix.isPresent() && !subraceprefix.get().equals(racePrefixOrVisibleName))
 			{
-				part = Generic.getTagValue(Generic.getAllUnitTags(u), "subraceprefix");
-				u.name.setPrefixprefix(part);
+				u.name.setPrefixprefix(subraceprefix.get());
 			}
 			else if(!u.race.visiblename.equals(n.races.get(0).visiblename))
 			{
-				part = u.race.visiblename;
-				u.name.setPrefixprefix(part);
+				u.name.setPrefixprefix(u.race.visiblename);
 			}
 		}
 			
@@ -241,30 +238,30 @@ public class TroopNamer {
 			List<NamePart> all = getSuitableParts(this.combases, false, true);
 			all.removeAll(used);
 			
-			List<NamePart> suitables = new ArrayList<NamePart>();
+			List<NamePart> suitables = new ArrayList<>();
 			for(NamePart p : all)
 			{
-				if(Generic.getTagValues(p.tags, "tier").contains("" + tier))
+				if(p.tags.contains("tier", tier))
 					suitables.add(p);
 			}
 			if(suitables.size() == 0)
 				for(NamePart p : all)
 				{
-					if(Generic.getTagValues(p.tags, "tier").size() == 0)
+					if(p.tags.getAllValues("tier").size() == 0)
 						suitables.add(p);
 				}
 			
 			
-			List<Unit> only = new ArrayList<Unit>();
+			List<Unit> only = new ArrayList<>();
 			only.add(u);
 			setGuaranteedParts(only, weaponnames);
 			setGuaranteedParts(only, specialnames);	
 
-			List<NamePart> possibles = new ArrayList<NamePart>();
+			List<NamePart> possibles = new ArrayList<>();
 			if(u.name.type.toString().equals("UNNAMED"))
 			{
 				for(NamePart p : all)
-					if(!p.tags.contains("prefix"))
+					if(!p.tags.containsName("prefix"))
 						possibles.add(p);
 			}
 			else
@@ -283,7 +280,7 @@ public class TroopNamer {
 			
 			
 			
-			if(p.tags.contains("generic") && !p.tags.contains("prefix"))
+			if(p.tags.containsName("generic") && !p.tags.containsName("prefix"))
 			{
 				setGuaranteedParts(only, weaponprefixes);
 				setGuaranteedParts(only, specialprefixes);
@@ -354,8 +351,8 @@ public class TroopNamer {
 		{
 			boolean ok = true;
 
-			boolean prefix = p.tags.contains("prefix");
-			boolean prefixprefix = p.tags.contains("prefixprefix");
+			boolean prefix = p.tags.containsName("prefix");
+			boolean prefixprefix = p.tags.containsName("prefixprefix");
 			for(NamePart op : unitname)
 			{
 				if(op == null)
@@ -366,7 +363,7 @@ public class TroopNamer {
 				
 
 				
-				if((prefix && !op.tags.contains("prefix")) || (prefixprefix && !op.tags.contains("prefixprefix")))
+				if((prefix && !op.tags.containsName("prefix")) || (prefixprefix && !op.tags.containsName("prefixprefix")))
 				{
 
 					for(String t : op.types)
@@ -470,9 +467,9 @@ public class TroopNamer {
 	
 	private void setNamePart(Unit u, NamePart part)
 	{
-		if(part.tags.contains("prefix"))
+		if(part.tags.containsName("prefix"))
 			u.name.prefix = part;
-		else if(part.tags.contains("prefixprefix"))
+		else if(part.tags.containsName("prefixprefix"))
 			u.name.prefixprefix = part;
 		else
 			u.name.type = part;
@@ -483,7 +480,7 @@ public class TroopNamer {
 	private void setBaseNames()
 	{
 
-		List<String> roles = new ArrayList<String>();
+		List<String> roles = new ArrayList<>();
 		roles.add("infantry");
 		roles.add("mounted");
 		roles.add("ranged");
@@ -654,7 +651,7 @@ public class TroopNamer {
 					canremove = false;
 				}
 			}
-			if(canremove && !Generic.containsTag(u.name.prefixprefix.tags, "neverredundant"));
+			if(canremove && !u.name.prefixprefix.tags.containsName("neverredundant"))
 			{
 				u.name.prefixprefix = null;
 			}
@@ -684,7 +681,7 @@ public class TroopNamer {
 					canremove = false;
 				}
 			}
-			if(canremove && !Generic.containsTag(u.name.prefix.tags, "neverredundant"))
+			if(canremove && !u.name.prefix.tags.containsName("neverredundant"))
 			{
 				u.name.prefix = null;
 			}
@@ -699,17 +696,15 @@ public class TroopNamer {
 	private void setGuaranteedParts(List<Unit> units, List<NamePart> all)
 	{
 		
-		List<NamePart> used = new ArrayList<NamePart>();
+		List<NamePart> used = new ArrayList<>();
 		for(Unit u : units)
 		{
-			List<NamePart> parts = new ArrayList<NamePart>();
+			boolean elite = Generic.getAllUnitTags(u).containsName("allowelitenaming");
 			
-			boolean elite = Generic.getAllUnitTags(u).contains("allowelitenaming");
-			
-			parts = getSuitableParts(all, elite, false);
+			List<NamePart> parts = getSuitableParts(all, elite, false);
 		
 			
-			List<NamePart> usedhere = new ArrayList<NamePart>();
+			List<NamePart> usedhere = new ArrayList<>();
 			usedhere.addAll(used);
 			usedhere.retainAll(parts);
 			

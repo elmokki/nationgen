@@ -1,10 +1,19 @@
 package nationGen.GUI;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.GridLayout;
-import java.awt.Insets;
+import com.elmokki.Generic;
+import nationGen.NationGen;
+import nationGen.Settings;
+import nationGen.Settings.SettingsType;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Document;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -16,34 +25,6 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.locks.ReentrantLock;
-
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JProgressBar;
-import javax.swing.JScrollPane;
-import javax.swing.JSlider;
-import javax.swing.JTabbedPane;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import javax.swing.JTextPane;
-import javax.swing.SwingUtilities;
-import javax.swing.border.EmptyBorder;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.Document;
-
-import com.elmokki.Generic;
-
-import nationGen.NationGen;
-import nationGen.Settings;
-import nationGen.Settings.SettingsType;
 
 public class GUI extends JFrame implements ActionListener, ItemListener, ChangeListener 
 {
@@ -392,9 +373,11 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
 
     private void process()
     {
-        n = new NationGen(pauseLock, settings, rpanel.getRestrictions());
+        startButton.setEnabled(false);
         Thread thread = new Thread(() -> {
+            n = new NationGen(pauseLock, settings, rpanel.getRestrictions());
             startButton.setText(abortText);
+            startButton.setEnabled(true);
             pauseButton.setEnabled(true);
             
             if(!modNameRandom.isSelected())
@@ -467,7 +450,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
                         return;
                         }
                 }
-                else if(this.seedcheckbox.isSelected() && parseSeeds().isEmpty())
+                else if(parseSeeds().isEmpty())
                 {
                         System.out.println("Please specify numeric seeds or disable predefined seeds.");
                         return;

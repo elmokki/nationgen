@@ -1,16 +1,14 @@
 package nationGen.entities;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
-import java.awt.image.BufferedImageOp;
-import java.util.List;
 
 import com.elmokki.Drawing;
-import com.elmokki.Generic;
-
 import nationGen.NationGen;
+import nationGen.misc.Command;
 import nationGen.misc.FileUtil;
+
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.awt.image.BufferedImageOp;
 
 
 public class Drawable extends Filter {
@@ -29,34 +27,38 @@ public class Drawable extends Filter {
 	
 	
     @Override
-	public <Entity> void handleOwnCommand(String str)
+	public void handleOwnCommand(Command str)
 	{
-
-		List<String> args = Generic.parseArgs(str);
-		
 		
 		try
 		{
-		
-
-		if(args.get(0).equals("#sprite"))
-			this.sprite = args.get(1);
-		else if(args.get(0).equals("#renderslot"))
-			this.renderslot = args.get(1);
-		else if(args.get(0).equals("#renderprio"))
-			this.renderprio = Integer.parseInt(args.get(1));
-		else if(args.get(0).equals("#recolormask") || args.get(0).equals("#mask"))
-			this.mask = args.get(1);
-		else if(args.get(0).equals("#offsetx"))
-			this.offsetx = Integer.parseInt(args.get(1));
-		else if(args.get(0).equals("#offsety"))
-			this.offsety = Integer.parseInt(args.get(1));
-		else
-			super.handleOwnCommand(str);
+			switch(str.command) {
+				case "#sprite":
+					this.sprite = str.args.get(0).get();
+					break;
+				case "#renderslot":
+					this.renderslot = str.args.get(0).get();
+					break;
+				case "#renderprio":
+					this.renderprio = str.args.get(0).getInt();
+					break;
+				case "#recolormask":
+				case "#mask":
+					this.mask = str.args.get(0).get();
+					break;
+				case "#offsetx":
+					this.offsetx = str.args.get(0).getInt();
+					break;
+				case "#offsety":
+					this.offsety = str.args.get(0).getInt();
+					break;
+				default:
+					super.handleOwnCommand(str);
+			}
 		}
 		catch(IndexOutOfBoundsException e)
 		{
-			System.out.println("WARNING: " + str + " has insufficient arguments (" + this.name + ")");
+			throw new IllegalArgumentException("WARNING: " + str + " has insufficient arguments (" + this.name + ")", e);
 		}
 	}
     
@@ -119,7 +121,7 @@ public class Drawable extends Filter {
 			BufferedImage image = FileUtil.readImage(i.sprite);
 			
 			// Handle "black_to_alpha"
-			if(this.tags.contains("convert_to_alpha"))
+			if(this.tags.containsName("convert_to_alpha"))
 				image = convertToAlpha(image);
 			
 			g.drawImage(image, xoff, yoff, null);
@@ -139,10 +141,10 @@ public class Drawable extends Filter {
 			BufferedImageOp colorizeFilter;
 	
 			// Handle "black_to_alpha"
-			if(this.tags.contains("convert_to_alpha"))
+			if(this.tags.containsName("convert_to_alpha"))
 				image = convertToAlpha(image);
 
-			if(i.tags.contains("alternaterecolor"))
+			if(i.tags.containsName("alternaterecolor"))
 				colorizeFilter =  Drawing.createColorizeOp_alt(c);
 			else
 				colorizeFilter = Drawing.createColorizeOp(c);

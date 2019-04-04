@@ -1,15 +1,13 @@
 package nationGen.naming;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
-import com.elmokki.Generic;
-
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class PriestNamer extends MageNamer {
 
@@ -40,7 +38,7 @@ public class PriestNamer extends MageNamer {
 		{
 			for(int i = 1; i < 4; i++)
 			{
-				if(u.tags.contains("priest " + i))
+				if(u.tags.contains("priest", i))
 				{
 					all.get(i - 1).add(u);
 					if(maxTier < i)
@@ -85,31 +83,11 @@ public class PriestNamer extends MageNamer {
 	
 	protected void loadNameData()
 	{
-		
-		for(String tag : n.races.get(0).tags)
-		{
-			List<String> args = Generic.parseArgs(tag);
-			if(args.get(0).equals("priestnames"))
-			{
-				names.addAll(assets.magenames.get(args.get(1)));
-			}
-			else if(args.get(0).equals("priestadjectives"))
-			{
-				adjectives.addAll(assets.magenames.get(args.get(1)));
-			}
-			else if(args.get(0).equals("priestnouns"))
-			{
-				nouns.addAll(assets.magenames.get(args.get(1)));
-			}
-			else if(args.get(0).equals("tieredpriestnames"))
-			{
-				tieredmage.addAll(assets.magenames.get(args.get(1)));
-			}
-			else if(args.get(0).equals("priestrankedprefixes"))
-			{
-				rankedprefix.addAll(assets.magenames.get(args.get(1)));
-			}
-		}
+		n.races.get(0).tags.getAllStrings("priestnames").forEach(set -> names.addAll(assets.magenames.get(set)));
+		n.races.get(0).tags.getAllStrings("priestadjectives").forEach(set -> adjectives.addAll(assets.magenames.get(set)));
+		n.races.get(0).tags.getAllStrings("priestnouns").forEach(set -> nouns.addAll(assets.magenames.get(set)));
+		n.races.get(0).tags.getAllStrings("tieredpriestnames").forEach(set -> tieredmage.addAll(assets.magenames.get(set)));
+		n.races.get(0).tags.getAllStrings("priestrankedprefixes").forEach(set -> rankedprefix.addAll(assets.magenames.get(set)));
 		
 		if(names.size() == 0)
 			names = assets.magenames.get("defaultnames");

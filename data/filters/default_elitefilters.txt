@@ -28,8 +28,8 @@
 #command "#berserk +3"
 #chanceinc "magic nature 0.5"
 #chanceinc "command #berserk 5"
-#chanceinc "ranged -100"
-#chanceinc "mounted -100"
+#chanceinc "pose ranged -100"
+#chanceinc "pose mounted -100"
 #tag "nopose ranged"
 #tag "nopose mounted"
 #command "#gcost +2"
@@ -102,7 +102,7 @@
 #command "#str +3"
 #command "#hp +4"
 #command "#gcost +3"
-#chanceinc "ranged -100"
+#chanceinc "pose ranged -100"
 #chanceinc "personalcommand #berserk 0.5"
 #end
 

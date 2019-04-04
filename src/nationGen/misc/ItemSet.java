@@ -1,25 +1,11 @@
 package nationGen.misc;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Random;
-
-
-
-import nationGen.entities.Entity;
+import com.elmokki.Dom3DB;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.items.Item;
 
-
-
-
-
-
-import com.elmokki.Dom3DB;
-import com.elmokki.Generic;
+import java.util.*;
 
 
 public class ItemSet extends ArrayList<Item> {
@@ -117,25 +103,12 @@ public class ItemSet extends ArrayList<Item> {
 		ItemSet newlist = new ItemSet();
 		for(Item i : this)
 		{
-			int minprot = 0;
-			int maxprot = 100;
-			for(String tag : i.tags)
-			{
-				List<String> args = Generic.parseArgs(tag);
-				if(args.get(0).equals("minprot"))
-					minprot = Integer.parseInt(args.get(1));
-				else if(args.get(0).equals("maxprot"))
-					maxprot = Integer.parseInt(args.get(1));
-			}
-			
+			int minprot = i.tags.getInt("minprot").orElse(0);
+			int maxprot = i.tags.getInt("maxprot").orElse(100);
 			
 			if(itemprot >= minprot && itemprot <= maxprot)
-			{
 				newlist.add(i);
-			}
 		}
-		
-		
 		
 		return newlist;
 	}
@@ -267,7 +240,7 @@ public class ItemSet extends ArrayList<Item> {
 	
 	public Item getRandom(ChanceIncHandler ch, Random random)
 	{
-		return Entity.getRandom(random, ch.handleChanceIncs(this));
+		return ch.handleChanceIncs(this).getRandom(random);
 	}
 	
 	public ItemSet filterForPose(Pose p)
@@ -279,7 +252,7 @@ public class ItemSet extends ArrayList<Item> {
 			if(p.getItems(i.slot) != null)
 				for(Item i2 : p.getItems(i.slot))
 				{
-					if(i.id.equals(i2.id) && !i.id.equals("-1") && (i.name.equals(i2.name) || i.sprite.equals(i2.name) || i2.tags.contains("replacement " + i.name)))
+					if(i.id.equals(i2.id) && !i.id.equals("-1") && (i.name.equals(i2.name) || i.sprite.equals(i2.name) || i2.tags.contains("replacement", i.name)))
 						newlist.add(i2);
 					else if(i.id.equals(i2.id) && (i.name.equals(i2.name) || i.sprite.equals(i2.name)))
 						newlist.add(i2);
@@ -337,13 +310,23 @@ public class ItemSet extends ArrayList<Item> {
 	}
 	
 	
-	public ItemSet filterTag(String tag, boolean keepTag)
+	public ItemSet filterTag(Command tagLine)
 	{
 		ItemSet newlist = new ItemSet();
 		for(Item i : this)
-			if(i.tags.contains(tag) == keepTag)
+			if(i.tags.containsTag(tagLine))
 				newlist.add(i);
 
+		return newlist;
+	}
+	
+	public ItemSet filterOutTag(Command tagLine)
+	{
+		ItemSet newlist = new ItemSet();
+		for(Item i : this)
+			if(!i.tags.containsTag(tagLine))
+				newlist.add(i);
+		
 		return newlist;
 	}
 	
@@ -384,28 +367,6 @@ public class ItemSet extends ArrayList<Item> {
 		for(Item i : this)
 			if(!i.id.equals(-1))
 				newlist.add(i);
-		
-		return newlist;
-
-	}
-	
-	public ItemSet filterThoseNotInArmorRange(int armor)
-	{
-		ItemSet newlist = new ItemSet();
-		for(Item i : this)
-		{
-			int minprot = 0;
-			int maxprot = 100;
-			for(String tag : i.tags)
-			{
-				if(tag.startsWith("minprot"))
-					minprot = Integer.parseInt(tag.split(" ")[1]);
-				if(tag.startsWith("maxprot"))
-					maxprot = Integer.parseInt(tag.split(" ")[1]);
-			}
-			if(armor >= minprot && armor <= maxprot)
-				newlist.add(i);
-		}
 		
 		return newlist;
 

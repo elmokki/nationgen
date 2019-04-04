@@ -1,14 +1,14 @@
 package nationGen.restrictions;
 
-import java.util.List;
-import java.util.ArrayList;
-
 import nationGen.misc.Command;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UnitCommandRestriction extends TextBoxListRestriction {
-	public List<String> possibleRaceNames = new ArrayList<String>();
+	private List<String> commandRestrictions = new ArrayList<>();
 	
 	public UnitCommandRestriction()
 	{
@@ -30,7 +30,7 @@ public class UnitCommandRestriction extends TextBoxListRestriction {
 	public NationRestriction getRestriction() {
 		UnitCommandRestriction res = new UnitCommandRestriction();
 		for(int i =0; i < chosen.getModel().getSize(); i++)
-			res.possibleRaceNames.add(chosen.getModel().getElementAt(i));
+			res.commandRestrictions.add(chosen.getModel().getElementAt(i));
 		
 		res.comboselection = this.comboselection;
 		return res;
@@ -38,7 +38,7 @@ public class UnitCommandRestriction extends TextBoxListRestriction {
 	
 	@Override
 	public boolean doesThisPass(Nation n) {
-		if(possibleRaceNames.size() == 0)
+		if(commandRestrictions.size() == 0)
 		{
 			System.out.println("Unit command nation restriction has no races set!");
 			return true;
@@ -64,32 +64,19 @@ public class UnitCommandRestriction extends TextBoxListRestriction {
 	
 	private boolean checkUnits(List<Unit> list)
 	{
+		
 		for(Unit u : list)
 		{
-			for(String str : possibleRaceNames)
+			for(String str : commandRestrictions)
 			{
-				Command oc = Command.parseCommand(str);
+				Command oc = Command.parse(str);
 				for(Command c : u.getCommands())
 				{
-					if(c.command.equals(oc.command))
+					if(c.command.equals(oc.command) && (oc.args.isEmpty() || c.equals(oc)))
 					{
-
-						if(c.args.size() == oc.args.size() || oc.args.size() == 0)
-						{
-							boolean fine = true;
-
-							for(int i = 0; i < oc.args.size(); i++)
-								if(!c.args.get(i).equals(oc.args.get(i)))
-									fine = false;
-							
-							if(fine)
-								return true;
-						}
-						
+						return true;
 					}
 				}
-	
-				
 			}
 		}
 		return false;
