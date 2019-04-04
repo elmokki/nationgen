@@ -1,16 +1,9 @@
 package nationGen.rostergeneration;
 
 
-import java.awt.Color;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
-import com.elmokki.Generic;
-
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
-import nationGen.entities.Entity;
+import nationGen.chances.ThemeInc;
 import nationGen.entities.Filter;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
@@ -19,6 +12,11 @@ import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
+
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 
 public class ScoutGenerator extends TroopGenerator {
@@ -42,16 +40,9 @@ public class ScoutGenerator extends TroopGenerator {
 	
 		
 		// Select whether it is a spy, scout or assassin
-		double scoutchance = 0.5;
-		double spychance = 0.25;
-		double assassinchance = 0.25;
-		
-		if(Generic.containsTag(race.tags, "scoutchance"))
-			scoutchance = Double.parseDouble(Generic.getTagValue(race.tags, "scoutchance"));
-		if(Generic.containsTag(race.tags, "spychance"))
-			scoutchance = Double.parseDouble(Generic.getTagValue(race.tags, "spychance"));
-		if(Generic.containsTag(race.tags, "assassinchance"))
-			scoutchance = Double.parseDouble(Generic.getTagValue(race.tags, "assassinchance"));
+		double scoutchance = race.tags.getDouble("scoutchance").orElse(0.5);
+		double spychance = race.tags.getDouble("spychance").orElse(0.25);
+		double assassinchance = race.tags.getDouble("assassinchance").orElse(0.25);
 		
 		
 		double all = scoutchance + spychance + assassinchance;
@@ -68,17 +59,17 @@ public class ScoutGenerator extends TroopGenerator {
 		List<Pose> possiblePoses = new ArrayList<Pose>();
 		for(Pose p : race.getPoses(posename))
 		{
-			if(p.tags.contains("cannot_be_scout") && tier == 1)
+			if(p.tags.containsName("cannot_be_scout") && tier == 1)
 				continue;
-			else if(p.tags.contains("cannot_be_spy") && tier == 2)
+			else if(p.tags.containsName("cannot_be_spy") && tier == 2)
 				continue;
-			else if(p.tags.contains("cannot_be_assassin") && tier == 3)
+			else if(p.tags.containsName("cannot_be_assassin") && tier == 3)
 				continue;	
 			possiblePoses.add(p);
 		}
 		
 		// Select pose
-		Pose p = chandler.getRandom(possiblePoses, race, posename);
+		Pose p = chandler.getRandom(possiblePoses, race);
 		Unit template = unitGen.generateUnit(race, p);
 
 		chandler.getRandom(p.getItems("weapon").filterDom3DB("2h", "0", true, nationGen.weapondb), template);
@@ -142,15 +133,12 @@ public class ScoutGenerator extends TroopGenerator {
 		
 		template.setSlot("armor", armor);
 		
-		Item helmet = null;
 		int prot = nationGen.armordb.GetInteger(template.getSlot("armor").id, "prot");
 		
 		if(template.pose.getItems("helmet") != null)
 		{
 			ItemSet helms = template.pose.getItems("helmet");
-			helmet = Entity.getRandom(nation.random, chandler.handleChanceIncs(template, helms, unitGen.generateTargetProtChanceIncs(prot, 4)));
-	
-			
+			Item helmet = chandler.handleChanceIncs(template, helms, unitGen.generateTargetProtChanceIncs(prot, 4)).getRandom(nation.random);
 	
 			template.setSlot("helmet", helmet);
 	
@@ -158,12 +146,12 @@ public class ScoutGenerator extends TroopGenerator {
 	
 		if(r.nextDouble() < 0.15 && template.pose.getItems("bonusweapon") != null)
 		{
-			Item bweapon = chandler.getRandom(nation.usedItems.filterSlot("bonusweapon").filterTag("noelite", false).filterThoseNotInArmorRange(template.getTotalProt(false)), template);
+			Item bweapon = chandler.getRandom(nation.usedItems.filterSlot("bonusweapon").filterOutTag(new Command("noelite")).filterMinMaxProt(template.getTotalProt(false)), template);
 			template.setSlot("bonusweapon", bweapon);
 			
 			if(template.getSlot("bonusweapon") == null)
 			{			
-				bweapon = chandler.getRandom(template.pose.getItems("bonusweapon").filterTag("noelite", false).filterThoseNotInArmorRange(template.getTotalProt(false)), template);
+				bweapon = chandler.getRandom(template.pose.getItems("bonusweapon").filterOutTag(new Command("noelite")).filterMinMaxProt(template.getTotalProt(false)), template);
 				template.setSlot("bonusweapon", bweapon);
 			}
 		}
@@ -210,12 +198,13 @@ public class ScoutGenerator extends TroopGenerator {
 			// Scouts usually ride the typical racial mount 
 			// 2015.07.08: Made the 20% chance to 80% chance so it's actually usually 
 			String pref = null;
-			if(Generic.getTagValue(template.race.tags, "preferredmount") != null && nation.random.nextDouble() < 0.80)
+			if(template.race.tags.containsName("preferredmount")&& nation.random.nextDouble() < 0.80)
 			{
-				pref = Generic.getTagValue(template.race.tags, "preferredmount");
+				pref = template.race.tags.getString("preferredmount").orElseThrow();
 			}
 	
-			template.setSlot("mount", unitGen.getSuitableItem("mount", template, p.getItems("mount").filterTag("heavy", false), null, "animal " + pref));
+			template.setSlot("mount", unitGen.getSuitableItem("mount", template,
+				p.getItems("mount").filterOutTag(new Command("heavy")), null, Command.args("animal", pref)));
 							
 			if(template.getSlot("mount") == null)
 			{
@@ -304,15 +293,15 @@ public class ScoutGenerator extends TroopGenerator {
 				if(bonuschance < 0.2)
 					template.commands.add(new Command("#wastesurvival"));
 				else if(bonuschance < 0.25)
-					template.commands.add(new Command("#swampsurvival"));					
+					template.commands.add(new Command("#swampsurvival"));
 			}
 			else if(!mountain && bonuschance < 0.25)
 			{
-				template.commands.add(new Command("#mountainsurvival"));				
+				template.commands.add(new Command("#mountainsurvival"));
 			}
 			else if(!forest && bonuschance < 0.25)
 			{
-				template.commands.add(new Command("#forestsurvival"));				
+				template.commands.add(new Command("#forestsurvival"));
 			}
 
 		}
@@ -340,9 +329,9 @@ public class ScoutGenerator extends TroopGenerator {
 		boolean sacred = false;
 		for(Filter f : u.appliedFilters)
 		{
-			if(f.tags.contains("alloweliteitems"))
+			if(f.tags.containsName("alloweliteitems"))
 				elite = true;
-			if(f.tags.contains("allowsacreditems"))
+			if(f.tags.containsName("allowsacreditems"))
 				sacred = true;
 		}
 		
@@ -351,66 +340,66 @@ public class ScoutGenerator extends TroopGenerator {
 
 			if(!elite)
 			{
-				tf.themeincs.add("thisitemtag elite *0");
-				tf.themeincs.add("thisitemtheme elite *0");
+				tf.themeincs.add(ThemeInc.parse("thisitemtag elite *0"));
+				tf.themeincs.add(ThemeInc.parse("thisitemtheme elite *0"));
 			}
 			if(!sacred)
 			{
-				tf.themeincs.add("thisitemtag sacred *0");
-				tf.themeincs.add("thisitemtheme sacred *0");
+				tf.themeincs.add(ThemeInc.parse("thisitemtag sacred *0"));
+				tf.themeincs.add(ThemeInc.parse("thisitemtheme sacred *0"));
 
 			}
 			
 		}	
 		
-		tf.themeincs.add("thisarmorprot below 11 *4");
-		tf.themeincs.add("thisarmorprot below 9 *4");
+		tf.themeincs.add(ThemeInc.parse("thisarmorprot below 11 *4"));
+		tf.themeincs.add(ThemeInc.parse("thisarmorprot below 9 *4"));
 
-		tf.themeincs.add("thisitemtheme scout *20");
-		tf.themeincs.add("thisitemtheme stealthy *20");
+		tf.themeincs.add(ThemeInc.parse("thisitemtheme scout *20"));
+		tf.themeincs.add(ThemeInc.parse("thisitemtheme stealthy *20"));
 		if(tier == 3)
-			tf.themeincs.add("thisitemtheme assassin *20");
+			tf.themeincs.add(ThemeInc.parse("thisitemtheme assassin *20"));
 		else if(tier == 2)
-			tf.themeincs.add("thisitemtheme spy *20");
+			tf.themeincs.add(ThemeInc.parse("thisitemtheme spy *20"));
 
 
 		if(tier > 1)
-				tf.commands.add(new Command("#stealthy", "+25"));
+			tf.commands.add(Command.args("#stealthy", "+25"));
 		else
-				tf.commands.add(new Command("#stealthy", "+10"));
+			tf.commands.add(Command.args("#stealthy", "+10"));
 		
 		if(tier == 3)
 		{
-			tf.commands.add(new Command("#gcost", "+40"));
-			tf.commands.add(new Command("#assassin"));
-			tf.commands.add(new Command("#att", "+3"));
-			tf.commands.add(new Command("#def", "+3"));
-			tf.commands.add(new Command("#prec", "+3"));
-			tf.commands.add(new Command("#mor", "+3"));
-			tf.commands.add(new Command("#mr", "+1"));
-			tf.commands.add(new Command("#str", "+1"));
+			tf.commands.add(Command.args("#gcost", "+40"));
+			tf.commands.add(Command.args("#assassin"));
+			tf.commands.add(Command.args("#att", "+3"));
+			tf.commands.add(Command.args("#def", "+3"));
+			tf.commands.add(Command.args("#prec", "+3"));
+			tf.commands.add(Command.args("#mor", "+3"));
+			tf.commands.add(Command.args("#mr", "+1"));
+			tf.commands.add(Command.args("#str", "+1"));
 			//NamePart part = new NamePart();
 			//part.text = "Assassin";
 			//u.name.type = part;
 		}
 		else if(tier == 2)
 		{
-			tf.commands.add(new Command("#gcost", "+40"));
-			tf.commands.add(new Command("#spy"));
+			tf.commands.add(Command.args("#gcost", "+40"));
+			tf.commands.add(Command.args("#spy"));
 			//NamePart part = new NamePart();
 			//part.text = "Spy";
 			//u.name.type = part;
 		}
 		else
 		{
-			tf.commands.add(new Command("#gcost", "+20"));
+			tf.commands.add(Command.args("#gcost", "+20"));
 
 			//NamePart part = new NamePart();
 			//part.text = "Scout";
 			//u.name.type = part;
 		}
 		
-		tf.commands.add(new Command("#noleader"));
+		tf.commands.add(Command.args("#noleader"));
 		u.appliedFilters.add(tf);
 
 	}

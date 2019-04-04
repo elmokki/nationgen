@@ -1,15 +1,16 @@
 package nationGen.nation;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 
 import com.elmokki.Generic;
-
 import nationGen.NationGen;
 import nationGen.Settings.SettingsType;
 import nationGen.misc.Command;
+import nationGen.misc.Tags;
 import nationGen.units.Unit;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class PDSelector {
     
@@ -38,12 +39,12 @@ public class PDSelector {
 	
 	public int getIDforPD(Unit u)
 	{
-		if(Generic.containsTag(u.pose.tags, "montagpose"))
+		if(u.pose.tags.containsName("montagpose"))
 		{
 			int id = -1;
 			for(Command c : u.getCommands())
 				if(c.command.equals("#firstshape"))
-					id = Integer.parseInt(c.args.get(0));
+					id = c.args.get(0).getInt();
 			
 			if(id != -1)
 				return id;
@@ -166,9 +167,9 @@ public class PDSelector {
 		if(failsafe)
 		{
 			if(magicbeing)
-				com.commands.add(new Command("#magiccommand", "40"));
+				com.commands.add(Command.args("#magiccommand", "40"));
 			if(ud_demon)
-				com.commands.add(new Command("#undcommand", "40"));
+				com.commands.add(Command.args("#undcommand", "40"));
 		}
 		
 		return com;
@@ -210,9 +211,10 @@ public class PDSelector {
 				}
 		}
 		
-		List<Unit> unsuitable = new ArrayList<Unit>();
+		List<Unit> unsuitable = new ArrayList<>();
 		for(Unit u : units)
-			if(Generic.containsTag(Generic.getAllUnitTags(u), "cannot_be_pd") || (Generic.containsTag(u.pose.tags, "montagpose") && !montag_chassis_allowed))
+			if(Generic.getAllUnitTags(u).containsName("cannot_be_pd")
+					|| (u.pose.tags.containsName("montagpose") && !montag_chassis_allowed))
 				unsuitable.add(u);
 		
 		if(units.size() > unsuitable.size())
@@ -234,9 +236,9 @@ public class PDSelector {
 				}
 			}
 			
-			unsuitable = new ArrayList<Unit>();
+			unsuitable = new ArrayList<>();
 			for(Unit u : units)
-				if(Generic.containsTag(Generic.getAllUnitTags(u), "cannot_be_pd") || (Generic.containsTag(u.pose.tags, "montagpose") && !montag_chassis_allowed))
+				if(Generic.getAllUnitTags(u).containsName("cannot_be_pd") || (u.pose.tags.containsName("montagpose") && !montag_chassis_allowed))
 					unsuitable.add(u);
 			
 			if(units.size() > unsuitable.size())
@@ -247,9 +249,9 @@ public class PDSelector {
 		if(units.size() == 0)
 		{
 			units = n.combineTroopsToList("infantry");
-			unsuitable = new ArrayList<Unit>();
+			unsuitable = new ArrayList<>();
 			for(Unit u : units)
-				if(Generic.containsTag(Generic.getAllUnitTags(u), "cannot_be_pd") || (Generic.containsTag(u.pose.tags, "montagpose") && !montag_chassis_allowed))
+				if(Generic.getAllUnitTags(u).containsName("cannot_be_pd") || (u.pose.tags.containsName("montagpose") && !montag_chassis_allowed))
 					unsuitable.add(u);
 			
 			if(units.size() > unsuitable.size())
@@ -323,7 +325,7 @@ public class PDSelector {
 			rank = 4;
 		
 		
-		List<List<Unit>> militia = new ArrayList<List<Unit>>();
+		List<List<Unit>> militia = new ArrayList<>();
 
 		List<Unit> units = n.combineTroopsToList("infantry");
 		units.addAll(n.combineTroopsToList("mounted"));
@@ -331,17 +333,13 @@ public class PDSelector {
 		if(!montag_chassis_allowed)
 			units.addAll(n.combineTroopsToList("montagtroops"));
 		
-		List<Unit> unsuitable = new ArrayList<Unit>();
+		List<Unit> unsuitable = new ArrayList<>();
 		for(Unit u : units)
-			if(Generic.containsTag(Generic.getAllUnitTags(u), "cannot_be_pd") || (Generic.containsTag(u.pose.tags, "montagpose") && !montag_chassis_allowed))
+			if(Generic.getAllUnitTags(u).containsName("cannot_be_pd") || (u.pose.tags.containsName("montagpose") && !montag_chassis_allowed))
 				unsuitable.add(u);
 		
 		if(units.size() > unsuitable.size())
 			units.removeAll(unsuitable);
-		
-		double targetgcost = 10;
-		double targetrcost = 10;
-		
 		
 		// Target resource/gcost is instead means
 		double totalr = 0;
@@ -351,31 +349,22 @@ public class PDSelector {
 			totalr += u.getResCost(true);
 			totalg += u.getGoldCost();
 		}
-		targetgcost = totalg / units.size();
-		targetrcost = totalr / units.size();
-		
-		
 		
 		
 		
 		// handle commands for increasing/decreasing the target
-		List<String> tags = Generic.getAllNationTags(n);
-
-		if(Generic.containsTag(tags, "pd_targetrcost"))
-			targetrcost = Double.parseDouble(Generic.getTagValue(tags, "pd_targetrcost"));
-		if(Generic.containsTag(tags, "pd_targetgcost"))
-			targetgcost = Double.parseDouble(Generic.getTagValue(tags, "pd_targetgcost"));
+		Tags tags = Generic.getAllNationTags(n);
 		
-		if(Generic.containsTag(tags, "pd_targetrcostmulti"))
-			for(String str : Generic.getTagValues(tags, "pd_targetrcostmulti"))
-				targetrcost *= Double.parseDouble(str);
-		if(Generic.containsTag(tags, "pd_targetgcostmulti"))
-			for(String str : Generic.getTagValues(tags, "pd_targetgcostmulti"))
-				targetgcost *= Double.parseDouble(str);
+		double targetgcost = tags.getDouble("pd_targetgcost").orElse(totalg / units.size());
+		double targetrcost = tags.getDouble("pd_targetrcost").orElse(totalr / units.size());
+		
+		
+		for(Double multi : tags.getAllDoubles("pd_targetrcostmulti"))
+			targetrcost *= multi;
+		for(Double multi : tags.getAllDoubles("pd_targetgcostmulti"))
+			targetgcost *= multi;
 		
 		// Do the magic
-		List<Unit> units2 = new ArrayList<Unit>();
-		units2.addAll(units);
 		
 		for(int i = 0; i < tier; i++)
 		{
@@ -389,7 +378,7 @@ public class PDSelector {
 				//break;
 			}
 			
-			List<Unit> rankunits = new ArrayList<Unit>();
+			List<Unit> rankunits = new ArrayList<>();
 			
 			targetrcost = targetrcost * 1.2;
 			while(rankunits.size() < 2 && units.size() > 0)
@@ -404,7 +393,7 @@ public class PDSelector {
 				double bestscore = scoreForMilitia(best, targetrcost, targetgcost);
 				for(Unit u : units)
 				{
-					if(!u.isRanged() || (u.isRanged() && canBeRanged))
+					if(!u.isRanged() || canBeRanged)
 					{
 						double score = scoreForMilitia(u, targetrcost, targetgcost);
 						if(bestscore >= score)
@@ -434,18 +423,14 @@ public class PDSelector {
 	
 	private double scoreForMilitia(Unit u, double targetres, double targetgold)
 	{
-
-		double goldscore = 0;
-		double resscore = 0;
 		
-		
-		goldscore = Math.abs(u.getGoldCost() - targetgold);
+		double goldscore = Math.abs(u.getGoldCost() - targetgold);
 		if(u.getGoldCost() < targetgold * 0.7)
 			goldscore = goldscore * 2;
 		if(u.getGoldCost() > targetgold * 2)
 			goldscore = goldscore * 2;
 		
-		resscore = Math.abs(u.getResCost(false) - targetres);
+		double resscore = Math.abs(u.getResCost(false) - targetres);
 		if(u.getResCost(false) < targetres * 0.7)
 			resscore = resscore * 2;
 		if(u.getResCost(false) > targetres * 2.25)
@@ -464,11 +449,9 @@ public class PDSelector {
 	{
 		// Handle filter etc stuff
 		double filtermulti = 1;
-		List<String> tags = Generic.getAllNationTags(n);
-		if(Generic.containsTag(tags, "startarmy_amountmulti"))
-			for(String str : Generic.getTagValues(tags, "startarmy_amountmulti"))
-				filtermulti *= Double.parseDouble(str);
-		
+		Tags tags = Generic.getAllNationTags(n);
+		for(Double multi : tags.getAllDoubles("startarmy_amountmulti"))
+			filtermulti *= multi;
 		
 		double amount = militiaAmount(u) * 1.2 * filtermulti;
 		
@@ -481,11 +464,9 @@ public class PDSelector {
 	{
 		// Handle filter etc stuff
 		double filtermulti = 1;
-		List<String> tags = Generic.getAllNationTags(n);
-		if(Generic.containsTag(tags, "pd_amountmulti"))
-			for(String str : Generic.getTagValues(tags, "pd_amountmulti"))
-				filtermulti *= Double.parseDouble(str);
-		
+		Tags tags = Generic.getAllNationTags(n);
+		for(Double multi : tags.getAllDoubles("pd_amountmulti"))
+			filtermulti *= multi;
 		
 		double amount = militiaAmount(u) * filtermulti;
 		

@@ -1,34 +1,27 @@
 package nationGen.misc;
 
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map.Entry;
 
 import nationGen.entities.Filter;
+import nationGen.magic.MagicPath;
+import nationGen.magic.MagicPathInts;
 import nationGen.units.Unit;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 
 
 public class Site {
-	public HashMap<Integer, Integer> gemMap = new HashMap<Integer, Integer>();
-	public List<Unit> troops = new ArrayList<Unit>();
-	public List<Unit> coms = new ArrayList<Unit>();
-	public List<Command> othercommands = new ArrayList<Command>();
-	public List<Filter> appliedfilters = new ArrayList<Filter>();
+	public MagicPathInts gemMap = new MagicPathInts();
+	public List<Unit> troops = new ArrayList<>();
+	public List<Unit> coms = new ArrayList<>();
+	public List<Command> othercommands = new ArrayList<>();
+	public List<Filter> appliedfilters = new ArrayList<>();
 
 	public int id = -1;
 	public String name = "UNNAMED";
 	public int level = 0;
-	
-	public Site()
-	{
-		for(int i = 0; i < 8; i++)
-			gemMap.put(i, 0);
-	}
 	
 	public List<String> writeLines()
 	{
@@ -66,89 +59,67 @@ public class Site {
 		for(Unit u : troops)
 			lines.add("#homemon " + u.id + " --- " + u.name);
 		for(Command str : othercommands)
-			lines.add(str.toString());
+			lines.add(str.toModLine());
 		for(Filter f : this.appliedfilters)
 			for(Command str : f.commands)
-				lines.add(str.toString());
+				lines.add(str.toModLine());
 			
-		for (Entry<Integer, Integer> entry : gemMap.entrySet())
+		for (MagicPath path : MagicPath.values())
 		{
-			if(entry.getValue() > 0)
-				lines.add("#gems " + entry.getKey() + " " + entry.getValue());
+			if(gemMap.get(path) > 0)
+				lines.add("#gems " + path.number + " " + gemMap.get(path));
 		}
 		return lines;
 	}
 	
 	
-	public double[] getSitePathDistribution()
+	public MagicPathInts getSitePathDistribution()
 	{
-        double[] paths = new double[9];
+        MagicPathInts paths = new MagicPathInts();
 
 		for(Unit u : coms)
 		{
-			for(String tag : u.tags)
+			for(Args args : u.tags.getAllArgs("sitepath"))
 			{
-				if(tag.startsWith("sitepath") && tag.split(" ").length == 3)
-				{
-					int path = Integer.parseInt(tag.split(" ")[1]);
-					int power = Integer.parseInt(tag.split(" ")[2]);
-					paths[path] = paths[path] + power;
-				}
-				
-				int[] unitpaths = u.getMagicPicks();
-				for(int i = 0; i < unitpaths.length; i++)
-				{
-				
-					paths[i] += unitpaths[i];
-
-
-
-				}
+				MagicPath path = MagicPath.fromInt(args.get(0).getInt());
+				int power = args.get(1).getInt();
+				paths.add(path, power);
 			}
 			
-			
+			MagicPathInts unitpaths = u.getMagicPicks();
+			for(MagicPath path : MagicPath.values())
+			{
+				paths.add(path, unitpaths.get(path));
+			}
 		}
 		
 		
 		for(Unit u : troops)
 		{
-			for(String tag : u.tags)
+			for(Args args : u.tags.getAllArgs("sitepath"))
 			{
-				if(tag.startsWith("sitepath") && tag.split(" ").length == 3)
-				{
-					int path = Integer.parseInt(tag.split(" ")[1]);
-					int power = Integer.parseInt(tag.split(" ")[2]);
-					paths[path] = paths[path] + power;
-
-				}
+				MagicPath path = MagicPath.fromInt(args.get(0).getInt());
+				int power = args.get(1).getInt();
+				paths.add(path, power);
 			}
 				
 		}
 		
 		for(Filter f : appliedfilters)
 		{
-			for(String tag : f.tags)
+			for(Args args : f.tags.getAllArgs("sitepath"))
 			{
-				if(tag.startsWith("sitepath") && tag.split(" ").length == 3)
-				{
-					int path = Integer.parseInt(tag.split(" ")[1]);
-					int power = Integer.parseInt(tag.split(" ")[2]);
-					paths[path] = paths[path] + power;
-
-				}
-				
+				MagicPath path = MagicPath.fromInt(args.get(0).getInt());
+				int power = args.get(1).getInt();
+				paths.add(path, power);
 			}
-			
-			
 		}
 		
-		Iterator<Entry<Integer, Integer>> itr = gemMap.entrySet().iterator();
-		while(itr.hasNext())
+		for (MagicPath path : MagicPath.NON_HOLY)
 		{
-			Entry<Integer, Integer> entry = itr.next();
-			if(entry.getValue() > 0)
+			if(gemMap.get(path) > 0)
 			{
-				paths[entry.getKey()] = paths[entry.getKey()] + entry.getValue() * 2;
+				paths.add(path, gemMap.get(path) * 2);
 			}
 		}
 		
@@ -159,28 +130,28 @@ public class Site {
      * Gets magic path for a site
      * @return
      */
-    public int getPath()
+    public MagicPath getPath()
     {
-        double[] paths = getSitePathDistribution();
+        MagicPathInts paths = getSitePathDistribution();
 
-        double highestvalue = -1;
-        int highest = -1;
+        int highestvalue = -1;
+        MagicPath highest = null;
 
-        for(int i = 0; i < 9; i++)
+        for(MagicPath path : MagicPath.values())
         {
-            if(paths[i] > highestvalue)
+            if(paths.get(path) > highestvalue)
             {
-                highestvalue = paths[i];
-                highest = i;
+                highestvalue = paths.get(path);
+                highest = path;
             }
         }
-        int path = 8;
-        if(highest != -1 || paths[highest] == 0) 
+        MagicPath path = MagicPath.HOLY;
+        if(highest != null)
             path = highest;
 
         // If there were no paths, it's a holy site.
         if(highestvalue == 0)
-        	path = 8;
+        	path = MagicPath.HOLY;
         
         return path;
     }
@@ -189,40 +160,40 @@ public class Site {
      * Gets magic path for a site
      * @return
      */
-    public int getSecondaryPath()
+    public MagicPath getSecondaryPath()
     {
-        double[] paths = getSitePathDistribution();
+        MagicPathInts paths = getSitePathDistribution();
 
-        double highestvalue = -1;
-        int highest = -1;
+        int highestvalue = -1;
+        MagicPath highest = null;
 
-        for(int i = 0; i < 9; i++)
+        for(MagicPath p : MagicPath.values())
         {
-            if(paths[i] > highestvalue)
+            if(paths.get(p) > highestvalue)
             {
-                highestvalue = paths[i];
-                highest = i;
+                highestvalue = paths.get(p);
+                highest = p;
             }
         }
-        int path = 8;
-        if(highest != -1 && paths[highest] != 0) 
+        MagicPath path = MagicPath.HOLY;
+        if(highest != null && paths.get(highest) != 0)
             path = highest;
         
-        paths[highest] = 0;
+        paths.set(highest, 0);
         
         highestvalue = -1;
-        int secondhighest = -1;
+        MagicPath secondhighest = null;
 
-        for(int i = 0; i < 9; i++)
+        for(MagicPath p : MagicPath.values())
         {
-            if(paths[i] > highestvalue)
+            if(paths.get(p) > highestvalue)
             {
-                highestvalue = paths[i];
-                secondhighest = i;
+                highestvalue = paths.get(p);
+                secondhighest = p;
             }
         }
         
-        if(secondhighest != -1 && paths[secondhighest] != 0) 
+        if(secondhighest != null && paths.get(secondhighest) != 0)
             path = secondhighest;
 
         return path;

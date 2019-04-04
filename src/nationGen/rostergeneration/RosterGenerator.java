@@ -1,42 +1,35 @@
 package nationGen.rostergeneration;
 
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Random;
-
-import com.elmokki.Generic;
-
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
+import nationGen.chances.ChanceDistribution;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.items.Item;
-import nationGen.misc.ChanceIncHandler;
-import nationGen.misc.Command;
-import nationGen.misc.ItemSet;
+import nationGen.misc.*;
 import nationGen.nation.Nation;
 import nationGen.rostergeneration.montagtemplates.TroopMontagTemplate;
 import nationGen.units.Unit;
 
+import java.util.*;
 
 
 public class RosterGenerator {
 	
 	NationGen nationGen;
-	Nation nation;
+	private Nation nation;
 	private Random r;
 
 
-	private List<Unit> infantry = new ArrayList<Unit>();
-	private List<Unit> ranged = new ArrayList<Unit>();
-	private List<Unit> cavalry = new ArrayList<Unit>();
-	private List<Unit> chariot = new ArrayList<Unit>();
+	private List<Unit> infantry = new ArrayList<>();
+	private List<Unit> ranged = new ArrayList<>();
+	private List<Unit> cavalry = new ArrayList<>();
+	private List<Unit> chariot = new ArrayList<>();
 	private TroopGenerator tgen;
 	private ChanceIncHandler chandler;
-	private double skipchance = 0.05;
-	private List<TroopTemplate> templates = new ArrayList<TroopTemplate>();
+	private final double skipchance;
+	private List<TroopTemplate> templates = new ArrayList<>();
 
 	public RosterGenerator(NationGen g, Nation n, NationGenAssets assets)
 	{
@@ -52,18 +45,12 @@ public class RosterGenerator {
 	
 	private boolean canRollNewUnit(Race race)
 	{
-		boolean allzero = true;
-		for(double d : getChances(race))
-		{
-			if(d > 0)
-				allzero = false;
-		}
-		return !allzero;
+		return getChances(race).hasPossible();
 	}
 	
 	public boolean hasPosesWithoutMaxUnits(Race race, String role)
 	{
-		return getPosesWithoutMaxUnits(race.getPoses(role), race, role).size() > 0;
+		return getPosesWithoutMaxUnits(race.getPoses(role), race).size() > 0;
 	}
 	
 	public void execute()
@@ -74,13 +61,8 @@ public class RosterGenerator {
 		Race primary = nation.races.get(0);
 		Race secondary = nation.races.get(1);
 		
-		int maxtroops = 10;
-		int mintroops = 6;
-		if(Generic.containsTag(primary.tags, "maxtroops"))
-			maxtroops = Integer.parseInt(Generic.getTagValue(primary.tags, "maxtroops"));
-		if(Generic.containsTag(primary.tags, "mintroops"))
-			mintroops = Integer.parseInt(Generic.getTagValue(primary.tags, "mintroops"));
-		
+		int maxtroops = primary.tags.getInt("maxtroops").orElse(10);
+		int mintroops = primary.tags.getInt("mintroops").orElse(6);
 
 		int max = mintroops + r.nextInt(maxtroops - mintroops + 1); // 6-10 by default
 		int units = 0;
@@ -90,66 +72,46 @@ public class RosterGenerator {
 
 		
 		double bonussecchance = 0.5;
-		if(Generic.containsTag(primary.tags, "secondaryracetroopmod"))
-			bonussecchance += Double.parseDouble(Generic.getTagValue(primary.tags, "secondaryracetroopmod"));
-		if(Generic.containsTag(secondary.tags, "primaryracetroopmod"))
-			bonussecchance -= Double.parseDouble(Generic.getTagValue(secondary.tags, "primaryracetroopmod"));
+		bonussecchance += primary.tags.getDouble("secondaryracetroopmod").orElse(0D);
+		bonussecchance -= secondary.tags.getDouble("primaryracetroopmod").orElse(0D);
 		
 
-		int maxprimaries = 100;
-		
-		double minsecaffinity = 0;
-		if(Generic.containsTag(primary.tags, "minsecaffinity"))
-			minsecaffinity = Double.parseDouble(Generic.getTagValue(primary.tags, "minsecaffinity"));
-		
-		double maxsecaffinity = 1000;
-		if(Generic.containsTag(primary.tags, "maxsecaffinity"))
-			maxsecaffinity = Double.parseDouble(Generic.getTagValue(primary.tags, "maxsecaffinity"));
-		
-
+		double minsecaffinity = primary.tags.getDouble("minsecaffinity").orElse(0D);
+		double maxsecaffinity = primary.tags.getDouble("maxsecaffinity").orElse(1000D);
 
 		
 		// Affinity
 		double secaffinity = r.nextDouble() * bonussecchance;	
 
 
-		double nosecaffinitychance = 0.35;
-		if(Generic.containsTag(primary.tags, "nosecaffinitychance"))
-			nosecaffinitychance = Double.parseDouble(Generic.getTagValue(primary.tags, "nosecaffinitychance"));
+		double nosecaffinitychance = primary.tags.getDouble("nosecaffinitychance").orElse(0.35);
 		
-		if((Generic.containsTag(primary.tags, "minsecondaryracetroops") && Integer.parseInt(Generic.getTagValue(primary.tags, "minsecondaryracetroops")) > 0) ||
-		   (Generic.containsTag(primary.tags, "minsecondaryracetroopshare") && Double.parseDouble(Generic.getTagValue(primary.tags, "minsecondaryracetroopshare")) > 0))
-		{
-			// Can't set sac affinity to zero
-		}
-		else if(r.nextDouble() < nosecaffinitychance)
+		if (primary.tags.getInt("minsecondaryracetroops").filter(i -> i > 0).isEmpty()
+			&& primary.tags.getDouble("minsecondaryracetroopshare").filter(d -> d > 0).isEmpty()
+			&& r.nextDouble() < nosecaffinitychance) {
+			
 			secaffinity = 0;
-		
+		}
 	
 		secaffinity = Math.max(minsecaffinity, secaffinity);
 		secaffinity = Math.min(maxsecaffinity, secaffinity);
 
 
 		// Amount
-
 		
-
+		
+		
+		int maxprimaries = 100;
+		
 		// Primary amounts
-		if(Generic.containsTag(primary.tags, "minsecondaryracetroops"))
-			maxprimaries = max - Integer.parseInt(Generic.getTagValue(primary.tags, "minsecondaryracetroops"));
-		else if(Generic.containsTag(primary.tags, "minsecondaryracetroopshare"))
-			maxprimaries = max - (int)Math.round((max * Double.parseDouble(Generic.getTagValue(primary.tags, "minsecondaryracetroopshare"))));
-		
-
-		if(Generic.containsTag(primary.tags, "maxprimaryracetroops"))
-		{
-			maxprimaries = Integer.parseInt(Generic.getTagValue(primary.tags, "maxprimaryracetroops"));
-		}
-		
-		
-		if(Generic.containsTag(primary.tags, "maxprimaryracetroopshare"))
-			maxprimaries = (int)Math.round((max * Double.parseDouble(Generic.getTagValue(primary.tags, "maxprimaryracetroopshare"))));
-		
+		if(primary.tags.containsName("maxprimaryracetroopshare"))
+			maxprimaries = (int)Math.round(max * primary.tags.getValue("maxprimaryracetroopshare").orElseThrow().getDouble());
+		else if(primary.tags.containsName("maxprimaryracetroops"))
+			maxprimaries = primary.tags.getValue("maxprimaryracetroops").orElseThrow().getInt();
+		else if(primary.tags.containsName("minsecondaryracetroops"))
+			maxprimaries = max - primary.tags.getValue("minsecondaryracetroops").orElseThrow().getInt();
+		else if(primary.tags.containsName("minsecondaryracetroopshare"))
+			maxprimaries = max - (int)Math.round(max * primary.tags.getValue("minsecondaryracetroopshare").orElseThrow().getDouble());
 
 		
 		// Secondary amount
@@ -166,9 +128,9 @@ public class RosterGenerator {
 			secamount = Math.max(max - maxprimaries, Math.round(secamount));
 
 		
-		if(Generic.containsTag(secondary.tags, "maxthisracetroops_as_secondary"))
+		if(secondary.tags.containsName("maxthisracetroops_as_secondary"))
 		{
-			secamount = Math.min(secamount, Integer.parseInt(Generic.getTagValue(secondary.tags, "maxthisracetroops_as_secondary")));
+			secamount = Math.min(secamount, secondary.tags.getValue("maxthisracetroops_as_secondary").orElseThrow().getInt());
 		}
 		
 		if(secaffinity == 0)
@@ -194,14 +156,13 @@ public class RosterGenerator {
 			max = (int) Math.min(max, maxprimaries + secamount);
 	
 
-		int maxamounts[] = {1, 8, 4, 2};  
-		
-		// Random chariot maximum
-		maxamounts[3] = r.nextInt(3);
-		
+		Map<String, Integer> maxamounts = new HashMap<>();
 		// 1-2 ranged maximum
-		maxamounts[0] = 1 + r.nextInt(2);  // 1-2
-		
+		maxamounts.put("ranged", 1 + r.nextInt(2)); // 1-2
+		maxamounts.put("infantry", 8);
+		maxamounts.put("mounted", 4);
+		// Random chariot maximum
+		maxamounts.put("chariot", r.nextInt(3));
 		
 
 		int cycles = 0;
@@ -254,8 +215,9 @@ public class RosterGenerator {
 			if(cycles > 100 * incs)
 			{
 				incs++;
-				for(int i = 0; i < maxamounts.length; i++)
-					maxamounts[i]++;
+				for (String role : maxamounts.keySet()) {
+					maxamounts.put(role, maxamounts.get(role) + 1);
+				}
 				
 				if(secaffinity > 0)
 					secamount++;
@@ -265,8 +227,11 @@ public class RosterGenerator {
 		
 			
 			
-			
-			int[] amounts = {cavalry.size(), infantry.size(), ranged.size(), chariot.size()};
+			Map<String, Integer> amounts = new HashMap<>();
+			amounts.put("ranged", ranged.size());
+			amounts.put("infantry", infantry.size());
+			amounts.put("mounted", cavalry.size());
+			amounts.put("chariot", chariot.size());
 			
 
 			String roll = null;
@@ -289,13 +254,13 @@ public class RosterGenerator {
 				break;
 
 			List<Unit> target = null;
-			if(roll.equals("ranged") && maxamounts[0] > ranged.size() && hasPosesWithoutMaxUnits(race, "ranged"))
+			if(roll.equals("ranged") && maxamounts.get("ranged") > ranged.size() && hasPosesWithoutMaxUnits(race, "ranged"))
 				target = ranged;
-			else if(roll.equals("infantry") && maxamounts[1] > infantry.size() && hasPosesWithoutMaxUnits(race, "infantry"))
+			else if(roll.equals("infantry") && maxamounts.get("infantry") > infantry.size() && hasPosesWithoutMaxUnits(race, "infantry"))
 				target = infantry;
-			else if(roll.equals("mounted") && maxamounts[2] > cavalry.size() && hasPosesWithoutMaxUnits(race, "mounted"))
+			else if(roll.equals("mounted") && maxamounts.get("mounted") > cavalry.size() && hasPosesWithoutMaxUnits(race, "mounted"))
 				target = cavalry;
-			else if(roll.equals("chariot") && maxamounts[3] > chariot.size() && hasPosesWithoutMaxUnits(race, "chariot"))
+			else if(roll.equals("chariot") && maxamounts.get("chariot") > chariot.size() && hasPosesWithoutMaxUnits(race, "chariot"))
 				target = chariot;
 			
 			if(race != null && target != null && race.hasRole(roll))
@@ -477,32 +442,28 @@ public class RosterGenerator {
 			for(TroopTemplate t : templates)
 				armors.add(t.armor);
 			
-
 			
-			
-			
-			List<Pose> poses = new ArrayList<Pose>();
-			for(Pose p : getPosesWithoutMaxUnits(race.getPoses(role), race, role))
+			List<Pose> poses = new ArrayList<>();
+			for(Pose p : getPosesWithoutMaxUnits(race.getPoses(role), race))
 			{
 				
-				List<Item> poseArmors = new ArrayList<Item>();
-				poseArmors.addAll(p.getItems("armor"));
+				List<Item> poseArmors = new ArrayList<>(p.getItems("armor"));
 				poseArmors.removeAll(armors);
 				if(poseArmors.size() > 0)
 					poses.add(p);
 			}
 			
-			if(chandler.handleChanceIncs(race, role, poses).size() == 0)
-				poses.addAll(getPosesWithoutMaxUnits(race.getPoses(role), race, role));
+			if(chandler.handleChanceIncs(race, poses).isEmpty())
+				poses.addAll(getPosesWithoutMaxUnits(race.getPoses(role), race));
 			
 
 			
 			
-			if(chandler.handleChanceIncs(race, role, poses).size() == 0)
+			if(chandler.handleChanceIncs(race, poses).isEmpty())
 			{
 				return null;
 			}
-			Pose p = chandler.getRandom(poses, race, role);
+			Pose p = chandler.getRandom(poses, race);
 			if(p == null)
 				return null;
 
@@ -584,11 +545,8 @@ public class RosterGenerator {
 	 */
 	public boolean canGetMoreUnits(Race race, String role)
 	{
-		List<Pose> poses = new ArrayList<Pose>();
-		poses.addAll(chandler.handleChanceIncs(race, role, race.getPoses(role)).keySet());
-		
 		int pos = 0;
-		for(Pose p : poses)
+		for(Pose p : chandler.handleChanceIncs(race, race.getPoses(role)).getPossible())
 		{
 			if(poseHasMaxUnits(p))
 				continue;
@@ -608,11 +566,11 @@ public class RosterGenerator {
 	 */
 	public boolean canGetMoreUnits(Race race)
 	{
-		List<Pose> poses = new ArrayList<Pose>();
+		List<Pose> poses = new ArrayList<>();
 		
 		String[] roles = {"infantry", "mounted", "ranged", "chariot"};
 		for(String role : roles)
-			poses.addAll(chandler.handleChanceIncs(race, role, race.getPoses(role)).keySet());
+			poses.addAll(chandler.handleChanceIncs(race, race.getPoses(role)).getPossible());
 		
 		int pos = 0;
 		for(Pose p : poses)
@@ -632,8 +590,6 @@ public class RosterGenerator {
 	 * Finds possible poses for certain role/race with certain prot range
 	 * @param role
 	 * @param race
-	 * @param minprot
-	 * @param maxprot
 	 * @return
 	 */
 	private List<Pose> getPossiblePoses(String role, Race race)
@@ -654,12 +610,7 @@ public class RosterGenerator {
 	
 	private int getMaxUnits(Pose p)
 	{
-		int maxunits = 100;
-		if(Generic.getTagValue(p.tags, "maxunits") != null)
-		{
-			maxunits = Integer.parseInt(Generic.getTagValue(p.tags, "maxunits"));
-		}	
-		return maxunits;
+		return p.tags.getInt("maxunits").orElse(100);
 	}
 	
 	
@@ -673,23 +624,18 @@ public class RosterGenerator {
 			if(t.pose.equals(p))
 				count++;
 		
-		if(count >= maxunits)
-		{
-			return true;
-		}
-		
-		return false;
+		return count >= maxunits;
 	}
 	
-	private List<Pose> getPosesWithoutMaxUnits(List<Pose> orig, Race race, String role)
+	private List<Pose> getPosesWithoutMaxUnits(List<Pose> orig, Race race)
 	{
 		
-		List<Pose> poses = new ArrayList<Pose>();
-		LinkedHashMap<Pose, Double> derp = 	chandler.handleChanceIncs(race, role, orig);
+		List<Pose> poses = new ArrayList<>();
+		List<Pose> possible = chandler.handleChanceIncs(race, orig).getPossible();
 
 		for(Pose p : orig)
 		{
-			if(!poseHasMaxUnits(p) && derp.containsKey(p))
+			if(!poseHasMaxUnits(p) && possible.contains(p))
 			{
 				poses.add(p);
 			}
@@ -698,68 +644,51 @@ public class RosterGenerator {
 		
 	}
 	
-	private double[] getChances(Race race)
+	private ChanceDistribution<String> getChances(Race race)
 	{
-		double chances[] = {0.66, 1, 0.3, 0.125};
-		String[] slots = {"ranged", "infantry", "mounted", "chariot"};
-		for(String tag : race.tags)
+		ChanceDistribution<String> chances = new ChanceDistribution<>();
+		chances.setChance("ranged", 0.66);
+		chances.setChance("infantry", 1);
+		chances.setChance("mounted", 0.3);
+		chances.setChance("chariot", 0.125);
+		
+		for(Args args : race.tags.getAllArgs("generationchance"))
 		{
-			List<String> args = Generic.parseArgs(tag);
-			if(args.get(0).contains("generationchance"))
-			{
-				String slot = args.get(1);
-				int index = -1;
-				for(int i = 0; i < slots.length; i++)
-				{
-					if(slots[i].equals(slot))
-						index = i;
-				}
-				
-				if(index != -1)
-				{
-					chances[index] = Double.parseDouble(args.get(2));
-				}
-				
+			String role = args.getString(0);
+			
+			if (chances.getChance(role) == null) {
+				throw new IllegalArgumentException(String.format(
+						"Unrecognized generationchance role name %s in %s tags", role, race.name));
 			}
 			
+			chances.setChance(role, args.getDouble(1));
 		}
 		
-		for(int i = 0; i < slots.length; i++)
-		{
-			String role = slots[i];
-			if(!canGetMoreUnits(race, role))
-				chances[i] = 0;
+		for (String role : chances.getEntities()) {
+			if (!canGetMoreUnits(race, role)) {
+				chances.setChance(role, 0);
+			}
 		}
 		
 		
-		for(int i = 0; i < slots.length; i++)
-			if(!race.hasRole(slots[i]))
-				chances[i] = 0;
-				
+		for(String role : chances.getEntities()) {
+			if (!race.hasRole(role)) {
+				chances.setChance(role, 0);
+			}
+		}
 	
 		
 		return chances;
 	}
 	
 
-	private String rollRole(double[] chances, int[] maxamounts, int[] amounts, Race race)
+	private String rollRole(ChanceDistribution<String> chances, Map<String, Integer> maxamounts, Map<String, Integer> amounts, Race race)
 	{
-		
-		double cavshare = chances[2];
-		double infantryshare = chances[1];
-		double rangedshare = chances[0];
-		double chariotshare = chances[3];
-		
-		
-		if(amounts[2] >= maxamounts[2])
-			cavshare = 0;
-		if(amounts[1] >= maxamounts[1])
-			infantryshare = 0;
-		if(amounts[0] >= maxamounts[0])
-			rangedshare = 0;
-		if(amounts[3] >= maxamounts[3])
-			chariotshare = 0;
-		
+		for (String role : chances.getEntities()) {
+			if (amounts.get(role) >= maxamounts.get(role)) {
+				chances.setChance(role, 0);
+			}
+		}
 		
 		
 		// Tweak shares if primary race does not have something and secondary does
@@ -767,33 +696,11 @@ public class RosterGenerator {
 		Race secondary = nation.races.get(1);
 		
 		if(!primary.hasRole("ranged") && secondary.hasRole("ranged") && race == secondary)
-			rangedshare *= 2;
+			chances.modifyChance("ranged", new Arg("*2"));
 		if(!primary.hasRole("mounted") && secondary.hasRole("mounted") && race == secondary)
-			cavshare *= 2;	
+			chances.modifyChance("mounted", new Arg("*2"));
 		
-		
-		
-		double random = r.nextDouble() * (cavshare + infantryshare + rangedshare + chariotshare);
-		
-
-		if(random < cavshare)
-		{
-			return "mounted";
-		}
-		else if(random < cavshare + infantryshare)
-		{
-			return "infantry";
-		}
-		else if(random < cavshare + infantryshare + rangedshare)
-		{
-			return "ranged";
-		}
-		else if(random < cavshare + infantryshare + rangedshare + chariotshare)
-		{
-			return "chariot";
-		}
-		
-		return "";
+		return chances.getRandom(r);
 	}
 	
 	
@@ -967,16 +874,12 @@ public class RosterGenerator {
 		int hp = 0;
 		for(Command c : u.race.unitcommands)
 			if(c.command.equals("#hp"))
-				hp += Integer.parseInt(c.args.get(0));
+				hp += c.args.get(0).getInt();
 		
 		for(Command c : u.getSlot("basesprite").commands)
 			if(c.command.equals("#hp"))
 			{
-				String arg = c.args.get(0);
-				if(c.args.get(0).startsWith("+"))
-					arg = arg.substring(1);
-				
-				hp += Integer.parseInt(arg);
+				hp += c.args.get(0).getInt();
 			}
 		
 		if(hp > 0)
@@ -988,22 +891,6 @@ public class RosterGenerator {
 	
 	private int getPrio(Unit u)
 	{
-		int prio = 5;
-		for(String str : u.getSlot("basesprite").tags)
-		{
-			if(str.startsWith("basespritepriority"))
-			{
-				prio = Integer.parseInt(str.split(" ")[1]);
-				
-		
-
-			}
-		}
-		return prio;
+		return u.getSlot("basesprite").tags.getInt("basespritepriority").orElse(5);
 	}
-	
-
-
-	
-	
 }

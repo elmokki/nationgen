@@ -1,31 +1,24 @@
 package nationGen.entities;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.elmokki.Generic;
-
-
-
-
-
 
 import nationGen.NationGen;
-import nationGen.NationGenAssets;
 import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Race extends Filter {
 	public String longsyllables = "";
 	public String shortsyllables = "";
 	public String namesuffixes = "";
-	public List<Command> nationcommands = new ArrayList<Command>();
-	public List<Command> unitcommands = new ArrayList<Command>();
-	public List<Command> specialcommands = new ArrayList<Command>();
-	public List<Pose> poses = new ArrayList<Pose>();
-	public List<Pose> spriteGenPoses = new ArrayList<Pose>();
+	public List<Command> nationcommands = new ArrayList<>();
+	public List<Command> unitcommands = new ArrayList<>();
+	public List<Command> specialcommands = new ArrayList<>();
+	public List<Pose> poses = new ArrayList<>();
+	public List<Pose> spriteGenPoses = new ArrayList<>();
 	
-	public List<Theme> themefilters = new ArrayList<Theme>();
+	public List<Theme> themefilters = new ArrayList<>();
 
 	public String visiblename = null;
 	
@@ -35,44 +28,34 @@ public class Race extends Filter {
 
 		super(nationGen);
 
-		addCommand("#gcost 10");
-		addCommand("#ap 12");
-		addCommand("#mapmove 16");
-		addCommand("#mor 10");
-		addCommand("#mr 10");
-		addCommand("#hp 10");
-		addCommand("#str 10");
-		addCommand("#att 10");
-		addCommand("#def 10");
-		addCommand("#prec 10");
-		addCommand("#enc 3");
-		addCommand("#size 2");
-		addCommand("#maxage 50");
+		addCommand(Command.parse("#gcost 10"));
+		addCommand(Command.parse("#ap 12"));
+		addCommand(Command.parse("#mapmove 16"));
+		addCommand(Command.parse("#mor 10"));
+		addCommand(Command.parse("#mr 10"));
+		addCommand(Command.parse("#hp 10"));
+		addCommand(Command.parse("#str 10"));
+		addCommand(Command.parse("#att 10"));
+		addCommand(Command.parse("#def 10"));
+		addCommand(Command.parse("#prec 10"));
+		addCommand(Command.parse("#enc 3"));
+		addCommand(Command.parse("#size 2"));
+		addCommand(Command.parse("#maxage 50"));
 	}
 	
 
 	/**
 	 * Adds a new command replacing old one of the same type. Just so nations can have both defaults and 
 	 * custom stuff on top of that.
-	 * @param str
+	 * @param c
 	 */
-	public void addCommand(String str)
+	public void addCommand(Command c)
 	{
-		if((str.startsWith("\'") && str.endsWith("\'")) || (str.startsWith("\"") && str.endsWith("\"")))  // do final cleanup on command EA20150604
-			str = str.substring(1, str.length()-1);
-		
-		Command c = Command.parseCommand(str);
-		
 		for(int i = 0; i < unitcommands.size(); i++)
 			if(unitcommands.get(i).command.equals(c.command))
 			{
-				
-				if(c.args.get(0).startsWith("+") || c.args.get(0).startsWith("-") || c.args.get(0).startsWith("*"))
-				{
-					
-				}
-				else
-				{
+				String arg = c.args.get(0).get();
+				if (!arg.startsWith("+") && !arg.startsWith("-") && !arg.startsWith("*")) {
 					unitcommands.remove(unitcommands.get(i));
 				}
 			}
@@ -87,46 +70,13 @@ public class Race extends Filter {
 	/**
 	 * Adds a new command replacing old one of the same type. Just so nations can have both defaults and 
 	 * custom stuff on top of that.
-	 * @param str
+	 * @param command
 	 */
-	public void addOwnLine(String str)
+	public void addOwnLine(Command command)
 	{
-		List<String> args = Generic.parseArgs(str);
-		List<String> toBeRemoved = new ArrayList<String>();
-		
-		for(int i = 0; i < tags.size(); i++)
-		{
-			List<String> args2 = Generic.parseArgs(tags.get(i));
-			
-			if(args.size() != args2.size() || args.size() < 2 || !args.get(1).equals(args2.get(1)))
-				continue;
-			
-			boolean ok = true;
-			for(int j = 1; j < args.size() - 1; j++)
-			{
-				if(args.get(j).startsWith("\'") || args.get(j).startsWith("\""))
-					args.set(j, args.get(j).substring(1));
-				if(args.get(j).endsWith("\'") || args.get(j).endsWith("\""))
-					args.set(j, args.get(j).substring(0, args.get(j).length()-1));	
-					
-				if(!args.get(j).equals(args2.get(j)))
-				{
-					ok = false;
-					break;
-				}
+		tags.remove(command);
 
-			}
-			
-			if(ok)
-			{
-				toBeRemoved.add(tags.get(i));
-			}
-
-		}
-		
-		tags.removeAll(toBeRemoved);
-
-		this.handleOwnCommand(str);
+		this.handleOwnCommand(command);
 		
 	}
 	
@@ -144,9 +94,9 @@ public class Race extends Filter {
 	{
 		String str = "elite";
 		boolean allok = false;
-		if(sacred && this.tags.contains("all_troops_sacred"))
+		if(sacred && this.tags.containsName("all_troops_sacred"))
 			allok = true;
-		else if(!sacred && this.tags.contains("all_troops_elite"))
+		else if(!sacred && this.tags.containsName("all_troops_elite"))
 			allok = true;
 		
 		
@@ -163,58 +113,52 @@ public class Race extends Filter {
 	
 	
 	@Override
-	public <Entity> void handleOwnCommand(String str)
+	public void handleOwnCommand(Command command)
 	{
-		List<String> args = Generic.parseArgs(str);
-		if(args.size() == 0)
-			return;
-			
-		if(args.get(0).equals("#longsyllables"))
-			this.longsyllables = args.get(1);
-		else if(args.get(0).equals("#shortsyllables"))
-			this.shortsyllables = args.get(1);
-		else if(args.get(0).equals("#suffixes"))
-			this.namesuffixes = args.get(1);
-		else if(args.get(0).equals("#visiblename"))
-			this.visiblename = args.get(1);
-		else if(args.get(0).equals("#nationcommand"))
-		{
-			Command c = Command.parseCommandFromDefinition(args);
-			this.nationcommands.add(c);
-		}
-		else if(args.get(0).equals("#unitcommand"))
-		{			
-			args.remove(0);
-			this.addCommand(Generic.listToString(args));
-		}
-		else if(args.get(0).equals("#specialcommand"))
-			this.specialcommands.add(Command.parseCommandFromDefinition(args));
-		else if(args.get(0).equals("#pose"))
-		{
-			List<Pose> set = nationGen.getAssets().poses.get(args.get(1));
-			if(set == null)
-			{
-				System.out.println("Pose set " + args.get(1) + " was not found.");
+		switch (command.command) {
+			case "#longsyllables":
+				this.longsyllables = command.args.get(0).get();
+				break;
+			case "#shortsyllables":
+				this.shortsyllables = command.args.get(0).get();
+				break;
+			case "#suffixes":
+				this.namesuffixes = command.args.get(0).get();
+				break;
+			case "#visiblename":
+				this.visiblename = command.args.get(0).get();
+				break;
+			case "#nationcommand":
+				this.nationcommands.add(command.args.get(0).getCommand());
+				break;
+			case "#unitcommand":
+				this.addCommand(command.args.get(0).getCommand());
+				break;
+			case "#specialcommand":
+				this.specialcommands.add(command.args.get(0).getCommand());
+				break;
+			case "#pose": {
+				List<Pose> set = nationGen.getAssets().poses.get(command.args.get(0).get());
+				if (set == null) {
+					throw new IllegalArgumentException("Pose set " + command.args.get(0).get() + " was not found.");
+				} else {
+					this.poses.addAll(set);
+				}
+				break;
 			}
-			else
-			{
-				this.poses.addAll(set);
+			case "#spritegenpose": {
+				List<Pose> set = nationGen.getAssets().poses.get(command.args.get(0).get());
+				if (set == null) {
+					System.out.println("Pose set " + command.args.get(0).get() + " was not found.");
+				} else {
+					this.spriteGenPoses.addAll(set);
+				}
+				break;
 			}
+			default:
+				super.handleOwnCommand(command);
+				break;
 		}
-		else if(args.get(0).equals("#spritegenpose"))
-		{
-			List<Pose> set = nationGen.getAssets().poses.get(args.get(1));
-			if(set == null)
-			{
-				System.out.println("Pose set " + args.get(1) + " was not found.");
-			}
-			else
-			{
-				this.spriteGenPoses.addAll(set);
-			}
-		}
-		else
-			super.handleOwnCommand(str);
 
 	}
 	
@@ -235,7 +179,7 @@ public class Race extends Filter {
 	
 	public List<Pose> getPoses(String role)
 	{
-		List<Pose> poses = new ArrayList<Pose>();
+		List<Pose> poses = new ArrayList<>();
 		for(Pose p : this.poses)
 		{
 			if(p.roles.contains(role))
@@ -260,11 +204,11 @@ public class Race extends Filter {
 	public void handleTheme(Theme t)
 	{
 		// Add race commands
-		for(String str2 : t.nationeffects)
+		for(Command str2 : t.nationeffects)
 		{
 			addOwnLine(str2);
 		}
-		for(String str2 : t.bothnationeffects)
+		for(Command str2 : t.bothnationeffects)
 		{
 			addOwnLine(str2);
 		}
@@ -288,7 +232,7 @@ public class Race extends Filter {
 		r.commands.addAll(this.commands);
 		r.name = this.name;
 		r.types.addAll(this.types);
-		r.tags.addAll(this.types);
+		r.tags.addAllNames(this.types);
 		r.themes.addAll(this.themes);
 		
 		return r;

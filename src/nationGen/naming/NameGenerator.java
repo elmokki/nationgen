@@ -1,17 +1,17 @@
 package nationGen.naming;
 
+
+import com.elmokki.Dom3DB;
+import nationGen.NationGen;
+import nationGen.entities.Race;
+import nationGen.misc.FileUtil;
+import nationGen.magic.MagicPath;
+import nationGen.nation.Nation;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
-
-import com.elmokki.Dom3DB;
-import com.elmokki.Generic;
-
-import nationGen.NationGen;
-import nationGen.entities.Race;
-import nationGen.misc.FileUtil;
-import nationGen.nation.Nation;
 
 
 
@@ -152,15 +152,12 @@ public class NameGenerator {
 	}
 	
 	public List<String> usedSites = new ArrayList<>();
-	public String getSiteName(Random r2, int prim, int sec)
+	public String getSiteName(Random r2, MagicPath primary, MagicPath secondary)
 	{
 
 		Random r = new Random(r2.nextInt());
 		
-		String primary = Generic.integerToPath(prim);
-		String secondary = Generic.integerToPath(sec);
-		
-		String name = "";
+		String name;
 		do
 		{
 			boolean primaryfilled = false;
@@ -239,15 +236,15 @@ public class NameGenerator {
 	}
 	
 	
-	private List<NamePart> filterOtherSiteNamePartsThan(List<NamePart> list, String element, boolean keeptag)
+	private List<NamePart> filterOtherSiteNamePartsThan(List<NamePart> list, MagicPath element, boolean keeptag)
 	{
-		List<NamePart> newlist = new ArrayList<NamePart>();
+		List<NamePart> newlist = new ArrayList<>();
 		for(NamePart part : list)
 		{	
 			boolean suitable = !keeptag;
-			for(String str : part.elements)
+			for(MagicPath path : part.elements)
 			{
-				if(str.equals(element))
+				if(path == element)
 					suitable = keeptag;
 			}
 			if(suitable)
@@ -257,14 +254,14 @@ public class NameGenerator {
 		return newlist;
 	}
 	
-	private List<NamePart> filterNonSuitableSiteNameParts(List<NamePart> list, String primary, String secondary, boolean allowweak, boolean allowgeneric)
+	private List<NamePart> filterNonSuitableSiteNameParts(List<NamePart> list, MagicPath primary, MagicPath secondary, boolean allowweak, boolean allowgeneric)
 	{
-		List<NamePart> newlist = new ArrayList<NamePart>();
+		List<NamePart> newlist = new ArrayList<>();
 		for(NamePart part : list)
 		{		
 			int matches = 0;
-			for(String str : part.elements)
-				if(str.equals(primary) || str.equals(secondary))
+			for(MagicPath path : part.elements)
+				if(path == primary || path == secondary)
 					matches++;
 			
 			if(matches >= part.minimumelements || (allowweak && part.weak))

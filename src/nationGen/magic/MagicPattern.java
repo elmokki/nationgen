@@ -1,25 +1,25 @@
 package nationGen.magic;
 
+
+import com.elmokki.Generic;
+import nationGen.NationGen;
+import nationGen.entities.Filter;
+import nationGen.misc.Arg;
+import nationGen.misc.Command;
+
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
-
-import com.elmokki.Generic;
-
-import nationGen.NationGen;
-import nationGen.entities.Entity;
-import nationGen.entities.Filter;
-import nationGen.misc.Command;
 
 
 public class MagicPattern extends Filter {
 	
 
 	
-	public LinkedHashMap<Integer, Integer> picks = new LinkedHashMap<Integer, Integer>();
-	public List<RandomEntry> randoms = new ArrayList<RandomEntry>();
-	public List<Integer> levels = new ArrayList<Integer>();
-	public List<Integer> primaries = new ArrayList<Integer>();
+	public LinkedHashMap<Integer, Integer> picks = new LinkedHashMap<>();
+	public List<RandomEntry> randoms = new ArrayList<>();
+	public List<Integer> levels = new ArrayList<>();
+	public List<Integer> primaries = new ArrayList<>();
 	public int premium = 0;
 	public int gcost = 0;
 	
@@ -34,7 +34,7 @@ public class MagicPattern extends Filter {
 		return toString(null);
 	}
 	
-	public String toString(List<Integer> prio)
+	public String toString(List<MagicPath> prio)
 	{
 		String str = "";
 		int high = this.getHighestReachable(1);
@@ -48,7 +48,7 @@ public class MagicPattern extends Filter {
 				String a = "";
 				if(prio != null)
 				{
-					a = Generic.integerToShortPath(prio.get(at));
+					a = prio.get(at).letter;
 					at++;
 				}
 				str = str + i + a + "-";
@@ -79,9 +79,9 @@ public class MagicPattern extends Filter {
 	
 
 	
-	public List<Command> getMagicCommands(List<Integer> prio)
+	public List<Command> getMagicCommands(List<MagicPath> prio)
 	{
-		List<Command> coms = new ArrayList<Command>();
+		List<Command> coms = new ArrayList<>();
 
 		int high = this.getHighestReachable(1);
 		
@@ -93,7 +93,7 @@ public class MagicPattern extends Filter {
 			{
 				if(prio != null)
 				{
-					coms.add(new Command("#magicskill", prio.get(at) + " " + i));
+					coms.add(new Command("#magicskill", new Arg(prio.get(at).number), new Arg(i)));
 					at++;
 				}
 			}
@@ -102,7 +102,7 @@ public class MagicPattern extends Filter {
 		for(RandomEntry e : randoms)
 		{
 			double d = e.amount;
-			coms.add(new Command("#custommagic", pathsToMask(e.paths, prio) + " " + (int)(d*100)));
+			coms.add(new Command("#custommagic", new Arg(pathsToMask(e.paths, prio)), new Arg((int)(d*100))));
 
 		}
 		
@@ -110,17 +110,16 @@ public class MagicPattern extends Filter {
 		return coms;
 	}
 
-	private int pathsToMask(int paths, List<Integer> prio)
+	private int pathsToMask(int paths, List<MagicPath> prio)
 	{
 		int mask = 0;
-		int[] masks = {128, 256, 512, 1024, 2048, 4096, 8192, 16384};
 		
 		for(int i = 0; i < 9; i++)
 		{
 			int num = (int)Math.pow(2, i);
 			if(Generic.containsBitmask(paths, num))
 			{
-				mask += masks[prio.get(i)];
+				mask += prio.get(i).mask;
 			}
 		}
 		return mask;
@@ -214,14 +213,14 @@ public class MagicPattern extends Filter {
 		return paths;
 	}
 
-	public int[] getPathsWithRandoms(List<Integer> prio, double prob)
+	public MagicPathInts getPathsWithRandoms(List<MagicPath> prio, double prob)
 	{	
 		int[] newpaths = getPathLevels(prob);
-		int[] paths = new int[9];
+		MagicPathInts paths = new MagicPathInts();
 				
 		for(int i = 0; i < prio.size(); i++)
 		{
-			paths[prio.get(i)] = newpaths[i];
+			paths.set(prio.get(i), newpaths[i]);
 		}
 
 		return paths;
@@ -426,49 +425,45 @@ public class MagicPattern extends Filter {
 	}
 	
 	@Override
-	public <Entity> void handleOwnCommand(String str)
+	public void handleOwnCommand(Command command)
 	{
-		List<String> args = Generic.parseArgs(str);
-		if(args.size() == 0)
-			return;
-
-		if(args.get(0).equals("#picks"))
-		{
-			int amount = Integer.parseInt(args.get(1));
-			int path = Integer.parseInt(args.get(2));
-			
-			int old = 0;
-			if(picks.get(path) != null)
-				old = picks.get(path);
-			
-			picks.put(path, old + amount);
-			
+		switch (command.command) {
+			case "#picks": {
+				int amount = command.args.get(0).getInt();
+				int path = command.args.get(1).getInt();
+				
+				int old = 0;
+				if (picks.get(path) != null)
+					old = picks.get(path);
+				
+				picks.put(path, old + amount);
+				
+				break;
+			}
+			case "#random": {
+				double amount = command.args.get(0).getDouble();
+				int path = command.args.get(1).getInt();
+				randoms.add(new RandomEntry(path, amount));
+				break;
+			}
+			case "#level": {
+				int num = command.args.get(0).getInt();
+				if (!levels.contains(num))
+					levels.add(num);
+				break;
+			}
+			case "#primarymages": {
+				int num = command.args.get(0).getInt();
+				if (!primaries.contains(num))
+					primaries.add(num);
+				break;
+			}
+			case "#pricepremium":
+				this.premium = command.args.get(0).getInt();
+				break;
+			default:
+				super.handleOwnCommand(command);
+				break;
 		}
-		else if(args.get(0).equals("#random"))
-		{
-			double amount = Double.parseDouble(args.get(1));
-			int path = Integer.parseInt(args.get(2));
-			randoms.add(new RandomEntry(path, amount));
-		}
-		else if(args.get(0).equals("#level"))
-		{
-			int num = Integer.parseInt(args.get(1));
-			if(!levels.contains(num))
-				levels.add(num);
-		}
-		else if(args.get(0).equals("#primarymages"))
-		{
-			int num = Integer.parseInt(args.get(1));
-			if(!primaries.contains(num))
-				primaries.add(num);
-		}
-		else if(args.get(0).equals("#pricepremium"))
-		{
-			this.premium = Integer.parseInt(args.get(1));
-		}
-		else
-			super.handleOwnCommand(str);
-
 	}
-
 }

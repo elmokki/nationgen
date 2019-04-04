@@ -1,16 +1,18 @@
 package nationGen.restrictions;
 
 
-import java.awt.event.ActionEvent;
-import java.util.List;
-import java.util.ArrayList;
-
 import com.elmokki.Generic;
+import nationGen.magic.MagicPath;
+import nationGen.magic.MagicPathInts;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
+import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.List;
+
 public class MagicAccessRestriction extends TwoListRestrictionWithComboBox<String, String>  {
-	public List<String> neededPaths = new ArrayList<String>();
+	public List<String> neededPaths = new ArrayList<>();
 	
 	public MagicAccessRestriction()
 	{
@@ -21,11 +23,10 @@ public class MagicAccessRestriction extends TwoListRestrictionWithComboBox<Strin
 		this.textFieldLabel = "Minimum magic level for added paths";
 		
 		this.comboboxlabel = "25% probability randoms allowed";
-		String[] ops = {"True", "False"};
-		this.comboboxoptions = ops;
+		this.comboboxoptions = new String[]{"True", "False"};
 		
-		for(int i = 0; i < 8; i++)
-			rmodel.addElement(Generic.integerToPath(i));
+		for(MagicPath path : MagicPath.NON_HOLY)
+			rmodel.addElement(path.name);
 		
 			
 		
@@ -79,15 +80,15 @@ public class MagicAccessRestriction extends TwoListRestrictionWithComboBox<Strin
 
 		boolean randoms = comboselection == null || comboselection.equals("True");
 
-		int[] nonrandom_paths = new int[9];
+		MagicPathInts nonrandom_paths = new MagicPathInts();
 		for(Unit u : tempmages)
 		{						
-				int[] picks = u.getMagicPicks(randoms);
-				for(int j = 0; j < 9; j++)
-				{
-					if(nonrandom_paths[j] < picks[j])
-						nonrandom_paths[j] = picks[j];
-				}	
+			MagicPathInts picks = u.getMagicPicks(randoms);
+			for(MagicPath path : MagicPath.values())
+			{
+				if(nonrandom_paths.get(path) < picks.get(path))
+					nonrandom_paths.set(path, picks.get(path));
+			}
 		}
 		
 		if(neededPaths.size() == 0)
@@ -100,9 +101,9 @@ public class MagicAccessRestriction extends TwoListRestrictionWithComboBox<Strin
 		for(String p : neededPaths)
 		{
 			List<String> args = Generic.parseArgs(p);
-			int path = Generic.PathToInteger(args.get(0));
+			MagicPath path = MagicPath.fromName(args.get(0));
 			int level = Integer.parseInt(args.get(1));
-			if(nonrandom_paths[path] >= level)
+			if(nonrandom_paths.get(path) >= level)
 				pass = true;
 		}
 		

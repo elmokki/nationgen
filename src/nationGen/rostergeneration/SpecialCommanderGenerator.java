@@ -1,21 +1,22 @@
 package nationGen.rostergeneration;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
-import com.elmokki.Generic;
 
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
 import nationGen.entities.Filter;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
+import nationGen.misc.Args;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.naming.NamePart;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.Random;
 
 public class SpecialCommanderGenerator {
 
@@ -70,11 +71,10 @@ public class SpecialCommanderGenerator {
 				u.appliedFilters.add(f);
 				
 				boolean mage = p.roles.contains("mage") || p.roles.contains("priest");
-				String targettag = Generic.getTagValue(f.tags, "equipmenttargettag");
+				Command targettag = f.tags.getCommand("equipmenttargettag").orElse(null);
 
 				ug.armorUnit(u, null, null, targettag, mage);
 				ug.armUnit(u, null, null, targettag, mage);
-				ug = null;
 				
 				// change color
 				double d = r.nextDouble();
@@ -84,7 +84,7 @@ public class SpecialCommanderGenerator {
 					u.color = n.colors[3];
 
 				// get name
-				List<String> names = Generic.getTagValues(f.tags, "unitname");
+				List<String> names = f.tags.getAllStrings("unitname");
 				String name = names.get(r.nextInt(names.size()));
 				u.name.type = NamePart.newNamePart(name, ng);
 				
@@ -108,36 +108,24 @@ public class SpecialCommanderGenerator {
 				}
 				
 				// cap only
-				double chance = 1;
-				if(Generic.containsTag(f.tags, "caponlychance"))
-					chance = Double.parseDouble(Generic.getTagValue(f.tags, "caponlychance"));
+				double chance = f.tags.getDouble("caponlychance").orElse(1D);
 				
 				if(r.nextDouble() < chance)
 					u.caponly = true;
 				
 				// put to lists
-				if(f.tags.contains("troop"))
+				if(f.tags.containsName("troop"))
 				{
-					if(n.unitlists.get("special") == null)
-						n.unitlists.put("special", new ArrayList<Unit>());
-					
-					n.unitlists.get("special").add(u);
+					n.unitlists.computeIfAbsent("special", k -> new ArrayList<>()).add(u);
 				}
 				else
 				{
-					u.commands.add(new Command("#gcost", "+30"));
-					if(n.comlists.get("specialcoms") == null)
-						n.comlists.put("specialcoms", new ArrayList<Unit>());
-					
-					n.comlists.get("specialcoms").add(u);
+					u.commands.add(Command.args("#gcost", "+30"));
+					n.comlists.computeIfAbsent("specialcoms", k -> new ArrayList<>()).add(u);
 				}
 				
 				
 				
-			}
-			else
-			{
-				continue;
 			}
 			
 		}
@@ -149,46 +137,34 @@ public class SpecialCommanderGenerator {
 	
 	private boolean fillsRequirements(Pose p, Filter f)
 	{
-		boolean ok = true;
+		Optional<Command> reqTag = f.tags.getCommand("requiredposetag");
+		Optional<String> reqTheme = f.tags.getString("requiredposetheme");
 		
-		String req = Generic.getTagValue(f.tags, "requiredposetag");
-		if(req != null && !Generic.containsTag(p.tags, req))
-			ok = false;
-		
-		req = Generic.getTagValue(f.tags, "requiredposetheme");
-		if(req != null && !Generic.containsTag(p.themes, req))
-			ok = false;
-		
-		
-		return ok;
-		
+		return (reqTag.isEmpty() || p.tags.containsTag(reqTag.get()))
+			&& (reqTheme.isEmpty() || p.themes.contains(reqTheme.get()));
 	}
 	
 	private List<Pose> getPossiblePoses(Filter f, Race race)
 	{
-		List<Pose> poses = new ArrayList<Pose>();
+		List<Pose> poses = new ArrayList<>();
 		
-		for(String str : f.tags)
+		for(Args args : f.tags.getAllArgs("pose"))
 		{
-			List<String> args = Generic.parseArgs(str);
-			if(args.get(0).equals("pose"))
+			String goal = args.get(1).get();
+			if(args.get(0).get().equals("role"))
 			{
-				String goal = args.get(2);
-				if(args.get(1).equals("role"))
+				for(Pose p : race.poses)
 				{
-					for(Pose p : race.poses)
-					{
-						if(p.roles.contains(goal) && !poses.contains(p) && fillsRequirements(p, f))
-							poses.add(p);
-					}
+					if(p.roles.contains(goal) && !poses.contains(p) && fillsRequirements(p, f))
+						poses.add(p);
 				}
-				else if(args.get(1).equals("name"))
+			}
+			else if(args.get(0).get().equals("name"))
+			{
+				for(Pose p : race.poses)
 				{
-					for(Pose p : race.poses)
-					{
-						if(p.name.equals(goal) && !poses.contains(p) && fillsRequirements(p, f))
-							poses.add(p);
-					}
+					if(p.name.equals(goal) && !poses.contains(p) && fillsRequirements(p, f))
+						poses.add(p);
 				}
 			}
 		}

@@ -1,12 +1,10 @@
 package nationGen.entities;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.misc.Args;
 import nationGen.misc.Command;
+import nationGen.misc.Tags;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
@@ -18,23 +16,21 @@ public class AbilityTemplate extends Filter {
 	}
 	
 	String desc = "";
-	List<String> addTags = new ArrayList<String>();
+	Tags addTags = new Tags();
         
-        @Override
-	public <Entity> void handleOwnCommand(String str)
+	@Override
+	public void handleOwnCommand(Command str)
 	{
 		
-		List<String> args = Generic.parseArgs(str);
 		try
 		{
-			if(args.get(0).equals("#desc"))
+			if(str.command.equals("#desc"))
 			{
-				desc = args.get(1);
+				desc = str.args.get(0).get();
 			}
-			else if(args.get(0).equals("#addtag"))
+			else if(str.command.equals("#addtag"))
 			{
-				args.remove(0);
-				addTags.add(Generic.listToString(args));
+				addTags.addFromCommand(str.args.get(0).getCommand());
 			}
 
 			else
@@ -43,7 +39,7 @@ public class AbilityTemplate extends Filter {
 		}
 		catch(IndexOutOfBoundsException e)
 		{
-			System.out.println("WARNING: " + str + " has insufficient arguments (" + this.name + ")");
+			throw new IllegalArgumentException("WARNING: " + str + " has insufficient arguments (" + this.name + ")", e);
 		}
 	}
 	
@@ -59,21 +55,17 @@ public class AbilityTemplate extends Filter {
 		f.commands.addAll(this.commands);
 		u.tags.addAll(addTags);
 		
-		for(String tag : this.tags)
+		for(Args args : this.tags.getAllArgs("possiblecommand"))
 		{
-			List<String> args = Generic.parseArgs(tag);
-			if(args.get(0).equals("possiblecommand"))
-			{
-				if(n.random.nextDouble() < Double.parseDouble(args.get(2)))
-					f.commands.add(Command.parseCommand(args.get(1)));
-			}
+			if(n.random.nextDouble() < args.get(1).getDouble())
+				f.commands.add(args.get(0).getCommand());
 		}
 		
 
 		f.name = "TEMPLATE FILTER: " + this.name;
-		f.tags.add("description " + desc);
+		f.tags.add("description", desc);
 
-		if(f.commands.size() > 0 || addTags.size() > 0)
+		if(f.commands.size() > 0 || !addTags.isEmpty())
 		{
 			u.appliedFilters.add(f);
 		}

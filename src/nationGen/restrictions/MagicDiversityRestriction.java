@@ -1,11 +1,14 @@
 package nationGen.restrictions;
 
-import java.awt.event.ActionEvent;
-import java.util.List;
-import java.util.ArrayList;
 
+import nationGen.magic.MagicPath;
+import nationGen.magic.MagicPathInts;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
+
+import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MagicDiversityRestriction extends DoubleTextBoxListRestriction<RestrictionMagicEntry> {
 	
@@ -48,41 +51,41 @@ public class MagicDiversityRestriction extends DoubleTextBoxListRestriction<Rest
 
 
 		
-		int[] nonrandom_paths = new int[9];
+		MagicPathInts nonrandom_paths = new MagicPathInts();
 		for(Unit u : tempmages)
-		{						
-				int[] picks = u.getMagicPicks(false);
-				for(int j = 0; j < 9; j++)
-				{
-					if(nonrandom_paths[j] < picks[j])
-						nonrandom_paths[j] = picks[j];
-				}	
+		{
+			MagicPathInts picks = u.getMagicPicks(false);
+			for(MagicPath path : MagicPath.values())
+			{
+				if(nonrandom_paths.get(path) < picks.get(path))
+					nonrandom_paths.set(path, picks.get(path));
+			}
 		}
 		
-		int[] random_paths = new int[9];
+		MagicPathInts random_paths = new MagicPathInts();
 		for(Unit u : tempmages)
-		{						
-				int[] picks = u.getMagicPicks(true);
-				for(int j = 0; j < 9; j++)
-				{
-					if(random_paths[j] < picks[j])
-						random_paths[j] = picks[j];
-				}	
+		{
+			MagicPathInts picks = u.getMagicPicks(true);
+			for(MagicPath path : MagicPath.values())
+			{
+				if(random_paths.get(path) < picks.get(path))
+					random_paths.set(path, picks.get(path));
+			}
 		}
 		
 		
 		for(RestrictionMagicEntry res : possibleRaceNames)
 		{
-	
-			int[] crap = null;	
+			
+			MagicPathInts crap;
 			if(res.randoms)
 				crap = random_paths;
 			else
 				crap = nonrandom_paths;
 			
 			int diversity = 0;
-			for(int j = 0; j < 9; j++)
-				if(crap[j] >= res.level)
+			for(MagicPath path : MagicPath.values())
+				if(crap.get(path) >= res.level)
 					diversity++;
 			
 			if(diversity >= res.paths)

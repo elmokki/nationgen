@@ -1,18 +1,16 @@
 package nationGen.naming;
 
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
 import com.elmokki.Generic;
-
 import nationGen.NationGenAssets;
-import nationGen.entities.Filter;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 
 
@@ -50,7 +48,7 @@ public class SacredNamer {
 	
 	private boolean isElite(Unit u)
 	{
-		return Generic.containsTag(u.tags, "elite");
+		return u.tags.containsName("elite");
 	}
 	
 	public void nameSacreds(Nation n)
@@ -70,13 +68,13 @@ public class SacredNamer {
 		List<Unit> toName = n.generateUnitList("sacred");
 		toName.addAll(n.generateUnitList("montagsacreds"));
 		for(Unit u : n.generateTroopList())
-			if(Generic.containsTag(u.tags, "elite"))
+			if(u.tags.containsName("elite"))
 			{
 				toName.add(u);
 			}
 		
 		for(Unit u : n.generateUnitList("montagtroops"))
-			if(Generic.containsTag(u.tags, "elite"))
+			if(u.tags.containsName("elite"))
 			{
 				toName.add(u);
 			}
@@ -84,16 +82,16 @@ public class SacredNamer {
 		// #forcedname
 		List<Unit> forcednames = new ArrayList<Unit>();
 		for(Unit u : toName)
-			if(Generic.containsTag(Generic.getAllUnitTags(u), "forcedname"))
+			if(Generic.getAllUnitTags(u).containsName("forcedname"))
 				forcednames.add(u);
 		toName.removeAll(forcednames);
 		for(Unit u : forcednames)
 		{
-			u.name.setType(Generic.getTagValue(Generic.getAllUnitTags(u), "forcedname"));
+			u.name.setType(Generic.getAllUnitTags(u).getString("forcedname").orElseThrow());
 			Unit com = getMatchingCom(u, n);
-			if(com != null && Generic.containsTag(Generic.getAllUnitTags(com), "forcedname"))
-				com.name.setType(Generic.getTagValue(Generic.getAllUnitTags(com), "forcedname"));
-
+			if(com != null) {
+				Generic.getAllUnitTags(com).getString("forcedname").ifPresent(com.name::setType);
+			}
 		}
 		
 		// Name units
@@ -108,7 +106,7 @@ public class SacredNamer {
 			{
 
 
-				NamePart part = Filter.getRandom(n.random, chandler.handleChanceIncs(u, combases));
+				NamePart part = chandler.handleChanceIncs(u, combases).getRandom(n.random);
 				com.name = u.name.getCopy();
 				com.name.type = part.getCopy();
 			}
@@ -158,12 +156,12 @@ public class SacredNamer {
 
 
 				
-				NamePart part = Filter.getRandom(n.random, chandler.handleChanceIncs(u, parts));
+				NamePart part = chandler.handleChanceIncs(u, parts).getRandom(n.random);
 
 
 				
 				boolean suffix = r.nextBoolean();
-				if((suffix && !part.tags.contains("notsuffix")) || part.tags.contains("notprefix"))
+				if((suffix && !part.tags.containsName("notsuffix")) || part.tags.containsName("notprefix"))
 					name.suffix = part.getCopy();
 				else
 					name.prefix = part.getCopy();
@@ -172,7 +170,7 @@ public class SacredNamer {
 			}
 			else if(num == 0) // Base
 			{
-				NamePart part = Filter.getRandom(n.random, chandler.handleChanceIncs(u, bases));
+				NamePart part = chandler.handleChanceIncs(u, bases).getRandom(n.random);
 				name.type = part.getCopy();
 			}
 			

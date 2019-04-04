@@ -1,14 +1,12 @@
 package nationGen.entities;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Random;
-
-import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.misc.Command;
 import nationGen.misc.FileUtil;
+import nationGen.misc.Tags;
+
+import java.util.*;
 
 
 public class Entity {
@@ -17,8 +15,8 @@ public class Entity {
 	public NationGen nationGen;
 	public String name = null;
 	public double basechance = 1;
-	public List<String> tags = new ArrayList<String>();
-	public List<String> themes = new ArrayList<String>();
+	public Tags tags = new Tags();
+	public List<String> themes = new ArrayList<>();
 
 	public Entity(NationGen nationGen)
 	{
@@ -28,7 +26,7 @@ public class Entity {
 	
 	public static <E extends Entity> List<E> readFile(NationGen nationGen, String file, Class<E> c)
 	{
-		List<E> list = new ArrayList<E>();
+		List<E> list = new ArrayList<>();
 		
 		E instance = null;
 		for (String strLine : FileUtil.readLines(file))
@@ -58,7 +56,7 @@ public class Entity {
 			}
 			else if(instance != null && strLine.startsWith("#"))
 			{
-				instance.handleOwnCommand(strLine);
+				instance.handleOwnCommand(Command.parse(strLine));
 			}
 
 		}
@@ -67,46 +65,28 @@ public class Entity {
 	}
 	
 	
-	public <Entity> void handleOwnCommand(String str)
+	public void handleOwnCommand(Command command)
 	{
-		List<String> args = Generic.parseArgs(str);
-		if(args.get(0).equals("#id") || args.get(0).equals("#name"))
+		if(command.command.equals("#id") || command.command.equals("#name"))
 		{
-			this.name = args.get(1);
+			this.name = command.args.get(0).get();
 		}
-		else if(args.get(0).equals("#basechance") || args.get(0).equals("#chance"))
+		else if(command.command.equals("#basechance") || command.command.equals("#chance"))
 		{
-			args.remove(0);
-			this.basechance = Double.parseDouble(Generic.listToString(args));
+			this.basechance = command.args.get(0).getDouble();
 		}
-		else if(args.get(0).equals("#tag"))
+		else if(command.command.equals("#tag"))
 		{
-			// Legacy thing
-			args.get(1).replaceAll("\'", "\"");
-			
-			args.remove(0);
-
-			// Legacy thing EA20150605
-			this.tags.add(Generic.listToString(args).replaceAll("\'", "\""));
-
+			this.tags.addFromCommand(command.args.get(0).getCommand());
 		}
-		else if(args.get(0).equals("#theme"))
+		else if(command.command.equals("#theme"))
 		{
-			// Legacy thing
-			args.get(1).replaceAll("\'", "\"");
-			
-			args.remove(0);
-
-			// Legacy thing EA20150605
-			this.themes.add(Generic.listToString(args).replaceAll("\'", "\""));
-
+			this.themes.add(command.args.get(0).get());
 		}
-		else if(str.startsWith("#"))
+		else if(command.command.startsWith("#"))
 		{
-			this.tags.add(str.substring(1));
-
+			this.tags.add(command.command.substring(1), command.args);
 		}
-		
 	}
 
 
@@ -114,91 +94,6 @@ public class Entity {
 	public String toString()
 	{
 		return this.name;
-	}
-
-	public static <E extends Entity> E getRandom(Random r, List<E> set)
-	{
-		if(set == null || set.size() == 0)
-			return null;
-			
-		List<E> items = new ArrayList<E>();
-		items.addAll(set);
-		
-		if(items.size() == 0)
-			return null;
-		
-		
-		double max = 0;
-		for(E i : items)
-		{
-			max += i.basechance;
-		}
-
-		
-		if(max == 0)
-			return null;
-		
-		double target = r.nextDouble() * max;
-		double current = 0;
-
-		E item = null;
-
-		
-		for(E i : items)
-		{
-			current = current + i.basechance;
-			if(current >= target)
-			{
-				item = i;
-				break;
-			}
-		}
-		
-		if(item == null)
-			System.out.println("ITEM PICKING FAILURE. Strange, eh?");
-
-			
-		return item;
-	}
-	
-	
-	public static <E extends Entity> E getRandom(Random r, LinkedHashMap<E, Double> set)
-	{
-		if(set == null || set.size() == 0)
-			return null;
-			
-
-		if(set.size() == 0)
-			return null;
-		
-		
-		double max = 0;
-		for(E i : set.keySet())
-		{
-			max += set.get(i);
-		}
-
-		double target = r.nextDouble() * max;
-		double current = 0;
-
-		E item = null;
-
-		
-		for(E i : set.keySet())
-		{
-			current = current + set.get(i);
-			if(current >= target)
-			{
-				item = i;
-				break;
-			}
-		}
-		
-		if(item == null)
-			System.out.println("ITEM PICKING FAILURE. Strange, eh?");
-
-			
-		return item;
 	}
 	
 	

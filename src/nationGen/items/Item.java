@@ -1,15 +1,14 @@
 package nationGen.items;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.chances.ThemeInc;
 import nationGen.entities.Drawable;
-import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.misc.Command;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Item extends Drawable {
 
@@ -18,11 +17,11 @@ public class Item extends Drawable {
 	public Filter filter = null;
 	
 
-	public ArrayList<ItemDependency> dependencies = new ArrayList<ItemDependency>();
-	//public LinkedHashMap<String, String> dependencies = new LinkedHashMap<String, String>();
-	//public LinkedHashMap<String, String> typedependencies = new LinkedHashMap<String, String>();
+	public ArrayList<ItemDependency> dependencies = new ArrayList<>();
+	//public LinkedHashMap<String, String> dependencies = new LinkedHashMap<>();
+	//public LinkedHashMap<String, String> typedependencies = new LinkedHashMap<>();
 
-	public List<Command> commands = new ArrayList<Command>();
+	public List<Command> commands = new ArrayList<>();
 	public String slot = "";
 	public String set = "";
 
@@ -58,66 +57,59 @@ public class Item extends Drawable {
 	
 	public Item getCopy()
 	{
-
-		return (Item) this.getCustomItemCopy();
+		return this.getCustomItemCopy();
 	}
 	
-        @Override
-	public <Entity> void handleOwnCommand(String str)
+	@Override
+	public void handleOwnCommand(Command command)
 	{
-
-		List<String> args = Generic.parseArgs(str);
-		
-		
 		try
 		{
-		
-		if(args.get(0).equals("#gameid"))
-			this.id = args.get(1);
-		else if(args.get(0).equals("#armor"))
-			this.armor = true;
-		else if(args.get(0).equals("#addthemeinc"))
-		{
-			if(this.filter == null)
-			{
-				this.filter = new Filter(nationGen);
-				filter.tags.add("do_not_show_in_descriptions");
-				if(this.name != null)
-					filter.name = "Item " + this.name + " generation effects";
+			switch (command.command) {
+				case "#gameid":
+					this.id = command.args.get(0).get();
+					break;
+				case "#armor":
+					this.armor = true;
+					break;
+				case "#addthemeinc":
+					if (this.filter == null) {
+						this.filter = new Filter(nationGen);
+						filter.tags.addName("do_not_show_in_descriptions");
+						if (this.name != null)
+							filter.name = "Item " + this.name + " generation effects";
+					}
+					this.filter.themeincs.add(ThemeInc.from(command.args));
+					break;
+				case "#name":
+					if (filter != null)
+						filter.name = "Item " + command.args.get(0).get() + " generation effects";
+					super.handleOwnCommand(command);
+					break;
+				case "#needs":
+					this.dependencies.add(new ItemDependency(command.args.get(0).get(), command.args.get(1).get(), false, false));
+					break;
+				case "#needstype":
+					this.dependencies.add(new ItemDependency(command.args.get(0).get(), command.args.get(1).get(), true, false));
+					break;
+				case "#forceslot":
+					this.dependencies.add(new ItemDependency(command.args.get(0).get(), command.args.get(1).get(), false, true));
+					break;
+				case "#forceslottype":
+					this.dependencies.add(new ItemDependency(command.args.get(0).get(), command.args.get(1).get(), true, true));
+					break;
+				case "#command":
+				case "#define":
+					this.commands.add(command.args.get(0).getCommand());
+					break;
+				default:
+					super.handleOwnCommand(command);
+					break;
 			}
-			args.remove(0);
-			this.filter.themeincs.add(Generic.listToString(args, " "));			
-		}
-		else if(args.get(0).equals("#name"))
-		{
-			if(filter != null)
-				filter.name = "Item " + args.get(1) + " generation effects";
-			super.handleOwnCommand(str);
-		}
-		else if(args.get(0).equals("#needs"))
-			this.dependencies.add(new ItemDependency(args.get(1), args.get(2), false, false));
-		else if(args.get(0).equals("#needstype"))
-		{
-			this.dependencies.add(new ItemDependency(args.get(1), args.get(2), true, false));
-		}
-		else if(args.get(0).equals("#forceslot"))
-			this.dependencies.add(new ItemDependency(args.get(1), args.get(2), false, true));
-		else if(args.get(0).equals("#forceslottype"))
-		{
-			this.dependencies.add(new ItemDependency(args.get(1), args.get(2), true, true));
-		}
-		else if(args.get(0).equals("#command") || args.get(0).equals("#define"))
-			this.commands.add(Command.parseCommand(args.get(1)));
-		else
-			super.handleOwnCommand(str);
 		}
 		catch(IndexOutOfBoundsException e)
 		{
-			System.out.println("WARNING: " + str + " has insufficient arguments (" + this.name + ")");
+			throw new IllegalArgumentException("Command [" + command + "] has insufficient arguments (" + this.name + ")", e);
 		}
 	}
-	
-	
-
-	
 }
