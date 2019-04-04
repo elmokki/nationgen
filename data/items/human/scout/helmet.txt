@@ -63,7 +63,7 @@
 #newitem
 #id bronzecap
 #gameid 135
-#chanceinc thisitemslottheme not armor bronze *0
+#themeinc thisitemslottheme not armor bronze *0
 #armor
 #theme "bronze"
 #theme "boreal"
@@ -74,7 +74,7 @@
 #newitem
 #id ironcap
 #gameid 20
-#chanceinc thisitemslottheme not armor iron *0
+#themeinc thisitemslottheme not armor iron *0
 #armor
 #theme "iron"
 #theme "austral"
@@ -88,7 +88,7 @@
 #newitem
 #name "icecap"
 #gameid 29
-#chanceinc thisitemslottheme not armor ice *0
+#themeinc thisitemslottheme not armor ice *0
 #chanceinc nationcommand #idealcold below 1 *0
 #chanceinc "personalcommand below #coldres 5 *0"
 #armor
@@ -102,7 +102,7 @@
 #newitem
 #name "shellcap"
 #gameid 224
-#chanceinc thisitemslottheme not armor shell *0
+#themeinc thisitemslottheme not armor shell *0
 #armor
 #theme "shell"
 #theme "merrow"
@@ -112,7 +112,7 @@
 #newitem
 #name "coralcap"
 #gameid 24
-#chanceinc thisitemslottheme not armor coral *0
+#themeinc thisitemslottheme not armor coral *0
 #armor
 #theme "coral"
 #theme "merrow"
@@ -133,8 +133,8 @@
 #gameid 125
 #basechance 0.005
 #chanceinc magic death *4
-#chanceinc thisitemslottheme weapon death *4
-#chanceinc thisitemslottheme armor death *4
+#themeinc thisitemslottheme weapon death *4
+#themeinc thisitemslottheme armor death *4
 #sprite /graphics/scouts/extras/mask_skull.png
 #armor
 #theme "assassin"

@@ -8,8 +8,8 @@
 #theme "occidental"
 #theme "oriental"
 #basechance 1
-#chanceinc theme austral *0.01
-#chanceinc theme abysian *0.01
+#chanceinc racetheme austral *0.01
+#chanceinc racetheme abysian *0.01
 #enditem
 
 #newitem
@@ -19,7 +19,7 @@
 #offsety 3
 #theme "austral"
 #basechance 1
-#chanceinc theme not austral *0.01
+#chanceinc racetheme not austral *0.01
 #enditem
 
 #newitem
@@ -28,7 +28,7 @@
 #sprite /graphics/hoburg/basehoburg_clockwork_medium_hoburgbred.png
 #offsety 3
 #theme "abysian"
-#chanceinc theme not abysian *0.01
+#chanceinc racetheme not abysian *0.01
 #basechance 1
 #define "#gcost +3"
 #define "#hp +2"

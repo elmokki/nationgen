@@ -1,15 +1,13 @@
 package nationGen.rostergeneration;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.items.Item;
 import nationGen.misc.ItemSet;
 import nationGen.units.Unit;
 
-import com.elmokki.Generic;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TroopTemplate
 {
@@ -23,7 +21,7 @@ public class TroopTemplate
 	int dws = 0;
 	ItemSet weapons = new ItemSet();
 	ItemSet bonusweapons = new ItemSet();
-	List<Unit> units = new ArrayList<Unit>();
+	List<Unit> units = new ArrayList<>();
 	
 	
 	public static TroopTemplate getNew(Item armor, Race race, Unit template, String role, Pose pose, TroopGenerator tGen)
@@ -41,10 +39,7 @@ public class TroopTemplate
 		this.role = role;
 		this.pose = pose;
 		this.maxvar = 3;
-		this.canBeSecondary = true;
-	
-		if(Generic.getTagValue(pose.tags, "primaryraceonly") != null)
-			this.canBeSecondary = false;
+		this.canBeSecondary = !pose.tags.containsName("primaryraceonly");
 
 	}
 }

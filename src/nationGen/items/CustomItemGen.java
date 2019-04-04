@@ -1,18 +1,21 @@
 package nationGen.items;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Random;
 
 import com.elmokki.Dom3DB;
 import com.elmokki.Generic;
-
+import nationGen.chances.EntityChances;
 import nationGen.entities.MagicItem;
+import nationGen.misc.Arg;
+import nationGen.misc.Args;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.Random;
 
 public class CustomItemGen {
 	
@@ -34,29 +37,18 @@ public class CustomItemGen {
 		if(i == null)
 			return null;
 		
-		boolean ranged = false;
-		boolean lowshots = false;
+		boolean ranged = n.nationGen.weapondb.GetInteger(olditem.id, "rng") != 0;
+		boolean lowshots = n.nationGen.weapondb.GetInteger(olditem.id, "shots", 100) < 4;
 		
-		if(n.nationGen.weapondb.GetInteger(olditem.id, "rng") != 0)
-			ranged = true;
-		if(n.nationGen.weapondb.GetInteger(olditem.id, "shots", 100) < 4)
-			lowshots = true;
-			
+		String type = ranged ? lowshots ? "lowshots" : "ranged" : "melee";
 
 		if(random.nextDouble() > epicness)
 		{
 
-			List<MagicItem> possibles = new ArrayList<MagicItem>();
+			List<MagicItem> possibles = new ArrayList<>();
 			for(MagicItem m : magicItems)
 			{
-				boolean good = true;
-				for(String tag : m.tags)
-					if(ranged && !lowshots && tag.equals("no ranged"))
-						good = false;
-					else if(ranged && lowshots && tag.equals("no lowshots"))
-						good = false;
-					else if(!ranged && tag.equals("no melee"))
-						good = false;
+				boolean good = m.tags.getAllStrings("no").stream().noneMatch(type::equals);
 			
 				if(good && m.power <= maxpower)
 					possibles.add(m);
@@ -66,115 +58,87 @@ public class CustomItemGen {
 			{
 				
 				ChanceIncHandler chandler = new ChanceIncHandler(n, "customitemgenerator");
-				LinkedHashMap<MagicItem, Double> itemMap = chandler.handleChanceIncs(u, possibles); 
-				
-				MagicItem mitem = MagicItem.getRandom(random, itemMap);
+				MagicItem mitem = chandler.handleChanceIncs(u, possibles).getRandom(random);
 				
 				// Special looks
-				if(Generic.containsTag(mitem.tags, "weapon"))
+				List<Item> pos = new ArrayList<>();
+				for(Args args : mitem.tags.getAllArgs("weapon"))
 				{
-					List<Item> pos = new ArrayList<Item>();
-					for(String tag : mitem.tags)
+					if(args.size() > 1 && args.get(0).get().equals(olditem.id))
 					{
-						List<String> args = Generic.parseArgs(tag);
-						if(args.get(0).equals("weapon") && args.size() > 2 && args.get(1).equals(olditem.id))
-						{
-							Item temp = u.pose.getItems(olditem.slot).getItemWithName(args.get(2), olditem.slot);
-							if(temp != null)
-								pos.add(temp);
-						}
+						Item temp = u.pose.getItems(olditem.slot).getItemWithName(args.get(1).get(), olditem.slot);
+						if(temp != null)
+							pos.add(temp);
 					}
-					
-					if(pos.size() > 0)
-					{
-						CustomItem miten = this.getFromItem(Item.getRandom(random, pos));
-						if(miten != null)
-							i = miten;
-					}
+				}
+				
+				if(!pos.isEmpty())
+				{
+					CustomItem miten = this.getFromItem(EntityChances.baseChances(pos).getRandom(random));
+					if(miten != null)
+						i = miten;
 				}
 				
 				
 				for(Command c : mitem.getCommands())
 				{
-					String key = c.command.substring(1);
+					String key = c.command;
 					
 					
 					if(c.args.size() > 0)
 					{
-						String value = c.args.get(0);
+						Arg value = c.args.get(0);
 						
-						String oldvalue = "";
-						if(i.values.get(key) != null)
-							oldvalue = i.values.get(key);
+						Optional<Integer> oldvalue = i.getIntValue(key);
 				
-						int temp = chandler.applyModifier(Integer.parseInt(oldvalue), value).intValue();
-						i.values.put(key, temp + "");
+						int temp = (int) value.applyModTo(oldvalue.orElseThrow());
+						i.setValue(key, temp);
 					}
 					else
 					{
-						i.values.put(key, "");
+						i.setValue(c.command);
 					}
 				}
 				
 				
 				
 				if(!mitem.effect.equals("-1"))
-					i.values.put("secondaryeffect", mitem.effect);
+					i.setValue("#secondaryeffect", mitem.effect);
 				
 				String name = n.nationGen.weapondb.GetValue(olditem.id, "weapon_name");
-				List<String> prefixes = new ArrayList<String>();
-				List<String> suffixes = new ArrayList<String>();
 				
-				for(String part : mitem.names)
+				if(mitem.nameSuffixes.size() > 0 || mitem.namePrefixes.size() > 0)
 				{
-					List<String> args = Generic.parseArgs(part, "'");
-					if(args.get(0).equals("prefix"))
-						prefixes.add(args.get(1));
-					else if(args.get(1).equals("suffix"))
-						suffixes.add(args.get(1));
-				}
-				
-				if(suffixes.size() > 0 || prefixes.size() > 0)
-				{
-					String part = "";
-					int rand = random.nextInt(suffixes.size() + prefixes.size()) + 1;
-					if(rand > suffixes.size() && suffixes.size() > 0)
+					String part;
+					int rand = random.nextInt(mitem.nameSuffixes.size() + mitem.namePrefixes.size()) + 1;
+					if(rand > mitem.nameSuffixes.size() && mitem.nameSuffixes.size() > 0)
 					{
-						part = suffixes.get(random.nextInt(suffixes.size()));
-						name = "\"" + Generic.capitalize(name + " " + part) + "\"";
+						part = mitem.nameSuffixes.get(random.nextInt(mitem.nameSuffixes.size()));
+						name = Generic.capitalize(name + " " + part);
 					}
 					else
 					{
-						part = prefixes.get(random.nextInt(prefixes.size()));
-						name = "\"" + Generic.capitalize(part + " " + name) + "\"";
+						part = mitem.namePrefixes.get(random.nextInt(mitem.namePrefixes.size()));
+						name = Generic.capitalize(part + " " + name);
 					}
 	
 					named = true;
-					i.values.put("name", name);
+					i.setValue("#name", name);
 				}
 				
 				i.magicItem = mitem;
 				
 				
 				// Increase gcost
-				for(String tag : mitem.tags)
+				for(Args args : mitem.tags.getAllArgs("gcost"))
 				{
-					
-					List<String> args = Generic.parseArgs(tag);
-
-					if(ranged && !lowshots && args.get(0).equals("gcost") && args.get(1).equals("ranged"))
-						i.commands.add(new Command("#gcost", args.get(2)));
-					else if(ranged && lowshots && args.get(0).equals("gcost") && args.get(1).equals("lowshots"))
-						i.commands.add(new Command("#gcost", args.get(2)));
-					else if(!ranged && args.get(0).equals("gcost") && args.get(1).equals("melee"))
-						i.commands.add(new Command("#gcost", args.get(2)));
-					
-					if(ranged && !lowshots && args.get(0).equals("rcost") && args.get(1).equals("ranged"))
-						i.commands.add(new Command("#rcost", args.get(2)));
-					else if(ranged && lowshots && args.get(0).equals("rcost") && args.get(1).equals("lowshots"))
-						i.commands.add(new Command("#rcost", args.get(2)));
-					else if(!ranged && args.get(0).equals("rcost") && args.get(1).equals("melee"))
-						i.commands.add(new Command("#rcost", args.get(2)));
+					if (args.get(0).get().equals(type))
+						i.commands.add(new Command("#gcost", args.get(1)));
+				}
+				for(Args args : mitem.tags.getAllArgs("rcost"))
+				{
+					if (args.get(0).get().equals(type))
+						i.commands.add(new Command("#rcost", args.get(1)));
 				}
 				i.tags.addAll(mitem.tags);
 			}
@@ -192,7 +156,7 @@ public class CustomItemGen {
 		boolean magic = false;
 		if(!ranged && i.magicItem != null && random.nextDouble() > 0.75)
 		{
-			i.values.put("magic", "");
+			i.setValue("#magic");
 			magic = true;
 		}
 		
@@ -203,9 +167,9 @@ public class CustomItemGen {
 
 		int gcost = u.getGoldCost();
 		if(gcost * 0.1 < potentialgcost)
-			u.commands.add(new Command("#gcost","+" + potentialgcost));
+			u.commands.add(Command.args("#gcost","+" + potentialgcost));
 		else
-			u.commands.add(new Command("#gcost","*1.1"));
+			u.commands.add(Command.args("#gcost","*1.1"));
 		
 		// Add res cost
 		int potentialrcost = runs;
@@ -214,9 +178,9 @@ public class CustomItemGen {
 		
 		int rcost = u.getResCost(true);
 		if(rcost * 0.1 < potentialrcost)
-			u.commands.add(new Command("#rcost","+" + potentialrcost));
+			u.commands.add(Command.args("#rcost","+" + potentialrcost));
 		else
-			u.commands.add(new Command("#rcost","*1.1"));
+			u.commands.add(Command.args("#rcost","*1.1"));
 		
 		double[] chances = {1, 1, 1, 1};
 		while(runs > 0)
@@ -240,9 +204,9 @@ public class CustomItemGen {
 			if(rand <= chances[0] && !ranged || (runs > 2 && ranged))
 			{
 				chances[0] *= 0.33;
-				int att = Integer.parseInt(i.values.get("att"));
+				int att = i.getIntValue("#att").orElseThrow();
 				att++;
-				i.values.put("att", "" + att);
+				i.setValue("#att", att);
 				
 				if(ranged && !lowshots)
 					runs -= 2;
@@ -253,9 +217,9 @@ public class CustomItemGen {
 			{
 
 				chances[1] *= 0.33;
-				int def = Integer.parseInt(i.values.get("def"));
+				int def = i.getIntValue("#def").orElseThrow();
 				def++;
-				i.values.put("def", "" + def);
+				i.setValue("#def", def);
 				runs--;
 
 			}
@@ -263,17 +227,17 @@ public class CustomItemGen {
 			{
 
 				chances[2] *= 0.33;
-				int dmg = Integer.parseInt(i.values.get("dmg"));
+				int dmg = i.getIntValue("#dmg").orElseThrow();
 				if(dmg < 63)					 // Weapons with dmg 64+ are (with one exception, the Deadliest Poison at 75) not actually damage, but instead special effects encoded as damage, so we don't want to screw them up
 					dmg++;
-				i.values.put("dmg", "" + dmg);
+				i.setValue("#dmg", dmg);
 				runs--;
 			}
 			else if(rand <= chances[0] + chances[1] + chances[2] + chances[3] && runs > 1 && !ranged && !magic)
 			{
 
 				chances[3] = 0;
-				i.values.put("magic", "");
+				i.setValue("#magic");
 				magic = true;
 				runs--;
 			}
@@ -287,9 +251,9 @@ public class CustomItemGen {
 		
 
 		if(!magic && (i.magicItem == null || !named))
-			i.values.put("name", "\"Exceptional " + name + "\"");
+			i.setValue("#name", "Exceptional " + name);
 		else if(magic && (i.magicItem == null || !named))
-			i.values.put("name", "\"Enchanted " + name + "\"");
+			i.setValue("#name", "Enchanted " + name);
 		
 		String dname = "nation_" + n.nationid + "_customitem_" + (n.customitems.size() + 1);
 		i.id = dname;
@@ -350,9 +314,9 @@ public class CustomItemGen {
 				return null;
 			}
 			
-			newitem.values.put("att", "0");
-			newitem.values.put("len", "0");
-			newitem.values.put("dmg", "0");
+			newitem.setValue("#att", 0);
+			newitem.setValue("#len", 0);
+			newitem.setValue("#dmg", 0);
 
 			for(String def : db.getDefinition())
 			{
@@ -364,58 +328,56 @@ public class CustomItemGen {
 				}
 				else if(def.equals("weapon_name"))
 				{
-					newitem.values.put("name", "\"" + db.GetValue(item.id, "weapon_name") + "\"");
+					newitem.setValue("#name", db.GetValue(item.id, "weapon_name"));
 				}
 				else if(def.equals("res"))
 				{
-					newitem.values.put("rcost", "" + db.GetValue(item.id, "res"));
+					newitem.setValue("#rcost", db.GetValue(item.id, "res"));
 				}
 	
 				else if(def.equals("dt_blunt"))
 				{	
 					if(db.GetValue(item.id, def).equals("1"))
-						newitem.values.put("blunt", "");
+						newitem.setValue("#blunt");
 				}	
 				else if(def.equals("dt_slash"))
 				{
 					if(db.GetValue(item.id, def).equals("1"))
-					newitem.values.put("slash", "");
+						newitem.setValue("#slash");
 				}
 				else if(def.equals("dt_pierce"))
 				{
 					if(db.GetValue(item.id, def).equals("1"))
-						newitem.values.put("pierce", "");
+						newitem.setValue("#pierce");
 				}
 				else if(def.equals("lgt"))
 				{
 					if(db.GetInteger(item.id, "lgt") > 0)
-						newitem.values.put("len", "" + db.GetValue(item.id, "lgt"));
+						newitem.setValue("#len", db.GetValue(item.id, "lgt"));
 				}
 				else if(def.equals("rng"))
 				{
 					if(db.GetInteger(item.id, "rng") != 0)
 					{
-						
-						newitem.values.put("range", db.GetValue(item.id, "rng"));
-
+						newitem.setValue("#range", db.GetValue(item.id, "rng"));
 					}
 				}
 				
 				else if(def.equals("#att"))
 				{
 					if(db.GetInteger(item.id, "#att") != 1)
-						newitem.values.put("nratt", db.GetValue(item.id, "#att"));
+						newitem.setValue("#nratt", db.GetValue(item.id, "#att"));
 				}
 				else if(def.equals("shots"))
 				{
 					if(db.GetInteger(item.id, "shots") > 0)
-						newitem.values.put("ammo", db.GetValue(item.id, "shots"));
+						newitem.setValue("#ammo", db.GetValue(item.id, "shots"));
 
 				}
 				else if(def.equals("2h"))
 				{
 					if(db.GetValue(item.id, "2h").equals("1"))
-						newitem.values.put("twohanded", "");
+						newitem.setValue("#twohanded");
 				}
 				
 				else if(def.equals("flyspr"))
@@ -423,11 +385,9 @@ public class CustomItemGen {
 					if(!db.GetValue(item.id, "flyspr", "derp").equals("derp"))
 					{
 						String flyspr = db.GetValue(item.id, "flyspr");
-						String speed = db.GetValue(item.id, "animlength", "derp");
-						if(speed.equals("derp"))
-							speed = "1";
+						String speed = db.GetValue(item.id, "animlength", "1");
 						
-						newitem.values.put("flyspr", flyspr + " " + speed);
+						newitem.setValue("#flyspr", flyspr, speed);
 					}
 				}
 				
@@ -436,17 +396,17 @@ public class CustomItemGen {
 				else if(def.equals("onestrike"))
 				{
 					if(db.GetValue(item.id, "onestrike").equals("1"))
-						newitem.values.put("ammo", "1");
+						newitem.setValue("#ammo", "1");
 				}
 				else if(def.equals("ap"))
 				{
 					if(db.GetValue(item.id, "ap").equals("1"))
-						newitem.values.put("armorpiercing", "");
+						newitem.setValue("#armorpiercing");
 				}
 				else if(def.equals("an"))
 				{
 					if(db.GetValue(item.id, "an").equals("1"))
-						newitem.values.put("armornegating", "");
+						newitem.setValue("#armornegating");
 				}
 				
 				// Skippable stuff
@@ -463,13 +423,13 @@ public class CustomItemGen {
 				{
 					if(db.GetValue(item.id, def).equals("1"))
 					{
-						newitem.values.put(def, "");
+						newitem.setValue("#" + def);
 					}
 				}
 				// Handle non-boolean args
 				else if(!db.GetValue(item.id, def).equals(""))
 				{
-					newitem.values.put(def, db.GetValue(item.id, def));
+					newitem.setValue("#" + def, db.GetValue(item.id, def));
 				}
 		
 				
@@ -478,7 +438,7 @@ public class CustomItemGen {
 			
 
 			// No magic item from spc damage items
-			if(newitem.values.get("dmg").equals("spc") || item.id.equals("-1"))
+			if(newitem.getStringValue("#dmg").orElseThrow().equals("spc") || item.id.equals("-1"))
 				return null;
 		}
 		

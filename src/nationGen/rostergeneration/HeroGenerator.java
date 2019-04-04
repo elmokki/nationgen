@@ -1,24 +1,20 @@
 package nationGen.rostergeneration;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import com.elmokki.Drawing;
-
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
-import nationGen.entities.Entity;
-import nationGen.entities.Filter;
-import nationGen.entities.MagicFilter;
-import nationGen.entities.Pose;
-import nationGen.entities.Race;
-import nationGen.magic.RandomEntry;
-import nationGen.magic.MageGenerator;
-import nationGen.magic.MagicPattern;
+import nationGen.chances.EntityChances;
+import nationGen.chances.ThemeInc;
+import nationGen.entities.*;
+import nationGen.magic.*;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HeroGenerator {
 
@@ -40,11 +36,10 @@ public class HeroGenerator {
 	
 	public List<Unit> generateHeroes(int count)
 	{
-		List<Unit> units = new ArrayList<Unit>();
-		int ticks = 0;
-		while(units.size() < count && ticks < 100)
+		List<Unit> units = new ArrayList<>();
+		while(units.size() < count)
 		{	
-			Unit u = null;
+			Unit u;
 			if(n.random.nextDouble() < 0.5)
 				u = (generateMageHero(false));
 			else
@@ -57,7 +52,7 @@ public class HeroGenerator {
 		// Remove upkeep
 		for(Unit u : units)
 		{
-			u.commands.add(new Command("#gcost", "*0"));
+			u.commands.add(Command.args("#gcost", "*0"));
 		}
 		
 		return units;
@@ -73,10 +68,8 @@ public class HeroGenerator {
 	
 
 		// Remove recruitment filters
-		tf.themeincs.add("thisitemtheme recruitment *0");
-		tf.themeincs.add("thisitemtheme trooponly *0");
-
-
+		tf.themeincs.add(ThemeInc.parse("thisitemtheme recruitment *0"));
+		tf.themeincs.add(ThemeInc.parse("thisitemtheme trooponly *0"));
 		
 
 		u.appliedFilters.add(tf);
@@ -123,12 +116,12 @@ public class HeroGenerator {
 			MageGenerator mg = new MageGenerator(ng, n, assets);
 			mg.setIdentifier("herogen");
 			
-			MagicPattern pat = Entity.getRandom(n.random, chandler.handleChanceIncs(hero, MageGenerator.getPatternsOfLevel(mg.possiblePatterns, tier)));
-			List<Integer> prio = this.getPrio(n.races.contains(hero.race));
+			MagicPattern pat = chandler.handleChanceIncs(hero, MageGenerator.getPatternsOfLevel(mg.possiblePatterns, tier)).getRandom(n.random);
+			List<MagicPath> prio = this.getPrio(n.races.contains(hero.race));
 			MagicFilter f = new MagicFilter(ng);
 			f.prio = prio;
 			f.pattern = pat;
-			f.tags.add("do_not_show_in_descriptions");
+			f.tags.addName("do_not_show_in_descriptions");
 			hero.appliedFilters.add(f);
 		}
 		
@@ -171,7 +164,7 @@ public class HeroGenerator {
 			hero.color = Drawing.getColor(n.random);
 		
 		MagicPattern p = generatePattern(multihero);
-		List<Integer> prio = getPrio(n.races.contains(r));
+		List<MagicPath> prio = getPrio(n.races.contains(r));
 		
 		MagicFilter f = new MagicFilter(ng);
 		f.prio = prio;
@@ -285,43 +278,36 @@ public class HeroGenerator {
 	}
 	
 	
-	private List<Integer> getPrio(boolean primaryrace)
+	private List<MagicPath> getPrio(boolean primaryrace)
 	{
 		List<List<Unit>> all = n.getMagesInSeparateLists();
 		List<Unit> primaries = all.get(0);
 		
-		double[] allpaths = MageGenerator.getAllPicks(primaries, false);
-		
-		double highest = 0;
-		for(double i : allpaths)
-			if(i > highest)
-				highest = i;
+		MagicPathInts allpaths = MageGenerator.getAllPicks(primaries, false);
 		
 		
-		List<Integer> prio = new ArrayList<Integer>();
+		List<MagicPath> prio = new ArrayList<>();
 		if(primaryrace)
 		{
-			for(int i = 0; i < 8; i++)
-				if(allpaths[i] == highest)
-					prio.add(i);
+			prio = allpaths.getAllHighestPaths();
 		}
 		
-		List<Filter> derp = new ArrayList<Filter>();
-		for(int i = 0; i < 8; i++)
+		List<Filter> derp = new ArrayList<>();
+		for(MagicPath path : MagicPath.NON_HOLY)
 		{
-			if(!prio.contains(i))
+			if(!prio.contains(path))
 			{
 				Filter f = new Filter(ng);
-				f.name = i + "";
+				f.name = path.number + "";
 				derp.add(f);
 			}
 		}
 		
 		while(derp.size() > 0)
 		{
-			Filter f = Entity.getRandom(n.random, derp);
+			Filter f = EntityChances.baseChances(derp).getRandom(n.random);
 			derp.remove(f);
-			prio.add(Integer.parseInt(f.name));
+			prio.add(MagicPath.fromInt(Integer.parseInt(f.name)));
 		}
 		
 		return prio;
@@ -337,10 +323,9 @@ public class HeroGenerator {
 		{
 			if(n.random.nextDouble() < 0.05 && assets.races.size() > 2)
 			{
-				List<Race> races = new ArrayList<Race>();
-				races.addAll(assets.races);
+				List<Race> races = new ArrayList<>(assets.races);
 				races.removeAll(n.races);
-				r = Entity.getRandom(n.random, chandler.handleChanceIncs(races));
+				r = chandler.handleChanceIncs(races).getRandom(n.random);
 				
 				//System.out.println(r + " " + role + " " + hasRole(r, role));
 				if(!hasRole(r, role))

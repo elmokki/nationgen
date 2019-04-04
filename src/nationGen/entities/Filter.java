@@ -1,66 +1,71 @@
 package nationGen.entities;
 
+
+import nationGen.NationGen;
+import nationGen.chances.ChanceInc;
+import nationGen.chances.ThemeInc;
+import nationGen.misc.Command;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import com.elmokki.Generic;
-
-import nationGen.NationGen;
-import nationGen.misc.Command;
-
 public class Filter extends Entity {
-	public List<Command> commands = new ArrayList<Command>();
-	public List<String> chanceincs = new ArrayList<String>();
-	public List<String> themeincs = new ArrayList<String>();
-	public List<String> types = new ArrayList<String>();
+	public List<Command> commands = new ArrayList<>();
+	public List<ChanceInc> chanceincs = new ArrayList<>();
+	public List<ThemeInc> themeincs = new ArrayList<>();
+	public List<String> types = new ArrayList<>();
 	public double power = 1;
 	public Filter(NationGen nationGen) {
 		super(nationGen);
 	}
 	
-	
-		public List<Command> getCommands()
-		{
-			return this.commands;
-		}
-	
-                @Override
-		public <Entity> void handleOwnCommand(String str)
-		{
+	public List<Command> getCommands()
+	{
+		return this.commands;
+	}
 
-			List<String> args = Generic.parseArgs(str);
-			
-			try
-			{
-			
-			if(args.get(0).equals("#command") || args.get(0).equals("#define"))
-			{
-				args.remove(0);
-				this.commands.add(Command.parseCommand(Generic.listToString(args, " ")));
-			}
-			else if(args.get(0).equals("#themeinc"))
-			{
-				args.remove(0);
-				this.themeincs.add(Generic.listToString(args, "", "'"));
-				
-			}
-			else if(args.get(0).equals("#type") || args.get(0).equals("#category"))
-				this.types.add(args.get(1));
-			else if(args.get(0).equals("#chanceinc"))
-			{
-				args.remove(0);
-				this.chanceincs.add(Generic.listToString(args, "", "'"));
-			}
-			else if(args.get(0).equals("#power"))
-				this.power = Integer.parseInt(args.get(1));
-			else
-				super.handleOwnCommand(str);
-			
-			}
-			catch(IndexOutOfBoundsException e)
-			{
-				System.out.println("WARNING: " + str + " has insufficient arguments (" + this.name + ")");
+	@Override
+	public void handleOwnCommand(Command command)
+	{
+		try
+		{
+			switch (command.command) {
+				case "#command":
+				case "#define":
+					this.commands.add(command.args.get(0).getCommand());
+					break;
+				case "#themeinc":
+					// Sometimes the definition is in quotes, sometimes it's not... -_-' < sigh
+					if (command.args.size() == 1) {
+						this.themeincs.add(ThemeInc.parse(command.args.get(0).get()));
+					} else {
+						this.themeincs.add(ThemeInc.from(command.args));
+					}
+					break;
+				case "#type":
+				case "#category":
+					this.types.add(command.args.get(0).get());
+					break;
+				case "#chanceinc":
+					// Sometimes the definition is in quotes, sometimes it's not... -_-' < sigh
+					if (command.args.size() == 1) {
+						this.chanceincs.add(ChanceInc.parse(command.args.get(0).get()));
+					} else {
+						this.chanceincs.add(ChanceInc.from(command.args));
+					}
+					break;
+				case "#power":
+					this.power = command.args.get(0).getInt();
+					break;
+				default:
+					super.handleOwnCommand(command);
+					break;
 			}
 		}
+		catch(Exception e)
+		{
+			throw new IllegalArgumentException("Command [" + command + "] couldn't be handled (" + this.name + ")", e);
+		}
+	}
 
 }
