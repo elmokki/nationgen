@@ -8,8 +8,8 @@
 #theme "occidental"
 #theme "oriental"
 #basechance 0.1
-#chanceinc theme austral *0.1
-#chanceinc theme abysian *0.1
+#chanceinc racetheme austral *0.1
+#chanceinc racetheme abysian *0.1
 #needstype hands boreal
 #enditem
 
@@ -19,7 +19,7 @@
 #sprite /graphics/hoburg/basehoburg_crossbow_austral.png
 #theme "austral"
 #basechance 0.1
-#chanceinc theme not austral *0.1
+#chanceinc racetheme not austral *0.1
 #enditem
 
 
@@ -28,7 +28,7 @@
 #gameid -1
 #sprite /graphics/hoburg/basehoburg_crossbow_hoburgbred.png
 #theme "abysian"
-#chanceinc theme not abysian *0.1
+#chanceinc racetheme not abysian *0.1
 #basechance 0.1
 #needstype hands hoburgbred
 #define "#gcost +3"
