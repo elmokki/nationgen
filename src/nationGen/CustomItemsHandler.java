@@ -169,20 +169,19 @@ public class CustomItemsHandler
     }
     
     /**
-     * Writes the currently chosen custom items to the printwriter [file].
+     * Generates the mod lines for the currently chosen custom items.
      */
-    public void writeCustomItems(PrintWriter tw)
+    public List<String> writeCustomItemsLines()
     {
-        if(chosenCustomItems.isEmpty())
+        List<String> lines = new ArrayList<>();
+        if(!chosenCustomItems.isEmpty())
         {
-            return;
+            lines.add("--- Generic custom items:");
+            for(CustomItem ci : chosenCustomItems)
+            {
+                lines.addAll(ci.writeLines());
+            }
         }
-
-        tw.println("--- Generic custom items:");
-        for(CustomItem ci : chosenCustomItems)
-        {   
-            ci.write(tw);
-            //tw.println("");
-        }
+        return lines;
     }
 }

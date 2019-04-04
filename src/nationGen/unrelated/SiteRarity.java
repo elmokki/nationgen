@@ -12,7 +12,7 @@ public class SiteRarity {
 		FileWriter fstream = new FileWriter("derp.txt");
 		PrintWriter tw = new PrintWriter(fstream);
 		
-		Dom3DB sites = new Dom3DB("sites.csv");
+		Dom3DB sites = new Dom3DB("/sites.csv");
 		
 		for(int i = 1; i < 1027; i++)
 		{

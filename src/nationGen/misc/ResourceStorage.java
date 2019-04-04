@@ -1,10 +1,5 @@
 package nationGen.misc;
 
-import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -43,16 +38,9 @@ public class ResourceStorage<E extends Entity> extends LinkedHashMap<String, Lis
 
 	
 	
-	public void load(String file) throws IOException
+	public void load(String file)
 	{
-		FileInputStream fstream = new FileInputStream(file);
-		DataInputStream in = new DataInputStream(fstream);
-		BufferedReader br = new BufferedReader(new InputStreamReader(in));
-		
-		String strLine;
-		
-		
-		while ((strLine = br.readLine()) != null)   
+		for (String strLine : FileUtil.readLines(file))
 		{
 			List<String> args = Generic.parseArgs(strLine);
 			if(args.size() == 0)
@@ -66,8 +54,6 @@ public class ResourceStorage<E extends Entity> extends LinkedHashMap<String, Lis
 				this.put(args.get(1), items);
 			}
 		}
-		
-		in.close();
 	}
 
 }

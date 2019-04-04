@@ -9,7 +9,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
@@ -79,7 +78,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
     JSlider spowerSlider = new JSlider(JSlider.HORIZONTAL, 1, 3, 1);
     
     private ReentrantLock pauseLock;
-    private  NationGen n = null;
+    private NationGen n = null;
 
     public static void main(String[] args) throws Exception
     {
@@ -116,16 +115,7 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         pauseLock = new ReentrantLock();
         
         // Restrictions need nationgen;
-    	try 
-        {
-            n = new NationGen(pauseLock, settings, new ArrayList<>());
-        } 
-        catch (IOException e) 
-        {
-            System.out.println("Error initializing NationGen.");
-            startButton.setEnabled(false);
-            return;
-        }
+    	n = new NationGen(pauseLock, settings, new ArrayList<>());
     	
     	// Again, ideally, n.getAssets would never be required. But, at least restriction pane no longer depends on Nationgen.
         rpanel = new RestrictionPane(n.getAssets());
@@ -377,19 +367,19 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
         OutputStream out = new OutputStream() 
         {
     	    @Override
-    	    public void write(final int b) throws IOException 
+    	    public void write(final int b)
             {
                 updateTextPane(String.valueOf((char) b));
     	    }
     	 
     	    @Override
-    	    public void write(byte[] b, int off, int len) throws IOException 
+    	    public void write(byte[] b, int off, int len)
             {
                 updateTextPane(new String(b, off, len));
     	    }
     	 
     	    @Override
-    	    public void write(byte[] b) throws IOException 
+    	    public void write(byte[] b)
             {
                 write(b, 0, b.length);
     	    }
@@ -402,62 +392,48 @@ public class GUI extends JFrame implements ActionListener, ItemListener, ChangeL
 
     private void process()
     {
-    	try 
-        {
-            n = new NationGen(pauseLock, settings, rpanel.getRestrictions());
-        } 
-        catch (IOException e) 
-        {
-            System.out.println("Error initializing NationGen.");
-            startButton.setEnabled(false);
-            return;
-        }
-        Thread thread = new Thread() 
-        {
-            @Override
-            public void run() 
+        n = new NationGen(pauseLock, settings, rpanel.getRestrictions());
+        Thread thread = new Thread(() -> {
+            startButton.setText(abortText);
+            pauseButton.setEnabled(true);
+            
+            if(!modNameRandom.isSelected())
             {
-                startButton.setText(abortText);
-                pauseButton.setEnabled(true);
-                
-                if(!modNameRandom.isSelected())
+                n.modname = modname.getText();
+            }
+            try
+            {
+                if(seedcheckbox.isSelected())
                 {
-                    n.modname = modname.getText();
+                    n.generate(parseSeeds());
                 }
-                try 
+                else
                 {
-                    if(seedcheckbox.isSelected())
+                    if(!seedRandom.isSelected())
                     {
-                        n.generate(parseSeeds());
+                        n.generate(Integer.parseInt(amount.getText()), Long.parseLong(seed.getText()));
                     }
                     else
                     {
-                        if(!seedRandom.isSelected())
-                        {
-                            n.generate(Integer.parseInt(amount.getText()), Long.parseLong(seed.getText()));
-                        }
-                        else
-                        {
-                            n.generate(Integer.parseInt(amount.getText()));
-                        }
+                        n.generate(Integer.parseInt(amount.getText()));
                     }
                 }
-                catch (NumberFormatException | IOException e) 
-                {
-                    e.printStackTrace();
-                }
-                finally
-                {
-                    // Reset start button to default state.
-                    startButton.setText(startText);
-                    startButton.setEnabled(true);
-                    
-                    // Reset pause button to default state.
-                    pauseButton.setEnabled(false);
-                    pauseButton.setText(pauseText);
-                }
             }
-        };
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+            finally
+            {
+                // Reset start button to default state.
+                startButton.setText(startText);
+                startButton.setEnabled(true);
+                
+                // Reset pause button to default state.
+                pauseButton.setEnabled(false);
+                pauseButton.setText(pauseText);
+            }
+        });
         thread.start();
         hasRun = true;
     }

@@ -2,22 +2,16 @@ package nationGen.misc;
 
 
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
+import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
-
-import javax.imageio.ImageIO;
 
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
 
 public class PreviewGenerator {
-	public void savePreview(Nation n, String file) throws IOException
+	public void savePreview(Nation n, String file)
 	{
 		int baseX = 64;
 		int baseY = 64;
@@ -40,11 +34,10 @@ public class PreviewGenerator {
 
 		for(Unit u : troops)
 		{
-			int x = getSize(u, true);
-			int y = getSize(u, false);
+			Dimension d = u.getSpriteDimensions();
 			
-			x = (int)Math.ceil((double)x / 64);
-			y = (int)Math.ceil((double)y / 64);
+			int x = (int)Math.ceil(d.getWidth() / 64);
+			int y = (int)Math.ceil(d.getHeight() / 64);
 			
 			neededBlocks += x*y;
 		}
@@ -56,11 +49,10 @@ public class PreviewGenerator {
 		
 		for(Unit u : n.generateComList())
 		{
-			int x = getSize(u, true);
-			int y = getSize(u, false);
+			Dimension d = u.getSpriteDimensions();
 			
-			x = (int)Math.ceil((double)x / 64);
-			y = (int)Math.ceil((double)y / 64);
+			int x = (int)Math.ceil(d.getWidth() / 64);
+			int y = (int)Math.ceil(d.getHeight() / 64);
 			
 			neededBlocks += x*y;
 		}
@@ -69,7 +61,6 @@ public class PreviewGenerator {
 
 		
 		maxY += (int) Math.ceil((double)neededBlocks / ((double)maxX + 1));
-		neededBlocks = 0;
 		maxY++;
 		
 
@@ -124,15 +115,10 @@ public class PreviewGenerator {
 		*/
 		drawList(map, maxX, maxY, n.generateComList(), g);
 		
-		
-		javax.imageio.ImageIO.write(img, "png", new File(file));
-		
-		img = null;
-		g = null;
-		troops = null;
+		FileUtil.writePng(img, file);
 	}
 	
-	private void drawList(int[][] map, int maxX, int maxY, List<Unit> troops, Graphics g) throws IOException
+	private void drawList(int[][] map, int maxX, int maxY, List<Unit> troops, Graphics g)
 	{
 		
 		for(Unit u : troops)
@@ -146,11 +132,10 @@ public class PreviewGenerator {
 
 					if(map[y][x] == 0)
 					{
-						int unitX = getSize(u, true);
-						int unitY = getSize(u, false);
+						Dimension d = u.getSpriteDimensions();
 						
-						unitX = (int)Math.ceil((double)unitX / 64);
-						unitY = (int)Math.ceil((double)unitY / 64);
+						int unitX = (int)Math.ceil(d.getWidth() / 64);
+						int unitY = (int)Math.ceil(d.getHeight() / 64);
 						
 
 						boolean fit = true;
@@ -207,36 +192,5 @@ public class PreviewGenerator {
 					break;
 			}
 		}
-	}
-	
-	private int getSize(Unit u, boolean width) throws IOException
-	{
-		BufferedImage base;
-		try
-		{ 
-			base = ImageIO.read(new File("./", u.slotmap.get("basesprite").sprite));
-		}
-		catch(Exception e)
-		{
-			base = new BufferedImage(64, 64, BufferedImage.TYPE_3BYTE_BGR);
-		}
-
-		// create the new image, canvas size is the max of both image sizes
-		int w = Math.max(64, base.getWidth());
-		int h = Math.max(64, base.getHeight());
-		
-		String mountslot = u.getMountOffsetSlot();
-
-		if(u.slotmap.get(mountslot) != null)
-		{
-			base = ImageIO.read(new File("./", u.slotmap.get(mountslot).sprite));
-			w = Math.max(64, base.getWidth());
-			h = Math.max(64, base.getHeight());
-		}
-		
-		if(width)
-			return w;
-		else
-			return h;
 	}
 }

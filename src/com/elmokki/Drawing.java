@@ -11,11 +11,6 @@ import java.awt.image.LookupOp;
 import java.awt.image.LookupTable;
 import java.awt.image.RescaleOp;
 import java.awt.image.ShortLookupTable;
-import java.io.BufferedOutputStream;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -96,7 +91,7 @@ public class Drawing {
 		return darken(n, units);
 	}
 	
-	public static BufferedImage recolor(BufferedImage image, Color c) throws IOException
+	public static BufferedImage recolor(BufferedImage image, Color c)
 	{
 	
 		BufferedImageOp colorizeFilter = createColorizeOp(c);
@@ -106,7 +101,7 @@ public class Drawing {
 	}
 	
 	
-	public static BufferedImage recolor_alternate(BufferedImage image, Color c) throws IOException
+	public static BufferedImage recolor_alternate(BufferedImage image, Color c)
 	{
 	
 		BufferedImageOp colorizeFilter = createColorizeOp(c);
@@ -292,65 +287,6 @@ public class Drawing {
 
 	    LookupTable lookupTable = new ShortLookupTable(0, data);
 	    return new LookupOp(lookupTable, null);
-	}
-	
-	
-	private static short flipEndian(short signedShort) {
-		int input = signedShort & 0xFFFF;
-		return (short) (input << 8 | (input & 0xFF00) >>> 8);
-	}
-	
-	public static void writeTGA(BufferedImage image, String output) throws IOException
-	{
-		DataOutputStream out = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(new File(output))));
-		
-
-		// ID Length
-		out.writeByte((byte) 0);
-
-		// Color Map
-		out.writeByte((byte) 0);
-
-		// Image Type
-		out.writeByte((byte) 2);
-
-		// Color Map - Ignored
-		out.writeShort(flipEndian((short) 0));
-		out.writeShort(flipEndian((short) 0));
-		out.writeByte((byte) 0);
-
-		// X, Y Offset
-		out.writeShort(flipEndian((short) 0));
-		out.writeShort(flipEndian((short) 0));
-
-		// Width, Height, Depth
-		out.writeShort(flipEndian((short) image.getWidth()));
-		out.writeShort(flipEndian((short) image.getHeight()));
-
-		out.writeByte((byte) 24);
-		out.writeByte((byte) 0);
-	
-		
-
-		// Write out the image data
-		Color c;
-
-
-		for (int y = image.getHeight()-1; y >= 0; y--) {
-			
-			for (int x = 0; x < image.getWidth(); x++) {
-				
-				c = new Color(image.getRGB(x, y));
-				out.writeByte((byte) (c.getBlue()));
-				out.writeByte((byte) (c.getGreen()));
-				out.writeByte((byte) (c.getRed()));
-			}
-			
-			
-		}
-
-		out.close();
-		
 	}
 	
 	

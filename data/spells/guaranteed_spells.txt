@@ -108,7 +108,7 @@
 #spell "Summon Jade Serpent"
 #spell "Summon Jaguars"
 #spell "Summon Monster Toad"
-#spell "Summon Jaguar Toad"
+#spell "Summon Jaguar Toads"
 #basechance 0
 #chanceinc nationtag occidental 1
 #chanceinc hasthemetheme occidental 1
@@ -147,6 +147,96 @@
 #chanceinc hasthemetheme occidental 1
 #chanceinc random 0.5 *0
 #chanceinc primaryrace not zotz *0
+#end
+
+- Central
+------------------------
+
+#new
+#name "Central nature spells"
+#spell "Monster Boar"
+#spell "Awaken Hamadryad"
+#spell "Orgy"
+#basechance 0
+#chanceinc nationtag central 1
+#chanceinc hasthemetheme central 1
+#chanceinc random 0.25 *0
+#chanceinc anymagic not nature *0
+#chanceinc primaryrace "Halfmen" *0
+#end
+
+#new
+#name "Central death spells"
+#spell "Bind Keres"
+#spell "Curse Tablet"
+#spell "Summon Hound of Twilight"
+#spell "Procession of the Underworld"
+#basechance 0
+#chanceinc nationtag central 1
+#chanceinc hasthemetheme central 1
+#chanceinc random 0.25 *0
+#chanceinc anymagic not death *0
+#chanceinc primaryrace "Halfmen" *0
+#end
+
+#new
+#name "Central earth spells"
+#spell "Sow Dragon Teeth"
+#spell "Craft Keledone"
+#spell "Summon Hound of Twilight"
+#spell "Forge Brass Bull"
+#spell "Dogs of Gold and Silver"
+#basechance 0
+#chanceinc nationtag central 1
+#chanceinc hasthemetheme central 1
+#chanceinc random 0.25 *0
+#chanceinc anymagic not earth *0
+#chanceinc primaryrace "Halfmen" AND hasthemetheme not advanced *0
+#end
+
+#new
+#name "Island spirits"
+#spell "Summon Hekateride"
+#spell "Summon Daktyl"
+#spell "Contact Hesperide"
+#basechance 0
+#chanceinc nationtag central 1
+#chanceinc hasthemetheme central 1
+#chanceinc random 0.75 *0
+#chanceinc magic not earth AND magic not nature AND magic not fire *0
+#end
+
+#new
+#name "Central spellsongs"
+#spell "Rhapsody of the Dead"
+#spell "Rhapsody of Life"
+#basechance 0
+#chanceinc nationtag central 1
+#chanceinc hasthemetheme central 1
+#chanceinc NOT command "#spellsinger" *0
+#chanceinc magic not nature AND magic not death *0
+#end
+
+#new
+#name "Halfmen weak nature spells"
+#spell "Monster Boar"
+#spell "Awaken Hamadryad"
+#spell "Tune of Fear"
+#spell "Tune of Growth"
+#spell "Tune of Dancing Death"
+#basechance 1
+#chanceinc anymagic not nature *0
+#chanceinc primaryrace not "Halfmen" *0
+#end
+
+#new
+#name "Halfmen strong nature spells"
+#spell "Dark Slumber"
+#spell "Grow Fortress"
+#basechance 1
+#chanceinc random 0.5 OR hasthemetheme advanced *0
+#chanceinc magic not nature *0
+#chanceinc primaryrace not "Halfmen" *0
 #end
 
 - Norse

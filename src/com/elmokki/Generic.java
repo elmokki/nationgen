@@ -260,7 +260,7 @@ public class Generic {
 	
 	public static String listToString(List<String> list, String separator)
 	{
-		return listToString(list, "", "");
+		return listToString(list, separator, "");
 	}
 	
 	
