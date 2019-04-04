@@ -1,20 +1,9 @@
 package nationGen.units;
 
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.util.*;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import com.elmokki.Dom3DB;
 import com.elmokki.Generic;
-
 import nationGen.NationGen;
-import nationGen.entities.Entity;
-import nationGen.entities.Filter;
-import nationGen.entities.MagicFilter;
-import nationGen.entities.Pose;
-import nationGen.entities.Race;
+import nationGen.entities.*;
 import nationGen.items.Item;
 import nationGen.items.ItemDependency;
 import nationGen.magic.MageGenerator;
@@ -23,6 +12,12 @@ import nationGen.misc.Command;
 import nationGen.misc.FileUtil;
 import nationGen.naming.Name;
 import nationGen.nation.Nation;
+
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 
 
@@ -1601,8 +1596,8 @@ public class Unit {
 		
 		if(this.getSlot("basesprite") != null)
 		{
-			lines.add("#spr1 \"" + (spritedir + "unit_" + this.id + "_a.tga\""));
-			lines.add("#spr2 \"" + (spritedir + "unit_" + this.id + "_b.tga\""));
+			lines.add("#spr1 \"" + (spritedir + "/unit_" + this.id + "_a.tga\""));
+			lines.add("#spr2 \"" + (spritedir + "/unit_" + this.id + "_b.tga\""));
 		}
 		//lines.add("#descr \"" + desc + "\"");
 		
