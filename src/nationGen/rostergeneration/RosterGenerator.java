@@ -334,7 +334,7 @@ public class RosterGenerator {
 		boolean isPrimaryRace = (race == nation.races.get(0));
 		
 		// Choose templates of suitable race and role
-		List<TroopTemplate> temptemplates = new ArrayList<TroopTemplate>();
+		List<TroopTemplate> temptemplates = new ArrayList<>();
 		for(TroopTemplate t : templates)
 			if(!shouldSkipTemplate(t, isPrimaryRace, t.maxvar, race, role))
 				temptemplates.add(t);
@@ -353,12 +353,12 @@ public class RosterGenerator {
 		// ...and otherwise let's randomize from the existing ones
 		// This time with pose chances taken into account!
 		
-		List<Pose> allPoses = new ArrayList<Pose>();
+		List<Pose> allPoses = new ArrayList<>();
 		for(TroopTemplate t : temptemplates)
 			allPoses.add(t.pose);
 		
-		Pose winner = chandler.getRandom(allPoses);
-		List<TroopTemplate> newtemps = new ArrayList<TroopTemplate>();
+		Pose winner = chandler.getRandom(allPoses, race);
+		List<TroopTemplate> newtemps = new ArrayList<>();
 		for(TroopTemplate t : temptemplates)
 			if(t.pose == winner)
 				newtemps.add(t);

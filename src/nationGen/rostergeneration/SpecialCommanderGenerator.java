@@ -52,7 +52,7 @@ public class SpecialCommanderGenerator {
 		List<Filter> possibles = ChanceIncHandler.retrieveFilters("specialcommanderfilters", "default_specialcommanderfilters", assets.filters, null, race);
 		while(u == null)
 		{
-			if(chandler.countPossibleFilters(possibles) == 0)
+			if(chandler.handleChanceIncs(possibles).countPossible() == 0)
 				return;
 			
 			Filter f = chandler.getRandom(possibles);
@@ -60,10 +60,10 @@ public class SpecialCommanderGenerator {
 
 
 			List<Pose> possiblePoses = getPossiblePoses(f, race);
-			if(chandler.countPossibleFilters(possiblePoses) > 0)
+			if(chandler.handleChanceIncs(race, possiblePoses).countPossible() > 0)
 			{
 				// get pose
-				Pose p = chandler.getRandom(possiblePoses);
+				Pose p = chandler.getRandom(possiblePoses, race);
 				
 				// generate unit
 				UnitGen ug = new UnitGen(ng, n, assets);
