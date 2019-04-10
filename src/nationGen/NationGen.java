@@ -146,8 +146,6 @@ public class NationGen
 		
 		System.out.println("Generating nations...");
 		List<Nation> generatedNations = new ArrayList<>();
-		Nation newnation = null;
-		long newseed = 0;
 		
 		int count = 0;
 		int failedcount = 0;
@@ -170,14 +168,7 @@ public class NationGen
 			}
 			
 			count++;
-			if(!manyseeds)
-			{
-				newseed = random.nextLong();
-			}
-			else
-			{
-				newseed = seeds.get(generatedNations.size());
-			}
+			long newseed = this.manyseeds ? seeds.get(generatedNations.size()) : random.nextLong();
 			
 			if (isDebug)
 			{
@@ -185,8 +176,12 @@ public class NationGen
 				System.out.print(" / " + ZonedDateTime.now().toLocalTime().truncatedTo(ChronoUnit.SECONDS));
 				System.out.print(")... ");
 			}
-			
-			newnation = new Nation(this, newseed, count, restrictions, assets);
+			Nation newnation;
+			try {
+				newnation = new Nation(this, newseed, count, restrictions, assets);
+			} catch (Exception e) {
+				throw new IllegalStateException("Error generating nation with seed " + newseed);
+			}
 			
 			if (newnation.passed)
 			{
