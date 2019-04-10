@@ -1,18 +1,7 @@
 package nationGen.nation;
 
-import java.awt.Color;
-import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
-import java.util.Map.Entry;
-
 import com.elmokki.Drawing;
 import com.elmokki.Generic;
-
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
 import nationGen.Settings.SettingsType;
@@ -23,25 +12,19 @@ import nationGen.entities.Theme;
 import nationGen.items.CustomItem;
 import nationGen.magic.MageGenerator;
 import nationGen.magic.SpellGen;
-import nationGen.misc.ChanceIncHandler;
-import nationGen.misc.Command;
-import nationGen.misc.FlagGen;
-import nationGen.misc.GodGen;
-import nationGen.misc.ItemSet;
-import nationGen.misc.Site;
-import nationGen.misc.SiteGenerator;
+import nationGen.misc.*;
 import nationGen.naming.Summary;
 import nationGen.restrictions.NationRestriction;
 import nationGen.restrictions.NationRestriction.RestrictionType;
-import nationGen.rostergeneration.CommanderGenerator;
-import nationGen.rostergeneration.HeroGenerator;
-import nationGen.rostergeneration.MonsterGenerator;
-import nationGen.rostergeneration.RosterGenerator;
-import nationGen.rostergeneration.SacredGenerator;
-import nationGen.rostergeneration.ScoutGenerator;
-import nationGen.rostergeneration.SpecialCommanderGenerator;
+import nationGen.rostergeneration.*;
 import nationGen.units.ShapeChangeUnit;
 import nationGen.units.Unit;
+
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.util.List;
+import java.util.*;
+import java.util.Map.Entry;
 
 
 public class Nation {
@@ -49,7 +32,7 @@ public class Nation {
 	public int mockid = -2;
 	public Color[] colors = new Color[5];
 	public int nationid;
-	public int era = 2;
+	public int era;
 	public String name = "UNNAMED";
 	public String epithet = "NO EPITHET";
 	
@@ -59,29 +42,29 @@ public class Nation {
 	public NationGen nationGen;
 	private NationGenAssets assets;
 	
-	private long seed = 0;
+	private long seed;
 	
 	public ItemSet usedItems = new ItemSet();
 	public Random random;
 
-	public List<Unit> heroes = new ArrayList<Unit>();
+	public List<Unit> heroes = new ArrayList<>();
 
-	public List<Command> commands = new ArrayList<Command>();
-	public List<CustomItem> usedcustomitems = new ArrayList<CustomItem>();
-	public List<ShapeChangeUnit> secondshapes = new ArrayList<ShapeChangeUnit>();
-	public List<CustomItem> customitems = new ArrayList<CustomItem>();
-	public List<Command> gods = new ArrayList<Command>();
-	public List<Site> sites = new ArrayList<Site>();
-	public List<Theme> nationthemes = new ArrayList<Theme>();
-	public List<Filter> spells = new ArrayList<Filter>();
+	public List<Command> commands = new ArrayList<>();
+	public List<CustomItem> usedcustomitems = new ArrayList<>();
+	public List<ShapeChangeUnit> secondshapes = new ArrayList<>();
+	public List<CustomItem> customitems = new ArrayList<>();
+	public List<Command> gods = new ArrayList<>();
+	public List<Site> sites = new ArrayList<>();
+	public List<Theme> nationthemes = new ArrayList<>();
+	public List<Filter> spells = new ArrayList<>();
 	
-	public LinkedHashMap <String, List<Unit>> unitlists = new LinkedHashMap <String, List<Unit>>();
-	public LinkedHashMap <String, List<Unit>> comlists = new LinkedHashMap <String, List<Unit>>();
+	public LinkedHashMap <String, List<Unit>> unitlists = new LinkedHashMap<>();
+	public LinkedHashMap <String, List<Unit>> comlists = new LinkedHashMap<>();
 	
-	public List<Race> races = new ArrayList<Race>();
+	public List<Race> races = new ArrayList<>();
 	public String nationalitysuffix;
 	
-	public List<Filter> castles = new ArrayList<Filter>();
+	public List<Filter> castles = new ArrayList<>();
 	
 	public Summary summary = new Summary(this);
 	
@@ -98,10 +81,10 @@ public class Nation {
 		this.assets = assets;
 		this.era = (int)Math.round(nationGen.settings.get(SettingsType.era));
 		
-		comlists.put("scouts", new ArrayList<Unit>());
-		comlists.put("commanders", new ArrayList<Unit>());
-		comlists.put("priests", new ArrayList<Unit>());
-		comlists.put("mages", new ArrayList<Unit>());
+		comlists.put("scouts", new ArrayList<>());
+		comlists.put("commanders", new ArrayList<>());
+		comlists.put("priests", new ArrayList<>());
+		comlists.put("mages", new ArrayList<>());
 		
 		generate(restrictions);
 	}

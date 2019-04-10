@@ -1,19 +1,6 @@
 package nationGen;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
-import java.time.ZonedDateTime;
-import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Random;
-import java.util.concurrent.locks.ReentrantLock;
-
 import com.elmokki.Dom3DB;
-
 import nationGen.Settings.SettingsType;
 import nationGen.entities.Filter;
 import nationGen.entities.Race;
@@ -33,6 +20,16 @@ import nationGen.units.ShapeChangeUnit;
 import nationGen.units.ShapeShift;
 import nationGen.units.Unit;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.locks.ReentrantLock;
+
 
 
 public class NationGen
@@ -40,7 +37,7 @@ public class NationGen
 	public static String version = "0.7.0-RC9";
 	public static String date = "22nd of January 2019";
 	
-	private List<NationRestriction> restrictions = new ArrayList<>();
+	private List<NationRestriction> restrictions;
 	
 	private NationGenAssets assets;
 	
@@ -151,8 +148,6 @@ public class NationGen
 		
 		System.out.println("Generating nations...");
 		List<Nation> generatedNations = new ArrayList<>();
-		Nation newnation = null;
-		long newseed = 0;
 		
 		int count = 0;
 		int failedcount = 0;
@@ -175,14 +170,7 @@ public class NationGen
 			}
 			
 			count++;
-			if(!manyseeds)
-			{
-				newseed = random.nextLong();
-			}
-			else
-			{
-				newseed = seeds.get(generatedNations.size());
-			}
+			long newseed = manyseeds ? seeds.get(generatedNations.size()) : random.nextLong();
 			
 			if (isDebug)
 			{
@@ -191,7 +179,12 @@ public class NationGen
 				System.out.print(")... ");
 			}
 			
-			newnation = new Nation(this, newseed, count, restrictions, assets);
+			Nation newnation;
+			try {
+				newnation = new Nation(this, newseed, count, restrictions, assets);
+			} catch (Exception e) {
+				throw new IllegalStateException("Error generating nation with seed: " + newseed, e);
+			}
 			
 			if (newnation.passed)
 			{
