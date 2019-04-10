@@ -10,6 +10,7 @@ import nationGen.misc.Command;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 
 /**
@@ -262,14 +263,14 @@ public enum ThemeIncConditionType {
 			throw new IllegalArgumentException("Condition<ThemeIncData> has no arguments.");
 		}
 		ArgParser parser = args.parse();
-		return from(parser.nextString()).parseConditionArguments(parser);
+		String themeIncName = parser.nextString();
+		return from(themeIncName)
+			.orElseThrow(() -> new IllegalArgumentException(
+				String.format("No #themeinc condition type found with initial argument [%s]. Args: [%s].", themeIncName, args)))
+			.parseConditionArguments(parser);
 	}
 	
-	public static ThemeIncConditionType from(String name) {
-		ThemeIncConditionType type = LOOKUP.get(name);
-		if (type == null) {
-			throw new IllegalArgumentException("No #themeinc condition type found with initial argument [" + name + "]");
-		}
-		return type;
+	public static Optional<ThemeIncConditionType> from(String name) {
+		return Optional.ofNullable(LOOKUP.get(name));
 	}
 }

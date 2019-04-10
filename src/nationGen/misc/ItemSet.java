@@ -1,9 +1,11 @@
 package nationGen.misc;
 
+
 import com.elmokki.Dom3DB;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.items.Item;
+import nationGen.units.Unit;
 
 import java.util.*;
 
@@ -238,9 +240,9 @@ public class ItemSet extends ArrayList<Item> {
 		return newlist;
 	}
 	
-	public Item getRandom(ChanceIncHandler ch, Random random)
+	public Item getRandom(ChanceIncHandler ch, Unit u, Random random)
 	{
-		return ch.handleChanceIncs(this).getRandom(random);
+		return ch.handleChanceIncs(u, this).getRandom(random);
 	}
 	
 	public ItemSet filterForPose(Pose p)

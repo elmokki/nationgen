@@ -897,14 +897,14 @@ public enum ChanceIncConditionType {
 			throw new IllegalArgumentException("Condition<ChanceIncData> has no arguments.");
 		}
 		ArgParser parser = args.parse();
-		return from(parser.nextString()).parseConditionArguments(parser);
+		final String chanceIncName = parser.nextString();
+		return from(chanceIncName)
+			.orElseThrow(() -> new IllegalArgumentException(
+				String.format("No #chanceinc condition type found with initial argument [%s]. Args: [%s].", chanceIncName, args)))
+			.parseConditionArguments(parser);
 	}
 	
-	public static ChanceIncConditionType from(String name) {
-		ChanceIncConditionType type = LOOKUP.get(name);
-		if (type == null) {
-			throw new IllegalArgumentException("No #chanceinc condition type found with initial argument [" + name + "]");
-		}
-		return type;
+	public static Optional<ChanceIncConditionType> from(String name) {
+		return Optional.ofNullable(LOOKUP.get(name));
 	}
 }
