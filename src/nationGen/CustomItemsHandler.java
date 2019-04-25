@@ -1,12 +1,14 @@
 package nationGen;
 
-import java.io.PrintWriter;
+
+import com.elmokki.Dom3DB;
+import nationGen.items.CustomItem;
+import nationGen.misc.Arg;
+import nationGen.misc.Command;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import com.elmokki.Dom3DB;
-
-import nationGen.items.CustomItem;
 
 /**
  * 
@@ -121,17 +123,15 @@ public class CustomItemsHandler
         
         // -521978361
         // Check references!
-        for(String str : citem.values.keySet())
+        for(Command command : citem.values)
         {
-            if(str.equals("secondaryeffect") || str.equals("secondaryeffectalways"))
+            if(command.command.equals("#secondaryeffect") || command.command.equals("#secondaryeffectalways"))
             {
-                String customItemSecondaryEffect = citem.values.get(str);
-                boolean isNumeric = customItemSecondaryEffect.chars().allMatch( Character::isDigit );
-                if (!isNumeric)
+                Arg customItemSecondaryEffect = command.args.get(0);
+                if (!customItemSecondaryEffect.isNumeric())
                 {
-                    String id;
-                    id = getCustomItemId(customItemSecondaryEffect);
-                    citem.values.put(str, id);
+                    String id = getCustomItemId(customItemSecondaryEffect.get());
+                    command.args.set(0, new Arg(id));
                 }
             }
         }

@@ -1,11 +1,11 @@
 package nationGen.restrictions;
 
-import java.util.List;
-import java.util.ArrayList;
-
 import nationGen.NationGenAssets;
 import nationGen.entities.Race;
 import nationGen.nation.Nation;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class PrimaryRaceRestriction extends TwoListRestriction<Race>  {
 	public List<String> possibleRaceNames = new ArrayList<>();
@@ -19,7 +19,7 @@ public class PrimaryRaceRestriction extends TwoListRestriction<Race>  {
 		
 		for(Race r : assets.races)
 		{
-            if (!r.tags.contains("secondary")) 
+            if (!r.tags.containsName("secondary"))
             {
                 rmodel.addElement(r);
             }

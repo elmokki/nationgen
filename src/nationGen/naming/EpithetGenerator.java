@@ -1,14 +1,14 @@
 package nationGen.naming;
 
+import com.elmokki.Generic;
+import nationGen.NationGenAssets;
+import nationGen.chances.EntityChances;
+import nationGen.misc.ChanceIncHandler;
+import nationGen.nation.Nation;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
-import com.elmokki.Generic;
-
-import nationGen.NationGenAssets;
-import nationGen.misc.ChanceIncHandler;
-import nationGen.nation.Nation;
 
 public class EpithetGenerator {
 	private NationGenAssets assets;
@@ -33,9 +33,9 @@ public class EpithetGenerator {
 		
 		if(r > 0.55 && !MageDescriber.getCommonNoun(n).equals("")) // Second condition is relatively rare
 		{
-			NamePart part = NamePart.getRandom(random, mageepithetparts);
+			NamePart part = EntityChances.baseChances(mageepithetparts).getRandom(random);
 			
-			if(random.nextDouble() < 0.5 && MageDescriber.getCommonNoun(n).toString().split(" ").length < 2)
+			if(random.nextDouble() < 0.5 && MageDescriber.getCommonNoun(n).split(" ").length < 2)
 			{
 				epithet = MageDescriber.getCommonNoun(n) + " " + part.name;
 			}
@@ -44,7 +44,7 @@ public class EpithetGenerator {
 		}
 		else if(r > 0.3 && !MageDescriber.getCommonName(n).toString().equals("Mage"))
 		{
-			NamePart part = NamePart.getRandom(random, mageepithetparts);
+			NamePart part = EntityChances.baseChances(mageepithetparts).getRandom(random);
 			Name common = MageDescriber.getCommonName(n);
 			common.setType(Generic.plural(common.type.toString()));
 			

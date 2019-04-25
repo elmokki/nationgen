@@ -9,8 +9,8 @@
 #theme "occidental"
 #theme "oriental"
 #basechance 1
-#chanceinc theme austral *0.1
-#chanceinc theme abysian *0.1
+#chanceinc racetheme austral *0.1
+#chanceinc racetheme abysian *0.1
 #slow_militia
 #enditem
 
@@ -21,7 +21,7 @@
 #recolormask /graphics/hoburg/basehoburg_clockwork_medium_recolormask.png
 #theme "austral"
 #basechance 1
-#chanceinc theme not austral *0.1
+#chanceinc racetheme not austral *0.1
 #slow_militia
 #enditem
 
@@ -31,7 +31,7 @@
 #sprite /graphics/hoburg/basehoburg_clockwork_medium_hoburgbred.png
 #recolormask /graphics/hoburg/basehoburg_clockwork_medium_recolormask.png
 #theme "abysian"
-#chanceinc theme not abysian *0.1
+#chanceinc racetheme not abysian *0.1
 #basechance 1
 #define "#gcost +3"
 #define "#rpcost +3000"

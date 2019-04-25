@@ -1,14 +1,11 @@
 package nationGen.misc;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-
+import com.elmokki.Generic;
 import nationGen.NationGen;
 import nationGen.entities.Entity;
 
-
-import com.elmokki.Generic;
+import java.util.LinkedHashMap;
+import java.util.List;
 
 public class ResourceStorage<E extends Entity> extends LinkedHashMap<String, List<E>>{
 	private static final long serialVersionUID = 1L;
@@ -48,10 +45,11 @@ public class ResourceStorage<E extends Entity> extends LinkedHashMap<String, Lis
 			
 			if(args.get(0).equals("#load"))
 			{
-			
-				List<E> items = new ArrayList<E>();
-				items.addAll(Entity.readFile(gen, args.get(2), type));
-				this.put(args.get(1), items);
+				if (args.get(1).equals("clear")) {
+					throw new IllegalStateException("File '" + file + "': Resource sets can't be named 'clear'!");
+				}
+				
+				this.put(args.get(1), Entity.readFile(gen, args.get(2), type));
 			}
 		}
 	}

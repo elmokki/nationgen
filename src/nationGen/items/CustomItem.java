@@ -1,32 +1,29 @@
 package nationGen.items;
 
 
-import java.io.PrintWriter;
+import nationGen.NationGen;
+import nationGen.entities.MagicItem;
+import nationGen.misc.Arg;
+import nationGen.misc.Args;
+import nationGen.misc.Command;
+
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
-
-import com.elmokki.Generic;
-
-
-
-import nationGen.NationGen;
-import nationGen.entities.Entity;
-import nationGen.entities.MagicItem;
-
+import java.util.Optional;
 
 
 public class CustomItem extends Item {
 
-	public LinkedHashMap<String, String> values = new LinkedHashMap<String, String>();
+	public List<Command> values = new ArrayList<>();
 	public Item olditem = null;
 	
 	public CustomItem getCopy()
 	{
 		CustomItem item = this.getCustomItemCopy();
 		item.olditem = this.olditem;
-		for(String str : values.keySet())
-			item.values.put(str, values.get(str));
+		for(Command command : values)
+			item.values.add(command.copy());
 		
 		return item;
 	}
@@ -35,39 +32,74 @@ public class CustomItem extends Item {
 	
 	public CustomItem(NationGen nationGen) {
 		super(nationGen);
-		this.values.put("rcost", "0");
-		this.values.put("def", "0");
+		this.values.add(new Command("#rcost", new Arg(0)));
+		this.values.add(new Command("#def", new Arg(0)));
 	}
 	
+	public Optional<Args> getValue(String commandName) {
+		return this.values.stream().filter(c -> c.command.equals(commandName)).findFirst().map(c -> c.args);
+	}
+	
+	public Optional<String> getStringValue(String commandName) {
+		return getValue(commandName).map(l -> l.get(0).get());
+	}
+	
+	public Optional<Integer> getIntValue(String commandName) {
+		return getValue(commandName).map(l -> l.get(0).getInt());
+	}
+	
+	public void setValue(String commandName) {
+		if (getValue(commandName).isEmpty()) {
+			this.values.add(new Command(commandName));
+		}
+	}
+	
+	public void setValue(String commandName, String value) {
+		Optional<Args> args = getValue(commandName);
+		if (args.isPresent()) {
+			args.get().set(0, new Arg(value));
+		} else {
+			this.values.add(Command.args(commandName, value));
+		}
+	}
+	
+	public void setValue(String commandName, int value) {
+		Optional<Args> args = getValue(commandName);
+		if (args.isPresent()) {
+			args.get().set(0, new Arg(value));
+		} else {
+			this.values.add(new Command(commandName, new Arg(value)));
+		}
+	}
+	
+	public void setValue(String commandName, String value1, String value2) {
+		Optional<Args> args = getValue(commandName);
+		if (args.isPresent()) {
+			args.get().set(0, new Arg(value1));
+			args.get().set(1, new Arg(value2));
+		} else {
+			this.values.add(Command.args(commandName, value1, value2));
+		}
+	}
 	
 	@Override
-	public <Entity> void handleOwnCommand(String str)
+	public void handleOwnCommand(Command str)
 	{
-		List<String> args = Generic.parseArgs(str);
-		if(args.get(0).equals("#command") && args.size() > 1)
-		{	
-			List<String> newargs = Generic.parseArgs(args.get(1), "'");
-			String comcommand = newargs.get(0);
-			String comarg = "";
-			for(int i = 1; i < newargs.size(); i++)
-				comarg = comarg + newargs.get(i) + " ";
-			
-			comarg = comarg.trim();
-			
-			if(comcommand.equals("#name"))
-				comarg = "\"" + comarg + "\"";
-
-			this.values.put(comcommand.substring(1), comarg);
+		try {
+			if (str.command.equals("#command")) {
+				this.values.add(str.args.get(0).getCommand());
+			} else {
+				super.handleOwnCommand(str);
+			}
+		} catch (IndexOutOfBoundsException e) {
+			throw new IllegalArgumentException("Wrong number of arguments for line: " + str, e);
 		}
-		else
-			super.handleOwnCommand(str);
-
 	}
 	
 	
 	public LinkedHashMap<String, String> getHashMap()
 	{
-		LinkedHashMap<String, String> map = new LinkedHashMap<String, String>();
+		LinkedHashMap<String, String> map = new LinkedHashMap<>();
 		map.put("id#", id + "");
 		map.put("#att", "1");
 		map.put("shots", "0");
@@ -78,129 +110,82 @@ public class CustomItem extends Item {
 		map.put("dmg", "0");
 		map.put("2h", "0");
 
-		for(String str : values.keySet())
+		for(Command command : values)
 		{
-			String arg = values.get(str);
-			if(arg == null)
-				continue;
+			String str = command.command;
+			String arg = command.args.isEmpty() ? "" : command.args.get(0).get();
 			
-
-			if(str.equals("blunt"))
-			{
-				str = "dt_blunt";
-				arg = "1";
+			switch (str) {
+				case "#blunt":
+					map.put("dt_blunt", "1");
+					break;
+				case "#pierce":
+					map.put("dt_pierce", "1");
+					break;
+				case "#slash":
+					map.put("dt_slash", "1");
+					break;
+				case "#ironarmor":
+					map.put("ferrous", "1");
+					break;
+				case "#secondaryeffectalways":
+					map.put("aeff#", command.args.get(0).get());
+					break;
+				case "#secondaryeffect":
+					map.put("eff#", command.args.get(0).get());
+					break;
+				case "#twohanded":
+					map.put("2h", "1");
+					break;
+				case "#charge":
+					map.put("charge", "1");
+					break;
+				case "#bonus":
+					map.put("bonus", "1");
+					break;
+				case "#dt_cap":
+					map.put("dt_cap", "1");
+					break;
+				case "#magic":
+					map.put("magic", "1");
+					break;
+				case "#ammo":
+					map.put("shots", command.args.get(0).get());
+					break;
+				case "#armorpiercing":
+					map.put("ap", "1");
+					break;
+				case "#armornegating":
+					map.put("an", "1");
+					break;
+				case "#range":
+					map.put("rng", command.args.get(0).get());
+					break;
+				case "#len":
+					map.put("lgt", command.args.get(0).get());
+					break;
+				case "#nratt":
+					map.put("#att", command.args.get(0).get());
+					break;
+				case "#rcost":
+					map.put("res", command.args.get(0).get());
+					break;
+				case "#name":
+					if (this.armor) {
+						map.put("armorname", command.args.get(0).get());
+					} else {
+						map.put("weapon_name", command.args.get(0).get());
+					}
+					break;
+				case "#flyspr":
+					map.put("flyspr", command.args.get(0).get());
+					map.put("animlength", command.args.get(1).get());
+					break;
+				default:
+					map.put(command.command.substring(1), command.args.isEmpty() ? "1" : command.args.get(0).get());
+					break;
 			}
-			if(str.equals("pierce"))
-			{
-				str = "dt_pierce";
-				arg = "1";
-			}
-			if(str.equals("slash"))
-			{
-				str = "dt_slash";
-				arg = "1";
-			}
-			if(str.equals("ironarmor"))
-			{
-				str = "ferrous";
-				arg = "1";
-			}
-			if(str.equals("secondaryeffectalways"))
-			{
-				str = "aeff#";
-			}
-			if(str.equals("secondaryeffect"))
-			{
-				str = "eff#";
-			}
-			
-			if(str.equals("twohanded"))
-			{
-				str = "2h";
-				arg = "1";
-			}
-			
-			if(str.equals("charge"))
-			{
-				arg = "Charge";
-			}
-			
-			if(str.equals("bonus"))
-			{
-				arg = "Bonus";
-			}
-		
-			if(str.equals("dt_cap"))
-			{
-				arg = "Max dmg 1";
-			}
-			
-			if(str.equals("magic"))
-			{
-				arg = "Magic";
-				
-			}
-			
-			if(str.equals("ammo"))
-			{
-				str = "shots";
-			}
-			
-			if(str.equals("armorpiercing"))
-			{
-				str = "ap";
-				arg = "ap";
-			}
-			
-			if(str.equals("armornegating"))
-			{
-				str = "an";
-				arg = "an";
-			}
-	
-			if(str.equals("bonus"))
-			{
-				arg = "Bonus";
-			}
-			
-			if(str.equals("range"))
-			{
-				str = "rng";
-			}
-			
-			if(str.equals("len"))
-			{
-				str = "lgt";
-			}
-			
-			if(str.equals("nratt"))
-			{
-				str = "#att";
-			}
-			
-			if(str.equals("rcost"))
-			{
-				str = "res";
-			}
-			
-			
-			if(str.equals("name") && this.armor)
-			{
-				str = "armorname";
-				arg = arg.replaceAll("\"", "");
-			}
-			else if(str.equals("name") && !this.armor)
-			{
-				str = "weapon_name";	
-				arg = arg.replaceAll("\"", "");
-			}
-			map.put(str, arg);
 		}
-		
-		if(map.get("2h") == null)
-			map.put("2h", "0");
-		
-		
 		
 		return map;
 	}
@@ -216,29 +201,19 @@ public class CustomItem extends Item {
 		else
 			lines.add("#newweapon " + id);
 		
-		for(String command : values.keySet())
+		for(Command command : this.values)
 		{
-			if(command.equals("name"))
-			{
-				lines.add("#name " + values.get("name"));
+			if(command.command.equals("#name")) {
+				lines.add(command.toModLine());
 			}
 		}
 		
 		
-		for(String command : values.keySet())
+		for(Command command : this.values)
 		{
-			String arg = "";
-			
-			if(command.equals("name"))
-				continue;
-			
-			if(values.get(command) != null)
-			{
-				arg = " " + values.get(command);
+			if(!command.command.equals("#name")) {
+				lines.add(command.toModLine());
 			}
-
-			
-			lines.add("#" + command + arg);
 		}
 		
 		lines.add("#end");

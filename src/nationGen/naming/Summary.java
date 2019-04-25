@@ -1,14 +1,17 @@
 package nationGen.naming;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import com.elmokki.Generic;
-
 import nationGen.entities.Race;
+import nationGen.magic.MagicPath;
+import nationGen.magic.MagicPathInts;
+import nationGen.misc.Arg;
 import nationGen.misc.Command;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 
@@ -67,7 +70,7 @@ public class Summary {
 			for(Unit u : list)
 			{
 
-				if(u.tags.contains("elite") && !elites.contains(u.name.type.toString()))
+				if(u.tags.containsName("elite") && !elites.contains(u.name.type.toString()))
 				{
 					elites.add(u.name.type.toString());
 				}
@@ -86,27 +89,19 @@ public class Summary {
 				lightcav += list.size();
 				for(Unit u : list)
 				{
-					if(u.tags.contains("elite") && !elites.contains("cavalry"))
+					if(u.tags.containsName("elite") && !elites.contains("cavalry"))
 					{
 						elites.add("cavalry");
 					}
 					
 					if(u.getSlot("mount") != null)
-						for(String tag : u.getSlot("mount").tags)
-						{
-							if(tag.startsWith("animal"))
-							{
-								String mounttype = tag.replaceAll("\"", "");
-								List<String> args = Generic.parseArgs(mounttype, "'");
-								args.remove(0);
-								String str = "";
-								for(String s : args)
-									str = str + s + " ";
-								str = str.trim();
-								if(!lightmounts.contains(str))
-									lightmounts.add(str);
-							}
+					{
+						for (Arg value : u.getSlot("mount").tags.getAllValues("animal")) {
+							String mounttype = value.get();
+							if (!lightmounts.contains(mounttype))
+								lightmounts.add(mounttype);
 						}
+					}
 				}
 			}
 			else
@@ -114,22 +109,13 @@ public class Summary {
 				heavycav += list.size();
 				for(Unit u : list)
 				{
-					for(String tag : u.getSlot("mount").tags)
+					if(u.getSlot("mount") != null)
 					{
-						if(u.getSlot("mount") != null)
-							if(tag.startsWith("animal"))
-							{
-								String mounttype = tag.replaceAll("\"", "");
-								List<String> args = Generic.parseArgs(mounttype, "'");
-								args.remove(0);
-								String str = "";
-								for(String s : args)
-									str = str + s + " ";
-								str = str.trim();
-								if(!heavymounts.contains(str))
-									heavymounts.add(str);
-							}
-
+						for (Arg value : u.getSlot("mount").tags.getAllValues("animal")) {
+							String mounttype = value.get();
+							if (!heavymounts.contains(mounttype))
+								heavymounts.add(mounttype);
+						}
 					}
 				}
 			}
@@ -145,7 +131,7 @@ public class Summary {
 			
 			for(Unit u : list)
 			{
-				if(u.tags.contains("elitefied") && !elites.contains("chariot"))
+				if(u.tags.containsName("elitefied") && !elites.contains("chariot"))
 				{
 					elites.add("chariot");
 				}
@@ -179,22 +165,12 @@ public class Summary {
 				if((sacredunit.pose.roles.contains("mounted") || sacredunit.pose.roles.contains("sacred mounted")) && sacredunit.getSlot("mount") != null)
 				{
 
-					for(String tag : sacredunit.getSlot("mount").tags)
+					String mount = sacredunit.getSlot("mount").tags.getString("animal").orElseThrow();
+					if(!"horse".equals(mount))
 					{
-						if(tag.startsWith("animal"))
-							if(!tag.split(" ")[1].equals("horse"))
-							{
-								String mounttype = tag.replaceAll("\"", "");
-								List<String> args = Generic.parseArgs(mounttype, "'");
-								args.remove(0);
-								String str = "";
-								for(String s : args)
-									str = str + s + " ";
-								str = str.trim();
-								sacred = sacred + str;
-							}
-						
+						sacred = sacred + mount;
 					}
+					
 					sacred = sacred + " cavalry";
 				}
 				else if(sacredunit.pose.roles.contains("infantry") || sacredunit.pose.roles.contains("sacred infantry"))
@@ -405,7 +381,7 @@ public class Summary {
 		
 		List<Race> auxillaries = new ArrayList<Race>();
 		for(Unit u : n.generateTroopList())
-			if(u.tags.contains("auxillary") && !auxillaries.contains(u.race))
+			if(u.tags.containsName("auxillary") && !auxillaries.contains(u.race))
 				auxillaries.add(u.race);
 		
 		for(Race r : auxillaries)
@@ -418,15 +394,11 @@ public class Summary {
 		{
 			if(c.command.equals("#idealcold"))
 			{
-				String arg = c.args.get(0);
-				if(arg.startsWith("+"))
-					arg = arg.substring(1);
-				
-				int cold = Integer.parseInt(arg);
+				int cold = c.args.get(0).getInt();
 				if(cold < 0)
-					race = race + ", prefers Heat scale +" + Math.abs(cold);
+					race += ", prefers Heat scale +" + Math.abs(cold);
 				else if(cold > 0)
-					race = race + ", prefers Cold scale +" + Math.abs(cold);
+					race += ", prefers Cold scale +" + Math.abs(cold);
 			}
 		}
 		
@@ -435,31 +407,31 @@ public class Summary {
 	
 	private void updateMagic()
 	{
-		double[] total = new double[9];
+		MagicPathInts total = new MagicPathInts();
 		for(Unit u : n.generateComList())
 		{
 		
-			int[] rpaths = u.getMagicPicks(true);
-			int[] paths = u.getMagicPicks(false);
+			MagicPathInts rpaths = u.getMagicPicks(true);
+			MagicPathInts paths = u.getMagicPicks(false);
 			
-			for(int i = 0; i < 9; i++) // Get rid of single randoms that don't reinforce non-random paths
-				if(paths[i] != 0 || rpaths[i] > 1) // If a non-random path is not zero or randoms aren't linking
-					paths[i] = rpaths[i]; // use randoms and non-randoms on that path
+			for(MagicPath path : MagicPath.values()) // Get rid of single randoms that don't reinforce non-random paths
+				if(paths.get(path) != 0 || rpaths.get(path) > 1) // If a non-random path is not zero or randoms aren't linking
+					paths.set(path, rpaths.get(path)); // use randoms and non-randoms on that path
 				
-			for(int i = 0; i < 9; i++)
-				if(total[i] < paths[i])
-					total[i] = paths[i];
+			for(MagicPath path : MagicPath.values())
+				if(total.get(path) < paths.get(path))
+					total.set(path, paths.get(path));
 		}
 		
 		// Divide to weak and strong
 		List<String> strong = new ArrayList<String>();
 		List<String> weak = new ArrayList<String>();
-		for(int i = 0; i < 8; i++)
+		for(MagicPath path : MagicPath.NON_HOLY)
 		{
-			if(total[i] > 2) // Strong if 3+ available
-				strong.add(Generic.integerToPath(i));
-			else if(total[i] > 0) // Weak if 1-2 is available
-				weak.add(Generic.integerToPath(i));
+			if(total.get(path) > 2) // Strong if 3+ available
+				strong.add(path.name);
+			else if(total.get(path) > 0) // Weak if 1-2 is available
+				weak.add(path.name);
 		}
 		
 		magic = "Magic: ";
@@ -502,11 +474,8 @@ public class Summary {
 		boolean secondarydrainimmune = false; // #drainimmune (on units);
 		for(Unit u : n.generateComList("mage"))
 		{
-			boolean primary = false;
+			boolean primary = u.tags.containsName("schoolmage");
 			boolean drainimmune = false;
-			for(String tag : u.tags)
-				if(tag.startsWith("schoolmage"))
-					primary = true;
 			
 			for(Command c : u.getCommands())
 				if(c.command.equals("#drainimmune"))
@@ -557,13 +526,13 @@ public class Summary {
 			if(c.command.equals("#manikinreanim"))
 				manikin = true;
 			if(c.command.equals("#golemhp"))
-				golemcult = Integer.parseInt(c.args.get(0));
+				golemcult = c.args.get(0).getInt();
 			if(c.command.equals("#templecost"))
-				templecost = Integer.parseInt(c.args.get(0));
+				templecost = c.args.get(0).getInt();
 			if(c.command.equals("#labcost"))
-				labcost = Integer.parseInt(c.args.get(0));
+				labcost = c.args.get(0).getInt();
 			if(c.command.equals("#fortcost"))
-				fortcost = Integer.parseInt(c.args.get(0));
+				fortcost = c.args.get(0).getInt();
 		}
 		
 		// Lab cost
@@ -578,11 +547,11 @@ public class Summary {
 		// Priests;
 		
 		priest = "Priests: ";
-		if(total[8] == 1)
+		if(total.get(MagicPath.HOLY) == 1)
 			priest = priest + "Weak";
-		else if(total[8] == 2)
+		else if(total.get(MagicPath.HOLY) == 2)
 			priest = priest + "Moderate";
-		else if(total[8] >= 3)
+		else if(total.get(MagicPath.HOLY) >= 3)
 			priest = priest + "Strong";
 		
 

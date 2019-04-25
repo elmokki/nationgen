@@ -1,10 +1,6 @@
 package nationGen.diagnostics;
 
-import java.util.*;
-import java.util.stream.Collectors;
-
 import com.elmokki.Dom3DB;
-import com.elmokki.Generic;
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
 import nationGen.entities.Pose;
@@ -12,6 +8,12 @@ import nationGen.items.Item;
 import nationGen.misc.FileUtil;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 
 /**
@@ -35,7 +37,7 @@ public class DataIntegrityTest {
 		
 		List<String> notFound = assets.spells.values().stream()
 				.flatMap(List::stream)
-				.flatMap(f -> Generic.getTagValues(f.tags, "spell").stream())
+				.flatMap(f -> f.tags.getAllStrings("spell").stream())
 				.filter(spell -> !names.contains(spell))
 				.collect(Collectors.toList());
 		

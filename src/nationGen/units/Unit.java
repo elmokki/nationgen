@@ -1,15 +1,19 @@
 package nationGen.units;
 
+
 import com.elmokki.Dom3DB;
 import com.elmokki.Generic;
 import nationGen.NationGen;
-import nationGen.entities.*;
+import nationGen.entities.Filter;
+import nationGen.entities.MagicFilter;
+import nationGen.entities.Pose;
+import nationGen.entities.Race;
 import nationGen.items.Item;
 import nationGen.items.ItemDependency;
 import nationGen.magic.MageGenerator;
-import nationGen.misc.ChanceIncHandler;
-import nationGen.misc.Command;
-import nationGen.misc.FileUtil;
+import nationGen.magic.MagicPath;
+import nationGen.magic.MagicPathInts;
+import nationGen.misc.*;
 import nationGen.naming.Name;
 import nationGen.nation.Nation;
 
@@ -34,7 +38,7 @@ public class Unit {
 	public List<Command> commands = new ArrayList<>();
 	public NationGen nationGen;
 	public boolean caponly = false;
-	public List<String> tags = new ArrayList<>();
+	public Tags tags = new Tags();
 	public List<Filter> appliedFilters = new ArrayList<>();
 	public boolean polished = false;
 	public boolean invariantMonster = false;  // Is the unit a monster that must be used as-is instead of copying? (E.g., hydras)
@@ -91,7 +95,7 @@ public class Unit {
 	 * Gets unit's magic picks as int[8] without randoms
 	 * @return
 	 */
-	public int[] getMagicPicks()
+	public MagicPathInts getMagicPicks()
 	{
 		return getMagicPicks(false);
 	}
@@ -101,10 +105,10 @@ public class Unit {
 	 * @param randoms if true, randoms at 25% chance are included
 	 * @return
 	 */
-	public int[] getMagicPicks(boolean randoms)
+	public MagicPathInts getMagicPicks(boolean randoms)
 	{
 
-		int[] picks = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+		MagicPathInts picks = new MagicPathInts();
 		
 		double prob = 1;
 		if(randoms)
@@ -115,9 +119,10 @@ public class Unit {
 			if(f.name.equals("MAGICPICKS") || f.name.equals("PRIESTPICKS"))
 			{
 				MagicFilter m = (MagicFilter)f;
-				for(int i = 0; i < picks.length; i++)
+				MagicPathInts withRandoms = m.pattern.getPathsWithRandoms(m.prio, prob);
+				for(MagicPath path : MagicPath.values())
 				{
-					picks[i] += m.pattern.getPathsWithRandoms(m.prio, prob)[i];
+					picks.add(path, withRandoms.get(path));
 				}
 			}
 		}
@@ -129,7 +134,7 @@ public class Unit {
 	
 	public int getHolyPicks()
 	{
-		return getMagicPicks()[8];
+		return getMagicPicks().get(MagicPath.HOLY);
 	}
 	
 	
@@ -137,7 +142,7 @@ public class Unit {
 	{
 		double n = 0;	
 		for(Filter f : appliedFilters)
-			if(f.name.equals("MAGICPICKS") && !f.tags.contains("holy"))
+			if(f.name.equals("MAGICPICKS") && !f.tags.containsName("holy"))
 			{
 				MagicFilter m = (MagicFilter)f;
 				n += m.pattern.getPicks(prob);
@@ -150,7 +155,7 @@ public class Unit {
 	{
 		double n = 0;	
 		for(Filter f : appliedFilters)
-			if(f.name.equals("MAGICPICKS") && !f.tags.contains("holy"))
+			if(f.name.equals("MAGICPICKS") && !f.tags.containsName("holy"))
 			{
 				MagicFilter m = (MagicFilter)f;
 				n += m.pattern.getRandoms(prob);
@@ -177,7 +182,7 @@ public class Unit {
 	{
 		double n = 0;	
 		for(Filter f : appliedFilters)
-			if(f.name.equals("MAGICPICKS") && !f.tags.contains("holy"))
+			if(f.name.equals("MAGICPICKS") && !f.tags.containsName("holy"))
 			{
 				MagicFilter m = (MagicFilter)f;
 				n += m.pattern.getHighestReachable(prob);
@@ -190,7 +195,7 @@ public class Unit {
 	{
 		double n = 0;	
 		for(Filter f : appliedFilters)
-			if(f.name.equals("MAGICPICKS") && !f.tags.contains("holy"))
+			if(f.name.equals("MAGICPICKS") && !f.tags.containsName("holy"))
 			{
 				MagicFilter m = (MagicFilter)f;
 				n += m.pattern.getPathsAtleastAt(1, prob);
@@ -200,17 +205,15 @@ public class Unit {
 	}
 	
 	
-	private int handleModifier(String mod, int value)
+	private int handleModifier(Arg mod, int value)
 	{
-		if(mod.startsWith("+") || mod.startsWith("-"))
+		Optional<Operator> operator = mod.getOperator();
+		if (operator.isPresent() && (operator.get() == Operator.ADD || operator.get() == Operator.SUBTRACT))
 		{
-			if(mod.startsWith("+"))
-				mod = mod.substring(1);
-			
-			value += Integer.parseInt(mod);
+			value += mod.getInt();
 		}
 		else
-			value = Integer.parseInt(mod);
+			value = mod.getInt();
 		
 		return value;
 	}
@@ -267,15 +270,15 @@ public class Unit {
 		int slots = -1;
 		for(Command c : this.getCommands())
 			if(c.command.equals("#itemslots"))
-				slots = Integer.parseInt(c.args.get(0));
+				slots = c.args.get(0).getInt();
 		
 		if(slots == -1)
 		{
 			slots = 0;
 
-			ArrayList<String> unitTags =  (ArrayList<String>) Generic.getAllUnitTags(this);
+			Tags unitTags = Generic.getAllUnitTags(this);
 			
-			ArrayList<String> itemTags =  new ArrayList<String>();
+			Tags itemTags = new Tags();
 			if(this.slotmap.get("basesprite") != null)
 				itemTags.addAll(this.slotmap.get("basesprite").tags);
 
@@ -292,34 +295,50 @@ public class Unit {
 			int hand = 2;
 			int misc = 2;
 			
-			List<String> unitArgs = Generic.getTagValues(unitTags, "baseitemslot");
-			for(String arg : unitArgs)
+			for(Args args : unitTags.getAllArgs("baseitemslot"))
 			{
-				if(arg.split(" ")[0].equals("head"))
-					head = handleModifier(arg.split(" ")[1], head);
-				else if(arg.split(" ")[0].equals("misc"))
-					misc = handleModifier(arg.split(" ")[1], misc);
-				else if(arg.split(" ")[0].equals("body"))
-					body = handleModifier(arg.split(" ")[1], body);
-				else if(arg.split(" ")[0].equals("hand"))
-					hand = handleModifier(arg.split(" ")[1], hand);
-				else if(arg.split(" ")[0].equals("feet"))
-					feet = handleModifier(arg.split(" ")[1], feet);			
+				String slot = args.get(0).get();
+				Arg modifier = args.get(1);
+				switch (slot) {
+					case "head":
+						head = handleModifier(modifier, head);
+						break;
+					case "misc":
+						misc = handleModifier(modifier, misc);
+						break;
+					case "body":
+						body = handleModifier(modifier, body);
+						break;
+					case "hand":
+						hand = handleModifier(modifier, hand);
+						break;
+					case "feet":
+						feet = handleModifier(modifier, feet);
+						break;
+				}
 			}
 			
-			List<String> args = Generic.getTagValues(tags, "itemslot");
-			for(String arg : args)
+			for(Args args : tags.getAllArgs("itemslot"))
 			{
-				if(arg.split(" ")[0].equals("head"))
-					head += handleModifier(arg.split(" ")[1], head);
-				else if(arg.split(" ")[0].equals("misc"))
-					misc += handleModifier(arg.split(" ")[1], misc);
-				else if(arg.split(" ")[0].equals("body"))
-					body += handleModifier(arg.split(" ")[1], body);
-				else if(arg.split(" ")[0].equals("hand"))
-					hand += handleModifier(arg.split(" ")[1], hand);
-				else if(arg.split(" ")[0].equals("feet"))
-					feet += handleModifier(arg.split(" ")[1], feet);			
+				String slot = args.get(0).get();
+				Arg modifier = args.get(1);
+				switch (slot) {
+					case "head":
+						head += handleModifier(modifier, head);
+						break;
+					case "misc":
+						misc += handleModifier(modifier, misc);
+						break;
+					case "body":
+						body += handleModifier(modifier, body);
+						break;
+					case "hand":
+						hand += handleModifier(modifier, hand);
+						break;
+					case "feet":
+						feet += handleModifier(modifier, feet);
+						break;
+				}
 			}
 			
 			head = Math.min(head, 2);
@@ -362,11 +381,7 @@ public class Unit {
 		if(getSlot("weapon") == null)
 			return false;
 		
-		Dom3DB weapondb = nationGen.weapondb;
-		if(weapondb.GetValue(getSlot("weapon").id, "rng", "0").equals("0"))
-			return true;
-		
-		return false;
+		return nationGen.weapondb.GetValue(getSlot("weapon").id, "rng", "0").equals("0");
 	}
 	
 	
@@ -472,7 +487,7 @@ public class Unit {
 					
 					
 					possibles = ChanceIncHandler.getFiltersWithType(target, pose.getItems(slot));
-					item = Entity.getRandom(r, chandler.handleChanceIncs(this, possibles));
+					item = chandler.handleChanceIncs(this, possibles).getRandom(r);
 					
 					if(item != null)
 					{
@@ -550,7 +565,7 @@ public class Unit {
 		{
 			if(c.command.equals("#gcost"))
 			{
-				cost += Integer.parseInt(c.args.get(0));
+				cost += c.args.get(0).getInt();
 			}
 			if(c.command.equals("#holy"))
 				holy = 1.3;
@@ -674,11 +689,11 @@ public class Unit {
 
 		for(Command c : commands)
 			if(c.command.equals("#rcost"))
-				extrares = extrares + Integer.parseInt(c.args.get(0));
+				extrares += c.args.get(0).getInt();
 			else if(c.command.equals("#size"))
-				size = Integer.parseInt(c.args.get(0));
+				size = c.args.get(0).getInt();
 			else if(c.command.equals("#ressize"))
-				ressize = Integer.parseInt(c.args.get(0));
+				ressize = c.args.get(0).getInt();
 		
 		
 		for(Item i : this.slotmap.values())
@@ -686,11 +701,7 @@ public class Unit {
 			if(i == null || i.id.equals("-1"))
 				continue;
 			
-			Dom3DB db = null;
-			if(i.armor)
-				db = armordb;
-			else
-				db = weapondb;
+			Dom3DB db = i.armor ? armordb : weapondb;
 			
 			res = res + db.GetInteger(i.id, "res");
 
@@ -712,9 +723,7 @@ public class Unit {
 	public List<Command> getCommands()
 	{
 
-		List<Command> tempCommands = new ArrayList<Command>();
-		List<Command> allCommands = new ArrayList<Command>();
-		List<Command> multiCommands = new ArrayList<Command>();
+		List<Command> allCommands = new ArrayList<>();
 		
 		if(polished)
 			return this.commands;
@@ -733,11 +742,8 @@ public class Unit {
 
 		
 			// Item commands
-			Iterator<Item> itr = slotmap.values().iterator();
-			while(itr.hasNext())
+			for (Item item : slotmap.values())
 			{
-				Item item = itr.next();
-				
 				if(item != null)
 				{
 					allCommands.addAll(item.commands);
@@ -755,24 +761,12 @@ public class Unit {
 			
 					
 					Command tc = c;
-					int tier = 2;
+					final int tier = tags.getInt("schoolmage").orElse(2);
 					
-					if(Generic.containsTag(tags, "schoolmage"))
-						tier = Integer.parseInt(Generic.getTagValue(this.tags, "schoolmage"));
-					
-					if(c.args.size() > 0 && c.args.get(0).contains("%value%"))
+					if(c.args.size() > 0 && c.args.get(0).get().contains("%value%"))
 					{
-						int multi = 10;
-						int base = -5;
-						try
-						{
-							multi = Integer.parseInt(Generic.getTagValue(f.tags, "valuemulti"));
-							base = Integer.parseInt(Generic.getTagValue(f.tags, "basevalue"));
-						}
-						catch(Exception e)
-						{
-							
-						}
+						int multi = f.tags.getInt("valuemulti").orElse(10);
+						int base = f.tags.getInt("basevalue").orElse(-5);
 						
 						int result = base + multi * tier;
 						
@@ -783,7 +777,7 @@ public class Unit {
 						}
 						
 						if(result != 0)
-							tc = new Command(c.command, resstring);
+							tc = Command.args(c.command, resstring);
 						
 					}
 					
@@ -808,29 +802,28 @@ public class Unit {
 			
 
 			// Adjustment commands
-			List<Command> adjustmentcommands = new ArrayList<Command>();
-			for(String str : Generic.getTagValues(Generic.getAllUnitTags(this), "adjustmentcommand"))
+			List<Command> adjustmentcommands = new ArrayList<>();
+			for(Arg str : Generic.getAllUnitTags(this).getAllValues("adjustmentcommand"))
 			{
-				adjustmentcommands.add(Command.parseCommand(str));
+				adjustmentcommands.add(str.getCommand());
 			}
 			
 			
 			// Special case: #fixedrescost
-			if(Generic.getTagValues(Generic.getAllUnitTags(this), "fixedrescost").size() > 0)
-			{
+			Generic.getAllUnitTags(this).getValue("fixedrescost").ifPresent(arg -> {
+			
 				// If we have many, we use the first one. The order is Race, pose, filter, theme.
 				// Assumedly these exist mostly in one of these anyway
-				int cost = Integer.parseInt(Generic.getTagValues(Generic.getAllUnitTags(this), "fixedrescost").get(0));
+				int cost = arg.getInt();
 				int currentcost = getResCost(true, allCommands);
 				
 				cost -= currentcost;
 				
 				if(cost > 0)
-					adjustmentcommands.add(new Command("#rcost", "+" + cost));
+					adjustmentcommands.add(Command.args("#rcost", "+" + cost));
 				else if(cost < 0)
-					adjustmentcommands.add(new Command("#rcost", "" + cost));
-
-			}
+					adjustmentcommands.add(Command.args("#rcost", "" + cost));
+			});
 			
 			
 			
@@ -845,9 +838,11 @@ public class Unit {
 
 
 		// Now handle them!
+		List<Command> multiCommands = new ArrayList<>();
+		List<Command> tempCommands = new ArrayList<>();
 		
 		for(Command c : allCommands)
-			if(c.args.size() > 0 && c.args.get(0).startsWith("*") && Generic.isNumeric(c.args.get(0).substring(1)))
+			if(c.args.size() > 0 && c.args.get(0).get().startsWith("*") && c.args.get(0).isNumeric())
 				multiCommands.add(c);
 			else
 				handleCommand(tempCommands, c);
@@ -867,13 +862,13 @@ public class Unit {
 	}
 
 	
-	private boolean handleLowEncCommandPolish(List<String> tags)
+	private boolean handleLowEncCommandPolish(Tags tags)
 	{
 
-		if(!Generic.containsTag(tags, "lowenctreshold"))
+		if(!tags.containsName("lowenctreshold"))
 			return false;
 		
-		int treshold = Integer.parseInt(Generic.getTagValue(tags, "lowenctreshold"));
+		int treshold = tags.getValue("lowenctreshold").orElseThrow().getInt();
 
 		int enc = 0;
 		if(getSlot("armor") != null)
@@ -883,9 +878,10 @@ public class Unit {
 		if(getSlot("helmet") != null)
 			enc += nationGen.armordb.GetInteger(getSlot("helmet").id, "enc");
 		
-		if(enc <= treshold && Generic.containsTag(tags, "lowenccommand"))
+		if(enc <= treshold && tags.containsName("lowenccommand"))
 		{
-			String command = Command.parseCommand(Generic.getTagValue(tags, "lowenccommand")).command;
+			Command fullCommand = tags.getCommand("lowenccommand").orElseThrow();
+			String command = fullCommand.command;
 			for(Command c : this.getCommands())
 			{
 				if(command.equals(c.command))
@@ -894,7 +890,7 @@ public class Unit {
 		
 				}
 			}
-			this.commands.add(Command.parseCommand(Generic.getTagValue(tags, "lowenccommand")));
+			this.commands.add(fullCommand);
 			return true;
 		}
 		
@@ -925,7 +921,7 @@ public class Unit {
 		{
 			
 			if(c.command.equals("#copystats"))
-				stats = Integer.parseInt(c.args.get(0));
+				stats = c.args.get(0).getInt();
 		}
 		
 	
@@ -950,7 +946,7 @@ public class Unit {
 		if(this.polished)
 			return;
 		
-		Unit u = this;
+		final Unit u = this;
 	
 		handleLowEncCommandPolish(u.pose.tags);
 		handleLowEncCommandPolish(u.race.tags);
@@ -976,17 +972,12 @@ public class Unit {
 		
 		
 		// Slot removal
-		List<String> removeslots = new ArrayList<String>();
+		List<String> removeslots = new ArrayList<>();
 		for(String slot : this.slotmap.keySet())
 		{
-			if(getSlot(slot) != null)
-			{
-				for(String tag : getSlot(slot).tags)
-					if(tag.startsWith("noslot "))
-					{
-						removeslots.add(tag.split(" ")[1]);
-					}
-				}
+			if(getSlot(slot) != null) {
+				removeslots.addAll(getSlot(slot).tags.getAllStrings("noslot"));
+			}
 		}
 		for(String slot : removeslots)
 			this.setSlot(slot, null);
@@ -995,14 +986,12 @@ public class Unit {
 		// +2hp to mounted
 		if(this.getSlot("mount") != null)
 		{
-			this.commands.add(new Command("#hp", "+2"));
-			this.tags.add("itemslot feet -1");
+			this.commands.add(Command.args("#hp", "+2"));
+			this.tags.addArgs("itemslot", "feet", -1);
 		}
 		
 		// Handle custom equipment
-		List<String> slots = new ArrayList<String>();
-		slots.addAll(this.slotmap.keySet());
-		for(String str : slots)
+		for(String str : List.copyOf(this.slotmap.keySet())) // copy to avoid concurrent modification (sigh)
 		{
 			
 			Item i = this.slotmap.get(str);
@@ -1012,7 +1001,7 @@ public class Unit {
 			if(!Generic.isNumeric(i.id))
 			{
 				Item ti = i.getCopy();
-				ti.tags.add("OLDID " + i.id);
+				ti.tags.add("OLDID", i.id);
 				ti.id = nationGen.GetCustomItemsHandler().getCustomItemId(i.id);
 				this.setSlot(str, ti);
 			}
@@ -1029,7 +1018,7 @@ public class Unit {
 			
 			len = len + this.nationGen.weapondb.GetInteger(this.getSlot("offhand").id, "lgt");
 			
-			this.commands.add(new Command("#ambidextrous", "+" + len));
+			this.commands.add(Command.args("#ambidextrous", "+" + len));
 
 		}
 		
@@ -1039,13 +1028,17 @@ public class Unit {
 
 		
 		// Fist for things without proper weapons
-		if(!Generic.containsTag(pose.tags, "no_free_fist") && !copystats && getClass() != ShapeChangeUnit.class)
-			if(this.getSlot("weapon") == null || this.getSlot("weapon").id.equals("-1") || nationGen.weapondb.GetInteger(getSlot("weapon").id, "rng") != 0)
+		if(!pose.tags.containsName("no_free_fist") && !copystats && getClass() != ShapeChangeUnit.class)
+			if(this.getSlot("weapon") == null
+					|| this.getSlot("weapon").id.equals("-1")
+					|| nationGen.weapondb.GetInteger(getSlot("weapon").id, "rng") != 0)
 			{
-				if(this.getSlot("bonusweapon") == null || this.getSlot("bonusweapon").id.equals("-1") || nationGen.weapondb.GetInteger(getSlot("bonusweapon").id, "rng") != 0)
+				if(this.getSlot("bonusweapon") == null
+						|| this.getSlot("bonusweapon").id.equals("-1")
+						|| nationGen.weapondb.GetInteger(getSlot("bonusweapon").id, "rng") != 0)
 				{
 
-					this.commands.add(new Command("#weapon", "92 --- Fist given to units that could otherwise only kick."));
+					this.commands.add(new Command("#weapon", Args.of(new Arg(92)), "Fist given to units that could otherwise only kick."));
 		
 				}
 			}
@@ -1056,62 +1049,43 @@ public class Unit {
 
 
 		// #price_per_command
-		if(Generic.containsTag(Generic.getAllUnitTags(this), "price_per_command"))
+		for(Args args : Generic.getAllUnitTags(this).getAllArgs("price_per_command"))
 		{
-			List<String> pptags = Generic.getTags(Generic.getAllUnitTags(u), "price_per_command");
-
-			for(String tag : pptags)
-			{
-				List<String> args = Generic.parseArgs(tag);
-				int value = u.getCommandValue(args.get(1), 0);
-				double cost = Double.parseDouble(args.get(2));
-				int threshold = 0;
-				if(args.size() > 3)
-					threshold = Integer.parseInt(args.get(3));
-				
+			int value = u.getCommandValue(args.get(0).get(), 0);
+			double cost = args.get(1).getDouble();
+			int threshold = 0;
+			if(args.size() > 3)
+				threshold = args.get(2).getInt();
 			
+			
+			if(value > threshold)
+			{
+				value -= threshold;
 				
-				if(value > threshold)
-				{
-					value -= threshold;
-					
-					int total = (int)Math.round((double)value * cost);
-					
-					if(total > 0)
-						commands.add(new Command("#gcost", "+" + total));
-					else
-						commands.add(new Command("#gcost", "" + total));
-					
-
-				}
+				int total = (int)Math.round((double)value * cost);
 				
+				if(total > 0)
+					commands.add(Command.args("#gcost", "+" + total));
+				else
+					commands.add(Command.args("#gcost", "" + total));
 			}
 		}
 		
 		// #price_if_command
-		if(Generic.containsTag(Generic.getAllUnitTags(this), "price_if_command"))
+		for (Args args : Generic.getAllUnitTags(this).getAllArgs("price_if_command"))
 		{
-			List<String> pptags = Generic.getTags(Generic.getAllUnitTags(u), "price_if_command");
-
-			for(String tag : pptags)
+			
+			int value = u.getCommandValue(args.get(args.size() - 3).get(), 0);
+			int target = args.get(args.size() - 2).getInt();
+			String cost = args.get(args.size() - 1).get();
+			
+			boolean at = args.contains(new Arg("at"));
+			boolean below = args.contains(new Arg("below"));
+			boolean above = args.contains(new Arg("above"));
+			
+			if((value > target && above) || (value == target && at)  || (value < target) && below)
 			{
-				List<String> args = Generic.parseArgs(tag);
-				
-				
-				int value = u.getCommandValue(args.get(args.size() - 3), 0);
-				int target = Integer.parseInt(args.get(args.size() - 2));
-				String cost = args.get(args.size() - 1);
-				
-				
-				boolean at = args.contains("at");
-				boolean below = args.contains("below");
-				boolean above = args.contains("above");
-				
-				if((value > target && above) || (value == target && at)  || (value < target) && below)
-				{
-					commands.add(new Command("#gcost", cost));
-				}
-				
+				commands.add(Command.args("#gcost", cost));
 			}
 		}
 		
@@ -1127,23 +1101,23 @@ public class Unit {
 			// Goldcost for holy units
 			if(c.command.equals("#holy"))
 			{
-				this.handleCommand(commands, new Command("#gcost", "*1.3"));
+				this.handleCommand(commands, Command.args("#gcost", "*1.3"));
 			}
 			
 			// Discount for slowrec units
 			if(c.command.equals("#slowrec"))
 			{
-				this.handleCommand(commands, new Command("#gcost", "*0.9"));
+				this.handleCommand(commands, Command.args("#gcost", "*0.9"));
 			}
 			
 		
-			if(c.args.size() > 0 && c.args.get(0) != null && !c.args.get(0).equals(""))
+			if(c.args.size() > 0 && c.args.get(0) != null && !c.args.get(0).get().equals(""))
 			{
 				
 				
 				// Mapmove is at least 1
-				if(c.command.equals("#mapmove") && Integer.parseInt(c.args.get(0)) < 1 && !pose.tags.contains("immobile"))
-					c.args.set(0, "1");
+				if(c.command.equals("#mapmove") && c.args.get(0).getInt() < 1 && !pose.tags.containsName("immobile"))
+					c.args.set(0, new Arg(1));
 				
 
 		
@@ -1151,19 +1125,11 @@ public class Unit {
 				if(c.command.equals("#weapon"))
 				{	
 				 
-					String realarg = c.args.get(0);
-					if(realarg.contains(" "))
-						realarg = c.args.get(0).split(" ")[0];
+					Arg realarg = c.args.get(0);
 					
-					try
-					{
-						Integer.parseInt(realarg);
+					if (!realarg.isNumeric()) {
+						c.args.set(0, new Arg(nationGen.GetCustomItemsHandler().getCustomItemId(realarg.get()) + ""));
 					}
-					catch(Exception e)
-					{
-						c.args.set(0, nationGen.GetCustomItemsHandler().getCustomItemId(c.args.get(0)) + "");
-					}
-		
 				}
 				
 			}
@@ -1175,7 +1141,7 @@ public class Unit {
 		
 
 		// Montag mean costs
-		if(Generic.containsTag(this.pose.tags, "montagpose") && !Generic.containsTag(this.pose.tags, "no_montag_mean_costs"))
+		if(this.pose.tags.containsName("montagpose") && !this.pose.tags.containsName("no_montag_mean_costs"))
 		{
 			int n = 0;
 			int res = 0;
@@ -1199,8 +1165,8 @@ public class Unit {
 			{
 				res = (int)Math.round((double)res/(double)n) - getResCost(true);
 				gold = (int)Math.round((double)gold/(double)n);
-				this.handleCommand(commands, new Command("#gcost", "" + gold));
-				this.handleCommand(commands, new Command("#rcost", "" + res));
+				this.handleCommand(commands, new Command("#gcost", new Arg(gold)));
+				this.handleCommand(commands, new Command("#rcost", new Arg(res)));
 			}
 			
 				
@@ -1209,12 +1175,10 @@ public class Unit {
 		// %cost stuff
 			
 		for(Command c : commands)
-			if(c.args.size() > 0 && c.args.get(0).startsWith("%cost") && (Generic.isNumeric(c.args.get(0).substring(5)) || (c.args.size() > 1 && Generic.isNumeric(c.args.get(1)))))
+			if(c.args.size() > 0 && c.args.get(0).get().startsWith("%cost") && Generic.isNumeric(c.args.get(0).get().substring(5)))
 				percentCostCommands.add(c);
 
-		int gcost = 0;
-		if(percentCostCommands.size() > 0)
-			gcost = this.getGoldCost();
+		int gcost = percentCostCommands.size() > 0 ? this.getGoldCost() : 0;
 		
 		for(Command c : percentCostCommands)
 		{
@@ -1222,16 +1186,10 @@ public class Unit {
 			if(gcost == 0)
 				continue;
 			
-			double multi = 0;
-			
-			if(Generic.isNumeric(c.args.get(0).substring(5)))
-				multi = Double.parseDouble(c.args.get(0).substring(5)) / 100;
-			else if(c.args.size() > 1 && Generic.isNumeric(c.args.get(1)))
-				multi = Double.parseDouble(c.args.get(1)) / 100;
-			
+			double multi = Double.parseDouble(c.args.get(0).get().substring(5)) / 100;
 			
 			int price = (int)Math.round((double)gcost * multi);
-			Command d = new Command(c.command, price + "");
+			Command d = Command.args(c.command, price + "");
 			handleCommand(commands, d);
 		}
 		
@@ -1247,26 +1205,26 @@ public class Unit {
 			// goldcost rounding if gcost > 30
 			if(c.command.equals("#gcost"))
 			{
-				int cost = Integer.parseInt(c.args.get(0));
+				int cost = c.args.get(0).getInt();
 				
 				if(cost > 30)
 				{
 					cost = (int)Math.round((double)cost / 5) * 5;
-					c.args.set(0, "" + cost);
+					c.args.set(0, new Arg(cost));
 				}
 			}
 			
 			// morale 50 if over 50
 			if(c.command.equals("#mor"))
 			{
-				int mor = Integer.parseInt(c.args.get(0));
+				int mor = c.args.get(0).getInt();
 				if(mor > 50)
 				{
-					c.args.set(0, "50");
+					c.args.set(0, new Arg(50));
 				}
 				else if(mor <= 0)
 				{
-					c.args.set(0, "1");
+					c.args.set(0, new Arg(1));
 				}
 			}
 		}
@@ -1290,15 +1248,10 @@ public class Unit {
 
 
 		// List of commands that may appear more than once per unit
-		List<String> uniques = new ArrayList<String>();
-		uniques.add("#weapon");
-		uniques.add("#custommagic");
-		uniques.add("#magicskill");
-		uniques.add("#magicboost");
+		List<String> uniques = List.of("#weapon", "#custommagic", "#magicskill", "#magicboost");
 		
 		int copystats = -1;
 
-		c = new Command(c.command, c.args);
 		Command old = null;
 		for(Command cmd : commands)
 		{
@@ -1306,19 +1259,19 @@ public class Unit {
 				old = cmd;
 			
 			if(cmd.command.equals("#copystats"))
-				copystats = Integer.parseInt(cmd.args.get(0));
+				copystats = cmd.args.get(0).getInt();
 		}
 		
 
 		// If the unit has #copystats it doesn't have defined stats. Thus we need to fetch value from database
-		if(c.args.size() > 0 && (c.args.get(0).startsWith("+")) && copystats != -1 && old == null)
+		if(c.args.size() > 0 && (c.args.get(0).get().startsWith("+")) && copystats != -1 && old == null)
 		{
 			String value = this.nationGen.units.GetValue(copystats + "", c.command.substring(1));
 			if(value.equals(""))
 				value = "0";
 			
-			old = new Command(c.command, value);
-			commands.add(old);	
+			old = Command.args(c.command, value);
+			commands.add(old);
 			
 		}
 	
@@ -1333,84 +1286,51 @@ public class Unit {
 			*/
 			for(int i = 0; i < c.args.size(); i++)
 			{
-			
-				String arg = c.args.get(i);
-				String oldarg = old.args.get(i);
-				if(arg.startsWith("+") || (arg.startsWith("-") && !arg.startsWith("--")))
+				Arg arg = c.args.get(i);
+				Arg oldarg = old.args.get(i);
+				if(arg.getOperator().isPresent())
 				{
-			
-					
-					if(arg.startsWith("+"))
-						arg = arg.substring(1);
-					
-
-					try
-					{
-						if(oldarg.startsWith("%"))
-							oldarg = "" + Integer.parseInt(arg);
-						else
-							oldarg = "" + (Integer.parseInt(oldarg) + Integer.parseInt(arg));
-						old.args.set(i, oldarg);
+					Operator operator = arg.getOperator().get();
+					if (operator == Operator.ADD || operator == Operator.SUBTRACT) {
+						try {
+							int value = oldarg.get().startsWith("%") ? arg.getInt() : (oldarg.getInt() + arg.getInt());
+							
+							old.args.set(i, new Arg(value));
+						} catch (NumberFormatException e) {
+							throw new IllegalArgumentException("FATAL ERROR 1: Argument parsing " + oldarg + " + " + arg + " on " + c + " caused crash.", e);
+						}
+					} else if (operator == Operator.MULTIPLY) {
+						try {
+							int value = oldarg.get().startsWith("%") ? 0 : ((int)(oldarg.getInt() * arg.getDouble()));
+							
+							old.args.set(i, new Arg(value));
+						} catch(Exception e) {
+							throw new IllegalArgumentException("FATAL ERROR 2: Argument parsing " + oldarg + " * " + arg + " on " + c.command + " caused crash.", e);
+						}
 					}
-					catch(NumberFormatException e)
-					{
-						System.out.println("FATAL ERROR 1: Argument parsing " + oldarg + " + " + arg + " on " + c + " caused crash.");
-					}
-					continue;
-			
-				}
-				else if(arg.startsWith("*"))
-				{
-				
-					
-					arg = arg.substring(1);
-					try
-					{
-						if(oldarg.startsWith("%"))
-							oldarg = "0";
-						else
-							oldarg = "" + (int)(Integer.parseInt(oldarg) * Double.parseDouble(arg));
-						old.args.set(i, oldarg);
-					}
-					catch(Exception e)
-					{
-						System.out.println("FATAL ERROR 2: Argument parsing " + oldarg + " * " + arg + " on " + c.command + " caused crash.");
-					}
-					continue;
 				}
 				else
 				{
-			
-					
 					if(!uniques.contains(c.command))
 					{
-						oldarg = arg;
-						old.args.set(i, oldarg);
-						continue;
-	
+						old.args.set(i, arg);
 					}
 					else
 					{
-						commands.add(c);
-						continue;
+						commands.add(c.copy());
 					}
 				}
 			}
 		}
 		else 
 		{
-		
-			
-			for(int i = 0; i < c.args.size(); i++)
+			Args args = new Args();
+			for(Arg arg : c.args)
 			{
-				if(c.args.get(i).startsWith("+"))
-					c.args.set(i, c.args.get(i).substring(1));
-				else if(c.args.get(i).startsWith("*"))
-					c.args.set(i, 0 + "");
-
+				args.add(arg.applyModToNothing());
 			}
 
-			commands.add(c);
+			commands.add(new Command(c.command, args, c.comment));
 		}
 	
 		
@@ -1429,17 +1349,11 @@ public class Unit {
 		int hp = 0;
 		for(Command c : u.race.unitcommands)
 			if(c.command.equals("#hp"))
-				hp += Integer.parseInt(c.args.get(0));
+				hp += c.args.get(0).getInt();
 		
 		for(Command c : u.getSlot("basesprite").commands)
 			if(c.command.equals("#hp"))
-			{
-				String arg = c.args.get(0);
-				if(c.args.get(0).startsWith("+"))
-					arg = arg.substring(1);
-				
-				hp += Integer.parseInt(arg);
-			}
+				hp += c.args.get(0).getInt();
 		
 		if(hp > 0)
 			return hp;
@@ -1492,8 +1406,7 @@ public class Unit {
 		{
 			if(c.command.equals("#prot"))
 			{
-				String arg = c.args.get(0).replace("+", "");
-				natural = natural + Integer.parseInt(arg);
+				natural += c.args.get(0).getInt();
 			}
 		}
 	
@@ -1538,8 +1451,7 @@ public class Unit {
 		{
 			if(c.command.equals("#enc"))
 			{
-				String arg = c.args.get(0).replace("+", "");
-				natural = natural + Integer.parseInt(arg);
+				natural += c.args.get(0).getInt();
 			}
 		}
 	
@@ -1581,7 +1493,7 @@ public class Unit {
 		{
 			lines.add("-- Offhand: " + this.getSlot("offhand").getOffsetX() + ", " + this.getSlot("offhand").getOffsetY());
 		}
-		lines.add("--- Generation tags: " + String.join(", ", this.tags));
+		lines.add("--- Generation tags: " + this.tags);
 		
 		lines.add("--- Applied filters: " + this.appliedFilters.stream()
 				.map(f -> f.name + (f.name.equals("MAGICPICKS") ? " (" + ((MagicFilter)f).pattern.getPrice() + ")" : ""))
@@ -1625,7 +1537,7 @@ public class Unit {
 		for(Command c : this.getCommands())
 		{
 			if(c.command.equals(command) && c.args.size() > 0)
-				value = Integer.parseInt(c.args.get(0));
+				value = c.args.get(0).getInt();
 		}
 		return value;
 	}
@@ -1636,23 +1548,20 @@ public class Unit {
 		for(Command c : this.getCommands())
 		{
 			if(c.command.equals(command) && c.args.size() > 0)
-				value = c.args.get(0);
+				value = c.args.get(0).get();
 		}
 		return value;
 	}
 	
 	
 	// 20150522EA : my OOP prof back in undergrad would probably shoot me for this method...
-	public void setCommandValue(String command, int argIndex, String newValue)
+	public void setCommandValue(String command, String newValue)
 	{
-		for(int x = 0; x < this.commands.size(); x++)
+		for(Command cmd : this.commands)
 		{
-			if(this.commands.get(x).toString().startsWith("#descr") && this.commands.get(x).args.size() > argIndex)
+			if(cmd.command.equals(command))
 			{
-				if(newValue.startsWith("\""))
-					this.commands.get(x).args.set(argIndex, newValue);
-				else
-					this.commands.get(x).args.set(argIndex, "\"" + newValue + "\"");
+				cmd.args.set(0, new Arg(newValue));
 			}
 		}
 	}
@@ -1703,21 +1612,8 @@ public class Unit {
 		{
 			if(c.args.size() > 0)
 			{
-				if(c.command.startsWith("#descr"))
-				{
-					String argString = Generic.listToString(c.args);
-					
-					if(!argString.startsWith("\"")) argString = "\"" + argString;
-					if(!argString.endsWith("\"")) argString = argString + "\"";
-					
-					lines.add(c.command + " " + argString);
-				}
-				else if(c.command.equals("#itemslots"))
-				{
-					// Skipped here
-				}
-				else
-					lines.add(c.command + " " + Generic.listToString(c.args));
+				if(!c.command.equals("#itemslots"))
+					lines.add(c.toModLine());
 			}
 			else
 				lines.add(c.command);
@@ -1748,13 +1644,7 @@ public class Unit {
 	
 	public String getMountOffsetSlot()
 	{
-		
-		String mountslot = "mount";
-		if(Generic.containsTag(Generic.getAllUnitTags(this), "mount_offset_slot"))
-		{
-			mountslot = Generic.getTagValue(Generic.getAllUnitTags(this), "mount_offset_slot");
-		}
-		return mountslot;
+		return Generic.getAllUnitTags(this).getString("mount_offset_slot").orElse("mount");
 	}
 	
 	public BufferedImage render(int offsetX)
@@ -1782,7 +1672,11 @@ public class Unit {
 
 			
 	
-			if(s.equals(mountslot) || (!u.pose.tags.contains("non_mount_overlay") && s.equals("overlay") && u.getSlot(s) != null && u.getSlot("overlay").getOffsetX() == 0 && u.getSlot("overlay").getOffsetY() == 0))
+			if(s.equals(mountslot)
+				|| (!u.pose.tags.containsName("non_mount_overlay")
+					&& s.equals("overlay") && u.getSlot(s) != null
+					&& u.getSlot("overlay").getOffsetX() == 0
+					&& u.getSlot("overlay").getOffsetY() == 0))
 			{
 				renderSlot(g, this, s, false, offsetX);
 			}

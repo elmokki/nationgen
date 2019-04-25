@@ -1,9 +1,6 @@
 package nationGen.diagnostics;
 
-import java.util.*;
-
 import com.elmokki.Generic;
-
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
 import nationGen.entities.Race;
@@ -11,6 +8,8 @@ import nationGen.entities.Theme;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.naming.NameGenerator;
 import org.junit.Test;
+
+import java.util.*;
 
 
 /**
@@ -32,11 +31,11 @@ public class GenerationTest {
 		NameGenerator ngen = new NameGenerator(ng);
 
 		for (Race baseRace : assets.races) {
-			if (!Generic.containsTag(baseRace.tags, "secondary")) {
+			if (!baseRace.tags.containsName("secondary")) {
 				List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("racethemes", "default_racethemes", assets.themes, null, baseRace);
 				
 				Map<String, List<Theme>> themeChoiceMap = new LinkedHashMap<>();
-				for (String freeThemeType : Generic.getTagValues(baseRace.tags, "freetheme")) {
+				for (String freeThemeType : baseRace.tags.getAllStrings("freetheme")) {
 					List<Theme> freeThemeChoices = ChanceIncHandler.getFiltersWithType(freeThemeType, possibleThemes);
 					if (!freeThemeChoices.isEmpty()) {
 						themeChoiceMap.put(freeThemeType, freeThemeChoices);

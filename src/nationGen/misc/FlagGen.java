@@ -1,18 +1,14 @@
 package nationGen.misc;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
-import com.elmokki.Generic;
-
 import nationGen.NationGenAssets;
 import nationGen.entities.Flag;
 import nationGen.nation.Nation;
+
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class FlagGen {
 	
@@ -28,22 +24,10 @@ public class FlagGen {
 	{
 		chandler = new ChanceIncHandler(n);
 		// Load data
-
-		if(n != null)	
-		{
-			for(String tag : n.races.get(0).tags)
-			{
-				List<String> args = Generic.parseArgs(tag);
-				if(args.get(0).equals("flagtops") && args.size() > 1)
-					top.addAll(assets.flagparts.get(args.get(1)));
-				if(args.get(0).equals("flagborders") && args.size() > 1)
-					border.addAll(assets.flagparts.get(args.get(1)));
-				if(args.get(0).equals("flagbases") && args.size() > 1)
-					bases.addAll(assets.flagparts.get(args.get(1)));
-				if(args.get(0).equals("flagpoles") && args.size() > 1)
-					poles.addAll(assets.flagparts.get(args.get(1)));
-			}
-		}
+		n.races.get(0).tags.getAllStrings("flagtops").forEach(set -> top.addAll(assets.flagparts.get(set)));
+		n.races.get(0).tags.getAllStrings("flagborders").forEach(set -> border.addAll(assets.flagparts.get(set)));
+		n.races.get(0).tags.getAllStrings("flagbases").forEach(set -> bases.addAll(assets.flagparts.get(set)));
+		n.races.get(0).tags.getAllStrings("flagpoles").forEach(set -> poles.addAll(assets.flagparts.get(set)));
 		
 		if(top.size() == 0)
 			top.addAll(assets.flagparts.get("topicons"));
@@ -60,8 +44,8 @@ public class FlagGen {
 	public BufferedImage generateFlag(Nation n)
 	{
 		
-		Flag basepole = Flag.getRandom(n.random, chandler.handleChanceIncs(poles));
-		Flag baseflag = Flag.getRandom(n.random, chandler.handleChanceIncs(bases));
+		Flag basepole = chandler.handleChanceIncs(poles).getRandom(n.random);
+		Flag baseflag = chandler.handleChanceIncs(bases).getRandom(n.random);
 	
 		
 		BufferedImage combined = new BufferedImage(128, 128, BufferedImage.TYPE_INT_ARGB);
@@ -112,7 +96,7 @@ public class FlagGen {
 			return false;
 		
 	
-		Flag part = Flag.getRandom(n.random, chandler.handleChanceIncs(possible));
+		Flag part = chandler.handleChanceIncs(possible).getRandom(n.random);
 	
 		Color col = n.colors[1];
 		if(n.random.nextDouble() > 0.5 && isBorder)
