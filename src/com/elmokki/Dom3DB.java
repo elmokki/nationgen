@@ -52,13 +52,13 @@ public class Dom3DB {
         List<String> lines = FileUtil.readLines(filename);
 
 		String rawdef = lines.remove(0);
-		definition = List.of(rawdef.split(";"));
+		definition = new ArrayList<>(List.of(rawdef.split(";")));
 		boolean convert = false;
 		if(definition.size() < 2)
 		{
 			convert = true;
 			rawdef = rawdef.replaceAll("\t", ";");
-			definition = List.of(rawdef.split(";"));
+			definition = new ArrayList<>(List.of(rawdef.split(";")));
 		}
 
         // Let's read the unit data then.
@@ -70,7 +70,7 @@ public class Dom3DB {
 					line = line.replaceAll("\t", ";");
 		
 				// Set units[id] to line of that unit.
-				List<String> row = List.of(line.split(";"));
+				List<String> row = new ArrayList<>(List.of(line.split(";")));
 				this.entryMap.put(row.get(0), row);
 			}
         }
@@ -161,19 +161,14 @@ public class Dom3DB {
     
     public void saveToFile(String filename)
     {
-		
-		StringBuilder def = new StringBuilder();
-		for (String s : definition)
-			def.append(s).append(";");
-		
 		List<String> lines = new ArrayList<>();
-		lines.add(def.toString());
+		
+		lines.add(String.join(";", this.definition) + ";");
 		
 		for(int i = 0; i < 5000; i++)
 		{
 			if(entryMap.keySet().contains("" + i))
-				lines.add(String.join(";", entryMap.get("" + i)));
-
+				lines.add(String.join(";", entryMap.get("" + i)) + ";");
 		}
 
 		FileUtil.writeLines(filename, lines);
