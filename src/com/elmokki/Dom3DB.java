@@ -2,18 +2,18 @@ package com.elmokki;
 
 import nationGen.misc.FileUtil;
 
-import java.util.*;
-
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 
 public class Dom3DB {
 	
-	private boolean convert = false;
-	public HashMap<String, String> entryMap = new HashMap<String, String>();
-    private String[] definition;
+	public HashMap<String, List<String>> entryMap = new HashMap<>();
+    private List<String> definition;
     private List<String> booleanargs;
     
-    public String[] getDefinition()
+    public List<String> getDefinition()
     {
     	return definition;
     }
@@ -35,29 +35,15 @@ public class Dom3DB {
      */
     public void addToMap(String id, HashMap<String, String> attributes)
     {
-    	String line = "";
-    	for(String attr : definition)
-    	{
-    		String value = attributes.get(attr);
-    		if(attr.equals("id") && value == null)
-    			value = id + "";
+    	List<String> row = new ArrayList<>(this.definition.size());
+    	for (String col : this.definition) {
+    		String val = attributes.get(col);
     		
-    		if(value == null)
-    			value = "";
-    		
-    		
-    		line = line + value + ";";
-    	}
-    	
+    		row.add(val != null ? val : "id".equals(col) ? id : "");
+		}
 
-    	entryMap.put(id, line);
-    	
+    	entryMap.put(id, row);
     }
-    
-    
-
-
-
     
     public Dom3DB(String filename)
     {
@@ -66,48 +52,44 @@ public class Dom3DB {
         List<String> lines = FileUtil.readLines(filename);
 
 		String rawdef = lines.remove(0);
-		definition = rawdef.split(";");
-		if(definition.length < 2)
+		definition = List.of(rawdef.split(";"));
+		boolean convert = false;
+		if(definition.size() < 2)
 		{
 			convert = true;
 			rawdef = rawdef.replaceAll("\t", ";");
-			definition = rawdef.split(";");
+			definition = List.of(rawdef.split(";"));
 		}
 
         // Let's read the unit data then.
 
         for (String line : lines)
         {
-            
-            if(convert)
-            	line = line.replaceAll("\t", ";");
-            
-            // Set units[id] to line of that unit.
-            if(line.length() > 0 && line.split(";").length > 0)
-            	entryMap.put(line.split(";")[0], line);
-            
-     
+        	if (!line.isEmpty()) {
+				if (convert)
+					line = line.replaceAll("\t", ";");
+		
+				// Set units[id] to line of that unit.
+				List<String> row = List.of(line.split(";"));
+				this.entryMap.put(row.get(0), row);
+			}
         }
 
        // System.out.println(derp + " definitions loaded!");
 
         // Find out boolean args
-    	booleanargs = new ArrayList<String>();
+    	booleanargs = new ArrayList<>();
     	for(String str : definition)
     	{
     		boolean isBool = true;
     		for(String id : entryMap.keySet())
     		{
-    			if(this.GetValue(id, str).equals("") || this.GetValue(id, str).equals("0") || this.GetValue(id, str).equals("1"))
-    			{
-    				// Do nothing
-    			}
-    			else
-    			{
-    				isBool = false;
-    				break;
-    			}
-    		}
+    			String value = this.GetValue(id, str);
+				if (!value.equals("") && !value.equals("0") && !value.equals("1")) {
+					isBool = false;
+					break;
+				}
+			}
     		
     		if(isBool)
     			booleanargs.add(str);
@@ -137,7 +119,7 @@ public class Dom3DB {
     
     public int GetInteger(String id, String value, int defaultvalue)
     {
-    	int integer = 0;
+    	int integer;
     	try { 
     		integer = Integer.parseInt(GetValue(id, value, defaultvalue + "")); 
     	}
@@ -149,29 +131,29 @@ public class Dom3DB {
     	return integer;
     }
     
-    
+    private int getColumnIndex(String columnName) {
+		int placeOfValue = -1;
+		for (int i = 0; i < definition.size(); i++) {
+			if (definition.get(i).equalsIgnoreCase(columnName)) {
+				placeOfValue = i;
+				break;
+			}
+		}
+		return placeOfValue;
+	}
 
     
     public List<String> getColumn(String name)
     {
-    	List<String> list = new ArrayList<String>();
+    	List<String> list = new ArrayList<>();
     	
-    	// Gets the column
-        int placeOfValue = -1;
-        for (int i = 0; i < definition.length; i++)
-        {
-            if (definition[i].toLowerCase().equals(name.toLowerCase()))
-            {
-                placeOfValue = i;
-                break;
-            }
-        }
+    	int placeOfValue = getColumnIndex(name);
         
         if(placeOfValue == -1)
         	return list;
         
-        for(String line : entryMap.values())
-        	list.add(this.getValue(line, placeOfValue));
+        for(List<String> line : entryMap.values())
+        	list.add(line.get(placeOfValue));
         
         return list;
     }
@@ -190,7 +172,7 @@ public class Dom3DB {
 		for(int i = 0; i < 5000; i++)
 		{
 			if(entryMap.keySet().contains("" + i))
-				lines.add(entryMap.get("" + i).replaceAll("\t", ";"));
+				lines.add(String.join(";", entryMap.get("" + i)));
 
 		}
 
@@ -200,143 +182,53 @@ public class Dom3DB {
     
     public void setValue(String id, String value, String column)
     {
-    	String line = entryMap.get(id);
-
-       
-    	// Gets the column
-        int placeOfValue = -1;
-        for (int i = 0; i < definition.length; i++)
-        {
-            if (definition[i].toLowerCase().equals(column.toLowerCase()))
-            {
-                placeOfValue = i;
-                break;
-            }
-        }
-        if(placeOfValue == -1)
-        {
-        	String[] newdef = new String[definition.length + 1];
-        	for(int i = 0; i < definition.length; i++)
-        		newdef[i] = definition[i];
-        	newdef[definition.length] = column;
-        	placeOfValue = definition.length;
-        	definition = newdef;
+    	
+        int index = getColumnIndex(column);
+        if (index == -1) {
+			index = definition.size();
+			definition.add(column);
         }
         
+		List<String> line = entryMap.get(id);
+	
+		while (line.size() <= index) {
+        	line.add("");
+		}
         
-        String newline = "";
-        String[] crap = new String[definition.length];
-        String[] stuff = line.split(";");
-
-        for(int i = 0; i < stuff.length; i++)
-        	crap[i] = stuff[i];
-
-
-        for(int i = 0; i < placeOfValue; i++)
-        {
-        	if(crap[i] == null)
-        		crap[i] = "";
-        	
-        	newline = newline + crap[i] + ";";
-        }
-        newline = newline + value + ";";
-        
-        for(int i = placeOfValue + 1; i < crap.length; i++)
-        {
-        	if(crap[i] == null)
-        		crap[i] = "";
-        	
-        	newline = newline + crap[i] + ";";
-        }
-
-        entryMap.put(id, newline);
-
-        
+        line.set(index, value);
     }
     
     
     /**
      * Returns specified value for the unit of specified id
      * @param id ID of the unit
-     * @param value field name, for example unitname
+     * @param column field name, for example unitname
      * @param defaultvalue value returned if field contains nothing
      * @return Specified value for the unit of specified id
      */
-    public String GetValue(String id, String value, String defaultvalue)
+    public String GetValue(String id, String column, String defaultvalue)
     {
 
-    	String line = entryMap.get(id);
+    	List<String> line = entryMap.get(id);
     	
-    	if(id.equals("-1") || line == null || line.equals(""))
+    	if(id.equals("-1") || line == null || line.isEmpty())
     	{
     		return defaultvalue;
     	}
     	
-    	// Gets the column
-        int placeOfValue = -1;
-        for (int i = 0; i < definition.length; i++)
-        {
-            if (definition[i].toLowerCase().equals(value.toLowerCase()))
-            {
-                placeOfValue = i;
-                break;
-            }
-        }
-        
+        int index = getColumnIndex(column);
 
-        if(placeOfValue == -1)
+        if(index == -1)
         {
         	return defaultvalue;
         }
     
+        if (line.size() <= index) {
+        	return defaultvalue;
+		}
         
-       try
-       {
-        if(getValue(line, placeOfValue).equals(""))
-        	 return defaultvalue; 
-       }
-       catch(Exception e)
-       {
-    	   System.out.println("Dom3DB error: id " + id + " index " + placeOfValue + " value " + value + ". This happened probably because an attribute that does not exist was requested.");
-       }
-       	
-        return getValue(line, placeOfValue);
+        String value = line.get(index);
+        
+        return "".equals(value) ? defaultvalue : value;
     }
-    
-    
-    private String getValue(String line, int index)
-    {
-
-    	int firstindex = 0;
-    	int lastindex = line.toCharArray().length;
-    	int passed = 0;
-    	int at = 0;
-    	for(char c : line.toCharArray())
-    	{	
-    		if(c == ';' || at == 0)
-    		{
-    			if(passed == index)
-    				firstindex = at;
-    			if(passed == index + 1)
-    			{
-    				lastindex = at;
-    				break;
-    			}
-    			passed++;
-    		}		
-    	    at++;
-    	}
-    	
-
-
-    	return line.substring(firstindex + 1, lastindex);
-    	
-    }
-
-	public String getDom3DBname(String attrib) {
-		String derp = this.GetValue(attrib, "unitname");
-		return derp;
-	}
-    
-    
 }
