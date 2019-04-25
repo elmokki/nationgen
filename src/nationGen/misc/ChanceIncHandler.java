@@ -510,12 +510,6 @@ public class ChanceIncHandler {
 		return handleChanceIncs(u, list).countPossible();
 	}
 	
-	public <T extends Filter> int countPossibleFilters(List<T> list)
-	{
-	
-		return handleChanceIncs(list).countPossible();
-	}
-	
 	public <T extends Filter> T getRandom(List<T> list, List<Unit> units)
 	{
 		return handleChanceIncs(units.get(0), list).getRandom(n.random);

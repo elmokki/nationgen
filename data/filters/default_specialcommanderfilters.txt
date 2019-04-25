@@ -311,8 +311,13 @@
 
  
 #new
-#name "douser"
+#name "dowser"
 #command "#douse 1"
+#command "#magicskill 7 1"
+#command "#masterrit -1"
+#command "#researchbonus -6"
+#command "#mastersmith -1"
+#command "#fastcast -50"
 #command "#gcost +10"
 #unitname "Blood Hunter"
 #unitname "Blood Hunter"
@@ -320,9 +325,12 @@
 #unitname "Blood Hunter"
 #unitname "Bloodseeker"
 #unitname "Sanguine Seeker"
+#unitname "Blood Dowser"
+#unitname "Blood Witcher"
+#unitname "Diviner"
 #basechance 0
 #chanceinc magic blood 2
-#description "is skilled at finding blood slaves."
+#description "is trained in finding blood slaves, but otherwise unskilled at spellcasting."
 #pose role mage
 #themeinc thisitemtag "tier 1" *25
 #themeinc thisitemtag "tier 2" *5

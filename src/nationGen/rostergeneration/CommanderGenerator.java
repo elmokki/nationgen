@@ -1064,10 +1064,10 @@ public class CommanderGenerator extends TroopGenerator {
 		// Try to get an elite armor of some suitable sort
 		if(u.getSlot(slot).armor && helmet == null && !slot.equals("offhand"))
 		{
-				helmet = chandler.getRandom(getSuitableCommanderItems(u, slot).filterProt(nationGen.armordb, helmetprot, helmetprot));
+				helmet = chandler.getRandom(getSuitableCommanderItems(u, slot).filterProt(nationGen.armordb, helmetprot, helmetprot), u);
 			
 				if(helmet == null)
-					helmet = chandler.getRandom(getSuitableCommanderItems(u, slot).filterProt(nationGen.armordb, helmetprot - 2, helmetprot + 8));
+					helmet = chandler.getRandom(getSuitableCommanderItems(u, slot).filterProt(nationGen.armordb, helmetprot - 2, helmetprot + 8), u);
 		
 		}
 

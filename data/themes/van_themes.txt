@@ -37,6 +37,30 @@
 #themeinc theme primitive *0.05
 #endtheme
 
+-- Demographic themes - tier-2 casters and elites can always be opposite gender
+#newtheme
+#type demographic
+#name patriarchal
+#basechance 6
+#themeinc theme female *0.001
+#themeinc theme male_elite +4
+#endtheme
+
+#newtheme
+#type demographic
+#name mixed
+#basechance 3
+#themeinc theme male +1
+#endtheme
+
+#newtheme
+#type demographic
+#name matriarchal
+#basechance 1
+#themeinc theme male *0.001
+#themeinc theme female_elite +4
+#endtheme
+
 -- Social themes
 -- Weights: EA 0, MA 2, LA 4
 #newtheme
@@ -55,7 +79,7 @@
 #themeinc theme primitive *1
 #themeinc theme slave *20
 #themeinc theme free *0.5
-#themeinc racename "Boreal human" *10
+#themeinc racename "Feudal human" *10
 #themeinc racename caveman *2
 #themeinc racename vaetti *2
 #themeinc racename lizard *0.1

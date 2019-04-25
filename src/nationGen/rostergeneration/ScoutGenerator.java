@@ -106,17 +106,17 @@ public class ScoutGenerator extends TroopGenerator {
 		//template.setSlot("shirt", template.pose.getItems("shirt").getRandom(nation.random));
 		
 		
-		Item armor = null;
+		Item armor;
 		if(posename.equals("scout") && p.roles.size() == 1)
 		{
-			armor = nation.usedItems.filterSlot("armor").filterForPose(p).getRandom(chandler, nation.random);
+			armor = nation.usedItems.filterSlot("armor").filterForPose(p).getRandom(chandler, template, nation.random);
 			if(armor == null)
 				armor = chandler.getRandom(p.getItems("armor"), template);
 
 		}
 		else
 		{
-			armor = nation.usedItems.filterSlot("armor").filterForPose(p).filterProt(nationGen.armordb, 0, 10).getRandom(chandler, nation.random);
+			armor = nation.usedItems.filterSlot("armor").filterForPose(p).filterProt(nationGen.armordb, 0, 10).getRandom(chandler, template, nation.random);
 			if(armor == null)
 				armor = chandler.getRandom(p.getItems("armor").filterProt(nationGen.armordb, 0, 10), template);
 			if(armor == null)

@@ -816,11 +816,11 @@ public class UnitGen {
 
 		// Pile of failsafes.
 		if(newitem == null)
-			newitem = chandler.getRandom(included);
+			newitem = chandler.getRandom(included, u);
 		if(newitem == null)
-			newitem = chandler.getRandom(all);
+			newitem = chandler.getRandom(all, u);
 		if(newitem == null)
-			newitem = chandler.getRandom(u.pose.getItems(slot));
+			newitem = chandler.getRandom(u.pose.getItems(slot), u);
 
 		return newitem;
 		

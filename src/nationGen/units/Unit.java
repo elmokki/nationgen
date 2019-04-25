@@ -991,7 +991,7 @@ public class Unit {
 		}
 		
 		// Handle custom equipment
-		for(String str : this.slotmap.keySet())
+		for(String str : List.copyOf(this.slotmap.keySet())) // copy to avoid concurrent modification (sigh)
 		{
 			
 			Item i = this.slotmap.get(str);

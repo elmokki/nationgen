@@ -2,13 +2,13 @@
 #name "Van"
 #basechance 0.1
 #nationcommand "#idealcold +1"
+
 #pose vanirmages
+#pose vanirelites
 #pose vanirtroops
 
-#all_troops_sacred
-#all_troops_elite
-
 #racethemes van_themes
+#freetheme demographic
 
 -- 40% H1/48% H2/12% H3 max priest level
 #priest_H1_upgradechance 0.6
@@ -51,7 +51,7 @@
 #chanceinc "hasprimaryrace 0.225"
 #chanceinc "primaryrace abysian *0.1"
 #chanceinc "primaryrace caelian *4"
-#chanceinc "primaryrace 'Boreal human' *2"
+#chanceinc "primaryrace 'Feudal human' *2"
 #chanceinc "primaryrace vaetti *0.5"
 
 #chanceinc era 1 *1.5
