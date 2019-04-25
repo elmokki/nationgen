@@ -176,11 +176,12 @@ public class NationGen
 				System.out.print(" / " + ZonedDateTime.now().toLocalTime().truncatedTo(ChronoUnit.SECONDS));
 				System.out.print(")... ");
 			}
+			
 			Nation newnation;
 			try {
 				newnation = new Nation(this, newseed, count, restrictions, assets);
 			} catch (Exception e) {
-				throw new IllegalStateException("Error generating nation with seed " + newseed);
+				throw new IllegalStateException("Error generating nation with seed: " + newseed, e);
 			}
 			
 			if (newnation.passed)

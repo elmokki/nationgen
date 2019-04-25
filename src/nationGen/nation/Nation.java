@@ -34,7 +34,7 @@ public class Nation {
 	public int mockid = -2;
 	public Color[] colors = new Color[5];
 	public int nationid;
-	public int era = 2;
+	public int era;
 	public String name = "UNNAMED";
 	public String epithet = "NO EPITHET";
 	
