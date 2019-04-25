@@ -1,8 +1,8 @@
 
 -------- Normal
 #newpose
-#role "infantry"
-#role "scout"
+#role "sacred infantry"
+#role "elite infantry"
 
 #renderorder "shadow cloakb mount basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands beard hair helmet offhanda overlay extra1 extra2 extra3"
 
@@ -14,7 +14,7 @@
 #load cloakf /data/items/human/normal/humancloakf.txt 0 -3
 #load cloakb /data/items/human/normal/humancloakb.txt 0 -3
 
-#load beard /data/items/nordic/generic/beard.txt
+#load beard /data/items/nordic/generic/beard_elite.txt
 #load shirt /data/items/nordic/normal/shirt.txt
 #load hair /data/items/nordic/generic/hair.txt
 
@@ -37,9 +37,8 @@
 
 --- Mounted
 #newpose
-#role "mounted"
-#role "scout"
-#basechance 0.25
+#role "elite mounted"
+#role "sacred mounted"
 
 #renderorder "shadow cloakb mount basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands beard hair helmet offhanda overlay extra1 extra2 extra3"
 
@@ -52,7 +51,7 @@
 #load cloakf /data/items/human/normal/humancloakf.txt 0 -3
 #load cloakb /data/items/human/normal/humancloakb.txt 0 -3
 
-#load beard /data/items/nordic/generic/beard.txt
+#load beard /data/items/nordic/generic/beard_elite.txt
 #load shirt /data/items/nordic/normal/shirt.txt
 #load hair /data/items/nordic/generic/hair.txt
 
