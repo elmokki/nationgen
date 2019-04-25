@@ -1,199 +1,102 @@
 package nationGen.misc;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import nationGen.NationGen;
 
 import com.elmokki.Generic;
 
+import java.util.*;
+import java.util.stream.Collectors;
+
 
 public class Command {
-	public String command = "";
-	public List<String> args = new ArrayList<String>();
+	public final String command;
+	public final Args args;
+	public final String comment;
 	
-	public static void handleCommand(List<Command> commands, Command c, NationGen nationGen)
-	{
-
-
-		// List of commands that may appear more than once per unit
-		List<String> uniques = new ArrayList<String>();
-		uniques.add("#weapon");
-		uniques.add("#custommagic");
-		uniques.add("#magicskill");
-		
-		
-		int copystats = -1;
-
-		c = new Command(c.command, c.args);
-		Command old = null;
-		for(Command cmd : commands)
-		{
-			if(cmd.command.equals(c.command))
-				old = cmd;
-			
-			if(cmd.command.equals("#copystats"))
-				copystats = Integer.parseInt(cmd.args.get(0));
-		}
-		
-		
-		if(c.args.size() > 0 && (c.args.get(0).startsWith("+") || c.args.get(0).startsWith("-") || c.args.get(0).startsWith("*")) && copystats != -1 && old == null)
-		{
-			String value = nationGen.units.GetValue(copystats + "", c.command.substring(1));
-			if(!value.equals(""))
-			{
-				old = new Command(c.command, value);
-				commands.add(old);
-			}
-		}
-
-		if(old != null && !uniques.contains(c.command))
-		{
-			/*
-			if(this.tags.contains("sacred") && c.command.equals("#gcost"))
-				System.out.println(c.command + "  " + c.args);
-			*/
-			for(int i = 0; i < c.args.size(); i++)
-			{
-			
-				String arg = c.args.get(i);
-				String oldarg = old.args.get(i);
-				if(arg.startsWith("+") || arg.startsWith("-"))
-				{
-					if(arg.startsWith("+"))
-						arg = arg.substring(1);
-					
-
-					try
-					{
-						//if(this.tags.contains("schoolmage 3"))
-							//System.out.println(arg + " + " + oldarg + " = " + (int)(Integer.parseInt(oldarg) + Double.parseDouble(arg)));
-						
-						
-						oldarg = "" + (Integer.parseInt(oldarg) + Integer.parseInt(arg));
-						old.args.set(i, oldarg);
-					}
-					catch(NumberFormatException e)
-					{
-						System.out.println("FATAL ERROR: Argument parsing " + oldarg + " + " + arg + " on " + c.command + " caused crash.");
-					}
-					continue;
-			
-				}
-				else if(arg.startsWith("*"))
-				{
-						
-					arg = arg.substring(1);
-					try
-					{
-			
-
-						oldarg = "" + (int)(Integer.parseInt(oldarg) * Double.parseDouble(arg));
-						old.args.set(i, oldarg);
-					}
-					catch(Exception e)
-					{
-						System.out.println("FATAL ERROR: Argument parsing " + oldarg + " * " + arg + " on " + c.command + " caused crash.");
-					}
-					continue;
-				}
-				else
-				{
-					if(!uniques.contains(c.command))
-					{
-						oldarg = arg;
-						old.args.set(i, oldarg);
-						continue;
-	
-					}
-					else
-					{
-						commands.add(c);
-						continue;
-					}
-				}
-			}
-		}
-		else
-		{
-
-			
-			for(int i = 0; i < c.args.size(); i++)
-			{
-				if(c.args.get(i).startsWith("+"))
-					c.args.set(i, c.args.get(i).substring(1));
-				else if(c.args.get(i).startsWith("*"))
-					c.args.set(i, 0 + "");
-
-			}
-			commands.add(c);
-		}
-	
-		
-
+	public Command(String cmd, Arg... args) {
+		this(cmd, Args.of(args), null);
 	}
 	
-	public static Command parseCommand(String str)
-	{
-
-		str = str.replaceAll("'", "\"");
-		str = str.replaceAll("\'", "\"");
-		
-		List<String> args = Generic.parseArgs(str, "\"", true);
-		
-		String command = args.get(0);
-		args.remove(0);
-	
-		return new Command(command, args);
-		
+	public Command(String cmd, Args args) {
+		this(cmd, args, null);
 	}
 	
-	public static Command parseCommandFromDefinition(List<String> args)
-	{
-		args.remove(0);
-		String asd = Generic.listToString(args);
-		
-		if(asd.startsWith("'") && asd.endsWith("'"))
-			asd = asd.substring(1, asd.length() - 1);
-		return parseCommand(asd);
-		
-	}
-	
-	public Command(String cmd, List<String> args)
-	{
+	public Command(String cmd, Args args, String comment) {
+		if (Generic.containsSpace(cmd)) {
+			throw new IllegalArgumentException("Command name can't contain a space.");
+		}
 		this.command = cmd;
-		this.args.addAll(args);
+		this.args = args;
+		this.comment = comment;
 	}
 	
-	public Command(String cmd, String arg)
-	{
-		this.command = cmd;
-		this.args.add(arg);
+	/**
+	 * Static "constructor" method which turns String arguments into Args for convenience.
+	 * @param command The command name
+	 * @param args The args as strings
+	 * @return The new Command
+	 */
+	public static Command args(String command, String... args) {
+		return new Command(command, Arrays.stream(args).map(Arg::new).collect(Collectors.toCollection(Args::new)));
 	}
 	
-	public Command(String cmd)
-	{
-		if(cmd.contains(" "))
-		{
-			String[] stuff = cmd.split(" ");
-			this.command = stuff[0];		
-			for(int i = 1; i < stuff.length; i++)
-			{
-				this.args.add(stuff[i]);
-			}
-
+	/**
+	 * Returns a copy of this command.  Since Args is a mutable list, we have to take care in sharing commands that may
+	 * have their args modified.
+	 * @return A copy of this command.
+	 */
+	public Command copy() {
+		return new Command(this.command, this.args.copy(), comment);
+	}
+	
+	public static Command parse(String line) {
+		ArgParser allArgs = Args.parse(line);
+		if (allArgs.isEmpty()) {
+			throw new IllegalArgumentException("Command line is empty!");
 		}
-		else	
-			this.command = cmd;
+		String commandName = allArgs.nextString();
+		Args args = new Args();
+		String comment = null;
+		while (!allArgs.isEmpty()) {
+			Arg arg = allArgs.next("argument");
+			if (arg.get().startsWith("--")) {
+				comment = arg.get().replaceAll("^-*", "")
+						+ allArgs.remaining().stream().map(Arg::get).collect(Collectors.joining(" "));
+				break;
+			} else {
+				args.add(arg);
+			}
+		}
+		return new Command(commandName, args, comment);
 	}
 	
+	/**
+	 * Writes a String for how Dominions expects a mod command line to look like, with strings in quotes and comments
+	 * following dashes.
+	 * @return A string suitable to be written to a Dominions mod file.
+	 */
+	public String toModLine() {
+		return this.command + (this.args.isEmpty() ? "" : " ")
+			+ this.args.stream()
+				.map(a -> a.isNumeric() ? a.get() : Generic.quote(a.get().replaceAll("\"", "''"), '"'))
+				.collect(Collectors.joining(" "))
+			+ (this.comment != null ? (" --- " + this.comment) : "");
+	}
 	
-	public String toString()
-	{
-		String str = command;
-		for(String arg : args)
-			str = str + " " + arg;
-		
-		return str;
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Command command1 = (Command) o;
+		return command.equals(command1.command) &&
+				args.equals(command1.args);
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(command, args);
+	}
+	
+	public String toString() {
+		return this.command + (this.args.isEmpty() ? "" : " ") + this.args;
 	}
 }

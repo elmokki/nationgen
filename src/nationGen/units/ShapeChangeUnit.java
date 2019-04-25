@@ -1,23 +1,24 @@
 package nationGen.units;
 
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.elmokki.Drawing;
 import com.elmokki.Generic;
-
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
 import nationGen.entities.Filter;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
+import nationGen.misc.Arg;
 import nationGen.misc.Command;
 import nationGen.misc.FileUtil;
 import nationGen.naming.Name;
 import nationGen.naming.NamePart;
 import nationGen.nation.Nation;
+
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.List;
 
 
 
@@ -49,21 +50,21 @@ public class ShapeChangeUnit extends Unit {
 		{
 			for(Command c : otherForm.getCommands())
 			{
-				if(c.command.equals("#holy") && !thisForm.tags.contains("mount"))
+				if(c.command.equals("#holy") && !thisForm.tags.containsName("mount"))
 				{
 					sacred = true;
 				}
-				else if(c.command.equals("#holy") && thisForm.tags.contains("mount"))
+				else if(c.command.equals("#holy") && thisForm.tags.containsName("mount"))
 				{
-					if(otherForm.tags.contains("sacredmount"))
+					if(otherForm.tags.containsName("sacredmount"))
 						sacred = true;
 				}
 				
-				if(c.command.equals("#gcost") && !thisForm.tags.contains("nogcost"))
+				if(c.command.equals("#gcost") && !thisForm.tags.containsName("nogcost"))
 				{
 					
 					//System.out.println(c.args.get(0) + " ADDED " + " / " + otherForm.getGoldCost_DEBUG());
-					gcost = Integer.parseInt(c.args.get(0));
+					gcost = c.args.get(0).getInt();
 
 
 				}
@@ -82,21 +83,20 @@ public class ShapeChangeUnit extends Unit {
 		{
 			if(c.command.equals("#name") && c.args.size() > 0)
 			{
-				c.args.set(0, "\"" + Generic.capitalize(c.args.get(0).replaceAll("\"", "")) + "\"");
+				c.args.set(0, new Arg(Generic.capitalize(c.args.get(0).get())));
 				name = new Name();
 				
-				name.type = NamePart.newNamePart(Generic.capitalize(c.args.get(0).replaceAll("\"", "")), null);
+				name.type = NamePart.newNamePart(Generic.capitalize(c.args.get(0).get()), null);
 			}
 			
 			if(!c.command.startsWith("#spr"))
 				sf.commands.add(c);
-			if(c.command.equals("#gcost") && thisForm.tags.contains("specifiedgcost"))
+			if(c.command.equals("#gcost") && thisForm.tags.containsName("specifiedgcost"))
 			{
 				
 				//System.out.println(c.args.get(0) + " ADDED " + " / " + otherForm.getGoldCost_DEBUG());
 				sf.commands.add(c);
-				gcost = Integer.parseInt(c.args.get(0));
-
+				gcost = c.args.get(0).getInt();
 
 			}
 		
@@ -122,8 +122,8 @@ public class ShapeChangeUnit extends Unit {
 			
 			if(!maxagefound)
 			{
-				sf.commands.add(new Command("#maxage", "50"));
-				otherForm.commands.add(new Command("#maxage", "50"));
+				sf.commands.add(new Command("#maxage", new Arg(50)));
+				otherForm.commands.add(new Command("#maxage", new Arg(50)));
 			}
 			
 		
@@ -132,9 +132,9 @@ public class ShapeChangeUnit extends Unit {
 			// Inherit from race/pose
 			// Careful here since this stuff generally is definite instead of relative definitions
 			List<Command> clist = new ArrayList<Command>();
-			if(!otherForm.race.tags.contains("noinheritance"))
+			if(!otherForm.race.tags.containsName("noinheritance"))
 				clist.addAll(otherForm.race.unitcommands);
-			if(!otherForm.pose.tags.contains("noinheritance"))
+			if(!otherForm.pose.tags.containsName("noinheritance"))
 				clist.addAll(otherForm.pose.getCommands());
 			for(Command c : clist)
 			{
@@ -153,7 +153,7 @@ public class ShapeChangeUnit extends Unit {
 					if(c.command.contains("shape"))
 						shape = true;
 				
-				if(f.tags.contains("noinheritance") != shape)
+				if(f.tags.containsName("noinheritance") != shape)
 					continue;
 				
 				
@@ -161,13 +161,13 @@ public class ShapeChangeUnit extends Unit {
 				for(Command c : f.getCommands())
 				{
 			
-					if(assets.secondShapeNonMountCommands.contains(c.command) && !thisForm.tags.contains("mount"))
+					if(assets.secondShapeNonMountCommands.contains(c.command) && !thisForm.tags.containsName("mount"))
 					{	
 						sf.commands.add(c);
 						//handleCommand(commands, c);
 					}
 					
-					if(assets.secondShapeMountCommands.contains(c.command) && thisForm.tags.contains("mount"))
+					if(assets.secondShapeMountCommands.contains(c.command) && thisForm.tags.containsName("mount"))
 					{
 						sf.commands.add(c);
 						//handleCommand(commands, c);
@@ -222,15 +222,12 @@ public class ShapeChangeUnit extends Unit {
 		g.drawImage(image, xoffset, 0, null);
 		
 		
-		
-		if(Generic.containsTag(thisForm.tags, "recolormask"))
-		{
-			String file = Generic.getTagValue(thisForm.tags, "recolormask");
+		thisForm.tags.getString("recolormask").ifPresent(file -> {
 			BufferedImage mask = FileUtil.readImage(file);
 			Drawing.recolor(mask, this.color);
 			
 			g.drawImage(mask, xoffset, 0, null);
-		}
+		});
 		
 		return base;
 	}
@@ -243,15 +240,15 @@ public class ShapeChangeUnit extends Unit {
 		for(Command c : thisForm.commands) {
 			// First sprite
 			if (c.command.equals("#spr1")) {
-				if (c.args.get(0).equals("greyscale")) {
+				if (c.args.get(0).get().equals("greyscale")) {
 					
 					int greyscaleunits = 0;
 					if (c.args.size() > 1)
-						greyscaleunits = Integer.parseInt(c.args.get(1));
+						greyscaleunits = c.args.get(1).getInt();
 					
 					spr1 = Drawing.greyscale(otherForm.render(), greyscaleunits);
 				} else {
-					spr1 = copyImage(FileUtil.readImage(c.args.get(0)), 0);
+					spr1 = copyImage(FileUtil.readImage(c.args.get(0).get()), 0);
 				}
 				FileUtil.writeTGA(spr1, "/mods/" + spritedir + "/shapechange_" + id + "_a.tga");
 			}
@@ -261,7 +258,7 @@ public class ShapeChangeUnit extends Unit {
 			if(c.command.equals("#spr2"))
 			{
 				BufferedImage spr2;
-				if(c.args.get(0).equals("shift"))
+				if(c.args.get(0).get().equals("shift"))
 				{
 					if (spr1 == null) {
 						throw new IllegalStateException("Can't shift attack sprite because no #spr1 command found for shapechange unit!");
@@ -271,7 +268,7 @@ public class ShapeChangeUnit extends Unit {
 				}
 				else
 				{
-					spr2 = copyImage(FileUtil.readImage(c.args.get(0)), 0);
+					spr2 = copyImage(FileUtil.readImage(c.args.get(0).get()), 0);
 				}
 				FileUtil.writeTGA(spr2, "/mods/" + spritedir + "/shapechange_" + id + "_b.tga");
 			}
@@ -311,10 +308,10 @@ public class ShapeChangeUnit extends Unit {
 			}
 			else
 			{
-				lines.add(c.command + " " + Generic.listToString(c.args));
+				lines.add(c.toModLine());
 			}
 			
-			if(c.command.equals("#descr") && thisForm.tags.contains("specifieddescr"))
+			if(c.command.equals("#descr") && thisForm.tags.containsName("specifieddescr"))
 			{
 				hasDescriptionSpecified = true;
 			}
@@ -335,7 +332,7 @@ public class ShapeChangeUnit extends Unit {
 			lines.add("#name \"" + otherForm.name + "\"");
 		
 
-		if(!shiftcommand.equals("") && !thisForm.tags.contains("nowayback") && otherForm != null)
+		if(!shiftcommand.equals("") && !thisForm.tags.containsName("nowayback") && otherForm != null)
 		{
 			lines.add(shiftcommand + " " + otherForm.id);
 		}

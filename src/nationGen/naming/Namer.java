@@ -1,11 +1,14 @@
 package nationGen.naming;
 
-import java.util.ArrayList;
-import java.util.List;
 
-
+import nationGen.magic.MagicPath;
+import nationGen.magic.MagicPathInts;
+import nationGen.misc.Args;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 
@@ -17,75 +20,68 @@ public class Namer {
 	
 	}
 	
-	protected List<Integer> getHighestPaths(Nation n)
+	protected List<MagicPath> getHighestPaths(Nation n)
 	{
-		List<Integer> highestPaths = new ArrayList<Integer>();
+		List<MagicPath> highestPaths = new ArrayList<>();
 		
 		// Get paths
-		double[] paths = new double[9];
-		double highest = 0;
+		MagicPathInts paths = new MagicPathInts();
 		for(Unit u : n.generateComList())
 		{
-			for(String tag : u.tags)
-				if(tag.startsWith("schoolmage"))
+			if(u.tags.containsName("schoolmage"))
+			{
+				MagicPathInts picks = u.getMagicPicks(true);
+				for(MagicPath path : MagicPath.values())
 				{
-					int[] p = u.getMagicPicks();
-					for(int i = 0; i < 9; i++)
-					{
-						if(paths[i] < p[i])
-							paths[i] = p[i];
-						if(p[i] > highest && i != 8)
-							highest = p[i];
-					}
+					if(paths.get(path) < picks.get(path))
+						paths.set(path, picks.get(path));
 				}
+			}
 		}
-		for(int i = 0; i < 8; i++)
-			if(paths[i] == highest)
-				highestPaths.add(i);
+		paths.set(MagicPath.HOLY, 0);
+		int highest = paths.getHighestAmount();
+		
+		for(MagicPath path : MagicPath.NON_HOLY)
+			if(paths.get(path) == highest)
+				highestPaths.add(path);
 		
 		return highestPaths;
 	}
 	
-	protected List<Integer> getSitePaths(Unit u, Nation n)
+	protected List<MagicPath> getSitePaths(Unit u, Nation n)
 	{
-		double[] specpowers = new double[9];
+		MagicPathInts specpowers = new MagicPathInts();
 		
-		List<Integer> highestPaths = this.getHighestPaths(n);
+		List<MagicPath> highestPaths = this.getHighestPaths(n);
 		
 		// Get unit specific powers
-		for(String tag : u.tags)
+		for(Args args : u.tags.getAllArgs("sitepath"))
 		{
-			if(tag.startsWith("sitepath"))
-			{
-				int index = Integer.parseInt(tag.split(" ")[1]);
-				int power = Integer.parseInt(tag.split(" ")[2]);
-				specpowers[index] += 3 * power;
-			}
+			MagicPath path = MagicPath.fromInt(args.get(0).getInt());
+			int power = args.get(1).getInt();
+			specpowers.add(path, 3 * power);
 		}
 		
 
 		// Mix in national magic
-		for(Integer i : highestPaths)
+		for(MagicPath path : highestPaths)
 		{
-			if(specpowers[i] != 0)
-				specpowers[i] = specpowers[i] * 2;
+			if(specpowers.get(path) != 0)
+				specpowers.scale(path, 2);
 			else
-				specpowers[i] += 1;
+				specpowers.add(path, 1);
 		}
 		
 
 		
 		// Get paths actually used for naming
-		List<Integer> usedPaths = new ArrayList<Integer>();
-		double highest = 0;
-		for(double d : specpowers)
-			if(d > highest)
-				highest = d;
+		List<MagicPath> usedPaths = new ArrayList<>();
+		int highest = specpowers.getHighestAmount();
 		
 		if(highest > 0)
-			for(int i = 0; i < 9; i++)
-				if(specpowers[i] == highest)
-					usedPaths.add(i);
+			for(MagicPath path : MagicPath.values())
+				if(specpowers.get(path) == highest)
+					usedPaths.add(path);
 		
 		return usedPaths;
 	}

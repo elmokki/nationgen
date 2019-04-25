@@ -1,14 +1,14 @@
 package nationGen.naming;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import com.elmokki.Generic;
-
 import nationGen.items.Item;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Optional;
 
 public class DescriptionReplacer {
 	
@@ -45,12 +45,15 @@ public class DescriptionReplacer {
 		descs.put("%race%", u.race.toString().toLowerCase());
 		descs.put("%race_plural%", Generic.plural(u.race.toString().toLowerCase()));
 		
-		if(u.getSlot("mount") != null && Generic.getTagValue(u.getSlot("mount").tags, "animal") != null && !Generic.getTagValue(u.getSlot("mount").tags, "animal").equals(""))
+		if(u.getSlot("mount") != null)
 		{
-	
-			descs.put("%mount%", Generic.getTagValue(u.getSlot("mount").tags, "animal"));
-			descs.put("%mount_plural%", Generic.plural(Generic.getTagValue(u.getSlot("mount").tags, "animal")));
-
+			Optional<String> animal = u.getSlot("mount").tags.getString("animal");
+			if (animal.isEmpty() || animal.get().isEmpty()) {
+				throw new IllegalStateException("Unit " + u + " doesn't have an animal tag specified for its mount!");
+			}
+			descs.put("%mount%", animal.get());
+			descs.put("%mount_plural%", Generic.plural(animal.get()));
+			
 		}
 		else
 		{

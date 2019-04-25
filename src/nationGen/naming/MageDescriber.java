@@ -1,10 +1,10 @@
 package nationGen.naming;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MageDescriber {
@@ -33,7 +33,7 @@ public class MageDescriber {
 	{
 		List<Unit> primaryMages = new ArrayList<Unit>();
 		for(Unit u : n.generateComList())
-			if(u.tags.contains("schoolmage 3"))
+			if(u.tags.contains("schoolmage", 3))
 			{
 				primaryMages.add(u);
 			}
@@ -41,21 +41,21 @@ public class MageDescriber {
 		
 		List<Unit> secondaryMages = new ArrayList<Unit>();
 		for(Unit u : n.generateComList())
-			if(u.tags.contains("schoolmage 2"))
+			if(u.tags.contains("schoolmage", 2))
 			{
 				secondaryMages.add(u);
 			}
 		
 		List<Unit> tertiaryMages = new ArrayList<Unit>();
 		for(Unit u : n.generateComList())
-			if(u.tags.contains("schoolmage 1"))
+			if(u.tags.contains("schoolmage", 1))
 			{
 				tertiaryMages.add(u);
 			}
 		
 		List<Unit> compensationMages = new ArrayList<Unit>();
 		for(Unit u : n.generateComList())
-			if(u.tags.contains("extramage"))
+			if(u.tags.containsName("extramage"))
 			{
 				compensationMages.add(u);
 			}

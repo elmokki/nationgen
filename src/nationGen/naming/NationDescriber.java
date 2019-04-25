@@ -1,11 +1,5 @@
 package nationGen.naming;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
-import com.elmokki.Generic;
-
 import nationGen.NationGenAssets;
 import nationGen.entities.Filter;
 import nationGen.items.Item;
@@ -13,6 +7,10 @@ import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class NationDescriber {
 	private Nation n;
@@ -36,10 +34,7 @@ public class NationDescriber {
 		{
 			dr.calibrate(u);
 			
-			String desc = "";
-			if(Generic.getTagValue(u.race.tags, "description") != null)
-				desc = Generic.getTagValue(u.race.tags, "description") + " ";
-			
+			String desc = u.race.tags.getString("description").map(s -> s + " ").orElse("");
 
 			
 			if(descf != null)
@@ -50,18 +45,17 @@ public class NationDescriber {
 			
 			for(Item i : u.slotmap.values())
 			{
-			
-				if(i != null && Generic.getTagValue(i.tags, "description") != null)
+				if(i != null)
 				{
-					desc = desc + Generic.getTagValue(i.tags, "description") + " ";
+					desc = desc + i.tags.getString("description").map(s -> s + " ").orElse("");
 				}
 			}
 			
 			for(Filter f : u.appliedFilters)
 			{
-				if(f != null && Generic.getTagValue(f.tags, "description") != null)
+				if(f != null)
 				{
-					desc = desc + Generic.getTagValue(f.tags, "description") + " ";
+					desc = desc + f.tags.getString("description").map(s -> s + " ").orElse("");
 				}
 			}
 			
@@ -80,19 +74,19 @@ public class NationDescriber {
 			
 			if(tmpDesc != null)
 			{
-				desc += " " + tmpDesc.args.get(0).replaceAll("\"", "");	
+				desc += " " + tmpDesc.args.get(0);
 			}
 			
 			for(Filter f : u.appliedFilters)
 			{
-				if(f != null && Generic.getTagValue(f.tags, "description") != null)
+				if(f != null)
 				{
-					desc = desc + " " + Generic.getTagValue(f.tags, "description");
+					desc = desc + f.tags.getString("description").map(s -> " " + s).orElse("");
 				}
 			}
 			
 			
-			if(Generic.containsTag(u.tags, "montagunit"))
+			if(u.tags.containsName("montagunit"))
 			{
 				if(desc.length() > 0)
 					desc = desc + "\n\n";
@@ -104,9 +98,9 @@ public class NationDescriber {
 			desc = desc.replaceAll("\"", "");
 
 			if(tmpDesc != null)
-				u.setCommandValue("#descr", 0, "\"" + desc + "\"");
+				u.setCommandValue("#descr", desc);
 			else
-				u.commands.add(new Command("#descr", "\"" + desc + "\""));
+				u.commands.add(Command.args("#descr", desc));
 
 		}
 	}
@@ -140,7 +134,7 @@ public class NationDescriber {
 
 
 			
-			List<Filter> possibles = new ArrayList<Filter>();
+			List<Filter> possibles = new ArrayList<>();
 			for(Filter f : descs)
 				if(ChanceIncHandler.suitableFor(units.get(0), f, n))
 					possibles.add(f);
@@ -148,7 +142,7 @@ public class NationDescriber {
 			Filter descf = null;
 			if(possibles.size() > 0)
 			{
-				descf = Filter.getRandom(random, chandler.handleChanceIncs(units.get(0), possibles));
+				descf = chandler.handleChanceIncs(units.get(0), possibles).getRandom(random);
 
 			}
 
@@ -177,10 +171,7 @@ public class NationDescriber {
 			{
 				dr.calibrate(u);
 				
-				String desc = "";
-				if(Generic.getTagValue(u.race.tags, "description") != null)
-					desc = Generic.getTagValue(u.race.tags, "description") + " ";
-				
+				String desc = u.race.tags.getString("description").map(s -> s + " ").orElse("");
 	
 	
 				Command tmpDesc = null;
@@ -199,9 +190,9 @@ public class NationDescriber {
 			
 				for(Filter f : u.appliedFilters)
 				{
-					if(f != null && Generic.getTagValue(f.tags, "description") != null)
+					if(f != null)
 					{
-						desc = desc + " " + Generic.getTagValue(f.tags, "description");
+						desc = desc + f.tags.getValue("description").map(s -> " " + s).orElse("");
 					}
 				}
 				
@@ -210,9 +201,9 @@ public class NationDescriber {
 				desc = desc.replaceAll("\"", "");
 
 				if(tmpDesc != null)
-					u.setCommandValue("#descr", 0, "\"" + desc + "\"");
+					u.setCommandValue("#descr", desc);
 				else
-					u.commands.add(new Command("#descr", "\"" + desc + "\""));
+					u.commands.add(Command.args("#descr", desc));
 			}
 		}
 		

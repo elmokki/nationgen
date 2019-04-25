@@ -1,16 +1,13 @@
 package nationGen.naming;
 
 
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-
+import com.elmokki.Dom3DB;
+import com.elmokki.Generic;
 import nationGen.entities.Filter;
 import nationGen.entities.Race;
 import nationGen.entities.Theme;
 import nationGen.items.Item;
+import nationGen.magic.MagicPath;
 import nationGen.misc.Command;
 import nationGen.misc.FileUtil;
 import nationGen.misc.Site;
@@ -18,8 +15,11 @@ import nationGen.nation.Nation;
 import nationGen.nation.PDSelector;
 import nationGen.units.Unit;
 
-import com.elmokki.Dom3DB;
-import com.elmokki.Generic;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 public class NationAdvancedSummarizer {
@@ -153,12 +153,7 @@ public class NationAdvancedSummarizer {
 			
 			for(Theme f : n.nationthemes)
 			{
-				
-				if(Generic.containsTag(f.tags, "desc"))
-					traits.add(Generic.getTagValue(f.tags, "desc"));
-				else
-					traits.add(f.name);
-			
+				traits.add(f.tags.getString("desc").orElse(f.name));
 			}
 
 			if(traits.size() > 0)
@@ -173,7 +168,7 @@ public class NationAdvancedSummarizer {
 			for(Race r : n.races)
 			{
 				lines.add(r.name + " themes: " + r.themefilters.stream()
-						.map(f -> Generic.containsTag(f.tags, "desc") ? Generic.getTagValue(f.tags, "desc") : f.name)
+						.map(f -> f.tags.getString("desc").orElse(f.name))
 						.collect(Collectors.joining(", ")));
 			}
 			lines.add("");
@@ -304,22 +299,13 @@ public class NationAdvancedSummarizer {
 	}
 	
 	private String getSubrace(Unit u) {
-		String subrace = null;
 		
-		for(String str : u.slotmap.keySet())
-		{
-			if(u.getSlot(str) == null)
-				continue;
-			if(Generic.containsTag(u.getSlot(str).tags, "subrace"))
-				subrace = Generic.getTagValue(u.getSlot(str).tags, "subrace");
-		}
-		
-		if (subrace == null && Generic.containsTag(u.pose.tags, "subrace")) {
-			
-			subrace = Generic.getTagValue(u.pose.tags, "subrace");
-		}
-		
-		return subrace;
+		return u.slotmap.keySet().stream()
+				.map(u::getSlot)
+				.filter(Objects::nonNull)
+				.flatMap(i -> i.tags.getString("subrace").stream())
+				.findAny()
+				.orElseGet(() -> u.pose.tags.getString("subrace").orElse(null));
 	}
 	
 	private List<String> getWeaponNames(Unit u) {
@@ -351,15 +337,10 @@ public class NationAdvancedSummarizer {
 	private Optional<String> getMountName(Unit u) {
 		if(u.getSlot("mount") != null)
 		{
-			for(String tag : u.getSlot("mount").tags)
-				if(tag.startsWith("animal"))
-				{
-					String mountname =	Generic.getTagValue(u.getSlot("mount").tags, "animal");
+			String mountname = u.getSlot("mount").tags.getString("animal")
+				.orElseThrow(() -> new IllegalStateException("Mount of unit " + u + " doesn't have an 'animal' tag"));
 					
-					return Optional.of(NameGenerator.capitalize(mountname) + " mount");
-				}
-			
-			throw new IllegalStateException("Mount of unit " + u + " doesn't have an 'animal' tag");
+			return Optional.of(NameGenerator.capitalize(mountname) + " mount");
 		}
 		return Optional.empty();
 	}
@@ -392,7 +373,7 @@ public class NationAdvancedSummarizer {
 		// Magic things!
 		int[] paths = new int[10];
 		double rand = 0;
-		List<String> randoms = new ArrayList<String>();
+		List<MagicPath> randoms = new ArrayList<>();
 		
 		
 		boolean links = false;
@@ -405,17 +386,17 @@ public class NationAdvancedSummarizer {
 				{
 					if(c.command.equals("#magicskill"))
 					{
-						paths[Integer.parseInt(c.args.get(0).split(" ")[0])] += Integer.parseInt(c.args.get(0).split(" ")[1]);
+						paths[c.args.get(0).getInt()] += c.args.get(1).getInt();
 					}
 					else if(c.command.equals("#custommagic"))
 					{
-						for(String s : Generic.getListOfPathsInMask(Integer.parseInt(c.args.get(0).split(" ")[0])))
-							if(!randoms.contains(s))
-								randoms.add(s);
-						paths[9] += Integer.parseInt(c.args.get(0).split(" ")[1]) / 100;
-						rand += Double.parseDouble(c.args.get(0).split(" ")[1]) / 100;
+						for(MagicPath path : MagicPath.listFromMask(c.args.get(0).getInt()))
+							if(!randoms.contains(path))
+								randoms.add(path);
+						paths[9] += c.args.get(0).getInt() / 100;
+						rand += c.args.get(0).getDouble() / 100;
 						
-						if(Double.parseDouble(c.args.get(0).split(" ")[1]) / 100 > 1)
+						if(c.args.get(0).getDouble() / 100 > 1)
 							links = true;
 						
 					}
@@ -444,8 +425,8 @@ public class NationAdvancedSummarizer {
 		if(randoms.size() > 0)
 		{
 			magicstuff = magicstuff + " (";
-			for(String s : randoms)
-				magicstuff = magicstuff + s + ", ";
+			for(MagicPath path : randoms)
+				magicstuff = magicstuff + path.name + ", ";
 			
 			if(links)
 				magicstuff = magicstuff + "at least partially linked, ";
@@ -484,24 +465,24 @@ public class NationAdvancedSummarizer {
 		if(holy)
 			stuff.add("Sacred");
 		
-		if(Generic.containsTag(u.tags, "montagunit"))
+		if(u.tags.containsName("montagunit"))
 		{
 			int shape = -1;
 			for(Command c : u.getCommands())
 				if(c.command.equals("#firstshape"))
-					shape = -1 * Integer.parseInt(c.args.get(0));
+					shape = -1 * c.args.get(0).getInt();
 			
 			if(shape != -1)
 				stuff.add("Becomes unit of montag " + shape + " when recruited");
 		}
 		
 		
-		if(Generic.containsTag(u.tags, "hasmontag"))
+		if(u.tags.containsName("hasmontag"))
 		{
 			int shape = -1;
 			for(Command c : u.getCommands())
 				if(c.command.equals("#montag"))
-					shape = Integer.parseInt(c.args.get(0));
+					shape = c.args.get(0).getInt();
 			
 			if(shape != -1)
 				stuff.add("Has montag " + shape);
@@ -509,20 +490,13 @@ public class NationAdvancedSummarizer {
 		
 		for(Filter f : u.appliedFilters)
 		{
-			if(f.tags.contains("do_not_show_in_descriptions"))
+			if(f.tags.containsName("do_not_show_in_descriptions"))
 				continue;
 			
-			String text = null;
-			
-			if(Generic.containsTag(f.tags, "description"))
-				text = Generic.getTagValue(f.tags, "description");
-			
-			if(text == null)
-				text = f.name;
+			String text = f.tags.getString("description").orElse(f.name);
 			
 			if(text != null)
 				stuff.add(text);
-			
 		}
 		
 		return stuff;
@@ -535,14 +509,7 @@ public class NationAdvancedSummarizer {
 			if(item == null)
 				continue;
 			
-			for(String tag : item.tags)
-			{
-				List<String> args = Generic.parseArgs(tag);
-				if(args.get(0).equals("description") && args.size() > 1)
-				{
-					descriptions.add(args.get(1));
-				}
-			}
+			descriptions.addAll(item.tags.getAllStrings("description"));
 		}
 		return descriptions;
 	}

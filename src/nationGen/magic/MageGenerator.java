@@ -1,36 +1,30 @@
 package nationGen.magic;
 
 
-
-import java.awt.Color;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
 import com.elmokki.Generic;
-
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
-import nationGen.entities.Entity;
-import nationGen.entities.Filter;
-import nationGen.entities.MagicFilter;
-import nationGen.entities.Pose;
-import nationGen.entities.Race;
-import nationGen.entities.Theme;
+import nationGen.chances.EntityChances;
+import nationGen.entities.*;
 import nationGen.items.Item;
-import nationGen.misc.ChanceIncHandler;
-import nationGen.misc.Command;
-import nationGen.misc.ItemSet;
+import nationGen.misc.*;
 import nationGen.nation.Nation;
 import nationGen.rostergeneration.CommanderGenerator;
 import nationGen.rostergeneration.TroopGenerator;
 import nationGen.rostergeneration.montagtemplates.MageMontagTemplate;
-//import nationGen.rostergeneration.TroopGenerator.Template;
 import nationGen.units.Unit;
+
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.Random;
+import java.util.stream.Collectors;
+
 
 public class MageGenerator extends TroopGenerator {
 	
-	public List<MagicPattern> possiblePatterns = new ArrayList<MagicPattern>();
+	public List<MagicPattern> possiblePatterns = new ArrayList<>();
 	
 	private NationGenAssets assets;
 	
@@ -48,18 +42,18 @@ public class MageGenerator extends TroopGenerator {
 	 * @param minlevel minimum level to consider
 	 * @return list of integers signifying paths
 	 */
-	public static List<Integer> findCommonPaths(List<Unit> all, int minlevel)
+	public static List<MagicPath> findCommonPaths(List<Unit> all, int minlevel)
 	{
-		List<Integer> list = new ArrayList<Integer>();
-		for(int i = 0; i < 9; i++)
+		List<MagicPath> list = new ArrayList<>();
+		for(MagicPath path : MagicPath.values())
 		{
 			boolean ok = true;
 			for(Unit u : all)
 			{
-
 				
-				int[] p = u.getMagicPicks(false);
-				if(p[i] < minlevel)
+				
+				MagicPathInts p = u.getMagicPicks(false);
+				if(p.get(path) < minlevel)
 				{
 					ok = false;
 				}
@@ -67,7 +61,7 @@ public class MageGenerator extends TroopGenerator {
 			}
 			
 			if(ok)
-				list.add(i);
+				list.add(path);
 		}
 
 		
@@ -79,7 +73,7 @@ public class MageGenerator extends TroopGenerator {
 	 * @param all given units
 	 * @return list of integers signifying paths
 	 */
-	public static List<Integer> findCommonPaths(List<Unit> all)
+	public static List<MagicPath> findCommonPaths(List<Unit> all)
 	{
 		return findCommonPaths(all, 1);
 	}
@@ -90,52 +84,52 @@ public class MageGenerator extends TroopGenerator {
 	 * @param all The mages to distinguish from
 	 * @return List of integers signifying paths
 	 */
-	public static List<Integer> findDistinguishingPaths(Unit u, List<Unit> all)
+	public static List<MagicPath> findDistinguishingPaths(Unit u, List<Unit> all)
 	{
-		int[] paths = u.getMagicPicks(false);
+		MagicPathInts paths = u.getMagicPicks(false);
 		
 		
-		List<Integer> list = new ArrayList<Integer>();
+		List<MagicPath> list = new ArrayList<>();
 		for(Unit u2 : all)
 		{
 			if(u2 == u)
 				continue;
 			
-			int[] p2 = u2.getMagicPicks(false);
-			for(int i = 0; i < 9; i++)
+			MagicPathInts p2 = u2.getMagicPicks(false);
+			for(MagicPath path : MagicPath.values())
 			{
-				if((paths[i] > p2[i]) && !list.contains(i))
-					list.add(i);
+				if((paths.get(path) > p2.get(path)) && !list.contains(path))
+					list.add(path);
 			}
 		}
 		
 		if(all.size() == 1)
 		{
-			for(int i = 0; i < 9; i++)
+			for(MagicPath path : MagicPath.values())
 			{
-				if((paths[i] > 0))
-					list.add(i);
+				if((paths.get(path) > 0))
+					list.add(path);
 			}
 		}
 		
 		return list;
 	}
 	
-	private List<Integer> getShuffledPrios(List<Unit> units)
+	private List<MagicPath> getShuffledPrios(List<Unit> units)
 	{
-		List<Filter> orig = new ArrayList<Filter>();
-		List<Integer> newlist = new ArrayList<Integer>();
+		List<Filter> orig = new ArrayList<>();
+		List<MagicPath> newlist = new ArrayList<>();
 		
 		
 		
-		double[] old = getAllPicks(units, true);
-		for(int i = 0; i < 8; i++)
+		MagicPathInts old = getAllPicks(units, true);
+		for(MagicPath path : MagicPath.NON_HOLY)
 		{
 			Filter f = new Filter(this.nationGen);
-			f.name = Generic.integerToPath(i);
-			if(old[i] > 0)
+			f.name = path.name;
+			if(old.get(path) > 0)
 			{
-				double oldvalue = Math.sqrt(old[i]);
+				double oldvalue = Math.sqrt(old.get(path));
 				f.basechance = (double)1 / (2*oldvalue);
 			}
 		
@@ -146,14 +140,14 @@ public class MageGenerator extends TroopGenerator {
 		while(newlist.size() < 2)
 		{
 
-			Filter i = Filter.getRandom(this.random, orig);
+			Filter i = EntityChances.baseChances(orig).getRandom(this.random);
 			orig.remove(i);
-			newlist.add(Generic.PathToInteger(i.name));
+			newlist.add(MagicPath.fromName(i.name));
 		}
 		
 		for(Filter f : orig)
 		{
-			double picks = old[Generic.PathToInteger(f.name)];
+			double picks = old.get(MagicPath.fromName(f.name));
 			if(picks > 0)
 			{
 				f.basechance = 2*Math.sqrt(picks);
@@ -162,67 +156,62 @@ public class MageGenerator extends TroopGenerator {
 
 		while(orig.size() > 0)
 		{
-			Filter i = Filter.getRandom(this.random, orig);
+			Filter i = EntityChances.baseChances(orig).getRandom(this.random);
 			orig.remove(i);
-			newlist.add(Generic.PathToInteger(i.name));
+			newlist.add(MagicPath.fromName(i.name));
 		}
 		
 		return newlist;
 		
 	}
 	
-	private List<Integer> getPrios(Unit u)
+	private List<MagicPath> getPrios(Unit u)
 	{
-		List<Filter> orig = new ArrayList<Filter>();
-		List<Integer> newlist = new ArrayList<Integer>();
+		List<Filter> orig = new ArrayList<>();
+		List<MagicPath> newlist = new ArrayList<>();
 		
 		
 		
-		List<String> source = new ArrayList<String>();
+		Tags source = new Tags();
 		
-		if(Generic.getTagValue(u.pose.tags, "magicpriority") != null)
-			source.addAll(Generic.getTags(u.pose.tags, "magicpriority"));
-		else if(Generic.getTagValue(u.race.tags, "magicpriority") != null)
-			source.addAll(Generic.getTags(u.race.tags, "magicpriority"));
+		if(u.pose.tags.getArgs("magicpriority").isPresent())
+			source.addAll(u.pose.tags.named("magicpriority"));
+		else
+			source.addAll(u.race.tags.named("magicpriority"));
+		
 		for(Theme t : nation.nationthemes)
-			if(Generic.getTagValue(t.tags, "magicpriority") != null)
-				source.addAll(Generic.getTags(t.tags, "magicpriority"));
+			source.addAll(t.tags.named("magicpriority"));
 		
 	
 		for(int i = 0; i < 8; i++)
 		{
 			Filter f = new Filter(this.nationGen);
-			f.name = Generic.integerToPath(i);
+			f.name = MagicPath.fromInt(i).name;
 	
-			if(source != null)
+			for(Args value : source.getAllArgs("magicpriority"))
 			{
-				for(String tag : source)
+				if(value.size() >= 2)
 				{
-					List<String> args = Generic.parseArgs(tag);
-					if(args.get(0).equals("magicpriority") && args.size() > 2)
+					if(f.name.equals(value.get(0).get()))
 					{
-						if(Generic.PathToInteger(args.get(1)) == i)
-						{
-							f.basechance *= Double.parseDouble(args.get(2));
-							
-							// All paths need to be possible, so let's have a failsafe
-							if(f.basechance == 0)
-								f.basechance = 0.00001;
+						f.basechance *= value.get(1).getDouble();
 						
-						}
+						// All paths need to be possible, so let's have a failsafe
+						if(f.basechance == 0)
+							f.basechance = 0.00001;
+					
 					}
 				}
 			}
-			
 	
 			orig.add(f);
 		}
 		
 		while(orig.size() > 0)
 		{
-			Filter i = Filter.getRandom(this.random, orig);
+			Filter i = EntityChances.baseChances(orig).getRandom(this.random);
 			orig.remove(i);
-			newlist.add(Generic.PathToInteger(i.name));
+			newlist.add(MagicPath.fromName(i.name));
 		}
 		
 		return newlist;
@@ -231,8 +220,8 @@ public class MageGenerator extends TroopGenerator {
 	
 	private void applyStats(Unit u)
 	{
-		u.commands.add(new Command("#att", "-1"));
-		u.commands.add(new Command("#def", "-1"));
+		u.commands.add(Command.args("#att", "-1"));
+		u.commands.add(Command.args("#def", "-1"));
 		
 		int mr = 2 + (int)Math.round(u.getMagicAmount(10));
 
@@ -244,7 +233,7 @@ public class MageGenerator extends TroopGenerator {
 			if(c.command.equals("#mr"))
 			{
 
-				unitmr += Integer.parseInt(c.args.get(0));
+				unitmr += c.args.get(0).getInt();
 			}
 		}
 		
@@ -275,7 +264,7 @@ public class MageGenerator extends TroopGenerator {
 		
 		if(mr > 0)
 		{
-			u.commands.add(new Command("#mr", "+" + mr));
+			u.commands.add(Command.args("#mr", "+" + mr));
 		}
 	
 	}
@@ -292,7 +281,7 @@ public class MageGenerator extends TroopGenerator {
 		// Tag mages
 		for(int i = 0; i < 3; i++)
 		{
-			this.tagAll(mages.get(i), "schoolmage " + (i+1));
+			tagAll(mages.get(i), "schoolmage", i+1);
 			
 			
 			for(Unit u : mages.get(i))
@@ -323,13 +312,13 @@ public class MageGenerator extends TroopGenerator {
 				
 		List<MagicPattern> available = getPatternsForTier(3, primaries);
 		
-		List<MagicPattern> primarypatterns = new ArrayList<MagicPattern>();
+		List<MagicPattern> primarypatterns = new ArrayList<>();
 		ChanceIncHandler chandler = new ChanceIncHandler(nation, "magegen");
-		MagicPattern primaryPattern = Entity.getRandom(this.random, chandler.handleChanceIncs(mages.get(2).get(0), available));
+		MagicPattern primaryPattern = chandler.handleChanceIncs(mages.get(2).get(0), available).getRandom(this.random);
 
 
 		// Primaries
-		List<Integer> prio = this.getPrios(mages.get(2).get(0));
+		List<MagicPath> prio = this.getPrios(mages.get(2).get(0));
 		for(int i = 0; i < primaries; i++)
 		{						
 			primarypatterns.add(primaryPattern);
@@ -376,7 +365,7 @@ public class MageGenerator extends TroopGenerator {
 			for(int i = 0; i < secondaries; i++)
 			{			
 				
-				MagicPattern p = Entity.getRandom(this.random, chandler.handleChanceIncs(mages.get(1).get(0), secs));
+				MagicPattern p = chandler.handleChanceIncs(mages.get(1).get(0), secs).getRandom(this.random);
 				
 				secs.remove(p);
 				secondarypatterns.add(p);
@@ -385,9 +374,7 @@ public class MageGenerator extends TroopGenerator {
 		else if(secondaries > 0)
 		{
 			
-			
-			MagicPattern p = Entity.getRandom(this.random, chandler.handleChanceIncs(mages.get(1).get(0), secs));
-			
+			MagicPattern p = chandler.handleChanceIncs(mages.get(1).get(0), secs).getRandom(this.random);
 
 			for(int i = 0; i < secondaries; i++)
 			{						
@@ -414,11 +401,11 @@ public class MageGenerator extends TroopGenerator {
 		
 		
 		List<MagicPattern> terts = getPatternsWithPicks(this.getPatternsForTier(1, primaries), 0, maxPicks);
-		List<MagicPattern> tertiarypatterns = new ArrayList<MagicPattern>();
+		List<MagicPattern> tertiarypatterns = new ArrayList<>();
 		
 		if(tertiaries > 0)
 		{
-			MagicPattern p = Entity.getRandom(this.random, chandler.handleChanceIncs(mages.get(0).get(0), terts));
+			MagicPattern p = chandler.handleChanceIncs(mages.get(0).get(0), terts).getRandom(this.random);
 			for(int i = 0; i < tertiaries; i++)
 			{						
 				tertiarypatterns.add(p);
@@ -426,7 +413,7 @@ public class MageGenerator extends TroopGenerator {
 		}		
 
 		// Apply patterns
-		List<List<MagicPattern>> all = new ArrayList<List<MagicPattern>>();
+		List<List<MagicPattern>> all = new ArrayList<>();
 		all.add(tertiarypatterns);
 		all.add(secondarypatterns);
 		all.add(primarypatterns);
@@ -445,7 +432,7 @@ public class MageGenerator extends TroopGenerator {
 				if(i < 2)
 					parents = mages.get(i + 1);
 				
-				List<Integer> derp;
+				List<MagicPath> derp;
 				if(i == 1 && !varySecs) // Secondary mages, specific case of pattern varying but magic order not
 				{
 					derp = prio;
@@ -467,23 +454,23 @@ public class MageGenerator extends TroopGenerator {
 				mages.get(i).get(j).name.setType(all.get(i).get(j).toString(derp));
 				
 			
-				if(mages.get(i).get(j).tags.contains("warriormage"))
+				if(mages.get(i).get(j).tags.containsName("warriormage"))
 				{
 					if(leaderrandom1 > 0.95)
 					{
 						mages.get(i).get(j).commands.add(new Command("#expertleader"));
-						mages.get(i).get(j).commands.add(new Command("#gcost +50"));
+						mages.get(i).get(j).commands.add(Command.args("#gcost", "+50"));
 					}
 					else if(leaderrandom1 > 0.8)
 					{
 						mages.get(i).get(j).commands.add(new Command("#goodleader"));
-						mages.get(i).get(j).commands.add(new Command("#gcost +30"));
+						mages.get(i).get(j).commands.add(Command.args("#gcost", "+30"));
 					}
 					else if(leaderrandom1 > 0.5)
 					{
 						mages.get(i).get(j).commands.add(new Command("#okayleader"));
-						mages.get(i).get(j).commands.add(new Command("#command +20"));
-						mages.get(i).get(j).commands.add(new Command("#gcost +10"));
+						mages.get(i).get(j).commands.add(Command.args("#command", "+20"));
+						mages.get(i).get(j).commands.add(Command.args("#gcost", "+10"));
 					}
 					else if(leaderrandom1 > 0.25)
 					{
@@ -492,12 +479,12 @@ public class MageGenerator extends TroopGenerator {
 					else if(leaderrandom1 > 0.0625)
 					{
 						mages.get(i).get(j).commands.add(new Command("#poorleader"));
-						mages.get(i).get(j).commands.add(new Command("#command +30"));
+						mages.get(i).get(j).commands.add(Command.args("#command", "+30"));
 					}
 					else
 					{
 						mages.get(i).get(j).commands.add(new Command("#poorleader"));
-						mages.get(i).get(j).commands.add(new Command("#gcost -5"));
+						mages.get(i).get(j).commands.add(Command.args("#gcost", "-5"));
 					}
 
 				}
@@ -507,20 +494,20 @@ public class MageGenerator extends TroopGenerator {
 					if(i == 2 && leaderrandom1 > 0.9)
 					{
 						mages.get(i).get(j).commands.add(new Command("#goodleader"));
-						mages.get(i).get(j).commands.add(new Command("#gcost +40"));
+						mages.get(i).get(j).commands.add(Command.args("#gcost", "+40"));
 					}
 					else if(i == 2 && leaderrandom1 > 0.6)
 					{
-						mages.get(i).get(j).commands.add(new Command("#gcost +20"));
+						mages.get(i).get(j).commands.add(Command.args("#gcost", "+20"));
 					}
 					else if(i == 1 && leaderrandom1 > 0.9 && leaderrandom2 > 0.5)
 					{
-						mages.get(i).get(j).commands.add(new Command("#gcost +20"));
+						mages.get(i).get(j).commands.add(Command.args("#gcost", "+20"));
 					}
 					else if(leaderrandom2 > 0.3 || leaderrandom1 > 0.3 || i > 0)
 					{
 						mages.get(i).get(j).commands.add(new Command("#poorleader"));
-						mages.get(i).get(j).commands.add(new Command("#gcost +5"));
+						mages.get(i).get(j).commands.add(Command.args("#gcost", "+5"));
 					}
 					else
 					{
@@ -554,11 +541,11 @@ public class MageGenerator extends TroopGenerator {
 
 				if(slowrecrand < slowrecmod && i == 2)
 				{
-					mages.get(i).get(j).commands.add(new Command("#rpcost 4"));
+					mages.get(i).get(j).commands.add(Command.args("#rpcost", "4"));
 				}
 				else
 				{
-					mages.get(i).get(j).commands.add(new Command("#rpcost 2"));
+					mages.get(i).get(j).commands.add(Command.args("#rpcost", "2"));
 				}
 
 
@@ -566,7 +553,7 @@ public class MageGenerator extends TroopGenerator {
 
 
 		// Put to one unit list
-		List<Unit> list = new ArrayList<Unit>();
+		List<Unit> list = new ArrayList<>();
 		for(List<Unit> l : mages)
 		{
 			this.resolveAge(l);
@@ -577,7 +564,7 @@ public class MageGenerator extends TroopGenerator {
 		for(Unit u : list)
 			determineSpecialLeadership(u, false);
 
-		tagAll(list, "identifier schoolmage");
+		tagAll(list, "identifier", "schoolmage");
 		
 
 		// Handle montags
@@ -587,28 +574,28 @@ public class MageGenerator extends TroopGenerator {
 
 		
 		// Diagnostics
-		double[] picks = getAllPicks(list, true);
-		double[] norand_picks = getAllPicks(list, false);
+		MagicPathInts picks = getAllPicks(list, true);
+		MagicPathInts norand_picks = getAllPicks(list, false);
 		
 		int diversity = 0;
 		int max = 0;
 		int atmax = 0;
-		for(int i = 0; i < 9; i++)
+		for(MagicPath path : MagicPath.values())
 		{
-			if(picks[i] > 1 || (norand_picks[i] == 1 && (i == 7 && i == 4)))
+			if(picks.get(path) > 1 || (norand_picks.get(path) == 1 && (path == MagicPath.BLOOD || path == MagicPath.ASTRAL)))
 				diversity++;
 			
-			if(picks[i] > max)
+			if(picks.get(path) > max)
 			{
-				max = (int)picks[i];
+				max = picks.get(path);
 				atmax = 1;
 			}
 			 
 		}
 		
-		for(int i = 0; i < 9; i++)
+		for(MagicPath path : MagicPath.values())
 		{
-			if(picks[i] == max)
+			if(picks.get(path) == max)
 			{
 				atmax++;
 			}
@@ -623,58 +610,58 @@ public class MageGenerator extends TroopGenerator {
 		boolean ok = false;
 		int checks = 0;
 		
-		if(diversity < 3 && ((norand_picks[4] == 0 && norand_picks[7] == 0) && this.random.nextDouble() < 0.8))
+		if(diversity < 3 && ((norand_picks.get(MagicPath.ASTRAL) == 0 && norand_picks.get(MagicPath.BLOOD) == 0) && this.random.nextDouble() < 0.8))
 		{
 			ok = true;
 			checks++;
 		}
 		
-		if(max < 4 && norand_picks[4] == 0 && norand_picks[7] == 0 && diversity < 3) 
+		if(max < 4 && norand_picks.get(MagicPath.ASTRAL) == 0 && norand_picks.get(MagicPath.BLOOD) == 0 && diversity < 3)
 		{
 			ok = true;
 			checks++;
 		}
 		
-		if(diversity < 4 && norand_picks[4] == 0 && norand_picks[7] == 0 && this.random.nextDouble() < 0.5)
+		if(diversity < 4 && norand_picks.get(MagicPath.ASTRAL) == 0 && norand_picks.get(MagicPath.BLOOD) == 0 && this.random.nextDouble() < 0.5)
 		{
 			ok = true;
 			checks++;
 		}
-		else if(diversity < 4 && norand_picks[4] == 0 && norand_picks[7] == 0 && norand_picks[3] == 0 && norand_picks[0] == 0 && this.random.nextDouble() < 0.2)
-		{
-			ok = true;
-			checks++;
-		}
-		
-		
-		if(max < 4 && atmax < 2 && picks[4] == 0 && picks[7] == 0 && this.random.nextDouble() < 0.5)
-		{
-			ok = true;
-			checks++;
-		}
-		else if(max < 3 && atmax < 4 && picks[4] == 0 && picks[7] == 0)
+		else if(diversity < 4 && norand_picks.get(MagicPath.ASTRAL) == 0 && norand_picks.get(MagicPath.BLOOD) == 0 && norand_picks.get(MagicPath.EARTH) == 0 && norand_picks.get(MagicPath.FIRE) == 0 && this.random.nextDouble() < 0.2)
 		{
 			ok = true;
 			checks++;
 		}
 		
-		if(norand_picks[4] == 0 && norand_picks[7] == 0 && diversity < 4 && this.random.nextDouble() < 0.2)
+		
+		if(max < 4 && atmax < 2 && picks.get(MagicPath.ASTRAL) == 0 && picks.get(MagicPath.BLOOD) == 0 && this.random.nextDouble() < 0.5)
 		{
 			ok = true;
 			checks++;
 		}
-		if(norand_picks[4] == 0 && norand_picks[7] == 0 && atmax == 1 && diversity < 2 && this.random.nextDouble() < 0.8)
-		{
-			ok = true;
-			checks++;
-		}
-		if(norand_picks[4] < 2 && norand_picks[7] < 2 && atmax == 1 && diversity < 2 && this.random.nextDouble() < 0.5)
+		else if(max < 3 && atmax < 4 && picks.get(MagicPath.ASTRAL) == 0 && picks.get(MagicPath.BLOOD) == 0)
 		{
 			ok = true;
 			checks++;
 		}
 		
-		if(primaries == 1 && secondaries == 1 && !(norand_picks[4] > 0 || norand_picks[7] > 0))
+		if(norand_picks.get(MagicPath.ASTRAL) == 0 && norand_picks.get(MagicPath.BLOOD) == 0 && diversity < 4 && this.random.nextDouble() < 0.2)
+		{
+			ok = true;
+			checks++;
+		}
+		if(norand_picks.get(MagicPath.ASTRAL) == 0 && norand_picks.get(MagicPath.BLOOD) == 0 && atmax == 1 && diversity < 2 && this.random.nextDouble() < 0.8)
+		{
+			ok = true;
+			checks++;
+		}
+		if(norand_picks.get(MagicPath.ASTRAL) < 2 && norand_picks.get(MagicPath.BLOOD) < 2 && atmax == 1 && diversity < 2 && this.random.nextDouble() < 0.5)
+		{
+			ok = true;
+			checks++;
+		}
+		
+		if(primaries == 1 && secondaries == 1 && !(norand_picks.get(MagicPath.ASTRAL) > 0 || norand_picks.get(MagicPath.BLOOD) > 0))
 		{
 			if((checks == 0 && random.nextDouble() < 0.7) || (checks == 1 && random.nextDouble() < 0.3))
 			{	
@@ -702,12 +689,12 @@ public class MageGenerator extends TroopGenerator {
 			else if(extramages.get(0).getMagicAmount(0.25) > 6 || (extramages.get(0).getMagicAmount(0.25) > 5 && random.nextBoolean()))
 				extramages.get(0).caponly = true;
 			
-			if((extramages.get(0).caponly == false && this.random.nextDouble() > 0.125 && extramages.get(0).getMagicAmount(0.25) > 3))
-				extramages.get(0).commands.add(new Command("#rpcost 4"));
+			if(!extramages.get(0).caponly && this.random.nextDouble() > 0.125 && extramages.get(0).getMagicAmount(0.25) > 3)
+				extramages.get(0).commands.add(Command.args("#rpcost", "4"));
 			else if(extramages.get(0).getMagicAmount(0.25) > 5 && this.random.nextDouble() > 0.5)
-				extramages.get(0).commands.add(new Command("#rpcost 4"));
+				extramages.get(0).commands.add(Command.args("#rpcost", "4"));
 			else
-				extramages.get(0).commands.add(new Command("#rpcost 2"));
+				extramages.get(0).commands.add(Command.args("#rpcost", "2"));
 
 			for(Unit u : extramages)
 				unitGen.handleMontagUnits(u, new MageMontagTemplate(nation, nationGen, assets, 4), "montagmages");
@@ -789,16 +776,11 @@ public class MageGenerator extends TroopGenerator {
 		if(list.size() > 0)
 		{
 			int power = 0;
-			int maxStrength = 1;
-			for(Unit u : list)
-				for(int i = 3; i > 0; i--)
-				{
-					if(u.tags.contains("priest " + i) && i > maxStrength)
-					{
-						maxStrength = i;
-						break;
-					}
-				}
+			final int maxStrength = list.stream()
+					.flatMap(u -> u.tags.getAllValues("priest").stream())
+					.map(Arg::getInt)
+					.max(Integer::compareTo)
+					.orElse(1);
 			
 			if(this.random.nextDouble() < 0.15 + maxStrength * 0.075)
 			{
@@ -829,27 +811,26 @@ public class MageGenerator extends TroopGenerator {
 	private void applyMageFilters(List<Unit> list2)
 	{		
 		
-		List<Unit> list = new ArrayList<Unit>();
-		list.addAll(list2);
+		List<Unit> list = new ArrayList<>(list2);
 		
 		// Diagnostics
-		double[] picks = getAllPicks(list, true);
-		double[] norand_picks = getAllPicks(list, false);
+		MagicPathInts picks = getAllPicks(list, true);
+		MagicPathInts norand_picks = getAllPicks(list, false);
 		
 		int diversity = 0;
 		int max = 0;
 		int atmax = 0;
-		for(int i = 0; i < 9; i++)
+		for(MagicPath path : MagicPath.values())
 		{
-			if(picks[i] > 1 || (norand_picks[i] == 1 && (i == 7 && i == 4)))
+			if(picks.get(path) > 1 || (norand_picks.get(path) == 1 && (path == MagicPath.BLOOD || path == MagicPath.ASTRAL)))
 				diversity++;
 			
-			if(picks[i] > max)
+			if(picks.get(path) > max)
 			{
-				max = (int)picks[i];
+				max = picks.get(path);
 				atmax = 1;
 			}
-			else if(picks[i] == max)
+			else if(picks.get(path) == max)
 			{
 				atmax++;
 			}
@@ -878,13 +859,13 @@ public class MageGenerator extends TroopGenerator {
 			mod += 0.1;
 		
 			
-		if(picks[4] > 0 && picks[3] > 0)
+		if(picks.get(MagicPath.ASTRAL) > 0 && picks.get(MagicPath.EARTH) > 0)
 			mod *= 0.75;
-		if(picks[4] > 2)
+		if(picks.get(MagicPath.ASTRAL) > 2)
 			mod *= 0.75;
-		else if(norand_picks[4] > 0)
+		else if(norand_picks.get(MagicPath.ASTRAL) > 0)
 			mod *= 0.8;
-		if(picks[7] > 2)
+		if(picks.get(MagicPath.BLOOD) > 2)
 			mod *= 0.75;
 		
 
@@ -920,61 +901,53 @@ public class MageGenerator extends TroopGenerator {
 			power++;
 		
 		
-		Unit extra = null;
-		for(Unit u : list)
-			if(!u.tags.contains("identifier schoolmage"))
-			{
-				extra = u;
-				break;
-			}
-		list.remove(extra);
+		Optional<Unit> extra = list.stream()
+				.filter(u -> !u.tags.contains("identifier", "schoolmage"))
+				.findFirst();
+		
+		extra.ifPresent(list::remove);
 		this.applyFilters(list, power, defaults, "magefilters");
 
 		
 		// Filters for extra mage
-		if(extra != null)
-		{
-			list.clear();
-			list.add(extra);
-			power = this.random.nextInt(4); // 0 to 3
+		extra.ifPresent(extraMage -> {
+			int extraPower = this.random.nextInt(4); // 0 to 3
 			if(this.random.nextBoolean())
-				power += this.random.nextInt(3); // 0 to 2;
+				extraPower += this.random.nextInt(3); // 0 to 2;
 			
-			this.applyFilters(list, power, defaults, "magefilters");
-		}
-		
+			this.applyFilters(List.of(extraMage), extraPower, defaults, "magefilters");
+		});
 	}
 	
 	
-	public static double[] getAllPicks(List<Unit> units, boolean randoms)
+	public static MagicPathInts getAllPicks(List<Unit> units, boolean randoms)
 	{
-		double[] picks = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+		MagicPathInts picks = new MagicPathInts();
 		
 		for(Unit u : units)
 		{
-			int[] p = u.getMagicPicks(randoms);
+			MagicPathInts p = u.getMagicPicks(randoms);
 		
 
 			
-			for(int i = 0; i < 9; i++)
+			for(MagicPath path : MagicPath.values())
 			{
-				if(picks[i] < p[i])
-					picks[i] = p[i];
+				if(picks.get(path) < p.get(path))
+					picks.set(path, p.get(path));
 			}
 		}
-		
 
 		return picks;
 	}
 	
-	public MagicFilter getMagicFilter(List<Integer> prio, MagicPattern p, int primaries)
+	public MagicFilter getMagicFilter(List<MagicPath> prio, MagicPattern p, int primaries)
 	{
 		MagicFilter f = new MagicFilter(nationGen);
 		f.prio = prio;
 		f.pattern = p;
 		f.name = "MAGICPICKS";
 		f.tags.addAll(p.tags);
-		f.tags.add("do_not_show_in_descriptions");
+		f.tags.addName("do_not_show_in_descriptions");
 		return f;
 	}
 	
@@ -991,32 +964,30 @@ public class MageGenerator extends TroopGenerator {
 		
 			
 		
-		return (int)Math.max(0, (p.getPathsAtleastAt(1, 100) - 1));
+		return Math.max(0, (p.getPathsAtleastAt(1, 100) - 1));
 	}
 	
-	private List<Integer> varyAt(int point, List<Integer> prio, int times)
+	private List<MagicPath> varyAt(int point, List<MagicPath> prio, int times)
 	{
-		List<Integer> nprio = new ArrayList<Integer>();
-		nprio.addAll(prio);
-		int old = nprio.get(point);
+		List<MagicPath> nprio = new ArrayList<>(prio);
+		MagicPath old = nprio.get(point);
 		nprio.set(point, nprio.get(point + times));
 		nprio.set(point + times, old);
 		return nprio;
 	}
 	
-	private List<Integer> varyAt(int point, List<Integer> prio, int times, Unit parent, List<Unit> parents)
+	private List<MagicPath> varyAt(int point, List<MagicPath> prio, int times, Unit parent, List<Unit> parents)
 	{
-		List<Integer> nprio = new ArrayList<Integer>();
-		nprio.addAll(prio);
+		List<MagicPath> nprio = new ArrayList<>(prio);
 
 		
-		List<Integer> dpaths = findDistinguishingPaths(parent, parents);
+		List<MagicPath> dpaths = findDistinguishingPaths(parent, parents);
 		
 		if(dpaths.size() == 0)
 			return varyAt(point, prio, times);
 		
 		int index = nprio.indexOf(dpaths.get(0));
-		int old = nprio.get(point);
+		MagicPath old = nprio.get(point);
 		nprio.set(point, dpaths.get(0));
 		nprio.set(index, old);
 		
@@ -1115,13 +1086,9 @@ public class MageGenerator extends TroopGenerator {
 	private void loadPatterns()
 	{
 		// Patterns
-		List<String> patternsets = new ArrayList<String>();
-		for(String tag : nation.races.get(0).tags)
-		{
-			List<String> args = Generic.parseArgs(tag);
-			if(args.get(0).equals("magicpatterns") && args.size() > 1)
-				patternsets.add(args.get(1));
-		}
+		List<String> patternsets = nation.races.get(0).tags.getAllValues("magicpatterns").stream()
+				.map(Arg::get)
+				.collect(Collectors.toList());
 		
 		if(patternsets.size() == 0)
 		{
@@ -1142,15 +1109,13 @@ public class MageGenerator extends TroopGenerator {
 	
 
 	
-	private List<Unit> generateExtraMages(int primaries, List<Integer> prio, int power)
+	private List<Unit> generateExtraMages(int primaries, List<MagicPath> prio, int power)
 	{
 		Race race = nation.races.get(0);
 		
 		double bonussecchance = 1;
-		if(Generic.containsTag(race.tags, "secondaryracemagemod"))
-			bonussecchance += Double.parseDouble(Generic.getTagValue(race.tags, "secondaryracemagemod"));
-		if(Generic.containsTag(nation.races.get(1).tags, "primaryracemagemod"))
-			bonussecchance -= Double.parseDouble(Generic.getTagValue(nation.races.get(1).tags, "primaryracemagemod"));
+		bonussecchance += race.tags.getDouble("secondaryracemagemod").orElse(0D);
+		bonussecchance -= nation.races.get(1).tags.getDouble("primaryracemagemod").orElse(0D);
 		
 		if((this.random.nextDouble() < 0.075 * bonussecchance) && nation.races.get(1).hasRole("mage"))
 			race = nation.races.get(1);
@@ -1159,7 +1124,7 @@ public class MageGenerator extends TroopGenerator {
 
 		List<Unit> bases = generateBases("mage", race, 1, 2);
 		
-		int tier = 1;
+		int tier;
 		if(power >= 5 || (power >= 4 && random.nextBoolean()) || (power >= 3 && random.nextDouble() > 0.66) | (power >= 2 && random.nextDouble() > 0.95))
 			tier = 3;
 		else if(power > 2 || (random.nextBoolean() && power != 1) || random.nextDouble() > 0.90)
@@ -1170,7 +1135,7 @@ public class MageGenerator extends TroopGenerator {
 		List<MagicPattern> available = getPatternsOfLevel(getPatternsForTier(0, primaries), tier);
 		
 		ChanceIncHandler chandler = new ChanceIncHandler(nation, "magegen");
-		MagicPattern pattern = Entity.getRandom(this.random, chandler.handleChanceIncs(available));
+		MagicPattern pattern = chandler.handleChanceIncs(bases.get(0), available).getRandom(this.random);
 
 		pattern.getPathsAtleastAt(1);
 		if(prio == null)
@@ -1202,82 +1167,41 @@ public class MageGenerator extends TroopGenerator {
 		Random r = this.random;
 		
 		
-		double priest_H1_UpChance = 0.75;
-		if(Generic.containsTag(Generic.getAllNationTags(nation), "priest_H1_upgradechance"))
-		{
-			List<String> possiblevalues = Generic.getTagValues(Generic.getAllNationTags(nation), "priest_H1_upgradechance");
-			double highest = 0;
-			for(String str : possiblevalues)
-			{
-				if(Double.parseDouble(str) > highest)
-					highest = Double.parseDouble(str);
-			}
-			priest_H1_UpChance = highest;
-		}
+		final double priest_H1_UpChance = Generic.getAllNationTags(nation).getAllValues("priest_H1_upgradechance").stream()
+				.map(Arg::getDouble)
+				.max(Double::compareTo)
+				.orElse(0.75);
 		
-		double priest_H2_UpChance = 0.25;
-		if(Generic.containsTag(Generic.getAllNationTags(nation), "priest_H2_upgradechance"))
-		{
-			List<String> possiblevalues = Generic.getTagValues(Generic.getAllNationTags(nation), "priest_H2_upgradechance");
-			double highest = 0;
-			for(String str : possiblevalues)
-			{
-				if(Double.parseDouble(str) > highest)
-					highest = Double.parseDouble(str);
-			}
-			priest_H2_UpChance = highest;
-		}
 		
-		int maxStrength = 1;
+		final double priest_H2_UpChance = Generic.getAllNationTags(nation).getAllValues("priest_H2_upgradechance").stream()
+				.map(Arg::getDouble)
+				.max(Double::compareTo)
+				.orElse(0.25);
+		
+		int priestStrengthFromRandom = 1;
 		if(r.nextDouble() < priest_H1_UpChance)
 		{
-			maxStrength++;
+			priestStrengthFromRandom++;
 			if(r.nextDouble() < priest_H2_UpChance)
-				maxStrength++;
+				priestStrengthFromRandom++;
 		}
 		
-
-		if(Generic.containsTag(Generic.getAllNationTags(nation), "highestpriestlevel"))
-		{
-			List<String> possiblevalues = Generic.getTagValues(Generic.getAllNationTags(nation), "highestpriestlevel");
-			int highest = 0;
-			for(String str : possiblevalues)
-			{
-				if(Integer.parseInt(str) > highest)
-					highest = Integer.parseInt(str);
-			}
-			maxStrength = highest;
-		}
+		final int highestPriestLevel = Generic.getAllNationTags(nation).getAllValues("highestpriestlevel").stream()
+				.map(Arg::getInt)
+				.max(Integer::compareTo)
+				.orElse(priestStrengthFromRandom);
 		
-		int maxlevel = 10;
-		if(Generic.containsTag(Generic.getAllNationTags(nation), "maxpriestlevel"))
-		{
-			List<String> possiblevalues = Generic.getTagValues(Generic.getAllNationTags(nation), "highestpriestlevel");
-			int highest = 0;
-			for(String str : possiblevalues)
-			{
-				if(Integer.parseInt(str) > highest)
-					highest = Integer.parseInt(str);
-			}
-			
-			if(highest > maxlevel)
-				maxlevel = highest;
-		}
+		final int maxlevel = Generic.getAllNationTags(nation).getAllValues("maxpriestlevel").stream()
+				.map(Arg::getInt)
+				.max(Integer::compareTo)
+				.orElse(10);
+		
+		final int maxStrength = Math.min(maxlevel, highestPriestLevel);
 
-		maxStrength = Math.min(maxlevel, maxStrength);
-
-		double magePriestChance = 0.3;
-		if(Generic.containsTag(Generic.getAllNationTags(nation), "magepriestchance"))
-		{
-			List<String> possiblevalues = Generic.getTagValues(Generic.getAllNationTags(nation), "magepriestchance");
-			double highest = 0;
-			for(String str : possiblevalues)
-			{
-				if(Double.parseDouble(str) > highest)
-					highest = Double.parseDouble(str);
-			}
-			magePriestChance = highest;
-		}
+		final double magePriestChance = Generic.getAllNationTags(nation).getAllValues("magepriestchance").stream()
+				.map(Arg::getDouble)
+				.max(Double::compareTo)
+				.orElse(0.3);
 				
 		boolean magePriests = r.nextDouble() < magePriestChance;
 		
@@ -1339,11 +1263,7 @@ public class MageGenerator extends TroopGenerator {
 				priestsFrom = Math.min(2, maxStrength);
 		}
 		
-		int priestextracost = 0;
-		if(Generic.getTagValue(Generic.getAllNationTags(nation), "priestextracost") != null)
-		{
-			priestextracost = Integer.parseInt(Generic.getTagValue(Generic.getAllNationTags(nation), "priestextracost"));
-		}
+		int priestextracost = Generic.getAllNationTags(nation).getInt("priestextracost").orElse(0);
 
 
 		
@@ -1362,8 +1282,8 @@ public class MageGenerator extends TroopGenerator {
 					{
 						u.commands.add(new Command("#holy"));
 						u.appliedFilters.add(this.getPriestPattern(currentStrength));
-						u.tags.add("magepriest");
-						u.commands.add(new Command("#gcost", "+" + (10*currentStrength + currentStrength * priestextracost)));
+						u.tags.addName("magepriest");
+						u.commands.add(Command.args("#gcost", "+" + (10*currentStrength + currentStrength * priestextracost)));
 	
 					}
 					done = true;
@@ -1374,8 +1294,8 @@ public class MageGenerator extends TroopGenerator {
 					{
 						u.appliedFilters.add(this.getPriestPattern(currentStrength));
 						u.commands.add(new Command("#holy"));
-						u.tags.add("magepriest");
-						u.commands.add(new Command("#gcost", "+" + (10*currentStrength + currentStrength * priestextracost)));
+						u.tags.addName("magepriest");
+						u.commands.add(Command.args("#gcost", "+" + (10*currentStrength + currentStrength * priestextracost)));
 
 
 					}
@@ -1397,11 +1317,9 @@ public class MageGenerator extends TroopGenerator {
 			
 			if((currentStrength > 1 && !done) || currentStrength == 1 || currentStrength <= priestsFrom)
 			{
-				Unit u = null;
+				Unit u;
 				if(priests.size() > 0)
 				{
-					List<Unit> derp = new ArrayList<Unit>();
-					derp.add(priests.get(0));
 					u = deriveBasesFrom(1, "priest", priests.get(0), priests.get(0).race, currentStrength + 1, currentStrength).get(0);
 				}
 				else
@@ -1412,16 +1330,16 @@ public class MageGenerator extends TroopGenerator {
 					
 					u = this.generateBases("priest", prace, 1, str).get(0);
 				}
-				u.commands.add(new Command("#gcost", "+" + (20*currentStrength - 10) ));
+				u.commands.add(Command.args("#gcost", "+" + (20*currentStrength - 10) ));
 
 				u.color = priestcolor;
 				u.appliedFilters.add(this.getPriestPattern(currentStrength));
 				u.commands.add(new Command("#holy"));
-				u.commands.add(new Command("#gcost", "+" + ((int)(Math.pow(2, currentStrength))*10 + currentStrength * priestextracost)));
-				u.tags.add("priest " + currentStrength);
+				u.commands.add(Command.args("#gcost", "+" + ((int)(Math.pow(2, currentStrength))*10 + currentStrength * priestextracost)));
+				u.tags.add("priest", currentStrength);
 
 				
-				u.commands.add(new Command("#mr", "+" + (2 + currentStrength)));
+				u.commands.add(Command.args("#mr", "+" + (2 + currentStrength)));
 
 				
 
@@ -1458,21 +1376,20 @@ public class MageGenerator extends TroopGenerator {
 		applyPriestFilters(priests);
 
 		// Equip priests
-		int maxtier = 0;
+		int maxtier = priests.stream()
+			.flatMap(u -> u.tags.getValue("priest").stream())
+			.map(Arg::getInt)
+			.max(Integer::compareTo)
+			.orElse(0);
+		
 		Unit parent = null;
-		for(Unit u : priests)
-		{
-			int tier = Integer.parseInt(Generic.getTagValue(u.tags, "priest"));
-			if(tier > maxtier)
-				maxtier = tier;
-		}
 		
 	
 		for(int i = priests.size() - 1; i >= 0; i--)
 		{
 
 			Unit u = priests.get(i);
-			int tier = Integer.parseInt(Generic.getTagValue(u.tags, "priest"));
+			int tier = u.tags.getValue("priest").orElseThrow().getInt();
 			
 
 			if(tier == maxtier)
@@ -1481,7 +1398,10 @@ public class MageGenerator extends TroopGenerator {
 			}
 			else
 			{
-				int ptier = Integer.parseInt(Generic.getTagValue(parent.tags, "priest"));
+				if (parent == null) {
+					throw new IllegalStateException("Final priest's level isn't maxtier");
+				}
+				int ptier = parent.tags.getValue("priest").orElseThrow().getInt();
 				this.deriveEquipment(parent, u, ptier, tier);
 			}
 			
@@ -1495,7 +1415,7 @@ public class MageGenerator extends TroopGenerator {
 		for(Unit u : priests)
 		{
 			int currentRP = 1;
-			currentStrength = Integer.parseInt(Generic.getTagValue(u.tags, "priest"));
+			currentStrength = u.tags.getValue("priest").orElseThrow().getInt();
 			
 			// STR or cap only for h3
 			if(currentStrength == 3 && r.nextDouble() > 0.5)
@@ -1508,51 +1428,51 @@ public class MageGenerator extends TroopGenerator {
 
 			}
 
-			if(u.tags.contains("warriormage"))
+			if(u.tags.containsName("warriormage"))
 			{
 				double leaderrandom = r.nextDouble();
 				if(leaderrandom > 0.95)
 				{
 					u.commands.add(new Command("#expertleader"));
-					u.commands.add(new Command("#gcost +80"));
+					u.commands.add(Command.args("#gcost", "+80"));
 					currentRP = Integer.max(2, currentRP);
 				}
 				else if(leaderrandom > 0.9)
 				{
 					u.commands.add(new Command("#expertleader"));
-					u.commands.add(new Command("#command -40"));
-					u.commands.add(new Command("#gcost +50"));
+					u.commands.add(Command.args("#command", "-40"));
+					u.commands.add(Command.args("#gcost", "+50"));
 					currentRP = Integer.max(2, currentRP);
 				}
 				else if(leaderrandom > 0.75)
 				{
 					u.commands.add(new Command("#goodleader"));
-					u.commands.add(new Command("#gcost +40"));
+					u.commands.add(Command.args("#gcost", "+40"));
 					currentRP = Integer.max(2, currentRP);
 				}
 				else if(leaderrandom > 0.70)
 				{
 					u.commands.add(new Command("#goodleader"));
-					u.commands.add(new Command("#command -40"));
-					u.commands.add(new Command("#gcost +30"));
+					u.commands.add(Command.args("#command", "-40"));
+					u.commands.add(Command.args("#gcost", "+30"));
 					currentRP = Integer.max(2, currentRP);
 				}
 				else if(leaderrandom > 0.55)
 				{
 					u.commands.add(new Command("#okayleader"));
-					u.commands.add(new Command("#command +20"));
-					u.commands.add(new Command("#gcost +20"));
+					u.commands.add(Command.args("#command", "+20"));
+					u.commands.add(Command.args("#gcost", "+20"));
 				}
 				else if(leaderrandom > 0.20)
 				{
 					u.commands.add(new Command("#okayleader"));
-					u.commands.add(new Command("#gcost +10"));
+					u.commands.add(Command.args("#gcost", "+10"));
 				}
 				else if(leaderrandom > 0.0675)
 				{
 					u.commands.add(new Command("#poorleader"));
-					u.commands.add(new Command("#command +30"));
-					u.commands.add(new Command("#gcost +5"));
+					u.commands.add(Command.args("#command", "+30"));
+					u.commands.add(Command.args("#gcost", "+5"));
 				}
 				else
 				{
@@ -1565,18 +1485,18 @@ public class MageGenerator extends TroopGenerator {
 				if(leaderrandom > 0.95)
 				{
 					u.commands.add(new Command("#expertleader"));
-					u.commands.add(new Command("#gcost +80"));
+					u.commands.add(Command.args("#gcost", "+80"));
 				}
 				else if(leaderrandom > 0.85)
 				{
 					u.commands.add(new Command("#goodleader"));
-					u.commands.add(new Command("#gcost +40"));
+					u.commands.add(Command.args("#gcost", "+40"));
 				}
 				else if(leaderrandom > 0.75)
 				{
 					u.commands.add(new Command("#okayleader"));
-					u.commands.add(new Command("#command +40"));
-					u.commands.add(new Command("#gcost +30"));
+					u.commands.add(Command.args("#command", "+40"));
+					u.commands.add(Command.args("#gcost", "+30"));
 				}
 				else
 				{
@@ -1588,25 +1508,25 @@ public class MageGenerator extends TroopGenerator {
 				if(leaderrandom > 0.95)
 				{
 					u.commands.add(new Command("#expertleader"));
-					u.commands.add(new Command("#command -40"));
-					u.commands.add(new Command("#gcost +60"));
+					u.commands.add(Command.args("#command", "-40"));
+					u.commands.add(Command.args("#gcost", "+60"));
 				}
 				else if(leaderrandom > 0.90)
 				{
 					u.commands.add(new Command("#goodleader"));
-					u.commands.add(new Command("#gcost +40"));
+					u.commands.add(Command.args("#gcost", "+40"));
 				}
 				else if(leaderrandom > 0.85)
 				{
 					u.commands.add(new Command("#okayleader"));
-					u.commands.add(new Command("#command +40"));
-					u.commands.add(new Command("#gcost +30"));
+					u.commands.add(Command.args("#command", "+40"));
+					u.commands.add(Command.args("#gcost", "+30"));
 				}
 				else if(leaderrandom > 0.75)
 				{
 					u.commands.add(new Command("#okayleader"));
-					u.commands.add(new Command("#command +20"));
-					u.commands.add(new Command("#gcost +20"));
+					u.commands.add(Command.args("#command", "+20"));
+					u.commands.add(Command.args("#gcost", "+20"));
 				}
 				else
 				{
@@ -1618,31 +1538,31 @@ public class MageGenerator extends TroopGenerator {
 				if(maxStrength == 1 && r.nextDouble() > 0.5)
 				{
 					u.commands.add(new Command("#okayleader"));
-					u.commands.add(new Command("#gcost", "+10"));
+					u.commands.add(Command.args("#gcost", "+10"));
 				}
 				else if(currentStrength == 1 && r.nextDouble() > 0.875)
 				{
 					u.commands.add(new Command("#okayleader"));
-					u.commands.add(new Command("#gcost", "+10"));
+					u.commands.add(Command.args("#gcost", "+10"));
 				}
 				else if(currentStrength == 1 && maxStrength > 1 && r.nextDouble() > 0.875)
 				{
 					u.commands.add(new Command("#noleader"));
-					u.commands.add(new Command("#gcost", "-5"));
+					u.commands.add(Command.args("#gcost", "-5"));
 				}
 				else
 				{
 					u.commands.add(new Command("#poorleader"));
 					if(r.nextDouble() > 0.875)
 					{
-						u.commands.add(new Command("#command", "+30"));
-						u.commands.add(new Command("#gcost", "+5"));
+						u.commands.add(Command.args("#command", "+30"));
+						u.commands.add(Command.args("#gcost", "+5"));
 					}
 				}
 			}
 
 			currentRP = Integer.max(currentRP, Integer.min(2, currentStrength));
-			u.commands.add(new Command("#rpcost " + currentRP));
+			u.commands.add(new Command("#rpcost", new Arg(currentRP)));
 			
 			// Determine special leadership
 			determineSpecialLeadership(u, true);
@@ -1658,7 +1578,7 @@ public class MageGenerator extends TroopGenerator {
 		
 		String basiclevel = u.getLeaderLevel();
 		
-		List<String> others = new ArrayList<String>();
+		List<String> others = new ArrayList<>();
 		for(Command c : u.commands)
 			if(c.command.equals("#undead"))
 			{
@@ -1684,7 +1604,7 @@ public class MageGenerator extends TroopGenerator {
 				else
 				{
 					u.commands.add(new Command("#" + basiclevel + str + "leader"));
-					u.commands.add(new Command("#undcommand +40"));
+					u.commands.add(Command.args("#undcommand", "+40"));
 				}					
 			}
 			else if(!u.hasLeaderLevel(str))
@@ -1698,7 +1618,8 @@ public class MageGenerator extends TroopGenerator {
 	 * The new method of actually applying filters. Used in HeroGenerator and here.
 	 * @param units
 	 * @param power
-	 * @param filters
+	 * @param defaults
+	 * @param lookfor
 	 */
 	public void applyFilters(List<Unit> units, int power, String[] defaults, String lookfor)
 	{
@@ -1709,11 +1630,11 @@ public class MageGenerator extends TroopGenerator {
 		// Filter selection is strict (see method getPossibleFiltersByPaths) for mages, but not for priests.
 		// IF PRIESTS START TO CONSISTENTLY GET MAGIC WITH SOME NON-FILTER IMPLEMENTATION THIS NEEDS TO BECOME TAG BASED
 		boolean strict = false;
-		int[] picks = units.get(0).getMagicPicks(false);
+		MagicPathInts picks = units.get(0).getMagicPicks(false);
 		
-		for(int i = 0; i < 8; i++)
+		for(MagicPath path : MagicPath.NON_HOLY)
 		{
-			if(picks[i] > 0)
+			if(picks.get(path) > 0)
 				strict = true;
 		}
 
@@ -1827,7 +1748,7 @@ public class MageGenerator extends TroopGenerator {
 			}
 			
 		
-			List<Filter> oldFilters = new ArrayList<Filter>();
+			List<Filter> oldFilters = new ArrayList<>();
 			for(Unit u : units)
 				oldFilters.addAll(u.appliedFilters);
 
@@ -1838,26 +1759,26 @@ public class MageGenerator extends TroopGenerator {
 				for(Unit u : mages)
 				{
 					
-					List<Integer> paths = new ArrayList<Integer>();
-					int[] gotpicks = u.getMagicPicks(true);
+					List<MagicPath> paths = new ArrayList<>();
+					MagicPathInts gotpicks = u.getMagicPicks(true);
 					
-					for(int i = 0; i < 8; i++)
+					for(MagicPath path : MagicPath.NON_HOLY)
 					{
-						if(gotpicks[i] > 1)
-							paths.add(i);
+						if(gotpicks.get(path) > 1)
+							paths.add(path);
 					}
-					List<Filter> givenFilters = this.getPossibleFiltersByPaths(actualFilters, paths, false);
+					List<Filter> givenFilters = this.getPossibleFiltersByPaths(actualFilters, paths);
 					givenFilters.removeAll(u.appliedFilters);
 
 
 					if(chandler.countPossibleFilters(givenFilters, u) == 0)
 					{
-						givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findCommonPaths(mages), false);
+						givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findCommonPaths(mages));
 						givenFilters.removeAll(u.appliedFilters);
 
 					}
 					
-					Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(u, givenFilters));
+					Filter f = chandler.handleChanceIncs(u, givenFilters).getRandom(this.random);
 					if(f != null)
 					{
 						u.appliedFilters.add(f);
@@ -1880,10 +1801,12 @@ public class MageGenerator extends TroopGenerator {
 				double maxpower = 0;
 				for(Unit u : mages)
 				{
-					List<Filter> givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findDistinguishingPaths(u, mages), strict);
-					if(MageGenerator.findDistinguishingPaths(u, mages).size() == 0)
-						givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findCommonPaths(mages), false);
-					
+					List<Filter> givenFilters;
+					if(MageGenerator.findDistinguishingPaths(u, mages).size() == 0) {
+						givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findCommonPaths(mages));
+					} else {
+						givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findDistinguishingPaths(u, mages));
+					}
 					givenFilters.removeAll(u.appliedFilters);
 	
 					
@@ -1891,7 +1814,7 @@ public class MageGenerator extends TroopGenerator {
 
 					if(chandler.countPossibleFilters(givenFilters, u) == 0)
 					{
-						givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findDistinguishingPaths(u, mages), false);
+						givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findDistinguishingPaths(u, mages));
 						givenFilters.removeAll(u.appliedFilters);
 					}
 					
@@ -1901,8 +1824,7 @@ public class MageGenerator extends TroopGenerator {
 					
 
 					// Use old filters when feasible!
-					List<Filter> tempFilters = new ArrayList<Filter>();
-					tempFilters.addAll(givenFilters);
+					List<Filter> tempFilters = new ArrayList<>(givenFilters);
 					tempFilters.retainAll(oldFilters);
 					tempFilters = ChanceIncHandler.getValidUnitFilters(tempFilters, mages);
 
@@ -1913,7 +1835,7 @@ public class MageGenerator extends TroopGenerator {
 
 
 					
-					Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(u, givenFilters));
+					Filter f = chandler.handleChanceIncs(u, givenFilters).getRandom(this.random);
 
 					if(f != null)
 					{
@@ -1937,7 +1859,7 @@ public class MageGenerator extends TroopGenerator {
 			// Otherwise all mages get the same filter if possible
 			else 
 			{
-				List<Filter> givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findCommonPaths(mages), false);
+				List<Filter> givenFilters = this.getPossibleFiltersByPaths(actualFilters, MageGenerator.findCommonPaths(mages));
 
 				// Remove given filters to avoid duplicates
 				for(Unit u : mages)
@@ -1949,8 +1871,7 @@ public class MageGenerator extends TroopGenerator {
 				// If no filters, failsafe into giving whatever
 				if(chandler.countPossibleFilters(givenFilters, mages.get(0)) == 0)
 				{
-					givenFilters = new ArrayList<Filter>();
-					givenFilters.addAll(actualFilters);
+					givenFilters = new ArrayList<>(actualFilters);
 					for(Unit u : mages)
 					{
 						givenFilters.removeAll(u.appliedFilters);
@@ -1963,8 +1884,7 @@ public class MageGenerator extends TroopGenerator {
 
 				
 				// Use old filters when feasible!
-				List<Filter> tempFilters = new ArrayList<Filter>();
-				tempFilters.addAll(givenFilters);
+				List<Filter> tempFilters = new ArrayList<>(givenFilters);
 				tempFilters.retainAll(oldFilters);
 				tempFilters = ChanceIncHandler.getValidUnitFilters(tempFilters, mages);
 
@@ -1974,7 +1894,7 @@ public class MageGenerator extends TroopGenerator {
 					
 
 				
-				Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(mages.get(0), givenFilters));
+				Filter f = chandler.handleChanceIncs(mages.get(0), givenFilters).getRandom(this.random);
 				
 				for(Unit u : mages)
 				{
@@ -2011,14 +1931,14 @@ public class MageGenerator extends TroopGenerator {
 	
 	private void handleGiveToAll(Filter f, List<Unit> units, int tier)
 	{
-		if(f.tags.contains("givetoall") && tier < 4 && tier > 0)
+		if(f.tags.containsName("givetoall") && tier < 4 && tier > 0)
 			for(int i = 1; i <= 3; i++)
 			{
 				List<Unit> mages = getMagesOfTier(units, i);
 				mages.addAll(nation.generateUnitList("montagmage"));
 				for(Unit u : mages)
 				{
-					if(!u.appliedFilters.contains(f) && !f.tags.contains("notfortier " + i))
+					if(!u.appliedFilters.contains(f) && !f.tags.contains("notfortier", String.valueOf(i)))
 					{
 						u.appliedFilters.add(f);
 					}
@@ -2030,58 +1950,24 @@ public class MageGenerator extends TroopGenerator {
 	
 	/**
 	 * Returns filters that align with given path (either #personalmagic or possibly also if just chanceincs)
+	 * This used to have a strict mode which tried to look at chanceincs for matching paths, but with changes to how
+	 * chanceincs worked, I don't think it really worked anymore, and it might not even be necessary anymore with all
+	 * sorts of other new commands. It has been removed, but if there is need for it again, the strict mode should
+	 * "require a positive chanceinc" for the paths in addition to #personalmagic. Strict mode was only used for when
+	 * mages were found to have distinguishing paths.
 	 * @param filters Filters
-	 * @param path Paths
-	 * @param strict If true, require positive chanceinc in addition to #personalmagic
+	 * @param paths Paths
 	 * @return
 	 */
-	private List<Filter> getPossibleFiltersByPaths(List<Filter> filters, List<Integer> paths, boolean strict)
+	private List<Filter> getPossibleFiltersByPaths(List<Filter> filters, List<MagicPath> paths)
 	{
 		
-		List<Filter> list = new ArrayList<Filter>();
+		List<Filter> list = new ArrayList<>();
 		for(Filter f : filters)
 		{
-			boolean ok = true;
-			for(String tag : f.tags)
-			{
-				List<String> args = Generic.parseArgs(tag);
-				if(args.get(0).equals("personalmagic") && args.size() > 1)
-				{
-					int needpath = Generic.PathToInteger(args.get(1));
-					if(!paths.contains(needpath))
-					{
-						ok = false;
-					}
-				}
-				
-			
-			}
-			
-			if(strict)
-			{
-				for(String c : f.chanceincs)
-				{
-					List<String> args = Generic.parseArgs(c);
-					if((args.get(0).equals("personalmagic") || args.get(0).equals("magic")) && args.size() > 1)
-					{
-						List<Integer> possibles = new ArrayList<Integer>();
-						for(int i = 1; i < args.size() - 1; i++)
-						{
-							int needpath = Generic.PathToInteger(args.get(i));
-							if(needpath > -1)
-								possibles.add(needpath);
-						}
-						
-						if(!paths.containsAll(possibles))
-						{
-							ok = false;
-						}
-					}
-				}
-			}
-			
-			
-			if(ok)
+			if(f.tags.streamAllValues("personalmagic")
+					.map(Arg::getMagicPath)
+					.allMatch(paths::contains))
 				list.add(f);
 		}
 		
@@ -2112,22 +1998,10 @@ public class MageGenerator extends TroopGenerator {
 	 */
 	private List<Unit> getMagesOfTier(List<Unit> mages, int tier)
 	{
-		List<Unit> list = new ArrayList<Unit>();
-		for(Unit u : mages)
-		{
-			int gettier = -1;
-			if(Generic.getTagValue(u.tags, "schoolmage") != null)
-				gettier = Integer.parseInt(Generic.getTagValue(u.tags, "schoolmage"));
-			if(Generic.getTagValue(u.tags, "priest") != null)
-				gettier = Integer.parseInt(Generic.getTagValue(u.tags, "priest"));
-			
-			
-			if(gettier == tier)
-				list.add(u);
-			
-		}
-		
-		return list;
+		return mages.stream()
+			.filter(u -> u.tags.getInt("priest").orElse(
+				u.tags.getInt("schoolmage").orElse(-1)) == tier)
+			.collect(Collectors.toList());
 	}
 	
 	
@@ -2141,117 +2015,94 @@ public class MageGenerator extends TroopGenerator {
 	 */
 	private List<Filter> getFiltersForTier(List<Filter> filters, int tier)
 	{
-		List<Filter> list = new ArrayList<Filter>();
-		for(Filter f : filters)
-		{
-			boolean ok = true;
-			if(Generic.getTagValue(f.tags, "notfortier") != null)
-			{
-				List<Integer> nottiers = new ArrayList<Integer>();
-				for(String str : Generic.getTagValues(f.tags, "notfortier"))
-					nottiers.add(Integer.parseInt(str));
-		
-				if(nottiers.contains(tier))
-				{
-					ok = false;
-				}
-			}
-			
-			if(ok)
-				list.add(f);
-		}
-		
-		return list;
+		return filters.stream()
+				.filter(f -> f.tags.getAllValues("notfortier").stream()
+						.map(Arg::getInt)
+						.noneMatch(i -> i.equals(tier)))
+				.collect(Collectors.toList());
 	}
 	
 	
-	/**
-	 * The old method
-	 * @param units
-	 * @param power
-	 * @param filters
-	 */
-	public void applyFilters_old(List<Unit> units, int power, List<Filter> filters)
-	{
-		if(units.size() == 0)
-			return;
-		
-		
-		ChanceIncHandler chandler = new ChanceIncHandler(nation, "magegen");
-		while(power > 0)
-		{
-			List<Filter> moreFilters = ChanceIncHandler.getFiltersWithPower(power, power, filters);
-			
-
-			if(chandler.handleChanceIncs(units.get(0), moreFilters).size() == 0 || this.random.nextDouble() > 0.7)
-				moreFilters = ChanceIncHandler.getFiltersWithPower(power - 1, power, filters);
-			if(chandler.handleChanceIncs(units.get(0), moreFilters).size() == 0 || power == 1)
-				moreFilters = ChanceIncHandler.getFiltersWithPower(-100, power, filters);
-			if(chandler.handleChanceIncs(units.get(0), moreFilters).size() == 0)
-				break;
-			
-
-			Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(units.get(0), moreFilters));
-			
-			
-			// validate
-			
-			int added = 0;
-			for(Unit u : units)
-			{
-				boolean ok = true;
-				
-				// Validate suitable paths
-				int[] paths = u.getMagicPicks();
-				for(String tag : f.tags)
-				{
-					List<String> args = Generic.parseArgs(tag);
-					if(args.get(0).equals("personalmagic") && args.size() > 1)
-					{
-						int path = Generic.PathToInteger(args.get(1));
-						if(paths[path] == 0)
-							ok = false;
-					}
-				}
-				
-				// Validate tier things
-				int tier = 0;
-				if(Generic.getTagValue(u.tags, "schoolmage") != null)
-					tier = Integer.parseInt(Generic.getTagValue(u.tags, "schoolmage"));
-				if(Generic.getTagValue(u.tags, "priest") != null && tier == 0)
-					tier = Integer.parseInt(Generic.getTagValue(u.tags, "priest"));
-	
-				if(Generic.getTagValue(f.tags, "notfortier") != null)
-				{
-					int nottier = Integer.parseInt(Generic.getTagValue(f.tags, "notfortier"));
-					if(tier == nottier)
-						ok = false;
-				}
-					
-				if(ok && ChanceIncHandler.canAdd(u, f))
-				{
-					added++;
-					u.appliedFilters.add(f);
-				}
-				
-			
-				
-			}
-			
-			filters.remove(f);
-			if(added > 0)
-			{
-				power -= f.power;
-			}
-	
-			
-			
-			
-			
-		}
-		
-		
-	}
+//	/**
+//	 * The old method
+//	 * @param units
+//	 * @param power
+//	 * @param filters
+//	 */
+//	public void applyFilters_old(List<Unit> units, int power, List<Filter> filters)
+//	{
+//		if(units.size() == 0)
+//			return;
+//
+//
+//		ChanceIncHandler chandler = new ChanceIncHandler(nation, "magegen");
+//		while(power > 0)
+//		{
+//			List<Filter> moreFilters = ChanceIncHandler.getFiltersWithPower(power, power, filters);
+//
+//
+//			if(chandler.handleChanceIncs(units.get(0), moreFilters).size() == 0 || this.random.nextDouble() > 0.7)
+//				moreFilters = ChanceIncHandler.getFiltersWithPower(power - 1, power, filters);
+//			if(chandler.handleChanceIncs(units.get(0), moreFilters).size() == 0 || power == 1)
+//				moreFilters = ChanceIncHandler.getFiltersWithPower(-100, power, filters);
+//			if(chandler.handleChanceIncs(units.get(0), moreFilters).size() == 0)
+//				break;
+//
+//
+//			Filter f = Filter.getRandom(this.random, chandler.handleChanceIncs(units.get(0), moreFilters));
+//
+//
+//			// validate
+//
+//			int added = 0;
+//			for(Unit u : units)
+//			{
+//				boolean ok = true;
+//
+//				// Validate suitable paths
+//				int[] paths = u.getMagicPicks();
+//				for(String tag : f.tags)
+//				{
+//					List<String> args = Generic.parseArgs(tag);
+//					if(args.get(0).equals("personalmagic") && args.size() > 1)
+//					{
+//						int path = Generic.PathToInteger(args.get(1));
+//						if(paths[path] == 0)
+//							ok = false;
+//					}
+//				}
+//
+//				// Validate tier things
+//				int tier = 0;
+//				if(Generic.getTagValue(u.tags, "schoolmage") != null)
+//					tier = Integer.parseInt(Generic.getTagValue(u.tags, "schoolmage"));
+//				if(Generic.getTagValue(u.tags, "priest") != null && tier == 0)
+//					tier = Integer.parseInt(Generic.getTagValue(u.tags, "priest"));
+//
+//				if(Generic.getTagValue(f.tags, "notfortier") != null)
+//				{
+//					int nottier = Integer.parseInt(Generic.getTagValue(f.tags, "notfortier"));
+//					if(tier == nottier)
+//						ok = false;
+//				}
+//
+//				if(ok && ChanceIncHandler.canAdd(u, f))
+//				{
+//					added++;
+//					u.appliedFilters.add(f);
+//				}
+//
+//			}
+//
+//			filters.remove(f);
+//			if(added > 0)
+//			{
+//				power -= f.power;
+//			}
+//
+//		}
+//
+//	}
 	
 
 
@@ -2263,10 +2114,8 @@ public class MageGenerator extends TroopGenerator {
 		Race race = nation.races.get(0);
 		
 		double bonussecchance = 1;
-		if(Generic.containsTag(race.tags, "secondaryracemagemod"))
-			bonussecchance += Double.parseDouble(Generic.getTagValue(race.tags, "secondaryracemagemod"));
-		if(Generic.containsTag(nation.races.get(1).tags, "primaryracemagemod"))
-			bonussecchance -= Double.parseDouble(Generic.getTagValue(nation.races.get(1).tags, "primaryracemagemod"));
+		bonussecchance += race.tags.getDouble("secondaryracemagemod").orElse(0D);
+		bonussecchance -= nation.races.get(1).tags.getDouble("primaryracemagemod").orElse(0D);
 		
 		
 
@@ -2278,23 +2127,14 @@ public class MageGenerator extends TroopGenerator {
 		else if(!nation.races.get(0).hasRole("mage")) // This hopefully never happens since it can cause issues unless handled very delicately.
 			race = nation.races.get(1);
 		
-	
 		
-		int primaryamount = 1;
-		
-		double onechance = 0.75;
-		double twochance = 0.2;
-		double threechance = 0.05;
-		
-		if(Generic.containsTag(race.tags, "oneprimarychance"))
-			onechance = Double.parseDouble(Generic.getTagValue(race.tags, "oneprimarychance"));
-		if(Generic.containsTag(race.tags, "twoprimarychance"))
-			twochance = Double.parseDouble(Generic.getTagValue(race.tags, "twoprimarychance"));
-		if(Generic.containsTag(race.tags, "threeprimarychance"))
-			threechance = Double.parseDouble(Generic.getTagValue(race.tags, "threeprimarychance"));
+		final double onechance = race.tags.getDouble("oneprimarychance").orElse(0.75);
+		final double twochance = race.tags.getDouble("twoprimarychance").orElse(0.2);
+		final double threechance = race.tags.getDouble("threeprimarychance").orElse(0.05);
 		
 		double rand = this.random.nextDouble() * (onechance + twochance + threechance);
-
+		
+		final int primaryamount;
 		if(rand < onechance)
 			primaryamount = 1;
 		else if(rand < onechance + twochance)
@@ -2354,14 +2194,12 @@ public class MageGenerator extends TroopGenerator {
 		
 	
 		// TERTIARIES
-		List<Unit> tertiaries = new ArrayList<Unit>();
+		List<Unit> tertiaries = new ArrayList<>();
 		
 		// Tertiaries might be of secondary race if primaries aren't.
 		bonussecchance = 1;
-		if(Generic.containsTag(race.tags, "secondaryracetertiarymagemod"))
-			bonussecchance += Double.parseDouble(Generic.getTagValue(race.tags, "secondaryracetertiarymagemod"));
-		if(Generic.containsTag(nation.races.get(1).tags, "primaryracetertiarymagemod"))
-			bonussecchance -= Double.parseDouble(Generic.getTagValue(nation.races.get(1).tags, "primaryracetertiarymagemod"));
+		bonussecchance += race.tags.getDouble("secondaryracetertiarymagemod").orElse(0D);
+		bonussecchance -= nation.races.get(1).tags.getDouble("primaryracetertiarymagemod").orElse(0D);
 		
 		if((0.05 * bonussecchance > this.random.nextDouble() && hasPoseForTier("mage", nation.races.get(1), 1)) || !hasPoseForTier("mage", nation.races.get(0), 1) || changed_at_secondary)
 			race = nation.races.get(1);
@@ -2398,13 +2236,13 @@ public class MageGenerator extends TroopGenerator {
 	
 	
 	
-	private void tagAll(List<Unit> units, String tag)
+	private void tagAll(List<Unit> units, String tagName, Object... values)
 	{
 		if(units == null)
 			return;
 	
 		for(Unit u : units)
-			u.tags.add(tag);
+			u.tags.addArgs(tagName, values);
 	}
 	
 	private boolean shouldChangePose(String posename, Race newrace, Race oldrace, Pose current, int currenttier, int futuretier)
@@ -2416,19 +2254,19 @@ public class MageGenerator extends TroopGenerator {
 		
 		// Change pose if we have specific next pose
 		for(Pose p : newrace.getPoses(posename))
-			if(p.tags.contains("tier " + futuretier) && p != current)
+			if(p.tags.contains("tier", futuretier) && p != current)
 				future = true;
 		
 		// Current doesn't contain pose for next tier
-		if(current.tags.contains("tier " + currenttier) && !current.tags.contains("tier " + futuretier))
+		if(current.tags.contains("tier", currenttier) && !current.tags.contains("tier", futuretier))
 			past = true;
 		
 		// Forbidden from the future tier
-		if(current.tags.contains("notfortier " + futuretier))
+		if(current.tags.contains("notfortier", futuretier))
 			past = true;
 		
 		// We have a specific pose and current doesn't contain the required pose
-		if(future && !current.tags.contains("tier " + futuretier))
+		if(future && !current.tags.contains("tier", futuretier))
 			past = true;
 		
 		// Random chance
@@ -2446,18 +2284,14 @@ public class MageGenerator extends TroopGenerator {
 
 	private List<Unit> deriveBasesFrom(int amount, String posename, Unit parent, Race race, int fromTier, int toTier)
 	{
-		
-		
-		List<Unit> units = new ArrayList<Unit>();
+		List<Unit> units = new ArrayList<>();
 		
 		Pose newpose = null;
 		if(shouldChangePose(posename, race, parent.race, parent.pose, fromTier, toTier))
 		{
 			List<Pose> poses = this.getPossiblePoses(posename, race, toTier);
 			if(poses.size() > 0)
-				newpose = Entity.getRandom(this.random, chandler.handleChanceIncs(race, "mage", poses));
-			
-			
+				newpose = chandler.getRandom(poses, race);
 
 		}
 		else
@@ -2478,12 +2312,7 @@ public class MageGenerator extends TroopGenerator {
 	
 	public void deriveEquipment(Unit parent, Unit follower, int fromTier, int toTier)
 	{
-		List<Unit> parents = new ArrayList<Unit>();
-		parents.add(parent);
-		List<Unit> followers = new ArrayList<Unit>();
-		followers.add(follower);
-		
-		deriveEquipment(parents, followers, fromTier, toTier);
+		deriveEquipment(List.of(parent), List.of(follower), fromTier, toTier);
 	}
 
 	
@@ -2492,12 +2321,9 @@ public class MageGenerator extends TroopGenerator {
 		
 		if(unit.getSlot("weapon") != null)
 		{
-			boolean troop = false;
-			if(Generic.containsTag(Generic.getAllUnitTags(unit), "troopweapon"))
-				troop = true;
-			else if(Generic.containsTag(unit.getSlot("weapon").tags, "troopweapon"))
-				troop = true;
-	
+			boolean troop = Generic.getAllUnitTags(unit).containsName("troopweapon")
+					|| unit.getSlot("weapon").tags.containsName("troopweapon");
+			
 			if(troop)
 			{
 				if(nationGen.weapondb.GetInteger(unit.getSlot("weapon").id, "lgt") >= 3)
@@ -2522,7 +2348,7 @@ public class MageGenerator extends TroopGenerator {
 			max = followers.size();
 		
 		// Handle varyslot
-		String oldslot = Generic.getTagValue(parents.get(0).tags, "varyslot");
+		String oldslot = parents.get(0).tags.getString("varyslot").orElse(null);
 		String newslot = null;
 		
 		if(followers.size() > 1)
@@ -2533,7 +2359,7 @@ public class MageGenerator extends TroopGenerator {
 			else
 				newslot = possibleslots.get(random.nextInt(possibleslots.size()));
 			
-			tagAll(followers, "varyslot " + newslot);
+			tagAll(followers, "varyslot", newslot);
 		}
 		
 		
@@ -2544,11 +2370,21 @@ public class MageGenerator extends TroopGenerator {
 			Unit u = parents.get(k); // Old unit
 			Unit nu = followers.get(k); // New unit
 			
-			String[] deriveslots = {"weapon", "offhand", "helmet", "armor", "hair", "cloakb", "mount"};
-			if(Generic.containsTag(nu.pose.tags, "deriveslots"))
-				deriveslots = Generic.listToString(Generic.getTagValues(nu.pose.tags, "deriveslots"), " ").split(" ");
-			else if(Generic.containsTag(nu.race.tags, "deriveslots"))
-				deriveslots = Generic.listToString(Generic.getTagValues(nu.race.tags, "deriveslots"), " ").split(" ");
+			List<String> deriveslots = nu.pose.tags.getAllArgs("deriveslots").stream()
+					.flatMap(List::stream)
+					.map(Arg::get)
+					.collect(Collectors.toList());
+			
+			if (deriveslots.isEmpty()) {
+				deriveslots = nu.race.tags.getAllArgs("deriveslots").stream()
+						.flatMap(List::stream)
+						.map(Arg::get)
+						.collect(Collectors.toList());
+			}
+			
+			if (deriveslots.isEmpty()) {
+				deriveslots = List.of("weapon", "offhand", "helmet", "armor", "hair", "cloakb", "mount");
+			}
 			
 			
 			for(String slot : deriveslots)
@@ -2559,10 +2395,10 @@ public class MageGenerator extends TroopGenerator {
 				
 				
 				// Just targeted tier		
-				ItemSet all = nu.pose.getItems(slot).filterTag("tier " + toTier, true);
+				ItemSet all = nu.pose.getItems(slot).filterTag(new Command("tier", new Arg(toTier)));
 				if(all.possibleItems() == 0) // Allows tiers below toTier
 					for(int i = toTier + 1; i <= fromTier; i++)
-						all = all.filterTag("tier " + i, false);
+						all = all.filterOutTag(new Command("tier", new Arg(i)));
 				if(all.possibleItems() == 0 && toTier != 1) // Just everything
 					all = nu.pose.getItems(slot).getCopy();
 				
@@ -2572,14 +2408,14 @@ public class MageGenerator extends TroopGenerator {
 					Item newitem = getDerivedItem(u.getSlot(slot), nu, used);
 					
 					// Failure may result in using old armor in tier 2 to 1 
-					if((newitem == null || !newitem.tags.contains("eliteversion " + u.getSlot(slot).name)) && slot.equals("armor") && toTier < 2 && fromTier == 2 && u.pose == nu.pose)
+					if((newitem == null || !newitem.tags.contains("eliteversion", u.getSlot(slot).name)) && slot.equals("armor") && toTier < 2 && fromTier == 2 && u.pose == nu.pose)
 						newitem = u.getSlot(slot);
 					
 
 					
 					if(newitem == null)
 					{
-						if(nu.pose == u.pose && (u.getSlot(slot).tags.contains("tier " + toTier) || !u.getSlot(slot).tags.contains("tier " + fromTier)))
+						if(nu.pose == u.pose && (u.getSlot(slot).tags.contains("tier", toTier) || !u.getSlot(slot).tags.contains("tier", fromTier)))
 						{
 							newitem = u.getSlot(slot);
 						}
@@ -2602,12 +2438,12 @@ public class MageGenerator extends TroopGenerator {
 							all = temp;
 						}
 		
-						newitem = Entity.getRandom(this.random, chandler.handleChanceIncs(nu, all));
+						newitem = chandler.handleChanceIncs(nu, all).getRandom(this.random);
 					
 					}
 	
 			
-					if(newslot != null && slot.equalsIgnoreCase(newslot))
+					if(slot.equalsIgnoreCase(newslot))
 						exclusions.add(newitem);
 					
 					if(newitem != null)
@@ -2625,19 +2461,19 @@ public class MageGenerator extends TroopGenerator {
 
 
 			// This should fill in missing slots like mount
-			unitGen.armorUnit(nu, null, exclusions, "tier " + toTier, true);
-			unitGen.armUnit(nu, null, exclusions, "tier " + toTier, true);
+			unitGen.armorUnit(nu, null, exclusions, new Command("tier", new Arg(toTier)), true);
+			unitGen.armUnit(nu, null, exclusions, new Command("tier", new Arg(toTier)), true);
 			
 
 			
 			if(toTier < 2)
 			{
-				if(Generic.containsTag(Generic.getAllUnitTags(nu), "mage_nolowtierhat"))
+				if(Generic.getAllUnitTags(nu).containsName("mage_nolowtierhat"))
 				{
 					nu.setSlot("helmet", null);
 
 				}
-				if(!Generic.containsTag(Generic.getAllUnitTags(nu), "mage_lowtiercloak"))
+				if(!Generic.getAllUnitTags(nu).containsName("mage_lowtiercloak"))
 				{
 					nu.setSlot("cloakb", null);
 					nu.setSlot("cloakf", null);
@@ -2670,7 +2506,7 @@ public class MageGenerator extends TroopGenerator {
 		ItemSet possibles = new ItemSet();
 		for(Item i : items)
 		{
-			if(i.tags.contains("eliteversion " + item.name))
+			if(i.tags.contains("eliteversion", item.name))
 			{
 				possibles.add(i);
 			}
@@ -2681,28 +2517,24 @@ public class MageGenerator extends TroopGenerator {
 		ItemSet test = new ItemSet();
 		test.addAll(possibles);
 		test.retainAll(used);
-		if(chandler.handleChanceIncs(u, test).size() > 0)
+		if(chandler.handleChanceIncs(u, test).hasPossible())
 		{
 			possibles = test;
 		}
-		
-		Item i = chandler.getRandom(possibles, u)
-;
-		
 
-		return i;
+		return chandler.getRandom(possibles, u);
 	}
 	
 	
 	public List<Unit> generateBases(String posename, Race race, int amount, int tier)
 	{
 		
-		List<Unit> units = new ArrayList<Unit>();
+		List<Unit> units = new ArrayList<>();
 		
 	
-		Pose p = Entity.getRandom(this.random, chandler.handleChanceIncs(race, posename, getPossiblePoses(posename, race, tier)));
+		Pose p = chandler.getRandom(getPossiblePoses(posename, race, tier), race);
 		if(p == null)
-			p = Entity.getRandom(this.random, chandler.handleChanceIncs(race, posename, getPossiblePoses(posename, race, tier - 1)));
+			p = chandler.getRandom(getPossiblePoses(posename, race, tier - 1), race);
 	
 		if(p == null)
 			amount = 0;
@@ -2723,8 +2555,8 @@ public class MageGenerator extends TroopGenerator {
 	public void equipBase(Unit u, int tier)
 	{
 		
-		unitGen.armorUnit(u, used, exclusions, "tier " + tier, false);
-		unitGen.armUnit(u, used, exclusions, "tier " + tier, false);
+		unitGen.armorUnit(u, used, exclusions, new Command("tier", new Arg(tier)), false);
+		unitGen.armUnit(u, used, exclusions, new Command("tier", new Arg(tier)), false);
 		if(tier == 3)
 		{
 			u.setSlot("cloakb", unitGen.getSuitableItem("cloakb", u, exclusions, used, null));
@@ -2765,14 +2597,14 @@ public class MageGenerator extends TroopGenerator {
 		boolean isPrimaryRace = (race == nation.races.get(0));
 		for(Pose p : race.getPoses(posename))
 		{
-			if(p.tags.contains("tier " + tier) && (isPrimaryRace || !p.tags.contains("primaryraceonly")))
+			if(p.tags.contains("tier", tier) && (isPrimaryRace || !p.tags.containsName("primaryraceonly")))
 				return true;
 		}
 		
 
 		for(Pose p : race.getPoses(posename))
 		{
-			if(!p.tags.contains("notfortier " + tier) && (isPrimaryRace || !p.tags.contains("primaryraceonly")))
+			if(!p.tags.contains("notfortier ", tier) && (isPrimaryRace || !p.tags.containsName("primaryraceonly")))
 				return true;
 		}
 		
@@ -2784,10 +2616,10 @@ public class MageGenerator extends TroopGenerator {
 	{
 		boolean isPrimaryRace = (race == nation.races.get(0));
 		
-		List<Pose> possibles = new ArrayList<Pose>();
+		List<Pose> possibles = new ArrayList<>();
 		for(Pose p : race.getPoses(posename))
 		{
-			if(p.tags.contains("tier " + tier) && (isPrimaryRace || !p.tags.contains("primaryraceonly")))
+			if(p.tags.contains("tier", tier) && (isPrimaryRace || !p.tags.containsName("primaryraceonly")))
 			{
 				possibles.add(p);
 			}
@@ -2797,7 +2629,7 @@ public class MageGenerator extends TroopGenerator {
 		{
 			for(Pose p : race.getPoses(posename))
 			{
-				if(!p.tags.contains("notfortier " + tier) && (isPrimaryRace || !p.tags.contains("primaryraceonly")))
+				if(!p.tags.contains("notfortier", + tier) && (isPrimaryRace || !p.tags.containsName("primaryraceonly")))
 				{
 					possibles.add(p);
 				}
@@ -2817,21 +2649,20 @@ public class MageGenerator extends TroopGenerator {
 	private List<String> getPossibleVarySlots(Unit u)
 	{
 		//  Get slot to vary
-		List<String> possibleslots = new ArrayList<String>();
-		for(String tag : u.pose.tags)
-		{
-			List<String> args = Generic.parseArgs(tag);
-			if(args.get(0).equals("varyslot"))
-				possibleslots.add(args.get(1));
-		}
+		List<String> possibleslots = u.pose.tags.getAllValues("varyslot").stream()
+				.map(Arg::get).collect(Collectors.toList());
 		
 		if(possibleslots.size() == 0)
 		{
-			if(!u.pose.tags.contains("dontvaryhat") && u.pose.getItems("helmet") != null && chandler.countPossibleFilters(u.pose.getItems("helmet"), u) > 0)
+			if(!u.pose.tags.containsName("dontvaryhat")
+					&& u.pose.getItems("helmet") != null
+					&& chandler.countPossibleFilters(u.pose.getItems("helmet"), u) > 0)
 			{
 				possibleslots.add("helmet");
 			}
-			if(!u.pose.tags.contains("dontvaryweapon") && u.pose.getItems("weapon") != null && chandler.countPossibleFilters(u.pose.getItems("weapon"), u) > 0)
+			if(!u.pose.tags.containsName("dontvaryweapon")
+					&& u.pose.getItems("weapon") != null
+					&& chandler.countPossibleFilters(u.pose.getItems("weapon"), u) > 0)
 			{
 				possibleslots.add("weapon");
 			}
@@ -2866,13 +2697,13 @@ public class MageGenerator extends TroopGenerator {
 		String slot = possibleslots.get(this.random.nextInt(possibleslots.size()));
 		
 		// Vary item
-		ItemSet stuff = u.pose.getItems(slot).filterTag("tier " + tier, true);
+		ItemSet stuff = u.pose.getItems(slot).filterTag(new Command("tier", new Arg(tier)));
 		stuff.removeAll(exclusions);
 		stuff.remove(u.getSlot(slot));
 		
 		if(chandler.countPossibleFilters(stuff, u) == 0)
 		{
-			stuff = u.pose.getItems(slot).filterTag("tier " + tier, true);
+			stuff = u.pose.getItems(slot).filterTag(new Command("tier", new Arg(tier)));
 			stuff.removeAll(exclusions);
 			stuff.remove(u.getSlot(slot));
 		}
@@ -2886,14 +2717,14 @@ public class MageGenerator extends TroopGenerator {
 		for(int i = 1; i < amount; i++)
 		{
 			Unit nu = all.get(i);
-			Item newitem = unitGen.getSuitableItem(slot, nu, exclusions, used, "tier " + tier);
+			Item newitem = unitGen.getSuitableItem(slot, nu, exclusions, used, new Command("tier", new Arg(tier)));
 			nu.setSlot(slot, newitem);
 			exclusions.add(nu.getSlot(slot));
 			
 			
 		}
 		
-		tagAll(all, "varyslot " + slot);
+		tagAll(all, "varyslot", slot);
 		for(Unit un : all)
 			this.polishUnit(un);
 
@@ -2917,19 +2748,19 @@ public class MageGenerator extends TroopGenerator {
 			
 			if(random < limit && u.getSlot("mount") == null)
 			{
-				u.commands.add(new Command("#mapmove", "-1"));
+				u.commands.add(Command.args("#mapmove", "-1"));
 			}
 			else if(picks > 6)
 			{
-				u.commands.add(new Command("#older", "-20"));
+				u.commands.add(Command.args("#older", "-20"));
 			}
 			else if(picks > 5)
 			{
-				u.commands.add(new Command("#older", "-15"));
+				u.commands.add(Command.args("#older", "-15"));
 			}
 			else if(picks > 4)
 			{
-				u.commands.add(new Command("#older", "-10"));
+				u.commands.add(Command.args("#older", "-10"));
 			}
 
 		}
@@ -2943,14 +2774,14 @@ public class MageGenerator extends TroopGenerator {
 		MagicPattern p = new MagicPattern(nationGen);
 		p.picks.put(1, level);
 	
-		List<Integer> prio = new ArrayList<Integer>();
-		prio.add(8);
+		List<MagicPath> prio = new ArrayList<>();
+		prio.add(MagicPath.HOLY);
 		
 		MagicFilter m = new MagicFilter(nationGen);
 		m.pattern = p;
 		m.prio = prio;
 		m.name = "PRIESTPICKS";
-		m.tags.add("do_not_show_in_descriptions");
+		m.tags.addName("do_not_show_in_descriptions");
 		
 		return m;
 	

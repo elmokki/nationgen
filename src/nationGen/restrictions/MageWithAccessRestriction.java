@@ -1,17 +1,18 @@
 package nationGen.restrictions;
 
 
-import java.awt.event.ActionEvent;
-import java.util.List;
-import java.util.ArrayList;
-
 import com.elmokki.Generic;
-
+import nationGen.magic.MagicPath;
+import nationGen.magic.MagicPathInts;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
+import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.List;
+
 public class MageWithAccessRestriction extends TwoListRestrictionWithComboBox<String, String>  {
-	public List<String> neededPaths = new ArrayList<String>();
+	private List<String> neededPaths = new ArrayList<>();
 	
 
 	public MageWithAccessRestriction()
@@ -23,11 +24,10 @@ public class MageWithAccessRestriction extends TwoListRestrictionWithComboBox<St
 		this.textFieldLabel = "Minimum magic level for added paths";
 		
 		this.comboboxlabel = "25% probability randoms allowed";
-		String[] ops = {"True", "False"};
-		this.comboboxoptions = ops;
+		this.comboboxoptions = new String[]{"True", "False"};
 		
-		for(int i = 0; i < 8; i++)
-			rmodel.addElement(Generic.integerToPath(i));		
+		for(MagicPath path : MagicPath.NON_HOLY)
+			rmodel.addElement(path.name);
 	}
 	
 
@@ -85,13 +85,13 @@ public class MageWithAccessRestriction extends TwoListRestrictionWithComboBox<St
 		for(Unit u : tempmages)
 		{
 			boolean pass = true;
-			int[] paths = u.getMagicPicks(randoms);
+			MagicPathInts paths = u.getMagicPicks(randoms);
 			for(String p : neededPaths)
 			{
 				List<String> args = Generic.parseArgs(p);
-				int path = Generic.PathToInteger(args.get(0));
+				MagicPath path = MagicPath.fromName(args.get(0));
 				int level = Integer.parseInt(args.get(1));
-				if(paths[path] < level)
+				if(paths.get(path) < level)
 					pass = false;
 			}
 			if(pass)

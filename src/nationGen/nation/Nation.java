@@ -1,16 +1,17 @@
 package nationGen.nation;
 
+
 import com.elmokki.Drawing;
 import com.elmokki.Generic;
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
 import nationGen.Settings.SettingsType;
-import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Race;
 import nationGen.entities.Theme;
 import nationGen.items.CustomItem;
 import nationGen.magic.MageGenerator;
+import nationGen.magic.MagicPath;
 import nationGen.magic.SpellGen;
 import nationGen.misc.*;
 import nationGen.naming.Summary;
@@ -25,6 +26,7 @@ import java.awt.image.BufferedImage;
 import java.util.List;
 import java.util.*;
 import java.util.Map.Entry;
+import java.util.stream.Collectors;
 
 
 public class Nation {
@@ -42,10 +44,10 @@ public class Nation {
 	public NationGen nationGen;
 	private NationGenAssets assets;
 	
-	private long seed;
+	private final long seed;
+	public final Random random;
 	
 	public ItemSet usedItems = new ItemSet();
-	public Random random;
 
 	public List<Unit> heroes = new ArrayList<>();
 
@@ -58,8 +60,8 @@ public class Nation {
 	public List<Theme> nationthemes = new ArrayList<>();
 	public List<Filter> spells = new ArrayList<>();
 	
-	public LinkedHashMap <String, List<Unit>> unitlists = new LinkedHashMap<>();
-	public LinkedHashMap <String, List<Unit>> comlists = new LinkedHashMap<>();
+	public LinkedHashMap<String, List<Unit>> unitlists = new LinkedHashMap<>();
+	public LinkedHashMap<String, List<Unit>> comlists = new LinkedHashMap<>();
 	
 	public List<Race> races = new ArrayList<>();
 	public String nationalitysuffix;
@@ -119,13 +121,12 @@ public class Nation {
 
 		for(Race r : assets.races)
 		{
-			if (!r.tags.contains("secondary")) 
+			if (!r.tags.containsName("secondary"))
 			{
 				allRaces.add(r);
 			}
 		}
-		Race race;
-		race = chandler.getRandom(allRaces);
+		Race race = chandler.getRandom(allRaces);
 				
 		races.add(race.getCopy());
 		
@@ -147,7 +148,7 @@ public class Nation {
 		allRaces.addAll(assets.races);
 		allRaces.remove(race);
 		
-		race = Race.getRandom(random, chandler.handleChanceIncs(allRaces));
+		race = chandler.handleChanceIncs(allRaces).getRandom(random);
 		races.add(race.getCopy());
 		
 		// Add themes for secondary race
@@ -156,22 +157,22 @@ public class Nation {
 		// Apply the nation and primary race theme secondary race effects
 		for(Theme t : races.get(0).themefilters)
 		{
-			for(String str : t.secondarynationeffects)
+			for(Command str : t.secondarynationeffects)
 			{
 				races.get(1).addOwnLine(str);
 			}
-			for(String str2 : t.bothnationeffects)
+			for(Command str2 : t.bothnationeffects)
 			{
 				races.get(1).addOwnLine(str2);
 			}
 		}
 		for(Theme t : this.nationthemes)
 		{
-			for(String str : t.secondarynationeffects)
+			for(Command str : t.secondarynationeffects)
 			{
 				races.get(1).addOwnLine(str);
 			}
-			for(String str2 : t.bothnationeffects)
+			for(Command str2 : t.bothnationeffects)
 			{
 				races.get(1).addOwnLine(str2);
 			}
@@ -180,14 +181,9 @@ public class Nation {
 		
 		
 		// Add secondaryracecommands to the secondary race
-		for(String tag : this.races.get(0).tags)
+		for(Command command : this.races.get(0).tags.getAllCommands("secondaryracecommand"))
 		{
-			List<String> args = Generic.parseArgs(tag);
-			if(args.get(0).equals("secondaryracecommand"))
-			{
-				args.remove(0);
-				races.get(1).addCommand(Generic.listToString(args));
-			}
+			races.get(1).addCommand(command);
 		}
 
 	}
@@ -199,7 +195,6 @@ public class Nation {
 		MageGenerator mageGen = new MageGenerator(nationGen, this, assets);
 		comlists.get("mages").addAll(mageGen.generateMages());
 		comlists.get("priests").addAll(mageGen.generatePriests());
-		mageGen = null;
 	}
 	
 	private void generateTroops()
@@ -323,9 +318,9 @@ public class Nation {
 		
 		ScoutGenerator scoutgen = new ScoutGenerator(nationGen, this, assets);
 		
-		if(races.get(0).hasRole("scout") && !races.get(0).tags.contains("#no_scouts"))
+		if(races.get(0).hasRole("scout") && !races.get(0).tags.containsName("#no_scouts"))
 			comlists.get("scouts").add(scoutgen.generateScout(races.get(0)));
-		else if(races.get(1).hasRole("scout") && !races.get(1).tags.contains("#no_scouts"))
+		else if(races.get(1).hasRole("scout") && !races.get(1).tags.containsName("#no_scouts"))
 			comlists.get("scouts").add(scoutgen.generateScout(races.get(1)));
 		scoutgen = null;
 		System.gc();
@@ -336,9 +331,7 @@ public class Nation {
 
 		// Special commanders
 
-		double specialcomchance = 0.05;
-		if(Generic.containsTag(races.get(0).tags, "specialcommanderchance"))
-			specialcomchance = Double.parseDouble(Generic.getTagValue(races.get(0).tags, "specialcommanderchance"));
+		double specialcomchance = races.get(0).tags.getDouble("specialcommanderchance").orElse(0.05);
 		
 		if(random.nextDouble() < specialcomchance)
 		{
@@ -393,9 +386,7 @@ public class Nation {
 	{
 		
 		// Monsters
-		double monsterchance = 0.05;
-		if(Generic.containsTag(races.get(0).tags, "monsterchance"))
-			monsterchance = Double.parseDouble(Generic.getTagValue(races.get(0).tags, "monsterchance"));
+		double monsterchance = races.get(0).tags.getDouble("monsterchance").orElse(0.05);
 		
 		if(random.nextDouble() < monsterchance)
 		{
@@ -403,10 +394,9 @@ public class Nation {
 			Unit monster = mGen.generateMonster();
 			if(monster != null)
 			{
-				this.unitlists.put("monsters", new ArrayList<Unit>());
+				this.unitlists.put("monsters", new ArrayList<>());
 				this.unitlists.get("monsters").add(monster);
 			}
-			mGen = null;
 		}
 		System.gc();
 	}
@@ -439,13 +429,13 @@ public class Nation {
 		Filter startaff = null;
 		while(cycles > 0)
 		{
-			startaff = Filter.getRandom(random, chandler.handleChanceIncs(posaff));
+			startaff = chandler.handleChanceIncs(posaff).getRandom(random);
 			
 			if(startaff.getCommands().size() > 0)
 			{
 				for(Command c : startaff.getCommands())
 				{
-					Command.handleCommand(this.commands, c, nationGen);
+					handleCommand(this.commands, c, nationGen);
 				}
 				posaff.remove(startaff);
 			}
@@ -454,6 +444,77 @@ public class Nation {
 		}
 		posaff = null;
 		System.gc();
+	}
+	
+	public static void handleCommand(List<Command> commands, Command c, NationGen nationGen)
+	{
+		
+		// List of commands that may appear more than once per unit
+		List<String> uniques = new ArrayList<>();
+		uniques.add("#weapon");
+		uniques.add("#custommagic");
+		uniques.add("#magicskill");
+		
+		
+		int copystats = -1;
+		
+		Command old = null;
+		for(Command cmd : commands)
+		{
+			if(cmd.command.equals(c.command))
+				old = cmd;
+			
+			if(cmd.command.equals("#copystats"))
+				copystats = cmd.args.get(0).getInt();
+		}
+		
+		
+		if(c.args.size() > 0
+				&& c.args.get(0).getOperator().isPresent()
+				&& copystats != -1
+				&& old == null)
+		{
+			String value = nationGen.units.GetValue(copystats + "", c.command.substring(1));
+			if(!value.equals(""))
+			{
+				old = new Command(c.command, new Arg(value));
+				commands.add(old);
+			}
+		}
+		
+		if(old != null && !uniques.contains(c.command))
+		{
+			/*
+			if(this.tags.contains("sacred") && c.command.equals("#gcost"))
+				System.out.println(c.command + "  " + c.args);
+			*/
+			for(int i = 0; i < c.args.size(); i++)
+			{
+				
+				Arg arg = c.args.get(i);
+				Arg oldarg = old.args.get(i);
+				Optional<Operator> operator = arg.getOperator();
+				
+				if (operator.isPresent()) {
+					try {
+						old.args.set(i, new Arg(arg.applyModTo(oldarg.getInt())));
+					} catch (NumberFormatException e) {
+						throw new IllegalStateException("FATAL ERROR: Argument parsing " + oldarg + " " + arg + " on " + c.command + " caused crash.", e);
+					}
+				} else {
+					old.args.set(i, arg);
+				}
+			}
+		}
+		else
+		{
+			Args newArgs = new Args();
+			for(Arg arg : c.args)
+			{
+				newArgs.add(arg.applyModToNothing());
+			}
+			commands.add(new Command(c.command, newArgs, c.comment));
+		}
 	}
 	
 	
@@ -504,10 +565,8 @@ public class Nation {
 		generateFlag();
 		getStartAffinity();
 
-		double extraPDMulti = 1;
-		if (Generic.containsTag(this.races.get(0).tags, "extrapdmulti"))
-			extraPDMulti = Double.parseDouble(Generic.getTagValue(this.races.get(0).tags, "extrapdmulti"));
-
+		double extraPDMulti = this.races.get(0).tags.getDouble("extrapdmulti").orElse(1D);
+		
 		if (random.nextDouble() < 0.1 * extraPDMulti)
 		{
 			if (random.nextDouble() < 0.02 * extraPDMulti)
@@ -529,40 +588,27 @@ public class Nation {
 		
 		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("nationthemes", "default_nationthemes", assets.themes, null, race);
 		ChanceIncHandler chandler = new ChanceIncHandler(this);
-		List<String> freeThemes = Generic.getTagValues(race.tags, "freenationtheme");
 		
-		for(String str : freeThemes)
+		for(String str : race.tags.getAllStrings("freenationtheme"))
 		{
 			List<Theme> frees = ChanceIncHandler.getFiltersWithType(str, possibleThemes);
-			Theme t = null;
 			
-			if(frees.size() > 0)
-			{
-				t = Entity.getRandom(random, chandler.handleChanceIncs(frees));
-				if(t != null)
-				{
-				
-					possibleThemes.remove(t);
-					race.handleTheme(t);
-					for(Command c : t.commands)
-						this.handleCommand(commands, c);
-					this.nationthemes.add(t);
-					
-			
-				}
+			if(frees.isEmpty()) {
+				throw new IllegalStateException(race + " has #freenationtheme " + str + " but no filters of #type " + str);
 			}
-
-
-			if(t == null)
-				System.out.println(race + " has #freenationtheme " + str + " but no filters of #type " + str);
 			
+			Theme t = chandler.handleChanceIncs(frees).getRandom(random);
+			
+			possibleThemes.remove(t);
+			race.handleTheme(t);
+			for(Command c : t.commands)
+				this.handleCommand(commands, c);
+			this.nationthemes.add(t);
 			
 		}
 		
 		
-		int guaranteedthemes = 1;
-		if(Generic.getTagValue(race.tags, "guaranteednationthemes") != null)
-			guaranteedthemes = Integer.parseInt(Generic.getTagValue(race.tags, "guaranteednationthemes"));
+		int guaranteedthemes = race.tags.getInt("guaranteednationthemes").orElse(1);
 		
 		if(random.nextDouble() > 0.7)
 		{	
@@ -580,7 +626,7 @@ public class Nation {
 			possibleThemes = ChanceIncHandler.getValidFilters(possibleThemes, this.nationthemes);
 			if(possibleThemes.size() > 0)
 			{
-				Theme t = Theme.getRandom(random, chandler.handleChanceIncs(possibleThemes));
+				Theme t = chandler.handleChanceIncs(possibleThemes).getRandom(random);
 				if(t != null)
 				{
 					race.handleTheme(t);
@@ -598,13 +644,10 @@ public class Nation {
 	
 	public List<String> getSpells()
 	{
-		List<String> list = new ArrayList<String>();
-		for(Filter f : this.spells)
-			for(String str : Generic.getTagValues(f.tags, "spell"))
-				if(!list.contains(str))
-					list.add(str);
-		
-		return list;
+		return this.spells.stream()
+				.flatMap(f -> f.tags.getAllStrings("spell").stream())
+				.distinct()
+				.collect(Collectors.toList());
 	}
 	
 	private void addRaceThemes(Race race)
@@ -614,91 +657,60 @@ public class Nation {
 		List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters("racethemes", "default_racethemes", assets.themes, null, race);
 		ChanceIncHandler chandler = new ChanceIncHandler(this);
 		
-		List<String> freeThemes = Generic.getTagValues(race.tags, "freetheme");
-		
-		for(String str : freeThemes)
+		for(String str : race.tags.getAllStrings("freetheme"))
 		{
 			List<Theme> frees = ChanceIncHandler.getFiltersWithType(str, possibleThemes);
-			Theme t = null;
 			
-			if(frees.size() > 0)
-			{
-				t = Entity.getRandom(random, chandler.handleChanceIncs(frees));
-				if(t != null)
-				{
-				
-					possibleThemes.remove(t);
-					race.themefilters.add(t);
-					race.handleTheme(t);
-			
-				}
+			if (frees.isEmpty()) {
+				throw new IllegalStateException(race + " has #freetheme " + str + " but no filters of #type " + str);
 			}
-
-
-			if(t == null)
-				System.out.println(race + " has #freetheme " + str + " but no filters of #type " + str);
 			
+			Theme t = chandler.handleChanceIncs(frees).getRandom(random);
 			
+			possibleThemes.remove(t);
+			race.themefilters.add(t);
+			race.handleTheme(t);
 		}
 		
 		
 		
-		int guaranteedthemes = 1;
-		if(Generic.getTagValue(race.tags, "guaranteedthemes") != null)
-			guaranteedthemes = Integer.parseInt(Generic.getTagValue(race.tags, "guaranteedthemes"));
+		int guaranteedthemes = race.tags.getInt("guaranteedthemes").orElse(1);
 		
-		boolean getsNonFreeThemes = (race == races.get(0));
-		if(!getsNonFreeThemes)
-			getsNonFreeThemes = Generic.containsTag(race.tags, "normal_themes_as_secondary");
+		// TODO: This is unused
+		boolean getsNonFreeThemes = race == races.get(0) || race.tags.containsName("normal_themes_as_secondary");
 		
 		// Guaranteed themes
 		for(int i = 0; i < guaranteedthemes; i++)
 		{
 	
 			possibleThemes = ChanceIncHandler.getValidFilters(possibleThemes, race.themefilters);
-			if(possibleThemes.size() > 0)
+			if(!possibleThemes.isEmpty())
 			{
-				Theme t = Theme.getRandom(random, chandler.handleChanceIncs(possibleThemes));
-				if(t != null)
-				{
-					race.themefilters.add(t);
-					race.handleTheme(t);
-					possibleThemes.remove(t);
-					
-
-				}
+				Theme t = chandler.handleChanceIncs(possibleThemes).getRandom(random);
+				race.themefilters.add(t);
+				race.handleTheme(t);
+				possibleThemes.remove(t);
 			}
 		}
 		
 		// 10% chance for second theme
 		possibleThemes = ChanceIncHandler.getValidFilters(possibleThemes, race.themefilters);
-		if(possibleThemes.size() > 0 && random.nextDouble() < 0.1)
+		if(!possibleThemes.isEmpty() && random.nextDouble() < 0.1)
 		{
-			Theme t = Theme.getRandom(random, chandler.handleChanceIncs(possibleThemes));
-			if(t != null)
-			{
-				race.themefilters.add(t);
-				race.handleTheme(t);
-			}
+			Theme t = chandler.handleChanceIncs(possibleThemes).getRandom(random);
+			race.themefilters.add(t);
+			race.handleTheme(t);
 		}
-		
 		
 		
 	}
 	
 	public void finalizeUnits()
 	{
-		List<Command> conditional = new ArrayList<Command>();
-		
-		for(String tag : this.races.get(0).tags)
-		{
-			List<String> args = Generic.parseArgs(tag);
-			if(args.get(0).equals("secondaryracecommand_conditional"))
-			{
-				conditional.add(Command.parseCommandFromDefinition(args));
-			}
-		}
-		
+		List<Command> conditional =
+			this.races.get(0).tags.getAllValues("secondaryracecommand_conditional").stream()
+				.map(Arg::getCommand)
+				.collect(Collectors.toList());
 		
 		
 		for(List<Unit> l : this.comlists.values())
@@ -707,30 +719,22 @@ public class Nation {
 				u.commands.addAll(u.race.specialcommands);
 				giveSecondaryRaceSpecialCommands(u, conditional);
 				
-				int priest = u.getMagicPicks()[8];
-				if(Generic.getAllNationTags(this).contains("priestextracost") && priest > 0)
+				int priest = u.getMagicPicks().get(MagicPath.HOLY);
+				if(priest > 0)
 				{
-					List<String> asd = Generic.getTagValues(Generic.getAllNationTags(this), "priestextracost");
-					int highest = 0;
-					for(String str : asd)
-					{
-						if(Integer.parseInt(str) > highest)
-							highest = Integer.parseInt(str);
-					}
-					
-					
-					
-					u.commands.add(new Command("#gcost", "+" + (highest * priest)));
+					Generic.getAllNationTags(this).getAllValues("priestextracost").stream()
+						.map(Arg::getInt)
+						.max(Integer::compareTo)
+						.ifPresent(highest -> u.commands.add(new Command("#gcost", new Arg("+" + (highest * priest)))));
 				}
-
-					
 				
 				u.polish();
 			}
 		for(List<Unit> l : this.unitlists.values())
 			for(Unit u : l)
 			{
-				if(u.tags.contains("elite") || u.tags.contains("sacred"))
+				// TODO: is this supposed to check pose roles instead of tags??
+				if(u.tags.containsName("elite") || u.tags.containsName("sacred"))
 					u.commands.addAll(u.race.specialcommands);
 				giveSecondaryRaceSpecialCommands(u, conditional);
 				u.polish();
@@ -786,13 +790,13 @@ public class Nation {
 				break;
 			
 			int added = 0;
-			Filter f = Entity.getRandom(random, chandler.handleChanceIncs(possibles));
+			Filter f = chandler.handleChanceIncs(possibles).getRandom(random);
 			
 			
 			for(List<Unit> l : this.comlists.values())
 				for(Unit u : l)
 				{
-					if(((u.race == races.get(0)) == primary || both) && ChanceIncHandler.canAdd(u, f) && !f.tags.contains("trooponly"))
+					if(((u.race == races.get(0)) == primary || both) && ChanceIncHandler.canAdd(u, f) && !f.tags.containsName("trooponly"))
 					{
 						added++;
 						u.appliedFilters.add(f);
@@ -802,7 +806,7 @@ public class Nation {
 			for(List<Unit> l : this.unitlists.values())
 				for(Unit u : l)
 				{
-					if(((u.race == races.get(0)) == primary || both) && ChanceIncHandler.canAdd(u, f) && !f.tags.contains("commanderonly"))
+					if(((u.race == races.get(0)) == primary || both) && ChanceIncHandler.canAdd(u, f) && !f.tags.containsName("commanderonly"))
 					{
 						added++;
 						u.appliedFilters.add(f);
@@ -812,7 +816,7 @@ public class Nation {
 
 			for(Unit u : heroes)
 			{
-				if(((u.race == races.get(0)) == primary || both) && ChanceIncHandler.canAdd(u, f) && !f.tags.contains("trooponly"))
+				if(((u.race == races.get(0)) == primary || both) && ChanceIncHandler.canAdd(u, f) && !f.tags.containsName("trooponly"))
 				{
 					added++;
 					u.appliedFilters.add(f);
@@ -873,7 +877,7 @@ public class Nation {
 			for(Unit u : all)
 			{
 			
-				if(u.tags.contains("schoolmage " + i))
+				if(u.tags.contains("schoolmage", i))
 					l.add(u);
 			}
 			lists.add(l);
@@ -881,7 +885,7 @@ public class Nation {
 		
 		List<Unit> l = new ArrayList<Unit>();
 		for(Unit u : all)
-			if(u.tags.contains("extramage"))
+			if(u.tags.containsName("extramage"))
 				l.add(u);
 		
 		lists.add(l);
@@ -1012,7 +1016,7 @@ public class Nation {
 		
 		for(Command cmd : this.getCommands())
 		{
-			lines.add(cmd.command + " " + Generic.listToString(cmd.args));
+			lines.add(cmd.toModLine());
 		}
 		
 		
@@ -1020,7 +1024,7 @@ public class Nation {
 		
 		// Gods
 		for(Command cmd : this.gods)
-			lines.add(cmd.command + " " + Generic.listToString(cmd.args));
+			lines.add(cmd.toModLine());
 		
 		
 		
@@ -1181,7 +1185,7 @@ public class Nation {
 					for(Unit u : unitlists.get(str + "-" + i))
 					{
 						for(String tag : foreigntags)
-							if(u.tags.contains(tag))
+							if(u.tags.containsName(tag))
 							{
 								if(coms)
 								{
@@ -1205,7 +1209,7 @@ public class Nation {
 					for(Unit u : unitlists.get(listname))
 					{
 						for(String tag : foreigntags)
-							if(u.tags.contains(tag))
+							if(u.tags.containsName(tag))
 							{
 								if(coms)
 									lines.add("#" + tag.substring(0, tag.length() - 3) + "com " + u.id);
@@ -1234,12 +1238,9 @@ public class Nation {
 	
 	private void handleCommand(List<Command> commands, Command c)
 	{
-
-
 		// List of commands that may appear more than once per nation
 		List<String> uniques = new ArrayList<>();
 		
-		c = new Command(c.command, c.args);
 		Command old = null;
 		for(Command cmd : commands)
 		{
@@ -1250,30 +1251,23 @@ public class Nation {
 		if(old != null)
 		{
 			
-			
 			for(int i = 0; i < c.args.size(); i++)
 			{
-				String arg = c.args.get(0);
-				String oldarg = old.args.get(0);
-				if(arg.startsWith("+") || arg.startsWith("-"))
-				{
-					if(arg.startsWith("+"))
-					{
-						arg = arg.substring(1);
-					}
+				Arg arg = c.args.get(i);
+				Arg oldarg = old.args.get(i);
 				
-					
-					
-					if(old != null && !uniques.contains(c.command))
+				if(arg.getOperator().filter(o -> o == Operator.ADD).isPresent())
+				{
+					if(!uniques.contains(c.command))
 					{
-						int argint = (Integer.parseInt(oldarg) + Integer.parseInt(arg));
+						int argint = oldarg.getInt() + arg.getInt();
 						if(c.command.equals("#idealcold"))
 						{
 							argint = Math.min(3, argint);
 							argint = Math.max(-3, argint);
 						}
-						oldarg = argint + "";  
-						old.args.set(i, oldarg);
+						
+						old.args.set(i, new Arg(argint));
 						return;
 					}
 					else
@@ -1284,80 +1278,70 @@ public class Nation {
 				}
 				else
 				{
-					if(old != null && !uniques.contains(c.command))
+					if(!uniques.contains(c.command))
 					{
-						oldarg = arg;
-						old.args.set(i, oldarg);
-	
+						old.args.set(i, arg);
 					}
 					else
 					{
-						commands.add(c);
+						commands.add(c.copy());
 						return;
 					}
 				}
 				
 			}
 		}	
-		else
+		else // there is no existing copy
 		{
-			// If there's no existing copy and the command starts with +, remove +.
-			if(c.args.size() > 0 && c.args.get(0).startsWith("+"))
+			Command toAdd = c.copy();
+			if(toAdd.args.size() > 0)
 			{
-				c.args.set(0, c.args.get(0).substring(1));
+				// If the command starts with +, remove +.
+				toAdd.args.set(0, toAdd.args.get(0).applyModToNothing());
 			}
-			commands.add(c);
+			commands.add(toAdd);
 		}
 
 	}
 	
 	public List<Unit> generateTroopList()
 	{
-		List<Unit> units = new ArrayList<Unit>();
+		List<Unit> units = new ArrayList<>();
 		
-		Iterator<List<Unit>> itr = unitlists.values().iterator();
-		while(itr.hasNext())
-			units.addAll(itr.next());
+		for (List<Unit> units1 : unitlists.values())
+			units.addAll(units1);
 
 		return units;
 	}
 
 	public List<Unit> generateUnitList()
 	{
-		List<Unit> units = new ArrayList<Unit>();
+		List<Unit> units = new ArrayList<>();
 		
-		Iterator<List<Unit>> itr = comlists.values().iterator();
-		while(itr.hasNext())
-			units.addAll(itr.next());
+		for(List<Unit> units1 : comlists.values())
+			units.addAll(units1);
 		
-		itr = unitlists.values().iterator();
-		while(itr.hasNext())
-			units.addAll(itr.next());
+		for(List<Unit> units1 : unitlists.values())
+			units.addAll(units1);
 
 		return units;
 	}
 	
 	public List<Unit> generateComList()
 	{
-		List<Unit> units = new ArrayList<Unit>();
+		List<Unit> units = new ArrayList<>();
 		
-		Iterator<List<Unit>> itr = comlists.values().iterator();
-		while(itr.hasNext())
-			units.addAll(itr.next());
+		for (List<Unit> units1 : comlists.values())
+			units.addAll(units1);
 
 		return units;
 	}
 	public List<Unit> generateUnitList(String type)
 	{
-		List<Unit> list = new ArrayList<Unit>();
-		Iterator<Entry<String, List<Unit>>> itr = unitlists.entrySet().iterator();
-		while(itr.hasNext())
-		{
-			Entry<String, List<Unit>> entry = itr.next();
-			if(entry.getKey().startsWith(type))
-			{
-				for(Unit u : entry.getValue())
-					list.add(u);
+		List<Unit> list = new ArrayList<>();
+		for (Entry<String, List<Unit>> entry : unitlists.entrySet()) {
+			if (entry.getKey().startsWith(type)) {
+				list.addAll(entry.getValue());
 			}
 		}
 		return list;
@@ -1365,16 +1349,10 @@ public class Nation {
 	
 	public List<Unit> generateComList(String type)
 	{
-		List<Unit> list = new ArrayList<Unit>();
-		Iterator<Entry<String, List<Unit>>> itr = comlists.entrySet().iterator();
-		while(itr.hasNext())
-		{
-			Entry<String, List<Unit>> entry = itr.next();
-			if(entry.getKey().startsWith(type))
-			{
-				
-				for(Unit u : entry.getValue())
-					list.add(u);
+		List<Unit> list = new ArrayList<>();
+		for (Entry<String, List<Unit>> entry : comlists.entrySet()) {
+			if (entry.getKey().startsWith(type)) {
+				list.addAll(entry.getValue());
 			}
 		}
 		return list;
@@ -1383,16 +1361,12 @@ public class Nation {
 	
 	public List<List<Unit>> getListsOfType(String type, boolean coms, boolean troops)
 	{
-		List<List<Unit>> lists = new ArrayList<List<Unit>>();
+		List<List<Unit>> lists = new ArrayList<>();
 		
 		if(troops)
 		{
-			Iterator<Entry<String, List<Unit>>> itr = unitlists.entrySet().iterator();
-			while(itr.hasNext())
-			{
-				Entry<String, List<Unit>> entry = itr.next();
-				if(entry.getKey().startsWith(type))
-				{
+			for (Entry<String, List<Unit>> entry : unitlists.entrySet()) {
+				if (entry.getKey().startsWith(type)) {
 					lists.add(entry.getValue());
 				}
 			}
@@ -1400,12 +1374,8 @@ public class Nation {
 		
 		if(coms)
 		{
-			Iterator<Entry<String, List<Unit>>> itr = comlists.entrySet().iterator();
-			while(itr.hasNext())
-			{
-				Entry<String, List<Unit>> entry = itr.next();
-				if(entry.getKey().startsWith(type))
-				{
+			for (Entry<String, List<Unit>> entry : comlists.entrySet()) {
+				if (entry.getKey().startsWith(type)) {
 					lists.add(entry.getValue());
 				}
 			}

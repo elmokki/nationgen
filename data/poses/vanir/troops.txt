@@ -1,9 +1,11 @@
 
 -------- Normal
 #newpose
-#renderorder "shadow cloakb mount basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands beard hair helmet offhanda overlay extra1 extra2 extra3"
 #role "infantry"
 #role "scout"
+
+#renderorder "shadow cloakb mount basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands beard hair helmet offhanda overlay extra1 extra2 extra3"
+
 #load basesprite /data/items/nordic/normal/bases.txt
 #load shadow /data/items/nordic/generic/shadow.txt
 
@@ -35,8 +37,11 @@
 
 --- Mounted
 #newpose
-#renderorder "shadow cloakb mount basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands beard hair helmet offhanda overlay extra1 extra2 extra3"
 #role "mounted"
+#role "scout"
+#basechance 0.25
+
+#renderorder "shadow cloakb mount basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands beard hair helmet offhanda overlay extra1 extra2 extra3"
 
 #baseitemslot feet 0
 

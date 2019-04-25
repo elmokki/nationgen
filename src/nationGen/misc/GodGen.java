@@ -1,14 +1,12 @@
 package nationGen.misc;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-
-import com.elmokki.Generic;
-
 import nationGen.NationGenAssets;
+import nationGen.chances.EntityChances;
 import nationGen.entities.Filter;
 import nationGen.nation.Nation;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 
@@ -16,28 +14,22 @@ import nationGen.nation.Nation;
 public class GodGen extends ChanceIncHandler {
 	
 	private Nation n;
-	private List<Filter> orig;
-	private List<Filter> add;
+	private List<Filter> orig = new ArrayList<>();
+	private List<Filter> add = new ArrayList<>();
 	
 	public GodGen(Nation n, NationGenAssets assets) {
 		super(n);
 		this.n = n;
 		
-		orig = new ArrayList<Filter>();
-		add = new ArrayList<Filter>();
-		for(String tag : n.races.get(0).tags)
-		{
-			List<String> args = Generic.parseArgs(tag);
-			if(args.get(0).equals("gods"))
-			{
-				orig.addAll(assets.miscdef.get(args.get(1)));
-			}
-			if(args.get(0).equals("additionalgods"))
-			{
-				add.addAll(assets.miscdef.get(args.get(1)));
-			}
+		for (Arg arg : n.races.get(0).tags.getAllValues("gods")) {
+			orig.addAll(assets.miscdef.get(arg.get()));
 		}
-		if(orig.size() == 0)
+		
+		for (Arg arg : n.races.get(0).tags.getAllValues("additionalgods")) {
+			add.addAll(assets.miscdef.get(arg.get()));
+		}
+		
+		if(orig.isEmpty())
 			orig.addAll(assets.miscdef.get("defaultgods"));
 
 	}
@@ -46,34 +38,26 @@ public class GodGen extends ChanceIncHandler {
 
 	public List<Command> giveGods()
 	{
-		List<Command> filters = new ArrayList<Command>();
 		ChanceIncHandler chandler = new ChanceIncHandler(n);
 		
-		LinkedHashMap<Filter, Double> possibles = chandler.handleChanceIncs(orig);
-		Filter pantheon = Filter.getRandom(n.random, possibles);
-		filters.addAll(pantheon.getCommands());
+		Filter pantheon = chandler.handleChanceIncs(orig).getRandom(n.random);
+		List<Command> filters = new ArrayList<>(pantheon.getCommands());
 		
 		
-		filters.add(new Command("#homerealm", "10"));
+		filters.add(Command.args("#homerealm", "10"));
 		
 		if(add.size() > 0)
 		{
-			List<Filter> mores = new ArrayList<Filter>();
+			List<Filter> mores = new ArrayList<>();
 			for(Filter g : add)
 			{
-				List<String> allowed = new ArrayList<String>();
-				for(String t : g.tags)
-				{
-					List<String> args = Generic.parseArgs(t);
-					if(args.get(0).equals("allowed"))
-						allowed.add(args.get(1));
-				}
+				List<String> allowed = g.tags.getAllStrings("allowed");
 				
 				if(allowed.size() == 0 || allowed.contains(pantheon.name))
 					mores.add(g);
 			}
 			
-			possibles = chandler.handleChanceIncs(mores);
+			EntityChances<Filter> possibles = chandler.handleChanceIncs(mores);
 			
 			// 0 to 4 extra Filters
 			int moreFilters = n.random.nextInt(Math.min(mores.size() + 1, 5));
@@ -81,7 +65,7 @@ public class GodGen extends ChanceIncHandler {
 
 			for(int i = 0; i < moreFilters; i++)
 			{
-				Filter newFilter = Filter.getRandom(n.random, possibles);
+				Filter newFilter = possibles.getRandom(n.random);
 				mores.remove(newFilter);
 				filters.addAll(newFilter.getCommands());
 			}
