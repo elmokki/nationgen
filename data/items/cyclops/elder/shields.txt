@@ -1,37 +1,79 @@
 #newitem
-#id kiteshield
-#gameid 209
-#sprite /graphics/fomorian/giant/offhand/kiteshield.png
-#recolormask /graphics/fomorian/giant/offhand/kiteshield_recolormask.png
+#id buckler_bronze
+#gameid 1
+#sprite /graphics/cyclops/elder/offhand/hoplon_bronze.png
+#eliteversion buckler_gold
 #armor
 #theme "bronze"
 #enditem
 
 #newitem
-#id kiteshield
-#gameid 3
-#sprite /graphics/fomorian/giant/offhand/kiteshield_iron.png
-#recolormask /graphics/fomorian/giant/offhand/kiteshield_recolormask.png
+#id buckler_gold
+#gameid enchantedbuckler
+#sprite /graphics/cyclops/elder/offhand/hoplon_gold.png
+#eliteversion hoplon_gold
+#armor
+#theme "elite"
+#theme "bronze"
+#enditem
+
+#newitem
+#id buckler_iron
+#gameid 1
+#sprite /graphics/cyclops/elder/offhand/hoplon_iron.png
+#eliteversion buckler_silver
 #armor
 #theme "iron"
 #enditem
 
 #newitem
-#id shield
-#gameid 2
-#sprite /graphics/fomorian/giant/offhand/shield.png
-#recolormask /graphics/fomorian/giant/offhand/shield_recolormask.png
-#basechance 2
+#id buckler_silver
+#gameid enchantedbuckler
+#sprite /graphics/cyclops/elder/offhand/hoplon_silver.png
+#eliteversion buckler_silver
+#armor
+#theme "elite"
+#theme "iron"
+#enditem
+
+#newitem
+#id hoplon_bronze
+#gameid 209
+#basechance 0.5
+#sprite /graphics/cyclops/elder/offhand/hoplon_bronze_large.png
+#eliteversion hoplon_gold
 #armor
 #theme "bronze"
 #enditem
 
 #newitem
-#id ironshield
-#gameid 208
-#sprite /graphics/fomorian/giant/offhand/shield_iron.png
-#recolormask /graphics/fomorian/giant/offhand/shield_recolormask.png
-#basechance 2
+#id hoplon_gold
+#gameid 238
+#basechance 0.5
+#sprite /graphics/cyclops/elder/offhand/hoplon_gold_large.png
+#eliteversion hoplon_gold
 #armor
+#theme "elite"
+#theme "bronze"
+#enditem
+
+#newitem
+#id hoplon_iron
+#gameid 208
+#basechance 0.5
+#sprite /graphics/cyclops/elder/offhand/hoplon_iron_large.png
+#eliteversion hoplon_silver
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#id hoplon_silver
+#gameid 247
+#basechance 0.5
+#sprite /graphics/cyclops/elder/offhand/hoplon_silver_large.png
+#eliteversion hoplon_silver
+#armor
+#theme "elite"
 #theme "iron"
 #enditem
