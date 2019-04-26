@@ -1,11 +1,12 @@
 package nationGen.entities;
 
+
+import nationGen.NationGen;
+import nationGen.misc.Command;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import com.elmokki.Generic;
-
-import nationGen.NationGen;
 
 /**
  * Class for handling national theme effects
@@ -14,46 +15,37 @@ import nationGen.NationGen;
 public class Theme extends Filter {
 
 	
-	public List<String> nationeffects = new ArrayList<String>();
-	public List<String> secondarynationeffects = new ArrayList<String>();
-	public List<String> bothnationeffects = new ArrayList<String>();
+	public List<Command> nationeffects = new ArrayList<>();
+	public List<Command> secondarynationeffects = new ArrayList<>();
+	public List<Command> bothnationeffects = new ArrayList<>();
 
 	public Theme(NationGen nationGen) {
 		super(nationGen);
 	}
 	
-        @Override
-	public <Entity> void handleOwnCommand(String str)
+	@Override
+	public void handleOwnCommand(Command command)
 	{
-
-		List<String> args = Generic.parseArgs(str);
-		
 		try
 		{
-		
-
-			if(args.get(0).equals("#racedefinition"))
-			{
-				args.remove(0);
-				this.nationeffects.add(Generic.listToString(args));
+			switch (command.command) {
+				case "#racedefinition":
+					this.nationeffects.add(command.args.get(0).getCommand());
+					break;
+				case "#secondaryracedefinition":
+					this.secondarynationeffects.add(command.args.get(0).getCommand());
+					break;
+				case "#bothracedefinition":
+					this.bothnationeffects.add(command.args.get(0).getCommand());
+					break;
+				default:
+					super.handleOwnCommand(command);
+					break;
 			}
-			else if(args.get(0).equals("#secondaryracedefinition"))
-			{
-				args.remove(0);
-				this.secondarynationeffects.add(Generic.listToString(args));
-			}
-			else if(args.get(0).equals("#bothracedefinition"))
-			{
-				args.remove(0);
-				this.bothnationeffects.add(Generic.listToString(args));
-			}
-			else
-				super.handleOwnCommand(str);
-		
 		}
 		catch(IndexOutOfBoundsException e)
 		{
-			System.out.println("WARNING: " + str + " has insufficient arguments (" + this.name + ")");
+			throw new IllegalArgumentException("Command [" + command + "] has insufficient arguments (" + this.name + ")", e);
 		}
 	}
 }

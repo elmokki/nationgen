@@ -1,12 +1,13 @@
 package nationGen.entities;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.elmokki.Generic;
 
 import nationGen.NationGen;
 import nationGen.items.Item;
+import nationGen.misc.ArgParser;
+import nationGen.misc.Command;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MagicItem extends Filter {
@@ -15,31 +16,41 @@ public class MagicItem extends Filter {
 		super(nationGen);
 	}
 
-	public List<String> names = new ArrayList<String>();
+	public List<String> namePrefixes = new ArrayList<>();
+	public List<String> nameSuffixes = new ArrayList<>();
 	public Item baseitem;
 	public String effect = "-1";
 	public boolean always = false;
 	
-        @Override
-	public <Entity> void handleOwnCommand(String str)
+	@Override
+	public void handleOwnCommand(Command command)
 	{
 
-		List<String> args = Generic.parseArgs(str);
-		
 		try
 		{
-		
-		if(args.get(0).equals("#unitname"))
-			names.add(args.get(1));
-		else if(args.get(0).equals("#eff"))
-			effect = args.get(1);
-		else
-			super.handleOwnCommand(str);
-		
+			if(command.command.equals("#unitname")) {
+				ArgParser parser = command.args.get(0).getArgs().parse();
+				String nameType = parser.nextString();
+				switch (nameType) {
+					case "prefix":
+						namePrefixes.add(parser.nextString());
+						break;
+					case "suffix":
+						nameSuffixes.add(parser.nextString());
+						break;
+					default:
+						throw new IllegalArgumentException("Magic item '" + this.name + "' has unknown #unitname type '"
+								+ nameType + "'.  Command: " + command);
+				}
+			} else if(command.command.equals("#eff")) {
+				effect = command.args.get(0).get();
+			} else {
+				super.handleOwnCommand(command);
+			}
 		}
 		catch(IndexOutOfBoundsException e)
 		{
-			System.out.println("WARNING: " + str + " has insufficient arguments (" + this.name + ")");
+			throw new IllegalArgumentException("WARNING: " + command + " has insufficient arguments (" + this.name + ")", e);
 		}
 	}
 

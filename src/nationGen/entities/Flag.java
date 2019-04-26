@@ -1,11 +1,11 @@
 package nationGen.entities;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.elmokki.Generic;
 
 import nationGen.NationGen;
+import nationGen.misc.Command;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Flag extends Drawable {
@@ -17,25 +17,19 @@ public class Flag extends Drawable {
 
 	public List<String> allowed = new ArrayList<String>();
 	
-        @Override
-	public <Entity> void handleOwnCommand(String str)
+	@Override
+	public void handleOwnCommand(Command command)
 	{
-
-		List<String> args = Generic.parseArgs(str);
-		
 		try
 		{
-		
-
-		if(args.get(0).equals("#allowed"))
-			this.allowed.add(args.get(1));
-		else
-			super.handleOwnCommand(str);
-		
+			if(command.command.equals("#allowed"))
+				this.allowed.add(command.args.get(0).get());
+			else
+				super.handleOwnCommand(command);
 		}
 		catch(IndexOutOfBoundsException e)
 		{
-			System.out.println("WARNING: " + str + " has insufficient arguments (" + this.name + ")");
+			throw new IllegalArgumentException("WARNING: " + command + " has insufficient arguments (" + this.name + ")", e);
 		}
 	}
 

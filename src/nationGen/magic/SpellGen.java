@@ -1,18 +1,15 @@
 package nationGen.magic;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Random;
-
-import com.elmokki.Generic;
 
 import nationGen.NationGenAssets;
-import nationGen.entities.Entity;
+import nationGen.chances.EntityChances;
 import nationGen.entities.Filter;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
+
+import java.util.List;
+import java.util.Random;
 
 public class SpellGen {
 	private Nation n;
@@ -28,57 +25,51 @@ public class SpellGen {
 	public void execute(NationGenAssets assets)
 	{
 		
-		// Guaranteed spells
-		List<Filter> possible = new ArrayList<Filter>();
-		possible.addAll(ChanceIncHandler.retrieveFilters("guaranteedspells", "guaranteedspells_default", assets.spells, null, n.races.get(0)));
 		ChanceIncHandler chandler = new ChanceIncHandler(n);
 		
-		LinkedHashMap<Filter, Double> map = chandler.handleChanceIncs(possible);
-		while(map.size() > 0)
+		// Guaranteed spells
+		EntityChances<Filter> map = chandler.handleChanceIncs(
+			ChanceIncHandler.retrieveFilters("guaranteedspells", "guaranteedspells_default", assets.spells, null, n.races.get(0)));
+		
+		while(map.hasPossible())
 		{
-			Filter f = Entity.getRandom(r, map);
+			Filter f = map.getRandom(r);
 			
 			if(f != null)
 				n.spells.add(f);
 
-			possible.remove(f);
-			map = chandler.handleChanceIncs(possible);
+			map.eliminate(f);
 		}
 	
 		// Count spell count weighted by square roots
 		int spellcount = 0;
 		for(Filter f : n.spells)
-			spellcount += Math.sqrt(Generic.getTagValues(f.tags, "spell").size());
+			spellcount += Math.sqrt(f.tags.getAllValues("spell").size());
 		
 		
 		// Diagnostics
 		List<Unit> tempmages = n.generateComList("mage");
 		
-		int[] paths = new int[9];
+		MagicPathInts paths = new MagicPathInts();
 		for(Unit u : tempmages)
 		{						
-			for(String tag : u.tags)
-				if(tag.startsWith("schoolmage"))
+			if (u.tags.containsName("schoolmage"))
+			{
+				MagicPathInts picks = u.getMagicPicks(true);
+				for(MagicPath path : MagicPath.values())
 				{
-					int[] picks = u.getMagicPicks(true);
-					for(int j = 0; j < 9; j++)
-					{
-						if(paths[j] < picks[j])
-							paths[j] = picks[j];
-					}
+					if(paths.get(path) < picks.get(path))
+						paths.set(path, picks.get(path));
 				}
+			}
 		}
 		
 
 		int diversity = 0;
-		int[] at = new int[10];
-		for(int i = 0; i < 9; i++)
+		for(MagicPath path : MagicPath.values())
 		{
-			if(paths[i] > 1 || (i == 4 && paths[i] == 1) || (i == 7 && paths[i] == 1))
+			if(paths.get(path) > 1 || (path == MagicPath.ASTRAL && paths.get(path) == 1) || (path == MagicPath.BLOOD && paths.get(path) == 1))
 				diversity++;
-		
-			if(i < 10)
-				at[i]++;
 		}
 		
 		// Random spell count
@@ -102,15 +93,16 @@ public class SpellGen {
 			randompicks--;
 		
 		
-		possible.clear();
-		possible.addAll(ChanceIncHandler.retrieveFilters("randomspells", "randomspells_default", assets.spells, null, n.races.get(0)));
+		EntityChances<Filter> possible =
+			chandler.handleChanceIncs(ChanceIncHandler.retrieveFilters("randomspells", "randomspells_default", assets.spells, null, n.races.get(0)));
+		
 		for(int i = 0; i < randompicks; i++)
 		{
-			Filter f = chandler.getRandom(possible);
+			Filter f = possible.getRandom(n.random);
 			
-			if(f != null && Generic.getTagValues(f.tags, "spell").size() > 0)
+			if(f != null && f.tags.getAllValues("spell").size() > 0)
 			{
-				possible.remove(f);
+				possible.eliminate(f);
 				n.spells.add(f);
 			}
 		}

@@ -1,17 +1,18 @@
 package nationGen.misc;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Random;
-
-import com.elmokki.Generic;
 
 import nationGen.NationGenAssets;
 import nationGen.entities.Filter;
+import nationGen.magic.MagicPath;
+import nationGen.magic.MagicPathDoubles;
+import nationGen.magic.MagicPathInts;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
 
 
 public class SiteGenerator {
@@ -22,30 +23,30 @@ public class SiteGenerator {
 		
 		int stuff = 0;
 		
-		HashMap<Integer, Integer> totalgems = getTotalGems(n);
+		MagicPathInts totalgems = getTotalGems(n);
 		int gems = 0;
-		for(int i = 0; i < 8; i++)
+		for(MagicPath path : MagicPath.NON_HOLY)
 		{
-			gems += totalgems.get(i);
-			if(totalgems.get(i) > 0)
+			gems += totalgems.get(path);
+			if(totalgems.get(path) > 0)
 				stuff++;
 		}
 
 		
 		List<Unit> origmages = n.generateComList("mage");
-		List<Unit> mages = new ArrayList<Unit>();
+		List<Unit> mages = new ArrayList<>();
 		for(Unit u : origmages)
 		{
 			if(u.caponly)	
 			{
-					mages.add(u);
-					stuff++;
-				}
+				mages.add(u);
+				stuff++;
+			}
 		}
 
 		
-		List<Unit> otherTroops = new ArrayList<Unit>();
-		List<Unit> otherComs = new ArrayList<Unit>();
+		List<Unit> otherTroops = new ArrayList<>();
+		List<Unit> otherComs = new ArrayList<>();
 		for(Unit u : n.generateComList())
 			if(u.caponly && !mages.contains(u))
 			{
@@ -60,7 +61,7 @@ public class SiteGenerator {
 			}
 		
 
-		/**
+		/*
 		for(ShapeChangeUnit su : n.specialmonsters)
 			if(su.thisForm.tags.contains("caponly"))
 			{
@@ -70,10 +71,9 @@ public class SiteGenerator {
 		*/
 		
 		
-		Filter f = null;
 		ChanceIncHandler chandler = new ChanceIncHandler(n);
 		List<Filter> filters = ChanceIncHandler.retrieveFilters("sitefeatures", "default_sitefeatures", assets.miscdef, null, n.races.get(0));
-		f = chandler.getRandom(filters);
+		Filter f = chandler.getRandom(filters);
 		if(!f.name.equals("nothing"))
 			stuff++;
 		
@@ -166,43 +166,43 @@ public class SiteGenerator {
 			
 				if(added < max && gems > 0)
 				{
-					double[] paths = s.getSitePathDistribution();
-					paths[8] = -100;
+					MagicPathInts paths = s.getSitePathDistribution();
+					paths.set(MagicPath.HOLY, -100);
 					
 
 					boolean done = false;
-					while(paths[Generic.GetHighestPosition(paths)] > 0 && !done)
+					while(paths.getHighestAmount() > 0 && !done)
 					{
-						int pos = Generic.GetHighestPosition(paths);
-						if(totalgems.get(pos) > 0)
+						MagicPath path = paths.getHighestPath();
+						if(totalgems.get(path) > 0)
 						{
 							added++;
-							s.gemMap.put(pos, totalgems.get(pos));
+							s.gemMap.set(path, totalgems.get(path));
 							
-							gems -= totalgems.get(pos);
-							totalgems.put(pos, 0);
+							gems -= totalgems.get(path);
+							totalgems.set(path, 0);
 							done = true;
 						}
 					
-						paths[pos] = -1;
+						paths.set(path, -1);
 						
 					}
 					
 					
 					if(!done)
 					{
-						List<Integer> possibles = new ArrayList<Integer>();
-						for(Integer i : totalgems.keySet())
+						List<MagicPath> possibles = new ArrayList<>();
+						for(MagicPath i : MagicPath.values())
 						{
 							if(totalgems.get(i) > 0)
 								possibles.add(i);
 						}
 						
-						int pos = possibles.get(random.nextInt(possibles.size()));
+						MagicPath path = possibles.get(random.nextInt(possibles.size()));
 						added++;
-						s.gemMap.put(pos, totalgems.get(pos));
-						gems -= totalgems.get(pos);
-						totalgems.put(pos, 0);
+						s.gemMap.set(path, totalgems.get(path));
+						gems -= totalgems.get(path);
+						totalgems.set(path, 0);
 
 					}
 				}
@@ -221,50 +221,31 @@ public class SiteGenerator {
 	
 	private static List<Unit> getRelatives(List<Unit> list, Unit u)
 	{
-		List<Unit> relatives = new ArrayList<Unit>();
-		List<String> idts = new ArrayList<String>();
+		List<String> identifiers = u.tags.getAllValues("identifier").stream()
+				.map(Arg::get)
+				.collect(Collectors.toList());
 		
-
-		
-		for(String t : u.tags)
-		{
-			List<String> args = Generic.parseArgs(t);
-			if(args.get(0).equals("identifier") && args.size() > 1)
-				idts.add(args.get(1));
-		}
-		
-
-		
-		for(Unit u2 : list)
-		{
-			for(String idt : idts)
-				if(u2.tags.contains("identifier "  + idt))
-				{
-					relatives.add(u2);
-					break;
-				}
-		}
-		return relatives;
-		
+		return list.stream()
+				.filter(u2 -> identifiers.stream()
+						.anyMatch(idt -> u2.tags.contains("identifier", idt)))
+				.collect(Collectors.toList());
 	}
 	
 
 	
-	private static HashMap<Integer, Integer> getTotalGems(Nation n)
+	private static MagicPathInts getTotalGems(Nation n)
 	{
-		HashMap<Integer, Integer> gems = new HashMap<Integer, Integer>();
-		for(int i = 0; i < 8; i++)
-			gems.put(i, 0);
+		MagicPathInts gems = new MagicPathInts();
 		
-		double[] power = new double[9];
+		MagicPathDoubles power = new MagicPathDoubles();
 		
 		List<Unit> list = n.generateComList();
 		for(Unit u : list)
 		{
-			if(Generic.containsTag(u.tags, "schoolmage") && Generic.getTagValue(u.tags, "schoolmage").equals("3"))
+			if(u.tags.getValue("schoolmage").filter(a -> a.getInt() == 3).isPresent())
 			{
 				
-				int[] unitpower = null;
+				MagicPathInts unitpower = null;
 				if(u.getMagicFilters().size() > 0)
 				{
 					int randoms = u.getMagicFilters().get(0).pattern.getRandoms(0.25);
@@ -289,40 +270,26 @@ public class SiteGenerator {
 				if(unitpower == null)	
 					unitpower = u.getMagicPicks(); 
 				
-				for(int i = 0; i < unitpower.length; i++)
-				{
-
-					power[i] += unitpower[i];
-				
-				}
+				power.addAll(unitpower);
 			}
 		}
 		
 
 			
-        // Blood slaves or holy paths won't be counted.
-        power[7] = 0;
-        power[8] = 0;
+		// Blood slaves or holy paths won't be counted.
+		power.set(MagicPath.BLOOD, 0);
+		power.set(MagicPath.HOLY, 0);
+		
+		int totalgems = 7 - n.era;
+
+		for (int i = 0; i < totalgems; i++)
+		{
+			MagicPath high = power.getHighestPath();
+			gems.add(high, 1);
+			power.scale(high, 0.6);
+		}
 
 
-        
-        double[] temppower = new double[9];
-
-        for (int i = 0; i < 8; i++)
-        {
-            temppower[i] = power[i];
-        }
-
-        int totalgems = 7 - n.era;
-
-        for (int i = 0; i < totalgems; i++)
-        {
-            int high = Generic.GetHighestPosition(power);
-            gems.put(high, gems.get(high) + 1);
-            power[high] = power[high] * 0.6;
-        }
-
-
-        return gems;
+		return gems;
 	}
 }

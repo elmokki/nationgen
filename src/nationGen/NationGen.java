@@ -1,29 +1,14 @@
 package nationGen;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
-import java.time.ZonedDateTime;
-import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Random;
-import java.util.concurrent.locks.ReentrantLock;
-
 import com.elmokki.Dom3DB;
-
 import nationGen.Settings.SettingsType;
 import nationGen.entities.Filter;
 import nationGen.entities.Race;
 import nationGen.items.CustomItem;
 import nationGen.items.Item;
+import nationGen.magic.MagicPath;
 import nationGen.magic.Spell;
-import nationGen.misc.Command;
-import nationGen.misc.FileUtil;
-import nationGen.misc.PreviewGenerator;
-import nationGen.misc.Site;
+import nationGen.misc.*;
 import nationGen.naming.NameGenerator;
 import nationGen.naming.NamingHandler;
 import nationGen.naming.NationAdvancedSummarizer;
@@ -33,6 +18,16 @@ import nationGen.units.ShapeChangeUnit;
 import nationGen.units.ShapeShift;
 import nationGen.units.Unit;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.locks.ReentrantLock;
+
 
 
 public class NationGen
@@ -40,7 +35,7 @@ public class NationGen
 	public static String version = "0.7.0-RC9";
 	public static String date = "22nd of January 2019";
 	
-	private List<NationRestriction> restrictions = new ArrayList<>();
+	private List<NationRestriction> restrictions;
 	
 	private NationGenAssets assets;
 	
@@ -151,8 +146,6 @@ public class NationGen
 		
 		System.out.println("Generating nations...");
 		List<Nation> generatedNations = new ArrayList<>();
-		Nation newnation = null;
-		long newseed = 0;
 		
 		int count = 0;
 		int failedcount = 0;
@@ -175,14 +168,7 @@ public class NationGen
 			}
 			
 			count++;
-			if(!manyseeds)
-			{
-				newseed = random.nextLong();
-			}
-			else
-			{
-				newseed = seeds.get(generatedNations.size());
-			}
+			long newseed = this.manyseeds ? seeds.get(generatedNations.size()) : random.nextLong();
 			
 			if (isDebug)
 			{
@@ -191,7 +177,12 @@ public class NationGen
 				System.out.print(")... ");
 			}
 			
-			newnation = new Nation(this, newseed, count, restrictions, assets);
+			Nation newnation;
+			try {
+				newnation = new Nation(this, newseed, count, restrictions, assets);
+			} catch (Exception e) {
+				throw new IllegalStateException("Error generating nation with seed: " + newseed, e);
+			}
 			
 			if (newnation.passed)
 			{
@@ -330,7 +321,7 @@ public class NationGen
 		{
 			if(generatedNations.size() > 1)
 			{
-				modname = nGen.getSiteName(generatedNations.get(0).random, generatedNations.get(0).random.nextInt(8), generatedNations.get(0).random.nextInt(8));
+				modname = nGen.getSiteName(generatedNations.get(0).random, MagicPath.fromInt(generatedNations.get(0).random.nextInt(8)), MagicPath.fromInt(generatedNations.get(0).random.nextInt(8)));
 			}
 			else
 			{
@@ -398,8 +389,8 @@ public class NationGen
 			{
 				spell = new Spell(this);
 				spell.name = s;
-				spell.commands.add(new Command("#copyspell", "\"" + s + "\""));
-				spell.commands.add(new Command("#name", "\"" + s + " \""));
+				spell.commands.add(Command.args("#copyspell", s));
+				spell.commands.add(Command.args("#name", s));
 			}
 			
 			spell.nationids.add(id);
@@ -428,7 +419,7 @@ public class NationGen
 		double total = 0;
 		for(Race r : assets.races)
 		{
-			if(!r.tags.contains("secondary"))
+			if(!r.tags.containsName("secondary"))
 			{
 				total += r.basechance;
 			}
@@ -436,7 +427,7 @@ public class NationGen
 		
 		for(Race r : assets.races)
 		{
-			if(!r.tags.contains("secondary"))
+			if(!r.tags.containsName("secondary"))
 			{
 				System.out.println(r.name + ": " + (r.basechance / total));
 			}
@@ -641,7 +632,7 @@ public class NationGen
 				lines.add("#newspell");
 				for(Command c : s.commands)
 				{
-					lines.add(c.toString());
+					lines.add(c.toModLine());
 				}
 				for(int id : s.nationids)
 				{
@@ -654,30 +645,15 @@ public class NationGen
 		return lines;
 	}
 	
-	public boolean hasShapeShift(String id)
+	public boolean hasShapeShift(Arg id)
 	{
-		int realid = -1;
-		if (id.isEmpty())
-		{
+		if ("".equals(id.get())) {
 			return false;
 		}
-		else
-		{
-			boolean isNumeric = id.chars().allMatch( Character::isDigit );
-			if (isNumeric)
-			{
-				realid = Integer.parseInt(id);
-			}
-		}
 		
-		for(ShapeChangeUnit su : this.forms)
-		{
-			if(su.id == realid)
-			{
-				return true;
-			}
-		}
-		return false;
+		int realid = id.isNumeric() ? id.getInt() : -1;
+		
+		return this.forms.stream().anyMatch(scu -> scu.id == realid);
 	}
 	
 	private void polishNation(Nation n)
@@ -700,9 +676,9 @@ public class NationGen
 			{
 				if(c.command.contains("shape") && !hasShapeShift(c.args.get(0)))
 				{
-					if((c.command.equals("#firstshape") && u.tags.contains("montagunit")))
+					if(c.command.equals("#firstshape") && u.tags.containsName("montagunit"))
 					{
-						handleMontag(c, u, shapeshiftUnits);
+						handleMontag(c);
 					}
 					else
 					{
@@ -711,7 +687,7 @@ public class NationGen
 				}
 				else if(c.command.equals("#montag"))
 				{
-					handleMontag(c, u, shapeshiftUnits);
+					handleMontag(c);
 				}
 			}
 		}
@@ -734,23 +710,10 @@ public class NationGen
 				// Weapons
 				if(c.command.equals("#weapon"))
 				{
-					String realarg = c.args.get(0);
-					if(realarg.contains(" "))
-					{
-						realarg = realarg.split(" ")[0];
-					}
+					Arg realarg = c.args.get(0);
 					
-					if (realarg.isEmpty())
-					{
-						c.args.set(0, customItemsHandler.getCustomItemId(c.args.get(0)) + "");
-					}
-					else
-					{
-						boolean isNumeric = realarg.chars().allMatch( Character::isDigit );
-						if (isNumeric)
-						{
-							Integer.parseInt(realarg);
-						}
+					if (!realarg.isNumeric()) {
+						c.args.set(0, new Arg(customItemsHandler.getCustomItemId(realarg.get())));
 					}
 				}
 			}
@@ -758,45 +721,28 @@ public class NationGen
 	}
 	
 	private HashMap<String, Integer> montagmap = new HashMap<>();
-	private void handleMontag(Command c, Unit u, List<Unit> units)
+	private void handleMontag(Command c)
 	{
-		Integer montag = montagmap.get(c.args.get(0));
-		if(montag == null)
-		{
-			montag = idHandler.nextMontagId();
-			montagmap.put(c.args.get(0), montag);
-			// System.out.println("Added "  + montag + " for " + c.args.get(0));
-		}
+		Integer montag = montagmap.computeIfAbsent(c.args.get(0).get(), k -> idHandler.nextMontagId());
 		
 		if(c.command.equals("#firstshape"))
 		{
-			c.args.set(0, "-" + montag);
+			c.args.set(0, new Arg("-" + montag));
 		}
 		else if(c.command.equals("#montag"))
 		{
-			c.args.set(0, "" + montag);
+			c.args.set(0, new Arg("" + montag));
 		}
 	}
 	
 	private void handleShapeshift(Command c, Unit u)
 	{
-		ShapeShift shift;
-		shift = null;
 		
-		for(ShapeShift s : assets.secondshapes)
-		{
-			if(s.name.equals(c.args.get(0)))
-			{
-				shift = s;
-				break;
-			}
-		}
+		ShapeShift shift = assets.secondshapes.stream()
+				.filter(s -> s.name.equals(c.args.get(0).get()))
+				.findFirst().orElseThrow(
+					() -> new IllegalArgumentException("Shapeshift named " + c.args.get(0) + " could not be found."));
 		
-		if(shift == null)
-		{
-			System.out.println("Shapeshift named " + c.args.get(0) + " could not be found.");
-			return;
-		}
 		ShapeChangeUnit su = new ShapeChangeUnit(this, assets, u.race, u.pose, u, shift);
 		
 		su.id = idHandler.nextUnitId();
@@ -831,7 +777,7 @@ public class NationGen
 				break;
 		}
 		
-		c.args.set(0, "" + su.id);
+		c.args.set(0, new Arg(su.id));
 		forms.add(su);
 	}
 	

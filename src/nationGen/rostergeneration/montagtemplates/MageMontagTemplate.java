@@ -1,8 +1,5 @@
 package nationGen.rostergeneration.montagtemplates;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
 import nationGen.entities.Pose;
@@ -10,10 +7,13 @@ import nationGen.magic.MageGenerator;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MageMontagTemplate extends MontagTemplate {
 	
 	private int tier;
-	private MageGenerator mGen = null;
+	private MageGenerator mGen;
 	public MageMontagTemplate(Nation n, NationGen ngen, NationGenAssets assets, int tier)
 	{
 		mGen = new MageGenerator(ngen, n, assets);
@@ -37,12 +37,12 @@ public class MageMontagTemplate extends MontagTemplate {
 	    
 	    if(tier > 0 && tier < 4)
 	    {
-	    	newunit.tags.add("schoolmage " + tier);
-	    	newunit.tags.add("identifier schoolmage");
+	    	newunit.tags.add("schoolmage", tier);
+	    	newunit.tags.add("identifier", "schoolmage");
 
 	    }
 
-	    List<Unit> mages = new ArrayList<Unit>();
+	    List<Unit> mages = new ArrayList<>();
 	    mages.add(newunit);
 	    
 		mGen.resolveAge(mages);

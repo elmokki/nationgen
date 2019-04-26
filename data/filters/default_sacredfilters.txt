@@ -354,7 +354,7 @@
 #command "#str +3"
 #command "#hp +4"
 #command "#gcost +5"
-#chanceinc "ranged -100"
+#chanceinc "pose ranged -100"
 #power 2
 #end
 
@@ -905,7 +905,7 @@
 #chanceinc "command #pooramphibian 3"
 #chanceinc "race atlantian -100"
 #chanceinc "personalcommand #amphibian -100"
-#chanceinc "nopose mounted"
+#tag "nopose mounted"
 #chanceinc "magic water 2"
 #power 2
 #theme "toadtotem"
@@ -920,7 +920,7 @@
 #command "#gcost +25"
 #price_per_command #hp 1 10
 #basechance 0.05
-#chanceinc "astral 0.95"
+#chanceinc "magic astral 0.95"
 #chanceinc "pose mounted *0.25"
 #chanceinc "pose chariot *0.1"
 #themeinc thisarmorprot 18 *0.125

@@ -20,7 +20,7 @@
 
 #generationchance chariot 0.5
 #generationchance ranged 2
-#generationchance cavalry 0.001
+#generationchance mounted 0.001
 
 #sacredchariotchance 0.25
 #monsterchance 0.01
@@ -28,11 +28,11 @@
 #gods lizardgods
 #forts city_forts
 
-#chanceinc "race van *0.1"
-#chanceinc "race sidhe *0.1"
-#chanceinc "race caelian *0.1"
-#chanceinc "race 'Austral human' *3"
-#chanceinc "race lizard *3"
+#chanceinc "primaryrace van *0.1"
+#chanceinc "primaryrace sidhe *0.1"
+#chanceinc "primaryrace caelian *0.1"
+#chanceinc "primaryrace 'Austral human' *3"
+#chanceinc "primaryrace lizard *3"
 
 #chanceinc era 1 +0.1
 #chanceinc era 3 -0.1

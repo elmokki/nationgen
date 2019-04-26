@@ -1,21 +1,24 @@
 package nationGen.naming;
 
-import java.util.ArrayList;
-import java.util.List;
 
+import com.elmokki.Generic;
 import nationGen.NationGen;
-import nationGen.entities.Entity;
 import nationGen.entities.Filter;
+import nationGen.magic.MagicPath;
+import nationGen.misc.Arg;
+import nationGen.misc.Args;
 import nationGen.misc.Command;
 import nationGen.units.Unit;
 
-import com.elmokki.Generic;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 
 public class NamePart extends Filter {
 
 	public boolean weak = false;
-	public List<String> elements = new ArrayList<String>();
+	public List<MagicPath> elements = new ArrayList<>();
 	public int minimumelements = 0;
 	public int rank = -1;
 	
@@ -40,75 +43,47 @@ public class NamePart extends Filter {
 		
 		String str = this.name;
 		
-		if(Generic.containsTag(tags, "commandvariant"))
+		for(Args args : this.tags.getAllArgs("commandvariant"))
 		{
-			for(String tag : this.tags)
-			{
-				List<String> args = Generic.parseArgs(tag);
-				if(args.get(0).equals("commandvariant"))
+			String command = args.get(0).get();
+			for(Command c : u.getCommands())
+				if(c.command.equals(command))
 				{
-					String command = args.get(1);
-					for(Command c : u.getCommands())
-						if(c.command.equals(command))
-						{
-							boolean ok = true;
-							
-							if(args.contains("negative") && Integer.parseInt(c.args.get(0)) >= 0)
-								ok = false;
-							if(args.contains("positive") && Integer.parseInt(c.args.get(0)) <= 0)
-								ok = false;
-							
-							if(ok)
-							{
-								str = args.get(args.size() - 1);
-								break;
-							}
-						}
+					if(!(args.contains(new Arg("negative")) && c.args.get(0).getInt() >= 0)
+							&& !(args.contains(new Arg("positive")) && c.args.get(0).getInt() <= 0)) {
+						
+						str = args.get(args.size() - 1).get();
+						break;
+					}
 				}
+		}
+		for (Args args : this.tags.getAllArgs("posetagvariant"))
+		{
+			String command = args.get(0).get();
+			if(u.pose.tags.containsName(command))
+			{
+				str = args.get(1).get();
+				break;
 			}
 		}
-		if(Generic.containsTag(tags, "posetagvariant"))
-			for(String tag : this.tags)
+		for (Args args : this.tags.getAllArgs("racetagvariant"))
+		{
+			String command = args.get(0).get();
+			if(u.race.tags.containsName(command))
 			{
-				List<String> args = Generic.parseArgs(tag);
-				if(args.get(0).equals("posetagvariant"))
-				{
-					String command = args.get(1);
-					if(u.pose.tags.contains(command))
-					{
-						str = args.get(2);
-						break;
-					}
-				}
+				str = args.get(1).get();
+				break;
 			}
-		if(Generic.containsTag(tags, "racetagvariant"))
-			for(String tag : this.tags)
-			{
-				List<String> args = Generic.parseArgs(tag);
-				if(args.get(0).equals("racetagvariant"))
-				{
-					String command = args.get(1);
-					if(u.race.tags.contains(command))
-					{
-						str = args.get(2);
-						break;
-					}
-				}
-			}
+		}
 		
-		if(Generic.containsTag(tags, "racevariant"))
-			for(String tag : this.tags)
+		for(Args args : this.tags.getAllArgs("racevariant"))
+		{
+			if(u.race.name.equals(args.get(0).get()))
 			{
-				List<String> args = Generic.parseArgs(tag);
-				if(args.get(0).equals("racevariant"))
-				{
-					if(u.race.name.equals(args.get(1)))
-					{
-						str = args.get(2);
-						break;
-					}
-				}
+				str = args.get(1).get();
+				break;
 			}
+		}
 			
 		return str;
 	}
@@ -118,24 +93,22 @@ public class NamePart extends Filter {
 		return this.name;
 	}
 	
-        @Override
-	public <Entity> void handleOwnCommand(String str)
+	@Override
+	public void handleOwnCommand(Command command)
 	{
 
-		List<String> args = Generic.parseArgs(str);
-		
 		try
 		{
 		
-		if(args.get(0).equals("#rank"))
-			this.rank = Integer.parseInt(args.get(1));
-		else
-			super.handleOwnCommand(str);
+			if(command.command.equals("#rank"))
+				this.rank = command.args.get(0).getInt();
+			else
+				super.handleOwnCommand(command);
 		
 		}
 		catch(IndexOutOfBoundsException e)
 		{
-			System.out.println("WARNING: " + str + " has insufficient arguments (" + this.name + ")");
+			throw new IllegalArgumentException("WARNING: " + command + " has insufficient arguments (" + this.name + ")", e);
 		}
 	}
 	
@@ -181,10 +154,13 @@ public class NamePart extends Filter {
 		{
 			if(str.equals("weak"))
 				part.weak = true;
-			else if(Generic.PathToInteger(str) != -1)
-				part.elements.add(str);
-			else
-				part.tags.add(str);
+			else {
+				Optional<MagicPath> path = MagicPath.findFromName(str);
+				if (path.isPresent())
+					part.elements.add(path.get());
+				else
+					part.tags.addName(str);
+			}
 		}
 		
 		return part;
