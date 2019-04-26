@@ -1,9 +1,37 @@
--------- Elite Troop
+-------- Line infantry (exceedingly rare)
+#newpose
+#name "elder cyclops hoplite"
+#role "infantry"
+#basechance 0.001
+#chanceinc era 2 *0.3
+#chanceinc era 3 *0.1
+#subrace "elder cyclopes"
+#subraceprefix "elder"
 
+#renderorder "shadow extra1 weapon cloakb basesprite legs shirt armor cloakf bonusweapon offhandw hands hair helmet offhanda"
+
+#load basesprite /data/items/cyclops/elder/bases_spear.txt
+#load shadow /data/items/cyclops/elder/shadow.txt
+
+#load armor /data/items/cyclops/elder/armor.txt
+
+#load weapon /data/items/cyclops/elder/weapon_spear.txt
+#load offhand /data/items/cyclops/elder/shields_spear.txt
+#load bonusweapon /data/items/cyclops/elder/bonusranged.txt
+
+#extrapdmulti 0.5
+#good_leader
+
+#maxvarieties 1
+#maxunits 1
+
+#endpose
+
+-------- Elite Troop
 #newpose
 #name "elite elder cyclopses"
 #role "elite infantry"
-#basechance 0.25
+#basechance 0.125
 #chanceinc era 2 *0.6
 #chanceinc era 3 *0.2
 #subrace "elder cyclopes"
@@ -15,7 +43,6 @@
 #load shadow /data/items/cyclops/elder/shadow.txt
 #load hands /data/items/cyclops/elder/hands.txt
 
-
 #load armor /data/items/cyclops/elder/armor.txt
 
 #load weapon /data/items/cyclops/elder/weapon.txt
@@ -23,11 +50,10 @@
 #load offhand /data/items/cyclops/elder/shields.txt
 #load bonusweapon /data/items/cyclops/elder/bonusranged.txt
 
-
 #load cloakf /data/items/cyclops/elder/cloakf.txt
 #load cloakb /data/items/cyclops/elder/cloakb.txt
 
-#caponlychance 0.9
+#caponlychance 1
 #sacredratingmulti 1.5
 
 #cannot_be_pd
@@ -37,11 +63,10 @@
 
 
 -------- Sacred Troop
-
 #newpose
 #name "sacred elder cyclopses"
 #role "sacred infantry"
-#basechance 0.5
+#basechance 0.25
 #chanceinc era 2 *0.4
 #chanceinc era 3 *0.1
 #chanceinc moduleid herogen *2
@@ -54,7 +79,6 @@
 #load shadow /data/items/cyclops/elder/shadow.txt
 #load hands /data/items/cyclops/elder/hands.txt
 
-
 #load armor /data/items/cyclops/elder/armor.txt
 
 #load weapon /data/items/cyclops/elder/weapon.txt
@@ -62,6 +86,73 @@
 #load offhand /data/items/cyclops/elder/shields.txt
 #load bonusweapon /data/items/cyclops/elder/bonusranged.txt
 
+#load cloakf /data/items/cyclops/elder/cloakf.txt
+#load cloakb /data/items/cyclops/elder/cloakb.txt
+
+#caponlychance 1
+#sacredratingmulti 1.5
+
+#cannot_be_pd
+#good_leader
+
+#endpose
+
+-------- Elite Troop (hoplite)
+
+#newpose
+#name "elite elder cyclops hoplite"
+#role "elite infantry"
+#basechance 0.125
+#chanceinc era 2 *0.6
+#chanceinc era 3 *0.2
+#subrace "elder cyclopes"
+#subraceprefix "elder"
+
+#renderorder "shadow extra1 weapon cloakb basesprite legs shirt armor cloakf bonusweapon offhandw hands hair helmet offhanda"
+
+#load basesprite /data/items/cyclops/elder/bases_spear.txt
+#load shadow /data/items/cyclops/elder/shadow.txt
+
+#load armor /data/items/cyclops/elder/armor.txt
+
+#load weapon /data/items/cyclops/elder/weapon_spear.txt
+#load offhand /data/items/cyclops/elder/shields_spear.txt
+#load bonusweapon /data/items/cyclops/elder/bonusranged.txt
+
+#load cloakf /data/items/cyclops/elder/cloakf.txt
+#load cloakb /data/items/cyclops/elder/cloakb.txt
+
+#caponlychance 1
+#sacredratingmulti 1.5
+
+#cannot_be_pd
+#good_leader
+
+#endpose
+
+
+-------- Sacred Troop (hoplite)
+
+#newpose
+#name "sacred elder cyclops hoplite"
+#role "sacred infantry"
+#basechance 0.25
+#chanceinc era 2 *0.4
+#chanceinc era 3 *0.1
+#chanceinc moduleid herogen *2
+#subrace "elder cyclopes"
+#subraceprefix "elder"
+
+#renderorder "shadow extra1 weapon cloakb basesprite legs shirt armor cloakf bonusweapon offhandw hands hair helmet offhanda"
+
+#load basesprite /data/items/cyclops/elder/bases_spear.txt
+#load shadow /data/items/cyclops/elder/shadow.txt
+
+#load armor /data/items/cyclops/elder/armor.txt
+
+#load weapon /data/items/cyclops/elder/weapon_spear.txt
+#load offhand /data/items/cyclops/elder/shields_spear.txt
+#load bonusweapon /data/items/cyclops/elder/bonusranged.txt
 
 #load cloakf /data/items/cyclops/elder/cloakf.txt
 #load cloakb /data/items/cyclops/elder/cloakb.txt
@@ -103,15 +194,14 @@
 #load weapon /data/items/cyclops/elder/weapon_caster.txt
 #load offhand /data/items/cyclops/elder/offhands.txt
 #load offhand /data/items/cyclops/elder/shields.txt
-#load bonusweapon /data/items/cyclops/elder/bonusranged.txt
-#load helmet /data/items/cyclops/elder/helmet.txt
+#load helmet /data/items/cyclops/elder/helmet_caster.txt
 
 #load cloakf /data/items/cyclops/elder/cloakf.txt
 #load cloakb /data/items/cyclops/elder/cloakb.txt
 
 #tier 3
-#notfortier 2
-#notfortier 1
+#tier 2
+#tier 1
 
 #dontvaryhat
 

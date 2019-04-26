@@ -552,6 +552,31 @@
 #command "#magic"
 #end
 
+--- Generic enchanted armors
+#new customarmor
+#name enchantedbuckler
+#armor
+#command "#type 4"
+#command "#prot 17"
+#command "#def 3"
+#command "#enc 0"
+#command "#rcost 3"
+#command "#name 'Enchanted Buckler'"
+#command "#magic"
+#end
+
+#new customarmor
+#name enchantedshield
+#armor
+#command "#type 4"
+#command "#prot 19"
+#command "#def 5"
+#command "#enc 1"
+#command "#rcost 4"
+#command "#name 'Enchanted Shield'"
+#command "#magic"
+#end
+
 --- 2h Spears, with stats based on short-vs-reg-tridents
 #new customweapon
 #name "2hspear"
