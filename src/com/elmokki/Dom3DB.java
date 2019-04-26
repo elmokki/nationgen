@@ -1,10 +1,9 @@
 package com.elmokki;
 
+
 import nationGen.misc.FileUtil;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 
 public class Dom3DB {
@@ -17,6 +16,19 @@ public class Dom3DB {
     {
     	return definition;
     }
+    
+    public void setDefinition(List<String> columnNames) {
+    	if (columnNames.size() != this.definition.size()) {
+    		throw new IllegalArgumentException(String.format("Definition must be the same size (old = %s, new = %s)",
+				this.definition.size(), columnNames.size()));
+		}
+    	if (!"id".equals(columnNames.get(0))) {
+    		throw new IllegalArgumentException(String.format("First column name must be 'id' (found '%s' instead)",
+				columnNames.get(0)));
+		}
+    	
+    	this.definition = new ArrayList<>(columnNames);
+	}
     
     public List<String> getBooleanArgs()
     {
@@ -158,17 +170,61 @@ public class Dom3DB {
         return list;
     }
     
-    
-    public void saveToFile(String filename)
+    public Map<String, String> getColumnAsMap(String name) {
+    	
+    	Map<String, String> column = new LinkedHashMap<>();
+    	
+    	int index = getColumnIndex(name);
+    	
+    	if (index != -1) {
+			for (Map.Entry<String, List<String>> entry : this.entryMap.entrySet()) {
+				column.put(entry.getKey(), entry.getValue().get(index));
+			}
+		}
+    	
+    	return column;
+	}
+	
+	public void setColumn(String name, Map<String, String> column) {
+    	
+    	int index = getColumnIndex(name);
+    	
+    	if (index != -1) {
+    		for (Map.Entry<String, String> entry : column.entrySet()) {
+    			if (this.entryMap.containsKey(entry.getKey())) {
+    				this.entryMap.get(entry.getKey()).set(index, entry.getValue());
+				}
+			}
+		}
+	}
+	
+	public void removeColumn(String name) {
+		int index = getColumnIndex(name);
+		
+		if (index == -1) {
+			return;
+		}
+		
+		this.definition.remove(index);
+		
+		for (List<String> line : entryMap.values()) {
+			if (index < line.size()) {
+				line.remove(index);
+			}
+		}
+	}
+	
+	
+	public void saveToFile(String filename)
     {
 		List<String> lines = new ArrayList<>();
 		
-		lines.add(String.join(";", this.definition) + ";");
+		lines.add(String.join(";", this.definition));
 		
 		for(int i = 0; i < 5000; i++)
 		{
 			if(entryMap.keySet().contains("" + i))
-				lines.add(String.join(";", entryMap.get("" + i)) + ";");
+				lines.add(String.join(";", entryMap.get("" + i)));
 		}
 
 		FileUtil.writeLines(filename, lines);

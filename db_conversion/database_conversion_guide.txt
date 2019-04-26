@@ -1,9 +1,17 @@
-- Replace all csv files here except output_armor and output_weapon from Dom5Inspector GitHub
-- Run unrelated.DatabaseConverter
-- Remove column "end" from both output_armor and output_weapon
-- Copy columns flyspr and animlength from old weapon.csv to output_weapon
-- Copy headers from armor.csv and weapon.csv to output_armor and output_weapon
-- Replace armor.csv and weapon.csv with output versions
+Update the following files from LarzM's Dom5Inspector GitHub (https://github.com/larzm42/dom5inspector):
 
-- Copy BaseU.csv from Dom5Inspector GitHub and rename to units.csv
-- Copy nations.csv, sites.csv and realms.csv directly
+/db/nations.csv
+/db/realms.csv
+/db/sites.csv (renamed from MagicSites.csv)
+/db/spells.csv
+/db/units.csv (renamed from BaseU.csv)
+/db_conversion/armors.csv
+/db_conversion/attributes_by_armor.csv
+/db_conversion/attributes_by_weapon.csv
+/db_conversion/effects_weapons.csv
+/db_conversion/protections_by_armor.csv
+/db_conversion/weapons.csv
+
+Then run nationGen.unrelated.DatabaseConverter, which will generate the following using the files in db_conversion:
+/db/armor.csv
+/db/weapon.csv
