@@ -1,11 +1,11 @@
 package nationGen.unrelated;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.elmokki.Dom3DB;
 import com.elmokki.Generic;
 import nationGen.misc.FileUtil;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -20,19 +20,29 @@ public class DatabaseConverter {
 	{
 		
 		// Weapons
-		Dom3DB base = new Dom3DB("/db_conversion/weapons.csv");
+		Dom3DB previousWeapons = new Dom3DB("/db/weapon.csv");
+		Dom3DB weapons = new Dom3DB("/db_conversion/weapons.csv");
 		
-		addAttributes(base, "/db_conversion/attributes_by_weapon.csv");
-		addEffects(base);
+		addAttributes(weapons, "/db_conversion/attributes_by_weapon.csv");
+		addEffects(weapons);
+		weapons.removeColumn("end");
+		weapons.setColumn("flyspr", previousWeapons.getColumnAsMap("flyspr"));
+		weapons.setColumn("animlength", previousWeapons.getColumnAsMap("animlength"));
+		weapons.setDefinition(previousWeapons.getDefinition());
 		
-		base.saveToFile("/db_conversion/output_weapon.csv");
+		weapons.saveToFile("/db/weapon.csv");
 		
 		
 		// Armor 
-		base = new Dom3DB("/db_conversion/armors.csv");
-		addAttributes(base, "/db_conversion/attributes_by_armor.csv");
-		addArmorProt(base);
-		base.saveToFile("/db_conversion/output_armor.csv");
+		Dom3DB previousArmor = new Dom3DB("/db/armor.csv");
+		Dom3DB armor = new Dom3DB("/db_conversion/armors.csv");
+		
+		addAttributes(armor, "/db_conversion/attributes_by_armor.csv");
+		addArmorProt(armor);
+		armor.removeColumn("end");
+		armor.setDefinition(previousArmor.getDefinition());
+		
+		armor.saveToFile("/db/armor.csv");
 
 
 	}
@@ -115,7 +125,7 @@ public class DatabaseConverter {
 	}
 	
 	/**
-	 * Handles attributes.csv
+	 * Handles attributes_by_[thing].csv
 	 * @param db
 	 * @param fname
 	 */
@@ -166,12 +176,12 @@ public class DatabaseConverter {
 
 	
 	/**
-	 * Adds effects for weapons from effects.csv
+	 * Adds effects for weapons from effects_weapons.csv
 	 * @param db
 	 */
 	private static void addEffects(Dom3DB db)
 	{
-		Dom3DB attr = new Dom3DB("/db_conversion/effects.csv");
+		Dom3DB attr = new Dom3DB("/db_conversion/effects_weapons.csv");
 		
 		for(String key : db.entryMap.keySet())
 		{
