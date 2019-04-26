@@ -50,7 +50,7 @@ public class GenerationTest {
 							
 					System.out.print(race.visiblename + " (" + race.name + ") " + themeSet + ": ");
 					List<String> names = new ArrayList<>();
-					for (int i = 0; i < 50; i++) {
+					for (int i = 0; i < 10; i++) {
 						names.add(ngen.generateNationName(race, null));
 					}
 					System.out.println(Generic.listToString(names, ","));

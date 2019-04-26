@@ -21,7 +21,6 @@ xcopy target\%4.jar "%~dp0%IMAGE%\lib\"
 
 xcopy data "%~dp0%IMAGE%\data\" /i /s /e
 xcopy db "%~dp0%IMAGE%\db\" /i /s /e
-xcopy db_conversion "%~dp0%IMAGE%\db_conversion\" /i /s /e
 xcopy documentation "%~dp0%IMAGE%\documentation\" /i /s /e
 xcopy graphics "%~dp0%IMAGE%\graphics\" /i /s /e
 xcopy changelog.txt "%~dp0%IMAGE%\"
