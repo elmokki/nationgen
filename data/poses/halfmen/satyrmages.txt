@@ -1,0 +1,64 @@
+#newpose
+#name "satyr casters"
+#role "mage"
+#role "priest"
+
+basechance 0.25
+
+#tier 1
+#tier 2
+#tier 3
+
+#theme "male"
+#theme "satyr"
+
+#command "#stealthy +0"
+
+#renderorder "shadow weapon extra basesprite legs armor quiver bonusweapon offhandw hands hair helmet offhanda"
+
+#load basesprite /data/items/halfmen/satyr/satyr_bases.txt
+#load legs /data/items/halfmen/satyr/satyr_legs_caster.txt
+#load hair /data/items/halfmen/satyr/satyr_hair.txt
+#load shadow /data/items/halfmen/satyr/satyr_shadow.txt
+#load hands /data/items/halfmen/satyr/satyr_hands.txt
+
+#load armor /data/items/halfmen/satyr/satyr_armor_caster.txt
+#load helmet /data/items/halfmen/satyr/satyr_helmet_caster.txt
+
+#load weapon /data/items/halfmen/satyr/satyr_weapon_caster.txt -6 -2
+
+#dontvaryhat
+
+#endpose
+
+
+#newpose
+#name "dryad casters"
+#role "mage"
+#role "priest"
+
+#tier 1
+#tier 2
+#tier 3
+
+#theme "female"
+#theme "satyr"
+
+#command "#stealthy +20"
+
+#renderorder "shadow weapon extra basesprite legs armor quiver bonusweapon offhandw hands hair helmet offhanda"
+
+#load basesprite /data/items/halfmen/satyr/dryad_bases.txt
+#load legs /data/items/halfmen/satyr/dryad_legs_caster.txt
+#load hair /data/items/halfmen/satyr/dryad_hair.txt
+#load shadow /data/items/halfmen/satyr/satyr_shadow.txt
+#load hands /data/items/halfmen/satyr/dryad_hands.txt
+
+#load armor /data/items/halfmen/satyr/dryad_armor_caster.txt
+#load helmet /data/items/halfmen/satyr/dryad_helmet_caster.txt
+
+#load weapon /data/items/halfmen/satyr/satyr_weapon_caster.txt -6 -2
+
+#dontvaryhat
+
+#endpose

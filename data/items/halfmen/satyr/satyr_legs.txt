@@ -1,0 +1,48 @@
+#newitem
+#name "commoner legs"
+#gameid -1
+#theme brown
+#theme grey
+#theme white
+#theme black
+#needs hair "brown hair"
+#enditem
+
+#newitem
+#name "brown legs"
+#gameid -1
+#basechance 0.01
+#chanceinc moduleid sacgen *900
+#theme brown
+#needs hair "brown hair"
+#theme sacred
+#enditem
+
+#newitem
+#name "white legs"
+#gameid -1
+#basechance 0.01
+#chanceinc moduleid sacgen *900
+#sprite /graphics/halfmen/satyr/legs/legs_white.png
+#command "#gcost +15"
+#command "#rpcost +15000"
+#command "#awe +2"
+#theme white
+#theme grey
+#theme sacred
+#needs hair "white hair"
+#enditem
+
+#newitem
+#name "black legs"
+#gameid -1
+#basechance 0.01
+#chanceinc moduleid sacgen *900
+#sprite /graphics/halfmen/satyr/legs/legs_black.png
+#command "#gcost +5"
+#command "#rpcost +5000"
+#command "#berserk +2"
+#theme black
+#theme sacred
+#needs hair "black hair"
+#enditem

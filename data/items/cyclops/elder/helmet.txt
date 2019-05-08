@@ -1,19 +1,83 @@
-
-
 #newitem
-#id crown
-#gameid 148
-#sprite /graphics/fomorian/giant/helmet/crown.png
-#theme "advanced"
+#id buckler_bronze
+#gameid 1
+#sprite /graphics/cyclops/elder/offhand/hoplon_bronze.png
+#eliteversion buckler_gold
 #armor
+#theme "bronze"
 #enditem
 
 #newitem
-#id laurel
-#gameid -1
-#basechance 0
-#chanceinc "personalmagic nature 2"
-#sprite /graphics/fomorian/giant/helmet/laurel.png
-#theme "nature"
+#id buckler_gold
+#gameid enchantedbuckler
+#sprite /graphics/cyclops/elder/offhand/hoplon_gold.png
+#eliteversion hoplon_gold
 #armor
+#theme "elite"
+#theme "bronze"
+#theme gold
+#enditem
+
+#newitem
+#id buckler_iron
+#gameid 1
+#sprite /graphics/cyclops/elder/offhand/hoplon_iron.png
+#eliteversion buckler_silver
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#id buckler_silver
+#gameid enchantedbuckler
+#sprite /graphics/cyclops/elder/offhand/hoplon_silver.png
+#eliteversion buckler_silver
+#armor
+#theme "elite"
+#theme "iron"
+#theme silver
+#enditem
+
+#newitem
+#id hoplon_bronze
+#gameid 209
+#basechance 0.5
+#sprite /graphics/cyclops/elder/offhand/hoplon_bronze_large.png
+#eliteversion hoplon_gold
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id hoplon_gold
+#gameid 238
+#basechance 0.5
+#sprite /graphics/cyclops/elder/offhand/hoplon_gold_large.png
+#eliteversion hoplon_gold
+#armor
+#theme "elite"
+#theme "bronze"
+#theme gold
+#enditem
+
+#newitem
+#id hoplon_iron
+#gameid 208
+#basechance 0.5
+#sprite /graphics/cyclops/elder/offhand/hoplon_iron_large.png
+#eliteversion hoplon_silver
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#id hoplon_silver
+#gameid 247
+#basechance 0.5
+#sprite /graphics/cyclops/elder/offhand/hoplon_silver_large.png
+#eliteversion hoplon_silver
+#armor
+#theme "elite"
+#theme "iron"
+#theme silver
 #enditem

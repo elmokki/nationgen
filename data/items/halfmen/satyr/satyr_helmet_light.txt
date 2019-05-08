@@ -1,0 +1,109 @@
+--- Bare head
+#newitem
+#name "nada"
+#gameid -1
+#basechance 5
+#armor
+#theme "naked"
+#theme "primitive"
+#eliteversion "nada"
+#eliteversion "crested helmet"
+#eliteversion "ram horns"
+#maxprot 11
+#enditem
+
+#newitem
+#name "nothing"
+#gameid -1
+#basechance 2
+#armor
+#theme "naked"
+#eliteversion "nothing"
+#eliteversion "crested helmet"
+#eliteversion "ram horns"
+#maxprot 11
+#enditem
+
+--- Leather
+
+#newitem
+#name "leather cap"
+#gameid 120
+#sprite /graphics/halfmen/satyr/helmet/leather_helmet.png
+#eliteversion "crested helmet"
+#armor
+#theme "leather"
+#minprot 5
+#maxprot 11
+#enditem
+
+#newitem
+#name "reinforced leather cap"
+#gameid 119
+#basechance 0.5
+#sprite /graphics/halfmen/satyr/helmet/leather_helmet.png
+#eliteversion "crested helmet"
+#armor
+#theme "leather"
+#minprot 5
+#maxprot 11
+#enditem
+
+#newitem
+#name "crested helmet"
+#gameid 162
+#basechance 0.5
+#sprite /graphics/halfmen/satyr/helmet/leather_helmet_crest.png
+#recolormask /graphics/halfmen/satyr/helmet/crest_recolormask.png
+#eliteversion "crested helmet"
+#eliteversion "ram horns"
+#armor
+#theme "leather"
+#theme "elite"
+#minprot 5
+#maxprot 14
+#enditem
+
+--- Bronze
+
+#newitem
+#name "bronze cap"
+#gameid 135
+#basechance 0.5
+#sprite /graphics/halfmen/satyr/helmet/bronze_half_helmet.png
+#armor
+#theme "bronze"
+#theme "advanced"
+#minprot 8
+#maxprot 14
+#enditem
+
+--- Iron
+
+#newitem
+#name "iron cap"
+#gameid 135
+#basechance 0.5
+#sprite /graphics/halfmen/satyr/helmet/iron_half_helmet.png
+#armor
+#theme "iron"
+#theme "advanced"
+#minprot 8
+#maxprot 14
+#enditem
+
+--- Ram
+
+#newitem
+#name "ram horns"
+#gameid -1
+#basechance 0.25
+#sprite /graphics/halfmen/satyr/helmet/nothing_ram.png
+#eliteversion "ram horns"
+#armor
+#theme "naked"
+#theme "elite"
+#command "mor +1"
+#command "mr +1"
+#command "gcost +1"
+#enditem

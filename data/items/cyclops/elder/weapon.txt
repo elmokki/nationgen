@@ -1,93 +1,80 @@
 
 #newitem
-#id axe
-#gameid giantaxe_bronze
-#sprite /graphics/cyclops/elder/weapon/hatchet.png
-#recolormask /graphics/cyclops/elder/weapon/axe_recolormask.png
-#eliteversion eliteaxe
+#id axe_bronze
+#gameid 675
+#sprite /graphics/cyclops/elder/weapon/axe_bronze.png
+#eliteversion axe_gold
 #theme "bronze"
 #enditem
 
 #newitem
 #id axe_iron
-#gameid giantaxe
-#sprite /graphics/cyclops/elder/weapon/axe.png
-#recolormask /graphics/cyclops/elder/weapon/axe_recolormask.png
-#eliteversion eliteaxe
+#gameid 17
+#sprite /graphics/cyclops/elder/weapon/axe_iron.png
+#eliteversion axe_silver
 #theme "iron"
 #enditem
 
 #newitem
-#id eliteaxe
-#basechance 0.25
-#gameid giantaxe
-#sprite /graphics/cyclops/elder/weapon/eliteaxe.png
-#recolormask /graphics/cyclops/elder/weapon/axe_recolormask.png
-#renderprio 6
-#renderslot "extra1"
-#enditem
-
-#newitem
-#id greataxe
-#gameid giantgreataxe_bronze
-#sprite /graphics/cyclops/elder/weapon/battleaxe_bronze.png
+#id axe_gold
+#gameid goldenaxe
+#sprite /graphics/cyclops/elder/weapon/axe_gold.png
+#theme "elite"
 #theme "bronze"
+#theme gold
 #enditem
 
 #newitem
-#id greataxe_iron
-#gameid giantgreataxe
-#sprite /graphics/cyclops/elder/weapon/battleaxe.png
+#id axe_silver
+#gameid enchantedaxe
+#sprite /graphics/cyclops/elder/weapon/axe_silver.png
+#theme "elite"
 #theme "iron"
+#theme silver
 #enditem
 
 #newitem
-#id broadsword
-#gameid giantsword_bronze
+#id sword_bronze
+#gameid bronzebroadsword
 #sprite /graphics/cyclops/elder/weapon/sword_bronze.png
-#eliteversion elitebroadsword
+#eliteversion sword_gold
 #theme "bronze"
 #enditem
 
 #newitem
-#id broadsword_iron
-#gameid giantsword
-#sprite /graphics/cyclops/elder/weapon/sword.png
-#eliteversion elitebroadsword
+#id sword_iron
+#gameid 8
+#sprite /graphics/cyclops/elder/weapon/sword_iron.png
+#eliteversion sword_gold
 #theme "iron"
 #enditem
 
 #newitem
-#id elitebroadsword
-#basechance 0.25
-#gameid giantmagicsword
-#sprite /graphics/cyclops/elder/weapon/elitesword.png
+#id sword_gold
+#gameid 474
+#sprite /graphics/cyclops/elder/weapon/sword_gold.png
+#theme "elite"
 #enditem
 
 #newitem
-#id spear
-#gameid giantspear_bronze
-#sprite /graphics/cyclops/elder/weapon/spear_bronze.png
+#id hammer_bronze
+#gameid bronzehammer
+#sprite /graphics/cyclops/elder/weapon/hammer_bronze.png
+#eliteversion hammer_gold
 #theme "bronze"
 #enditem
 
 #newitem
-#id spear_iron
-#gameid giantspear
-#sprite /graphics/cyclops/elder/weapon/spear.png
+#id hammer_iron
+#gameid 8
+#sprite /graphics/cyclops/elder/weapon/hammer_iron.png
+#eliteversion hammer_gold
 #theme "iron"
 #enditem
 
 #newitem
-#id trident
-#gameid 641
-#sprite /graphics/cyclops/elder/weapon/trident_bronze.png
-#theme "bronze"
-#enditem
-
-#newitem
-#id trident_iron
-#gameid 3
-#sprite /graphics/cyclops/elder/weapon/trident.png
-#theme "iron"
+#id hammer_gold
+#gameid 648
+#sprite /graphics/cyclops/elder/weapon/hammer_gold.png
+#theme "elite"
 #enditem
