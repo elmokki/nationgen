@@ -156,8 +156,21 @@
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
 #type demographic_primary
+#name diverse_primary
+#racedefinition "#generationchance infantry 13"
+#racedefinition "#generationchance mounted 2"
+#racedefinition "#generationchance chariot 2"
+#racedefinition "#generationchance ranged 6"
+#racedefinition "#sacredinfantrychance 12"
+#racedefinition "#sacredrangedchance 3"
+#endtheme
+
+-- Weights: EA 1, MA 1, LA 1
+#newtheme
+#type demographic_primary
 #name minotaur_primary
 #chanceinc racetheme minotaur_secondary *0
+#chanceinc racetheme minotaur_tertiary *0
 #themeinc theme minotaur *7
 #themeinc theme centaur *0.01
 #themeinc theme satyr *0.01
@@ -174,6 +187,7 @@
 #type demographic_primary
 #name centaur_primary
 #chanceinc racetheme centaur_secondary *0
+#chanceinc racetheme centaur_tertiary *0
 #themeinc theme minotaur *0.01
 #themeinc theme centaur *7
 #themeinc theme satyr *0.01
@@ -188,9 +202,27 @@
 
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
+#type demographic_primary
+#name satyr_primary
+#chanceinc racetheme satyr_secondary *0
+#chanceinc racetheme satyr_tertiary *0
+#themeinc theme minotaur *0.01
+#themeinc theme centaur *0.01
+#themeinc theme satyr *7
+#racedefinition "#generationchance infantry 4"
+#racedefinition "#generationchance mounted 1"
+#racedefinition "#generationchance chariot 1"
+#racedefinition "#generationchance ranged 1"
+#racedefinition "#sacredinfantrychance 5"
+#raceprefix satyr
+#endtheme
+
+-- Weights: EA 1, MA 1, LA 1
+#newtheme
 #type demographic_secondary
 #name minotaur_secondary
 #chanceinc racetheme minotaur_primary *0
+#chanceinc racetheme minotaur_tertiary *0
 #themeinc theme minotaur *300
 #racedefinition "#generationchance infantry 5"
 #endtheme
@@ -200,6 +232,7 @@
 #type demographic_secondary
 #name centaur_secondary
 #chanceinc racetheme centaur_primary *0
+#chanceinc racetheme centaur_tertiary *0
 #themeinc theme centaur *300
 #racedefinition "#generationchance mounted 1"
 #racedefinition "#generationchance chariot 1"
@@ -209,6 +242,67 @@
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
 #type demographic_secondary
+#name satyr_secondary
+#chanceinc racetheme satyr_primary *0
+#chanceinc racetheme satyr_tertiary *0
+#themeinc theme saytr *300
+#racedefinition "#generationchance infantry 2"
+#racedefinition "#generationchance mounted 1"
+#racedefinition "#generationchance chariot 1"
+#racedefinition "#generationchance ranged 1"
+#endtheme
+
+-- Weights: EA 1, MA 1, LA 1
+#newtheme
+#type demographic_secondary
 #name no_secondary
 #basechance 1
+#chanceinc racetheme diverse_primary *1000
+#endtheme
+
+-- Weights: EA 1, MA 1, LA 1
+#newtheme
+#type demographic_tertiary
+#name minotaur_tertiary
+#chanceinc racetheme minotaur_primary *0
+#chanceinc racetheme minotaur_secondary *0
+#chanceinc racetheme no_secondary *0
+#themeinc theme minotaur *100
+#racedefinition "#generationchance infantry 2.5"
+#endtheme
+
+-- Weights: EA 1, MA 1, LA 1
+#newtheme
+#type demographic_tertiary
+#name centaur_tertiary
+#chanceinc racetheme centaur_primary *0
+#chanceinc racetheme centaur_secondary *0
+#chanceinc racetheme no_secondary *0
+#themeinc theme centaur *100
+#racedefinition "#generationchance mounted 0.5"
+#racedefinition "#generationchance chariot 0.5"
+#racedefinition "#generationchance ranged 1.25"
+#endtheme
+
+-- Weights: EA 1, MA 1, LA 1
+#newtheme
+#type demographic_tertiary
+#name satyr_tertiary
+#chanceinc racetheme satyr_primary *0
+#chanceinc racetheme satyr_secondary *0
+#chanceinc racetheme no_secondary *0
+#themeinc theme satyr *100
+#racedefinition "#generationchance infantry 1"
+#racedefinition "#generationchance mounted 0.5"
+#racedefinition "#generationchance chariot 0.5"
+#racedefinition "#generationchance ranged 0.5"
+#endtheme
+
+-- Weights: EA 1, MA 1, LA 1
+#newtheme
+#type demographic_tertiary
+#name no_tertiary
+#basechance 1
+#chanceinc racetheme diverse_primary *1000
+#chanceinc racetheme no_secondary *1000
 #endtheme

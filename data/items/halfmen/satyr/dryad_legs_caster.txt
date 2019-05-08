@@ -1,0 +1,39 @@
+#newitem
+#name "brown legs"
+#gameid -1
+#theme brown
+#needs hair "brown hair"
+#tier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#name "white legs"
+#gameid -1
+#sprite /graphics/halfmen/satyr/legs/legs_white.png
+#command "#gcost +70"
+#command "#awe +3"
+#command "#seduce 9"
+#command "#prot -1"
+#command "#mr +1"
+#theme white
+#theme grey
+#needs hair "white hair"
+#tier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#name "black legs"
+#gameid -1
+#sprite /graphics/halfmen/satyr/legs/legs_black.png
+#command "#prot -1"
+#command "#mr +1"
+#theme black
+#needs hair "black hair"
+#tier 1
+#tier 2
+#tier 3
+#enditem

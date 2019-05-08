@@ -1,50 +1,78 @@
 
 #newitem
-#id broadsword_bronze
-#gameid giantsword_bronze
-#sprite /graphics/fomorian/giant/offhand/offhandsword_bronze.png
-#eliteversion elitebroadsword
-#theme "bronze"
-#enditem
-
-#newitem
-#id broadsword
-#gameid giantsword
-#sprite /graphics/fomorian/giant/offhand/offhandsword.png
-#eliteversion elitebroadsword
-#theme "iron"
-#enditem
-
-#newitem
-#id elitebroadsword
-#basechance 0.25
-#gameid giantmagicsword
-#sprite /graphics/fomorian/giant/offhand/offhandelitesword.png
-#enditem
-
-
-#newitem
-#id axe
-#gameid giantaxe_bronze
-#sprite /graphics/fomorian/giant/offhand/offhandhatchet.png
-#recolormask /graphics/fomorian/giant/offhand/offhandaxe_recolormask.png
-#eliteversion eliteaxe
+#id axe_bronze
+#gameid 675
+#sprite /graphics/cyclops/elder/weapon/axe_bronze_oh.png
+#eliteversion axe_gold
 #theme "bronze"
 #enditem
 
 #newitem
 #id axe_iron
-#gameid giantaxe
-#sprite /graphics/fomorian/giant/offhand/offhandaxe.png
-#recolormask /graphics/fomorian/giant/offhand/offhandaxe_recolormask.png
-#eliteversion eliteaxe
+#gameid 17
+#sprite /graphics/cyclops/elder/weapon/axe_iron_oh.png
+#eliteversion axe_silver
 #theme "iron"
 #enditem
 
 #newitem
-#id eliteaxe
-#basechance 0.25
-#gameid giantaxe
-#sprite /graphics/fomorian/giant/offhand/offhandeliteaxe.png
-#recolormask /graphics/fomorian/giant/offhand/offhandaxe_recolormask.png
+#id axe_gold
+#gameid goldenaxe
+#sprite /graphics/cyclops/elder/weapon/axe_gold_oh.png
+#theme "elite"
+#theme "bronze"
+#enditem
+
+#newitem
+#id axe_silver
+#gameid enchantedaxe
+#sprite /graphics/cyclops/elder/weapon/axe_silver_oh.png
+#theme "elite"
+#theme "iron"
+#enditem
+
+#newitem
+#id sword_bronze
+#gameid 645
+#sprite /graphics/cyclops/elder/weapon/sword_bronze_oh.png
+#eliteversion sword_gold
+#theme "bronze"
+#enditem
+
+#newitem
+#id sword_iron
+#gameid 6
+#sprite /graphics/cyclops/elder/weapon/sword_iron_oh.png
+#eliteversion sword_gold
+#theme "iron"
+#enditem
+
+#newitem
+#id sword_gold
+#gameid 474
+#sprite /graphics/cyclops/elder/weapon/sword_gold_oh.png
+#theme "elite"
+#enditem
+
+#newitem
+#id hammer_bronze
+#gameid bronzehammer
+#sprite /graphics/cyclops/elder/weapon/hammer_bronze_oh.png
+#eliteversion hammer_gold
+#theme "bronze"
+#enditem
+
+#newitem
+#id hammer_iron
+#gameid 8
+#sprite /graphics/cyclops/elder/weapon/hammer_iron_oh.png
+#eliteversion hammer_gold
+#theme "iron"
+#enditem
+
+#newitem
+#id hammer_gold
+#gameid 648
+#sprite /graphics/cyclops/elder/weapon/hammer_gold_oh.png
+#theme "elite"
 #enditem

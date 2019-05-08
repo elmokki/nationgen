@@ -554,6 +554,18 @@
 
 --- Generic enchanted armors
 #new customarmor
+#name enchantedscalemail
+#armor
+#command "#type 5"
+#command "#prot 15"
+#command "#def -1"
+#command "#enc 2"
+#command "#rcost 20"
+#command "#name 'Enchanted Scale Mail'"
+#command "#magic"
+#end
+
+#new customarmor
 #name enchantedbuckler
 #armor
 #command "#type 4"
@@ -575,6 +587,33 @@
 #command "#rcost 4"
 #command "#name 'Enchanted Shield'"
 #command "#magic"
+#end
+
+--- Generic enchanted weapons
+#new customweapon
+#name enchantedaxe
+#command "#att 1"
+#command "#def -1"
+#command "#dmg 8"
+#command "#len 1"
+#command "#rcost 4"
+#command "#name 'Enchanted Axe'"
+#command "#slash"
+#command "#magic"
+#command "#sound 10"
+#end
+
+#new customweapon
+#name enchantedsword
+#command "#att 1"
+#command "#def 1"
+#command "#dmg 7"
+#command "#len 1"
+#command "#rcost 5"
+#command "#name 'Enchanted Sword'"
+#command "#slash"
+#command "#magic"
+#command "#sound 10"
 #end
 
 --- 2h Spears, with stats based on short-vs-reg-tridents

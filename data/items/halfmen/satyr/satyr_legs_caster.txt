@@ -1,0 +1,51 @@
+#newitem
+#name "brown legs"
+#gameid -1
+#theme brown
+#needs hair "brown hair"
+#tier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#name "white legs"
+#gameid -1
+#sprite /graphics/halfmen/satyr/legs/legs_white.png
+#command "#gcost +15"
+#command "#rpcost +15000"
+#command "#awe +2"
+#theme white
+#theme grey
+#needs hair "white hair"
+#tier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#name "black legs T1-2"
+#gameid -1
+#sprite /graphics/halfmen/satyr/legs/legs_black.png
+#command "#gcost +5"
+#command "#rpcost +5000"
+#command "#berserk +2"
+#theme black
+#needs hair "black hair"
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#name "black legs T2-3"
+#gameid -1
+#sprite /graphics/halfmen/satyr/legs/legs_black.png
+#command "#gcost +5"
+#command "#rpcost +5000"
+#theme black
+#needs hair "black hair"
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
