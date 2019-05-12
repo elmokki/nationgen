@@ -280,13 +280,13 @@ public class Nation {
 				if(random.nextDouble() < 0.8)
 				{
 					power++;
-					if(random.nextDouble() < 0.7 && sacredcount < 3)
+					if(random.nextDouble() < 0.7 && (sacredcount < 3 || random.nextDouble() < 0.5)) 
 					{
 						power++;
-						if(random.nextDouble() < 0.5 && sacredcount < 2)
+						if(random.nextDouble() < 0.5 && (sacredcount < 2 || random.nextDouble() < 0.5))
 						{
 							power++;
-							if(random.nextDouble() < 0.4 && sacredcount < 1)
+							if(random.nextDouble() < 0.4 && (sacredcount < 1 || random.nextDouble() < 0.5))
 							{
 								power++;
 								if(random.nextDouble() < 0.3 )
