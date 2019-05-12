@@ -90,7 +90,7 @@ public class HeroGenerator {
 		Race r = getRace("mage");
 		
 		boolean sacred = n.random.nextBoolean();
-		Pose p = sacGen.getPose(true, power, r);
+		Pose p = sacGen.getPose(true, power, r, false);
 		
 		double epicchance = n.random.nextDouble() * 0.5 + power * 0.25 + 0.25;
 

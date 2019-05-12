@@ -212,10 +212,15 @@ public class Nation {
 		//// Sacreds and elites
 		SacredGenerator sacGen = new SacredGenerator(nationGen, this, assets);
 		List<Unit> sacreds = new ArrayList<Unit>();
-		
+
+		// If the primary race has bonus sacreds, add those to sacredount
+		int sacredcount = 1;
+		if(races.get(0).tags.containsName("bonussacreds"))
+		{
+			sacredcount += races.get(0).tags.getDouble("bonussacreds").orElse(1.0);
+		}
 
 		// Elite
-		int sacredcount = 1;
 		if(random.nextDouble() > 0.8) 
 		{
 			int power = 0; 
@@ -230,7 +235,7 @@ public class Nation {
 			if(random.nextDouble() > 0.9)
 				power++;
 			
-			Unit sacred = sacGen.generateUnit(false, power);
+			Unit sacred = sacGen.generateUnit(false, power, false);
 			List<Unit> elites = new ArrayList<Unit>();
 			elites.add(sacred);
 			
@@ -260,7 +265,7 @@ public class Nation {
 		{
 			sacredcount++;
 		}
-		
+				
 		// Sacred
 		for(int i = 0; i < sacredcount; i++)
 		{
@@ -275,16 +280,16 @@ public class Nation {
 				if(random.nextDouble() < 0.8)
 				{
 					power++;
-					if(random.nextDouble() < 0.7)
+					if(random.nextDouble() < 0.7 && sacredcount < 3)
 					{
 						power++;
-						if(random.nextDouble() < 0.5)
+						if(random.nextDouble() < 0.5 && sacredcount < 2)
 						{
 							power++;
-							if(random.nextDouble() < 0.4)
+							if(random.nextDouble() < 0.4 && sacredcount < 1)
 							{
 								power++;
-								if(random.nextDouble() < 0.3)
+								if(random.nextDouble() < 0.3 )
 								{
 									power++;
 								}
@@ -299,9 +304,13 @@ public class Nation {
 			}
 	
 	
-			Unit sacred = sacGen.generateUnit(true, power);
+			Unit sacred = sacGen.generateUnit(true, power, (i == 0));
 			if(sacred != null)
 			{
+				if(i > 0 && random.nextDouble() < 0.5)
+				{
+					sacred.caponly = true;
+				}
 				sacreds.add(sacred);
 			}
 		}

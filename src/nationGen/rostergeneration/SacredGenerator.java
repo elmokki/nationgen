@@ -415,20 +415,20 @@ public class SacredGenerator extends TroopGenerator {
 		return canBeSacred;
 	}
 
-	public Unit generateUnit(boolean sacred, int power)
+	public Unit generateUnit(boolean sacred, int power, boolean isFirstSacred)
 	{
-		return generateUnit(sacred, power, null);
+		return generateUnit(sacred, power, null, isFirstSacred);
 	}
 	
 	
-	public Unit generateUnit(boolean sacred, int power, Race race)
+	public Unit generateUnit(boolean sacred, int power, Race race, boolean isFirstSacred)
 	{
 		
 		if(race == null)
 			race = getRace(sacred);
 		
 		
-		Pose p = getPose(sacred, power, race);
+		Pose p = getPose(sacred, power, race, isFirstSacred);
 		
 		
 
@@ -505,7 +505,7 @@ public class SacredGenerator extends TroopGenerator {
 		
 	}
 	
-	public Pose getPose(boolean sacred, int power, Race race)
+	public Pose getPose(boolean sacred, int power, Race race, boolean isFirstSacred)
 	{
 		// Handle sacred power settings
 		double extrapower = this.nationGen.settings.get(SettingsType.sacredpower) - 1;
@@ -517,6 +517,7 @@ public class SacredGenerator extends TroopGenerator {
 
 		List<Pose> possibleposes = new ArrayList<>();
 		
+		// Note that the first sacred of a nation should only be ranged if no others are available
 		ChanceDistribution<String> roles = new ChanceDistribution<>();
 		String toGet = "sacred";
 		if(race.hasSpecialRole("infantry", sacred)) {
@@ -525,12 +526,15 @@ public class SacredGenerator extends TroopGenerator {
 		if(race.hasSpecialRole("mounted", sacred)) {
 			roles.setChance("mounted", race.tags.getDouble(toGet + "mountedchance").orElse(0.25));
 		}
-		if(race.hasSpecialRole("ranged", sacred)) {
-			roles.setChance("ranged", race.tags.getDouble(toGet + "rangedchance").orElse(0.125));
-		}
 		if(race.hasSpecialRole("chariot", sacred)) {
 			roles.setChance("chariot", race.tags.getDouble(toGet + "chariotchance").orElse(0.05));
 		}
+		if(race.hasSpecialRole("ranged", sacred) && !isFirstSacred) {
+			roles.setChance("ranged", race.tags.getDouble(toGet + "rangedchance").orElse(0.125));
+		}
+		else if(race.hasSpecialRole("ranged", sacred)) {
+			roles.setChance("ranged",0.0001);
+		} 
 
 		while(roles.hasPossible())
 		{

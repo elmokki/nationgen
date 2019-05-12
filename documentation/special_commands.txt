@@ -76,6 +76,9 @@ Sets the weight of a certain magic path in mage generation. Default for all path
 Sets the weight of a certain role (either just the "role" or "sacred role", ie "infantry" or "sacred infantry") to given number. Defaults are 
 0.125, 1, 0.25, 0.05 for ranged, infantry, mounted and chariot
 
+#bonussacred <number>
+Nations with this as their primary race will always receive an additional <number> sacred units
+
 #mapmovepenaltyenc <amount>
 The amount of encumberance from equipment before getting mapmove penalty. Won't affect mounted units. Default is 4.
 
