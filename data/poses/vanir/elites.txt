@@ -1,6 +1,7 @@
 
 -------- Normal
 #newpose
+#name infantry
 #role "sacred infantry"
 #role "elite infantry"
 
@@ -37,6 +38,7 @@
 
 --- Mounted
 #newpose
+#name mounted
 #role "elite mounted"
 #role "sacred mounted"
 
@@ -74,6 +76,33 @@
 
 #load weapon /data/items/human/sacredstuff/sacredweapon.txt 0 -3
 #load bonusweapon /data/items/human/sacredstuff/sacredlance.txt 0 -3
+
+#generateitem 1 hair
+#generateitem 1 beard
+#endpose
+
+-------- Flyer
+#newpose
+#name flyer
+#role "sacred infantry"
+#basechance 0.5
+
+#renderorder "shadow cloakb mount weapon basesprite legs shirt armor cloakf bonusweapon offhandw hands beard hair helmet offhanda overlay extra1 extra2 extra3"
+
+#load basesprite /data/items/nordic/flying/bases.txt
+#load shadow /data/items/nordic/generic/shadow.txt 4 0
+
+#load beard /data/items/nordic/flying/beard.txt
+#load hair /data/items/nordic/flying/hair.txt
+
+#load armor /data/items/nordic/flying/armor.txt
+#load helmet /data/items/nordic/flying/helmet.txt
+#load legs /data/items/nordic/flying/legs.txt
+
+#load weapon /data/items/nordic/flying/weapon.txt
+#load offhand /data/items/nordic/normal/shields.txt -4 -11
+
+#load weapon /data/items/nordic/flying/weapon_sacred.txt
 
 #generateitem 1 hair
 #generateitem 1 beard
