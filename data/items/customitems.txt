@@ -408,6 +408,40 @@
 #command "#slash"
 #end
 
+--- Extra stone weapons
+#new customweapon
+#name "stonebattleaxe"
+#command "#att 0"
+#command "#dmg 8"
+#command "#len 2"
+#command "#rcost 2"
+#command "#name 'Stone Broadaxe'"
+#command "#slash"
+#command "#twohanded"
+#end
+
+#new customweapon
+#name "stonehatchet"
+#command "#att 1"
+#command "#dmg 4"
+#command "#len 1"
+#command "#rcost 1"
+#command "#name 'Stone Hatchet'"
+#command "#slash"
+#end
+
+#new customweapon
+#name stonethrowinghatchet
+#command "#att -4"
+#command "#dmg 4"
+#command "#range -1"
+#command "#ammo 2"
+#command "#rcost 1"
+#command "#flyspr 411 4"
+#command "#name 'Stone Throwing Hatchet'"
+#command "#slash"
+#end
+
 --- Generic (and slightly nerfed) black steel armor
 #new customarmor
 #name blacksteel_shield
