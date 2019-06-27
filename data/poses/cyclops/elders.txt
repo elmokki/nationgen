@@ -124,7 +124,6 @@
 
 #load basesprite /data/items/cyclops/elder/bases_spear.txt
 #load shadow /data/items/cyclops/elder/shadow.txt
-#load hands /data/items/cyclops/elder/hands.txt
 
 
 #load armor /data/items/cyclops/elder/armor.txt
@@ -162,7 +161,6 @@
 
 #load basesprite /data/items/cyclops/elder/bases_spear.txt
 #load shadow /data/items/cyclops/elder/shadow.txt
-#load hands /data/items/cyclops/elder/hands.txt
 
 
 #load armor /data/items/cyclops/elder/armor.txt
@@ -185,10 +183,10 @@
 
 
 
--------- Mage (warrior, albeit not warriormage)
+-------- Warrior-Mage
 
 #newpose
-#name "elder cyclopses casters"
+#name "elder cyclopses warrior-mages"
 #role "mage"
 #basechance 1
 #chanceinc era 1 *2
@@ -197,7 +195,7 @@
 #subrace "elder cyclopes"
 #subraceprefix "elder"
 
-#renderorder "shadow extra1 cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda"
+#renderorder "shadow extra1 weapon cloakb basesprite legs shirt armor cloakf bonusweapon offhandw hands hair helmet offhanda"
 
 #magefilters default_magefilters
 #magefilters default_magefilters_strongdefence_expensive
@@ -205,7 +203,7 @@
 
 #load basesprite /data/items/cyclops/elder/bases_caster.txt
 #load shadow /data/items/cyclops/elder/shadow.txt
-#load hands /data/items/cyclops/elder/hands.txt
+#load hands /data/items/cyclops/elder/hands_caster.txt
 
 #load armor /data/items/cyclops/elder/armor_caster.txt
 
@@ -229,3 +227,84 @@
 
 #endpose
 
+
+-------- Ceremonial caster (mostly priests)
+
+#newpose
+#name "elder cyclopses priests"
+#role "mage"
+#role "priest"
+#basechance 0.25
+#chanceinc era 1 *0.5
+#chanceinc era 3 *2
+#chanceinc moduleid herogen *0.25
+#subrace "elder cyclopes"
+#subraceprefix "elder"
+
+#renderorder "shadow extra1 weapon cloakb basesprite legs shirt armor cloakf bonusweapon offhandw hands hair helmet offhanda"
+
+#magefilters default_magefilters
+#magefilters default_magefilters_strongdefence_expensive
+
+
+#load basesprite /data/items/cyclops/elder/bases_caster.txt
+#load shadow /data/items/cyclops/elder/shadow.txt
+#load hands /data/items/cyclops/elder/hands_caster.txt
+
+#load armor /data/items/cyclops/elder/robes_caster.txt
+#load helmet /data/items/cyclops/elder/helmet_caster.txt
+
+#load weapon /data/items/cyclops/elder/staff.txt
+
+#tier 3
+#tier 2
+#tier 1
+
+#dontvaryhat
+
+#magicpriority earth 3
+#magicpriority fire 3
+#magicpriority air 3
+#magicpriority water 3
+
+#endpose
+
+
+-------- Smiths
+
+#newpose
+#name "elder cyclopses smiths"
+#role "mage"
+#basechance 2
+#chanceinc moduleid herogen *4
+#subrace "elder cyclopes"
+#subraceprefix "elder"
+
+#renderorder "shadow extra1 cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda"
+
+#magefilters default_magefilters
+#magefilters default_magefilters_strongdefence_expensive
+
+
+#load basesprite /data/items/cyclops/elder/bases_smith.txt
+#load shadow /data/items/cyclops/elder/shadow.txt
+#load hands /data/items/cyclops/elder/hands.txt
+
+#load armor /data/items/cyclops/elder/armor_smith.txt
+#load helmet /data/items/cyclops/elder/hair.txt
+
+#load weapon /data/items/cyclops/elder/weapon_smith.txt
+#load offhand /data/items/cyclops/elder/shields.txt
+
+#tier 3
+#tier 2
+#tier 1
+
+#magicpriority earth 12
+#magicpriority fire 12
+#magicpriority air 4
+#magicpriority water 4
+
+#weakmagicpatterns
+
+#endpose
