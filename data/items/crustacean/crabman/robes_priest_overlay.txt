@@ -1,0 +1,89 @@
+-- Robe overlays to act as recolormasks for the path-specific robe colors
+
+#newitem
+#name "generic robe"
+#gameid -1
+#armor
+#basechance 2
+#eliteversion "dark belt"
+#eliteversion "light belt"
+#eliteversion "dark robe"
+#eliteversion "light robe"
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#name "dark belt"
+#gameid -1
+#sprite /graphics/blank_64x64.png
+#recolormask /graphics/crustacean/crabman/armor/robes/priestrobe_recolormask1.png
+#eliteversion "dark robe"
+#eliteversion "both dark"
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#name "light belt"
+#gameid -1
+#sprite /graphics/blank_64x64.png
+#recolormask /graphics/crustacean/crabman/armor/robes/priestrobe_recolormask2.png
+#eliteversion "light robe"
+#eliteversion "both light"
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#name "dark robe"
+#gameid -1
+#sprite /graphics/blank_64x64.png
+#recolormask /graphics/crustacean/crabman/armor/robes/priestrobe_recolormask3.png
+#eliteversion "dark belt"
+#eliteversion "both dark"
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#name "light robe"
+#gameid -1
+#sprite /graphics/blank_64x64.png
+#recolormask /graphics/crustacean/crabman/armor/robes/priestrobe_recolormask4.png
+#eliteversion "light belt"
+#eliteversion "both light"
+#armor
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#name "both dark"
+#gameid -1
+#sprite /graphics/blank_64x64.png
+#recolormask /graphics/crustacean/crabman/armor/robes/priestrobe_recolormask5.png
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#name "both light"
+#gameid -1
+#sprite /graphics/blank_64x64.png
+#recolormask /graphics/crustacean/crabman/armor/robes/priestrobe_recolormask6.png
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem

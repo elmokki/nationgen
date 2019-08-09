@@ -1,4 +1,4 @@
-﻿--- #new initializes both armors and weapons
+--- #new initializes both armors and weapons
 --- #armor will indicate that the item is armor
 --- Use exact syntax you'd use for dom3 except for #newweapon, #newarmor and #end
 --- Remember #type for armor.
@@ -1690,6 +1690,80 @@
 #command "#blunt"
 #command "#armorpiercing"
 #command "#norepel"
+#end
+
+-- Crustacean custom items (mostly non-specific non-ferrous metal stuff)
+
+#new customarmor 
+#name metalscale_cuirass
+#armor
+#command "#type 5"
+#command "#prot 10"
+#command "#def -1"
+#command "#enc 1"
+#command "#rcost 8"
+#command "#name 'Metal Scale Cuirass'"
+#end
+
+#new customarmor 
+#name metalscale_hauberk
+#armor
+#command "#type 5"
+#command "#prot 13"
+#command "#def -1"
+#command "#enc 2"
+#command "#rcost 11"
+#command "#name 'Metal Scale Hauberk'"
+#end
+
+#new customarmor 
+#name goldenplate
+#armor
+#command "#type 5"
+#command "#prot 20"
+#command "#def -2"
+#command "#enc 3"
+#command "#rcost 30"
+#command "#name 'Golden Plate Mail'"
+#command "#magic"
+#end
+
+#new customweapon
+#name "metaltrident"
+#command "#natt 1"
+#command "#dmg 7"
+#command "#def +1"
+#command "#len 3"
+#command "#rcost 3"
+#command "#name 'Metal Trident'"
+#command "#pierce"
+#command "#twohanded"
+#end
+
+#new customweapon
+#name "metalhalberd"
+#command "#natt 1"
+#command "#dmg 10"
+#command "#att -1"
+#command "#def +1"
+#command "#len 3"
+#command "#rcost 5"
+#command "#name 'Metal Halberd'"
+#command "#slash"
+#command "#pierce"
+#command "#twohanded"
+#end
+
+#new customweapon
+#name "metalstaff"
+#command "#natt 1"
+#command "#dmg 5"
+#command "#def +2"
+#command "#len 3"
+#command "#rcost 2"
+#command "#name 'Metal Staff'"
+#command "#blunt"
+#command "#twohanded"
 #end
 
 -- Zotz custom items
