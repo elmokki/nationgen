@@ -1,0 +1,139 @@
+-- Sharkskin armor
+
+#newitem
+#name "sharkskin_armor"
+#gameid 151
+#sprite /graphics/crustacean/crabman/armor/sharkskin.png
+#recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
+#armor
+#theme "primitive"
+#enditem
+
+
+--- Bronze Scale
+
+#newitem
+#name "bronze_scale_cuirass"
+#gameid 142
+#sprite /graphics/crustacean/crabman/armor/bronzescale_cuirass.png
+#recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#name "bronze_scale_hauberk"
+#gameid 136
+#sprite /graphics/crustacean/crabman/armor/bronzescale_hauberk.png
+#recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#name "bronze_scale_full"
+#gameid bronzescale_full
+#sprite /graphics/crustacean/crabman/armor/bronzescale_full.png
+#recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
+#armor 
+#theme "bronze"
+#enditem
+
+
+--- Iron Scale
+
+#newitem
+#name "scale_cuirass"
+#gameid metalscale_cuirass
+#sprite /graphics/crustacean/crabman/armor/scale_cuirass.png
+#recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
+#armor
+#theme "advanced"
+#enditem
+
+#newitem
+#name "scale_hauberk"
+#gameid metalscale_hauberk
+#sprite /graphics/crustacean/crabman/armor/scale_hauberk.png
+#recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
+#armor
+#theme "advanced"
+#enditem
+
+#newitem
+#name "scale_full"
+#gameid 229
+#sprite /graphics/crustacean/crabman/armor/scale_full.png
+#recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
+#armor
+#theme "advanced"
+#enditem
+
+
+--- Bronze Plate
+
+#newitem
+#name "bronze_plate_cuirass"
+#gameid 100
+#basechance 0.5
+#sprite /graphics/crustacean/crabman/armor/bronzeplate_cuirass.png
+#recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#name "bronze_plate_hauberk"
+#gameid 101
+#basechance 0.5
+#sprite /graphics/crustacean/crabman/armor/bronzeplate_hauberk.png
+#recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
+#armor
+#theme "bronze"
+#enditem
+
+
+--- Golden armor
+
+#newitem
+#name "gold_scale"
+#gameid 196
+#sprite /graphics/crustacean/crabman/armor/gold_scale.png
+#recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
+#armor
+#theme "bronze"
+#theme "elite"
+#enditem
+
+#newitem
+#name "golden_armor"
+#gameid goldenplate
+#sprite /graphics/crustacean/crabman/armor/gold_plate.png
+#recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
+#armor
+#theme "bronze"
+#theme "elite"
+#enditem
+
+
+--- Meteorite Plate
+
+#newitem
+#name "meteorite_cuirass"
+#gameid 210
+#sprite /graphics/crustacean/crabman/armor/plate_cuirass.png
+#recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
+#armor
+#theme "advanced"
+#theme "elite"
+#enditem
+
+#newitem
+#name "meteorite_armor"
+#gameid 53
+#sprite /graphics/crustacean/crabman/armor/plate_hauberk.png
+#recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
+#armor
+#theme "advanced"
+#theme "elite"
+#enditem
