@@ -1,0 +1,182 @@
+--- Unarmored
+
+#newitem
+#name "starkers"
+#gameid -1
+#needs shirt noshirt
+#armor
+#basechance 0.5
+#theme "primitive"
+#tag "tier 1"
+#enditem
+
+#newitem
+#name "loincloth"
+#gameid -1
+#needs shirt loincloth
+#armor
+#basechance 1
+#theme "primitive"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+--- Furs
+
+#newitem
+#name "tight furs"
+#gameid 44
+#sprite /graphics/cynocephalian/armor/furs.png
+#needs shirt noshirt
+#armor
+#basechance 1
+#theme "primitive"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#name "bulky furs"
+#gameid 44
+#sprite /graphics/cynocephalian/armor/furs2.png
+#needs shirt noshirt
+#armor
+#basechance 1
+#theme "primitive"
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#name "fur toga"
+#gameid 44
+#sprite /graphics/cynocephalian/armor/robes/furs_shaman.png
+#tag "eliteversion 'fur toga - bones'"
+#needs shirt noshirt
+#armor
+#basechance 1
+#theme "primitive"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name "fur toga"
+#gameid 44
+#sprite /graphics/cynocephalian/armor/robes/furs_shaman.png
+#tag "eliteversion 'fur toga - beads'"
+#needs shirt noshirt
+#armor
+#basechance 1
+#theme "primitive"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name "fur toga - bones"
+#gameid 44
+#sprite /graphics/cynocephalian/armor/robes/furs_shaman_bones.png
+#needs shirt noshirt
+#armor
+#basechance 1
+#theme "primitive"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name "fur toga - beads"
+#gameid 44
+#sprite /graphics/cynocephalian/armor/robes/furs_shaman_beads.png
+#recolormask /graphics/cynocephalian/armor/robes/furs_shaman_beads_recolormask.png
+#needs shirt noshirt
+#armor
+#basechance 1
+#theme "primitive"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name "fur robe"
+#gameid 44
+#sprite /graphics/cynocephalian/armor/robes/furs_endiku_plain.png
+#tag "eliteversion 'fur robe - fancy'"
+#needs shirt noshirt
+#armor
+#basechance 1
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#name "fur halfrobe"
+#gameid 44
+#sprite /graphics/cynocephalian/armor/robes/furs_endiku_halfplain.png
+#tag "eliteversion 'fur halfrobe - gaudy'"
+#needs shirt noshirt
+#armor
+#basechance 1
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#name "fur halfrobe - gaudy"
+#gameid 44
+#sprite /graphics/cynocephalian/armor/robes/furs_endiku_halfrobe.png
+#recolormask /graphics/cynocephalian/armor/robes/furs_endiku_recolormask.png
+#needs shirt noshirt
+#armor
+#basechance 1
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name "fur robe - fancy"
+#gameid 44
+#sprite /graphics/cynocephalian/armor/robes/furs_endiku_fancy.png
+#tag "eliteversion 'fur robe - gaudy'"
+#needs shirt noshirt
+#armor
+#basechance 1
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name "fur robe - gaudy"
+#gameid 44
+#sprite /graphics/cynocephalian/armor/robes/furs_endiku_robe.png
+#recolormask /graphics/cynocephalian/armor/robes/furs_endiku_recolormask.png
+#needs shirt noshirt
+#armor
+#basechance 1
+#tag "tier 3"
+#enditem
+
+-- Advanced armor
+
+#newitem
+#name "leather cuirass"
+#gameid 5
+#sprite /graphics/cynocephalian/armor/leather2_cuirass.png
+#tag "eliteversion 'leather hauberk'"
+#armor
+#basechance 0.2
+#theme "advanced"
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name "leather hauberk"
+#gameid 10
+#sprite /graphics/cynocephalian/armor/leather2_hauberk3.png
+#needs shirt noshirt
+#armor
+#basechance 0.1
+#theme "advanced"
+#tag "tier 2"
+#tag "tier 3"
+#enditem

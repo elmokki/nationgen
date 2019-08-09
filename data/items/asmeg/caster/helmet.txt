@@ -1,0 +1,46 @@
+
+--- Caster hats
+
+
+
+
+#newitem
+#id greenthing
+#gameid -1
+#sprite /graphics/helmet/caster/green.png
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#id wizardhat1
+#gameid -1
+#sprite /graphics/helmet/caster/wizardhat1.png
+#recolormask /graphics/helmet/caster/wizardhat1_recolormask.png
+#armor
+#tag "tier 1"
+#enditem
+
+
+
+
+#newitem
+#id ironcap
+#gameid 20
+#sprite /graphics/vanir/helmet/ironcap.png
+#armor
+#tag "tier 1"
+#eliteversion goldencap
+#eliteversion halfhelmet
+#offsety 3
+#enditem
+
+#newitem
+#id halfhelmet
+#gameid 118
+#sprite /graphics/vanir/helmet/halfhelmet.png
+#armor
+#tag "tier 1"
+#eliteversion goldenhelmet
+#offsety 3
+#enditem
