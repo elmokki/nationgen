@@ -151,21 +151,58 @@
 #end
 
 #new
-#name "scry 1"
+#name "scry 1/6"
 #type scry
 #command "#scry 1"
+#command "#scryrange 6"
 #sitepath 4 80
 #basechance 0
 #chanceinc magic astral 0.5
+#chanceinc magic earth 0.1
 #end
 
 #new
-#name "scry 2"
+#name "scry 2/3"
 #type scry
 #command "#scry 2"
+#command "#scryrange 3"
+#sitepath 4 80
+#basechance 0
+#chanceinc magic astral 0.25
+#chanceinc magic earth 0.05
+#end
+
+#new
+#name "scry 1/9"
+#type scry
+#command "#scry 1"
+#command "#scryrange 9"
+#sitepath 4 80
+#basechance 0
+#chanceinc magic astral 0.25
+#chanceinc magic earth 0.05
+#end
+
+#new
+#name "scry 2/6"
+#type scry
+#command "#scry 2"
+#command "#scryrange 6"
 #sitepath 4 80
 #basechance 0
 #chanceinc magic astral 0.125
+#chanceinc magic earth 0.025
+#end
+
+#new
+#name "scry 1/12"
+#type scry
+#command "#scry 1"
+#command "#scryrange 12"
+#sitepath 4 80
+#basechance 0
+#chanceinc magic astral 0.125
+#chanceinc magic earth 0.025
 #end
 
 #new
