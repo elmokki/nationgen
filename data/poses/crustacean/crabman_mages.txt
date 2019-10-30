@@ -90,11 +90,37 @@
 
 
 #newpose
-#name "crab priests"
+#name "crab priests T1"
 #role "priest"
+
+#tier 1
+#notfortier 2
+#notfortier 3
 
 #command "#mr +1"
 #command "#researchbonus -3"
+
+#renderorder "shadow basesprite armor armor-overlay weapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/crustacean/crabman/bases.txt
+#load shadow /data/items/crustacean/crabman/shadow.txt
+#load hands /data/items/crustacean/crabman/hands.txt
+
+#load armor /data/items/crustacean/crabman/robes_priest1.txt
+
+#load weapon /data/items/crustacean/crabman/weapon_mage.txt
+
+#dontvaryhat
+#weakmagicpatterns
+
+#endpose
+
+#newpose
+#name "crab priests T1-3"
+#role "priest"
+
+#command "#mr +2"
+#command "#researchbonus -2"
 
 #renderorder "shadow basesprite armor armor-overlay weapon offhandw hands helmet offhanda"
 
@@ -102,7 +128,7 @@
 #load shadow /data/items/crustacean/crabman/shadow.txt
 #load hands /data/items/crustacean/crabman/hands.txt
 
-#load armor /data/items/crustacean/crabman/robes_priest.txt
+#load armor /data/items/crustacean/crabman/robes_priest2.txt
 #load armor-overlay /data/items/crustacean/crabman/robes_priest_overlay.txt
 
 #load weapon /data/items/crustacean/crabman/weapon_mage.txt
