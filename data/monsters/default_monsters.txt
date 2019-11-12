@@ -77,7 +77,7 @@
 #new
 #name "elephant_humanbred_2"
 #basechance 0
-#chanceinc primaryrace "Abysian" 0.25
+#chanceinc primaryrace Abysian 0.25
 #chanceinc era 3 3.75
 #chanceinc racetheme advanced *2
 #chanceinc racetheme primal *0
@@ -99,6 +99,16 @@
 #chanceinc primaryrace Naga 2
 #command "#copystats 1147"
 #command "#spr1 ./graphics/monsters/elephant_naga.png"
+#command "#spr2 shift"
+#end
+
+#new
+#name "elephant_bakemono-sho"
+#basechance 0
+#chanceinc primaryrace Bakemono 2
+#chanceinc racetheme large *0
+#command "#copystats 150"
+#command "#spr1 ./graphics/monsters/elephant_bakemono.png"
 #command "#spr2 shift"
 #end
 
@@ -295,6 +305,17 @@
 #chanceinc primaryrace vaetti 10
 #command "#copystats 1085"
 #command "#copyspr 1085"
+#caponlychance 0.5
+#end
+
+#new
+#name "o-bakemono"
+#basechance 0
+#chanceinc racetag oriental 1
+#chanceinc primaryrace bakemono 4
+#chanceinc secondaryrace ogre *0
+#command "#copystats 1399"
+#command "#copyspr 1399"
 #caponlychance 0.5
 #end
 

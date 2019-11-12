@@ -1,0 +1,140 @@
+-- Generic theme with high diversity and low cohesion
+#newtheme
+#type techlevel
+#name default
+#basechance 4
+#endtheme
+
+-- Demographic themes (mandatory)
+
+-- All small bakemono
+#newtheme
+#type demographic
+#name small
+#basechance 1
+#themeinc theme small_elite *2
+#themeinc theme small_normal *1
+#themeinc theme big_elite *0.001
+#themeinc theme big_normal *0.001
+#endtheme
+
+-- Mixed bakemono (few big)
+#newtheme
+#type demographic
+#name mixed_smaller
+#basechance 4
+#themeinc theme small_elite *0.5
+#themeinc theme small_normal *2
+#themeinc theme big_elite *1
+#themeinc theme big_normal *0.001
+#endtheme
+
+-- Mixed bakemono
+#newtheme
+#type demographic
+#name mixed
+#basechance 2
+#themeinc theme small_elite *0.25
+#themeinc theme small_normal *2
+#themeinc theme big_elite *2
+#themeinc theme big_normal *1
+#endtheme
+
+-- Mixed bakemono (few small)
+#newtheme
+#type demographic
+#name mixed_larger
+#basechance 2
+#themeinc theme small_elite *0.001
+#themeinc theme small_normal *1
+#themeinc theme big_elite *2
+#themeinc theme big_normal *1
+#endtheme
+
+-- All big bakemono 
+#newtheme
+#type demographic
+#name large
+#basechance 1
+#themeinc theme small_elite *0.001
+#themeinc theme small_normal *0.001
+#themeinc theme big_elite *2
+#themeinc theme big_normal *1
+#endtheme
+
+
+-- Dimorphism themes (mandatory)
+
+-- Small-sho, Dai-medium
+#newtheme
+#type dimorphism
+#name small_medium
+#basechance 1
+#themeinc theme small-sho *1
+#themeinc theme medium-sho *0
+#themeinc theme dai-medium *1
+#themeinc theme dai-large *0
+#endtheme
+
+-- Small-sho, Dai-large
+#newtheme
+#type dimorphism
+#name small_large
+#basechance 1
+#themeinc theme small-sho *1
+#themeinc theme medium-sho *0
+#themeinc theme dai-medium *0
+#themeinc theme dai-large *1
+#endtheme
+
+-- Medium-sho, Dai-large
+#newtheme
+#type dimorphism
+#name medium_large
+#basechance 1
+#themeinc theme small-sho *0
+#themeinc theme medium-sho *1
+#themeinc theme dai-medium *0
+#themeinc theme dai-large *1
+#endtheme
+
+-- Medium-sho, Dai-medium
+#newtheme
+#type dimorphism
+#name medium_medium
+#basechance 1
+#themeinc theme small-sho *0
+#themeinc theme medium-sho *1
+#themeinc theme dai-medium *1
+#themeinc theme dai-large *0
+#endtheme
+
+
+-- Social themes
+
+-- Weights: EA 0.5, MA 0.5, LA 0.5
+#newtheme
+#type social
+#name slaver
+#basechance 0.05
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#themeinc theme slave *20
+#themeinc theme free *0.5
+#themeinc racename caveman *5
+#themeinc racename primate *5
+#themeinc racename "Feudal human" *5
+#themeinc racename hoburg *5
+#themeinc racename caelian *0.1
+#themeinc racename van *0.1
+#themeinc racename sidhe *0.1
+#themeinc racename tengu *0.1
+#secondaryracedefinition "#freetemplatefilter slavetemplate slave"
+#racedefinition "#secondaryracetroopmod 100"
+#racedefinition "#secondaryracemagemod -100"
+#endtheme
