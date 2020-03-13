@@ -474,3 +474,54 @@
 #chanceinc magic not death *0
 #chanceinc spells "Communion Choruses - nature" *0
 #end
+
+- Middle Eastern spells
+------------------------
+#new
+#name "Desert demons - blood"
+#spell "Summon Se'irim"
+#spell "Summon Shedim"
+#basechance 0
+#chanceinc nationtag civilized 0.5
+#chanceinc hasthemetheme civilized 0.5
+#chanceinc random 0.2 *0
+#chanceinc anymagic not blood *0
+#end
+
+#new
+#name "Desert demons - nature"
+#spell "Summon Mazzikim"
+#spell "Summon Lilot"
+#basechance 0
+#chanceinc nationtag civilized 0.5
+#chanceinc hasthemetheme civilized 0.5
+#chanceinc random 0.2 *0
+#chanceinc anymagic not nature *0
+#end
+
+#new
+#name "Hebrew angels"
+#spell "Call Malakh"
+#spell "Call Hashmal"
+#spell "Call Arel"
+#spell "Call Ophan"
+#spell "Call Merkavah"
+#basechance 0
+#chanceinc nationtag civilized 0.5
+#chanceinc hasthemetheme civilized 0.5
+#chanceinc random 0.2 *0
+#chanceinc anymagic not astral *0
+#end
+
+#new
+#name "Grigori"
+#spell "Release Lord of Civilization"
+#basechance 0
+#chanceinc nationtag civilized 0.5
+#chanceinc hasthemetheme civilized 0.5
+#chanceinc era 3 AND random 0.66 *0
+#chanceinc era 2 AND random 0.33 *0
+#chanceinc random 0.2 *0
+#chanceinc magic not blood *0
+#end
+
