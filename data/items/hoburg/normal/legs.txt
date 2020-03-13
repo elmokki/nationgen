@@ -8,6 +8,7 @@
 #theme "primitive"
 #theme "naked"
 #theme "central"
+#theme "civilized"
 #theme "abysian"
 #needs shirt noshirt
 #basechance 0.01
@@ -19,6 +20,13 @@
 #gameid -1
 #sprite /graphics/hoburg/legs/codpiece.png
 #theme "abysian"
+#enditem
+
+#newitem
+#id tunic
+#gameid -1
+#theme "civilized"
+#needstype shirt tunic
 #enditem
 
 #newitem
