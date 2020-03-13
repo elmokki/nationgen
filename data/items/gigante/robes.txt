@@ -1,0 +1,184 @@
+-- Tier 1 robes: no trim
+#newitem
+#id black-T1
+#gameid 158
+#sprite /graphics/gigante/armor/robes/himation_black.png
+#armor
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id grey-T1
+#gameid 158
+#sprite /graphics/gigante/armor/robes/himation_grey.png
+#armor
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id white-T1
+#gameid 158
+#basechance 5
+#sprite /graphics/gigante/armor/robes/himation_white.png
+#armor
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id dark-T1
+#gameid 158
+#sprite /graphics/gigante/armor/robes/himation_black.png
+#recolormask self
+#armor
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id medium-T1
+#gameid 158
+#sprite /graphics/gigante/armor/robes/himation_grey.png
+#recolormask self
+#armor
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id light-T1
+#gameid 158
+#sprite /graphics/gigante/armor/robes/himation_white.png
+#recolormask self
+#armor
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+
+-- Tier 2-3: various fancy trims
+
+#newitem
+#id black
+#gameid 158
+#sprite /graphics/gigante/armor/robes/himation_black.png
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#needstype helmet light
+#enditem
+
+#newitem
+#id grey
+#gameid 158
+#sprite /graphics/gigante/armor/robes/himation_grey.png
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id white
+#gameid 158
+#basechance 0.5
+#sprite /graphics/gigante/armor/robes/himation_white.png
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#needstype helmet dark
+#enditem
+
+#newitem
+#id dark
+#gameid 158
+#sprite /graphics/gigante/armor/robes/himation_black.png
+#recolormask self
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#needstype helmet light
+#enditem
+
+#newitem
+#id medium
+#gameid 158
+#sprite /graphics/gigante/armor/robes/himation_grey.png
+#recolormask self
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id light
+#gameid 158
+#sprite /graphics/gigante/armor/robes/himation_white.png
+#recolormask self
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#needstype helmet dark
+#enditem
+
+-- Tier 3 variant twotone robes
+#newitem
+#id lightdark
+#gameid 158
+#sprite /graphics/gigante/armor/robes/himation_light_dark.png
+#recolormask self
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#needs helmet twotone
+#enditem
+
+#newitem
+#id mediumlight
+#gameid 158
+#sprite /graphics/gigante/armor/robes/himation_medium_light.png
+#recolormask self
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#needs helmet twotone
+#enditem
+
+#newitem
+#id mediumdark
+#gameid 158
+#sprite /graphics/gigante/armor/robes/himation_medium_dark.png
+#recolormask self
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#needs helmet twotone
+#enditem
+
+#newitem
+#id darklight
+#gameid 158
+#sprite /graphics/gigante/armor/robes/himation_dark_light.png
+#recolormask self
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#needs helmet twotone
+#enditem
