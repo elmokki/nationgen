@@ -6,6 +6,7 @@
 #sprite /graphics/weapon/standard/spear.png
 #offsetx -5
 #theme "wood"
+#theme "boreal"
 #enditem
 
 #newitem
@@ -42,6 +43,42 @@
 #theme "inland"
 #enditem
 
+-- Bone weapons
+
+#newitem
+#id short_bone_trident
+#gameid shorttrident_bone
+#sprite /graphics/ichtyid/weapon/bone_trident.png
+#tag "prefix trident"
+#basechance 0.75
+#theme "bone"
+#theme "primitive"
+#theme "boreal"
+#theme "formationfighter"
+#enditem
+
+#newitem
+#id bone_trident
+#gameid 670
+#sprite /graphics/ichtyid/weapon/bone_trident.png
+#tag "prefix trident"
+#basechance 0.75
+#theme "bone"
+#theme "primitive"
+#theme "boreal"
+#theme "formationfighter"
+#enditem
+
+#newitem
+#id bone_glaive
+#gameid glaive_bone_mundane
+#sprite /graphics/ichtyid/weapon/bone_glaive.png
+#basechance 0.75
+#theme "bone"
+#theme "primitive"
+#theme "boreal"
+#enditem
+
 -- 1h
 
 #newitem
@@ -73,6 +110,15 @@
 #gameid 674
 #sprite graphics/ichtyid/weapon/bronze_dagger.png
 #theme "bronze"
+#enditem
+
+#newitem
+#id dagger_stone
+#gameid 671
+#sprite graphics/ichtyid/weapon/stone_dagger.png
+#theme "stone"
+#theme "primitive"
+#theme "boreal"
 #enditem
 
 #newitem

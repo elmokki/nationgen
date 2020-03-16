@@ -925,7 +925,7 @@
 #command "#blunt"
 #end
 
---- Short version of Bone Tridents
+--- Short version of Bone Tridents and mundane Bone Glaives
 
 #new customweapon
 #name "shorttrident_bone"
@@ -937,6 +937,22 @@
 #command "#natt 1"
 #command "#pierce"
 #end
+
+#new customweapon
+#name "glaive_bone_mundane"
+#command "#name 'Short Bone Trident'"
+#command "#rcost 3"
+#command "#dmg 9"
+#command "#att -1"
+#command "#def 1"
+#command "#len 3"
+#command "#name 'Bone Glaive'"
+#command "#natt 1"
+#command "#twohanded"
+#command "#pierce"
+#command "#slash"
+#end
+
 
 --- Weird missile weapons for lamias and suchlike
 #new customweapon
