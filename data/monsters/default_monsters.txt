@@ -202,6 +202,16 @@
 #end
 
 #new
+#name "mammoth_jotun"
+#basechance 0
+#chanceinc primaryrace jotun 4
+#command "#copystats 419"
+#command "#spr1 ./graphics/monsters/mammoth_jotun.png"
+#command "#spr2 shift"
+#command "#weapon 437" -- Longspear
+#end
+
+#new
 #name "hydra"
 #basechance 0.25
 #chanceinc primaryrace lizard 9.75
