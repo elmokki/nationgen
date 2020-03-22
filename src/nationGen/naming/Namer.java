@@ -26,18 +26,10 @@ public class Namer {
 		
 		// Get paths
 		MagicPathInts paths = new MagicPathInts();
-		for(Unit u : n.generateComList())
-		{
-			if(u.tags.containsName("schoolmage"))
-			{
-				MagicPathInts picks = u.getMagicPicks(true);
-				for(MagicPath path : MagicPath.values())
-				{
-					if(paths.get(path) < picks.get(path))
-						paths.set(path, picks.get(path));
-				}
-			}
-		}
+		n.selectCommanders()
+			.filter(u -> u.tags.containsName("schoolmage"))
+			.forEach(u -> paths.maxWith(u.getMagicPicks(true)));
+		
 		paths.set(MagicPath.HOLY, 0);
 		int highest = paths.getHighestAmount();
 		

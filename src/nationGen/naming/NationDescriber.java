@@ -116,8 +116,8 @@ public class NationDescriber {
 		for(String role : roles)
 		{
 			
-			List<Unit> units = n.generateUnitList(role);
-			if(units == null || units.size() == 0)
+			List<Unit> units = n.listTroops(role);
+			if(units.isEmpty())
 				continue;
 				
 				
@@ -164,7 +164,7 @@ public class NationDescriber {
 		
 		for(String role : roles)
 		{
-			List<Unit> units = n.generateComList(role);
+			List<Unit> units = n.listCommanders(role);
 	
 			dr.calibrate(units);
 			for(Unit u : units)

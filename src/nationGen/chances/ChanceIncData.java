@@ -7,7 +7,7 @@ import nationGen.magic.MagicPathInts;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
-import java.util.List;
+import java.util.Set;
 
 
 /**
@@ -23,5 +23,5 @@ public class ChanceIncData {
 	public int diversity;
 	public int[] at;
 	public MagicPathInts nonrandom_paths;
-	public List<MagicPath> atHighest;
+	public Set<MagicPath> atHighest;
 }

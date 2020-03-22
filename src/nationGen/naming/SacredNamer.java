@@ -10,6 +10,7 @@ import nationGen.units.Unit;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 
@@ -61,82 +62,35 @@ public class SacredNamer {
 
 		this.r = new Random(n.random.nextInt());
 		
-		
-
-
-		
-		List<Unit> toName = n.generateUnitList("sacred");
-		toName.addAll(n.generateUnitList("montagsacreds"));
-		for(Unit u : n.generateTroopList())
-			if(u.tags.containsName("elite"))
-			{
-				toName.add(u);
-			}
-		
-		for(Unit u : n.generateUnitList("montagtroops"))
-			if(u.tags.containsName("elite"))
-			{
-				toName.add(u);
-			}
-		
+		n.selectTroops("sacred").forEach(u -> name(u, n));
+		n.selectTroops("montagsacreds").forEach(u -> name(u, n));
+		n.selectTroops().filter(u -> u.tags.containsName("elite")).forEach(u -> name(u, n));
+		n.selectTroops("montagtroops").filter(u -> u.tags.containsName("elite")).forEach(u -> name(u, n));
+	}
+	
+	private void name(Unit u, Nation n) {
 		// #forcedname
-		List<Unit> forcednames = new ArrayList<Unit>();
-		for(Unit u : toName)
-			if(Generic.getAllUnitTags(u).containsName("forcedname"))
-				forcednames.add(u);
-		toName.removeAll(forcednames);
-		for(Unit u : forcednames)
-		{
+		if(Generic.getAllUnitTags(u).containsName("forcedname")) {
 			u.name.setType(Generic.getAllUnitTags(u).getString("forcedname").orElseThrow());
-			Unit com = getMatchingCom(u, n);
-			if(com != null) {
-				Generic.getAllUnitTags(com).getString("forcedname").ifPresent(com.name::setType);
-			}
-		}
-		
-		// Name units
-		for(Unit u : toName)
-		{
-
-			
-
+			getMatchingCom(u, n).ifPresent(com -> Generic.getAllUnitTags(com).getString("forcedname").ifPresent(com.name::setType));
+		} else {
 			u.name = nameSacred(u, n);
-			Unit com = getMatchingCom(u, n);
-			if(com != null)
-			{
-
-
+			getMatchingCom(u, n).ifPresent(com -> {
 				NamePart part = chandler.handleChanceIncs(u, combases).getRandom(n.random);
 				com.name = u.name.getCopy();
 				com.name.type = part.getCopy();
-			}
-		
-			
+			});
 		}
-		
-		
-
 	}
 	
-	private Unit getMatchingCom(Unit u, Nation n)
+	private Optional<Unit> getMatchingCom(Unit u, Nation n)
 	{
-		
-		for(Unit com : n.generateComList("commander"))
-		{
-			
-			
-			boolean holy = isSacred(u) && isSacred(com);
-			boolean elite = isElite(u) && isElite(com);
-	
-			
-			if((holy || elite) && com.getSlot("weapon").id.equals(u.getSlot("weapon").id) && com.getSlot("armor").id.equals(u.getSlot("armor").id))
-			{
-				return com;
-			}
-		}
-		
-
-		return null;
+		return n.selectCommanders("commander")
+			.filter(com -> isSacred(u) && isSacred(com)) // holy
+			.filter(com -> isElite(u) && isElite(com)) // elite
+			.filter(com -> com.getSlot("weapon").id.equals(u.getSlot("weapon").id))
+			.filter(com -> com.getSlot("armor").id.equals(u.getSlot("armor").id))
+			.findFirst();
 	}
 	
 	private Name nameSacred(Unit u, Nation n)
@@ -153,12 +107,8 @@ public class SacredNamer {
 		{
 			if(num == 1 || num == -1) // Part
 			{
-
-
 				
 				NamePart part = chandler.handleChanceIncs(u, parts).getRandom(n.random);
-
-
 				
 				boolean suffix = r.nextBoolean();
 				if((suffix && !part.tags.containsName("notsuffix")) || part.tags.containsName("notprefix"))

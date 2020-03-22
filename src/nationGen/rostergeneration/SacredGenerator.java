@@ -24,27 +24,22 @@ import java.util.*;
 import java.util.stream.Stream;
 
 public class SacredGenerator extends TroopGenerator {
-
+	
+	private static final List<String> SLOTS =
+		List.of("armor", "weapon", "offhand", "bonusweapon", "helmet", "cloakb", "hair");
+		
 	private ItemSet usedItems = new ItemSet();
 	
 	public SacredGenerator(NationGen g, Nation n, NationGenAssets assets) {
 		super(g, n, assets, "sacgen");
 		
-		String[] slots_array = {"armor", "weapon", "offhand", "bonusweapon", "helmet", "cloakb", "hair"};
-		for(Unit u : this.nation.generateTroopList())
-		{
-			for(String slot : slots_array)
-			{
-				Item i = u.getSlot(slot);
-				if(i == null)
-					continue;
-				
-				if(!usedItems.contains(i))
+		this.nation.selectTroops().forEach(u -> SLOTS.forEach(slot -> {
+			Item i = u.getSlot(slot);
+			if(i != null) {
+				if (!usedItems.contains(i))
 					usedItems.add(i);
 			}
-		}
-		
-		
+		}));
 	}
 	
 	private void addEpicness(Unit u, boolean sacred, int power)
@@ -105,9 +100,9 @@ public class SacredGenerator extends TroopGenerator {
 		// At 14 morale, 12.5% chance
 		// At 12 morale, 18.75% chance
 		// At 10 morale, 25% chance
-		if(random.nextDouble() < (1 - (origmor + morbonus - 10)/8) / 4)
+		if(random.nextDouble() < (1 - (origmor + morbonus - 10)/8.0) / 4.0)
 			morbonus++;
-		if(random.nextDouble() < (1 - (origmor + morbonus - 10)/8) / 4)
+		if(random.nextDouble() < (1 - (origmor + morbonus - 10)/8.0) / 4.0)
 			morbonus++;
 		
 		// Morale above 16 gets halved, ie 18 -> 17, 20 -> 18 and so on.
@@ -118,7 +113,7 @@ public class SacredGenerator extends TroopGenerator {
 
 
 		// Filters and weapons
-		List<Filter> filters = new ArrayList<Filter>();
+		List<Filter> filters;
 		if(sacred)
 		{
 			String[] defaults = {"default_sacredfilters", "default_sacredfilters_shapeshift"};
@@ -253,7 +248,7 @@ public class SacredGenerator extends TroopGenerator {
 		while(powerups > 0)
 		{
 			// Generate probabilitites for powerups
-			List<Filter> ups = new ArrayList<Filter>();
+			List<Filter> ups = new ArrayList<>();
 			for(int j = 0; j < posup.length; j++)
 			{
 				String s = posup[j];
@@ -471,24 +466,18 @@ public class SacredGenerator extends TroopGenerator {
 	{
 
 		
-		Race race = nation.races.get(0);
-		boolean foreigners = false;
-		for(Unit u : nation.comlists.get("mages"))
-		{
-			if(u.race != race)
-				foreigners = true;
-		}
-		for(Unit u : nation.generateTroopList())
-		{
-			if(u.race != race)
-				foreigners = true;
-		}
+		Race primaryRace = nation.races.get(0);
+		boolean foreigners =
+			Stream.concat(
+				nation.comlists.get("mages").stream(),
+				nation.selectTroops()
+			).anyMatch(u -> u.race != primaryRace);
 
 		double bonussecchance = 1;
-		bonussecchance += race.tags.getDouble("secondaryracesacredmod").orElse(0D);
+		bonussecchance += primaryRace.tags.getDouble("secondaryracesacredmod").orElse(0D);
 		bonussecchance -= nation.races.get(1).tags.getDouble("primaryracesacredmod").orElse(0D);
 		
-		
+		Race race = primaryRace;
 		if(foreigners || random.nextDouble() < 0.05 * bonussecchance)
 		{
 	

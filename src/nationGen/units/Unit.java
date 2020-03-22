@@ -621,8 +621,6 @@ public class Unit {
 	
 	public String getLeaderLevel(String prefix)
 	{
-		List<String> levels = Generic.getLeadershipLevels();
-		
 		String level = "ok";
 		for(Command c : this.getCommands())
 		{
@@ -630,7 +628,7 @@ public class Unit {
 			if(c.command.endsWith("leader"))
 				lead = c.command.substring(1, c.command.indexOf(prefix + "leader"));
 			
-			if(levels.contains(lead))
+			if(Generic.LEADERSHIP_LEVELS.contains(lead))
 				level = lead;
 		}
 		
@@ -654,8 +652,6 @@ public class Unit {
 	
 	public boolean hasLeaderLevel(String prefix)
 	{
-		List<String> levels = Generic.getLeadershipLevels();
-		
 		String level = null;
 		for(Command c : this.getCommands())
 		{
@@ -663,7 +659,7 @@ public class Unit {
 			if(c.command.endsWith(prefix + "leader"))
 				lead = c.command.substring(1, c.command.indexOf(prefix + "leader"));
 			
-			if(levels.contains(lead))
+			if(Generic.LEADERSHIP_LEVELS.contains(lead))
 				level = lead;
 		}
 		
@@ -933,11 +929,15 @@ public class Unit {
 	{
 		String r = "infantry";
 		for(String role : pose.roles)
-			if(role.contains("ranged"))
+			if (role.contains("ranged")) {
 				r = "ranged";
+				break;
+			}
 		for(String role : pose.roles)
-			if(role.contains("mounted"))
+			if (role.contains("mounted")) {
 				r = "mounted";
+				break;
+			}
 		return r;
 	}
 	

@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 
 public class MageGenerator extends TroopGenerator {
@@ -924,18 +925,7 @@ public class MageGenerator extends TroopGenerator {
 	{
 		MagicPathInts picks = new MagicPathInts();
 		
-		for(Unit u : units)
-		{
-			MagicPathInts p = u.getMagicPicks(randoms);
-		
-
-			
-			for(MagicPath path : MagicPath.values())
-			{
-				if(picks.get(path) < p.get(path))
-					picks.set(path, p.get(path));
-			}
-		}
+		units.forEach(u -> picks.maxWith(u.getMagicPicks(randoms)));
 
 		return picks;
 	}
@@ -1934,14 +1924,10 @@ public class MageGenerator extends TroopGenerator {
 		if(f.tags.containsName("givetoall") && tier < 4 && tier > 0)
 			for(int i = 1; i <= 3; i++)
 			{
-				List<Unit> mages = getMagesOfTier(units, i);
-				mages.addAll(nation.generateUnitList("montagmage"));
-				for(Unit u : mages)
-				{
-					if(!u.appliedFilters.contains(f) && !f.tags.contains("notfortier", String.valueOf(i)))
-					{
-						u.appliedFilters.add(f);
-					}
+				if (!f.tags.contains("notfortier", String.valueOf(i))) {
+					Stream.concat(getMagesOfTier(units, i).stream(), nation.selectCommanders("montagmage"))
+							.filter(u -> !u.appliedFilters.contains(f))
+							.forEach(u -> u.appliedFilters.add(f));
 				}
 			}
 	}

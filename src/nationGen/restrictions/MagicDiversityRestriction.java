@@ -1,6 +1,7 @@
 package nationGen.restrictions;
 
 
+import nationGen.magic.MageGenerator;
 import nationGen.magic.MagicPath;
 import nationGen.magic.MagicPathInts;
 import nationGen.nation.Nation;
@@ -47,31 +48,10 @@ public class MagicDiversityRestriction extends DoubleTextBoxListRestriction<Rest
 			return true;
 		}
 		
-		List<Unit> tempmages = n.generateComList("mage");
-
-
+		List<Unit> tempmages = n.listCommanders("mage");
 		
-		MagicPathInts nonrandom_paths = new MagicPathInts();
-		for(Unit u : tempmages)
-		{
-			MagicPathInts picks = u.getMagicPicks(false);
-			for(MagicPath path : MagicPath.values())
-			{
-				if(nonrandom_paths.get(path) < picks.get(path))
-					nonrandom_paths.set(path, picks.get(path));
-			}
-		}
-		
-		MagicPathInts random_paths = new MagicPathInts();
-		for(Unit u : tempmages)
-		{
-			MagicPathInts picks = u.getMagicPicks(true);
-			for(MagicPath path : MagicPath.values())
-			{
-				if(random_paths.get(path) < picks.get(path))
-					random_paths.set(path, picks.get(path));
-			}
-		}
+		MagicPathInts nonrandom_paths = MageGenerator.getAllPicks(tempmages, false);
+		MagicPathInts random_paths = MageGenerator.getAllPicks(tempmages, true);
 		
 		
 		for(RestrictionMagicEntry res : possibleRaceNames)

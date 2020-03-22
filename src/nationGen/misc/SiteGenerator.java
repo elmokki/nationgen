@@ -33,33 +33,24 @@ public class SiteGenerator {
 		}
 
 		
-		List<Unit> origmages = n.generateComList("mage");
-		List<Unit> mages = new ArrayList<>();
-		for(Unit u : origmages)
-		{
-			if(u.caponly)	
-			{
-				mages.add(u);
-				stuff++;
-			}
-		}
-
+		List<Unit> mages = n.selectCommanders("mage")
+			.filter(u -> u.caponly)
+			.collect(Collectors.toList());
 		
-		List<Unit> otherTroops = new ArrayList<>();
-		List<Unit> otherComs = new ArrayList<>();
-		for(Unit u : n.generateComList())
-			if(u.caponly && !mages.contains(u))
-			{
-				otherComs.add(u);
-				stuff++;
-			}
-		for(Unit u : n.generateTroopList())
-			if(u.caponly)
-			{
-				otherTroops.add(u);
-				stuff++;
-			}
+		stuff += mages.size();
 		
+		List<Unit> otherComs = n.selectCommanders()
+			.filter(u -> u.caponly)
+			.filter(u -> !mages.contains(u))
+			.collect(Collectors.toList());
+		
+		stuff += otherComs.size();
+		
+		List<Unit> otherTroops = n.selectTroops()
+			.filter(u -> u.caponly)
+			.collect(Collectors.toList());
+		
+		stuff += otherTroops.size();
 
 		/*
 		for(ShapeChangeUnit su : n.specialmonsters)
@@ -77,9 +68,9 @@ public class SiteGenerator {
 		if(!f.name.equals("nothing"))
 			stuff++;
 		
-		int sites = (int)Math.ceil((double)stuff / 5);
-		if(sites < 4 && (sites * 5 - stuff) / 20 > random.nextDouble())
-			sites++;
+//		int sites = (int)Math.ceil((double)stuff / 5);
+//		if(sites < 4 && (sites * 5 - stuff) / 20 > random.nextDouble())
+//			sites++;
 		
 
 		while(stuff > 0)
@@ -239,12 +230,9 @@ public class SiteGenerator {
 		
 		MagicPathDoubles power = new MagicPathDoubles();
 		
-		List<Unit> list = n.generateComList();
-		for(Unit u : list)
-		{
-			if(u.tags.getValue("schoolmage").filter(a -> a.getInt() == 3).isPresent())
-			{
-				
+		n.selectCommanders()
+			.filter(u -> u.tags.getValue("schoolmage").filter(a -> a.getInt() == 3).isPresent())
+			.forEach(u -> {
 				MagicPathInts unitpower = null;
 				if(u.getMagicFilters().size() > 0)
 				{
@@ -271,8 +259,7 @@ public class SiteGenerator {
 					unitpower = u.getMagicPicks(); 
 				
 				power.addAll(unitpower);
-			}
-		}
+			});
 		
 
 			
