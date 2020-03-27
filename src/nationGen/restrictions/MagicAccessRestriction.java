@@ -2,10 +2,10 @@ package nationGen.restrictions;
 
 
 import com.elmokki.Generic;
+import nationGen.magic.MageGenerator;
 import nationGen.magic.MagicPath;
 import nationGen.magic.MagicPathInts;
 import nationGen.nation.Nation;
-import nationGen.units.Unit;
 
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
@@ -73,23 +73,10 @@ public class MagicAccessRestriction extends TwoListRestrictionWithComboBox<Strin
 
 	@Override
 	public boolean doesThisPass(Nation n) {
-		
-		List<Unit> tempmages = n.generateComList("mage");
-		
-	
 
 		boolean randoms = comboselection == null || comboselection.equals("True");
 
-		MagicPathInts nonrandom_paths = new MagicPathInts();
-		for(Unit u : tempmages)
-		{						
-			MagicPathInts picks = u.getMagicPicks(randoms);
-			for(MagicPath path : MagicPath.values())
-			{
-				if(nonrandom_paths.get(path) < picks.get(path))
-					nonrandom_paths.set(path, picks.get(path));
-			}
-		}
+		MagicPathInts nonrandom_paths = MageGenerator.getAllPicks(n.listCommanders("mage"), randoms);
 		
 		if(neededPaths.size() == 0)
 		{

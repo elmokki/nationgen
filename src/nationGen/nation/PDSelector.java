@@ -67,23 +67,24 @@ public class PDSelector {
 		if(rank > 2)
 			rank = 2;
 		
-		List<Unit> commanders = n.generateComList("commander");
+		List<Unit> commanders = n.listCommanders("commander");
 		
 		
 		// Chance to get a priest as potential commander for PD; ~75% of Dom5 nations have a caster (usually priest or mage-priest as PD rank 2)
 		// For now, there's a small chance to a T2 - and a very good chance to get a T1 - for rank 2, and much smaller chances a T1 for rank 1
 		if(!startarmy)
 		{
+			List<Unit> priests = n.listCommanders("priest");
 			double rand = r.nextDouble();
 			if(rank == 1 && rand < 0.05)
-				commanders.add(0, n.generateComList("priest").get(0));
-			else if(rank == 2 && rand < 0.15 && n.generateComList("priest").size() > 1)
-				commanders.add(1, n.generateComList("priest").get(1));
+				commanders.add(0, priests.get(0));
+			else if(rank == 2 && rand < 0.15 && priests.size() > 1)
+				commanders.add(1, priests.get(1));
 			else if(rank == 2 && rand < 0.75)
-				commanders.add(1, n.generateComList("priest").get(0));
+				commanders.add(1, priests.get(0));
 		}
 		
-		List<Unit> others = new ArrayList<Unit>();
+		List<Unit> others = new ArrayList<>();
 		if(startarmy)
 		{
 			others.add(getMilitia(1, 1, !startarmy));
@@ -113,13 +114,13 @@ public class PDSelector {
 			}
 		
 		
-		List<String> badprefixes = new ArrayList<String>();
+		List<String> badprefixes = new ArrayList<>();
 		badprefixes.add("no");
 		if(startarmy)
 			badprefixes.add("poor");
 		
 		// First pass at trying to find a suitable commander
-		List<Unit> validComs = new ArrayList<Unit>();
+		List<Unit> validComs = new ArrayList<>();
 		for(Unit u : commanders)
 		{
 			boolean udvalid = false;
@@ -145,8 +146,8 @@ public class PDSelector {
 			}
 			
 
-			if(!ud_demon || ud_demon == udvalid)
-				if(!magicbeing || magicbeing == magicvalid)
+			if(!ud_demon || udvalid)
+				if(!magicbeing || magicvalid)
 					validComs.add(u);
 			
 			
@@ -211,14 +212,8 @@ public class PDSelector {
 				}
 		}
 		
-		List<Unit> unsuitable = new ArrayList<>();
-		for(Unit u : units)
-			if(Generic.getAllUnitTags(u).containsName("cannot_be_pd")
-					|| (u.pose.tags.containsName("montagpose") && !montag_chassis_allowed))
-				unsuitable.add(u);
-		
-		if(units.size() > unsuitable.size())
-			units.removeAll(unsuitable);
+		removeUnsuitable(montag_chassis_allowed, units);
+		List<Unit> unsuitable;
 		
 		// No options: Any infantry with any ranged
 		if(units.size() == 0)
@@ -314,7 +309,7 @@ public class PDSelector {
 	 * Gets the rank:th best militia unit of tier:th tier
 	 * @param rank rankth best (1-2)
 	 * @param tier tier increases possible resource cost.
-	 * @return
+	 * @return the matching unit
 	 */
 	public Unit getMilitia(int rank, int tier, boolean montag_chassis_allowed)
 	{
@@ -333,13 +328,7 @@ public class PDSelector {
 		if(!montag_chassis_allowed)
 			units.addAll(n.combineTroopsToList("montagtroops"));
 		
-		List<Unit> unsuitable = new ArrayList<>();
-		for(Unit u : units)
-			if(Generic.getAllUnitTags(u).containsName("cannot_be_pd") || (u.pose.tags.containsName("montagpose") && !montag_chassis_allowed))
-				unsuitable.add(u);
-		
-		if(units.size() > unsuitable.size())
-			units.removeAll(unsuitable);
+		removeUnsuitable(montag_chassis_allowed, units);
 		
 		// Target resource/gcost is instead means
 		double totalr = 0;
@@ -419,6 +408,16 @@ public class PDSelector {
 
 		
 		return militia.get(tier - 1).get(rank - 1);
+	}
+	
+	private void removeUnsuitable(boolean montag_chassis_allowed, List<Unit> units) {
+		List<Unit> unsuitable = new ArrayList<>();
+		for(Unit u : units)
+			if(Generic.getAllUnitTags(u).containsName("cannot_be_pd") || (u.pose.tags.containsName("montagpose") && !montag_chassis_allowed))
+				unsuitable.add(u);
+		
+		if(units.size() > unsuitable.size())
+			units.removeAll(unsuitable);
 	}
 	
 	private double scoreForMilitia(Unit u, double targetres, double targetgold)

@@ -1,7 +1,11 @@
 package nationGen.misc;
 
 
-import nationGen.chances.*;
+import nationGen.chances.ChanceInc;
+import nationGen.chances.ChanceIncData;
+import nationGen.chances.EntityChances;
+import nationGen.chances.ThemeInc;
+import nationGen.chances.ThemeIncData;
 import nationGen.entities.Filter;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
@@ -12,8 +16,12 @@ import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.NavigableMap;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 
 public class ChanceIncHandler {
@@ -413,44 +421,14 @@ public class ChanceIncHandler {
 
 	}
 	
-	private List<MagicPath> pathsAtHighest(MagicPathInts unitpaths)
+	private Set<MagicPath> pathsAtHighest(MagicPathInts unitpaths)
 	{
-		List<MagicPath> atHighest = new ArrayList<>();
-		int highest = 0;
-		for(int i = 5; i > 0; i--)
-		{
-			highest = i;
-			for(MagicPath path : MagicPath.values())
-			{
-				if(unitpaths.get(path) == i && !atHighest.contains(path))
-				{
-					atHighest.add(path);
-				}
-			}
-			if(atHighest.size() > 0)
-				break;
-			
-			atHighest.clear();
-		}
-		
-		List<MagicPath> atSecondHighest = new ArrayList<>();
-		int secondHighest = 0;
-		for(int i = highest - 1; i > 0; i--)
-		{
-			secondHighest = i;
-			for(MagicPath path : MagicPath.values())
-			{
-				if(unitpaths.get(path) == i && !atHighest.contains(path))
-				{
-					atSecondHighest.add(path);
-				}
-			}
-			if(atSecondHighest.size() > 0)
-				break;
-			
-			atSecondHighest.clear();
-		}
-		
+		NavigableMap<Integer, Set<MagicPath>> pathLevels = unitpaths.byAmount();
+		int highest = pathLevels.lastKey();
+		int secondHighest = Optional.ofNullable(pathLevels.lowerKey(highest)).orElse(0);
+		Set<MagicPath> atHighest = highest == 0 ? Collections.emptySet() : pathLevels.get(highest);
+		Set<MagicPath> atSecondHighest = secondHighest == 0 ? Collections.emptySet() : pathLevels.get(secondHighest);
+
 		if(highest - secondHighest == 1 && atHighest.size() == 1 && atHighest.size() + atSecondHighest.size() < 4)
 		{
 			atHighest.addAll(atSecondHighest);
@@ -586,35 +564,15 @@ public class ChanceIncHandler {
 		data.u = un;
 		data.race = race;
 		
-		List<Unit> tempmages = n.generateComList("mage");
-		
 		data.nonrandom_paths = new MagicPathInts();
-		for(Unit u : tempmages)
-		{
-			if(u.tags.containsName("schoolmage"))
-			{
-				MagicPathInts picks = u.getMagicPicks(false);
-				for(MagicPath path : MagicPath.values())
-				{
-					if(data.nonrandom_paths.get(path) < picks.get(path))
-						data.nonrandom_paths.set(path, picks.get(path));
-				}
-			}
-		}
+		n.selectCommanders("mage")
+				.filter(u -> u.tags.containsName("schoolmage"))
+				.forEach(u -> data.nonrandom_paths.maxWith(u.getMagicPicks(false)));
 		
 		MagicPathInts paths = new MagicPathInts();
-		for(Unit u : tempmages)
-		{
-			if(u.tags.containsName("schoolmage"))
-			{
-				MagicPathInts picks = u.getMagicPicks(true);
-				for(MagicPath path : MagicPath.values())
-				{
-					if(paths.get(path) < picks.get(path))
-						paths.set(path, picks.get(path));
-				}
-			}
-		}
+		n.selectCommanders("mage")
+				.filter(u -> u.tags.containsName("schoolmage"))
+				.forEach(u -> paths.maxWith(u.getMagicPicks(true)));
 		
 		data.atHighest = this.pathsAtHighest(paths);
 		
@@ -632,23 +590,23 @@ public class ChanceIncHandler {
 			data.at[path.number]++;
 		}
 		
-		
+		final List<Unit> troopList = n.selectTroops().collect(Collectors.toList());
+
 		// Avg resources and gold
-		int unitCount = 0;
+		int unitCount = troopList.size();
 		double totalgold = 0;
 		double totalres = 0;
-		
-		for(Unit u : n.generateTroopList())
+
+		for(Unit u : troopList)
 		{
-			unitCount++;
 			if(u.pose.roles.contains("mounted") || u.pose.roles.contains("chariot"))
 				totalgold += u.getGoldCost()  * 0.66;
 			else
 				totalgold += u.getGoldCost();
-			
+
 			totalres += u.getResCost(true);
 		}
-		
+
 		data.avgres = totalres / unitCount;
 		data.avggold = totalgold / unitCount;
 		

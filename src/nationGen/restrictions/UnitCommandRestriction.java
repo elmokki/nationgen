@@ -16,8 +16,7 @@ public class UnitCommandRestriction extends TextBoxListRestriction {
 				+ "If you specify arguments, they need to match exactly.</html>", "Unit command");
 
 		this.hascombobox = true;
-		String[] ops = {"All", "Troops", "Commanders", "Sacred troops"};
-		this.comboboxoptions = ops;
+		this.comboboxoptions = new String[]{"All", "Troops", "Commanders", "Sacred troops"};
 		this.comboboxlabel = "Units to match:";
 		this.textFieldLabel = "Command to add:";
 		this.textfieldDefaultText = "#flying";
@@ -49,33 +48,24 @@ public class UnitCommandRestriction extends TextBoxListRestriction {
 		if(comboselection == null)
 			comboselection = "All";
 		
-		if(comboselection.equals("Troops") || comboselection.equals("All"))
-			pass = checkUnits(n.generateTroopList());
-		
-		if(!pass && (comboselection.equals("Commanders") || comboselection.equals("All")))
-			pass = checkUnits(n.generateComList());
-			
-		if(!pass && comboselection.equals("Sacred troops"))
-			pass = checkUnits(n.generateUnitList("sacred"));
-		
-		
-		return pass;
+		return (comboselection.equals("Troops") || comboselection.equals("All"))
+				&& n.selectTroops().anyMatch(this::checkUnit)
+			|| (comboselection.equals("Commanders") || comboselection.equals("All"))
+				&& n.selectCommanders().anyMatch(this::checkUnit)
+			|| comboselection.equals("Sacred troops")
+				&& n.selectTroops("sacred").anyMatch(this::checkUnit);
 	}
 	
-	private boolean checkUnits(List<Unit> list)
+	private boolean checkUnit(Unit u)
 	{
-		
-		for(Unit u : list)
+		for(String str : commandRestrictions)
 		{
-			for(String str : commandRestrictions)
+			Command oc = Command.parse(str);
+			for(Command c : u.getCommands())
 			{
-				Command oc = Command.parse(str);
-				for(Command c : u.getCommands())
+				if(c.command.equals(oc.command) && (oc.args.isEmpty() || c.equals(oc)))
 				{
-					if(c.command.equals(oc.command) && (oc.args.isEmpty() || c.equals(oc)))
-					{
-						return true;
-					}
+					return true;
 				}
 			}
 		}

@@ -663,61 +663,41 @@ public class NationGen
 		handleSpells(n.spells, n);
 	}
 	
-	private void handleShapeshifts(Nation n)
-	{
-		
-		List<Unit> shapeshiftUnits = n.generateUnitList();
-		shapeshiftUnits.addAll(n.heroes);
-		List<ShapeChangeUnit> sul = new ArrayList<>();
-		
-		for(Unit u : shapeshiftUnits)
-		{
-			for(Command c : u.commands)
-			{
-				if(c.command.contains("shape") && !hasShapeShift(c.args.get(0)))
-				{
-					if(c.command.equals("#firstshape") && u.tags.containsName("montagunit"))
-					{
+	private void handleShapeshifts(Nation n) {
+
+		List<Unit> shapeshiftUnits = n.listUnitsAndHeroes();
+
+		for(Unit u : shapeshiftUnits) {
+			for(Command c : u.commands) {
+				if(c.command.contains("shape") && !hasShapeShift(c.args.get(0))) {
+					if(c.command.equals("#firstshape") && u.tags.containsName("montagunit")) {
 						handleMontag(c);
-					}
-					else
-					{
+					} else {
 						handleShapeshift(c, u);
 					}
 				}
-				else if(c.command.equals("#montag"))
-				{
+				else if(c.command.equals("#montag")) {
 					handleMontag(c);
 				}
 			}
 		}
-		
-		for(ShapeChangeUnit su : forms)
-		{
-			if(shapeshiftUnits.contains(su.otherForm))
-			{
-				sul.add(su);
-			}
-		}
-		
-		for(ShapeChangeUnit su : sul)
-		{
-			su.polish(this, n);
-			
-			// Replace command
-			for(Command c : su.thisForm.commands)
-			{
-				// Weapons
-				if(c.command.equals("#weapon"))
-				{
-					Arg realarg = c.args.get(0);
-					
-					if (!realarg.isNumeric()) {
-						c.args.set(0, new Arg(customItemsHandler.getCustomItemId(realarg.get())));
-					}
-				}
-			}
-		}
+
+		forms.stream()
+			.filter(su -> shapeshiftUnits.contains(su.otherForm))
+			.forEach(su -> {
+				su.polish(this, n);
+
+				// Replace command
+				su.thisForm.commands.stream()
+					.filter(c -> c.command.equals("#weapon"))
+					.forEach(c -> {
+						Arg weaponId = c.args.get(0);
+
+						if (!weaponId.isNumeric()) {
+							c.args.set(0, new Arg(customItemsHandler.getCustomItemId(weaponId.get())));
+						}
+					});
+			});
 	}
 	
 	private HashMap<String, Integer> montagmap = new HashMap<>();

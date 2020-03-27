@@ -8,6 +8,7 @@ import nationGen.entities.Race;
 import nationGen.entities.Theme;
 import nationGen.items.Item;
 import nationGen.magic.MagicPath;
+import nationGen.magic.MagicPathInts;
 import nationGen.misc.Command;
 import nationGen.misc.FileUtil;
 import nationGen.misc.Site;
@@ -65,10 +66,11 @@ public class NationAdvancedSummarizer {
 	private List<String> printUnits(String role, String tag, Nation n)
 	{
 		List<String> lines = new ArrayList<>();
-		if(n.generateUnitList(role).size() > 0)
+		List<Unit> troops = n.listTroops(role);
+		if(!troops.isEmpty())
 		{
 			lines.add("- " + tag + ":");
-			for(Unit u : n.generateUnitList(role))
+			for(Unit u : troops)
 				lines.addAll(getTroopInfo(u));
 		}
 		return lines;
@@ -129,23 +131,23 @@ public class NationAdvancedSummarizer {
 				{
 					traits.add("Ideal cold level " + c.args.get(0));
 				}
-				else if(c.command.equals("#uwbuild") && c.args.get(0).equals("1"))
+				else if(c.command.equals("#uwbuild") && c.args.get(0).get().equals("1"))
 				{
 					traits.add("Can build forts underwater");
 				}
-				else if(c.command.equals("#buildfort") && c.args.get(0).equals("11"))
+				else if(c.command.equals("#buildfort") && c.args.get(0).get().equals("11"))
 				{
 					traits.add("Fortified cities");
 				}
-				else if(c.command.equals("#buildfort") && c.args.get(0).equals("15"))
+				else if(c.command.equals("#buildfort") && c.args.get(0).get().equals("15"))
 				{
 					traits.add("Giant forts");
 				}
-				else if(c.command.equals("#buildfort") && c.args.get(0).equals("20"))
+				else if(c.command.equals("#buildfort") && c.args.get(0).get().equals("20"))
 				{
 					traits.add("Ice forts");
 				}
-				else if(c.command.equals("#buildfort") && c.args.get(0).equals("27"))
+				else if(c.command.equals("#buildfort") && c.args.get(0).get().equals("27"))
 				{
 					traits.add("Fortified villages");
 				}
@@ -223,7 +225,7 @@ public class NationAdvancedSummarizer {
 						name = n.nationgen.units.GetValue(id, "unitname");
 					}
 					
-					tw.println("** " + NameGenerator.capitalize(name));
+					tw.println("** " + Generic.capitalize(name));
 					if(su.thisForm.tags.contains("caponly"))
 						tw.println("--- Capital only");
 					if(id != -1)
@@ -235,23 +237,21 @@ public class NationAdvancedSummarizer {
 			lines.add("");
 			lines.add("Commanders:");
 			lines.add("- Scouts:");
-			for(Unit u : n.generateComList("scout"))
-				lines.addAll(getTroopInfo(u));
+			n.selectCommanders("scout").forEach(u -> lines.addAll(getTroopInfo(u)));
+
 			lines.add("- Commanders:");
-			for(Unit u : n.generateComList("commander"))
-				lines.addAll(getTroopInfo(u));
-			if(n.generateComList("specialcoms").size() > 0)
-			{
+			n.selectCommanders("commander").forEach(u -> lines.addAll(getTroopInfo(u)));
+
+			if(n.selectCommanders("specialcoms").findAny().isPresent()) {
 				lines.add("- Special commanders:");
-				for(Unit u : n.generateComList("specialcoms"))
-					lines.addAll(getTroopInfo(u));
+				n.selectCommanders("specialcoms").forEach(u -> lines.addAll(getTroopInfo(u)));
 			}
 			lines.add("- Priests:");
-			for(Unit u : n.generateComList("priest"))
-				lines.addAll(getTroopInfo(u));
+			n.selectCommanders("priest").forEach(u -> lines.addAll(getTroopInfo(u)));
+
 			lines.add("- Mages:");
-			for(Unit u : n.generateComList("mage"))
-				lines.addAll(getTroopInfo(u));
+			n.selectCommanders("mage").forEach(u -> lines.addAll(getTroopInfo(u)));
+
 			lines.add("");
 			lines.add("Heroes:");
 			for(Unit u : n.heroes)
@@ -265,22 +265,22 @@ public class NationAdvancedSummarizer {
 			// Spells
 			lines.add("National spells:");
 			lines.add("--------------");
-			String line = "";
+			StringBuilder line = new StringBuilder();
 	
 			for(String str : n.getSpells())
 			{
 				if(line.length() == 0)
-					line = str;
+					line = new StringBuilder(str);
 				else if(line.length() + str.length() + 2 <= 160)
-					line = line + ", " + str;
+					line.append(", ").append(str);
 				else
 				{
 					lines.add(line + ",");
-					line = str;
+					line = new StringBuilder(str);
 				}
 			}
 			
-			lines.add(line);
+			lines.add(line.toString());
 			lines.add("");
 			
 			lines.add("Montag units:");
@@ -340,7 +340,7 @@ public class NationAdvancedSummarizer {
 			String mountname = u.getSlot("mount").tags.getString("animal")
 				.orElseThrow(() -> new IllegalStateException("Mount of unit " + u + " doesn't have an 'animal' tag"));
 					
-			return Optional.of(NameGenerator.capitalize(mountname) + " mount");
+			return Optional.of(Generic.capitalize(mountname) + " mount");
 		}
 		return Optional.empty();
 	}
@@ -371,7 +371,7 @@ public class NationAdvancedSummarizer {
 	
 	private Optional<String> getTroopMagicStuff(Unit u) {
 		// Magic things!
-		int[] paths = new int[10];
+		MagicPathInts paths = new MagicPathInts();
 		double rand = 0;
 		List<MagicPath> randoms = new ArrayList<>();
 		
@@ -386,17 +386,17 @@ public class NationAdvancedSummarizer {
 				{
 					if(c.command.equals("#magicskill"))
 					{
-						paths[c.args.get(0).getInt()] += c.args.get(1).getInt();
+						paths.add(c.args.get(0).getMagicPath(), c.args.get(1).getInt());
 					}
 					else if(c.command.equals("#custommagic"))
 					{
 						for(MagicPath path : MagicPath.listFromMask(c.args.get(0).getInt()))
 							if(!randoms.contains(path))
 								randoms.add(path);
-						paths[9] += c.args.get(0).getInt() / 100;
-						rand += c.args.get(0).getDouble() / 100;
+						double thisRand = c.args.get(1).getDouble() / 100;
+						rand += thisRand;
 						
-						if(c.args.get(0).getDouble() / 100 > 1)
+						if(thisRand > 1)
 							links = true;
 						
 					}
@@ -405,41 +405,33 @@ public class NationAdvancedSummarizer {
 		}
 		
 		
-		String magicstuff = " ";
-		String[] pathnames = {"F", "A", "W", "E", "S", "D", "N", "B", "H", "?"};
-		for(int i = 0; i < 10; i++)
-		{
-			if(paths[i] > 0 || (i == 9 && rand > 0))
-			{
-				
-				if(rand > paths[i] && i == 9)
-					magicstuff = magicstuff + rand + pathnames[i];
-				else
-					magicstuff = magicstuff + paths[i] + pathnames[i];
-				magicstuff = magicstuff + " ";
-			}
+		StringBuilder magicstuff = new StringBuilder();
+		List<String> pathDescriptions = new ArrayList<>();
+		
+		paths.stream()
+			.filter(p -> p.level > 0)
+			.forEach(p -> pathDescriptions.add(p.level + p.path.letter));
+		
+		if (rand > 0) {
+			pathDescriptions.add(rand + "?");
 		}
-		magicstuff = magicstuff.trim();
+		magicstuff.append(String.join(" ", pathDescriptions));
 		
 		
 		if(randoms.size() > 0)
 		{
-			magicstuff = magicstuff + " (";
-			for(MagicPath path : randoms)
-				magicstuff = magicstuff + path.name + ", ";
+			magicstuff.append(" (").append(randoms.stream().map(p -> p.name).collect(Collectors.joining(", ")));
 			
 			if(links)
-				magicstuff = magicstuff + "at least partially linked, ";
+				magicstuff.append(", at least partially linked");
 			
-			magicstuff = magicstuff.substring(0, magicstuff.length() - 2) + ")";
+			magicstuff.append(")");
 		}
-		magicstuff = magicstuff + ". ";
-		
-		
-		if(!magicstuff.equals(". "))
+
+
+		if(magicstuff.length() != 0)
 		{
-			magicstuff = magicstuff.trim();
-			return Optional.of(magicstuff);
+			return Optional.of(magicstuff.append(". ").toString());
 		}
 		return Optional.empty();
 	}
@@ -527,35 +519,15 @@ public class NationAdvancedSummarizer {
 		
 		List<String> features = getTroopSpecialFeatures(u);
 		if(!features.isEmpty())
-			lines.add("--- " + writeAsList(features, false));
+			lines.add("--- " + NameGenerator.writeAsList(features));
 		
 		
 		List<String> itemDescriptions = getTroopItemDescriptions(u);
 		
 		if(!itemDescriptions.isEmpty())
-			lines.add("--- " + writeAsList(itemDescriptions, false));
+			lines.add("--- " + NameGenerator.writeAsList(itemDescriptions));
 		
 		
 		return lines;
-	}
-
-	
-	private String writeAsList(List<String> list, boolean capitalize)
-	{
-		String str = "";
-		for(int i = 0; i < list.size(); i++)
-		{
-			if(capitalize)
-				str = str + NameGenerator.capitalize(list.get(i));
-			else
-				str = str + list.get(i);
-			
-			if(i < list.size() - 2)
-				str = str + ", ";
-			if(i == list.size() - 2)
-				str = str + " and ";
-		}
-		
-		return str;
 	}
 }

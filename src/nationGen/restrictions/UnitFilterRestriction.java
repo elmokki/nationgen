@@ -1,12 +1,12 @@
 package nationGen.restrictions;
 
-import java.util.List;
-import java.util.ArrayList;
-
 import nationGen.NationGenAssets;
 import nationGen.entities.Filter;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class UnitFilterRestriction extends TwoListRestrictionWithComboBox<String, String>
 {
@@ -61,39 +61,28 @@ public class UnitFilterRestriction extends TwoListRestrictionWithComboBox<String
 			targs = "All";
 		}
 
-		boolean pass = false;
-		if (targs.equals("Troops") || targs.equals("All"))
-			pass = checkUnits(n.generateTroopList());
-
-		if (!pass && (targs.equals("Commanders") || targs.equals("All")))
-			pass = checkUnits(n.generateComList());
-
-		if (!pass && targs.equals("Sacred troops"))
-			pass = checkUnits(n.generateUnitList("sacred"));
-
-		if (comboselection.equals("None"))
-		{
-			return !pass;
-		}
-
-		return pass;
+		return (
+			(targs.equals("Troops") || targs.equals("All"))
+				&& n.selectTroops().anyMatch(this::checkUnit)
+			|| (targs.equals("Commanders") || targs.equals("All"))
+				&& n.selectCommanders().anyMatch(this::checkUnit)
+			|| (targs.equals("Sacred troops"))
+				&& n.selectTroops("sacred").anyMatch(this::checkUnit)
+		) ^ comboselection.equals("None");
 	}
 
-	private boolean checkUnits(List<Unit> list)
+	private boolean checkUnit(Unit u)
 	{
-		for (Unit u : list)
+		for (String str : possibleFilterNames)
 		{
-			for (String str : possibleFilterNames)
+			int index = str.indexOf(": ");
+			String comp = str.substring(index + 2);
+			for (Filter f : u.appliedFilters)
 			{
-				int index = str.indexOf(": ");
-				String comp = str.substring(index + 2);
-				for (Filter f : u.appliedFilters)
-				{
-					if (f.toString().equals(comp))
-						return true;
-				}
-
+				if (f.toString().equals(comp))
+					return true;
 			}
+
 		}
 		return false;
 	}

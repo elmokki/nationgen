@@ -3,8 +3,8 @@ package nationGen.naming;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class MageDescriber {
@@ -31,55 +31,16 @@ public class MageDescriber {
 
 	public static Name getCommonName(Nation n)
 	{
-		List<Unit> primaryMages = new ArrayList<Unit>();
-		for(Unit u : n.generateComList())
-			if(u.tags.contains("schoolmage", 3))
-			{
-				primaryMages.add(u);
-			}
+		List<Unit> primaryMages = n.selectCommanders()
+			.filter(u -> u.tags.contains("schoolmage", 3))
+			.collect(Collectors.toList());
 		
-		
-		List<Unit> secondaryMages = new ArrayList<Unit>();
-		for(Unit u : n.generateComList())
-			if(u.tags.contains("schoolmage", 2))
-			{
-				secondaryMages.add(u);
-			}
-		
-		List<Unit> tertiaryMages = new ArrayList<Unit>();
-		for(Unit u : n.generateComList())
-			if(u.tags.contains("schoolmage", 1))
-			{
-				tertiaryMages.add(u);
-			}
-		
-		List<Unit> compensationMages = new ArrayList<Unit>();
-		for(Unit u : n.generateComList())
-			if(u.tags.containsName("extramage"))
-			{
-				compensationMages.add(u);
-			}
-		
-		Name common = new Name(); 
+		Name common;
 		if(primaryMages.size() > 0)
 		{
-	
 			common = primaryMages.get(0).name.getCopy();
 			
-			for(Unit u : primaryMages)
-			{
-
-				if(u.name.prefix == null || !u.name.prefix.equals(common.prefix))
-					common.prefix = null;
-				if(u.name.type == null || !u.name.type.equals(common.type))
-					common.setType("mage");
-				if(u.name.suffixprefix == null || !u.name.suffixprefix.equals(common.suffixprefix))
-					common.suffixprefix = null;
-				if(u.name.suffix == null || !u.name.suffix.equals(common.suffix))
-					common.suffix = null;
-				
-
-			}
+			primaryMages.forEach(u -> updateCommonNameFromUnit(u, common));
 			
 			if(common.suffix == null && common.suffixprefix != null)
 				common.suffixprefix = null;
@@ -87,37 +48,23 @@ public class MageDescriber {
 			if(primaryMages.size() > 1)
 				return common;
 			
-			for(Unit u : secondaryMages)
-			{
+			// secondary mages
+			n.selectCommanders()
+				.filter(u -> u.tags.contains("schoolmage", 2))
+				.forEach(u -> updateCommonNameFromUnit(u, common));
 
-				if(u.name.prefix == null || !u.name.prefix.equals(common.prefix))
-					common.prefix = null;
-				if(u.name.type == null || !u.name.type.equals(common.type))
-					common.setType("mage");
-				if(u.name.suffixprefix == null || !u.name.suffixprefix.equals(common.suffixprefix))
-					common.suffixprefix = null;
-				if(u.name.suffix == null || !u.name.suffix.equals(common.suffix))
-					common.suffix = null;
-				
-
-			}
+			// tertiary mages
+			n.selectCommanders()
+				.filter(u -> u.tags.contains("schoolmage", 1))
+				.forEach(u -> updateCommonNameFromUnit(u, common));
 			
-			for(Unit u : tertiaryMages)
-			{
-
-				if(u.name.prefix == null || !u.name.prefix.equals(common.prefix))
-					common.prefix = null;
-				if(u.name.type == null || !u.name.type.equals(common.type))
-					common.setType("mage");
-				if(u.name.suffixprefix == null || !u.name.suffixprefix.equals(common.suffixprefix))
-					common.suffixprefix = null;
-				if(u.name.suffix == null || !u.name.suffix.equals(common.suffix))
-					common.suffix = null;
-				
-
-			}
-			
-
+			// compensation mages (commented because it did nothing prior to refactoring)
+//			n.selectCommanders()
+//				.filter(u -> u.tags.containsName("extramage"))
+//				.forEach(u -> updateCommonNameFromUnit(u, common));
+		
+		} else {
+			common = new Name();
 		}
 		
 		if(common.suffix == null && common.suffixprefix != null)
@@ -125,5 +72,17 @@ public class MageDescriber {
 		
 		
 		return common;
+	}
+
+	private static void updateCommonNameFromUnit(Unit u, Name common) {
+
+		if(u.name.prefix == null || !u.name.prefix.equals(common.prefix))
+			common.prefix = null;
+		if(u.name.type == null || !u.name.type.equals(common.type))
+			common.setType("mage");
+		if(u.name.suffixprefix == null || !u.name.suffixprefix.equals(common.suffixprefix))
+			common.suffixprefix = null;
+		if(u.name.suffix == null || !u.name.suffix.equals(common.suffix))
+			common.suffix = null;
 	}
 }
