@@ -167,8 +167,8 @@ public class Drawing {
 	    for (short i = 0; i < 256; i++) {
 	        alpha[i] = i;
 	        red[i] = (short) ((double)((double)i/(double)255) * (double)R1);
-	        green[i] = (short) ((double)((double)i/(double)255) * (double)B1);
-	        blue[i] = (short) ((double)((double)i/(double)255) * (double)G1);
+	        green[i] = (short) ((double)((double)i/(double)255) * (double)G1);
+	        blue[i] = (short) ((double)((double)i/(double)255) * (double)B1);
 	    }
 
 	    short[][] data = new short[][] {
@@ -179,37 +179,52 @@ public class Drawing {
 	    return new LookupOp(lookupTable, null);
 	}
 	
+	public static BufferedImage scale2x(BufferedImage image) {
+		int w = image.getWidth() * 2;
+		int h = image.getHeight() * 2;
+		BufferedImage doubled = new BufferedImage(w, h, image.getType());
+		
+		Graphics g = doubled.getGraphics();
+		g.drawImage(image, 0, 0, w, h, null);
+		return doubled;
+	}
 	
+	public static BufferedImage convertToAlpha(BufferedImage image)
+	{
+		image = Drawing.convertImageToRGBA(image);
+		image = Drawing.blackToTransparent(image);
+		image = Drawing.purpleToShadow(image);
+		return image;
+	}
+	
+	public static BufferedImage blackToTransparent(BufferedImage image)
+	{
+		Color from = new Color(0, 0, 0, 255);
+		Color to = new Color(0, 0, 0, 0);
+		BufferedImageOp lookup = new LookupOp(new ColorMapper(from, to), null);
+		BufferedImage convertedImage = lookup.filter(image, null);
 		
+		return convertedImage;
+	}
+	
+	
+	public static BufferedImage convertImageToRGBA(BufferedImage image)
+	{
+		// Convert to RGBA
+		BufferedImage img = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_ARGB);
+		img.createGraphics().drawImage(image, 0, 0, null);
+		return img;
+	}
+	
+	public static BufferedImage purpleToShadow(BufferedImage image)
+	{
+		Color from = new Color(248, 0, 248, 255);
+		Color to = new Color(0, 0, 0, 128);
+		BufferedImageOp lookup = new LookupOp(new ColorMapper(from, to), null);
+		BufferedImage convertedImage = lookup.filter(image, null);
 		
-	   public static BufferedImage blackToTransparent(BufferedImage image)
-	   {
-		   Color from = new Color(0, 0, 0, 255);
-		   Color to = new Color(0, 0, 0, 0);
-		   BufferedImageOp lookup = new LookupOp(new ColorMapper(from, to), null);
-		   BufferedImage convertedImage = lookup.filter(image, null);
-		   
-		   return convertedImage;
-	   }
-	   
-	   
-	   public static BufferedImage convertImageToRGBA(BufferedImage image)
-	   {
-			// Convert to RGBA
-			BufferedImage img = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_ARGB);
-			img.createGraphics().drawImage(image, 0, 0, null);
-			return img;
-	   }
-	   
-	   public static BufferedImage purpleToShadow(BufferedImage image)
-	   {
-		   Color from = new Color(248, 0, 248, 255);
-		   Color to = new Color(0, 0, 0, 128);
-		   BufferedImageOp lookup = new LookupOp(new ColorMapper(from, to), null);
-		   BufferedImage convertedImage = lookup.filter(image, null);
-		   
-		   return convertedImage;
-	   }
+		return convertedImage;
+	}
 	
 	public static short calcColor(short i, short R1)
 	{

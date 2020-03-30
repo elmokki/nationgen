@@ -146,15 +146,6 @@ public class Race extends Filter {
 				}
 				break;
 			}
-			case "#spritegenpose": {
-				List<Pose> set = nationGen.getAssets().poses.get(command.args.get(0).get());
-				if (set == null) {
-					System.out.println("Pose set " + command.args.get(0).get() + " was not found.");
-				} else {
-					this.spriteGenPoses.addAll(set);
-				}
-				break;
-			}
 			default:
 				super.handleOwnCommand(command);
 				break;
