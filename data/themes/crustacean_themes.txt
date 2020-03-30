@@ -1,0 +1,53 @@
+-- Generic theme with high diversity and low cohesion
+-- Weights: EA 2, MA 3, LA 4
+#newtheme
+#type techlevel
+#name default
+#basechance 2
+#chanceinc era 2 +1
+#chanceinc era 3 +2
+#themeinc theme advanced *10
+#themeinc theme bronze *0.1
+#themeinc theme primitive *2.5
+#endtheme
+
+-- Weights: EA 2, MA 1, LA 0.5
+#newtheme
+#type techlevel
+#name bronze
+#basechance 2
+#chanceinc era 2 -1
+#chanceinc era 3 -1.5
+#themeinc theme advanced *0.1
+#themeinc theme bronze *10
+#themeinc theme primitive *5
+#endtheme
+
+-- Weights: EA 0.05, MA 0.05, LA 0.05
+#newtheme
+#type social
+#name slaver
+#basechance 0.05
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#themeinc theme slave *20
+#themeinc theme free *0.5
+#themeinc racename caveman *5
+#themeinc racename primate *5
+#themeinc racename "Feudal human" *5
+#themeinc racename hoburg *5
+#themeinc racename caelian *0.1
+#themeinc racename van *0.1
+#themeinc racename sidhe *0.1
+#themeinc racename tengu *0.1
+#secondaryracedefinition "#freetemplatefilter slavetemplate slave"
+#racedefinition "#secondaryracetroopmod 100"
+#racedefinition "#secondaryracemagemod -100"
+#racedefinition "#forts default_forts"
+#racedefinition "#forts city_forts"
+#endtheme

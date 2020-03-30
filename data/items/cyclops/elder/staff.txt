@@ -1,0 +1,169 @@
+#newitem
+#id trident_bronze
+#gameid 680
+#sprite /graphics/cyclops/elder/weapon/caster/trident_gold.png
+#theme "bronze"
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id trident_iron
+#gameid 679
+#sprite /graphics/cyclops/elder/weapon/caster/trident_iron.png
+#theme "iron"
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id maul
+#gameid 14
+#basechance 2
+#sprite /graphics/cyclops/elder/weapon/maul.png
+#troopweapon
+#notfortier 1
+#tier 2
+#tier 3
+#offsetx -5
+#enditem
+
+#newitem
+#id lucernehammer_bronze
+#gameid bronzelucernehammer
+#sprite /graphics/cyclops/elder/weapon/lucernehammer_bronze.png
+#theme "bronze"
+#troopweapon
+#notfortier 1
+#tier 2
+#tier 3
+#offsetx -5
+#enditem
+
+#newitem
+#id lucernehammer_iron
+#gameid lucernehammer
+#sprite /graphics/cyclops/elder/weapon/lucernehammer_iron.png
+#theme "iron"
+#troopweapon
+#notfortier 1
+#tier 2
+#tier 3
+#offsetx -5
+#enditem
+
+
+-- Staves
+
+#newitem
+#id snake_T2
+#gameid 318
+#sprite /graphics/cyclops/elder/weapon/caster/snake.png
+#eliteversion snake_T3
+#troopweapon
+#theme "nature"
+#theme "primitive"
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id snake_T3
+#gameid 89
+#sprite /graphics/cyclops/elder/weapon/caster/snake.png
+#troopweapon
+#theme "nature"
+#theme "primitive"
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id quarterstaff
+#gameid 7
+#sprite /graphics/cyclops/elder/weapon/caster/staff.png
+#eliteversion staff_crook
+#eliteversion staff_gnarled
+#eliteversion staff_neter_simple
+#troopweapon
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id staff_crook
+#gameid 7
+#sprite /graphics/cyclops/elder/weapon/caster/staff_crook.png
+#eliteversion staff_gnarled
+#eliteversion staff_moon
+#eliteversion staff_neter_simple
+#eliteversion staff_neter_fancy
+#theme "nature"
+#troopweapon
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id staff_gnarled
+#gameid 7
+#sprite /graphics/cyclops/elder/weapon/caster/staff_gnarled.png
+#eliteversion staff_moon
+#eliteversion staff_gnarled
+#eliteversion staff_neter_simple
+#eliteversion staff_neter_fancy
+#theme "nature"
+#troopweapon
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id staff_moon
+#gameid 7
+#sprite /graphics/cyclops/elder/weapon/caster/staff_moon.png
+#theme "astral"
+#troopweapon
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id staff_neter_plain
+#gameid 238
+#sprite /graphics/cyclops/elder/weapon/caster/staff_neter_plain.png
+#eliteversion staff_neter_simple
+#troopweapon
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id staff_neter_simple
+#gameid 238
+#sprite /graphics/cyclops/elder/weapon/caster/staff_neter_simple.png
+#eliteversion staff_neter_fancy
+#troopweapon
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id staff_neter_fancy
+#gameid 238
+#sprite /graphics/cyclops/elder/weapon/caster/staff_neter_fancy.png
+#troopweapon
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem

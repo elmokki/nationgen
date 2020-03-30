@@ -1,70 +1,129 @@
-
-
 #newitem
-#id greataxe
-#gameid 698
-#sprite /graphics/fomorian/giant/weapon/battleaxe_bronze.png
-#tier 3
+#id spear_bronze
+#gameid 643
+#sprite /graphics/cyclops/elder/weapon/spear_bronze.png
+#eliteversion spear_golden
 #theme "bronze"
-#enditem
-
-#newitem
-#id greataxe_iron
-#gameid 18
-#sprite /graphics/fomorian/giant/weapon/battleaxe.png
-#tier 3
-#theme "iron"
-#enditem
-
-#newitem
-#id broadsword
-#gameid bronzebroadsword
-#sprite /graphics/fomorian/giant/weapon/sword_bronze.png
-#tier 3
-#theme "bronze"
-#enditem
-
-#newitem
-#id broadsword_iron
-#gameid 8
-#sprite /graphics/fomorian/giant/weapon/sword.png
-#tier 3
-#theme "iron"
-#enditem
-
-#newitem
-#id spear
-#gameid 485
-#sprite /graphics/fomorian/giant/weapon/elitespear_bronze.png
-#tag "name infantry spearman"
-#tier 3
-#theme "bronze"
+#tier 1
+#notfortier 2
+#notfortier 3
+#offsetx -5
 #enditem
 
 #newitem
 #id spear_iron
-#gameid 234
-#sprite /graphics/fomorian/giant/weapon/elitespear.png
-#tag "name infantry spearman"
-#tier 3
+#gameid 1
+#sprite /graphics/cyclops/elder/weapon/spear_iron.png
+#eliteversion spear_cyclope
 #theme "iron"
+#tier 1
+#notfortier 2
+#notfortier 3
+#offsetx -5
 #enditem
 
 #newitem
-#id trident
-#gameid 641
-#sprite /graphics/fomorian/giant/weapon/elitetrident_bronze.png
-#tag "name infantry swordsman"
-#tier 3
+#id longspear_bronze
+#gameid 644
+#sprite /graphics/cyclops/elder/weapon/longspear_bronze.png
+#eliteversion spear_golden
 #theme "bronze"
+#tier 1
+#notfortier 2
+#notfortier 3
+#offsetx -5
+#enditem
+
+#newitem
+#id longspear_iron
+#gameid 28
+#sprite /graphics/cyclops/elder/weapon/longspear_iron.png
+#eliteversion spear_cyclope
+#theme "iron"
+#tier 1
+#notfortier 2
+#notfortier 3
+#offsetx -5
+#enditem
+
+#newitem
+#id spear_golden
+#gameid 473
+#sprite /graphics/cyclops/elder/weapon/spear_bronze.png
+#eliteversion spear_golden
+#theme "bronze"
+#theme gold
+#notfortier 1
+#tier 2
+#tier 3
+#offsetx -5
+#enditem
+
+#newitem
+#id spear_cyclope
+#gameid 733
+#sprite /graphics/cyclops/elder/weapon/spear_iron.png
+#eliteversion spear_cyclope
+#theme "iron"
+#theme silver
+#notfortier 1
+#tier 2
+#tier 3
+#offsetx -5
+#enditem
+
+#newitem
+#id trident_bronze
+#gameid 680
+#sprite /graphics/cyclops/elder/weapon/caster/trident_gold.png
+#theme "bronze"
+#tier 1
+#tier 2
+#notfortier 3
 #enditem
 
 #newitem
 #id trident_iron
-#gameid 3
-#sprite /graphics/fomorian/giant/weapon/elitetrident.png
-#tag "name infantry swordsman"
-#tier 3
+#gameid 679
+#sprite /graphics/cyclops/elder/weapon/caster/trident_iron.png
 #theme "iron"
+#tier 1
+#tier 2
+#notfortier 3
 #enditem
 
+#newitem
+#id maul
+#gameid 14
+#basechance 2
+#sprite /graphics/cyclops/elder/weapon/maul.png
+#troopweapon
+#notfortier 1
+#tier 2
+#tier 3
+#offsetx -5
+#enditem
+
+#newitem
+#id lucernehammer_bronze
+#gameid bronzelucernehammer
+#sprite /graphics/cyclops/elder/weapon/lucernehammer_bronze.png
+#theme "bronze"
+#troopweapon
+#notfortier 1
+#tier 2
+#tier 3
+#offsetx -5
+#enditem
+
+#newitem
+#id lucernehammer_iron
+#gameid lucernehammer
+#sprite /graphics/cyclops/elder/weapon/lucernehammer_iron.png
+#theme "iron"
+#troopweapon
+#notfortier 1
+#tier 2
+#tier 3
+#offsetx -5
+#enditem

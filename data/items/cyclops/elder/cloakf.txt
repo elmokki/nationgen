@@ -1,7 +1,31 @@
 #newitem
-#name "cloak 1"
+#name "light cloak"
 #gameid -1
-#sprite /graphics/fomorian/giant/cloak/cloakf.png
+#sprite /graphics/cyclops/elder/cloak/cloak_f.png
 #armor
-#recolormask self
+#recolormask /graphics/cyclops/elder/cloak/cloak_recolormask1_f.png
+#enditem
+
+#newitem
+#name "dark cloak"
+#gameid -1
+#sprite /graphics/cyclops/elder/cloak/cloak_f.png
+#armor
+#recolormask /graphics/cyclops/elder/cloak/cloak_recolormask2_f.png
+#enditem
+
+#newitem
+#name "light cape"
+#gameid -1
+#sprite /graphics/cyclops/elder/cloak/cloak_f.png
+#armor
+#recolormask /graphics/cyclops/elder/cloak/cloak_recolormask1_f.png
+#enditem
+
+#newitem
+#name "dark cape"
+#gameid -1
+#sprite /graphics/cyclops/elder/cloak/cloak_f.png
+#armor
+#recolormask /graphics/cyclops/elder/cloak/cloak_recolormask2_f.png
 #enditem

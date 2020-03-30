@@ -1116,6 +1116,10 @@ public class CommanderGenerator extends TroopGenerator {
 				normalLd.set(1, pickRandomSubstring("grudgingly skittishly anxiously apprehensively spiritlessly confusedly recklessly wildly"));
 				leader = 0;
 			}
+			else if(c.command.equals("#noleader"))
+			{
+				leader = -1;
+			}
 			else if(c.command.equals("#goodmagicleader"))
 			{
 				magicLd = 3;
@@ -1185,10 +1189,19 @@ public class CommanderGenerator extends TroopGenerator {
 			else if(inspiring || taskmaster)
 				desc += " and";
 		}
+		else if(leader == -1)
+		{
+			desc += "not " 
+					+ pickRandomSubstring("entrusted charged burdened encumbered bothered troubled concerned occupied")
+					+ " with the "
+					+ pickRandomSubstring("responsibilities duties tasks details problems honor chore privilege")
+					+ " of commanding the armies of %nation%.";
+		}
 		else 
 			desc += normalLd.get(0) + " leaders whose";
 		
-		if(inspiring && taskmaster)
+		if(leader == -1){}
+		else if(inspiring && taskmaster)
 			desc += " " + pickRandomSubstring("compelling forceful ardent vehement fierce gruff arresting");
 		else if(inspiring)
 			desc += " " + pickRandomSubstring("inspiring rousing stirring earnest fiery impassioned");
@@ -1199,7 +1212,8 @@ public class CommanderGenerator extends TroopGenerator {
 				+ " are " + normalLd.get(1) + " " + pickRandomSubstring("carried out,executed,obeyed,enacted", ",") 
 				+ " by ";
 		
-		if(beastmaster)
+		if(leader == -1){}
+		else if(beastmaster)
 			desc += "man and beast alike.";
 		else if(hasSlaves && taskmaster)
 			desc += "their subordinates and slaves.";
@@ -1208,7 +1222,8 @@ public class CommanderGenerator extends TroopGenerator {
 		else
 			desc += "their " + pickRandomSubstring("troops soldiers warriors minions followers forces") + ".";
 		
-		if(magicLd > 0 || demonUDLd > 0)
+		if(leader == -1){}
+		else if(magicLd > 0 || demonUDLd > 0)
 		{
 			desc += " The %unitname_plural% are also charged with " + pickRandomSubstring("commanding leading overseeing deploying overseeing");  
 			

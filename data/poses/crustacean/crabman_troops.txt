@@ -1,0 +1,43 @@
+-- Crab infantry and scouts
+
+#newpose
+#name "crab troopers"
+#role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
+#role "scout"
+#cannot_be_spy
+#cannot_be_assassin
+
+#renderorder "shadow basesprite armor weapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/crustacean/crabman/bases.txt
+#load shadow /data/items/crustacean/crabman/shadow.txt
+#load hands /data/items/crustacean/crabman/hands.txt
+
+#load armor /data/items/crustacean/crabman/armor.txt
+
+#load weapon /data/items/crustacean/crabman/weapon.txt
+
+#endpose
+
+
+-- Sneaky crabs wearing imperial robes to - heh - "blend in"
+
+#newpose
+#name "sneaky crabs"
+#role "scout"
+#cannot_be_scout
+
+#renderorder "shadow basesprite armor weapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/crustacean/crabman/bases.txt
+#load shadow /data/items/crustacean/crabman/shadow.txt
+#load hands /data/items/crustacean/crabman/hands.txt
+
+#load armor /data/items/crustacean/crabman/armor_spy.txt
+#load helmet /data/items/crustacean/crabman/hood_spy.txt
+
+#load weapon /data/items/crustacean/crabman/weapon.txt
+
+#endpose

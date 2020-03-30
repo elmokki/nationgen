@@ -1,0 +1,190 @@
+--- Reinforced leather
+
+#newitem
+#name "reinforced leather cap"
+#gameid 119
+#sprite /graphics/halfmen/satyr/helmet/leather_helmet.png
+#eliteversion "crested helmet"
+#armor
+#theme "leather"
+#minprot 5
+#maxprot 11
+#enditem
+
+#newitem
+#name "crested helmet"
+#gameid 162
+#sprite /graphics/halfmen/satyr/helmet/leather_helmet_crest.png
+#recolormask /graphics/halfmen/satyr/helmet/crest_recolormask.png
+#armor
+#theme "leather"
+#theme "elite"
+#minprot 5
+#maxprot 14
+#enditem
+
+--- Bronze
+
+#newitem
+#name "bronze cap"
+#gameid 135
+#sprite /graphics/halfmen/satyr/helmet/bronze_half_helmet.png
+#eliteversion "crested bronze helmet"
+#eliteversion "bronze hoplite helmet"
+#armor
+#theme "bronze"
+#minprot 10
+#maxprot 16
+#enditem
+
+#newitem
+#name "bronze helmet"
+#gameid bronzehalfhelmet
+#sprite /graphics/halfmen/satyr/helmet/bronze_half_helmet.png
+#eliteversion "crested bronze helmet"
+#eliteversion "bronze hoplite helmet"
+#armor
+#theme "bronze"
+#minprot 10
+#maxprot 16
+#enditem
+
+#newitem
+#name "crested bronze helmet"
+#gameid bronzehalfhelmet
+#sprite /graphics/halfmen/satyr/helmet/bronze_half_helmet_crest.png
+#recolormask /graphics/halfmen/satyr/helmet/crest_recolormask.png
+#eliteversion "crested bronze helmet"
+#eliteversion "crested bronze hoplite helmet"
+#eliteversion "ram bronze hoplite helmet"
+#armor
+#theme "bronze"
+#theme "elite"
+#minprot 10
+#maxprot 16
+#enditem
+
+#newitem
+#name "bronze hoplite helmet"
+#gameid 123
+#sprite /graphics/halfmen/satyr/helmet/bronze_hoplite_helmet.png
+#eliteversion "crested bronze hoplite helmet"
+#eliteversion "ram bronze hoplite helmet"
+#armor
+#theme "bronze"
+#theme "advanced"
+#minprot 14
+#enditem
+
+#newitem
+#name "crested bronze hoplite helmet"
+#gameid 123
+#sprite /graphics/halfmen/satyr/helmet/bronze_hoplite_helmet_crest.png
+#recolormask /graphics/halfmen/satyr/helmet/crest_recolormask.png
+#eliteversion "crested bronze hoplite helmet"
+#eliteversion "ram bronze hoplite helmet"
+#armor
+#theme "bronze"
+#theme "elite"
+#theme "advanced"
+#minprot 14
+#enditem
+
+#newitem
+#name "ram bronze hoplite helmet"
+#gameid 123
+#sprite /graphics/halfmen/satyr/helmet/bronze_hoplite_helmet_ram.png
+#eliteversion "ram bronze hoplite helmet"
+#armor
+#theme "bronze"
+#theme "elite"
+#theme "advanced"
+#minprot 14
+#command "mor +1"
+#command "mr +1"
+#command "gcost +1"
+#enditem
+
+
+--- Iron
+
+#newitem
+#name "iron cap"
+#gameid 135
+#sprite /graphics/halfmen/satyr/helmet/iron_half_helmet.png
+#eliteversion "crested iron helmet"
+#eliteversion "iron hoplite helmet"
+#armor
+#theme "iron"
+#minprot 10
+#maxprot 16
+#enditem
+
+#newitem
+#name "iron helmet"
+#gameid 118
+#sprite /graphics/halfmen/satyr/helmet/iron_half_helmet.png
+#eliteversion "crested iron helmet"
+#eliteversion "iron hoplite helmet"
+#armor
+#theme "iron"
+#minprot 10
+#maxprot 16
+#enditem
+
+#newitem
+#name "crested iron helmet"
+#gameid 118
+#sprite /graphics/halfmen/satyr/helmet/iron_half_helmet_crest.png
+#recolormask /graphics/halfmen/satyr/helmet/crest_recolormask.png
+#eliteversion "crested iron helmet"
+#eliteversion "crested iron hoplite helmet"
+#eliteversion "ram iron hoplite helmet"
+#armor
+#theme "iron"
+#theme "elite"
+#minprot 10
+#maxprot 16
+#enditem
+
+#newitem
+#name "iron hoplite helmet"
+#gameid 21
+#sprite /graphics/halfmen/satyr/helmet/iron_hoplite_helmet.png
+#eliteversion "crested iron hoplite helmet"
+#eliteversion "ram iron hoplite helmet"
+#armor
+#theme "iron"
+#theme "advanced"
+#minprot 14
+#enditem
+
+#newitem
+#name "crested iron hoplite helmet"
+#gameid 21
+#sprite /graphics/halfmen/satyr/helmet/iron_hoplite_helmet_crest.png
+#recolormask /graphics/halfmen/satyr/helmet/crest_recolormask.png
+#eliteversion "crested iron hoplite helmet"
+#eliteversion "ram iron hoplite helmet"
+#armor
+#theme "iron"
+#theme "elite"
+#theme "advanced"
+#minprot 14
+#enditem
+
+#newitem
+#name "ram iron hoplite helmet"
+#gameid 21
+#sprite /graphics/halfmen/satyr/helmet/iron_hoplite_helmet_ram.png
+#eliteversion "ram iron hoplite helmet"
+#armor
+#theme "iron"
+#theme "elite"
+#theme "advanced"
+#minprot 14
+#command "mor +1"
+#command "mr +1"
+#command "gcost +1"
+#enditem
+

@@ -1,0 +1,43 @@
+#newitem
+#name "nada"
+#gameid -1
+#armor
+#tier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#name "ivy laurel"
+#gameid -1
+#sprite /graphics/halfmen/satyr/helmet/caster/laurel_dryad.png
+#armor
+#chanceinc personalmagic nature *2
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#name "bone laurel"
+#gameid -1
+#basechance 0
+#sprite /graphics/halfmen/satyr/helmet/caster/laurel_dryad_bone.png
+#armor
+#chanceinc personalmagic death 2
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#name "gold laurel"
+#gameid -1
+#basechance 0
+#sprite /graphics/halfmen/satyr/helmet/caster/laurel_dryad_gold.png
+#armor
+#chanceinc personalmagic earth 2
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem

@@ -1,0 +1,36 @@
+#newrace
+#name "Crustacean"
+#visiblename "Crustacean"
+#basechance 0.1
+
+#chanceinc nationtag oriental +0.2
+#chanceinc nationtag amphibian +0.2
+#chanceinc nationtag subterranean +0.1
+
+#racethemes crustacean_themes
+#raceprefix crabman
+
+#pose crabmantroops
+#pose crabmanmages
+
+#longsyllables /data/names/nations/atlantian/longsyllables.txt
+#shortsyllables /data/names/nations/atlantian/shortsyllables.txt
+#suffixes /data/names/nations/atlantian/suffixes.txt
+
+#nationcommand "#uwbuild 1"
+#nationcommand "#riverstart"
+#nationcommand "#coastnation"
+#forts default_forts
+
+#theme oriental
+#oriental
+#amphibian
+#crustacean
+#gods easterngods
+
+#magicpriority water 4
+#magicpriority earth 4
+#magicpriority blood 0.5
+#monsterchance 0.01
+
+#endrace
