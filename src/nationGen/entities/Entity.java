@@ -31,34 +31,26 @@ public class Entity {
 		E instance = null;
 		for (String strLine : FileUtil.readLines(file))
 		{
-			
-			if(strLine.trim().toLowerCase().startsWith("#new"))
-				try
-				{
-					instance = c.getConstructor(NationGen.class).newInstance(nationGen);
-				}
-				catch(Exception e)
-				{
-					e.printStackTrace();
-					System.out.println("Error initializing a new instance of " + c.getCanonicalName());
-				}
+			try {
+				if (strLine.trim().toLowerCase().startsWith("#new"))
+					try {
+						instance = c.getConstructor(NationGen.class).newInstance(nationGen);
+					} catch (Exception e) {
+						throw new IllegalStateException("Error initializing a new instance of " + c.getCanonicalName(), e);
+					}
 				
-			else if(strLine.trim().toLowerCase().startsWith("#end"))
-			{
-				if(instance != null)
-				{
-					instance.finish();
-					list.add(instance);
+				else if (strLine.trim().toLowerCase().startsWith("#end")) {
+					if (instance != null) {
+						instance.finish();
+						list.add(instance);
+					}
+					instance = null;
+				} else if (instance != null && strLine.startsWith("#")) {
+					instance.handleOwnCommand(Command.parse(strLine));
 				}
-				instance = null;
-				
-				
+			} catch (Exception e) {
+				throw new IllegalStateException("Error handling file '" + file + "' line: " + strLine, e);
 			}
-			else if(instance != null && strLine.startsWith("#"))
-			{
-				instance.handleOwnCommand(Command.parse(strLine));
-			}
-
 		}
 		
 		return list;

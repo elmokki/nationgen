@@ -786,17 +786,6 @@ public class NationGen
 	}
 	
 	/**
-	 * Copies any poses from each race's spriteGenPoses list into its poses list
-	 */
-	public void setSpriteGenPoses()
-	{
-		for(Race race : assets.races)
-		{
-			race.poses.addAll(race.spriteGenPoses);
-		}
-	}
-	
-	/**
 	 * Aborts the nation generating process. This var is reset when the next set starts to generate.
 	 */
 	public void abortNationGeneration()

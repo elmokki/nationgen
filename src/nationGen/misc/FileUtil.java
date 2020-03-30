@@ -4,7 +4,11 @@ package nationGen.misc;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.*;
+import java.io.BufferedOutputStream;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
@@ -119,14 +123,24 @@ public final class FileUtil {
 	/**
 	 * Writes a PNG image file based on the given image and the path to where it should be saved.
 	 * @param image The image to save
-	 * @param filepath The path to the file where it should be saved
+	 * @param filepath The relative path to the file where it should be saved
 	 * @throws IllegalStateException if the image couldn't be written
 	 */
 	public static void writePng(BufferedImage image, String filepath) {
+		writePng(image, getPath(filepath).toFile());
+	}
+	
+	/**
+	 * Writes a PNG image file based on the given image and the path to where it should be saved.
+	 * @param image The image to save
+	 * @param file The file where it should be saved
+	 * @throws IllegalStateException if the image couldn't be written
+	 */
+	public static void writePng(BufferedImage image, File file) {
 		try {
-			ImageIO.write(image, "png", getPath(filepath).toFile());
+			ImageIO.write(image, "png", file);
 		} catch (IOException e) {
-			throw new IllegalStateException("Couldn't write PNG file to '" + filepath + "'.");
+			throw new IllegalStateException("Couldn't write PNG file to '" + file.getPath() + "'.");
 		}
 	}
 	
@@ -137,8 +151,18 @@ public final class FileUtil {
 	 * @throws IllegalStateException if the image couldn't be written
 	 */
 	public static void writeTGA(BufferedImage image, String filepath) {
+		writeTGA(image, getPath(filepath).toFile());
+	}
+	
+	/**
+	 * Writes a TGA image file based on the given image and the path to where it should be saved.
+	 * @param image The image to save
+	 * @param file The path to the file where it should be saved
+	 * @throws IllegalStateException if the image couldn't be written
+	 */
+	public static void writeTGA(BufferedImage image, File file) {
 		try (DataOutputStream out =
-				new DataOutputStream(new BufferedOutputStream(new FileOutputStream(getPath(filepath).toFile())))) {
+				new DataOutputStream(new BufferedOutputStream(new FileOutputStream(file)))) {
 			
 			// ID Length
 			out.writeByte((byte) 0);
@@ -178,7 +202,7 @@ public final class FileUtil {
 			}
 			
 		} catch (IOException e) {
-			throw new IllegalStateException("Couldn't write TGA file to '" + filepath + "'.");
+			throw new IllegalStateException("Couldn't write TGA file to '" + file.getPath() + "'.");
 		}
 	}
 	

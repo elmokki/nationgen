@@ -89,44 +89,32 @@ public class Drawable extends Filter {
 	
 	public void render(Graphics g, Color c)
 	{
-		render(g, false, 0, 0, c, 0);
+		render(g, false, 0, 0, c);
 	}
 	
 	
-	private BufferedImage convertToAlpha(BufferedImage image)
-	{
-		image = Drawing.convertImageToRGBA(image);
-		image = Drawing.blackToTransparent(image);
-	    image = Drawing.purpleToShadow(image);
-	    return image;
-	}
-	
-	public void render(Graphics g, boolean useoffsets, int offsetx, int offsety, Color color, int extraX)
+	public void render(Graphics g, boolean useoffsets, int offsetx, int offsety, Color color)
 	{				
 		Drawable i = this;
-		if(i == null || i.sprite == null || i.sprite.equals(""))
+		if(i.sprite == null || i.sprite.equals(""))
 			return;
 		
-		int xoff = i.offsetx + offsetx + extraX;
+		int xoff = i.offsetx + offsetx;
 		int yoff = i.offsety + offsety;
 		if(!useoffsets)
 		{
-			xoff = extraX;
+			xoff = 0;
 			yoff = 0;
 		}
 		
-		if(i != null)
-		{
-			
-			BufferedImage image = FileUtil.readImage(i.sprite);
-			
-			// Handle "black_to_alpha"
-			if(this.tags.containsName("convert_to_alpha"))
-				image = convertToAlpha(image);
-			
-			g.drawImage(image, xoff, yoff, null);
-			drawRecolorMask(g, this, color, xoff, yoff);
-		}
+		BufferedImage image = FileUtil.readImage(i.sprite);
+		
+		// Handle "black_to_alpha"
+		if(this.tags.containsName("convert_to_alpha"))
+			image = Drawing.convertToAlpha(image);
+		
+		g.drawImage(image, xoff, yoff, null);
+		drawRecolorMask(g, this, color, xoff, yoff);
 	}
 	
 	
@@ -142,7 +130,7 @@ public class Drawable extends Filter {
 	
 			// Handle "black_to_alpha"
 			if(this.tags.containsName("convert_to_alpha"))
-				image = convertToAlpha(image);
+				image = Drawing.convertToAlpha(image);
 
 			if(i.tags.containsName("alternaterecolor"))
 				colorizeFilter =  Drawing.createColorizeOp_alt(c);
