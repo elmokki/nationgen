@@ -45,25 +45,10 @@
 #enditem
 
 #newitem
-#id shield_wood_old_plain
-#gameid 2
-#basechance 0.25
-#sprite /graphics/jotun/warrior/offhand/shield_old.png
-#eliteversion shield_wood_old_plain
-#eliteversion shield_wood_old_painted1
-#eliteversion shield_wood_old_painted2
-#eliteversion shield_wood_old_painted3
-#eliteversion shield_wood_old_painted4
-#armor
-#theme miltia
-#enditem
-
-#newitem
 #id shield_wood_painted1
 #gameid 2
-#basechance 0.5
 #sprite /graphics/jotun/warrior/offhand/shield_wood.png
-#recolormask /graphics/jotun/warrior/offhand/shield_recolormask1
+#recolormask /graphics/jotun/warrior/offhand/shield_recolormask1.png
 #eliteversion shield_metal_painted1
 #eliteversion shield_wood_painted1
 #armor
@@ -72,52 +57,10 @@
 #newitem
 #id shield_wood_painted2
 #gameid 2
-#basechance 0.5
 #sprite /graphics/jotun/warrior/offhand/shield_wood.png
-#recolormask /graphics/jotun/warrior/offhand/shield_recolormask2
+#recolormask /graphics/jotun/warrior/offhand/shield_recolormask2.png
 #eliteversion shield_metal_painted2
 #eliteversion shield_wood_painted2
-#armor
-#enditem
-
-#newitem
-#id shield_wood_old_painted1
-#gameid 2
-#basechance 0.125
-#sprite /graphics/jotun/warrior/offhand/shield_old.png
-#recolormask /graphics/jotun/warrior/offhand/shield_old_recolormask1
-#eliteversion shield_wood_old_painted1
-#armor
-#enditem
-
-#newitem
-#id shield_wood_old_painted2
-#gameid 2
-#basechance 0.125
-#sprite /graphics/jotun/warrior/offhand/shield_old.png
-#recolormask /graphics/jotun/warrior/offhand/shield_old_recolormask2
-#eliteversion shield_wood_old_painted1
-#eliteversion shield_wood_old_painted2
-#armor
-#enditem
-
-#newitem
-#id shield_wood_old_painted3
-#gameid 2
-#basechance 0.125
-#sprite /graphics/jotun/warrior/offhand/shield_old.png
-#recolormask /graphics/jotun/warrior/offhand/shield_old_recolormask3
-#eliteversion shield_wood_old_painted3
-#armor
-#enditem
-
-#newitem
-#id shield_wood_old_painted4
-#gameid 2
-#basechance 0.125
-#sprite /graphics/jotun/warrior/offhand/shield_old.png
-#recolormask /graphics/jotun/warrior/offhand/shield_old_recolormask4
-#eliteversion shield_wood_old_painted4
 #armor
 #enditem
 
@@ -152,7 +95,7 @@
 #gameid 208
 #basechance 0.25
 #sprite /graphics/jotun/warrior/offhand/shield_metal.png
-#recolormask /graphics/jotun/warrior/offhand/shield_recolormask1
+#recolormask /graphics/jotun/warrior/offhand/shield_recolormask1.png
 #eliteversion shield_metal_painted1
 #armor
 #theme iron
@@ -163,7 +106,7 @@
 #gameid 208
 #basechance 0.25
 #sprite /graphics/jotun/warrior/offhand/shield_metal.png
-#recolormask /graphics/jotun/warrior/offhand/shield_recolormask2
+#recolormask /graphics/jotun/warrior/offhand/shield_recolormask2.png
 #eliteversion shield_metal_painted2
 #armor
 #theme iron
