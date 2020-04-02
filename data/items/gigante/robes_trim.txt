@@ -1,0 +1,145 @@
+-- Tier 1: no trim
+#newitem
+#id none
+#gameid -1
+#armor
+#tier 1
+#notfortier 2
+#notfortier 3
+#type dark
+#type light
+#enditem
+
+
+-- Tier 2-3: various fancy trims
+
+#newitem
+#id black
+#gameid -1
+#sprite /graphics/gigante/armor/robes/himation_trim_black.png
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#type dark
+#enditem
+
+#newitem
+#id grey
+#gameid -1
+#sprite /graphics/gigante/armor/robes/himation_trim_grey.png
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#type dark
+#type light
+#enditem
+
+#newitem
+#id white
+#gameid -1
+#sprite /graphics/gigante/armor/robes/himation_trim_white.png
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#type light
+#enditem
+
+#newitem
+#id silver
+#gameid -1
+#sprite /graphics/gigante/armor/robes/himation_trim_silver.png
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#type light
+#enditem
+
+#newitem
+#id gold
+#gameid -1
+#sprite /graphics/gigante/armor/robes/himation_trim_gold.png
+#armor
+#notfortier 1
+#tier 2
+tier 3
+#type dark
+#type light
+#enditem
+
+#newitem
+#id dark
+#gameid -1
+#sprite /graphics/gigante/armor/robes/himation_trim_black.png
+#recolormask self
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#type dark
+#enditem
+
+#newitem
+#id medium
+#gameid -1
+#sprite /graphics/gigante/armor/robes/himation_trim_grey.png
+#recolormask self
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#type dark
+#type light
+#enditem
+
+#newitem
+#id light
+#gameid -1
+#sprite /graphics/gigante/armor/robes/himation_trim_white.png
+#recolormask self
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#type light
+#enditem
+
+#newitem
+#id dim
+#gameid -1
+#sprite /graphics/gigante/armor/robes/himation_trim_dim.png
+#recolormask self
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#type dark
+#type light
+#enditem
+
+#newitem
+#id pale
+#gameid -1
+#sprite /graphics/gigante/armor/robes/himation_trim_pale.png
+#recolormask self
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#type dark
+#type light
+#enditem
+
+#newitem
+#id twotone
+#gameid -1
+#nogen
+#basechance 0
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem

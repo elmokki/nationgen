@@ -1,0 +1,103 @@
+#newitem
+#name "cloak_brown"
+#gameid -1
+#sprite /graphics/jotun/warrior/cloak/cloak_brown_b.png
+#needs cloakf "cloak_brown"
+#tier 1
+#notfor tier 2
+#notfor tier 3
+#theme "primitive"
+#enditem
+
+#newitem
+#name "cloak_light"
+#gameid -1
+#basechance 2
+#sprite /graphics/jotun/warrior/cloak/cloak_light_b.png
+#recolormask self
+#needs cloakf "cloak_light"
+#tier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#name "cloak_dark"
+#gameid -1
+#basechance 2
+#sprite /graphics/jotun/warrior/cloak/cloak_dark_b.png
+#recolormask self
+#needs cloakf "cloak_dark"
+#tier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#name "cloak_wolf"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/jotun/warrior/cloak/cloak_wolf_b.png
+#needs cloakf "cloak_wolf"
+#theme "primitive"
+#theme "elite"
+#theme "wolf"
+#wolf
+#themeinc "theme wolf *10"
+#notfor tier 1
+#tier 2
+#tier 3
+#needstype helmet cap
+#maxprot 12
+#enditem
+
+#newitem
+#name "cloak_bear_brown"
+#basechance 0.125
+#gameid -1
+#sprite /graphics/jotun/warrior/cloak/cloak_bear_brown_b.png
+#needs cloakf "cloak_bear_brown"
+#theme "primitive"
+#theme "elite"
+#theme "bear"
+#bear
+#themeinc "theme bear *10"
+#themeinc "theme brown *1000"
+#notfor tier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#name "cloak_bear_black"
+#basechance 0.125
+#gameid -1
+#sprite /graphics/jotun/warrior/cloak/cloak_bear_black_b.png
+#needs cloakf "cloak_bear_black"
+#theme "primitive"
+#theme "elite"
+#theme "bear"
+#bear
+#themeinc "theme bear *10"
+#themeinc "theme black *1000"
+#notfor tier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#name "cloak_bear_white"
+#basechance 0.125
+#gameid -1
+#sprite /graphics/jotun/warrior/cloak/cloak_bear_white_b.png
+#needs cloakf "cloak_bear_white"
+#theme "primitive"
+#theme "elite"
+#theme "bear"
+#bear
+#themeinc "theme bear *10"
+#themeinc "theme white *1000"
+#notfor tier 1
+#tier 2
+#tier 3
+#enditem

@@ -76,7 +76,7 @@
 #racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/oriental/suffixes.txt"
-#racedefinition "#nationcommand '#gods easterngods'"
+#racedefinition "#gods easterngods"
 #racedefinition "#oriental"
 #racedefinition "#pose koitroops"
 #racedefinition "#pose koimages"
@@ -104,7 +104,7 @@
 #racedefinition "#longsyllables /data/names/nations/nahuatl/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/nahuatl/suffixes.txt"
-#racedefinition "#nationcommand '#gods westerngods'"
+#racedefinition "#gods westerngods"
 #racedefinition "#bonussacreds 1"
 #racedefinition "#occidental"
 #racedefinition "#nationcommand '#idealcold -1'"
@@ -123,6 +123,24 @@
 #themeinc theme enclosed_helm *0.001
 #themeinc theme common_pigment *5000
 #themeinc theme faint_pigment *2500
+#themeinc theme light_pigment *2500
+#endtheme
+
+#newtheme
+#type demographic
+#name greenlandsharkmen
+#basechance 0.25
+#racedefinition "#pose somniosidtroops"
+#racedefinition "#pose somniosidmages"
+#racedefinition "#boreal"
+#racedefinition "#nationcommand '#idealcold 2'"
+#racedefinition "#gods europegods"
+#themeinc theme inland *0.01
+#themeinc theme coral *0.001
+#themeinc theme boreal *1000
+#themeinc theme enclosed_helm *0.001
+#themeinc theme common_pigment *1250
+#themeinc theme dark_pigment *2500
 #themeinc theme light_pigment *2500
 #endtheme
 
@@ -153,7 +171,7 @@
 #racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/oriental/suffixes.txt"
-#racedefinition "#nationcommand '#gods easterngods'"
+#racedefinition "#gods easterngods"
 #racedefinition "#oriental"
 #racedefinition "#pose siluriformidtroops"
 #racedefinition "#pose siluriformidmages"
@@ -170,7 +188,7 @@
 #racedefinition "#longsyllables /data/names/nations/nahuatl/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/nahuatl/suffixes.txt"
-#racedefinition "#nationcommand '#gods westerngods'"
+#racedefinition "#gods westerngods"
 #racedefinition "#bonussacreds 1"
 #racedefinition "#occidental"
 #racedefinition "#pose siluriformidtroops"

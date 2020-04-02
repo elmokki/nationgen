@@ -1,0 +1,80 @@
+--- Nothing
+
+#newitem
+#name "loincloth"
+#gameid -1
+#sprite /graphics/bakemono/small/armor/loincloth.png
+#theme naked
+#theme primitive
+#theme militia
+#armor
+#enditem
+
+#newitem
+#name "roninpants"
+#gameid -1
+#sprite /graphics/bakemono/small/armor/roninpants.png
+#theme naked
+#theme elite
+#theme small_elite
+#armor
+#enditem
+
+
+--- Furs
+
+#newitem
+#name "furs"
+#gameid 44
+#sprite /graphics/bakemono/small/armor/furs_bow.png
+#theme naked
+#theme primitive
+#theme militia
+#armor
+#enditem
+
+
+--- Ashiguru
+
+#newitem
+#name "ashigaru armor"
+#gameid 128
+#sprite /graphics/bakemono/small/armor/ashigaru_bow.png
+#theme advanced
+#armor
+#enditem
+
+
+--- Samurai
+
+#newitem
+#name "samurai armor"
+#gameid 129
+#sprite /graphics/bakemono/small/armor/samurai_bow.png
+#eliteversion "heavy samurai armor elite"
+#theme advanced
+#theme small_elite
+#armor
+#enditem
+
+#newitem
+#name "heavy samurai armor"
+#gameid 130
+#sprite /graphics/bakemono/small/armor/heavysamurai_bow.png
+#eliteversion "heavy samurai armor elite"
+#theme advanced
+#theme elite
+#theme small_elite
+#armor
+#enditem
+
+#newitem
+#name "heavy samurai armor elite"
+#gameid 130
+#sprite /graphics/bakemono/small/armor/heavysamurai_bow.png
+#recolormask /graphics/bakemono/small/armor/heavysamurai_bow_recolormask.png
+#theme advanced
+#theme elite
+#theme small_elite
+#armor
+#enditem

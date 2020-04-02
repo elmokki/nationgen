@@ -11,11 +11,15 @@
 #theme "occidental"
 #theme "central"
 #theme "imperial"
+#theme "civilized"
 #theme "abysian"
 #sacred
 #elite
 
 #command "#stealthy 0"
+
+#renderorder "shadow cloakb mount basesprite shirt legs bonusweapon quiver armor cloakf beard hair weapon offhandw hands helmet offhanda overlay"
+#load beard /data/items/hoburg/normal/beard.txt
 
 #load basesprite /data/items/hoburg/normal/bases.txt
 #load shadow /data/items/hoburg/normal/shadow.txt
@@ -49,13 +53,15 @@
 #theme "occidental"
 #theme "central"
 #theme "imperial"
+#theme "civilized"
 #theme "abysian"
 #elite
 #sacred
 
 #baseitemslot feet 0
 
-#renderorder "shadow cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow cloakb mount basesprite shirt legs bonusweapon quiver armor cloakf beard hair weapon offhandw hands helmet offhanda overlay"
+#load beard /data/items/hoburg/normal/beard.txt
 
 #load basesprite /data/items/hoburg/mounted/bases.txt
 #load shirt /data/items/hoburg/normal/shirt.txt
@@ -95,6 +101,7 @@
 #theme "occidental"
 #theme "central"
 #theme "imperial"
+#theme "civilized"
 #theme "abysian"
 #elite
 #sacred
@@ -103,7 +110,8 @@
 
 #baseitemslot feet 0
 
-#renderorder "shadow cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow cloakb mount basesprite shirt legs bonusweapon quiver armor cloakf beard hair weapon offhandw hands helmet offhanda overlay"
+#load beard /data/items/hoburg/normal/beard.txt
 
 #load basesprite /data/items/hoburg/mounted/bases.txt
 #load shirt /data/items/hoburg/normal/shirt.txt
@@ -141,13 +149,15 @@
 #theme "occidental"
 #theme "central"
 #theme "imperial"
+#theme "civilized"
 #theme "abysian"
 #elite
 #sacred
 
 #command "#stealthy 0"
 
-#renderorder "shadow cloakb mount basesprite shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow cloakb mount basesprite shirt legs bonusweapon quiver armor cloakf beard hair weapon offhandw hands helmet offhanda overlay"
+#load beard /data/items/hoburg/normal/beard.txt
 
 #load basesprite /data/items/hoburg/crossbow/bases.txt
 #load shadow /data/items/hoburg/normal/shadow.txt
@@ -181,7 +191,11 @@
 #theme "occidental"
 #theme "central"
 #theme "imperial"
+#theme "civilized"
 #theme "abysian"
+
+#renderorder "shadow cloakb mount basesprite shirt legs bonusweapon quiver armor cloakf beard hair weapon offhandw hands helmet offhanda overlay"
+#load beard /data/items/hoburg/normal/beard.txt
 
 #load basesprite /data/items/hoburg/normal/bases.txt
 #load shadow /data/items/hoburg/normal/shadow.txt

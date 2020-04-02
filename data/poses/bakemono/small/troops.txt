@@ -1,0 +1,190 @@
+-- Light infantry (1h)
+#newpose
+#name "little 1h warriors"
+#role "infantry"
+#role "scout"
+
+#themeinc theme advanced *0
+#theme small_normal
+
+#load basesprite /data/items/bakemono/small/bases_1h_primitive.txt
+#load shadow /data/items/bakemono/small/shadow.txt
+#load hands /data/items/bakemono/small/hands.txt
+#load armor /data/items/bakemono/small/armor_1h.txt
+#load helmet /data/items/bakemono/small/helmet.txt
+#load weapon /data/items/bakemono/small/weapon.txt
+
+#maxunits 1
+
+#endpose
+
+
+-- Heavy infantry (1h)
+#newpose
+#name "little 1h infantry"
+#role "infantry"
+#role "elite"
+#role "sacred"
+
+#themeinc theme primitive *0
+#theme small_elite
+
+#load basesprite /data/items/bakemono/small/bases_1h_advanced.txt
+#load shadow /data/items/bakemono/small/shadow.txt
+#load hands /data/items/bakemono/small/hands.txt
+#load armor /data/items/bakemono/small/armor_1h.txt
+#load helmet /data/items/bakemono/small/helmet.txt
+#load weapon /data/items/bakemono/small/weapon.txt
+
+#endpose
+
+
+-- Light infantry (2h)
+#newpose
+#name "little 2h warriors"
+#role "infantry"
+
+#themeinc theme advanced *0
+#theme small_normal
+
+#load basesprite /data/items/bakemono/small/bases_1h_primitive.txt
+#load shadow /data/items/bakemono/small/shadow.txt
+#load hands /data/items/bakemono/small/hands.txt
+#load armor /data/items/bakemono/small/armor_2h.txt
+#load helmet /data/items/bakemono/small/helmet.txt
+#load weapon /data/items/bakemono/small/weapon.txt
+
+#maxunits 1
+
+#endpose
+
+
+-- Heavy infantry (2h)
+#newpose
+#name "little 2h infantry"
+#role "infantry"
+#role "elite"
+#role "sacred"
+
+#themeinc theme primitive *0
+#theme small_elite
+
+#load basesprite /data/items/bakemono/small/bases_1h_advanced.txt
+#load shadow /data/items/bakemono/small/shadow.txt
+#load hands /data/items/bakemono/small/hands.txt
+#load armor /data/items/bakemono/small/armor_2h.txt
+#load helmet /data/items/bakemono/small/helmet.txt
+#load weapon /data/items/bakemono/small/weapon.txt
+
+#endpose
+
+
+-- Light infantry (katana)
+#newpose
+#name "little katana warriors"
+#role "elite"
+#role "sacred"
+
+#themeinc theme advanced *0
+#theme small_elite
+
+#load basesprite /data/items/bakemono/small/bases_1h_primitive.txt
+#load shadow /data/items/bakemono/small/shadow.txt
+#load hands /data/items/bakemono/small/hands.txt
+#load armor /data/items/bakemono/small/armor_katana.txt
+#load helmet /data/items/bakemono/small/helmet.txt
+#load weapon /data/items/bakemono/small/weapon.txt
+
+#endpose
+
+
+-- Heavy infantry (katana)
+#newpose
+#name "little katana infantry"
+#role "elite"
+#role "sacred"
+
+#themeinc theme primitive *0
+#theme small_elite
+
+#load basesprite /data/items/bakemono/small/bases_1h_advanced.txt
+#load shadow /data/items/bakemono/small/shadow.txt
+#load hands /data/items/bakemono/small/hands.txt
+#load armor /data/items/bakemono/small/armor_katana.txt
+#load helmet /data/items/bakemono/small/helmet.txt
+#load weapon /data/items/bakemono/small/weapon.txt
+
+#endpose
+
+
+--- Light archer
+#newpose
+#name "little skirmishers"
+#role "ranged"
+#role "scout"
+
+#themeinc theme advanced *0
+#theme small_normal
+
+#renderorder "shadow quiver cloakb basesprite armor cloakf bonusweapon weapon hands hair helmet"
+
+#load basesprite /data/items/bakemono/small/bases_ranged_primitive.txt
+#load shadow /data/items/bakemono/small/shadow.txt
+#load hands /data/items/bakemono/small/hands.txt
+#load armor /data/items/bakemono/small/armor_ranged.txt
+#load helmet /data/items/bakemono/small/helmet.txt
+#load weapon /data/items/bakemono/small/bow.txt
+#load bonusweapon /data/items/bakemono/small/archerweapon.txt
+
+#generateitem 1 bonusweapon
+
+#maxunits 1
+
+#endpose
+
+
+--- Heavy archer
+#newpose
+#name "little archers"
+#role "ranged"
+#role "elite"
+#role "sacred"
+
+#themeinc theme primitive *0
+#theme small_elite
+
+#renderorder "shadow quiver cloakb basesprite armor cloakf bonusweapon weapon hands hair helmet"
+
+#load basesprite /data/items/bakemono/small/bases_ranged_advanced.txt
+#load shadow /data/items/bakemono/small/shadow.txt
+#load hands /data/items/bakemono/small/hands.txt
+#load armor /data/items/bakemono/small/armor_ranged.txt
+#load helmet /data/items/bakemono/small/helmet.txt
+#load weapon /data/items/bakemono/small/bow.txt
+#load bonusweapon /data/items/bakemono/small/archerweapon.txt
+
+#generateitem 1 bonusweapon
+
+#maxunits 1
+
+#endpose
+
+-- Ninjas
+#newpose
+#name "little ninjas"
+#role "scout"
+#cannot_be_scout
+
+#theme small_elite
+
+#load basesprite /data/items/bakemono/small/bases_1h_advanced.txt
+#load shadow /data/items/bakemono/small/shadow.txt
+#load hands /data/items/bakemono/small/hands.txt
+#load armor /data/items/bakemono/small/armor_scout.txt
+#load helmet /data/items/bakemono/small/helmet_scout.txt
+#load weapon /data/items/bakemono/small/weapon_scout.txt
+#load bonusweapon /data/items/bakemono/small/bonusranged_scout.txt
+
+#generateitem 1 bonusweapon
+
+#endpose

@@ -1,0 +1,90 @@
+#newitem
+#name barehead
+#gameid -1
+#armor
+#enditem
+
+#newitem
+#name cap_leather
+#gameid 120
+#sprite /graphics/jotun/gygr/helmet/cap_leather.png
+#armor
+#theme leather
+#theme light
+#theme militia
+#maxprot 12
+#type cap
+#enditem
+
+#newitem
+#name cap_reinforced
+#gameid 119
+#sprite /graphics/jotun/gygr/helmet/cap_reinforced.png
+#armor
+#theme leather
+#theme light
+#theme militia
+#maxprot 12
+#type cap
+#enditem
+
+#newitem
+#name cap_iron
+#gameid 20
+#sprite /graphics/jotun/gygr/helmet/cap_iron.png
+#eliteversion halfhelm_iron
+#armor
+#theme iron
+#minprot 9
+#type cap
+#enditem
+
+#newitem
+#name halfhelm_iron
+#gameid 118
+#sprite /graphics/jotun/gygr/helmet/halfhelm.png
+#eliteversion halfhelm_iron
+#eliteversion halfhelm_gilt
+#eliteversion barehead
+#armor
+#theme iron
+#minprot 14
+#enditem
+
+#newitem
+#name halfhelm_gold
+#gameid 118
+#basechance 0.1
+#sprite /graphics/jotun/gygr/helmet/halfhelm_gilt.png
+#eliteversion halfhelm_gilt
+#eliteversion barehead
+#armor
+#theme iron
+#theme gold
+#theme elite
+#minprot 14
+#enditem
+
+#newitem
+#name cap_ice
+#gameid 29
+#basechance 0.1
+#sprite /graphics/jotun/gygr/helmet/cap_ice.png
+#eliteversion halfhelm_ice
+#eliteversion barehead
+#armor
+#theme ice
+#theme elite
+#type cap
+#enditem
+
+#newitem
+#name halfhelm_ice
+#gameid icehelmet_full
+#basechance 0.1
+#sprite /graphics/jotun/gygr/helmet/halfhelm_ice.png
+#eliteversion halfhelm_ice
+#armor
+#theme ice
+#theme elite
+#enditem

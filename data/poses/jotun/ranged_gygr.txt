@@ -1,0 +1,71 @@
+
+#newpose
+#name "female skirmishers"
+#role "ranged"
+
+#chanceinc "racetheme patriarchal *0"
+#chanceinc "racetheme traditional *0.1"
+-- #chanceinc "racetheme mixed 0"
+#chanceinc "racetheme matriarchal *100"
+
+#renderorder "shadow quiver basesprite mount shirt legs weapon armor cloakb bonusweapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/jotun/gygr/bases_warrior.txt
+#load shadow /data/items/jotun/warrior/shadow.txt
+
+#load armor /data/items/jotun/gygr/armor_scout.txt
+#load helmet /data/items/jotun/gygr/helmet_scout.txt
+#load weapon /data/items/jotun/gygr/weapon_skirmisher.txt
+#load quiver /data/items/jotun/hurler/quiver.txt
+
+#load cloakb /data/items/jotun/warrior/cloakb.txt
+
+#load bonusweapon /data/items/jotun/hurler/weapon_hurler.txt
+
+#load hair /data/items/jotun/gygr/hair_warrior.txt
+
+#generateitem 1 hair
+#generateitem 1 bonusweapon
+#generateitem 1 cloakb
+
+#maxunits 1
+#maxvarieties 1
+
+#endpose
+
+
+
+#newpose
+#name "elite female skirmishers"
+#role "elite ranged"
+#role "sacred ranged"
+
+#chanceinc "racetheme patriarchal *0"
+#chanceinc "racetheme traditional *0"
+#chanceinc "racetheme mixed *2"
+#chanceinc "racetheme matriarchal *100"
+
+#renderorder "shadow quiver basesprite mount shirt legs weapon armor cloakb bonusweapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/jotun/gygr/bases_warrior.txt
+#load shadow /data/items/jotun/warrior/shadow.txt
+
+#load armor /data/items/jotun/gygr/armor_scout.txt
+#load helmet /data/items/jotun/gygr/helmet_scout.txt
+#load weapon /data/items/jotun/gygr/weapon_skirmisher.txt
+#load quiver /data/items/jotun/hurler/quiver.txt
+
+#load cloakb /data/items/jotun/warrior/cloakb.txt
+
+#load bonusweapon /data/items/jotun/hurler/weapon_hurler.txt
+
+#load hair /data/items/jotun/gygr/hair_warrior.txt
+
+#generateitem 1 hair
+#generateitem 1 bonusweapon
+#generateitem 1 cloakb
+
+#maxunits 1
+#maxvarieties 1
+
+#endpose

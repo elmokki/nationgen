@@ -5,6 +5,8 @@
 #offsetx -5
 #tag "name infantry spearman"
 #theme "wood"
+#theme "boreal"
+#theme "formationfighter"
 #enditem
 
 #newitem
@@ -15,6 +17,7 @@
 #tag "name commander captain"
 #basechance 0.75
 #theme "bronze"
+#theme "formationfighter"
 #enditem
 
 #newitem
@@ -24,26 +27,27 @@
 #offsetx -5
 #tag "name infantry spearman"
 #theme "bronze"
+#theme "formationfighter"
 #enditem
 
 #newitem
 #id short_bronze_trident
 #gameid 680
 #sprite /graphics/ichtyid/weapon/bronze_trident.png
-#offsetx 0
 #tag "prefix trident"
 #basechance 0.75
 #theme "bronze"
+#theme "formationfighter"
 #enditem
 
 #newitem
 #id bronze_trident
 #gameid 641
 #sprite /graphics/ichtyid/weapon/bronze_trident.png
-#offsetx 0
 #tag "prefix trident"
 #basechance 0.75
 #theme "bronze"
+#theme "formationfighter"
 #enditem
 
 #newitem
@@ -57,6 +61,42 @@
 #theme "inland"
 #enditem
 
+-- Bone weapons
+
+#newitem
+#id short_bone_trident
+#gameid shorttrident_bone
+#sprite /graphics/ichtyid/weapon/bone_trident.png
+#tag "prefix trident"
+#basechance 0.75
+#theme "bone"
+#theme "primitive"
+#theme "boreal"
+#theme "formationfighter"
+#enditem
+
+#newitem
+#id bone_trident
+#gameid 670
+#sprite /graphics/ichtyid/weapon/bone_trident.png
+#tag "prefix trident"
+#basechance 0.75
+#theme "bone"
+#theme "primitive"
+#theme "boreal"
+#theme "formationfighter"
+#enditem
+
+#newitem
+#id bone_glaive
+#gameid glaive_bone_mundane
+#sprite /graphics/ichtyid/weapon/bone_glaive.png
+#basechance 0.75
+#theme "bone"
+#theme "primitive"
+#theme "boreal"
+#enditem
+
 -- Coral weapons
 
 #newitem
@@ -66,6 +106,7 @@
 #tag "name infantry spearman"
 #theme "coral"
 #theme "marine"
+#theme "formationfighter"
 #enditem
 
 #newitem
@@ -78,6 +119,7 @@
 #basechance 0.75
 #theme "coral"
 #theme "marine"
+#theme "formationfighter"
 #enditem
 
 #newitem
@@ -156,6 +198,15 @@
 #enditem
 
 #newitem
+#id hatchet_stone
+#gameid stonehatchet
+#sprite /graphics/ichtyid/weapon/stone_axe.png
+#basechance 0.5
+#theme "primitive"
+#theme "boreal"
+#enditem
+
+#newitem
 #id morningstar
 #gameid 15
 #sprite /graphics/ichtyid/weapon/bronze_morningstar.png
@@ -182,6 +233,14 @@
 #tag "name commander warlord"
 #theme "advanced"
 #theme "bronze"
+#enditem
+
+#newitem
+#id stonebattleaxe
+#sprite /graphics/ichtyid/weapon/stone_greataxe.png
+#basechance 0.25
+#theme "primitive"
+#theme "boreal"
 #enditem
 
 #newitem

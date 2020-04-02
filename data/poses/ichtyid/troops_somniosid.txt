@@ -1,0 +1,101 @@
+-------- Normal
+
+#newpose
+#name "somniosid infantry"
+#role "infantry"
+
+#subrace somniosid
+
+#command "#weapon bite_50"
+
+#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/ichtyid/bases_somniosid.txt
+#load shadow /data/items/ichtyid/shadow.txt
+#load hands /data/items/ichtyid/hands_somniosid.txt
+#load armor /data/items/ichtyid/armor.txt
+#load armor /data/items/ichtyid/naked.txt
+#load helmet /data/items/ichtyid/helmet.txt
+#load weapon /data/items/ichtyid/weapon.txt
+#load offhand /data/items/ichtyid/offhand.txt
+#load offhand /data/items/ichtyid/shield.txt
+#load bonusweapon /data/items/ichtyid/bonusrangedweapon.txt
+
+#endpose
+
+-------- Trained elites
+
+#newpose
+#name "somniosid elites"
+#role "sacred infantry"
+#role "elite infantry"
+
+#subrace somniosid
+
+#command "#weapon 20 --- Bite"
+
+#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/ichtyid/bases_somniosid.txt
+#load shadow /data/items/ichtyid/shadow.txt
+#load hands /data/items/ichtyid/hands_somniosid.txt
+#load armor /data/items/ichtyid/armor.txt
+#load armor /data/items/ichtyid/naked.txt
+#load helmet /data/items/ichtyid/helmet.txt
+#load weapon /data/items/ichtyid/weapon.txt
+#load offhand /data/items/ichtyid/offhand.txt
+#load offhand /data/items/ichtyid/shield.txt
+#load bonusweapon /data/items/ichtyid/bonusrangedweapon.txt
+
+#endpose
+
+-------- Raider elites
+
+#newpose
+#name "selachid elites"
+#role "sacred infantry"
+#role "elite infantry"
+
+#subrace somniosid
+
+#command "#weapon 20 --- Bite"
+#command "#pillagebonus +1"
+
+#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/ichtyid/bases_somniosid.txt
+#load shadow /data/items/ichtyid/shadow.txt
+#load hands /data/items/ichtyid/hands_somniosid.txt
+#load armor /data/items/ichtyid/armor.txt
+#load armor /data/items/ichtyid/naked.txt
+#load helmet /data/items/ichtyid/helmet.txt
+#load weapon /data/items/ichtyid/weapon.txt
+#load offhand /data/items/ichtyid/offhand.txt
+#load offhand /data/items/ichtyid/shield.txt
+#load bonusweapon /data/items/ichtyid/bonusrangedweapon.txt
+
+#endpose
+
+-------- scout
+
+#newpose
+#name "somniosid scout"
+#role "scout"
+
+#subrace somniosid
+
+#command "#weapon 20 --- Bite"
+
+#renderorder "shadow weapon basesprite armor bonusweapon offhandw hands helmet offhanda"
+
+#load basesprite /data/items/ichtyid/bases_somniosid.txt
+#load shadow /data/items/ichtyid/shadow.txt
+#load hands /data/items/ichtyid/hands_somniosid.txt
+#load armor /data/items/ichtyid/scoutarmor.txt
+#load armor /data/items/ichtyid/naked.txt
+#load helmet /data/items/ichtyid/scouthelmet.txt
+#load weapon /data/items/ichtyid/scoutweapon.txt
+#load offhand /data/items/ichtyid/scoutoffhand.txt
+#load bonusweapon /data/items/ichtyid/bonusrangedweapon.txt
+
+#endpose

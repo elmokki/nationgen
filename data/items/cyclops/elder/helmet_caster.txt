@@ -1,19 +1,221 @@
+#newitem
+#id none
+#gameid -1
+#basechance 10
+#armor
+#eliteversion greybeard
+#eliteversion whitebeard
+#eliteversion crown
+#eliteversion hedjet_black
+#eliteversion hedjet_grey
+#eliteversion hedjet_white
+#eliteversion hedjet_dark
+#eliteversion hedjet_medium
+#eliteversion hedjet_light
+#eliteversion nemes
+#eliteversion headdress1
+#eliteversion headdress2
+#eliteversion headdress3
+#tier 1
+#tier 2
+#tier 3
+#enditem
 
+#newitem
+#id greybeard
+#gameid -1
+#basechance 2
+#armor
+#sprite /graphics/cyclops/elder/helmet/caster/hair_grey.png
+#eliteversion whitebeard
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id whitebeard
+#gameid -1
+#basechance 1
+#armor
+#sprite /graphics/cyclops/elder/helmet/caster/hair_white.png
+#eliteversion whitebeard
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
 
 #newitem
 #id crown
 #gameid 148
-#sprite /graphics/fomorian/giant/helmet/crown.png
-#theme "advanced"
+#basechance 0
+#chanceinc "poseitemtheme body civilized 8"
+#chanceinc "poseitemtheme body austral 8"
+#sprite /graphics/cyclops/elder/helmet/caster/crown_ahura.png
 #armor
+#notfortier 1
+#notfortier 2
+#tier 3
 #enditem
 
 #newitem
-#id laurel
-#gameid -1
+#id hedjet_black
+#gameid 148
 #basechance 0
-#chanceinc "personalmagic nature 2"
-#sprite /graphics/fomorian/giant/helmet/laurel.png
-#theme "nature"
+#chanceinc "poseitemtheme body dynastic 3"
+#chanceinc "poseitemtheme body austral 3"
+#sprite /graphics/cyclops/elder/helmet/caster/hedjet_black.png
+#eliteversion hedjet_dark
+#eliteversion hedjet_medium
+#eliteversion hedjet_light
+#eliteversion nemes
 #armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id hedjet_grey
+#gameid 148
+#basechance 0
+#chanceinc "poseitemtheme body dynastic 3"
+#chanceinc "poseitemtheme body austral 3"
+#sprite /graphics/cyclops/elder/helmet/caster/hedjet_grey.png
+#eliteversion hedjet_dark
+#eliteversion hedjet_medium
+#eliteversion hedjet_light
+#eliteversion nemes
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id hedjet_white
+#gameid 148
+#basechance 0
+#chanceinc "poseitemtheme body dynastic 3"
+#chanceinc "poseitemtheme body austral 3"
+#sprite /graphics/cyclops/elder/helmet/caster/hedjet_white.png
+#eliteversion hedjet_dark
+#eliteversion hedjet_medium
+#eliteversion hedjet_light
+#eliteversion nemes
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id hedjet_dark
+#gameid 148
+#basechance 0
+#chanceinc "poseitemtheme body dynastic 9"
+#chanceinc "poseitemtheme body austral 9"
+#sprite /graphics/cyclops/elder/helmet/caster/hedjet_black.png
+#recolormask self
+#eliteversion hedjet_medium
+#eliteversion hedjet_light
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id hedjet_medium
+#gameid 148
+#basechance 0
+#chanceinc "poseitemtheme body dynastic 9"
+#chanceinc "poseitemtheme body austral 9"
+#sprite /graphics/cyclops/elder/helmet/caster/hedjet_grey.png
+#recolormask self
+#eliteversion hedjet_dark
+#eliteversion hedjet_light
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id hedjet_light
+#gameid 148
+#basechance 0
+#chanceinc "poseitemtheme body dynastic 9"
+#chanceinc "poseitemtheme body austral 9"
+#sprite /graphics/cyclops/elder/helmet/caster/hedjet_white.png
+#recolormask /graphics/cyclops/elder/helmet/caster/hedjet_recolormask_light.png
+#eliteversion hedjet_medium
+#eliteversion hedjet_dark
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id nemes
+#gameid 148
+#basechance 0
+#chanceinc "poseitemtheme body dynastic 9"
+#chanceinc "poseitemtheme body austral 9"
+#sprite /graphics/cyclops/elder/helmet/caster/nemes.png
+#recolormask /graphics/cyclops/elder/helmet/caster/nemes_recolormask.png
+#eliteversion nemes
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id headdress1
+#gameid 148
+#basechance 0
+#chanceinc "poseitemtheme body occidental 9"
+#chanceinc "poseitemtheme body austral 9"
+#sprite /graphics/cyclops/elder/helmet/caster/teotl_headdress.png
+#recolormask /graphics/cyclops/elder/helmet/caster/teotl_headdress_recolormask1.png
+#eliteversion headdress2
+#eliteversion headdress3
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id headdress2
+#gameid 148
+#basechance 0
+#chanceinc "poseitemtheme body occidental 9"
+#chanceinc "poseitemtheme body austral 9"
+#sprite /graphics/cyclops/elder/helmet/caster/teotl_headdress.png
+#recolormask /graphics/cyclops/elder/helmet/caster/teotl_headdress_recolormask2.png
+#eliteversion headdress1
+#eliteversion headdress3
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id headdress3
+#gameid 148
+#basechance 0
+#chanceinc "poseitemtheme body occidental 9"
+#chanceinc "poseitemtheme body austral 9"
+#sprite /graphics/cyclops/elder/helmet/caster/teotl_headdress.png
+#recolormask /graphics/cyclops/elder/helmet/caster/teotl_headdress_recolormask3.png
+#eliteversion headdress2
+#eliteversion headdress1
+#armor
+#notfortier 1
+#notfortier 2
+#tier 3
 #enditem

@@ -555,3 +555,275 @@
 #theme "occidental"
 #light
 #enditem
+
+
+-- Abysian helmets
+#newitem
+#id abysian_bascinet
+#gameid 118
+#sprite /graphics/abysian/helmet/bascinet_warlord.png
+#tag "eliteversion abysian_bascinet_elite1"
+#tag "eliteversion abysian_bascinet_elite2"
+#armor
+#theme "iron"
+#theme "abysian"
+#basechance 0.002
+#offsetx 2
+#offsety 14
+#enditem
+
+#newitem
+#id abysian_bascinet_elite1
+#gameid 118
+#sprite /graphics/abysian/helmet/bascinet_warlord_elite.png
+#armor
+#theme "elite"
+#theme "iron"
+#theme "abysian"
+#basechance 0.0004
+#offsetx 2
+#offsety 14
+#enditem
+
+#newitem
+#id abysian_bascinet_elite2
+#gameid 118
+#sprite /graphics/abysian/helmet/bascinet_warlord_elite.png
+#recolormask /graphics/abysian/helmet/bascinet_elite_recolormask.png
+#armor
+#theme "elite"
+#theme "iron"
+#theme "abysian"
+#basechance 0.0016
+#offsetx 2
+#offsety 14
+#enditem
+
+#newitem
+#id lavaborn_bascinet
+#gameid 118
+#sprite /graphics/abysian/helmet/bascinet.png
+#tag "eliteversion lavaborn_bascinet_elite1"
+#tag "eliteversion lavaborn_bascinet_elite2"
+#armor
+#theme "iron"
+#theme "abysian"
+#basechance 0.002
+#offsetx 2
+#offsety 14
+#enditem
+
+#newitem
+#id lavaborn_bascinet_elite1
+#gameid 118
+#sprite /graphics/abysian/helmet/bascinet_elite.png
+#armor
+#theme "iron"
+#theme "elite"
+#theme "abysian"
+#basechance 0.0004
+#offsetx 2
+#offsety 14
+#enditem
+
+#newitem
+#id lavaborn_bascinet_elite2
+#gameid 118
+#sprite /graphics/abysian/helmet/bascinet_elite.png
+#recolormask /graphics/abysian/helmet/bascinet_elite_recolormask.png
+#armor
+#theme "iron"
+#theme "elite"
+#theme "abysian"
+#basechance 0.0016
+#offsetx 2
+#offsety 14
+#enditem
+
+#newitem
+#id legionary_helmet
+#gameid 126
+#sprite /graphics/abysian/helmet/legionary.png
+#recolormask /graphics/abysian/helmet/legionary_recolormask.png
+#tag "eliteversion legionary_helmet_elite"
+#armor
+#theme "iron"
+#theme "abysian"
+#basechance 0.002
+#offsetx 2
+#offsety 14
+#enditem
+
+#newitem
+#id legionary_helmet_elite
+#gameid 126
+#sprite /graphics/abysian/helmet/legionary_elite.png
+#recolormask /graphics/abysian/helmet/legionary_elite_recolormask.png
+#armor
+#theme "iron"
+#theme "elite"
+#theme "abysian"
+#basechance 0.002
+#offsetx 2
+#offsety 14
+#enditem
+
+
+-- Civilized helmets
+#newitem
+#id reinforcedcap_civilized
+#gameid 119
+#basechance 0.005
+#sprite /graphics/hoburg/helmet/reinforced_cap.png
+#recolormask /graphics/hoburg/helmet/reinforced_cap_recolormask.png
+#eliteversion crestedhelm_civilized_dark
+#eliteversion crestedhelm_civilized_light
+#eliteversion crestedhelm_civilized_medium
+#armor
+#theme "leather"
+#theme "civilized"
+#light
+#maxprot 9
+#enditem
+
+#newitem
+#id bronzecap_civilized
+#gameid 135
+#basechance 0.005
+#sprite /graphics/hoburg/helmet/bronzecap_civilized.png
+#eliteversion crestedhelm_civilized_dark
+#eliteversion crestedhelm_civilized_light
+#eliteversion crestedhelm_civilized_medium
+#armor
+#theme "bronze"
+#theme "civilized"
+#minprot 8
+#enditem
+
+#newitem
+#id ironcap_civilized
+#gameid 20
+#basechance 0.005
+#sprite /graphics/hoburg/helmet/ironcap_civilized.png
+#eliteversion crestedhelm_civilized_dark
+#eliteversion crestedhelm_civilized_light
+#eliteversion crestedhelm_civilized_medium
+#armor
+#theme "iron"
+#theme "civilized"
+#minprot 8
+#enditem
+
+#newitem
+#id crestedhelm_civilized_black_iron
+#gameid 20
+#basechance 0.001
+#sprite /graphics/hoburg/helmet/crested_helm_black.png
+#eliteversion crestedhelm_civilized_dark
+#armor
+#theme "iron"
+#theme "civilized"
+#theme "elite"
+#minprot 8
+#enditem
+
+#newitem
+#id crestedhelm_civilized_grey_iron
+#gameid 20
+#basechance 0.001
+#sprite /graphics/hoburg/helmet/crested_helm_grey.png
+#eliteversion crestedhelm_civilized_medium
+#armor
+#theme "iron"
+#theme "civilized"
+#theme "elite"
+#minprot 8
+#enditem
+
+#newitem
+#id crestedhelm_civilized_white_iron
+#gameid 20
+#basechance 0.001
+#sprite /graphics/hoburg/helmet/crested_helm_white.png
+#eliteversion crestedhelm_civilized_light
+#armor
+#theme "iron"
+#theme "civilized"
+#theme "elite"
+#minprot 8
+#enditem
+
+#newitem
+#id crestedhelm_civilized_black_bronze
+#gameid 135
+#basechance 0.001
+#sprite /graphics/hoburg/helmet/crested_helm_black.png
+#eliteversion crestedhelm_civilized_dark
+#armor
+#theme "bronze"
+#theme "civilized"
+#theme "elite"
+#minprot 8
+#enditem
+
+#newitem
+#id crestedhelm_civilized_grey_bronze
+#gameid 135
+#basechance 0.001
+#sprite /graphics/hoburg/helmet/crested_helm_grey.png
+#eliteversion crestedhelm_civilized_medium
+#armor
+#theme "bronze"
+#theme "civilized"
+#theme "elite"
+#minprot 8
+#enditem
+
+#newitem
+#id crestedhelm_civilized_white_bronze
+#gameid 135
+#basechance 0.001
+#sprite /graphics/hoburg/helmet/crested_helm_white.png
+#eliteversion crestedhelm_civilized_light
+#armor
+#theme "bronze"
+#theme "civilized"
+#theme "elite"
+#minprot 8
+#enditem
+
+#newitem
+#id crestedhelm_civilized_dark
+#gameid 162
+#basechance 0.005
+#sprite /graphics/hoburg/helmet/crested_helm_black.png
+#recolormask /graphics/hoburg/helmet/crested_helm_recolormask_dark.png
+#eliteversion crestedhelm_civilized_dark
+#armor
+#theme "civilized"
+#theme "elite"
+#enditem
+
+#newitem
+#id crestedhelm_civilized_medium
+#gameid 162
+#basechance 0.005
+#sprite /graphics/hoburg/helmet/crested_helm_grey.png
+#recolormask /graphics/hoburg/helmet/crested_helm_recolormask_medium.png
+#eliteversion crestedhelm_civilized_medium
+#armor
+#theme "civilized"
+#theme "elite"
+#enditem
+
+#newitem
+#id crestedhelm_civilized_light
+#gameid 162
+#basechance 0.005
+#sprite /graphics/hoburg/helmet/crested_helm_white.png
+#recolormask /graphics/hoburg/helmet/crested_helm_recolormask_light.png
+#eliteversion crestedhelm_civilized_light
+#armor
+#theme "civilized"
+#theme "elite"
+#enditem

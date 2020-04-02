@@ -1,0 +1,47 @@
+#newitem
+#id brown
+#gameid -1
+#armor
+#sprite /graphics/hoburg/hair/beard_civilized_brown.png
+#eliteversion brown_elite
+#eliteversion grey
+#eliteversion white
+#theme "civilized"
+#enditem
+
+#newitem
+#id brown_elite
+#basechance 6
+#gameid -1
+#armor
+#sprite /graphics/hoburg/hair/beard_civilized_brown.png
+#eliteversion brown_elite
+#eliteversion grey
+#eliteversion white
+#theme "civilized"
+#theme "elite"
+#enditem
+
+#newitem
+#id grey
+#basechance 3
+#gameid -1
+#armor
+#sprite /graphics/hoburg/hair/beard_civilized_grey.png
+#theme "civilized"
+#theme "elite"
+#define "#older 15"
+#define "#addrandomage 10"
+#enditem
+
+#newitem
+#id white
+#basechance 1
+#gameid -1
+#armor
+#sprite /graphics/hoburg/hair/beard_civilized_white.png
+#theme "civilized"
+#theme "elite"
+#define "#older 30"
+#define "#addrandomage 10"
+#enditem

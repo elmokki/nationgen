@@ -60,7 +60,7 @@
 
 #endpose
 
--------- Great Swords or Clubs (low-probability pose for either civilized or savage)
+-------- Great Swords or Clubs (low-probability pose for either cultured or savage)
 
 #newpose
 #name "2h short"
@@ -97,7 +97,7 @@
 #renderorder "shadow bonusweapon cloakb basesprite mount shirt legs armor cloakf quiver weapon offhandw hands hair helmet offhanda overlay"
 
 #basedchance 1
-#theme "civilized"
+#theme "cultured"
 #theme "minotaur"
 
 #command "#trample"
@@ -131,7 +131,7 @@
 #renderorder "shadow bonusweapon weapon cloakb basesprite mount shirt legs armor cloakf quiver offhandw hands hair helmet offhanda overlay"
 
 #basechance 0.5
-#theme "civilized"
+#theme "cultured"
 #theme "minotaur"
 
 #command "#formationfighter +3"
@@ -207,7 +207,7 @@
 #chanceinc hastheme satyr_primary *0
 #chanceinc hastheme satyr_secondary *0
 #chanceinc hastheme no_secondary *0
-#theme "civilized"
+#theme "cultured"
 
 #command "#mor +1"
 

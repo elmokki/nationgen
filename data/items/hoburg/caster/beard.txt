@@ -1,0 +1,63 @@
+#newitem
+#id brown-T1
+#basechance 7
+#gameid -1
+#armor
+#sprite /graphics/hoburg/hair/beard_civilized_brown.png
+#eliteversion grey
+#eliteversion white
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id grey-T1
+#basechance 2
+#gameid -1
+#armor
+#sprite /graphics/hoburg/hair/beard_civilized_grey.png
+#eliteversion grey
+#eliteversion white
+#tier 1
+#notfortier 2
+#notfortier 3
+#define "#older 10"
+#define "#addrandomage 10"
+#enditem
+
+#newitem
+#id white-T1
+#basechance 1
+#gameid -1
+#armor
+#sprite /graphics/hoburg/hair/beard_civilized_white.png
+#eliteversion grey
+#eliteversion white
+#define "#older 20"
+#define "#addrandomage 10"
+#enditem
+
+#newitem
+#id grey
+#basechance 3
+#gameid -1
+#armor
+#sprite /graphics/hoburg/hair/beard_civilized_grey.png
+#eliteversion white
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id white
+#basechance 1
+#gameid -1
+#armor
+#sprite /graphics/hoburg/hair/beard_civilized_white.png
+#eliteversion white
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
