@@ -1,0 +1,127 @@
+
+#newpose
+#name hurlers
+#role "ranged"
+
+#chanceinc "racetheme patriarchal *100"
+-- #chanceinc "racetheme traditional 0"
+-- #chanceinc "racetheme mixed 0"
+#chanceinc "racetheme matriarchal *0"
+
+#renderorder "shadow cloakb basesprite mount shirt legs quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/jotun/hurler/bases_hurler.txt
+#load shadow /data/items/jotun/warrior/shadow.txt
+
+#load armor /data/items/jotun/hurler/armor_hurler.txt
+#load helmet /data/items/jotun/warrior/helmet_scout.txt
+#load hands /data/items/jotun/warrior/hands.txt
+#load weapon /data/items/jotun/hurler/boulders.txt
+#load overlay /data/items/jotun/hurler/boulders_overlay.txt
+
+#load bonusweapon /data/items/jotun/hurler/weapon_hurler.txt
+
+#generateitem 1 bonusweapon
+
+#maxunits 1
+#maxvarieties 1
+
+#endpose
+
+#newpose
+#name "male skirmishers"
+#role "ranged"
+#basechance 0.5
+
+#chanceinc "racetheme patriarchal *100"
+-- #chanceinc "racetheme traditional 0"
+-- #chanceinc "racetheme mixed 0"
+#chanceinc "racetheme matriarchal *0"
+
+#renderorder "shadow quiver cloakb basesprite mount shirt legs weapon armor cloakf bonusweapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/jotun/warrior/bases_warrior.txt
+#load shadow /data/items/jotun/warrior/shadow.txt
+
+#load armor /data/items/jotun/warrior/armor_scout.txt
+#load helmet /data/items/jotun/warrior/helmet_scout.txt
+#load weapon /data/items/jotun/hurler/weapon_skirmisher.txt
+#load quiver /data/items/jotun/hurler/quiver.txt
+
+#load cloakf /data/items/jotun/warrior/cloakf.txt
+#load cloakb /data/items/jotun/warrior/cloakb.txt
+
+#load bonusweapon /data/items/jotun/hurler/weapon_hurler.txt
+
+#generateitem 1 bonusweapon
+
+#maxunits 1
+#maxvarieties 1
+
+#endpose
+
+
+
+#newpose
+#name "elite male hurlers"
+#role "elite ranged"
+#role "sacred ranged"
+
+#chanceinc "racetheme patriarchal *100"
+-- #chanceinc "racetheme traditional 0"
+-- #chanceinc "racetheme mixed 0"
+#chanceinc "racetheme matriarchal *0"
+
+#renderorder "shadow cloakb basesprite mount shirt legs quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/jotun/hurler/bases_hurler.txt
+#load shadow /data/items/jotun/warrior/shadow.txt
+
+#load armor /data/items/jotun/hurler/armor_hurler.txt
+#load helmet /data/items/jotun/warrior/helmet_scout.txt
+#load hands /data/items/jotun/warrior/hands.txt
+#load weapon /data/items/jotun/hurler/boulders.txt
+#load overlay /data/items/jotun/hurler/boulders_overlay.txt
+
+#load bonusweapon /data/items/jotun/hurler/weapon_hurler.txt
+
+#generateitem 1 bonusweapon
+
+#maxunits 1
+#maxvarieties 1
+
+#endpose
+
+#newpose
+#name "elite male skirmishers"
+#role "elite ranged"
+#role "sacred ranged"
+#basechance 0.5
+#chanceinc "moduleid sacgen *6"
+
+#chanceinc "racetheme patriarchal *100"
+-- #chanceinc "racetheme traditional 0"
+-- #chanceinc "racetheme mixed 0"
+#chanceinc "racetheme matriarchal *0"
+
+#renderorder "shadow quiver cloakb basesprite mount shirt legs weapon armor cloakf bonusweapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/jotun/warrior/bases_warrior.txt
+#load shadow /data/items/jotun/warrior/shadow.txt
+
+#load armor /data/items/jotun/warrior/armor_scout.txt
+#load helmet /data/items/jotun/warrior/helmet_scout.txt
+#load weapon /data/items/jotun/hurler/weapon_skirmisher.txt
+#load quiver /data/items/jotun/hurler/quiver.txt
+
+#load cloakf /data/items/jotun/warrior/cloakf.txt
+#load cloakb /data/items/jotun/warrior/cloakb.txt
+
+#load bonusweapon /data/items/jotun/hurler/weapon_hurler.txt
+
+#generateitem 1 bonusweapon
+
+#maxunits 1
+#maxvarieties 1
+
+#endpose

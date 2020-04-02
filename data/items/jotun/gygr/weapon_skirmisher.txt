@@ -1,0 +1,26 @@
+
+#newitem
+#id javelins
+#gameid agarthan_javelin
+#basechance 4
+#sprite /graphics/jotun/warrior/weapon/javelins.png
+#needs hands hands_gygr_ranged
+#enditem
+
+#newitem
+#id axes
+#basechance 2
+#sprite /graphics/jotun/warrior/weapon/axe_throwing.png
+#gameid 260
+#command "#weapon 260"
+#needs hands hands_gygr_ranged
+#enditem
+
+#newitem
+#id greatbow
+#gameid 266
+#basechance 1
+#sprite /graphics/jotun/warrior/weapon/bow.png
+#needs quiver quiver
+#needs hands hands_gygr_ranged
+#enditem

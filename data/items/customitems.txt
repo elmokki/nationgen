@@ -1,4 +1,4 @@
---- #new initializes both armors and weapons
+﻿--- #new initializes both armors and weapons
 --- #armor will indicate that the item is armor
 --- Use exact syntax you'd use for dom3 except for #newweapon, #newarmor and #end
 --- Remember #type for armor.
@@ -1685,8 +1685,8 @@
 
 
 #new customweapon
-#name "large_rock"
-#command "#ammo 12"¨
+#name large_rock
+#command "#ammo 12"
 #command "#range -2"
 #command "#dmg 5"
 #command "#flyspr 100 1"
@@ -1696,7 +1696,7 @@
 #end
 
 #new customweapon
-#name "boulder_melee"
+#name boulder_melee
 #command "#dmg 0"
 #command "#att -2"
 #command "#def -2"

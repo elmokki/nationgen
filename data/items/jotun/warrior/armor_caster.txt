@@ -7,14 +7,20 @@
 #armor
 #theme primitive
 #theme light
+#tier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
 #name "leather hauberk"
-#gameid 15
+#gameid 10
 #armor
 #theme leather
 #theme light
+#tier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
@@ -24,6 +30,9 @@
 #armor
 #theme leather
 #theme light
+#tier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
@@ -34,6 +43,9 @@
 #armor
 #theme leather
 #theme light
+#tier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
@@ -42,6 +54,9 @@
 #sprite /graphics/jotun/warrior/armor/ring_full.png
 #armor
 #theme leather
+#tier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
@@ -52,6 +67,9 @@
 #armor
 #theme iron
 #theme light
+#tier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
@@ -63,18 +81,9 @@
 #eliteversion "scale hauberk gilt"
 #armor
 #theme iron
-#enditem
-
-#newitem
-#id "full scale"
-#gameid 17
-#basechance 0.25
-#sprite /graphics/jotun/warrior/armor/scale_full.png
-#eliteversion "full scale elite"
-#eliteversion "full scale gilt"
-#armor
-#theme iron
-#theme advanced
+#tier 1
+#notfortier 2
+#notfortier 3
 #enditem
 
 #newitem
@@ -85,33 +94,24 @@
 #armor
 #theme iron
 #theme advanced
+#tier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
 #id "chain hauberk"
-#gameid 13
+#gameid 12
 #sprite /graphics/jotun/warrior/armor/chain_hauberk.png
 #recolormask /graphics/jotun/warrior/armor/hauberk_recolormask.png
 #eliteversion "chain hauberk elite"
 #eliteversion "chain hauberk gilt"
 #armor
 #theme iron
-#theme advanced
+#tier 1
+#notfortier 2
+#notfortier 3
 #enditem
-
-#newitem
-#id "full chain"
-#gameid 18
-#basechance 0.25
-#sprite /graphics/jotun/warrior/armor/chain_full.png
-#eliteversion "full chain elite"
-#eliteversion "full chain gilt"
-#armor
-#theme iron
-#theme advanced
-#enditem
-
--- Elite and sacred armors
 
 #newitem
 #id "scale hauberk elite"
@@ -124,6 +124,9 @@
 #armor
 #theme iron
 #theme elite
+#notfortier 1
+#tier 2
+#notfortier 3
 #enditem
 
 #newitem
@@ -139,34 +142,10 @@
 #theme iron
 #theme gold
 #theme elite
-#themeinc "theme gold *10"
-#enditem
-
-#newitem
-#id "full scale elite"
-#gameid 17
-#basechance 0.25
-#sprite /graphics/jotun/warrior/armor/scale_full_elite.png
-#eliteversion "full scale gilt"
-#eliteversion "golden scale"
-#armor
-#theme iron
-#theme advanced
-#theme elite
-#enditem
-
-#newitem
-#id "full scale gilt"
-#gameid 17
-#basechance 0.125
-#sprite /graphics/jotun/warrior/armor/scale_full_gilt.png
-#eliteversion "golden scale"
-#armor
-#theme iron
-#theme advanced
-#theme gold
-#theme elite
-#themeinc "theme gold *10"
+#themeinc "theme gold *2"
+#notfortier 1
+#tier 2
+#notfortier 3
 #enditem
 
 #newitem
@@ -178,8 +157,9 @@
 #eliteversion "golden scale"
 #armor
 #theme iron
-#theme advanced
-#theme elite
+#notfortier 1
+#tier 2
+#notfortier 3
 #enditem
 
 #newitem
@@ -193,37 +173,10 @@
 #armor
 #theme iron
 #theme gold
-#theme advanced
-#theme elite
-#themeinc "theme gold *10"
-#enditem
-
-#newitem
-#id "full chain elite"
-#gameid 18
-#basechance 0.25
-#sprite /graphics/jotun/warrior/armor/chain_full_elite.png
-#eliteversion "full chain gilt"
-#eliteversion "golden scale"
-#armor
-#theme iron
-#theme advanced
-#theme elite
-#enditem
-
-#newitem
-#id "full chain gilt"
-#gameid 18
-#basechance 0.125
-#chanceinc "moduleid herogen *5"
-#sprite /graphics/jotun/warrior/armor/chain_full_gilt.png
-#eliteversion "golden scale"
-#armor
-#theme iron
-#theme gold
-#theme advanced
-#theme elite
-#themeinc "theme gold *10"
+#themeinc "theme gold *3"
+#notfortier 1
+#tier 2
+#notfortier 3
 #enditem
 
 #newitem
@@ -237,6 +190,9 @@
 #theme primitive
 #theme light
 #theme sacred
+#notfortier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
@@ -250,6 +206,9 @@
 #armor
 #theme iron
 #theme sacred
+#notfortier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
@@ -264,13 +223,16 @@
 #theme gold
 #theme sacred
 #theme advanced
-#themeinc "theme gold *20"
+#themeinc "theme gold *2"
+#notfortier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
 #id "ice cuirass"
 #gameid icicle_cuirass
-#basechance 0.1
+#basechance 0.2
 #chanceinc "moduleid herogen *5"
 #sprite /graphics/jotun/warrior/armor/icicle_cuirass.png
 #recolormask /graphics/jotun/warrior/armor/cuirass_recolormask.png
@@ -281,12 +243,15 @@
 #theme ice
 #theme sacred
 #themeinc "theme ice *20"
+#notfortier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
 #id "ice hauberk"
 #gameid 133
-#basechance 0.1
+#basechance 0.2
 #chanceinc "moduleid herogen *5"
 #sprite /graphics/jotun/warrior/armor/icicle_hauberk.png
 #recolormask /graphics/jotun/warrior/armor/hauberk_recolormask.png
@@ -296,4 +261,7 @@
 #theme ice
 #theme sacred
 #themeinc "theme ice *20"
+#notfortier 1
+#tier 2
+#notfortier 3
 #enditem

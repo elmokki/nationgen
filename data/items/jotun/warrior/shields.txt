@@ -1,0 +1,210 @@
+--- Odd shields
+
+#newitem
+#id buckler
+#gameid 1
+#basechance 0.25
+#sprite /graphics/jotun/warrior/offhand/shield_buckler.png
+#armor
+#theme advanced
+#enditem
+
+#newitem
+#id kite_shield
+#gameid 3
+#basechance 0.5
+#sprite /graphics/jotun/warrior/offhand/shield_kite.png
+#armor
+#theme advanced
+#theme iron
+#enditem
+
+
+--- Wooden shields
+
+#newitem
+#id shield_wood_plain1
+#gameid 2
+#sprite /graphics/jotun/warrior/offhand/shield_wood.png
+#eliteversion shield_wood_plain1
+#eliteversion shield_metal_plain1
+#eliteversion shield_wood_painted1
+#eliteversion shield_wood_painted2
+#armor
+#theme miltia
+#enditem
+
+#newitem
+#id shield_wood_plain2
+#gameid 2
+#sprite /graphics/jotun/warrior/offhand/shield_wood2.png
+#eliteversion shield_wood_plain2
+#eliteversion shield_metal_plain2
+#armor
+#theme miltia
+#enditem
+
+#newitem
+#id shield_wood_old_plain
+#gameid 2
+#basechance 0.25
+#sprite /graphics/jotun/warrior/offhand/shield_old.png
+#eliteversion shield_wood_old_plain
+#eliteversion shield_wood_old_painted1
+#eliteversion shield_wood_old_painted2
+#eliteversion shield_wood_old_painted3
+#eliteversion shield_wood_old_painted4
+#armor
+#theme miltia
+#enditem
+
+#newitem
+#id shield_wood_painted1
+#gameid 2
+#basechance 0.5
+#sprite /graphics/jotun/warrior/offhand/shield_wood.png
+#recolormask /graphics/jotun/warrior/offhand/shield_recolormask1
+#eliteversion shield_metal_painted1
+#eliteversion shield_wood_painted1
+#armor
+#enditem
+
+#newitem
+#id shield_wood_painted2
+#gameid 2
+#basechance 0.5
+#sprite /graphics/jotun/warrior/offhand/shield_wood.png
+#recolormask /graphics/jotun/warrior/offhand/shield_recolormask2
+#eliteversion shield_metal_painted2
+#eliteversion shield_wood_painted2
+#armor
+#enditem
+
+#newitem
+#id shield_wood_old_painted1
+#gameid 2
+#basechance 0.125
+#sprite /graphics/jotun/warrior/offhand/shield_old.png
+#recolormask /graphics/jotun/warrior/offhand/shield_old_recolormask1
+#eliteversion shield_wood_old_painted1
+#armor
+#enditem
+
+#newitem
+#id shield_wood_old_painted2
+#gameid 2
+#basechance 0.125
+#sprite /graphics/jotun/warrior/offhand/shield_old.png
+#recolormask /graphics/jotun/warrior/offhand/shield_old_recolormask2
+#eliteversion shield_wood_old_painted1
+#eliteversion shield_wood_old_painted2
+#armor
+#enditem
+
+#newitem
+#id shield_wood_old_painted3
+#gameid 2
+#basechance 0.125
+#sprite /graphics/jotun/warrior/offhand/shield_old.png
+#recolormask /graphics/jotun/warrior/offhand/shield_old_recolormask3
+#eliteversion shield_wood_old_painted3
+#armor
+#enditem
+
+#newitem
+#id shield_wood_old_painted4
+#gameid 2
+#basechance 0.125
+#sprite /graphics/jotun/warrior/offhand/shield_old.png
+#recolormask /graphics/jotun/warrior/offhand/shield_old_recolormask4
+#eliteversion shield_wood_old_painted4
+#armor
+#enditem
+
+
+--- Iron shields
+
+#newitem
+#id shield_metal_plain1
+#gameid 208
+#basechance 0.5
+#sprite /graphics/jotun/warrior/offhand/shield_metal.png
+#eliteversion shield_metal_plain1
+#eliteversion shield_metal_painted1
+#eliteversion shield_metal_painted2
+#armor
+#theme iron
+#enditem
+
+#newitem
+#id shield_metal_plain2
+#gameid 208
+#basechance 0.5
+#sprite /graphics/jotun/warrior/offhand/shield_metal2.png
+#eliteversion shield_metal_plain2
+#eliteversion shield_metal_gilt
+#armor
+#theme iron
+#enditem
+
+#newitem
+#id shield_metal_painted1
+#gameid 208
+#basechance 0.25
+#sprite /graphics/jotun/warrior/offhand/shield_metal.png
+#recolormask /graphics/jotun/warrior/offhand/shield_recolormask1
+#eliteversion shield_metal_painted1
+#armor
+#theme iron
+#enditem
+
+#newitem
+#id shield_metal_painted2
+#gameid 208
+#basechance 0.25
+#sprite /graphics/jotun/warrior/offhand/shield_metal.png
+#recolormask /graphics/jotun/warrior/offhand/shield_recolormask2
+#eliteversion shield_metal_painted2
+#armor
+#theme iron
+#enditem
+
+
+--- Elite shields
+
+#newitem
+#id shield_metal_gilt
+#gameid 208
+#basechance 0.25
+#sprite /graphics/jotun/warrior/offhand/shield_gilt.png
+#eliteversion shield_metal_gilt
+#eliteversion shield_gold
+#armor
+#theme iron
+#theme gold
+#theme elite
+#enditem
+
+#newitem
+#id shield_gold
+#gameid 155
+#basechance 0.1
+#chanceinc "moduleid herogen *5"
+#sprite /graphics/jotun/warrior/offhand/shield_gilt.png
+#eliteversion shield_gold
+#armor
+#theme gold
+#theme sacred
+#enditem
+
+#newitem
+#id shield_ice
+#gameid 225
+#basechance 0.1
+#chanceinc "moduleid herogen *5"
+#sprite /graphics/jotun/warrior/offhand/shield_ice.png
+#eliteversion shield_ice
+#armor
+#theme ice
+#theme sacred
+#enditem

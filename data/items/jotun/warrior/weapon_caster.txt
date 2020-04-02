@@ -1,0 +1,244 @@
+#newitem
+#id axe_iron
+#gameid 17
+#basechance 4
+#sprite /graphics/jotun/warrior/weapon/axe_iron.png
+#theme "iron"
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id axe_battle
+#gameid 18
+#sprite /graphics/jotun/warrior/weapon/axe_battle.png
+#theme "iron"
+#troopweapon
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id sword_iron
+#gameid 8
+#sprite /graphics/jotun/warrior/weapon/sword_iron.png
+#theme "iron"
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id spear_iron
+#gameid 1
+#sprite /graphics/jotun/warrior/weapon/spear_iron.png
+#theme "iron"
+#theme "formationfighter"
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id longspear_iron
+#gameid 28
+#sprite /graphics/jotun/warrior/weapon/longspear_iron.png
+#theme "formationfighter"
+#theme "iron"
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id spear_heavy
+#gameid 2hspear
+#sprite /graphics/jotun/warrior/weapon/spear_heavy.png
+#theme "formationfighter"
+#theme "iron"
+#troopweapon
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id longspear_heavy
+#gameid 2hlongspear
+#sprite /graphics/jotun/warrior/weapon/longspear_heavy.png
+#theme "formationfighter"
+#theme "iron"
+#troopweapon
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id glaive_iron
+#gameid 308
+#basechance 0.5
+#sprite /graphics/jotun/warrior/weapon/glaive_iron.png
+#theme "iron"
+#theme "formationfighter"
+#troopweapon
+#tier 1
+#tier 2
+#notfortier 3
+#enditem
+
+-- Elite weapons
+
+#newitem
+#id axe_gold
+#gameid goldenaxe
+#chanceinc "moduleid sacgen *2"
+#chanceinc "moduleid herogen *4"
+#sprite /graphics/jotun/warrior/weapon/axe_gold.png
+#theme "gold"
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id sword_gold
+#gameid 474
+#chanceinc "moduleid sacgen *2"
+#chanceinc "moduleid herogen *4"
+#sprite /graphics/jotun/warrior/weapon/sword_gold.png
+#theme "gold"
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id spear_gold
+#gameid 473
+#chanceinc "moduleid sacgen *2"
+#chanceinc "moduleid herogen *4"
+#sprite /graphics/jotun/warrior/weapon/spear_gold.png
+#theme "gold"
+#theme "formationfighter"
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id sword_ice
+#gameid 37
+#basechance 0.2
+#chanceinc "moduleid sacgen *2"
+#chanceinc "moduleid herogen *4"
+#sprite /graphics/jotun/warrior/weapon/sword_ice.png
+#theme "ice"
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id spear_ice
+#gameid 611
+#basechance 0.2
+#chanceinc "moduleid sacgen *2"
+#chanceinc "moduleid herogen *4"
+#sprite /graphics/jotun/warrior/weapon/spear_ice.png
+#theme "ice"
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id glaive_ice
+#gameid 454
+#basechance 0.2
+#chanceinc "moduleid sacgen *2"
+#chanceinc "moduleid herogen *4"
+#sprite /graphics/jotun/warrior/weapon/glaive_ice.png
+#theme "ice"
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+-- Staves
+
+#newitem
+#id quarterstaff
+#gameid 7
+#basechance 0.25
+#sprite /graphics/jotun/warrior/weapon/staff_quarter.png
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id staff_gygja
+#gameid 7
+#sprite /graphics/jotun/warrior/weapon/staff_gygja.png
+#eliteversion staff_skratti
+#eliteversion staff_gygja
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id staff_plain
+#gameid 7
+#sprite /graphics/jotun/warrior/weapon/staff_wood.png
+#eliteversion staff_orb
+#eliteversion staff_knob
+#eliteversion staff_skratti
+#eliteversion staff_ice
+#notfortier 1
+#tier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id staff_knob
+#gameid 7
+#sprite /graphics/jotun/warrior/weapon/staff_knob.png
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id staff_orb
+#gameid 7
+#sprite /graphics/jotun/warrior/weapon/staff_orb.png
+#recolormask /graphics/jotun/warrior/weapon/staff_orb_recolormask.png
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id staff_skratti
+#gameid 7
+#sprite /graphics/jotun/warrior/weapon/staff_skratti.png
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id staff_ice
+#gameid 124
+#basechance 0.2
+#sprite /graphics/jotun/warrior/weapon/staff_orb.png
+#recolormask /graphics/jotun/warrior/weapon/staff_orb_recolormask.png
+#theme ice
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
