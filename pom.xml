@@ -35,6 +35,7 @@
 			<plugin>
 				<artifactId>exec-maven-plugin</artifactId>
 				<groupId>org.codehaus.mojo</groupId>
+				<version>1.6.0</version>
 				<executions>
 					<execution>
 						<id>jlink</id>
@@ -46,7 +47,7 @@
 							<executable>${basedir}/release-all.bat</executable>
 							<arguments>
 								<argument>${java.home}</argument>
-								<argument>${build.finalName}</argument>
+								<argument>${project.build.finalName}</argument>
 							</arguments>
 						</configuration>
 					</execution>

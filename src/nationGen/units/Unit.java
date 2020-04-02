@@ -603,12 +603,12 @@ public class Unit {
 		String level = "ok";
 		for(Command c : this.getCommands())
 		{
-			String lead = null;
-			if(c.command.endsWith("leader"))
-				lead = c.command.substring(1, c.command.indexOf(prefix + "leader"));
-			
-			if(Generic.LEADERSHIP_LEVELS.contains(lead))
-				level = lead;
+			if(c.command.endsWith("leader")) {
+				String lead = c.command.substring(1, c.command.indexOf(prefix + "leader"));
+				
+				if (Generic.LEADERSHIP_LEVELS.contains(lead))
+					level = lead;
+			}
 		}
 		
 		return level;
@@ -634,12 +634,12 @@ public class Unit {
 		String level = null;
 		for(Command c : this.getCommands())
 		{
-			String lead = null;
-			if(c.command.endsWith(prefix + "leader"))
-				lead = c.command.substring(1, c.command.indexOf(prefix + "leader"));
-			
-			if(Generic.LEADERSHIP_LEVELS.contains(lead))
-				level = lead;
+			if(c.command.endsWith(prefix + "leader")) {
+				String lead = c.command.substring(1, c.command.indexOf(prefix + "leader"));
+				
+				if (Generic.LEADERSHIP_LEVELS.contains(lead))
+					level = lead;
+			}
 		}
 		
 		return level != null;
