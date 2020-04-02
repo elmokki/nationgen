@@ -1,0 +1,105 @@
+---------- Mages and Priests
+
+#newpose
+#name "male T1"
+#role "mage"
+#role "priest"
+
+#chanceinc "racetheme patriarchal *100"
+-- #chanceinc "racetheme traditional 0"
+-- #chanceinc "racetheme mixed 0"
+#chanceinc "racetheme matriarchal *0"
+
+#tier 1
+#notfortier 2
+#notfortier 3
+
+#renderorder "shadow cloakb basesprite offhandw quiver mount shirt legs bonusweapon armor cloakf hair weapon hands helmet offhanda overlay"
+
+#load basesprite /data/items/jotun/warrior/bases_warrior.txt
+#load shadow /data/items/jotun/warrior/shadow.txt
+
+#load hands /data/items/jotun/warrior/hands.txt
+
+#load cloakf /data/items/jotun/warrior/cloakf.txt
+#load cloakb /data/items/jotun/warrior/cloakb.txt
+
+#load armor /data/items/jotun/warrior/armor_caster.txt
+#load weapon /data/items/jotun/warrior/weapon_caster.txt
+#load helmet /data/items/jotun/warrior/helmet_caster.txt
+
+#load hair /data/items/jotun/warrior/hair_caster.txt
+
+#generateitem 1 hair
+
+#endpose
+
+
+#newpose
+#name "male T2"
+#role "mage"
+#role "priest"
+
+#chanceinc "racetheme patriarchal *100"
+#chanceinc "racetheme traditional *4"
+-- #chanceinc "racetheme mixed 0"
+#chanceinc "racetheme matriarchal *0"
+
+#notfortier 1
+#tier 2
+#notfortier 3
+
+#renderorder "shadow cloakb basesprite offhandw quiver mount shirt legs bonusweapon armor cloakf hair weapon hands helmet offhanda overlay"
+
+#load basesprite /data/items/jotun/warrior/bases_warrior.txt
+#load shadow /data/items/jotun/warrior/shadow.txt
+
+#load hands /data/items/jotun/warrior/hands.txt
+
+#load cloakf /data/items/jotun/warrior/cloakf.txt
+#load cloakb /data/items/jotun/warrior/cloakb.txt
+
+#load armor /data/items/jotun/warrior/armor_caster.txt
+#load weapon /data/items/jotun/warrior/weapon_caster.txt
+#load helmet /data/items/jotun/warrior/helmet_caster.txt
+
+#load hair /data/items/jotun/warrior/hair_caster.txt
+
+#generateitem 1 hair
+
+#endpose
+
+
+#newpose
+#name "male T3"
+#role "mage"
+#role "priest"
+
+#chanceinc "racetheme patriarchal *100"
+-- #chanceinc "racetheme traditional 0"
+#chanceinc "racetheme mixed *0.5"
+#chanceinc "racetheme matriarchal *0"
+
+#notfortier 1
+#notfortier 2
+#tier 3
+
+#renderorder "shadow cloakb basesprite offhandw quiver mount shirt legs bonusweapon armor cloakf hair weapon hands helmet offhanda overlay"
+
+#load basesprite /data/items/jotun/warrior/bases_warrior.txt
+#load shadow /data/items/jotun/warrior/shadow.txt
+
+#load hands /data/items/jotun/warrior/hands.txt
+
+#load cloakf /data/items/jotun/warrior/cloakf.txt
+#load cloakb /data/items/jotun/warrior/cloakb.txt
+
+#load armor /data/items/jotun/warrior/armor_caster.txt
+#load weapon /data/items/jotun/warrior/weapon_caster.txt
+#load helmet /data/items/jotun/warrior/helmet_caster.txt
+
+#load hair /data/items/jotun/warrior/hair_caster.txt
+
+#generateitem 1 hair
+
+#endpose

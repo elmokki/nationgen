@@ -94,6 +94,41 @@
 #basechance 0.2
 #enditem
 
+-- Bone armor
+
+#newitem
+#name "bone_cuirass"
+#gameid 149
+#sprite /graphics/ichtyid/armor/bone_cuirass.png
+#armor
+#theme "primitive"
+#theme "bone"
+#theme "boreal"
+#basechance 0.5
+#enditem
+
+#newitem
+#name "bone_hauberk"
+#gameid bone_hauberk
+#sprite /graphics/ichtyid/armor/shell_hauberk.png
+#armor
+#theme "primitive"
+#theme "bone"
+#theme "boreal"
+#basechance 0.3
+#enditem
+
+#newitem
+#name "bone_armor"
+#gameid bone_full
+#sprite /graphics/ichtyid/armor/shell_armor.png
+#armor
+#theme "primitive"
+#theme "bone"
+#theme "boreal"
+#basechance 0.1
+#enditem
+
 
 -- Coral armor
 

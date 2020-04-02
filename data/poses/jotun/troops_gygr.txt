@@ -1,0 +1,101 @@
+
+-------- Normal
+
+#newpose
+#name "standard female infantry"
+#role "infantry"
+
+#chanceinc "racetheme patriarchal *0"
+#chanceinc "racetheme traditional *0.1"
+#chanceinc "racetheme mixed *0.5"
+#chanceinc "racetheme matriarchal *100"
+
+#renderorder "shadow basesprite offhandw quiver mount shirt legs bonusweapon cloakb armor weapon hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/jotun/gygr/bases_warrior.txt
+#load shadow /data/items/jotun/warrior/shadow.txt
+
+#load hands /data/items/jotun/gygr/hands.txt
+
+#load cloakb /data/items/jotun/gygr/cloakb.txt
+
+#load armor /data/items/jotun/gygr/armor_warrior.txt
+#load helmet /data/items/jotun/gygr/helmet_warrior.txt
+
+#load weapon /data/items/jotun/gygr/weapon_warrior.txt
+#load bonusweapon /data/items/jotun/warrior/bonusranged.txt
+#load offhand /data/items/jotun/warrior/shields.txt
+
+#load hair /data/items/jotun/gygr/hair_warrior.txt
+
+#generateitem 1 hair
+#generateitem 1 cloakb
+
+#endpose
+
+
+-------- Elite
+
+#newpose
+#name "elite female infantry"
+#role "elite infantry"
+#role "sacred infantry"
+
+#chanceinc "racetheme patriarchal *0"
+#chanceinc "racetheme traditional *0"
+-- #chanceinc "racetheme mixed 0"
+#chanceinc "racetheme matriarchal *100"
+
+#renderorder "shadow basesprite offhandw quiver mount shirt legs bonusweapon cloakb armor weapon hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/jotun/gygr/bases_warrior.txt
+#load shadow /data/items/jotun/warrior/shadow.txt
+
+#load hands /data/items/jotun/gygr/hands.txt
+
+#load cloakb /data/items/jotun/gygr/cloakb.txt
+
+#load armor /data/items/jotun/gygr/armor_warrior.txt
+#load helmet /data/items/jotun/gygr/helmet_warrior.txt
+
+#load weapon /data/items/jotun/gygr/weapon_warrior.txt
+#load bonusweapon /data/items/jotun/warrior/bonusranged.txt
+#load offhand /data/items/jotun/warrior/shields.txt
+
+#load hair /data/items/jotun/gygr/hair_warrior.txt
+
+#generateitem 1 hair
+#generateitem 1 cloakb
+
+#endpose
+
+
+
+------- Scout
+
+#newpose
+#role "female scout"
+
+#chanceinc "racetheme patriarchal *0"
+#chanceinc "racetheme traditional *0.1"
+-- #chanceinc "racetheme mixed 0"
+#chanceinc "racetheme matriarchal *100"
+
+#renderorder "shadow basesprite mount shirt legs quiver bonusweapon cloakb armor weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/jotun/gygr/bases_warrior.txt
+#load shadow /data/items/jotun/warrior/shadow.txt
+
+#load hands /data/items/jotun/gygr/hands.txt
+
+#load cloakb /data/items/jotun/gygr/cloakb.txt
+
+#load armor /data/items/jotun/gygr/armor_scout.txt
+#load helmet /data/items/jotun/gygr/helmet_scout.txt
+
+#load weapon /data/items/jotun/gygr/weapon_scout.txt
+#load bonusweapon /data/items/jotun/warrior/bonusranged.txt
+
+#generateitem 1 cloakb
+
+#endpose

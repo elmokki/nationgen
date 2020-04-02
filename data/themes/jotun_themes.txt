@@ -1,0 +1,64 @@
+-- Generic theme with high diversity and low cohesion
+#newtheme
+#name default
+#basechance 4
+#endtheme
+
+-- Demographic themes
+#newtheme
+#type demographic
+#name patriarchal
+#basechance 4
+#endtheme
+
+#newtheme
+#type demographic
+#name traditional
+#basechance 9
+#endtheme
+
+#newtheme
+#type demographic
+#name mixed
+#basechance 3
+#endtheme
+
+#newtheme
+#type demographic
+#name matriarchal
+#basechance 2
+#endtheme
+
+-- Social themes
+-- Weights: EA 0, MA 2, LA 4
+#newtheme
+#type social
+#name slaver
+#basechance 0
+#chanceinc era 2 2
+#chanceinc era 3 4
+#chanceinc "hasprimaryrace *0"
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#themeinc theme slave *20
+#themeinc theme free *0.5
+#themeinc racename "Feudal human" *10
+#themeinc racename caveman *2
+#themeinc racename vaetti *2
+#themeinc racename lizard *0.1
+#themeinc racename primate *0.1
+#themeinc racename avvite *0.1
+#themeinc racename abysian *0.1
+#themeinc racename "Austral human" *0.1
+#themeinc racename zotz *0.1
+#themeinc racename muuch *0.1
+#themeinc racename tengu *0.1
+#secondaryracedefinition "#freetemplatefilter slavetemplate slave"
+#racedefinition "#secondaryracetroopmod 100"
+#racedefinition "#secondaryracemagemod -100"
+#endtheme

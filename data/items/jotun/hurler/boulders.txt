@@ -1,0 +1,36 @@
+
+#newitem
+#id boulder
+#gameid 27
+#basechance 6
+#command "#siegebonus +5"
+#enditem
+
+#newitem
+#id boulders
+#gameid 424
+#sprite /graphics/jotun/hurler/weapon/boulders.png
+#needs overlay strap
+#command "#ap -2"
+#command "#mapmove -1"
+#command "#siegebonus +10"
+#basechance 2
+#enditem
+
+#newitem
+#id rocks
+#gameid large_rock
+#sprite /graphics/jotun/hurler/weapon/boulders.png
+#needs overlay strap
+#command "#ap -2"
+#command "#mapmove -1"
+#basechance 2
+#command "#siegebonus +2"
+#enditem
+
+#newitem
+#id rocks_x2
+#gameid 605
+#command "#weapon 605"
+#basechance 2
+#enditem

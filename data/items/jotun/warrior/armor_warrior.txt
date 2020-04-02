@@ -1,0 +1,299 @@
+#newitem
+#name "furs"
+#gameid 44
+#sprite /graphics/jotun/warrior/armor/furs.png
+#eliteversion "furs"
+#eliteversion "magic furs"
+#armor
+#theme primitive
+#theme light
+#enditem
+
+#newitem
+#name "leather hauberk"
+#gameid 10
+#armor
+#theme leather
+#theme light
+#enditem
+
+#newitem
+#name "full leather"
+#gameid 15
+#sprite /graphics/jotun/warrior/armor/leather_full.png
+#armor
+#theme leather
+#theme light
+#enditem
+
+#newitem
+#name "ring hauberk"
+#gameid 11
+#sprite /graphics/jotun/warrior/armor/ring_hauberk.png
+#recolormask /graphics/jotun/warrior/armor/cuirass_recolormask.png
+#armor
+#theme leather
+#theme light
+#enditem
+
+#newitem
+#name "full ring"
+#gameid 16
+#sprite /graphics/jotun/warrior/armor/ring_full.png
+#armor
+#theme leather
+#enditem
+
+#newitem
+#id "scale cuirass"
+#gameid 7
+#sprite /graphics/jotun/warrior/armor/scale_cuirass.png
+#recolormask /graphics/jotun/warrior/armor/cuirass_recolormask.png
+#armor
+#theme iron
+#theme light
+#enditem
+
+#newitem
+#id "scale hauberk"
+#gameid 12
+#sprite /graphics/jotun/warrior/armor/scale_hauberk.png
+#recolormask /graphics/jotun/warrior/armor/hauberk_recolormask.png
+#eliteversion "scale hauberk elite"
+#eliteversion "scale hauberk gilt"
+#armor
+#theme iron
+#enditem
+
+#newitem
+#id "full scale"
+#gameid 17
+#basechance 0.25
+#sprite /graphics/jotun/warrior/armor/scale_full.png
+#eliteversion "full scale elite"
+#eliteversion "full scale gilt"
+#armor
+#theme iron
+#theme advanced
+#enditem
+
+#newitem
+#id "chain cuirass"
+#gameid 8
+#sprite /graphics/jotun/warrior/armor/chain_cuirass.png
+#recolormask /graphics/jotun/warrior/armor/cuirass_recolormask.png
+#armor
+#theme iron
+#theme advanced
+#enditem
+
+#newitem
+#id "chain hauberk"
+#gameid 13
+#sprite /graphics/jotun/warrior/armor/chain_hauberk.png
+#recolormask /graphics/jotun/warrior/armor/hauberk_recolormask.png
+#eliteversion "chain hauberk elite"
+#eliteversion "chain hauberk gilt"
+#armor
+#theme iron
+#theme advanced
+#enditem
+
+#newitem
+#id "full chain"
+#gameid 18
+#basechance 0.25
+#sprite /graphics/jotun/warrior/armor/chain_full.png
+#eliteversion "full chain elite"
+#eliteversion "full chain gilt"
+#armor
+#theme iron
+#theme advanced
+#enditem
+
+-- Elite and sacred armors
+
+#newitem
+#id "scale hauberk elite"
+#gameid 12
+#sprite /graphics/jotun/warrior/armor/scale_hauberk_elite.png
+#recolormask /graphics/jotun/warrior/armor/hauberk_recolormask.png
+#eliteversion "scale hauberk gilt"
+#eliteversion "golden scale"
+#eliteversion "magic scale"
+#armor
+#theme iron
+#theme elite
+#enditem
+
+#newitem
+#id "scale hauberk gilt"
+#gameid 12
+#basechance 0.5
+#chanceinc "moduleid herogen *5"
+#sprite /graphics/jotun/warrior/armor/scale_hauberk_gilt.png
+#recolormask /graphics/jotun/warrior/armor/hauberk_recolormask.png
+#eliteversion "golden scale"
+#eliteversion "magic scale"
+#armor
+#theme iron
+#theme gold
+#theme elite
+#themeinc "theme gold *100"
+#enditem
+
+#newitem
+#id "full scale elite"
+#gameid 17
+#basechance 0.25
+#sprite /graphics/jotun/warrior/armor/scale_full_elite.png
+#eliteversion "full scale gilt"
+#eliteversion "golden scale"
+#armor
+#theme iron
+#theme advanced
+#theme elite
+#enditem
+
+#newitem
+#id "full scale gilt"
+#gameid 17
+#basechance 0.125
+#sprite /graphics/jotun/warrior/armor/scale_full_gilt.png
+#eliteversion "golden scale"
+#armor
+#theme iron
+#theme advanced
+#theme gold
+#theme elite
+#themeinc "theme gold *100"
+#enditem
+
+#newitem
+#id "chain hauberk elite"
+#gameid 13
+#sprite /graphics/jotun/warrior/armor/chain_hauberk_elite.png
+#recolormask /graphics/jotun/warrior/armor/hauberk_recolormask.png
+#eliteversion "chain hauberk gilt"
+#eliteversion "golden scale"
+#armor
+#theme iron
+#theme advanced
+#theme elite
+#enditem
+
+#newitem
+#id "chain hauberk gilt"
+#gameid 13
+#basechance 0.5
+#chanceinc "moduleid herogen *5"
+#sprite /graphics/jotun/warrior/armor/chain_hauberk_gilt.png
+#recolormask /graphics/jotun/warrior/armor/hauberk_recolormask.png
+#eliteversion "golden scale"
+#armor
+#theme iron
+#theme gold
+#theme advanced
+#theme elite
+#themeinc "theme gold *100"
+#enditem
+
+#newitem
+#id "full chain elite"
+#gameid 18
+#basechance 0.25
+#sprite /graphics/jotun/warrior/armor/chain_full_elite.png
+#eliteversion "full chain gilt"
+#eliteversion "golden scale"
+#armor
+#theme iron
+#theme advanced
+#theme elite
+#enditem
+
+#newitem
+#id "full chain gilt"
+#gameid 18
+#basechance 0.125
+#chanceinc "moduleid herogen *5"
+#sprite /graphics/jotun/warrior/armor/chain_full_gilt.png
+#eliteversion "golden scale"
+#armor
+#theme iron
+#theme gold
+#theme advanced
+#theme elite
+#themeinc "theme gold *100"
+#enditem
+
+#newitem
+#name "magic furs"
+#gameid 192
+#basechance 0.1
+#chanceinc "moduleid herogen *20"
+#sprite /graphics/jotun/warrior/armor/furs.png
+#eliteversion "magic furs"
+#armor
+#theme primitive
+#theme light
+#theme sacred
+#enditem
+
+#newitem
+#id "magic scale"
+#gameid 49
+#basechance 0.1
+#chanceinc "moduleid herogen *5"
+#sprite /graphics/jotun/warrior/armor/scale_hauberk_elite.png
+#recolormask /graphics/jotun/warrior/armor/hauberk_recolormask.png
+#eliteversion "golden scale"
+#armor
+#theme iron
+#theme sacred
+#enditem
+
+#newitem
+#id "golden scale"
+#gameid 196
+#basechance 0.1
+#chanceinc "moduleid herogen *5"
+#sprite /graphics/jotun/warrior/armor/scale_full_gilt.png
+#eliteversion "golden scale"
+#armor
+#theme iron
+#theme gold
+#theme sacred
+#theme advanced
+#themeinc "theme gold *200"
+#enditem
+
+#newitem
+#id "ice cuirass"
+#gameid icicle_cuirass
+#basechance 0.1
+#chanceinc "moduleid herogen *5"
+#sprite /graphics/jotun/warrior/armor/icicle_cuirass.png
+#recolormask /graphics/jotun/warrior/armor/cuirass_recolormask.png
+#eliteversion "ice cuirass"
+#eliteversion "ice hauberk"
+#command "#iceprot +1"
+#armor
+#theme ice
+#theme sacred
+#themeinc "theme ice *200"
+#enditem
+
+#newitem
+#id "ice hauberk"
+#gameid 133
+#basechance 0.1
+#chanceinc "moduleid herogen *5"
+#sprite /graphics/jotun/warrior/armor/icicle_hauberk.png
+#recolormask /graphics/jotun/warrior/armor/hauberk_recolormask.png
+#eliteversion "ice hauberk"
+#command "#iceprot +2"
+#armor
+#theme ice
+#theme sacred
+#themeinc "theme ice *200"
+#enditem

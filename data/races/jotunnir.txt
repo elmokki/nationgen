@@ -1,0 +1,50 @@
+#newrace
+#name "Jotun"
+#basechance 0.2
+#all_troops_sacred
+#all_troops_elite
+
+#pose jotuntroops
+#pose jotunranged
+#pose jotunmages
+#pose gygrtroops
+#pose gygrranged
+#pose gygrmages
+
+#racethemes jotun_themes
+#freetheme demographic
+
+#longsyllables /data/names/nations/nordic/longsyllables.txt
+#shortsyllables /data/names/nations/nordic/shortsyllables.txt
+#suffixes /data/names/nations/nordic/suffixes.txt
+
+#sacredrangerchance 0.1
+
+#nationcommand "#idealcold +2"
+#gods europegods
+
+#nationcommand "#likespop 66"
+
+#chanceinc "primaryrace van *0.1"
+#chanceinc "primaryrace abysian *0.1"
+#chanceinc "primaryrace vaetti *4"
+#chanceinc "primaryrace 'Boreal human' *2"
+
+#magicpriority water 6
+#magicpriority death 3
+#magicpriority blood 3
+#magicpriority nature 3
+
+#monsterchance 0.1
+
+#extrapdmulti 0.5
+
+#specialcommanderchance 0.1
+#specialcommanderfilters default_specialcommanderfilters
+#specialcommanderfilters specialcommanderfilters_extended
+
+#theme boreal
+#boreal
+#giant
+
+#endrace

@@ -20,8 +20,8 @@
 #sacredmountedchance 1
 #sacredrangerchance 0.5
 
-#unitcommand "#gcost 9"
-#unitcommand "#rpcost 8995"
+#unitcommand "#gcost 7"
+#unitcommand "#rpcost 6996"
 #unitcommand "#rcost 1"
 #unitcommand "#size 1"
 #unitcommand "#hp 8"
@@ -37,9 +37,9 @@
 #unitcommand "#nametype 115"
 #unitcommand "#maxage 50"
 #unitcommand "#forestsurvival"
+#unitcommand "#coldres +5"
 -- Stealth is given on a per-pose basis as some mounted units aren't stealthy
-#unitcommand "#twiceborn 2190"
--- Vaettir turn into draugs because it seems reasonable, mostly, even if the description is off
+#unitcommand "#twiceborn 3448"
 
 #nationcommand "#idealcold +2"
 #gods europegods
@@ -52,6 +52,7 @@
 #chanceinc "primaryrace van *0.5"
 #chanceinc "primaryrace abysian *0.1"
 #chanceinc "primaryrace caelian *2"
+#chanceinc "primaryrace jotun *4"
 
 #magicpriority nature 8
 #magicpriority death 4

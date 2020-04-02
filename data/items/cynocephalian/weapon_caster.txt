@@ -1,0 +1,120 @@
+-- primitive weapons
+
+#newitem
+#id club
+#gameid 252
+#sprite /graphics/cynocephalian/weapons/club.png
+#offsetx -2
+#offsety 3
+#theme "primitive"
+#basechance 1
+#enditem
+
+#newitem
+#id spiked_club
+#gameid 593
+#sprite /graphics/cynocephalian/weapons/spikedclub.png
+#offsetx -2
+#offsety 3
+#theme "primitive"
+#basechance 1
+#enditem
+
+#newitem
+#id great_club
+#gameid 165
+#sprite /graphics/cynocephalian/weapons/greatclub.png
+#offsetx 0
+#offsety 3
+#needs hands hands_2h
+#theme "primitive"
+#basechance 1
+#troopweapon
+#enditem
+
+#newitem
+#id stone_club
+#gameid 429
+#sprite /graphics/cynocephalian/weapons/greatclub_stone.png
+#offsetx 0
+#offsety 3
+#needs hands hands_2h
+#theme "primitive"
+#basechance 1
+#troopweapon
+#enditem
+
+#newitem
+#id stone_spear
+#gameid 373
+#sprite /graphics/cynocephalian/weapons/spear.png
+#offsetx -2
+#offsety 2
+#needs hands hands_2h
+#theme "primitive"
+#basechance 1
+#troopweapon
+#enditem
+
+#newitem
+#id stone_hatchet
+#gameid 253
+#sprite /graphics/cynocephalian/weapons/axe.png
+#offsetx -3
+#offsety 3
+#theme "primitive"
+#basechance 1
+#enditem
+
+#newitem
+#id rocks
+#gameid 553
+#sprite /graphics/cynocephalian/weapons/rock.png
+#offsetx -1
+#offsety 0
+#theme "primitive"
+#theme "earth"
+#basechance 1
+#tag "notepic"
+#enditem
+
+#newitem
+#id quarterstaff
+#gameid 7
+#sprite /graphics/cynocephalian/weapons/quarterstaff.png
+#offsetx -2
+#offsety 2
+#needs hands hands_2h
+#basechance 1
+#troopweapon
+#enditem
+
+#newitem
+#id skull_staff
+#gameid 7
+#sprite /graphics/cynocephalian/weapons/caster/staff_skull.png
+#renderprio 2
+#renderslot "bonusweapon"
+#tag "tier 3"
+#basechance 1
+#enditem
+
+#newitem
+#id trinket_staff
+#gameid 7
+#sprite /graphics/cynocephalian/weapons/caster/staff_trinkets.png
+#renderprio 2
+#renderslot "bonusweapon"
+#tag "tier 3"
+#basechance 1
+#enditem
+
+#newitem
+#id bone_staff
+#gameid 7
+#sprite /graphics/cynocephalian/weapons/caster/staff_bones.png
+#renderprio 2
+#renderslot "bonusweapon"
+#tag "tier 3"
+#basechance 1
+#enditem

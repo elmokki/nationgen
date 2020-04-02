@@ -1,0 +1,97 @@
+#newitem -- Throwing axe
+#name "throwing axe"
+#gameid 260
+#chanceinc 0.25
+#enditem
+
+#newitem
+#name "bonus shortbow"
+#gameid 23
+#chanceinc 0.5
+#enditem
+
+#newitem
+#name "bonus sling"
+#gameid 22
+#chanceinc 0.5
+#enditem
+
+#newitem
+#name "blowpipe"
+#gameid 34
+#enditem
+
+#newitem
+#name "poison dart"
+#gameid 620
+#enditem
+
+#newitem
+#name "shuriken"
+#gameid 382
+#enditem
+
+
+-- Fancier stuff
+#newitem
+#name "poison darts"
+#gameid 500
+#basechance 0.05
+#enditem
+
+#newitem
+#name "chakram"
+#gameid 362
+#basechance 0.05
+#enditem
+
+#newitem
+#name "koppo"
+#gameid 420
+#define "#gcost +10"
+#basechance 0.01
+#theme medium-sho
+#enditem
+
+#newitem
+#name "chi kick"
+#gameid 175
+#define "#gcost +10"
+#basechance 0.01
+#enditem
+
+#newitem
+#name "kick"
+#gameid 397
+#basechance 0.05
+#enditem
+
+#newitem
+#name "head butt"
+#gameid 300
+#basechance 0.01
+#theme medium-sho
+#enditem
+
+#newitem
+#name "strangulation"
+#gameid 116
+#basechance 0.05
+#theme medium-sho
+#enditem
+
+#newitem
+#name "patience"
+#gameid -1
+#define "#patience +2"
+#basechance 0.05
+#theme small-sho
+#enditem
+
+#newitem
+#name "stealth"
+#gameid -1
+#define "#stealthy +20"
+#basechance 0.05
+#theme small-sho
+#enditem

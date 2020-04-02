@@ -1,0 +1,42 @@
+#newitem
+#id blonde
+#gameid -1
+#sprite /graphics/jotun/gygr/hair/hair_gygja_blonde.png
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem
+#id grey
+#basechance 0.01
+#gameid -1
+#sprite /graphics/jotun/gygr/hair/hair_gygja_grey.png
+#notfortier 1
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#id white
+#gameid -1
+#basechance 0.01
+#sprite /graphics/jotun/gygr/hair/hair_gygja_white.png
+#notfortier 1
+#notfortier 2
+#tier 3
+#enditem
+
+#newitem
+#id red
+#gameid -1
+#basechance 0.001
+#chanceinc "moduleid sacgen *100"
+#chanceinc "moduleid herogen *10"
+#sprite /graphics/jotun/gygr/hair/hair_gygja_red.png
+#command "#older -60"
+#notfortier 1
+#notfortier 2
+#tier 3
+#theme elite
+#enditem

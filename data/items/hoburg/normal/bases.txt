@@ -7,9 +7,10 @@
 #theme "occidental"
 #theme "oriental"
 #theme "imperial"
+#theme "civilized"
 #basechance 0.1
-#chanceinc racetheme austral *0.1
-#chanceinc racetheme abysian *0.1
+#chanceinc racetheme austral *0
+#chanceinc racetheme abysian *0
 #needstype hands boreal
 #slow_militia
 #enditem
@@ -20,7 +21,7 @@
 #sprite /graphics/hoburg/basehoburg_austral.png
 #theme "austral"
 #basechance 0.1
-#chanceinc racetheme not austral *0.1
+#chanceinc racetheme not austral *0
 #needstype hands austral
 #enditem
 
@@ -30,7 +31,7 @@
 #sprite /graphics/hoburg/basehoburg_hoburgbred.png
 #theme "abysian"
 #basechance 0.1
-#chanceinc racetheme not abysian *0.1
+#chanceinc racetheme not abysian *0
 #define "#gcost +3"
 #define "#rpcost +3000"
 #define "#hp +2"

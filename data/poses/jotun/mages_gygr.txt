@@ -1,0 +1,105 @@
+---------- Mages and Priests 1
+
+#newpose
+#name "female T1"
+#role "mage"
+#role "priest"
+
+#chanceinc "racetheme patriarchal *0"
+#chanceinc "racetheme traditional *0.01"
+#chanceinc "racetheme mixed 0"
+#chanceinc "racetheme matriarchal *100"
+
+#tier 1
+#notfortier 2
+#notfortier 3
+
+#renderorder "shadow basesprite offhandw quiver mount shirt legs bonusweapon cloakb armor hair weapon hands helmet offhanda overlay"
+
+#load basesprite /data/items/jotun/gygr/bases_warrior.txt
+#load shadow /data/items/jotun/warrior/shadow.txt
+
+#load hands /data/items/jotun/gygr/hands.txt
+
+#load cloakb /data/items/jotun/gygr/cloakb.txt
+
+#load armor /data/items/jotun/gygr/armor_caster.txt
+#load weapon /data/items/jotun/gygr/weapon_caster.txt
+#load helmet /data/items/jotun/gygr/helmet_caster.txt
+
+#load hair /data/items/jotun/gygr/hair_warrior.txt
+
+#generateitem 1 hair
+#generateitem 1 cloakb
+
+#endpose
+
+
+#newpose
+#name "female T2"
+#role "mage"
+#role "priest"
+
+#chanceinc "racetheme patriarchal *0"
+#chanceinc "racetheme traditional *2"
+#chanceinc "racetheme mixed 0"
+#chanceinc "racetheme matriarchal *100"
+
+#notfortier 1
+#tier 2
+#notfortier 3
+
+#renderorder "shadow basesprite offhandw quiver mount shirt legs bonusweapon cloakb armor hair weapon hands helmet offhanda overlay"
+
+#load basesprite /data/items/jotun/gygr/bases_warrior.txt
+#load shadow /data/items/jotun/warrior/shadow.txt
+
+#load hands /data/items/jotun/gygr/hands.txt
+
+#load cloakb /data/items/jotun/gygr/cloakb.txt
+
+#load armor /data/items/jotun/gygr/armor_caster.txt
+#load weapon /data/items/jotun/gygr/weapon_caster.txt
+#load helmet /data/items/jotun/gygr/helmet_caster.txt
+
+#load hair /data/items/jotun/gygr/hair_warrior.txt
+
+#generateitem 1 hair
+#generateitem 1 cloakb
+
+#endpose
+
+
+#newpose
+#name "female T3"
+#role "mage"
+#role "priest"
+
+#chanceinc "racetheme patriarchal *0"
+#chanceinc "racetheme traditional *2"
+#chanceinc "racetheme mixed *2"
+#chanceinc "racetheme matriarchal *100"
+
+#notfortier 1
+#notfortier 2
+#tier 3
+
+#renderorder "shadow basesprite offhandw quiver mount shirt legs bonusweapon cloakb armor hair weapon hands helmet offhanda overlay"
+
+#load basesprite /data/items/jotun/gygr/bases_warrior.txt
+#load shadow /data/items/jotun/warrior/shadow.txt
+
+#load hands /data/items/jotun/gygr/hands.txt
+
+#load cloakb /data/items/jotun/gygr/cloakb.txt
+
+#load armor /data/items/jotun/gygr/armor_caster.txt
+#load weapon /data/items/jotun/gygr/weapon_caster.txt
+#load helmet /data/items/jotun/gygr/helmet_caster.txt
+
+#load hair /data/items/jotun/gygr/hair_warrior.txt
+
+#generateitem 1 hair
+#generateitem 1 cloakb
+
+#endpose

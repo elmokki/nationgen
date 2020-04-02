@@ -157,9 +157,8 @@
 #themeinc theme naked *0.5
 #themeinc theme primitive *1
 #themeinc theme boreal *1000
-#themeinc thisitemtheme abysian *0.001
 #racedefinition "#nationcommand '#idealcold +1'"
-#racedefinition "#nationcommand '#gods europegods'"
+#racedefinition "#gods europegods"
 #racedefinition "#boreal"
 #endtheme
 
@@ -187,11 +186,10 @@
 #themeinc theme naked *0.05
 #themeinc theme primitive *0.5
 #themeinc theme oriental *1000
-#themeinc thisitemtheme abysian *0.001
 #racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 134'"
-#racedefinition "#nationcommand '#gods easterngods'"
+#racedefinition "#gods easterngods"
 #racedefinition "#oriental"
 #racedefinition "#forts default_forts"
 #racedefinition "#forts city_forts"
@@ -221,12 +219,11 @@
 #themeinc theme naked *2
 #themeinc theme primitive *2
 #themeinc theme occidental *1000
-#themeinc thisitemtheme abysian *0.001
 #racedefinition "#longsyllables /data/names/nations/nahuatl/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 123'"
 #racedefinition "#nationcommand '#idealcold -1'"
-#racedefinition "#nationcommand '#gods westerngods'"
+#racedefinition "#gods westerngods"
 #racedefinition "#nationcommand '#likespop 82'"
 #racedefinition "#bonussacreds 2"
 #racedefinition "#occidental"
@@ -259,13 +256,12 @@
 #themeinc theme naked *2
 #themeinc theme primitive *1
 #themeinc theme austral *1000
-#themeinc thisitemtheme abysian *0.001
 #racedefinition "#longsyllables /data/names/nations/machakan/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/machakan/shortsyllables.txt"
 #racedefinition "#pose hoburgcolossi"
 #racedefinition "#unitcommand '#nametype 126'"
 #racedefinition "#nationcommand '#idealcold -1'"
-#racedefinition "#nationcommand '#gods southerngods'"
+#racedefinition "#gods southerngods"
 #racedefinition "#nationcommand '#likespop 80'"
 #racedefinition "#austral"
 #racedefinition "#forts default_forts"
@@ -298,10 +294,10 @@
 #themeinc theme naked *0.5
 #themeinc theme primitive *0.5
 #themeinc theme central *1000
-#themeinc thisitemtheme abysian *0.001
 #racedefinition "#longsyllables /data/names/nations/amazon/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/amazon/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 107'"
+#racedefinition "#gods imperialgods"
 #racedefinition "#central"
 #endtheme
 
@@ -326,7 +322,6 @@
 #themeinc theme naked *0.5
 #themeinc theme primitive *0.5
 #themeinc theme imperial *1000
-#themeinc thisitemtheme abysian *0.001
 #racedefinition "#unitcommand '#mor +1'"
 #racedefinition "#magicpriority fire 4"
 #racedefinition "#magicpriority nature 1"
@@ -335,9 +330,50 @@
 #racedefinition "#longsyllables /data/names/nations/romance/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/romance/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 106'"
+#racedefinition "#gods imperialgods"
 #racedefinition "#tag 'preferredmount wolf'"
 #racedefinition "#imperial"
 #racedefinition "#extrapdmulti 5"
+#endtheme
+
+-- "Levantine wannabe Avvite" hoburgs 
+-- Weights: feral 0.25, agrarian 6, traditional 2, industrial 0.25
+#newtheme
+#type cultural
+#name civilized
+#theme civilized
+#basechance 1
+#chanceinc racetheme feral *0.25
+#chanceinc racetheme agrarian *6
+#chanceinc racetheme traditional *2
+#chanceinc racetheme industrial *0.25
+#chanceinc primaryrace Avvite *2
+#themeinc theme mechanical *0.25
+#themeinc theme advanced *0.25
+#themeinc theme iron *2
+#themeinc theme bronze *0.25
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *0.25
+#themeinc theme primitive *0.25
+#themeinc theme civilized *1000
+#racedefinition "#magicpriority fire 2"
+#racedefinition "#magicpriority astral 2"
+#racedefinition "#magicpriority blood 4"
+#racedefinition "#unitcommand '#gcost +1'"
+#racedefinition "#unitcommand '#rpcost +1'"
+#racedefinition "#unitcommand '#hp +1'"
+#racedefinition "#unitcommand '#mor +1'"
+#racedefinition "#unitcommand '#wastesurvival'"
+#racedefinition "#longsyllables /data/names/nations/avvite/longsyllables.txt"
+#racedefinition "#shortsyllables /data/names/nations/avvite/shortsyllables.txt"
+#racedefinition "#unitcommand '#nametype 149'"
+#racedefinition "#nationcommand '#idealcold -2'"
+#racedefinition "#generateitem 1 beard"
+#racedefinition "#gods levantinegods"
+#racedefinition "#generationchance chariot 0.5"
+#racedefinition "#generationchance mounted 0.05"
+#racedefinition "#civilized"
 #endtheme
 
 -- "Hoburgbred" Abysians 
@@ -397,7 +433,11 @@
 #chanceinc racetheme agrarian *2
 #chanceinc racetheme traditional *0.25
 #chanceinc racetheme industrial *0.1
-#themeinc theme iron *0.1
+#chanceinc racetheme imperial *0.25
+#chanceinc racetheme oriental *0.01
+#chanceinc racetheme civilized *0.01
+#chanceinc racetheme abysian *0.001
+#themeinc theme iron *0
 #themeinc theme bronze *2
 #themeinc theme wood *2
 #themeinc theme leather *2
@@ -410,6 +450,7 @@
 #racedefinition "#unitcommand '#rpcost +4000'"
 #racedefinition "#unitcommand '#mr +2'"
 #racedefinition "#unitcommand '#str -1'"
+#racedefinition "#unitcommand '#att +1'"
 #racedefinition "#unitcommand '#def +2'"
 #racedefinition "#unitcommand '#prec +2'"
 #racedefinition "#unitcommand '#enc -1'"
@@ -419,6 +460,7 @@
 #racedefinition "#unitcommand '#darkvision 50'"
 #racedefinition "#unitcommand '#forestsurvival'"
 #racedefinition "#unitcommand '#illusion'"
+#racedefinition "#unitcommand '#ironvul 1'"
 #racedefinition "#unitcommand '#spellsinger'"
 #racedefinition "#unitcommand '#nametype 142'"
 #endtheme
@@ -484,7 +526,7 @@
 #type social
 #name podslaver
 ---- #basechance 0.25
-#basechance 0
+#basechance 0.001
 #chanceinc racetheme agrarian *2
 #chanceinc racetheme traditional *0
 #chanceinc racetheme industrial *0
@@ -521,7 +563,7 @@
 #type social
 #name vinegrower
 ---- #basechance 0.5
-#basechance 0
+#basechance 0.001
 #chanceinc racetheme traditional *0
 #chanceinc racetheme industrial *0
 #chanceinc racetheme abysian *0.1

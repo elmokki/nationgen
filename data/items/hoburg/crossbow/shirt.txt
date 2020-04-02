@@ -37,3 +37,50 @@
 #theme "oriental"
 #enditem
 
+#newitem
+#id tunic_plain_light
+#gameid -1
+#armor
+#basechance 0.001
+#sprite /graphics/hoburg/shirt/tunic_civilized_plain.png
+#recolormask /graphics/hoburg/shirt/tunic_civilized_recolormask_light.png
+#eliteversion tunic_fancy_light
+#theme "civilized"
+#type tunic
+#enditem
+
+#newitem
+#id tunic_plain_dark
+#gameid -1
+#armor
+#basechance 0.001
+#sprite /graphics/hoburg/shirt/tunic_civilized_plain.png
+#recolormask /graphics/hoburg/shirt/tunic_civilized_recolormask_dark.png
+#eliteversion tunic_fancy_dark
+#theme "civilized"
+#type tunic
+#enditem
+
+#newitem
+#id tunic_fancy_light
+#gameid -1
+#armor
+#basechance 0.001
+#sprite /graphics/hoburg/shirt/tunic_civilized_fancy.png
+#recolormask /graphics/hoburg/shirt/tunic_civilized_recolormask_light.png
+#theme "elite"
+#theme "civilized"
+#type tunic
+#enditem
+
+#newitem
+#id tunic_fancy_dark
+#gameid -1
+#armor
+#basechance 0.001
+#sprite /graphics/hoburg/shirt/tunic_civilized_fancy.png
+#recolormask /graphics/hoburg/shirt/tunic_civilized_recolormask_dark.png
+#theme "elite"
+#theme "civilized"
+#type tunic
+#enditem

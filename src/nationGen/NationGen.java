@@ -753,6 +753,30 @@ public class NationGen
 			case "#plainshape":
 				su.shiftcommand = "#forestshape";
 				break;
+			case "#foreignshape":
+				su.shiftcommand = "#homeshape";
+				break;
+			case "#homeshape":
+				su.shiftcommand = "#foreignshape";
+				break;
+			case "#domshape":
+				su.shiftcommand = "#notdomshape";
+				break;
+			case "#notdomshape":
+				su.shiftcommand = "#domshape";
+				break;
+			case "#springshape":
+				su.shiftcommand = "#summershape";
+				break;
+			case "#summershape":
+				su.shiftcommand = "#autumnshape";
+				break;
+			case "#autumnshape":
+				su.shiftcommand = "#wintershape";
+				break;
+			case "#wintershape":
+				su.shiftcommand = "#springshape";
+				break;
 			default:
 				break;
 		}
