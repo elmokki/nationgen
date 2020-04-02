@@ -3,12 +3,11 @@
 
 package nationGen.naming;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.elmokki.Generic;
 import nationGen.units.Unit;
 
-import com.elmokki.Generic;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Name  {
@@ -113,7 +112,7 @@ public class Name  {
 			str = str.substring(0, str.length() - 1);
 		
 
-		return NameGenerator.capitalize(str);
+		return Generic.capitalize(str);
 	}
 	
 	public String toString()

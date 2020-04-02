@@ -2,6 +2,7 @@ package nationGen.naming;
 
 
 import com.elmokki.Dom3DB;
+import com.elmokki.Generic;
 import nationGen.NationGen;
 import nationGen.entities.Race;
 import nationGen.misc.FileUtil;
@@ -11,6 +12,7 @@ import nationGen.nation.Nation;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
 
 
@@ -18,43 +20,56 @@ import java.util.stream.Collectors;
 public class NameGenerator {
 
 	
-	List<String> magenouns = new ArrayList<String>();
-	List<String> mageprefix = new ArrayList<String>();
-	List<String> magesuffix = new ArrayList<String>();
-	List<String> magerank = new ArrayList<String>();
+	List<String> magenouns = new ArrayList<>();
+	List<String> mageprefix = new ArrayList<>();
+	List<String> magesuffix = new ArrayList<>();
+	List<String> magerank = new ArrayList<>();
+
+	List<String> nationsyllable = new ArrayList<>();
+	List<String> nationsuffix = new ArrayList<>();
 	
-	List<String> nationsyllable = new ArrayList<String>();
-	List<String> nationsuffix = new ArrayList<String>();
+	List<NamePart> siteadjectives = new ArrayList<>();
+	List<NamePart> siteplaces = new ArrayList<>();
+	List<NamePart> sitenouns = new ArrayList<>();
 	
-	List<NamePart> siteadjectives = new ArrayList<NamePart>();
-	List<NamePart> siteplaces = new ArrayList<NamePart>();
-	List<NamePart> sitenouns = new ArrayList<NamePart>();
-	
-	private List<String> siteblacklist = new ArrayList<String>();
+	private List<String> siteblacklist = new ArrayList<>();
 	
 	
-	public static String writeAsList(List<String> list, boolean capitalize, String lastseparator)
+	public static String writeAsList(List<String> list, boolean capitalize, String lastSeparator)
 	{
-		String str = "";
+		if (capitalize) {
+			return writeAsList(list, lastSeparator, Generic::capitalize);
+		} else {
+			return writeAsList(list, lastSeparator);
+		}
+	}
+	@SafeVarargs
+	public static String writeAsList(List<String> list, String lastSeparator, UnaryOperator<String>... decorations)
+	{
+		StringBuilder str = new StringBuilder();
 		for(int i = 0; i < list.size(); i++)
 		{
-			if(capitalize)
-				str = str + NameGenerator.capitalize(list.get(i));
-			else
-				str = str + list.get(i);
-			
+			String item = list.get(i);
+			for (UnaryOperator<String> op : decorations) {
+				item = op.apply(item);
+			}
+			str.append(item);
 			if(i < list.size() - 2)
-				str = str + ", ";
+				str.append(", ");
 			if(i == list.size() - 2)
-				str = str + " " + lastseparator + " ";
+				str.append(" ").append(lastSeparator).append(" ");
 		}
 		
-		return str;
+		return str.toString();
 	}
 	
 	public static String writeAsList(List<String> list, boolean capitalize)
 	{
 		return writeAsList(list, capitalize, "and");
+	}
+
+	public static String writeAsList(List<String> list) {
+		return writeAsList(list, false);
 	}
 	
 	public NameGenerator(NationGen nGen)
@@ -205,15 +220,9 @@ public class NameGenerator {
 					parts = filterOtherSiteNamePartsThan(parts, primary, true);
 			}
 			
-			if(parts.size() == 0 && noun)
+			if(parts.size() == 0)
 			{
-				noun = true;
-				parts = filterNonSuitableSiteNameParts(this.sitenouns, primary, secondary, true, true);
-			}
-			else if(parts.size() == 0 && !noun)
-			{
-				noun = false;
-				parts = filterNonSuitableSiteNameParts(this.siteadjectives, primary, secondary, true, true);
+				parts = filterNonSuitableSiteNameParts(noun ? this.sitenouns : this.siteadjectives, primary, secondary, true, true);
 			}
 				
 			
@@ -222,11 +231,11 @@ public class NameGenerator {
 		
 			if(noun)
 			{
-				name = capitalize(place.name) + " of " + capitalize(additional.name);
+				name = Generic.capitalize(place.name) + " of " + Generic.capitalize(additional.name);
 			}
 			else
 			{
-				name = capitalize(additional.name) + " " + capitalize(place.name);
+				name = Generic.capitalize(additional.name) + " " + Generic.capitalize(place.name);
 			}
 		
 		} while(usedSites.contains(name) || siteblacklist.contains(name));
@@ -244,8 +253,10 @@ public class NameGenerator {
 			boolean suitable = !keeptag;
 			for(MagicPath path : part.elements)
 			{
-				if(path == element)
+				if (path == element) {
 					suitable = keeptag;
+					break;
+				}
 			}
 			if(suitable)
 				newlist.add(part);
@@ -369,7 +380,7 @@ public class NameGenerator {
 		if(possiblenames.size() == 0)
 			return part;
 		
-		part.name = capitalize(possiblenames.get(r.nextInt(possiblenames.size())));
+		part.name = Generic.capitalize(possiblenames.get(r.nextInt(possiblenames.size())));
 
 		return part;
 		
@@ -436,32 +447,6 @@ public class NameGenerator {
 		return string;
 	}
 	
-	public static String capitalize(String s)
-	{
-		
-		if(s.length() < 2)
-			return s.toUpperCase();
-		
-		String string = "";
-		for(String str : s.split(" "))
-		{
-			str = str.trim();
-			if(str.length() < 1)
-				continue;
-			
-			if(str.equals("of") || str.equals("the"))
-				string = string + " " + str;
-			else
-				string = string + " " + (str.substring(0, 1).toUpperCase() + str.substring(1));
-		}
-		string = string.substring(1);
-
-		return string;
-	}
-	
-
-	
-
 
 	public String getNationalitySuffix(Nation n, String name) {
 		

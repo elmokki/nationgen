@@ -1,15 +1,14 @@
 package nationGen.restrictions;
 
-import java.util.List;
-import java.util.ArrayList;
-
 import nationGen.NationGenAssets;
 import nationGen.entities.Race;
 import nationGen.nation.Nation;
-import nationGen.units.Unit;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SacredRaceRestriction extends TwoListRestriction<Race> {
-	public List<String> possibleRaceNames = new ArrayList<String>();
+	public List<String> possibleRaceNames = new ArrayList<>();
 	
 	private NationGenAssets assets;
 	public SacredRaceRestriction(NationGenAssets assets)
@@ -42,14 +41,8 @@ public class SacredRaceRestriction extends TwoListRestriction<Race> {
 			return true;
 		}
 		
-		for(Unit u : n.generateUnitList("sacred"))
-		{
-			if(possibleRaceNames.contains(u.race.name))
-			{
-				return true;
-			}
-		}	
-		return false;
+		return n.selectTroops("sacred")
+			.anyMatch(u -> possibleRaceNames.contains(u.race.name));
 	}
 
     @Override

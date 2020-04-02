@@ -51,14 +51,15 @@ public class CommanderGenerator extends TroopGenerator {
 	
 	private List<Unit> getListOfSuitableUnits(String role)
 	{
-		List<Unit> possibleComs = new ArrayList<>(nation.generateUnitList(role));
-		
-		for(Unit u : nation.generateUnitList("montagtroops"))
-		{
-			if(u.guessRole().equals(role))
-				possibleComs.add(u);
-		}
-		possibleComs.addAll(nation.generateUnitList("montagsacreds"));
+		List<Unit> possibleComs = new ArrayList<>();
+
+		nation.selectTroops(role).forEach(possibleComs::add);
+		nation.selectTroops("montagtroops")
+				.filter(u -> u.guessRole().equals(role))
+				.forEach(possibleComs::add);
+
+		nation.selectTroops("montagsacreds").forEach(possibleComs::add);
+
 		return possibleComs;
 	}
 	
@@ -67,25 +68,24 @@ public class CommanderGenerator extends TroopGenerator {
 
 		
 		
-		List<Unit> tempComs = new ArrayList<Unit>();
-		List<Unit> possibleComs = new ArrayList<Unit>();
-		possibleComs.addAll(nation.generateUnitList("infantry"));
-		possibleComs.addAll(nation.generateUnitList("mounted"));
-		possibleComs.addAll(nation.generateUnitList("chariot"));
-		possibleComs.addAll(nation.generateUnitList("sacred"));
-		
+		List<Unit> tempComs = new ArrayList<>();
+		List<Unit> possibleComs = new ArrayList<>();
+		nation.selectTroops("infantry").forEach(possibleComs::add);
+		nation.selectTroops("mounted").forEach(possibleComs::add);
+		nation.selectTroops("chariot").forEach(possibleComs::add);
+		nation.selectTroops("sacred").forEach(possibleComs::add);
 
+		nation.selectTroops("montagtroops")
+			.filter(u -> u.guessRole().equals("infantry")
+					|| u.guessRole().equals("chariot")
+					|| u.guessRole().equals("mounted"))
+			.forEach(possibleComs::add);
+
+		nation.selectTroops("montagsacreds").forEach(possibleComs::add);
 		
-		for(Unit u : nation.generateUnitList("montagtroops"))
-		{
-			if(u.guessRole().equals("infantry") || u.guessRole().equals("chariot") || u.guessRole().equals("mounted"))
-				possibleComs.add(u);
-		}
-		possibleComs.addAll(nation.generateUnitList("montagsacreds"));
 		
-		
-		List<String> features = new ArrayList<String>();
-		List<String> allFeatures = new ArrayList<String>();
+		List<String> features = new ArrayList<>();
+		List<String> allFeatures = new ArrayList<>();
 		allFeatures.add("#flying");
 		allFeatures.add("#stealthy");
 		allFeatures.add("#amphibian");

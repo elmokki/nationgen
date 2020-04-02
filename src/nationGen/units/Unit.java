@@ -391,22 +391,17 @@ public class Unit {
 		if(i == null)
 			return;
 		
-		if(i.dependencies.size() > 0)
+		for(ItemDependency d : i.dependencies)
 		{
-			String slot = null;
-			for(ItemDependency d : i.dependencies)
-			{
-				if(d.lagged)
-					continue;
-				
-				slot = d.slot;
-				
-				Item n = null;
-				n = this.slotmemory.get(slot);
+			if(d.lagged)
+				continue;
+			
+			String slot = d.slot;
+			
+			Item n = this.slotmemory.get(slot);
 
-				setSlot(slot, n); 
-				
-			}
+			setSlot(slot, n);
+			
 		}
 		
 
@@ -426,73 +421,57 @@ public class Unit {
 		}
 		
 		// This handles #needs
-		if(getSlot(slotname).dependencies.size() > 0)
+		for(ItemDependency d : getSlot(slotname).dependencies)
 		{
-			String target = null;
-			String slot = null;
-			String command = null;
-			Item item = null;
-			List<Item> possibles = null;
+			if(d.lagged != lagged)
+				continue;
 			
+			String target = d.target;
+			String slot = d.slot;
 			
-			for(ItemDependency d : getSlot(slotname).dependencies)
+
+			if(!d.type) // Handle needs and setslot
 			{
-				if(d.lagged != lagged)
-					continue;
+				String command = lagged ? "#forceslot" : "#needs";
 				
-				target = d.target;
-				slot = d.slot;
-				
-	
-				if(!d.type) // Handle needs and setslot
+				if(pose.getItems(slot) == null)
 				{
-					command = "#needs";
-					if(lagged)
-						command = "#forceslot";
-					
-					if(pose.getItems(slot) == null)
-					{
-				
-						System.out.println(command + " for " + slotname + ", item " + target + " and item " + getSlot(slotname).name + " on slot " + slot + " failed. Roles " + this.pose.roles + ", race " + race.name );
-						break;
-					}
-					item = pose.getItems(slot).getItemWithName(target, slot);
-					
-					
-					if(item != null)
-					{
-						setSlot(slot, item); 
-					}
-					else
-					{
-	
-	
-						System.out.println("!!! " + getSlot(slotname).name + " on slot " + slotname + " tried to link to " + target + " on list " + slot + ", but such item was not found. Check your definitions! Pose " + this.pose.roles + ", race " + this.race.name);
-					}
+			
+					System.out.println(command + " for " + slotname + ", item " + target + " and item " + getSlot(slotname).name + " on slot " + slot + " failed. Roles " + this.pose.roles + ", race " + race.name );
+					break;
 				}
-				else if(this.nation != null) // Handle needstype and setslottype
-				{
-					command = "#needstype";
-					if(lagged)
-						command = "#forceslottype";
-					
-			
+				Item item = pose.getItems(slot).getItemWithName(target, slot);
 				
+				
+				if(item != null)
+				{
+					setSlot(slot, item);
+				}
+				else
+				{
+
+
+					System.out.println("!!! " + getSlot(slotname).name + " on slot " + slotname + " tried to link to " + target + " on list " + slot + ", but such item was not found. Check your definitions! Pose " + this.pose.roles + ", race " + this.race.name);
+				}
+			}
+			else if(this.nation != null) // Handle needstype and setslottype
+			{
+				String command = lagged ? "#forceslottype" : "#needstype";
 			
-					if(pose.getItems(slot) == null)
-					{
-						System.out.println(command + " for " + slotname + ", type " + target + " and item " + getSlot(slotname).name + " on slot " + slot + " failed due to the slot having no items: " + pose + ", "+ this.pose.roles + ", race " + race.name );
-						break;
-					}
-					
-					
-					possibles = ChanceIncHandler.getFiltersWithType(target, pose.getItems(slot));
-					item = chandler.handleChanceIncs(this, possibles).getRandom(r);
-					
-					if(item != null)
-					{
-						setSlot(slot, item); 
-					}
+		
+				if(pose.getItems(slot) == null)
+				{
+					System.out.println(command + " for " + slotname + ", type " + target + " and item " + getSlot(slotname).name + " on slot " + slot + " failed due to the slot having no items: " + pose + ", "+ this.pose.roles + ", race " + race.name );
+					break;
+				}
+				
+				
+				List<Item> possibles = ChanceIncHandler.getFiltersWithType(target, pose.getItems(slot));
+				Item item = chandler.handleChanceIncs(this, possibles).getRandom(r);
+				
+				if(item != null)
+				{
+					setSlot(slot, item);
 				}
 			}
 		}
@@ -621,8 +600,6 @@ public class Unit {
 	
 	public String getLeaderLevel(String prefix)
 	{
-		List<String> levels = Generic.getLeadershipLevels();
-		
 		String level = "ok";
 		for(Command c : this.getCommands())
 		{
@@ -630,7 +607,7 @@ public class Unit {
 			if(c.command.endsWith("leader"))
 				lead = c.command.substring(1, c.command.indexOf(prefix + "leader"));
 			
-			if(levels.contains(lead))
+			if(Generic.LEADERSHIP_LEVELS.contains(lead))
 				level = lead;
 		}
 		
@@ -654,8 +631,6 @@ public class Unit {
 	
 	public boolean hasLeaderLevel(String prefix)
 	{
-		List<String> levels = Generic.getLeadershipLevels();
-		
 		String level = null;
 		for(Command c : this.getCommands())
 		{
@@ -663,7 +638,7 @@ public class Unit {
 			if(c.command.endsWith(prefix + "leader"))
 				lead = c.command.substring(1, c.command.indexOf(prefix + "leader"));
 			
-			if(levels.contains(lead))
+			if(Generic.LEADERSHIP_LEVELS.contains(lead))
 				level = lead;
 		}
 		
@@ -933,11 +908,15 @@ public class Unit {
 	{
 		String r = "infantry";
 		for(String role : pose.roles)
-			if(role.contains("ranged"))
+			if (role.contains("ranged")) {
 				r = "ranged";
+				break;
+			}
 		for(String role : pose.roles)
-			if(role.contains("mounted"))
+			if (role.contains("mounted")) {
 				r = "mounted";
+				break;
+			}
 		return r;
 	}
 	
@@ -1653,8 +1632,6 @@ public class Unit {
 			return null;
 		
 		
-		Unit u = this;
-
 		// Get width and height;
 		Dimension d = getSpriteDimensions();
 		
@@ -1663,49 +1640,49 @@ public class Unit {
 		Graphics g = combined.getGraphics();
 		g.setColor(Color.black);
 		g.fillRect(0, 0, d.width, d.height);
+		g.translate(offsetX, 0);
 		
-		
-		String mountslot = getMountOffsetSlot();
-
-		for(String s : pose.renderorder.split(" "))
-		{
-
-			
-	
-			if(s.equals(mountslot)
-				|| (!u.pose.tags.containsName("non_mount_overlay")
-					&& s.equals("overlay") && u.getSlot(s) != null
-					&& u.getSlot("overlay").getOffsetX() == 0
-					&& u.getSlot("overlay").getOffsetY() == 0))
-			{
-				renderSlot(g, this, s, false, offsetX);
-			}
-			else if(s.equals("basesprite") && u.slotmap.get(mountslot) == null)
-				renderSlot(g, this, s, false, offsetX);
-			else if(s.equals("offhandw") && (getSlot("offhand") != null && !getSlot("offhand").armor))
-				renderSlot(g, this, "offhand", true, offsetX);
-			else if(s.equals("offhanda") && (getSlot("offhand") != null && getSlot("offhand").armor))
-				renderSlot(g, this, "offhand", true, offsetX);
-			else
-				renderSlot(g, this, s, true, offsetX);
-
-		}
-		
+		paint(g);
 			
 		// Save as new image
 		return combined; 
 	}
 	
-	private void renderSlot(Graphics g, Unit u, String slot, boolean useoffset, int extraX)
+	private void paint(Graphics g) {
+		
+		String mountslot = getMountOffsetSlot();
+		
+		for(String s : pose.renderorder.split(" "))
+		{
+			
+			if(s.equals(mountslot)
+				|| (!pose.tags.containsName("non_mount_overlay")
+				&& s.equals("overlay") && getSlot(s) != null
+				&& getSlot("overlay").getOffsetX() == 0
+				&& getSlot("overlay").getOffsetY() == 0))
+			{
+				renderSlot(g, this, s, false);
+			}
+			else if(s.equals("basesprite") && slotmap.get(mountslot) == null)
+				renderSlot(g, this, s, false);
+			else if(s.equals("offhandw") && (getSlot("offhand") != null && !getSlot("offhand").armor))
+				renderSlot(g, this, "offhand", true);
+			else if(s.equals("offhanda") && (getSlot("offhand") != null && getSlot("offhand").armor))
+				renderSlot(g, this, "offhand", true);
+			else
+				renderSlot(g, this, s, true);
+			
+		}
+		
+	}
+	
+	private void renderSlot(Graphics g, Unit u, String slot, boolean useoffset)
 	{
 		
 		List<Item> possibleitems = new ArrayList<>();
 		
-		Iterator<Item> itr = slotmap.values().iterator();
-		while(itr.hasNext())
-		{
-			Item i = itr.next();
-			if(i != null && slot.equals(i.renderslot))
+		for (Item i : slotmap.values()) {
+			if (i != null && slot.equals(i.renderslot))
 				possibleitems.add(i);
 		}
 		
@@ -1718,7 +1695,7 @@ public class Unit {
 			{
 				if(item.renderprio == i)
 				{
-					renderItem(g, item, useoffset, extraX);
+					renderItem(g, item, useoffset);
 					return;
 				}
 			}
@@ -1727,7 +1704,7 @@ public class Unit {
 	}
 	
 	
-	private void renderItem(Graphics g, Item i, boolean useoffset, int extraX)
+	private void renderItem(Graphics g, Item i, boolean useoffset)
 	{
 		if(i == null)
 			return;
@@ -1744,11 +1721,11 @@ public class Unit {
 				offsety += getSlot(mountslot).getOffsetY();
 			}
 			
-			i.render(g, true, offsetx, offsety, this.color, extraX);
+			i.render(g, true, offsetx, offsety, this.color);
 
 		}
 		else
-			i.render(g, false, 0, 0, this.color, extraX);
+			i.render(g, false, 0, 0, this.color);
 		
 	}
 	

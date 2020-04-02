@@ -3,13 +3,13 @@ package nationGen.restrictions;
 
 import com.elmokki.Generic;
 import nationGen.magic.MagicPath;
-import nationGen.magic.MagicPathInts;
+import nationGen.magic.MagicPathLevel;
 import nationGen.nation.Nation;
-import nationGen.units.Unit;
 
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MageWithAccessRestriction extends TwoListRestrictionWithComboBox<String, String>  {
 	private List<String> neededPaths = new ArrayList<>();
@@ -72,32 +72,21 @@ public class MageWithAccessRestriction extends TwoListRestrictionWithComboBox<St
 	@Override
 	public boolean doesThisPass(Nation n) {
 		
-		List<Unit> tempmages = n.generateComList("mage");
-
 		if(neededPaths.size() == 0)
 		{
 			System.out.println("Magic: Mage with Access nation restriction has no paths set!");
 			return true;
 		}
 		
+		List<MagicPathLevel> pathLevels = neededPaths.stream()
+			.map(Generic::parseArgs)
+			.map(args -> new MagicPathLevel(MagicPath.fromName(args.get(0)), Integer.parseInt(args.get(1))))
+			.collect(Collectors.toList());
 		
 		boolean randoms = comboselection == null || comboselection.equals("True");
-		for(Unit u : tempmages)
-		{
-			boolean pass = true;
-			MagicPathInts paths = u.getMagicPicks(randoms);
-			for(String p : neededPaths)
-			{
-				List<String> args = Generic.parseArgs(p);
-				MagicPath path = MagicPath.fromName(args.get(0));
-				int level = Integer.parseInt(args.get(1));
-				if(paths.get(path) < level)
-					pass = false;
-			}
-			if(pass)
-				return true;
-		}
-		return false;
+		return n.selectCommanders("mage")
+			.map(u -> u.getMagicPicks(randoms))
+			.anyMatch(paths -> pathLevels.stream().allMatch(p -> paths.get(p.path) >= p.level));
 	}
 
     @Override

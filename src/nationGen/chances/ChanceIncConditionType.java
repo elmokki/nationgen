@@ -11,7 +11,9 @@ import nationGen.misc.*;
 import nationGen.units.Unit;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 
 /**
@@ -47,7 +49,7 @@ public enum ChanceIncConditionType {
 	MAGIC("magic") {
 		@Override
 		Condition<ChanceIncData> parseConditionArguments(ArgParser args) {
-			List<Predicate<List<MagicPath>>> checks = new ArrayList<>();
+			List<Predicate<Set<MagicPath>>> checks = new ArrayList<>();
 			while (!args.isEmpty()) {
 				boolean not = args.nextOptionalFlag("not");
 				MagicPath path = args.nextMagicPath();
@@ -68,7 +70,7 @@ public enum ChanceIncConditionType {
 				checks.add(paths -> paths.get(path) > 0 != not);
 			}
 			
-			return d -> d.n.generateComList("mage").stream().map(Unit::getMagicPicks)
+			return d -> d.n.selectCommanders("mage").map(Unit::getMagicPicks)
 					.anyMatch(picks -> checks.stream().allMatch(p -> p.test(picks)));
 		}
 	},
@@ -213,37 +215,11 @@ public enum ChanceIncConditionType {
 	NATION_COMMAND("nationcommand") {
 		@Override
 		Condition<ChanceIncData> parseConditionArguments(ArgParser args) {
-			
-			String command = args.nextString();
-			boolean not = args.nextOptionalFlag("not");
-			Comparison comp = args.nextIfConvertable(a -> Comparison.find(a.get().toUpperCase())).orElse(Comparison.EQUAL);
-			Args remaining = args.remaining();
-			
-			return d -> {
+			return generateCommandChanceInc(args, d -> {
 				List<Command> coms = d.n.getCommands();
 				coms.addAll(d.n.races.get(0).nationcommands);
-				for(Command c : coms)
-				{
-					if(c.command.equals(command) || c.command.equals("#" + command))
-					{
-						if (c.args.isEmpty() || remaining.isEmpty()) {
-							return !not;
-						}
-						
-						Arg arg = c.args.get(0);
-						switch (comp) {
-							case EQUAL:
-								return arg.equals(remaining.get(0)) != not;
-							case BELOW:
-								return arg.getInt() < remaining.get(0).getInt() != not;
-							case ABOVE:
-								return arg.getInt() > remaining.get(0).getInt() != not;
-						}
-					}
-				}
-				
-				return not;
-			};
+				return coms.stream();
+			});
 		}
 	},
 	
@@ -271,74 +247,20 @@ public enum ChanceIncConditionType {
 	PRIMARY_RACE_COMMAND("primaryracecommand") {
 		@Override
 		Condition<ChanceIncData> parseConditionArguments(ArgParser args) {
-			
-			String command = args.nextString();
-			boolean not = args.nextOptionalFlag("not");
-			Comparison comp = args.nextIfConvertable(a -> Comparison.find(a.get().toUpperCase())).orElse(Comparison.EQUAL);
-			Args remaining = args.remaining();
-			
-			return d -> {
-				for(Command c : d.n.races.get(0).getCommands())
-				{
-					if(c.command.equals(command) || c.command.equals("#" + command))
-					{
-						if (c.args.isEmpty() || remaining.isEmpty()) {
-							return !not;
-						}
-						
-						Arg arg = c.args.get(0);
-						switch (comp) {
-							case EQUAL:
-								return arg.equals(remaining.get(0)) != not;
-							case BELOW:
-								return arg.getInt() < remaining.get(0).getInt() != not;
-							case ABOVE:
-								return arg.getInt() > remaining.get(0).getInt() != not;
-						}
-					}
-				}
-				
-				return not;
-			};
+			return generateCommandChanceInc(args, d -> d.n.races.get(0).getCommands().stream());
 		}
 	},
 	
 	COMMAND("command") {
 		@Override
 		Condition<ChanceIncData> parseConditionArguments(ArgParser args) {
-			
-			String command = args.nextString();
-			boolean not = args.nextOptionalFlag("not");
-			Comparison comp = args.nextIfConvertable(a -> Comparison.find(a.get().toUpperCase())).orElse(Comparison.EQUAL);
-			Args remaining = args.remaining();
-			
-			return d -> {
-				List<Unit> units = d.n.generateTroopList();
-				units.addAll(d.n.generateComList("mage"));
-				units.addAll(d.n.generateComList("priest"));
-				
-				for(Unit u : units) {
-					for (Command c : u.getCommands()) {
-						if (c.command.equals(command) || c.command.equals("#" + command)) {
-							if (c.args.isEmpty() || remaining.isEmpty()) {
-								return !not;
-							}
-							
-							Arg arg = c.args.get(0);
-							switch (comp) {
-								case EQUAL:
-									return arg.equals(remaining.get(0)) != not;
-								case BELOW:
-									return arg.getInt() < remaining.get(0).getInt() != not;
-								case ABOVE:
-									return arg.getInt() > remaining.get(0).getInt() != not;
-							}
-						}
-					}
-				}
-				
-				return not;
-			};
+			return generateCommandChanceInc(args,
+					d -> Stream.of(d.n.selectTroops(),
+							d.n.selectCommanders("mage"),
+							d.n.selectCommanders("priest"))
+						.flatMap(s -> s)
+						.flatMap(u -> u.getCommands().stream())
+			);
 		}
 	},
 	
@@ -351,15 +273,14 @@ public enum ChanceIncConditionType {
 			double percent = args.nextDecimal();
 			
 			return d -> {
-				List<Unit> units = d.n.generateTroopList();
-				units.addAll(d.n.generateComList("mage"));
-				units.addAll(d.n.generateComList("priest"));
+				List<Unit> units = d.n.listTroops();
+				d.n.selectCommanders("mage").forEach(units::add);
+				d.n.selectCommanders("priest").forEach(units::add);
 				
-				int all = 0;
+				int all = units.size();
 				int found = 0;
 				
 				for(Unit u : units) {
-					all++;
 					for(Command c : u.getCommands())
 					{
 						if(c.command.equals(command) || c.command.equals("#" + command))
@@ -418,9 +339,8 @@ public enum ChanceIncConditionType {
 			boolean not = args.nextOptionalFlag("not");
 			String filter = args.nextString();
 			
-			return d -> (d.n.generateTroopList().stream().flatMap(u -> u.appliedFilters.stream()).anyMatch(f -> f.name.equalsIgnoreCase(filter))
-					|| d.n.generateComList().stream().flatMap(u -> u.appliedFilters.stream()).anyMatch(f -> f.name.equalsIgnoreCase(filter)))
-						!= not;
+			return d -> not ^ (d.n.selectTroops().flatMap(u -> u.appliedFilters.stream()).anyMatch(f -> f.name.equalsIgnoreCase(filter))
+					|| d.n.selectCommanders().flatMap(u -> u.appliedFilters.stream()).anyMatch(f -> f.name.equalsIgnoreCase(filter)));
 		}
 	},
 	
@@ -462,7 +382,7 @@ public enum ChanceIncConditionType {
 			double res = args.nextDecimal();
 			int count = args.nextInt();
 			
-			return d -> d.n.generateTroopList().stream()
+			return d -> d.n.selectTroops()
 					.filter(u -> u.getResCost(true) > res)
 					.count() >= count != not;
 		}
@@ -475,7 +395,7 @@ public enum ChanceIncConditionType {
 			double res = args.nextDecimal();
 			int count = args.nextInt();
 			
-			return d -> d.n.generateTroopList().stream()
+			return d -> d.n.selectTroops()
 					.filter(u -> u.caponly)
 					.filter(u -> u.getResCost(true) > res)
 					.count() >= count != not;
@@ -489,7 +409,7 @@ public enum ChanceIncConditionType {
 			int size = args.nextInt();
 			int count = args.nextInt();
 			
-			return d -> d.n.generateTroopList().stream()
+			return d -> d.n.selectTroops()
 					.filter(u -> u.getCommandValue("#size", 2) >= size)
 					.count() >= count != not;
 		}
@@ -524,35 +444,7 @@ public enum ChanceIncConditionType {
 	PERSONAL_COMMAND("personalcommand") {
 		@Override
 		Condition<ChanceIncData> parseConditionArguments(ArgParser args) {
-			String command = args.nextString();
-			boolean not = args.nextOptionalFlag("not");
-			Comparison comp = args.nextIfConvertable(a -> Comparison.find(a.get().toUpperCase())).orElse(Comparison.EQUAL);
-			Args remaining = args.remaining();
-			
-			return d -> {
-				if (d.u == null) {
-					return false;
-				}
-				for (Command c : d.u.getCommands()) {
-					if (c.command.equals(command) || c.command.equals("#" + command)) {
-						if (c.args.isEmpty() || remaining.isEmpty()) {
-							return !not;
-						}
-						
-						Arg arg = c.args.get(0);
-						switch (comp) {
-							case EQUAL:
-								return arg.equals(remaining.get(0)) != not;
-							case BELOW:
-								return arg.getInt() < remaining.get(0).getInt() != not;
-							case ABOVE:
-								return arg.getInt() > remaining.get(0).getInt() != not;
-						}
-					}
-				}
-				
-				return not;
-			};
+			return generateCommandChanceInc(args, d -> d.u.getCommands().stream()); // there used to be a null check on d.u returning false, not sure if necessary
 		}
 	},
 	
@@ -906,5 +798,34 @@ public enum ChanceIncConditionType {
 	
 	public static Optional<ChanceIncConditionType> from(String name) {
 		return Optional.ofNullable(LOOKUP.get(name));
+	}
+
+	private static Condition<ChanceIncData> generateCommandChanceInc(ArgParser args, Function<ChanceIncData, Stream<Command>> commandsToTest) {
+		boolean firstNot = args.nextOptionalFlag("not");
+		String command = args.nextString();
+		boolean not = firstNot ^ args.nextOptionalFlag("not");
+		Comparison comp = args.nextIfConvertable(a -> Comparison.find(a.get().toUpperCase())).orElse(Comparison.EQUAL);
+		Args remaining = args.remaining();
+
+		return d -> not ^ commandsToTest.apply(d).anyMatch(c -> commandMatches(c, command, comp, remaining));
+	}
+
+	private static boolean commandMatches(Command c, String command, Comparison comp, Args remaining) {
+		if(c.command.equals(command) || c.command.equals("#" + command)) {
+			if (c.args.isEmpty() || remaining.isEmpty()) {
+				return true;
+			}
+
+			Arg arg = c.args.get(0);
+			switch (comp) {
+				case EQUAL:
+					return arg.equals(remaining.get(0));
+				case BELOW:
+					return arg.getInt() < remaining.get(0).getInt();
+				case ABOVE:
+					return arg.getInt() > remaining.get(0).getInt();
+			}
+		}
+		return false;
 	}
 }

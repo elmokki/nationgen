@@ -1,12 +1,9 @@
 package nationGen.restrictions;
 
-import java.awt.BorderLayout;
-import java.awt.LayoutManager;
-
-import javax.swing.JPanel;
-
 import nationGen.nation.Nation;
-import nationGen.units.Unit;
+
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * 
@@ -36,14 +33,7 @@ public class RecAnywhereSacredsRestriction implements NationRestriction {
 
 	@Override
 	public boolean doesThisPass(Nation n) {
-		for(Unit u : n.generateUnitList("sacred"))
-		{
-			if(!u.caponly)
-			{
-				return true;
-			}
-		}
-		return false;
+		return n.selectTroops("sacred").anyMatch(u -> !u.caponly);
 	}
 
 	@Override

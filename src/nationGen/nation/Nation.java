@@ -27,6 +27,7 @@ import java.util.List;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 
 public class Nation {
@@ -60,8 +61,8 @@ public class Nation {
 	public List<Theme> nationthemes = new ArrayList<>();
 	public List<Filter> spells = new ArrayList<>();
 	
-	public LinkedHashMap<String, List<Unit>> unitlists = new LinkedHashMap<>();
-	public LinkedHashMap<String, List<Unit>> comlists = new LinkedHashMap<>();
+	public Map<String, List<Unit>> unitlists = new LinkedHashMap<>();
+	public Map<String, List<Unit>> comlists = new LinkedHashMap<>();
 	
 	public List<Race> races = new ArrayList<>();
 	public String nationalitysuffix;
@@ -356,7 +357,6 @@ public class Nation {
 		// Gods
 		GodGen gg = new GodGen(this, assets);
 		this.gods.addAll(gg.giveGods());
-		gg = null;
 	}
 	
 	private void getForts()
@@ -859,13 +859,17 @@ public class Nation {
 			boolean ok = true;
 			for(Command c : u.race.getCommands())
 			{
-				if(c.command.equals(cc.command))
+				if (c.command.equals(cc.command)) {
 					ok = false;
+					break;
+				}
 			}
 			for(Command c : u.pose.getCommands())
 			{
-				if(c.command.equals(cc.command))
+				if (c.command.equals(cc.command)) {
 					ok = false;
+					break;
+				}
 			}
 			if(ok)
 			{
@@ -877,28 +881,14 @@ public class Nation {
 	
 	public List<List<Unit>> getMagesInSeparateLists()
 	{
-		List<Unit> all = this.generateComList("mages");
-		List<List<Unit>> lists = new ArrayList<List<Unit>>();
-		
-		for(int i = 3; i >= 1; i--)
-		{
-			List<Unit> l = new ArrayList<Unit>();
-			for(Unit u : all)
-			{
-			
-				if(u.tags.contains("schoolmage", i))
-					l.add(u);
-			}
-			lists.add(l);
-		}
-		
-		List<Unit> l = new ArrayList<Unit>();
-		for(Unit u : all)
-			if(u.tags.containsName("extramage"))
-				l.add(u);
-		
-		lists.add(l);
-	
+		List<Unit> all = this.selectCommanders("mages").collect(Collectors.toList());
+		List<List<Unit>> lists = new ArrayList<>();
+
+		lists.add(all.stream().filter(u -> u.tags.contains("schoolmage", 3)).collect(Collectors.toList()));
+		lists.add(all.stream().filter(u -> u.tags.contains("schoolmage", 2)).collect(Collectors.toList()));
+		lists.add(all.stream().filter(u -> u.tags.contains("schoolmage", 1)).collect(Collectors.toList()));
+		lists.add(all.stream().filter(u -> u.tags.containsName("extramage")).collect(Collectors.toList()));
+
 		return lists;
 	}
 	
@@ -1163,7 +1153,7 @@ public class Nation {
 	}
 	
 
-	private List<String> writeRecLines(boolean coms, LinkedHashMap<String, List<Unit>> unitlists)
+	private List<String> writeRecLines(boolean coms, Map<String, List<Unit>> unitlists)
 	{
 		List<String> order = Generic.parseArgs("ranged infantry mounted chariot special sacred monsters");
 		if(coms)
@@ -1312,59 +1302,77 @@ public class Nation {
 		}
 
 	}
-	
-	public List<Unit> generateTroopList()
-	{
-		List<Unit> units = new ArrayList<>();
-		
-		for (List<Unit> units1 : unitlists.values())
-			units.addAll(units1);
 
-		return units;
+	private static <T> Stream<T> flatten(Map<?, ? extends Collection<T>> map) {
+		return map.values().stream().flatMap(Collection::stream);
 	}
 
-	public List<Unit> generateUnitList()
-	{
-		List<Unit> units = new ArrayList<>();
-		
-		for(List<Unit> units1 : comlists.values())
-			units.addAll(units1);
-		
-		for(List<Unit> units1 : unitlists.values())
-			units.addAll(units1);
-
-		return units;
+	private static <T> Stream<T> flattenListsWithPrefix(Map<String, ? extends Collection<T>> map, String prefix) {
+		return map.entrySet().stream()
+				.filter(e -> e.getKey().startsWith(prefix))
+				.map(Entry::getValue)
+				.flatMap(Collection::stream);
 	}
 	
-	public List<Unit> generateComList()
+	public Stream<Unit> selectTroops()
 	{
-		List<Unit> units = new ArrayList<>();
-		
-		for (List<Unit> units1 : comlists.values())
-			units.addAll(units1);
-
-		return units;
+		return flatten(unitlists);
 	}
-	public List<Unit> generateUnitList(String type)
+
+	public List<Unit> listTroops() {
+		return selectTroops().collect(Collectors.toList());
+	}
+
+	public Stream<Unit> selectUnits()
 	{
-		List<Unit> list = new ArrayList<>();
-		for (Entry<String, List<Unit>> entry : unitlists.entrySet()) {
-			if (entry.getKey().startsWith(type)) {
-				list.addAll(entry.getValue());
-			}
-		}
-		return list;
+		return Stream.concat(selectTroops(), selectCommanders());
+	}
+
+	public Stream<Unit> selectUnitsAndHeroes() {
+		return Stream.concat(selectUnits(), this.heroes.stream());
+	}
+
+	public List<Unit> listUnitsAndHeroes() {
+		return selectUnitsAndHeroes().collect(Collectors.toList());
+	}
+
+	public List<Unit> listUnits() {
+		return selectUnits().collect(Collectors.toList());
 	}
 	
-	public List<Unit> generateComList(String type)
+	public Stream<Unit> selectCommanders()
 	{
-		List<Unit> list = new ArrayList<>();
-		for (Entry<String, List<Unit>> entry : comlists.entrySet()) {
-			if (entry.getKey().startsWith(type)) {
-				list.addAll(entry.getValue());
-			}
-		}
-		return list;
+		return flatten(comlists);
+	}
+
+	public List<Unit> listCommanders() {
+		return selectCommanders().collect(Collectors.toList());
+	}
+
+	public Stream<Unit> selectTroops(String type)
+	{
+		return flattenListsWithPrefix(unitlists, type);
+	}
+
+	public List<Unit> listTroops(String type) {
+		return selectTroops(type).collect(Collectors.toList());
+	}
+	
+	public Stream<Unit> selectTroopsWithMontagGuesses(String type) {
+		return Stream.concat(selectTroops(type), selectTroops("montagtroops").filter(u -> u.guessRole().equals(type)));
+	}
+	
+	public List<Unit> listTroopsWithMontagGuesses(String type) {
+		return selectTroopsWithMontagGuesses(type).collect(Collectors.toList());
+	}
+	
+	public Stream<Unit> selectCommanders(String type)
+	{
+		return flattenListsWithPrefix(comlists, type);
+	}
+
+	public List<Unit> listCommanders(String type) {
+		return selectCommanders(type).collect(Collectors.toList());
 	}
 	
 	
@@ -1394,17 +1402,12 @@ public class Nation {
 
 	public double percentageOfRace(Race race)
 	{
-		List<Unit> units = this.generateTroopList();
-		for(List<Unit> ul : this.comlists.values())
-				units.addAll(ul);
+		List<Unit> units = this.selectUnits().collect(Collectors.toList());
 		
 		int all = units.size();
-		int other = 0;
-		for(Unit u : units)
-			if(u.race == race)
-				other++;
-		
-		return (double)other / (double)all;
+		long matching = units.stream().filter(u -> u.race == race).count();
+
+		return (double)matching / (double)all;
 			
 	}
 	

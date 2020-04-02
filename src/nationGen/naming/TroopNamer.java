@@ -19,7 +19,7 @@ public class TroopNamer {
 	private Nation n;
 	private NationGenAssets assets;
 	
-	List<String> given = new ArrayList<String>();
+	List<String> given = new ArrayList<>();
 	private Random r;
 	
 	private List<NamePart> basenames;
@@ -81,7 +81,7 @@ public class TroopNamer {
 
 	
 		// #forcedname
-		List<Unit> forcednames = new ArrayList<Unit>();
+		List<Unit> forcednames = new ArrayList<>();
 		for(Unit u : alltroops)
 			if(Generic.getAllUnitTags(u).containsName("forcedname"))
 				forcednames.add(u);
@@ -99,7 +99,7 @@ public class TroopNamer {
 		setGuaranteedParts(alltroops, miscguaranteed);
 		
 		// Differentiate units based on misc items
-		List<NamePart> parts = new ArrayList<NamePart>();
+		List<NamePart> parts = new ArrayList<>();
 		parts.addAll(miscitemnames);
 		parts.addAll(miscitemprefixes);
 		differentiateNames(alltroops, parts);
@@ -209,11 +209,9 @@ public class TroopNamer {
 	
 	private void nameCommanders(Nation n)
 	{
-		List<Unit> units = new ArrayList<Unit>();
-		units.addAll(n.comlists.get("commanders"));
-		List<NamePart> used = new ArrayList<NamePart>();
+		List<NamePart> used = new ArrayList<>();
 		
-		for(Unit u : units)
+		for(Unit u : n.comlists.get("commanders"))
 		{
 			int tier = 0;
 			for(Command c : u.commands)
@@ -294,8 +292,7 @@ public class TroopNamer {
 
 			
 		// Scouts
-		units = n.comlists.get("scouts");
-		for(Unit u : units)
+		for(Unit u : n.comlists.get("scouts"))
 		{
 			int level = 0;
 			for(Command c : u.commands)
@@ -319,7 +316,7 @@ public class TroopNamer {
 	
 	private List<NamePart> getSuitableParts(List<NamePart> all, boolean elite, boolean commander)
 	{
-		List<NamePart> selected = new ArrayList<NamePart>();
+		List<NamePart> selected = new ArrayList<>();
 		for(NamePart p : all)
 		{
 			
@@ -339,14 +336,12 @@ public class TroopNamer {
 	private NamePart getSuitablePart(List<NamePart> all, List<NamePart> used, Unit u)
 	{
 		if(used == null)
-			used = new ArrayList<NamePart>();
+			used = new ArrayList<>();
 		
-		List<NamePart> newall = new ArrayList<NamePart>();
-		newall.addAll(all);
+		List<NamePart> newall = new ArrayList<>(all);
 		
-		NamePart part = null;
 		List<NamePart> unitname = u.name.getAsNamePartList();
-		List<NamePart> pointless = new ArrayList<NamePart>();
+		List<NamePart> pointless = new ArrayList<>();
 		for(NamePart p : all)
 		{
 			boolean ok = true;
@@ -386,6 +381,7 @@ public class TroopNamer {
 		used.removeAll(pointless);
 		newall.removeAll(pointless);
 		
+		NamePart part;
 		
 		// Use old part if possible
 		if(chandler.countPossibleFilters(used, u) > 0)
@@ -404,27 +400,16 @@ public class TroopNamer {
 	
 	private void setWeaponMountNames()
 	{
-		List<String> roles = new ArrayList<String>();
+		List<String> roles = new ArrayList<>();
 		roles.add("infantry");
 		roles.add("mounted");
 		roles.add("ranged");
 		roles.add("chariot");
 		
-		List<NamePart> used = new ArrayList<NamePart>();
+		List<NamePart> used = new ArrayList<>();
 		for(String role : roles)
 		{
-			List<Unit> units = n.generateUnitList(role);
-			for(Unit u : n.generateUnitList("montagtroops"))
-				if(u.guessRole().equals(role))
-					units.add(u);
-			
-			if(units.size() == 0)
-				continue;
-			
-			
-			for(Unit u : units)
-			{
-				
+			n.selectTroopsWithMontagGuesses(role).forEach(u -> {
 				List<NamePart> parts;
 				// Mount stuff
 				if(u.getSlot("mount") != null)
@@ -434,34 +419,14 @@ public class TroopNamer {
 				// Other stuff
 				else
 				{
-					List<NamePart> temp = new ArrayList<NamePart>();
+					List<NamePart> temp = new ArrayList<>();
 					temp.addAll(this.weaponnames);
 					temp.addAll(this.weaponprefixes);
 					parts = getSuitableParts(temp, false, false);
 				}
 				
-				List<NamePart> usedhere = new ArrayList<NamePart>();
-				usedhere.addAll(used);
-				usedhere.retainAll(parts);
-				
-				NamePart part = this.getSuitablePart(parts, usedhere, u);
-				
-				usedhere.removeAll(used);
-				used.addAll(usedhere);
-				
-				if(part != null)
-				{
-					setNamePart(u, part);
-
-				}
-				
-				
-				
-			}
-			
-			
-	
-			
+				setGuaranteedParts(used, u, parts);
+			});
 		}
 	}
 	
@@ -489,13 +454,9 @@ public class TroopNamer {
 		
 		for(String role : roles)
 		{
-			List<Unit> units = n.generateUnitList(role);
-			for(Unit u : n.generateUnitList("montagtroops"))
-				if(u.guessRole().equals(role))
-					units.add(u);
+			List<Unit> units = n.listTroopsWithMontagGuesses(role);
 			
-			
-			if(units.size() == 0)
+			if(units.isEmpty())
 				continue;
 			
 			NamePart part = chandler.getRandom(getSuitableParts(basenames, false, false), units);
@@ -519,7 +480,7 @@ public class TroopNamer {
 	
 	private List<NamePart> getPointlessParts(List<NamePart> possibleParts, Unit u)
 	{
-		List<NamePart> pointlessParts = new ArrayList<NamePart>();
+		List<NamePart> pointlessParts = new ArrayList<>();
 		
 		// Remove parts of already existing types
 		for(NamePart p : possibleParts)
@@ -538,7 +499,7 @@ public class TroopNamer {
 		{		
 			
 			// Get all units with the same name
-			List<Unit> matches = new ArrayList<Unit>();
+			List<Unit> matches = new ArrayList<>();
 			for(Unit u2 : units)
 			{
 				
@@ -557,16 +518,7 @@ public class TroopNamer {
 					
 				
 				// Remove all parts that don't help differentiating at all
-				List<NamePart> pointlessParts = new ArrayList<NamePart>();
-				
-				// Remove parts of already existing types
-				for(NamePart p : possibleParts)
-					for(String t : p.types)
-						for(NamePart p2 : u.name.getAsNamePartList())
-							if(p2 != null && p2.types.contains(t))
-								pointlessParts.add(p);
-				
-				
+				List<NamePart> pointlessParts = getPointlessParts(possibleParts, u);
 				
 				for(NamePart p : possibleParts)
 				{
@@ -702,33 +654,25 @@ public class TroopNamer {
 			boolean elite = Generic.getAllUnitTags(u).containsName("allowelitenaming");
 			
 			List<NamePart> parts = getSuitableParts(all, elite, false);
-		
 			
-			List<NamePart> usedhere = new ArrayList<>();
-			usedhere.addAll(used);
-			usedhere.retainAll(parts);
-			
-			NamePart part = this.getSuitablePart(parts, usedhere, u);
-
-			usedhere.removeAll(used);
-			used.addAll(usedhere);
-			
-			if(part != null)
-			{
-				setNamePart(u, part);
-				
-			}
-			
-			
-			
+			setGuaranteedParts(used, u, parts);
 		}
 		
 	}
 	
-
-
-
-
-
-
+	private void setGuaranteedParts(List<NamePart> used, Unit u, List<NamePart> parts) {
+		List<NamePart> usedhere = new ArrayList<>(used);
+		usedhere.retainAll(parts);
+		
+		NamePart part = this.getSuitablePart(parts, usedhere, u);
+		
+		usedhere.removeAll(used);
+		used.addAll(usedhere);
+		
+		if(part != null)
+		{
+			setNamePart(u, part);
+			
+		}
+	}
 }

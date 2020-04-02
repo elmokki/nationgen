@@ -1,13 +1,13 @@
 package nationGen.misc;
 
 
+import nationGen.nation.Nation;
+import nationGen.units.Unit;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 import java.util.List;
-
-import nationGen.nation.Nation;
-import nationGen.units.Unit;
 
 
 public class PreviewGenerator {
@@ -17,51 +17,30 @@ public class PreviewGenerator {
 		int baseY = 64;
 		
 		int maxX = 10 - 1;
-		int maxY = 1;
 		
-		int neededBlocks = 0;
-		//int totalNeededBlocks = 0;
-		//int troopLines = 0;
+		List<Unit> troops = new ArrayList<>();
+		n.selectTroops("ranged").forEach(troops::add);
+		n.selectTroops("infantry").forEach(troops::add);
+		n.selectTroops("mounted").forEach(troops::add);
+		n.selectTroops("chariot").forEach(troops::add);
+		n.selectTroops("sacred").forEach(troops::add);
+		n.selectTroops("montagsacreds").forEach(troops::add);
+		n.selectTroops("montagtroops").forEach(troops::add);
 
-		List<Unit> troops = n.generateUnitList("ranged");
-		troops.addAll(n.generateUnitList("infantry"));
-		troops.addAll(n.generateUnitList("mounted"));
-		troops.addAll(n.generateUnitList("chariot"));
-		troops.addAll(n.generateUnitList("sacred"));
-		troops.addAll(n.generateUnitList("montagsacreds"));
-		troops.addAll(n.generateUnitList("montagtroops"));
-
-
-		for(Unit u : troops)
-		{
-			Dimension d = u.getSpriteDimensions();
-			
-			int x = (int)Math.ceil(d.getWidth() / 64);
-			int y = (int)Math.ceil(d.getHeight() / 64);
-			
-			neededBlocks += x*y;
-		}
+		int neededBlocksForTroops = troops.stream()
+			.map(Unit::getSpriteDimensions)
+			.mapToInt(d -> (int)Math.ceil(d.getWidth() / baseX) * (int)Math.ceil(d.getHeight() / baseY))
+			.sum();
 		
-		//troopLines = (int) Math.ceil((double)neededBlocks / ((double)maxX + 1));
-		maxY += (int) Math.ceil((double)neededBlocks / ((double)maxX + 1));
-		//totalNeededBlocks += neededBlocks;
-		neededBlocks = 0;
+		int neededBlocksForCommanders = n.selectCommanders()
+			.map(Unit::getSpriteDimensions)
+			.mapToInt(d -> (int)Math.ceil(d.getWidth() / baseX) * (int)Math.ceil(d.getHeight() / baseY))
+			.sum();
 		
-		for(Unit u : n.generateComList())
-		{
-			Dimension d = u.getSpriteDimensions();
-			
-			int x = (int)Math.ceil(d.getWidth() / 64);
-			int y = (int)Math.ceil(d.getHeight() / 64);
-			
-			neededBlocks += x*y;
-		}
-		//totalNeededBlocks += neededBlocks;
-
-
-		
-		maxY += (int) Math.ceil((double)neededBlocks / ((double)maxX + 1));
-		maxY++;
+		int maxY = 1
+			+ (int) Math.ceil((double)neededBlocksForTroops / ((double)maxX + 1))
+			+ (int) Math.ceil((double)neededBlocksForCommanders / ((double)maxX + 1))
+			+ 1;
 		
 
 		
@@ -93,7 +72,7 @@ public class PreviewGenerator {
 		Font f = g.getFont();
 		Font d = f.deriveFont(32f);
 		g.setFont(d);
-		//g.setColor(c);
+		
 		g.drawString(n.name, 96, 48);
 		g.setFont(f);
 		g.setColor(Color.white);
@@ -101,19 +80,7 @@ public class PreviewGenerator {
 			
 		drawList(map, maxX, maxY, troops, g);
 		
-		/*
-		for(int y = 0; y < maxY; y++)
-		{
-			if(map[y][0] == 1)
-				for(int x = 0; x < maxX; x++)
-				{
-					map[y][x] = 1;
-			
-				}
-			
-		}
-		*/
-		drawList(map, maxX, maxY, n.generateComList(), g);
+		drawList(map, maxX, maxY, n.listCommanders(), g);
 		
 		FileUtil.writePng(img, file);
 	}
@@ -155,18 +122,10 @@ public class PreviewGenerator {
 									fit = false;
 									break;
 								}
-								else
-								{
-								}
 							}
 						}
-						
-						if(!fit)
-						{
-							
-						}
-						else
-						{
+
+						if (fit) {
 							for(int tX = x; tX < x + unitX; tX++)
 							{
 								for(int tY = y; tY < y + unitY; tY++)
@@ -180,13 +139,7 @@ public class PreviewGenerator {
 							foundFit = true;
 							break;
 						}
-						
 					}
-					else
-					{
-
-					}
-					
 				}
 				if(foundFit)
 					break;

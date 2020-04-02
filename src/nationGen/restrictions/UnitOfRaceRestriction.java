@@ -1,19 +1,17 @@
 package nationGen.restrictions;
 
-import java.util.List;
-import java.util.ArrayList;
-
 import nationGen.NationGenAssets;
 import nationGen.entities.Race;
 import nationGen.nation.Nation;
-import nationGen.units.Unit;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class UnitOfRaceRestriction extends TwoListRestrictionWithComboBox<Race, String> {
 	public List<String> possibleRaceNames = new ArrayList<String>();
 	
 	private NationGenAssets assets;
 	
-	private String[] ownoptions = {"All", "Troops", "Commanders", "Sacred troops"};
 	public UnitOfRaceRestriction(NationGenAssets assets)
 	{
 		super("Nation needs to have at least one unit of a race on the right box", "Unit of race");
@@ -23,12 +21,8 @@ public class UnitOfRaceRestriction extends TwoListRestrictionWithComboBox<Race, 
 		for(Race r : assets.races)
 			rmodel.addElement(r);
 		
-		this.comboboxoptions = ownoptions;
-		
-		
+		this.comboboxoptions = new String[]{"All", "Troops", "Commanders", "Sacred troops"};
 	}
-	
-
 
 	@Override
 	public NationRestriction getRestriction() {
@@ -51,24 +45,12 @@ public class UnitOfRaceRestriction extends TwoListRestrictionWithComboBox<Race, 
 		if(comboselection == null)
 			comboselection = "All";
 		
-		boolean pass = false;
-		if(comboselection.equals("Troops") || comboselection.equals("All"))
-			for(Unit u : n.generateTroopList())
-				if(possibleRaceNames.contains(u.race.name))
-					pass = true;
-		
-		if(!pass && (comboselection.equals("Commanders") || comboselection.equals("All")))
-			for(Unit u : n.generateComList())
-				if(possibleRaceNames.contains(u.race.name))
-					pass = true;
-		
-		if(!pass && comboselection.equals("Sacred troops"))
-			for(Unit u : n.generateUnitList("sacred"))
-				if(possibleRaceNames.contains(u.race.name))
-					pass = true;
-		
-
-		return pass;
+		return (comboselection.equals("Troops") || comboselection.equals("All"))
+				&& n.selectTroops().anyMatch(u -> possibleRaceNames.contains(u.race.name))
+			|| (comboselection.equals("Commanders") || comboselection.equals("All"))
+				&& n.selectCommanders().anyMatch(u -> possibleRaceNames.contains(u.race.name))
+			|| (comboselection.equals("Sacred troops"))
+				&& n.selectTroops("sacred").anyMatch(u -> possibleRaceNames.contains(u.race.name));
 	}
 
     @Override

@@ -10,24 +10,23 @@ import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Generic {
 	
 	
-	public static List<String> getLeadershipLevels()
-	{
-		List<String> levels = new ArrayList<String>();
-		levels.add("no");
-		levels.add("poor");
-		levels.add("ok");
-		levels.add("good");
-		levels.add("expert");
-		levels.add("superior");
-		return levels;
-	}
+	public static final Set<String> LEADERSHIP_LEVELS = Set.of(
+		"no",
+		"poor",
+		"ok",
+		"good",
+		"expert",
+		"superior"
+	);
 	
 	public static <E extends Entity> E getRandom(List<E> list, Random r)
 	{
@@ -193,27 +192,21 @@ public class Generic {
 		return string;
 	}
 	
+	private static final Set<String> DO_NOT_CAPITALIZE = Set.of("of", "the");
+	
 	public static String capitalize(String s)
 	{
 		
-		if(s.length() < 2)
+		if(s.length() <= 1)
 			return s.toUpperCase();
 		
-		String string = "";
-		for(String str : s.split(" "))
-		{
-			str = str.trim();
-			if(str.length() < 1)
-				continue;
-			
-			if(str.equals("of") || str.equals("the"))
-				string = string + " " + str;
-			else
-				string = string + " " + (str.substring(0, 1).toUpperCase() + str.substring(1));
-		}
-		string = string.substring(1);
-
-		return string;
+		return Arrays.stream(s.split("\\s+"))
+			.map(str -> DO_NOT_CAPITALIZE.contains(str)
+				? str
+				: str.length() <= 1
+					? str.toUpperCase()
+					: (str.substring(0, 1).toUpperCase() + str.substring(1)))
+			.collect(Collectors.joining(" "));
 	}
 	
 	public static List<String> parseArgs(String str, String separator)
@@ -230,7 +223,7 @@ public class Generic {
 	 */
 	public static List<String> parseArgs(String str, String separator, boolean leaveseparator)
 	{
-		List<String> newlist = new ArrayList<String>();
+		List<String> newlist = new ArrayList<>();
 		
 		int offset = 0;
 		if(leaveseparator)
