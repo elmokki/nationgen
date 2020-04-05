@@ -28,12 +28,12 @@ public class TroopGenerator {
 	public ItemSet exclusions = new ItemSet();
 	private double bonusrangedness = 0;
 	
-	private List<Filter> unitTemplates = new ArrayList<Filter>();
+	private List<Filter> unitTemplates = new ArrayList<>();
 	private int maxtemplates = 0;
 	private int maxdifferenttemplates = 0;
 	private int appliedtemplates = 0;
 	
-	private List<TroopTemplate> templates = new ArrayList<TroopTemplate>();
+	private List<TroopTemplate> templates = new ArrayList<>();
 	protected ChanceIncHandler chandler;
 	protected Random random;
 	
@@ -147,12 +147,8 @@ public class TroopGenerator {
 				return false;
 			
 		Tags tags = Generic.getAllUnitTags(u);
-		for(Item i : u.slotmap.values())
-			if(i != null)
-			{
-				tags.addAll(i.tags);
-			}
-				
+		u.slotmap.items().forEach(i -> tags.addAll(i.tags));
+		
 		
 		int dw_maxlength = tags.getInt("dw_maxlength").orElse(2);
 		
@@ -237,15 +233,12 @@ public class TroopGenerator {
 		
 		TroopTemplate t = TroopTemplate.getNew(u.getSlot("armor"), race, u, role, u.pose, this);
 	
-		boolean success = false;
-		if(!role.equals("mounted"))
-		{
+		boolean success;
+		if(!role.equals("mounted")) {
 			success = armInfantry(u, t);
-			
-		}
-		else 
+		} else {
 			success = armCavalry(u, t);
-	
+		}
 	
 		if(!success)
 		{
@@ -294,14 +287,10 @@ public class TroopGenerator {
 			unit = t.template.getCopy();
 
 	
-			boolean success = false;
-			if(!t.role.equals("mounted"))
-			{
+			boolean success;
+			if(!t.role.equals("mounted")) {
 				success = armInfantry(unit, t);
-
-			}
-			else
-			{
+			} else {
 				success = armCavalry(unit, t);
 			}
 			
@@ -403,9 +392,7 @@ public class TroopGenerator {
 		Tags tags = new Tags();
 		tags.addAll(u.pose.tags);
 		tags.addAll(u.race.tags);
-		for(Item i : u.slotmap.values())
-			if(i != null)
-				tags.addAll(i.tags);
+		u.slotmap.items().forEach(i -> tags.addAll(i.tags));
 		for(Filter f : u.appliedFilters)
 			tags.addAll(f.tags);
 		
@@ -600,7 +587,7 @@ public class TroopGenerator {
 		if(!canGetMoreFilters(u))
 			return;
 			
-		List<Filter> possibleFilters = new ArrayList<Filter>();
+		List<Filter> possibleFilters = new ArrayList<>();
 		possibleFilters.addAll(this.unitTemplates);
 		possibleFilters.removeAll(u.appliedFilters);
 		
@@ -612,8 +599,8 @@ public class TroopGenerator {
 			possibleFilters.retainAll(tFilters);
 			
 			// Remove #onlyfilter
-			List<Filter> removef = new ArrayList<Filter>();
-			List<Filter> match = new ArrayList<Filter>();
+			List<Filter> removef = new ArrayList<>();
+			List<Filter> match = new ArrayList<>();
 			match.addAll(u.appliedFilters);
 			match.retainAll(tFilters);
 			
@@ -647,7 +634,7 @@ public class TroopGenerator {
 		
 		}
 		
-		List<Filter> match = new ArrayList<Filter>();
+		List<Filter> match = new ArrayList<>();
 		for(Filter f : possibleFilters)
 			f.tags.getInt("maxunits").ifPresent(max -> {
 				int count = 1;
@@ -742,9 +729,9 @@ public class TroopGenerator {
 	public void addToUsed(Unit unit)
 	{
 		
-		for(Item i : unit.slotmap.values())
-			if(!used.contains(i))
-				used.add(i);
+		unit.slotmap.items()
+			.filter(i -> !used.contains(i))
+			.forEach(i -> used.add(i));
 		
 	}
 

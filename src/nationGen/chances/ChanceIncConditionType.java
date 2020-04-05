@@ -624,7 +624,7 @@ public enum ChanceIncConditionType {
 			boolean not = args.nextOptionalFlag("not");
 			Command tag = args.nextCommand();
 			
-			return d -> d.u.slotmap.values().stream().filter(Objects::nonNull).anyMatch(i -> i.tags.containsTag(tag)) != not;
+			return d -> d.u.slotmap.items().anyMatch(i -> i.tags.containsTag(tag)) != not;
 		}
 	},
 	
@@ -634,7 +634,7 @@ public enum ChanceIncConditionType {
 			boolean not = args.nextOptionalFlag("not");
 			String theme = args.nextString();
 			
-			return d -> d.u.slotmap.values().stream().filter(Objects::nonNull).anyMatch(i -> i.themes.contains(theme)) != not;
+			return d -> d.u.slotmap.items().anyMatch(i -> i.themes.contains(theme)) != not;
 		}
 	},
 	
@@ -666,7 +666,7 @@ public enum ChanceIncConditionType {
 				
 				tags.addAll(d.u.tags);
 				d.u.appliedFilters.forEach(fu -> tags.addAll(fu.tags));
-				d.u.slotmap.values().stream().filter(Objects::nonNull).forEach(i -> tags.addAll(i.tags));
+				d.u.slotmap.items().forEach(i -> tags.addAll(i.tags));
 				
 				return paths.stream().allMatch(path -> tags.contains("path", new Arg(path)) != not);
 			};

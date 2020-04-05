@@ -500,8 +500,6 @@ public class UnitGen {
 				u.setSlot("weapon", getSuitableItem("weapon", u, excluded, included, targettag));
 			else
 			{
-				int prot = nationGen.armordb.GetInteger(u.getSlot("armor").id, "prot");
-				
 				ItemSet all = included.filterSlot("weapon");
 				all.removeAll(excluded);
 				
@@ -532,6 +530,8 @@ public class UnitGen {
 						all = test;
 				}
 				
+				Item armor = u.getSlot("armor");
+				int prot = armor == null ? 0 : nationGen.armordb.GetInteger(armor.id, "prot");
 				
 				if(prot < 10 && random.nextDouble() > 0.5 && !mage)
 				{
@@ -798,9 +798,7 @@ public class UnitGen {
 		Tags tags = new Tags();
 		tags.addAll(u.pose.tags);
 		tags.addAll(u.race.tags);
-		for(Item i : u.slotmap.values())
-			if(i != null)
-				tags.addAll(i.tags);
+		u.slotmap.items().forEach(i -> tags.addAll(i.tags));
 		for(Filter f : u.appliedFilters)
 			tags.addAll(f.tags);
 		
@@ -921,9 +919,7 @@ public class UnitGen {
 		Tags tags = new Tags();
 		tags.addAll(u.pose.tags);
 		tags.addAll(u.race.tags);
-		for(Item i : u.slotmap.values())
-			if(i != null)
-				tags.addAll(i.tags);
+		u.slotmap.items().forEach(i -> tags.addAll(i.tags));
 		for(Filter f : u.appliedFilters)
 			tags.addAll(f.tags);
 		
