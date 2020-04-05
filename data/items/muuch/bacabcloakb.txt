@@ -1,0 +1,65 @@
+
+#newitem
+#name necklace_gold
+#gameid -1
+#eliteversion cloak_feathered_light
+#eliteversion cloak_feathered_medium
+#eliteversion cloak_feathered_dark
+#needstype cloakf necklace_gold
+#armor
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#name necklace_silver
+#gameid -1
+#needstype cloakf necklace_silver
+#armor
+#tier 2
+#tier 3
+#enditem
+
+#newitem
+#name cloak_feathered_light
+#gameid -1
+#basechance 2
+#sprite /graphics/muuch/cloak/large/feathercloak_b.png
+#recolormask /graphics/muuch/cloak/large/feathercloak_recolormask_light_b.png
+#needs cloakf cloak_feathered_light
+#armor
+#tier 3
+#enditem
+
+#newitem
+#name cloak_feathered_medium
+#gameid -1
+#basechance 2
+#sprite /graphics/muuch/cloak/large/feathercloak_b.png
+#recolormask /graphics/muuch/cloak/large/feathercloak_recolormask_medium_b.png
+#needs cloakf cloak_feathered_medium
+#armor
+#tier 3
+#enditem
+
+#newitem
+#name cloak_feathered_dark
+#gameid -1
+#basechance 2
+#sprite /graphics/muuch/cloak/large/feathercloak_b.png
+#recolormask /graphics/muuch/cloak/large/feathercloak_recolormask_dark_b.png
+#needs cloakf cloak_feathered_dark
+#armor
+#tier 3
+#enditem
+
+#newitem
+#name cloak_moss
+#gameid -1
+#basechance 0.5
+#sprite /graphics/muuch/cloak/large/mosscloak_b.png
+#needstype cloakf necklace_gold
+#armor
+#tier 3
+#theme nature
+#enditem
