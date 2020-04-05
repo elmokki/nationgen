@@ -7,6 +7,32 @@
 #role "priest"
 
 #tier 1
+#notfortier 2
+#notfortier 3
+
+#renderorder "shadow basesprite armor helmet weapon hands"
+
+#load basesprite /data/items/muuch/muuchbases.txt
+#load shadow /data/items/muuch/shadow.txt
+#load hands /data/items/muuch/hands.txt
+
+#load armor /data/items/muuch/robes_small.txt
+#load helmet /data/items/muuch/casterhelmet.txt
+#load weapon /data/items/muuch/casterweapon_small.txt
+
+#endpose
+
+--- less young muuch (uncommon, but more common in latter eras)
+
+#newpose
+#name "small casters"
+#role "mage"
+#role "priest"
+#basechance 0.2
+#chanceinc era 1 -0.1
+#chanceinc era 3 0.1
+
+#notfortier 1
 #tier 2
 #notfortier 3
 
@@ -23,7 +49,7 @@
 #endpose
 
 
---- older muuch
+--- old muuch
 
 #newpose
 #name "shambler casters"
@@ -34,6 +60,42 @@
 
 #notfortier 1
 #tier 2
+#notfortier 3
+
+#subrace "shambler"
+#subraceprefix "shambler"
+
+#renderorder "shadow weapon cloakb basesprite armor cloakf helmet offhandw hands"
+
+#load basesprite /data/items/muuch/shamblerbases.txt
+#load shadow /data/items/muuch/shamblershadow.txt
+#load hands /data/items/muuch/shamblerhands.txt
+
+#load armor /data/items/muuch/robes_medium.txt
+#load helmet /data/items/muuch/casterhelmet.txt -1 -10
+#load cloakf /data/items/muuch/castercloakf.txt
+#load cloakb /data/items/muuch/castercloakb.txt
+
+#load weapon /data/items/muuch/casterweapon_medium.txt
+
+#generateitem 1 cloakb
+
+#endpose
+
+--- older muuch (uncommon, but more common in latter eras)
+
+#newpose
+#name "shambler casters"
+#role "mage"
+#role "priest"
+#warriormage
+#good_leader
+#basechance 0.2
+#chanceinc era 1 -0.1
+#chanceinc era 3 0.1
+
+#notfortier 1
+#notfortier 2
 #tier 3
 
 #subrace "shambler"
@@ -51,6 +113,39 @@
 #load cloakb /data/items/muuch/castercloakb.txt
 
 #load weapon /data/items/muuch/casterweapon_medium.txt
+
+#generateitem 1 cloakb
+
+#endpose
+
+--- oldest muuch
+
+#newpose
+#name "muuch bacabob"
+#role "mage"
+#role "priest"
+#warriormage
+#superior_leader
+#strongmagicpatterns
+
+#notfortier 1
+#notfortier 2
+#tier 3
+
+#subrace "bacab"
+#subraceprefix "bacab"
+
+#renderorder "shadow cloakb basesprite armor cloakf helmet offhandw weapon hands"
+
+#load basesprite /data/items/muuch/bacabbases.txt
+#load shadow /data/items/muuch/bacabshadow.txt
+#load hands /data/items/muuch/bacabhands.txt
+
+#load helmet /data/items/muuch/casterhelmet_large.txt
+#load cloakf /data/items/muuch/bacabcloakf.txt
+#load cloakb /data/items/muuch/bacabcloakb.txt
+
+#load weapon /data/items/muuch/casterweapon_large.txt
 
 #generateitem 1 cloakb
 
