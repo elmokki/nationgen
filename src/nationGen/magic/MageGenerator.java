@@ -2668,10 +2668,7 @@ public class MageGenerator extends TroopGenerator {
 			if(other == u)
 				continue;
 			
-			for(String slot : u.slotmap.keySet())
-			{
-				other.setSlot(slot, u.getSlot(slot));
-			}
+			u.slotmap.slots().forEach(slot -> other.setSlot(slot, u.getSlot(slot)));
 		}
 	
 		

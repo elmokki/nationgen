@@ -8,6 +8,7 @@ import nationGen.items.Item;
 import nationGen.units.Unit;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 public class ItemSet extends ArrayList<Item> {
@@ -16,23 +17,30 @@ public class ItemSet extends ArrayList<Item> {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public String slot = "";
 	
 	/**
 	 * Adds items of set to the new set
 	 * @param set
 	 */
 	public ItemSet(ItemSet set) {
-		this.addAll(set);
+		addAll(set);
 	}
 
 
 
 	public ItemSet() {
 	}
-
-
-
+	
+	
+	public boolean addAll(ItemSet set) {
+		return super.addAll(set);
+	}
+	
+	@Override
+	public boolean addAll(Collection<? extends Item> c) {
+		return super.addAll(c.stream().filter(Objects::nonNull).collect(Collectors.toList()));
+	}
+	
 	// Overwriting add to avoid nulls
 	public boolean add(Item value)
 	{
@@ -80,10 +88,13 @@ public class ItemSet extends ArrayList<Item> {
 		ItemSet newlist = new ItemSet();
 		for(Item i : this)
 		{
-			if(!includeDef && armordb.GetInteger(i.id, "prot") <= max && armordb.GetInteger(i.id, "prot") >= min)
+			int prot = armordb.GetInteger(i.id, "prot");
+			if (includeDef
+				? (prot + armordb.GetInteger(i.id, "def") <= max && prot >= min)
+				: (prot <= max && prot >= min)) {
+				
 				newlist.add(i);
-			else if(includeDef && armordb.GetInteger(i.id, "prot") +  armordb.GetInteger(i.id, "def") <= max && armordb.GetInteger(i.id, "prot") >= min)
-				newlist.add(i);
+			}
 		}
 		return newlist;
 	}
@@ -140,11 +151,8 @@ public class ItemSet extends ArrayList<Item> {
 	
 	public Item getItemWithName(String name, String slot)
 	{
-		Iterator<Item> itr = this.iterator();
-		while(itr.hasNext())
-		{
-			Item item = itr.next();
-			if(item.name.equals(name) && item.slot.equals(slot))
+		for (Item item : this) {
+			if (item.name.equals(name) && item.slot.equals(slot))
 				return item;
 		}
 		return null;
@@ -155,18 +163,12 @@ public class ItemSet extends ArrayList<Item> {
 		if(i == null)
 			return true;
 		
-		Iterator<Item> itr = this.iterator();
-		while(itr.hasNext())
-		{
-			Item item = itr.next();
-			if(!item.id.equals("-1"))
-			{
-				if(item.id.equals(i.id) && i.armor == item.armor)
+		for (Item item : this) {
+			if (!item.id.equals("-1")) {
+				if (item.id.equals(i.id) && i.armor == item.armor)
 					return true;
-			}
-			else
-				if(item.id.equals(i.id) && item.name.equals(i.name))
-					return true;
+			} else if (item.id.equals(i.id) && item.name.equals(i.name))
+				return true;
 		}
 		return false;
 	}
@@ -287,12 +289,7 @@ public class ItemSet extends ArrayList<Item> {
 	
 	public ItemSet getCopy()
 	{
-		ItemSet newset = new ItemSet();
-		newset.slot = this.slot;
-		for(Item i : this)
-			newset.add(i);
-		
-		return newset;
+		return new ItemSet(this);
 	}
 	
 
@@ -367,7 +364,7 @@ public class ItemSet extends ArrayList<Item> {
 	{
 		ItemSet newlist = new ItemSet();
 		for(Item i : this)
-			if(!i.id.equals(-1))
+			if(!i.id.equals("-1"))
 				newlist.add(i);
 		
 		return newlist;
@@ -379,8 +376,7 @@ public class ItemSet extends ArrayList<Item> {
 		if(old == null)
 			return this;
 		
-		List<Item> list = new ArrayList<Item>();
-		list.addAll(old);
+		List<Item> list = new ArrayList<>(old);
 		return filterImpossibleAdditions(list);
 	}
 	
@@ -395,7 +391,7 @@ public class ItemSet extends ArrayList<Item> {
 			newlist.remove(i);
 			
 			// Remove stuff with the same ids or names or customid tag
-			List<Item> derps = new ArrayList<Item>();
+			List<Item> derps = new ArrayList<>();
 
 			for(Item i2 : newlist)
 			{
@@ -420,23 +416,5 @@ public class ItemSet extends ArrayList<Item> {
 		return newlist;
 	}
 	
-	
-	
-	public LinkedHashMap<Item, Double> getHashMap()
-	{
-		LinkedHashMap<Item, Double> set = new LinkedHashMap<Item, Double>();
-		for(Item i : this)
-		{
-			set.put(i, i.basechance);			
-		}
-		return set;
-	}
-
-
-	
-
-	
-
-
 
 }

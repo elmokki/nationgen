@@ -29,27 +29,34 @@ public class Entity {
 		List<E> list = new ArrayList<>();
 		
 		E instance = null;
+		int line = 0;
 		for (String strLine : FileUtil.readLines(file))
 		{
+			line++;
 			try {
-				if (strLine.trim().toLowerCase().startsWith("#new"))
+				if (strLine.trim().toLowerCase().startsWith("#new")) {
+					if (instance != null) {
+						throw new IllegalStateException("The previous definition must be closed with #end before starting another with #new");
+					}
 					try {
 						instance = c.getConstructor(NationGen.class).newInstance(nationGen);
 					} catch (Exception e) {
 						throw new IllegalStateException("Error initializing a new instance of " + c.getCanonicalName(), e);
 					}
-				
-				else if (strLine.trim().toLowerCase().startsWith("#end")) {
+				} else if (strLine.trim().toLowerCase().startsWith("#end")) {
 					if (instance != null) {
 						instance.finish();
 						list.add(instance);
 					}
 					instance = null;
-				} else if (instance != null && strLine.startsWith("#")) {
+				} else if (strLine.startsWith("#")) {
+					if (instance == null) {
+						throw new IllegalStateException("Dangling command detected");
+					}
 					instance.handleOwnCommand(Command.parse(strLine));
 				}
 			} catch (Exception e) {
-				throw new IllegalStateException("Error handling file '" + file + "' line: " + strLine, e);
+				throw new IllegalStateException("Error handling file '" + file + "' line " + line + ": " + strLine, e);
 			}
 		}
 		

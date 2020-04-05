@@ -13,16 +13,29 @@ import nationGen.items.ItemDependency;
 import nationGen.magic.MageGenerator;
 import nationGen.magic.MagicPath;
 import nationGen.magic.MagicPathInts;
-import nationGen.misc.*;
+import nationGen.misc.Arg;
+import nationGen.misc.Args;
+import nationGen.misc.ChanceIncHandler;
+import nationGen.misc.Command;
+import nationGen.misc.FileUtil;
+import nationGen.misc.Operator;
+import nationGen.misc.Tags;
 import nationGen.naming.Name;
 import nationGen.nation.Nation;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.*;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Random;
+import java.util.Set;
 import java.util.stream.Collectors;
-
+import java.util.stream.Stream;
 
 
 public class Unit {
@@ -30,8 +43,40 @@ public class Unit {
 	public Name name = new Name();
 	public Race race;
 	public Pose pose;
-	public LinkedHashMap<String, Item> slotmap = new LinkedHashMap<>();
-	public LinkedHashMap<String, Item> slotmemory = new LinkedHashMap<>();
+	public final SlotMap slotmap = new SlotMap();
+	public static class SlotMap {
+		private LinkedHashMap<String, Deque<Item>> slotmemory = new LinkedHashMap<>();
+		
+		public Set<String> getSlots() {
+			return slotmemory.keySet();
+		}
+		
+		public Stream<String> slots() {
+			return slotmemory.keySet().stream();
+		}
+		
+		public Stream<Item> items() {
+			return slotmemory.values().stream().map(Deque::peek).filter(Objects::nonNull);
+		}
+		
+		Item get(String slot) {
+			Deque<Item> stack = slotmemory.get(slot);
+			return stack == null ? null : stack.peek();
+		}
+		void push(String slot, Item item) {
+			getSlotStack(slot).push(item);
+		}
+		Item pop(String slot) {
+			return getSlotStack(slot).pollFirst();
+		}
+		void addAllFrom(SlotMap source) {
+			source.slotmemory.forEach((slot, stack) -> getSlotStack(slot).addAll(stack));
+		}
+		
+		private Deque<Item> getSlotStack(String slot) {
+			return slotmemory.computeIfAbsent(slot, k -> new LinkedList<>());
+		}
+	}
 
 	public Color color = Color.white;
 	public int id = -1;
@@ -62,7 +107,10 @@ public class Unit {
 	public Item getSlot(String s)
 	{
 		return slotmap.get(s);
-
+	}
+	
+	public boolean isSlotEmpty(String slot) {
+		return slotmap.get(slot) == null;
 	}
 	
 	public Unit getCopy()
@@ -71,14 +119,7 @@ public class Unit {
 		
 		
 		// Copy unit
-		for(String slot : this.slotmap.keySet())
-		{
-			unit.setSlot(slot, this.getSlot(slot));
-		}
-		for(String slot : this.slotmemory.keySet())
-		{
-			unit.slotmemory.put(slot, this.slotmemory.get(slot));
-		}
+		unit.slotmap.addAllFrom(this.slotmap);
 		
 		unit.color = color;
 		unit.nation = nation;
@@ -279,12 +320,13 @@ public class Unit {
 			Tags unitTags = Generic.getAllUnitTags(this);
 			
 			Tags itemTags = new Tags();
-			if(this.slotmap.get("basesprite") != null)
-				itemTags.addAll(this.slotmap.get("basesprite").tags);
+			Item basesprite = this.slotmap.get("basesprite");
+			if(basesprite != null)
+				itemTags.addAll(basesprite.tags);
 
-			for(Item i : this.slotmap.values())
-				if(i != null && i != this.slotmap.get("basesprite"))
-					itemTags.addAll(i.tags);
+			this.slotmap.items()
+				.filter(i -> i != basesprite)
+				.forEach(i -> itemTags.addAll(i.tags));
 			
 			// itemTags.addAll(this.tags);
 			
@@ -398,10 +440,9 @@ public class Unit {
 			
 			String slot = d.slot;
 			
-			Item n = this.slotmemory.get(slot);
+			Item old = slotmap.pop(slot);
 
-			setSlot(slot, n);
-			
+			handleSlotChange(slot, old, slotmap.get(slot));
 		}
 		
 
@@ -436,25 +477,18 @@ public class Unit {
 				
 				if(pose.getItems(slot) == null)
 				{
-			
-					System.out.println(command + " for " + slotname + ", item " + target + " and item " + getSlot(slotname).name + " on slot " + slot + " failed. Roles " + this.pose.roles + ", race " + race.name );
-					break;
+					throw new IllegalStateException(command + " for " + slotname + ", item " + target + " and item " + getSlot(slotname).name + " on slot " + slot + " failed. Roles " + this.pose.roles + ", race " + race.name );
 				}
 				Item item = pose.getItems(slot).getItemWithName(target, slot);
 				
 				
-				if(item != null)
+				if(item == null)
 				{
-					setSlot(slot, item);
+					throw new IllegalStateException(getSlot(slotname).name + " on slot " + slotname + " tried to link to " + target + " on list " + slot + ", but such item was not found. Check your definitions! Pose " + this.pose.roles + ", race " + this.race.name);
 				}
-				else
-				{
-
-
-					System.out.println("!!! " + getSlot(slotname).name + " on slot " + slotname + " tried to link to " + target + " on list " + slot + ", but such item was not found. Check your definitions! Pose " + this.pose.roles + ", race " + this.race.name);
-				}
+				setSlot(slot, item);
 			}
-			else if(this.nation != null) // Handle needstype and setslottype
+			else if(chandler != null) // Handle needstype and setslottype
 			{
 				String command = lagged ? "#forceslottype" : "#needstype";
 			
@@ -485,7 +519,7 @@ public class Unit {
 		if(item == null)
 			return;
 		
-		if(item.filter != null && appliedFilters.contains(item.filter))	
+		if(item.filter != null)
 		{
 			appliedFilters.remove(item.filter);
 		}
@@ -509,28 +543,22 @@ public class Unit {
 	
 		Item olditem = getSlot(slotname);
 		
-		slotmap.put(slotname, newitem);
+		slotmap.push(slotname, newitem);
 		
-		if(olditem != null)
-		{
-			handleRemoveThemeinc(olditem);
-			handleRemoveDependency(olditem);
-			slotmemory.put(slotname, olditem);
-		}
-		
-		
-		if(newitem == null)
-			return;
-		
-		
-
-
-		handleDependency(slotname, false);
-		handleAddThemeinc(newitem);
-
-		
+		handleSlotChange(slotname, olditem, newitem);
 	}
 	
+	private void handleSlotChange(String slotName, Item oldItem, Item newItem) {
+		if (oldItem != null) {
+			handleRemoveThemeinc(oldItem);
+			handleRemoveDependency(oldItem);
+		}
+		
+		if (newItem != null) {
+			handleDependency(slotName, false);
+			handleAddThemeinc(newItem);
+		}
+	}
 
 	
 	public int getGoldCost()
@@ -584,8 +612,7 @@ public class Unit {
 		int stats = this.getCopyStats();
 		if(stats > -1)
 		{
-			String name = this.nationGen.units.GetValue("" + stats, "unitname");
-			return name;
+			return this.nationGen.units.GetValue("" + stats, "unitname");
 		}
 		
 		return this.name.toString(this);
@@ -653,7 +680,6 @@ public class Unit {
 
 	private int getResCost(boolean useSize, List<Command> commands)
 	{
-		int res = 0;
 		int size = 2;
 		int ressize = -1;
 		int extrares = 0;
@@ -671,25 +697,19 @@ public class Unit {
 				ressize = c.args.get(0).getInt();
 		
 		
-		for(Item i : this.slotmap.values())
-		{
-			if(i == null || i.id.equals("-1"))
-				continue;
-			
-			Dom3DB db = i.armor ? armordb : weapondb;
-			
-			res = res + db.GetInteger(i.id, "res");
-
-		}
-
+		int res = this.slotmap.items()
+			.filter(i -> !i.id.equals("-1"))
+			.mapToInt(i -> (i.armor ? armordb : weapondb).GetInteger(i.id, "res"))
+			.sum();
 
 
 		
-		if(!useSize){/*do nothing*/}
-		else if(ressize > 0)
-			res = ressize * res / 2;
-		else
-			res = size * res / 2;
+		if(useSize) {
+			if (ressize > 0)
+				res = ressize * res / 2;
+			else
+				res = size * res / 2;
+		}
 		
 		// Dom3 minimum res amount is 1.
 		return Math.max(res + extrares, 1);
@@ -717,14 +737,7 @@ public class Unit {
 
 		
 			// Item commands
-			for (Item item : slotmap.values())
-			{
-				if(item != null)
-				{
-					allCommands.addAll(item.commands);
-				}
-			}
-			
+			slotmap.items().forEach(item -> allCommands.addAll(item.commands));
 
 
 			// Filters
@@ -941,26 +954,17 @@ public class Unit {
 		}
 		
 		// Slot hard setting
-		for(String slot : this.slotmap.keySet())
-		{
-			if(getSlot(slot) != null)
-			{
-				handleDependency(slot, true);
-			}
-		}
+		this.slotmap.slots()
+			.filter(slot -> getSlot(slot) != null)
+			.forEach(slot -> handleDependency(slot, true));
 		
 		
 		// Slot removal
-		List<String> removeslots = new ArrayList<>();
-		for(String slot : this.slotmap.keySet())
-		{
-			if(getSlot(slot) != null) {
-				removeslots.addAll(getSlot(slot).tags.getAllStrings("noslot"));
-			}
-		}
-		for(String slot : removeslots)
-			this.setSlot(slot, null);
-
+		this.slotmap.items()
+			.flatMap(item -> item.tags.getAllStrings("noslot").stream())
+			.collect(Collectors.toSet())
+			.forEach(slot -> setSlot(slot, null));
+		
 		
 		// +2hp to mounted
 		if(this.getSlot("mount") != null)
@@ -970,7 +974,7 @@ public class Unit {
 		}
 		
 		// Handle custom equipment
-		for(String str : List.copyOf(this.slotmap.keySet())) // copy to avoid concurrent modification (sigh)
+		for(String str : this.slotmap.slots().collect(Collectors.toList())) // copy to avoid concurrent modification (sigh)
 		{
 			
 			Item i = this.slotmap.get(str);
@@ -1391,7 +1395,7 @@ public class Unit {
 	
 		Dom3DB armordb = nationGen.armordb;
 		
-		for(String slot : slotmap.keySet())
+		for(String slot : slotmap.getSlots())
 		{
 			if(getSlot(slot) != null && getSlot(slot).armor)
 			{
@@ -1437,7 +1441,7 @@ public class Unit {
 		Dom3DB armordb = nationGen.armordb;
 		
 		
-		for(String slot : slotmap.keySet())
+		for(String slot : slotmap.getSlots())
 		{
 			if(getSlot(slot) != null && getSlot(slot).armor && !getSlot(slot).id.equals("-1"))
 			{
@@ -1494,13 +1498,9 @@ public class Unit {
 		
 		
 		// Write all instead of just some stuff (14.3.2014)
-		for(String slot : slotmap.keySet())
-		{
-			Item i = getSlot(slot);
-			
-			if(i != null && Integer.parseInt(i.id) > 0)
-				lines.add(writeSlotLine(i));
-		}
+		slotmap.items()
+			.filter(i -> Integer.parseInt(i.id) > 0)
+			.forEach(i -> lines.add(writeSlotLine(i)));
 		
 		lines.addAll(writeCommandLines());
 		
@@ -1679,12 +1679,9 @@ public class Unit {
 	private void renderSlot(Graphics g, Unit u, String slot, boolean useoffset)
 	{
 		
-		List<Item> possibleitems = new ArrayList<>();
-		
-		for (Item i : slotmap.values()) {
-			if (i != null && slot.equals(i.renderslot))
-				possibleitems.add(i);
-		}
+		List<Item> possibleitems = slotmap.items()
+			.filter(i -> slot.equals(i.renderslot))
+			.collect(Collectors.toList());
 		
 
 

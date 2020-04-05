@@ -8,7 +8,6 @@ import nationGen.items.Item;
 import nationGen.misc.ArgParser;
 import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
-import nationGen.units.Unit;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -65,7 +64,6 @@ public class Pose extends Filter {
 					System.out.println("WARNING! File " + file + " produced a null item! Make sure there is a #new command for each item!");
 				}
 			}
-			items.slot = slot;
 			
 			
 			
@@ -87,33 +85,6 @@ public class Pose extends Filter {
 	
 
 			return items;
-	}
-	
-	
-	public boolean compatibleWith(Unit u, List<String> slots, boolean include)
-	{
-		for(String slot : u.slotmap.keySet())
-		{
-			if(slots != null && slots.contains(slot) == !include)
-				continue;
-			
-			Item ui = u.getSlot(slot);
-			
-			// Same name and slot
-			for(Item i : this.items.get(slot))
-			{
-				if(i.name.equals(ui.name) && i.id.equals(ui.id))
-					return true;
-			}
-			
-			// Same image and id
-			for(Item i : this.items.get(slot))
-			{
-				if(i.sprite.equals(ui.sprite) && i.id.equals(ui.id))
-					return true;
-			}
-		}
-		return false;
 	}
 	
 	

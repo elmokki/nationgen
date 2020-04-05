@@ -4,7 +4,6 @@ package com.elmokki;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Theme;
-import nationGen.items.Item;
 import nationGen.misc.Tags;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
@@ -31,11 +30,10 @@ public class Generic {
 	public static <E extends Entity> E getRandom(List<E> list, Random r)
 	{
 		double max = 0;
-		double rand = 0;
 		for(E e : list)
 			max = max + e.basechance;
 		
-		rand = r.nextDouble() * max;
+		double rand = r.nextDouble() * max;
 		
 		double current = 0;
 		
@@ -68,9 +66,7 @@ public class Generic {
 			tags.addAll(f.tags);
 		for(Theme t : u.race.themefilters)
 			tags.addAll(t.tags);
-		for(Item i : u.slotmap.values())
-			if(i != null)
-				tags.addAll(i.tags);
+		u.slotmap.items().forEach(i -> tags.addAll(i.tags));
 		
 		return tags;
 	}
@@ -146,9 +142,9 @@ public class Generic {
    {
   
    	String end = "";
-   	if(line.indexOf(" of ") != -1)
+   	if(line.contains(" of "))
    	{
-   		end = line.substring(line.indexOf(" of "), line.length());
+   		end = line.substring(line.indexOf(" of "));
    		line = line.substring(0, line.indexOf(" of "));
    	}
    	

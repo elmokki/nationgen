@@ -2,7 +2,6 @@ package nationGen.naming;
 
 import nationGen.NationGenAssets;
 import nationGen.entities.Filter;
-import nationGen.items.Item;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.nation.Nation;
@@ -10,7 +9,10 @@ import nationGen.units.Unit;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
+import java.util.stream.Collectors;
+
 
 public class NationDescriber {
 	private Nation n;
@@ -34,32 +36,31 @@ public class NationDescriber {
 		{
 			dr.calibrate(u);
 			
-			String desc = u.race.tags.getString("description").map(s -> s + " ").orElse("");
+			StringBuilder desc = new StringBuilder(u.race.tags.getString("description").map(s -> s + " ").orElse(""));
 
 			
 			if(descf != null)
 			{
-				desc = desc + descf.name + " ";
+				desc.append(descf.name).append(" ");
 			}
 			
 			
-			for(Item i : u.slotmap.values())
-			{
-				if(i != null)
-				{
-					desc = desc + i.tags.getString("description").map(s -> s + " ").orElse("");
-				}
-			}
+			desc.append(u.slotmap.items()
+				.map(i -> i.tags.getString("description"))
+				.filter(Optional::isPresent)
+				.map(Optional::get)
+				.collect(Collectors.joining(" "))).append(" ");
+				
 			
 			for(Filter f : u.appliedFilters)
 			{
 				if(f != null)
 				{
-					desc = desc + f.tags.getString("description").map(s -> s + " ").orElse("");
+					desc.append(f.tags.getString("description").map(s -> s + " ").orElse(""));
 				}
 			}
 			
-			desc = dr.replace(desc.trim());
+			desc = new StringBuilder(dr.replace(desc.toString().trim()));
 			
 			
 			Command tmpDesc = null;
@@ -74,14 +75,14 @@ public class NationDescriber {
 			
 			if(tmpDesc != null)
 			{
-				desc += " " + tmpDesc.args.get(0);
+				desc.append(" ").append(tmpDesc.args.get(0));
 			}
 			
 			for(Filter f : u.appliedFilters)
 			{
 				if(f != null)
 				{
-					desc = desc + f.tags.getString("description").map(s -> " " + s).orElse("");
+					desc.append(f.tags.getString("description").map(s -> " " + s).orElse(""));
 				}
 			}
 			
@@ -89,18 +90,17 @@ public class NationDescriber {
 			if(u.tags.containsName("montagunit"))
 			{
 				if(desc.length() > 0)
-					desc = desc + "\n\n";
+					desc.append("\n\n");
 				
-				desc = desc + "When recruited, one unit of this category will appear instead of the unit shown here.";
+				desc.append("When recruited, one unit of this category will appear instead of the unit shown here.");
 			}
 			
-			desc = dr.replace(desc);
-			desc = desc.replaceAll("\"", "");
+			String description = dr.replace(desc.toString()).replaceAll("\"", "");
 
 			if(tmpDesc != null)
-				u.setCommandValue("#descr", desc);
+				u.setCommandValue("#descr", description);
 			else
-				u.commands.add(Command.args("#descr", desc));
+				u.commands.add(Command.args("#descr", description));
 
 		}
 	}
@@ -171,7 +171,7 @@ public class NationDescriber {
 			{
 				dr.calibrate(u);
 				
-				String desc = u.race.tags.getString("description").map(s -> s + " ").orElse("");
+				StringBuilder desc = new StringBuilder(u.race.tags.getString("description").map(s -> s + " ").orElse(""));
 	
 	
 				Command tmpDesc = null;
@@ -185,25 +185,24 @@ public class NationDescriber {
 				
 				if(tmpDesc != null)
 				{
-					desc += tmpDesc.args.get(0);	
+					desc.append(tmpDesc.args.get(0));
 				}
 			
 				for(Filter f : u.appliedFilters)
 				{
 					if(f != null)
 					{
-						desc = desc + f.tags.getValue("description").map(s -> " " + s).orElse("");
+						desc.append(f.tags.getValue("description").map(s -> " " + s).orElse(""));
 					}
 				}
 				
 				
-				desc = dr.replace(desc);
-				desc = desc.replaceAll("\"", "");
+				String description = dr.replace(desc.toString()).replaceAll("\"", "");
 
 				if(tmpDesc != null)
-					u.setCommandValue("#descr", desc);
+					u.setCommandValue("#descr", description);
 				else
-					u.commands.add(Command.args("#descr", desc));
+					u.commands.add(Command.args("#descr", description));
 			}
 		}
 		

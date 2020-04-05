@@ -6,7 +6,6 @@ import com.elmokki.Generic;
 import nationGen.entities.Filter;
 import nationGen.entities.Race;
 import nationGen.entities.Theme;
-import nationGen.items.Item;
 import nationGen.magic.MagicPath;
 import nationGen.magic.MagicPathInts;
 import nationGen.misc.Command;
@@ -18,7 +17,6 @@ import nationGen.units.Unit;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -300,38 +298,26 @@ public class NationAdvancedSummarizer {
 	
 	private String getSubrace(Unit u) {
 		
-		return u.slotmap.keySet().stream()
-				.map(u::getSlot)
-				.filter(Objects::nonNull)
+		return u.slotmap.items()
 				.flatMap(i -> i.tags.getString("subrace").stream())
 				.findAny()
 				.orElseGet(() -> u.pose.tags.getString("subrace").orElse(null));
 	}
 	
 	private List<String> getWeaponNames(Unit u) {
-		List<String> weaponNames = new ArrayList<>();
-		for(String str : u.slotmap.keySet())
-		{
-			if(u.getSlot(str) == null)
-				continue;
-			
-			if(!u.getSlot(str).armor && !u.getSlot(str).id.equals("-1"))
-				weaponNames.add(weapondb.GetValue(u.getSlot(str).id, "weapon_name"));
-			
-		}
-		return weaponNames;
+		return u.slotmap.items()
+			.filter(i -> !i.armor)
+			.filter(i -> !i.id.equals("-1"))
+			.map(i -> weapondb.GetValue(i.id, "weapon_name"))
+			.collect(Collectors.toList());
 	}
 	
 	private List<String> getArmorNames(Unit u) {
-		List<String> armorNames = new ArrayList<>();
-		for(String str : u.slotmap.keySet())
-		{
-			if(u.getSlot(str) == null)
-				continue;
-			if(u.getSlot(str).armor && !u.getSlot(str).id.equals("-1"))
-				armorNames.add(armordb.GetValue(u.getSlot(str).id, "armorname"));
-		}
-		return armorNames;
+		return u.slotmap.items()
+			.filter(i -> i.armor)
+			.filter(i -> !i.id.equals("-1"))
+			.map(i -> armordb.GetValue(i.id, "armorname"))
+			.collect(Collectors.toList());
 	}
 	
 	private Optional<String> getMountName(Unit u) {
@@ -495,15 +481,9 @@ public class NationAdvancedSummarizer {
 	}
 	
 	private List<String> getTroopItemDescriptions(Unit u) {
-		List<String> descriptions = new ArrayList<>();
-		for(Item item : u.slotmap.values())
-		{
-			if(item == null)
-				continue;
-			
-			descriptions.addAll(item.tags.getAllStrings("description"));
-		}
-		return descriptions;
+		return u.slotmap.items()
+			.flatMap(i -> i.tags.getAllStrings("description").stream())
+			.collect(Collectors.toList());
 	}
 	
 	private List<String> getTroopInfo(Unit u)
