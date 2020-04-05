@@ -65,7 +65,6 @@ public class Pose extends Filter {
 					System.out.println("WARNING! File " + file + " produced a null item! Make sure there is a #new command for each item!");
 				}
 			}
-			items.slot = slot;
 			
 			
 			

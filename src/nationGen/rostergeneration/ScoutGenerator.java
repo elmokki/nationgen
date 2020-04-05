@@ -14,9 +14,9 @@ import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 
 public class ScoutGenerator extends TroopGenerator {
@@ -48,25 +48,21 @@ public class ScoutGenerator extends TroopGenerator {
 		double all = scoutchance + spychance + assassinchance;
 		double roll = r.nextDouble() * all;
 		
-		int tier = 1;
+		int tier;
 		if(roll < assassinchance)
 			tier = 3;
 		else if(roll < spychance + assassinchance)
 			tier = 2;
+		else
+			tier = 1;
 
 		
 		// Get possible poses
-		List<Pose> possiblePoses = new ArrayList<Pose>();
-		for(Pose p : race.getPoses(posename))
-		{
-			if(p.tags.containsName("cannot_be_scout") && tier == 1)
-				continue;
-			else if(p.tags.containsName("cannot_be_spy") && tier == 2)
-				continue;
-			else if(p.tags.containsName("cannot_be_assassin") && tier == 3)
-				continue;	
-			possiblePoses.add(p);
-		}
+		List<Pose> possiblePoses = race.getPoses(posename).stream()
+			.filter(p -> tier != 1 || !p.tags.containsName("cannot_be_scout"))
+			.filter(p -> tier != 2 || !p.tags.containsName("cannot_be_spy"))
+			.filter(p -> tier != 3 || !p.tags.containsName("cannot_be_assassin"))
+			.collect(Collectors.toList());
 		
 		// Select pose
 		Pose p = chandler.getRandom(possiblePoses, race);
@@ -74,7 +70,7 @@ public class ScoutGenerator extends TroopGenerator {
 
 		chandler.getRandom(p.getItems("weapon").filterDom3DB("2h", "0", true, nationGen.weapondb), template);
 		// Select a mainhand weapon
-		Item weapon = null;
+		Item weapon;
 		if(tier != 3) //  Scout/spy gets whatever non-2h
 			weapon = chandler.getRandom(p.getItems("weapon").filterDom3DB("2h", "0", true, nationGen.weapondb), template);
 		else // Assassin gets max length 3 weapons
@@ -197,14 +193,14 @@ public class ScoutGenerator extends TroopGenerator {
 			
 			// Scouts usually ride the typical racial mount 
 			// 2015.07.08: Made the 20% chance to 80% chance so it's actually usually 
-			String pref = null;
+			Command animal = null;
 			if(template.race.tags.containsName("preferredmount")&& nation.random.nextDouble() < 0.80)
 			{
-				pref = template.race.tags.getString("preferredmount").orElseThrow();
+				animal = Command.args("animal", template.race.tags.getString("preferredmount").orElseThrow());
 			}
 	
 			template.setSlot("mount", unitGen.getSuitableItem("mount", template,
-				p.getItems("mount").filterOutTag(new Command("heavy")), null, Command.args("animal", pref)));
+				p.getItems("mount").filterOutTag(new Command("heavy")), null, animal));
 							
 			if(template.getSlot("mount") == null)
 			{

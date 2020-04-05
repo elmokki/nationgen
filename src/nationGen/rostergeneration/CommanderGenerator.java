@@ -1,5 +1,6 @@
 package nationGen.rostergeneration;
 
+
 import com.elmokki.Generic;
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
@@ -263,7 +264,7 @@ public class CommanderGenerator extends TroopGenerator {
 		{			
 			tries++;
 			
-			List<Unit> temps = new ArrayList<Unit>();
+			List<Unit> temps = new ArrayList<>();
 			shouldbes = this.getUnitsWithTag(possibleComs, "should_be_commander");
 			if(shouldbes.size() >= 1)
 				temps.addAll(shouldbes);
@@ -294,17 +295,14 @@ public class CommanderGenerator extends TroopGenerator {
 					}
 					
 					
-					if(u != null)
+					for(Command c : u.getCommands())
 					{
-						for(Command c : u.getCommands())
-						{
-								if(allFeatures.contains(c.command))
-								{
-									features.remove(c.command);
-								}
-						}
+							if(allFeatures.contains(c.command))
+							{
+								features.remove(c.command);
+							}
 					}
-				} 
+				}
 				while(tempComs.contains(u));
 			}
 			else 
@@ -326,7 +324,7 @@ public class CommanderGenerator extends TroopGenerator {
 			
 		}
 
-		List<Unit> coms = new ArrayList<Unit>();
+		List<Unit> coms = new ArrayList<>();
 		for(Unit u : tempComs)
 		{
 			//NamePart part = new NamePart();
@@ -336,7 +334,7 @@ public class CommanderGenerator extends TroopGenerator {
 			Unit unit = u.getCopy();
 			
 			// Remove montags
-			List<Command> toremove = new ArrayList<Command>();
+			List<Command> toremove = new ArrayList<>();
 			for(Command c : unit.commands)
 			{
 				if(c.command.equals("#montag"))
@@ -388,7 +386,6 @@ public class CommanderGenerator extends TroopGenerator {
 		
 		// Leadership!
 		
-		int power = 1;
 		for(int i = 0; i < tempComs.size(); i++)
 		{
 			Unit com = tempComs.get(i);
@@ -429,6 +426,7 @@ public class CommanderGenerator extends TroopGenerator {
 				mindless = false;
 			}
 			
+			int power;
 			// Determine eventual base leadership level
 			double random = r.nextDouble();
 			if((random > 1 - 0.125 * i) 
@@ -787,8 +785,7 @@ public class CommanderGenerator extends TroopGenerator {
 	
 	private List<Unit> orderComs(List<Unit> coms)
 	{
-		List<Unit> newlist = new ArrayList<Unit>();
-		List<Unit> templist = new ArrayList<Unit>();
+		List<Unit> templist = new ArrayList<>();
 		
 
 		for(Unit u : coms)
@@ -805,7 +802,7 @@ public class CommanderGenerator extends TroopGenerator {
 			if(!holy && !mounted)
 				templist.add(u);
 		}
-		newlist.addAll(orderOneListByProt(templist));
+		List<Unit> newlist = new ArrayList<>(orderOneListByProt(templist));
 
 		templist.clear();
 		for(Unit u : coms)
@@ -827,12 +824,8 @@ public class CommanderGenerator extends TroopGenerator {
 		templist.clear();
 		for(Unit u : coms)
 		{
-			boolean holy = false;
-			for(Command c : u.getCommands())
-			{
-				if(c.command.equals("#holy"))
-					holy = true;
-			}
+			boolean holy = u.getCommands().stream()
+				.anyMatch(c -> c.command.equals("#holy"));
 			if(holy)
 				templist.add(u);
 		}
@@ -844,7 +837,7 @@ public class CommanderGenerator extends TroopGenerator {
 	
 	private List<Unit> orderOneListByProt(List<Unit> units)
 	{
-		List<Unit> newList = new ArrayList<Unit>();
+		List<Unit> newList = new ArrayList<>();
 		
 		while(units.size() > 0)
 		{
@@ -870,20 +863,16 @@ public class CommanderGenerator extends TroopGenerator {
 	
 	private boolean shouldReRoll(Unit u, List<Unit> list)
 	{
-		boolean mounted = false;
-		for(Command c : u.getCommands())
-			if(c.command.equals("#mounted"))
-				mounted = true;
+		boolean mounted = u.getCommands().stream()
+			.anyMatch(c -> c.command.equals("#mounted"));
 		
 		Item armor = u.getSlot("armor");
 		
 		for(Unit unit : list)
 		{
 			Item unitArmor = unit.getSlot("armor");
-			boolean unitMounted = false;
-			for(Command c : unit.getCommands())
-				if(c.command.equals("#mounted"))
-					unitMounted = true;
+			boolean unitMounted = unit.getCommands().stream()
+				.anyMatch(c -> c.command.equals("#mounted"));
 			
 			if(unitArmor == armor && (unit.getSlot("mount") == u.getSlot("mount") && (unitMounted && mounted)))
 				return true;
@@ -979,7 +968,7 @@ public class CommanderGenerator extends TroopGenerator {
 		}
 		
 		// Remove troop only filters
-		List<Filter> removef = new ArrayList<Filter>();
+		List<Filter> removef = new ArrayList<>();
 		for(Filter f : u.appliedFilters)
 			if(f.themes.contains("trooponly"))
 				removef.add(f);
@@ -1012,16 +1001,9 @@ public class CommanderGenerator extends TroopGenerator {
 
 		
 		
-		int helmetprot = 0;
-		
 		if(u.getSlot(slot) == null)
 			return;
 		
-		
-		
-		if(u.getSlot(slot).armor)
-			helmetprot = nationGen.armordb.GetInteger(u.getSlot(slot).id, "prot");
-			
 		// Try to get elite version
 		Item item = u.getSlot(slot);
 		
@@ -1057,18 +1039,21 @@ public class CommanderGenerator extends TroopGenerator {
 			}
 			catch(Exception e)
 			{
-			
+				throw new IllegalStateException("Is this fixable?", e);
 			}
 		}
 		
 		// Try to get an elite armor of some suitable sort
 		if(u.getSlot(slot).armor && helmet == null && !slot.equals("offhand"))
 		{
-				helmet = chandler.getRandom(getSuitableCommanderItems(u, slot).filterProt(nationGen.armordb, helmetprot, helmetprot), u);
+			int helmetprot = item.armor
+				? nationGen.armordb.GetInteger(item.id, "prot")
+				: 0;
 			
-				if(helmet == null)
-					helmet = chandler.getRandom(getSuitableCommanderItems(u, slot).filterProt(nationGen.armordb, helmetprot - 2, helmetprot + 8), u);
+			helmet = chandler.getRandom(getSuitableCommanderItems(u, slot).filterProt(nationGen.armordb, helmetprot, helmetprot), u);
 		
+			if(helmet == null)
+				helmet = chandler.getRandom(getSuitableCommanderItems(u, slot).filterProt(nationGen.armordb, helmetprot - 2, helmetprot + 8), u);
 		}
 
 
@@ -1080,8 +1065,7 @@ public class CommanderGenerator extends TroopGenerator {
 	
 	public void generateDescription(Unit com, boolean magicbeing,	boolean demonud, boolean hasSlaves)
 	{
-		String desc = new String("");
-		List<String> normalLd = new ArrayList<String>();
+		List<String> normalLd = new ArrayList<>();
 		int leader = 1;
 		int magicLd = 0;
 		int demonUDLd = 0;
@@ -1098,75 +1082,70 @@ public class CommanderGenerator extends TroopGenerator {
 		
 		for(Command c : com.getCommands())
 		{
-			if(c.command.equals("#expertleader"))
-			{
-				normalLd.set(0, pickRandomSubstring("calculating masterful adroit deft wiley cunning expert consummate veteran"));
-				normalLd.set(1, pickRandomSubstring("unquestioningly fearlessly unhesitatingly zealously fanatically dauntlessly"));
-				leader = 3;
-			}
-			else if(c.command.equals("#goodleader"))
-			{
-				normalLd.set(0, pickRandomSubstring("competent decisive skilled able experienced clever adept skillful practiced capable effective"));
-				normalLd.set(1, pickRandomSubstring("confidently boldly loyally cheerfully courageously stalwartly swiftly"));
-				leader = 2;
-			}
-			else if(c.command.equals("#poorleader"))
-			{
-				normalLd.set(0, pickRandomSubstring("incompetent rash short-sighted inexperienced indecisive craven foolish"));
-				normalLd.set(1, pickRandomSubstring("grudgingly skittishly anxiously apprehensively spiritlessly confusedly recklessly wildly"));
-				leader = 0;
-			}
-			else if(c.command.equals("#noleader"))
-			{
-				leader = -1;
-			}
-			else if(c.command.equals("#goodmagicleader"))
-			{
-				magicLd = 3;
-			}
-			else if(c.command.equals("#okmagicleader"))
-			{
-				magicLd = 2;
-			}
-			else if(c.command.equals("#poormagicleader"))
-			{
-				magicLd = 1;
-			}
-			else if(c.command.equals("#goodundeadleader"))
-			{
-				demonUDLd = 3;
-			}
-			else if(c.command.equals("#okundeadleader"))
-			{
-				demonUDLd = 2;
-			}
-			else if(c.command.equals("#poorundeadleader"))
-			{
-				demonUDLd = 1;
-			}
-			else if(c.command.equals("#awe"))
-				awe = true;
-			else if(c.command.equals("#fear"))
-				fear = true;
-			else if(c.command.equals("#inspirational"))
-				inspiring = true;
-			else if(c.command.equals("#taskmaster"))
-				taskmaster = true;
-			else if (c.command.equals("#beastmaster"))
-				beastmaster = true;
-			else if(c.command.equals("#magicskill"))
-			{
-				if(c.args.get(0).getMagicPath() == MagicPath.HOLY)			// We only care about pure priests here
-					holyRank = c.args.get(1).getInt();
-			}
-			else if(c.command.equals("#holy"))
-			{
-				if(holyRank < 1) 
-					holyRank = 1;
+			switch (c.command) {
+				case "#expertleader":
+					normalLd.set(0, pickRandomSubstring("calculating masterful adroit deft wiley cunning expert consummate veteran"));
+					normalLd.set(1, pickRandomSubstring("unquestioningly fearlessly unhesitatingly zealously fanatically dauntlessly"));
+					leader = 3;
+					break;
+				case "#goodleader":
+					normalLd.set(0, pickRandomSubstring("competent decisive skilled able experienced clever adept skillful practiced capable effective"));
+					normalLd.set(1, pickRandomSubstring("confidently boldly loyally cheerfully courageously stalwartly swiftly"));
+					leader = 2;
+					break;
+				case "#poorleader":
+					normalLd.set(0, pickRandomSubstring("incompetent rash short-sighted inexperienced indecisive craven foolish"));
+					normalLd.set(1, pickRandomSubstring("grudgingly skittishly anxiously apprehensively spiritlessly confusedly recklessly wildly"));
+					leader = 0;
+					break;
+				case "#noleader":
+					leader = -1;
+					break;
+				case "#goodmagicleader":
+					magicLd = 3;
+					break;
+				case "#okmagicleader":
+					magicLd = 2;
+					break;
+				case "#poormagicleader":
+					magicLd = 1;
+					break;
+				case "#goodundeadleader":
+					demonUDLd = 3;
+					break;
+				case "#okundeadleader":
+					demonUDLd = 2;
+					break;
+				case "#poorundeadleader":
+					demonUDLd = 1;
+					break;
+				case "#awe":
+					awe = true;
+					break;
+				case "#fear":
+					fear = true;
+					break;
+				case "#inspirational":
+					inspiring = true;
+					break;
+				case "#taskmaster":
+					taskmaster = true;
+					break;
+				case "#beastmaster":
+					beastmaster = true;
+					break;
+				case "#magicskill":
+					if (c.args.get(0).getMagicPath() == MagicPath.HOLY)            // We only care about pure priests here
+						holyRank = c.args.get(1).getInt();
+					break;
+				case "#holy":
+					if (holyRank < 1)
+						holyRank = 1;
+					break;
 			}
 		}
 		
-		desc = "The %unitname_plural% of %nation% are ";
+		String desc = "The %unitname_plural% of %nation% are ";
 		
 		if(awe && fear)
 		{

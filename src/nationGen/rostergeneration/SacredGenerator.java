@@ -554,13 +554,15 @@ public class SacredGenerator extends TroopGenerator {
 
 		
 
-		if(possibleposes.size() == 0)
-		{
-			System.out.println("WARNING: No sacred (" + sacred + " - actually elite if false) poses were found for " + race.name + ". Consider adding #all_troops_sacred or #all_troops_elite to race file to use normal poses.");
-			return null;
+		if(possibleposes.isEmpty()) {
+			throw new IllegalStateException("No " + (sacred ? "sacred" : "elite") + " poses were found for " + race.name + ". Consider adding #all_troops_sacred or #all_troops_elite to race file to use normal poses.");
 		}
 		
-		return chandler.handleChanceIncs(race, possibleposes).getRandom(random);
+		Pose pose = chandler.handleChanceIncs(race, possibleposes).getRandom(random);
+		if (pose == null) {
+			throw new IllegalStateException("After chanceincs were handled, no " + (sacred ? "sacred" : "elite") + " poses were found for " + race.name + ". Consider adding #all_troops_sacred or #all_troops_elite to race file to use normal poses.");
+		}
+		return pose;
 	}
 	
 	/**
