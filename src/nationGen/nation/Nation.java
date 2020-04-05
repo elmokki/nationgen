@@ -237,7 +237,7 @@ public class Nation {
 				power++;
 			
 			Unit sacred = sacGen.generateUnit(false, power, false);
-			List<Unit> elites = new ArrayList<Unit>();
+			List<Unit> elites = new ArrayList<>();
 			elites.add(sacred);
 			
 			String role = "";
@@ -696,9 +696,11 @@ public class Nation {
 			if(!possibleThemes.isEmpty())
 			{
 				Theme t = chandler.handleChanceIncs(possibleThemes).getRandom(random);
-				race.themefilters.add(t);
-				race.handleTheme(t);
-				possibleThemes.remove(t);
+				if (t != null) {
+					race.themefilters.add(t);
+					race.handleTheme(t);
+					possibleThemes.remove(t);
+				}
 			}
 		}
 		
@@ -707,8 +709,10 @@ public class Nation {
 		if(!possibleThemes.isEmpty() && random.nextDouble() < 0.1)
 		{
 			Theme t = chandler.handleChanceIncs(possibleThemes).getRandom(random);
-			race.themefilters.add(t);
-			race.handleTheme(t);
+			if (t != null) {
+				race.themefilters.add(t);
+				race.handleTheme(t);
+			}
 		}
 		
 		
