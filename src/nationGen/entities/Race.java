@@ -16,7 +16,6 @@ public class Race extends Filter {
 	public List<Command> unitcommands = new ArrayList<>();
 	public List<Command> specialcommands = new ArrayList<>();
 	public List<Pose> poses = new ArrayList<>();
-	public List<Pose> spriteGenPoses = new ArrayList<>();
 	
 	public List<Theme> themefilters = new ArrayList<>();
 
@@ -215,7 +214,6 @@ public class Race extends Filter {
 		r.unitcommands.addAll(this.unitcommands);
 		r.specialcommands.addAll(this.specialcommands);
 		r.poses.addAll(this.poses);
-		r.spriteGenPoses.addAll(this.spriteGenPoses);
 		r.chanceincs.addAll(this.chanceincs);
 		r.tags.addAll(this.tags);
 		r.visiblename = this.visiblename;

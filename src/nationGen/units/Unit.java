@@ -62,7 +62,10 @@ public class Unit {
 	public Item getSlot(String s)
 	{
 		return slotmap.get(s);
-
+	}
+	
+	public boolean isSlotEmpty(String slot) {
+		return slotmap.get(slot) == null;
 	}
 	
 	public Unit getCopy()
@@ -436,25 +439,18 @@ public class Unit {
 				
 				if(pose.getItems(slot) == null)
 				{
-			
-					System.out.println(command + " for " + slotname + ", item " + target + " and item " + getSlot(slotname).name + " on slot " + slot + " failed. Roles " + this.pose.roles + ", race " + race.name );
-					break;
+					throw new IllegalStateException(command + " for " + slotname + ", item " + target + " and item " + getSlot(slotname).name + " on slot " + slot + " failed. Roles " + this.pose.roles + ", race " + race.name );
 				}
 				Item item = pose.getItems(slot).getItemWithName(target, slot);
 				
 				
-				if(item != null)
+				if(item == null)
 				{
-					setSlot(slot, item);
+					throw new IllegalStateException(getSlot(slotname).name + " on slot " + slotname + " tried to link to " + target + " on list " + slot + ", but such item was not found. Check your definitions! Pose " + this.pose.roles + ", race " + this.race.name);
 				}
-				else
-				{
-
-
-					System.out.println("!!! " + getSlot(slotname).name + " on slot " + slotname + " tried to link to " + target + " on list " + slot + ", but such item was not found. Check your definitions! Pose " + this.pose.roles + ", race " + this.race.name);
-				}
+				setSlot(slot, item);
 			}
-			else if(this.nation != null) // Handle needstype and setslottype
+			else if(chandler != null) // Handle needstype and setslottype
 			{
 				String command = lagged ? "#forceslottype" : "#needstype";
 			
@@ -485,7 +481,7 @@ public class Unit {
 		if(item == null)
 			return;
 		
-		if(item.filter != null && appliedFilters.contains(item.filter))	
+		if(item.filter != null)
 		{
 			appliedFilters.remove(item.filter);
 		}
@@ -584,8 +580,7 @@ public class Unit {
 		int stats = this.getCopyStats();
 		if(stats > -1)
 		{
-			String name = this.nationGen.units.GetValue("" + stats, "unitname");
-			return name;
+			return this.nationGen.units.GetValue("" + stats, "unitname");
 		}
 		
 		return this.name.toString(this);

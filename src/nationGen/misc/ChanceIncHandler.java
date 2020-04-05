@@ -50,7 +50,7 @@ public class ChanceIncHandler {
 		return list;
 	}
 	
-	public <T extends Filter> List<T> removeRelated(T thing, List<T> list)
+	public <T extends Filter> void removeRelated(T thing, List<T> list)
 	{
 		
 		List<T> shit = new ArrayList<>();
@@ -62,8 +62,6 @@ public class ChanceIncHandler {
 					shit.add(t);
 		
 		list.removeAll(shit);
-		
-		return list;
 	}
 	
 	
@@ -177,20 +175,14 @@ public class ChanceIncHandler {
 		List<String> primaries = f.tags.getAllStrings("primarycommand");
 		
 		
-		boolean shapeshift = false;
-		for(Command c : f.getCommands())
-			if(c.command.equals("#shapechange") || c.command.equals("#secondshape") || c.command.equals("#secondtmpshape"))
-			{
-				shapeshift = true;
-				break;
-			}
-			
+		boolean shapeshift = f.getCommands().stream()
+			.anyMatch(c -> c.command.equals("#shapechange") || c.command.equals("#secondshape") || c.command.equals("#secondtmpshape"));
+		
 		boolean ok = false;
 		boolean primarycommandfail = false;
 		for(Command c : u.getCommands())
 		{
 
-			boolean tempok = true;
 			if(primaries.contains(c.command))
 			{
 				primarycommandfail = true;
@@ -203,21 +195,13 @@ public class ChanceIncHandler {
 				ok = false;
 				break;
 			}
-			else if(shapeshift)
-
 			
-			for(Command fc : f.getCommands())
-			{
-
-				if(c.command.equals(fc.command) && c.args.size() == 0 && fc.args.size() == 0)
-				{
-					tempok = false;
-					break;
-				}
-			}
-			
-			if(tempok)
+			if(!shapeshift
+				|| f.getCommands().stream()
+					.noneMatch(fc -> c.command.equals(fc.command) && c.args.size() == 0 && fc.args.size() == 0)) {
+				
 				ok = true;
+			}
 		}
 		
 
@@ -239,61 +223,31 @@ public class ChanceIncHandler {
 			}
 		}
 		
-		if(!ok)
-			return false;
-		
-		return canAdd(u.appliedFilters, f);
+		return ok && canAdd(u.appliedFilters, f);
 	}
 	
 	public static <E extends Filter> boolean canAdd(List<E> filters, Filter f)
 	{
-
-
-
 		// Forbid the same type
-		for(Filter f2 : filters)
-		{
-			for(String s : f.types)
-			{
-				if(f2.types.contains(s))
-				{
-					
-					return false;
-				}
-			}
-		}  
-		
-
-		
-		return true;
-		
-
+		return filters.stream()
+			.noneMatch(f2 -> f.types.stream()
+				.anyMatch(s -> f2.types.contains(s)));
 	}
 	
 	public static List<Filter> getFiltersWithPower(int min, int max, List<Filter> orig)
 	{
-		List<Filter> newList = new ArrayList<>();
-		for(Filter f : orig)
-		{
-			if(f.power <= max && f.power >= min)
-				newList.add(f);
-		}
-		return newList;
+		return orig.stream()
+			.filter(f -> f.power <= max && f.power >= min)
+			.collect(Collectors.toList());
 	}
 	
 	
 	public static <E extends Filter> List<E> getFiltersWithType(String type, List<E> orig)
 	{
-		List<E> newList = new ArrayList<>();
-		for(E f : orig)
-		{
-			if(f.types.contains(type))
-			{
-				newList.add(f);
-			}
-		}
 		
-		return newList;
+		return orig.stream()
+			.filter(f -> f.types.contains(type))
+			.collect(Collectors.toList());
 	}
 	
 	
@@ -343,25 +297,17 @@ public class ChanceIncHandler {
 	 */
 	public static <E extends Filter> List<E> getValidFilters(List<E> filters, List<E> oldfilters)
 	{
-		List<E> list = new ArrayList<>();
-		
-		for(E f : filters)
-		{
-			if(ChanceIncHandler.canAdd(oldfilters, f))
-				list.add(f);
-	
-		}
-		
-		return list;
+		return filters.stream()
+			.filter(f -> ChanceIncHandler.canAdd(oldfilters, f))
+			.collect(Collectors.toList());
 	}
 	
 	
 	private static <E extends Filter> void removeRemovableFilters(List<E> filters)
 	{
-		List<E> remov = new ArrayList<>();
-		for(E e : filters)
-			if(!e.tags.containsName("unremovable"))
-				remov.add(e);
+		List<E> remov = filters.stream()
+			.filter(e -> !e.tags.containsName("unremovable"))
+			.collect(Collectors.toList());
 		
 		filters.removeAll(remov);
 	}
@@ -391,7 +337,7 @@ public class ChanceIncHandler {
 	
 	public static <E extends Filter> List<E> retrieveFilters(String lookfor, String[] defaultset, ResourceStorage<E> source, Pose p, Race r)
 	{
-		List<E> filters = new ArrayList<E>();
+		List<E> filters = new ArrayList<>();
 		
 		
 		if(r != null)
@@ -490,22 +436,22 @@ public class ChanceIncHandler {
 	
 	public <T extends Filter> T getRandom(List<T> list, List<Unit> units)
 	{
-		return handleChanceIncs(units.get(0), list).getRandom(n.random);
+		return list.isEmpty() ? null : handleChanceIncs(units.get(0), list).getRandom(n.random);
 	}
 	
 	public <T extends Filter> T getRandom(List<T> list, Unit u)
 	{
-		return handleChanceIncs(u, list).getRandom(n.random);
+		return list.isEmpty() ? null : handleChanceIncs(u, list).getRandom(n.random);
 	}
 	
 	public Pose getRandom(List<Pose> list, Race race)
 	{
-		return handleChanceIncs(race, list).getRandom(n.random);
+		return list.isEmpty() ? null : handleChanceIncs(race, list).getRandom(n.random);
 	}
 	
 	public <T extends Filter> T getRandom(List<T> list)
 	{
-		return this.handleChanceIncs(list).getRandom(n.random);
+		return list.isEmpty() ? null : this.handleChanceIncs(list).getRandom(n.random);
 	}
 
 	private <T extends Filter> void processChanceIncs(EntityChances<T> chances, Unit un, Race race)

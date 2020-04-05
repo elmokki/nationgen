@@ -6,9 +6,15 @@ import nationGen.NationGen;
 import nationGen.NationGenAssets;
 import nationGen.chances.EntityChances;
 import nationGen.chances.ThemeInc;
-import nationGen.entities.*;
+import nationGen.entities.Filter;
+import nationGen.entities.Pose;
+import nationGen.entities.Race;
 import nationGen.items.Item;
-import nationGen.misc.*;
+import nationGen.misc.Args;
+import nationGen.misc.ChanceIncHandler;
+import nationGen.misc.Command;
+import nationGen.misc.ItemSet;
+import nationGen.misc.Tags;
 import nationGen.nation.Nation;
 import nationGen.rostergeneration.montagtemplates.MontagTemplate;
 import nationGen.units.Unit;
@@ -51,27 +57,15 @@ public class UnitGen {
 		String[] slots = {"hands", "shadow", "basesprite", "legs"};
 		for (String slot : slots) {
 			if (u.pose.getListOfSlots().contains(slot)) {
-				Item item = null;
 				
 				// Handle #lockslot
-				for (Theme t : race.themefilters)
-					for (Args args : t.tags.getAllArgs("lockslot")) {
-						if (args.get(0).get().equals(slot)) {
-							String name = args.get(1).get();
-							item = u.pose.getItems(slot).getItemWithName(name, slot);
-							
-							if (item != null)
-								break;
-							
-						}
-						
-						if (item != null)
-							break;
-					}
-				
-				// If no lockslot or no suitable item for lockslot
-				if (item == null)
-					item = chandler.handleChanceIncs(u, u.pose.getItems(slot)).getRandom(random);
+				Item item = race.themefilters.stream()
+					.flatMap(t -> t.tags.getAllArgs("lockslot").stream())
+					.filter(args -> args.get(0).get().equals(slot))
+					.map(args -> u.pose.getItems(slot).getItemWithName(args.get(1).get(), slot))
+					.findFirst()
+					// If no lockslot or no suitable item for lockslot
+					.orElseGet(() -> chandler.handleChanceIncs(u, u.pose.getItems(slot)).getRandom(random));
 				
 				u.setSlot(slot, item);
 			}
@@ -187,7 +181,7 @@ public class UnitGen {
 		
 
 		// Armor
-		if(!hasItem(u, "armor") && u.pose.getItems("armor") != null)
+		if(u.isSlotEmpty("armor") && u.pose.getItems("armor") != null)
 		{
 			ItemSet all = u.pose.getItems("armor");
 			all.removeAll(poseexclusions);
@@ -201,7 +195,7 @@ public class UnitGen {
 		}
 		
 		// Mount
-		if(u.getSlot("mount") == null && u.pose.getItems("mount") != null && u.pose.getItems("mount").size() > 0)
+		if(u.isSlotEmpty("mount") && u.pose.getItems("mount") != null && u.pose.getItems("mount").size() > 0)
 		{
 			int prot = nationGen.armordb.GetInteger(u.getSlot("armor").id, "prot");
 			
@@ -273,7 +267,7 @@ public class UnitGen {
 		
 
 
-		if(!hasItem(u, "helmet") && u.pose.getItems("helmet") != null)
+		if(u.isSlotEmpty("helmet") && u.pose.getItems("helmet") != null)
 		{
 			if(!ignoreArmor)
 			{
@@ -347,7 +341,7 @@ public class UnitGen {
 		
 
 		
-		if(!hasItem(u, "offhand") && u.pose.getItems("offhand") != null)
+		if(u.isSlotEmpty("offhand") && u.pose.getItems("offhand") != null)
 		{
 			if(ignoreArmor)
 			{
@@ -364,7 +358,7 @@ public class UnitGen {
 					newincluded.addAll(included.filterForPose(u.pose));
 					
 					double deviance = random.nextDouble();
-					int prot = (int)Math.round(nationGen.armordb.GetInteger(u.getSlot("armor").id, "prot"));
+					int prot = Math.round(nationGen.armordb.GetInteger(u.getSlot("armor").id, "prot"));
 					
 					int operation = 0;
 					// Chance to remove bucklers
@@ -381,20 +375,15 @@ public class UnitGen {
 	
 					if(operation == -1)
 					{
-						all = all.filterProt(nationGen.armordb, 15, 100);
 						newincluded = newincluded.filterProt(nationGen.armordb, 15, 100);
 					}
 					else if(operation == 1)
 					{
-						all = all.filterProt(nationGen.armordb, 0, 19, true);
 						newincluded = newincluded.filterProt(nationGen.armordb, 0, 19, true);
 					}
 					
 					if(newincluded.possibleItems() == 0)
 						newincluded = included;
-					
-					if(all.possibleItems() == 0)
-						all = null;
 					
 					if(random.nextDouble() < 0.1)
 						newincluded = null;
@@ -485,18 +474,18 @@ public class UnitGen {
 	}
 	
 
-	public Unit armUnit(Unit u, ItemSet included, ItemSet excluded, Command targettag, boolean mage)
+	public void armUnit(Unit u, ItemSet included, ItemSet excluded, Command targettag, boolean mage)
 	{		
 		
 
 		if(u.getSlot("mount") != null && !mage)
-			return armCavalry(u, included, excluded, targettag, mage);
+			armCavalry(u, included, excluded, targettag, mage);
 		else
-			return armInfantry(u, included, excluded, targettag, mage);
+			armInfantry(u, included, excluded, targettag, mage);
 	}
 	
 	
-	public Unit armInfantry(Unit u, ItemSet included, ItemSet excluded, Command targettag, boolean mage)
+	public void armInfantry(Unit u, ItemSet included, ItemSet excluded, Command targettag, boolean mage)
 	{
 		boolean ignoreArmor = mage;
 		
@@ -505,7 +494,7 @@ public class UnitGen {
 		if(included == null)
 			included = new ItemSet();
 		
-		if(!hasItem(u, "weapon") && u.pose.getItems("weapon") != null)
+		if(u.isSlotEmpty("weapon") && u.pose.getItems("weapon") != null)
 		{
 			if(ignoreArmor)
 				u.setSlot("weapon", getSuitableItem("weapon", u, excluded, included, targettag));
@@ -579,12 +568,10 @@ public class UnitGen {
 				
 			}
 		}
-		
-		return u;
 	}
 	
 	
-	public Unit armCavalry(Unit u, ItemSet included, ItemSet excluded, Command targettag, boolean ignoreArmor)
+	public void armCavalry(Unit u, ItemSet included, ItemSet excluded, Command targettag, boolean ignoreArmor)
 	{
 		if(excluded == null)
 			excluded = new ItemSet();
@@ -593,7 +580,7 @@ public class UnitGen {
 		
 		included = included.filterForPose(u.pose);
 		
-		if(!hasItem(u, "weapon"))
+		if(u.isSlotEmpty("weapon"))
 		{
 			
 
@@ -601,16 +588,9 @@ public class UnitGen {
 				u.setSlot("weapon", getSuitableItem("weapon", u, excluded, included, targettag));
 			else
 			{
-				boolean has2H = false;
-				boolean hasLance = false;
-				boolean has1H = false;
-				boolean hasLLance = false;
-				
-
-	
 
 				boolean canGetLance = false;
-				if(!has1H && !hasLance && u.pose.getItems("lanceslot") != null)
+				if(u.pose.getItems("lanceslot") != null)
 				{
 					int ap = 10;
 					for(Command c : u.getCommands())
@@ -632,7 +612,7 @@ public class UnitGen {
 				while(!done)
 				{
 					int choice = random.nextInt(4); // 0-3
-					if(choice <= 1 && !has1H)
+					if(choice <= 1)
 					{
 
 						ItemSet lances = new ItemSet();
@@ -671,7 +651,7 @@ public class UnitGen {
 						
 						
 					}
-					else if(choice == 2 && !hasLLance)
+					else if(choice == 2)
 					{
 
 						ItemSet lances = new ItemSet();
@@ -686,7 +666,7 @@ public class UnitGen {
 							done = true;
 						}
 					}
-					else if(choice == 3 && !has2H)
+					else if(choice == 3)
 					{
 
 						ItemSet onehand = included.filterSlot("weapon").filterDom3DB("2h", "Yes", true, nationGen.weapondb);
@@ -717,21 +697,8 @@ public class UnitGen {
 				
 			}
 		}
-		
-		return u;
 	}
 	
-
-	
-	
-	private boolean hasItem(Unit u, String slot)
-	{
-		return (u.getSlot(slot) != null);
-	}
-	
-	
-
-
 	
 	public Item getSuitableItem(String slot, Unit u, ItemSet excluded, ItemSet included, Command targettag)
 	{
@@ -758,9 +725,6 @@ public class UnitGen {
 
 		included.removeAll(excluded);
 		all.removeAll(excluded);
-		
-	
-
 		
 		
 		ItemSet remain = new ItemSet();
@@ -807,7 +771,7 @@ public class UnitGen {
 		{
 			ItemSet filtered = chosen.filterTag(targettag);
 			if (filtered.possibleItems() > 0)
-				chosen = chosen.filterTag(targettag);
+				chosen = filtered;
 		}
 		
 
