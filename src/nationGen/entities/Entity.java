@@ -44,10 +44,12 @@ public class Entity {
 						throw new IllegalStateException("Error initializing a new instance of " + c.getCanonicalName(), e);
 					}
 				} else if (strLine.trim().toLowerCase().startsWith("#end")) {
-					if (instance != null) {
-						instance.finish();
-						list.add(instance);
+					if (instance == null) {
+						throw new IllegalStateException("Misplaced #end command");
 					}
+					instance.finish();
+					list.add(instance);
+					
 					instance = null;
 				} else if (strLine.startsWith("#")) {
 					if (instance == null) {
