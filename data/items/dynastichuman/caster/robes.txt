@@ -228,6 +228,37 @@
 #tag "tier 3"
 #enditem
 
+#newitem
+#name halfrobe_dhoti_plain
+#sprite /graphics/dynastichuman/legs/dhoti_plain.png
+#recolormask /graphics/dynastichuman/legs/dhoti_plain_recolormask.png
+#eliteversion "halfrobe_dhoti_fancy"
+#gameid -1
+#armor
+#tag "tier 1"
+#enditem
+
+#newitem
+#name halfrobe_dhoti_fancy
+#sprite /graphics/dynastichuman/legs/dhoti_fancy.png
+#recolormask /graphics/dynastichuman/legs/dhoti_fancy_recolormask.png
+#eliteversion "halfrobe_dhoti_ornate"
+#gameid -1
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#name halfrobe_dhoti_ornate
+#sprite /graphics/dynastichuman/legs/dhoti_ornate.png
+#recolormask /graphics/dynastichuman/legs/dhoti_ornate_recolormask.png
+#needs overlay ind_necklace
+#eliteversion "halfrobe_dhoti_ornate"
+#gameid -1
+#armor
+#tag "tier 3"
+#enditem
+
 
 
 

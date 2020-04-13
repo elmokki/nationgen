@@ -34,7 +34,7 @@
 
 #newpose
 #name warrior-mage-T3
-#basechance 0.25
+#basechance 0.025
 #role mage
 #role priest
 #warriormage
@@ -71,6 +71,67 @@
 #name "normal mage"
 #role mage
 #role priest
+#basechance 6
+
+#renderorder "shadow cloakb basesprite weapon armor cloakf hands helmet"
+
+#load basesprite /data/items/cyclops/bases_caster.txt
+#load shadow /data/items/cyclops/shadow.txt
+#load hands /data/items/cyclops/hands_caster.txt
+
+#load armor /data/items/cyclops/robes.txt
+#load helmet /data/items/cyclops/hair_caster.txt
+
+#load weapon /data/items/fomorian/weapon_caster.txt -1 -3
+
+#load cloakf /data/items/cyclops/cloakf.txt
+#load cloakb /data/items/cyclops/cloakb.txt
+
+#magicpriority nature 6
+
+#dontvaryhat
+
+#notfortier 3
+#notfortier 2
+#tier 1
+
+#endpose
+
+#newpose
+#name "normal mage T2"
+#role mage
+#role priest
+#basechance 0.5
+
+#renderorder "shadow cloakb basesprite weapon armor cloakf hands helmet"
+
+#load basesprite /data/items/cyclops/bases_caster.txt
+#load shadow /data/items/cyclops/shadow.txt
+#load hands /data/items/cyclops/hands_caster.txt
+
+#load armor /data/items/cyclops/robes.txt
+#load helmet /data/items/cyclops/hair_caster.txt
+
+#load weapon /data/items/fomorian/weapon_caster.txt -1 -3
+
+#load cloakf /data/items/cyclops/cloakf.txt
+#load cloakb /data/items/cyclops/cloakb.txt
+
+#magicpriority nature 6
+
+#dontvaryhat
+
+#notfortier 3
+#tier 2
+#notfortier 1
+
+#endpose
+
+#newpose
+#name "normal mage T3"
+#role mage
+#role priest
+#basechance 0.1
 
 #renderorder "shadow cloakb basesprite weapon armor cloakf hands helmet"
 
@@ -91,7 +152,7 @@
 #dontvaryhat
 
 #tier 3
-#tier 2
-#tier 1
+#notfortier 2
+#notfortier 1
 
 #endpose
