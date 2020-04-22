@@ -1,0 +1,116 @@
+-------- Elite Troop
+
+#newpose
+#name "elite aes troops"
+#role "elite infantry"
+#basechance 0.5
+#chanceinc era 2 *0.25
+#chanceinc era 3 *0.05
+
+#renderorder "shadow extra1 cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda"
+
+#load basesprite /data/items/asmegir/aesir/bases.txt
+#load shadow /data/items/asmegir/aesir/shadow.txt
+#load hands /data/items/asmegir/aesir/hands.txt
+
+
+#load armor /data/items/asmegir/aesir/armor.txt
+#load helmet /data/items/asmegir/aesir/helmet.txt
+
+#load weapon /data/items/asmegir/aesir/weapon.txt
+#load offhand /data/items/asmegir/aesir/offhands.txt
+#load offhand /data/items/asmegir/aesir/shields.txt
+#load bonusweapon /data/items/asmegir/aesir/bonusranged.txt
+
+
+#load cloakf /data/items/asmegir/aesir/cloakf.txt
+#load cloakb /data/items/asmegir/aesir/cloakb.txt
+
+#caponlychance 0.75
+#sacredratingmulti 1.5
+
+#cannot_be_pd
+#good_leader
+
+#endpose
+
+
+-------- Sacred Troop
+
+#newpose
+#name "sacred aes troops"
+#role "sacred infantry"
+#basechance 0.5
+#chanceinc era 1 *2
+#chanceinc era 3 *0.125
+#chanceinc moduleid herogen *4
+
+#renderorder "shadow extra1 cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda"
+
+#load basesprite /data/items/asmegir/aesir/bases.txt
+#load shadow /data/items/asmegir/aesir/shadow.txt
+#load hands /data/items/asmegir/aesir/hands.txt
+
+
+#load armor /data/items/asmegir/aesir/armor.txt
+#load helmet /data/items/asmegir/aesir/helmet.txt
+
+#load weapon /data/items/asmegir/aesir/weapon.txt
+#load offhand /data/items/asmegir/aesir/offhands.txt
+#load offhand /data/items/asmegir/aesir/shields.txt
+#load bonusweapon /data/items/asmegir/aesir/bonusranged.txt
+
+
+#load cloakf /data/items/asmegir/aesir/cloakf.txt
+#load cloakb /data/items/asmegir/aesir/cloakb.txt
+
+#caponlychance 0.95
+#sacredratingmulti 1.5
+
+#cannot_be_pd
+#good_leader
+
+#endpose
+
+
+
+-------- Mage
+
+#newpose
+#name "aes casters"
+#role "mage"
+#basechance 0.5
+#chanceinc era 1 *2
+#chanceinc era 3 *0.5
+#chanceinc moduleid herogen *4
+#warriormage
+#superior_leader
+
+#renderorder "shadow extra1 cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda"
+
+#magefilters default_magefilters
+#magefilters default_magefilters_strongdefence_expensive
+
+
+#load basesprite /data/items/asmegir/aesir/bases.txt
+#load shadow /data/items/asmegir/aesir/shadow.txt
+#load hands /data/items/asmegir/aesir/hands.txt
+
+#load armor /data/items/asmegir/aesir/armor.txt
+#load helmet /data/items/asmegir/aesir/helmet.txt
+
+#load weapon /data/items/asmegir/aesir/weapon_caster.txt
+#load offhand /data/items/asmegir/aesir/offhands.txt
+#load offhand /data/items/asmegir/aesir/shields.txt
+#load bonusweapon /data/items/asmegir/aesir/bonusranged.txt
+#load helmet /data/items/asmegir/aesir/helmet.txt
+
+#load cloakf /data/items/asmegir/aesir/cloakf.txt
+#load cloakb /data/items/asmegir/aesir/cloakb.txt
+
+#tier 3
+#notfortier 2
+#notfortier 1
+
+#endpose
+

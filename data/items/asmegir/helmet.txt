@@ -1,0 +1,61 @@
+#newitem
+#name leathercap
+#gameid 120
+#sprite /graphics/asmegir/helmet/cap_leather.png
+#armor
+#theme leather
+#maxprot 11
+#enditem
+
+#newitem
+#name reinfleathercap
+#gameid 119
+#sprite /graphics/asmegir/helmet/cap_reinforced.png
+#armor
+#theme leather
+#maxprot 13
+#enditem
+
+#newitem
+#name ironcap
+#gameid 20
+#sprite /graphics/asmegir/helmet/cap_iron.png
+#eliteversion goldcap
+#eliteversion ironhalfhelmet
+#armor
+#maxprot 15
+#theme iron
+#enditem
+
+#newitem
+#name ironhalfhelmet
+#gameid 118
+#sprite /graphics/asmegir/helmet/halfhelmet_iron.png
+#eliteversion goldhalfhelmet
+#armor
+#theme iron
+#minprot 13
+#enditem
+
+#newitem
+#name goldcap
+#gameid goldencap
+#sprite /graphics/asmegir/helmet/cap_iron.png
+#eliteversion goldcap
+#eliteversion goldhalfhelmet
+#armor
+#maxprot 15
+#theme gold
+#theme elite
+#enditem
+
+#newitem
+#name goldhalfhelmet
+#gameid goldencap
+#sprite /graphics/asmegir/helmet/halfhelmet_gold.png
+#eliteversion goldhalfhelmet
+#armor
+#theme gold
+#minprot 13
+#theme elite
+#enditem
