@@ -1,0 +1,50 @@
+#newrace
+#name "Asmeg"
+#basechance 0.1
+#nationcommand "#idealcold +1"
+
+#pose asmegcasters
+#pose asmegtroops
+--#pose aesir
+
+-- 40% H1/48% H2/12% H3 max priest level
+#priest_H1_upgradechance 0.6
+#priest_H2_upgradechance 0.2
+
+#longsyllables /data/names/nations/nordic/longsyllables.txt
+#shortsyllables /data/names/nations/nordic/shortsyllables.txt
+#suffixes /data/names/nations/nordic/suffixes.txt
+
+#innate_sacred_power 2
+
+#magicpriority air 10
+#magicpriority water 0.2
+
+#weakmagicpatterns
+
+#oneprimarychance 0.7
+#twoprimarychance 0.275
+#threeprimarychance 0.025
+
+#chanceinc "hasprimaryrace 0.225"
+#chanceinc "primaryrace abysian *0.1"
+#chanceinc "primaryrace caelian *4"
+#chanceinc "primaryrace 'Boreal human' *4"
+#chanceinc "primaryrace van *2"
+#chanceinc "primaryrace vaetti *0.5"
+#chanceinc "primaryrace jotun *0.1"
+
+#monsterchance 0.01
+#extrapdmulti 0.5
+
+#specialcommanderchance 0.1
+#specialcommanderfilters default_specialcommanderfilters
+#specialcommanderfilters specialcommanderfilters_extended
+
+#gods europegods
+
+#theme boreal
+#boreal
+#giant
+
+#endrace
