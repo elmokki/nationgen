@@ -8,6 +8,7 @@ import nationGen.misc.Command;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 /**
@@ -60,18 +61,12 @@ public class CustomItemsHandler
      * @param name: Name of the custom item
      * @return the custom item
      */
-    public CustomItem getCustomItem(String name)
+    public Optional<CustomItem> getCustomItem(String name)
     {
-        CustomItem citem = null;
-        for(CustomItem ci : customItems)
-        {
-            if(ci.name.equals(name) && !chosenCustomItems.contains(ci))
-            {
-                citem = ci;
-                break;
-            }
-        }
-        return citem;
+        return customItems.stream()
+            .filter(ci -> ci.name.equals(name))
+            .filter(ci -> !chosenCustomItems.contains(ci))
+            .findFirst();
     }
     
     /**

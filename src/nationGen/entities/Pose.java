@@ -125,12 +125,15 @@ public class Pose extends Filter {
 				{
 					if(!Generic.isNumeric(i.id))
 					{
-						CustomItem citem = nationGen.GetCustomItemsHandler().getCustomItem(i.id);
-						if(!citem.armor)
-							nationGen.weapondb.addToMap(i.id, citem.getHashMap());
-						else
-						{
+						CustomItem citem = nationGen.GetCustomItemsHandler().getCustomItem(i.id)
+							.orElseThrow(() -> new IllegalArgumentException(String.format(
+								"Custom item named '%s' not found. Verify #gameid for item named '%s' in %s",
+								i.id, i.name, file)));
+						
+						if (citem.armor) {
 							nationGen.armordb.addToMap(i.id, citem.getHashMap());
+						} else {
+							nationGen.weapondb.addToMap(i.id, citem.getHashMap());
 						}
 					}
 				}
