@@ -5,6 +5,39 @@
 #endtheme
 
 
+-- Demographic (mandatory)
+-- Weights: EA 0.5, MA 0.25, LA 0.1
+#newtheme
+#type demographic
+#name elder
+#basechance 0.5
+#chanceinc era 2 *0.5
+#chanceinc era 3 *0.2
+#racedefinition "#pose eldercyclopes"
+#racedefinition "#maxprimaryracetroops 3"
+#endtheme
+
+-- Weights: EA 1, MA 1, LA 1
+#newtheme
+#type demographic
+#name mixed
+#basechance 1
+#racedefinition "#pose eldercyclopes"
+#racedefinition "#pose cyclopstroops"
+#racedefinition "#pose cyclopsmages"
+#endtheme
+
+-- Weights: EA 0.5, MA 0.75, LA 1
+#newtheme
+#type demographic
+#name lesser
+#basechance 1
+#chanceinc era 1 -0.5
+#chanceinc era 2 -0.25
+#racedefinition "#pose cyclopstroops"
+#racedefinition "#pose cyclopsmages"
+#endtheme
+
 
 -- Civilization (mandatory)
 -- Weights: EA 1, MA 0.25, LA 0.1
@@ -38,7 +71,6 @@
 #themeinc theme primitive *0.05
 #racedefinition "#magicpriority earth 2"
 #endtheme
-
 
 
 -- Techlevel (mandatory)
