@@ -737,9 +737,23 @@
 #end
 
 #new customweapon
+#name "goldencap"
+#armor
+#command "#type 6"
+#command "#prot 15"
+#command "#rcost 5"
+#command "#name 'Golden Cap'"
+#command "#magic"
+#end
+
+#new customweapon
 #name "goldenhelmet"
-#command "#copyarmor 213"
+#armor
+#command "#type 6"
+#command "#prot 20"
 #command "#rcost 8"
+#command "#name 'Golden Helmet'"
+#command "#magic"
 #end
 
 
