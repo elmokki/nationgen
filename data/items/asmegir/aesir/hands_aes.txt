@@ -1,7 +1,14 @@
 --- Hands belonging to an armor set should be given id of the lowest prot armor they go with if you want to avoid naked people with plate gloves.
 
 #newitem
-#id 1
+#id hands
 #gameid -1
-#sprite /graphics/fomorian/giant/fomorianhands.png
+#enditem
+
+#newitem
+#id hands_spear
+#gameid -1
+#basechance 0
+#nogen
+#sprite /graphics/asmegir/aesir/hands_aes_spear.png
 #enditem
