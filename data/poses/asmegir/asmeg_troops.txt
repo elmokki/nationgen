@@ -22,6 +22,8 @@
 
 #load cloakb /data/items/asmegir/cloakb.txt
 
+#maxunits 2
+
 #endpose
 
 
@@ -30,7 +32,7 @@
 #newpose
 #name "sacred flyer"
 #role "sacred infantry"
-#basechance 0.25
+#basechance 0.2
 #chanceinc era 1 *2
 #chanceinc era 3 *0.5
 
@@ -49,6 +51,26 @@
 #load offhand /data/items/asmegir/offhands.txt 0 -32
 #load offhand /data/items/asmegir/shields.txt 0 -32
 
-#load cloakb /data/items/asmegir/cloakb.txt 0 -32
+#endpose
+
+
+--------Scouts
+
+#newpose
+#name "asmeg scouts"
+#role "scout"
+
+#renderorder "shadow weapon basesprite armor hair helmet cloakb bonusweapon offhandw offhanda"
+
+#load basesprite /data/items/asmegir/bases.txt
+#load shadow /data/items/asmegir/shadow.txt
+
+#load armor /data/items/asmegir/armor_scout.txt
+#load helmet /data/items/asmegir/helmet_scout.txt
+
+#load weapon /data/items/asmegir/weapon.txt
+#load offhand /data/items/asmegir/offhands.txt
+
+#load cloakb /data/items/asmegir/cloakb.txt
 
 #endpose
