@@ -1,4 +1,13 @@
 #newitem
+#name barehead
+#gameid -1
+#sprite /graphics/asmegir/helmet/hair_grey.png
+#armor
+#theme naked
+#maxprot 11
+#enditem
+
+#newitem
 #name leathercap
 #gameid 120
 #sprite /graphics/asmegir/helmet/cap_leather.png
@@ -30,32 +39,41 @@
 #newitem
 #name ironhalfhelmet
 #gameid 118
-#sprite /graphics/asmegir/helmet/halfhelmet_iron.png
+#sprite /graphics/asmegir/helmet/halfhelm_iron.png
 #eliteversion goldhalfhelmet
 #armor
 #theme iron
 #minprot 13
+#notfortier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
 #name goldcap
 #gameid goldencap
-#sprite /graphics/asmegir/helmet/cap_iron.png
+#sprite /graphics/asmegir/helmet/cap_gold.png
 #eliteversion goldcap
 #eliteversion goldhalfhelmet
 #armor
 #maxprot 15
 #theme gold
 #theme elite
+#notfortier 1
+#tier 2
+#tier 3
 #enditem
 
 #newitem
 #name goldhalfhelmet
-#gameid goldencap
-#sprite /graphics/asmegir/helmet/halfhelmet_gold.png
+#gameid goldenhelmet
+#sprite /graphics/asmegir/helmet/halfhelm_gold.png
 #eliteversion goldhalfhelmet
 #armor
 #theme gold
 #minprot 13
 #theme elite
+#notfortier 1
+#tier 2
+#tier 3
 #enditem

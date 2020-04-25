@@ -1,0 +1,45 @@
+
+
+#newitem
+#name cap_iron
+#gameid 20
+#sprite /graphics/asmegir/aesir/aes/helmet/cap_iron.png
+#eliteversion cap_iron
+#eliteversion helm_iron
+#eliteversion cap_gold
+#theme "iron"
+#armor
+#notfortier 3
+#enditem
+
+#newitem
+#name cap_gold
+#gameid goldencap
+#basechance 0.25
+#sprite /graphics/asmegir/aesir/aes/helmet/cap_gold.png
+#eliteversion helm_gold
+#eliteversion cap_gold
+#theme "gold"
+#armor
+#enditem
+
+#newitem
+#name helm_iron
+#gameid 118
+#sprite /graphics/asmegir/aesir/aes/helmet/helmet_iron.png
+#eliteversion helm_iron
+#eliteversion helm_gold
+#theme "iron"
+#armor
+#notfortier 3
+#enditem
+
+#newitem
+#name helm_gold
+#gameid goldenhelmet
+#basechance 0.25
+#sprite /graphics/asmegir/aesir/aes/helmet/helmet_gold.png
+#eliteversion helm_gold
+#theme "gold"
+#armor
+#enditem
