@@ -3,8 +3,7 @@
 #id spirehornwingsT2
 #gameid -1
 #sprite /graphics/caelian/spirehornwings.png
-#basechance 1000
-#theme spirehorn
+#theme spirehorn_elite
 #needs overlay spirehornwings
 #define "#coldres +5"
 #define "#shockres +5"
@@ -24,8 +23,8 @@
 #id airyawingsT2
 #gameid -1
 #sprite /graphics/caelian/airyawings.png
-#basechance 10000
-#theme airya
+#basechance 2
+#theme airya_elite
 #needs overlay airyawings
 #define "#hp -1"
 #define "#mr +1"
@@ -46,8 +45,7 @@
 #id raptorwingsT2
 #gameid -1
 #sprite /graphics/caelian/raptorwings.png
-#basechance 1000
-#theme raptor
+#theme raptor_elite
 #needs overlay raptorwings
 #define "#hp +1"
 #define "#mr -1"
@@ -70,8 +68,8 @@
 #id yazatawingsT2
 #gameid -1
 #sprite /graphics/caelian/yazatawings.png
-#basechance 1
-#theme yazata
+#basechance 0.5
+#theme yazata_elite
 #needs overlay yazatawings
 #define "#gcost 35"
 #define "#hp +6"
@@ -104,8 +102,8 @@
 #id daevawingsT2
 #gameid -1
 #sprite /graphics/caelian/daevawings.png
-#basechance 1
-#theme daeva
+#basechance 0.5
+#theme daeva_elite
 #needs overlay daevawings
 #define "#gcost 35"
 #define "#hp +6"
@@ -138,8 +136,8 @@
 #id mairyawingsT2
 #gameid -1
 #sprite /graphics/caelian/mairyawings.png
-#basechance 10000
-#theme mairya
+#basechance 2
+#theme mairya_elite
 #needs overlay mairyawings
 #define "#gcost 15"
 #define "#hp +2"
@@ -163,8 +161,7 @@
 #id hybridwingsT2
 #gameid -1
 #sprite /graphics/caelian/hybridwings.png
-#basechance 250
-#theme hybrid
+#theme hybrid_elite
 #needs overlay hybridwings
 #define "#hp +1"
 #define "#mr -1"
@@ -184,8 +181,8 @@
 #newitem
 #id nowingsT2
 #gameid -1
-#basechance 5
-#theme wingless
+#basechance 0.5
+#theme wingless_elite
 #needs overlay nowings
 #define "#size 2"
 #define "#hp -1"

@@ -56,4 +56,39 @@
 #endpose
 
 
+--------- Chariots
+
+#newpose
+#name "two-horse cursed chariots"
+#role "chariot"
+#role "elite chariot"
+#role "sacred chariot"
+
+#basechance 0.5
+
+#cannot_be_militia
+#cannot_be_pd
+
+#baseitemslot feet 0
+
+#renderorder "shadow mount bonusweapon cloakb basesprite shirt legs armor cloakf weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/fomorian/bases.txt
+#load mount /data/items/fomorian/bases_chariot.txt
+#load hands /data/items/fomorian/hands.txt
+
+#load cloakf /data/items/fomorian/cloakf.txt
+#load cloakb /data/items/fomorian/cloakb.txt
+
+#load armor /data/items/fomorian/armor_chariot.txt
+#load helmet /data/items/fomorian/helmet.txt
+
+#load weapon /data/items/fomorian/weapon_chariot.txt
+#load bonusweapon /data/items/fomorian/bonusranged.txt
+
+#load overlay /data/items/fomorian/mountedoverlay.txt
+
+#endpose
+
+
 

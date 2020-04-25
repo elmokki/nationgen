@@ -2,100 +2,100 @@
 #newitem
 #id goldenbuckler
 #gameid 1
-#basechance 20000
+#basechance 0.02
 #sprite /graphics/offhand/standard/bronzebuckler.png
 #offsetx 0
 #offsety 2
 #armor
-#theme "yazata"
-#theme "daeva"
+#theme "yazata_elite"
+#theme "daeva_elite"
 #enditem
 
 #newitem
 #id goldenkite1
 #gameid 3
-#basechance 5000
+#basechance 0.005
 #sprite /graphics/offhand/sacred/goldenkite1.png
 #recolormask /graphics/offhand/standard/kite1_recolormask.png
 #offsetx 0
 #offsety 2
 #armor
 #theme "advanced"
-#theme "yazata"
-#theme "daeva"
+#theme "yazata_elite"
+#theme "daeva_elite"
 #theme "iron"
 #enditem
 
 #newitem
 #id goldenshield
 #gameid 155
-#basechance 5000
+#basechance 0.005
 #sprite /graphics/offhand/sacred/goldenshield.png
 #offsetx 0
 #offsety 2
-#theme "yazata"
-#theme "daeva"
+#theme "yazata_elite"
+#theme "daeva_elite"
 #armor
 #enditem
 
 #newitem
 #id goldenshield3
 #gameid 155
-#basechance 5000
+#basechance 0.005
 #sprite /graphics/offhand/sacred/goldenshield3.png
 #offsetx 0
 #offsety 2
-#theme "yazata"
-#theme "daeva"
+#theme "yazata_elite"
+#theme "daeva_elite"
 #armor
 #enditem
 
 #newitem
 #id goldenshield6
 #gameid 209
-#basechance 5000
+#basechance 0.005
 #sprite /graphics/offhand/sacred/goldenshield6.png
 #recolormask /graphics/offhand/standard/shield6_recolormask.png
 #offsetx 0
 #offsety 2
-#theme "yazata"
-#theme "daeva"
+#theme "yazata_elite"
+#theme "daeva_elite"
 #armor
 #enditem
 
 #newitem
 #id hoplon1
 #gameid 209
-#basechance 5000
+#basechance 0.005
 #sprite /graphics/offhand/standard/hoplon1.png
 #offsetx 0
 #offsety 2
-#theme "yazata"
-#theme "daeva"
+#theme "yazata_elite"
+#theme "daeva_elite"
 #armor
 #enditem
 
 #newitem
 #id hoplon2
 #gameid 209
-#basechance 5000
+#basechance 0.005
 #sprite /graphics/offhand/standard/hoplon2.png
 #offsetx 0
 #offsety 2
-#theme "yazata"
-#theme "daeva"
+#theme "yazata_elite"
+#theme "daeva_elite"
 #armor
 #enditem
 
 #newitem
 #id hoplon3
 #gameid 209
-#basechance 5000
+#basechance 0.005
 #sprite /graphics/offhand/standard/hoplon3.png
 #offsetx 0
 #offsety 2
-#theme "yazata"
-#theme "daeva"
+#theme "yazata_elite"
+#theme "daeva_elite"
 #armor
 #enditem
 
@@ -259,7 +259,7 @@
 #gameid 28
 #basechance 0.005
 #sprite /graphics/caelian/shield/iceshield1.png
-#theme "yazata"
+#theme "yazata_elite"
 #theme "ice"
 #armor
 #enditem
@@ -269,7 +269,7 @@
 #gameid 189
 #basechance 0.005
 #sprite /graphics/caelian/shield/pearlshield.png
-#theme "yazata"
+#theme "yazata_elite"
 #theme "magic"
 #armor
 #enditem
@@ -279,7 +279,7 @@
 #gameid 143
 #basechance 0.005
 #sprite /graphics/caelian/shield/obsidianshield.png
-#theme "daeva"
+#theme "daeva_elite"
 #theme "magic"
 #armor
 #define "#rcost +10"
@@ -290,7 +290,7 @@
 #gameid 157
 #basechance 0.005
 #sprite /graphics/caelian/shield/crimsonshield.png
-#theme "daeva"
+#theme "daeva_elite"
 #theme "magic"
 #armor
 #enditem
@@ -299,12 +299,12 @@
 #id spectralshield
 #gameid 156
 #basechance 0
-#chanceinc "magic death 2500"
-#chanceinc "magic air 2500"
-#chanceinc "magic death air 5000"
+#chanceinc "magic death 0.0025"
+#chanceinc "magic air 0.0025"
+#chanceinc "magic death air 0.005"
 #sprite /graphics/caelian/shield/spectralshield.png
-#theme "yazata"
-#theme "daeva"
+#theme "yazata_elite"
+#theme "daeva_elite"
 #theme "magic"
 #theme "air"
 #theme "death"
