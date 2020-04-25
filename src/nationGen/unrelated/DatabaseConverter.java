@@ -26,6 +26,7 @@ public class DatabaseConverter {
 		addAttributes(weapons, "/db_conversion/attributes_by_weapon.csv");
 		addEffects(weapons);
 		weapons.removeColumn("end");
+		weapons.removeColumn("weapon");
 		weapons.setColumn("flyspr", previousWeapons.getColumnAsMap("flyspr"));
 		weapons.setColumn("animlength", previousWeapons.getColumnAsMap("animlength"));
 		weapons.setDefinition(previousWeapons.getDefinition());
