@@ -78,7 +78,7 @@ id	name	school	researchlevel	path1	pathlevel1	path2	pathlevel2	effect_record_id	
 78	15 Karasu Tengus	-1	1	-1	0	-1	0	78	15	0	0	0	0	1478	
 79	Natural Rain	-1	1	2	0	-1	0	79	1	0	0	0	0	7	
 80	Open Soul Trap	-1	1	-1	0	-1	0	80	4	0	0	0	0	-18	
-81	Area10 cold dmg3	-1	1	-1	0	-1	0	81	1	0	0	0	0	3	
+81	area10 cold dmg3	-1	1	-1	0	-1	0	81	1	0	0	0	0	3	
 82	Cleansing Chime	-1	1	-1	0	-1	0	82	1	100	0	0	0	20	
 83	Astral Geyser Blast	-1	1	-1	0	-1	0	83	1	0	0	0	0	2	
 84	Chastisement	-1	1	-1	0	-1	0	84	1	0	0	0	0	999	
@@ -97,7 +97,7 @@ id	name	school	researchlevel	path1	pathlevel1	path2	pathlevel2	effect_record_id	
 97	Pack of Wolves	-1	1	-1	0	-1	0	97	5	0	0	0	0	1224	
 98	Grow Monster	-1	1	-1	0	-1	0	98	1	0	0	0	0	-5	
 99	15 Forest Trolls	-1	1	-1	0	-1	0	99	15	0	0	0	0	2219	
-100	earth grip	-1	1	-1	0	-1	0	100	1	0	0	0	0	70368744194048	
+100	earth grip	-1	1	-1	0	-1	0	100	1	0	0	0	0	16384	
 101	Disease	-1	1	-1	0	-1	0	101	1	0	0	0	0	1	
 102	Disease All Friendly	-1	1	-1	0	-1	0	102	1	0	0	0	0	1	
 103	Area Cripple	-1	1	-1	0	-1	0	103	1	0	0	0	0	16777216	
@@ -227,7 +227,7 @@ id	name	school	researchlevel	path1	pathlevel1	path2	pathlevel2	effect_record_id	
 267	Call Merkavah	0	9	4	7	0	3	267	1	0	0	222	89	2052	
 268	Release Lord of Civilization	6	9	7	8	-1	0	268	1	0	0	177	85	14	
 269	Summon Mazzikim	0	3	6	1	-1	0	269	8	0	0	3	0	2072	
-270	Summon Lilot	0	5	6	4	-1	0	270	1	0	0	25	0	2071	
+270	Summon Lilot	0	5	6	4	-1	0	270	1	0	0	15	0	2071	
 271	Summon Kusarikkus	0	4	3	1	-1	0	271	2	0	0	6	0	3068	
 272	Summon Ugallu	0	5	1	3	-1	0	272	1	0	0	24	0	3095	
 273	Call Anzu	0	7	1	4	-1	0	273	1	0	0	4	0	3064	
@@ -316,7 +316,7 @@ id	name	school	researchlevel	path1	pathlevel1	path2	pathlevel2	effect_record_id	
 356	Contact Iron Angel	0	8	3	5	4	2	356	1	0	0	25	0	1975	
 357	Tempering the Will	5	5	3	3	-1	0	357	1	100	20	0	0	67108864	
 358	Gift of the Moon	4	4	4	1	-1	0	358	1	100	20	0	0	1099511627776	
-359	Sanguine Heritage	6	0	7	3	5	3	359	1	0	0	44	0	1019	
+359	Sanguine Heritage	6	0	7	3	5	3	359	1	0	0	44	0	19	
 360	Summon Monster Toads	0	5	6	2	-1	0	360	3	0	0	8	0	1358	
 362	Contact Couatl	0	7	6	1	4	1	362	1	0	0	40	0	525	
 363	Parting of the Soul	5	6	5	1	1	1	363	1	100	40	0	111	5010	
@@ -677,7 +677,7 @@ id	name	school	researchlevel	path1	pathlevel1	path2	pathlevel2	effect_record_id	
 720	Summon Water Power	0	2	2	1	-1	0	720	1	0	20	0	0	524288	
 721	Summon Ogres	0	2	3	1	-1	0	721	505	0	0	10	0	2135	
 722	Summon Shades	0	2	5	2	-1	0	722	505	0	0	8	0	676	
-723	Summon Killer Mantis	0	2	6	2	-1	0	723	505	0	0	8	0	2226	
+723	Summon Killer Mantis	0	2	6	2	-1	0	723	505	0	0	4	0	2226	
 724	Pack of Wolves	0	2	6	1	-1	0	724	1009	0	0	2	0	284	
 725	Summon Horned Serpents	0	2	6	1	-1	0	725	505	0	0	4	0	403	
 726	Phoenix Power	0	3	0	2	-1	0	726	1	0	20	0	19	262144	
@@ -858,7 +858,7 @@ id	name	school	researchlevel	path1	pathlevel1	path2	pathlevel2	effect_record_id	
 901	Astral Healing	4	4	4	3	-1	0	901	1	0	0	1	0	2	
 902	Antimagic	4	4	4	3	-1	0	902	1	0	0	1	0	67108864	
 903	Raise Dead	4	4	5	2	-1	0	903	2006	-2	40	0	0	-3	
-904	Twiceborn	4	4	5	2	-1	0	904	1	0	0	10	0	4194304	
+904	Twiceborn	4	4	5	2	-1	0	904	1	0	0	5	0	4194304	
 905	Behemoth	4	4	5	3	-1	0	905	1	0	0	7	0	452	
 906	Haste	4	4	6	3	-1	0	906	1	0	0	1	0	4	
 907	Poison Ward	4	4	6	2	-1	0	907	1	0	0	1	0	16777216	
@@ -1101,3 +1101,29 @@ id	name	school	researchlevel	path1	pathlevel1	path2	pathlevel2	effect_record_id	
 1144	Rhapsody of Life	5	3	6	1	-1	0	1144	1	5	20	0	0	1009	
 1145	Minor Reinvigoration	-1	1	-1	0	-1	0	1145	1	0	0	0	0	10	
 1146	Procession of the Underworld	0	5	5	3	-1	0	1146	12	0	0	13	0	3210	
+1147	Summon Okami	0	3	6	1	-1	0	1147	1009	0	0	6	0	3264	
+1148	Contact Bakeneko	0	3	6	2	-1	0	1148	1	0	0	8	0	3268	
+1149	Summon Omukade	0	4	3	2	5	1	1149	1	0	0	6	0	3269	
+1150	Contact Mujina	0	5	6	2	-1	0	1150	1	0	0	21	0	3273	
+1151	Contact Tanuki	0	5	6	2	-1	0	1151	1	0	0	26	0	3266	
+1152	Contact Jorogumo	0	6	6	2	5	1	1152	1	0	0	32	0	3263	
+1153	Summon Araburu-kami	0	7	5	1	0	1	1153	1	0	0	5	0	3270	
+1154	Katabasis	4	3	5	1	2	1	1154	1	0	0	8	0	2199023255552	
+1155	Epopteia	4	3	6	1	-1	0	1155	1	0	0	12	0	94	
+1156	Contact Jinn	0	4	0	2	1	1	1156	1	0	0	18	0	3353	
+1157	Summon Jinn Warriors	0	5	0	2	1	1	1157	3	0	0	18	0	3354	
+1158	Contact Houri	0	6	1	2	6	1	1158	1	0	0	26	0	3375	
+1159	Summon Hinn	0	6	1	1	0	1	1159	505	0	0	6	0	3367	
+1160	Summon Ifrit	6	5	7	1	0	3	1160	1	0	0	58	0	3372	
+1161	Summon Shaytan	6	6	7	1	0	3	1161	1	0	0	73	0	3373	
+1162	Summon Marid	0	8	0	4	1	2	1162	1	0	0	66	0	3374	
+1163	Contact Marid	0	8	2	2	0	4	1163	1	0	0	60	0	3374	
+1164	Smokeless Flame	2	6	0	3	1	1	1164	1	1	30	0	0	1042	
+1165	Large Area Combustion	-1	1	-1	0	-1	0	1165	1	0	0	0	0	512	
+1166	Scorching Wind	2	4	1	2	0	1	1166	1	0	30	0	0	250	
+1167	Call Cyclops Tribe	0	3	3	2	-1	0	1167	505	0	0	12	0	3381	
+1168	Call the Birds of Splendour	0	6	0	2	6	1	1168	1	0	0	9	0	3382	
+1169	Awaken Jinn Block	5	5	3	1	8	1	1169	1	0	0	5	0	3389	
+1170	Winter's Call	6	6	7	3	2	2	1170	1	0	0	86	0	844	
+1171	Summon Rimvaettir	0	5	2	2	-1	0	1171	1003	0	0	5	0	3420	
+1172	Summon Dwarf of the Four Directions	0	8	1	4	3	3	1172	1	0	0	62	0	-21	
