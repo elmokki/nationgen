@@ -1,0 +1,26 @@
+--- Base offsets are applied to everything except base and overlay
+#newitem
+#name "two-horse chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/twohorse_big.png
+#recolormask /graphics/mounts/chariots/twohorse_big_recolormask.png
+#armor
+#needs overlay twohorse_big_overlay
+#offsetx 38
+#offsety -8
+#define "#trample"
+#define "#mounted"
+#define "#size 5"
+#define "#prot 8"
+#define "#mapmove 20"
+#define "#ap 15"
+#define "#ressize 3"
+#define "#gcost +45"
+#define "#rcost +12"
+#define "#enc 5"
+#define "#nomovepen"
+#tag "chariot"
+#tag "minprot 8"
+#tag "maxprot 20"
+#tag "animal 'horse'"
+#enditem

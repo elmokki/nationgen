@@ -1,0 +1,145 @@
+--- Scale
+
+#newitem
+#name "iron scale cuirass"
+#gameid 7
+#sprite /graphics/asmegir/aesir/aes/armor/scale_cuirass_iron.png
+#eliteversion "gold scale cuirass"
+#eliteversion "iron scale cuirass"
+#eliteversion "iron scale hauberk"
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "iron scale hauberk"
+#gameid 12
+#sprite /graphics/asmegir/aesir/aes/armor/scale_hauberk_iron.png
+#eliteversion "gold scale hauberk"
+#eliteversion "iron scale hauberk"
+#eliteversion "iron full scale"
+#armor
+#theme "iron"
+#enditem
+
+#newitem 
+#name "iron full scale"
+#gameid 17
+#sprite /graphics/asmegir/aesir/aes/armor/scale_full_iron.png
+#eliteversion "gold full scale"
+#eliteversion "iron full scale"
+#armor
+#basechance 0.5
+#theme "iron"
+#enditem
+
+--- Chain Mail
+
+#newitem
+#name "iron chain cuirass"
+#gameid 8
+#sprite /graphics/asmegir/aesir/aes/armor/chain_cuirass_iron.png
+#eliteversion "gold chain cuirass"
+#eliteversion "iron chain cuirass"
+#eliteversion "iron chain hauberk"
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#name "iron chain hauberk"
+#gameid 13
+#sprite /graphics/asmegir/aesir/aes/armor/chain_hauberk_iron.png
+#eliteversion "gold chain hauberk"
+#eliteversion "iron chain hauberk"
+#eliteversion "iron full chain"
+#armor
+#theme "iron"
+#enditem
+
+#newitem 
+#name "iron full chain"
+#gameid 18
+#sprite /graphics/asmegir/aesir/aes/armor/chain_full_iron.png
+#eliteversion "gold full chain"
+#eliteversion "iron full chain"
+#armor
+#basechance 0.5
+#theme "iron"
+#enditem
+
+--- Gold Scale
+
+#newitem
+#name "gold scale cuirass"
+#gameid 49
+#sprite /graphics/asmegir/aesir/aes/armor/scale_cuirass_gold.png
+#eliteversion "gold scale cuirass"
+#eliteversion "gold scale hauberk"
+#armor
+#theme "sacred"
+#theme "gold"
+#themeinc "theme gold *5"
+#enditem
+
+#newitem
+#name "gold scale hauberk"
+#gameid enchantedscalemail
+#sprite /graphics/asmegir/aesir/aes/armor/scale_hauberk_gold.png
+#eliteversion "gold scale hauberk"
+#eliteversion "gold full scale"
+#armor
+#theme "sacred"
+#theme "gold"
+#themeinc "theme gold *5"
+#enditem
+
+#newitem 
+#name "gold full scale"
+#gameid 196
+#sprite /graphics/asmegir/aesir/aes/armor/scale_full_gold.png
+#eliteversion "gold full scale"
+#armor
+#basechance 0.5
+#theme "sacred"
+#theme "gold"
+#themeinc "theme gold *5"
+#enditem
+
+--- Gold Chain Mail
+
+#newitem
+#name "gold chain cuirass"
+#gameid zotz_goldcuirass
+#sprite /graphics/asmegir/aesir/aes/armor/chain_cuirass_gold.png
+#eliteversion "gold chain cuirass"
+#eliteversion "gold chain hauberk"
+#armor
+#theme "sacred"
+#theme "gold"
+#themeinc "theme gold *5"
+#enditem
+
+#newitem
+#name "gold chain hauberk"
+#gameid zotz_goldarmor
+#sprite /graphics/asmegir/aesir/aes/armor/chain_hauberk_gold.png
+#eliteversion "gold chain hauberk"
+#eliteversion "gold full chain"
+#armor
+#theme "sacred"
+#theme "gold"
+#themeinc "theme gold *5"
+#enditem
+
+#newitem 
+#name "gold full chain"
+#gameid goldenchainmail
+#sprite /graphics/asmegir/aesir/aes/armor/chain_full_gold.png
+#eliteversion "gold full chain"
+#armor
+#basechance 0.5
+#theme "sacred"
+#theme "gold"
+#themeinc "theme gold *5"
+#enditem

@@ -1,43 +1,43 @@
 
 #newitem
-#basechance 10000
 #name "light scale"
+#basechance 0.01
 #gameid 49
 #sprite /graphics/caelian/armor/lightscale.png
 #armor
-#theme "yazata"
-#theme "daeva"
+#theme "yazata_elite"
+#theme "daeva_elite"
 #enditem
 
 #newitem
-#basechance 10000
+#basechance 0.01
 #name "golden scale"
 #gameid 196
 #sprite /graphics/caelian/armor/goldscale.png
 #armor
-#theme "yazata"
-#theme "daeva"
+#theme "yazata_elite"
+#theme "daeva_elite"
 #enditem
 
 #newitem
-#basechance  5000
+#basechance 0.005
 #name "mirror armor"
 #gameid 177
 #sprite /graphics/caelian/armor/mirrorplate.png
 #armor
-#theme "yazata"
-#theme "daeva"
+#theme "yazata_elite"
+#theme "daeva_elite"
 #define "#mr +2"
 #enditem
 
 #newitem
-#basechance  5000
+#basechance 0.005
 #name "fire plate"
 #gameid 75
 #sprite /graphics/caelian/armor/fireplate.png
 #armor
-#theme "yazata"
-#theme "daeva"
+#theme "yazata_elite"
+#theme "daeva_elite"
 #enditem
 
 #newitem
@@ -46,7 +46,7 @@
 #gameid 205
 #sprite /graphics/caelian/armor/suncuirass.png
 #armor
-#theme "yazata"
+#theme "yazata_elite"
 #enditem
 
 #newitem
@@ -55,7 +55,7 @@
 #gameid 204
 #sprite /graphics/caelian/armor/sunarmor.png
 #armor
-#theme "yazata"
+#theme "yazata_elite"
 #enditem
 
 #newitem
@@ -64,7 +64,7 @@
 #gameid 206
 #sprite /graphics/caelian/armor/obsidiancuirass.png
 #armor
-#theme "daeva"
+#theme "daeva_elite"
 #enditem
 
 #newitem
@@ -73,7 +73,7 @@
 #gameid zotz_obsarmor
 #sprite /graphics/caelian/armor/obsidianarmor.png
 #armor
-#theme "daeva"
+#theme "daeva_elite"
 #enditem
 
 
@@ -87,7 +87,7 @@
 #armor
 #theme "ice"
 #define "#iceprot 2"
-#theme "yazata"
+#theme "yazata_elite"
 #chanceinc "personalcommand below #coldres 5 *0"
 #needstype helmet ice
 #needstype weapon ice
@@ -101,7 +101,7 @@
 #armor
 #theme "ice"
 #define "#iceprot 2"
-#theme "yazata"
+#theme "yazata_elite"
 #chanceinc "personalcommand below #coldres 5 *0"
 #needstype helmet ice
 #needstype weapon ice
@@ -115,7 +115,7 @@
 #armor
 #theme "ice"
 #define "#iceprot 2"
-#theme "yazata"
+#theme "yazata_elite"
 #chanceinc "personalcommand below #coldres 5 *0"
 #needstype helmet ice
 #needstype weapon ice
@@ -129,7 +129,7 @@
 #armor
 #theme "ice"
 #define "#iceprot 2"
-#theme "yazata"
+#theme "yazata_elite"
 #chanceinc "personalcommand below #coldres 5 *0"
 #needstype helmet ice
 #needstype weapon ice

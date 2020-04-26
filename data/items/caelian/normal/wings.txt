@@ -5,8 +5,7 @@
 #id spirehornwings
 #gameid -1
 #sprite /graphics/caelian/spirehornwings.png
-#basechance 100
-#theme spirehorn
+#theme spirehorn_troop
 #needs overlay spirehornwings
 #define "#coldres +5"
 #define "#shockres +5"
@@ -23,10 +22,10 @@
 #id spirehornwings-elite
 #elite
 #sacred
+#theme elite
 #gameid -1
 #sprite /graphics/caelian/spirehornwings.png
-#basechance 500
-#theme spirehorn
+#theme spirehorn_elite
 #needs overlay spirehornwings
 #define "#coldres +5"
 #define "#shockres +5"
@@ -43,8 +42,7 @@
 #id airyawings
 #gameid -1
 #sprite /graphics/caelian/airyawings.png
-#basechance 1
-#theme airya
+#theme airya_troop
 #needs overlay airyawings
 #define "#hp -1"
 #define "#mr +1"
@@ -62,10 +60,10 @@
 #id airyawings-elite
 #elite
 #sacred
+#theme elite
 #gameid -1
 #sprite /graphics/caelian/airyawings.png
-#basechance 10000
-#theme airya
+#theme airya_elite
 #needs overlay airyawings
 #define "#hp -1"
 #define "#mr +1"
@@ -83,8 +81,7 @@
 #id raptorwings
 #gameid -1
 #sprite /graphics/caelian/raptorwings.png
-#basechance 100
-#theme raptor
+#theme raptor_troop
 #needs overlay raptorwings
 #define "#hp +1"
 #define "#mr -1"
@@ -104,10 +101,10 @@
 #id raptorwings-elite
 #elite
 #sacred
+#theme elite
 #gameid -1
 #sprite /graphics/caelian/raptorwings.png
-#basechance 500
-#theme raptor
+#theme raptor_elite
 #needs overlay raptorwings
 #define "#hp +1"
 #define "#mr -1"
@@ -127,8 +124,7 @@
 #id mairyawings
 #gameid -1
 #sprite /graphics/caelian/mairyawings.png
-#basechance 1
-#theme mairya
+#theme mairya_troop
 #needs overlay mairyawings
 #define "#gcost 15"
 #define "#rpcost 15000"
@@ -150,10 +146,10 @@
 #id mairyawings-elite
 #elite
 #sacred
+#theme elite
 #gameid -1
 #sprite /graphics/caelian/mairyawings.png
-#basechance 10000
-#theme mairya
+#theme mairya_elite
 #needs overlay mairyawings
 #define "#gcost 15"
 #define "#rpcost 15000"
@@ -175,8 +171,7 @@
 #id hybridwings
 #gameid -1
 #sprite /graphics/caelian/hybridwings.png
-#basechance 100
-#theme hybrid
+#theme hybrid_troop
 #needs overlay hybridwings
 #define "#hp +1"
 #define "#mr -1"
@@ -194,10 +189,10 @@
 #id hybridwings-elite
 #elite
 #sacred
+#theme elite
 #gameid -1
 #sprite /graphics/caelian/hybridwings.png
-#basechance 1
-#theme hybrid
+#theme hybrid_elite
 #needs overlay hybridwings
 #define "#hp +1"
 #define "#mr -1"
@@ -214,8 +209,7 @@
 #newitem
 #id nowings
 #gameid -1
-#basechance 100
-#theme wingless
+#theme wingless_troop
 #needs overlay nowings
 #define "#size 2"
 #define "#hp -1"
@@ -233,9 +227,9 @@
 #id nowings-elite
 #elite
 #sacred
+#theme elite
 #gameid -1
-#basechance 1
-#theme wingless
+#theme wingless_elite
 #needs overlay nowings
 #define "#size 2"
 #define "#hp -1"
@@ -247,4 +241,157 @@
 #subrace "Wingless"
 #define "#descr 'The Wingless are misshapen, scorned Caelians born without wings. Though they are frail and have little tolerance for cold, they are ferocious fighters who do not falter in the face of an often-welcome death.'"
 #subraceprefix "wingless"
+#enditem
+
+
+-- This should only be Yazata troop commanders
+#newitem
+#id yazatawings_anywhere
+#basechance 0.1
+#gameid -1
+#sprite /graphics/caelian/yazatawings.png
+#eliteversion yazatawings_anywhere
+#theme yazata_troop
+#theme elite
+#needs overlay yazatawings
+#define "#gcost 40"
+#define "#rpost 40020"
+#define "#hp +6"
+#define "#mr +4"
+#define "#mor +4"
+#define "#str +2"
+#define "#att +3"
+#define "#def +3"
+#define "#prec +1"
+#define "#enc -2"
+#define "#ap +5"
+#define "#maxage 300"
+#define "#coldres +5"
+#define "#shockres +10"
+#define "#awe +2"
+#define "#magicbeing"
+#define "#stormimmune"
+#define "#flying"
+#define "#reclimit 1"
+#subrace "Yazata"
+#subraceprefix "yazata"
+#define "#descr 'Yazatas, or Adorable Ones, are semi-divine beings of an earlier age and the ancestors of most Caelians. Yazatas are attuned to air and are surrounded by an aura of splendor.'"
+#tag "winged"
+#sacredcostmulti 1.2
+#sacredratingmulti 1.4
+#innate_sacred_power 2
+#define "#twiceborn 3180"
+#enditem
+
+#newitem
+#id yazatawings_capital
+#basechance 0.5
+#gameid -1
+#sprite /graphics/caelian/yazatawings.png
+#eliteversion yazatawings_anywhere
+#theme yazata_troop
+#needs overlay yazatawings
+#define "#gcost 40"
+#define "#rpost 40020"
+#define "#hp +6"
+#define "#mr +4"
+#define "#mor +4"
+#define "#str +2"
+#define "#att +3"
+#define "#def +3"
+#define "#prec +1"
+#define "#enc -2"
+#define "#ap +5"
+#define "#maxage 300"
+#define "#coldres +5"
+#define "#shockres +10"
+#define "#awe +2"
+#define "#magicbeing"
+#define "#stormimmune"
+#define "#flying"
+#subrace "Yazata"
+#subraceprefix "yazata"
+#define "#descr 'Yazatas, or Adorable Ones, are semi-divine beings of an earlier age and the ancestors of most Caelians. Yazatas are attuned to air and are surrounded by an aura of splendor.'"
+#tag "winged"
+#caponlychance 1
+#sacredcostmulti 1.2
+#sacredratingmulti 1.4
+#innate_sacred_power 2
+#define "#twiceborn 3180"
+#enditem
+
+-- This should only be Daeva troop commanders
+#newitem
+#id daevawings_anywhere
+#basechance 0.1
+#gameid -1
+#sprite /graphics/caelian/daevawings.png
+#eliteversion daevawings_anywhere
+#theme daeva_troop
+#theme elite
+#needs overlay daevawings
+#define "#gcost 50"
+#define "#rpcost 50030"
+#define "#hp +6"
+#define "#mr +4"
+#define "#mor +4"
+#define "#str +2"
+#define "#att +3"
+#define "#def +3"
+#define "#prec +1"
+#define "#enc -2"
+#define "#ap +5"
+#define "#maxage 300"
+#define "#fireres +5"
+#define "#shockres +5"
+#define "#chaospower +1"
+#define "#fear +5"
+#define "#demon"
+#define "#flying"
+#define "#reclimit 1"
+#subrace "Daeva"
+#subraceprefix "daeva"
+#define "#descr 'Daevas are demonic beings of an earlier age and the ancestors of the Mairya and Raptor clans. Daevas are attuned to fire and are surrounded by an aura of fear.'"
+#tag "winged"
+#sacredcostmulti 1.2
+#sacredratingmulti 1.4
+#innate_sacred_power 2
+#define "#twiceborn 3180"
+#enditem
+
+#newitem
+#id daevawings_capital
+#basechance 0.5
+#gameid -1
+#sprite /graphics/caelian/daevawings.png
+#eliteversion daevawings_anywhere
+#theme daeva_troop
+#needs overlay daevawings
+#define "#gcost 50"
+#define "#rpcost 50030"
+#define "#hp +6"
+#define "#mr +4"
+#define "#mor +4"
+#define "#str +2"
+#define "#att +3"
+#define "#def +3"
+#define "#prec +1"
+#define "#enc -2"
+#define "#ap +5"
+#define "#maxage 300"
+#define "#fireres +5"
+#define "#shockres +5"
+#define "#chaospower +1"
+#define "#fear +5"
+#define "#demon"
+#define "#flying"
+#subrace "Daeva"
+#subraceprefix "daeva"
+#define "#descr 'Daevas are demonic beings of an earlier age and the ancestors of the Mairya and Raptor clans. Daevas are attuned to fire and are surrounded by an aura of fear.'"
+#tag "winged"
+#caponlychance 1
+#sacredcostmulti 1.2
+#sacredratingmulti 1.4
+#innate_sacred_power 2
+#define "#twiceborn 3180"
 #enditem

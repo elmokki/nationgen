@@ -1,93 +1,146 @@
 
 #newitem
-#id axe
-#gameid 675
-#sprite /graphics/fomorian/giant/weapon/hatchet.png
-#recolormask /graphics/fomorian/giant/weapon/axe_recolormask.png
-#eliteversion eliteaxe
-#theme "bronze"
-#enditem
-
-#newitem
 #id axe_iron
 #gameid 17
-#sprite /graphics/fomorian/giant/weapon/axe.png
-#recolormask /graphics/fomorian/giant/weapon/axe_recolormask.png
-#eliteversion eliteaxe
+#basechance 2
+#sprite /graphics/asmegir/aesir/weapon/axe_iron.png
+#eliteversion axe_iron
+#eliteversion axe_gold
 #theme "iron"
+#notfortier 3
 #enditem
 
 #newitem
-#id eliteaxe
-#basechance 0.25
+#id axe_gold
+#basechance 0.5
 #gameid goldenaxe
-#sprite /graphics/fomorian/giant/weapon/eliteaxe.png
-#recolormask /graphics/fomorian/giant/weapon/axe_recolormask.png
-#renderprio 6
-#renderslot "extra1"
-#enditem
-
-#newitem
-#id greataxe
-#gameid 698
-#sprite /graphics/fomorian/giant/weapon/battleaxe_bronze.png
-#theme "bronze"
+#sprite /graphics/asmegir/aesir/weapon/axe_gold.png
+#eliteversion axe_gold
+#theme "gold"
 #enditem
 
 #newitem
 #id greataxe_iron
 #gameid 18
-#sprite /graphics/fomorian/giant/weapon/battleaxe.png
+#basechance 2
+#sprite /graphics/asmegir/aesir/weapon/axe_battle.png
 #theme "iron"
-#enditem
-
-#newitem
-#id broadsword
-#gameid bronzebroadsword
-#sprite /graphics/fomorian/giant/weapon/sword_bronze.png
-#eliteversion elitebroadsword
-#theme "bronze"
+#needs hands hands_spear
+#troopweapon
 #enditem
 
 #newitem
 #id broadsword_iron
 #gameid 8
-#sprite /graphics/fomorian/giant/weapon/sword.png
-#eliteversion elitebroadsword
+#basechance 2
+#sprite /graphics/asmegir/aesir/weapon/sword_iron.png
+#eliteversion broadsword_iron
+#eliteversion broadsword_gold
 #theme "iron"
+#notfortier 3
 #enditem
 
 #newitem
-#id elitebroadsword
-#basechance 0.25
+#id broadsword_gold
+#basechance 0.5
 #gameid 474
-#sprite /graphics/fomorian/giant/weapon/elitesword.png
-#enditem
-
-#newitem
-#id spear
-#gameid 643
-#sprite /graphics/fomorian/giant/weapon/spear_bronze.png
-#theme "bronze"
+#sprite /graphics/asmegir/aesir/weapon/sword_gold.png
+#eliteversion broadsword_gold
+#theme "gold"
 #enditem
 
 #newitem
 #id spear_iron
 #gameid 1
-#sprite /graphics/fomorian/giant/weapon/spear.png
+#basechance 2
+#sprite /graphics/asmegir/aesir/weapon/spear_iron.png
+#eliteversion spear_iron
+#eliteversion spear_gold
 #theme "iron"
+#theme "formationfighter"
+#needs hands hands_spear
+#notfortier 3
+#enditem
+
+#newitem
+#id spear_gold
+#gameid 473
+#basechance 0.5
+#sprite /graphics/asmegir/aesir/weapon/spear_gold.png
+#eliteversion spear_gold
+#theme "gold"
+#theme "formationfighter"
+#needs hands hands_spear
+#enditem
+
+#newitem
+#id spear_long
+#gameid 28
+#basechance 2
+#sprite /graphics/asmegir/aesir/weapon/spear_long.png
+#eliteversion spear_long
+#eliteversion spear_gold
+#theme "iron"
+#theme "formationfighter"
+#needs hands hands_spear
+#notfortier 3
 #enditem
 
 #newitem
 #id trident
-#gameid 641
-#sprite /graphics/fomorian/giant/weapon/trident_bronze.png
-#theme "bronze"
+#gameid 3
+#sprite /graphics/asmegir/aesir/weapon/trident.png
+#theme "iron"
+#troopweapon
+#needs hands hands_spear
 #enditem
 
 #newitem
-#id trident_iron
-#gameid 3
-#sprite /graphics/fomorian/giant/weapon/trident.png
+#id trident_short
+#gameid 679
+#sprite /graphics/asmegir/aesir/weapon/trident.png
 #theme "iron"
+#theme "formationfighter"
+#needs hands hands_spear
+#enditem
+
+#newitem
+#id spetum
+#gameid 639
+#sprite /graphics/asmegir/aesir/weapon/spetum.png
+#theme "iron"
+#theme "formationfighter"
+#needs hands hands_spear
+#enditem
+
+#newitem
+#id maul
+#gameid 14
+#basechance 0.5
+#sprite /graphics/asmegir/aesir/weapon/maul.png
+#theme "iron"
+#troopweapon
+#needs hands hands_spear
+#enditem
+
+#newitem
+#id staff
+#gameid 7
+#basechance 0.5
+#sprite /graphics/asmegir/aesir/weapon/staff.png
+#eliteversion staff_magic
+#theme "wood"
+#troopweapon
+#needs hands hands_spear
+#notfortier 3
+#enditem
+
+#newitem
+#id staff_magic
+#gameid 238
+#basechance 0.125
+#sprite /graphics/asmegir/aesir/weapon/staff.png
+#theme "wood"
+#troopweapon
+#needs hands hands_spear
 #enditem

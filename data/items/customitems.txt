@@ -97,7 +97,7 @@
 #command "#enc 0"
 #command "#rcost 3"
 #command "#name 'Ice Studded Cuirass'"
-#command "#magic"
+#command "#magicarmor"
 #end
 
 #new customarmor
@@ -109,7 +109,7 @@
 #command "#enc 1"
 #command "#rcost 7"
 #command "#name 'Icicle Mail Cuirass'"
-#command "#magic"
+#command "#magicarmor"
 #end
 
 #new customarmor
@@ -121,7 +121,7 @@
 #command "#enc 0"
 #command "#rcost 9"
 #command "#name 'Ice Full Helmet'"
-#command "#magic"
+#command "#magicarmor"
 #end
 
 --- Argarthan stone armors (used for both granite and onyx)
@@ -452,7 +452,7 @@
 #command "#enc 1"
 #command "#rcost 4"
 #command "#name 'Blacksteel Shield'"
-#command "#magic"
+#command "#magicarmor"
 #command "#ironarmor"
 #end
 
@@ -465,7 +465,7 @@
 #command "#enc 2"
 #command "#rcost 5"
 #command "#name 'Blacksteel Kite Shield'"
-#command "#magic"
+#command "#magicarmor"
 #command "#ironarmor"
 #end
  
@@ -478,7 +478,7 @@
 #command "#enc 2"
 #command "#rcost 4"
 #command "#name 'Blacksteel Tower Shield'"
-#command "#magic"
+#command "#magicarmor"
 #command "#ironarmor"
 #end
 
@@ -491,7 +491,7 @@
 #command "#enc 0"
 #command "#rcost 4"
 #command "#name 'Blacksteel Half Helmet'"
-#command "#magic"
+#command "#magicarmor"
 #command "#ironarmor"
 #end
 
@@ -504,7 +504,7 @@
 #command "#enc 0"
 #command "#rcost 6"
 #command "#name 'Blacksteel Full Helmet'"
-#command "#magic"
+#command "#magicarmor"
 #command "#ironarmor"
 #end
 
@@ -518,7 +518,7 @@
 #command "#rcost 10"
 #command "#ironarmor"
 #command "#name 'Blacksteel Chain Cuirass'"
-#command "#magic"
+#command "#magicarmor"
 #end
 
 #new customarmor
@@ -531,7 +531,7 @@
 #command "#rcost 14"
 #command "#ironarmor"
 #command "#name 'Blacksteel Chain Hauberk'"
-#command "#magic"
+#command "#magicarmor"
 #end
 
 #new customarmor
@@ -544,7 +544,7 @@
 #command "#rcost 18"
 #command "#ironarmor"
 #command "#name 'Blacksteel Full Chain'"
-#command "#magic"
+#command "#magicarmor"
 #end
 
 #new customarmor
@@ -557,7 +557,7 @@
 #command "#rcost 16"
 #command "#ironarmor"
 #command "#name 'Blacksteel Plate Cuirass'"
-#command "#magic"
+#command "#magicarmor"
 #end
 
 #new customarmor
@@ -570,7 +570,7 @@
 #command "#rcost 21"
 #command "#ironarmor"
 #command "#name 'Blacksteel Plate Hauberk'"
-#command "#magic"
+#command "#magicarmor"
 #end
 
 #new customarmor
@@ -583,7 +583,7 @@
 #command "#rcost 26"
 #command "#ironarmor"
 #command "#name 'Blacksteel Full Plate'"
-#command "#magic"
+#command "#magicarmor"
 #end
 
 --- Generic enchanted armors
@@ -596,7 +596,7 @@
 #command "#enc 2"
 #command "#rcost 20"
 #command "#name 'Enchanted Scale Mail'"
-#command "#magic"
+#command "#magicarmor"
 #end
 
 #new customarmor
@@ -608,7 +608,7 @@
 #command "#enc 0"
 #command "#rcost 3"
 #command "#name 'Enchanted Buckler'"
-#command "#magic"
+#command "#magicarmor"
 #end
 
 #new customarmor
@@ -620,7 +620,7 @@
 #command "#enc 1"
 #command "#rcost 4"
 #command "#name 'Enchanted Shield'"
-#command "#magic"
+#command "#magicarmor"
 #end
 
 --- Generic enchanted weapons
@@ -737,9 +737,35 @@
 #end
 
 #new customweapon
+#name "goldencap"
+#armor
+#command "#type 6"
+#command "#prot 15"
+#command "#rcost 5"
+#command "#name 'Golden Cap'"
+#command "#magicarmor"
+#end
+
+#new customweapon
 #name "goldenhelmet"
-#command "#copyarmor 213"
+#armor
+#command "#type 6"
+#command "#prot 20"
 #command "#rcost 8"
+#command "#name 'Golden Helmet'"
+#command "#magicarmor"
+#end
+
+#new customweapon
+#name "goldenchainmail"
+#armor
+#command "#type 5"
+#command "#prot 20"
+#command "#def -3"
+#command "#enc 3"
+#command "#rcost 27"
+#command "#name 'Golden Chain Mail'"
+#command "#magicarmor"
 #end
 
 
@@ -1596,7 +1622,7 @@
 #command "#enc 2"
 #command "#rcost 12"
 #command "#name 'Ice Cuirass'"
-#command "#magic"
+#command "#magicarmor"
 #end
 
 #new customarmor
@@ -1608,7 +1634,7 @@
 #command "#enc 3"
 #command "#rcost 18"
 #command "#name 'Ice Hauberk'"
-#command "#magic"
+#command "#magicarmor"
 #end
 
 #new customarmor
@@ -1620,7 +1646,7 @@
 #command "#enc 1"
 #command "#rcost 6"
 #command "#name 'Ice Aegis'"
-#command "#magic"
+#command "#magicarmor"
 #end
 
 ---
@@ -1656,7 +1682,7 @@
 #command "#enc 0"
 #command "#rcost 2"
 #command "#name 'Basalt Cap'"
-#command "#magic"
+#command "#magicarmor"
 #end
 
 -- Should be deprecated everywhere in favor of id 211
@@ -1669,7 +1695,7 @@
 #command "#enc 0"
 #command "#rcost 2"
 #command "#name 'Meteorite Cap'"
-#command "#magic"
+#command "#magicarmor"
 #end
 
 --- Agarthan primary weapon javelin and rock
@@ -1747,7 +1773,7 @@
 #command "#enc 3"
 #command "#rcost 30"
 #command "#name 'Golden Plate Mail'"
-#command "#magic"
+#command "#magicarmor"
 #end
 
 #new customweapon
@@ -1810,7 +1836,7 @@
 #command "#enc 2"
 #command "#rcost 14"
 #command "#name 'Golden Cuirass'"
-#command "#magic"
+#command "#magicarmor"
 #end
 
 #new customarmor -- renamed Xibalba Armor of the Sun
@@ -1822,7 +1848,7 @@
 #command "#enc 3"
 #command "#rcost 20"
 #command "#name 'Golden Armor'"
-#command "#magic"
+#command "#magicarmor"
 #end
 
 #new customarmor
@@ -1834,7 +1860,7 @@
 #command "#enc 4"
 #command "#rcost 26"
 #command "#name 'Obsidian Armor'"
-#command "#magic"
+#command "#magicarmor"
 #end
 
 --- Bonus missle attacks for pachyderm howdahs

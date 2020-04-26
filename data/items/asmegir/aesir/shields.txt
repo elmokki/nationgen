@@ -1,37 +1,70 @@
 #newitem
-#id kiteshield
-#gameid 209
-#sprite /graphics/fomorian/giant/offhand/kiteshield.png
-#recolormask /graphics/fomorian/giant/offhand/kiteshield_recolormask.png
-#armor
-#theme "bronze"
-#enditem
-
-#newitem
-#id kiteshield
+#id kiteshield_iron1
 #gameid 3
-#sprite /graphics/fomorian/giant/offhand/kiteshield_iron.png
-#recolormask /graphics/fomorian/giant/offhand/kiteshield_recolormask.png
+#basechance 0.5
+#sprite /graphics/asmegir/aesir/offhand/shield_fomorian_iron.png
+#recolormask /graphics/asmegir/aesir/offhand/shield_fomorian_recolormask1.png
+#eliteversion kiteshield_iron1
+#eliteversion kiteshield_gold1
 #armor
 #theme "iron"
+#notfortier 3
 #enditem
 
 #newitem
-#id shield
-#gameid 2
-#sprite /graphics/fomorian/giant/offhand/shield.png
-#recolormask /graphics/fomorian/giant/offhand/shield_recolormask.png
-#basechance 2
+#id kiteshield_iron2
+#gameid 3
+#basechance 0.5
+#sprite /graphics/asmegir/aesir/offhand/shield_fomorian_iron.png
+#recolormask /graphics/asmegir/aesir/offhand/shield_fomorian_recolormask2.png
+#eliteversion kiteshield_iron2
+#eliteversion kiteshield_gold2
 #armor
-#theme "bronze"
+#theme "iron"
+#notfortier 3
 #enditem
 
 #newitem
-#id ironshield
+#id kiteshield_gold1
+#gameid 155
+#basechance 0.125
+#sprite /graphics/asmegir/aesir/offhand/shield_fomorian_gold.png
+#recolormask /graphics/asmegir/aesir/offhand/shield_fomorian_recolormask1.png
+#eliteversion kiteshield_gold1
+#armor
+#theme "gold"
+#enditem
+
+#newitem
+#id kiteshield_gold2
+#gameid 155
+#basechance 0.125
+#sprite /graphics/asmegir/aesir/offhand/shield_fomorian_gold.png
+#recolormask /graphics/asmegir/aesir/offhand/shield_fomorian_recolormask2.png
+#eliteversion kiteshield_gold2
+#armor
+#theme "gold"
+#enditem
+
+#newitem
+#id shield_iron
 #gameid 208
-#sprite /graphics/fomorian/giant/offhand/shield_iron.png
-#recolormask /graphics/fomorian/giant/offhand/shield_recolormask.png
 #basechance 2
+#sprite /graphics/asmegir/aesir/offhand/shield_iron.png
+#eliteversion shield_iron2
+#eliteversion shield_gold2
 #armor
 #theme "iron"
+#notfortier 3
 #enditem
+
+#newitem
+#id shield_gold
+#gameid 155
+#basechance 0.5
+#sprite /graphics/asmegir/aesir/offhand/shield_gold.png
+#eliteversion shield_gold2
+#armor
+#theme "gold"
+#enditem
+
