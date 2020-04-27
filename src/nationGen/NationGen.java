@@ -462,13 +462,20 @@ public class NationGen
 		}
 	}
 	
+	private String sanitizeForFilenames(String in) {
+		return in.toLowerCase()
+			.replaceAll(" ", "_")
+			.replaceAll("å", "a")
+			.replaceAll("ä", "a")
+			.replaceAll("ö", "o");
+	}
+	
 	// TODO: Support saving anywhere
 	public void write(List<Nation> nations)
 	{
-		String modDirectory = "nationgen_" + this.modname.replaceAll(" ", "_").toLowerCase();
+		String modDirectory = "nationgen_" + sanitizeForFilenames(this.modname);
 		
 		String modFilename = modDirectory + ".dm";
-		// nation.name.toLowerCase().replaceAll(" ", "_")
 		
 		FileUtil.createDirectory("/mods/" + modDirectory);
 		
@@ -595,7 +602,7 @@ public class NationGen
 	}
 	
 	private String getNationDirectory(String modDirectory, Nation nation) {
-		return modDirectory + "/" + nation.nationid + "-" + nation.name.toLowerCase().replaceAll(" ", "_");
+		return modDirectory + "/" + nation.nationid + "-" + sanitizeForFilenames(nation.name);
 	}
 	
 	private List<String> writeHideVanillaNationsLines(int nationcount)
