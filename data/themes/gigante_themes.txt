@@ -1,0 +1,99 @@
+-- Generic "blank" theme to make sure gigantes aren't always slavers
+#newtheme
+#name default
+#basechance 4
+#endtheme
+
+
+-- Demographic (mandatory)
+-- Weights: EA 0.5, MA 0.5, LA 1
+#newtheme
+#type hubris
+#name humble
+#basechance 0.5
+#chanceinc era 3 *2
+-- 40% H1/48% H2/12% H3 max priest level
+#racedefinition "#priest_H1_upgradechance 0.6"
+#racedefinition "#priest_H2_upgradechance 0.2"
+#racedefinition "#maxprimaryracetroops 4"
+#racedefinition "#maxthisracetroops_as_secondary 2"
+#racedefinition "#minsecondaryracetroops 2"
+#endtheme
+
+-- Weights: EA 1, MA 0.5, LA 0.5
+#newtheme
+#type hubris
+#name arrogant
+#basechance 0.5
+#chanceinc era 1 *2
+-- 60% H1/32% H2/8% H3 max priest level
+#racedefinition "#priest_H1_upgradechance 0.4"
+#racedefinition "#priest_H2_upgradechance 0.2"
+#racedefinition "#nosacreds"
+#racedefinition "#bonussacreds 1"
+#racedefinition "#maxprimaryracetroops 3"
+#racedefinition "#maxthisracetroops_as_secondary 2"
+#racedefinition "#minsecondaryracetroops 3"
+#racedefinition "#secondaryracesacredmod -10"
+#racedefinition "#unitcommand '#reclimit 1'"
+#racedefinition "#unitcommand '#minsizeleader 4'"
+#themeinc theme magic 2
+#endtheme
+
+-- Techlevel (mandatory)
+-- Weights: EA 4, MA 2, LA 1
+#newtheme
+#type techlevel
+#name bronze
+#basechance 4
+#chanceinc era 2 -2
+#chanceinc era 3 -3
+#themeinc theme iron *0.1
+#themeinc theme bronze *2
+#endtheme
+
+-- Weights: EA 1, MA 2, LA 4
+#newtheme
+#type techlevel
+#name iron
+#basechance 4
+#chanceinc era 1 -3
+#chanceinc era 2 -2
+#themeinc theme iron *2
+#themeinc theme bronze *0.1
+#endtheme
+
+
+-- Weights: EA 0.25, MA 0.25, LA 0.25
+#newtheme
+#type social
+#name slaver
+#basechance 1
+#chanceinc hastheme arrogant *16
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#themeinc theme slave *20
+#themeinc theme free *0.5
+#themeinc racename "Feudal human" *2
+#themeinc racename "Advanced human" *2
+#themeinc racename "Amazon human" *10
+#themeinc racename "Boreal human" *2
+#themeinc racename "Dynastic human" *2
+#themeinc racename "Imperial human" *2
+#themeinc racename "Austral human" *2
+#themeinc racename "Oriental human" *2
+#themeinc racename caelian *0.1
+#themeinc racename van *0.1
+#themeinc racename sidhe *0.1
+#themeinc racename tengu *0.1
+#themeinc racename zotz *0.1
+#themeinc racename illithid *0.1
+#secondaryracedefinition "#freetemplatefilter slavetemplate slave"
+#racedefinition "#secondaryracetroopmod 100"
+#racedefinition "#secondaryracemagemod -100"
+#endtheme
