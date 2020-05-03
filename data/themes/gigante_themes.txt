@@ -5,13 +5,13 @@
 #endtheme
 
 
--- Demographic (mandatory)
--- Weights: EA 0.5, MA 0.5, LA 1
+-- Hubris (mandatory)
+-- Weights: EA 1, MA 0.5, LA 0.5
 #newtheme
 #type hubris
 #name humble
 #basechance 0.5
-#chanceinc era 3 *2
+#chanceinc era 1 *2
 -- 40% H1/48% H2/12% H3 max priest level
 #racedefinition "#priest_H1_upgradechance 0.6"
 #racedefinition "#priest_H2_upgradechance 0.2"
@@ -20,12 +20,30 @@
 #racedefinition "#minsecondaryracetroops 2"
 #endtheme
 
--- Weights: EA 1, MA 0.5, LA 0.5
+-- Weights: EA 0.5, MA 1, LA 0.5
 #newtheme
 #type hubris
 #name arrogant
 #basechance 0.5
-#chanceinc era 1 *2
+#chanceinc era 2 *2
+-- 60% H1/32% H2/8% H3 max priest level
+#racedefinition "#priest_H1_upgradechance 0.4"
+#racedefinition "#priest_H2_upgradechance 0.2"
+#racedefinition "#maxprimaryracetroops 3"
+#racedefinition "#maxthisracetroops_as_secondary 2"
+#racedefinition "#minsecondaryracetroops 3"
+#racedefinition "#secondaryracesacredmod -10"
+#racedefinition "#unitcommand '#reclimit 2'"
+#racedefinition "#unitcommand '#minsizeleader 4'"
+#themeinc theme magic 1
+#endtheme
+
+-- Weights: EA 0.5, MA 0.5, LA 1
+#newtheme
+#type hubris
+#name impious
+#basechance 0.5
+#chanceinc era 3 *2
 -- 60% H1/32% H2/8% H3 max priest level
 #racedefinition "#priest_H1_upgradechance 0.4"
 #racedefinition "#priest_H2_upgradechance 0.2"
@@ -37,7 +55,7 @@
 #racedefinition "#secondaryracesacredmod -10"
 #racedefinition "#unitcommand '#reclimit 1'"
 #racedefinition "#unitcommand '#minsizeleader 4'"
-#themeinc theme magic 2
+#themeinc theme magic 10
 #endtheme
 
 -- Techlevel (mandatory)
@@ -64,12 +82,13 @@
 #endtheme
 
 
--- Weights: EA 0.25, MA 0.25, LA 0.25
+-- Weights: EA 0.2, MA 0.2, LA 0.2
 #newtheme
 #type social
 #name slaver
 #basechance 1
 #chanceinc hastheme arrogant *16
+#chanceinc hastheme impious *32
 #themeinc theme advanced *1
 #themeinc theme iron *1
 #themeinc theme bronze *1

@@ -408,6 +408,21 @@
 #command "#slash"
 #end
 
+#new customweapon
+#name greatbow_lowammo
+#command "#dmg 11"
+#command "#bowstr"
+#command "#range 50"
+#command "#ammo 4"
+#command "#rcost 3"
+#command "#flyspr 109 1"
+#command "#sound 14"
+#command "#name 'Great Bow'"
+#command "#pierce"
+#command "#twohanded"
+#command "#woodenweapon"
+#end
+
 --- Extra stone weapons
 #new customweapon
 #name "stonebattleaxe"

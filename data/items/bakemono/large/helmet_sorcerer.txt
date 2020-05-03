@@ -1,0 +1,55 @@
+#newitem
+#basechance 8
+#id barehead_ogre
+#gameid -1
+#armor
+#maxprot 12
+#theme "primitive"
+#theme "naked"
+#needstype hair black
+#tier1
+#notfortier2
+#notfortier3
+#enditem
+
+#newitem
+#basechance 8
+#id barehead_ogre_old
+#gameid -1
+#armor
+#maxprot 12
+#theme "primitive"
+#theme "naked"
+#needstype hair white
+#notfortier1
+#tier2
+#tier3
+#enditem
+
+#newitem
+#id kabuto_bakemono
+#gameid 132
+#sprite /graphics/ogre/helmet/kabuto.png
+#tag "eliteversion kabuto_bakemono"
+#tag "eliteversion kabuto_bakemono_elite"
+#armor
+#theme "iron"
+#minprot 14
+#tier1
+#tier2
+#notfortier3
+#enditem
+
+
+#newitem
+#id kabuto_bakemono_elite
+#gameid 132
+#sprite /graphics/ogre/helmet/kabuto_elite.png
+#tag "eliteversion kabuto_bakemono_elite"
+#armor
+#theme "iron"
+#minprot 14
+#notfortier1
+#notfortier2
+#tier3
+#enditem

@@ -12,7 +12,8 @@
 #load hands /data/items/bakemono/small/hands.txt
 #load armor /data/items/bakemono/small/armor_1h.txt
 #load helmet /data/items/bakemono/small/helmet.txt
-#load weapon /data/items/bakemono/small/weapon.txt
+#load weapon /data/items/bakemono/small/weapon_1h.txt
+#load legs /data/items/bakemono/small/legs.txt
 
 #maxunits 1
 
@@ -34,7 +35,8 @@
 #load hands /data/items/bakemono/small/hands.txt
 #load armor /data/items/bakemono/small/armor_1h.txt
 #load helmet /data/items/bakemono/small/helmet.txt
-#load weapon /data/items/bakemono/small/weapon.txt
+#load weapon /data/items/bakemono/small/weapon_1h.txt
+#load legs /data/items/bakemono/small/legs.txt
 
 #endpose
 
@@ -47,12 +49,13 @@
 #themeinc theme advanced *0
 #theme small_normal
 
-#load basesprite /data/items/bakemono/small/bases_1h_primitive.txt
+#load basesprite /data/items/bakemono/small/bases_2h_primitive.txt
 #load shadow /data/items/bakemono/small/shadow.txt
 #load hands /data/items/bakemono/small/hands.txt
 #load armor /data/items/bakemono/small/armor_2h.txt
 #load helmet /data/items/bakemono/small/helmet.txt
-#load weapon /data/items/bakemono/small/weapon.txt
+#load weapon /data/items/bakemono/small/weapon_2h.txt
+#load legs /data/items/bakemono/small/legs.txt
 
 #maxunits 1
 
@@ -69,12 +72,13 @@
 #themeinc theme primitive *0
 #theme small_elite
 
-#load basesprite /data/items/bakemono/small/bases_1h_advanced.txt
+#load basesprite /data/items/bakemono/small/bases_2h_advanced.txt
 #load shadow /data/items/bakemono/small/shadow.txt
 #load hands /data/items/bakemono/small/hands.txt
 #load armor /data/items/bakemono/small/armor_2h.txt
 #load helmet /data/items/bakemono/small/helmet.txt
-#load weapon /data/items/bakemono/small/weapon.txt
+#load weapon /data/items/bakemono/small/weapon_2h.txt
+#load legs /data/items/bakemono/small/legs.txt
 
 #endpose
 
@@ -88,12 +92,13 @@
 #themeinc theme advanced *0
 #theme small_elite
 
-#load basesprite /data/items/bakemono/small/bases_1h_primitive.txt
+#load basesprite /data/items/bakemono/small/bases_katana_primitive.txt
 #load shadow /data/items/bakemono/small/shadow.txt
 #load hands /data/items/bakemono/small/hands.txt
 #load armor /data/items/bakemono/small/armor_katana.txt
 #load helmet /data/items/bakemono/small/helmet.txt
-#load weapon /data/items/bakemono/small/weapon.txt
+#load weapon /data/items/bakemono/small/weapon_katana.txt
+#load legs /data/items/bakemono/small/legs.txt
 
 #endpose
 
@@ -107,12 +112,13 @@
 #themeinc theme primitive *0
 #theme small_elite
 
-#load basesprite /data/items/bakemono/small/bases_1h_advanced.txt
+#load basesprite /data/items/bakemono/small/bases_katana_advanced.txt
 #load shadow /data/items/bakemono/small/shadow.txt
 #load hands /data/items/bakemono/small/hands.txt
 #load armor /data/items/bakemono/small/armor_katana.txt
 #load helmet /data/items/bakemono/small/helmet.txt
-#load weapon /data/items/bakemono/small/weapon.txt
+#load weapon /data/items/bakemono/small/weapon_katana.txt
+#load legs /data/items/bakemono/small/legs.txt
 
 #endpose
 
@@ -126,7 +132,7 @@
 #themeinc theme advanced *0
 #theme small_normal
 
-#renderorder "shadow quiver cloakb basesprite armor cloakf bonusweapon weapon hands hair helmet"
+#renderorder "shadow quiver cloakb basesprite armor legs cloakf bonusweapon weapon hands hair helmet"
 
 #load basesprite /data/items/bakemono/small/bases_ranged_primitive.txt
 #load shadow /data/items/bakemono/small/shadow.txt
@@ -135,6 +141,7 @@
 #load helmet /data/items/bakemono/small/helmet.txt
 #load weapon /data/items/bakemono/small/bow.txt
 #load bonusweapon /data/items/bakemono/small/archerweapon.txt
+#load legs /data/items/bakemono/small/legs.txt
 
 #generateitem 1 bonusweapon
 
@@ -153,7 +160,7 @@
 #themeinc theme primitive *0
 #theme small_elite
 
-#renderorder "shadow quiver cloakb basesprite armor cloakf bonusweapon weapon hands hair helmet"
+#renderorder "shadow quiver cloakb basesprite armor legs cloakf bonusweapon weapon hands hair helmet"
 
 #load basesprite /data/items/bakemono/small/bases_ranged_advanced.txt
 #load shadow /data/items/bakemono/small/shadow.txt
@@ -162,6 +169,7 @@
 #load helmet /data/items/bakemono/small/helmet.txt
 #load weapon /data/items/bakemono/small/bow.txt
 #load bonusweapon /data/items/bakemono/small/archerweapon.txt
+#load legs /data/items/bakemono/small/legs.txt
 
 #generateitem 1 bonusweapon
 

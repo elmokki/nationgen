@@ -1,0 +1,93 @@
+--- Nothing
+
+#newitem
+#name "loincloth"
+#gameid -1
+#sprite /graphics/bakemono/small/armor/loincloth.png
+#eliteversion loincloth_tiger
+#theme naked
+#theme primitive
+#tier 1
+#notfortier 2
+#notfortier 3
+#armor
+#enditem
+
+#newitem
+#name "loincloth_tiger"
+#gameid -1
+#sprite /graphics/bakemono/small/armor/loincloth_tiger.png
+#theme naked
+#theme primitive
+#notfortier 1
+#tier 2
+#tier 3
+#armor
+#enditem
+
+#newitem
+#name "roninpants"
+#gameid -1
+#sprite /graphics/bakemono/small/armor/roninpants.png
+#theme naked
+#tier 1
+#notfortier 2
+#notfortier 3
+#armor
+#enditem
+
+
+--- Furs
+
+#newitem
+#name "furs"
+#gameid 44
+#sprite /graphics/bakemono/small/armor/furs_1h.png
+#tier 1
+#tier 2
+#tier 3
+#armor
+#enditem
+
+#newitem
+#name "robe_priest_medium"
+#gameid 158
+#sprite /graphics/bakemono/small/armor/caster/robe_demonpriest.png
+#recolormask /graphics/bakemono/small/armor/caster/robe_demonpriest_recolormask1.png
+#eliteversion robe_priest_light
+#eliteversion robe_priest_dark
+#theme advanced
+#notfortier 1
+#tier 2
+#tier 3
+#armor
+#enditem
+
+#newitem
+#name "robe_priest_light"
+#gameid 158
+#sprite /graphics/bakemono/small/armor/caster/robe_demonpriest.png
+#recolormask /graphics/bakemono/small/armor/caster/robe_demonpriest_recolormask2.png
+#eliteversion robe_priest_medium
+#eliteversion robe_priest_dark
+#theme advanced
+#notfortier 1
+#tier 2
+#tier 3
+#armor
+#enditem
+
+#newitem
+#name "robe_priest_dark"
+#gameid 158
+#sprite /graphics/bakemono/small/armor/caster/robe_demonpriest.png
+#recolormask /graphics/bakemono/small/armor/caster/robe_demonpriest_recolormask3.png
+#eliteversion robe_priest_light
+#eliteversion robe_priest_medium
+#theme advanced
+#notfortier 1
+#tier 2
+#tier 3
+#armor
+#enditem
+
