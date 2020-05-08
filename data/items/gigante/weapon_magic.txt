@@ -1,0 +1,249 @@
+
+#newitem
+#id golden_spear
+#gameid 473
+#sprite /graphics/gigante/weapon/spear_bronze.png
+#theme "magic"
+#basechance 0
+#theme bronze
+#renderprio 7
+#renderslot underlay
+#enditem
+
+#newitem
+#id golden_sword
+#gameid 474
+#sprite /graphics/gigante/weapon/magic/goldensword.png
+#theme "magic"
+#basechance 0
+#theme bronze
+#enditem
+
+#newitem
+#id cyclope_spear
+#gameid 733
+#sprite /graphics/gigante/weapon/spear_iron.png
+#theme "magic"
+#basechance 0
+#theme iron
+#renderprio 7
+#renderslot underlay
+#enditem
+
+#newitem
+#id cyclope_sword
+#gameid 733
+#sprite /graphics/gigante/weapon/sword_iron.png
+#theme "magic"
+#basechance 0
+#theme iron
+#enditem
+
+#newitem
+#id dawn_sword
+#gameid 520
+#sprite /graphics/gigante/weapon/magic/dawnblade.png
+#theme "magic"
+#basechance 0
+#enditem
+
+#newitem
+#id orichalcum_sword
+#gameid 718
+#sprite /graphics/gigante/weapon/magic/orichalcumblade.png
+#theme "magic"
+#basechance 0
+#enditem
+
+#newitem
+#id ice_sword
+#gameid 612
+#sprite /graphics/gigante/weapon/magic/iceblade.png
+#theme "magic"
+#theme "water"
+#basechance 0
+#enditem
+
+#newitem
+#id obsidian_sword
+#gameid 625
+#sprite /graphics/gigante/weapon/magic/obsidianblade.png
+#theme "magic"
+#theme "earth"
+#basechance 0
+#enditem
+
+#newitem
+#id obsidian_sword_poisoned
+#gameid 623
+#sprite /graphics/gigante/weapon/magic/obsidianblade.png
+#theme "magic"
+#theme "elite"
+#theme "earth"
+#theme "nature"
+#basechance 0
+#enditem
+
+#newitem
+#id bane_sword
+#gameid 42
+#sprite /graphics/gigante/weapon/magic/baneblade.png
+#theme "magic"
+#theme "elite"
+#theme "death"
+#basechance 0
+#enditem
+
+#newitem
+#id heretic_spear
+#gameid 722
+#sprite /graphics/gigante/weapon/spear_bronze.png
+#theme "magic"
+#theme "elite"
+#basechance 0
+#theme bronze
+#renderprio 7
+#renderslot underlay
+#enditem
+
+#newitem
+#id coral_spear
+#gameid 31
+#sprite /graphics/gigante/weapon/magic/coralspear.png
+#theme "magic"
+#theme water
+#basechance 0
+#renderprio 7
+#renderslot underlay
+#enditem
+
+#newitem
+#id coral_longspear
+#gameid 580
+#sprite /graphics/gigante/weapon/magic/corallongspear.png
+#theme "magic"
+#theme water
+#basechance 0
+#renderprio 7
+#renderslot underlay
+#enditem
+
+#newitem
+#id scourge
+#gameid 760
+#sprite /graphics/gigante/weapon/magic/scourgeofpower.png
+#theme "magic"
+#theme "elite"
+#command "rcost +6"
+#command "att -2"
+#basechance 0
+#theme bronze
+#enditem
+
+
+-- 2h weapons
+
+#newitem
+#id coral_glaive
+#gameid 46
+#sprite /graphics/gigante/weapon/magic/coralglaive.png
+#theme "magic"
+#theme water
+#basechance 0
+#needs hands 2h
+#troopweapon
+#enditem
+
+#newitem
+#id obsidian_glaive
+#gameid 426
+#sprite /graphics/gigante/weapon/magic/obsidianglaive.png
+#theme "magic"
+#theme earth
+#basechance 0
+#needs hands 2h
+#troopweapon
+#enditem
+
+#newitem
+#id bone_glaive
+#gameid 455
+#sprite /graphics/gigante/weapon/magic/boneglaive.png
+#theme "magic"
+#theme death
+#basechance 0
+#needs hands 2h
+#troopweapon
+#enditem
+
+#newitem
+#id bident
+#gameid 581
+#sprite /graphics/gigante/weapon/magic/bident.png
+#theme "magic"
+#basechance 0
+#needs hands 2h
+#troopweapon
+#theme bronze
+#enditem
+
+#newitem
+#id meteorite_trident
+#gameid 642
+#sprite /graphics/gigante/weapon/trident_iron.png
+#theme "magic"
+#basechance 0
+#needs hands 2h
+#troopweapon
+#theme iron
+#enditem
+
+#newitem
+#id baculus
+#gameid 745
+#sprite /graphics/gigante/weapon/magic/baculus.png
+#theme "magic"
+#theme "elite"
+#basechance 0
+#needs hands 2h
+#troopweapon
+#enditem
+
+#newitem
+#id blackhalberd
+#gameid 508
+#sprite /graphics/gigante/weapon/magic/blackhalberd.png
+#theme "magic"
+#theme "elite"
+#basechance 0
+#needs hands 2h
+#troopweapon
+#theme iron
+#enditem
+
+#newitem
+#id snakestaff
+#gameid 318
+#sprite /graphics/gigante/weapon/magic/snakestaff.png
+#theme "magic"
+#theme "nature"
+#theme "elite"
+#basechance 0
+#needs hands 2h
+#troopweapon
+#enditem
+
+#newitem
+#id holyscourge
+#gameid 402
+#sprite /graphics/gigante/weapon/magic/holyscourge.png
+#theme "magic"
+#theme "nature"
+#theme "elite"
+#command "rcost +4"
+#command "att -4"
+#basechance 0
+#needs hands 2h
+#troopweapon
+#theme iron
+#enditem
