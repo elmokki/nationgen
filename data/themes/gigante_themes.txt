@@ -21,42 +21,42 @@
 #endtheme
 
 -- Weights: EA 0.5, MA 1, LA 0.5
-#newtheme
-#type hubris
-#name arrogant
-#basechance 0.5
-#chanceinc era 2 *2
--- 60% H1/32% H2/8% H3 max priest level
-#racedefinition "#priest_H1_upgradechance 0.4"
-#racedefinition "#priest_H2_upgradechance 0.2"
-#racedefinition "#maxprimaryracetroops 3"
-#racedefinition "#maxthisracetroops_as_secondary 2"
-#racedefinition "#minsecondaryracetroops 3"
-#racedefinition "#secondaryracesacredmod -10"
-#racedefinition "#unitcommand '#reclimit 2'"
-#racedefinition "#unitcommand '#minsizeleader 4'"
-#themeinc theme magic 1
-#endtheme
-
--- Weights: EA 0.5, MA 0.5, LA 1
-#newtheme
-#type hubris
-#name impious
-#basechance 0.5
-#chanceinc era 3 *2
--- 60% H1/32% H2/8% H3 max priest level
-#racedefinition "#priest_H1_upgradechance 0.4"
-#racedefinition "#priest_H2_upgradechance 0.2"
-#racedefinition "#nosacreds"
-#racedefinition "#bonussacreds 1"
-#racedefinition "#maxprimaryracetroops 3"
-#racedefinition "#maxthisracetroops_as_secondary 2"
-#racedefinition "#minsecondaryracetroops 3"
-#racedefinition "#secondaryracesacredmod -10"
-#racedefinition "#unitcommand '#reclimit 1'"
-#racedefinition "#unitcommand '#minsizeleader 4'"
-#themeinc theme magic 10
-#endtheme
+-- #newtheme
+-- #type hubris
+-- #name arrogant
+-- #basechance 0.5
+-- #chanceinc era 2 *2
+-- -- 60% H1/32% H2/8% H3 max priest level
+-- #racedefinition "#priest_H1_upgradechance 0.4"
+-- #racedefinition "#priest_H2_upgradechance 0.2"
+-- #racedefinition "#maxprimaryracetroops 3"
+-- #racedefinition "#maxthisracetroops_as_secondary 2"
+-- #racedefinition "#minsecondaryracetroops 3"
+-- #racedefinition "#secondaryracesacredmod -10"
+-- #racedefinition "#unitcommand '#reclimit 2'"
+-- #racedefinition "#unitcommand '#minsizeleader 4'"
+-- #themeinc theme magic 1
+-- #endtheme
+-- 
+-- -- Weights: EA 0.5, MA 0.5, LA 1
+-- #newtheme
+-- #type hubris
+-- #name impious
+-- #basechance 0.5
+-- #chanceinc era 3 *2
+-- -- 60% H1/32% H2/8% H3 max priest level
+-- #racedefinition "#priest_H1_upgradechance 0.4"
+-- #racedefinition "#priest_H2_upgradechance 0.2"
+-- #racedefinition "#nosacreds"
+-- #racedefinition "#bonussacreds 1"
+-- #racedefinition "#maxprimaryracetroops 3"
+-- #racedefinition "#maxthisracetroops_as_secondary 2"
+-- #racedefinition "#minsecondaryracetroops 3"
+-- #racedefinition "#secondaryracesacredmod -10"
+-- #racedefinition "#unitcommand '#reclimit 1'"
+-- #racedefinition "#unitcommand '#minsizeleader 4'"
+-- #themeinc theme magic 10
+-- #endtheme
 
 -- Techlevel (mandatory)
 -- Weights: EA 4, MA 2, LA 1
@@ -66,7 +66,7 @@
 #basechance 4
 #chanceinc era 2 -2
 #chanceinc era 3 -3
-#themeinc theme iron *0.1
+#themeinc theme iron *0.01
 #themeinc theme bronze *2
 #endtheme
 
@@ -78,7 +78,7 @@
 #chanceinc era 1 -3
 #chanceinc era 2 -2
 #themeinc theme iron *2
-#themeinc theme bronze *0.1
+#themeinc theme bronze *0.01
 #endtheme
 
 

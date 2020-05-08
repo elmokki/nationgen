@@ -95,6 +95,13 @@
 #power 3
 #end
 
+#new
+#name "berserkonbless"
+#basechance 0
+#command "#blessbers"
+#chanceinc "personalcommand #berserk 0.5"
+#end
+
 -- #new
 -- #name "undyinglowest"
 -- #type "undying"
@@ -184,7 +191,7 @@
 
 #new
 #name "deathrec"
-#type "chaosrec"
+#type "deathrec"
 #basechance 0.1
 #command "#deathrec %cost10"
 #chanceinc "command #deathrec 100"
@@ -196,7 +203,7 @@
 
 #new
 #name "deathrec_high"
-#type "chaosrec"
+#type "deathrec"
 #basechance 0.1
 #command "#deathrec %cost15"
 #chanceinc "command #deathrec 25"
@@ -219,14 +226,36 @@
 #new
 #name "chaospower"
 #basechance 0.1
+#type scalepower
 #command "#chaospower 1"
 #chanceinc "command #chaosrec 100"
 #chanceinc "command #chaospower 100"
 #end
 
 #new
+#name "orderpower"
+#basechance 0.1
+#type scalepower
+#command "#chaospower -1"
+#chanceinc "command below #chaospower 0 100"
+#chanceinc "command #undisciplined *0"
+#chanceinc "command #formationfighter 5"
+#chanceinc "command #chaosrec *0"
+#chanceinc "command above #chaospower 0 *0"
+#end
+
+#new
+#name "slothpower"
+#basechance 0.1
+#type scalepower
+#command "#slothpower 1"
+#chanceinc "command #slothpower 100"
+#end
+
+#new
 #name "deathpower"
 #basechance 0.1
+#type scalepower
 #command "#deathpower 1"
 #chanceinc "command #deathrec 100"
 #chanceinc "command above #deathpower 0 100"
@@ -242,6 +271,7 @@
 #new
 #name "growthpower"
 #basechance 0.1
+#type scalepower
 #command "#deathpower -1"
 #chanceinc "command below #deathpower 0 100"
 #chanceinc "command #springpower 5"
@@ -621,6 +651,34 @@
 #end
 
 #new
+#type "seasonpower"
+#name "turningyear-low"
+#basechance 0.1
+#chanceinc "magic air 0.25"
+#chanceinc "magic fire 0.25"
+#chanceinc "magic earth 0.25"
+#chanceinc "magic water 0.25"
+#chanceinc "command #undead *0"
+#chanceinc "command #demon *0"
+#command "#yearturn 1"
+#command "#gcost +1"
+#end
+
+#new
+#type "seasonpower"
+#name "turningyear-high"
+#basechance 0.05
+#chanceinc "magic air 0.05"
+#chanceinc "magic fire 0.05"
+#chanceinc "magic earth 0.05"
+#chanceinc "magic water 0.05"
+#chanceinc "command #undead *0"
+#chanceinc "command #demon *0"
+#command "#yearturn 2"
+#command "#gcost +3"
+#end
+
+#new
 #name "darkpower"
 #basechance 0.0
 #chanceinc "command #darkvision 0.05"
@@ -664,6 +722,13 @@
 #command "#gcost +8"
 #power 2
 #tag "path death"
+#end
+
+#new
+#name "dompower"
+#basechance 0.1
+#command "#dompower +1"
+#command "#rpcost +5"
 #end
 
 #new

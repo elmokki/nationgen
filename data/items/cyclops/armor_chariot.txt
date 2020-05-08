@@ -1,0 +1,284 @@
+--- No armor
+#new
+#name naked
+#gameid -1
+#basechance 0.5
+#armor
+#theme naked
+#theme primitive
+#end
+
+#new
+#name furs
+#gameid 44
+#basechance 2
+#sprite /graphics/cyclops/armor/furs.png
+#armor
+#theme primitive
+#end
+
+
+--- Leather
+#newitem
+#name "simple leather cuirass"
+#gameid 5
+#sprite /graphics/cyclops/armor/cuirass_leather_simple.png
+#armor
+#theme leather
+#enditem
+
+#newitem
+#name "leather cuirass"
+#gameid 5
+#sprite /graphics/cyclops/armor/cuirass_leather.png
+#recolormask /graphics/cyclops/armor/plate_recolormask.png
+#armor
+#theme leather
+#theme advanced
+#enditem
+
+#newitem
+#name "leather hauberk"
+#gameid 10
+#sprite /graphics/cyclops/armor/hauberk_leather.png
+#recolormask /graphics/cyclops/armor/plate_recolormask.png
+#armor
+#theme leather
+#theme advanced
+#enditem
+
+
+--- Scale
+#newitem
+#name "bronze scale cuirass"
+#gameid 142
+#sprite /graphics/cyclops/armor/scale_cuirass_bronze.png
+#armor
+#theme bronze
+#eliteversion "gold scale cuirass bronze"
+#enditem
+
+#newitem
+#name "bronze scale hauberk"
+#gameid 136
+#sprite /graphics/cyclops/armor/scale_hauberk_bronze.png
+#armor
+#theme bronze
+#eliteversion "gold scale hauberk bronze"
+#enditem
+
+#newitem
+#name "iron scale cuirass"
+#gameid 7
+#sprite /graphics/cyclops/armor/scale_cuirass_iron.png
+#armor
+#theme iron
+#eliteversion "gold scale cuirass iron"
+#enditem
+
+#newitem
+#name "iron scale hauberk"
+#gameid 12
+#sprite /graphics/cyclops/armor/scale_hauberk_iron.png
+#armor
+#theme iron
+#eliteversion "gold scale hauberk iron"
+#enditem
+
+#newitem
+#name "gold scale cuirass bronze"
+#gameid 142
+#sprite /graphics/cyclops/armor/scale_cuirass_gold.png
+#armor
+#theme bronze
+#enditem
+
+#newitem
+#name "gold scale hauberk bronze"
+#gameid 136
+#sprite /graphics/cyclops/armor/scale_hauberk_gold.png
+#armor
+#theme bronze
+#enditem
+
+#newitem
+#name "iron scale cuirass"
+#gameid 7
+#sprite /graphics/cyclops/armor/scale_cuirass_gold.png
+#armor
+#theme iron
+#enditem
+
+#newitem
+#name "gold scale hauberk iron"
+#gameid 12
+#sprite /graphics/cyclops/armor/scale_hauberk_gold.png
+#armor
+#theme iron
+#enditem
+
+#newitem -- full scale
+#name goldscalemail
+#gameid 196
+#sprite /graphics/cyclops/armor/scale_full_gold.png
+#armor
+#basechance 0.5
+#theme sacred
+#themeinc theme silver *0.01
+#enditem
+
+
+-- Plate
+#newitem
+#name "simple bronze cuirass"
+#gameid 100
+#sprite /graphics/cyclops/armor/cuirass_simple_bronze.png
+#armor
+#theme bronze
+#enditem
+
+#newitem
+#name "bronze cuirass"
+#gameid 100
+#sprite /graphics/cyclops/armor/plate_cuirass_bronze.png
+#recolormask /graphics/cyclops/armor/plate_recolormask.png
+#armor
+#theme bronze
+#theme advanced
+#eliteversion "gold cuirass bronze"
+#enditem
+
+#newitem
+#name "bronze hauberk"
+#gameid 101
+#sprite /graphics/cyclops/armor/plate_hauberk_bronze.png
+#recolormask /graphics/cyclops/armor/plate_recolormask.png
+#armor
+#theme bronze
+#theme advanced
+#eliteversion "gold hauberk bronze"
+#enditem
+
+#newitem
+#name "simple iron cuirass"
+#gameid 7
+#sprite /graphics/cyclops/armor/cuirass_simple_iron.png
+#armor
+#theme iron
+#enditem
+
+#newitem
+#name "iron cuirass"
+#gameid 7
+#sprite /graphics/cyclops/armor/plate_cuirass_iron.png
+#recolormask /graphics/cyclops/armor/plate_recolormask.png
+#armor
+#theme iron
+#theme advanced
+#eliteversion "gold cuirass iron"
+#enditem
+
+#newitem
+#name "iron hauberk"
+#gameid 12
+#sprite /graphics/cyclops/armor/plate_hauberk_iron.png
+#recolormask /graphics/cyclops/armor/plate_recolormask.png
+#armor
+#theme iron
+#theme advanced
+#eliteversion "gold hauberk iron"
+#enditem
+
+#newitem
+#name "gold cuirass bronze"
+#gameid 100
+#sprite /graphics/cyclops/armor/plate_cuirass_gold.png
+#recolormask /graphics/cyclops/armor/plate_recolormask.png
+#armor
+#theme bronze
+#theme advanced
+#theme elite
+#eliteversion gleamingcuirass
+#enditem
+
+#newitem
+#name "gold hauberk bronze"
+#gameid 136
+#sprite /graphics/cyclops/armor/plate_hauberk_gold.png
+#recolormask /graphics/cyclops/armor/plate_recolormask.png
+#armor
+#theme bronze
+#theme advanced
+#theme elite
+#eliteversion gleaminghauberk
+#enditem
+
+#newitem
+#name "gold cuirass iron"
+#gameid 7
+#sprite /graphics/cyclops/armor/plate_cuirass_gold.png
+#recolormask /graphics/cyclops/armor/plate_recolormask.png
+#armor
+#theme iron
+#theme advanced
+#theme elite
+#eliteversion cyclopecuirass
+#enditem
+
+#newitem
+#name "gold hauberk iron"
+#gameid 12
+#sprite /graphics/cyclops/armor/plate_hauberk_gold.png
+#recolormask /graphics/cyclops/armor/plate_recolormask.png
+#armor
+#theme iron
+#theme advanced
+#theme elite
+#eliteversion cyclopehauberk
+#enditem
+
+#newitem
+#name cyclopecuirass
+#gameid 245
+#sprite /graphics/cyclops/armor/plate_cuirass_iron.png
+#recolormask /graphics/cyclops/armor/plate_recolormask.png
+#armor
+#theme advanced
+#theme sacred
+#themeinc theme gold *0.01
+#eliteversion cyclopehauberk
+#enditem
+
+#newitem
+#name cyclopehauberk
+#gameid 246
+#sprite /graphics/cyclops/armor/plate_hauberk_iron.png
+#recolormask /graphics/cyclops/armor/plate_recolormask.png
+#armor
+#theme advanced
+#theme sacred
+#themeinc theme gold *0.01
+#enditem
+
+#newitem
+#name gleamingcuirass
+#gameid 236
+#sprite /graphics/cyclops/armor/plate_cuirass_gold.png
+#recolormask /graphics/cyclops/armor/plate_recolormask.png
+#armor
+#theme advanced
+#theme sacred
+#themeinc theme silver *0.01
+#eliteversion gleaminghauberk
+#enditem
+
+#newitem
+#name gleaminghauberk
+#gameid 237
+#sprite /graphics/cyclops/armor/plate_hauberk_gold.png
+#recolormask /graphics/cyclops/armor/plate_recolormask.png
+#armor
+#theme advanced
+#theme sacred
+#themeinc theme silver *0.01
+#enditem
