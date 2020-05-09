@@ -1,0 +1,75 @@
+
+-------- Serf infantry
+#newpose
+#name "serf infantry"
+#role "infantry"
+
+#basechance 10
+#primaryraceonly
+
+#renderorder "shadow weapon cloakb mount basesprite legs shirt armor cloakf bonusweapon offhandw hands beard hair helmet offhanda overlay extra1 extra2 extra3"
+
+#freetemplatefilter slavetemplate serf
+#maxvarieties 1
+#maxunits 1
+#themeinc theme female *0.001
+
+#load basesprite /data/items/nordic/serf/bases.txt
+#load shadow /data/items/nordic/generic/shadow.txt
+
+#load hands /data/items/human/archer/humanhands.txt
+
+#load beard /data/items/nordic/generic/beard.txt 0 3
+#load shirt /data/items/nordic/serf/shirt.txt
+#load hair /data/items/nordic/generic/hair.txt 0 3
+
+#load armor /data/items/nordic/serf/armor.txt
+#load helmet /data/items/nordic/serf/helmet.txt
+#load legs /data/items/nordic/serf/legs.txt
+
+#load weapon /data/items/nordic/serf/weapon.txt
+#load offhand /data/items/nordic/normal/shields.txt
+
+#generateitem 1 hair
+#generateitem 1 beard
+
+#endpose
+
+
+-------- Serf archer
+#newpose
+#name "serf archer"
+#role "ranged"
+
+#primaryraceonly
+
+#renderorder "shadow quiver cloakb mount basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands beard hair helmet offhanda overlay extra1 extra2 extra3"
+
+#freetemplatefilter slavetemplate serf
+#maxvarieties 1
+#maxunits 1
+#themeinc theme female *0.001
+
+#load basesprite /data/items/nordic/serf/bases.txt
+#load shadow /data/items/nordic/generic/shadow.txt
+
+#load hands /data/items/human/archer/humanhands.txt
+
+#load beard /data/items/nordic/generic/beard.txt 0 3
+#load shirt /data/items/nordic/serf/shirt.txt
+#load hair /data/items/nordic/generic/hair.txt 0 3
+
+#load armor /data/items/nordic/serf/armor.txt
+#load helmet /data/items/nordic/serf/helmet.txt
+#load legs /data/items/nordic/serf/legs.txt
+
+#load weapon /data/items/nordic/ranged/bows.txt
+#load bonusweapon /data/items/nordic/ranged/archerweapon.txt
+#load quiver /data/items/human/archer/humanbonusranged.txt
+
+#generateitem 1 hair
+#generateitem 1 beard
+#generateitem 1 bonusweapon
+
+#endpose
+

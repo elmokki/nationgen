@@ -31,8 +31,8 @@
 #unitcommand "#prec 12"
 #unitcommand "#mapmove 14"
 #unitcommand "#ap 13"
-#unitcommand "#illusion"
-#unitcommand "#stealthy 0"
+--#unitcommand "#illusion"
+--#unitcommand "#stealthy 0"
 #unitcommand "#maxage 1000"
 #unitcommand "#twiceborn 2190"
 
@@ -50,8 +50,9 @@
 
 #chanceinc "hasprimaryrace 0.225"
 #chanceinc "primaryrace abysian *0.1"
-#chanceinc "primaryrace caelian *4"
-#chanceinc "primaryrace 'Boreal human' *4"
+#chanceinc "primaryrace caelian *2"
+#chanceinc "primaryrace asmeg *2"
+#chanceinc "primaryrace 'Boreal human' *5"
 #chanceinc "primaryrace vaetti *0.5"
 #chanceinc "primaryrace jotun *0.1"
 

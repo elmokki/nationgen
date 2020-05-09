@@ -3,11 +3,25 @@
 #name "slave"
 #type slave
 #command "#slave"
-#command "#mor -1"
 #command "#gcost *0.9"
+#command "#mor -1"
 #command "#att -1"
 #command "#def -1"
 #theme slave
+#end
+
+#new
+#name "serf"
+#type serf
+#command "#gcost *0.8"
+#command "#mor -2"
+#command "#att -1"
+#command "#def -1"
+#command "#mapmove -2"
+#theme serf
+#theme militia
+#cannot_be_commander
+#onlyfilter
 #end
 
 #new
