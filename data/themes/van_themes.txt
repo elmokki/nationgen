@@ -62,6 +62,15 @@
 #endtheme
 
 -- Social themes
+-- Serf warriors if not a secondary race and doesn't have slaves
+#newtheme
+#type social
+#name serfs
+#basechance 4
+#chanceinc hasprimaryrace *0
+#racedefinition "#pose borealserfs"
+#endtheme
+
 -- Weights: EA 0, MA 2, LA 4
 #newtheme
 #type social

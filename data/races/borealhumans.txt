@@ -12,11 +12,12 @@
 #pose borealtroops
 #pose borealserfs
 
-#racethemes van_themes
+#racethemes boreal_themes
+#freetheme demographic
 
--- 40% H1/48% H2/12% H3 max priest level
-#priest_H1_upgradechance 0.6
-#priest_H2_upgradechance 0.2
+-- 30% H1/40% H2/30% H3 max priest level
+#priest_H1_upgradechance 0.7
+#priest_H2_upgradechance 0.43
 
 #longsyllables /data/names/nations/nordic/longsyllables.txt
 #shortsyllables /data/names/nations/nordic/shortsyllables.txt
@@ -36,9 +37,10 @@
 
 #chanceinc "primaryrace abysian *0.1"
 #chanceinc "primaryrace caelian *2"
-#chanceinc "primaryrace vaetti *2"
-#chanceinc "primaryrace van *4"
-#chanceinc "primaryrace jotun *4"
+#chanceinc "primaryrace vaetti *2.5"
+#chanceinc "primaryrace van *5"
+#chanceinc "primaryrace jotun *5"
+#chanceinc "primaryrace asmeg *5"
 
 #theme boreal
 #boreal

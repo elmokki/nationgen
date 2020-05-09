@@ -6,7 +6,7 @@
 
 #renderorder "shadow cloakb mount basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands beard hair helmet offhanda overlay extra1 extra2 extra3"
 
-#load basesprite /data/items/nordic/normal/bases.txt
+#load basesprite /data/items/nordic/normal/bases_human.txt
 #load shadow /data/items/nordic/generic/shadow.txt
 
 #load hands /data/items/human/normal/humanhands.txt 0 -3
@@ -45,7 +45,7 @@
 
 #baseitemslot feet 0
 
-#load basesprite /data/items/nordic/normal/bases.txt
+#load basesprite /data/items/nordic/normal/bases_human.txt
 
 #load hands /data/items/human/normal/humanhands.txt 0 -3
 
@@ -58,7 +58,7 @@
 
 #load armor /data/items/nordic/normal/armor.txt
 #load helmet /data/items/nordic/generic/helmet.txt
-#load mount /data/items/nordic/mounted/mounts.txt 5 -13
+#load mount /data/items/human/human_mounted/humanmounts.txt 5 -13
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
 
 #load weapon /data/items/nordic/mounted/humanweapon.txt 0 -3
@@ -78,4 +78,43 @@
 
 #generateitem 1 hair
 #generateitem 1 beard
+#endpose
+
+-------- Archer
+#newpose
+#name "archer"
+#role "ranged"
+#role "scout"
+
+#primaryraceonly
+
+#renderorder "shadow quiver cloakb mount basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands beard hair helmet offhanda overlay extra1 extra2 extra3"
+
+#maxvarieties 1
+#maxunits 1
+
+#load basesprite /data/items/nordic/serf/bases.txt
+#load shadow /data/items/nordic/generic/shadow.txt
+
+#load hands /data/items/human/archer/humanhands.txt
+
+#load cloakf /data/items/human/normal/humancloakf.txt
+#load cloakb /data/items/human/normal/humancloakb.txt
+
+#load beard /data/items/nordic/generic/beard.txt 0 3
+#load shirt /data/items/nordic/ranged/shirt.txt
+#load hair /data/items/nordic/generic/hair.txt 0 3
+
+#load armor /data/items/nordic/serf/armor.txt
+#load helmet /data/items/nordic/generic/helmet.txt 0 3
+#load legs /data/items/nordic/generic/legs.txt
+
+#load weapon /data/items/nordic/ranged/bows.txt
+#load bonusweapon /data/items/nordic/ranged/archerweapon.txt
+#load quiver /data/items/human/archer/humanbonusranged.txt
+
+#generateitem 1 hair
+#generateitem 1 beard
+#generateitem 1 bonusweapon
+
 #endpose
