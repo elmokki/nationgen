@@ -1496,13 +1496,13 @@ public class Unit {
 		}
 		//lines.add("#descr \"" + desc + "\"");
 		
+		// Write commands before weapons/armor so that #clearweapons/#cleararmor (after #copystats) doesn't clear them
+		lines.addAll(writeCommandLines());
 		
 		// Write all instead of just some stuff (14.3.2014)
 		slotmap.items()
 			.filter(i -> Integer.parseInt(i.id) > 0)
 			.forEach(i -> lines.add(writeSlotLine(i)));
-		
-		lines.addAll(writeCommandLines());
 		
 		lines.add("#end");
 		lines.add("");
