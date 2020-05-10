@@ -243,12 +243,45 @@
 ----------
 
 #new
-#name "Norse spells"
+#name "Norse spells (Van)"
 #spell "Awaken Draugar"
 #spell "Summon Valkyries"
+#spell "Brood of Garm"
+#spell "Summon Dwarf of the Four Directions"
 #basechance 0
-#chanceinc nationtag nordic 1
-#chanceinc hasthemetheme nordic 1
+#chanceinc nationtag boreal 1
+#chanceinc hasthemetheme boreal 1
+#chanceinc primaryrace not "Van" *0
+#chanceinc random 0.25 *0
+#end
+
+#new
+#name "Norse spells (Jotun/Vaetti)"
+#spell "Awaken Jotun Draugar"
+#spell "Brood of Garm"
+#spell "Seith Curse"
+#spell "Illwinter"
+#spell "Summon Rimvaettir"
+#spell "Winter's Call"
+#spell "Summon Dwarf of the Four Directions"
+#basechance 0
+#chanceinc nationtag boreal 1
+#chanceinc hasthemetheme boreal 1
+#chanceinc primaryrace not "Vaetti" AND primaryrace not "Jotun" *0
+#chanceinc random 0.25 *0
+#end
+
+#new
+#name "Norse spells (generic)"
+#spell "Summon Valkyries"
+#spell "Brood of Garm"
+#spell "Summon Glosos"
+#spell "Seith Curse"
+#spell "Summon Dwarf of the Four Directions"
+#basechance 0
+#chanceinc nationtag boreal 1
+#chanceinc hasthemetheme boreal 1
+#chanceinc primaryrace "Van" OR primaryrace "Vaetti" OR primaryrace "Jotun"  *0
 #chanceinc random 0.25 *0
 #end
 

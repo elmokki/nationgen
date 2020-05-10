@@ -1,0 +1,34 @@
+#newpose
+#name "bakemono sorcerer"
+#role "mage"
+
+#subrace "dai-bakemono"
+#theme big_elite
+
+#renderorder "shadow bonusweapon cloakb basesprite shirt armor sash weapon offhandw hands cloakf hair helmet offhanda"
+
+#load basesprite /data/items/ogre/bases_obakemono.txt
+#load shadow /data/items/ogre/shadow.txt
+#load hands /data/items/ogre/hands.txt
+
+#load cloakf /data/items/ogre/cloakf_obakemono.txt
+#load cloakb /data/items/ogre/cloakb_obakemono.txt
+#load armor /data/items/ogre/armor_obakemono.txt
+#load armor /data/items/ogre/robes.txt
+#load helmet /data/items/bakemono/large/helmet_sorcerer.txt
+
+#load weapon /data/items/ogre/weapon_obakemono.txt
+#load weapon /data/items/ogre/staves.txt
+#load offhand /data/items/ogre/offhand_obakemono.txt
+
+#load hair /data/items/ogre/hair.txt
+#load shirt /data/items/ogre/shirt.txt
+#load sash /data/items/ogre/sash_bakemonocasters.txt
+
+#generateitem 1 sash
+
+#notfortier 1
+#notfortier 2
+#tier 3
+
+#endpose

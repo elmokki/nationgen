@@ -41,26 +41,26 @@
 #endtheme
 
 -- Mixed bakemono (few small)
-#newtheme
-#type demographic
-#name mixed_larger
-#basechance 2
-#themeinc theme small_elite *0.001
-#themeinc theme small_normal *1
-#themeinc theme big_elite *2
-#themeinc theme big_normal *1
-#endtheme
+--#newtheme
+--#type demographic
+--#name mixed_larger
+--#basechance 2
+--#themeinc theme small_elite *0.001
+--#themeinc theme small_normal *1
+--#themeinc theme big_elite *2
+--#themeinc theme big_normal *1
+--#endtheme
 
 -- All big bakemono 
-#newtheme
-#type demographic
-#name large
-#basechance 1
-#themeinc theme small_elite *0.001
-#themeinc theme small_normal *0.001
-#themeinc theme big_elite *2
-#themeinc theme big_normal *1
-#endtheme
+--#newtheme
+--#type demographic
+--#name large
+--#basechance 1
+--#themeinc theme small_elite *0.001
+--#themeinc theme small_normal *0.001
+--#themeinc theme big_elite *2
+--#themeinc theme big_normal *1
+--#endtheme
 
 
 -- Dimorphism themes (mandatory)
@@ -80,7 +80,7 @@
 #newtheme
 #type dimorphism
 #name small_large
-#basechance 1
+#basechance 3
 #themeinc theme small-sho *1
 #themeinc theme medium-sho *0
 #themeinc theme dai-medium *0

@@ -1,0 +1,110 @@
+---- Primitive stuff
+#newitem
+#id spear_stone
+#gameid 373
+#sprite /graphics/cyclops/weapon/spear_iron.png
+#theme stone
+#theme wood
+#theme primitive
+#needs hands hands_staff
+#enditem
+
+#newitem
+#id staff
+#gameid 7
+#sprite /graphics/cyclops/weapon/staff_plain.png
+#theme wood
+#theme primitive
+#needs hands hands_staff
+#troopweapon
+#enditem
+
+#newitem
+#id crook
+#gameid 7
+#sprite /graphics/cyclops/weapon/staff_crook.png
+#theme wood
+#theme peasant
+#needs hands hands_staff
+#troopweapon
+#enditem
+
+-- Moreso forged stuff
+#newitem
+#id greataxe
+#gameid 18
+#sprite /graphics/cyclops/weapon/battleaxe_iron.png
+#theme iron
+#needs hands hands_staff
+#troopweapon
+#enditem
+
+#newitem
+#id greataxe_bronze
+#gameid 698
+#sprite /graphics/cyclops/weapon/battleaxe_bronze.png
+#theme bronze
+#needs hands hands_staff
+#troopweapon
+#enditem
+
+#newitem
+#id spear
+#gameid 1
+#sprite /graphics/cyclops/weapon/spear_iron.png
+#theme iron
+#theme wood
+#needs hands hands_staff
+#enditem
+
+#newitem
+#id spear_bronze
+#gameid 643
+#sprite /graphics/cyclops/weapon/spear_bronze.png
+#theme bronze
+#theme wood
+#needs hands hands_staff
+#enditem
+
+#newitem
+#id longspear
+#gameid 28
+#sprite /graphics/cyclops/weapon/spear_long_iron.png
+#theme iron
+#theme wood
+#needs hands hands_staff
+#enditem
+
+#newitem
+#id longspear_bronze
+#gameid 644
+#sprite /graphics/cyclops/weapon/spear_long_bronze.png
+#theme bronze
+#theme wood
+#needs hands hands_staff
+#enditem
+
+---------------------- elite stuff (maybe break this stuff out into seperate files? ...for now, no.)
+
+#newitem
+#id spear_cyclope
+#gameid 733
+#sprite /graphics/cyclops/weapon/spear_iron.png
+#theme iron
+#theme advanced
+#theme sacred
+#needs hands hands_staff
+#theme silver
+#enditem
+
+#newitem
+#id spear_gleaming
+#gameid 473
+#sprite /graphics/cyclops/weapon/spear_bronze.png
+#theme bronze
+#theme advanced
+#theme sacred
+#theme elite
+#needs hands hands_staff
+#theme gold
+#enditem

@@ -3,25 +3,24 @@
 --- Mage (tier 2-3)
 #newpose
 #role "mage"
-#name "Tier 2-3 mages"
+#name "Tier 2-3 mounted mages"
 #renderorder "shadow cloakb mount basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands beard hair helmet offhanda overlay extra1 extra2 extra3"
-#load basesprite /data/items/nordic/normal/bases.txt
 #warriormage
 
 #baseitemslot feet 0
 
+#load basesprite /data/items/nordic/normal/bases_human.txt
 #load hands /data/items/human/normal/humanhands.txt 0 -3
 
 #load cloakf /data/items/human/normal/humancloakf.txt 0 -3
 #load cloakb /data/items/human/normal/humancloakb.txt 0 -3
 
-#load beard /data/items/nordic/generic/beard.txt
 #load shirt /data/items/nordic/normal/shirt.txt
-#load hair /data/items/nordic/generic/hair.txt
+#load hair /data/items/nordic/caster/hair_human.txt 0 -3
 
 #load armor /data/items/nordic/caster/mountedarmor.txt
 #load helmet /data/items/nordic/caster/mountedhelmets.txt 0 -3
-#load mount /data/items/nordic/mounted/mounts.txt 5 -13
+#load mount /data/items/human/human_mounted/humanmounts.txt 5 -13
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
 
 #load weapon /data/items/nordic/caster/mountedweapons.txt 0 -3
@@ -39,62 +38,26 @@
 #tier 2
 #tier 3
 
-
 #generateitem 1 hair
-#generateitem 1 beard
-#endpose
-
---- Mage (tier 1)
-#newpose
-#name "Tier 1 mages"
-#renderorder "shadow cloakb mount basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands beard hair helmet offhanda overlay extra1 extra2 extra3"
-#role "mage"
-#load basesprite /data/items/nordic/normal/bases.txt
-#load shadow /data/items/nordic/generic/shadow.txt
-
-#load hands /data/items/human/normal/humanhands.txt 0 -3
-
-#load cloakf /data/items/human/normal/humancloakf.txt 0 -3
-#load cloakb /data/items/human/normal/humancloakb.txt 0 -3
-
-#load beard /data/items/nordic/generic/beard.txt
-#load shirt /data/items/nordic/normal/shirt.txt
-#load hair /data/items/nordic/generic/hair.txt
-
-#load armor /data/items/nordic/caster/robes.txt 0 -3
-#load armor /data/items/nordic/caster/humanspecific_robes.txt 0 -3
-#load helmet /data/items/nordic/caster/helmet.txt 0 -3
-
-#load weapon /data/items/nordic/caster/weapon.txt 0 -3
-#load bonusweapon /data/items/human/normal/humanbonusranged.txt 0 -3
-
-#load offhand /data/items/human/normal/humanoffhand.txt 0 -3
-#load offhand /data/items/human/normal/shields.txt 0 -3
-#load offhand /data/items/human/caster/offhands.txt 0 -3
-
-#load weapon /data/items/human/sacredstuff/sacredweapon.txt 0 -3
-#generateitem 1 hair
-#generateitem 1 beard
-#tier 1
 #endpose
 
 
---- Priests
 #newpose
-#name "Priests"
+#name "Unmounted casters"
 #renderorder "shadow cloakb mount basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands beard hair helmet offhanda overlay extra1 extra2 extra3"
 #role "priest"
-#load basesprite /data/items/nordic/normal/bases.txt
-#load shadow /data/items/nordic/generic/shadow.txt
+#role "mage"
+
+#load basesprite /data/items/nordic/normal/bases_human.txt
+#load shadow /data/items/nordic/generic/shadow.txt 0 -3
 
 #load hands /data/items/human/normal/humanhands.txt 0 -3
 
 #load cloakf /data/items/human/normal/humancloakf.txt 0 -3
 #load cloakb /data/items/human/normal/humancloakb.txt 0 -3
 
-#load beard /data/items/nordic/generic/beard.txt
 #load shirt /data/items/nordic/normal/shirt.txt
-#load hair /data/items/nordic/generic/hair.txt
+#load hair /data/items/nordic/caster/hair_human.txt 0 -3
 
 
 #load armor /data/items/nordic/caster/robes.txt 0 -3
@@ -110,8 +73,9 @@
 #load offhand /data/items/human/caster/offhands.txt 0 -3
 
 #load weapon /data/items/human/sacredstuff/sacredweapon.txt 0 -3
+
 #generateitem 1 hair
-#generateitem 1 beard
+
 #endpose
 
 

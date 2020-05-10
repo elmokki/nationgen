@@ -1,11 +1,11 @@
 -- Generic theme with high diversity and low cohesion
 #newtheme
-#type techlevel
 #name default
+#type techlevel
 #basechance 4
-#themeinc theme iron *1
-#themeinc theme bronze *0.125
 #endtheme
+
+-- Tech level themes
 
 -- Weights: EA 1, MA 1, LA 0.5
 #newtheme
@@ -14,28 +14,12 @@
 #basechance 1
 #chanceinc era 3 -0.5
 #themeinc theme advanced *0.05
-#themeinc theme iron *0.5
+#themeinc theme iron *0.25
 #themeinc theme bronze *1
 #themeinc theme wood *1
 #themeinc theme leather *2
 #themeinc theme naked *2
 #themeinc theme primitive *2
-#endtheme
-
--- Weights: EA 2, MA 1, LA 0.25
-#newtheme
-#type techlevel
-#name bronze
-#basechance 2
-#chanceinc era 2 -1
-#chanceinc era 3 -1.5
-#themeinc theme advanced *0.05
-#themeinc theme iron *0.25
-#themeinc theme bronze *2
-#themeinc theme wood *1
-#themeinc theme leather *1
-#themeinc theme naked *0.5
-#themeinc theme primitive *0.5
 #endtheme
 
 -- Weights: EA 0.25, MA 1, LA 2
@@ -47,18 +31,46 @@
 #chanceinc era 2 0.75
 #themeinc theme advanced *2
 #themeinc theme iron *2
-#themeinc theme bronze *0.05
+#themeinc theme bronze *0.5
 #themeinc theme wood *0.5
 #themeinc theme leather *0.5
 #themeinc theme naked *0.05
 #themeinc theme primitive *0.05
 #endtheme
 
--- Weights: EA 0.1, MA 0.1, LA 0.1
+-- Demographic themes - tier-2 casters and elites can always be opposite gender
+#newtheme
+#type demographic
+#name patriarchal
+#basechance 6
+#themeinc theme female *0.001
+#themeinc theme male_elite +4
+#endtheme
+
+#newtheme
+#type demographic
+#name mixed
+#basechance 3
+#themeinc theme male +1
+#endtheme
+
+#newtheme
+#type demographic
+#name matriarchal
+#basechance 1
+#themeinc theme male *0.001
+#themeinc theme female_elite +4
+#endtheme
+
+-- Social themes
+-- Weights: EA 0, MA 2, LA 4
 #newtheme
 #type social
 #name slaver
-#basechance 0.2
+#basechance 0
+#chanceinc era 2 2
+#chanceinc era 3 4
+#chanceinc "hasprimaryrace *0"
 #themeinc theme advanced *1
 #themeinc theme iron *1
 #themeinc theme bronze *1
@@ -68,102 +80,18 @@
 #themeinc theme primitive *1
 #themeinc theme slave *20
 #themeinc theme free *0.5
-#themeinc racename caveman *5
-#themeinc racename primate *5
-#themeinc racename hoburg *5
-#themeinc racename caelian *0.1
-#themeinc racename van *0.1
-#themeinc racename sidhe *0.1
+#themeinc racename "Feudal human" *10
+#themeinc racename caveman *2
+#themeinc racename vaetti *2
+#themeinc racename lizard *0.1
+#themeinc racename primate *0.1
+#themeinc racename avvite *0.1
+#themeinc racename abysian *0.1
+#themeinc racename "Austral human" *0.1
+#themeinc racename zotz *0.1
+#themeinc racename muuch *0.1
 #themeinc racename tengu *0.1
 #secondaryracedefinition "#freetemplatefilter slavetemplate slave"
 #racedefinition "#secondaryracetroopmod 100"
 #racedefinition "#secondaryracemagemod -100"
-#endtheme
-
--- Weights: EA 0.1, MA 0.2, LA 0.3
-#newtheme
-#type social
-#name blacksteel
-#basechance 0.2
-#chanceinc era 1 -0.1
-#chanceinc era 3 0.1
-#chanceinc racetheme primitive *0.5
-#chanceinc racetheme bronze *0.125
-#chanceinc racetheme default *1
-#chanceinc racetheme advanced *2
-#themeinc theme advanced *2
-#themeinc theme iron *5
-#themeinc theme bronze *0.125
-#themeinc theme wood *0.5
-#themeinc theme leather *0.25
-#themeinc theme naked *0.125
-#themeinc theme primitive *0.5
-#racedefinition "#pose blacksteeltroops"
-#racedefinition "#magicpriority earth 3"
-#racedefinition "#unitcommand '#hp +2'"
-#racedefinition "#unitcommand '#str +1'"
-#racedefinition "#unitcommand '#mr -2'"
-#racedefinition "#unitcommand '#enc -1'"
-#racedefinition "#unitcommand '#nametype 104'"
-#endtheme
-
--- Weights: EA 0.1, MA 0.05, LA 0
-#newtheme
-#type social
-#name fae_seelie
-#basechance 0.1
-#chanceinc era 2 -0.05
-#chanceinc era 3 -0.1
-#chanceinc racetheme primitive *2
-#chanceinc racetheme bronze *3
-#chanceinc racetheme default *0.5
-#chanceinc racetheme advanced *0
-#themeinc theme advanced *0.125
-#themeinc theme iron *0.25
-#themeinc theme bronze *2
-#themeinc theme wood *2
-#themeinc theme leather *2
-#themeinc theme naked *1
-#themeinc theme primitive *1
-#racedefinition "#fae"
-#racedefinition "#magicpriority nature 4"
-#racedefinition "#unitcommand '#mr +1'"
-#racedefinition "#unitcommand '#spellsinger'"
-#racedefinition "#unitcommand '#nametype 142'"
-#endtheme
-
--- Weights: EA 0.1, MA 0.05, LA 0
-#newtheme
-#type social
-#name fae_unseelie
-#basechance 0.1
-#chanceinc era 2 -0.05
-#chanceinc era 3 -0.1
-#chanceinc racetheme primitive *2
-#chanceinc racetheme bronze *3
-#chanceinc racetheme default *0.5
-#chanceinc racetheme advanced *0
-#themeinc theme advanced *0.125
-#themeinc theme iron *0.5
-#themeinc theme bronze *2
-#themeinc theme wood *2
-#themeinc theme leather *2
-#themeinc theme naked *1
-#themeinc theme primitive *1
-#racedefinition "#fae"
-#racedefinition "#magicpriority death 4"
-#racedefinition "#magicpriority nature 2"
-#racedefinition "#unitcommand '#mr +1'"
-#racedefinition "#unitcommand '#spellsinger'"
-#racedefinition "#unitcommand '#nametype 142'"
-#endtheme
-
--- Weights: EA 0.1, MA 0.1, LA 0.1
-#newtheme
-#type social
-#name spellsingers
-#basechance 0.1
-#racedefinition "#magicpriority death 2"
-#racedefinition "#magicpriority nature 2"
-#racedefinition "#unitcommand '#spellsinger'"
 #endtheme

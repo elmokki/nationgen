@@ -72,6 +72,9 @@ respectively
 #magicpriority <path> <number>
 Sets the weight of a certain magic path in mage generation. Default for all paths is 1. Works in poses as well. 
 
+#nosacreds
+Races with this command will have elite troops in place of all sacred troops.
+
 #sacred<role>chance <number>
 Sets the weight of a certain role (either just the "role" or "sacred role", ie "infantry" or "sacred infantry") to given number. Defaults are 
 0.125, 1, 0.25, 0.05 for ranged, infantry, mounted and chariot

@@ -2,9 +2,10 @@
 #id topknot
 #gameid -1
 #sprite /graphics/bakemono/small/helmet/topknot.png
-#chanceinc 4
+#basechance 4
 #theme militia
 #armor
+#maxprot 12
 #enditem
 
 #newitem
@@ -15,6 +16,8 @@
 #theme advanced
 #theme militia
 #armor
+#minprot 12
+#maxprot 15
 #enditem
 
 #newitem
@@ -26,6 +29,7 @@
 #theme advanced
 #theme small_elite
 #armor
+#minprot 12
 #enditem
 
 #newitem
@@ -38,6 +42,7 @@
 #theme small_elite
 #theme elite
 #armor
+#minprot 15
 #enditem
 
 #newitem
@@ -49,5 +54,6 @@
 #theme small_elite
 #theme elite
 #armor
+#minprot 15
 #enditem
 

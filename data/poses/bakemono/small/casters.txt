@@ -1,0 +1,131 @@
+--- Mage-priest
+#newpose
+#role "mage"
+#name "non-combatant caster-sho T1"
+
+#tier 1
+#notfortier 2
+#notfortier 3
+
+#renderorder "shadow weapon basesprite hands armor overlay cloakb hair helmet bonusweapon offhandw offhanda"
+
+#theme small_normal
+
+#dontvaryhat
+
+#load basesprite /data/items/bakemono/small/bases_1h_primitive.txt
+#load shadow /data/items/bakemono/small/shadow.txt
+#load hands /data/items/bakemono/small/hands.txt
+#load armor /data/items/bakemono/small/robes.txt
+#load weapon /data/items/bakemono/small/weapon_mages.txt
+#load helmet /data/items/bakemono/small/helmet_caster.txt
+#load overlay /data/items/bakemono/small/bling.txt
+
+#generateitem 1 overlay
+
+#endpose
+
+#newpose
+#role "mage"
+#name "non-combatant caster-sho T2"
+
+#notfortier 1
+#tier 2
+#notfortier 3
+
+#renderorder "shadow weapon basesprite hands armor overlay cloakb hair helmet bonusweapon offhandw offhanda"
+
+#theme small_elite
+
+#dontvaryhat
+
+#load basesprite /data/items/bakemono/small/bases_1h_primitive.txt
+#load shadow /data/items/bakemono/small/shadow.txt
+#load hands /data/items/bakemono/small/hands.txt
+#load armor /data/items/bakemono/small/robes.txt
+#load weapon /data/items/bakemono/small/weapon_mages.txt
+#load helmet /data/items/bakemono/small/helmet_caster.txt
+#load overlay /data/items/bakemono/small/bling.txt
+
+#generateitem 1 overlay
+
+#endpose
+
+#newpose
+#role "mage"
+#name "non-combatant caster-sho T3"
+
+#basechance 0.5
+
+#notfortier 1
+#notfortier 2
+#tier 3
+
+#renderorder "shadow weapon basesprite hands armor overlay cloakb hair helmet bonusweapon offhandw offhanda"
+
+#theme small_elite
+
+#dontvaryhat
+
+#load basesprite /data/items/bakemono/small/bases_1h_primitive.txt
+#load shadow /data/items/bakemono/small/shadow.txt
+#load hands /data/items/bakemono/small/hands.txt
+#load armor /data/items/bakemono/small/robes.txt
+#load weapon /data/items/bakemono/small/weapon_mages.txt
+#load helmet /data/items/bakemono/small/helmet_caster.txt
+#load overlay /data/items/bakemono/small/bling.txt
+
+#generateitem 1 overlay
+
+#endpose
+
+#newpose
+#role "priest"
+#name "non-combatant priest-sho"
+
+#basechance 0.5
+
+#tier 1
+#tier 2
+#tier 3
+
+#renderorder "shadow weapon basesprite hands armor overlay cloakb hair helmet bonusweapon offhandw offhanda"
+
+#theme small_elite
+
+#dontvaryhat
+
+#load basesprite /data/items/bakemono/small/bases_1h_primitive.txt
+#load shadow /data/items/bakemono/small/shadow.txt
+#load hands /data/items/bakemono/small/hands.txt
+#load armor /data/items/bakemono/small/robes_priests.txt
+#load weapon /data/items/bakemono/small/weapon_priests.txt
+#load helmet /data/items/bakemono/small/helmet_caster.txt
+
+#endpose
+
+
+#newpose
+#role "mage"
+#role "priest"
+#name "unmounted warrior-caster"
+
+#tier 1
+#tier 2
+#warriormage
+#theme small_elite
+
+#load basesprite /data/items/bakemono/small/bases_1h_advanced.txt
+#load shadow /data/items/bakemono/small/shadow.txt
+#load hands /data/items/bakemono/small/hands.txt
+#load armor /data/items/bakemono/small/armor_1h.txt
+#load helmet /data/items/bakemono/small/helmet.txt
+#load weapon /data/items/bakemono/small/weapon_scout.txt
+#load legs /data/items/bakemono/small/legs.txt
+
+#endpose
+
+
+
+
+

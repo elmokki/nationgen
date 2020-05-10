@@ -4,9 +4,14 @@
 #role mage
 #role priest
 #warriormage
+
 #superior_leader
 
+#themeinc theme magic 1
+
 #command "#combatcaster"
+
+#renderorder "shadow underlay bonusweapon cloakb basesprite legs shirt armor weapon offhandw hands hair helmet cloakf offhanda overlay"
 
 #load basesprite /data/items/gigante/bases.txt
 #load shadow /data/items/gigante/shadow.txt
@@ -15,13 +20,19 @@
 #load armor /data/items/gigante/armor.txt
 
 #load weapon /data/items/gigante/weapon.txt
+#load weapon /data/items/gigante/weapon_magic.txt
 #load offhand /data/items/gigante/shields.txt
-#load bonusweapon /data/items/gigante/bonusranged.txt
 #load helmet /data/items/gigante/helmet.txt
-#load helmet /data/items/gigante/hair_caster.txt
+#load helmet /data/items/gigante/hair.txt
 
 #load cloakf /data/items/gigante/cloakf.txt
 #load cloakb /data/items/gigante/cloakb.txt
+
+#load shirt /data/items/gigante/skirt.txt
+#load legs /data/items/gigante/legs.txt
+
+#generateitem 1 cloakb
+#generateitem 1 shirt
 
 #notfortier 3
 #tier 2
@@ -35,6 +46,8 @@
 #name "normal mage"
 #role mage
 #role priest
+
+#superior_leader
 
 #renderorder "shadow cloakb basesprite armor helmet cloakf weapon hands"
 

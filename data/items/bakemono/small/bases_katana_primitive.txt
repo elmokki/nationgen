@@ -31,24 +31,25 @@
 #subrace "bakemono"
 #subraceprefix "bakemono"
 #theme small-sho
+#undisciplined_militia
 #enditem
 
 #newitem
-#name "basesprite bow (size 2)"
+#name "basesprite katana (size 2)"
 #gameid -1
 #sprite /graphics/bakemono/small/basesprite_sho_katana.png
 #needs hands katana
 #define "#copystats 1390"
 #define "#clearweapons"
 #define "#cleararmor"
-#define "#gcost 8"
-#define "#rpcost 9000"
+#define "#gcost 10"
+#define "#rpcost 11000"
 #define "#size 2"
-#define "#hp 10"
+#define "#hp 11"
 #define "#prot 0"
 #define "#mr 9"
 #define "#mor 9"
-#define "#str 10"
+#define "#str 11"
 #define "#att 10"
 #define "#def 10"
 #define "#prec 10"
@@ -62,7 +63,9 @@
 #define "#stealthy +0"
 #define "#descr 'Bakemono are ghostly mountain-dwelling goblins. The smallest of them are the Bakemono-sho: ugly, warty, and brutal.'"
 #define "#nametype 134"
+#define "#drawsize 20"
 #subrace "bakemono"
 #subraceprefix "bakemono"
 #theme medium-sho
+#undisciplined_militia
 #enditem

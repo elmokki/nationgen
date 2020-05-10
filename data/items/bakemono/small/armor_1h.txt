@@ -1,27 +1,84 @@
+--- Nothing
+
 #newitem
-#name nothing
+#name "loincloth"
 #gameid -1
-#sprite /graphics/bakemono/small/armor/ninja.png
+#sprite /graphics/bakemono/small/armor/loincloth.png
+#theme naked
+#theme primitive
+#theme militia
 #armor
 #enditem
 
 #newitem
-#name leather
-#gameid 5
-#sprite /graphics/bakemono/small/armor/ninja.png
+#name "roninpants"
+#gameid -1
+#sprite /graphics/bakemono/small/armor/roninpants.png
+#theme naked
+#theme elite
+#theme small_elite
 #armor
 #enditem
 
+
+--- Furs
+
 #newitem
-#name scale
-#gameid 7
-#sprite /graphics/bakemono/small/armor/ninja.png
+#name "furs"
+#gameid 44
+#sprite /graphics/bakemono/small/armor/furs_1h.png
+#theme naked
+#theme primitive
+#theme militia
 #armor
 #enditem
 
+
+--- Ashiguru
+
 #newitem
-#name chain
-#gameid 8
-#sprite /graphics/bakemono/small/armor/ninja.png
+#name "ashigaru armor"
+#gameid 128
+#sprite /graphics/bakemono/small/armor/ashigaru_1h.png
+#theme advanced
 #armor
+#needs legs ashigaru
+#enditem
+
+
+--- Samurai
+
+#newitem
+#name "samurai armor"
+#gameid 129
+#sprite /graphics/bakemono/small/armor/samurai_1h.png
+#eliteversion "heavy samurai armor elite"
+#theme advanced
+#theme small_elite
+#armor
+#needs legs samurai
+#enditem
+
+#newitem
+#name "heavy samurai armor"
+#gameid 130
+#sprite /graphics/bakemono/small/armor/heavysamurai_1h.png
+#eliteversion "heavy samurai armor elite"
+#theme advanced
+#theme elite
+#theme small_elite
+#armor
+#needs legs heavysamurai1
+#enditem
+
+#newitem
+#name "heavy samurai armor elite"
+#gameid 130
+#sprite /graphics/bakemono/small/armor/heavysamurai_1h.png
+#recolormask /graphics/bakemono/small/armor/heavysamurai_1h_recolormask.png
+#theme advanced
+#theme elite
+#theme small_elite
+#armor
+#needs legs heavysamurai2
 #enditem
