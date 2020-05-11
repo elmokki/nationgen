@@ -26,7 +26,9 @@ import nationGen.nation.Nation;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Deque;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -822,7 +824,22 @@ public class Unit {
 		}
 		
 
-
+		// Move copy and clear commands to the top of the list, with #copystats first:
+		List<Command> addToTop = new ArrayList<>();
+		Stream.of("#copystats", "#clear", "#clearweapons", "#cleararmor", "#clearmagic", "#clearspec")
+			.forEach(command -> {
+				Iterator<Command> it = allCommands.iterator();
+				while (it.hasNext()) {
+					Command next = it.next();
+					if (next.command.equals(command)) {
+						it.remove();
+						addToTop.add(next);
+					}
+				}
+			});
+		// reverse so the first thing in the list is the last to be added to the top
+		Collections.reverse(addToTop);
+		addToTop.forEach(command -> allCommands.add(0, command));
 
 
 		// Now handle them!
