@@ -33,20 +33,35 @@ exit /b 1
 
 :windows
 
-echo @start bin\javaw -cp lib\%4.jar nationGen.GUI.GUI > ./%IMAGE%/NationGen.bat
-echo @start bin\javaw -cp lib\%4.jar nationGen.GUI.SpriteGen > ./%IMAGE%/SpriteGen.bat
+echo @start bin\javaw -cp lib\%4.jar nationGen.GUI.GUI> ./%IMAGE%/NationGen.bat
+echo @start bin\javaw -cp lib\%4.jar nationGen.GUI.SpriteGen> ./%IMAGE%/SpriteGen.bat
 
 goto done
 
 :linux
 :osx
 
-echo #!/bin/sh > ./%IMAGE%/NationGen
-echo DIR=`dirname $0` >> ./%IMAGE%/NationGen
-echo $DIR/bin/java -cp lib/%4.jar nationGen.GUI.GUI >> ./%IMAGE%/NationGen
+:: this is a hack to get just a linefeed character
+(set LF=^
+%=EMPTY=%
+)
 
-echo #!/bin/sh > ./%IMAGE%/SpriteGen
-echo DIR=`dirname $0` >> ./%IMAGE%/SpriteGen
-echo $DIR/bin/java -cp lib/%4.jar nationGen.GUI.SpriteGen >> ./%IMAGE%/SpriteGen
+setlocal DisableDelayedExpansion
+
+:: this is another hack to not use echo since it does CRLF at end of line
+<NUL set /p ="#!" > ./%IMAGE%/NationGen.sh
+<NUL set /p ="#!" > ./%IMAGE%/SpriteGen.sh
+
+endlocal
+
+setlocal EnableDelayedExpansion
+
+<NUL set /p ="/bin/sh!LF!DIR=`dirname $0`!LF!$DIR/bin/java -cp lib/%4.jar nationGen.GUI.GUI" >> ./%IMAGE%/NationGen.sh
+<NUL set /p ="/bin/sh!LF!DIR=`dirname $0`!LF!$DIR/bin/java -cp lib/%4.jar nationGen.GUI.SpriteGen" >> ./%IMAGE%/SpriteGen.sh
+
+endlocal
+
+:: the above hack sets errorlevel to 1 so do a dummy command to clear it
+ver >NUL
 
 :done
