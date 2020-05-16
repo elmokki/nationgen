@@ -1269,6 +1269,7 @@ public class MageGenerator extends TroopGenerator {
 		}
 		
 		int priestextracost = Generic.getAllNationTags(nation).getInt("priestextracost").orElse(0);
+		int priestminrpcost = Generic.getAllNationTags(nation).getInt("priestminrpcost").orElse(0);
 
 
 		
@@ -1579,7 +1580,7 @@ public class MageGenerator extends TroopGenerator {
 				}
 			}
 
-			currentRP = Integer.max(currentRP, Integer.min(2, currentStrength));
+			currentRP = Integer.max(Integer.max(currentRP, Integer.min(2, currentStrength)), priestminrpcost);
 			u.commands.add(new Command("#rpcost", new Arg(currentRP)));
 			
 			// Determine special leadership

@@ -167,7 +167,8 @@
 #desc "Priests can reanimate ghouls, soulless and longdead infantry."
 #magepriestchance 0.95
 #maxpriestlevel 2
-#priestextracost 20
+#priestminrpcost 2
+#priestextracost 40
 #reanimation
 #end
 
@@ -179,9 +180,26 @@
 #command "#horsereanim"
 #magicpriority death 256
 #desc "Priests can reanimate ghouls, soulless, and longdead infantry and cavalry."
-#maxpriestlevel 2
 #magepriestchance 0.95
-#priestextracost 20
+#maxpriestlevel 2
+#priestminrpcost 2
+#priestextracost 40
+#reanimation
+#end
+
+#new
+#name "lizardreanim"
+#type "reanim"
+#basechance 0
+#chanceinc primaryrace lizard OR primaryrace ophidian 0.025
+#command "#priestreanim"
+#command "#tombwyrmreanim"
+#magicpriority death 256
+#desc "Priests can reanimate soulless and longdead lizards as well as tomb wyrms."
+#magepriestchance 0.95
+#maxpriestlevel 2
+#priestminrpcost 2
+#priestextracost 40
 #reanimation
 #end
 
