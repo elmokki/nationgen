@@ -336,7 +336,7 @@
 #type "summoning"
 #basechance 0
 #chanceinc "primaryrace Primate AND hasthemetheme lowland AND hasthemetheme enlightened 0.25"
-#chanceinc "magic not astral AND magic not nature OR anymagic blood *0"
+#chanceinc "magic not astral OR anymagic blood *0"
 #command "#gcost +30"
 #command "#templetrainer 2271"
 #notfortier 1
