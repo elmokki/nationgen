@@ -4,6 +4,7 @@
 Code
 ----------------------------------------------------------
 - More robust handling of #copystats/clearfoo commands
+- #price_per_command was treating all thresholds as 0, so any filter using this command was generally somewhat-to-very overpriced
 
 Content
 -----------------------------------------------------------
@@ -11,6 +12,7 @@ Content
 - Balance: No shields on chariots
 - Balance: Size-5 chariots cost more resources
 - Balance: Cavern Wights and Dust Walkers are greedier and more recpoint hungry; tengu are more altruistic
+- Balance: more expensive crabs, and non-elite crabs are less impressive
 - Balance: regen filters more expensive on larger units/units with more HP, plus chariots can't get them
 - Balance: nations with reanimation priests won't have national priests who cost less than 2 recpoints and they're more expensive
 

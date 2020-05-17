@@ -768,7 +768,7 @@
 #basechance 0.2
 #chanceinc "magic nature 0.8"
 #chanceinc "command #regeneration 6"
-#chanceinc "personalcommand size above 2"
+#chanceinc "personalcommand size above 2 *0"
 #command "#regeneration 10"
 #command "#gcost +2"
 #command "#gcost *1.25"
@@ -782,7 +782,7 @@
 #basechance 0.2
 #chanceinc "magic nature 0.8"
 #chanceinc "command #regeneration 6"
-#chanceinc "personalcommand size below 3 AND personalcommand hp below 20 *0"
+#chanceinc "personalcommand size below 3 *0"
 #chanceinc "personalcommand size above 4 *0"
 #command "#regeneration 10"
 #command "#gcost +10"

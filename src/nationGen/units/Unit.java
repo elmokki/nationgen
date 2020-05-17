@@ -1037,7 +1037,7 @@ public class Unit {
 			int value = u.getCommandValue(args.get(0).get(), 0);
 			double cost = args.get(1).getDouble();
 			int threshold = 0;
-			if(args.size() > 3)
+			if(args.size() > 2)
 				threshold = args.get(2).getInt();
 			
 			
