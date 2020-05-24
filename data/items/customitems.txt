@@ -483,7 +483,7 @@
 #command "#magicarmor"
 #command "#ironarmor"
 #end
- 
+
 #new customarmor
 #name blacksteel_tower
 #armor
@@ -668,7 +668,7 @@
 --- 2h Spears, with stats based on short-vs-reg-tridents
 #new customweapon
 #name "2hspear"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#dmg 5"
 #command "#att +1"
 #command "#def +1"
@@ -682,7 +682,7 @@
 
 #new customweapon
 #name "2hlongspear"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#dmg 5"
 #command "#att +1"
 #command "#len 4"
@@ -695,7 +695,7 @@
 
 #new customweapon
 #name "2hbronzespear"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#dmg 5"
 #command "#att +1"
 #command "#def +1"
@@ -708,7 +708,7 @@
 
 #new customweapon
 #name "2hbronzelongspear"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#dmg 5"
 #command "#att +1"
 #command "#len 4"
@@ -788,7 +788,7 @@
 
 #new customweapon
 #name "giantaxe"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#def -1"
 #command "#dmg 8"
 #command "#len 1"
@@ -800,7 +800,7 @@
 
 #new customweapon
 #name "giantspear"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#dmg 3"
 #command "#len 3"
 #command "#rcost 1"
@@ -811,7 +811,7 @@
 
 #new customweapon
 #name "giantlongspear"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#dmg 3"
 #command "#def -1"
 #command "#len 4"
@@ -823,7 +823,7 @@
 
 #new customweapon
 #name "giantsword"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#def 1"
 #command "#dmg 9"
 #command "#len 1"
@@ -835,7 +835,7 @@
 
 #new customweapon
 #name "giantfalchion"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#def -1"
 #command "#dmg 10"
 #command "#len 1"
@@ -847,7 +847,7 @@
 
 #new customweapon
 #name "giantgreataxe"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#att 1"
 #command "#dmg 9"
 #command "#len 2"
@@ -860,7 +860,7 @@
 
 #new customweapon
 #name "giantaxe_bronze"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#def -1"
 #command "#dmg 6"
 #command "#len 1"
@@ -871,7 +871,7 @@
 
 #new customweapon
 #name "giantspear_bronze"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#dmg 3"
 #command "#len 3"
 #command "#rcost 1"
@@ -881,7 +881,7 @@
 
 #new customweapon
 #name "giantlongspear_bronze"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#dmg 3"
 #command "#def -1"
 #command "#len 4"
@@ -892,7 +892,7 @@
 
 #new customweapon
 #name "giantsword_bronze"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#def 1"
 #command "#dmg 7"
 #command "#len 1"
@@ -903,7 +903,7 @@
 
 #new customweapon
 #name "giantgreataxe_bronze"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#att 1"
 #command "#dmg 8"
 #command "#len 2"
@@ -915,7 +915,7 @@
 
 #new customweapon
 #name "giantmagicaxe"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#def -1"
 #command "#dmg 9"
 #command "#len 1"
@@ -927,7 +927,7 @@
 
 #new customweapon
 #name "giantmagicspear"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#dmg 5"
 #command "#len 3"
 #command "#rcost 3"
@@ -938,7 +938,7 @@
 
 #new customweapon
 #name "giantmagicsword"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#def 1"
 #command "#dmg 11"
 #command "#len 1"
@@ -955,7 +955,7 @@
 #command "#att -3"
 #command "#def -5"
 #command "#len 3"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#twohanded"
 #command "#blunt"
 #end
@@ -967,7 +967,7 @@
 #command "#att -2"
 #command "#def -3"
 #command "#len 3"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#twohanded"
 #command "#blunt"
 #end
@@ -981,7 +981,7 @@
 #command "#dmg 3"
 #command "#att -1"
 #command "#len 3"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#pierce"
 #end
 
@@ -994,7 +994,7 @@
 #command "#def 1"
 #command "#len 3"
 #command "#name 'Bone Glaive'"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#twohanded"
 #command "#pierce"
 #command "#slash"
@@ -1013,7 +1013,7 @@
 #command "#flyspr 109 1"
 #command "#sound 50"
 #command "#name 'Serpent Bow'"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#twohanded"
 #command "#blunt"
 #command "#dt_realstun"
@@ -1030,7 +1030,7 @@
 #command "#flyspr 109 1"
 #command "#sound 50"
 #command "#name 'Constrictor Bow'"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#twohanded"
 #command "#blunt"
 #command "#dt_realstun"
@@ -1046,7 +1046,7 @@
 #command "#flyspr 304 4"
 #command "#sound 15"
 #command "#name 'Bolas'"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#bonus"
 #command "#blunt"
 #command "#dt_realstun"
@@ -1160,7 +1160,7 @@
 --- Nostr version of 203
 #new customweapon
 #name nostr_barbedtail
-#command "#natt 1"
+#command "#nratt 1"
 #command "#dmg 13"
 #command "#len 0"
 #command "#nostr"
@@ -1175,7 +1175,7 @@
 --- Nostr tail attack to buff crocodile riders
 #new customweapon
 #name tailswipe_nostr
-#command "#natt 1"
+#command "#nratt 1"
 #command "#dmg 9"
 #command "#len 0"
 #command "#nostr"
@@ -1676,7 +1676,7 @@
 #command "#rcost 1"
 #command "#name 'Conch Shield'"
 #end
- 
+
 #new customarmor
 #name atl_carapaceshield
 #armor
@@ -1757,7 +1757,7 @@
 
 -- Crustacean custom items (mostly non-specific non-ferrous metal stuff)
 
-#new customarmor 
+#new customarmor
 #name metalscale_cuirass
 #armor
 #command "#type 5"
@@ -1768,7 +1768,7 @@
 #command "#name 'Metal Scale Cuirass'"
 #end
 
-#new customarmor 
+#new customarmor
 #name metalscale_hauberk
 #armor
 #command "#type 5"
@@ -1779,7 +1779,7 @@
 #command "#name 'Metal Scale Hauberk'"
 #end
 
-#new customarmor 
+#new customarmor
 #name goldenplate
 #armor
 #command "#type 5"
@@ -1793,7 +1793,7 @@
 
 #new customweapon
 #name "metaltrident"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#dmg 7"
 #command "#def +1"
 #command "#len 3"
@@ -1805,7 +1805,7 @@
 
 #new customweapon
 #name "metalhalberd"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#dmg 10"
 #command "#att -1"
 #command "#def +1"
@@ -1819,7 +1819,7 @@
 
 #new customweapon
 #name "metalstaff"
-#command "#natt 1"
+#command "#nratt 1"
 #command "#dmg 5"
 #command "#def +2"
 #command "#len 3"
@@ -1995,6 +1995,17 @@
 #command "#name 'Swordbill Gore'"
 #command "#slash"
 #command "#pierce"
+#command "#natural"
+#end
+
+#new customweapon
+#name "beak"
+#command "#att -1"
+#command "#def -1"
+#command "#dmg -3"
+#command "#len 1"
+#command "#name 'Beak'"
+#command "#slash"
 #command "#natural"
 #end
 

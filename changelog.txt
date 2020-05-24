@@ -1,4 +1,27 @@
-﻿0.7.0-RC10 (9th of May 2020)
+﻿0.7.0 (9th of May 2020)
+----------------------------------------------------------
+
+Code
+----------------------------------------------------------
+- More robust handling of #copystats/clearfoo commands
+- #price_per_command was treating all thresholds as 0, so any filter using this command was generally somewhat-to-very overpriced
+
+Content
+-----------------------------------------------------------
+- Fixed problem with custom earth communion spells
+- Balance: No shields on chariots
+- Balance: Size-5 chariots cost more resources
+- Balance: Cavern Wights and Dust Walkers are greedier and more recpoint hungry; tengu are more altruistic
+- Balance: more expensive crabs, and non-elite crabs are less impressive
+- Balance: regen filters more expensive on larger units/units with more HP, plus chariots can't get them
+- Balance: nations with reanimation priests won't have national priests who cost less than 2 recpoints and they're more expensive
+- Some more elite/sacred/mage werefoo filters
+- snake and swan-neck arms for size-2 foulspawn
+
+
+
+
+0.7.0-RC10 (9th of May 2020)
 ----------------------------------------------------------
 
 Code
@@ -7,6 +30,7 @@ Code
 - Lots of obscure bugfixes during refactoring by Lord Brimstone
 - Nations should no longer get ranged sacreds if they only have one sacred unless no other sacreds are possible
 - More robust handling of diacritics in nation names
+- SpriteGen overhaul!
 
 Content
 -----------------------------------------------------------
@@ -23,7 +47,6 @@ Content
 - Scimitars and Leventine spells
 - Vaettir stat revisions per 5.41
 - A bunch of twiceborn revisions per 5.41
-- "Fat monk" & "minister" caster poses for oriental humans, hoburgs, and tengu
 - Simple demographic themes for vanir (male/female)
 - Wingless flier sacred pose for vanir
 - Chariots for size 4 Fomorians and Cyclopses
@@ -38,8 +61,6 @@ Content
 - Basic gigante nations - no mounted units and only very basic themes; note these are moreso MA Phae gigantes than EA Mek gigantes
 - Nordic ("boreal") human nations - these should eventually include Rus/Vanarus elements, but for now are just Midgard-/Utgard-style nations
 - Ontological theme shuffling: "default" Ulmish/Mannish human nations are now "feudal" instead of "boreal" humans
-
-
 
 0.7.0-RC9 (22nd of January 2019)
 ----------------------------------------------------------

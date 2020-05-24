@@ -130,6 +130,34 @@
 #end
 
 #new secondshape
+#name "werecrocodile"
+#command "#spr1 ./graphics/shapes/werecroc_1.png"
+#command "#spr2 ./graphics/shapes/werecroc_2.png"
+#command "#magicboost 53 -1"
+#command "#name Werecrocodile"
+#command "#weapon 20"
+#command "#weapon 33"
+#command "#weapon 532"
+#command "#size 3"
+#command "#hp 25"
+#command "#prot 10"
+#command "#mor 17"
+#command "#mr 12"
+#command "#enc 3"
+#command "#str 14"
+#command "#att 10"
+#command "#def 8"
+#command "#prec 5"
+#command "#mapmove 16"
+#command "#ap 10"
+#command "#coldblood"
+#command "#swampsurvival"
+#command "#swimming"
+#command "#pooramphibian"
+#command "#humanoid"
+#end
+
+#new secondshape
 #name "hawk"
 #command "#copystats 1380"
 #command "#copyspr 1380"
@@ -651,8 +679,6 @@
 #command "#stealthy 0"
 #command "#animal"
 #command "#wastesurvival"
-#command "#maxage 100"
-#nogcost
 #end
 
 #new secondshape
@@ -681,8 +707,34 @@
 #command "#stealthy 0"
 #command "#animal"
 #command "#swampsurvival"
-#command "#maxage 75"
-#nogcost
+#end
+
+#new secondshape
+#name "wererat2"
+#command "#name 'Wererat'"
+#command "#spr1 ./graphics/mounts/standard/giantrat.png"
+#command "#spr2 shift"
+#command "#drawsize -20"
+#command "#lizard"
+#command "#itemslots 12288"
+#command "#size 2"
+#command "#hp 10"
+#command "#prot 3"
+#command "#mr 14"
+#command "#mor 14"
+#command "#str 10"
+#command "#att 12"
+#command "#def 12"
+#command "#prec 5"
+#command "#ap 18"
+#command "#mapmove 20"
+#command "#enc 2"
+#command "#weapon diseasebite"
+#command "#weapon 29"  -- Claw
+#command "#diseaseres 100"
+#command "#leper 5"
+#command "#stealthy +20"
+#command "#swampsurvival"
 #end
 
 #new secondshape

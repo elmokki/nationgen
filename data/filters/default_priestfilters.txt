@@ -199,7 +199,8 @@
 #name "reanimator"
 #basechance 0
 #command "#reanimpriest 1"
-#command "#gcost +20"
+#command "#gcost +40"
+#command "#slowrec"
 #chanceinc magic death 0.25
 #chanceinc personalmagic nature 1 AND personalmagic death below 1 *0
 #chanceinc personalcommand #reanimpriest *0
