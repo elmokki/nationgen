@@ -94,3 +94,23 @@
 #type pincer
 #needs lhand none
 #enditem
+
+#newitem
+#name "snake"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm/snake.png
+#command "#unsurr +1"
+#command "#str -1"
+#type snake
+#needs lhand none
+#enditem
+
+#newitem
+#name "swan"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm/swan.png
+#command "#unsurr +1"
+#command "#str -1"
+#type swan
+#needs lhand none
+#enditem

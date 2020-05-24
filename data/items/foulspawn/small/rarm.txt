@@ -104,6 +104,26 @@
 #needs rhand none
 #enditem
 
+#newitem
+#name "snake"
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm/snake.png
+#command "#unsurr +1"
+#command "#str -1"
+#type snake
+#needs rhand none
+#enditem
+
+#newitem
+#name "swan"
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm/swan.png
+#command "#unsurr +1"
+#command "#str -1"
+#type swan
+#needs rhand none
+#enditem
+
 
 -- Arms for ranged units (these will generate a right hand, which otherwise should never appear)
 
