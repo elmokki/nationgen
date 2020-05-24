@@ -1,3 +1,9 @@
+@echo off
+
+if not exist "%~2\jmods" (
+    echo jmods folder not found in given path to runtime [%~2] >&2
+    exit /b 1
+)
 
 if "%3" == "" (
 	echo No platform supplied! >&2
@@ -65,3 +71,5 @@ endlocal
 ver >NUL
 
 :done
+
+echo Runtime image for %3 environment created at %IMAGE%
