@@ -40,13 +40,16 @@ public class ShapeShift extends Filter {
 	
 	@Override
 	public void handleOwnCommand(Command command) {
-	
 		
-		if(command.command.equals("#keepname"))
+		
+		if (command.command.equals("#keepname")) {
 			this.keepname = true;
 		// Overrides filter implementation
-		else if(command.command.equals("#command"))
-		{
+		} else if(command.command.equals("#command")) {
+			if (command.args.size() != 1) {
+				throw new IllegalArgumentException(
+					"#command or #define must have a single arg. Surround the command with quotes if needed.");
+			}
 			this.commands.add(command.args.get(0).getCommand());
 		}
 		else

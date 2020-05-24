@@ -108,6 +108,10 @@ public class Pose extends Filter {
 				this.renderorder = str.args.get(0).get();
 				break;
 			case "#command":
+				if (str.args.size() != 1) {
+					throw new IllegalArgumentException(
+						"#command must have a single arg. Surround the command with quotes if needed.");
+				}
 				this.commands.add(str.args.get(0).getCommand());
 				break;
 			case "#load":

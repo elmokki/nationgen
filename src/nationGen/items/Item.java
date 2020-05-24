@@ -100,6 +100,10 @@ public class Item extends Drawable {
 					break;
 				case "#command":
 				case "#define":
+					if (command.args.size() != 1) {
+						throw new IllegalArgumentException(
+							"#command or #define must have a single arg. Surround the command with quotes if needed.");
+					}
 					this.commands.add(command.args.get(0).getCommand());
 					break;
 				default:
