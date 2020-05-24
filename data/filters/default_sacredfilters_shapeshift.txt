@@ -45,6 +45,7 @@
 #command "#gcost +10"
 #command "#maxage *2"
 #command "#heal"
+#command "#cleanshape"
 #chanceinc "pose mounted *0"
 #power 3
 #description "shapeshifts into a werebear when damaged"
@@ -87,6 +88,30 @@
 #power 3
 #description "can shapeshift into a wererat"
 #theme "rattotem"
+#theme "totemanimal"
+#price_if_command at #size 1 +5
+#end
+
+#new
+#name "werecrocodile"
+#type "shapeshift"
+#basechance 0.075
+#chanceinc magic nature 0.1
+#chanceinc magic water 0.1
+#chanceinc shape werecrocodile 20
+#chanceinc personalcommand #coldblood *5
+#chanceinc personalcommand #size above 4 *0
+#chanceinc personalcommand #size above 2 AND race Lizard *0
+#chanceinc pose mounted *0
+#chanceinc pose chariot *0
+#command "#secondshape werecrocodile"
+#command "#gcost +10"
+#command "#swimming"
+#command "#maxage *2"
+#power 3
+#description "can shapeshift into a werecrocodile"
+#theme "crocodiletotem"
+#theme "lizardtotem"
 #theme "totemanimal"
 #price_if_command at #size 1 +5
 #end
