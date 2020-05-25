@@ -25,8 +25,7 @@ public class GenerationTest {
 	public void testNationNameGeneration() {
 		
 		NationGen ng = new NationGen();
-		NationGenAssets assets = new NationGenAssets(ng);
-		assets.loadRaces("/data/races/races.txt", ng);
+		NationGenAssets assets = ng.getAssets();
 		
 		NameGenerator ngen = new NameGenerator(ng);
 

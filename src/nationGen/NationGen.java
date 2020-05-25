@@ -76,8 +76,9 @@ public class NationGen
 		System.out.print("Loading definitions... ");
 		customItemsHandler = new CustomItemsHandler(
 				Item.readFile(this, "./data/items/customitems.txt", CustomItem.class), weapondb, armordb);
-		assets = new NationGenAssets(this);
-		assets.loadRaces("./data/races/races.txt", this); // ugh.  Looks like *somehow* assets is circularly depended in races.
+		assets = new NationGenAssets();
+		assets.load(this);
+//		assets.loadRaces("./data/races/races.txt", this); // ugh.  Looks like *somehow* assets is circularly depended in races.
 		// Oh, it's totally because of the getassets method causing dependency shenanigans.
 		
 		System.out.println("done!");

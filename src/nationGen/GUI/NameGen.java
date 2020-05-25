@@ -1,7 +1,6 @@
 package nationGen.GUI;
 
 import nationGen.NationGen;
-import nationGen.NationGenAssets;
 import nationGen.entities.Race;
 import nationGen.naming.NameGenerator;
 
@@ -9,10 +8,9 @@ public class NameGen {
 	public static void main(String[] args)
 	{
 		NationGen ng = new NationGen();
-		NationGenAssets assets = new NationGenAssets(ng);
 		NameGenerator nameg = new NameGenerator(ng);
 		
-		for(Race r : assets.races)
+		for(Race r : ng.getAssets().races)
 		{
 			if(!r.tags.containsName("secondary"))
 			{

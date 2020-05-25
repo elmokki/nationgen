@@ -10,6 +10,7 @@ import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Set;
@@ -19,7 +20,8 @@ public class Pose extends Filter {
 	
 	private LinkedHashMap<String, ItemSet> items = new LinkedHashMap<>();
 	public List<String> roles = new ArrayList<>();
-	public String renderorder = "shadow cloakb mount basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay extra1 extra2 extra3";
+	public List<String> renderorder =
+		parseRenderOrder("shadow cloakb mount basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay extra1 extra2 extra3");
 	public List<AbilityTemplate> templates = new ArrayList<>();
 	
 	public Pose(NationGen nationGen)
@@ -37,6 +39,10 @@ public class Pose extends Filter {
 		if(items.get(slot) == null)
 			return null;
 		return items.get(slot).getCopy();
+	}
+	
+	private static List<String> parseRenderOrder(String renderorder) {
+		return List.of(renderorder.split(" "));
 	}
 	
 	/**
@@ -105,7 +111,7 @@ public class Pose extends Filter {
 				this.roles.add(str.args.get(0).get());
 				break;
 			case "#renderorder":
-				this.renderorder = str.args.get(0).get();
+				this.renderorder = parseRenderOrder(str.args.get(0).get());
 				break;
 			case "#command":
 				if (str.args.size() != 1) {
@@ -125,6 +131,7 @@ public class Pose extends Filter {
 				
 				ItemSet set = loadItems(file, offsetx, offsety, slot);
 				
+				Set<String> spriteRenderSlots = new HashSet<>();
 				for(Item i : set)
 				{
 					if(!Generic.isNumeric(i.id))
@@ -139,6 +146,28 @@ public class Pose extends Filter {
 						} else {
 							nationGen.weapondb.addToMap(i.id, citem.getHashMap());
 						}
+					}
+					if (!"".equals(i.sprite)) {
+						String renderslot = "".equals(i.renderslot) ? slot : i.renderslot;
+						if ("offhand".equals(renderslot)) {
+							renderslot = i.armor ? "offhanda" : "offhandw";
+						}
+						spriteRenderSlots.add(renderslot);
+					}
+				}
+				// Check if this itemset that has a sprite defined is in the renderorder.
+				for (String renderslot : spriteRenderSlots) {
+					if ("offhanda".equals(renderslot) || "offhandw".equals(renderslot)) {
+						if (!this.renderorder.contains("offhand") && !this.renderorder.contains(renderslot)) {
+							String type = "offhanda".equals(renderslot) ? "An armor" : "A weapon";
+//							throw new IllegalArgumentException(type + " defines a sprite for slot offhand, but neither slot offhand nor " + renderslot + " are not defined in the #renderorder!");
+						}
+					} else if (!this.renderorder.contains(renderslot)) {
+//					if ("offhand".equals(slot) && !this.renderorder.contains("offhanda") && !this.renderorder.contains("offhandw")) {
+//						throw new IllegalArgumentException("Slot offhand or both offhanda and offhandw are not defined in the #renderorder!");
+//					}
+
+//						throw new IllegalArgumentException("An item defines a sprite for slot " + renderslot + ", but it is not defined in the #renderorder!");
 					}
 				}
 				
