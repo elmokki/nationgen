@@ -1,9 +1,10 @@
 -- Normal
 #newpose
 #name "infantry"
-#renderorder "shadow bonusweapon basesprite shirt armor weapon offhandw helmet offhanda"
 #role "infantry"
 #role "scout"
+
+#renderorder "shadow bonusweapon basesprite shirt armor weapon offhandw hands helmet offhanda"
 
 #load basesprite /data/items/merrow/bases.txt
 #load hands /data/items/merrow/hands.txt
