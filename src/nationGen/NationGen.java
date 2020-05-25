@@ -677,7 +677,7 @@ public class NationGen
 
 		for(Unit u : shapeshiftUnits) {
 			for(Command c : u.commands) {
-				if(c.command.contains("shape") && !hasShapeShift(c.args.get(0))) {
+				if(c.command.contains("shape") && !c.command.equals("#cleanshape") && !hasShapeShift(c.args.get(0))) {
 					if(c.command.equals("#firstshape") && u.tags.containsName("montagunit")) {
 						handleMontag(c);
 					} else {
