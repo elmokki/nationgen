@@ -9,7 +9,6 @@ import nationGen.entities.Flag;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.items.Item;
-import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.FileUtil;
 import nationGen.units.Unit;
 
@@ -156,7 +155,7 @@ public class SpriteGen extends JFrame {
 	public SpriteGen() {
 		nGen = new NationGen();
 		assets = nGen.getAssets();
-		addThemePoses();
+		assets.addThemePoses();
 		
 		setTitle("SpriteGen");
 		
@@ -169,27 +168,6 @@ public class SpriteGen extends JFrame {
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
-	}
-	
-	/**
-	 * Copies any poses from each race's theme's poses into its poses list
-	 */
-	public void addThemePoses() {
-		for(Race race : assets.races) {
-			ChanceIncHandler.retrieveFilters("racethemes", "default_racethemes", assets.themes, null, race).stream()
-				.flatMap(theme -> theme.nationeffects.stream())
-				.filter(command -> "#pose".equals(command.command))
-				.map(command -> command.args.get(0).get())
-				.distinct()
-				.forEach(poseSetName -> {
-					List<Pose> set = assets.poses.get(poseSetName);
-					if (set == null) {
-						throw new IllegalArgumentException("Pose set " + poseSetName + " was not found.");
-					} else {
-						race.poses.addAll(set);
-					}
-				});
-		}
 	}
 	
 	public void initGUI() {

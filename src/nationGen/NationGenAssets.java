@@ -1,10 +1,6 @@
 package nationGen;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.elmokki.Generic;
-
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Flag;
@@ -12,12 +8,15 @@ import nationGen.entities.MagicItem;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.entities.Theme;
-import nationGen.items.Item;
 import nationGen.magic.MagicPattern;
+import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.FileUtil;
 import nationGen.misc.ResourceStorage;
 import nationGen.naming.NamePart;
 import nationGen.units.ShapeShift;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class will mirror the constant elements in Nationgen.java but eventually, it'll replace it.
@@ -27,75 +26,53 @@ import nationGen.units.ShapeShift;
  * @author flash-fire
  *
  */
-public class NationGenAssets
-{
-    public ResourceStorage<MagicPattern> patterns;
+public class NationGenAssets {
+    public ResourceStorage<MagicPattern> patterns = new ResourceStorage<>(MagicPattern.class);
     
-    public ResourceStorage<Filter> templates;
-    public ResourceStorage<Filter> descriptions;
-    public List<Race> races;
-    public ResourceStorage<ShapeShift> monsters;
-    public ResourceStorage<Pose> poses;
-    public ResourceStorage<Filter> filters;
-    public ResourceStorage<Theme> themes;
-    public ResourceStorage<Filter> spells;
-    public List<Filter> customspells;
-    public ResourceStorage<NamePart> magenames;
-    public ResourceStorage<NamePart> miscnames;
-    public ResourceStorage<Filter> miscdef;
-    public ResourceStorage<Flag> flagparts;
-    public ResourceStorage<MagicItem> magicitems;
+    public ResourceStorage<Filter> templates = new ResourceStorage<>(Filter.class);
+    public ResourceStorage<Filter> descriptions = new ResourceStorage<>(Filter.class);
+    public List<Race> races = new ArrayList<>();
+    public ResourceStorage<ShapeShift> monsters = new ResourceStorage<>(ShapeShift.class);
+    public ResourceStorage<Pose> poses = new ResourceStorage<>(Pose.class);
+    public ResourceStorage<Filter> filters = new ResourceStorage<>(Filter.class);
+    public ResourceStorage<Theme> themes = new ResourceStorage<>(Theme.class);
+    public ResourceStorage<Filter> spells = new ResourceStorage<>(Filter.class);
+    public List<Filter> customspells = new ArrayList<>();
+    public ResourceStorage<NamePart> magenames = new ResourceStorage<>(NamePart.class);
+    public ResourceStorage<NamePart> miscnames = new ResourceStorage<>(NamePart.class);
+    public ResourceStorage<Filter> miscdef = new ResourceStorage<>(Filter.class);
+    public ResourceStorage<Flag> flagparts = new ResourceStorage<>(Flag.class);
+    public ResourceStorage<MagicItem> magicitems = new ResourceStorage<>(MagicItem.class);
     
-    public List<ShapeShift> secondshapes;
+    public List<ShapeShift> secondshapes = new ArrayList<>();
     public List<String> secondShapeMountCommands = new ArrayList<>();
     public List<String> secondShapeNonMountCommands = new ArrayList<>();
     public List<String> secondShapeRacePoseCommands = new ArrayList<>();
     
-    public NationGenAssets(NationGen gen)
+    public void load(NationGen gen)
     {
-        patterns = new ResourceStorage<>(MagicPattern.class, gen);
-        templates = new ResourceStorage<>(Filter.class, gen);
-        descriptions = new ResourceStorage<>(Filter.class, gen);
-        races = new ArrayList<>();
-        monsters = new ResourceStorage<>(ShapeShift.class, gen);
-        poses = new ResourceStorage<>(Pose.class, gen);
-        filters = new ResourceStorage<>(Filter.class, gen);
-        themes = new ResourceStorage<>(Theme.class, gen);
-        spells = new ResourceStorage<>(Filter.class, gen);
-        customspells = new ArrayList<>();
-        magenames = new ResourceStorage<>(NamePart.class, gen);
-        miscnames = new ResourceStorage<>(NamePart.class, gen);
-        miscdef = new ResourceStorage<>(Filter.class, gen);
-        flagparts = new ResourceStorage<>(Flag.class, gen);
-        magicitems = new ResourceStorage<>(MagicItem.class, gen);
-
-        secondshapes = new ArrayList<>();
-        Init(gen);
-    }
-    
-    public void Init(NationGen gen)
-    {
-        patterns.load("/data/magic/magicpatterns.txt");
-        templates.load("/data/templates/templates.txt");
-        descriptions.load("/data/descriptions/descriptions.txt");
-        monsters.load("/data/monsters/monsters.txt");
-        poses.load("/data/poses/poses.txt");
-        filters.load("/data/filters/filters.txt");
-        themes.load("/data/themes/themes.txt");
-        spells.load("/data/spells/spells.txt");
-        customspells.addAll(Item.readFile(gen, "/data/spells/custom_spells.txt", Filter.class)); // ugh why you break pattern?
+        patterns.load(gen, "/data/magic/magicpatterns.txt");
+        templates.load(gen, "/data/templates/templates.txt");
+        descriptions.load(gen, "/data/descriptions/descriptions.txt");
+        monsters.load(gen, "/data/monsters/monsters.txt");
+        poses.load(gen, "/data/poses/poses.txt");
+        filters.load(gen, "/data/filters/filters.txt");
+        themes.load(gen, "/data/themes/themes.txt");
+        spells.load(gen, "/data/spells/spells.txt");
+        customspells.addAll(Entity.readFile(gen, "/data/spells/custom_spells.txt", Filter.class)); // ugh why you break pattern?
         
-        magenames.load("/data/names/magenames/magenames.txt");
-        miscnames.load("/data/names/naming.txt");
-        miscdef.load("/data/misc/miscdef.txt");
-        flagparts.load("/data/flags/flagdef.txt");
-        magicitems.load("/data/items/magicweapons.txt");
+        magenames.load(gen, "/data/names/magenames/magenames.txt");
+        miscnames.load(gen, "/data/names/naming.txt");
+        miscdef.load(gen, "/data/misc/miscdef.txt");
+        flagparts.load(gen, "/data/flags/flagdef.txt");
+        magicitems.load(gen, "/data/items/magicweapons.txt");
         
         secondshapes = Entity.readFile(gen, "/data/shapes/secondshapes.txt", ShapeShift.class);
         loadSecondShapeInheritance("/data/shapes/secondshapeinheritance.txt");
+        loadRaces(gen, "./data/races/races.txt");
     }
     
-    public void loadRaces(String file, NationGen gen)
+    private void loadRaces(NationGen gen, String file)
     {
         for (String strLine : FileUtil.readLines(file))
         {
@@ -107,9 +84,7 @@ public class NationGenAssets
 
             if(args.get(0).equals("#load"))
             {
-                List<Race> items = new ArrayList<>();
-                items.addAll(Item.readFile(gen, args.get(1), Race.class));
-                races.addAll(items);
+                races.addAll(Entity.readFile(gen, args.get(1), Race.class));
             }
         }
     }
@@ -135,31 +110,49 @@ public class NationGenAssets
             {
                 continue;
             }
-
-            if(args.get(0).equals("all") && args.size() > 0)
-            {
-                secondShapeMountCommands.add(args.get(1));
-                secondShapeNonMountCommands.add(args.get(1));
-                amount++;
-            }
-            else if(args.get(0).equals("mount") && args.size() > 0)
-            {
-                secondShapeMountCommands.add(args.get(1));
-                amount++;
-            }
-            else if(args.get(0).equals("nonmount") && args.size() > 0)
-            {
-                secondShapeNonMountCommands.add(args.get(1));
-                amount++;
-            }
-            else if(args.get(0).equals("racepose") && args.size() > 0)
-            {
-                secondShapeRacePoseCommands.add(args.get(1));
-                amount++;
+    
+            switch (args.get(0)) {
+                case "all":
+                    secondShapeMountCommands.add(args.get(1));
+                    secondShapeNonMountCommands.add(args.get(1));
+                    amount++;
+                    break;
+                case "mount":
+                    secondShapeMountCommands.add(args.get(1));
+                    amount++;
+                    break;
+                case "nonmount":
+                    secondShapeNonMountCommands.add(args.get(1));
+                    amount++;
+                    break;
+                case "racepose":
+                    secondShapeRacePoseCommands.add(args.get(1));
+                    amount++;
+                    break;
             }
         }  
         
         return amount;
     }
-
+    
+    /**
+     * Copies any poses from each race's theme's poses into its poses list
+     */
+    public void addThemePoses() {
+        for(Race race : races) {
+            ChanceIncHandler.retrieveFilters("racethemes", "default_racethemes", themes, null, race).stream()
+                .flatMap(theme -> theme.nationeffects.stream())
+                .filter(command -> "#pose".equals(command.command))
+                .map(command -> command.args.get(0).get())
+                .distinct()
+                .forEach(poseSetName -> {
+                    List<Pose> set = poses.get(poseSetName);
+                    if (set == null) {
+                        throw new IllegalArgumentException("Pose set " + poseSetName + " was not found.");
+                    } else {
+                        race.poses.addAll(set);
+                    }
+                });
+        }
+    }
 }
