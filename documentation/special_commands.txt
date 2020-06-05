@@ -293,7 +293,7 @@ Loads magici tems (for sacreds etc) from given definition set
 
 
 #magicpriority <path> <number>
-Sets the weight of a certain magic path in mage generation. Default for all paths is 1. Works in races as well.
+Sets the weight of a certain magic path in mage generation. Default for all paths is 1. Works in races as well. Weights are strictly multiplicative.
 
 #tier <number>
 Sets the tiers the pose is available for in mage and priest generation. Tier 1 is for H1 priests and crappiest mages while tier 3 is for
