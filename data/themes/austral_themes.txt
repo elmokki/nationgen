@@ -59,6 +59,7 @@
 #racedefinition "#pose pygmy_elites"
 #racedefinition "#pose pygmy_mages"
 #racedefinition "#strongmagicpatterns"
+#racedefinition "#size1"
 #raceprefix pygmy
 #endtheme
 
@@ -78,13 +79,14 @@
 #name colossi
 -- #basechance 0.5
 #basechance 0
-#chanceinc era 1 0.25
-#chanceinc era 3 -0.25
+-- #chanceinc era 1 0.25
+-- #chanceinc era 3 -0.25
 #racedefinition "#pose colossi"
 -- #racedefinition "#pose colossi_mages"
 #raceprefix colossi
 #racedefinition "#forts default_forts"
 #racedefinition "#forts city_forts"
+#racedefinition "#size3"
 #endtheme
 
 -- Weights: EA 1, MA 1, LA 1

@@ -380,3 +380,50 @@
 #command "#chaosrec %cost10"
 #description "Chaos rec 10%"
 #end
+
+#new
+#basechance 0
+#chanceinc "racetag not size1 0.03"
+#chanceinc "racetag giant *2"
+#chanceinc "racetag demon *2"
+#chanceinc "racetag fae *2"
+#name "pride-2"
+#command "#minsizeleader 2"
+#description "Too proud to be led by tiny beings"
+#end
+
+#new
+#basechance 0
+#chanceinc "racetag size3 0.03"
+#chanceinc "racetag size4 0.03"
+#chanceinc "racetag size5 0.03"
+#chanceinc "racetag giant *2"
+#chanceinc "racetag demon *2"
+#chanceinc "racetag fae *2"
+#name "pride-3"
+#command "#minsizeleader 3"
+#description "Too proud to be led by small beings"
+#end
+
+#new
+#basechance 0
+#chanceinc "racetag size4 0.03"
+#chanceinc "racetag size5 0.03"
+#chanceinc "racetag giant *2"
+#chanceinc "racetag demon *2"
+#chanceinc "racetag fae *2"
+#name "pride-4"
+#command "#minsizeleader 4"
+#description "Too proud to be led by lesser beings"
+#end
+
+#new
+#basechance 0
+#chanceinc "racetag size5 0.03"
+#chanceinc "racetag giant *2"
+#chanceinc "racetag demon *2"
+#chanceinc "racetag fae *2"
+#name "pride-5"
+#command "#minsizeleader 5"
+#description "Too proud to be led by lesser beings"
+#end
