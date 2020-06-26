@@ -35,12 +35,11 @@ public class Site {
 //		}
 		
 		List<String> lines = new ArrayList<>();
-		MagicPath path = getPath();
 
 		lines.add("#newsite " + id);
 		lines.add("#level " + level);
 		lines.add("#rarity 5");
-		lines.add("#path " + path.PathToInteger(path.name));
+		lines.add("#path " + getPath().number);
 		lines.add("#name \"" + name + "\"");
 		
 		lines.addAll(writeFeatureLines());
