@@ -35,11 +35,11 @@ public class Site {
 //		}
 		
 		List<String> lines = new ArrayList<>();
-		
+
 		lines.add("#newsite " + id);
 		lines.add("#level " + level);
 		lines.add("#rarity 5");
-		lines.add("#path " + getPath());
+		lines.add("#path " + getPath().number);
 		lines.add("#name \"" + name + "\"");
 		
 		lines.addAll(writeFeatureLines());
