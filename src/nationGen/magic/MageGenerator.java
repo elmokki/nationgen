@@ -224,9 +224,8 @@ public class MageGenerator extends TroopGenerator {
 		u.commands.add(Command.args("#att", "-1"));
 		u.commands.add(Command.args("#def", "-1"));
 		
-		int mr = 2 + (int)Math.round(u.getMagicAmount(10));
+		int mr = 1 + (int)Math.round(u.getMagicAmount(10) + u.getRandoms(1)); 
 
-		
 		
 		int unitmr = 0;	
 		for(Command c : u.getCommands())
@@ -238,30 +237,11 @@ public class MageGenerator extends TroopGenerator {
 			}
 		}
 		
+		if (unitmr > 12) 
+			mr++;
 		
-		unitmr -= 10;
-		while(unitmr > 0)
-		{
-			
-			if(unitmr == 1)
-				unitmr--;
-			else if(unitmr == 2)
-			{
-				mr--;
-				unitmr--;
-			}
-			else if(unitmr == 3)
-			{
-				unitmr -= 2;
-				mr--;
-			}
-			else
-			{
-				unitmr--;
-				mr--;
-			}
-				
-		}
+		//flatten high MR races and cap at 18
+		mr -= Math.max(0, Math.max(unitmr - 11, unitmr + mr - 18)); 
 		
 		if(mr > 0)
 		{
