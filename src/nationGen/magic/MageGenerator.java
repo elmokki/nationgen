@@ -526,72 +526,53 @@ public class MageGenerator extends TroopGenerator {
 
 		
 		// Extra mage
-		boolean ok = false;
 		int checks = 0;
 		
-		if(diversity < 3 && ((norand_picks.get(MagicPath.ASTRAL) == 0 && norand_picks.get(MagicPath.BLOOD) == 0) && this.random.nextDouble() < 0.8))
+		//guaranteed astral or blood access forfeits most extra mage chances
+		if (norand_picks.get(MagicPath.ASTRAL) == 0 && norand_picks.get(MagicPath.BLOOD) == 0)
 		{
-			ok = true;
-			checks++;
-		}
-		
-		if(max < 4 && norand_picks.get(MagicPath.ASTRAL) == 0 && norand_picks.get(MagicPath.BLOOD) == 0 && diversity < 3)
-		{
-			ok = true;
-			checks++;
-		}
-		
-		if(diversity < 4 && norand_picks.get(MagicPath.ASTRAL) == 0 && norand_picks.get(MagicPath.BLOOD) == 0 && this.random.nextDouble() < 0.5)
-		{
-			ok = true;
-			checks++;
-		}
-		else if(diversity < 4 && norand_picks.get(MagicPath.ASTRAL) == 0 && norand_picks.get(MagicPath.BLOOD) == 0 && norand_picks.get(MagicPath.EARTH) == 0 && norand_picks.get(MagicPath.FIRE) == 0 && this.random.nextDouble() < 0.2)
-		{
-			ok = true;
-			checks++;
-		}
-		
-		
-		if(max < 4 && atmax < 2 && picks.get(MagicPath.ASTRAL) == 0 && picks.get(MagicPath.BLOOD) == 0 && this.random.nextDouble() < 0.5)
-		{
-			ok = true;
-			checks++;
-		}
-		else if(max < 3 && atmax < 4 && picks.get(MagicPath.ASTRAL) == 0 && picks.get(MagicPath.BLOOD) == 0)
-		{
-			ok = true;
-			checks++;
-		}
-		
-		if(norand_picks.get(MagicPath.ASTRAL) == 0 && norand_picks.get(MagicPath.BLOOD) == 0 && diversity < 4 && this.random.nextDouble() < 0.2)
-		{
-			ok = true;
-			checks++;
-		}
-		if(norand_picks.get(MagicPath.ASTRAL) == 0 && norand_picks.get(MagicPath.BLOOD) == 0 && atmax == 1 && diversity < 2 && this.random.nextDouble() < 0.8)
-		{
-			ok = true;
-			checks++;
-		}
-		if(norand_picks.get(MagicPath.ASTRAL) < 2 && norand_picks.get(MagicPath.BLOOD) < 2 && atmax == 1 && diversity < 2 && this.random.nextDouble() < 0.5)
-		{
-			ok = true;
-			checks++;
-		}
-		
-		if(primaries == 1 && secondaries == 1 && !(norand_picks.get(MagicPath.ASTRAL) > 0 || norand_picks.get(MagicPath.BLOOD) > 0))
-		{
-			if((checks == 0 && random.nextDouble() < 0.7) || (checks == 1 && random.nextDouble() < 0.3))
-			{	
-				ok = true;
-				checks++;
-			}
-		}
+			if(diversity < 4)
+			{
+				if (diversity < 3)
+				{
+					if (max < 4)
+						checks++;
 				
+					if (this.random.nextDouble() < 0.8)
+						checks++;
+	
+					if (diversity < 2 && atmax == 1 && this.random.nextDouble() < 0.8)
+						checks++;
+				}
+	
+				//there used to be an extra 1 in 10 chance for mage lists without guaranteed earth 1 or fire 1 - this seemed very arbitrary and fiddly so I did away with the restriction
+				if (this.random.nextDouble() < 0.6)
+					checks++;
+	
+				if (this.random.nextDouble() < 0.2)
+					checks++;
+			}
+
+			//random astral/blood is still eligible for most checks, but nations without get a few extra chances
+			if (picks.get(MagicPath.ASTRAL) == 0 && picks.get(MagicPath.BLOOD) == 0)
+			{
+				if(max < 3 && atmax < 4)
+					checks++;
+				else if(max < 4 && atmax < 2 && this.random.nextDouble() < 0.5)
+					checks++;
+			}
+
+			if (primaries == 1 && secondaries == 1 && this.random.nextDouble() < (0.7 - 0.4 * checks)) 
+				//random freebie: likely for 0 checks, unlikely for 1 check, impossible for 2+
+				checks++;
+		}
+		else if(norand_picks.get(MagicPath.ASTRAL) < 2 && norand_picks.get(MagicPath.BLOOD) < 2 && atmax == 1 && diversity < 2 && this.random.nextDouble() < 0.5) 
+			//weak astral/blood can still get a shot if diversity is really bad
+			checks++;				
+
 		List<Unit> extramages = new ArrayList<Unit>();
 		
-		if(ok)
+		if(checks > 0)
 		{
 			extramages = this.generateExtraMages(primaries, this.getShuffledPrios(list), checks);
 			this.resolveAge(extramages);
