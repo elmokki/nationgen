@@ -1238,6 +1238,9 @@ public class MageGenerator extends TroopGenerator {
 		
 		if(extras.size() == 0)
 			compensationMagePriests = false;
+
+		if (compensationMagePriests)
+			magePriests = true; //necessary to generate magepriests at all (code already distinguishes regular vs. compensation magepriests)
 		
 		
 		
@@ -1290,7 +1293,10 @@ public class MageGenerator extends TroopGenerator {
 						u.appliedFilters.add(this.getPriestPattern(currentStrength));
 						u.tags.addName("magepriest");
 						u.commands.add(Command.args("#gcost", "+" + (10*currentStrength + currentStrength * priestextracost)));
-	
+
+						//force slow to recruit for H3s
+						if (currentStrength > 2 && u.getCommandValue("#rpcost", 0) == 2)
+							u.commands.add(Command.args("#rpcost", "+2"));	
 					}
 					done = true;
 				}
