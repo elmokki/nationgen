@@ -382,6 +382,7 @@ public class ScoutGenerator extends TroopGenerator {
 		{
 			tf.commands.add(Command.args("#gcost", "+40"));
 			tf.commands.add(Command.args("#spy"));
+			tf.commands.add(Command.args("#rpcost", "2"));
 			//NamePart part = new NamePart();
 			//part.text = "Spy";
 			//u.name.type = part;
