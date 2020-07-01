@@ -399,8 +399,6 @@ public class MageGenerator extends TroopGenerator {
 		all.add(secondarypatterns);
 		all.add(primarypatterns);
 		
-		double leaderrandom1 = this.random.nextDouble();
-		double leaderrandom2 = this.random.nextDouble();
 		double slowrecrand = this.random.nextDouble();
 		
 	
@@ -434,83 +432,8 @@ public class MageGenerator extends TroopGenerator {
 				// Sets mage name to match pattern. Debug purposes.
 				mages.get(i).get(j).name.setType(all.get(i).get(j).toString(derp));
 				
-			
-				if(mages.get(i).get(j).tags.containsName("warriormage"))
-				{
-					if(leaderrandom1 > 0.95)
-					{
-						mages.get(i).get(j).commands.add(new Command("#expertleader"));
-						mages.get(i).get(j).commands.add(Command.args("#gcost", "+50"));
-					}
-					else if(leaderrandom1 > 0.8 || mages.get(i).get(j).tags.containsName("#superior_leader"))
-					{
-						mages.get(i).get(j).commands.add(new Command("#goodleader"));
-						mages.get(i).get(j).commands.add(Command.args("#gcost", "+30"));
-					}
-					else if(leaderrandom1 > 0.5)
-					{
-						mages.get(i).get(j).commands.add(new Command("#okayleader"));
-						mages.get(i).get(j).commands.add(Command.args("#command", "+20"));
-						mages.get(i).get(j).commands.add(Command.args("#gcost", "+10"));
-					}
-					else if(leaderrandom1 > 0.25 || mages.get(i).get(j).tags.containsName("#good_leader"))
-					{
-						mages.get(i).get(j).commands.add(new Command("#okayleader"));
-					}
-					else if(leaderrandom1 > 0.0625)
-					{
-						mages.get(i).get(j).commands.add(new Command("#poorleader"));
-						mages.get(i).get(j).commands.add(Command.args("#command", "+30"));
-					}
-					else
-					{
-						mages.get(i).get(j).commands.add(new Command("#poorleader"));
-						mages.get(i).get(j).commands.add(Command.args("#gcost", "-5"));
-					}
 
-				}
-					
-				else
-				{
-					if(mages.get(i).get(j).tags.containsName("#superior_leader") && leaderrandom1 > 0.9)
-					{
-						mages.get(i).get(j).commands.add(new Command("#expertleader"));
-						mages.get(i).get(j).commands.add(Command.args("#gcost", "+50"));
-					}
-					else if(mages.get(i).get(j).tags.containsName("#superior_leader") && leaderrandom1 > 0.6)
-					{
-						mages.get(i).get(j).commands.add(new Command("#goodleader"));
-						mages.get(i).get(j).commands.add(Command.args("#gcost", "+40"));
-					}
-					else if(mages.get(i).get(j).tags.containsName("#good_leader") && leaderrandom1 > 0.9)
-					{
-						mages.get(i).get(j).commands.add(new Command("#goodleader"));
-						mages.get(i).get(j).commands.add(Command.args("#gcost", "+40"));
-					}
-					else if(i == 2 && leaderrandom1 > 0.9)
-					{
-						mages.get(i).get(j).commands.add(new Command("#goodleader"));
-						mages.get(i).get(j).commands.add(Command.args("#gcost", "+40"));
-					}
-					else if(i == 2 && leaderrandom1 > 0.6)
-					{
-						mages.get(i).get(j).commands.add(Command.args("#gcost", "+20"));
-					}
-					else if(i == 1 && leaderrandom1 > 0.9 && leaderrandom2 > 0.5)
-					{
-						mages.get(i).get(j).commands.add(Command.args("#gcost", "+20"));
-					}
-					else if(leaderrandom2 > 0.3 || leaderrandom1 > 0.3 || i > 0)
-					{
-						mages.get(i).get(j).commands.add(new Command("#poorleader"));
-						mages.get(i).get(j).commands.add(Command.args("#gcost", "+5"));
-					}
-					else
-					{
-						mages.get(i).get(j).commands.add(new Command("#noleader"));
-					}
-				}
-
+				double leadership = randomizeLeadership(mages.get(i).get(j), 0, i+1);
 					
 					
 				// SETTING HERE FOR MAGE INSANITY
@@ -1420,151 +1343,18 @@ public class MageGenerator extends TroopGenerator {
 
 			}
 
-			if(u.tags.containsName("warriormage"))
-			{
-				double leaderrandom = r.nextDouble();
-				if(u.tags.containsName("superior_leader")) leaderrandom += 0.4;
-				if(u.tags.containsName("good_leader")) leaderrandom += 0.2;
-				
-				if(leaderrandom > 0.95)
-				{
-					u.commands.add(new Command("#expertleader"));
-					u.commands.add(Command.args("#gcost", "+80"));
-					currentRP = Integer.max(2, currentRP);
-				}
-				else if(leaderrandom > 0.9)
-				{
-					u.commands.add(new Command("#expertleader"));
-					u.commands.add(Command.args("#command", "-40"));
-					u.commands.add(Command.args("#gcost", "+50"));
-					currentRP = Integer.max(2, currentRP);
-				}
-				else if(leaderrandom > 0.75)
-				{
-					u.commands.add(new Command("#goodleader"));
-					u.commands.add(Command.args("#gcost", "+40"));
-					currentRP = Integer.max(2, currentRP);
-				}
-				else if(leaderrandom > 0.70)
-				{
-					u.commands.add(new Command("#goodleader"));
-					u.commands.add(Command.args("#command", "-40"));
-					u.commands.add(Command.args("#gcost", "+30"));
-					currentRP = Integer.max(2, currentRP);
-				}
-				else if(leaderrandom > 0.55)
-				{
-					u.commands.add(new Command("#okayleader"));
-					u.commands.add(Command.args("#command", "+20"));
-					u.commands.add(Command.args("#gcost", "+20"));
-				}
-				else if(leaderrandom > 0.20)
-				{
-					u.commands.add(new Command("#okayleader"));
-					u.commands.add(Command.args("#gcost", "+10"));
-				}
-				else if(leaderrandom > 0.0675)
-				{
-					u.commands.add(new Command("#poorleader"));
-					u.commands.add(Command.args("#command", "+30"));
-					u.commands.add(Command.args("#gcost", "+5"));
-				}
-				else
-				{
-					u.commands.add(new Command("#poorleader"));
-				}
-			}
-			else if(currentStrength == 3 && r.nextDouble() > 0.75)
-			{
-				double leaderrandom = r.nextDouble();
-				if(u.tags.containsName("superior_leader")) leaderrandom += 0.4;
-				if(u.tags.containsName("good_leader")) leaderrandom += 0.2;
-				
-				if(leaderrandom > 0.95)
-				{
-					u.commands.add(new Command("#expertleader"));
-					u.commands.add(Command.args("#gcost", "+80"));
-				}
-				else if(leaderrandom > 0.85)
-				{
-					u.commands.add(new Command("#goodleader"));
-					u.commands.add(Command.args("#gcost", "+40"));
-				}
-				else if(leaderrandom > 0.75)
-				{
-					u.commands.add(new Command("#okayleader"));
-					u.commands.add(Command.args("#command", "+40"));
-					u.commands.add(Command.args("#gcost", "+30"));
-				}
-				else
-				{
-					u.commands.add(new Command("#okayleader"));
-				}
-			}
-			else if(currentStrength == 2 && r.nextDouble() > 0.85){
-				double leaderrandom = r.nextDouble();
-				if(u.tags.containsName("superior_leader")) leaderrandom += 0.4;
-				if(u.tags.containsName("good_leader")) leaderrandom += 0.2;
-				if(leaderrandom > 0.95)
-				{
-					u.commands.add(new Command("#expertleader"));
-					u.commands.add(Command.args("#command", "-40"));
-					u.commands.add(Command.args("#gcost", "+60"));
-				}
-				else if(leaderrandom > 0.90)
-				{
-					u.commands.add(new Command("#goodleader"));
-					u.commands.add(Command.args("#gcost", "+40"));
-				}
-				else if(leaderrandom > 0.85)
-				{
-					u.commands.add(new Command("#okayleader"));
-					u.commands.add(Command.args("#command", "+40"));
-					u.commands.add(Command.args("#gcost", "+30"));
-				}
-				else if(leaderrandom > 0.75)
-				{
-					u.commands.add(new Command("#okayleader"));
-					u.commands.add(Command.args("#command", "+20"));
-					u.commands.add(Command.args("#gcost", "+20"));
-				}
-				else
-				{
-					u.commands.add(new Command("#okayleader"));
-				}
-			}
-			else
-			{
-				if(u.tags.containsName("superior_leader") || u.tags.containsName("good_leader"))
-				{
-					u.commands.add(new Command("#okayleader"));
-					u.commands.add(Command.args("#gcost", "+10"));
-				}
-				else if(maxStrength == 1 && r.nextDouble() > 0.5)
-				{
-					u.commands.add(new Command("#okayleader"));
-					u.commands.add(Command.args("#gcost", "+10"));
-				}
-				else if(currentStrength == 1 && r.nextDouble() > 0.875)
-				{
-					u.commands.add(new Command("#okayleader"));
-					u.commands.add(Command.args("#gcost", "+10"));
-				}
-				else if(currentStrength == 1 && maxStrength > 1 && r.nextDouble() > 0.875)
-				{
-					u.commands.add(new Command("#noleader"));
-					u.commands.add(Command.args("#gcost", "-5"));
-				}
-				else
-				{
-					u.commands.add(new Command("#poorleader"));
-					if(r.nextDouble() > 0.875)
-					{
-						u.commands.add(Command.args("#command", "+30"));
-						u.commands.add(Command.args("#gcost", "+5"));
-					}
-				}
-			}
+
+			double leaderBonus = 0;
+			double leadership = 0; 
+
+			// if there is only 1 tier of priest, give them a boost to leadership
+			if (maxStrength == 1)
+				leaderBonus = 0.4;
+
+			leadership = randomizeLeadership(u, leaderBonus, currentStrength);
+
+			if (leadership > 60)
+				currentRP = Math.max(2, currentRP);
 
 			currentRP = Integer.max(Integer.max(currentRP, Integer.min(2, currentStrength)), priestminrpcost);
 			u.commands.add(new Command("#rpcost", new Arg(currentRP)));
@@ -2783,6 +2573,129 @@ public class MageGenerator extends TroopGenerator {
 		
 		return m;
 	
+	}
+
+	private double randomizeLeadership(Unit u, double bonus, int tier)
+	{
+		double leaderrandom = this.random.nextDouble() + bonus;
+		double leadership = 0;
+		double adjustedLeadership = 0;
+		double minimumLeadership = 0;
+		
+		if (u.tags.containsName("priest"))
+			leaderrandom += 0.1;
+		
+		if (u.tags.containsName("warriormage"))
+		{	
+			//just max out the bonus for anything with warriormage
+			leaderrandom += 0.75;
+		}
+		else
+		{
+			if (tier > 1)
+			{
+				leaderrandom += 0.1;
+			
+				if (tier == 3)
+					leaderrandom += 0.1;
+			
+				//advanced priests are usually good leaders
+				if (u.tags.containsName("priest") && this.random.nextDouble() < 0.85)
+				{
+					leaderrandom += 0.55;
+					minimumLeadership = 40;
+				}
+			}
+			
+			//mages with leadership bonuses get an bigger than normal bonus
+			if (!u.tags.containsName("priest"))
+			{
+				if (tier == 3 || u.tags.containsName("#superior_leader") || u.tags.containsName("#good_leader"))
+					leaderrandom += 0.4;
+			}
+		}
+		
+		if (u.tags.containsName("#good_leader")) leaderrandom += 0.2;
+		if (u.tags.containsName("#superior_leader")) leaderrandom += 0.4;
+		
+		leaderrandom += bonus;
+		
+		//final leadership values are rounded to multiples of 5, but 10/40/80/120 thresholds are used to determine leadership level
+		if (leaderrandom > 1.75)
+			leadership = 120;
+		else if (leaderrandom > 1.7)
+			leadership = 81;
+		else if (leaderrandom > 1.55)
+			leadership = 80;
+		else if (leaderrandom > 1.5)
+			leadership = 61;
+		else if (leaderrandom > 1.4)
+			leadership = 60;
+		else if (leaderrandom > 1)
+			leadership = 40;
+		else if (leaderrandom > 0.9)
+			leadership = 39;
+		else if (leaderrandom > 0.1)
+			leadership = 10;
+		else
+			leadership = 0;
+		
+		
+		leadership = Math.max(leadership, minimumLeadership);
+		
+		
+		if (leadership > 80)
+		{
+			u.commands.add(new Command("#expertleader"));
+			adjustedLeadership = (Math.round(leadership / 5) * 5) - 120;
+		}
+		else if (leadership > 60)
+		{
+			u.commands.add(new Command("#goodleader"));
+			adjustedLeadership = (Math.round(leadership / 5) * 5) - 80;
+		}
+		else if (leadership > 10)
+		{
+			u.commands.add(new Command("#okayleader"));
+			adjustedLeadership = (Math.round(leadership / 5) * 5) - 40;
+		}
+		else if (leadership > 0)
+		{
+			u.commands.add(new Command("#poorleader"));
+			adjustedLeadership = (Math.round(leadership / 5) * 5) - 10;
+		}
+		else
+			u.commands.add(new Command("#noleader"));
+		
+		
+		double maximumCost = 50;
+		double cost = 0;
+		
+		cost = Math.round(leadership / 2);
+		
+		//priests and warriormages get a discount
+		if (u.tags.containsName("priest"))
+		{
+			//high leadership priests charge a higher premium than mages - probably because you already have enough reasons to recruit the mages?
+			maximumCost = 60;
+		
+			if (cost >= 20)
+				cost -= 10;
+			else
+				cost -= 5;
+		}
+		else if (u.tags.containsName("warriormage"))
+			cost -= 10;
+		
+		cost = Math.min(cost, maximumCost);
+		
+		if (adjustedLeadership != 0)
+			u.commands.add(Command.args("#command", Double.toString(adjustedLeadership)));
+		
+		if (cost != 0)
+			u.commands.add(Command.args("#gcost", "+" + Double.toString(cost)));
+		
+		return leadership;
 	}
 
 }
