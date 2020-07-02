@@ -590,20 +590,20 @@ public class MageGenerator extends TroopGenerator {
 				unitGen.handleMontagUnits(u, new MageMontagTemplate(nation, nationGen, assets, 4), "montagmages");
 		
 			list.addAll(0, extramages);			
+			mages.add(extramages);
 		}
 
 		// Handle leadership & ages
 
-		for(int i = 1; i <= 3; i++)
+		for(int i = 0; i < mages.size(); i++)
 		{
-			List <Unit> l = this.getMagesOfTier(list, i); //can't just use mages because it doesn't know tiers for extramage
-			for (Unit u : l)
+			for (Unit u : mages.get(i))
 			{
-				double leadership = randomizeLeadership(u, 0, i-1);
+				double leadership = randomizeLeadership(u, 0, getMageTier(u));
 				determineSpecialLeadership(u, false);
 			}
 
-			this.resolveAge(l);
+			this.resolveAge(mages.get(i));
 		}
 
 		// Handle montags
@@ -1429,42 +1429,21 @@ public class MageGenerator extends TroopGenerator {
 			
 
 			
-			int rolls = 0;
 			List<Unit> mages = new ArrayList<Unit>();
 			
-			int tier = 3;
+			int tier = 4; 
 			
-			// Heroes and extra mages
-			if(getMagesOfTier(units, 1).size() == 0 && getMagesOfTier(units, 2).size() == 0 && getMagesOfTier(units, 3).size() == 0)
-			{
-				mages.addAll(units);
-				tier = 4;
-			}
-			// Other stuff
-			else
-			{
-				while(mages.size() == 0 && rolls < 50)
-				{
-				
-					tier = 3;
-					if(this.random.nextDouble() > 0.65)
-						tier = 2;
-					else if(this.random.nextDouble() > 0.875)
-						tier = 1;
-				
-					mages = getMagesOfTier(units, tier);
-					
-					rolls++;
-				}
-			}
-	
+			if (this.random.nextDouble() > 0.65 && getMagesOfTier(units, 2).size() > 0)
+				tier = 2;
+			else if (this.random.nextDouble() > 0.875 && getMagesOfTier(units, 1).size() > 0)
+				tier = 1;
+			else if (getMagesOfTier(units, 3).size() > 0)
+				tier = 3;
 
-			if(mages.size() == 0) // This happens for heroes and extra mages. An unlikely failsafe.
-			{
+			mages = getMagesOfTier(units, tier);
+
+			if(mages.size() == 0) // Heroes and extra mages
 				mages.addAll(units);
-				tier = 4;
-			}
-			
 
 			
 			// Figure whether to give different filters for mages of tier or not
@@ -1772,11 +1751,30 @@ public class MageGenerator extends TroopGenerator {
 	{
 		return mages.stream()
 			.filter(u -> u.tags.getInt("priest").orElse(
-				u.tags.getInt("schoolmage").orElse(u.tags.getInt("extramage").orElse(-1))) == tier)
+				u.tags.getInt("schoolmage").orElse(-1)) == tier)
 			.collect(Collectors.toList());
 	}
 
-		
+	/**
+	 * Returns tier of a given unit     
+	 * Can look up the original tier of extramages 
+	 * @param u Unit to look up
+	 * @return
+	 */
+
+	private int getMageTier(Unit u)
+	{
+		int tier = -1;
+		String[] mageTags = {"priest","schoolmage","extramage"};
+
+		for (String s : mageTags)
+		{
+			if (u.tags.getInt(s).isPresent())
+				tier = Integer.max(tier, u.tags.getValue(s).orElseThrow().getInt());
+		}
+
+		return tier;
+	}		
 	
 	/**
 	 * Returns a list of filters without #notfortier <tier>
