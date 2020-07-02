@@ -430,10 +430,7 @@ public class MageGenerator extends TroopGenerator {
 				
 
 				// Sets mage name to match pattern. Debug purposes.
-				mages.get(i).get(j).name.setType(all.get(i).get(j).toString(derp));
-				
-
-				double leadership = randomizeLeadership(mages.get(i).get(j), 0, i+1);
+				mages.get(i).get(j).name.setType(all.get(i).get(j).toString(derp));				
 					
 					
 				// SETTING HERE FOR MAGE INSANITY
@@ -474,14 +471,8 @@ public class MageGenerator extends TroopGenerator {
 		// Put to one unit list
 		List<Unit> list = new ArrayList<>();
 		for(List<Unit> l : mages)
-		{
-			this.resolveAge(l);
-			list.addAll(l);
-			
-		}
+			list.addAll(l);			
 
-		for(Unit u : list)
-			determineSpecialLeadership(u, false);
 
 		tagAll(list, "identifier", "schoolmage");
 		
@@ -576,15 +567,14 @@ public class MageGenerator extends TroopGenerator {
 		{
 			extramages = this.generateExtraMages(primaries, this.getShuffledPrios(list), checks);
 			this.resolveAge(extramages);
-			this.tagAll(extramages, "extramage");
 			this.applyStats(extramages.get(0));
 
 
 			
 			extramages.get(0).caponly = this.random.nextBoolean();
-			if((primaries > 1 || secondaries > 1) && caponlyprimaries)
+			if(!caponlyprimaries)
 				extramages.get(0).caponly = true;
-			else if(!caponlyprimaries)
+			else if(primaries > 1 || secondaries > 1)
 				extramages.get(0).caponly = true;
 			else if(extramages.get(0).getMagicAmount(0.25) > 6 || (extramages.get(0).getMagicAmount(0.25) > 5 && random.nextBoolean()))
 				extramages.get(0).caponly = true;
@@ -599,14 +589,25 @@ public class MageGenerator extends TroopGenerator {
 			for(Unit u : extramages)
 				unitGen.handleMontagUnits(u, new MageMontagTemplate(nation, nationGen, assets, 4), "montagmages");
 		
-			list.addAll(0, extramages);
-			
-			
+			list.addAll(0, extramages);			
+		}
+
+		// Handle leadership & ages
+
+		for(int i = 1; i <= 3; i++)
+		{
+			List <Unit> l = this.getMagesOfTier(list, i); //can't just use mages because it doesn't know tiers for extramage
+			for (Unit u : l)
+			{
+				double leadership = randomizeLeadership(u, 0, i-1);
+				determineSpecialLeadership(u, false);
+			}
+
+			this.resolveAge(l);
 		}
 
 		// Handle montags
 	
-
 		
 		// Apply filters
 		applyMageFilters(list);
@@ -657,7 +658,7 @@ public class MageGenerator extends TroopGenerator {
 				deriveEquipment(primarymages.get(0), u, 3, 1);
 			}
 		}
-		
+	
 		
 		/// Equip extra mage
 		for(Unit un : extramages)
@@ -665,7 +666,6 @@ public class MageGenerator extends TroopGenerator {
 			this.equipBase(un, 2);
 		}
 		
-		determineSpecialLeadership(u, false);
 		return list;
 	}
 	
@@ -770,7 +770,7 @@ public class MageGenerator extends TroopGenerator {
 		
 
 		int power = 0;
-		
+
 		if(this.random.nextDouble() < mod * 3)
 		{
 			power++;
@@ -1039,6 +1039,8 @@ public class MageGenerator extends TroopGenerator {
 		
 		bases.get(0).color = nation.colors[2];
 		bases.get(0).appliedFilters.add(f);
+
+		bases.get(0).tags.addArgs("extramage", tier);
 		
 		this.equipBase(bases.get(0), 2);
 		
@@ -1334,7 +1336,7 @@ public class MageGenerator extends TroopGenerator {
 
 			leadership = randomizeLeadership(u, leaderBonus, currentStrength);
 
-			if (leadership > 60)
+			if (leadership > 80)
 				currentRP = Math.max(2, currentRP);
 
 			currentRP = Integer.max(Integer.max(currentRP, Integer.min(2, currentStrength)), priestminrpcost);
@@ -1386,8 +1388,6 @@ public class MageGenerator extends TroopGenerator {
 			else if(!u.hasLeaderLevel(str))
 				u.commands.add(new Command("#" + basiclevel + str + "leader"));
 		}
-
-		
 	}
 	
 	/**
@@ -1772,12 +1772,11 @@ public class MageGenerator extends TroopGenerator {
 	{
 		return mages.stream()
 			.filter(u -> u.tags.getInt("priest").orElse(
-				u.tags.getInt("schoolmage").orElse(-1)) == tier)
+				u.tags.getInt("schoolmage").orElse(u.tags.getInt("extramage").orElse(-1))) == tier)
 			.collect(Collectors.toList());
 	}
-	
-	
-	
+
+		
 	
 	/**
 	 * Returns a list of filters without #notfortier <tier>
@@ -2342,7 +2341,7 @@ public class MageGenerator extends TroopGenerator {
 		this.polishUnit(u);
 	}
 	
-	
+	/* not used at present - deprecate?
 	public List<Unit> generateaNew(String posename, Race race, int amount, int tier)
 	{
 		
@@ -2362,6 +2361,7 @@ public class MageGenerator extends TroopGenerator {
 		this.varyEquipment(u, list, tier);
 		return list;
 	}
+	*/
 	
 	
 	private boolean hasPoseForTier(String posename, Race race, int tier)
