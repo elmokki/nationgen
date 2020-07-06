@@ -1,0 +1,157 @@
+--- Furs
+
+#newitem
+#id "rimvaettir furs"
+#gameid 44
+#sprite /graphics/vaettir/armor/rimvaettir/furs.png
+#armor
+#basechance 0.7
+#theme "primitive"
+#tag "prefix tribal"
+#tag "name infantry hunter"
+#tag "name commander chieftan"
+#chanceinc unittag irregular 2.3
+#enditem
+
+
+--- Leather
+
+#newitem
+#id "rimvaettir leather cuirass"
+#gameid 5
+#sprite /graphics/vaettir/armor/rimvaettir/leather_cuirass.png
+#armor
+#theme "leather"
+#basechance 0.25
+#enditem
+
+#newitem
+#id "rimvaettir leather hauberk"
+#gameid 10
+#sprite /graphics/vaettir/armor/rimvaettir/leather_hauberk.png
+#armor
+#theme "leather"
+#basechance 0.75
+#enditem
+
+
+#newitem -- full leather
+#id "rimvaettir full leather"
+#gameid 15
+#basechance 1
+#sprite /graphics/vaettir/armor/rimvaettir/leather_hauberk.png
+#needs legs rimvaettir_leather_full
+#armor
+#theme "leather"
+#enditem
+
+
+--- Ring
+
+#newitem
+#id "rimvaettir ring cuirass"
+#gameid 6
+#sprite /graphics/vaettir/armor/rimvaettir/ring_cuirass.png
+#armor
+#theme "leather"
+#basechance 0.25
+#enditem
+
+#newitem
+#id "rimvaettir ring hauberk"
+#gameid 11
+#sprite /graphics/vaettir/armor/rimvaettir/ring_hauberk.png
+#armor
+#theme "leather"
+#needs legs rimvaettir_leather_full
+#basechance 0.75
+#enditem
+
+#newitem -- full ring
+#id "rimvaettir full ring"
+#gameid 16
+#sprite /graphics/vaettir/armor/rimvaettir/ring_full.png
+#armor
+#theme "leather"
+#needs legs rimvaettir_leather_full
+#basechance 1
+#enditem
+
+
+--- Scale
+
+#newitem
+#id "rimvaettir scale cuirass"
+#gameid 7
+#sprite /graphics/vaettir/armor/rimvaettir/scale_cuirass.png
+#armor
+#theme "iron"
+#needs legs rimvaettir_leather_full
+#basechance 0.25
+#enditem
+
+#newitem
+#id "rimvaettir scale hauberk"
+#gameid 12
+#sprite /graphics/vaettir/armor/rimvaettir/scale_hauberk.png
+#armor
+#theme "iron"
+#needs legs rimvaettir_leather_full
+#basechance 0.25
+#enditem
+
+#newitem -- full scale
+#id "rimvaettir full scale"
+#gameid 17
+#sprite /graphics/vaettir/armor/rimvaettir/scale_full.png
+#armor
+#basechance 0.25
+#needs legs rimvaettir_chain_full
+#theme "advanced"
+#theme "iron"
+#tag "name mounted hirdman"
+#tag "name commander jarl"
+#enditem
+
+
+
+--- Chain Mail
+
+#newitem
+#id "rimvaettir chain cuirass"
+#gameid 8
+#sprite /graphics/vaettir/armor/rimvaettir/chain_cuirass.png
+#armor
+#basechance 0.5
+#needs legs rimvaettir_leather_full
+#theme "advanced"
+#theme "iron"
+#enditem
+
+
+#newitem
+#id "rimvaettir chain hauberk"
+#gameid 13
+#basechance 0.5
+#sprite /graphics/vaettir/armor/rimvaettir/chain_hauberk.png
+#armor
+#needs legs rimvaettir_leather_full
+#theme "advanced"
+#theme "iron"
+#tag "name mounted hirdman"
+#enditem
+
+
+#newitem -- full chain
+#id "rimvaettir full chain"
+#gameid 18
+#sprite /graphics/vaettir/armor/rimvaettir/chain_full.png
+#armor
+#basechance 0.5
+#needs legs rimvaettir_chain_full
+#theme "advanced"
+#theme "iron"
+#tag "name infantry hirdman"
+#tag "name mounted hirdman"
+#tag "name commander jarl"
+#enditem

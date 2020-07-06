@@ -1,0 +1,72 @@
+
+-------- Normal
+
+#newpose
+#name "rimvaettir elite inf"
+#role "elite infantry"
+#role "sacred infantry"
+
+#renderorder "shadow cloakb basesprite offhandw quiver mount shirt legs bonusweapon armor cloakf weapon hands hair helmet offhanda overlay"
+
+#command "#stealthy +0"
+
+#load basesprite /data/items/vaettir/rimvaettir/bases.txt
+#load shadow /data/items/vaettir/normal/shadow.txt
+
+#load hands /data/items/vaettir/rimvaettir/hands.txt
+
+#load cloakf /data/items/vaettir/normal/cloakf.txt
+#load cloakb /data/items/vaettir/normal/cloakb.txt
+
+#load armor /data/items/vaettir/rimvaettir/armor.txt
+#load armor /data/items/vaettir/rimvaettir/armor_magic.txt
+#load armor /data/items/vaettir/normal/naked.txt
+#load helmet /data/items/vaettir/rimvaettir/helmet.txt
+#load helmet /data/items/vaettir/rimvaettir/helmet_magic.txt
+#load legs /data/items/vaettir/rimvaettir/legs.txt
+
+#load weapon /data/items/vaettir/normal/weapon.txt
+#load weapon /data/items/vaettir/rimvaettir/weapon_magic.txt
+#load bonusweapon /data/items/vaettir/normal/bonusranged.txt
+
+#load offhand /data/items/vaettir/normal/offhand.txt
+#load offhand /data/items/vaettir/normal/shields.txt
+
+#endpose
+
+------- Mounted
+
+#newpose
+#name "rimvaettir elite cav"
+#role "mounted"
+#sacred
+#basechance 0.25
+
+#baseitemslot feet 0
+
+#renderorder "shadow cloakb mount basesprite offhandw shirt legs armor cloakf bonusweapon weapon hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/vaettir/rimvaettir/bases.txt
+#load mount /data/items/vaettir/mounted/mounts.txt
+
+#load hands /data/items/vaettir/rimvaettir/hands.txt
+
+#load cloakf /data/items/vaettir/normal/cloakf.txt
+#load cloakb /data/items/vaettir/normal/cloakb.txt
+
+#load armor /data/items/vaettir/rimvaettir/armor.txt
+#load armor /data/items/vaettir/rimvaettir/armor_magic.txt
+#load helmet /data/items/vaettir/rimvaettir/helmet.txt
+#load helmet /data/items/vaettir/rimvaettir/helmet_magic.txt
+#load legs /data/items/vaettir/rimvaettir_mounted/legs.txt
+
+#load weapon /data/items/vaettir/mounted/weapons.txt
+#load weapon /data/items/vaettir/rimvaettir/weapons_magic.txt
+#load bonusweapon /data/items/vaettir/normal/bonusranged.txt
+
+#load offhand /data/items/vaettir/normal/shields.txt
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+#load overlay /data/items/hoburg/mounted/overlay.txt
+
+#endpose
