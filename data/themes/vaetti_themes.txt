@@ -38,6 +38,35 @@
 #themeinc theme primitive *0.05
 #endtheme
 
+-- Demographic themes (mandatory)
+
+#newtheme
+#type demographic
+#name mixed_troops
+#basechance 1000
+#themeinc theme deer *2
+#themeinc theme bear *4
+#themeinc theme wolf *6
+#themeinc theme boar *3
+#themeinc theme lion *0.25
+#themeinc theme tiger *0.25
+#racedefinition "#pose rimvaettirtroops"
+#racedefinition "#pose rimvaettircavalry"
+#racedefinition "#nationcommand '#idealcold 3'"
+#racedefinition "#magicpriority water 8"
+#racedefinition "#magicpriority nature 3"
+#racedefinition "#magicpriority death 2"
+#racedefinition "#magicpriority blood 2"
+#racedefinition "#magicpriority fire 0.01"
+#raceprefix "rimvaettir"
+#endtheme
+
+#newtheme
+#type demographic
+#name vaetti_only
+#basechance 4
+#endtheme
+
 -- Tribal themes
 
 -- Weights: EA 1, MA 0.5, LA 0.25

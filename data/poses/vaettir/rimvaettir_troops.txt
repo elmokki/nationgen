@@ -1,0 +1,172 @@
+
+-------- Normal
+
+#newpose
+#name "rimvaettir inf"
+#role "infantry"
+
+#basechance 5
+
+#renderorder "shadow cloakb basesprite offhandw quiver mount shirt legs bonusweapon armor cloakf weapon hands hair helmet offhanda overlay"
+
+#command "#stealthy +0"
+
+#load basesprite /data/items/vaettir/rimvaettir/bases.txt
+#load shadow /data/items/vaettir/normal/shadow.txt
+
+#load hands /data/items/vaettir/rimvaettir/hands.txt
+
+#load cloakf /data/items/vaettir/normal/cloakf.txt
+#load cloakb /data/items/vaettir/normal/cloakb.txt
+
+#load armor /data/items/vaettir/rimvaettir/armor.txt
+#load armor /data/items/vaettir/normal/naked.txt
+#load helmet /data/items/vaettir/rimvaettir/helmet.txt
+#load legs /data/items/vaettir/rimvaettir/legs.txt
+
+#load weapon /data/items/vaettir/normal/weapon.txt
+#load bonusweapon /data/items/vaettir/normal/bonusranged.txt
+
+#load offhand /data/items/vaettir/normal/offhand.txt
+#load offhand /data/items/vaettir/normal/shields.txt
+
+#endpose
+
+-------- Stealthy Infantry
+
+#newpose
+#name "standard inf"
+#role "infantry"
+#role "scout"
+
+#basechance 0.05
+
+#renderorder "shadow cloakb basesprite offhandw quiver mount shirt legs bonusweapon armor cloakf weapon hands hair helmet offhanda overlay"
+
+#command "#stealthy +25"
+
+#load basesprite /data/items/vaettir/rimvaettir/bases.txt
+#load shadow /data/items/vaettir/normal/shadow.txt
+
+#load hands /data/items/vaettir/rimvaettir/hands.txt
+
+#load cloakf /data/items/vaettir/normal/cloakf.txt
+#load cloakb /data/items/vaettir/normal/cloakb.txt
+
+#load armor /data/items/vaettir/rimvaettir/armor.txt
+#load armor /data/items/vaettir/normal/naked.txt
+#load helmet /data/items/vaettir/rimvaettir/helmet.txt
+#load legs /data/items/vaettir/rimvaettir/legs.txt
+
+#load weapon /data/items/vaettir/normal/weapon.txt
+#load bonusweapon /data/items/vaettir/normal/bonusranged.txt
+
+#load offhand /data/items/vaettir/normal/offhand.txt
+#load offhand /data/items/vaettir/normal/shields.txt
+
+#endpose
+
+-------- Duel-weilding infantry
+
+#newpose
+#name "standard inf"
+#role "infantry"
+#role "scout"
+
+#basechance 0.05
+#theme "wolf"
+#theme "boar"
+
+#renderorder "shadow cloakb basesprite offhandw quiver mount shirt legs bonusweapon armor cloakf weapon hands hair helmet offhanda overlay"
+
+#command "#stealthy +0"
+#dwchancebonus 1
+
+#load basesprite /data/items/vaettir/rimvaettir/bases.txt
+#load shadow /data/items/vaettir/normal/shadow.txt
+
+#load hands /data/items/vaettir/rimvaettir/hands.txt
+
+#load cloakf /data/items/vaettir/normal/cloakf.txt
+#load cloakb /data/items/vaettir/normal/cloakb.txt
+
+#load armor /data/items/vaettir/rimvaettir/armor.txt
+#load armor /data/items/vaettir/normal/naked.txt
+#load helmet /data/items/vaettir/rimvaettir/helmet.txt
+#load legs /data/items/vaettir/rimvaettir/legs.txt
+
+#load weapon /data/items/vaettir/normal/weapon.txt
+#load bonusweapon /data/items/vaettir/normal/bonusranged.txt
+
+#load offhand /data/items/vaettir/normal/offhand.txt
+
+#endpose
+
+------- Archer
+
+#newpose
+#role "ranged"
+#role "scout"
+
+#theme "deer"
+#theme "hawk"
+#theme "lion"
+#theme "rabbit"
+
+#command "#stealthy +0"
+
+#renderorder "shadow cloakb basesprite mount shirt legs quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/vaettir/rimvaettir/bases.txt
+#load shadow /data/items/vaettir/normal/shadow.txt
+
+#load hands /data/items/vaettir/rimvaettir/hands.txt
+
+#load cloakf /data/items/vaettir/normal/cloakf.txt
+#load cloakb /data/items/vaettir/normal/cloakb.txt
+
+#load armor /data/items/vaettir/rimvaettir/armor.txt
+#load armor /data/items/vaettir/normal/naked.txt
+#load helmet /data/items/vaettir/rimvaettir/helmet.txt
+#load legs /data/items/vaettir/rimvaettir/legs.txt
+#load weapon /data/items/vaettir/ranged/bows.txt
+
+#load quiver /data/items/vaettir/ranged/bonusranged.txt
+#load bonusweapon /data/items/vaettir/ranged/archerweapon.txt
+
+#generateitem 1 bonusweapon
+#endpose
+
+------- Stealthy Archer
+
+#newpose
+#role "ranged"
+#role "scout"
+
+#basechance 0.05
+#theme "deer"
+#theme "rabbit"
+
+#command "#stealthy +25"
+
+#renderorder "shadow cloakb basesprite mount shirt legs quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/vaettir/rimvaettir/bases.txt
+#load shadow /data/items/vaettir/normal/shadow.txt
+
+#load hands /data/items/vaettir/rimvaettir/hands.txt
+
+#load cloakf /data/items/vaettir/normal/cloakf.txt
+#load cloakb /data/items/vaettir/normal/cloakb.txt
+
+#load armor /data/items/vaettir/rimvaettir/armor.txt
+#load armor /data/items/vaettir/normal/naked.txt
+#load helmet /data/items/vaettir/rimvaettir/helmet.txt
+#load legs /data/items/vaettir/rimvaettir/legs.txt
+#load weapon /data/items/vaettir/ranged/bows.txt
+
+#load quiver /data/items/vaettir/ranged/bonusranged.txt
+#load bonusweapon /data/items/vaettir/ranged/archerweapon.txt
+
+#generateitem 1 bonusweapon
+#endpose

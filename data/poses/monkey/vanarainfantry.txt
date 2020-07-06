@@ -225,7 +225,7 @@
 
 #baseitemslot feet 0
 
-#renderorder "shadow cloakb mount basesprite shirt legs bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay overlay2"
+#renderorder "shadow wings cloakb mount basesprite shirt legs bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay overlay2"
 
 #load basesprite /data/items/monkey/vanara/mounted/bases.txt
 
@@ -249,7 +249,7 @@
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
 
 #load wings /data/items/monkey/vanara/normal/wings.txt
-#load overlay2 /data/items/monkey/vanara/normal/overlay.txt
+#load overlay /data/items/monkey/vanara/normal/overlay.txt
 
 #command "#maxage 30"
 #generateitem 1 shirt

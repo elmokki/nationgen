@@ -1,0 +1,97 @@
+#newitem
+#name "javelin 1"
+#gameid 21
+#sprite /graphics/weapon/standard/javelin1.png
+#offsetx -1
+#offsety 9
+#tag "name infantry 'Javelineer'"
+#theme "wood"
+#theme "deer"
+#theme "bear"
+#theme "rabbit"
+#enditem
+
+#newitem
+#name "javelin 2"
+#gameid 21
+#sprite /graphics/weapon/standard/javelin2.png
+#offsetx -1
+#offsety 8
+#tag "name infantry 'Javelineer'"
+#theme "wood"
+#theme "bear"
+#theme "deer"
+#theme "rabbit"
+#enditem
+
+#newitem -- Throwing axe
+#name "throwing axe"
+#gameid 260
+#theme "primitive"
+#tag "name infantry 'Axe Thrower'"
+#theme "iron"
+#theme "bear"
+#enditem
+
+#newitem
+#name "bonus shortbow"
+#gameid 23
+#sprite /graphics/weapon/standard/bonusshortbow.png
+#offsetx -1
+#offsety 8
+#basechance 0.5
+#theme "wood"
+#theme "hawk"
+#theme "rabbit"
+#enditem
+
+#newitem
+#name "chakram"
+#gameid 362
+#tag "name infantry 'Chakram Thrower'"
+#tag "tierunique"
+#theme "iron"
+#theme "tiger"
+#enditem
+
+#newitem
+#name "sticksandstones"
+#gameid 360
+#basechance 0.5
+#theme "primitive"
+#tag "maxprot 8"
+#tag "notepic"
+#theme "boar"
+#theme "rabbit"
+#enditem
+
+#newitem
+#name "harpoon"
+#gameid 452
+#sprite /graphics/weapon/standard/javelin1.png
+#offsetx -1
+#offsety 9
+#tag "name infantry 'Harponeer'"
+#tag "maxprot 12"
+#tag "tierunique"
+#basechance 0.5
+#theme "wood"
+#theme "iron"
+#enditem
+
+#newitem
+#name "blowpipe"
+#gameid 34
+#tag "name infantry 'Poisoner'"
+#tag "maxprot 10"
+#tag "tierunique"
+#basechance 0.45
+#theme "spider"
+#enditem
+
+#newitem
+#name "poison darts"
+#basechance 0
+#gameid 620
+#theme "spider"
+#enditem
