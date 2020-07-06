@@ -1,57 +1,34 @@
 #newitem
 #name "cloak 1"
 #gameid -1
-#sprite /graphics/hoburg/cloak/cloakfront.png
+#sprite /graphics/vaettir/cloak/rimvaettir/cloak_heavy_f.png
 #recolormask self
-#offsetx 1
-#offsety -6
 #armor
 #enditem
 
 #newitem
 #name "cloak 2"
+#basechance 2
 #gameid -1
-#sprite /graphics/cloaks/standard/short_f.png
+#sprite /graphics/vaettir/cloak/rimvaettir/cloak_light_f.png
 #recolormask self
-#offsetx 1
-#offsety 8
 #armor
 #enditem
 
 #newitem
 #name "cloak 3"
+#basechance 4
 #gameid -1
-#sprite /graphics/hoburg/cloak/cloak2_f.png
+#sprite /graphics/vaettir/cloak/rimvaettir/cloak_mantle_f.png
 #recolormask self
-#offsetx 0
-#offsety -6
 #armor
 #enditem
 
 #newitem
-#name "cloak 3 elite"
+#name "cloak 4"
+#basechance 4
 #gameid -1
-#sprite /graphics/hoburg/cloak/cloak2_elite_f.png
-#recolormask /graphics/hoburg/cloak/cloak2_elite_f_recolormask.png
-#offsetx 0
-#offsety -6
-#armor
-#enditem
-
-#newitem
-#name "boar cloak"
-#gameid -1
-#sprite /graphics/hoburg/cloak/bearcloak_f.png
-#offsetx 0
-#offsety -6
-#armor
-#enditem
-
-#newitem
-#name "wolf cloak"
-#gameid -1
-#sprite /graphics/hoburg/cloak/wolfcloak_f.png
-#offsetx 0
-#offsety -6
+#sprite /graphics/vaettir/cloak/rimvaettir/cloak_short_f.png
+#recolormask self
 #armor
 #enditem
