@@ -6,12 +6,12 @@
 #role "elite infantry"
 #role "sacred infantry"
 
-#renderorder "shadow cloakb basesprite offhandw quiver mount shirt legs bonusweapon armor cloakf weapon hands hair helmet offhanda overlay"
+#renderorder "shadow cloakb basesprite quiver mount shirt legs bonusweapon armor offhandw cloakf weapon hands hair helmet offhanda overlay"
 
 #command "#stealthy +0"
 
 #load basesprite /data/items/vaettir/rimvaettir/bases.txt
-#load shadow /data/items/vaettir/normal/shadow.txt
+#load shadow /data/items/vaettir/rimvaettir/shadow.txt
 
 #load hands /data/items/vaettir/rimvaettir/hands.txt
 
@@ -27,7 +27,7 @@
 
 #load weapon /data/items/vaettir/normal/weapon.txt
 #load weapon /data/items/vaettir/rimvaettir/weapon_magic.txt
-#load bonusweapon /data/items/vaettir/normal/bonusranged.txt
+#load bonusweapon /data/items/vaettir/rimvaettir/bonusranged.txt
 
 #load offhand /data/items/vaettir/normal/offhand.txt
 #load offhand /data/items/vaettir/normal/shields.txt
@@ -44,15 +44,15 @@
 
 #baseitemslot feet 0
 
-#renderorder "shadow cloakb mount basesprite offhandw shirt legs armor cloakf bonusweapon weapon hands hair helmet offhanda overlay"
+#renderorder "shadow cloakb mount basesprite shirt legs armor offhandw cloakf bonusweapon weapon hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/vaettir/rimvaettir/bases.txt
 #load mount /data/items/vaettir/mounted/mounts.txt
 
 #load hands /data/items/vaettir/rimvaettir/hands.txt
 
-#load cloakf /data/items/vaettir/normal/cloakf.txt
-#load cloakb /data/items/vaettir/normal/cloakb.txt
+#load cloakf /data/items/vaettir/rimvaettir/cloakf.txt
+#load cloakb /data/items/vaettir/rimvaettir/cloakb.txt
 
 #load armor /data/items/vaettir/rimvaettir/armor.txt
 #load armor /data/items/vaettir/rimvaettir/armor_magic.txt
@@ -62,7 +62,7 @@
 
 #load weapon /data/items/vaettir/mounted/weapons.txt
 #load weapon /data/items/vaettir/rimvaettir/weapon_magic.txt
-#load bonusweapon /data/items/vaettir/normal/bonusranged.txt
+#load bonusweapon /data/items/vaettir/rimvaettir/bonusranged.txt
 
 #load offhand /data/items/vaettir/normal/shields.txt
 

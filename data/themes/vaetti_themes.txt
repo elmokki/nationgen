@@ -36,14 +36,16 @@
 #themeinc theme leather *0.5
 #themeinc theme naked *0.05
 #themeinc theme primitive *0.05
+#racedefinition "#pose vaetticrossbows"
 #endtheme
 
 -- Demographic themes (mandatory)
 
 #newtheme
 #type demographic
-#name mixed_troops
-#basechance 1000
+#name rimvaettir_only
+#basechance 0.1
+#themeinc theme ice *8
 #themeinc theme deer *2
 #themeinc theme bear *4
 #themeinc theme wolf *6
@@ -51,12 +53,33 @@
 #themeinc theme lion *0.25
 #themeinc theme tiger *0.25
 #racedefinition "#pose rimvaettirtroops"
-#racedefinition "#pose rimvaettircavalry"
 #racedefinition "#pose rimvaettirmages"
 #racedefinition "#pose rimvaettirelites"
 #racedefinition "#nationcommand '#idealcold 3'"
-#racedefinition "#magicpriority water 8"
-#racedefinition "#magicpriority nature 3"
+#racedefinition "#magicpriority water 20"
+#racedefinition "#magicpriority death 3"
+#racedefinition "#magicpriority fire 0.01"
+#raceprefix "rimvaettir"
+#endtheme
+
+#newtheme
+#type demographic
+#name rimvaettir_leaders
+#basechance 0.2
+#themeinc theme ice *5
+#themeinc theme deer *2
+#themeinc theme bear *4
+#themeinc theme wolf *6
+#themeinc theme boar *3
+#themeinc theme lion *0.25
+#themeinc theme tiger *0.25
+#racedefinition "#pose vaettitroops"
+#racedefinition "#pose vaetticavalry"
+#racedefinition "#pose rimvaettirmages"
+#racedefinition "#pose rimvaettirelites"
+#racedefinition "#nationcommand '#idealcold 3'"
+#racedefinition "#magicpriority water 10"
+#racedefinition "#magicpriority nature 2"
 #racedefinition "#magicpriority death 2"
 #racedefinition "#magicpriority blood 2"
 #racedefinition "#magicpriority fire 0.01"
@@ -65,8 +88,57 @@
 
 #newtheme
 #type demographic
+#name mixed_rimvaettir
+#basechance 0.5
+#themeinc theme ice *5
+#themeinc theme deer *2
+#themeinc theme bear *4
+#themeinc theme wolf *6
+#themeinc theme boar *3
+#themeinc theme lion *0.25
+#themeinc theme tiger *0.25
+#racedefinition "#pose vaettitroops"
+#racedefinition "#pose vaetticavalry"
+#racedefinition "#pose vaettimages"
+#racedefinition "#pose rimvaettirtroops"
+#racedefinition "#pose rimvaettirmages"
+#racedefinition "#pose rimvaettirelites"
+#racedefinition "#nationcommand '#idealcold 3'"
+#racedefinition "#magicpriority water 10"
+#racedefinition "#magicpriority nature 2"
+#racedefinition "#magicpriority death 2"
+#racedefinition "#magicpriority blood 2"
+#racedefinition "#magicpriority fire 0.01"
+#raceprefix "rimvaettir"
+#endtheme
+
+#newtheme
+#type demographic
+#name rimvaettir_elites
+#basechance 0.2
+#themeinc theme ice *5
+#themeinc theme deer *2
+#themeinc theme bear *4
+#themeinc theme wolf *6
+#themeinc theme boar *3
+#themeinc theme lion *0.25
+#themeinc theme tiger *0.25
+#racedefinition "#pose vaettitroops"
+#racedefinition "#pose vaettimages"
+#racedefinition "#pose rimvaettirelites"
+#racedefinition "#nationcommand '#idealcold 3'"
+#racedefinition "#magicpriority water 6"
+#racedefinition "#magicpriority fire 0.25"
+#raceprefix "rimvaettir"
+#endtheme
+
+#newtheme
+#type demographic
 #name vaetti_only
-#basechance 4
+#basechance 2
+#racedefinition "#pose vaettitroops"
+#racedefinition "#pose vaettimages"
+#racedefinition "#pose vaetticavalry"
 #endtheme
 
 -- Tribal themes
@@ -81,6 +153,7 @@
 #themeinc theme advanced *0.5
 #themeinc theme iron *0.5
 #themeinc theme bronze *0.5
+#themeinc theme ice *0.1
 #themeinc theme wood *2
 #themeinc theme leather *2
 #themeinc theme naked *1

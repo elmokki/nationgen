@@ -7,12 +7,12 @@
 
 #basechance 5
 
-#renderorder "shadow cloakb basesprite offhandw quiver mount shirt legs bonusweapon armor cloakf weapon hands hair helmet offhanda overlay"
+#renderorder "shadow cloakb basesprite quiver mount shirt legs bonusweapon armor offhandw cloakf weapon hands hair helmet offhanda overlay"
 
 #command "#stealthy +0"
 
 #load basesprite /data/items/vaettir/rimvaettir/bases.txt
-#load shadow /data/items/vaettir/normal/shadow.txt
+#load shadow /data/items/vaettir/rimvaettir/shadow.txt
 
 #load hands /data/items/vaettir/rimvaettir/hands.txt
 
@@ -25,10 +25,10 @@
 #load legs /data/items/vaettir/rimvaettir/legs.txt
 
 #load weapon /data/items/vaettir/normal/weapon.txt
-#load bonusweapon /data/items/vaettir/normal/bonusranged.txt
+#load bonusweapon /data/items/vaettir/rimvaettir/bonusranged.txt
 
 #load offhand /data/items/vaettir/normal/offhand.txt
-#load offhand /data/items/vaettir/normal/shields.txt
+#load offhand /data/items/vaettir/rimvaettir/shields.txt
 
 #endpose
 
@@ -41,17 +41,17 @@
 
 #basechance 0.05
 
-#renderorder "shadow cloakb basesprite offhandw quiver mount shirt legs bonusweapon armor cloakf weapon hands hair helmet offhanda overlay"
+#renderorder "shadow cloakb basesprite quiver mount shirt legs bonusweapon armor offhandw cloakf weapon hands hair helmet offhanda overlay"
 
 #command "#stealthy +25"
 
 #load basesprite /data/items/vaettir/rimvaettir/bases.txt
-#load shadow /data/items/vaettir/normal/shadow.txt
+#load shadow /data/items/vaettir/rimvaettir/shadow.txt
 
 #load hands /data/items/vaettir/rimvaettir/hands.txt
 
-#load cloakf /data/items/vaettir/normal/cloakf.txt
-#load cloakb /data/items/vaettir/normal/cloakb.txt
+#load cloakf /data/items/vaettir/rimvaettir/cloakf.txt
+#load cloakb /data/items/vaettir/rimvaettir/cloakb.txt
 
 #load armor /data/items/vaettir/rimvaettir/armor.txt
 #load armor /data/items/vaettir/normal/naked.txt
@@ -59,10 +59,10 @@
 #load legs /data/items/vaettir/rimvaettir/legs.txt
 
 #load weapon /data/items/vaettir/normal/weapon.txt
-#load bonusweapon /data/items/vaettir/normal/bonusranged.txt
+#load bonusweapon /data/items/vaettir/rimvaettir/bonusranged.txt
 
 #load offhand /data/items/vaettir/normal/offhand.txt
-#load offhand /data/items/vaettir/normal/shields.txt
+#load offhand /data/items/vaettir/rimvaettir/shields.txt
 
 #endpose
 
@@ -77,18 +77,18 @@
 #theme "wolf"
 #theme "boar"
 
-#renderorder "shadow cloakb basesprite offhandw quiver mount shirt legs bonusweapon armor cloakf weapon hands hair helmet offhanda overlay"
+#renderorder "shadow cloakb basesprite quiver mount shirt legs bonusweapon armor offhandw cloakf weapon hands hair helmet offhanda overlay"
 
 #command "#stealthy +0"
 #dwchancebonus 1
 
 #load basesprite /data/items/vaettir/rimvaettir/bases.txt
-#load shadow /data/items/vaettir/normal/shadow.txt
+#load shadow /data/items/vaettir/rimvaettir/shadow.txt
 
 #load hands /data/items/vaettir/rimvaettir/hands.txt
 
-#load cloakf /data/items/vaettir/normal/cloakf.txt
-#load cloakb /data/items/vaettir/normal/cloakb.txt
+#load cloakf /data/items/vaettir/rimvaettir/cloakf.txt
+#load cloakb /data/items/vaettir/rimvaettir/cloakb.txt
 
 #load armor /data/items/vaettir/rimvaettir/armor.txt
 #load armor /data/items/vaettir/normal/naked.txt
@@ -96,10 +96,41 @@
 #load legs /data/items/vaettir/rimvaettir/legs.txt
 
 #load weapon /data/items/vaettir/normal/weapon.txt
-#load bonusweapon /data/items/vaettir/normal/bonusranged.txt
+#load bonusweapon /data/items/vaettir/rimvaettir/bonusranged.txt
 
 #load offhand /data/items/vaettir/normal/offhand.txt
 
+#endpose
+
+-------- 2h infantry
+
+#newpose
+#basechance 0.2
+#name "2h inf"
+#role "infantry"
+
+#theme "boar"
+#theme "tiger"
+
+#command "#stealthy +0"
+
+#load basesprite /data/items/vaettir/rimvaettir/2h/bases.txt
+#load shadow /data/items/vaettir/rimvaettir/shadow.txt
+
+#load hands /data/items/vaettir/rimvaettir/2h/hands.txt
+
+#load cloakf /data/items/vaettir/rimvaettir/cloakf.txt
+#load cloakb /data/items/vaettir/rimvaettir/cloakb.txt
+
+#load armor /data/items/vaettir/rimvaettir/2h/armor.txt
+#load armor /data/items/vaettir/normal/naked.txt
+#load helmet /data/items/vaettir/rimvaettir/helmet.txt
+#load legs /data/items/vaettir/rimvaettir/legs.txt
+
+#load weapon /data/items/vaettir/rimvaettir/2h/weapon.txt
+#load bonusweapon /data/items/vaettir/rimvaettir/bonusranged.txt
+
+#maxvarieties 1
 #endpose
 
 ------- Archer
@@ -118,12 +149,12 @@
 #renderorder "shadow cloakb basesprite mount shirt legs quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/vaettir/rimvaettir/bases.txt
-#load shadow /data/items/vaettir/normal/shadow.txt
+#load shadow /data/items/vaettir/rimvaettir/shadow.txt
 
 #load hands /data/items/vaettir/rimvaettir/hands.txt
 
-#load cloakf /data/items/vaettir/normal/cloakf.txt
-#load cloakb /data/items/vaettir/normal/cloakb.txt
+#load cloakf /data/items/vaettir/rimvaettir/cloakf.txt
+#load cloakb /data/items/vaettir/rimvaettir/cloakb.txt
 
 #load armor /data/items/vaettir/rimvaettir/armor.txt
 #load armor /data/items/vaettir/normal/naked.txt
@@ -152,12 +183,12 @@
 #renderorder "shadow cloakb basesprite mount shirt legs quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/vaettir/rimvaettir/bases.txt
-#load shadow /data/items/vaettir/normal/shadow.txt
+#load shadow /data/items/vaettir/rimvaettir/shadow.txt
 
 #load hands /data/items/vaettir/rimvaettir/hands.txt
 
-#load cloakf /data/items/vaettir/normal/cloakf.txt
-#load cloakb /data/items/vaettir/normal/cloakb.txt
+#load cloakf /data/items/vaettir/rimvaettir/cloakf.txt
+#load cloakb /data/items/vaettir/rimvaettir/cloakb.txt
 
 #load armor /data/items/vaettir/rimvaettir/armor.txt
 #load armor /data/items/vaettir/normal/naked.txt
@@ -169,4 +200,37 @@
 #load bonusweapon /data/items/vaettir/ranged/archerweapon.txt
 
 #generateitem 1 bonusweapon
+#endpose
+
+------- Mounted
+
+#newpose
+#role "mounted"
+#sacred
+#basechance 0.25
+
+#baseitemslot feet 0
+
+#renderorder "shadow cloakb mount basesprite shirt legs armor offhandw cloakf bonusweapon weapon hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/vaettir/rimvaettir/bases.txt
+#load mount /data/items/vaettir/mounted/mounts.txt
+
+#load hands /data/items/vaettir/rimvaettir/hands.txt
+
+#load cloakf /data/items/vaettir/rimvaettir/cloakf.txt
+#load cloakb /data/items/vaettir/rimvaettir/cloakb.txt
+
+#load armor /data/items/vaettir/rimvaettir/armor.txt
+#load helmet /data/items/vaettir/rimvaettir/helmet.txt
+#load legs /data/items/vaettir/rimvaettir_mounted/legs.txt
+
+#load weapon /data/items/vaettir/mounted/weapons.txt
+#load bonusweapon /data/items/vaettir/rimvaettir/bonusranged.txt
+
+#load offhand /data/items/vaettir/rimvaettir/shields.txt
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+#load overlay /data/items/hoburg/mounted/overlay.txt
+
 #endpose

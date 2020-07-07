@@ -1,0 +1,151 @@
+--- Furs
+
+#newitem
+#name "furs"
+#gameid 44
+#sprite /graphics/vaettir/armor/2h/rimvaettir/furs.png
+#armor
+#basechance 0.7
+#theme "primitive"
+#tag "prefix tribal"
+#tag "name infantry savage"
+#tag "name commander chieftan"
+#chanceinc unittag irregular 2.3
+#enditem
+
+
+--- Leather
+
+#newitem
+#name "leather cuirass"
+#gameid 5
+#sprite /graphics/vaettir/armor/2h/rimvaettir/leather_cuirass.png
+#armor
+#basechance 0.25
+#theme "leather"
+#enditem
+
+#newitem
+#name "leather hauberk"
+#gameid 10
+#sprite /graphics/vaettir/armor/2h/rimvaettir/leather_hauberk.png
+#armor
+#basechance 0.75
+#theme "leather"
+#enditem
+
+
+#newitem -- full leather
+#name "full leather"
+#gameid 15
+#basechance 1
+#sprite /graphics/vaettir/armor/2h/rimvaettir/leather_hauberk.png
+#needs legs leather_full
+#armor
+#theme "leather"
+#enditem
+
+
+--- Ring
+
+#newitem
+#name "ring cuirass"
+#gameid 6
+#sprite /graphics/vaettir/armor/2h/rimvaettir/ring_cuirass.png
+#armor
+#basechance 0.25
+#theme "leather"
+#enditem
+
+#newitem
+#name "ring hauberk"
+#gameid 11
+#sprite /graphics/vaettir/armor/2h/rimvaettir/ring_hauberk.png
+#armor
+#basechance 0.75
+#theme "leather"
+#enditem
+
+#newitem -- full ring
+#name "full ring"
+#gameid 16
+#sprite /graphics/vaettir/armor/2h/rimvaettir/ring_full.png
+#armor
+#needs legs leather_full
+#basechance 1
+#theme "leather"
+#enditem
+
+
+--- Scale
+
+#newitem
+#name "scale cuirass"
+#gameid 7
+#sprite /graphics/vaettir/armor/2h/rimvaettir/scale_cuirass.png
+#armor
+#basechance 0.25
+#theme "iron"
+#enditem
+
+#newitem
+#name "scale hauberk long"
+#gameid 12
+#sprite /graphics/vaettir/armor/2h/rimvaettir/scale_hauberk.png
+#armor
+#basechance 0.25
+#theme "iron"
+#enditem
+
+#newitem -- full scale
+#name "full scale"
+#gameid 17
+#sprite /graphics/vaettir/armor/2h/rimvaettir/scale_full.png
+#armor
+#basechance 0.25
+#needs legs leather_full
+#theme "advanced"
+#tag "name infantry hirdman"
+#tag "name commander jarl"
+#theme "iron"
+#enditem
+
+
+
+--- Chain Mail
+
+#newitem
+#name "chain cuirass"
+#gameid 8
+#sprite /graphics/vaettir/armor/2h/rimvaettir/chain_cuirass.png
+#armor
+#basechance 0.125
+#theme "advanced"
+#theme "iron"
+#enditem
+
+
+#newitem
+#name "chain hauberk"
+#gameid 13
+#basechance 0.125
+#sprite /graphics/vaettir/armor/2h/rimvaettir/chain_hauberk.png
+#armor
+#theme "advanced"
+#theme "iron"
+#tag "name infantry hirdman"
+#enditem
+
+
+#newitem -- full chain
+#name "full chain"
+#gameid 18
+#sprite /graphics/vaettir/armor/2h/rimvaettir/chain_full.png
+#armor
+#basechance 0.125
+#needs legs leather_full
+#theme "advanced"
+#theme "iron"
+#tag "name infantry hirdman"
+#tag "name commander jarl"
+#enditem
