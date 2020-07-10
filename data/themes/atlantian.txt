@@ -1,0 +1,177 @@
+-- Generic theme with high diversity and low cohesion
+#newtheme
+#name default
+#basechance 4
+#endtheme
+
+-- Demographic themes (mandatory)
+-- Weights: EA 6, MA 4, LA 2
+#newtheme
+#type demographic
+#name abyssal
+#basechance 4
+#chanceinc era 1 +2
+#chanceinc era 3 -2
+#themeinc theme abyssal *1000
+#racedefinition "#subterranean"
+#racedefinition "#magicpriority earth 6"
+#racedefinition "#magicpriority water 4"
+#racedefinition "#magicpriority air 0.25"
+#endtheme
+
+-- Weights: EA 2, MA 2, LA 2
+#newtheme
+#type demographic
+#name oceanic
+#basechance 4
+#themeinc theme oceanic *1000
+#racedefinition "#magicpriority water 6"
+#endtheme
+
+-- Weights: EA 2, MA 4, LA 6
+#newtheme
+#type demographic
+#name pelegic
+#basechance 4
+#chanceinc era 1 -2
+#chanceinc era 3 +2
+#themeinc theme pelagic *1000
+#racedefinition "#magicpriority water 4"
+#endtheme
+
+
+-- Technology themes (mandatory)
+-- Weights: EA 6, MA 4, LA 2
+#newtheme
+#type techlevel
+#name primitive
+#basechance 4
+#chanceinc era 1 +2
+#chanceinc era 3 -2
+#chanceinc hastheme abyssal *2
+#themeinc theme primitive *2
+#themeinc theme advanced *0.5
+#themeinc theme stone *2
+#themeinc theme bone *2
+#themeinc theme bronze *0.01
+#themeinc theme iron *0.01
+#themeinc theme coral *0.01
+#themeinc theme ice *0.01
+#themeinc theme leather *2
+#themeinc theme naked *2
+#racedefinition "#magicpriority earth 6"
+#endtheme
+
+-- Weights: EA 6, MA 4, LA 2
+#newtheme
+#type techlevel
+#name bronze
+#basechance 4
+#chanceinc era 1 +2
+#chanceinc era 3 -2
+#chanceinc hastheme oceanic *0.5
+#themeinc theme primitive *1
+#themeinc theme advanced *1
+#themeinc theme stone *0.01
+#themeinc theme bone *1
+#themeinc theme bronze *5
+#themeinc theme iron *0.01
+#themeinc theme coral *0.01
+#themeinc theme ice *0.01
+#themeinc theme leather *0.5
+#themeinc theme naked *1
+#racedefinition "#magicpriority fire 4"
+#endtheme
+
+-- Weights: EA 4, MA 4, LA 4
+#newtheme
+#type techlevel
+#name coral
+#basechance 4
+#chanceinc hastheme pelagic *2
+#themeinc theme primitive *2
+#themeinc theme advanced *0.5
+#themeinc theme stone *0.01
+#themeinc theme bone *1
+#themeinc theme bronze *0.01
+#themeinc theme iron *0.01
+#themeinc theme coral *5
+#themeinc theme ice *0.01
+#themeinc theme leather *0.5
+#themeinc theme naked *2
+#racedefinition "#magicpriority nature 4"
+#endtheme
+
+-- Weights: EA 2, MA 4, LA 6
+#newtheme
+#type techlevel
+#name meteorite
+#basechance 4
+#chanceinc era 1 -2
+#chanceinc era 3 +2
+#chanceinc hastheme oceanic *2
+#themeinc theme primitive *0.5
+#themeinc theme advanced *2
+#themeinc theme stone *0.01
+#themeinc theme bone *1
+#themeinc theme bronze *0.01
+#themeinc theme iron *5
+#themeinc theme coral *0.01
+#themeinc theme ice *0.01
+#themeinc theme leather *1
+#themeinc theme naked *0.5
+#racedefinition "#magicpriority astral 4"
+#endtheme
+
+-- Weights: EA 2, MA 4, LA 6
+#newtheme
+#type techlevel
+#name ice
+#basechance 4
+#chanceinc era 1 -2
+#chanceinc era 3 +2
+#chanceinc hastheme abyssal *0.5
+#themeinc theme primitive *2
+#themeinc theme advanced *0.5
+#themeinc theme stone *0.01
+#themeinc theme bone *2
+#themeinc theme bronze *0.01
+#themeinc theme iron *0.01
+#themeinc theme coral *0.01
+#themeinc theme ice *5
+#themeinc theme leather *2
+#themeinc theme naked *0.01
+#racedefinition "#nationcommand '#idealcold 2'"
+#racedefinition "#unitcommand '#coldres +5'"
+#racedefinition "#magicpriority water 9"
+#racedefinition "#forts ice_forts"
+#endtheme
+
+
+-- Social themes
+-- Weights: EA 0.5, MA 0.5, LA 0.5
+#newtheme
+#type social
+#name slaver
+#basechance 0.05
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme wood *1
+#themeinc theme leather *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#themeinc theme slave *20
+#themeinc theme free *0.5
+#themeinc racename caveman *5
+#themeinc racename primate *5
+#themeinc racename "Feudal human" *5
+#themeinc racename hoburg *5
+#themeinc racename caelian *0.1
+#themeinc racename van *0.1
+#themeinc racename sidhe *0.1
+#themeinc racename tengu *0.1
+#secondaryracedefinition "#freetemplatefilter slavetemplate slave"
+#racedefinition "#secondaryracetroopmod 100"
+#racedefinition "#secondaryracemagemod -100"
+#endtheme
