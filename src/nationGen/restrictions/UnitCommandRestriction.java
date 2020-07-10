@@ -16,7 +16,7 @@ public class UnitCommandRestriction extends TextBoxListRestriction {
 				+ "If you specify arguments, they need to match exactly.</html>", "Unit command");
 
 		this.hascombobox = true;
-		this.comboboxoptions = new String[]{"All", "Troops", "Commanders", "Sacred troops"};
+		this.comboboxoptions = new String[]{"All", "Troops", "Commanders", "Sacred troops", "Cap-only", "Normal-rec"};
 		this.comboboxlabel = "Units to match:";
 		this.textFieldLabel = "Command to add:";
 		this.textfieldDefaultText = "#flying";
@@ -47,7 +47,15 @@ public class UnitCommandRestriction extends TextBoxListRestriction {
 	
 		if(comboselection == null)
 			comboselection = "All";
+
+		if(comboselection.equals("Cap-only")){
+			return n.selectUnits().filter(u -> u.caponly).anyMatch(this::checkUnit);
+		}
 		
+		if(comboselection.equals("Normal-rec")){
+			return n.selectUnits().filter(u -> !u.caponly).anyMatch(this::checkUnit);
+		}
+
 		return (comboselection.equals("Troops") || comboselection.equals("All"))
 				&& n.selectTroops().anyMatch(this::checkUnit)
 			|| (comboselection.equals("Commanders") || comboselection.equals("All"))

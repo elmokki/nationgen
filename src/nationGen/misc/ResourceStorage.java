@@ -11,11 +11,9 @@ public class ResourceStorage<E extends Entity> extends LinkedHashMap<String, Lis
 	private static final long serialVersionUID = 1L;
 	
 	private Class<E> type;
-	private NationGen gen;
-	public ResourceStorage(Class<E> type, NationGen nationGen)
+	public ResourceStorage(Class<E> type)
 	{
 		this.type = type;
-		this.gen = nationGen;
 	}
 	
 	
@@ -35,7 +33,7 @@ public class ResourceStorage<E extends Entity> extends LinkedHashMap<String, Lis
 
 	
 	
-	public void load(String file)
+	public void load(NationGen gen, String file)
 	{
 		for (String strLine : FileUtil.readLines(file))
 		{

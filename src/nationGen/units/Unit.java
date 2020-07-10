@@ -479,14 +479,18 @@ public class Unit {
 				
 				if(pose.getItems(slot) == null)
 				{
-					throw new IllegalStateException(command + " for " + slotname + ", item " + target + " and item " + getSlot(slotname).name + " on slot " + slot + " failed. Roles " + this.pose.roles + ", race " + race.name );
+					throw new IllegalStateException(getSlot(slotname).name + " in slot " + slotname
+						+ " tried to link to " + target + " on list " + slot + ", but that list wasn't found. "
+						+ "(race: " + this.race.name + ", pose: " + pose.name + ", roles: " + this.pose.roles + ")");
 				}
 				Item item = pose.getItems(slot).getItemWithName(target, slot);
 				
 				
 				if(item == null)
 				{
-					throw new IllegalStateException(getSlot(slotname).name + " on slot " + slotname + " tried to link to " + target + " on list " + slot + ", but such item was not found. Check your definitions! Pose " + this.pose.roles + ", race " + this.race.name);
+					throw new IllegalStateException(getSlot(slotname).name + " in slot " + slotname
+						+ " tried to link to " + target + " on list " + slot + ", but it wasn't found. "
+						+ "(race: " + this.race.name + ", pose: " + pose.name + ", roles: " + this.pose.roles + ")");
 				}
 				setSlot(slot, item);
 			}
@@ -1669,14 +1673,15 @@ public class Unit {
 		
 		String mountslot = getMountOffsetSlot();
 		
-		for(String s : pose.renderorder.split(" "))
+		for(String s : pose.renderorder)
 		{
 			
 			if(s.equals(mountslot)
 				|| (!pose.tags.containsName("non_mount_overlay")
-				&& s.equals("overlay") && getSlot(s) != null
-				&& getSlot("overlay").getOffsetX() == 0
-				&& getSlot("overlay").getOffsetY() == 0))
+					&& s.equals("overlay")
+					&& getSlot(s) != null
+					&& getSlot("overlay").getOffsetX() == 0
+					&& getSlot("overlay").getOffsetY() == 0))
 			{
 				renderSlot(g, this, s, false);
 			}

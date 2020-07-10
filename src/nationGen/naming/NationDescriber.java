@@ -52,14 +52,6 @@ public class NationDescriber {
 				.collect(Collectors.joining(" "))).append(" ");
 				
 			
-			for(Filter f : u.appliedFilters)
-			{
-				if(f != null)
-				{
-					desc.append(f.tags.getString("description").map(s -> s + " ").orElse(""));
-				}
-			}
-			
 			desc = new StringBuilder(dr.replace(desc.toString().trim()));
 			
 			

@@ -224,9 +224,8 @@ public class MageGenerator extends TroopGenerator {
 		u.commands.add(Command.args("#att", "-1"));
 		u.commands.add(Command.args("#def", "-1"));
 		
-		int mr = 2 + (int)Math.round(u.getMagicAmount(10));
+		int mr = 1 + (int)Math.round(u.getMagicAmount(10) + u.getRandoms(1)); 
 
-		
 		
 		int unitmr = 0;	
 		for(Command c : u.getCommands())
@@ -238,30 +237,11 @@ public class MageGenerator extends TroopGenerator {
 			}
 		}
 		
+		if (unitmr > 12) 
+			mr++;
 		
-		unitmr -= 10;
-		while(unitmr > 0)
-		{
-			
-			if(unitmr == 1)
-				unitmr--;
-			else if(unitmr == 2)
-			{
-				mr--;
-				unitmr--;
-			}
-			else if(unitmr == 3)
-			{
-				unitmr -= 2;
-				mr--;
-			}
-			else
-			{
-				unitmr--;
-				mr--;
-			}
-				
-		}
+		//flatten high MR races and cap at 18
+		mr -= Math.max(0, Math.max(unitmr - 11, unitmr + mr - 18)); 
 		
 		if(mr > 0)
 		{
@@ -419,8 +399,6 @@ public class MageGenerator extends TroopGenerator {
 		all.add(secondarypatterns);
 		all.add(primarypatterns);
 		
-		double leaderrandom1 = this.random.nextDouble();
-		double leaderrandom2 = this.random.nextDouble();
 		double slowrecrand = this.random.nextDouble();
 		
 	
@@ -452,85 +430,7 @@ public class MageGenerator extends TroopGenerator {
 				
 
 				// Sets mage name to match pattern. Debug purposes.
-				mages.get(i).get(j).name.setType(all.get(i).get(j).toString(derp));
-				
-			
-				if(mages.get(i).get(j).tags.containsName("warriormage"))
-				{
-					if(leaderrandom1 > 0.95)
-					{
-						mages.get(i).get(j).commands.add(new Command("#expertleader"));
-						mages.get(i).get(j).commands.add(Command.args("#gcost", "+50"));
-					}
-					else if(leaderrandom1 > 0.8 || mages.get(i).get(j).tags.containsName("#superior_leader"))
-					{
-						mages.get(i).get(j).commands.add(new Command("#goodleader"));
-						mages.get(i).get(j).commands.add(Command.args("#gcost", "+30"));
-					}
-					else if(leaderrandom1 > 0.5)
-					{
-						mages.get(i).get(j).commands.add(new Command("#okayleader"));
-						mages.get(i).get(j).commands.add(Command.args("#command", "+20"));
-						mages.get(i).get(j).commands.add(Command.args("#gcost", "+10"));
-					}
-					else if(leaderrandom1 > 0.25 || mages.get(i).get(j).tags.containsName("#good_leader"))
-					{
-						mages.get(i).get(j).commands.add(new Command("#okayleader"));
-					}
-					else if(leaderrandom1 > 0.0625)
-					{
-						mages.get(i).get(j).commands.add(new Command("#poorleader"));
-						mages.get(i).get(j).commands.add(Command.args("#command", "+30"));
-					}
-					else
-					{
-						mages.get(i).get(j).commands.add(new Command("#poorleader"));
-						mages.get(i).get(j).commands.add(Command.args("#gcost", "-5"));
-					}
-
-				}
-					
-				else
-				{
-					if(mages.get(i).get(j).tags.containsName("#superior_leader") && leaderrandom1 > 0.9)
-					{
-						mages.get(i).get(j).commands.add(new Command("#expertleader"));
-						mages.get(i).get(j).commands.add(Command.args("#gcost", "+50"));
-					}
-					else if(mages.get(i).get(j).tags.containsName("#superior_leader") && leaderrandom1 > 0.6)
-					{
-						mages.get(i).get(j).commands.add(new Command("#goodleader"));
-						mages.get(i).get(j).commands.add(Command.args("#gcost", "+40"));
-					}
-					else if(mages.get(i).get(j).tags.containsName("#good_leader") && leaderrandom1 > 0.9)
-					{
-						mages.get(i).get(j).commands.add(new Command("#goodleader"));
-						mages.get(i).get(j).commands.add(Command.args("#gcost", "+40"));
-					}
-					else if(i == 2 && leaderrandom1 > 0.9)
-					{
-						mages.get(i).get(j).commands.add(new Command("#goodleader"));
-						mages.get(i).get(j).commands.add(Command.args("#gcost", "+40"));
-					}
-					else if(i == 2 && leaderrandom1 > 0.6)
-					{
-						mages.get(i).get(j).commands.add(Command.args("#gcost", "+20"));
-					}
-					else if(i == 1 && leaderrandom1 > 0.9 && leaderrandom2 > 0.5)
-					{
-						mages.get(i).get(j).commands.add(Command.args("#gcost", "+20"));
-					}
-					else if(leaderrandom2 > 0.3 || leaderrandom1 > 0.3 || i > 0)
-					{
-						mages.get(i).get(j).commands.add(new Command("#poorleader"));
-						mages.get(i).get(j).commands.add(Command.args("#gcost", "+5"));
-					}
-					else
-					{
-						mages.get(i).get(j).commands.add(new Command("#noleader"));
-					}
-				}
-
+				mages.get(i).get(j).name.setType(all.get(i).get(j).toString(derp));				
 					
 					
 				// SETTING HERE FOR MAGE INSANITY
@@ -571,14 +471,8 @@ public class MageGenerator extends TroopGenerator {
 		// Put to one unit list
 		List<Unit> list = new ArrayList<>();
 		for(List<Unit> l : mages)
-		{
-			this.resolveAge(l);
-			list.addAll(l);
-			
-		}
+			list.addAll(l);			
 
-		for(Unit u : list)
-			determineSpecialLeadership(u, false);
 
 		tagAll(list, "identifier", "schoolmage");
 		
@@ -623,84 +517,64 @@ public class MageGenerator extends TroopGenerator {
 
 		
 		// Extra mage
-		boolean ok = false;
 		int checks = 0;
 		
-		if(diversity < 3 && ((norand_picks.get(MagicPath.ASTRAL) == 0 && norand_picks.get(MagicPath.BLOOD) == 0) && this.random.nextDouble() < 0.8))
+		//guaranteed astral or blood access forfeits most extra mage chances
+		if (norand_picks.get(MagicPath.ASTRAL) == 0 && norand_picks.get(MagicPath.BLOOD) == 0)
 		{
-			ok = true;
-			checks++;
-		}
-		
-		if(max < 4 && norand_picks.get(MagicPath.ASTRAL) == 0 && norand_picks.get(MagicPath.BLOOD) == 0 && diversity < 3)
-		{
-			ok = true;
-			checks++;
-		}
-		
-		if(diversity < 4 && norand_picks.get(MagicPath.ASTRAL) == 0 && norand_picks.get(MagicPath.BLOOD) == 0 && this.random.nextDouble() < 0.5)
-		{
-			ok = true;
-			checks++;
-		}
-		else if(diversity < 4 && norand_picks.get(MagicPath.ASTRAL) == 0 && norand_picks.get(MagicPath.BLOOD) == 0 && norand_picks.get(MagicPath.EARTH) == 0 && norand_picks.get(MagicPath.FIRE) == 0 && this.random.nextDouble() < 0.2)
-		{
-			ok = true;
-			checks++;
-		}
-		
-		
-		if(max < 4 && atmax < 2 && picks.get(MagicPath.ASTRAL) == 0 && picks.get(MagicPath.BLOOD) == 0 && this.random.nextDouble() < 0.5)
-		{
-			ok = true;
-			checks++;
-		}
-		else if(max < 3 && atmax < 4 && picks.get(MagicPath.ASTRAL) == 0 && picks.get(MagicPath.BLOOD) == 0)
-		{
-			ok = true;
-			checks++;
-		}
-		
-		if(norand_picks.get(MagicPath.ASTRAL) == 0 && norand_picks.get(MagicPath.BLOOD) == 0 && diversity < 4 && this.random.nextDouble() < 0.2)
-		{
-			ok = true;
-			checks++;
-		}
-		if(norand_picks.get(MagicPath.ASTRAL) == 0 && norand_picks.get(MagicPath.BLOOD) == 0 && atmax == 1 && diversity < 2 && this.random.nextDouble() < 0.8)
-		{
-			ok = true;
-			checks++;
-		}
-		if(norand_picks.get(MagicPath.ASTRAL) < 2 && norand_picks.get(MagicPath.BLOOD) < 2 && atmax == 1 && diversity < 2 && this.random.nextDouble() < 0.5)
-		{
-			ok = true;
-			checks++;
-		}
-		
-		if(primaries == 1 && secondaries == 1 && !(norand_picks.get(MagicPath.ASTRAL) > 0 || norand_picks.get(MagicPath.BLOOD) > 0))
-		{
-			if((checks == 0 && random.nextDouble() < 0.7) || (checks == 1 && random.nextDouble() < 0.3))
-			{	
-				ok = true;
-				checks++;
-			}
-		}
+			if(diversity < 4)
+			{
+				if (diversity < 3)
+				{
+					if (max < 4)
+						checks++;
 				
+					if (this.random.nextDouble() < 0.8)
+						checks++;
+	
+					if (diversity < 2 && atmax == 1 && this.random.nextDouble() < 0.8)
+						checks++;
+				}
+	
+				//there used to be an extra 1 in 10 chance for mage lists without guaranteed earth 1 or fire 1 - this seemed very arbitrary and fiddly so I did away with the restriction
+				if (this.random.nextDouble() < 0.6)
+					checks++;
+	
+				if (this.random.nextDouble() < 0.2)
+					checks++;
+			}
+
+			//random astral/blood is still eligible for most checks, but nations without get a few extra chances
+			if (picks.get(MagicPath.ASTRAL) == 0 && picks.get(MagicPath.BLOOD) == 0)
+			{
+				if(max < 3 && atmax < 4)
+					checks++;
+				else if(max < 4 && atmax < 2 && this.random.nextDouble() < 0.5)
+					checks++;
+			}
+
+			if (primaries == 1 && secondaries == 1 && this.random.nextDouble() < (0.7 - 0.4 * checks)) 
+				//random freebie: likely for 0 checks, unlikely for 1 check, impossible for 2+
+				checks++;
+		}
+		else if(norand_picks.get(MagicPath.ASTRAL) < 2 && norand_picks.get(MagicPath.BLOOD) < 2 && atmax == 1 && diversity < 2 && this.random.nextDouble() < 0.5) 
+			//weak astral/blood can still get a shot if diversity is really bad
+			checks++;				
+
 		List<Unit> extramages = new ArrayList<Unit>();
 		
-		if(ok)
+		if(checks > 0)
 		{
 			extramages = this.generateExtraMages(primaries, this.getShuffledPrios(list), checks);
 			this.resolveAge(extramages);
-			this.tagAll(extramages, "extramage");
 			this.applyStats(extramages.get(0));
 
 
 			
 			extramages.get(0).caponly = this.random.nextBoolean();
-			if((primaries > 1 || secondaries > 1) && caponlyprimaries)
+			if(!caponlyprimaries)
 				extramages.get(0).caponly = true;
-			else if(!caponlyprimaries)
+			else if(primaries > 1 || secondaries > 1)
 				extramages.get(0).caponly = true;
 			else if(extramages.get(0).getMagicAmount(0.25) > 6 || (extramages.get(0).getMagicAmount(0.25) > 5 && random.nextBoolean()))
 				extramages.get(0).caponly = true;
@@ -715,14 +589,25 @@ public class MageGenerator extends TroopGenerator {
 			for(Unit u : extramages)
 				unitGen.handleMontagUnits(u, new MageMontagTemplate(nation, nationGen, assets, 4), "montagmages");
 		
-			list.addAll(0, extramages);
-			
-			
+			list.addAll(0, extramages);			
+			mages.add(extramages);
+		}
+
+		// Handle leadership & ages
+
+		for(int i = 0; i < mages.size(); i++)
+		{
+			for (Unit u : mages.get(i))
+			{
+				double leadership = randomizeLeadership(u, 0, getMageTier(u));
+				determineSpecialLeadership(u, false);
+			}
+
+			this.resolveAge(mages.get(i));
 		}
 
 		// Handle montags
 	
-
 		
 		// Apply filters
 		applyMageFilters(list);
@@ -773,7 +658,7 @@ public class MageGenerator extends TroopGenerator {
 				deriveEquipment(primarymages.get(0), u, 3, 1);
 			}
 		}
-		
+	
 		
 		/// Equip extra mage
 		for(Unit un : extramages)
@@ -781,7 +666,6 @@ public class MageGenerator extends TroopGenerator {
 			this.equipBase(un, 2);
 		}
 		
-		determineSpecialLeadership(u, false);
 		return list;
 	}
 	
@@ -886,7 +770,7 @@ public class MageGenerator extends TroopGenerator {
 		
 
 		int power = 0;
-		
+
 		if(this.random.nextDouble() < mod * 3)
 		{
 			power++;
@@ -1155,6 +1039,8 @@ public class MageGenerator extends TroopGenerator {
 		
 		bases.get(0).color = nation.colors[2];
 		bases.get(0).appliedFilters.add(f);
+
+		bases.get(0).tags.addArgs("extramage", tier);
 		
 		this.equipBase(bases.get(0), 2);
 		
@@ -1238,6 +1124,9 @@ public class MageGenerator extends TroopGenerator {
 		
 		if(extras.size() == 0)
 			compensationMagePriests = false;
+
+		if (compensationMagePriests)
+			magePriests = true; //necessary to generate magepriests at all (code already distinguishes regular vs. compensation magepriests)
 		
 		
 		
@@ -1290,7 +1179,10 @@ public class MageGenerator extends TroopGenerator {
 						u.appliedFilters.add(this.getPriestPattern(currentStrength));
 						u.tags.addName("magepriest");
 						u.commands.add(Command.args("#gcost", "+" + (10*currentStrength + currentStrength * priestextracost)));
-	
+
+						//force slow to recruit for H3s
+						if (currentStrength > 2 && u.getCommandValue("#rpcost", 0) == 2)
+							u.commands.add(Command.args("#rpcost", "+2"));	
 					}
 					done = true;
 				}
@@ -1434,151 +1326,18 @@ public class MageGenerator extends TroopGenerator {
 
 			}
 
-			if(u.tags.containsName("warriormage"))
-			{
-				double leaderrandom = r.nextDouble();
-				if(u.tags.containsName("superior_leader")) leaderrandom += 0.4;
-				if(u.tags.containsName("good_leader")) leaderrandom += 0.2;
-				
-				if(leaderrandom > 0.95)
-				{
-					u.commands.add(new Command("#expertleader"));
-					u.commands.add(Command.args("#gcost", "+80"));
-					currentRP = Integer.max(2, currentRP);
-				}
-				else if(leaderrandom > 0.9)
-				{
-					u.commands.add(new Command("#expertleader"));
-					u.commands.add(Command.args("#command", "-40"));
-					u.commands.add(Command.args("#gcost", "+50"));
-					currentRP = Integer.max(2, currentRP);
-				}
-				else if(leaderrandom > 0.75)
-				{
-					u.commands.add(new Command("#goodleader"));
-					u.commands.add(Command.args("#gcost", "+40"));
-					currentRP = Integer.max(2, currentRP);
-				}
-				else if(leaderrandom > 0.70)
-				{
-					u.commands.add(new Command("#goodleader"));
-					u.commands.add(Command.args("#command", "-40"));
-					u.commands.add(Command.args("#gcost", "+30"));
-					currentRP = Integer.max(2, currentRP);
-				}
-				else if(leaderrandom > 0.55)
-				{
-					u.commands.add(new Command("#okayleader"));
-					u.commands.add(Command.args("#command", "+20"));
-					u.commands.add(Command.args("#gcost", "+20"));
-				}
-				else if(leaderrandom > 0.20)
-				{
-					u.commands.add(new Command("#okayleader"));
-					u.commands.add(Command.args("#gcost", "+10"));
-				}
-				else if(leaderrandom > 0.0675)
-				{
-					u.commands.add(new Command("#poorleader"));
-					u.commands.add(Command.args("#command", "+30"));
-					u.commands.add(Command.args("#gcost", "+5"));
-				}
-				else
-				{
-					u.commands.add(new Command("#poorleader"));
-				}
-			}
-			else if(currentStrength == 3 && r.nextDouble() > 0.75)
-			{
-				double leaderrandom = r.nextDouble();
-				if(u.tags.containsName("superior_leader")) leaderrandom += 0.4;
-				if(u.tags.containsName("good_leader")) leaderrandom += 0.2;
-				
-				if(leaderrandom > 0.95)
-				{
-					u.commands.add(new Command("#expertleader"));
-					u.commands.add(Command.args("#gcost", "+80"));
-				}
-				else if(leaderrandom > 0.85)
-				{
-					u.commands.add(new Command("#goodleader"));
-					u.commands.add(Command.args("#gcost", "+40"));
-				}
-				else if(leaderrandom > 0.75)
-				{
-					u.commands.add(new Command("#okayleader"));
-					u.commands.add(Command.args("#command", "+40"));
-					u.commands.add(Command.args("#gcost", "+30"));
-				}
-				else
-				{
-					u.commands.add(new Command("#okayleader"));
-				}
-			}
-			else if(currentStrength == 2 && r.nextDouble() > 0.85){
-				double leaderrandom = r.nextDouble();
-				if(u.tags.containsName("superior_leader")) leaderrandom += 0.4;
-				if(u.tags.containsName("good_leader")) leaderrandom += 0.2;
-				if(leaderrandom > 0.95)
-				{
-					u.commands.add(new Command("#expertleader"));
-					u.commands.add(Command.args("#command", "-40"));
-					u.commands.add(Command.args("#gcost", "+60"));
-				}
-				else if(leaderrandom > 0.90)
-				{
-					u.commands.add(new Command("#goodleader"));
-					u.commands.add(Command.args("#gcost", "+40"));
-				}
-				else if(leaderrandom > 0.85)
-				{
-					u.commands.add(new Command("#okayleader"));
-					u.commands.add(Command.args("#command", "+40"));
-					u.commands.add(Command.args("#gcost", "+30"));
-				}
-				else if(leaderrandom > 0.75)
-				{
-					u.commands.add(new Command("#okayleader"));
-					u.commands.add(Command.args("#command", "+20"));
-					u.commands.add(Command.args("#gcost", "+20"));
-				}
-				else
-				{
-					u.commands.add(new Command("#okayleader"));
-				}
-			}
-			else
-			{
-				if(u.tags.containsName("superior_leader") || u.tags.containsName("good_leader"))
-				{
-					u.commands.add(new Command("#okayleader"));
-					u.commands.add(Command.args("#gcost", "+10"));
-				}
-				else if(maxStrength == 1 && r.nextDouble() > 0.5)
-				{
-					u.commands.add(new Command("#okayleader"));
-					u.commands.add(Command.args("#gcost", "+10"));
-				}
-				else if(currentStrength == 1 && r.nextDouble() > 0.875)
-				{
-					u.commands.add(new Command("#okayleader"));
-					u.commands.add(Command.args("#gcost", "+10"));
-				}
-				else if(currentStrength == 1 && maxStrength > 1 && r.nextDouble() > 0.875)
-				{
-					u.commands.add(new Command("#noleader"));
-					u.commands.add(Command.args("#gcost", "-5"));
-				}
-				else
-				{
-					u.commands.add(new Command("#poorleader"));
-					if(r.nextDouble() > 0.875)
-					{
-						u.commands.add(Command.args("#command", "+30"));
-						u.commands.add(Command.args("#gcost", "+5"));
-					}
-				}
-			}
+
+			double leaderBonus = 0;
+			double leadership = 0; 
+
+			// if there is only 1 tier of priest, give them a boost to leadership
+			if (maxStrength == 1)
+				leaderBonus = 0.4;
+
+			leadership = randomizeLeadership(u, leaderBonus, currentStrength);
+
+			if (leadership > 80)
+				currentRP = Math.max(2, currentRP);
 
 			currentRP = Integer.max(Integer.max(currentRP, Integer.min(2, currentStrength)), priestminrpcost);
 			u.commands.add(new Command("#rpcost", new Arg(currentRP)));
@@ -1629,8 +1388,6 @@ public class MageGenerator extends TroopGenerator {
 			else if(!u.hasLeaderLevel(str))
 				u.commands.add(new Command("#" + basiclevel + str + "leader"));
 		}
-
-		
 	}
 	
 	/**
@@ -1672,42 +1429,21 @@ public class MageGenerator extends TroopGenerator {
 			
 
 			
-			int rolls = 0;
 			List<Unit> mages = new ArrayList<Unit>();
 			
-			int tier = 3;
+			int tier = 4; 
 			
-			// Heroes and extra mages
-			if(getMagesOfTier(units, 1).size() == 0 && getMagesOfTier(units, 2).size() == 0 && getMagesOfTier(units, 3).size() == 0)
-			{
-				mages.addAll(units);
-				tier = 4;
-			}
-			// Other stuff
-			else
-			{
-				while(mages.size() == 0 && rolls < 50)
-				{
-				
-					tier = 3;
-					if(this.random.nextDouble() > 0.65)
-						tier = 2;
-					else if(this.random.nextDouble() > 0.875)
-						tier = 1;
-				
-					mages = getMagesOfTier(units, tier);
-					
-					rolls++;
-				}
-			}
-	
+			if (this.random.nextDouble() > 0.65 && getMagesOfTier(units, 2).size() > 0)
+				tier = 2;
+			else if (this.random.nextDouble() > 0.875 && getMagesOfTier(units, 1).size() > 0)
+				tier = 1;
+			else if (getMagesOfTier(units, 3).size() > 0)
+				tier = 3;
 
-			if(mages.size() == 0) // This happens for heroes and extra mages. An unlikely failsafe.
-			{
+			mages = getMagesOfTier(units, tier);
+
+			if(mages.size() == 0) // Heroes and extra mages
 				mages.addAll(units);
-				tier = 4;
-			}
-			
 
 			
 			// Figure whether to give different filters for mages of tier or not
@@ -2018,9 +1754,27 @@ public class MageGenerator extends TroopGenerator {
 				u.tags.getInt("schoolmage").orElse(-1)) == tier)
 			.collect(Collectors.toList());
 	}
-	
-	
-	
+
+	/**
+	 * Returns tier of a given unit     
+	 * Can look up the original tier of extramages 
+	 * @param u Unit to look up
+	 * @return
+	 */
+
+	private int getMageTier(Unit u)
+	{
+		int tier = -1;
+		String[] mageTags = {"priest","schoolmage","extramage"};
+
+		for (String s : mageTags)
+		{
+			if (u.tags.getInt(s).isPresent())
+				tier = Integer.max(tier, u.tags.getValue(s).orElseThrow().getInt());
+		}
+
+		return tier;
+	}		
 	
 	/**
 	 * Returns a list of filters without #notfortier <tier>
@@ -2585,7 +2339,7 @@ public class MageGenerator extends TroopGenerator {
 		this.polishUnit(u);
 	}
 	
-	
+	/* not used at present - deprecate?
 	public List<Unit> generateaNew(String posename, Race race, int amount, int tier)
 	{
 		
@@ -2605,6 +2359,7 @@ public class MageGenerator extends TroopGenerator {
 		this.varyEquipment(u, list, tier);
 		return list;
 	}
+	*/
 	
 	
 	private boolean hasPoseForTier(String posename, Race race, int tier)
@@ -2797,6 +2552,129 @@ public class MageGenerator extends TroopGenerator {
 		
 		return m;
 	
+	}
+
+	private double randomizeLeadership(Unit u, double bonus, int tier)
+	{
+		double leaderrandom = this.random.nextDouble() + bonus;
+		double leadership = 0;
+		double adjustedLeadership = 0;
+		double minimumLeadership = 0;
+		
+		if (u.tags.containsName("priest"))
+			leaderrandom += 0.1;
+		
+		if (u.tags.containsName("warriormage"))
+		{	
+			//just max out the bonus for anything with warriormage
+			leaderrandom += 0.75;
+		}
+		else
+		{
+			if (tier > 1)
+			{
+				leaderrandom += 0.1;
+			
+				if (tier == 3)
+					leaderrandom += 0.1;
+			
+				//advanced priests are usually good leaders
+				if (u.tags.containsName("priest") && this.random.nextDouble() < 0.85)
+				{
+					leaderrandom += 0.55;
+					minimumLeadership = 40;
+				}
+			}
+			
+			//mages with leadership bonuses get an bigger than normal bonus
+			if (!u.tags.containsName("priest"))
+			{
+				if (tier == 3 || u.tags.containsName("#superior_leader") || u.tags.containsName("#good_leader"))
+					leaderrandom += 0.4;
+			}
+		}
+		
+		if (u.tags.containsName("#good_leader")) leaderrandom += 0.2;
+		if (u.tags.containsName("#superior_leader")) leaderrandom += 0.4;
+		
+		leaderrandom += bonus;
+		
+		//final leadership values are rounded to multiples of 5, but 10/40/80/120 thresholds are used to determine leadership level
+		if (leaderrandom > 1.75)
+			leadership = 120;
+		else if (leaderrandom > 1.7)
+			leadership = 81;
+		else if (leaderrandom > 1.55)
+			leadership = 80;
+		else if (leaderrandom > 1.5)
+			leadership = 61;
+		else if (leaderrandom > 1.4)
+			leadership = 60;
+		else if (leaderrandom > 1)
+			leadership = 40;
+		else if (leaderrandom > 0.9)
+			leadership = 39;
+		else if (leaderrandom > 0.1)
+			leadership = 10;
+		else
+			leadership = 0;
+		
+		
+		leadership = Math.max(leadership, minimumLeadership);
+		
+		
+		if (leadership > 80)
+		{
+			u.commands.add(new Command("#expertleader"));
+			adjustedLeadership = (Math.round(leadership / 5) * 5) - 120;
+		}
+		else if (leadership > 60)
+		{
+			u.commands.add(new Command("#goodleader"));
+			adjustedLeadership = (Math.round(leadership / 5) * 5) - 80;
+		}
+		else if (leadership > 10)
+		{
+			u.commands.add(new Command("#okayleader"));
+			adjustedLeadership = (Math.round(leadership / 5) * 5) - 40;
+		}
+		else if (leadership > 0)
+		{
+			u.commands.add(new Command("#poorleader"));
+			adjustedLeadership = (Math.round(leadership / 5) * 5) - 10;
+		}
+		else
+			u.commands.add(new Command("#noleader"));
+		
+		
+		double maximumCost = 50;
+		double cost = 0;
+		
+		cost = Math.round(leadership / 2);
+		
+		//priests and warriormages get a discount
+		if (u.tags.containsName("priest"))
+		{
+			//high leadership priests charge a higher premium than mages - probably because you already have enough reasons to recruit the mages?
+			maximumCost = 60;
+		
+			if (cost >= 20)
+				cost -= 10;
+			else
+				cost -= 5;
+		}
+		else if (u.tags.containsName("warriormage"))
+			cost -= 10;
+		
+		cost = Math.min(cost, maximumCost);
+		
+		if (adjustedLeadership != 0)
+			u.commands.add(Command.args("#command", Double.toString(adjustedLeadership)));
+		
+		if (cost != 0)
+			u.commands.add(Command.args("#gcost", "+" + Double.toString(cost)));
+		
+		return leadership;
 	}
 
 }

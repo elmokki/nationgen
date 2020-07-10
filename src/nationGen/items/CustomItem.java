@@ -87,6 +87,10 @@ public class CustomItem extends Item {
 	{
 		try {
 			if (str.command.equals("#command")) {
+				if (str.args.size() != 1) {
+					throw new IllegalArgumentException(
+						"#command must have a single arg. Surround the command with quotes if needed.");
+				}
 				this.values.add(str.args.get(0).getCommand());
 			} else {
 				super.handleOwnCommand(str);
