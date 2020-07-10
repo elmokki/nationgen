@@ -1,0 +1,24 @@
+#newitem
+#id coralshortsword
+#gameid coralshortsword
+#sprite /graphics/atlantian/weapon/shortsword.png
+#enditem
+
+#newitem
+#id coralbroadsword
+#gameid coralbroadsword
+#sprite /graphics/atlantian/weapon/broadsword.png
+#tag "name infantry swordmen"
+#enditem
+
+#newitem
+#id blowpipe
+#gameid 34
+#sprite /graphics/atlantian/weapon/blowpipe.png
+#tag "name ranger"
+#define "#weapon 32"
+#define "#gcost +6"
+#define "#prec +2"
+#tag "tierunique"
+#tag "noelite"
+#enditem

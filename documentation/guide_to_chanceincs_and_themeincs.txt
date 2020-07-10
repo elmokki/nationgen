@@ -145,7 +145,8 @@ S. Theme theme:	secondarythemetheme [not] <name>
 Era:		era [not] <name>
 		True if nation is of given era (as number)
 Has p. race:	hasprimaryrace [not]
-		True if nation has a primary race.
+		True if nation has a primary race. This should only be false prior to the first race being chosen and is thus mainly useful 
+		for modifying chances in race definitions (not themes, etc.)
 Nation command: nationcommand <command> [not] [above/below] [value]
 		Checks if nation has given command at above/below given level. If value is left empty, any argument is fine.
 Magic priority:	magicpriority <path> [not/below] <value>
