@@ -1,0 +1,281 @@
+#new
+#name "start filter desc"
+#set "start"
+#description "They"
+#end
+
+#new
+#name "start filter desc extended"
+#set "start extended"
+#chanceinc personalcommand magicskill *0
+#chanceinc personalcommand holy *0
+#synonym "They"
+#synonym "They"
+#synonym "They"
+#synonym "They"
+#synonym "They"
+#synonym "They"
+#synonym "Their %role%"
+#synonym "These %role%"
+#synonym "The %role% of %nation%"
+#synonym "The %race_plural% of %nation%"
+#synonym "%nation%'s troops"
+#synonym "The %unitname_plural%"
+#end
+
+#new
+#name "start filter desc extended brief"
+#set "start extended"
+#synonym "They"
+#synonym "The %unitname_plural%"
+#synonym "These %role%"
+#end
+
+#new
+#name "start army role"
+#set "army role start"
+#synonym "%unitname_plural%"
+#synonym "The %unitname_plural%"
+#synonym "%unitname_plural%"
+#synonym "The %unitname_plural%"
+#synonym "%nation%'s %unitname_plural%"
+#end
+
+#new
+#name "are"
+#set "are"
+#description "are"
+#prev "start"
+#end
+
+#new
+#name "superlative"
+#set "superlative"
+#synonym "very"
+#synonym "especially"
+#synonym "particularly"
+#synonym "extraordinarily"
+#synonym "unusually"
+#synonym "uniquely"
+#synonym "unfathomably"
+#synonym "notably"
+#end
+
+#new
+#name "negative"
+#set "negative"
+#synonym "are sadly"
+#synonym "are regrettably"
+#synonym "are unfortunately"
+#synonym "are"
+#end
+
+#new
+#name "immunity desc"
+#set "immunity desc"
+#synonym "resistant to"
+#synonym "protected from"
+#prev "are"
+#end
+
+#new
+#name "terrain desc"
+#set "terrain desc"
+#synonym "are native to the"
+#synonym "are raised from the"
+#synonym "are at home in the"
+#prev "start"
+#end
+
+#new
+#name "terrain end"
+#set "terrain end"
+#synonym "of %nation%"
+#synonym "found around %nation%"
+#end
+
+#new
+#name "lineage desc"
+#set "lineage desc"
+#synonym "are descended from"
+#synonym "have the blood of"
+#prev "start"
+#end
+
+#new
+#name "senses desc"
+#set "senses desc"
+#synonym "have"
+#synonym "possess"
+#prev "start"
+#end
+
+#new
+#name "physique desc"
+#set "physique desc"
+#description "are"
+#prev "start extended"
+#end
+
+#new
+#name "physique end"
+#set "physique end"
+#chanceinc personalcommand magicskill *0
+#synonym "warriors"
+#synonym "soldiers"
+#end
+
+#new
+#name "physique alt"
+#set "physique alt"
+#synonym "in battle"
+#synonym "in combat"
+#end
+
+#new
+#name "physique end priest"
+#set "physique end"
+#basechance 0
+#chanceinc personalcommand holy 1
+#chanceinc unittag mage *0
+#chanceinc unittag warriormage *0
+#synonym "priests"
+#synonym "clerics"
+#end
+
+#new
+#name "physique end mage"
+#set "physique end"
+#basechance 0
+#chanceinc personalcommand magicskill 1
+#chanceinc unittag warriormage *0
+#synonym "mages"
+#synonym "wizards"
+#end
+
+#new
+#name "physique end warriormage"
+#set "physique end"
+#basechance 0
+#chanceinc unittag warriormage 1
+#synonym "heroes"
+#synonym "nobles"
+#end
+
+#new
+#name "physique bridge"
+#set "physique bridge"
+#description "who"
+#end
+
+#new
+#name "army role bridge"
+#set "army role bridge"
+#description "who"
+#end
+
+#new
+#name "generic bridge"
+#set "generic bridge"
+#description "and they"
+#end
+
+#new
+#name "skill desc"
+#set "skill desc"
+#synonym "are skilled in"
+#synonym "are trained in"
+#prev "start"
+#end
+
+#new
+#name "retinue desc"
+#set "retinue desc"
+#description "have"
+#prev "start"
+#end
+
+#new
+#name "retinue end"
+#set "retinue end"
+#synonym "who will follow them into battle"
+#synonym "who will protect them in battle"
+#synonym "who will defend them in battle"
+#synonym "who will fight for them in battle"
+#uniquedescription
+#end
+
+#new
+#name "retinue element end"
+#set "retinue element end"
+#synonym "and it will rise up to protect them in battle"
+#synonym "and can animate it to fight in battle"
+#synonym "and an elemental will appear in battle to fight for them"
+#uniquedescription
+#end
+
+#new
+#name "retinue undead end"
+#set "retinue undead end"
+#synonym "and they will rise up to protect them in battle"
+#synonym "and can animate them to fight in battle"
+#synonym "and the undead will appear in battle to fight for them"
+#uniquedescription
+#end
+
+#new
+#name "wondrous start"
+#set "wondrous start"
+#synonym "They"
+#synonym "They"
+#synonym "They"
+#synonym "These %role%"
+#synonym "The %role% of %nation%"
+#synonym "The %unitname_plural%"
+#synonym "The %unitname_plural%"
+#synonym "%nation%'s %unitname_plural%"
+#synonym "The %unitname_plural% of %nation%"
+#end
+
+#new
+#name "wondrous desc"
+#set "wondrous desc"
+#synonym "are gifted with"
+#synonym "are empowered with"
+#prev "wondrous start"
+#chanceinc personalcommand holy *0
+#uniquedescription
+#end
+
+#new
+#name "wondrous desc sacred"
+#set "wondrous desc"
+#synonym "are blessed with"
+#synonym "are gifted with"
+#synonym "are empowered with"
+#synonym "have been given"
+#prev "wondrous start"
+#basechance 0
+#chanceinc personalcommand holy 1
+#uniquedescription
+#end
+
+#new
+#name "shapeshift start"
+#set "shapeshift start"
+#synonym "are masters of shapeshifting and"
+#synonym "are skilled shapeshifters and"
+#prev "start"
+#uniquedescription
+#end
+
+#new
+#name "shapeshift desc"
+#set "shapeshift desc"
+#synonym "can take the shape of"
+#synonym "can take the form of"
+#synonym "can shift into"
+#synonym "often appear in the form of"
+#prev "shapeshift start"
+#uniquedescription
+#end

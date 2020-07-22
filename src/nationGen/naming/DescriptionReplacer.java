@@ -1,9 +1,13 @@
 package nationGen.naming;
 
 import com.elmokki.Generic;
+
+import nationGen.entities.Filter;
 import nationGen.items.Item;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
+import nationGen.magic.MagicPath;
+import nationGen.magic.MagicPathInts;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,8 +30,6 @@ public class DescriptionReplacer {
 		descs.put("%magenoun%", MageDescriber.getCommonNoun(n).toString());
 		descs.put("%sacredname%", n.unitlists.get("sacreds").get(0).name.toString());
 		descs.put("%sacredname_plural%", Generic.capitalizeFirst(n.unitlists.get("sacreds").get(0).name.toString()));
-		
-
 	}
 	
 	public String replace(String line)
@@ -53,14 +55,23 @@ public class DescriptionReplacer {
 			}
 			descs.put("%mount%", animal.get());
 			descs.put("%mount_plural%", Generic.plural(animal.get()));
-			
 		}
 		else
 		{
 			descs.put("%mount%", "unspecified mount");
 			descs.put("%mount_plural%", "unspecified mounts");
-
 		}	
+		
+		if (u.tags.containsName("okleader") || u.tags.containsName("goodleader") || u.tags.containsName("poorleader"))
+			descs.put("%role%","commanders");
+		
+		for (Filter f : u.getMagicFilters())
+		{
+			if (f.name == "MAGICPICKS")
+				descs.put("%role%","mages");
+			else if (f.name == "PRIESTPICKS" && !descs.containsKey("%role%"))
+				descs.put("%role%","priests");
+		}
 	}
 	
 	public void calibrate(List<Unit> units)
@@ -191,14 +202,23 @@ public class DescriptionReplacer {
 
 		weapons.clear();
 		
+		int eraModifier = 1;
+		
+		//late era
+		if ((n.nationGen.settings.getSettingInteger() & 2) == 2)
+			eraModifier += 1;
+		
+		//early era
+		if ((n.nationGen.settings.getSettingInteger() & 1) == 1)
+			eraModifier -= 1;
 
-		if(minprot <= 10)
+		if(minprot <= 11 + eraModifier)
 			weapons.add("light");
 		
-		if(minprot <= 15 && maxprot > 10)
+		if(minprot <= 16 + eraModifier && maxprot > 11 + eraModifier)
 			weapons.add("medium");
 		
-		if(maxprot > 15)
+		if(maxprot > 16 + eraModifier)
 			weapons.add("heavy");
 
 		if(weapons.size() >= 3 || weapons.size() == 0)
@@ -208,7 +228,5 @@ public class DescriptionReplacer {
 		}
 		
 		descs.put("%armortypes%",  NameGenerator.writeAsList(weapons, false));
-		
-		
 	}
 }

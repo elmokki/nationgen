@@ -4,6 +4,10 @@
 #basechance 0.25
 #command "#invulnerable 10"
 #power 2
+#set "immunity"
+#prev "immunity desc"
+#synonym "mundane damage"
+#synonym "ordinary weapons"
 #end
 
 #new magefilter
@@ -11,6 +15,10 @@
 #basechance 0.125
 #command "#invulnerable 20"
 #power 3
+#set "immunity"
+#prev "immunity desc"
+#synonym "mundane damage"
+#synonym "ordinary weapons"
 #end
 
 #new magefilter
@@ -19,6 +27,10 @@
 #command "#fireres +10"
 #chanceinc "personalmagic fire 0.75"
 #chanceinc "personalmagic water 0.125"
+#synonym "fire"
+#synonym "heat"
+#set "immunity"
+#prev "immunity desc"
 #end
 
 #new magefilter
@@ -26,6 +38,10 @@
 #basechance 0.1
 #command "#poisonres +10"
 #chanceinc "personalmagic nature 0.75"
+#synonym "poison"
+#synonym "toxins"
+#set "immunity"
+#prev "immunity desc"
 #end
 
 #new magefilter
@@ -33,6 +49,10 @@
 #basechance 0.1
 #command "#shockres +10"
 #chanceinc "personalmagic air 0.75"
+#set "immunity"
+#prev "immunity desc"
+#synonym "lightning"
+#synonym "electricity"
 #end
 
 #new magefilter
@@ -41,6 +61,11 @@
 #command "#coldres +10"
 #chanceinc "personalmagic water 0.75"
 #chanceinc "personalmagic fire 0.125"
+#set "immunity"
+#prev "immunity desc"
+#synonym "cold"
+#synonym "ice"
+#synonym "frost"
 #end
 
 #new magefilter
@@ -54,6 +79,12 @@
 #power 2
 #tag "personalmagic air"
 #chanceinc "race vanir -20"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "skill with illusions"
+#synonym "protective glamour"
+#extendeddescription "and in battle they summon mirror images to avoid blows"
 #end
 
 #new magefilter
@@ -64,6 +95,14 @@
 #chanceinc "personalmagic astral 0.5"
 #primarycommand #ethereal
 #tag "personalmagic astral"
+#synonym "incorporeality"
+#synonym "the ability to shift between worlds"
+#synonym "the power to phase out of reality"
+#synonym "ethereal forms"
+#extendeddescription "and nonmagical weapons will have little effect on them"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
 #power 3
 #end
 
@@ -78,6 +117,14 @@
 #tag "notfortier 2"
 #tag "notfortier 1"
 #power 3
+#synonym "incorporeality"
+#synonym "the ability to shift between worlds"
+#synonym "the power to phase out of reality"
+#synonym "ethereal forms"
+#extendeddescription "and nonmagical weapons will have little effect on them"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
 #end
 
 #new magefilter
@@ -89,6 +136,13 @@
 #chanceinc "personalmagic death -0.4"
 #chanceinc "personalmagic blood -0.4"
 #power 2
+#synonym "an aura of supernatural splendor"
+#synonym "an aura of supernatural beauty"
+#synonym "an aura of supernatural wonder"
+#extendeddescription "and enemy soldiers will be reluctant to attack them"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
 #end
 
 #new magefilter
@@ -102,6 +156,12 @@
 #chanceinc personalmagic blood -0.5
 #chanceinc personalmagic astral death AND comparemagic astral above death *0
 #power 2
+#synonym "an aura of solar splendor"
+#synonym "an aura of solar wonder"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#extendeddescription "and in the light of the sun few would dare strike them"
 #end
 
 #new magefilter
@@ -111,6 +171,13 @@
 #chanceinc "personalmagic death 0.8"
 #tag "notfortier 1"
 #tag "notfortier 2"
+#synonym "terrifying"
+#synonym "horrifying"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#extendeddescription "and only the most disciplined troops can stand to face them without fleeing"
 #end
 
 #new magefilter
@@ -120,4 +187,10 @@
 #chanceinc "personalmagic nature 1"
 #tag "notfortier 1"
 #tag "personalmagic nature"
+#synonym "the power of regeneration"
+#synonym "regenerating flesh"
+#synonym "self-healing flesh"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
 #end

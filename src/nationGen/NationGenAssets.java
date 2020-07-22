@@ -17,6 +17,7 @@ import nationGen.units.ShapeShift;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * This class will mirror the constant elements in Nationgen.java but eventually, it'll replace it.
@@ -70,6 +71,8 @@ public class NationGenAssets {
         secondshapes = Entity.readFile(gen, "/data/shapes/secondshapes.txt", ShapeShift.class);
         loadSecondShapeInheritance("/data/shapes/secondshapeinheritance.txt");
         loadRaces(gen, "./data/races/races.txt");
+        
+        initializeAllFilters();
     }
     
     private void loadRaces(NationGen gen, String file)
@@ -154,5 +157,42 @@ public class NationGenAssets {
                     }
                 });
         }
+    }
+    
+    public void initializeFilters(List<Filter> newFilters)
+    {
+    	List<Filter> newDescriptions = new ArrayList<>();  
+    	
+    	for (String s : descriptions.keySet())
+    		newDescriptions.addAll(descriptions.get(s));
+    	
+    	for (Filter f : newFilters)
+    	{
+    		//possibles = descs.stream().filter(f -> f.name.equals(target)).collect(Collectors.toList());
+    		if (f.tags.containsName("prev"))
+    			f.prevDesc = newDescriptions.stream().filter(pf -> pf.descSet.equals(f.tags.getString("prev").orElse(""))).collect(Collectors.toList());
+    		
+    		if (f.tags.containsName("next"))
+    			f.nextDesc = newDescriptions.stream().filter(nf -> nf.descSet.equals(f.tags.getString("next").orElse(""))).collect(Collectors.toList());
+    		
+    		if (f.tags.containsName("bridge"))
+    			f.bridgeDesc = newDescriptions.stream().filter(bf -> bf.descSet.equals(f.tags.getString("bridge").orElse(""))).collect(Collectors.toList());    		
+    	}
+    }
+    
+    public void initializeAllFilters()
+    {
+    	List<Filter> newFilters = new ArrayList<>();
+
+    	for (String s : descriptions.keySet())
+    		newFilters.addAll(descriptions.get(s));
+    	
+    	for (String s : filters.keySet())
+    		newFilters.addAll(filters.get(s));
+    	
+    	for (String s : templates.keySet())
+    		newFilters.addAll(templates.get(s)); 
+    	
+    	initializeFilters(newFilters);
     }
 }

@@ -28,6 +28,13 @@
 #theme militia
 #cannot_be_commander
 #onlyfilter
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are local levies"
+#synonym "are irregula militia"
+#synonym "are civilian defenders"
+#synonym "are rear echelon troops"
 #end
 
 -- Undisciplined militia
@@ -58,6 +65,13 @@
 #theme militia
 #cannot_be_commander
 #onlyfilter
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are poorly trained militia"
+#synonym "are an undisciplined mob"
+#synonym "are the lowest rung of %nation%'s military hierarchy,"
+#synonym "are inexperienced troops"
 #end
 
 -- Nomal militia
@@ -88,6 +102,13 @@
 #theme militia
 #cannot_be_commander
 #onlyfilter
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are lightly trained militia"
+#synonym "are supporting militia"
+#synonym "are inexpensive garrison troops"
+#synonym "are low ranking soldiers"
 #end
 
 
@@ -106,6 +127,13 @@
 #maxvarieties 2
 #theme formationfighter
 #primarycommand #formationfighter
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are disciplined and well-drilled soldiers"
+#synonym "are close formation fighters"
+#synonym "are dense phalanx troops"
+#synonym "are tightly packed soldiers"
 #end
 
 #new
@@ -121,6 +149,13 @@
 #maxvarieties 2
 #theme formationfighter
 #primarycommand #formationfighter
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are disciplined and well-drilled soldiers"
+#synonym "are close formation fighters"
+#synonym "are dense phalanx troops"
+#synonym "are tightly packed soldiers"
 #end
 
 #new
@@ -136,6 +171,13 @@
 #maxvarieties 2
 #theme formationfighter
 #primarycommand #formationfighter
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are disciplined and well-drilled soldiers"
+#synonym "are close formation fighters"
+#synonym "are dense phalanx troops"
+#synonym "are tightly packed soldiers"
 #end
 
 #new
@@ -151,6 +193,13 @@
 #maxvarieties 2
 #theme formationfighter
 #primarycommand #formationfighter
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are disciplined and well-drilled soldiers"
+#synonym "are close formation fighters"
+#synonym "are dense phalanx troops"
+#synonym "are tightly packed soldiers"
 #end
 
 #new
@@ -166,6 +215,13 @@
 #maxvarieties 2
 #theme formationfighter
 #primarycommand #formationfighter
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are disciplined and well-drilled soldiers"
+#synonym "are close formation fighters"
+#synonym "are dense phalanx troops"
+#synonym "are tightly packed soldiers"
 #end
 
 #new
@@ -181,6 +237,13 @@
 #maxvarieties 1
 #theme formationfighter
 #primarycommand #formationfighter
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are disciplined and well-drilled soldiers"
+#synonym "are close formation fighters"
+#synonym "are dense phalanx troops"
+#synonym "are tightly packed soldiers"
 #end
 
 #new
@@ -196,6 +259,13 @@
 #maxvarieties 1
 #theme formationfighter
 #primarycommand #formationfighter
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are disciplined and well-drilled soldiers"
+#synonym "are close formation fighters"
+#synonym "are dense phalanx troops"
+#synonym "are tightly packed soldiers"
 #end
 
 #new
@@ -211,6 +281,13 @@
 #maxvarieties 1
 #theme formationfighter
 #primarycommand #formationfighter
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are disciplined and well-drilled soldiers"
+#synonym "are close formation fighters"
+#synonym "are dense phalanx troops"
+#synonym "are tightly packed soldiers"
 #end
 
 #new
@@ -226,6 +303,13 @@
 #maxvarieties 1
 #theme formationfighter
 #primarycommand #formationfighter
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are disciplined and well-drilled soldiers"
+#synonym "are close formation fighters"
+#synonym "are dense phalanx troops"
+#synonym "are tightly packed soldiers"
 #end
 
 #new
@@ -241,6 +325,13 @@
 #maxvarieties 1
 #theme formationfighter
 #primarycommand #formationfighter
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are disciplined and well-drilled soldiers"
+#synonym "are close formation fighters"
+#synonym "are dense phalanx troops"
+#synonym "are tightly packed soldiers"
 #end
 
 #new
@@ -263,6 +354,13 @@
 #generateitem 0.5 cloakb
 #alloweliteitems
 #allowelitenaming
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are experienced veteran troops"
+#synonym "are well drilled professional troops"
+#synonym "are the backbone of %nation%'s army,"
+#synonym "are highly skilled soldiers"
 #end
 
 
@@ -287,6 +385,13 @@
 #generateitem 1 cloakb
 #alloweliteitems
 #allowelitenaming
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are the pride of %nation%"
+#synonym "are veterans of many campaigns"
+#synonym "are the pinnacle of %nation%'s military,"
+#synonym "are elite soldiers of tremendous skill"
 #end
 
 
@@ -309,6 +414,13 @@
 #themeinc "thisitemtheme elite *8"
 #generateitem 1 cloakb
 #alloweliteitems
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are experienced veteran troops"
+#synonym "are well drilled professional troops"
+#synonym "are the backbone of %nation%'s army,"
+#synonym "are highly skilled soldiers"
 #end
 
 
@@ -332,6 +444,14 @@
 #generateitem 0.25 cloakb
 #theme irregular
 #theme mountain
+#set "terrain"
+#prev "terrain desc"
+#next "terrain end"
+#synonym "mountains"
+#synonym "highlands"
+#synonym "soaring peaks"
+#synonym "mountain ranges"
+#extendeddescription "and can move and fight easily in them"
 #end
 
 #new
@@ -353,6 +473,14 @@
 #generateitem 0.25 cloakb
 #theme irregular
 #theme forest
+#set "terrain"
+#prev "terrain desc"
+#next "terrain end"
+#synonym "forests"
+#synonym "woodlands"
+#synonym "dense forests"
+#synonym "heavily wooded lands"
+#extendeddescription "and can move and fight easily in them"
 #end
 
 #new
@@ -375,6 +503,14 @@
 #generateitem 0.25 cloakb
 #theme irregular
 #theme swamp
+#set "terrain"
+#prev "terrain desc"
+#next "terrain end"
+#synonym "bogs"
+#synonym "swamps"
+#synonym "wetlands"
+#synonym "marshes"
+#extendeddescription "and can move and fight easily in them"
 #end
 
 #new
@@ -397,6 +533,14 @@
 #generateitem 0.25 cloakb
 #theme irregular
 #theme waste
+#set "terrain"
+#next "terrain end"
+#prev "terrain desc"
+#synonym "wastelands"
+#synonym "deserts"
+#synonym "dunes"
+#synonym "barren lands"
+#extendeddescription "and can move and fight easily in them"
 #end
 
 #new
@@ -420,6 +564,13 @@
 #maxvarieties 2
 #maxunits 1
 #primarycommand #berserk
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are frenzied savages"
+#synonym "are savage warriors"
+#synonym "are raging berserkers"
+#synonym "are bloodthirsty madmen"
 #end
 
 
@@ -445,6 +596,13 @@
 #theme stealthy
 #generateitem 0.25 cloakb
 #primarycommand #stealthy
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are light stealthy troops"
+#synonym "are skilled hunters and ambushers"
+#synonym "are guerrilla fighters"
+#synonym "are students of subterfuge"
 #end
 
 
@@ -457,6 +615,13 @@
 #chanceinc pose chariot *0
 #command "#patrolbonus +1"
 #generateitem 0.25 cloakb
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are the enforcers of %nation%"
+#synonym "are able trackers and hunters"
+#synonym "are strict lawmen"
+#synonym "are capable watchmen"
 #end
 
 
@@ -471,6 +636,13 @@
 #command "#castledef +1"
 #generateitem 0.25 cloakb
 #theme guard
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are skilled defenders"
+#synonym "are stalwart guards"
+#synonym "are sworn protectors"
+#synonym "are defensive troops"
 #end
 
 #new
@@ -484,6 +656,13 @@
 #command "#castledef +2"
 #generateitem 0.25 cloakb
 #theme guard
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are skilled defenders"
+#synonym "are stalwart guards"
+#synonym "are sworn protectors"
+#synonym "are defensive troops"
 #end
 
 #new
@@ -507,6 +686,12 @@
 #allowelitenaming
 #theme elite
 #theme guard
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are expert bodyguards"
+#synonym "are personal guards to %nation%'s leaders"
+#synonym "are sworn protectors of %nations%'s leaders"
 #end
 
 #new
@@ -522,6 +707,11 @@
 #generateitem 0.25 cloakb
 #theme guard
 #theme trooponly
+#set "army role"
+#bridge "army role bridge"
+#synonym "are expert bodyguards"
+#synonym "are personal guards to %nation%'s leaders"
+#synonym "are sworn protectors of %nations%'s leaders"
 #end
 
 #new
@@ -548,6 +738,13 @@
 #theme elite
 #theme stealthy
 #primarycommand #stealthy
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are light stealthy troops"
+#synonym "are expert hunters and ambushers"
+#synonym "are guerrilla fighters"
+#synonym "are masters of subterfuge"
 #end
 
 #new
@@ -568,6 +765,14 @@
 #themeinc theme advanced *0.25
 #generateitem 1 cloakb
 #theme pillager
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are brutal and rapacious soldiers"
+#synonym "are cruel and greedy mercenaries"
+#synonym "are terrifying raiders"
+#synonym "are merciless oppressors"
+
 #end
 
 #new
@@ -593,6 +798,12 @@
 #theme pillager
 #theme stealthy
 #primarycommand #stealthy
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are stealthy pillagers"
+#synonym "are terrifying raiders"
+#synonym "are notorious brigands"
 #end
 
 #new
@@ -612,6 +823,12 @@
 #themeinc theme heavy *0.1
 #themeinc theme advanced *0.5
 #theme skirmisher
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are light irregular soldiers"
+#synonym "are skilled skirmishers"
+#synonym "are mobile and flexible troops"
 #end
 
 #new
@@ -637,4 +854,10 @@
 #theme skirmisher
 #theme stealthy
 #primarycommand #stealthy
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are light irregular soldiers"
+#synonym "are stealthy skirmishers"
+#synonym "are mobile and flexible troops"
 #end

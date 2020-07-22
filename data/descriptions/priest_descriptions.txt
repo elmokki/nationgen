@@ -1,0 +1,354 @@
+#new
+#name "priest start"
+#set "priest start"
+#synonym "The %unitname_plural%"
+#synonym "The %unitname_plural%"
+#synonym "The %unitname_plural% of %nation%"
+#synonym "%nation%'s %unitname_plural%"
+#next "priest desc"
+#uniquedescription
+#end
+
+-- tier 1
+
+#new 
+#name "priest desc weak"
+#set "priest desc"
+#basechance 0
+#chanceinc tag tier1 1
+#chanceinc tag highpriest *0
+#chanceinc tag mage *0
+#description "hold a very minor place in %nation%'s hierarchy, with"
+#next "priest weak adj"
+#end
+
+#new
+#name "priest weak adj"
+#set "priest weak adj"
+#synonym "little more"
+#synonym "hardly more"
+#synonym "almost no more"
+#synonym "barely more"
+#uniquedescription
+#next "priest weak noun"
+#end
+
+#new 
+#name "priest weak noun"
+#set "priest weak noun"
+#synonym "power"
+#synonym "insight"
+#synonym "numina"
+#synonym "understanding"
+#synonym "standing"
+#synonym "status"
+#synonym "prestige"
+#synonym "respect"
+#synonym "dignity"
+#synonym "training"
+#synonym "authority"
+#uniquedescription
+#next "priest weak end"
+#end
+
+#new
+#name "priest weak end"
+#set "priest weak end"
+#synonym "than a %sacredname%."
+#end
+
+-- tier 1, but as good as it gets
+
+#new 
+#name "priest desc weak max"
+#set "priest desc"
+#basechance 0
+#chanceinc (tag tier1 and tag highpriest) 1
+#chanceinc tag mage *0
+#description "are what passes for religious"
+#next "priest weak max adj"
+#end
+
+#new
+#name "priest weak max adj"
+#set "priest weak max adj"
+#synonym "authority in %nation%,"
+#synonym "leadership in %nation%,"
+#synonym "guidance in %nation%,"
+#synonym "organization in %nation%,"
+#synonym "power in %nation%,"
+#synonym "supremacy in %nation%,"
+#next "priest weak max end"
+#end
+
+#new
+#name "priest weak max end"
+#set "priest weak max end"
+#synonym "a land not known for its piety."
+#synonym "backwards and benighted as it is."
+#synonym "a land without religious convictions."
+#synonym "their faith emphasizing individual spirituality."
+#synonym "wary as they are of centralized religious hierarchy."
+#synonym "egalitarians who do not believe in ecclesiastical primacy."
+#synonym "a loose association of local priests."
+#end
+
+-- tier 1 magepriest
+
+#new 
+#name "priest desc weak mage"
+#set "priest desc"
+#basechance 0
+#chanceinc (personalmagic holy 1) and tag mage 1
+#chanceinc personalmagic holy 2 *0
+#description "are"
+#next "priest weak mage verb"
+#end
+
+#new
+#name "priest weak mage verb"
+#set "priest weak mage verb"
+#synonym "respected for their"
+#synonym "acknowledged for their"
+#synonym "known for their"
+#synonym "appreciated for their"
+#next "priest weak mage noun"
+#end
+
+#new
+#name "priest weak mage noun"
+#set "priest weak mage noun"
+#synonym "skills"
+#synonym "studies"
+#synonym "abilities"
+#synonym "intelligence"
+#next "priest weak mage end"
+#end
+
+#new
+#name "priest weak mage end"
+#set "priest weak mage end"
+#synonym "and are allowed a place in %nation%'s religious hierarchy."
+#synonym "and have some small influence among the faithful."
+#synonym "and the people listen to them in matters of faith."
+#synonym "and are sometimes seen as religious authorities."
+#synonym "and are used to conduct minor religious rites."
+#end
+
+-- tier 2
+
+#new 
+#name "priest desc medium"
+#set "priest desc"
+#basechance 0
+#chanceinc tag tier2 1
+#chanceinc tag highpriest *0
+#description "make up the"
+#next "priest medium noun"
+#end
+
+#new 
+#name "priest medium noun"
+#set "priest medium noun"
+#synonym "core of %nation%'s"
+#synonym "backbone of %nation%'s"
+#synonym "heart of %nation%'s"
+#synonym "rank and file of %nation%'s"
+#synonym "foundation of %nation%'s"
+#synonym "body of %nation%'s"
+#synonym "majority of %nation%'s"
+#next "priest medium group noun"
+#end
+
+#new 
+#name "priest medium group noun"
+#set "priest medium group noun"
+#synonym "clergy,"
+#synonym "priests,"
+#synonym "priesthood,"
+#synonym "faith,"
+#synonym "religion,"
+#synonym "temple,"
+#synonym "cult,"
+#next "priest medium end"
+#end
+
+#new
+#name "priest medium end"
+#set "priest medium end"
+#synonym "playing a crucial role in almost all matters of faith."
+#synonym "responsible for administering all but the highest rituals of the church."
+#synonym "responsible for overseeing most of the day to day tasks of the church."
+#end
+
+-- tier 2 if it's as high as it gets
+
+#new 
+#name "priest desc medium max"
+#set "priest desc"
+#basechance 0
+#chanceinc (tag tier2 and tag highpriest) 1
+#chanceinc tag mage *0
+#description "are the spiritual"
+#next "priest medium max adj"
+#end
+
+#new
+#name "priest medium max adj"
+#set "priest medium max adj"
+#synonym "leaders of %nation%,"
+#synonym "power in %nation%,"
+#synonym "overseers of %nation%,"
+#synonym "counsellors of %nation%,"
+#synonym "chiefs of %nation%,"
+#synonym "superiors of %nation%,"
+#synonym "guides of %nation%,"
+#next "priest medium max end"
+#end
+
+#new
+#name "priest medium max end"
+#set "priest medium max end"
+#synonym "conducting prayers and rituals and guiding the faithful."
+#synonym "spreading the faith among the people."
+#synonym "interpreting and implementing doctrine for the church."
+#synonym "and they are capable shepherds to their flocks."
+#synonym "overseeing the affairs of the church and its followers."
+#end
+
+-- tier 2 magepriest
+
+#new 
+#name "priest desc medium mage"
+#set "priest desc"
+#basechance 0
+#chanceinc (personalmagic holy 2) and tag mage 1
+#chanceinc personalmagic holy 3 *0
+#description "are"
+#next "priest medium mage verb"
+#end
+
+#new
+#name "priest medium mage verb"
+#set "priest medium mage verb"
+#synonym "respected for their"
+#synonym "acknowledged for their"
+#synonym "listened to for their"
+#synonym "esteemed for their"
+#synonym "admired for their"
+#next "priest medium mage noun"
+#end
+
+#new
+#name "priest medium mage noun"
+#set "priest medium mage noun"
+#synonym "power"
+#synonym "knowledge"
+#synonym "wisdom"
+#synonym "abilities"
+#next "priest medium mage end"
+#end
+
+#new
+#name "priest medium mage end"
+#set "priest medium mage end"
+#synonym "and have usurped a position in %nation%'s religious hierarchy."
+#synonym "and have considerable religious influence over their followers."
+#synonym "and %nation% regards them as spiritual leaders."
+#synonym "and they wield some power over %nation%."
+#synonym "and the people follow them in matters of faith."
+#synonym "and are seen as authorities on religious matters."
+#end
+
+-- tier 3
+
+#new 
+#name "priest desc strong max"
+#set "priest desc"
+#basechance 0
+#chanceinc tag tier3 1
+#description "are at the"
+#next "priest strong max noun"
+#chanceinc tag mage *0
+#end
+
+#new
+#name "priest strong max noun"
+#set "priest strong max noun"
+#synonym "pinnacle"
+#synonym "top"
+#synonym "head"
+#synonym "peak"
+#synonym "summit"
+#next "priest strong max continued"
+#end
+
+#new
+#name "priest strong max continued"
+#set "priest strong max continued"
+#description "of %nation%'s religious heirarchy, the"
+#next "priest strong max adj"
+#end
+
+#new
+#name "priest strong max adj"
+#set "priest strong max adj"
+#synonym "foremost"
+#synonym "most exalted"
+#synonym "greatest"
+#synonym "most powerful"
+#synonym "most prestigious"
+#synonym "wisest"
+#next "priest strong max end"
+#end
+
+#new
+#name "priest strong max end"
+#set "priest strong max end"
+#synonym "of their faith."
+#synonym "of the faithful."
+#synonym "of the clergy."
+#synonym "of %nation%'s priests."
+#end
+
+-- tier 3 magepriest
+
+#new 
+#name "priest desc strong mage"
+#set "priest desc"
+#basechance 0
+#chanceinc (personalmagic holy 3) and tag mage 1
+#description "are"
+#next "priest strong mage verb"
+#end
+
+#new
+#name "priest strong mage verb"
+#set "priest strong mage verb"
+#synonym "venerated for their"
+#synonym "worshipped for their"
+#synonym "revered for their"
+#synonym "honored for their"
+#next "priest strong mage noun"
+#end
+
+#new
+#name "priest strong mage noun"
+#set "priest strong mage noun"
+#synonym "power"
+#synonym "knowledge"
+#synonym "wisdom"
+#synonym "abilities"
+#next "priest strong mage end"
+#end
+
+#new
+#name "priest strong mage end"
+#set "priest strong mage end"
+#synonym "and enjoy undisputed rule over %nation% as priest-kings."
+#synonym "and command immense religious sway over their followers."
+#synonym "and %nation% looks to them for spiritual authority."
+#synonym "and they wield supreme power over %nation%."
+#synonym "and the people follow them with religious zeal."
+#synonym "and are regarded as the final authority on religious matters."
+#end

@@ -4,7 +4,16 @@
 #command "#addupkeep %cost20"
 #power -1
 #theme upkeep
-#desc "Greedy"
+#synonym "greedy"
+#synonym "profligate"
+#synonym "lavish"
+#synonym "prodigal"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#extendeddescription "and demand extra money for their upkeep"
+#allowsuperlative
 #end
 
 #new magefilter
@@ -13,7 +22,15 @@
 #command "#addupkeep %cost-20"
 #power 1
 #theme upkeep
-#desc "Altruistic"
+#synonym "altruistic"
+#synonym "frugal"
+#synonym "thrifty"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#extendeddescription "and require less money for upkeep"
+#allowsuperlative
 #end
 
 #new magefilter
@@ -21,6 +38,10 @@
 #basechance 0.1
 #command "#poisonres +5"
 #chanceinc "personalmagic nature 1.5"
+#synonym "poison"
+#synonym "toxins"
+#set "immunity"
+#prev "immunity desc"
 #end
 
 #new magefilter
@@ -35,7 +56,12 @@
 #notfortier 2
 #notfortier 1
 #power -1
-#desc "Will die underwater"
+#synonym "are vulnerable to water"
+#synonym "are incapable of surviving in water"
+#prev "start"
+#extendeddescription "and will die underwater even if they could breathe water"
+#negative
+#set "immunity"
 #end
 
 #new magefilter
@@ -48,6 +74,13 @@
 #notfortier 2
 #notfortier 1
 #power -1
+#synonym "are bound to their homeland"
+#synonym "are cursed to remain in their homeland"
+#extendeddescription "and will slowly weaken and die if they spend time away from their home province."
+#set "wondrous"
+#bridge "wondrous bridge"
+#prev "start"
+#negative
 #end
 
 #new magefilter
@@ -58,6 +91,13 @@
 #notfortier 2
 #notfortier 1
 #power -1
+#synonym "defy the Awakening God"
+#synonym "spurn the Awakening God"
+#synonym "practice their own pagan religion"
+#extendeddescription "and will spread superstition against the faith"
+#set "skill"
+#prev "start"
+#negative
 #end
 
 #new magefilter
@@ -65,6 +105,10 @@
 #name "better researcher +1"
 #basechance 0.25
 #command "#researchbonus +1"
+#set "skill"
+#prev "skill desc"
+#synonym "magical research"
+#synonym "the study of magic"
 #end
 
 #new magefilter
@@ -73,6 +117,10 @@
 #basechance 0.25
 #command "#researchbonus +3"
 #notfortier 3
+#set "skill"
+#prev "skill desc"
+#synonym "magical research"
+#synonym "the study of magic"
 #end
 
 #new magefilter
@@ -83,6 +131,10 @@
 #notfortier 1
 #notfortier 2
 #power 3
+#set "skill"
+#prev "skill desc"
+#synonym "magical research"
+#synonym "the study of magic"
 #end
 
 #new magefilter
@@ -91,6 +143,13 @@
 #basechance 0.125
 #command "#slothresearch +2"
 #power 2
+#set "skill"
+#prev "are"
+#synonym "idle dilettantes"
+#synonym "lazy gadabouts"
+#negative
+#extendeddescription "and lands with strong work ethics are not conducive to their research"
+#negative
 #end
 
 #new magefilter
@@ -98,6 +157,12 @@
 #name "sloth researcher +1"
 #basechance 0.125
 #command "#slothresearch +1"
+#set "skill"
+#prev "are"
+#synonym "idle dilettantes"
+#synonym "lazy gadabouts"
+#extendeddescription "and lands with strong work ethics are not conducive to their research"
+#negative
 #end
 
 #new magefilter
@@ -108,6 +173,11 @@
 #chanceinc "personalmagic astral 0.5"
 #chanceinc "personalmagic water astral 0.8"
 #power 1
+#set "skill"
+#prev "skill desc"
+#synonym "the cultivation of magic pearls"
+#synonym "pearl making"
+#extendeddescription "and they can efficiently convert water gems into astral pearls."
 #end
 
 #new magefilter
@@ -118,6 +188,11 @@
 #chanceinc "personalmagic death 0.5"
 #chanceinc "personalmagic nature death 0.8"
 #power 1
+#set "skill"
+#prev "skill desc"
+#synonym "the cultivation of death gems"
+#synonym "growing death gems from carcasses"
+#extendeddescription "and they can efficiently convert nature gems into death gems."
 #end
 
 #new magefilter
@@ -128,6 +203,11 @@
 #power 1
 #notfortier 1
 #notfortier 3
+#set "skill"
+#prev "skill desc"
+#synonym "metalcrafting"
+#synonym "blacksmithing"
+#extendeddescription "and they will increase resource production to speed recruitment"
 #end
 
 
@@ -136,6 +216,11 @@
 #basechance 0.2
 #command "#allrange +1"
 #power 1
+#set "skill"
+#prev "skill desc"
+#synonym "long distance rituals"
+#synonym "casting spells over great distances"
+#extendeddescription "and they can cast spells one province further away than normal"
 #end
 
 #new magefilter
@@ -143,6 +228,11 @@
 #basechance 0.2
 #command "#allrange +2"
 #power 2
+#set "skill"
+#prev "skill desc"
+#synonym "long distance rituals"
+#synonym "casting spells over great distances"
+#extendeddescription "and they can cast spells one province further away than normal"
 #end
 
 #new magefilter
@@ -152,6 +242,12 @@
 #power 1
 #chanceinc "personalmagic air 0.5"
 #chanceinc "personalmagic astral 0.5"
+#set "wondrous"
+#bridge "wondrous bridge"
+#prev "wondrous desc"
+#synonym "levitation"
+#synonym "the power to float above the ground"
+#extendeddescription "and they are immune to spells that rely on contact with the earth."
 #end
 
 #new magefilter
@@ -165,6 +261,10 @@
 #notfortier 2
 #notfortier 1
 #theme curse
+#set "death"
+#prev "start"
+#synonym "can curse their attackers with their dying breath"
+#synonym "have a pact with death to curse any that dare slay them"
 #end
 
 #new magefilter
@@ -174,6 +274,12 @@
 #power 1
 #chanceinc "personalmagic water 0.5"
 #chanceinc "personalmagic nature 0.5"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "a shield of ectoplasm"
+#synonym "ectoplasmic secretions"
+#extendeddescription "that will cling to any attackers, slowing them down"
 #end
 
 
@@ -183,6 +289,12 @@
 #command "#iceprot 3"
 #power 1
 #chanceinc "personalmagic water 0.5"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "raiments of magic ice"
+#synonym "hard icy skin"
+#extendeddescription "and their protection is increased in lands of cold"
 #end
 
 #new magefilter
@@ -192,6 +304,12 @@
 #power 1
 #chanceinc "personalmagic air 0.75"
 #chanceinc "personalmagic astral 0.25"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "a host of illusions"
+#synonym "an entourage of illusionary spirits"
+#extendeddescription "that will deceive enemy scouts with the impression of a larger army"
 #end
 
 #new magefilter
@@ -203,6 +321,11 @@
 #command "#spellsinger"
 #notfortier 3
 #notfortier 2
+#set "skill"
+#prev "skill desc"
+#synonym "mourning the departed"
+#synonym "prayers of grief for the dead"
+#extendeddescription "and their prayers call back their dead god more quickly"
 #end
 
 #new magefilter
@@ -214,6 +337,11 @@
 #command "#gcost +5"
 #command "#spellsinger"
 #notfortier 1
+#set "skill"
+#prev "skill desc"
+#synonym "mourning the departed"
+#synonym "prayers of grief for the dead"
+#extendeddescription "and their prayers call back their dead god more quickly"
 #end
 
 #new magefilter
@@ -227,6 +355,11 @@
 #notfortier 1
 #notfortier 2
 #power 2
+#set "skill"
+#prev "skill desc"
+#synonym "mourning the departed"
+#synonym "prayers of grief for the dead"
+#extendeddescription "and their prayers call back their dead god more quickly"
 #end
 
 #new
@@ -237,6 +370,12 @@
 #chanceinc "command #chaosrec 100"
 #chanceinc "command #chaospower 100"
 #theme recruitment
+#set "terrain"
+#prev "terrain desc"
+#synonym "savage and wild lands"
+#synonym "war-torn lands"
+#synonym "chaotic no man's land"
+#extendeddescription "and they are easier to recruit in lands of turmoil"
 #end
 
 #new
@@ -248,6 +387,12 @@
 #chanceinc "command #chaosrec 25"
 #chanceinc "command #chaospower 25"
 #theme recruitment
+#set "terrain"
+#prev "terrain desc"
+#synonym "savage and wild lands"
+#synonym "war-torn lands"
+#synonym "chaotic no man's land"
+#extendeddescription "and they are easier to recruit in lands of turmoil"
 #end
 
 #new
@@ -260,6 +405,13 @@
 #chanceinc "command #deathpower 100"
 #chanceinc "personalmagic death 5"
 #theme recruitment
+#set "terrain"
+#prev "terrain desc"
+#synonym "haunted battlefields"
+#synonym "mournful graveyards"
+#synonym "desolation"
+#synonym "gloomy landscapes"
+#extendeddescription "and they are easier to recruit in lands of death"
 #end
 
 #new magefilter
@@ -267,12 +419,20 @@
 #basechance 0.1
 #command "#shockres +5"
 #chanceinc "personalmagic air 1.5"
+#set "immunity"
+#prev "immunity desc"
+#synonym "lightning"
+#synonym "electricity"
 #end
 
 #new
 #name "invulnerable5"
 #basechance 0.5
 #command "#invulnerable 5"
+#set "immunity"
+#prev "immunity desc"
+#synonym "mundane damage"
+#synonym "ordinary weapons"
 #end
 
 #new
@@ -280,6 +440,10 @@
 #basechance 0.25
 #command "#invulnerable 10"
 #power 2
+#set "immunity"
+#prev "immunity desc"
+#synonym "mundane damage"
+#synonym "ordinary weapons"
 #end
 
 #new
@@ -287,6 +451,10 @@
 #basechance 0.125
 #command "#invulnerable 20"
 #power 3
+#set "immunity"
+#prev "immunity desc"
+#synonym "mundane damage"
+#synonym "ordinary weapons"
 #end
 
 #new magefilter
@@ -295,6 +463,11 @@
 #command "#coldres +5"
 #chanceinc "personalmagic water 1.5"
 #chanceinc "personalmagic fire 0.25"
+#set "immunity"
+#prev "immunity desc"
+#synonym "cold"
+#synonym "ice"
+#synonym "frost"
 #end
 
 #new magefilter
@@ -303,6 +476,11 @@
 #command "#fireres +5"
 #chanceinc "personalmagic fire 1.5"
 #chanceinc "personalmagic water 0.25"
+#set "immunity"
+#prev "immunity desc"
+#synonym "fire"
+#synonym "heat"
+#synonym "flames"
 #end
 
 #new magefilter
@@ -311,6 +489,11 @@
 #command "#fireres +10"
 #chanceinc "personalmagic fire 0.75"
 #chanceinc "personalmagic water 0.125"
+#set "immunity"
+#prev "immunity desc"
+#synonym "fire"
+#synonym "heat"
+#synonym "flames"
 #end
 
 #new magefilter
@@ -318,6 +501,10 @@
 #basechance 0.1
 #command "#poisonres +10"
 #chanceinc "personalmagic nature 0.75"
+#set "immunity"
+#prev "immunity desc"
+#synonym "toxins"
+#synonym "poison"
 #end
 
 #new magefilter
@@ -325,6 +512,10 @@
 #basechance 0.1
 #command "#shockres +10"
 #chanceinc "personalmagic air 0.75"
+#set "immunity"
+#prev "immunity desc"
+#synonym "lightning"
+#synonym "electricity"
 #end
 
 #new magefilter
@@ -333,6 +524,11 @@
 #command "#coldres +10"
 #chanceinc "personalmagic water 0.75"
 #chanceinc "personalmagic fire 0.125"
+#set "immunity"
+#prev "immunity desc"
+#synonym "cold"
+#synonym "ice"
+#synonym "frost"
 #end
 
 #new magefilter
@@ -346,6 +542,12 @@
 #power 2
 #tag "personalmagic air"
 #chanceinc "race vanir -20"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "skill with illusions"
+#synonym "protective glamour"
+#extendeddescription "and in battle they summon mirror images to avoid blows"
 #end
 
 #new magefilter
@@ -359,6 +561,11 @@
 #power 1
 #chanceinc "race sidhe -20"
 #chanceinc "nationtag fae OR hasthemetheme fae -20"
+#set "skill"
+#prev "skill desc"
+#synonym "magical spellsongs"
+#synonym "casting spells via song"
+#extendeddescription "and their spells take longer to complete but are less fatiguing than conventional magic"
 #end
 
 #new magefilter
@@ -366,6 +573,10 @@
 #basechance 0.2
 #primarycommand "#holy"
 #command "#holy"
+#set "wondrous"
+#prev "start"
+#bridge "wondrous bridge"
+#description "are sacred to the people of %nation%"
 #end
 
 #new magefilter
@@ -374,6 +585,12 @@
 #command "#amphibian"
 #chanceinc "personalmagic water 1"
 #tag "personalmagic water"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "water breathing"
+#synonym "an amphibious nature"
+#extendeddescription "and they can move and breathe underwater as well as in air"
 #end
 
 #new magefilter
@@ -385,6 +602,11 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #power 3
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "powers of flight"
+#synonym "the ability to fly"
 #end
 
 #new magefilter
@@ -395,6 +617,12 @@
 #chanceinc "personalmagic air 0.35"
 #chanceinc "personalmagic water 0.35"
 #theme sailing
+#set "skill"
+#prev "skill desc"
+#synonym "sailing"
+#synonym "navigation"
+#synonym "seafaring"
+#extendeddescription "and they can travel with their armies over sea provinces"
 #end
 
 #new magefilter
@@ -403,6 +631,11 @@
 #command "#forestsurvival"
 #chanceinc "personalmagic nature 0.5"
 #tag "notfortier 3"
+#synonym "forests"
+#synonym "woodlands"
+#set "terrain"
+#prev "terrain desc"
+#extendeddescription "and can traverse forests with ease"
 #end
 
 #new magefilter
@@ -412,6 +645,12 @@
 #chanceinc "personalmagic nature 0.25"
 #chanceinc "personalmagic earth 0.25"
 #tag "notfortier 3"
+#command "#mountainsurvival"
+#synonym "mountains"
+#synonym "highlands"
+#set "terrain"
+#prev "terrain desc"
+#extendeddescription "and can traverse mountains with ease"
 #end
 
 #new magefilter
@@ -421,6 +660,11 @@
 #chanceinc "personalmagic nature 0.25"
 #chanceinc "personalmagic water 0.25"
 #tag "notfortier 3"
+#synonym "swamps"
+#synonym "bogs"
+#set "terrain"
+#prev "terrain desc"
+#extendeddescription "and can traverse swamps with ease"
 #end
 
 #new magefilter
@@ -430,6 +674,11 @@
 #chanceinc "personalmagic nature 0.25"
 #chanceinc "personalmagic fire 0.25"
 #tag "notfortier 3"
+#synonym "deserts"
+#synonym "wastelands"
+#set "terrain"
+#prev "terrain desc"
+#extendeddescription "and can traverse wastelands with ease"
 #end
 
 #new magefilter
@@ -437,6 +686,11 @@
 #basechance 0
 #command "#forestsurvival"
 #chanceinc "personalmagic nature 0.25"
+#synonym "forests"
+#synonym "woodlands"
+#set "terrain"
+#prev "terrain desc"
+#extendeddescription "and can traverse forests with ease"
 #end
 
 #new magefilter
@@ -445,6 +699,11 @@
 #command "#mountainsurvival"
 #chanceinc "personalmagic nature 0.125"
 #chanceinc "personalmagic earth 0.125"
+#synonym "mountains"
+#synonym "highlands"
+#set "terrain"
+#prev "terrain desc"
+#extendeddescription "and can traverse mountains with ease"
 #end
 
 #new magefilter
@@ -453,6 +712,11 @@
 #command "#swampsurvival"
 #chanceinc "personalmagic nature 0.125"
 #chanceinc "personalmagic water 0.125"
+#synonym "swamps"
+#synonym "bogs"
+#set "terrain"
+#prev "terrain desc"
+#extendeddescription "and can traverse swamps with ease"
 #end
 
 #new magefilter
@@ -461,6 +725,11 @@
 #command "#wastesurvival"
 #chanceinc "personalmagic nature 0.125"
 #chanceinc "personalmagic fire 0.125"
+#synonym "deserts"
+#synonym "wastelands"
+#set "terrain"
+#prev "terrain desc"
+#extendeddescription "and can traverse wastelands with ease"
 #end
 
 #new magefilter
@@ -471,6 +740,14 @@
 #chanceinc "race vanir -20"
 #chanceinc "race sidhe -20"
 #power 2
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#synonym "stealthy"
+#synonym "sneaky"
+#allowsuperlative
+#extendeddescription "who can move unseen through enemy territory"
 #end
 
 #new magefilter
@@ -481,6 +758,14 @@
 #chanceinc "race vanir -20"
 #chanceinc "race sidhe -20"
 #power 2
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#synonym "stealthy"
+#synonym "sneaky"
+#allowsuperlative
+#extendeddescription "who can move unseen through enemy territory"
 #end
 
 #new magefilter
@@ -491,6 +776,11 @@
 #command "#gcost +30"
 #tag "notfortier 3"
 #power 2
+#synonym "spycraft"
+#synonym "subterfuge"
+#set "skill"
+#prev "skill desc"
+#extendeddescription "and can infiltrate enemy strongholds to learn their secrets and foment unrest"
 #end
 
 
@@ -503,6 +793,12 @@
 #primarycommand #assassin
 #tag "notfortier 3"
 #power 2
+#synonym "assassination"
+#synonym "assassination"
+#synonym "liquidation"
+#set "skill"
+#prev "skill desc"
+#extendeddescription "and can stealthily ambush enemy commanders in single combat"
 #end
 
 #new magefilter
@@ -514,6 +810,14 @@
 #primarycommand #ethereal
 #tag "personalmagic astral"
 #power 3
+#synonym "incorporeality"
+#synonym "the ability to shift between worlds"
+#synonym "the power to phase out of reality"
+#synonym "ethereal forms"
+#extendeddescription "and nonmagical weapons will have little effect on them"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
 #end
 
 #new magefilter
@@ -527,6 +831,14 @@
 #tag "notfortier 2"
 #tag "notfortier 1"
 #power 3
+#synonym "incorporeality"
+#synonym "the ability to shift between worlds"
+#synonym "the power to phase out of reality"
+#synonym "ethereal forms"
+#extendeddescription "and nonmagical weapons will have little effect on them"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
 #end
 
 #new magefilter
@@ -538,6 +850,13 @@
 #chanceinc "personalmagic death -0.4"
 #chanceinc "personalmagic blood -0.4"
 #power 2
+#synonym "an aura of supernatural splendor"
+#synonym "an aura of supernatural beauty"
+#synonym "an aura of supernatural wonder"
+#extendeddescription "and enemy soldiers will be reluctant to attack them"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
 #end
 
 #new magefilter
@@ -551,6 +870,12 @@
 #chanceinc personalmagic blood -0.5
 #chanceinc personalmagic astral death AND comparemagic astral above death *0
 #power 2
+#synonym "an aura of solar splendor"
+#synonym "an aura of solar wonder"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#extendeddescription "and in the light of the sun few would dare strike them"
 #end
 
 #new magefilter
@@ -560,6 +885,13 @@
 #chanceinc "personalmagic death 0.8"
 #tag "notfortier 1"
 #tag "notfortier 2"
+#synonym "terrifying"
+#synonym "horrifying"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#extendeddescription "and only the most disciplined troops can stand to face them without fleeing"
 #end
 
 #new magefilter
@@ -569,6 +901,12 @@
 #chanceinc "personalmagic nature 1"
 #tag "notfortier 1"
 #tag "personalmagic nature"
+#synonym "the power of regeneration"
+#synonym "regenerating flesh"
+#synonym "self-healing flesh"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
 #end
 
 #new magefilter
@@ -579,6 +917,12 @@
 #chanceinc "personalmagic fire 2"
 #tag "notfortier 1"
 #tag "personalmagic fire"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "a protective cloak of flames"
+#synonym "a shield of magic flame"
+#extendeddescription "and those that attempt to strike them will be burned by the flames"
 #end
 
 #new magefilter
@@ -587,6 +931,12 @@
 #command "#poisonarmor"
 #chanceinc "personalmagic nature 2"
 #tag "notfortier 1"
+#synonym "venomous thorns"
+#synonym "protective barbs of venom"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#extendeddescription "and those that attempt to strike them risk poisoning themselves"
 #end
 
 #new magefilter
@@ -596,22 +946,39 @@
 #chanceinc "personalmagic air 2"
 #chanceinc "personalcommand #illusion 2"
 #tag "notfortier 1"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "a protective cloak of wind"
+#synonym "a magical barrier against arrows"
 #end
 
 #new magefilter
 #name "nobadevents1"
 #basechance 0.2
 #command "#nobadevents +5"
+#primarycommand nobadevents
 #tag "notfortier 1"
 #chanceinc "personalmagic astral 0.8"
+#set "skill"
+#prev "skill desc"
+#synonym "divination"
+#synonym "reading the future"
+#extendeddescription "and they are able to foresee and prevent unfortunate events"
 #end
 
 #new magefilter
 #name "nobadevents2"
 #basechance 0.2
 #command "#nobadevents +3"
+#primarycommand nobadevents
 #tag "notfortier 1"
 #chanceinc "personalmagic astral 0.8"
+#set "skill"
+#prev "skill desc"
+#synonym "divination"
+#synonym "reading the future"
+#extendeddescription "and they are able to foresee and prevent unfortunate events"
 #end
 
 
@@ -619,9 +986,15 @@
 #name "nobadevents3"
 #basechance 0.1
 #command "#nobadevents +8"
+#primarycommand nobadevents
 #tag "notfortier 2"
 #tag "notfortier 3"
 #chanceinc "personalmagic astral 0.5"
+#set "skill"
+#prev "skill desc"
+#synonym "divination"
+#synonym "reading the future"
+#extendeddescription "and they are able to foresee and prevent unfortunate events"
 #end
 
 #new magefilter
@@ -630,6 +1003,12 @@
 #command "#inquisitor"
 #chanceinc "personalmagic holy 2"
 #tag "personalmagic holy"
+#set "skill"
+#prev "skill desc"
+#synonym "eliminating heresy"
+#synonym "defending the true faith"
+#synonym "fighting heresy"
+#extendeddescription "and they can quickly stamp out hostile religions"
 #end
 
 #new magefilter
@@ -639,6 +1018,12 @@
 #power 3
 #notfortier 4
 #givetoall
+#set "skill"
+#prev "skill desc"
+#synonym "natural philosophy"
+#synonym "pragmatic matters"
+#synonym "practical research"
+#extendeddescription "and they can research effectively even in lands of little magic"
 #end
 
 #new magefilter
@@ -647,6 +1032,12 @@
 #command "#drainimmune"
 #notfortier 1
 #notfortier 2
+#set "skill"
+#prev "skill desc"
+#synonym "natural philosophy"
+#synonym "pragmatic matters"
+#synonym "practical research"
+#extendeddescription "and they can research effectively even in lands of little magic"
 #notfortier 3
 #end
 
@@ -662,6 +1053,11 @@
 #valuemulti 35
 #tag "notfortier 1"
 #power 3
+#set "skill"
+#prev "skill desc"
+#synonym "the healing arts"
+#synonym "medicine"
+#extendeddescription "and they can heal the wounds of the masses"
 #end
 
 #new magefilter
@@ -675,6 +1071,11 @@
 #basevalue -25
 #valuemulti 35
 #power 3
+#set "skill"
+#prev "skill desc"
+#synonym "the healing arts"
+#synonym "medicine"
+#extendeddescription "and they can heal the wounds of the masses"
 #end
 
 #new magefilter
@@ -688,6 +1089,11 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #power 2
+#set "skill"
+#prev "skill desc"
+#synonym "the healing arts"
+#synonym "medicine"
+#extendeddescription "and they can heal the wounds of the masses"
 #end
 
 #new magefilter
@@ -701,6 +1107,11 @@
 #tag "notfortier 2"
 #chanceinc "command #startaff 5"
 #power 2
+#set "skill"
+#prev "skill desc"
+#synonym "the healing arts"
+#synonym "medicine"
+#extendeddescription "and they can heal the wounds of the masses"
 #end
 
 #new magefilter
@@ -721,6 +1132,12 @@
 #chanceinc "personalmagic nature 1"
 #chanceinc "personalcommand #startaff 1.5"
 #command "#heal"
+#synonym "a supernatural healing factor"
+#synonym "the ability to recover from injuries"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#extendeddescription "and can recover from crippling injuries in a matter of months."
 #end
 
 #new magefilter
@@ -733,6 +1150,11 @@
 #primarycommand demon
 #primarycommand undead
 #primarycommand spiritsight
+#synonym "excellent night vision"
+#synonym "excellent dark vision"
+#set "senses"
+#prev "senses desc"
+#extendeddescription "and can fight more effectively in the dark"
 #end
 
 #new magefilter
@@ -746,6 +1168,11 @@
 #primarycommand demon
 #primarycommand undead
 #primarycommand spiritsight
+#synonym "flawless night vision"
+#synonym "flawless dark vision"
+#set "senses"
+#prev "senses desc"
+#extendeddescription "and can see in the dark as well as bright day"
 #end
 
 #new magefilter
@@ -759,6 +1186,12 @@
 #command "#hp +2"
 #command "#mor +1"
 #command "#gcost +10"
+#synonym "the martial arts"
+#synonym "personal combat"
+#synonym "battle"
+#set "skill"
+#prev "skill desc"
+#extendeddescription "and are formidable fighters as well as mages"
 #end
 
 #new magefilter
@@ -774,6 +1207,12 @@
 #command "#hp +2"
 #command "#mor +2"
 #command "#gcost +20"
+#synonym "casting under pressure"
+#synonym "combat casting"
+#synonym "fighting as well as spellcasting"
+#set "skill"
+#prev "skill desc"
+#extendeddescription "and can use magic even in the midst of melee"
 #end
 
 #new magefilter
@@ -787,6 +1226,14 @@
 #command "#gcost +30"
 #tag "notfortier 1"
 #tag "notfortier 3"
+#synonym "monstrously powerful"
+#synonym "physically imposing"
+#synonym "magically enhanced"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#next "physique bridge"
+#extendeddescription "of unparalleled strength and skill"
 #end
 
 #new magefilter
@@ -799,6 +1246,13 @@
 #tag "notfortier 3"
 #chanceinc "personalmagic earth 0.05"
 #power 2
+#synonym "magical crafts"
+#synonym "the art of the forge"
+#synonym "enchanting artifacts"
+#synonym "magical construction"
+#set "skill"
+#prev "skill desc"
+#extendeddescription "and can construct magical items with fewer gems than normal"
 #end
 
 #new magefilter
@@ -811,6 +1265,13 @@
 #tag "notfortier 3"
 #chanceinc "personalmagic earth 0.05"
 #power 3
+#synonym "magical crafts"
+#synonym "the art of the forge"
+#synonym "enchanting artifacts"
+#synonym "magical construction"
+#set "skill"
+#prev "skill desc"
+#extendeddescription "and can construct magical items with fewer gems than normal"
 #end
 
 #new magefilter
@@ -823,6 +1284,13 @@
 #tag "notfortier 2"
 #chanceinc "personalmagic earth 0.025"
 #power 3
+#synonym "magical crafts"
+#synonym "the art of the forge"
+#synonym "enchanting artifacts"
+#synonym "magical construction"
+#set "skill"
+#prev "skill desc"
+#extendeddescription "and can construct magical items with fewer gems than normal"
 #end
 
 #new magefilter
@@ -835,6 +1303,13 @@
 #tag "notfortier 2"
 #chanceinc "personalmagic earth 0.025"
 #power 3
+#synonym "magical crafts"
+#synonym "the art of the forge"
+#synonym "enchanting artifacts"
+#synonym "magical construction"
+#set "skill"
+#prev "skill desc"
+#extendeddescription "and can construct magical items with fewer gems than normal"
 #end
 
 #new magefilter
@@ -847,6 +1322,13 @@
 #tag "notfortier 3"
 #chanceinc "personalmagic earth 0.05"
 #power 2
+#synonym "magical crafts"
+#synonym "the art of the forge"
+#synonym "enchanting artifacts"
+#synonym "magical construction"
+#set "skill"
+#prev "skill desc"
+#extendeddescription "and can construct magical items with fewer gems than normal"
 #end
 
 #new magefilter
@@ -856,6 +1338,12 @@
 #command "#shockres +4"
 #chanceinc "personalmagic air 0.5"
 #description "has charged body"
+#synonym "a protective electric field"
+#synonym "an electrically charge"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#extendeddescription "and those that strike them will unleash a blast of lightning"
 #end
 
 #new magefilter
@@ -866,6 +1354,11 @@
 #chanceinc "personalmagic nature 0.5"
 #chanceinc "personalmagic earth 0.5"
 #description "has a shikigami familiar"
+#synonym "a shikigami familiar"
+#synonym "a familiar spirit"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue end"
 #end
 
 
@@ -877,7 +1370,11 @@
 #chanceinc "personalmagic blood 1"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#description "has bound an imp to serve as a familiar"
+#synonym "an imp familiar"
+#synonym "the service of a bound imp"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue end"
 #end
 
 #new magefilter
@@ -887,7 +1384,11 @@
 #command "#batstartsum1 2287"
 #chanceinc "personalmagic blood 1"
 #tag "notfortier 1"
-#description "has bound an imp to serve as a familiar"
+#synonym "an imp familiar"
+#synonym "the service of a bound imp"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue end"
 #end
 
 #new magefilter
@@ -902,7 +1403,11 @@
 #chanceinc "nationtag fae OR hasthemetheme fae 0.5"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#description "is followed into battle by two black dogs"
+#synonym "the protection of black dogs"
+#synonym "command over supernatural hounds"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue end"
 #end
 
 #new magefilter
@@ -916,7 +1421,11 @@
 #chanceinc "nationtag fae OR hasthemetheme fae *10"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#description "is jealously protected by fairy companions"
+#synonym "a pact with the fae"
+#synonym "fairy companions"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue end"
 #end
 
 #new magefilter
@@ -929,7 +1438,11 @@
 #chanceinc "personalcommand illusion *3"
 #chanceinc "nationtag fae OR hasthemetheme fae *10"
 #tag "notfortier 1"
-#description "is accompanied by a small fairy"
+#synonym "an fairy familiar"
+#synonym "a pact with a magical fairy"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue end"
 #end
 
 #new magefilter
@@ -939,7 +1452,12 @@
 #command "#batstartsum2 1363"
 #chanceinc "personalmagic death 1"
 #chanceinc "personalmagic nature death 2"
-#description "watched over by ancestors"
+#synonym "the protection of their ancestors"
+#synonym "an ancestral spirit"
+#synonym "a connection with the spirits of their ancestors"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue end"
 #end
 
 #new magefilter
@@ -949,9 +1467,13 @@
 #command "#batstartsum3 2218"
 #chanceinc "personalmagic nature 1"
 #chanceinc "personalmagic nature death 3"
-#description "followed by a small swarm of bugs"
 #tag "notfortier 1"
 #tag "notfortier 2"
+#synonym "command over insects"
+#synonym "insects perpetually swarming around them"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue end"
 #end
 
 #new magefilter
@@ -962,10 +1484,14 @@
 #command "#gcost +40"
 #chanceinc "personalmagic blood 0.5"
 #chanceinc "personalmagic blood earth 10"
-#description "protected by tainted earth"
 #tag "notfortier 1"
 #tag "notfortier 2"
 #power 3
+#synonym "a pact with the tainted earth"
+#synonym "mastery over blood-soaked earth"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue element end"
 #end
 
 #new magefilter
@@ -975,10 +1501,14 @@
 #command "#batstartsum1 496"
 #command "#gcost +40"
 #chanceinc "personalmagic earth 1"
-#description "protected by earth"
 #tag "notfortier 1"
 #tag "notfortier 2"
 #power 3
+#synonym "a pact with the earth"
+#synonym "mastery over earth"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue element end"
 #end
 
 #new magefilter
@@ -992,6 +1522,11 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #power 3
+#synonym "a pact with elemental fire"
+#synonym "mastery over flame"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue element end"
 #end
 
 #new magefilter
@@ -1005,6 +1540,11 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #power 3
+#synonym "a pact with elemental water"
+#synonym "mastery over water"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue element end"
 #end
 
 #new magefilter
@@ -1018,6 +1558,11 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #power 3
+#synonym "a pact with elemental air"
+#synonym "mastery over air"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue element end"
 #end
 
 #new magefilter
@@ -1026,10 +1571,14 @@
 #basechance 0
 #command "#batstartsum3 2121"
 #chanceinc "personalmagic death 1"
-#description "protected by the risen dead"
 #tag "notfortier 1"
 #tag "notfortier 2"
 #power 2
+#synonym "command over the risen dead"
+#synonym "mastery over the dead"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue undead end"
 #end
 
 #new magefilter
@@ -1040,7 +1589,11 @@
 #chanceinc "personalmagic astral 0.5"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#description "has a lesser otherness following"
+#synonym "a pact with strange otherworldly beings"
+#synonym "a connection with creatures of the Void"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue end"
 #end
 
 #new magefilter
@@ -1056,6 +1609,11 @@
 #notfortier 3
 #theme smith
 #theme resources
+#set "skill"
+#prev "skill desc"
+#synonym "metalcrafting"
+#synonym "blacksmithing"
+#extendeddescription "and they will increase resource production to speed recruitment"
 #end
 
 #new magefilter
@@ -1071,6 +1629,11 @@
 #notfortier 3
 #theme smith
 #theme resources
+#set "skill"
+#prev "skill desc"
+#synonym "metalcrafting"
+#synonym "blacksmithing"
+#extendeddescription "and they will increase resource production to speed recruitment"
 #end
 
 #new magefilter
@@ -1087,6 +1650,11 @@
 #notfortier 2
 #theme smith
 #theme resources
+#set "skill"
+#prev "skill desc"
+#synonym "metalcrafting"
+#synonym "blacksmithing"
+#extendeddescription "and they will increase resource production to speed recruitment"
 #end
 
 #new magefilter
@@ -1103,6 +1671,11 @@
 #notfortier 3
 #theme smith
 #theme resources
+#set "skill"
+#prev "skill desc"
+#synonym "ice crafting"
+#synonym "ice forging"
+#extendeddescription "and in cold terrain they will increase resource production to speed recruitment"
 #end
 
 #new magefilter
@@ -1119,6 +1692,11 @@
 #notfortier 3
 #theme smith
 #theme resources
+#set "skill"
+#prev "skill desc"
+#synonym "ice crafting"
+#synonym "ice forging"
+#extendeddescription "and in cold terrain they will increase resource production to speed recruitment"
 #end
 
 #new magefilter
@@ -1127,7 +1705,12 @@
 #basechance 0
 #chanceinc "personalmagic nature blood 4"
 #command "#crossbreeder +3"
-#description " Skilled at crossbreeding."
+#set "skill"
+#prev "skill desc"
+#synonym "crossbreeding"
+#synonym "fleshcrafting"
+#synonym "horrifying magical experiments"
+#extendeddescription "and their blood magic will produce more hybrids than normal"
 #end
 
 #new magefilter
@@ -1137,7 +1720,12 @@
 #chanceinc "personalmagic nature 2 AND personalmagic blood 2 2"
 #command "#crossbreeder +6"
 #notfortier1
-#description " Excellent at crossbreeding."
+#set "skill"
+#prev "skill desc"
+#synonym "crossbreeding"
+#synonym "fleshcrafting"
+#synonym "horrifying magical experiments"
+#extendeddescription "and their blood magic will produce more hybrids than normal"
 #end
 
 #new magefilter
@@ -1148,7 +1736,12 @@
 #command "#crossbreeder +9"
 #notfortier1
 #notfortier2
-#description " Masterful at crossbreeding."
+#set "skill"
+#prev "skill desc"
+#synonym "crossbreeding"
+#synonym "fleshcrafting"
+#synonym "horrifying magical experiments"
+#extendeddescription "and their blood magic will produce more hybrids than normal"
 #end
 
 #new magefilter
@@ -1160,6 +1753,12 @@
 #notfortier 3
 #theme nature
 #theme ivy
+#set "skill"
+#prev "skill desc"
+#synonym "summoning vine creatures"
+#synonym "commanding the forces of nature"
+#synonym "manipulating plants"
+#extendeddescription "and they can summon more vine men than normal"
 #end
 
 #new magefilter
@@ -1171,6 +1770,12 @@
 #notfortier 1
 #theme nature
 #theme ivy
+#set "skill"
+#prev "skill desc"
+#synonym "summoning vine creatures"
+#synonym "commanding the forces of nature"
+#synonym "manipulating plants"
+#extendeddescription "and they can summon more vine men than normal"
 #end
 
 #new magefilter
@@ -1183,6 +1788,12 @@
 #notfortier 2
 #theme nature
 #theme ivy
+#set "skill"
+#prev "skill desc"
+#synonym "summoning vine creatures"
+#synonym "commanding the forces of nature"
+#synonym "manipulating plants"
+#extendeddescription "and they can summon more vine men than normal"
 #end
 
 #new magefilter
@@ -1197,6 +1808,11 @@
 #command "#dragonlord +1"
 #theme dragon
 #theme draketotem
+#set "skill"
+#prev "skill desc"
+#synonym "summoning dragonkind"
+#synonym "commanding dragons and their kin"
+#extendeddescription "and they can summon more dragonlike creatures than normal"
 #end
 
 #new magefilter
@@ -1212,6 +1828,11 @@
 #notfortier 1
 #theme dragon
 #theme draketotem
+#set "skill"
+#prev "skill desc"
+#synonym "summoning dragonkind"
+#synonym "commanding dragons and their kin"
+#extendeddescription "and they can summon more dragonlike creatures than normal"
 #end
 
 #new magefilter
@@ -1220,10 +1841,14 @@
 #basechance 0
 #chanceinc "personalmagic nature 3 0.1"
 #command "#lamialord +2"
-#description " Esteemed by lamia-kind."
 #notfortier 1
 #theme serpent
 #theme snaketotem
+#set "skill"
+#prev "skill desc"
+#synonym "dealing with lamias"
+#synonym "negotiating with lamias"
+#extendeddescription "and they can summon more lamias than normal"
 #end
 
 #new magefilter
@@ -1237,6 +1862,11 @@
 #notfortier 2
 #theme serpent
 #theme snaketotem
+#set "skill"
+#prev "skill desc"
+#synonym "dealing with lamias"
+#synonym "negotiating with lamias"
+#extendeddescription "and they can summon more lamias than normal"
 #end
 
 #new magefilter
@@ -1245,10 +1875,14 @@
 #basechance 0
 #chanceinc "personalmagic air death 4"
 #command "#corpselord +2"
-#description " Proficient at reanimating corpses with electricity."
 #notfortier 3
 #theme death
 #theme construction
+#set "skill"
+#prev "skill desc"
+#synonym "electric reanimation"
+#synonym "rejuvenating the dead"
+#extendeddescription "and they can create more corpse constructs than normal"
 #end
 
 #new magefilter
@@ -1261,6 +1895,11 @@
 #notfortier 1
 #theme death
 #theme construction
+#set "skill"
+#prev "skill desc"
+#synonym "electric reanimation"
+#synonym "rejuvenating the dead"
+#extendeddescription "and they can create more corpse constructs than normal"
 #end
 
 #new magefilter
@@ -1274,5 +1913,10 @@
 #notfortier 2
 #theme death
 #theme construction
+#set "skill"
+#prev "skill desc"
+#synonym "electric reanimation"
+#synonym "rejuvenating the dead"
+#extendeddescription "and they can create more corpse constructs than normal"
 #end
 
