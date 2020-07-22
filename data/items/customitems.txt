@@ -1878,6 +1878,100 @@
 #command "#magicarmor"
 #end
 
+--- Enchanted weapons for dwarven smiths
+
+#new customweapon
+#name "firebattleaxe"
+#command "#att 1"
+#command "#dmg 9"
+#command "#len 2"
+#command "#rcost 8"
+#command "#name 'Burning Battleaxe'"
+#command "#slash"
+#command "#magic"
+#command "#twohanded"
+#command "#secondaryeffect 684"
+#end
+
+#new customweapon
+#name "icebattleaxe"
+#command "#att 1"
+#command "#dmg 9"
+#command "#len 2"
+#command "#rcost 8"
+#command "#name 'Freezing Battleaxe'"
+#command "#slash"
+#command "#magic"
+#command "#twohanded"
+#command "#secondaryeffect 607"
+#end
+
+#new customweapon
+#name "rotbattleaxe"
+#command "#att 1"
+#command "#dmg 9"
+#command "#len 2"
+#command "#rcost 8"
+#command "#name 'Rotting Battleaxe'"
+#command "#slash"
+#command "#magic"
+#command "#twohanded"
+#command "#secondaryeffect 64"
+#end
+
+#new customweapon
+#name "shockbattleaxe"
+#command "#att 1"
+#command "#dmg 9"
+#command "#len 2"
+#command "#rcost 8"
+#command "#name 'Shocking Battleaxe'"
+#command "#slash"
+#command "#magic"
+#command "#twohanded"
+#command "#secondaryeffect 738"
+#end
+
+#new customweapon
+#name "firesword"
+#command "#att 1"
+#command "#def 1"
+#command "#dmg 6"
+#command "#len 1"
+#command "#rcost 8"
+#command "#name 'Burning Sword'"
+#command "#slash"
+#command "#magic"
+#command "#secondaryeffect 684"
+#end
+
+#new customweapon
+#name "icesword"
+#command "#att 1"
+#command "#def 1"
+#command "#dmg 6"
+#command "#len 1"
+#command "#rcost 8"
+#command "#name 'Freezing Sword'"
+#command "#slash"
+#command "#magic"
+#command "#secondaryeffect 607"
+#end
+
+#new customweapon
+#name "rotsword"
+#command "#att 1"
+#command "#def 1"
+#command "#dmg 6"
+#command "#len 1"
+#command "#rcost 8"
+#command "#name 'Rotting Sword'"
+#command "#slash"
+#command "#magic"
+#command "#secondaryeffect 64"
+#end
+
+
 --- Bonus missle attacks for pachyderm howdahs
 #new customweapon
 #name bonus_shortbow

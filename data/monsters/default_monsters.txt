@@ -120,6 +120,7 @@
 #command "#spr1 ./graphics/monsters/elephant_avvite.png"
 #command "#spr2 shift"
 #recolormask /graphics/monsters/elephant_avvite_recolormask.png
+#command "#weapon 614" -- Tusk
 #command "#weapon 437" -- Longspear
 #end
 
@@ -208,6 +209,7 @@
 #command "#copystats 419"
 #command "#spr1 ./graphics/monsters/mammoth_jotun.png"
 #command "#spr2 shift"
+#command "#weapon 614" -- Tusk
 #command "#weapon 437" -- Longspear
 #end
 
@@ -399,7 +401,7 @@
 #command "#copystats 330"
 #command "#copyspr 330"
 #command "#gcost 50"
-#command "#rpcost 1"
+#command "#rpcost 20"
 #command "#rcost 1"
 #command "#reclimit 1"
 #command "#slow_to_recruit"

@@ -105,7 +105,7 @@
 
 #baseitemslot feet 0
 
-#renderorder "shadow wings cloakb mount basesprite shirt legs bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay overlay2"
+#renderorder "shadow wings cloakb mount basesprite shirt legs bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/monkey/vanara/mounted/sacredbases.txt
 
@@ -127,8 +127,7 @@
 #load mount /data/items/monkey/vanara/mounted/mounts.txt 5 -15
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
 
-#load wings /data/items/monkey/vanara/normal/wings.txt
-#load overlay2 /data/items/monkey/vanara/normal/overlay.txt
+#load wings /data/items/monkey/vanara/mounted/wings.txt
 
 #generateitem 1 shirt
 #command "#maxage 60"
@@ -148,7 +147,7 @@
 
 #baseitemslot feet 0
 
-#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay overlay2"
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
 #load mount /data/items/monkey/vanara/mounted/bases_chariot.txt
 
@@ -169,7 +168,6 @@
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
 
 #load wings /data/items/monkey/vanara/mounted/wings.txt
-#load overlay2 /data/items/monkey/vanara/normal/overlay.txt
 
 #generateitem 1 shirt
 #command "#maxage 30"
@@ -188,7 +186,7 @@
 
 #baseitemslot feet 0
 
-#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay overlay2"
+#renderorder "shadow wings cloakb mount bag basesprite shirt legs strap armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
 #load mount /data/items/monkey/vanara/mounted/bases_chariot.txt
 
@@ -211,7 +209,6 @@
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
 
 #load wings /data/items/monkey/vanara/mounted/wings.txt
-#load overlay2 /data/items/monkey/vanara/normal/overlay.txt
 
 #generateitem 1 bonusweapon
 #generateitem 1 shirt
