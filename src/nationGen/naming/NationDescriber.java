@@ -59,22 +59,7 @@ public class NationDescriber {
 	public StringBuilder expandPrevDesc(StringBuilder compiledDesc, Filter currentFilter, Unit currentUnit, List<Filter> bridge)
 	{
 		if (!currentFilter.prevDesc.isEmpty())
-		{							
-			
-			/*
-			//insert up to 1 random superlative													
-			if (superlative == null && descSets.get(k).size() == 1 && tempFilter.tags.containsName("allowsuperlative"))
-				superlative = tempFilter;
-			
-			if (superlative == tempFilter)
-			{
-				possibles = descs.stream().filter(f -> f.name.equals("superlative")).collect(Collectors.toList());
-				desc.insert(currentPosition, getRandomDescription(chandler.handleChanceIncs(u,possibles).getRandom(random)));
-			}
-			*/
-			
-			//final String target = currentFilter.prevDesc;														
-									
+		{																
 			currentFilter = chandler.handleChanceIncs(currentUnit, currentFilter.prevDesc).getRandom(random);
 			if (currentFilter != null)	
 			{
@@ -94,7 +79,7 @@ public class NationDescriber {
 				if (currentFilter != null)				
 					return compiledDesc.append(getRandomDescription(currentFilter));			
 				else
-					return compiledDesc.append(getRandomDescription(currentFilter));
+					return compiledDesc;
 			}
 			else				
 				return compiledDesc.append(getRandomDescription(currentFilter));
@@ -108,11 +93,9 @@ public class NationDescriber {
 			currentFilter = chandler.handleChanceIncs(currentUnit, currentFilter.nextDesc).getRandom(random);
 			if (currentFilter != null)				
 				return expandNextDesc(compiledDesc, currentFilter, currentUnit, position).insert(position,getRandomDescription(currentFilter));
-			else
-				return compiledDesc;
 		}	
-		else
-			return compiledDesc;
+				
+		return compiledDesc;
 	}
 	
 	private void describeUnits(DescriptionReplacer dr, List<Unit> units, Filter descf, List<Filter> descs)
@@ -131,17 +114,14 @@ public class NationDescriber {
 		
 		StringBuilder desc = new StringBuilder(u.race.tags.getString("description").map(s -> s + " ").orElse(""));
 				
-		
 		Command tmpDesc = null;
-		
 
 		for(Command c : u.getCommands())
 		{
 			if(c.command.equals("#descr"))
-				tmpDesc = c;
+				tmpDesc = c;			
 		}
-		
-		
+				
 		if(tmpDesc != null)
 		{
 			desc.append(" ").append(tmpDesc.args.get(0));
@@ -151,29 +131,32 @@ public class NationDescriber {
 		{
 			if(f != null)
 			{
-				String tempSet = "misc";
-				if (!f.descSet.isEmpty()) tempSet = f.descSet;
+				Filter tempFilter = f.description;
+				String tempSet = tempFilter.descSet.isEmpty() ? "misc" : tempFilter.descSet;				
 					
-				if (!descSets.containsKey(tempSet))						
+				if (!descSets.containsKey(tempSet))				
+				{
 					descSets.put(tempSet, new ArrayList<Filter>());
-				
-				descSets.get(tempSet).add(f);
+					descSets.get(tempSet).add(tempFilter);
+				}
+				else if (tempFilter.tags.containsName("negative"))
+					descSets.get(tempSet).add(descSets.get(tempSet).size()-1, tempFilter);
+				else
+					descSets.get(tempSet).add(0, tempFilter);
 			}
 		}
 		
 		if(descf != null)
 		{
-			String tempSet = "misc";
-			if (!descf.descSet.isEmpty()) tempSet = descf.descSet;
+			String tempSet = descf.descSet.isEmpty() ? "misc" : descf.descSet;			
 				
 			if (!descSets.containsKey(tempSet))						
 				descSets.put(tempSet, new ArrayList<Filter>());
 			
 			descSets.get(tempSet).add(descf);
 		}		
-					
-		//descs = ChanceIncHandler.retrieveFilters("filterdescriptions", "filterdescs", assets.descriptions, null, u.race);
-					
+				
+		/*
 		for (String k : descSets.keySet())
 		{
 			List<Filter> sorted = new ArrayList<>();
@@ -184,6 +167,7 @@ public class NationDescriber {
 			descSets.get(k).clear();
 			descSets.get(k).addAll(sorted);
 		}
+		*/
 					
 		List<Filter> bridge = null;
 		String[] descCategories = {"mage","priest","army role","troop","commander","terrain","lineage","recruitment","physique","skill","immunity","vulnerability","senses","misc","wondrous","shapeshift","retinue","death"};
@@ -204,15 +188,15 @@ public class NationDescriber {
 				for (int i=0; i < descSets.get(k).size(); i++)
 				{	
 					tempFilter = descSets.get(k).get(i);
-					if (!getRandomDescription(descSets.get(k).get(i)).equals("")) 
+					if (!getRandomDescription(descSets.get(k).get(i)).isEmpty()) 
 					{						
 						hasDesc = true;
 						
 						//insert up to 1 random superlative													
-						if (superlative == null && descSets.get(k).size() == 1 && tempFilter.tags.containsName("allowsuperlative"))
+						if (superlative == null && tempFilter.tags.containsName("allowsuperlative"))
 							superlative = tempFilter;
 						
-						if (superlative == tempFilter)
+						if (superlative == tempFilter && descSets.get(k).size() == 1)
 						{	
 							descs = ChanceIncHandler.retrieveFilters("filterdescriptions", "filterdescs", assets.descriptions, null, u.race);
 							List<Filter> possibles = descs.stream().filter(f -> f.name.equals("superlative")).collect(Collectors.toList());
@@ -247,7 +231,7 @@ public class NationDescriber {
 						if (tempFilter.bridgeDesc.size() > 0)
 							bridge = tempFilter.bridgeDesc;
 						
-						if (descSets.values().stream().flatMap(x -> x.stream()).collect(Collectors.toList()).size() < 4 && descSets.get(k).size() == 1)
+						if (descSets.values().size() < 5 && descSets.get(k).size() == 1)
 						{
 							String tempDesc = tempFilter.tags.getString("extendeddescription").map(s -> " " + s).orElse(""); 
 							if (!tempDesc.isEmpty())
@@ -259,7 +243,7 @@ public class NationDescriber {
 					}
 				}
 				
-				if (hasDesc && bridge == null && (desc.length() < 1 || desc.substring(desc.length()-1,desc.length()) != "."))
+				if (hasDesc && bridge == null)
 					desc.append(".");
 			}
 		}
@@ -268,6 +252,8 @@ public class NationDescriber {
 		if (bridge != null)
 			desc.append(".");
 		
+		desc.append(" ");
+		
 		desc.append(u.slotmap.items()
 				.map(i -> i.tags.getString("description"))
 				.filter(Optional::isPresent)
@@ -275,7 +261,7 @@ public class NationDescriber {
 				.collect(Collectors.joining(" "))).append(" ");
 				
 			
-			desc = new StringBuilder(dr.replace(desc.toString().trim()));		
+		desc = new StringBuilder(dr.replace(desc.toString().trim()));		
 	
 		
 		if(u.tags.containsName("montagunit"))
@@ -342,11 +328,8 @@ public class NationDescriber {
 
 	private void describeCommanders()
 	{
-		String[] roles = {"commanders", "priests","mages"};
-		
-		//ChanceIncHandler chandler = new ChanceIncHandler(n);
-		//List<Filter> descs = ChanceIncHandler.retrieveFilters("troopdescriptions", "troopdescs", n.nationGen.descriptions, null, n.races.get(0));
-				
+		String[] roles = {"commanders","priests","mages"};
+					
 		List<Filter> descs = ChanceIncHandler.retrieveFilters("commanderdescriptions", "commanderdescs", assets.descriptions, null, n.races.get(0));
 
 		DescriptionReplacer dr = new DescriptionReplacer(n);
@@ -361,42 +344,6 @@ public class NationDescriber {
 			{
 				dr.calibrate(u);
 
-				/*
-				StringBuilder desc = new StringBuilder(u.race.tags.getString("description").map(s -> s + " ").orElse(""));
-	
-	
-				Command tmpDesc = null;
-				
-
-				for(Command c : u.getCommands())
-				{
-					if(c.command.equals("#descr"))
-						tmpDesc = c;
-				}
-				
-				if(tmpDesc != null)
-				{
-					desc.append(tmpDesc.args.get(0));
-				}
-											
-				for(Filter f : u.appliedFilters)
-				{
-					if(f != null)
-					{
-						desc.append(f.tags.getValue("description").map(s -> " " + s).orElse(""));
-					}
-				}			
-				
-				
-				String description = dr.replace(desc.toString()).replaceAll("\"", "");
-
-				if(tmpDesc != null)
-					u.setCommandValue("#descr", description);
-				else
-					u.commands.add(Command.args("#descr", description));
-			
-			*/				
-				
 				List<Filter> possibles = new ArrayList<>();
 				for(Filter f : descs.stream().filter(f -> f.name.equals("commander start")).collect(Collectors.toList()))
 					if(ChanceIncHandler.suitableFor(units.get(0), f, n))

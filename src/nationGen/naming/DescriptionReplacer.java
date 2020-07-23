@@ -62,15 +62,18 @@ public class DescriptionReplacer {
 			descs.put("%mount_plural%", "unspecified mounts");
 		}	
 		
-		if (u.tags.containsName("okleader") || u.tags.containsName("goodleader") || u.tags.containsName("poorleader"))
+		if (u.hasCommand("#okleader") || u.hasCommand("#poorleader") || u.hasCommand("#goodleader") || u.hasCommand("#expertleader") || u.hasCommand("#noleader"))
+		{
 			descs.put("%role%","commanders");
+			
+			if (u.hasCommand("#holy"))
+				descs.put("%role%","priests");
+		}			
 		
 		for (Filter f : u.getMagicFilters())
-		{
+		{				
 			if (f.name == "MAGICPICKS")
 				descs.put("%role%","mages");
-			else if (f.name == "PRIESTPICKS" && !descs.containsKey("%role%"))
-				descs.put("%role%","priests");
 		}
 	}
 	

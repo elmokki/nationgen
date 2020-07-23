@@ -9,10 +9,7 @@
 #chanceinc "personalcommand mounted *0"
 #command "#shapechange turkey"
 #tag "notfortier 1"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a turkey"
-#synonym "an unassuming turkey"
+#filterdesc "turkeyshape desc"
 #end
 
 #new magefilter
@@ -31,11 +28,7 @@
 #power 2
 #theme "wolftotem"
 #theme "totemanimal"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a werewolf"
-#synonym "a half-wolf hybrid"
-#synonym "their wolf totem"
+#filterdesc "werewolf desc"
 #end
 
 #new magefilter
@@ -54,11 +47,7 @@
 #power 2
 #theme "wolftotem"
 #theme "totemanimal"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a werewolf"
-#synonym "a half-wolf hybrid"
-#synonym "their wolf totem"
+#filterdesc "werewolf desc"
 #end
 
 #new magefilter
@@ -74,13 +63,7 @@
 #tag "notfortier 2"
 #command "#maxage *2"
 #power 2
-#theme "foxtotem"
-#theme "totemanimal"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a werefox"
-#synonym "a half-fox hybrid"
-#synonym "their fox totem"
+#filterdesc "werefox desc"
 #end
 
 #new magefilter
@@ -99,11 +82,7 @@
 #power 2
 #theme "foxtotem"
 #theme "totemanimal"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a werefox"
-#synonym "a half-fox hybrid"
-#synonym "their fox totem"
+#filterdesc "werefox desc"
 #end
 
 #new magefilter
@@ -122,11 +101,7 @@
 #power 2
 #theme "beartotem"
 #theme "totemanimal"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a werebear"
-#synonym "a half-bear hybrid"
-#synonym "their bear totem"
+#filterdesc "werebear desc"
 #end
 
 #new magefilter
@@ -145,14 +120,10 @@
 #power 2
 #theme "beartotem"
 #theme "totemanimal"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a werebear"
-#synonym "a half-bear hybrid"
-#synonym "their bear totem"
+#filterdesc "werebear desc"
 #end
 
-#new
+#new magefilter
 #name "werehyena"
 #type "shapeshift"
 #basechance 0.05
@@ -167,14 +138,10 @@
 #description "can shapeshift into a werehyena"
 #theme "hyenatotem"
 #theme "totemanimal"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a werehyena"
-#synonym "a half-hyena hybrid"
-#synonym "their hyena totem"
+#filterdesc "werehyena desc"
 #end
 
-#new
+#new magefilter
 #name "werehyena2"
 #type "shapeshift"
 #basechance 0.05
@@ -189,14 +156,10 @@
 #description "can shapeshift into a werehyena"
 #theme "hyenatotem"
 #theme "totemanimal"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a werehyena"
-#synonym "a half-hyena hybrid"
-#synonym "their hyena totem"
+#filterdesc "werehyena desc"
 #end
 
-#new
+#new magefilter
 #name "wererat"
 #type "shapeshift"
 #basechance 0.025
@@ -212,14 +175,10 @@
 #description "can shapeshift into a wererat"
 #theme "rattotem"
 #theme "totemanimal"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a wererat"
-#synonym "a half-rat hybrid"
-#synonym "their rat totem"
+#filterdesc "wererat desc"
 #end
 
-#new
+#new magefilter
 #name "werecrocodile"
 #type "shapeshift"
 #basechance 0.05
@@ -238,11 +197,7 @@
 #theme "crocodiletotem"
 #theme "lizardtotem"
 #theme "totemanimal"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a werecrocodile"
-#synonym "a half-crocodile hybrid"
-#synonym "their crocodile totem"
+#filterdesc "werecrocodile desc"
 #end
 
 #new
@@ -264,11 +219,7 @@
 #theme "crocodiletotem"
 #theme "lizardtotem"
 #theme "totemanimal"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a werecrocodile"
-#synonym "a half-crocodile hybrid"
-#synonym "their crocodile totem"
+#filterdesc "werecrocodile desc"
 #end
 
 #new magefilter
@@ -283,10 +234,7 @@
 #power 2
 #theme "wolftotem"
 #theme "totemanimal"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a wolf"
-#synonym "an unassuming wolf"
+#filterdesc "wolf desc"
 #end
 
 #new magefilter
@@ -300,10 +248,7 @@
 #command "#shapechange wingedmonkey"
 #description "can shapeshift into a winged monkey"
 #tag "notfortier 1"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a winged monkey"
-#synonym "a magical monkey with wings"
+#filterdesc "wingedmonkey desc"
 #end
 
 #new magefilter
@@ -323,11 +268,7 @@
 #description "can shapeshift into a devil"
 #tag "personalmagic blood"
 #power 2
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a devil"
-#synonym "an infernal being"
-#synonym "a fiery devil"
+#filterdesc "devil desc"
 #end
 
 #new
@@ -344,9 +285,7 @@
 #command "#magiccommand +10"
 #tag "path nature"
 #theme "ivy"
-#set "death"
-#prev "start"
-#description "have a pact with ancient forces of nature and will reborn as living plants upon death"
+#filterdesc "vineman desc"
 #power 2
 #end
 
@@ -364,9 +303,7 @@
 #command "#magiccommand +10"
 #tag "path nature"
 #theme "ivy"
-#set "death"
-#prev "start"
-#description "have a pact with ancient forces of nature and will reborn as living plants upon death"
+#filterdesc "vineman desc"
 #power 2
 #end
 
@@ -387,10 +324,7 @@
 #description "can shapeshift into a frost fiend"
 #tag "personalmagic blood"
 #power 2
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a frost fiend"
-#synonym "an icy devil"
+#filterdesc "frostfiend desc"
 #end
 
 #new magefilter
@@ -405,10 +339,7 @@
 #description "can shapeshift into a great bear"
 #theme "beartotem"
 #theme "totemanimal"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a great bear"
-#synonym "an imposing bear"
+#filterdesc "greatbear desc"
 #end
 
 #new magefilter
@@ -422,10 +353,7 @@
 #description "can shapeshift into a bear"
 #theme "beartotem"
 #theme "totemanimal"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a great bear"
-#synonym "an imposing bear"
+#filterdesc "bear desc"
 #end
 
 #new magefilter
@@ -438,10 +366,7 @@
 #description "can shapeshift into a jaguar"
 #theme "jaguartotem"
 #theme "totemanimal"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a jaguar"
-#synonym "a ferocious jaguar"
+#filterdesc "jaguar desc"
 #end
 
 #new magefilter
@@ -460,11 +385,7 @@
 #tag "notfortier 1"
 #description "can shapeshift into a deep one"
 #tag "personalmagic water"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a deep one"
-#synonym "a creature of the deeps"
-#synonym "a half-fish hybrid"
+#filterdesc "deepone desc"
 #end
 
 #new magefilter
@@ -480,10 +401,7 @@
 #tag "personalmagic astral"
 #description "unleashes its true form of a horror on death"
 #power 2
-#set "death"
-#prev "start"
-#synonym "have a pact with the horrors of the void and will summon a horror to this world upon death"
-#synonym "are possessed by void horrors and will reveal their true form upon death"
+#filterdesc "lesserhorror desc"
 #end
 
 #new magefilter
@@ -495,11 +413,7 @@
 #command "#gcost *1.2"
 #power 2
 #tag "personalmagic death"
-#description "is able to grasp into mortal life on death, being able to avenge its own death as a ghost"
-#set "death"
-#prev "start"
-#synonym "have mastered their own mortality and can avenge their own death as a ghost"
-#synonym "can remain on this world as a ghost after dying"
+#filterdesc "ghost desc"
 #end
 
 #new magefilter
@@ -517,9 +431,7 @@
 #tag "personalmagic death"
 #tag "notfortier 1"
 #power 2
-#set "death"
-#prev "start"
-#description "have a pact with death, allowing them to live as a ghoul after death"
+#filterdesc "ghoul"
 #end
 
 #new magefilter
@@ -537,9 +449,7 @@
 #tag "personalmagic death"
 #tag "notfortier 1"
 #power 2
-#set "death"
-#prev "start"
-#description "have a pact with death, allowing them to live as a ghoul after death"
+#filterdesc "ghoul"
 #end
 
 #new magefilter
@@ -552,10 +462,7 @@
 #description "shapeshifts into a horned serpent when harmed"
 #theme "snaketotem"
 #theme "totemanimal"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a great serpent"
-#synonym "a magical horned serpent"
+#filterdesc "horned serpent desc"
 #end
 
 #new magefilter
@@ -570,10 +477,8 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #set "death"
-#prev "start"
-#synoynm "are pledged to the Kings of Elemental Fire and are reborn as living flame in death"
-#synonym "explode as a burst of elemental energy upon death, spawning a fire elemental"
 #power 2
+#filterdesc "felemental shift desc"
 #end
 
 #new magefilter
@@ -587,10 +492,7 @@
 #tag "personalmagic earth"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#set "death"
-#prev "start"
-#synoynm "are pledged to the Kings of Elemental Earth and are reborn as living earth in death"
-#synonym "explode as a burst of elemental energy upon death, spawning an earth elemental"
+#filterdesc "eelemental shift desc"
 #power 2
 #end
 
@@ -607,10 +509,7 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #power 2
-#set "death"
-#prev "start"
-#synoynm "are pledged to the Queens of Elemental Air and are reborn as living air in death"
-#synonym "explode as a burst of elemental energy upon death, spawning an air elemental"
+#filterdesc "aelemental shift desc"
 #end
 
 #new magefilter
@@ -625,10 +524,7 @@
 #description "explodes as a burst of elemental energy upon death, spawning an elemental"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#set "death"
-#prev "start"
-#synoynm "are pledged to the Queens of Elemental Water and are reborn as living water in death"
-#synonym "explode as a burst of elemental energy upon death, spawning an water elemental"
+#filterdesc "welemental shift desc"
 #power 2
 #end
 
@@ -644,9 +540,7 @@
 #command "#secondtmpshape metalman"
 #power 2
 #tag "personalmagic earth"
-#set "death"
-#prev "start"
-#description "are clever mechanical simulacra imbued with life and will reveal their mechanical form upon death"
+#filterdesc "metalman shift desc"
 #end
 
 #new magefilter
@@ -661,9 +555,7 @@
 #command "#secondtmpshape metalman-small"
 #power 2
 #tag "personalmagic earth"
-#set "death"
-#prev "start"
-#description "are clever mechanical simulacra imbued with life and will reveal their mechanical form upon death"
+#filterdesc "metalman shift desc"
 #end
 
 #new magefilter
@@ -678,9 +570,7 @@
 #command "#secondtmpshape hugemantis"
 #tag "notfortier 1"
 #tag "personalmagic nature"
-#set "death"
-#prev "start"
-#description "can transform into a huge mantis to lash out in death"
+#filterdesc "hugemantis shift desc"
 #end
 
 #new magefilter
@@ -698,10 +588,7 @@
 #description "can shapeshift into a scorpion"
 #theme "scorpiontotem"
 #theme "totemanimal"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a scorpion"
-#synonym "a deadly scorpion"
+#filterdesc "scorpion shift desc"
 #end
 
 #new magefilter
@@ -722,10 +609,7 @@
 #description "can shapeshift into a cave crab"
 #theme "crabtotem"
 #theme "totemanimal"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a cave crab"
-#synonym "a giant cave crab"
+#filterdesc "cavecrab shift desc"
 #end
 
 #new magefilter
@@ -745,10 +629,7 @@
 #description "can shapeshift into a hawk"
 #theme "hawktotem"
 #theme "totemanimal"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a hawk"
-#synonym "a soaring hawk"
+#filterdesc "hawk shift desc"
 #end
 
 #new magefilter
@@ -767,10 +648,7 @@
 #description "can shapeshift into a giant toad"
 #theme "toadtotem"
 #theme "totemanimal"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a giant toad"
-#synonym "a toad of immense size"
+#filterdesc "giant toad shift desc"
 #end
 
 #new magefilter
@@ -786,10 +664,7 @@
 #description "can shapeshift into a great boar"
 #theme "boartotem"
 #theme "totemanimal"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a great boar"
-#synonym "an imposing boar"
+#filterdesc "greatboar shift desc"
 #end
 
 #new magefilter
@@ -806,8 +681,5 @@
 #description "can shapeshift into a giant spider"
 #theme "spidertotem"
 #theme "totemanimal"
-#set "shapeshift"
-#prev "shapeshift desc"
-#synonym "a giant spider"
-#synonym "a spider of immense size"
+#filterdesc "spider shift desc"
 #end

@@ -17,6 +17,7 @@ public class Filter extends Entity {
 	public double power = 1;
 
 	//used for descriptions
+	public Filter description;
 	public List<String> thesaurus = new ArrayList<>();
 	public List<Filter> nextDesc = new ArrayList<>();
 	public List<Filter> prevDesc = new ArrayList<>();
@@ -24,8 +25,9 @@ public class Filter extends Entity {
 	public String descSet = "";
 	
 	
-	public Filter(NationGen nationGen) {
+	public Filter(NationGen nationGen) {		
 		super(nationGen);
+		description = this;
 	}
 	
 	public List<Command> getCommands()
@@ -70,15 +72,6 @@ public class Filter extends Entity {
 				case "#power":
 					this.power = command.args.get(0).getInt();
 					break;
-				/*case "#prev":
-					this.prevDesc = new List<Filter>();
-					break;
-				case "#next":
-					this.nextDesc = command.args.get(0).get();
-					break;
-				case "#bridge":
-					this.bridgeDesc = command.args.get(0).get();
-					break;*/
 				case "#set":
 					this.descSet = command.args.get(0).get();
 					break;					

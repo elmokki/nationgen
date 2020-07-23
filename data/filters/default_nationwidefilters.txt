@@ -2,41 +2,28 @@
 #name "poisonres5"
 #command "#poisonres +5"
 #description "poison resistance"
-#synonym "poison"
-#synonym "toxins"
-#set "immunity"
-#prev "immunity desc"
+#filterdesc "poisonres desc"
 #end
 
 #new
 #name "shockres5"
 #command "#shockres +5"
 #description "shock resistance"
-#synonym "electricity"
-#synonym "lightning"
-#set "immunity"
-#prev "immunity desc"
+#filterdesc "shockres desc"
 #end
 
 #new
 #name "fireres5"
 #command "#fireres +5"
 #description "fire resistance"
-#synonym "fire"
-#synonym "heat"
-#set "immunity"
-#prev "immunity desc"
+#filterdesc "fireres desc"
 #end
 
 #new
 #name "coldres5"
 #description "cold resistance"
 #command "#coldres +5"
-#synonym "cold"
-#synonym "ice"
-#synonym "frost"
-#set "immunity"
-#prev "immunity desc"
+#filterdesc "coldres desc"
 #end
 
 #new
@@ -49,11 +36,7 @@
 #description "Dark vision (50)"
 #chance 0.5
 #command "#darkvision +50"
-#synonym "excellent night vision"
-#synonym "excellent dark vision"
-#set "senses"
-#prev "senses desc"
-#extendeddescription "and can fight more effectively in the dark"
+#filterdesc "darkvision desc"
 #end
 
 #new
@@ -62,12 +45,7 @@
 #description "Forest survival"
 #chance 0.5
 #command "#forestsurvival"
-#synonym "forests"
-#synonym "woodlands"
-#set "terrain"
-#prev "terrain desc"
-#next "terrain end"
-#extendeddescription "and can move and fight easily in forests"
+#filterdesc "forestsurvival desc"
 #end
 
 #new
@@ -76,12 +54,7 @@
 #description "Swamp survival"
 #chance 0.5
 #command "#swampsurvival"
-#synonym "swamps"
-#synonym "bogs"
-#set "terrain"
-#prev "terrain desc"
-#next "terrain end"
-#extendeddescription "and can move and fight easily in swamps"
+#filterdesc "swampsurvival desc"
 #end
 
 #new
@@ -90,12 +63,7 @@
 #description "Waste survival"
 #chance 0.5
 #command "#wastesurvival"
-#synonym "deserts"
-#synonym "wastelands"
-#set "terrain"
-#prev "terrain desc"
-#next "terrain end"
-#extendeddescription "and can move and fight easily in wastes"
+#filterdesc "wastesurvival desc"
 #end
 
 #new
@@ -104,12 +72,7 @@
 #description "Mountain survival"
 #chance 0.5
 #command "#mountainsurvival"
-#synonym "mountains"
-#synonym "highlands"
-#set "terrain"
-#prev "terrain desc"
-#next "terrain end"
-#extendeddescription "and can move and fight easily in mountains"
+#filterdesc "mountainsurvival desc"
 #end
 
 #new
@@ -120,11 +83,7 @@
 #primarycommand #illusion
 #command "#mr +1"
 #command "#spellsinger"
-#synonym "the fae of old"
-#synonym "elven kind"
-#set "lineage"
-#prev "lineage desc"
-#extendeddescription "and their magical blood gives them resistance to magic"
+#filterdesc "faeblood desc"
 #end
 
 #new
@@ -133,13 +92,7 @@
 #chance 0.3
 #command "#str +1"
 #description "Strong"
-#set "physique"
-#prev "physique desc"
-#next "physique end"
-#bridge "physique bridge"
-#synonym "strong"
-#synonym "mighty"
-#allowsuperlative
+#filterdesc "strong desc"
 #end
 
 #new
@@ -147,14 +100,7 @@
 #tag "weak"
 #chance 0.15
 #command "#str -1"
-#description "Weak"
-#set "physique"
-#prev "physique desc"
-#next "physique end"
-#bridge "physique bridge"
-#synonym "weak"
-#synonym "frail"
-#allowsuperlative
+#filterdesc "weak desc"
 #end
 
 #new
@@ -167,14 +113,7 @@
 #command "#hp +2"
 #command "#str +1"
 #description "Stocky"
-#set "physique"
-#prev "physique desc"
-#next "physique end"
-#bridge "physique bridge"
-#synonym "stocky"
-#synonym "brawny"
-#allowsuperlative
-#extendeddescription "and they are brawny but dim-witted"
+#filterdesc "stocky desc"
 #end
 
 #new
@@ -185,15 +124,7 @@
 #command "#def -1"
 #command "#str +1"
 #command "#hp +2"
-#description "Clumsy"
-#set "physique"
-#prev "physique desc"
-#next "physique end"
-#bridge "physique bridge"
-#synonym "bulky"
-#synonym "clumsy"
-#allowsuperlative
-#extendeddescription "of great strength but little dexterity"
+#filterdesc "clumsy desc"
 #end
 
 #new
@@ -201,14 +132,7 @@
 #chance 0.3
 #primarycommand #blind
 #command "#prec -1"
-#description "Myopic"
-#set "senses"
-#prev "senses desc"
-#synonym "myopic eyesight"
-#synonym "poor vision"
-#synonym "weak eyes"
-#negative
-#extendeddescription "and have difficulty aiming"
+#filterdesc "myopic desc"
 #end
 
 #new
@@ -216,12 +140,7 @@
 #chance 0.3
 #primarycommand #blind
 #command "#prec +1"
-#description "Keen eyed"
-#set "senses"
-#prev "senses desc"
-#synonym "keen eyes"
-#synonym "sharp vision"
-#extendeddescription "and have excellent aim"
+#filterdesc "keen eyed desc"
 #end
 
 #new
@@ -229,31 +148,14 @@
 #chance 0.3
 #command "#att +1"
 #command "#def -1"
-#description "Aggressive"
-#set "physique"
-#prev "physique desc"
-#next "physique end"
-#bridge "physique bridge"
-#synonym "aggressive"
-#synonym "reckless"
-#allowsuperlative
-#extendeddescription "who care little about defending themselves"
+#filterdesc "aggressive desc"
 #end
 
 #new
 #name "Gluttonous"
 #chance 0.1
 #command "#supplybonus -1"
-#description "Gluttonous"
-#set "physique"
-#prev "physique desc"
-#next "physique end"
-#bridge "physique bridge"
-#synonym "gluttonous"
-#synonym "hungry"
-#allowsuperlative
-#negative
-#extendeddescription "who eat an inordinate amount of food"
+#filterdesc "gluttonous desc"
 #end
 
 #new
@@ -261,16 +163,7 @@
 #chance 0.3
 #command "#mor -1"
 #command "#def +1"
-#description "Cowardly"
-#set "physique"
-#prev "physique desc"
-#next "physique end"
-#bridge "physique bridge"
-#synonym "cowardly"
-#synonym "craven"
-#allowsuperlative
-#negative
-#extendeddescription "and they are quick to flee battle"
+#filterdesc "cowardly desc"
 #end
 
 #new
@@ -278,29 +171,14 @@
 #chance 0.3
 #command "#mor +1"
 #description "Brave"
-#set "physique"
-#prev "physique desc"
-#next "physique end"
-#bridge "physique bridge"
-#synonym "brave"
-#synonym "bold"
-#allowsuperlative
-#extendeddescription "and their morale in battle is unbreakable"
+#filterdesc "brave desc"
 #end
 
 #new
 #name "Quick"
 #chance 0.1
 #command "#ap +4"
-#description "Quick"
-#set "physique"
-#prev "physique desc"
-#next "physique end"
-#bridge "physique bridge"
-#synonym "quick-footed"
-#synonym "fast"
-#allowsuperlative
-#extendeddescription "capable of running quickly across the battlefield"
+#filterdesc "quick desc"
 #end
 
 #new
@@ -309,14 +187,7 @@
 #primarycommand "#heal"
 #command "#startaff +10"
 #description "Sick"
-#set "physique"
-#prev "physique desc"
-#next "physique end"
-#bridge "physique bridge"
-#synonym "sickly"
-#synonym "deformed"
-#negative
-#extendeddescription "who suffer from a variety of maladies"
+#filterdesc "sickly desc"
 #end
 
 #new
@@ -325,11 +196,7 @@
 #command "#coldres -3"
 #command "#fireres +3"
 #chanceinc nationcommand #idealcold below 0 *0
-#description "Vulnerable to cold"
-#set "immunity"
-#prev "negative"
-#synonym "vulnerable to cold"
-#synonym "sensitive to cold"
+#filterdesc "coldvuln desc"
 #end
 
 #new
@@ -338,11 +205,7 @@
 #command "#coldres +3"
 #command "#fireres -3"
 #chanceinc nationcommand #idealcold above 0 *0
-#description "Vulnerable to fire"
-#set "immunity"
-#prev "negative"
-#synonym "vulnerable to fire"
-#synonym "sensitive to heat"
+#filterdesc "firevuln desc"
 #end
 
 #new
@@ -350,12 +213,7 @@
 #chance 0.025
 #primarycommand "#blind"
 #command "#blind"
-#description "Blind"
-#set "senses"
-#prev "senses desc"
-#synonym "uncanny senses"
-#synonym "blindsense"
-#extendeddescription "allowing them to fight without use of vision"
+#filterdesc "blind desc"
 #end
 
 #new
@@ -363,12 +221,7 @@
 #chance 0.025
 #primarycommand "#spiritsight"
 #command "#spiritsight"
-#description "Sees the true nature of things"
-#set "senses"
-#prev "senses desc"
-#synonym "the ability to see the unseen"
-#synonym "supernatural vision"
-#extendeddescription "and their magic sight cannot be fooled by darkness or illusion"
+#filterdesc "spiritsight desc"
 #end
 
 #new
@@ -377,12 +230,7 @@
 #primarycommand "#magicbeing"
 #command "#magicbeing"
 #command "#mr +2"
-#description "Magical"
-#set "lineage"
-#prev "lineage desc"
-#synonym "magical creatures"
-#synonym "otherworldly beings"
-#extendeddescription "and their supernatural nature affords them great resistance to magic, but they are ill understood by mundane mortals"
+#filterdesc "magicbeing desc"
 #end
 
 #new
@@ -394,12 +242,7 @@
 #command "#gcost +4"
 #command "#str +2"
 #command "#hp +1"
-#description "Demon blood"
-#set "lineage"
-#prev "lineage desc"
-#synonym "demons"
-#synonym "devils"
-#extendeddescription "and their infernal heritage gives them great power"
+#filterdesc "demonblood desc"
 #end
 
 #new
@@ -409,14 +252,9 @@
 #primarycommand "#pooramphibian"
 #primarycommand "#amphibian"
 #command "#pooramphibian"
-#description "Poor amphibian"
 #theme "toadtotem"
 #theme "totemanimal"
-#set "lineage"
-#prev "lineage desc"
-#synonym "an ancient amphibious race"
-#synonym "sea creatures"
-#extendeddescription "and they can breathe water as well as air, although they do not swim as well as aquatic creatures"
+#filterdesc "pooramphibian desc"
 #end
 
 #new
@@ -425,14 +263,7 @@
 #trooponly
 #command "#gcost *0.9"
 #command "#rcost +3"
-#description "Levy"
-#set "physique"
-#prev "physique desc"
-#next "physique end"
-#bridge "physique bridge"
-#synonym "cheaply raised"
-#synonym "cheaply conscripted"
-#extendeddescription "and they require few wages, although they cannot be relied upon for their own equipment"
+#filterdesc "levy desc"
 #end
 
 #new
@@ -441,12 +272,7 @@
 #trooponly
 #command "#gcost *1.1"
 #command "#rcost -3"
-#description "Warrior culture"
-#set "physique"
-#prev "physique desc"
-#synonym "proud noble"
-#synonym "richly celebrated"
-#extendeddescription "and they command a high wage, but often bring their own equipment"
+#filterdesc "warriorculture desc"
 #end
 
 #new
@@ -459,24 +285,14 @@
 #command "#def +1"
 #command "#att +1"
 #command "#prec +1"
-#description "Skilled warrior"
-#set "physique"
-#prev "physique desc"
-#synonym "expert"
-#synonym "elite"
+#filterdesc "professional desc"
 #end
 
 #new
 #name "Hardy"
 #chance 0.05
 #command "#woundfend +1"
-#description "Hardy"
-#set "physique"
-#prev "physique desc"
-#synonym "hardy"
-#synonym "durable"
-#allowsuperlative
-#extendeddescription "and they can shrug off wounds that would cripple lesser warriors."
+#filterdesc "hardy desc"
 #end
 
 #new
@@ -485,11 +301,7 @@
 #primarycommand #demon
 #primarycommand #undead
 #command "#diseaseres 25"
-#description "Resilient"
-#set "immunity"
-#prev "immunity desc"
-#synonym "disease"
-#synonym "infection"
+#filterdesc "resilient"
 #end
 
 #new
@@ -498,11 +310,7 @@
 #nocommand #poisonskin
 #command "#poisonskin 20"
 #description "Toxic flesh"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
-#synonym "poisonous skin"
-#synonym "envenomed flesh"
+#filterdesc "toxic desc"
 #end
 
 #new
@@ -510,13 +318,7 @@
 #chance 0.025
 #command "#prot +2"
 #description "Thick skinned"
-#set "physique"
-#prev "physique desc"
-#next "physique end"
-#bridge "physique bridge"
-#synonym "thick skinned"
-#synonym "durable"
-#allowsuperlative
+#filterdesc "thickskin desc"
 #end
 
 #new
@@ -526,12 +328,7 @@
 #command "#stonebeing"
 #command "#ap -4"
 #command "#prot +4"
-#description "Stone skinned"
-#set "lineague"
-#prev "lineage desc"
-#synonym "a strange race of stone beings"
-#synonym "living stone"
-#extendeddescription "and their stony flesh is hard, but heavy and ponderous"
+#filterdesc "golem desc"
 #end
 
 #new
@@ -541,12 +338,7 @@
 #command "#stonebeing"
 #command "#ap -2"
 #command "#prot +2"
-#description "Stone skinned"
-#set "lineage"
-#prev "lineage desc"
-#synonym "a strange race of stone beings"
-#synonym "living stone"
-#extendeddescription "and their stony flesh is hard, but heavy and ponderous"
+#filterdesc "golem desc"
 #end
 
 #new
@@ -556,7 +348,7 @@
 #primarycommand "#sailing"
 #command "#sailing 999 3"
 #command "#gcost *1.1"
-#description "Sailing"
+#filterdesc "maritime desc"
 #end
 
 #new
@@ -566,15 +358,7 @@
 #primarycommand "#stealthy"
 #lowenccommand "#stealthy +0"
 #lowenctreshold 2
-#description "Stealthy"
-#set "physique"
-#prev "physique desc"
-#next "physique end"
-#bridge "physique bridge"
-#synonym "stealthy"
-#synonym "sneaky"
-#allowsuperlative
-#extendeddescription "who can move unseen through enemy territory"
+#filterdesc "stealthy desc"
 #end
 
 #new
@@ -582,24 +366,14 @@
 #name "deathrec10"
 #command "#deathrec %cost10"
 #chanceinc magic death 0.075
-#synonym "haunted battlefields"
-#synonym "mournful graveyards"
-#synonym "desolation"
-#synonym "gloomy landscapes"
-#extendeddescription "and they are easier to recruit in lands of death"
+#filterdesc "deathrec desc"
 #end
 
 #new
 #basechance 0.05
 #name "chaosrec10"
 #command "#chaosrec %cost10"
-#set "terrain"
-#prev "terrain desc"
-#next "terrain end"
-#synonym "savage wild tribes"
-#synonym "war-torn territory"
-#synonym "chaotic no man's land"
-#extendeddescription "and they are easier to recruit in lands of turmoil"
+#filterdesc "chaosrec desc"
 #end
 
 #new
@@ -610,7 +384,8 @@
 #chanceinc "racetag fae *2"
 #name "pride-2"
 #command "#minsizeleader 2"
-#description "Too proud to be led by tiny beings"
+#trooponly
+#filterdesc "minsizeleader desc"
 #end
 
 #new
@@ -623,7 +398,8 @@
 #chanceinc "racetag fae *2"
 #name "pride-3"
 #command "#minsizeleader 3"
-#description "Too proud to be led by small beings"
+#trooponly
+#filterdesc "minsizeleader desc"
 #end
 
 #new
@@ -635,7 +411,8 @@
 #chanceinc "racetag fae *2"
 #name "pride-4"
 #command "#minsizeleader 4"
-#description "Too proud to be led by lesser beings"
+#trooponly
+#filterdesc "minsizeleader desc"
 #end
 
 #new
@@ -646,5 +423,6 @@
 #chanceinc "racetag fae *2"
 #name "pride-5"
 #command "#minsizeleader 5"
-#description "Too proud to be led by lesser beings"
+#trooponly
+#filterdesc "minsizeleader desc"
 #end

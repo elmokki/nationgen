@@ -168,7 +168,9 @@ public class NationGenAssets {
     	
     	for (Filter f : newFilters)
     	{
-    		//possibles = descs.stream().filter(f -> f.name.equals(target)).collect(Collectors.toList());
+    		if (f.tags.containsName("filterdesc"))    			
+    			f.description = newDescriptions.stream().filter(pf -> pf.name.equals(f.tags.getString("filterdesc").orElse(""))).findFirst().orElse(f);
+    		
     		if (f.tags.containsName("prev"))
     			f.prevDesc = newDescriptions.stream().filter(pf -> pf.descSet.equals(f.tags.getString("prev").orElse(""))).collect(Collectors.toList());
     		

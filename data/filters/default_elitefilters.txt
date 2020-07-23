@@ -7,6 +7,7 @@
 #tag "nopose ranged"
 #tag "nopose mounted"
 #tag "nopose chariot"
+#filterdesc "berserk desc"
 #end
 
 #new
@@ -21,6 +22,7 @@
 #tag "nopose chariot"
 #command "#gcost +1"
 #description "can enter berserker rage"
+#filterdesc "berserk desc"
 #end
 
 #new
@@ -38,6 +40,7 @@
 #command "#gcost +2"
 #power 2
 #description "can enter berserker rage"
+#filterdesc "berserk desc"
 #end
 
 #new
@@ -47,6 +50,7 @@
 #command "#incunrest 1"
 #power 0
 #description "causes unrest"
+#filterdesc "incunrest desc"
 #end
 
 #new
@@ -55,7 +59,7 @@
 #basechance 0.05
 #command "#incunrest 2"
 #power 0
-#description "causes unrest"
+#filterdesc "incunrest desc"
 #end
 
 
@@ -65,6 +69,7 @@
 #command "#chaosrec %cost5"
 #chanceinc "command #chaosrec 100"
 #chanceinc "command #chaospower 100"
+#filterdesc "chaosrec desc"
 #end
 
 
@@ -74,6 +79,7 @@
 #command "#chaosrec %cost10"
 #chanceinc "command #chaosrec 25"
 #chanceinc "command #chaospower 25"
+#filterdesc "chaosrec desc"
 #end
 
 #new
@@ -86,6 +92,7 @@
 #chanceinc "race sidhe -20"
 #chanceinc "pose mounted *0.25"
 #power 2
+#filterdesc "stealthy desc"
 #end
 
 #new
@@ -97,6 +104,7 @@
 #command "#prec +1"
 #command "#hp +1"
 #command "#gcost +2"
+#filterdesc "professional desc"
 #end
 
 #new
@@ -107,6 +115,7 @@
 #command "#gcost +3"
 #chanceinc "pose ranged -100"
 #chanceinc "personalcommand #berserk 0.5"
+#filterdesc "extra strong desc"
 #end
 
 #new
@@ -114,6 +123,7 @@
 #basechance 0.25
 #command "#addupkeep %cost-30"
 #command "#mor +1"
+#filterdesc "zealous desc"
 #end
 
 #new
@@ -133,6 +143,7 @@
 #command "#shockres +3"
 #command "#gcost +5"
 #power 2
+#filterdesc "allres desc"
 #end
 
 
@@ -147,6 +158,7 @@
 #price_per_command hp 1 10
 #tag "path nature"
 #tag "nopose chariot"
+#filterdesc "regeneration desc"
 #end
 
 #new
@@ -163,6 +175,7 @@
 #tag "path nature"
 #power 2
 #tag "nopose chariot"
+#filterdesc "regeneration desc"
 #end
 
 #new
@@ -178,6 +191,7 @@
 #tag "path nature"
 #power 3
 #tag "nopose chariot"
+#filterdesc "regeneration desc"
 #end
 
 
@@ -186,18 +200,21 @@
 #basechance 2
 #command "#siegebonus 3"
 #command "#castledef 3"
+#filterdesc "castle desc"
 #end
 
 #new
 #name "sieger"
 #basechance 2
 #command "#siegebonus 5"
+#filterdesc "siege desc"
 #end
 
 #new
 #name "patrol"
 #basechance 2
 #command "#patrolbonus 3"
+#filterdesc "patrol desc"
 #end
 
 #new
@@ -209,6 +226,7 @@
 #chanceinc "command #undisciplined *0"
 #tag "nopose chariot"
 #tag "nopose mounted"
+#filterdesc "bodyguard desc"
 #end
 
 #new
@@ -220,12 +238,14 @@
 #chanceinc "command #undisciplined *0"
 #tag "nopose chariot"
 #tag "nopose mounted"
+#filterdesc "bodyguard desc"
 #end
 
 #new
 #name "pillage"
 #basechance 1
 #command "#pillagebonus 3"
+#filterdesc "pillage desc"
 #end
 
 #new
@@ -253,6 +273,7 @@
 #tag "nopose mounted"
 #caponlychance 0.5
 #path blood
+#filterdesc "bloodbound desc"
 #end
 
 #new
@@ -286,6 +307,7 @@
 #caponlychance 1
 #power 2
 #path blood
+#filterdesc "bloodbound desc"
 #end
 
 #new
@@ -294,4 +316,5 @@
 #command "#dompower +1"
 #command "#rpcost +5"
 #caponlychance 1
+#filterdesc "dompower desc"
 #end

@@ -6,12 +6,7 @@
 #chanceinc "command #neednoteat 0.1"
 #command "#addupkeep %cost-50"
 #command "#neednoteat"
-#set "physique"
-#prev "physique desc"
-#next "physique end"
-#bridge "physique bridge"
-#synonym "ascetic"
-#synonym "devoted"
+#filterdesc "ascetic"
 #end
 
 #new
@@ -29,11 +24,7 @@
 #themeinc "thisarmorprot 15 *2"
 #tag "nopose ranged"
 #tag "nopose mounted"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
-#synonym "superhuman vigor"
-#synonym "superhuman endurance"
+#filterdesc "reinvig desc"
 #end
 
 #new
@@ -56,11 +47,7 @@
 #tag "nopose ranged"
 #tag "nopose mounted"
 #power 2
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
-#synonym "superhuman vigor"
-#synonym "superhuman endurance"
+#filterdesc "reinvig desc"
 #end
 
 
@@ -73,6 +60,7 @@
 #tag "nopose ranged"
 #tag "nopose mounted"
 #tag "nopose chariot"
+#filterdesc "berserk desc"
 #end
 
 #new
@@ -90,6 +78,7 @@
 #tag "nopose chariot"
 #command "#gcost +5"
 #power 2
+#filterdesc "berserk desc"
 #end
 
 #new
@@ -109,6 +98,7 @@
 #tag "nopose chariot"
 #command "#gcost +10"
 #power 3
+#filterdesc "berserk desc"
 #end
 
 #new
@@ -116,6 +106,7 @@
 #basechance 0
 #command "#blessbers"
 #chanceinc "personalcommand #berserk 0.5"
+#filterdesc "berserk desc"
 #end
 
 -- #new
@@ -192,6 +183,7 @@
 #chanceinc "race vanir -20"
 #chanceinc "pose mounted *0.25"
 #power 2
+#filterdesc "stealthy desc"
 #end
 
 #new
@@ -203,6 +195,7 @@
 #chanceinc "command #chaospower 50"
 #theme recruitment
 #power 2
+#filterdesk "chaosrec desc"
 #end
 
 #new
@@ -215,6 +208,7 @@
 #chanceinc "magic death 0.1"
 #chanceinc "command below #deathpower 0 *0"
 #theme recruitment
+#filterdesk "deathrec desc"
 #end
 
 #new
@@ -227,6 +221,7 @@
 #chanceinc "magic death 0.1"
 #chanceinc "command below #deathpower 0 *0"
 #theme recruitment
+#filterdesk "deathrec desc"
 #end
 
 #new
@@ -237,6 +232,7 @@
 #chanceinc "command #chaosrec 25"
 #chanceinc "command #chaospower 25"
 #theme recruitment
+#filterdesk "chaosrec desc"
 #end
 
 #new
@@ -246,11 +242,7 @@
 #command "#chaospower 1"
 #chanceinc "command #chaosrec 100"
 #chanceinc "command #chaospower 100"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
-#synonym "an affinity for chaos"
-#synonym "the strength of chaos"
+#filterdesc "chaospower desc"
 #end
 
 #new
@@ -263,11 +255,7 @@
 #chanceinc "command #formationfighter 5"
 #chanceinc "command #chaosrec *0"
 #chanceinc "command above #chaospower 0 *0"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
-#synonym "an affinity for order"
-#synonym "the strength of law"
+#filterdesc "orderpower desc"
 #end
 
 #new
@@ -276,6 +264,7 @@
 #type scalepower
 #command "#slothpower 1"
 #chanceinc "command #slothpower 100"
+#filterdesc "slothpower desc"
 #end
 
 #new
@@ -292,6 +281,7 @@
 #chanceinc "command #darkpower 5"
 #chanceinc "magic death 5"
 #chanceinc "command below #deathpower 0 *0"
+#filterdesc "deathpower desc"
 #end
 
 #new
@@ -309,11 +299,7 @@
 #chanceinc "command above #deathpower 0 *0"
 #theme ivy
 #theme vine
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
-#synonym "an affinity for growing things"
-#synonym "the strength of living nature"
+#filterdesc growthpower desc
 #end
 
 #new
@@ -325,11 +311,7 @@
 #chanceinc "command #fireshield +2"
 #chanceinc "magic fire 1"
 #power 1
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
-#synonym "a protective cloak of flames"
-#synonym "a shield of holy flame"
+#filterdesc "fireshield desc"
 #end
 
 #new
@@ -341,11 +323,7 @@
 #chanceinc "command #fireshield 1"
 #chanceinc "magic fire 1"
 #power 2
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
-#synonym "a protective cloak of flames"
-#synonym "a shield of holy flame"
+#filterdesc "fireshield desc"
 #end
 
 #new
@@ -361,11 +339,7 @@
 #chanceinc "prot 12 *0.125"
 #chanceinc "prot 15 *0"
 #power 3
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
-#synonym "a searing cloak of flames"
-#synonym "a shield of white hot flame"
+#filterdesc "fireshield desc"
 #end
 
 #new
@@ -376,11 +350,7 @@
 #chanceinc "command #airshield 2"
 #chanceinc "magic air 2"
 #chanceinc "personalcommand #illusion *2"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
-#synonym "a protective cloak of wind"
-#synonym "a magical barrier against arrows"
+#filterdesc "airshield desc"
 #end
 
 #new
@@ -392,11 +362,7 @@
 #chanceinc "magic air 1"
 #chanceinc "personalcommand #illusion *2"
 #power 1
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
-#synonym "a protective cloak of wind"
-#synonym "a magical barrier against arrows"
+#filterdesc "airshield desc"
 #end
 
 #new
@@ -408,11 +374,7 @@
 #chanceinc "magic air 0.5"
 #chanceinc "personalcommand #illusion *2"
 #power 2
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
-#synonym "a protective cloak of wind"
-#synonym "an impenetrable barrier against arrows"
+#filterdesc "airshield desc"
 #end
 
 #new
@@ -426,6 +388,7 @@
 #chanceinc "race vanir -20"
 #chanceinc "pose mounted *0.25"
 #power 2
+#filterdesc "stealthy desc"
 #end
 
 #new
@@ -437,10 +400,7 @@
 #command "#prec +1"
 #command "#hp +2"
 #command "#gcost +5"
-#set "skilled"
-#synonym "personal combat"
-#synonym "martial combat"
-#synonym "mortal combat"
+#filterdesc "professional desc"
 #end
 
 #new
@@ -451,11 +411,7 @@
 #command "#gcost +5"
 #chanceinc "pose ranged -100"
 #power 2
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
-#synonym "godlike in strength"
-#synonym "the strength of giants"
+#filterdesc "extra strong desc"
 #end
 
 #new
@@ -479,12 +435,7 @@
 #chanceinc "prot 15 *0.5"
 #chanceinc "pose mounted *0.5"
 #power 4
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
-#synonym "skill with illusions"
-#synonym "protective glamour"
-#extendeddescription "and in battle they summon mirror images to avoid blows"
+#filterdesc "illusion desc"
 #end
 
 #new
@@ -495,10 +446,7 @@
 #chanceinc "personalcommand #fireres *0.25"
 #command "#fireres +5"
 #command "#gcost +1"
-#set "immunity"
-#prev "immunity desc"
-#synonym "fire"
-#synonym "heat"
+#filterdesc "fireres desc"
 #end
 
 #new
@@ -509,10 +457,7 @@
 #chanceinc "personalcommand #poisonres *0.25"
 #command "#poisonres +5"
 #command "#gcost +1"
-#synonym "poison"
-#synonym "toxins"
-#set "immunity"
-#prev "immunity desc"
+#filterdesc "poisonres desc"
 #end
 
 #new
@@ -523,10 +468,7 @@
 #chanceinc "personalcommand #coldres *0.25"
 #command "#coldres +5"
 #command "#gcost +1"
-#synonym "cold"
-#synonym "ice"
-#set "immunity"
-#prev "immunity desc"
+#filterdesc "coldres desc"
 #end
 
 #new
@@ -537,10 +479,7 @@
 #chanceinc "personalcommand #shockres *0.25"
 #command "#shockres +5"
 #command "#gcost +1"
-#synonym "lightning"
-#synonym "electricity"
-#set "immunity"
-#prev "immunity desc"
+#filterdesc "shockres desc"
 #end
 
 #new
@@ -562,10 +501,7 @@
 #command "#gcost +5"
 #command "#gcost *1.2"
 #power 3
-#synonym "the elements"
-#synonym "elemental damage"
-#set "immunity"
-#prev "immunity desc"
+#filterdesc "allres desc"
 #end
 
 #new
@@ -586,10 +522,7 @@
 #command "#shockres +3"
 #command "#gcost +5"
 #power 2
-#synonym "elements"
-#synonym "the elements"
-#set "immunity"
-#prev "immunity desc"
+#filterdesc "allres desc"
 #end
 
 #new
@@ -602,10 +535,7 @@
 #command "#gcost +5"
 #synonym "a supernatural healing factor"
 #synonym "the ability to recover from injuries"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
-#extendeddescription "and can recover from crippling injuries in a matter of months."
+#filterdesc "recuperation desc"
 #end
 
 #new
@@ -620,11 +550,7 @@
 #command "#coldpower +1"
 #command "#gcost +5"
 #tag "path water"
-#synonym "an affinity for cold"
-#synonym "the strength of ice"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "coldpower desc"
 #end
 
 #new
@@ -638,11 +564,7 @@
 #command "#firepower +1"
 #command "#gcost +5"
 #tag "path fire"
-#synonym "an affinity for heat"
-#synonym "the strength of fire"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "firepower desc"
 #end
 
 #new
@@ -656,11 +578,7 @@
 #command "#stormpower +2"
 #command "#gcost +5"
 #tag "path air"
-#synonym "an affinity for storms"
-#synonym "the strength of storms"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "stormpower desc"
 #end
 
 #new
@@ -675,11 +593,7 @@
 #command "#gcost +10"
 #power 2
 #tag "path air"
-#synonym "an affinity for storms"
-#synonym "the strength of storms"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "stormpower desc"
 #end
 
 #new
@@ -691,11 +605,7 @@
 #chanceinc "magic water nature 3"
 #command "#springpower +25"
 #tag "path nature"
-#synonym "a connection with spring"
-#synonym "the strength of spring"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "spring desc"
 #end
 
 #new
@@ -707,12 +617,8 @@
 #chanceinc "magic fire nature 3"
 #chanceinc "command #fireres 0.5"
 #command "#summerpower +25"
-#synonym "a connection with summer"
-#synonym "the strength of summer"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
 #tag "path fire"
+#filterdesc "summerpower desc"
 #end
 
 #new
@@ -723,12 +629,8 @@
 #chanceinc "magic nature 0.5"
 #chanceinc "magic earth nature 3"
 #command "#fallpower +25"
-#synonym "a connection with autumn"
-#synonym "the strength of fall"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
 #tag "path earth"
+#filterdesc "fallpower desc"
 #end
 
 #new
@@ -742,11 +644,7 @@
 #chanceinc "command #frostres 1"
 #command "#winterpower +25"
 #tag "path water"
-#synonym "a connection with winter"
-#synonym "the strength of winter"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "winterpower desc"
 #end
 
 #new
@@ -758,11 +656,7 @@
 #chanceinc "magic water nature 1"
 #command "#springpower +50"
 #tag "path nature"
-#synonym "a connection with spring"
-#synonym "the strength of spring"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "springpower desc"
 #end
 
 #new
@@ -775,11 +669,7 @@
 #chanceinc "command #fireres 0.25"
 #command "#summerpower +50"
 #tag "path fire"
-#synonym "a connection with summer"
-#synonym "the strength of summer"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "summerpower desc"
 #end
 
 #new
@@ -791,11 +681,7 @@
 #chanceinc "magic earth nature 1"
 #command "#fallpower +50"
 #tag "path earth"
-#synonym "a connection with autumn"
-#synonym "the strength of fall"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "fallpower desc"
 #end
 
 #new
@@ -809,11 +695,7 @@
 #chanceinc "command #frostres 1"
 #command "#winterpower +50"
 #tag "path water"
-#synonym "a connection with winter"
-#synonym "the strength of winter"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "winterpower desc"
 #end
 
 #new
@@ -828,11 +710,7 @@
 #chanceinc "command #demon *0"
 #command "#yearturn 1"
 #command "#gcost +1"
-#synonym "a connection with the seasons"
-#synonym "the strength of turning seasons"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "turningseasonpower desc"
 #end
 
 #new
@@ -847,11 +725,7 @@
 #chanceinc "command #demon *0"
 #command "#yearturn 2"
 #command "#gcost +3"
-#synonym "a connection with the seasons"
-#synonym "the strength of turning seasons"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "turningseasonpower desc"
 #end
 
 #new
@@ -864,11 +738,7 @@
 #command "#darkvision 100"
 #command "#gcost +3"
 #tag "path death"
-#synonym "an affinity for darkness"
-#synonym "the strength of darkness"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "darkpower desc"
 #end
 
 #new
@@ -882,11 +752,7 @@
 #command "#gcost +8"
 #power 2
 #tag "path death"
-#synonym "an affinity for darkness"
-#synonym "the strength of darkness"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "darkpower desc"
 #end
 
 #new
@@ -897,11 +763,7 @@
 #command "#darkpower +2"
 #command "#gcost +3"
 #tag "path death"
-#synonym "an affinity for darkness"
-#synonym "the strength of darkness"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "darkpower desc"
 #end
 
 #new
@@ -913,11 +775,7 @@
 #command "#gcost +8"
 #power 2
 #tag "path death"
-#synonym "an affinity for darkness"
-#synonym "the strength of darkness"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "darkpower desc"
 #end
 
 #new
@@ -925,11 +783,7 @@
 #basechance 0.1
 #command "#dompower +1"
 #command "#rpcost +5"
-#synonym "the power of their god"
-#synonym "the power of faith"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "dompower desc"
 #end
 
 #new
@@ -946,12 +800,7 @@
 #themeinc thisarmorprot 15 *0.125
 #themeinc thisarmorprot 12 *0.125
 #power 3
-#synonym "an aura of divine splendor"
-#synonym "an aura of divine beauty"
-#synonym "an aura of divine wonder"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "awe desc"
 #end
 
 #new magefilter
@@ -968,11 +817,7 @@
 #themeinc thisarmorprot 15 *0.125
 #themeinc thisarmorprot 12 *0.125
 #power 3
-#synonym "an aura of solar splendor"
-#synonym "an aura of solar wonder"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "sun awe desc"
 #end
 
 #new
@@ -987,12 +832,7 @@
 #price_per_command hp 1 15
 #tag "path nature"
 #tag "nopose chariot"
-#synonym "the power of regeneration"
-#synonym "regenerating flesh"
-#synonym "self-healing flesh"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "regeneration desc"
 #end
 
 #new
@@ -1009,12 +849,7 @@
 #tag "path nature"
 #power 2
 #tag "nopose chariot"
-#synonym "the power of regeneration"
-#synonym "regenerating flesh"
-#synonym "self-healing flesh"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "regeneration desc"
 #end
 
 #new
@@ -1030,12 +865,7 @@
 #tag "path nature"
 #power 3
 #tag "nopose chariot"
-#synonym "the power of regeneration"
-#synonym "regenerating flesh"
-#synonym "self-healing flesh"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "regeneration desc"
 #end
 
 #new
@@ -1056,11 +886,7 @@
 #tag "path fire"
 #chanceinc "pose mounted *0.025"
 #power 2
-#synonym "an aura of heat"
-#synonym "a swirling cloak of heat"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "heat desc"
 #end
 
 #new
@@ -1082,11 +908,7 @@
 #tag "path water"
 #chanceinc "pose mounted *0.025"
 #power 2
-#synonym "an aura of cold"
-#synonym "a swirling cloak of cold"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "cold desc"
 #end
 
 #new
@@ -1102,11 +924,7 @@
 #tag "nopose ranged"
 #tag "path nature"
 #power 2
-#synonym "a protective cloak of poison fumes"
-#synonym "a cloud of poisonous breath"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "poisoncloud desc"
 #end
 
 #new
@@ -1117,10 +935,7 @@
 #command "#bluntres"
 #command "#gcost +5"
 #price_per_command #hp 0.5 20
-#synonym "bludgeoning"
-#synonym "blunt weapons"
-#set "immunity"
-#prev "immunity desc"
+#filterdesc "bluntres desc"
 #end
 
 #new
@@ -1131,10 +946,7 @@
 #command "#pierceres"
 #command "#gcost +5"
 #price_per_command #hp 0.5 20
-#synonym "puncture wounds"
-#synonym "piercing weapons"
-#set "immunity"
-#prev "immunity desc"
+#filterdesc "pierceres desc"
 #end
 
 #new
@@ -1145,10 +957,7 @@
 #command "#slashres"
 #command "#gcost +5"
 #price_per_command #hp 0.5 20
-#synonym "cuts"
-#synonym "slashing weapons"
-#set "immunity"
-#prev "immunity desc"
+#filterdesc "slashres desc"
 #end
 
 #new
@@ -1159,10 +968,7 @@
 #command "#invulnerable +5"
 #command "#gcost +8"
 #power 1
-#synonym "mundane damage"
-#synonym "ordinary weapons"
-#set "immunity"
-#prev "immunity desc"
+#filterdesc "invulnerable desc"
 #end
 
 #new
@@ -1173,10 +979,7 @@
 #command "#invulnerable +10"
 #command "#gcost +10"
 #power 2
-#synonym "mundane damage"
-#synonym "ordinary weapons"
-#set "immunity"
-#prev "immunity desc"
+#filterdesc "invulnerable desc"
 #end
 
 #new
@@ -1184,6 +987,7 @@
 #basechance 0.25
 #command "#incunrest +1"
 #power -1
+#filterdesc "incunrest desc"
 #end
 
 #new
@@ -1198,11 +1002,7 @@
 #basechance 0.5
 #command "#magicpower +1"
 #chanceinc "magic astral 0.3"
-#synonym "an affinity for magic"
-#synonym "the strength of magic"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "magicpower desc"
 #end
 
 #new
@@ -1212,11 +1012,7 @@
 #command "#poisonarmor +5"
 #command "#gcost +5"
 #tag "path nature"
-#synonym "venomous thorns"
-#synonym "protective barbs of venom"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "poisonarmor desc"
 #end
 
 #new
@@ -1229,12 +1025,7 @@
 #price_if_command above #prot 20 +5
 #price_if_command above #hp 39 +5
 #price_if_command above #hp 19 *1.1
-#synonym "a protective electric field"
-#synonym "an electrical charge"
-#extendeddescription "and those that strike them will unleash a blast of lightning"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "chargedbody desc"
 #end
 
 #new
@@ -1247,12 +1038,7 @@
 #price_if_command above #prot 15 +5
 #price_if_command above #hp 39 +10
 #price_if_command above #hp 19 *1.2
-#synonym "a protective electric field"
-#synonym "an electrical charge"
-#extendeddescription "and those that strike them will unleash a blast of lightning"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "chargedbody desc"
 #end
 
 #new
@@ -1261,10 +1047,7 @@
 #basechance 1
 #command "#siegebonus +3"
 #command "#castledef +3"
-#synonym "a knack for architecture"
-#synonym "infallible strategic sense"
-#set "senses"
-#prev "senses desc"
+#filterdesc "castle desc"
 #end
 
 #new
@@ -1272,26 +1055,21 @@
 #type "siege"
 #basechance 1
 #command "#siegebonus +5"
-#synonym "great knowledge of siegecraft"
-#synonym "a knack for destruction"
-#set "senses"
-#prev "senses desc"
+#filterdesc "siege desc"
 #end
 
 #new
 #name "patrol"
 #basechance 1
 #command "#patrolbonus +3"
-#synonym "unerring hunting sense"
-#synonym "exceptional tracking ability"
-#set "senses"
-#prev "senses desc"
+#filterdesc "patrol desc"
 #end
 
 #new
 #name "pillage"
 #basechance 1
 #command "#pillagebonus +3"
+#filterdesc "pillage desc"
 #end
 
 
@@ -1308,11 +1086,7 @@
 #power 2
 #theme "toadtotem"
 #theme "totemanimal"
-#synonym "the ability to breathe water"
-#synonym "water breathing"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "amphibian desc"
 #end
 
 #new
@@ -1330,13 +1104,7 @@
 #themeinc thisarmorprot 15 *0.125
 #themeinc thisarmorprot 12 *0.125
 #power 3
-#synonym "incorporeality"
-#synonym "the ability to shift between worlds"
-#synonym "the power to phase out of reality"
-#synonym "ethereal forms"
-#set "wondrous"
-#prev "wondrous desc"
-#bridge "wondrous bridge"
+#filterdesc "ethereal desc"
 #end
 
 
@@ -1347,9 +1115,5 @@
 #primarycommand "#horrormark"
 #command "#horrormark"
 #command "#startaff +20"
-#set "death"
-#prev "start"
-#synonym "are protected by strange and horrifying energies"
-#synonym "worship terrifying beings from the void"
-#extendeddescription "and astral energies will mark any who dare strike them, although many of them are mutilated in mind and body"
+#filterdesc "cultist desc"
 #end
