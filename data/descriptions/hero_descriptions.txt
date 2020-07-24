@@ -1,0 +1,157 @@
+#new
+#set "troop"
+#name "hero start"
+#synonym "%fixedname% was"
+#next "hero first adj"
+#end
+
+#new
+#set "hero first adj"
+#name "hero first adj"
+#synonym "a humble"
+#synonym "a normal"
+#synonym "a virtuous"
+#synonym "a fateful"
+#synonym "a star-crossed"
+#synonym "a destined"
+#synonym "a lucky"
+#synonym "a prosperous"
+#synonym "a talented"
+#synonym "a conspicuous"
+#synonym "a lazy"
+#synonym "a wise"
+#synonym "a cautious"
+#synonym "a wary"
+#synonym "an ambitious"
+#synonym "an unassuming"
+#synonym "an ordinary"
+#synonym "an inconspicuous"
+#synonym "an unimpressive"
+#synonym "an unlucky"
+#synonym "an ill-fated"
+#next "hero first noun"
+#uniquedescription
+#end
+
+#new
+#name "hero first noun"
+#set "hero first noun"
+#synonym "warrior"
+#synonym "peasant"
+#synonym "noble"
+#synonym "student"
+#synonym "farmer"
+#synonym "landholder"
+#synonym "retainer"
+#synonym "clerk"
+#synonym "minister"
+#synonym "farmhand"
+#synonym "shepherd"
+#synonym "artisan"
+#synonym "knight"
+#synonym "wrestler"
+#synonym "hunter"
+#next "hero first time"
+#uniquedescription
+#end
+
+#new
+#name "hero first time"
+#set "hero first time"
+#synonym "when they"
+#synonym "until they"
+#synonym "before they"
+#next "hero first verb"
+#uniquedescription
+#end
+
+#new
+#name "hero first verb friendly"
+#set "hero first verb"
+#synonym "met"
+#synonym "sought out"
+#synonym "befriended"
+#synonym "discovered"
+#synonym "wooed"
+#synonym "married"
+#synonym "studied under"
+#synonym "talked to"
+#synonym "visited"
+#next "hero first noun friendly"
+#uniquedescription
+#end
+
+#new
+#name "hero first noun friendly"
+#set "hero first noun friendly"
+#synonym "a kindly wizard"
+#synonym "a wise hermit"
+#synonym "one of the %mages%"
+#synonym "a %sacredname%"
+#synonym "a magical nature spirit"
+#synonym "a holy man"
+#synonym "a holy woman"
+#synonym "a local saint"
+#synonym "a legendary hero"
+#synonym "a veteran warrior"
+#next "hero second verb friendly"
+#uniquedescription
+#end
+
+#new
+#name "hero second verb friendly"
+#set "hero second verb friendly"
+#synonym "who taught them everything they knew"
+#synonym "who showered them with gifts"
+#synonym "who empowered them with special abilities"
+#synonym "who trained them in their ways"
+#synonym "who told them many secret things"
+#synonym "who gave them wondrous powers"
+#synonym "who foretold that they would become a great hero"
+#synonym "who helped them fulfill an ancient prophecy"
+#uniquedescription
+#end
+
+#new
+#name "hero first verb hostile"
+#set "hero first verb"
+#synonym "were attacked by"
+#synonym "were ambushed by"
+#synonym "were accosted by"
+#synonym "were kidnapped by"
+#synonym "had their home destroyed by"
+#synonym "were wounded by"
+#next "hero first noun hostile"
+#uniquedescription
+#end
+
+#new
+#name "hero first noun hostile"
+#set "hero first noun hostile"
+#synonym "a horrible troll"
+#synonym "a terrifying old crone"
+#synonym "pirates"
+#synonym "bandits"
+#synonym "a ferocious wild boar"
+#synonym "a dread necromancer"
+#synonym "a renegade wizard"
+#synonym "a rampaging dragon"
+#synonym "a fearsome giant"
+#synonym "horrors from beyond time and space"
+#next "hero second verb hostile"
+#uniquedescription
+#end
+
+#new
+#name "hero second verb hostile"
+#set "hero second verb hostile"
+#synonym ", but they escaped and vowed to train until they could destroy their foe"
+#synonym "and were saved by an itinerant knight who took them under their wing"
+#synonym "and miraculously slew them, taking their treasures for their own"
+#synonym "and were left for dead, only to be nursed back to health by a kindly and powerful wizard"
+#synonym "and drove them off with strange new powers they had never known"
+#synonym "and were empowered by the Awakening God to avenge themselves"
+#synonym "and prayed for divine salvation from the Awakening God"
+#synonym "and fled into a cave where they discovered wondrous magical secrets"
+#uniquedescription
+#end

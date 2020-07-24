@@ -105,6 +105,7 @@ public class NameGenerator {
 		siteblacklist = sites.getColumn("name");
 	}
 	
+		
 	public String generateNationName(Race race, Nation n)
 	{
 		Random r = new Random();

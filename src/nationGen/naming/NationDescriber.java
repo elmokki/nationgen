@@ -33,6 +33,7 @@ public class NationDescriber {
 		this.chandler = new ChanceIncHandler(n);
 		describeTroops();
 		describeCommanders();
+		describeHeroes();
 	}
 	
 	//if a filter has multiple possible description keys, this randomly selects one and logs it
@@ -98,35 +99,39 @@ public class NationDescriber {
 		return compiledDesc;
 	}
 	
-	private void describeUnits(DescriptionReplacer dr, List<Unit> units, Filter descf, List<Filter> descs)
+	private void describeUnits(DescriptionReplacer dr, List<Unit> units, Filter descf, boolean skipRaceDesc)
 	{
 		dr.calibrate(units);
 		
 		for (Unit u : units)
-			describeUnit(dr, u, descf, descs);
+			describeUnit(dr, u, descf, skipRaceDesc);
 	}
 	
-	private void describeUnit(DescriptionReplacer dr, Unit u, Filter descf, List<Filter> descs)
+	private void describeUnit(DescriptionReplacer dr, Unit u, Filter descf, boolean skipRaceDesc)
 	{			
 		LinkedHashMap<String,ArrayList<Filter>> descSets = new LinkedHashMap<>();
 			
 		dr.calibrate(u);
 		
-		StringBuilder desc = new StringBuilder(u.race.tags.getString("description").map(s -> s + " ").orElse(""));
+		StringBuilder desc = new StringBuilder();
 				
 		Command tmpDesc = null;
 
-		for(Command c : u.getCommands())
+		if (!skipRaceDesc)
 		{
-			if(c.command.equals("#descr"))
-				tmpDesc = c;			
+			desc.append(u.race.tags.getString("description").map(s -> s + " ").orElse(""));
+			for(Command c : u.getCommands())
+			{
+				if(c.command.equals("#descr"))
+					tmpDesc = c;			
+			}
+					
+			if(tmpDesc != null)
+			{
+				desc.append(" ").append(tmpDesc.args.get(0));
+			}
 		}
-				
-		if(tmpDesc != null)
-		{
-			desc.append(" ").append(tmpDesc.args.get(0));
-		}
-		
+			
 		for(Filter f : u.appliedFilters)
 		{
 			if(f != null)
@@ -140,7 +145,7 @@ public class NationDescriber {
 					descSets.get(tempSet).add(tempFilter);
 				}
 				else if (tempFilter.tags.containsName("negative"))
-					descSets.get(tempSet).add(descSets.get(tempSet).size()-1, tempFilter);
+					descSets.get(tempSet).add(tempFilter);
 				else
 					descSets.get(tempSet).add(0, tempFilter);
 			}
@@ -183,8 +188,6 @@ public class NationDescriber {
 				if (!tempFilter.prevDesc.isEmpty())	
 					desc = expandPrevDesc(desc, tempFilter, u, bridge);
 				
-				bridge = null;
-				
 				for (int i=0; i < descSets.get(k).size(); i++)
 				{	
 					tempFilter = descSets.get(k).get(i);
@@ -198,8 +201,7 @@ public class NationDescriber {
 						
 						if (superlative == tempFilter && descSets.get(k).size() == 1)
 						{	
-							descs = ChanceIncHandler.retrieveFilters("filterdescriptions", "filterdescs", assets.descriptions, null, u.race);
-							List<Filter> possibles = descs.stream().filter(f -> f.name.equals("superlative")).collect(Collectors.toList());
+							List<Filter> possibles = ChanceIncHandler.retrieveFilters("filterdescriptions", "filterdescs", assets.descriptions, null, u.race).stream().filter(f -> f.name.equals("superlative")).collect(Collectors.toList());
 							if (possibles.size() > 0)
 								desc.append(getRandomDescription(chandler.handleChanceIncs(u,possibles).getRandom(random)));
 						}				
@@ -228,8 +230,10 @@ public class NationDescriber {
 						if (!tempFilter.nextDesc.isEmpty())
 							desc = expandNextDesc(desc, tempFilter, u, desc.length());
 						
-						if (tempFilter.bridgeDesc.size() > 0)
-							bridge = tempFilter.bridgeDesc;
+						if (bridge != null)
+							bridge = null;							
+						else if (tempFilter.bridgeDesc.size() > 0)
+							bridge = tempFilter.bridgeDesc;						
 						
 						if (descSets.values().size() < 5 && descSets.get(k).size() == 1)
 						{
@@ -318,10 +322,8 @@ public class NationDescriber {
 				descf = chandler.handleChanceIncs(units.get(0), possibles).getRandom(random);
 
 			}
-
 			
-			describeUnits(dr, units, descf, descs);
-			
+			describeUnits(dr, units, descf, false);			
 		}
 		
 	}
@@ -355,10 +357,37 @@ public class NationDescriber {
 					descf = chandler.handleChanceIncs(units.get(0), possibles).getRandom(random);
 				}
 				
-				describeUnit(dr, u, descf, descs);
+				describeUnit(dr, u, descf, false);
 			}
 		}
+	}
+	
+	private void describeHeroes()
+	{
+		List<Filter> descs = ChanceIncHandler.retrieveFilters("herodescriptions", "herodescs", assets.descriptions, null, n.races.get(0));
+
+		DescriptionReplacer dr = new DescriptionReplacer(n);
 		
+		dr.calibrate(n.heroes);
+		
+		for(Unit u : n.heroes)
+		{	
+			dr.calibrate(u);
+
+			List<Filter> possibles = new ArrayList<>();
+			
+			for(Filter f : descs.stream().filter(f -> f.name.equals("hero start")).collect(Collectors.toList()))
+				if(ChanceIncHandler.suitableFor(u, f, n))
+					possibles.add(f);
+				
+			Filter descf = null;
+			if(possibles.size() > 0)
+			{
+				descf = chandler.handleChanceIncs(u, possibles).getRandom(random);
+			}
+			
+			describeUnit(dr, u, descf, true);
+		}
 	}
 
 	

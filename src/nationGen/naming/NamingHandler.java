@@ -34,6 +34,12 @@ public class NamingHandler {
 		sNamer.nameSacreds(n);
 	}
 	
+	public void nameHeroes(Nation n, NameGenerator nGen)
+	{
+		
+		
+	}
+	
 	public void nameTroops(Nation n)
 	{
 		TroopNamer tnamer = new TroopNamer(assets);

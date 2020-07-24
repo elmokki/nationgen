@@ -2686,7 +2686,7 @@ public class MageGenerator extends TroopGenerator {
 		}
 		else if (leadership > 10)
 		{
-			u.commands.add(new Command("#okayleader"));
+			u.commands.add(new Command("#okleader"));
 			adjustedLeadership = (Math.round(leadership / 5) * 5) - 40;
 		}
 		else if (leadership > 0)

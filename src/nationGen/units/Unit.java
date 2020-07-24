@@ -566,7 +566,6 @@ public class Unit {
 		}
 	}
 
-	
 	public int getGoldCost()
 	{
 		List<Command> commands = this.getCommands();

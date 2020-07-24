@@ -8,6 +8,7 @@ import nationGen.nation.Nation;
 import nationGen.units.Unit;
 import nationGen.magic.MagicPath;
 import nationGen.magic.MagicPathInts;
+import nationGen.misc.Command;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -62,7 +63,8 @@ public class DescriptionReplacer {
 			descs.put("%mount_plural%", "unspecified mounts");
 		}	
 		
-		if (u.hasCommand("#okleader") || u.hasCommand("#poorleader") || u.hasCommand("#goodleader") || u.hasCommand("#expertleader") || u.hasCommand("#noleader"))
+		//if (u.hasCommand("#okleader") || u.hasCommand("#poorleader") || u.hasCommand("#goodleader") || u.hasCommand("#expertleader") || u.hasCommand("#noleader"))
+		if (u.hasLeaderLevel(""))
 		{
 			descs.put("%role%","commanders");
 			
@@ -74,6 +76,43 @@ public class DescriptionReplacer {
 		{				
 			if (f.name == "MAGICPICKS")
 				descs.put("%role%","mages");
+		}
+		
+		if (u.hasCommand("#fixedname"))
+		{
+			for(Command c : u.getCommands())
+			{				
+				if(c.command.equals("#fixedname"))
+					descs.put("%fixedname%", c.args.get(0).get());
+			}
+			
+			descs.put("%tobe%", "is");
+			descs.put("%tohave%", "has");			
+			
+			if (u.hasCommand("#female"))
+			{
+				descs.put("%Pronoun%","She");
+				descs.put("%pronoun%","she");
+				descs.put("%pronoun_obj%","her");
+				descs.put("%pronoun_pos%","her");				
+			}
+			else
+			{
+				descs.put("%Pronoun%","He");
+				descs.put("%pronoun%","he");
+				descs.put("%pronoun_obj%","him");
+				descs.put("%pronoun_pos%","his");				
+			}				
+		}
+		else
+		{
+			descs.put("%Pronoun%","They");
+			descs.put("%pronoun%","they");
+			descs.put("%pronoun_obj%","them");
+			descs.put("%pronoun_pos%","their");
+			descs.put("%tobe%", "are");
+			descs.put("%tohave%", "have");
+			descs.put("%fixedname%", u.name.toString());
 		}
 	}
 	
