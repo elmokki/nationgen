@@ -2,10 +2,13 @@ package nationGen.naming;
 
 import nationGen.NationGenAssets;
 import nationGen.entities.Filter;
+import nationGen.misc.Arg;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
+import nationGen.units.ShapeChangeUnit;
+import nationGen.units.ShapeShift;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +37,7 @@ public class NationDescriber {
 		describeTroops();
 		describeCommanders();
 		describeHeroes();
+		describeForms();
 	}
 	
 	//if a filter has multiple possible description keys, this randomly selects one and logs it
@@ -57,6 +61,7 @@ public class NationDescriber {
 		return temp;
 	}
 	
+	//chain together description fragments leading backwards
 	public StringBuilder expandPrevDesc(StringBuilder compiledDesc, Filter currentFilter, Unit currentUnit, List<Filter> bridge)
 	{
 		if (!currentFilter.prevDesc.isEmpty())
@@ -74,6 +79,7 @@ public class NationDescriber {
 		}	
 		else
 		{
+			//if we've reached the start of the description set and the previous set is trying to segue, use its segue instead
 			if (bridge != null)
 			{
 				currentFilter = chandler.handleChanceIncs(currentUnit, bridge).getRandom(random);
@@ -87,6 +93,7 @@ public class NationDescriber {
 		}
 	}
 	
+	//chain together description fragments leading forwards
 	public StringBuilder expandNextDesc(StringBuilder compiledDesc, Filter currentFilter, Unit currentUnit, int position)
 	{
 		if (!currentFilter.nextDesc.isEmpty())
@@ -117,6 +124,7 @@ public class NationDescriber {
 				
 		Command tmpDesc = null;
 
+		//big important units already have complicated enough descriptions, so no need to paste the whole description in
 		if (!skipRaceDesc)
 		{
 			desc.append(u.race.tags.getString("description").map(s -> s + " ").orElse(""));
@@ -132,6 +140,7 @@ public class NationDescriber {
 			}
 		}
 			
+		//sort filters into logical groupings; negative-sounding filters go at the end of their respective lists
 		for(Filter f : u.appliedFilters)
 		{
 			if(f != null)
@@ -160,19 +169,7 @@ public class NationDescriber {
 			
 			descSets.get(tempSet).add(descf);
 		}		
-				
-		/*
-		for (String k : descSets.keySet())
-		{
-			List<Filter> sorted = new ArrayList<>();
-			
-			sorted.addAll(descSets.get(k).stream().filter(f -> !f.tags.containsName("negative") && (f.tags.containsName("description") || f.tags.containsName("synonym"))).collect(Collectors.toList()));
-			sorted.addAll(descSets.get(k).stream().filter(f -> f.tags.containsName("negative") && (f.tags.containsName("description") || f.tags.containsName("synonym"))).collect(Collectors.toList()));
-			
-			descSets.get(k).clear();
-			descSets.get(k).addAll(sorted);
-		}
-		*/
+
 					
 		List<Filter> bridge = null;
 		String[] descCategories = {"mage","priest","army role","troop","commander","terrain","lineage","recruitment","physique","skill","immunity","vulnerability","senses","misc","wondrous","shapeshift","retinue","death"};
@@ -185,28 +182,34 @@ public class NationDescriber {
 				boolean hasDesc = !getRandomDescription(tempFilter).isEmpty();
 				boolean negative = false;
 					
-				if (!tempFilter.prevDesc.isEmpty())	
+				if (!tempFilter.prevDesc.isEmpty() || (bridge != null && !tempFilter.nextDesc.isEmpty()))
+				{
+					hasDesc = true;
 					desc = expandPrevDesc(desc, tempFilter, u, bridge);
+				}
 				
 				for (int i=0; i < descSets.get(k).size(); i++)
 				{	
 					tempFilter = descSets.get(k).get(i);
 					if (!getRandomDescription(descSets.get(k).get(i)).isEmpty()) 
-					{						
+					{			
 						hasDesc = true;
-						
-						//insert up to 1 random superlative													
-						if (superlative == null && tempFilter.tags.containsName("allowsuperlative"))
-							superlative = tempFilter;
-						
-						if (superlative == tempFilter && descSets.get(k).size() == 1)
-						{	
-							List<Filter> possibles = ChanceIncHandler.retrieveFilters("filterdescriptions", "filterdescs", assets.descriptions, null, u.race).stream().filter(f -> f.name.equals("superlative")).collect(Collectors.toList());
-							if (possibles.size() > 0)
-								desc.append(getRandomDescription(chandler.handleChanceIncs(u,possibles).getRandom(random)));
-						}				
-						
-						desc.append(getRandomDescription(descSets.get(k).get(i)));
+												
+						if (i > 0 || (bridge == null || !tempFilter.prevDesc.isEmpty() || tempFilter.nextDesc.isEmpty()))
+						{
+							//insert up to 1 random superlative													
+							if (superlative == null && tempFilter.tags.containsName("allowsuperlative"))
+								superlative = tempFilter;
+							
+							if (superlative == tempFilter && descSets.get(k).size() == 1)
+							{	
+								List<Filter> possibles = ChanceIncHandler.retrieveFilters("filterdescriptions", "filterdescs", assets.descriptions, null, u.race).stream().filter(f -> f.name.equals("superlative")).collect(Collectors.toList());
+								if (possibles.size() > 0)
+									desc.append(getRandomDescription(chandler.handleChanceIncs(u,possibles).getRandom(random)));
+							}				
+							
+							desc.append(getRandomDescription(descSets.get(k).get(i)));
+						}						
 					}
 					
 					if (i < descSets.get(k).size() - 1)
@@ -221,20 +224,28 @@ public class NationDescriber {
 								negative = true;
 								desc.append(" but");
 							}
-							else if (i == descSets.get(k).size() - 2)
+							else if (i == descSets.get(k).size() - 2 || (i < descSets.get(k).size() - 2 && descSets.get(k).get(i+2).tags.containsName("negative")))
 								desc.append(" and");
 						}
 					}					
 					else
 					{													
 						if (!tempFilter.nextDesc.isEmpty())
+						{
+							hasDesc = true;
 							desc = expandNextDesc(desc, tempFilter, u, desc.length());
+						}
 						
-						if (bridge != null)
-							bridge = null;							
-						else if (tempFilter.bridgeDesc.size() > 0)
-							bridge = tempFilter.bridgeDesc;						
+						//if we've already joined 2 sentences, do not bridge to a 3rd
+						if (hasDesc)
+						{
+							if (bridge != null)
+								bridge = null;							
+							else if (tempFilter.bridgeDesc.size() > 0)
+								bridge = tempFilter.bridgeDesc;
+						}
 						
+						//if the description is short, elaborate freely on filters if possible
 						if (descSets.values().size() < 5 && descSets.get(k).size() == 1)
 						{
 							String tempDesc = tempFilter.tags.getString("extendeddescription").map(s -> " " + s).orElse(""); 
@@ -282,6 +293,32 @@ public class NationDescriber {
 			u.setCommandValue("#descr", description);
 		else
 			u.commands.add(Command.args("#descr", description));
+	}
+	
+	private void describeForms()
+	{
+		DescriptionReplacer dr = new DescriptionReplacer(n);
+		String description = "No description";
+		
+		List<ShapeChangeUnit> sus = n.getShapeChangeUnits();
+		
+		for (ShapeChangeUnit su : sus)
+		{
+			dr.calibrate(su.otherForm);
+			
+			if (su.otherForm.hasCommand("#secondtmpshape") || (su.otherForm.hasCommand("#secondshape") && su.thisForm.tags.containsName("#nowayback")))
+			{
+				if (su.otherForm.hasCommand("#fixedname"))
+					description = su.otherForm.getStringCommandValue("#fixedname", "Hero") + " lives on in this form after %pronoun% dies.";
+				else
+					description = Generic.plural(su.otherForm.getName()) + " leave this behind after they die.";
+			}
+			else
+				description = su.otherForm.getStringCommandValue("#descr", "No description");		
+			
+			description = dr.replace(description).trim();
+			su.commands.add(new Command("#descr", new Arg(description)));
+		}
 	}
 	
 	private void describeTroops()
@@ -356,6 +393,12 @@ public class NationDescriber {
 				{
 					descf = chandler.handleChanceIncs(units.get(0), possibles).getRandom(random);
 				}
+				
+				boolean skipRaceDesc = false;
+				
+				//big important mages cut out race descriptions to save space
+				if (u.tags.contains("schoolmage",  3) && u.appliedFilters.size() > 5)
+					skipRaceDesc = true;
 				
 				describeUnit(dr, u, descf, false);
 			}

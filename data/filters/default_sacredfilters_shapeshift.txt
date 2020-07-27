@@ -15,11 +15,7 @@
 #theme "wolftotem"
 #theme "totemanimal"
 #price_if_command at #size 1 +5
-#set "wondrous"
-#prev "wondrous desc"
-#synonym "the power to assume the form of a wolf"
-#synonym "the shifting shape of a half-wolf hybrid"
-#synonym "the shape of their wolf totem"
+#filterdesc "werewolf desc"
 #end
 
 #new
@@ -37,11 +33,7 @@
 #power 3
 #theme "foxtotem"
 #theme "totemanimal"
-#set "wondrous"
-#prev "wondrous desc"
-#synonym "the power to assume the form of a fox"
-#synonym "the shifting shape of a half-fox hybrid"
-#synonym "the shape of their fox totem"
+#filterdesc "werefox desc"
 #end
 
 #new
@@ -62,11 +54,7 @@
 #theme "beartotem"
 #theme "totemanimal"
 #price_if_command at #size 1 +5
-#set "wondrous"
-#prev "wondrous desc"
-#synonym "the power to assume the form of a bear"
-#synonym "the shifting shape of a half-bear hybrid"
-#synonym "the shape of their bear totem"
+#filterdesc "werebear desc"
 #end
 
 #new
@@ -85,11 +73,7 @@
 #theme "hyenatotem"
 #theme "totemanimal"
 #price_if_command at #size 1 +5
-#set "wondrous"
-#prev "wondrous desc"
-#synonym "the power to assume the form of a hyena"
-#synonym "the shifting shape of a half-hyena hybrid"
-#synonym "the shape of their hyena totem"
+#filterdesc "werehyena desc"
 #end
 
 #new
@@ -110,11 +94,7 @@
 #theme "rattotem"
 #theme "totemanimal"
 #price_if_command at #size 1 +5
-#set "wondrous"
-#prev "wondrous desc"
-#synonym "the power to assume the form of a rat"
-#synonym "the shifting shape of a half-rat hybrid"
-#synonym "the shape of their rat totem"
+#filterdesc "wererat desc"
 #end
 
 #new
@@ -139,11 +119,7 @@
 #theme "lizardtotem"
 #theme "totemanimal"
 #price_if_command at #size 1 +5
-#set "wondrous"
-#prev "wondrous desc"
-#synonym "the power to assume the form of a crocodile"
-#synonym "the shifting shape of a half-crocodile hybrid"
-#synonym "the shape of their crocodile totem"
+#filterdesc "werecrocodile desc"
 #end
 
 #new
@@ -163,9 +139,7 @@
 #command "#maxage 500"
 #tag "path death"
 #power 1
-#set "death"
-#prev "start"
-#description "have a pact with death, allowing them to live as a ghoul after death"
+#filterdesc "ghoul desc"
 #end
 
 #new
@@ -185,9 +159,7 @@
 #command "#maxage 800"
 #tag "path death"
 #power 1
-#set "death"
-#description "have a pact with death, allowing them to live as a ghoul after death"
-#prev "start"
+#filterdesc "ghoul desc"
 #end
 
 #new
@@ -205,11 +177,7 @@
 #power 3
 #theme "snaketotem"
 #theme "totemanimal"
-#set "wondrous"
-#prev "wondrous desc"
-#synonym "the power to assume the form of a great serpent"
-#synonym "the shifting shape of a magical horned serpent"
-#synonym "the shape of their serpent totem"
+#filterdesc "horned serpent desc"
 #end
 
 #new
@@ -223,9 +191,7 @@
 #command "#gcost +8"
 #price_if_command at #size 1 +4
 #tag "path fire"
-#set "death"
-#prev "start"
-#description "are pledged to the Kings of Elemental Fire and are reborn as living flame in death"
+#filterdesc "felemental shift desc"
 #power 3
 
 #end
@@ -243,9 +209,7 @@
 #price_if_command at #size 1 +5
 #tag "path earth"
 #power 3
-#set "death"
-#prev "start"
-#description "are pledged to the Kings of Elemental Earth and are reborn as living earth in death"
+#filterdesc "eelemental shift desc"
 #end
 
 #new
@@ -261,9 +225,7 @@
 #price_if_command at #size 1 +6
 #tag "path air"
 #power 3
-#set "death"
-#prev "start"
-#description "are pledged to the Queens of Elemental Air and are reborn as living air in death"
+#filterdesc "aelemental shift desc"
 #end
 
 #new
@@ -278,9 +240,7 @@
 #tag "path water"
 #price_if_command at #size 1 +6
 #power 3
-#set "death"
-#prev "start"
-#description "are pledged to the Queens of Elemental Water and are reborn as living water in death"
+#filterdesc "welemental shift desc"
 #end
 
 #new
@@ -301,7 +261,7 @@
 #power 3
 #set "death"
 #prev "start"
-#description "are clever mechanical simulacra imbued with life and will reveal their mechanical form upon death"
+#filterdesc "metalman shift desc"
 #end
 
 #new
@@ -322,7 +282,7 @@
 #power 3
 #set "death"
 #prev "start"
-#description "are clever mechanical simulacra imbued with life and will reveal their true mechanical form upon death"
+#filterdesc "metalman shift desc"
 #end
 
 #new
@@ -343,7 +303,7 @@
 #power 2
 #set "death"
 #prev "start"
-#description "have a pact with ancient forces of nature and will reborn as living plants upon death"
+#filterdesc "vineman desc"
 #end
 
 #new
@@ -364,7 +324,7 @@
 #power 2
 #set "death"
 #prev "start"
-#description "have a pact with ancient forces of nature and will reborn as living plants upon death"
+#filterdesc "vineman desc"
 #end
 
 #new magefilter
@@ -380,11 +340,7 @@
 #power 2
 #theme "boartotem"
 #theme "totemanimal"
-#set "wondrous"
-#prev "wondrous desc"
-#synonym "the power to assume the form of a boar"
-#synonym "the shifting shape of a great boar"
-#synonym "the shape of their boar totem"
+#filterdesc "greatboar shift desc"
 #end
 
 #new magefilter
@@ -404,11 +360,7 @@
 #power 2
 #theme "toadtotem"
 #theme "totemanimal"
-#set "wondrous"
-#prev "wondrous desc"
-#synonym "the power to assume the form of a toad"
-#synonym "the shifting shape of a great toad"
-#synonym "the shape of their toad totem"
+#filterdesc "giant toad shift desc"
 #end
 
 #new magefilter
@@ -427,9 +379,5 @@
 #power 2
 #theme "spidertotem"
 #theme "totemanimal"
-#set "wondrous"
-#prev "wondrous desc"
-#synonym "the power to assume the form of a spider"
-#synonym "the shifting shape of a great spider"
-#synonym "the shape of their spider totem"
+#filterdesc "spider shift desc"
 #end

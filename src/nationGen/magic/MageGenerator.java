@@ -841,7 +841,7 @@ public class MageGenerator extends TroopGenerator {
 		f.tags.add("prev","mage desc");
 		f.tags.add("next","mage end");
 		f.tags.addName("mage");
-		assets.initializeFilters(List.of(f));
+		assets.initializeFilters(List.of(f),"getMagicFilter()");
 		
 		//f.tags.addName("do_not_show_in_descriptions"); I'm not sure that this did anything, but we do want to show up in descriptions now
 		return f;
@@ -2599,7 +2599,7 @@ public class MageGenerator extends TroopGenerator {
 		m.tags.addName("tier"+Integer.toString(level));
 		if (max)
 			m.tags.addName("highpriest");
-		assets.initializeFilters(List.of(m));
+		assets.initializeFilters(List.of(m),"getPriestPattern()");
 		
 		return m;
 	

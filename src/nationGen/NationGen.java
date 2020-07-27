@@ -306,7 +306,7 @@ public class NationGen
 			nHandler.nameSacreds(n);
 			
 			// heroes
-			nHandler.nameHeroes(n, nGen);
+			nHandler.nameHeroes(n);
 			
 			// Epithet
 			nHandler.giveEpithet(n);

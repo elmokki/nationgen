@@ -129,10 +129,7 @@ public class HeroGenerator {
 		
 		hero.name.setType("Hero");
 		if(!multihero)
-		{
-			hero.commands.add(new Command("#unique"));
-			hero.commands.add(Command.args("#fixedname", "Hero"));
-		}
+			hero.commands.add(new Command("#unique"));			
 		
 		return hero;
 	}
@@ -193,10 +190,7 @@ public class HeroGenerator {
 		
 		hero.name.setType("Hero");
 		if(!multihero)
-		{			
 			hero.commands.add(new Command("#unique"));
-			hero.commands.add(Command.args("#fixedname", "Hero"));
-		}
 		return hero;
 	}
 	

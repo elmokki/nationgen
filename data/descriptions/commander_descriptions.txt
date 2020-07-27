@@ -171,6 +171,17 @@
 #next "commander orders"
 #end
 
+#new
+#name "commander fearawe"
+#set "commander fearawe"
+#synonym "beloved"
+#synonym "adored"
+#synonym "venerated"
+#synonym "exalted"
+#synonym "revered"
+#next "commander fearawe done"
+#end
+
 #new 
 #name "commander fearawe done"
 #set "commander fearawe done"
@@ -442,8 +453,8 @@
 #name "commander magiclead type undead"
 #set "commander magiclead type"
 #basechance 0
-#chanceinc personalcommand poormagicleader or personalcommand okmagicleader or personalcommand goodmagicleader 1
-#chanceinc personalcommand poorundeadleader or personalcommand okundeadleader or personalcommand goodundeadleader *0
+#chanceinc personalcommand poorundeadleader or personalcommand okundeadleader or personalcommand goodundeadleader 1
+#chanceinc personalcommand poormagicleader or personalcommand okmagicleader or personalcommand goodmagicleader *0
 #synonym "the unholy servants of %nation%, but its magical forces are beyond their"
 #synonym "the dark forces of %nation%, but its arcane minions are beyond their"
 #next "commander nomagiclead beyond orders"
@@ -453,8 +464,8 @@
 #name "commander magiclead type magic"
 #set "commander magiclead type"
 #basechance 0
-#chanceinc personalcommand poorundeadleader or personalcommand okundeadleader or personalcommand goodundeadleader 1
-#chanceinc personalcommand poormagicleader or personalcommand okmagicleader or personalcommand goodmagicleader *0
+#chanceinc personalcommand poormagicleader or personalcommand okmagicleader or personalcommand goodmagicleader 1
+#chanceinc personalcommand poorundeadleader or personalcommand okundeadleader or personalcommand goodundeadleader *0
 #synonym "the magical servants of %nation%, but its dark forces are beyond their"
 #synonym "the arcane forces of %nation%, but its unholy minions are beyond their"
 #next "commander nomagiclead beyond orders"

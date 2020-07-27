@@ -379,7 +379,9 @@
 #description "Skilled warrior"
 #set "physique"
 #prev "physique desc"
-#synonym "expert"
+#next "physique end"
+#bridge "physique bridge"
+#synonym "expertly trained"
 #synonym "elite"
 #end
 
@@ -1327,7 +1329,7 @@
 #set "death"
 #prev "start"
 #synoynm "%tobe% pledged to the Kings of Elemental Fire and %tobe% reborn as living flame in death"
-#synonym "explode as a burst of elemental energy upon death, spawning a fire elemental"
+#synonym "will explode as a burst of elemental energy upon death, spawning a fire elemental"
 #end
 
 #new
@@ -1335,7 +1337,7 @@
 #set "death"
 #prev "start"
 #synoynm "%tobe% pledged to the Kings of Elemental Earth and %tobe% reborn as living earth in death"
-#synonym "explode as a burst of elemental energy upon death, spawning an earth elemental"
+#synonym "will explode as a burst of elemental energy upon death, spawning an earth elemental"
 #end
 
 #new
@@ -1344,7 +1346,7 @@
 #set "death"
 #prev "start"
 #synoynm "%tobe% pledged to the Queens of Elemental Air and %tobe% reborn as living air in death"
-#synonym "explode as a burst of elemental energy upon death, spawning an air elemental"
+#synonym "will explode as a burst of elemental energy upon death, spawning an air elemental"
 #end
 
 #new 
@@ -1353,7 +1355,7 @@
 #set "death"
 #prev "start"
 #synoynm "%tobe% pledged to the Queens of Elemental Water and %tobe% reborn as living water in death"
-#synonym "explode as a burst of elemental energy upon death, spawning an water elemental"
+#synonym "will explode as a burst of elemental energy upon death, spawning an water elemental"
 #end
 
 #new 
@@ -1682,10 +1684,10 @@
 
 #new
 #name "bodyguard desc"
-#synonym "bodyguards"
-#synonym "personal guards"
-#set "army role"
-#prev "army role start"
+#synonym "guarding important personages"
+#synonym "personal defense"
+#set "skill"
+#prev "skill desc"
 #end
 
 #new
@@ -1700,7 +1702,7 @@
 #end
 
 #new 
-#name "cultist"
+#name "cultist desc"
 #set "death"
 #prev "start"
 #synonym "%tobe% protected by strange and horrifying energies"
@@ -1709,7 +1711,7 @@
 #end
 
 #new 
-#name "comslav desc"
+#name "comslave desc"
 #set "skill"
 #prev "skill desc"
 #synonym "magical communion"
@@ -2197,7 +2199,7 @@
 #name "physique end Hero"
 #set "physique end"
 #basechance 0
-#chanceinc unittag Hero 1
+#chanceinc (unittag Hero) 1
 #synonym "compared to normal men"
 #synonym "compared to lesser heroes"
 #end
@@ -2213,14 +2215,23 @@
 #name "physique bridge hero"
 #set "physique bridge"
 #basechance 0
-#chanceinc unittag Hero 1
+#chanceinc (unittag Hero) 1
 #description "and also"
 #end
 
 #new
 #name "army role bridge"
 #set "army role bridge"
+#chanceinc (personalcommand okleader or personalcommand poorleader or personalcommand goodleader or personalcommand expertleader) *0
 #description "who"
+#end
+
+#new
+#name "army role bridge commander"
+#set "army role bridge"
+#basechance 0
+#chanceinc (personalcommand okleader or personalcommand poorleader or personalcommand goodleader or personalcommand expertleader) 1
+#description "; they make"
 #end
 
 #new

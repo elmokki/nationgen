@@ -159,7 +159,7 @@ public class NationGenAssets {
         }
     }
     
-    public void initializeFilters(List<Filter> newFilters)
+    public void initializeFilters(List<Filter> newFilters, String filterSet)
     {
     	List<Filter> newDescriptions = new ArrayList<>();  
     	
@@ -169,32 +169,44 @@ public class NationGenAssets {
     	for (Filter f : newFilters)
     	{
     		if (f.tags.containsName("filterdesc"))    			
-    			f.description = newDescriptions.stream().filter(pf -> pf.name.equals(f.tags.getString("filterdesc").orElse(""))).findFirst().orElse(f);
+    			f.description = newDescriptions.stream().filter(pf -> pf.name.equals(f.tags.getString("filterdesc").orElse(""))).findFirst()
+    			.orElseThrow(() -> new IllegalStateException("Filter named " + f.name + " in " + filterSet + " can't find #filterdesc " + f.tags.getString("filterdesc").orElse("")));
     		
     		if (f.tags.containsName("prev"))
+    		{
     			f.prevDesc = newDescriptions.stream().filter(pf -> pf.descSet.equals(f.tags.getString("prev").orElse(""))).collect(Collectors.toList());
+    			if (f.prevDesc.isEmpty())
+    				throw new IllegalStateException("Filter named " + f.name + " in " + filterSet + " can't find #prev " +  f.tags.getString("prev").orElse(""));
+    		}
     		
     		if (f.tags.containsName("next"))
+    		{
     			f.nextDesc = newDescriptions.stream().filter(nf -> nf.descSet.equals(f.tags.getString("next").orElse(""))).collect(Collectors.toList());
+    			
+    			if (f.nextDesc.isEmpty())
+    				throw new IllegalStateException("Filter named " + f.name + " in " + filterSet + " can't find #next " + f.tags.getString("next").orElse(""));
+    		}
     		
     		if (f.tags.containsName("bridge"))
-    			f.bridgeDesc = newDescriptions.stream().filter(bf -> bf.descSet.equals(f.tags.getString("bridge").orElse(""))).collect(Collectors.toList());    		
+    		{
+    			f.bridgeDesc = newDescriptions.stream().filter(bf -> bf.descSet.equals(f.tags.getString("bridge").orElse(""))).collect(Collectors.toList());
+    		
+    			if (f.bridgeDesc.isEmpty())
+    				throw new IllegalStateException("Filter named " + f.name + " in " + filterSet +  " can't find #bridge " + f.tags.getString("bridge").orElse(""));
+    		}
     	}
     }
     
     public void initializeAllFilters()
     {
-    	List<Filter> newFilters = new ArrayList<>();
-
     	for (String s : descriptions.keySet())
-    		newFilters.addAll(descriptions.get(s));
+    		initializeFilters(descriptions.get(s), s);
     	
     	for (String s : filters.keySet())
-    		newFilters.addAll(filters.get(s));
+    		initializeFilters(filters.get(s), s);
     	
     	for (String s : templates.keySet())
-    		newFilters.addAll(templates.get(s)); 
+    		initializeFilters(templates.get(s), s); 
     	
-    	initializeFilters(newFilters);
     }
 }
