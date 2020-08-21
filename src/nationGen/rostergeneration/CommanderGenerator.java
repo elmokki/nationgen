@@ -1077,6 +1077,8 @@ public class CommanderGenerator extends TroopGenerator {
 		boolean taskmaster = false;
 		boolean beastmaster = false;
 		
+		/*
+		
 		normalLd.add(pickRandomSubstring("unexceptional adequate undistinguished unremarkable"));
 		normalLd.add(pickRandomSubstring("willingly obediently dutifully freely heedfully carefully"));
 		
@@ -1253,6 +1255,7 @@ public class CommanderGenerator extends TroopGenerator {
 		}
 		
 		com.commands.add(Command.args("#descr", desc));
+		*/
 	}
 
 

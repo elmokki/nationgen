@@ -12,7 +12,7 @@
 #command "#domsummon20 217"
 #notfortier 1
 #notfortier 2
-#description " Attracts zealots to their side."
+#filterdesc "flagellant summon desc"
 #end
 
 #new magefilter
@@ -27,7 +27,7 @@
 #command "#domsummon20 1640"
 #notfortier 1
 #notfortier 2
-#description " Attracts mad cultists to their side."
+#filterdesc "cultist summon desc"
 #end
 
 #new magefilter
@@ -44,7 +44,7 @@
 #command "#domsummon20 1363"
 #notfortier 1
 #notfortier 2
-#description " Attracts revered ancestral spirits to their side."
+#filterdesc "ancestor spirit summon desc"
 #end
 
 
@@ -58,7 +58,7 @@
 #command "#gcost +20"
 #command "#makemonsters2 217"
 #notfortier 3
-#description " Can indoctrinate a couple of zealots each month."
+#filterdesc "flagellant maker desc"
 #end
 
 #new magefilter
@@ -70,7 +70,7 @@
 #command "#makemonsters4 217"
 #notfortier 1
 #notfortier 2
-#description " Can indoctrinate a handful of zealots each month."
+#filterdesc "flagellant maker desc"
 #end
 
 
@@ -87,9 +87,9 @@
 #command "#templetrainer 295"
 #notfortier 1
 #notfortier 3
-#description " Can train sacred serpents in temples."
 #theme "snaketotem"
 #theme "totemanimal"
+#filterdesc "serpent trainer desc"
 #end
 
 #new magefilter
@@ -101,9 +101,9 @@
 #command "#templetrainer 1859"
 #notfortier 1
 #notfortier 3
-#description " Can train sacred hydras in temples."
 #theme "snaketotem"
 #theme "totemanimal"
+#filterdesc "hydra trainer desc"
 #end
 
 #new magefilter
@@ -120,6 +120,7 @@
 #description " Can train sacred jaguars in temples."
 #theme "jaguartotem"
 #theme "totemanimal"
+#filterdesc "jaguar trainer desc"
 #end
 
 #new magefilter
@@ -137,6 +138,7 @@
 #description " Can train sacred toads in temples."
 #theme "toadtotem"
 #theme "totemanimal"
+#filterdesc "toad trainer desc"
 #end
 
 #new magefilter
@@ -151,9 +153,9 @@
 #command "#templetrainer 1309"
 #notfortier 1
 #notfortier 3
-#description " Can train sacred wolves in temples."
 #theme "wolftotem"
 #theme "totemanimal"
+#filterdesc "wolf trainer desc"
 #end
 
 #new magefilter
@@ -167,9 +169,9 @@
 #command "#templetrainer 3003"
 #notfortier 1
 #notfortier 3
-#description " Can train sacred bears in temples."
 #theme "beartotem"
 #theme "totemanimal"
+#filterdesc "bear trainer desc"
 #end
 
 #new magefilter
@@ -184,9 +186,9 @@
 #command "#templetrainer 1807"
 #notfortier 1
 #notfortier 3
-#description " Can train sacred boars in temples."
 #theme "boartotem"
 #theme "totemanimal"
+#filterdesc "boar trainer desc"
 #end
 
 #new magefilter
@@ -202,29 +204,11 @@
 #command "#templetrainer 2690"
 #notfortier 1
 #notfortier 3
-#description " Can train sacred scorpions in temples."
 #theme "scopriontotem"
 #theme "totemanimal"
+#filterdesc "scorpion trainer desc"
 #end
 
-#new magefilter
-#name "scorpion trainer"
-#type "summoning"
-#basechance 0.05
-#chanceinc "nationtag occidental 0.45"
-#chanceinc "racetheme totemanimal OR unittheme totemanimal AND racetheme NOT scorpiontotem AND unittheme NOT scorpiontotem *0"
-#chanceinc "primaryrace 'Dynastic human' 0.25"
-#chanceinc "anymagic not earth *0"
-#chanceinc "primaryrace zotz 0.5"
-#chanceinc "primaryrace Abysian 0.25"
-#command "#gcost +40"
-#command "#templetrainer 2690"
-#notfortier 1
-#notfortier 3
-#description " Can train sacred scorpions in temples."
-#theme "scopriontotem"
-#theme "totemanimal"
-#end
 
 #new magefilter
 #name "condor trainer"
@@ -238,9 +222,9 @@
 #command "#templetrainer 2694"
 #notfortier 1
 #notfortier 3
-#description " Can train sacred condors in temples."
 #theme "condortotem"
 #theme "totemanimal"
+#filterdesc "condor trainer desc"
 #end
 
 #new magefilter
@@ -257,9 +241,9 @@
 #command "#templetrainer 2363"
 #notfortier 1
 #notfortier 3
-#description " Can train sacred black sows in temples."
 #theme "boartotem"
 #theme "totemanimal"
+#filterdesc "gloso trainer desc"
 #end
 
 #new magefilter
@@ -272,9 +256,9 @@
 #command "#magiccommand +10"
 #notfortier 1
 #notfortier 3
-#description " Can call sacred hounds from the Celestial Spheres in temples."
 #theme "celestial"
 #theme "oriental"
+#filterdesc "celestial hound trainer desc"
 #end
 
 #new magefilter
@@ -290,9 +274,9 @@
 #command "#templetrainer 1808"
 #notfortier 1
 #notfortier 3
-#description " Can rivet metal plates onto blessed hogs in temples."
 #theme "boartotem"
 #theme "totemanimal"
+#filterdesc "iron pig trainer desc"
 #end
 
 #new magefilter
@@ -311,6 +295,7 @@
 #description " Can train sacred fae hounds in temples."
 #theme "fae"
 #theme "nature"
+#filterdesc "fae hound trainer desc"
 #end
 
 #new magefilter
@@ -326,9 +311,9 @@
 #command "#templetrainer 1768"
 #notfortier 1
 #notfortier 3
-#description " Can train sacred fae hounds in temples."
 #theme "fae"
 #theme "death"
+#filterdesc "fae hound trainer desc"
 #end
 
 #new magefilter
@@ -341,8 +326,8 @@
 #command "#templetrainer 2271"
 #notfortier 1
 #notfortier 3
-#description " Can teach pious ascetics in temples."
 #theme "enlightened"
+#filterdesc "seeker trainer desc"
 #end
 
 #new magefilter
@@ -356,9 +341,9 @@
 #command "#templetrainer 1736"
 #notfortier 1
 #notfortier 3
-#description " Can summon foul rakshasas in temples."
 #theme "enlightened"
 #theme "blood"
+#filterdesc "rakshasa trainer desc"
 #end
 
 #new magefilter
@@ -372,8 +357,8 @@
 #command "#templetrainer 2271"
 #notfortier 1
 #notfortier 3
-#description " Can train vestal virgins in temples."
 #theme "imperial"
+#filterdesc "vestal trainer desc"
 #end
 
 #new magefilter
@@ -386,9 +371,9 @@
 #command "#templetrainer 2700"
 #notfortier 1
 #notfortier 3
-#description " Can recall the sacred ghosts of semidivine ancestors in temples."
 #theme "caelian"
 #theme "death"
+#filterdesc "supaya trainer desc"
 #end
 
 #new magefilter
@@ -403,9 +388,9 @@
 #command "#templetrainer 1971"
 #notfortier 1
 #notfortier 3
-#description " Can recall the sacred ghosts of Lavaborn ancestors in temples."
 #theme "abysian"
 #theme "death"
+#filterdesc "smoulderghost trainer desc"
 #end
 
 #new magefilter
@@ -421,10 +406,10 @@
 #command "#templetrainer 1497"
 #notfortier 1
 #notfortier 3
-#description " Can sculpt animate statues in temples."
 #theme "human"
 #theme "earth"
 #theme "golem"
+#filterdesc "statue trainer desc"
 #end
 
 #new magefilter
@@ -440,10 +425,10 @@
 #command "#templetrainer 474"
 #notfortier 1
 #notfortier 3
-#description " Can sculpt large animate statues in temples."
 #theme "human"
 #theme "earth"
 #theme "golem"
+#filterdesc "statue trainer desc"
 #end
 
 #new magefilter
@@ -459,9 +444,9 @@
 #command "#templetrainer 1496"
 #notfortier 1
 #notfortier 3
-#description " Can sculpt sacred statues in temples."
 #theme "agarthan"
 #theme "earth"
 #theme "golem"
+#filterdesc "statue trainer desc"
 #end
 

@@ -6,6 +6,7 @@
 #chanceinc "personalmagic death -0.1"
 #chanceinc "personalmagic blood -0.1"
 #power 2
+#filterdesc "awe desc"
 #end
 
 #new magefilter
@@ -15,6 +16,7 @@
 #command "#gcost +20"
 #tag "notfortier 3"
 #tag "notfortier 2" 
+#filterdesc "stealthy desc"
 #end
 
 #new magefilter
@@ -23,6 +25,7 @@
 #basechance 0.25
 #command "#divineins"
 #command "#fixedresearch +3"
+#filterdesc "divine researcher desc"
 #end
 
 #new magefilter
@@ -32,6 +35,7 @@
 #command "#divineins"
 #command "#fixedresearch +5"
 #command "#gcost +30"
+#filterdesc "divine researcher desc"
 #end
 
 #new magefilter
@@ -41,6 +45,7 @@
 #command "#divineins"
 #command "#fixedresearch +1"
 #command "#slothresearch +1"
+#filterdesc "divine researcher desc"
 #end
 
 
@@ -54,6 +59,7 @@
 #power 2
 #tag "notfortier 3"
 #tag "notfortier 2"
+#filterdesc "spy desc"
 #end
 
 #new magefilter
@@ -62,6 +68,7 @@
 #command "#sailing"
 #chanceinc "personalmagic air 0.35"
 #chanceinc "personalmagic water 0.35"
+#filterdesc "maritime desc"
 #end
 
 #new magefilter
@@ -72,6 +79,7 @@
 #tag "notfortier 1"
 #power 2
 #chanceinc "personalmagic astral 0.25"
+#filterdesc "nobadevents desc"
 #end
 
 #new magefilter
@@ -81,6 +89,7 @@
 #command "#nobadevents +10"
 #tag "notfortier 1"
 #chanceinc "personalmagic astral 0.25"
+#filterdesc "nobadevents desc"
 #end
 
 #new magefilter
@@ -88,6 +97,7 @@
 #type badevents
 #basechance 0.5
 #command "#nobadevents +5"
+#filterdesc "nobadevents desc"
 #end
 
 #new magefilter
@@ -96,6 +106,7 @@
 #basechance 0.5
 #command "#inquisitor"
 #chanceinc "personalmagic holy 3"
+#filterdesc "inquisitor desc"
 #end
 
 #new
@@ -104,6 +115,7 @@
 #type "healer"
 #command "#autodishealer 1"
 #command "#gcost +50"
+#filterdesc "dishealer desc"
 #end
 
 #new
@@ -113,6 +125,7 @@
 #command "#autodishealer 3"
 #command "#gcost +50"
 #power 2
+#filterdesc "dishealer desc"
 #end
 
 #new magefilter
@@ -123,6 +136,7 @@
 #command "#elegist +1"
 #notfortier 3
 #notfortier 2
+#filterdesc "elegist desc"
 #end
 
 #new magefilter
@@ -132,6 +146,7 @@
 #chanceinc "personalmagic holy 0.8"
 #command "#elegist +2"
 #notfortier 1
+#filterdesc "elegist desc"
 #end
 
 #new magefilter
@@ -143,6 +158,7 @@
 #notfortier 1
 #notfortier 2
 #power 3
+#filterdesc "elegist desc"
 #end
 
 #new magefilter
@@ -154,6 +170,7 @@
 #command "#gcost +50"
 #tag "notfortier 3"
 #power 2
+#filterdesc "healer desc"
 #end
 
 #new magefilter
@@ -166,6 +183,7 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #power 2
+#filterdesc "healer desc"
 #end
 
 #new magefilter
@@ -178,6 +196,7 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #power 3
+#filterdesc "healer desc"
 #end
 
 #new
@@ -194,6 +213,7 @@
 #description "%unitname% is able to serve as a communion or sabbath slave."
 #notfortier 3
 #notfortier 2
+#filterdesc "comslave desc"
 #end
 
 #new magefilter
@@ -206,6 +226,7 @@
 #chanceinc personalmagic nature 1 AND personalmagic death below 1 *0
 #chanceinc personalcommand #reanimpriest *0
 #chanceinc percentageofcommand #undead 50 *2
+#filterdesc "reanimator desc"
 #end
 
 #new magefilter
@@ -214,6 +235,7 @@
 #basechance 0
 #chanceinc "personalcommand #poorleader 0.1"
 #command "#command +30"
+#filterdesc "demagogue desc"
 #end
 
 #new magefilter
@@ -226,6 +248,7 @@
 #command "#command +40"
 #command "#inspirational -1"
 #notfortier 1
+#filterdesc "demagogue desc"
 #end
 
 #new magefilter
@@ -238,6 +261,7 @@
 #command "#command +40"
 #command "#gcost +10"
 #notfortier 1
+#filterdesc "demagogue desc"
 #end
 
 #new magefilter
@@ -252,6 +276,7 @@
 #command "#gcost +20"
 #notfortier 1
 #notfortier 2
+#filterdesc "demagogue desc"
 #end
 
 #new magefilter
@@ -264,6 +289,7 @@
 #command "#gcost +30"
 #notfortier 1
 #notfortier 2
+#filterdesc "demagogue desc"
 #end
 
 #new magefilter
@@ -277,6 +303,7 @@
 #command "#inspirational +1"
 #command "#gcost +10"
 #notfortier 1
+#filterdesc "inspirational desc"
 #end
 
 #new magefilter
@@ -290,5 +317,6 @@
 #command "#gcost +20"
 #notfortier 1
 #notfortier 2
+#filterdesc "inspirational desc"
 #end
 

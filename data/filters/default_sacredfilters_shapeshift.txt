@@ -15,6 +15,7 @@
 #theme "wolftotem"
 #theme "totemanimal"
 #price_if_command at #size 1 +5
+#filterdesc "werewolf desc"
 #end
 
 #new
@@ -32,6 +33,7 @@
 #power 3
 #theme "foxtotem"
 #theme "totemanimal"
+#filterdesc "werefox desc"
 #end
 
 #new
@@ -52,6 +54,7 @@
 #theme "beartotem"
 #theme "totemanimal"
 #price_if_command at #size 1 +5
+#filterdesc "werebear desc"
 #end
 
 #new
@@ -70,6 +73,7 @@
 #theme "hyenatotem"
 #theme "totemanimal"
 #price_if_command at #size 1 +5
+#filterdesc "werehyena desc"
 #end
 
 #new
@@ -90,6 +94,7 @@
 #theme "rattotem"
 #theme "totemanimal"
 #price_if_command at #size 1 +5
+#filterdesc "wererat desc"
 #end
 
 #new
@@ -114,6 +119,7 @@
 #theme "lizardtotem"
 #theme "totemanimal"
 #price_if_command at #size 1 +5
+#filterdesc "werecrocodile desc"
 #end
 
 #new
@@ -133,7 +139,7 @@
 #command "#maxage 500"
 #tag "path death"
 #power 1
-#description "has a pact with death, allowing it to live an another life as a ghoul after death"
+#filterdesc "ghoul desc"
 #end
 
 #new
@@ -153,7 +159,7 @@
 #command "#maxage 800"
 #tag "path death"
 #power 1
-#description "has a pact with death, allowing it to live an another life as a ghoul after death"
+#filterdesc "ghoul desc"
 #end
 
 #new
@@ -171,6 +177,7 @@
 #power 3
 #theme "snaketotem"
 #theme "totemanimal"
+#filterdesc "horned serpent desc"
 #end
 
 #new
@@ -184,7 +191,9 @@
 #command "#gcost +8"
 #price_if_command at #size 1 +4
 #tag "path fire"
+#filterdesc "felemental shift desc"
 #power 3
+
 #end
 
 #new
@@ -200,6 +209,7 @@
 #price_if_command at #size 1 +5
 #tag "path earth"
 #power 3
+#filterdesc "eelemental shift desc"
 #end
 
 #new
@@ -215,6 +225,7 @@
 #price_if_command at #size 1 +6
 #tag "path air"
 #power 3
+#filterdesc "aelemental shift desc"
 #end
 
 #new
@@ -229,6 +240,7 @@
 #tag "path water"
 #price_if_command at #size 1 +6
 #power 3
+#filterdesc "welemental shift desc"
 #end
 
 #new
@@ -247,7 +259,9 @@
 #command "#maxage 800"
 #tag "path earth"
 #power 3
-#description "reveals its true shape of a metal man upon death"
+#set "death"
+#prev "start"
+#filterdesc "metalman shift desc"
 #end
 
 #new
@@ -266,7 +280,9 @@
 #command "#maxage 800"
 #tag "path earth"
 #power 3
-#description "reveals its true shape of a metal man upon death"
+#set "death"
+#prev "start"
+#filterdesc "metalman shift desc"
 #end
 
 #new
@@ -285,7 +301,9 @@
 #tag "path nature"
 #theme "ivy"
 #power 2
-#description "becomes a vine man upon death"
+#set "death"
+#prev "start"
+#filterdesc "vineman desc"
 #end
 
 #new
@@ -304,7 +322,9 @@
 #tag "path nature"
 #theme "ivy"
 #power 2
-#description "becomes a vine man upon death"
+#set "death"
+#prev "start"
+#filterdesc "vineman desc"
 #end
 
 #new magefilter
@@ -320,6 +340,7 @@
 #power 2
 #theme "boartotem"
 #theme "totemanimal"
+#filterdesc "greatboar shift desc"
 #end
 
 #new magefilter
@@ -339,6 +360,7 @@
 #power 2
 #theme "toadtotem"
 #theme "totemanimal"
+#filterdesc "giant toad shift desc"
 #end
 
 #new magefilter
@@ -357,4 +379,5 @@
 #power 2
 #theme "spidertotem"
 #theme "totemanimal"
+#filterdesc "spider shift desc"
 #end

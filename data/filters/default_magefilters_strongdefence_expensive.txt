@@ -6,6 +6,7 @@
 #command "#invulnerable 10"
 #command "#gcost +20"
 #power 2
+#filterdesc "invulnerable desc"
 #end
 
 #new magefilter
@@ -15,6 +16,7 @@
 #command "#invulnerable 20"
 #command "#gcost *1.1"
 #power 4
+#filterdesc "invulnerable desc"
 #end
 
 #new magefilter
@@ -25,6 +27,7 @@
 #chanceinc "personalmagic fire 0.75"
 #chanceinc "personalmagic water 0.125"
 #power 2
+#filterdesc "fireres desc"
 #end
 
 #new magefilter
@@ -34,6 +37,7 @@
 #command "#poisonres +10"
 #chanceinc "personalmagic nature 0.75"
 #power 2
+#filterdesc "poisonres desc"
 #end
 
 #new magefilter
@@ -43,6 +47,7 @@
 #command "#shockres +10"
 #chanceinc "personalmagic air 0.75"
 #power 2
+#filterdesc "shockres desc"
 #end
 
 #new magefilter
@@ -53,6 +58,7 @@
 #chanceinc "personalmagic water 0.75"
 #chanceinc "personalmagic fire 0.125"
 #power 2
+#filterdesc "coldres desc"
 #end
 
 #new magefilter
@@ -67,6 +73,7 @@
 #power 4
 #tag "personalmagic air"
 #chanceinc "race vanir -20"
+#filterdesc "illusion desc"
 #end
 
 #new magefilter
@@ -79,6 +86,7 @@
 #primarycommand #ethereal
 #tag "personalmagic astral"
 #power 4
+#filterdesc "ethereal desc"
 #end
 
 #new magefilter
@@ -93,6 +101,7 @@
 #tag "notfortier 2"
 #tag "notfortier 1"
 #power 4
+#filterdesc "ethereal desc"
 #end
 
 #new magefilter
@@ -106,6 +115,7 @@
 #chanceinc "personalmagic death -0.4"
 #chanceinc "personalmagic blood -0.4"
 #power 4
+#filterdesc "awe desc"
 #end
 
 #new magefilter
@@ -120,6 +130,7 @@
 #chanceinc personalmagic blood -0.5
 #chanceinc personalmagic astral death AND comparemagic astral above death *0
 #power 4
+#filterdesc "sun awe desc"
 #end
 
 #new magefilter
@@ -132,6 +143,7 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #power 3
+#filterdesc "fear desc"
 #end
 
 #new magefilter
@@ -144,4 +156,5 @@
 #tag "notfortier 1"
 #tag "personalmagic nature"
 #power 3
+#filterdesc "regeneration desc"
 #end

@@ -1,25 +1,29 @@
 #new
 #name "poisonres5"
 #command "#poisonres +5"
-#description "Poison resistant"
+#description "poison resistance"
+#filterdesc "poisonres desc"
 #end
 
 #new
 #name "shockres5"
 #command "#shockres +5"
-#description "Shock resistant"
+#description "shock resistance"
+#filterdesc "shockres desc"
 #end
 
 #new
 #name "fireres5"
 #command "#fireres +5"
-#description "Fire resistant"
+#description "fire resistance"
+#filterdesc "fireres desc"
 #end
 
 #new
 #name "coldres5"
-#description "Cold resistant"
+#description "cold resistance"
 #command "#coldres +5"
+#filterdesc "coldres desc"
 #end
 
 #new
@@ -32,6 +36,7 @@
 #description "Dark vision (50)"
 #chance 0.5
 #command "#darkvision +50"
+#filterdesc "darkvision desc"
 #end
 
 #new
@@ -40,6 +45,7 @@
 #description "Forest survival"
 #chance 0.5
 #command "#forestsurvival"
+#filterdesc "forestsurvival desc"
 #end
 
 #new
@@ -48,6 +54,7 @@
 #description "Swamp survival"
 #chance 0.5
 #command "#swampsurvival"
+#filterdesc "swampsurvival desc"
 #end
 
 #new
@@ -56,6 +63,7 @@
 #description "Waste survival"
 #chance 0.5
 #command "#wastesurvival"
+#filterdesc "wastesurvival desc"
 #end
 
 #new
@@ -64,6 +72,7 @@
 #description "Mountain survival"
 #chance 0.5
 #command "#mountainsurvival"
+#filterdesc "mountainsurvival desc"
 #end
 
 #new
@@ -74,6 +83,7 @@
 #primarycommand #illusion
 #command "#mr +1"
 #command "#spellsinger"
+#filterdesc "faeblood desc"
 #end
 
 #new
@@ -82,6 +92,7 @@
 #chance 0.3
 #command "#str +1"
 #description "Strong"
+#filterdesc "strong desc"
 #end
 
 #new
@@ -89,15 +100,7 @@
 #tag "weak"
 #chance 0.15
 #command "#str -1"
-#description "Weak"
-#end
-
-#new
-#name "weak"
-#tag "weak"
-#chance 0.15
-#command "#str -1"
-#description "Weak"
+#filterdesc "weak desc"
 #end
 
 #new
@@ -110,6 +113,7 @@
 #command "#hp +2"
 #command "#str +1"
 #description "Stocky"
+#filterdesc "stocky desc"
 #end
 
 #new
@@ -120,7 +124,7 @@
 #command "#def -1"
 #command "#str +1"
 #command "#hp +2"
-#description "Clumsy"
+#filterdesc "clumsy desc"
 #end
 
 #new
@@ -128,7 +132,7 @@
 #chance 0.3
 #primarycommand #blind
 #command "#prec -1"
-#description "Myopic"
+#filterdesc "myopic desc"
 #end
 
 #new
@@ -136,7 +140,7 @@
 #chance 0.3
 #primarycommand #blind
 #command "#prec +1"
-#description "Keen eyed"
+#filterdesc "keen eyed desc"
 #end
 
 #new
@@ -144,14 +148,14 @@
 #chance 0.3
 #command "#att +1"
 #command "#def -1"
-#description "Aggressive"
+#filterdesc "aggressive desc"
 #end
 
 #new
 #name "Gluttonous"
 #chance 0.1
 #command "#supplybonus -1"
-#description "Gluttonous"
+#filterdesc "gluttonous desc"
 #end
 
 #new
@@ -159,7 +163,7 @@
 #chance 0.3
 #command "#mor -1"
 #command "#def +1"
-#description "Cowardly"
+#filterdesc "cowardly desc"
 #end
 
 #new
@@ -167,13 +171,14 @@
 #chance 0.3
 #command "#mor +1"
 #description "Brave"
+#filterdesc "brave desc"
 #end
 
 #new
 #name "Quick"
 #chance 0.1
 #command "#ap +4"
-#description "Quick"
+#filterdesc "quick desc"
 #end
 
 #new
@@ -182,6 +187,7 @@
 #primarycommand "#heal"
 #command "#startaff +10"
 #description "Sick"
+#filterdesc "sickly desc"
 #end
 
 #new
@@ -190,7 +196,7 @@
 #command "#coldres -3"
 #command "#fireres +3"
 #chanceinc nationcommand #idealcold below 0 *0
-#description "Vulnerable to cold"
+#filterdesc "coldvuln desc"
 #end
 
 #new
@@ -199,7 +205,7 @@
 #command "#coldres +3"
 #command "#fireres -3"
 #chanceinc nationcommand #idealcold above 0 *0
-#description "Vulnerable to fire"
+#filterdesc "firevuln desc"
 #end
 
 #new
@@ -207,15 +213,15 @@
 #chance 0.025
 #primarycommand "#blind"
 #command "#blind"
-#description "Blind"
+#filterdesc "blind desc"
 #end
 
 #new
 #name "spiritsight"
 #chance 0.025
 #primarycommand "#spiritsight"
-#command "#Spiritsight"
-#description "Sees the true nature of things"
+#command "#spiritsight"
+#filterdesc "spiritsight desc"
 #end
 
 #new
@@ -224,7 +230,7 @@
 #primarycommand "#magicbeing"
 #command "#magicbeing"
 #command "#mr +2"
-#description "Magical"
+#filterdesc "magicbeing desc"
 #end
 
 #new
@@ -236,7 +242,7 @@
 #command "#gcost +4"
 #command "#str +2"
 #command "#hp +1"
-#description "Demon blood"
+#filterdesc "demonblood desc"
 #end
 
 #new
@@ -246,9 +252,9 @@
 #primarycommand "#pooramphibian"
 #primarycommand "#amphibian"
 #command "#pooramphibian"
-#description "Poor amphibian"
 #theme "toadtotem"
 #theme "totemanimal"
+#filterdesc "pooramphibian desc"
 #end
 
 #new
@@ -257,7 +263,7 @@
 #trooponly
 #command "#gcost *0.9"
 #command "#rcost +3"
-#description "Levy"
+#filterdesc "levy desc"
 #end
 
 #new
@@ -266,7 +272,7 @@
 #trooponly
 #command "#gcost *1.1"
 #command "#rcost -3"
-#description "Warrior culture"
+#filterdesc "warriorculture desc"
 #end
 
 #new
@@ -279,27 +285,14 @@
 #command "#def +1"
 #command "#att +1"
 #command "#prec +1"
-#description "Skilled warrior"
-#end
-
-#new
-#name "professional"
-#chance 0.03
-#commanderonly
-#command "#gcost *1.2"
-#command "#rcost +4"
-#command "#mor +1"
-#command "#def +1"
-#command "#att +1"
-#command "#prec +1"
-#description "Skilled warrior"
+#filterdesc "professional desc"
 #end
 
 #new
 #name "Hardy"
 #chance 0.05
 #command "#woundfend +1"
-#description "Hardy"
+#filterdesc "hardy desc"
 #end
 
 #new
@@ -308,7 +301,7 @@
 #primarycommand #demon
 #primarycommand #undead
 #command "#diseaseres 25"
-#description "Resilient"
+#filterdesc "resilient desc"
 #end
 
 #new
@@ -317,6 +310,7 @@
 #nocommand #poisonskin
 #command "#poisonskin 20"
 #description "Toxic flesh"
+#filterdesc "toxic desc"
 #end
 
 #new
@@ -324,6 +318,7 @@
 #chance 0.025
 #command "#prot +2"
 #description "Thick skinned"
+#filterdesc "thickskin desc"
 #end
 
 #new
@@ -333,7 +328,7 @@
 #command "#stonebeing"
 #command "#ap -4"
 #command "#prot +4"
-#description "Stone skinned"
+#filterdesc "golem desc"
 #end
 
 #new
@@ -343,7 +338,7 @@
 #command "#stonebeing"
 #command "#ap -2"
 #command "#prot +2"
-#description "Stone skinned"
+#filterdesc "golem desc"
 #end
 
 #new
@@ -353,7 +348,7 @@
 #primarycommand "#sailing"
 #command "#sailing 999 3"
 #command "#gcost *1.1"
-#description "Sailing"
+#filterdesc "maritime desc"
 #end
 
 #new
@@ -363,7 +358,7 @@
 #primarycommand "#stealthy"
 #lowenccommand "#stealthy +0"
 #lowenctreshold 2
-#description "Stealthy"
+#filterdesc "stealthy desc"
 #end
 
 #new
@@ -371,14 +366,14 @@
 #name "deathrec10"
 #command "#deathrec %cost10"
 #chanceinc magic death 0.075
-#description "Death rec 10%"
+#filterdesc "deathrec desc"
 #end
 
 #new
 #basechance 0.05
 #name "chaosrec10"
 #command "#chaosrec %cost10"
-#description "Chaos rec 10%"
+#filterdesc "chaosrec desc"
 #end
 
 #new
@@ -389,7 +384,8 @@
 #chanceinc "racetag fae *2"
 #name "pride-2"
 #command "#minsizeleader 2"
-#description "Too proud to be led by tiny beings"
+#trooponly
+#filterdesc "minsizeleader desc"
 #end
 
 #new
@@ -402,7 +398,8 @@
 #chanceinc "racetag fae *2"
 #name "pride-3"
 #command "#minsizeleader 3"
-#description "Too proud to be led by small beings"
+#trooponly
+#filterdesc "minsizeleader desc"
 #end
 
 #new
@@ -414,7 +411,8 @@
 #chanceinc "racetag fae *2"
 #name "pride-4"
 #command "#minsizeleader 4"
-#description "Too proud to be led by lesser beings"
+#trooponly
+#filterdesc "minsizeleader desc"
 #end
 
 #new
@@ -425,5 +423,6 @@
 #chanceinc "racetag fae *2"
 #name "pride-5"
 #command "#minsizeleader 5"
-#description "Too proud to be led by lesser beings"
+#trooponly
+#filterdesc "minsizeleader desc"
 #end
