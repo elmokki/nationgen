@@ -1,0 +1,84 @@
+#new
+#name "mage start"
+#set "mage start"
+#synonym "The %unitname_plural%"
+#synonym "The %unitname_plural%"
+#synonym "The %unitname_plural% of %nation%"
+#synonym "%nation%'s %unitname_plural%"
+#uniquedescription
+#end
+
+#new
+#name "mage desc tier3"
+#set "mage desc"
+#basechance 0
+#chanceinc tag "tier3" 1
+#synonym "are masters of"
+#synonym "are experts of"
+#synonym "have unparalleled mastery of"
+#synonym "have mastery over"
+#synonym "are powerful mages of"
+#synonym "are wise in the ways of"
+#synonym "are well learned in"
+#synonym "are legendary for their"
+#synonym "are reknowned for their"
+#prev "mage start"
+#uniquedescription
+#end
+
+#new
+#name "mage desc tier2"
+#set "mage desc"
+#basechance 0
+#chanceinc tag "tier2" 1
+#synonym "are skilled in"
+#synonym "are experienced in"
+#synonym "are known for their"
+#synonym "are mages of"
+#synonym "are able users of"
+#synonym "are capable in"
+#synonym "are learned in"
+#synonym "have some skill in"
+#prev "mage start"
+#uniquedescription
+#end
+
+#new
+#name "mage desc tier1"
+#set "mage desc"
+#basechance 1
+#chanceinc tag "tier2" or tag "tier3" *0
+#synonym "are students of"
+#synonym "are novices in"
+#synonym "are inexperienced mages of"
+#synonym "are fledgling mages of"
+#synonym "are junior mages of"
+#synonym "are unskilled users of"
+#synonym "are dabblers in"
+#synonym "have a little skill in"
+#prev "mage start"
+#uniquedescription
+#end
+
+#new
+#name "mage desc extramage"
+#set "mage desc"
+#basechance 0
+#chanceinc unittag "extramage" 1
+#synonym "are mysterious mages of"
+#synonym "are strange users of"
+#synonym "are mystics practicing"
+#synonym "practice a unique school of"
+#synonym "are outside meddlers in"
+#synonym "have unusual skill in"
+#synonym "are rare practitioners of"
+#synonym "are unusual practitioners of"
+#prev "mage start"
+#uniquedescription
+#end
+
+#new
+#name "mage end"
+#set "mage end"
+#description "magic"
+#end

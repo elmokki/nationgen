@@ -4,7 +4,7 @@
 #command "#addupkeep %cost20"
 #power -1
 #theme upkeep
-#desc "Greedy"
+#filterdesc "highupkeep desc"
 #end
 
 #new magefilter
@@ -12,8 +12,7 @@
 #basechance 0.5
 #command "#addupkeep %cost-20"
 #power 1
-#theme upkeep
-#desc "Altruistic"
+#filterdesc "lowupkeep desc"
 #end
 
 #new magefilter
@@ -21,6 +20,7 @@
 #basechance 0.1
 #command "#poisonres +5"
 #chanceinc "personalmagic nature 1.5"
+#filterdesc "poisonres desc"
 #end
 
 #new magefilter
@@ -35,7 +35,7 @@
 #notfortier 2
 #notfortier 1
 #power -1
-#desc "Will die underwater"
+#filterdesc "terrestrial desc"
 #end
 
 #new magefilter
@@ -48,6 +48,7 @@
 #notfortier 2
 #notfortier 1
 #power -1
+#filterdesc "bound desc"
 #end
 
 #new magefilter
@@ -58,6 +59,7 @@
 #notfortier 2
 #notfortier 1
 #power -1
+#filterdesc "heretic desc"
 #end
 
 #new magefilter
@@ -65,6 +67,7 @@
 #name "better researcher +1"
 #basechance 0.25
 #command "#researchbonus +1"
+#filterdesc "researcher desc"
 #end
 
 #new magefilter
@@ -73,6 +76,7 @@
 #basechance 0.25
 #command "#researchbonus +3"
 #notfortier 3
+#filterdesc "researcher desc"
 #end
 
 #new magefilter
@@ -83,6 +87,7 @@
 #notfortier 1
 #notfortier 2
 #power 3
+#filterdesc "researcher desc"
 #end
 
 #new magefilter
@@ -91,6 +96,7 @@
 #basechance 0.125
 #command "#slothresearch +2"
 #power 2
+#filterdesc "sloth researcher desc"
 #end
 
 #new magefilter
@@ -98,6 +104,7 @@
 #name "sloth researcher +1"
 #basechance 0.125
 #command "#slothresearch +1"
+#filterdesc "sloth researcher desc"
 #end
 
 #new magefilter
@@ -108,6 +115,7 @@
 #chanceinc "personalmagic astral 0.5"
 #chanceinc "personalmagic water astral 0.8"
 #power 1
+#filterdesc "makepearls desc"
 #end
 
 #new magefilter
@@ -118,6 +126,7 @@
 #chanceinc "personalmagic death 0.5"
 #chanceinc "personalmagic nature death 0.8"
 #power 1
+#filterdescription "caracasscollector desc"
 #end
 
 #new magefilter
@@ -128,6 +137,7 @@
 #power 1
 #notfortier 1
 #notfortier 3
+#filterdesc "resourcebonus desc"
 #end
 
 
@@ -136,6 +146,7 @@
 #basechance 0.2
 #command "#allrange +1"
 #power 1
+#descfilter "ritualrange desc"
 #end
 
 #new magefilter
@@ -143,6 +154,7 @@
 #basechance 0.2
 #command "#allrange +2"
 #power 2
+#descfilter "ritualrange desc"
 #end
 
 #new magefilter
@@ -152,6 +164,7 @@
 #power 1
 #chanceinc "personalmagic air 0.5"
 #chanceinc "personalmagic astral 0.5"
+#filterdesc "floating desc"
 #end
 
 #new magefilter
@@ -165,6 +178,7 @@
 #notfortier 2
 #notfortier 1
 #theme curse
+#filterdesc "deathcurse desc"
 #end
 
 #new magefilter
@@ -174,8 +188,8 @@
 #power 1
 #chanceinc "personalmagic water 0.5"
 #chanceinc "personalmagic nature 0.5"
+#filterdesc "slimer desc"
 #end
-
 
 #new magefilter
 #name "iceprot"
@@ -183,6 +197,7 @@
 #command "#iceprot 3"
 #power 1
 #chanceinc "personalmagic water 0.5"
+#filterdesc "iceprot desc"
 #end
 
 #new magefilter
@@ -192,6 +207,12 @@
 #power 1
 #chanceinc "personalmagic air 0.75"
 #chanceinc "personalmagic astral 0.25"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "a host of illusions"
+#synonym "an entourage of illusionary spirits"
+#extendeddescription "that will deceive enemy scouts with the impression of a larger army"
 #end
 
 #new magefilter
@@ -203,6 +224,7 @@
 #command "#spellsinger"
 #notfortier 3
 #notfortier 2
+#filterdesc "elegist desc"
 #end
 
 #new magefilter
@@ -214,6 +236,7 @@
 #command "#gcost +5"
 #command "#spellsinger"
 #notfortier 1
+#filterdesc "elegist desc"
 #end
 
 #new magefilter
@@ -227,6 +250,7 @@
 #notfortier 1
 #notfortier 2
 #power 2
+#filterdesc "elegist desc"
 #end
 
 #new
@@ -237,6 +261,7 @@
 #chanceinc "command #chaosrec 100"
 #chanceinc "command #chaospower 100"
 #theme recruitment
+#filterdesc "chaosrec desc"
 #end
 
 #new
@@ -248,6 +273,7 @@
 #chanceinc "command #chaosrec 25"
 #chanceinc "command #chaospower 25"
 #theme recruitment
+#filterdesc "chaosrec desc"
 #end
 
 #new
@@ -260,6 +286,7 @@
 #chanceinc "command #deathpower 100"
 #chanceinc "personalmagic death 5"
 #theme recruitment
+#filterdesc "deathrec desc"
 #end
 
 #new magefilter
@@ -267,12 +294,18 @@
 #basechance 0.1
 #command "#shockres +5"
 #chanceinc "personalmagic air 1.5"
+#set "immunity"
+#prev "immunity desc"
+#synonym "lightning"
+#synonym "electricity"
+#filterdesc "shockres desc"
 #end
 
 #new
 #name "invulnerable5"
 #basechance 0.5
 #command "#invulnerable 5"
+#filterdesc "invulnerable desc"
 #end
 
 #new
@@ -280,6 +313,7 @@
 #basechance 0.25
 #command "#invulnerable 10"
 #power 2
+#filterdesc "invulnerable desc"
 #end
 
 #new
@@ -287,6 +321,7 @@
 #basechance 0.125
 #command "#invulnerable 20"
 #power 3
+#filterdesc "invulnerable desc"
 #end
 
 #new magefilter
@@ -295,6 +330,7 @@
 #command "#coldres +5"
 #chanceinc "personalmagic water 1.5"
 #chanceinc "personalmagic fire 0.25"
+#filterdesc "coldres desc"
 #end
 
 #new magefilter
@@ -303,6 +339,7 @@
 #command "#fireres +5"
 #chanceinc "personalmagic fire 1.5"
 #chanceinc "personalmagic water 0.25"
+#filterdesc "fireres desc"
 #end
 
 #new magefilter
@@ -311,6 +348,7 @@
 #command "#fireres +10"
 #chanceinc "personalmagic fire 0.75"
 #chanceinc "personalmagic water 0.125"
+#filterdesc "fireres desc"
 #end
 
 #new magefilter
@@ -318,6 +356,7 @@
 #basechance 0.1
 #command "#poisonres +10"
 #chanceinc "personalmagic nature 0.75"
+#filterdesc "poisonres desc"
 #end
 
 #new magefilter
@@ -325,6 +364,7 @@
 #basechance 0.1
 #command "#shockres +10"
 #chanceinc "personalmagic air 0.75"
+#filterdesc "shockres desc"
 #end
 
 #new magefilter
@@ -333,6 +373,7 @@
 #command "#coldres +10"
 #chanceinc "personalmagic water 0.75"
 #chanceinc "personalmagic fire 0.125"
+#filterdesc "coldres desc"
 #end
 
 #new magefilter
@@ -346,6 +387,7 @@
 #power 2
 #tag "personalmagic air"
 #chanceinc "race vanir -20"
+#filterdesc "illusion desc"
 #end
 
 #new magefilter
@@ -357,8 +399,7 @@
 #chanceinc "personalmagic death 0.3"
 #chanceinc "personalmagic nature 1.3"
 #power 1
-#chanceinc "race sidhe -20"
-#chanceinc "nationtag fae OR hasthemetheme fae -20"
+#filterdesc "spellsinger desc"
 #end
 
 #new magefilter
@@ -366,6 +407,7 @@
 #basechance 0.2
 #primarycommand "#holy"
 #command "#holy"
+#filterdesc "holy desc"
 #end
 
 #new magefilter
@@ -374,6 +416,7 @@
 #command "#amphibian"
 #chanceinc "personalmagic water 1"
 #tag "personalmagic water"
+#filterdesc "amphibian desc"
 #end
 
 #new magefilter
@@ -385,6 +428,7 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #power 3
+#filterdesc "flying desc"
 #end
 
 #new magefilter
@@ -395,6 +439,7 @@
 #chanceinc "personalmagic air 0.35"
 #chanceinc "personalmagic water 0.35"
 #theme sailing
+#filterdesc "maritime desc"
 #end
 
 #new magefilter
@@ -403,6 +448,7 @@
 #command "#forestsurvival"
 #chanceinc "personalmagic nature 0.5"
 #tag "notfortier 3"
+#filterdesc "forestsurvival desc"
 #end
 
 #new magefilter
@@ -412,6 +458,8 @@
 #chanceinc "personalmagic nature 0.25"
 #chanceinc "personalmagic earth 0.25"
 #tag "notfortier 3"
+#command "#mountainsurvival"
+#filterdesc "mountainsurvival desc"
 #end
 
 #new magefilter
@@ -421,6 +469,7 @@
 #chanceinc "personalmagic nature 0.25"
 #chanceinc "personalmagic water 0.25"
 #tag "notfortier 3"
+#filterdesc "swampsurvival desc"
 #end
 
 #new magefilter
@@ -430,6 +479,7 @@
 #chanceinc "personalmagic nature 0.25"
 #chanceinc "personalmagic fire 0.25"
 #tag "notfortier 3"
+#filterdesc "wastesurvival desc"
 #end
 
 #new magefilter
@@ -437,6 +487,7 @@
 #basechance 0
 #command "#forestsurvival"
 #chanceinc "personalmagic nature 0.25"
+#filterdesc "forestsurvival desc"
 #end
 
 #new magefilter
@@ -445,6 +496,7 @@
 #command "#mountainsurvival"
 #chanceinc "personalmagic nature 0.125"
 #chanceinc "personalmagic earth 0.125"
+#filterdesc "mountainsurvival desc"
 #end
 
 #new magefilter
@@ -453,6 +505,7 @@
 #command "#swampsurvival"
 #chanceinc "personalmagic nature 0.125"
 #chanceinc "personalmagic water 0.125"
+#filterdesc "swampsurvival desc"
 #end
 
 #new magefilter
@@ -461,6 +514,7 @@
 #command "#wastesurvival"
 #chanceinc "personalmagic nature 0.125"
 #chanceinc "personalmagic fire 0.125"
+#filterdesc "wastesurvival desc"
 #end
 
 #new magefilter
@@ -471,6 +525,7 @@
 #chanceinc "race vanir -20"
 #chanceinc "race sidhe -20"
 #power 2
+#filterdesc "stealthy desc"
 #end
 
 #new magefilter
@@ -481,6 +536,7 @@
 #chanceinc "race vanir -20"
 #chanceinc "race sidhe -20"
 #power 2
+#filterdesc "stealthy desc"
 #end
 
 #new magefilter
@@ -491,6 +547,7 @@
 #command "#gcost +30"
 #tag "notfortier 3"
 #power 2
+#filterdesc "spy desc"
 #end
 
 
@@ -503,6 +560,7 @@
 #primarycommand #assassin
 #tag "notfortier 3"
 #power 2
+#filterdesc "assassin desc"
 #end
 
 #new magefilter
@@ -514,6 +572,7 @@
 #primarycommand #ethereal
 #tag "personalmagic astral"
 #power 3
+#filterdesc "ethereal desc"
 #end
 
 #new magefilter
@@ -527,6 +586,7 @@
 #tag "notfortier 2"
 #tag "notfortier 1"
 #power 3
+#filterdesc "ethereal desc"
 #end
 
 #new magefilter
@@ -538,6 +598,7 @@
 #chanceinc "personalmagic death -0.4"
 #chanceinc "personalmagic blood -0.4"
 #power 2
+#filterdesc "awe desc"
 #end
 
 #new magefilter
@@ -551,6 +612,7 @@
 #chanceinc personalmagic blood -0.5
 #chanceinc personalmagic astral death AND comparemagic astral above death *0
 #power 2
+#filterdesc "sun awe desc"
 #end
 
 #new magefilter
@@ -560,6 +622,7 @@
 #chanceinc "personalmagic death 0.8"
 #tag "notfortier 1"
 #tag "notfortier 2"
+#filterdesc "fear desc"
 #end
 
 #new magefilter
@@ -569,6 +632,7 @@
 #chanceinc "personalmagic nature 1"
 #tag "notfortier 1"
 #tag "personalmagic nature"
+#filterdesc "regeneration desc"
 #end
 
 #new magefilter
@@ -579,6 +643,7 @@
 #chanceinc "personalmagic fire 2"
 #tag "notfortier 1"
 #tag "personalmagic fire"
+#filterdesc "fireshield desc"
 #end
 
 #new magefilter
@@ -587,6 +652,7 @@
 #command "#poisonarmor"
 #chanceinc "personalmagic nature 2"
 #tag "notfortier 1"
+#filterdesc "poisonarmor desc"
 #end
 
 #new magefilter
@@ -595,23 +661,27 @@
 #command "#airshield +30"
 #chanceinc "personalmagic air 2"
 #chanceinc "personalcommand #illusion 2"
-#tag "notfortier 1"
+#filterdesc "airshield desc"
 #end
 
 #new magefilter
 #name "nobadevents1"
 #basechance 0.2
 #command "#nobadevents +5"
+#primarycommand nobadevents
 #tag "notfortier 1"
 #chanceinc "personalmagic astral 0.8"
+#filterdesc "nobadevents desc"
 #end
 
 #new magefilter
 #name "nobadevents2"
 #basechance 0.2
 #command "#nobadevents +3"
+#primarycommand nobadevents
 #tag "notfortier 1"
 #chanceinc "personalmagic astral 0.8"
+#filterdesc "nobadevents desc"
 #end
 
 
@@ -619,9 +689,11 @@
 #name "nobadevents3"
 #basechance 0.1
 #command "#nobadevents +8"
+#primarycommand nobadevents
 #tag "notfortier 2"
 #tag "notfortier 3"
 #chanceinc "personalmagic astral 0.5"
+#filterdesc "nobadevents desc"
 #end
 
 #new magefilter
@@ -630,6 +702,7 @@
 #command "#inquisitor"
 #chanceinc "personalmagic holy 2"
 #tag "personalmagic holy"
+#filterdesc "inquisitor desc"
 #end
 
 #new magefilter
@@ -639,6 +712,7 @@
 #power 3
 #notfortier 4
 #givetoall
+#filterdesc "drainimmune desc"
 #end
 
 #new magefilter
@@ -648,6 +722,7 @@
 #notfortier 1
 #notfortier 2
 #notfortier 3
+#filterdesc "drainimmune desc"
 #end
 
 #new magefilter
@@ -662,6 +737,7 @@
 #valuemulti 35
 #tag "notfortier 1"
 #power 3
+#filterdesc "healer desc"
 #end
 
 #new magefilter
@@ -675,6 +751,7 @@
 #basevalue -25
 #valuemulti 35
 #power 3
+#filterdesc "healer desc"
 #end
 
 #new magefilter
@@ -688,6 +765,7 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #power 2
+#filterdesc "healer desc"
 #end
 
 #new magefilter
@@ -701,6 +779,7 @@
 #tag "notfortier 2"
 #chanceinc "command #startaff 5"
 #power 2
+#filterdesc "healer desc"
 #end
 
 #new magefilter
@@ -713,6 +792,7 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #power 3
+#filterdesc "dishealer desc"
 #end
 
 #new magefilter
@@ -721,6 +801,7 @@
 #chanceinc "personalmagic nature 1"
 #chanceinc "personalcommand #startaff 1.5"
 #command "#heal"
+#filterdesc "recuperation desc"
 #end
 
 #new magefilter
@@ -733,6 +814,7 @@
 #primarycommand demon
 #primarycommand undead
 #primarycommand spiritsight
+#filterdesc "darkvision desc"
 #end
 
 #new magefilter
@@ -746,6 +828,7 @@
 #primarycommand demon
 #primarycommand undead
 #primarycommand spiritsight
+#filterdesc "darkvision desc"
 #end
 
 #new magefilter
@@ -759,6 +842,7 @@
 #command "#hp +2"
 #command "#mor +1"
 #command "#gcost +10"
+#filterdesc "warriormage desc"
 #end
 
 #new magefilter
@@ -774,6 +858,7 @@
 #command "#hp +2"
 #command "#mor +2"
 #command "#gcost +20"
+#filterdesc "combatcaster desc"
 #end
 
 #new magefilter
@@ -787,6 +872,7 @@
 #command "#gcost +30"
 #tag "notfortier 1"
 #tag "notfortier 3"
+#filterdesc "thug desc"
 #end
 
 #new magefilter
@@ -799,6 +885,7 @@
 #tag "notfortier 3"
 #chanceinc "personalmagic earth 0.05"
 #power 2
+#filterdesc "forgebonus desc"
 #end
 
 #new magefilter
@@ -811,6 +898,7 @@
 #tag "notfortier 3"
 #chanceinc "personalmagic earth 0.05"
 #power 3
+#filterdesc "forgebonus desc"
 #end
 
 #new magefilter
@@ -823,6 +911,7 @@
 #tag "notfortier 2"
 #chanceinc "personalmagic earth 0.025"
 #power 3
+#filterdesc "forgebonus desc"
 #end
 
 #new magefilter
@@ -835,6 +924,7 @@
 #tag "notfortier 2"
 #chanceinc "personalmagic earth 0.025"
 #power 3
+#filterdesc "forgebonus desc"
 #end
 
 #new magefilter
@@ -847,6 +937,7 @@
 #tag "notfortier 3"
 #chanceinc "personalmagic earth 0.05"
 #power 2
+#filterdesc "forgebonus desc"
 #end
 
 #new magefilter
@@ -856,6 +947,7 @@
 #command "#shockres +4"
 #chanceinc "personalmagic air 0.5"
 #description "has charged body"
+#filterdesc "chargedbody desc"
 #end
 
 #new magefilter
@@ -865,7 +957,7 @@
 #command "#batstartsum1 2092"
 #chanceinc "personalmagic nature 0.5"
 #chanceinc "personalmagic earth 0.5"
-#description "has a shikigami familiar"
+#filterdesc "shikigami desc"
 #end
 
 
@@ -877,7 +969,7 @@
 #chanceinc "personalmagic blood 1"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#description "has bound an imp to serve as a familiar"
+#filterdesc "imp desc"
 #end
 
 #new magefilter
@@ -887,7 +979,7 @@
 #command "#batstartsum1 2287"
 #chanceinc "personalmagic blood 1"
 #tag "notfortier 1"
-#description "has bound an imp to serve as a familiar"
+#filterdesc "imp desc"
 #end
 
 #new magefilter
@@ -902,7 +994,7 @@
 #chanceinc "nationtag fae OR hasthemetheme fae 0.5"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#description "is followed into battle by two black dogs"
+#filterdesc "blackdog desc"
 #end
 
 #new magefilter
@@ -916,7 +1008,11 @@
 #chanceinc "nationtag fae OR hasthemetheme fae *10"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#description "is jealously protected by fairy companions"
+#synonym "a pact with the fae"
+#synonym "fairy companions"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue end"
 #end
 
 #new magefilter
@@ -929,7 +1025,7 @@
 #chanceinc "personalcommand illusion *3"
 #chanceinc "nationtag fae OR hasthemetheme fae *10"
 #tag "notfortier 1"
-#description "is accompanied by a small fairy"
+#filterdesc "fairy desc"
 #end
 
 #new magefilter
@@ -939,7 +1035,7 @@
 #command "#batstartsum2 1363"
 #chanceinc "personalmagic death 1"
 #chanceinc "personalmagic nature death 2"
-#description "watched over by ancestors"
+#filterdesc "ancestorspirit desc"
 #end
 
 #new magefilter
@@ -949,9 +1045,9 @@
 #command "#batstartsum3 2218"
 #chanceinc "personalmagic nature 1"
 #chanceinc "personalmagic nature death 3"
-#description "followed by a small swarm of bugs"
 #tag "notfortier 1"
 #tag "notfortier 2"
+#filterdesc "bugs desc"
 #end
 
 #new magefilter
@@ -962,10 +1058,10 @@
 #command "#gcost +40"
 #chanceinc "personalmagic blood 0.5"
 #chanceinc "personalmagic blood earth 10"
-#description "protected by tainted earth"
 #tag "notfortier 1"
 #tag "notfortier 2"
 #power 3
+#filterdesc "illearth desc"
 #end
 
 #new magefilter
@@ -975,10 +1071,10 @@
 #command "#batstartsum1 496"
 #command "#gcost +40"
 #chanceinc "personalmagic earth 1"
-#description "protected by earth"
 #tag "notfortier 1"
 #tag "notfortier 2"
 #power 3
+#filterdesc "earthele desc"
 #end
 
 #new magefilter
@@ -992,6 +1088,7 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #power 3
+#filterdesc "fireele desc"
 #end
 
 #new magefilter
@@ -1004,11 +1101,11 @@
 #description "protected by water"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#power 3
+#filterdesc "waterele desc"
 #end
 
 #new magefilter
-#name "airrele"
+#name "airele"
 #type "familiar"
 #basechance 0
 #command "#batstartsum1 570"
@@ -1018,6 +1115,7 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #power 3
+#filterdesc "airele desc"
 #end
 
 #new magefilter
@@ -1026,10 +1124,10 @@
 #basechance 0
 #command "#batstartsum3 2121"
 #chanceinc "personalmagic death 1"
-#description "protected by the risen dead"
 #tag "notfortier 1"
 #tag "notfortier 2"
 #power 2
+#filterdesc "longdead desc"
 #end
 
 #new magefilter
@@ -1040,7 +1138,7 @@
 #chanceinc "personalmagic astral 0.5"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#description "has a lesser otherness following"
+#filterdesc "lesser otherness desc"
 #end
 
 #new magefilter
@@ -1056,6 +1154,7 @@
 #notfortier 3
 #theme smith
 #theme resources
+#filterdesc "resourcebonus desc"
 #end
 
 #new magefilter
@@ -1071,6 +1170,7 @@
 #notfortier 3
 #theme smith
 #theme resources
+#filterdesc "resourcebonus desc"
 #end
 
 #new magefilter
@@ -1087,6 +1187,7 @@
 #notfortier 2
 #theme smith
 #theme resources
+#filterdesc "resourcebonus desc"
 #end
 
 #new magefilter
@@ -1103,6 +1204,7 @@
 #notfortier 3
 #theme smith
 #theme resources
+#filterdesc "cold resourcebonus desc"
 #end
 
 #new magefilter
@@ -1119,6 +1221,7 @@
 #notfortier 3
 #theme smith
 #theme resources
+#filterdesc "cold resourcebonus desc"
 #end
 
 #new magefilter
@@ -1127,7 +1230,7 @@
 #basechance 0
 #chanceinc "personalmagic nature blood 4"
 #command "#crossbreeder +3"
-#description " Skilled at crossbreeding."
+#filterdesc "crossbreeder desc"
 #end
 
 #new magefilter
@@ -1137,7 +1240,7 @@
 #chanceinc "personalmagic nature 2 AND personalmagic blood 2 2"
 #command "#crossbreeder +6"
 #notfortier1
-#description " Excellent at crossbreeding."
+#filterdesc "crossbreeder desc"
 #end
 
 #new magefilter
@@ -1148,7 +1251,7 @@
 #command "#crossbreeder +9"
 #notfortier1
 #notfortier2
-#description " Masterful at crossbreeding."
+#filterdesc "crossbreeder desc"
 #end
 
 #new magefilter
@@ -1160,6 +1263,7 @@
 #notfortier 3
 #theme nature
 #theme ivy
+#filterdesc "ivylord desc"
 #end
 
 #new magefilter
@@ -1171,6 +1275,7 @@
 #notfortier 1
 #theme nature
 #theme ivy
+#filterdesc "ivylord desc"
 #end
 
 #new magefilter
@@ -1183,6 +1288,7 @@
 #notfortier 2
 #theme nature
 #theme ivy
+#filterdesc "ivylord desc"
 #end
 
 #new magefilter
@@ -1195,8 +1301,7 @@
 #chanceinc "personalmagic earth 2 0.25"
 #chanceinc "personalmagic air 2 0.25"
 #command "#dragonlord +1"
-#theme dragon
-#theme draketotem
+#filterdesc "dragonlord desc"
 #end
 
 #new magefilter
@@ -1212,6 +1317,11 @@
 #notfortier 1
 #theme dragon
 #theme draketotem
+#set "skill"
+#prev "skill desc"
+#synonym "summoning dragonkind"
+#synonym "commanding dragons and their kin"
+#extendeddescription "and they can summon more dragonlike creatures than normal"
 #end
 
 #new magefilter
@@ -1220,10 +1330,10 @@
 #basechance 0
 #chanceinc "personalmagic nature 3 0.1"
 #command "#lamialord +2"
-#description " Esteemed by lamia-kind."
 #notfortier 1
 #theme serpent
 #theme snaketotem
+#filterdesc "lamialord desc"
 #end
 
 #new magefilter
@@ -1237,6 +1347,7 @@
 #notfortier 2
 #theme serpent
 #theme snaketotem
+#filterdesc "lamialord desc"
 #end
 
 #new magefilter
@@ -1245,10 +1356,10 @@
 #basechance 0
 #chanceinc "personalmagic air death 4"
 #command "#corpselord +2"
-#description " Proficient at reanimating corpses with electricity."
 #notfortier 3
 #theme death
 #theme construction
+#filterdesc "corpselord desc"
 #end
 
 #new magefilter
@@ -1261,6 +1372,7 @@
 #notfortier 1
 #theme death
 #theme construction
+#filterdesc "corpselord desc"
 #end
 
 #new magefilter
@@ -1274,5 +1386,6 @@
 #notfortier 2
 #theme death
 #theme construction
+#filterdesc "corpselord desc"
 #end
 

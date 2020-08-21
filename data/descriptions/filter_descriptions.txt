@@ -1,0 +1,2355 @@
+#new
+#name "poisonres desc"
+#synonym "poison"
+#synonym "toxins"
+#set "immunity"
+#prev "immunity desc"
+#end
+
+#new
+#name "shockres desc"
+#synonym "electricity"
+#synonym "lightning"
+#set "immunity"
+#prev "immunity desc"
+#end
+
+#new
+#name "fireres desc"
+#synonym "fire"
+#synonym "heat"
+#synonym "flames"
+#set "immunity"
+#prev "immunity desc"
+#end
+
+#new
+#name "coldres desc"
+#synonym "cold"
+#synonym "ice"
+#synonym "frost"
+#set "immunity"
+#prev "immunity desc"
+#end
+
+#new
+#name "allres desc"
+#synonym "the elements"
+#synonym "elemental damage"
+#set "immunity"
+#prev "immunity desc"
+#end
+
+#new
+#name "bluntres desc"
+#synonym "bludgeoning"
+#synonym "blunt weapons"
+#set "immunity"
+#prev "immunity desc"
+#end
+
+#new
+#name "pierceres desc"
+#synonym "puncture wounds"
+#synonym "piercing weapons"
+#set "immunity"
+#prev "immunity desc"
+#end
+
+#new
+#name "slashres desc"
+#synonym "cuts"
+#synonym "slashing weapons"
+#set "immunity"
+#prev "immunity desc"
+#end
+
+
+#new
+#name "darkvision desc"
+#synonym "night vision"
+#synonym "low light vision"
+#set "senses"
+#prev "senses desc"
+#allowsuperlative
+#extendeddescription "and can fight more effectively in the dark"
+#end
+
+#new
+#name "forestsurvival desc"
+#synonym "forests"
+#synonym "woodlands"
+#set "terrain"
+#prev "terrain desc"
+#next "terrain end"
+#extendeddescription "and can move and fight easily in forests"
+#end
+
+#new
+#name "swampsurvival desc"
+#synonym "swamps"
+#synonym "bogs"
+#set "terrain"
+#prev "terrain desc"
+#next "terrain end"
+#extendeddescription "and can move and fight easily in swamps"
+#end
+
+#new
+#name "wastesurvival desc"
+#synonym "deserts"
+#synonym "wastelands"
+#set "terrain"
+#prev "terrain desc"
+#next "terrain end"
+#extendeddescription "and can move and fight easily in wastes"
+#end
+
+#new
+#name "mountainsurvival desc"
+#synonym "mountains"
+#synonym "highlands"
+#set "terrain"
+#prev "terrain desc"
+#next "terrain end"
+#extendeddescription "and can move and fight easily in mountains"
+#end
+
+#new
+#name "faeblood desc"
+#synonym "the fae of old"
+#synonym "elvenkind"
+#set "lineage"
+#prev "lineage desc"
+#extendeddescription "and %pronoun_pos% magical blood gives %pronoun_obj% resistance to magic"
+#end
+
+#new
+#name "strong desc"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#synonym "strong"
+#synonym "mighty"
+#allowsuperlative
+#end
+
+#new
+#name "weak desc"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#synonym "weak"
+#synonym "frail"
+#allowsuperlative
+#end
+
+#new
+#name "stocky desc"
+#description "Stocky"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#synonym "stocky"
+#synonym "brawny"
+#allowsuperlative
+#extendeddescription "and %pronoun% %tobe% muscular but dim-witted"
+#end
+
+#new
+#name "clumsy desc"
+#description "Clumsy"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#synonym "bulky"
+#synonym "clumsy"
+#allowsuperlative
+#extendeddescription "of great strength but little dexterity"
+#end
+
+#new
+#name "myopic desc"
+#description "Myopic"
+#set "senses"
+#prev "senses desc"
+#synonym "myopic eyesight"
+#synonym "poor vision"
+#synonym "weak eyes"
+#negative
+#extendeddescription "and %tohave% difficulty aiming"
+#end
+
+#new
+#name "keen eyed desc"
+#description "Keen eyed"
+#set "senses"
+#prev "senses desc"
+#synonym "keen eyes"
+#synonym "sharp vision"
+#extendeddescription "and %tohave% excellent aim"
+#end
+
+#new
+#name "aggressive desc"
+#description "Aggressive"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#synonym "aggressive"
+#synonym "reckless"
+#allowsuperlative
+#extendeddescription "who care little about defending %pronoun_obj%selves"
+#end
+
+#new
+#name "gluttonous desc"
+#description "Gluttonous"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#synonym "gluttonous"
+#synonym "hungry"
+#allowsuperlative
+#negative
+#extendeddescription "who eat an inordinate amount of food"
+#end
+
+#new
+#name "cowardly desc"
+#description "Cowardly"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#synonym "cowardly"
+#synonym "craven"
+#allowsuperlative
+#negative
+#extendeddescription "and %pronoun% %tobe% quick to flee battle"
+#end
+
+#new
+#name "brave desc"
+#description "Brave"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#synonym "brave"
+#synonym "bold"
+#allowsuperlative
+#extendeddescription "and %pronoun_pos% morale in battle is unbreakable"
+#end
+
+#new
+#name "quick desc"
+#description "Quick"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#synonym "quick-footed"
+#synonym "fast"
+#allowsuperlative
+#extendeddescription "capable of running quickly across the battlefield"
+#end
+
+#new
+#name "sickly desc"
+#chance 0.015
+#description "Sick"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#synonym "sickly"
+#synonym "deformed"
+#negative
+#extendeddescription "who suffer from a variety of maladies"
+#end
+
+#new
+#name "coldvuln desc"
+#description "Vulnerable to cold"
+#set "immunity"
+#prev "negative"
+#synonym "vulnerable to cold"
+#synonym "sensitive to cold"
+#end
+
+#new
+#name "firevuln desc"
+#description "Vulnerable to fire"
+#set "immunity"
+#prev "negative"
+#synonym "vulnerable to fire"
+#synonym "sensitive to heat"
+#end
+
+#new
+#name "blind desc"
+#description "Blind"
+#set "senses"
+#prev "senses desc"
+#synonym "uncanny senses"
+#synonym "blindsense"
+#extendeddescription "allowing %pronoun_obj% to fight without use of vision"
+#end
+
+#new
+#name "spiritsight desc"
+#description "Sees the true nature of things"
+#set "senses"
+#prev "senses desc"
+#synonym "the ability to see the unseen"
+#synonym "supernatural vision"
+#extendeddescription "and %pronoun_pos% magic sight cannot be fooled by darkness or illusion"
+#end
+
+#new
+#name "magicbeing desc"
+#description "Magical"
+#set "lineage"
+#prev "lineage desc"
+#synonym "magical creatures"
+#synonym "otherworldly beings"
+#extendeddescription "and %pronoun_pos% supernatural nature affords %pronoun_obj% great resistance to magic, but %pronoun% %tobe% ill understood by mundane mortals"
+#end
+
+#new
+#name "demonblood desc"
+#description "Demon blood"
+#set "lineage"
+#prev "lineage desc"
+#synonym "demons"
+#synonym "devils"
+#extendeddescription "and %pronoun_pos% infernal heritage gives %pronoun_obj% great power"
+#end
+
+#new
+#name "pooramphibian desc"
+#set "lineage"
+#prev "lineage desc"
+#synonym "an ancient amphibious race"
+#synonym "sea creatures"
+#extendeddescription "and %pronoun% can breathe water as well as air, although %pronoun% do not swim as well as aquatic creatures"
+#end
+
+#new 
+#name "amphibian desc"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "water breathing"
+#synonym "an amphibious nature"
+#extendeddescription "and %pronoun% can move and breathe underwater as well as in air"
+#end
+
+#new
+#name "levy desc"
+#description "Levy"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#synonym "cheaply raised"
+#synonym "cheaply conscripted"
+#extendeddescription "and %pronoun% require few wages, although %pronoun% cannot be relied upon for %pronoun_pos% own equipment"
+#end
+
+#new
+#name "warriorculture desc"
+#description "Warrior culture"
+#set "physique"
+#prev "physique desc"
+#synonym "proud noble"
+#synonym "richly celebrated"
+#extendeddescription "and %pronoun% command a high wage, but often bring %pronoun_pos% own equipment"
+#end
+
+#new
+#name "professional desc"
+#description "Skilled warrior"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#synonym "expertly trained"
+#synonym "elite"
+#end
+
+#new
+#name "hardy desc"
+#description "Hardy"
+#set "physique"
+#prev "physique desc"
+#synonym "hardy"
+#synonym "durable"
+#allowsuperlative
+#extendeddescription "and %pronoun% can shrug off wounds that would cripple lesser warriors"
+#end
+
+#new
+#name "resilient desc"
+#description "Resilient"
+#set "immunity"
+#prev "immunity desc"
+#synonym "disease"
+#synonym "infection"
+#end
+
+#new
+#name "toxic desc"
+#description "Toxic flesh"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "poisonous skin"
+#synonym "envenomed flesh"
+#end
+
+#new
+#name "thickskin desc"
+#description "Thick skinned"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#synonym "thick skinned"
+#synonym "durable"
+#allowsuperlative
+#end
+
+#new
+#name "golem desc"
+#description "Stone skinned"
+#set "lineague"
+#prev "lineage desc"
+#synonym "a strange race of stone beings"
+#synonym "living stone"
+#extendeddescription "and %pronoun_pos% stony flesh is hard, but heavy and ponderous"
+#end
+
+#new
+#name "maritime desc"
+#set "skill"
+#prev "skill desc"
+#synonym "sailing"
+#synonym "navigation"
+#extendeddescription "and %pronoun% can sail with %pronoun_pos% army over water"
+#end
+
+#new
+#name "stealthy desc"
+#description "Stealthy"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#synonym "stealthy"
+#synonym "sneaky"
+#allowsuperlative
+#extendeddescription "who can move unseen through enemy territory"
+#end
+
+#new
+#name "deathrec desc"
+#set "terrain"
+#prev "terrain desc"
+#next "terrain end"
+#synonym "haunted battlefields"
+#synonym "mournful graveyards"
+#synonym "desolation"
+#synonym "gloomy landscapes"
+#extendeddescription "and %pronoun% %tobe% easier to recruit in lands of death"
+#end
+
+#new
+#name "chaosrec desc"
+#set "terrain"
+#prev "terrain desc"
+#next "terrain end"
+#synonym "savage wild tribes"
+#synonym "war-torn territory"
+#synonym "chaotic no man's land"
+#extendeddescription "and %pronoun% %tobe% easier to recruit in lands of turmoil"
+#end
+
+#new
+#name "minsizeleader desc"
+#set "physique"
+#prev "physique desc"
+#description "Too proud to be led by tiny beings"
+#synonym "proud"
+#synonym "egotistical"
+#negative
+#filterdesc "minsizeleader desc"
+#extendeddescription "and %pronoun% refuse to follow leaders of lesser stature"
+#end
+
+#new 
+#name "highupkeep desc"
+#synonym "greedy"
+#synonym "profligate"
+#synonym "lavish"
+#synonym "prodigal"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#extendeddescription "and demand extra money for %pronoun_pos% upkeep"
+#allowsuperlative
+#end
+
+#new
+#name "lowupkeep desc"
+#synonym "altruistic"
+#synonym "frugal"
+#synonym "thrifty"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#extendeddescription "and require less money for upkeep"
+#allowsuperlative
+#end
+
+#new
+#name "ascetic desc"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#synonym "ascetic"
+#synonym "devoted"
+#extendeddescription "and %pronoun% subsist with little food or pay"
+#end
+
+#new
+#name "zealous desc"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#synonym "zealous"
+#synonym "eager"
+#extendeddescription "and %pronoun% remain motivated in battle with little pay"
+#end
+
+#new 
+#name "terrestrial desc"
+#basechance 0.01
+#synonym "%tobe% vulnerable to water"
+#synonym "%tobe% incapable of surviving in water"
+#prev "start"
+#extendeddescription "and would die underwater even if %pronoun% could breathe it"
+#negative
+#set "immunity"
+#end
+
+#new 
+#name "bound desc"
+#synonym "%tobe% bound to %pronoun_pos% homeland"
+#synonym "%tobe% cursed to remain in %pronoun_pos% homeland"
+#extendeddescription "and will slowly weaken and die if %pronoun% spend time away from %pronoun_pos% home province"
+#set "wondrous"
+#bridge "wondrous bridge"
+#prev "start"
+#negative
+#end
+
+#new 
+#name "bloodbound desc"
+#synonym "%tobe% bound to %pronoun_pos% homeland in exchange for power"
+#synonym "%tobe% connected by magic bonds to %pronoun_pos% homeland"
+#extendeddescription "and %tobe% powerful warriors but will weaken and die if %pronoun% spend time away from %pronoun_pos% home"
+#set "wondrous"
+#bridge "wondrous bridge"
+#prev "start"
+#negative
+#end
+
+#new
+#name "heretic desc"
+#synonym "defy the Awakening God"
+#synonym "spurn the Awakening God"
+#synonym "practice %pronoun_pos% own pagan religion"
+#extendeddescription "and will spread superstition against the faith"
+#set "skill"
+#prev "start"
+#negative
+#end
+
+#new
+#name "researcher desc"
+#set "skill"
+#prev "skill desc"
+#synonym "magical research"
+#synonym "the study of magic"
+#end
+
+#new
+#name "divine researcher desc"
+#set "skill"
+#prev "skill desc"
+#synonym "scribing"
+#synonym "copying manuscripts"
+#synonym "illumination"
+#extendeddescription "allowing %pronoun_obj% to contribute to research"
+#end
+
+#new
+#name "sloth researcher desc"
+#set "skill"
+#prev "start"
+#synonym "%tobe% idle dilettantes"
+#synonym "%tobe% lazy gadabouts"
+#negative
+#extendeddescription "and lands with strong work ethics %tobe% not conducive to %pronoun_pos% research"
+#negative
+#end
+
+#new 
+#name "makepearls desc"
+#set "skill"
+#prev "skill desc"
+#synonym "the cultivation of magic pearls"
+#synonym "pearl making"
+#extendeddescription "and %pronoun% can efficiently convert water gems into astral pearls"
+#end
+
+#new 
+#name "carcasscollector desc"
+#set "skill"
+#prev "skill desc"
+#synonym "the cultivation of death gems"
+#synonym "growing death gems from carcasses"
+#extendeddescription "and %pronoun% can efficiently convert nature gems into death gems"
+#end
+
+#new 
+#name "resourcebonus desc"
+#set "skill"
+#prev "skill desc"
+#synonym "metalcrafting"
+#synonym "blacksmithing"
+#extendeddescription "and %pronoun% will increase resource production to speed recruitment"
+#end
+
+#new
+#name "cold resourcebonus desc"
+#set "skill"
+#prev "skill desc"
+#synonym "ice crafting"
+#synonym "ice forging"
+#extendeddescription "and in cold terrain %pronoun% will increase resource production to speed recruitment"
+#end
+
+#new
+#name "ritualrange desc"
+#set "skill"
+#prev "skill desc"
+#synonym "long distance rituals"
+#synonym "casting spells over great distances"
+#end
+
+#new
+#name "floating desc"
+#set "wondrous"
+#bridge "wondrous bridge"
+#prev "wondrous desc"
+#synonym "levitation"
+#synonym "the power to float above the ground"
+#extendeddescription "and %pronoun% %tobe% immune to spells that rely on contact with the earth"
+#end
+
+#new
+#name "deathcurse desc"
+#set "death"
+#prev "start"
+#synonym "can curse %pronoun_pos% attackers with %pronoun_pos% dying breath"
+#synonym "%tohave% a pact with death to curse any that dare slay %pronoun_obj%"
+#end
+
+#new 
+#name "slimer desc"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "a shield of ectoplasm"
+#synonym "ectoplasmic secretions"
+#extendeddescription "that will cling to any attackers, slowing %pronoun_obj% down"
+#end
+
+#new
+#name "iceprot desc"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "raiments of magic ice"
+#synonym "hard icy skin"
+#extendeddescription "and %pronoun_pos% defense is stronger in lands of cold"
+#end
+
+#new 
+#name "falsearmy desc"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "a host of illusionary soldiers"
+#synonym "an entourage of illusionary spirits"
+#extendeddescription "that will deceive enemy scouts with the impression of a larger army"
+#end
+
+#new
+#name "elegist desc"
+#set "skill"
+#prev "skill desc"
+#synonym "mourning the departed"
+#synonym "prayers of grief for the dead"
+#extendeddescription "and %pronoun_pos% prayers call back %pronoun_pos% dead god more quickly"
+#end
+
+#new
+#name "invulnerable desc"
+#set "immunity"
+#prev "immunity desc"
+#synonym "mundane damage"
+#synonym "ordinary weapons"
+#end
+
+#new 
+#name "illusion desc"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "skill with illusions"
+#synonym "protective glamour"
+#extendeddescription "and in battle %pronoun% can create false images to avoid blows"
+#end
+
+#new
+#name "spellsinger desc"
+#set "skill"
+#prev "skill desc"
+#synonym "magical spellsongs"
+#synonym "casting spells via song"
+#extendeddescription "and %pronoun_pos% spells take longer to complete but %tobe% less fatiguing than conventional magic"
+#end
+
+#new 
+#name "holy desc"
+#basechance 0.2
+#primarycommand "#holy"
+#command "#holy"
+#set "wondrous"
+#prev "start"
+#bridge "wondrous bridge"
+#description "%tobe% sacred to the people of %nation%"
+#end
+
+#new 
+#name "flying desc"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "powers of flight"
+#synonym "the ability to fly"
+#end
+
+#new
+#name "spy desc"
+#synonym "spycraft"
+#synonym "subterfuge"
+#set "skill"
+#prev "skill desc"
+#extendeddescription "and can infiltrate enemy strongholds to learn %pronoun_pos% secrets and foment unrest"
+#end
+
+#new 
+#name "assassin desc"
+#synonym "assassination"
+#synonym "eliminating %pronoun_pos% enemies"
+#synonym "professional murder"
+#set "skill"
+#prev "skill desc"
+#extendeddescription "and can stealthily ambush enemy commanders in single combat"
+#end
+
+#new
+#name "ethereal desc"
+#synonym "incorporeality"
+#synonym "the ability to shift between worlds"
+#synonym "the power to phase out of reality"
+#synonym "ethereal forms"
+#extendeddescription "and nonmagical weapons will have little effect on %pronoun_obj%"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#end
+
+#new 
+#name "awe desc"
+#synonym "an aura of supernatural splendor"
+#synonym "an aura of supernatural beauty"
+#synonym "an aura of supernatural wonder"
+#extendeddescription "and enemy soldiers will be reluctant to attack %pronoun_obj%"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#end
+
+#new
+#name "sun awe desc"
+#synonym "an aura of solar splendor"
+#synonym "an aura of solar wonder"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#extendeddescription "and in the light of the sun few would dare strike %pronoun_obj%"
+#end
+
+#new
+#name "fear desc"
+#synonym "terrifying"
+#synonym "horrifying"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#extendeddescription "and only the most disciplined troops can stand to face %pronoun_obj% without fleeing"
+#end
+
+#new 
+#name "regeneration desc"
+#synonym "the power of regeneration"
+#synonym "regrowing flesh"
+#synonym "self-healing flesh"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#end
+
+#new 
+#name "fireshield desc"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "a protective cloak of flames"
+#synonym "a shield of magic flame"
+#extendeddescription "and those that attempt to strike %pronoun_obj% will be burned by the flames"
+#end
+
+#new 
+#name "poisonarmor desc"
+#synonym "venomous thorns"
+#synonym "protective barbs of venom"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#extendeddescription "and those that attempt to strike %pronoun_obj% risk poisoning %pronoun_obj%selves"
+#end
+
+#new 
+#name "airshield desc"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "a protective cloak of wind"
+#synonym "a magical barrier against arrows"
+#end
+
+#new 
+#name "nobadevents desc"
+#set "skill"
+#prev "skill desc"
+#synonym "divination"
+#synonym "reading the future"
+#extendeddescription "and %pronoun% %tobe% able to foresee and prevent unfortunate events"
+#end
+
+#new
+#name "inquisitor desc"
+#set "skill"
+#prev "skill desc"
+#synonym "eliminating heresy"
+#synonym "defending the true faith"
+#synonym "fighting heresy"
+#extendeddescription "and %pronoun% can quickly stamp out hostile religions"
+#end
+
+#new
+#name "drainimmune desc"
+#set "skill"
+#prev "skill desc"
+#synonym "natural philosophy"
+#synonym "pragmatic matters"
+#synonym "practical research"
+#extendeddescription "and %pronoun% can research effectively even in lands of little magic"
+#end
+
+#new 
+#name "healer desc"
+#set "skill"
+#prev "skill desc"
+#synonym "the healing arts"
+#synonym "medicine"
+#extendeddescription "and %pronoun% can heal the wounds of the masses"
+#end
+
+#new 
+#name "dishealer desc"
+#set "skill"
+#prev "skill desc"
+#synonym "the healing arts"
+#synonym "medicine"
+#extendeddescription "and %pronoun% can treat diseases among the troops"
+#end
+
+#new 
+#name "recuperation desc"
+#synonym "a supernatural healing factor"
+#synonym "the ability to recover from injuries"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#extendeddescription "and can recover from crippling injuries in a matter of months"
+#end
+
+#new 
+#name "warriormage desc"
+#synonym "the martial arts"
+#synonym "personal combat"
+#synonym "battle"
+#set "skill"
+#prev "skill desc"
+#extendeddescription "and %tobe% formidable fighters as well as mages"
+#end
+
+#new 
+#name "combatcaster desc"
+#synonym "casting under pressure"
+#synonym "combat casting"
+#synonym "fighting as well as spellcasting"
+#set "skill"
+#prev "skill desc"
+#extendeddescription "and can use magic even in the midst of melee"
+#end
+
+#new
+#name "thug desc"
+#synonym "monstrously strong"
+#synonym "physically imposing"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#next "physique bridge"
+#extendeddescription "of unparalleled strength and skill"
+#end
+
+#new 
+#name "forgebonus desc"
+#synonym "magical crafts"
+#synonym "the art of the forge"
+#synonym "enchanting artifacts"
+#synonym "magical construction"
+#set "skill"
+#prev "skill desc"
+#extendeddescription "and can construct magical items with fewer gems"
+#end
+
+#new 
+#name "chargedbody desc"
+#description "has charged body"
+#synonym "a protective electric field"
+#synonym "an electrically charge"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#extendeddescription "and will unleash a blast of lightning when struck"
+#end
+
+#new 
+#name "shikigami desc"
+#description "has a shikigami familiar"
+#synonym "a shikigami familiar"
+#synonym "a familiar spirit"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue end"
+#end
+
+#new
+#name "imp desc"
+#synonym "an imp familiar"
+#synonym "the service of a bound imp"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue end"
+#end
+
+#new
+#name "blackdog desc"
+#type "familiar"
+#synonym "the protection of black dogs"
+#synonym "command over supernatural hounds"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue end"
+#end
+
+#new 
+#name "fairy desc"
+#synonym "a pact with the fae"
+#synonym "fairy companions"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue end"
+#end
+
+#new
+#name "ancestorspirit desc"
+#synonym "the protection of %pronoun_pos% ancestors"
+#synonym "an ancestral spirit"
+#synonym "a connection with the spirits of %pronoun_pos% ancestors"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue end"
+#end
+
+#new
+#name "bugs desc"
+#synonym "command over insects"
+#synonym "insects perpetually swarming around %pronoun_obj%"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue end"
+#end
+
+#new 
+#name "illearth desc"
+#synonym "a pact with the tainted earth"
+#synonym "mastery over blood-soaked earth"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue element end"
+#end
+
+#new 
+#name "earthele desc"
+#synonym "a pact with the earth"
+#synonym "mastery over earth"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue element end"
+#end
+
+#new 
+#name "fireele desc"
+#synonym "a pact with elemental fire"
+#synonym "mastery over flame"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue element end"
+#end
+
+#new
+#name "waterele desc"
+#synonym "a pact with elemental water"
+#synonym "mastery over water"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue element end"
+#end
+
+#new 
+#name "airele desc"
+#synonym "a pact with elemental air"
+#synonym "mastery over air"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue element end"
+#end
+
+#new 
+#name "longdead desc"
+#synonym "command over the risen dead"
+#synonym "mastery over the dead"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue undead end"
+#end
+
+#new 
+#name "lesser otherness desc"
+#synonym "a pact with strange otherworldly beings"
+#synonym "a connection with creatures of the Void"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue end"
+#end
+
+#new 
+#name "crossbreeder desc"
+#set "skill"
+#prev "skill desc"
+#synonym "crossbreeding"
+#synonym "fleshcrafting"
+#synonym "horrifying magical experiments"
+#extendeddescription "and %pronoun_pos% blood magic will produce more hybrids than normal"
+#end
+
+#new
+#name "ivylord desc"
+#set "skill"
+#prev "skill desc"
+#synonym "summoning vine creatures"
+#synonym "commanding the forces of nature"
+#synonym "manipulating plants"
+#extendeddescription "and %pronoun% can summon more vine men than normal"
+#end
+
+#new
+#name "dragonlord desc"
+#set "skill"
+#prev "skill desc"
+#synonym "summoning dragonkind"
+#synonym "commanding dragons and %pronoun_pos% kin"
+#synonym "dealing with dragons"
+#extendeddescription "and %pronoun% can summon more dragonlike creatures than normal"
+#end
+
+#new 
+#name "lamialord desc"
+#set "skill"
+#prev "skill desc"
+#synonym "dealing with lamias"
+#synonym "negotiating with lamias"
+#extendeddescription "and %pronoun% can summon more lamias than normal"
+#end
+
+#new
+#name "corpselord desc"
+#set "skill"
+#prev "skill desc"
+#synonym "electric reanimation"
+#synonym "rejuvenating the dead"
+#extendeddescription "and %pronoun% can create more corpse constructs than normal"
+#end
+
+#new 
+#name "turkeyshape desc"
+#set "shapeshift"
+#prev "shapeshift desc"
+#synonym "a turkey"
+#synonym "an unassuming turkey"
+#end
+
+#new
+#name "werewolf desc"
+#set "shapeshift"
+#prev "shapeshift desc"
+#synonym "a werewolf"
+#synonym "a half-wolf hybrid"
+#synonym "%pronoun_pos% wolf totem"
+#end
+
+#new
+#name "werefox desc"
+#set "shapeshift"
+#prev "shapeshift desc"
+#synonym "a werefox"
+#synonym "a half-fox hybrid"
+#synonym "%pronoun_pos% fox totem"
+#end
+
+#new
+#name "werebear desc"
+#set "shapeshift"
+#prev "shapeshift desc"
+#synonym "a werebear"
+#synonym "a half-bear hybrid"
+#synonym "%pronoun_pos% bear totem"
+#end
+
+#new
+#name "werehyena desc"
+#description "can shapeshift into a werehyena"
+#set "shapeshift"
+#prev "shapeshift desc"
+#synonym "a werehyena"
+#synonym "a half-hyena hybrid"
+#synonym "%pronoun_pos% hyena totem"
+#end
+
+#new
+#name "wererat desc"
+#description "can shapeshift into a wererat"
+#set "shapeshift"
+#prev "shapeshift desc"
+#synonym "a wererat"
+#synonym "a half-rat hybrid"
+#synonym "%pronoun_pos% rat totem"
+#end
+
+#new
+#name "werecrocodile desc"
+#description "can shapeshift into a werecrocodile"
+#set "shapeshift"
+#prev "shapeshift desc"
+#synonym "a werecrocodile"
+#synonym "a half-crocodile hybrid"
+#synonym "%pronoun_pos% crocodile totem"
+#end
+
+#new
+#name "wolf desc"
+#set "shapeshift"
+#prev "shapeshift desc"
+#synonym "a wolf"
+#synonym "an unassuming wolf"
+#end
+
+#new
+#name "wingedmonkey desc"
+#description "can shapeshift into a winged monkey"
+#tag "notfortier 1"
+#set "shapeshift"
+#prev "shapeshift desc"
+#synonym "a winged monkey"
+#synonym "a magical monkey with wings"
+#end
+
+#new 
+#name "devil desc"
+#description "can shapeshift into a devil"
+#set "shapeshift"
+#prev "shapeshift desc"
+#synonym "a devil"
+#synonym "an infernal being"
+#synonym "a fiery devil"
+#end
+
+#new
+#name "vineman desc"
+#set "death"
+#prev "start"
+#description "%tohave% a pact with ancient forces of nature and will reborn as living vines upon death"
+#end
+
+#new
+#name "frostfiend desc"
+#description "can shapeshift into a frost fiend"
+#set "shapeshift"
+#prev "shapeshift desc"
+#synonym "a frost fiend"
+#synonym "an icy devil"
+#end
+
+#new
+#name "greatbear desc"
+#description "can shapeshift into a great bear"
+#set "shapeshift"
+#prev "shapeshift desc"
+#synonym "a great bear"
+#synonym "an imposing bear"
+#end
+
+#new
+#name "bear desc"
+#description "can shapeshift into a bear"
+#set "shapeshift"
+#prev "shapeshift desc"
+#synonym "a bear"
+#synonym "an unassuming bear"
+#end
+
+#new 
+#name "jaguar desc"
+#description "can shapeshift into a jaguar"
+#set "shapeshift"
+#prev "shapeshift desc"
+#synonym "a jaguar"
+#synonym "a ferocious jaguar"
+#end
+
+#new
+#name "deepone desc"
+#description "can shapeshift into a deep one"
+#set "shapeshift"
+#prev "shapeshift desc"
+#synonym "a deep one"
+#synonym "a creature of the deeps"
+#synonym "a half-fish hybrid"
+#end
+
+#new 
+#name "lesserhorror desc"
+#description "unleashes its true form of a horror on death"
+#set "death"
+#prev "start"
+#synonym "%tohave% a pact with the horrors of the void and will summon %pronoun_obj% to this world upon death"
+#synonym "%tobe% possessed by void horrors and will reveal %pronoun_pos% true form upon death"
+#end
+
+#new
+#name "ghost desc"
+#description "is able to grasp into mortal life on death, being able to avenge its own death as a ghost"
+#set "death"
+#prev "start"
+#synonym "%tohave% mastered %pronoun_pos% own mortality and can avenge %pronoun_pos% own death as a ghost"
+#synonym "can briefly remain on this world as a ghost after dying"
+#end
+
+#new
+#name "ghoul desc"
+#set "death"
+#prev "start"
+#description "%tohave% a pact with death, allowing %pronoun_obj% to live as a ghoul after death"
+#end
+
+#new
+#name "horned serpent desc"
+#description "shapeshifts into a horned serpent when harmed"
+#set "shapeshift"
+#prev "shapeshift desc"
+#synonym "a great serpent"
+#synonym "a magical horned serpent"
+#end
+
+#new
+#name "felemental shift desc"
+#set "death"
+#prev "start"
+#synoynm "%tobe% pledged to the Kings of Elemental Fire and %tobe% reborn as living flame in death"
+#synonym "will explode as a burst of elemental energy upon death, spawning a fire elemental"
+#end
+
+#new
+#name "eelemental shift desc"
+#set "death"
+#prev "start"
+#synoynm "%tobe% pledged to the Kings of Elemental Earth and %tobe% reborn as living earth in death"
+#synonym "will explode as a burst of elemental energy upon death, spawning an earth elemental"
+#end
+
+#new
+#name "aelemental shift desc"
+#description "explodes as a burst of elemental energy upon death, spawning an elemental"
+#set "death"
+#prev "start"
+#synoynm "%tobe% pledged to the Queens of Elemental Air and %tobe% reborn as living air in death"
+#synonym "will explode as a burst of elemental energy upon death, spawning an air elemental"
+#end
+
+#new 
+#name "welemental shift desc"
+#description "explodes as a burst of elemental energy upon death, spawning an elemental"
+#set "death"
+#prev "start"
+#synoynm "%tobe% pledged to the Queens of Elemental Water and %tobe% reborn as living water in death"
+#synonym "will explode as a burst of elemental energy upon death, spawning an water elemental"
+#end
+
+#new 
+#name "metalman shift desc"
+#set "death"
+#prev "start"
+#description "%tobe% clever mechanical simulacra imbued with life and will reveal %pronoun_pos% mechanical form upon death"
+#end
+
+#new
+#name "hugemantis shift desc"
+#set "death"
+#prev "start"
+#description "%tobe% hosts to horrifying insect parasites that will burst out upon death"
+#end
+
+#new
+#name "scorpion shift desc"
+#description "can shapeshift into a scorpion"
+#set "shapeshift"
+#prev "shapeshift desc"
+#synonym "a scorpion"
+#synonym "a deadly scorpion"
+#end
+
+#new
+#name "cavecrab shift desc"
+#description "can shapeshift into a cave crab"
+#set "shapeshift"
+#prev "shapeshift desc"
+#synonym "a cave crab"
+#synonym "a giant cave crab"
+#end
+
+#new
+#name "hawk shift desc"
+#description "can shapeshift into a hawk"
+#set "shapeshift"
+#prev "shapeshift desc"
+#synonym "a hawk"
+#synonym "a soaring hawk"
+#end
+
+#new
+#name "giant toad shift desc"
+#set "shapeshift"
+#prev "shapeshift desc"
+#synonym "an immense toad"
+#synonym "a giant toad"
+#end
+
+#new 
+#name "greatboar shift desc"
+#description "can shapeshift into a great boar"
+#set "shapeshift"
+#prev "shapeshift desc"
+#synonym "a great boar"
+#synonym "an imposing boar"
+#end
+
+#new 
+#name "spider shift desc"
+#description "can shapeshift into a giant spider"
+#set "shapeshift"
+#prev "shapeshift desc"
+#synonym "a giant spider"
+#synonym "a spider of immense size"
+#end
+
+#new
+#name "reinvig desc"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "superhuman vigor"
+#synonym "superhuman endurance"
+#end
+
+#new
+#name "berserk desc"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#synonym "berserk"
+#synonym "frenzied"
+#end
+
+#new
+#name "chaospower desc"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "an affinity for chaos"
+#synonym "the strength of chaos"
+#extendeddescription "and %pronoun% grow stronger in lands of turmoil"
+#end
+
+#new
+#name "orderpower desc"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "an affinity for order"
+#synonym "the strength of law"
+#extendeddescription "and %pronoun% grow stronger in lands of order"
+#end
+
+#new
+#name "slothpower desc"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "a love of idleness"
+#synonym "an aura of revelry"
+#extendeddescription "and %pronoun% perform best in lazy and unproductive lands"
+#end
+
+#new
+#name "deathpower desc"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "an affinity for decay"
+#synonym "the strength of death"
+#extendeddescription "and %pronoun% grow stronger in dead and dying lands"
+#end
+
+#new
+#name "growthpower desc"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "an affinity for growing things"
+#synonym "the strength of living nature"
+#extendeddescription "and %pronoun% grow stronger in lush and green lands"
+#end
+
+#new
+#name "coldpower desc"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "an affinity for cold"
+#synonym "the strength of frost"
+#extendeddescription "and %pronoun% grow stronger in cold and frozen lands"
+#end
+
+#new
+#name "firepower desc"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "an affinity for heat"
+#synonym "the strength of fire"
+#extendeddescription "and %pronoun% grow stronger in warm and tropical lands"
+#end
+
+#new
+#name "magicpower desc"
+#synonym "an affinity for magic"
+#synonym "the strength of the arcane"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#extendeddescription "and %pronoun% grow stronger in highly magical lands"
+#end
+
+#new
+#name "stormpower desc"
+#synonym "an affinity for storms"
+#synonym "the strength of storms"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#extendeddescription "and %pronoun% grow stronger in stormy weather"
+#end
+
+#new
+#name "darkpower desc"
+#synonym "an affinity for darkness"
+#synonym "the strength of shadows"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#extendeddescription "and %pronoun% grow stronger in stormy weather"
+#end
+
+#new
+#name "dompower desc"
+#synonym "the power of faith"
+#synonym "the strength of %pronoun_pos% god"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#extendeddescription "and %pronoun% grow stronger in lands where belief in your god's dominion is highest"
+#end
+
+#new
+#name "extra strong desc"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "divine strength"
+#synonym "the strength of giants"
+#end
+
+#new
+#name "springpower desc"
+#synonym "a connection to the spring"
+#synonym "the strength of spring"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#extendeddescription "and %pronoun% %tobe% strongest in spring months"
+#end
+
+#new
+#name "summerpower desc"
+#synonym "a connection to the summer"
+#synonym "the strength of summer"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#extendeddescription "and %pronoun% %tobe% strongest in summer months"
+#end
+
+#new
+#name "fallpower desc"
+#synonym "a connection to the autumn"
+#synonym "the strength of autumn"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#extendeddescription "and %pronoun% %tobe% strongest in fall months"
+#end
+
+#new
+#name "winterpower desc"
+#synonym "a connection to the winter"
+#synonym "the strength of winter"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#extendeddescription "and %pronoun% %tobe% strongest in winter months"
+#end
+
+#new
+#name "turningseasonpower desc"
+#synonym "a connection to the seasons"
+#synonym "the strength of the turning seasons"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#extendeddescription "and %pronoun% %tobe% strongest at the height of each season"
+#end
+
+#new
+#name "heat desc"
+#synonym "an aura of heat"
+#synonym "a swirling cloak of heat"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#end
+
+#new
+#name "cold desc"
+#synonym "an aura of cold"
+#synonym "a swirling cloak of cold"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#end
+
+#new
+#name "poisoncloud desc"
+#synonym "a protective cloak of poison fumes"
+#synonym "a cloud of poisonous breath"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#end
+
+#new
+#name "incunrest desc"
+#synonym "unruly"
+#synonym "disruptive"
+#synonym "lawless"
+#synonym "chaotic"
+#extendeddescription "and unrest follows in %pronoun_pos% wake"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#negative
+#end
+
+#new 
+#name "castle desc"
+#synonym "a knack for architecture"
+#synonym "canny strategic sense"
+#extendeddescription "and %pronoun% excel at both assaulting and defending fortifications"
+#set "senses"
+#prev "senses desc"
+#end
+
+#new
+#name "siege desc"
+#synonym "siegecraft"
+#synonym "demolition"
+#extendeddescription "and %pronoun% can efficiently destroy fortifications"
+#set "skill"
+#prev "skill desc"
+#end
+
+#new
+#name "patrol desc"
+#synonym "tracking"
+#synonym "hunting"
+#synonym "counterespionage"
+#extendeddescription "and %pronoun% can ferret out spies and dissidents with ease"
+#set "skill"
+#prev "skill desc"
+#end
+
+#new
+#name "bodyguard desc"
+#synonym "guarding important personages"
+#synonym "personal defense"
+#set "skill"
+#prev "skill desc"
+#end
+
+#new
+#name "pillage desc"
+#synonym "rapacious"
+#synonym "ruthless"
+#extendeddescription "and %pronoun% loot and plunder without mercy"
+#set "physique"
+#prev "physique desc"
+#next "physique end"
+#bridge "physique bridge"
+#end
+
+#new 
+#name "cultist desc"
+#set "death"
+#prev "start"
+#synonym "%tobe% protected by strange and horrifying energies"
+#synonym "worship terrifying beings from the void"
+#extendeddescription "and astral energies will mark any who dare strike %pronoun_obj%, although many of %pronoun_obj% %tobe% mutilated in mind and body"
+#end
+
+#new 
+#name "comslave desc"
+#set "skill"
+#prev "skill desc"
+#synonym "magical communion"
+#synonym "group rituals"
+#extendeddescription "and %pronoun% serve as willing communion vessels in combat"
+#end
+
+#new 
+#name "reanimator desc"
+#set "skill"
+#prev "skill desc"
+#synonym "necromancy"
+#synonym "reanimation"
+#synonym "raising the dead"
+#extendeddescription "and %pronoun% can animate undead warriors to swell the army's ranks"
+#end
+
+#new
+#name "demagogue desc"
+#set "skill"
+#prev "skill desc"
+#synonym "leading the masses"
+#synonym "controlling mobs"
+#synonym "commanding the masses"
+#extendeddescription "and can lead large numbers of troops, but not well"
+#end
+
+#new
+#name "inspirational desc"
+#set "skill"
+#prev "skill desc"
+#synonym "inspiring the masses"
+#synonym "charisma"
+#synonym "influencing people"
+#extendeddescription "and %pronoun% inspire zealous devotion in the ranks"
+#end
+
+#new
+#name "flagellant summon desc"
+#set "misc"
+#prev "start"
+#synonym "attract religious fanatics to %pronoun_pos% cause"
+#synonym "swell %pronoun_pos% ranks with holy zealots"
+#extendeddescription "and %pronoun% will attract flagellants in friendly dominion"
+#end
+
+#new
+#name "cultist summon desc"
+#set "misc"
+#prev "start"
+#synonym "spread fanatical cults"
+#synonym "recruit mad cultists"
+#extendeddescription "and %pronoun% will attract cultists to %pronoun_pos% force in friendly dominion"
+#end
+
+#new
+#name "ancestor spirit summon desc"
+#set "skill"
+#prev "skill desc"
+#synonym "communing with spirits"
+#synonym "speaking to revered ancestors"
+#extendeddescription "and ancestral spirits will join %pronoun_obj% in friendly dominion"
+#end
+
+#new
+#name "flagellant maker desc"
+#set "skill"
+#prev "skill desc"
+#synonym "indoctrination"
+#synonym "inspiring zealots"
+#extendeddescription "and can train a few flagellants each month"
+#end
+
+#new
+#name "serpent trainer desc"
+#set "skill"
+#prev "skill desc"
+#synonym "serpent taming"
+#synonym "snake charming"
+#extendeddescription "and can train sacred serpents at temples"
+#end
+
+#new
+#name "hydra trainer desc"
+#set "skill"
+#prev "skill desc"
+#synonym "hydra taming"
+#synonym "handling hydras"
+#extendeddescription "and can train hydras at temples"
+#end
+
+#new
+#name "jaguar trainer desc"
+#set "skill"
+#prev "skill desc"
+#synonym "jaguar taming"
+#synonym "handling jaguars"
+#extendeddescription "and can train sacred jaguars at temples"
+#end
+
+#new
+#name "toad trainer desc"
+#set "skill"
+#prev "skill desc"
+#synonym "toad taming"
+#synonym "handling toads"
+#extendeddescription "and can train sacred toads at temples"
+#end
+
+#new
+#name "wolf trainer desc"
+#set "skill"
+#prev "skill desc"
+#synonym "wolf taming"
+#synonym "training wolves"
+#extendeddescription "and can train sacred wolves at temples"
+#end
+
+#new
+#name "bear trainer desc"
+#set "skill"
+#prev "skill desc"
+#synonym "bear taming"
+#synonym "training bears"
+#extendeddescription "and can train sacred bears at temples"
+#end
+
+#new
+#name "boar trainer desc"
+#set "skill"
+#prev "skill desc"
+#synonym "boar taming"
+#synonym "handling boars"
+#extendeddescription "and can train sacred boars at temples"
+#end
+
+#new
+#name "scorpion trainer desc"
+#set "skill"
+#prev "skill desc"
+#synonym "scorpion taming"
+#synonym "handling scorpions"
+#extendeddescription "and can train sacred scorpions at temples"
+#end
+
+#new
+#name "condor trainer desc"
+#set "skill"
+#prev "skill desc"
+#synonym "condor taming"
+#synonym "handling condors"
+#extendeddescription "and can train sacred condors at temples"
+#end
+
+#new
+#name "gloso trainer desc"
+#set "misc"
+#prev "start"
+#synonym "can summon fiery black boars"
+#synonym "%tobe% skilled monster trainers"
+#extendeddescription "and can train glosos at temples"
+#end
+
+#new
+#name "celestial hound trainer desc"
+#set "misc"
+#prev "start"
+#synonym "can summon beasts from the celestial sphere"
+#synonym "%tobe% skilled at negotiating with creatures of the celestial sphere"
+#extendeddescription "and can train celestial hounds at temples"
+#end
+
+#new
+#name "iron pig trainer desc"
+#set "skill"
+#prev "skill desc"
+#synonym "armoring"
+#synonym "blacksmithing"
+#extendeddescription "and can plate blessed pigs in armor at temples"
+#end
+
+#new
+#name "fae hound trainer desc"
+#set "skill"
+#prev "skill desc"
+#synonym "taming magical creatures"
+#synonym "handling magic hounds"
+#extendeddescription "and can summon fae hounds at temples"
+#end
+
+#new
+#name "seeker trainer desc"
+#set "skill"
+#prev "skill desc"
+#synonym "spreading enlightenment"
+#synonym "teaching enlightened truths"
+#extendeddescription "and can train spiritual followers at temples"
+#end
+
+#new
+#name "rakshasa trainer desc"
+#set "skill"
+#prev "skill desc"
+#synonym "summoning demons"
+#synonym "dealing with demons"
+#extendeddescription "and can summon foul Rakshasas at temples"
+#end
+
+#new
+#name "vestal trainer desc"
+#set "misc"
+#prev "start"
+#synonym "%tobe% responsible for teaching vestal virgins"
+#synonym "oversee the vestal virgin cult"
+#extendeddescription "and can train vestals at temples"
+#end
+
+#new
+#name "supaya trainer desc"
+#set "skill"
+#prev "skill desc"
+#synonym "communing with spirits"
+#synonym "speaking to revered ancestors"
+#extendeddescription "and can summon supayas at temples"
+#end
+
+#new
+#name "smoulderghost trainer desc"
+#set "skill"
+#prev "skill desc"
+#synonym "communing with the dead"
+#synonym "necromancy"
+#extendeddescription "and can summon smoulderghosts at temples"
+#end
+
+#new
+#name "statue trainer desc"
+#set "skill"
+#prev "skill desc"
+#synonym "statuary"
+#synonym "sculpture"
+#extendeddescription "and can craft living statues at temples"
+#end
+
+#new
+#name "taxcollector desc"
+#synonym "administration"
+#synonym "accounting"
+#synonym "matters of taxation"
+#extendeddescription "and administer taxes without needing lines of supply"
+#set "skill"
+#prev "skill desc"
+#end
+
+#new
+#name "bringer of fortune desc"
+#synonym "unending luck"
+#synonym "boundless fortune"
+#extendeddescription "and good luck inevitably comes wherever %pronoun% %tobe%"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#end
+
+#new
+#name "lawman desc"
+#synonym "keeping the peace"
+#synonym "maintaining law and order"
+#extendeddescription "and can quash dissent and unrest quickly"
+#set "skill"
+#prev "skill desc"
+#end
+
+#new
+#name "mason desc"
+#synonym "constructing fortifications"
+#synonym "advanced architecture"
+#extendeddescription "allowing %pronoun_obj% to erect most sophisticated defenses than most"
+#set "skill"
+#prev "skill desc"
+#end
+
+#new
+#name "skeptic desc"
+#synonym "skepticism"
+#synonym "rational philosophy"
+#synonym "rhetorical trickery"
+#extendeddescription "and %pronoun% lower belief in any religion in %pronoun_pos% provinces"
+#set "skill"
+#prev "skill desc"
+#end
+
+-- connective tissue
+
+#new
+#name "start filter desc"
+#set "start"
+#description "%Pronoun%"
+#end
+
+#new
+#name "start filter hero"
+#set "start extended"
+#basechance 0
+#chanceinc unittag Hero 1
+#description "%Pronoun%"
+#end
+
+#new
+#name "start filter desc extended"
+#set "start extended"
+#chanceinc personalcommand magicskill *0
+#chanceinc personalcommand holy *0
+#chanceinc unittag Hero *0
+#synonym "%Pronoun%"
+#synonym "%Pronoun%"
+#synonym "%Pronoun%"
+#synonym "%Pronoun%"
+#synonym "%Pronoun%"
+#synonym "%Pronoun%"
+#synonym "%pronoun_pos% %role%"
+#synonym "These %role%"
+#synonym "The %role% of %nation%"
+#synonym "The %race_plural% of %nation%"
+#synonym "%nation%'s troops"
+#synonym "The %unitname_plural%"
+#end
+
+#new
+#name "start filter desc extended brief"
+#set "start extended"
+#chanceinc unittag Hero *0
+#synonym "%Pronoun%"
+#synonym "The %unitname_plural%"
+#synonym "These %role%"
+#end
+
+#new
+#name "start army role"
+#set "army role start"
+#synonym "%unitname_plural%"
+#synonym "The %unitname_plural%"
+#synonym "%unitname_plural%"
+#synonym "The %unitname_plural%"
+#synonym "%nation%'s %unitname_plural%"
+#end
+
+#new
+#name "are"
+#set "are"
+#description "%tobe%"
+#prev "start"
+#end
+
+#new
+#name "superlative"
+#set "superlative"
+#synonym "very"
+#synonym "especially"
+#synonym "particularly"
+#synonym "extraordinarily"
+#synonym "unusually"
+#synonym "uniquely"
+#synonym "unfathomably"
+#synonym "notably"
+#end
+
+#new
+#name "negative"
+#set "negative"
+#synonym "%tobe% sadly"
+#synonym "%tobe% regrettably"
+#synonym "%tobe% unfortunately"
+#synonym "%tobe%"
+#end
+
+#new
+#name "immunity desc"
+#set "immunity desc"
+#synonym "resistant to"
+#synonym "protected from"
+#prev "are"
+#end
+
+#new
+#name "terrain desc"
+#set "terrain desc"
+#synonym "%tobe% native to the"
+#synonym "%tobe% raised from the"
+#synonym "%tobe% at home in the"
+#prev "start"
+#end
+
+#new
+#name "terrain end"
+#set "terrain end"
+#synonym "of %nation%"
+#synonym "found around %nation%"
+#end
+
+#new
+#name "lineage desc"
+#set "lineage desc"
+#synonym "%tobe% descended from"
+#synonym "%tohave% the blood of"
+#prev "start"
+#end
+
+#new
+#name "senses desc"
+#set "senses desc"
+#chanceinc unittag Hero *0
+#synonym "%tohave%"
+#synonym "possess"
+#prev "start"
+#end
+
+#new
+#name "senses desc hero"
+#set "senses desc"
+#basechance 0
+#chanceinc unittag Hero 1
+#synonym "%tohave%"
+#synonym "possesses"
+#prev "start"
+#end
+
+#new
+#name "physique desc"
+#set "physique desc"
+#description "%tobe%"
+#prev "start extended"
+#end
+
+#new
+#name "physique end"
+#set "physique end"
+#chanceinc personalcommand magicskill *0
+#chanceinc unittag Hero *0
+#synonym "warriors"
+#synonym "soldiers"
+#end
+
+#new
+#name "physique alt"
+#set "physique alt"
+#synonym "in battle"
+#synonym "in combat"
+#end
+
+#new
+#name "physique end priest"
+#set "physique end"
+#basechance 0
+#chanceinc personalcommand holy 1
+#chanceinc unittag mage *0
+#chanceinc unittag warriormage *0
+#chanceinc unittag Hero *0
+#synonym "priests"
+#synonym "clerics"
+#end
+
+#new
+#name "physique end mage"
+#set "physique end"
+#basechance 0
+#chanceinc personalcommand magicskill below 8 1
+#chanceinc unittag warriormage *0
+#chanceinc unittag Hero *0
+#synonym "mages"
+#synonym "wizards"
+#end
+
+#new
+#name "physique end warriormage"
+#set "physique end"
+#basechance 0
+#chanceinc unittag warriormage 1
+#chanceinc unittag Hero *0
+#synonym "heroes"
+#synonym "nobles"
+#end
+
+#new
+#name "physique end Hero"
+#set "physique end"
+#basechance 0
+#chanceinc (unittag Hero) 1
+#synonym "compared to normal men"
+#synonym "compared to lesser heroes"
+#end
+
+#new
+#name "physique bridge"
+#set "physique bridge"
+#chanceinc unittag Hero *0
+#description "who"
+#end
+
+#new
+#name "physique bridge hero"
+#set "physique bridge"
+#basechance 0
+#chanceinc (unittag Hero) 1
+#description "and also"
+#end
+
+#new
+#name "army role bridge"
+#set "army role bridge"
+#chanceinc (personalcommand okleader or personalcommand poorleader or personalcommand goodleader or personalcommand expertleader) *0
+#description "who"
+#end
+
+#new
+#name "army role bridge commander"
+#set "army role bridge"
+#basechance 0
+#chanceinc (personalcommand okleader or personalcommand poorleader or personalcommand goodleader or personalcommand expertleader) 1
+#description "; they make"
+#end
+
+#new
+#name "generic bridge"
+#set "generic bridge"
+#description "and %pronoun%"
+#end
+
+#new
+#name "wondrous bridge"
+#set "wondrous bridge"
+#synonym "; %pronoun% also"
+#synonym "; moreover, %pronoun%"
+#synonym "; additionally, %pronoun%"
+#synonym ". %Pronoun%"
+#synonym ". Also, %pronoun%"
+#end
+
+#new
+#name "skill desc"
+#set "skill desc"
+#synonym "%tobe% skilled in"
+#synonym "%tobe% trained in"
+#prev "start"
+#end
+
+#new
+#name "retinue desc"
+#set "retinue desc"
+#description "%tohave%"
+#prev "start"
+#end
+
+#new
+#name "retinue end"
+#set "retinue end"
+#synonym "who will follow %pronoun_obj% into battle"
+#synonym "who will protect %pronoun_obj% in battle"
+#synonym "who will defend %pronoun_obj% in battle"
+#synonym "who will fight for %pronoun_obj% in battle"
+#uniquedescription
+#end
+
+#new
+#name "retinue element end"
+#set "retinue element end"
+#synonym "and it will rise up to protect %pronoun_obj% in battle"
+#synonym "and can animate it to fight in battle"
+#synonym "and an elemental will appear in battle to fight for %pronoun_obj%"
+#uniquedescription
+#end
+
+#new
+#name "retinue undead end"
+#set "retinue undead end"
+#synonym "and %pronoun% will rise up to protect %pronoun_obj% in battle"
+#synonym "and can animate %pronoun_obj% to fight in battle"
+#synonym "and the undead will appear in battle to fight for %pronoun_obj%"
+#uniquedescription
+#end
+
+#new
+#name "wondrous start"
+#set "wondrous start"
+#synonym "%Pronoun%"
+#end
+
+#new
+#name "wondrous desc"
+#set "wondrous desc"
+#synonym "%tobe% gifted with"
+#synonym "%tobe% empowered with"
+#prev "wondrous start"
+#chanceinc personalcommand holy *0
+#uniquedescription
+#end
+
+#new
+#name "wondrous desc sacred"
+#set "wondrous desc"
+#synonym "%tobe% blessed with"
+#synonym "%tobe% gifted with"
+#synonym "%tobe% empowered with"
+#synonym "%tohave% been given"
+#prev "wondrous start"
+#basechance 0
+#chanceinc personalcommand holy 1
+#uniquedescription
+#end
+
+#new
+#name "shapeshift start"
+#set "shapeshift start"
+#chanceinc unittag Hero *0
+#synonym "%tobe% masters of shapeshifting and"
+#synonym "%tobe% skilled shapeshifters and"
+#prev "start"
+#uniquedescription
+#end
+
+#new
+#name "shapeshift start hero"
+#set "shapeshift start"
+#basechance 0
+#chanceinc unittag Hero 1
+#synonym "%tobe% a master of shapeshifting and"
+#synonym "%tobe% a skilled shapeshifter and"
+#prev "start"
+#uniquedescription
+#end
+
+#new
+#name "shapeshift desc"
+#set "shapeshift desc"
+#synonym "can take the shape of"
+#synonym "can take the form of"
+#synonym "can shift into"
+#synonym "can change into"
+#prev "shapeshift start"
+#uniquedescription
+#end

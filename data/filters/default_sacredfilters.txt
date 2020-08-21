@@ -6,6 +6,7 @@
 #chanceinc "command #neednoteat 0.1"
 #command "#addupkeep %cost-50"
 #command "#neednoteat"
+#filterdesc "ascetic desc"
 #end
 
 #new
@@ -23,6 +24,7 @@
 #themeinc "thisarmorprot 15 *2"
 #tag "nopose ranged"
 #tag "nopose mounted"
+#filterdesc "reinvig desc"
 #end
 
 #new
@@ -45,6 +47,7 @@
 #tag "nopose ranged"
 #tag "nopose mounted"
 #power 2
+#filterdesc "reinvig desc"
 #end
 
 
@@ -57,6 +60,7 @@
 #tag "nopose ranged"
 #tag "nopose mounted"
 #tag "nopose chariot"
+#filterdesc "berserk desc"
 #end
 
 #new
@@ -74,6 +78,7 @@
 #tag "nopose chariot"
 #command "#gcost +5"
 #power 2
+#filterdesc "berserk desc"
 #end
 
 #new
@@ -93,6 +98,7 @@
 #tag "nopose chariot"
 #command "#gcost +10"
 #power 3
+#filterdesc "berserk desc"
 #end
 
 #new
@@ -100,6 +106,7 @@
 #basechance 0
 #command "#blessbers"
 #chanceinc "personalcommand #berserk 0.5"
+#filterdesc "berserk desc"
 #end
 
 -- #new
@@ -176,6 +183,7 @@
 #chanceinc "race vanir -20"
 #chanceinc "pose mounted *0.25"
 #power 2
+#filterdesc "stealthy desc"
 #end
 
 #new
@@ -187,6 +195,7 @@
 #chanceinc "command #chaospower 50"
 #theme recruitment
 #power 2
+#filterdesk "chaosrec desc"
 #end
 
 #new
@@ -199,6 +208,7 @@
 #chanceinc "magic death 0.1"
 #chanceinc "command below #deathpower 0 *0"
 #theme recruitment
+#filterdesk "deathrec desc"
 #end
 
 #new
@@ -211,6 +221,7 @@
 #chanceinc "magic death 0.1"
 #chanceinc "command below #deathpower 0 *0"
 #theme recruitment
+#filterdesk "deathrec desc"
 #end
 
 #new
@@ -221,6 +232,7 @@
 #chanceinc "command #chaosrec 25"
 #chanceinc "command #chaospower 25"
 #theme recruitment
+#filterdesk "chaosrec desc"
 #end
 
 #new
@@ -230,6 +242,7 @@
 #command "#chaospower 1"
 #chanceinc "command #chaosrec 100"
 #chanceinc "command #chaospower 100"
+#filterdesc "chaospower desc"
 #end
 
 #new
@@ -242,6 +255,7 @@
 #chanceinc "command #formationfighter 5"
 #chanceinc "command #chaosrec *0"
 #chanceinc "command above #chaospower 0 *0"
+#filterdesc "orderpower desc"
 #end
 
 #new
@@ -250,6 +264,7 @@
 #type scalepower
 #command "#slothpower 1"
 #chanceinc "command #slothpower 100"
+#filterdesc "slothpower desc"
 #end
 
 #new
@@ -266,6 +281,7 @@
 #chanceinc "command #darkpower 5"
 #chanceinc "magic death 5"
 #chanceinc "command below #deathpower 0 *0"
+#filterdesc "deathpower desc"
 #end
 
 #new
@@ -283,6 +299,7 @@
 #chanceinc "command above #deathpower 0 *0"
 #theme ivy
 #theme vine
+#filterdesc "growthpower desc"
 #end
 
 #new
@@ -294,6 +311,7 @@
 #chanceinc "command #fireshield +2"
 #chanceinc "magic fire 1"
 #power 1
+#filterdesc "fireshield desc"
 #end
 
 #new
@@ -305,6 +323,7 @@
 #chanceinc "command #fireshield 1"
 #chanceinc "magic fire 1"
 #power 2
+#filterdesc "fireshield desc"
 #end
 
 #new
@@ -320,6 +339,7 @@
 #chanceinc "prot 12 *0.125"
 #chanceinc "prot 15 *0"
 #power 3
+#filterdesc "fireshield desc"
 #end
 
 #new
@@ -330,6 +350,7 @@
 #chanceinc "command #airshield 2"
 #chanceinc "magic air 2"
 #chanceinc "personalcommand #illusion *2"
+#filterdesc "airshield desc"
 #end
 
 #new
@@ -341,6 +362,7 @@
 #chanceinc "magic air 1"
 #chanceinc "personalcommand #illusion *2"
 #power 1
+#filterdesc "airshield desc"
 #end
 
 #new
@@ -352,6 +374,7 @@
 #chanceinc "magic air 0.5"
 #chanceinc "personalcommand #illusion *2"
 #power 2
+#filterdesc "airshield desc"
 #end
 
 #new
@@ -365,6 +388,7 @@
 #chanceinc "race vanir -20"
 #chanceinc "pose mounted *0.25"
 #power 2
+#filterdesc "stealthy desc"
 #end
 
 #new
@@ -376,6 +400,7 @@
 #command "#prec +1"
 #command "#hp +2"
 #command "#gcost +5"
+#filterdesc "professional desc"
 #end
 
 #new
@@ -386,6 +411,7 @@
 #command "#gcost +5"
 #chanceinc "pose ranged -100"
 #power 2
+#filterdesc "extra strong desc"
 #end
 
 #new
@@ -409,6 +435,7 @@
 #chanceinc "prot 15 *0.5"
 #chanceinc "pose mounted *0.5"
 #power 4
+#filterdesc "illusion desc"
 #end
 
 #new
@@ -419,6 +446,7 @@
 #chanceinc "personalcommand #fireres *0.25"
 #command "#fireres +5"
 #command "#gcost +1"
+#filterdesc "fireres desc"
 #end
 
 #new
@@ -429,6 +457,7 @@
 #chanceinc "personalcommand #poisonres *0.25"
 #command "#poisonres +5"
 #command "#gcost +1"
+#filterdesc "poisonres desc"
 #end
 
 #new
@@ -439,6 +468,7 @@
 #chanceinc "personalcommand #coldres *0.25"
 #command "#coldres +5"
 #command "#gcost +1"
+#filterdesc "coldres desc"
 #end
 
 #new
@@ -449,6 +479,7 @@
 #chanceinc "personalcommand #shockres *0.25"
 #command "#shockres +5"
 #command "#gcost +1"
+#filterdesc "shockres desc"
 #end
 
 #new
@@ -470,6 +501,7 @@
 #command "#gcost +5"
 #command "#gcost *1.2"
 #power 3
+#filterdesc "allres desc"
 #end
 
 #new
@@ -490,6 +522,7 @@
 #command "#shockres +3"
 #command "#gcost +5"
 #power 2
+#filterdesc "allres desc"
 #end
 
 #new
@@ -500,6 +533,9 @@
 #chanceinc "command #heal 10"
 #command "#heal"
 #command "#gcost +5"
+#synonym "a supernatural healing factor"
+#synonym "the ability to recover from injuries"
+#filterdesc "recuperation desc"
 #end
 
 #new
@@ -514,6 +550,7 @@
 #command "#coldpower +1"
 #command "#gcost +5"
 #tag "path water"
+#filterdesc "coldpower desc"
 #end
 
 #new
@@ -527,6 +564,7 @@
 #command "#firepower +1"
 #command "#gcost +5"
 #tag "path fire"
+#filterdesc "firepower desc"
 #end
 
 #new
@@ -540,6 +578,7 @@
 #command "#stormpower +2"
 #command "#gcost +5"
 #tag "path air"
+#filterdesc "stormpower desc"
 #end
 
 #new
@@ -554,6 +593,7 @@
 #command "#gcost +10"
 #power 2
 #tag "path air"
+#filterdesc "stormpower desc"
 #end
 
 #new
@@ -565,6 +605,7 @@
 #chanceinc "magic water nature 3"
 #command "#springpower +25"
 #tag "path nature"
+#filterdesc "springpower desc"
 #end
 
 #new
@@ -577,6 +618,7 @@
 #chanceinc "command #fireres 0.5"
 #command "#summerpower +25"
 #tag "path fire"
+#filterdesc "summerpower desc"
 #end
 
 #new
@@ -588,6 +630,7 @@
 #chanceinc "magic earth nature 3"
 #command "#fallpower +25"
 #tag "path earth"
+#filterdesc "fallpower desc"
 #end
 
 #new
@@ -601,6 +644,7 @@
 #chanceinc "command #frostres 1"
 #command "#winterpower +25"
 #tag "path water"
+#filterdesc "winterpower desc"
 #end
 
 #new
@@ -612,6 +656,7 @@
 #chanceinc "magic water nature 1"
 #command "#springpower +50"
 #tag "path nature"
+#filterdesc "springpower desc"
 #end
 
 #new
@@ -624,6 +669,7 @@
 #chanceinc "command #fireres 0.25"
 #command "#summerpower +50"
 #tag "path fire"
+#filterdesc "summerpower desc"
 #end
 
 #new
@@ -635,6 +681,7 @@
 #chanceinc "magic earth nature 1"
 #command "#fallpower +50"
 #tag "path earth"
+#filterdesc "fallpower desc"
 #end
 
 #new
@@ -648,6 +695,7 @@
 #chanceinc "command #frostres 1"
 #command "#winterpower +50"
 #tag "path water"
+#filterdesc "winterpower desc"
 #end
 
 #new
@@ -662,6 +710,7 @@
 #chanceinc "command #demon *0"
 #command "#yearturn 1"
 #command "#gcost +1"
+#filterdesc "turningseasonpower desc"
 #end
 
 #new
@@ -676,6 +725,7 @@
 #chanceinc "command #demon *0"
 #command "#yearturn 2"
 #command "#gcost +3"
+#filterdesc "turningseasonpower desc"
 #end
 
 #new
@@ -688,6 +738,7 @@
 #command "#darkvision 100"
 #command "#gcost +3"
 #tag "path death"
+#filterdesc "darkpower desc"
 #end
 
 #new
@@ -701,6 +752,7 @@
 #command "#gcost +8"
 #power 2
 #tag "path death"
+#filterdesc "darkpower desc"
 #end
 
 #new
@@ -711,6 +763,7 @@
 #command "#darkpower +2"
 #command "#gcost +3"
 #tag "path death"
+#filterdesc "darkpower desc"
 #end
 
 #new
@@ -722,6 +775,7 @@
 #command "#gcost +8"
 #power 2
 #tag "path death"
+#filterdesc "darkpower desc"
 #end
 
 #new
@@ -729,6 +783,7 @@
 #basechance 0.1
 #command "#dompower +1"
 #command "#rpcost +5"
+#filterdesc "dompower desc"
 #end
 
 #new
@@ -745,6 +800,7 @@
 #themeinc thisarmorprot 15 *0.125
 #themeinc thisarmorprot 12 *0.125
 #power 3
+#filterdesc "awe desc"
 #end
 
 #new magefilter
@@ -761,6 +817,7 @@
 #themeinc thisarmorprot 15 *0.125
 #themeinc thisarmorprot 12 *0.125
 #power 3
+#filterdesc "sun awe desc"
 #end
 
 #new
@@ -775,6 +832,7 @@
 #price_per_command hp 1 15
 #tag "path nature"
 #tag "nopose chariot"
+#filterdesc "regeneration desc"
 #end
 
 #new
@@ -791,6 +849,7 @@
 #tag "path nature"
 #power 2
 #tag "nopose chariot"
+#filterdesc "regeneration desc"
 #end
 
 #new
@@ -806,6 +865,7 @@
 #tag "path nature"
 #power 3
 #tag "nopose chariot"
+#filterdesc "regeneration desc"
 #end
 
 #new
@@ -826,6 +886,7 @@
 #tag "path fire"
 #chanceinc "pose mounted *0.025"
 #power 2
+#filterdesc "heat desc"
 #end
 
 #new
@@ -847,6 +908,7 @@
 #tag "path water"
 #chanceinc "pose mounted *0.025"
 #power 2
+#filterdesc "cold desc"
 #end
 
 #new
@@ -862,6 +924,7 @@
 #tag "nopose ranged"
 #tag "path nature"
 #power 2
+#filterdesc "poisoncloud desc"
 #end
 
 #new
@@ -872,6 +935,7 @@
 #command "#bluntres"
 #command "#gcost +5"
 #price_per_command #hp 0.5 20
+#filterdesc "bluntres desc"
 #end
 
 #new
@@ -882,6 +946,7 @@
 #command "#pierceres"
 #command "#gcost +5"
 #price_per_command #hp 0.5 20
+#filterdesc "pierceres desc"
 #end
 
 #new
@@ -892,6 +957,7 @@
 #command "#slashres"
 #command "#gcost +5"
 #price_per_command #hp 0.5 20
+#filterdesc "slashres desc"
 #end
 
 #new
@@ -902,6 +968,7 @@
 #command "#invulnerable +5"
 #command "#gcost +8"
 #power 1
+#filterdesc "invulnerable desc"
 #end
 
 #new
@@ -912,6 +979,7 @@
 #command "#invulnerable +10"
 #command "#gcost +10"
 #power 2
+#filterdesc "invulnerable desc"
 #end
 
 #new
@@ -919,6 +987,7 @@
 #basechance 0.25
 #command "#incunrest +1"
 #power -1
+#filterdesc "incunrest desc"
 #end
 
 #new
@@ -933,6 +1002,7 @@
 #basechance 0.5
 #command "#magicpower +1"
 #chanceinc "magic astral 0.3"
+#filterdesc "magicpower desc"
 #end
 
 #new
@@ -942,6 +1012,7 @@
 #command "#poisonarmor +5"
 #command "#gcost +5"
 #tag "path nature"
+#filterdesc "poisonarmor desc"
 #end
 
 #new
@@ -954,6 +1025,7 @@
 #price_if_command above #prot 20 +5
 #price_if_command above #hp 39 +5
 #price_if_command above #hp 19 *1.1
+#filterdesc "chargedbody desc"
 #end
 
 #new
@@ -966,6 +1038,7 @@
 #price_if_command above #prot 15 +5
 #price_if_command above #hp 39 +10
 #price_if_command above #hp 19 *1.2
+#filterdesc "chargedbody desc"
 #end
 
 #new
@@ -974,6 +1047,7 @@
 #basechance 1
 #command "#siegebonus +3"
 #command "#castledef +3"
+#filterdesc "castle desc"
 #end
 
 #new
@@ -981,18 +1055,21 @@
 #type "siege"
 #basechance 1
 #command "#siegebonus +5"
+#filterdesc "siege desc"
 #end
 
 #new
 #name "patrol"
 #basechance 1
 #command "#patrolbonus +3"
+#filterdesc "patrol desc"
 #end
 
 #new
 #name "pillage"
 #basechance 1
 #command "#pillagebonus +3"
+#filterdesc "pillage desc"
 #end
 
 
@@ -1009,6 +1086,7 @@
 #power 2
 #theme "toadtotem"
 #theme "totemanimal"
+#filterdesc "amphibian desc"
 #end
 
 #new
@@ -1026,6 +1104,7 @@
 #themeinc thisarmorprot 15 *0.125
 #themeinc thisarmorprot 12 *0.125
 #power 3
+#filterdesc "ethereal desc"
 #end
 
 
@@ -1036,5 +1115,5 @@
 #primarycommand "#horrormark"
 #command "#horrormark"
 #command "#startaff +20"
-#description "cultist"
+#filterdesc "cultist desc"
 #end

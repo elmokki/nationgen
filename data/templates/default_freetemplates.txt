@@ -4,6 +4,13 @@
 #maxvarieties 2
 #command "#gcost *1.1"
 #command "#formationfighter 1"
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are disciplined and well-drilled soldiers"
+#synonym "are close formation fighters"
+#synonym "are dense phalanx troops"
+#synonym "are tightly packed soldiers"
 #end
 
 #new
@@ -16,6 +23,13 @@
 #maxvarieties 2
 #addtag "bonusweaponchance 0.15"
 #generateitem 0.25 cloakb
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are the enforcers of %nation%"
+#synonym "are able trackers and hunters"
+#synonym "are strict lawmen"
+#synonym "are capable watchmen"
 #end
 
 #new
@@ -28,6 +42,13 @@
 #dwchance 0.25
 #bonusweaponchance 0.4
 #maxvarieties 2
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are brutal and rapacious soldiers"
+#synonym "are cruel and greedy mercenaries"
+#synonym "are terrifying raiders"
+#synonym "are merciless oppressors"
 #end
 
 #new
@@ -40,6 +61,12 @@
 #dwchance 0.25
 #bonusweaponchance 0.8
 #maxvarieties 1
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are light irregular soldiers"
+#synonym "are skilled skirmishers"
+#synonym "are mobile and flexible troops"
 #end
 
 -- Slow militia
@@ -66,6 +93,13 @@
 #themeinc "thisarmorprot 12 *0.01"
 #themeinc "thisitemtheme militia *10"
 #theme militia
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are local levies"
+#synonym "are irregula militia"
+#synonym "are civilian defenders"
+#synonym "are rear echelon troops"
 #end
 
 -- Undisciplined militia
@@ -90,6 +124,13 @@
 #themeinc "thisarmorprot 12 *0.01"
 #themeinc "thisitemtheme militia *10"
 #theme militia
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are poorly trained militia"
+#synonym "are an undisciplined mob"
+#synonym "are the lowest rung of %nation%'s military hierarchy"
+#synonym "are inexperienced troops"
 #end
 
 -- Normal militia
@@ -113,6 +154,13 @@
 #themeinc "thisarmorprot 12 *0.01"
 #themeinc "thisitemtheme militia *10"
 #theme militia
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are lightly trained militia"
+#synonym "are supporting militia"
+#synonym "are inexpensive garrison troops"
+#synonym "are low ranking soldiers"
 #end
 
 #new
@@ -132,6 +180,13 @@
 #themeinc thisarmorprot 14 *2
 #generateitem 0.5 cloakb
 #alloweliteitems
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are experienced veteran troops"
+#synonym "are well drilled professional troops"
+#synonym "are the backbone of %nation%'s army"
+#synonym "are highly skilled soldiers"
 #end
 
 
@@ -153,6 +208,13 @@
 #themeinc thisarmorprot 14 *2
 #generateitem 1 cloakb
 #alloweliteitems
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are the pride of %nation%"
+#synonym "are veterans of many campaigns"
+#synonym "are the pinnacle of %nation%'s military"
+#synonym "are elite soldiers of tremendous skill"
 #end
 
 #new
@@ -170,6 +232,14 @@
 #desc "Mountain survival"
 #primarycommand "#mountainsurvival"
 #generateitem 0.25 cloakb
+#set "terrain"
+#prev "terrain desc"
+#next "terrain end"
+#synonym "mountains"
+#synonym "highlands"
+#synonym "soaring peaks"
+#synonym "mountain ranges"
+#extendeddescription "and can move and fight easily in them"
 #end
 
 #new
@@ -187,6 +257,14 @@
 #desc "Forest survival"
 #primarycommand "#forestsurvival"
 #generateitem 0.25 cloakb
+#set "terrain"
+#prev "terrain desc"
+#next "terrain end"
+#synonym "forests"
+#synonym "woodlands"
+#synonym "dense forests"
+#synonym "heavily wooded lands"
+#extendeddescription "and can move and fight easily in them"
 #end
 
 
@@ -205,4 +283,11 @@
 #themeinc thisarmorprot below 9 *2
 #maxvarieties 2
 #desc "Berserker"
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are frenzied savages"
+#synonym "are savage warriors"
+#synonym "are raging berserkers"
+#synonym "are bloodthirsty madmen"
 #end

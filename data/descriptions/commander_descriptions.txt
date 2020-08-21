@@ -1,0 +1,535 @@
+#new
+#name "commander start"
+#set "commander"
+#synonym "The %unitname_plural% of %nation% are"
+#synonym "%nation%'s %unitname_plural% are"
+#next "commander leadership"
+#uniquedescription
+#end
+
+#new
+#name "commander leadership noleader"
+#set "commander leadership"
+#basechance 0
+#chanceinc personalcommand noleader 1
+#synonym "not entrusted with the"
+#synonym "not burdened with the"
+#synonym "not charged with the"
+#synonym "not encumbered with the"
+#synonym "not bothered with the"
+#synonym "not troubled with the"
+#synonym "not concerned with the"
+#synonym "not occupied with the"
+#next "commander noleadership"
+#uniquedescription
+#end
+
+#new 
+#name "commander noleadership"
+#set "commander noleadership"
+#synonym "responsibilities"
+#synonym "duties"
+#synonym "tasks"
+#synonym "details"
+#synonym "problems"
+#synonym "honor"
+#synonym "chore"
+#synonym "privilege"
+#next "commander noleadership done"
+#uniquedescription
+#end
+
+#new
+#name "commander noleadership done"
+#set "commander noleadership done"
+#synonym "of commanding the armies of %nation%"
+#synonym "of conducting %nation%'s armies in battle"
+#synonym "of service in the armies of %nation%"
+#synonym "of leading soldiers into battle"
+#synonym "of leading %nation% on the battlefield"
+#uniquedescription
+#next "commander done"
+#end
+
+#new
+#name "commander leadership fear"
+#set "commander leadership"
+#basechance 0
+#chanceinc personalcommand fear 1
+#synonym "cruel"
+#synonym "brutal"
+#synonym "terrifying"
+#synonym "savage"
+#synonym "vicious"
+#synonym "ruthless"
+#synonym "bloodthirsty"
+#synonym "dreaded"
+#next "commander checkawe"
+#uniquedescription
+#end
+
+#new
+#name "commander leadership awe"
+#set "commander leadership"
+#basechance 0
+#chanceinc personalcommand awe 1
+#synonym "daunting"
+#synonym "aloof"
+#synonym "unapproachable"
+#synonym "glorious"
+#synonym "venerated"
+#synonym "formidible"
+#synonym "lofty"
+#next "commander fearawe done"
+#uniquedescription
+#end
+
+#new
+#name "commander leadership okleader"
+#set "commander leadership"
+#chanceinc personalcommand awe or personalcommand fear *0
+#chanceinc personalcommand poorleader or personalcommand goodleader or personalcommand expertleader or personalcommand noleader *0
+#synonym "unexceptional"
+#synonym "adequate"
+#synonym "undistinguished"
+#synonym "unremarkable"
+#next "commander leadership done"
+#uniquedescription
+#end
+
+#new
+#name "commander leadership poorleader"
+#set "commander leadership"
+#basechance 0
+#chanceinc personalcommand awe or personalcommand fear *0
+#chanceinc personalcommand poorleader 1
+#synonym "incompetent"
+#synonym "rash"
+#synonym "short-sighted"
+#synonym "inexperienced"
+#synonym "indecisive"
+#synonym "craven"
+#synonym "foolish"
+#next "commander leadership done"
+#uniquedescription
+#end
+
+#new
+#name "commander leadership goodleader"
+#set "commander leadership"
+#basechance 0
+#chanceinc personalcommand awe or personalcommand fear *0
+#chanceinc personalcommand goodleader 1
+#synonym "competent"
+#synonym "decisive"
+#synonym "skilled"
+#synonym "able"
+#synonym "experienced"
+#synonym "clever"
+#synonym "adept"
+#synonym "skillful"
+#synonym "capable"
+#synonym "effective"
+#next "commander leadership done"
+#uniquedescription
+#end
+
+#new
+#name "commander leadership expertleader"
+#set "commander leadership"
+#basechance 0
+#chanceinc personalcommand awe or personalcommand fear *0
+#chanceinc personalcommand expertleader 1
+#synonym "calculating"
+#synonym "masterful"
+#synonym "adroit"
+#synonym "deft"
+#synonym "wily"
+#synonym "cunning"
+#synonym "expert"
+#synonym "consummate"
+#synonym "veteran"
+#synonym "elite"
+#next "commander leadership done"
+#uniquedescription
+#end
+
+#new
+#name "commander checkawe yes"
+#set "commander checkawe"
+#basechance 0
+#chanceinc personalcommand awe 1
+#description "yet"
+#next "commander fearawe"
+#end
+
+#new
+#name "commander checkawe no"
+#set "commander checkawe"
+#chanceinc personalcommand awe *0
+#description "figures whose"
+#next "commander orders"
+#end
+
+#new
+#name "commander fearawe"
+#set "commander fearawe"
+#synonym "beloved"
+#synonym "adored"
+#synonym "venerated"
+#synonym "exalted"
+#synonym "revered"
+#next "commander fearawe done"
+#end
+
+#new 
+#name "commander fearawe done"
+#set "commander fearawe done"
+#description "figures whose"
+#next "commander orders"
+#end
+
+#new 
+#name "commander leadership done"
+#set "commander leadership done"
+#synonym "leaders whose"
+#synonym "leaders whose"
+#synonym "commanders whose"
+#synonym "officials whose"
+#synonym "officers whose"
+#next "commander orders"
+#uniquedescription
+#end
+
+#new 
+#name "commander orders insp task"
+#set "commander orders"
+#basechance 0
+#chanceinc personalcommand inspirational AND personalcommand taskmaster 1
+#synonym "compelling"
+#synonym "forceful"
+#synonym "ardent"
+#synonym "vehement"
+#synonym "fierce"
+#synonym "gruff"
+#synonym "arresting"
+#next "commander orders continued"
+#uniquedescription
+#end
+
+#new 
+#name "commander orders insp"
+#set "commander orders"
+#basechance 0
+#chanceinc personalcommand inspirational 1
+#chanceinc personalcommand taskmaster *0
+#synonym "inspiring"
+#synonym "rousing"
+#synonym "stirring"
+#synonym "earnest"
+#synonym "fiery"
+#synonym "impassioned"
+#next "commander orders continued"
+#uniquedescription
+#end
+
+#new 
+#name "commander orders task"
+#set "commander orders"
+#basechance 0
+#chanceinc personalcommand taskmaster 1
+#chanceinc personalcommand inspirational *0
+#synonym "harsh"
+#synonym "demanding"
+#synonym "exacting"
+#synonym "stern"
+#synonym "dour"
+#synonym "stringent"
+#next "commander orders continued"
+#uniquedescription
+#end
+
+#new
+#name "commander orders"
+#set "commander orders"
+#synonym "orders"
+#synonym "commands"
+#synonym "decrees"
+#synonym "mandates"
+#synonym "instructions"
+#synonym "plans"
+#next "commander orders done"
+#uniquedescription
+#end
+
+#new
+#name "commander orders continued"
+#set "commander orders continued"
+#synonym "orders"
+#synonym "commands"
+#synonym "decrees"
+#synonym "mandates"
+#synonym "instructions"
+#synonym "plans"
+#next "commander orders done"
+#uniquedescription
+#end
+
+#new
+#name "commander orders done"
+#set "commander orders done"
+#synonym "are carried out by"
+#synonym "are executed by"
+#synonym "are obeyed by"
+#synonym "are enacted by"
+#next "commander subordinates"
+#uniquedescription
+#end
+
+#new
+#name "commander subordinates beast"
+#set "commander subordinates"
+#basechance 0
+#chanceinc personalcommand beastmaster 1
+#description "man and beast alike"
+#next "commander done"
+#end
+
+#new 
+#name "commander subordinates task"
+#set "commander subordinates"
+#basechance 0
+#chanceinc personalcommand taskmaster 1
+#description "their subordinates and slaves"
+#next "commander done"
+#end
+
+#new
+#name "commander subordinates priest"
+#set "commander subordinates"
+#basechance 0
+#chanceinc personalcommand holy 1
+#synonym "their followers"
+#synonym "their flock"
+#synonym "their juniors"
+#synonym "their minions"
+#synonym "their guardians"
+#synonym "their subordinates"
+#synonym "their attendants"
+#synonym "their companions"
+#synonym "their escorts"
+#synonym "their lackeys"
+#synonym "their assistants"
+#next "commander done"
+#end
+
+#new
+#name "commander subordinates mage"
+#set "commander subordinates"
+#basechance 0
+#chanceinc personalcommand magicskill 1
+#synonym "their followers"
+#synonym "their minions"
+#synonym "their guardians"
+#synonym "their escorts"
+#synonym "their attendants"
+#synonym "their lackeys"
+#synonym "their escorts"
+#synonym "their assistants"
+#synonym "their pawns"
+#uniquedescription
+#next "commander done"
+#end
+
+#new
+#name "commander subordinates generic"
+#set "commander subordinates"
+#chanceinc personalcommand magicskill *0
+#chanceinc personalcommand beastmaster *0
+#chanceinc personalcommand taskmaster *0
+#synonym "their followers"
+#synonym "their minions"
+#synonym "their troops"
+#synonym "their soldiers"
+#synonym "their forces"
+#synonym "their armies"
+#synonym "their warriors"
+#uniquedescription
+#next "commander done"
+#end
+
+#new
+#name "commander done specialleader"
+#set "commander done"
+#basechance 0
+#chanceinc personalcommand okmagicleader or personalcommand goodmagicleader or personalcommand poormagicleader 1
+#chanceinc personalcommand okundeadleader or personalcommand goodundeadleader or personalcommand poorundeadleader 1
+#chanceinc personalcommand magicbeing or personalcommand undead or personalcommand demon 1
+#chanceinc personalmagic fire 1 or personalmagic water 1 or personalmagic earth 1 or personalmagic air 1 or personalmagic death 1 or personalmagic astral 1 or personalmagic blood 1 *0
+#next "commander magiclead start"
+#end
+
+#new
+#name "commander done nospecialleader"
+#set "commander done"
+#basechance 1
+#chanceinc personalcommand okmagicleader or personalcommand goodmagicleader or personalcommand poormagicleader *0
+#chanceinc personalcommand okundeadleader or personalcommand goodundeadleader or personalcommand poorundeadleader *0
+#chanceinc personalcommand magicbeing or personalcommand undead or personalcommand demon *0
+#end
+
+#new
+#name "commander done hasmagic"
+#set "commander done"
+#basechance 0
+#chanceinc personalmagic fire 1 or personalmagic water 1 or personalmagic earth 1 or personalmagic air 1 or personalmagic death 1 or personalmagic astral 1 or personalmagic blood 1 1
+#end
+
+-- Magic leadership
+
+#new
+#name "commander magiclead start specialleader"
+#set "commander magiclead start"
+#basechance 0
+#chanceinc (personalcommand okmagicleader or personalcommand goodmagicleader or personalcommand poormagicleader) 1
+#chanceinc (personalcommand okundeadleader or personalcommand goodundeadleader or personalcommand poorundeadleader) 1
+#description ". The %unitname_plural% are also charged with"
+#next "commander magiclead orders"
+#end
+
+#new
+#name "commander magiclead start undead"
+#set "commander magiclead start"
+#basechance 0
+#chanceinc personalcommand magicbeing 1
+#chanceinc personalcommand okmagicleader or personalcommand goodmagicleader or personalcommand poormagicleader or personalcommand okundeadleader or personalcommand goodundeadleader or personalcommand poorundeadleader *0
+#chanceinc personalmagic fire 1 or personalmagic water 1 or personalmagic earth 1 or personalmagic air 1 or personalmagic astral 1 *0
+#synonym ". However, leading the enchanted servitors of %nation% is beyond their"
+#synonym ". However, leading the magical beings of %nation% is beyond their"
+#synonym ". However, leading the supernatural forces of %nation% is beyond their"
+#synonym ". However, leading the arcane minions of %nation% is beyond their"
+#next "commander nomagiclead beyond orders"
+#end
+
+#new
+#name "commander magiclead start magic"
+#set "commander magiclead start"
+#basechance 0
+#chanceinc personalcommand undead or personalcommand demon 1
+#chanceinc personalcommand okmagicleader or personalcommand goodmagicleader or personalcommand poormagicleader or personalcommand okundeadleader or personalcommand goodundeadleader or personalcommand poorundeadleader *0
+#chanceinc personalmagic death 1 or personalcommand blood 1 *0
+#synonym ". However, leading the darkest forces of %nation% is beyond their"
+#synonym ". However, leading the unholy hordes of %nation% is beyond their"
+#synonym ". However, leading the necromantic minions of %nation% is beyond their"
+#next "commander nomagiclead beyond orders"
+#uniquedescription
+#end
+
+#new
+#name "commander nomagiclead beyond orders"
+#set "commander nomagiclead beyond orders"
+#synonym "power"
+#synonym "ability"
+#synonym "ken"
+#synonym "understanding"
+#synonym "expertise"
+#end
+
+#new 
+#name "commander magiclead orders"
+#set "commander magiclead orders"
+#basechance 0
+#chanceinc personalcommand okmagicleader or personalcommand goodmagicleader or personalcommand poormagicleader 1
+#chanceinc personalcommand okundeadleader or personalcommand goodundeadleader or personalcommand poorundeadleader 1
+#synonym "commanding"
+#synonym "leading"
+#synonym "overseeing"
+#synonym "deploying"
+#synonym "controlling"
+#next "commander magiclead type"
+#end
+
+#new 
+#name "commander magiclead type undead"
+#set "commander magiclead type"
+#basechance 0
+#chanceinc personalcommand poorundeadleader or personalcommand okundeadleader or personalcommand goodundeadleader 1
+#chanceinc personalcommand poormagicleader or personalcommand okmagicleader or personalcommand goodmagicleader *0
+#synonym "the unholy servants of %nation%, but its magical forces are beyond their"
+#synonym "the dark forces of %nation%, but its arcane minions are beyond their"
+#next "commander nomagiclead beyond orders"
+#end
+
+#new 
+#name "commander magiclead type magic"
+#set "commander magiclead type"
+#basechance 0
+#chanceinc personalcommand poormagicleader or personalcommand okmagicleader or personalcommand goodmagicleader 1
+#chanceinc personalcommand poorundeadleader or personalcommand okundeadleader or personalcommand goodundeadleader *0
+#synonym "the magical servants of %nation%, but its dark forces are beyond their"
+#synonym "the arcane forces of %nation%, but its unholy minions are beyond their"
+#next "commander nomagiclead beyond orders"
+#end
+
+#new 
+#name "commander magiclead type native both"
+#set "commander magiclead type"
+#basechance 0
+#chanceinc (personalcommand magicbeing or personalcommand demon or personalcommand undead 1) and (personalcommand poorundeadleader or personalcommand okundeadleader or personalcommand goodundeadleader) and (personalcommand poormagicleader or personalcommand okmagicleader or personalcommand goodmagicleader) 1
+#chanceinc personalcommand poorundeadleader and personalcommand poormagicleader *0
+#synonym "the magical and unholy warriors of %nation%"
+#synonym "the enchanted and infernal minions of %nation%"
+#end
+
+#new 
+#name "commander magiclead type native both poor"
+#set "commander magiclead type"
+#basechance 0
+#chanceinc (personalcommand poorundeadleader and personalcommand poormagicleader) and (personalcommand magicbeing or personalcommand demon or personalcommand undead) 2
+#synonym "the magical and unholy warriors of %nation%"
+#synonym "the enchanted and infernal minions of %nation%"
+#next "commander magiclead poor"
+#end
+
+#new 
+#name "commander magiclead both summoned"
+#set "commander magiclead type"
+#basechance 0
+#chanceinc (personalcommand poorundeadleader or personalcommand okundeadleader or personalcommand goodundeadleader) and (personalcommand poormagicleader or personalcommand okmagicleader or personalcommand goodmagicleader) 1
+#chanceinc personalcommand magicbeing or personalcommand demon or personalcommand undead *0
+#synonym "any supernatural entity the mages of %nation% might"
+#synonym "the magical and undead legions the mages of %nation% might"
+#next "commander magiclead summon"
+#end
+
+#new
+#name "commander magiclead summon"
+#set "commander magiclead summon"
+#basechance 1
+#chanceinc (personalcommand poorundeadleader and personalcommand poormagicleader) *0
+#synonym "summon"
+#synonym "conjure"
+#synonym "raise"
+#synonym "bind into service"
+#end
+
+#new
+#name "commander magiclead summon poor"
+#set "commander magiclead summon"
+#basechance 1
+#chanceinc personalcommand okundeadleader *0
+#chanceinc personalcommand okmagicleader *0
+#chanceinc personalcommand goodundeadleader *0
+#chanceinc personalcommand goodmagicleader *0
+#synonym "summon,"
+#synonym "conjure,"
+#synonym "raise,"
+#synonym "bind into service,"
+#next "commander magiclead poor"
+#end
+
+#new
+#name "commander magiclead poor"
+#set "commander magiclead poor"
+#description "although they can control only a handful of these beings"
+#end

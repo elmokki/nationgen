@@ -68,9 +68,6 @@ public class ShapeChangeUnit extends Unit {
 
 
 				}
-				
-
-
 			}
 		}
 		
@@ -323,10 +320,12 @@ public class ShapeChangeUnit extends Unit {
 			lines.add("#spr2 \"" + spritedir + "/shapechange_" + id + "_b.tga" + "\"");
 		}
 
+		/*
 		if(!hasDescriptionSpecified)
 		{
 			lines.add("#descr \"No description\"");
 		}
+		*/
 		
 		if(thisForm.keepname && otherForm != null)
 			lines.add("#name \"" + otherForm.name + "\"");

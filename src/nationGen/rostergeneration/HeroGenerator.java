@@ -8,6 +8,7 @@ import nationGen.chances.EntityChances;
 import nationGen.chances.ThemeInc;
 import nationGen.entities.*;
 import nationGen.magic.*;
+import nationGen.misc.Arg;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.nation.Nation;
@@ -65,6 +66,7 @@ public class HeroGenerator {
 		
 		
 		tf.name = "Hero";
+		tf.tags.addName("Hero");
 	
 
 		// Remove recruitment filters
@@ -127,7 +129,7 @@ public class HeroGenerator {
 		
 		hero.name.setType("Hero");
 		if(!multihero)
-			hero.commands.add(new Command("#unique"));
+			hero.commands.add(new Command("#unique"));			
 		
 		return hero;
 	}

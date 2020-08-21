@@ -9,7 +9,7 @@
 #chanceinc "personalcommand mounted *0"
 #command "#shapechange turkey"
 #tag "notfortier 1"
-#description "can shapeshift into a turkey"
+#filterdesc "turkeyshape desc"
 #end
 
 #new magefilter
@@ -28,6 +28,7 @@
 #power 2
 #theme "wolftotem"
 #theme "totemanimal"
+#filterdesc "werewolf desc"
 #end
 
 #new magefilter
@@ -46,6 +47,7 @@
 #power 2
 #theme "wolftotem"
 #theme "totemanimal"
+#filterdesc "werewolf desc"
 #end
 
 #new magefilter
@@ -61,8 +63,7 @@
 #tag "notfortier 2"
 #command "#maxage *2"
 #power 2
-#theme "foxtotem"
-#theme "totemanimal"
+#filterdesc "werefox desc"
 #end
 
 #new magefilter
@@ -81,6 +82,7 @@
 #power 2
 #theme "foxtotem"
 #theme "totemanimal"
+#filterdesc "werefox desc"
 #end
 
 #new magefilter
@@ -99,6 +101,7 @@
 #power 2
 #theme "beartotem"
 #theme "totemanimal"
+#filterdesc "werebear desc"
 #end
 
 #new magefilter
@@ -117,9 +120,10 @@
 #power 2
 #theme "beartotem"
 #theme "totemanimal"
+#filterdesc "werebear desc"
 #end
 
-#new
+#new magefilter
 #name "werehyena"
 #type "shapeshift"
 #basechance 0.05
@@ -134,9 +138,10 @@
 #description "can shapeshift into a werehyena"
 #theme "hyenatotem"
 #theme "totemanimal"
+#filterdesc "werehyena desc"
 #end
 
-#new
+#new magefilter
 #name "werehyena2"
 #type "shapeshift"
 #basechance 0.05
@@ -151,9 +156,10 @@
 #description "can shapeshift into a werehyena"
 #theme "hyenatotem"
 #theme "totemanimal"
+#filterdesc "werehyena desc"
 #end
 
-#new
+#new magefilter
 #name "wererat"
 #type "shapeshift"
 #basechance 0.025
@@ -169,9 +175,10 @@
 #description "can shapeshift into a wererat"
 #theme "rattotem"
 #theme "totemanimal"
+#filterdesc "wererat desc"
 #end
 
-#new
+#new magefilter
 #name "werecrocodile"
 #type "shapeshift"
 #basechance 0.05
@@ -190,6 +197,7 @@
 #theme "crocodiletotem"
 #theme "lizardtotem"
 #theme "totemanimal"
+#filterdesc "werecrocodile desc"
 #end
 
 #new
@@ -211,6 +219,7 @@
 #theme "crocodiletotem"
 #theme "lizardtotem"
 #theme "totemanimal"
+#filterdesc "werecrocodile desc"
 #end
 
 #new magefilter
@@ -225,6 +234,7 @@
 #power 2
 #theme "wolftotem"
 #theme "totemanimal"
+#filterdesc "wolf desc"
 #end
 
 #new magefilter
@@ -238,6 +248,7 @@
 #command "#shapechange wingedmonkey"
 #description "can shapeshift into a winged monkey"
 #tag "notfortier 1"
+#filterdesc "wingedmonkey desc"
 #end
 
 #new magefilter
@@ -257,6 +268,7 @@
 #description "can shapeshift into a devil"
 #tag "personalmagic blood"
 #power 2
+#filterdesc "devil desc"
 #end
 
 #new
@@ -273,7 +285,7 @@
 #command "#magiccommand +10"
 #tag "path nature"
 #theme "ivy"
-#description "becomes a vine man upon death"
+#filterdesc "vineman desc"
 #power 2
 #end
 
@@ -291,7 +303,7 @@
 #command "#magiccommand +10"
 #tag "path nature"
 #theme "ivy"
-#description "becomes a vine man upon death"
+#filterdesc "vineman desc"
 #power 2
 #end
 
@@ -312,6 +324,7 @@
 #description "can shapeshift into a frost fiend"
 #tag "personalmagic blood"
 #power 2
+#filterdesc "frostfiend desc"
 #end
 
 #new magefilter
@@ -326,6 +339,7 @@
 #description "can shapeshift into a great bear"
 #theme "beartotem"
 #theme "totemanimal"
+#filterdesc "greatbear desc"
 #end
 
 #new magefilter
@@ -339,6 +353,7 @@
 #description "can shapeshift into a bear"
 #theme "beartotem"
 #theme "totemanimal"
+#filterdesc "bear desc"
 #end
 
 #new magefilter
@@ -351,6 +366,7 @@
 #description "can shapeshift into a jaguar"
 #theme "jaguartotem"
 #theme "totemanimal"
+#filterdesc "jaguar desc"
 #end
 
 #new magefilter
@@ -369,6 +385,7 @@
 #tag "notfortier 1"
 #description "can shapeshift into a deep one"
 #tag "personalmagic water"
+#filterdesc "deepone desc"
 #end
 
 #new magefilter
@@ -384,6 +401,7 @@
 #tag "personalmagic astral"
 #description "unleashes its true form of a horror on death"
 #power 2
+#filterdesc "lesserhorror desc"
 #end
 
 #new magefilter
@@ -395,7 +413,7 @@
 #command "#gcost *1.2"
 #power 2
 #tag "personalmagic death"
-#description "is able to grasp into mortal life on death, being able to avenge its own death as a ghost"
+#filterdesc "ghost desc"
 #end
 
 #new magefilter
@@ -413,7 +431,7 @@
 #tag "personalmagic death"
 #tag "notfortier 1"
 #power 2
-#description "has a pact with death, allowing it to live an another life as a ghoul after death"
+#filterdesc "ghoul desc"
 #end
 
 #new magefilter
@@ -431,7 +449,7 @@
 #tag "personalmagic death"
 #tag "notfortier 1"
 #power 2
-#description "has a pact with death, allowing it to live an another life as a ghoul after death"
+#filterdesc "ghoul desc"
 #end
 
 #new magefilter
@@ -444,6 +462,7 @@
 #description "shapeshifts into a horned serpent when harmed"
 #theme "snaketotem"
 #theme "totemanimal"
+#filterdesc "horned serpent desc"
 #end
 
 #new magefilter
@@ -457,8 +476,9 @@
 #tag "personalmagic fire"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#description "explodes as a burst of elemental energy upon death, spawning an elemental"
+#set "death"
 #power 2
+#filterdesc "felemental shift desc"
 #end
 
 #new magefilter
@@ -472,7 +492,7 @@
 #tag "personalmagic earth"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#description "explodes as a burst of elemental energy upon death, spawning an elemental"
+#filterdesc "eelemental shift desc"
 #power 2
 #end
 
@@ -489,6 +509,7 @@
 #tag "notfortier 1"
 #tag "notfortier 2"
 #power 2
+#filterdesc "aelemental shift desc"
 #end
 
 #new magefilter
@@ -503,6 +524,7 @@
 #description "explodes as a burst of elemental energy upon death, spawning an elemental"
 #tag "notfortier 1"
 #tag "notfortier 2"
+#filterdesc "welemental shift desc"
 #power 2
 #end
 
@@ -516,9 +538,9 @@
 #command "#hp -5"
 #command "#gcost +30"
 #command "#secondtmpshape metalman"
-#description "reveals its true shape of a metal man upon death"
 #power 2
 #tag "personalmagic earth"
+#filterdesc "metalman shift desc"
 #end
 
 #new magefilter
@@ -531,9 +553,9 @@
 #command "#hp -3"
 #command "#gcost +20"
 #command "#secondtmpshape metalman-small"
-#description "reveals its true shape of a metal man upon death"
 #power 2
 #tag "personalmagic earth"
+#filterdesc "metalman shift desc"
 #end
 
 #new magefilter
@@ -547,8 +569,8 @@
 #command "#gcost +30"
 #command "#secondtmpshape hugemantis"
 #tag "notfortier 1"
-#description "reveals its true form, that of a giant mantis, when mortally wounded"
 #tag "personalmagic nature"
+#filterdesc "hugemantis shift desc"
 #end
 
 #new magefilter
@@ -566,6 +588,7 @@
 #description "can shapeshift into a scorpion"
 #theme "scorpiontotem"
 #theme "totemanimal"
+#filterdesc "scorpion shift desc"
 #end
 
 #new magefilter
@@ -586,6 +609,7 @@
 #description "can shapeshift into a cave crab"
 #theme "crabtotem"
 #theme "totemanimal"
+#filterdesc "cavecrab shift desc"
 #end
 
 #new magefilter
@@ -605,6 +629,7 @@
 #description "can shapeshift into a hawk"
 #theme "hawktotem"
 #theme "totemanimal"
+#filterdesc "hawk shift desc"
 #end
 
 #new magefilter
@@ -623,6 +648,7 @@
 #description "can shapeshift into a giant toad"
 #theme "toadtotem"
 #theme "totemanimal"
+#filterdesc "giant toad shift desc"
 #end
 
 #new magefilter
@@ -638,6 +664,7 @@
 #description "can shapeshift into a great boar"
 #theme "boartotem"
 #theme "totemanimal"
+#filterdesc "greatboar shift desc"
 #end
 
 #new magefilter
@@ -654,4 +681,5 @@
 #description "can shapeshift into a giant spider"
 #theme "spidertotem"
 #theme "totemanimal"
+#filterdesc "spider shift desc"
 #end

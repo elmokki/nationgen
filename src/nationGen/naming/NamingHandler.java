@@ -1,5 +1,6 @@
 package nationGen.naming;
 
+
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
 import nationGen.nation.Nation;
@@ -32,6 +33,12 @@ public class NamingHandler {
 	{
 		SacredNamer sNamer = new SacredNamer(assets);
 		sNamer.nameSacreds(n);
+	}
+	
+	public void nameHeroes(Nation n)
+	{
+		HeroNamer hNamer = new HeroNamer (ng, assets);
+		hNamer.execute(n);
 	}
 	
 	public void nameTroops(Nation n)

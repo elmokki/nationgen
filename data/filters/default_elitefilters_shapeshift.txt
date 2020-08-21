@@ -15,6 +15,7 @@
 #theme "wolftotem"
 #theme "totemanimal"
 #price_if_command at #size 1 +5
+#filterdesc "werewolf desc"
 #end
 
 #new
@@ -33,6 +34,7 @@
 #description "can shapeshift into a werefox"
 #theme "foxtotem"
 #theme "totemanimal"
+#filterdesc "werefox desc"
 #end
 
 #new
@@ -53,6 +55,7 @@
 #theme "beartotem"
 #theme "totemanimal"
 #price_if_command at #size 1 +5
+#filterdesc "werebear desc"
 #end
 
 #new
@@ -71,6 +74,7 @@
 #theme "hyenatotem"
 #theme "totemanimal"
 #price_if_command at #size 1 +5
+#filterdesc "werehyena desc"
 #end
 
 #new
@@ -91,6 +95,7 @@
 #theme "rattotem"
 #theme "totemanimal"
 #price_if_command at #size 1 +5
+#filterdesc "wererat desc"
 #end
 
 #new
@@ -115,6 +120,7 @@
 #theme "lizardtotem"
 #theme "totemanimal"
 #price_if_command at #size 1 +5
+#filterdesc "werecrocodile desc"
 #end
 
 #new
@@ -134,7 +140,7 @@
 #command "#maxage 500"
 #tag "path death"
 #power 2
-#description "has a pact with death, allowing it to live an another life as a ghoul after death"
+#filterdesc "ghoul desc"
 #end
 
 #new
@@ -154,7 +160,7 @@
 #command "#maxage 800"
 #tag "path death"
 #power 2
-#description "has a pact with death, allowing it to live an another life as a ghoul after death"
+#filterdesc "ghoul desc"
 #end
 
 #new
@@ -169,9 +175,11 @@
 #chanceinc "pose chariot *0"
 #tag "path nature"
 #power 2
-#description "can shapeshift into a horned serpent"
 #theme "snaketotem"
 #theme "totemanimal"
+#set "wondrous"
+#prev "wondrous desc"
+#filterdesc "horned serpent desc"
 #end
 
 #new
@@ -189,7 +197,9 @@
 #command "#maxage 800"
 #tag "path earth"
 #power 3
-#description "reveals its true shape of a metal man upon death"
+#set "death"
+#prev "start"
+#filterdesc "metalman shift desc"
 #end
 
 #new
@@ -207,7 +217,9 @@
 #command "#maxage 800"
 #tag "path earth"
 #power 3
-#description "reveals its true shape of a metal man upon death"
+#set "death"
+#prev "start"
+#filterdesc "metalman shift desc"
 #end
 
 #new
@@ -223,9 +235,14 @@
 #command "#gcost +5"
 #chanceinc "pose mounted *0"
 #chanceinc "pose chariot *0"
-#description "can shapeshift into a hawk"
 #theme "hawktotem"
 #theme "totemanimal"
+#set "wondrous"
+#prev "wondrous desc"
+#synonym "the power to assume the form of a hawk"
+#synonym "the shifting shape of a hawk"
+#synonym "the shape of their hawk totem"
+#filterdesc "hawk shift desc"
 #end
 
 #new
@@ -240,9 +257,14 @@
 #command "#gcost +10"
 #chanceinc "pose mounted *0"
 #chanceinc "pose chariot *0"
-#description "can shapeshift into a giant toad"
 #theme "toadtotem"
 #theme "totemanimal"
+#set "wondrous"
+#prev "wondrous desc"
+#synonym "the power to assume the form of a toad"
+#synonym "the shifting shape of a great toad"
+#synonym "the shape of their toad totem"
+#filterdesc "giant toad shift desc"
 #end
 
 #new
@@ -254,9 +276,14 @@
 #command "#gcost +15"
 #chanceinc "pose mounted *0"
 #chanceinc "pose chariot *0"
-#description "can shapeshift into a great boar"
 #theme "boartotem"
 #theme "totemanimal"
+#set "wondrous"
+#prev "wondrous desc"
+#synonym "the power to assume the form of a boar"
+#synonym "the shifting shape of a great boar"
+#synonym "the shape of their boar totem"
+#filterdesc "greatboar shift desc"
 #end
 
 #new
@@ -271,7 +298,12 @@
 #chanceinc "pose chariot *0"
 #tag "notfortier 1"
 #tag "notfortier 2"
-#description "can shapeshift into a giant spider"
 #theme "spidertotem"
 #theme "totemanimal"
+#set "wondrous"
+#prev "wondrous desc"
+#synonym "the power to assume the form of a spider"
+#synonym "the shifting shape of a great spider"
+#synonym "the shape of their spider totem"
+#filterdesc "spider shift desc"
 #end
