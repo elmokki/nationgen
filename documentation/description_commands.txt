@@ -1,0 +1,31 @@
+This file lists commands pertaining to descriptions that can be used in description/filter files to build unit descriptions. All of these technically apply to filters; they can be used directly in any filters defined in /data/filters, but most of them are used in /data/descriptions. Filters from /data/descriptions that are used only for description definitions are not considered "applied" to units that use them in their description.
+
+#filterdesc <filter name>
+If defined, this filter will ignore its other description commands and use whatever description commands are found in the named filter, which must be located somewhere in the /data/descriptions folder. Unit filters can use any of the following commands directly, but #filterdesc is recommended so that multiple versions of a filter can share a common description.
+
+#set <set name>
+Used in 2 ways: First, all unit filters with the same set are lumped together by set into sentences (currently, this is hardcoded to use the following sets: "mage", "priest", "army role", "troop", "commander", "terrain", "lineage", "recruitment", "physique", "skill", "immunity", "vulnerability", "senses", "misc", "wondrous", "shapeshift", "retinue", "death".) 
+Second, when filters link to each other they target a specified set, which nationgen will select a filter from at random. Random selection within a set will respect #basechance and #chanceinc, so if you want a description chunk to discriminate based on a unit's properties you can create multiple filters with the same set and use #chanceincs to choose among them.
+
+#description <description>
+#synonym <description>
+A filter with 1 or more #synonyms set will ignore #description and choose among synonyms randomly. After a synonym is picked, other units in the same nation with the same filter will use the same synonym for consistency across a given nation, although if there are multiple filters in the same #set they will track synonyms separately. Description chunks do not need leading or trailing spaces or punctuation in most circumstances, they will be inserted as needed by the description builder.
+
+#uniquedescription
+If set, a filter will always select a new #synonym at random instead of matching previously used synonyms as above.
+
+#next <filter set>
+#prev <filter set>
+The very first filter in a given root #set will append a random filter from the set specified in #prev to the beginning of the sentence. The very last filter in a given root #set will append a random filter from the set specified in #next to the end of the sentence. Both #prev and #next will recursively look for further #prev and #next to chain together longer sentences, but only in a single direction (a filter grabbed from #prev will look at its own #prev command to be inserted in front of it and so on until a description with no #prev defined is reached, but a filter grabbed from #prev will not load further filters from #next and vice-versa.) 
+
+#bridge <filter set>
+Used to join sentences together to cut down on sentence breaks. The last filter in a root #set will append a random filter from the set specified by #bridge (after adding any descriptions from #next), and the next sentence will skip the very earliest #prev description. The bridge will be disregarded if it's the last sentence in the description or if the sentence already started with a previous sentence's bridge. 
+
+#allowsuperlative
+If set, a filter's description may be "punched up" with a generic adjective from the set "superlative". Each nation will only pick a single filter to be modified this way, and superlatives will only appear if the chosen filter is the only filter in its set.
+
+#extendeddescription <description>
+Sets a more detailed description that will be appended only in situations where the unit's whole description is short enough to warrant extra padding (will never be used if there are multiple filters in the same sentence, or if there are 5+ sentences.) The #extendeddescription is tacked on at the end of the #next chain and will negate any #bridge.
+
+#negative
+If set, filters defined as negative traits will always appear at the end of the sentence they appear in and will be separated from any non-negative traits by the conjunction "but". (Helpful tip: because they are ordered to appear after any non-negative traits, you can give them a unique #prev that will only ever be used if only negative traits are present.)

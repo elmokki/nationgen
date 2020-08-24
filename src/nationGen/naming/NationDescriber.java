@@ -41,7 +41,7 @@ public class NationDescriber {
 	}
 	
 	//if a filter has multiple possible description keys, this randomly selects one and logs it
-	//previously logged synonyms are reused within the same nation for consistency
+	//previously logged synonyms are reused within the same nation for consistency, except where filters specify otherwise
 	public String getRandomDescription(Filter f)
 	{
 		String temp = "";
@@ -182,6 +182,9 @@ public class NationDescriber {
 				boolean hasDesc = !getRandomDescription(tempFilter).isEmpty();
 				boolean negative = false;
 					
+				//build backwards-facing sentence chain
+				//if previous sentence is looking for a segue, force a backwards look even if current sentence is only forwards-looking
+				//if current filter has no backwards or forwards look, it can safely be assumed to be empty and can be skipped
 				if (!tempFilter.prevDesc.isEmpty() || (bridge != null && !tempFilter.nextDesc.isEmpty()))
 				{
 					hasDesc = true;
@@ -195,9 +198,10 @@ public class NationDescriber {
 					{			
 						hasDesc = true;
 												
-						if (i > 0 || (bridge == null || !tempFilter.prevDesc.isEmpty() || tempFilter.nextDesc.isEmpty()))
+						//skip the first description in a forward-looking sentence if it is being replaced by a segue from a bridge  
+						if (i > 0 || bridge == null || !tempFilter.prevDesc.isEmpty() || tempFilter.nextDesc.isEmpty())
 						{
-							//insert up to 1 random superlative													
+							//insert up to 1 random superlative, which may or may not get used depending on quantity of filters												
 							if (superlative == null && tempFilter.tags.containsName("allowsuperlative"))
 								superlative = tempFilter;
 							
@@ -236,7 +240,7 @@ public class NationDescriber {
 							desc = expandNextDesc(desc, tempFilter, u, desc.length());
 						}
 						
-						//if we've already joined 2 sentences, do not bridge to a 3rd
+						//if we've already joined 2 sentences, do not create a runon by bridging to a 3rd
 						if (hasDesc)
 						{
 							if (bridge != null)
@@ -245,7 +249,7 @@ public class NationDescriber {
 								bridge = tempFilter.bridgeDesc;
 						}
 						
-						//if the description is short, elaborate freely on filters if possible
+						//if the description is short enough, elaborate freely on filters if possible
 						if (descSets.values().size() < 5 && descSets.get(k).size() == 1)
 						{
 							String tempDesc = tempFilter.tags.getString("extendeddescription").map(s -> " " + s).orElse(""); 
