@@ -130,7 +130,8 @@
 #chanceinc "magic death 1"
 #chanceinc "shape ghoul 20"
 #chanceinc "shape ghoul-small 20"
-#chanceinc "pose mounted *0"
+#chanceinc pose mounted *0
+#chanceinc pose chariot *0
 #chanceinc personalcommand size below 2 *0
 #chanceinc "personalcommand undead *0"
 #chanceinc "posetag ghoul *0"
@@ -150,7 +151,8 @@
 #chanceinc "magic death 1"
 #chanceinc "shape ghoul 20"
 #chanceinc "shape ghoul-small 20"
-#chanceinc "pose mounted *0"
+#chanceinc pose mounted *0
+#chanceinc pose chariot *0
 #chanceinc personalcommand size above 2 *0
 #chanceinc "personalcommand undead *0"
 #chanceinc "posetag ghoul *0"
@@ -190,6 +192,8 @@
 #chanceinc "shape metalman 10"
 #chanceinc "shape metalman-small 10"
 #chanceinc personalcommand #size below 2 *0
+#chanceinc pose mounted *0
+#chanceinc pose chariot *0
 #command "#secondshape metalman"
 #command "#hp -5"
 #command "#gcost +30"
@@ -210,6 +214,8 @@
 #chanceinc "shape metalman 10"
 #chanceinc "shape metalman-small 10"
 #chanceinc personalcommand #size above 2 *0
+#chanceinc pose mounted *0
+#chanceinc pose chariot *0
 #command "#secondshape metalman-small"
 #command "#hp -3"
 #command "#gcost +20"
