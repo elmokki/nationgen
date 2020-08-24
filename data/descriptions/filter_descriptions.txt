@@ -71,7 +71,6 @@
 #synonym "low light vision"
 #set "senses"
 #prev "senses desc"
-#allowsuperlative
 #extendeddescription "and can fight more effectively in the dark"
 #end
 
@@ -282,6 +281,7 @@
 #prev "negative"
 #synonym "vulnerable to cold"
 #synonym "sensitive to cold"
+#negative
 #end
 
 #new
@@ -291,6 +291,7 @@
 #prev "negative"
 #synonym "vulnerable to fire"
 #synonym "sensitive to heat"
+#negative
 #end
 
 #new
@@ -612,7 +613,7 @@
 #synonym "%tobe% idle dilettantes"
 #synonym "%tobe% lazy gadabouts"
 #negative
-#extendeddescription "and lands with strong work ethics %tobe% not conducive to %pronoun_pos% research"
+#extendeddescription "and lands with strong work ethics are not conducive to %pronoun_pos% research"
 #negative
 #end
 
@@ -1362,14 +1363,14 @@
 #name "metalman shift desc"
 #set "death"
 #prev "start"
-#description "%tobe% clever mechanical simulacra imbued with life and will reveal %pronoun_pos% mechanical form upon death"
+#description "%tohave% been given mechanical form by a clever artificier and will reveal %pronoun_pos% mechanical body upon death"
 #end
 
 #new
 #name "hugemantis shift desc"
 #set "death"
 #prev "start"
-#description "%tobe% hosts to horrifying insect parasites that will burst out upon death"
+#description "%tobe% host to horrifying insect parasites that will burst out upon death"
 #end
 
 #new
@@ -2196,7 +2197,7 @@
 #end
 
 #new
-#name "physique end Hero"
+#name "physique end hero"
 #set "physique end"
 #basechance 0
 #chanceinc (unittag Hero) 1
