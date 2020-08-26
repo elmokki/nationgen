@@ -1811,3 +1811,66 @@
 #nogcost
 #mount
 #end
+
+#new secondshape
+#name "hippomount"
+#command "#name 'Hippopotamus'"
+#command "#spr1 ./graphics/mounts/standard/hippo.png"
+#command "#spr2 shift"
+#command "#size 5"
+#command "#hp 54"
+#command "#prot 14"
+#command "#mr 5"
+#command "#mor 8"
+#command "#str 22"
+#command "#att 8"
+#command "#def 8"
+#command "#prec 5"
+#command "#ap 16"
+#command "#mapmove 12"
+#command "#enc 3"
+#command "#weapon 20"
+#command "#weapon 397"
+#command "#undisciplined"
+#command "#animal"
+#command "#trample"
+#command "#berserk +2"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#quadruped"
+#nowayback
+#nogcost
+#mount
+#end
+
+---- Version of hippos that can have their riders replaced
+
+#new secondshape
+#name "hipporemount"
+#command "#name 'Hippopotamus'"
+#command "#spr1 ./graphics/mounts/standard/hippo.png"
+#command "#spr2 shift"
+#command "#size 5"
+#command "#hp 52"
+#command "#prot 14"
+#command "#mr 6"
+#command "#mor 10"
+#command "#str 22"
+#command "#att 8"
+#command "#def 8"
+#command "#prec 5"
+#command "#ap 16"
+#command "#mapmove 12"
+#command "#enc 3"
+#command "#weapon 20"
+#command "#weapon 397"
+#command "#undisciplined"
+#command "#animal"
+#command "#trample"
+#command "#berserk +2"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#quadruped"
+#nogcost
+#mount
+#end

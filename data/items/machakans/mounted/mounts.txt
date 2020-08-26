@@ -515,3 +515,31 @@
 #tag "guaranteedprefix lion"
 #theme "flying"
 #enditem
+
+#newitem
+#name "hippo"
+#basechance 0.5
+#chanceinc "nationcommand #idealcold above 1 *0"
+#chanceinc "nationcommand #idealcold above 0 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/standard/hippo.png
+#armor
+#offsetx 35
+#offsety 52
+#define "#size 5"
+#define "#mapmove 12"
+#define "#ap 16"
+#define "#mounted"
+#define "#weapon 417"
+#define "#weapon nostr_kick_20"
+#define "#secondtmpshape hippomount"
+#define "#gcost +75"
+#define "#ressize 2"
+#define "#enc 4"
+#define "#swampsurvival"
+#description "If the rider dies, the hippopotamus will rampage through its companion's slayers before lumbering off the battlefield."
+#tag "animal hippo"
+#tag "guaranteedprefix hippo"
+#theme "heavy"
+#enditem
