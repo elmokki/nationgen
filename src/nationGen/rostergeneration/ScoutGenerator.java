@@ -315,11 +315,20 @@ public class ScoutGenerator extends TroopGenerator {
 	{
 		Filter tf = new Filter(nationGen);
 		if(tier == 3)
+		{
 			tf.name = "Assassin";
+			tf.tags.add("filterdesc", "assassin desc");
+		}
 		else if(tier == 2)
+		{
 			tf.name = "Spy";
+			tf.tags.add("filterdesc", "spy desc");
+		}			
 		else
+		{
 			tf.name = "Scout";
+			tf.tags.add("filterdesc", "scout desc");
+		}
 		
 		boolean elite = false;
 		boolean sacred = false;
@@ -399,5 +408,6 @@ public class ScoutGenerator extends TroopGenerator {
 		tf.commands.add(Command.args("#noleader"));
 		u.appliedFilters.add(tf);
 
+		assets.initializeFilters(List.of(tf),"ScoutGenerator");
 	}
 }
