@@ -1,8 +1,8 @@
 #newitem
 #id beansidhebase
 #gameid -1
-#sprite /graphics/sidhe/bean/basesprite_mounted.png
-#recolormask /graphics/sidhe/bean/basesprite_mounted_recolormask.png
+#sprite /graphics/sidhe/bean/basesprite.png
+#recolormask /graphics/sidhe/bean/basesprite_recolormask.png
 #tag "noble"
 #define "#gcost 25"
 #define "#rpcost 25000"
@@ -11,14 +11,15 @@
 #define "#mr 14"
 #define "#mor 12"
 #define "#str 12"
-#define "#att 12"
+#define "#att 13"
 #define "#def 13"
 #define "#prec 12"
 #define "#darkvision 50"
 #define "#illusion"
+#define "#ironvul 1"
 #define "#spellsinger"
 -- #define "#stealthy 0" -- granted by poses so chariots aren't stealthy
-#define "#maxage 300"
+#define "#maxage 1000"
 #define "#forestsurvival"
 #define "#mapmove 14"
 #define "#ap 13"
