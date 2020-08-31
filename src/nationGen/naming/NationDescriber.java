@@ -371,7 +371,7 @@ public class NationDescriber {
 
 	private void describeCommanders()
 	{
-		String[] roles = {"commanders","priests","mages"};
+		String[] roles = {"commanders","priests","mages","scouts","specialcoms"};
 					
 		List<Filter> descs = ChanceIncHandler.retrieveFilters("commanderdescriptions", "commanderdescs", assets.descriptions, null, n.races.get(0));
 

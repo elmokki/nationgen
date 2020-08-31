@@ -589,6 +589,15 @@
 #end
 
 #new
+#name "dowser desc"
+#synonym "blood hunting"
+#synonym "obtaining blood slaves"
+#extendeddescription "and can find slaves with great efficiency, although they have no other magical ability"
+#set "skill"
+#prev "skill desc"
+#end
+
+#new
 #name "researcher desc"
 #set "skill"
 #prev "skill desc"
@@ -615,6 +624,15 @@
 #negative
 #extendeddescription "and lands with strong work ethics are not conducive to %pronoun_pos% research"
 #negative
+#end
+
+#new
+#name "inspiring researcher desc"
+#set "skill"
+#prev "skill desc"
+#synonym "organizing magical research"
+#synonym "facilitating magical research"
+#extendeddescription "and will improve the efficiency of all researchers in their province"
 #end
 
 #new 
@@ -2005,6 +2023,133 @@
 #prev "skill desc"
 #end
 
+#new
+#name "forager desc"
+#synonym "foraging"
+#synonym "rustling food"
+#extendeddescription "and %pronoun% can find extra food on the march"
+#set "skill"
+#prev "skill desc"
+#end
+
+#new
+#name "imp summoner desc"
+#set "skill"
+#prev "skill desc"
+#synonym "summoning imps"
+#synonym "contracting with infernal forces"
+#extendeddescription "and can conjure imps to serve them for free"
+#end
+
+#new
+#name "frog summoner desc"
+#set "skill"
+#prev "skill desc"
+#synonym "taming frogs"
+#synonym "breeding frogs"
+#extendeddescription "and can train a few frogs per month"
+#end
+
+#new
+#name "wolf summoner desc"
+#set "skill"
+#prev "skill desc"
+#synonym "taming wolves"
+#synonym "breeding wolves"
+#extendeddescription "and can train one wolf per month"
+#end
+
+#new
+#name "dog summoner desc"
+#set "skill"
+#prev "skill desc"
+#synonym "taming dogs"
+#synonym "breeding dogs"
+#extendeddescription "and can train one dog per month"
+#end
+
+#new
+#name "goat summoner desc"
+#set "skill"
+#prev "skill desc"
+#synonym "taming goat"
+#synonym "breeding goats"
+#extendeddescription "and can train one goat per month"
+#end
+
+#new
+#name "swan summoner desc"
+#set "skill"
+#prev "skill desc"
+#synonym "taming swans"
+#synonym "breeding swans"
+#extendeddescription "and can train one swan per month"
+#end
+
+#new
+#name "monkey summoner desc"
+#set "skill"
+#prev "skill desc"
+#synonym "taming monkeys"
+#synonym "breeding monkeys"
+#extendeddescription "and can train one monkey per month"
+#end
+
+#new
+#name "hawk summoner desc"
+#set "skill"
+#prev "skill desc"
+#synonym "taming hawks"
+#synonym "breeding hawks"
+#extendeddescription "and can train one hawk per month"
+#end
+
+#new
+#name "ant summoner desc"
+#set "skill"
+#prev "skill desc"
+#synonym "taming giant ants"
+#synonym "breeding giant ants"
+#extendeddescription "and can train a few ants per month"
+#end
+
+#new
+#name "fly summoner desc"
+#set "skill"
+#prev "skill desc"
+#synonym "taming giant flies"
+#synonym "breeding giant flies"
+#extendeddescription "and can train a few flies per month"
+#end
+
+#new
+#name "dragonfly summoner desc"
+#set "skill"
+#prev "skill desc"
+#synonym "taming giant dragonflies"
+#synonym "breeding giant dragonflies"
+#extendeddescription "and can train a few dragonflies per month"
+#end
+
+#new
+#name "spider summoner desc"
+#set "skill"
+#prev "skill desc"
+#synonym "taming giant spiders"
+#synonym "breeding giant spiders"
+#extendeddescription "and can train a few spiders per month"
+#end
+
+#new
+#name "scorpion summoner desc"
+#set "skill"
+#prev "skill desc"
+#synonym "taming scorpions"
+#synonym "breeding scorpions"
+#extendeddescription "and can train a few scorpions per month"
+#end
+
+
 -- connective tissue
 
 #new
@@ -2033,7 +2178,7 @@
 #synonym "%Pronoun%"
 #synonym "%Pronoun%"
 #synonym "%Pronoun%"
-#synonym "%pronoun_pos% %role%"
+#synonym "%nation%'s %role%"
 #synonym "These %role%"
 #synonym "The %role% of %nation%"
 #synonym "The %race_plural% of %nation%"
