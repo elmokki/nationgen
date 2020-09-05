@@ -1,6 +1,19 @@
 --- Druid duds
 
 #newitem
+#name druid_barechest
+#gameid -1
+#armor
+#sprite /graphics/firbolg/armor/robes/druid_barechest.png
+#eliteversion "druid_leather"
+#eliteversion "druid_cloth_pale"
+#eliteversion "druid_cloth_bright"
+#eliteversion "druid_iron"
+#eliteversion "druid_bronze"
+#tag "tier 1"
+#enditem
+
+#newitem
 #name druid_leather
 #gameid 5
 #armor
@@ -158,9 +171,108 @@
 #tag "tier 3"
 #enditem
 
+#newitem
+#name robes_fomorian_silver_dark
+#sprite /graphics/firbolg/armor/robes/fomorian_long_silver.png
+#recolormask /graphics/firbolg/armor/robes/fomorian_long_recolormask1.png
+#eliteversion "robes_fomorian_gold_dark"
+#eliteversion "robes_fomorian_fancy_silver_dark"
+#gameid 158
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#name robes_fomorian_silver_light
+#sprite /graphics/firbolg/armor/robes/fomorian_long_silver.png
+#recolormask /graphics/firbolg/armor/robes/fomorian_long_recolormask2.png
+#eliteversion "robes_fomorian_gold_light"
+#eliteversion "robes_fomorian_fancy_silver_light"
+#gameid 158
+#armor
+#tag "tier 1"
+#tag "tier 2"
+#enditem
+
+#newitem
+#name robes_fomorian_gold_dark
+#sprite /graphics/firbolg/armor/robes/fomorian_long_gold.png
+#recolormask /graphics/firbolg/armor/robes/fomorian_long_recolormask1.png
+#eliteversion "robes_fomorian_fancy_gold_dark"
+#gameid 158
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#name robes_fomorian_gold_light
+#sprite /graphics/firbolg/armor/robes/fomorian_long_gold.png
+#recolormask /graphics/firbolg/armor/robes/fomorian_long_recolormask2.png
+#eliteversion "robes_fomorian_fancy_gold_light"
+#gameid 158
+#armor
+#tag "tier 2"
+#enditem
+
+#newitem
+#name robes_fomorian_fancy_silver_dark
+#sprite /graphics/firbolg/armor/robes/fomorian_fancy_silver.png
+#recolormask /graphics/firbolg/armor/robes/fomorian_fancy_recolormask1.png
+#eliteversion "robes_fomorian_fancy_gold_dark"
+#eliteversion "robes_fomorian_fancy_gold_light"
+#gameid 158
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name robes_fomorian_fancy_silver_light
+#sprite /graphics/firbolg/armor/robes/fomorian_fancy_silver.png
+#recolormask /graphics/firbolg/armor/robes/fomorian_fancy_recolormask2.png
+#eliteversion "robes_fomorian_fancy_gold_dark"
+#eliteversion "robes_fomorian_fancy_gold_light"
+#gameid 158
+#armor
+#tag "tier 2"
+#tag "tier 3"
+#enditem
+
+#newitem
+#name robes_fomorian_fancy_gold_dark
+#sprite /graphics/firbolg/armor/robes/fomorian_fancy_gold.png
+#recolormask /graphics/firbolg/armor/robes/fomorian_fancy_recolormask1.png
+#eliteversion "robes_fomorian_fancy_gold_light"
+#gameid 158
+#armor
+#tag "tier 3"
+#enditem
+
+#newitem
+#name robes_fomorian_fancy_gold_light
+#sprite /graphics/firbolg/armor/robes/fomorian_fancy_gold.png
+#recolormask /graphics/firbolg/armor/robes/fomorian_fancy_recolormask2.png
+#eliteversion "robes_fomorian_fancy_gold_dark"
+#gameid 158
+#armor
+#tag "tier 3"
+#enditem
 
 
 --- Imperial robes (monochrome)
+#newitem
+#id robes_ermor_barechest
+#gameid -1
+#sprite /graphics/firbolg/armor/robes/ermor_barechest.png
+#eliteversion "robes_ermor_pale"
+#eliteversion "robes_ermor_middling"
+#eliteversion "robes_ermor_dull"
+#eliteversion "robes_ermor_muddled"
+#armor
+#tag "tier 1"
+#enditem
+
 #newitem
 #id robes_ermor_brown
 #gameid 158
