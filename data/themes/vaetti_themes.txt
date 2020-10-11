@@ -36,7 +36,6 @@
 #themeinc theme leather *0.5
 #themeinc theme naked *0.05
 #themeinc theme primitive *0.05
-#racedefinition "#pose vaetticrossbows"
 #endtheme
 
 -- Demographic themes (mandatory)
@@ -44,14 +43,16 @@
 #newtheme
 #type demographic
 #name rimvaettir_only
-#basechance 0.15
+#chanceinc era 1 *2
+#chanceinc era 3 *0.25
+#basechance 0.1
 #themeinc theme ice *8
 #themeinc theme deer *2
 #themeinc theme bear *4
 #themeinc theme wolf *6
 #themeinc theme boar *3
 #themeinc theme lion *0.25
-#themeinc theme tiger *0.25
+#themeinc theme spider *0.25
 #racedefinition "#pose rimvaettirtroops"
 #racedefinition "#pose rimvaettirmages"
 #racedefinition "#pose rimvaettirelites"
@@ -59,13 +60,14 @@
 #racedefinition "#magicpriority water 20"
 #racedefinition "#magicpriority death 3"
 #racedefinition "#magicpriority fire 0.01"
-#raceprefix "rimvaettir"
 #endtheme
 
 #newtheme
 #type demographic
 #name rimvaettir_leaders
-#basechance 0.35
+#chanceinc era 1 *2
+#chanceinc era 3 *0.5
+#basechance 0.25
 #themeinc theme ice *5
 #themeinc theme deer *2
 #themeinc theme bear *4
@@ -83,13 +85,13 @@
 #racedefinition "#magicpriority death 2"
 #racedefinition "#magicpriority blood 2"
 #racedefinition "#magicpriority fire 0.01"
-#raceprefix "rimvaettir"
 #endtheme
 
 #newtheme
 #type demographic
 #name mixed_rimvaettir
-#basechance 0.6
+#basechance 0.4
+#chanceinc era 3 *0.5
 #themeinc theme ice *5
 #themeinc theme deer *2
 #themeinc theme bear *4
@@ -109,13 +111,13 @@
 #racedefinition "#magicpriority death 2"
 #racedefinition "#magicpriority blood 2"
 #racedefinition "#magicpriority fire 0.01"
-#raceprefix "rimvaettir"
 #endtheme
 
 #newtheme
 #type demographic
 #name rimvaettir_elites
 #basechance 0.4
+#chanceinc era 3 *1.5
 #themeinc theme ice *5
 #themeinc theme deer *2
 #themeinc theme bear *4
@@ -129,13 +131,14 @@
 #racedefinition "#nationcommand '#idealcold 3'"
 #racedefinition "#magicpriority water 6"
 #racedefinition "#magicpriority fire 0.25"
-#raceprefix "rimvaettir"
 #endtheme
 
 #newtheme
 #type demographic
 #name vaetti_only
 #basechance 2
+#chanceinc era 1 *0.5
+#chanceinc era 3 *2
 #racedefinition "#pose vaettitroops"
 #racedefinition "#pose vaettimages"
 #racedefinition "#pose vaetticavalry"
@@ -153,7 +156,7 @@
 #themeinc theme advanced *0.5
 #themeinc theme iron *0.5
 #themeinc theme bronze *0.5
-#themeinc theme ice *0.1
+#themeinc theme ice *1
 #themeinc theme wood *2
 #themeinc theme leather *2
 #themeinc theme naked *1
@@ -332,7 +335,7 @@
 #themeinc theme advanced *1
 #themeinc theme iron *1
 #themeinc theme bronze *1
-#themeinc theme ice *0.5
+#themeinc theme ice *0.1
 #themeinc theme wood *1
 #themeinc theme leather *2
 #themeinc theme naked *0.5
@@ -367,7 +370,7 @@
 #themeinc theme advanced *0.5
 #themeinc theme iron *0.5
 #themeinc theme bronze *0.5
-#themeinc theme ice *0.25
+#themeinc theme ice *0.1
 #themeinc theme wood *1
 #themeinc theme leather *2
 #themeinc theme naked *2
@@ -405,7 +408,7 @@
 #themeinc theme advanced *1
 #themeinc theme iron *1
 #themeinc theme bronze *1
-#themeinc theme ice *0.25
+#themeinc theme ice *0.5
 #themeinc theme wood *1
 #themeinc theme leather *2
 #themeinc theme naked *1
@@ -518,7 +521,6 @@
 #racedefinition "#unitcommand '#rpcost +3'"
 #racedefinition "#unitcommand '#mr -2'"
 #racedefinition "#unitcommand '#mor +2'"
-#racedefinition "#pose vaetticrossbows"
 #racedefinition "#generationchance mounted 0.1"
 #racedefinition "#magicpriority nature 3"
 #racedefinition "#magicpriority death 7"

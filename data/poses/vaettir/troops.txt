@@ -210,3 +210,43 @@
 
 #generateitem 1 bonusweapon
 #endpose
+
+------- Crossbowmen
+
+#newpose
+#name crossbowmen
+#role "ranged"
+#role "scout"
+
+#theme "advanced"
+
+#basechance 0
+#chanceinc racetheme advanced 0.7
+
+#command "#stealthy +0"
+
+#renderorder "shadow cloakb basesprite mount shirt legs quiver bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/vaettir/normal/bases.txt
+#load shadow /data/items/vaettir/normal/shadow.txt
+
+#load hands /data/items/vaettir/normal/hands.txt
+
+#load cloakf /data/items/vaettir/normal/cloakf.txt
+#load cloakb /data/items/vaettir/normal/cloakb.txt
+
+#load armor /data/items/vaettir/normal/armor.txt
+#load armor /data/items/vaettir/normal/naked.txt
+#load helmet /data/items/vaettir/normal/helmet.txt
+#load legs /data/items/vaettir/normal/legs.txt
+#load weapon /data/items/vaettir/ranged/xbows.txt
+
+#load quiver /data/items/vaettir/ranged/bonusranged.txt
+#load bonusweapon /data/items/vaettir/ranged/archerweapon.txt
+
+#generateitem 1 bonusweapon
+
+#maxunits 1
+#maxvarieties 1
+
+#endpose
