@@ -315,6 +315,7 @@
 #name "moose riders (bow)"
 #basechance 0
 #chanceinc primaryrace vaetti 10
+#chanceinc racetheme rimvaettir_only *0
 #command "#copystats 1085"
 #command "#copyspr 1085"
 #caponlychance 0.5
@@ -325,6 +326,7 @@
 #basechance 0
 #chanceinc primaryrace vaetti 10
 #chanceinc racetheme not settled *0
+#chanceinc racetheme rimvaettir_only *0
 #command "#copystats 3415"
 #command "#copyspr 3415"
 #caponlychance 0.5
@@ -345,6 +347,7 @@
 #name "pygmy_mammoth_vaetti"
 #basechance 0
 #chanceinc "primaryrace vaetti 10"
+#chanceinc "racetheme rimvaettir_only *0"
 #chanceinc "nationcommand idealcold below 2 *0.5"
 #chanceinc "nationcommand idealcold below 1 *0.2"
 #chanceinc "nationcommand idealcold below 0 *0.2"

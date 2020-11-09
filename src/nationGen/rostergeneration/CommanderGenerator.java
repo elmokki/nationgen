@@ -555,7 +555,7 @@ public class CommanderGenerator extends TroopGenerator {
 					else
 					{
 						int amount = r.nextInt(2);
-						com.commands.add(Command.args("#taskmaster", "+" +amount + 1));
+						com.commands.add(Command.args("#taskmaster", "+" + (amount + 1)));
 						com.commands.add(Command.args("#gcost", "+" + (amount * 5)));
 					}
 				}
