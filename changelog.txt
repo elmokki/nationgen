@@ -1,5 +1,8 @@
-﻿0.7.0 (?th of June 2020)
+﻿0.7.0-RC11 (13th of January 2021)
 ----------------------------------------------------------
+
+
+Note: This version may contain extra stuff, including unfinished content. It should be disabled but might not be. Large parts of changelog were composed quickly based on commits. 
 
 Code
 ----------------------------------------------------------
@@ -19,9 +22,27 @@ Content
 - Some more elite/sacred/mage werefoo filters
 - Snake and swan-neck arms for size-2 foulspawn
 - #minsizeleader national filters
-
-
-
+- Charge body also gives shock resist 4
+- Undead encumberance fix
+- Tweaked giant tags and giant_forts eligability
+- Minimum leader size filters
+- Vanir serf theme is able to show up
+- Fix lack of Jotun snow movement
+- Added a way to filter by recruit type in unit command restriction combobox
+- H3 extra mages are slow to recruit
+- Capped adjusted mage MR at 18
+- Mage MR adjustment now takes guaranteed randoms into account
+- Spies default to rpcost 2 to match vanilla Dominions
+- Fixed and cleaned up leadership calculation for mages/priests
+- Tiny adjustment to extra mage chances
+- Rimvaettir poses
+- Fixed normal vaettir offhand weapon graphic generation
+- Overhauled and expanded descriptions for units. Includes documentation.
+- Shapeshift filters exclude mounted/chariots (in part to avoid issues with certain mounts)
+- Hippos!
+- Sidhe/Vanir ages fixed: This changes recpoints somewhat closer to vanilla.
+- Fir bolg robes
+- Fixed: Elite commanders in slaver nations could get +11 taskmaster due to a +1 bonus being concatenated instead of added.
 
 0.7.0-RC10 (9th of May 2020)
 ----------------------------------------------------------
