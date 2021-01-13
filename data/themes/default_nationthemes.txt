@@ -81,8 +81,8 @@
 #type spread
 #basechance 0
 #command "#spreadcold 3"
-#chanceinc nationcommand idealcold below -1 0.05
-#chanceinc nationcommand idealcold below -2 0.25
+#chanceinc nationcommand idealcold above 1 0.05
+#chanceinc nationcommand idealcold above 2 0.25
 #desc "Spreads cold"
 #magicpriority water 4
 #end
@@ -92,7 +92,7 @@
 #type spread
 #basechance 0
 #command "#spreadcold 5"
-#chanceinc nationcommand idealcold below -2 0.125
+#chanceinc nationcommand idealcold above 2 0.125
 #desc "Spreads cold"
 #magicpriority water 8
 #end
@@ -102,8 +102,8 @@
 #type spread
 #basechance 0
 #command "#spreadheat 3"
-#chanceinc nationcommand idealcold above 1 0.05
-#chanceinc nationcommand idealcold above 2 0.25
+#chanceinc nationcommand idealcold below -1 0.05
+#chanceinc nationcommand idealcold below -2 0.25
 #desc "Spreads heat"
 #magicpriority fire 4
 #end
@@ -113,7 +113,7 @@
 #type spread
 #basechance 0
 #command "#spreadheat 5"
-#chanceinc nationcommand idealcold above 2 0.125
+#chanceinc nationcommand idealcold below -2 0.125
 #magicpriority fire 8
 #desc "Spreads heat"
 #end
