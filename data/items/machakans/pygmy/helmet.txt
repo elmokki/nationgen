@@ -2,13 +2,15 @@
 
 #newitem
 #id bald
-#basechance 2
+#basechance 4
 #gameid -1
 #armor
+#theme "naked"
+#theme "primitive"
 #enditem
 
 
---- Actual Helmets
+--- Caps
 
 #newitem
 #id leather_cap
@@ -17,15 +19,6 @@
 #armor
 #description "Despite looking like a regular headdress, this pygmy actually has a leather cap."
 #theme "leather"
-#enditem
-
-#newitem
-#id iron_cap
-#gameid 20
-#sprite /graphics/machakans/helmets/pygmy/headress_machakan.png
-#armor
-#description "Despite looking like a regular headdress, this pygmy actually has an iron cap."
-#theme "iron"
 #enditem
 
 
@@ -40,15 +33,5 @@
 #description "This pygmy has a magical headress that makes it immune to small bugs and other such weak attacks."
 #command "#invulnerable +5"
 #tag "eliteversion headdress_large"
-#enditem
-
-#newitem
-#id headdress_large
-#gameid -1
-#sprite /graphics/machakans/helmets/pygmy/headress_mictlan.png
-#recolormask /graphics/machakans/helmets/pygmy/headress_mictlan_recolormask.png
-#armor
-#description "This pygmy has a magical headress that makes it immune to dog maulings and other such attacks."
-#command "#invulnerable +10"
-#theme sacred
+#theme "primitive"
 #enditem
