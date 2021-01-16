@@ -100,6 +100,6 @@ public class MagicAccessRestriction extends TwoListRestrictionWithComboBox<Strin
     @Override
     public RestrictionType getType()
     {
-        return RestrictionType.MageWithAccess;
+        return RestrictionType.MagicAccess;
     }
 }
