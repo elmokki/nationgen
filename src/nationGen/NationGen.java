@@ -57,6 +57,8 @@ public class NationGen
 	private ReentrantLock pauseLock;
 	private boolean shouldAbort = false;
 	
+	private Instant start;
+
 	public NationGen()
 	{
 		// For versions of this that don't need pausing, simply create a dummy lock object to be used.
@@ -71,6 +73,8 @@ public class NationGen
 		
 		//System.out.println("Dominions 4 NationGen version " + version + " (" + date + ")");
 		//System.out.println("------------------------------------------------------------------");
+		
+		this.start = Instant.now();
 		
 		System.out.print("Loading Larzm42's Dom5 Mod Inspector database... ");
 		loadDom3DB();
@@ -114,7 +118,6 @@ public class NationGen
 	{
 		shouldAbort = false; // Don't abort before you even start.
 		
-		Instant start = Instant.now();
 		
 		this.seed = seed;
 		
@@ -341,7 +344,11 @@ public class NationGen
 		
 		this.write(generatedNations);
 		
+		Instant end = Instant.now();
+		Duration timeElapsed = Duration.between(start, end);
+		System.out.println("Finished generation in " + timeElapsed.toMinutes() + " minutes and " + timeElapsed.toSecondsPart() + " seconds.");
 		modname = "";
+		
 	}
 	
 	/**
@@ -485,12 +492,10 @@ public class NationGen
 		String modDirectory = og_modDirectory;
 		
 		int suffix = 0;
-		System.out.println(FileUtil.directoryExists("/mods/" + modDirectory) + " -> " + modDirectory);
 		while(FileUtil.directoryExists("/mods/" + modDirectory))
 		{
 			suffix++;
 			modDirectory = og_modDirectory + "_" + suffix;
-			System.out.println(FileUtil.directoryExists("/mods/" + modDirectory) + " -> " + modDirectory);
 
 			
 		} 
