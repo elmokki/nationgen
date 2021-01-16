@@ -20,8 +20,11 @@ import nationGen.units.Unit;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -29,11 +32,10 @@ import java.util.Random;
 import java.util.concurrent.locks.ReentrantLock;
 
 
-
 public class NationGen
 {
-	public static String version = "0.7.0-RC11";
-	public static String date = "13th of January 2021";
+	public static String version = "0.7.0-RC12";
+	public static String date = "14th of January 2021";
 	
 	private List<NationRestriction> restrictions;
 	
@@ -111,6 +113,8 @@ public class NationGen
 	private void generate(int amount, long seed, List<Long> seeds)
 	{
 		shouldAbort = false; // Don't abort before you even start.
+		
+		Instant start = Instant.now();
 		
 		this.seed = seed;
 		
@@ -477,10 +481,23 @@ public class NationGen
 	// TODO: Support saving anywhere
 	public void write(List<Nation> nations)
 	{
-		String modDirectory = "nationgen_" + sanitizeForFilenames(this.modname);
+		String og_modDirectory = "nationgen_" + sanitizeForFilenames(this.modname);
+		String modDirectory = og_modDirectory;
+		
+		int suffix = 0;
+		System.out.println(FileUtil.directoryExists("/mods/" + modDirectory) + " -> " + modDirectory);
+		while(FileUtil.directoryExists("/mods/" + modDirectory))
+		{
+			suffix++;
+			modDirectory = og_modDirectory + "_" + suffix;
+			System.out.println(FileUtil.directoryExists("/mods/" + modDirectory) + " -> " + modDirectory);
+
+			
+		} 
+		
 		
 		String modFilename = modDirectory + ".dm";
-		
+
 		FileUtil.createDirectory("/mods/" + modDirectory);
 		
 		// Descriptions
@@ -495,8 +512,9 @@ public class NationGen
 		for(Nation nation : nations)
 		{
 			String nationDirectory = getNationDirectory(modDirectory, nation);
-			FileUtil.createDirectory("/mods/" + nationDirectory);
-			// Flag
+			
+			FileUtil.createDirectory("/mods/" + nationDirectory);	
+							// Flag
 			FileUtil.writeTGA(nation.flag, "/mods/" + nationDirectory + "/flag.tga");
 			
 			nation.writeSprites(nationDirectory);

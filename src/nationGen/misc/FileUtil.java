@@ -76,7 +76,7 @@ public final class FileUtil {
 	/**
 	 * Creates a directory at the given path.
 	 * @param path The path to create
-	 * @throws IllegalStateException If the directory couldn't be created or already exists
+	 * @throws IllegalStateException  If the directory could not be created or already exists
 	 */
 	public static void createDirectory(String path) {
 		final File file = getPath(path).toFile();
@@ -86,6 +86,18 @@ public final class FileUtil {
 			}
 			throw new IllegalStateException("Directory '" + path + "' could not be created.");
 		}
+	}
+	
+	
+	/**
+	 * Checks if directory at given path exists
+	 * @param path Path to check
+	 * @return True if exists, false otherwise
+	 */
+	public static boolean directoryExists(String path)
+	{
+		final File file = getPath(path).toFile();
+		return(file.exists());
 	}
 	
 	/**
