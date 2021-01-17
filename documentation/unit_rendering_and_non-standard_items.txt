@@ -1,0 +1,20 @@
+By default, the program renders units in layers in the following order:
+
+shadow cloakb mount basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay extra1 extra2 extra3
+
+So, shadow is drawn first, then cloak back part, then mount, then basesprite, then legs and so on. If you have issues with this renderorder, you can use the command #renderorder in pose to adjust this. For example, if you wish to for whatever reason draw weapon first, add:
+
+#renderorder "weapon shadow cloakb mount basesprite legs shirt armor cloakf bonusweapon offhandw hands hair helmet offhanda overlay extra1 extra2 extra3"
+
+The likely more useful use of rendering orders is the fact that you can add layers. For example, if we needed to draw armor in two layers, we could add:
+
+#renderorder "shadow cloakb mount basesprite legs shirt layer_under_armor armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay extra1 extra2 extra3"
+
+Now, we have the program trying to draw a slot called "layer_under_armor" before it draws the armor. The program does, of course, not generate there anything yet. First, you need to define items for the slot. Use #load layer_under_armor <file> just like the pose file has many lines loading items for other slots.
+
+Then there are two ways to generate items to the new slot:
+
+1. Add to pose #generateitem 1 layer_under_armor. This generates a random item from the slot to the slot. This is commonly used for shirts for certain races/poses, as well as guaranteeing melee weapons for archers.
+
+2. Add #needs layer_under_armor "item name" to items in the slot armor. This forces a specific layer_under_armor item to be generated when a specific armor is set. For actual use examples, almost all cloakb files use it to set a cloak front when a cloak back is generated. Other uses include various wings and certain mounts, which require suitable item to the overlay-slot.
+
