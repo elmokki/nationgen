@@ -1,353 +1,337 @@
---- Unarmored
-
-#newitem
-#name "loincloth"
-#gameid -1
-#needs shirt loincloth
-#armor
-#basechance 0.1
-#theme "primitive"
-#enditem
-
-#newitem
-#name "light tunic"
-#gameid -1
-#needs shirt tunic_light
-#armor
-#basechance 0.05
-#enditem
-
-#newitem
-#name "dark tunic"
-#gameid -1
-#needs shirt tunic_dark
-#armor
-#basechance 0.05
-#enditem
-
-
---- Furs
-
-#newitem
-#name "plain furs"
-#gameid 44
-#sprite /graphics/highmen/armor/furs.png
-#needs shirt noshirt
-#armor
-#basechance 0.2
-#theme "primitive"
-#enditem
+--- Primitive Pelts
 
 #newitem
 #name "bear furs"
 #gameid 44
+#define "#hp +4"
 #sprite /graphics/highmen/armor/furs_bear.png
 #needs shirt noshirt
 #needs cloakb nocloak
 #needs helmet leatherhood
 #armor
-#basechance 0.2
+#description "This Colossi's bear pelt grants them bearish tenacity."
+#basechance 2
 #theme "primitive"
-#tag "bear"
 #enditem
 
 #newitem
 #name "lion furs"
 #gameid 44
+#define "#att +2"
 #sprite /graphics/highmen/armor/furs_lion.png
 #needs shirt noshirt
 #needs cloakb nocloak
 #needs helmet leatherhood
 #armor
-#basechance 0.2
+#description "This Colossi's lion pelt grants them lionlike skill."
+#basechance 2
 #theme "primitive"
-#tag "lion"
 #enditem
 
 #newitem
 #name "wolf furs"
 #gameid 44
+#define "#enc -1"
 #sprite /graphics/highmen/armor/furs_wolf.png
 #needs shirt noshirt
 #needs cloakb nocloak
 #needs helmet leatherhood
 #armor
-#basechance 0.2
+#description "This Colossi's wolf pelt grants them dogged endurance."
+#basechance 2
 #theme "primitive"
-#tag "wolf"
 #enditem
 
 #newitem
 #name "boar furs"
 #gameid 44
+#define "#str +2"
 #sprite /graphics/highmen/armor/furs_boar.png
 #needs shirt noshirt
 #needs cloakb nocloak
 #needs helmet leatherhood
 #armor
-#basechance 0.2
+#description "This Colossi's boar pelt grants them boarish strength."
+#basechance 2
 #theme "primitive"
-#tag "boar"
 #enditem
 
 #newitem
 #name "firedrake pelt"
 #gameid 44
-#define "#fireres +2"
+#command "#fireres +10"
 #sprite /graphics/highmen/armor/furs_firedrake.png
 #needs shirt noshirt
 #needs cloakb nocloak
 #needs helmet leatherhood
 #armor
-#basechance 0.05
+#description "This Colossi's firedrake pelt grants them near immunity to fire."
+#basechance 1
 #theme "primitive"
-#theme "fire"
-#tag "drake"
 #enditem
 
 #newitem
 #name "icedrake pelt"
 #gameid 44
-#define "#coldres +2"
+#command "#coldres +10"
 #sprite /graphics/highmen/armor/furs_icedrake.png
 #needs shirt noshirt
 #needs cloakb nocloak
 #needs helmet leatherhood
 #armor
-#basechance 0.05
+#description "This Colossi's icedrake pelt grants them near immunity to frost."
+#basechance 1
 #theme "primitive"
-#theme "water"
-#tag "drake"
 #enditem
 
 #newitem
 #name "swampdrake pelt"
 #gameid 44
-#define "#poisonres +2"
+#command "#poisonres +10"
 #sprite /graphics/highmen/armor/furs_swampdrake.png
 #needs shirt noshirt
 #needs cloakb nocloak
 #needs helmet leatherhood
 #armor
-#basechance 0.05
+#description "This Colossi's swampdrake pelt grants them near immunity to poisons."
+#basechance 1
 #theme "primitive"
-#theme "nature"
-#tag "drake"
 #enditem
 
 #newitem
 #name "cavedrake pelt"
 #gameid 44
-#define "#prot +2"
+#command "#shockres +10"
 #sprite /graphics/highmen/armor/furs_cavedrake.png
 #needs shirt noshirt
 #needs cloakb nocloak
 #needs helmet leatherhood
 #armor
-#basechance 0.05
+#description "This Colossi's cavedrake pelt grants them near immunity to lightning."
+#basechance 1
 #theme "primitive"
-#theme "earth"
-#tag "drake"
 #enditem
 
---- Leather
+
+
+--- Reinforced Pelts
 
 #newitem
-#name "leather cuirass"
-#gameid 5
-#sprite /graphics/highmen/armor/leather_cuirass1.png
-#tag "eliteversion 'leather cuirass with greaves'"
-#armor
-#basechance 0.8
-#enditem
-
-#newitem
-#name "leather cuirass with greaves"
-#gameid 5
-#sprite /graphics/highmen/armor/leather_cuirass2.png
-#armor
-#basechance 0.2
-#enditem
-
-#newitem
-#name "leather hauberk long"
-#gameid 10
-#sprite /graphics/highmen/armor/leather_hauberk1.png
-#armor
-#basechance 0.5
-#enditem
-
-#newitem
-#name "leather hauberk short"
-#gameid 10
-#sprite /graphics/highmen/armor/leather_hauberk2.png
-#armor
-#basechance 0.5
-#enditem
-
-#newitem
-#name "full leather"
-#gameid 15
-#sprite /graphics/highmen/armor/leather_full.png
-#armor
-#enditem
-
-
---- Ring
-
-#newitem
-#name "ring cuirass"
-#gameid 6
-#sprite /graphics/highmen/armor/ring_cuirass1.png
-#tag "eliteversion 'ring cuirass with greaves'"
-#armor
-#basechance 0.8
-#enditem
-
-#newitem
-#name "ring cuirass with greaves"
-#gameid 6
-#sprite /graphics/highmen/armor/ring_cuirass2.png
-#armor
-#basechance 0.2
-#enditem
-
-#newitem
-#name "ring hauberk short"
-#gameid 11
-#sprite /graphics/highmen/armor/ring_hauberk2.png
-#armor
-#basechance 0.5
-#enditem
-
-#newitem
-#name "ring hauberk long"
-#gameid 11
-#sprite /graphics/highmen/armor/ring_hauberk1.png
-#armor
-#basechance 0.5
-#enditem
-
-#newitem -- full ring
-#name "full ring"
-#gameid 16
-#sprite /graphics/highmen/armor/ring_full.png
-#armor
-#enditem
-
-
---- Scale
-
-#newitem
-#name "scale cuirass"
+#name "reinforced bear furs"
 #gameid 7
-#sprite /graphics/highmen/armor/scale_cuirass1.png
-#tag "eliteversion 'scale cuirass with greaves'"
+#define "#hp +4"
+#sprite /graphics/highmen/armor/furs_bear.png
+#needs shirt scalecuirass
+#needs cloakb nocloak
+#needs helmet reinforcedleathercap
 #armor
-#basechance 0.8
+#description "This Colossi's reinforced bear pelt grants them bearish tenacity."
+#basechance 2
 #enditem
 
 #newitem
-#name "scale cuirass with greaves"
+#name "reinforced lion furs"
 #gameid 7
-#sprite /graphics/highmen/armor/scale_cuirass2.png
+#define "#att +2"
+#sprite /graphics/highmen/armor/furs_lion.png
+#needs shirt scalecuirass
+#needs cloakb nocloak
+#needs helmet reinforcedleathercap
 #armor
-#basechance 0.2
+#description "This Colossi's reinforced lion pelt grants them lionlike skill."
+#basechance 2
 #enditem
 
 #newitem
-#name "scale hauberk long"
-#gameid 12
-#sprite /graphics/highmen/armor/scale_hauberk.png
+#name "reinforced wolf furs"
+#gameid 7
+#define "#enc -1"
+#sprite /graphics/highmen/armor/furs_wolf.png
+#needs shirt scalecuirass
+#needs cloakb nocloak
+#needs helmet reinforcedleathercap
 #armor
+#description "This Colossi's reinforced wolf pelt grants them dogged endurance."
+#basechance 2
+#enditem
+
+#newitem
+#name "reinforced boar furs"
+#gameid 7
+#define "#str +2"
+#sprite /graphics/highmen/armor/furs_boar.png
+#needs shirt scalecuirass
+#needs cloakb nocloak
+#needs helmet reinforcedleathercap
+#armor
+#description "This Colossi's reinforced boar pelt grants them boarish strength."
+#basechance 2
+#enditem
+
+#newitem
+#name "reinforced firedrake pelt"
+#gameid 7
+#command "#fireres +10"
+#sprite /graphics/highmen/armor/furs_firedrake.png
+#needs shirt scalecuirass
+#needs cloakb nocloak
+#needs helmet reinforcedleathercap
+#armor
+#description "This Colossi's reinforced firedrake pelt grants them near immunity to fire."
 #basechance 1
 #enditem
 
-#newitem -- full scale
-#name "full scale"
-#gameid 17
-#sprite /graphics/highmen/armor/scale_full.png
-#armor
-#basechance 1
-#theme "advanced"
-#enditem
-
---- Chain Mail
-
 #newitem
-#name "chain cuirass"
-#gameid 8
-#sprite /graphics/highmen/armor/chain_cuirass1.png
-#tag "eliteversion 'chain cuirass with greaves'"
+#name "reinforced icedrake pelt"
+#gameid 7
+#command "#coldres +10"
+#sprite /graphics/highmen/armor/furs_icedrake.png
+#needs shirt scalecuirass
+#needs cloakb nocloak
+#needs helmet reinforcedleathercap
 #armor
-#basechance 0.8
-#enditem
-
-#newitem
-#name "chain cuirass with greaves"
-#gameid 8
-#sprite /graphics/highmen/armor/chain_cuirass2.png
-#armor
-#basechance 0.2
-#enditem
-
-#newitem
-#name "chain hauberk long"
-#gameid 13
-#sprite /graphics/highmen/armor/chain_hauberk.png
-#armor
+#description "This Colossi's reinforced icedrake pelt grants them near immunity to frost."
 #basechance 1
 #enditem
 
-#newitem -- full chain
-#name "full chain"
-#gameid 18
-#sprite /graphics/highmen/armor/chain_full.png
+#newitem
+#name "reinforced swampdrake pelt"
+#gameid 7
+#command "#poisonres +10"
+#sprite /graphics/highmen/armor/furs_swampdrake.png
+#needs shirt scalecuirass
+#needs cloakb nocloak
+#needs helmet reinforcedleathercap
 #armor
+#description "This Colossi's reinforced swampdrake pelt grants them near immunity to poisons."
 #basechance 1
-#theme "advanced"
-#tag "name mounted knight"
+#enditem
+
+#newitem
+#name "reinforced cavedrake pelt"
+#gameid 7
+#command "#shockres +10"
+#sprite /graphics/highmen/armor/furs_cavedrake.png
+#needs shirt scalecuirass
+#needs cloakb nocloak
+#needs helmet reinforcedleathercap
+#armor
+#description "This Colossi's reinforced cavedrake pelt grants them near immunity to lightning."
+#basechance 1
 #enditem
 
 
--- Plate
+
+--- Advanced Pelts
 
 #newitem
-#name "plate cuirass"
+#name "plated bear furs"
 #gameid 9
-#sprite /graphics/highmen/armor/plate_cuirass1.png
-#tag "eliteversion 'plate cuirass with greaves'"
+#define "#hp +4"
+#sprite /graphics/highmen/armor/furs_bear.png
+#needs shirt platecuirass
+#needs cloakb nocloak
+#needs helmet ironcap
 #armor
-#basechance 0.4
+#description "This Colossi's plated bear pelt grants them bearish tenacity."
 #theme "advanced"
+#basechance 2
 #enditem
 
 #newitem
-#name "plate cuirass with greaves"
+#name "plated lion furs"
 #gameid 9
-#sprite /graphics/highmen/armor/plate_cuirass2.png
+#define "#att +2"
+#sprite /graphics/highmen/armor/furs_lion.png
+#needs shirt platecuirass
+#needs cloakb nocloak
+#needs helmet ironcap
 #armor
-#basechance 0.1
+#description "This Colossi's plated lion pelt grants them lionlike skill."
 #theme "advanced"
+#basechance 2
 #enditem
 
 #newitem
-#name "plate hauberk"
-#gameid 14
-#sprite /graphics/highmen/armor/plate_hauberk.png
+#name "plated wolf furs"
+#gameid 9
+#define "#enc -1"
+#sprite /graphics/highmen/armor/furs_wolf.png
+#needs shirt platecuirass
+#needs cloakb nocloak
+#needs helmet ironcap
 #armor
-#basechance 0.5
+#description "This Colossi's plated wolf pelt grants them dogged endurance."
 #theme "advanced"
-#tag "name mounted knight"
+#basechance 2
 #enditem
 
-#newitem -- full plate
-#name "full plate"
-#gameid 19
-#sprite /graphics/highmen/armor/plate_full.png
+#newitem
+#name "plated boar furs"
+#gameid 9
+#define "#str +2"
+#sprite /graphics/highmen/armor/furs_boar.png
+#needs shirt platecuirass
+#needs cloakb nocloak
+#needs helmet ironcap
 #armor
-#basechance 0.5
+#description "This Colossi's plated boar pelt grants them boarish strength."
 #theme "advanced"
-#tag "name mounted knight"
-#maxvarieties 1
+#basechance 2
+#enditem
+
+#newitem
+#name "plated firedrake pelt"
+#gameid 9
+#command "#fireres +10"
+#sprite /graphics/highmen/armor/furs_firedrake.png
+#needs shirt platecuirass
+#needs cloakb nocloak
+#needs helmet ironcap
+#armor
+#description "This Colossi's plated firedrake pelt grants them near immunity to fire."
+#theme "advanced"
+#basechance 1
+#enditem
+
+#newitem
+#name "plated icedrake pelt"
+#gameid 9
+#command "#coldres +10"
+#sprite /graphics/highmen/armor/furs_icedrake.png
+#needs shirt platecuirass
+#needs cloakb nocloak
+#needs helmet ironcap
+#armor
+#description "This Colossi's plated icedrake pelt grants them near immunity to frost."
+#theme "advanced"
+#basechance 1
+#enditem
+
+#newitem
+#name "plated swampdrake pelt"
+#gameid 9
+#command "#poisonres +10"
+#sprite /graphics/highmen/armor/furs_swampdrake.png
+#needs shirt platecuirass
+#needs cloakb nocloak
+#needs helmet ironcap
+#armor
+#description "This Colossi's plated swampdrake pelt grants them near immunity to poisons."
+#theme "advanced"
+#basechance 1
+#enditem
+
+#newitem
+#name "plated cavedrake pelt"
+#gameid 9
+#command "#shockres +10"
+#sprite /graphics/highmen/armor/furs_cavedrake.png
+#needs shirt platecuirass
+#needs cloakb nocloak
+#needs helmet ironcap
+#armor
+#description "This Colossi's plated cavedrake pelt grants them near immunity to lightning."
+#theme "advanced"
+#basechance 1
 #enditem
