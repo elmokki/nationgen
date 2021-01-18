@@ -1,4 +1,3 @@
-
 #newitem
 #id nakedblacklegs
 #gameid -1
@@ -8,19 +7,40 @@
 #enditem
 
 #newitem
+#id pants
+#gameid -1
+#sprite /graphics/legs/standard_mounted/mounted_pants.png
+#armor
+#recolormask /graphics/legs/standard_mounted/mounted_pants_recolormask.png
+#enditem
+
+#newitem
+#id leatherpants
+#gameid -1
+#sprite /graphics/legs/standard_mounted/mounted_leather.png
+#armor
+#enditem
+
+#newitem
+#id ringpants
+#gameid -1
+#sprite /graphics/legs/standard_mounted/mounted_ring.png
+#armor
+#basechance 0
+#enditem
+
+#newitem
+#id chainpants
+#gameid -1
+#sprite /graphics/legs/standard_mounted/mounted_chain.png
+#armor
+#basechance 0
+#enditem
+
+#newitem
 #id platepants
 #basechance 0
 #gameid -1
 #sprite /graphics/legs/standard_mounted/mounted_plate.png
 #armor
-#enditem
-
-#newitem
-#id bronzepants
-#gameid -1
-#sprite /graphics/legs/standard_mounted/mounted_bronze.png
-#recolormask /graphics/legs/standard_mounted/mounted_bronze_recolormask.png
-#armor
-#basechance 0
-#type bronze
 #enditem
