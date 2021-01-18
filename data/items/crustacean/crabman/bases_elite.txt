@@ -1,12 +1,12 @@
 #newitem
-#name "crabman basesprite"
+#name "crabman basesprite elite"
 #gameid -1
 #sprite /graphics/crustacean/crabman/basecrabman.png
-#define "#gcost 25"
+#define "#gcost 60"
 #define "#rpcost 25010"
 #define "#size 3"
 #define "#hp 25"
-#define "#prot 10"
+#define "#prot 15"
 #define "#mr 9"
 #define "#mor 10"
 #define "#str 15"
@@ -19,13 +19,14 @@
 #define "#maxage 50"
 #define "#amphibian"
 #define "#troglodyte"
-#define "#itemslots -128"
 #define "#darkvision 100"
 #define "#voidsanity 10"
+#define "#itemslots -128"
 #define "#weapon 273"
 #define "#descr 'Crabmen are strange half-men who normally dwell beneath the waves. They have simple minds and strong bodies.'"
 #define "#nametype 134"
 #define "#twiceborn 3196"
 #subrace "crabman"
 #subraceprefix "crabman"
+#theme elite
 #enditem
