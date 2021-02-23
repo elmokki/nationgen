@@ -1,11 +1,13 @@
--------- Normal
+-------- Elite
 
 #newpose
 #basechance 1
-#name "colossi dual wielder"
-#role "infantry"
+#name "colossi elite dual wielders"
+#role "sacred infantry"
+#role "elite infantry"
 #subrace colossi
 #subraceprefix colossi
+#chanceinc moduleid herogen *2
 #good_leader
 
 #load basesprite /data/items/machakans/colossi/bases.txt
@@ -27,16 +29,19 @@
 #generateitem 1 offhand
 #generateitem 1 shirt
 
-#endpose
+#cannot_be_pd
 
+#endpose
 
 
 #newpose
 #basechance 1
-#name "colossi shieldbearer"
-#role "infantry"
+#name "colossi elite two handers"
+#role "sacred infantry"
+#role "elite infantry"
 #subrace colossi
 #subraceprefix colossi
+#chanceinc moduleid herogen *2
 #good_leader
 
 #load basesprite /data/items/machakans/colossi/bases.txt
@@ -46,8 +51,7 @@
 #load armor /data/items/machakans/colossi/armor.txt
 #load shirt /data/items/machakans/colossi/shirt.txt
 
-#load weapon /data/items/machakans/colossi/weapon.txt
-#load offhand /data/items/machakans/colossi/shields.txt
+#load weapon /data/items/machakans/colossi/weapon_2h.txt
 #load bonusweapon /data/items/machakans/colossi/bonusranged.txt
 
 #load helmet /data/items/machakans/colossi/helmet.txt
@@ -57,17 +61,19 @@
 
 #generateitem 1 shirt
 
+#cannot_be_pd
+
 #endpose
 
 
-
 #newpose
-#basechance 1
+#basechance 0.5
 #name "colossi archer"
-#role "ranged"
-#role "scout"
+#role "sacred ranged"
+#role "elite ranged"
 #subrace colossi
 #subraceprefix colossi
+#chanceinc moduleid herogen *2
 #good_leader
 
 #renderorder "shadow quiver weapon cloakb basesprite mount shirt legs armor cloakf bonusweapon offhandw hands hair helmet offhanda overlay"
@@ -82,9 +88,7 @@
 #load helmet /data/items/machakans/colossi/helmet.txt
 
 #load weapon /data/items/machakans/colossi/bows.txt
-
 #load quiver /data/items/machakans/colossi/quiver.txt
-#load bonusweapon /data/items/machakans/colossi/weapon_ranged.txt
 
 #load cloakf /data/items/machakans/colossi/cloakf.txt
 #load cloakb /data/items/machakans/colossi/cloakb.txt
@@ -92,6 +96,6 @@
 #generateitem 1 bonusweapon
 #generateitem 1 shirt
 
+#cannot_be_pd
+
 #endpose
-
-

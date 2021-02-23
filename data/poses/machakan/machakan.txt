@@ -1,0 +1,125 @@
+
+-------- Normal
+
+#newpose
+#role "infantry"
+#role "scout"
+
+#load basesprite /data/items/machakans/standard/bases.txt
+#load shadow /data/items/human/normal/shadow.txt
+
+#load hands /data/items/machakans/standard/hands.txt
+
+#load armor /data/items/machakans/standard/armor.txt
+#load helmet /data/items/machakans/standard/helmet.txt
+
+#load legs /data/items/machakans/standard/legs.txt
+
+#load weapon /data/items/machakans/standard/weapon.txt
+#load offhand /data/items/machakans/standard/shields.txt
+
+#endpose
+
+-------- 2h infantry
+
+#newpose
+#role "infantry"
+#role "scout"
+
+#load basesprite /data/items/machakans/standard/bases.txt
+#load shadow /data/items/human/normal/shadow.txt
+
+#load hands /data/items/machakans/standard/hands.txt
+
+#load armor /data/items/machakans/standard/armor.txt
+#load helmet /data/items/machakans/standard/helmet.txt
+
+#load legs /data/items/machakans/standard/legs.txt
+
+#load weapon /data/items/machakans/standard/weapon_2h.txt
+
+#endpose
+
+
+------- Mounted
+
+#newpose
+#name "mounted"
+#role "mounted"
+
+#baseitemslot feet 0
+
+#load basesprite /data/items/machakans/mounted/bases.txt 5 -15
+#load mount /data/items/machakans/mounted/mounts.txt
+
+#load hands /data/items/machakans/standard/hands.txt 5 -15
+
+#load armor /data/items/machakans/standard/armor.txt 5 -15
+#load helmet /data/items/machakans/standard/helmet.txt 5 -15
+#load legs /data/items/machakans/mounted/legs.txt 4 -15
+
+#load weapon /data/items/machakans/mounted/weapon.txt 5 -15
+
+#load lanceslot /data/items/human/human_mounted/lance.txt 5 -15
+
+#load offhand /data/items/machakans/standard/shields.txt 5 -15
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+
+#writeslot lanceslot
+#endpose
+
+------- Low mounted
+
+#newpose
+#name "mounted low"
+#role "mounted"
+
+#baseitemslot feet 0
+
+#load basesprite /data/items/machakans/mounted/bases.txt 5 -15
+#load mount /data/items/machakans/mounted/mounts_low.txt
+
+#load hands /data/items/machakans/standard/hands.txt 5 -15
+
+#load armor /data/items/machakans/standard/armor.txt 5 -15
+#load helmet /data/items/machakans/standard/helmet.txt 5 -15
+#load legs /data/items/machakans/mounted/legs.txt 4 -15
+
+#load weapon /data/items/machakans/mounted/weapon.txt 5 -15
+
+#load bonusweapon /data/items/human/human_mounted/lance.txt 5 -15
+
+#load offhand /data/items/machakans/standard/shields.txt 5 -15
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+
+#writeslot lanceslot
+#endpose
+
+
+------- Archer
+
+#newpose
+#race 0
+#role "ranged"
+
+#renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/machakans/archer/bases.txt
+#load shadow /data/items/human/normal/shadow.txt
+
+#load hands /data/items/machakans/archer/hands.txt
+
+#load armor /data/items/machakans/standard/armor.txt
+#load helmet /data/items/machakans/standard/helmet.txt
+
+#load legs /data/items/machakans/standard/legs.txt
+
+#load weapon /data/items/human/archer/bows.txt
+
+#load quiver /data/items/human/archer/humanbonusranged.txt
+#load bonusweapon /data/items/machakans/archer/weapon.txt
+
+#generateitem 1 bonusweapon
+#endpose

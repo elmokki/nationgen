@@ -1,16 +1,6 @@
 --- Shields
 
-- Bucklers
-
-#newitem
-#id bronzebuckler
-#gameid 1
-#sprite /graphics/offhand/standard/bronzebuckler.png
-#armor
-#theme "bronze"
-#enditem
-
-
+-- Metal
 
 #newitem
 #id shield1
@@ -19,7 +9,6 @@
 #armor
 #enditem
 
-
 #newitem
 #id shield3
 #gameid 2
@@ -27,7 +16,7 @@
 #armor
 #enditem
 
-
+-- Hide
 
 #newitem
 #basechance 6
@@ -36,6 +25,7 @@
 #sprite /graphics/machakans/shields/hideshield.png
 #eliteversion greathideshield
 #armor
+#theme "primitive"
 #enditem
 
 #newitem

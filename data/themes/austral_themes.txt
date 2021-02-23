@@ -41,118 +41,81 @@
 
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
-#type demographic
-#name diverse
+#type troops
+#name machakan_troops
 #basechance 1
-#racedefinition "#pose machakantroops"
-#racedefinition "#pose machakanmages"
-#racedefinition "#pose pygmies"
-#racedefinition "#pose colossi"
-#racedefinition "#pose generic_scouts"
+#racedefinition "#pose machakan"
 #endtheme
 
--- Weights: EA 0.5, MA 0.5, LA 0.5
+-- Weights: EA 0.5, MA 0.5, LA 0..5
 #newtheme
-#type demographic
-#name pygmy
+#type troops
+#name pygmy_troops
 #basechance 0.5
-#racedefinition "#pose pygmy_elites"
-#racedefinition "#pose pygmy_mages"
-#racedefinition "#strongmagicpatterns"
-#racedefinition "#size1"
-#raceprefix pygmy
-#endtheme
-
--- Weights: EA 1, MA 1, LA 1
-#newtheme
-#type demographic
-#name machakan
-#basechance 1
-#racedefinition "#pose machakantroops"
-#racedefinition "#pose machakanmages"
-#racedefinition "#pose generic_scouts"
+#racedefinition "#pose pygmy"
 #endtheme
 
 -- Weights: EA 0.75, MA 0.5, LA 0.25
--- #newtheme
--- #type demographic
--- #name colossi
--- #basechance 0.5
--- #basechance 0
--- #chanceinc era 1 0.25
--- #chanceinc era 3 -0.25
--- #racedefinition "#pose colossi"
--- #racedefinition "#pose colossi_mages"
--- #raceprefix colossi
--- #racedefinition "#forts default_forts"
--- #racedefinition "#forts city_forts"
--- #racedefinition "#size3"
--- #endtheme
-
--- Weights: EA 1, MA 1, LA 1
 #newtheme
-#type demographic
-#name machakan_pygmy
-#basechance 1
-#themeinc theme pygmy_elites *0
-#racedefinition "#pose machakantroops"
-#racedefinition "#pose machakanmages"
-#racedefinition "#pose pygmies"
-#racedefinition "#pose pygmy_mages"
-#racedefinition "#pose generic_scouts"
+#type troops
+#name colossi_troops
+#basechance 0.5
+#chanceinc era 1 0.25
+#chanceinc era 3 -0.25
+#racedefinition "#pose colossi"
 #endtheme
 
 -- Weights: EA 1, MA 1, LA 1
--- #newtheme
--- #type demographic
--- #name machakan_colossi
--- #basechance 1
--- #racedefinition "#pose machakantroops"
--- #racedefinition "#pose machakanmages"
--- #racedefinition "#pose colossi"
--- #racedefinition "#pose colossi_mages"
--- #racedefinition "#pose generic_scouts"
--- #racedefinition "#forts default_forts"
--- #racedefinition "#forts city_forts"
--- #endtheme
-
--- Weights: EA 0.5, MA 0.5, LA 0.5
--- #newtheme
--- #type demographic
--- #name pygmy_colossi
--- #basechance 0.5
--- #racedefinition "#pose pygmy_elites"
--- #racedefinition "#pose colossi"
--- #racedefinition "#pose colossi_mages"
--- #raceprefix pygmy
--- #endtheme
-
--- Weights: EA 0.5, MA 0.5, LA 0.5
 #newtheme
-#type demographic
-#name colossi_pygmy
+#type mages
+#name machakan_mages
+#basechance 1
+#racedefinition "#pose machakan_mages"
+#endtheme
+
+-- Weights: EA 0.75, MA 0.5, LA 0.25
+#newtheme
+#type mages
+#name pygmy_mages
 #basechance 0.5
-#racedefinition "#pose colossi"
 #racedefinition "#pose pygmy_mages"
 #racedefinition "#strongmagicpatterns"
-#raceprefix colossi
-#racedefinition "#forts default_forts"
-#racedefinition "#forts city_forts"
 #endtheme
 
--- Weights: EA 0.1, MA 0.1, LA 0.1
+-- Weights: EA 0.75, MA 0.5, LA 0.25
 #newtheme
-#type demographic
-#name erratic
-#basechance 0.1
-#themeinc theme pygmy_elites *0
-#racedefinition "#pose machakantroops"
-#racedefinition "#pose machakanmages"
-#racedefinition "#pose pygmies"
-#racedefinition "#pose pygmy_mages"
-#racedefinition "#pose colossi"
--- #racedefinition "#pose colossi_mages"
-#racedefinition "#pose generic_scouts"
+#type mages
+#name colossi_mages
+#basechance 0.5
+#chanceinc era 1 0.25
+#chanceinc era 3 -0.25
+#racedefinition "#pose colossi_mages"
+#endtheme
+
+-- Weights: EA 1, MA 1, LA 1
+#newtheme
+#type elites
+#name machakan_elites
+#basechance 1
+#racedefinition "#pose machakan_elites"
+#endtheme
+
+-- Weights: EA 0.5, MA 0.5, LA 0.5
+#newtheme
+#type elites
+#name pygmy_elites
+#basechance 0.5
+#racedefinition "#pose pygmy_elites"
+#endtheme
+
+-- Weights: EA 0.75, MA 0.5, LA 0.25
+#newtheme
+#type elites
+#name colossi_elites
+#basechance 0.5
+#chanceinc era 1 0.25
+#chanceinc era 3 -0.25
+#racedefinition "#pose colossi_elites"
 #endtheme
 
 
