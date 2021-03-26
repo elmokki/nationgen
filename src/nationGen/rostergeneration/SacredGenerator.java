@@ -44,6 +44,12 @@ public class SacredGenerator extends TroopGenerator {
 	
 	private void addEpicness(Unit u, boolean sacred, int power)
 	{
+		// Handle sacred power settings
+		double extrapower = this.nationGen.settings.get(SettingsType.sacredpower) - 1;
+	
+		
+		power = (int) (power + power * extrapower * (1 + random.nextDouble() * 0.5) + extrapower);		
+		
 
 		int origpower = power;
 		
@@ -495,12 +501,16 @@ public class SacredGenerator extends TroopGenerator {
 	}
 	
 	public Pose getPose(boolean sacred, int power, Race race, boolean isFirstSacred)
-	{
+	{	
+		/*
+		 * This calculation is never actually used in this method - presumably at some point code got 
+		 * 
 		// Handle sacred power settings
 		double extrapower = this.nationGen.settings.get(SettingsType.sacredpower) - 1;
 	
 		
 		power = (int) (power + power * extrapower * (1 + random.nextDouble() * 0.5) + extrapower);
+		*/
 		
 	
 
