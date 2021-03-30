@@ -44,13 +44,6 @@ public class SacredGenerator extends TroopGenerator {
 	
 	private void addEpicness(Unit u, boolean sacred, int power)
 	{
-		// Handle sacred power settings
-		double extrapower = this.nationGen.settings.get(SettingsType.sacredpower) - 1;
-	
-		
-		power = (int) (power + power * extrapower * (1 + random.nextDouble() * 0.5) + extrapower);		
-		
-
 		int origpower = power;
 		
 		// Determine stat boost amount
@@ -174,22 +167,26 @@ public class SacredGenerator extends TroopGenerator {
 
 			}
 			// Add more stat boosts
-			else if(random.nextDouble() < 1.1 - powerups / (double)origpower)
+			else if(random.nextDouble() < 1.05 - powerups / (double)origpower)
 			{
-
 				power--;
 				powerups++;
 			}
 			// Add a filter
 			else
-			{
-		
-				
+			{			
 				List<Filter> choices = ChanceIncHandler.getFiltersWithPower(power, power, filters);
 				
-				if(choices.size() == 0 || random.nextDouble() > 0.8)
+				if(choices.size() == 0 || random.nextDouble() > 0.5)
 					choices = ChanceIncHandler.getFiltersWithPower(power - 1, power, filters);
 				
+				if(choices.size() == 0 || random.nextDouble() > 0.5)
+					choices = ChanceIncHandler.getFiltersWithPower(power / 2, power, filters);
+				
+				if (choices.size() == 0 || random.nextDouble() > 0.5)
+					choices = ChanceIncHandler.getFiltersWithPower(0, power, filters);
+				
+				/*
 				if(choices.size() == 0)
 				{
 					int range = 1;
@@ -201,12 +198,13 @@ public class SacredGenerator extends TroopGenerator {
 				}
 				if(choices.size() == 0 || power <= 2 || (power <= 3 && random.nextDouble() < 0.35))
 					choices = ChanceIncHandler.getFiltersWithPower(-100, power, filters);
+				*/
 				
 
 				if(random.nextDouble() < 0.05)
 				{
 					List<Filter> maybe = ChanceIncHandler.getFiltersWithPower(-100, -1, filters);
-					if(choices.size() > 0)
+					if(maybe.size() > 0)
 						choices = maybe;
 					
 
@@ -450,6 +448,14 @@ public class SacredGenerator extends TroopGenerator {
 			
 		}
 		
+		if (sacred)
+		{
+			// Handle sacred power settings
+			double extrapower = this.nationGen.settings.get(SettingsType.sacredpower) - 1;
+			
+			power = (int) (power + power * extrapower * (1 + random.nextDouble() * 0.5) + extrapower);
+		}
+		
 		u = getSacredUnit(u, power, sacred, epicchance);
 		
 		if(unitGen.hasMontagPose(u))
@@ -577,6 +583,7 @@ public class SacredGenerator extends TroopGenerator {
 	
 	/**
 	 * Adds some cost and caponlyness if unit is badass enough
+	 * Non-badass sacreds get some small buffs
 	 * @param u
 	 * @param power
 	 */
@@ -584,21 +591,21 @@ public class SacredGenerator extends TroopGenerator {
 	{
 
 		// Calculate some loose power rating
-		double rating = 0;
-		for(Filter f : u.appliedFilters)
-			rating += Math.pow(2, f.power) / 2;
+		double rating = power;
+		for(Filter f : u.appliedFilters)			
+			rating += Math.pow(2, f.power - 2) / 2;
 		
 		// Rating should theoretically range from 0 to 4ish at this point
-		
-		
+				
 		if(u.pose.roles.contains("ranged") || u.pose.roles.contains("elite ranged") || u.pose.roles.contains("sacred ranged"))
 		{
-			if(u.getTotalProt() < 5)
+			//this used to be a bonus for low prot, but low resources is more relevant and accurate
+			if(u.getResCost(true) < 10)
 				rating *= 2;
-			else if(u.getTotalProt() < 8)
-				rating *= 1.75;
-			else if(u.getTotalProt() < 12)
+			else if(u.getResCost(true) < 15)
 				rating *= 1.5;
+			else if(u.getResCost(true) < 25)
+				rating *= 1.25;
 		}	
 		else
 		{
@@ -610,15 +617,50 @@ public class SacredGenerator extends TroopGenerator {
 				rating *= 0.8;
 		}
 		
+		int survivability = (u.getCommandValue("#hp", 10) / 2 + u.getTotalDef() + u.getTotalProt() * 2 + u.getCommandValue("#size", 2) - power) / 2;		
+		int defbonus = 0;
+		double discount = 1;		
+		
+		for (Filter f : u.appliedFilters)
+		{
+			for (Command c : f.getCommands())
+			{
+				if (c.command.equals("#regen")) survivability += 5;
+				if (c.command.equals("#awe") || c.command.equals("#sunawe")) survivability += 10;
+				if (c.command.equals("#invuln")) survivability += 10;
+				if (c.command.equals("#illusion")) survivability += 10;
+				if (c.command.equals("#ethereal")) survivability += 15;
+				if (c.command.equals("#entangle")) survivability += 15;
+			}
+		}
+		
+		//sacreds that are too flimsy get extra defense, and are more likely to be rec-anywhere
+		for (int i=15; i < 31; i +=5)
+		{
+			if (survivability < i)
+			{
+				rating--;
+				
+				if (random.nextDouble() < (double)(100 - survivability - power) / 100) 
+					defbonus += 1;
+				else if (random.nextDouble() < (double)(100 - survivability - power) / 100) 
+					rating--;
+				
+				if (random.nextDouble() < (double)(100 - power * 5) / 100) discount -= 0.1;
+			}
+		}
+		
+		if (defbonus > 0)
+			u.commands.add(Command.args("#def", "+" + defbonus));
+		
 		double total = 1;
 		for(Double multi : Generic.getAllUnitTags(u).getAllDoubles("sacredratingmulti"))
 		{
 			total *= multi;
 		}
-		rating *= total;
+		rating *= total;		
 		
-		
-		total = 1;
+		total = discount;
 		for(Double multi : Generic.getAllUnitTags(u).getAllDoubles("sacredcostmulti"))
 		{
 			total *= multi;
@@ -631,15 +673,18 @@ public class SacredGenerator extends TroopGenerator {
 				.map(Arg::getDouble)
 				.max(Double::compareTo).orElse(0D);
 		
-		if(highestcaponlychance < ((power + rating) / 10 + 0.3))
-			highestcaponlychance = (power + rating) / 10 + 0.3;
+		if(highestcaponlychance < ((rating) / 10 + 0.3))
+			highestcaponlychance = (rating) / 10 + 0.3;
 		
 		if(random.nextDouble() < highestcaponlychance)
 			u.caponly = true;
 		else
 		{
 			if(u.getGoldCost() <= 50)
-				u.commands.add(Command.args("#gcost", "+10"));
+			{
+				int costModifier = (int)(Math.log(u.getGoldCost()) * 10 / (Math.log(50)));
+				u.commands.add(Command.args("#gcost", "+" + costModifier));
+			}
 			else
 				u.commands.add(Command.args("#gcost", "*1.2"));
 

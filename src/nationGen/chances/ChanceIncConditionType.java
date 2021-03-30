@@ -747,6 +747,17 @@ public enum ChanceIncConditionType {
 		}
 	},
 	
+	DEF("def") {
+		@Override
+		Condition<ChanceIncData> parseConditionArguments(ArgParser args) {
+			boolean not = args.nextOptionalFlag("not");
+			boolean below = args.nextOptionalFlag("below");
+			int target = args.nextInt();
+			
+			return d -> d.u.getTotalDef() >= target != (below ^ not);
+		}
+	},	
+	
 	ENC("enc") {
 		@Override
 		Condition<ChanceIncData> parseConditionArguments(ArgParser args) {
