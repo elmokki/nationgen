@@ -1477,6 +1477,39 @@ public class Unit {
 		return (int)prot;
 	}
 	
+	public int getTotalDef()
+	{
+		int eqdef = 0;
+		int natural = 0;
+		
+		for(Command c : this.getCommands())
+		{
+			if(c.command.equals("#def"))
+			{
+				natural += c.args.get(0).getInt();
+			}
+			if (c.command.equals("#mounted"))
+				eqdef += 3;
+		}
+	
+		Dom3DB armordb = nationGen.armordb;
+		Dom3DB weapondb = nationGen.weapondb;		
+		
+		for(String slot : slotmap.getSlots())
+		{
+			if(getSlot(slot) != null && !getSlot(slot).id.equals("-1"))
+			{
+				if (getSlot(slot).armor)
+					eqdef += armordb.GetInteger(getSlot(slot).id, "def", 0);
+				else
+					eqdef += weapondb.GetInteger(getSlot(slot).id, "def", 0);
+			}
+		}		
+	
+		double def = eqdef + natural;
+		
+		return (int)def;
+	}		
 	
 	public List<String> writeLines(String spritedir)
 	{ 

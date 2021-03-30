@@ -335,6 +335,24 @@
 #end
 
 #new
+#name "dragonblood desc"
+#set "lineage"
+#prev "lineage desc"
+#synonym "the dragons of old"
+#synonym "fire-breathing dragons"
+#extendeddescription "and can annihilate enemies with %pronoun_pos% fiery breath"
+#end
+
+#new
+#name "serpentblood desc"
+#set "lineage"
+#prev "lineage desc"
+#synonym "an ancient reptilian race"
+#synonym "a race of venomous lizards"
+#extendeddescription "and %pronoun% retain %pronoun_pos% deadly fangs"
+#end
+
+#new
 #name "pooramphibian desc"
 #set "lineage"
 #prev "lineage desc"
@@ -351,6 +369,16 @@
 #synonym "water breathing"
 #synonym "an amphibious nature"
 #extendeddescription "and %pronoun% can move and breathe underwater as well as in air"
+#end
+
+#new 
+#name "psychic desc"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "strange psychic powers"
+#synonym "powerful mental abilities"
+#extendeddescription "and can paralyze enemies through sheer mental force"
 #end
 
 #new
@@ -835,6 +863,17 @@
 #extendeddescription "and in the light of the sun few would dare strike %pronoun_obj%"
 #end
 
+#new 
+#name "halt heretic desc"
+#synonym "an aura of sacred authority"
+#synonym "an unfaltering aura of faith"
+#synonym "the power to crush false believers"
+#extendeddescription "and those who serve foreign gods may not strike %pronoun_obj%"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#end
+
 #new
 #name "fear desc"
 #synonym "terrifying"
@@ -867,6 +906,16 @@
 #end
 
 #new 
+#name "vineshield desc"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "the protection of living plants"
+#synonym "a cloak of writhing ivy"
+#extendeddescription "and can entangle attackers with growing vines"
+#end
+
+#new 
 #name "poisonarmor desc"
 #synonym "venomous thorns"
 #synonym "protective barbs of venom"
@@ -874,6 +923,16 @@
 #prev "wondrous desc"
 #bridge "wondrous bridge"
 #extendeddescription "and those that attempt to strike %pronoun_obj% risk poisoning %pronoun_obj%selves"
+#end
+
+#new 
+#name "bloodvengeance desc"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "an unutterable curse of vengeance"
+#synonym "a pact of blood vengeance"
+#extendeddescription "and in return for ritual mutilation %pronoun% share %pronoun_pos% pain with %pronoun_pos% attackers"
 #end
 
 #new 
@@ -988,11 +1047,30 @@
 #name "chargedbody desc"
 #description "has charged body"
 #synonym "a protective electric field"
-#synonym "an electrically charge"
+#synonym "an electrical charge"
 #set "wondrous"
 #prev "wondrous desc"
 #bridge "wondrous bridge"
 #extendeddescription "and will unleash a blast of lightning when struck"
+#end
+
+#new
+#name "falconer desc"
+#set "skill"
+#prev "skill desc"
+#synonym "falconry"
+#synonym "training birds of prey"
+#extendeddescription "and %pronoun% carry trained falcons"
+#end
+
+
+#new 
+#name "militia desc"
+#synonym "a personal spearbearer"
+#synonym "the power to levy peasants"
+#set "retinue"
+#prev "retinue desc"
+#next "retinue end"
 #end
 
 #new 
@@ -1560,7 +1638,7 @@
 #set "wondrous"
 #prev "wondrous desc"
 #bridge "wondrous bridge"
-#extendeddescription "and %pronoun% grow stronger in stormy weather"
+#extendeddescription "and %pronoun% grow stronger in the absence of light"
 #end
 
 #new
@@ -1580,6 +1658,25 @@
 #bridge "wondrous bridge"
 #synonym "divine strength"
 #synonym "the strength of giants"
+#end
+
+#new
+#name "extra speed desc"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "lightning speed"
+#synonym "supernatural quickness"
+#end
+
+#new
+#name "larger desc"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "enormous size"
+#synonym "prodigious size and strength"
+#synonym "great stature"
 #end
 
 #new
