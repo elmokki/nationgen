@@ -2337,7 +2337,6 @@
 #command "#natural"
 #end
 
-
 #new customweapon
 #name "crabpincer"
 #command "#dmg 1"
@@ -2346,4 +2345,10 @@
 #command "#name 'Pincer'"
 #command "#slash"
 #command "#natural"
+#end
+
+#new customweapon
+#name "fixeddrakefire"
+#command "#copyweapon 567"
+#command "#bowstr"
 #end

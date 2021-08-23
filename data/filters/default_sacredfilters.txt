@@ -585,10 +585,10 @@
 #name "stormpower"
 #type "stormpower"
 #basechance 0.0
-#chanceinc "magic air 1"
+#chanceinc "magic air 0.5"
 #chanceinc "command #shockres 0.3"
 #chanceinc "command #flying 0.2"
-#chanceinc "personalcommand #flying 3"
+#chanceinc "personalcommand #flying 1.5"
 #command "#stormpower +2"
 #command "#shockres +3"
 #command "#gcost +5"
@@ -600,10 +600,10 @@
 #name "stormpower"
 #type "stormpower"
 #basechance 0.0
-#chanceinc "magic air 1"
-#chanceinc "command #shockres 0.3"
-#chanceinc "command #flying 0.2"
-#chanceinc "personalcommand #flying 3"
+#chanceinc "magic air 0.25"
+#chanceinc "command #shockres 0.2"
+#chanceinc "command #flying 0.1"
+#chanceinc "personalcommand #flying 1"
 #command "#stormpower +4"
 #command "#shockres +5"
 #command "#gcost +10"
@@ -1172,7 +1172,7 @@
 
 #new
 #name "larger"
-#basechance 0.1
+#basechance 0.25
 #chanceinc "magic nature 0.5"
 #chanceinc "magic earth 0.25"
 #chanceinc "personalcommand size above 5 *0"
@@ -1211,7 +1211,7 @@
 
 #new
 #name "magicbeing"
-#basechance 0.05
+#basechance 0.1
 #chanceinc magic nature 0.25
 #chanceinc magic astral 0.25
 #chanceinc "personalcommand #illusion 0.25"
@@ -1226,9 +1226,10 @@
 
 #new
 #name "demonblood"
-#basechance 0.05
-#chanceinc magic blood 0.25
+#basechance 0.1
+#chanceinc magic blood 0.5
 #chanceinc magic fire 0.25
+#chanceinc magic astral 0.25
 #chanceinc "personalcommand #fireres 0.025"
 #chanceinc "personalcommand #undead *0"
 #primarycommand "#demon"
@@ -1242,7 +1243,7 @@
 
 #new
 #name "thickskin"
-#basechance 0.25
+#basechance 0.5
 #chanceinc magic earth 0.5
 #chanceinc magic nature 0.5
 #chanceinc pose ranged *0.25
@@ -1252,9 +1253,10 @@
 
 #new
 #name "golem"
-#basechance 0.1
+#basechance 0.25
 #chanceinc magic earth 0.25
-#chanceinc magic astral 0.1
+#chanceinc magic astral 0.25
+#chanceinc magic earth astral 0.25
 #chanceinc pose ranged *0.25
 #primarycommand "#stonebeing"
 #command "#stonebeing"
@@ -1277,13 +1279,13 @@
 
 #new
 #name "falconer"
-#basechance 0.1
-#chanceinc magic air 0.25
-#chanceinc personalcommand mountainsurvival 0.125
-#chanceinc personalcommand forestsurvival 0.125
-#chanceinc personalcommand wastesurvival 0.125
-#chanceinc personalcommand stealthy 0.125
-#chanceinc personalcommand patrolbonus 0.125
+#basechance 0.25
+#chanceinc magic air 0.5
+#chanceinc personalcommand mountainsurvival 0.25
+#chanceinc personalcommand forestsurvival 0.25
+#chanceinc personalcommand wastesurvival 0.25
+#chanceinc personalcommand stealthy 0.25
+#chanceinc personalcommand patrolbonus 0.25
 #primarycommand "#batstartsum1"
 #command "#gcost +8"
 #command "#batstartsum1 3371"
@@ -1293,8 +1295,8 @@
 
 #new
 #name "shieldbearer"
-#basechance 0.05
-#chanceinc racetag human 0.25
+#basechance 0.25
+#chanceinc racetag human 0.5
 #command "#gcost +8"
 #command "#batstartsum1 18"
 #primarycommand "#batstartsum1"
@@ -1304,7 +1306,7 @@
 
 #new
 #name "serpentblood"
-#basechance 0.05
+#basechance 0.1
 #chanceinc magic nature 0.25
 #chanceinc race Ophidian -10
 #chanceinc race lizard -10
@@ -1312,9 +1314,9 @@
 #chanceinc race sobek -10
 #chanceinc "personalcommand #poisonres 0.25"
 #chanceinc "nationcommand #idealcold above 0 -2"
-#chanceinc "nationcommand #idealheat below 0 -0.1"
+#chanceinc "nationcommand #idealheat above 0 0.0125"
 #chanceinc "personalcommand #size above 3 -0.1"
-#chanceinc pose ranged *0.5
+#chanceinc pose ranged *0.1
 #command "#coldblood"
 #command "#prot +2"
 #command "#swimming"
@@ -1326,21 +1328,23 @@
 
 #new
 #name "dragonblood"
-#chance 0.05
-#chanceinc magic fire 0.25
-#chanceinc race Ophidian 0.25
-#chanceinc race abysian 0.25
-#chanceinc race lizard 0.25
-#chanceinc "personalcommand #fireres 0.25"
-#chanceinc "nationcommand #idealheat above 0 0.25"
-#chanceinc pose ranged *0.25
+#chance 0.025
+#chanceinc magic fire 0.1
+#chanceinc race Ophidian 0.1
+#chanceinc race abysian 0.1
+#chanceinc race lizard 0.1
+#chanceinc "personalcommand #fireres 0.1"
+#chanceinc "nationcommand #idealheat above 1 0.1"
+#chanceinc pose ranged *0.1
 #price_per_command #hp 1 20
-#command "#weapon 567"
+#price_per_command #str 1 2
+#define "#weapon fixeddrakefire"
 #command "#fireres +10"
 #command "#hp +3"
 #command "#str +1"
 #command "#prot +2"
-#command "#gcost +15"
+#command "#gcost +20"
+#command "#gcost *1.2"
 #command "#rpcost +30"
 #power 5
 #filterdesc "dragonblood desc"
@@ -1349,7 +1353,7 @@
 #new
 #name "psychic"
 #chance 0.05
-#chanceinc magic astral 0.5
+#chanceinc magic astral 0.25
 #chanceinc race illithid -100
 #command "#voidsanity +10"
 #command "#mr +2"
@@ -1377,8 +1381,11 @@
 
 #new
 #name "flight"
-#basechance 0.1
-#chanceinc magic air 0.5
+#basechance 0.25
+#chanceinc magic air 0.2
+#chanceinc magic astral 0.1
+#chanceinc magic air astral 0.2
+#chanceinc magic earth -0.1
 #primarycommand "#flying"
 #command "#flying"
 #command "#mapmove +6"
@@ -1389,12 +1396,12 @@
 
 #new
 #name "vineshield"
-#basechance 0.0
-#chanceinc magic nature 0.25
-#chanceinc magic nature earth 0.25
-#chanceinc magic nature astral 0.25
+#basechance 0.05
+#chanceinc magic nature 0.2
+#chanceinc magic nature earth 0.1
+#chanceinc magic nature astral 0.1
 #chanceinc magic earth 0.1
-#chanceinc pose ranged *0.25
+#chanceinc pose ranged *0.1
 #command "#entangle"
 #command "#gcost *1.2"
 #price_per_command #hp 1 10

@@ -422,15 +422,18 @@ public class SacredGenerator extends TroopGenerator {
 	
 	public Unit generateUnit(boolean sacred, int power, Race race, boolean isFirstSacred)
 	{
+		if (sacred)
+		{
+			// Handle sacred power settings
+			double extrapower = this.nationGen.settings.get(SettingsType.sacredpower) - 1;
+			
+			power = (int) (power + power * extrapower * (1 + random.nextDouble() * 0.5) + extrapower);
+		}
 		
 		if(race == null)
 			race = getRace(sacred);
 		
-		
 		Pose p = getPose(sacred, power, race, isFirstSacred);
-		
-		
-
 		
 		double epicchance = random.nextDouble() * 0.5 + power * 0.25 + 0.25;
 
@@ -446,14 +449,6 @@ public class SacredGenerator extends TroopGenerator {
 			else
 				power = Math.max(0, power);
 			
-		}
-		
-		if (sacred)
-		{
-			// Handle sacred power settings
-			double extrapower = this.nationGen.settings.get(SettingsType.sacredpower) - 1;
-			
-			power = (int) (power + power * extrapower * (1 + random.nextDouble() * 0.5) + extrapower);
 		}
 		
 		u = getSacredUnit(u, power, sacred, epicchance);
@@ -509,7 +504,7 @@ public class SacredGenerator extends TroopGenerator {
 	public Pose getPose(boolean sacred, int power, Race race, boolean isFirstSacred)
 	{	
 		/*
-		 * This calculation is never actually used in this method - presumably at some point code got 
+		 * This calculation is never actually used in this method - presumably at some point code got rearranged 
 		 * 
 		// Handle sacred power settings
 		double extrapower = this.nationGen.settings.get(SettingsType.sacredpower) - 1;
@@ -517,31 +512,30 @@ public class SacredGenerator extends TroopGenerator {
 		
 		power = (int) (power + power * extrapower * (1 + random.nextDouble() * 0.5) + extrapower);
 		*/
-		
-	
 
 		List<Pose> possibleposes = new ArrayList<>();
 		
-		// Note that the first sacred of a nation should only be ranged if no others are available
+		// Note that the first sacred of a nation should very rarely be ranged if any others are available
 		ChanceDistribution<String> roles = new ChanceDistribution<>();
 		String toGet = "sacred";
 		if(race.hasSpecialRole("infantry", sacred)) {
-			roles.setChance("infantry", race.tags.getDouble(toGet + "infantrychance").orElse(1.0));
+			roles.setChance("infantry", race.tags.getDouble(toGet + "infantrychance").orElse(1.0) + power * 0.1);
 		}
 		if(race.hasSpecialRole("mounted", sacred)) {
-			roles.setChance("mounted", race.tags.getDouble(toGet + "mountedchance").orElse(0.25));
+			roles.setChance("mounted", race.tags.getDouble(toGet + "mountedchance").orElse(0.25) + power * 0.15);
 		}
 		if(race.hasSpecialRole("chariot", sacred)) {
-			roles.setChance("chariot", race.tags.getDouble(toGet + "chariotchance").orElse(0.05));
+			roles.setChance("chariot", race.tags.getDouble(toGet + "chariotchance").orElse(0.05) + power * 0.1);
 		}
 		if(race.hasSpecialRole("ranged", sacred) && !isFirstSacred) {
-			roles.setChance("ranged", race.tags.getDouble(toGet + "rangedchance").orElse(0.125));
+			roles.setChance("ranged", race.tags.getDouble(toGet + "rangedchance").orElse(0.25));
 		}
 		else if(race.hasSpecialRole("ranged", sacred)) {
-			roles.setChance("ranged",0.0001);
+			roles.setChance("ranged",0.05);
 		} 
 
-		while(roles.hasPossible())
+		// FIXED: this loop used to iterate through all possible roles and condense them into a single array with no weighting, ignoring the checks above and resulting in unwanted numbers of ranged sacreds
+		while(roles.hasPossible() && possibleposes.isEmpty())
 		{
 			String role = roles.getRandom(this.random);
 			roles.eliminate(role);
@@ -563,12 +557,7 @@ public class SacredGenerator extends TroopGenerator {
 					possibleposes.add(p);
 				}
 			}
-			
-			//if(possibleposes.size() > 0)
-				//break;
 		}
-
-		
 
 		if(possibleposes.isEmpty()) {
 			throw new IllegalStateException("No " + (sacred ? "sacred" : "elite") + " poses were found for " + race.name + ". Consider adding #all_troops_sacred or #all_troops_elite to race file to use normal poses.");
@@ -601,11 +590,9 @@ public class SacredGenerator extends TroopGenerator {
 		{
 			//this used to be a bonus for low prot, but low resources is more relevant and accurate
 			if(u.getResCost(true) < 10)
-				rating *= 2;
-			else if(u.getResCost(true) < 15)
 				rating *= 1.5;
-			else if(u.getResCost(true) < 25)
-				rating *= 1.25;
+			else if(u.getResCost(true) < 20)
+				rating *= 1.25;			
 		}	
 		else
 		{
@@ -634,7 +621,7 @@ public class SacredGenerator extends TroopGenerator {
 			}
 		}
 		
-		//sacreds that are too flimsy get extra defense, and are more likely to be rec-anywhere
+		//sacreds that are too flimsy get extra defense and cost discount, and are more likely to be rec-anywhere
 		for (int i=15; i < 31; i +=5)
 		{
 			if (survivability < i)
@@ -644,7 +631,7 @@ public class SacredGenerator extends TroopGenerator {
 				if (random.nextDouble() < (double)(100 - survivability - power) / 100) 
 					defbonus += 1;
 				else if (random.nextDouble() < (double)(100 - survivability - power) / 100) 
-					rating--;
+					rating -= 2;
 				
 				if (random.nextDouble() < (double)(100 - power * 5) / 100) discount -= 0.1;
 			}
@@ -660,24 +647,34 @@ public class SacredGenerator extends TroopGenerator {
 		}
 		rating *= total;		
 		
-		total = discount;
-		for(Double multi : Generic.getAllUnitTags(u).getAllDoubles("sacredcostmulti"))
-		{
-			total *= multi;
-		}
-		u.commands.add(Command.args("#gcost", "*" + total));
-
-		
 		// The highest caponlychance for the unit will apply if one is defined, unless the default formula is higher 
 		double highestcaponlychance = Generic.getAllUnitTags(u).streamAllValues("caponlychance")
 				.map(Arg::getDouble)
 				.max(Double::compareTo).orElse(0D);
 		
-		if(highestcaponlychance < ((rating) / 10 + 0.3))
-			highestcaponlychance = (rating) / 10 + 0.3;
+		// sacreds that are still too flimsy are much more likely to be rec-anywhere
+		if (survivability / discount + defbonus < random.nextDouble() * 25 + 5)
+		{
+			highestcaponlychance = Math.max(highestcaponlychance, 0.25);
+			if (survivability / discount + defbonus < random.nextDouble() * 25 + 5)
+				highestcaponlychance = 0;
+		}	
+		else
+			if(highestcaponlychance < ((rating) / 10 + 0.3))
+				highestcaponlychance = (rating) / 10 + 0.3;
 		
 		if(random.nextDouble() < highestcaponlychance)
+		{
 			u.caponly = true;
+			
+			//apply cost discount if cap-only
+			total = discount;
+			for(Double multi : Generic.getAllUnitTags(u).getAllDoubles("sacredcostmulti"))
+			{
+				total *= multi;
+			}
+			u.commands.add(Command.args("#gcost", "*" + total));				
+		}
 		else
 		{
 			if(u.getGoldCost() <= 50)
