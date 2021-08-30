@@ -276,11 +276,8 @@ public class Nation {
 		// Sacred
 		for(int i = 0; i < sacredcount; i++)
 		{
-		
 			int power = 1; 
-			
-
-			
+		
 			if(random.nextDouble() < 0.9)
 			{			
 				power++;
