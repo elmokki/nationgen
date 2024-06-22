@@ -197,25 +197,26 @@
 #basechance 0
 #chanceinc "magic air 0.5"
 #chanceinc "taggedmagic air 2"
-#chanceinc "personalcommand #illusion 10"
+#chanceinc "personalcommand #glamour 10"
 #end
 
+- Glamour
 #new
-#name "illusion"
+#name "glamour"
 #basechance 0
-#chanceinc "magic air 0.25"
-#chanceinc "taggedmagic air 1"
+#chanceinc "magic glamour 0.25"
+#chanceinc "taggedmagic glamour 1"
 #tag "notsuffix"
-#chanceinc "personalcommand #illusion 10"
+#chanceinc "personalcommand #glamour 10"
 #end
 
 #new
-#name "illusions"
+#name "glamours"
 #basechance 0
-#chanceinc "magic air 0.25"
-#chanceinc "taggedmagic air 1"
+#chanceinc "magic glamour 0.25"
+#chanceinc "taggedmagic glamour 1"
 #tag "notprefix"
-#chanceinc "personalcommand #illusion 10"
+#chanceinc "personalcommand #glamour 10"
 #end
 
 - Water
@@ -812,7 +813,7 @@
 #new
 #name "illusory"
 #basechance 0
-#chanceinc "personalcommand #illusion 5"
+#chanceinc "personalcommand #glamour 5"
 #chanceinc "race vanir *0.2"
 #chanceinc "race sidhe *0.2"
 #tag "notsuffix"
@@ -821,7 +822,7 @@
 #new
 #name "enigmatic"
 #basechance 0
-#chanceinc "personalcommand #illusion 5"
+#chanceinc "personalcommand #glamour 5"
 #chanceinc "race vanir *0.2"
 #chanceinc "race sidhe *0.2"
 #tag "notsuffix"
@@ -830,7 +831,7 @@
 #new
 #name "fair"
 #basechance 0
-#chanceinc "personalcommand #illusion 5"
+#chanceinc "personalcommand #glamour 5"
 #chanceinc "race vanir *0.1"
 #chanceinc "race sidhe *2"
 #tag "notsuffix"
@@ -839,7 +840,7 @@
 #new
 #name "obscure"
 #basechance 0
-#chanceinc "personalcommand #illusion 5"
+#chanceinc "personalcommand #glamour 5"
 #chanceinc "race vanir *0.2"
 #chanceinc "race sidhe *0.2"
 #tag "notsuffix"
@@ -848,7 +849,7 @@
 #new
 #name "abstruse"
 #basechance 0
-#chanceinc "personalcommand #illusion 5"
+#chanceinc "personalcommand #glamour 5"
 #chanceinc "race vanir *0.2"
 #chanceinc "race sidhe *0.2"
 #tag "notsuffix"

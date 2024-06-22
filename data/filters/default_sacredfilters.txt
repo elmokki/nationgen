@@ -349,7 +349,7 @@
 #command "#airshield +20"
 #chanceinc "command #airshield 2"
 #chanceinc "magic air 2"
-#chanceinc "personalcommand #illusion *2"
+#chanceinc "personalcommand #glamour *2"
 #filterdesc "airshield desc"
 #end
 
@@ -360,7 +360,7 @@
 #command "#airshield +40"
 #chanceinc "command #airshield 1"
 #chanceinc "magic air 1"
-#chanceinc "personalcommand #illusion *2"
+#chanceinc "personalcommand #glamour *2"
 #power 1
 #filterdesc "airshield desc"
 #end
@@ -372,7 +372,7 @@
 #command "#airshield +60"
 #chanceinc "command #airshield 0.5"
 #chanceinc "magic air 0.5"
-#chanceinc "personalcommand #illusion *2"
+#chanceinc "personalcommand #glamour *2"
 #power 2
 #filterdesc "airshield desc"
 #end
@@ -418,24 +418,24 @@
 #name "glamour"
 #type "strong defensive"
 #type "stealth"
-#primarycommand "#illusion"
+#primarycommand "#glamour"
 #basechance 0.0
 #chanceinc "magic air 2"
-#chanceinc "command #illusion 10"
-#command "#illusion"
+#chanceinc "command #glamour 10"
+#command "#glamour"
 #command "#stealthy +0"
 #command "#gcost *1.2"
 #command "#gcost +23"
 #price_per_command #hp 1 10
 #tag "path air"
-#chanceinc "personalcommand #illusion -20"
+#chanceinc "personalcommand #glamour -20"
 #chanceinc "race van -20"
 #chanceinc "race sidhe -20"
 #chanceinc "race abysian *0.5"
 #chanceinc "prot 15 *0.5"
 #chanceinc "pose mounted *0.5"
 #power 4
-#filterdesc "illusion desc"
+#filterdesc "glamour desc"
 #end
 
 #new
