@@ -76,7 +76,7 @@ public class NationGen
 		
 		this.start = Instant.now();
 		
-		System.out.print("Loading Larzm42's Dom5 Mod Inspector database... ");
+		System.out.print("Loading Larzm42's Dom6 Mod Inspector database... ");
 		loadDom3DB();
 		System.out.println("done!");
 		System.out.print("Loading definitions... ");

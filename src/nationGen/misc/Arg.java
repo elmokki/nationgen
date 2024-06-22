@@ -111,7 +111,7 @@ public class Arg {
 	public MagicPath getMagicPath() {
 		if (this.path == null) {
 			char c = this.string.charAt(0);
-			if (c >= '0' && c <= '8') {
+			if (c >= '0' && c <= '9') {
 				this.path = MagicPath.fromInt(getInt());
 			} else {
 				this.path = MagicPath.fromName(this.string);

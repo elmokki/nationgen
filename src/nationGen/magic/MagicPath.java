@@ -20,10 +20,11 @@ public enum MagicPath {
 	ASTRAL("S", "astral", 2048),
 	DEATH("D", "death", 4096),
 	NATURE("N", "nature", 8192),
-	BLOOD("B", "blood", 16384),
-	HOLY("H", "holy", 32768);
+	GLAMOUR("G", "glamour", 16384),
+	BLOOD("B", "blood", 32768),
+	HOLY("H", "holy", 65536);
 	
-	public static final List<MagicPath> NON_HOLY = List.of(FIRE, AIR, WATER, EARTH, ASTRAL, DEATH, NATURE, BLOOD);
+	public static final List<MagicPath> NON_HOLY = List.of(FIRE, AIR, WATER, EARTH, ASTRAL, DEATH, NATURE, GLAMOUR, BLOOD);
 	
 	public final String letter;
 	public final String name;
@@ -55,15 +56,15 @@ public enum MagicPath {
 	
 	public static String integerToPath(int integer)
 	{
-		String[] paths = { "fire", "air", "water", "earth", "astral", "death", "nature", "blood", "holy" };
+		String[] paths = { "fire", "air", "water", "earth", "astral", "death", "nature", "glamour", "blood", "holy" };
 		return paths[integer];
 	}
 	
 	public static int PathToInteger(String path)
 	{
-		String[] paths = { "fire", "air", "water", "earth", "astral", "death", "nature", "blood", "holy" };
+		String[] paths = { "fire", "air", "water", "earth", "astral", "death", "nature", "glamour", "blood", "holy" };
 		path = path.toLowerCase().trim();
-		for(int i = 0; i < 9; i++)
+		for(int i = 0; i < paths.length; i++)
 		{
 			if(paths[i].equals(path))
 			{
@@ -76,14 +77,14 @@ public enum MagicPath {
 	
 	public static String integerToShortPath(int integer)
 	{
-		String[] paths = { "F", "A", "W", "E", "S", "D", "N", "B", "H" };
+		String[] paths = { "F", "A", "W", "E", "S", "D", "N", "G", "B", "H" };
 		return paths[integer];
 	}
 	
 	public static List<String> getListOfPathsInMask(int mask)
 	{
-		int[] masks = {128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768};
-		String[] paths = { "fire", "air", "water", "earth", "astral", "death", "nature", "blood", "holy" };
+		int[] masks = {128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536};
+		String[] paths = { "fire", "air", "water", "earth", "astral", "death", "nature", "glamour", "blood", "holy" };
 		
 		List<String> list = new ArrayList<String>();
 		for(int i = masks.length - 1; i >= 0; i--)

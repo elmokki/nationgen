@@ -33,7 +33,7 @@ id;armorname;type;def;enc;res;ferrous;flammable;mmpenalty;prot
 32;Rusty Ring Mail Hauberk;5;-1;1;0;0;0;0;8
 33;Rusty Chain Mail Hauberk;5;-2;2;0;0;0;0;13
 34;Twisting Thorns;5;-1;5;0;0;0;0;13
-35;Aseftik's Armor;5;-3;4;0;0;0;0;28
+35;Aseftik's Armor;5;-3;4;0;0;0;0;30
 36;Dragon Scale Mail;5;-1;1;0;0;0;0;16
 37;Shambler Skin Hauberk;5;0;1;0;0;0;0;9
 38;Blacksteel Full Plate;5;-3;4;0;0;0;0;24
@@ -45,11 +45,11 @@ id;armorname;type;def;enc;res;ferrous;flammable;mmpenalty;prot
 44;Furs;5;-1;1;1;0;0;0;7
 45;Jade Mask;6;0;0;0;0;0;0;20
 46;Rime Hauberk;5;-2;2;0;0;0;0;16
-47;Monolith Armor;5;-8;10;0;0;0;0;30
+47;Monolith Armor;5;-8;10;0;0;0;0;34
 48;Silver Hauberk;5;-1;1;0;0;0;0;17
-49;Lightweight Scale Mail;5;0;1;12;0;0;0;11
-50;Weightless Scale;5;0;0;0;0;0;0;11
-51;Bone Armor;5;-3;3;0;0;0;0;7
+49;Lightweight Scale Mail;5;0;1;12;0;0;0;12
+50;Weightless Scale;5;0;0;0;0;0;0;12
+51;Bone Armor;5;-2;2;0;0;0;0;7
 52;Ice Studded Armor;5;-1;0;6;0;0;0;10
 53;Meteorite Armor;5;-2;4;25;0;0;0;18
 54;Shroud of the Battle Saint;5;0;0;0;0;0;0;9
@@ -71,7 +71,7 @@ id;armorname;type;def;enc;res;ferrous;flammable;mmpenalty;prot
 70;Leather Shield;4;4;0;0;0;0;0;11
 71;Gold Shield;4;8;1;0;0;0;0;23
 72;Fenris' Pelt;5;0;1;0;0;0;0;16
-73;Crystal Shield;4;3;4;0;0;0;0;30
+73;Shield of Meteoritic Iron;4;3;4;0;0;0;0;30
 74;Stymphalian Wings;5;-4;3;0;0;0;0;18
 75;Fire Plate;5;-1;2;20;0;0;0;16
 76;Magic Bracers;8;2;0;0;0;0;0;2
@@ -79,7 +79,7 @@ id;armorname;type;def;enc;res;ferrous;flammable;mmpenalty;prot
 78;Krupp's Bracers;8;4;0;0;0;0;0;4
 79;Spirit Helmet;6;0;0;0;0;0;0;20
 80;Flame Helmet;6;0;0;0;0;0;0;21
-81;Chain Mail of Displacement;5;3;2;0;0;0;0;19
+81;Chain Mail of Displacement;5;-2;2;0;0;0;0;19
 82;Flesh Ward;5;0;0;0;0;0;0;0
 83;Starshine Skullcap;6;0;0;0;0;0;0;8
 84;Amber Hauberk;5;-2;3;20;0;0;0;16
@@ -182,7 +182,7 @@ id;armorname;type;def;enc;res;ferrous;flammable;mmpenalty;prot
 181;Golden Hoplon;4;7;1;0;0;0;0;23
 182;Immaculate Shield;4;8;1;0;0;0;0;30
 183;Linen Cuirass;5;0;0;1;0;0;0;8
-184;Kithaironic Lion Pelt;5;-1;1;10;0;0;0;15
+184;Kithaironic Lion Pelt;5;-1;1;10;0;0;0;6
 185;Brightmail Haubergeon;5;0;0;0;0;0;0;13
 186;Shademail Haubergeon;5;0;0;0;0;0;0;13
 187;Wooden Mask;6;-1;0;0;0;1;0;10
@@ -199,7 +199,7 @@ id;armorname;type;def;enc;res;ferrous;flammable;mmpenalty;prot
 198;Raptorian Plate Cuirass;5;-1;1;17;1;0;0;13
 199;Turan Plated Mail;5;-3;4;17;1;0;0;20
 200;Champion's Cuirass;5;-1;3;20;0;0;0;18
-201;Armor of Knights;5;-1;2;20;0;0;0;23
+201;Armor of Knights;5;-2;3;20;0;0;0;20
 202;Cloth Armor;5;0;0;1;0;0;0;6
 203;Reinforced Cloth Armor;5;0;1;4;0;1;0;8
 204;Armor of the Sun;5;-2;3;20;0;0;0;16
@@ -213,9 +213,9 @@ id;armorname;type;def;enc;res;ferrous;flammable;mmpenalty;prot
 212;Magic Crown;6;0;0;0;0;0;0;9
 213;Golden Helmet;6;0;0;0;0;0;0;20
 214;Golden Armor;5;-2;4;0;0;0;0;18
-215;Full Plate of Ulm;5;-3;4;28;1;0;6;23
-216;Full Chain of Ulm;5;-3;3;19;1;0;6;19
-217;Plate Cuirass of Ulm;5;-1;2;17;1;0;2;16
+215;Full Plate of Ulm;5;-3;4;30;1;0;6;23
+216;Full Chain of Ulm;5;-3;3;21;1;0;6;19
+217;Plate Cuirass of Ulm;5;-1;2;19;1;0;2;16
 218;Full Helmet of Ulm;6;-1;0;6;1;0;0;23
 219;Half Helmet of Ulm;6;0;0;4;1;0;0;19
 220;Tower Shield of Ulm;4;5;2;4;1;0;0;19
@@ -249,3 +249,45 @@ id;armorname;type;def;enc;res;ferrous;flammable;mmpenalty;prot
 248;Cyclope Helmet;6;0;0;6;0;0;0;22
 249;Cloth Headpiece;6;0;0;0;0;0;0;3
 250;Shield of Wisdom;4;5;1;0;0;0;0;19
+251;Leather Barding;5;0;0;3;0;0;0;5
+252;Light Scale Barding;5;0;1;6;1;0;0;10
+253;Cataphract Barding;5;-1;2;10;1;0;0;13
+254;Plate Barding;5;-2;3;15;1;0;0;18
+255;Silver Barding;5;-1;2;20;0;0;0;19
+256;Rusty Scale Barding;5;0;1;0;1;0;0;8
+257;Rusty Cataphract Barding;5;-1;2;0;1;0;0;11
+258;Bloodstone Armor;5;-3;6;0;0;0;0;20
+259;Gossamer Vest;5;0;0;0;0;0;0;9
+260;Twilight Shield;4;4;1;0;0;0;0;14
+261;Fay Cap;6;0;0;0;0;0;0;12
+262;Mirror Shield;4;6;2;0;0;0;0;22
+263;Bronze Barding;5;-2;3;14;0;0;0;17
+264;Light Bronze Barding;5;0;1;8;0;0;0;9
+265;Brightmail Hauberk;5;0;0;0;0;0;0;17
+266;War Crown;6;0;0;0;0;0;0;14
+267;Heavenly Shield;4;4;1;8;0;0;0;23
+268;Heavenly Plate;5;-2;3;25;0;0;0;23
+269;Fur Mask;6;0;0;0;0;0;0;5
+270;Enchanted Leather Barding;5;0;0;3;0;0;0;8
+271;Boar Leather Barding;5;0;0;3;0;0;0;11
+272;Enchanted Plate Barding;5;-1;2;15;0;0;0;20
+273;Blacksteel Barding;5;-2;3;15;0;0;0;21
+274;Gossamer Barding;5;0;0;3;0;0;0;10
+275;Fay Steed Barding;5;-1;2;15;0;0;0;18
+276;Lightweight Cataphract Barding;5;0;1;10;0;0;0;14
+277;Golden Barding;5;-2;3;15;0;0;0;20
+278;Magic Crown;6;0;0;0;0;0;0;6
+279;Armor of Meteoritic Iron;5;-3;5;0;0;0;0;23
+280;Plate Barding of Ulm;5;-2;3;15;1;0;0;20
+281;Gossamer Mail;5;-1;1;13;0;0;0;15
+282;Fay Plate Armor;5;-2;3;25;0;0;6;21
+283;Fay Cap;6;0;0;2;0;0;0;16
+284;Fay Helmet;6;-1;0;5;0;0;0;21
+285;Gossamer Shield;4;4;0;6;0;0;0;15
+286;Bone Mask;6;-1;0;0;0;0;0;9
+287;Cat Barding;5;-1;1;10;1;0;0;12
+288;Charred Shield;4;4;1;0;0;0;0;22
+289;Lizard Barding;5;-1;2;12;0;0;0;13
+290;King's Barding;5;0;1;15;0;0;0;21
+291;Icicle Dress;5;0;0;1;0;0;0;5
+292;Storm Armor;5;-2;3;0;0;0;0;22

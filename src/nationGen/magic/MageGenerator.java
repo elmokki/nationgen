@@ -183,8 +183,7 @@ public class MageGenerator extends TroopGenerator {
 		for(Theme t : nation.nationthemes)
 			source.addAll(t.tags.named("magicpriority"));
 		
-	
-		for(int i = 0; i < 8; i++)
+		for(int i = 0; i < 9; i++)
 		{
 			Filter f = new Filter(this.nationGen);
 			f.name = MagicPath.fromInt(i).name;
@@ -373,7 +372,7 @@ public class MageGenerator extends TroopGenerator {
 				maxPicks = p.getPicks(0.25) - 1;
 
 			}
-		int maxSpread = 8;
+		int maxSpread = 8; // MAGIC NUMBER
 		if(tertiaries == secondaries)
 			for(MagicPattern p : secondarypatterns)
 				if(p.getPathsAtleastAt(1) + 1 < maxSpread)

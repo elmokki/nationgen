@@ -70,7 +70,7 @@ public class PDSelector {
 		List<Unit> commanders = n.listCommanders("commander");
 		
 		
-		// Chance to get a priest as potential commander for PD; ~75% of Dom5 nations have a caster (usually priest or mage-priest as PD rank 2)
+		// Chance to get a priest as potential commander for PD; ~75% of Dom6 nations have a caster (usually priest or mage-priest as PD rank 2)
 		// For now, there's a small chance to a T2 - and a very good chance to get a T1 - for rank 2, and much smaller chances a T1 for rank 1
 		if(!startarmy)
 		{
