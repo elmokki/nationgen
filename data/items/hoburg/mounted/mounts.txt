@@ -6,7 +6,7 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/boar.png
 #armor
-#define "#size 2"
+#define "#size 3"
 #define "#mapmove 14"
 #define "#ap 14"
 #define "#mounted"
@@ -35,7 +35,7 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/demonbred_hog.png
 #armor
-#define "#size 2"
+#define "#size 3"
 #define "#mapmove 16"
 #define "#ap 14"
 #define "#mounted"
@@ -89,7 +89,7 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/goat_black.png
 #armor
-#define "#size 2"
+#define "#size 3"
 #define "#mapmove 18"
 #define "#ap 10"
 #define "#mounted"
@@ -116,7 +116,7 @@
 #sprite /graphics/hoburg/mounts/giant_parrot.png
 #needs overlay giant_macaw_overlay
 #armor
-#define "#size 3"
+#define "#size 4"
 #define "#mapmove 30"
 #define "#ap 6"
 #define "#flying"
@@ -148,7 +148,7 @@
 #recolormask /graphics/hoburg/mounts/giant_parrot_recolormask.png
 #needs overlay colorful_macaw_overlay
 #armor
-#define "#size 3"
+#define "#size 4"
 #define "#mapmove 30"
 #define "#ap 6"
 #define "#flying"
@@ -179,7 +179,7 @@
 #sprite /graphics/machakans/mounts/giant_parrot.png
 #needs overlay giant_parrot_overlay
 #armor
-#define "#size 3"
+#define "#size 4"
 #define "#mapmove 30"
 #define "#ap 6"
 #define "#flying"
@@ -212,7 +212,7 @@
 #recolormask /graphics/machakans/mounts/giant_parrot_recolormask.png
 #needs overlay giant_parrot_overlay
 #armor
-#define "#size 3"
+#define "#size 4"
 #define "#mapmove 30"
 #define "#ap 6"
 #define "#flying"
@@ -243,7 +243,7 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/caveman.png
 #armor
-#define "#size 3"
+#define "#size 4"
 #define "#mapmove 18"
 #define "#ap 14"
 #define "#mounted"
@@ -275,7 +275,7 @@
 #sprite /graphics/hoburg/mounts/caveman_occidental.png
 #recolormask /graphics/hoburg/mounts/caveman_occidental_recolormask.png
 #armor
-#define "#size 3"
+#define "#size 4"
 #define "#mapmove 18"
 #define "#ap 14"
 #define "#mounted"
@@ -302,7 +302,7 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/horite.png
 #armor
-#define "#size 3"
+#define "#size 4"
 #define "#mapmove 18"
 #define "#ap 14"
 #define "#mounted"
@@ -329,7 +329,7 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/mech_ant.png
 #armor
-#define "#size 3"
+#define "43"
 #define "#mapmove 20"
 #define "#ap 14"
 #define "#mounted"
@@ -365,7 +365,7 @@
 #tag "animal 'mechanical spider'"
 #tag "guaranteedprefix 'mechanized'"
 #needs overlay "mechspider_overlay"
-#define "#size 2"
+#define "#size 3"
 #define "#mapmove 20"
 #define "#ap 12"
 #define "#mounted"
@@ -398,7 +398,7 @@
 #tag "animal 'mechanical mosquito'"
 #tag "guaranteedprefix 'mechanized'"
 #needs overlay "mechmosquito_overlay"
-#define "#size 3"
+#define "#size 4"
 #define "#mapmove 26"
 #define "#ap 12"
 #define "#flying"
@@ -431,7 +431,7 @@
 #offsetx 25
 #offsety -7
 #armor
-#define "#size 3"
+#define "#size 5"
 #define "#mapmove 8"
 #define "#ap 8"
 #define "#sailing 3 3"
@@ -467,7 +467,7 @@
 #basechance 0.33
 #sprite /graphics/mounts/standard/hyena.png
 #armor
-#define "#size 2"
+#define "#size 3"
 #define "#mapmove 20"
 #define "#ap 20"
 #define "#mounted"
@@ -506,7 +506,7 @@
 #needs overlay caveman_fossil_overlay
 #offsetx 5
 #offsety 27
-#define "#size 3"
+#define "#size 5"
 #define "#mapmove 18"
 #define "#ap 7"
 #define "#mounted"
@@ -535,7 +535,7 @@
 #sprite /graphics/mounts/chariots/small_swan_bronze.png
 #needs overlay chariot_swan_bronze_overlay
 #armor
-#define "#size 2"
+#define "#size 3"
 #define "#hp +3"
 #define "#mapmove 14"
 #define "#ap 10"
@@ -578,7 +578,7 @@
 #sprite /graphics/mounts/chariots/small_blackswan_iron.png
 #needs overlay chariot_swan_iron_overlay
 #armor
-#define "#size 2"
+#define "#size 3"
 #define "#hp +3"
 #define "#mapmove 16"
 #define "#ap 10"
@@ -615,7 +615,7 @@
 #sprite /graphics/mounts/chariots/small_rat_iron.png
 #needs overlay chariot_small_iron_overlay
 #armor
-#define "#size 3"
+#define "#size 4"
 #define "#hp +6"
 #define "#mapmove 14"
 #define "#ap 10"
@@ -651,7 +651,7 @@
 #sprite /graphics/mounts/chariots/small_rat_bronze.png
 #needs overlay chariot_small_bronze_overlay
 #armor
-#define "#size 3"
+#define "#size 4"
 #define "#hp +6"
 #define "#mapmove 14"
 #define "#ap 10"
@@ -687,7 +687,7 @@
 #sprite /graphics/hoburg/mounts/vine_nightmare.png
 #needs overlay vine_nightmare_overlay
 #armor
-#define "#size 2"
+#define "#size 3"
 #define "#mapmove 20"
 #define "#ap 14"
 #define "#prot 2"
@@ -715,7 +715,7 @@
 #sprite /graphics/mounts/standard/elephant_dwarf.png
 #needs overlay elephant_dwarf_overlay
 #armor
-#define "#size 2"
+#define "#size 3"
 #define "#mapmove 14"
 #define "#ap 14"
 #define "#mounted"
@@ -746,7 +746,7 @@
 #sprite /graphics/mounts/standard/elephant_dwarf_armored.png
 #needs overlay elephant_dwarf_armored_overlay
 #armor
-#define "#size 2"
+#define "#size 3"
 #define "#mapmove 14"
 #define "#ap 12"
 #define "#mounted"

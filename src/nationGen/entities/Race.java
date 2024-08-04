@@ -38,7 +38,7 @@ public class Race extends Filter {
 		addCommand(Command.parse("#def 10"));
 		addCommand(Command.parse("#prec 10"));
 		addCommand(Command.parse("#enc 3"));
-		addCommand(Command.parse("#size 2"));
+		addCommand(Command.parse("#size 3"));
 		addCommand(Command.parse("#maxage 50"));
 	}
 	
