@@ -6,16 +6,9 @@
 #needs overlay firedrake_overlay
 #offsetx -7
 #offsety 16
-#define "#size 5"
-#define "#mapmove 8"
-#define "#ap 9"
-#define "#mounted"
-#define "#weapon 567 --- Drake Fire"
-#define "#weapon 20 -- Bite"
+#define "#mountmnr 523"
 #define "#gcost +55"
-#define "#ressize 2"
-#define "#enc 5"
-#define "#nomovepen"
+
 #tag "animal drake"
 #tag "minprot 10"
 #tag "maxprot 100"
@@ -28,15 +21,8 @@
 #armor
 #offsetx -7
 #offsety 14
-#define "#size 4"
-#define "#mapmove 12"
-#define "#ap 10"
-#define "#mounted"
-#define "#weapon 48 --- Fire Flare"
+#define "#mountmnr 213"
 #define "#gcost +45"
-#define "#heat 6"
-#define "#ressize 2"
-#define "#enc 20"
 #tag "animal salamander"
 #tag "maxprot 100"
 #enditem
@@ -49,18 +35,8 @@
 #offsetx 23
 #offsety 6
 #needs overlay scorpion_overlay
-#define "#size 6"
-#define "#mapmove 8"
-#define "#ap 8"
-#define "#mounted"
-#define "#weapon nostr_pincer"
-#define "#weapon nostr_scorpiontail"
-#define "#secondshape scorpionmount"
+#define "#mountmnr 524"
 #define "#gcost +50"
-#define "#ressize 2"
-#define "#enc 3"
-#define "#rcost +5"
-#define "#nomovepen"
 #tag "animal scorpion"
 #theme "heavy"
 #description "Leaves a giant scorpion behind when the rider dies"
@@ -79,18 +55,8 @@
 #needs overlay fossil_overlay
 #offsetx 34
 #offsety 31
-#define "#size 6"
-#define "#mapmove 16"
-#define "#ap 8"
-#define "#mounted"
-#define "#prot 5"
-#define "#okundeadleader"
-#define "#weapon nostr_fossilsword"
-#define "#secondshape fossilmount"
+#define "#mountmnr 1977"
 #define "#gcost +50"
-#define "#ressize 2"
-#define "#enc 5"
-#define "#rcost +5"
 #tag "animal fossil"
 #theme "heavy"
 #description "Leaves a fossilized giant behind when the rider dies"
@@ -106,15 +72,8 @@
 #armor
 #offsetx -2
 #offsety 2
-#define "#size 4"
-#define "#mapmove 18"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon nostr_poisongore"
-#define "#secondtmpshape gloso"
+#define "#mountmnr 2363"
 #define "#gcost +40"
-#define "#ressize 2"
-#define "#enc 3"
 #tag "animal gloso"
 #description "Leaves a burning black sow behind when the rider dies"
 #basechance 0.5
@@ -129,15 +88,8 @@
 #armor
 #offsety -2
 #define "#size 5"
-#define "#mapmove 26"
-#define "#ap 25"
-#define "#mounted"
-#define "#weapon 615 --- Heavy Hoof"
-#define "#secondtmpshape nightmare"
+#define "#mountmnr 3561"
 #define "#gcost +40"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#float"
 #tag "animal nightmare"
 #description "Leaves a nightmare behind when the rider dies"
 #basechance 0.25

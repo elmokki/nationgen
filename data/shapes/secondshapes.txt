@@ -881,8 +881,8 @@
 
 #new secondshape
 #name "spider"
-#command "#copystats 884"
-#command "#copyspr 884"
+#command "#copystats 3554"
+#command "#copyspr 3554"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
 #nowayback
@@ -1415,6 +1415,19 @@
 #command "#copystats 2132"
 #command "#copyspr 2132"
 #command "#magicboost 53 -5"
+#command "#transformation 0"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "nightmare_leogryphmount"
+#command "#copystats 3561"
+#command "#copyspr ./graphics/amazon/mounts/nightmare_leogryph.png"
+#command "size 4"
+#command "#magicboost 53 -5"
+#command "#fear 5"
 #command "#transformation 0"
 #nowayback
 #nogcost

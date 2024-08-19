@@ -8,18 +8,8 @@
 #armor
 #offsetx 35
 #offsety 33
-#define "#size 6"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 353"
-#define "#weapon 354"
+#define "#mountmnr 3551"
 #define "#gcost +25"
-#define "#ressize 2"
-#define "#rcost +4"
-#define "#enc 4"
-#define "#swimming"
-#define "#secondtmpshape moose"
 #tag "animal moose"
 #tag "minprot 0"
 #tag "maxprot 16"
@@ -36,16 +26,9 @@
 #armor
 #offsetx 0
 #offsety -14
-#define "#size 5"
-#define "#mapmove 18"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 354"
+#define "#mountmnr 'elk'"
 #define "#gcost +20"
-#define "#ressize 2"
 #define "#rcost +4"
-#define "#enc 4"
-#define "#secondtmpshape elk"
 #tag "animal elk"
 #tag "minprot 0"
 #tag "maxprot 14"
@@ -60,16 +43,8 @@
 #offsetx -4
 #offsety -19
 #armor
-#define "#size 6"
-#define "#mapmove 20"
-#define "#ap 16"
-#define "#mounted"
-#define "#weapon 237 --- Bite"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape bearmount"
+#define "#mountmnr 694"
 #define "#gcost +40"
-#define "#ressize 2"
-#define "#enc 4"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #tag "animal bear"
 #tag "name commander beastmaster"
@@ -84,17 +59,8 @@
 #offsetx -4
 #offsety -19
 #armor
-#define "#size 6"
-#define "#mapmove 20"
-#define "#ap 16"
-#define "#mounted"
-#define "#weapon 237 --- Bite"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape bearmount_polar"
+#define "#mountmnr 'bearmount_polar'" 
 #define "#gcost +40"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#swimming"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #tag "animal bear"
 #tag "name commander beastmaster"
@@ -109,15 +75,8 @@
 #offsetx -3
 #offsety -11
 #armor
-#define "#size 5"
-#define "#mapmove 18"
-#define "#ap 14"
-#define "#mounted"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape smallbearmount"
+#define "#mountmnr 'smallbearmount'"
 #define "#gcost +30"
-#define "#ressize 2"
-#define "#enc 4"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #tag "animal bear"
 #tag "name commander beastmaster"
@@ -133,18 +92,8 @@
 #offsetx -4
 #offsety -10
 #armor
-#define "#size 6"
-#define "#mapmove 8"
-#define "#ap 8"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#weapon 599 -- Corrosive bite"
-#define "#secondtmpshape cavecowmount"
+#define "#mountmnr 'cavecowmount'"
 #define "#gcost +30"
-#define "#prot +2"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#nomovepen"
 #description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
 #tag "animal 'cave cow'"
 #tag "guaranteedprefix 'cave cow'"
@@ -160,15 +109,8 @@
 #offsety -16
 #armor
 #needs overlay direwolf2_overlay
-#define "#size 4"
-#define "#mapmove 16"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon 237 --- bite"
-#define "#secondtmpshape direwolf2mount"
+#define "#mountmnr 'direwolf2mount'"
 #define "#gcost +25"
-#define "#ressize 2"
-#define "#enc 4"
 #tag "animal wolf"
 #theme "light"
 #tag "maxprot 11"
@@ -185,15 +127,8 @@
 #offsetx -3
 #offsety -2
 #needs overlay 6
-#define "#size 4"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 494 --- Poisonous Bite"
-#define "#secondtmpshape serpent1"  -- 1179
+#define "#mountmnr 1179"
 #define "#gcost +30"
-#define "#ressize 2"
-#define "#enc 3"
 #tag "animal serpent"
 #theme "light"
 #tag "guaranteedprefix serpent"
@@ -211,16 +146,9 @@
 #armor
 #offsetx -3
 #offsety -11
-#define "#size 4"
-#define "#mapmove 22"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 236"
-#define "#weapon 237"
+#define "#mountmnr 'whitetiger'"
 #define "#gcost +25"
 #define "#rcost +5"
-#define "#ressize 2"
-#define "#enc 3"
 #define "#swimming"
 #theme "specialmount"
 #theme "light"
@@ -238,16 +166,9 @@
 #sprite /graphics/mounts/standard/seadog.png
 #armor
 #offsety -10
-#define "#size 4"
-#define "#mapmove 2"
-#define "#ap 10"
-#define "#mounted"
-#define "#weapon nostr_bite_10"
-#define "#secondshape seadogmount"
+#define "#mountmnr 'seadogmount'"
 #define "#gcost +15"
 #define "#rcost +2"
-#define "#ressize 2"
-#define "#enc 4"
 #define "#swimming"
 #command "#amphibian"
 #theme "light"
@@ -266,17 +187,9 @@
 #armor
 #offsetx -6
 #offsety -9
-#define "#size 4"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 236"
-#define "#weapon 237"
-#define "#secondshape jaguarmount"
+#define "#mountmnr 'jaguarmount'"
 #define "#gcost +35"
 #define "#rcost +5"
-#define "#ressize 2"
-#define "#enc 3"
 #define "#swimming"
 #theme "specialmount"
 #theme "light"
@@ -295,17 +208,9 @@
 #basechance 0.125
 #offsetx 38
 #offsety -2
-#define "#size 6"
-#define "#mapmove 8"
-#define "#ap 5"
-#define "#mounted"
-#define "#weapon 603"
+#define "#mountmnr 'cavegrubmount'"
 #define "#gcost +30"
 #define "#rcost +3"
-#define "#ressize 2"
-#define "#enc 3"
-#define "#nomovepen"
-#define "#secondtmpshape cavegrubmount"
 #description "The cave grub will fight until the end of the battle should the rider die"
 #tag "animal 'cave grub'"
 #tag "guaranteedprefix grub"
@@ -324,17 +229,10 @@
 #armor
 #offsetx 2
 #offsety -9
-#define "#size 4"
-#define "#mapmove 18"
-#define "#ap 6"
-#define "#mounted"
-#define "#weapon nostr_poisonspit"
+#define "#mountmnr 'toad_jaguar_mount'"
 #define "#gcost +30"
 #define "#rcost +3"
-#define "#ressize 2"
-#define "#enc 3"
 #define "#swimming"
-#define "#secondtmpshape toad_jaguar_mount"
 #description "The giant toad will fight until the end of the battle should the rider die"
 #tag "animal 'giant toad'"
 #tag "guaranteedprefix toad"
@@ -351,18 +249,10 @@
 #armor
 #offsetx 2
 #offsety -9
-#define "#size 4"
-#define "#mapmove 18"
-#define "#ap 9"
-#define "#mounted"
-#define "#weapon 236"
+#define "#mountmnr 'toad_sapphire_mount'"
 #define "#gcost +30"
 #define "#rcost +3"
-#define "#ressize 2"
-#define "#enc 3"
 #define "#swimming"
-#command "#amphibian"
-#define "#secondtmpshape toad_sapphire_mount"
 #description "The giant frog will fight until the end of the battle should the rider die"
 #tag "animal 'giant frog'"
 #tag "guaranteedprefix frog"

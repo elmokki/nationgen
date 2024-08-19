@@ -11,13 +11,7 @@
 #offsetx 1
 #offsety 8
 #needs overlay drafthorse_overlay
-#define "#size 5"
-#define "#mapmove 18"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 615 --- Heavy Hoof"
-#define "#ressize 3"
-#define "#enc 5"
+#define "#mountmnr 'draft-horse'"
 #define "#gcost +15"
 #tag "animal horse"
 #theme "light"
@@ -33,17 +27,8 @@
 #armor
 #offsetx 3
 #offsety 63
-#define "#size 5"
-#define "#mapmove 18"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon nostr_kick_12"
-#define "#gcost +15"
-#define "#att +1"  --- Elevation
-#define "#prec -1"  --- Wobbling gait
-#define "#ressize 3"
-#define "#enc 4"
-#define "#supplybonus +1"
+#define "#mountmnr 3538"
+#define "#gcost +20"
 #tag "animal camel"
 #tag "maxprot 12"
 #theme "light"
@@ -59,17 +44,8 @@
 #armor
 #offsetx 3
 #offsety 63
-#define "#size 5"
-#define "#mapmove 18"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon nostr_kick_12"
+#define "#mountmnr 'armored_camel_barded'"
 #define "#gcost +15"
-#define "#att +1"  --- Elevation
-#define "#prec -1"  --- Wobbling gait
-#define "#ressize 3"
-#define "#enc 4"
-#define "#supplybonus +1"
 #tag "animal camel"
 #tag "minprot 8"
 #tag "maxprot 12"
@@ -85,16 +61,8 @@
 #armor
 #offsetx 3
 #offsety 63
-#define "#size 5"
-#define "#mapmove 18"
-#define "#ap 16"
-#define "#mounted"
-#define "#weapon nostr_kick_12"
+#define "#mountmnr 'armored_camel'"
 #define "#gcost +25"
-#define "#att +1"  --- Elevation
-#define "#prec -1"  --- Wobbling gait
-#define "#ressize 3"
-#define "#enc 5"
 #tag "animal camel"
 #theme "heavy"
 #theme "iron"
@@ -110,17 +78,8 @@
 #armor
 #offsetx 30
 #offsety 57
-#define "#size 6"
-#define "#mapmove 22"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 353"
-#define "#weapon 354"
+#define "#mountmnr 3551"
 #define "#gcost +25"
-#define "#ressize 3"
-#define "#rcost +4"
-#define "#enc 4"
-#define "#secondtmpshape moose"
 #tag "animal moose"
 #tag "minprot 0"
 #tag "maxprot 16"
@@ -134,16 +93,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/bear.png
 #armor
-#define "#size 6"
-#define "#mapmove 18"
-#define "#ap 16"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape bearmount"
+#define "#mountmnr 694"
 #define "#gcost +35"
-#define "#ressize 3"
-#define "#enc 4"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsetx 1
 #offsety 8
@@ -161,16 +112,8 @@
 #armor
 #offsetx 35
 #offsety 62
-#define "#size 6"
-#define "#mapmove 12"
-#define "#ap 16"
-#define "#mounted"
-#define "#weapon 417"
-#define "#weapon nostr_kick_20"
-#define "#secondtmpshape hippomount"
+#define "#mountmnr 'hippomount'"
 #define "#gcost +75"
-#define "#ressize 3"
-#define "#enc 4"
 #define "#swampsurvival"
 #description "If the rider dies, the hippopotamus will rampage through its companion's slayers before lumbering off the battlefield."
 #tag "animal hippo"

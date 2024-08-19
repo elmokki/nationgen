@@ -9,18 +9,8 @@
 #offsetx 37
 #offsety 20
 #needs overlay scorpion_overlay
-#define "#size 7"
-#define "#mapmove 8"
-#define "#ap 8"
-#define "#mounted"
-#define "#weapon nostr_pincer"
-#define "#weapon nostr_scorpiontail"
-#define "#secondshape scorpionmount"
+#define "#mountmnr 524"
 #define "#gcost +50"
-#define "#ressize 1"
-#define "#enc 3"
-#define "#rcost +5"
-#define "#nomovepen"
 #tag "animal scorpion"
 #theme "heavy"
 #description "Leaves a giant scorpion behind when the rider dies"
@@ -37,18 +27,9 @@
 #armor
 #offsetx 6
 #offsety 18
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 236"
-#define "#weapon 237"
-#define "#secondshape jaguarmount-stealthy"
+#define "#mountmnr 'jaguarmount-stealthy'"
 #define "#gcost +35"
 #define "#rcost +5"
-#define "#ressize 1"
-#define "#enc 3"
-#define "#stealthy +0"
 #theme "specialmount"
 #theme "light"
 #tag "animal jaguar"

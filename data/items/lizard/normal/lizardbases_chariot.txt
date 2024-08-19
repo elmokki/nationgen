@@ -7,16 +7,9 @@
 #needs overlay 10
 #offsetx 51
 #offsety -7
-#define "#trample"
-#define "#size 5"
-#define "#prot +4"
-#define "#mounted"
-#define "#mapmove 20"
-#define "#ap 18"
+#define "#mountmnr 3563"
 #define "#gcost +20"
 #define "#rcost +10"
-#define "#ressize 2"
-#define "#nomovepen"
 #tag "animal 'horse'"
 #basechance 0.25
 #tag chariot
@@ -31,16 +24,9 @@
 #needs overlay 11
 #offsetx 52
 #offsety -6
-#define "#trample"
-#define "#size 5"
-#define "#prot +4"
-#define "#mounted"
-#define "#mapmove 20"
-#define "#ap 18"
+#define "#mountmnr 3563"
 #define "#gcost +20"
 #define "#rcost +10"
-#define "#ressize 2"
-#define "#nomovepen"
 #tag "animal 'horse'"
 #basechance 0.25
 #tag chariot
@@ -55,21 +41,9 @@
 #needs overlay chariot_camel_iron
 #offsetx 63
 #offsety -7
-#define "#trample"
-#define "#mounted"
-#define "#weapon nostr_kick_12"
-#define "#size 5"
-#define "#prot 5"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#ressize 2"
+#define "#mountmnr 'chariot_camel_iron'"
 #define "#gcost +25"
 #define "#rcost +10"
-#define "#enc 4"
-#define "#unsurr 1"
-#define "#nomovepen"
-#define "#supplybonus +1"
-#define "#wastesurvival"
 #tag "chariot"
 #tag "animal 'camel'"
 #theme "iron"
@@ -84,21 +58,9 @@
 #needs overlay chariot_camel_bronze
 #offsetx 63
 #offsety -7
-#define "#trample"
-#define "#mounted"
-#define "#weapon nostr_kick_12"
-#define "#size 5"
-#define "#prot 5"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#ressize 2"
+#define "#mountmnr 'chariot_camel_iron'"
 #define "#gcost +25"
 #define "#rcost +10"
-#define "#enc 4"
-#define "#unsurr 1"
-#define "#nomovepen"
-#define "#supplybonus +1"
-#define "#wastesurvival"
 #tag "chariot"
 #tag "animal 'camel'"
 #theme "bronze"
@@ -112,15 +74,7 @@
 #needs overlay 12
 #offsetx 53
 #offsety -7
-#define "#trample"
-#define "#size 6"
-#define "#prot +4"
-#define "#weapon nostr_bite_10" -- Bite
-#define "#mapmove 20"
-#define "#mounted"
-#define "#ap 16"
-#define "#unsurr 1"
-#define "#nomovepen"
+#define "#mountmnr 'chariot_lizard'"
 #define "#gcost +20"
 #define "#rcost +10"
 #tag "animal 'lizard'"

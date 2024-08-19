@@ -7,16 +7,8 @@
 #offsetx -7
 #offsety 14
 #needs overlay 6
-#define "#size 4"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 494 --- Poisonous Bite"
-#define "#secondtmpshape serpent1"
- -- 1179
+#define "#mountmnr 1179"
 #define "#gcost +30"
-#define "#ressize 2"
-#define "#enc 3"
 #tag "animal serpent"
 #theme "light"
 #tag "guaranteedprefix serpent"
@@ -58,14 +50,8 @@
 #offsetx -5
 #offsety 3
 #needs overlay 3
-#define "#size 4"
-#define "#mapmove 22"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
+#define "#mountmnr 1364"
 #define "#gcost +20"
-#define "#ressize 2"
-#define "#enc 3"
 #tag "animal lizard"
 #theme "light"
 #theme "specialmount"
@@ -81,18 +67,9 @@
 #armor
 #offsetx 8
 #offsety 11
-#define "#size 6"
-#define "#mapmove 8"
-#define "#ap 7"
-#define "#mounted"
-#define "#weapon 417 --- Bite"
-#define "#secondshape cavedrake"
--- 522
+#define "#mountmnr 'cavedrake'"
 #define "#gcost +70"
-#define "#ressize 2"
 #define "#rcost +5"
-#define "#enc 4"
-#define "#nomovepen"
 #tag "animal drake"
 #theme "specialmount"
 #description "The cave drake will persist even if the rider dies."
@@ -113,17 +90,9 @@
 #offsetx 35
 #offsety 7
 #needs overlay spider_overlay
-#define "#size 7"
-#define "#mapmove 18"
-#define "#ap 13"
-#define "#mounted"
-#define "#weapon 262"
-#define "#weapon 313"
-#define "#secondshape spider"
+#define "#mountmnr 'spider'"
 #description "The giant spider will persist even if the rider dies."
 #define "#gcost +20"
-#define "#ressize 2"
-#define "#enc 4"
 #theme "specialmount"
 #tag "animal spider"
 #tag "guaranteedprefix spider"
@@ -140,16 +109,8 @@
 #offsetx 35
 #offsety 7
 #needs overlay spider_overlay
-#define "#size 7"
-#define "#mapmove 18"
-#define "#ap 13"
-#define "#mounted"
-#define "#weapon 262 --- Web Spit"
-#define "#weapon 313 --- Spider Fangs"
-#define "#secondshape spider"
+#define "#mountmnr 'spider'"
 #define "#gcost +30"
-#define "#ressize 2"
-#define "#enc 4"
 #define "#rcost +5"
 #description "The giant spider will persist even if the rider dies."
 #theme "specialmount"
@@ -245,17 +206,9 @@
 #armor
 #offsetx -4
 #offsety 7
-#define "#size 4"
-#define "#mapmove 18"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 236"
-#define "#weapon 237"
-#define "#secondshape jaguarmount"
+#define "#mountmnr 'jaguarmount'"
 #define "#gcost +35"
 #define "#rcost +5"
-#define "#ressize 2"
-#define "#enc 3"
 #theme "specialmount"
 #theme "light"
 #tag "animal jaguar"

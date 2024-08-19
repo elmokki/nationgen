@@ -14,8 +14,10 @@ import nationGen.naming.NamingHandler;
 import nationGen.naming.NationAdvancedSummarizer;
 import nationGen.nation.Nation;
 import nationGen.restrictions.NationRestriction;
+import nationGen.units.MountUnit;
 import nationGen.units.ShapeChangeUnit;
 import nationGen.units.ShapeShift;
+import nationGen.units.Mount;
 import nationGen.units.Unit;
 
 import java.awt.*;
@@ -51,6 +53,7 @@ public class NationGen
 	private IdHandler idHandler;
 	
 	public List<ShapeChangeUnit> forms = new ArrayList<>();
+	public List<MountUnit> mounts = new ArrayList<>();
 	private List<Spell> spellsToWrite = new ArrayList<>();
 	private List<Spell> freeSpells = new ArrayList<>();
 	
@@ -678,6 +681,17 @@ public class NationGen
 		}
 		return lines;
 	}
+
+	public boolean hasMount(Arg id)
+	{
+		if ("".equals(id.get())) {
+			return false;
+		}
+		
+		int realid = id.isNumeric() ? id.getInt() : -1;
+		
+		return this.mounts.stream().anyMatch(scu -> scu.id == realid);
+	}
 	
 	public boolean hasShapeShift(Arg id)
 	{
@@ -694,6 +708,7 @@ public class NationGen
 	{
 		n.finalizeUnits();
 		handleShapeshifts(n);
+		handleMounts(n);
 		handleSpells(n.spells, n);
 	}
 	
@@ -734,6 +749,38 @@ public class NationGen
 			});
 	}
 	
+	private void handleMounts(Nation n) {
+
+		List<Unit> customMountUnits = n.listUnitsAndHeroes();
+
+		for(Unit u : customMountUnits) {
+			for(Command c : u.commands) {
+				if(c.command.contains("mountmnr")  && !hasMount(c.args.get(0)) && !c.args.get(0).isNumeric()) {
+					if(c.command.equals("#mountmnr")) {
+						handleMount(c, u);
+					}
+				}
+			}
+		}
+
+		mounts.stream()
+			.filter(mu -> customMountUnits.contains(mu.otherForm))
+			.forEach(su -> {
+				su.polish(this, n);
+
+				// Replace command
+				su.mountForm.commands.stream()
+					.filter(c -> c.command.equals("#weapon"))
+					.forEach(c -> {
+						Arg weaponId = c.args.get(0);
+
+						if (!weaponId.isNumeric()) {
+							c.args.set(0, new Arg(customItemsHandler.getCustomItemId(weaponId.get())));
+						}
+					});
+			});
+	}
+
 	private HashMap<String, Integer> montagmap = new HashMap<>();
 	private void handleMontag(Command c)
 	{
@@ -818,7 +865,32 @@ public class NationGen
 		c.args.set(0, new Arg(su.id));
 		forms.add(su);
 	}
-	
+
+	private void handleMount(Command c, Unit u)
+	{
+		
+		Mount mount = assets.mounts.stream()
+				.filter(s -> s.name.equals(c.args.get(0).get()))
+				.findFirst().orElseThrow(
+					() -> new IllegalArgumentException("Mount named " + c.args.get(0) + " could not be found."));
+		
+		MountUnit mu = new MountUnit(this, assets, u.race, u.pose, u, mount);
+		
+		mu.id = idHandler.nextUnitId();
+		
+		switch (c.command)
+		{
+			case "#mountmnr":
+				mu.shiftcommand = "#mountmnr";
+				break;
+			default:
+				break;
+		}
+		
+		c.args.set(0, new Arg(mu.id));
+		mounts.add(mu);
+	}	
+
 	public static BufferedImage generateBanner(Color c, String name, BufferedImage flag)
 	{
 		BufferedImage combined = new BufferedImage(256, 64, BufferedImage.TYPE_INT_RGB);

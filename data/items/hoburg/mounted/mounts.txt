@@ -6,15 +6,9 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/boar.png
 #armor
-#define "#size 3"
-#define "#mapmove 14"
-#define "#ap 14"
-#define "#mounted"
-#define "#weapon 352 --- Gore"
+#define "#mountmnr 549"
 #define "#gcost +17"
-#define "#ressize 1"
 #define "#rcost +4"
-#define "#enc 4"
 #tag "animal hog"
 #tag "guaranteedprefix hog"
 #theme "boar"
@@ -35,15 +29,9 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/demonbred_hog.png
 #armor
-#define "#size 3"
-#define "#mapmove 16"
-#define "#ap 14"
-#define "#mounted"
-#define "#weapon 352 --- Gore"
+#define "#mountmnr 'demonbred_hog'"
 #define "#gcost +18"
-#define "#ressize 1"
 #define "#rcost +4"
-#define "#enc 4"
 #tag "animal hog"
 #tag "guaranteedprefix hog"
 #theme "boar"
@@ -58,15 +46,8 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/goat.png
 #armor
-#define "#size 16"
-#define "#mapmove 2"
-#define "#ap 10"
-#define "#mounted"
-#define "#weapon 352 --- gore"
+#define "#mountmnr 'goat'"
 #define "#gcost +12"
-#define "#ressize 1"
-#define "#mountainsurvival"
-#define "#enc 3"
 #define "#rcost +4"
 #tag "animal goat"
 #tag "maxprot 12"
@@ -89,15 +70,7 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/goat_black.png
 #armor
-#define "#size 3"
-#define "#mapmove 18"
-#define "#ap 10"
-#define "#mounted"
-#define "#weapon 352 --- gore"
 #define "#gcost +13"
-#define "#ressize 1"
-#define "#mountainsurvival"
-#define "#enc 3"
 #define "#rcost +4"
 #tag "animal goat"
 #tag "maxprot 12"
@@ -116,16 +89,8 @@
 #sprite /graphics/hoburg/mounts/giant_parrot.png
 #needs overlay giant_macaw_overlay
 #armor
-#define "#size 4"
-#define "#mapmove 30"
-#define "#ap 6"
-#define "#flying"
-#define "#mounted"
-#define "#weapon nostr_talons_10"
-#define "#weapon nostr_beak_10"
+#define "#mountmnr 'giant_macaw'"
 #define "#gcost +25"
-#define "#ressize 1"
-#define "#enc 4"
 #define "#rcost +4"
 #tag "animal parrot"
 #tag "maxprot 14"
@@ -148,16 +113,8 @@
 #recolormask /graphics/hoburg/mounts/giant_parrot_recolormask.png
 #needs overlay colorful_macaw_overlay
 #armor
-#define "#size 4"
-#define "#mapmove 30"
-#define "#ap 6"
-#define "#flying"
-#define "#mounted"
-#define "#weapon nostr_talons_10"
-#define "#weapon nostr_beak_10"
+#define "#mountmnr 'giant_macaw'"
 #define "#gcost +25"
-#define "#ressize 1"
-#define "#enc 4"
 #define "#rcost +4"
 #tag "animal parrot"
 #tag "maxprot 14"
@@ -179,16 +136,8 @@
 #sprite /graphics/machakans/mounts/giant_parrot.png
 #needs overlay giant_parrot_overlay
 #armor
-#define "#size 4"
-#define "#mapmove 30"
-#define "#ap 6"
-#define "#flying"
-#define "#mounted"
-#define "#weapon nostr_talons_10"
-#define "#weapon nostr_beak_10"
+#define "#mountmnr 'grey_parrot'"
 #define "#gcost +25"
-#define "#ressize 1"
-#define "#enc 4"
 #define "#rcost +4"
 #tag "animal parrot"
 #tag "maxprot 14"

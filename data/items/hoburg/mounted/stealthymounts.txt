@@ -246,16 +246,8 @@
 #offsety -22
 #offsetx 6
 #armor
-#define "#size 5"
-#define "#mapmove 28"
-#define "#ap 28"
-#define "#mounted"
-#define "#weapon 330 --- Alicorn"
-#define "#weapon 56 --- Hoof"
+#define "#mountmnr 3524"
 #define "#gcost +30"
-#define "#ressize 1"
-#define "#enc 3"
-#define "#heal"
 #tag "minprot 8"
 #tag "animal unicorn"
 #tag "guaranteedprefix unicorn"
@@ -275,15 +267,8 @@
 #offsety -22
 #offsetx -3
 #armor
-#define "#size 4"
-#define "#mapmove 20"
-#define "#ap 28"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
+#define "#mountmnr 'cusidhemount'"
 #define "#gcost +20"
-#define "#ressize 1"
-#define "#patrolbonus 1"
-#define "#enc 3"
 #tag "animal dog"
 #tag "minprot 7"
 #theme "fae"
@@ -303,15 +288,8 @@
 #offsety -22
 #offsetx -3
 #armor
-#define "#size 4"
-#define "#mapmove 20"
-#define "#ap 26"
-#define "#mounted"
-#define "#weapon 447 --- Venomous Bite"
+#define "#mountmnr 'barghestmount'"
 #define "#gcost +20"
-#define "#ressize 1"
-#define "#darkpower 1"
-#define "#enc 3"
 #tag "animal dog"
 #tag "guaranteedprefix barghest"
 #tag "minprot 7"
@@ -361,16 +339,8 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/demonbred_hog.png
 #armor
-#define "#size 3"
-#define "#mapmove 16"
-#define "#ap 16"
-#define "#mounted"
-#define "#weapon nostr_poisongore"
-#define "#gcost +17"
-#define "#ressize 1"
+#define "#mountmnr 'demonbred_hog'"
 #define "#rcost +6"
-#define "#enc 3"
-#define "#supplybonus -1"
 #tag "animal boar"
 #tag "guaranteedprefix hog"
 #theme "boar"

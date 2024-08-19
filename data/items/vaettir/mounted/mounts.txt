@@ -34,18 +34,9 @@
 #sprite /graphics/mounts/standard/direwolf2.png
 #armor
 #needs overlay direwolf2_overlay
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 26"
-#define "#mounted"
-#define "#weapon 237 --- bite"
-#define "#secondshape direwolf2mount"
+#define "#mountmnr 'direwolf2mountvaetti'"
 #define "#gcost +35"
-#define "#ressize 1"
-#define "#enc 3"
 #define "#rcost +6"
-#define "#stealthy +0"
-#define "#snowmove"
 #theme "heavy"
 #theme "wolf"
 #theme "wolftotem"
@@ -93,17 +84,9 @@
 #sprite /graphics/mounts/standard/elk.png
 #needs overlay elk_overlay
 #armor
-#define "#size 5"
-#define "#mapmove 22"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon 354 --- antlers"
+#define "#mountmnr 'elk'"
 #define "#gcost +20"
-#define "#ressize 1"
 #define "#rcost +4"
-#define "#enc 3"
-#define "#snowmove"
-#define "#secondtmpshape elk"
 #tag "animal elk"
 #theme "heavy"
 #theme "deer"
@@ -205,19 +188,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/bear.png
 #armor
-#define "#size 6"
-#define "#mapmove 20"
-#define "#ap 16"
-#define "#mounted"
-#define "#weapon 237 --- Bite"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape bearmount"
+#define "#mountmnr 694"
 #define "#gcost +40"
-#define "#ressize 1"
-#define "#rcost +10"
-#define "#enc 4"
-#define "#snowmove"
-#description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety -24
 #offsetx -1
 #theme "specialmount"

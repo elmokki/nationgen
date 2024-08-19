@@ -7,17 +7,9 @@
 #needs overlay oriental_chariot_gilt
 #offsetx 45
 #offsety -6
-#define "#trample"
-#define "#mounted"
-#define "#size 5"
-#define "#prot 6"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#ressize 3"
+#define "#mountmnr 3565"
 #define "#gcost +25"
 #define "#rcost +12"
-#define "#enc 4"
-#define "#nomovepen"
 #tag "chariot"
 #tag "minprot 10"
 #tag "maxprot 15"
@@ -33,21 +25,9 @@
 #needs overlay chariot_camel_gilt
 #offsetx 60
 #offsety -7
-#define "#trample"
-#define "#mounted"
-#define "#weapon nostr_kick_12"
-#define "#size 5"
-#define "#prot 5"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#ressize 3"
+#define "#mountmnr 'chariot_camel_oriental'"
 #define "#gcost +25"
 #define "#rcost +10"
-#define "#enc 4"
-#define "#unsurr 1"
-#define "#nomovepen"
-#define "#supplybonus +1"
-#define "#wastesurvival"
 #tag "chariot"
 #tag "minprot 10"
 #tag "maxprot 15"
@@ -63,19 +43,9 @@
 #needs overlay oriental_chariot_gilt
 #offsetx 45
 #offsety -6
-#define "#trample"
-#define "#mounted"
-#define "#size 6"
-#define "#prot 5"
-#define "#weapon nostr_bite_10" -- Bite
-#define "#mapmove 20"
-#define "#ap 16"
-#define "#ressize 3"
+#define "#mountmnr 'chariot_lizard_oriental'"
 #define "#gcost +25"
 #define "#rcost +10"
-#define "#enc 4"
-#define "#unsurr 1"
-#define "#nomovepen"
 #tag "chariot"
 #tag "minprot 10"
 #tag "maxprot 15"
@@ -91,19 +61,9 @@
 #needs overlay oriental_chariot_gilt
 #offsetx 45
 #offsety -6
-#define "#trample"
-#define "#mounted"
-#define "#size 5"
-#define "#prot 5"
-#define "#weapon 352" -- Gore
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#ressize 3"
+#define "#mountmnr 'chariot_boar_oriental'"
 #define "#gcost +25"
 #define "#rcost +10"
-#define "#enc 4"
-#define "#unsurr 1"
-#define "#nomovepen"
 #tag "chariot"
 #tag "minprot 10"
 #tag "maxprot 15"
@@ -118,19 +78,9 @@
 #needs overlay oriental_chariot_gilt
 #offsetx 45
 #offsety -6
-#define "#trample"
-#define "#mounted"
-#define "#size 5"
-#define "#prot 5"
-#define "#weapon 236" -- Claw
-#define "#mapmove 20"
-#define "#ap 16"
-#define "#ressize 3"
+#define "#mountmnr 'chariot_tiger_oriental'"
 #define "#gcost +25"
 #define "#rcost +10"
-#define "#enc 4"
-#define "#unsurr 1"
-#define "#nomovepen"
 #tag "chariot"
 #tag "minprot 10"
 #tag "maxprot 15"
@@ -147,17 +97,9 @@
 #needs overlay oriental_chariot_gilt
 #offsetx 45
 #offsety -6
-#define "#trample"
-#define "#mounted"
-#define "#size 5"
-#define "#prot 6"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#ressize 3"
+#define "#mountmnr 3565"
 #define "#gcost +40"
 #define "#rcost +16"
-#define "#enc 5"
-#define "#nomovepen"
 #tag "chariot"
 #tag "minprot 16"
 #tag "animal 'horse'"
@@ -174,20 +116,9 @@
 #needs overlay chariot_camel_gilt
 #offsetx 60
 #offsety -7
-#define "#trample"
-#define "#mounted"
-#define "#weapon nostr_kick_12"
-#define "#size 5"
-#define "#prot 5"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#ressize 3"
+#define "#mountmnr 'chariot_camel_oriental'"
 #define "#gcost +40"
 #define "#rcost +16"
-#define "#enc 5"
-#define "#unsurr 1"
-#define "#nomovepen"
-#define "#wastesurvival"
 #tag "minprot 16"
 #tag "chariot"
 #tag "animal 'camel'"
@@ -201,19 +132,9 @@
 #needs overlay oriental_chariot_gilt
 #offsetx 45
 #offsety -6
-#define "#trample"
-#define "#mounted"
-#define "#size 6"
-#define "#prot 5"
-#define "#weapon nostr_bite_10" -- Bite
-#define "#mapmove 20"
-#define "#ap 16"
-#define "#ressize 3"
+#define "#mountmnr 'chariot_lizard_oriental'"
 #define "#gcost +40"
 #define "#rcost +15"
-#define "#enc 5"
-#define "#unsurr 1"
-#define "#nomovepen"
 #tag "chariot"
 #tag "minprot 16"
 #tag "animal 'lizard'"
@@ -228,19 +149,9 @@
 #needs overlay oriental_chariot_gilt
 #offsetx 45
 #offsety -6
-#define "#trample"
-#define "#mounted"
-#define "#size 5"
-#define "#prot 5"
-#define "#weapon 352" -- Gore
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#ressize 3"
+#define "#mountmnr 'chariot_boar_oriental'"
 #define "#gcost +40"
 #define "#rcost +15"
-#define "#enc 5"
-#define "#unsurr 1"
-#define "#nomovepen"
 #tag "chariot"
 #tag "minprot 16"
 #tag "animal 'boar'"
@@ -254,19 +165,9 @@
 #needs overlay oriental_chariot_gilt
 #offsetx 45
 #offsety -6
-#define "#trample"
-#define "#mounted"
-#define "#size 5"
-#define "#prot 5"
-#define "#weapon 236" -- Claw
-#define "#mapmove 20"
-#define "#ap 16"
-#define "#ressize 3"
+#define "#mountmnr 'chariot_tiger_oriental'"
 #define "#gcost +40"
 #define "#rcost +15"
-#define "#enc 5"
-#define "#unsurr 1"
-#define "#nomovepen"
 #tag "chariot"
 #tag "minprot 16"
 #tag "animal 'tiger'"

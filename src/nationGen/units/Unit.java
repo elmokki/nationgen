@@ -730,7 +730,7 @@ public class Unit {
 		else
 		{
 			// Shapechangeunits aren't really of the race/pose their other form is
-			if(this.getClass() != ShapeChangeUnit.class)
+			if(this.getClass() != ShapeChangeUnit.class && this.getClass() != MountUnit.class )
 			{
 				allCommands.addAll(race.unitcommands);
 				allCommands.addAll(pose.getCommands());
