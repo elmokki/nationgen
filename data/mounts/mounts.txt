@@ -77,6 +77,19 @@
 #end
 
 #new secondshape
+#name "vanara_bearer"
+#command "#copystats 3585"
+#command "#spr1 ./graphics/monkey/vanara_base.png"
+#command "#spr2 shift"
+#command "#animal"
+#command "#mr 8"
+#command "#forestsurvival"
+#command "#magicboost 53 -1"
+#command "#itemslots 12288"
+#command "#transformation 0"
+#end
+
+#new secondshape
 #name "werebear"
 #command "#spr1 ./graphics/mounts/standard/bear_small_upright.png"
 #command "#spr2 shift"
@@ -162,6 +175,51 @@
 #command "#copystats 1380"
 #command "#copyspr 1380"
 #command "#itemslots 12288"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#end
+
+#new secondshape
+#name "flying_fish"
+#command "#copystats 2858"
+#command "#spr1 ./graphics/machakans/mounts/flyingfish.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#mapmove 22"
+#command "#hp 10"
+#command "#ap 9"
+#command "#prot 2"
+#command "#str 5"
+#command "#flying"
+#command "#sailing 2 2"
+#command "#enc 5"
+#command "#swampsurvival"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#end
+
+#new secondshape
+#name "huge_locust"
+#command "#spr1 ./graphics/mounts/standard/hugelocust.png"
+#command "#spr2 shift"
+#command "#name 'Giant Locust'"
+#command "#size 4"
+#command "#mapmove 22"
+#command "#hp 14"
+#command "#ap 12"
+#command "#att 11"
+#command "#def 8"
+#command "#prot 9"
+#command "#prec 4"
+#command "#mr 5"
+#command "#mor 9"
+#command "#str 10"
+#command "#flying"
+#command "#enc 5"
+#command "#weapon 322"
+#command "#pillagebonus +2"
+#command "#supplybonus -1"
+#command "#undisciplined"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
 #end
@@ -347,6 +405,34 @@
 #end
 
 #new secondshape
+#name "snailmount"
+#command "#name 'Snail'"
+#command "#spr1 ./graphics/machakans/mounts/snail.png"
+#command "#spr1 shift"
+#command "#snake"
+#command "#str 5"
+#command "#mor 12"
+#command "#mr 12"
+#command "#prot 9"
+#command "#hp 7"
+#command "#att 10"
+#command "#def 8"
+#command "#prec 9"
+#command "#ap 6"
+#command "#mapmove 6"
+#command "#enc 3"
+#command "#weapon nostr_bite_5"
+#command "#nostr_acidspit_5"
+#command "#animal"
+#command "#saltvul +2"
+#command "#size 2"
+#command "#pooramphibian"
+#command "#swampsurvival"
+#command "#swimming"
+#command "#magicboost 53 -1"
+#end
+
+#new secondshape
 #name "wingedmonkey"
 #command "#copystats 1199"
 #command "#copyspr 1199"
@@ -383,6 +469,29 @@
 #new secondshape
 #name "jaguar"
 #command "#copyspr 858"
+#command "#magicboost 53 -1"
+#command "#name Jaguar"
+#command "#weapon 20"
+#command "#weapon 29"
+#command "#hp 19"
+#command "#prot 4"
+#command "#mor 13"
+#command "#mr 12"
+#command "#enc 3"
+#command "#str 15"
+#command "#att 13"
+#command "#def 10"
+#command "#prec 5"
+#command "#mapmove 22"
+#command "#ap 20"
+#command "#poorleader"
+#command "#itemslots 12288"
+#end
+
+#new secondshape
+#name "blackjaguar"
+#command "#spr1 ./graphics/mounts/standard/blackjaguar.png"
+#command "#spr2 shift"
 #command "#magicboost 53 -1"
 #command "#name Jaguar"
 #command "#weapon 20"
@@ -1884,6 +1993,57 @@
 #end
 
 #new secondshape
+#name "fay-chariot"
+#command "#copystats 3563"
+#command "#copyspr 3572"
+#command "#glamour"
+#command "#hp 24"
+#command "#prot 5"
+#command "#str 15"
+#command "#att 11"
+#command "#def 12"
+#command "#mr 14"
+#command "#mor 12"
+#command "#ap 22"
+#command "#truesight"
+#command "#stealthy 40"
+#command "#diseaseres 100"
+#command "#poisonres 10"
+#command "#smartmount 100"
+#command "#magicboost 53 -5"
+#command "#itemslots 12288"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "unicorn-chariot"
+#command "#copystats 3563"
+#command "#copyspr 3572"
+#command "#weapon 330"
+#command "#hp 24"
+#command "#prot 5"
+#command "#str 15"
+#command "#att 11"
+#command "#def 12"
+#command "#mr 14"
+#command "#mor 12"
+#command "#ap 22"
+#command "#forestsurvival"
+#command "#truesight"
+#command "#stealthy 40"
+#command "#diseaseres 100"
+#command "#poisonres 10"
+#command "#smartmount 100"
+#command "#magicboost 53 -5"
+#command "#itemslots 12288"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
 #name "two-horse-chariot"
 #command "#copystats 3570"
 #command "#copyspr 3570"
@@ -1933,6 +2093,24 @@
 #end
 
 #new secondshape
+#name "chariot_two_lizard"
+#command "#copystats 3568"
+#command "#spr1 ./graphics/mounts/chariots/twolizard.png"
+#command "#spr2 shift"
+#command "#hp 40"
+#command "#size 7"
+#command "#ap 15"
+#command "#unsurr 2"
+#command "#weapon 20"
+#command "#mapmove 18"
+#command "#nomovepen"
+#command "#coldblood"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
 #name "chariot_swan"
 #command "#spr1 ./graphics/mounts/chariots/small_swan_bronze.png"
 #command "#spr2 shift"
@@ -1959,8 +2137,36 @@
 #end
 
 #new secondshape
+#name "giant_chariot_swan"
+#command "#spr1 ./graphics/sidhe/mounts/chariot_swan.png"
+#command "#spr2 shift"
+#command "#name 'Giant Swan Chariot'"
+#command "#prot 4"
+#command "#str 12"
+#command "#size 6"
+#command "#hp 18"
+#command "#att 8"
+#command "#def 8"
+#command "#prec 8"
+#command "#mapmove 14"
+#command "#ap 10"
+#command "#sailing 2 2"
+#command "#trample"
+#command "#weapon 677"
+#command "#prot 4"
+#command "#enc 5"
+#command "#unsurr 1"
+#command "#swimming"
+#command "#nomovepen"
+#nowayback
+#nogcost
+#mount
+#end
+
+
+#new secondshape
 #name "chariot_blackswan"
-#command "#spr1 ./graphics/mounts/chariots/small_swan_bronze.png"
+#command "#spr1 ./graphics/mounts/chariots/small_blackswan_iron.png"
 #command "#spr2 shift"
 #command "#name 'Swan Chariot'"
 #command "#size 3"
@@ -2419,6 +2625,30 @@
 #name "swanmount"
 #command "#copystats 2929"
 #command "#copyspr 2929"
+#command "#magicboost 53 -5"
+#command "#itemslots 12288"
+#command "#transformation 0"
+#nowayback
+#nogcost
+#mount
+#end
+
+
+#new secondshape
+#name "giantswanmount"
+#command "#copystats 2929"
+#command "#spr1 ./graphics/sidhe/mounts/giantswan.png"
+#command "#spr2 shift"
+#command "#name 'Giant Swan'"
+#command "#hp 18"
+#command "#prot 2"
+#command "#str 12"
+#command "#size 5"
+#command "#mapmove 26"
+#command "#ap 8"
+#command "#sailing 3 3"
+#command "#enc 4"
+#command "#swimming"
 #command "#magicboost 53 -5"
 #command "#itemslots 12288"
 #command "#transformation 0"
