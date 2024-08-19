@@ -48,15 +48,9 @@
 #armor
 #offsetx -2
 #offsety -18
-#define "#size 4"
-#define "#mapmove 22"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 352 --- Nostr Gore"
+#define "#mountmnr 2136"
 #define "#gcost +20"
 #define "#rcost +6"
-#define "#ressize 1"
-#define "#enc 3"
 #theme "heavy"
 #theme "boar"
 #theme "boartotem"
@@ -139,18 +133,10 @@
 #offsetx 3
 #offsety -2
 #needs overlay spider2_overlay
-#define "#size 4"
-#define "#mapmove 18"
-#define "#ap 12"
-#define "#mounted"
-#define "#weapon 313 --- Fangs"
-#define "#secondtmpshape forestspider"
+#define "#mountmnr 'forestspider'"
 #description "If the rider dies, the spider will carry on fighting until the end of the battle."
 #define "#gcost +20"
 #define "#rcost +6"
-#define "#ressize 1"
-#define "#enc 4"
-#define "#stealthy +0"
 #theme "specialmount"
 #tag "animal spider"
 #theme "spider"
@@ -219,17 +205,9 @@
 #armor
 #offsetx -2
 #offsety -18
-#define "#size 4"
-#define "#mapmove 22"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 236"
-#define "#weapon 237"
-#define "#secondtmpshape tiger"
+#define "#mountmnr 'tiger'"
 #define "#gcost +35"
 #define "#rcost +6"
-#define "#ressize 1"
-#define "#enc 3"
 #theme "specialmount"
 #theme "heavy"
 #theme "tiger"

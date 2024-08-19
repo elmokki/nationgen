@@ -425,17 +425,8 @@
 #chanceinc "nationcommand #idealcold below 2 *0"
 #sprite /graphics/mounts/standard/bear_polar.png
 #armor
-#define "#size 6"
-#define "#mapmove 20"
-#define "#ap 16"
-#define "#mounted"
-#define "#weapon 237 --- Bite"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape bearmount_polar"
+#define "#mountmnr 'bearmount_polar'"
 #define "#gcost +40"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#swimming"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety -2
 #offsetx -1

@@ -1222,8 +1222,34 @@
 #name "tiger"
 #command "#copyspr 1140"
 #command "#name 'Tiger'"
-#command "#weapon 20"
-#command "#weapon 29"
+#command "#weapon 322"
+#command "#weapon 236"
+#command "#size 4"
+#command "#hp 21"
+#command "#prot 4"
+#command "#mor 13"
+#command "#mr 8"
+#command "#enc 2"
+#command "#str 15"
+#command "#att 13"
+#command "#def 10"
+#command "#prec 5"
+#command "#mapmove 22"
+#command "#ap 18"
+#command "#forestsurvival"
+#command "#itemslots 12288"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "blacktiger"
+#command "#spr1 ./graphics/mounts/standard/blacktiger.png"
+#command "#spr2 shift"
+#command "#name 'Black Tiger'"
+#command "#weapon 322"
+#command "#weapon 236"
 #command "#size 4"
 #command "#hp 21"
 #command "#prot 4"

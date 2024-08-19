@@ -37,14 +37,8 @@
 #armor
 #offsetx 2
 #offsety -20
-#define "#size 4"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 352 --- Nostr Gore"
+#define "#mountmnr 2136"
 #define "#gcost +20"
-#define "#ressize 1"
-#define "#enc 3"
 #theme "specialmount"
 #tag "animal boar"
 #tag "guaranteedprefix boar"
@@ -143,16 +137,9 @@
 #offsety -7
 #offsetx -1
 #armor
-#define "#size 18"
-#define "#mapmove 3"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon nostr_bite_5"
-#define "#secondtmpshape dogmount"
+#define "#mountmnr 'dogmount'"
 #description "The dog is fiercely loyal and will follow the army even if its rider dies."
 #define "#gcost +10"
-#define "#ressize 1"
-#define "#enc 3"
 #tag "animal dog"
 #tag "minprot 0"
 #tag "maxprot 14"
@@ -168,17 +155,10 @@
 #offsetx 3
 #offsety -2
 #needs overlay spider2_overlay
-#define "#size 4"
-#define "#mapmove 18"
-#define "#ap 12"
-#define "#mounted"
-#define "#weapon 313 --- Fangs"
-#define "#secondtmpshape forestspider"
+#define "#mountmnr 'forestspider'"
 #description "If the rider dies, the spider will carry on fighting until the end of the battle."
 #define "#gcost +15"
 #define "#rcost +4"
-#define "#ressize 1"
-#define "#enc 4"
 #tag "animal spider"
 #theme "spider"
 #theme "spidertotem"

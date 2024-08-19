@@ -9,17 +9,9 @@
 #armor
 #offsetx -4
 #offsety 4
-#define "#size 4"
-#define "#mapmove 22"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 236"
-#define "#weapon 237"
-#define "#secondshape tiger"
+#define "#mountmnr 'tiger'"
 #define "#gcost +40"
 #define "#rcost +6"
-#define "#ressize 2"
-#define "#enc 3"
 #theme "specialmount"
 #theme "light"
 #tag "animal tiger"
@@ -135,16 +127,9 @@
 #armor
 #offsetx -5
 #offsety 13
-#define "#size 4"
-#define "#mapmove 20"
-#define "#ap 16"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#secondtmpshape serpent2"
+#define "#mountmnr 'serpent2'"
 #define "#gcost +30"
-#define "#ressize 2"
 #define "#rcost +5"
-#define "#enc 4"
 #tag "animal serpent"
 #theme "heavy"
 #theme "specialmount"
@@ -288,16 +273,9 @@
 #armor
 #offsetx -4
 #offsety 4
-#define "#size 4"
-#define "#mapmove 22"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 236"
-#define "#weapon 237"
+#define "#mountmnr 'blacktiger'"
 #define "#gcost +25"
 #define "#rcost +5"
-#define "#ressize 2"
-#define "#enc 3"
 #theme "specialmount"
 #theme "light"
 #tag "animal tiger"
@@ -394,17 +372,8 @@
 #sprite /graphics/mounts/standard/wingedlion.png
 #needs overlay wingedlion_overlay
 #armor
-#define "#size 6"
-#define "#mapmove 26"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon 237 --- Bite"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape wingedlionmount"
+#define "#mountmnr 'wingedlionmount'"
 #define "#gcost +60"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#flying"
 #description "If the rider dies, the winged lion will carry on fighting until the end of the battle."
 #offsety 5
 #offsetx -10
@@ -449,15 +418,8 @@
 #armor
 #offsetx 35
 #offsety 58
-#define "#size 9"
-#define "#mapmove 20"
-#define "#ap 14"
-#define "#mounted"
-#define "#weapon 313 --- Spider Fangs"
-#define "#secondshape hunterspider"
+#define "#mountmnr 'hunterspider'"
 #define "#gcost +70"
-#define "#ressize 2"
-#define "#enc 4"
 #description "The hunter spider will persist even if the rider dies."
 #theme "specialmount"
 #theme "heavy"
@@ -481,18 +443,9 @@
 #offsetx 23
 #offsety 13
 #needs overlay 13
-#define "#size 6"
-#define "#mapmove 26"
-#define "#flying"
-#define "#ap 10"
-#define "#mounted"
-#define "#weapon nostr_venfangs"
-#define "#weapon nostr_spraypoison"
-#define "#secondtmpshape amphiptere"
+#define "#mountmnr 'amphiptere'"
 #define "#gcost +50"
 #define "#rcost +6"
-#define "#ressize 2"
-#define "#enc 3"
 #theme "specialmount"
 #tag "animal amphiptere"
 #description "The amphiptere will fight until the end of the battle should the rider die"

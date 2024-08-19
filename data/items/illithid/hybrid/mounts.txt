@@ -109,17 +109,9 @@
 #armor
 #offsetx 0
 #offsety -13
-#define "#size 4"
-#define "#mapmove 2"
-#define "#ap 6"
-#define "#mounted"
-#define "#weapon nostr_poisonspit"
+#define "#mountmnr 'toad_jaguar_mount'"
 #define "#gcost +30"
 #define "#rcost +3"
-#define "#ressize 2"
-#define "#enc 3"
-#define "#swimming"
-#define "#secondtmpshape toad_jaguar_mount"
 #description "The giant toad will fight until the end of the battle should the rider die"
 #tag "animal 'giant toad'"
 #tag "guaranteedprefix toad"
@@ -134,18 +126,10 @@
 #armor
 #offsetx 0
 #offsety -13
-#define "#size 4"
-#define "#mapmove 20"
-#define "#ap 9"
-#define "#mounted"
-#define "#weapon 236"
+#define "#mountmnr 'toad_sapphire_mount'"
 #define "#gcost +30"
 #define "#rcost +3"
-#define "#ressize 2"
-#define "#enc 3"
 #define "#swimming"
-#command "#amphibian"
-#define "#secondtmpshape toad_sapphire_mount"
 #description "The giant frog will fight until the end of the battle should the rider die"
 #tag "animal 'giant frog'"
 #tag "guaranteedprefix frog"

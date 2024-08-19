@@ -351,17 +351,8 @@
 #sprite /graphics/mounts/standard/wingedlion.png
 #needs overlay wingedlion_overlay
 #armor
-#define "#size 6"
-#define "#mapmove 26"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon 237 --- Bite"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape wingedlionmount"
+#define "#mountmnr 'wingedlionmount'"
 #define "#gcost +60"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#flying"
 #description "If the rider dies, the winged lion will carry on fighting until the end of the battle."
 #offsety 5
 #offsetx -5
