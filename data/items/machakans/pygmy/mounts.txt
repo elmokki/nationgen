@@ -139,19 +139,8 @@
 #sprite /graphics/machakans/mounts/flyingfish.png
 #needs overlay flyingfish_overlay
 #armor
-#define "#size 4"
-#define "#mapmove 18"
-#define "#ap 9"
-#define "#flying"
-#define "#sailing 2 2"
-#define "#mounted"
-#define "#weapon nostr_bite_5"
+#define "#mountmnr 'flying_fish'"
 #define "#gcost +5"
-#define "#ressize 1"
-#define "#enc 5"
-#define "#swampsurvival"
-#define "#pooramphibian"
-#define "#swimming"
 #tag "animal fish"
 #theme "fish"
 #theme "fishtotem"
@@ -171,20 +160,8 @@
 #gameid -1
 #sprite /graphics/machakans/mounts/snail.png
 #armor
-#define "#size 2"
-#define "#mapmove 6"
-#define "#ap 6"
-#define "#mounted"
-#define "#weapon nostr_bite_5"
-#define "#weapon nostr_acidspit_5"
+#define "#mountmnr 'snailmount'"
 #define "#gcost +10"
-#define "#ressize 1"
-#define "#enc 3"
-#define "#swampsurvival"
-#define "#pooramphibian"
-#define "#swimming"
-#define "#nomovepen"
-#define "#saltvul +2"
 #tag "animal snail"
 #theme "snail"
 #theme "snailtotem"
@@ -205,18 +182,8 @@
 #sprite /graphics/mounts/standard/hugelocust.png
 #needs overlay hugelocust_overlay
 #armor
-#define "#size 4"
-#define "#mapmove 22"
-#define "#ap 12"
-#define "#flying"
-#define "#mounted"
-#define "#weapon nostr_bite_10"
-#define "#gcost +10"
-#define "#ressize 1"
-#define "#enc 5"
-#define "#undisciplined"
-#define "#pillagebonus +2"
-#define "#supplybonus -1"
+#define "#mountmnr 'huge_locust'"
+#define "#gcost +20"
 #tag "animal locust"
 #theme "locust"
 #theme "locusttotem"
@@ -234,15 +201,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/hugemantis.png
 #armor
-#define "#size 4"
-#define "#mapmove 16"
-#define "#ap 12"
-#define "#mounted"
-#define "#weapon nostr_claws_10"
-#define "#weapon nostr_claws_10"
+#define "#mountmnr 'hugemantismount'"
 #define "#gcost +20"
-#define "#ressize 1"
-#define "#enc 3"
 #tag "animal mantis"
 #theme "mantis"
 #theme "locusttotem"

@@ -173,17 +173,9 @@
 #gameid -1
 #sprite /graphics/mounts/standard/bear_small.png
 #armor
-#define "#size 4"
-#define "#mapmove 20"
-#define "#ap 14"
-#define "#mounted"
-#define "#weapon 236 -- Claw"
-#define "#secondshape smallbearmount"
+#define "#mountmnr 'smallbearmount'"
 #define "#gcost +35"
-#define "#ressize 1"
 #define "#rcost +6"
-#define "#enc 4"
-#define "#snowmove"
 #description "If the rider dies, the bear will continue to fight alongside its Vaetti companions."
 #offsety -16
 #offsetx -1
@@ -227,16 +219,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/lion_asian.png
 #armor
-#define "#size 4"
-#define "#mapmove 18"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 237 --- Bite"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape lionmount"
+#define "#mountmnr 'lionmount'"
 #define "#gcost +35"
-#define "#ressize 1"
-#define "#enc 3"
 #description "If the rider dies, the lion will carry on fighting until the end of the battle."
 #offsetx 2
 #offsety -16

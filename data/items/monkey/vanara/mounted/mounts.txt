@@ -53,15 +53,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/direwolf1.png
 #armor
-#define "#size 4"
-#define "#mapmove 18"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon 237 --- bite"
-#define "#secondtmpshape direwolf1mount"
+#define "#mountmnr 'direwolf1mount'"
 #define "#gcost +25"
-#define "#ressize 2"
-#define "#enc 4"
 #tag "animal wolf"
 #theme "light"
 #tag "maxprot 11"
@@ -80,16 +73,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/lion_asian.png
 #armor
-#define "#size 4"
-#define "#mapmove 18"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 237 --- Bite"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape lionmount"
+#define "#mountmnr 'lionmount'"
 #define "#gcost +35"
-#define "#ressize 2"
-#define "#enc 4"
 #description "If the rider dies, the lion will carry on fighting until the end of the battle."
 #offsety 5
 #offsetx -3
@@ -244,16 +229,9 @@
 #armor
 #offsetx -4
 #offsety 4
-#define "#size 4"
-#define "#mapmove 22"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 236"
-#define "#weapon 237"
+#define "#mountmnr 'blackjaguar'"
 #define "#gcost +35"
 #define "#rcost +5"
-#define "#ressize 2"
-#define "#enc 3"
 #theme "specialmount"
 #theme "light"
 #tag "animal panther"
@@ -316,15 +294,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/direwolf1.png
 #armor
-#define "#size 4"
-#define "#mapmove 18"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon 237 --- bite"
-#define "#secondtmpshape direwolf1mount"
+#define "#mountmnr direwolf1mount"
 #define "#gcost +25"
-#define "#ressize 2"
-#define "#enc 4"
 #tag "animal wolf"
 #theme "light"
 #tag "maxprot 11"
@@ -344,16 +315,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/lion_asian.png
 #armor
-#define "#size 4"
-#define "#mapmove 18"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 237 --- Bite"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape lionmount"
+#define "#mountmnr 'lionmount'"
 #define "#gcost +35"
-#define "#ressize 2"
-#define "#enc 4"
 #description "If the rider dies, the lion will carry on fighting until the end of the battle."
 #offsety 5
 #offsetx -3

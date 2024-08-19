@@ -4,7 +4,7 @@
 #name "turkey"
 #command "#copystats 1362"
 #command "#copyspr 1362"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #end
 
@@ -63,7 +63,7 @@
 #command "#copystats 284"
 #command "#copyspr 284"
 #command "#magicboost 53 -1"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #end
 
@@ -72,7 +72,20 @@
 #command "#copystats 1560"
 #command "#copyspr 1560"
 #command "#magicboost 53 -1"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#end
+
+#new secondshape
+#name "vanara_bearer"
+#command "#copystats 3585"
+#command "#spr1 ./graphics/monkey/vanara_base.png"
+#command "#spr2 shift"
+#command "#animal"
+#command "#mr 8"
+#command "#forestsurvival"
+#command "#magicboost 53 -1"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #end
 
@@ -125,7 +138,7 @@
 #command "#animal"
 #command "#forestsurvival"
 #command "#mountainsurvival"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #end
 
@@ -161,7 +174,52 @@
 #name "hawk"
 #command "#copystats 1380"
 #command "#copyspr 1380"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#end
+
+#new secondshape
+#name "flying_fish"
+#command "#copystats 2858"
+#command "#spr1 ./graphics/machakans/mounts/flyingfish.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#mapmove 22"
+#command "#hp 10"
+#command "#ap 9"
+#command "#prot 2"
+#command "#str 5"
+#command "#flying"
+#command "#sailing 2 2"
+#command "#enc 5"
+#command "#swampsurvival"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#end
+
+#new secondshape
+#name "huge_locust"
+#command "#spr1 ./graphics/mounts/standard/hugelocust.png"
+#command "#spr2 shift"
+#command "#name 'Giant Locust'"
+#command "#size 4"
+#command "#mapmove 22"
+#command "#hp 14"
+#command "#ap 12"
+#command "#att 11"
+#command "#def 8"
+#command "#prot 9"
+#command "#prec 4"
+#command "#mr 5"
+#command "#mor 9"
+#command "#str 10"
+#command "#flying"
+#command "#enc 5"
+#command "#weapon 322"
+#command "#pillagebonus +2"
+#command "#supplybonus -1"
+#command "#undisciplined"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
 #end
@@ -171,7 +229,7 @@
 #command "#copystats 1380"
 #command "#spr1 ./graphics/hoburg/mounts/giant_parrot.png"
 #command "#spr2 shift"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
 #end
@@ -181,7 +239,7 @@
 #command "#copystats 1380"
 #command "#spr1 ./graphics/machakans/mounts/giant_parrot.png"
 #command "#spr2 shift"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
 #end
@@ -191,7 +249,7 @@
 #command "#copystats 2227"
 #command "#copyspr 2227"
 #command "#size 3"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
 #end
@@ -202,7 +260,7 @@
 #command "#spr1 ./graphics/hoburg/mounts/goat_black.png"
 #command "#spr1 shift"
 #command "#size 3"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
 #end
@@ -211,7 +269,7 @@
 #name "greatboar"
 #command "#copystats 1807"
 #command "#copyspr 1807"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
 #end
@@ -222,7 +280,7 @@
 #command "#spr1 ./graphics/hoburg/mounts/pigasus.png"
 #command "#spr2 shift"
 #command "#flying"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
 #end
@@ -233,7 +291,7 @@
 #command "#name 'Black Hog'"
 #command "#spr1 ./graphics/hoburg/mounts/demonbred_hog.png"
 #command "#spr2 shift"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
 #end
@@ -314,7 +372,7 @@
 #name "cavecrab"
 #command "#copystats 2514"
 #command "#copyspr 2514"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
 #end
@@ -324,7 +382,7 @@
 #command "#name 'Giant Toad'"
 #command "#copyspr 1359"
 #command "#lizard"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#str 11"
 #command "#mor 12"
 #command "#mr 12"
@@ -347,11 +405,39 @@
 #end
 
 #new secondshape
+#name "snailmount"
+#command "#name 'Snail'"
+#command "#spr1 ./graphics/machakans/mounts/snail.png"
+#command "#spr1 shift"
+#command "#snake"
+#command "#str 5"
+#command "#mor 12"
+#command "#mr 12"
+#command "#prot 9"
+#command "#hp 7"
+#command "#att 10"
+#command "#def 8"
+#command "#prec 9"
+#command "#ap 6"
+#command "#mapmove 6"
+#command "#enc 3"
+#command "#weapon nostr_bite_5"
+#command "#nostr_acidspit_5"
+#command "#animal"
+#command "#saltvul +2"
+#command "#size 2"
+#command "#pooramphibian"
+#command "#swampsurvival"
+#command "#swimming"
+#command "#magicboost 53 -1"
+#end
+
+#new secondshape
 #name "wingedmonkey"
 #command "#copystats 1199"
 #command "#copyspr 1199"
 #command "#magicboost 53 -1"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #end
 
@@ -375,7 +461,7 @@
 #command "#copystats 694"
 #command "#copyspr 694"
 #command "#magicboost 53 -1"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #command "#weapon 20"
 #end
@@ -399,7 +485,30 @@
 #command "#mapmove 22"
 #command "#ap 20"
 #command "#poorleader"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
+#end
+
+#new secondshape
+#name "blackjaguar"
+#command "#spr1 ./graphics/mounts/standard/blackjaguar.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -1"
+#command "#name Jaguar"
+#command "#weapon 20"
+#command "#weapon 29"
+#command "#hp 19"
+#command "#prot 4"
+#command "#mor 13"
+#command "#mr 12"
+#command "#enc 3"
+#command "#str 15"
+#command "#att 13"
+#command "#def 10"
+#command "#prec 5"
+#command "#mapmove 22"
+#command "#ap 20"
+#command "#poorleader"
+#command "#itemslots 786432"
 #end
 
 #new secondshape
@@ -514,7 +623,7 @@
 #name "hornedserpent"
 #command "#copystats 403"
 #command "#copyspr 403"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #command "#hp 28"
 #keepname
@@ -540,7 +649,7 @@
 #command "#animal"
 #command "#poisonres 15"
 #command "#forestsurvival"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #command "#eyes 8"
 #keepname
@@ -553,7 +662,7 @@
 #command "#magicboost 53 -5"
 #command "#berserk 2"
 #command "#reinvigoration 10"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nowayback
 #keepname
 #end
@@ -564,7 +673,7 @@
 #command "#copyspr 598"
 #command "#magicboost 53 -5"
 #command "#reinvigoration 10"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nowayback
 #keepname
 #end
@@ -576,7 +685,7 @@
 #command "#magicboost 53 -5"
 #command "#berserk 2"
 #command "#reinvigoration 10"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nowayback
 #keepname
 #end
@@ -587,7 +696,7 @@
 #command "#copyspr 497"
 #command "#magicboost 53 -5"
 #command "#reinvigoration 10"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nowayback
 #keepname
 #end
@@ -599,7 +708,7 @@
 #command "#magicboost 53 -5"
 #command "#berserk 2"
 #command "#reinvigoration 10"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nowayback
 #keepname
 #end
@@ -610,7 +719,7 @@
 #command "#copyspr 571"
 #command "#magicboost 53 -5"
 #command "#reinvigoration 10"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nowayback
 #keepname
 #end
@@ -622,7 +731,7 @@
 #command "#magicboost 53 -5"
 #command "#berserk 2"
 #command "#reinvigoration 10"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nowayback
 #keepname
 #end
@@ -633,7 +742,7 @@
 #command "#copyspr 412"
 #command "#magicboost 53 -5"
 #command "#reinvigoration 10"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nowayback
 #keepname
 #end
@@ -813,7 +922,7 @@
 #command "#copystats 524"
 #command "#copyspr 524"
 #command "#magicboost 53 -5"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #end
 
@@ -822,7 +931,7 @@
 #command "#name 'Giant Mantis'"
 #command "#spr1 ./graphics/mounts/standard/hugemantis.png"
 #command "#spr2 shift"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#size 3"
 #command "#hp 12"
 #command "#prot 10"
@@ -852,7 +961,7 @@
 #command "#copystats 307"
 #command "#copyspr 307"
 #command "#magicboost 53 -5"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #end
 
 #new secondshape
@@ -860,7 +969,7 @@
 #command "#name 'Werehyena'"
 #command "#copyspr 2294"
 #command "#magicboost 53 -1"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#size 3"
 #command "#hp 16"
 #command "#prot 6"
@@ -887,7 +996,7 @@
 #command "#spr2 shift"
 #command "#magicboost 53 -1"
 #command "#lizard"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#size 3"
 #command "#hp 14"
 #command "#prot 4"
@@ -915,7 +1024,7 @@
 #command "#spr2 shift"
 #command "#drawsize -20"
 #command "#lizard"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#size 3"
 #command "#hp 10"
 #command "#prot 3"
@@ -1012,7 +1121,7 @@
 #command "#mapmove 22"
 #command "#ap 20"
 #command "#noleader"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nogcost
 #nowayback
 #mount
@@ -1039,7 +1148,7 @@
 #command "#ap 20"
 #command "#noleader"
 #command "#stealthy +40"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nogcost
 #nowayback
 #mount
@@ -1124,7 +1233,7 @@
 #command "#undisciplined"
 #command "#poisonres 15"
 #command "#forestsurvival"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#eyes 8"
 #nowayback
 #nogcost
@@ -1175,7 +1284,7 @@
 #command "#flying"
 #command "#forestsurvival"
 #command "#bird"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nowayback
 #nogcost
 #mount
@@ -1202,7 +1311,7 @@
 #command "#ap 25"
 #command "#flying"
 #command "#forestsurvival"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nowayback
 #nogcost
 #mount
@@ -1237,7 +1346,7 @@
 #command "#mapmove 22"
 #command "#ap 18"
 #command "#forestsurvival"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nowayback
 #nogcost
 #mount
@@ -1263,7 +1372,7 @@
 #command "#mapmove 22"
 #command "#ap 18"
 #command "#forestsurvival"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nowayback
 #nogcost
 #mount
@@ -1287,7 +1396,7 @@
 #command "#prec 5"
 #command "#mapmove 22"
 #command "#ap 18"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nowayback
 #nogcost
 #mount
@@ -1312,7 +1421,7 @@
 #command "#mapmove 18"
 #command "#ap 22"
 #command "#poisonres 100"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#mr 8"
 #nowayback
 #nogcost
@@ -1412,7 +1521,7 @@
 #command "#float"
 #command "#weapon 615 --- Hoof"
 #command "#demon"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nowayback
 #nogcost
 #mount
@@ -1583,7 +1692,7 @@
 #command "#stealthy 50"
 #command "#heat 3"
 #command "#nametype 116"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nowayback
 #nogcost
 #mount
@@ -1649,7 +1758,7 @@
 #command "#undisciplined"
 #command "#forestsurvival"
 #command "#mountainsurvival"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #nowayback
 #nogcost
@@ -1680,7 +1789,7 @@
 #command "#undisciplined"
 #command "#coldres 25"
 #command "#wastesurvival"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #nowayback
 #nogcost
@@ -1710,7 +1819,7 @@
 #command "#undisciplined"
 #command "#forestsurvival"
 #command "#mountainsurvival"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #nowayback
 #nogcost
@@ -1765,7 +1874,7 @@
 #command "#copystats 520"
 #command "#copyspr 520"
 #command "#magicboost 53 -5"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #nowayback
 #nogcost
@@ -1776,7 +1885,7 @@
 #name "moose"
 #command "#copystats 1084"
 #command "#copyspr 1084"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
 #nowayback
@@ -1809,7 +1918,7 @@
 #command "#animal"
 #command "#undisciplined"
 #command "#forestsurvival"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #nowayback
 #nogcost
@@ -1838,7 +1947,7 @@
 #command "#maxage 14"
 #command "#animal"
 #command "#undisciplined"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #command "#flying"
 #nowayback
@@ -1852,7 +1961,7 @@
 #command "#copystats 524"
 #command "#copyspr 524"
 #command "#magicboost 53 -5"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #nowayback
 #nogcost
@@ -1865,7 +1974,7 @@
 #command "#spr1 ./graphics/mounts/standard/drafthorse.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nowayback
 #nogcost
 #mount
@@ -1877,7 +1986,58 @@
 #command "#spr1 ./graphics/mounts/standard/armoredhorse1a.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "fay-chariot"
+#command "#copystats 3563"
+#command "#copyspr 3572"
+#command "#glamour"
+#command "#hp 24"
+#command "#prot 5"
+#command "#str 15"
+#command "#att 11"
+#command "#def 12"
+#command "#mr 14"
+#command "#mor 12"
+#command "#ap 22"
+#command "#truesight"
+#command "#stealthy 40"
+#command "#diseaseres 100"
+#command "#poisonres 10"
+#command "#smartmount 100"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "unicorn-chariot"
+#command "#copystats 3563"
+#command "#copyspr 3572"
+#command "#weapon 330"
+#command "#hp 24"
+#command "#prot 5"
+#command "#str 15"
+#command "#att 11"
+#command "#def 12"
+#command "#mr 14"
+#command "#mor 12"
+#command "#ap 22"
+#command "#forestsurvival"
+#command "#truesight"
+#command "#stealthy 40"
+#command "#diseaseres 100"
+#command "#poisonres 10"
+#command "#smartmount 100"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
 #nowayback
 #nogcost
 #mount
@@ -1888,7 +2048,7 @@
 #command "#copystats 3570"
 #command "#copyspr 3570"
 #command "#magicboost 53 -5"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nowayback
 #nogcost
 #mount
@@ -1933,6 +2093,24 @@
 #end
 
 #new secondshape
+#name "chariot_two_lizard"
+#command "#copystats 3568"
+#command "#spr1 ./graphics/mounts/chariots/twolizard.png"
+#command "#spr2 shift"
+#command "#hp 40"
+#command "#size 7"
+#command "#ap 15"
+#command "#unsurr 2"
+#command "#weapon 20"
+#command "#mapmove 18"
+#command "#nomovepen"
+#command "#coldblood"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
 #name "chariot_swan"
 #command "#spr1 ./graphics/mounts/chariots/small_swan_bronze.png"
 #command "#spr2 shift"
@@ -1959,8 +2137,36 @@
 #end
 
 #new secondshape
+#name "giant_chariot_swan"
+#command "#spr1 ./graphics/sidhe/mounts/chariot_swan.png"
+#command "#spr2 shift"
+#command "#name 'Giant Swan Chariot'"
+#command "#prot 4"
+#command "#str 12"
+#command "#size 6"
+#command "#hp 18"
+#command "#att 8"
+#command "#def 8"
+#command "#prec 8"
+#command "#mapmove 14"
+#command "#ap 10"
+#command "#sailing 2 2"
+#command "#trample"
+#command "#weapon 677"
+#command "#prot 4"
+#command "#enc 5"
+#command "#unsurr 1"
+#command "#swimming"
+#command "#nomovepen"
+#nowayback
+#nogcost
+#mount
+#end
+
+
+#new secondshape
 #name "chariot_blackswan"
-#command "#spr1 ./graphics/mounts/chariots/small_swan_bronze.png"
+#command "#spr1 ./graphics/mounts/chariots/small_blackswan_iron.png"
 #command "#spr2 shift"
 #command "#name 'Swan Chariot'"
 #command "#size 3"
@@ -2075,7 +2281,7 @@
 #command "#copystats 2526"
 #command "#copyspr 2526"
 #command "#magicboost 53 -5"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nowayback
 #nogcost
 #mount
@@ -2087,7 +2293,7 @@
 #command "#copyspr 2512"
 #command "#quadruped"
 #command "#magicboost 53 -5"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nowayback
 #nogcost
 #mount
@@ -2100,7 +2306,7 @@
 #command "#spr1 ./graphics/abysian/mounts/fossil.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nowayback
 #nogcost
 #mount
@@ -2140,7 +2346,7 @@
 #command "#weapon 429 --- Stone Club"
 #command "#magicboost 53 -5"
 #command "#humanoid"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nowayback
 #nogcost
 #mount
@@ -2196,7 +2402,7 @@
 #command "#neednoteat"
 #command "#noheal"
 #command "#lizard"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nowayback
 #nogcost
 #mount
@@ -2226,7 +2432,7 @@
 #command "#wastesurvival"
 #command "#undisciplined"
 #command "#animal"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #nowayback
 #nogcost
 #mount
@@ -2261,7 +2467,7 @@
 #command "#copystats 284"
 #command "#copyspr 284"
 #command "#magicboost 53 -5"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #nowayback
 #nogcost
@@ -2273,7 +2479,7 @@
 #command "#copystats 1560"
 #command "#copyspr 1560"
 #command "#magicboost 53 -5"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #nowayback
 #nogcost
@@ -2286,7 +2492,7 @@
 #command "#spr1 ./graphics/hoburg/mounts/blackdog.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #nowayback
 #nogcost
@@ -2316,7 +2522,7 @@
 #command "#weapon 20 --- Bite"
 #command "#patrolbonus 1"
 #command "#enc 3"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #nowayback
 #nogcost
@@ -2346,7 +2552,7 @@
 #command "#darkvision 50"
 #command "#weapon 223 --- Venomous Bite"
 #command "#enc 2"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #nowayback
 #nogcost
@@ -2358,7 +2564,7 @@
 #command "#copystats 1224"
 #command "#copyspr 1224"
 #command "#magicboost 53 -5"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #nowayback
 #nogcost
@@ -2370,7 +2576,7 @@
 #command "#copystats 1224"
 #command "#copyspr 2474"
 #command "#magicboost 53 -5"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #nowayback
 #nogcost
@@ -2384,7 +2590,7 @@
 #command "#stealthy +0"
 #command "#snowmove"
 #command "#magicboost 53 -5"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #nowayback
 #nogcost
@@ -2396,7 +2602,7 @@
 #command "#copystats 2224"
 #command "#copyspr 2224"
 #command "#magicboost 53 -5"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #nowayback
 #nogcost
@@ -2408,7 +2614,7 @@
 #command "#copystats 1064"
 #command "#copyspr 1064"
 #command "#magicboost 53 -5"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #nowayback
 #nogcost
@@ -2420,7 +2626,31 @@
 #command "#copystats 2929"
 #command "#copyspr 2929"
 #command "#magicboost 53 -5"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#nowayback
+#nogcost
+#mount
+#end
+
+
+#new secondshape
+#name "giantswanmount"
+#command "#copystats 2929"
+#command "#spr1 ./graphics/sidhe/mounts/giantswan.png"
+#command "#spr2 shift"
+#command "#name 'Giant Swan'"
+#command "#hp 18"
+#command "#prot 2"
+#command "#str 12"
+#command "#size 5"
+#command "#mapmove 26"
+#command "#ap 8"
+#command "#sailing 3 3"
+#command "#enc 4"
+#command "#swimming"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #nowayback
 #nogcost
@@ -2433,7 +2663,7 @@
 #command "#spr1 ./graphics/mounts/standard/swan_black.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#transformation 0"
 #nowayback
 #nogcost
@@ -2469,7 +2699,7 @@
 #command "#name 'Giant Mantis'"
 #command "#spr1 ./graphics/mounts/standard/hugemantis.png"
 #command "#spr2 shift"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#size 3"
 #command "#hp 12"
 #command "#prot 10"
@@ -2503,7 +2733,7 @@
 #command "#name 'Giant Toad'"
 #command "#copyspr 1359"
 #command "#lizard"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#str 11"
 #command "#mor 12"
 #command "#mr 5"
@@ -2537,7 +2767,7 @@
 #command "#spr1 ./graphics/mounts/standard/toad_sapphire.png"
 #command "#spr2 shift"
 #command "#lizard"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#str 11"
 #command "#mor 12"
 #command "#mr 5"
@@ -2571,7 +2801,7 @@
 #command "#spr1 ./graphics/mounts/standard/giantrat.png"
 #command "#spr2 shift"
 #command "#lizard"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#size 3"
 #command "#hp 12"
 #command "#prot 2"
@@ -2605,7 +2835,7 @@
 #command "#spr1 ./graphics/mounts/chariots/small_rat_iron.png"
 #command "#spr2 shift"
 #command "#lizard"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#size 4"
 #command "#hp 12"
 #command "#prot 5"
@@ -2641,7 +2871,7 @@
 #command "#spr1 ./graphics/mounts/chariots/small_rat_iron.png"
 #command "#spr2 shift"
 #command "#lizard"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#size 4"
 #command "#hp 12"
 #command "#prot 5"
@@ -2677,7 +2907,7 @@
 #command "#spr1 ./graphics/mounts/standard/elephant_dwarf.png"
 #command "#spr2 shift"
 #command "#copystats 3540"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#size 3"
 #command "#hp 12"
 #command "#prot 5"
@@ -2701,7 +2931,7 @@
 #command "#spr1 ./graphics/mounts/standard/elephant_dwarf_armored.png"
 #command "#spr2 shift"
 #command "#copystats 3541"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#size 3"
 #command "#hp 12"
 #command "#prot 5"
@@ -2728,7 +2958,7 @@
 #command "#spr1 ./graphics/mounts/standard/elephant_dwarf.png"
 #command "#spr2 shift"
 #command "#copystats 2307"
-#command "#itemslots 12288"
+#command "#itemslots 786432"
 #command "#size 3"
 #command "#hp 12"
 #command "#prot 5"

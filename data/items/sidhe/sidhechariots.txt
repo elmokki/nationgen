@@ -7,17 +7,9 @@
 #needs overlay 11
 #offsetx 55
 #offsety -8
-#define "#trample"
-#define "#mounted"
-#define "#size 6"
-#define "#prot 5"
-#define "#mapmove 24"
-#define "#ap 18"
-#define "#ressize 2"
+#define "#mountmnr 'fay-chariot'"
 #define "#gcost +50"
 #define "#rcost +10"
-#define "#enc 4"
-#define "#nomovepen"
 #tag "chariot"
 #tag "minprot 10"
 #tag "maxprot 15"
@@ -32,10 +24,8 @@
 #needs overlay 11
 #offsetx 55
 #offsety -8
-#define "#trample"
-#define "#mountmnr 3524"
+#define "#mountmnr 'unicorn-chariot'"
 #define "#gcost +70"
-#define "#unsurr 1"
 #tag "chariot"
 #tag "minprot 10"
 #tag "maxprot 15"
@@ -51,7 +41,7 @@
 #offsetx 55
 #offsety -8
 #define "#trample"
-#define "#mounted"
+#define "#mountmnr"
 #define "#weapon 19 --- Bite"
 #define "#size 6"
 #define "#prot 5"
@@ -77,21 +67,9 @@
 #needs overlay chariot_swan_overlay
 #offsetx 55
 #offsety -8
-#define "#trample"
-#define "#mounted"
-#define "#sailing 4 4"
-#define "#weapon nostr_bill_10"
-#define "#size 6"
-#define "#prot 5"
-#define "#mapmove 14"
-#define "#ap 10"
-#define "#ressize 2"
+#define "#mountmnr 'giant_chariot_swan'"
 #define "#gcost +60"
 #define "#rcost +10"
-#define "#enc 4"
-#define "#swimming"
-#define "#unsurr 1"
-#define "#nomovepen"
 #tag "chariot"
 #tag "minprot 6"
 #tag "maxprot 12"

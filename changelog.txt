@@ -1,28 +1,42 @@
-﻿0.8.1 (9th August 2024)
+﻿0.8.2 (19th August 2024)-RC1
 ----------------------------------------------------------
 
 Code
 ----------------------------------------------------------
-- 
+- Fixes to the mounted code
+- Change itemslots bitmasks to work with Dominions 6
+
+Content
+-----------------------------------------------------------
+- Fully functional version for Dominions 6 - there are visual issues that need to be resolved
+- Created mounts for all mounted units 
+-Issues: sacred mounts and dismounted riders still need to be added
+
+
+0.8.1 (9th August 2024)
+----------------------------------------------------------
+
+Code
+----------------------------------------------------------
+- Add code to create mounted units for the mounted system to work (based on the secondshape system)
 
 Content
 -----------------------------------------------------------
 - Adjust sizes to be in line for Dominions 6 (there might be errors)
-- Get the new mount system from Dominions 6 to work
-- Add code to create mounted units for the mounted system to work (based on the secondshape system)
+
 
 0.8.0 (22nd June 2024)
 ----------------------------------------------------------
 
 Code
 ----------------------------------------------------------
-- 
+- Fix spell names which changed in Dominions 6
+- Aded Glamour Magic handling to the code
 
 Content
 -----------------------------------------------------------
 - Fix IDs to work with Dominions 6
 - Add support for Glamour Magic
-- Fix spell names which changed in Dominions 6
 - Change the #illusion tag to #glamour for glamour units
 
 

@@ -42,15 +42,8 @@
 #offsety -13
 #needs overlay kelpie_land_overlay
 #armor
-#define "#size 5"
-#define "#mapmove 22"
-#define "#ap 30"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
+#define "#mountmnr '3647'"
 #define "#gcost +20"
-#define "#ressize 2"
-#define "#enc 5"
-#define "#amphibian"
 #tag "animal kelpie"
 #tag "minprot 6"
 #tag "maxprot 18"
@@ -65,16 +58,9 @@
 #offsety -13
 #needs overlay kelpie_armored_land_overlay
 #armor
-#define "#size 5"
-#define "#mapmove 22"
-#define "#ap 26"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
+#define "#mountmnr '3995'"
 #define "#gcost +25"
 #define "#rcost +5"
-#define "#ressize 2"
-#define "#enc 5"
-#define "#amphibian"
 #tag "animal kelpie"
 #theme "heavy"
 #tag "minprot 14"
@@ -127,17 +113,8 @@
 #armor
 #offsetx -4
 #offsety -3
-#define "#size 5"
-#define "#mapmove 26"
-#define "#ap 8"
-#define "#mounted"
-#define "#flying"
-#define "#sailing 3 3"
-#define "#weapon nostr_bill_10"
+#define "#mountmnr 'giantswanmount'"
 #define "#gcost +50"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#swimming"
 #theme "light"
 #tag "animal swan"
 #tag "maxprot 11"
