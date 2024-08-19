@@ -5,18 +5,9 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/wolf.png
 #armor
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon nostr_bite_10 --- bite"
-#define "#secondshape wolfmount"
+#define "#mountmnr 284"
 #define "#gcost +20"
-#define "#ressize 1"
-#define "#enc 3"
 #define "#rcost +4"
-#define "#stealthy +0"
-#define "#snowmove"
 #tag "animal wolf"
 #theme "wolf"
 #theme "wolftotem"
@@ -106,14 +97,8 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/deer.png
 #armor
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon 354 --- antlers"
+#define "#mountmnr '2228'"
 #define "#gcost +15"
-#define "#ressize 1"
-#define "#enc 3"
 #define "#rcost +4"
 #tag "animal deer"
 #theme "deer"
@@ -132,15 +117,8 @@
 #sprite /graphics/hoburg/mounts/hawk.png
 #armor
 #needs overlay hawkoverlay
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 6"
-#define "#flying"
-#define "#mounted"
-#define "#weapon 236 --- claw"
+#define "#mountmnr '1380'"
 #define "#gcost +27"
-#define "#ressize 1"
-#define "#enc 4"
 #define "#rcost +4"
 #theme "specialmount"
 #tag "animal hawk"
@@ -301,17 +279,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/giantrat.png
 #armor
-#define "#size 4"
-#define "#mapmove 20"
-#define "#ap 10"
-#define "#mounted"
-#define "#weapon nostr_diseasebite_12"
+#define "#mountmnr 'ratmount'"
 #define "#gcost +20"
-#define "#diseaseres +10"
-#define "#ressize 1"
-#define "#enc 3"
-#define "#stealthy +0"
-#define "#swimming"
 #tag "animal rat"
 #theme "rat"
 #theme "rattotem"
@@ -319,7 +288,6 @@
 #tag "minprot 8"
 #tag "maxprot 18"
 #tag "guaranteedprefix rat"
-#define "#secondtmpshape ratmount"
 #description "If the rider dies, the rat will carry on fighting until the end of the battle."
 #basechance 1
 #offsetx 3

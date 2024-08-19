@@ -5,18 +5,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/crocodile_mount.png
 #armor
-#define "#size 5"
-#define "#mapmove 1"
-#define "#ap 8"
-#define "#sailing 3 3"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#weapon tailswipe_nostr"
+#define "#mountmnr 'crocodilemount'"
 #define "#gcost +10"
-#define "#ressize 2"
-#define "#enc 3"
-#define "#swampsurvival"
-#define "#secondtmpshape crocodilemount"
 #description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
 #tag "animal crocodile"
 #theme "light"

@@ -70,22 +70,13 @@
 #gameid -1
 #sprite /graphics/mounts/standard/giantrat.png
 #armor
-#define "#size 4"
-#define "#mapmove 18"
-#define "#ap 10"
-#define "#mounted"
-#define "#weapon nostr_diseasebite_12"
+#define "#mountmnr 'ratmount'"
 #define "#gcost +20"
-#define "#diseaseres +10"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#swimming"
 #tag "animal rat"
 #theme "rat"
 #theme "rattotem"
 #theme "totemanimal"
 #tag "guaranteedprefix rat"
-#define "#secondtmpshape ratmount"
 #description "If the rider dies, the rat will carry on fighting until the end of the battle."
 #basechance 1
 #offsetx 0

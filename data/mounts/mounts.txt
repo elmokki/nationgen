@@ -217,6 +217,17 @@
 #end
 
 #new secondshape
+#name "pigasus"
+#command "#copystats 549"
+#command "#spr1 ./graphics/hoburg/mounts/pigasus.png"
+#command "#spr2 shift"
+#command "#flying"
+#command "#itemslots 12288"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#end
+
+#new secondshape
 #name "demonbred_hog"
 #command "#copystats 549"
 #command "#name 'Black Hog'"
@@ -659,6 +670,108 @@
 #command "#reinvigoration 5"
 #nowayback
 #end
+
+#new secondshape
+#name "mechant"
+#command "#spr1 ./graphics/hoburg/mounts/mech_ant.png"
+#command "#spr2 shift"
+#command "#name 'Mechanical Ant'"
+#command "#size 6"
+#command "#hp 18"
+#command "#prot 18"
+#command "#mr 12"
+#command "#mor 50"
+#command "#str 14"
+#command "#att 10"
+#command "#def 8"
+#command "#prec 4"
+#command "#ap 8"
+#command "#mapmove 20"
+#command "#enc 3"
+#command "#weapon mechant_bite"
+#command "#poormagicleader"
+#command "#fireres 15"
+#command "#coldres 15"
+#command "#shockres 15"
+#command "#poisonres 25"
+#command "#reinvigoration -1"
+#command "#pooramphibian"
+#command "#magicbeing"
+#command "#neednoteat"
+#command "#inanimate"
+#command "#maxage 800"
+#command "#magicboost 53 -5"
+#nowayback
+#end
+
+#new secondshape
+#name "mechspider"
+#command "#spr1 ./graphics/hoburg/mounts/mech_spider.png"
+#command "#spr2 shift"
+#command "#name 'Mechanical Spider'"
+#command "#size 4"
+#command "#hp 10"
+#command "#prot 18"
+#command "#mr 12"
+#command "#mor 50"
+#command "#str 13"
+#command "#att 10"
+#command "#def 8"
+#command "#prec 4"
+#command "#ap 8"
+#command "#mapmove 20"
+#command "#enc 3"
+#command "#weapon mechspider_fangs"
+#command "#weapon mechspider_spit"
+#command "#poormagicleader"
+#command "#fireres 15"
+#command "#coldres 15"
+#command "#shockres 15"
+#command "#poisonres 25"
+#command "#reinvigoration -1"
+#command "#pooramphibian"
+#command "#magicbeing"
+#command "#neednoteat"
+#command "#inanimate"
+#command "#maxage 800"
+#command "#magicboost 53 -5"
+#nowayback
+#end
+
+#new secondshape
+#name "mechmosquito"
+#command "#spr1 ./graphics/hoburg/mounts/mech_mosquito.png"
+#command "#spr2 shift"
+#command "#name 'Mechanical Mosquito'"
+#command "#size 3"
+#command "#hp 7"
+#command "#prot 18"
+#command "#mr 12"
+#command "#mor 50"
+#command "#str 12"
+#command "#att 10"
+#command "#def 8"
+#command "#prec 4"
+#command "#ap 8"
+#command "#mapmove 26"
+#command "#enc 3"
+#command "#weapon mechmosquito_bite"
+#command "#poormagicleader"
+#command "#fireres 15"
+#command "#coldres 15"
+#command "#shockres 15"
+#command "#poisonres 25"
+#command "#reinvigoration -1"
+#command "#flying"
+#command "#magicbeing"
+#command "#neednoteat"
+#command "#inanimate"
+#command "#maxage 800"
+#command "#magicboost 53 -5"
+#nowayback
+#end
+
+
 
 #new secondshape
 #name "metalman-small"
@@ -1186,10 +1299,17 @@
 #command "#size 4"
 #command "#mapmove 20"
 #command "#ap 22"
+#command "#hp 12"
+#command "#att 11"
+#command "#def 10"
+#command "#str 10"
+#command "#prec 5"
+#command "#prot 5"
 #command "#weapon 20 --- Bite"
 #command "#weapon 236 -- Claw"
 #command "#enc 15"
 #command "#fear 5"
+#command "#demon"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
 #nowayback
@@ -1202,11 +1322,41 @@
 #command "#copyspr ./graphics/amazon/mounts/nightmare_feline.png"
 #command "#size 4"
 #command "#mapmove 20"
+#command "#hp 12"
 #command "#ap 18"
+#command "#att 11"
+#command "#def 10"
+#command "#str 10"
+#command "#prec 5"
+#command "#prot 5"
 #command "#weapon 322 --- Bite"
 #command "#weapon 236 -- Claw"
 #command "#enc 15"
 #command "#fear 5"
+#command "#demon"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "vine_nightmare"
+#command "#copyspr ./graphics/hoburg/mounts/vine_nightmare.png"
+#command "#size 3"
+#command "#hp 8"
+#command "#att 11"
+#command "#def 10"
+#command "#str 9"
+#command "#prec 5"
+#command "#prot 2"
+#command "#ap 14"
+#command "#mapmove 20"
+#command "#weapon 352 --- Gore"
+#command "#enc 15"
+#command "#fear 5"
+#command "#demon"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
 #nowayback
@@ -1757,6 +1907,58 @@
 #end
 
 #new secondshape
+#name "chariot_swan"
+#command "#spr1 ./graphics/mounts/chariots/small_swan_bronze.png"
+#command "#spr2 shift"
+#command "#name 'Swan Chariot'"
+#command "#size 3"
+#command "#hp 8"
+#command "#str 6"
+#command "#att 8"
+#command "#def 8"
+#command "#prec 8"
+#command "#mapmove 14"
+#command "#ap 10"
+#command "#sailing 2 2"
+#command "#trample"
+#command "#weapon 677"
+#command "#prot 4"
+#command "#enc 5"
+#command "#unsurr 1"
+#command "#swimming"
+#command "#nomovepen"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "chariot_blackswan"
+#command "#spr1 ./graphics/mounts/chariots/small_swan_bronze.png"
+#command "#spr2 shift"
+#command "#name 'Swan Chariot'"
+#command "#size 3"
+#command "#hp 8"
+#command "#str 6"
+#command "#att 8"
+#command "#def 8"
+#command "#prec 8"
+#command "#mapmove 14"
+#command "#ap 10"
+#command "#sailing 2 2"
+#command "#trample"
+#command "#weapon 677"
+#command "#prot 4"
+#command "#enc 5"
+#command "#unsurr 1"
+#command "#swimming"
+#command "#nomovepen"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
 #name "chariot_lizard_oriental"
 #command "#copystats 3568"
 #command "#spr1 ./graphics/mounts/chariots/lizard_oriental.png"
@@ -1772,6 +1974,29 @@
 #name "chariot_boar_oriental"
 #command "#spr1 ./graphics/mounts/chariots/boar_oriental.png"
 #command "#spr2 shift"
+#command "#copystats 3563"
+#command "#hp 15"
+#command "#trample"
+#command "#size 5"
+#command "#prot 5"
+#command "#weapon 331" -- Gore
+#command "#mapmove 20"
+#command "#ap 18"
+#command "#ressize 3"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#nomovepen"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "chariot_boar"
+#command "#spr1 ./graphics/mounts/chariots/boar.png"
+#command "#spr2 shift"
+#command "#copystats 3563"
+#command "#hp 15"
 #command "#trample"
 #command "#size 5"
 #command "#prot 5"
@@ -1791,6 +2016,8 @@
 #name "chariot_tiger_oriental"
 #command "#spr1 ./graphics/mounts/chariots/tiger_oriental.png"
 #command "#spr2 shift"
+#command "#copystats 3563"
+#command "#hp 22"
 #command "#trample"
 #command "#size 5"
 #command "#prot 5"
@@ -2028,6 +2255,19 @@
 #end
 
 #new secondshape
+#name "blackdogmount"
+#command "#copystats 1560"
+#command "#spr1 ./graphics/hoburg/mounts/blackdog.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#itemslots 12288"
+#command "#transformation 0"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
 #name "cusidhemount"
 #command "#copyspr 851"
 #command "#magicboost 53 -5"
@@ -2153,6 +2393,19 @@
 #name "swanmount"
 #command "#copystats 2929"
 #command "#copyspr 2929"
+#command "#magicboost 53 -5"
+#command "#itemslots 12288"
+#command "#transformation 0"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "swanmount_black"
+#command "#copystats 2929"
+#command "#spr1 ./graphics/mounts/standard/swan_black.png"
+#command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#itemslots 12288"
 #command "#transformation 0"
@@ -2321,11 +2574,83 @@
 #end
 
 #new secondshape
+#name "ratchariot"
+#command "#name 'Rat Chariot'"
+#command "#spr1 ./graphics/mounts/chariots/small_rat_iron.png"
+#command "#spr2 shift"
+#command "#lizard"
+#command "#itemslots 12288"
+#command "#size 4"
+#command "#hp 12"
+#command "#prot 5"
+#command "#mr 5"
+#command "#mor 11"
+#command "#str 9"
+#command "#att 11"
+#command "#def 11"
+#command "#prec 5"
+#command "#ap 10"
+#command "#mapmove 14"
+#command "#trample"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#weapon nostr_diseasebite_12"
+#command "#darkvision 50"
+#command "#diseaseres 50"
+#command "#stealthy 0"
+#command "#animal"
+#command "#undisciplined"
+#command "#swampsurvival"
+#command "#maxage 7"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "ratchariot_bronze"
+#command "#name 'Rat Chariot'"
+#command "#spr1 ./graphics/mounts/chariots/small_rat_iron.png"
+#command "#spr2 shift"
+#command "#lizard"
+#command "#itemslots 12288"
+#command "#size 4"
+#command "#hp 12"
+#command "#prot 5"
+#command "#mr 5"
+#command "#mor 11"
+#command "#str 9"
+#command "#att 11"
+#command "#def 11"
+#command "#prec 5"
+#command "#ap 10"
+#command "#mapmove 14"
+#command "#trample"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#weapon nostr_diseasebite_12"
+#command "#darkvision 50"
+#command "#diseaseres 50"
+#command "#stealthy 0"
+#command "#animal"
+#command "#undisciplined"
+#command "#swampsurvival"
+#command "#maxage 7"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
 #name "dwarfelephantmount"
 #command "#name 'Dwarf Elephant'"
 #command "#spr1 ./graphics/mounts/standard/elephant_dwarf.png"
 #command "#spr2 shift"
-#command "#copystats 2307"
+#command "#copystats 3540"
 #command "#itemslots 12288"
 #command "#size 3"
 #command "#hp 12"
@@ -2334,6 +2659,31 @@
 #command "#str 10"
 #command "#def 10"
 #command "#ap 12"
+#command "#mapmove 16"
+#command "#enc 2"
+#command "#undisciplined"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "dwarfelephantmount_armored"
+#command "#name 'Dwarf Elephant'"
+#command "#spr1 ./graphics/mounts/standard/elephant_dwarf_armored.png"
+#command "#spr2 shift"
+#command "#copystats 3541"
+#command "#itemslots 12288"
+#command "#size 3"
+#command "#hp 12"
+#command "#prot 5"
+#command "#mor 9"
+#command "#str 10"
+#command "#def 10"
+#command "#ap 12"
+#command "#armor 144"
 #command "#mapmove 16"
 #command "#enc 2"
 #command "#undisciplined"

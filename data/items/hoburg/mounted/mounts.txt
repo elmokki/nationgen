@@ -161,16 +161,8 @@
 #recolormask /graphics/machakans/mounts/giant_parrot_recolormask.png
 #needs overlay giant_parrot_overlay
 #armor
-#define "#size 4"
-#define "#mapmove 30"
-#define "#ap 6"
-#define "#flying"
-#define "#mounted"
-#define "#weapon nostr_talons_10"
-#define "#weapon nostr_beak_10"
+#define "#mountmnr 'grey_parrot'"
 #define "#gcost +25"
-#define "#ressize 1"
-#define "#enc 4"
 #define "#rcost +4"
 #tag "animal parrot"
 #tag "maxprot 14"
@@ -192,15 +184,9 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/caveman.png
 #armor
-#define "#size 4"
-#define "#mapmove 18"
-#define "#ap 14"
-#define "#mounted"
+#define "#mountmnr 'caveman'"
 #define "#gcost +45"
-#define "#ressize 1"
 #define "#rcost +8"
-#define "#secondshape caveman"
-#define "#enc 4"
 #description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
 #basechance 0.33
 #needs overlay caveman_overlay
@@ -224,15 +210,9 @@
 #sprite /graphics/hoburg/mounts/caveman_occidental.png
 #recolormask /graphics/hoburg/mounts/caveman_occidental_recolormask.png
 #armor
-#define "#size 4"
-#define "#mapmove 18"
-#define "#ap 14"
-#define "#mounted"
+#define "#mountmnr 'caveman_occidental'"
 #define "#gcost +40"
-#define "#ressize 1"
 #define "#rcost +6"
-#define "#secondshape caveman_occidental"
-#define "#enc 4"
 #description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
 #basechance 0.33
 #needs overlay caveman_occidental_overlay
@@ -251,15 +231,9 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/horite.png
 #armor
-#define "#size 4"
-#define "#mapmove 18"
-#define "#ap 14"
-#define "#mounted"
+#define "#mountmnr 'caveman_hellbred'"
 #define "#gcost +40"
-#define "#ressize 1"
 #define "#rcost +6"
-#define "#secondshape caveman_hellbred"
-#define "#enc 4"
 #description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
 #basechance 0.33
 #needs overlay caveman_hellbred_overlay
@@ -278,15 +252,9 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/mech_ant.png
 #armor
-#define "43"
-#define "#mapmove 20"
-#define "#ap 14"
-#define "#mounted"
-#define "#gcost +28"
-#define "#ressize 1"
+#define "#mountmnr 'mechant'"
+#define "#gcost +60"
 #define "#rcost +12"
-#define "#enc 3"
-#define "#weapon mechant_bite"
 #basechance 0.33
 #tag "animal 'mechanical ant'"
 #tag "guaranteedprefix 'mechanized'"
@@ -314,16 +282,9 @@
 #tag "animal 'mechanical spider'"
 #tag "guaranteedprefix 'mechanized'"
 #needs overlay "mechspider_overlay"
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 12"
-#define "#mounted"
-#define "#gcost +32"
-#define "#ressize 1"
+#define "#mountmnr 'mechspider'"
+#define "#gcost +50"
 #define "#rcost +12"
-#define "#enc 3"
-#define "#weapon mechspider_fangs"
-#define "#weapon mechspider_spit"
 #offsety -5
 #offsetx 5
 #minprot 10
@@ -347,16 +308,9 @@
 #tag "animal 'mechanical mosquito'"
 #tag "guaranteedprefix 'mechanized'"
 #needs overlay "mechmosquito_overlay"
-#define "#size 4"
-#define "#mapmove 26"
-#define "#ap 12"
-#define "#flying"
-#define "#mounted"
-#define "#gcost +34"
-#define "#ressize 1"
+#define "#mountmnr 'mechmosquito'"
+#define "#gcost +40"
 #define "#rcost +12"
-#define "#enc 3"
-#define "#weapon mechmosquito_bite"
 #offsety -15
 #offsetx -14
 #minprot 10
@@ -380,20 +334,8 @@
 #offsetx 25
 #offsety -7
 #armor
-#define "#size 5"
-#define "#mapmove 8"
-#define "#ap 8"
-#define "#sailing 3 3"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#weapon tailswipe_nostr"
+#define "#mountmnr 'crocodilemount'"
 #define "#gcost +15"
-#define "#ressize 1"
-#define "#enc 3"
-#define "#swampsurvival"
-#define "#swimming"
-#define "#nomovepen"
-#define "#secondtmpshape crocodilemount"
 #description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
 #tag "animal crocodile"
 #theme "heavy"
@@ -416,20 +358,12 @@
 #basechance 0.33
 #sprite /graphics/mounts/standard/hyena.png
 #armor
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 20"
-#define "#mounted"
-#define "#weapon 237 --- bite"
+#define "#mountmnr 'hyenamount'"
 #define "#gcost +15"
-#define "#ressize 1"
-#define "#enc 3"
 #define "#rcost +4"
-#define "#mor +2"
 #tag "animal hyena"
 #tag "maxprot 14"
 #tag "guaranteedprefix hyena"
-#define "#secondtmpshape hyenamount"
 #description "If the rider dies, the hyena will carry on fighting until the end of the battle."
 #offsetx -3
 #offsety -19
@@ -455,17 +389,8 @@
 #needs overlay caveman_fossil_overlay
 #offsetx 5
 #offsety 27
-#define "#size 5"
-#define "#mapmove 18"
-#define "#ap 7"
-#define "#mounted"
-#define "#prot 4"
-#define "#okundeadleader"
-#define "#weapon nostr_fossilclub"
-#define "#secondshape fossil_caveman_mount"
+#define "#mountmnr 'fossil_caveman_mount'"
 #define "#gcost +45"
-#define "#ressize 1"
-#define "#enc 5"
 #define "#rcost +5"
 #tag "animal fossil"
 #theme "heavy"
@@ -484,22 +409,9 @@
 #sprite /graphics/mounts/chariots/small_swan_bronze.png
 #needs overlay chariot_swan_bronze_overlay
 #armor
-#define "#size 3"
-#define "#hp +3"
-#define "#mapmove 14"
-#define "#ap 10"
-#define "#mounted"
-#define "#sailing 2 2"
-#define "#trample"
-#define "#weapon nostr_bill_3"
-#define "#prot 4"
+#define "#mountmnr 'chariot_swan'"
 #define "#gcost +10"
 #define "#rcost +5"
-#define "#ressize 1"
-#define "#enc 5"
-#define "#unsurr 1"
-#define "#swimming"
-#define "#nomovepen"
 #tag "animal swan"
 #tag "chariot"
 #theme "swan"
@@ -527,21 +439,9 @@
 #sprite /graphics/mounts/chariots/small_blackswan_iron.png
 #needs overlay chariot_swan_iron_overlay
 #armor
-#define "#size 3"
-#define "#hp +3"
-#define "#mapmove 16"
-#define "#ap 10"
-#define "#mounted"
-#define "#sailing 2 2"
-#define "#trample"
-#define "#weapon nostr_bill_3"
-#define "#prot 5"
+#define "#mountmnr 'chariot_blackswan'"
 #define "#gcost +11"
 #define "#rcost +6"
-#define "#ressize 1"
-#define "#enc 5"
-#define "#unsurr 1"
-#define "#swimming"
 #tag "animal swan"
 #tag "chariot"
 #theme "swan"
@@ -564,21 +464,9 @@
 #sprite /graphics/mounts/chariots/small_rat_iron.png
 #needs overlay chariot_small_iron_overlay
 #armor
-#define "#size 4"
-#define "#hp +6"
-#define "#mapmove 14"
-#define "#ap 10"
-#define "#mounted"
-#define "#trample"
-#define "#weapon nostr_diseasebite_12"
-#define "#prot 5"
+#define "#mountmnr 'ratchariot'"
 #define "#gcost +20"
 #define "#rcost +10"
-#define "#ressize 1"
-#define "#enc 4"
-#define "#unsurr 1"
-#define "#nomovepen"
-#define "#diseaseres +10"
 #tag "animal rat"
 #tag "chariot"
 #theme "rat"
@@ -600,21 +488,9 @@
 #sprite /graphics/mounts/chariots/small_rat_bronze.png
 #needs overlay chariot_small_bronze_overlay
 #armor
-#define "#size 4"
-#define "#hp +6"
-#define "#mapmove 14"
-#define "#ap 10"
-#define "#mounted"
-#define "#trample"
-#define "#weapon nostr_diseasebite_12"
-#define "#prot 5"
+#define "#mountmnr 'ratchariot_bronze'"
 #define "#gcost +20"
 #define "#rcost +10"
-#define "#ressize 1"
-#define "#enc 4"
-#define "#unsurr 1"
-#define "#nomovepen"
-#define "#diseaseres +10"
 #tag "animal rat"
 #tag "chariot"
 #theme "rat"
@@ -636,16 +512,8 @@
 #sprite /graphics/hoburg/mounts/vine_nightmare.png
 #needs overlay vine_nightmare_overlay
 #armor
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 14"
-#define "#prot 2"
-#define "#mounted"
-#define "#weapon 352 --- Gore"
-#define "#ressize 1"
+#define "#mountmnr 'vine_nightmare"
 #define "#enc 15"
-#define "#fear 5"
-#define "#poisonres 15"
 #define "#gcost +40"
 #tag "guaranteedprefix nightmare"
 #theme "specialmount"
@@ -664,18 +532,9 @@
 #sprite /graphics/mounts/standard/elephant_dwarf.png
 #needs overlay elephant_dwarf_overlay
 #armor
-#define "#size 3"
-#define "#mapmove 14"
-#define "#ap 14"
-#define "#mounted"
-#define "#trample"
-#define "#weapon nostr_tusk_10"
+#define "#mountmnr 'dwarfelephantmount'"
 #define "#gcost +20"
-#define "#hp +3"
-#define "#prot 4"
-#define "#ressize 1"
 #define "#rcost +4"
-#define "#enc 3"
 #tag "animal elephant"
 #tag "guaranteedprefix elephant"
 #theme "elephant"
@@ -695,18 +554,9 @@
 #sprite /graphics/mounts/standard/elephant_dwarf_armored.png
 #needs overlay elephant_dwarf_armored_overlay
 #armor
-#define "#size 3"
-#define "#mapmove 14"
-#define "#ap 12"
-#define "#mounted"
-#define "#trample"
-#define "#weapon nostr_tusk_10"
+#define "#mountmnr 'dwarfelephantmount_armored'"
 #define "#gcost +20"
-#define "#hp +4"
-#define "#prot 6"
-#define "#ressize 1"
 #define "#rcost +9"
-#define "#enc 4"
 #tag "animal elephant"
 #tag "guaranteedprefix elephant"
 #theme "elephant"
