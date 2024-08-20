@@ -56,7 +56,7 @@ public class MountUnit extends Unit {
 				}
 				else if(c.command.equals("#holy") && mountForm.tags.containsName("mount"))
 				{
-					if(otherForm.tags.containsName("sacredmount"))
+					if(!otherForm.tags.containsName("palanquin"))
 						sacred = true;
 				}
 				

@@ -7,7 +7,7 @@
 #armor
 #offsety 1
 #needs overlay 1
-#define "#mountmnr 3513"
+#define "#mountmnr 'riding-horse'"
 #define "#gcost +15"
 #tag "animal horse"
 #theme "light"
@@ -22,7 +22,7 @@
 #sprite /graphics/mounts/standard/armoredhorse1.png
 #armor
 #needs overlay 2
-#define "#mountmnr 3517"
+#define "#mountmnr 'armored-horse'"
 #tag "animal horse"
 #theme "heavy"
 #theme "iron"
@@ -59,7 +59,7 @@
 #sprite /graphics/mounts/standard/armoredhorse2.png
 #armor
 #needs overlay armoredhorse2overlay
-#define "#mountmnr 3514"
+#define "#mountmnr 'war-horse'"
 #tag "animal horse"
 #theme "heavy"
 #theme "bronze"
@@ -78,7 +78,7 @@
 #sprite /graphics/mounts/standard/armoredhorse2a.png
 #armor
 #needs overlay armoredhorse2overlay
-#define "#mountmnr 3515"
+#define "#mountmnr 'light-cataphracted-horse'"
 #define "#rcost +5"
 #tag "animal horse"
 #theme "heavy"
@@ -96,7 +96,7 @@
 #gameid -1
 #sprite /graphics/mounts/standard/fayhorse.png
 #armor
-#define "#mountmnr 3933"
+#define "#mountmnr 'fay-horse'"
 #define "#gcost +20"
 #tag "animal horse"
 #tag "minprot 6"
@@ -113,7 +113,7 @@
 #offsetx 28
 #offsety 64
 #needs overlay 8
-#define "#mountmnr 3556"
+#define "#mountmnr 'pegasus'"
 #define "#gcost +50"
 #theme "flying"
 #tag "animal pegasus"
@@ -146,7 +146,7 @@
 #gameid -1
 #sprite /graphics/mounts/standard/unicorn.png
 #armor
-#define "#mountmnr 3524"
+#define "#mountmnr 'unicorn'"
 #define "#gcost +30"
 #tag "minprot 6"
 #tag "maxprot 16"

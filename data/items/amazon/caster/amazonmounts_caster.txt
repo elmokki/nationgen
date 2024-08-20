@@ -7,7 +7,7 @@
 #sprite /graphics/mounts/standard/brownhorse.png
 #armor
 #needs overlay 1
-#define "#mountmnr 3513"
+#define "#mountmnr 'riding-horse'"
 #define "#gcost +15"
 #tag "animal horse"
 #theme "light"
@@ -23,7 +23,7 @@
 #armor
 #offsetx -3
 #needs overlay 4
-#define "#mountmnr 3516"
+#define "#mountmnr 'cataphracted-horse'"
 #define "#gcost +25"
 #tag "animal horse"
 #theme "heavy"
@@ -41,7 +41,7 @@
 #armor
 #offsetx -3
 #needs overlay 5
-#define "#mountmnr 3515"
+#define "#mountmnr 'light-cataphracted-horse'"
 #define "#gcost +20"
 #tag "animal horse"
 #tag "minprot 10"
@@ -59,7 +59,7 @@
 #offsetx 28
 #offsety 64
 #needs overlay 8
-#define "#mountmnr 3556"
+#define "#mountmnr 'pegasus'"
 #define "#gcost +50"
 #theme "flying"
 #tag "animal pegasus"
@@ -110,7 +110,7 @@
 #offsetx -7
 #offsety 14
 #needs overlay 6
-#define "#mountmnr 1179"
+#define "#mountmnr 'serpent1'"
 #define "#gcost +30"
 #tag "animal serpent"
 #theme "light"
@@ -127,7 +127,7 @@
 #offsetx -5
 #offsety 3
 #needs overlay 3
-#define "#mountmnr 1364"
+#define "#mountmnr 'greenlizard'"
 #define "#gcost +20"
 #tag "animal lizard"
 #theme "light"

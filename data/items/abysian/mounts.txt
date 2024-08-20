@@ -6,7 +6,7 @@
 #needs overlay firedrake_overlay
 #offsetx -7
 #offsety 16
-#define "#mountmnr 523"
+#define "#mountmnr 'firedrake'"
 #define "#gcost +55"
 
 #tag "animal drake"
@@ -21,7 +21,7 @@
 #armor
 #offsetx -7
 #offsety 14
-#define "#mountmnr 213"
+#define "#mountmnr 'salamander'"
 #define "#gcost +45"
 #tag "animal salamander"
 #tag "maxprot 100"
@@ -35,7 +35,7 @@
 #offsetx 23
 #offsety 6
 #needs overlay scorpion_overlay
-#define "#mountmnr 524"
+#define "#mountmnr 'scorpionmount'"
 #define "#gcost +50"
 #tag "animal scorpion"
 #theme "heavy"
@@ -55,7 +55,7 @@
 #needs overlay fossil_overlay
 #offsetx 34
 #offsety 31
-#define "#mountmnr 1977"
+#define "#mountmnr 'fossilmount'"
 #define "#gcost +50"
 #tag "animal fossil"
 #theme "heavy"
@@ -72,7 +72,7 @@
 #armor
 #offsetx -2
 #offsety 2
-#define "#mountmnr 2363"
+#define "#mountmnr 'gloso'"
 #define "#gcost +40"
 #tag "animal gloso"
 #description "Leaves a burning black sow behind when the rider dies"
@@ -88,7 +88,7 @@
 #armor
 #offsety -2
 #define "#size 5"
-#define "#mountmnr 3561"
+#define "#mountmnr 'nightmare'"
 #define "#gcost +40"
 #tag "animal nightmare"
 #description "Leaves a nightmare behind when the rider dies"

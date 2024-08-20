@@ -1059,7 +1059,7 @@ public class Unit {
 		
 
 		// Autocalc enabler
-		//u.commands.add(new Command("#gcost", "+10000"));
+		//u.commands.add(new Command("#gcost", Args.of(new Arg(92)), "+10000"));
 
 
 		// #price_per_command

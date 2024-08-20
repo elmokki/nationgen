@@ -6,7 +6,7 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/wolf.png
 #armor
-#define "#mountmnr 284"
+#define "#mountmnr 'wolfmount'"
 #define "#gcost +17"
 #define "#rcost +4"
 #tag "animal wolf"
@@ -35,7 +35,7 @@
 #sprite /graphics/hoburg/mounts/hawk.png
 #armor
 #needs overlay hawkoverlay
-#define "#mountmnr '1380'"
+#define "#mountmnr 'hawk'"
 #define "#gcost +27"
 #define "#rcost +4"
 #tag "animal hawk"
@@ -161,7 +161,7 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/deer.png
 #armor
-#define "#mountmnr '2228'"
+#define "#mountmnr 'deer'"
 #define "#gcost +15"
 #define "#rcost +4"
 #tag "animal deer"
@@ -190,7 +190,7 @@
 #offsety -22
 #offsetx 6
 #armor
-#define "#mountmnr 3524"
+#define "#mountmnr 'unicorn'"
 #define "#gcost +30"
 #tag "minprot 8"
 #tag "animal unicorn"

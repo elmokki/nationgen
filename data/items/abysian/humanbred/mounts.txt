@@ -8,7 +8,7 @@
 #armor
 #offsetx 23
 #offsety 6
-#define "#mountmnr 524"
+#define "#mountmnr 'scorpionmount'"
 #define "#gcost +50"
 #tag "animal scorpion"
 #theme "heavy"
@@ -28,7 +28,7 @@
 #needs overlay fossil_overlay
 #offsetx 34
 #offsety 31
-#define "#mountmnr 1977"
+#define "#mountmnr 'fossilmount'"
 #define "#gcost +50"
 #tag "animal fossil"
 #theme "heavy"
@@ -47,7 +47,7 @@
 #armor
 #offsetx -2
 #offsety 2
-#define "#mountmnr 2363"
+#define "#mountmnr 'gloso'"
 #define "#gcost +40"
 #tag "animal gloso"
 #description "Leaves a burning black sow behind when the rider dies"
@@ -62,7 +62,7 @@
 #sprite /graphics/mounts/standard/nightmare.png
 #armor
 #offsety -2
-#define "#mountmnr 3561"
+#define "#mountmnr 'nightmare'"
 #define "#gcost +40"
 #theme "specialmount"
 #tag "animal nightmare"
@@ -78,7 +78,7 @@
 #gameid -1
 #sprite /graphics/mounts/standard/lion.png
 #armor
-#define "#mountmnr 628"
+#define "#mountmnr 'lionmount'"
 #define "#gcost +35"
 #description "If the rider dies, the lion will carry on fighting until the end of the battle."
 #offsety 5
@@ -189,7 +189,7 @@
 #sprite /graphics/mounts/standard/brownhorse.png
 #armor
 #needs overlay 1
-#define "#mountmnr 3513"
+#define "#mountmnr 'riding-horse'"
 #define "#gcost +15"
 #tag "animal horse"
 #theme "light"
@@ -204,7 +204,7 @@
 #sprite /graphics/mounts/standard/armoredhorse1.png
 #armor
 #needs overlay 2
-#define "#mountmnr 3517"
+#define "#mountmnr 'armored-horse'"
 #tag "animal horse"
 #theme "heavy"
 #tag "minprot 14"
@@ -221,7 +221,7 @@
 #sprite /graphics/mounts/standard/armoredhorse2.png
 #armor
 #needs overlay armoredhorse2overlay
-#define "#mountmnr 3514"
+#define "#mountmnr 'war-horse'"
 #tag "animal horse"
 #theme "heavy"
 #tag "minprot 12"
@@ -240,7 +240,7 @@
 #armor
 #offsetx -3
 #needs overlay 4
-#define "#mountmnr 3516"
+#define "#mountmnr 'cataphracted-horse'"
 #define "#gcost +25"
 #tag "animal horse"
 #theme "heavy"
@@ -258,7 +258,7 @@
 #armor
 #offsetx -3
 #needs overlay 5
-#define "#mountmnr 3515"
+#define "#mountmnr 'light-cataphracted-horse'"
 #define "#gcost +20"
 #tag "animal horse"
 #tag "minprot 10"
@@ -278,7 +278,7 @@
 #armor
 #offsetx 5
 #offsety 52
-#define "#mountmnr 3538"
+#define "#mountmnr 'camel'"
 #define "#gcost +20"
 #tag "animal camel"
 #tag "maxprot 11"

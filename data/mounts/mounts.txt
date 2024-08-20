@@ -193,6 +193,15 @@
 #end
 
 #new secondshape
+#name "deer"
+#command "#copystats 2228"
+#command "#copyspr 2228"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#end
+
+#new secondshape
 #name "flying_fish"
 #command "#copystats 2858"
 #command "#spr1 ./graphics/machakans/mounts/flyingfish.png"
@@ -338,6 +347,33 @@
 #command "#spr1 ./graphics/hoburg/mounts/pigasus.png"
 #command "#spr2 shift"
 #command "#flying"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#end
+
+#new secondshape
+#name "kelpie-land"
+#command "#copystats 3647"
+#command "#copyspr 3647"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#end
+
+#new secondshape
+#name "kelpie-land-armored"
+#command "#copystats 3995"
+#command "#copyspr 3995"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#end
+
+#new secondshape
+#name "boar"
+#command "#copystats 549"
+#command "#copyspr 549"
 #command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
@@ -1236,6 +1272,19 @@
 #end
 
 #new secondshape
+#name "greenlizard"
+#command "#copystats 1364"
+#command "#copyspr 1364"
+#command "#name 'Green Lizard'"
+#command "#descr 'A bipedal predator lizard large enough to carry a rider.'"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
 #name "serpent1"
 #command "#copystats 1179"
 #command "#copyspr 1179"
@@ -1261,6 +1310,28 @@
 #name "cavedrake"
 #command "#copystats 522"
 #command "#copyspr 522"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "firedrake"
+#command "#copystats 523"
+#command "#copyspr 523"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "salamander"
+#command "#copystats 213"
+#command "#copyspr 213"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
 #nowayback
@@ -1581,26 +1652,34 @@
 #end
 
 #new secondshape
+#name "skeletal-horse"
+#command "#copystats 3558"
+#command "#copyspr 3558"
+#command "#magicboost 53 -5"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
 #name "nightmare"
-#command "#spr1 ./graphics/mounts/standard/nightmare.png"
-#command "#spr2 shift"
+#command "#copyspr 3561"
 #command "#magicboost 53 -5"
 #command "#name 'Nightmare'"
 #command "#fear 5"
-#command "#enc 5"
+#command "#enc 0"
 #command "#ap 25"
-#command "#str 14"
-#command "#mr 12"
+#command "#str 10"
+#command "#mr 10"
 #command "#mor 50"
 #command "#att 11"
-#command "#def 10"
-#command "#hp 16"
-#command "#prec 5"
-#command "#prot 5"
+#command "#def 9"
+#command "#hp 12"
+#command "#prec 10"
+#command "#prot 4"
 #command "#size 5"
-#command "#mapmove 28"
-#command "#float"
-#command "#weapon 615 --- Hoof"
+#command "#mapmove 24"
+#command "#weapon 55 --- Hoof"
 #command "#demon"
 #command "#itemslots 786432"
 #nowayback
@@ -1612,8 +1691,24 @@
 #name "nightmare_barded"
 #command "#spr1 ./graphics/amazon/mounts/nightmare_equine_fullbarded2.png"
 #command "#spr2 shift"
-#command "#copystats 3561"
+#command "#magicboost 53 -5"
 #command "#name 'Nightmare'"
+#command "#fear 5"
+#command "#enc 0"
+#command "#ap 25"
+#command "#str 10"
+#command "#mr 10"
+#command "#mor 50"
+#command "#att 11"
+#command "#def 9"
+#command "#hp 12"
+#command "#prec 10"
+#command "#prot 4"
+#command "#size 5"
+#command "#mapmove 24"
+#command "#weapon 55 --- Hoof"
+#command "#demon"
+#command "#itemslots 786432"
 #command "#armor 254 --- Plate Barding"
 #nowayback
 #nogcost
@@ -1624,8 +1719,24 @@
 #name "nightmare_equine_halfbarded"
 #command "#spr1 ./graphics/amazon/mounts/nightmare_equine_halfbarded.png"
 #command "#spr2 shift"
-#command "#copystats 3561"
+#command "#magicboost 53 -5"
 #command "#name 'Nightmare'"
+#command "#fear 5"
+#command "#enc 0"
+#command "#ap 25"
+#command "#str 10"
+#command "#mr 10"
+#command "#mor 50"
+#command "#att 11"
+#command "#def 9"
+#command "#hp 12"
+#command "#prec 10"
+#command "#prot 4"
+#command "#size 5"
+#command "#mapmove 24"
+#command "#weapon 55 --- Hoof"
+#command "#demon"
+#command "#itemslots 786432"
 #command "#armor 252 --- Light Scale Barding"
 #nowayback
 #nogcost
@@ -1636,8 +1747,24 @@
 #name "nightmare_equine_scalebarded"
 #command "#spr1 ./graphics/amazon/mounts/nightmare_equine_scalebarded1.png"
 #command "#spr2 shift"
-#command "#copystats 3561"
+#command "#magicboost 53 -5"
 #command "#name 'Nightmare'"
+#command "#fear 5"
+#command "#enc 0"
+#command "#ap 25"
+#command "#str 10"
+#command "#mr 10"
+#command "#mor 50"
+#command "#att 11"
+#command "#def 9"
+#command "#hp 12"
+#command "#prec 10"
+#command "#prot 4"
+#command "#size 5"
+#command "#mapmove 24"
+#command "#weapon 55 --- Hoof"
+#command "#demon"
+#command "#itemslots 786432"
 #command "#armor 253 --- Cataphract Barding"
 #nowayback
 #nogcost
@@ -1648,8 +1775,24 @@
 #name "nightmare_equine_scalebarded2"
 #command "#spr1 ./graphics/amazon/mounts/nightmare_equine_scalebarded2.png"
 #command "#spr2 shift"
-#command "#copystats 3561"
+#command "#magicboost 53 -5"
 #command "#name 'Nightmare'"
+#command "#fear 5"
+#command "#enc 0"
+#command "#ap 25"
+#command "#str 10"
+#command "#mr 10"
+#command "#mor 50"
+#command "#att 11"
+#command "#def 9"
+#command "#hp 12"
+#command "#prec 10"
+#command "#prot 4"
+#command "#size 5"
+#command "#mapmove 24"
+#command "#weapon 55 --- Hoof"
+#command "#demon"
+#command "#itemslots 786432"
 #command "#armor 257 --- Rusty Cataphract Barding"
 #nowayback
 #nogcost
@@ -1660,8 +1803,24 @@
 #name "nightmare_equine_fullbarded1"
 #command "#spr1 ./graphics/amazon/mounts/nightmare_equine_fullbarded1.png"
 #command "#spr2 shift"
-#command "#copystats 3561"
+#command "#magicboost 53 -5"
 #command "#name 'Nightmare'"
+#command "#fear 5"
+#command "#enc 0"
+#command "#ap 25"
+#command "#str 10"
+#command "#mr 10"
+#command "#mor 50"
+#command "#att 11"
+#command "#def 9"
+#command "#hp 12"
+#command "#prec 10"
+#command "#prot 4"
+#command "#size 5"
+#command "#mapmove 24"
+#command "#weapon 55 --- Hoof"
+#command "#demon"
+#command "#itemslots 786432"
 #command "#armor 257 --- Rusty Cataphract Barding"
 #nowayback
 #nogcost
@@ -1672,8 +1831,24 @@
 #name "nightmare_equine_fullbarded2"
 #command "#spr1 ./graphics/amazon/mounts/nightmare_equine_fullbarded2.png"
 #command "#spr2 shift"
-#command "#copystats 3561"
+#command "#magicboost 53 -5"
 #command "#name 'Nightmare'"
+#command "#fear 5"
+#command "#enc 0"
+#command "#ap 25"
+#command "#str 10"
+#command "#mr 10"
+#command "#mor 50"
+#command "#att 11"
+#command "#def 9"
+#command "#hp 12"
+#command "#prec 10"
+#command "#prot 4"
+#command "#size 5"
+#command "#mapmove 24"
+#command "#weapon 55 --- Hoof"
+#command "#demon"
+#command "#itemslots 786432"
 #command "#armor 257 --- Rusty Cataphract Barding"
 #nowayback
 #nogcost
@@ -1684,8 +1859,24 @@
 #name "nightmare_equine_caparison"
 #command "#spr1 ./graphics/amazon/mounts/nightmare_equine_caparison.png"
 #command "#spr2 shift"
-#command "#copystats 3561"
+#command "#magicboost 53 -5"
 #command "#name 'Nightmare'"
+#command "#fear 5"
+#command "#enc 0"
+#command "#ap 25"
+#command "#str 10"
+#command "#mr 10"
+#command "#mor 50"
+#command "#att 11"
+#command "#def 9"
+#command "#hp 12"
+#command "#prec 10"
+#command "#prot 4"
+#command "#size 5"
+#command "#mapmove 24"
+#command "#weapon 55 --- Hoof"
+#command "#demon"
+#command "#itemslots 786432"
 #command "#armor 253 --- Cataphract Barding"
 #nowayback
 #nogcost
@@ -1774,6 +1965,15 @@
 #command "#heat 3"
 #command "#nametype 116"
 #command "#itemslots 786432"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "camel"
+#command "#copystats 3538"
+#command "#copyspr 3538"
 #nowayback
 #nogcost
 #mount
@@ -1964,8 +2164,8 @@
 
 #new secondshape
 #name "moose"
-#command "#copystats 1084"
-#command "#copyspr 1084"
+#command "#copystats 3551"
+#command "#copyspr 3551"
 #command "#itemslots 786432"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
@@ -2062,6 +2262,61 @@
 #end
 
 #new secondshape
+#name "riding-horse"
+#command "#copystats 3513"
+#command "#copyspr 3513"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "cataphracted-horse"
+#command "#copystats 3516"
+#command "#copyspr 3516"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "armored-horse"
+#command "#copystats 3517"
+#command "#copyspr 3517"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "war-horse"
+#command "#copystats 3514"
+#command "#copyspr 3514"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "light-cataphracted-horse"
+#command "#copystats 3515"
+#command "#copyspr 3515"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
 #name "armoredhorse1a"
 #command "#copystats 3515"
 #command "#spr1 ./graphics/mounts/standard/armoredhorse1a.png"
@@ -2074,6 +2329,72 @@
 #end
 
 #new secondshape
+#name "pegasus"
+#command "#copystats 3556"
+#command "#copyspr 3556"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "unicorn"
+#command "#copystats 3524"
+#command "#copyspr 3524"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "armored-unicorn"
+#command "#copystats 3525"
+#command "#copyspr 3525"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "fay-horse"
+#command "#copystats 3933"
+#command "#copyspr 3933"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "horse-chariot"
+#command "#copystats 3563"
+#command "#copyspr 3563"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "horse-chariot-barded"
+#command "#copystats 3564"
+#command "#copyspr 3564"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
 #name "fay-chariot"
 #command "#copystats 3563"
 #command "#copyspr 3572"
@@ -2118,31 +2439,6 @@
 #command "#poisonres 10"
 #command "#smartmount 100"
 #command "#magicboost 53 -5"
-#command "#itemslots 786432"
-#nowayback
-#nogcost
-#mount
-#end
-
-#new secondshape
-#name "fay-chariot"
-#command "#copystats 3563"
-#command "#copyspr 3572"
-#command "#glamour"
-#command "#hp 24"
-#command "#prot 5"
-#command "#str 15"
-#command "#att 11"
-#command "#def 12"
-#command "#mr 14"
-#command "#mor 12"
-#command "#ap 22"
-#command "#truesight"
-#command "#stealthy 40"
-#command "#diseaseres 100"
-#command "#poisonres 10"
-#command "#smartmount 100"
-#command "#magicboost 53 -5"
 #command "#itemslots 12288"
 #nowayback
 #nogcost
@@ -2150,26 +2446,42 @@
 #end
 
 #new secondshape
-#name "unicorn-chariot"
+#name "cusidhe-chariot"
 #command "#copystats 3563"
 #command "#copyspr 3572"
-#command "#weapon 330"
-#command "#hp 24"
-#command "#prot 5"
+#command "#size 5"
+#command "#mapmove 20"
+#command "#ap 18"
+#command "#hp 26"
 #command "#str 15"
-#command "#att 11"
+#command "#att 13"
 #command "#def 12"
+#command "#prot 7"
+#command "#prec 5"
 #command "#mr 14"
-#command "#mor 12"
-#command "#ap 22"
+#command "#mor 14"
+#command "#ironvul"
+#command "#animal"
 #command "#forestsurvival"
-#command "#truesight"
 #command "#stealthy 40"
-#command "#diseaseres 100"
-#command "#poisonres 10"
+#command "#darkvision 50"
+#command "#weapon 20 --- Bite"
+#command "#patrolbonus 1"
 #command "#smartmount 100"
+#command "#trample"
 #command "#magicboost 53 -5"
 #command "#itemslots 12288"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "chariot-oriental"
+#command "#copystats 3565"
+#command "#copyspr 3565"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
 #nowayback
 #nogcost
 #mount
@@ -2598,6 +2910,18 @@
 #name "wolfmount"
 #command "#copystats 284"
 #command "#copyspr 284"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#nowayback
+#nogcost
+#mount
+#end
+
+#new secondshape
+#name "great-boar-mount"
+#command "#copystats 2136"
+#command "#copyspr 2136"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#transformation 0"
