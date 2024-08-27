@@ -14,6 +14,7 @@ import nationGen.misc.FileUtil;
 import nationGen.misc.ResourceStorage;
 import nationGen.naming.NamePart;
 import nationGen.units.ShapeShift;
+import nationGen.units.Mount;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +47,7 @@ public class NationGenAssets {
     public ResourceStorage<MagicItem> magicitems = new ResourceStorage<>(MagicItem.class);
     
     public List<ShapeShift> secondshapes = new ArrayList<>();
+    public List<Mount> mounts = new ArrayList<>();
     public List<String> secondShapeMountCommands = new ArrayList<>();
     public List<String> secondShapeNonMountCommands = new ArrayList<>();
     public List<String> secondShapeRacePoseCommands = new ArrayList<>();
@@ -69,6 +71,7 @@ public class NationGenAssets {
         magicitems.load(gen, "/data/items/magicweapons.txt");
         
         secondshapes = Entity.readFile(gen, "/data/shapes/secondshapes.txt", ShapeShift.class);
+        mounts = Entity.readFile(gen, "/data/mounts/mounts.txt", Mount.class);
         loadSecondShapeInheritance("/data/shapes/secondshapeinheritance.txt");
         loadRaces(gen, "./data/races/races.txt");
         

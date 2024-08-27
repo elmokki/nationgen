@@ -9,18 +9,8 @@
 #offsetx 37
 #offsety 20
 #needs overlay scorpion_overlay
-#define "#size 5"
-#define "#mapmove 8"
-#define "#ap 8"
-#define "#mounted"
-#define "#weapon nostr_pincer"
-#define "#weapon nostr_scorpiontail"
-#define "#secondshape scorpionmount"
+#define "#mountmnr 'scorpionmount'"
 #define "#gcost +50"
-#define "#ressize 1"
-#define "#enc 3"
-#define "#rcost +5"
-#define "#nomovepen"
 #tag "animal scorpion"
 #theme "heavy"
 #description "Leaves a giant scorpion behind when the rider dies"
@@ -37,18 +27,9 @@
 #armor
 #offsetx 6
 #offsety 18
-#define "#size 2"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 236"
-#define "#weapon 237"
-#define "#secondshape jaguarmount-stealthy"
+#define "#mountmnr 'jaguarmount-stealthy'"
 #define "#gcost +35"
 #define "#rcost +5"
-#define "#ressize 1"
-#define "#enc 3"
-#define "#stealthy +0"
 #theme "specialmount"
 #theme "light"
 #tag "animal jaguar"
@@ -66,16 +47,9 @@
 #armor
 #offsetx 48
 #offsety 25
-#define "#size 4"
-#define "#mapmove 8"
-#define "#ap 5"
-#define "#mounted"
-#define "#weapon 603"
+#define "#mountmnr 'cavegrubmount'"
 #define "#gcost +20"
 #define "#rcost +3"
-#define "#ressize 1"
-#define "#enc 3"
-#define "#nomovepen"
 #tag "animal 'cave grub'"
 #tag "guaranteedprefix grub"
 #tag "name commander beastmaster"
@@ -94,16 +68,8 @@
 #offsetx 47
 #offsety 20
 #needs overlay spider_overlay
-#define "#size 4"
-#define "#mapmove 18"
-#define "#ap 14"
-#define "#mounted"
-#define "#weapon 262 --- Web Spit"
-#define "#weapon 313 --- Spider Fangs"
-#define "#secondshape cavespider"
+#define "#mountmnr 'cavespider'"
 #define "#gcost +40"
-#define "#ressize 1"
-#define "#enc 4"
 #define "#rcost +5"
 #description "The giant spider will persist even if the rider dies."
 #theme "specialmount"
@@ -118,22 +84,13 @@
 #gameid -1
 #sprite /graphics/mounts/standard/giantrat.png
 #armor
-#define "#size 2"
-#define "#mapmove 20"
-#define "#ap 12"
-#define "#mounted"
-#define "#weapon nostr_diseasebite_12"
+#define "#mountmnr 'ratmount'"
 #define "#gcost +15"
-#define "#diseaseres +10"
-#define "#ressize 1"
-#define "#enc 3"
-#define "#stealthy +0"
 #tag "animal rat"
 #theme "rat"
 #theme "rattotem"
 #theme "totemanimal"
 #tag "guaranteedprefix rat"
-#define "#secondtmpshape ratmount"
 #description "If the rider dies, the rat will carry on fighting until the end of the battle."
 #basechance 1
 #tag "minprot 6"

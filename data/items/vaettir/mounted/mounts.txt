@@ -5,18 +5,9 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/wolf.png
 #armor
-#define "#size 2"
-#define "#mapmove 22"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon nostr_bite_10 --- bite"
-#define "#secondshape wolfmount"
+#define "#mountmnr 'wolfmount'"
 #define "#gcost +20"
-#define "#ressize 1"
-#define "#enc 3"
 #define "#rcost +4"
-#define "#stealthy +0"
-#define "#snowmove"
 #tag "animal wolf"
 #theme "wolf"
 #theme "wolftotem"
@@ -34,18 +25,9 @@
 #sprite /graphics/mounts/standard/direwolf2.png
 #armor
 #needs overlay direwolf2_overlay
-#define "#size 2"
-#define "#mapmove 22"
-#define "#ap 26"
-#define "#mounted"
-#define "#weapon 237 --- bite"
-#define "#secondshape direwolf2mount"
+#define "#mountmnr 'direwolf2mountvaetti'"
 #define "#gcost +35"
-#define "#ressize 1"
-#define "#enc 3"
 #define "#rcost +6"
-#define "#stealthy +0"
-#define "#snowmove"
 #theme "heavy"
 #theme "wolf"
 #theme "wolftotem"
@@ -66,15 +48,9 @@
 #armor
 #offsetx -2
 #offsety -18
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 352 --- Nostr Gore"
+#define "#mountmnr 'great-boar-mount'"
 #define "#gcost +20"
 #define "#rcost +6"
-#define "#ressize 1"
-#define "#enc 3"
 #theme "heavy"
 #theme "boar"
 #theme "boartotem"
@@ -93,17 +69,9 @@
 #sprite /graphics/mounts/standard/elk.png
 #needs overlay elk_overlay
 #armor
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon 354 --- antlers"
+#define "#mountmnr 'elk'"
 #define "#gcost +20"
-#define "#ressize 1"
 #define "#rcost +4"
-#define "#enc 3"
-#define "#snowmove"
-#define "#secondtmpshape elk"
 #tag "animal elk"
 #theme "heavy"
 #theme "deer"
@@ -123,14 +91,8 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/deer.png
 #armor
-#define "#size 2"
-#define "#mapmove 20"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon 354 --- antlers"
+#define "#mountmnr 'deer'"
 #define "#gcost +15"
-#define "#ressize 1"
-#define "#enc 3"
 #define "#rcost +4"
 #tag "animal deer"
 #theme "deer"
@@ -149,15 +111,8 @@
 #sprite /graphics/hoburg/mounts/hawk.png
 #armor
 #needs overlay hawkoverlay
-#define "#size 2"
-#define "#mapmove 22"
-#define "#ap 6"
-#define "#flying"
-#define "#mounted"
-#define "#weapon 236 --- claw"
+#define "#mountmnr 'hawk'"
 #define "#gcost +27"
-#define "#ressize 1"
-#define "#enc 4"
 #define "#rcost +4"
 #theme "specialmount"
 #tag "animal hawk"
@@ -178,18 +133,10 @@
 #offsetx 3
 #offsety -2
 #needs overlay spider2_overlay
-#define "#size 3"
-#define "#mapmove 18"
-#define "#ap 12"
-#define "#mounted"
-#define "#weapon 313 --- Fangs"
-#define "#secondtmpshape forestspider"
+#define "#mountmnr 'forestspider'"
 #description "If the rider dies, the spider will carry on fighting until the end of the battle."
 #define "#gcost +20"
 #define "#rcost +6"
-#define "#ressize 1"
-#define "#enc 4"
-#define "#stealthy +0"
 #theme "specialmount"
 #tag "animal spider"
 #theme "spider"
@@ -205,19 +152,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/bear.png
 #armor
-#define "#size 4"
-#define "#mapmove 20"
-#define "#ap 16"
-#define "#mounted"
-#define "#weapon 237 --- Bite"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape bearmount"
+#define "#mountmnr 'greatbear'"
 #define "#gcost +40"
-#define "#ressize 1"
-#define "#rcost +10"
-#define "#enc 4"
-#define "#snowmove"
-#description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety -24
 #offsetx -1
 #theme "specialmount"
@@ -237,17 +173,9 @@
 #gameid -1
 #sprite /graphics/mounts/standard/bear_small.png
 #armor
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 14"
-#define "#mounted"
-#define "#weapon 236 -- Claw"
-#define "#secondshape smallbearmount"
+#define "#mountmnr 'smallbearmount'"
 #define "#gcost +35"
-#define "#ressize 1"
 #define "#rcost +6"
-#define "#enc 4"
-#define "#snowmove"
 #description "If the rider dies, the bear will continue to fight alongside its Vaetti companions."
 #offsety -16
 #offsetx -1
@@ -269,17 +197,9 @@
 #armor
 #offsetx -2
 #offsety -18
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 236"
-#define "#weapon 237"
-#define "#secondtmpshape tiger"
+#define "#mountmnr 'tiger'"
 #define "#gcost +35"
 #define "#rcost +6"
-#define "#ressize 1"
-#define "#enc 3"
 #theme "specialmount"
 #theme "heavy"
 #theme "tiger"
@@ -299,16 +219,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/lion_asian.png
 #armor
-#define "#size 3"
-#define "#mapmove 18"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 237 --- Bite"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape lionmount"
+#define "#mountmnr 'lionmount'"
 #define "#gcost +35"
-#define "#ressize 1"
-#define "#enc 3"
 #description "If the rider dies, the lion will carry on fighting until the end of the battle."
 #offsetx 2
 #offsety -16
@@ -329,17 +241,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/giantrat.png
 #armor
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 10"
-#define "#mounted"
-#define "#weapon nostr_diseasebite_12"
+#define "#mountmnr 'ratmount'"
 #define "#gcost +20"
-#define "#diseaseres +10"
-#define "#ressize 1"
-#define "#enc 3"
-#define "#stealthy +0"
-#define "#swimming"
 #tag "animal rat"
 #theme "rat"
 #theme "rattotem"
@@ -347,7 +250,6 @@
 #tag "minprot 8"
 #tag "maxprot 18"
 #tag "guaranteedprefix rat"
-#define "#secondtmpshape ratmount"
 #description "If the rider dies, the rat will carry on fighting until the end of the battle."
 #basechance 1
 #offsetx 3

@@ -338,6 +338,7 @@ public class Unit {
 			int feet = 1;
 			int hand = 2;
 			int misc = 2;
+			int bow = 1;
 			
 			for(Args args : unitTags.getAllArgs("baseitemslot"))
 			{
@@ -358,6 +359,9 @@ public class Unit {
 						break;
 					case "feet":
 						feet = handleModifier(modifier, feet);
+						break;
+					case "bow":
+						bow = handleModifier(modifier, bow);
 						break;
 				}
 			}
@@ -382,6 +386,9 @@ public class Unit {
 					case "feet":
 						feet += handleModifier(modifier, feet);
 						break;
+					case "bow":
+						bow += handleModifier(modifier, bow);
+						break;
 				}
 			}
 			
@@ -390,26 +397,30 @@ public class Unit {
 			body = Math.min(body, 1);
 			hand = Math.min(hand, 4);
 			feet = Math.min(feet, 1);
+			bow  = Math.min(bow, 1);
 			
 			head = Math.max(head, 0);
 			misc = Math.max(misc, 0);
 			body = Math.max(body, 0);
 			hand = Math.max(hand, 0);
 			feet = Math.max(feet, 0);
+			bow  = Math.max(bow, 0);
 			
 			if(hand > 0)
 				for(int i = 0; i < hand; i++)
 					slots += Math.pow(2, (i+1));
 			if(head > 0)
 				for(int i = 0; i < head; i++)
-					slots += Math.pow(2, (i+7));
+					slots += Math.pow(2, (i+13));
+			if(bow > 0)
+				slots += 512;		
 			if(body > 0)
-				slots += 1024;
+				slots += 65536;
 			if(feet > 0)
-				slots += 2048;
+				slots += 131072;
 			if(misc > 0)
 				for(int i = 0; i < misc; i++)
-					slots += Math.pow(2, (i+12));
+					slots += Math.pow(2, (i+18));
 			
 			if(slots == 0)
 					slots = 1;
@@ -730,7 +741,7 @@ public class Unit {
 		else
 		{
 			// Shapechangeunits aren't really of the race/pose their other form is
-			if(this.getClass() != ShapeChangeUnit.class)
+			if(this.getClass() != ShapeChangeUnit.class && this.getClass() != MountUnit.class )
 			{
 				allCommands.addAll(race.unitcommands);
 				allCommands.addAll(pose.getCommands());
@@ -1048,7 +1059,7 @@ public class Unit {
 		
 
 		// Autocalc enabler
-		//u.commands.add(new Command("#gcost", "+10000"));
+		//u.commands.add(new Command("#gcost", Args.of(new Arg(92)), "+10000"));
 
 
 		// #price_per_command

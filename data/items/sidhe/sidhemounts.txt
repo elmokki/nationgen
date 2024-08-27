@@ -5,14 +5,8 @@
 #needs overlay no_overlay
 #armor
 #offsety 1
-#define "#size 3"
-#define "#mapmove 28"
-#define "#ap 28"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
+#define "#mountmnr 'fay-horse'"
 #define "#gcost +20"
-#define "#ressize 2"
-#define "#enc 3"
 #tag "animal horse"
 #tag "minprot 6"
 #tag "maxprot 16"
@@ -27,15 +21,8 @@
 #armor
 #offsetx -5
 #offsety 1
-#define "#size 3"
-#define "#mapmove 18"
-#define "#ap 28"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
+#define "#mountmnr 'cusidhemount'"
 #define "#gcost +20"
-#define "#ressize 2"
-#define "#patrolbonus 1"
-#define "#enc 3"
 #tag "animal dog"
 #tag "minprot 5"
 #tag "maxprot 15"
@@ -51,15 +38,8 @@
 #offsetx 28
 #offsety 64
 #needs overlay 8
-#define "#size 4"
-#define "#mapmove 28"
-#define "#ap 22"
-#define "#mounted"
-#define "#flying"
-#define "#weapon 56 --- Hoof"
+#define "#mountmnr 'pegasus'"
 #define "#gcost +50"
-#define "#ressize 2"
-#define "#enc 4"
 #theme "flying"
 #tag "animal pegasus"
 #tag "name commander windlord"
@@ -76,15 +56,8 @@
 #armor
 #offsetx -2
 #offsety 2
-#define "#size 4"
-#define "#mapmove 28"
-#define "#ap 18"
-#define "#mounted"
-#define "#flying"
-#define "#weapon 354 --- Antlers"
+#define "#mountmnr 'peryton2'"
 #define "#gcost +50"
-#define "#ressize 2"
-#define "#enc 4"
 #theme "flying"
 #tag "animal peryton"
 #tag "name commander windlord"
@@ -99,16 +72,8 @@
 #needs overlay no_overlay
 #armor
 #offsety 1
-#define "#size 3"
-#define "#mapmove 28"
-#define "#ap 28"
-#define "#mounted"
-#define "#weapon 330 --- Alicorn"
-#define "#weapon 56 --- Hoof"
+#define "#mountmnr 'unicorn'"
 #define "#gcost +30"
-#define "#ressize 2"
-#define "#enc 3"
-#define "#heal"
 #tag "minprot 6"
 #tag "maxprot 16"
 #tag "animal unicorn"
@@ -126,18 +91,8 @@
 #offsetx 28
 #offsety 69
 #needs overlay 14
-#define "#size 4"
-#define "#mapmove 22"
-#define "#ap 22"
-#define "#mounted"
-#define "#flying"
-#define "#weapon 237"
-#define "#weapon nostr_barbedtail"
+#define "#mountmnr 'wyvern'"
 #define "#gcost +75"
-#define "#ressize 2"
-#define "#rcost +4"
-#define "#enc 4"
-#define "#secondshape wyvern"
 #theme "flying"
 #theme "heavy"
 #tag "animal wyvern"
@@ -159,18 +114,8 @@
 #armor
 #offsetx 30
 #offsety 45
-#define "#size 4"
-#define "#mapmove 22"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 353"
-#define "#weapon 354"
+#define "#mountmnr 'moose'"
 #define "#gcost +25"
-#define "#ressize 2"
-#define "#rcost +4"
-#define "#enc 4"
-#define "#swimming"
-#define "#secondtmpshape moose"
 #tag "animal moose"
 #tag "minprot 0"
 #tag "maxprot 16"
@@ -187,16 +132,9 @@
 #armor
 #offsetx -2
 #offsety 2
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 354"
+#define "#mountmnr 'elk'"
 #define "#gcost +20"
-#define "#ressize 2"
 #define "#rcost +4"
-#define "#enc 4"
-#define "#secondtmpshape elk"
 #tag "animal elk"
 #tag "minprot 0"
 #tag "maxprot 14"
@@ -211,12 +149,10 @@
 #needs overlay no_overlay
 #armor
 #offsety 1
-#define "#size 3"
+#define "#size 5"
 #define "#mapmove 26"
 #define "#ap 25"
-#define "#mounted"
-#define "#weapon 615 --- Heavy Hoof"
-#define "#secondtmpshape nightmare"
+#define "#mountmnr 'nightmare'"
 #define "#gcost +40"
 #define "#ressize 2"
 #define "#enc 4"
@@ -233,16 +169,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/bear.png
 #armor
-#define "#size 4"
-#define "#mapmove 20"
-#define "#ap 16"
-#define "#mounted"
-#define "#weapon 237 --- Bite"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape bearmount"
+#define "#mountmnr 'greatbear'"
 #define "#gcost +40"
-#define "#ressize 2"
-#define "#enc 4"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety -2
 #offsetx -5
@@ -257,15 +185,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/bear_small.png
 #armor
-#define "#size 3"
-#define "#mapmove 18"
-#define "#ap 14"
-#define "#mounted"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape smallbearmount"
+#define "#mountmnr 'smallbearmount'"
 #define "#gcost +30"
-#define "#ressize 2"
-#define "#enc 4"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety 4
 #offsetx -5
@@ -284,17 +205,8 @@
 #armor
 #offsetx -2
 #offsety 12
-#define "#size 3"
-#define "#mapmove 26"
-#define "#ap 8"
-#define "#mounted"
-#define "#flying"
-#define "#sailing 3 3"
-#define "#weapon nostr_bill_10"
+#define "#mountmnr 'giantswanmount'"
 #define "#gcost +50"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#swimming"
 #theme "light"
 #tag "animal swan"
 #tag "maxprot 12"

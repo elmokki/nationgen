@@ -116,28 +116,6 @@
 - Needs unit to have a weapon with theme formationfighter available
 #new
 #basechance 0.125
-#name "formationfighter 2"
-#type formationfighter
-#command "#formationfighter +2"
-#themeinc thisitemtheme formationfighter *1000
-#chanceinc personalcommand size not 2 *0
-#chanceinc pose not infantry *0
-#chanceinc poseitemtheme not weapon formationfighter *0
-#maxunits 1
-#maxvarieties 2
-#theme formationfighter
-#primarycommand #formationfighter
-#set "army role"
-#prev "army role start"
-#bridge "army role bridge"
-#synonym "are disciplined and well-drilled soldiers"
-#synonym "are close formation fighters"
-#synonym "are dense phalanx troops"
-#synonym "are tightly packed soldiers"
-#end
-
-#new
-#basechance 0.125
 #name "formationfighter 3"
 #type formationfighter
 #command "#formationfighter +3"
@@ -225,16 +203,16 @@
 #end
 
 #new
-#basechance 0.00625
-#name "formationfighter 2x2"
+#basechance 0.125
+#name "formationfighter 7"
 #type formationfighter
-#command "#formationfighter +4"
+#command "#formationfighter +7"
 #themeinc thisitemtheme formationfighter *1000
-#chanceinc personalcommand size not 2 *0
+#chanceinc personalcommand size not 7 *0
 #chanceinc pose not infantry *0
 #chanceinc poseitemtheme not weapon formationfighter *0
 #maxunits 1
-#maxvarieties 1
+#maxvarieties 2
 #theme formationfighter
 #primarycommand #formationfighter
 #set "army role"
@@ -319,6 +297,28 @@
 #command "#formationfighter +12"
 #themeinc thisitemtheme formationfighter *1000
 #chanceinc personalcommand size not 6 *0
+#chanceinc pose not infantry *0
+#chanceinc poseitemtheme not weapon formationfighter *0
+#maxunits 1
+#maxvarieties 1
+#theme formationfighter
+#primarycommand #formationfighter
+#set "army role"
+#prev "army role start"
+#bridge "army role bridge"
+#synonym "are disciplined and well-drilled soldiers"
+#synonym "are close formation fighters"
+#synonym "are dense phalanx troops"
+#synonym "are tightly packed soldiers"
+#end
+
+#new
+#basechance 0.00625
+#name "formationfighter 7x2"
+#type formationfighter
+#command "#formationfighter +14"
+#themeinc thisitemtheme formationfighter *1000
+#chanceinc personalcommand size not 7 *0
 #chanceinc pose not infantry *0
 #chanceinc poseitemtheme not weapon formationfighter *0
 #maxunits 1

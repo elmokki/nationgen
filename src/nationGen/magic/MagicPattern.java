@@ -114,7 +114,7 @@ public class MagicPattern extends Filter {
 	{
 		int mask = 0;
 		
-		for(int i = 0; i < 9; i++)
+		for(int i = 0; i < 10; i++)
 		{
 			int num = (int)Math.pow(2, i);
 			if(Generic.containsBitmask(paths, num))
@@ -192,7 +192,7 @@ public class MagicPattern extends Filter {
 	
 	public int[] getPaths(List<Integer> prio)
 	{
-		int[] paths = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+		int[] paths = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 		int high = this.getHighestReachable(1);
 		
@@ -350,8 +350,8 @@ public class MagicPattern extends Filter {
 	
 	public int[] getPathLevels(double probability)
 	{
-		int[] derp = new int[9];
-		int[] masks = {1, 2, 4, 8, 16, 32, 64, 128, 256};
+		int[] derp = new int[10];
+		int[] masks = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512};
 		for(int i = 0; i < masks.length; i++)
 		{
 			

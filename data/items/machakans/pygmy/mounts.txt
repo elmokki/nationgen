@@ -5,21 +5,12 @@
 #gameid -1
 #sprite /graphics/mounts/standard/hyena.png
 #armor
-#define "#size 2"
-#define "#mapmove 20"
-#define "#ap 20"
-#define "#mounted"
-#define "#weapon 237 --- bite"
+#define "#mountmnr 'hyenamount'"
 #define "#gcost +15"
-#define "#ressize 1"
-#define "#enc 3"
 #define "#rcost +4"
-#define "#hp +2"
-#define "#mor +2"
 #tag "animal hyena"
 #tag "maxprot 14"
 #tag "guaranteedprefix hyena"
-#define "#secondtmpshape hyenamount"
 #description "If the rider dies, the hyena will carry on fighting until the end of the battle."
 #offsetx -3
 #offsety -20
@@ -31,17 +22,8 @@
 #sprite /graphics/machakans/mounts/giant_parrot.png
 #needs overlay giant_parrot_overlay
 #armor
-#define "#size 3"
-#define "#mapmove 30"
-#define "#ap 6"
-#define "#flying"
-#define "#mounted"
-#define "#weapon 753" -- Dive; pygmies are small
-#define "#weapon nostr_talons_10"
-#define "#weapon nostr_beak_10"
+#define "#mountmnr 'grey_parrot'"
 #define "#gcost +15"
-#define "#ressize 1"
-#define "#enc 4"
 #define "#rcost +4"
 #tag "animal parrot"
 #theme "parrot"
@@ -61,17 +43,8 @@
 #recolormask /graphics/machakans/mounts/giant_parrot_recolormask.png
 #needs overlay giant_parrot_overlay
 #armor
-#define "#size 3"
-#define "#mapmove 30"
-#define "#ap 6"
-#define "#flying"
-#define "#mounted"
-#define "#weapon 753" -- Dive; pygmies are small
-#define "#weapon nostr_talons_10"
-#define "#weapon nostr_beak_10"
+#define "#mountmnr 'grey_parrot'"
 #define "#gcost +15"
-#define "#ressize 1"
-#define "#enc 4"
 #define "#rcost +4"
 #tag "animal parrot"
 #theme "parrot"
@@ -90,21 +63,14 @@
 #sprite /graphics/mounts/standard/redant.png
 #needs overlay redant_overlay
 #armor
-#define "#size 2"
-#define "#mapmove 14"
-#define "#ap 8"
-#define "#mounted"
-#define "#weapon nostr_smallsting"
+#define "#mountmnr 'redantmount'"
 #define "#gcost +5"
-#define "#ressize 1"
-#define "#enc 2"
 #tag "animal ant"
 #theme "ant"
 #theme "anttotem"
 #theme "totemanimal"
 #tag "maxprot 16"
 #tag "guaranteedprefix ant"
-#define "#secondtmpshape redantmount"
 #description "If the rider dies, the ant will carry on fighting until the end of the battle."
 #offsetx 0
 #offsety -7
@@ -117,16 +83,9 @@
 #offsety -7
 #offsetx -1
 #armor
-#define "#size 2"
-#define "#mapmove 18"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon nostr_bite_5"
-#define "#secondtmpshape dogmount"
+#define "#mountmnr 'dogmount'"
 #description "The dog is fiercely loyal and will follow the army even if its rider dies."
 #define "#gcost +10"
-#define "#ressize 1"
-#define "#enc 3"
 #tag "animal dog"
 #tag "minprot 0"
 #tag "maxprot 14"
@@ -142,17 +101,10 @@
 #offsetx 3
 #offsety -2
 #needs overlay spider2_overlay
-#define "#size 3"
-#define "#mapmove 18"
-#define "#ap 12"
-#define "#mounted"
-#define "#weapon 313 --- Fangs"
-#define "#secondtmpshape forestspider"
+#define "#mountmnr 'forestspider'"
 #description "If the rider dies, the spider will carry on fighting until the end of the battle."
 #define "#gcost +15"
 #define "#rcost +4"
-#define "#ressize 1"
-#define "#enc 4"
 #tag "animal spider"
 #theme "spider"
 #theme "spidertotem"
@@ -168,20 +120,8 @@
 #offsetx 22
 #offsety -7
 #armor
-#define "#size 3"
-#define "#mapmove 8"
-#define "#ap 8"
-#define "#sailing 3 3"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#weapon tailswipe_nostr"
+#define "#mountmnr 'crocodilemount'"
 #define "#gcost +15"
-#define "#ressize 1"
-#define "#enc 3"
-#define "#swampsurvival"
-#define "#swimming"
-#define "#nomovepen"
-#define "#secondtmpshape crocodilemount"
 #description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
 #tag "animal crocodile"
 #theme "heavy"
@@ -199,19 +139,8 @@
 #sprite /graphics/machakans/mounts/flyingfish.png
 #needs overlay flyingfish_overlay
 #armor
-#define "#size 2"
-#define "#mapmove 18"
-#define "#ap 9"
-#define "#flying"
-#define "#sailing 2 2"
-#define "#mounted"
-#define "#weapon nostr_bite_5"
+#define "#mountmnr 'flying_fish'"
 #define "#gcost +5"
-#define "#ressize 1"
-#define "#enc 5"
-#define "#swampsurvival"
-#define "#pooramphibian"
-#define "#swimming"
 #tag "animal fish"
 #theme "fish"
 #theme "fishtotem"
@@ -231,20 +160,8 @@
 #gameid -1
 #sprite /graphics/machakans/mounts/snail.png
 #armor
-#define "#size 1"
-#define "#mapmove 6"
-#define "#ap 6"
-#define "#mounted"
-#define "#weapon nostr_bite_5"
-#define "#weapon nostr_acidspit_5"
+#define "#mountmnr 'snailmount'"
 #define "#gcost +10"
-#define "#ressize 1"
-#define "#enc 3"
-#define "#swampsurvival"
-#define "#pooramphibian"
-#define "#swimming"
-#define "#nomovepen"
-#define "#saltvul +2"
 #tag "animal snail"
 #theme "snail"
 #theme "snailtotem"
@@ -265,18 +182,8 @@
 #sprite /graphics/mounts/standard/hugelocust.png
 #needs overlay hugelocust_overlay
 #armor
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 12"
-#define "#flying"
-#define "#mounted"
-#define "#weapon nostr_bite_10"
-#define "#gcost +10"
-#define "#ressize 1"
-#define "#enc 5"
-#define "#undisciplined"
-#define "#pillagebonus +2"
-#define "#supplybonus -1"
+#define "#mountmnr 'huge_locust'"
+#define "#gcost +20"
 #tag "animal locust"
 #theme "locust"
 #theme "locusttotem"
@@ -294,15 +201,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/hugemantis.png
 #armor
-#define "#size 2"
-#define "#mapmove 16"
-#define "#ap 12"
-#define "#mounted"
-#define "#weapon nostr_claws_10"
-#define "#weapon nostr_claws_10"
+#define "#mountmnr 'hugemantismount'"
 #define "#gcost +20"
-#define "#ressize 1"
-#define "#enc 3"
 #tag "animal mantis"
 #theme "mantis"
 #theme "locusttotem"
@@ -324,18 +224,8 @@
 #sprite /graphics/mounts/standard/swan.png
 #needs overlay swan_overlay
 #armor
-#define "#size 2"
-#define "#mapmove 22"
-#define "#ap 5"
-#define "#mounted"
-#define "#sailing 2 2"
-#define "#flying"
-#define "#weapon nostr_bill_3"
-#define "#weapon nostr_wingbuff_3"
+#define "#mountmnr 'swanmount'"
 #define "#gcost +10"
-#define "#ressize 1"
-#define "#enc 4"
-#define "#swimming"
 #tag "animal swan"
 #theme "swan"
 #theme "swantotem"
@@ -343,7 +233,6 @@
 #theme "totemanimal"
 #tag "maxprot 8"
 #tag "guaranteedprefix swan"
-#define "#secondtmpshape swanmount"
 #description "If the rider dies, the swan will carry on fighting until the end of the battle."
 #tag "animal swan"
 #basechance 1
@@ -357,21 +246,9 @@
 #sprite /graphics/mounts/chariots/small_swan_bronze.png
 #needs overlay chariot_swan_bronze_overlay
 #armor
-#define "#size 2"
-#define "#hp +3"
-#define "#mapmove 14"
-#define "#ap 7"
-#define "#mounted"
-#define "#sailing 2 2"
-#define "#trample"
-#define "#weapon nostr_bill_3"
-#define "#prot 4"
+#define "#mountmnr 'chariot_swan'"
 #define "#gcost +10"
 #define "#rcost +5"
-#define "#ressize 1"
-#define "#enc 4"
-#define "#swimming"
-#define "#nomovepen"
 #tag "animal swan"
 #tag "chariot"
 #theme "swan"
@@ -391,22 +268,13 @@
 #gameid -1
 #sprite /graphics/mounts/standard/giantrat.png
 #armor
-#define "#size 2"
-#define "#mapmove 22"
-#define "#ap 12"
-#define "#mounted"
-#define "#weapon nostr_diseasebite_12"
+#define "#mountmnr 'ratmount'"
 #define "#gcost +15"
-#define "#diseaseres +10"
-#define "#ressize 1"
-#define "#enc 3"
-#define "#swimming"
 #tag "animal rat"
 #theme "rat"
 #theme "rattotem"
 #theme "totemanimal"
 #tag "guaranteedprefix rat"
-#define "#secondtmpshape ratmount"
 #description "If the rider dies, the rat will carry on fighting until the end of the battle."
 #basechance 1
 #offsetx 1
@@ -419,19 +287,9 @@
 #sprite /graphics/mounts/chariots/small_rat_iron.png
 #needs overlay chariot_small_iron_overlay
 #armor
-#define "#size 3"
-#define "#hp +6"
-#define "#mapmove 14"
-#define "#ap 10"
-#define "#mounted"
-#define "#trample"
-#define "#weapon nostr_diseasebite_12"
-#define "#prot 5"
+#define "#mountmnr 'ratchariot'"
 #define "#gcost +20"
 #define "#rcost +10"
-#define "#ressize 1"
-#define "#enc 4"
-#define "#diseaseres +10"
 #tag "animal rat"
 #tag "chariot"
 #theme "rat"
@@ -450,17 +308,9 @@
 #sprite /graphics/mounts/standard/elephant_dwarf.png
 #needs overlay dwarf_elephant_overlay
 #armor
-#define "#size 2"
-#define "#mapmove 14"
-#define "#ap 12"
-#define "#mounted"
-#define "#weapon nostr_tusk_10" 
+#define "#mountmnr 'dwarfelephantmount'"
 #define "#gcost +15"
-#define "#trample"
-#define "#ressize 1"
-#define "#supplybonus -1"
-#define "#enc 3"
-#define "#xploss 100"
+#define "#rcost +4"
 #tag "animal elephant"
 #theme "elephant"
 #theme "elephanttotem"

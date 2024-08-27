@@ -18,6 +18,7 @@ import nationGen.naming.Summary;
 import nationGen.restrictions.NationRestriction;
 import nationGen.restrictions.NationRestriction.RestrictionType;
 import nationGen.rostergeneration.*;
+import nationGen.units.MountUnit;
 import nationGen.units.ShapeChangeUnit;
 import nationGen.units.Unit;
 
@@ -1085,12 +1086,34 @@ public class Nation {
 		
 		return sus;
 	}
+
+	public List<MountUnit> getMountUnits() {
+		List<Unit> units = new ArrayList<>();
+		for(List<Unit> list : this.comlists.values())
+			units.addAll(list);
+		for(List<Unit> list : this.unitlists.values())
+			units.addAll(list);
+		units.addAll(heroes);
+		
+		List<MountUnit> mus = new ArrayList<>();
+		for(MountUnit mu : nationGen.mounts)
+		{
+			if(units.contains(mu.otherForm))
+				mus.add(mu);
+		}
+		
+		return mus;
+	}
 	
 	public void writeSprites(String spritedir)
 	{
 		for(ShapeChangeUnit su : getShapeChangeUnits())
 		{
 			su.writeSprites(spritedir);
+		}
+		for(MountUnit mu : getMountUnits())
+		{
+			mu.writeSprites(spritedir);
 		}
 		
 		for(List<Unit> list : unitlists.values()) {
@@ -1129,6 +1152,10 @@ public class Nation {
 		for(ShapeChangeUnit su : getShapeChangeUnits())
 		{
 			lines.addAll(su.writeLines(spritedir));
+		}
+		for(MountUnit mu : getMountUnits())
+		{
+			lines.addAll(mu.writeLines(spritedir));
 		}
    
 		for(List<Unit> list : unitlists.values())

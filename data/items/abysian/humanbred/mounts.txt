@@ -8,18 +8,8 @@
 #armor
 #offsetx 23
 #offsety 6
-#define "#size 5"
-#define "#mapmove 8"
-#define "#ap 8"
-#define "#mounted"
-#define "#weapon nostr_pincer"
-
-#define "#weapon nostr_scorpiontail"
-#define "#secondshape scorpionmount"
+#define "#mountmnr 'scorpionmount'"
 #define "#gcost +50"
-#define "#ressize 2"
-#define "#enc 3"
-#define "#rcost +5"
 #tag "animal scorpion"
 #theme "heavy"
 #description "Leaves a giant scorpion behind when the rider dies"
@@ -38,20 +28,8 @@
 #needs overlay fossil_overlay
 #offsetx 34
 #offsety 31
-#define "#size 4"
-#define "#mapmove 16"
-#define "#ap 8"
-#define "#mounted"
-
-#define "#prot 5"
-
-#define "#okundeadleader"
-#define "#weapon nostr_fossilsword"
-#define "#secondshape fossilmount"
+#define "#mountmnr 'fossilmount'"
 #define "#gcost +50"
-#define "#ressize 2"
-#define "#enc 5"
-#define "#rcost +5"
 #tag "animal fossil"
 #theme "heavy"
 #description "Leaves a fossilized giant behind when the rider dies"
@@ -69,15 +47,8 @@
 #armor
 #offsetx -2
 #offsety 2
-#define "#size 3"
-#define "#mapmove 18"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon nostr_poisongore"
-#define "#secondtmpshape gloso"
+#define "#mountmnr 'gloso'"
 #define "#gcost +40"
-#define "#ressize 2"
-#define "#enc 3"
 #tag "animal gloso"
 #description "Leaves a burning black sow behind when the rider dies"
 #basechance 0.25
@@ -91,15 +62,8 @@
 #sprite /graphics/mounts/standard/nightmare.png
 #armor
 #offsety -2
-#define "#size 3"
-#define "#mapmove 26"
-#define "#ap 25"
-#define "#mounted"
-#define "#weapon 615 --- Heavy Hoof"
-#define "#secondtmpshape nightmare"
+#define "#mountmnr 'nightmare'"
 #define "#gcost +40"
-#define "#ressize 2"
-#define "#enc 4"
 #theme "specialmount"
 #tag "animal nightmare"
 #description "Leaves a nightmare behind when the rider dies"
@@ -114,16 +78,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/lion.png
 #armor
-#define "#size 4"
-#define "#mapmove 16"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape lionmount"
+#define "#mountmnr 'lionmount'"
 #define "#gcost +35"
-#define "#ressize 2"
-#define "#enc 4"
 #description "If the rider dies, the lion will carry on fighting until the end of the battle."
 #offsety 5
 #offsetx -1
@@ -140,15 +96,8 @@
 #sprite /graphics/mounts/standard/direwolf1.png
 #armor
 #needs overlay direwolf1_overlay
-#define "#size 3"
-#define "#mapmove 16"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon 237 --- bite"
-#define "#secondtmpshape direwolf1mount"
+#define "#mountmnr direwolf1mount"
 #define "#gcost +25"
-#define "#ressize 2"
-#define "#enc 4"
 #tag "animal wolf"
 #theme "light"
 #tag "maxprot 12"
@@ -167,17 +116,8 @@
 #offsetx 23
 #offsety 64
 #needs overlay gryphon_overlay
-#define "#size 5"
-#define "#mapmove 22"
-#define "#ap 15"
-#define "#mounted"
-#define "#flying"
-#define "#weapon 236 -- Claw"
-#define "#weapon 237 -- Bite"
-#define "#secondtmpshape gryphonmount"
+#define "#mountmnr 'gryphonmount'"
 #define "#gcost +100"
-#define "#ressize 2"
-#define "#enc 4"
 #description "If the rider dies, the gryphon will carry on fighting until the end of the battle."
 #theme "flying"
 #theme "specialmount"
@@ -191,16 +131,8 @@
 #gameid -1
 #sprite /graphics/amazon/mounts/leogryph.png
 #armor
-#define "#size 4"
-#define "#mapmove 16"
-#define "#ap 20"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape leogryphmount"
+#define "#mountmnr 'leogryphmount'"
 #define "#gcost +40"
-#define "#ressize 2"
-#define "#enc 4"
 #description "If the rider dies, the leogryph will carry on fighting until the end of the battle."
 #basechance 0.125
 #offsety 6
@@ -220,14 +152,7 @@
 #sprite /graphics/mounts/standard/demonbred_barded.png
 #armor
 #needs overlay demonbred_barded
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon 615 --- Heavy Hoof"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#rcost +5"
+#define "#mountmnr 'demonbred_barded'"
 #tag "animal horse"
 #theme "heavy"
 #tag "minprot 14"
@@ -245,15 +170,8 @@
 #armor
 #offsetx -3
 #needs overlay demonbred_cataphract
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 24"
-#define "#mounted"
-#define "#weapon 615 --- Heavy Hoof"
+#define "#mountmnr 'demonbred_cataphract'"
 #define "#gcost +25"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#rcost +5"
 #tag "animal horse"
 #theme "heavy"
 #tag "minprot 12"
@@ -271,13 +189,7 @@
 #sprite /graphics/mounts/standard/brownhorse.png
 #armor
 #needs overlay 1
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 24"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
-#define "#enc 3"
+#define "#mountmnr 'riding-horse'"
 #define "#gcost +15"
 #tag "animal horse"
 #theme "light"
@@ -292,14 +204,7 @@
 #sprite /graphics/mounts/standard/armoredhorse1.png
 #armor
 #needs overlay 2
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 20"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#rcost +5"
+#define "#mountmnr 'armored-horse'"
 #tag "animal horse"
 #theme "heavy"
 #tag "minprot 14"
@@ -316,14 +221,7 @@
 #sprite /graphics/mounts/standard/armoredhorse2.png
 #armor
 #needs overlay armoredhorse2overlay
-#define "#size 3"
-#define "#mapmove 2"
-#define "#ap 20"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#rcost +5"
+#define "#mountmnr 'war-horse'"
 #tag "animal horse"
 #theme "heavy"
 #tag "minprot 12"
@@ -342,15 +240,8 @@
 #armor
 #offsetx -3
 #needs overlay 4
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
+#define "#mountmnr 'cataphracted-horse'"
 #define "#gcost +25"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#rcost +5"
 #tag "animal horse"
 #theme "heavy"
 #tag "minprot 12"
@@ -367,14 +258,8 @@
 #armor
 #offsetx -3
 #needs overlay 5
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 24"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
+#define "#mountmnr 'light-cataphracted-horse'"
 #define "#gcost +20"
-#define "#ressize 2"
-#define "#enc 3"
 #tag "animal horse"
 #tag "minprot 10"
 #tag "maxprot 14"
@@ -393,19 +278,8 @@
 #armor
 #offsetx 5
 #offsety 52
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 24"
-#define "#mounted"
-#define "#weapon nostr_kick_12"
-#define "#gcost +15"
-#define "#att +2"  --- Elevation
-#define "#def -1"  --- Wobbling gait
-#define "#prec -1"  --- Wobbling gait
-#define "#ressize 2"
-#define "#enc 3"
-#define "#supplybonus +1"
-#define "#wastesurvival"
+#define "#mountmnr 'camel'"
+#define "#gcost +20"
 #tag "animal camel"
 #tag "maxprot 11"
 #theme "light"
@@ -420,19 +294,8 @@
 #armor
 #offsetx 5
 #offsety 52
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 20"
-#define "#mounted"
-#define "#weapon nostr_kick_12"
+#define "#mountmnr 'armored_camel'"
 #define "#gcost +25"
-#define "#rcost +5"
-#define "#att +2"  --- Elevation
-#define "#def -1"  --- Wobbling gait
-#define "#prec -1"  --- Wobbling gait
-#define "#ressize 2"
-#define "#enc 4"
-#define "#wastesurvival"
 #tag "animal camel"
 #theme "heavy"
 #tag "minprot 12"

@@ -377,17 +377,17 @@
 #end
 
 #new magefilter
-#name "illusion"
+#name "glamour"
 #basechance 0
-#command "#illusion"
+#command "#glamour"
 #command "#stealthy +0"
 #command "#gcost *1.05"
-#primarycommand #illusion
+#primarycommand #glamour
 #chanceinc "personalmagic air 2"
 #power 2
 #tag "personalmagic air"
 #chanceinc "race vanir -20"
-#filterdesc "illusion desc"
+#filterdesc "glamour desc"
 #end
 
 #new magefilter
@@ -660,7 +660,7 @@
 #basechance 0
 #command "#airshield +30"
 #chanceinc "personalmagic air 2"
-#chanceinc "personalcommand #illusion 2"
+#chanceinc "personalcommand #glamour 2"
 #filterdesc "airshield desc"
 #end
 
@@ -990,7 +990,7 @@
 #chanceinc "personalmagic nature 0.125"
 #chanceinc "personalmagic death 0.5"
 #chanceinc "personalmagic nature death 2"
-#chanceinc "personalcommand illusion 0.125"
+#chanceinc "personalcommand glamour 0.125"
 #chanceinc "nationtag fae OR hasthemetheme fae 0.5"
 #tag "notfortier 1"
 #tag "notfortier 2"
@@ -1004,7 +1004,7 @@
 #command "#batstartsum2 592"
 #chanceinc "personalmagic nature 0.25"
 #chanceinc "personalmagic air *2"
-#chanceinc "personalcommand illusion *3"
+#chanceinc "personalcommand glamour *3"
 #chanceinc "nationtag fae OR hasthemetheme fae *10"
 #tag "notfortier 1"
 #tag "notfortier 2"
@@ -1022,7 +1022,7 @@
 #command "#batstartsum1 592"
 #chanceinc "personalmagic nature 0.25"
 #chanceinc "personalmagic air *2"
-#chanceinc "personalcommand illusion *3"
+#chanceinc "personalcommand glamour *3"
 #chanceinc "nationtag fae OR hasthemetheme fae *10"
 #tag "notfortier 1"
 #filterdesc "fairy desc"
