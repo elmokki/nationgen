@@ -363,7 +363,7 @@ public class CommanderGenerator extends TroopGenerator {
 			
 		
 			if(r.nextBoolean() && priest)
-				unit.commands.add(Command.parse("#magicskill 8 1"));
+				unit.commands.add(Command.parse("#magicskill 9 1"));
 			
 			if(priest && stealthy)
 			{
