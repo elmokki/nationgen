@@ -45,7 +45,7 @@ public class MountUnit extends Unit {
 		Filter sf = new Filter(n);
 		sf.name = "Special unit";
 		
-		// Copy sacredness and gcost from main form
+		// Copy sacredness from main form
 		if(otherForm != null)
 		{
 			for(Command c : otherForm.getCommands())
@@ -58,15 +58,6 @@ public class MountUnit extends Unit {
 				{
 					//if(otherForm.tags.containsName("sacredmount"))
 						sacred = true;
-				}
-				
-				if(c.command.equals("#gcost") && !mountForm.tags.containsName("nogcost"))
-				{
-					
-					//System.out.println(c.args.get(0) + " ADDED " + " / " + otherForm.getGoldCost_DEBUG());
-					gcost = c.args.get(0).getInt();
-
-
 				}
 			}
 		}

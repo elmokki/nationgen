@@ -261,7 +261,7 @@ public class Unit {
 		return value;
 	}
 	
-	
+	// Decides on bodytype tags based on the itemslots of the unit (see #itemslots in modding manual for the bitmask table of values)
 	protected Optional<String> writeBodytypeLine()
 	{
 		String[] coms = {"#lizard", "#quadruped", "#bird", "#snake", "#djinn", "#miscshape", "#humanoid", "#mountedhumanoid", "#troglodyte", "#naga", "#copystats"};
@@ -274,10 +274,10 @@ public class Unit {
 		int slots = this.getItemSlots();
 		
 		// has feet and an arm
-		if(	Generic.containsBitmask(slots, 2048) && Generic.containsBitmask(slots, 2))
+		if(	Generic.containsBitmask(slots, 131072) && Generic.containsBitmask(slots, 2))
 		{
 			// has head
-			if(Generic.containsBitmask(slots, 128))
+			if(Generic.containsBitmask(slots, 8192))
 				return Optional.of("#humanoid");
 			else
 				return Optional.of("#troglodyte");
@@ -294,7 +294,7 @@ public class Unit {
 
 		}
 		// feet, no arm
-		else if(Generic.containsBitmask(slots, 2048))
+		else if(Generic.containsBitmask(slots, 131072))
 		{
 			return Optional.of("#quadruped");
 
@@ -413,7 +413,7 @@ public class Unit {
 				for(int i = 0; i < head; i++)
 					slots += Math.pow(2, (i+13));
 			if(bow > 0)
-				slots += 512;		
+				slots += 512;
 			if(body > 0)
 				slots += 65536;
 			if(feet > 0)

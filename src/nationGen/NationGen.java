@@ -765,11 +765,11 @@ public class NationGen
 
 		mounts.stream()
 			.filter(mu -> customMountUnits.contains(mu.otherForm))
-			.forEach(su -> {
-				su.polish(this, n);
+			.forEach(mu -> {
+				mu.polish(this, n);
 
 				// Replace command
-				su.mountForm.commands.stream()
+				mu.mountForm.commands.stream()
 					.filter(c -> c.command.equals("#weapon"))
 					.forEach(c -> {
 						Arg weaponId = c.args.get(0);
@@ -877,16 +877,6 @@ public class NationGen
 		MountUnit mu = new MountUnit(this, assets, u.race, u.pose, u, mount);
 		
 		mu.id = idHandler.nextUnitId();
-		
-		switch (c.command)
-		{
-			case "#mountmnr":
-				mu.shiftcommand = "#mountmnr";
-				break;
-			default:
-				break;
-		}
-		
 		c.args.set(0, new Arg(mu.id));
 		mounts.add(mu);
 	}	
