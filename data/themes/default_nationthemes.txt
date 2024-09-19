@@ -282,36 +282,20 @@
 #name "cheaplabs"
 #type "lab"
 #basechance 0.25
-#command "#labcost 400"
-#desc "Laboratories cost 400 gold"
+#command "#labcost 500"
+#desc "Laboratories cost 500 gold"
 #end
 
 #new
 #name "expensivelabs"
 #type "lab"
 #basechance 0.25
-#command "#labcost 600"
-#desc "Laboratories cost 600 gold"
+#command "#labcost 700"
+#desc "Laboratories cost 700 gold"
 #end
 
 #new
 #name "cheaptemple"
-#type "temple"
-#basechance 0.25
-#command "#templecost 300"
-#desc "Temples cost 300 gold"
-#end
-
-#new
-#name "cheaptemple2"
-#type "temple"
-#basechance 0.1
-#command "#templecost 200"
-#desc "Temples cost 200 gold"
-#end
-
-#new
-#name "expensivetemple"
 #type "temple"
 #basechance 0.25
 #command "#templecost 500"
@@ -319,11 +303,35 @@
 #end
 
 #new
+#name "cheaptemple2"
+#type "temple"
+#basechance 0.1
+#command "#templecost 400"
+#desc "Temples cost 400 gold"
+#end
+
+#new
+#name "cheaptemple3"
+#type "temple"
+#basechance 0.05
+#command "#templecost 300"
+#desc "Temples cost 300 gold"
+#end
+
+#new
+#name "expensivetemple"
+#type "temple"
+#basechance 0.25
+#command "#templecost 700"
+#desc "Temples cost 700 gold"
+#end
+
+#new
 #name "expensivetemple2"
 #type "temple"
 #basechance 0.1
-#command "#templecost 600"
-#desc "Temples cost 600 gold"
+#command "#templecost 800"
+#desc "Temples cost 800 gold"
 #end
 
 #new
@@ -381,7 +389,7 @@
 #basechance 0.025
 #command "#templegems 0"
 #chanceinc "magicpriority fire below 1 *0"
-#command "#templecost 800"
+#command "#templecost 1200"
 #desc "Temples generate fire gems"
 #magicpriority fire 16
 #end
@@ -392,7 +400,7 @@
 #basechance 0.0125
 #command "#templegems 0"
 #chanceinc "magicpriority fire below 1 *0"
-#command "#templecost 600"
+#command "#templecost 900"
 #desc "Temples generate fire gems"
 #magicpriority fire 16
 #end
@@ -402,7 +410,7 @@
 #type "temple"
 #basechance 0.025
 #command "#templegems 1"
-#command "#templecost 800"
+#command "#templecost 1200"
 #chanceinc "magicpriority air below 1 *0"
 #magicpriority air 16
 #desc "Temples generate air gems"
@@ -414,7 +422,7 @@
 #type "temple"
 #basechance 0.0125
 #command "#templegems 1"
-#command "#templecost 600"
+#command "#templecost 900"
 #magicpriority air 16
 #chanceinc "magicpriority air below 1 *0"
 #desc "Temples generate air gems"
@@ -425,7 +433,7 @@
 #type "temple"
 #basechance 0.025
 #command "#templegems 2"
-#command "#templecost 800"
+#command "#templecost 1200"
 #magicpriority water 16
 #chanceinc "magicpriority water below 1 *0"
 #desc "Temples generate water gems"
@@ -436,7 +444,7 @@
 #type "temple"
 #basechance 0.0125
 #command "#templegems 2"
-#command "#templecost 600"
+#command "#templecost 900"
 #magicpriority water 16
 #chanceinc "magicpriority water below 1 *0"
 #desc "Temples generate water gems"
@@ -447,7 +455,7 @@
 #type "temple"
 #basechance 0.025
 #command "#templegems 3"
-#command "#templecost 800"
+#command "#templecost 1200"
 #magicpriority earth 16
 #chanceinc "magicpriority earth below 1 *0"
 #desc "Temples generate earth gems"
@@ -458,7 +466,7 @@
 #type "temple"
 #basechance 0.0125
 #command "#templegems 3"
-#command "#templecost 600"
+#command "#templecost 900"
 #magicpriority earth 16
 #chanceinc "magicpriority earth below 1 *0"
 #desc "Temples generate earth gems"
@@ -470,7 +478,7 @@
 #type "temple"
 #basechance 0.025
 #command "#templegems 4"
-#command "#templecost 800"
+#command "#templecost 1200"
 #magicpriority astral 16
 #chanceinc "magicpriority astral below 1 *0"
 #desc "Temples generate astral gems"
@@ -481,7 +489,7 @@
 #type "temple"
 #basechance 0.0125
 #command "#templegems 4"
-#command "#templecost 600"
+#command "#templecost 900"
 #magicpriority astral 16
 #chanceinc "magicpriority astral below 1 *0"
 #desc "Temples generate astral gems"
@@ -492,7 +500,7 @@
 #type "temple"
 #basechance 0.025
 #command "#templegems 5"
-#command "#templecost 800"
+#command "#templecost 1200"
 #magicpriority death 16
 #chanceinc "magicpriority death below 1 *0"
 #desc "Temples generate death gems"
@@ -503,7 +511,7 @@
 #type "temple"
 #basechance 0.0125
 #command "#templegems 5"
-#command "#templecost 600"
+#command "#templecost 900"
 #magicpriority death 16
 #chanceinc "magicpriority death below 1 *0"
 #desc "Temples generate death gems"
@@ -515,7 +523,7 @@
 #type "temple"
 #basechance 0.025
 #command "#templegems 6"
-#command "#templecost 800"
+#command "#templecost 1200"
 #magicpriority nature 16
 #chanceinc "magicpriority nature below 1 *0"
 #desc "Temples generate nature gems"
@@ -527,18 +535,39 @@
 #type "temple"
 #basechance 0.0125
 #command "#templegems 6"
-#command "#templecost 600"
+#command "#templecost 800"
 #magicpriority nature 16
 #chanceinc "magicpriority nature below 1 *0"
 #desc "Temples generate nature gems"
 #end
 
+#new
+#name "templegems: glamour"
+#type "temple"
+#basechance 0.025
+#command "#templegems 7"
+#command "#templecost 1200"
+#magicpriority glamour 16
+#desc "Temples generate glamour gems"
+#chanceinc "magicpriority glamour below 1 *0"
+#end
+
+#new
+#name "templegems: glamour cheap"
+#type "temple"
+#basechance 0.0125
+#command "#templegems 7"
+#command "#templecost 900"
+#magicpriority glamour 16
+#desc "Temples generate glamour gems"
+#chanceinc "magicpriority glamour below 1 *0"
+#end
 
 #new
 #name "templegems: blood"
 #type "temple"
 #basechance 0.05
-#command "#templegems 7"
+#command "#templegems 8"
 #magicpriority blood 16
 #desc "Temples generate blood slaves"
 #chanceinc "magicpriority blood below 1 *0"
