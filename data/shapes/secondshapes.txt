@@ -453,6 +453,29 @@
 #name "felemental"
 #command "#copystats 3716"
 #command "#copyspr 3716"
+-- Need to clear special abilities from elemental so it doesn't use shrinkhp,
+-- as that will make it cycle to the next modded unit. We want a secondtmpshape here.
+#command "#clearspec"
+#command "#secondtmpshape 3717"
+
+#command "#magicbeing"
+#command "#inanimate"
+#command "#amphibian"
+#command "#neednoteat"
+#command "#spiritsight"
+#command "#ethereal"
+#command "#spiritform"
+#command "#blind"
+
+#command "#fireres 60"
+#command "#coldres -5"
+#command "#poisonres 25"
+#command "#heat 7"
+#command "#fireshield 13"
+#command "#firepower 1"
+#command "#uwdamage 100"
+#command "#woundfend 99"
+#command "#drawsize -10"
 #command "#magicboost 53 -5"
 #command "#berserk 2"
 #command "#reinvigoration 10"
@@ -465,6 +488,29 @@
 #name "minorfelemental"
 #command "#copystats 3720"
 #command "#copyspr 3720"
+-- Need to clear special abilities from elemental so it doesn't use shrinkhp,
+-- as that will make it cycle to the next modded unit. We want a secondtmpshape here.
+#command "#clearspec"
+#command "#secondtmpshape 3721"
+
+#command "#magicbeing"
+#command "#inanimate"
+#command "#amphibian"
+#command "#neednoteat"
+#command "#spiritsight"
+#command "#ethereal"
+#command "#spiritform"
+#command "#blind"
+
+#command "#fireres 60"
+#command "#coldres -5"
+#command "#poisonres 25"
+#command "#heat 3"
+#command "#fireshield 9"
+#command "#firepower 1"
+#command "#uwdamage 100"
+#command "#woundfend 99"
+#command "#drawsize -50"
 #command "#magicboost 53 -5"
 #command "#reinvigoration 10"
 #command "#itemslots 786432"
@@ -476,6 +522,24 @@
 #name "eelemental"
 #command "#copystats 3740"
 #command "#copyspr 3740"
+-- Need to clear special abilities from elemental so it doesn't use shrinkhp,
+-- as that will make it cycle to the next modded unit. We want a secondtmpshape here.
+#command "#clearspec"
+#command "#secondtmpshape 3741"
+
+#command "#magicbeing"
+#command "#inanimate"
+#command "#trample"
+#command "#amphibian"
+#command "#neednoteat"
+#command "#stonebeing"
+#command "#spiritsight"
+#command "#blind"
+
+#command "#poisonres 25"
+#command "#reconst 7"
+#command "#woundfend 4"
+#command "#drawsize -10"
 #command "#magicboost 53 -5"
 #command "#berserk 2"
 #command "#reinvigoration 10"
@@ -488,10 +552,28 @@
 #name "minoreelemental"
 #command "#copystats 3744"
 #command "#copyspr 3744"
+-- Need to clear special abilities from elemental so it doesn't use shrinkhp,
+-- as that will make it cycle to the next modded unit. We want a secondtmpshape here.
+#command "#clearspec"
+#command "#secondtmpshape 3745"
+
+#command "#magicbeing"
+#command "#inanimate"
+#command "#trample"
+#command "#amphibian"
+#command "#neednoteat"
+#command "#stonebeing"
+#command "#spiritsight"
+#command "#blind"
+
+#command "#poisonres 25"
+#command "#reconst 11"
+#command "#woundfend 4"
+#command "#drawsize -50"
 #command "#magicboost 53 -5"
 #command "#reinvigoration 10"
 #command "#itemslots 786432"
-#nowayback
+#nowayback 
 #keepname
 #end
 
@@ -499,6 +581,29 @@
 #name "aelemental"
 #command "#copystats 3724"
 #command "#copyspr 3724"
+-- Need to clear special abilities from elemental so it doesn't use shrinkhp,
+-- as that will make it cycle to the next modded unit. We want a secondtmpshape here.
+#command "#clearspec"
+#command "#secondtmpshape 3725"
+
+#command "#magicbeing"
+#command "#inanimate"
+#command "#amphibian"
+#command "#neednoteat"
+#command "#spiritsight"
+#command "#ethereal"
+#command "#spiritform"
+#command "#blind"
+#command "#flying"
+#command "#stormimmune"
+#command "#trample"
+
+#command "#poisonres 25"
+#command "#shockres 15"
+#command "#stormpower 4"
+#command "#unsurr 5"
+#command "#woundfend 99"
+#command "#drawsize -10"
 #command "#magicboost 53 -5"
 #command "#berserk 2"
 #command "#reinvigoration 10"
@@ -511,6 +616,29 @@
 #name "minoraelemental"
 #command "#copystats 3728"
 #command "#copyspr 3728"
+-- Need to clear special abilities from elemental so it doesn't use shrinkhp,
+-- as that will make it cycle to the next modded unit. We want a secondtmpshape here.
+#command "#clearspec"
+#command "#secondtmpshape 3729"
+
+#command "#magicbeing"
+#command "#inanimate"
+#command "#amphibian"
+#command "#neednoteat"
+#command "#spiritsight"
+#command "#ethereal"
+#command "#spiritform"
+#command "#blind"
+#command "#flying"
+#command "#stormimmune"
+#command "#trample"
+
+#command "#poisonres 25"
+#command "#shockres 15"
+#command "#stormpower 2"
+#command "#unsurr 5"
+#command "#woundfend 99"
+#command "#drawsize -50"
 #command "#magicboost 53 -5"
 #command "#reinvigoration 10"
 #command "#itemslots 786432"
@@ -522,6 +650,30 @@
 #name "welemental"
 #command "#copystats 3732"
 #command "#copyspr 3732"
+-- Need to clear special abilities from elemental so it doesn't use shrinkhp,
+-- as that will make it cycle to the next modded unit. We want a secondtmpshape here.
+#command "#clearspec"
+#command "#secondtmpshape 3733"
+
+#command "#magicbeing"
+#command "#inanimate"
+#command "#amphibian"
+#command "#neednoteat"
+#command "#spiritsight"
+#command "#ethereal"
+#command "#spiritform"
+#command "#blind"
+#command "#slashres"
+#command "#bluntres"
+#command "#pierceres"
+
+
+#command "#fireres 10"
+#command "#poisonres 25"
+#command "#uwregen 12"
+#command "#unsurr 2"
+#command "#woundfend 99"
+#command "#drawsize -10"
 #command "#magicboost 53 -5"
 #command "#berserk 2"
 #command "#reinvigoration 10"
@@ -534,6 +686,30 @@
 #name "minorwelemental"
 #command "#copystats 3736"
 #command "#copyspr 3736"
+-- Need to clear special abilities from elemental so it doesn't use shrinkhp,
+-- as that will make it cycle to the next modded unit. We want a secondtmpshape here.
+#command "#clearspec"
+#command "#secondtmpshape 3737"
+
+#command "#magicbeing"
+#command "#inanimate"
+#command "#amphibian"
+#command "#neednoteat"
+#command "#spiritsight"
+#command "#ethereal"
+#command "#spiritform"
+#command "#blind"
+#command "#slashres"
+#command "#bluntres"
+#command "#pierceres"
+
+
+#command "#fireres 5"
+#command "#poisonres 25"
+#command "#uwregen 17"
+#command "#unsurr 2"
+#command "#woundfend 99"
+#command "#drawsize -50"
 #command "#magicboost 53 -5"
 #command "#reinvigoration 10"
 #command "#itemslots 786432"
