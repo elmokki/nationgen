@@ -647,6 +647,7 @@
 
 #new secondshape
 #name "ghoul-horse"
+#command "#name 'Ghoul Horse'"
 #command "#spr1 ./graphics/mounts/standard/ghoulhorse.png"
 #command "#spr2 shift"
 #armor
@@ -663,6 +664,7 @@
 
 #new secondshape
 #name "armored-ghoul-horse"
+#command "#name 'Ghoul Horse'"
 #command "#spr1 ./graphics/mounts/standard/ghoulhorse_armored.png"
 #command "#spr2 shift"
 #command "#size 5"
@@ -775,8 +777,31 @@
 
 #new secondshape
 #name "felemental"
-#command "#copystats 594"
-#command "#copyspr 594"
+#command "#copystats 3716"
+#command "#copyspr 3716"
+-- Need to clear special abilities from elemental so it doesn't use shrinkhp,
+-- as that will make it cycle to the next modded unit. We want a secondtmpshape here.
+#command "#clearspec"
+#command "#secondtmpshape 3717"
+
+#command "#magicbeing"
+#command "#inanimate"
+#command "#amphibian"
+#command "#neednoteat"
+#command "#spiritsight"
+#command "#ethereal"
+#command "#spiritform"
+#command "#blind"
+
+#command "#fireres 60"
+#command "#coldres -5"
+#command "#poisonres 25"
+#command "#heat 7"
+#command "#fireshield 13"
+#command "#firepower 1"
+#command "#uwdamage 100"
+#command "#woundfend 99"
+#command "#drawsize -10"
 #command "#magicboost 53 -5"
 #command "#berserk 2"
 #command "#reinvigoration 10"
@@ -787,8 +812,31 @@
 
 #new secondshape
 #name "minorfelemental"
-#command "#copystats 598"
-#command "#copyspr 598"
+#command "#copystats 3720"
+#command "#copyspr 3720"
+-- Need to clear special abilities from elemental so it doesn't use shrinkhp,
+-- as that will make it cycle to the next modded unit. We want a secondtmpshape here.
+#command "#clearspec"
+#command "#secondtmpshape 3721"
+
+#command "#magicbeing"
+#command "#inanimate"
+#command "#amphibian"
+#command "#neednoteat"
+#command "#spiritsight"
+#command "#ethereal"
+#command "#spiritform"
+#command "#blind"
+
+#command "#fireres 60"
+#command "#coldres -5"
+#command "#poisonres 25"
+#command "#heat 3"
+#command "#fireshield 9"
+#command "#firepower 1"
+#command "#uwdamage 100"
+#command "#woundfend 99"
+#command "#drawsize -50"
 #command "#magicboost 53 -5"
 #command "#reinvigoration 10"
 #command "#itemslots 786432"
@@ -798,8 +846,26 @@
 
 #new secondshape
 #name "eelemental"
-#command "#copystats 493"
-#command "#copyspr 493"
+#command "#copystats 3740"
+#command "#copyspr 3740"
+-- Need to clear special abilities from elemental so it doesn't use shrinkhp,
+-- as that will make it cycle to the next modded unit. We want a secondtmpshape here.
+#command "#clearspec"
+#command "#secondtmpshape 3741"
+
+#command "#magicbeing"
+#command "#inanimate"
+#command "#trample"
+#command "#amphibian"
+#command "#neednoteat"
+#command "#stonebeing"
+#command "#spiritsight"
+#command "#blind"
+
+#command "#poisonres 25"
+#command "#reconst 7"
+#command "#woundfend 4"
+#command "#drawsize -10"
 #command "#magicboost 53 -5"
 #command "#berserk 2"
 #command "#reinvigoration 10"
@@ -810,19 +876,60 @@
 
 #new secondshape
 #name "minoreelemental"
-#command "#copystats 497"
-#command "#copyspr 497"
+#command "#copystats 3744"
+#command "#copyspr 3744"
+-- Need to clear special abilities from elemental so it doesn't use shrinkhp,
+-- as that will make it cycle to the next modded unit. We want a secondtmpshape here.
+#command "#clearspec"
+#command "#secondtmpshape 3745"
+
+#command "#magicbeing"
+#command "#inanimate"
+#command "#trample"
+#command "#amphibian"
+#command "#neednoteat"
+#command "#stonebeing"
+#command "#spiritsight"
+#command "#blind"
+
+#command "#poisonres 25"
+#command "#reconst 11"
+#command "#woundfend 4"
+#command "#drawsize -50"
 #command "#magicboost 53 -5"
 #command "#reinvigoration 10"
 #command "#itemslots 786432"
-#nowayback
+#nowayback 
 #keepname
 #end
 
 #new secondshape
 #name "aelemental"
-#command "#copystats 567"
-#command "#copyspr 567"
+#command "#copystats 3724"
+#command "#copyspr 3724"
+-- Need to clear special abilities from elemental so it doesn't use shrinkhp,
+-- as that will make it cycle to the next modded unit. We want a secondtmpshape here.
+#command "#clearspec"
+#command "#secondtmpshape 3725"
+
+#command "#magicbeing"
+#command "#inanimate"
+#command "#amphibian"
+#command "#neednoteat"
+#command "#spiritsight"
+#command "#ethereal"
+#command "#spiritform"
+#command "#blind"
+#command "#flying"
+#command "#stormimmune"
+#command "#trample"
+
+#command "#poisonres 25"
+#command "#shockres 15"
+#command "#stormpower 4"
+#command "#unsurr 5"
+#command "#woundfend 99"
+#command "#drawsize -10"
 #command "#magicboost 53 -5"
 #command "#berserk 2"
 #command "#reinvigoration 10"
@@ -833,8 +940,31 @@
 
 #new secondshape
 #name "minoraelemental"
-#command "#copystats 571"
-#command "#copyspr 571"
+#command "#copystats 3728"
+#command "#copyspr 3728"
+-- Need to clear special abilities from elemental so it doesn't use shrinkhp,
+-- as that will make it cycle to the next modded unit. We want a secondtmpshape here.
+#command "#clearspec"
+#command "#secondtmpshape 3729"
+
+#command "#magicbeing"
+#command "#inanimate"
+#command "#amphibian"
+#command "#neednoteat"
+#command "#spiritsight"
+#command "#ethereal"
+#command "#spiritform"
+#command "#blind"
+#command "#flying"
+#command "#stormimmune"
+#command "#trample"
+
+#command "#poisonres 25"
+#command "#shockres 15"
+#command "#stormpower 2"
+#command "#unsurr 5"
+#command "#woundfend 99"
+#command "#drawsize -50"
 #command "#magicboost 53 -5"
 #command "#reinvigoration 10"
 #command "#itemslots 786432"
@@ -844,8 +974,32 @@
 
 #new secondshape
 #name "welemental"
-#command "#copystats 408"
-#command "#copyspr 408"
+#command "#copystats 3732"
+#command "#copyspr 3732"
+-- Need to clear special abilities from elemental so it doesn't use shrinkhp,
+-- as that will make it cycle to the next modded unit. We want a secondtmpshape here.
+#command "#clearspec"
+#command "#secondtmpshape 3733"
+
+#command "#magicbeing"
+#command "#inanimate"
+#command "#amphibian"
+#command "#neednoteat"
+#command "#spiritsight"
+#command "#ethereal"
+#command "#spiritform"
+#command "#blind"
+#command "#slashres"
+#command "#bluntres"
+#command "#pierceres"
+
+
+#command "#fireres 10"
+#command "#poisonres 25"
+#command "#uwregen 12"
+#command "#unsurr 2"
+#command "#woundfend 99"
+#command "#drawsize -10"
 #command "#magicboost 53 -5"
 #command "#berserk 2"
 #command "#reinvigoration 10"
@@ -856,8 +1010,32 @@
 
 #new secondshape
 #name "minorwelemental"
-#command "#copystats 412"
-#command "#copyspr 412"
+#command "#copystats 3736"
+#command "#copyspr 3736"
+-- Need to clear special abilities from elemental so it doesn't use shrinkhp,
+-- as that will make it cycle to the next modded unit. We want a secondtmpshape here.
+#command "#clearspec"
+#command "#secondtmpshape 3737"
+
+#command "#magicbeing"
+#command "#inanimate"
+#command "#amphibian"
+#command "#neednoteat"
+#command "#spiritsight"
+#command "#ethereal"
+#command "#spiritform"
+#command "#blind"
+#command "#slashres"
+#command "#bluntres"
+#command "#pierceres"
+
+
+#command "#fireres 5"
+#command "#poisonres 25"
+#command "#uwregen 17"
+#command "#unsurr 2"
+#command "#woundfend 99"
+#command "#drawsize -50"
 #command "#magicboost 53 -5"
 #command "#reinvigoration 10"
 #command "#itemslots 786432"
@@ -1487,11 +1665,11 @@
 #command "#weapon 322"
 #command "#weapon 236"
 #command "#size 4"
-#command "#hp 21"
+#command "#hp 22"
 #command "#prot 4"
 #command "#mor 13"
-#command "#mr 8"
-#command "#enc 2"
+#command "#mr 5"
+#command "#enc 3"
 #command "#str 15"
 #command "#att 13"
 #command "#def 10"
@@ -1499,6 +1677,7 @@
 #command "#mapmove 22"
 #command "#ap 18"
 #command "#forestsurvival"
+#command "#animal"
 #command "#itemslots 786432"
 #nowayback
 #nogcost
@@ -1513,11 +1692,11 @@
 #command "#weapon 322"
 #command "#weapon 236"
 #command "#size 4"
-#command "#hp 21"
+#command "#hp 22"
 #command "#prot 4"
 #command "#mor 13"
-#command "#mr 8"
-#command "#enc 2"
+#command "#mr 5"
+#command "#enc 3"
 #command "#str 15"
 #command "#att 13"
 #command "#def 10"
@@ -1525,6 +1704,7 @@
 #command "#mapmove 22"
 #command "#ap 18"
 #command "#forestsurvival"
+#command "#animal"
 #command "#itemslots 786432"
 #nowayback
 #nogcost
@@ -1538,17 +1718,19 @@
 #command "#weapon 236 --- Claw"
 #command "#weapon 322 --- Bite"
 #command "#size 4"
-#command "#hp 21"
+#command "#hp 22"
 #command "#prot 4"
 #command "#mor 13"
-#command "#mr 8"
-#command "#enc 2"
+#command "#mr 5"
+#command "#enc 3"
 #command "#str 15"
 #command "#att 13"
 #command "#def 10"
 #command "#prec 5"
 #command "#mapmove 22"
 #command "#ap 18"
+#command "#animal"
+#command "#forestsurvival"
 #command "#itemslots 786432"
 #nowayback
 #nogcost
@@ -1583,6 +1765,7 @@
 
 #new secondshape
 #name "nightmare_leogryphmount"
+#command "#name 'Leogryph Nightmare'"
 #command "#spr1 ./graphics/amazon/mounts/nightmare_leogryph.png"
 #command "#spr2 shift"
 #command "#size 4"
@@ -1608,6 +1791,7 @@
 
 #new secondshape
 #name "nightmare_feline"
+#command "#name 'Feline Nightmare'"
 #command "#spr1 ./graphics/amazon/mounts/nightmare_feline.png"
 #command "#spr2 shift"
 #command "#size 4"
@@ -1633,6 +1817,7 @@
 
 #new secondshape
 #name "vine_nightmare"
+#command "#name 'Vine Nightmare'"
 #command "#spr1 ./graphics/hoburg/mounts/vine_nightmare.png"
 #command "#spr2 shift"
 #command "#size 3"
@@ -2979,6 +3164,7 @@
 
 #new secondshape
 #name "cusidhemount"
+#command "#name 'Cu Sidhe'"
 #command "#copyspr 851"
 #command "#magicboost 53 -5"
 #command "#size 4"
@@ -3009,6 +3195,7 @@
 
 #new secondshape
 #name "barghestmount"
+#command "#name 'Barghest'"
 #command "#copyspr 1768"
 #command "#magicboost 53 -5"
 #command "#size 4"

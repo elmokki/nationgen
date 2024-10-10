@@ -9,12 +9,31 @@
 #load armor /data/items/atlantian/naked.txt
 #load helmet /data/items/atlantian/helmet.txt
 #load legs /data/items/atlantian/legs.txt
-#load weapon /data/items/atlantian/standard.txt
 #load weapon /data/items/atlantian/weapon.txt
 #load offhand /data/items/atlantian/shield.txt
 #load bonusweapon /data/items/atlantian/bonusrangedweapon.txt
 
 #command "#amphibian"
+
+#endpose
+
+
+#newpose
+#name "standard bearer"
+#role "infantry"
+#load basesprite /data/items/atlantian/atlantianbases.txt
+#load shadow /data/items/atlantian/shadow.txt
+#load armor /data/items/atlantian/armor.txt
+#load armor /data/items/atlantian/naked.txt
+#load helmet /data/items/atlantian/helmet.txt
+#load legs /data/items/atlantian/legs.txt
+#load weapon /data/items/atlantian/standard.txt
+#load bonusweapon /data/items/atlantian/weapon.txt
+#load offhand /data/items/atlantian/shield.txt
+#load bonusweapon /data/items/atlantian/bonusrangedweapon.txt
+
+#command "#amphibian"
+#maxunits 1
 
 #endpose
 
@@ -30,7 +49,6 @@
 #load armor /data/items/atlantian/naked.txt
 #load helmet /data/items/atlantian/icehelmet.txt
 #load legs /data/items/atlantian/legs.txt
-#load weapon /data/items/atlantian/standard.txt
 #load weapon /data/items/atlantian/iceweapon.txt
 #load offhand /data/items/atlantian/iceshield.txt
 #load offhand /data/items/atlantian/shield.txt
@@ -141,13 +159,39 @@
 #load helmet /data/items/atlantian/shamblerhelmet.txt
 #load weapon /data/items/atlantian/shamblerweapon.txt
 #load weapon /data/items/atlantian/lobsterweapon.txt
-#load weapon /data/items/atlantian/standard-s.txt
 #load bonusweapon /data/items/atlantian/bonusrangedweapon-s.txt
 #load offhand /data/items/atlantian/shamblershield.txt
 
 
 #command "#amphibian"
 #good_leader
+
+#endpose
+
+
+#newpose
+#name "shambler standard bearer"
+#role "infantry"
+
+#subrace "shambler"
+#subraceprefix "shambler"
+
+#load basesprite /data/items/atlantian/shamblerbases.txt
+#load shadow /data/items/atlantian/shamblershadow.txt
+#load armor /data/items/atlantian/shamblerarmor.txt
+#load armor /data/items/atlantian/shamblernaked.txt
+#load legs /data/items/atlantian/shamblerlegs.txt
+#load helmet /data/items/atlantian/shamblerhelmet.txt
+#load weapon /data/items/atlantian/standard-s.txt
+#load bonusweapon /data/items/atlantian/shamblerweapon.txt
+#load bonusweapon /data/items/atlantian/lobsterweapon.txt
+#load bonusweapon /data/items/atlantian/bonusrangedweapon-s.txt
+#load offhand /data/items/atlantian/shamblershield.txt
+
+
+#command "#amphibian"
+#good_leader
+#maxunits 1
 
 #endpose
 
