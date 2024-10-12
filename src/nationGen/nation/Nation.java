@@ -941,7 +941,7 @@ public class Nation {
 		
 		//Generic.generateFlag(this, spritedir + "/flag.tga");
 		
-		
+		System.out.println(spritedir);
 		lines.add("#flag \"" + spritedir + "/flag.tga\"");
 		lines.add("");
 		// Sites
