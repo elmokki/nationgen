@@ -512,7 +512,7 @@ public class NationGen
 		writeDescriptions(nations, modDirectory);
 		
 		// Mod file
-		FileUtil.writeLines("/mods/" + modFilename, writeModLines(nations, modDirectory));
+		FileUtil.writeLines("/mods/" + modDirectory + "/" + modFilename, writeModLines(nations, ""));
 		
 		// Images
 		BufferedImage modBanner = generateBanner(nations.get(0).colors[0], this.modname, nations.get(0).flag);
@@ -580,7 +580,7 @@ public class NationGen
 		lines.add("#description \"A NationGen generated nation!\"");
 		
 		// Banner!
-		lines.add("#icon \"" + modDirectory + "/banner.tga\"");
+		lines.add("#icon \"banner.tga\"");
 		lines.add("");
 		
 		// Write items!
@@ -597,7 +597,7 @@ public class NationGen
 		for(Nation nation : nations)
 		{
 			// Unit definitions
-			lines.addAll(nation.writeUnitsLines(getNationDirectory(modDirectory, nation)));
+			lines.addAll(nation.writeUnitsLines(getNationDMDirectory(modDirectory, nation)));
 			System.out.print(".");
 		}
 		System.out.println(" Done!");
@@ -618,7 +618,7 @@ public class NationGen
 		for(Nation nation : nations)
 		{
 			// Nation definitions
-			lines.addAll(nation.writeLines(getNationDirectory(modDirectory, nation)));
+			lines.addAll(nation.writeLines(getNationDMDirectory(modDirectory, nation)));
 			System.out.print(".");
 		}
 		System.out.println(" Done!");
@@ -631,10 +631,14 @@ public class NationGen
 		return lines;
 	}
 	
+	private String getNationDMDirectory(String modDirectory, Nation nation) {
+		return nation.nationid + "-" + sanitizeForFilenames(nation.name);
+	}
+
 	private String getNationDirectory(String modDirectory, Nation nation) {
 		return modDirectory + "/" + nation.nationid + "-" + sanitizeForFilenames(nation.name);
 	}
-	
+
 	private List<String> writeHideVanillaNationsLines(int nationcount)
 	{
 		System.out.print("Hiding vanilla nations... ");

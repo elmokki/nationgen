@@ -1226,7 +1226,12 @@ public class MageGenerator extends TroopGenerator {
 
 						//force slow to recruit for H3s
 						if (currentStrength > 2 && u.getCommandValue("#rpcost", 0) == 2)
-							u.commands.add(Command.args("#rpcost", "+2"));	
+							u.commands.add(Command.args("#rpcost", "+2"));
+
+						// Make giants of size 7 and above holy cost 2
+						if (u.getCommandValue("#size", 1) >= 7) {
+							u.commands.add(new Command("#holycost", new Arg(2)));
+						}
 					}
 					done = true;
 				}
@@ -1239,7 +1244,10 @@ public class MageGenerator extends TroopGenerator {
 						u.tags.addName("magepriest");
 						u.commands.add(Command.args("#gcost", "+" + (10*currentStrength + currentStrength * priestextracost)));
 
-
+						// Make giants of size 7 and above holy cost 2
+						if (u.getCommandValue("#size", 1) >= 7) {
+							u.commands.add(new Command("#holycost", new Arg(2)));
+						}
 					}
 					done = true;
 					atTier++;
@@ -1282,8 +1290,10 @@ public class MageGenerator extends TroopGenerator {
 				
 				u.commands.add(Command.args("#mr", "+" + (2 + currentStrength)));
 
-				
-
+				// Make giants of size 7 and above holy cost 2
+				if (u.getCommandValue("#size", 1) >= 7) {
+					u.commands.add(new Command("#holycost", new Arg(2)));
+				}
 				
 				//List<String> body = new ArrayList<String>();	// Set a temporary null description for priests
 				(new CommanderGenerator(this.nationGen, this.nation, assets)).generateDescription(u, false, false, false);
@@ -1303,8 +1313,14 @@ public class MageGenerator extends TroopGenerator {
 		{
 			for(int i = 0; i < 3; i++)
 			{
-				for(Unit u : all.get(i))
+				for(Unit u : all.get(i)) {
 					u.commands.add(new Command("#holy"));
+
+					// Make giants of size 7 and above holy cost 2
+					if (u.getCommandValue("#size", 1) >= 7) {
+						u.commands.add(new Command("#holycost", new Arg(2)));
+					}
+				}
 			
 				sacredMageTiers--;
 				if(sacredMageTiers == 0)
