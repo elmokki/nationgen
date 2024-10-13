@@ -5,6 +5,8 @@
 #armor
 #theme "primitive"
 #theme "naked"
+-- Give the other head the matching helmet too
+#needs otherhelmet otherhead_barehead_ogres
 #enditem
 
 #newitem
@@ -15,6 +17,8 @@
 #armor
 #maxprot 12
 #theme "leather"
+-- Give the other head the matching helmet too
+#needs otherhelmet otherhead_ogres_leathercap
 #enditem
 
 #newitem
@@ -26,6 +30,8 @@
 #armor
 #maxprot 12
 #theme "leather"
+-- Give the other head the matching helmet too
+#needs otherhelmet otherhead_ogres_leathercap_reinforced
 #enditem
 
 #newitem
@@ -36,6 +42,8 @@
 #command "#rcost +2"
 #armor
 #theme "iron"
+-- Give the other head the matching helmet too
+#needs otherhelmet otherhead_ogres_ironcap
 #enditem
 
 #newitem
@@ -47,6 +55,8 @@
 #armor
 #minprot 12
 #theme "iron"
+-- Give the other head the matching helmet too
+#needs otherhelmet otherhead_ogres_halfhelm
 #enditem
 
 #newitem
@@ -59,6 +69,8 @@
 #minprot 14
 #theme "iron"
 #theme "advanced"
+-- Give the other head the matching helmet too
+#needs otherhelmet otherhead_ogres_fullhelm
 #enditem
 
 #newitem
@@ -68,11 +80,13 @@
 #sprite /graphics/foulspawn/medium/helmet/jingasa.png
 #recolormask /graphics/foulspawn/medium/helmet/jingasa_recolormask.png
 #command "#rcost +2"
-#eliteversion orges_kabuto
+#eliteversion ogres_kabuto
 #armor
 #theme "oriental"
 #theme "iron"
 #maxprot 12
+-- Give the other head the matching helmet too
+#needs otherhelmet otherhead_ogres_jingasa
 #enditem
 
 #newitem
@@ -85,4 +99,6 @@
 #theme "oriental"
 #theme "iron"
 #minprot 12
+-- Give the other head the matching helmet too
+#needs otherhelmet otherhead_ogres_kabuto
 #enditem
