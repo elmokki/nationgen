@@ -6,6 +6,8 @@
 #recolormask self
 #armor
 #theme "leather"
+-- Give the other head the matching helmet too
+#needs otherhelmet otherhelmet_hood
 #enditem
 
 #newitem
@@ -15,6 +17,8 @@
 #armor
 #theme "primitive"
 #theme "naked"
+-- Give the other head the matching helmet too
+#needs otherhelmet otherhelmet_barehead
 #enditem
 
 #newitem
@@ -24,6 +28,8 @@
 #sprite /graphics/foulspawn/medium/helmet/leathercap.png
 #armor
 #theme "leather"
+-- Give the other head the matching helmet too
+#needs otherhelmet otherhelmet_leathercaps
 #enditem
 
 #newitem
@@ -34,4 +40,6 @@
 #command "#rcost +1"
 #armor
 #theme "iron"
+-- Give the other head the matching helmet too
+#needs otherhelmet otherhelmet_leathercaps_reinforced
 #enditem

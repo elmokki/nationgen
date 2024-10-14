@@ -706,6 +706,11 @@ public class SacredGenerator extends TroopGenerator {
 		{
 			u.tags.addName("sacred");
 			tf.commands.add(new Command("#holy"));
+
+			// Make giants of size 7 and above holy cost 2
+			if (u.getCommandValue("#size", 1) >= 7) {
+				tf.commands.add(new Command("#holycost", new Arg(2)));
+			}
 		}
 		u.appliedFilters.add(tf);
 		

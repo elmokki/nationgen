@@ -1,0 +1,60 @@
+#newitem
+#id otherhead_barehead_ogres
+#gameid -1
+#armor
+#enditem
+
+#newitem
+#id otherhead_ogres_leathercap
+#gameid 120
+#armor
+#maxprot 12
+#enditem
+
+#newitem
+#id otherhead_ogres_leathercap_reinforced
+#gameid 119
+#command "#rcost +1"
+#armor
+#maxprot 12
+#enditem
+
+#newitem
+#id otherhead_ogres_ironcap
+#gameid 20
+#command "#rcost +2"
+#armor
+#enditem
+
+#newitem
+#id otherhead_ogres_halfhelm
+#gameid 118
+#command "#rcost +3"
+#armor
+#minprot 12
+#enditem
+
+#newitem
+#id otherhead_ogres_fullhelm
+#gameid 21
+#command "#rcost +5"
+#armor
+#minprot 14
+#enditem
+
+#newitem
+#id otherhead_ogres_jingasa
+#gameid 131
+#command "#rcost +2"
+#eliteversion otherhead_ogres_kabuto
+#armor
+#maxprot 12
+#enditem
+
+#newitem
+#id otherhead_ogres_kabuto
+#gameid 132
+#command "#rcost +4"
+#armor
+#minprot 12
+#enditem

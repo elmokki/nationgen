@@ -95,12 +95,13 @@
 #load offhand /data/items/human/normal/towershields.txt 0 -5
 
 #load headslot /data/items/hoburg/clockwork/headslots_clockwork_medium.txt
-#load handslots /data/items/hoburg/clockwork/handslots_clockwork_medium.txt
 #load specialslot /data/items/hoburg/clockwork/specialslots_clockwork_medium.txt
 
-#generateitem 1 headslot -- used to define commander helmet slots
-#generateitem 1 handslots -- used to define commander hand slots
--- #generateitem 1 specialweapon
+-- slots generated here are given through items; this pattern is used to be able to generate
+-- a variable number of slots; i.e. an integrated helmet or a replaceable helmet
+#generateitem 1 headslot
+
+-- these will generate some special items; some of them weapons like firespewers, some miscellaneous like supply bonuses
 #additionalweaponslot 1 specialslot
 
 #endpose
@@ -139,13 +140,13 @@
 #load offhand /data/items/human/normal/towershields.txt 0 -5
 
 #load headslot /data/items/hoburg/clockwork/headslots_clockwork_medium.txt
-#load handslots /data/items/hoburg/clockwork/handslots_clockwork_medium.txt
 #load specialslot /data/items/hoburg/clockwork/specialslots_clockwork_medium.txt
 
-#generateitem 1 headslot -- used to define commander helmet slots
-#generateitem 1 handslots -- used to define commander hand slots
+-- slots generated here are given through items; this pattern is used to be able to generate
+-- a variable number of slots; i.e. an integrated helmet or a replaceable helmet
+#generateitem 1 headslot
 
--- #generateitem 1 specialweapon
+-- these will generate some special items; some of them weapons like firespewers, some miscellaneous like supply bonuses
 #additionalweaponslot 0.2 specialslot
 
 #maxvarieties 2
@@ -185,11 +186,9 @@
 #load offhand /data/items/hoburg/clockwork/offhand_clockwork_heavy.txt
 #load offhand /data/items/hoburg/clockwork/shields_clockwork_heavy.txt
 
-#load handslots /data/items/hoburg/clockwork/handslots_clockwork_heavy.txt
 #load specialslot /data/items/hoburg/clockwork/specialslots_clockwork_heavy.txt
 
-#generateitem 1 handslots -- used to define commander hand slots
--- #generateitem 1 specialweapon
+-- these will generate some special items; some of them weapons like firespewers, some miscellaneous like supply bonuses
 #additionalweaponslot 1 specialslot
 
 #endpose
@@ -227,19 +226,19 @@
 #load hands /data/items/hoburg/clockwork/hands_clockwork_colossal.txt
 
 #load armor /data/items/hoburg/clockwork/armor_clockwork_colossal.txt
+
+-- TODO: create a helmet file with art for the colossal helmets
 -- #load helmet /data/items/hoburg/clockwork/helmet_clockwork_colossal.txt
 
 #load weapon /data/items/hoburg/clockwork/weapon_clockwork_colossal.txt
--- #load specialweapon /data/items/hoburg/clockwork/specialweapon_clockwork_heavy.txt
+#load specialweapon /data/items/hoburg/clockwork/specialweapon_clockwork_heavy.txt
 
 #load offhand /data/items/hoburg/clockwork/offhand_clockwork_heavy.txt
--- #load offhand /data/items/hoburg/clockwork/shields_clockwork_heavy.txt
+#load offhand /data/items/hoburg/clockwork/shields_clockwork_heavy.txt
 
--- #load handslots /data/items/hoburg/clockwork/handslots_clockwork_heavy.txt
--- #load specialslot /data/items/hoburg/clockwork/specialslots_clockwork_heavy.txt
+#load specialslot /data/items/hoburg/clockwork/specialslots_clockwork_heavy.txt
 
--- #generateitem 1 handslots -- used to define commander hand slots
--- #generateitem 1 specialweapon
--- #additionalweaponslot 1 specialslot
+-- these will generate some special items; some of them weapons like firespewers, some miscellaneous like supply bonuses
+#additionalweaponslot 1 specialslot
 
 #endpose
