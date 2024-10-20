@@ -1,6 +1,7 @@
 package nationGen.units;
 
 
+import com.copilot.LoggerUtil;
 import com.elmokki.Drawing;
 import com.elmokki.Generic;
 import nationGen.NationGen;
@@ -37,6 +38,10 @@ public class MountUnit extends Unit {
 		this.assets = assets;
 		this.otherForm = otherForm;
 		this.mountForm = mountForm.getCopy();
+
+		//if ("ConsoleGUI".equals(System.getProperty("app.mode"))) {
+            LoggerUtil.logMethodParameters("MountUnit", "MountUnit", race, pose, otherForm, mountForm);
+		//}
 	}
 
 
@@ -196,6 +201,9 @@ public class MountUnit extends Unit {
 			appliedFilters.add(sf);
 		}
 
+		//if (System.getProperty("app.mode").equals("ConsoleGUI")) {
+            LoggerUtil.logMethodParameters("MountUnit", "polish", sf, otherForm, mountForm);
+		//}
 	}
 	
 	
@@ -322,7 +330,7 @@ public class MountUnit extends Unit {
 			lines.add("#name \"" + otherForm.name + "\"");
 		
 
-		if(!shiftcommand.equals("") && !mountForm.tags.containsName("nowayback") && otherForm != null)
+		if(!shiftcommand.equals("") && otherForm != null)
 		{
 			lines.add(shiftcommand + " " + otherForm.id);
 		}
