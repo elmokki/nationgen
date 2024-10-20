@@ -1,6 +1,6 @@
 -- Generic theme with high diversity and low cohesion
 #newtheme
-#name default
+#id default
 #basechance 4
 #endtheme
 
@@ -10,7 +10,7 @@
 -- Weights: EA 1, MA 0.5, LA 0.25
 #newtheme
 #type techlevel
-#name primitive
+#id primitive
 #basechance 1
 #chanceinc era 2 -0.5
 #chanceinc era 3 -0.75
@@ -26,7 +26,7 @@
 -- Weights: EA 3, MA 2, LA 1
 #newtheme
 #type techlevel
-#name bronze
+#id bronze
 #basechance 3
 #chanceinc era 2 -1
 #chanceinc era 3 -2
@@ -43,7 +43,7 @@
 -- Weights: EA 0.5, MA 1, LA 2
 #newtheme
 #type techlevel
-#name iron
+#id iron
 #basechance 1
 #chanceinc era 1 -0.5
 #chanceinc era 3 +1
@@ -64,7 +64,7 @@
 -- Weights: EA 2, MA 1, LA 0.5
 #newtheme
 #type demographic
-#name dustwalkers_only
+#id dustwalkers_only
 #basechance 2
 #chanceinc era 2 -1
 #chanceinc era 3 -0.5
@@ -91,7 +91,7 @@
 -- Weights: EA 3, MA 1.5, LA 0.5
 #newtheme
 #type demographic
-#name dustwalkers_slaves
+#id dustwalkers_slaves
 #basechance 3
 #chanceinc era 2 -1.5
 #chanceinc era 3 -2.5
@@ -120,7 +120,7 @@
 -- Weights: EA 2, MA 2, LA 1
 #newtheme
 #type demographic
-#name dustwalkers_humans
+#id dustwalkers_humans
 #basechance 2
 #chanceinc era 3 -1
 #themeinc theme advanced *1
@@ -149,7 +149,7 @@
 -- Weights: EA 1, MA 2, LA 4
 #newtheme
 #type demographic
-#name humans_dustwalkers
+#id humans_dustwalkers
 #basechance 4
 #chanceinc era 1 -3
 #chanceinc era 2 -2
@@ -179,7 +179,7 @@
 -- Weights: EA 0, MA 1, LA 2
 #newtheme
 #type demographic
-#name humans_only
+#id humans_only
 #basechance 2
 #chanceinc era 1 -2
 #chanceinc era 2 -1
@@ -208,7 +208,7 @@
 -- Weights: EA 3, MA 2, LA 1
 #newtheme
 #type social
-#name slaver
+#id slaver
 #basechance 2
 #chanceinc era 1 +1
 #chanceinc era 3 -1
@@ -237,7 +237,7 @@
 -- Weights: EA 1, MA 2, LA 3
 #newtheme
 #type social
-#name imperial
+#id imperial
 #basechance 2
 #chanceinc era 1 -1
 #chanceinc era 3 +1

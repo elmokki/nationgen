@@ -1,7 +1,7 @@
 
 -------- normal (Bronze)
 #newpose
-#name infantry_bronze
+#id infantry_bronze
 #basechance 0.125
 #role "infantry"
 #role "scout"
@@ -33,7 +33,7 @@
 
 -------- normal (Steel)
 #newpose
-#name infantry_steel
+#id infantry_steel
 #basechance 0.125
 #role "infantry"
 #role "sacred"
@@ -65,7 +65,7 @@
 
 -------- sacred (Bronze)
 #newpose
-#name ancient_bronze
+#id ancient_bronze
 #chanceinc moduleid herogen *2
 #role "sacred infantry"
 #theme "ancient"
@@ -98,7 +98,7 @@
 
 -------- sacred (Steel)
 #newpose
-#name ancient_steel
+#id ancient_steel
 #chanceinc moduleid herogen *2
 #role "sacred infantry"
 #theme "ancient"
@@ -133,7 +133,7 @@
 -------------- Mounted
 -------- normal (Bronze)
 #newpose
-#name mounted_bronze
+#id mounted_bronze
 #basechance 0.05
 #role "mounted"
 #theme "bronze"
@@ -164,7 +164,7 @@
 
 -------- normal (Steel)
 #newpose
-#name mounted_steel
+#id mounted_steel
 #basechance 0.05
 #role "mounted"
 #theme "iron"
@@ -194,7 +194,7 @@
 
 ------ Mage priest
 #newpose
-#name young_caster
+#id young_caster
 #role "mage"
 #role "priest"
 #theme "undead"
@@ -226,7 +226,7 @@
 
 ------ Mage priest - big
 #newpose
-#name ancient_caster
+#id ancient_caster
 #role "mage"
 #role "priest"
 #warriormage

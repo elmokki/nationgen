@@ -1,7 +1,7 @@
 --- Unarmored
 
 #newitem
-#name "starkers"
+#id "starkers"
 #gameid -1
 #needs shirt noshirt
 #armor
@@ -11,7 +11,7 @@
 #enditem
 
 #newitem
-#name "loincloth"
+#id "loincloth"
 #gameid -1
 #needs shirt loincloth
 #armor
@@ -24,7 +24,7 @@
 --- Furs
 
 #newitem
-#name "tight furs"
+#id "tight furs"
 #gameid 44
 #sprite /graphics/highmen/armor/furs.png
 #needs shirt noshirt
@@ -36,7 +36,7 @@
 #enditem
 
 #newitem
-#name "bulky furs"
+#id "bulky furs"
 #gameid 44
 #sprite /graphics/highmen/armor/furs2.png
 #needs shirt noshirt
@@ -48,7 +48,7 @@
 #enditem
 
 #newitem
-#name "fur toga"
+#id "fur toga"
 #gameid 44
 #sprite /graphics/highmen/armor/robes/furs_shaman.png
 #tag "eliteversion 'fur toga - bones'"
@@ -61,7 +61,7 @@
 #enditem
 
 #newitem
-#name "fur toga"
+#id "fur toga"
 #gameid 44
 #sprite /graphics/highmen/armor/robes/furs_shaman.png
 #tag "eliteversion 'fur toga - beads'"
@@ -74,7 +74,7 @@
 #enditem
 
 #newitem
-#name "fur toga - bones"
+#id "fur toga - bones"
 #gameid 44
 #sprite /graphics/highmen/armor/robes/furs_shaman_bones.png
 #needs shirt noshirt
@@ -85,7 +85,7 @@
 #enditem
 
 #newitem
-#name "fur toga - beads"
+#id "fur toga - beads"
 #gameid 44
 #sprite /graphics/highmen/armor/robes/furs_shaman_beads.png
 #recolormask /graphics/highmen/armor/robes/furs_shaman_beads_recolormask.png
@@ -97,7 +97,7 @@
 #enditem
 
 #newitem
-#name "fur robe"
+#id "fur robe"
 #gameid 44
 #sprite /graphics/highmen/armor/robes/furs_endiku_plain.png
 #tag "eliteversion 'fur robe - fancy'"
@@ -109,7 +109,7 @@
 #enditem
 
 #newitem
-#name "fur halfrobe"
+#id "fur halfrobe"
 #gameid 44
 #sprite /graphics/highmen/armor/robes/furs_endiku_halfplain.png
 #tag "eliteversion 'fur halfrobe - gaudy'"
@@ -121,7 +121,7 @@
 #enditem
 
 #newitem
-#name "fur halfrobe - gaudy"
+#id "fur halfrobe - gaudy"
 #gameid 44
 #sprite /graphics/highmen/armor/robes/furs_endiku_halfrobe.png
 #recolormask /graphics/highmen/armor/robes/furs_endiku_recolormask.png
@@ -133,7 +133,7 @@
 #enditem
 
 #newitem
-#name "fur robe - fancy"
+#id "fur robe - fancy"
 #gameid 44
 #sprite /graphics/highmen/armor/robes/furs_endiku_fancy.png
 #tag "eliteversion 'fur robe - gaudy'"
@@ -145,7 +145,7 @@
 #enditem
 
 #newitem
-#name "fur robe - gaudy"
+#id "fur robe - gaudy"
 #gameid 44
 #sprite /graphics/highmen/armor/robes/furs_endiku_robe.png
 #recolormask /graphics/highmen/armor/robes/furs_endiku_recolormask.png
@@ -158,7 +158,7 @@
 -- Advanced armor
 
 #newitem
-#name "leather cuirass"
+#id "leather cuirass"
 #gameid 5
 #sprite /graphics/highmen/armor/leather2_cuirass.png
 #tag "eliteversion 'leather hauberk'"
@@ -170,7 +170,7 @@
 #enditem
 
 #newitem
-#name "leather hauberk"
+#id "leather hauberk"
 #gameid 10
 #sprite /graphics/highmen/armor/leather2_hauberk3.png
 #needs shirt noshirt

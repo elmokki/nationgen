@@ -1,6 +1,6 @@
 -- Generic theme with high diversity and low cohesion
 #newtheme
-#name default
+#id default
 #basechance 4
 #endtheme
 
@@ -9,7 +9,7 @@
 -- Weights: EA 1, MA 1, LA 0.5
 #newtheme
 #type techlevel
-#name primitive
+#id primitive
 #basechance 1
 #chanceinc era 3 -0.5
 #themeinc theme advanced *0.5
@@ -24,7 +24,7 @@
 -- Weights: EA 0.25, MA 1, LA 2
 #newtheme
 #type techlevel
-#name advanced
+#id advanced
 #basechance 0.25
 #chanceinc era 3 1.75
 #chanceinc era 2 0.75
@@ -42,7 +42,7 @@
 -- Weights: EA 4, MA 1, LA 0.1
 #newtheme
 #type demographic
-#name primal
+#id primal
 #basechance 4
 #chanceinc era 2 *0.25
 #chanceinc era 3 *0.025
@@ -74,7 +74,7 @@
 -- Weights: EA 0.2, MA 2, LA 1
 #newtheme
 #type demographic
-#name tainted
+#id tainted
 #basechance 2
 #chanceinc era 1 *0.1
 #chanceinc era 3 *0.5
@@ -109,7 +109,7 @@
 -- Weights: EA 0.1, MA 1, LA 2
 #newtheme
 #type demographic
-#name diluted
+#id diluted
 #basechance 2
 #chanceinc era 1 *0.05
 #chanceinc era 2 *0.5
@@ -144,7 +144,7 @@
 -- Weights: EA 0.01, MA 0.1, LA 1
 #newtheme
 #type demographic
-#name degenerate
+#id degenerate
 #basechance 1
 #chanceinc era 1 *0.01
 #chanceinc era 2 *0.1
@@ -174,7 +174,7 @@
 -- Weights: Primal 0.1, Tainted 2, Diluted 4, Degenerate 1
 #newtheme
 #type social
-#name slaver
+#id slaver
 #basechance 1
 #chanceinc racetheme primal *0.1
 #chanceinc racetheme tainted *2

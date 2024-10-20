@@ -1,6 +1,6 @@
 
 #new
-#name "werewolf"
+#id "werewolf"
 #type "shapeshift"
 #basechance 0.1
 #chanceinc magic nature 1
@@ -19,7 +19,7 @@
 #end
 
 #new
-#name "werefox"
+#id "werefox"
 #type "shapeshift"
 #basechance 0.1
 #chanceinc "magic nature 1"
@@ -37,7 +37,7 @@
 #end
 
 #new
-#name "werebear"
+#id "werebear"
 #type "shapeshift"
 #basechance 0.1
 #chanceinc "magic nature 1"
@@ -59,7 +59,7 @@
 #end
 
 #new
-#name "werehyena"
+#id "werehyena"
 #type "shapeshift"
 #basechance 0.075
 #chanceinc "magic death 0.6"
@@ -78,7 +78,7 @@
 #end
 
 #new
-#name "wererat"
+#id "wererat"
 #type "shapeshift"
 #basechance 0.025
 #chanceinc "magic nature 0.15"
@@ -99,7 +99,7 @@
 #end
 
 #new
-#name "werecrocodile"
+#id "werecrocodile"
 #type "shapeshift"
 #basechance 0.075
 #chanceinc magic nature 0.1
@@ -124,7 +124,7 @@
 #end
 
 #new
-#name "ghoul: size 2"
+#id "ghoul: size 2"
 #type "shapeshift"
 #basechance 0.1
 #chanceinc "magic death 2"
@@ -145,7 +145,7 @@
 #end
 
 #new
-#name "ghoul: size 1"
+#id "ghoul: size 1"
 #type "shapeshift"
 #basechance 0.1
 #chanceinc "magic death 2"
@@ -166,7 +166,7 @@
 #end
 
 #new
-#name "hornedserpent"
+#id "hornedserpent"
 #type "shapeshift"
 #basechance 0.05
 #chanceinc "magic nature 2"
@@ -185,7 +185,7 @@
 #end
 
 #new
-#name "minorfelemental"
+#id "minorfelemental"
 #type "shapeshift"
 #basechance 0.0
 #chanceinc "magic fire 1"
@@ -203,7 +203,7 @@
 #end
 
 #new
-#name "minoreelemental"
+#id "minoreelemental"
 #type "shapeshift"
 #basechance 0.0
 #chanceinc "magic earth 1"
@@ -221,7 +221,7 @@
 #end
 
 #new
-#name "minoraelemental"
+#id "minoraelemental"
 #type "shapeshift"
 #basechance 0.0
 #chanceinc "magic air 1"
@@ -239,7 +239,7 @@
 #end
 
 #new
-#name "minorwelemental"
+#id "minorwelemental"
 #type "shapeshift"
 #basechance 0.0
 #chanceinc "magic water 1"
@@ -256,7 +256,7 @@
 #end
 
 #new
-#name "metalman: size 2"
+#id "metalman: size 2"
 #type "shapeshift"
 #basechance 0.05
 #chanceinc "magic earth 0.45"
@@ -279,7 +279,7 @@
 #end
 
 #new
-#name "metalman: size 1"
+#id "metalman: size 1"
 #type "shapeshift"
 #basechance 0.05
 #chanceinc "magic earth 0.45"
@@ -302,7 +302,7 @@
 #end
 
 #new
-#name "vineman: size 2"
+#id "vineman: size 2"
 #type "shapeshift"
 #basechance 0
 #chanceinc "magic nature 1"
@@ -324,7 +324,7 @@
 #end
 
 #new
-#name "vineman: size 1"
+#id "vineman: size 1"
 #type "shapeshift"
 #basechance 0
 #chanceinc "magic nature 1"
@@ -347,7 +347,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "greatboar"
+#id "greatboar"
 #basechance 0.1
 #chanceinc "magic nature 1"
 #chanceinc "pose mounted *0"
@@ -365,7 +365,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "toad"
+#id "toad"
 #basechance 0.01
 #chanceinc "magic water 0.25"
 #chanceinc "magic nature 0.25"
@@ -386,7 +386,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "spider"
+#id "spider"
 #basechance 0.05
 #chanceinc "magic nature 1"
 #chanceinc "personalcommand poisonres 1"

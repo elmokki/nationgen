@@ -1,7 +1,7 @@
 -- Slow militia
 #new
 #basechance 1
-#name "militia"
+#id "militia"
 #maxvarieties 1
 #maxunits 1
 #chanceinc "pose mounted *0"
@@ -40,7 +40,7 @@
 -- Undisciplined militia
 #new
 #basechance 1
-#name "militia"
+#id "militia"
 #maxvarieties 1
 #maxunits 1
 #chanceinc "pose mounted *0"
@@ -77,7 +77,7 @@
 -- Nomal militia
 #new
 #basechance 1
-#name "militia"
+#id "militia"
 #maxvarieties 1
 #maxunits 1
 #chanceinc "pose mounted *0"
@@ -116,7 +116,7 @@
 - Needs unit to have a weapon with theme formationfighter available
 #new
 #basechance 0.125
-#name "formationfighter 3"
+#id "formationfighter 3"
 #type formationfighter
 #command "#formationfighter +3"
 #themeinc thisitemtheme formationfighter *1000
@@ -138,7 +138,7 @@
 
 #new
 #basechance 0.125
-#name "formationfighter 4"
+#id "formationfighter 4"
 #type formationfighter
 #command "#formationfighter +4"
 #themeinc thisitemtheme formationfighter *1000
@@ -160,7 +160,7 @@
 
 #new
 #basechance 0.125
-#name "formationfighter 5"
+#id "formationfighter 5"
 #type formationfighter
 #command "#formationfighter +5"
 #themeinc thisitemtheme formationfighter *1000
@@ -182,7 +182,7 @@
 
 #new
 #basechance 0.125
-#name "formationfighter 6"
+#id "formationfighter 6"
 #type formationfighter
 #command "#formationfighter +6"
 #themeinc thisitemtheme formationfighter *1000
@@ -204,7 +204,7 @@
 
 #new
 #basechance 0.125
-#name "formationfighter 7"
+#id "formationfighter 7"
 #type formationfighter
 #command "#formationfighter +7"
 #themeinc thisitemtheme formationfighter *1000
@@ -226,7 +226,7 @@
 
 #new
 #basechance 0.00625
-#name "formationfighter 3x2"
+#id "formationfighter 3x2"
 #type formationfighter
 #command "#formationfighter +6"
 #themeinc thisitemtheme formationfighter *1000
@@ -248,7 +248,7 @@
 
 #new
 #basechance 0.00625
-#name "formationfighter 4x2"
+#id "formationfighter 4x2"
 #type formationfighter
 #command "#formationfighter +8"
 #themeinc thisitemtheme formationfighter *1000
@@ -270,7 +270,7 @@
 
 #new
 #basechance 0.00625
-#name "formationfighter 5x2"
+#id "formationfighter 5x2"
 #type formationfighter
 #command "#formationfighter +10"
 #themeinc thisitemtheme formationfighter *1000
@@ -292,7 +292,7 @@
 
 #new
 #basechance 0.00625
-#name "formationfighter 6x2"
+#id "formationfighter 6x2"
 #type formationfighter
 #command "#formationfighter +12"
 #themeinc thisitemtheme formationfighter *1000
@@ -314,7 +314,7 @@
 
 #new
 #basechance 0.00625
-#name "formationfighter 7x2"
+#id "formationfighter 7x2"
 #type formationfighter
 #command "#formationfighter +14"
 #themeinc thisitemtheme formationfighter *1000
@@ -336,7 +336,7 @@
 
 #new
 #basechance 1.5
-#name "elite +1"
+#id "elite +1"
 #type elite
 #maxvarieties 1
 #maxunits 2
@@ -366,7 +366,7 @@
 
 #new
 #basechance 0.5
-#name "elite +2"
+#id "elite +2"
 #type elite
 #maxvarieties 1
 #maxunits 1
@@ -397,7 +397,7 @@
 
 #new
 #basechance 0.5
-#name "ranged elite +1"
+#id "ranged elite +1"
 #type elite
 #maxvarieties 1
 #maxunits 1
@@ -426,7 +426,7 @@
 
 #new
 #basechance 0.25
-#name "mountainunit"
+#id "mountainunit"
 #chanceinc pose mounted *0
 #chanceinc pose chariot *0
 #command "#mountainsurvival"
@@ -456,7 +456,7 @@
 
 #new
 #basechance 0.25
-#name "forestunit"
+#id "forestunit"
 #chanceinc pose mounted *0
 #chanceinc pose chariot *0
 #command "#forestsurvival"
@@ -485,7 +485,7 @@
 
 #new
 #basechance 0.25
-#name "swampunit"
+#id "swampunit"
 #chanceinc pose mounted *0
 #chanceinc pose chariot *0
 #command "#swampsurvival"
@@ -515,7 +515,7 @@
 
 #new
 #basechance 0.25
-#name "wasteunit"
+#id "wasteunit"
 #chanceinc pose mounted *0
 #chanceinc pose chariot *0
 #command "#wastesurvival"
@@ -548,7 +548,7 @@
 #chanceinc pose mounted *0
 #chanceinc pose chariot *0
 #chanceinc pose ranged *0
-#name "berserker"
+#id "berserker"
 #command "#berserk +2"
 #command "#gcost *1.2"
 #theme berserk
@@ -577,7 +577,7 @@
 #new
 #basechance 0.25
 #type stealth
-#name "stealthy"
+#id "stealthy"
 #maxvarieties 1
 #maxunits 1
 #chanceinc pose mounted *0.1
@@ -609,7 +609,7 @@
 #new
 #basechance 0.125
 #type patrol
-#name "patroller 1"
+#id "patroller 1"
 #maxvarieties 2
 #maxunits 2
 #chanceinc pose chariot *0
@@ -628,7 +628,7 @@
 #new
 #basechance 0.125
 #type siege
-#name "castledef +1"
+#id "castledef +1"
 #maxvarieties 2
 #maxunits 2
 #chanceinc pose mounted *0
@@ -648,7 +648,7 @@
 #new
 #basechance 0.125
 #type siege
-#name "castledef 2"
+#id "castledef 2"
 #maxvarieties 2
 #maxunits 2
 #chanceinc pose mounted *0
@@ -669,7 +669,7 @@
 #basechance 0.125
 #type elite
 #type bodyguard
-#name "bodyguard elite"
+#id "bodyguard elite"
 #maxvarieties 1
 #maxunits 1
 #chanceinc pose mounted *0
@@ -697,7 +697,7 @@
 #new
 #basechance 0.125
 #type bodyguard
-#name "bodyguard"
+#id "bodyguard"
 #maxvarieties 1
 #maxunits 1
 #chanceinc pose mounted *0
@@ -718,7 +718,7 @@
 #basechance 0.075
 #type stealth
 #type elite
-#name "stealthy elite"
+#id "stealthy elite"
 #maxvarieties 1
 #maxunits 1
 #chanceinc pose mounted *0
@@ -750,7 +750,7 @@
 #new
 #basechance 0.125
 #type pillager
-#name "pillager"
+#id "pillager"
 #maxvarieties 2
 #maxunits 2
 #chanceinc pose mounted *0
@@ -779,7 +779,7 @@
 #basechance 0.125
 #type pillager
 #type stealthy
-#name "pillager stealthy"
+#id "pillager stealthy"
 #maxvarieties 2
 #maxunits 2
 #chanceinc pose mounted *0
@@ -809,7 +809,7 @@
 #new
 #basechance 0.125
 #type skirmisher
-#name "skirmisher"
+#id "skirmisher"
 #maxvarieties 1
 #maxunits 2
 #chanceinc pose mounted *0
@@ -835,7 +835,7 @@
 #basechance 0.125
 #type skirmisher
 #type stealthy
-#name "skirmisher stealthy"
+#id "skirmisher stealthy"
 #maxvarieties 1
 #maxunits 2
 #chanceinc pose mounted *0

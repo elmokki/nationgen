@@ -1,7 +1,7 @@
 -- Generic theme with high diversity and low cohesion
 #newtheme
 #type techlevel
-#name default
+#id default
 #basechance 4
 #endtheme
 
@@ -10,7 +10,7 @@
 -- Weights: EA 4, MA 4, LA 4
 #newtheme
 #type demographic
-#name human
+#id human
 #basechance 4
 #racedefinition "#pose advancedinfantry"
 #racedefinition "#pose advancedranged"
@@ -33,7 +33,7 @@
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
 #type demographic
-#name ghoul
+#id ghoul
 #basechance 1
 #racedefinition "#pose ghoulinfantry"
 #racedefinition "#pose ghoulcavalry"
@@ -54,7 +54,7 @@
 -- Weights: EA 0.5, MA 0.5, LA 0.5
 #newtheme
 #type social
-#name slaver
+#id slaver
 #basechance 0.05
 #themeinc theme advanced *1
 #themeinc theme iron *1

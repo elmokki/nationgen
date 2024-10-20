@@ -1,6 +1,6 @@
 -- Generic theme with high diversity and low cohesion
 #newtheme
-#name default
+#id default
 #basechance 4
 #endtheme
 
@@ -9,14 +9,14 @@
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
 #type coloration
-#name brown
+#id brown
 #themeinc theme brown *100
 #endtheme
 
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
 #type coloration
-#name black
+#id black
 #themeinc theme black *100
 #racedefinition "#magicpriority death 6"
 #racedefinition "#magicpriority blood 0.1"
@@ -26,7 +26,7 @@
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
 #type coloration
-#name white
+#id white
 #themeinc theme white *100
 #racedefinition "#magicpriority water 6"
 #racedefinition "#magicpriority blood 0.1"
@@ -36,7 +36,7 @@
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
 #type coloration
-#name grey
+#id grey
 #themeinc theme grey *100
 #racedefinition "#magicpriority astral 10"
 #racedefinition "#magicpriority air 2"
@@ -49,7 +49,7 @@
 -- Weights: EA 2, MA 0.5, LA 0.25
 #newtheme
 #type techlevel
-#name primitive
+#id primitive
 #basechance 2
 #chanceinc era 2 -1.5
 #chanceinc era 3 -1.75
@@ -67,7 +67,7 @@
 -- Weights: EA 2, MA 1, LA 0.5
 #newtheme
 #type techlevel
-#name bronze
+#id bronze
 #basechance 2
 #chanceinc era 2 -1
 #chanceinc era 3 -1.5
@@ -86,7 +86,7 @@
 -- Weights: EA 0.25, MA 1, LA 2
 #newtheme
 #type techlevel
-#name advanced
+#id advanced
 #basechance 0.25
 #chanceinc era 3 +1.75
 #chanceinc era 2 +0.75
@@ -107,7 +107,7 @@
 -- Weights: EA 5, MA 2, LA 0.5
 #newtheme
 #type social
-#name savage
+#id savage
 #basechance 2
 #chanceinc era 1 *2.5
 #chanceinc era 3 *0.25
@@ -131,7 +131,7 @@
 -- Weights: EA 0.5, MA 1, LA 2.5
 #newtheme
 #type social
-#name cultured
+#id cultured
 #basechance 0.5
 #chanceinc era 2 *2
 #chanceinc era 3 *5
@@ -156,7 +156,7 @@
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
 #type demographic_primary
-#name diverse_primary
+#id diverse_primary
 #racedefinition "#generationchance infantry 13"
 #racedefinition "#generationchance mounted 2"
 #racedefinition "#generationchance chariot 2"
@@ -168,7 +168,7 @@
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
 #type demographic_primary
-#name minotaur_primary
+#id minotaur_primary
 #chanceinc racetheme minotaur_secondary *0
 #chanceinc racetheme minotaur_tertiary *0
 #themeinc theme minotaur *7
@@ -185,7 +185,7 @@
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
 #type demographic_primary
-#name centaur_primary
+#id centaur_primary
 #chanceinc racetheme centaur_secondary *0
 #chanceinc racetheme centaur_tertiary *0
 #themeinc theme minotaur *0.01
@@ -203,7 +203,7 @@
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
 #type demographic_primary
-#name satyr_primary
+#id satyr_primary
 #chanceinc racetheme satyr_secondary *0
 #chanceinc racetheme satyr_tertiary *0
 #themeinc theme minotaur *0.01
@@ -220,7 +220,7 @@
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
 #type demographic_secondary
-#name minotaur_secondary
+#id minotaur_secondary
 #chanceinc racetheme minotaur_primary *0
 #chanceinc racetheme minotaur_tertiary *0
 #themeinc theme minotaur *300
@@ -230,7 +230,7 @@
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
 #type demographic_secondary
-#name centaur_secondary
+#id centaur_secondary
 #chanceinc racetheme centaur_primary *0
 #chanceinc racetheme centaur_tertiary *0
 #themeinc theme centaur *300
@@ -242,7 +242,7 @@
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
 #type demographic_secondary
-#name satyr_secondary
+#id satyr_secondary
 #chanceinc racetheme satyr_primary *0
 #chanceinc racetheme satyr_tertiary *0
 #themeinc theme saytr *300
@@ -255,7 +255,7 @@
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
 #type demographic_secondary
-#name no_secondary
+#id no_secondary
 #basechance 1
 #chanceinc racetheme diverse_primary *1000
 #endtheme
@@ -263,7 +263,7 @@
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
 #type demographic_tertiary
-#name minotaur_tertiary
+#id minotaur_tertiary
 #chanceinc racetheme minotaur_primary *0
 #chanceinc racetheme minotaur_secondary *0
 #chanceinc racetheme no_secondary *0
@@ -274,7 +274,7 @@
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
 #type demographic_tertiary
-#name centaur_tertiary
+#id centaur_tertiary
 #chanceinc racetheme centaur_primary *0
 #chanceinc racetheme centaur_secondary *0
 #chanceinc racetheme no_secondary *0
@@ -287,7 +287,7 @@
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
 #type demographic_tertiary
-#name satyr_tertiary
+#id satyr_tertiary
 #chanceinc racetheme satyr_primary *0
 #chanceinc racetheme satyr_secondary *0
 #chanceinc racetheme no_secondary *0
@@ -301,7 +301,7 @@
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
 #type demographic_tertiary
-#name no_tertiary
+#id no_tertiary
 #basechance 1
 #chanceinc racetheme diverse_primary *1000
 #chanceinc racetheme no_secondary *1000

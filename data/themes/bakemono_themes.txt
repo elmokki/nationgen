@@ -1,7 +1,7 @@
 -- Generic theme with high diversity and low cohesion
 #newtheme
 #type techlevel
-#name default
+#id default
 #basechance 4
 #endtheme
 
@@ -10,7 +10,7 @@
 -- All small bakemono
 #newtheme
 #type demographic
-#name small
+#id small
 #basechance 1
 #themeinc theme small_elite *2
 #themeinc theme small_normal *1
@@ -21,7 +21,7 @@
 -- Mixed bakemono (few big)
 #newtheme
 #type demographic
-#name mixed_smaller
+#id mixed_smaller
 #basechance 4
 #themeinc theme small_elite *0.5
 #themeinc theme small_normal *2
@@ -32,7 +32,7 @@
 -- Mixed bakemono
 #newtheme
 #type demographic
-#name mixed
+#id mixed
 #basechance 2
 #themeinc theme small_elite *0.25
 #themeinc theme small_normal *2
@@ -68,7 +68,7 @@
 -- Small-sho, Dai-medium
 #newtheme
 #type dimorphism
-#name small_medium
+#id small_medium
 #basechance 1
 #themeinc theme small-sho *1
 #themeinc theme medium-sho *0
@@ -79,7 +79,7 @@
 -- Small-sho, Dai-large
 #newtheme
 #type dimorphism
-#name small_large
+#id small_large
 #basechance 3
 #themeinc theme small-sho *1
 #themeinc theme medium-sho *0
@@ -90,7 +90,7 @@
 -- Medium-sho, Dai-large
 #newtheme
 #type dimorphism
-#name medium_large
+#id medium_large
 #basechance 1
 #themeinc theme small-sho *0
 #themeinc theme medium-sho *1
@@ -101,7 +101,7 @@
 -- Medium-sho, Dai-medium
 #newtheme
 #type dimorphism
-#name medium_medium
+#id medium_medium
 #basechance 1
 #themeinc theme small-sho *0
 #themeinc theme medium-sho *1
@@ -115,7 +115,7 @@
 -- Weights: EA 0.5, MA 0.5, LA 0.5
 #newtheme
 #type social
-#name slaver
+#id slaver
 #basechance 0.05
 #themeinc theme advanced *1
 #themeinc theme iron *1

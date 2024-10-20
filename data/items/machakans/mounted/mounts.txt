@@ -3,7 +3,7 @@
 
 #newitem
 #basechance 3
-#name "brown horse"
+#id "brown horse"
 #gameid -1
 #sprite /graphics/mounts/standard/brownhorse.png
 #armor
@@ -22,7 +22,7 @@
 #enditem
 
 #newitem
-#name "armored horse"
+#id "armored horse"
 #basechance 0.25
 #gameid -1
 #sprite /graphics/mounts/standard/armoredhorse1.png
@@ -40,7 +40,7 @@
 
 #newitem
 #basechance 0.25
-#name "armored horse 2"
+#id "armored horse 2"
 #gameid -1
 #sprite /graphics/mounts/standard/armoredhorse2.png
 #armor
@@ -58,7 +58,7 @@
 
 #newitem
 #basechance 0.4
-#name "catapract horse"
+#id "catapract horse"
 #gameid -1
 #sprite /graphics/mounts/standard/catapracthorse1.png
 #armor
@@ -76,7 +76,7 @@
 
 #newitem
 #basechance 0.4
-#name "light catapract horse"
+#id "light catapract horse"
 #gameid -1
 #sprite /graphics/mounts/standard/lightcatapract1.png
 #armor
@@ -93,7 +93,7 @@
 #enditem
 
 #newitem
-#name "pegasus"
+#id "pegasus"
 #gameid -1
 #sprite /graphics/mounts/standard/pegasus.png
 #armor
@@ -111,7 +111,7 @@
 
 #newitem
 #basechance 0.1
-#name "red guard horse"
+#id "red guard horse"
 #gameid -1
 #sprite /graphics/mounts/standard/redguardmount.png
 #recolormask /graphics/mounts/standard/redguardmount_recolormask.png
@@ -127,7 +127,7 @@
 #enditem
 
 #newitem
-#name "camel"
+#id "camel"
 #basechance 1.5
 #chanceinc "nationcommand #idealcold above 0 *0"
 #chanceinc "nationcommand #idealcold above -1 *0.5"
@@ -146,7 +146,7 @@
 #enditem
 
 #newitem
-#name "barded camel"
+#id "barded camel"
 #basechance 1.5
 #chanceinc "nationcommand #idealcold above 0 *0"
 #chanceinc "nationcommand #idealcold above -1 *0.5"
@@ -168,7 +168,7 @@
 #enditem
 
 #newitem
-#name "armored camel"
+#id "armored camel"
 #basechance 0.5
 #chanceinc "nationcommand #idealcold above 0 *0"
 #chanceinc "nationcommand #idealcold above -1 *0.5"
@@ -188,7 +188,7 @@
 #enditem
 
 #newitem
-#name "unicorn"
+#id "unicorn"
 #gameid -1
 #sprite /graphics/mounts/standard/unicorn.png
 #armor
@@ -205,7 +205,7 @@
 #enditem
 
 #newitem
-#name "unicorn"
+#id "unicorn"
 #gameid -1
 #sprite /graphics/mounts/standard/unicorn.png
 #armor
@@ -223,7 +223,7 @@
 
 #newitem
 #basechance 1.5
-#name "fayhorse"
+#id "fayhorse"
 #gameid -1
 #sprite /graphics/mounts/standard/fayhorse.png
 #armor
@@ -238,7 +238,7 @@
 #enditem
 
 #newitem
-#name "wyvern"
+#id "wyvern"
 #basechance 0.5
 #gameid -1
 #sprite /graphics/mounts/standard/wyvern.png
@@ -261,7 +261,7 @@
 
 
 #newitem
-#name "moose"
+#id "moose"
 #basechance 0.05
 #gameid -1
 #sprite /graphics/mounts/standard/moose.png
@@ -279,7 +279,7 @@
 
 
 #newitem
-#name "nightmare"
+#id "nightmare"
 #gameid -1
 #sprite /graphics/mounts/standard/nightmare.png
 #armor
@@ -294,7 +294,7 @@
 #enditem
 
 #newitem
-#name "great bear"
+#id "great bear"
 #basechance 0.1
 #gameid -1
 #sprite /graphics/mounts/standard/bear.png
@@ -311,7 +311,7 @@
 #enditem
 
 #newitem
-#name "bear"
+#id "bear"
 #basechance 0.2
 #gameid -1
 #sprite /graphics/mounts/standard/bear_small.png
@@ -330,7 +330,7 @@
 
 #newitem
 #basechance 8
-#name "lion"
+#id "lion"
 #gameid -1
 #sprite /graphics/mounts/standard/lion.png
 #armor
@@ -345,7 +345,7 @@
 
 #newitem
 #basechance 8
-#name "winged lion"
+#id "winged lion"
 #basechance 0.25
 #gameid -1
 #sprite /graphics/mounts/standard/wingedlion.png
@@ -362,7 +362,7 @@
 #enditem
 
 #newitem
-#name "hippo"
+#id "hippo"
 #basechance 0.5
 #chanceinc "nationcommand #idealcold above 1 *0"
 #chanceinc "nationcommand #idealcold above 0 *0.5"

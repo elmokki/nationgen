@@ -1,5 +1,5 @@
 #newitem
-#name "humanoid"
+#id "humanoid"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/humanoid.png
 #command "#hp +1"
@@ -9,7 +9,7 @@
 #enditem
 
 #newitem
-#name "goblinoid"
+#id "goblinoid"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/goblinoid.png
 #command "#hp +1"
@@ -20,7 +20,7 @@
 #enditem
 
 #newitem
-#name "canid"
+#id "canid"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/canid.png
 #command "#hp +1"
@@ -32,7 +32,7 @@
 #enditem
 
 #newitem
-#name "tentacloid"
+#id "tentacloid"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/tentacle_green.png
 #command "#hp +2"
@@ -42,7 +42,7 @@
 #enditem
 
 #newitem
-#name "fleshblob"
+#id "fleshblob"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/tentacle_pink.png
 #command "#hp +2"
@@ -53,7 +53,7 @@
 
 
 #newitem
-#name "tentacles_blue"
+#id "tentacles_blue"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/tentacles_blue.png
 #command "#hp +0"
@@ -63,7 +63,7 @@
 #enditem
 
 #newitem
-#name "tentacles_grey"
+#id "tentacles_grey"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/tentacles_grey.png
 #command "#hp +0"
@@ -73,7 +73,7 @@
 #enditem
 
 #newitem
-#name "humanoid_arms"
+#id "humanoid_arms"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/arms_humanoid.png
 #command "#hp +2"
@@ -84,7 +84,7 @@
 #enditem
 
 #newitem
-#name "goblinoid_arms"
+#id "goblinoid_arms"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/arms_goblinoid.png
 #command "#hp +2"
@@ -95,7 +95,7 @@
 #enditem
 
 #newitem
-#name "crab"
+#id "crab"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/pincer.png
 #command "#prot +2"
@@ -105,7 +105,7 @@
 #enditem
 
 #newitem
-#name "snake"
+#id "snake"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/snake.png
 #command "#unsurr +1"
@@ -115,7 +115,7 @@
 #enditem
 
 #newitem
-#name "swan"
+#id "swan"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/swan.png
 #command "#unsurr +1"
@@ -128,7 +128,7 @@
 -- Arms for ranged units (these will generate a right hand, which otherwise should never appear)
 
 #newitem
-#name "humanoid_missile"
+#id "humanoid_missile"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/humanoid.png
 #command "#hp +1"
@@ -138,7 +138,7 @@
 #enditem
 
 #newitem
-#name "goblinoid_missile"
+#id "goblinoid_missile"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/goblinoid.png
 #command "#hp +1"
@@ -149,7 +149,7 @@
 #enditem
 
 #newitem
-#name "canid_missile"
+#id "canid_missile"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/canid.png
 #command "#hp +1"
@@ -161,7 +161,7 @@
 #enditem
 
 #newitem
-#name "tentacloid_missile"
+#id "tentacloid_missile"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/tentacle_green_missile.png
 #command "#hp +2"
@@ -171,7 +171,7 @@
 #enditem
 
 #newitem
-#name "fleshblob_missile"
+#id "fleshblob_missile"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/tentacle_pink_missile.png
 #command "#hp +2"

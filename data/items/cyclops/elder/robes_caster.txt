@@ -1,6 +1,6 @@
 --- Unarmored
 #newitem
-#name nada
+#id nada
 #gameid -1
 #armor
 #tier 1
@@ -9,7 +9,7 @@
 #enditem
 
 #newitem
-#name apron
+#id apron
 #gameid 5
 #sprite /graphics/cyclops/elder/armor/robes/apron_forgelord.png
 #armor
@@ -21,7 +21,7 @@
 
 --- Hellenic robes
 #newitem
-#name half_himation_white
+#id half_himation_white
 #sprite /graphics/cyclops/elder/armor/robes/himation_half_white.png
 #eliteversion half_himation_light
 #eliteversion himation_white
@@ -35,7 +35,7 @@
 #enditem
 
 #newitem
-#name half_himation_grey
+#id half_himation_grey
 #sprite /graphics/cyclops/elder/armor/robes/himation_half_grey.png
 #eliteversion half_himation_medium
 #eliteversion himation_grey
@@ -49,7 +49,7 @@
 #enditem
 
 #newitem
-#name half_himation_black
+#id half_himation_black
 #sprite /graphics/cyclops/elder/armor/robes/himation_half_black.png
 #eliteversion half_himation_dark
 #eliteversion himation_black
@@ -63,7 +63,7 @@
 #enditem
 
 #newitem
-#name himation_white
+#id himation_white
 #sprite /graphics/cyclops/elder/armor/robes/himation_white.png
 #eliteversion himation_light
 #gameid 158
@@ -76,7 +76,7 @@
 #enditem
 
 #newitem
-#name himation_grey
+#id himation_grey
 #sprite /graphics/cyclops/elder/armor/robes/himation_grey.png
 #eliteversion himation_medium
 #gameid 158
@@ -89,7 +89,7 @@
 #enditem
 
 #newitem
-#name himation_black
+#id himation_black
 #sprite /graphics/cyclops/elder/armor/robes/himation_black.png
 #eliteversion himation_dark
 #gameid 158
@@ -102,7 +102,7 @@
 #enditem
 
 #newitem
-#name half_himation_light
+#id half_himation_light
 #sprite /graphics/cyclops/elder/armor/robes/himation_half_white.png
 #recolormask self
 #eliteversion himation_light
@@ -116,7 +116,7 @@
 #enditem
 
 #newitem
-#name half_himation_medium
+#id half_himation_medium
 #sprite /graphics/cyclops/elder/armor/robes/himation_half_grey.png
 #recolormask self
 #eliteversion himation_medium
@@ -130,7 +130,7 @@
 #enditem
 
 #newitem
-#name half_himation_dark
+#id half_himation_dark
 #sprite /graphics/cyclops/elder/armor/robes/himation_half_black.png
 #recolormask self
 #eliteversion himation_dark
@@ -144,7 +144,7 @@
 #enditem
 
 #newitem
-#name himation_light
+#id himation_light
 #sprite /graphics/cyclops/elder/armor/robes/himation_white.png
 #recolormask self
 #eliteversion himation_medium
@@ -159,7 +159,7 @@
 #enditem
 
 #newitem
-#name himation_medium
+#id himation_medium
 #sprite /graphics/cyclops/elder/armor/robes/himation_grey.png
 #recolormask self
 #eliteversion himation_light
@@ -174,7 +174,7 @@
 #enditem
 
 #newitem
-#name himation_dark
+#id himation_dark
 #sprite /graphics/cyclops/elder/armor/robes/himation_black.png
 #recolormask self
 #eliteversion himation_light
@@ -191,7 +191,7 @@
 
 --- Carthagian robes
 #newitem
-#name toga_white
+#id toga_white
 #sprite /graphics/cyclops/elder/armor/robes/toga_telkhine_white.png
 #eliteversion toga_light
 #eliteversion toga_white_trim
@@ -205,7 +205,7 @@
 #enditem
 
 #newitem
-#name toga_grey
+#id toga_grey
 #sprite /graphics/cyclops/elder/armor/robes/toga_telkhine_grey.png
 #eliteversion toga_medium
 #eliteversion toga_grey_trim
@@ -219,7 +219,7 @@
 #enditem
 
 #newitem
-#name toga_black
+#id toga_black
 #sprite /graphics/cyclops/elder/armor/robes/toga_telkhine_black.png
 #eliteversion toga_dark
 #eliteversion toga_black_trim
@@ -233,7 +233,7 @@
 #enditem
 
 #newitem
-#name toga_white_trim
+#id toga_white_trim
 #sprite /graphics/cyclops/elder/armor/robes/toga_telkhine_white.png
 #recolormask /graphics/cyclops/elder/armor/robes/toga_telkhine_trim_recolormask.png
 #eliteversion toga_light_trim
@@ -247,7 +247,7 @@
 #enditem
 
 #newitem
-#name toga_grey_trim
+#id toga_grey_trim
 #sprite /graphics/cyclops/elder/armor/robes/toga_telkhine_grey.png
 #recolormask /graphics/cyclops/elder/armor/robes/toga_telkhine_trim_recolormask.png
 #eliteversion toga_medium_trim
@@ -261,7 +261,7 @@
 #enditem
 
 #newitem
-#name toga_black_trim
+#id toga_black_trim
 #sprite /graphics/cyclops/elder/armor/robes/toga_telkhine_black.png
 #recolormask /graphics/cyclops/elder/armor/robes/toga_telkhine_trim_recolormask.png
 #eliteversion toga_dark_trim
@@ -275,7 +275,7 @@
 #enditem
 
 #newitem
-#name toga_light_trim
+#id toga_light_trim
 #sprite /graphics/cyclops/elder/armor/robes/toga_telkhine_white.png
 #recolormask self
 #eliteversion toga_light_trim
@@ -289,7 +289,7 @@
 #enditem
 
 #newitem
-#name toga_medium_trim
+#id toga_medium_trim
 #sprite /graphics/cyclops/elder/armor/robes/toga_telkhine_grey.png
 #recolormask self
 #eliteversion toga_medium_trim
@@ -303,7 +303,7 @@
 #enditem
 
 #newitem
-#name toga_black_trim
+#id toga_black_trim
 #sprite /graphics/cyclops/elder/armor/robes/toga_telkhine_black.png
 #recolormask self
 #eliteversion toga_dark_trim
@@ -317,7 +317,7 @@
 #enditem
 
 #newitem
-#name toga_light
+#id toga_light
 #sprite /graphics/cyclops/elder/armor/robes/toga_telkhine_white.png
 #recolormask /graphics/cyclops/elder/armor/robes/toga_telkhine_light_recolormask.png
 #eliteversion toga_light_trim
@@ -333,7 +333,7 @@
 #enditem
 
 #newitem
-#name toga_medium
+#id toga_medium
 #sprite /graphics/cyclops/elder/armor/robes/toga_telkhine_grey.png
 #recolormask /graphics/cyclops/elder/armor/robes/toga_telkhine_medium_recolormask.png
 #eliteversion toga_light
@@ -349,7 +349,7 @@
 #enditem
 
 #newitem
-#name toga_dark
+#id toga_dark
 #sprite /graphics/cyclops/elder/armor/robes/toga_telkhine_black.png
 #recolormask /graphics/cyclops/elder/armor/robes/toga_telkhine_dark_recolormask.png
 #eliteversion toga_light
@@ -367,7 +367,7 @@
 --- African half-robes
 
 #newitem
-#name skirt_lord_plain
+#id skirt_lord_plain
 #sprite /graphics/cyclops/elder/armor/robes/skirt_lord_plain.png
 #recolormask /graphics/cyclops/elder/armor/robes/skirt_lord_plain_recolormask.png
 #eliteversion skirt_lord_fancy
@@ -381,7 +381,7 @@
 #enditem
 
 #newitem
-#name skirt_lord_fancy
+#id skirt_lord_fancy
 #sprite /graphics/cyclops/elder/armor/robes/skirt_lord.png
 #recolormask /graphics/cyclops/elder/armor/robes/skirt_lord_recolormask.png
 #eliteversion skirt_lord_ornate
@@ -396,7 +396,7 @@
 
 
 #newitem
-#name skirt_lord_ornate
+#id skirt_lord_ornate
 #sprite /graphics/cyclops/elder/armor/robes/skirt_lord.png
 #recolormask /graphics/cyclops/elder/armor/robes/skirt_lord_recolormask.png
 #needs overlay skirt_lord_overlay
@@ -411,7 +411,7 @@
 #enditem
 
 #newitem
-#name shendyt_plain1
+#id shendyt_plain1
 #sprite /graphics/cyclops/elder/armor/robes/shendyt_plain.png
 #recolormask /graphics/cyclops/elder/armor/robes/shendyt_plain_recolormask1.png
 #eliteversion shendyt_fancy1
@@ -426,7 +426,7 @@
 #enditem
 
 #newitem
-#name shendyt_plain2
+#id shendyt_plain2
 #sprite /graphics/cyclops/elder/armor/robes/shendyt_plain.png
 #recolormask /graphics/cyclops/elder/armor/robes/shendyt_plain_recolormask2.png
 #eliteversion shendyt_fancy1
@@ -441,7 +441,7 @@
 #enditem
 
 #newitem
-#name shendyt_fancy1
+#id shendyt_fancy1
 #sprite /graphics/cyclops/elder/armor/robes/shendyt_fancy.png
 #recolormask /graphics/cyclops/elder/armor/robes/shendyt_fancy_recolormask1.png
 #eliteversion shendyt_ornate1a
@@ -460,7 +460,7 @@
 #enditem
 
 #newitem
-#name shendyt_fancy2
+#id shendyt_fancy2
 #sprite /graphics/cyclops/elder/armor/robes/shendyt_fancy.png
 #recolormask /graphics/cyclops/elder/armor/robes/shendyt_fancy_recolormask2.png
 #eliteversion shendyt_ornate1a
@@ -479,7 +479,7 @@
 #enditem
 
 #newitem
-#name shendyt_ornate1a
+#id shendyt_ornate1a
 #sprite /graphics/cyclops/elder/armor/robes/shendyt_ornate1.png
 #recolormask /graphics/cyclops/elder/armor/robes/shendyt_fancy_recolormask1.png
 #eliteversion shendyt_ornate1b
@@ -495,7 +495,7 @@
 #enditem
 
 #newitem
-#name shendyt_ornate1b
+#id shendyt_ornate1b
 #sprite /graphics/cyclops/elder/armor/robes/shendyt_ornate1.png
 #recolormask /graphics/cyclops/elder/armor/robes/shendyt_fancy_recolormask2.png
 #eliteversion shendyt_ornate1a
@@ -511,7 +511,7 @@
 #enditem
 
 #newitem
-#name shendyt_ornate2a
+#id shendyt_ornate2a
 #sprite /graphics/cyclops/elder/armor/robes/shendyt_ornate2.png
 #recolormask /graphics/cyclops/elder/armor/robes/shendyt_fancy_recolormask1.png
 #eliteversion shendyt_ornate2b
@@ -527,7 +527,7 @@
 #enditem
 
 #newitem
-#name shendyt_ornate2b
+#id shendyt_ornate2b
 #sprite /graphics/cyclops/elder/armor/robes/shendyt_ornate2.png
 #recolormask /graphics/cyclops/elder/armor/robes/shendyt_fancy_recolormask2.png
 #eliteversion shendyt_ornate2a
@@ -543,7 +543,7 @@
 #enditem
 
 #newitem
-#name shendyt_ornate3a
+#id shendyt_ornate3a
 #sprite /graphics/cyclops/elder/armor/robes/shendyt_ornate3.png
 #recolormask /graphics/cyclops/elder/armor/robes/shendyt_fancy_recolormask1.png
 #eliteversion shendyt_ornate3b
@@ -559,7 +559,7 @@
 #enditem
 
 #newitem
-#name shendyt_ornate3b
+#id shendyt_ornate3b
 #sprite /graphics/cyclops/elder/armor/robes/shendyt_ornate3.png
 #recolormask /graphics/cyclops/elder/armor/robes/shendyt_fancy_recolormask2.png
 #eliteversion shendyt_ornate3a
@@ -576,7 +576,7 @@
 
 --- Levantine half-robes
 #newitem
-#name halfrobe_ahura_1a
+#id halfrobe_ahura_1a
 #sprite /graphics/cyclops/elder/armor/robes/halfrobe_ahura.png
 #recolormask /graphics/cyclops/elder/armor/robes/halfrobe_ahura_recolormask1a.png
 #eliteversion halfrobe_ahura_2a
@@ -593,7 +593,7 @@
 #enditem
 
 #newitem
-#name halfrobe_ahura_2a
+#id halfrobe_ahura_2a
 #sprite /graphics/cyclops/elder/armor/robes/halfrobe_ahura.png
 #recolormask /graphics/cyclops/elder/armor/robes/halfrobe_ahura_recolormask2a.png
 #eliteversion halfrobe_ahura_1a
@@ -610,7 +610,7 @@
 #enditem
 
 #newitem
-#name halfrobe_ahura_1b
+#id halfrobe_ahura_1b
 #sprite /graphics/cyclops/elder/armor/robes/halfrobe_ahura.png
 #recolormask /graphics/cyclops/elder/armor/robes/halfrobe_ahura_recolormask1b.png
 #eliteversion halfrobe_ahura_2b
@@ -627,7 +627,7 @@
 #enditem
 
 #newitem
-#name halfrobe_ahura_2b
+#id halfrobe_ahura_2b
 #sprite /graphics/cyclops/elder/armor/robes/halfrobe_ahura.png
 #recolormask /graphics/cyclops/elder/armor/robes/halfrobe_ahura_recolormask2b.png
 #eliteversion halfrobe_ahura_1b
@@ -644,7 +644,7 @@
 #enditem
 
 #newitem
-#name halfrobe_ahura_1c
+#id halfrobe_ahura_1c
 #sprite /graphics/cyclops/elder/armor/robes/halfrobe_ahura.png
 #recolormask /graphics/cyclops/elder/armor/robes/halfrobe_ahura_recolormask1c.png
 #eliteversion halfrobe_ahura_2c
@@ -661,7 +661,7 @@
 #enditem
 
 #newitem
-#name halfrobe_ahura_2c
+#id halfrobe_ahura_2c
 #sprite /graphics/cyclops/elder/armor/robes/halfrobe_ahura.png
 #recolormask /graphics/cyclops/elder/armor/robes/halfrobe_ahura_recolormask2c.png
 #eliteversion halfrobe_ahura_1c
@@ -678,7 +678,7 @@
 #enditem
 
 #newitem
-#name halfrobe_ahura_1a_fancy
+#id halfrobe_ahura_1a_fancy
 #sprite /graphics/cyclops/elder/armor/robes/halfrobe_ahura.png
 #recolormask /graphics/cyclops/elder/armor/robes/halfrobe_ahura_recolormask1a.png
 #eliteversion halfrobe_ahura_2a_fancy
@@ -693,7 +693,7 @@
 #enditem
 
 #newitem
-#name halfrobe_ahura_2a_fancy
+#id halfrobe_ahura_2a_fancy
 #sprite /graphics/cyclops/elder/armor/robes/halfrobe_ahura.png
 #recolormask /graphics/cyclops/elder/armor/robes/halfrobe_ahura_recolormask2a.png
 #eliteversion halfrobe_ahura_1a_fancy
@@ -708,7 +708,7 @@
 #enditem
 
 #newitem
-#name halfrobe_ahura_1b_fancy
+#id halfrobe_ahura_1b_fancy
 #sprite /graphics/cyclops/elder/armor/robes/halfrobe_ahura.png
 #recolormask /graphics/cyclops/elder/armor/robes/halfrobe_ahura_recolormask1b.png
 #eliteversion halfrobe_ahura_2b_fancy
@@ -723,7 +723,7 @@
 #enditem
 
 #newitem
-#name halfrobe_ahura_2b_fancy
+#id halfrobe_ahura_2b_fancy
 #sprite /graphics/cyclops/elder/armor/robes/halfrobe_ahura.png
 #recolormask /graphics/cyclops/elder/armor/robes/halfrobe_ahura_recolormask2b.png
 #eliteversion halfrobe_ahura_1b_fancy
@@ -738,7 +738,7 @@
 #enditem
 
 #newitem
-#name halfrobe_ahura_1c_fancy
+#id halfrobe_ahura_1c_fancy
 #sprite /graphics/cyclops/elder/armor/robes/halfrobe_ahura.png
 #recolormask /graphics/cyclops/elder/armor/robes/halfrobe_ahura_recolormask1c.png
 #eliteversion halfrobe_ahura_2c_fancy
@@ -753,7 +753,7 @@
 #enditem
 
 #newitem
-#name halfrobe_ahura_2c_fancy
+#id halfrobe_ahura_2c_fancy
 #sprite /graphics/cyclops/elder/armor/robes/halfrobe_ahura.png
 #recolormask /graphics/cyclops/elder/armor/robes/halfrobe_ahura_recolormask2c.png
 #eliteversion halfrobe_ahura_1c_fancy
@@ -770,7 +770,7 @@
 --- Occidental cloaks and loincloths
 
 #newitem
-#name skirt_teotl
+#id skirt_teotl
 #sprite /graphics/cyclops/elder/armor/robes/skirt_teotl.png
 #recolormask /graphics/cyclops/elder/armor/robes/skirt_teotl_recolormask.png
 #eliteversion skirt_teotl_fancy
@@ -784,7 +784,7 @@
 #enditem
 
 #newitem
-#name skirt_teotl_fancy
+#id skirt_teotl_fancy
 #sprite /graphics/cyclops/elder/armor/robes/skirt_teotl.png
 #recolormask /graphics/cyclops/elder/armor/robes/skirt_teotl_recolormask.png
 #needs overlay skirt_teotl_overlay

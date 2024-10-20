@@ -2,7 +2,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "turkeyshape"
+#id "turkeyshape"
 #basechance 0.025
 #chanceinc "personalmagic nature 0.3"
 #chanceinc "personalmagic air 0.3"
@@ -14,7 +14,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "werewolf"
+#id "werewolf"
 #basechance 0.05
 #chanceinc personalmagic nature 0.5
 #chanceinc personalcommand mounted *0
@@ -33,7 +33,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "werewolf2"
+#id "werewolf2"
 #basechance 0.05
 #chanceinc personalmagic nature 0.25
 #chanceinc personalcommand mounted *0
@@ -52,7 +52,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "werefox"
+#id "werefox"
 #basechance 0.05
 #chanceinc "personalmagic nature 0.5"
 #chanceinc "personalcommand mounted *0"
@@ -68,7 +68,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "werefox2"
+#id "werefox2"
 #basechance 0.05
 #chanceinc "personalmagic nature 0.25"
 #chanceinc "personalcommand mounted *0"
@@ -87,7 +87,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "werebear"
+#id "werebear"
 #basechance 0.05
 #chanceinc "personalmagic nature 0.5"
 #chanceinc "personalcommand mounted *0"
@@ -106,7 +106,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "werebear2"
+#id "werebear2"
 #basechance 0.05
 #chanceinc "personalmagic nature 0.25"
 #chanceinc "personalcommand mounted *0"
@@ -124,7 +124,7 @@
 #end
 
 #new magefilter
-#name "werehyena"
+#id "werehyena"
 #type "shapeshift"
 #basechance 0.05
 #chanceinc "personalmagic death 0.5"
@@ -142,7 +142,7 @@
 #end
 
 #new magefilter
-#name "werehyena2"
+#id "werehyena2"
 #type "shapeshift"
 #basechance 0.05
 #chanceinc "personalmagic death 0.25"
@@ -160,7 +160,7 @@
 #end
 
 #new magefilter
-#name "wererat"
+#id "wererat"
 #type "shapeshift"
 #basechance 0.025
 #chanceinc "magic death 0.25"
@@ -179,7 +179,7 @@
 #end
 
 #new magefilter
-#name "werecrocodile"
+#id "werecrocodile"
 #type "shapeshift"
 #basechance 0.05
 #chanceinc magic nature 0.5
@@ -201,7 +201,7 @@
 #end
 
 #new
-#name "werecrocodile2"
+#id "werecrocodile2"
 #type "shapeshift"
 #basechance 0.05
 #chanceinc magic nature 0.25
@@ -224,7 +224,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "wolf"
+#id "wolf"
 #basechance 0.05
 #chanceinc "personalmagic nature 1"
 #chanceinc "personalcommand mounted *0"
@@ -239,7 +239,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "wingedmonkey"
+#id "wingedmonkey"
 #basechance 0.05
 #chanceinc "personalmagic nature 0.75"
 #chanceinc "personalmagic air 0.75"
@@ -253,7 +253,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "devil"
+#id "devil"
 #basechance 0.0
 #chanceinc "personalmagic blood 0.2"
 #chanceinc "personalmagic blood fire 3"
@@ -272,7 +272,7 @@
 #end
 
 #new
-#name "vineman: size 2"
+#id "vineman: size 2"
 #type "shapeshift"
 #basechance 0
 #chanceinc "personalmagic nature 1"
@@ -290,7 +290,7 @@
 #end
 
 #new
-#name "vineman: size 1"
+#id "vineman: size 1"
 #type "shapeshift"
 #basechance 0
 #chanceinc "personalmagic nature 1"
@@ -309,7 +309,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "frostfiend"
+#id "frostfiend"
 #basechance 0.0
 #chanceinc "personalmagic blood 0.2"
 #chanceinc "personalmagic blood water 3"
@@ -329,7 +329,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "greatbear"
+#id "greatbear"
 #basechance 0.025
 #chanceinc "personalmagic nature 1"
 #chanceinc "personalcommand mounted *0"
@@ -344,7 +344,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "bear"
+#id "bear"
 #basechance 0.05
 #chanceinc "personalmagic nature 1"
 #chanceinc "personalcommand mounted *0"
@@ -358,7 +358,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "jaguar"
+#id "jaguar"
 #basechance 0.025
 #chanceinc "personalmagic nature 1"
 #chanceinc "personalcommand mounted *0"
@@ -371,7 +371,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "deepone"
+#id "deepone"
 #basechance 0.0
 #chanceinc "personalmagic water 1"
 #chanceinc "personalcommand mounted *0"
@@ -390,7 +390,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "lesserhorror"
+#id "lesserhorror"
 #basechance 0.0
 #chanceinc "personalmagic astral 0.01"
 #chanceinc "personalmagic blood 0.05"
@@ -406,7 +406,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "ghost"
+#id "ghost"
 #basechance 0.0
 #chanceinc "personalmagic death 2"
 #command "#secondtmpshape ghost"
@@ -417,7 +417,7 @@
 #end
 
 #new magefilter
-#name "ghoul: size 2"
+#id "ghoul: size 2"
 #type "shapeshift"
 #basechance 0.0
 #chanceinc "personalmagic death 2"
@@ -435,7 +435,7 @@
 #end
 
 #new magefilter
-#name "ghoul: size 1"
+#id "ghoul: size 1"
 #type "shapeshift"
 #basechance 0.0
 #chanceinc "personalmagic death 2"
@@ -454,7 +454,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "serpent"
+#id "serpent"
 #basechance 0.0
 #chanceinc "personalmagic nature 2"
 #chanceinc "personalcommand mounted *0"
@@ -467,7 +467,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "felemental"
+#id "felemental"
 #basechance 0.0
 #chanceinc "personalmagic fire 1"
 #chanceinc "personalmagic water -0.75"
@@ -483,7 +483,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "eelemental"
+#id "eelemental"
 #basechance 0.0
 #chanceinc "personalmagic earth 1"
 #chanceinc "personalmagic air -0.75"
@@ -498,7 +498,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "aelemental"
+#id "aelemental"
 #basechance 0.0
 #chanceinc "personalmagic air 1"
 #chanceinc "personalmagic earth -0.75"
@@ -514,7 +514,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "welemental"
+#id "welemental"
 #basechance 0.0
 #chanceinc "personalmagic water 1"
 #chanceinc "personalmagic fire -0.75"
@@ -530,7 +530,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "metalman: size 2"
+#id "metalman: size 2"
 #basechance 0.05
 #chanceinc "personalmagic earth 0.95"
 #chanceinc "command #secondshape -0.7"
@@ -545,7 +545,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "metalman: size 1"
+#id "metalman: size 1"
 #basechance 0.05
 #chanceinc "personalmagic earth 0.95"
 #chanceinc "command #secondshape -0.7"
@@ -560,7 +560,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "hugemantis"
+#id "hugemantis"
 #basechance 0.05
 #chanceinc "personalmagic nature 0.25"
 #chanceinc "personalcommand mounted *0"
@@ -575,7 +575,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "scorpion"
+#id "scorpion"
 #basechance 0.1
 #chanceinc "personalmagic fire 0.25"
 #chanceinc "personalmagic earth 0.25"
@@ -593,7 +593,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "cavecrab"
+#id "cavecrab"
 #basechance 0.1
 #chanceinc "personalmagic nature 0.25"
 #chanceinc "personalmagic earth 0.25"
@@ -614,7 +614,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "hawk"
+#id "hawk"
 #basechance 0.1
 #chanceinc "personalmagic nature 0.25"
 #chanceinc "personalmagic air 0.75"
@@ -634,7 +634,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "toad"
+#id "toad"
 #basechance 0.1
 #chanceinc "personalmagic water 0.25"
 #chanceinc "personalmagic nature 0.25"
@@ -653,7 +653,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "greatboar"
+#id "greatboar"
 #basechance 0.1
 #chanceinc "personalmagic nature 1"
 #chanceinc "personalcommand mounted *0"
@@ -669,7 +669,7 @@
 
 #new magefilter
 #type "shapeshift"
-#name "spider"
+#id "spider"
 #basechance 0.05
 #chanceinc "personalmagic nature 1"
 #chanceinc "personalcommand poisonres 1"

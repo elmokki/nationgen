@@ -1,5 +1,5 @@
 #newitem
-#name "cloak 1"
+#id "cloak 1"
 #gameid -1
 #sprite /graphics/muuch/cloak/medium/short_b.png
 #needs cloakf "cloak 1"
@@ -9,7 +9,7 @@
 #enditem
 
 #newitem
-#name "cloak 2"
+#id "cloak 2"
 #gameid -1
 #sprite /graphics/muuch/cloak/medium/long_b.png
 #tag "eliteversion cloak_gold"
@@ -23,7 +23,7 @@
 #enditem
 
 #newitem
-#name "cloak_gold"
+#id "cloak_gold"
 #gameid -1
 #sprite /graphics/muuch/cloak/medium/long_b_gold.png
 #needs cloakf "cloak 2"
@@ -33,7 +33,7 @@
 #enditem
 
 #newitem
-#name "cloak_blue"
+#id "cloak_blue"
 #gameid -1
 #sprite /graphics/muuch/cloak/medium/long_b_blue.png
 #needs cloakf "cloak 2"
@@ -43,7 +43,7 @@
 #enditem
 
 #newitem
-#name "cloak_red"
+#id "cloak_red"
 #gameid -1
 #sprite /graphics/muuch/cloak/medium/long_b_red.png
 #needs cloakf "cloak 2"
@@ -53,7 +53,7 @@
 #enditem
 
 #newitem
-#name "cloak_tinted"
+#id "cloak_tinted"
 #gameid -1
 #sprite /graphics/muuch/cloak/medium/long_b_blue.png
 #needs cloakf "cloak 2"
@@ -63,7 +63,7 @@
 #enditem
 
 #newitem
-#name "necklace_gold"
+#id "necklace_gold"
 #gameid -1
 #tag "eliteversion cloak_feathered_bright"
 #tag "eliteversion cloak_feathered_dark"
@@ -74,7 +74,7 @@
 #enditem
 
 #newitem
-#name "necklace_silver"
+#id "necklace_silver"
 #gameid -1
 #needs cloakf "necklace_silver"
 #armor
@@ -83,7 +83,7 @@
 #enditem
 
 #newitem
-#name "necklace_jeweled"
+#id "necklace_jeweled"
 #gameid -1
 #needs cloakf "necklace_jeweled"
 #armor
@@ -92,7 +92,7 @@
 #enditem
 
 #newitem
-#name "cloak_feathered_light"
+#id "cloak_feathered_light"
 #gameid -1
 #sprite /graphics/muuch/cloak/medium/feathercloak_b.png
 #recolormask /graphics/muuch/cloak/medium/feathercloak_b_recolormask2.png
@@ -102,7 +102,7 @@
 #enditem
 
 #newitem
-#name "cloak_feathered_dark"
+#id "cloak_feathered_dark"
 #gameid -1
 #sprite /graphics/muuch/cloak/medium/feathercloak_b.png
 #recolormask /graphics/muuch/cloak/medium/feathercloak_b_recolormask1.png
@@ -112,7 +112,7 @@
 #enditem
 
 #newitem
-#name "cloak_moss"
+#id "cloak_moss"
 #gameid -1
 #sprite /graphics/muuch/cloak/medium/mosscloak_b.png
 #needs cloakf "cloak_moss"

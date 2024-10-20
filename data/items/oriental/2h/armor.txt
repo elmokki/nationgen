@@ -2,7 +2,7 @@
 --- Leather
 
 #newitem
-#name "leather cuirass 1"
+#id "leather cuirass 1"
 #gameid 5
 #sprite /graphics/tengu/armor/2h/shirt.png
 #needs legs specialpants
@@ -13,7 +13,7 @@
 --- Samurai
 
 #newitem
-#name "samurai armor"
+#id "samurai armor"
 #gameid 129
 #sprite /graphics/tengu/armor/2h/samuraiarmor.png
 #needs spaulder normal
@@ -24,7 +24,7 @@
 #enditem
 
 #newitem
-#name "samurai armor elite"
+#id "samurai armor elite"
 #gameid 129
 #sprite /graphics/tengu/armor/2h/samuraiarmor_elite.png
 #recolormask /graphics/tengu/armor/2h/samuraiarmor_elite_recolormask.png
@@ -35,7 +35,7 @@
 #enditem
 
 #newitem
-#name "samurai armor elite2"
+#id "samurai armor elite2"
 #gameid 129
 #sprite /graphics/tengu/armor/2h/samuraiarmor_elite2.png
 #recolormask /graphics/tengu/armor/2h/samuraiarmor_elite2_recolormask.png
@@ -46,7 +46,7 @@
 #enditem
 
 #newitem
-#name "heavy samurai armor"
+#id "heavy samurai armor"
 #gameid 130
 #sprite /graphics/tengu/armor/2h/heavysamuraiarmor.png
 #needs spaulder heavy
@@ -57,7 +57,7 @@
 #enditem
 
 #newitem
-#name "heavy samurai armor elite"
+#id "heavy samurai armor elite"
 #gameid 130
 #sprite /graphics/tengu/armor/2h/heavysamuraiarmor_elite.png
 #recolormask /graphics/tengu/armor/2h/samuraiarmor_elite_recolormask.png
@@ -68,7 +68,7 @@
 #enditem
 
 #newitem
-#name "heavy samurai armor elite2"
+#id "heavy samurai armor elite2"
 #gameid 130
 #sprite /graphics/tengu/armor/2h/heavysamuraiarmor_elite2.png
 #recolormask /graphics/tengu/armor/2h/heavysamuraiarmor_elite2_recolormask.png
@@ -81,7 +81,7 @@
 --- TC
 
 #newitem
-#name "leather hauberk"
+#id "leather hauberk"
 #gameid 10
 #sprite /graphics/tengu/armor/2h/leather.png
 #recolormask /graphics/tengu/armor/2h/tc_recolormask.png
@@ -89,7 +89,7 @@
 #enditem
 
 #newitem
-#name "full leather"
+#id "full leather"
 #gameid 15
 #sprite /graphics/tengu/armor/2h/leather.png
 #recolormask /graphics/tengu/armor/2h/tc_recolormask.png
@@ -98,7 +98,7 @@
 
 
 #newitem
-#name "scale cuirass"
+#id "scale cuirass"
 #gameid 7
 #sprite /graphics/tengu/armor/2h/scale.png
 #recolormask /graphics/tengu/armor/2h/tc_recolormask.png
@@ -106,7 +106,7 @@
 #enditem
 
 #newitem
-#name "ashigaru armor"
+#id "ashigaru armor"
 #gameid 128
 #sprite /graphics/tengu/armor/2h/ashigaruarmor.png
 #recolormask /graphics/tengu/armor/2h/ashigaruarmor_recolormask.png
@@ -115,7 +115,7 @@
 #enditem
 
 #newitem
-#name "scale hauberk"
+#id "scale hauberk"
 #gameid 12
 #sprite /graphics/tengu/armor/2h/scale.png
 #recolormask /graphics/tengu/armor/2h/tc_recolormask.png
@@ -123,7 +123,7 @@
 #enditem
 
 #newitem
-#name "full scale"
+#id "full scale"
 #gameid 17
 #sprite /graphics/tengu/armor/2h/fullscale.png
 #recolormask /graphics/tengu/armor/2h/tc_recolormask.png
@@ -133,7 +133,7 @@
 -- Advanced-only plate armor
 
 #newitem
-#name "nanban hauberk"
+#id "nanban hauberk"
 #gameid 14
 #basechance 0
 #chanceinc racetheme advanced 0.5
@@ -145,7 +145,7 @@
 #enditem
 
 #newitem
-#name "nanban hauberk elite"
+#id "nanban hauberk elite"
 #gameid 14
 #basechance 0
 #chanceinc racetheme advanced 0.5
@@ -158,7 +158,7 @@
 #enditem
 
 #newitem
-#name "nanban full"
+#id "nanban full"
 #gameid 19
 #basechance 0
 #chanceinc racetheme advanced 0.25
@@ -170,7 +170,7 @@
 #enditem
 
 #newitem
-#name "nanban full elite"
+#id "nanban full elite"
 #gameid 19
 #basechance 0
 #chanceinc racetheme advanced 0.25

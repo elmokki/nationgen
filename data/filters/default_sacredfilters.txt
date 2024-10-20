@@ -1,5 +1,5 @@
 #new
-#name "ascetic"
+#id "ascetic"
 #basechance 0.125
 #chanceinc "command #undead *0"
 #chanceinc "command #demon *0"
@@ -10,7 +10,7 @@
 #end
 
 #new
-#name "reinvig 2"
+#id "reinvig 2"
 #basechance 0.05
 #command "#reinvigoration +2"
 #chanceinc "magic earth 0.95"
@@ -28,7 +28,7 @@
 #end
 
 #new
-#name "reinvig 4"
+#id "reinvig 4"
 #basechance 0.025
 #command "#reinvigoration +4"
 #chanceinc "magic earth 0.475"
@@ -52,7 +52,7 @@
 
 
 #new
-#name "berserklowest"
+#id "berserklowest"
 #type "berserk"
 #basechance 0.5
 #command "#berserk +1"
@@ -64,7 +64,7 @@
 #end
 
 #new
-#name "berserklow"
+#id "berserklow"
 #type "berserk"
 #basechance 0.5
 #command "#berserk +3"
@@ -82,7 +82,7 @@
 #end
 
 #new
-#name "berserkhigh"
+#id "berserkhigh"
 #type "berserk"
 #basechance 0.25
 #command "#berserk +5"
@@ -102,7 +102,7 @@
 #end
 
 #new
-#name "berserkonbless"
+#id "berserkonbless"
 #basechance 0
 #command "#blessbers"
 #chanceinc "personalcommand #berserk 0.5"
@@ -174,7 +174,7 @@
 -- #end
 
 #new
-#name "stealthlow"
+#id "stealthlow"
 #type "stealth"
 #basechance 0.5
 #command "#stealthy +0"
@@ -187,7 +187,7 @@
 #end
 
 #new
-#name "chaosrec10"
+#id "chaosrec10"
 #type "chaosrec"
 #basechance 0.05
 #command "#chaosrec %cost10"
@@ -199,7 +199,7 @@
 #end
 
 #new
-#name "deathrec"
+#id "deathrec"
 #type "deathrec"
 #basechance 0.1
 #command "#deathrec %cost10"
@@ -212,7 +212,7 @@
 #end
 
 #new
-#name "deathrec_high"
+#id "deathrec_high"
 #type "deathrec"
 #basechance 0.1
 #command "#deathrec %cost15"
@@ -225,7 +225,7 @@
 #end
 
 #new
-#name "chaosrec_high"
+#id "chaosrec_high"
 #type "chaosrec"
 #basechance 0.05
 #command "#chaosrec %cost15"
@@ -236,7 +236,7 @@
 #end
 
 #new
-#name "chaospower"
+#id "chaospower"
 #basechance 0.1
 #type scalepower
 #command "#chaospower 1"
@@ -246,7 +246,7 @@
 #end
 
 #new
-#name "orderpower"
+#id "orderpower"
 #basechance 0.1
 #type scalepower
 #command "#chaospower -1"
@@ -259,7 +259,7 @@
 #end
 
 #new
-#name "slothpower"
+#id "slothpower"
 #basechance 0.1
 #type scalepower
 #command "#slothpower 1"
@@ -268,7 +268,7 @@
 #end
 
 #new
-#name "deathpower"
+#id "deathpower"
 #basechance 0.1
 #type scalepower
 #command "#deathpower 1"
@@ -285,7 +285,7 @@
 #end
 
 #new
-#name "growthpower"
+#id "growthpower"
 #basechance 0.1
 #type scalepower
 #command "#deathpower -1"
@@ -303,7 +303,7 @@
 #end
 
 #new
-#name "fireshield2"
+#id "fireshield2"
 #type "fireshield"
 #basechance 0.0
 #command "#fireshield 2"
@@ -315,7 +315,7 @@
 #end
 
 #new
-#name "fireshield4"
+#id "fireshield4"
 #type "fireshield"
 #basechance 0.0
 #command "#fireshield +4"
@@ -327,7 +327,7 @@
 #end
 
 #new
-#name "fireshield6"
+#id "fireshield6"
 #type "fireshield"
 #basechance 0.0
 #command "#fireshield +6"
@@ -343,7 +343,7 @@
 #end
 
 #new
-#name "airshield20"
+#id "airshield20"
 #type "airshield"
 #basechance 0.0
 #command "#airshield +20"
@@ -354,7 +354,7 @@
 #end
 
 #new
-#name "airshield40"
+#id "airshield40"
 #type "airshield"
 #basechance 0.0
 #command "#airshield +40"
@@ -366,7 +366,7 @@
 #end
 
 #new
-#name "airshield60"
+#id "airshield60"
 #type "airshield"
 #basechance 0.0
 #command "#airshield +60"
@@ -378,7 +378,7 @@
 #end
 
 #new
-#name "stealthhigh"
+#id "stealthhigh"
 #type "stealth"
 #basechance 0.25
 #primarycommand "#stealthy"
@@ -392,7 +392,7 @@
 #end
 
 #new
-#name "extrastats"
+#id "extrastats"
 #basechance 0.5
 #command "#str +1"
 #command "#def +1"
@@ -404,7 +404,7 @@
 #end
 
 #new
-#name "strong"
+#id "strong"
 #basechance 0.5
 #command "#str +3"
 #command "#hp +4"
@@ -415,7 +415,7 @@
 #end
 
 #new
-#name "glamour"
+#id "glamour"
 #type "strong defensive"
 #type "stealth"
 #primarycommand "#glamour"
@@ -439,7 +439,7 @@
 #end
 
 #new
-#name "resistances_fire"
+#id "resistances_fire"
 #basechance 0.2
 #chanceinc "magic fire 2"
 #chanceinc "command #fireres 0.8"
@@ -450,7 +450,7 @@
 #end
 
 #new
-#name "resistances_poison"
+#id "resistances_poison"
 #basechance 0.2
 #chanceinc "magic nature 2"
 #chanceinc "command #poisonres 0.8"
@@ -461,7 +461,7 @@
 #end
 
 #new
-#name "resistances_cold"
+#id "resistances_cold"
 #basechance 0.2
 #chanceinc "magic water 2"
 #chanceinc "command #coldres 0.8"
@@ -472,7 +472,7 @@
 #end
 
 #new
-#name "resistances_shock"
+#id "resistances_shock"
 #basechance 0.2
 #chanceinc "magic water 2"
 #chanceinc "command #shockres 0.8"
@@ -484,7 +484,7 @@
 
 #new
 #type "allres"
-#name "resistances_high"
+#id "resistances_high"
 #basechance 0.0
 #chanceinc "magic air 0.5"
 #chanceinc "magic fire 0.5"
@@ -506,7 +506,7 @@
 
 #new
 #type "allres"
-#name "resistances_low"
+#id "resistances_low"
 #basechance 0.0
 #chanceinc "magic air 1"
 #chanceinc "magic fire 1"
@@ -526,7 +526,7 @@
 #end
 
 #new
-#name "recup"
+#id "recup"
 #basechance 0.0
 #primarycommand "#heal"
 #chanceinc "magic nature 1"
@@ -540,7 +540,7 @@
 
 #new
 #type "scalepower"
-#name "coldpower"
+#id "coldpower"
 #basechance 0.0
 #chanceinc "magic water 0.25"
 #chanceinc "command #coldres 0.125"
@@ -555,7 +555,7 @@
 
 #new
 #type "scalepower"
-#name "firepower"
+#id "firepower"
 #basechance 0.0
 #chanceinc "magic fire 0.25"
 #chanceinc "command #fireres 0.125"
@@ -568,7 +568,7 @@
 #end
 
 #new
-#name "stormpower"
+#id "stormpower"
 #type "stormpower"
 #basechance 0.0
 #chanceinc "magic air 1"
@@ -582,7 +582,7 @@
 #end
 
 #new
-#name "stormpower"
+#id "stormpower"
 #type "stormpower"
 #basechance 0.0
 #chanceinc "magic air 1"
@@ -598,7 +598,7 @@
 
 #new
 #type "seasonpower"
-#name "springpower-low"
+#id "springpower-low"
 #basechance 0.5
 #chanceinc "magic water 0.75"
 #chanceinc "magic nature 0.75"
@@ -610,7 +610,7 @@
 
 #new
 #type "seasonpower"
-#name "summerpower-low"
+#id "summerpower-low"
 #basechance 0.5
 #chanceinc "magic fire 0.75"
 #chanceinc "magic nature 0.75"
@@ -623,7 +623,7 @@
 
 #new
 #type "seasonpower"
-#name "fallpower-low"
+#id "fallpower-low"
 #basechance 0.5
 #chanceinc "magic earth 1"
 #chanceinc "magic nature 0.5"
@@ -635,7 +635,7 @@
 
 #new
 #type "seasonpower"
-#name "winterpower-low"
+#id "winterpower-low"
 #basechance 0.0
 #chanceinc "magic water 0.7"
 #chanceinc "magic nature 0.1"
@@ -649,7 +649,7 @@
 
 #new
 #type "seasonpower"
-#name "springpower-high"
+#id "springpower-high"
 #basechance 0.1
 #chanceinc "magic water 0.25"
 #chanceinc "magic nature 0.25"
@@ -661,7 +661,7 @@
 
 #new
 #type "seasonpower"
-#name "summerpower-high"
+#id "summerpower-high"
 #basechance 0.1
 #chanceinc "magic fire 0.25"
 #chanceinc "magic nature 0.25"
@@ -674,7 +674,7 @@
 
 #new
 #type "seasonpower"
-#name "fallpower-high"
+#id "fallpower-high"
 #basechance 0.1
 #chanceinc "magic earth 0.4"
 #chanceinc "magic nature 0.1"
@@ -686,7 +686,7 @@
 
 #new
 #type "seasonpower"
-#name "winterpower-high"
+#id "winterpower-high"
 #basechance 0.0
 #chanceinc "magic water 0.2"
 #chanceinc "magic nature 0.1"
@@ -700,7 +700,7 @@
 
 #new
 #type "seasonpower"
-#name "turningyear-low"
+#id "turningyear-low"
 #basechance 0.1
 #chanceinc "magic air 0.25"
 #chanceinc "magic fire 0.25"
@@ -715,7 +715,7 @@
 
 #new
 #type "seasonpower"
-#name "turningyear-high"
+#id "turningyear-high"
 #basechance 0.05
 #chanceinc "magic air 0.05"
 #chanceinc "magic fire 0.05"
@@ -729,7 +729,7 @@
 #end
 
 #new
-#name "darkpower"
+#id "darkpower"
 #basechance 0.0
 #chanceinc "command #darkvision 0.05"
 #chanceinc "magic death 1"
@@ -742,7 +742,7 @@
 #end
 
 #new
-#name "darkpower2"
+#id "darkpower2"
 #basechance 0.0
 #chanceinc "command #darkvision 4"
 #chanceinc "magic death 0.5"
@@ -756,7 +756,7 @@
 #end
 
 #new
-#name "darkpower-blind"
+#id "darkpower-blind"
 #basechance 0.0
 #chanceinc "personalcommand #blind 5"
 #chanceinc "magic death *2"
@@ -767,7 +767,7 @@
 #end
 
 #new
-#name "darkpower2-blind"
+#id "darkpower2-blind"
 #basechance 0.0
 #chanceinc "personalcommand #blind 3"
 #chanceinc "magic death *2"
@@ -779,7 +779,7 @@
 #end
 
 #new
-#name "dompower"
+#id "dompower"
 #basechance 0.1
 #command "#dompower +1"
 #command "#rpcost +5"
@@ -788,7 +788,7 @@
 
 #new
 #type "strong defensive"
-#name "awe"
+#id "awe"
 #basechance 0.1
 #chanceinc "magic astral 0.1"
 #chanceinc "command #awe +1"
@@ -804,7 +804,7 @@
 #end
 
 #new magefilter
-#name "sun awe"
+#id "sun awe"
 #basechance 0.1
 #chanceinc magic astral OR magic fire 0.1
 #chanceinc magic astral fire 0.1
@@ -821,7 +821,7 @@
 #end
 
 #new
-#name "regen10 size 1-2"
+#id "regen10 size 1-2"
 #basechance 0.2
 #chanceinc "magic nature 0.8"
 #chanceinc "command #regeneration 6"
@@ -836,7 +836,7 @@
 #end
 
 #new
-#name "regen10 size 3-4"
+#id "regen10 size 3-4"
 #basechance 0.2
 #chanceinc "magic nature 0.8"
 #chanceinc "command #regeneration 6"
@@ -853,7 +853,7 @@
 #end
 
 #new
-#name "regen10 size 5-6"
+#id "regen10 size 5-6"
 #basechance 0.2
 #chanceinc "magic nature 0.8"
 #chanceinc "command #regeneration 6"
@@ -869,7 +869,7 @@
 #end
 
 #new
-#name "heat"
+#id "heat"
 #basechance 0.0
 #chanceinc "command #fireres above 0 0.2"
 #chanceinc "personalcommand #fireres 0.2"
@@ -890,7 +890,7 @@
 #end
 
 #new
-#name "cold"
+#id "cold"
 #basechance 0.0
 #chanceinc "command #coldres above 0 2"
 #chanceinc "personalcommand #coldres 0.2"
@@ -912,7 +912,7 @@
 #end
 
 #new
-#name "poisoncloud"
+#id "poisoncloud"
 #basechance 0.0
 #chanceinc "command #poisonres 4"
 #chanceinc "magic nature 1"
@@ -929,7 +929,7 @@
 
 #new
 #type "resist"
-#name "bluntres"
+#id "bluntres"
 #basechance 0.5
 #primarycommand "#bluntres"
 #command "#bluntres"
@@ -940,7 +940,7 @@
 
 #new
 #type "resist"
-#name "pierceres"
+#id "pierceres"
 #basechance 0.5
 #primarycommand "#pierceres"
 #command "#pierceres"
@@ -951,7 +951,7 @@
 
 #new
 #type "resist"
-#name "slashres"
+#id "slashres"
 #basechance 0.5
 #primarycommand "#slashres"
 #command "#slashres"
@@ -962,7 +962,7 @@
 
 #new
 #type "invuln"
-#name "invulnerable (5)"
+#id "invulnerable (5)"
 #basechance 0.5
 #primarycommand "#prot"
 #command "#invulnerable +5"
@@ -973,7 +973,7 @@
 
 #new
 #type "invuln"
-#name "invulnerable (10)"
+#id "invulnerable (10)"
 #basechance 0.25
 #primarycommand "#prot"
 #command "#invulnerable +10"
@@ -983,7 +983,7 @@
 #end
 
 #new
-#name "incunrest_low"
+#id "incunrest_low"
 #basechance 0.25
 #command "#incunrest +1"
 #power -1
@@ -991,14 +991,14 @@
 #end
 
 #new
-#name "incunrest_high"
+#id "incunrest_high"
 #basechance 0.125
 #command "#incunrest +2"
 #power -1
 #end
 
 #new
-#name "magicpower"
+#id "magicpower"
 #basechance 0.5
 #command "#magicpower +1"
 #chanceinc "magic astral 0.3"
@@ -1006,7 +1006,7 @@
 #end
 
 #new
-#name "poisonarmor"
+#id "poisonarmor"
 #basechance 0.0
 #chanceinc "magic nature 3"
 #command "#poisonarmor +5"
@@ -1016,7 +1016,7 @@
 #end
 
 #new
-#name "overcharged2"
+#id "overcharged2"
 #type overcharged
 #basechance 0.0
 #chanceinc "magic air 2"
@@ -1029,7 +1029,7 @@
 #end
 
 #new
-#name "overcharged4"
+#id "overcharged4"
 #type overcharged
 #basechance 0.0
 #chanceinc "magic air 1"
@@ -1042,7 +1042,7 @@
 #end
 
 #new
-#name "castlemaster"
+#id "castlemaster"
 #type "siege"
 #basechance 1
 #command "#siegebonus +3"
@@ -1051,7 +1051,7 @@
 #end
 
 #new
-#name "sieger"
+#id "sieger"
 #type "siege"
 #basechance 1
 #command "#siegebonus +5"
@@ -1059,14 +1059,14 @@
 #end
 
 #new
-#name "patrol"
+#id "patrol"
 #basechance 1
 #command "#patrolbonus +3"
 #filterdesc "patrol desc"
 #end
 
 #new
-#name "pillage"
+#id "pillage"
 #basechance 1
 #command "#pillagebonus +3"
 #filterdesc "pillage desc"
@@ -1074,7 +1074,7 @@
 
 
 #new
-#name "amphibian"
+#id "amphibian"
 #basechance 0
 #command "#amphibian"
 #chanceinc "command #amphibian 10"
@@ -1090,7 +1090,7 @@
 #end
 
 #new
-#name "ethereal"
+#id "ethereal"
 #type "strong defensive"
 #primarycommand "#ethereal"
 #command "#ethereal"
@@ -1109,7 +1109,7 @@
 
 
 #new
-#name "cultist"
+#id "cultist"
 #chance 0.1
 #chanceinc "magic blood astral 1"
 #primarycommand "#horrormark"

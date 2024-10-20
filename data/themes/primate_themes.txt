@@ -1,6 +1,6 @@
 -- Generic theme with high diversity and low cohesion
 #newtheme
-#name default
+#id default
 #type techlevel
 #basechance 4
 #themeinc theme iron *1
@@ -13,7 +13,7 @@
 -- Weights: EA 1, MA 1, LA 0.5
 #newtheme
 #type techlevel
-#name primitive
+#id primitive
 #basechance 1
 #chanceinc era 3 -0.5
 #themeinc theme advanced *0.05
@@ -28,7 +28,7 @@
 -- Weights: EA 2, MA 1, LA 0.25
 #newtheme
 #type techlevel
-#name bronze
+#id bronze
 #basechance 2
 #chanceinc era 2 -1
 #chanceinc era 3 -1.5
@@ -43,7 +43,7 @@
 
 -- Weights: EA 1, MA 2, LA 3
 #newtheme
-#name iron
+#id iron
 #type techlevel
 #basechance 2
 #chanceinc era 1 -1
@@ -60,7 +60,7 @@
 -- Weights: EA 0.25, MA 1, LA 2
 #newtheme
 #type techlevel
-#name advanced
+#id advanced
 #basechance 0.25
 #chanceinc era 3 1.75
 #chanceinc era 2 0.75
@@ -79,7 +79,7 @@
 -- Weights: EA 1.5, MA 1.5, LA 1.5
 #newtheme
 #type demographic
-#name lowland
+#id lowland
 #basechance 2
 #themeinc theme lowland *100000
 #racedefinition "#generationchance mounted 0.125"
@@ -90,7 +90,7 @@
 -- Weights: EA 0.5, MA 0.25, LA 0.125
 #newtheme
 #type demographic
-#name winged
+#id winged
 #basechance 0.25
 #chanceinc era 1 *2
 #chanceinc era 3 *0.5
@@ -103,7 +103,7 @@
 -- Weights: EA 0.125, MA 0.25, LA 0.5
 #newtheme
 #type demographic
-#name abysian
+#id abysian
 #basechance 0.25
 #chanceinc era 3 *2
 #chanceinc era 1 *0.5
@@ -120,7 +120,7 @@
 -- Weights: EA 0.25, MA 0.25, LA 0.25
 #newtheme
 #type demographic
-#name alpine
+#id alpine
 #basechance 0.25
 #themeinc theme alpine *100000
 #racedefinition "#pose yeti"
@@ -140,7 +140,7 @@
 -- Weights: EA 4, MA 4, LA 4
 #newtheme
 #type cultural
-#name enlightened
+#id enlightened
 #theme enlightened
 #basechance 4
 #themeinc theme enlightened *1000
@@ -175,7 +175,7 @@
 -- Weights: EA 2, MA 2, LA 2
 #newtheme
 #type cultural
-#name oriental
+#id oriental
 #theme oriental
 #basechance 2
 #themeinc theme oriental *1000
@@ -212,7 +212,7 @@
 -- Weights: EA 2, MA 2, LA 2
 #newtheme
 #type cultural
-#name occidental
+#id occidental
 #theme occidental
 -- #basechance 2
 #basechance 0
@@ -248,7 +248,7 @@
 -- Weights: EA 2, MA 2, LA 2
 #newtheme
 #type cultural
-#name austral
+#id austral
 #theme austral
 #basechance 2
 #themeinc theme austral *1000
@@ -282,7 +282,7 @@
 -- Weights: EA 0.5, MA 1, LA 1.5
 #newtheme
 #type cultural
-#name imperial
+#id imperial
 #theme imperial
 #basechance 1
 #chanceinc era 1 -0.5
@@ -319,7 +319,7 @@
 -- Weights: EA 0.5, MA 1, LA 1.5
 #newtheme
 #type cultural
-#name imperial
+#id imperial
 #theme imperial
 #basechance 1
 #chanceinc era 1 -0.5

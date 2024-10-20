@@ -1,7 +1,7 @@
 --- Nekkid
 
 #newitem
-#name "nekkid"
+#id "nekkid"
 #gameid -1
 #armor
 #needs legs "nekkid leg"
@@ -11,7 +11,7 @@
 --- Leather
 
 #newitem
-#name "leather cuirass"
+#id "leather cuirass"
 #gameid 5
 #sprite /graphics/zotz/armor/leathercuirass_2h.png
 #recolormask /graphics/zotz/armor/armor_recolormask.png
@@ -21,7 +21,7 @@
 
 
 #newitem
-#name "leather hauberk"
+#id "leather hauberk"
 #gameid 10
 #sprite /graphics/zotz/armor/leatherhauberk_2h.png
 #recolormask /graphics/zotz/armor/armor_recolormask.png
@@ -33,7 +33,7 @@
 
 #newitem -- full leather
 #basechance 0.125
-#name "full leather"
+#id "full leather"
 #gameid 15
 #sprite /graphics/zotz/armor/fullleather_2h.png
 #recolormask /graphics/zotz/armor/armor_recolormask.png
@@ -44,7 +44,7 @@
 
 #newitem -- reinforced full leather (Mictlan armor)
 #basechance 0.1
-#name "reinforced leather"
+#id "reinforced leather"
 #gameid zotz_mictlanarmor
 #sprite /graphics/zotz/armor/mictlanarmor_2h.png
 #recolormask /graphics/zotz/armor/mictlanarmor_2h_recolormask.png
@@ -57,7 +57,7 @@
 
 #newitem
 #basechance 0.5
-#name "scale cuirass"
+#id "scale cuirass"
 #gameid 7
 #sprite /graphics/zotz/armor/scalecuirass.png
 #recolormask /graphics/zotz/armor/armor_recolormask.png
@@ -67,7 +67,7 @@
 
 #newitem
 #basechance 0.5
-#name "scale cuirass with clothes"
+#id "scale cuirass with clothes"
 #gameid 7
 #sprite /graphics/zotz/armor/scalecuirass2_2h.png
 #recolormask /graphics/zotz/armor/scalecuirass2_recolormask.png
@@ -78,7 +78,7 @@
 
 #newitem
 #basechance 0.125
-#name "scale hauberk"
+#id "scale hauberk"
 #gameid 12
 #sprite /graphics/zotz/armor/scalehauberk_2h.png
 #recolormask /graphics/zotz/armor/armor_recolormask.png
@@ -88,7 +88,7 @@
 
 #newitem
 #basechance 0.125
-#name "scale hauberk with clothes"
+#id "scale hauberk with clothes"
 #gameid 12
 #sprite /graphics/zotz/armor/scalehauberk2_2h.png
 #recolormask /graphics/zotz/armor/scalehauberk2_2h_recolormask.png
@@ -100,7 +100,7 @@
 
 #newitem -- full scale
 #basechance 0.030625
-#name "full scale"
+#id "full scale"
 #gameid 17
 #sprite /graphics/zotz/armor/fullscale_2h.png
 #recolormask /graphics/zotz/armor/armor_recolormask.png
@@ -110,7 +110,7 @@
 
 #newitem -- full scale
 #basechance 0.030625
-#name "full scale with clothes"
+#id "full scale with clothes"
 #gameid 17
 #sprite /graphics/zotz/armor/fullscale2_2h.png
 #recolormask /graphics/zotz/armor/fullscale2_2h_recolormask.png
@@ -122,7 +122,7 @@
 
 #newitem
 #basechance 0.030625
-#name "golden cuirass"
+#id "golden cuirass"
 #gameid zotz_goldcuirass
 #sprite /graphics/zotz/armor/suncuirass_2h.png
 #chanceinc "magic fire *2"
@@ -133,7 +133,7 @@
 
 #newitem
 #basechance 0.0153125
-#name "golden armor"
+#id "golden armor"
 #gameid zotz_goldarmor
 #sprite /graphics/zotz/armor/sunarmor_2h.png
 #chanceinc "magic fire *2"
@@ -144,7 +144,7 @@
 
 #newitem
 #basechance 0.030625
-#name "obsidian cuirass"
+#id "obsidian cuirass"
 #gameid 206
 #sprite /graphics/zotz/armor/obsidiancuirass_2h.png
 #chanceinc "magic death *2"
@@ -155,7 +155,7 @@
 
 #newitem
 #basechance 0.0153125
-#name "obsidian armor"
+#id "obsidian armor"
 #gameid zotz_obsarmor
 #sprite /graphics/zotz/armor/obsidianarmor_2h.png
 #chanceinc "magic death *2"

@@ -1,5 +1,5 @@
 #newitem
-#name "humanoid_heavy"
+#id "humanoid_heavy"
 #sprite /graphics/foulspawn/small/rarm/goblinoid.png
 #command "#gcost +1"
 #command "#rpcost +1000"
@@ -13,7 +13,7 @@
 #enditem
 
 #newitem
-#name "humanoid_agile"
+#id "humanoid_agile"
 #sprite /graphics/foulspawn/small/rarm/goblinoid.png
 -- #command "#gcost +0"
 -- #command "#hp +0"
@@ -26,7 +26,7 @@
 #enditem
 
 #newitem
-#name "tentacloid_heavy"
+#id "tentacloid_heavy"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/tentacle_green.png
 #command "#gcost +1"
@@ -39,7 +39,7 @@
 #enditem
 
 #newitem
-#name "tentacloid_agile"
+#id "tentacloid_agile"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/tentacle_green.png
 -- #command "#gcost +0"
@@ -51,7 +51,7 @@
 #enditem
 
 #newitem
-#name "crab"
+#id "crab"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/pincer.png
 #command "#gcost +1"
@@ -68,7 +68,7 @@
 -- Arms for ranged units (these will generate a right hand, which otherwise should never appear)
 
 #newitem
-#name "humanoid_missile"
+#id "humanoid_missile"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/goblinoid.png
 -- #command "#gcost +0"
@@ -82,7 +82,7 @@
 #enditem
 
 #newitem
-#name "tentacloid_missile"
+#id "tentacloid_missile"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/tentacle_green_missile.png
 -- #command "#gcost +0"

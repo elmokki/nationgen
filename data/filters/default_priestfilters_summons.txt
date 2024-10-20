@@ -1,7 +1,7 @@
 -- Passive dominion summons
 
 #new magefilter
-#name "rabblerouser"
+#id "rabblerouser"
 #type "summoning"
 #basechance 0
 #chanceinc "personalcommand #goodleader 0.1"
@@ -16,7 +16,7 @@
 #end
 
 #new magefilter
-#name "cult leader"
+#id "cult leader"
 #type "summoning"
 #basechance 0
 #chanceinc "personalcommand #goodleader 0.1"
@@ -31,7 +31,7 @@
 #end
 
 #new magefilter
-#name "spirit caller"
+#id "spirit caller"
 #type "summoning"
 #basechance 0
 #chanceinc "personalcommand #okundeadleader 0.05"
@@ -51,7 +51,7 @@
 -- Active summon allies summons
 
 #new magefilter
-#name "zealotmaker-2"
+#id "zealotmaker-2"
 #type "summoning"
 #basechance 0.05
 #chanceinc "racetag not #human OR racetag #dynastic OR racetag #austral *0"
@@ -62,7 +62,7 @@
 #end
 
 #new magefilter
-#name "zealotmaker-4"
+#id "zealotmaker-4"
 #type "summoning"
 #basechance 0.05
 #chanceinc "racetag not #human OR racetag #dynastic OR racetag #austral *0"
@@ -77,7 +77,7 @@
 -- Temple trainers
 
 #new magefilter
-#name "serpent trainer"
+#id "serpent trainer"
 #type "summoning"
 #basechance 0.05
 #chanceinc "racetheme totemanimal OR unittheme totemanimal AND racetheme NOT snaketotem AND unittheme NOT snaketotem *0"
@@ -93,7 +93,7 @@
 #end
 
 #new magefilter
-#name "hydra trainer"
+#id "hydra trainer"
 #type "summoning"
 #basechance 0.05
 #chanceinc "racetheme totemanimal OR unittheme totemanimal AND racetheme NOT snaketotem AND unittheme NOT snaketotem *0"
@@ -107,7 +107,7 @@
 #end
 
 #new magefilter
-#name "jaguar trainer"
+#id "jaguar trainer"
 #type "summoning"
 #basechance 0.05
 #chanceinc "nationtag occidental 0.95"
@@ -124,7 +124,7 @@
 #end
 
 #new magefilter
-#name "toad trainer"
+#id "toad trainer"
 #type "summoning"
 #basechance 0.05
 #chanceinc "nationtag occidental 0.95"
@@ -142,7 +142,7 @@
 #end
 
 #new magefilter
-#name "wolf trainer"
+#id "wolf trainer"
 #type "summoning"
 #basechance 0.05
 #chanceinc "nationtag boreal OR nationtag nordic 0.45"
@@ -159,7 +159,7 @@
 #end
 
 #new magefilter
-#name "bear trainer"
+#id "bear trainer"
 #type "summoning"
 #basechance 0.05
 #chanceinc "nationtag boreal OR nationtag nordic 0.45"
@@ -175,7 +175,7 @@
 #end
 
 #new magefilter
-#name "boar trainer"
+#id "boar trainer"
 #type "summoning"
 #basechance 0.05
 #chanceinc "nationtag boreal 0.95"
@@ -192,7 +192,7 @@
 #end
 
 #new magefilter
-#name "scorpion trainer"
+#id "scorpion trainer"
 #type "summoning"
 #basechance 0.05
 #chanceinc "nationtag occidental 0.45"
@@ -211,7 +211,7 @@
 
 
 #new magefilter
-#name "condor trainer"
+#id "condor trainer"
 #type "summoning"
 #basechance 0.05
 #chanceinc "nationtag occidental 0.95"
@@ -228,7 +228,7 @@
 #end
 
 #new magefilter
-#name "gloso trainer"
+#id "gloso trainer"
 #type "summoning"
 #basechance 0.05
 #chanceinc "nationtag nordic 0.45"
@@ -247,7 +247,7 @@
 #end
 
 #new magefilter
-#name "celestial houndmaster"
+#id "celestial houndmaster"
 #type "summoning"
 #basechance 0.05
 #chanceinc "nationtag oriental 0.25"
@@ -263,7 +263,7 @@
 #end
 
 #new magefilter
-#name "iron pig trainer"
+#id "iron pig trainer"
 #type "summoning"
 #basechance 0
 #chanceinc "primaryrace hoburg 0.25"
@@ -281,7 +281,7 @@
 #end
 
 #new magefilter
-#name "seelie dog trainer"
+#id "seelie dog trainer"
 #type "summoning"
 #basechance 0
 #chanceinc "nationtag boreal 0.05"
@@ -300,7 +300,7 @@
 #end
 
 #new magefilter
-#name "unseelie dog trainer"
+#id "unseelie dog trainer"
 #type "summoning"
 #basechance 0
 #chanceinc "nationtag boreal 0.05"
@@ -318,7 +318,7 @@
 #end
 
 #new magefilter
-#name "teacher of Truths"
+#id "teacher of Truths"
 #type "summoning"
 #basechance 0
 #chanceinc "primaryrace Primate AND hasthemetheme lowland AND hasthemetheme enlightened 0.25"
@@ -332,7 +332,7 @@
 #end
 
 #new magefilter
-#name "Rakshasa summoner"
+#id "Rakshasa summoner"
 #type "summoning"
 #basechance 0
 #chanceinc "hasthemetheme enlightened 0.125"
@@ -348,7 +348,7 @@
 #end
 
 #new magefilter
-#name "vestalis maxima"
+#id "vestalis maxima"
 #type "summoning"
 #basechance 0
 #chanceinc "racetag #imperial AND racetag #human 0.25"
@@ -363,7 +363,7 @@
 #end
 
 #new magefilter
-#name "Supaya caller"
+#id "Supaya caller"
 #type "summoning"
 #basechance 0
 #chanceinc "primaryrace caelian AND anymagic death 0.25"
@@ -378,7 +378,7 @@
 #end
 
 #new magefilter
-#name "Smoulderghost caller"
+#id "Smoulderghost caller"
 #type "summoning"
 #basechance 0
 #chanceinc "nationtag abysian OR hasthemetheme abysian 0.1"
@@ -395,7 +395,7 @@
 #end
 
 #new magefilter
-#name "statue sculptor"
+#id "statue sculptor"
 #type "summoning"
 #basechance 0
 #chanceinc "primaryrace 'Feudal human' OR primaryrace 'Advanced human' OR primaryrace 'Oriental human' AND magic earth 0.25"
@@ -414,7 +414,7 @@
 #end
 
 #new magefilter
-#name "large statue sculptor"
+#id "large statue sculptor"
 #type "summoning"
 #basechance 0
 #chanceinc "primaryrace 'Imperial human' OR primaryrace 'Austral human' OR primaryrace 'Amazon human' AND magic earth 0.25"
@@ -433,7 +433,7 @@
 #end
 
 #new magefilter
-#name "Sentinel sculptor"
+#id "Sentinel sculptor"
 #type "summoning"
 #basechance 0
 #chanceinc "primaryrace Agarthan AND magic earth AND hasthemetheme not nadir 0.25"

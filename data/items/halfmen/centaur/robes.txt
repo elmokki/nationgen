@@ -1,7 +1,7 @@
 --- No armor
 
 #new
-#name "nekkid"
+#id "nekkid"
 #basechance 18
 #gameid -1
 #armor
@@ -14,7 +14,7 @@
 -- Greyscale cloaks
 
 #newitem
-#name "shortcloak_white"
+#id "shortcloak_white"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/lightcloak_f.png
 #armor
@@ -27,7 +27,7 @@
 #enditem
 
 #newitem
-#name "shortcloak_grey"
+#id "shortcloak_grey"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/mediumcloak_f.png
 #armor
@@ -40,7 +40,7 @@
 #enditem
 
 #newitem
-#name "shortcloak_black"
+#id "shortcloak_black"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/darkcloak_f.png
 #recolormask self
@@ -54,7 +54,7 @@
 #enditem
 
 #newitem
-#name "longcloak_white"
+#id "longcloak_white"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/lightcloak_full_plain_f.png
 #armor
@@ -67,7 +67,7 @@
 #enditem
 
 #newitem
-#name "longcloak_grey"
+#id "longcloak_grey"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/mediumcloak_full_plain_f.png
 #armor
@@ -80,7 +80,7 @@
 #enditem
 
 #newitem
-#name "longcloak_black"
+#id "longcloak_black"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/darkcloak_full_plain_f.png
 #armor
@@ -93,7 +93,7 @@
 #enditem
 
 #newitem
-#name "longcloak_white_fancy"
+#id "longcloak_white_fancy"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/lightcloak_full_plain_f.png
 #recolormask /graphics/halfmen/centaur/cloak/trim_full_f_recolormask.png
@@ -107,7 +107,7 @@
 #enditem
 
 #newitem
-#name "longcloak_grey_fancy"
+#id "longcloak_grey_fancy"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/mediumcloak_full_plain_f.png
 #recolormask /graphics/halfmen/centaur/cloak/trim_full_f_recolormask.png
@@ -121,7 +121,7 @@
 #enditem
 
 #newitem
-#name "longcloak_black_fancy"
+#id "longcloak_black_fancy"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/darkcloak_full_plain_f.png
 #recolormask /graphics/halfmen/centaur/cloak/trim_full_f_recolormask.png
@@ -138,7 +138,7 @@
 -- Colored cloaks
 
 #newitem
-#name "shortcloak_light"
+#id "shortcloak_light"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/lightcloak_f.png
 #recolormask self
@@ -151,7 +151,7 @@
 #enditem
 
 #newitem
-#name "shortcloak_medium"
+#id "shortcloak_medium"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/mediumcloak_f.png
 #recolormask self
@@ -164,7 +164,7 @@
 #enditem
 
 #newitem
-#name "shortcloak_dark"
+#id "shortcloak_dark"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/darkcloak_f.png
 #recolormask self
@@ -177,7 +177,7 @@
 #enditem
 
 #newitem
-#name "longcloak_light"
+#id "longcloak_light"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/lightcloak_full_plain_f.png
 #recolormask self
@@ -190,7 +190,7 @@
 #enditem
 
 #newitem
-#name "longcloak_medium"
+#id "longcloak_medium"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/mediumcloak_full_plain_f.png
 #recolormask self
@@ -203,7 +203,7 @@
 #enditem
 
 #newitem
-#name "longcloak_dark"
+#id "longcloak_dark"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/darkcloak_full_plain_f.png
 #recolormask self
@@ -216,7 +216,7 @@
 #enditem
 
 #newitem
-#name "fancycloak_light"
+#id "fancycloak_light"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/lightcloak_full_fancy_f.png
 #recolormask self
@@ -230,7 +230,7 @@
 #enditem
 
 #newitem
-#name "fancycloak_medium"
+#id "fancycloak_medium"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/mediumcloak_full_fancy_f.png
 #recolormask self
@@ -244,7 +244,7 @@
 #enditem
 
 #newitem
-#name "fancycloak_dark"
+#id "fancycloak_dark"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/darkcloak_full_fancy_f.png
 #recolormask self
@@ -258,7 +258,7 @@
 #enditem
 
 #newitem
-#name "silvercloak_light"
+#id "silvercloak_light"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/cloak_full_silver_f.png
 #recolormask /graphics/halfmen/centaur/cloak/lightcloak_full_ornate_f_recolormask.png
@@ -271,7 +271,7 @@
 #enditem
 
 #newitem
-#name "silvercloak_medium"
+#id "silvercloak_medium"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/cloak_full_silver_f.png
 #recolormask /graphics/halfmen/centaur/cloak/mediumcloak_full_ornate_f_recolormask.png
@@ -284,7 +284,7 @@
 #enditem
 
 #newitem
-#name "silvercloak_dark"
+#id "silvercloak_dark"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/cloak_full_silver_f.png
 #recolormask /graphics/halfmen/centaur/cloak/darkcloak_full_ornate_f_recolormask.png
@@ -297,7 +297,7 @@
 #enditem
 
 #newitem
-#name "goldcloak_light"
+#id "goldcloak_light"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/cloak_full_gold_f.png
 #recolormask /graphics/halfmen/centaur/cloak/lightcloak_full_ornate_f_recolormask.png
@@ -310,7 +310,7 @@
 #enditem
 
 #newitem
-#name "goldcloak_medium"
+#id "goldcloak_medium"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/cloak_full_gold_f.png
 #recolormask /graphics/halfmen/centaur/cloak/mediumcloak_full_ornate_f_recolormask.png
@@ -323,7 +323,7 @@
 #enditem
 
 #newitem
-#name "goldcloak_dark"
+#id "goldcloak_dark"
 #gameid -1
 #sprite /graphics/halfmen/centaur/cloak/cloak_full_gold_f.png
 #recolormask /graphics/halfmen/centaur/cloak/darkcloak_full_ornate_f_recolormask.png

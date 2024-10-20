@@ -14,7 +14,7 @@
 
 --- 50: Weak poison
 #new magicweapon
-#name "weakpoison"
+#id "weakpoison"
 #unitname "prefix poisoned"
 #basechance 0.25
 #chanceinc "magic death 0.5"
@@ -26,7 +26,7 @@
 
 -- 51: Strong poison
 #new magicweapon
-#name "strongpoison"
+#id "strongpoison"
 #unitname "prefix poisoned"
 #basechance 0
 #chanceinc "magic death 0.25"
@@ -40,7 +40,7 @@
 
 -- 515: corrosion
 #new magicweapon
-#name "corrosion"
+#id "corrosion"
 #unitname "prefix corroding"
 #unitname "suffix 'of corrosion'"
 #basechance 0.1
@@ -57,7 +57,7 @@
 
 -- 53: Debilitative Poison
 #new magicweapon
-#name "debipoison"
+#id "debipoison"
 #unitname "prefix poisoned"
 #unitname "prefix debilitative"
 #basechance 0
@@ -75,7 +75,7 @@
 
 -- 54: Paralyzing poison
 #new magicweapon
-#name "parapoison"
+#id "parapoison"
 #unitname "prefix poisoned"
 #unitname "prefix paralyzing"
 #unitname "suffix 'of stiffness'"
@@ -96,7 +96,7 @@
 
 -- 64: decay
 #new magicweapon
-#name "decay"
+#id "decay"
 #unitname "prefix decaying"
 #unitname "prefix bane"
 #unitname "suffix 'of decay'"
@@ -121,7 +121,7 @@
 
 -- 118: curse
 #new magicweapon
-#name "curse"
+#id "curse"
 #unitname "prefix cursed"
 #unitname "prefix cursing"
 #unitname "suffix 'of curses'"
@@ -145,7 +145,7 @@
 
 -- 160: Cold
 #new magicweapon
-#name "cold"
+#id "cold"
 #unitname "prefix freezing"
 #unitname "prefix icy"
 #unitname "suffix 'of frost'"
@@ -163,7 +163,7 @@
 
 -- 216: Fire
 #new magicweapon
-#name "fire"
+#id "fire"
 #unitname "prefix fiery"
 #unitname "prefix smoldering"
 #unitname "suffix 'of flame'"
@@ -188,7 +188,7 @@
 
 -- 285: Additional weakness
 #new magicweapon
-#name "weakness"
+#id "weakness"
 #unitname "prefix weakening"
 #unitname "prefix lifestealing"
 #unitname "suffix 'of weakness'"
@@ -207,7 +207,7 @@
 
 -- 261: Web
 #new magicweapon
-#name "web"
+#id "web"
 #unitname "prefix webbed"
 #unitname "prefix entangling"
 #unitname "prefix spidery"
@@ -221,7 +221,7 @@
 
 -- 302 fire bonds
 #new magicweapon
-#name "firebonds"
+#id "firebonds"
 #unitname "prefix imprisoning"
 #unitname "prefix burning"
 #basechance 0
@@ -234,7 +234,7 @@
 
 -- 421 limp
 #new magicweapon
-#name "limp"
+#id "limp"
 #unitname "prefix severing"
 #unitname "prefix slaughtering"
 #basechance 0.15
@@ -248,7 +248,7 @@
 
 -- 432: small area decay
 #new magicweapon
-#name "aoedecay"
+#id "aoedecay"
 #unitname "prefix decaying"
 #unitname "prefix bane"
 #unitname "suffix 'of greater decay'"
@@ -267,7 +267,7 @@
 
 -- 440 lesser fear
 #new magicweapon
-#name "lesserfear"
+#id "lesserfear"
 #unitname "prefix howling"
 #unitname "prefix frightening"
 #unitname "prefix horrible"
@@ -288,7 +288,7 @@
 
 -- 460 stop the dead
 #new magicweapon
-#name "stopthedead"
+#id "stopthedead"
 #unitname "prefix holy"
 #unitname "prefix blessed"
 #basechance 0.75
@@ -299,7 +299,7 @@
 
 -- 468 halt demon
 #new magicweapon
-#name "haltdemon"
+#id "haltdemon"
 #unitname "prefix divine"
 #unitname "prefix sacred"
 #basechance 0.75
@@ -310,7 +310,7 @@
 
 -- 509 halt sacred
 #new magicweapon
-#name "haltsacred"
+#id "haltsacred"
 #unitname "prefix unholy"
 #unitname "prefix profane"
 #unitname "prefix depraved"
@@ -328,7 +328,7 @@
 
 -- 509 bane of heresy
 #new magicweapon
-#name "baneofheresy"
+#id "baneofheresy"
 #unitname "prefix black"
 #unitname "prefix cursed"
 #unitname "prefix dark"
@@ -344,7 +344,7 @@
 
 -- 544 shrink
 #new magicweapon
-#name "shrink"
+#id "shrink"
 #unitname "prefix diminishing"
 #unitname "suffix of diminuation"
 #unitname "prefix reducing"
@@ -364,7 +364,7 @@
 
 -- 686: Ice Mist
 #new magicweapon
-#name "icemist"
+#id "icemist"
 #unitname "prefix chilling"
 #unitname "prefix numbing"
 #unitname "suffix 'of chilling'"
@@ -381,7 +381,7 @@
 
 -- 690 draw blood
 #new magicweapon
-#name "drawblood"
+#id "drawblood"
 #unitname "prefix thirsty"
 #unitname "prefix insatiable"
 #unitname "prefix ravenous"
@@ -400,7 +400,7 @@
 
 -- armor piercing
 #new magicweapon
-#name "ap"
+#id "ap"
 #unitname "prefix planeshifting"
 #unitname "prefix sharp"
 #unitname "prefix piercing"
@@ -416,7 +416,7 @@
 
 -- antidemon
 #new magicweapon
-#name "antidemon"
+#id "antidemon"
 #unitname "prefix sacred"
 #unitname "prefix divine"
 #unitname "prefix smiting"
@@ -428,7 +428,7 @@
 
 -- holy
 #new magicweapon
-#name "holy"
+#id "holy"
 #unitname "prefix sacred"
 #unitname "prefix divine"
 #unitname "prefix just"
@@ -441,7 +441,7 @@
 
 -- antimagic
 #new magicweapon
-#name "antimagic"
+#id "antimagic"
 #unitname "prefix antimagical"
 #unitname "prefix banishing"
 #unitname "prefix moon"
@@ -454,7 +454,7 @@
 
 -- raising
 #new magicweapon
-#name "raising"
+#id "raising"
 #unitname "prefix life-giving"
 #unitname "suffix 'of reanimation'"
 #unitname "prefix reanimating"
@@ -476,7 +476,7 @@
 
 -- shieldbonus
 #new magicweapon
-#name "flail"
+#id "flail"
 #unitname "prefix seeking"
 #unitname "prefix dancing"
 #basechance 0.15
@@ -488,7 +488,7 @@
 
 --- acid
 #new magicweapon
-#name "acid"
+#id "acid"
 #unitname "prefix Acidic"
 #unitname "suffix of Acid"
 #unitname "prefix Sulphuric"

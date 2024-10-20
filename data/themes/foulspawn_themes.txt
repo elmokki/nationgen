@@ -1,7 +1,7 @@
 -- Generic theme with high diversity and low cohesion
 #newtheme
 #type techlevel
-#name default
+#id default
 #basechance 4
 #themeinc theme iron *1
 #themeinc theme bronze *0.125
@@ -10,7 +10,7 @@
 -- Weights: EA 1, MA 1, LA 0.5
 #newtheme
 #type techlevel
-#name primitive
+#id primitive
 #basechance 1
 #chanceinc era 3 -0.5
 #themeinc theme advanced *0.05
@@ -25,7 +25,7 @@
 -- Weights: EA 2, MA 1, LA 0.25
 #newtheme
 #type techlevel
-#name bronze
+#id bronze
 #basechance 2
 #chanceinc era 2 -1
 #chanceinc era 3 -1.5
@@ -41,7 +41,7 @@
 -- Weights: EA 0.25, MA 1, LA 2
 #newtheme
 #type techlevel
-#name advanced
+#id advanced
 #basechance 0.25
 #chanceinc era 3 1.75
 #chanceinc era 2 0.75
@@ -59,7 +59,7 @@
 
 #newtheme
 #type language
-#name boreal_language
+#id boreal_language
 #racedefinition "#longsyllables /data/names/nations/human/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/human/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/human/suffixes.txt"
@@ -69,7 +69,7 @@
 
 #newtheme
 #type language
-#name austral_language
+#id austral_language
 #racedefinition "#longsyllables /data/names/nations/machakan/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/machakan/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/machakan/suffixes.txt"
@@ -79,7 +79,7 @@
 
 #newtheme
 #type language
-#name occidental_language
+#id occidental_language
 #racedefinition "#longsyllables /data/names/nations/nahuatl/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/nahuatl/suffixes.txt"
@@ -89,7 +89,7 @@
 
 #newtheme
 #type language
-#name oriental_language
+#id oriental_language
 #racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/oriental/suffixes.txt"
@@ -99,7 +99,7 @@
 
 #newtheme
 #type language
-#name central_language
+#id central_language
 #racedefinition "#longsyllables /data/names/nations/amazon/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/amazon/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/amazon/suffixes.txt"
@@ -109,7 +109,7 @@
 
 #newtheme
 #type language
-#name imperial_language
+#id imperial_language
 #racedefinition "#longsyllables /data/names/nations/romance/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/romance/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/romance/suffixes.txt"
@@ -119,7 +119,7 @@
 
 #newtheme
 #type language
-#name hoburg_language
+#id hoburg_language
 #racedefinition "#longsyllables /data/names/nations/hoburg/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/hoburg/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/hoburg/suffixes.txt"
@@ -128,7 +128,7 @@
 
 #newtheme
 #type language
-#name abysian_language
+#id abysian_language
 #racedefinition "#longsyllables /data/names/nations/abysian/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/abysian/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/abysian/suffixes.txt"
@@ -137,7 +137,7 @@
 
 #newtheme
 #type language
-#name lizard_language
+#id lizard_language
 #racedefinition "#longsyllables /data/names/nations/lizard/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/lizard/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/lizard/suffixes.txt"
@@ -147,7 +147,7 @@
 
 #newtheme
 #type language
-#name celtic_language
+#id celtic_language
 #racedefinition "#longsyllables /data/names/nations/fomorian/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/fomorian/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/fomorian/suffixes.txt"
@@ -157,7 +157,7 @@
 
 #newtheme
 #type language
-#name avvite_language
+#id avvite_language
 #racedefinition "#longsyllables /data/names/nations/avvite/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/avvite/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/avvite/suffixes.txt"
@@ -167,7 +167,7 @@
 
 #newtheme
 #type language
-#name agarthan_language
+#id agarthan_language
 #racedefinition "#longsyllables /data/names/nations/agarthan/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/agarthan/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/agarthan/suffixes.txt"
@@ -177,7 +177,7 @@
 
 #newtheme
 #type language
-#name caelian_language
+#id caelian_language
 #racedefinition "#longsyllables /data/names/nations/caelian/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/caelian/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/caelian/suffixes.txt"
@@ -187,7 +187,7 @@
 
 #newtheme
 #type language
-#name nordic_language
+#id nordic_language
 #racedefinition "#longsyllables /data/names/nations/nordic/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/nordic/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/nordic/suffixes.txt"
@@ -196,7 +196,7 @@
 
 #newtheme
 #type language
-#name enlightened_language
+#id enlightened_language
 #racedefinition "#longsyllables /data/names/nations/monkey/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/monkey/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/monkey/suffixes.txt"
@@ -206,7 +206,7 @@
 
 #newtheme
 #type language
-#name sunken_language
+#id sunken_language
 #racedefinition "#longsyllables /data/names/nations/atlantian/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/atlantian/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/atlantian/suffixes.txt"
@@ -215,7 +215,7 @@
 
 #newtheme
 #type language
-#name dreaming_language
+#id dreaming_language
 #racedefinition "#longsyllables /data/names/nations/sidereal/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/sidereal/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/sidereal/suffixes.txt"
@@ -226,7 +226,7 @@
 -- Weights: EA 0.5, MA 0.5, LA 0.5
 #newtheme
 #type social
-#name slaver
+#id slaver
 #basechance 0.05
 #themeinc theme advanced *1
 #themeinc theme iron *1

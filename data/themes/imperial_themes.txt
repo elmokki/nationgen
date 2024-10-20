@@ -1,12 +1,12 @@
 #newtheme
-#name default
+#id default
 #basechance 4
 #endtheme
 
 -- Weights: EA 1, MA 1, LA 0.5
 #newtheme
 #type techlevel
-#name primitive
+#id primitive
 #basechance 1
 #chanceinc era 3 -0.5
 #themeinc theme advanced *0.05
@@ -23,7 +23,7 @@
 -- Weights: EA 2, MA 1, LA 0.25
 #newtheme
 #type techlevel
-#name bronze
+#id bronze
 #basechance 2
 #chanceinc era 2 -1
 #chanceinc era 3 -1.5
@@ -41,7 +41,7 @@
 -- Weights: EA 1, MA 2, LA 1
 #newtheme
 #type techlevel
-#name iron
+#id iron
 #basechance 1
 #chanceinc era 2 *2
 #themeinc theme advanced *0.5
@@ -58,7 +58,7 @@
 -- Weights: EA 0.25, MA 1, LA 2
 #newtheme
 #type techlevel
-#name advanced
+#id advanced
 #basechance 0.25
 #chanceinc era 3 1.75
 #chanceinc era 2 0.75
@@ -76,21 +76,21 @@
 -- Aesthetic themes (mandatory)
 #newtheme
 #type aesthetic
-#name aesthetic_1
+#id aesthetic_1
 #basechance 1
 #themeinc theme aesthetic_1 *1000
 #endtheme
 
 #newtheme
 #type aesthetic
-#name aesthetic_2
+#id aesthetic_2
 #basechance 1
 #themeinc theme aesthetic_2 *1000
 #endtheme
 
 #newtheme
 #type aesthetic
-#name aesthetic_3
+#id aesthetic_3
 #basechance 1
 #themeinc theme aesthetic_3 *1000
 #endtheme
@@ -99,21 +99,21 @@
 -- Missile preference (mandatory)
 #newtheme
 #type missile_preference
-#name missilepreference_javelin
+#id missilepreference_javelin
 #basechance 2
 #themeinc theme missilepreference_javelin *1000
 #endtheme
 
 #newtheme
 #type missile_preference
-#name missilepreference_axe
+#id missilepreference_axe
 #basechance 1
 #themeinc theme missilepreference_axe *1000
 #endtheme
 
 #newtheme
 #type missile_preference
-#name missilepreference_chakram
+#id missilepreference_chakram
 #basechance 1
 #themeinc theme missilepreference_chakram *1000
 #theme iron
@@ -121,7 +121,7 @@
 
 #newtheme
 #type missile_preference
-#name missilepreference_discus
+#id missilepreference_discus
 #basechance 1
 #themeinc theme missilepreference_discus *1000
 #theme bronze
@@ -129,7 +129,7 @@
 
 #newtheme
 #type missile_preference
-#name missilepreference_rock
+#id missilepreference_rock
 #basechance 1
 #themeinc theme missilepreference_rock *1000
 #theme stone
@@ -137,14 +137,14 @@
 
 #newtheme
 #type missile_preference
-#name missilepreference_harpoon
+#id missilepreference_harpoon
 #basechance 1
 #themeinc theme missilepreference_harpoon *1000
 #endtheme
 
 #newtheme
 #type missile_preference
-#name missilepreference_net
+#id missilepreference_net
 #basechance 1
 #themeinc theme missilepreference_net *1000
 #endtheme
@@ -153,7 +153,7 @@
 -- Weights: EA 0.5, MA 0.5, LA 0.5
 #newtheme
 #type social
-#name slaver
+#id slaver
 #basechance 0.05
 #themeinc theme slave *20
 #themeinc theme free *0.5

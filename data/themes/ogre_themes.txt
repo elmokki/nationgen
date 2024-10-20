@@ -1,7 +1,7 @@
 -- Generic theme with high diversity and low cohesion
 #newtheme
 #type techlevel
-#name default
+#id default
 #basechance 4
 #themeinc theme iron *1
 #themeinc theme bronze *0.125
@@ -10,7 +10,7 @@
 -- Weights: EA 1, MA 1, LA 0.5
 #newtheme
 #type techlevel
-#name primitive
+#id primitive
 #basechance 1
 #chanceinc era 3 -0.5
 #themeinc theme advanced *0.05
@@ -25,7 +25,7 @@
 -- Weights: EA 2, MA 1, LA 0.25
 #newtheme
 #type techlevel
-#name bronze
+#id bronze
 #basechance 2
 #chanceinc era 2 -1
 #chanceinc era 3 -1.5
@@ -41,7 +41,7 @@
 -- Weights: EA 0.25, MA 1, LA 2
 #newtheme
 #type techlevel
-#name advanced
+#id advanced
 #basechance 0.25
 #chanceinc era 3 1.75
 #chanceinc era 2 0.75
@@ -60,7 +60,7 @@
 -- Standard "northern European" ogres
 #newtheme
 #type demographic
-#name ogre
+#id ogre
 #theme boreal
 #basechance 2
 #chanceinc primaryrace 'Feudal human' *5
@@ -87,7 +87,7 @@
 -- O-Bakemono 
 #newtheme
 #type demographic
-#name bakemono
+#id bakemono
 #theme oriental
 #basechance 1
 #chanceinc primaryrace 'Oriental human' *10
@@ -117,7 +117,7 @@
 -- "northern European" ettin
 #newtheme
 #type demographic
-#name ettin
+#id ettin
 #theme boreal
 #basechance 0.5
 #chanceinc primaryrace 'Feudal human' *5
@@ -148,7 +148,7 @@
 -- Weights: EA 0.5, MA 0.5, LA 0.5
 #newtheme
 #type social
-#name slaver
+#id slaver
 #basechance 0.05
 #themeinc theme advanced *1
 #themeinc theme iron *1

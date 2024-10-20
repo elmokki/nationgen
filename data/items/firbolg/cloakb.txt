@@ -1,12 +1,12 @@
 #newitem
-#name "fir bolg cloak"
+#id "fir bolg cloak"
 #basechance 4
 #gameid -1
 #needs cloakf "fir bolg cloak"
 #enditem
 
 #newitem
-#name "short cloak"
+#id "short cloak"
 #gameid -1
 #sprite /graphics/firbolg/cloak/short_b.png
 #recolormask self
@@ -14,7 +14,7 @@
 #enditem
 
 #newitem
-#name "light full cloak"
+#id "light full cloak"
 #basechance 0.5
 #chanceinc "personalcommand #mounted *0"
 #gameid -1
@@ -25,7 +25,7 @@
 #enditem
 
 #newitem
-#name "dark full cloak"
+#id "dark full cloak"
 #basechance 0.5
 #chanceinc "personalcommand #mounted *0"
 #gameid -1

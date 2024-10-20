@@ -1,7 +1,7 @@
 
 --- Bronze Scale
 #newitem
-#name "bronze scale cuirass"
+#id "bronze scale cuirass"
 #gameid 142
 #sprite /graphics/monkey/armor/vanara/scalecuirass_bronze.png
 #eliteversion "gilt bronze scale cuirass"
@@ -12,7 +12,7 @@
 
 #newitem
 #basechance 0.5
-#name "bronze scale hauberk"
+#id "bronze scale hauberk"
 #gameid 136
 #sprite /graphics/monkey/armor/vanara/scalehauberk_bronze.png
 #eliteversion "gilt bronze scale hauberk"
@@ -23,7 +23,7 @@
 
 #newitem
 #basechance 0.25
-#name "bronze full scale"
+#id "bronze full scale"
 #gameid bronzescale_full
 #sprite /graphics/monkey/armor/vanara/fullscale_bronze.png
 #eliteversion "gilt bronze full scale"
@@ -33,7 +33,7 @@
 #enditem
 
 #newitem
-#name "gilt bronze scale cuirass"
+#id "gilt bronze scale cuirass"
 #gameid 142
 #sprite /graphics/monkey/armor/vanara/scalecuirass_gilt.png
 #armor
@@ -44,7 +44,7 @@
 
 #newitem
 #basechance 0.5
-#name "gilt bronze scale hauberk"
+#id "gilt bronze scale hauberk"
 #gameid 136
 #sprite /graphics/monkey/armor/vanara/scalehauberk_gilt.png
 #armor
@@ -55,7 +55,7 @@
 
 #newitem
 #basechance 0.25
-#name "gilt bronze full scale"
+#id "gilt bronze full scale"
 #gameid bronzescale_full
 #sprite /graphics/monkey/armor/vanara/fullscale_gilt.png
 #armor
@@ -67,7 +67,7 @@
 
 --- Scale
 #newitem
-#name "scale cuirass"
+#id "scale cuirass"
 #gameid 7
 #sprite /graphics/monkey/armor/vanara/scalecuirass.png
 #eliteversion "gilt scale cuirass"
@@ -78,7 +78,7 @@
 
 #newitem
 #basechance 0.5
-#name "scale hauberk short"
+#id "scale hauberk short"
 #gameid 12
 #sprite /graphics/monkey/armor/vanara/scalehauberk.png
 #eliteversion "gilt scale hauberk"
@@ -89,7 +89,7 @@
 
 #newitem
 #basechance 0.25
-#name "full scale"
+#id "full scale"
 #gameid 17
 #sprite /graphics/monkey/armor/vanara/fullscale.png
 #eliteversion "gilt full scale"
@@ -99,7 +99,7 @@
 #enditem
 
 #newitem
-#name "gilt scale cuirass"
+#id "gilt scale cuirass"
 #gameid 7
 #sprite /graphics/monkey/armor/vanara/scalecuirass_gilt.png
 #armor
@@ -110,7 +110,7 @@
 
 #newitem
 #basechance 0.5
-#name "gilt scale hauberk"
+#id "gilt scale hauberk"
 #gameid 12
 #sprite /graphics/monkey/armor/vanara/scalehauberk_gilt.png
 #armor
@@ -121,7 +121,7 @@
 
 #newitem
 #basechance 0.25
-#name "gilt full scale"
+#id "gilt full scale"
 #gameid 17
 #sprite /graphics/monkey/armor/vanara/fullscale_gilt.png
 #armor
@@ -135,7 +135,7 @@
 --- Imperial armor
 #newitem
 #basechance 0.5
-#name "lorica hamata"
+#id "lorica hamata"
 #gameid 116
 #sprite /graphics/monkey/armor/vanara/lorica_hamata_mounted.png
 #recolormask /graphics/monkey/armor/vanara/imperial_recolormask.png
@@ -146,7 +146,7 @@
 #enditem
 
 #newitem
-#name "lorica squamata"
+#id "lorica squamata"
 #gameid 117
 #sprite /graphics/monkey/armor/vanara/lorica_squamata_mounted.png
 #recolormask /graphics/monkey/armor/vanara/imperial_recolormask.png
@@ -157,7 +157,7 @@
 #enditem
 
 #newitem
-#name "lorica segmentata"
+#id "lorica segmentata"
 #gameid 99
 #sprite /graphics/monkey/armor/vanara/lorica_segmentata_mounted.png
 #recolormask /graphics/monkey/armor/vanara/imperial_recolormask.png
@@ -169,7 +169,7 @@
 #enditem
 
 #newitem
-#name "imperial plate"
+#id "imperial plate"
 #gameid 14
 #sprite /graphics/monkey/armor/vanara/platehauberk_imperial_mounted.png
 #recolormask /graphics/monkey/armor/vanara/imperial_recolormask.png
@@ -182,7 +182,7 @@
 
 -- Oriental armor
 #newitem
-#name "oriental leather hauberk"
+#id "oriental leather hauberk"
 #basechance 6
 #chanceinc "personalcommand holy -5"
 #gameid 10
@@ -194,7 +194,7 @@
 #enditem
 
 #newitem
-#name "oriental scale hauberk"
+#id "oriental scale hauberk"
 #basechance 6
 #chanceinc "personalcommand holy -5"
 #gameid 10
@@ -206,7 +206,7 @@
 #enditem
 
 #newitem
-#name "oriental full scale"
+#id "oriental full scale"
 #basechance 6
 #chanceinc "personalcommand holy -5"
 #gameid 17
@@ -218,7 +218,7 @@
 #enditem
 
 #newitem
-#name "ashigaru armor"
+#id "ashigaru armor"
 #basechance 3
 #chanceinc "personalcommand holy -2"
 #gameid 128
@@ -231,7 +231,7 @@
 #enditem
 
 #newitem
-#name "samurai armor"
+#id "samurai armor"
 #basechance 3
 #chanceinc "personalcommand holy 3"
 #chanceinc hastheme not oriental *0
@@ -244,7 +244,7 @@
 #enditem
 
 #newitem
-#name "samurai armor elite"
+#id "samurai armor elite"
 #basechance 0
 #chanceinc "personalcommand holy 6"
 #chanceinc hastheme not oriental *0

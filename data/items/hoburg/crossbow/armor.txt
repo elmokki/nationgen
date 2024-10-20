@@ -1,7 +1,7 @@
 --- Nothing
 
 #newitem
-#name "barechest"
+#id "barechest"
 #gameid -1
 #armor
 #basechance 1
@@ -20,7 +20,7 @@
 --- Furs
 
 #newitem
-#name "furs"
+#id "furs"
 #gameid 44
 #sprite /graphics/hoburg/bodyarmor/crossbow/furs.png
 #armor
@@ -37,7 +37,7 @@
 -- Leather
 
 #newitem
-#name "leather cuirass"
+#id "leather cuirass"
 #gameid 5
 #sprite /graphics/hoburg/bodyarmor/crossbow/leathercuirass.png
 #armor
@@ -52,7 +52,7 @@
 #enditem
 
 #newitem
-#name "leather hauberk"
+#id "leather hauberk"
 #gameid 10
 #sprite /graphics/hoburg/bodyarmor/crossbow/leatherhauberk.png
 #armor
@@ -65,7 +65,7 @@
 #enditem
 
 #newitem -- full leather, TODO: legs
-#name "full leather"
+#id "full leather"
 #gameid 15
 #sprite /graphics/hoburg/bodyarmor/crossbow/leatherhauberk.png
 #armor
@@ -78,7 +78,7 @@
 #enditem
 
 #newitem
-#name "imperial leather hauberk"
+#id "imperial leather hauberk"
 #gameid 10
 #sprite /graphics/hoburg/bodyarmor/crossbow/leatherhauberk_imperial.png
 #armor
@@ -89,7 +89,7 @@
 #enditem
 
 #newitem -- full leather
-#name "imperial full leather"
+#id "imperial full leather"
 #gameid 15
 #sprite /graphics/hoburg/bodyarmor/crossbow/leatherhauberk_imperial.png
 #armor
@@ -100,7 +100,7 @@
 #enditem
 
 #newitem
-#name "reinforced leather"
+#id "reinforced leather"
 #gameid zotz_mictlanarmor
 #sprite /graphics/hoburg/bodyarmor/crossbow/leatherreinforced.png
 #recolormask /graphics/hoburg/bodyarmor/crossbow/leatherreinforced_recolormask.png
@@ -115,7 +115,7 @@
 --- Ring
 
 #newitem
-#name "ring cuirass"
+#id "ring cuirass"
 #gameid 6
 #sprite /graphics/hoburg/bodyarmor/crossbow/ringcuirass.png
 #armor
@@ -129,7 +129,7 @@
 #enditem
 
 #newitem
-#name "ring hauberk"
+#id "ring hauberk"
 #gameid 11
 #sprite /graphics/hoburg/bodyarmor/crossbow/ringhauberk.png
 #armor
@@ -140,7 +140,7 @@
 #enditem
 
 #newitem -- full ring, TODO legs
-#name "full ring"
+#id "full ring"
 #gameid 16
 #sprite /graphics/hoburg/bodyarmor/crossbow/ringhauberk.png
 #armor
@@ -151,7 +151,7 @@
 #enditem
 
 #newitem
-#name "imperial ring hauberk"
+#id "imperial ring hauberk"
 #gameid 11
 #sprite /graphics/hoburg/bodyarmor/crossbow/ringhauberk_imperial.png
 #armor
@@ -163,7 +163,7 @@
 #enditem
 
 #newitem -- full ring
-#name "imperial full ring"
+#id "imperial full ring"
 #gameid 16
 #sprite /graphics/hoburg/bodyarmor/crossbow/ringhauberk_imperial.png
 #armor
@@ -178,7 +178,7 @@
 --- Bronze Scale
 
 #newitem
-#name "bronze scale cuirass"
+#id "bronze scale cuirass"
 #gameid 142
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailcuirass_bronze.png
 #armor
@@ -189,7 +189,7 @@
 #enditem
 
 #newitem
-#name "bronze scale hauberk"
+#id "bronze scale hauberk"
 #gameid 136
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk_bronze.png
 #armor
@@ -199,7 +199,7 @@
 #enditem
 
 #newitem -- full scale
-#name "bronze full scale"
+#id "bronze full scale"
 #gameid bronzescale_full
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk_bronze.png
 #armor
@@ -210,7 +210,7 @@
 #enditem
 
 #newitem
-#name "occidental scale cuirass"
+#id "occidental scale cuirass"
 #gameid 142
 #sprite /graphics/hoburg/bodyarmor/mailcuirass_occidental.png
 #recolormask /graphics/hoburg/bodyarmor/mailcuirass_occidental_recolormask.png
@@ -221,7 +221,7 @@
 #enditem
 
 #newitem
-#name "occidental scale hauberk"
+#id "occidental scale hauberk"
 #gameid 136
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk_occidental.png
 #recolormask /graphics/hoburg/bodyarmor/crossbow/mailhauberk_occidental_recolormask.png
@@ -232,7 +232,7 @@
 #enditem
 
 #newitem -- full scale
-#name "occidental full scale"
+#id "occidental full scale"
 #gameid bronzescale_full
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk_occidental.png
 #recolormask /graphics/hoburg/bodyarmor/crossbow/mailhauberk_occidental_recolormask.png
@@ -245,7 +245,7 @@
 #enditem
 
 #newitem
-#name "bronze imperial scale cuirass"
+#id "bronze imperial scale cuirass"
 #gameid 142
 #basechance 0.125
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailcuirass_imperial_bronze.png
@@ -257,7 +257,7 @@
 #enditem
 
 #newitem
-#name "bronze lorica squamata"
+#id "bronze lorica squamata"
 #gameid 117
 #basechance 0.5
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailcuirass_imperial_bronze.png
@@ -267,7 +267,7 @@
 #enditem
 
 #newitem
-#name "bronze imperial scale hauberk"
+#id "bronze imperial scale hauberk"
 #gameid 136
 #basechance 0.125
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk_imperial_bronze.png
@@ -278,7 +278,7 @@
 #enditem
 
 #newitem -- full scale
-#name "bronze imperial full scale"
+#id "bronze imperial full scale"
 #gameid bronzescale_full
 #basechance 0.125
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk_imperial_bronze.png
@@ -292,7 +292,7 @@
 --- Scale
 
 #newitem
-#name "scale cuirass"
+#id "scale cuirass"
 #gameid 7
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailcuirass.png
 #armor
@@ -304,7 +304,7 @@
 #enditem
 
 #newitem
-#name "scale hauberk"
+#id "scale hauberk"
 #gameid 12
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk.png
 #armor
@@ -316,7 +316,7 @@
 #enditem
 
 #newitem -- full scale, TODO legs
-#name "full scale"
+#id "full scale"
 #gameid 17
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk.png
 #armor
@@ -329,7 +329,7 @@
 #enditem
 
 #newitem
-#name "imperial scale cuirass"
+#id "imperial scale cuirass"
 #gameid 7
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailcuirass_imperial.png
 #armor
@@ -340,7 +340,7 @@
 #enditem
 
 #newitem
-#name "lorica squamata"
+#id "lorica squamata"
 #gameid 117
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailcuirass_imperial.png
 #armor
@@ -349,7 +349,7 @@
 #enditem
 
 #newitem
-#name "imperial scale hauberk"
+#id "imperial scale hauberk"
 #gameid 12
 #basechance 0.5
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk_imperial.png
@@ -360,7 +360,7 @@
 #enditem
 
 #newitem -- full scale
-#name "full scale"
+#id "full scale"
 #gameid 17
 #basechance 0.25
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk_imperial.png
@@ -375,7 +375,7 @@
 --- Chain Mail
 
 #newitem
-#name "chain cuirass"
+#id "chain cuirass"
 #gameid 8
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailcuirass.png
 #armor
@@ -384,7 +384,7 @@
 #enditem
 
 #newitem
-#name "chain hauberk"
+#id "chain hauberk"
 #gameid 13
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk.png
 #armor
@@ -394,7 +394,7 @@
 #enditem
 
 #newitem -- full chain, TODO legs
-#name "full chain"
+#id "full chain"
 #gameid 18
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk.png
 #armor
@@ -405,7 +405,7 @@
 #enditem
 
 #newitem
-#name "imperial chain cuirass"
+#id "imperial chain cuirass"
 #gameid 8
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailcuirass_imperial.png
 #armor
@@ -415,7 +415,7 @@
 #enditem
 
 #newitem
-#name "lorica hamata"
+#id "lorica hamata"
 #gameid 8
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailcuirass_imperial.png
 #armor
@@ -424,7 +424,7 @@
 #enditem
 
 #newitem
-#name "imperial chain hauberk"
+#id "imperial chain hauberk"
 #gameid 13
 #basechance 0.5
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk_imperial.png
@@ -435,7 +435,7 @@
 #enditem
 
 #newitem -- full chain
-#name "imperial full chain"
+#id "imperial full chain"
 #gameid 18
 #basechance 0.25
 #sprite /graphics/hoburg/bodyarmor/crossbow/mailhauberk_imperial.png
@@ -450,7 +450,7 @@
 --- Bronze Plate
 
 #newitem
-#name "bronze plate cuirass"
+#id "bronze plate cuirass"
 #gameid 100
 #basechance 0.5
 #sprite /graphics/hoburg/bodyarmor/crossbow/platecuirass_bronze.png
@@ -462,7 +462,7 @@
 #enditem
 
 #newitem
-#name "bronze plate hauberk"
+#id "bronze plate hauberk"
 #gameid 14
 #basechance 0.25
 #sprite /graphics/hoburg/bodyarmor/crossbow/platehauberk_bronze.png
@@ -474,7 +474,7 @@
 #enditem
 
 #newitem -- full plate
-#name "bronze full plate"
+#id "bronze full plate"
 #gameid bronzeplate_full
 #basechance 0.125
 #sprite /graphics/hoburg/bodyarmor/crossbow/platehauberk_bronze.png
@@ -487,7 +487,7 @@
 #enditem
 
 #newitem
-#name "occidental plate cuirass"
+#id "occidental plate cuirass"
 #gameid 100
 #sprite /graphics/hoburg/bodyarmor/platecuirass_occidental.png
 #armor
@@ -498,7 +498,7 @@
 #enditem
 
 #newitem
-#name "occidental plate hauberk"
+#id "occidental plate hauberk"
 #gameid 14
 #sprite /graphics/hoburg/bodyarmor/crossbow/platehauberk_occidental.png
 #recolormask /graphics/hoburg/bodyarmor/crossbow/platehauberk_occidental_recolormask.png
@@ -510,7 +510,7 @@
 #enditem
 
 #newitem -- full plate
-#name "occidental full plate"
+#id "occidental full plate"
 #gameid bronzeplate_full
 #sprite /graphics/hoburg/bodyarmor/crossbow/platehauberk_occidental.png
 #recolormask /graphics/hoburg/bodyarmor/crossbow/platehauberk_occidental_recolormask.png
@@ -524,7 +524,7 @@
 #enditem
 
 #newitem
-#name "imperial bronze plate cuirass"
+#id "imperial bronze plate cuirass"
 #gameid 100
 #basechance 0.5
 #sprite /graphics/hoburg/bodyarmor/crossbow/platecuirass_imperial_bronze.png
@@ -537,7 +537,7 @@
 #enditem
 
 #newitem
-#name "bronze lorica segmentata"
+#id "bronze lorica segmentata"
 #gameid 99
 #sprite /graphics/hoburg/bodyarmor/crossbow/platecuirass_imperial_bronze.png
 #armor
@@ -546,7 +546,7 @@
 #enditem
 
 #newitem
-#name "imperial bronze plate hauberk"
+#id "imperial bronze plate hauberk"
 #gameid 101
 #basechance 0.25
 #sprite /graphics/hoburg/bodyarmor/crossbow/platehauberk_imperial_bronze.png
@@ -559,7 +559,7 @@
 #enditem
 
 #newitem -- full plate
-#name "imperial bronze full plate"
+#id "imperial bronze full plate"
 #gameid bronzeplate_full
 #basechance 0.125
 #sprite /graphics/hoburg/bodyarmor/crossbow/platefull_imperial_bronze.png
@@ -575,7 +575,7 @@
 --- Plate
 
 #newitem
-#name "plate cuirass"
+#id "plate cuirass"
 #gameid 9
 #sprite /graphics/hoburg/bodyarmor/crossbow/platecuirass.png
 #armor
@@ -588,7 +588,7 @@
 #enditem
 
 #newitem
-#name "plate hauberk"
+#id "plate hauberk"
 #gameid 14
 #sprite /graphics/hoburg/bodyarmor/crossbow/platehauberk.png
 #armor
@@ -601,7 +601,7 @@
 #enditem
 
 #newitem -- full plate, TODO legs
-#name "full plate"
+#id "full plate"
 #gameid 19
 #sprite /graphics/hoburg/bodyarmor/crossbow/platehauberk.png
 #armor
@@ -614,7 +614,7 @@
 #enditem
 
 #newitem
-#name "imperial plate cuirass"
+#id "imperial plate cuirass"
 #gameid 9
 #basechance 0.5
 #sprite /graphics/hoburg/bodyarmor/crossbow/platecuirass_imperial.png
@@ -627,7 +627,7 @@
 #enditem
 
 #newitem
-#name "lorica segmentata"
+#id "lorica segmentata"
 #gameid 99
 #sprite /graphics/hoburg/bodyarmor/crossbow/platecuirass_imperial.png
 #armor
@@ -636,7 +636,7 @@
 #enditem
 
 #newitem
-#name "imperial plate hauberk"
+#id "imperial plate hauberk"
 #gameid 14
 #basechance 0.25
 #sprite /graphics/hoburg/bodyarmor/crossbow/platehauberk_imperial.png
@@ -649,7 +649,7 @@
 #enditem
 
 #newitem -- full plate
-#name "imperial full plate"
+#id "imperial full plate"
 #gameid 19
 #basechance 0.125
 #sprite /graphics/hoburg/bodyarmor/crossbow/platefull_imperial.png

@@ -1,5 +1,5 @@
 #newitem
-#name "javelin 1"
+#id "javelin 1"
 #gameid 21
 #sprite /graphics/weapon/standard/javelin1.png
 #basechance 2
@@ -12,7 +12,7 @@
 #enditem
 
 #newitem
-#name "javelin 2"
+#id "javelin 2"
 #gameid 21
 #basechance 2
 #sprite /graphics/weapon/standard/javelin2.png
@@ -25,7 +25,7 @@
 #enditem
 
 #newitem
-#name "bonus crossbow"
+#id "bonus crossbow"
 #gameid 25
 #sprite /graphics/weapon/standard/bonuscrossbow.png
 #basechance 0.5
@@ -38,7 +38,7 @@
 #enditem
 
 #newitem -- Throwing axe
-#name "throwing axe"
+#id "throwing axe"
 #gameid 260
 #basechance 2
 #chanceinc unittag irregular 4
@@ -50,7 +50,7 @@
 #enditem
 
 #newitem
-#name "throwing hatchet"
+#id "throwing hatchet"
 #gameid throwinghatchet
 #basechance 2
 #chanceinc unittag irregular 4
@@ -63,7 +63,7 @@
 #enditem
 
 #newitem
-#name "bonus shortbow"
+#id "bonus shortbow"
 #gameid 23
 #sprite /graphics/weapon/standard/bonusshortbow.png
 #basechance 0.5
@@ -78,7 +78,7 @@
 #enditem
 
 #newitem
-#name "poison shortbow"
+#id "poison shortbow"
 #gameid 594
 #sprite /graphics/weapon/standard/bonusshortbow.png
 #basechance 0.5
@@ -92,7 +92,7 @@
 #enditem
 
 #newitem
-#name "bonus sling"
+#id "bonus sling"
 #gameid 22
 #basechance 0.5
 #theme "leather"
@@ -103,7 +103,7 @@
 #enditem
 
 #newitem
-#name "poison sling"
+#id "poison sling"
 #gameid 167
 #basechance 0.5
 #theme "leather"
@@ -114,7 +114,7 @@
 #enditem
 
 #newitem
-#name "chakram"
+#id "chakram"
 #gameid 362
 #sprite /graphics/weapon/standard/chakram.png
 #renderprio 7
@@ -128,7 +128,7 @@
 #enditem
 
 #newitem
-#name "sticksandstones"
+#id "sticksandstones"
 #gameid 360
 #basechance 0.25
 #tag "notepic"
@@ -140,7 +140,7 @@
 #enditem
 
 #newitem
-#name "harpoon"
+#id "harpoon"
 #gameid 452
 #sprite /graphics/weapon/standard/javelin1.png
 #tag "maxprot 14"
@@ -153,7 +153,7 @@
 #enditem
 
 #newitem
-#name "blowpipe"
+#id "blowpipe"
 #gameid 34
 #tag "maxprot 12"
 #tag "tierunique"
@@ -167,7 +167,7 @@
 #enditem
 
 #newitem
-#name "net"
+#id "net"
 #gameid 263
 #sprite /graphics/weapon/standard/net.png
 #tag "maxprot 12"
@@ -185,7 +185,7 @@
 #enditem
 
 #newitem
-#name "discus"
+#id "discus"
 #gameid 723
 #tag "maxprot 9"
 #basechance 0.25

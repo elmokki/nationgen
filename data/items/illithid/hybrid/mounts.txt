@@ -1,7 +1,7 @@
 --- Base offsets are applied to everything except base and overlay
 
 #newitem
-#name "brown horse"
+#id "brown horse"
 #gameid -1
 #sprite /graphics/mounts/standard/brownhorse.png
 #offsety -20
@@ -16,7 +16,7 @@
 #enditem
 
 #newitem
-#name "camel"
+#id "camel"
 #chanceinc "nationcommand #idealcold above 0 *0"
 #chanceinc "nationcommand #idealcold above -1 *0.5"
 #chanceinc "nationcommand #idealcold below -1 *2"
@@ -34,7 +34,7 @@
 #enditem
 
 #newitem
-#name "cavecow"
+#id "cavecow"
 #gameid -1
 #sprite /graphics/mounts/standard/cavecow.png
 #offsetx -0
@@ -49,7 +49,7 @@
 #enditem
 
 #newitem
-#name "serpent 1"
+#id "serpent 1"
 #gameid -1
 #sprite /graphics/mounts/standard/serpent1.png
 #armor
@@ -66,7 +66,7 @@
 #enditem
 
 #newitem
-#name "giant rat"
+#id "giant rat"
 #gameid -1
 #sprite /graphics/mounts/standard/giantrat.png
 #armor
@@ -84,7 +84,7 @@
 #enditem
 
 #newitem
-#name "seadog"
+#id "seadog"
 #gameid -1
 #sprite /graphics/mounts/standard/seadog.png
 #armor
@@ -103,7 +103,7 @@
 #enditem
 
 #newitem
-#name "toad"
+#id "toad"
 #gameid -1
 #sprite /graphics/mounts/standard/toad_jaguar.png
 #armor
@@ -120,7 +120,7 @@
 #enditem
 
 #newitem
-#name "frog"
+#id "frog"
 #gameid -1
 #sprite /graphics/mounts/standard/toad_sapphire.png
 #armor

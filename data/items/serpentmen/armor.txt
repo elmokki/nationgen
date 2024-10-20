@@ -1,6 +1,6 @@
 -- Nada
 #newitem
-#name "nothing_terrestrial"
+#id "nothing_terrestrial"
 #basechance 1
 #gameid -1
 #armor
@@ -15,7 +15,7 @@
 #enditem
 
 #newitem
-#name "nothing_marine"
+#id "nothing_marine"
 #basechance 2
 #gameid -1
 #armor
@@ -31,7 +31,7 @@
 
 --- Leather
 #newitem
-#name "leather cuirass"
+#id "leather cuirass"
 #gameid 5
 #sprite /graphics/serpentmen/armor/leathercuirass.png
 #armor
@@ -44,7 +44,7 @@
 #enditem
 
 #newitem
-#name "leather hauberk"
+#id "leather hauberk"
 #gameid 10
 #sprite /graphics/serpentmen/armor/leatherhauberk.png
 #armor
@@ -57,7 +57,7 @@
 #enditem
 
 #newitem
-#name "sharkskin cuirass"
+#id "sharkskin cuirass"
 #gameid 188
 #sprite /graphics/serpentmen/armor/sharkskincuirass.png
 #armor
@@ -70,7 +70,7 @@
 #enditem
 
 #newitem
-#name "sharkskin hauberk"
+#id "sharkskin hauberk"
 #gameid 151
 #sprite /graphics/serpentmen/armor/sharkskinhauberk.png
 #armor
@@ -84,7 +84,7 @@
 
 --- Ring
 #newitem
-#name "ring cuirass"
+#id "ring cuirass"
 #gameid 6
 #sprite /graphics/serpentmen/armor/ringcuirass.png
 #armor
@@ -97,7 +97,7 @@
 #enditem
 
 #newitem
-#name "ring hauberk"
+#id "ring hauberk"
 #gameid 11
 #sprite /graphics/serpentmen/armor/ringhauberk.png
 #armor
@@ -109,7 +109,7 @@
 #enditem
 
 #newitem
-#name "bronze ring cuirass"
+#id "bronze ring cuirass"
 #gameid 6
 #sprite /graphics/serpentmen/armor/bronzeringcuirass.png
 #armor
@@ -122,7 +122,7 @@
 #enditem
 
 #newitem
-#name "bronze ring hauberk"
+#id "bronze ring hauberk"
 #gameid 11
 #sprite /graphics/serpentmen/armor/bronzeringhauberk.png
 #armor
@@ -134,7 +134,7 @@
 #enditem
 
 #newitem
-#name "sharkskin ring cuirass"
+#id "sharkskin ring cuirass"
 #gameid 6
 #sprite /graphics/serpentmen/armor/sharkringcuirass.png
 #armor
@@ -147,7 +147,7 @@
 #enditem
 
 #newitem
-#name "sharkskin ring hauberk"
+#id "sharkskin ring hauberk"
 #gameid 11
 #basechance 0.5
 #sprite /graphics/serpentmen/armor/sharkringhauberk.png
@@ -163,7 +163,7 @@
 
 --- Scale
 #newitem
-#name "scale cuirass"
+#id "scale cuirass"
 #gameid 7
 #sprite /graphics/serpentmen/armor/scalecuirass.png
 #armor
@@ -175,7 +175,7 @@
 #enditem
 
 #newitem
-#name "scale hauberk"
+#id "scale hauberk"
 #gameid 12
 #sprite /graphics/serpentmen/armor/scalehauberk.png
 #armor
@@ -188,7 +188,7 @@
 #enditem
 
 #newitem -- full scale
-#name "full scale"
+#id "full scale"
 #gameid 17
 #sprite /graphics/serpentmen/armor/fullscale.png
 #armor
@@ -200,7 +200,7 @@
 #enditem
 
 #newitem
-#name "bronze scale cuirass"
+#id "bronze scale cuirass"
 #gameid 142
 #sprite /graphics/serpentmen/armor/bronzescalecuirass.png
 #armor
@@ -213,7 +213,7 @@
 #enditem
 
 #newitem
-#name "bronze scale hauberk"
+#id "bronze scale hauberk"
 #gameid 136
 #sprite /graphics/serpentmen/armor/bronzescalehauberk.png
 #armor
@@ -227,7 +227,7 @@
 #enditem
 
 #newitem -- full scale
-#name "bronze full scale"
+#id "bronze full scale"
 #gameid bronzescale_full
 #sprite /graphics/serpentmen/armor/fullbronzescale.png
 #armor
@@ -242,7 +242,7 @@
 
 --- Chain Mail
 #newitem
-#name "chain cuirass"
+#id "chain cuirass"
 #gameid 8
 #sprite /graphics/serpentmen/armor/mailcuirass.png
 #armor
@@ -253,7 +253,7 @@
 #enditem
 
 #newitem
-#name "chain hauberk"
+#id "chain hauberk"
 #gameid 13
 #sprite /graphics/serpentmen/armor/mailhauberk1.png
 #basechance 0.5
@@ -268,7 +268,7 @@
 
 --- Plate
 #newitem
-#name "plate cuirass"
+#id "plate cuirass"
 #gameid 9
 #sprite /graphics/serpentmen/armor/platecuirass.png
 #armor
@@ -280,7 +280,7 @@
 #enditem
 
 #newitem
-#name "plate hauberk"
+#id "plate hauberk"
 #gameid 14
 #sprite /graphics/serpentmen/armor/platehauberk.png
 #armor
@@ -292,7 +292,7 @@
 #enditem
 
 #newitem
-#name "bronze plate cuirass"
+#id "bronze plate cuirass"
 #gameid 100
 #sprite /graphics/serpentmen/armor/bronzecuirass.png
 #armor
@@ -305,7 +305,7 @@
 #enditem
 
 #newitem
-#name "bronze plate hauberk"
+#id "bronze plate hauberk"
 #gameid 101
 #sprite /graphics/serpentmen/armor/bronzehauberk.png
 #armor
@@ -318,7 +318,7 @@
 #enditem
 
 #newitem
-#name "shell hauberk"
+#id "shell hauberk"
 #gameid 114
 #sprite /graphics/serpentmen/armor/shellhauberk.png
 #armor
@@ -331,7 +331,7 @@
 #enditem
 
 #newitem
-#name "shell armor"
+#id "shell armor"
 #gameid 140
 #sprite /graphics/serpentmen/armor/shellarmor.png
 #armor
@@ -345,7 +345,7 @@
 
 -- Coral armor
 #newitem
-#name "coral ring cuirass"
+#id "coral ring cuirass"
 #gameid 6
 #sprite /graphics/serpentmen/armor/coralringcuirass.png
 #armor
@@ -358,7 +358,7 @@
 #enditem
 
 #newitem
-#name "coral ring hauberk"
+#id "coral ring hauberk"
 #gameid 11
 #basechance 0.5
 #sprite /graphics/serpentmen/armor/coralringhauberk.png
@@ -372,7 +372,7 @@
 #enditem
 
 #newitem
-#name "coral cuirass"
+#id "coral cuirass"
 #gameid 22
 #sprite /graphics/serpentmen/armor/coralcuirass.png
 #armor
@@ -386,7 +386,7 @@
 #enditem
 
 #newitem
-#name "coral hauberk"
+#id "coral hauberk"
 #gameid 23
 #sprite /graphics/serpentmen/armor/coralhauberk.png
 #armor
@@ -402,7 +402,7 @@
 
 -- Oriental armor
 #newitem
-#name "ashigaru armor"
+#id "ashigaru armor"
 #gameid 128
 #basechance 1
 #sprite /graphics/serpentmen/armor/ashigaru.png
@@ -415,7 +415,7 @@
 #enditem
 
 #newitem
-#name "samurai armor"
+#id "samurai armor"
 #gameid 129
 #basechance 1
 #sprite /graphics/serpentmen/armor/samurai.png
@@ -428,7 +428,7 @@
 #enditem
 
 #newitem
-#name "elite samurai armor"
+#id "elite samurai armor"
 #gameid 129
 #basechance 1
 #sprite /graphics/serpentmen/armor/samurai2.png
@@ -441,7 +441,7 @@
 #enditem
 
 #newitem
-#name "heavy samurai armor"
+#id "heavy samurai armor"
 #gameid 130
 #basechance 1
 #sprite /graphics/serpentmen/armor/heavysamurai.png
@@ -453,7 +453,7 @@
 #enditem
 
 #newitem
-#name "elite heavy samurai armor"
+#id "elite heavy samurai armor"
 #gameid 130
 #basechance 1
 #sprite /graphics/serpentmen/armor/heavysamurai2.png
@@ -467,7 +467,7 @@
 
 -- Ice armor
 #newitem
-#name "ice studded cuirass"
+#id "ice studded cuirass"
 #gameid icestudded_cuirass
 #sprite /graphics/serpentmen/armor/icestuddedcuirass.png
 #armor
@@ -483,7 +483,7 @@
 #enditem
 
 #newitem
-#name "ice studded hauberk"
+#id "ice studded hauberk"
 #gameid 52
 #sprite /graphics/serpentmen/armor/icestuddedhauberk.png
 #armor
@@ -499,7 +499,7 @@
 #enditem
 
 #newitem
-#name "icicle cuirass"
+#id "icicle cuirass"
 #gameid icicle_cuirass
 #sprite /graphics/serpentmen/armor/iciclecuirass.png
 #armor
@@ -514,7 +514,7 @@
 #enditem
 
 #newitem
-#name "icicle hauberk"
+#id "icicle hauberk"
 #gameid 133
 #sprite /graphics/serpentmen/armor/iciclehauberk.png
 #armor
@@ -529,7 +529,7 @@
 #enditem
 
 #newitem
-#name "ice cuirass"
+#id "ice cuirass"
 #gameid 26
 #sprite /graphics/serpentmen/armor/icecuirass.png
 #armor
@@ -546,7 +546,7 @@
 #enditem
 
 #newitem
-#name "ice hauberk"
+#id "ice hauberk"
 #gameid 27
 #sprite /graphics/serpentmen/armor/icehauberk.png
 #armor
@@ -563,7 +563,7 @@
 #enditem
 
 #newitem
-#name "ice samurai armor"
+#id "ice samurai armor"
 #gameid 26
 #basechance 1
 #sprite /graphics/serpentmen/armor/icecuirass_oriental.png
@@ -580,7 +580,7 @@
 #enditem
 
 #newitem
-#name "ice heavy samurai armor"
+#id "ice heavy samurai armor"
 #gameid 27
 #basechance 1
 #sprite /graphics/serpentmen/armor/icehauberk_oriental.png

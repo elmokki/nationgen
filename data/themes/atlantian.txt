@@ -1,6 +1,6 @@
 -- Generic theme with high diversity and low cohesion
 #newtheme
-#name default
+#id default
 #basechance 4
 #endtheme
 
@@ -8,7 +8,7 @@
 -- Weights: EA 6, MA 4, LA 2
 #newtheme
 #type demographic
-#name abyssal
+#id abyssal
 #basechance 4
 #chanceinc era 1 +2
 #chanceinc era 3 -2
@@ -22,7 +22,7 @@
 -- Weights: EA 2, MA 2, LA 2
 #newtheme
 #type demographic
-#name oceanic
+#id oceanic
 #basechance 4
 #themeinc theme oceanic *1000
 #racedefinition "#magicpriority water 6"
@@ -31,7 +31,7 @@
 -- Weights: EA 2, MA 4, LA 6
 #newtheme
 #type demographic
-#name pelegic
+#id pelegic
 #basechance 4
 #chanceinc era 1 -2
 #chanceinc era 3 +2
@@ -44,7 +44,7 @@
 -- Weights: EA 6, MA 4, LA 2
 #newtheme
 #type techlevel
-#name primitive
+#id primitive
 #basechance 4
 #chanceinc era 1 +2
 #chanceinc era 3 -2
@@ -65,7 +65,7 @@
 -- Weights: EA 6, MA 4, LA 2
 #newtheme
 #type techlevel
-#name bronze
+#id bronze
 #basechance 4
 #chanceinc era 1 +2
 #chanceinc era 3 -2
@@ -86,7 +86,7 @@
 -- Weights: EA 4, MA 4, LA 4
 #newtheme
 #type techlevel
-#name coral
+#id coral
 #basechance 4
 #chanceinc hastheme pelagic *2
 #themeinc theme primitive *2
@@ -105,7 +105,7 @@
 -- Weights: EA 2, MA 4, LA 6
 #newtheme
 #type techlevel
-#name meteorite
+#id meteorite
 #basechance 4
 #chanceinc era 1 -2
 #chanceinc era 3 +2
@@ -126,7 +126,7 @@
 -- Weights: EA 2, MA 4, LA 6
 #newtheme
 #type techlevel
-#name ice
+#id ice
 #basechance 4
 #chanceinc era 1 -2
 #chanceinc era 3 +2
@@ -152,7 +152,7 @@
 -- Weights: EA 0.5, MA 0.5, LA 0.5
 #newtheme
 #type social
-#name slaver
+#id slaver
 #basechance 0.05
 #themeinc theme advanced *1
 #themeinc theme iron *1
