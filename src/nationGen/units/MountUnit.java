@@ -31,6 +31,7 @@ public class MountUnit extends Unit {
 	private int gcost = 0;
 	private NationGenAssets assets;
 	
+	// otherForm is the mounted rider form, whereas mountForm is the actual, riderless mount
 	public MountUnit(NationGen nationGen, NationGenAssets assets, Race race, Pose pose, Unit otherForm, Mount mountForm)
 	{
 		super(nationGen, race, pose);
