@@ -7,13 +7,8 @@
 #sprite /graphics/amazon/mounts/nightmare_lizard.png
 #armor
 #needs overlay lizard_nightmare_overlay
-#define "#size 4"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#weapon 19 --- Bite"
-#define "#ressize 2"
+#define "#mountmnr 'lizard_nightmare_mount'"
 #define "#enc 15"
-#define "#fear 5"
 #define "#gcost +50"
 #tag "guaranteedprefix nightmare"
 #sacredextra 0.75
@@ -32,17 +27,11 @@
 #offsety 15
 #sprite /graphics/amazon/mounts/flayed_serpent.png
 #armor
+#define "#mountmnr 'flayed_serpent_mount'"
 #needs overlay flayed_serpent_overlay
-#define "#size 4"
-#define "#mapmove 20"
-#define "#ap 16"
-#define "#weapon 494 --- Poisonous Bite"
-#define "#ressize 2"
 #define "#enc 15"
-#define "#fear 5"
 #define "#gcost +60"
 #tag "guaranteedprefix flayed"
-#define "#secondtmpshape flayedserpent"
 #sacredextra 1
 #theme "specialmount"
 #tag "animal 'flayed serpent'"

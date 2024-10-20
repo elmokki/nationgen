@@ -2900,39 +2900,6 @@
 #mount
 #end
 
-#new secondshape
-#name "flayedserpent"
-#command "#spr1 ./graphics/amazon/mounts/flayed_serpent.png"
-#command "#spr2 shift"
-#command "#magicboost 53 -5"
-#command "#name 'Flayed Serpent'"
-#command "#enc 0"
-#command "#ap 12"
-#command "#str 15"
-#command "#mr 5"
-#command "#mor 50"
-#command "#att 8"
-#command "#def 5"
-#command "#hp 42"
-#command "#prec 5"
-#command "#prot 4"
-#command "#size 4"
-#command "#mapmove 22"
-#command "#weapon 495 --- Poisonous Bite"
-#command "#coldres 15"
-#command "#poisonres 25"
-#command "#undisciplined"
-#command "#undead"
-#command "#inanimate"
-#command "#pooramphibian"
-#command "#neednoteat"
-#command "#noheal"
-#command "#lizard"
-#command "#itemslots 786432"
-#nogcost
-#mount
-#end
-
 
 #new secondshape
 #name "hyenamount"
@@ -3606,13 +3573,13 @@
 #command "#spiritsight"
 #command "#forestsurvival"
 #command "#quadruped"
-#command "#gcost 50"
+#command "#itemslots 786432"
 #mount
 #end
 
 #new secondshape
 #name "flayed_serpent_mount"
-#command "#name 'Lizard Nightmare'"
+#command "#name 'Flayed Serpent'"
 #command "#spr1 ./graphics/amazon/mounts/flayed_serpent.png"
 #command "#spr2 shift"
 #command "#size 4"
@@ -3643,6 +3610,7 @@
 #command "#swampsurvival"
 #command "#swimming"
 #command "#quadruped"
-#command "#gcost 60"
+#command "#lizard"
+#command "#itemslots 786432"
 #mount
 #end
