@@ -1,5 +1,3 @@
 package nationGen.naming;
 
-public class ExtendedName extends Name {
-
-}
+public class ExtendedName extends Name {}

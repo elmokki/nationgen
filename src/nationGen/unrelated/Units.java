@@ -3,10 +3,9 @@ package nationGen.unrelated;
 import java.io.IOException;
 
 public class Units {
-	public static void main(String[] args) throws IOException
-	{
 
-		/*
+  public static void main(String[] args) throws IOException {
+    /*
 		FileWriter fstream = new FileWriter("derp.txt");
 		PrintWriter tw = new PrintWriter(fstream);
 
@@ -22,7 +21,7 @@ public class Units {
 		tw.flush();
 		tw.close();
 		*/
-		
-		System.out.println(8192 << 2);
-	}
+
+    System.out.println(8192 << 2);
+  }
 }

@@ -7,30 +7,23 @@ import nationGen.rostergeneration.TroopGenerator;
 import nationGen.units.Unit;
 
 public class TroopMontagTemplate extends MontagTemplate {
-	
-	private TroopGenerator tGen = null;
-	
-	public TroopMontagTemplate(NationGen ngen, Nation n, TroopGenerator tGen)
-	{
-			this.tGen = tGen; //new TroopGenerator(ngen, n);
-	}
 
+  private TroopGenerator tGen = null;
 
-	
-	public Unit generateUnit(Unit u, Pose p)
-	{
-	    Unit newunit = null;
-	    int tries = 0;
-	    while(tries < 100 && newunit == null)
-	    {
-	    	tries++;
-	    	newunit = tGen.unitGen.generateUnit(u.race, p);
-	    	handleFilterInheritance(u, newunit);
-	    	newunit = tGen.equipUnit(newunit);
+  public TroopMontagTemplate(NationGen ngen, Nation n, TroopGenerator tGen) {
+    this.tGen = tGen; //new TroopGenerator(ngen, n);
+  }
 
-	    }
-	    
-	    return newunit;
-	
-	}
+  public Unit generateUnit(Unit u, Pose p) {
+    Unit newunit = null;
+    int tries = 0;
+    while (tries < 100 && newunit == null) {
+      tries++;
+      newunit = tGen.unitGen.generateUnit(u.race, p);
+      handleFilterInheritance(u, newunit);
+      newunit = tGen.equipUnit(newunit);
+    }
+
+    return newunit;
+  }
 }
