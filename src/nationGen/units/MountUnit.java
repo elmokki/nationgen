@@ -322,7 +322,7 @@ public class MountUnit extends Unit {
 			lines.add("#name \"" + otherForm.name + "\"");
 		
 
-		if(!shiftcommand.equals("") && !mountForm.tags.containsName("nowayback") && otherForm != null)
+		if(!shiftcommand.equals("") && otherForm != null)
 		{
 			lines.add(shiftcommand + " " + otherForm.id);
 		}
