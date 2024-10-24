@@ -1,6 +1,6 @@
 --- No armor
 #new
-#name "loincloth_fur"
+#id "loincloth_fur"
 #gameid -1
 #basechance 1
 #theme "naked"
@@ -16,7 +16,7 @@
 #end
 
 #new
-#name "loincloth_leather"
+#id "loincloth_leather"
 #gameid -1
 #basechance 1
 #theme "naked"
@@ -32,7 +32,7 @@
 #end
 
 #new
-#name "furs"
+#id "furs"
 #gameid 44
 #basechance 3
 #theme "leather"
@@ -51,7 +51,7 @@
 --- Leather
 
 #newitem
-#name "leather cuirass"
+#id "leather cuirass"
 #gameid 5
 #sprite /graphics/ogre/armor/leather_cuirass_oriental.png
 #armor
@@ -65,7 +65,7 @@
 #enditem
 
 #newitem
-#name "leather hauberk"
+#id "leather hauberk"
 #gameid 10
 #sprite /graphics/ogre/armor/leather_hauberk_oriental.png
 #armor
@@ -79,7 +79,7 @@
 #enditem
 
 #newitem
-#name "full leather"
+#id "full leather"
 #gameid 15
 #sprite /graphics/ogre/armor/leather_full_oriental.png
 #armor
@@ -95,7 +95,7 @@
 --- Iron Scale
 
 #newitem
-#name "scale cuirass"
+#id "scale cuirass"
 #gameid 7
 #sprite /graphics/ogre/armor/scale_cuirass_oriental.png
 #armor
@@ -108,7 +108,7 @@
 #enditem
 
 #newitem
-#name "scale hauberk"
+#id "scale hauberk"
 #gameid 12
 #sprite /graphics/ogre/armor/scale_hauberk_oriental.png
 #armor
@@ -119,7 +119,7 @@
 #enditem
 
 #newitem
-#name "full scale"
+#id "full scale"
 #gameid 17
 #sprite /graphics/ogre/armor/scale_full_oriental.png
 #armor
@@ -133,7 +133,7 @@
 --- Exotic armor
 
 #newitem
-#name "ashigaru armor"
+#id "ashigaru armor"
 #gameid 128
 #sprite /graphics/ogre/armor/ashigaruarmor.png
 #recolormask /graphics/ogre/armor/samuraiarmor_recolormask.png
@@ -147,7 +147,7 @@
 #enditem
 
 #newitem
-#name "samurai armor"
+#id "samurai armor"
 #gameid 129
 #sprite /graphics/ogre/armor/samuraiarmor.png
 #recolormask /graphics/ogre/armor/samuraiarmor_recolormask.png
@@ -161,7 +161,7 @@
 #enditem
 
 #newitem
-#name "elite samurai armor"
+#id "elite samurai armor"
 #gameid 129
 #sprite /graphics/ogre/armor/samuraiarmor_elite.png
 #recolormask /graphics/ogre/armor/samuraiarmor_elite_recolormask.png
@@ -175,7 +175,7 @@
 #enditem
 
 #newitem
-#name "heavy samurai armor"
+#id "heavy samurai armor"
 #gameid 130
 #sprite /graphics/ogre/armor/heavysamuraiarmor.png
 #recolormask /graphics/ogre/armor/samuraiarmor_recolormask.png
@@ -189,7 +189,7 @@
 #enditem
 
 #newitem
-#name "elite heavy samurai armor"
+#id "elite heavy samurai armor"
 #gameid 130
 #sprite /graphics/ogre/armor/heavysamuraiarmor_elite.png
 #recolormask /graphics/ogre/armor/samuraiarmor_elite_recolormask.png
@@ -203,7 +203,7 @@
 #enditem
 
 #newitem
-#name "gilt samurai armor"
+#id "gilt samurai armor"
 #gameid 130
 #sprite /graphics/ogre/armor/heavysamuraiarmor_gilt.png
 #recolormask /graphics/ogre/armor/samuraiarmor_recolormask.png
@@ -217,7 +217,7 @@
 #enditem
 
 #newitem
-#name "elite heavy samurai armor"
+#id "elite heavy samurai armor"
 #gameid 130
 #sprite /graphics/ogre/armor/heavysamuraiarmor_gilt_elite.png
 #recolormask /graphics/ogre/armor/samuraiarmor_elite_recolormask.png

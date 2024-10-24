@@ -2,7 +2,7 @@
 ------- For small infantry
 
 #new
-#name "Foul spawn infantry: heavy"
+#id "Foul spawn infantry: heavy"
 #type infantry
 #themeinc thisarmorprot 10 *4
 #themeinc thisarmorprot 12 *4
@@ -15,7 +15,7 @@
 #end
 
 #new
-#name "Foul spawn infantry: light"
+#id "Foul spawn infantry: light"
 #type infantry
 #themeinc thisarmorprot 10 *0.25
 #themeinc thisarmorprot 12 *0.25
@@ -28,7 +28,7 @@
 #end
 
 #new
-#name "Foul spawn infantry: any"
+#id "Foul spawn infantry: any"
 #type infantry
 #themeinc thisitemtag any_infantry_title 1
 #chanceinc anyunitfilter "Foul spawn infantry: any" *0
@@ -38,7 +38,7 @@
 ------ 
 
 #new
-#name "Foul spawn ogre infantry: heavy"
+#id "Foul spawn ogre infantry: heavy"
 #type infantry_ogre
 #themeinc thisarmorprot 10 *4
 #themeinc thisarmorprot 12 *4
@@ -51,7 +51,7 @@
 #end
 
 #new
-#name "Foul spawn ogre infantry: light"
+#id "Foul spawn ogre infantry: light"
 #type infantry_ogre
 #themeinc thisarmorprot 10 *0.25
 #themeinc thisarmorprot 12 *0.25
@@ -64,7 +64,7 @@
 #end
 
 #new
-#name "Foul spawn ogre infantry: any"
+#id "Foul spawn ogre infantry: any"
 #type infantry_ogre
 #themeinc thisitemtag any_infantry_title 1
 #chanceinc anyunitfilter "Foul spawn ogre infantry: any" *0

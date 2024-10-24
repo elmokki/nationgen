@@ -1,7 +1,7 @@
 --- Nada
 #newitem
 #basechance 0.5
-#name "naked"
+#id "naked"
 #gameid -1
 #armor
 #needs shirt noshirt
@@ -15,7 +15,7 @@
 
 --- Bronze Scale
 #newitem
-#name "gilt bronze scale cuirass"
+#id "gilt bronze scale cuirass"
 #gameid 142
 #sprite /graphics/monkey/armor/vanara/scalecuirass_gilt.png
 #armor
@@ -24,7 +24,7 @@
 #enditem
 
 #newitem
-#name "gilt bronze scale hauberk"
+#id "gilt bronze scale hauberk"
 #gameid 136
 #sprite /graphics/monkey/armor/vanara/scalehauberk_gilt.png
 #armor
@@ -33,7 +33,7 @@
 #enditem
 
 #newitem
-#name "gilt bronze full scale"
+#id "gilt bronze full scale"
 #gameid bronzescale_full
 #sprite /graphics/monkey/armor/vanara/fullscale_gilt.png
 #armor
@@ -44,7 +44,7 @@
 
 --- Scale
 #newitem
-#name "gilt scale cuirass"
+#id "gilt scale cuirass"
 #gameid 7
 #sprite /graphics/monkey/armor/vanara/scalecuirass_gilt.png
 #armor
@@ -53,7 +53,7 @@
 #enditem
 
 #newitem
-#name "gilt scale hauberk"
+#id "gilt scale hauberk"
 #gameid 12
 #sprite /graphics/monkey/armor/vanara/scalehauberk_gilt.png
 #armor
@@ -62,7 +62,7 @@
 #enditem
 
 #newitem
-#name "gilt full scale"
+#id "gilt full scale"
 #gameid 17
 #sprite /graphics/monkey/armor/vanara/fullscale_gilt.png
 #armor
@@ -74,7 +74,7 @@
 
 --- Imperial armor
 #newitem
-#name "lorica squamata"
+#id "lorica squamata"
 #gameid 117
 #sprite /graphics/monkey/armor/vanara/lorica_squamata_gilt.png
 #recolormask /graphics/monkey/armor/vanara/imperial_recolormask.png
@@ -86,7 +86,7 @@
 #enditem
 
 #newitem
-#name "lorica segmentata"
+#id "lorica segmentata"
 #gameid 99
 #sprite /graphics/monkey/armor/vanara/lorica_segmentata_gilt.png
 #recolormask /graphics/monkey/armor/vanara/imperial_recolormask.png
@@ -98,7 +98,7 @@
 #enditem
 
 #newitem
-#name "imperial plate"
+#id "imperial plate"
 #gameid 14
 #sprite /graphics/monkey/armor/vanara/platehauberk_imperial_gilt.png
 #recolormask /graphics/monkey/armor/vanara/imperial_recolormask.png
@@ -110,7 +110,7 @@
 #enditem
 
 #newitem
-#name "gold lorica squamata"
+#id "gold lorica squamata"
 #gameid 117
 #sprite /graphics/monkey/armor/vanara/lorica_squamata_gold.png
 #recolormask /graphics/monkey/armor/vanara/imperial_recolormask.png
@@ -122,7 +122,7 @@
 #enditem
 
 #newitem
-#name "gold lorica segmentata"
+#id "gold lorica segmentata"
 #gameid 99
 #sprite /graphics/monkey/armor/vanara/lorica_segmentata_gold.png
 #recolormask /graphics/monkey/armor/vanara/imperial_recolormask.png
@@ -134,7 +134,7 @@
 #enditem
 
 #newitem
-#name "gold imperial plate"
+#id "gold imperial plate"
 #gameid 14
 #sprite /graphics/monkey/armor/vanara/platehauberk_imperial_gold.png
 #recolormask /graphics/monkey/armor/vanara/imperial_recolormask.png
@@ -147,7 +147,7 @@
 
 -- Oriental armor
 #newitem
-#name "oriental full scale"
+#id "oriental full scale"
 #basechance 3
 #chanceinc "personalcommand holy -2"
 #gameid 17
@@ -159,7 +159,7 @@
 #enditem
 
 #newitem
-#name "ashigaru armor"
+#id "ashigaru armor"
 #basechance 6
 #chanceinc "personalcommand holy -5"
 #gameid 128
@@ -172,7 +172,7 @@
 #enditem
 
 #newitem
-#name "samurai armor"
+#id "samurai armor"
 #basechance 3
 #chanceinc "personalcommand holy 3"
 #chanceinc hastheme not oriental *0
@@ -185,7 +185,7 @@
 #enditem
 
 #newitem
-#name "samurai armor elite"
+#id "samurai armor elite"
 #basechance 0
 #chanceinc "personalcommand holy 6"
 #chanceinc hastheme not oriental *0

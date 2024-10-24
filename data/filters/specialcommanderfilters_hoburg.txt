@@ -18,7 +18,7 @@
 -- Extra tip: Special commanders get #poorleader or #noleader if nothing is specified
 
 #new
-#name "forager-troop-stealthy"
+#id "forager-troop-stealthy"
 #command "#supplybonus +6"
 #command "#pillagebonus +1"
 #command "#stealthy +0"
@@ -42,7 +42,7 @@
 #end
 
 #new
-#name "forager-troop-mounted"
+#id "forager-troop-mounted"
 #command "#supplybonus +8"
 #command "#pillagebonus +1"
 #command "#gcost +8"
@@ -63,7 +63,7 @@
 #end
 
 #new
-#name "frog summoner"
+#id "frog summoner"
 #command "#makemonsters2 2222"
 #command "#batstartsum1 2222"
 #command "#supplybonus +10"
@@ -95,7 +95,7 @@
 #end
 
 #new
-#name "wolfherd"
+#id "wolfherd"
 #command "#makemonsters1 284"
 #command "#batstartsum1 284"
 #command "#supplybonus +10"
@@ -127,7 +127,7 @@
 #end
 
 #new
-#name "dogherd"
+#id "dogherd"
 #command "#makemonsters1 1560"
 #command "#batstartsum1 1560"
 #command "#supplybonus +10"
@@ -157,7 +157,7 @@
 #end
 
 #new
-#name "goatherd"
+#id "goatherd"
 #command "#makemonsters1 2227"
 #command "#batstartsum1 2227"
 #command "#supplybonus +15"
@@ -187,7 +187,7 @@
 #end
 
 #new
-#name "swanherd"
+#id "swanherd"
 #command "#makemonsters1 2929"
 #command "#batstartsum1 2929"
 #command "#supplybonus +15"
@@ -217,7 +217,7 @@
 #end
 
 #new
-#name "falconer"
+#id "falconer"
 #command "#makemonsters1 517"
 #command "#batstartsum1 517"
 #command "#supplybonus +5"
@@ -249,7 +249,7 @@
 #end
 
 #new
-#name "monkey breeder"
+#id "monkey breeder"
 #command "#makemonsters1 1116"
 #command "#batstartsum1 1116"
 #command "#supplybonus +15"
@@ -279,7 +279,7 @@
 #end
 
 #new
-#name "ant summoner"
+#id "ant summoner"
 #command "#makemonsters3 1087"
 #command "#batstartsum1 1087"
 #command "#supplybonus +10"
@@ -313,7 +313,7 @@
 #end
 
 #new
-#name "red ant summoner"
+#id "red ant summoner"
 #command "#makemonsters2 2224"
 #command "#batstartsum1 2224"
 #command "#supplybonus +15"
@@ -344,7 +344,7 @@
 #end
 
 #new
-#name "fly summoner"
+#id "fly summoner"
 #command "#makemonsters3 2218"
 #command "#batstartsum1 2218"
 #command "#supplybonus +5"
@@ -376,7 +376,7 @@
 #end
 
 #new
-#name "dragonfly summoner"
+#id "dragonfly summoner"
 #command "#makemonsters3 591"
 #command "#batstartsum1 591"
 #command "#supplybonus +5"
@@ -408,7 +408,7 @@
 #end
 
 #new
-#name "spider summoner"
+#id "spider summoner"
 #command "#makemonsters3 2223"
 #command "#batstartsum1 2223"
 #command "#supplybonus +10"
@@ -439,7 +439,7 @@
 #end
 
 #new
-#name "scorpion summoner"
+#id "scorpion summoner"
 #command "#makemonsters3 2232"
 #command "#batstartsum1 2232"
 #command "#supplybonus +5"

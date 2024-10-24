@@ -63,7 +63,7 @@
 -- Thrown weapons
 
 #newitem
-#name "javelin"
+#id "javelin"
 #gameid 21
 #sprite /graphics/weapon/standard/javelin1.png
 #renderprio 7
@@ -73,7 +73,7 @@
 #enditem
 
 #newitem
-#name "chakram"
+#id "chakram"
 #gameid 362
 #sprite /graphics/weapon/standard/chakram.png
 #renderprio 7
@@ -84,7 +84,7 @@
 #enditem
 
 #newitem
-#name "throwing_axe"
+#id "throwing_axe"
 #gameid 260
 #sprite /graphics/vaettir/weapon/hatchet.png
 #renderprio 7
@@ -96,14 +96,14 @@
 #enditem
 
 #newitem
-#name "poison_darts"
+#id "poison_darts"
 #gameid 500
 #command "#gcost +1"
 #notepic
 #enditem
 
 #newitem
-#name "sticks_and_stones"
+#id "sticks_and_stones"
 #gameid 360
 #theme "primitive"
 #notepic

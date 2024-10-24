@@ -1,6 +1,6 @@
 --- Concealed armor
 #newitem
-#name "nothing"
+#id "nothing"
 #gameid -1
 #basechance 2
 #armor
@@ -12,7 +12,7 @@
 #enditem
 
 #newitem
-#name "leather cuirass"
+#id "leather cuirass"
 #gameid 5
 #basechance 2
 #armor
@@ -26,7 +26,7 @@
 #enditem
 
 #newitem
-#name "leather hauberk"
+#id "leather hauberk"
 #gameid 10
 #basechance 0.5
 #armor
@@ -40,7 +40,7 @@
 #enditem
 
 #newitem
-#name "full leather"
+#id "full leather"
 #gameid 15
 #basechance 0.25
 #armor
@@ -54,7 +54,7 @@
 #enditem
 
 #newitem
-#name "ring cuirass"
+#id "ring cuirass"
 #gameid 6
 #armor
 #basechance 2
@@ -66,7 +66,7 @@
 #enditem
 
 #newitem
-#name "ring hauberk"
+#id "ring hauberk"
 #gameid 11
 #basechance 0.5
 #armor
@@ -78,7 +78,7 @@
 #enditem
 
 #newitem
-#name "full ring"
+#id "full ring"
 #gameid 16
 #basechance 0.25
 #armor
@@ -90,7 +90,7 @@
 #enditem
 
 #newitem
-#name "linen cuirass"
+#id "linen cuirass"
 #gameid 183
 #basechance 2
 #armor
@@ -100,7 +100,7 @@
 #enditem
 
 #newitem
-#name "sharkskin cuirass"
+#id "sharkskin cuirass"
 #gameid 188
 #armor
 #basechance 2
@@ -110,7 +110,7 @@
 #enditem
 
 #newitem
-#name "sharkskin hauberk"
+#id "sharkskin hauberk"
 #gameid 151
 #basechance 0.5
 #armor
@@ -120,7 +120,7 @@
 #enditem
 
 #newitem
-#name "icestudded cuirass"
+#id "icestudded cuirass"
 #gameid icestudded_cuirass
 #basechance 0.01
 #chanceinc magic water *5
@@ -144,7 +144,7 @@
 
 --- Visible armor
 #newitem
-#name "scale cuirass"
+#id "scale cuirass"
 #gameid 7
 #sprite /graphics/scouts/armor/scale_iron.png
 #armor
@@ -158,7 +158,7 @@
 #enditem
 
 #newitem
-#name "bronze scale cuirass"
+#id "bronze scale cuirass"
 #gameid 142
 #sprite /graphics/scouts/armor/scale_bronze.png
 #armor
@@ -169,7 +169,7 @@
 #enditem
 
 #newitem
-#name "chain cuirass"
+#id "chain cuirass"
 #gameid 8
 #sprite /graphics/scouts/armor/chain_iron.png
 #armor
@@ -182,7 +182,7 @@
 #enditem
 
 #newitem
-#name "blackmail cuirass"
+#id "blackmail cuirass"
 #gameid blackmail_cuirass
 #basechance 0
 #chanceinc racetheme blacksteel 4
@@ -194,7 +194,7 @@
 #enditem
 
 #newitem
-#name "blackplate cuirass"
+#id "blackplate cuirass"
 #gameid blackplate_cuirass
 #basechance 0
 #chanceinc racetheme blacksteel 4
@@ -206,7 +206,7 @@
 #enditem
 
 #newitem
-#name "plate cuirass"
+#id "plate cuirass"
 #gameid 9
 #basechance 0.25
 #sprite /graphics/scouts/armor/plate_iron.png
@@ -221,7 +221,7 @@
 #enditem
 
 #newitem
-#name "bronze plate cuirass"
+#id "bronze plate cuirass"
 #gameid 100
 #basechance 0.25
 #sprite /graphics/scouts/armor/plate_bronze.png
@@ -234,7 +234,7 @@
 #enditem
 
 #newitem
-#name "icicle cuirass"
+#id "icicle cuirass"
 #gameid icicle_cuirass
 #basechance 0.01
 #chanceinc magic water *5
@@ -255,7 +255,7 @@
 #enditem
 
 #newitem
-#name "ice cuirass"
+#id "ice cuirass"
 #gameid 26
 #basechance 0.01
 #chanceinc magic water *5
@@ -276,7 +276,7 @@
 #enditem
 
 #newitem
-#name "bone cuirass"
+#id "bone cuirass"
 #gameid 149
 #basechance 0.05
 #chanceinc magic death *10
@@ -294,7 +294,7 @@
 #enditem
 
 #newitem
-#name "shell cuirass"
+#id "shell cuirass"
 #gameid 140
 #basechance 0.1
 #sprite /graphics/scouts/armor/armor_shell.png
@@ -305,7 +305,7 @@
 #enditem
 
 #newitem
-#name "coral cuirass"
+#id "coral cuirass"
 #gameid 22
 #basechance 0.1
 #chanceinc magic water nature *10

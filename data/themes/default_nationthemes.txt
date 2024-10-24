@@ -1,5 +1,5 @@
 #newtheme
-#name default
+#id default
 #basechance 10
 #endtheme
 
@@ -7,7 +7,7 @@
 ---------- Weather effects
 
 #new
-#name "colder 1"
+#id "colder 1"
 #type "weather"
 #basechance 0.5
 #command "#idealcold +1"
@@ -19,7 +19,7 @@
 #end
 
 #new
-#name "colder 2"
+#id "colder 2"
 #type "weather"
 #basechance 0.125
 #command "#idealcold +2"
@@ -32,7 +32,7 @@
 #end
 
 #new
-#name "colder 3"
+#id "colder 3"
 #type "weather"
 #basechance 0.05
 #command "#idealcold +3"
@@ -43,7 +43,7 @@
 #end
 
 #new
-#name "hotter 1"
+#id "hotter 1"
 #type "weather"
 #basechance 0.5
 #command "#idealcold -1"
@@ -54,7 +54,7 @@
 #end
 
 #new
-#name "hotter 2"
+#id "hotter 2"
 #type "weather"
 #basechance 0.125
 #command "#idealcold -2"
@@ -65,7 +65,7 @@
 #end
 
 #new
-#name "hotter 3"
+#id "hotter 3"
 #type "weather"
 #basechance 0.05
 #command "#idealcold -3"
@@ -77,7 +77,7 @@
 
 
 #new
-#name "spreadcold 1"
+#id "spreadcold 1"
 #type spread
 #basechance 0
 #command "#spreadcold 1"
@@ -88,7 +88,7 @@
 #end
 
 #new
-#name "spreadcold 3"
+#id "spreadcold 3"
 #type spread
 #basechance 0
 #command "#spreadcold 3"
@@ -98,7 +98,7 @@
 #end
 
 #new
-#name "spreadheat 1"
+#id "spreadheat 1"
 #type spread
 #basechance 0
 #command "#spreadheat 1"
@@ -109,7 +109,7 @@
 #end
 
 #new
-#name "spreadheat 3"
+#id "spreadheat 3"
 #type spread
 #basechance 0
 #command "#spreadheat 3"
@@ -123,7 +123,7 @@
 -----------
 
 #new
-#name "nopreach"
+#id "nopreach"
 #type "bloodsac"
 #type "dominion"
 #basechance 0.05
@@ -137,7 +137,7 @@
 #end
 
 #new
-#name "bloodsac"
+#id "bloodsac"
 #type "bloodsac"
 #type "dominion"
 #basechance 0.5
@@ -151,7 +151,7 @@
 #end
 
 #new
-#name "nodeathsupply"
+#id "nodeathsupply"
 #basechance 0.05
 #command "#nodeathsupply"
 #magicpriority death 8
@@ -159,7 +159,7 @@
 #end
 
 #new
-#name "priestreanim"
+#id "priestreanim"
 #type "reanim"
 #basechance 0.05
 #command "#priestreanim"
@@ -173,7 +173,7 @@
 #end
 
 #new
-#name "horsereanim"
+#id "horsereanim"
 #type "reanim"
 #basechance 0.025
 #command "#priestreanim"
@@ -188,7 +188,7 @@
 #end
 
 #new
-#name "lizardreanim"
+#id "lizardreanim"
 #type "reanim"
 #basechance 0
 #chanceinc primaryrace lizard OR primaryrace ophidian 0.025
@@ -205,7 +205,7 @@
 
 -- Disabled ATM because Dominions only allows adding this ability to a nation's undead/demonic priests
 #new
-#name "manikinreanim"
+#id "manikinreanim"
 #type "reanim"
 #type "dominion"
 -- #basechance 0.05
@@ -220,7 +220,7 @@
 #end
 
 #new
-#name "golemcult_5"
+#id "golemcult_5"
 #type "dominion"
 #basechance 0.06
 #command "#golemhp 5"
@@ -229,7 +229,7 @@
 #end
 
 #new
-#name "golemcult_10"
+#id "golemcult_10"
 #type "dominion"
 #basechance 0.03
 #command "#golemhp 10"
@@ -238,7 +238,7 @@
 #end
 
 #new
-#name "godrebirth"
+#id "godrebirth"
 #basechance 0.3
 #command "#godrebirth"
 #magicpriority nature 4
@@ -250,7 +250,7 @@
 
 #new
 #type "castleprod"
-#name "castleprod 10"
+#id "castleprod 10"
 #basechance 0.2
 #command "#castleprod +10"
 #magicpriority earth 4
@@ -261,7 +261,7 @@
 
 #new
 #type "castleprod"
-#name "castleprod 25"
+#id "castleprod 25"
 #basechance 0.1
 #command "#castleprod +25"
 #magicpriority earth 4
@@ -271,7 +271,7 @@
 #end
 
 #new
-#name "tradecoast-10"
+#id "tradecoast-10"
 #basechance 0.25
 #command "#tradecoast +10"
 #desc "10 percent higher gold income in coastal provinces"
@@ -279,7 +279,7 @@
 
 
 #new
-#name "cheaplabs"
+#id "cheaplabs"
 #type "lab"
 #basechance 0.25
 #command "#labcost 500"
@@ -287,7 +287,7 @@
 #end
 
 #new
-#name "expensivelabs"
+#id "expensivelabs"
 #type "lab"
 #basechance 0.25
 #command "#labcost 700"
@@ -295,7 +295,7 @@
 #end
 
 #new
-#name "cheaptemple"
+#id "cheaptemple"
 #type "temple"
 #basechance 0.25
 #command "#templecost 500"
@@ -303,7 +303,7 @@
 #end
 
 #new
-#name "cheaptemple2"
+#id "cheaptemple2"
 #type "temple"
 #basechance 0.1
 #command "#templecost 400"
@@ -311,7 +311,7 @@
 #end
 
 #new
-#name "cheaptemple3"
+#id "cheaptemple3"
 #type "temple"
 #basechance 0.05
 #command "#templecost 300"
@@ -319,7 +319,7 @@
 #end
 
 #new
-#name "expensivetemple"
+#id "expensivetemple"
 #type "temple"
 #basechance 0.25
 #command "#templecost 700"
@@ -327,7 +327,7 @@
 #end
 
 #new
-#name "expensivetemple2"
+#id "expensivetemple2"
 #type "temple"
 #basechance 0.1
 #command "#templecost 800"
@@ -335,7 +335,7 @@
 #end
 
 #new
-#name "cheapforts"
+#id "cheapforts"
 #type "fort"
 #basechance 0.25
 #command "#fortcost -10"
@@ -343,7 +343,7 @@
 #end
 
 #new
-#name "cheapforts2"
+#id "cheapforts2"
 #type "fort"
 #basechance 0.1
 #command "#fortcost -20"
@@ -352,7 +352,7 @@
 
 
 #new
-#name "expensivemercs"
+#id "expensivemercs"
 #type "merc"
 #basechance 0.1
 #command "#merccost 25"
@@ -360,7 +360,7 @@
 #end
 
 #new
-#name "cheapmercs"
+#id "cheapmercs"
 #type "merc"
 #basechance 0.1
 #command "#merccost -25"
@@ -368,7 +368,7 @@
 #end
 
 #new
-#name "expensiveforts"
+#id "expensiveforts"
 #type "fort"
 #basechance 0.25
 #command "#fortcost 10"
@@ -376,7 +376,7 @@
 #end
 
 #new
-#name "expensiveforts2"
+#id "expensiveforts2"
 #type "fort"
 #basechance 0.1
 #command "#fortcost 20"
@@ -384,7 +384,7 @@
 #end
 
 #new
-#name "templegems: fire"
+#id "templegems: fire"
 #type "temple"
 #basechance 0.025
 #command "#templegems 0"
@@ -395,7 +395,7 @@
 #end
 
 #new
-#name "templegems: fire cheap"
+#id "templegems: fire cheap"
 #type "temple"
 #basechance 0.0125
 #command "#templegems 0"
@@ -406,7 +406,7 @@
 #end
 
 #new
-#name "templegems: air"
+#id "templegems: air"
 #type "temple"
 #basechance 0.025
 #command "#templegems 1"
@@ -418,7 +418,7 @@
 
 
 #new
-#name "templegems: air cheap"
+#id "templegems: air cheap"
 #type "temple"
 #basechance 0.0125
 #command "#templegems 1"
@@ -429,7 +429,7 @@
 #end
 
 #new
-#name "templegems: water"
+#id "templegems: water"
 #type "temple"
 #basechance 0.025
 #command "#templegems 2"
@@ -440,7 +440,7 @@
 #end
 
 #new
-#name "templegems: water cheap"
+#id "templegems: water cheap"
 #type "temple"
 #basechance 0.0125
 #command "#templegems 2"
@@ -451,7 +451,7 @@
 #end
 
 #new
-#name "templegems: earth"
+#id "templegems: earth"
 #type "temple"
 #basechance 0.025
 #command "#templegems 3"
@@ -462,7 +462,7 @@
 #end
 
 #new
-#name "templegems: earth cheap"
+#id "templegems: earth cheap"
 #type "temple"
 #basechance 0.0125
 #command "#templegems 3"
@@ -474,7 +474,7 @@
 
 
 #new
-#name "templegems: astral"
+#id "templegems: astral"
 #type "temple"
 #basechance 0.025
 #command "#templegems 4"
@@ -485,7 +485,7 @@
 #end
 
 #new
-#name "templegems: astral cheap"
+#id "templegems: astral cheap"
 #type "temple"
 #basechance 0.0125
 #command "#templegems 4"
@@ -496,7 +496,7 @@
 #end
 
 #new
-#name "templegems: death"
+#id "templegems: death"
 #type "temple"
 #basechance 0.025
 #command "#templegems 5"
@@ -507,7 +507,7 @@
 #end
 
 #new
-#name "templegems: death cheap"
+#id "templegems: death cheap"
 #type "temple"
 #basechance 0.0125
 #command "#templegems 5"
@@ -519,7 +519,7 @@
 
 
 #new
-#name "templegems: nature"
+#id "templegems: nature"
 #type "temple"
 #basechance 0.025
 #command "#templegems 6"
@@ -531,7 +531,7 @@
 
 
 #new
-#name "templegems: nature cheap"
+#id "templegems: nature cheap"
 #type "temple"
 #basechance 0.0125
 #command "#templegems 6"
@@ -542,7 +542,7 @@
 #end
 
 #new
-#name "templegems: glamour"
+#id "templegems: glamour"
 #type "temple"
 #basechance 0.025
 #command "#templegems 7"
@@ -553,7 +553,7 @@
 #end
 
 #new
-#name "templegems: glamour cheap"
+#id "templegems: glamour cheap"
 #type "temple"
 #basechance 0.0125
 #command "#templegems 7"
@@ -564,7 +564,7 @@
 #end
 
 #new
-#name "templegems: blood"
+#id "templegems: blood"
 #type "temple"
 #basechance 0.05
 #command "#templegems 8"
@@ -574,7 +574,7 @@
 #end
 
 #new
-#name "uwbuild"
+#id "uwbuild"
 #basechance 0.0125
 #command "#uwbuild 1"
 #chanceinc primaryracecommand #amphibian 0.25
@@ -589,7 +589,7 @@
 --- Guardian spirits
 
 #new
-#name "guardian spirit: ghost"
+#id "guardian spirit: ghost"
 #type guardspirit
 #basechance 0.05
 #command "#guardspirit 566"
@@ -599,7 +599,7 @@
 #end
 
 #new
-#name "guardian spirit: black hawk"
+#id "guardian spirit: black hawk"
 #type guardspirit
 #basechance 0.05
 #command "#guardspirit 517"
@@ -611,7 +611,7 @@
 #end
 
 #new
-#name "guardian spirit: siren"
+#id "guardian spirit: siren"
 #type guardspirit
 #basechance 0.05
 #command "#guardspirit 1055"
@@ -623,7 +623,7 @@
 #end
 
 #new
-#name "guardian spirit: revenant"
+#id "guardian spirit: revenant"
 #type guardspirit
 #basechance 0.05
 #command "#guardspirit 396"
@@ -633,7 +633,7 @@
 #end
 
 #new
-#name "guardian spirit: nun"
+#id "guardian spirit: nun"
 #type guardspirit
 #basechance 0
 #command "#guardspirit 396"
@@ -645,7 +645,7 @@
 
 -- Very low normal chanceinc values due to multipliers
 #new
-#name "guardian spirit: fravashi"
+#id "guardian spirit: fravashi"
 #type guardspirit
 #command "#guardspirit 2562"
 #basechance 0.025

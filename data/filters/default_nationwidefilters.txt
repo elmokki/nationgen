@@ -1,33 +1,33 @@
 #new
-#name "poisonres5"
+#id "poisonres5"
 #command "#poisonres +5"
 #description "poison resistance"
 #filterdesc "poisonres desc"
 #end
 
 #new
-#name "shockres5"
+#id "shockres5"
 #command "#shockres +5"
 #description "shock resistance"
 #filterdesc "shockres desc"
 #end
 
 #new
-#name "fireres5"
+#id "fireres5"
 #command "#fireres +5"
 #description "fire resistance"
 #filterdesc "fireres desc"
 #end
 
 #new
-#name "coldres5"
+#id "coldres5"
 #description "cold resistance"
 #command "#coldres +5"
 #filterdesc "coldres desc"
 #end
 
 #new
-#name "darkvision 50"
+#id "darkvision 50"
 #primarycommand "#darkvision"
 #primarycommand "#blind"
 #primarycommand "#spiritsight"
@@ -40,7 +40,7 @@
 #end
 
 #new
-#name "forestsurvival"
+#id "forestsurvival"
 #primarycommand "#forestsurvival"
 #description "Forest survival"
 #chance 0.5
@@ -49,7 +49,7 @@
 #end
 
 #new
-#name "swampsurvival"
+#id "swampsurvival"
 #primarycommand "#swampsurvival"
 #description "Swamp survival"
 #chance 0.5
@@ -58,7 +58,7 @@
 #end
 
 #new
-#name "wastesurvival"
+#id "wastesurvival"
 #primarycommand "#wastesurvival"
 #description "Waste survival"
 #chance 0.5
@@ -67,7 +67,7 @@
 #end
 
 #new
-#name "mountainsurvival"
+#id "mountainsurvival"
 #primarycommand "#mountainsurvival"
 #description "Mountain survival"
 #chance 0.5
@@ -76,7 +76,7 @@
 #end
 
 #new
-#name "faeblood"
+#id "faeblood"
 #tag "faeblood"
 #description "Fae blood"
 #chance 0.3
@@ -87,7 +87,7 @@
 #end
 
 #new
-#name "strong"
+#id "strong"
 #tag "strong"
 #chance 0.3
 #command "#str +1"
@@ -96,7 +96,7 @@
 #end
 
 #new
-#name "weak"
+#id "weak"
 #tag "weak"
 #chance 0.15
 #command "#str -1"
@@ -104,7 +104,7 @@
 #end
 
 #new
-#name "stocky"
+#id "stocky"
 #tag "stocky"
 #chance 0.3
 #primarycommand #undead
@@ -117,7 +117,7 @@
 #end
 
 #new
-#name "clumsy"
+#id "clumsy"
 #tag "clumsy"
 #chance 0.15
 #command "#att -1"
@@ -128,7 +128,7 @@
 #end
 
 #new
-#name "Myopic"
+#id "Myopic"
 #chance 0.3
 #primarycommand #blind
 #command "#prec -1"
@@ -136,7 +136,7 @@
 #end
 
 #new
-#name "Keen eyed"
+#id "Keen eyed"
 #chance 0.3
 #primarycommand #blind
 #command "#prec +1"
@@ -144,7 +144,7 @@
 #end
 
 #new
-#name "Aggressive"
+#id "Aggressive"
 #chance 0.3
 #command "#att +1"
 #command "#def -1"
@@ -152,14 +152,14 @@
 #end
 
 #new
-#name "Gluttonous"
+#id "Gluttonous"
 #chance 0.1
 #command "#supplybonus -1"
 #filterdesc "gluttonous desc"
 #end
 
 #new
-#name "Cowardly"
+#id "Cowardly"
 #chance 0.3
 #command "#mor -1"
 #command "#def +1"
@@ -167,7 +167,7 @@
 #end
 
 #new
-#name "Brave"
+#id "Brave"
 #chance 0.3
 #command "#mor +1"
 #description "Brave"
@@ -175,14 +175,14 @@
 #end
 
 #new
-#name "Quick"
+#id "Quick"
 #chance 0.1
 #command "#ap +4"
 #filterdesc "quick desc"
 #end
 
 #new
-#name "Sickly"
+#id "Sickly"
 #chance 0.015
 #primarycommand "#heal"
 #command "#startaff +10"
@@ -191,7 +191,7 @@
 #end
 
 #new
-#name "coldvuln"
+#id "coldvuln"
 #chance 0.05
 #command "#coldres -3"
 #command "#fireres +3"
@@ -200,7 +200,7 @@
 #end
 
 #new
-#name "firevuln"
+#id "firevuln"
 #chance 0.05
 #command "#coldres +3"
 #command "#fireres -3"
@@ -209,7 +209,7 @@
 #end
 
 #new
-#name "blind"
+#id "blind"
 #chance 0.025
 #primarycommand "#blind"
 #command "#blind"
@@ -217,7 +217,7 @@
 #end
 
 #new
-#name "spiritsight"
+#id "spiritsight"
 #chance 0.025
 #primarycommand "#spiritsight"
 #command "#spiritsight"
@@ -225,7 +225,7 @@
 #end
 
 #new
-#name "magicbeing"
+#id "magicbeing"
 #chance 0.0125
 #primarycommand "#magicbeing"
 #command "#magicbeing"
@@ -234,7 +234,7 @@
 #end
 
 #new
-#name "demonblood"
+#id "demonblood"
 #chance 0.0125
 #primarycommand "#demon"
 #command "#demon"
@@ -246,7 +246,7 @@
 #end
 
 #new
-#name "pooramphibian"
+#id "pooramphibian"
 #chance 0.0
 #chanceinc "magic water 0.006125"
 #primarycommand "#pooramphibian"
@@ -258,7 +258,7 @@
 #end
 
 #new
-#name "levy"
+#id "levy"
 #chance 0.0125
 #trooponly
 #command "#gcost *0.9"
@@ -267,7 +267,7 @@
 #end
 
 #new
-#name "warriorculture"
+#id "warriorculture"
 #chance 0.0125
 #trooponly
 #command "#gcost *1.1"
@@ -276,7 +276,7 @@
 #end
 
 #new
-#name "professional"
+#id "professional"
 #chance 0.03
 #commanderonly
 #command "#gcost *1.2"
@@ -289,14 +289,14 @@
 #end
 
 #new
-#name "Hardy"
+#id "Hardy"
 #chance 0.05
 #command "#woundfend +1"
 #filterdesc "hardy desc"
 #end
 
 #new
-#name "Resilient"
+#id "Resilient"
 #chance 0.05
 #primarycommand #demon
 #primarycommand #undead
@@ -305,7 +305,7 @@
 #end
 
 #new
-#name "Toxic"
+#id "Toxic"
 #chance 0.025
 #nocommand #poisonskin
 #command "#poisonskin 20"
@@ -314,7 +314,7 @@
 #end
 
 #new
-#name "thickskin"
+#id "thickskin"
 #chance 0.025
 #command "#prot +2"
 #description "Thick skinned"
@@ -322,7 +322,7 @@
 #end
 
 #new
-#name "golem"
+#id "golem"
 #chance 0.00625
 #primarycommand "#stonebeing"
 #command "#stonebeing"
@@ -332,7 +332,7 @@
 #end
 
 #new
-#name "golem"
+#id "golem"
 #chance 0.00625
 #primarycommand "#stonebeing"
 #command "#stonebeing"
@@ -342,7 +342,7 @@
 #end
 
 #new
-#name "maritime"
+#id "maritime"
 #chance 0.05
 #commanderonly
 #primarycommand "#sailing"
@@ -352,7 +352,7 @@
 #end
 
 #new
-#name "stealthy"
+#id "stealthy"
 #basechance 0.05
 #trooponly
 #primarycommand "#stealthy"
@@ -363,7 +363,7 @@
 
 #new
 #basechance 0.025
-#name "deathrec10"
+#id "deathrec10"
 #command "#deathrec %cost10"
 #chanceinc magic death 0.075
 #filterdesc "deathrec desc"
@@ -371,7 +371,7 @@
 
 #new
 #basechance 0.05
-#name "chaosrec10"
+#id "chaosrec10"
 #command "#chaosrec %cost10"
 #filterdesc "chaosrec desc"
 #end
@@ -382,7 +382,7 @@
 #chanceinc "racetag giant *2"
 #chanceinc "racetag demon *2"
 #chanceinc "racetag fae *2"
-#name "pride-2"
+#id "pride-2"
 #command "#minsizeleader 2"
 #trooponly
 #filterdesc "minsizeleader desc"
@@ -396,7 +396,7 @@
 #chanceinc "racetag giant *2"
 #chanceinc "racetag demon *2"
 #chanceinc "racetag fae *2"
-#name "pride-3"
+#id "pride-3"
 #command "#minsizeleader 3"
 #trooponly
 #filterdesc "minsizeleader desc"
@@ -409,7 +409,7 @@
 #chanceinc "racetag giant *2"
 #chanceinc "racetag demon *2"
 #chanceinc "racetag fae *2"
-#name "pride-4"
+#id "pride-4"
 #command "#minsizeleader 4"
 #trooponly
 #filterdesc "minsizeleader desc"
@@ -421,7 +421,7 @@
 #chanceinc "racetag giant *2"
 #chanceinc "racetag demon *2"
 #chanceinc "racetag fae *2"
-#name "pride-5"
+#id "pride-5"
 #command "#minsizeleader 5"
 #trooponly
 #filterdesc "minsizeleader desc"

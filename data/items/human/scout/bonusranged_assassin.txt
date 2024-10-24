@@ -1,5 +1,5 @@
 #newitem
-#name "wings_lizard"
+#id "wings_lizard"
 #gameid -1
 #basechance 0
 #chanceinc race Lizard 0.01
@@ -17,7 +17,7 @@
 #enditem
 
 #newitem
-#name "wings_demondbred"
+#id "wings_demondbred"
 #gameid -1
 #basechance 0.01
 #chanceinc race Abysian AND racetheme primal 1
@@ -42,7 +42,7 @@
 #enditem
 
 #newitem
-#name "hypnosis"
+#id "hypnosis"
 #gameid 595
 #define "#gcost +10"
 #basechance 0.05
@@ -50,7 +50,7 @@
 #enditem
 
 #newitem
-#name "throw flames"
+#id "throw flames"
 #gameid 383
 #basechance 0
 #chanceinc race Abysian AND racetheme primal 0.25
@@ -62,7 +62,7 @@
 #enditem
 
 #newitem
-#name "cave fire"
+#id "cave fire"
 #gameid 601
 #define "#gcost +10"
 #basechance 0.01
@@ -72,7 +72,7 @@
 #enditem
 
 #newitem
-#name "koppo"
+#id "koppo"
 #gameid 420
 #define "#gcost +10"
 #basechance 0.01
@@ -80,7 +80,7 @@
 #enditem
 
 #newitem
-#name "chi kick"
+#id "chi kick"
 #gameid 175
 #define "#gcost +10"
 #basechance 0.01
@@ -88,21 +88,21 @@
 #enditem
 
 #newitem
-#name "tail slap"
+#id "tail slap"
 #gameid 589
 #basechance 0.01
 #theme "lizard"
 #enditem
 
 #newitem
-#name "bite"
+#id "bite"
 #gameid 576
 #basechance 0.01
 #theme "lizard"
 #enditem
 
 #newitem
-#name "kick"
+#id "kick"
 #gameid 397
 #basechance 0.03
 #theme "boreal"
@@ -116,7 +116,7 @@
 #enditem
 
 #newitem
-#name "head butt"
+#id "head butt"
 #gameid 300
 #basechance 0.01
 #theme "boreal"
@@ -130,7 +130,7 @@
 #enditem
 
 #newitem
-#name "poison darts"
+#id "poison darts"
 #gameid 500
 #basechance 0.05
 #theme "boreal"
@@ -143,7 +143,7 @@
 #enditem
 
 #newitem
-#name "strangulation"
+#id "strangulation"
 #gameid 116
 #basechance 0.05
 #theme "boreal"
@@ -157,7 +157,7 @@
 #enditem
 
 #newitem
-#name "patience"
+#id "patience"
 #gameid -1
 #define "#patience +3"
 #basechance 0.05
@@ -172,7 +172,7 @@
 #enditem
 
 #newitem
-#name "stealth"
+#id "stealth"
 #gameid -1
 #define "#stealthy +20"
 #basechance 0.05

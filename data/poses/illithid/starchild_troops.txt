@@ -1,7 +1,7 @@
 -- Starchild-type elite-ish hybrid troops
 
 #newpose
-#name "advanced hybrid infantry"
+#id "advanced hybrid infantry"
 #role "infantry"
 #role "elite infantry"
 #role "sacred infantry"
@@ -47,7 +47,7 @@
 -- Starchild-type hybrid ranged troops; for balance reasons these are never elite/sacred (their weapons give them semi-fixed prices and superior mindblasts and such would be weird)
 
 #newpose
-#name "mindflayer"
+#id "mindflayer"
 #role "ranged"
 
 #basechance 0.25
@@ -102,7 +102,7 @@
 -- Starchild-type hybrid scouts
 
 #newpose
-#name "scout"
+#id "scout"
 #role "scout"
 
 #command "#gcost 20"

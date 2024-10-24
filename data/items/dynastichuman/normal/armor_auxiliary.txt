@@ -1,7 +1,7 @@
 --- Imperial armors
 
 #newitem
-#name "nada"
+#id "nada"
 #gameid -1
 #basechance 3
 #tag "eliteversion 'nada elite'"
@@ -10,7 +10,7 @@
 #enditem
 
 #newitem
-#name "nada elite"
+#id "nada elite"
 #gameid -1
 #tag "eliteversion 'elite linen cuirass'"
 #theme "elite"
@@ -18,7 +18,7 @@
 #enditem
 
 #newitem
-#name "linen cuirass"
+#id "linen cuirass"
 #gameid 183
 #sprite /graphics/dynastichuman/armor/linencuirass_thick.png
 #basechance 5
@@ -27,7 +27,7 @@
 #enditem
 
 #newitem
-#name "elite linen cuirass"
+#id "elite linen cuirass"
 #gameid 183
 #sprite /graphics/dynastichuman/armor/linencuirass_imperial_elite.png
 #tag "eliteversion 'elite lorica segmentata'"
@@ -37,7 +37,7 @@
 
 
 #newitem
-#name "lorica hamata"
+#id "lorica hamata"
 #basechance 2
 #gameid 116
 #sprite /graphics/dynastichuman/armor/lorica_hamata.png
@@ -47,7 +47,7 @@
 #enditem
 
 #newitem
-#name "elite lorica segmentata"
+#id "elite lorica segmentata"
 #gameid 99
 #sprite /graphics/dynastichuman/armor/lorica_segmentata_elite.png
 #theme "elite"

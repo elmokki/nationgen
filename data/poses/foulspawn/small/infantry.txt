@@ -3,7 +3,7 @@
 #newpose
 #basechance 500000000
 -- #basechance 0
-#name "foulspawn infantry"
+#id "foulspawn infantry"
 #role "infantry"
 
 #freetemplatefilter foulspawntemplate infantry
@@ -31,7 +31,7 @@
 #newpose
 #basechance 250000000
 -- #basechance 0
-#name "foulspawn ogre infantry"
+#id "foulspawn ogre infantry"
 #role "infantry"
 
 #chanceinc moduleid herogen *0
@@ -59,7 +59,7 @@
 #newpose
 #basechance 500000000
 -- #basechance 0
-#name "foulspawn elite infantry"
+#id "foulspawn elite infantry"
 #role "elite infantry"
 #role "sacred infantry"
 
@@ -93,7 +93,7 @@
 -------- Troop poses
 
 #newpose
-#name "degenerate infantry"
+#id "degenerate infantry"
 #basechance 0
 #role "infantry"
 #role "elite infantry"
@@ -159,7 +159,7 @@
 
 
 #newpose
-#name "normal infantry"
+#id "normal infantry"
 #basechance 0
 #role "infantry"
 #role "elite infantry"
@@ -212,7 +212,7 @@
 
 
 #newpose
-#name "winged infantry"
+#id "winged infantry"
 #basechance 0
 #role "infantry"
 #role "elite infantry"
@@ -265,7 +265,7 @@
 
 
 #newpose
-#name "ogre degenerates"
+#id "ogre degenerates"
 #basechance 0
 #role "infantry"
 #role "elite infantry"
@@ -338,7 +338,7 @@
 
 
 #newpose
-#name "ogre infantry"
+#id "ogre infantry"
 #basechance 0
 #role "infantry"
 #role "elite infantry"
@@ -393,7 +393,7 @@
 -------- Scout
 
 #newpose
-#name "scout"
+#id "scout"
 #role "scout"
 
 #renderorder "shadow bonusweapon cloakb basesprite rarm weapon rleg lleg larm head overlay shirt pants armor rhand offhandw lhand cloakf helmet offhanda"

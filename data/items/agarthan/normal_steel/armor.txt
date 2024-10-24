@@ -1,21 +1,21 @@
 -- Chain
 
 #newitem
-#name "scale cuirass"
+#id "scale cuirass"
 #gameid 7
 #sprite /graphics/agarthan/armor/steelarmor_light.png
 #armor
 #enditem
 
 #newitem
-#name "scale hauberk"
+#id "scale hauberk"
 #gameid 12
 #sprite /graphics/agarthan/armor/steelarmor_heavy.png
 #armor
 #enditem
 
 #newitem
-#name "full scale"
+#id "full scale"
 #gameid 17
 #sprite /graphics/agarthan/armor/steelarmor_heavy.png
 #needs legs steelpants
@@ -27,7 +27,7 @@
 -- Plate
 
 #newitem
-#name "plate cuirass"
+#id "plate cuirass"
 #gameid 9
 #sprite /graphics/agarthan/armor/steelarmor_light.png
 #basechance 0.25
@@ -35,7 +35,7 @@
 #enditem
 
 #newitem
-#name "plate hauberk"
+#id "plate hauberk"
 #gameid 14
 #sprite /graphics/agarthan/armor/steelarmor_heavy.png
 #basechance 0.15
@@ -43,7 +43,7 @@
 #enditem
 
 #newitem
-#name "full plate"
+#id "full plate"
 #gameid 19
 #sprite /graphics/agarthan/armor/steelarmor_heavy.png
 #needs legs steelpants
@@ -54,7 +54,7 @@
 -- Nekkid
 
 #newitem
-#name "naked"
+#id "naked"
 #gameid -1
 #armor
 #theme "miltia"

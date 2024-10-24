@@ -1,7 +1,7 @@
 --- Unarmored
 
 #newitem
-#name "loincloth"
+#id "loincloth"
 #gameid -1
 #needs shirt loincloth
 #armor
@@ -11,7 +11,7 @@
 #enditem
 
 #newitem
-#name "tunic"
+#id "tunic"
 #gameid -1
 #needs shirt tunic
 #armor
@@ -21,7 +21,7 @@
 --- Furs
 
 #newitem
-#name "plain furs"
+#id "plain furs"
 #gameid 44
 #sprite /graphics/highmen/armor/hoburg/furs.png
 #needs shirt noshirt
@@ -33,7 +33,7 @@
 --- Leather
 
 #newitem
-#name "leather cuirass"
+#id "leather cuirass"
 #gameid 5
 #sprite /graphics/highmen/armor/hoburg/leather_cuirass.png
 #armor
@@ -41,7 +41,7 @@
 #enditem
 
 #newitem
-#name "leather hauberk"
+#id "leather hauberk"
 #gameid 10
 #sprite /graphics/highmen/armor/hoburg/leather_hauberk.png
 #armor
@@ -49,7 +49,7 @@
 #enditem
 
 #newitem
-#name "full leather"
+#id "full leather"
 #gameid 15
 #sprite /graphics/highmen/armor/hoburg/leather_full.png
 #armor
@@ -60,7 +60,7 @@
 --- Ring
 
 #newitem
-#name "ring cuirass"
+#id "ring cuirass"
 #gameid 6
 #sprite /graphics/highmen/armor/hoburg/ring_cuirass.png
 #theme "leather"
@@ -68,7 +68,7 @@
 #enditem
 
 #newitem
-#name "ring hauberk"
+#id "ring hauberk"
 #gameid 11
 #sprite /graphics/highmen/armor/hoburg/ring_hauberk.png
 #armor
@@ -76,7 +76,7 @@
 #enditem
 
 #newitem -- full ring
-#name "full ring"
+#id "full ring"
 #gameid 16
 #sprite /graphics/highmen/armor/hoburg/ring_full.png
 #armor
@@ -87,7 +87,7 @@
 --- Scale
 
 #newitem
-#name "scale cuirass"
+#id "scale cuirass"
 #gameid 7
 #sprite /graphics/highmen/armor/hoburg/scale_cuirass.png
 #armor
@@ -95,7 +95,7 @@
 #enditem
 
 #newitem
-#name "scale hauberk"
+#id "scale hauberk"
 #gameid 12
 #sprite /graphics/highmen/armor/hoburg/scale_hauberk.png
 #armor
@@ -103,7 +103,7 @@
 #enditem
 
 #newitem -- full scale
-#name "full scale"
+#id "full scale"
 #gameid 17
 #sprite /graphics/highmen/armor/hoburg/scale_full.png
 #armor
@@ -114,7 +114,7 @@
 --- Chain Mail
 
 #newitem
-#name "chain cuirass"
+#id "chain cuirass"
 #gameid 8
 #sprite /graphics/highmen/armor/hoburg/chain_cuirass.png
 #armor
@@ -122,7 +122,7 @@
 #enditem
 
 #newitem
-#name "chain hauberk"
+#id "chain hauberk"
 #gameid 13
 #sprite /graphics/highmen/armor/hoburg/chain_hauberk.png
 #armor
@@ -130,7 +130,7 @@
 #enditem
 
 #newitem -- full chain
-#name "full chain"
+#id "full chain"
 #gameid 18
 #sprite /graphics/highmen/armor/hoburg/chain_full.png
 #armor
@@ -142,7 +142,7 @@
 -- Plate
 
 #newitem
-#name "plate cuirass"
+#id "plate cuirass"
 #gameid 9
 #sprite /graphics/highmen/armor/hoburg/plate_cuirass.png
 #armor
@@ -151,7 +151,7 @@
 #enditem
 
 #newitem
-#name "plate hauberk"
+#id "plate hauberk"
 #gameid 14
 #sprite /graphics/highmen/armor/hoburg/plate_hauberk.png
 #armor
@@ -160,7 +160,7 @@
 #enditem
 
 #newitem -- full plate
-#name "full plate"
+#id "full plate"
 #gameid 19
 #sprite /graphics/highmen/armor/hoburg/plate_full.png
 #armor

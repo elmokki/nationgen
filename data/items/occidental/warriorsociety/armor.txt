@@ -1,7 +1,7 @@
 --- Nekkid
 
 #newitem
-#name "nekkid"
+#id "nekkid"
 #gameid -1
 #armor
 #theme "primitive"
@@ -11,7 +11,7 @@
 --- Leather
 
 #newitem
-#name "leather cuirass"
+#id "leather cuirass"
 #basechance 1
 #notepic
 #gameid 5
@@ -21,7 +21,7 @@
 #enditem
 
 #newitem
-#name "leather cuirass dyed"
+#id "leather cuirass dyed"
 #basechance 2
 #gameid 5
 #sprite /graphics/muuch/armor/small/leather_cuirass.png
@@ -31,7 +31,7 @@
 #enditem
 
 #newitem
-#name "leather hauberk"
+#id "leather hauberk"
 #basechance 1
 #notepic
 #gameid 10
@@ -41,7 +41,7 @@
 #enditem
 
 #newitem
-#name "leather hauberk dyed"
+#id "leather hauberk dyed"
 #basechance 2
 #gameid 10
 #sprite /graphics/muuch/armor/small/leather_hauberk.png
@@ -51,7 +51,7 @@
 #enditem
 
 #newitem -- reinforced full leather (Mictlan armor)
-#name "reinforced leather"
+#id "reinforced leather"
 #gameid zotz_mictlanarmor
 #sprite /graphics/muuch/armor/small/ring_hauberk.png
 #recolormask /graphics/muuch/armor/small/fringe_recolormask.png
@@ -62,7 +62,7 @@
 --- Bronze 
 
 #newitem
-#name "bronze scale cuirass"
+#id "bronze scale cuirass"
 #gameid 142
 #sprite /graphics/muuch/armor/small/bronzescale_cuirass.png
 #armor
@@ -70,7 +70,7 @@
 #enditem
 
 #newitem
-#name "bronze scale hauberk"
+#id "bronze scale hauberk"
 #gameid 136
 #sprite /graphics/muuch/armor/small/bronzescale_hauberk.png
 #recolormask /graphics/muuch/armor/small/fringe_recolormask.png
@@ -80,7 +80,7 @@
 
 #newitem
 #basechance 0.5
-#name "bronze cuirass"
+#id "bronze cuirass"
 #gameid 100
 #sprite /graphics/muuch/armor/small/bronze_cuirass.png
 #armor
@@ -90,7 +90,7 @@
 
 #newitem
 #basechance 0.5
-#name "bronze hauberk"
+#id "bronze hauberk"
 #gameid 101
 #sprite /graphics/muuch/armor/small/bronze_hauberk.png
 #recolormask /graphics/muuch/armor/small/fringe_recolormask.png
@@ -104,7 +104,7 @@
 
 #newitem
 #basechance 0.5
-#name "scale cuirass"
+#id "scale cuirass"
 #gameid 7
 #sprite /graphics/muuch/armor/small/scale_cuirass.png
 #armor
@@ -114,7 +114,7 @@
 
 #newitem
 #basechance 0.5
-#name "scale hauberk"
+#id "scale hauberk"
 #gameid 12
 #sprite /graphics/muuch/armor/small/scale_hauberk.png
 #recolormask /graphics/muuch/armor/small/fringe_recolormask.png
@@ -125,7 +125,7 @@
 
 #newitem 
 #basechance 0.25
-#name "plate cuirass"
+#id "plate cuirass"
 #gameid 9
 #sprite /graphics/muuch/armor/small/plate_cuirass.png
 #armor
@@ -135,7 +135,7 @@
 
 #newitem
 #basechance 0.25
-#name "plate hauberk"
+#id "plate hauberk"
 #gameid 14
 #sprite /graphics/muuch/armor/small/plate_hauberk.png
 #recolormask /graphics/muuch/armor/small/fringe_recolormask.png
@@ -149,7 +149,7 @@
 
 #newitem
 #basechance 0.05
-#name "obsidian cuirass"
+#id "obsidian cuirass"
 #gameid 206
 #sprite /graphics/muuch/armor/small/obsidian_cuirass.png
 #armor
@@ -160,7 +160,7 @@
 
 #newitem
 #basechance 0.025
-#name "obsidian armor"
+#id "obsidian armor"
 #gameid zotz_obsarmor
 #sprite /graphics/muuch/armor/small/obsidian.png
 #armor
@@ -171,7 +171,7 @@
 
 #newitem
 #basechance 0.025
-#name "meteorite armor"
+#id "meteorite armor"
 #gameid 53
 #sprite /graphics/muuch/armor/small/meteorite.png
 #armor

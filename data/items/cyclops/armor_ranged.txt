@@ -1,6 +1,6 @@
 --- No armor
 #new
-#name naked
+#id naked
 #gameid -1
 #basechance 0.5
 #theme naked
@@ -8,7 +8,7 @@
 #end
 
 #new
-#name furs
+#id furs
 #gameid 44
 #basechance 2
 #sprite /graphics/cyclops/armor/furs.png
@@ -18,7 +18,7 @@
 
 --- Leather
 #newitem
-#name "simple leather cuirass"
+#id "simple leather cuirass"
 #gameid 5
 #sprite /graphics/cyclops/armor/cuirass_leather_simple.png
 #armor
@@ -26,7 +26,7 @@
 #enditem
 
 #newitem
-#name "leather cuirass"
+#id "leather cuirass"
 #gameid 5
 #sprite /graphics/cyclops/armor/cuirass_leather.png
 #recolormask /graphics/cyclops/armor/plate_recolormask.png
@@ -36,7 +36,7 @@
 #enditem
 
 #newitem
-#name "leather hauberk"
+#id "leather hauberk"
 #gameid 10
 #sprite /graphics/cyclops/armor/hauberk_leather.png
 #recolormask /graphics/cyclops/armor/plate_recolormask.png
@@ -48,7 +48,7 @@
 
 --- Scale
 #newitem
-#name "bronze scale cuirass"
+#id "bronze scale cuirass"
 #gameid 142
 #sprite /graphics/cyclops/armor/scale_cuirass_bronze.png
 #armor
@@ -56,7 +56,7 @@
 #enditem
 
 #newitem
-#name "iron scale cuirass"
+#id "iron scale cuirass"
 #gameid 7
 #sprite /graphics/cyclops/armor/scale_cuirass_iron.png
 #armor
@@ -66,7 +66,7 @@
 
 -- Plate
 #newitem
-#name "simple bronze cuirass"
+#id "simple bronze cuirass"
 #gameid 100
 #sprite /graphics/cyclops/armor/cuirass_simple_bronze.png
 #armor
@@ -74,7 +74,7 @@
 #enditem
 
 #newitem
-#name "bronze cuirass"
+#id "bronze cuirass"
 #gameid 100
 #sprite /graphics/cyclops/armor/plate_cuirass_bronze.png
 #recolormask /graphics/cyclops/armor/plate_recolormask.png
@@ -84,7 +84,7 @@
 #enditem
 
 #newitem
-#name "simple iron cuirass"
+#id "simple iron cuirass"
 #gameid 7
 #sprite /graphics/cyclops/armor/cuirass_simple_iron.png
 #armor
@@ -92,7 +92,7 @@
 #enditem
 
 #newitem
-#name "iron cuirass"
+#id "iron cuirass"
 #gameid 7
 #sprite /graphics/cyclops/armor/plate_cuirass_iron.png
 #recolormask /graphics/cyclops/armor/plate_recolormask.png

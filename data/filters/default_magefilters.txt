@@ -1,5 +1,5 @@
 #new magefilter
-#name "highupkeep"
+#id "highupkeep"
 #basechance 0.5
 #command "#addupkeep %cost20"
 #power -1
@@ -8,7 +8,7 @@
 #end
 
 #new magefilter
-#name "lowupkeep"
+#id "lowupkeep"
 #basechance 0.5
 #command "#addupkeep %cost-20"
 #power 1
@@ -16,7 +16,7 @@
 #end
 
 #new magefilter
-#name "poisonres"
+#id "poisonres"
 #basechance 0.1
 #command "#poisonres +5"
 #chanceinc "personalmagic nature 1.5"
@@ -24,7 +24,7 @@
 #end
 
 #new magefilter
-#name "terrestrial"
+#id "terrestrial"
 #basechance 0.01
 #chanceinc "personalmagic air *5"
 #chanceinc "personalmagic earth *2"
@@ -39,7 +39,7 @@
 #end
 
 #new magefilter
-#name "bound"
+#id "bound"
 #basechance 0.01
 #chanceinc "personalmagic blood *5"
 #chanceinc "personalmagic nature *5"
@@ -52,7 +52,7 @@
 #end
 
 #new magefilter
-#name "heretic"
+#id "heretic"
 #basechance 1
 #command "#heretic +1"
 #notfortier 3
@@ -64,7 +64,7 @@
 
 #new magefilter
 #type research
-#name "better researcher +1"
+#id "better researcher +1"
 #basechance 0.25
 #command "#researchbonus +1"
 #filterdesc "researcher desc"
@@ -72,7 +72,7 @@
 
 #new magefilter
 #type research
-#name "better researcher +3 - tier 1 and 2 mages"
+#id "better researcher +3 - tier 1 and 2 mages"
 #basechance 0.25
 #command "#researchbonus +3"
 #notfortier 3
@@ -81,7 +81,7 @@
 
 #new magefilter
 #type research
-#name "better researcher +3 - tier 3 mages"
+#id "better researcher +3 - tier 3 mages"
 #basechance 0.25
 #command "#researchbonus +3"
 #notfortier 1
@@ -92,7 +92,7 @@
 
 #new magefilter
 #type research
-#name "sloth researcher +2"
+#id "sloth researcher +2"
 #basechance 0.125
 #command "#slothresearch +2"
 #power 2
@@ -101,14 +101,14 @@
 
 #new magefilter
 #type research
-#name "sloth researcher +1"
+#id "sloth researcher +1"
 #basechance 0.125
 #command "#slothresearch +1"
 #filterdesc "sloth researcher desc"
 #end
 
 #new magefilter
-#name "makepearls"
+#id "makepearls"
 #basechance 0.2
 #command "#makepearls 3"
 #chanceinc "personalmagic water 0.5"
@@ -119,7 +119,7 @@
 #end
 
 #new magefilter
-#name "carcasscollector"
+#id "carcasscollector"
 #basechance 0.2
 #command "#carcasscollector 3"
 #chanceinc "personalmagic nature 0.5"
@@ -130,7 +130,7 @@
 #end
 
 #new magefilter
-#name "resourcebonus"
+#id "resourcebonus"
 #basechance 0.05
 #command "#resources +10"
 #chanceinc "personalmagic earth 0.95"
@@ -142,7 +142,7 @@
 
 
 #new magefilter
-#name "ritualrange1"
+#id "ritualrange1"
 #basechance 0.2
 #command "#allrange +1"
 #power 1
@@ -150,7 +150,7 @@
 #end
 
 #new magefilter
-#name "ritualrange2"
+#id "ritualrange2"
 #basechance 0.2
 #command "#allrange +2"
 #power 2
@@ -158,7 +158,7 @@
 #end
 
 #new magefilter
-#name "floating"
+#id "floating"
 #basechance 0.5
 #command "#float"
 #power 1
@@ -168,7 +168,7 @@
 #end
 
 #new magefilter
-#name "deathcurse"
+#id "deathcurse"
 #basechance 0.25
 #command "#deathcurse"
 #power 1
@@ -182,7 +182,7 @@
 #end
 
 #new magefilter
-#name "slimer"
+#id "slimer"
 #basechance 0.125
 #command "#slimer +1"
 #power 1
@@ -192,7 +192,7 @@
 #end
 
 #new magefilter
-#name "iceprot"
+#id "iceprot"
 #basechance 0.125
 #command "#iceprot 3"
 #power 1
@@ -201,7 +201,7 @@
 #end
 
 #new magefilter
-#name "falsearmy"
+#id "falsearmy"
 #basechance 0.25
 #command "#falsearmy 20"
 #power 1
@@ -216,7 +216,7 @@
 #end
 
 #new magefilter
-#name "elegist 1"
+#id "elegist 1"
 #basechance 0
 #tag "personalmagic holy"
 #chanceinc "personalmagic holy 1.5"
@@ -228,7 +228,7 @@
 #end
 
 #new magefilter
-#name "elegist 2"
+#id "elegist 2"
 #basechance 0
 #tag "personalmagic holy"
 #chanceinc "personalmagic holy 0.8"
@@ -240,7 +240,7 @@
 #end
 
 #new magefilter
-#name "elegist 3"
+#id "elegist 3"
 #basechance 0
 #tag "personalmagic holy"
 #chanceinc "personalmagic holy 0.8"
@@ -254,7 +254,7 @@
 #end
 
 #new
-#name "chaosrec"
+#id "chaosrec"
 #type "chaosrec"
 #basechance 0.1
 #command "#chaosrec %cost5"
@@ -265,7 +265,7 @@
 #end
 
 #new
-#name "chaosrec_high"
+#id "chaosrec_high"
 #type "chaosrec"
 #basechance 0.05
 #power 2
@@ -277,7 +277,7 @@
 #end
 
 #new
-#name "deathrec"
+#id "deathrec"
 #type "deathrec"
 #basechance 0.01
 #power 2
@@ -290,7 +290,7 @@
 #end
 
 #new magefilter
-#name "shockres"
+#id "shockres"
 #basechance 0.1
 #command "#shockres +5"
 #chanceinc "personalmagic air 1.5"
@@ -302,14 +302,14 @@
 #end
 
 #new
-#name "invulnerable5"
+#id "invulnerable5"
 #basechance 0.5
 #command "#invulnerable 5"
 #filterdesc "invulnerable desc"
 #end
 
 #new
-#name "invulnerable10"
+#id "invulnerable10"
 #basechance 0.25
 #command "#invulnerable 10"
 #power 2
@@ -317,7 +317,7 @@
 #end
 
 #new
-#name "invulnerable20"
+#id "invulnerable20"
 #basechance 0.125
 #command "#invulnerable 20"
 #power 3
@@ -325,7 +325,7 @@
 #end
 
 #new magefilter
-#name "coldres"
+#id "coldres"
 #basechance 0.1
 #command "#coldres +5"
 #chanceinc "personalmagic water 1.5"
@@ -334,7 +334,7 @@
 #end
 
 #new magefilter
-#name "fireres"
+#id "fireres"
 #basechance 0.1
 #command "#fireres +5"
 #chanceinc "personalmagic fire 1.5"
@@ -343,7 +343,7 @@
 #end
 
 #new magefilter
-#name "majorfireres"
+#id "majorfireres"
 #basechance 0.1
 #command "#fireres +10"
 #chanceinc "personalmagic fire 0.75"
@@ -352,7 +352,7 @@
 #end
 
 #new magefilter
-#name "majorpoisonres"
+#id "majorpoisonres"
 #basechance 0.1
 #command "#poisonres +10"
 #chanceinc "personalmagic nature 0.75"
@@ -360,7 +360,7 @@
 #end
 
 #new magefilter
-#name "majorshockres"
+#id "majorshockres"
 #basechance 0.1
 #command "#shockres +10"
 #chanceinc "personalmagic air 0.75"
@@ -368,7 +368,7 @@
 #end
 
 #new magefilter
-#name "majorcoldres"
+#id "majorcoldres"
 #basechance 0.1
 #command "#coldres +10"
 #chanceinc "personalmagic water 0.75"
@@ -377,7 +377,7 @@
 #end
 
 #new magefilter
-#name "glamour"
+#id "glamour"
 #basechance 0
 #command "#glamour"
 #command "#stealthy +0"
@@ -391,7 +391,7 @@
 #end
 
 #new magefilter
-#name "spellsinger"
+#id "spellsinger"
 #basechance 0.2
 #command "#spellsinger"
 #primarycommand #spellsinger
@@ -403,7 +403,7 @@
 #end
 
 #new magefilter
-#name "holy"
+#id "holy"
 #basechance 0.2
 #primarycommand "#holy"
 #command "#holy"
@@ -411,7 +411,7 @@
 #end
 
 #new magefilter
-#name "amphibian"
+#id "amphibian"
 #basechance 0
 #command "#amphibian"
 #chanceinc "personalmagic water 1"
@@ -420,7 +420,7 @@
 #end
 
 #new magefilter
-#name "flying"
+#id "flying"
 #basechance 0
 #command "#flying"
 #chanceinc "personalmagic air 1"
@@ -432,7 +432,7 @@
 #end
 
 #new magefilter
-#name "sailing"
+#id "sailing"
 #basechance 0.25
 #command "#sailing 999 3"
 #primarycommand #sailing
@@ -443,7 +443,7 @@
 #end
 
 #new magefilter
-#name "forestsurvival"
+#id "forestsurvival"
 #basechance 0
 #command "#forestsurvival"
 #chanceinc "personalmagic nature 0.5"
@@ -452,7 +452,7 @@
 #end
 
 #new magefilter
-#name "mountainsurvival"
+#id "mountainsurvival"
 #basechance 0
 #command "#mountainsurvival"
 #chanceinc "personalmagic nature 0.25"
@@ -463,7 +463,7 @@
 #end
 
 #new magefilter
-#name "swampsurvival"
+#id "swampsurvival"
 #basechance 0
 #command "#swampsurvival"
 #chanceinc "personalmagic nature 0.25"
@@ -473,7 +473,7 @@
 #end
 
 #new magefilter
-#name "wastesurvival"
+#id "wastesurvival"
 #basechance 0
 #command "#wastesurvival"
 #chanceinc "personalmagic nature 0.25"
@@ -483,7 +483,7 @@
 #end
 
 #new magefilter
-#name "forestsurvival all"
+#id "forestsurvival all"
 #basechance 0
 #command "#forestsurvival"
 #chanceinc "personalmagic nature 0.25"
@@ -491,7 +491,7 @@
 #end
 
 #new magefilter
-#name "mountainsurvival all"
+#id "mountainsurvival all"
 #basechance 0
 #command "#mountainsurvival"
 #chanceinc "personalmagic nature 0.125"
@@ -500,7 +500,7 @@
 #end
 
 #new magefilter
-#name "swampsurvival all"
+#id "swampsurvival all"
 #basechance 0
 #command "#swampsurvival"
 #chanceinc "personalmagic nature 0.125"
@@ -509,7 +509,7 @@
 #end
 
 #new magefilter
-#name "wastesurvival all"
+#id "wastesurvival all"
 #basechance 0
 #command "#wastesurvival"
 #chanceinc "personalmagic nature 0.125"
@@ -518,7 +518,7 @@
 #end
 
 #new magefilter
-#name "stealthy"
+#id "stealthy"
 #basechance 0.3
 #command "#stealthy +10"
 #command "#gcost *1.2"
@@ -529,7 +529,7 @@
 #end
 
 #new magefilter
-#name "stealthy - fixed cost"
+#id "stealthy - fixed cost"
 #basechance 0.3
 #command "#stealthy +10"
 #command "#gcost +40"
@@ -540,7 +540,7 @@
 #end
 
 #new magefilter
-#name "spy"
+#id "spy"
 #basechance 0.20
 #command "#stealthy +10"
 #command "#spy"
@@ -552,7 +552,7 @@
 
 
 #new magefilter
-#name "assassin2"
+#id "assassin2"
 #basechance 0.2
 #command "#stealthy +25"
 #command "#assassin"
@@ -564,7 +564,7 @@
 #end
 
 #new magefilter
-#name "ethereal"
+#id "ethereal"
 #basechance 0.1
 #command "#ethereal"
 #command "#gcost +20"
@@ -576,7 +576,7 @@
 #end
 
 #new magefilter
-#name "ethereal2"
+#id "ethereal2"
 #basechance 0.33
 #command "#ethereal"
 #command "#gcost +20"
@@ -590,7 +590,7 @@
 #end
 
 #new magefilter
-#name "awe"
+#id "awe"
 #basechance 0.4
 #command "#awe +1"
 #chanceinc "personalmagic astral 0.4"
@@ -602,7 +602,7 @@
 #end
 
 #new magefilter
-#name "sun awe"
+#id "sun awe"
 #basechance 0.1
 #command "#sunawe +1"
 #chanceinc personalmagic astral OR personalmagic fire 0.4
@@ -616,7 +616,7 @@
 #end
 
 #new magefilter
-#name "fear"
+#id "fear"
 #basechance 0.2
 #command "#fear +5"
 #chanceinc "personalmagic death 0.8"
@@ -626,7 +626,7 @@
 #end
 
 #new magefilter
-#name "regeneration"
+#id "regeneration"
 #basechance 0.1
 #command "#regeneration 10"
 #chanceinc "personalmagic nature 1"
@@ -636,7 +636,7 @@
 #end
 
 #new magefilter
-#name "fireshield"
+#id "fireshield"
 #basechance 0
 #command "#fireshield 8"
 #command "#speciallook 1"
@@ -647,7 +647,7 @@
 #end
 
 #new magefilter
-#name "poisonarmor"
+#id "poisonarmor"
 #basechance 0
 #command "#poisonarmor"
 #chanceinc "personalmagic nature 2"
@@ -656,7 +656,7 @@
 #end
 
 #new magefilter
-#name "airshield"
+#id "airshield"
 #basechance 0
 #command "#airshield +30"
 #chanceinc "personalmagic air 2"
@@ -665,7 +665,7 @@
 #end
 
 #new magefilter
-#name "nobadevents1"
+#id "nobadevents1"
 #basechance 0.2
 #command "#nobadevents +5"
 #primarycommand nobadevents
@@ -675,7 +675,7 @@
 #end
 
 #new magefilter
-#name "nobadevents2"
+#id "nobadevents2"
 #basechance 0.2
 #command "#nobadevents +3"
 #primarycommand nobadevents
@@ -686,7 +686,7 @@
 
 
 #new magefilter
-#name "nobadevents3"
+#id "nobadevents3"
 #basechance 0.1
 #command "#nobadevents +8"
 #primarycommand nobadevents
@@ -697,7 +697,7 @@
 #end
 
 #new magefilter
-#name "inquisitor"
+#id "inquisitor"
 #basechance 0
 #command "#inquisitor"
 #chanceinc "personalmagic holy 2"
@@ -706,7 +706,7 @@
 #end
 
 #new magefilter
-#name "drainimmune"
+#id "drainimmune"
 #basechance 0.5
 #command "#drainimmune"
 #power 3
@@ -716,7 +716,7 @@
 #end
 
 #new magefilter
-#name "drainimmune for extramages"
+#id "drainimmune for extramages"
 #basechance 0.5
 #command "#drainimmune"
 #notfortier 1
@@ -727,7 +727,7 @@
 
 #new magefilter
 #type "healer"
-#name "healerscaling"
+#id "healerscaling"
 #basechance 0.05
 #chanceinc "personalmagic nature 0.1"
 #chanceinc "personalmagic holy 0.1"
@@ -742,7 +742,7 @@
 
 #new magefilter
 #type "healer"
-#name "healerscaling 2"
+#id "healerscaling 2"
 #basechance 0.05
 #chanceinc "personalmagic nature 0.1"
 #chanceinc "personalmagic holy 0.1"
@@ -756,7 +756,7 @@
 
 #new magefilter
 #type "healer"
-#name "autohealer1"
+#id "autohealer1"
 #basechance 0.1
 #chanceinc "personalmagic nature 0.3"
 #chanceinc "personalmagic holy 0.3"
@@ -770,7 +770,7 @@
 
 #new magefilter
 #type "healer"
-#name "autohealer 3"
+#id "autohealer 3"
 #basechance 0.1
 #chanceinc "personalmagic nature 0.3"
 #chanceinc "personalmagic holy 0.3"
@@ -784,7 +784,7 @@
 
 #new magefilter
 #type "healer"
-#name "autodishealer2"
+#id "autodishealer2"
 #basechance 0.05
 #chanceinc "personalmagic holy 0.5"
 #chanceinc "personalmagic nature 0.5"
@@ -796,7 +796,7 @@
 #end
 
 #new magefilter
-#name "recuperation"
+#id "recuperation"
 #basechance 0.1
 #chanceinc "personalmagic nature 1"
 #chanceinc "personalcommand #startaff 1.5"
@@ -806,7 +806,7 @@
 
 #new magefilter
 #type "darkvision"
-#name "darkvision50"
+#id "darkvision50"
 #basechance 0.075
 #chanceinc "personalmagic earth 0.15"
 #command "#darkvision +50"
@@ -819,7 +819,7 @@
 
 #new magefilter
 #type "darkvision"
-#name "darkvision100"
+#id "darkvision100"
 #basechance 0.05
 #chanceinc "personalmagic earth 0.15"
 #command "#darkvision 100"
@@ -832,7 +832,7 @@
 #end
 
 #new magefilter
-#name "warriormage"
+#id "warriormage"
 #basechance 0.25
 #chanceinc "posetag warriormage 0.25"
 #chanceinc "personalcommand mounted *2"
@@ -846,7 +846,7 @@
 #end
 
 #new magefilter
-#name "combatcaster"
+#id "combatcaster"
 #basechance 0
 #chanceinc "posetag warriormage 0.1"
 #chanceinc "prot 13 0.1"
@@ -862,7 +862,7 @@
 #end
 
 #new magefilter
-#name "thug-tier2"
+#id "thug-tier2"
 #basechance 0.25
 #command "#str +2"
 #command "#att +3"
@@ -877,7 +877,7 @@
 
 #new magefilter
 #type "forge"
-#name "forgebonus 1 secondary"
+#id "forgebonus 1 secondary"
 #basechance 0.1
 #command "#fixforgebonus +1"
 #command "#gcost +30"
@@ -890,7 +890,7 @@
 
 #new magefilter
 #type "forge"
-#name "forgebonus 2 secondary"
+#id "forgebonus 2 secondary"
 #basechance 0.1
 #command "#fixforgebonus +2"
 #command "#gcost +30"
@@ -903,7 +903,7 @@
 
 #new magefilter
 #type "forge"
-#name "forgebonus 1 primary"
+#id "forgebonus 1 primary"
 #basechance 0.075
 #command "#fixforgebonus +1"
 #command "#gcost *1.2"
@@ -916,7 +916,7 @@
 
 #new magefilter
 #type "forge"
-#name "forgebonus 2 primary"
+#id "forgebonus 2 primary"
 #basechance 0.075
 #command "#fixforgebonus +2"
 #command "#gcost *1.2"
@@ -929,7 +929,7 @@
 
 #new magefilter
 #type "forge"
-#name "forgebonus 1 tert"
+#id "forgebonus 1 tert"
 #basechance 0.1
 #command "#fixforgebonus +1"
 #command "#gcost +50"
@@ -941,7 +941,7 @@
 #end
 
 #new magefilter
-#name "chargedbody"
+#id "chargedbody"
 #basechance 0
 #command "#onebattlespell 592"
 #command "#shockres +4"
@@ -951,7 +951,7 @@
 #end
 
 #new magefilter
-#name "shikigami_primary"
+#id "shikigami_primary"
 #type "familiar"
 #basechance 0.05
 #command "#batstartsum1 2092"
@@ -962,7 +962,7 @@
 
 
 #new magefilter
-#name "imp_primary"
+#id "imp_primary"
 #type "familiar"
 #basechance 0.05
 #command "#batstartsum1 2287"
@@ -973,7 +973,7 @@
 #end
 
 #new magefilter
-#name "imp"
+#id "imp"
 #type "familiar"
 #basechance 0.05
 #command "#batstartsum1 2287"
@@ -983,7 +983,7 @@
 #end
 
 #new magefilter
-#name "blackdog_primary"
+#id "blackdog_primary"
 #type "familiar"
 #basechance 0.05
 #command "#batstartsum2 1769"
@@ -998,7 +998,7 @@
 #end
 
 #new magefilter
-#name "fairy_primary"
+#id "fairy_primary"
 #type "familiar"
 #basechance 0
 #command "#batstartsum2 592"
@@ -1016,7 +1016,7 @@
 #end
 
 #new magefilter
-#name "fairy"
+#id "fairy"
 #type "familiar"
 #basechance 0
 #command "#batstartsum1 3759"
@@ -1029,7 +1029,7 @@
 #end
 
 #new magefilter
-#name "ancestorspirits"
+#id "ancestorspirits"
 #type "familiar"
 #basechance 0.05
 #command "#batstartsum2 1363"
@@ -1039,7 +1039,7 @@
 #end
 
 #new magefilter
-#name "bugs"
+#id "bugs"
 #type "familiar"
 #basechance 0.05
 #command "#batstartsum3 2218"
@@ -1051,7 +1051,7 @@
 #end
 
 #new magefilter
-#name "illearth"
+#id "illearth"
 #type "familiar"
 #basechance 0
 #command "#batstartsum1 3759"
@@ -1065,7 +1065,7 @@
 #end
 
 #new magefilter
-#name "earthele"
+#id "earthele"
 #type "familiar"
 #basechance 0
 #command "#batstartsum1 3743"
@@ -1078,7 +1078,7 @@
 #end
 
 #new magefilter
-#name "fireele"
+#id "fireele"
 #type "familiar"
 #basechance 0
 #command "#batstartsum1 3719"
@@ -1092,7 +1092,7 @@
 #end
 
 #new magefilter
-#name "waterele"
+#id "waterele"
 #type "familiar"
 #basechance 0
 #command "#batstartsum1 3735"
@@ -1105,7 +1105,7 @@
 #end
 
 #new magefilter
-#name "airele"
+#id "airele"
 #type "familiar"
 #basechance 0
 #command "#batstartsum1 3727"
@@ -1119,7 +1119,7 @@
 #end
 
 #new magefilter
-#name "longdead"
+#id "longdead"
 #type "familiar"
 #basechance 0
 #command "#batstartsum3 2121"
@@ -1131,7 +1131,7 @@
 #end
 
 #new magefilter
-#name "lesser_otherness"
+#id "lesser_otherness"
 #type "familiar"
 #basechance 0
 #command "#batstartsum1 756"
@@ -1142,7 +1142,7 @@
 #end
 
 #new magefilter
-#name "resource generator 10"
+#id "resource generator 10"
 #type "resources"
 #basechance 0.5
 #chanceinc "personalmagic earth *6"
@@ -1158,7 +1158,7 @@
 #end
 
 #new magefilter
-#name "resource generator 15"
+#id "resource generator 15"
 #type "resources"
 #basechance 0.5
 #chanceinc "personalmagic earth *6"
@@ -1174,7 +1174,7 @@
 #end
 
 #new magefilter
-#name "resource generator 25"
+#id "resource generator 25"
 #type "resources"
 #basechance 0.5
 #chanceinc "personalmagic earth *6"
@@ -1191,7 +1191,7 @@
 #end
 
 #new magefilter
-#name "cold resource generator 10"
+#id "cold resource generator 10"
 #type "resources"
 #basechance 0.025
 #chanceinc avgres 14 *2
@@ -1208,7 +1208,7 @@
 #end
 
 #new magefilter
-#name "cold resource generator 15"
+#id "cold resource generator 15"
 #type "resources"
 #basechance 0.025
 #chanceinc avgres 14 *2
@@ -1225,7 +1225,7 @@
 #end
 
 #new magefilter
-#name "crossbreeder 3"
+#id "crossbreeder 3"
 #type "summoning"
 #basechance 0
 #chanceinc "personalmagic nature blood 4"
@@ -1234,7 +1234,7 @@
 #end
 
 #new magefilter
-#name "crossbreeder 6"
+#id "crossbreeder 6"
 #type "summoning"
 #basechance 0
 #chanceinc "personalmagic nature 2 AND personalmagic blood 2 2"
@@ -1244,7 +1244,7 @@
 #end
 
 #new magefilter
-#name "crossbreeder 9"
+#id "crossbreeder 9"
 #type "summoning"
 #basechance 0
 #chanceinc "personalmagic nature 3 AND personalmagic blood 3 2"
@@ -1255,7 +1255,7 @@
 #end
 
 #new magefilter
-#name "ivylord 1"
+#id "ivylord 1"
 #type "summoning"
 #basechance 0
 #chanceinc "personalmagic nature 4"
@@ -1267,7 +1267,7 @@
 #end
 
 #new magefilter
-#name "ivylord 2"
+#id "ivylord 2"
 #type "summoning"
 #basechance 0
 #chanceinc "personalmagic nature 2 4"
@@ -1279,7 +1279,7 @@
 #end
 
 #new magefilter
-#name "ivylord 3"
+#id "ivylord 3"
 #type "summoning"
 #basechance 0
 #chanceinc "personalmagic nature 3 2"
@@ -1292,7 +1292,7 @@
 #end
 
 #new magefilter
-#name "dragonlord 1"
+#id "dragonlord 1"
 #type "summoning"
 #basechance 0
 #chanceinc "personalmagic nature 2 AND personalmagic water 0.25"
@@ -1305,7 +1305,7 @@
 #end
 
 #new magefilter
-#name "dragonlord 2"
+#id "dragonlord 2"
 #type "summoning"
 #basechance 0
 #chanceinc "personalmagic nature 3 AND personalmagic water 0.125"
@@ -1325,7 +1325,7 @@
 #end
 
 #new magefilter
-#name "lamialord 2"
+#id "lamialord 2"
 #type "summoning"
 #basechance 0
 #chanceinc "personalmagic nature 3 0.1"
@@ -1337,7 +1337,7 @@
 #end
 
 #new magefilter
-#name "lamialord 4"
+#id "lamialord 4"
 #type "summoning"
 #basechance 0
 #chanceinc "personalmagic nature 3 0.1"
@@ -1351,7 +1351,7 @@
 #end
 
 #new magefilter
-#name "corpselord 2"
+#id "corpselord 2"
 #type "summoning"
 #basechance 0
 #chanceinc "personalmagic air death 4"
@@ -1363,7 +1363,7 @@
 #end
 
 #new magefilter
-#name "corpselord 4"
+#id "corpselord 4"
 #type "summoning"
 #basechance 0
 #chanceinc "personalmagic air 2 OR personalmagic death 2 AND personalmagic air death 2"
@@ -1376,7 +1376,7 @@
 #end
 
 #new magefilter
-#name "corpselord 6"
+#id "corpselord 6"
 #type "summoning"
 #basechance 0
 #chanceinc "personalmagic air 3 OR personalmagic death 3 AND personalmagic air death 2"

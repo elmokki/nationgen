@@ -12,7 +12,7 @@
 
 ---------- Oriental
 #new
-#name "Tengus"
+#id "Tengus"
 #spell "Summon Konoha Tengus"
 #spell "Contact Dai Tengu"
 #spell "Summon Karasu Tengus"
@@ -24,7 +24,7 @@
 #end
 
 #new
-#name "TC ancestor spells"
+#id "TC ancestor spells"
 #spell "Call Ancestor"
 #spell "Wrath of the Ancestors"
 #basechance 0
@@ -34,7 +34,7 @@
 #end
 
 #new
-#name "TC non-death spells"
+#id "TC non-death spells"
 #spell "Call Celestial Soldiers"
 #spell "Celestial Chastisement"
 #spell "Celestial Hounds"
@@ -52,7 +52,7 @@
 #end
 
 #new
-#name "Yomi Spells"
+#id "Yomi Spells"
 #spell "Ghost General"
 #spell "Summon Gozu Mezu"
 #spell "Summon Shikome"
@@ -63,7 +63,7 @@
 #end
 
 #new
-#name "Jomon Spells"
+#id "Jomon Spells"
 #spell "Contact Kaijin"
 #spell "Contact Nushi"
 #spell "Summon Kappa"
@@ -85,7 +85,7 @@
 -- Low chance for all orientals
 -- High chance for orientals with death magic
 #new
-#name "Oni Summons"
+#id "Oni Summons"
 #spell "Summon Oni General"
 #spell "Summon Dai Oni"
 #spell "Summon Aka-Oni"
@@ -103,7 +103,7 @@
 - Occidental
 ----------
 #new
-#name "Mictlan non-blood"
+#id "Mictlan non-blood"
 #spell "Summon Tlaloque"
 #spell "Summon Jade Serpents"
 #spell "Summon Jaguars"
@@ -116,7 +116,7 @@
 #end
 
 #new
-#name "Mictlan blood"
+#id "Mictlan blood"
 #spell "Rain of Jaguars"
 #spell "Contact Onaqui"
 #spell "Bind Tzitzimitl"
@@ -131,7 +131,7 @@
 #end
 
 #new
-#name "Zotz spells"
+#id "Zotz spells"
 #spell "Summon Balam"
 #spell "Break the Second Soul"
 #spell "Gift of the Second Soul"
@@ -153,7 +153,7 @@
 ------------------------
 
 #new
-#name "Central nature spells"
+#id "Central nature spells"
 #spell "Monster Boar"
 #spell "Awaken Hamadryad"
 #spell "Orgy"
@@ -166,7 +166,7 @@
 #end
 
 #new
-#name "Central death spells"
+#id "Central death spells"
 #spell "Bind Keres"
 #spell "Curse Tablet"
 #spell "Summon Hound of Twilight"
@@ -180,7 +180,7 @@
 #end
 
 #new
-#name "Central earth spells"
+#id "Central earth spells"
 #spell "Sow Dragon Teeth"
 #spell "Craft Keledone"
 #spell "Summon Hound of Twilight"
@@ -197,7 +197,7 @@
 #end
 
 #new
-#name "Island spirits"
+#id "Island spirits"
 #spell "Summon Hekateride"
 #spell "Summon Daktyl"
 #spell "Contact Hesperide"
@@ -209,7 +209,7 @@
 #end
 
 #new
-#name "Central spellsongs"
+#id "Central spellsongs"
 #spell "Rhapsody of the Dead"
 #spell "Rhapsody of Life"
 #basechance 0
@@ -220,7 +220,7 @@
 #end
 
 #new
-#name "Halfmen weak nature spells"
+#id "Halfmen weak nature spells"
 #spell "Monster Boar"
 #spell "Awaken Hamadryad"
 #spell "Tune of Fear"
@@ -232,7 +232,7 @@
 #end
 
 #new
-#name "Halfmen strong nature spells"
+#id "Halfmen strong nature spells"
 #spell "Dark Slumber"
 #spell "Grow Fortress"
 #basechance 1
@@ -245,7 +245,7 @@
 ----------
 
 #new
-#name "Norse spells (Van)"
+#id "Norse spells (Van)"
 #spell "Awaken Draugar"
 #spell "Summon Valkyries"
 #spell "Brood of Garm"
@@ -258,7 +258,7 @@
 #end
 
 #new
-#name "Norse spells (Jotun/Vaetti)"
+#id "Norse spells (Jotun/Vaetti)"
 #spell "Awaken Jotun Draugar"
 #spell "Brood of Garm"
 #spell "Seith Curse"
@@ -274,7 +274,7 @@
 #end
 
 #new
-#name "Norse spells (generic)"
+#id "Norse spells (generic)"
 #spell "Summon Valkyries"
 #spell "Brood of Garm"
 #spell "Summon Glosos"
@@ -291,7 +291,7 @@
 -----------
 
 #new
-#name "Abysian spells"
+#id "Abysian spells"
 #spell "Inner Furnace"
 #spell "Summon Spectral Infantry"
 #basechance 0
@@ -304,7 +304,7 @@
 ----------
 
 #new
-#name "Divine Monkey Spells"
+#id "Divine Monkey Spells"
 #spell "Contact Yaksha"
 #spell "Contact Yakshini"
 #spell "Summon Gandharvas"
@@ -324,7 +324,7 @@
 - Both sets are less likely without suitable path access
 --------------------------
 #new
-#name "Caelian death spells"
+#id "Caelian death spells"
 #spell "Call Daevas"
 #spell "Call Jahi"
 #spell "Call Yata"
@@ -338,7 +338,7 @@
 #end
 
 #new
-#name "Caelian astral spells"
+#id "Caelian astral spells"
 #spell "Summon Yazatas"
 #spell "Call Amesha Spenta"
 #spell "Call Ahurani"
@@ -354,7 +354,7 @@
 - Pale one spells
 --------------------------
 #new
-#name "Pale one statue spells"
+#id "Pale one statue spells"
 #spell "Attentive Statues"
 #spell "Enliven Sentinel"
 #spell "Enliven Granite Guard"
@@ -367,7 +367,7 @@
 #end
 
 #new
-#name "Pale one misc spells"
+#id "Pale one misc spells"
 #spell "Rhuax Pact"
 #spell "Barathrus Pact"
 #spell "Olm Conclave"
@@ -380,7 +380,7 @@
 
 -- Less likely without easy access to these
 #new
-#name "Pale one death spells"
+#id "Pale one death spells"
 #spell "Awaken Shard Wights"
 #spell "Summon Penumbrals"
 #spell "Summon Umbrals"
@@ -395,7 +395,7 @@
 - Way more likely with blood access
 ----------------------
 #new
-#name "Lanka spells"
+#id "Lanka spells"
 #spell "Summon Rakshasas"
 #spell "Feast of Flesh"
 #spell "Summon Asrapas"
@@ -418,7 +418,7 @@
 - C'tis
 ----------------------
 #new
-#name "Lizard spells"
+#id "Lizard spells"
 #spell "Sacred Crocodile"
 #basechance 0
 #chanceinc primaryrace "Lizard" 1
@@ -428,7 +428,7 @@
 - Atlantian
 ----------------------
 #new
-#name "Send Tupilak"
+#id "Send Tupilak"
 #spell "Send Tupilak"
 #basechance 0
 #chanceinc primaryrace "Atlantian" 1
@@ -438,7 +438,7 @@
 #end
 
 #new
-#name "Monster Fish"
+#id "Monster Fish"
 #spell "Summon Monster Fish"
 #basechance 0
 #chanceinc primaryrace "Atlantian" 1
@@ -450,7 +450,7 @@
 - Fae spells
 ------------------------
 #new
-#name "Fae spells - Nature"
+#id "Fae spells - Nature"
 #spell "Summon Cu Sidhe"
 #spell "Summon Bean Sidhe"
 #basechance 0
@@ -462,7 +462,7 @@
 #end
 
 #new
-#name "Fae spells - Air"
+#id "Fae spells - Air"
 #spell "Contact Baobhan Sidhe"
 #spell "Summon Morrigan"
 #spell "Dance of the Morrigans"
@@ -476,7 +476,7 @@
 #end
 
 #new
-#name "Fae spells - Death"
+#id "Fae spells - Death"
 #spell "Summon Black Dogs"
 #spell "Summon Barghests"
 #spell "Summon Bean Sidhe"
@@ -489,7 +489,7 @@
 #end
 
 #new
-#name "Communion Choruses - nature"
+#id "Communion Choruses - nature"
 #spell "Chorus Master"
 #spell "Chorus Slave"
 #basechance 0
@@ -500,7 +500,7 @@
 #end
 
 #new
-#name "Communion Choruses - death"
+#id "Communion Choruses - death"
 #spell "Dirge Master"
 #spell "Dirge Slave"
 #basechance 0
@@ -513,7 +513,7 @@
 - Middle Eastern spells
 ------------------------
 #new
-#name "Desert demons - blood"
+#id "Desert demons - blood"
 #spell "Summon Se'irim"
 #spell "Summon Shedim"
 #basechance 0
@@ -524,7 +524,7 @@
 #end
 
 #new
-#name "Desert demons - nature"
+#id "Desert demons - nature"
 #spell "Summon Mazzikim"
 #spell "Summon Lilot"
 #basechance 0
@@ -535,7 +535,7 @@
 #end
 
 #new
-#name "Hebrew angels"
+#id "Hebrew angels"
 #spell "Call Malakh"
 #spell "Call Hashmal"
 #spell "Call Arel"
@@ -549,7 +549,7 @@
 #end
 
 #new
-#name "Grigori"
+#id "Grigori"
 #spell "Release Lord of Civilization"
 #basechance 0
 #chanceinc nationtag civilized 0.5

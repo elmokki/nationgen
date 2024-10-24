@@ -1,52 +1,52 @@
 #newitem -- Throwing axe
-#name "throwing axe"
+#id "throwing axe"
 #gameid 260
 #basechance 0.25
 #enditem
 
 #newitem
-#name "bonus shortbow"
+#id "bonus shortbow"
 #gameid 23
 #basechance 0.5
 #enditem
 
 #newitem
-#name "bonus sling"
+#id "bonus sling"
 #gameid 22
 #basechance 0.5
 #enditem
 
 #newitem
-#name "blowpipe"
+#id "blowpipe"
 #gameid 34
 #enditem
 
 #newitem
-#name "poison dart"
+#id "poison dart"
 #gameid 620
 #enditem
 
 #newitem
-#name "shuriken"
+#id "shuriken"
 #gameid 382
 #enditem
 
 
 -- Fancier stuff
 #newitem
-#name "poison darts"
+#id "poison darts"
 #gameid 500
 #basechance 0.05
 #enditem
 
 #newitem
-#name "chakram"
+#id "chakram"
 #gameid 362
 #basechance 0.05
 #enditem
 
 #newitem
-#name "koppo"
+#id "koppo"
 #gameid 420
 #define "#gcost +10"
 #basechance 0.01
@@ -54,34 +54,34 @@
 #enditem
 
 #newitem
-#name "chi kick"
+#id "chi kick"
 #gameid 175
 #define "#gcost +10"
 #basechance 0.01
 #enditem
 
 #newitem
-#name "kick"
+#id "kick"
 #gameid 397
 #basechance 0.05
 #enditem
 
 #newitem
-#name "head butt"
+#id "head butt"
 #gameid 300
 #basechance 0.01
 #theme medium-sho
 #enditem
 
 #newitem
-#name "strangulation"
+#id "strangulation"
 #gameid 116
 #basechance 0.05
 #theme medium-sho
 #enditem
 
 #newitem
-#name "patience"
+#id "patience"
 #gameid -1
 #define "#patience +2"
 #basechance 0.05
@@ -89,7 +89,7 @@
 #enditem
 
 #newitem
-#name "stealth"
+#id "stealth"
 #gameid -1
 #define "#stealthy +20"
 #basechance 0.05
