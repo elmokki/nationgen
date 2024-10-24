@@ -4,7 +4,8 @@
   "description": "Dominions 6 procedural content generation program.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-constants": "node ./srctest/nationGen/node-scripts/compile-constants.js"
   },
   "prettier": {
     "plugins": [
@@ -17,5 +18,9 @@
   "devDependencies": {
     "prettier": "3.3.3",
     "prettier-plugin-java": "2.6.4"
+  },
+  "dependencies": {
+    "event-stream": "^4.0.1",
+    "glob": "^11.0.0"
   }
 }
