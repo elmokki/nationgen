@@ -1,0 +1,1263 @@
+------------------------------------------------------------
+-- See GodGen.java for details on how this file is consumed.
+-- Most nations should have this data loaded into them. The
+-- definitions here will include the relevant pantheon
+-- restrictions, basechances and modified chances through
+-- #chanceinc and #themeinc.
+--
+-- List of pantheon names for the #allowed tag:
+--
+-- "north"
+-- "celtic"
+-- "mediterranean"
+-- "far east"
+-- "middle east"
+-- "middle america"
+-- "africa"
+-- "india"
+------------------------------------------------------------
+
+#new god
+#name "virtue"
+#command "#addgod 215"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "grand_saurolich"
+#command "#addgod 320"
+-- Only allow if nation has one of these Pantheons
+--
+#basechance 0
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Lizard" race, the chance that it's selected increases
+#chanceinc percentageofrace "Lizard" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "crone"
+#command "#addgod 402"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "great_warlock"
+#command "#addgod 486"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.5
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Abysian" race, the chance that it's selected increases
+#chanceinc percentageofrace "Abysian" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "skratti"
+#command "#addgod 500"
+-- Only allow if nation has one of these Pantheons
+#allowed "north"
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "arch_seraph"
+#command "#addgod 509"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Caelian" race, the chance that it's selected increases
+#chanceinc percentageofrace "Caelian" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "master_alchemist"
+#command "#addgod 550"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "son_of_niefel"
+#command "#addgod 605"
+-- Only allow if nation has one of these Pantheons
+#allowed "north"
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "baphomet"
+#command "#addgod 607"
+-- Only allow if nation has one of these Pantheons
+--
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "bog_mummy"
+#command "#addgod 643"
+-- Only allow if nation has one of these Pantheons
+--
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "dracolich"
+#command "#addgod 644"
+-- Only allow if nation has one of these Pantheons
+--
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "void_lord"
+#command "#addgod 652"
+-- Only allow if nation has one of these Pantheons
+--
+#basechance 0.5
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "smoking_mirror"
+#command "#addgod 857"
+-- Only allow if nation has one of these Pantheons
+#allowed "middle america"
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "vampire_queen"
+#command "#addgod 862"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "great_seer_of_the_deeps"
+#command "#addgod 873"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.5
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "divine_emperor"
+#command "#addgod 874"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "divine_glyph"
+#command "#addgod 1025"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "carrion_dragon"
+#command "#addgod 1026"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.5
+-- chanceincs
+-- If at least 0.1 (10%) of units are "Foulspawn" race, the chance that it's selected increases
+#chanceinc percentageofrace "Foulspawn" 0.1 1.5
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "carrion_lord"
+#command "#addgod 1027"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.5
+-- chanceincs
+-- If at least 0.1 (10%) of units are "Foulspawn" race, the chance that it's selected increases
+#chanceinc percentageofrace "Foulspawn" 0.1 1.5
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "tiwaz_of_war"
+#command "#addgod 1340"
+-- Only allow if nation has one of these Pantheons
+#allowed "celtic"
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "colossal_fetish"
+#command "#addgod 1346"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "devourer_of_souls"
+#command "#addgod 1349"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.25
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Lizard" race, the chance that it's selected increases
+#chanceinc percentageofrace "Lizard" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "volla_of_the_bountiful_forest"
+#command "#addgod 1370"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "bakemono_kunshu"
+#command "#addgod 1428"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Bakemono" or "Ogre" race, the chance that it's selected increases
+#chanceinc percentageofrace "Ogre" 0.6 2
+#chanceinc percentageofrace "Bakemono" 0.6 3
+-- themeincs
+-- 
+#end
+
+#new god
+#name "risen_oracle"
+#command "#addgod 1581"
+-- Only allow if nation has one of these pantheons
+#allowed "north"
+#allowed "celtic"
+#allowed "mediterranean"
+#allowed "far east"
+#allowed "middle east"
+#allowed "africa"
+#basechance 0
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Pale One" race, the chance that it's selected increases
+#chanceinc percentageofrace "Pale One" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "ageless_olm"
+#command "#addgod 1590"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Pale One" race, the chance that it's selected increases
+#chanceinc percentageofrace "Pale One" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "lawgiver"
+#command "#addgod 1896"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "fomorian_sorcerer"
+#command "#addgod 1898"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.5
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Fomorian" race, the chance that it's selected increases
+#chanceinc percentageofrace "Fomorian" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "fomorian_god_king"
+#command "#addgod 1899"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.25
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Fomorian" race, the chance that it's selected increases
+#chanceinc percentageofrace "Fomorian" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "great_sorceress"
+#command "#addgod 1905"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "son_of_the_fallen"
+#command "#addgod 2082"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.5
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Avvite" race, the chance that it's selected increases
+#chanceinc percentageofrace "Avvite" 0.6 3
+#chanceinc percentageofrace "Fomorian" 0.6 1.5
+#chanceinc percentageofrace "Gigante" 0.6 1.5
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "oni_kunshu"
+#command "#addgod 2203"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.25
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Bakemono" or "Ogre" race, the chance that it's selected increases
+#chanceinc percentageofrace "Ogre" 0.6 2
+#chanceinc percentageofrace "Bakemono" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "great_sauromancer"
+#command "#addgod 2205"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Lizard" race, the chance that it's selected increases
+#chanceinc percentageofrace "Lizard" 0.6 1
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "great_sorcerer"
+#command "#addgod 2207"
+-- Only allow if nation has one of these Pantheons
+#allowed "africa"
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "melqart"
+#command "#addgod 2315"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.25
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Avvite" race, the chance that it's selected increases
+#chanceinc percentageofrace "Avvite" 0.6 3
+#chanceinc percentageofrace "Fomorian" 0.6 1.5
+#chanceinc percentageofrace "Gigante" 0.6 1.5
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "bouda_father"
+#command "#addgod 2426"
+-- Only allow if nation has one of these Pantheons
+#allowed "africa"
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "earth_made_flesh"
+#command "#addgod 2502"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.75
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Pale One" race, the chance that it's selected increases
+#chanceinc percentageofrace "Pale One" 0.6 3
+#chanceinc percentageofrace "Caveman" 0.5 3
+#chanceinc percentageofrace "Cyclops" 0.4 3
+#chanceinc percentageofrace "Gigante" 0.4 3
+#chanceinc percentageofrace "Olm" 0.3 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "golden_pillar"
+#command "#addgod 2503"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.5
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Pale One" race, the chance that it's selected increases
+#chanceinc percentageofrace "Pale One" 0.6 3
+#chanceinc percentageofrace "Caveman" 0.5 3
+#chanceinc percentageofrace "Cyclops" 0.4 3
+#chanceinc percentageofrace "Gigante" 0.4 3
+#chanceinc percentageofrace "Olm" 0.3 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "raksharani"
+#command "#addgod 2550"
+-- Only allow if nation has one of these Pantheons
+#allowed "india"
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "ahura_of_wisdom"
+#command "#addgod 2552"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.5
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Caelian" race, the chance that it's selected increases
+#chanceinc percentageofrace "Caelian" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "ahura_of_the_oath"
+#command "#addgod 2553"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.5
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Caelian" race, the chance that it's selected increases
+#chanceinc percentageofrace "Caelian" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "ahura_of_the_waters"
+#command "#addgod 2554"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.5
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Caelian" race, the chance that it's selected increases
+#chanceinc percentageofrace "Caelian" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "spenta_mainyu"
+#command "#addgod 2555"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.5
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Caelian" race, the chance that it's selected increases
+#chanceinc percentageofrace "Caelian" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "yazad_king"
+#command "#addgod 2578"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Caelian" race, the chance that it's selected increases
+#chanceinc percentageofrace "Caelian" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "azi"
+#command "#addgod 2608"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.5
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "angra_mainyu"
+#command "#addgod 2610"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.5
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Caelian" race, the chance that it's selected increases
+#chanceinc percentageofrace "Caelian" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "gannag_menog"
+#command "#addgod 2611"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.5
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Caelian" race, the chance that it's selected increases
+#chanceinc percentageofrace "Caelian" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "daeva_of_wrath"
+#command "#addgod 2627"
+-- Only allow if nation has one of these Pantheons
+#allowed "india"
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "viracocha"
+#command "#addgod 2685"
+-- Only allow if nation has one of these Pantheons
+#allowed "middle america"
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "apu_inti"
+#command "#addgod 2686"
+-- Only allow if nation has one of these Pantheons
+#allowed "middle america"
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "heavenly_condor"
+#command "#addgod 2693"
+-- Only allow if nation has one of these Pantheons
+#allowed "middle america"
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "sapa_inca"
+#command "#addgod 2695"
+-- Only allow if nation has one of these Pantheons
+#allowed "middle america"
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "stone_huaca"
+#command "#addgod 2696"
+-- Only allow if nation has one of these Pantheons
+#allowed "middle america"
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "apu_illapa"
+#command "#addgod 2698"
+-- Only allow if nation has one of these Pantheons
+#allowed "middle america"
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "ayar"
+#command "#addgod 2699"
+-- Only allow if nation has one of these Pantheons
+#allowed "middle america"
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "immortal_coya"
+#command "#addgod 2737"
+-- Only allow if nation has one of these Pantheons
+#allowed "middle america"
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "king_of_frozen_bones"
+#command "#addgod 2852"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Atlantian" race, the chance that it's selected increases
+#chanceinc percentageofrace "Atlantian" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "ghost_king"
+#command "#addgod 2853"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Atlantian" race, the chance that it's selected increases
+#chanceinc percentageofrace "Atlantian" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "telkhine_god-king"
+#command "#addgod 2881"
+-- Only allow if nation has one of these Pantheons
+#allowed "celtic"
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "morgen_high_queen"
+#command "#addgod 2922"
+-- Only allow if nation has one of these Pantheons
+#allowed "celtic"
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "leader_of_the_closed_council"
+#command "#addgod 2955"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Pale One" race, the chance that it's selected increases
+#chanceinc percentageofrace "Pale One" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "chiranjivi"
+#command "#addgod 2959"
+-- Only allow if nation has one of these Pantheons
+#allowed "india"
+#basechance 0.5
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Primate" race, the chance that it's selected increases
+#chanceinc percentageofrace "Primate" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "apkallu"
+#command "#addgod 2960"
+-- Only allow if nation has one of these Pantheons
+#allowed "middle east"
+#basechance 0.5
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "centauride_enchantress"
+#command "#addgod 2961"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Halfman" race, the chance that it's selected increases
+#chanceinc percentageofrace "Halfman" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "centaur_great_sage"
+#command "#addgod 2977"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Halfman" race, the chance that it's selected increases
+#chanceinc percentageofrace "Halfman" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "master_sorcerer"
+#command "#addgod 2978"
+-- Only allow if nation has one of these Pantheons
+#allowed "far east"
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "onmyo_hakase"
+#command "#addgod 2979"
+-- Only allow if nation has one of these Pantheons
+#allowed "far east"
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "uttervast"
+#command "#addgod 2980"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.1
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Illithid" race, the chance that it's selected increases
+#chanceinc percentageofrace "Illithid" 0.6 3
+#chanceinc percentageofrace "Atlantian" 0.6 2
+#chanceinc percentageofrace "Ichtyid" 0.6 2
+#chanceinc percentageofrace "Merrow" 0.6 2
+#chanceinc percentageofrace "Crustacean" 0.6 1
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "grand_hierophant"
+#command "#addgod 3053"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "firstborn_of_the_star"
+#command "#addgod 3054"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Illithid" race, the chance that it's selected increases
+#chanceinc percentageofrace "Illithid" 0.6 3
+#chanceinc percentageofrace "Atlantian" 0.6 2
+#chanceinc percentageofrace "Ichtyid" 0.6 2
+#chanceinc percentageofrace "Merrow" 0.6 2
+#chanceinc percentageofrace "Crustacean" 0.6 1
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "aphroi_sage"
+#command "#addgod 3056"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Ichtyid" race, the chance that it's selected increases
+#chanceinc percentageofrace "Ichtyid" 0.6 3
+#chanceinc percentageofrace "Merrow" 0.6 3
+#chanceinc percentageofrace "Atlantian" 0.6 2
+#chanceinc percentageofrace "Crustacean" 0.6 1
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "god-king_of_the_deep"
+#command "#addgod 3058"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Atlantian" race, the chance that it's selected increases
+#chanceinc percentageofrace "Atlantian" 0.6 3
+#chanceinc percentageofrace "Illithid" 0.6 2
+#chanceinc percentageofrace "Ichtyid" 0.6 2
+#chanceinc percentageofrace "Merrow" 0.6 2
+#chanceinc percentageofrace "Crustacean" 0.6 1
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "magister_supreme"
+#command "#addgod 3059"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "master"
+#command "#addgod 3060"
+-- Only allow if nation has one of these Pantheons
+#allowed "far east"
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+-- TODO: filter for Ur nations
+#new god
+#name "bone_mother"
+#command "#addgod 3190"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.5
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+-- TODO: filter for Ur nations
+#new god
+#name "enkidu_great_sage"
+#command "#addgod 3191"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "great_camazotz"
+#command "#addgod 3192"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Zotz" race, the chance that it's selected increases
+#chanceinc percentageofrace "Zotz" 0.6 3
+#chanceinc percentageofrace "Muuch" 0.6 2
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "bronze_colossus"
+#command "#addgod 3346"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.5
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "sahira"
+#command "#addgod 3384"
+-- Only allow if nation has one of these Pantheons
+#allowed "medditerranean"
+#allowed "middle east"
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "king_in_yellow"
+#command "#addgod 3396"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.25
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Illithid" race, the chance that it's selected increases
+#chanceinc percentageofrace "Illithid" 0.6 3
+#chanceinc percentageofrace "Atlantian" 0.6 2
+#chanceinc percentageofrace "Ichtyid" 0.6 2
+#chanceinc percentageofrace "Merrow" 0.6 2
+#chanceinc percentageofrace "Crustacean" 0.6 1
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "firstborn_of_the_smokeless_flame"
+#command "#addgod 3473"
+-- Only allow if nation has one of these Pantheons
+#allowed "medditerranean"
+#allowed "middle east"
+#basechance 0.5
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "crystal_soul"
+#command "#addgod 3639"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.5
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Pale One" race, the chance that it's selected increases
+#chanceinc percentageofrace "Pale One" 0.6 3
+#chanceinc percentageofrace "Caveman" 0.5 3
+#chanceinc percentageofrace "Cyclops" 0.4 3
+#chanceinc percentageofrace "Gigante" 0.4 3
+#chanceinc percentageofrace "Olm" 0.3 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "weaver_of_tales"
+#command "#addgod 3654"
+-- Only allow if nation has one of these Pantheons
+#allowed "africa"
+#basechance 1
+-- chanceincs
+-- 
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "arch_emperor"
+#command "#addgod 4001"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Hoburg" race, the chance that it's selected increases
+#chanceinc percentageofrace "Hoburg" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "first_queen"
+#command "#addgod 4002"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.5
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Amazon human" race, the chance that it's selected increases
+#chanceinc percentageofrace "Amazon human" 0.6 3
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "divine_consul"
+#command "#addgod 4003"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0
+-- chanceincs
+-- If at least 0.6 (60%) of units are "Halfman" race, the chance that it's selected increases
+#chanceinc percentageofrace "Halfman" 0.6 1
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "mother_mandragora"
+#command "#addgod 4024"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0
+-- chanceincs
+-- If at least 0.1 (10%) of units are "Foulspawn" race, the chance that it's selected increases
+#chanceinc percentageofrace "Foulspawn" 0.1 1
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "titan_mandragora"
+#command "#addgod 4025"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0
+-- chanceincs
+-- If at least 0.1 (10%) of units are "Foulspawn" race, the chance that it's selected increases
+#chanceinc percentageofrace "Foulspawn" 0.1 1
+-- themeincs
+-- 
+#end
+
+
+#new god
+#name "worm_soul"
+#command "#addgod 4032"
+-- Only allow if nation has one of these Pantheons
+-- 
+#basechance 0.1
+-- chanceincs
+-- If at least 0.1 (10%) of units are "Foulspawn" race, the chance that it's selected increases
+#chanceinc percentageofrace "Foulspawn" 0.1 1
+-- themeincs
+-- 
+#end

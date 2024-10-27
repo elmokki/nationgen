@@ -1,46 +1,47 @@
---- You don't need to define the shapeshifting commands, they are done automatically based on the filter applying the shapes
-
 #new god
 #name "north"
 #command "#homerealm 1"
-#basechance 10
+#basechance 0.05
 #end
-
 
 #new god
 #name "celtic"
 #command "#homerealm 2"
-#basechance 10
+#basechance 0.5
 #end
 
 #new god
 #name "mediterranean"
 #command "#homerealm 3"
-#basechance 10
+#basechance 3
 #end
 
 #new god
 #name "far east"
 #command "#homerealm 4"
-#basechance 0.5
+#basechance 3
 #end
 
 #new god
 #name "middle east"
 #command "#homerealm 5"
-#basechance 3
+#basechance 24
+#end
+
+#new god
+#name "middle america"
+#command "#homerealm 6"
+#basechance 0.05
 #end
 
 #new god
 #name "africa"
 #command "#homerealm 7"
-#basechance 0.5
+#basechance 6
 #end
 
 #new god
 #name "india"
 #command "#homerealm 8"
-#basechance 0.25
+#basechance 6
 #end
-
-
