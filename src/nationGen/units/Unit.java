@@ -342,7 +342,7 @@ public class Unit {
         }
       }
 
-      for (Args args : tags.getAllArgs("itemslot")) {
+      for (Args args : itemTags.getAllArgs("itemslot")) {
         String slot = args.get(0).get();
         Arg modifier = args.get(1);
         switch (slot) {

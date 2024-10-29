@@ -54,6 +54,7 @@ public class NationGenAssets {
   public ResourceStorage<NamePart> miscnames = new ResourceStorage<>(
     NamePart.class
   );
+  public ResourceStorage<Filter> gods = new ResourceStorage<>(Filter.class);
   public ResourceStorage<Filter> miscdef = new ResourceStorage<>(Filter.class);
   public ResourceStorage<Flag> flagparts = new ResourceStorage<>(Flag.class);
   public ResourceStorage<MagicItem> magicitems = new ResourceStorage<>(
@@ -81,6 +82,7 @@ public class NationGenAssets {
 
     magenames.load(gen, "/data/names/magenames/magenames.txt");
     miscnames.load(gen, "/data/names/naming.txt");
+    gods.load(gen, "/data/gods/gods.txt");
     miscdef.load(gen, "/data/misc/miscdef.txt");
     flagparts.load(gen, "/data/flags/flagdef.txt");
     magicitems.load(gen, "/data/items/magicweapons.txt");
