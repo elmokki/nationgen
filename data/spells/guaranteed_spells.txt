@@ -562,3 +562,22 @@
 #chanceinc magic not blood *0
 #end
 
+#new
+#id "African spells"
+#spell "God Brood"
+#spell "Weavers of the Wood"
+-- God Brood requires site 60
+#sitereq "God Forest"
+#basechance 0
+#chanceinc nationtag austral 1
+#chanceinc hasthemetheme "primitive" 1
+#chanceinc hasthemetheme "austral" 1
+#chanceinc hasthemetheme "central" 1
+#chanceinc hasthemetheme "totemanimal" 1
+#chanceinc hasthemetheme "machakan_troops" 1
+#chanceinc hasthemetheme "pygmy_troops" 1
+#chanceinc hasthemetheme "machakan_elites" 1.5
+#chanceinc hasthemetheme "pygmy_elites" 1.5
+#chanceinc hasthemetheme "machakan_mages" 2
+#chanceinc anymagic not nature *0
+#end
