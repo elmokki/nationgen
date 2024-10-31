@@ -23,6 +23,7 @@
 #type "weather"
 #basechance 0.125
 #command "#idealcold +2"
+#command "#moreheat -1"
 #bothracedefinition "#command 'coldres +3'"
 #chanceinc "nationcommand #idealcold above 1 *0"
 #chanceinc "primaryracecommand #coldblood *0"
@@ -36,6 +37,7 @@
 #type "weather"
 #basechance 0.05
 #command "#idealcold +3"
+#command "#moreheat -2"
 #chanceinc "nationcommand #idealcold above 0 *0"
 #chanceinc "primaryracecommand #coldblood *0"
 #bothracedefinition "#command 'coldres +3'"
@@ -58,6 +60,7 @@
 #type "weather"
 #basechance 0.125
 #command "#idealcold -2"
+#command "#moreheat 1"
 #chanceinc "nationcommand #idealcold below 1 *0"
 #bothracedefinition "#command 'fireres +3'"
 #magicpriority fire 4
@@ -69,6 +72,7 @@
 #type "weather"
 #basechance 0.05
 #command "#idealcold -3"
+#command "#moreheat 2"
 #chanceinc "nationcommand #idealcold below 0 *0"
 #bothracedefinition "#command 'fireres +3'"
 #magicpriority fire 10
