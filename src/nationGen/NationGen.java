@@ -315,7 +315,9 @@ public class NationGen {
 
       // sites
       for (Site s : n.sites) {
-        s.name = nGen.getSiteName(n.random, s.getPath(), s.getSecondaryPath());
+        if (s.selectSiteName == null) {
+          s.name = nGen.getSiteName(n.random, s.getPath(), s.getSecondaryPath());
+        }
       }
 
       // mages
@@ -386,15 +388,17 @@ public class NationGen {
    * @param spells
    * @param n
    */
-  private void handleSpells(List<Filter> spells, Nation n) {
-    int id = n.nationid;
+  private void handleSpells(List<Filter> spells, Nation nation) {
+    int id = nation.nationid;
+    List<String> spellNames = nation.getSpells();
+    List<String> sitesReqIds = nation.getSpellSitesRequired();
 
-    for (String s : n.getSpells()) {
+    for (String spellName : spellNames) {
       Spell spell = null;
 
       // check for existing free spell
       for (Spell sp : this.freeSpells) {
-        if (sp.name.equals(s)) {
+        if (sp.name.equals(spellName)) {
           spell = sp;
         }
       }
@@ -403,9 +407,9 @@ public class NationGen {
       // check for custom spells first
       if (spell == null) {
         for (Filter sf : assets.customspells) {
-          if (sf.name.equals(s)) {
+          if (sf.name.equals(spellName)) {
             spell = new Spell(this);
-            spell.name = s;
+            spell.name = spellName;
             spell.commands.addAll(sf.commands);
             break;
           }
@@ -414,9 +418,9 @@ public class NationGen {
       // copy existing spell
       if (spell == null) {
         spell = new Spell(this);
-        spell.name = s;
-        spell.commands.add(Command.args("#copyspell", s));
-        spell.commands.add(Command.args("#name", s));
+        spell.name = spellName;
+        spell.commands.add(Command.args("#copyspell", spellName));
+        spell.commands.add(Command.args("#name", spellName));
       }
 
       spell.nationids.add(id);
@@ -437,6 +441,16 @@ public class NationGen {
       if (!this.spellsToWrite.contains(spell)) {
         this.spellsToWrite.add(spell);
       }
+    }
+
+    // Get the required sites that these spells need to be cast; i.e.
+    // Pact of Rhuax requires the Roots of the Earth site. These sites
+    // will be copied from vanilla, but their benefits will be cleared
+    for (String siteId : sitesReqIds) {
+      Site siteReq = new Site(siteId, true);
+      siteReq.othercommands.add(new Command("#selectsite", new Arg(siteId)));
+      siteReq.othercommands.add(new Command("#clear"));
+      nation.sites.add(siteReq);
     }
   }
 

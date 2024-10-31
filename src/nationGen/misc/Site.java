@@ -18,25 +18,47 @@ public class Site {
   public int id = -1;
   public String name = "UNNAMED";
   public int level = 0;
+  public int rarity = 5;
+  public String selectSiteName;
+  public boolean shouldClearSite = false;
+
+  public Site() {}
+
+  // Constructor for sites which are meant to be a #selectsite copy
+  // of an already existing site. Mostly used for granting nations
+  // vanilla sites which are required for some national spells, like
+  // Rhuax Pact 
+  public Site(String selectId, boolean clearSite) {
+    this.name = selectId;
+    this.selectSiteName = selectId;
+    this.shouldClearSite = clearSite;
+  }
 
   public List<String> writeLines() {
     if (id == -1) {
       throw new IllegalStateException("Site ID is -1");
     }
-    //		if(name.equals("UNNAMED"))
-    //		{
-    //			throw new IllegalStateException("Site name is 'UNNAMED'");
-    //		}
 
     List<String> lines = new ArrayList<>();
 
-    lines.add("#newsite " + id);
-    lines.add("#level " + level);
-    lines.add("#rarity 5");
-    lines.add("#path " + getPath().number);
-    lines.add("#name \"" + name + "\"");
+    // If this site is meant to be a copy of another site, declare
+    // it as #selectsite, not #newsite, and ignore other properties
+    if (selectSiteName != null) {
+      lines.add("#selectsite \"" + selectSiteName + "\"");
 
-    lines.addAll(writeFeatureLines());
+      if (shouldClearSite == true) {
+        lines.add("#clear");
+      }
+    }
+
+    else {
+      lines.add("#newsite " + id);
+      lines.add("#level " + level);
+      lines.add("#rarity " + rarity);
+      lines.add("#path " + getPath().number);
+      lines.add("#name \"" + name + "\"");
+      lines.addAll(writeFeatureLines());
+    }
 
     lines.add("#end");
     lines.add("");

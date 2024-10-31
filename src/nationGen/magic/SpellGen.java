@@ -34,7 +34,9 @@ public class SpellGen {
     while (map.hasPossible()) {
       Filter f = map.getRandom(r);
 
-      if (f != null) n.spells.add(f);
+      if (f != null) {
+        n.spells.add(f);
+      }
 
       map.eliminate(f);
     }
