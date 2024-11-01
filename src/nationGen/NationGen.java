@@ -34,8 +34,8 @@ import nationGen.units.Unit;
 
 public class NationGen {
 
-  public static String version = "0.10.1";
-  public static String date = "13th October 2024";
+  public static String version = "0.11.0";
+  public static String date = "31st October 2024";
 
   private List<NationRestriction> restrictions;
 
