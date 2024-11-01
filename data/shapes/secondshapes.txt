@@ -1,7 +1,7 @@
 --- You don't need to write the shapeshifting commands, they are done automatically based on the filter applying the shapes
 
 #new secondshape
-#name "turkey"
+#id "turkey"
 #command "#copystats 1362"
 #command "#copyspr 1362"
 #command "#itemslots 786432"
@@ -10,7 +10,7 @@
 
 
 #new secondshape
-#name "werewolf"
+#id "werewolf"
 #command "#copyspr 854"
 #command "#magicboost 53 -1"
 #command "#name Werewolf"
@@ -34,7 +34,7 @@
 #end
 
 #new secondshape
-#name "werefox"
+#id "werefox"
 #command "#spr1 ./graphics/shapes/werewolf_small_1.png"
 #command "#spr2 ./graphics/shapes/werewolf_small_2.png"
 #command "#magicboost 53 -1"
@@ -59,7 +59,7 @@
 #end
 
 #new secondshape
-#name "wolf"
+#id "wolf"
 #command "#copystats 284"
 #command "#copyspr 284"
 #command "#magicboost 53 -1"
@@ -68,7 +68,7 @@
 #end
 
 #new secondshape
-#name "dog"
+#id "dog"
 #command "#copystats 1560"
 #command "#copyspr 1560"
 #command "#magicboost 53 -1"
@@ -77,7 +77,7 @@
 #end
 
 #new secondshape
-#name "werebear"
+#id "werebear"
 #command "#spr1 ./graphics/mounts/standard/bear_small_upright.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -1"
@@ -104,7 +104,7 @@
 #end
 
 #new secondshape
-#name "bear"
+#id "bear"
 #command "#spr1 ./graphics/mounts/standard/bear_small.png"
 #command "#spr2 ./graphics/mounts/standard/bear_small_upright.png"
 #command "#magicboost 53 -1"
@@ -130,7 +130,7 @@
 #end
 
 #new secondshape
-#name "werecrocodile"
+#id "werecrocodile"
 #command "#spr1 ./graphics/shapes/werecroc_1.png"
 #command "#spr2 ./graphics/shapes/werecroc_2.png"
 #command "#magicboost 53 -1"
@@ -158,7 +158,7 @@
 #end
 
 #new secondshape
-#name "hawk"
+#id "hawk"
 #command "#copystats 1380"
 #command "#copyspr 1380"
 #command "#itemslots 786432"
@@ -167,7 +167,7 @@
 #end
 
 #new secondshape
-#name "greatboar"
+#id "greatboar"
 #command "#copystats 1807"
 #command "#copyspr 1807"
 #command "#itemslots 786432"
@@ -176,7 +176,7 @@
 #end
 
 #new secondshape
-#name "vineman"
+#id "vineman"
 #command "#copystats 361"
 #command "#copyspr 361"
 #command "#magicboost 53 -1"
@@ -185,7 +185,7 @@
 #end
 
 #new secondshape
-#name "vineman"
+#id "vineman"
 #command "#copyspr 361"
 #command "#name 'Vine Man'"
 #command "#size 3"
@@ -216,7 +216,7 @@
 #end
 
 #new secondshape
-#name "vineman-small"
+#id "vineman-small"
 #command "#spr1 ./graphics/shapes/vineman_small_1.png"
 #command "#spr2 ./graphics/shapes/vineman_small_2.png"
 #command "#name 'Vine Imp'"
@@ -248,7 +248,7 @@
 #end
 
 #new secondshape
-#name "cavecrab"
+#id "cavecrab"
 #command "#copystats 2514"
 #command "#copyspr 2514"
 #command "#itemslots 786432"
@@ -257,7 +257,7 @@
 #end
 
 #new secondshape
-#name "toad"
+#id "toad"
 #command "#name 'Giant Toad'"
 #command "#copyspr 1359"
 #command "#lizard"
@@ -284,7 +284,7 @@
 #end
 
 #new secondshape
-#name "wingedmonkey"
+#id "wingedmonkey"
 #command "#copystats 1199"
 #command "#copyspr 1199"
 #command "#magicboost 53 -1"
@@ -293,7 +293,7 @@
 #end
 
 #new secondshape
-#name "devil"
+#id "devil"
 #command "#copystats 304"
 #command "#copyspr 304"
 #command "#magicboost 53 -1"
@@ -301,14 +301,14 @@
 
 
 #new secondshape
-#name "frostfiend"
+#id "frostfiend"
 #command "#copystats 449"
 #command "#copyspr 449"
 #command "#magicboost 53 -1"
 #end
 
 #new secondshape
-#name "greatbear"
+#id "greatbear"
 #command "#copystats 694"
 #command "#copyspr 694"
 #command "#magicboost 53 -1"
@@ -318,7 +318,7 @@
 #end
 
 #new secondshape
-#name "jaguar"
+#id "jaguar"
 #command "#copyspr 858"
 #command "#magicboost 53 -1"
 #command "#name Jaguar"
@@ -340,7 +340,7 @@
 #end
 
 #new secondshape
-#name "deepone"
+#id "deepone"
 #command "#copystats 1686"
 #command "#copyspr 1686"
 #command "#magicboost 53 -1"
@@ -348,7 +348,7 @@
 #end
 
 #new secondshape
-#name "ghost"
+#id "ghost"
 #command "#copystats 566"
 #command "#spr1 greyscale 20"
 #command "#spr2 shift"
@@ -356,7 +356,7 @@
 #end
 
 #new secondshape
-#name "ghoul"
+#id "ghoul"
 #command "#copyspr 198"
 #command "#magicboost 53 -1"
 #command "#name 'Ghoul'"
@@ -384,7 +384,7 @@
 #end
 
 #new secondshape
-#name "ghoul-small"
+#id "ghoul-small"
 #command "#spr1 ./graphics/shapes/ghoul_small_1.png"
 #command "#spr2 ./graphics/shapes/ghoul_small_2.png"
 #command "#magicboost 53 -1"
@@ -414,7 +414,7 @@
 #end
 
 #new secondshape
-#name "hornedserpent"
+#id "hornedserpent"
 #command "#copystats 403"
 #command "#copyspr 403"
 #command "#itemslots 786432"
@@ -424,7 +424,7 @@
 #end
 
 #new secondshape
-#name "smallerspider"
+#id "smallerspider"
 #command "#name 'Giant Spider'"
 #command "#copyspr 782"
 #command "#magicboost 53 -1"
@@ -450,7 +450,7 @@
 #end
 
 #new secondshape
-#name "felemental"
+#id "felemental"
 #command "#copystats 3716"
 #command "#copyspr 3716"
 -- Need to clear special abilities from elemental so it doesn't use shrinkhp,
@@ -485,7 +485,7 @@
 #end
 
 #new secondshape
-#name "minorfelemental"
+#id "minorfelemental"
 #command "#copystats 3720"
 #command "#copyspr 3720"
 -- Need to clear special abilities from elemental so it doesn't use shrinkhp,
@@ -519,7 +519,7 @@
 #end
 
 #new secondshape
-#name "eelemental"
+#id "eelemental"
 #command "#copystats 3740"
 #command "#copyspr 3740"
 -- Need to clear special abilities from elemental so it doesn't use shrinkhp,
@@ -549,7 +549,7 @@
 #end
 
 #new secondshape
-#name "minoreelemental"
+#id "minoreelemental"
 #command "#copystats 3744"
 #command "#copyspr 3744"
 -- Need to clear special abilities from elemental so it doesn't use shrinkhp,
@@ -578,7 +578,7 @@
 #end
 
 #new secondshape
-#name "aelemental"
+#id "aelemental"
 #command "#copystats 3724"
 #command "#copyspr 3724"
 -- Need to clear special abilities from elemental so it doesn't use shrinkhp,
@@ -613,7 +613,7 @@
 #end
 
 #new secondshape
-#name "minoraelemental"
+#id "minoraelemental"
 #command "#copystats 3728"
 #command "#copyspr 3728"
 -- Need to clear special abilities from elemental so it doesn't use shrinkhp,
@@ -647,7 +647,7 @@
 #end
 
 #new secondshape
-#name "welemental"
+#id "welemental"
 #command "#copystats 3732"
 #command "#copyspr 3732"
 -- Need to clear special abilities from elemental so it doesn't use shrinkhp,
@@ -683,7 +683,7 @@
 #end
 
 #new secondshape
-#name "minorwelemental"
+#id "minorwelemental"
 #command "#copystats 3736"
 #command "#copyspr 3736"
 -- Need to clear special abilities from elemental so it doesn't use shrinkhp,
@@ -718,7 +718,7 @@
 #end
 
 #new secondshape
-#name "metalman"
+#id "metalman"
 #command "#copyspr 532"
 #command "#name 'Mechanical Man'"
 #command "#size 3"
@@ -751,7 +751,7 @@
 #end
 
 #new secondshape
-#name "metalman-small"
+#id "metalman-small"
 #command "#spr1 ./graphics/shapes/mechanicalman_small_1.png"
 #command "#spr2 ./graphics/shapes/mechanicalman_small_2.png"
 #command "#name 'Mechanical Hoburg'"
@@ -786,7 +786,7 @@
 #end
 
 #new secondshape
-#name "scorpion"
+#id "scorpion"
 #command "#copystats 524"
 #command "#copyspr 524"
 #command "#magicboost 53 -5"
@@ -795,7 +795,7 @@
 #end
 
 #new secondshape
-#name "hugemantis"
+#id "hugemantis"
 #command "#name 'Giant Mantis'"
 #command "#spr1 ./graphics/mounts/standard/hugemantis.png"
 #command "#spr2 shift"
@@ -825,7 +825,7 @@
 #end
 
 #new secondshape
-#name "lesserhorror"
+#id "lesserhorror"
 #command "#copystats 307"
 #command "#copyspr 307"
 #command "#magicboost 53 -5"
@@ -833,7 +833,7 @@
 #end
 
 #new secondshape
-#name "werehyena"
+#id "werehyena"
 #command "#name 'Werehyena'"
 #command "#copyspr 2294"
 #command "#magicboost 53 -1"
@@ -858,7 +858,7 @@
 #end
 
 #new secondshape
-#name "wererat"
+#id "wererat"
 #command "#name 'Wererat'"
 #command "#spr1 ./graphics/mounts/standard/giantrat.png"
 #command "#spr2 shift"
@@ -886,7 +886,7 @@
 #end
 
 #new secondshape
-#name "wererat2"
+#id "wererat2"
 #command "#name 'Wererat'"
 #command "#spr1 ./graphics/mounts/standard/giantrat.png"
 #command "#spr2 shift"
@@ -914,7 +914,7 @@
 #end
 
 #new secondshape
-#name "lamia_lesser"
+#id "lamia_lesser"
 #command "#spr1 ./graphics/shapes/blackserpent_lesser_1.png"
 #command "#spr2 ./graphics/shapes/blackserpent_lesser_2.png"
 #command "#name 'Black Serpent'"
@@ -941,7 +941,7 @@
 #end
 
 #new secondshape
-#name "lamiamage_lesser"
+#id "lamiamage_lesser"
 #command "#spr1 ./graphics/shapes/blackserpent_lesser_1.png"
 #command "#spr2 ./graphics/shapes/blackserpent_lesser_2.png"
 #command "#name 'Serpent Princess'"
@@ -971,7 +971,7 @@
 --- Mounts
 
 #new secondshape
-#name "jaguarmount"
+#id "jaguarmount"
 #command "#copyspr 858"
 #command "#magicboost 53 -1"
 #command "#name 'Jaguar'"
@@ -997,7 +997,7 @@
 
 
 #new secondshape
-#name "jaguarmount-stealthy"
+#id "jaguarmount-stealthy"
 #command "#copyspr 858"
 #command "#magicboost 53 -1"
 #command "#name 'Jaguar'"
@@ -1023,7 +1023,7 @@
 #end
 
 #new secondshape
-#name "serpent1"
+#id "serpent1"
 #command "#copystats 1179"
 #command "#copyspr 1179"
 #command "#magicboost 53 -5"
@@ -1034,7 +1034,7 @@
 #end
 
 #new secondshape
-#name "serpent2"
+#id "serpent2"
 #command "#copystats 4"
 #command "#copyspr 4"
 #command "#magicboost 53 -5"
@@ -1045,7 +1045,7 @@
 #end
 
 #new secondshape
-#name "cavedrake"
+#id "cavedrake"
 #command "#copystats 522"
 #command "#copyspr 522"
 #command "#magicboost 53 -5"
@@ -1056,7 +1056,7 @@
 #end
 
 #new secondshape
-#name "spider"
+#id "spider"
 #command "#copystats 3554"
 #command "#copyspr 3554"
 #command "#magicboost 53 -5"
@@ -1067,7 +1067,7 @@
 #end
 
 #new secondshape
-#name "cavespider"
+#id "cavespider"
 #command "#copystats 2513"
 #command "#copyspr 2513"
 #command "#magicboost 53 -5"
@@ -1079,7 +1079,7 @@
 #end
 
 #new secondshape
-#name "forestspider"
+#id "forestspider"
 #command "#copyspr 782"
 #command "#magicboost 53 -5"
 #command "#name 'Forest Spider'"
@@ -1110,7 +1110,7 @@
 
 
 #new secondshape
-#name "amphiptere"
+#id "amphiptere"
 #command "#copystats 1412"
 #command "#copyspr 1412"
 #command "#name 'Amphiptere'"
@@ -1122,7 +1122,7 @@
 
 
 #new secondshape
-#name "lionmount"
+#id "lionmount"
 #command "#copystats 628"
 #command "#copyspr 628"
 #command "#magicboost 53 -5"
@@ -1133,7 +1133,7 @@
 #end
 
 #new secondshape
-#name "beastbat_nerfed"
+#id "beastbat_nerfed"
 #command "#copyspr 1357"
 #command "#name 'Beast Bat'"
 #command "#weapon 251"
@@ -1160,7 +1160,7 @@
 
 
 #new secondshape
-#name "ozelotl"
+#id "ozelotl"
 #command "#copyspr 1356"
 #command "#name 'Ozelotl'"
 #command "#weapon 20"
@@ -1186,7 +1186,7 @@
 #end
 
 #new secondshape
-#name "hellspawn"
+#id "hellspawn"
 #command "#copystats 2967"
 #command "#copyspr 2967"
 #command "#magicboost 53 -5"
@@ -1196,7 +1196,7 @@
 #end
 
 #new secondshape
-#name "tiger"
+#id "tiger"
 #command "#copyspr 1140"
 #command "#name 'Tiger'"
 #command "#weapon 20"
@@ -1221,7 +1221,7 @@
 #end
 
 #new secondshape
-#name "hunterspider"
+#id "hunterspider"
 #command "#copyspr 899"
 #command "#magicboost 53 -5"
 #command "#name 'Hunter Spider'"
@@ -1247,7 +1247,7 @@
 #end
 
 #new secondshape
-#name "nightmare"
+#id "nightmare"
 #command "#spr1 ./graphics/mounts/standard/nightmare.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
@@ -1275,7 +1275,7 @@
 #end
 
 #new secondshape
-#name "gloso"
+#id "gloso"
 #command "#copyspr 2363"
 #command "#magicboost 53 -5"
 #command "#name 'Gloso'"
@@ -1308,7 +1308,7 @@
 #end
 
 #new secondshape
-#name "bearmount"
+#id "bearmount"
 #command "#spr1 ./graphics/mounts/standard/bear.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
@@ -1339,7 +1339,7 @@
 #end
 
 #new secondshape
-#name "bearmount_polar"
+#id "bearmount_polar"
 #command "#spr1 ./graphics/mounts/standard/bear_polar.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
@@ -1370,7 +1370,7 @@
 #end
 
 #new secondshape
-#name "smallbearmount"
+#id "smallbearmount"
 #command "#spr1 ./graphics/mounts/standard/bear_small.png"
 #command "#spr2 ./graphics/mounts/standard/bear_small_upright.png"
 #command "#magicboost 53 -5"
@@ -1400,7 +1400,7 @@
 #end
 
 #new secondshape
-#name "caveman"
+#id "caveman"
 #command "#copystats 2018"
 #command "#spr1 ./graphics/hoburg/mounts/caveman.png"
 #command "#spr2 shift" 
@@ -1414,7 +1414,7 @@
 #end
 
 #new secondshape
-#name "caveman_occidental"
+#id "caveman_occidental"
 #command "#copystats 2018"
 #command "#spr1 ./graphics/hoburg/mounts/caveman_occidental.png"
 #command "#spr2 shift"
@@ -1427,7 +1427,7 @@
 #end
 
 #new secondshape
-#name "caveman_hellbred"
+#id "caveman_hellbred"
 #command "#copystats 2018"
 #command "#spr1 ./graphics/hoburg/mounts/horite.png"
 #command "#spr2 shift" 
@@ -1443,7 +1443,7 @@
 #end
 
 #new secondshape
-#name "wyvern"
+#id "wyvern"
 #command "#copystats 520"
 #command "#copyspr 520"
 #command "#magicboost 53 -5"
@@ -1455,7 +1455,7 @@
 #end
 
 #new secondshape
-#name "moose"
+#id "moose"
 #command "#copystats 1084"
 #command "#copyspr 1084"
 #command "#itemslots 786432"
@@ -1467,7 +1467,7 @@
 #end
 
 #new secondshape
-#name "elk"
+#id "elk"
 #command "#spr1 ./graphics/mounts/standard/elk.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
@@ -1500,7 +1500,7 @@
 
 
 #new secondshape
-#name "scorpionmount"
+#id "scorpionmount"
 #command "#copystats 524"
 #command "#copyspr 524"
 #command "#magicboost 53 -5"
@@ -1512,7 +1512,7 @@
 #end
 
 #new secondshape
-#name "cavegrubmount"
+#id "cavegrubmount"
 #command "#copystats 2526"
 #command "#copyspr 2526"
 #command "#magicboost 53 -5"
@@ -1523,7 +1523,7 @@
 #end
 
 #new secondshape
-#name "cavecowmount"
+#id "cavecowmount"
 #command "#copystats 2512"
 #command "#copyspr 2512"
 #command "#magicboost 53 -5"
@@ -1535,7 +1535,7 @@
 
 
 #new secondshape
-#name "fossilmount"
+#id "fossilmount"
 #command "#copystats 1977"
 #command "#spr1 ./graphics/abysian/mounts/fossil.png"
 #command "#spr2 shift"
@@ -1547,7 +1547,7 @@
 #end
 
 #new secondshape
-#name "fossil_caveman_mount"
+#id "fossil_caveman_mount"
 #command "#spr1 ./graphics/hoburg/mounts/caveman_fossil.png"
 #command "#spr2 shift"
 #command "#name 'Fossilized Caveman'"
@@ -1587,7 +1587,7 @@
 #end
 
 #new secondshape
-#name "leogryphmount"
+#id "leogryphmount"
 #command "#copystats 2132"
 #command "#copyspr 2132"
 #command "#magicboost 53 -5"
@@ -1598,7 +1598,7 @@
 #end
 
 #new secondshape
-#name "nightmare_leogryphmount"
+#id "nightmare_leogryphmount"
 #command "#copystats 3561"
 #command "#spr1 ./graphics/amazon/mounts/nightmare_leogryph.png"
 #command "#spr2 shift"
@@ -1612,7 +1612,7 @@
 #end
 
 #new secondshape
-#name "gryphonmount"
+#id "gryphonmount"
 #command "#copystats 2131"
 #command "#copyspr 2131"
 #command "#magicboost 53 -5"
@@ -1623,7 +1623,7 @@
 #end
 
 #new secondshape
-#name "flayedserpent"
+#id "flayedserpent"
 #command "#spr1 ./graphics/amazon/mounts/flayed_serpent.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
@@ -1658,7 +1658,7 @@
 
 
 #new secondshape
-#name "hyenamount"
+#id "hyenamount"
 #command "#spr1 ./graphics/mounts/standard/hyena.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
@@ -1687,7 +1687,7 @@
 #end
 
 #new secondshape
-#name "crocodilemount"
+#id "crocodilemount"
 #command "#copystats 2185"
 #command "#copyspr 2185"
 #command "#magicboost 53 -5"
@@ -1698,7 +1698,7 @@
 #end
 
 #new secondshape
-#name "crocodilemount2"
+#id "crocodilemount2"
 #command "#copystats 2185"
 #command "#spr1 ./graphics/mounts/standard/crocodile_monster_armored.png"
 #command "#spr2 shift"
@@ -1711,7 +1711,7 @@
 #end
 
 #new secondshape
-#name "wolfmount"
+#id "wolfmount"
 #command "#copystats 284"
 #command "#copyspr 284"
 #command "#magicboost 53 -5"
@@ -1723,7 +1723,7 @@
 #end
 
 #new secondshape
-#name "dogmount"
+#id "dogmount"
 #command "#copystats 1560"
 #command "#copyspr 1560"
 #command "#magicboost 53 -5"
@@ -1735,7 +1735,7 @@
 #end
 
 #new secondshape
-#name "direwolf1mount"
+#id "direwolf1mount"
 #command "#copystats 1224"
 #command "#copyspr 1224"
 #command "#magicboost 53 -5"
@@ -1747,7 +1747,7 @@
 #end
 
 #new secondshape
-#name "direwolf2mount"
+#id "direwolf2mount"
 #command "#copystats 1224"
 #command "#copyspr 2474"
 #command "#magicboost 53 -5"
@@ -1759,7 +1759,7 @@
 #end
 
 #new secondshape
-#name "redantmount"
+#id "redantmount"
 #command "#copystats 2224"
 #command "#copyspr 2224"
 #command "#magicboost 53 -5"
@@ -1771,7 +1771,7 @@
 #end
 
 #new secondshape
-#name "seadogmount"
+#id "seadogmount"
 #command "#copystats 1064"
 #command "#copyspr 1064"
 #command "#magicboost 53 -5"
@@ -1783,7 +1783,7 @@
 #end
 
 #new secondshape
-#name "swanmount"
+#id "swanmount"
 #command "#copystats 2929"
 #command "#copyspr 2929"
 #command "#magicboost 53 -5"
@@ -1795,7 +1795,7 @@
 #end
 
 #new secondshape
-#name "wingedlionmount"
+#id "wingedlionmount"
 #command "#copystats 628"
 #command "#spr1 ./graphics/mounts/standard/wingedlion.png"
 #command "#spr2 shift"
@@ -1819,7 +1819,7 @@
 #end
 
 #new secondshape
-#name "hugemantismount"
+#id "hugemantismount"
 #command "#name 'Giant Mantis'"
 #command "#spr1 ./graphics/mounts/standard/hugemantis.png"
 #command "#spr2 shift"
@@ -1853,7 +1853,7 @@
 #end
 
 #new secondshape
-#name "toad_jaguar_mount"
+#id "toad_jaguar_mount"
 #command "#name 'Giant Toad'"
 #command "#copyspr 1359"
 #command "#lizard"
@@ -1886,7 +1886,7 @@
 #end
 
 #new secondshape
-#name "toad_sapphire_mount"
+#id "toad_sapphire_mount"
 #command "#name 'Giant Frog'"
 #command "#spr1 ./graphics/mounts/standard/toad_sapphire.png"
 #command "#spr2 shift"
@@ -1920,7 +1920,7 @@
 #end
 
 #new secondshape
-#name "ratmount"
+#id "ratmount"
 #command "#name 'Giant Rat'"
 #command "#spr1 ./graphics/mounts/standard/giantrat.png"
 #command "#spr2 shift"
@@ -1954,7 +1954,7 @@
 #end
 
 #new secondshape
-#name "dwarfelephantmount"
+#id "dwarfelephantmount"
 #command "#name 'Dwarf Elephant'"
 #command "#spr1 ./graphics/mounts/standard/elephant_dwarf.png"
 #command "#spr2 shift"
@@ -1980,7 +1980,7 @@
 ---- Version of dwarf elephants that can have their riders replaced
 
 #new secondshape
-#name "dwarfelephantremount"
+#id "dwarfelephantremount"
 #command "#name 'Dwarf Elephant'"
 #command "#spr1 ./graphics/mounts/standard/elephant_dwarf.png"
 #command "#spr2 shift"
@@ -2003,7 +2003,7 @@
 #end
 
 #new secondshape
-#name "hippomount"
+#id "hippomount"
 #command "#name 'Hippopotamus'"
 #command "#spr1 ./graphics/mounts/standard/hippo.png"
 #command "#spr2 shift"
@@ -2036,7 +2036,7 @@
 ---- Version of hippos that can have their riders replaced
 
 #new secondshape
-#name "hipporemount"
+#id "hipporemount"
 #command "#name 'Hippopotamus'"
 #command "#spr1 ./graphics/mounts/standard/hippo.png"
 #command "#spr2 shift"

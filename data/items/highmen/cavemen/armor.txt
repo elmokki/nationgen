@@ -1,7 +1,7 @@
 --- Unarmored
 
 #newitem
-#name "starkers"
+#id "starkers"
 #gameid -1
 #needs shirt noshirt
 #armor
@@ -10,7 +10,7 @@
 #enditem
 
 #newitem
-#name "loincloth"
+#id "loincloth"
 #gameid -1
 #needs shirt loincloth
 #armor
@@ -22,7 +22,7 @@
 --- Furs
 
 #newitem
-#name "tight furs"
+#id "tight furs"
 #gameid 44
 #sprite /graphics/highmen/armor/furs.png
 #needs shirt noshirt
@@ -32,7 +32,7 @@
 #enditem
 
 #newitem
-#name "bulky furs"
+#id "bulky furs"
 #gameid 44
 #sprite /graphics/highmen/armor/furs2.png
 #needs shirt noshirt
@@ -42,7 +42,7 @@
 #enditem
 
 #newitem
-#name "bear furs"
+#id "bear furs"
 #gameid 44
 #sprite /graphics/highmen/armor/furs_bear.png
 #needs shirt noshirt
@@ -55,7 +55,7 @@
 #enditem
 
 #newitem
-#name "lion furs"
+#id "lion furs"
 #gameid 44
 #sprite /graphics/highmen/armor/furs_lion.png
 #needs shirt noshirt
@@ -68,7 +68,7 @@
 #enditem
 
 #newitem
-#name "wolf furs"
+#id "wolf furs"
 #gameid 44
 #sprite /graphics/highmen/armor/furs_wolf.png
 #needs shirt noshirt
@@ -81,7 +81,7 @@
 #enditem
 
 #newitem
-#name "boar furs"
+#id "boar furs"
 #gameid 44
 #sprite /graphics/highmen/armor/furs_boar.png
 #needs shirt noshirt
@@ -94,7 +94,7 @@
 #enditem
 
 #newitem
-#name "firedrake pelt"
+#id "firedrake pelt"
 #gameid 44
 #define "#fireres +2"
 #sprite /graphics/highmen/armor/furs_firedrake.png
@@ -109,7 +109,7 @@
 #enditem
 
 #newitem
-#name "icedrake pelt"
+#id "icedrake pelt"
 #gameid 44
 #define "#coldres +2"
 #sprite /graphics/highmen/armor/furs_icedrake.png
@@ -124,7 +124,7 @@
 #enditem
 
 #newitem
-#name "swampdrake pelt"
+#id "swampdrake pelt"
 #gameid 44
 #define "#poisonres +2"
 #sprite /graphics/highmen/armor/furs_swampdrake.png
@@ -139,7 +139,7 @@
 #enditem
 
 #newitem
-#name "cavedrake pelt"
+#id "cavedrake pelt"
 #gameid 44
 #define "#prot +2"
 #sprite /graphics/highmen/armor/furs_cavedrake.png
@@ -156,7 +156,7 @@
 --- Leather
 
 #newitem
-#name "leather cuirass"
+#id "leather cuirass"
 #gameid 5
 #sprite /graphics/highmen/armor/leather2_cuirass.png
 #needs shirt loincloth
@@ -166,7 +166,7 @@
 #enditem
 
 #newitem
-#name "leather hauberk"
+#id "leather hauberk"
 #gameid 10
 #sprite /graphics/highmen/armor/leather2_hauberk3.png
 #needs shirt noshirt
@@ -178,7 +178,7 @@
 --- Ring
 
 #newitem
-#name "ring cuirass"
+#id "ring cuirass"
 #gameid 6
 #sprite /graphics/highmen/armor/ring2_cuirass.png
 #needs shirt loincloth
@@ -188,7 +188,7 @@
 #enditem
 
 #newitem
-#name "ring hauberk"
+#id "ring hauberk"
 #gameid 11
 #sprite /graphics/highmen/armor/ring2_hauberk.png
 #needs shirt noshirt
@@ -200,7 +200,7 @@
 --- Bronze Scale
 
 #newitem
-#name "bronze scale cuirass"
+#id "bronze scale cuirass"
 #gameid 142
 #sprite /graphics/highmen/armor/scale_cuirass1_bronze.png
 #needs shirt leather
@@ -210,7 +210,7 @@
 #enditem
 
 #newitem
-#name "bronze scale hauberk"
+#id "bronze scale hauberk"
 #gameid 136
 #sprite /graphics/highmen/armor/scale_hauberk_bronze.png
 #needs shirt leather

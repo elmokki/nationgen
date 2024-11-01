@@ -1,31 +1,31 @@
 -- Generic theme with high diversity and low cohesion
 #newtheme
-#name default
+#id default
 #basechance 4
 #endtheme
 
 -- Demographic themes
 #newtheme
 #type demographic
-#name patriarchal
+#id patriarchal
 #basechance 4
 #endtheme
 
 #newtheme
 #type demographic
-#name traditional
+#id traditional
 #basechance 9
 #endtheme
 
 #newtheme
 #type demographic
-#name mixed
+#id mixed
 #basechance 3
 #endtheme
 
 #newtheme
 #type demographic
-#name matriarchal
+#id matriarchal
 #basechance 2
 #endtheme
 
@@ -33,7 +33,7 @@
 -- Weights: EA 0, MA 2, LA 4
 #newtheme
 #type social
-#name slaver
+#id slaver
 #basechance 0
 #chanceinc era 2 2
 #chanceinc era 3 4

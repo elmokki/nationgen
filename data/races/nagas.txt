@@ -1,5 +1,5 @@
 #newrace
-#name "Naga"
+#id "Naga"
 #basechance 0.1
 
 #chanceinc era 1 *2
@@ -17,6 +17,7 @@
 #magepriestchance 0.4
 
 #nationcommand "#idealcold -2"
+#nationcommand "#moreheat 1"
 #nationcommand "#uwbuild 1"
 #nationcommand "#riverstart"
 
@@ -39,7 +40,8 @@
 #sacredchariotchance 0.1
 #bonussacreds 1
 
-#gods monkeygods
+#gods monkey_gods
+#additionalgods gods_without_realm
 #forts default_forts
 #forts city_forts
 

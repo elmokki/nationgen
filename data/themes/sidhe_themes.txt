@@ -1,7 +1,7 @@
 -- Generic theme with high diversity and low cohesion
 #newtheme
 #type techlevel
-#name default
+#id default
 #basechance 4
 #endtheme
 
@@ -9,7 +9,7 @@
 -- Demographic themes
 #newtheme
 #type demographic
-#name daoine_sidhe
+#id daoine_sidhe
 #basechance 3
 #endtheme
 
@@ -23,7 +23,7 @@
 -- Cultural themes
 #newtheme
 #type cultural
-#name traditional
+#id traditional
 #basechance 4
 #racedefinition "#pose sidhetroops"
 #racedefinition "#pose sidhemages"
@@ -32,7 +32,7 @@
 
 #newtheme
 #type cultural
-#name patriarchal
+#id patriarchal
 #basechance 3
 #racedefinition "#pose sidhetroops"
 #racedefinition "#pose sidhemages"
@@ -40,7 +40,7 @@
 
 #newtheme
 #type cultural
-#name matriarchal
+#id matriarchal
 #basechance 3
 #racedefinition "#pose beansidhetroops"
 #racedefinition "#pose beansidhemages"
@@ -48,7 +48,7 @@
 
 #newtheme
 #type cultural
-#name egalitarian
+#id egalitarian
 #basechance 2
 #racedefinition "#pose sidhetroops"
 #racedefinition "#pose sidhemages"
@@ -60,7 +60,7 @@
 -- Weights: EA 0.1, MA 0.1, LA 0.1
 #newtheme
 #type social
-#name slaver
+#id slaver
 #basechance 0.1
 #themeinc theme advanced *1
 #themeinc theme iron *1

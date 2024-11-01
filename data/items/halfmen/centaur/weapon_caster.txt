@@ -1,7 +1,7 @@
 -- Bows
 
 #newitem
-#name "short bow"
+#id "short bow"
 #gameid 23
 #basechance 4
 #sprite /graphics/halfmen/centaur/weapon/shortbow.png
@@ -13,7 +13,7 @@
 #enditem
 
 #newitem
-#name "long bow"
+#id "long bow"
 #gameid 24
 #basechance 4
 #sprite /graphics/halfmen/centaur/weapon/longbow.png
@@ -25,7 +25,7 @@
 #enditem
 
 #newitem
-#name "composite bow"
+#id "composite bow"
 #gameid 264
 #basechance 2
 #sprite /graphics/halfmen/centaur/weapon/shortbow.png
@@ -37,7 +37,7 @@
 #enditem
 
 #newitem
-#name "enchanted bow"
+#id "enchanted bow"
 #gameid 613
 #sprite /graphics/halfmen/centaur/weapon/frostbow.png
 #needs quiver quiver
@@ -48,7 +48,7 @@
 #enditem
 
 #newitem
-#name "vine bow"
+#id "vine bow"
 #gameid 303
 #basechance 0
 #chanceinc "personalmagic nature 1"
@@ -62,7 +62,7 @@
 #enditem
 
 #newitem
-#name "howling bow"
+#id "howling bow"
 #gameid 439
 #basechance 0
 #chanceinc "personalmagic death 1 nature 1 1"
@@ -77,7 +77,7 @@
 #enditem
 
 #newitem
-#name "banefire bow"
+#id "banefire bow"
 #gameid 199
 #basechance 0
 #chanceinc "personalmagic fire 1 death 1 1"
@@ -92,7 +92,7 @@
 #enditem
 
 #newitem
-#name "frost bow"
+#id "frost bow"
 #gameid 606
 #basechance 0
 #chanceinc "personalmagic water 1 1"

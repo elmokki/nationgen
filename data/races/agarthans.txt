@@ -1,6 +1,6 @@
 
 #newrace
-#name "Pale One"
+#id "Pale One"
 #basechance 0.3
 
 #racethemes agarthan_themes
@@ -55,7 +55,8 @@
 #nationcommand "#uwbuild 1"
 #nationcommand "#riverstart"
 
-#gods agarthagods
+#gods agartha_gods
+#additionalgods gods_without_realm
 
 #secondaryracecommand_conditional "#darkvision +50"
 

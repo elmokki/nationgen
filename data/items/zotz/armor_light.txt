@@ -1,7 +1,7 @@
 --- Nekkid
 
 #newitem
-#name "nekkid"
+#id "nekkid"
 #gameid -1
 #armor
 #enditem
@@ -10,7 +10,7 @@
 --- Leather
 
 #newitem
-#name "leather cuirass"
+#id "leather cuirass"
 #gameid 5
 #sprite /graphics/zotz/armor/leathercuirass.png
 #recolormask /graphics/zotz/armor/armor_recolormask.png
@@ -19,7 +19,7 @@
 
 
 #newitem
-#name "leather hauberk"
+#id "leather hauberk"
 #gameid 10
 #sprite /graphics/zotz/armor/leatherhauberk.png
 #recolormask /graphics/zotz/armor/armor_recolormask.png
@@ -30,7 +30,7 @@
 
 #newitem -- full leather
 #basechance 0.125
-#name "full leather"
+#id "full leather"
 #gameid 15
 #sprite /graphics/zotz/armor/fullleather.png
 #recolormask /graphics/zotz/armor/armor_recolormask.png
@@ -40,7 +40,7 @@
 
 #newitem -- reinforced full leather (Mictlan armor)
 #basechance 0.1
-#name "reinforced leather"
+#id "reinforced leather"
 #gameid zotz_mictlanarmor
 #sprite /graphics/zotz/armor/mictlanarmor.png
 #recolormask /graphics/zotz/armor/mictlanarmor_recolormask.png

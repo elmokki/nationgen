@@ -1,5 +1,5 @@
 #newitem
-#name "icecap"
+#id "icecap"
 #chanceinc itemtheme not armor ice *0.001
 #chanceinc itemtheme armor ice  *100
 #chanceinc "personalcommand below #coldres 5 *0"
@@ -12,7 +12,7 @@
 #enditem
 
 #newitem
-#name "icehelm"
+#id "icehelm"
 #chanceinc itemtheme not armor ice *0.001
 #chanceinc itemtheme armor ice  *100
 #chanceinc "personalcommand below #coldres 5 *0"
@@ -26,7 +26,7 @@
 #enditem
 
 #newitem
-#name "icehelm_elite"
+#id "icehelm_elite"
 #chanceinc itemtheme not armor ice *0.001
 #chanceinc itemtheme armor ice  *100
 #chanceinc "personalcommand below #coldres 5 *0"
@@ -44,7 +44,7 @@
 #chanceinc itemtheme not armor ice *0.001
 #chanceinc itemtheme armor ice  *100
 #chanceinc "personalcommand below #coldres 5 *0"
-#name "icehelmet"
+#id "icehelmet"
 #gameid icehelmet_full
 #sprite graphics/caelian/helmet/icehelmet_full.png
 #eliteversion icehelmet_elite
@@ -60,7 +60,7 @@
 #chanceinc itemtheme not armor ice *0.001
 #chanceinc itemtheme armor ice  *100
 #chanceinc "personalcommand below #coldres 5 *0"
-#name "icehelmet_elite"
+#id "icehelmet_elite"
 #gameid icehelmet_full
 #sprite graphics/caelian/helmet/icehelmet_full.png
 #theme ice

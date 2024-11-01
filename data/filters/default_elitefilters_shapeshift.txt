@@ -1,5 +1,5 @@
 #new
-#name "werewolf"
+#id "werewolf"
 #type "shapeshift"
 #basechance 0.075
 #chanceinc magic nature 0.6
@@ -19,7 +19,7 @@
 #end
 
 #new
-#name "werefox"
+#id "werefox"
 #type "shapeshift"
 #basechance 0.075
 #chanceinc "magic nature 0.6"
@@ -38,7 +38,7 @@
 #end
 
 #new
-#name "werebear"
+#id "werebear"
 #type "shapeshift"
 #basechance 0.075
 #chanceinc "magic nature 0.6"
@@ -59,7 +59,7 @@
 #end
 
 #new
-#name "werehyena"
+#id "werehyena"
 #type "shapeshift"
 #basechance 0.075
 #chanceinc "magic death 0.6"
@@ -78,7 +78,7 @@
 #end
 
 #new
-#name "wererat"
+#id "wererat"
 #type "shapeshift"
 #basechance 0.025
 #chanceinc "magic nature 0.15"
@@ -99,7 +99,7 @@
 #end
 
 #new
-#name "werecrocodile"
+#id "werecrocodile"
 #type "shapeshift"
 #basechance 0.075
 #chanceinc magic nature 0.1
@@ -124,7 +124,7 @@
 #end
 
 #new
-#name "ghoul: size 2"
+#id "ghoul: size 2"
 #type "shapeshift"
 #basechance 0.1
 #chanceinc "magic death 1"
@@ -145,7 +145,7 @@
 #end
 
 #new
-#name "ghoul: size 1"
+#id "ghoul: size 1"
 #type "shapeshift"
 #basechance 0.1
 #chanceinc "magic death 1"
@@ -166,7 +166,7 @@
 #end
 
 #new
-#name "hornedserpent"
+#id "hornedserpent"
 #type "shapeshift"
 #basechance 0.075
 #chanceinc "magic nature 1"
@@ -185,7 +185,7 @@
 #end
 
 #new
-#name "metalman: size 2"
+#id "metalman: size 2"
 #type "shapeshift"
 #basechance 0.025
 #chanceinc "magic earth 0.5"
@@ -207,7 +207,7 @@
 #end
 
 #new
-#name "metalman: size 1"
+#id "metalman: size 1"
 #type "shapeshift"
 #basechance 0.025
 #chanceinc "magic earth 0.5"
@@ -230,7 +230,7 @@
 
 #new
 #type "shapeshift"
-#name "hawk"
+#id "hawk"
 #basechance 0.1
 #chanceinc "magic nature 0.25"
 #chanceinc "magic air 0.75"
@@ -253,7 +253,7 @@
 
 #new
 #type "shapeshift"
-#name "toad"
+#id "toad"
 #basechance 0.1
 #chanceinc "magic water 0.25"
 #chanceinc "magic nature 0.25"
@@ -275,7 +275,7 @@
 
 #new
 #type "shapeshift"
-#name "greatboar"
+#id "greatboar"
 #basechance 0.1
 #chanceinc "magic nature 1"
 #command "#secondshape greatboar"
@@ -294,7 +294,7 @@
 
 #new
 #type "shapeshift"
-#name "spider"
+#id "spider"
 #basechance 0.05
 #chanceinc "magic nature 1"
 #chanceinc "personalcommand #poisonres 1"

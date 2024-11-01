@@ -2,7 +2,7 @@
 -------- Slave infantry
 
 #newpose
-#name "slave inf"
+#id "slave inf"
 #role "infantry"
 
 #renderorder "shadow cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon cloakf offhandw hands helmet offhanda overlay"
@@ -29,7 +29,7 @@
 
 #newpose
 #basechance 0.2
-#name "slave 2h inf"
+#id "slave 2h inf"
 #role "elite infantry"
 
 #load basesprite /data/items/dynastichuman/bases_slave_2h.txt
@@ -51,7 +51,7 @@
 -------- Slave archers
 
 #newpose
-#name "slave archer"
+#id "slave archer"
 #role "ranged"
 
 #renderorder "shadow quiver cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon cloakf offhandw hands helmet offhanda overlay"
@@ -78,7 +78,7 @@
 -------- Imperial gladiators
 
 #newpose
-#name "slave inf"
+#id "slave inf"
 #role "infantry"
 
 #cannot_be_pd

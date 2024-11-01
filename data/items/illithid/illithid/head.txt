@@ -1,5 +1,5 @@
 #newitem
-#name "none"
+#id "none"
 #gameid -1
 #basechance 6
 #armor
@@ -11,7 +11,7 @@
 #enditem
 
 #newitem
-#name crown_coral
+#id crown_coral
 #gameid 148
 #sprite /graphics/illithid/illithid/helmet/crown_coral.png
 #eliteversion crown_gold
@@ -23,7 +23,7 @@
 #enditem
 
 #newitem
-#name crown_silver
+#id crown_silver
 #gameid 148
 #sprite /graphics/illithid/illithid/helmet/crown_iron.png
 #eliteversion crown_gold
@@ -34,7 +34,7 @@
 #enditem
 
 #newitem
-#name crown_gold
+#id crown_gold
 #gameid 148
 #sprite /graphics/illithid/illithid/helmet/crown_gold.png
 #eliteversion squid
@@ -46,7 +46,7 @@
 #enditem
 
 #newitem
-#name squid
+#id squid
 #gameid -1
 #chanceinc moduleid herogen *5
 #sprite /graphics/illithid/illithid/helmet/head_squid.png
@@ -59,7 +59,7 @@
 #enditem
 
 #newitem
-#name nautilus
+#id nautilus
 #gameid 122
 #chanceinc moduleid herogen *5
 #sprite /graphics/illithid/illithid/helmet/head_nautilus.png
@@ -71,7 +71,7 @@
 #enditem
 
 #newitem
-#name evilsquid
+#id evilsquid
 #gameid -1
 #basechance 0.25
 #chanceinc moduleid herogen *40

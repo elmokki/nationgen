@@ -1,6 +1,6 @@
 -- Generic theme with high diversity and low cohesion
 #newtheme
-#name default
+#id default
 #basechance 4
 #endtheme
 
@@ -9,7 +9,7 @@
 -- Weights: EA 1, MA 1, LA 0.5
 #newtheme
 #type techlevel
-#name primitive
+#id primitive
 #basechance 1
 #chanceinc era 3 -0.5
 #themeinc theme advanced *0.05
@@ -24,7 +24,7 @@
 -- Weights: EA 0.25, MA 1, LA 2
 #newtheme
 #type techlevel
-#name advanced
+#id advanced
 #basechance 0.25
 #chanceinc era 3 1.75
 #chanceinc era 2 0.75
@@ -42,7 +42,7 @@
 -- Weights: EA 0.5, MA 2, LA 4
 #newtheme
 #type demographic
-#name herbivore
+#id herbivore
 #basechance 4
 #chanceinc era 2 -2
 #chanceinc era 1 -3.5
@@ -57,12 +57,13 @@
 -- Weights: EA 1, MA 0.5, LA 1
 #newtheme
 #type demographic
-#name predator
+#id predator
 #basechance 1
 #chanceinc era 2 -0.5
 #racedefinition "#pose sobekpredators"
 #racedefinition "#pose sobekshamans"
 #racedefinition "#nationcommand '#idealcold -2'"
+#racedefinition "#nationcommand '#moreheat 1'"
 #racedefinition "#nationcommand '#likespop 36'"
 #raceprefix "predator"
 #endtheme
@@ -70,12 +71,13 @@
 -- Weights: EA 0.5, MA 0.25, LA 0.25
 #newtheme
 #type demographic
-#name sobek
+#id sobek
 #basechance 0.25
 #chanceinc era 1 0.25
 #racedefinition "#pose sobeks"
 #racedefinition "#pose sobekmages"
 #racedefinition "#nationcommand '#idealcold -2'"
+#racedefinition "#nationcommand '#moreheat 1'"
 #racedefinition "#nationcommand '#likespop 36'"
 #racedefinition "#size6"
 #raceprefix "sobek"
@@ -84,7 +86,7 @@
 -- Weights: EA 2, MA 1, LA 0.25
 #newtheme
 #type demographic
-#name herbivore_predator
+#id herbivore_predator
 #basechance 2
 #chanceinc era 2 *0.5
 #chanceinc era 3 *0.125
@@ -103,7 +105,7 @@
 -- Weights: EA 0.5, MA 2, LA 0.5
 #newtheme
 #type demographic
-#name herbivore_sobek
+#id herbivore_sobek
 #basechance 0.5
 #chanceinc era 2 *4
 #racedefinition "#pose lizardinfantry"
@@ -123,7 +125,7 @@
 -- Weights: EA 0.5, MA 1, LA 3
 #newtheme
 #type demographic
-#name predator_sobek
+#id predator_sobek
 #basechance 0.5
 #chanceinc era 2 *2
 #chanceinc era 3 *6
@@ -132,6 +134,7 @@
 #racedefinition "#pose sobeks"
 #racedefinition "#pose sobekmages"
 #racedefinition "#nationcommand '#idealcold -2'"
+#racedefinition "#nationcommand '#moreheat 1'"
 #racedefinition "#nationcommand '#likespop 36'"
 #raceprefix "predator"
 #endtheme
@@ -141,7 +144,7 @@
 -- Weights: EA 0.5, MA 0.5, LA 0.5
 #newtheme
 #type social
-#name slaver
+#id slaver
 #basechance 0.5
 #chanceinc racetheme herbivore *8
 #chanceinc racetheme sobek *4

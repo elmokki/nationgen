@@ -1,4 +1,30 @@
 
+0.11.0 (31st October 2024)
+----------------------------------------------------------
+Content
+-----------------------------------------------------------
+- Seeds with this version will differ from previous versions
+- Fixed misspelled #female tag on several Amazon templates
+- Removed #nowayback command on mounts
+- Fixed amazon nightmare lizard and flayed serpent templates
+- Cleaned up mounts file
+- Added all realmless gods (mostly nation-specific ones like Risen Oracle)
+- Nations with heat/cold preferences of 2 or higher now get temp scale shifts
+- Added a bunch more national spells, many new from Dominions 6
+
+Code
+----------------------------------------------------------
+- Removed nowayback processing from MountUnit
+- Global replace of #name to #id
+- Added and ran prettier to unify format of all java files
+- Added npm script to parse through data files and compile id lists
+- Reworked #additionalgods GodGen logic
+- Fixed incorrect reference to tags when getting Unit's #itemslot (fixes Foulspawn template slots)
+- Updated README file with a to-do list and a template ideas list
+- Fixed spells that require a vanilla site (Barathrus and Rhuax Pact)
+- Updated mage costs to Dom6 standards (about 40% more expensive)
+
+
 0.10.1 (13th October 2024)
 ----------------------------------------------------------
 Code

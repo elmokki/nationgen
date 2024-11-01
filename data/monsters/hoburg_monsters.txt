@@ -1,5 +1,5 @@
 #new
-#name "pygmy_elephant_central_1"
+#id "pygmy_elephant_central_1"
 #basechance 0
 #chanceinc "racetheme boreal 1"
 #chanceinc "nationcommand idealcold above 0 *0"
@@ -23,7 +23,7 @@
 #end
 
 #new
-#name "pygmy_elephant_austral_1"
+#id "pygmy_elephant_austral_1"
 #basechance 0
 #chanceinc "racetheme austral 1"
 #command "#copystats 2307"
@@ -44,7 +44,7 @@
 #end
 
 #new
-#name "pygmy_elephant_oriental_1"
+#id "pygmy_elephant_oriental_1"
 #basechance 0
 #chanceinc "racetheme oriental 1"
 #command "#copystats 150"
@@ -65,7 +65,7 @@
 #end
 
 #new
-#name "pygmy_mammoth_occidental"
+#id "pygmy_mammoth_occidental"
 #basechance 0
 #chanceinc "racetheme occidental 2"
 #chanceinc "nationcommand idealcold below 1 *0.5"
@@ -91,7 +91,7 @@
 #end
 
 #new
-#name "pygmy_mammoth_boreal"
+#id "pygmy_mammoth_boreal"
 #basechance 0
 #chanceinc "racetheme boreal 1"
 #chanceinc "nationcommand idealcold above 1 *5"
@@ -116,7 +116,7 @@
 #end
 
 #new
-#name "hydra"
+#id "hydra"
 #basechance 0.25
 #invariantid 1831
 #command "#gcost 250" -- Specified for documentation generation
@@ -124,7 +124,7 @@
 #end
 
 #new
-#name "hydra hatchling"
+#id "hydra hatchling"
 #basechance 0.25
 #invariantid 1840
 #command "#gcost 35" -- Specified for documentation generation
@@ -132,14 +132,14 @@
 #end
 
 #new
-#name "troglodyte"
+#id "troglodyte"
 #basechance 0.5
 #command "#copystats 447"
 #command "#copyspr 447"
 #end
 
 #new
-#name "Mushussu"
+#id "Mushussu"
 #basechance 0.5
 #command "#copystats 2962"
 #command "#copyspr 2962"
@@ -147,7 +147,7 @@
 #end
 
 #new
-#name "vine men"
+#id "vine men"
 #basechance 0
 #chanceinc racetheme vinegrower 10
 #command "#copystats 361"
@@ -161,7 +161,7 @@
 #end
 
 #new
-#name "vine ogres"
+#id "vine ogres"
 #basechance 0
 #chanceinc racetheme vinegrower 5
 #command "#copystats 362"
@@ -175,7 +175,7 @@
 #end
 
 #new
-#name "dark vines"
+#id "dark vines"
 #basechance 0
 #chanceinc racetheme podslaver 5
 #command "#copystats 330"
@@ -190,7 +190,7 @@
 #end
 
 #new
-#name "feral giant hoburg"
+#id "feral giant hoburg"
 #basechance 0
 #chanceinc "racetheme  boreal 1"
 #chanceinc "racetheme  central 1"
@@ -235,7 +235,7 @@
 #end
 
 #new
-#name "feral giant oriental hoburg"
+#id "feral giant oriental hoburg"
 #basechance 0
 #chanceinc "racetheme oriental 1"
 #chanceinc "racetheme not feral *0"
@@ -277,7 +277,7 @@
 #end
 
 #new
-#name "feral giant austral hoburg"
+#id "feral giant austral hoburg"
 #basechance 0
 #chanceinc "racetheme austral 1"
 #chanceinc "racetheme not feral *0"

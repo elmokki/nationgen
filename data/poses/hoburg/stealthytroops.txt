@@ -5,7 +5,7 @@
 #role "infantry"
 #role "elite infantry"
 #role "sacred infantry"
-#name "stealthy boreal infantry"
+#id "stealthy boreal infantry"
 #theme "boreal"
 #theme "austral"
 #theme "occidental"
@@ -47,7 +47,7 @@
 #role "mounted"
 #role "elite mounted"
 #role "sacred mounted"
-#name "not-so-stealthy boreal cavalry"
+#id "not-so-stealthy boreal cavalry"
 #theme "boreal"
 #theme "austral"
 #theme "occidental"
@@ -95,7 +95,7 @@
 #role "mounted"
 #role "elite mounted"
 #role "sacred mounted"
-#name "stealthy boreal cavalry"
+#id "stealthy boreal cavalry"
 #theme "boreal"
 #theme "austral"
 #theme "occidental"
@@ -143,7 +143,7 @@
 #role "ranged"
 #role "elite ranged"
 #role "sacred ranged"
-#name "stealthy boreal archers"
+#id "stealthy boreal archers"
 #theme "boreal"
 #theme "austral"
 #theme "occidental"
@@ -185,7 +185,7 @@
 #basechance 0.1
 
 #role "scout"
-#name "stealthy boreal scout"
+#id "stealthy boreal scout"
 #theme "boreal"
 #theme "austral"
 #theme "occidental"
@@ -222,7 +222,7 @@
 -------- Stealthy infantry (Oriental)
 
 #newpose
-#name "stealthy oriental infantry"
+#id "stealthy oriental infantry"
 #role "infantry"
 #role "elite infantry"
 #role "sacred infantry"
@@ -259,7 +259,7 @@
 
 ---- Stealthy cavalry (Oriental)
 #newpose
-#name "stealthy oriental cavalry"
+#id "stealthy oriental cavalry"
 #role "mounted"
 #role "elite mounted"
 #role "sacred mounted"
@@ -302,7 +302,7 @@
 ------- Bowman (Oriental)
 
 #newpose
-#name "stealthy oriental archers"
+#id "stealthy oriental archers"
 #role "ranged"
 #role "elite ranged"
 #role "sacred ranged"
@@ -340,7 +340,7 @@
 -------- Stealthy scout (Oriental)
 
 #newpose
-#name "oriental scout"
+#id "oriental scout"
 #role "scout"
 #theme "oriental"
 
@@ -377,7 +377,7 @@
 #chanceinc anymagic death 0.02
 #chanceinc magic death *3
 
-#name "stealthy ghoul infantry"
+#id "stealthy ghoul infantry"
 #role "infantry"
 #role "elite infantry"
 #role "sacred infantry"

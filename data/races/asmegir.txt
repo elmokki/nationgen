@@ -1,5 +1,5 @@
 #newrace
-#name "Asmeg"
+#id "Asmeg"
 #basechance 0.1
 #nationcommand "#idealcold +1"
 
@@ -43,7 +43,8 @@
 #specialcommanderfilters default_specialcommanderfilters
 #specialcommanderfilters specialcommanderfilters_extended
 
-#gods europegods
+#gods europe_gods
+#additionalgods gods_without_realm
 #forts giant_forts
 
 #theme boreal

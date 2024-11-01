@@ -1,6 +1,6 @@
 --- Base offsets are applied to everything except base and overlay
 #newitem
-#name "horse chariot h"
+#id "horse chariot h"
 #gameid -1
 #sprite /graphics/mounts/chariots/horse.png
 #armor
@@ -18,7 +18,7 @@
 #enditem
 
 #newitem
-#name "bronze horse chariot h"
+#id "bronze horse chariot h"
 #gameid -1
 #sprite /graphics/mounts/chariots/horse_bronze.png
 #armor
@@ -37,7 +37,7 @@
 #enditem
 
 #newitem
-#name "lizard chariot h"
+#id "lizard chariot h"
 #gameid -1
 #sprite /graphics/mounts/chariots/lizard.png
 #armor
@@ -55,7 +55,7 @@
 #enditem
 
 #newitem
-#name "boar chariot h"
+#id "boar chariot h"
 #gameid -1
 #sprite /graphics/mounts/chariots/boar.png
 #armor
@@ -73,7 +73,7 @@
 #enditem
 
 #newitem
-#name "camel chariot (iron)"
+#id "camel chariot (iron)"
 #basechance 0.75
 #chanceinc "nationcommand #idealcold above -1 *0"
 #chanceinc "nationcommand #idealcold below -1 *2"
@@ -94,7 +94,7 @@
 #enditem
 
 #newitem
-#name "camel chariot (bronze)"
+#id "camel chariot (bronze)"
 #basechance 0.75
 #chanceinc "nationcommand #idealcold above -1 *0"
 #chanceinc "nationcommand #idealcold below -1 *2"
@@ -117,7 +117,7 @@
 --- High gcost versions
 
 #newitem
-#name "horse chariot he"
+#id "horse chariot he"
 #gameid -1
 #sprite /graphics/mounts/chariots/horse.png
 #armor
@@ -134,7 +134,7 @@
 #enditem
 
 #newitem
-#name "bronze horse chariot he"
+#id "bronze horse chariot he"
 #gameid -1
 #sprite /graphics/mounts/chariots/horse_bronze.png
 #armor
@@ -152,7 +152,7 @@
 #enditem
 
 #newitem
-#name "lizard chariot he"
+#id "lizard chariot he"
 #gameid -1
 #sprite /graphics/mounts/chariots/lizard.png
 #armor
@@ -169,7 +169,7 @@
 #enditem
 
 #newitem
-#name "boar chariot he"
+#id "boar chariot he"
 #gameid -1
 #sprite /graphics/mounts/chariots/boar.png
 #armor
@@ -186,7 +186,7 @@
 #enditem
 
 #newitem
-#name "camel chariot iron he"
+#id "camel chariot iron he"
 #basechance 0.75
 #chanceinc "nationcommand #idealcold above -1 *0"
 #chanceinc "nationcommand #idealcold below -1 *2"
@@ -207,7 +207,7 @@
 
 
 #newitem
-#name "camel chariot bronze he"
+#id "camel chariot bronze he"
 #basechance 0.75
 #chanceinc "nationcommand #idealcold above -1 *0"
 #chanceinc "nationcommand #idealcold below -1 *2"

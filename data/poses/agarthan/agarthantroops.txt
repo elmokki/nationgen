@@ -2,7 +2,7 @@
 -------- normal (Bronze)
 
 #newpose
-#name infantry_bronze
+#id infantry_bronze
 #basechance 0.125
 #role "infantry"
 #role "scout"
@@ -32,7 +32,7 @@
 -------- normal (Steel)
 
 #newpose
-#name infantry_steel
+#id infantry_steel
 #basechance 0.125
 #role "infantry"
 #role "sacred"
@@ -62,7 +62,7 @@
 ------ Ranged (bronze)
 
 #newpose
-#name ranged_bronze
+#id ranged_bronze
 #basechance 0.125
 #role "ranged"
 #theme "bronze"
@@ -96,7 +96,7 @@
 ------ Ranged (steel)
 
 #newpose
-#name ranged_steel
+#id ranged_steel
 #basechance 0.125
 #role "sacred"
 #role "ranged"
@@ -132,7 +132,7 @@
 -------- sacred (Bronze)
 
 #newpose
-#name ancient_bronze
+#id ancient_bronze
 #chanceinc moduleid herogen *2
 #role "sacred infantry"
 #theme "ancient"
@@ -165,7 +165,7 @@
 -------- sacred (Steel)
 
 #newpose
-#name ancient_steel
+#id ancient_steel
 #chanceinc moduleid herogen *2
 #role "sacred infantry"
 #theme "ancient"
@@ -199,7 +199,7 @@
 ------ Sacred ranged (bronze)
 
 #newpose
-#name ancient_ranged
+#id ancient_ranged
 #role "sacred ranged"
 #theme "ancient"
 #theme "bronze"
@@ -239,7 +239,7 @@
 -------- Olmspawn (Bronze)
 
 #newpose
-#name olmspawn_bronze
+#id olmspawn_bronze
 #basechance 0.25
 #chanceinc secondaryrace olm *4
 #chanceinc moduleid herogen *2
@@ -274,7 +274,7 @@
 -------- Olmspawn (Steel)
 
 #newpose
-#name olmspawn_steel
+#id olmspawn_steel
 #basechance 0.25
 #chanceinc secondaryrace olm *4
 #chanceinc moduleid herogen *2
@@ -310,7 +310,7 @@
 -------- Ancient olmspawn (Bronze)
 
 #newpose
-#name ancient_olmspawn
+#id ancient_olmspawn
 #basechance 0.05
 #chanceinc secondaryrace olm *10
 #chanceinc moduleid herogen *2
@@ -349,7 +349,7 @@
 -------- normal (Bronze)
 
 #newpose
-#name mounted_bronze
+#id mounted_bronze
 #basechance 0.1
 #role "mounted"
 #theme "bronze"
@@ -379,7 +379,7 @@
 -------- normal (Steel)
 
 #newpose
-#name mounted_steel
+#id mounted_steel
 #basechance 0.1
 #role "mounted"
 #theme "iron"
@@ -407,7 +407,7 @@
 -------- Olmspawn (sacred spy/assassin)
 
 #newpose
-#name olmspawn_scout
+#id olmspawn_scout
 #basechance 0.01
 #role "scout"
 #tag "cannot_be_scout"

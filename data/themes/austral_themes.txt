@@ -1,6 +1,6 @@
 -- Generic theme with high diversity and low cohesion
 #newtheme
-#name default
+#id default
 #basechance 4
 #endtheme
 
@@ -9,7 +9,7 @@
 -- Weights: EA 1, MA 1, LA 0.5
 #newtheme
 #type techlevel
-#name primitive
+#id primitive
 #basechance 1
 #chanceinc era 3 -0.5
 #themeinc theme advanced *0.05
@@ -24,7 +24,7 @@
 -- Weights: EA 0.25, MA 1, LA 2
 #newtheme
 #type techlevel
-#name advanced
+#id advanced
 #basechance 0.25
 #chanceinc era 3 1.75
 #chanceinc era 2 0.75
@@ -42,7 +42,7 @@
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
 #type troops
-#name machakan_troops
+#id machakan_troops
 #basechance 1
 #racedefinition "#pose machakan"
 #endtheme
@@ -50,7 +50,7 @@
 -- Weights: EA 0.5, MA 0.5, LA 0..5
 #newtheme
 #type troops
-#name pygmy_troops
+#id pygmy_troops
 #basechance 0.5
 #racedefinition "#pose pygmy"
 #endtheme
@@ -58,7 +58,7 @@
 -- Weights: EA 0.75, MA 0.5, LA 0.25
 #newtheme
 #type troops
-#name colossi_troops
+#id colossi_troops
 #basechance 0.5
 #chanceinc era 1 0.25
 #chanceinc era 3 -0.25
@@ -68,7 +68,7 @@
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
 #type mages
-#name machakan_mages
+#id machakan_mages
 #basechance 1
 #racedefinition "#pose machakan_mages"
 #endtheme
@@ -76,7 +76,7 @@
 -- Weights: EA 0.75, MA 0.5, LA 0.25
 #newtheme
 #type mages
-#name pygmy_mages
+#id pygmy_mages
 #basechance 0.5
 #racedefinition "#pose pygmy_mages"
 #racedefinition "#strongmagicpatterns"
@@ -85,7 +85,7 @@
 -- Weights: EA 0.75, MA 0.5, LA 0.25
 #newtheme
 #type mages
-#name colossi_mages
+#id colossi_mages
 #basechance 0.5
 #chanceinc era 1 0.25
 #chanceinc era 3 -0.25
@@ -95,7 +95,7 @@
 -- Weights: EA 1, MA 1, LA 1
 #newtheme
 #type elites
-#name machakan_elites
+#id machakan_elites
 #basechance 1
 #racedefinition "#pose machakan_elites"
 #endtheme
@@ -103,7 +103,7 @@
 -- Weights: EA 0.5, MA 0.5, LA 0.5
 #newtheme
 #type elites
-#name pygmy_elites
+#id pygmy_elites
 #basechance 0.5
 #racedefinition "#pose pygmy_elites"
 #endtheme
@@ -111,7 +111,7 @@
 -- Weights: EA 0.75, MA 0.5, LA 0.25
 #newtheme
 #type elites
-#name colossi_elites
+#id colossi_elites
 #basechance 0.5
 #chanceinc era 1 0.25
 #chanceinc era 3 -0.25
@@ -124,7 +124,7 @@
 -- Weights: EA 0.5, MA 0.5, LA 0.5
 #newtheme
 #type social
-#name slaver
+#id slaver
 #basechance 0.5
 #chanceinc racetheme pygmy *0.01
 #chanceinc racetheme colossi_pygmy *0.01

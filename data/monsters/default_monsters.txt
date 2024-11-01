@@ -1,5 +1,5 @@
 #new
-#name "elephant_human_boreal_1"
+#id "elephant_human_boreal_1"
 #basechance 0
 #chanceinc primaryrace "Feudal human" 1
 #command "#copystats 2261"
@@ -7,7 +7,7 @@
 #end
 
 #new
-#name "elephant_human_boreal_2"
+#id "elephant_human_boreal_2"
 #basechance 0
 #chanceinc primaryrace "Feudal human" 0.25
 #chanceinc era 3 3.75
@@ -16,7 +16,7 @@
 #end
 
 #new
-#name "elephant_human_boreal_3"
+#id "elephant_human_boreal_3"
 #basechance 0
 #chanceinc primaryrace "Feudal human" 2
 #command "#copystats 150"
@@ -24,7 +24,7 @@
 #end
 
 #new
-#name "elephant_human_austral"
+#id "elephant_human_austral"
 #basechance 0
 #chanceinc race "Austral human" 2
 #command "#copystats 2307"
@@ -32,7 +32,7 @@
 #end
 
 #new
-#name "elephant_human_oriental"
+#id "elephant_human_oriental"
 #basechance 0
 #chanceinc primaryrace "Oriental human" 2
 #command "#copystats 150"
@@ -41,7 +41,7 @@
 #end
 
 #new
-#name "elephant_human_dynastic_1"
+#id "elephant_human_dynastic_1"
 #basechance 0
 #chanceinc primaryrace "Dynastic human" 4
 #chanceinc racetheme dustwalkers_only *0
@@ -52,7 +52,7 @@
 #end
 
 #new
-#name "elephant_human_dynastic_2"
+#id "elephant_human_dynastic_2"
 #basechance 0
 #chanceinc primaryrace "Dynastic human" 0.25
 #chanceinc era 3 1.75
@@ -65,7 +65,7 @@
 #end
 
 #new
-#name "elephant_humanbred_1"
+#id "elephant_humanbred_1"
 #basechance 0
 #chanceinc primaryrace "Abysian" 4
 #chanceinc racetheme primal *0
@@ -75,7 +75,7 @@
 #end
 
 #new
-#name "elephant_humanbred_2"
+#id "elephant_humanbred_2"
 #basechance 0
 #chanceinc primaryrace Abysian 0.25
 #chanceinc era 3 3.75
@@ -86,7 +86,7 @@
 #end
 
 #new
-#name "elephant_monkey"
+#id "elephant_monkey"
 #basechance 0
 #chanceinc primaryrace Primate 2
 #command "#copystats 1147"
@@ -94,7 +94,7 @@
 #end
 
 #new
-#name "elephant_naga"
+#id "elephant_naga"
 #basechance 0
 #chanceinc primaryrace Naga 2
 #command "#copystats 1147"
@@ -103,7 +103,7 @@
 #end
 
 #new
-#name "elephant_bakemono-sho"
+#id "elephant_bakemono-sho"
 #basechance 0
 #chanceinc primaryrace Bakemono 2
 #chanceinc racetheme large *0
@@ -113,7 +113,7 @@
 #end
 
 #new
-#name "elephant_avvite_1"
+#id "elephant_avvite_1"
 #basechance 0
 #chanceinc primaryrace avvite 4
 #command "#copystats 2261"
@@ -125,7 +125,7 @@
 #end
 
 #new
-#name "elephant_avvite_2"
+#id "elephant_avvite_2"
 #basechance 0
 #chanceinc primaryrace avvite 2
 #chanceinc era 2 *4
@@ -137,7 +137,7 @@
 #end
 
 #new
-#name "elephant_caelian_raptor"
+#id "elephant_caelian_raptor"
 #basechance 0
 #chanceinc primaryrace caelian 0.08
 #chanceinc nationcommand idealcold above 0 *0
@@ -148,7 +148,7 @@
 #end
 
 #new
-#name "elephant_caelian_hybrid"
+#id "elephant_caelian_hybrid"
 #basechance 0
 #chanceinc primaryrace caelian 0.08
 #chanceinc nationcommand idealcold above 0 *0
@@ -159,7 +159,7 @@
 #end
 
 #new
-#name "elephant_caelian_wingless"
+#id "elephant_caelian_wingless"
 #basechance 0
 #chanceinc primaryrace caelian 0.08
 #chanceinc nationcommand idealcold above 0 *0
@@ -170,7 +170,7 @@
 #end
 
 #new
-#name "mammoth_caelian_spirehorn"
+#id "mammoth_caelian_spirehorn"
 #basechance 0
 #chanceinc primaryrace caelian 0.08
 #chanceinc nationcommand idealcold below 1 *0
@@ -181,7 +181,7 @@
 #end
 
 #new
-#name "mammoth_caelian_hybrid"
+#id "mammoth_caelian_hybrid"
 #basechance 0
 #chanceinc primaryrace caelian 0.08
 #chanceinc nationcommand idealcold below 1 *0
@@ -192,7 +192,7 @@
 #end
 
 #new
-#name "mammoth_caelian_wingless"
+#id "mammoth_caelian_wingless"
 #basechance 0
 #chanceinc primaryrace caelian 0.08
 #chanceinc nationcommand idealcold below 1 *0
@@ -203,7 +203,7 @@
 #end
 
 #new
-#name "mammoth_jotun"
+#id "mammoth_jotun"
 #basechance 0
 #chanceinc primaryrace jotun 4
 #command "#copystats 419"
@@ -214,7 +214,7 @@
 #end
 
 #new
-#name "hydra"
+#id "hydra"
 #basechance 0.25
 #chanceinc primaryrace lizard 9.75
 #invariantid 1831
@@ -223,7 +223,7 @@
 #end
 
 #new
-#name "hydra hatchling"
+#id "hydra hatchling"
 #basechance 0.25
 #chanceinc primaryrace lizard 9.5
 #invariantid 1840
@@ -232,7 +232,7 @@
 #end
 
 #new
-#name "olm"
+#id "olm"
 #basechance 0
 #chanceinc primaryrace "Pale One" 6
 #chanceinc primaryrace zotz 4
@@ -243,7 +243,7 @@
 #end
 
 #new
-#name "olm"
+#id "olm"
 #basechance 0
 #chanceinc racetag subterranean 4
 #chanceinc secondaryrace olm *0
@@ -253,7 +253,7 @@
 #end
 
 #new
-#name "troglodyte"
+#id "troglodyte"
 #basechance 0
 #chanceinc racetag subterranean 5
 #chanceinc primaryrace "Pale One" *2
@@ -262,7 +262,7 @@
 #end
 
 #new
-#name "ageless pale one"
+#id "ageless pale one"
 #basechance 0
 #chanceinc primaryrace "Pale One" 10
 #chanceinc racetheme waxing *0.5
@@ -304,7 +304,7 @@
 #end
 
 #new
-#name "mushussu"
+#id "mushussu"
 #basechance 0.5
 #chanceinc primaryrace lizard 5.5
 #command "#copystats 2962"
@@ -313,7 +313,7 @@
 #end
 
 #new
-#name "moose riders (bow)"
+#id "moose riders (bow)"
 #basechance 0
 #chanceinc primaryrace vaetti 10
 #chanceinc racetheme rimvaettir_only *0
@@ -323,7 +323,7 @@
 #end
 
 #new
-#name "moose riders (xbow)"
+#id "moose riders (xbow)"
 #basechance 0
 #chanceinc primaryrace vaetti 10
 #chanceinc racetheme not settled *0
@@ -334,7 +334,7 @@
 #end
 
 #new
-#name "o-bakemono"
+#id "o-bakemono"
 #basechance 0
 #chanceinc racetag oriental 1
 #chanceinc primaryrace bakemono 4
@@ -345,7 +345,7 @@
 #end
 
 #new
-#name "pygmy_mammoth_vaetti"
+#id "pygmy_mammoth_vaetti"
 #basechance 0
 #chanceinc "primaryrace vaetti 10"
 #chanceinc "racetheme rimvaettir_only *0"
@@ -371,7 +371,7 @@
 #end
 
 #new
-#name "vine men"
+#id "vine men"
 #basechance 0
 #chanceinc racetheme vinegrower 10
 #command "#copystats 361"
@@ -385,7 +385,7 @@
 #end
 
 #new
-#name "vine ogres"
+#id "vine ogres"
 #basechance 0
 #chanceinc racetheme vinegrower 5
 #command "#copystats 362"
@@ -399,7 +399,7 @@
 #end
 
 #new
-#name "dark vines"
+#id "dark vines"
 #basechance 0
 #chanceinc racetheme podslaver 5
 #command "#copystats 330"
@@ -415,7 +415,7 @@
 
 -- Temporary, until-FS-monsters-are-added FS-only uglies
 #new
-#name "Foul Spawn"
+#id "Foul Spawn"
 #basechance 0
 #chanceinc primaryrace foulspawn 2
 #command "#copystats 530"
@@ -428,7 +428,7 @@
 #end
 
 #new
-#name "Foul Beast"
+#id "Foul Beast"
 #basechance 0
 #chanceinc primaryrace foulspawn 2
 #command "#copystats 467"
@@ -441,7 +441,7 @@
 #end
 
 #new
-#name "Ettin"
+#id "Ettin"
 #basechance 0
 #chanceinc primaryrace foulspawn 4
 #command "#copystats 488"
@@ -454,7 +454,7 @@
 #end
 
 #new
-#name "Draco Lion"
+#id "Draco Lion"
 #basechance 0
 #chanceinc primaryrace foulspawn 0.5
 #command "#copystats 637"
@@ -468,7 +468,7 @@
 #end
 
 #new
-#name "Chimera"
+#id "Chimera"
 #basechance 0
 #chanceinc primaryrace foulspawn 0.5
 #command "#copystats 487"
@@ -482,7 +482,7 @@
 #end
 
 #new
-#name "Grotesque"
+#id "Grotesque"
 #basechance 0
 #chanceinc primaryrace foulspawn 0.5
 #command "#copystats 659"

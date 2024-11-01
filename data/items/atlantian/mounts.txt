@@ -1,7 +1,7 @@
 --- Base offsets are applied to everything except base and overlay
 
 #newitem
-#name "moose"
+#id "moose"
 #basechance 0.5
 #gameid -1
 #sprite /graphics/mounts/standard/moose.png
@@ -18,7 +18,7 @@
 #enditem
 
 #newitem
-#name "elk"
+#id "elk"
 #basechance 0.5
 #gameid -1
 #sprite /graphics/mounts/standard/elk.png
@@ -37,7 +37,7 @@
 #enditem
 
 #newitem
-#name "great bear"
+#id "great bear"
 #gameid -1
 #sprite /graphics/mounts/standard/bear.png
 #offsetx -4
@@ -52,7 +52,7 @@
 #enditem
 
 #newitem
-#name "polar bear"
+#id "polar bear"
 #gameid -1
 #sprite /graphics/mounts/standard/bear_polar.png
 #offsetx -4
@@ -68,7 +68,7 @@
 #enditem
 
 #newitem
-#name "bear"
+#id "bear"
 #gameid -1
 #sprite /graphics/mounts/standard/bear_small.png
 #offsetx -3
@@ -84,7 +84,7 @@
 #enditem
 
 #newitem
-#name "cavecow"
+#id "cavecow"
 #gameid -1
 #basechance 0.125
 #sprite /graphics/mounts/standard/cavecow.png
@@ -100,7 +100,7 @@
 #enditem
 
 #newitem
-#name "dire wolf"
+#id "dire wolf"
 #basechance 0.75
 #gameid -1
 #sprite /graphics/mounts/standard/direwolf2.png
@@ -118,7 +118,7 @@
 #enditem
 
 #newitem
-#name "serpent 1"
+#id "serpent 1"
 #basechance 0.125
 #gameid -1
 #sprite /graphics/mounts/standard/serpent1.png
@@ -136,7 +136,7 @@
 #enditem
 
 #newitem
-#name "white tiger"
+#id "white tiger"
 #basechance 0.5
 #chanceinc "nationcommand #idealcold above 1 *40"
 #chanceinc "nationcommand #idealcold below -1 *0"
@@ -159,7 +159,7 @@
 
 
 #newitem
-#name "seadog"
+#id "seadog"
 #basechance 0.5
 #gameid -1
 #sprite /graphics/mounts/standard/seadog.png
@@ -179,7 +179,7 @@
 #enditem
 
 #newitem
-#name "jaguar"
+#id "jaguar"
 #basechance 0.5
 #gameid -1
 #sprite /graphics/mounts/standard/jaguar.png
@@ -199,7 +199,7 @@
 #enditem
 
 #newitem
-#name "cavegrub"
+#id "cavegrub"
 #gameid -1
 #sprite /graphics/mounts/standard/cavegrub.png
 #armor
@@ -220,7 +220,7 @@
 #enditem
 
 #newitem
-#name "toad"
+#id "toad"
 #basechance 0.5
 #gameid -1
 #sprite /graphics/mounts/standard/toad_jaguar.png
@@ -240,7 +240,7 @@
 
 
 #newitem
-#name "frog"
+#id "frog"
 #basechance 0.5
 #gameid -1
 #sprite /graphics/mounts/standard/toad_sapphire.png

@@ -1,18 +1,7 @@
-/bin/
+# Builds
 /mods/
 /bin/
-/bin/
-/bin/
-/bin/
-/bin/
-/bin/
-/bin/
-/bin/
-/bin/
-/bin/
-/bin/
 /.metadata/
-graphics/monkey/armor/bandar/bronze.txt
 /local/
 
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
@@ -58,9 +47,17 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
-.classpath
 /bintest/
 /target/
 
+# Dependency directories
+node_modules/
+
+# Eclipse settings
+.settings/
+
+# VSCode
+.vscode/
+
+# NatGen settings
 settings.txt
-.settings/org.eclipse.core.resources.prefs

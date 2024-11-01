@@ -1,6 +1,6 @@
 -------- Normal
 #newpose
-#name "normal infantry"
+#id "normal infantry"
 #role "infantry"
 #role "sacred"
 #load basesprite /data/items/atlantian/atlantianbases.txt
@@ -19,7 +19,7 @@
 
 
 #newpose
-#name "standard bearer"
+#id "standard bearer"
 #role "infantry"
 #load basesprite /data/items/atlantian/atlantianbases.txt
 #load shadow /data/items/atlantian/shadow.txt
@@ -39,7 +39,7 @@
 
 
 #newpose
-#name "ice infantry"
+#id "ice infantry"
 #role "infantry"
 #role "sacred"
 #sacred
@@ -59,7 +59,7 @@
 
 
 #newpose
-#name "meteor armor infantry"
+#id "meteor armor infantry"
 #role "infantry"
 #role "sacred"
 #sacred
@@ -77,7 +77,7 @@
 
 -------- Cavalry
 #newpose
-#name "normal cavalry"
+#id "normal cavalry"
 #basechance 0.25
 #role "mounted"
 #role "sacred"
@@ -99,7 +99,7 @@
 
 
 #newpose
-#name "ice cavalry"
+#id "ice cavalry"
 #basechance 0.25
 #role "mounted"
 #role "sacred"
@@ -122,7 +122,7 @@
 
 
 #newpose
-#name "meteor armor cavalry"
+#id "meteor armor cavalry"
 #basechance 0.25
 #role "mounted"
 #role "sacred"
@@ -144,7 +144,7 @@
 
 -------- shambler
 #newpose
-#name "shambler infantry"
+#id "shambler infantry"
 #role "infantry"
 #role "sacred"
 
@@ -170,7 +170,7 @@
 
 
 #newpose
-#name "shambler standard bearer"
+#id "shambler standard bearer"
 #role "infantry"
 
 #subrace "shambler"

@@ -1,5 +1,5 @@
 #newrace
-#name "Oriental human"
+#id "Oriental human"
 #visiblename "Human"
 #basechance 0.3
 
@@ -24,7 +24,8 @@
 #unitcommand "#nametype 134"
 #tag "preferredmount horse"
 
-#gods easterngods
+#gods eastern_gods
+#additionalgods gods_without_realm
 #forts default_forts
 #forts city_forts
 

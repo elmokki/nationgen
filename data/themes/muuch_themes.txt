@@ -1,7 +1,7 @@
 -- Generic theme with high diversity and low cohesion
 #newtheme
 #type techlevel
-#name default
+#id default
 #basechance 4
 #themeinc theme iron *1
 #themeinc theme bronze *0.125
@@ -10,7 +10,7 @@
 -- Weights: EA 1, MA 1, LA 0.5
 #newtheme
 #type techlevel
-#name primitive
+#id primitive
 #basechance 1
 #chanceinc era 3 -0.5
 #themeinc theme advanced *0.05
@@ -25,7 +25,7 @@
 -- Weights: EA 2, MA 1, LA 0.25
 #newtheme
 #type techlevel
-#name bronze
+#id bronze
 #basechance 2
 #chanceinc era 2 -1
 #chanceinc era 3 -1.5
@@ -41,7 +41,7 @@
 -- Weights: EA 0.25, MA 1, LA 2
 #newtheme
 #type techlevel
-#name advanced
+#id advanced
 #basechance 0.25
 #chanceinc era 3 1.75
 #chanceinc era 2 0.75
@@ -60,7 +60,7 @@
 -- Weights: EA 2, MA 4, LA 4
 #newtheme
 #type demographic
-#name diverse
+#id diverse
 #basechance 4
 #chanceinc era 1 *0.5
 #themeinc theme green *2
@@ -72,7 +72,7 @@
 -- Weights: EA 4, MA 2, LA 2
 #newtheme
 #type demographic
-#name green
+#id green
 #basechance 2
 #chanceinc era 1 *2
 #themeinc theme green *1000
@@ -84,7 +84,7 @@
 -- Weights: EA 2, MA 2, LA 4
 #newtheme
 #type demographic
-#name white
+#id white
 #basechance 2
 #chanceinc era 3 *2
 #themeinc theme white *1000
@@ -97,7 +97,7 @@
 -- Weights: EA 2, MA 2, LA 2
 #newtheme
 #type demographic
-#name brown
+#id brown
 #basechance 2
 #themeinc theme brown *1000
 #racedefinition "#magicpriority nature 4"
@@ -108,7 +108,7 @@
 -- Weights: EA 2, MA 4, LA 2
 #newtheme
 #type demographic
-#name red
+#id red
 #basechance 2
 #chanceinc era 2 *2
 #themeinc theme red *1000
@@ -123,7 +123,7 @@
 -- Weights: EA 0.5, MA 0.5, LA 0.5
 #newtheme
 #type social
-#name slaver
+#id slaver
 #basechance 0.05
 #themeinc theme advanced *1
 #themeinc theme iron *1

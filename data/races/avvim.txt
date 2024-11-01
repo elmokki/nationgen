@@ -1,5 +1,5 @@
 #newrace
-#name "Avvite"
+#id "Avvite"
 #basechance 0.2
 
 #all_troops_sacred
@@ -34,7 +34,9 @@
 #mapmovepenaltyprot 16
 
 #nationcommand "#idealcold -2"
-#gods levantinegods
+#nationcommand "#moreheat 1"
+#gods levantine_gods
+#additionalgods gods_without_realm
 
 #pose avviteinfantry
 #pose avvitecavalry
@@ -58,7 +60,7 @@
 
 #monsterchance 0.1
 
-#gods agarthagods
+#gods agartha_gods
 #forts city_forts
 #forts giant_forts
 
