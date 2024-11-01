@@ -682,6 +682,13 @@ public class Nation {
       .collect(Collectors.toList());
   }
 
+  public List<String> getSpellSitesRequired() {
+    return this.spells.stream()
+      .flatMap(f -> f.tags.getAllStrings("sitereq").stream())
+      .distinct()
+      .collect(Collectors.toList());
+  }
+
   private void addRaceThemes(Race race) {
     List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters(
       "racethemes",

@@ -201,7 +201,7 @@ public class MagicPattern extends Filter {
 
       if (possibles.size() > 0) {
         // Get the lowest and highest values and their place out of the possible increases
-        int lowestvalue = 100;
+        int lowestvalue = 140;
         int highestvalue = -1;
         int lowestid = -1;
         int highestid = -1;
@@ -224,7 +224,7 @@ public class MagicPattern extends Filter {
 
     double lowp = (double) pricePaths(cheap);
     double highp = (double) pricePaths(expensive);
-    int price = (int) Math.round(0.25 * lowp + 0.75 * highp);
+    int price = (int) Math.round(0.25 * lowp + 0.8 * highp);
 
     /*
 		System.out.print("HIGH:");
@@ -243,8 +243,8 @@ public class MagicPattern extends Filter {
   private int pricePaths(int[] paths) {
     int price = 0;
 
-    int highpricing = 60;
-    int lowpricing = 40;
+    int highpricing = 84;
+    int lowpricing = 56;
 
     // Price the highest path
     int highestvalue = -1;
@@ -257,21 +257,20 @@ public class MagicPattern extends Filter {
     }
 
     if (highestid > -1 && highestvalue > 0) {
-      price += 30 + highpricing * (highestvalue - 1);
+      price += 42 + highpricing * (highestvalue - 1);
       paths[highestid] = 0;
     }
 
     // Price the rest
-
     for (int i = 0; i < 8; i++) {
       if (paths[i] > 0) {
-        price += 20 + lowpricing * (paths[i] - 1);
+        price += 28 + lowpricing * (paths[i] - 1);
       }
     }
 
     // EXTRA STUFF
-    // Having blood is +20 gold.
-    if (paths[7] > 0) price += 20;
+    // Having blood is +28 gold.
+    if (paths[7] > 0) price += 28;
 
     return price;
   }

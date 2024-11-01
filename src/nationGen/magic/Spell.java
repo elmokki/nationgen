@@ -8,6 +8,7 @@ import nationGen.entities.Filter;
 public class Spell extends Filter {
 
   public List<Integer> nationids = new ArrayList<Integer>();
+  public String siteReq;
 
   public Spell(NationGen nationGen) {
     super(nationGen);

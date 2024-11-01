@@ -24,9 +24,9 @@ Dominions 6 procedural content generation program.
 
 	Should probably also give them more frequently to nations with spellsinger, since those are the vanilla nations that have them.
 
-- **National temperature scales**
+- **Temperature protection**
 
-	Temperature protection in forts for nations with `#idealcold` (not sure about the modding command for this, if any), as well shifting temperature scale limits in accordance to their `#idealcold` (using the `#moreheat -5-5`).
+	Temperature protection in forts for nations with `#idealcold`. The modding command for this does not exist yet.
 
 
 ## Template ideas
