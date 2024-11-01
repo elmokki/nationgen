@@ -1145,7 +1145,7 @@ public class MageGenerator extends TroopGenerator {
             u.commands.add(
               Command.args(
                 "#gcost",
-                "+" + (10 * currentStrength + currentStrength * priestextracost)
+                "+" + (14 * currentStrength + currentStrength * priestextracost)
               )
             );
 
@@ -1175,7 +1175,7 @@ public class MageGenerator extends TroopGenerator {
             u.commands.add(
               Command.args(
                 "#gcost",
-                "+" + (10 * currentStrength + currentStrength * priestextracost)
+                "+" + (14 * currentStrength + currentStrength * priestextracost)
               )
             );
 
@@ -1218,7 +1218,7 @@ public class MageGenerator extends TroopGenerator {
           u = this.generateBases("priest", prace, 1, str).get(0);
         }
         u.commands.add(
-          Command.args("#gcost", "+" + (20 * currentStrength - 10))
+          Command.args("#gcost", "+" + (28 * currentStrength - 10))
         );
 
         u.color = priestcolor;
@@ -1230,7 +1230,7 @@ public class MageGenerator extends TroopGenerator {
           Command.args(
             "#gcost",
             "+" +
-            ((int) (Math.pow(2, currentStrength)) * 10 +
+            ((int) (Math.pow(2, currentStrength)) * 14 +
               currentStrength * priestextracost)
           )
         );
