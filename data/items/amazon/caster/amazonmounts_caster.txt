@@ -8,7 +8,6 @@
 #armor
 #needs overlay 1
 #define "#mountmnr 'riding-horse'"
-#define "#gcost +15"
 #tag "animal horse"
 #theme "light"
 #tag "maxprot 11"
@@ -24,7 +23,6 @@
 #offsetx -3
 #needs overlay 4
 #define "#mountmnr 'cataphracted-horse'"
-#define "#gcost +25"
 #tag "animal horse"
 #theme "heavy"
 #tag "minprot 12"
@@ -42,7 +40,6 @@
 #offsetx -3
 #needs overlay 5
 #define "#mountmnr 'light-cataphracted-horse'"
-#define "#gcost +20"
 #tag "animal horse"
 #tag "minprot 10"
 #tag "maxprot 14"
@@ -60,7 +57,7 @@
 #offsety 64
 #needs overlay 8
 #define "#mountmnr 'pegasus'"
-#define "#gcost +50"
+#define "#gcost -5"
 #theme "flying"
 #tag "animal pegasus"
 #tag "name commander windlord"
@@ -77,7 +74,6 @@
 #offsety 64
 #needs overlay gryphon_overlay
 #define "#mountmnr 'gryphonmount'"
-#define "#gcost +100"
 #description "If the rider dies, the gryphon will carry on fighting until the end of the battle."
 #theme "flying"
 #theme "specialmount"
@@ -92,7 +88,6 @@
 #sprite /graphics/amazon/mounts/leogryph.png
 #armor
 #define "#mountmnr 'leogryphmount'"
-#define "#gcost +40"
 #description "If the rider dies, the leogryph will carry on fighting until the end of the battle."
 #offsety 5
 #offsetx -3
@@ -110,8 +105,7 @@
 #offsetx -7
 #offsety 14
 #needs overlay 6
-#define "#mountmnr 'serpent1'"
-#define "#gcost +30"
+#define "#mountmnr 'serpent'"
 #tag "animal serpent"
 #theme "light"
 #tag "guaranteedprefix serpent"
@@ -128,7 +122,6 @@
 #offsety 3
 #needs overlay 3
 #define "#mountmnr 'greenlizard'"
-#define "#gcost +20"
 #tag "animal lizard"
 #theme "light"
 #theme "specialmount"

@@ -8,7 +8,6 @@
 #armor
 #needs overlay 1
 #define "#mountmnr 'riding-horse'"
-#define "#gcost +15"
 #tag "animal horse"
 #theme "light"
 #tag "maxprot 11"
@@ -25,12 +24,10 @@
 #armor
 #needs overlay armoredhorse1aoverlay
 #define "#mountmnr 'armoredhorse1a'"
-#define "#rcost +5"
 #tag "animal horse"
 #theme "heavy"
 #theme "bronze"
 #tag "minprot 14"
-#define "#gcost +25"
 #theme terrestrial
 #enditem
 
@@ -43,7 +40,6 @@
 #needs overlay kelpie_land_overlay
 #armor
 #define "#mountmnr 'kelpie-land'"
-#define "#gcost +20"
 #tag "animal kelpie"
 #tag "minprot 6"
 #tag "maxprot 18"
@@ -59,8 +55,6 @@
 #needs overlay kelpie_armored_land_overlay
 #armor
 #define "#mountmnr 'kelpie-land-armored'"
-#define "#gcost +25"
-#define "#rcost +5"
 #tag "animal kelpie"
 #theme "heavy"
 #tag "minprot 14"
@@ -75,7 +69,6 @@
 #needs overlay no_overlay
 #armor
 #define "#mountmnr 'nightmare'"
-#define "#gcost +40"
 #tag "animal nightmare"
 #define "#float"
 #description "Leaves a nightmare behind when the rider dies"
@@ -97,8 +90,7 @@
 #armor
 #offsetx 0
 #offsety -11
-#define "#mountmnr 'peryton2'"
-#define "#gcost +50"
+#define "#mountmnr 'peryton'"
 #theme "flying"
 #tag "animal peryton"
 #basechance 0.25
@@ -114,7 +106,6 @@
 #offsetx -4
 #offsety -3
 #define "#mountmnr 'giantswanmount'"
-#define "#gcost +50"
 #theme "light"
 #tag "animal swan"
 #tag "maxprot 11"
@@ -128,8 +119,6 @@
 #offsety -9
 #armor
 #define "#mountmnr 'seadogmount'"
-#define "#gcost +15"
-#define "#rcost +2"
 #define "#swimming"
 #command "#amphibian"
 #theme "light"
@@ -148,8 +137,6 @@
 #offsetx -1
 #offsety -4
 #define "#mountmnr 'toad_jaguar_mount'"
-#define "#gcost +30"
-#define "#rcost +3"
 #define "#swimming"
 #define "#amphibian"
 #description "The giant toad will fight until the end of the battle should the rider die"
@@ -168,8 +155,6 @@
 #offsetx -1
 #offsety -4
 #define "#mountmnr 'toad_sapphire_mount'"
-#define "#gcost +30"
-#define "#rcost +3"
 #define "#swimming"
 #define "#amphibian"
 #description "The giant frog will fight until the end of the battle should the rider die"

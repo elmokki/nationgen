@@ -8,7 +8,6 @@
 #armor
 #needs overlay 1
 #define "#mountmnr 'riding-horse'"
-#define "#gcost +15"
 #tag "animal horse"
 #theme "light"
 #tag "maxprot 11"
@@ -26,7 +25,6 @@
 #offsetx 5
 #offsety 35
 #define "#mountmnr 'camel'"
-#define "#gcost +20"
 #tag "animal camel"
 #tag "maxprot 11"
 #theme "light"
@@ -41,7 +39,6 @@
 #offsety -12
 #armor
 #define "#mountmnr 'cavecowmount'"
-#define "#gcost +30"
 #description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
 #tag "animal 'cave cow'"
 #tag "guaranteedprefix 'cave cow'"
@@ -56,8 +53,7 @@
 #offsetx -0
 #offsety -5
 #needs overlay 6
-#define "#mountmnr 'serpent1'"
-#define "#gcost +30"
+#define "#mountmnr 'serpent'"
 #tag "animal serpent"
 #theme "light"
 #tag "guaranteedprefix serpent"
@@ -70,8 +66,7 @@
 #gameid -1
 #sprite /graphics/mounts/standard/giantrat.png
 #armor
-#define "#mountmnr 'ratmount'"
-#define "#gcost +20"
+#define "#mountmnr 'giant_rat_mount'"
 #tag "animal rat"
 #theme "rat"
 #theme "rattotem"
@@ -90,8 +85,6 @@
 #armor
 #offsety -13
 #define "#mountmnr 'seadogmount'"
-#define "#gcost +15"
-#define "#rcost +2"
 #define "#swimming"
 #command "#amphibian"
 #theme "light"
@@ -110,8 +103,6 @@
 #offsetx 0
 #offsety -13
 #define "#mountmnr 'toad_jaguar_mount'"
-#define "#gcost +30"
-#define "#rcost +3"
 #description "The giant toad will fight until the end of the battle should the rider die"
 #tag "animal 'giant toad'"
 #tag "guaranteedprefix toad"
@@ -127,8 +118,6 @@
 #offsetx 0
 #offsety -13
 #define "#mountmnr 'toad_sapphire_mount'"
-#define "#gcost +30"
-#define "#rcost +3"
 #define "#swimming"
 #description "The giant frog will fight until the end of the battle should the rider die"
 #tag "animal 'giant frog'"

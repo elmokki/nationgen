@@ -10,8 +10,6 @@
 #offsetx -4
 #offsety 4
 #define "#mountmnr 'tiger'"
-#define "#gcost +40"
-#define "#rcost +6"
 #theme "specialmount"
 #theme "light"
 #tag "animal tiger"
@@ -34,8 +32,6 @@
 #offsetx -4
 #offsety 7
 #define "#mountmnr 'jaguarmount'"
-#define "#gcost +35"
-#define "#rcost +5"
 #theme "specialmount"
 #theme "light"
 #tag "animal jaguar"
@@ -54,7 +50,6 @@
 #sprite /graphics/mounts/standard/direwolf1.png
 #armor
 #define "#mountmnr 'direwolf1mount'"
-#define "#gcost +25"
 #tag "animal wolf"
 #theme "light"
 #tag "maxprot 11"
@@ -74,7 +69,6 @@
 #sprite /graphics/mounts/standard/lion_asian.png
 #armor
 #define "#mountmnr 'lionmount'"
-#define "#gcost +35"
 #description "If the rider dies, the lion will carry on fighting until the end of the battle."
 #offsety 5
 #offsetx -3
@@ -92,8 +86,7 @@
 #armor
 #offsetx -7
 #offsety 14
-#define "#mountmnr 'serpent1'"
-#define "#gcost +30"
+#define "#mountmnr 'serpent'"
 #tag "animal serpent"
 #theme "light"
 #tag "guaranteedprefix serpent"
@@ -112,9 +105,7 @@
 #armor
 #offsetx -5
 #offsety 13
-#define "#mountmnr 'serpent2'"
-#define "#gcost +30"
-#define "#rcost +5"
+#define "#mountmnr 'serpent_stupid'"
 #tag "animal serpent"
 #theme "heavy"
 #theme "specialmount"
@@ -136,7 +127,6 @@
 #offsetx -5
 #offsety 3
 #define "#mountmnr 'greenlizard'"
-#define "#gcost +20"
 #tag "animal lizard"
 #theme "light"
 #theme "specialmount"
@@ -158,8 +148,6 @@
 #offsetx 8
 #offsety 11
 #define "#mountmnr 'cavedrake'"
-#define "#gcost +70"
-#define "#rcost +5"
 #tag "animal drake"
 #theme "specialmount"
 #description "The cave drake will persist even if the rider dies."
@@ -186,7 +174,6 @@
 #needs overlay spider_overlay
 #define "#mountmnr 'spider'"
 #description "The giant spider will persist even if the rider dies."
-#define "#gcost +30"
 #theme "specialmount"
 #tag "animal spider"
 #tag "guaranteedprefix spider"
@@ -208,8 +195,6 @@
 #offsety 7
 #needs overlay spider_overlay
 #define "#mountmnr 'spider'"
-#define "#gcost +40"
-#define "#rcost +5"
 #description "The giant spider will persist even if the rider dies."
 #theme "specialmount"
 #tag "animal spider"
@@ -230,8 +215,6 @@
 #offsetx -4
 #offsety 4
 #define "#mountmnr 'blackjaguar'"
-#define "#gcost +35"
-#define "#rcost +5"
 #theme "specialmount"
 #theme "light"
 #tag "animal panther"
@@ -252,8 +235,6 @@
 #offsetx -4
 #offsety 4
 #define "#mountmnr 'blacktiger'"
-#define "#gcost +25"
-#define "#rcost +5"
 #theme "specialmount"
 #theme "light"
 #tag "animal tiger"
@@ -276,8 +257,6 @@
 #offsetx -4
 #offsety 4
 #define "#mountmnr 'whitetiger'"
-#define "#gcost +25"
-#define "#rcost +5"
 #theme "specialmount"
 #theme "light"
 #tag "animal tiger"
@@ -316,7 +295,6 @@
 #sprite /graphics/mounts/standard/lion_asian.png
 #armor
 #define "#mountmnr 'lionmount'"
-#define "#gcost +35"
 #description "If the rider dies, the lion will carry on fighting until the end of the battle."
 #offsety 5
 #offsetx -3
@@ -336,7 +314,6 @@
 #needs overlay wingedlion_overlay
 #armor
 #define "#mountmnr 'wingedlionmount'"
-#define "#gcost +60"
 #description "If the rider dies, the winged lion will carry on fighting until the end of the battle."
 #offsety 5
 #offsetx -10
@@ -357,7 +334,6 @@
 #sprite /graphics/mounts/standard/bear_small.png
 #armor
 #define "#mountmnr 'smallbearmount'"
-#define "#gcost +30"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety 4
 #offsetx -5
@@ -382,7 +358,6 @@
 #offsetx 35
 #offsety 58
 #define "#mountmnr 'hunterspider'"
-#define "#gcost +70"
 #description "The hunter spider will persist even if the rider dies."
 #theme "specialmount"
 #theme "heavy"
@@ -407,8 +382,6 @@
 #offsety 13
 #needs overlay 13
 #define "#mountmnr 'amphiptere'"
-#define "#gcost +50"
-#define "#rcost +6"
 #theme "specialmount"
 #tag "animal amphiptere"
 #description "The amphiptere will fight until the end of the battle should the rider die"
@@ -429,7 +402,6 @@
 #sprite /graphics/mounts/standard/brownhorse.png
 #armor
 #define "#mountmnr 'riding-horse'"
-#define "#gcost +15"
 #tag "animal horse"
 #theme "light"
 #tag "maxprot 11"
@@ -451,7 +423,6 @@
 #offsety 64
 #needs overlay 8
 #define "#mountmnr 'pegasus'"
-#define "#gcost +50"
 #theme "flying"
 #tag "animal pegasus"
 #tag "name commander windlord"
@@ -473,7 +444,6 @@
 #offsetx 0
 #offsety 53
 #define "#mountmnr 'camel'"
-#define "#gcost +20"
 #tag "animal camel"
 #tag "maxprot 11"
 #theme "light"
@@ -497,7 +467,6 @@
 #offsetx 0
 #offsety 53
 #define "#mountmnr 'armored_camel_barded'"
-#define "#gcost +15"
 #define "#supplybonus +1"
 #define "#wastesurvival"
 #tag "animal camel"
@@ -523,8 +492,6 @@
 #offsetx 0
 #offsety 53
 #define "#mountmnr 'armored_camel'"
-#define "#gcost +25"
-#define "#rcost +5"
 #tag "animal camel"
 #theme "heavy"
 #theme "iron"
@@ -549,8 +516,6 @@
 #offsetx 0
 #offsety 53
 #define "#mountmnr 'armored_camel_bronze'"
-#define "#gcost +25"
-#define "#rcost +5"
 #tag "animal camel"
 #theme "heavy"
 #theme "bronze"
@@ -570,7 +535,7 @@
 #armor
 #offsety 1
 #define "#mountmnr 'unicorn'"
-#define "#gcost +35"
+#define "#gcost +5"
 #theme "heavy"
 #tag "minprot 12"
 #tag "maxprot 16"
@@ -590,7 +555,7 @@
 #armor
 #offsety 1
 #define "#mountmnr 'unicorn'"
-#define "#gcost +30"
+#define "#gcost +5"
 #theme "heavy"
 #tag "minprot 8"
 #tag "maxprot 15"
@@ -613,7 +578,6 @@
 #offsety 69
 #needs overlay 14
 #define "#mountmnr 'wyvern'"
-#define "#gcost +75"
 #theme "flying"
 #theme "heavy"
 #tag "animal wyvern"
@@ -664,7 +628,6 @@
 #sprite /graphics/mounts/standard/cavecow.png
 #armor
 #define "#mountmnr 'cavecowmount'"
-#define "#gcost +30"
 #description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
 #offsetx -8
 #offsety 6

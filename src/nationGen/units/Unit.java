@@ -438,9 +438,8 @@ public class Unit {
       String target = d.target;
       String slot = d.slot;
 
-      if (
-        !d.type
-      ) { // Handle needs and setslot
+      if (!d.type) {
+        // Handle needs and setslot
         String command = lagged ? "#forceslot" : "#needs";
 
         if (pose.getItems(slot) == null) {
@@ -462,6 +461,7 @@ public class Unit {
             ")"
           );
         }
+
         Item item = pose.getItems(slot).getItemWithName(target, slot);
 
         if (item == null) {
@@ -576,7 +576,9 @@ public class Unit {
     int stats = this.getCopyStats();
     if (stats > -1) {
       cost = this.nationGen.units.GetInteger("" + stats, "basecost");
-      if (cost >= 10000) cost -= 10000;
+      if (cost >= 10000) {
+        cost -= 10000;
+      }
 
       return cost;
     }
@@ -954,8 +956,13 @@ public class Unit {
 
         int total = (int) Math.round((double) value * cost);
 
-        if (total > 0) commands.add(Command.args("#gcost", "+" + total));
-        else commands.add(Command.args("#gcost", "" + total));
+        if (total > 0) {
+          commands.add(Command.args("#gcost", "+" + total));
+        }
+
+        else {
+          commands.add(Command.args("#gcost", "" + total));
+        }
       }
     }
 

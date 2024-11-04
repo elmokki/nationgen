@@ -29,7 +29,6 @@
 #offsetx 34
 #offsety 31
 #define "#mountmnr 'fossilmount'"
-#define "#gcost +50"
 #tag "animal fossil"
 #theme "heavy"
 #description "Leaves a fossilized giant behind when the rider dies"
@@ -48,7 +47,6 @@
 #offsetx -2
 #offsety 2
 #define "#mountmnr 'gloso'"
-#define "#gcost +40"
 #tag "animal gloso"
 #description "Leaves a burning black sow behind when the rider dies"
 #basechance 0.25
@@ -63,7 +61,7 @@
 #armor
 #offsety -2
 #define "#mountmnr 'nightmare'"
-#define "#gcost +40"
+#define "#gcost -10"
 #theme "specialmount"
 #tag "animal nightmare"
 #description "Leaves a nightmare behind when the rider dies"
@@ -79,7 +77,6 @@
 #sprite /graphics/mounts/standard/lion.png
 #armor
 #define "#mountmnr 'lionmount'"
-#define "#gcost +35"
 #description "If the rider dies, the lion will carry on fighting until the end of the battle."
 #offsety 5
 #offsetx -1
@@ -117,7 +114,6 @@
 #offsety 64
 #needs overlay gryphon_overlay
 #define "#mountmnr 'gryphonmount'"
-#define "#gcost +100"
 #description "If the rider dies, the gryphon will carry on fighting until the end of the battle."
 #theme "flying"
 #theme "specialmount"
@@ -132,7 +128,6 @@
 #sprite /graphics/amazon/mounts/leogryph.png
 #armor
 #define "#mountmnr 'leogryphmount'"
-#define "#gcost +40"
 #description "If the rider dies, the leogryph will carry on fighting until the end of the battle."
 #basechance 0.125
 #offsety 6
@@ -156,7 +151,6 @@
 #tag "animal horse"
 #theme "heavy"
 #tag "minprot 14"
-#define "#gcost +25"
 #tag "name commander 'knight'"
 #tag "name mounted knight"
 #enditem
@@ -190,7 +184,6 @@
 #armor
 #needs overlay 1
 #define "#mountmnr 'riding-horse'"
-#define "#gcost +15"
 #tag "animal horse"
 #theme "light"
 #tag "maxprot 11"
@@ -208,7 +201,7 @@
 #tag "animal horse"
 #theme "heavy"
 #tag "minprot 14"
-#define "#gcost +25"
+#define "#gcost +5"
 #epicness 0.25
 #tag "name commander 'knight'"
 #tag "name mounted knight"
@@ -226,7 +219,7 @@
 #theme "heavy"
 #tag "minprot 12"
 #tag "maxprot 16"
-#define "#gcost +20"
+#define "#gcost +5"
 #epicness 0.25
 #tag "name commander 'knight'"
 #tag "name mounted knight"
@@ -241,7 +234,7 @@
 #offsetx -3
 #needs overlay 4
 #define "#mountmnr 'cataphracted-horse'"
-#define "#gcost +25"
+#define "#gcost +5"
 #tag "animal horse"
 #theme "heavy"
 #tag "minprot 12"
@@ -259,7 +252,7 @@
 #offsetx -3
 #needs overlay 5
 #define "#mountmnr 'light-cataphracted-horse'"
-#define "#gcost +20"
+#define "#gcost +5"
 #tag "animal horse"
 #tag "minprot 10"
 #tag "maxprot 14"
@@ -279,7 +272,6 @@
 #offsetx 5
 #offsety 52
 #define "#mountmnr 'camel'"
-#define "#gcost +20"
 #tag "animal camel"
 #tag "maxprot 11"
 #theme "light"
@@ -295,7 +287,6 @@
 #offsetx 5
 #offsety 52
 #define "#mountmnr 'armored_camel'"
-#define "#gcost +25"
 #tag "animal camel"
 #theme "heavy"
 #tag "minprot 12"

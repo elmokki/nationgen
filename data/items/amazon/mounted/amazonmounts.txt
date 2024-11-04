@@ -10,7 +10,6 @@
 #offsety 64
 #needs overlay gryphon_overlay
 #define "#mountmnr 'gryphonmount'"
-#define "#gcost +100"
 #description "If the rider dies, the gryphon will carry on fighting until the end of the battle."
 #theme "flying"
 #theme "specialmount"
@@ -27,7 +26,6 @@
 #sprite /graphics/amazon/mounts/leogryph.png
 #armor
 #define "#mountmnr 'leogryphmount'"
-#define "#gcost +40"
 #description "If the rider dies, the leogryph will carry on fighting until the end of the battle."
 #basechance 0.25
 #offsety 6
@@ -48,7 +46,6 @@
 #needs overlay equine_nightmare_overlay
 #define "#mountmnr 'nightmare'"
 #define "#enc 15"
-#define "#gcost +50"
 #tag "guaranteedprefix nightmare"
 #sacredextra 0.75
 #theme "specialmount"
@@ -74,7 +71,6 @@
 #needs overlay equine_caparison_overlay
 #define "#mountmnr 'nightmare_equine_caparison'"
 #define "#enc 15"
-#define "#gcost +50"
 #tag "guaranteedprefix nightmare"
 #sacredextra 0.75
 #theme "specialmount"
@@ -95,7 +91,6 @@
 #needs overlay equine_halfbarded_overlay
 #define "#mountmnr 'nightmare_equine_halfbarded'"
 #define "#enc 15"
-#define "#gcost +50"
 #tag "guaranteedprefix nightmare"
 #sacredextra 0.75
 #theme "specialmount"
@@ -119,8 +114,6 @@
 #needs overlay equine_scalebarded1_overlay
 #define "#mountmnr 'nightmare_equine_scalebarded'"
 #define "#enc 15"
-#define "#rcost +5"
-#define "#gcost +50"
 #tag "guaranteedprefix nightmare"
 #sacredextra 0.75
 #theme "specialmount"
@@ -143,8 +136,6 @@
 #needs overlay equine_scalebarded2_overlay
 #define "#mountmnr 'nightmare_equine_scalebarded2'"
 #define "#enc 15"
-#define "#rcost +5"
-#define "#gcost +50"
 #tag "guaranteedprefix nightmare"
 #sacredextra 0.75
 #theme "specialmount"
@@ -165,8 +156,6 @@
 #needs overlay equine_fullbarded1_overlay
 #define "#mountmnr 'nightmare_equine_fullbarded1'"
 #define "#enc 15"
-#define "#rcost +5"
-#define "#gcost +50"
 #tag "guaranteedprefix nightmare"
 #sacredextra 0.75
 #theme "specialmount"
@@ -187,8 +176,6 @@
 #needs overlay equine_fullbarded2_overlay
 #define "#mountmnr 'nightmare_equine_fullbarded2'"
 #define "#enc 15"
-#define "#rcost +5"
-#define "#gcost +50"
 #tag "guaranteedprefix nightmare"
 #sacredextra 0.75
 #theme "specialmount"
@@ -231,7 +218,6 @@
 #armor
 #define "#mountmnr 'nightmare_leogryphmount'"
 #define "#enc 15"
-#define "#gcost +55"
 #tag "guaranteedprefix nightmare"
 #sacredextra 1
 #theme "specialmount"

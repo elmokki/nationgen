@@ -1,5 +1,5 @@
 #newitem
-#id "firedrake 1"
+#id "firedrake"
 #gameid -1
 #sprite /graphics/abysian/mounts/firedrake.png
 #armor
@@ -7,7 +7,6 @@
 #offsetx -7
 #offsety 16
 #define "#mountmnr 'firedrake'"
-#define "#gcost +55"
 
 #tag "animal drake"
 #tag "minprot 10"
@@ -15,16 +14,27 @@
 #enditem
 
 #newitem
-#id "salamander 1"
+#id "salamander"
 #gameid -1
 #sprite /graphics/abysian/mounts/salamander.png
 #armor
 #offsetx -7
 #offsety 14
 #define "#mountmnr 'salamander'"
-#define "#gcost +45"
 #tag "animal salamander"
-#tag "maxprot 100"
+#tag "maxprot 10"
+#enditem
+
+#newitem
+#id "salamander_mail_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/salamander.png
+#armor
+#offsetx -7
+#offsety 14
+#define "#mountmnr 'salamander_mail_barding'"
+#tag "animal salamander"
+#tag "maxprot 18"
 #enditem
 
 #newitem
@@ -36,7 +46,6 @@
 #offsety 6
 #needs overlay scorpion_overlay
 #define "#mountmnr 'scorpionmount'"
-#define "#gcost +50"
 #tag "animal scorpion"
 #theme "heavy"
 #description "Leaves a giant scorpion behind when the rider dies"
@@ -56,7 +65,6 @@
 #offsetx 34
 #offsety 31
 #define "#mountmnr 'fossilmount'"
-#define "#gcost +50"
 #tag "animal fossil"
 #theme "heavy"
 #description "Leaves a fossilized giant behind when the rider dies"
@@ -73,7 +81,6 @@
 #offsetx -2
 #offsety 2
 #define "#mountmnr 'gloso'"
-#define "#gcost +40"
 #tag "animal gloso"
 #description "Leaves a burning black sow behind when the rider dies"
 #basechance 0.5
@@ -89,7 +96,7 @@
 #offsety -2
 #define "#size 5"
 #define "#mountmnr 'nightmare'"
-#define "#gcost +40"
+#define "#gcost -10"
 #tag "animal nightmare"
 #description "Leaves a nightmare behind when the rider dies"
 #basechance 0.25

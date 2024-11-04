@@ -9,7 +9,6 @@
 #armor
 #needs overlay 1
 #define "#mountmnr 'riding-horse'"
-#define "#gcost +15"
 #tag "animal horse"
 #theme "light"
 #tag "maxprot 11"
@@ -28,7 +27,6 @@
 #theme "heavy"
 #theme "iron"
 #tag "minprot 14"
-#define "#gcost +25"
 #epicness 0.25
 #tag "name commander 'knight'"
 #tag "name mounted knight"
@@ -42,12 +40,10 @@
 #armor
 #needs overlay armoredhorse1aoverlay
 #define "#mountmnr 'armoredhorse1a'"
-#define "#rcost +5"
 #tag "animal horse"
 #theme "heavy"
 #theme "bronze"
 #tag "minprot 14"
-#define "#gcost +25"
 #epicness 0.25
 #tag "name commander 'knight'"
 #tag "name mounted knight"
@@ -67,7 +63,6 @@
 #theme "bronze"
 #tag "minprot 12"
 #tag "maxprot 16"
-#define "#gcost +20"
 #epicness 0.25
 #tag "name commander 'knight'"
 #tag "name mounted knight"
@@ -81,13 +76,11 @@
 #armor
 #needs overlay armoredhorse2overlay
 #define "#mountmnr 'light-cataphracted-horse'"
-#define "#rcost +5"
 #tag "animal horse"
 #theme "heavy"
 #theme "iron"
 #tag "minprot 12"
 #tag "maxprot 16"
-#define "#gcost +20"
 #epicness 0.25
 #tag "name commander 'knight'"
 #tag "name mounted knight"
@@ -102,7 +95,6 @@
 #offsetx -3
 #needs overlay 4
 #define "#mountmnr 'cataphracted-horse'"
-#define "#gcost +25"
 #tag "animal horse"
 #theme "heavy"
 #theme "iron"
@@ -121,7 +113,6 @@
 #offsetx -3
 #needs overlay 5
 #define "#mountmnr 'light-cataphracted-horse'"
-#define "#gcost +20"
 #tag "animal horse"
 #theme "iron"
 #tag "minprot 10"
@@ -140,7 +131,6 @@
 #offsety 64
 #needs overlay 8
 #define "#mountmnr 'pegasus'"
-#define "#gcost +50"
 #theme "flying"
 #tag "animal pegasus"
 #tag "name commander windlord"
@@ -157,8 +147,7 @@
 #armor
 #offsetx -2
 #offsety 2
-#define "#mountmnr 'peryton2'"
-#define "#gcost +50"
+#define "#mountmnr 'peryton'"
 #theme "flying"
 #tag "animal peryton"
 #tag "name commander windlord"
@@ -176,7 +165,6 @@
 #needs overlay redguardoverlay
 #offsety 1
 #define "#mountmnr 'cataphracted-horse'"
-#define "#gcost +20"
 #tag "animal horse"
 #theme "heavy"
 #tag "minprot 12"
@@ -192,7 +180,6 @@
 #needs overlay redguardoverlay
 #offsety 1
 #define "#mountmnr 'cataphracted-horse'"
-#define "#gcost +20"
 #tag "animal horse"
 #theme "heavy"
 #tag "minprot 12"
@@ -210,7 +197,6 @@
 #offsetx 5
 #offsety 52
 #define "#mountmnr 'camel'"
-#define "#gcost +20"
 #tag "animal camel"
 #tag "maxprot 11"
 #theme "light"
@@ -230,7 +216,6 @@
 #offsetx 5
 #offsety 52
 #define "#mountmnr 'armored_camel_barded'"
-#define "#gcost +15"
 #define "#wastesurvival"
 #tag "animal camel"
 #tag "minprot 8"
@@ -251,8 +236,6 @@
 #offsetx 5
 #offsety 52
 #define "#mountmnr 'armored_camel'"
-#define "#gcost +25"
-#define "#rcost +5"
 #tag "animal camel"
 #theme "heavy"
 #theme "iron"
@@ -273,8 +256,6 @@
 #offsetx 5
 #offsety 52
 #define "#mountmnr 'armored_camel_bronze'"
-#define "#gcost +25"
-#define "#rcost +5"
 #tag "animal camel"
 #theme "heavy"
 #theme "bronze"
@@ -289,7 +270,7 @@
 #armor
 #offsety 1
 #define "#mountmnr 'armored-unicorn'"
-#define "#gcost +35"
+#define "#gcost +5"
 #theme "heavy"
 #tag "minprot 12"
 #tag "maxprot 16"
@@ -306,7 +287,6 @@
 #armor
 #offsety 1
 #define "#mountmnr 'unicorn'"
-#define "#gcost +30"
 #theme "heavy"
 #tag "minprot 8"
 #tag "maxprot 15"
@@ -323,7 +303,6 @@
 #armor
 #offsety 1
 #define "#mountmnr 'fay-horse'"
-#define "#gcost +30"
 #tag "animal horse"
 #theme "heavy"
 #tag "minprot 6"
@@ -340,7 +319,6 @@
 #offsety 69
 #needs overlay 14
 #define "#mountmnr 'wyvern'"
-#define "#gcost +75"
 #theme "flying"
 #theme "heavy"
 #tag "animal wyvern"
@@ -362,7 +340,6 @@
 #offsetx 30
 #offsety 48
 #define "#mountmnr 'moose'"
-#define "#gcost +25"
 #tag "animal moose"
 #tag "minprot 0"
 #tag "maxprot 16"
@@ -380,8 +357,6 @@
 #offsetx -2
 #offsety 2
 #define "#mountmnr 'elk'"
-#define "#gcost +20"
-#define "#rcost +4"
 #tag "animal elk"
 #tag "minprot 0"
 #tag "maxprot 14"
@@ -396,7 +371,6 @@
 #armor
 #offsety 1
 #define "#mountmnr 'nightmare'"
-#define "#gcost +40"
 #tag "animal nightmare"
 #description "Leaves a nightmare behind when the rider dies"
 #basechance 0.25
@@ -410,7 +384,6 @@
 #sprite /graphics/mounts/standard/bear.png
 #armor
 #define "#mountmnr 'greatbear'"
-#define "#gcost +40"
 #offsety -2
 #offsetx -1
 #tag "animal bear"
@@ -426,7 +399,6 @@
 #sprite /graphics/mounts/standard/bear_polar.png
 #armor
 #define "#mountmnr 'bearmount_polar'"
-#define "#gcost +40"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety -2
 #offsetx -1
@@ -442,7 +414,6 @@
 #sprite /graphics/mounts/standard/bear_small.png
 #armor
 #define "#mountmnr 'smallbearmount'"
-#define "#gcost +30"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety 6
 #offsetx -1
@@ -459,7 +430,6 @@
 #sprite /graphics/mounts/standard/lion.png
 #armor
 #define "#mountmnr 'lionmount'"
-#define "#gcost +35"
 #description "If the rider dies, the lion will carry on fighting until the end of the battle."
 #offsety 6
 #offsetx -1
@@ -499,7 +469,6 @@
 #offsetx 34
 #offsety 31
 #define "#mountmnr 'fossilmount'"
-#define "#gcost +50"
 #tag "animal fossil"
 #theme "heavy"
 #description "Leaves a fossilized giant behind when the rider dies"
@@ -517,7 +486,6 @@
 #sprite /graphics/mounts/standard/cavecow.png
 #armor
 #define "#mountmnr 'cavecowmount'"
-#define "#gcost +30"
 #description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
 #offsetx -8
 #offsety 6

@@ -14,7 +14,6 @@
 #define "#mountmnr 'riding-horse'"
 #define "#ressize 2"
 #define "#enc 3"
-#define "#gcost +15"
 #tag "animal horse"
 #theme "light"
 #tag "maxprot 11"
@@ -32,7 +31,6 @@
 #tag "animal horse"
 #theme "heavy"
 #tag "minprot 14"
-#define "#gcost +25"
 #epicness 0.25
 #tag "name commander 'knight'"
 #tag "name mounted knight"
@@ -50,7 +48,6 @@
 #theme "heavy"
 #tag "minprot 12"
 #tag "maxprot 16"
-#define "#gcost +20"
 #epicness 0.25
 #tag "name commander 'knight'"
 #tag "name mounted knight"
@@ -65,7 +62,6 @@
 #offsetx -3
 #needs overlay 4
 #define "#mountmnr 'cataphracted-horse'"
-#define "#gcost +25"
 #tag "animal horse"
 #theme "heavy"
 #tag "minprot 12"
@@ -83,7 +79,6 @@
 #offsetx -3
 #needs overlay 5
 #define "#mountmnr 'light-cataphracted-horse'"
-#define "#gcost +20"
 #tag "animal horse"
 #tag "minprot 10"
 #tag "maxprot 14"
@@ -101,7 +96,6 @@
 #offsety 64
 #needs overlay 8
 #define "#mountmnr 'pegasus'"
-#define "#gcost +50"
 #theme "flying"
 #tag "animal pegasus"
 #tag "name commander windlord"
@@ -119,7 +113,6 @@
 #needs overlay redguardoverlay
 #offsety 1
 #define "#mountmnr 'cataphracted-horse'"
-#define "#gcost +20"
 #tag "animal horse"
 #theme "elite"
 #theme "heavy"
@@ -138,7 +131,6 @@
 #offsetx 5
 #offsety 52
 #define "#mountmnr 'camel'"
-#define "#gcost +20"
 #tag "animal camel"
 #tag "maxprot 11"
 #theme "light"
@@ -158,7 +150,6 @@
 #offsetx 5
 #offsety 52
 #define "#mountmnr 'armored_camel_barded'"
-#define "#gcost +15"
 #define "#supplybonus +1"
 #define "#wastesurvival"
 #tag "animal camel"
@@ -180,7 +171,6 @@
 #offsetx 5
 #offsety 52
 #define "#mountmnr 'armored_camel'"
-#define "#gcost +25"
 #tag "animal camel"
 #theme "heavy"
 #tag "minprot 12"
@@ -194,7 +184,7 @@
 #armor
 #offsety 1
 #define "#mountmnr 'unicorn'"
-#define "#gcost +35"
+#define "#gcost +5"
 #theme "elite"
 #theme "heavy"
 #tag "minprot 12"
@@ -211,7 +201,7 @@
 #armor
 #offsety 1
 #define "#mountmnr 'unicorn'"
-#define "#gcost +30"
+#define "#gcost +5"
 #theme "elite"
 #theme "heavy"
 #tag "minprot 8"
@@ -229,7 +219,7 @@
 #armor
 #offsety 1
 #define "#mountmnr 'fay-horse'"
-#define "#gcost +30"
+#define "#gcost +5"
 #tag "animal horse"
 #theme "elite"
 #theme "heavy"
@@ -247,7 +237,6 @@
 #offsety 69
 #needs overlay 14
 #define "#mountmnr 'wyvern'"
-#define "#gcost +75"
 #theme "flying"
 #theme "heavy"
 #tag "animal wyvern"
@@ -269,7 +258,6 @@
 #offsetx 30
 #offsety 45
 #define "#mountmnr 'moose'"
-#define "#gcost +25"
 #tag "animal moose"
 #tag "minprot 0"
 #tag "maxprot 16"
@@ -285,7 +273,6 @@
 #armor
 #offsety 1
 #define "#mountmnr 'nightmare'"
-#define "#gcost +40"
 #tag "animal nightmare"
 #description "Leaves a nightmare behind when the rider dies"
 #basechance 0.25
@@ -300,7 +287,6 @@
 #sprite /graphics/mounts/standard/bear.png
 #armor
 #define "#mountmnr 'greatbear'"
-#define "#gcost +40"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety -2
 #offsetx -1
@@ -317,7 +303,6 @@
 #sprite /graphics/mounts/standard/bear_small.png
 #armor
 #define "#mountmnr 'smallbearmount'"
-#define "#gcost +30"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety 4
 #offsetx -1
@@ -335,7 +320,6 @@
 #sprite /graphics/mounts/standard/lion.png
 #armor
 #define "#mountmnr 'lionmount'"
-#define "#gcost +35"
 #description "If the rider dies, the lion will carry on fighting until the end of the battle."
 #offsety 5
 #offsetx -1
@@ -352,7 +336,6 @@
 #needs overlay wingedlion_overlay
 #armor
 #define "#mountmnr 'wingedlionmount'"
-#define "#gcost +60"
 #description "If the rider dies, the winged lion will carry on fighting until the end of the battle."
 #offsety 5
 #offsetx -5
@@ -373,7 +356,6 @@
 #offsetx 35
 #offsety 52
 #define "#mountmnr 'hippomount'"
-#define "#gcost +75"
 #define "#swampsurvival"
 #description "If the rider dies, the hippopotamus will rampage through its companion's slayers before lumbering off the battlefield."
 #tag "animal hippo"

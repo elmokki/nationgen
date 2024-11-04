@@ -8,7 +8,6 @@
 #offsety 1
 #needs overlay 1
 #define "#mountmnr 'riding-horse'"
-#define "#gcost +15"
 #tag "animal horse"
 #theme "light"
 #tag "maxprot 11"
@@ -27,7 +26,6 @@
 #theme "heavy"
 #theme "iron"
 #tag "minprot 14"
-#define "#gcost +25"
 #epicness 0.25
 #tag "name commander 'knight'"
 #tag "name mounted knight"
@@ -41,12 +39,10 @@
 #armor
 #needs overlay armoredhorse1aoverlay
 #define "#mountmnr 'armoredhorse1a'"
-#define "#rcost +5"
 #tag "animal horse"
 #theme "heavy"
 #theme "bronze"
 #tag "minprot 14"
-#define "#gcost +25"
 #epicness 0.25
 #tag "name commander 'knight'"
 #tag "name mounted knight"
@@ -65,7 +61,6 @@
 #theme "bronze"
 #tag "minprot 12"
 #tag "maxprot 16"
-#define "#gcost +20"
 #epicness 0.25
 #tag "name commander 'knight'"
 #tag "name mounted knight"
@@ -79,7 +74,6 @@
 #armor
 #needs overlay armoredhorse2overlay
 #define "#mountmnr 'light-cataphracted-horse'"
-#define "#rcost +5"
 #tag "animal horse"
 #theme "heavy"
 #theme "iron"
@@ -97,7 +91,6 @@
 #sprite /graphics/mounts/standard/fayhorse.png
 #armor
 #define "#mountmnr 'fay-horse'"
-#define "#gcost +20"
 #tag "animal horse"
 #tag "minprot 6"
 #tag "maxprot 16"
@@ -114,7 +107,6 @@
 #offsety 64
 #needs overlay 8
 #define "#mountmnr 'pegasus'"
-#define "#gcost +50"
 #theme "flying"
 #tag "animal pegasus"
 #tag "guaranteedprefix pegasus"
@@ -132,8 +124,7 @@
 #armor
 #offsetx -2
 #offsety 2
-#define "#mountmnr 'peryton2'"
-#define "#gcost +50"
+#define "#mountmnr 'peryton'"
 #theme "flying"
 #tag "animal peryton"
 #tag "name commander windlord"
@@ -147,7 +138,6 @@
 #sprite /graphics/mounts/standard/unicorn.png
 #armor
 #define "#mountmnr 'unicorn'"
-#define "#gcost +30"
 #tag "minprot 6"
 #tag "maxprot 16"
 #tag "animal unicorn"
@@ -164,7 +154,6 @@
 #offsetx -5
 #offsety 2
 #define "#mountmnr 'cusidhemount'"
-#define "#gcost +20"
 #tag "animal dog"
 #tag "guaranteedprefix 'cu sidhe'"
 #tag "maxprot 5"
@@ -181,7 +170,6 @@
 #offsetx -5
 #offsety 2
 #define "#mountmnr 'barghestmount'"
-#define "#gcost +20"
 #tag "animal dog"
 #tag "guaranteedprefix barghest"
 #tag "maxprot 5"
@@ -200,8 +188,6 @@
 #offsetx -2
 #offsety 2
 #define "#mountmnr 'elk'"
-#define "#gcost +20"
-#define "#rcost +4"
 #tag "animal elk"
 #tag "minprot 0"
 #tag "maxprot 14"

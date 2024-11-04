@@ -13,6 +13,8 @@
 #command "#magicboost 53 -1"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 2"
+#command "#rcost 0"
 #end
 
 #new secondshape
@@ -39,6 +41,8 @@
 #command "#mountainsurvival"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 15"
+#command "#rcost 2"
 #end
 
 #new secondshape
@@ -48,6 +52,8 @@
 #command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
+#command "#gcost 27"
+#command "#rcost 4"
 #end
 
 #new secondshape
@@ -57,6 +63,8 @@
 #command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
+#command "#gcost 10"
+#command "#rcost 2"
 #end
 
 #new secondshape
@@ -76,6 +84,8 @@
 #command "#swampsurvival"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
+#command "#gcost 25"
+#command "#rcost 2"
 #end
 
 #new secondshape
@@ -102,51 +112,8 @@
 #command "#undisciplined"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
-#end
-
-#new secondshape
-#id "flying_fish"
-#command "#copystats 2858"
-#command "#spr1 ./graphics/machakans/mounts/flyingfish.png"
-#command "#spr2 shift"
-#command "#size 4"
-#command "#mapmove 22"
-#command "#hp 10"
-#command "#ap 9"
-#command "#prot 2"
-#command "#str 5"
-#command "#flying"
-#command "#sailing 2 2"
-#command "#enc 5"
-#command "#swampsurvival"
-#command "#magicboost 53 -1"
-#command "#transformation 0"
-#end
-
-#new secondshape
-#id "huge_locust"
-#command "#spr1 ./graphics/mounts/standard/hugelocust.png"
-#command "#spr2 shift"
-#command "#name 'Giant Locust'"
-#command "#size 4"
-#command "#mapmove 22"
-#command "#hp 14"
-#command "#ap 12"
-#command "#att 11"
-#command "#def 8"
-#command "#prot 9"
-#command "#prec 4"
-#command "#mr 5"
-#command "#mor 9"
-#command "#str 10"
-#command "#flying"
-#command "#enc 5"
-#command "#weapon 322"
-#command "#pillagebonus +2"
-#command "#supplybonus -1"
-#command "#undisciplined"
-#command "#magicboost 53 -1"
-#command "#transformation 0"
+#command "#gcost 20"
+#command "#rcost 2"
 #end
 
 #new secondshape
@@ -157,6 +124,8 @@
 #command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
+#command "#gcost 25"
+#command "#rcost 4"
 #end
 
 #new secondshape
@@ -167,6 +136,8 @@
 #command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
+#command "#gcost 25"
+#command "#rcost 4"
 #end
 
 #new secondshape
@@ -177,6 +148,8 @@
 #command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
+#command "#gcost 12"
+#command "#rcost 2"
 #end
 
 #new secondshape
@@ -188,6 +161,8 @@
 #command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
+#command "#gcost 30"
+#command "#rcost 4"
 #end
 
 #new secondshape
@@ -197,6 +172,8 @@
 #command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
+#command "#gcost 20"
+#command "#rcost 2"
 #end
 
 #new secondshape
@@ -206,6 +183,8 @@
 #command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
+#command "#gcost 25"
+#command "#rcost 8"
 #end
 
 #new secondshape
@@ -215,6 +194,8 @@
 #command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
+#command "#gcost 17"
+#command "#rcost 4"
 #end
 
 #new secondshape
@@ -243,6 +224,8 @@
 #command "#swampsurvival"
 #command "#swimming"
 #command "#magicboost 53 -1"
+#command "#gcost 10"
+#command "#rcost 2"
 #end
 
 #new secondshape
@@ -252,6 +235,8 @@
 #command "#magicboost 53 -1"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 40"
+#command "#rcost 2"
 #end
 
 #new secondshape
@@ -276,6 +261,8 @@
 #command "#poorleader"
 -- 2 misc slots
 #command "#itemslots 786432"
+#command "#gcost 35"
+#command "#rcost 5"
 #end
 
 #new secondshape
@@ -292,6 +279,8 @@
 #command "#weapon 20 --- Bite"
 #command "#ressize 2"
 #command "#enc 0"
+#command "#gcost 15"
+#command "#rcost 2"
 #end
 
 #new secondshape
@@ -309,6 +298,8 @@
 #command "#armor 254 --- Plate Barding"
 #command "#ressize 2"
 #command "#enc 0"
+#command "#gcost 15"
+#command "#rcost 8"
 #end
 
 #new secondshape
@@ -341,6 +332,8 @@
 #command "#inanimate"
 #command "#maxage 800"
 #command "#magicboost 53 -5"
+#command "#gcost 60"
+#command "#rcost 15"
 #end
 
 #new secondshape
@@ -374,6 +367,8 @@
 #command "#inanimate"
 #command "#maxage 800"
 #command "#magicboost 53 -5"
+#command "#gcost 50"
+#command "#rcost 15"
 #end
 
 #new secondshape
@@ -406,6 +401,8 @@
 #command "#inanimate"
 #command "#maxage 800"
 #command "#magicboost 53 -5"
+#command "#gcost 40"
+#command "#rcost 15"
 #end
 
 
@@ -431,6 +428,8 @@
 #command "#ap 20"
 #command "#noleader"
 #command "#itemslots 786432"
+#command "#gcost 35"
+#command "#rcost 5"
 #mount
 #end
 
@@ -456,6 +455,8 @@
 #command "#noleader"
 #command "#stealthy +40"
 #command "#itemslots 786432"
+#command "#gcost 40"
+#command "#rcost 5"
 #mount
 #end
 
@@ -467,24 +468,30 @@
 #command "#descr 'A bipedal predator lizard large enough to carry a rider.'"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 20"
+#command "#rcost 2"
 #mount
 #end
 
 #new secondshape
-#id "serpent1"
+#id "serpent"
 #command "#copystats 1179"
 #command "#copyspr 1179"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 30"
+#command "#rcost 5"
 #mount
 #end
 
 #new secondshape
-#id "serpent2"
+#id "serpent_stupid"
 #command "#copystats 4"
 #command "#copyspr 4"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 25"
+#command "#rcost 5"
 #mount
 #end
 
@@ -494,6 +501,8 @@
 #command "#copyspr 522"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 70"
+#command "#rcost 5"
 #mount
 #end
 
@@ -503,6 +512,8 @@
 #command "#copyspr 523"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 55"
+#command "#rcost 4"
 #mount
 #end
 
@@ -512,6 +523,26 @@
 #command "#copyspr 213"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#quadruped"
+-- 2 misc and body (barding)
+#command "#itemslots 851968"
+#command "#gcost 45"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
+#id "salamander_mail_barding"
+#command "#copystats 213"
+#command "#copyspr 213"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#quadruped"
+-- 2 misc and body (barding)
+#command "#itemslots 851968"
+#command "#armor 172 --- Mail Barding"
+#command "#gcost 45"
+#command "#rcost 10"
 #mount
 #end
 
@@ -521,6 +552,8 @@
 #command "#copyspr 3554"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 30"
+#command "#rcost 2"
 #mount
 #end
 
@@ -531,6 +564,8 @@
 #command "#magicboost 53 -5"
 #command "#transformation 0"
 #command "#eyes 8"
+#command "#gcost 40"
+#command "#rcost 5"
 #mount
 #end
 
@@ -559,9 +594,10 @@
 #command "#forestsurvival"
 #command "#itemslots 786432"
 #command "#eyes 8"
+#command "#gcost 20"
+#command "#rcost 4"
 #mount
 #end
-
 
 #new secondshape
 #id "amphiptere"
@@ -569,9 +605,10 @@
 #command "#copyspr 1412"
 #command "#name 'Amphiptere'"
 #command "#transformation 0"
+#command "#gcost 50"
+#command "#rcost 6"
 #mount
 #end
-
 
 #new secondshape
 #id "lionmount"
@@ -579,6 +616,8 @@
 #command "#copyspr 628"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 35"
+#command "#rcost 2"
 #mount
 #end
 
@@ -603,6 +642,8 @@
 #command "#forestsurvival"
 #command "#bird"
 #command "#itemslots 786432"
+#command "#gcost 35"
+#command "#rcost 4"
 #mount
 #end
 
@@ -628,6 +669,8 @@
 #command "#flying"
 #command "#forestsurvival"
 #command "#itemslots 786432"
+#command "#gcost 45"
+#command "#rcost 4"
 #mount
 #end
 
@@ -636,6 +679,8 @@
 #command "#copystats 2967"
 #command "#copyspr 2967"
 #command "#magicboost 53 -5"
+#command "#gcost 60"
+#command "#rcost 4"
 #mount
 #end
 
@@ -659,7 +704,10 @@
 #command "#ap 18"
 #command "#forestsurvival"
 #command "#animal"
+#command "#swimming"
 #command "#itemslots 786432"
+#command "#gcost 30"
+#command "#rcost 4"
 #mount
 #end
 
@@ -684,7 +732,10 @@
 #command "#ap 18"
 #command "#forestsurvival"
 #command "#animal"
+#command "#swimming"
 #command "#itemslots 786432"
+#command "#gcost 30"
+#command "#rcost 4"
 #mount
 #end
 
@@ -706,9 +757,12 @@
 #command "#prec 5"
 #command "#mapmove 22"
 #command "#ap 18"
-#command "#animal"
 #command "#forestsurvival"
+#command "#animal"
+#command "#swimming"
 #command "#itemslots 786432"
+#command "#gcost 30"
+#command "#rcost 4"
 #mount
 #end
 
@@ -733,6 +787,8 @@
 #command "#poisonres 100"
 #command "#itemslots 786432"
 #command "#mr 8"
+#command "#gcost 70"
+#command "#rcost 6"
 #mount
 #end
 
@@ -757,6 +813,8 @@
 #command "#demon"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 55"
+#command "#rcost 4"
 #mount
 #end
 
@@ -781,6 +839,8 @@
 #command "#demon"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 55"
+#command "#rcost 4"
 #mount
 #end
 
@@ -804,6 +864,8 @@
 #command "#demon"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 40"
+#command "#rcost 2"
 #mount
 #end
 
@@ -812,6 +874,8 @@
 #command "#copystats 3558"
 #command "#copyspr 3558"
 #command "#magicboost 53 -5"
+#command "#gcost 10"
+#command "#rcost 2"
 #mount
 #end
 
@@ -836,6 +900,8 @@
 #command "#weapon 55 --- Hoof"
 #command "#demon"
 #command "#itemslots 786432"
+#command "#gcost 50"
+#command "#rcost 2"
 #mount
 #end
 
@@ -862,6 +928,8 @@
 #command "#demon"
 #command "#itemslots 786432"
 #command "#armor 254 --- Plate Barding"
+#command "#gcost 50"
+#command "#rcost 12"
 #mount
 #end
 
@@ -888,6 +956,8 @@
 #command "#demon"
 #command "#itemslots 786432"
 #command "#armor 252 --- Light Scale Barding"
+#command "#gcost 50"
+#command "#rcost 6"
 #mount
 #end
 
@@ -914,6 +984,8 @@
 #command "#demon"
 #command "#itemslots 786432"
 #command "#armor 253 --- Cataphract Barding"
+#command "#gcost 50"
+#command "#rcost 12"
 #mount
 #end
 
@@ -940,6 +1012,8 @@
 #command "#demon"
 #command "#itemslots 786432"
 #command "#armor 257 --- Rusty Cataphract Barding"
+#command "#gcost 50"
+#command "#rcost 10"
 #mount
 #end
 
@@ -966,6 +1040,8 @@
 #command "#demon"
 #command "#itemslots 786432"
 #command "#armor 257 --- Rusty Cataphract Barding"
+#command "#gcost 50"
+#command "#rcost 10"
 #mount
 #end
 
@@ -992,6 +1068,8 @@
 #command "#demon"
 #command "#itemslots 786432"
 #command "#armor 257 --- Rusty Cataphract Barding"
+#command "#gcost 50"
+#command "#rcost 10"
 #mount
 #end
 
@@ -1018,6 +1096,8 @@
 #command "#demon"
 #command "#itemslots 786432"
 #command "#armor 253 --- Cataphract Barding"
+#command "#gcost 50"
+#command "#rcost 12"
 #mount
 #end
 
@@ -1043,6 +1123,8 @@
 #command "#weapon 55 --- Hoof"
 #command "#armor 172 --- Mail Barding"
 #command "#demon"
+#command "#gcost 25"
+#command "#rcost 12"
 #mount
 #end
 
@@ -1068,6 +1150,8 @@
 #command "#weapon 55 --- Hoof"
 #command "#armor 253 --- Cataphract Barding"
 #command "#demon"
+#command "#gcost 25"
+#command "#rcost 12"
 #mount
 #end
 
@@ -1099,6 +1183,8 @@
 #command "#heat 3"
 #command "#nametype 116"
 #command "#itemslots 786432"
+#command "#gcost 40"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1106,6 +1192,8 @@
 #id "camel"
 #command "#copystats 3538"
 #command "#copyspr 3538"
+#command "#gcost 20"
+#command "#rcost 2"
 #mount
 #end
 
@@ -1115,6 +1203,8 @@
 #command "#spr1 ./graphics/mounts/standard/camel_armored_iron.png"
 #command "#spr2 shift"
 #command "#armor 172"
+#command "#gcost 20"
+#command "#rcost 8"
 #mount
 #end
 
@@ -1124,6 +1214,8 @@
 #command "#spr1 ./graphics/mounts/standard/camel_armored_bronze.png"
 #command "#spr2 shift"
 #command "#armor 172"
+#command "#gcost 20"
+#command "#rcost 8"
 #mount
 #end
 
@@ -1133,6 +1225,8 @@
 #command "#spr1 ./graphics/mounts/standard/camel_barded.png"
 #command "#spr2 shift"
 #command "#armor 251"
+#command "#gcost 20"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1162,6 +1256,8 @@
 #command "#mountainsurvival"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 15"
+#command "#rcost 2"
 #mount
 #end
 
@@ -1191,6 +1287,8 @@
 #command "#wastesurvival"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 40"
+#command "#rcost 2"
 #mount
 #end
 
@@ -1219,6 +1317,8 @@
 #command "#mountainsurvival"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 20"
+#command "#rcost 2"
 #mount
 #end
 
@@ -1230,6 +1330,8 @@
 #command "#magicboost 53 -5"
 #command "#name 'Caveman'"
 #command "#armor 44"
+#command "#gcost 40"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1240,6 +1342,8 @@
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#name 'Caveman'"
+#command "#gcost 40"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1253,6 +1357,8 @@
 #command "#fireres 15"
 #command "#hp 29"
 #command "#mr 9"
+#command "#gcost 40"
+#command "#rcost 6"
 #mount
 #end
 
@@ -1263,6 +1369,8 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 75"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1273,6 +1381,8 @@
 #command "#itemslots 786432"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 25"
+#command "#rcost 2"
 #mount
 #end
 
@@ -1303,11 +1413,13 @@
 #command "#forestsurvival"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 20"
+#command "#rcost 4"
 #mount
 #end
 
 #new secondshape
-#id "peryton2"
+#id "peryton"
 #command "#spr1 ./graphics/mounts/standard/peryton2.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
@@ -1331,6 +1443,8 @@
 #command "#itemslots 786432"
 #command "#transformation 0"
 #command "#flying"
+#command "#gcost 50"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1342,6 +1456,8 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 50"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1352,6 +1468,8 @@
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
+#command "#gcost 15"
+#command "#rcost 2"
 #mount
 #end
 
@@ -1361,6 +1479,8 @@
 #command "#copyspr 3513"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
+#command "#gcost 15"
+#command "#rcost 2"
 #mount
 #end
 
@@ -1370,6 +1490,8 @@
 #command "#copyspr 3516"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
+#command "#gcost 15"
+#command "#rcost 10"
 #mount
 #end
 
@@ -1379,6 +1501,8 @@
 #command "#copyspr 3517"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
+#command "#gcost 15"
+#command "#rcost 12"
 #mount
 #end
 
@@ -1388,6 +1512,8 @@
 #command "#copyspr 3514"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
+#command "#gcost 15"
+#command "#rcost 2"
 #mount
 #end
 
@@ -1397,6 +1523,8 @@
 #command "#copyspr 3515"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
+#command "#gcost 15"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1407,6 +1535,8 @@
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
+#command "#gcost 15"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1432,6 +1562,8 @@
 #command "#itemslots 786432"
 #command "#transformation 0"
 #command "#flying"
+#command "#gcost 50"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1441,6 +1573,8 @@
 #command "#copyspr 3524"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
+#command "#gcost 30"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1450,6 +1584,8 @@
 #command "#copyspr 3525"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
+#command "#gcost 30"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1459,6 +1595,8 @@
 #command "#copyspr 3933"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
+#command "#gcost 25"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1468,6 +1606,8 @@
 #command "#copyspr 3563"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
+#command "#gcost 20"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1477,6 +1617,8 @@
 #command "#copyspr 3564"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
+#command "#gcost 20"
+#command "#rcost 6"
 #mount
 #end
 
@@ -1500,6 +1642,8 @@
 #command "#smartmount 100"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
+#command "#gcost 40"
+#command "#rcost 6"
 #mount
 #end
 
@@ -1525,6 +1669,8 @@
 #command "#magicboost 53 -5"
 -- 2 misc slots
 #command "#itemslots 786432"
+#command "#gcost 50"
+#command "#rcost 6"
 #mount
 #end
 
@@ -1555,6 +1701,8 @@
 #command "#magicboost 53 -5"
 -- 2 misc slots
 #command "#itemslots 786432"
+#command "#gcost 50"
+#command "#rcost 6"
 #mount
 #end
 
@@ -1564,6 +1712,8 @@
 #command "#copyspr 3565"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
+#command "#gcost 20"
+#command "#rcost 6"
 #mount
 #end
 
@@ -1573,6 +1723,8 @@
 #command "#copyspr 3570"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
+#command "#gcost 40"
+#command "#rcost 8"
 #mount
 #end
 
@@ -1584,6 +1736,8 @@
 #command "#nomovepen"
 #command "#supplybonus +1"
 #command "#wastesurvival"
+#command "#gcost 20"
+#command "#rcost 8"
 #mount
 #end
 
@@ -1595,6 +1749,8 @@
 #command "#nomovepen"
 #command "#supplybonus +1"
 #command "#wastesurvival"
+#command "#gcost 20"
+#command "#rcost 8"
 #mount
 #end
 
@@ -1605,6 +1761,8 @@
 #command "#spr2 shift"
 #command "#nomovepen"
 #command "#coldblood"
+#command "#gcost 25"
+#command "#rcost 14"
 #mount
 #end
 
@@ -1621,6 +1779,8 @@
 #command "#mapmove 18"
 #command "#nomovepen"
 #command "#coldblood"
+#command "#gcost 50"
+#command "#rcost 24"
 #mount
 #end
 
@@ -1645,6 +1805,8 @@
 #command "#unsurr 1"
 #command "#swimming"
 #command "#nomovepen"
+#command "#gcost 10"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1670,6 +1832,8 @@
 #command "#unsurr 1"
 #command "#swimming"
 #command "#nomovepen"
+#command "#gcost 30"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1695,6 +1859,8 @@
 #command "#unsurr 1"
 #command "#swimming"
 #command "#nomovepen"
+#command "#gcost 10"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1705,25 +1871,8 @@
 #command "#spr2 shift"
 #command "#nomovepen"
 #command "#coldblood"
-#mount
-#end
-
-#new secondshape
-#id "chariot_boar_oriental"
-#command "#spr1 ./graphics/mounts/chariots/boar_oriental.png"
-#command "#spr2 shift"
-#command "#copystats 3563"
-#command "#hp 15"
-#command "#trample"
-#command "#size 5"
-#command "#prot 5"
-#command "#weapon 331" -- Gore
-#command "#mapmove 20"
-#command "#ap 18"
-#command "#ressize 3"
-#command "#enc 4"
-#command "#unsurr 1"
-#command "#nomovepen"
+#command "#gcost 25"
+#command "#rcost 14"
 #mount
 #end
 
@@ -1743,6 +1892,29 @@
 #command "#enc 4"
 #command "#unsurr 1"
 #command "#nomovepen"
+#command "#gcost 25"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "chariot_boar_oriental"
+#command "#spr1 ./graphics/mounts/chariots/boar_oriental.png"
+#command "#spr2 shift"
+#command "#copystats 3563"
+#command "#hp 15"
+#command "#trample"
+#command "#size 5"
+#command "#prot 5"
+#command "#weapon 331" -- Gore
+#command "#mapmove 20"
+#command "#ap 18"
+#command "#ressize 3"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#nomovepen"
+#command "#gcost 25"
+#command "#rcost 6"
 #mount
 #end
 
@@ -1763,6 +1935,8 @@
 #command "#enc 4"
 #command "#unsurr 1"
 #command "#nomovepen"
+#command "#gcost 30"
+#command "#rcost 6"
 #mount
 #end
 
@@ -1771,6 +1945,8 @@
 #command "#copystats 3569"
 #command "#spr1 ./graphics/mounts/chariots/horse_longdead.png"
 #command "#spr2 shift"
+#command "#gcost 30"
+#command "#rcost 6"
 #mount
 #end
 
@@ -1780,6 +1956,8 @@
 #command "#copyspr 2526"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
+#command "#gcost 30"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1790,6 +1968,8 @@
 #command "#quadruped"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
+#command "#gcost 30"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1801,6 +1981,8 @@
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#itemslots 786950"
+#command "#gcost 50"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1839,6 +2021,8 @@
 #command "#magicboost 53 -5"
 #command "#humanoid"
 #command "#itemslots 786950"
+#command "#gcost 40"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1848,6 +2032,8 @@
 #command "#copyspr 2132"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 40"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1857,6 +2043,8 @@
 #command "#copyspr 2131"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 100"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1885,6 +2073,8 @@
 #command "#undisciplined"
 #command "#animal"
 #command "#itemslots 786432"
+#command "#gcost 15"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1894,17 +2084,21 @@
 #command "#copyspr 2185"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 15"
+#command "#rcost 4"
 #mount
 #end
 
 #new secondshape
-#id "crocodilemount2"
+#id "crocodilemount_mail_barding"
 #command "#copystats 2185"
 #command "#spr1 ./graphics/mounts/standard/crocodile_monster_armored.png"
 #command "#spr2 shift"
 #command "#armor 172 --- Mail Barding"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 15"
+#command "#rcost 10"
 #mount
 #end
 
@@ -1915,6 +2109,8 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 10"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1925,6 +2121,8 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 20"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1935,6 +2133,8 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 5"
+#command "#rcost 2"
 #mount
 #end
 
@@ -1946,6 +2146,8 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 5"
+#command "#rcost 2"
 #mount
 #end
 
@@ -1975,6 +2177,8 @@
 #command "#enc 3"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 20"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2004,6 +2208,8 @@
 #command "#enc 2"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 25"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2014,6 +2220,8 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 25"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2024,6 +2232,8 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 25"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2036,6 +2246,8 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 25"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2046,6 +2258,8 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 5"
+#command "#rcost 2"
 #mount
 #end
 
@@ -2056,6 +2270,8 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 5"
+#command "#rcost 2"
 #mount
 #end
 
@@ -2066,31 +2282,10 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 10"
+#command "#rcost 2"
 #mount
 #end
-
-
-#new secondshape
-#id "giantswanmount"
-#command "#copystats 2929"
-#command "#spr1 ./graphics/sidhe/mounts/giantswan.png"
-#command "#spr2 shift"
-#command "#name 'Giant Swan'"
-#command "#hp 18"
-#command "#prot 2"
-#command "#str 12"
-#command "#size 5"
-#command "#mapmove 26"
-#command "#ap 8"
-#command "#sailing 3 3"
-#command "#enc 4"
-#command "#swimming"
-#command "#magicboost 53 -5"
-#command "#itemslots 786432"
-#command "#transformation 0"
-#mount
-#end
-
 
 #new secondshape
 #id "giantswanmount"
@@ -2111,6 +2306,8 @@
 -- 2 misc slots
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 50"
+#command "#rcost 2"
 #mount
 #end
 
@@ -2122,6 +2319,8 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 10"
+#command "#rcost 2"
 #mount
 #end
 
@@ -2144,6 +2343,8 @@
 #command "#mapmove 28"
 #command "#ap 24"
 #command "#flying"
+#command "#gcost 60"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2176,6 +2377,8 @@
 #command "#maxage 28"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 20"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2207,6 +2410,8 @@
 #command "#swampsurvival"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 20"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2239,11 +2444,13 @@
 #command "#amphibian"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 20"
+#command "#rcost 4"
 #mount
 #end
 
 #new secondshape
-#id "ratmount"
+#id "giant_rat_mount"
 #command "#name 'Giant Rat'"
 #command "#spr1 ./graphics/mounts/standard/giantrat.png"
 #command "#spr2 shift"
@@ -2271,6 +2478,8 @@
 #command "#maxage 7"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 10"
+#command "#rcost 2"
 #mount
 #end
 
@@ -2305,6 +2514,8 @@
 #command "#maxage 7"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 15"
+#command "#rcost 6"
 #mount
 #end
 
@@ -2339,6 +2550,8 @@
 #command "#maxage 7"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 15"
+#command "#rcost 6"
 #mount
 #end
 
@@ -2361,6 +2574,8 @@
 #command "#undisciplined"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 10"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2384,11 +2599,12 @@
 #command "#undisciplined"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 10"
+#command "#rcost 8"
 #mount
 #end
 
 ---- Version of dwarf elephants that can have their riders replaced
-
 #new secondshape
 #id "dwarfelephantremount"
 #command "#name 'Dwarf Elephant'"
@@ -2408,6 +2624,8 @@
 #command "#undisciplined"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#gcost 10"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2437,11 +2655,12 @@
 #command "#magicboost 53 -5"
 #command "#transformation 0"
 #command "#quadruped"
+#command "#gcost 60"
+#command "#rcost 4"
 #mount
 #end
 
 ---- Version of hippos that can have their riders replaced
-
 #new secondshape
 #id "hipporemount"
 #command "#name 'Hippopotamus'"
@@ -2468,6 +2687,8 @@
 #command "#magicboost 53 -5"
 #command "#transformation 0"
 #command "#quadruped"
+#command "#gcost 60"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2504,6 +2725,8 @@
 #command "#forestsurvival"
 #command "#quadruped"
 #command "#itemslots 786432"
+#command "#gcost 50"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2542,5 +2765,7 @@
 #command "#quadruped"
 #command "#lizard"
 #command "#itemslots 786432"
+#command "#gcost 60"
+#command "#rcost 4"
 #mount
 #end
