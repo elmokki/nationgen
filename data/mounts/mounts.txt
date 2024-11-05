@@ -1,6 +1,17 @@
 -- These define the actual mount of a mounted unit; i.e. the stats of the mount itself when on its own.
--- #gcost and #rcost don't get parsed here, so they should be set in the mount items defined for unit poses.
--- Those mount items represent the combined rider and mount unit.
+--
+-- Every mount form here should have an explicit #command "#gcost X" and #command "#rcost" set. These
+-- set the price of the mount form itself, and Dominions adds it to the price of the overall mounted
+-- unit when recruiting it.
+--
+-- Since #copystats can be used on both recruitable and non-recruitable creatures (for example, salamanders
+-- which cost 50g in vanilla and scorpion beasts which are a summon and therefore cost 0g), not setting an
+-- explicit #gcost makes it harder to parse what the cost of the unit using the mount will be.
+--
+-- The #id of the mount form is what is used to "hook up" the mount to the rider. Poses will have a
+-- #load statement for a file containing mounts, where they will be defined like an equipped item, in the same
+-- way as armours or weapons. These mount item definitions are where the #id of the mount form is referenced,
+-- through the #command "#mountmnr '<mount_form_id>'" command.
 
 #new secondshape
 #id "vanara_bearer"
