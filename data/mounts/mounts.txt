@@ -212,43 +212,6 @@
 #end
 
 #new secondshape
-#id "ghoul_horse_mount"
-#command "#name 'Ghoul Horse'"
-#command "#spr1 ./graphics/mounts/standard/ghoulhorse.png"
-#command "#spr2 shift"
-#armor
-#command "#size 5"
-#command "#hp +4"
-#command "#mr -2"
-#command "#mapmove 22"
-#command "#ap 24"
-#command "#weapon 20 --- Bite"
-#command "#ressize 2"
-#command "#enc 0"
-#command "#gcost 15"
-#command "#rcost 2"
-#end
-
-#new secondshape
-#id "ghoul_horse_armored_mount"
-#command "#name 'Ghoul Horse'"
-#command "#spr1 ./graphics/mounts/standard/ghoulhorse_armored.png"
-#command "#spr2 shift"
-#command "#size 5"
-#command "#hp +6"
-#command "#mr -2"
-#command "#mapmove 22"
-#command "#ap 20"
-#command "#weapon 20 --- Bite"
-#command "#weapon 56 --- Hoof"
-#command "#armor 254 --- Plate Barding"
-#command "#ressize 2"
-#command "#enc 0"
-#command "#gcost 15"
-#command "#rcost 8"
-#end
-
-#new secondshape
 #id "mech_ant_mount"
 #command "#spr1 ./graphics/hoburg/mounts/mech_ant.png"
 #command "#spr2 shift"
@@ -832,16 +795,6 @@
 #command "#magicboost 53 -5"
 #command "#transformation 0"
 #command "#gcost 40"
-#command "#rcost 2"
-#mount
-#end
-
-#new secondshape
-#id "skeletal_horse_mount"
-#command "#copystats 3558"
-#command "#copyspr 3558"
-#command "#magicboost 53 -5"
-#command "#gcost 10"
 #command "#rcost 2"
 #mount
 #end
@@ -1508,30 +1461,50 @@
 #end
 
 #new secondshape
-#id "pegasus_mount"
-#command "#copyspr 3556"
-#command "#name 'Pegasus'"
-#command "#weapon 55 -- Hoof"
-#command "#size 6"
-#command "#hp 25"
-#command "#prot 3"
-#command "#mr 11"
-#command "#mor 11"
-#command "#str 15"
-#command "#att 12"
-#command "#def 12"
-#command "#prec 5"
-#command "#enc 1"
-#command "#mapmove 26"
-#command "#ap 30"
-#command "#animal"
-#command "#smartmount 100"
-#command "#itemslots 786432"
-#command "#transformation 0"
-#command "#flying"
-#command "#gcost 50"
-#command "#rcost 4"
+#id "skeletal_horse_mount"
+#command "#copystats 3558"
+#command "#copyspr 3558"
+#command "#magicboost 53 -5"
+#command "#gcost 10"
+#command "#rcost 2"
 #mount
+#end
+
+#new secondshape
+#id "ghoul_horse_mount"
+#command "#name 'Ghoul Horse'"
+#command "#spr1 ./graphics/mounts/standard/ghoulhorse.png"
+#command "#spr2 shift"
+#armor
+#command "#size 5"
+#command "#hp +4"
+#command "#mr -2"
+#command "#mapmove 22"
+#command "#ap 24"
+#command "#weapon 20 --- Bite"
+#command "#ressize 2"
+#command "#enc 0"
+#command "#gcost 15"
+#command "#rcost 2"
+#end
+
+#new secondshape
+#id "ghoul_horse_armored_mount"
+#command "#name 'Ghoul Horse'"
+#command "#spr1 ./graphics/mounts/standard/ghoulhorse_armored.png"
+#command "#spr2 shift"
+#command "#size 5"
+#command "#hp +6"
+#command "#mr -2"
+#command "#mapmove 22"
+#command "#ap 20"
+#command "#weapon 20 --- Bite"
+#command "#weapon 56 --- Hoof"
+#command "#armor 254 --- Plate Barding"
+#command "#ressize 2"
+#command "#enc 0"
+#command "#gcost 15"
+#command "#rcost 8"
 #end
 
 #new secondshape
@@ -1590,13 +1563,24 @@
 #end
 
 #new secondshape
-#id "horse_cataphract_barding_oriental_chariot_"
+#id "horse_cataphract_barding_oriental_chariot"
 #command "#copystats 3565"
 #command "#copyspr 3565"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#gcost 20"
 #command "#rcost 10"
+#mount
+#end
+
+#new secondshape
+#id "two_horse_chariot"
+#command "#copystats 3570"
+#command "#copyspr 3570"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#gcost 40"
+#command "#rcost 8"
 #mount
 #end
 
@@ -1653,6 +1637,43 @@
 #end
 
 #new secondshape
+#id "longdead_horse_chariot"
+#command "#copystats 3569"
+#command "#spr1 ./graphics/mounts/chariots/horse_longdead.png"
+#command "#spr2 shift"
+#command "#gcost 30"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "pegasus_mount"
+#command "#copyspr 3556"
+#command "#name 'Pegasus'"
+#command "#weapon 55 -- Hoof"
+#command "#size 6"
+#command "#hp 25"
+#command "#prot 3"
+#command "#mr 11"
+#command "#mor 11"
+#command "#str 15"
+#command "#att 12"
+#command "#def 12"
+#command "#prec 5"
+#command "#enc 1"
+#command "#mapmove 26"
+#command "#ap 30"
+#command "#animal"
+#command "#smartmount 100"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#flying"
+#command "#gcost 50"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
 #id "cu_sidhe_chariot"
 #command "#copystats 3563"
 #command "#copyspr 3572"
@@ -1681,17 +1702,6 @@
 #command "#itemslots 786432"
 #command "#gcost 50"
 #command "#rcost 6"
-#mount
-#end
-
-#new secondshape
-#id "two_horse_chariot"
-#command "#copystats 3570"
-#command "#copyspr 3570"
-#command "#magicboost 53 -5"
-#command "#itemslots 786432"
-#command "#gcost 40"
-#command "#rcost 8"
 #mount
 #end
 
@@ -1902,16 +1912,6 @@
 #command "#enc 4"
 #command "#unsurr 1"
 #command "#nomovepen"
-#command "#gcost 30"
-#command "#rcost 6"
-#mount
-#end
-
-#new secondshape
-#id "longdead_horse_chariot"
-#command "#copystats 3569"
-#command "#spr1 ./graphics/mounts/chariots/horse_longdead.png"
-#command "#spr2 shift"
 #command "#gcost 30"
 #command "#rcost 6"
 #mount
