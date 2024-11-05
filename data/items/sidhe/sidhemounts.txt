@@ -5,7 +5,7 @@
 #needs overlay no_overlay
 #armor
 #offsety 1
-#define "#mountmnr 'fay-horse'"
+#define "#mountmnr 'fay_horse_mount'"
 #define "#gcost -5"
 #tag "animal horse"
 #tag "minprot 6"
@@ -21,7 +21,7 @@
 #armor
 #offsetx -5
 #offsety 1
-#define "#mountmnr 'cusidhemount'"
+#define "#mountmnr 'cu_sidhe_mount'"
 #tag "animal dog"
 #tag "minprot 5"
 #tag "maxprot 15"
@@ -37,7 +37,7 @@
 #offsetx 28
 #offsety 64
 #needs overlay 8
-#define "#mountmnr 'pegasus'"
+#define "#mountmnr 'pegasus_mount'"
 #define "#gcost -5"
 #theme "flying"
 #tag "animal pegasus"
@@ -55,7 +55,7 @@
 #armor
 #offsetx -2
 #offsety 2
-#define "#mountmnr 'peryton'"
+#define "#mountmnr 'peryton_mount'"
 #theme "flying"
 #tag "animal peryton"
 #tag "name commander windlord"
@@ -70,7 +70,7 @@
 #needs overlay no_overlay
 #armor
 #offsety 1
-#define "#mountmnr 'unicorn'"
+#define "#mountmnr 'unicorn_mount'"
 #define "#gcost -5"
 #tag "minprot 6"
 #tag "maxprot 16"
@@ -89,7 +89,7 @@
 #offsetx 28
 #offsety 69
 #needs overlay 14
-#define "#mountmnr 'wyvern'"
+#define "#mountmnr 'wyvern_mount'"
 #theme "flying"
 #theme "heavy"
 #tag "animal wyvern"
@@ -111,7 +111,7 @@
 #armor
 #offsetx 30
 #offsety 45
-#define "#mountmnr 'moose'"
+#define "#mountmnr 'moose_mount'"
 #tag "animal moose"
 #tag "minprot 0"
 #tag "maxprot 16"
@@ -128,7 +128,7 @@
 #armor
 #offsetx -2
 #offsety 2
-#define "#mountmnr 'elk'"
+#define "#mountmnr 'elk_mount'"
 #tag "animal elk"
 #tag "minprot 0"
 #tag "maxprot 14"
@@ -146,7 +146,7 @@
 #define "#size 5"
 #define "#mapmove 26"
 #define "#ap 25"
-#define "#mountmnr 'nightmare'"
+#define "#mountmnr 'nightmare_mount'"
 #define "#gcost -10"
 #define "#ressize 2"
 #define "#enc 4"
@@ -163,7 +163,7 @@
 #gameid -1
 #sprite /graphics/mounts/standard/bear.png
 #armor
-#define "#mountmnr 'greatbear'"
+#define "#mountmnr 'great_bear_mount'"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety -2
 #offsetx -5
@@ -178,7 +178,7 @@
 #gameid -1
 #sprite /graphics/mounts/standard/bear_small.png
 #armor
-#define "#mountmnr 'smallbearmount'"
+#define "#mountmnr 'bear_mount'"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety 4
 #offsetx -5
@@ -197,7 +197,7 @@
 #armor
 #offsetx -2
 #offsety 12
-#define "#mountmnr 'giantswanmount'"
+#define "#mountmnr 'giant_swan_mount'"
 #define "#gcost -5"
 #theme "light"
 #tag "animal swan"

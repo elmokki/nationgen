@@ -8,7 +8,7 @@
 #armor
 #offsetx 35
 #offsety 33
-#define "#mountmnr 'moose'"
+#define "#mountmnr 'moose_mount'"
 #tag "animal moose"
 #tag "minprot 0"
 #tag "maxprot 16"
@@ -25,7 +25,7 @@
 #armor
 #offsetx 0
 #offsety -14
-#define "#mountmnr 'elk'"
+#define "#mountmnr 'elk_mount'"
 #tag "animal elk"
 #tag "minprot 0"
 #tag "maxprot 14"
@@ -40,7 +40,7 @@
 #offsetx -4
 #offsety -19
 #armor
-#define "#mountmnr 'greatbear'"
+#define "#mountmnr 'great_bear_mount'"
 #define "#gcost -5"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #tag "animal bear"
@@ -56,7 +56,7 @@
 #offsetx -4
 #offsety -19
 #armor
-#define "#mountmnr 'bearmount_polar'"
+#define "#mountmnr 'polar_bear_mount'"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #tag "animal bear"
 #tag "name commander beastmaster"
@@ -71,7 +71,7 @@
 #offsetx -3
 #offsety -11
 #armor
-#define "#mountmnr 'smallbearmount'"
+#define "#mountmnr 'bear_mount'"
 #define "#gcost +30"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #tag "animal bear"
@@ -88,7 +88,7 @@
 #offsetx -4
 #offsety -10
 #armor
-#define "#mountmnr 'cavecowmount'"
+#define "#mountmnr 'cave_cow_mount'"
 #description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
 #tag "animal 'cave cow'"
 #tag "guaranteedprefix 'cave cow'"
@@ -104,7 +104,7 @@
 #offsety -16
 #armor
 #needs overlay direwolf2_overlay
-#define "#mountmnr 'direwolf2mount'"
+#define "#mountmnr 'dire_wolf_mount_2'"
 #tag "animal wolf"
 #theme "light"
 #tag "maxprot 11"
@@ -121,7 +121,7 @@
 #offsetx -3
 #offsety -2
 #needs overlay 6
-#define "#mountmnr 'serpent'"
+#define "#mountmnr 'serpent_mount'"
 #tag "animal serpent"
 #theme "light"
 #tag "guaranteedprefix serpent"
@@ -139,7 +139,7 @@
 #armor
 #offsetx -3
 #offsety -11
-#define "#mountmnr 'whitetiger'"
+#define "#mountmnr 'white_tiger_mount'"
 #theme "specialmount"
 #theme "light"
 #tag "animal tiger"
@@ -156,7 +156,7 @@
 #sprite /graphics/mounts/standard/seadog.png
 #armor
 #offsety -10
-#define "#mountmnr 'seadogmount'"
+#define "#mountmnr 'sea_dog_mount'"
 #define "#swimming"
 #command "#amphibian"
 #theme "light"
@@ -175,7 +175,7 @@
 #armor
 #offsetx -6
 #offsety -9
-#define "#mountmnr 'jaguarmount'"
+#define "#mountmnr 'jaguar_mount'"
 #define "#swimming"
 #theme "specialmount"
 #theme "light"
@@ -194,7 +194,7 @@
 #basechance 0.125
 #offsetx 38
 #offsety -2
-#define "#mountmnr 'cavegrubmount'"
+#define "#mountmnr 'cave_grub_mount'"
 #description "The cave grub will fight until the end of the battle should the rider die"
 #tag "animal 'cave grub'"
 #tag "guaranteedprefix grub"
@@ -213,7 +213,7 @@
 #armor
 #offsetx 2
 #offsety -9
-#define "#mountmnr 'toad_jaguar_mount'"
+#define "#mountmnr 'jaguar_toad_mount'"
 #define "#swimming"
 #description "The giant toad will fight until the end of the battle should the rider die"
 #tag "animal 'giant toad'"
@@ -231,7 +231,7 @@
 #armor
 #offsetx 2
 #offsety -9
-#define "#mountmnr 'toad_sapphire_mount'"
+#define "#mountmnr 'sapphire_toad_mount'"
 #define "#swimming"
 #description "The giant frog will fight until the end of the battle should the rider die"
 #tag "animal 'giant frog'"

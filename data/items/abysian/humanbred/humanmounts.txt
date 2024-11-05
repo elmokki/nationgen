@@ -8,7 +8,7 @@
 #sprite /graphics/mounts/standard/brownhorse.png
 #armor
 #needs overlay 1
-#define "#mountmnr 'riding-horse'"
+#define "#mountmnr 'riding_horse_mount'"
 #tag "animal horse"
 #theme "light"
 #tag "maxprot 11"
@@ -22,7 +22,7 @@
 #sprite /graphics/mounts/standard/armoredhorse1.png
 #armor
 #needs overlay 2
-#define "#mountmnr 'armored-horse'"
+#define "#mountmnr 'destrier_plate_barding_mount'"
 #tag "animal horse"
 #theme "heavy"
 #tag "minprot 14"
@@ -39,7 +39,7 @@
 #sprite /graphics/mounts/standard/armoredhorse2.png
 #armor
 #needs overlay armoredhorse2overlay
-#define "#mountmnr 'war-horse'"
+#define "#mountmnr 'war_horse_mount'"
 #tag "animal horse"
 #theme "heavy"
 #tag "minprot 12"
@@ -60,7 +60,7 @@
 #armor
 #offsetx -3
 #needs overlay 4
-#define "#mountmnr 'cataphracted-horse'"
+#define "#mountmnr 'war_horse_cataphract_barding_mount'"
 #define "#gcost +5"
 #tag "animal horse"
 #theme "heavy"
@@ -78,7 +78,7 @@
 #armor
 #offsetx -3
 #needs overlay 5
-#define "#mountmnr 'light-cataphracted-horse'"
+#define "#mountmnr 'war_horse_light_scale_barding_mount_1'"
 #define "#gcost +5"
 #tag "animal horse"
 #tag "minprot 10"
@@ -96,7 +96,7 @@
 #offsetx 28
 #offsety 64
 #needs overlay 8
-#define "#mountmnr 'pegasus'"
+#define "#mountmnr 'pegasus_mount'"
 #theme "flying"
 #tag "animal pegasus"
 #tag "name commander windlord"
@@ -114,7 +114,7 @@
 #armor
 #needs overlay redguardoverlay
 #offsety 1
-#define "#mountmnr 'cataphracted-horse'"
+#define "#mountmnr 'war_horse_cataphract_barding_mount'"
 #define "#gcost +5"
 #tag "animal horse"
 #theme "heavy"
@@ -127,7 +127,7 @@
 #sprite /graphics/mounts/standard/unicorn2.png
 #armor
 #offsety 1
-#define "#mountmnr 'armored-unicorn'"
+#define "#mountmnr 'unicorn_silver_barding_mount'"
 #define "#gcost +5"
 #theme "heavy"
 #tag "minprot 12"
@@ -144,7 +144,7 @@
 #sprite /graphics/mounts/standard/unicorn.png
 #armor
 #offsety 1
-#define "#mountmnr 'unicorn'"
+#define "#mountmnr 'unicorn_mount'"
 #define "#gcost +5"
 #theme "heavy"
 #tag "minprot 8"
@@ -161,7 +161,7 @@
 #sprite /graphics/mounts/standard/fayhorse.png
 #armor
 #offsety 1
-#define "#mountmnr 'fay-horse'"
+#define "#mountmnr 'fay_horse_mount'"
 #define "#gcost +5"
 #tag "animal horse"
 #theme "heavy"
@@ -178,7 +178,7 @@
 #offsetx 28
 #offsety 69
 #needs overlay 14
-#define "#mountmnr 'wyvern'"
+#define "#mountmnr 'wyvern_mount'"
 #theme "flying"
 #theme "heavy"
 #tag "animal wyvern"
@@ -199,7 +199,7 @@
 #armor
 #offsetx 30
 #offsety 45
-#define "#mountmnr 'moose'"
+#define "#mountmnr 'moose_mount'"
 #tag "animal moose"
 #tag "minprot 0"
 #tag "maxprot 16"
@@ -214,7 +214,7 @@
 #sprite /graphics/mounts/standard/nightmare.png
 #armor
 #offsety 1
-#define "#mountmnr 'nightmare'"
+#define "#mountmnr 'nightmare_mount'"
 #define "#gcost -10"
 #tag "animal nightmare"
 #description "Leaves a nightmare behind when the rider dies"
@@ -228,7 +228,7 @@
 #gameid -1
 #sprite /graphics/mounts/standard/bear.png
 #armor
-#define "#mountmnr 'greatbear'"
+#define "#mountmnr 'great_bear_mount'"
 #define "#gcost -5"
 #offsety -2
 #offsetx -1
@@ -243,7 +243,7 @@
 #gameid -1
 #sprite /graphics/mounts/standard/lion.png
 #armor
-#define "#mountmnr 'lionmount'"
+#define "#mountmnr 'lion_mount'"
 
 #description "If the rider dies, the lion will carry on fighting until the end of the battle."
 #offsety 5
@@ -261,7 +261,7 @@
 #armor
 #offsetx 23
 #offsety 6
-#define "#mountmnr 'scorpionmount'"
+#define "#mountmnr 'scorpion_beast_mount'"
 #define "#gcost +50"
 #tag "animal scorpion"
 #theme "heavy"
@@ -284,7 +284,7 @@
 #needs overlay fossil_overlay
 #offsetx 34
 #offsety 31
-#define "#mountmnr 'fossilmount'"
+#define "#mountmnr 'fossil_mount'"
 #tag "animal fossil"
 #theme "heavy"
 #description "Leaves a fossilized giant behind when the rider dies"
@@ -301,7 +301,7 @@
 #basechance 0.1
 #sprite /graphics/mounts/standard/cavecow.png
 #armor
-#define "#mountmnr 'cavecowmount'"
+#define "#mountmnr 'cave_cow_mount'"
 #description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
 #offsetx -8
 #offsety 6
@@ -316,7 +316,7 @@
 #sprite /graphics/mounts/standard/direwolf1.png
 #armor
 #needs overlay direwolf1_overlay
-#define "#mountmnr direwolf1mount"
+#define "#mountmnr 'direwolf_mount_1'"
 #define "#gcost +25"
 #tag "animal wolf"
 #theme "light"

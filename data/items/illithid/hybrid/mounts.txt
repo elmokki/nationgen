@@ -7,7 +7,7 @@
 #offsety -20
 #armor
 #needs overlay 1
-#define "#mountmnr 'riding-horse'"
+#define "#mountmnr 'riding_horse_mount'"
 #tag "animal horse"
 #theme "light"
 #tag "maxprot 11"
@@ -24,7 +24,7 @@
 #armor
 #offsetx 5
 #offsety 35
-#define "#mountmnr 'camel'"
+#define "#mountmnr 'camel_mount'"
 #tag "animal camel"
 #tag "maxprot 11"
 #theme "light"
@@ -38,7 +38,7 @@
 #offsetx -0
 #offsety -12
 #armor
-#define "#mountmnr 'cavecowmount'"
+#define "#mountmnr 'cave_cow_mount'"
 #description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
 #tag "animal 'cave cow'"
 #tag "guaranteedprefix 'cave cow'"
@@ -53,7 +53,7 @@
 #offsetx -0
 #offsety -5
 #needs overlay 6
-#define "#mountmnr 'serpent'"
+#define "#mountmnr 'serpent_mount'"
 #tag "animal serpent"
 #theme "light"
 #tag "guaranteedprefix serpent"
@@ -84,7 +84,7 @@
 #sprite /graphics/mounts/standard/seadog.png
 #armor
 #offsety -13
-#define "#mountmnr 'seadogmount'"
+#define "#mountmnr 'sea_dog_mount'"
 #define "#swimming"
 #command "#amphibian"
 #theme "light"
@@ -102,7 +102,7 @@
 #armor
 #offsetx 0
 #offsety -13
-#define "#mountmnr 'toad_jaguar_mount'"
+#define "#mountmnr 'jaguar_toad_mount'"
 #description "The giant toad will fight until the end of the battle should the rider die"
 #tag "animal 'giant toad'"
 #tag "guaranteedprefix toad"
@@ -117,7 +117,7 @@
 #armor
 #offsetx 0
 #offsety -13
-#define "#mountmnr 'toad_sapphire_mount'"
+#define "#mountmnr 'sapphire_toad_mount'"
 #define "#swimming"
 #description "The giant frog will fight until the end of the battle should the rider die"
 #tag "animal 'giant frog'"
