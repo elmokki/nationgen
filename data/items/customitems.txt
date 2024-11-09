@@ -2487,3 +2487,30 @@
 #command "#slash"
 #command "#ironweapon"
 #end
+
+
+---- Thematic Bardings
+
+#new customarmor
+#id "ice_barding"
+#armor
+#command "#name 'Ice Barding'"
+#command "#type 9"
+#command "#prot 17"
+#command "#def -2"
+#command "#enc 2"
+#command "#rcost 22"
+#command "#magicarmor"
+#end
+
+#new customarmor
+#id "meteorite_barding"
+#armor
+#command "#name 'Meteorite Barding'"
+#command "#type 9"
+#command "#prot 23"
+#command "#def -3"
+#command "#enc 5"
+#command "#rcost 30"
+#command "#magicarmor"
+#end

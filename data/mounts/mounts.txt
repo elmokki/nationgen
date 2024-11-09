@@ -212,17 +212,6 @@
 #end
 
 #new secondshape
-#id "great_bear_mount"
-#command "#copystats 694"
-#command "#copyspr 694"
-#command "#magicboost 53 -1"
-#command "#itemslots 786432"
-#command "#transformation 0"
-#command "#gcost 40"
-#command "#rcost 2"
-#end
-
-#new secondshape
 #id "mech_ant_mount"
 #command "#spr1 ./graphics/hoburg/mounts/mech_ant.png"
 #command "#spr2 shift"
@@ -351,6 +340,58 @@
 #end
 
 #new secondshape
+#id "jaguar_turtle_shell_barding_mount"
+#command "#copyspr 858"
+#command "#magicboost 53 -1"
+#command "#name 'Jaguar'"
+#command "#weapon 20"
+#command "#weapon 236"
+#command "#hp 19"
+#command "#prot 4"
+#command "#mor 13"
+#command "#mr 12"
+#command "#enc 3"
+#command "#str 15"
+#command "#att 13"
+#command "#def 10"
+#command "#prec 5"
+#command "#mapmove 22"
+#command "#ap 20"
+#command "#noleader"
+#command "#itemslots 786432"
+#command "#armor 137"
+#command "#gcost 35"
+#command "#rcost 7"
+#mount
+#end
+
+#new secondshape
+#id "jaguar_coral_barding_mount"
+#command "#copyspr 858"
+#command "#magicboost 53 -1"
+#command "#name 'Jaguar'"
+#command "#weapon 20"
+#command "#weapon 236"
+#command "#hp 19"
+#command "#prot 4"
+#command "#mor 13"
+#command "#mr 12"
+#command "#enc 3"
+#command "#str 15"
+#command "#att 13"
+#command "#def 10"
+#command "#prec 5"
+#command "#mapmove 22"
+#command "#ap 20"
+#command "#noleader"
+#command "#itemslots 786432"
+#command "#armor 190"
+#command "#gcost 35"
+#command "#rcost 9"
+#mount
+#end
+
+#new secondshape
 #id "jaguar_stealthy_mount"
 #command "#copyspr 858"
 #command "#magicboost 53 -1"
@@ -427,6 +468,30 @@
 #end
 
 #new secondshape
+#id "serpent_turtle_shell_barding_mount"
+#command "#copystats 1179"
+#command "#copyspr 1179"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 137"
+#command "#gcost 30"
+#command "#rcost 7"
+#mount
+#end
+
+#new secondshape
+#id "serpent_coral_barding_mount"
+#command "#copystats 1179"
+#command "#copyspr 1179"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 190"
+#command "#gcost 30"
+#command "#rcost 9"
+#mount
+#end
+
+#new secondshape
 #id "serpent_stupid_mount"
 #command "#copystats 4"
 #command "#copyspr 4"
@@ -460,6 +525,54 @@
 #end
 
 #new secondshape
+#id "fire_drake_light_scale_barding_mount"
+#command "#copystats 523"
+#command "#copyspr 523"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 252"
+#command "#gcost 55"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "fire_drake_mail_barding_mount"
+#command "#copystats 523"
+#command "#copyspr 523"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 55"
+#command "#rcost 16"
+#mount
+#end
+
+#new secondshape
+#id "fire_drake_cataphract_barding_mount"
+#command "#copystats 523"
+#command "#copyspr 523"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 253"
+#command "#gcost 55"
+#command "#rcost 24"
+#mount
+#end
+
+#new secondshape
+#id "fire_drake_plate_barding_mount"
+#command "#copystats 523"
+#command "#copyspr 523"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 254"
+#command "#gcost 55"
+#command "#rcost 30"
+#mount
+#end
+
+#new secondshape
 #id "salamander_mount"
 #command "#copystats 213"
 #command "#copyspr 213"
@@ -474,6 +587,21 @@
 #end
 
 #new secondshape
+#id "salamander_light_scale_barding_mount"
+#command "#copystats 213"
+#command "#copyspr 213"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#quadruped"
+-- 2 misc and body (barding)
+#command "#itemslots 851968"
+#command "#armor 252"
+#command "#gcost 45"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
 #id "salamander_mail_barding_mount"
 #command "#copystats 213"
 #command "#copyspr 213"
@@ -482,9 +610,39 @@
 #command "#quadruped"
 -- 2 misc and body (barding)
 #command "#itemslots 851968"
-#command "#armor 172 --- Mail Barding"
+#command "#armor 172"
 #command "#gcost 45"
-#command "#rcost 10"
+#command "#rcost 16"
+#mount
+#end
+
+#new secondshape
+#id "salamander_cataphract_barding_mount"
+#command "#copystats 213"
+#command "#copyspr 213"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#quadruped"
+-- 2 misc and body (barding)
+#command "#itemslots 851968"
+#command "#armor 253"
+#command "#gcost 45"
+#command "#rcost 24"
+#mount
+#end
+
+#new secondshape
+#id "salamander_plate_barding_mount"
+#command "#copystats 213"
+#command "#copyspr 213"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#quadruped"
+-- 2 misc and body (barding)
+#command "#itemslots 851968"
+#command "#armor 254"
+#command "#gcost 45"
+#command "#rcost 30"
 #mount
 #end
 
@@ -586,6 +744,54 @@
 #command "#transformation 0"
 #command "#gcost 35"
 #command "#rcost 2"
+#mount
+#end
+
+#new secondshape
+#id "lion_light_scale_barding_mount"
+#command "#copystats 628"
+#command "#copyspr 628"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 252"
+#command "#gcost 35"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "lion_mail_barding_mount"
+#command "#copystats 628"
+#command "#copyspr 628"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 35"
+#command "#rcost 16"
+#mount
+#end
+
+#new secondshape
+#id "lion_cataphract_barding_mount"
+#command "#copystats 628"
+#command "#copyspr 628"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 253"
+#command "#gcost 35"
+#command "#rcost 24"
+#mount
+#end
+
+#new secondshape
+#id "lion_plate_barding_mount"
+#command "#copystats 628"
+#command "#copyspr 628"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 254"
+#command "#gcost 35"
+#command "#rcost 30"
 #mount
 #end
 
@@ -710,8 +916,8 @@
 #id "white_tiger_mount"
 #command "#copyspr 1140"
 #command "#name 'Tiger'"
-#command "#weapon 236 --- Claw"
-#command "#weapon 322 --- Bite"
+#command "#weapon 236"
+#command "#weapon 322"
 #command "#size 4"
 #command "#hp 22"
 #command "#prot 4"
@@ -734,79 +940,114 @@
 #end
 
 #new secondshape
-#id "nightmare_leogryph_mount"
-#command "#name 'Leogryph Nightmare'"
-#command "#spr1 ./graphics/amazon/mounts/nightmare_leogryph.png"
-#command "#spr2 shift"
+#id "white_tiger_turtle_shell_barding_mount"
+#command "#copyspr 1140"
+#command "#name 'Tiger'"
+#command "#weapon 236"
+#command "#weapon 322"
 #command "#size 4"
-#command "#mapmove 20"
-#command "#ap 22"
-#command "#hp 12"
-#command "#att 11"
+#command "#hp 22"
+#command "#prot 4"
+#command "#mor 13"
+#command "#mr 5"
+#command "#enc 3"
+#command "#str 15"
+#command "#att 13"
 #command "#def 10"
-#command "#str 10"
 #command "#prec 5"
-#command "#prot 5"
-#command "#weapon 20 --- Bite"
-#command "#weapon 236 -- Claw"
-#command "#enc 15"
-#command "#fear 5"
-#command "#demon"
-#command "#magicboost 53 -5"
-#command "#transformation 0"
-#command "#gcost 55"
-#command "#rcost 4"
-#mount
-#end
-
-#new secondshape
-#id "nightmare_feline_mount"
-#command "#name 'Feline Nightmare'"
-#command "#spr1 ./graphics/amazon/mounts/nightmare_feline.png"
-#command "#spr2 shift"
-#command "#size 4"
-#command "#mapmove 20"
-#command "#hp 12"
+#command "#mapmove 22"
 #command "#ap 18"
-#command "#att 11"
-#command "#def 10"
-#command "#str 10"
-#command "#prec 5"
-#command "#prot 5"
-#command "#weapon 322 --- Bite"
-#command "#weapon 236 -- Claw"
-#command "#enc 15"
-#command "#fear 5"
-#command "#demon"
-#command "#magicboost 53 -5"
-#command "#transformation 0"
-#command "#gcost 55"
-#command "#rcost 4"
+#command "#forestsurvival"
+#command "#animal"
+#command "#swimming"
+#command "#itemslots 786432"
+#command "#armor 137"
+#command "#gcost 30"
+#command "#rcost 6"
 #mount
 #end
 
 #new secondshape
-#id "vine_nightmare_mount"
-#command "#name 'Vine Nightmare'"
-#command "#spr1 ./graphics/hoburg/mounts/vine_nightmare.png"
-#command "#spr2 shift"
-#command "#size 3"
-#command "#hp 8"
-#command "#att 11"
+#id "white_tiger_coral_barding_mount"
+#command "#copyspr 1140"
+#command "#name 'Tiger'"
+#command "#weapon 236"
+#command "#weapon 322"
+#command "#size 4"
+#command "#hp 22"
+#command "#prot 4"
+#command "#mor 13"
+#command "#mr 5"
+#command "#enc 3"
+#command "#str 15"
+#command "#att 13"
 #command "#def 10"
-#command "#str 9"
 #command "#prec 5"
-#command "#prot 2"
-#command "#ap 14"
-#command "#mapmove 20"
-#command "#weapon 352 --- Gore"
-#command "#enc 15"
-#command "#fear 5"
-#command "#demon"
-#command "#magicboost 53 -5"
-#command "#transformation 0"
-#command "#gcost 40"
-#command "#rcost 2"
+#command "#mapmove 22"
+#command "#ap 18"
+#command "#forestsurvival"
+#command "#animal"
+#command "#swimming"
+#command "#itemslots 786432"
+#command "#armor 190"
+#command "#gcost 30"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "white_tiger_ice_barding_mount"
+#command "#copyspr 1140"
+#command "#name 'Tiger'"
+#command "#weapon 236"
+#command "#weapon 322"
+#command "#size 4"
+#command "#hp 22"
+#command "#prot 4"
+#command "#mor 13"
+#command "#mr 5"
+#command "#enc 3"
+#command "#str 15"
+#command "#att 13"
+#command "#def 10"
+#command "#prec 5"
+#command "#mapmove 22"
+#command "#ap 18"
+#command "#forestsurvival"
+#command "#animal"
+#command "#swimming"
+#command "#itemslots 786432"
+#command "#armor 'ice_barding'"
+#command "#gcost 30"
+#command "#rcost 22"
+#mount
+#end
+
+#new secondshape
+#id "white_tiger_meteorite_barding_mount"
+#command "#copyspr 1140"
+#command "#name 'Tiger'"
+#command "#weapon 236"
+#command "#weapon 322"
+#command "#size 4"
+#command "#hp 22"
+#command "#prot 4"
+#command "#mor 13"
+#command "#mr 5"
+#command "#enc 3"
+#command "#str 15"
+#command "#att 13"
+#command "#def 10"
+#command "#prec 5"
+#command "#mapmove 22"
+#command "#ap 18"
+#command "#forestsurvival"
+#command "#animal"
+#command "#swimming"
+#command "#itemslots 786432"
+#command "#armor 'meteorite_barding'"
+#command "#gcost 30"
+#command "#rcost 30"
 #mount
 #end
 
@@ -828,7 +1069,7 @@
 #command "#prot 4"
 #command "#size 5"
 #command "#mapmove 24"
-#command "#weapon 55 --- Hoof"
+#command "#weapon 55"
 #command "#demon"
 #command "#itemslots 786432"
 #command "#gcost 50"
@@ -837,8 +1078,8 @@
 #end
 
 #new secondshape
-#id "nightmare_plate_barding_mount"
-#command "#spr1 ./graphics/amazon/mounts/nightmare_equine_fullbarded2.png"
+#id "nightmare_leather_barding_mount"
+#command "#spr1 ./graphics/amazon/mounts/nightmare_equine_halfbarded.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#name 'Nightmare'"
@@ -855,12 +1096,40 @@
 #command "#prot 4"
 #command "#size 5"
 #command "#mapmove 24"
-#command "#weapon 55 --- Hoof"
+#command "#weapon 55"
 #command "#demon"
 #command "#itemslots 786432"
-#command "#armor 254 --- Plate Barding"
+#command "#armor 251"
 #command "#gcost 50"
-#command "#rcost 12"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "nightmare_light_bronze_barding_mount"
+#command "#spr1 ./graphics/amazon/mounts/nightmare_equine_halfbarded.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Nightmare'"
+#command "#fear 5"
+#command "#enc 0"
+#command "#ap 25"
+#command "#str 10"
+#command "#mr 10"
+#command "#mor 50"
+#command "#att 11"
+#command "#def 9"
+#command "#hp 12"
+#command "#prec 10"
+#command "#prot 4"
+#command "#size 5"
+#command "#mapmove 24"
+#command "#weapon 55"
+#command "#demon"
+#command "#itemslots 786432"
+#command "#armor 264"
+#command "#gcost 50"
+#command "#rcost 8"
 #mount
 #end
 
@@ -883,12 +1152,40 @@
 #command "#prot 4"
 #command "#size 5"
 #command "#mapmove 24"
-#command "#weapon 55 --- Hoof"
+#command "#weapon 55"
 #command "#demon"
 #command "#itemslots 786432"
-#command "#armor 252 --- Light Scale Barding"
+#command "#armor 252"
 #command "#gcost 50"
-#command "#rcost 6"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "nightmare_mail_barding_mount"
+#command "#spr1 ./graphics/amazon/mounts/nightmare_equine_halfbarded.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Nightmare'"
+#command "#fear 5"
+#command "#enc 0"
+#command "#ap 25"
+#command "#str 10"
+#command "#mr 10"
+#command "#mor 50"
+#command "#att 11"
+#command "#def 9"
+#command "#hp 12"
+#command "#prec 10"
+#command "#prot 4"
+#command "#size 5"
+#command "#mapmove 24"
+#command "#weapon 55"
+#command "#demon"
+#command "#itemslots 786432"
+#command "#armor 172"
+#command "#gcost 50"
+#command "#rcost 12"
 #mount
 #end
 
@@ -911,12 +1208,12 @@
 #command "#prot 4"
 #command "#size 5"
 #command "#mapmove 24"
-#command "#weapon 55 --- Hoof"
+#command "#weapon 55"
 #command "#demon"
 #command "#itemslots 786432"
-#command "#armor 253 --- Cataphract Barding"
+#command "#armor 253"
 #command "#gcost 50"
-#command "#rcost 12"
+#command "#rcost 18"
 #mount
 #end
 
@@ -939,12 +1236,12 @@
 #command "#prot 4"
 #command "#size 5"
 #command "#mapmove 24"
-#command "#weapon 55 --- Hoof"
+#command "#weapon 55"
 #command "#demon"
 #command "#itemslots 786432"
-#command "#armor 253 --- Cataphract Barding"
+#command "#armor 253"
 #command "#gcost 50"
-#command "#rcost 12"
+#command "#rcost 18"
 #mount
 #end
 
@@ -967,12 +1264,12 @@
 #command "#prot 4"
 #command "#size 5"
 #command "#mapmove 24"
-#command "#weapon 55 --- Hoof"
+#command "#weapon 55"
 #command "#demon"
 #command "#itemslots 786432"
-#command "#armor 257 --- Rusty Cataphract Barding"
+#command "#armor 257"
 #command "#gcost 50"
-#command "#rcost 10"
+#command "#rcost 16"
 #mount
 #end
 
@@ -995,12 +1292,12 @@
 #command "#prot 4"
 #command "#size 5"
 #command "#mapmove 24"
-#command "#weapon 55 --- Hoof"
+#command "#weapon 55"
 #command "#demon"
 #command "#itemslots 786432"
-#command "#armor 257 --- Rusty Cataphract Barding"
+#command "#armor 257"
 #command "#gcost 50"
-#command "#rcost 10"
+#command "#rcost 16"
 #mount
 #end
 
@@ -1023,12 +1320,442 @@
 #command "#prot 4"
 #command "#size 5"
 #command "#mapmove 24"
-#command "#weapon 55 --- Hoof"
+#command "#weapon 55"
 #command "#demon"
 #command "#itemslots 786432"
-#command "#armor 257 --- Rusty Cataphract Barding"
+#command "#armor 257"
 #command "#gcost 50"
+#command "#rcost 16"
+#mount
+#end
+
+#new secondshape
+#id "nightmare_bronze_barding_mount"
+#command "#spr1 ./graphics/amazon/mounts/nightmare_equine_fullbarded2.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Nightmare'"
+#command "#fear 5"
+#command "#enc 0"
+#command "#ap 25"
+#command "#str 10"
+#command "#mr 10"
+#command "#mor 50"
+#command "#att 11"
+#command "#def 9"
+#command "#hp 12"
+#command "#prec 10"
+#command "#prot 4"
+#command "#size 5"
+#command "#mapmove 24"
+#command "#weapon 55"
+#command "#demon"
+#command "#itemslots 786432"
+#command "#armor 263"
+#command "#gcost 50"
+#command "#rcost 22"
+#mount
+#end
+
+#new secondshape
+#id "nightmare_plate_barding_mount"
+#command "#spr1 ./graphics/amazon/mounts/nightmare_equine_fullbarded2.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Nightmare'"
+#command "#fear 5"
+#command "#enc 0"
+#command "#ap 25"
+#command "#str 10"
+#command "#mr 10"
+#command "#mor 50"
+#command "#att 11"
+#command "#def 9"
+#command "#hp 12"
+#command "#prec 10"
+#command "#prot 4"
+#command "#size 5"
+#command "#mapmove 24"
+#command "#weapon 55"
+#command "#demon"
+#command "#itemslots 786432"
+#command "#armor 254"
+#command "#gcost 50"
+#command "#rcost 24"
+#mount
+#end
+
+#new secondshape
+#id "leogryph_nightmare_mount"
+#command "#name 'Leogryph Nightmare'"
+#command "#spr1 ./graphics/amazon/mounts/nightmare_leogryph.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#ap 22"
+#command "#hp 12"
+#command "#att 11"
+#command "#def 10"
+#command "#str 10"
+#command "#prec 5"
+#command "#prot 5"
+#command "#weapon 20"
+#command "#weapon 236"
+#command "#enc 15"
+#command "#fear 5"
+#command "#demon"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#gcost 55"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "leogryph_nightmare_leather_barding_mount"
+#command "#name 'Leogryph Nightmare'"
+#command "#spr1 ./graphics/amazon/mounts/nightmare_leogryph.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#ap 22"
+#command "#hp 12"
+#command "#att 11"
+#command "#def 10"
+#command "#str 10"
+#command "#prec 5"
+#command "#prot 5"
+#command "#weapon 20"
+#command "#weapon 236"
+#command "#enc 15"
+#command "#fear 5"
+#command "#demon"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 251"
+#command "#gcost 55"
 #command "#rcost 10"
+#mount
+#end
+
+#new secondshape
+#id "leogryph_nightmare_light_bronze_barding_mount"
+#command "#name 'Leogryph Nightmare'"
+#command "#spr1 ./graphics/amazon/mounts/nightmare_leogryph.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#ap 22"
+#command "#hp 12"
+#command "#att 11"
+#command "#def 10"
+#command "#str 10"
+#command "#prec 5"
+#command "#prot 5"
+#command "#weapon 20"
+#command "#weapon 236"
+#command "#enc 15"
+#command "#fear 5"
+#command "#demon"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 264"
+#command "#gcost 55"
+#command "#rcost 12"
+#mount
+#end
+
+#new secondshape
+#id "leogryph_nightmare_light_scale_barding_mount"
+#command "#name 'Leogryph Nightmare'"
+#command "#spr1 ./graphics/amazon/mounts/nightmare_leogryph.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#ap 22"
+#command "#hp 12"
+#command "#att 11"
+#command "#def 10"
+#command "#str 10"
+#command "#prec 5"
+#command "#prot 5"
+#command "#weapon 20"
+#command "#weapon 236"
+#command "#enc 15"
+#command "#fear 5"
+#command "#demon"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 252"
+#command "#gcost 55"
+#command "#rcost 12"
+#mount
+#end
+
+#new secondshape
+#id "leogryph_nightmare_mail_barding_mount"
+#command "#name 'Leogryph Nightmare'"
+#command "#spr1 ./graphics/amazon/mounts/nightmare_leogryph.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#ap 22"
+#command "#hp 12"
+#command "#att 11"
+#command "#def 10"
+#command "#str 10"
+#command "#prec 5"
+#command "#prot 5"
+#command "#weapon 20"
+#command "#weapon 236"
+#command "#enc 15"
+#command "#fear 5"
+#command "#demon"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 55"
+#command "#rcost 16"
+#mount
+#end
+
+#new secondshape
+#id "leogryph_nightmare_cataphract_barding_mount"
+#command "#name 'Leogryph Nightmare'"
+#command "#spr1 ./graphics/amazon/mounts/nightmare_leogryph.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#ap 22"
+#command "#hp 12"
+#command "#att 11"
+#command "#def 10"
+#command "#str 10"
+#command "#prec 5"
+#command "#prot 5"
+#command "#weapon 20"
+#command "#weapon 236"
+#command "#enc 15"
+#command "#fear 5"
+#command "#demon"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 253"
+#command "#gcost 55"
+#command "#rcost 24"
+#mount
+#end
+
+#new secondshape
+#id "leogryph_nightmare_bronze_barding_mount"
+#command "#name 'Leogryph Nightmare'"
+#command "#spr1 ./graphics/amazon/mounts/nightmare_leogryph.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#ap 22"
+#command "#hp 12"
+#command "#att 11"
+#command "#def 10"
+#command "#str 10"
+#command "#prec 5"
+#command "#prot 5"
+#command "#weapon 20"
+#command "#weapon 236"
+#command "#enc 15"
+#command "#fear 5"
+#command "#demon"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 263"
+#command "#gcost 55"
+#command "#rcost 30"
+#mount
+#end
+
+#new secondshape
+#id "leogryph_nightmare_plate_barding_mount"
+#command "#name 'Leogryph Nightmare'"
+#command "#spr1 ./graphics/amazon/mounts/nightmare_leogryph.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#ap 22"
+#command "#hp 12"
+#command "#att 11"
+#command "#def 10"
+#command "#str 10"
+#command "#prec 5"
+#command "#prot 5"
+#command "#weapon 20"
+#command "#weapon 236"
+#command "#enc 15"
+#command "#fear 5"
+#command "#demon"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 254"
+#command "#gcost 55"
+#command "#rcost 30"
+#mount
+#end
+
+#new secondshape
+#id "feline_nightmare_mount"
+#command "#name 'Feline Nightmare'"
+#command "#spr1 ./graphics/amazon/mounts/nightmare_feline.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#hp 12"
+#command "#ap 18"
+#command "#att 11"
+#command "#def 10"
+#command "#str 10"
+#command "#prec 5"
+#command "#prot 5"
+#command "#weapon 322"
+#command "#weapon 236"
+#command "#enc 15"
+#command "#fear 5"
+#command "#demon"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#gcost 55"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "feline_nightmare_leather_barding_mount"
+#command "#name 'Feline Nightmare'"
+#command "#spr1 ./graphics/amazon/mounts/nightmare_feline.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#hp 12"
+#command "#ap 18"
+#command "#att 11"
+#command "#def 10"
+#command "#str 10"
+#command "#prec 5"
+#command "#prot 5"
+#command "#weapon 322"
+#command "#weapon 236"
+#command "#enc 15"
+#command "#fear 5"
+#command "#demon"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 251"
+#command "#gcost 55"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "feline_nightmare_light_scale_barding_mount"
+#command "#name 'Feline Nightmare'"
+#command "#spr1 ./graphics/amazon/mounts/nightmare_feline.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#hp 12"
+#command "#ap 18"
+#command "#att 11"
+#command "#def 10"
+#command "#str 10"
+#command "#prec 5"
+#command "#prot 5"
+#command "#weapon 322"
+#command "#weapon 236"
+#command "#enc 15"
+#command "#fear 5"
+#command "#demon"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 252"
+#command "#gcost 55"
+#command "#rcost 10"
+#mount
+#end
+
+#new secondshape
+#id "feline_nightmare_light_bronze_barding_mount"
+#command "#name 'Feline Nightmare'"
+#command "#spr1 ./graphics/amazon/mounts/nightmare_feline.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#hp 12"
+#command "#ap 18"
+#command "#att 11"
+#command "#def 10"
+#command "#str 10"
+#command "#prec 5"
+#command "#prot 5"
+#command "#weapon 322"
+#command "#weapon 236"
+#command "#enc 15"
+#command "#fear 5"
+#command "#demon"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 264"
+#command "#gcost 55"
+#command "#rcost 10"
+#mount
+#end
+
+#new secondshape
+#id "feline_nightmare_mail_barding_mount"
+#command "#name 'Feline Nightmare'"
+#command "#spr1 ./graphics/amazon/mounts/nightmare_feline.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#hp 12"
+#command "#ap 18"
+#command "#att 11"
+#command "#def 10"
+#command "#str 10"
+#command "#prec 5"
+#command "#prot 5"
+#command "#weapon 322"
+#command "#weapon 236"
+#command "#enc 15"
+#command "#fear 5"
+#command "#demon"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 55"
+#command "#rcost 16"
+#mount
+#end
+
+#new secondshape
+#id "vine_nightmare_mount"
+#command "#name 'Vine Nightmare'"
+#command "#spr1 ./graphics/hoburg/mounts/vine_nightmare.png"
+#command "#spr2 shift"
+#command "#size 3"
+#command "#hp 8"
+#command "#att 11"
+#command "#def 10"
+#command "#str 9"
+#command "#prec 5"
+#command "#prot 2"
+#command "#ap 14"
+#command "#mapmove 20"
+#command "#weapon 352"
+#command "#enc 15"
+#command "#fear 5"
+#command "#demon"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#gcost 40"
+#command "#rcost 2"
 #mount
 #end
 
@@ -1051,8 +1778,8 @@
 #command "#prot 7"
 #command "#size 5"
 #command "#mapmove 28"
-#command "#weapon 55 --- Hoof"
-#command "#armor 172 --- Mail Barding"
+#command "#weapon 55"
+#command "#armor 172"
 #command "#demon"
 #command "#gcost 25"
 #command "#rcost 8"
@@ -1078,8 +1805,8 @@
 #command "#prot 7"
 #command "#size 5"
 #command "#mapmove 28"
-#command "#weapon 55 --- Hoof"
-#command "#armor 253 --- Cataphract Barding"
+#command "#weapon 55"
+#command "#armor 253"
 #command "#demon"
 #command "#gcost 25"
 #command "#rcost 12"
@@ -1103,7 +1830,7 @@
 #command "#prot 8"
 #command "#size 4"
 #command "#mapmove 20"
-#command "#weapon 573 --- Poisonous Gore"
+#command "#weapon 573"
 #command "#animal"
 #command "#forestsurvival"
 #command "#trample"
@@ -1116,6 +1843,142 @@
 #command "#itemslots 786432"
 #command "#gcost 40"
 #command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "gloso_light_scale_barding_mount"
+#command "#copyspr 2363"
+#command "#magicboost 53 -5"
+#command "#name 'Gloso'"
+#command "#enc 2"
+#command "#ap 18"
+#command "#str 15"
+#command "#mr 13"
+#command "#mor 14"
+#command "#att 13"
+#command "#def 10"
+#command "#hp 28"
+#command "#prec 5"
+#command "#prot 8"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#weapon 573"
+#command "#animal"
+#command "#forestsurvival"
+#command "#trample"
+#command "#maxage 45"
+#command "#fireres 25"
+#command "#darkvision 100"
+#command "#stealthy 50"
+#command "#heat 3"
+#command "#nametype 116"
+#command "#itemslots 786432"
+#command "#armor 252"
+#command "#gcost 40"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "gloso_mail_barding_mount"
+#command "#copyspr 2363"
+#command "#magicboost 53 -5"
+#command "#name 'Gloso'"
+#command "#enc 2"
+#command "#ap 18"
+#command "#str 15"
+#command "#mr 13"
+#command "#mor 14"
+#command "#att 13"
+#command "#def 10"
+#command "#hp 28"
+#command "#prec 5"
+#command "#prot 8"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#weapon 573"
+#command "#animal"
+#command "#forestsurvival"
+#command "#trample"
+#command "#maxage 45"
+#command "#fireres 25"
+#command "#darkvision 100"
+#command "#stealthy 50"
+#command "#heat 3"
+#command "#nametype 116"
+#command "#itemslots 786432"
+#command "#armor 172"
+#command "#gcost 40"
+#command "#rcost 16"
+#mount
+#end
+
+#new secondshape
+#id "gloso_cataphract_barding_mount"
+#command "#copyspr 2363"
+#command "#magicboost 53 -5"
+#command "#name 'Gloso'"
+#command "#enc 2"
+#command "#ap 18"
+#command "#str 15"
+#command "#mr 13"
+#command "#mor 14"
+#command "#att 13"
+#command "#def 10"
+#command "#hp 28"
+#command "#prec 5"
+#command "#prot 8"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#weapon 573"
+#command "#animal"
+#command "#forestsurvival"
+#command "#trample"
+#command "#maxage 45"
+#command "#fireres 25"
+#command "#darkvision 100"
+#command "#stealthy 50"
+#command "#heat 3"
+#command "#nametype 116"
+#command "#itemslots 786432"
+#command "#armor 253"
+#command "#gcost 40"
+#command "#rcost 24"
+#mount
+#end
+
+#new secondshape
+#id "gloso_plate_barding_mount"
+#command "#copyspr 2363"
+#command "#magicboost 53 -5"
+#command "#name 'Gloso'"
+#command "#enc 2"
+#command "#ap 18"
+#command "#str 15"
+#command "#mr 13"
+#command "#mor 14"
+#command "#att 13"
+#command "#def 10"
+#command "#hp 28"
+#command "#prec 5"
+#command "#prot 8"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#weapon 573"
+#command "#animal"
+#command "#forestsurvival"
+#command "#trample"
+#command "#maxage 45"
+#command "#fireres 25"
+#command "#darkvision 100"
+#command "#stealthy 50"
+#command "#heat 3"
+#command "#nametype 116"
+#command "#itemslots 786432"
+#command "#armor 254"
+#command "#gcost 40"
+#command "#rcost 30"
 #mount
 #end
 
@@ -1163,33 +2026,85 @@
 
 #new secondshape
 #id "great_bear_mount"
-#command "#spr1 ./graphics/mounts/standard/bear.png"
-#command "#spr2 shift"
-#command "#magicboost 53 -5"
-#command "#name 'Great Bear'"
-#command "#weapon 20 --- Bite"
-#command "#weapon 236 -- Claw"
-#command "#size 6"
-#command "#hp 40"
-#command "#prot 8"
-#command "#mr 8"
-#command "#mor 13"
-#command "#str 19"
-#command "#att 9"
-#command "#def 7"
-#command "#prec 5"
-#command "#enc 3"
-#command "#mapmove 20"
-#command "#ap 16"
-#command "#animal"
-#command "#undisciplined"
-#command "#forestsurvival"
-#command "#mountainsurvival"
+#command "#copystats 694"
+#command "#copyspr 694"
+#command "#magicboost 53 -1"
 #command "#itemslots 786432"
 #command "#transformation 0"
-#command "#gcost 15"
-#command "#rcost 2"
-#mount
+#command "#gcost 40"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "great_bear_turtle_shell_barding_mount"
+#command "#copystats 694"
+#command "#copyspr 694"
+#command "#magicboost 53 -1"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 137"
+#command "#gcost 40"
+#command "#rcost 6"
+#end
+
+#new secondshape
+#id "great_bear_light_scale_barding_mount"
+#command "#copystats 694"
+#command "#copyspr 694"
+#command "#magicboost 53 -1"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 252"
+#command "#gcost 40"
+#command "#rcost 8"
+#end
+
+#new secondshape
+#id "great_bear_coral_barding_mount"
+#command "#copystats 694"
+#command "#copyspr 694"
+#command "#magicboost 53 -1"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 190"
+#command "#gcost 40"
+#command "#rcost 8"
+#end
+
+#new secondshape
+#id "great_bear_mail_barding_mount"
+#command "#copystats 694"
+#command "#copyspr 694"
+#command "#magicboost 53 -1"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 40"
+#command "#rcost 16"
+#end
+
+#new secondshape
+#id "great_bear_cataphract_barding_mount"
+#command "#copystats 694"
+#command "#copyspr 694"
+#command "#magicboost 53 -1"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 253"
+#command "#gcost 40"
+#command "#rcost 24"
+#end
+
+#new secondshape
+#id "great_bear_plate_barding_mount"
+#command "#copystats 694"
+#command "#copyspr 694"
+#command "#magicboost 53 -1"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 254"
+#command "#gcost 40"
+#command "#rcost 30"
 #end
 
 #new secondshape
@@ -1198,8 +2113,8 @@
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#name 'Ice Bear'"
-#command "#weapon 20 --- Bite"
-#command "#weapon 236 -- Claw"
+#command "#weapon 20"
+#command "#weapon 236"
 #command "#size 6"
 #command "#hp 40"
 #command "#prot 8"
@@ -1224,12 +2139,140 @@
 #end
 
 #new secondshape
+#id "polar_bear_turtle_shell_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/bear_polar.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Ice Bear'"
+#command "#weapon 20"
+#command "#weapon 236"
+#command "#size 6"
+#command "#hp 40"
+#command "#prot 8"
+#command "#mr 8"
+#command "#mor 13"
+#command "#str 19"
+#command "#att 9"
+#command "#def 7"
+#command "#prec 5"
+#command "#enc 3"
+#command "#mapmove 20"
+#command "#ap 16"
+#command "#animal"
+#command "#undisciplined"
+#command "#coldres 25"
+#command "#wastesurvival"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 137"
+#command "#gcost 40"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "polar_bear_coral_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/bear_polar.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Ice Bear'"
+#command "#weapon 20"
+#command "#weapon 236"
+#command "#size 6"
+#command "#hp 40"
+#command "#prot 8"
+#command "#mr 8"
+#command "#mor 13"
+#command "#str 19"
+#command "#att 9"
+#command "#def 7"
+#command "#prec 5"
+#command "#enc 3"
+#command "#mapmove 20"
+#command "#ap 16"
+#command "#animal"
+#command "#undisciplined"
+#command "#coldres 25"
+#command "#wastesurvival"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 190"
+#command "#gcost 40"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "polar_bear_ice_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/bear_polar.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Ice Bear'"
+#command "#weapon 20"
+#command "#weapon 236"
+#command "#size 6"
+#command "#hp 40"
+#command "#prot 8"
+#command "#mr 8"
+#command "#mor 13"
+#command "#str 19"
+#command "#att 9"
+#command "#def 7"
+#command "#prec 5"
+#command "#enc 3"
+#command "#mapmove 20"
+#command "#ap 16"
+#command "#animal"
+#command "#undisciplined"
+#command "#coldres 25"
+#command "#wastesurvival"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 'ice_barding'"
+#command "#gcost 40"
+#command "#rcost 22"
+#mount
+#end
+
+#new secondshape
+#id "polar_bear_meteorite_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/bear_polar.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Ice Bear'"
+#command "#weapon 20"
+#command "#weapon 236"
+#command "#size 6"
+#command "#hp 40"
+#command "#prot 8"
+#command "#mr 8"
+#command "#mor 13"
+#command "#str 19"
+#command "#att 9"
+#command "#def 7"
+#command "#prec 5"
+#command "#enc 3"
+#command "#mapmove 20"
+#command "#ap 16"
+#command "#animal"
+#command "#undisciplined"
+#command "#coldres 25"
+#command "#wastesurvival"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 'meteorite_barding'"
+#command "#gcost 40"
+#command "#rcost 30"
+#mount
+#end
+
+#new secondshape
 #id "bear_mount"
 #command "#spr1 ./graphics/mounts/standard/bear_small.png"
 #command "#spr2 ./graphics/mounts/standard/bear_small_upright.png"
 #command "#magicboost 53 -5"
 #command "#name Bear"
-#command "#weapon 236 -- Claw"
+#command "#weapon 236"
 #command "#size 4"
 #command "#hp 30"
 #command "#prot 8"
@@ -1250,6 +2293,192 @@
 #command "#transformation 0"
 #command "#gcost 20"
 #command "#rcost 2"
+#mount
+#end
+
+#new secondshape
+#id "bear_turtle_shell_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/bear_small.png"
+#command "#spr2 ./graphics/mounts/standard/bear_small_upright.png"
+#command "#magicboost 53 -5"
+#command "#name Bear"
+#command "#weapon 236"
+#command "#size 4"
+#command "#hp 30"
+#command "#prot 8"
+#command "#mor 13"
+#command "#mr 5"
+#command "#str 16"
+#command "#att 9"
+#command "#def 8"
+#command "#prec 5"
+#command "#enc 3"
+#command "#mapmove 20"
+#command "#ap 14"
+#command "#animal"
+#command "#undisciplined"
+#command "#forestsurvival"
+#command "#mountainsurvival"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 137"
+#command "#gcost 20"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "bear_light_scale_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/bear_small.png"
+#command "#spr2 ./graphics/mounts/standard/bear_small_upright.png"
+#command "#magicboost 53 -5"
+#command "#name Bear"
+#command "#weapon 236"
+#command "#size 4"
+#command "#hp 30"
+#command "#prot 8"
+#command "#mor 13"
+#command "#mr 5"
+#command "#str 16"
+#command "#att 9"
+#command "#def 8"
+#command "#prec 5"
+#command "#enc 3"
+#command "#mapmove 20"
+#command "#ap 14"
+#command "#animal"
+#command "#undisciplined"
+#command "#forestsurvival"
+#command "#mountainsurvival"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 252"
+#command "#gcost 20"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "bear_coral_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/bear_small.png"
+#command "#spr2 ./graphics/mounts/standard/bear_small_upright.png"
+#command "#magicboost 53 -5"
+#command "#name Bear"
+#command "#weapon 236"
+#command "#size 4"
+#command "#hp 30"
+#command "#prot 8"
+#command "#mor 13"
+#command "#mr 5"
+#command "#str 16"
+#command "#att 9"
+#command "#def 8"
+#command "#prec 5"
+#command "#enc 3"
+#command "#mapmove 20"
+#command "#ap 14"
+#command "#animal"
+#command "#undisciplined"
+#command "#forestsurvival"
+#command "#mountainsurvival"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 190"
+#command "#gcost 20"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "bear_mail_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/bear_small.png"
+#command "#spr2 ./graphics/mounts/standard/bear_small_upright.png"
+#command "#magicboost 53 -5"
+#command "#name Bear"
+#command "#weapon 236"
+#command "#size 4"
+#command "#hp 30"
+#command "#prot 8"
+#command "#mor 13"
+#command "#mr 5"
+#command "#str 16"
+#command "#att 9"
+#command "#def 8"
+#command "#prec 5"
+#command "#enc 3"
+#command "#mapmove 20"
+#command "#ap 14"
+#command "#animal"
+#command "#undisciplined"
+#command "#forestsurvival"
+#command "#mountainsurvival"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 20"
+#command "#rcost 12"
+#mount
+#end
+
+#new secondshape
+#id "bear_cataphract_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/bear_small.png"
+#command "#spr2 ./graphics/mounts/standard/bear_small_upright.png"
+#command "#magicboost 53 -5"
+#command "#name Bear"
+#command "#weapon 236"
+#command "#size 4"
+#command "#hp 30"
+#command "#prot 8"
+#command "#mor 13"
+#command "#mr 5"
+#command "#str 16"
+#command "#att 9"
+#command "#def 8"
+#command "#prec 5"
+#command "#enc 3"
+#command "#mapmove 20"
+#command "#ap 14"
+#command "#animal"
+#command "#undisciplined"
+#command "#forestsurvival"
+#command "#mountainsurvival"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 253"
+#command "#gcost 20"
+#command "#rcost 18"
+#mount
+#end
+
+#new secondshape
+#id "bear_plate_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/bear_small.png"
+#command "#spr2 ./graphics/mounts/standard/bear_small_upright.png"
+#command "#magicboost 53 -5"
+#command "#name Bear"
+#command "#weapon 236"
+#command "#size 4"
+#command "#hp 30"
+#command "#prot 8"
+#command "#mor 13"
+#command "#mr 5"
+#command "#str 16"
+#command "#att 9"
+#command "#def 8"
+#command "#prec 5"
+#command "#enc 3"
+#command "#mapmove 20"
+#command "#ap 14"
+#command "#animal"
+#command "#undisciplined"
+#command "#forestsurvival"
+#command "#mountainsurvival"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 254"
+#command "#gcost 20"
+#command "#rcost 24"
 #mount
 #end
 
@@ -1318,13 +2547,65 @@
 #end
 
 #new secondshape
+#id "moose_turtle_shell_barding_mount"
+#command "#copystats 3551"
+#command "#copyspr 3551"
+#command "#itemslots 786432"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 137"
+#command "#gcost 25"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "moose_coral_barding_mount"
+#command "#copystats 3551"
+#command "#copyspr 3551"
+#command "#itemslots 786432"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 190"
+#command "#gcost 25"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "moose_ice_barding_mount"
+#command "#copystats 3551"
+#command "#copyspr 3551"
+#command "#itemslots 786432"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 'ice_barding'"
+#command "#gcost 25"
+#command "#rcost 22"
+#mount
+#end
+
+#new secondshape
+#id "moose_meteorite_barding_mount"
+#command "#copystats 3551"
+#command "#copyspr 3551"
+#command "#itemslots 786432"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 'meteorite_barding'"
+#command "#gcost 25"
+#command "#rcost 30"
+#mount
+#end
+
+#new secondshape
 #id "elk_mount"
 #command "#spr1 ./graphics/mounts/standard/elk.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#name 'Elk'"
-#command "#weapon 397 --- Kick"
-#command "#weapon 354 -- Antlers"
+#command "#weapon 397"
+#command "#weapon 354"
 #command "#size 5"
 #command "#hp 25"
 #command "#prot 3"
@@ -1350,12 +2631,144 @@
 #end
 
 #new secondshape
+#id "elk_turtle_shell_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/elk.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Elk'"
+#command "#weapon 397"
+#command "#weapon 354"
+#command "#size 5"
+#command "#hp 25"
+#command "#prot 3"
+#command "#mr 5"
+#command "#mor 8"
+#command "#str 12"
+#command "#att 9"
+#command "#def 9"
+#command "#prec 5"
+#command "#enc 3"
+#command "#mapmove 20"
+#command "#ap 23"
+#command "#maxage 14"
+#command "#stealthy 0"
+#command "#animal"
+#command "#undisciplined"
+#command "#forestsurvival"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 137"
+#command "#gcost 20"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "elk_coral_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/elk.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Elk'"
+#command "#weapon 397"
+#command "#weapon 354"
+#command "#size 5"
+#command "#hp 25"
+#command "#prot 3"
+#command "#mr 5"
+#command "#mor 8"
+#command "#str 12"
+#command "#att 9"
+#command "#def 9"
+#command "#prec 5"
+#command "#enc 3"
+#command "#mapmove 20"
+#command "#ap 23"
+#command "#maxage 14"
+#command "#stealthy 0"
+#command "#animal"
+#command "#undisciplined"
+#command "#forestsurvival"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 190"
+#command "#gcost 20"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "elk_ice_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/elk.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Elk'"
+#command "#weapon 397"
+#command "#weapon 354"
+#command "#size 5"
+#command "#hp 25"
+#command "#prot 3"
+#command "#mr 5"
+#command "#mor 8"
+#command "#str 12"
+#command "#att 9"
+#command "#def 9"
+#command "#prec 5"
+#command "#enc 3"
+#command "#mapmove 20"
+#command "#ap 23"
+#command "#maxage 14"
+#command "#stealthy 0"
+#command "#animal"
+#command "#undisciplined"
+#command "#forestsurvival"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 'ice_barding'"
+#command "#gcost 20"
+#command "#rcost 22"
+#mount
+#end
+
+#new secondshape
+#id "elk_meteorite_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/elk.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Elk'"
+#command "#weapon 397"
+#command "#weapon 354"
+#command "#size 5"
+#command "#hp 25"
+#command "#prot 3"
+#command "#mr 5"
+#command "#mor 8"
+#command "#str 12"
+#command "#att 9"
+#command "#def 9"
+#command "#prec 5"
+#command "#enc 3"
+#command "#mapmove 20"
+#command "#ap 23"
+#command "#maxage 14"
+#command "#stealthy 0"
+#command "#animal"
+#command "#undisciplined"
+#command "#forestsurvival"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 'meteorite_barding'"
+#command "#gcost 20"
+#command "#rcost 30"
+#mount
+#end
+
+#new secondshape
 #id "peryton_mount"
 #command "#spr1 ./graphics/mounts/standard/peryton2.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#name 'Peryton'"
-#command "#weapon 354 -- Antlers"
+#command "#weapon 354"
 #command "#size 6"
 #command "#hp 25"
 #command "#prot 3"
@@ -1379,7 +2792,6 @@
 #mount
 #end
 
-
 #new secondshape
 #id "scorpion_beast_mount"
 #command "#copystats 524"
@@ -1389,6 +2801,58 @@
 #command "#transformation 0"
 #command "#gcost 50"
 #command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "scorpion_beast_light_scale_barding_mount"
+#command "#copystats 524"
+#command "#copyspr 524"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 252"
+#command "#gcost 50"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "scorpion_beast_mail_barding_mount"
+#command "#copystats 524"
+#command "#copyspr 524"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 50"
+#command "#rcost 16"
+#mount
+#end
+
+#new secondshape
+#id "scorpion_beast_cataphract_barding_mount"
+#command "#copystats 524"
+#command "#copyspr 524"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 253"
+#command "#gcost 50"
+#command "#rcost 24"
+#mount
+#end
+
+#new secondshape
+#id "scorpion_beast_plate_barding_mount"
+#command "#copystats 524"
+#command "#copyspr 524"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 254"
+#command "#gcost 50"
+#command "#rcost 30"
 #mount
 #end
 
@@ -1492,7 +2956,7 @@
 #command "#mr -2"
 #command "#mapmove 22"
 #command "#ap 24"
-#command "#weapon 20 --- Bite"
+#command "#weapon 20"
 #command "#ressize 2"
 #command "#enc 0"
 #command "#gcost 15"
@@ -1509,9 +2973,9 @@
 #command "#mr -2"
 #command "#mapmove 22"
 #command "#ap 20"
-#command "#weapon 20 --- Bite"
-#command "#weapon 56 --- Hoof"
-#command "#armor 254 --- Plate Barding"
+#command "#weapon 20"
+#command "#weapon 56"
+#command "#armor 254"
 #command "#ressize 2"
 #command "#enc 0"
 #command "#gcost 15"
@@ -1661,7 +3125,7 @@
 #id "pegasus_mount"
 #command "#copyspr 3556"
 #command "#name 'Pegasus'"
-#command "#weapon 55 -- Hoof"
+#command "#weapon 55"
 #command "#size 6"
 #command "#hp 25"
 #command "#prot 3"
@@ -1704,7 +3168,7 @@
 #command "#forestsurvival"
 #command "#stealthy 40"
 #command "#darkvision 50"
-#command "#weapon 20 --- Bite"
+#command "#weapon 20"
 #command "#patrolbonus 1"
 #command "#smartmount 100"
 #command "#trample"
@@ -1940,6 +3404,78 @@
 #end
 
 #new secondshape
+#id "cave_grub_turtle_shell_barding_mount"
+#command "#copystats 2526"
+#command "#copyspr 2526"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 137"
+#command "#gcost 30"
+#command "#rcost 7"
+#mount
+#end
+
+#new secondshape
+#id "cave_grub_light_bronze_barding_mount"
+#command "#copystats 2526"
+#command "#copyspr 2526"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 264"
+#command "#gcost 30"
+#command "#rcost 12"
+#mount
+#end
+
+#new secondshape
+#id "cave_grub_coral_barding_mount"
+#command "#copystats 2526"
+#command "#copyspr 2526"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 190"
+#command "#gcost 30"
+#command "#rcost 9"
+#mount
+#end
+
+#new secondshape
+#id "cave_grub_bronze_barding_mount"
+#command "#copystats 2526"
+#command "#copyspr 2526"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 263"
+#command "#gcost 30"
+#command "#rcost 24"
+#mount
+#end
+
+#new secondshape
+#id "cave_grub_light_scale_barding_mount"
+#command "#copystats 2526"
+#command "#copyspr 2526"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 252"
+#command "#gcost 30"
+#command "#rcost 14"
+#mount
+#end
+
+#new secondshape
+#id "cave_grub_plate_barding_mount"
+#command "#copystats 2526"
+#command "#copyspr 2526"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 254"
+#command "#gcost 30"
+#command "#rcost 26"
+#mount
+#end
+
+#new secondshape
 #id "cave_cow_mount"
 #command "#copystats 2512"
 #command "#copyspr 2512"
@@ -1951,6 +3487,83 @@
 #mount
 #end
 
+#new secondshape
+#id "cave_cow_turtle_shell_barding_mount"
+#command "#copystats 2512"
+#command "#copyspr 2512"
+#command "#quadruped"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 137"
+#command "#gcost 30"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "cave_cow_light_bronze_barding_mount"
+#command "#copystats 2512"
+#command "#copyspr 2512"
+#command "#quadruped"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 264"
+#command "#gcost 30"
+#command "#rcost 12"
+#mount
+#end
+
+#new secondshape
+#id "cave_cow_bronze_barding_mount"
+#command "#copystats 2512"
+#command "#copyspr 2512"
+#command "#quadruped"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 263"
+#command "#gcost 30"
+#command "#rcost 24"
+#mount
+#end
+
+#new secondshape
+#id "cave_cow_light_scale_barding_mount"
+#command "#copystats 2512"
+#command "#copyspr 2512"
+#command "#quadruped"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 252"
+#command "#gcost 30"
+#command "#rcost 14"
+#mount
+#end
+
+#new secondshape
+#id "cave_cow_coral_barding_mount"
+#command "#copystats 2512"
+#command "#copyspr 2512"
+#command "#quadruped"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 190"
+#command "#gcost 30"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "cave_cow_plate_barding_mount"
+#command "#copystats 2512"
+#command "#copyspr 2512"
+#command "#quadruped"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 254"
+#command "#gcost 30"
+#command "#rcost 26"
+#mount
+#end
 
 #new secondshape
 #id "fossil_mount"
@@ -1959,8 +3572,21 @@
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#itemslots 786950"
+#command "#armor 32"
 #command "#gcost 50"
 #command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "fossil_hauberk_mount"
+#command "#copystats 1977"
+#command "#spr1 ./graphics/abysian/mounts/fossil.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#itemslots 786950"
+#command "#gcost 50"
+#command "#rcost 8"
 #mount
 #end
 
@@ -1995,21 +3621,10 @@
 #command "#neednoteat"
 #command "#noheal"
 #command "#stonebeing"
-#command "#weapon 429 --- Stone Club"
+#command "#weapon 429"
 #command "#magicboost 53 -5"
 #command "#humanoid"
 #command "#itemslots 786950"
-#command "#gcost 40"
-#command "#rcost 4"
-#mount
-#end
-
-#new secondshape
-#id "leogryph_mount"
-#command "#copystats 2132"
-#command "#copyspr 2132"
-#command "#magicboost 53 -5"
-#command "#transformation 0"
 #command "#gcost 40"
 #command "#rcost 4"
 #mount
@@ -2026,6 +3641,184 @@
 #mount
 #end
 
+#new secondshape
+#id "gryphon_leather_barding_mount"
+#command "#copystats 2131"
+#command "#copyspr 2131"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 251"
+#command "#gcost 100"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "gryphon_light_bronze_barding_mount"
+#command "#copystats 2131"
+#command "#copyspr 2131"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 264"
+#command "#gcost 100"
+#command "#rcost 10"
+#mount
+#end
+
+#new secondshape
+#id "gryphon_light_scale_barding_mount"
+#command "#copystats 2131"
+#command "#copyspr 2131"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 252"
+#command "#gcost 100"
+#command "#rcost 12"
+#mount
+#end
+
+#new secondshape
+#id "gryphon_mail_barding_mount"
+#command "#copystats 2131"
+#command "#copyspr 2131"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 100"
+#command "#rcost 18"
+#mount
+#end
+
+#new secondshape
+#id "gryphon_cataphract_barding_mount"
+#command "#copystats 2131"
+#command "#copyspr 2131"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 253"
+#command "#gcost 100"
+#command "#rcost 24"
+#mount
+#end
+
+#new secondshape
+#id "gryphon_bronze_barding_mount"
+#command "#copystats 2131"
+#command "#copyspr 2131"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 263"
+#command "#gcost 100"
+#command "#rcost 26"
+#mount
+#end
+
+#new secondshape
+#id "gryphon_plate_barding_mount"
+#command "#copystats 2131"
+#command "#copyspr 2131"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 254"
+#command "#gcost 100"
+#command "#rcost 26"
+#mount
+#end
+
+#new secondshape
+#id "leogryph_mount"
+#command "#copystats 2132"
+#command "#copyspr 2132"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#gcost 40"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "leogryph_leather_barding_mount"
+#command "#copystats 2132"
+#command "#copyspr 2132"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 251"
+#command "#gcost 40"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "leogryph_light_bronze_barding_mount"
+#command "#copystats 2132"
+#command "#copyspr 2132"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 264"
+#command "#gcost 40"
+#command "#rcost 10"
+#mount
+#end
+
+#new secondshape
+#id "leogryph_light_scale_barding_mount"
+#command "#copystats 2132"
+#command "#copyspr 2132"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 252"
+#command "#gcost 40"
+#command "#rcost 12"
+#mount
+#end
+
+#new secondshape
+#id "leogryph_mail_barding_mount"
+#command "#copystats 2132"
+#command "#copyspr 2132"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 40"
+#command "#rcost 18"
+#mount
+#end
+
+#new secondshape
+#id "leogryph_cataphract_barding_mount"
+#command "#copystats 2132"
+#command "#copyspr 2132"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 253"
+#command "#gcost 40"
+#command "#rcost 24"
+#mount
+#end
+
+#new secondshape
+#id "leogryph_bronze_barding_mount"
+#command "#copystats 2132"
+#command "#copyspr 2132"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 263"
+#command "#gcost 40"
+#command "#rcost 28"
+#mount
+#end
+
+#new secondshape
+#id "leogryph_plate_barding_mount"
+#command "#copystats 2132"
+#command "#copyspr 2132"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 254"
+#command "#gcost 40"
+#command "#rcost 30"
+#mount
+#end
 
 #new secondshape
 #id "hyena_mount"
@@ -2045,7 +3838,7 @@
 #command "#prot 6"
 #command "#size 3"
 #command "#mapmove 22"
-#command "#weapon 20 --- Bite"
+#command "#weapon 20"
 #command "#stealthy 40"
 #command "#wastesurvival"
 #command "#undisciplined"
@@ -2072,7 +3865,7 @@
 #command "#copystats 2185"
 #command "#spr1 ./graphics/mounts/standard/crocodile_monster_armored.png"
 #command "#spr2 shift"
-#command "#armor 172 --- Mail Barding"
+#command "#armor 172"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
 #command "#gcost 15"
@@ -2142,6 +3935,32 @@
 #end
 
 #new secondshape
+#id "sea_dog_turtle_shell_barding_mount"
+#command "#copystats 1064"
+#command "#copyspr 1064"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 137"
+#command "#gcost 5"
+#command "#rcost 5"
+#mount
+#end
+
+#new secondshape
+#id "sea_dog_coral_barding_mount"
+#command "#copystats 1064"
+#command "#copyspr 1064"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 190"
+#command "#gcost 5"
+#command "#rcost 7"
+#mount
+#end
+
+#new secondshape
 #id "cu_sidhe_mount"
 #command "#name 'Cu Sidhe'"
 #command "#copyspr 851"
@@ -2162,7 +3981,7 @@
 #command "#forestsurvival"
 #command "#stealthy 40"
 #command "#darkvision 50"
-#command "#weapon 20 --- Bite"
+#command "#weapon 20"
 #command "#patrolbonus 1"
 #command "#enc 3"
 #command "#itemslots 786432"
@@ -2194,7 +4013,7 @@
 #command "#curseattacker 5"
 #command "#stealthy 60"
 #command "#darkvision 50"
-#command "#weapon 223 --- Venomous Bite"
+#command "#weapon 223"
 #command "#enc 2"
 #command "#itemslots 786432"
 #command "#transformation 0"
@@ -2216,6 +4035,71 @@
 #end
 
 #new secondshape
+#id "dire_wolf_leather_barding_mount_1"
+#command "#copystats 1224"
+#command "#copyspr 1224"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 251"
+#command "#gcost 25"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "dire_wolf_light_scale_barding_mount_1"
+#command "#copystats 1224"
+#command "#copyspr 1224"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 252"
+#command "#gcost 25"
+#command "#rcost 10"
+#mount
+#end
+
+#new secondshape
+#id "dire_wolf_mail_barding_mount_1"
+#command "#copystats 1224"
+#command "#copyspr 1224"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 25"
+#command "#rcost 16"
+#mount
+#end
+
+#new secondshape
+#id "dire_wolf_cataphract_barding_mount_1"
+#command "#copystats 1224"
+#command "#copyspr 1224"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 253"
+#command "#gcost 25"
+#command "#rcost 22"
+#mount
+#end
+
+#new secondshape
+#id "dire_wolf_plate_barding_mount_1"
+#command "#copystats 1224"
+#command "#copyspr 1224"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 254"
+#command "#gcost 25"
+#command "#rcost 28"
+#mount
+#end
+
+#new secondshape
 #id "dire_wolf_mount_2"
 #command "#copystats 1224"
 #command "#copyspr 2474"
@@ -2224,6 +4108,32 @@
 #command "#transformation 0"
 #command "#gcost 25"
 #command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "dire_wolf_turtle_shell_barding_mount_2"
+#command "#copystats 1224"
+#command "#copyspr 2474"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 137"
+#command "#gcost 25"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "dire_wolf_coral_barding_mount_2"
+#command "#copystats 1224"
+#command "#copyspr 2474"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 190"
+#command "#gcost 25"
+#command "#rcost 8"
 #mount
 #end
 
@@ -2394,6 +4304,74 @@
 #end
 
 #new secondshape
+#id "jaguar_toad_turtle_shell_barding_mount"
+#command "#name 'Giant Toad'"
+#command "#copyspr 1359"
+#command "#lizard"
+#command "#itemslots 786432"
+#command "#str 11"
+#command "#mor 12"
+#command "#mr 5"
+#command "#prot 3"
+#command "#hp 21"
+#command "#att 7"
+#command "#def 6"
+#command "#prec 5"
+#command "#ap 6"
+#command "#mapmove 20"
+#command "#enc 3"
+#command "#weapon 324"
+#command "#weapon 236"
+#command "#animal"
+#command "#coldblood"
+#command "#size 4"
+#command "#trample"
+#command "#poisonres 15"
+#command "#poisonskin 20"
+#command "#swampsurvival"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 137"
+#command "#gcost 20"
+#command "#rcost 7"
+#mount
+#end
+
+#new secondshape
+#id "jaguar_toad_coral_barding_mount"
+#command "#name 'Giant Toad'"
+#command "#copyspr 1359"
+#command "#lizard"
+#command "#itemslots 786432"
+#command "#str 11"
+#command "#mor 12"
+#command "#mr 5"
+#command "#prot 3"
+#command "#hp 21"
+#command "#att 7"
+#command "#def 6"
+#command "#prec 5"
+#command "#ap 6"
+#command "#mapmove 20"
+#command "#enc 3"
+#command "#weapon 324"
+#command "#weapon 236"
+#command "#animal"
+#command "#coldblood"
+#command "#size 4"
+#command "#trample"
+#command "#poisonres 15"
+#command "#poisonskin 20"
+#command "#swampsurvival"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 190"
+#command "#gcost 20"
+#command "#rcost 9"
+#mount
+#end
+
+#new secondshape
 #id "sapphire_toad_mount"
 #command "#name 'Giant Frog'"
 #command "#spr1 ./graphics/mounts/standard/toad_sapphire.png"
@@ -2424,6 +4402,76 @@
 #command "#transformation 0"
 #command "#gcost 20"
 #command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "sapphire_toad_turtle_shell_barding_mount"
+#command "#name 'Giant Frog'"
+#command "#spr1 ./graphics/mounts/standard/toad_sapphire.png"
+#command "#spr2 shift"
+#command "#lizard"
+#command "#itemslots 786432"
+#command "#str 11"
+#command "#mor 12"
+#command "#mr 5"
+#command "#prot 1"
+#command "#hp 21"
+#command "#att 7"
+#command "#def 6"
+#command "#prec 5"
+#command "#ap 9"
+#command "#mapmove 20"
+#command "#enc 3"
+#command "#weapon 236"
+#command "#animal"
+#command "#coldblood"
+#command "#size 4"
+#command "#trample"
+#command "#poisonres 15"
+#command "#poisonskin 20"
+#command "#swampsurvival"
+#command "#amphibian"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 137"
+#command "#gcost 20"
+#command "#rcost 7"
+#mount
+#end
+
+#new secondshape
+#id "sapphire_toad_coral_barding_mount"
+#command "#name 'Giant Frog'"
+#command "#spr1 ./graphics/mounts/standard/toad_sapphire.png"
+#command "#spr2 shift"
+#command "#lizard"
+#command "#itemslots 786432"
+#command "#str 11"
+#command "#mor 12"
+#command "#mr 5"
+#command "#prot 1"
+#command "#hp 21"
+#command "#att 7"
+#command "#def 6"
+#command "#prec 5"
+#command "#ap 9"
+#command "#mapmove 20"
+#command "#enc 3"
+#command "#weapon 236"
+#command "#animal"
+#command "#coldblood"
+#command "#size 4"
+#command "#trample"
+#command "#poisonres 15"
+#command "#poisonskin 20"
+#command "#swampsurvival"
+#command "#amphibian"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 190"
+#command "#gcost 20"
+#command "#rcost 9"
 #mount
 #end
 
@@ -2705,6 +4753,201 @@
 #end
 
 #new secondshape
+#id "lizard_leather_barding_nightmare_mount"
+#command "#name 'Lizard Nightmare'"
+#command "#spr1 ./graphics/amazon/mounts/nightmare_lizard.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#hp 15"
+#command "#prot 5"
+#command "#mr 10"
+#command "#mor 50"
+#command "#str 10"
+#command "#att 14"
+#command "#def 10"
+#command "#prec 4"
+#command "#ap 20"
+#command "#mapmove 16"
+#command "#enc 0"
+#command "#weapon 20"
+#command "#holy"
+#command "#coldres 15"
+#command "#poisonres 25"
+#command "#fear 5"
+#command "#pooramphibian"
+#command "#pierceres"
+#command "#undead"
+#command "#inanimate"
+#command "#neednoteat"
+#command "#mind"
+#command "#noheal"
+#command "#spiritsight"
+#command "#forestsurvival"
+#command "#quadruped"
+#command "#itemslots 786432"
+#command "#armor 251"
+#command "#gcost 50"
+#command "#rcost 10"
+#mount
+#end
+
+#new secondshape
+#id "lizard_light_scale_barding_nightmare_mount"
+#command "#name 'Lizard Nightmare'"
+#command "#spr1 ./graphics/amazon/mounts/nightmare_lizard.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#hp 15"
+#command "#prot 5"
+#command "#mr 10"
+#command "#mor 50"
+#command "#str 10"
+#command "#att 14"
+#command "#def 10"
+#command "#prec 4"
+#command "#ap 20"
+#command "#mapmove 16"
+#command "#enc 0"
+#command "#weapon 20"
+#command "#holy"
+#command "#coldres 15"
+#command "#poisonres 25"
+#command "#fear 5"
+#command "#pooramphibian"
+#command "#pierceres"
+#command "#undead"
+#command "#inanimate"
+#command "#neednoteat"
+#command "#mind"
+#command "#noheal"
+#command "#spiritsight"
+#command "#forestsurvival"
+#command "#quadruped"
+#command "#itemslots 786432"
+#command "#armor 252"
+#command "#gcost 50"
+#command "#rcost 12"
+#mount
+#end
+
+#new secondshape
+#id "lizard_mail_barding_nightmare_mount"
+#command "#name 'Lizard Nightmare'"
+#command "#spr1 ./graphics/amazon/mounts/nightmare_lizard.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#hp 15"
+#command "#prot 5"
+#command "#mr 10"
+#command "#mor 50"
+#command "#str 10"
+#command "#att 14"
+#command "#def 10"
+#command "#prec 4"
+#command "#ap 20"
+#command "#mapmove 16"
+#command "#enc 0"
+#command "#weapon 20"
+#command "#holy"
+#command "#coldres 15"
+#command "#poisonres 25"
+#command "#fear 5"
+#command "#pooramphibian"
+#command "#pierceres"
+#command "#undead"
+#command "#inanimate"
+#command "#neednoteat"
+#command "#mind"
+#command "#noheal"
+#command "#spiritsight"
+#command "#forestsurvival"
+#command "#quadruped"
+#command "#itemslots 786432"
+#command "#armor 172"
+#command "#gcost 50"
+#command "#rcost 18"
+#mount
+#end
+
+#new secondshape
+#id "lizard_cataphract_barding_nightmare_mount"
+#command "#name 'Lizard Nightmare'"
+#command "#spr1 ./graphics/amazon/mounts/nightmare_lizard.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#hp 15"
+#command "#prot 5"
+#command "#mr 10"
+#command "#mor 50"
+#command "#str 10"
+#command "#att 14"
+#command "#def 10"
+#command "#prec 4"
+#command "#ap 20"
+#command "#mapmove 16"
+#command "#enc 0"
+#command "#weapon 20"
+#command "#holy"
+#command "#coldres 15"
+#command "#poisonres 25"
+#command "#fear 5"
+#command "#pooramphibian"
+#command "#pierceres"
+#command "#undead"
+#command "#inanimate"
+#command "#neednoteat"
+#command "#mind"
+#command "#noheal"
+#command "#spiritsight"
+#command "#forestsurvival"
+#command "#quadruped"
+#command "#itemslots 786432"
+#command "#armor 253"
+#command "#gcost 50"
+#command "#rcost 24"
+#mount
+#end
+
+#new secondshape
+#id "lizard_plate_barding_nightmare_mount"
+#command "#name 'Lizard Nightmare'"
+#command "#spr1 ./graphics/amazon/mounts/nightmare_lizard.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#hp 15"
+#command "#prot 5"
+#command "#mr 10"
+#command "#mor 50"
+#command "#str 10"
+#command "#att 14"
+#command "#def 10"
+#command "#prec 4"
+#command "#ap 20"
+#command "#mapmove 16"
+#command "#enc 0"
+#command "#weapon 20"
+#command "#holy"
+#command "#coldres 15"
+#command "#poisonres 25"
+#command "#fear 5"
+#command "#pooramphibian"
+#command "#pierceres"
+#command "#undead"
+#command "#inanimate"
+#command "#neednoteat"
+#command "#mind"
+#command "#noheal"
+#command "#spiritsight"
+#command "#forestsurvival"
+#command "#quadruped"
+#command "#itemslots 786432"
+#command "#armor 254"
+#command "#gcost 50"
+#command "#rcost 30"
+#mount
+#end
+
+#new secondshape
 #id "flayed_serpent_mount"
 #command "#name 'Flayed Serpent'"
 #command "#spr1 ./graphics/amazon/mounts/flayed_serpent.png"
@@ -2741,5 +4984,210 @@
 #command "#itemslots 786432"
 #command "#gcost 60"
 #command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "flayed_serpent_leather_barding_mount"
+#command "#name 'Flayed Serpent'"
+#command "#spr1 ./graphics/amazon/mounts/flayed_serpent.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#hp 17"
+#command "#prot 9"
+#command "#mr 10"
+#command "#mor 50"
+#command "#str 10"
+#command "#att 14"
+#command "#def 9"
+#command "#prec 5"
+#command "#ap 17"
+#command "#mapmove 18"
+#command "#enc 0"
+#command "#weapon 495"
+#command "#holy"
+#command "#coldres 15"
+#command "#poisonres 25"
+#command "#fear 5"
+#command "#pooramphibian"
+#command "#pierceres"
+#command "#undead"
+#command "#inanimate"
+#command "#neednoteat"
+#command "#mind"
+#command "#noheal"
+#command "#spiritsight"
+#command "#swampsurvival"
+#command "#swimming"
+#command "#quadruped"
+#command "#lizard"
+#command "#itemslots 786432"
+#command "#armor 251"
+#command "#gcost 60"
+#command "#rcost 10"
+#mount
+#end
+
+#new secondshape
+#id "flayed_serpent_light_scale_barding_mount"
+#command "#name 'Flayed Serpent'"
+#command "#spr1 ./graphics/amazon/mounts/flayed_serpent.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#hp 17"
+#command "#prot 9"
+#command "#mr 10"
+#command "#mor 50"
+#command "#str 10"
+#command "#att 14"
+#command "#def 9"
+#command "#prec 5"
+#command "#ap 17"
+#command "#mapmove 18"
+#command "#enc 0"
+#command "#weapon 495"
+#command "#holy"
+#command "#coldres 15"
+#command "#poisonres 25"
+#command "#fear 5"
+#command "#pooramphibian"
+#command "#pierceres"
+#command "#undead"
+#command "#inanimate"
+#command "#neednoteat"
+#command "#mind"
+#command "#noheal"
+#command "#spiritsight"
+#command "#swampsurvival"
+#command "#swimming"
+#command "#quadruped"
+#command "#lizard"
+#command "#itemslots 786432"
+#command "#armor 252"
+#command "#gcost 60"
+#command "#rcost 12"
+#mount
+#end
+
+#new secondshape
+#id "flayed_serpent_mail_barding_mount"
+#command "#name 'Flayed Serpent'"
+#command "#spr1 ./graphics/amazon/mounts/flayed_serpent.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#hp 17"
+#command "#prot 9"
+#command "#mr 10"
+#command "#mor 50"
+#command "#str 10"
+#command "#att 14"
+#command "#def 9"
+#command "#prec 5"
+#command "#ap 17"
+#command "#mapmove 18"
+#command "#enc 0"
+#command "#weapon 495"
+#command "#holy"
+#command "#coldres 15"
+#command "#poisonres 25"
+#command "#fear 5"
+#command "#pooramphibian"
+#command "#pierceres"
+#command "#undead"
+#command "#inanimate"
+#command "#neednoteat"
+#command "#mind"
+#command "#noheal"
+#command "#spiritsight"
+#command "#swampsurvival"
+#command "#swimming"
+#command "#quadruped"
+#command "#lizard"
+#command "#itemslots 786432"
+#command "#armor 172"
+#command "#gcost 60"
+#command "#rcost 18"
+#mount
+#end
+
+#new secondshape
+#id "flayed_serpent_cataphract_barding_mount"
+#command "#name 'Flayed Serpent'"
+#command "#spr1 ./graphics/amazon/mounts/flayed_serpent.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#hp 17"
+#command "#prot 9"
+#command "#mr 10"
+#command "#mor 50"
+#command "#str 10"
+#command "#att 14"
+#command "#def 9"
+#command "#prec 5"
+#command "#ap 17"
+#command "#mapmove 18"
+#command "#enc 0"
+#command "#weapon 495"
+#command "#holy"
+#command "#coldres 15"
+#command "#poisonres 25"
+#command "#fear 5"
+#command "#pooramphibian"
+#command "#pierceres"
+#command "#undead"
+#command "#inanimate"
+#command "#neednoteat"
+#command "#mind"
+#command "#noheal"
+#command "#spiritsight"
+#command "#swampsurvival"
+#command "#swimming"
+#command "#quadruped"
+#command "#lizard"
+#command "#itemslots 786432"
+#command "#armor 253"
+#command "#gcost 60"
+#command "#rcost 24"
+#mount
+#end
+
+#new secondshape
+#id "flayed_serpent_plate_barding_mount"
+#command "#name 'Flayed Serpent'"
+#command "#spr1 ./graphics/amazon/mounts/flayed_serpent.png"
+#command "#spr2 shift"
+#command "#size 4"
+#command "#hp 17"
+#command "#prot 9"
+#command "#mr 10"
+#command "#mor 50"
+#command "#str 10"
+#command "#att 14"
+#command "#def 9"
+#command "#prec 5"
+#command "#ap 17"
+#command "#mapmove 18"
+#command "#enc 0"
+#command "#weapon 495"
+#command "#holy"
+#command "#coldres 15"
+#command "#poisonres 25"
+#command "#fear 5"
+#command "#pooramphibian"
+#command "#pierceres"
+#command "#undead"
+#command "#inanimate"
+#command "#neednoteat"
+#command "#mind"
+#command "#noheal"
+#command "#spiritsight"
+#command "#swampsurvival"
+#command "#swimming"
+#command "#quadruped"
+#command "#lizard"
+#command "#itemslots 786432"
+#command "#armor 254"
+#command "#gcost 60"
+#command "#rcost 30"
 #mount
 #end

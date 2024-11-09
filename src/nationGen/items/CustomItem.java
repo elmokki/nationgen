@@ -198,8 +198,13 @@ public class CustomItem extends Item {
   public List<String> writeLines() {
     List<String> lines = new ArrayList<>();
 
-    if (armor) lines.add("#newarmor " + id);
-    else lines.add("#newweapon " + id);
+    if (armor) {
+      lines.add("#newarmor " + id);
+    }
+
+    else {
+      lines.add("#newweapon " + id);
+    }
 
     for (Command command : this.values) {
       if (command.command.equals("#name")) {

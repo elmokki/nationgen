@@ -1,5 +1,7 @@
+--- Fire Drakes
+
 #newitem
-#id "firedrake"
+#id "fire_drake"
 #gameid -1
 #sprite /graphics/abysian/mounts/firedrake.png
 #armor
@@ -7,11 +9,81 @@
 #offsetx -7
 #offsety 16
 #define "#mountmnr 'fire_drake_mount'"
-
 #tag "animal drake"
 #tag "minprot 10"
 #tag "maxprot 100"
+#basechance 3.9
 #enditem
+
+#newitem
+#id "fire_drake_light_scale_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/firedrake.png
+#armor
+#needs overlay firedrake_overlay
+#offsetx -7
+#offsety 16
+#define "#mountmnr 'fire_drake_light_scale_barding_mount'"
+#tag "animal drake"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 2.9
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "fire_drake_mail_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/firedrake.png
+#armor
+#needs overlay firedrake_overlay
+#offsetx -7
+#offsety 16
+#define "#mountmnr 'fire_drake_mail_barding_mount'"
+#theme "heavy"
+#tag "animal drake"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 1.9
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "fire_drake_cataphract_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/firedrake.png
+#armor
+#needs overlay firedrake_overlay
+#offsetx -7
+#offsety 16
+#define "#mountmnr 'fire_drake_cataphract_barding_mount'"
+#theme "heavy"
+#tag "animal drake"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 0.9
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "fire_drake_plate_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/firedrake.png
+#armor
+#needs overlay firedrake_overlay
+#offsetx -7
+#offsety 16
+#define "#mountmnr 'fire_drake_plate_barding_mount'"
+#theme "heavy"
+#tag "animal drake"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 0.4
+#chanceinc prot 18 *2
+#enditem
+
+
+--- Salamanders
 
 #newitem
 #id "salamander"
@@ -22,7 +94,24 @@
 #offsety 14
 #define "#mountmnr 'salamander_mount'"
 #tag "animal salamander"
-#tag "maxprot 10"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 3.9
+#enditem
+
+#newitem
+#id "salamander_light_scale_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/salamander.png
+#armor
+#offsetx -7
+#offsety 14
+#define "#mountmnr 'salamander_light_scale_barding_mount'"
+#tag "animal salamander"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 2.9
+#chanceinc prot 10 *2
 #enditem
 
 #newitem
@@ -33,12 +122,51 @@
 #offsetx -7
 #offsety 14
 #define "#mountmnr 'salamander_mail_barding_mount'"
+#theme "heavy"
 #tag "animal salamander"
-#tag "maxprot 18"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 1.9
+#chanceinc prot 14 *2
 #enditem
 
 #newitem
-#id "scorpion"
+#id "salamander_cataphract_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/salamander.png
+#armor
+#offsetx -7
+#offsety 14
+#define "#mountmnr 'salamander_cataphract_barding_mount'"
+#theme "heavy"
+#tag "animal salamander"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 0.9
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "salamander_plate_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/salamander.png
+#armor
+#offsetx -7
+#offsety 14
+#define "#mountmnr 'salamander_plate_barding_mount'"
+#theme "heavy"
+#tag "animal salamander"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 0.4
+#chanceinc prot 18 *2
+#enditem
+
+
+--- Scorpions
+
+#newitem
+#id "scorpion_beast"
 #gameid -1
 #sprite /graphics/abysian/mounts/scorpion.png
 #armor
@@ -52,9 +180,87 @@
 #tag "guaranteedprefix scorpion"
 #tag "minprot 10"
 #tag "maxprot 100"
+#basechance 3.9
+#enditem
+
+#newitem
+#id "scorpion_beast_light_scale_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 23
+#offsety 6
+#needs overlay scorpion_overlay
+#define "#mountmnr 'scorpion_beast_light_scale_barding_mount'"
+#tag "animal scorpion"
+#theme "heavy"
+#description "Leaves a giant scorpion behind when the rider dies"
+#tag "guaranteedprefix scorpion"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 2.9
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "scorpion_beast_mail_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 23
+#offsety 6
+#needs overlay scorpion_overlay
+#define "#mountmnr 'scorpion_beast_mail_barding_mount'"
+#tag "animal scorpion"
+#theme "heavy"
+#description "Leaves a giant scorpion behind when the rider dies"
+#tag "guaranteedprefix scorpion"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 1.9
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "scorpion_beast_cataphract_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 23
+#offsety 6
+#needs overlay scorpion_overlay
+#define "#mountmnr 'scorpion_beast_cataphract_barding_mount'"
+#tag "animal scorpion"
+#theme "heavy"
+#description "Leaves a giant scorpion behind when the rider dies"
+#tag "guaranteedprefix scorpion"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 0.9
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "scorpion_beast_plate_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 23
+#offsety 6
+#needs overlay scorpion_overlay
+#define "#mountmnr 'scorpion_beast_plate_barding_mount'"
+#tag "animal scorpion"
+#theme "heavy"
+#description "Leaves a giant scorpion behind when the rider dies"
+#tag "guaranteedprefix scorpion"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 0.4
+#chanceinc prot 18 *2
 #enditem
 
 
+--- Fossils
 
 #newitem
 #id "fossil"
@@ -71,7 +277,30 @@
 #tag "guaranteedprefix fossil"
 #tag "minprot 10"
 #tag "maxprot 100"
+#basechance 6.7
 #enditem
+
+#newitem
+#id "fossil_hauberk"
+#gameid -1
+#sprite /graphics/abysian/mounts/fossil.png
+#armor
+#needs overlay fossil_overlay
+#offsetx 34
+#offsety 31
+#define "#mountmnr 'fossil_hauberk_mount'"
+#tag "animal fossil"
+#theme "heavy"
+#description "Leaves a fossilized giant behind when the rider dies"
+#tag "guaranteedprefix fossil"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 3.3
+#chanceinc prot 17 *2
+#enditem
+
+
+--- Glosos
 
 #newitem
 #id "gloso"
@@ -83,10 +312,75 @@
 #define "#mountmnr 'gloso_mount'"
 #tag "animal gloso"
 #description "Leaves a burning black sow behind when the rider dies"
-#basechance 0.5
-#tag "minprot 0"
 #tag "maxprot 15"
+#basechance 2
 #enditem
+
+#newitem
+#id "gloso_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/gloso.png
+#armor
+#offsetx -2
+#offsety 2
+#define "#mountmnr 'gloso_light_scale_barding_mount'"
+#tag "animal gloso"
+#description "Leaves a burning black sow behind when the rider dies"
+#tag "maxprot 20"
+#basechance 1.45
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "gloso_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/gloso.png
+#armor
+#offsetx -2
+#offsety 2
+#define "#mountmnr 'gloso_mail_barding_mount'"
+#theme "heavy"
+#tag "animal gloso"
+#description "Leaves a burning black sow behind when the rider dies"
+#tag "maxprot 100"
+#basechance 0.95
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "gloso_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/gloso.png
+#armor
+#offsetx -2
+#offsety 2
+#define "#mountmnr 'gloso_cataphract_barding_mount'"
+#theme "heavy"
+#tag "animal gloso"
+#description "Leaves a burning black sow behind when the rider dies"
+#tag "maxprot 100"
+#basechance 0.45
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "gloso_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/gloso.png
+#armor
+#offsetx -2
+#offsety 2
+#define "#mountmnr 'gloso_plate_barding_mount'"
+#theme "heavy"
+#tag "animal gloso"
+#description "Leaves a burning black sow behind when the rider dies"
+#tag "maxprot 100"
+#basechance 0.25
+#chanceinc prot 18 *2
+#enditem
+
+
+--- Nightmares
 
 #newitem
 #id "nightmare"
@@ -99,6 +393,56 @@
 #define "#gcost -10"
 #tag "animal nightmare"
 #description "Leaves a nightmare behind when the rider dies"
-#basechance 0.25
 #tag "minprot 10"
+#basechance 1
+#enditem
+
+#newitem
+#id "nightmare_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/nightmare.png
+#armor
+#offsety -2
+#define "#size 5"
+#define "#mountmnr 'nightmare_light_scale_barding_mount'"
+#define "#gcost -10"
+#tag "animal nightmare"
+#description "Leaves a nightmare behind when the rider dies"
+#tag "minprot 10"
+#basechance 0.75
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "nightmare_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/nightmare.png
+#armor
+#offsety -2
+#define "#size 5"
+#define "#mountmnr 'nightmare_cataphract_barding_mount_1'"
+#define "#gcost -10"
+#theme "heavy"
+#tag "animal nightmare"
+#description "Leaves a nightmare behind when the rider dies"
+#tag "minprot 10"
+#basechance 0.5
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "nightmare_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/nightmare.png
+#armor
+#offsety -2
+#define "#size 5"
+#define "#mountmnr 'nightmare_plate_barding_mount_1'"
+#define "#gcost -10"
+#theme "heavy"
+#tag "animal nightmare"
+#description "Leaves a nightmare behind when the rider dies"
+#tag "minprot 10"
+#basechance 0.25
+#chanceinc prot 18 *2
 #enditem
