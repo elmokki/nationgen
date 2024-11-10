@@ -816,7 +816,10 @@ public class NationGen {
       .forEach(mu -> {
         mu.polish(this, n);
 
-        // Replace command
+        // Look for custom #weapon commands defined in the mount form with a
+        // non-numerical id (i.e. #command "#armor 'meteorite_barding'").
+        // These are defined in customitems.txt, and this code replaces their
+        // NationGen id with the generated Dominions custom id
         mu.mountForm.commands
           .stream()
           .filter(c -> c.command.equals("#weapon"))
@@ -827,6 +830,25 @@ public class NationGen {
               c.args.set(
                 0,
                 new Arg(customItemsHandler.getCustomItemId(weaponId.get()))
+              );
+            }
+          });
+
+        // Look for custom #armor commands defined in the mount form (
+        // like custom bardings) with a non-numerical id (i.e. #command
+        // "#armor 'meteorite_barding'"). These are defined in customitems.txt,
+        // and this code replaces their NationGen id with the generated
+        // Dominions custom id
+        mu.mountForm.commands
+          .stream()
+          .filter(c -> c.command.equals("#armor"))
+          .forEach(c -> {
+            Arg armorId = c.args.get(0);
+
+            if (!armorId.isNumeric()) {
+              c.args.set(
+                0,
+                new Arg(customItemsHandler.getCustomItemId(armorId.get()))
               );
             }
           });

@@ -1,24 +1,101 @@
---- Abysian mounts
-
+--- Scorpions
 
 #newitem
-#id "scorpion"
+#id "scorpion_beast"
 #gameid -1
 #sprite /graphics/abysian/mounts/scorpion.png
 #armor
 #offsetx 23
 #offsety 6
-#define "#mountmnr 'scorpionmount'"
+#define "#mountmnr 'scorpion_beast_mount'"
 #define "#gcost +50"
 #tag "animal scorpion"
 #theme "heavy"
 #description "Leaves a giant scorpion behind when the rider dies"
 #tag "guaranteedprefix scorpion"
-
 #tag "minprot 10"
 #tag "maxprot 100"
+#basechance 3
 #enditem
 
+#newitem
+#id "scorpion_beast_light_scale_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 23
+#offsety 6
+#needs overlay scorpion_overlay
+#define "#mountmnr 'scorpion_beast_light_scale_barding_mount'"
+#tag "animal scorpion"
+#theme "heavy"
+#description "Leaves a giant scorpion behind when the rider dies"
+#tag "guaranteedprefix scorpion"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 2.5
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "scorpion_beast_mail_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 23
+#offsety 6
+#needs overlay scorpion_overlay
+#define "#mountmnr 'scorpion_beast_mail_barding_mount'"
+#tag "animal scorpion"
+#theme "heavy"
+#description "Leaves a giant scorpion behind when the rider dies"
+#tag "guaranteedprefix scorpion"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 2
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "scorpion_beast_cataphract_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 23
+#offsety 6
+#needs overlay scorpion_overlay
+#define "#mountmnr 'scorpion_beast_cataphract_barding_mount'"
+#tag "animal scorpion"
+#theme "heavy"
+#description "Leaves a giant scorpion behind when the rider dies"
+#tag "guaranteedprefix scorpion"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 1.5
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "scorpion_beast_plate_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 23
+#offsety 6
+#needs overlay scorpion_overlay
+#define "#mountmnr 'scorpion_beast_cataphract_barding_mount'"
+#tag "animal scorpion"
+#theme "heavy"
+#description "Leaves a giant scorpion behind when the rider dies"
+#tag "guaranteedprefix scorpion"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 1
+#chanceinc prot 18 *2
+#enditem
+
+
+--- Fossils
 
 #newitem
 #id "fossil"
@@ -28,17 +105,37 @@
 #needs overlay fossil_overlay
 #offsetx 34
 #offsety 31
-#define "#mountmnr 'fossilmount'"
-#define "#gcost +50"
+#define "#mountmnr 'fossil_mount'"
 #tag "animal fossil"
 #theme "heavy"
 #description "Leaves a fossilized giant behind when the rider dies"
 #tag "guaranteedprefix fossil"
-
 #tag "minprot 10"
 #tag "maxprot 100"
-#basechance 0.25
+#basechance 1.75
 #enditem
+
+#newitem
+#id "fossil_hauberk"
+#gameid -1
+#sprite /graphics/abysian/mounts/fossil.png
+#armor
+#needs overlay fossil_overlay
+#offsetx 34
+#offsety 31
+#define "#mountmnr 'fossil_hauberk_mount'"
+#tag "animal fossil"
+#theme "heavy"
+#description "Leaves a fossilized giant behind when the rider dies"
+#tag "guaranteedprefix fossil"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 0.75
+#chanceinc prot 18 *2
+#enditem
+
+
+--- Glosos
 
 #newitem
 #id "gloso"
@@ -47,14 +144,83 @@
 #armor
 #offsetx -2
 #offsety 2
-#define "#mountmnr 'gloso'"
-#define "#gcost +40"
+#define "#mountmnr 'gloso_mount'"
 #tag "animal gloso"
 #description "Leaves a burning black sow behind when the rider dies"
-#basechance 0.25
 #tag "minprot 0"
 #tag "maxprot 15"
+#basechance 2.5
 #enditem
+
+#newitem
+#id "gloso_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/gloso.png
+#armor
+#offsetx -2
+#offsety 2
+#define "#mountmnr 'gloso_light_scale_barding_mount'"
+#tag "animal gloso"
+#description "Leaves a burning black sow behind when the rider dies"
+#tag "minprot 0"
+#tag "maxprot 20"
+#basechance 2
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "gloso_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/gloso.png
+#armor
+#offsetx -2
+#offsety 2
+#define "#mountmnr 'gloso_mail_barding_mount'"
+#tag "animal gloso"
+#theme "heavy"
+#description "Leaves a burning black sow behind when the rider dies"
+#tag "minprot 0"
+#tag "maxprot 100"
+#basechance 1.5
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "gloso_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/gloso.png
+#armor
+#offsetx -2
+#offsety 2
+#define "#mountmnr 'gloso_cataphract_barding_mount'"
+#tag "animal gloso"
+#theme "heavy"
+#description "Leaves a burning black sow behind when the rider dies"
+#tag "minprot 0"
+#tag "maxprot 100"
+#basechance 1
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "gloso_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/gloso.png
+#armor
+#offsetx -2
+#offsety 2
+#define "#mountmnr 'gloso_plate_barding_mount'"
+#tag "animal gloso"
+#theme "heavy"
+#description "Leaves a burning black sow behind when the rider dies"
+#tag "minprot 0"
+#tag "maxprot 100"
+#basechance 0.5
+#chanceinc prot 18 *2
+#enditem
+
+
+---- Nightmares
 
 #newitem
 #id "nightmare"
@@ -62,24 +228,82 @@
 #sprite /graphics/mounts/standard/nightmare.png
 #armor
 #offsety -2
-#define "#mountmnr 'nightmare'"
-#define "#gcost +40"
+#define "#mountmnr 'nightmare_mount'"
+#define "#gcost -10"
 #theme "specialmount"
 #tag "animal nightmare"
 #description "Leaves a nightmare behind when the rider dies"
-#basechance 0.5
 #tag "minprot 10"
+#tag "maxprot 100"
+#basechance 2.2
 #enditem
 
---- Exotic mounts
+#newitem
+#id "nightmare_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/nightmare.png
+#armor
+#offsety -2
+#define "#size 5"
+#define "#mountmnr 'nightmare_light_scale_barding_mount'"
+#define "#gcost -10"
+#theme "heavy"
+#theme "specialmount"
+#tag "animal nightmare"
+#description "Leaves a nightmare behind when the rider dies"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 1.75
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "nightmare_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/nightmare.png
+#armor
+#offsety -2
+#define "#size 5"
+#define "#mountmnr 'nightmare_cataphract_barding_mount_1'"
+#define "#gcost -10"
+#theme "heavy"
+#theme "specialmount"
+#tag "animal nightmare"
+#description "Leaves a nightmare behind when the rider dies"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 0.65
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "nightmare_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/nightmare.png
+#armor
+#offsety -2
+#define "#size 5"
+#define "#mountmnr 'nightmare_plate_barding_mount_1'"
+#define "#gcost -10"
+#theme "heavy"
+#theme "specialmount"
+#tag "animal nightmare"
+#description "Leaves a nightmare behind when the rider dies"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 0.4
+#chanceinc prot 18 *2
+#enditem
+
+
+---- Exotic mounts
 
 #newitem
 #id "lion"
 #gameid -1
 #sprite /graphics/mounts/standard/lion.png
 #armor
-#define "#mountmnr 'lionmount'"
-#define "#gcost +35"
+#define "#mountmnr 'lion_mount'"
 #description "If the rider dies, the lion will carry on fighting until the end of the battle."
 #offsety 5
 #offsetx -1
@@ -87,16 +311,85 @@
 #tag "guaranteedprefix lion"
 #theme "light"
 #tag "maxprot 12"
-#basechance 0.25
+#basechance 0.9
 #enditem
 
 #newitem
-#id "dire wolf"
+#id "lion_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/lion.png
+#armor
+#define "#mountmnr 'lion_light_scale_barding_mount'"
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#offsety 5
+#offsetx -1
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#theme "light"
+#tag "maxprot 16"
+#basechance 0.7
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "lion_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/lion.png
+#armor
+#define "#mountmnr 'lion_mail_barding_mount'"
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#offsety 5
+#offsetx -1
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#theme "heavy"
+#tag "maxprot 100"
+#basechance 0.5
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "lion_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/lion.png
+#armor
+#define "#mountmnr 'lion_cataphract_barding_mount'"
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#offsety 5
+#offsetx -1
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#theme "heavy"
+#tag "maxprot 100"
+#basechance 0.3
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "lion_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/lion.png
+#armor
+#define "#mountmnr 'lion_plate_barding_mount'"
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#offsety 5
+#offsetx -1
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#theme "heavy"
+#tag "maxprot 100"
+#basechance 0.1
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "dire_wolf"
 #gameid -1
 #sprite /graphics/mounts/standard/direwolf1.png
 #armor
 #needs overlay direwolf1_overlay
-#define "#mountmnr direwolf1mount"
+#define "#mountmnr 'dire_wolf_mount_1'"
 #define "#gcost +25"
 #tag "animal wolf"
 #theme "light"
@@ -105,8 +398,85 @@
 #description "If the rider dies, the wolf will carry on fighting until the end of the battle."
 #offsety 2
 #offsetx -7
-#basechance 0.25
+#basechance 0.9
 #enditem
+
+#newitem
+#id "dire_wolf_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#needs overlay direwolf1_overlay
+#define "#mountmnr 'dire_wolf_light_scale_barding_mount_1'"
+#define "#gcost +25"
+#tag "animal wolf"
+#theme "light"
+#tag "maxprot 16"
+#tag "guaranteedprefix wolf"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#offsety 2
+#offsetx -7
+#basechance 0.7
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "dire_wolf_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#needs overlay direwolf1_overlay
+#define "#mountmnr 'dire_wolf_mail_barding_mount_1'"
+#define "#gcost +25"
+#tag "animal wolf"
+#theme "heavy"
+#tag "maxprot 100"
+#tag "guaranteedprefix wolf"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#offsety 2
+#offsetx -7
+#basechance 0.5
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "dire_wolf_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#needs overlay direwolf1_overlay
+#define "#mountmnr 'dire_wolf_cataphract_barding_mount_1'"
+#define "#gcost +25"
+#tag "animal wolf"
+#theme "heavy"
+#tag "maxprot 100"
+#tag "guaranteedprefix wolf"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#offsety 2
+#offsetx -7
+#basechance 0.3
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "dire_wolf_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#needs overlay direwolf1_overlay
+#define "#mountmnr 'dire_wolf_plate_barding_mount_1'"
+#define "#gcost +25"
+#tag "animal wolf"
+#theme "heavy"
+#tag "maxprot 100"
+#tag "guaranteedprefix wolf"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#offsety 2
+#offsetx -7
+#basechance 0.1
+#chanceinc prot 18 *2
+#enditem
+
 
 #newitem
 #id "gryphon"
@@ -116,188 +486,330 @@
 #offsetx 23
 #offsety 64
 #needs overlay gryphon_overlay
-#define "#mountmnr 'gryphonmount'"
-#define "#gcost +100"
+#define "#mountmnr 'gryphon_mount'"
 #description "If the rider dies, the gryphon will carry on fighting until the end of the battle."
 #theme "flying"
 #theme "specialmount"
 #tag "animal gryphon"
 #tag "guaranteedprefix gryphon"
-#basechance 0.125
+#basechance 0.475
 #enditem
+
+#newitem
+#id "gryphon_light_scale_barding"
+#gameid -1
+#sprite /graphics/amazon/mounts/gryphon.png
+#armor
+#offsetx 23
+#offsety 64
+#needs overlay gryphon_overlay
+#define "#mountmnr 'gryphon_light_scale_barding_mount'"
+#description "If the rider dies, the gryphon will carry on fighting until the end of the battle."
+#theme "flying"
+#theme "specialmount"
+#tag "animal gryphon"
+#tag "guaranteedprefix gryphon"
+#basechance 0.375
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "gryphon_mail_barding"
+#gameid -1
+#sprite /graphics/amazon/mounts/gryphon.png
+#armor
+#offsetx 23
+#offsety 64
+#needs overlay gryphon_overlay
+#define "#mountmnr 'gryphon_mail_barding_mount'"
+#description "If the rider dies, the gryphon will carry on fighting until the end of the battle."
+#theme "heavy"
+#theme "flying"
+#theme "specialmount"
+#tag "animal gryphon"
+#tag "guaranteedprefix gryphon"
+#basechance 0.25
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "gryphon_cataphract_barding"
+#gameid -1
+#sprite /graphics/amazon/mounts/gryphon.png
+#armor
+#offsetx 23
+#offsety 64
+#needs overlay gryphon_overlay
+#define "#mountmnr 'gryphon_cataphract_barding_mount'"
+#description "If the rider dies, the gryphon will carry on fighting until the end of the battle."
+#theme "heavy"
+#theme "flying"
+#theme "specialmount"
+#tag "animal gryphon"
+#tag "guaranteedprefix gryphon"
+#basechance 0.125
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "gryphon_plate_barding"
+#gameid -1
+#sprite /graphics/amazon/mounts/gryphon.png
+#armor
+#offsetx 23
+#offsety 64
+#needs overlay gryphon_overlay
+#define "#mountmnr 'gryphon_plate_barding_mount'"
+#description "If the rider dies, the gryphon will carry on fighting until the end of the battle."
+#theme "heavy"
+#theme "flying"
+#theme "specialmount"
+#tag "animal gryphon"
+#tag "guaranteedprefix gryphon"
+#basechance 0.1
+#chanceinc prot 18 *2
+#enditem
+
 
 #newitem
 #id "leogryph"
 #gameid -1
 #sprite /graphics/amazon/mounts/leogryph.png
 #armor
-#define "#mountmnr 'leogryphmount'"
-#define "#gcost +40"
+#define "#mountmnr 'leogryph_mount'"
 #description "If the rider dies, the leogryph will carry on fighting until the end of the battle."
-#basechance 0.125
 #offsety 6
 #offsetx -4
 #theme "specialmount"
 #tag "animal leogryph"
 #tag "guaranteedprefix leogryph"
+#basechance 0.475
+#enditem
+
+#newitem
+#id "leogryph_light_scale_barding"
+#gameid -1
+#sprite /graphics/amazon/mounts/leogryph.png
+#armor
+#define "#mountmnr 'leogryph_light_scale_barding_mount'"
+#description "If the rider dies, the leogryph will carry on fighting until the end of the battle."
+#basechance 0.375
+#offsety 6
+#offsetx -4
+#theme "specialmount"
+#tag "animal leogryph"
+#tag "guaranteedprefix leogryph"
+#basechance 0.375
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "leogryph_mail_barding"
+#gameid -1
+#sprite /graphics/amazon/mounts/leogryph.png
+#armor
+#define "#mountmnr 'leogryph_mail_barding_mount'"
+#description "If the rider dies, the leogryph will carry on fighting until the end of the battle."
+#basechance 0.25
+#offsety 6
+#offsetx -4
+#theme "heavy"
+#theme "specialmount"
+#tag "animal leogryph"
+#tag "guaranteedprefix leogryph"
+#basechance 0.25
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "leogryph_cataphract_barding"
+#gameid -1
+#sprite /graphics/amazon/mounts/leogryph.png
+#armor
+#define "#mountmnr 'leogryph_cataphract_barding_mount'"
+#description "If the rider dies, the leogryph will carry on fighting until the end of the battle."
+#basechance 0.125
+#offsety 6
+#offsetx -4
+#theme "heavy"
+#theme "specialmount"
+#tag "animal leogryph"
+#tag "guaranteedprefix leogryph"
+#basechance 0.175
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "leogryph_plate_barding"
+#gameid -1
+#sprite /graphics/amazon/mounts/leogryph.png
+#armor
+#define "#mountmnr 'leogryph_plate_barding_mount'"
+#description "If the rider dies, the leogryph will carry on fighting until the end of the battle."
+#basechance 0.125
+#offsety 6
+#offsetx -4
+#theme "heavy"
+#theme "specialmount"
+#tag "animal leogryph"
+#tag "guaranteedprefix leogryph"
+#basechance 0.1
+#chanceinc prot 18 *2
 #enditem
 
 
---- Demonbred horses
+---- Demonbred horses
 
 #newitem
-#id "armored demonbred horse"
-#basechance 1
+#id "demonbred_mail_barding_horse"
 #gameid -1
 #sprite /graphics/mounts/standard/demonbred_barded.png
 #armor
 #needs overlay demonbred_barded
-#define "#mountmnr 'demonbred_barded'"
+#define "#mountmnr 'demonbred_mail_barding_mount'"
 #tag "animal horse"
 #theme "heavy"
-#tag "minprot 14"
-#define "#gcost +25"
+#tag "minprot 12"
 #tag "name commander 'knight'"
 #tag "name mounted knight"
+#basechance 10
 #enditem
 
 #newitem
-#basechance 1
-#id "cataphract demonbred horse"
+#id "demonbred_cataphract_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/demonbred_cataphract.png
 #recolormask /graphics/mounts/standard/demonbred_cataphract_recolormask.png
 #armor
 #offsetx -3
 #needs overlay demonbred_cataphract
-#define "#mountmnr 'demonbred_cataphract'"
+#define "#mountmnr 'demonbred_cataphract_barding_mount'"
 #define "#gcost +25"
 #tag "animal horse"
 #theme "heavy"
-#tag "minprot 12"
+#tag "minprot 14"
 #tag "name commander 'cataphract commander'"
 #tag "name mounted cataphract"
+#basechance 10
 #enditem
 
 
---- Ordinary horses
+---- Ordinary horses
 
 #newitem
-#basechance 0.25
-#id "brown horse"
+#id "riding_horse"
 #gameid -1
 #sprite /graphics/mounts/standard/brownhorse.png
 #armor
 #needs overlay 1
-#define "#mountmnr 'riding-horse'"
-#define "#gcost +15"
+#define "#mountmnr 'riding_horse_mount'"
 #tag "animal horse"
 #theme "light"
 #tag "maxprot 11"
 #epicness 0.25
+#basechance 2.5
 #enditem
 
 #newitem
-#id "armored horse"
-#basechance 1
+#id "destrier_plate_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/armoredhorse1.png
 #armor
 #needs overlay 2
-#define "#mountmnr 'armored-horse'"
+#define "#mountmnr 'destrier_plate_barding_mount'"
 #tag "animal horse"
 #theme "heavy"
 #tag "minprot 14"
-#define "#gcost +25"
+#define "#gcost +5"
 #epicness 0.25
 #tag "name commander 'knight'"
 #tag "name mounted knight"
+#basechance 10
 #enditem
 
 #newitem
-#basechance 0.75
-#id "armored horse 22"
+#id "war_horse"
 #gameid -1
 #sprite /graphics/mounts/standard/armoredhorse2.png
 #armor
 #needs overlay armoredhorse2overlay
-#define "#mountmnr 'war-horse'"
+#define "#mountmnr 'war_horse_mount'"
 #tag "animal horse"
 #theme "heavy"
 #tag "minprot 12"
 #tag "maxprot 16"
-#define "#gcost +20"
+#define "#gcost +5"
 #epicness 0.25
 #tag "name commander 'knight'"
 #tag "name mounted knight"
+#basechance 7.5
 #enditem
 
 #newitem
-#basechance 0.5
-#id "cataphract horse"
-#gameid -1
-#sprite /graphics/mounts/standard/catapracthorse1.png
-#armor
-#offsetx -3
-#needs overlay 4
-#define "#mountmnr 'cataphracted-horse'"
-#define "#gcost +25"
-#tag "animal horse"
-#theme "heavy"
-#tag "minprot 12"
-#epicness 0.25
-#tag "name commander 'cataphract commander'"
-#tag "name mounted cataphract"
-#enditem
-
-#newitem
-#basechance 0.5
-#id "light cataphract horse"
+#id "war_horse_light_scale_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/lightcatapract1.png
 #armor
 #offsetx -3
 #needs overlay 5
-#define "#mountmnr 'light-cataphracted-horse'"
-#define "#gcost +20"
+#define "#mountmnr 'war_horse_light_scale_barding_mount_1'"
+#define "#gcost +5"
 #tag "animal horse"
 #tag "minprot 10"
 #tag "maxprot 14"
 #tag "name commander 'cataphract commander'"
 #tag "name mounted cataphract"
+#basechance 5
 #epicness 0.25
 #enditem
 
--- Camels
+#newitem
+#id "war_horse_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/catapracthorse1.png
+#armor
+#offsetx -3
+#needs overlay 4
+#define "#mountmnr 'war_horse_cataphract_barding_mount'"
+#define "#gcost +5"
+#tag "animal horse"
+#theme "heavy"
+#tag "minprot 12"
+#epicness 0.25
+#tag "name commander 'cataphract commander'"
+#tag "name mounted cataphract"
+#basechance 5
+#enditem
+
+
+---- Camels
 
 #newitem
 #id "camel"
-#basechance 1
 #gameid -1
 #sprite /graphics/mounts/standard/camel.png
 #armor
 #offsetx 5
 #offsety 52
-#define "#mountmnr 'camel'"
-#define "#gcost +20"
+#define "#mountmnr 'camel_mount'"
 #tag "animal camel"
 #tag "maxprot 11"
 #theme "light"
+#basechance 10
 #enditem
 
 #newitem
-#id "armored camel"
-#basechance 1
+#id "camel_mail_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/camel_armored_iron.png
 #recolormask /graphics/mounts/standard/camel_armored_recolormask.png
 #armor
 #offsetx 5
 #offsety 52
-#define "#mountmnr 'armored_camel'"
-#define "#gcost +25"
+#define "#mountmnr 'camel_mail_barding_mount'"
 #tag "animal camel"
 #theme "heavy"
 #tag "minprot 12"
 #tag "maxprot 16"
+#basechance 10
 #enditem

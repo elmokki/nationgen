@@ -9,7 +9,7 @@
 #offsetx 37
 #offsety 20
 #needs overlay scorpion_overlay
-#define "#mountmnr 'scorpionmount'"
+#define "#mountmnr 'scorpion_beast_mount'"
 #define "#gcost +50"
 #tag "animal scorpion"
 #theme "heavy"
@@ -27,9 +27,7 @@
 #armor
 #offsetx 6
 #offsety 18
-#define "#mountmnr 'jaguarmount-stealthy'"
-#define "#gcost +35"
-#define "#rcost +5"
+#define "#mountmnr 'jaguar_stealthy_mount'"
 #theme "specialmount"
 #theme "light"
 #tag "animal jaguar"
@@ -47,9 +45,8 @@
 #armor
 #offsetx 48
 #offsety 25
-#define "#mountmnr 'cavegrubmount'"
-#define "#gcost +20"
-#define "#rcost +3"
+#define "#mountmnr 'cave_grub_mount'"
+#define "#gcost -10"
 #tag "animal 'cave grub'"
 #tag "guaranteedprefix grub"
 #tag "name commander beastmaster"
@@ -57,7 +54,6 @@
 #tag "maxprot 14"
 #sacredextra 0.5
 #enditem
-
 
 #newitem
 #basechance 0.5
@@ -68,9 +64,7 @@
 #offsetx 47
 #offsety 20
 #needs overlay spider_overlay
-#define "#mountmnr 'cavespider'"
-#define "#gcost +40"
-#define "#rcost +5"
+#define "#mountmnr 'cave_spider_mount'"
 #description "The giant spider will persist even if the rider dies."
 #theme "specialmount"
 #tag "animal spider"
@@ -84,8 +78,7 @@
 #gameid -1
 #sprite /graphics/mounts/standard/giantrat.png
 #armor
-#define "#mountmnr 'ratmount'"
-#define "#gcost +15"
+#define "#mountmnr 'giant_rat_mount'"
 #tag "animal rat"
 #theme "rat"
 #theme "rattotem"

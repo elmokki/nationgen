@@ -8,9 +8,8 @@
 #needs overlay 10
 #offsetx 55
 #offsety -8
-#define "#mountmnr 'horse-chariot'"
-#define "#gcost +25"
-#define "#rcost +10"
+#define "#mountmnr 'horse_chariot'"
+#define "#gcost -5"
 #tag "chariot"
 #tag "minprot 10"
 #tag "maxprot 15"
@@ -26,9 +25,8 @@
 #needs overlay 11
 #offsetx 55
 #offsety -8
-#define "#mountmnr 'horse-chariot'"
-#define "#gcost +25"
-#define "#rcost +10"
+#define "#mountmnr 'horse_chariot'"
+#define "#gcost -5"
 #tag "chariot"
 #tag "minprot 10"
 #tag "maxprot 15"
@@ -46,9 +44,8 @@
 #needs overlay chariot_camel_iron
 #offsetx 67
 #offsety -8
-#define "#mountmnr 'chariot_camel_iron'"
-#define "#gcost +25"
-#define "#rcost +10"
+#define "#mountmnr 'camel_iron_chariot'"
+#define "#gcost -5"
 #tag "chariot"
 #tag "minprot 10"
 #tag "maxprot 15"
@@ -67,9 +64,8 @@
 #needs overlay chariot_camel_bronze
 #offsetx 67
 #offsety -8
-#define "#mountmnr 'chariot_camel_iron'"
-#define "#gcost +25"
-#define "#rcost +10"
+#define "#mountmnr 'camel_iron_chariot'"
+#define "#gcost -5"
 #tag "chariot"
 #tag "minprot 10"
 #tag "maxprot 15"
@@ -85,9 +81,7 @@
 #needs overlay 12
 #offsetx 51
 #offsety -10
-#define "#mountmnr 'chariot_lizard'"
-#define "#gcost +25"
-#define "#rcost +10"
+#define "#mountmnr 'lizard_chariot'"
 #tag "chariot"
 #tag "minprot 10"
 #tag "maxprot 15"
@@ -109,9 +103,8 @@
 #needs overlay 10
 #offsetx 55
 #offsety -8
-#define "#mountmnr 'horse-chariot-barded'"
-#define "#gcost +40"
-#define "#rcost +15"
+#define "#mountmnr 'horse_leather_barding_chariot'"
+#define "#gcost -5"
 #tag "chariot"
 #tag "minprot 16"
 #tag "animal 'horse'"
@@ -126,9 +119,8 @@
 #needs overlay 11
 #offsetx 55
 #offsety -8
-#define "#mountmnr 'horse-chariot-barded'"
-#define "#gcost +40"
-#define "#rcost +15"
+#define "#mountmnr 'horse_leather_barding_chariot'"
+#define "#gcost -5"
 #tag "chariot"
 #tag "minprot 16"
 #tag "animal 'horse'"
@@ -143,9 +135,8 @@
 #needs overlay chariot_camel_iron
 #offsetx 67
 #offsety -8
-#define "#mountmnr 'chariot_camel_iron'"
-#define "#gcost +40"
-#define "#rcost +15"
+#define "#mountmnr 'camel_iron_chariot'"
+#define "#gcost -5"
 #tag "minprot 16"
 #tag "chariot"
 #tag "animal 'camel'"
@@ -162,9 +153,8 @@
 #needs overlay chariot_camel_bronze
 #offsetx 67
 #offsety -8
-#define "#mountmnr 'chariot_camel_iron'"
-#define "#gcost +40"
-#define "#rcost +15"
+#define "#mountmnr 'camel_iron_chariot'"
+#define "#gcost -5"
 #tag "minprot 16"
 #tag "chariot"
 #tag "animal 'camel'"
@@ -179,9 +169,7 @@
 #needs overlay 12
 #offsetx 51
 #offsety -10
-#define "#mountmnr 'chariot_lizard'"
-#define "#gcost +40"
-#define "#rcost +15"
+#define "#mountmnr 'lizard_chariot'"
 #tag "chariot"
 #tag "minprot 16"
 #tag "animal 'lizard'"
@@ -198,9 +186,6 @@
 #offsetx 55
 #offsety -8
 #define "#mountmnr 'longdead_horse_chariot'"
-#define "#gcost +60"
-#define "#rpcost +20"
-#define "#rcost +15"
 #tag "chariot"
 #tag "minprot 14"
 #tag "animal 'longdead'"
@@ -217,9 +202,6 @@
 #offsetx 51
 #offsety -10
 #define "#mountmnr 'longdead_horse_chariot'"
-#define "#gcost +60"
-#define "#rpcost +20"
-#define "#rcost +15"
 #tag "chariot"
 #tag "minprot 14"
 #tag "animal 'longdead'"

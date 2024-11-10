@@ -7,8 +7,7 @@
 #armor
 #offsety 1
 #needs overlay 1
-#define "#mountmnr 'riding-horse'"
-#define "#gcost +15"
+#define "#mountmnr 'riding_horse_mount'"
 #tag "animal horse"
 #theme "light"
 #tag "maxprot 11"
@@ -22,12 +21,11 @@
 #sprite /graphics/mounts/standard/armoredhorse1.png
 #armor
 #needs overlay 2
-#define "#mountmnr 'armored-horse'"
+#define "#mountmnr 'destrier_plate_barding_mount'"
 #tag "animal horse"
 #theme "heavy"
 #theme "iron"
 #tag "minprot 14"
-#define "#gcost +25"
 #epicness 0.25
 #tag "name commander 'knight'"
 #tag "name mounted knight"
@@ -40,13 +38,11 @@
 #sprite /graphics/mounts/standard/armoredhorse1a.png
 #armor
 #needs overlay armoredhorse1aoverlay
-#define "#mountmnr 'armoredhorse1a'"
-#define "#rcost +5"
+#define "#mountmnr 'war_horse_light_scale_barding_mount_2'"
 #tag "animal horse"
 #theme "heavy"
 #theme "bronze"
 #tag "minprot 14"
-#define "#gcost +25"
 #epicness 0.25
 #tag "name commander 'knight'"
 #tag "name mounted knight"
@@ -59,13 +55,12 @@
 #sprite /graphics/mounts/standard/armoredhorse2.png
 #armor
 #needs overlay armoredhorse2overlay
-#define "#mountmnr 'war-horse'"
+#define "#mountmnr 'war_horse_mount'"
 #tag "animal horse"
 #theme "heavy"
 #theme "bronze"
 #tag "minprot 12"
 #tag "maxprot 16"
-#define "#gcost +20"
 #epicness 0.25
 #tag "name commander 'knight'"
 #tag "name mounted knight"
@@ -78,8 +73,7 @@
 #sprite /graphics/mounts/standard/armoredhorse2a.png
 #armor
 #needs overlay armoredhorse2overlay
-#define "#mountmnr 'light-cataphracted-horse'"
-#define "#rcost +5"
+#define "#mountmnr 'war_horse_light_scale_barding_mount_1'"
 #tag "animal horse"
 #theme "heavy"
 #theme "iron"
@@ -96,8 +90,7 @@
 #gameid -1
 #sprite /graphics/mounts/standard/fayhorse.png
 #armor
-#define "#mountmnr 'fay-horse'"
-#define "#gcost +20"
+#define "#mountmnr 'fay_horse_mount'"
 #tag "animal horse"
 #tag "minprot 6"
 #tag "maxprot 16"
@@ -113,8 +106,7 @@
 #offsetx 28
 #offsety 64
 #needs overlay 8
-#define "#mountmnr 'pegasus'"
-#define "#gcost +50"
+#define "#mountmnr 'pegasus_mount'"
 #theme "flying"
 #tag "animal pegasus"
 #tag "guaranteedprefix pegasus"
@@ -132,8 +124,7 @@
 #armor
 #offsetx -2
 #offsety 2
-#define "#mountmnr 'peryton2'"
-#define "#gcost +50"
+#define "#mountmnr 'peryton_mount'"
 #theme "flying"
 #tag "animal peryton"
 #tag "name commander windlord"
@@ -146,8 +137,7 @@
 #gameid -1
 #sprite /graphics/mounts/standard/unicorn.png
 #armor
-#define "#mountmnr 'unicorn'"
-#define "#gcost +30"
+#define "#mountmnr 'unicorn_mount'"
 #tag "minprot 6"
 #tag "maxprot 16"
 #tag "animal unicorn"
@@ -163,8 +153,7 @@
 #armor
 #offsetx -5
 #offsety 2
-#define "#mountmnr 'cusidhemount'"
-#define "#gcost +20"
+#define "#mountmnr 'cu_sidhe_mount'"
 #tag "animal dog"
 #tag "guaranteedprefix 'cu sidhe'"
 #tag "maxprot 5"
@@ -180,8 +169,7 @@
 #armor
 #offsetx -5
 #offsety 2
-#define "#mountmnr 'barghestmount'"
-#define "#gcost +20"
+#define "#mountmnr 'barghest_mount'"
 #tag "animal dog"
 #tag "guaranteedprefix barghest"
 #tag "maxprot 5"
@@ -199,9 +187,7 @@
 #armor
 #offsetx -2
 #offsety 2
-#define "#mountmnr 'elk'"
-#define "#gcost +20"
-#define "#rcost +4"
+#define "#mountmnr 'elk_mount'"
 #tag "animal elk"
 #tag "minprot 0"
 #tag "maxprot 14"

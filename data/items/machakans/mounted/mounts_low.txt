@@ -8,8 +8,7 @@
 #offsetx -7
 #offsety 14
 #needs overlay 6
-#define "#mountmnr 'serpent1'"
-#define "#gcost +30"
+#define "#mountmnr 'serpent_mount'"
 #tag "animal serpent"
 #theme "light"
 #tag "guaranteedprefix serpent"
@@ -26,9 +25,7 @@
 #offsetx -5
 #offsety 13
 #needs overlay 7
-#define "#mountmnr 'serpent2'"
-#define "#gcost +30"
-#define "#rcost +5"
+#define "#mountmnr 'serpent_stupid_mount'"
 #tag "animal serpent"
 #theme "heavy"
 #theme "specialmount"
@@ -46,8 +43,7 @@
 #offsetx -5
 #offsety 3
 #needs overlay 3
-#define "#mountmnr 'greenlizard'"
-#define "#gcost +20"
+#define "#mountmnr 'green_lizard_mount'"
 #tag "animal lizard"
 #theme "light"
 #theme "specialmount"
@@ -63,9 +59,7 @@
 #armor
 #offsetx 8
 #offsety 11
-#define "#mountmnr 'cavedrake'"
-#define "#gcost +70"
-#define "#rcost +5"
+#define "#mountmnr 'cave_drake_mount'"
 #tag "animal drake"
 #theme "specialmount"
 #description "The cave drake will persist even if the rider dies."
@@ -86,9 +80,8 @@
 #offsetx 35
 #offsety 7
 #needs overlay spider_overlay
-#define "#mountmnr 'spider'"
+#define "#mountmnr 'great_spider_mount'"
 #description "The giant spider will persist even if the rider dies."
-#define "#gcost +30"
 #theme "specialmount"
 #tag "animal spider"
 #tag "guaranteedprefix spider"
@@ -105,9 +98,7 @@
 #offsetx 35
 #offsety 7
 #needs overlay spider_overlay
-#define "#mountmnr 'spider'"
-#define "#gcost +40"
-#define "#rcost +5"
+#define "#mountmnr 'great_spider_mount'"
 #description "The giant spider will persist even if the rider dies."
 #theme "specialmount"
 #tag "animal spider"
@@ -125,8 +116,7 @@
 #armor
 #offsetx -4
 #offsety 4
-#define "#mountmnr 'great-boar-mount'"
-#define "#gcost +20"
+#define "#mountmnr 'great_boar_mount'"
 #theme "specialmount"
 #tag "animal boar"
 #tag "guaranteedprefix boar"
@@ -143,9 +133,7 @@
 #armor
 #offsetx -4
 #offsety 4
-#define "#mountmnr 'great-boar-mount'"
-#define "#gcost +25"
-#define "#rcost +5"
+#define "#mountmnr 'great_boar_mount'"
 #theme "specialmount"
 #tag "animal boar"
 #tag "guaranteedprefix boar"
@@ -163,9 +151,8 @@
 #armor
 #offsetx -4
 #offsety 4
-#define "#mountmnr 'tiger'"
-#define "#gcost +40"
-#define "#rcost +6"
+#define "#mountmnr 'tiger_mount'"
+#define "#gcost -5"
 #theme "specialmount"
 #theme "light"
 #tag "animal tiger"
@@ -184,9 +171,7 @@
 #armor
 #offsetx -4
 #offsety 7
-#define "#mountmnr 'jaguarmount'"
-#define "#gcost +35"
-#define "#rcost +5"
+#define "#mountmnr 'jaguar_mount'"
 #theme "specialmount"
 #theme "light"
 #tag "animal jaguar"
@@ -204,9 +189,7 @@
 #armor
 #offsetx -4
 #offsety 4
-#define "#mountmnr 'blacktiger'"
-#define "#gcost +25"
-#define "#rcost +5"
+#define "#mountmnr 'black_tiger_mount'"
 #theme "specialmount"
 #theme "light"
 #tag "animal tiger"
@@ -225,8 +208,7 @@
 #armor
 #offsetx 35
 #offsety 58
-#define "#mountmnr 'hunterspider'"
-#define "#gcost +70"
+#define "#mountmnr 'hunter_spider_mount'"
 #description "The hunter spider will persist even if the rider dies."
 #theme "specialmount"
 #theme "heavy"
@@ -249,7 +231,7 @@
 #define "#size 6"
 #define "#mapmove 8"
 #define "#ap 8"
-#define "#mountmnr 'scorpionmount'"
+#define "#mountmnr 'scorpion_beast_mount'"
 #define "#gcost +50"
 #define "#ressize 2"
 #define "#enc 3"
@@ -273,9 +255,7 @@
 #offsetx 23
 #offsety 13
 #needs overlay 13
-#define "#mountmnr 'amphiptere'"
-#define "#gcost +50"
-#define "#rcost +6"
+#define "#mountmnr 'amphiptere_mount'"
 #theme "specialmount"
 #tag "animal amphiptere"
 #description "The amphiptere will fight until the end of the battle should the rider die"
@@ -294,9 +274,8 @@
 #armor
 #offsetx 29
 #offsety 14
-#define "#mountmnr 'cavegrubmount'"
-#define "#gcost +20"
-#define "#rcost +3"
+#define "#mountmnr 'cave_grub_mount'"
+#define "#gcost -10"
 #tag "animal 'cave grub'"
 #tag "guaranteedprefix grub"
 #tag "name commander beastmaster"

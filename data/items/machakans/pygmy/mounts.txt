@@ -5,9 +5,7 @@
 #gameid -1
 #sprite /graphics/mounts/standard/hyena.png
 #armor
-#define "#mountmnr 'hyenamount'"
-#define "#gcost +15"
-#define "#rcost +4"
+#define "#mountmnr 'hyena_mount'"
 #tag "animal hyena"
 #tag "maxprot 14"
 #tag "guaranteedprefix hyena"
@@ -22,9 +20,8 @@
 #sprite /graphics/machakans/mounts/giant_parrot.png
 #needs overlay giant_parrot_overlay
 #armor
-#define "#mountmnr 'grey_parrot'"
-#define "#gcost +15"
-#define "#rcost +4"
+#define "#mountmnr 'grey_parrot_mount'"
+#define "#gcost -10"
 #tag "animal parrot"
 #theme "parrot"
 #theme "parrottotem"
@@ -43,9 +40,8 @@
 #recolormask /graphics/machakans/mounts/giant_parrot_recolormask.png
 #needs overlay giant_parrot_overlay
 #armor
-#define "#mountmnr 'grey_parrot'"
-#define "#gcost +15"
-#define "#rcost +4"
+#define "#mountmnr 'grey_parrot_mount'"
+#define "#gcost -10"
 #tag "animal parrot"
 #theme "parrot"
 #theme "parrottotem"
@@ -63,8 +59,7 @@
 #sprite /graphics/mounts/standard/redant.png
 #needs overlay redant_overlay
 #armor
-#define "#mountmnr 'redantmount'"
-#define "#gcost +5"
+#define "#mountmnr 'red_ant_mount'"
 #tag "animal ant"
 #theme "ant"
 #theme "anttotem"
@@ -83,9 +78,8 @@
 #offsety -7
 #offsetx -1
 #armor
-#define "#mountmnr 'dogmount'"
+#define "#mountmnr 'dog_mount'"
 #description "The dog is fiercely loyal and will follow the army even if its rider dies."
-#define "#gcost +10"
 #tag "animal dog"
 #tag "minprot 0"
 #tag "maxprot 14"
@@ -101,10 +95,9 @@
 #offsetx 3
 #offsety -2
 #needs overlay spider2_overlay
-#define "#mountmnr 'forestspider'"
+#define "#mountmnr 'forest_spider_mount'"
 #description "If the rider dies, the spider will carry on fighting until the end of the battle."
-#define "#gcost +15"
-#define "#rcost +4"
+#define "#gcost -5"
 #tag "animal spider"
 #theme "spider"
 #theme "spidertotem"
@@ -120,8 +113,7 @@
 #offsetx 22
 #offsety -7
 #armor
-#define "#mountmnr 'crocodilemount'"
-#define "#gcost +15"
+#define "#mountmnr 'crocodile_mount'"
 #description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
 #tag "animal crocodile"
 #theme "heavy"
@@ -139,8 +131,7 @@
 #sprite /graphics/machakans/mounts/flyingfish.png
 #needs overlay flyingfish_overlay
 #armor
-#define "#mountmnr 'flying_fish'"
-#define "#gcost +5"
+#define "#mountmnr 'flying_fish_mount'"
 #tag "animal fish"
 #theme "fish"
 #theme "fishtotem"
@@ -160,8 +151,7 @@
 #gameid -1
 #sprite /graphics/machakans/mounts/snail.png
 #armor
-#define "#mountmnr 'snailmount'"
-#define "#gcost +10"
+#define "#mountmnr 'snail_mount'"
 #tag "animal snail"
 #theme "snail"
 #theme "snailtotem"
@@ -182,8 +172,7 @@
 #sprite /graphics/mounts/standard/hugelocust.png
 #needs overlay hugelocust_overlay
 #armor
-#define "#mountmnr 'huge_locust'"
-#define "#gcost +20"
+#define "#mountmnr 'huge_locust_mount'"
 #tag "animal locust"
 #theme "locust"
 #theme "locusttotem"
@@ -201,8 +190,7 @@
 #gameid -1
 #sprite /graphics/mounts/standard/hugemantis.png
 #armor
-#define "#mountmnr 'hugemantismount'"
-#define "#gcost +20"
+#define "#mountmnr 'huge_mantis_mount'"
 #tag "animal mantis"
 #theme "mantis"
 #theme "locusttotem"
@@ -224,8 +212,7 @@
 #sprite /graphics/mounts/standard/swan.png
 #needs overlay swan_overlay
 #armor
-#define "#mountmnr 'swanmount'"
-#define "#gcost +10"
+#define "#mountmnr 'swan_mount'"
 #tag "animal swan"
 #theme "swan"
 #theme "swantotem"
@@ -246,9 +233,7 @@
 #sprite /graphics/mounts/chariots/small_swan_bronze.png
 #needs overlay chariot_swan_bronze_overlay
 #armor
-#define "#mountmnr 'chariot_swan'"
-#define "#gcost +10"
-#define "#rcost +5"
+#define "#mountmnr 'swan_chariot'"
 #tag "animal swan"
 #tag "chariot"
 #theme "swan"
@@ -268,8 +253,7 @@
 #gameid -1
 #sprite /graphics/mounts/standard/giantrat.png
 #armor
-#define "#mountmnr 'ratmount'"
-#define "#gcost +15"
+#define "#mountmnr 'giant_rat_mount'"
 #tag "animal rat"
 #theme "rat"
 #theme "rattotem"
@@ -287,9 +271,7 @@
 #sprite /graphics/mounts/chariots/small_rat_iron.png
 #needs overlay chariot_small_iron_overlay
 #armor
-#define "#mountmnr 'ratchariot'"
-#define "#gcost +20"
-#define "#rcost +10"
+#define "#mountmnr 'rat_chariot'"
 #tag "animal rat"
 #tag "chariot"
 #theme "rat"
@@ -308,9 +290,8 @@
 #sprite /graphics/mounts/standard/elephant_dwarf.png
 #needs overlay dwarf_elephant_overlay
 #armor
-#define "#mountmnr 'dwarfelephantmount'"
-#define "#gcost +15"
-#define "#rcost +4"
+#define "#mountmnr 'dwarf_elephant_mount'"
+#define "#gcost -5"
 #tag "animal elephant"
 #theme "elephant"
 #theme "elephanttotem"

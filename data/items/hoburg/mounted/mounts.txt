@@ -6,9 +6,7 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/boar.png
 #armor
-#define "#mountmnr 'boar'"
-#define "#gcost +17"
-#define "#rcost +4"
+#define "#mountmnr 'boar_mount'"
 #tag "animal hog"
 #tag "guaranteedprefix hog"
 #theme "boar"
@@ -46,9 +44,7 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/goat.png
 #armor
-#define "#mountmnr 'goat'"
-#define "#gcost +12"
-#define "#rcost +4"
+#define "#mountmnr 'goat_mount'"
 #tag "animal goat"
 #tag "maxprot 12"
 #tag "guaranteedprefix goat"
@@ -89,9 +85,7 @@
 #sprite /graphics/hoburg/mounts/giant_parrot.png
 #needs overlay giant_macaw_overlay
 #armor
-#define "#mountmnr 'giant_macaw'"
-#define "#gcost +25"
-#define "#rcost +4"
+#define "#mountmnr 'giant_macaw_mount'"
 #tag "animal parrot"
 #tag "maxprot 14"
 #tag "guaranteedprefix parrot"
@@ -113,9 +107,7 @@
 #recolormask /graphics/hoburg/mounts/giant_parrot_recolormask.png
 #needs overlay colorful_macaw_overlay
 #armor
-#define "#mountmnr 'giant_macaw'"
-#define "#gcost +25"
-#define "#rcost +4"
+#define "#mountmnr 'giant_macaw_mount'"
 #tag "animal parrot"
 #tag "maxprot 14"
 #tag "guaranteedprefix parrot"
@@ -136,9 +128,7 @@
 #sprite /graphics/machakans/mounts/giant_parrot.png
 #needs overlay giant_parrot_overlay
 #armor
-#define "#mountmnr 'grey_parrot'"
-#define "#gcost +25"
-#define "#rcost +4"
+#define "#mountmnr 'grey_parrot_mount'"
 #tag "animal parrot"
 #tag "maxprot 14"
 #tag "guaranteedprefix parrot"
@@ -161,9 +151,7 @@
 #recolormask /graphics/machakans/mounts/giant_parrot_recolormask.png
 #needs overlay giant_parrot_overlay
 #armor
-#define "#mountmnr 'grey_parrot'"
-#define "#gcost +25"
-#define "#rcost +4"
+#define "#mountmnr 'grey_parrot_mount'"
 #tag "animal parrot"
 #tag "maxprot 14"
 #tag "guaranteedprefix parrot"
@@ -184,9 +172,7 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/caveman.png
 #armor
-#define "#mountmnr 'caveman'"
-#define "#gcost +45"
-#define "#rcost +8"
+#define "#mountmnr 'caveman_mount'"
 #description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
 #basechance 0.33
 #needs overlay caveman_overlay
@@ -209,9 +195,7 @@
 #sprite /graphics/hoburg/mounts/caveman_occidental.png
 #recolormask /graphics/hoburg/mounts/caveman_occidental_recolormask.png
 #armor
-#define "#mountmnr 'caveman_occidental'"
-#define "#gcost +40"
-#define "#rcost +6"
+#define "#mountmnr 'caveman_occidental_mount'"
 #description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
 #basechance 0.33
 #needs overlay caveman_occidental_overlay
@@ -229,9 +213,7 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/horite.png
 #armor
-#define "#mountmnr 'caveman_hellbred'"
-#define "#gcost +40"
-#define "#rcost +6"
+#define "#mountmnr 'caveman_hellbred_mount'"
 #description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
 #basechance 0.33
 #needs overlay caveman_hellbred_overlay
@@ -249,9 +231,7 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/mech_ant.png
 #armor
-#define "#mountmnr 'mechant'"
-#define "#gcost +60"
-#define "#rcost +12"
+#define "#mountmnr 'mech_ant_mount'"
 #basechance 0.33
 #tag "animal 'mechanical ant'"
 #tag "guaranteedprefix 'mechanized'"
@@ -279,9 +259,7 @@
 #tag "animal 'mechanical spider'"
 #tag "guaranteedprefix 'mechanized'"
 #needs overlay "mechspider_overlay"
-#define "#mountmnr 'mechspider'"
-#define "#gcost +50"
-#define "#rcost +12"
+#define "#mountmnr 'mech_spider_mount'"
 #offsety -5
 #offsetx 5
 #minprot 10
@@ -305,9 +283,7 @@
 #tag "animal 'mechanical mosquito'"
 #tag "guaranteedprefix 'mechanized'"
 #needs overlay "mechmosquito_overlay"
-#define "#mountmnr 'mechmosquito'"
-#define "#gcost +40"
-#define "#rcost +12"
+#define "#mountmnr 'mech_mosquito_mount'"
 #offsety -15
 #offsetx -14
 #minprot 10
@@ -331,8 +307,7 @@
 #offsetx 25
 #offsety -7
 #armor
-#define "#mountmnr 'crocodilemount'"
-#define "#gcost +15"
+#define "#mountmnr 'crocodile_mount'"
 #description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
 #tag "animal crocodile"
 #theme "heavy"
@@ -355,9 +330,7 @@
 #basechance 0.33
 #sprite /graphics/mounts/standard/hyena.png
 #armor
-#define "#mountmnr 'hyenamount'"
-#define "#gcost +15"
-#define "#rcost +4"
+#define "#mountmnr 'hyena_mount'"
 #tag "animal hyena"
 #tag "maxprot 14"
 #tag "guaranteedprefix hyena"
@@ -387,8 +360,6 @@
 #offsetx 5
 #offsety 27
 #define "#mountmnr 'fossil_caveman_mount'"
-#define "#gcost +45"
-#define "#rcost +5"
 #tag "animal fossil"
 #theme "heavy"
 #theme "caveman"
@@ -406,9 +377,7 @@
 #sprite /graphics/mounts/chariots/small_swan_bronze.png
 #needs overlay chariot_swan_bronze_overlay
 #armor
-#define "#mountmnr 'chariot_swan'"
-#define "#gcost +10"
-#define "#rcost +5"
+#define "#mountmnr 'swan_chariot'"
 #tag "animal swan"
 #tag "chariot"
 #theme "swan"
@@ -436,9 +405,7 @@
 #sprite /graphics/mounts/chariots/small_blackswan_iron.png
 #needs overlay chariot_swan_iron_overlay
 #armor
-#define "#mountmnr 'chariot_blackswan'"
-#define "#gcost +11"
-#define "#rcost +6"
+#define "#mountmnr 'black_swan_chariot'"
 #tag "animal swan"
 #tag "chariot"
 #theme "swan"
@@ -461,9 +428,7 @@
 #sprite /graphics/mounts/chariots/small_rat_iron.png
 #needs overlay chariot_small_iron_overlay
 #armor
-#define "#mountmnr 'ratchariot'"
-#define "#gcost +20"
-#define "#rcost +10"
+#define "#mountmnr 'rat_chariot'"
 #tag "animal rat"
 #tag "chariot"
 #theme "rat"
@@ -485,9 +450,7 @@
 #sprite /graphics/mounts/chariots/small_rat_bronze.png
 #needs overlay chariot_small_bronze_overlay
 #armor
-#define "#mountmnr 'ratchariot_bronze'"
-#define "#gcost +20"
-#define "#rcost +10"
+#define "#mountmnr 'rat_bronze_chariot'"
 #tag "animal rat"
 #tag "chariot"
 #theme "rat"
@@ -509,9 +472,8 @@
 #sprite /graphics/hoburg/mounts/vine_nightmare.png
 #needs overlay vine_nightmare_overlay
 #armor
-#define "#mountmnr 'vine_nightmare'"
+#define "#mountmnr 'vine_nightmare_mount'"
 #define "#enc 15"
-#define "#gcost +40"
 #tag "guaranteedprefix nightmare"
 #theme "specialmount"
 #tag "animal nightmare"
@@ -529,9 +491,7 @@
 #sprite /graphics/mounts/standard/elephant_dwarf.png
 #needs overlay elephant_dwarf_overlay
 #armor
-#define "#mountmnr 'dwarfelephantmount'"
-#define "#gcost +20"
-#define "#rcost +4"
+#define "#mountmnr 'dwarf_elephant_mount'"
 #tag "animal elephant"
 #tag "guaranteedprefix elephant"
 #theme "elephant"
@@ -551,7 +511,7 @@
 #sprite /graphics/mounts/standard/elephant_dwarf_armored.png
 #needs overlay elephant_dwarf_armored_overlay
 #armor
-#define "#mountmnr 'dwarfelephantmount_armored'"
+#define "#mountmnr 'dwarf_elephant_barding_mount'"
 #define "#gcost +20"
 #define "#rcost +9"
 #tag "animal elephant"

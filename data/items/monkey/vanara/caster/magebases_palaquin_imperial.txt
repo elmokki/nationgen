@@ -3,7 +3,6 @@
 #gameid -1
 #sprite /graphics/monkey/vanara_base_old_imperial.png
 #recolormask /graphics/monkey/vanara_base_old_imperial_recolormask.png
-#command "#gcost 18"
 #command "#mr 9"
 #command "#animal"
 #command "#mountmnr 'vanara_bearer'"
@@ -11,6 +10,7 @@
 #command "#bonusspells 1"
 -- 1 head, 1 body, 4 miscs
 #command "#itemslots 4005888"
+#command "#gcost +10"
 #subrace vanara
 #theme lowland
 #subraceprefix vanara

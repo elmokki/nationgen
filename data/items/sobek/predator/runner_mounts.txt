@@ -5,8 +5,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/crocodile_mount.png
 #armor
-#define "#mountmnr 'crocodilemount'"
-#define "#gcost +10"
+#define "#mountmnr 'crocodile_mount'"
+#define "#gcost -5"
 #description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
 #tag "animal crocodile"
 #theme "light"
@@ -23,8 +23,8 @@
 #sprite /graphics/mounts/standard/crocodile_mount_armored.png
 #recolormask /graphics/mounts/standard/crocodile_mount_armored_recolormask.png
 #armor
-#define "#mountmnr 'crocodilemount2'"
-#define "#gcost +10"
+#define "#mountmnr 'crocodile_mail_barding_mount'"
+#define "#gcost -5"
 #description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
 #tag "animal crocodile"
 #theme "heavy"

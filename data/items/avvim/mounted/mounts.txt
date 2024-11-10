@@ -11,8 +11,7 @@
 #offsetx 1
 #offsety 8
 #needs overlay drafthorse_overlay
-#define "#mountmnr 'draft-horse'"
-#define "#gcost +15"
+#define "#mountmnr 'steppe_horse_mount'"
 #tag "animal horse"
 #theme "light"
 #tag "maxprot 12"
@@ -27,8 +26,7 @@
 #armor
 #offsetx 3
 #offsety 63
-#define "#mountmnr 'camel'"
-#define "#gcost +20"
+#define "#mountmnr 'camel_mount'"
 #tag "animal camel"
 #tag "maxprot 12"
 #theme "light"
@@ -44,8 +42,7 @@
 #armor
 #offsetx 3
 #offsety 63
-#define "#mountmnr 'armored_camel_barded'"
-#define "#gcost +15"
+#define "#mountmnr 'camel_leather_barding_mount'"
 #tag "animal camel"
 #tag "minprot 8"
 #tag "maxprot 12"
@@ -61,8 +58,7 @@
 #armor
 #offsetx 3
 #offsety 63
-#define "#mountmnr 'armored_camel'"
-#define "#gcost +25"
+#define "#mountmnr 'camel_mail_barding_mount'"
 #tag "animal camel"
 #theme "heavy"
 #theme "iron"
@@ -78,8 +74,7 @@
 #armor
 #offsetx 30
 #offsety 57
-#define "#mountmnr 'moose'"
-#define "#gcost +25"
+#define "#mountmnr 'moose_mount'"
 #tag "animal moose"
 #tag "minprot 0"
 #tag "maxprot 16"
@@ -93,7 +88,7 @@
 #gameid -1
 #sprite /graphics/mounts/standard/bear.png
 #armor
-#define "#mountmnr 'greatbear'"
+#define "#mountmnr 'great_bear_mount'"
 #define "#gcost +35"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsetx 1
@@ -112,8 +107,7 @@
 #armor
 #offsetx 35
 #offsety 62
-#define "#mountmnr 'hippomount'"
-#define "#gcost +75"
+#define "#mountmnr 'hippo_mount'"
 #define "#swampsurvival"
 #description "If the rider dies, the hippopotamus will rampage through its companion's slayers before lumbering off the battlefield."
 #tag "animal hippo"

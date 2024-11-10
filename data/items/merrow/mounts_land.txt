@@ -7,8 +7,7 @@
 #offsety -13
 #armor
 #needs overlay 1
-#define "#mountmnr 'riding-horse'"
-#define "#gcost +15"
+#define "#mountmnr 'riding_horse_mount'"
 #tag "animal horse"
 #theme "light"
 #tag "maxprot 11"
@@ -24,13 +23,11 @@
 #offsety -13
 #armor
 #needs overlay armoredhorse1aoverlay
-#define "#mountmnr 'armoredhorse1a'"
-#define "#rcost +5"
+#define "#mountmnr 'war_horse_light_scale_barding_mount_2'"
 #tag "animal horse"
 #theme "heavy"
 #theme "bronze"
 #tag "minprot 14"
-#define "#gcost +25"
 #theme terrestrial
 #enditem
 
@@ -42,8 +39,7 @@
 #offsety -13
 #needs overlay kelpie_land_overlay
 #armor
-#define "#mountmnr 'kelpie-land'"
-#define "#gcost +20"
+#define "#mountmnr 'kelpie_land_mount'"
 #tag "animal kelpie"
 #tag "minprot 6"
 #tag "maxprot 18"
@@ -58,9 +54,7 @@
 #offsety -13
 #needs overlay kelpie_armored_land_overlay
 #armor
-#define "#mountmnr 'kelpie-land-armored'"
-#define "#gcost +25"
-#define "#rcost +5"
+#define "#mountmnr 'kelpie_land_armored_mount'"
 #tag "animal kelpie"
 #theme "heavy"
 #tag "minprot 14"
@@ -74,8 +68,7 @@
 #offsety -15
 #needs overlay no_overlay
 #armor
-#define "#mountmnr 'nightmare'"
-#define "#gcost +40"
+#define "#mountmnr 'nightmare_mount'"
 #tag "animal nightmare"
 #define "#float"
 #description "Leaves a nightmare behind when the rider dies"
@@ -97,8 +90,7 @@
 #armor
 #offsetx 0
 #offsety -11
-#define "#mountmnr 'peryton2'"
-#define "#gcost +50"
+#define "#mountmnr 'peryton_mount'"
 #theme "flying"
 #tag "animal peryton"
 #basechance 0.25
@@ -113,8 +105,7 @@
 #armor
 #offsetx -4
 #offsety -3
-#define "#mountmnr 'giantswanmount'"
-#define "#gcost +50"
+#define "#mountmnr 'giant_swan_mount'"
 #theme "light"
 #tag "animal swan"
 #tag "maxprot 11"
@@ -127,9 +118,7 @@
 #offsetx -4
 #offsety -9
 #armor
-#define "#mountmnr 'seadogmount'"
-#define "#gcost +15"
-#define "#rcost +2"
+#define "#mountmnr 'sea_dog_mount'"
 #define "#swimming"
 #command "#amphibian"
 #theme "light"
@@ -147,9 +136,7 @@
 #armor
 #offsetx -1
 #offsety -4
-#define "#mountmnr 'toad_jaguar_mount'"
-#define "#gcost +30"
-#define "#rcost +3"
+#define "#mountmnr 'jaguar_toad_mount'"
 #define "#swimming"
 #define "#amphibian"
 #description "The giant toad will fight until the end of the battle should the rider die"
@@ -167,9 +154,7 @@
 #armor
 #offsetx -1
 #offsety -4
-#define "#mountmnr 'toad_sapphire_mount'"
-#define "#gcost +30"
-#define "#rcost +3"
+#define "#mountmnr 'sapphire_toad_mount'"
 #define "#swimming"
 #define "#amphibian"
 #description "The giant frog will fight until the end of the battle should the rider die"

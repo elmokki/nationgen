@@ -1,71 +1,315 @@
---- Base offsets are applied to everything except base and overlay
+------ Base offsets are applied to everything except base and overlay
+
+---- Meese
 
 #newitem
 #id "moose"
-#basechance 0.5
 #gameid -1
 #sprite /graphics/mounts/standard/moose.png
 #armor
 #offsetx 35
 #offsety 33
-#define "#mountmnr 'moose'"
-#define "#gcost +25"
-#tag "animal moose"
-#tag "minprot 0"
-#tag "maxprot 16"
-#tag "guaranteedprefix moose"
+#define "#mountmnr 'moose_mount'"
 #description "Leaves a moose behind when the rider dies"
+#tag "animal moose"
+#tag "guaranteedprefix moose"
+#basechance 1.7
 #enditem
 
 #newitem
+#id "moose_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/moose.png
+#armor
+#offsetx 35
+#offsety 33
+#define "#mountmnr 'moose_turtle_shell_barding_mount'"
+#description "Leaves a moose behind when the rider dies"
+#tag "animal moose"
+#tag "guaranteedprefix moose"
+#theme "primitive"
+#basechance 1.4
+#chanceinc prot 9 *2
+#enditem
+
+#newitem
+#id "moose_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/moose.png
+#armor
+#offsetx 35
+#offsety 33
+#define "#mountmnr 'moose_coral_barding_mount'"
+#description "Leaves a moose behind when the rider dies"
+#tag "animal moose"
+#tag "guaranteedprefix moose"
+#theme "primitive"
+#basechance 0.9
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "moose_ice_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/moose.png
+#armor
+#offsetx 35
+#offsety 33
+#define "#mountmnr 'moose_ice_barding_mount'"
+#description "Leaves a moose behind when the rider dies"
+#tag "animal moose"
+#tag "guaranteedprefix moose"
+#basechance 0.6
+#chanceinc prot 17 *2
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+#newitem
+#id "moose_meteorite_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/moose.png
+#armor
+#offsetx 35
+#offsety 33
+#define "#mountmnr 'moose_meteorite_barding_mount'"
+#description "Leaves a moose behind when the rider dies"
+#tag "animal moose"
+#tag "guaranteedprefix moose"
+#basechance 0.4
+#chanceinc prot 18 *2
+#enditem
+
+
+---- Elks
+
+#newitem
 #id "elk"
-#basechance 0.5
 #gameid -1
 #sprite /graphics/mounts/standard/elk.png
 #needs overlay elk_overlay
 #armor
 #offsetx 0
 #offsety -14
-#define "#mountmnr 'elk'"
-#define "#gcost +20"
-#define "#rcost +4"
-#tag "animal elk"
-#tag "minprot 0"
-#tag "maxprot 14"
-#tag "guaranteedprefix elk"
+#define "#mountmnr 'elk_mount'"
 #description "Leaves an elk behind when the rider dies"
+#tag "animal elk"
+#tag "guaranteedprefix elk"
+#basechance 1.7
 #enditem
 
 #newitem
-#id "great bear"
+#id "elk_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/elk.png
+#needs overlay elk_overlay
+#armor
+#offsetx 0
+#offsety -14
+#define "#mountmnr 'elk_turtle_shell_barding_mount'"
+#description "Leaves an elk behind when the rider dies"
+#tag "animal elk"
+#tag "guaranteedprefix elk"
+#theme "primitive"
+#basechance 1.4
+#chanceinc prot 9 *2
+#enditem
+
+#newitem
+#id "elk_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/elk.png
+#needs overlay elk_overlay
+#armor
+#offsetx 0
+#offsety -14
+#define "#mountmnr 'elk_coral_barding_mount'"
+#description "Leaves an elk behind when the rider dies"
+#tag "animal elk"
+#tag "guaranteedprefix elk"
+#basechance 0.9
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "elk_ice_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/elk.png
+#needs overlay elk_overlay
+#armor
+#offsetx 0
+#offsety -14
+#define "#mountmnr 'elk_ice_barding_mount'"
+#description "Leaves an elk behind when the rider dies"
+#tag "animal elk"
+#tag "guaranteedprefix elk"
+#basechance 0.6
+#chanceinc prot 17 *2
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+#newitem
+#id "elk_meteorite_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/elk.png
+#needs overlay elk_overlay
+#armor
+#offsetx 0
+#offsety -14
+#define "#mountmnr 'elk_meteorite_barding_mount'"
+#description "Leaves an elk behind when the rider dies"
+#tag "animal elk"
+#tag "guaranteedprefix elk"
+#basechance 0.4
+#chanceinc prot 18 *2
+#enditem
+
+
+---- Bears
+
+#newitem
+#id "great_bear"
 #gameid -1
 #sprite /graphics/mounts/standard/bear.png
 #offsetx -4
 #offsety -19
 #armor
-#define "#mountmnr 'greatbear'"
-#define "#gcost +40"
+#define "#mountmnr 'great_bear_mount'"
 #tag "animal bear"
 #tag "name commander beastmaster"
 #tag "guaranteedprefix bear"
 #tag "minprot 10"
+#basechance 5
 #enditem
 
 #newitem
-#id "polar bear"
+#id "great_bear_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear.png
+#offsetx -4
+#offsety -19
+#armor
+#define "#mountmnr 'great_bear_turtle_shell_barding_mount'"
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#theme "primitive"
+#basechance 3
+#chanceinc prot 9 *2
+#enditem
+
+#newitem
+#id "great_bear_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear.png
+#offsetx -4
+#offsety -19
+#armor
+#define "#mountmnr 'great_bear_coral_barding_mount'"
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#basechance 2
+#chanceinc prot 11 *2
+#enditem
+
+
+#newitem
+#id "polar_bear"
 #gameid -1
 #sprite /graphics/mounts/standard/bear_polar.png
 #offsetx -4
 #offsety -19
 #armor
-#define "#mountmnr 'bearmount_polar'" 
-#define "#gcost +40"
+#define "#mountmnr 'polar_bear_mount'"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #tag "animal bear"
 #tag "name commander beastmaster"
 #tag "guaranteedprefix bear"
 #tag "minprot 10"
+#basechance 3.4
+#chanceinc "nationcommand #idealcold above 1 *40"
+#chanceinc "nationcommand #idealcold below -1 *0"
 #enditem
+
+#newitem
+#id "polar_bear_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_polar_half_armored.png
+#offsetx -4
+#offsety -19
+#armor
+#define "#mountmnr 'polar_bear_turtle_shell_barding_mount'"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#theme "primitive"
+#basechance 2.8
+#chanceinc prot 9 *2
+#chanceinc "nationcommand #idealcold above 1 *40"
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+#newitem
+#id "polar_bear_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_polar_half_armored.png
+#offsetx -4
+#offsety -19
+#armor
+#define "#mountmnr 'polar_bear_coral_barding_mount'"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#basechance 1.8
+#chanceinc prot 11 *2
+#chanceinc "nationcommand #idealcold above 1 *40"
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+#newitem
+#id "polar_bear_ice_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_polar_armored.png
+#offsetx -4
+#offsety -19
+#armor
+#define "#mountmnr 'polar_bear_ice_barding_mount'"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#basechance 1.2
+#chanceinc prot 17 *2
+#chanceinc "nationcommand #idealcold above 1 *40"
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+#newitem
+#id "polar_bear_meteorite_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_polar_armored.png
+#offsetx -4
+#offsety -19
+#armor
+#define "#mountmnr 'polar_bear_meteorite_barding_mount'"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#basechance 0.8
+#chanceinc prot 18 *2
+#chanceinc "nationcommand #idealcold above 1 *40"
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
 
 #newitem
 #id "bear"
@@ -74,141 +318,112 @@
 #offsetx -3
 #offsety -11
 #armor
-#define "#mountmnr 'smallbearmount'"
-#define "#gcost +30"
+#define "#mountmnr 'bear_mount'"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #tag "animal bear"
 #tag "name commander beastmaster"
 #tag "guaranteedprefix bear"
 #tag "minprot 8"
+#basechance 5
 #enditem
 
 #newitem
-#id "cavecow"
+#id "bear_turtle_shell_barding"
 #gameid -1
-#basechance 0.125
+#sprite /graphics/mounts/standard/bear_small.png
+#offsetx -3
+#offsety -11
+#armor
+#define "#mountmnr 'bear_turtle_shell_barding_mount'"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 8"
+#theme "primitive"
+#basechance 3
+#chanceinc prot 9 *2
+#enditem
+
+#newitem
+#id "bear_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_small.png
+#offsetx -3
+#offsety -11
+#armor
+#define "#mountmnr 'bear_coral_barding_mount'"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 8"
+#basechance 2
+#chanceinc prot 11 *2
+#enditem
+
+
+---- Cave Cows
+
+#newitem
+#id "cave_cow"
+#gameid -1
 #sprite /graphics/mounts/standard/cavecow.png
 #offsetx -4
 #offsety -10
 #armor
-#define "#mountmnr 'cavecowmount'"
-#define "#gcost +30"
+#define "#mountmnr 'cave_cow_mount'"
 #description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
 #tag "animal 'cave cow'"
 #tag "guaranteedprefix 'cave cow'"
+#basechance 0.6
 #chanceinc primaryrace "Pale One" *100
 #enditem
 
 #newitem
-#id "dire wolf"
-#basechance 0.75
+#id "cave_cow_turtle_shell_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/direwolf2.png
+#sprite /graphics/mounts/standard/cavecow.png
 #offsetx -4
-#offsety -16
-#armor
-#needs overlay direwolf2_overlay
-#define "#mountmnr 'direwolf2mount'"
-#define "#gcost +25"
-#tag "animal wolf"
-#theme "light"
-#tag "maxprot 11"
-#tag "guaranteedprefix wolf"
-#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
-#enditem
-
-#newitem
-#id "serpent 1"
-#basechance 0.125
-#gameid -1
-#sprite /graphics/mounts/standard/serpent1.png
-#armor
-#offsetx -3
-#offsety -2
-#needs overlay 6
-#define "#mountmnr 'serpent1'"
-#define "#gcost +30"
-#tag "animal serpent"
-#theme "light"
-#tag "guaranteedprefix serpent"
-#tag "maxprot 13"
-#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
-#enditem
-
-#newitem
-#id "white tiger"
-#basechance 0.5
-#chanceinc "nationcommand #idealcold above 1 *40"
-#chanceinc "nationcommand #idealcold below -1 *0"
-#gameid -1
-#sprite /graphics/mounts/standard/whitetiger.png
-#armor
-#offsetx -3
-#offsety -11
-#define "#mountmnr 'whitetiger'"
-#define "#swimming"
-#define "#gcost +25"
-#define "#rcost +5"
-#theme "specialmount"
-#theme "light"
-#tag "animal tiger"
-#tag "guaranteedprefix white tiger"
-#tag "minprot 0"
-#tag "maxprot 11"
-#enditem
-
-
-#newitem
-#id "seadog"
-#basechance 0.5
-#gameid -1
-#sprite /graphics/mounts/standard/seadog.png
-#armor
 #offsety -10
-#define "#mountmnr 'seadogmount'"
-#define "#gcost +15"
-#define "#rcost +2"
-#define "#swimming"
-#command "#amphibian"
-#theme "light"
-#tag "animal dog"
-#description "The loyal sea dog will continue to fight even if its rider dies."
-#tag "guaranteedprefix dog"
-#tag "minprot 0"
-#tag "maxprot 9"
-#enditem
-
-#newitem
-#id "jaguar"
-#basechance 0.5
-#gameid -1
-#sprite /graphics/mounts/standard/jaguar.png
 #armor
-#offsetx -6
-#offsety -9
-#define "#mountmnr 'jaguarmount'"
-#define "#gcost +35"
-#define "#swimming"
-#theme "specialmount"
-#theme "light"
-#tag "animal jaguar"
-#description "The jaguar will persist even if the rider dies."
-#tag "guaranteedprefix jaguar"
-#tag "minprot 0"
-#tag "maxprot 12"
+#define "#mountmnr 'cave_cow_turtle_shell_barding_mount'"
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#theme "primitive"
+#basechance 0.416
+#chanceinc prot 9 *2
+#chanceinc primaryrace "Pale One" *100
 #enditem
 
 #newitem
-#id "cavegrub"
+#id "cave_cow_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavecow.png
+#offsetx -4
+#offsety -10
+#armor
+#define "#mountmnr 'cave_cow_coral_barding_mount'"
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#basechance 0.232
+#chanceinc prot 11 *2
+#chanceinc primaryrace "Pale One" *100
+#enditem
+
+
+---- Cave Grubs
+
+#newitem
+#id "cave_grub"
 #gameid -1
 #sprite /graphics/mounts/standard/cavegrub.png
 #armor
-#basechance 0.125
 #offsetx 38
 #offsety -2
-#define "#mountmnr 'cavegrubmount'"
-#define "#gcost +30"
-#define "#rcost +3"
+#define "#mountmnr 'cave_grub_mount'"
 #description "The cave grub will fight until the end of the battle should the rider die"
 #tag "animal 'cave grub'"
 #tag "guaranteedprefix grub"
@@ -216,44 +431,474 @@
 #tag "minprot 6"
 #tag "maxprot 14"
 #sacredextra 0.5
+#basechance 0.6
 #chanceinc primaryrace "Pale One" *80
 #enditem
 
 #newitem
-#id "toad"
-#basechance 0.5
+#id "cave_grub_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavegrub.png
+#armor
+#offsetx 38
+#offsety -2
+#define "#mountmnr 'cave_grub_turtle_shell_barding_mount'"
+#description "The cave grub will fight until the end of the battle should the rider die"
+#tag "animal 'cave grub'"
+#tag "guaranteedprefix grub"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#tag "maxprot 14"
+#theme "primitive"
+#sacredextra 0.5
+#basechance 0.416
+#chanceinc prot 9 *2
+#chanceinc primaryrace "Pale One" *80
+#enditem
+
+#newitem
+#id "cave_grub_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavegrub.png
+#armor
+#offsetx 38
+#offsety -2
+#define "#mountmnr 'cave_grub_coral_barding_mount'"
+#description "The cave grub will fight until the end of the battle should the rider die"
+#tag "animal 'cave grub'"
+#tag "guaranteedprefix grub"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#sacredextra 0.5
+#basechance 0.232
+#chanceinc prot 11 *2
+#chanceinc primaryrace "Pale One" *80
+#enditem
+
+
+---- Dire Wolves
+
+#newitem
+#id "dire_wolf"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf2.png
+#offsetx -4
+#offsety -16
+#armor
+#needs overlay direwolf2_overlay
+#define "#mountmnr 'dire_wolf_mount_2'"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#theme "light"
+#tag "animal wolf"
+#tag "maxprot 11"
+#tag "guaranteedprefix wolf"
+#basechance 4
+#enditem
+
+#newitem
+#id "dire_wolf_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf2.png
+#offsetx -4
+#offsety -16
+#armor
+#needs overlay direwolf2_overlay
+#define "#mountmnr 'dire_wolf_turtle_shell_barding_mount_2'"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#theme "light"
+#tag "animal wolf"
+#tag "guaranteedprefix wolf"
+#theme "primitive"
+#basechance 2
+#chanceinc prot 9 *2
+#enditem
+
+#newitem
+#id "dire_wolf_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf2.png
+#offsetx -4
+#offsety -16
+#armor
+#needs overlay direwolf2_overlay
+#define "#mountmnr 'dire_wolf_coral_barding_mount_2'"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#theme "light"
+#tag "animal wolf"
+#tag "guaranteedprefix wolf"
+#theme "primitive"
+#basechance 1.5
+#chanceinc prot 11 *2
+#enditem
+
+
+---- Serpents
+
+#newitem
+#id "serpent"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -3
+#offsety -2
+#needs overlay 6
+#define "#mountmnr 'serpent_mount'"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#theme "light"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 13"
+#basechance 0.65
+#enditem
+
+#newitem
+#id "serpent_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -3
+#offsety -2
+#needs overlay 6
+#define "#mountmnr 'serpent_turtle_shell_barding_mount'"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#theme "light"
+#theme "primitive"
+#basechance 0.35
+#chanceinc prot 9 *2
+#enditem
+
+#newitem
+#id "serpent_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -3
+#offsety -2
+#needs overlay 6
+#define "#mountmnr 'serpent_coral_barding_mount'"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#theme "light"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#basechance 0.25
+#chanceinc prot 11 *2
+#enditem
+
+
+---- White Tigers
+
+#newitem
+#id "white_tiger"
+#gameid -1
+#sprite /graphics/mounts/standard/whitetiger.png
+#armor
+#offsetx -3
+#offsety -11
+#define "#mountmnr 'white_tiger_mount'"
+#theme "specialmount"
+#theme "light"
+#tag "animal tiger"
+#tag "guaranteedprefix white tiger"
+#tag "maxprot 11"
+#basechance 1.7
+#chanceinc "nationcommand #idealcold above 1 *40"
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+#newitem
+#id "white_tiger_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/whitetiger.png
+#armor
+#offsetx -3
+#offsety -11
+#define "#mountmnr 'white_tiger_turtle_shell_barding_mount'"
+#theme "light"
+#theme "primitive"
+#tag "animal tiger"
+#tag "guaranteedprefix white tiger"
+#theme "specialmount"
+#basechance 1.4
+#chanceinc prot 9 *2
+#chanceinc "nationcommand #idealcold above 1 *40"
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+#newitem
+#id "white_tiger_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/whitetiger.png
+#armor
+#offsetx -3
+#offsety -11
+#define "#mountmnr 'white_tiger_coral_barding_mount'"
+#theme "light"
+#tag "animal tiger"
+#tag "guaranteedprefix white tiger"
+#theme "specialmount"
+#basechance 0.9
+#chanceinc prot 11 *2
+#chanceinc "nationcommand #idealcold above 1 *40"
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+#newitem
+#id "white_tiger_ice_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/whitetiger.png
+#armor
+#offsetx -3
+#offsety -11
+#define "#mountmnr 'white_tiger_ice_barding_mount'"
+#tag "animal tiger"
+#tag "guaranteedprefix white tiger"
+#theme "specialmount"
+#basechance 0.6
+#chanceinc prot 17 *2
+#chanceinc "nationcommand #idealcold above 1 *40"
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+#newitem
+#id "white_tiger_meteorite_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/whitetiger.png
+#armor
+#offsetx -3
+#offsety -11
+#define "#mountmnr 'white_tiger_meteorite_barding_mount'"
+#tag "animal tiger"
+#tag "guaranteedprefix white tiger"
+#theme "specialmount"
+#basechance 0.4
+#chanceinc prot 18 *2
+#chanceinc "nationcommand #idealcold above 1 *40"
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+
+---- Sea Dog
+
+#newitem
+#id "sea_dog"
+#gameid -1
+#sprite /graphics/mounts/standard/seadog.png
+#armor
+#offsety -10
+#define "#mountmnr 'sea_dog_mount'"
+#define "#swimming"
+#command "#amphibian"
+#description "The loyal sea dog will continue to fight even if its rider dies."
+#theme "light"
+#tag "animal dog"
+#tag "guaranteedprefix dog"
+#tag "minprot 0"
+#tag "maxprot 9"
+#basechance 2.5
+#enditem
+
+#newitem
+#id "sea_dog_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/seadog.png
+#armor
+#offsety -10
+#define "#mountmnr 'sea_dog_turtle_shell_barding_mount'"
+#define "#swimming"
+#command "#amphibian"
+#description "The loyal sea dog will continue to fight even if its rider dies."
+#theme "light"
+#theme "primitive"
+#tag "animal dog"
+#tag "guaranteedprefix dog"
+#tag "minprot 0"
+#tag "maxprot 11"
+#basechance 1.5
+#enditem
+
+#newitem
+#id "sea_dog_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/seadog.png
+#armor
+#offsety -10
+#define "#mountmnr 'sea_dog_coral_barding_mount'"
+#define "#swimming"
+#command "#amphibian"
+#description "The loyal sea dog will continue to fight even if its rider dies."
+#theme "light"
+#tag "animal dog"
+#tag "guaranteedprefix dog"
+#tag "minprot 0"
+#tag "maxprot 13"
+#basechance 1
+#enditem
+
+
+---- Jaguars
+
+#newitem
+#id "jaguar"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -6
+#offsety -9
+#define "#mountmnr 'jaguar_mount'"
+#define "#swimming"
+#description "The jaguar will persist even if the rider dies."
+#theme "specialmount"
+#theme "light"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#tag "minprot 0"
+#tag "maxprot 12"
+#basechance 2.5
+#enditem
+
+#newitem
+#id "jaguar_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -6
+#offsety -9
+#define "#mountmnr 'jaguar_turtle_shell_barding_mount'"
+#define "#swimming"
+#description "The jaguar will persist even if the rider dies."
+#theme "specialmount"
+#theme "light"
+#theme "primitive"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#basechance 1.5
+#chanceinc prot 9 *2
+#enditem
+
+#newitem
+#id "jaguar_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -6
+#offsety -9
+#define "#mountmnr 'jaguar_coral_barding_mount'"
+#define "#swimming"
+#description "The jaguar will persist even if the rider dies."
+#theme "specialmount"
+#theme "light"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#basechance 1
+#chanceinc prot 11 *2
+#enditem
+
+
+---- Frogs
+
+#newitem
+#id "jaguar_toad"
 #gameid -1
 #sprite /graphics/mounts/standard/toad_jaguar.png
 #armor
 #offsetx 2
 #offsety -9
-#define "#mountmnr 'toad_jaguar_mount'"
-#define "#gcost +30"
-#define "#rcost +3"
+#define "#mountmnr 'jaguar_toad_mount'"
 #define "#swimming"
 #description "The giant toad will fight until the end of the battle should the rider die"
 #tag "animal 'giant toad'"
 #tag "guaranteedprefix toad"
 #tag "minprot 6"
 #tag "maxprot 14"
+#basechance 2.5
+#enditem
+
+#newitem
+#id "jaguar_toad_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/toad_jaguar.png
+#armor
+#offsetx 2
+#offsety -9
+#define "#mountmnr 'jaguar_toad_turtle_shell_barding_mount'"
+#define "#swimming"
+#description "The giant toad will fight until the end of the battle should the rider die"
+#theme "primitive"
+#tag "animal 'giant toad'"
+#tag "guaranteedprefix toad"
+#tag "minprot 6"
+#basechance 1.5
+#chanceinc prot 9 *2
+#enditem
+
+#newitem
+#id "jaguar_toad_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/toad_jaguar.png
+#armor
+#offsetx 2
+#offsety -9
+#define "#mountmnr 'jaguar_toad_coral_barding_mount'"
+#define "#swimming"
+#description "The giant toad will fight until the end of the battle should the rider die"
+#tag "animal 'giant toad'"
+#tag "guaranteedprefix toad"
+#tag "minprot 6"
+#basechance 1
+#chanceinc prot 11 *2
 #enditem
 
 
 #newitem
-#id "frog"
-#basechance 0.5
+#id "sapphire_toad"
 #gameid -1
 #sprite /graphics/mounts/standard/toad_sapphire.png
 #armor
 #offsetx 2
 #offsety -9
-#define "#mountmnr 'toad_sapphire_mount'"
-#define "#gcost +30"
-#define "#rcost +3"
+#define "#mountmnr 'sapphire_toad_mount'"
 #define "#swimming"
 #description "The giant frog will fight until the end of the battle should the rider die"
 #tag "animal 'giant frog'"
 #tag "guaranteedprefix frog"
 #tag "minprot 6"
 #tag "maxprot 14"
+#basechance 2.5
+#enditem
+
+#newitem
+#id "sapphire_toad_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/toad_sapphire.png
+#armor
+#offsetx 2
+#offsety -9
+#define "#mountmnr 'sapphire_toad_turtle_shell_barding_mount'"
+#define "#swimming"
+#description "The giant frog will fight until the end of the battle should the rider die"
+#theme "primitive"
+#tag "animal 'giant frog'"
+#tag "guaranteedprefix frog"
+#tag "minprot 6"
+#basechance 1.5
+#chanceinc prot 9 *2
+#enditem
+
+#newitem
+#id "sapphire_toad_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/toad_sapphire.png
+#armor
+#offsetx 2
+#offsety -9
+#define "#mountmnr 'sapphire_toad_coral_barding_mount'"
+#define "#swimming"
+#description "The giant frog will fight until the end of the battle should the rider die"
+#tag "animal 'giant frog'"
+#tag "guaranteedprefix frog"
+#tag "minprot 6"
+#basechance 1
+#chanceinc prot 11 *2
 #enditem
