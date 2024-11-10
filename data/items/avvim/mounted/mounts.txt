@@ -1,9 +1,9 @@
---- Base offsets are applied to everything except base and overlay
+------ Base offsets are applied to everything except base and overlay
 
+---- Horses
 
 #newitem
-#basechance 9
-#id "draft horse"
+#id "steppe_horse"
 #gameid -1
 #sprite /graphics/mounts/standard/drafthorse.png
 #recolormask /graphics/mounts/standard/drafthorse_recolormask.png
@@ -12,62 +12,209 @@
 #offsety 8
 #needs overlay drafthorse_overlay
 #define "#mountmnr 'steppe_horse_mount'"
-#tag "animal horse"
 #theme "light"
+#tag "animal horse"
 #tag "maxprot 12"
 #epicness 0.25
+#basechance 27
 #enditem
 
 #newitem
+#id "steppe_horse_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/drafthorse.png
+#recolormask /graphics/mounts/standard/drafthorse_recolormask.png
+#armor
+#offsetx 1
+#offsety 8
+#needs overlay drafthorse_overlay
+#define "#mountmnr 'steppe_horse_leather_barding_mount'"
+#theme "light"
+#tag "animal horse"
+#tag "maxprot 12"
+#epicness 0.25
+#basechance 22
+#chanceinc prot 9 *2
+#enditem
+
+#newitem
+#id "steppe_horse_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/drafthorse.png
+#recolormask /graphics/mounts/standard/drafthorse_recolormask.png
+#armor
+#offsetx 1
+#offsety 8
+#needs overlay drafthorse_overlay
+#define "#mountmnr 'steppe_horse_light_scale_barding_mount'"
+#theme "light"
+#tag "animal horse"
+#epicness 0.25
+#basechance 17
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "steppe_horse_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/drafthorse.png
+#recolormask /graphics/mounts/standard/drafthorse_recolormask.png
+#armor
+#offsetx 1
+#offsety 8
+#needs overlay drafthorse_overlay
+#define "#mountmnr 'steppe_horse_mail_barding_mount'"
+#theme "heavy"
+#tag "animal horse"
+#epicness 0.25
+#basechance 12
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "steppe_horse_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/drafthorse.png
+#recolormask /graphics/mounts/standard/drafthorse_recolormask.png
+#armor
+#offsetx 1
+#offsety 8
+#needs overlay drafthorse_overlay
+#define "#mountmnr 'steppe_horse_cataphract_barding_mount'"
+#theme "heavy"
+#tag "animal horse"
+#epicness 0.25
+#basechance 7
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "steppe_horse_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/drafthorse.png
+#recolormask /graphics/mounts/standard/drafthorse_recolormask.png
+#armor
+#offsetx 1
+#offsety 8
+#needs overlay drafthorse_overlay
+#define "#mountmnr 'steppe_horse_plate_barding_mount'"
+#theme "heavy"
+#tag "animal horse"
+#epicness 0.25
+#basechance 5
+#chanceinc prot 18 *2
+#enditem
+
+
+---- Camels
+
+#newitem
 #id "camel"
-#basechance 3
 #gameid -1
 #sprite /graphics/mounts/standard/camel.png
 #armor
 #offsetx 3
 #offsety 63
 #define "#mountmnr 'camel_mount'"
+#theme "light"
 #tag "animal camel"
 #tag "maxprot 12"
-#theme "light"
 #epicness 0.25
+#basechance 9
 #enditem
 
 #newitem
-#id "barded camel"
-#basechance 3
+#id "camel_leather_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/camel_barded.png
-#recolormask /graphics/mounts/standard/camel_barded_recolormask.png
+#sprite /graphics/mounts/standard/camel.png
 #armor
 #offsetx 3
 #offsety 63
 #define "#mountmnr 'camel_leather_barding_mount'"
+#theme "light"
 #tag "animal camel"
-#tag "minprot 8"
 #tag "maxprot 12"
 #epicness 0.25
+#basechance 7.3
+#chanceinc prot 9 *2
 #enditem
 
 #newitem
-#id "armored camel (iron)"
-#basechance 1
+#id "camel_light_scale_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/camel_armored_iron.png
-#recolormask /graphics/mounts/standard/camel_armored_recolormask.png
+#sprite /graphics/mounts/standard/camel.png
+#armor
+#offsetx 3
+#offsety 63
+#define "#mountmnr 'camel_light_scale_barding_mount'"
+#theme "light"
+#tag "animal camel"
+#epicness 0.25
+#basechance 5.6
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "camel_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/camel.png
+#armor
+#offsetx 3
+#offsety 63
+#define "#mountmnr 'camel_bronze_mail_barding_mount'"
+#theme "bronze"
+#tag "animal camel"
+#epicness 0.25
+#basechance 4
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "camel_mail_barding_mount"
+#gameid -1
+#sprite /graphics/mounts/standard/camel.png
 #armor
 #offsetx 3
 #offsety 63
 #define "#mountmnr 'camel_mail_barding_mount'"
 #tag "animal camel"
-#theme "heavy"
-#theme "iron"
-#tag "minprot 12"
-#tag "maxprot 16"
+#epicness 0.25
+#basechance 4
+#chanceinc prot 14 *2
 #enditem
 
 #newitem
-#basechance 3
+#id "camel_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/camel.png
+#armor
+#offsetx 3
+#offsety 63
+#define "#mountmnr 'camel_cataphract_barding_mount'"
+#tag "animal camel"
+#epicness 0.25
+#basechance 2.33
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "camel_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/camel.png
+#armor
+#offsetx 3
+#offsety 63
+#define "#mountmnr 'camel_plate_barding_mount'"
+#tag "animal camel"
+#epicness 0.25
+#basechance 1.66
+#chanceinc prot 18 *2
+#enditem
+
+
+---- Meese
+
+#newitem
 #id "moose"
 #gameid -1
 #sprite /graphics/mounts/standard/moose.png
@@ -76,14 +223,96 @@
 #offsety 57
 #define "#mountmnr 'moose_mount'"
 #tag "animal moose"
+#tag "guaranteedprefix moose"
 #tag "minprot 0"
 #tag "maxprot 16"
-#tag "guaranteedprefix moose"
 #description "Leaves a moose behind when the rider dies"
+#basechance 9
 #enditem
 
 #newitem
-#basechance 6
+#id "moose_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/moose.png
+#armor
+#offsetx 30
+#offsety 57
+#define "#mountmnr 'moose_leather_barding_mount'"
+#tag "animal moose"
+#tag "guaranteedprefix moose"
+#tag "minprot 0"
+#tag "maxprot 16"
+#description "Leaves a moose behind when the rider dies"
+#basechance 7.3
+#chanceinc prot 9 *2
+#enditem
+
+#newitem
+#id "moose_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/moose.png
+#armor
+#offsetx 30
+#offsety 57
+#define "#mountmnr 'moose_light_scale_barding_mount'"
+#tag "animal moose"
+#tag "guaranteedprefix moose"
+#tag "minprot 0"
+#tag "maxprot 16"
+#description "Leaves a moose behind when the rider dies"
+#basechance 5.6
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "moose_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/moose.png
+#armor
+#offsetx 30
+#offsety 57
+#define "#mountmnr 'moose_mail_barding_mount'"
+#tag "animal moose"
+#tag "guaranteedprefix moose"
+#description "Leaves a moose behind when the rider dies"
+#basechance 4
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "moose_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/moose.png
+#armor
+#offsetx 30
+#offsety 57
+#define "#mountmnr 'moose_cataphract_barding_mount'"
+#tag "animal moose"
+#tag "guaranteedprefix moose"
+#description "Leaves a moose behind when the rider dies"
+#basechance 2.33
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "moose_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/moose.png
+#armor
+#offsetx 30
+#offsety 57
+#define "#mountmnr 'moose_plate_barding_mount'"
+#tag "animal moose"
+#tag "guaranteedprefix moose"
+#description "Leaves a moose behind when the rider dies"
+#basechance 1.66
+#chanceinc prot 18 *2
+#enditem
+
+
+---- Bears
+
+#newitem
 #id "bear"
 #gameid -1
 #sprite /graphics/mounts/standard/bear.png
@@ -97,11 +326,104 @@
 #tag "name commander beastmaster"
 #tag "guaranteedprefix bear"
 #tag "minprot 10"
+#basechance 18
 #enditem
 
 #newitem
+#id "bear_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear.png
+#armor
+#define "#mountmnr 'bear_leather_barding_mount'"
+#define "#gcost +35"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#offsetx 1
+#offsety 8
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#basechance 14.6
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "bear_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear.png
+#armor
+#define "#mountmnr 'bear_light_scale_barding_mount'"
+#define "#gcost +35"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#offsetx 1
+#offsety 8
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#basechance 10.12
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "bear_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear.png
+#armor
+#define "#mountmnr 'bear_mail_barding_mount'"
+#define "#gcost +35"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#offsetx 1
+#offsety 8
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#basechance 8
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "bear_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear.png
+#armor
+#define "#mountmnr 'bear_cataphract_barding_mount'"
+#define "#gcost +35"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#offsetx 1
+#offsety 8
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#basechance 4.66
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "bear_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear.png
+#armor
+#define "#mountmnr 'bear_plate_barding_mount'"
+#define "#gcost +35"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#offsetx 1
+#offsety 8
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#basechance 3.32
+#chanceinc prot 18 *2
+#enditem
+
+
+---- Hippos
+
+#newitem
 #id "hippo"
-#basechance 0.25
 #gameid -1
 #sprite /graphics/mounts/standard/hippo.png
 #armor
@@ -110,7 +432,93 @@
 #define "#mountmnr 'hippo_mount'"
 #define "#swampsurvival"
 #description "If the rider dies, the hippopotamus will rampage through its companion's slayers before lumbering off the battlefield."
+#theme "heavy"
 #tag "animal hippo"
 #tag "guaranteedprefix hippo"
+#basechance 0.8
+#enditem
+
+#newitem
+#id "hippo_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/hippo.png
+#armor
+#offsetx 35
+#offsety 62
+#define "#mountmnr 'hippo_leather_barding_mount'"
+#define "#swampsurvival"
+#description "If the rider dies, the hippopotamus will rampage through its companion's slayers before lumbering off the battlefield."
 #theme "heavy"
+#tag "animal hippo"
+#tag "guaranteedprefix hippo"
+#basechance 0.6
+#chanceinc prot 9 *2
+#enditem
+
+#newitem
+#id "hippo_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/hippo.png
+#armor
+#offsetx 35
+#offsety 62
+#define "#mountmnr 'hippo_light_scale_barding_mount'"
+#define "#swampsurvival"
+#description "If the rider dies, the hippopotamus will rampage through its companion's slayers before lumbering off the battlefield."
+#theme "heavy"
+#tag "animal hippo"
+#tag "guaranteedprefix hippo"
+#basechance 0.45
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "hippo_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/hippo.png
+#armor
+#offsetx 35
+#offsety 62
+#define "#mountmnr 'hippo_mail_barding_mount'"
+#define "#swampsurvival"
+#description "If the rider dies, the hippopotamus will rampage through its companion's slayers before lumbering off the battlefield."
+#theme "heavy"
+#tag "animal hippo"
+#tag "guaranteedprefix hippo"
+#basechance 0.3
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "hippo_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/hippo.png
+#armor
+#offsetx 35
+#offsety 62
+#define "#mountmnr 'hippo_cataphract_barding_mount'"
+#define "#swampsurvival"
+#description "If the rider dies, the hippopotamus will rampage through its companion's slayers before lumbering off the battlefield."
+#theme "heavy"
+#tag "animal hippo"
+#tag "guaranteedprefix hippo"
+#basechance 0.25
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "hippo_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/hippo.png
+#armor
+#offsetx 35
+#offsety 62
+#define "#mountmnr 'hippo_plate_barding_mount'"
+#define "#swampsurvival"
+#description "If the rider dies, the hippopotamus will rampage through its companion's slayers before lumbering off the battlefield."
+#theme "heavy"
+#tag "animal hippo"
+#tag "guaranteedprefix hippo"
+#basechance 0.1
+#chanceinc prot 18 *2
 #enditem
