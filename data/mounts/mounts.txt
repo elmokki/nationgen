@@ -2788,7 +2788,7 @@
 #command "#transformation 0"
 #command "#armor 137"
 #command "#gcost 20"
-#command "#rcost 6"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2821,7 +2821,139 @@
 #command "#transformation 0"
 #command "#armor 190"
 #command "#gcost 20"
-#command "#rcost 8"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "elk_light_bronze_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/elk.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Elk'"
+#command "#weapon 397"
+#command "#weapon 354"
+#command "#size 5"
+#command "#hp 25"
+#command "#prot 3"
+#command "#mr 5"
+#command "#mor 8"
+#command "#str 12"
+#command "#att 9"
+#command "#def 9"
+#command "#prec 5"
+#command "#enc 3"
+#command "#mapmove 20"
+#command "#ap 23"
+#command "#maxage 14"
+#command "#stealthy 0"
+#command "#animal"
+#command "#undisciplined"
+#command "#forestsurvival"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 264"
+#command "#gcost 20"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "elk_light_scale_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/elk.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Elk'"
+#command "#weapon 397"
+#command "#weapon 354"
+#command "#size 5"
+#command "#hp 25"
+#command "#prot 3"
+#command "#mr 5"
+#command "#mor 8"
+#command "#str 12"
+#command "#att 9"
+#command "#def 9"
+#command "#prec 5"
+#command "#enc 3"
+#command "#mapmove 20"
+#command "#ap 23"
+#command "#maxage 14"
+#command "#stealthy 0"
+#command "#animal"
+#command "#undisciplined"
+#command "#forestsurvival"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 252"
+#command "#gcost 20"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "elk_mail_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/elk.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Elk'"
+#command "#weapon 397"
+#command "#weapon 354"
+#command "#size 5"
+#command "#hp 25"
+#command "#prot 3"
+#command "#mr 5"
+#command "#mor 8"
+#command "#str 12"
+#command "#att 9"
+#command "#def 9"
+#command "#prec 5"
+#command "#enc 3"
+#command "#mapmove 20"
+#command "#ap 23"
+#command "#maxage 14"
+#command "#stealthy 0"
+#command "#animal"
+#command "#undisciplined"
+#command "#forestsurvival"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 20"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "elk_gossamer_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/elk.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Elk'"
+#command "#weapon 397"
+#command "#weapon 354"
+#command "#size 5"
+#command "#hp 25"
+#command "#prot 3"
+#command "#mr 5"
+#command "#mor 8"
+#command "#str 12"
+#command "#att 9"
+#command "#def 9"
+#command "#prec 5"
+#command "#enc 3"
+#command "#mapmove 20"
+#command "#ap 23"
+#command "#maxage 14"
+#command "#stealthy 0"
+#command "#animal"
+#command "#undisciplined"
+#command "#forestsurvival"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 274"
+#command "#gcost 20"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2854,7 +2986,7 @@
 #command "#transformation 0"
 #command "#armor 'ice_barding'"
 #command "#gcost 20"
-#command "#rcost 22"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2887,7 +3019,7 @@
 #command "#transformation 0"
 #command "#armor 'meteorite_barding'"
 #command "#gcost 20"
-#command "#rcost 30"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2916,6 +3048,99 @@
 #command "#itemslots 786432"
 #command "#transformation 0"
 #command "#flying"
+#command "#gcost 50"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "peryton_light_bronze_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/peryton2.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Peryton'"
+#command "#weapon 354"
+#command "#size 6"
+#command "#hp 25"
+#command "#prot 3"
+#command "#mr 5"
+#command "#mor 8"
+#command "#str 12"
+#command "#att 9"
+#command "#def 9"
+#command "#prec 5"
+#command "#enc 4"
+#command "#mapmove 28"
+#command "#ap 18"
+#command "#maxage 14"
+#command "#animal"
+#command "#undisciplined"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#flying"
+#command "#armor 264"
+#command "#gcost 50"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "peryton_light_scale_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/peryton2.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Peryton'"
+#command "#weapon 354"
+#command "#size 6"
+#command "#hp 25"
+#command "#prot 3"
+#command "#mr 5"
+#command "#mor 8"
+#command "#str 12"
+#command "#att 9"
+#command "#def 9"
+#command "#prec 5"
+#command "#enc 4"
+#command "#mapmove 28"
+#command "#ap 18"
+#command "#maxage 14"
+#command "#animal"
+#command "#undisciplined"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#flying"
+#command "#armor 252"
+#command "#gcost 50"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "peryton_gossamer_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/peryton2.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Peryton'"
+#command "#weapon 354"
+#command "#size 6"
+#command "#hp 25"
+#command "#prot 3"
+#command "#mr 5"
+#command "#mor 8"
+#command "#str 12"
+#command "#att 9"
+#command "#def 9"
+#command "#prec 5"
+#command "#enc 4"
+#command "#mapmove 28"
+#command "#ap 18"
+#command "#maxage 14"
+#command "#animal"
+#command "#undisciplined"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#flying"
+#command "#armor 274"
 #command "#gcost 50"
 #command "#rcost 4"
 #mount
@@ -3074,35 +3299,61 @@
 #end
 
 #new secondshape
-#id "war_horse_mount"
-#command "#copystats 3514"
-#command "#copyspr 3514"
+#id "riding_horse_leather_barding_mount"
+#command "#copystats 3513"
+#command "#copyspr 3513"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
+#command "#armor 251"
 #command "#gcost 15"
 #command "#rcost 2"
 #mount
 #end
 
 #new secondshape
-#id "war_horse_cataphract_barding_mount"
-#command "#copystats 3516"
-#command "#copyspr 3516"
+#id "riding_horse_light_bronze_barding_mount"
+#command "#copystats 3513"
+#command "#copyspr 3513"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
+#command "#armor 264"
 #command "#gcost 15"
-#command "#rcost 10"
+#command "#rcost 2"
 #mount
 #end
 
 #new secondshape
-#id "destrier_plate_barding_mount"
-#command "#copystats 3517"
-#command "#copyspr 3517"
+#id "riding_horse_light_scale_barding_mount"
+#command "#copystats 3513"
+#command "#copyspr 3513"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 252"
+#command "#gcost 15"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
+#id "riding_horse_mail_barding_mount"
+#command "#copystats 3513"
+#command "#copyspr 3513"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 172"
+#command "#gcost 15"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
+#id "war_horse_leather_barding_mount"
+#command "#copystats 3514"
+#command "#copyspr 3514"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#gcost 15"
-#command "#rcost 12"
+#command "#rcost 2"
 #mount
 #end
 
@@ -3126,6 +3377,41 @@
 #command "#itemslots 786432"
 #command "#gcost 15"
 #command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "war_horse_mail_barding_mount"
+#command "#copystats 3515"
+#command "#spr1 ./graphics/mounts/standard/armoredhorse1a.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 172"
+#command "#gcost 15"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "war_horse_cataphract_barding_mount"
+#command "#copystats 3516"
+#command "#copyspr 3516"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#gcost 15"
+#command "#rcost 10"
+#mount
+#end
+
+#new secondshape
+#id "destrier_plate_barding_mount"
+#command "#copystats 3517"
+#command "#copyspr 3517"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#gcost 15"
+#command "#rcost 12"
 #mount
 #end
 
@@ -3188,6 +3474,17 @@
 #end
 
 #new secondshape
+#id "unicorn_gossamer_barding_mount"
+#command "#copystats 4020"
+#command "#copyspr 4020"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#gcost 30"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
 #id "unicorn_silver_barding_mount"
 #command "#copystats 3525"
 #command "#copyspr 3525"
@@ -3206,6 +3503,50 @@
 #command "#itemslots 786432"
 #command "#gcost 25"
 #command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "fay_steed_mount"
+#command "#copystats 3902"
+#command "#copyspr 3902"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#gcost 25"
+#command "#rcost 19"
+#mount
+#end
+
+#new secondshape
+#id "royal_fay_steed_mount"
+#command "#copystats 3905"
+#command "#copyspr 3905"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#gcost 35"
+#command "#rcost 22"
+#mount
+#end
+
+#new secondshape
+#id "unseelie_steed_mount"
+#command "#copystats 3908"
+#command "#copyspr 3908"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#gcost 40"
+#command "#rcost 19"
+#mount
+#end
+
+#new secondshape
+#id "royal_unseelie_steed_mount"
+#command "#copystats 3910"
+#command "#copyspr 3910"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#gcost 50"
+#command "#rcost 22"
 #mount
 #end
 
@@ -3268,11 +3609,71 @@
 #end
 
 #new secondshape
+#id "horse_light_bronze_barding_oriental_chariot"
+#command "#copystats 3565"
+#command "#copyspr 3565"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 264"
+#command "#gcost 20"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "horse_light_scale_barding_oriental_chariot"
+#command "#copystats 3565"
+#command "#copyspr 3565"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 252"
+#command "#gcost 20"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "horse_mail_barding_oriental_chariot"
+#command "#copystats 3565"
+#command "#copyspr 3565"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 172"
+#command "#gcost 20"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
 #id "horse_cataphract_barding_oriental_chariot"
 #command "#copystats 3565"
 #command "#copyspr 3565"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
+#command "#gcost 20"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "horse_bronze_barding_oriental_chariot"
+#command "#copystats 3565"
+#command "#copyspr 3565"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 263"
+#command "#gcost 20"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "horse_plate_barding_oriental_chariot"
+#command "#copystats 3565"
+#command "#copyspr 3565"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 254"
 #command "#gcost 20"
 #command "#rcost 4"
 #mount
@@ -3575,6 +3976,118 @@
 #end
 
 #new secondshape
+#id "pegasus_light_bronze_barding_mount"
+#command "#copyspr 3556"
+#command "#name 'Pegasus'"
+#command "#weapon 55"
+#command "#size 6"
+#command "#hp 25"
+#command "#prot 3"
+#command "#mr 11"
+#command "#mor 11"
+#command "#str 15"
+#command "#att 12"
+#command "#def 12"
+#command "#prec 5"
+#command "#enc 1"
+#command "#mapmove 26"
+#command "#ap 30"
+#command "#animal"
+#command "#smartmount 100"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#flying"
+#command "#armor 264"
+#command "#gcost 50"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "pegasus_light_scale_barding_mount"
+#command "#copyspr 3556"
+#command "#name 'Pegasus'"
+#command "#weapon 55"
+#command "#size 6"
+#command "#hp 25"
+#command "#prot 3"
+#command "#mr 11"
+#command "#mor 11"
+#command "#str 15"
+#command "#att 12"
+#command "#def 12"
+#command "#prec 5"
+#command "#enc 1"
+#command "#mapmove 26"
+#command "#ap 30"
+#command "#animal"
+#command "#smartmount 100"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#flying"
+#command "#armor 252"
+#command "#gcost 50"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "pegasus_mail_barding_mount"
+#command "#copyspr 3556"
+#command "#name 'Pegasus'"
+#command "#weapon 55"
+#command "#size 6"
+#command "#hp 25"
+#command "#prot 3"
+#command "#mr 11"
+#command "#mor 11"
+#command "#str 15"
+#command "#att 12"
+#command "#def 12"
+#command "#prec 5"
+#command "#enc 1"
+#command "#mapmove 26"
+#command "#ap 30"
+#command "#animal"
+#command "#smartmount 100"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#flying"
+#command "#armor 172"
+#command "#gcost 50"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "pegasus_silver_barding_mount"
+#command "#copyspr 3556"
+#command "#name 'Pegasus'"
+#command "#weapon 55"
+#command "#size 6"
+#command "#hp 25"
+#command "#prot 3"
+#command "#mr 11"
+#command "#mor 11"
+#command "#str 15"
+#command "#att 12"
+#command "#def 12"
+#command "#prec 5"
+#command "#enc 1"
+#command "#mapmove 26"
+#command "#ap 30"
+#command "#animal"
+#command "#smartmount 100"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#flying"
+#command "#armor 255"
+#command "#gcost 50"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
 #id "cu_sidhe_chariot"
 #command "#copystats 3563"
 #command "#copyspr 3572"
@@ -3683,6 +4196,90 @@
 #command "#nomovepen"
 #command "#supplybonus +1"
 #command "#wastesurvival"
+#command "#gcost 20"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "camel_light_bronze_barding_oriental_chariot"
+#command "#copystats 3563"
+#command "#spr1 ./graphics/mounts/chariots/camel_oriental.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#supplybonus +1"
+#command "#wastesurvival"
+#command "#armor 264"
+#command "#gcost 20"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "camel_light_scale_barding_oriental_chariot"
+#command "#copystats 3563"
+#command "#spr1 ./graphics/mounts/chariots/camel_oriental.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#supplybonus +1"
+#command "#wastesurvival"
+#command "#armor 252"
+#command "#gcost 20"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "camel_mail_barding_oriental_chariot"
+#command "#copystats 3563"
+#command "#spr1 ./graphics/mounts/chariots/camel_oriental.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#supplybonus +1"
+#command "#wastesurvival"
+#command "#armor 172"
+#command "#gcost 20"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "camel_cataphract_barding_oriental_chariot"
+#command "#copystats 3563"
+#command "#spr1 ./graphics/mounts/chariots/camel_oriental.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#supplybonus +1"
+#command "#wastesurvival"
+#command "#armor 253"
+#command "#gcost 20"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "camel_bronze_barding_oriental_chariot"
+#command "#copystats 3563"
+#command "#spr1 ./graphics/mounts/chariots/camel_oriental.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#supplybonus +1"
+#command "#wastesurvival"
+#command "#armor 263"
+#command "#gcost 20"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "camel_plate_barding_oriental_chariot"
+#command "#copystats 3563"
+#command "#spr1 ./graphics/mounts/chariots/camel_oriental.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#supplybonus +1"
+#command "#wastesurvival"
+#command "#armor 254"
 #command "#gcost 20"
 #command "#rcost 8"
 #mount
@@ -3851,7 +4448,85 @@
 #end
 
 #new secondshape
-#id "lizard_oriental_chariot"
+#id "lizard_light_bronze_barding_oriental_chariot"
+#command "#copystats 3568"
+#command "#spr1 ./graphics/mounts/chariots/lizard_oriental.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#coldblood"
+#command "#armor 264"
+#command "#gcost 25"
+#command "#rcost 14"
+#mount
+#end
+
+#new secondshape
+#id "lizard_light_scale_barding_oriental_chariot"
+#command "#copystats 3568"
+#command "#spr1 ./graphics/mounts/chariots/lizard_oriental.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#coldblood"
+#command "#armor 252"
+#command "#gcost 25"
+#command "#rcost 14"
+#mount
+#end
+
+#new secondshape
+#id "lizard_mail_barding_oriental_chariot"
+#command "#copystats 3568"
+#command "#spr1 ./graphics/mounts/chariots/lizard_oriental.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#coldblood"
+#command "#armor 172"
+#command "#gcost 25"
+#command "#rcost 14"
+#mount
+#end
+
+#new secondshape
+#id "lizard_cataphract_barding_oriental_chariot"
+#command "#copystats 3568"
+#command "#spr1 ./graphics/mounts/chariots/lizard_oriental.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#coldblood"
+#command "#armor 253"
+#command "#gcost 25"
+#command "#rcost 14"
+#mount
+#end
+
+#new secondshape
+#id "lizard_bronze_barding_oriental_chariot"
+#command "#copystats 3568"
+#command "#spr1 ./graphics/mounts/chariots/lizard_oriental.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#coldblood"
+#command "#armor 263"
+#command "#gcost 25"
+#command "#rcost 14"
+#mount
+#end
+
+#new secondshape
+#id "lizard_plate_barding_oriental_chariot"
+#command "#copystats 3568"
+#command "#spr1 ./graphics/mounts/chariots/lizard_oriental.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#coldblood"
+#command "#armor 264"
+#command "#gcost 25"
+#command "#rcost 14"
+#mount
+#end
+
+#new secondshape
+#id "lizard_barding_oriental_chariot"
 #command "#copystats 3568"
 #command "#spr1 ./graphics/mounts/chariots/lizard_oriental.png"
 #command "#spr2 shift"
@@ -3905,6 +4580,138 @@
 #end
 
 #new secondshape
+#id "boar_light_bronze_barding_oriental_chariot"
+#command "#spr1 ./graphics/mounts/chariots/boar_oriental.png"
+#command "#spr2 shift"
+#command "#copystats 3563"
+#command "#hp 15"
+#command "#trample"
+#command "#size 5"
+#command "#prot 5"
+#command "#weapon 331" -- Gore
+#command "#mapmove 20"
+#command "#ap 18"
+#command "#ressize 3"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#nomovepen"
+#command "#armor 264"
+#command "#gcost 25"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "boar_light_scale_barding_oriental_chariot"
+#command "#spr1 ./graphics/mounts/chariots/boar_oriental.png"
+#command "#spr2 shift"
+#command "#copystats 3563"
+#command "#hp 15"
+#command "#trample"
+#command "#size 5"
+#command "#prot 5"
+#command "#weapon 331" -- Gore
+#command "#mapmove 20"
+#command "#ap 18"
+#command "#ressize 3"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#nomovepen"
+#command "#armor 252"
+#command "#gcost 25"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "boar_mail_barding_oriental_chariot"
+#command "#spr1 ./graphics/mounts/chariots/boar_oriental.png"
+#command "#spr2 shift"
+#command "#copystats 3563"
+#command "#hp 15"
+#command "#trample"
+#command "#size 5"
+#command "#prot 5"
+#command "#weapon 331" -- Gore
+#command "#mapmove 20"
+#command "#ap 18"
+#command "#ressize 3"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#nomovepen"
+#command "#armor 172"
+#command "#gcost 25"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "boar_cataphract_barding_oriental_chariot"
+#command "#spr1 ./graphics/mounts/chariots/boar_oriental.png"
+#command "#spr2 shift"
+#command "#copystats 3563"
+#command "#hp 15"
+#command "#trample"
+#command "#size 5"
+#command "#prot 5"
+#command "#weapon 331" -- Gore
+#command "#mapmove 20"
+#command "#ap 18"
+#command "#ressize 3"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#nomovepen"
+#command "#armor 253"
+#command "#gcost 25"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "boar_bronze_barding_oriental_chariot"
+#command "#spr1 ./graphics/mounts/chariots/boar_oriental.png"
+#command "#spr2 shift"
+#command "#copystats 3563"
+#command "#hp 15"
+#command "#trample"
+#command "#size 5"
+#command "#prot 5"
+#command "#weapon 331" -- Gore
+#command "#mapmove 20"
+#command "#ap 18"
+#command "#ressize 3"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#nomovepen"
+#command "#armor 263"
+#command "#gcost 25"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "boar_plate_barding_oriental_chariot"
+#command "#spr1 ./graphics/mounts/chariots/boar_oriental.png"
+#command "#spr2 shift"
+#command "#copystats 3563"
+#command "#hp 15"
+#command "#trample"
+#command "#size 5"
+#command "#prot 5"
+#command "#weapon 331" -- Gore
+#command "#mapmove 20"
+#command "#ap 18"
+#command "#ressize 3"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#nomovepen"
+#command "#armor 254"
+#command "#gcost 25"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
 #id "tiger_oriental_chariot"
 #command "#spr1 ./graphics/mounts/chariots/tiger_oriental.png"
 #command "#spr2 shift"
@@ -3921,6 +4728,144 @@
 #command "#enc 4"
 #command "#unsurr 1"
 #command "#nomovepen"
+#command "#gcost 30"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "tiger_light_bronze_barding_oriental_chariot"
+#command "#spr1 ./graphics/mounts/chariots/tiger_oriental.png"
+#command "#spr2 shift"
+#command "#copystats 3563"
+#command "#hp 22"
+#command "#trample"
+#command "#size 5"
+#command "#prot 5"
+#command "#weapon 322" -- Bite
+#command "#weapon 236" -- Claw
+#command "#mapmove 20"
+#command "#ap 16"
+#command "#ressize 3"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#nomovepen"
+#command "#armor 264"
+#command "#gcost 30"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "tiger_light_scale_barding_oriental_chariot"
+#command "#spr1 ./graphics/mounts/chariots/tiger_oriental.png"
+#command "#spr2 shift"
+#command "#copystats 3563"
+#command "#hp 22"
+#command "#trample"
+#command "#size 5"
+#command "#prot 5"
+#command "#weapon 322" -- Bite
+#command "#weapon 236" -- Claw
+#command "#mapmove 20"
+#command "#ap 16"
+#command "#ressize 3"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#nomovepen"
+#command "#armor 252"
+#command "#gcost 30"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "tiger_mail_barding_oriental_chariot"
+#command "#spr1 ./graphics/mounts/chariots/tiger_oriental.png"
+#command "#spr2 shift"
+#command "#copystats 3563"
+#command "#hp 22"
+#command "#trample"
+#command "#size 5"
+#command "#prot 5"
+#command "#weapon 322" -- Bite
+#command "#weapon 236" -- Claw
+#command "#mapmove 20"
+#command "#ap 16"
+#command "#ressize 3"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#nomovepen"
+#command "#armor 172"
+#command "#gcost 30"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "tiger_cataphract_barding_oriental_chariot"
+#command "#spr1 ./graphics/mounts/chariots/tiger_oriental.png"
+#command "#spr2 shift"
+#command "#copystats 3563"
+#command "#hp 22"
+#command "#trample"
+#command "#size 5"
+#command "#prot 5"
+#command "#weapon 322" -- Bite
+#command "#weapon 236" -- Claw
+#command "#mapmove 20"
+#command "#ap 16"
+#command "#ressize 3"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#nomovepen"
+#command "#armor 253"
+#command "#gcost 30"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "tiger_bronze_barding_oriental_chariot"
+#command "#spr1 ./graphics/mounts/chariots/tiger_oriental.png"
+#command "#spr2 shift"
+#command "#copystats 3563"
+#command "#hp 22"
+#command "#trample"
+#command "#size 5"
+#command "#prot 5"
+#command "#weapon 322" -- Bite
+#command "#weapon 236" -- Claw
+#command "#mapmove 20"
+#command "#ap 16"
+#command "#ressize 3"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#nomovepen"
+#command "#armor 263"
+#command "#gcost 30"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "tiger_plate_barding_oriental_chariot"
+#command "#spr1 ./graphics/mounts/chariots/tiger_oriental.png"
+#command "#spr2 shift"
+#command "#copystats 3563"
+#command "#hp 22"
+#command "#trample"
+#command "#size 5"
+#command "#prot 5"
+#command "#weapon 322" -- Bite
+#command "#weapon 236" -- Claw
+#command "#mapmove 20"
+#command "#ap 16"
+#command "#ressize 3"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#nomovepen"
+#command "#armor 254"
 #command "#gcost 30"
 #command "#rcost 6"
 #mount
@@ -4526,6 +5471,134 @@
 #end
 
 #new secondshape
+#id "cu_sidhe_light_bronze_barding_mount"
+#command "#name 'Cu Sidhe'"
+#command "#copyspr 851"
+#command "#magicboost 53 -5"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#ap 28"
+#command "#hp 26"
+#command "#str 15"
+#command "#att 13"
+#command "#def 12"
+#command "#prot 7"
+#command "#prec 5"
+#command "#mr 14"
+#command "#mor 14"
+#command "#ironvul"
+#command "#animal"
+#command "#forestsurvival"
+#command "#stealthy 40"
+#command "#darkvision 50"
+#command "#weapon 20"
+#command "#patrolbonus 1"
+#command "#enc 3"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 264"
+#command "#gcost 20"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "cu_sidhe_light_scale_barding_mount"
+#command "#name 'Cu Sidhe'"
+#command "#copyspr 851"
+#command "#magicboost 53 -5"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#ap 28"
+#command "#hp 26"
+#command "#str 15"
+#command "#att 13"
+#command "#def 12"
+#command "#prot 7"
+#command "#prec 5"
+#command "#mr 14"
+#command "#mor 14"
+#command "#ironvul"
+#command "#animal"
+#command "#forestsurvival"
+#command "#stealthy 40"
+#command "#darkvision 50"
+#command "#weapon 20"
+#command "#patrolbonus 1"
+#command "#enc 3"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 252"
+#command "#gcost 20"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "cu_sidhe_mail_barding_mount"
+#command "#name 'Cu Sidhe'"
+#command "#copyspr 851"
+#command "#magicboost 53 -5"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#ap 28"
+#command "#hp 26"
+#command "#str 15"
+#command "#att 13"
+#command "#def 12"
+#command "#prot 7"
+#command "#prec 5"
+#command "#mr 14"
+#command "#mor 14"
+#command "#ironvul"
+#command "#animal"
+#command "#forestsurvival"
+#command "#stealthy 40"
+#command "#darkvision 50"
+#command "#weapon 20"
+#command "#patrolbonus 1"
+#command "#enc 3"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 20"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "cu_sidhe_gossamer_barding_mount"
+#command "#name 'Cu Sidhe'"
+#command "#copyspr 851"
+#command "#magicboost 53 -5"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#ap 28"
+#command "#hp 26"
+#command "#str 15"
+#command "#att 13"
+#command "#def 12"
+#command "#prot 7"
+#command "#prec 5"
+#command "#mr 14"
+#command "#mor 14"
+#command "#ironvul"
+#command "#animal"
+#command "#forestsurvival"
+#command "#stealthy 40"
+#command "#darkvision 50"
+#command "#weapon 20"
+#command "#patrolbonus 1"
+#command "#enc 3"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 274"
+#command "#gcost 20"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
 #id "barghest_mount"
 #command "#name 'Barghest'"
 #command "#copyspr 1768"
@@ -4551,6 +5624,134 @@
 #command "#enc 2"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 25"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "barghest_light_bronze_barding_mount"
+#command "#name 'Barghest'"
+#command "#copyspr 1768"
+#command "#magicboost 53 -5"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#ap 26"
+#command "#hp 28"
+#command "#str 16"
+#command "#att 13"
+#command "#def 11"
+#command "#prot 6"
+#command "#prec 5"
+#command "#mr 15"
+#command "#mor 14"
+#command "#ironvul"
+#command "#animal"
+#command "#darkpower 3"
+#command "#curseattacker 5"
+#command "#stealthy 60"
+#command "#darkvision 50"
+#command "#weapon 223"
+#command "#enc 2"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 264"
+#command "#gcost 25"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "barghest_light_scale_barding_mount"
+#command "#name 'Barghest'"
+#command "#copyspr 1768"
+#command "#magicboost 53 -5"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#ap 26"
+#command "#hp 28"
+#command "#str 16"
+#command "#att 13"
+#command "#def 11"
+#command "#prot 6"
+#command "#prec 5"
+#command "#mr 15"
+#command "#mor 14"
+#command "#ironvul"
+#command "#animal"
+#command "#darkpower 3"
+#command "#curseattacker 5"
+#command "#stealthy 60"
+#command "#darkvision 50"
+#command "#weapon 223"
+#command "#enc 2"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 252"
+#command "#gcost 25"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "barghest_mail_barding_mount"
+#command "#name 'Barghest'"
+#command "#copyspr 1768"
+#command "#magicboost 53 -5"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#ap 26"
+#command "#hp 28"
+#command "#str 16"
+#command "#att 13"
+#command "#def 11"
+#command "#prot 6"
+#command "#prec 5"
+#command "#mr 15"
+#command "#mor 14"
+#command "#ironvul"
+#command "#animal"
+#command "#darkpower 3"
+#command "#curseattacker 5"
+#command "#stealthy 60"
+#command "#darkvision 50"
+#command "#weapon 223"
+#command "#enc 2"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 25"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "barghest_gossamer_barding_mount"
+#command "#name 'Barghest'"
+#command "#copyspr 1768"
+#command "#magicboost 53 -5"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#ap 26"
+#command "#hp 28"
+#command "#str 16"
+#command "#att 13"
+#command "#def 11"
+#command "#prot 6"
+#command "#prec 5"
+#command "#mr 15"
+#command "#mor 14"
+#command "#ironvul"
+#command "#animal"
+#command "#darkpower 3"
+#command "#curseattacker 5"
+#command "#stealthy 60"
+#command "#darkvision 50"
+#command "#weapon 223"
+#command "#enc 2"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 274"
 #command "#gcost 25"
 #command "#rcost 4"
 #mount

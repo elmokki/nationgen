@@ -727,21 +727,21 @@
 #basechance 10
 #enditem
 
+
 #newitem
-#id "war_horse"
+#id "war_horse_leather_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/armoredhorse2.png
 #armor
 #needs overlay armoredhorse2overlay
-#define "#mountmnr 'war_horse_mount'"
-#tag "animal horse"
-#theme "heavy"
-#tag "minprot 12"
-#tag "maxprot 16"
+#define "#mountmnr 'war_horse_leather_barding_mount'"
 #define "#gcost +5"
-#epicness 0.25
+#tag "animal horse"
 #tag "name commander 'knight'"
 #tag "name mounted knight"
+#tag "minprot 10"
+#tag "maxprot 16"
+#epicness 0.25
 #basechance 7.5
 #enditem
 
