@@ -471,6 +471,53 @@
 #enditem
 
 
+#newitem
+#id "black_unicorn"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#define "#mountmnr 'black_unicorn_mount'"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#tag "minprot 6"
+#tag "maxprot 16"
+#basechance 0.5
+#chanceinc anytheme "fae" *20
+#chanceinc anymagic "death" *30
+#enditem
+
+#newitem
+#id "black_unicorn_gossamer_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#define "#mountmnr 'black_unicorn_gossamer_barding_mount'"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#tag "minprot 6"
+#tag "maxprot 18"
+#basechance 0.35
+#chanceinc prot 13 *2
+#chanceinc anytheme "fae" *20
+#chanceinc anymagic "death" *30
+#enditem
+
+#newitem
+#id "black_unicorn_silver_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#define "#mountmnr 'black_unicorn_silver_barding_mount'"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#tag "minprot 6"
+#basechance 0.15
+#chanceinc prot 18 *2
+#chanceinc anytheme "fae" *20
+#chanceinc anymagic "death" *30
+#enditem
+
+
 ---- Fae Dogs
 
 #newitem

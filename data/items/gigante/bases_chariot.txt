@@ -1,6 +1,9 @@
---- Base offsets are applied to everything except base and overlay
+------ Base offsets are applied to everything except base and overlay
+
+---- Horses
+
 #newitem
-#id "two-horse chariot"
+#id "two_horse_light_bronze_barding"
 #gameid -1
 #sprite /graphics/mounts/chariots/twohorse_big.png
 #recolormask /graphics/mounts/chariots/twohorse_big_recolormask.png
@@ -8,9 +11,65 @@
 #needs overlay twohorse_big_overlay
 #offsetx 42
 #offsety -5
-#define "#mountmnr 'two_horse_chariot'"
+#define "#mountmnr 'two_horse_light_bronze_barding_chariot'"
+#theme "bronze"
 #tag "chariot"
+#tag "animal 'horse'"
 #tag "minprot 8"
 #tag "maxprot 20"
+#basechance 5
+#enditem
+
+#newitem
+#id "two_horse_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/chariots/twohorse_big.png
+#recolormask /graphics/mounts/chariots/twohorse_big_recolormask.png
+#armor
+#needs overlay twohorse_big_overlay
+#offsetx 42
+#offsety -5
+#define "#mountmnr 'two_horse_light_scale_barding_chariot'"
+#theme "iron"
+#tag "chariot"
 #tag "animal 'horse'"
+#tag "minprot 8"
+#tag "maxprot 20"
+#basechance 5
+#enditem
+
+#newitem
+#id "two_horse_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/chariots/twohorse_big.png
+#recolormask /graphics/mounts/chariots/twohorse_big_recolormask.png
+#armor
+#needs overlay twohorse_big_overlay
+#offsetx 42
+#offsety -5
+#define "#mountmnr 'two_horse_bronze_barding_chariot'"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 8"
+#basechance 2
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "two_horse_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/chariots/twohorse_big.png
+#recolormask /graphics/mounts/chariots/twohorse_big_recolormask.png
+#armor
+#needs overlay twohorse_big_overlay
+#offsetx 42
+#offsety -5
+#define "#mountmnr 'two_horse_plate_barding_chariot'"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 8"
+#basechance 2
+#chanceinc prot 18 *2
 #enditem

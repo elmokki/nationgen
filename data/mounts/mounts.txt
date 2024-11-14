@@ -8,6 +8,10 @@
 -- which cost 50g in vanilla and scorpion beasts which are a summon and therefore cost 0g), not setting an
 -- explicit #gcost makes it harder to parse what the cost of the unit using the mount will be.
 --
+-- Using #command "#rcost X" will set the resource cost of this mount form. However, Dominions will factor
+-- in resource costs of given armors, so there's no need to make a horse and a horse with #command "#armor 252"
+-- a different #rcost.
+--
 -- The #id of the mount form is what is used to "hook up" the mount to the rider. Poses will have a
 -- #load statement for a file containing mounts, where they will be defined like an equipped item, in the same
 -- way as armours or weapons. These mount item definitions are where the #id of the mount form is referenced,
@@ -29,12 +33,24 @@
 #end
 
 #new secondshape
-#id "hawk_mount"
+#id "great_hawk_mount"
 #command "#copystats 1380"
 #command "#copyspr 1380"
 #command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
+#command "#gcost 27"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "great_hawk_leather_barding_mount"
+#command "#copystats 1380"
+#command "#copyspr 1380"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 251"
 #command "#gcost 27"
 #command "#rcost 4"
 #end
@@ -46,6 +62,18 @@
 #command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
+#command "#gcost 10"
+#command "#rcost 2"
+#end
+
+#new secondshape
+#id "deer_leather_barding_mount"
+#command "#copystats 2228"
+#command "#copyspr 2228"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 251"
 #command "#gcost 10"
 #command "#rcost 2"
 #end
@@ -104,6 +132,7 @@
 #command "#copystats 1380"
 #command "#spr1 ./graphics/hoburg/mounts/giant_parrot.png"
 #command "#spr2 shift"
+#command "#name 'Giant Macaw'"
 #command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
@@ -112,13 +141,264 @@
 #end
 
 #new secondshape
-#id "grey_parrot_mount"
+#id "giant_macaw_light_bronze_barding_mount"
 #command "#copystats 1380"
-#command "#spr1 ./graphics/machakans/mounts/giant_parrot.png"
+#command "#spr1 ./graphics/hoburg/mounts/giant_parrot.png"
 #command "#spr2 shift"
+#command "#name 'Giant Macaw'"
 #command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
+#command "#armor 264"
+#command "#gcost 25"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "giant_macaw_light_scale_barding_mount"
+#command "#copystats 1380"
+#command "#spr1 ./graphics/hoburg/mounts/giant_parrot.png"
+#command "#spr2 shift"
+#command "#name 'Giant Macaw'"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 252"
+#command "#gcost 25"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "giant_macaw_bronze_mail_barding_mount"
+#command "#copystats 1380"
+#command "#spr1 ./graphics/hoburg/mounts/giant_parrot.png"
+#command "#spr2 shift"
+#command "#name 'Giant Macaw'"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 25"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "giant_macaw_iron_mail_barding_mount"
+#command "#copystats 1380"
+#command "#spr1 ./graphics/hoburg/mounts/giant_parrot.png"
+#command "#spr2 shift"
+#command "#name 'Giant Macaw'"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 25"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "colorful_giant_macaw_mount"
+#command "#copystats 1380"
+#command "#spr1 ./graphics/hoburg/mounts/giant_parrot.png"
+#command "#spr2 shift"
+#command "#name 'Colorful Giant Macaw'"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#gcost 25"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "colorful_giant_macaw_light_bronze_barding_mount"
+#command "#copystats 1380"
+#command "#spr1 ./graphics/hoburg/mounts/giant_parrot.png"
+#command "#spr2 shift"
+#command "#name 'Colorful Giant Macaw'"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 264"
+#command "#gcost 25"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "colorful_giant_macaw_light_scale_barding_mount"
+#command "#copystats 1380"
+#command "#spr1 ./graphics/hoburg/mounts/giant_parrot.png"
+#command "#spr2 shift"
+#command "#name 'Colorful Giant Macaw'"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 252"
+#command "#gcost 25"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "colorful_giant_macaw_bronze_mail_barding_mount"
+#command "#copystats 1380"
+#command "#spr1 ./graphics/hoburg/mounts/giant_parrot.png"
+#command "#spr2 shift"
+#command "#name 'Colorful Giant Macaw'"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 25"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "colorful_giant_macaw_iron_mail_barding_mount"
+#command "#copystats 1380"
+#command "#spr1 ./graphics/hoburg/mounts/giant_parrot.png"
+#command "#spr2 shift"
+#command "#name 'Colorful Giant Macaw'"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 25"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "giant_parrot_mount"
+#command "#copystats 1380"
+#command "#spr1 ./graphics/machakans/mounts/giant_parrot.png"
+#command "#spr2 shift"
+#command "#name 'Giant Parrot'"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#gcost 25"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "giant_parrot_light_bronze_barding_mount"
+#command "#copystats 1380"
+#command "#spr1 ./graphics/machakans/mounts/giant_parrot.png"
+#command "#spr2 shift"
+#command "#name 'Giant Parrot'"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 264"
+#command "#gcost 25"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "giant_parrot_light_scale_barding_mount"
+#command "#copystats 1380"
+#command "#spr1 ./graphics/machakans/mounts/giant_parrot.png"
+#command "#spr2 shift"
+#command "#name 'Giant Parrot'"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 252"
+#command "#gcost 25"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "giant_parrot_bronze_mail_barding_mount"
+#command "#copystats 1380"
+#command "#spr1 ./graphics/machakans/mounts/giant_parrot.png"
+#command "#spr2 shift"
+#command "#name 'Giant Parrot'"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 25"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "giant_parrot_iron_mail_barding_mount"
+#command "#copystats 1380"
+#command "#spr1 ./graphics/machakans/mounts/giant_parrot.png"
+#command "#spr2 shift"
+#command "#name 'Giant Parrot'"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 25"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "colorful_giant_parrot_mount"
+#command "#copystats 1380"
+#command "#spr1 ./graphics/machakans/mounts/giant_parrot.png"
+#command "#spr2 shift"
+#command "#name 'Colorful Giant Parrot'"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#gcost 25"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "colorful_giant_parrot_light_bronze_barding_mount"
+#command "#copystats 1380"
+#command "#spr1 ./graphics/machakans/mounts/giant_parrot.png"
+#command "#spr2 shift"
+#command "#name 'Colorful Giant Parrot'"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 264"
+#command "#gcost 25"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "colorful_giant_parrot_light_scale_barding_mount"
+#command "#copystats 1380"
+#command "#spr1 ./graphics/machakans/mounts/giant_parrot.png"
+#command "#spr2 shift"
+#command "#name 'Colorful Giant Parrot'"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 252"
+#command "#gcost 25"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "colorful_giant_parrot_bronze_mail_barding_mount"
+#command "#copystats 1380"
+#command "#spr1 ./graphics/machakans/mounts/giant_parrot.png"
+#command "#spr2 shift"
+#command "#name 'Colorful Giant Parrot'"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 25"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "colorful_giant_parrot_iron_mail_barding_mount"
+#command "#copystats 1380"
+#command "#spr1 ./graphics/machakans/mounts/giant_parrot.png"
+#command "#spr2 shift"
+#command "#name 'Colorful Giant Parrot'"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 172"
 #command "#gcost 25"
 #command "#rcost 4"
 #end
@@ -131,8 +411,409 @@
 #command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
-#command "#gcost 12"
+#command "#gcost 8"
 #command "#rcost 2"
+#end
+
+#new secondshape
+#id "goat_light_bronze_barding_mount"
+#command "#copystats 2227"
+#command "#copyspr 2227"
+#command "#size 3"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 264"
+#command "#gcost 8"
+#command "#rcost 2"
+#end
+
+#new secondshape
+#id "goat_light_scale_barding_mount"
+#command "#copystats 2227"
+#command "#copyspr 2227"
+#command "#size 3"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 252"
+#command "#gcost 8"
+#command "#rcost 2"
+#end
+
+#new secondshape
+#id "goat_bronze_mail_barding_mount"
+#command "#copystats 2227"
+#command "#copyspr 2227"
+#command "#size 3"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 8"
+#command "#rcost 2"
+#end
+
+#new secondshape
+#id "goat_iron_mail_barding_mount"
+#command "#copystats 2227"
+#command "#copyspr 2227"
+#command "#size 3"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 8"
+#command "#rcost 2"
+#end
+
+#new secondshape
+#id "goat_cataphract_barding_mount"
+#command "#copystats 2227"
+#command "#copyspr 2227"
+#command "#size 3"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 253"
+#command "#gcost 8"
+#command "#rcost 2"
+#end
+
+#new secondshape
+#id "goat_bronze_barding_mount"
+#command "#copystats 2227"
+#command "#copyspr 2227"
+#command "#size 3"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 263"
+#command "#gcost 8"
+#command "#rcost 2"
+#end
+
+#new secondshape
+#id "goat_plate_barding_mount"
+#command "#copystats 2227"
+#command "#copyspr 2227"
+#command "#size 3"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 254"
+#command "#gcost 8"
+#command "#rcost 2"
+#end
+
+#new secondshape
+#id "black_goat_mount"
+#command "#copystats 2227"
+#command "#copyspr 2227"
+#command "#size 3"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#gcost 8"
+#command "#rcost 2"
+#end
+
+#new secondshape
+#id "black_goat_light_bronze_barding_mount"
+#command "#copystats 2227"
+#command "#copyspr 2227"
+#command "#size 3"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 264"
+#command "#gcost 8"
+#command "#rcost 2"
+#end
+
+#new secondshape
+#id "black_goat_light_scale_barding_mount"
+#command "#copystats 2227"
+#command "#copyspr 2227"
+#command "#size 3"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 252"
+#command "#gcost 8"
+#command "#rcost 2"
+#end
+
+#new secondshape
+#id "black_goat_bronze_mail_barding_mount"
+#command "#copystats 2227"
+#command "#copyspr 2227"
+#command "#size 3"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 8"
+#command "#rcost 2"
+#end
+
+#new secondshape
+#id "black_goat_iron_mail_barding_mount"
+#command "#copystats 2227"
+#command "#copyspr 2227"
+#command "#size 3"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 8"
+#command "#rcost 2"
+#end
+
+#new secondshape
+#id "black_goat_cataphract_barding_mount"
+#command "#copystats 2227"
+#command "#copyspr 2227"
+#command "#size 3"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 253"
+#command "#gcost 8"
+#command "#rcost 2"
+#end
+
+#new secondshape
+#id "black_goat_bronze_barding_mount"
+#command "#copystats 2227"
+#command "#copyspr 2227"
+#command "#size 3"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 263"
+#command "#gcost 8"
+#command "#rcost 2"
+#end
+
+#new secondshape
+#id "black_goat_plate_barding_mount"
+#command "#copystats 2227"
+#command "#copyspr 2227"
+#command "#size 3"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 254"
+#command "#gcost 8"
+#command "#rcost 2"
+#end
+
+#new secondshape
+#id "black_pyrenean_goat_mount"
+#command "#copyspr 4058"
+#command "#magicboost 53 -1"
+#command "#name Black Goat"
+#command "#weapon 300"
+#command "#hp 29"
+#command "#size 5"
+#command "#prot 8"
+#command "#mor 13"
+#command "#mr 13"
+#command "#enc 2"
+#command "#str 17"
+#command "#att 10"
+#command "#def 11"
+#command "#prec 7"
+#command "#mapmove 20"
+#command "#ap 22"
+#command "#poorleader"
+-- 2 misc slots
+#command "#itemslots 786432"
+#command "#gcost 70"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "black_pyrenean_goat_light_bronze_barding_mount"
+#command "#copyspr 4058"
+#command "#magicboost 53 -1"
+#command "#name Black Goat"
+#command "#weapon 300"
+#command "#hp 29"
+#command "#size 5"
+#command "#prot 8"
+#command "#mor 13"
+#command "#mr 13"
+#command "#enc 2"
+#command "#str 17"
+#command "#att 10"
+#command "#def 11"
+#command "#prec 7"
+#command "#mapmove 20"
+#command "#ap 22"
+#command "#poorleader"
+-- 2 misc slots
+#command "#itemslots 786432"
+#command "#armor 264"
+#command "#gcost 70"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "black_pyrenean_goat_light_scale_barding_mount"
+#command "#copyspr 4058"
+#command "#magicboost 53 -1"
+#command "#name Black Goat"
+#command "#weapon 300"
+#command "#hp 29"
+#command "#size 5"
+#command "#prot 8"
+#command "#mor 13"
+#command "#mr 13"
+#command "#enc 2"
+#command "#str 17"
+#command "#att 10"
+#command "#def 11"
+#command "#prec 7"
+#command "#mapmove 20"
+#command "#ap 22"
+#command "#poorleader"
+-- 2 misc slots
+#command "#itemslots 786432"
+#command "#armor 252"
+#command "#gcost 70"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "black_pyrenean_goat_bronze_mail_barding_mount"
+#command "#copyspr 4058"
+#command "#magicboost 53 -1"
+#command "#name Black Goat"
+#command "#weapon 300"
+#command "#hp 29"
+#command "#size 5"
+#command "#prot 8"
+#command "#mor 13"
+#command "#mr 13"
+#command "#enc 2"
+#command "#str 17"
+#command "#att 10"
+#command "#def 11"
+#command "#prec 7"
+#command "#mapmove 20"
+#command "#ap 22"
+#command "#poorleader"
+-- 2 misc slots
+#command "#itemslots 786432"
+#command "#armor 172"
+#command "#gcost 70"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "black_pyrenean_goat_iron_mail_barding_mount"
+#command "#copyspr 4058"
+#command "#magicboost 53 -1"
+#command "#name Black Goat"
+#command "#weapon 300"
+#command "#hp 29"
+#command "#size 5"
+#command "#prot 8"
+#command "#mor 13"
+#command "#mr 13"
+#command "#enc 2"
+#command "#str 17"
+#command "#att 10"
+#command "#def 11"
+#command "#prec 7"
+#command "#mapmove 20"
+#command "#ap 22"
+#command "#poorleader"
+-- 2 misc slots
+#command "#itemslots 786432"
+#command "#armor 172"
+#command "#gcost 70"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "black_pyrenean_goat_cataphract_barding_mount"
+#command "#copyspr 4058"
+#command "#magicboost 53 -1"
+#command "#name Black Goat"
+#command "#weapon 300"
+#command "#hp 29"
+#command "#size 5"
+#command "#prot 8"
+#command "#mor 13"
+#command "#mr 13"
+#command "#enc 2"
+#command "#str 17"
+#command "#att 10"
+#command "#def 11"
+#command "#prec 7"
+#command "#mapmove 20"
+#command "#ap 22"
+#command "#poorleader"
+-- 2 misc slots
+#command "#itemslots 786432"
+#command "#armor 253"
+#command "#gcost 70"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "black_pyrenean_goat_bronze_barding_mount"
+#command "#copyspr 4058"
+#command "#magicboost 53 -1"
+#command "#name Black Goat"
+#command "#weapon 300"
+#command "#hp 29"
+#command "#size 5"
+#command "#prot 8"
+#command "#mor 13"
+#command "#mr 13"
+#command "#enc 2"
+#command "#str 17"
+#command "#att 10"
+#command "#def 11"
+#command "#prec 7"
+#command "#mapmove 20"
+#command "#ap 22"
+#command "#poorleader"
+-- 2 misc slots
+#command "#itemslots 786432"
+#command "#armor 263"
+#command "#gcost 70"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "black_pyrenean_goat_plate_barding_mount"
+#command "#copyspr 4058"
+#command "#magicboost 53 -1"
+#command "#name Black Goat"
+#command "#weapon 300"
+#command "#hp 29"
+#command "#size 5"  
+#command "#prot 8"
+#command "#mor 13"
+#command "#mr 13"
+#command "#enc 2"
+#command "#str 17"
+#command "#att 10"
+#command "#def 11"
+#command "#prec 7"
+#command "#mapmove 20"
+#command "#ap 22"
+#command "#poorleader"
+-- 2 misc slots
+#command "#itemslots 786432"
+#command "#armor 254"
+#command "#gcost 70"
+#command "#rcost 4"
 #end
 
 #new secondshape
@@ -144,6 +825,20 @@
 #command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
+#command "#gcost 30"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "pigasus_leather_barding_mount"
+#command "#copystats 549"
+#command "#spr1 ./graphics/hoburg/mounts/pigasus.png"
+#command "#spr2 shift"
+#command "#flying"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 251"
 #command "#gcost 30"
 #command "#rcost 4"
 #end
@@ -177,6 +872,78 @@
 #command "#itemslots 786432"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
+#command "#gcost 17"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "boar_light_bronze_barding_mount"
+#command "#copystats 549"
+#command "#copyspr 549"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 264"
+#command "#gcost 17"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "boar_light_scale_barding_mount"
+#command "#copystats 549"
+#command "#copyspr 549"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 252"
+#command "#gcost 17"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "boar_mail_barding_mount"
+#command "#copystats 549"
+#command "#copyspr 549"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 17"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "boar_cataphract_barding_mount"
+#command "#copystats 549"
+#command "#copyspr 549"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 253"
+#command "#gcost 17"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "boar_bronze_barding_mount"
+#command "#copystats 549"
+#command "#copyspr 549"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 263"
+#command "#gcost 17"
+#command "#rcost 4"
+#end
+
+#new secondshape
+#id "boar_plate_barding_mount"
+#command "#copystats 549"
+#command "#copyspr 549"
+#command "#itemslots 786432"
+#command "#magicboost 53 -1"
+#command "#transformation 0"
+#command "#armor 254"
 #command "#gcost 17"
 #command "#rcost 4"
 #end
@@ -335,7 +1102,7 @@
 #command "#noleader"
 #command "#itemslots 786432"
 #command "#gcost 35"
-#command "#rcost 5"
+#command "#rcost 4"
 #mount
 #end
 
@@ -361,7 +1128,7 @@
 #command "#itemslots 786432"
 #command "#armor 137"
 #command "#gcost 35"
-#command "#rcost 7"
+#command "#rcost 4"
 #mount
 #end
 
@@ -387,7 +1154,7 @@
 #command "#itemslots 786432"
 #command "#armor 190"
 #command "#gcost 35"
-#command "#rcost 9"
+#command "#rcost 4"
 #mount
 #end
 
@@ -413,7 +1180,7 @@
 #command "#stealthy +40"
 #command "#itemslots 786432"
 #command "#gcost 40"
-#command "#rcost 5"
+#command "#rcost 4"
 #mount
 #end
 
@@ -422,7 +1189,7 @@
 #command "#spr1 ./graphics/mounts/standard/blackjaguar.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -1"
-#command "#name Jaguar"
+#command "#name 'Black Jaguar'"
 #command "#weapon 20"
 #command "#weapon 236"
 #command "#hp 19"
@@ -440,7 +1207,7 @@
 -- 2 misc slots
 #command "#itemslots 786432"
 #command "#gcost 35"
-#command "#rcost 5"
+#command "#rcost 4"
 #end
 
 #new secondshape
@@ -463,7 +1230,7 @@
 #command "#magicboost 53 -5"
 #command "#transformation 0"
 #command "#gcost 30"
-#command "#rcost 5"
+#command "#rcost 4"
 #mount
 #end
 
@@ -475,7 +1242,7 @@
 #command "#transformation 0"
 #command "#armor 137"
 #command "#gcost 30"
-#command "#rcost 7"
+#command "#rcost 4"
 #mount
 #end
 
@@ -487,7 +1254,7 @@
 #command "#transformation 0"
 #command "#armor 190"
 #command "#gcost 30"
-#command "#rcost 9"
+#command "#rcost 4"
 #mount
 #end
 
@@ -532,7 +1299,7 @@
 #command "#transformation 0"
 #command "#armor 252"
 #command "#gcost 55"
-#command "#rcost 8"
+#command "#rcost 4"
 #mount
 #end
 
@@ -544,7 +1311,7 @@
 #command "#transformation 0"
 #command "#armor 172"
 #command "#gcost 55"
-#command "#rcost 16"
+#command "#rcost 4"
 #mount
 #end
 
@@ -556,7 +1323,7 @@
 #command "#transformation 0"
 #command "#armor 253"
 #command "#gcost 55"
-#command "#rcost 24"
+#command "#rcost 4"
 #mount
 #end
 
@@ -568,7 +1335,7 @@
 #command "#transformation 0"
 #command "#armor 254"
 #command "#gcost 55"
-#command "#rcost 30"
+#command "#rcost 4"
 #mount
 #end
 
@@ -582,7 +1349,7 @@
 -- 2 misc and body (barding)
 #command "#itemslots 851968"
 #command "#gcost 45"
-#command "#rcost 2"
+#command "#rcost 4"
 #mount
 #end
 
@@ -597,7 +1364,7 @@
 #command "#itemslots 851968"
 #command "#armor 252"
 #command "#gcost 45"
-#command "#rcost 8"
+#command "#rcost 4"
 #mount
 #end
 
@@ -612,7 +1379,7 @@
 #command "#itemslots 851968"
 #command "#armor 172"
 #command "#gcost 45"
-#command "#rcost 16"
+#command "#rcost 4"
 #mount
 #end
 
@@ -627,7 +1394,7 @@
 #command "#itemslots 851968"
 #command "#armor 253"
 #command "#gcost 45"
-#command "#rcost 24"
+#command "#rcost 4"
 #mount
 #end
 
@@ -642,7 +1409,7 @@
 #command "#itemslots 851968"
 #command "#armor 254"
 #command "#gcost 45"
-#command "#rcost 30"
+#command "#rcost 4"
 #mount
 #end
 
@@ -743,7 +1510,7 @@
 #command "#magicboost 53 -5"
 #command "#transformation 0"
 #command "#gcost 35"
-#command "#rcost 2"
+#command "#rcost 4"
 #mount
 #end
 
@@ -755,7 +1522,7 @@
 #command "#transformation 0"
 #command "#armor 252"
 #command "#gcost 35"
-#command "#rcost 8"
+#command "#rcost 4"
 #mount
 #end
 
@@ -767,7 +1534,7 @@
 #command "#transformation 0"
 #command "#armor 172"
 #command "#gcost 35"
-#command "#rcost 16"
+#command "#rcost 4"
 #mount
 #end
 
@@ -779,7 +1546,7 @@
 #command "#transformation 0"
 #command "#armor 253"
 #command "#gcost 35"
-#command "#rcost 24"
+#command "#rcost 4"
 #mount
 #end
 
@@ -791,7 +1558,7 @@
 #command "#transformation 0"
 #command "#armor 254"
 #command "#gcost 35"
-#command "#rcost 30"
+#command "#rcost 4"
 #mount
 #end
 
@@ -816,6 +1583,33 @@
 #command "#forestsurvival"
 #command "#bird"
 #command "#itemslots 786432"
+#command "#gcost 35"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "beast_bat_nerfed_leather_barding_mount"
+#command "#copyspr 1357"
+#command "#name 'Beast Bat'"
+#command "#weapon 251"
+#command "#size 3"
+#command "#hp 14"
+#command "#prot 4"
+#command "#mor 10"
+#command "#mr 8"
+#command "#enc 2"
+#command "#str 10"
+#command "#att 11"
+#command "#def 13"
+#command "#prec 5"
+#command "#mapmove 26"
+#command "#ap 18"
+#command "#flying"
+#command "#forestsurvival"
+#command "#bird"
+#command "#itemslots 786432"
+#command "#armor 251"
 #command "#gcost 35"
 #command "#rcost 4"
 #mount
@@ -963,7 +1757,7 @@
 #command "#itemslots 786432"
 #command "#armor 137"
 #command "#gcost 30"
-#command "#rcost 6"
+#command "#rcost 4"
 #mount
 #end
 
@@ -991,7 +1785,7 @@
 #command "#itemslots 786432"
 #command "#armor 190"
 #command "#gcost 30"
-#command "#rcost 8"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1019,7 +1813,7 @@
 #command "#itemslots 786432"
 #command "#armor 'ice_barding'"
 #command "#gcost 30"
-#command "#rcost 22"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1047,7 +1841,7 @@
 #command "#itemslots 786432"
 #command "#armor 'meteorite_barding'"
 #command "#gcost 30"
-#command "#rcost 30"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1073,7 +1867,7 @@
 #command "#demon"
 #command "#itemslots 786432"
 #command "#gcost 50"
-#command "#rcost 2"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1101,7 +1895,7 @@
 #command "#itemslots 786432"
 #command "#armor 251"
 #command "#gcost 50"
-#command "#rcost 6"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1129,7 +1923,7 @@
 #command "#itemslots 786432"
 #command "#armor 264"
 #command "#gcost 50"
-#command "#rcost 8"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1157,7 +1951,7 @@
 #command "#itemslots 786432"
 #command "#armor 252"
 #command "#gcost 50"
-#command "#rcost 8"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1185,7 +1979,7 @@
 #command "#itemslots 786432"
 #command "#armor 172"
 #command "#gcost 50"
-#command "#rcost 12"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1213,7 +2007,7 @@
 #command "#itemslots 786432"
 #command "#armor 253"
 #command "#gcost 50"
-#command "#rcost 18"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1241,7 +2035,7 @@
 #command "#itemslots 786432"
 #command "#armor 253"
 #command "#gcost 50"
-#command "#rcost 18"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1269,7 +2063,7 @@
 #command "#itemslots 786432"
 #command "#armor 257"
 #command "#gcost 50"
-#command "#rcost 16"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1297,7 +2091,7 @@
 #command "#itemslots 786432"
 #command "#armor 257"
 #command "#gcost 50"
-#command "#rcost 16"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1325,7 +2119,7 @@
 #command "#itemslots 786432"
 #command "#armor 257"
 #command "#gcost 50"
-#command "#rcost 16"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1353,7 +2147,7 @@
 #command "#itemslots 786432"
 #command "#armor 263"
 #command "#gcost 50"
-#command "#rcost 22"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1381,7 +2175,7 @@
 #command "#itemslots 786432"
 #command "#armor 254"
 #command "#gcost 50"
-#command "#rcost 24"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1434,7 +2228,7 @@
 #command "#transformation 0"
 #command "#armor 251"
 #command "#gcost 55"
-#command "#rcost 10"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1461,7 +2255,7 @@
 #command "#transformation 0"
 #command "#armor 264"
 #command "#gcost 55"
-#command "#rcost 12"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1488,7 +2282,7 @@
 #command "#transformation 0"
 #command "#armor 252"
 #command "#gcost 55"
-#command "#rcost 12"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1515,7 +2309,7 @@
 #command "#transformation 0"
 #command "#armor 172"
 #command "#gcost 55"
-#command "#rcost 16"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1542,7 +2336,7 @@
 #command "#transformation 0"
 #command "#armor 253"
 #command "#gcost 55"
-#command "#rcost 24"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1569,7 +2363,7 @@
 #command "#transformation 0"
 #command "#armor 263"
 #command "#gcost 55"
-#command "#rcost 30"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1596,7 +2390,7 @@
 #command "#transformation 0"
 #command "#armor 254"
 #command "#gcost 55"
-#command "#rcost 30"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1649,7 +2443,7 @@
 #command "#transformation 0"
 #command "#armor 251"
 #command "#gcost 55"
-#command "#rcost 8"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1676,7 +2470,7 @@
 #command "#transformation 0"
 #command "#armor 252"
 #command "#gcost 55"
-#command "#rcost 10"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1703,7 +2497,7 @@
 #command "#transformation 0"
 #command "#armor 264"
 #command "#gcost 55"
-#command "#rcost 10"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1730,7 +2524,7 @@
 #command "#transformation 0"
 #command "#armor 172"
 #command "#gcost 55"
-#command "#rcost 16"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1755,7 +2549,59 @@
 #command "#magicboost 53 -5"
 #command "#transformation 0"
 #command "#gcost 40"
-#command "#rcost 2"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "vine_nightmare_light_bronze_barding_mount"
+#command "#name 'Vine Nightmare'"
+#command "#spr1 ./graphics/hoburg/mounts/vine_nightmare.png"
+#command "#spr2 shift"
+#command "#size 3"
+#command "#hp 8"
+#command "#att 11"
+#command "#def 10"
+#command "#str 9"
+#command "#prec 5"
+#command "#prot 2"
+#command "#ap 14"
+#command "#mapmove 20"
+#command "#weapon 352"
+#command "#enc 15"
+#command "#fear 5"
+#command "#demon"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 264"
+#command "#gcost 40"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "vine_nightmare_light_scale_barding_mount"
+#command "#name 'Vine Nightmare'"
+#command "#spr1 ./graphics/hoburg/mounts/vine_nightmare.png"
+#command "#spr2 shift"
+#command "#size 3"
+#command "#hp 8"
+#command "#att 11"
+#command "#def 10"
+#command "#str 9"
+#command "#prec 5"
+#command "#prot 2"
+#command "#ap 14"
+#command "#mapmove 20"
+#command "#weapon 352"
+#command "#enc 15"
+#command "#fear 5"
+#command "#demon"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 252"
+#command "#gcost 40"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1782,7 +2628,7 @@
 #command "#armor 172"
 #command "#demon"
 #command "#gcost 25"
-#command "#rcost 8"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1809,7 +2655,7 @@
 #command "#armor 253"
 #command "#demon"
 #command "#gcost 25"
-#command "#rcost 12"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1847,6 +2693,40 @@
 #end
 
 #new secondshape
+#id "gloso_light_bronze_barding_mount"
+#command "#copyspr 2363"
+#command "#magicboost 53 -5"
+#command "#name 'Gloso'"
+#command "#enc 2"
+#command "#ap 18"
+#command "#str 15"
+#command "#mr 13"
+#command "#mor 14"
+#command "#att 13"
+#command "#def 10"
+#command "#hp 28"
+#command "#prec 5"
+#command "#prot 8"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#weapon 573"
+#command "#animal"
+#command "#forestsurvival"
+#command "#trample"
+#command "#maxage 45"
+#command "#fireres 25"
+#command "#darkvision 100"
+#command "#stealthy 50"
+#command "#heat 3"
+#command "#nametype 116"
+#command "#itemslots 786432"
+#command "#armor 264"
+#command "#gcost 40"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
 #id "gloso_light_scale_barding_mount"
 #command "#copyspr 2363"
 #command "#magicboost 53 -5"
@@ -1876,7 +2756,7 @@
 #command "#itemslots 786432"
 #command "#armor 252"
 #command "#gcost 40"
-#command "#rcost 8"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1910,7 +2790,7 @@
 #command "#itemslots 786432"
 #command "#armor 172"
 #command "#gcost 40"
-#command "#rcost 16"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1944,7 +2824,41 @@
 #command "#itemslots 786432"
 #command "#armor 253"
 #command "#gcost 40"
-#command "#rcost 24"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "gloso_bronze_barding_mount"
+#command "#copyspr 2363"
+#command "#magicboost 53 -5"
+#command "#name 'Gloso'"
+#command "#enc 2"
+#command "#ap 18"
+#command "#str 15"
+#command "#mr 13"
+#command "#mor 14"
+#command "#att 13"
+#command "#def 10"
+#command "#hp 28"
+#command "#prec 5"
+#command "#prot 8"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#weapon 573"
+#command "#animal"
+#command "#forestsurvival"
+#command "#trample"
+#command "#maxage 45"
+#command "#fireres 25"
+#command "#darkvision 100"
+#command "#stealthy 50"
+#command "#heat 3"
+#command "#nametype 116"
+#command "#itemslots 786432"
+#command "#armor 263"
+#command "#gcost 40"
+#command "#rcost 4"
 #mount
 #end
 
@@ -1978,7 +2892,7 @@
 #command "#itemslots 786432"
 #command "#armor 254"
 #command "#gcost 40"
-#command "#rcost 30"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2077,7 +2991,7 @@
 #command "#transformation 0"
 #command "#armor 137"
 #command "#gcost 40"
-#command "#rcost 6"
+#command "#rcost 4"
 #end
 
 #new secondshape
@@ -2089,7 +3003,7 @@
 #command "#transformation 0"
 #command "#armor 252"
 #command "#gcost 40"
-#command "#rcost 8"
+#command "#rcost 4"
 #end
 
 #new secondshape
@@ -2101,7 +3015,7 @@
 #command "#transformation 0"
 #command "#armor 190"
 #command "#gcost 40"
-#command "#rcost 8"
+#command "#rcost 4"
 #end
 
 #new secondshape
@@ -2113,7 +3027,7 @@
 #command "#transformation 0"
 #command "#armor 172"
 #command "#gcost 40"
-#command "#rcost 16"
+#command "#rcost 4"
 #end
 
 #new secondshape
@@ -2125,7 +3039,7 @@
 #command "#transformation 0"
 #command "#armor 253"
 #command "#gcost 40"
-#command "#rcost 24"
+#command "#rcost 4"
 #end
 
 #new secondshape
@@ -2137,7 +3051,7 @@
 #command "#transformation 0"
 #command "#armor 254"
 #command "#gcost 40"
-#command "#rcost 30"
+#command "#rcost 4"
 #end
 
 #new secondshape
@@ -2167,7 +3081,7 @@
 #command "#itemslots 786432"
 #command "#transformation 0"
 #command "#gcost 40"
-#command "#rcost 2"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2199,7 +3113,7 @@
 #command "#transformation 0"
 #command "#armor 137"
 #command "#gcost 40"
-#command "#rcost 6"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2231,7 +3145,7 @@
 #command "#transformation 0"
 #command "#armor 190"
 #command "#gcost 40"
-#command "#rcost 8"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2263,7 +3177,7 @@
 #command "#transformation 0"
 #command "#armor 'ice_barding'"
 #command "#gcost 40"
-#command "#rcost 22"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2295,7 +3209,7 @@
 #command "#transformation 0"
 #command "#armor 'meteorite_barding'"
 #command "#gcost 40"
-#command "#rcost 30"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2547,7 +3461,7 @@
 #end
 
 #new secondshape
-#id "caveman_mount"
+#id "caveman_fur_armor_mount"
 #command "#copystats 2018"
 #command "#spr1 ./graphics/hoburg/mounts/caveman.png"
 #command "#spr2 shift" 
@@ -2555,24 +3469,181 @@
 #command "#name 'Caveman'"
 #command "#armor 44"
 #command "#gcost 40"
-#command "#rcost 4"
+#command "#rcost 2"
 #mount
 #end
 
 #new secondshape
-#id "caveman_occidental_mount"
+#id "caveman_bronze_scale_armor_mount"
 #command "#copystats 2018"
-#command "#spr1 ./graphics/hoburg/mounts/caveman_occidental.png"
-#command "#spr2 shift"
+#command "#spr1 ./graphics/hoburg/mounts/caveman.png"
+#command "#spr2 shift" 
 #command "#magicboost 53 -5"
 #command "#name 'Caveman'"
+#command "#armor 136"
 #command "#gcost 40"
-#command "#rcost 4"
+#command "#rcost 2"
 #mount
 #end
 
 #new secondshape
-#id "caveman_hellbred_mount"
+#id "caveman_scale_armor_mount"
+#command "#copystats 2018"
+#command "#spr1 ./graphics/hoburg/mounts/caveman.png"
+#command "#spr2 shift" 
+#command "#magicboost 53 -5"
+#command "#name 'Caveman'"
+#command "#armor 12"
+#command "#gcost 40"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
+#id "caveman_bronze_mail_armor_mount"
+#command "#copystats 2018"
+#command "#spr1 ./graphics/hoburg/mounts/caveman.png"
+#command "#spr2 shift" 
+#command "#magicboost 53 -5"
+#command "#name 'Caveman'"
+#command "#armor 13"
+#command "#gcost 40"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
+#id "caveman_iron_mail_armor_mount"
+#command "#copystats 2018"
+#command "#spr1 ./graphics/hoburg/mounts/caveman.png"
+#command "#spr2 shift" 
+#command "#magicboost 53 -5"
+#command "#name 'Caveman'"
+#command "#armor 13"
+#command "#gcost 40"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
+#id "caveman_bronze_armor_mount"
+#command "#copystats 2018"
+#command "#spr1 ./graphics/hoburg/mounts/caveman.png"
+#command "#spr2 shift" 
+#command "#magicboost 53 -5"
+#command "#name 'Caveman'"
+#command "#armor 101"
+#command "#gcost 40"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
+#id "caveman_plate_armor_mount"
+#command "#copystats 2018"
+#command "#spr1 ./graphics/hoburg/mounts/caveman.png"
+#command "#spr2 shift" 
+#command "#magicboost 53 -5"
+#command "#name 'Caveman'"
+#command "#armor 14"
+#command "#gcost 40"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
+#id "occidental_caveman_fur_armor_mount"
+#command "#copystats 2018"
+#command "#spr1 ./graphics/hoburg/mounts/caveman_occidental.png"
+#command "#spr2 shift" 
+#command "#magicboost 53 -5"
+#command "#name 'Occidental Caveman'"
+#command "#armor 44"
+#command "#gcost 40"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
+#id "occidental_caveman_bronze_scale_armor_mount"
+#command "#copystats 2018"
+#command "#spr1 ./graphics/hoburg/mounts/caveman_occidental.png"
+#command "#spr2 shift" 
+#command "#magicboost 53 -5"
+#command "#name 'Occidental Caveman'"
+#command "#armor 136"
+#command "#gcost 40"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
+#id "occidental_caveman_scale_armor_mount"
+#command "#copystats 2018"
+#command "#spr1 ./graphics/hoburg/mounts/caveman_occidental.png"
+#command "#spr2 shift" 
+#command "#magicboost 53 -5"
+#command "#name 'Occidental Caveman'"
+#command "#armor 12"
+#command "#gcost 40"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
+#id "occidental_caveman_bronze_mail_armor_mount"
+#command "#copystats 2018"
+#command "#spr1 ./graphics/hoburg/mounts/caveman_occidental.png"
+#command "#spr2 shift" 
+#command "#magicboost 53 -5"
+#command "#name 'Occidental Caveman'"
+#command "#armor 13"
+#command "#gcost 40"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
+#id "occidental_caveman_iron_mail_armor_mount"
+#command "#copystats 2018"
+#command "#spr1 ./graphics/hoburg/mounts/caveman_occidental.png"
+#command "#spr2 shift" 
+#command "#magicboost 53 -5"
+#command "#name 'Occidental Caveman'"
+#command "#armor 13"
+#command "#gcost 40"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
+#id "occidental_caveman_bronze_armor_mount"
+#command "#copystats 2018"
+#command "#spr1 ./graphics/hoburg/mounts/caveman_occidental.png"
+#command "#spr2 shift" 
+#command "#magicboost 53 -5"
+#command "#name 'Occidental Caveman'"
+#command "#armor 101"
+#command "#gcost 40"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
+#id "occidental_caveman_plate_armor_mount"
+#command "#copystats 2018"
+#command "#spr1 ./graphics/hoburg/mounts/caveman_occidental.png"
+#command "#spr2 shift" 
+#command "#magicboost 53 -5"
+#command "#name 'Occidental Caveman'"
+#command "#armor 14"
+#command "#gcost 40"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
+#id "hellbred_caveman_fur_armor_mount"
 #command "#copystats 2018"
 #command "#spr1 ./graphics/hoburg/mounts/horite.png"
 #command "#spr2 shift" 
@@ -2581,8 +3652,105 @@
 #command "#fireres 15"
 #command "#hp 29"
 #command "#mr 9"
-#command "#gcost 40"
-#command "#rcost 6"
+#command "#armor 44"
+#command "#gcost 50"
+#command "#rcost 3"
+#mount
+#end
+
+#new secondshape
+#id "hellbred_caveman_bronze_scale_armor_mount"
+#command "#copystats 2018"
+#command "#spr1 ./graphics/hoburg/mounts/horite.png"
+#command "#spr2 shift" 
+#command "#magicboost 53 -5"
+#command "#name 'Hellbred Caveman'"
+#command "#fireres 15"
+#command "#hp 29"
+#command "#mr 9"
+#command "#armor 136"
+#command "#gcost 50"
+#command "#rcost 3"
+#mount
+#end
+
+#new secondshape
+#id "hellbred_caveman_scale_armor_mount"
+#command "#copystats 2018"
+#command "#spr1 ./graphics/hoburg/mounts/horite.png"
+#command "#spr2 shift" 
+#command "#magicboost 53 -5"
+#command "#name 'Hellbred Caveman'"
+#command "#fireres 15"
+#command "#hp 29"
+#command "#mr 9"
+#command "#armor 12"
+#command "#gcost 50"
+#command "#rcost 3"
+#mount
+#end
+
+#new secondshape
+#id "hellbred_caveman_bronze_mail_armor_mount"
+#command "#copystats 2018"
+#command "#spr1 ./graphics/hoburg/mounts/horite.png"
+#command "#spr2 shift" 
+#command "#magicboost 53 -5"
+#command "#name 'Hellbred Caveman'"
+#command "#fireres 15"
+#command "#hp 29"
+#command "#mr 9"
+#command "#armor 13"
+#command "#gcost 50"
+#command "#rcost 3"
+#mount
+#end
+
+#new secondshape
+#id "hellbred_caveman_iron_mail_armor_mount"
+#command "#copystats 2018"
+#command "#spr1 ./graphics/hoburg/mounts/horite.png"
+#command "#spr2 shift" 
+#command "#magicboost 53 -5"
+#command "#name 'Hellbred Caveman'"
+#command "#fireres 15"
+#command "#hp 29"
+#command "#mr 9"
+#command "#armor 13"
+#command "#gcost 50"
+#command "#rcost 3"
+#mount
+#end
+
+#new secondshape
+#id "hellbred_caveman_bronze_armor_mount"
+#command "#copystats 2018"
+#command "#spr1 ./graphics/hoburg/mounts/horite.png"
+#command "#spr2 shift" 
+#command "#magicboost 53 -5"
+#command "#name 'Hellbred Caveman'"
+#command "#fireres 15"
+#command "#hp 29"
+#command "#mr 9"
+#command "#armor 101"
+#command "#gcost 50"
+#command "#rcost 3"
+#mount
+#end
+
+#new secondshape
+#id "hellbred_caveman_plate_armor_mount"
+#command "#copystats 2018"
+#command "#spr1 ./graphics/hoburg/mounts/horite.png"
+#command "#spr2 shift" 
+#command "#magicboost 53 -5"
+#command "#name 'Hellbred Caveman'"
+#command "#fireres 15"
+#command "#hp 29"
+#command "#mr 9"
+#command "#armor 14"
+#command "#gcost 50"
+#command "#rcost 3"
 #mount
 #end
 
@@ -2606,7 +3774,7 @@
 #command "#magicboost 53 -5"
 #command "#transformation 0"
 #command "#gcost 25"
-#command "#rcost 6"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2619,7 +3787,7 @@
 #command "#transformation 0"
 #command "#armor 137"
 #command "#gcost 25"
-#command "#rcost 6"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2632,7 +3800,7 @@
 #command "#transformation 0"
 #command "#armor 251"
 #command "#gcost 25"
-#command "#rcost 6"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2645,7 +3813,7 @@
 #command "#transformation 0"
 #command "#armor 190"
 #command "#gcost 25"
-#command "#rcost 6"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2658,7 +3826,7 @@
 #command "#transformation 0"
 #command "#armor 252"
 #command "#gcost 25"
-#command "#rcost 6"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2671,7 +3839,7 @@
 #command "#transformation 0"
 #command "#armor 172"
 #command "#gcost 25"
-#command "#rcost 6"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2684,7 +3852,7 @@
 #command "#transformation 0"
 #command "#armor 253"
 #command "#gcost 25"
-#command "#rcost 6"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2697,7 +3865,7 @@
 #command "#transformation 0"
 #command "#armor 254"
 #command "#gcost 25"
-#command "#rcost 6"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2710,7 +3878,7 @@
 #command "#transformation 0"
 #command "#armor 'ice_barding'"
 #command "#gcost 25"
-#command "#rcost 6"
+#command "#rcost 4"
 #mount
 #end
 
@@ -2723,7 +3891,7 @@
 #command "#transformation 0"
 #command "#armor 'meteorite_barding'"
 #command "#gcost 25"
-#command "#rcost 6"
+#command "#rcost 4"
 #mount
 #end
 
@@ -3167,7 +4335,7 @@
 #command "#transformation 0"
 #command "#armor 252"
 #command "#gcost 50"
-#command "#rcost 8"
+#command "#rcost 4"
 #mount
 #end
 
@@ -3180,7 +4348,7 @@
 #command "#transformation 0"
 #command "#armor 172"
 #command "#gcost 50"
-#command "#rcost 16"
+#command "#rcost 4"
 #mount
 #end
 
@@ -3193,7 +4361,7 @@
 #command "#transformation 0"
 #command "#armor 253"
 #command "#gcost 50"
-#command "#rcost 24"
+#command "#rcost 4"
 #mount
 #end
 
@@ -3206,7 +4374,7 @@
 #command "#transformation 0"
 #command "#armor 254"
 #command "#gcost 50"
-#command "#rcost 30"
+#command "#rcost 4"
 #mount
 #end
 
@@ -3364,7 +4532,7 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#gcost 15"
-#command "#rcost 4"
+#command "#rcost 2"
 #mount
 #end
 
@@ -3376,7 +4544,7 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#gcost 15"
-#command "#rcost 4"
+#command "#rcost 2"
 #mount
 #end
 
@@ -3389,7 +4557,7 @@
 #command "#itemslots 786432"
 #command "#armor 172"
 #command "#gcost 15"
-#command "#rcost 4"
+#command "#rcost 2"
 #mount
 #end
 
@@ -3400,7 +4568,7 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#gcost 15"
-#command "#rcost 10"
+#command "#rcost 2"
 #mount
 #end
 
@@ -3411,7 +4579,7 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#gcost 15"
-#command "#rcost 12"
+#command "#rcost 2"
 #mount
 #end
 
@@ -3459,7 +4627,7 @@
 #command "#ressize 2"
 #command "#enc 0"
 #command "#gcost 15"
-#command "#rcost 8"
+#command "#rcost 4"
 #end
 
 #new secondshape
@@ -3496,6 +4664,40 @@
 #end
 
 #new secondshape
+#id "black_unicorn_mount"
+#command "#copystats 3526"
+#command "#copyspr 3526"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#gcost 30"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "black_unicorn_gossamer_barding_mount"
+#command "#copystats 3526"
+#command "#copyspr 3526"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 274"
+#command "#gcost 30"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "black_unicorn_silver_barding_mount"
+#command "#copystats 3527"
+#command "#copyspr 3527"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#gcost 30"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
 #id "fay_horse_mount"
 #command "#copystats 3933"
 #command "#copyspr 3933"
@@ -3513,7 +4715,7 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#gcost 25"
-#command "#rcost 19"
+#command "#rcost 4"
 #mount
 #end
 
@@ -3524,7 +4726,7 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#gcost 35"
-#command "#rcost 22"
+#command "#rcost 4"
 #mount
 #end
 
@@ -3535,7 +4737,7 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#gcost 40"
-#command "#rcost 19"
+#command "#rcost 4"
 #mount
 #end
 
@@ -3546,7 +4748,7 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#gcost 50"
-#command "#rcost 22"
+#command "#rcost 4"
 #mount
 #end
 
@@ -3687,7 +4889,7 @@
 #command "#itemslots 786432"
 #command "#armor 263"
 #command "#gcost 20"
-#command "#rcost 4"
+#command "#rcost 6"
 #mount
 #end
 
@@ -3698,7 +4900,7 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#gcost 40"
-#command "#rcost 8"
+#command "#rcost 6"
 #mount
 #end
 
@@ -3710,7 +4912,7 @@
 #command "#itemslots 786432"
 #command "#armor 264"
 #command "#gcost 40"
-#command "#rcost 8"
+#command "#rcost 6"
 #mount
 #end
 
@@ -3722,7 +4924,7 @@
 #command "#itemslots 786432"
 #command "#armor 252"
 #command "#gcost 40"
-#command "#rcost 8"
+#command "#rcost 6"
 #mount
 #end
 
@@ -3734,7 +4936,7 @@
 #command "#itemslots 786432"
 #command "#armor 172"
 #command "#gcost 40"
-#command "#rcost 8"
+#command "#rcost 6"
 #mount
 #end
 
@@ -3746,7 +4948,7 @@
 #command "#itemslots 786432"
 #command "#armor 253"
 #command "#gcost 40"
-#command "#rcost 8"
+#command "#rcost 6"
 #mount
 #end
 
@@ -3758,7 +4960,7 @@
 #command "#itemslots 786432"
 #command "#armor 263"
 #command "#gcost 40"
-#command "#rcost 8"
+#command "#rcost 6"
 #mount
 #end
 
@@ -3770,7 +4972,7 @@
 #command "#itemslots 786432"
 #command "#armor 254"
 #command "#gcost 40"
-#command "#rcost 8"
+#command "#rcost 6"
 #mount
 #end
 
@@ -3782,7 +4984,7 @@
 #command "#itemslots 786432"
 #command "#armor 12"
 #command "#gcost 40"
-#command "#rcost 8"
+#command "#rcost 6"
 #mount
 #end
 
@@ -3794,7 +4996,7 @@
 #command "#itemslots 786432"
 #command "#armor gleaming_barding"
 #command "#gcost 40"
-#command "#rcost 8"
+#command "#rcost 6"
 #mount
 #end
 
@@ -3806,7 +5008,7 @@
 #command "#itemslots 786432"
 #command "#armor cyclope_barding"
 #command "#gcost 40"
-#command "#rcost 8"
+#command "#rcost 6"
 #mount
 #end
 
@@ -4115,7 +5317,7 @@
 -- 2 misc slots
 #command "#itemslots 786432"
 #command "#gcost 50"
-#command "#rcost 6"
+#command "#rcost 10"
 #mount
 #end
 
@@ -4128,7 +5330,7 @@
 #command "#supplybonus +1"
 #command "#wastesurvival"
 #command "#gcost 20"
-#command "#rcost 4"
+#command "#rcost 8"
 #mount
 #end
 
@@ -4142,7 +5344,7 @@
 #command "#wastesurvival"
 #command "#armor thick_linen_barding"
 #command "#gcost 20"
-#command "#rcost 4"
+#command "#rcost 8"
 #mount
 #end
 
@@ -4156,7 +5358,7 @@
 #command "#wastesurvival"
 #command "#armor 264"
 #command "#gcost 20"
-#command "#rcost 4"
+#command "#rcost 8"
 #mount
 #end
 
@@ -4170,7 +5372,7 @@
 #command "#wastesurvival"
 #command "#armor 172"
 #command "#gcost 20"
-#command "#rcost 4"
+#command "#rcost 8"
 #mount
 #end
 
@@ -4184,7 +5386,7 @@
 #command "#wastesurvival"
 #command "#armor 263"
 #command "#gcost 20"
-#command "#rcost 4"
+#command "#rcost 8"
 #mount
 #end
 
@@ -4394,6 +5596,140 @@
 #end
 
 #new secondshape
+#id "swan_light_bronze_chariot"
+#command "#spr1 ./graphics/mounts/chariots/small_swan_bronze.png"
+#command "#spr2 shift"
+#command "#name 'Swan Chariot'"
+#command "#size 3"
+#command "#hp 8"
+#command "#str 6"
+#command "#att 8"
+#command "#def 8"
+#command "#prec 8"
+#command "#mapmove 14"
+#command "#ap 10"
+#command "#sailing 2 2"
+#command "#trample"
+#command "#weapon 677"
+#command "#prot 4"
+#command "#enc 5"
+#command "#unsurr 1"
+#command "#swimming"
+#command "#nomovepen"
+#command "#armor 264"
+#command "#gcost 10"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "swan_light_scale_chariot"
+#command "#spr1 ./graphics/mounts/chariots/small_swan_bronze.png"
+#command "#spr2 shift"
+#command "#name 'Swan Chariot'"
+#command "#size 3"
+#command "#hp 8"
+#command "#str 6"
+#command "#att 8"
+#command "#def 8"
+#command "#prec 8"
+#command "#mapmove 14"
+#command "#ap 10"
+#command "#sailing 2 2"
+#command "#trample"
+#command "#weapon 677"
+#command "#prot 4"
+#command "#enc 5"
+#command "#unsurr 1"
+#command "#swimming"
+#command "#nomovepen"
+#command "#armor 252"
+#command "#gcost 10"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "black_swan_chariot"
+#command "#spr1 ./graphics/mounts/chariots/small_blackswan_iron.png"
+#command "#spr2 shift"
+#command "#name 'Black Swan Chariot'"
+#command "#size 3"
+#command "#hp 8"
+#command "#str 6"
+#command "#att 8"
+#command "#def 8"
+#command "#prec 8"
+#command "#mapmove 14"
+#command "#ap 10"
+#command "#sailing 2 2"
+#command "#trample"
+#command "#weapon 677"
+#command "#prot 4"
+#command "#enc 5"
+#command "#unsurr 1"
+#command "#swimming"
+#command "#nomovepen"
+#command "#gcost 10"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "black_swan_light_bronze_chariot"
+#command "#spr1 ./graphics/mounts/chariots/small_blackswan_iron.png"
+#command "#spr2 shift"
+#command "#name 'Black Swan Chariot'"
+#command "#size 3"
+#command "#hp 8"
+#command "#str 6"
+#command "#att 8"
+#command "#def 8"
+#command "#prec 8"
+#command "#mapmove 14"
+#command "#ap 10"
+#command "#sailing 2 2"
+#command "#trample"
+#command "#weapon 677"
+#command "#prot 4"
+#command "#enc 5"
+#command "#unsurr 1"
+#command "#swimming"
+#command "#nomovepen"
+#command "#armor 264"
+#command "#gcost 10"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "black_swan_light_scale_chariot"
+#command "#spr1 ./graphics/mounts/chariots/small_blackswan_iron.png"
+#command "#spr2 shift"
+#command "#name 'Black Swan Chariot'"
+#command "#size 3"
+#command "#hp 8"
+#command "#str 6"
+#command "#att 8"
+#command "#def 8"
+#command "#prec 8"
+#command "#mapmove 14"
+#command "#ap 10"
+#command "#sailing 2 2"
+#command "#trample"
+#command "#weapon 677"
+#command "#prot 4"
+#command "#enc 5"
+#command "#unsurr 1"
+#command "#swimming"
+#command "#nomovepen"
+#command "#armor 252"
+#command "#gcost 10"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
 #id "giant_swan_chariot"
 #command "#spr1 ./graphics/sidhe/mounts/chariot_swan.png"
 #command "#spr2 shift"
@@ -4416,33 +5752,6 @@
 #command "#swimming"
 #command "#nomovepen"
 #command "#gcost 30"
-#command "#rcost 4"
-#mount
-#end
-
-
-#new secondshape
-#id "black_swan_chariot"
-#command "#spr1 ./graphics/mounts/chariots/small_blackswan_iron.png"
-#command "#spr2 shift"
-#command "#name 'Swan Chariot'"
-#command "#size 3"
-#command "#hp 8"
-#command "#str 6"
-#command "#att 8"
-#command "#def 8"
-#command "#prec 8"
-#command "#mapmove 14"
-#command "#ap 10"
-#command "#sailing 2 2"
-#command "#trample"
-#command "#weapon 677"
-#command "#prot 4"
-#command "#enc 5"
-#command "#unsurr 1"
-#command "#swimming"
-#command "#nomovepen"
-#command "#gcost 10"
 #command "#rcost 4"
 #mount
 #end
@@ -4575,7 +5884,7 @@
 #command "#unsurr 1"
 #command "#nomovepen"
 #command "#gcost 25"
-#command "#rcost 6"
+#command "#rcost 8"
 #mount
 #end
 
@@ -4597,7 +5906,7 @@
 #command "#nomovepen"
 #command "#armor 264"
 #command "#gcost 25"
-#command "#rcost 6"
+#command "#rcost 8"
 #mount
 #end
 
@@ -4619,7 +5928,7 @@
 #command "#nomovepen"
 #command "#armor 252"
 #command "#gcost 25"
-#command "#rcost 6"
+#command "#rcost 8"
 #mount
 #end
 
@@ -4641,7 +5950,7 @@
 #command "#nomovepen"
 #command "#armor 172"
 #command "#gcost 25"
-#command "#rcost 6"
+#command "#rcost 8"
 #mount
 #end
 
@@ -4663,7 +5972,7 @@
 #command "#nomovepen"
 #command "#armor 253"
 #command "#gcost 25"
-#command "#rcost 6"
+#command "#rcost 8"
 #mount
 #end
 
@@ -4685,7 +5994,7 @@
 #command "#nomovepen"
 #command "#armor 263"
 #command "#gcost 25"
-#command "#rcost 6"
+#command "#rcost 8"
 #mount
 #end
 
@@ -4707,7 +6016,7 @@
 #command "#nomovepen"
 #command "#armor 254"
 #command "#gcost 25"
-#command "#rcost 6"
+#command "#rcost 8"
 #mount
 #end
 
@@ -4729,7 +6038,7 @@
 #command "#unsurr 1"
 #command "#nomovepen"
 #command "#gcost 30"
-#command "#rcost 6"
+#command "#rcost 12"
 #mount
 #end
 
@@ -4752,7 +6061,7 @@
 #command "#nomovepen"
 #command "#armor 264"
 #command "#gcost 30"
-#command "#rcost 6"
+#command "#rcost 12"
 #mount
 #end
 
@@ -4775,7 +6084,7 @@
 #command "#nomovepen"
 #command "#armor 252"
 #command "#gcost 30"
-#command "#rcost 6"
+#command "#rcost 12"
 #mount
 #end
 
@@ -4798,7 +6107,7 @@
 #command "#nomovepen"
 #command "#armor 172"
 #command "#gcost 30"
-#command "#rcost 6"
+#command "#rcost 12"
 #mount
 #end
 
@@ -4821,7 +6130,7 @@
 #command "#nomovepen"
 #command "#armor 253"
 #command "#gcost 30"
-#command "#rcost 6"
+#command "#rcost 12"
 #mount
 #end
 
@@ -4844,7 +6153,7 @@
 #command "#nomovepen"
 #command "#armor 263"
 #command "#gcost 30"
-#command "#rcost 6"
+#command "#rcost 12"
 #mount
 #end
 
@@ -4867,7 +6176,7 @@
 #command "#nomovepen"
 #command "#armor 254"
 #command "#gcost 30"
-#command "#rcost 6"
+#command "#rcost 12"
 #mount
 #end
 
@@ -4878,7 +6187,7 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#gcost 30"
-#command "#rcost 4"
+#command "#rcost 6"
 #mount
 #end
 
@@ -4890,7 +6199,7 @@
 #command "#itemslots 786432"
 #command "#armor 137"
 #command "#gcost 30"
-#command "#rcost 7"
+#command "#rcost 6"
 #mount
 #end
 
@@ -4902,31 +6211,7 @@
 #command "#itemslots 786432"
 #command "#armor 264"
 #command "#gcost 30"
-#command "#rcost 12"
-#mount
-#end
-
-#new secondshape
-#id "cave_grub_coral_barding_mount"
-#command "#copystats 2526"
-#command "#copyspr 2526"
-#command "#magicboost 53 -5"
-#command "#itemslots 786432"
-#command "#armor 190"
-#command "#gcost 30"
-#command "#rcost 9"
-#mount
-#end
-
-#new secondshape
-#id "cave_grub_bronze_barding_mount"
-#command "#copystats 2526"
-#command "#copyspr 2526"
-#command "#magicboost 53 -5"
-#command "#itemslots 786432"
-#command "#armor 263"
-#command "#gcost 30"
-#command "#rcost 24"
+#command "#rcost 6"
 #mount
 #end
 
@@ -4938,7 +6223,31 @@
 #command "#itemslots 786432"
 #command "#armor 252"
 #command "#gcost 30"
-#command "#rcost 14"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "cave_grub_coral_barding_mount"
+#command "#copystats 2526"
+#command "#copyspr 2526"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 190"
+#command "#gcost 30"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "cave_grub_bronze_barding_mount"
+#command "#copystats 2526"
+#command "#copyspr 2526"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 263"
+#command "#gcost 30"
+#command "#rcost 6"
 #mount
 #end
 
@@ -4950,7 +6259,7 @@
 #command "#itemslots 786432"
 #command "#armor 254"
 #command "#gcost 30"
-#command "#rcost 26"
+#command "#rcost 6"
 #mount
 #end
 
@@ -4962,7 +6271,7 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#gcost 30"
-#command "#rcost 4"
+#command "#rcost 6"
 #mount
 #end
 
@@ -4988,20 +6297,7 @@
 #command "#itemslots 786432"
 #command "#armor 264"
 #command "#gcost 30"
-#command "#rcost 12"
-#mount
-#end
-
-#new secondshape
-#id "cave_cow_bronze_barding_mount"
-#command "#copystats 2512"
-#command "#copyspr 2512"
-#command "#quadruped"
-#command "#magicboost 53 -5"
-#command "#itemslots 786432"
-#command "#armor 263"
-#command "#gcost 30"
-#command "#rcost 24"
+#command "#rcost 6"
 #mount
 #end
 
@@ -5014,7 +6310,20 @@
 #command "#itemslots 786432"
 #command "#armor 252"
 #command "#gcost 30"
-#command "#rcost 14"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "cave_cow_bronze_barding_mount"
+#command "#copystats 2512"
+#command "#copyspr 2512"
+#command "#quadruped"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 263"
+#command "#gcost 30"
+#command "#rcost 6"
 #mount
 #end
 
@@ -5027,7 +6336,7 @@
 #command "#itemslots 786432"
 #command "#armor 190"
 #command "#gcost 30"
-#command "#rcost 8"
+#command "#rcost 6"
 #mount
 #end
 
@@ -5040,7 +6349,7 @@
 #command "#itemslots 786432"
 #command "#armor 254"
 #command "#gcost 30"
-#command "#rcost 26"
+#command "#rcost 6"
 #mount
 #end
 
@@ -5051,26 +6360,38 @@
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#itemslots 786950"
-#command "#armor 32"
 #command "#gcost 50"
-#command "#rcost 4"
+#command "#rcost 6"
 #mount
 #end
 
 #new secondshape
-#id "fossil_hauberk_mount"
+#id "fossil_rusty_mail_armor_mount"
+#command "#copystats 1977"
+#command "#spr1 ./graphics/abysian/mounts/fossil.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#itemslots 786950"
+#command "#armor 32"
+#command "#gcost 50"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "fossil_hauberk_armor_mount"
 #command "#copystats 1977"
 #command "#spr1 ./graphics/abysian/mounts/fossil.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#itemslots 786950"
 #command "#gcost 50"
-#command "#rcost 8"
+#command "#rcost 6"
 #mount
 #end
 
 #new secondshape
-#id "fossil_caveman_mount"
+#id "caveman_fossil_mount"
 #command "#spr1 ./graphics/hoburg/mounts/caveman_fossil.png"
 #command "#spr2 shift"
 #command "#name 'Fossilized Caveman'"
@@ -5110,13 +6431,95 @@
 #end
 
 #new secondshape
+#id "caveman_fossil_rusty_mail_armor_mount"
+#command "#spr1 ./graphics/hoburg/mounts/caveman_fossil.png"
+#command "#spr2 shift"
+#command "#name 'Fossilized Caveman'"
+#command "#size 4"
+#command "#hp 9"
+#command "#prot 20"
+#command "#mr 7"
+#command "#mor 50"
+#command "#str 18"
+#command "#att 9"
+#command "#def 7"
+#command "#prec 5"
+#command "#enc 0"
+#command "#mapmove 18"
+#command "#ap 7"
+#command "#poorleader"
+#command "#poorundeadleader"
+#command "#maxage 500"
+#command "#fireres 5"
+#command "#coldres 5"
+#command "#poisonres 25"
+#command "#pooramphibian"
+#command "#pierceres"
+#command "#undead"
+#command "#magicbeing"
+#command "#inanimate"
+#command "#neednoteat"
+#command "#noheal"
+#command "#stonebeing"
+#command "#weapon 429"
+#command "#magicboost 53 -5"
+#command "#humanoid"
+#command "#itemslots 786950"
+#command "#armor 32"
+#command "#gcost 40"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "caveman_fossil_hauberk_mount"
+#command "#spr1 ./graphics/hoburg/mounts/caveman_fossil.png"
+#command "#spr2 shift"
+#command "#name 'Fossilized Caveman'"
+#command "#size 4"
+#command "#hp 9"
+#command "#prot 20"
+#command "#mr 7"
+#command "#mor 50"
+#command "#str 18"
+#command "#att 9"
+#command "#def 7"
+#command "#prec 5"
+#command "#enc 0"
+#command "#mapmove 18"
+#command "#ap 7"
+#command "#poorleader"
+#command "#poorundeadleader"
+#command "#maxage 500"
+#command "#fireres 5"
+#command "#coldres 5"
+#command "#poisonres 25"
+#command "#pooramphibian"
+#command "#pierceres"
+#command "#undead"
+#command "#magicbeing"
+#command "#inanimate"
+#command "#neednoteat"
+#command "#noheal"
+#command "#stonebeing"
+#command "#weapon 429"
+#command "#magicboost 53 -5"
+#command "#humanoid"
+#command "#itemslots 786950"
+#command "#armor 160"
+#command "#gcost 40"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
 #id "gryphon_mount"
 #command "#copystats 2131"
 #command "#copyspr 2131"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
 #command "#gcost 100"
-#command "#rcost 4"
+#command "#rcost 16"
 #mount
 #end
 
@@ -5128,7 +6531,7 @@
 #command "#transformation 0"
 #command "#armor 251"
 #command "#gcost 100"
-#command "#rcost 8"
+#command "#rcost 16"
 #mount
 #end
 
@@ -5140,7 +6543,7 @@
 #command "#transformation 0"
 #command "#armor 264"
 #command "#gcost 100"
-#command "#rcost 10"
+#command "#rcost 16"
 #mount
 #end
 
@@ -5152,7 +6555,7 @@
 #command "#transformation 0"
 #command "#armor 252"
 #command "#gcost 100"
-#command "#rcost 12"
+#command "#rcost 16"
 #mount
 #end
 
@@ -5164,7 +6567,7 @@
 #command "#transformation 0"
 #command "#armor 172"
 #command "#gcost 100"
-#command "#rcost 18"
+#command "#rcost 16"
 #mount
 #end
 
@@ -5176,7 +6579,7 @@
 #command "#transformation 0"
 #command "#armor 253"
 #command "#gcost 100"
-#command "#rcost 24"
+#command "#rcost 16"
 #mount
 #end
 
@@ -5188,7 +6591,7 @@
 #command "#transformation 0"
 #command "#armor 263"
 #command "#gcost 100"
-#command "#rcost 26"
+#command "#rcost 16"
 #mount
 #end
 
@@ -5200,7 +6603,7 @@
 #command "#transformation 0"
 #command "#armor 254"
 #command "#gcost 100"
-#command "#rcost 26"
+#command "#rcost 16"
 #mount
 #end
 
@@ -5211,7 +6614,7 @@
 #command "#magicboost 53 -5"
 #command "#transformation 0"
 #command "#gcost 40"
-#command "#rcost 4"
+#command "#rcost 6"
 #mount
 #end
 
@@ -5223,7 +6626,7 @@
 #command "#transformation 0"
 #command "#armor 251"
 #command "#gcost 40"
-#command "#rcost 8"
+#command "#rcost 6"
 #mount
 #end
 
@@ -5235,7 +6638,7 @@
 #command "#transformation 0"
 #command "#armor 264"
 #command "#gcost 40"
-#command "#rcost 10"
+#command "#rcost 6"
 #mount
 #end
 
@@ -5247,7 +6650,7 @@
 #command "#transformation 0"
 #command "#armor 252"
 #command "#gcost 40"
-#command "#rcost 12"
+#command "#rcost 6"
 #mount
 #end
 
@@ -5259,7 +6662,7 @@
 #command "#transformation 0"
 #command "#armor 172"
 #command "#gcost 40"
-#command "#rcost 18"
+#command "#rcost 6"
 #mount
 #end
 
@@ -5271,7 +6674,7 @@
 #command "#transformation 0"
 #command "#armor 253"
 #command "#gcost 40"
-#command "#rcost 24"
+#command "#rcost 6"
 #mount
 #end
 
@@ -5283,7 +6686,7 @@
 #command "#transformation 0"
 #command "#armor 263"
 #command "#gcost 40"
-#command "#rcost 28"
+#command "#rcost 6"
 #mount
 #end
 
@@ -5295,7 +6698,7 @@
 #command "#transformation 0"
 #command "#armor 254"
 #command "#gcost 40"
-#command "#rcost 30"
+#command "#rcost 6"
 #mount
 #end
 
@@ -5324,7 +6727,127 @@
 #command "#animal"
 #command "#itemslots 786432"
 #command "#gcost 15"
-#command "#rcost 4"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
+#id "hyena_light_bronze_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/hyena.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Hyena'"
+#command "#enc 3"
+#command "#ap 20"
+#command "#str 13"
+#command "#mr 5"
+#command "#mor 10"
+#command "#att 10"
+#command "#def 9"
+#command "#hp 16"
+#command "#prec 8"
+#command "#prot 6"
+#command "#size 3"
+#command "#mapmove 22"
+#command "#weapon 20"
+#command "#stealthy 40"
+#command "#wastesurvival"
+#command "#undisciplined"
+#command "#animal"
+#command "#itemslots 786432"
+#command "#armor 264"
+#command "#gcost 15"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
+#id "hyena_light_scale_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/hyena.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Hyena'"
+#command "#enc 3"
+#command "#ap 20"
+#command "#str 13"
+#command "#mr 5"
+#command "#mor 10"
+#command "#att 10"
+#command "#def 9"
+#command "#hp 16"
+#command "#prec 8"
+#command "#prot 6"
+#command "#size 3"
+#command "#mapmove 22"
+#command "#weapon 20"
+#command "#stealthy 40"
+#command "#wastesurvival"
+#command "#undisciplined"
+#command "#animal"
+#command "#itemslots 786432"
+#command "#armor 252"
+#command "#gcost 15"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
+#id "hyena_bronze_mail_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/hyena.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Hyena'"
+#command "#enc 3"
+#command "#ap 20"
+#command "#str 13"
+#command "#mr 5"
+#command "#mor 10"
+#command "#att 10"
+#command "#def 9"
+#command "#hp 16"
+#command "#prec 8"
+#command "#prot 6"
+#command "#size 3"
+#command "#mapmove 22"
+#command "#weapon 20"
+#command "#stealthy 40"
+#command "#wastesurvival"
+#command "#undisciplined"
+#command "#animal"
+#command "#itemslots 786432"
+#command "#armor 172"
+#command "#gcost 15"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
+#id "hyena_iron_mail_barding_mount"
+#command "#spr1 ./graphics/mounts/standard/hyena.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#name 'Hyena'"
+#command "#enc 3"
+#command "#ap 20"
+#command "#str 13"
+#command "#mr 5"
+#command "#mor 10"
+#command "#att 10"
+#command "#def 9"
+#command "#hp 16"
+#command "#prec 8"
+#command "#prot 6"
+#command "#size 3"
+#command "#mapmove 22"
+#command "#weapon 20"
+#command "#stealthy 40"
+#command "#wastesurvival"
+#command "#undisciplined"
+#command "#animal"
+#command "#itemslots 786432"
+#command "#armor 172"
+#command "#gcost 15"
+#command "#rcost 2"
 #mount
 #end
 
@@ -5335,20 +6858,101 @@
 #command "#magicboost 53 -5"
 #command "#transformation 0"
 #command "#gcost 15"
-#command "#rcost 4"
+#command "#rcost 6"
 #mount
 #end
 
 #new secondshape
-#id "crocodile_mail_barding_mount"
+#id "crocodile_light_bronze_barding_mount"
+#command "#copystats 2185"
+#command "#copyspr 2185"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 264"
+#command "#gcost 15"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "crocodile_light_scale_barding_mount"
+#command "#copystats 2185"
+#command "#copyspr 2185"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 252"
+#command "#gcost 15"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "crocodile_bronze_mail_barding_mount"
 #command "#copystats 2185"
 #command "#spr1 ./graphics/mounts/standard/crocodile_monster_armored.png"
 #command "#spr2 shift"
 #command "#armor 172"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
+#command "#armor 172"
 #command "#gcost 15"
-#command "#rcost 10"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "crocodile_iron_mail_barding_mount"
+#command "#copystats 2185"
+#command "#spr1 ./graphics/mounts/standard/crocodile_monster_armored.png"
+#command "#spr2 shift"
+#command "#armor 172"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 15"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "crocodile_cataphract_barding_mount"
+#command "#copystats 2185"
+#command "#spr1 ./graphics/mounts/standard/crocodile_monster_armored.png"
+#command "#spr2 shift"
+#command "#armor 172"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 253"
+#command "#gcost 15"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "crocodile_bronze_barding_mount"
+#command "#copystats 2185"
+#command "#spr1 ./graphics/mounts/standard/crocodile_monster_armored.png"
+#command "#spr2 shift"
+#command "#armor 172"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 263"
+#command "#gcost 15"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "crocodile_plate_barding_mount"
+#command "#copystats 2185"
+#command "#spr1 ./graphics/mounts/standard/crocodile_monster_armored.png"
+#command "#spr2 shift"
+#command "#armor 172"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 254"
+#command "#gcost 15"
+#command "#rcost 6"
 #mount
 #end
 
@@ -5359,6 +6963,19 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 10"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "wolf_leather_barding_mount"
+#command "#copystats 284"
+#command "#copyspr 284"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 251"
 #command "#gcost 10"
 #command "#rcost 4"
 #mount
@@ -5402,6 +7019,20 @@
 #end
 
 #new secondshape
+#id "black_dog_leather_barding_mount"
+#command "#copystats 1560"
+#command "#spr1 ./graphics/hoburg/mounts/blackdog.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 251"
+#command "#gcost 5"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
 #id "sea_dog_mount"
 #command "#copystats 1064"
 #command "#copyspr 1064"
@@ -5422,7 +7053,7 @@
 #command "#transformation 0"
 #command "#armor 137"
 #command "#gcost 5"
-#command "#rcost 5"
+#command "#rcost 2"
 #mount
 #end
 
@@ -5435,7 +7066,7 @@
 #command "#transformation 0"
 #command "#armor 190"
 #command "#gcost 5"
-#command "#rcost 7"
+#command "#rcost 2"
 #mount
 #end
 
@@ -5466,7 +7097,7 @@
 #command "#itemslots 786432"
 #command "#transformation 0"
 #command "#gcost 20"
-#command "#rcost 4"
+#command "#rcost 6"
 #mount
 #end
 
@@ -5498,7 +7129,7 @@
 #command "#transformation 0"
 #command "#armor 264"
 #command "#gcost 20"
-#command "#rcost 4"
+#command "#rcost 6"
 #mount
 #end
 
@@ -5530,7 +7161,7 @@
 #command "#transformation 0"
 #command "#armor 252"
 #command "#gcost 20"
-#command "#rcost 4"
+#command "#rcost 6"
 #mount
 #end
 
@@ -5562,7 +7193,7 @@
 #command "#transformation 0"
 #command "#armor 172"
 #command "#gcost 20"
-#command "#rcost 4"
+#command "#rcost 6"
 #mount
 #end
 
@@ -5594,7 +7225,7 @@
 #command "#transformation 0"
 #command "#armor 274"
 #command "#gcost 20"
-#command "#rcost 4"
+#command "#rcost 6"
 #mount
 #end
 
@@ -5625,7 +7256,7 @@
 #command "#itemslots 786432"
 #command "#transformation 0"
 #command "#gcost 25"
-#command "#rcost 4"
+#command "#rcost 6"
 #mount
 #end
 
@@ -5657,7 +7288,7 @@
 #command "#transformation 0"
 #command "#armor 264"
 #command "#gcost 25"
-#command "#rcost 4"
+#command "#rcost 6"
 #mount
 #end
 
@@ -5689,7 +7320,7 @@
 #command "#transformation 0"
 #command "#armor 252"
 #command "#gcost 25"
-#command "#rcost 4"
+#command "#rcost 6"
 #mount
 #end
 
@@ -5721,7 +7352,7 @@
 #command "#transformation 0"
 #command "#armor 172"
 #command "#gcost 25"
-#command "#rcost 4"
+#command "#rcost 6"
 #mount
 #end
 
@@ -5753,7 +7384,7 @@
 #command "#transformation 0"
 #command "#armor 274"
 #command "#gcost 25"
-#command "#rcost 4"
+#command "#rcost 6"
 #mount
 #end
 
@@ -5778,7 +7409,7 @@
 #command "#transformation 0"
 #command "#armor 251"
 #command "#gcost 25"
-#command "#rcost 6"
+#command "#rcost 4"
 #mount
 #end
 
@@ -5791,7 +7422,7 @@
 #command "#transformation 0"
 #command "#armor 252"
 #command "#gcost 25"
-#command "#rcost 10"
+#command "#rcost 4"
 #mount
 #end
 
@@ -5804,7 +7435,7 @@
 #command "#transformation 0"
 #command "#armor 172"
 #command "#gcost 25"
-#command "#rcost 16"
+#command "#rcost 4"
 #mount
 #end
 
@@ -5817,7 +7448,7 @@
 #command "#transformation 0"
 #command "#armor 253"
 #command "#gcost 25"
-#command "#rcost 22"
+#command "#rcost 4"
 #mount
 #end
 
@@ -5830,7 +7461,7 @@
 #command "#transformation 0"
 #command "#armor 254"
 #command "#gcost 25"
-#command "#rcost 28"
+#command "#rcost 4"
 #mount
 #end
 
@@ -5855,7 +7486,7 @@
 #command "#transformation 0"
 #command "#armor 137"
 #command "#gcost 25"
-#command "#rcost 6"
+#command "#rcost 4"
 #mount
 #end
 
@@ -5868,7 +7499,7 @@
 #command "#transformation 0"
 #command "#armor 190"
 #command "#gcost 25"
-#command "#rcost 8"
+#command "#rcost 4"
 #mount
 #end
 
@@ -5899,6 +7530,19 @@
 #end
 
 #new secondshape
+#id "red_ant_leather_barding_mount"
+#command "#copystats 2224"
+#command "#copyspr 2224"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 251"
+#command "#gcost 5"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
 #id "swan_mount"
 #command "#copystats 2929"
 #command "#copyspr 2929"
@@ -5911,13 +7555,42 @@
 #end
 
 #new secondshape
+#id "swan_leather_barding_mount"
+#command "#copystats 2929"
+#command "#copyspr 2929"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 251"
+#command "#gcost 10"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
 #id "black_swan_mount"
 #command "#copystats 2929"
 #command "#spr1 ./graphics/mounts/standard/swan_black.png"
 #command "#spr2 shift"
+#command "#name 'Black Swan'"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#transformation 0"
+#command "#gcost 10"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
+#id "black_swan_leather_barding_mount"
+#command "#copystats 2929"
+#command "#spr1 ./graphics/mounts/standard/swan_black.png"
+#command "#spr2 shift"
+#command "#name 'Black Swan'"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 251"
 #command "#gcost 10"
 #command "#rcost 2"
 #mount
@@ -5967,7 +7640,7 @@
 #command "#ap 24"
 #command "#flying"
 #command "#gcost 60"
-#command "#rcost 4"
+#command "#rcost 16"
 #mount
 #end
 
@@ -6068,7 +7741,7 @@
 #command "#transformation 0"
 #command "#armor 137"
 #command "#gcost 20"
-#command "#rcost 7"
+#command "#rcost 4"
 #mount
 #end
 
@@ -6102,7 +7775,7 @@
 #command "#transformation 0"
 #command "#armor 190"
 #command "#gcost 20"
-#command "#rcost 9"
+#command "#rcost 4"
 #mount
 #end
 
@@ -6171,7 +7844,7 @@
 #command "#transformation 0"
 #command "#armor 137"
 #command "#gcost 20"
-#command "#rcost 7"
+#command "#rcost 4"
 #mount
 #end
 
@@ -6206,7 +7879,7 @@
 #command "#transformation 0"
 #command "#armor 190"
 #command "#gcost 20"
-#command "#rcost 9"
+#command "#rcost 4"
 #mount
 #end
 
@@ -6245,7 +7918,42 @@
 #end
 
 #new secondshape
-#id "rat_chariot"
+#id "giant_rat_leather_barding_mount"
+#command "#name 'Giant Rat'"
+#command "#spr1 ./graphics/mounts/standard/giantrat.png"
+#command "#spr2 shift"
+#command "#lizard"
+#command "#itemslots 786432"
+#command "#size 3"
+#command "#hp 12"
+#command "#prot 2"
+#command "#mr 5"
+#command "#mor 11"
+#command "#str 9"
+#command "#att 11"
+#command "#def 11"
+#command "#prec 5"
+#command "#ap 16"
+#command "#mapmove 22"
+#command "#enc 2"
+#command "#weapon nostr_diseasebite_12"
+#command "#darkvision 50"
+#command "#diseaseres 50"
+#command "#stealthy 0"
+#command "#animal"
+#command "#undisciplined"
+#command "#swampsurvival"
+#command "#maxage 7"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 251"
+#command "#gcost 10"
+#command "#rcost 2"
+#mount
+#end
+
+#new secondshape
+#id "giant_rat_chariot"
 #command "#name 'Rat Chariot'"
 #command "#spr1 ./graphics/mounts/chariots/small_rat_iron.png"
 #command "#spr2 shift"
@@ -6279,7 +7987,7 @@
 #end
 
 #new secondshape
-#id "rat_bronze_chariot"
+#id "giant_rat_light_bronze_barding_chariot"
 #command "#name 'Rat Chariot'"
 #command "#spr1 ./graphics/mounts/chariots/small_rat_iron.png"
 #command "#spr2 shift"
@@ -6307,7 +8015,113 @@
 #command "#maxage 7"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
-#command "#gcost 15"
+#command "#armor 264"
+#command "#gcost 10"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "giant_rat_light_scale_barding_chariot"
+#command "#name 'Rat Chariot'"
+#command "#spr1 ./graphics/mounts/chariots/small_rat_iron.png"
+#command "#spr2 shift"
+#command "#itemslots 786432"
+#command "#size 4"
+#command "#hp 12"
+#command "#prot 5"
+#command "#mr 5"
+#command "#mor 11"
+#command "#str 9"
+#command "#att 11"
+#command "#def 11"
+#command "#prec 5"
+#command "#ap 10"
+#command "#mapmove 14"
+#command "#trample"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#weapon nostr_diseasebite_12"
+#command "#darkvision 50"
+#command "#diseaseres 50"
+#command "#stealthy 0"
+#command "#animal"
+#command "#undisciplined"
+#command "#maxage 7"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 252"
+#command "#gcost 10"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "giant_rat_bronze_mail_barding_chariot"
+#command "#name 'Rat Chariot'"
+#command "#spr1 ./graphics/mounts/chariots/small_rat_iron.png"
+#command "#spr2 shift"
+#command "#itemslots 786432"
+#command "#size 4"
+#command "#hp 12"
+#command "#prot 5"
+#command "#mr 5"
+#command "#mor 11"
+#command "#str 9"
+#command "#att 11"
+#command "#def 11"
+#command "#prec 5"
+#command "#ap 10"
+#command "#mapmove 14"
+#command "#trample"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#weapon nostr_diseasebite_12"
+#command "#darkvision 50"
+#command "#diseaseres 50"
+#command "#stealthy 0"
+#command "#animal"
+#command "#undisciplined"
+#command "#maxage 7"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 10"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "giant_rat_iron_mail_barding_chariot"
+#command "#name 'Rat Chariot'"
+#command "#spr1 ./graphics/mounts/chariots/small_rat_iron.png"
+#command "#spr2 shift"
+#command "#itemslots 786432"
+#command "#size 4"
+#command "#hp 12"
+#command "#prot 5"
+#command "#mr 5"
+#command "#mor 11"
+#command "#str 9"
+#command "#att 11"
+#command "#def 11"
+#command "#prec 5"
+#command "#ap 10"
+#command "#mapmove 14"
+#command "#trample"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#weapon nostr_diseasebite_12"
+#command "#darkvision 50"
+#command "#diseaseres 50"
+#command "#stealthy 0"
+#command "#animal"
+#command "#undisciplined"
+#command "#maxage 7"
+#command "#magicboost 53 -5"
+#command "#transformation 0"
+#command "#armor 172"
+#command "#gcost 10"
 #command "#rcost 6"
 #mount
 #end
@@ -6357,7 +8171,7 @@
 #command "#magicboost 53 -5"
 #command "#transformation 0"
 #command "#gcost 10"
-#command "#rcost 8"
+#command "#rcost 4"
 #mount
 #end
 
@@ -6643,7 +8457,7 @@
 #command "#quadruped"
 #command "#itemslots 786432"
 #command "#gcost 50"
-#command "#rcost 4"
+#command "#rcost 8"
 #mount
 #end
 
@@ -6682,7 +8496,7 @@
 #command "#itemslots 786432"
 #command "#armor 251"
 #command "#gcost 50"
-#command "#rcost 10"
+#command "#rcost 8"
 #mount
 #end
 
@@ -6721,7 +8535,7 @@
 #command "#itemslots 786432"
 #command "#armor 252"
 #command "#gcost 50"
-#command "#rcost 12"
+#command "#rcost 8"
 #mount
 #end
 
@@ -6760,7 +8574,7 @@
 #command "#itemslots 786432"
 #command "#armor 172"
 #command "#gcost 50"
-#command "#rcost 18"
+#command "#rcost 8"
 #mount
 #end
 
@@ -6799,7 +8613,7 @@
 #command "#itemslots 786432"
 #command "#armor 253"
 #command "#gcost 50"
-#command "#rcost 24"
+#command "#rcost 8"
 #mount
 #end
 
@@ -6838,7 +8652,7 @@
 #command "#itemslots 786432"
 #command "#armor 254"
 #command "#gcost 50"
-#command "#rcost 30"
+#command "#rcost 8"
 #mount
 #end
 
@@ -6878,7 +8692,7 @@
 #command "#lizard"
 #command "#itemslots 786432"
 #command "#gcost 60"
-#command "#rcost 4"
+#command "#rcost 8"
 #mount
 #end
 
@@ -6919,7 +8733,7 @@
 #command "#itemslots 786432"
 #command "#armor 251"
 #command "#gcost 60"
-#command "#rcost 10"
+#command "#rcost 8"
 #mount
 #end
 
@@ -6960,7 +8774,7 @@
 #command "#itemslots 786432"
 #command "#armor 252"
 #command "#gcost 60"
-#command "#rcost 12"
+#command "#rcost 8"
 #mount
 #end
 
@@ -7001,7 +8815,7 @@
 #command "#itemslots 786432"
 #command "#armor 172"
 #command "#gcost 60"
-#command "#rcost 18"
+#command "#rcost 8"
 #mount
 #end
 
@@ -7042,7 +8856,7 @@
 #command "#itemslots 786432"
 #command "#armor 253"
 #command "#gcost 60"
-#command "#rcost 24"
+#command "#rcost 8"
 #mount
 #end
 
@@ -7083,6 +8897,6 @@
 #command "#itemslots 786432"
 #command "#armor 254"
 #command "#gcost 60"
-#command "#rcost 30"
+#command "#rcost 8"
 #mount
 #end
