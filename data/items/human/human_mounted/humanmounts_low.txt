@@ -1,4 +1,7 @@
---- Base offsets are applied to everything except base and overlay
+------ Base offsets are applied to everything except base and overlay
+
+---- Scalies
+
 #newitem
 #id "serpent 1"
 #gameid -1
@@ -8,11 +11,11 @@
 #offsety 14
 #needs overlay 6
 #define "#mountmnr 'serpent_mount'"
-#tag "animal serpent"
 #theme "light"
+#tag "animal serpent"
 #tag "guaranteedprefix serpent"
 #tag "maxprot 13"
-#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#basechance 10
 #enditem
 
 #newitem
@@ -24,13 +27,14 @@
 #offsety 13
 #needs overlay 7
 #define "#mountmnr 'serpent_stupid_mount'"
-#tag "animal serpent"
-#theme "heavy"
 #theme "specialmount"
+#theme "heavy"
+#tag "animal serpent"
 #tag "guaranteedprefix serpent"
-#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
 #tag "minprot 14"
+#basechance 10
 #enditem
+
 
 #newitem
 #id "green lizard"
@@ -41,16 +45,17 @@
 #offsety 3
 #needs overlay 3
 #define "#mountmnr 'green_lizard_mount'"
-#tag "animal lizard"
-#theme "light"
 #theme "specialmount"
+#theme "light"
+#tag "animal lizard"
 #tag "guaranteedprefix lizard"
 #tag "maxprot 15"
+#basechance 10
 #enditem
+
 
 #newitem
 #id "cave drake"
-#basechance 0.5
 #gameid -1
 #sprite /graphics/mounts/standard/cavedrake.png
 #armor
@@ -59,15 +64,17 @@
 #define "#mountmnr 'cave_drake_mount'"
 #tag "animal drake"
 #theme "specialmount"
-#description "The cave drake will persist even if the rider dies."
 #tag "guaranteedprefix drake"
 #tag "name commander drakelord"
 #tag "minprot 0"
 #tag "maxprot 100"
+#basechance 5
 #sacredextra nonholyshape 0.25
 #chanceinc primaryrace "Pale One" *20
 #enditem
 
+
+---- Spiders
 
 #newitem
 #id "spider"
@@ -78,12 +85,12 @@
 #offsety 7
 #needs overlay spider_overlay
 #define "#mountmnr 'great_spider_mount'"
-#description "The giant spider will persist even if the rider dies."
 #theme "specialmount"
 #tag "animal spider"
 #tag "guaranteedprefix spider"
 #tag "minprot 0"
 #tag "maxprot 12"
+#basechance 10
 #chanceinc primaryrace "Austral human" *10
 #enditem
 
@@ -96,15 +103,36 @@
 #offsety 7
 #needs overlay spider_overlay
 #define "#mountmnr 'great_spider_mount'"
-#description "The giant spider will persist even if the rider dies."
 #theme "specialmount"
 #tag "animal spider"
 #tag "guaranteedprefix spider"
 #tag "minprot 13"
-#tag "maxprot 100"
+#basechance 10
 #chanceinc primaryrace "Austral human" *10
 #enditem
 
+
+#newitem
+#id "bigspider"
+#gameid -1
+#sprite /graphics/mounts/standard/bigspider.png
+#armor
+#offsetx 35
+#offsety 58
+#define "#mountmnr 'hunter_spider_mount'"
+#theme "specialmount"
+#theme "heavy"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "minprot 14"
+#tag "maxprot 20"
+#basechance 10
+#sacredextra nonholyshape 0.7
+#chanceinc primaryrace "Austral human" *10
+#enditem
+
+
+---- Beasts
 
 #newitem
 #id "boar"
@@ -120,6 +148,7 @@
 #tag "name commander boarmaster"
 #tag "minprot 0"
 #tag "maxprot 13"
+#basechance 10
 #enditem
 
 #newitem
@@ -136,6 +165,7 @@
 #tag "name commander boarmaster"
 #tag "minprot 14"
 #tag "maxprot 20"
+#basechance 10
 #enditem
 
 
@@ -150,11 +180,30 @@
 #theme "specialmount"
 #theme "light"
 #tag "animal tiger"
-#description "The tiger will persist even if the rider dies."
 #tag "guaranteedprefix tiger"
 #tag "minprot 0"
 #tag "maxprot 12"
+#basechance 10
 #chanceinc primaryrace Primate *10
+#enditem
+
+
+#newitem
+#id "black tiger"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_tiger_mount'"
+#theme "specialmount"
+#theme "light"
+#theme "sacred"
+#tag "animal tiger"
+#tag "guaranteedprefix black tiger"
+#tag "minprot 0"
+#tag "maxprot 11"
+#basechance 5
 #enditem
 
 
@@ -169,51 +218,14 @@
 #theme "specialmount"
 #theme "light"
 #tag "animal jaguar"
-#description "The jaguar will persist even if the rider dies."
 #tag "guaranteedprefix jaguar"
 #tag "minprot 0"
 #tag "maxprot 12"
-#enditem
-
-#newitem
-#id "black tiger"
-#gameid -1
-#sprite /graphics/mounts/standard/blacktiger.png
-#armor
-#offsetx -4
-#offsety 4
-#define "#mountmnr 'black_tiger_mount'"
-#theme "specialmount"
-#theme "light"
-#tag "animal tiger"
-#theme "sacred"
-#tag "guaranteedprefix black tiger"
-#tag "minprot 0"
-#tag "maxprot 11"
-#basechance 0.5
-#enditem
-
-#newitem
-#id "bigspider"
-#gameid -1
-#sprite /graphics/mounts/standard/bigspider.png
-#armor
-#offsetx 35
-#offsety 58
-#define "#mountmnr 'hunter_spider_mount'"
-#description "The hunter spider will persist even if the rider dies."
-#theme "specialmount"
-#theme "heavy"
-#tag "animal spider"
-#tag "guaranteedprefix spider"
-#tag "minprot 14"
-#tag "maxprot 20"
-#sacredextra nonholyshape 0.7
-#chanceinc primaryrace "Austral human" *10
+#basechance 10
 #enditem
 
 
-
+---- Exotic
 
 #newitem
 #id "amphiptere"
@@ -226,11 +238,11 @@
 #define "#mountmnr 'amphiptere_mount'"
 #theme "specialmount"
 #tag "animal amphiptere"
-#description "The amphiptere will fight until the end of the battle should the rider die"
 #tag "guaranteedprefix amphiptere"
 #tag "name commander beastmaster"
 #tag "minprot 6"
 #tag "maxprot 14"
+#basechance 5
 #sacredextra 0.5
 #enditem
 
@@ -240,20 +252,15 @@
 #gameid -1
 #sprite /graphics/mounts/standard/cavegrub.png
 #armor
-#basechance 0.125
 #offsetx 29
 #offsety 14
 #define "#mountmnr 'cave_grub_mount'"
-#description "The cave grub will fight until the end of the battle should the rider die"
 #tag "animal 'cave grub'"
 #tag "guaranteedprefix grub"
 #tag "name commander beastmaster"
 #tag "minprot 6"
 #tag "maxprot 14"
+#basechance 1.25
 #sacredextra 0.5
 #chanceinc primaryrace "Pale One" *80
 #enditem
-
-
-
-

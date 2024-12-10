@@ -48,6 +48,7 @@
 #offsety -8
 #define "#mountmnr 'horse_light_bronze_barding_chariot'"
 #define "#gcost -5"
+#theme "bronze"
 #tag "chariot"
 #tag "minprot 10"
 #tag "maxprot 15"
@@ -57,15 +58,35 @@
 #enditem
 
 #newitem
-#id "horse_mail_barding"
+#id "horse_bronze_mail_barding"
 #gameid -1
 #sprite /graphics/mounts/chariots/horse.png
 #armor
 #needs overlay 10
 #offsetx 55
 #offsety -8
-#define "#mountmnr 'horse_mail_barding_chariot'"
+#define "#mountmnr 'horse_bronze_mail_barding_chariot'"
 #define "#gcost -5"
+#theme "bronze"
+#tag "chariot"
+#tag "minprot 10"
+#tag "maxprot 15"
+#tag "animal 'horse'"
+#basechance 1.5
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "horse_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'horse_iron_mail_barding_chariot'"
+#define "#gcost -5"
+#theme "iron"
 #tag "chariot"
 #tag "minprot 10"
 #tag "maxprot 15"
@@ -84,6 +105,7 @@
 #offsety -8
 #define "#mountmnr 'horse_bronze_barding_chariot'"
 #define "#gcost -5"
+#theme "bronze"
 #tag "chariot"
 #tag "minprot 10"
 #tag "maxprot 15"
@@ -235,7 +257,7 @@
 #needs overlay chariot_camel_iron
 #offsetx 67
 #offsety -8
-#define "#mountmnr 'camel_mail_barding_chariot'"
+#define "#mountmnr 'camel_iron_mail_barding_chariot'"
 #define "#gcost -5"
 #theme "iron"
 #tag "chariot"

@@ -4799,12 +4799,72 @@
 #end
 
 #new secondshape
-#id "horse_mail_barding_chariot"
+#id "horse_light_scale_barding_chariot"
+#command "#copystats 3564"
+#command "#copyspr 3564"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 252"
+#command "#gcost 20"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "horse_bronze_mail_barding_chariot"
 #command "#copystats 3564"
 #command "#copyspr 3564"
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#armor 172"
+#command "#gcost 20"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "horse_iron_mail_barding_chariot"
+#command "#copystats 3564"
+#command "#copyspr 3564"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 172"
+#command "#gcost 20"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "horse_cataphract_barding_chariot"
+#command "#copystats 3564"
+#command "#copyspr 3564"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 253"
+#command "#gcost 20"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "horse_bronze_barding_chariot"
+#command "#copystats 3564"
+#command "#copyspr 3564"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 263"
+#command "#gcost 20"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "horse_plate_barding_chariot"
+#command "#copystats 3564"
+#command "#copyspr 3564"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#armor 254"
 #command "#gcost 20"
 #command "#rcost 4"
 #mount
@@ -4878,18 +4938,6 @@
 #command "#armor 254"
 #command "#gcost 20"
 #command "#rcost 4"
-#mount
-#end
-
-#new secondshape
-#id "horse_bronze_barding_chariot"
-#command "#copystats 3564"
-#command "#copyspr 3564"
-#command "#magicboost 53 -5"
-#command "#itemslots 786432"
-#command "#armor 263"
-#command "#gcost 20"
-#command "#rcost 6"
 #mount
 #end
 
@@ -5363,7 +5411,21 @@
 #end
 
 #new secondshape
-#id "camel_mail_barding_chariot"
+#id "camel_light_scale_barding_chariot"
+#command "#copystats 3563"
+#command "#spr1 ./graphics/mounts/chariots/camel.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#supplybonus +1"
+#command "#wastesurvival"
+#command "#armor 252"
+#command "#gcost 20"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "camel_bronze_mail_barding_chariot"
 #command "#copystats 3563"
 #command "#spr1 ./graphics/mounts/chariots/camel.png"
 #command "#spr2 shift"
@@ -5371,6 +5433,34 @@
 #command "#supplybonus +1"
 #command "#wastesurvival"
 #command "#armor 172"
+#command "#gcost 20"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "camel_iron_mail_barding_chariot"
+#command "#copystats 3563"
+#command "#spr1 ./graphics/mounts/chariots/camel.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#supplybonus +1"
+#command "#wastesurvival"
+#command "#armor 172"
+#command "#gcost 20"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "camel_cataphract_barding_chariot"
+#command "#copystats 3563"
+#command "#spr1 ./graphics/mounts/chariots/camel.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#supplybonus +1"
+#command "#wastesurvival"
+#command "#armor 253"
 #command "#gcost 20"
 #command "#rcost 8"
 #mount
@@ -5385,6 +5475,20 @@
 #command "#supplybonus +1"
 #command "#wastesurvival"
 #command "#armor 263"
+#command "#gcost 20"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "camel_plate_barding_chariot"
+#command "#copystats 3563"
+#command "#spr1 ./graphics/mounts/chariots/camel.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#supplybonus +1"
+#command "#wastesurvival"
+#command "#armor 254"
 #command "#gcost 20"
 #command "#rcost 8"
 #mount
@@ -5514,7 +5618,33 @@
 #end
 
 #new secondshape
-#id "lizard_mail_barding_chariot"
+#id "lizard_light_scale_barding_chariot"
+#command "#copystats 3568"
+#command "#spr1 ./graphics/mounts/chariots/lizard.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#coldblood"
+#command "#armor 252"
+#command "#gcost 25"
+#command "#rcost 14"
+#mount
+#end
+
+#new secondshape
+#id "lizard_bronze_mail_barding_chariot"
+#command "#copystats 3568"
+#command "#spr1 ./graphics/mounts/chariots/lizard.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#coldblood"
+#command "#armor 172"
+#command "#gcost 25"
+#command "#rcost 14"
+#mount
+#end
+
+#new secondshape
+#id "lizard_iron_mail_barding_chariot"
 #command "#copystats 3568"
 #command "#spr1 ./graphics/mounts/chariots/lizard.png"
 #command "#spr2 shift"
@@ -5863,7 +5993,161 @@
 #command "#unsurr 1"
 #command "#nomovepen"
 #command "#gcost 25"
-#command "#rcost 6"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "boar_light_bronze_barding_chariot"
+#command "#spr1 ./graphics/mounts/chariots/boar.png"
+#command "#spr2 shift"
+#command "#copystats 3563"
+#command "#hp 15"
+#command "#trample"
+#command "#size 5"
+#command "#prot 5"
+#command "#weapon 331" -- Gore
+#command "#mapmove 20"
+#command "#ap 18"
+#command "#ressize 3"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#nomovepen"
+#command "#armor 264"
+#command "#gcost 25"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "boar_light_scale_barding_chariot"
+#command "#spr1 ./graphics/mounts/chariots/boar.png"
+#command "#spr2 shift"
+#command "#copystats 3563"
+#command "#hp 15"
+#command "#trample"
+#command "#size 5"
+#command "#prot 5"
+#command "#weapon 331" -- Gore
+#command "#mapmove 20"
+#command "#ap 18"
+#command "#ressize 3"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#nomovepen"
+#command "#armor 252"
+#command "#gcost 25"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "boar_bronze_mail_barding_chariot"
+#command "#spr1 ./graphics/mounts/chariots/boar.png"
+#command "#spr2 shift"
+#command "#copystats 3563"
+#command "#hp 15"
+#command "#trample"
+#command "#size 5"
+#command "#prot 5"
+#command "#weapon 331" -- Gore
+#command "#mapmove 20"
+#command "#ap 18"
+#command "#ressize 3"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#nomovepen"
+#command "#armor 172"
+#command "#gcost 25"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "boar_iron_mail_barding_chariot"
+#command "#spr1 ./graphics/mounts/chariots/boar.png"
+#command "#spr2 shift"
+#command "#copystats 3563"
+#command "#hp 15"
+#command "#trample"
+#command "#size 5"
+#command "#prot 5"
+#command "#weapon 331" -- Gore
+#command "#mapmove 20"
+#command "#ap 18"
+#command "#ressize 3"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#nomovepen"
+#command "#armor 172"
+#command "#gcost 25"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "boar_cataphract_barding_chariot"
+#command "#spr1 ./graphics/mounts/chariots/boar.png"
+#command "#spr2 shift"
+#command "#copystats 3563"
+#command "#hp 15"
+#command "#trample"
+#command "#size 5"
+#command "#prot 5"
+#command "#weapon 331" -- Gore
+#command "#mapmove 20"
+#command "#ap 18"
+#command "#ressize 3"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#nomovepen"
+#command "#armor 253"
+#command "#gcost 25"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "boar_bronze_barding_chariot"
+#command "#spr1 ./graphics/mounts/chariots/boar.png"
+#command "#spr2 shift"
+#command "#copystats 3563"
+#command "#hp 15"
+#command "#trample"
+#command "#size 5"
+#command "#prot 5"
+#command "#weapon 331" -- Gore
+#command "#mapmove 20"
+#command "#ap 18"
+#command "#ressize 3"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#nomovepen"
+#command "#armor 263"
+#command "#gcost 25"
+#command "#rcost 8"
+#mount
+#end
+
+#new secondshape
+#id "boar_plate_barding_chariot"
+#command "#spr1 ./graphics/mounts/chariots/boar.png"
+#command "#spr2 shift"
+#command "#copystats 3563"
+#command "#hp 15"
+#command "#trample"
+#command "#size 5"
+#command "#prot 5"
+#command "#weapon 331" -- Gore
+#command "#mapmove 20"
+#command "#ap 18"
+#command "#ressize 3"
+#command "#enc 4"
+#command "#unsurr 1"
+#command "#nomovepen"
+#command "#armor 254"
+#command "#gcost 25"
+#command "#rcost 8"
 #mount
 #end
 
