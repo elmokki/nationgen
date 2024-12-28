@@ -473,14 +473,6 @@ public class SacredGenerator extends TroopGenerator {
     Race race,
     boolean isFirstSacred
   ) {
-    // Handle sacred power settings
-    double extrapower =
-      this.nationGen.settings.get(SettingsType.sacredpower) - 1;
-
-    power = (int) (power +
-      power * extrapower * (1 + random.nextDouble() * 0.5) +
-      extrapower);
-
     List<Pose> possibleposes = new ArrayList<>();
 
     // Note that the first sacred of a nation should only be ranged if no others are available
