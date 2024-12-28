@@ -3,7 +3,7 @@
 ---- Scalies
 
 #newitem
-#id "serpent 1"
+#id "serpent"
 #gameid -1
 #sprite /graphics/mounts/standard/serpent1.png
 #armor
@@ -19,7 +19,149 @@
 #enditem
 
 #newitem
-#id "serpent 2"
+#id "serpent_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#define "#mountmnr 'serpent_leather_barding_mount'"
+#theme "light"
+#theme "leather"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 13"
+#basechance 8
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "serpent_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#define "#mountmnr 'serpent_light_bronze_barding_mount'"
+#theme "light"
+#theme "bronze"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 15"
+#basechance 6
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "serpent_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#define "#mountmnr 'serpent_light_scale_barding_mount'"
+#theme "light"
+#theme "iron"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 15"
+#basechance 6
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "serpent_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#define "#mountmnr 'serpent_bronze_mail_barding_mount'"
+#theme "bronze"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 18"
+#basechance 4
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "serpent_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#define "#mountmnr 'serpent_iron_mail_barding_mount'"
+#theme "iron"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 18"
+#basechance 4
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "serpent_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#define "#mountmnr 'serpent_cataphract_barding_mount'"
+#theme "iron"
+#theme "heavy"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#basechance 3
+#chanceinc prot 15 *2
+#enditem
+
+#newitem
+#id "serpent_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#define "#mountmnr 'serpent_bronze_barding_mount'"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#basechance 1.5
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "serpent_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#define "#mountmnr 'serpent_plate_barding_mount'"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#basechance 1.5
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "serpent_stupid"
 #gameid -1
 #sprite /graphics/mounts/standard/serpent2.png
 #armor
@@ -31,13 +173,159 @@
 #theme "heavy"
 #tag "animal serpent"
 #tag "guaranteedprefix serpent"
-#tag "minprot 14"
+#tag "minprot 12"
 #basechance 10
+#enditem
+
+#newitem
+#id "serpent_stupid_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent2.png
+#armor
+#offsetx -5
+#offsety 13
+#needs overlay 7
+#define "#mountmnr 'serpent_stupid_leather_barding_mount'"
+#theme "specialmount"
+#theme "light"
+#theme "leather"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "minprot 14"
+#basechance 8
+#enditem
+
+#newitem
+#id "serpent_stupid_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent2.png
+#armor
+#offsetx -5
+#offsety 13
+#needs overlay 7
+#define "#mountmnr 'serpent_stupid_light_bronze_barding_mount'"
+#theme "specialmount"
+#theme "light"
+#theme "bronze"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "minprot 14"
+#basechance 6
+#enditem
+
+#newitem
+#id "serpent_stupid_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent2.png
+#armor
+#offsetx -5
+#offsety 13
+#needs overlay 7
+#define "#mountmnr 'serpent_stupid_light_scale_barding_mount'"
+#theme "specialmount"
+#theme "light"
+#theme "iron"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "minprot 14"
+#basechance 6
+#enditem
+
+#newitem
+#id "serpent_stupid_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent2.png
+#armor
+#offsetx -5
+#offsety 13
+#needs overlay 7
+#define "#mountmnr 'serpent_stupid_bronze_mail_barding_mount'"
+#theme "specialmount"
+#theme "bronze"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "minprot 14"
+#basechance 4
+#enditem
+
+#newitem
+#id "serpent_stupid_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent2.png
+#armor
+#offsetx -5
+#offsety 13
+#needs overlay 7
+#define "#mountmnr 'serpent_stupid_iron_mail_barding_mount'"
+#theme "specialmount"
+#theme "iron"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "minprot 14"
+#basechance 4
+#enditem
+
+#newitem
+#id "serpent_stupid_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent2.png
+#armor
+#offsetx -5
+#offsety 13
+#needs overlay 7
+#define "#mountmnr 'serpent_stupid_cataphract_barding_mount'"
+#theme "specialmount"
+#theme "iron"
+#theme "heavy"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "minprot 14"
+#basechance 3
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "serpent_stupid_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent2.png
+#armor
+#offsetx -5
+#offsety 13
+#needs overlay 7
+#define "#mountmnr 'serpent_stupid_bronze_barding_mount'"
+#theme "specialmount"
+#theme "bronze"
+#theme "heavy"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "minprot 14"
+#basechance 1.5
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "serpent_stupid_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent2.png
+#armor
+#offsetx -5
+#offsety 13
+#needs overlay 7
+#define "#mountmnr 'serpent_stupid_plate_barding_mount'"
+#theme "specialmount"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "minprot 14"
+#basechance 1.5
+#chanceinc prot 18 *2
 #enditem
 
 
 #newitem
-#id "green lizard"
+#id "green_lizard"
 #gameid -1
 #sprite /graphics/mounts/standard/greenlizard.png
 #armor
@@ -53,9 +341,155 @@
 #basechance 10
 #enditem
 
+#newitem
+#id "green_lizard_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#mountmnr 'green_lizard_leather_barding_mount'"
+#theme "specialmount"
+#theme "light"
+#theme "leather"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 10 *2
+#enditem
 
 #newitem
-#id "cave drake"
+#id "green_lizard_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#mountmnr 'green_lizard_light_bronze_barding_mount'"
+#theme "specialmount"
+#theme "light"
+#theme "bronze"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#tag "maxprot 15"
+#basechance 6
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "green_lizard_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#mountmnr 'green_lizard_light_scale_barding_mount'"
+#theme "specialmount"
+#theme "light"
+#theme "iron"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#tag "maxprot 15"
+#basechance 6
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "green_lizard_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#mountmnr 'green_lizard_bronze_mail_barding_mount'"
+#theme "specialmount"
+#theme "bronze"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#basechance 5
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "green_lizard_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#mountmnr 'green_lizard_iron_mail_barding_mount'"
+#theme "specialmount"
+#theme "iron"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#basechance 5
+#chanceinc prot 15 *2
+#enditem
+
+#newitem
+#id "green_lizard_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#mountmnr 'green_lizard_cataphract_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "iron"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#basechance 3
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "green_lizard_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#mountmnr 'green_lizard_bronze_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "bronze"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#basechance 1.5
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "green_lizard_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#mountmnr 'green_lizard_plate_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "iron"
+#theme "advanced"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#basechance 1.5
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "cave_drake"
 #gameid -1
 #sprite /graphics/mounts/standard/cavedrake.png
 #armor
@@ -77,7 +511,7 @@
 ---- Spiders
 
 #newitem
-#id "spider"
+#id "great_spider"
 #gameid -1
 #sprite /graphics/mounts/standard/spider1.png
 #armor
@@ -89,31 +523,14 @@
 #tag "animal spider"
 #tag "guaranteedprefix spider"
 #tag "minprot 0"
-#tag "maxprot 12"
-#basechance 10
-#chanceinc primaryrace "Austral human" *10
-#enditem
-
-#newitem
-#id "spider heavy"
-#gameid -1
-#sprite /graphics/mounts/standard/spider1.png
-#armor
-#offsetx 35
-#offsety 7
-#needs overlay spider_overlay
-#define "#mountmnr 'great_spider_mount'"
-#theme "specialmount"
-#tag "animal spider"
-#tag "guaranteedprefix spider"
-#tag "minprot 13"
+#tag "maxprot 16"
 #basechance 10
 #chanceinc primaryrace "Austral human" *10
 #enditem
 
 
 #newitem
-#id "bigspider"
+#id "hunter_spider"
 #gameid -1
 #sprite /graphics/mounts/standard/bigspider.png
 #armor
@@ -148,23 +565,6 @@
 #tag "name commander boarmaster"
 #tag "minprot 0"
 #tag "maxprot 13"
-#basechance 10
-#enditem
-
-#newitem
-#id "boar heavy"
-#gameid -1
-#sprite /graphics/mounts/standard/boarcavalry.png
-#armor
-#offsetx -4
-#offsety 4
-#define "#mountmnr 'great_boar_mount'"
-#theme "specialmount"
-#tag "animal boar"
-#tag "guaranteedprefix boar"
-#tag "name commander boarmaster"
-#tag "minprot 14"
-#tag "maxprot 20"
 #basechance 10
 #enditem
 
