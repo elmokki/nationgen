@@ -265,7 +265,8 @@ public class Nation {
 
     // Sacred
     for (int i = 0; i < sacredcount; i++) {
-      int power = 1;
+      double sacredPowerModifier = this.nationGen.settings.get(SettingsType.sacredpower) - 1;
+      int power = 1 * sacredPowerModifier;
 
       if (random.nextDouble() < 0.9) {
         power++;
