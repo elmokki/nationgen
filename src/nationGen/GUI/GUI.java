@@ -24,6 +24,7 @@ import javax.swing.text.Document;
 import nationGen.NationGen;
 import nationGen.Settings;
 import nationGen.Settings.SettingsType;
+import nationGen.rostergeneration.statupgradepatterns.StatUpgradePatternEnum;
 
 public class GUI
   extends JFrame
@@ -60,6 +61,7 @@ public class GUI
   JCheckBox hideVanillaNations = new JCheckBox("Hide vanilla nations");
   JSlider eraSlider = new JSlider(JSlider.HORIZONTAL, 1, 3, 2);
   JSlider spowerSlider = new JSlider(JSlider.HORIZONTAL, 1, 3, 1);
+  JSlider upgradePatternSlider = new JSlider(JSlider.HORIZONTAL, 1, 4, 1);
 
   private ReentrantLock pauseLock;
   private NationGen n = null;
@@ -255,13 +257,27 @@ public class GUI
     spowerLabelTable.put(3, new JLabel("Batshit Insane"));
     spowerSlider.setLabelTable(spowerLabelTable);
     spowerSlider.setPaintLabels(true);
-
+    
     updateAdvancedSettings();
-
     spower.add(new JLabel("Sacred Power:"));
     spower.add(spowerSlider);
-
     advoptions.add(spower);
+
+    // Stat upgrade patterns
+    JPanel upgradePattern = new JPanel(new GridLayout(1, 2));
+    upgradePatternSlider.addChangeListener(this);
+    Hashtable<Integer, JLabel> upgradePatternLabelTable = new Hashtable<>();
+    upgradePatternLabelTable.put(StatUpgradePatternEnum.LowerFirstStatUpgradePattern.getNumVal(), new JLabel("Lower first"));
+    upgradePatternLabelTable.put(StatUpgradePatternEnum.BalancedStatUpgradePattern.getNumVal(), new JLabel("Balanced"));
+    upgradePatternLabelTable.put(StatUpgradePatternEnum.RandomStatUpgradePattern.getNumVal(), new JLabel("Random stats"));
+    upgradePatternLabelTable.put(StatUpgradePatternEnum.AnyStatUpgradePattern.getNumVal(), new JLabel("Random setting"));
+    upgradePatternSlider.setLabelTable(upgradePatternLabelTable);
+    upgradePatternSlider.setPaintLabels(true);
+    
+    updateAdvancedSettings();
+    upgradePattern.add(new JLabel("Stat Upgrade Distribution:"));
+    upgradePattern.add(upgradePatternSlider);
+    advoptions.add(upgradePattern);
 
     // Restrictions
     tabs.addTab("Nation restrictions", rpanel);
@@ -289,6 +305,9 @@ public class GUI
     this.spowerSlider.setValue(
         settings.get(SettingsType.sacredpower).intValue()
       );
+    this.upgradePatternSlider.setValue(
+      settings.get(SettingsType.statUpgradePattern).intValue()
+    );
   }
 
   boolean hasRun = false;
@@ -524,6 +543,10 @@ public class GUI
     }
     if (source == this.spowerSlider && spowerSlider.getValueIsAdjusting()) {
       settings.put(SettingsType.sacredpower, spowerSlider.getValue());
+      settingtext.setText(settings.getSettingInteger() + "");
+    }
+    if (source == this.upgradePatternSlider && upgradePatternSlider.getValueIsAdjusting()) {
+      settings.put(SettingsType.statUpgradePattern, upgradePatternSlider.getValue());
       settingtext.setText(settings.getSettingInteger() + "");
     }
   }

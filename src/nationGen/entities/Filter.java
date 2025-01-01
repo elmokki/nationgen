@@ -32,6 +32,10 @@ public class Filter extends Entity {
     return this.commands;
   }
 
+  public double getPower() {
+    return this.power;
+  }
+
   @Override
   public void handleOwnCommand(Command command) {
     try {

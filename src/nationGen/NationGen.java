@@ -3,7 +3,6 @@ package nationGen;
 import com.elmokki.Dom3DB;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.ZonedDateTime;
