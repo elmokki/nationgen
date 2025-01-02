@@ -25,6 +25,7 @@ enum UpgradableStats {
     HP("#hp"),
     ATTACK("#att"),
     DEFENSE("#def"),
+    STRENGTH("#str"),
     PRECISION("#prec"),
     ENCUMBRANCE("#enc"),
     MR("#mr");
@@ -171,6 +172,7 @@ public class StatUpgradeManager {
         StatUpgradeCalculator hpUpgradeCalculator = new StatUpgradeCalculator(defaultHpValue, hpUpgradeAmount, this.statUpgradePattern);
         StatUpgradeCalculator attackUpgradeCalculator = new StatUpgradeCalculator(10, 1, this.statUpgradePattern);
         StatUpgradeCalculator defenseUpgradeCalculator = new StatUpgradeCalculator(10, 1, this.statUpgradePattern);
+        StatUpgradeCalculator strengthUpgradeCalculator = new StatUpgradeCalculator(10, 1, this.statUpgradePattern);
         StatUpgradeCalculator encumbranceUpgradeCalculator = new StatUpgradeCalculator(3, -1, this.statUpgradePattern);
         StatUpgradeCalculator mrUpgradeCalculator = new StatUpgradeCalculator(10, 1, this.statUpgradePattern);
 
@@ -178,6 +180,7 @@ public class StatUpgradeManager {
         statUpgradeCalculators.put(UpgradableStats.HP, hpUpgradeCalculator);
         statUpgradeCalculators.put(UpgradableStats.ATTACK, attackUpgradeCalculator);
         statUpgradeCalculators.put(UpgradableStats.DEFENSE, defenseUpgradeCalculator);
+        statUpgradeCalculators.put(UpgradableStats.STRENGTH, strengthUpgradeCalculator);
         statUpgradeCalculators.put(UpgradableStats.ENCUMBRANCE, encumbranceUpgradeCalculator);
         statUpgradeCalculators.put(UpgradableStats.MR, mrUpgradeCalculator);
 
@@ -218,6 +221,12 @@ public class StatUpgradeManager {
                 else {
                     upgradePrice *= 1.5;
                 }
+            }
+
+            // Strength upgrades should get more and more expensive with each of them.
+            // Don't want markatas with 16 strength because it was the cheapest stat.
+            else if (statKey == UpgradableStats.STRENGTH) {
+                upgradePrice *= statCalculator.upgradeCount + 1;
             }
 
             // If we can afford the price of this stat upgrade, then make a Filter out of it
