@@ -49,6 +49,10 @@ public class SacredGenerator extends TroopGenerator {
   }
 
   private void addEpicness(Unit u, boolean sacred, int power) {
+    // Handle sacred power settings
+    double extrapower = this.nationGen.settings.get(SettingsType.sacredpower) - 1;
+    power = (int) (power + power * extrapower * (1 + random.nextDouble() * 0.5) + extrapower);
+
     int origpower = power;
 
     // Determine stat boost amount
