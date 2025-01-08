@@ -170,13 +170,13 @@
 #enditem
 
 #newitem
-#id "camel_mail_barding_mount"
+#id "camel_iron_mail_barding_mount"
 #gameid -1
 #sprite /graphics/mounts/standard/camel.png
 #armor
 #offsetx 3
 #offsety 63
-#define "#mountmnr 'camel_mail_barding_mount'"
+#define "#mountmnr 'camel_iron_mail_barding_mount'"
 #tag "animal camel"
 #epicness 0.25
 #basechance 4
@@ -265,13 +265,13 @@
 #enditem
 
 #newitem
-#id "moose_mail_barding"
+#id "moose_iron_mail_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/moose.png
 #armor
 #offsetx 30
 #offsety 57
-#define "#mountmnr 'moose_mail_barding_mount'"
+#define "#mountmnr 'moose_iron_mail_barding_mount'"
 #tag "animal moose"
 #tag "guaranteedprefix moose"
 #description "Leaves a moose behind when the rider dies"
@@ -366,11 +366,11 @@
 #enditem
 
 #newitem
-#id "bear_mail_barding"
+#id "bear_iron_mail_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/bear.png
 #armor
-#define "#mountmnr 'bear_mail_barding_mount'"
+#define "#mountmnr 'bear_iron_mail_barding_mount'"
 #define "#gcost +35"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsetx 1

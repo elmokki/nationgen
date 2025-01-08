@@ -552,7 +552,7 @@
 ---- Beasts
 
 #newitem
-#id "boar"
+#id "great_boar"
 #gameid -1
 #sprite /graphics/mounts/standard/boarcavalry.png
 #armor
@@ -563,9 +563,133 @@
 #tag "animal boar"
 #tag "guaranteedprefix boar"
 #tag "name commander boarmaster"
-#tag "minprot 0"
 #tag "maxprot 13"
 #basechance 10
+#enditem
+
+#newitem
+#id "great_boar_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/boarcavalry.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'great_boar_light_bronze_barding_mount'"
+#theme "specialmount"
+#theme "bronze"
+#tag "animal boar"
+#tag "guaranteedprefix boar"
+#tag "name commander boarmaster"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "great_boar_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/boarcavalry.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'great_boar_light_scale_barding_mount'"
+#theme "specialmount"
+#theme "iron"
+#tag "animal boar"
+#tag "guaranteedprefix boar"
+#tag "name commander boarmaster"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "great_boar_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/boarcavalry.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'great_boar_bronze_mail_barding_mount'"
+#theme "specialmount"
+#theme "bronze"
+#tag "animal boar"
+#tag "guaranteedprefix boar"
+#tag "name commander boarmaster"
+#basechance 6
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "great_boar_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/boarcavalry.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'great_boar_iron_mail_barding_mount'"
+#theme "specialmount"
+#theme "iron"
+#tag "animal boar"
+#tag "guaranteedprefix boar"
+#tag "name commander boarmaster"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "great_boar_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/boarcavalry.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'great_boar_cataphract_barding_mount'"
+#theme "specialmount"
+#theme "iron"
+#theme "heavy"
+#tag "animal boar"
+#tag "guaranteedprefix boar"
+#tag "name commander boarmaster"
+#basechance 4
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "great_boar_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/boarcavalry.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'great_boar_bronze_barding_mount'"
+#theme "specialmount"
+#theme "bronze"
+#theme "heavy"
+#tag "animal boar"
+#tag "guaranteedprefix boar"
+#tag "name commander boarmaster"
+#basechance 1.5
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "great_boar_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/boarcavalry.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'great_boar_plate_barding_mount'"
+#theme "specialmount"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal boar"
+#tag "guaranteedprefix boar"
+#tag "name commander boarmaster"
+#basechance 1.5
+#chanceinc prot 18 *2
 #enditem
 
 
@@ -576,20 +700,146 @@
 #armor
 #offsetx -4
 #offsety 4
-#define "#mountmnr 'tiger_mount'"
+#define "#mountmnr 'tiger_mouguaranteedprefix tigernt'"
 #theme "specialmount"
 #theme "light"
 #tag "animal tiger"
 #tag "guaranteedprefix tiger"
-#tag "minprot 0"
 #tag "maxprot 12"
 #basechance 10
 #chanceinc primaryrace Primate *10
 #enditem
 
+#newitem
+#id "tiger_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/tiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'tiger_light_bronze_barding_mount'"
+#theme "specialmount"
+#theme "light"
+#theme "bronze"
+#tag "animal tiger"
+#tag "guaranteedprefix tiger"
+#tag "maxprot 13"
+#basechance 8
+#chanceinc prot 11 *2
+#chanceinc primaryrace Primate *10
+#enditem
 
 #newitem
-#id "black tiger"
+#id "tiger_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/tiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'tiger_light_scale_barding_mount'"
+#theme "specialmount"
+#theme "light"
+#theme "iron"
+#tag "animal tiger"
+#tag "guaranteedprefix tiger"
+#tag "maxprot 13"
+#basechance 8
+#chanceinc prot 12 *2
+#chanceinc primaryrace Primate *10
+#enditem
+
+#newitem
+#id "tiger_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/tiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'tiger_bronze_mail_barding_mount'"
+#theme "specialmount"
+#theme "bronze"
+#tag "animal tiger"
+#tag "guaranteedprefix tiger"
+#basechance 6
+#chanceinc prot 13 *2
+#chanceinc primaryrace Primate *10
+#enditem
+
+#newitem
+#id "tiger_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/tiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'tiger_iron_mail_barding_mount'"
+#theme "specialmount"
+#theme "iron"
+#tag "animal tiger"
+#tag "guaranteedprefix tiger"
+#basechance 6
+#chanceinc prot 14 *2
+#chanceinc primaryrace Primate *10
+#enditem
+
+#newitem
+#id "tiger_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/tiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'tiger_cataphract_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "iron"
+#tag "animal tiger"
+#tag "guaranteedprefix tiger"
+#basechance 3
+#chanceinc prot 16 *2
+#chanceinc primaryrace Primate *10
+#enditem
+
+#newitem
+#id "tiger_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/tiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'tiger_bronze_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "bronze"
+#tag "animal tiger"
+#tag "guaranteedprefix tiger"
+#basechance 1.5
+#chanceinc prot 17 *2
+#chanceinc primaryrace Primate *10
+#enditem
+
+#newitem
+#id "tiger_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/tiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'tiger_plate_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "iron"
+#theme "advanced"
+#tag "animal tiger"
+#tag "guaranteedprefix tiger"
+#basechance 1.5
+#chanceinc prot 18 *2
+#chanceinc primaryrace Primate *10
+#enditem
+
+
+#newitem
+#id "black_tiger"
 #gameid -1
 #sprite /graphics/mounts/standard/blacktiger.png
 #armor
@@ -606,6 +856,152 @@
 #basechance 5
 #enditem
 
+#newitem
+#id "black_tiger_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_tiger_light_bronze_barding_mount'"
+#theme "specialmount"
+#theme "light"
+#theme "bronze"
+#theme "sacred"
+#tag "animal tiger"
+#tag "guaranteedprefix black tiger"
+#tag "maxprot 13"
+#basechance 4
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "black_tiger_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_tiger_light_scale_barding_mount'"
+#theme "specialmount"
+#theme "light"
+#theme "iron"
+#theme "sacred"
+#tag "animal tiger"
+#tag "guaranteedprefix black tiger"
+#tag "maxprot 13"
+#basechance 4
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "black_tiger_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_tiger_bronze_mail_barding_mount'"
+#theme "specialmount"
+#theme "bronze"
+#theme "sacred"
+#tag "animal tiger"
+#tag "guaranteedprefix black tiger"
+#basechance 3
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "black_tiger_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_tiger_iron_mail_barding_mount'"
+#theme "specialmount"
+#theme "iron"
+#theme "sacred"
+#tag "animal tiger"
+#tag "guaranteedprefix black tiger"
+#basechance 3
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "black_tiger_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_tiger_cataphract_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "iron"
+#theme "sacred"
+#tag "animal tiger"
+#tag "guaranteedprefix black tiger"
+#basechance 1.5
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "black_tiger_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_tiger_bronze_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "bronze"
+#theme "sacred"
+#tag "animal tiger"
+#tag "guaranteedprefix black tiger"
+#basechance 0.75
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "black_tiger_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_tiger_plate_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "iron"
+#theme "advanced"
+#theme "sacred"
+#tag "animal tiger"
+#tag "guaranteedprefix black tiger"
+#basechance 0.75
+#chanceinc prot 18 *2
+#enditem
+
+#newitem
+#id "black_tiger_silver_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_tiger_silver_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "iron"
+#theme "advanced"
+#theme "sacred"
+#tag "animal tiger"
+#tag "guaranteedprefix black tiger"
+#basechance 0.5
+#chanceinc prot 18 *2
+#enditem
+
 
 #newitem
 #id "jaguar"
@@ -619,9 +1015,128 @@
 #theme "light"
 #tag "animal jaguar"
 #tag "guaranteedprefix jaguar"
-#tag "minprot 0"
 #tag "maxprot 12"
 #basechance 10
+#enditem
+
+#newitem
+#id "jaguar_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -4
+#offsety 7
+#define "#mountmnr 'jaguar_light_bronze_barding_mount'"
+#theme "specialmount"
+#theme "light"
+#theme "bronze"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#tag "maxprot 13"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "jaguar_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -4
+#offsety 7
+#define "#mountmnr 'jaguar_light_scale_barding_mount'"
+#theme "specialmount"
+#theme "light"
+#theme "iron"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#tag "maxprot 13"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "jaguar_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -4
+#offsety 7
+#define "#mountmnr 'jaguar_bronze_mail_barding_mount'"
+#theme "specialmount"
+#theme "bronze"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#basechance 6
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "jaguar_iron_mail_barding_mount"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -4
+#offsety 7
+#define "#mountmnr 'jaguar_iron_mail_barding_mount'"
+#theme "specialmount"
+#theme "iron"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "jaguar_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -4
+#offsety 7
+#define "#mountmnr 'jaguar_cataphract_barding_mount'"
+#theme "specialmount"
+#theme "iron"
+#theme "heavy"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#basechance 3
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "jaguar_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -4
+#offsety 7
+#define "#mountmnr 'jaguar_bronze_barding_mount'"
+#theme "specialmount"
+#theme "bronze"
+#theme "heavy"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#basechance 1.5
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "jaguar_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -4
+#offsety 7
+#define "#mountmnr 'jaguar_plate_barding_mount'"
+#theme "specialmount"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#basechance 1.5
+#chanceinc prot 18 *2
 #enditem
 
 
@@ -646,9 +1161,112 @@
 #sacredextra 0.5
 #enditem
 
+#newitem
+#id "amphiptere_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/amphiptere.png
+#armor
+#offsetx 23
+#offsety 13
+#needs overlay 13
+#define "#mountmnr 'amphiptere_leather_barding_mount'"
+#theme "specialmount"
+#theme "leather"
+#tag "animal amphiptere"
+#tag "guaranteedprefix amphiptere"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#tag "maxprot 14"
+#basechance 4
+#sacredextra 0.5
+#chanceinc prot 10 *2
+#enditem
 
 #newitem
-#id "cavegrub"
+#id "amphiptere_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/amphiptere.png
+#armor
+#offsetx 23
+#offsety 13
+#needs overlay 13
+#define "#mountmnr 'amphiptere_light_bronze_barding_mount'"
+#theme "specialmount"
+#theme "bronze"
+#tag "animal amphiptere"
+#tag "guaranteedprefix amphiptere"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#tag "maxprot 14"
+#basechance 3
+#sacredextra 0.5
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "amphiptere_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/amphiptere.png
+#armor
+#offsetx 23
+#offsety 13
+#needs overlay 13
+#define "#mountmnr 'amphiptere_light_scale_barding_mount'"
+#theme "specialmount"
+#theme "iron"
+#tag "animal amphiptere"
+#tag "guaranteedprefix amphiptere"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#tag "maxprot 14"
+#basechance 3
+#sacredextra 0.5
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "amphiptere_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/amphiptere.png
+#armor
+#offsetx 23
+#offsety 13
+#needs overlay 13
+#define "#mountmnr 'amphiptere_bronze_mail_barding_mount'"
+#theme "specialmount"
+#theme "bronze"
+#tag "animal amphiptere"
+#tag "guaranteedprefix amphiptere"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#basechance 2
+#sacredextra 0.5
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "amphiptere_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/amphiptere.png
+#armor
+#offsetx 23
+#offsety 13
+#needs overlay 13
+#define "#mountmnr 'amphiptere_iron_mail_barding_mount'"
+#theme "specialmount"
+#theme "iron"
+#tag "animal amphiptere"
+#tag "guaranteedprefix amphiptere"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#basechance 2
+#sacredextra 0.5
+#chanceinc prot 15 *2
+#enditem
+
+
+#newitem
+#id "cave_grub"
 #gameid -1
 #sprite /graphics/mounts/standard/cavegrub.png
 #armor
@@ -663,4 +1281,143 @@
 #basechance 1.25
 #sacredextra 0.5
 #chanceinc primaryrace "Pale One" *80
+#enditem
+
+#newitem
+#id "cave_grub_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavegrub.png
+#armor
+#offsetx 29
+#offsety 14
+#define "#mountmnr 'cave_grub_light_bronze_barding_mount'"
+#theme "bronze"
+#tag "animal 'cave grub'"
+#tag "guaranteedprefix grub"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#tag "maxprot 14"
+#basechance 0.825
+#chanceinc prot 11 *2
+#chanceinc primaryrace "Pale One" *80
+#sacredextra 0.5
+#enditem
+
+#newitem
+#id "cave_grub_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavegrub.png
+#armor
+#offsetx 29
+#offsety 14
+#define "#mountmnr 'cave_grub_light_scale_barding_mount'"
+#theme "iron"
+#tag "animal 'cave grub'"
+#tag "guaranteedprefix grub"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#tag "maxprot 14"
+#basechance 0.825
+#chanceinc prot 12 *2
+#chanceinc primaryrace "Pale One" *80
+#sacredextra 0.5
+#enditem
+
+#newitem
+#id "cave_grub_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavegrub.png
+#armor
+#offsetx 29
+#offsety 14
+#define "#mountmnr 'cave_grub_bronze_mail_barding_mount'"
+#theme "bronze"
+#tag "animal 'cave grub'"
+#tag "guaranteedprefix grub"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#basechance 0.625
+#chanceinc prot 13 *2
+#chanceinc primaryrace "Pale One" *80
+#sacredextra 0.5
+#enditem
+
+#newitem
+#id "cave_grub_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavegrub.png
+#armor
+#offsetx 29
+#offsety 14
+#define "#mountmnr 'cave_grub_iron_mail_barding_mount'"
+#theme "iron"
+#tag "animal 'cave grub'"
+#tag "guaranteedprefix grub"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#basechance 0.625
+#chanceinc prot 14 *2
+#chanceinc primaryrace "Pale One" *80
+#sacredextra 0.5
+#enditem
+
+#newitem
+#id "cave_grub_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavegrub.png
+#armor
+#offsetx 29
+#offsety 14
+#define "#mountmnr 'cave_grub_cataphract_barding_mount'"
+#theme "iron"
+#theme "heavy"
+#tag "animal 'cave grub'"
+#tag "guaranteedprefix grub"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#basechance 0.425
+#chanceinc prot 16 *2
+#chanceinc primaryrace "Pale One" *80
+#sacredextra 0.5
+#enditem
+
+#newitem
+#id "cave_grub_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavegrub.png
+#armor
+#offsetx 29
+#offsety 14
+#define "#mountmnr 'cave_grub_bronze_barding_mount'"
+#theme "bronze"
+#theme "heavy"
+#tag "animal 'cave grub'"
+#tag "guaranteedprefix grub"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#basechance 0.3
+#chanceinc prot 17 *2
+#chanceinc primaryrace "Pale One" *80
+#sacredextra 0.5
+#enditem
+
+#newitem
+#id "cave_grub_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavegrub.png
+#armor
+#offsetx 29
+#offsety 14
+#define "#mountmnr 'cave_grub_plate_barding_mount'"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal 'cave grub'"
+#tag "guaranteedprefix grub"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#basechance 0.3
+#chanceinc prot 18 *2
+#chanceinc primaryrace "Pale One" *80
+#sacredextra 0.5
 #enditem

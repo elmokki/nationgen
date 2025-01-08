@@ -71,7 +71,7 @@
 #armor
 #offsety 1
 #needs overlay 1
-#define "#mountmnr 'riding_horse_mail_barding_mount'"
+#define "#mountmnr 'riding_horse_bronze_mail_barding_mount'"
 #theme "bronze"
 #tag "animal horse"
 #epicness 0.25
@@ -86,7 +86,7 @@
 #armor
 #offsety 1
 #needs overlay 1
-#define "#mountmnr 'riding_horse_mail_barding_mount'"
+#define "#mountmnr 'riding_horse_iron_mail_barding_mount'"
 #theme "iron"
 #tag "animal horse"
 #epicness 0.25
@@ -312,14 +312,14 @@
 #enditem
 
 #newitem
-#id "pegasus_mail_barding"
+#id "pegasus_iron_mail_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/pegasus.png
 #armor
 #offsetx 28
 #offsety 64
 #needs overlay 8
-#define "#mountmnr 'pegasus_mail_barding_mount'"
+#define "#mountmnr 'pegasus_iron_mail_barding_mount'"
 #theme "flying"
 #theme "iron"
 #tag "animal pegasus"
@@ -792,7 +792,7 @@
 #armor
 #offsetx -2
 #offsety 2
-#define "#mountmnr 'elk_mail_barding_mount'"
+#define "#mountmnr 'elk_iron_mail_barding_mount'"
 #description "Leaves an elk behind when the rider dies"
 #theme "bronze"
 #tag "animal elk"
@@ -810,7 +810,7 @@
 #armor
 #offsetx -2
 #offsety 2
-#define "#mountmnr 'elk_mail_barding'"
+#define "#mountmnr 'elk_iron_mail_barding'"
 #description "Leaves an elk behind when the rider dies"
 #theme "iron"
 #tag "animal elk"

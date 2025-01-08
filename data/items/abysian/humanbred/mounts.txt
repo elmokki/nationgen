@@ -38,14 +38,14 @@
 #enditem
 
 #newitem
-#id "scorpion_beast_mail_barding"
+#id "scorpion_beast_iron_mail_barding"
 #gameid -1
 #sprite /graphics/abysian/mounts/scorpion.png
 #armor
 #offsetx 23
 #offsety 6
 #needs overlay scorpion_overlay
-#define "#mountmnr 'scorpion_beast_mail_barding_mount'"
+#define "#mountmnr 'scorpion_beast_iron_mail_barding_mount'"
 #tag "animal scorpion"
 #theme "heavy"
 #description "Leaves a giant scorpion behind when the rider dies"
@@ -332,11 +332,11 @@
 #enditem
 
 #newitem
-#id "lion_mail_barding"
+#id "lion_iron_mail_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/lion.png
 #armor
-#define "#mountmnr 'lion_mail_barding_mount'"
+#define "#mountmnr 'lion_iron_mail_barding_mount'"
 #description "If the rider dies, the lion will carry on fighting until the end of the battle."
 #offsety 5
 #offsetx -1
@@ -421,12 +421,12 @@
 #enditem
 
 #newitem
-#id "dire_wolf_mail_barding"
+#id "dire_wolf_iron_mail_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/direwolf1.png
 #armor
 #needs overlay direwolf1_overlay
-#define "#mountmnr 'dire_wolf_mail_barding_mount_1'"
+#define "#mountmnr 'dire_wolf_iron_mail_barding_mount_1'"
 #define "#gcost +25"
 #tag "animal wolf"
 #theme "heavy"
@@ -799,14 +799,14 @@
 #enditem
 
 #newitem
-#id "camel_mail_barding"
+#id "camel_iron_mail_barding_mount"
 #gameid -1
 #sprite /graphics/mounts/standard/camel_armored_iron.png
 #recolormask /graphics/mounts/standard/camel_armored_recolormask.png
 #armor
 #offsetx 5
 #offsety 52
-#define "#mountmnr 'camel_mail_barding_mount'"
+#define "#mountmnr 'camel_iron_mail_barding_mount'"
 #tag "animal camel"
 #theme "heavy"
 #tag "minprot 12"
