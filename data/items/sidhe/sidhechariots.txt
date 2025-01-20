@@ -1,6 +1,8 @@
---- Base offsets are applied to everything except base and overlay
+------ Base offsets are applied to everything except base and overlay
+
+
 #newitem
-#id "horse chariot"
+#id "fay_horse_chariot"
 #gameid -1
 #sprite /graphics/sidhe/mounts/chariot_horse.png
 #armor
@@ -9,13 +11,176 @@
 #offsety -8
 #define "#mountmnr 'fay_horse_chariot'"
 #tag "chariot"
+#tag "animal 'horse'"
 #tag "minprot 10"
 #tag "maxprot 15"
-#tag "animal 'horse'"
+#basechance 10
 #enditem
 
 #newitem
-#id "unicorn chariot"
+#id "fay_horse_leather_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_horse.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'fay_horse_leather_barding_chariot'"
+#theme "leather"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 9
+#enditem
+
+#newitem
+#id "fay_horse_light_bronze_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_horse.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'fay_horse_light_bronze_barding_chariot'"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "fay_horse_light_scale_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_horse.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'fay_horse_light_scale_barding_chariot'"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "fay_horse_bronze_mail_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_horse.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'fay_horse_bronze_mail_barding_chariot'"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "fay_horse_iron_mail_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_horse.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'fay_horse_iron_mail_barding_chariot'"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "fay_horse_cataphract_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_horse.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'fay_horse_cataphract_barding_chariot'"
+#theme "iron"
+#theme "heavy"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#basechance 4
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "fay_horse_bronze_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_horse.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'fay_horse_bronze_barding_chariot'"
+#theme "bronze"
+#theme "heavy"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#basechance 3
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "fay_horse_plate_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_horse.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'fay_horse_plate_barding_chariot'"
+#theme "iron"
+#theme "heavy"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#basechance 2.5
+#chanceinc prot 18 *2
+#enditem
+
+#newitem
+#id "fay_horse_golden_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_horse.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'fay_horse_golden_barding_chariot'"
+#theme "advanced"
+#theme "heavy"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#basechance 1
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "unicorn_chariot"
 #gameid -1
 #sprite /graphics/sidhe/mounts/chariot_unicorn.png
 #armor
@@ -24,13 +189,177 @@
 #offsety -8
 #define "#mountmnr 'unicorn_chariot'"
 #tag "chariot"
+#tag "animal 'unicorn'"
 #tag "minprot 10"
 #tag "maxprot 15"
-#tag "animal 'unicorn'"
+#basechance 10
+#chanceinc prot 18 *2
 #enditem
 
 #newitem
-#id "cusidhe chariot"
+#id "unicorn_leather_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_unicorn.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'unicorn_leather_barding_chariot'"
+#theme "leather"
+#tag "chariot"
+#tag "animal 'unicorn'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 9
+#enditem
+
+#newitem
+#id "unicorn_light_bronze_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_unicorn.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'unicorn_light_bronze_barding_chariot'"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'unicorn'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "unicorn_light_scale_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_unicorn.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'unicorn_light_scale_barding_chariot'"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'unicorn'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "unicorn_bronze_mail_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_unicorn.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'unicorn_bronze_mail_barding_chariot'"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'unicorn'"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "unicorn_iron_mail_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_unicorn.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'unicorn_iron_mail_barding_chariot'"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'unicorn'"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "unicorn_cataphract_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_unicorn.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'unicorn_cataphract_barding_chariot'"
+#theme "iron"
+#theme "heavy"
+#tag "chariot"
+#tag "animal 'unicorn'"
+#tag "minprot 10"
+#basechance 4
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "unicorn_bronze_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_unicorn.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'unicorn_bronze_barding_chariot'"
+#theme "bronze"
+#theme "heavy"
+#tag "chariot"
+#tag "animal 'unicorn'"
+#tag "minprot 10"
+#basechance 3
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "unicorn_plate_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_unicorn.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'unicorn_plate_barding_chariot'"
+#theme "iron"
+#theme "heavy"
+#tag "chariot"
+#tag "animal 'unicorn'"
+#tag "minprot 10"
+#basechance 2.5
+#chanceinc prot 18 *2
+#enditem
+
+#newitem
+#id "unicorn_golden_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_unicorn.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'unicorn_golden_barding_chariot'"
+#theme "advanced"
+#theme "heavy"
+#tag "chariot"
+#tag "animal 'unicorn'"
+#tag "minprot 10"
+#basechance 1
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "cu_sidhe_chariot"
 #gameid -1
 #sprite /graphics/sidhe/mounts/chariot_cusidhe.png
 #armor
@@ -39,13 +368,176 @@
 #offsety -8
 #define "#mountmnr 'cu_sidhe_chariot'"
 #tag "chariot"
+#tag "animal 'dog'"
 #tag "minprot 10"
 #tag "maxprot 14"
-#tag "animal 'dog'"
+#basechance 10
 #enditem
 
 #newitem
-#id "swan chariot"
+#id "cu_sidhe_leather_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_cusidhe.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'cu_sidhe_leather_barding_chariot'"
+#theme "leather"
+#tag "chariot"
+#tag "animal 'dog'"
+#tag "minprot 10"
+#tag "maxprot 14"
+#basechance 9
+#enditem
+
+#newitem
+#id "cu_sidhe_light_bronze_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_cusidhe.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'cu_sidhe_light_bronze_barding_chariot'"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'dog'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "cu_sidhe_light_scale_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_cusidhe.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'cu_sidhe_light_scale_barding_chariot'"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'dog'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "cu_sidhe_bronze_mail_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_cusidhe.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'cu_sidhe_bronze_mail_barding_chariot'"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'dog'"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "cu_sidhe_iron_mail_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_cusidhe.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'cu_sidhe_iron_mail_barding_chariot'"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'dog'"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "cu_sidhe_cataphract_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_cusidhe.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'cu_sidhe_cataphract_barding_chariot'"
+#theme "iron"
+#theme "heavy"
+#tag "chariot"
+#tag "animal 'dog'"
+#tag "minprot 10"
+#basechance 4
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "cu_sidhe_bronze_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_cusidhe.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'cu_sidhe_bronze_barding_chariot'"
+#theme "bronze"
+#theme "heavy"
+#tag "chariot"
+#tag "animal 'dog'"
+#tag "minprot 10"
+#basechance 3
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "cu_sidhe_plate_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_cusidhe.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'cu_sidhe_plate_barding_chariot'"
+#theme "iron"
+#theme "heavy"
+#tag "chariot"
+#tag "animal 'dog'"
+#tag "minprot 10"
+#basechance 2.5
+#chanceinc prot 18 *2
+#enditem
+
+#newitem
+#id "cu_sidhe_golden_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_cusidhe.png
+#armor
+#needs overlay 11
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'cu_sidhe_golden_barding_chariot'"
+#theme "advanced"
+#theme "heavy"
+#tag "chariot"
+#tag "animal 'dog'"
+#tag "minprot 10"
+#basechance 1
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "giant_swan_chariot"
 #gameid -1
 #sprite /graphics/sidhe/mounts/chariot_swan.png
 #armor
@@ -54,7 +546,170 @@
 #offsety -8
 #define "#mountmnr 'giant_swan_chariot'"
 #tag "chariot"
+#tag "animal 'swan'"
 #tag "minprot 6"
 #tag "maxprot 12"
+#basechance 10
+#enditem
+
+#newitem
+#id "giant_swan_leather_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_swan.png
+#armor
+#needs overlay chariot_swan_overlay
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'giant_swan_leather_barding_chariot'"
+#theme "leather"
+#tag "chariot"
 #tag "animal 'swan'"
+#tag "minprot 6"
+#tag "maxprot 14"
+#basechance 9
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "giant_swan_light_bronze_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_swan.png
+#armor
+#needs overlay chariot_swan_overlay
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'giant_swan_light_bronze_barding_chariot'"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'swan'"
+#tag "minprot 6"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "giant_swan_light_scale_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_swan.png
+#armor
+#needs overlay chariot_swan_overlay
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'giant_swan_light_scale_barding_chariot'"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'swan'"
+#tag "minprot 6"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "giant_swan_bronze_mail_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_swan.png
+#armor
+#needs overlay chariot_swan_overlay
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'giant_swan_bronze_mail_barding_chariot'"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'swan'"
+#tag "minprot 6"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "giant_swan_iron_mail_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_swan.png
+#armor
+#needs overlay chariot_swan_overlay
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'giant_swan_iron_mail_barding_chariot'"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'swan'"
+#tag "minprot 6"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "giant_swan_cataphract_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_swan.png
+#armor
+#needs overlay chariot_swan_overlay
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'giant_swan_cataphract_barding_chariot'"
+#theme "iron"
+#theme "heavy"
+#tag "chariot"
+#tag "animal 'swan'"
+#tag "minprot 6"
+#basechance 4
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "giant_swan_bronze_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_swan.png
+#armor
+#needs overlay chariot_swan_overlay
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'giant_swan_bronze_barding_chariot'"
+#theme "bronze"
+#theme "heavy"
+#tag "chariot"
+#tag "animal 'swan'"
+#tag "minprot 6"
+#basechance 3
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "giant_swan_plate_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_swan.png
+#armor
+#needs overlay chariot_swan_overlay
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'giant_swan_plate_barding_chariot'"
+#theme "iron"
+#theme "heavy"
+#tag "chariot"
+#tag "animal 'swan'"
+#tag "minprot 6"
+#basechance 2.5
+#chanceinc prot 18 *2
+#enditem
+
+#newitem
+#id "giant_swan_golden_barding_chariot"
+#gameid -1
+#sprite /graphics/sidhe/mounts/chariot_swan.png
+#armor
+#needs overlay chariot_swan_overlay
+#offsetx 55
+#offsety -8
+#define "#mountmnr 'giant_swan_golden_barding_chariot'"
+#theme "advanced"
+#theme "heavy"
+#tag "chariot"
+#tag "animal 'swan'"
+#tag "minprot 6"
+#basechance 1
+#chanceinc prot 18 *2
 #enditem

@@ -5,37 +5,167 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/wolf.png
 #armor
+#offsety -7
+#offsetx -5
+#description "If the rider dies, the wolf will continue to fight alongside its Vaetti companions."
 #define "#mountmnr 'wolf_mount'"
-#tag "animal wolf"
 #theme "wolf"
 #theme "wolftotem"
 #theme "totemanimal"
-#tag "maxprot 14"
+#tag "animal wolf"
 #tag "guaranteedprefix wolf"
-#description "If the rider dies, the wolf will continue to fight alongside its Vaetti companions."
-#offsety -7
-#offsetx -5
+#tag "maxprot 14"
+#basechance 10
+#chanceinc prot 14 *2
 #enditem
 
 #newitem
-#id "dire wolf"
+#id "wolf_leather_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/wolf.png
+#armor
+#offsety -7
+#offsetx -5
+#description "If the rider dies, the wolf will continue to fight alongside its Vaetti companions."
+#define "#mountmnr 'wolf_leather_barding_mount'"
+#theme "wolf"
+#theme "wolftotem"
+#theme "totemanimal"
+#theme "leather"
+#tag "animal wolf"
+#tag "guaranteedprefix wolf"
+#tag "maxprot 14"
+#basechance 9
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "wolf_light_scale_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/wolf.png
+#armor
+#offsety -7
+#offsetx -5
+#description "If the rider dies, the wolf will continue to fight alongside its Vaetti companions."
+#define "#mountmnr 'wolf_light_scale_barding_mount'"
+#theme "wolf"
+#theme "wolftotem"
+#theme "totemanimal"
+#theme "iron"
+#tag "animal wolf"
+#tag "guaranteedprefix wolf"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "wolf_iron_mail_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/wolf.png
+#armor
+#offsety -7
+#offsetx -5
+#description "If the rider dies, the wolf will continue to fight alongside its Vaetti companions."
+#define "#mountmnr 'wolf_iron_mail_barding_mount'"
+#theme "wolf"
+#theme "wolftotem"
+#theme "totemanimal"
+#theme "iron"
+#tag "animal wolf"
+#tag "guaranteedprefix wolf"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+
+#newitem
+#id "dire_wolf_vaetti"
 #gameid -1
 #sprite /graphics/mounts/standard/direwolf2.png
 #armor
+#offsety -20
+#offsetx -3
 #needs overlay direwolf2_overlay
+#description "If the rider dies, the wolf will continue to fight alongside its Vaetti companions."
 #define "#mountmnr 'dire_wolf_vaetti_mount'"
-#theme "heavy"
 #theme "wolf"
 #theme "wolftotem"
 #theme "totemanimal"
 #tag "animal wolf"
-#tag "minprot 8"
-#tag "maxprot 18"
 #tag "guaranteedprefix wolf"
-#description "If the rider dies, the wolf will continue to fight alongside its Vaetti companions."
+#tag "minprot 8"
+#tag "maxprot 14"
+#basechance 10
+#enditem
+
+#newitem
+#id "dire_wolf_vaetti_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf2.png
+#armor
 #offsety -20
 #offsetx -3
+#needs overlay direwolf2_overlay
+#description "If the rider dies, the wolf will continue to fight alongside its Vaetti companions."
+#define "#mountmnr 'dire_wolf_vaetti_leather_barding_mount'"
+#theme "wolf"
+#theme "wolftotem"
+#theme "totemanimal"
+#theme "leather"
+#tag "animal wolf"
+#tag "guaranteedprefix wolf"
+#tag "minprot 8"
+#tag "maxprot 15"
+#basechance 10
+#chanceinc prot 10 *2
 #enditem
+
+#newitem
+#id "dire_wolf_vaetti_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf2.png
+#armor
+#offsety -20
+#offsetx -3
+#needs overlay direwolf2_overlay
+#description "If the rider dies, the wolf will continue to fight alongside its Vaetti companions."
+#define "#mountmnr 'dire_wolf_vaetti_light_scale_barding_mount'"
+#theme "wolf"
+#theme "wolftotem"
+#theme "totemanimal"
+#theme "iron"
+#tag "animal wolf"
+#tag "guaranteedprefix wolf"
+#tag "minprot 8"
+#tag "maxprot 15"
+#basechance 10
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "dire_wolf_vaetti_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf2.png
+#armor
+#offsety -20
+#offsetx -3
+#needs overlay direwolf2_overlay
+#description "If the rider dies, the wolf will continue to fight alongside its Vaetti companions."
+#define "#mountmnr 'dire_wolf_vaetti_iron_mail_barding_mount'"
+#theme "wolf"
+#theme "wolftotem"
+#theme "totemanimal"
+#theme "iron"
+#tag "animal wolf"
+#tag "guaranteedprefix wolf"
+#tag "minprot 8"
+#tag "maxprot 18"
+#basechance 10
+#chanceinc prot 14 *2
+#enditem
+
 
 #newitem
 #id "boar"
@@ -45,7 +175,6 @@
 #offsetx -2
 #offsety -18
 #define "#mountmnr 'great_boar_mount'"
-#theme "heavy"
 #theme "boar"
 #theme "boartotem"
 #theme "totemanimal"
@@ -57,64 +186,271 @@
 #enditem
 
 #newitem
+#id "great_boar"
+#gameid -1
+#sprite /graphics/mounts/standard/boarcavalry.png
+#armor
+#offsetx -2
+#offsety -18
+#define "#mountmnr 'great_boar_mount'"
+#theme "boar"
+#theme "boartotem"
+#theme "totemanimal"
+#tag "animal boar"
+#tag "guaranteedprefix boar"
+#tag "name commander boarmaster"
+#tag "maxprot 13"
+#basechance 10
+#enditem
+
+#newitem
+#id "great_boar_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/boarcavalry.png
+#armor
+#offsetx -2
+#offsety -18
+#define "#mountmnr 'great_boar_light_scale_barding_mount'"
+#theme "boar"
+#theme "boartotem"
+#theme "totemanimal"
+#theme "iron"
+#tag "animal boar"
+#tag "guaranteedprefix boar"
+#tag "name commander boarmaster"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "great_boar_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/boarcavalry.png
+#armor
+#offsetx -2
+#offsety -18
+#define "#mountmnr 'great_boar_iron_mail_barding_mount'"
+#theme "boar"
+#theme "boartotem"
+#theme "totemanimal"
+#theme "iron"
+#tag "animal boar"
+#tag "guaranteedprefix boar"
+#tag "name commander boarmaster"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+
+#newitem
 #id "elk"
-#basechance 0.25
 #gameid -1
 #sprite /graphics/mounts/standard/elk.png
 #needs overlay elk_overlay
 #armor
+#offsety -20
+#offsetx 0
+#description "Leaves an elk behind when the rider dies"
 #define "#mountmnr 'elk_mount'"
+#define "#stealthy +0"
+#theme "deer"
+#theme "deertotem"
+#theme "totemanimal"
 #tag "animal elk"
+#tag "guaranteedprefix elk"
+#tag "maxprot 14"
+#basechance 2.5
+#enditem
+
+#newitem
+#id "elk_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/elk.png
+#needs overlay elk_overlay
+#armor
+#offsety -20
+#offsetx 0
+#description "Leaves an elk behind when the rider dies"
+#define "#mountmnr 'elk_light_scale_barding_mount'"
+#define "#stealthy +0"
+#theme "deer"
+#theme "deertotem"
+#theme "totemanimal"
+#theme "iron"
+#tag "animal elk"
+#tag "guaranteedprefix elk"
+#tag "maxprot 14"
+#basechance 2
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "elk_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/elk.png
+#needs overlay elk_overlay
+#armor
+#offsety -20
+#offsetx 0
+#description "Leaves an elk behind when the rider dies"
+#define "#mountmnr 'elk_iron_mail_barding_mount'"
+#define "#stealthy +0"
 #theme "heavy"
 #theme "deer"
 #theme "deertotem"
 #theme "totemanimal"
-#tag "minprot 8"
-#tag "maxprot 18"
+#theme "iron"
+#tag "animal elk"
 #tag "guaranteedprefix elk"
-#define "#stealthy +0"
-#description "Leaves an elk behind when the rider dies"
-#offsety -20
-#offsetx 0
+#basechance 1.5
+#chanceinc prot 14 *2
 #enditem
+
 
 #newitem
 #id "deer"
 #gameid -1
 #sprite /graphics/hoburg/mounts/deer.png
 #armor
+#offsety -13
+#offsetx -1
 #define "#mountmnr 'deer_mount'"
-#tag "animal deer"
+#define "#stealthy +0"
 #theme "deer"
 #theme "deertotem"
 #theme "totemanimal"
-#tag "maxprot 14"
+#tag "animal deer"
 #tag "guaranteedprefix deer"
-#define "#stealthy +0"
+#tag "maxprot 14"
+#basechance 10
+#enditem
+
+#newitem
+#id "deer_leather_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/deer.png
+#armor
 #offsety -13
 #offsetx -1
+#define "#mountmnr 'deer_leather_barding_mount'"
+#define "#stealthy +0"
+#theme "deer"
+#theme "deertotem"
+#theme "totemanimal"
+#theme "leather"
+#tag "animal deer"
+#tag "guaranteedprefix deer"
+#tag "maxprot 14"
+#basechance 9
+#chanceinc prot 10 *2
 #enditem
+
+#newitem
+#id "deer_light_scale_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/deer.png
+#armor
+#offsety -13
+#offsetx -1
+#define "#mountmnr 'deer_light_scale_barding_mount'"
+#define "#stealthy +0"
+#theme "deer"
+#theme "deertotem"
+#theme "totemanimal"
+#theme "iron"
+#tag "animal deer"
+#tag "guaranteedprefix deer"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "deer_iron_mail_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/deer.png
+#armor
+#offsety -13
+#offsetx -1
+#define "#mountmnr 'deer_iron_mail_barding_mount'"
+#define "#stealthy +0"
+#theme "deer"
+#theme "deertotem"
+#theme "totemanimal"
+#theme "iron"
+#tag "animal deer"
+#tag "guaranteedprefix deer"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
 
 #newitem
 #id "hawk"
 #gameid -1
 #sprite /graphics/hoburg/mounts/hawk.png
 #armor
+#offsety 30
+#offsetx 25
 #needs overlay hawkoverlay
 #define "#mountmnr 'great_hawk_mount'"
 #theme "specialmount"
-#tag "animal hawk"
 #theme "hawk"
 #theme "hawktotem"
 #theme "totemanimal"
+#tag "animal hawk"
 #tag "maxprot 14"
 #tag "guaranteedprefix hawk"
-#offsety 30
-#offsetx 25
+#basechance 10
 #enditem
 
 #newitem
-#id "forest spider"
+#id "great_hawk_leather_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/hawk.png
+#armor
+#offsety 30
+#offsetx 25
+#needs overlay hawkoverlay
+#define "#mountmnr 'great_hawk_leather_barding_mount'"
+#theme "specialmount"
+#theme "hawk"
+#theme "hawktotem"
+#theme "totemanimal"
+#theme "leather"
+#tag "animal hawk"
+#tag "maxprot 14"
+#tag "guaranteedprefix hawk"
+#basechance 9
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "great_hawk_light_scale_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/hawk.png
+#armor
+#offsety 30
+#offsetx 25
+#needs overlay hawkoverlay
+#define "#mountmnr 'great_hawk_light_scale_barding_mount'"
+#theme "specialmount"
+#theme "hawk"
+#theme "hawktotem"
+#theme "totemanimal"
+#theme "iron"
+#tag "animal hawk"
+#tag "maxprot 15"
+#tag "guaranteedprefix hawk"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+
+#newitem
+#id "forest_spider"
 #gameid -1
 #sprite /graphics/mounts/standard/spider2.png
 #armor
@@ -123,114 +459,372 @@
 #needs overlay spider2_overlay
 #define "#mountmnr 'forest_spider_mount'"
 #description "If the rider dies, the spider will carry on fighting until the end of the battle."
-#theme "specialmount"
-#tag "animal spider"
+#define "#gcost -5"
 #theme "spider"
 #theme "spidertotem"
 #theme "totemanimal"
+#tag "animal spider"
 #tag "guaranteedprefix spider"
 #tag "maxprot 14"
-#basechance 0.5
+#basechance 10
 #enditem
 
 #newitem
-#id "great bear"
+#id "forest_spider_leather_barding_spider"
+#gameid -1
+#sprite /graphics/mounts/standard/spider2.png
+#armor
+#offsetx 3
+#offsety -2
+#needs overlay spider2_overlay
+#define "#mountmnr 'forest_spider_leather_barding_spider_mount'"
+#description "If the rider dies, the spider will carry on fighting until the end of the battle."
+#define "#gcost -5"
+#theme "spider"
+#theme "spidertotem"
+#theme "totemanimal"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "maxprot 14"
+#basechance 9
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "forest_spider_light_scale_spider"
+#gameid -1
+#sprite /graphics/mounts/standard/spider2.png
+#armor
+#offsetx 3
+#offsety -2
+#needs overlay spider2_overlay
+#define "#mountmnr 'forest_spider_light_scale_spider_mount'"
+#description "If the rider dies, the spider will carry on fighting until the end of the battle."
+#define "#gcost -5"
+#theme "spider"
+#theme "spidertotem"
+#theme "totemanimal"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "maxprot 16"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "forest_spider_iron_mail_barding_spider"
+#gameid -1
+#sprite /graphics/mounts/standard/spider2.png
+#armor
+#offsetx 3
+#offsety -2
+#needs overlay spider2_overlay
+#define "#mountmnr 'forest_spider_iron_mail_barding_spider_mount'"
+#description "If the rider dies, the spider will carry on fighting until the end of the battle."
+#define "#gcost -5"
+#theme "spider"
+#theme "spidertotem"
+#theme "totemanimal"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+
+#newitem
+#id "great_bear"
 #gameid -1
 #sprite /graphics/mounts/standard/bear.png
 #armor
-#define "#mountmnr 'great_bear_mount'"
 #offsety -24
 #offsetx -1
-#theme "specialmount"
-#theme "heavy"
-#tag "animal bear"
+#define "#mountmnr 'great_bear_mount'"
 #theme "bear"
 #theme "beartotem"
 #theme "totemanimal"
+#tag "animal bear"
 #tag "name commander beastmaster"
 #tag "guaranteedprefix bear"
 #tag "minprot 10"
-#basechance 0.5
+#basechance 10
 #enditem
+
+#newitem
+#id "great_bear_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear.png
+#armor
+#offsety -24
+#offsetx -1
+#define "#mountmnr 'great_bear_light_scale_barding_mount'"
+#theme "bear"
+#theme "beartotem"
+#theme "totemanimal"
+#theme "iron"
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#basechance 8
+#enditem
+
+#newitem
+#id "great_bear_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear.png
+#armor
+#offsety -24
+#offsetx -1
+#define "#mountmnr 'great_bear_iron_mail_barding_mount'"
+#theme "bear"
+#theme "beartotem"
+#theme "totemanimal"
+#theme "iron"
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
 
 #newitem
 #id "bear"
 #gameid -1
 #sprite /graphics/mounts/standard/bear_small.png
 #armor
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #define "#mountmnr 'bear_mount'"
-#description "If the rider dies, the bear will continue to fight alongside its Vaetti companions."
 #offsety -16
 #offsetx -1
-#theme "specialmount"
-#theme "heavy"
-#tag "animal bear"
 #theme "bear"
 #theme "beartotem"
 #theme "totemanimal"
+#tag "animal bear"
 #tag "name commander beastmaster"
 #tag "guaranteedprefix bear"
 #tag "minprot 8"
+#basechance 10
 #enditem
 
 #newitem
-#id "tiger"
+#id "bear_light_scale_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/tiger.png
+#sprite /graphics/mounts/standard/bear_small.png
+#armor
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#define "#mountmnr 'bear_light_scale_barding_mount'"
+#offsety -16
+#offsetx -1
+#theme "bear"
+#theme "beartotem"
+#theme "totemanimal"
+#theme "iron"
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 8"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "bear_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_small.png
+#armor
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#define "#mountmnr 'bear_iron_mail_barding_mount'"
+#offsety -16
+#offsetx -1
+#theme "bear"
+#theme "beartotem"
+#theme "totemanimal"
+#theme "iron"
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 8"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+
+#newitem
+#id "white_tiger"
+#gameid -1
+#sprite /graphics/mounts/standard/whitetiger.png
 #armor
 #offsetx -2
 #offsety -18
-#define "#mountmnr 'tiger_mount'"
-#theme "specialmount"
-#theme "heavy"
+#define "#mountmnr 'white_tiger_mount'"
 #theme "tiger"
 #theme "tigertotem"
 #theme "totemanimal"
 #tag "animal tiger"
-#description "If the rider dies, the tiger will carry on fighting until the end of the battle."
-#tag "guaranteedprefix tiger"
-#chanceinc primaryrace Primate *10
-#basechance 0.5
-#tag "minprot 8"
-#tag "maxprot 18"
+#tag "guaranteedprefix white tiger"
+#tag "maxprot 12"
+#basechance 5
 #enditem
+
+#newitem
+#id "white_tiger_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/whitetiger.png
+#armor
+#offsetx -2
+#offsety -18
+#define "#mountmnr 'white_tiger_light_scale_barding_mount'"
+#theme "tiger"
+#theme "tigertotem"
+#theme "totemanimal"
+#theme "light"
+#theme "iron"
+#tag "animal tiger"
+#tag "guaranteedprefix white tiger"
+#tag "maxprot 15"
+#basechance 4
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "white_tiger_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/whitetiger.png
+#armor
+#offsetx -2
+#offsety -18
+#define "#mountmnr 'white_tiger_iron_mail_barding_mount'"
+#theme "tiger"
+#theme "tigertotem"
+#theme "totemanimal"
+#theme "iron"
+#tag "animal tiger"
+#tag "guaranteedprefix white tiger"
+#tag "maxprot 18"
+#basechance 3
+#chanceinc prot 14 *2
+#enditem
+
 
 #newitem
 #id "lion"
 #gameid -1
 #sprite /graphics/mounts/standard/lion_asian.png
 #armor
-#define "#mountmnr 'lion_mount'"
-#description "If the rider dies, the lion will carry on fighting until the end of the battle."
 #offsetx 2
 #offsety -16
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#define "#mountmnr 'lion_mount'"
 #theme "specialmount"
-#theme "heavy"
-#tag "animal lion"
 #theme "lion"
 #theme "liontotem"
 #theme "totemanimal"
+#tag "animal lion"
 #tag "guaranteedprefix lion"
-#basechance 0.5
 #tag "minprot 8"
-#tag "maxprot 18"
+#basechance 5
 #enditem
 
 #newitem
-#id "giant rat"
+#id "lion_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/lion_asian.png
+#armor
+#offsetx 2
+#offsety -16
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#define "#mountmnr 'lion_light_scale_barding_mount'"
+#theme "specialmount"
+#theme "lion"
+#theme "liontotem"
+#theme "totemanimal"
+#theme "iron"
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#tag "minprot 8"
+#basechance 4
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "lion_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/lion_asian.png
+#armor
+#offsetx 2
+#offsety -16
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#define "#mountmnr 'lion_iron_mail_barding_mount'"
+#theme "specialmount"
+#theme "lion"
+#theme "liontotem"
+#theme "totemanimal"
+#theme "iron"
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#tag "minprot 8"
+#basechance 3
+#chanceinc prot 14 *2
+#enditem
+
+
+#newitem
+#id "giant_rat"
 #gameid -1
 #sprite /graphics/mounts/standard/giantrat.png
 #armor
+#offsetx 3
+#offsety -11
 #define "#mountmnr 'giant_rat_mount'"
-#tag "animal rat"
+#description "If the rider dies, the rat will carry on fighting until the end of the battle."
 #theme "rat"
 #theme "rattotem"
 #theme "totemanimal"
-#tag "minprot 8"
-#tag "maxprot 18"
+#tag "animal rat"
 #tag "guaranteedprefix rat"
-#description "If the rider dies, the rat will carry on fighting until the end of the battle."
-#basechance 1
+#tag "minprot 8"
+#basechance 10
+#enditem
+
+#newitem
+#id "giant_rat_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/giantrat.png
+#armor
 #offsetx 3
 #offsety -11
+#define "#mountmnr 'giant_rat_light_scale_barding_mount'"
+#description "If the rider dies, the rat will carry on fighting until the end of the battle."
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#theme "iron"
+#tag "animal rat"
+#tag "guaranteedprefix rat"
+#tag "minprot 8"
+#basechance 6
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "giant_rat_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/giantrat.png
+#armor
+#offsetx 3
+#offsety -11
+#define "#mountmnr 'giant_rat_iron_mail_barding_mount'"
+#description "If the rider dies, the rat will carry on fighting until the end of the battle."
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#theme "iron"
+#tag "animal rat"
+#tag "guaranteedprefix rat"
+#tag "minprot 8"
+#basechance 4
+#chanceinc prot 14 *2
 #enditem

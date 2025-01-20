@@ -1,33 +1,31 @@
-
-
 #newitem
 #id "crocodile"
 #gameid -1
 #sprite /graphics/mounts/standard/crocodile_mount.png
 #armor
+#description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
 #define "#mountmnr 'crocodile_mount'"
 #define "#gcost -5"
-#description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
-#tag "animal crocodile"
-#theme "light"
 #theme "specialmount"
+#tag "animal crocodile"
 #tag "guaranteedprefix crocodile"
 #tag "eliteversion crocodile"
 #tag "eliteversion 'armored crocodile'"
 #enditem
 
 #newitem
-#id "armored crocodile"
+#id "crocodile_mail_barding"
 #gameid -1
-#basechance 0.25
 #sprite /graphics/mounts/standard/crocodile_mount_armored.png
 #recolormask /graphics/mounts/standard/crocodile_mount_armored_recolormask.png
 #armor
+#description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
 #define "#mountmnr 'crocodile_mail_barding_mount'"
 #define "#gcost -5"
-#description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
-#tag "animal crocodile"
 #theme "heavy"
 #theme "specialmount"
+#tag "animal crocodile"
 #tag "guaranteedprefix crocodile"
+#basechance 2.5
+#chanceinc prot 14 *2
 #enditem

@@ -1,11 +1,58 @@
 #newitem
-#id "fayhorse"
+#id "fay_horse"
 #gameid -1
 #sprite /graphics/mounts/standard/fayhorse.png
 #armor
 #offsety 1
 #define "#mountmnr 'fay_horse_mount'"
+#theme "primitive"
 #tag "animal horse"
 #tag "minprot 6"
-#tag "maxprot 16"
+#tag "maxprot 12"
+#basechance 10
+#enditem
+
+#newitem
+#id "fay_horse_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/fayhorse.png
+#armor
+#offsety 1
+#define "#mountmnr 'fay_horse_leather_barding_mount'"
+#theme "primitive"
+#theme "leather"
+#tag "animal horse"
+#tag "minprot 6"
+#tag "maxprot 14"
+#basechance 9
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "fay_horse_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/fayhorse.png
+#armor
+#offsety 1
+#define "#mountmnr 'fay_horse_light_scale_barding_mount'"
+#theme "iron"
+#tag "animal horse"
+#tag "minprot 6"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "fay_horse_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/fayhorse.png
+#armor
+#offsety 1
+#define "#mountmnr 'fay_horse_iron_mail_barding_mount'"
+#theme "iron"
+#tag "animal horse"
+#tag "minprot 6"
+#basechance 6
+#chanceinc prot 14 *2
 #enditem

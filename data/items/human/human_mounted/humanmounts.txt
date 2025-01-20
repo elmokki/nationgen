@@ -490,9 +490,6 @@
 
 #newitem
 #id "camel"
-#chanceinc "nationcommand #idealcold above 0 *0"
-#chanceinc "nationcommand #idealcold above -1 *0.5"
-#chanceinc "nationcommand #idealcold below -1 *2"
 #gameid -1
 #sprite /graphics/mounts/standard/camel.png
 #armor
@@ -501,16 +498,16 @@
 #define "#mountmnr 'camel_mount'"
 #theme "light"
 #tag "animal camel"
-#tag "maxprot 11"
+#tag "maxprot 12"
 #basechance 15
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
 #epicness 0.25
 #enditem
 
 #newitem
 #id "camel_leather_barding"
-#chanceinc "nationcommand #idealcold above 0 *0"
-#chanceinc "nationcommand #idealcold above -1 *0.5"
-#chanceinc "nationcommand #idealcold below -1 *2"
 #gameid -1
 #sprite /graphics/mounts/standard/camel_barded.png
 #recolormask /graphics/mounts/standard/camel_barded_recolormask.png
@@ -521,36 +518,58 @@
 #define "#wastesurvival"
 #tag "animal camel"
 #tag "minprot 8"
-#tag "maxprot 12"
-#basechance 15
+#tag "maxprot 14"
+#basechance 13
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
 #epicness 0.25
 #enditem
 
 #newitem
-#id "camel_iron_mail_barding_mount"
-#chanceinc "nationcommand #idealcold above 0 *0"
-#chanceinc "nationcommand #idealcold above -1 *0.5"
-#chanceinc "nationcommand #idealcold below -1 *2"
+#id "camel_light_bronze_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/camel_armored_iron.png
-#recolormask /graphics/mounts/standard/camel_armored_recolormask.png
+#sprite /graphics/mounts/standard/camel_barded.png
+#recolormask /graphics/mounts/standard/camel_barded_recolormask.png
 #armor
 #offsetx 5
 #offsety 52
-#define "#mountmnr 'camel_iron_mail_barding_mount'"
-#theme "heavy"
+#define "#mountmnr 'camel_light_bronze_barding_mount'"
+#define "#wastesurvival"
+#theme "bronze"
+#tag "animal camel"
+#tag "minprot 8"
+#tag "maxprot 15"
+#basechance 10
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#epicness 0.25
+#enditem
+
+#newitem
+#id "camel_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/camel_barded.png
+#recolormask /graphics/mounts/standard/camel_barded_recolormask.png
+#armor
+#offsetx 5
+#offsety 52
+#define "#mountmnr 'camel_light_scale_barding_mount'"
+#define "#wastesurvival"
 #theme "iron"
 #tag "animal camel"
-#tag "minprot 12"
-#tag "maxprot 16"
-#basechance 15
+#tag "minprot 8"
+#tag "maxprot 15"
+#basechance 10
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#epicness 0.25
 #enditem
 
 #newitem
 #id "camel_bronze_mail_barding"
-#chanceinc "nationcommand #idealcold above 0 *0"
-#chanceinc "nationcommand #idealcold above -1 *0.5"
-#chanceinc "nationcommand #idealcold below -1 *2"
 #gameid -1
 #sprite /graphics/mounts/standard/camel_armored_bronze.png
 #recolormask /graphics/mounts/standard/camel_armored_recolormask.png
@@ -558,19 +577,37 @@
 #offsetx 5
 #offsety 52
 #define "#mountmnr 'camel_bronze_mail_barding_mount'"
-#theme "heavy"
 #theme "bronze"
 #tag "animal camel"
 #tag "minprot 12"
-#tag "maxprot 16"
-#basechance 15
+#tag "maxprot 18"
+#basechance 8
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#enditem
+
+#newitem
+#id "camel_iron_mail_barding_mount"
+#gameid -1
+#sprite /graphics/mounts/standard/camel_armored_iron.png
+#recolormask /graphics/mounts/standard/camel_armored_recolormask.png
+#armor
+#offsetx 5
+#offsety 52
+#define "#mountmnr 'camel_iron_mail_barding_mount'"
+#theme "iron"
+#tag "animal camel"
+#tag "minprot 12"
+#tag "maxprot 18"
+#basechance 8
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
 #enditem
 
 #newitem
 #id "camel_cataphract_barding"
-#chanceinc "nationcommand #idealcold above 0 *0"
-#chanceinc "nationcommand #idealcold above -1 *0.5"
-#chanceinc "nationcommand #idealcold below -1 *2"
 #gameid -1
 #sprite /graphics/mounts/standard/camel_armored_iron.png
 #recolormask /graphics/mounts/standard/camel_armored_recolormask.png
@@ -582,14 +619,14 @@
 #theme "iron"
 #tag "animal camel"
 #tag "minprot 12"
-#basechance 10
+#basechance 6
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
 #enditem
 
 #newitem
 #id "camel_bronze_barding"
-#chanceinc "nationcommand #idealcold above 0 *0"
-#chanceinc "nationcommand #idealcold above -1 *0.5"
-#chanceinc "nationcommand #idealcold below -1 *2"
 #gameid -1
 #sprite /graphics/mounts/standard/camel_armored_iron.png
 #recolormask /graphics/mounts/standard/camel_armored_recolormask.png
@@ -601,14 +638,14 @@
 #theme "bronze"
 #tag "animal camel"
 #tag "minprot 12"
-#basechance 5
+#basechance 4
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
 #enditem
 
 #newitem
 #id "camel_plate_barding"
-#chanceinc "nationcommand #idealcold above 0 *0"
-#chanceinc "nationcommand #idealcold above -1 *0.5"
-#chanceinc "nationcommand #idealcold below -1 *2"
 #gameid -1
 #sprite /graphics/mounts/standard/camel_armored_iron.png
 #recolormask /graphics/mounts/standard/camel_armored_recolormask.png
@@ -620,7 +657,10 @@
 #theme "iron"
 #tag "animal camel"
 #tag "minprot 12"
-#basechance 5
+#basechance 3
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
 #enditem
 
 
@@ -631,12 +671,163 @@
 #armor
 #offsety 1
 #define "#mountmnr 'unicorn_mount'"
-#theme "heavy"
+#theme "light"
 #tag "minprot 8"
 #tag "maxprot 15"
 #tag "animal unicorn"
 #tag "guaranteedprefix unicorn"
 #basechance 5
+#chanceinc anytheme "fae" *20
+#chanceinc anymagic "glamour" *5
+#enditem
+
+#newitem
+#id "unicorn_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#offsety 1
+#define "#mountmnr 'unicorn_leather_barding_mount'"
+#theme "light"
+#theme "leather"
+#tag "minprot 8"
+#tag "maxprot 14"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#basechance 4.5
+#chanceinc prot 10 *2
+#chanceinc anytheme "fae" *20
+#chanceinc anymagic "glamour" *5
+#enditem
+
+#newitem
+#id "unicorn_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#offsety 1
+#define "#mountmnr 'unicorn_light_bronze_barding_mount'"
+#theme "light"
+#theme "bronze"
+#tag "minprot 8"
+#tag "maxprot 15"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#basechance 4
+#chanceinc prot 11 *2
+#chanceinc anytheme "fae" *20
+#chanceinc anymagic "glamour" *5
+#enditem
+
+#newitem
+#id "unicorn_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#offsety 1
+#define "#mountmnr 'unicorn_light_scale_barding_mount'"
+#theme "light"
+#theme "iron"
+#tag "minprot 8"
+#tag "maxprot 15"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#basechance 4
+#chanceinc prot 12 *2
+#chanceinc anytheme "fae" *20
+#chanceinc anymagic "glamour" *5
+#enditem
+
+#newitem
+#id "unicorn_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#offsety 1
+#define "#mountmnr 'unicorn_bronze_mail_barding_mount'"
+#theme "bronze"
+#tag "minprot 8"
+#tag "maxprot 15"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#basechance 3
+#chanceinc prot 13 *2
+#chanceinc anytheme "fae" *20
+#chanceinc anymagic "glamour" *5
+#enditem
+
+#newitem
+#id "unicorn_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#offsety 1
+#define "#mountmnr 'unicorn_iron_mail_barding_mount'"
+#theme "iron"
+#tag "minprot 8"
+#tag "maxprot 15"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#basechance 3
+#chanceinc prot 14 *2
+#chanceinc anytheme "fae" *20
+#chanceinc anymagic "glamour" *5
+#enditem
+
+#newitem
+#id "unicorn_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#offsety 1
+#define "#mountmnr 'unicorn_cataphract_barding_mount'"
+#theme "iron"
+#theme "heavy"
+#tag "minprot 8"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#basechance 2
+#chanceinc prot 16 *2
+#chanceinc anytheme "fae" *20
+#chanceinc anymagic "glamour" *5
+#enditem
+
+#newitem
+#id "unicorn_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#offsety 1
+#define "#mountmnr 'unicorn_bronze_barding_mount'"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "minprot 8"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#basechance 1.5
+#chanceinc prot 17 *2
+#chanceinc anytheme "fae" *20
+#chanceinc anymagic "glamour" *5
+#enditem
+
+#newitem
+#id "unicorn_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#offsety 1
+#define "#mountmnr 'unicorn_plate_barding_mount'"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "minprot 8"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#basechance 1
+#chanceinc prot 18 *2
+#chanceinc anytheme "fae" *20
+#chanceinc anymagic "glamour" *5
 #enditem
 
 #newitem
@@ -651,24 +842,106 @@
 #tag "animal unicorn"
 #tag "guaranteedprefix unicorn"
 #tag "minprot 12"
-#basechance 5
+#basechance 0.75
+#chanceinc anytheme "fae" *20
+#chanceinc anymagic "glamour" *5
 #enditem
 
 
 #newitem
 #id "black_unicorn"
 #gameid -1
-#sprite /graphics/mounts/standard/unicorn2.png
+#sprite /graphics/mounts/standard/black_unicorn.png
 #armor
 #offsety 1
 #define "#mountmnr 'black_unicorn_mount'"
 #define "#gcost +5"
+#theme "elite"
+#tag "animal 'black unicorn'"
+#tag "guaranteedprefix 'black unicorn'"
+#tag "maxprot 16"
+#basechance 2.5
+#chanceinc anytheme "fae" *20
+#chanceinc anymagic "death" *5
+#enditem
+
+#newitem
+#id "black_unicorn_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/black_unicorn.png
+#armor
+#offsety 1
+#define "#mountmnr 'black_unicorn_leather_barding_mount'"
+#define "#gcost +5"
+#theme "elite"
+#theme "leather"
+#tag "animal 'black unicorn'"
+#tag "guaranteedprefix 'black unicorn'"
+#tag "minprot 8"
+#tag "maxprot 16"
+#basechance 2.25
+#chanceinc prot 10 *2
+#chanceinc anytheme "fae" *20
+#chanceinc anymagic "death" *5
+#enditem
+
+#newitem
+#id "black_unicorn_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/black_unicorn.png
+#armor
+#offsety 1
+#define "#mountmnr 'black_unicorn_light_scale_barding_mount'"
+#define "#gcost +5"
+#theme "elite"
 #theme "heavy"
-#tag "animal unicorn"
-#tag "guaranteedprefix unicorn"
-#tag "minprot 12"
-#tag "maxprot 15"
+#tag "animal 'black unicorn'"
+#tag "guaranteedprefix 'black unicorn'"
+#tag "minprot 8"
+#tag "maxprot 16"
 #basechance 2
+#chanceinc prot 11 *2
+#chanceinc anytheme "fae" *20
+#chanceinc anymagic "death" *5
+#enditem
+
+#newitem
+#id "black_unicorn_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/black_unicorn.png
+#armor
+#offsety 1
+#define "#mountmnr 'black_unicorn_cataphract_barding_mount'"
+#define "#gcost +5"
+#theme "elite"
+#theme "heavy"
+#tag "animal 'black unicorn'"
+#tag "guaranteedprefix 'black unicorn'"
+#tag "minprot 8"
+#basechance 1
+#chanceinc prot 16 *2
+#chanceinc anytheme "fae" *20
+#chanceinc anymagic "death" *5
+#enditem
+
+#newitem
+#id "black_unicorn_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/black_unicorn.png
+#armor
+#offsety 1
+#define "#mountmnr 'black_unicorn_plate_barding_mount'"
+#define "#gcost +5"
+#theme "elite"
+#theme "heavy"
+#theme "advanced"
+#tag "animal 'black unicorn'"
+#tag "guaranteedprefix 'black unicorn'"
+#tag "minprot 8"
+#basechance 0.5
+#chanceinc prot 17 *2
+#chanceinc anytheme "fae" *20
+#chanceinc anymagic "death" *5
 #enditem
 
 #newitem
@@ -683,7 +956,9 @@
 #tag "animal unicorn"
 #tag "guaranteedprefix unicorn"
 #tag "minprot 12"
-#basechance 1
+#basechance 0.25
+#chanceinc anytheme "fae" *20
+#chanceinc anymagic "death" *5
 #enditem
 
 
@@ -694,11 +969,136 @@
 #armor
 #offsety 1
 #define "#mountmnr 'fay_horse_mount'"
-#theme "heavy"
+#theme "light"
 #tag "animal horse"
 #tag "minprot 6"
 #tag "maxprot 14"
 #basechance 10
+#enditem
+
+#newitem
+#id "fay_horse_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/fayhorse.png
+#armor
+#offsety 1
+#define "#mountmnr 'fay_horse_leather_barding_mount'"
+#theme "light"
+#theme "leather"
+#tag "animal horse"
+#tag "minprot 6"
+#tag "maxprot 14"
+#basechance 9
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "fay_horse_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/fayhorse.png
+#armor
+#offsety 1
+#define "#mountmnr 'fay_horse_light_bronze_barding_mount'"
+#theme "light"
+#theme "bronze"
+#tag "animal horse"
+#tag "minprot 6"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "fay_horse_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/fayhorse.png
+#armor
+#offsety 1
+#define "#mountmnr 'fay_horse_light_scale_barding_mount'"
+#theme "light"
+#theme "iron"
+#tag "animal horse"
+#tag "minprot 6"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "fay_horse_bronze_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/fayhorse.png
+#armor
+#offsety 1
+#define "#mountmnr 'fay_horse_bronze_iron_mail_barding_mount'"
+#theme "bronze"
+#tag "animal horse"
+#tag "minprot 6"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "fay_horse_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/fayhorse.png
+#armor
+#offsety 1
+#define "#mountmnr 'fay_horse_iron_mail_barding_mount'"
+#theme "iron"
+#tag "animal horse"
+#tag "minprot 6"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "fay_horse_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/fayhorse.png
+#armor
+#offsety 1
+#define "#mountmnr 'fay_horse_cataphract_barding_mount'"
+#theme "iron"
+#theme "heavy"
+#tag "animal horse"
+#tag "minprot 6"
+#basechance 4
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "fay_horse_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/fayhorse.png
+#armor
+#offsety 1
+#define "#mountmnr 'fay_horse_bronze_barding_mount'"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal horse"
+#tag "minprot 6"
+#basechance 3
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "fay_horse_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/fayhorse.png
+#armor
+#offsety 1
+#define "#mountmnr 'fay_horse_plate_barding_mount'"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal horse"
+#tag "minprot 6"
+#basechance 2.5
+#chanceinc prot 18 *2
 #enditem
 
 
@@ -1018,7 +1418,7 @@
 #sprite /graphics/mounts/standard/elk.png
 #needs overlay elk_overlay
 #armor
-#offsetx -2+
+#offsetx -2
 #offsety 2
 #description "Leaves an elk behind when the rider dies"
 #define "#mountmnr 'elk_mount'"
@@ -1034,7 +1434,7 @@
 #sprite /graphics/mounts/standard/elk.png
 #needs overlay elk_overlay
 #armor
-#offsetx -2+
+#offsetx -2
 #offsety 2
 #description "Leaves an elk behind when the rider dies"
 #define "#mountmnr 'elk_light_bronze_barding_mount'"
@@ -1052,7 +1452,7 @@
 #sprite /graphics/mounts/standard/elk.png
 #needs overlay elk_overlay
 #armor
-#offsetx -2+
+#offsetx -2
 #offsety 2
 #description "Leaves an elk behind when the rider dies"
 #define "#mountmnr 'elk_light_scale_barding_mount'"
@@ -1070,7 +1470,7 @@
 #sprite /graphics/mounts/standard/elk.png
 #needs overlay elk_overlay
 #armor
-#offsetx -2+
+#offsetx -2
 #offsety 2
 #description "Leaves an elk behind when the rider dies"
 #define "#mountmnr 'elk_bronze_mail_barding_mount'"
@@ -1087,7 +1487,7 @@
 #sprite /graphics/mounts/standard/elk.png
 #needs overlay elk_overlay
 #armor
-#offsetx -2+
+#offsetx -2
 #offsety 2
 #description "Leaves an elk behind when the rider dies"
 #define "#mountmnr 'elk_iron_mail_barding_mount'"
@@ -1104,7 +1504,7 @@
 #sprite /graphics/mounts/standard/elk.png
 #needs overlay elk_overlay
 #armor
-#offsetx -2+
+#offsetx -2
 #offsety 2
 #description "Leaves an elk behind when the rider dies"
 #define "#mountmnr 'elk_cataphract_barding_mount'"
@@ -1122,7 +1522,7 @@
 #sprite /graphics/mounts/standard/elk.png
 #needs overlay elk_overlay
 #armor
-#offsetx -2+
+#offsetx -2
 #offsety 2
 #description "Leaves an elk behind when the rider dies"
 #define "#mountmnr 'elk_bronze_barding_mount'"
@@ -1140,7 +1540,7 @@
 #sprite /graphics/mounts/standard/elk.png
 #needs overlay elk_overlay
 #armor
-#offsetx -2+
+#offsetx -2
 #offsety 2
 #description "Leaves an elk behind when the rider dies"
 #define "#mountmnr 'elk_plate_barding_mount'"
