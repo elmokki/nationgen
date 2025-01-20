@@ -1,4 +1,5 @@
--- Normal
+---- Normal
+
 #newpose
 #id "infantry"
 -- #renderorder "shadow cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hair helmet offhanda"
@@ -25,17 +26,15 @@
 #endpose
 
 
+---- Cavalry (regular)
 
--- Cavalry (regular)
 #newpose
 #id "cavalry"
 -- #renderorder "cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hair helmet offhanda overlay"
 #role "mounted"
-#role "scout"
 
 #generateitem 1 shirt
 #generateitem 0.5 hair
-#define "#stealthy 0"
 
 #baseitemslot feet 0
 
@@ -59,16 +58,16 @@
 #writeslot lanceslot
 #endpose
 
--- Cavalry (low)
+
+---- Cavalry (low)
+
 #newpose
 #id "cavalry (low mount)"
 -- #renderorder "cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hair helmet offhanda overlay"
 #role "mounted"
-#role "scout"
 
 #generateitem 1 shirt
 #generateitem 0.5 hair
-#define "#stealthy 0"
 
 #baseitemslot feet 0
 
@@ -93,7 +92,42 @@
 #endpose
 
 
------------ Charioteers
+---- Cavalry (scout)
+
+#newpose
+#id "cavalry (low mount)"
+-- #renderorder "cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hair helmet offhanda overlay"
+#role "mounted"
+#role "scout"
+
+#generateitem 1 shirt
+#generateitem 0.5 hair
+#define "#stealthy 0"
+
+#baseitemslot feet 0
+
+#load basesprite /data/items/sidhe/bases.txt
+#load mount /data/items/sidhe/sidhemounts_scout.txt 5 -13
+#load cloakf /data/items/human/normal/humancloakf.txt 0 -3
+#load cloakb /data/items/human/normal/humancloakb.txt 0 -3
+#load shirt /data/items/sidhe/shirt.txt
+#load armor /data/items/sidhe/armor_mounted.txt
+#load helmet /data/items/sidhe/helmet.txt
+#load legs /data/items/sidhe/legs_mounted.txt 0 -1
+#load weapon /data/items/sidhe/weapon.txt 0 -3
+#load bonusweapon /data/items/human/normal/humanbonusranged.txt 0 -3
+#load lanceslot /data/items/sidhe/bonusweapon.txt 0 -3
+#load offhand /data/items/sidhe/offhand.txt 0 -3
+#load offhand /data/items/sidhe/shields.txt 0 -3
+#load hair /data/items/sidhe/hair.txt
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+#load overlay /data/items/sidhe/sidhemounts_overlay.txt
+
+#writeslot lanceslot
+#endpose
+
+
+---- Charioteers
 
 #newpose
 #race 0
