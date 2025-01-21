@@ -143,11 +143,11 @@
 #enditem
 
 #newitem
-#id "great_bear_mail_barding"
+#id "great_bear_iron_mail_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/bear.png
 #armor
-#define "#mountmnr 'great_bear_mail_barding_mount'"
+#define "#mountmnr 'great_bear_iron_mail_barding_mount'"
 #offsety -2
 #offsetx -1
 #tag "animal bear"
@@ -227,11 +227,11 @@
 #enditem
 
 #newitem
-#id "bear_mail_barding"
+#id "bear_iron_mail_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/bear_small.png
 #armor
-#define "#mountmnr 'bear_mail_barding_mount'"
+#define "#mountmnr 'bear_iron_mail_barding_mount'"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety 6
 #offsetx -1
@@ -322,14 +322,14 @@
 #enditem
 
 #newitem
-#id "scorpion_beast_mail_barding"
+#id "scorpion_beast_iron_mail_barding"
 #gameid -1
 #sprite /graphics/abysian/mounts/scorpion.png
 #armor
 #offsetx 23
 #offsety 6
 #needs overlay scorpion_overlay
-#define "#mountmnr 'scorpion_beast_mail_barding_mount'"
+#define "#mountmnr 'scorpion_beast_iron_mail_barding_mount'"
 #tag "animal scorpion"
 #description "Leaves a giant scorpion behind when the rider dies"
 #tag "guaranteedprefix scorpion"
@@ -392,7 +392,7 @@
 #needs overlay fossil_overlay
 #offsetx 34
 #offsety 31
-#define "#mountmnr 'fossil_mount'"
+#define "#mountmnr 'fossil_rusty_mail_armor_mount'"
 #tag "animal fossil"
 #description "Leaves a fossilized giant behind when the rider dies"
 #tag "guaranteedprefix fossil"
@@ -410,7 +410,7 @@
 #needs overlay fossil_overlay
 #offsetx 34
 #offsety 31
-#define "#mountmnr 'fossil_hauberk_mount'"
+#define "#mountmnr 'fossil_hauberk_armor_mount'"
 #tag "animal fossil"
 #description "Leaves a fossilized giant behind when the rider dies"
 #tag "guaranteedprefix fossil"
@@ -477,12 +477,12 @@
 #enditem
 
 #newitem
-#id "dire_wolf_mail_barding"
+#id "dire_wolf_iron_mail_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/direwolf1.png
 #armor
 #needs overlay direwolf1_overlay
-#define "#mountmnr 'dire_wolf_mail_barding_mount_1'"
+#define "#mountmnr 'dire_wolf_iron_mail_barding_mount_1'"
 #tag "animal wolf"
 #theme "heavy"
 #tag "guaranteedprefix wolf"

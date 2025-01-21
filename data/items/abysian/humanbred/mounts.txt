@@ -38,14 +38,14 @@
 #enditem
 
 #newitem
-#id "scorpion_beast_mail_barding"
+#id "scorpion_beast_iron_mail_barding"
 #gameid -1
 #sprite /graphics/abysian/mounts/scorpion.png
 #armor
 #offsetx 23
 #offsety 6
 #needs overlay scorpion_overlay
-#define "#mountmnr 'scorpion_beast_mail_barding_mount'"
+#define "#mountmnr 'scorpion_beast_iron_mail_barding_mount'"
 #tag "animal scorpion"
 #theme "heavy"
 #description "Leaves a giant scorpion behind when the rider dies"
@@ -105,7 +105,7 @@
 #needs overlay fossil_overlay
 #offsetx 34
 #offsety 31
-#define "#mountmnr 'fossil_mount'"
+#define "#mountmnr 'fossil_rusty_mail_armor_mount'"
 #tag "animal fossil"
 #theme "heavy"
 #description "Leaves a fossilized giant behind when the rider dies"
@@ -123,7 +123,7 @@
 #needs overlay fossil_overlay
 #offsetx 34
 #offsety 31
-#define "#mountmnr 'fossil_hauberk_mount'"
+#define "#mountmnr 'fossil_hauberk_armor_mount'"
 #tag "animal fossil"
 #theme "heavy"
 #description "Leaves a fossilized giant behind when the rider dies"
@@ -332,11 +332,11 @@
 #enditem
 
 #newitem
-#id "lion_mail_barding"
+#id "lion_iron_mail_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/lion.png
 #armor
-#define "#mountmnr 'lion_mail_barding_mount'"
+#define "#mountmnr 'lion_iron_mail_barding_mount'"
 #description "If the rider dies, the lion will carry on fighting until the end of the battle."
 #offsety 5
 #offsetx -1
@@ -421,12 +421,12 @@
 #enditem
 
 #newitem
-#id "dire_wolf_mail_barding"
+#id "dire_wolf_iron_mail_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/direwolf1.png
 #armor
 #needs overlay direwolf1_overlay
-#define "#mountmnr 'dire_wolf_mail_barding_mount_1'"
+#define "#mountmnr 'dire_wolf_iron_mail_barding_mount_1'"
 #define "#gcost +25"
 #tag "animal wolf"
 #theme "heavy"
@@ -514,14 +514,14 @@
 #enditem
 
 #newitem
-#id "gryphon_mail_barding"
+#id "gryphon_iron_mail_barding"
 #gameid -1
 #sprite /graphics/amazon/mounts/gryphon.png
 #armor
 #offsetx 23
 #offsety 64
 #needs overlay gryphon_overlay
-#define "#mountmnr 'gryphon_mail_barding_mount'"
+#define "#mountmnr 'gryphon_iron_mail_barding_mount'"
 #description "If the rider dies, the gryphon will carry on fighting until the end of the battle."
 #theme "heavy"
 #theme "flying"
@@ -604,11 +604,11 @@
 #enditem
 
 #newitem
-#id "leogryph_mail_barding"
+#id "leogryph_iron_mail_barding"
 #gameid -1
 #sprite /graphics/amazon/mounts/leogryph.png
 #armor
-#define "#mountmnr 'leogryph_mail_barding_mount'"
+#define "#mountmnr 'leogryph_iron_mail_barding_mount'"
 #description "If the rider dies, the leogryph will carry on fighting until the end of the battle."
 #basechance 0.25
 #offsety 6
@@ -727,21 +727,21 @@
 #basechance 10
 #enditem
 
+
 #newitem
-#id "war_horse"
+#id "war_horse_leather_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/armoredhorse2.png
 #armor
 #needs overlay armoredhorse2overlay
-#define "#mountmnr 'war_horse_mount'"
-#tag "animal horse"
-#theme "heavy"
-#tag "minprot 12"
-#tag "maxprot 16"
+#define "#mountmnr 'war_horse_leather_barding_mount'"
 #define "#gcost +5"
-#epicness 0.25
+#tag "animal horse"
 #tag "name commander 'knight'"
 #tag "name mounted knight"
+#tag "minprot 10"
+#tag "maxprot 16"
+#epicness 0.25
 #basechance 7.5
 #enditem
 
@@ -799,14 +799,14 @@
 #enditem
 
 #newitem
-#id "camel_mail_barding"
+#id "camel_iron_mail_barding_mount"
 #gameid -1
 #sprite /graphics/mounts/standard/camel_armored_iron.png
 #recolormask /graphics/mounts/standard/camel_armored_recolormask.png
 #armor
 #offsetx 5
 #offsety 52
-#define "#mountmnr 'camel_mail_barding_mount'"
+#define "#mountmnr 'camel_iron_mail_barding_mount'"
 #tag "animal camel"
 #theme "heavy"
 #tag "minprot 12"

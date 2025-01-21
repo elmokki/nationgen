@@ -1,6 +1,5 @@
 #newitem
-#basechance 3
-#id "brown horse"
+#id "riding_horse"
 #gameid -1
 #sprite /graphics/mounts/standard/brownhorse.png
 #offsetx 0
@@ -8,31 +7,181 @@
 #armor
 #needs overlay 1
 #define "#mountmnr 'riding_horse_mount'"
-#tag "animal horse"
 #theme "light"
-#tag "maxprot 11"
 #theme terrestrial
+#tag "animal horse"
+#tag "maxprot 12"
+#basechance 30
 #enditem
 
 #newitem
-#id "armored horse bronze"
-#basechance 3
+#id "riding_horse_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#offsetx 0
+#offsety -13
+#armor
+#needs overlay 1
+#define "#mountmnr 'riding_horse_leather_barding_mount'"
+#theme "light"
+#theme terrestrial
+#theme "leather"
+#tag "animal horse"
+#tag "maxprot 14"
+#basechance 27
+#enditem
+
+#newitem
+#id "riding_horse_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#offsetx 0
+#offsety -13
+#armor
+#needs overlay 1
+#define "#mountmnr 'riding_horse_light_bronze_barding_mount'"
+#theme "light"
+#theme terrestrial
+#theme "bronze"
+#tag "animal horse"
+#tag "maxprot 16"
+#basechance 24
+#enditem
+
+#newitem
+#id "riding_horse_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#offsetx 0
+#offsety -13
+#armor
+#needs overlay 1
+#define "#mountmnr 'riding_horse_bronze_mail_barding_mount'"
+#theme terrestrial
+#theme "bronze"
+#tag "animal horse"
+#basechance 18
+#enditem
+
+#newitem
+#id "riding_horse_bronze_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#offsetx 0
+#offsety -13
+#armor
+#needs overlay 1
+#define "#mountmnr 'riding_horse_bronze_cataphract_barding_mount'"
+#theme terrestrial
+#theme "bronze"
+#tag "animal horse"
+#basechance 9
+#enditem
+
+#newitem
+#id "riding_horse_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#offsetx 0
+#offsety -13
+#armor
+#needs overlay 1
+#define "#mountmnr 'riding_horse_bronze_barding_mount'"
+#theme terrestrial
+#theme "bronze"
+#tag "animal horse"
+#basechance 4.5
+#enditem
+
+
+#newitem
+#id "war_horse_leather_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/armoredhorse1a.png
 #offsetx 0
 #offsety -13
 #armor
 #needs overlay armoredhorse1aoverlay
-#define "#mountmnr 'war_horse_light_scale_barding_mount_2'"
+#define "#mountmnr 'war_horse_leather_barding_mount'"
 #tag "animal horse"
-#theme "heavy"
-#theme "bronze"
-#tag "minprot 14"
+#theme "light"
+#theme "leather"
 #theme terrestrial
+#tag "minprot 10"
+#basechance 30
 #enditem
 
 #newitem
-#id "kelpie"
+#id "war_horse_bronze_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/armoredhorse1a.png
+#offsetx 0
+#offsety -13
+#armor
+#needs overlay armoredhorse1aoverlay
+#define "#mountmnr 'war_horse_bronze_scale_barding_mount'"
+#tag "animal horse"
+#theme "bronze"
+#theme terrestrial
+#tag "minprot 12"
+#basechance 24
+#enditem
+
+#newitem
+#id "war_horse_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/armoredhorse1a.png
+#offsetx 0
+#offsety -13
+#armor
+#needs overlay armoredhorse1aoverlay
+#define "#mountmnr 'war_horse_bronze_mail_barding_mount'"
+#tag "animal horse"
+#theme "bronze"
+#theme terrestrial
+#tag "minprot 14"
+#basechance 18
+#enditem
+
+#newitem
+#id "war_horse_bronze_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/armoredhorse1a.png
+#offsetx 0
+#offsety -13
+#armor
+#needs overlay armoredhorse1aoverlay
+#define "#mountmnr 'war_horse_bronze_cataphract_barding_mount'"
+#tag "animal horse"
+#theme "bronze"
+#theme "heavy"
+#theme terrestrial
+#tag "minprot 14"
+#basechance 9
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "war_horse_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/armoredhorse1a.png
+#offsetx 0
+#offsety -13
+#armor
+#needs overlay armoredhorse1aoverlay
+#define "#mountmnr 'war_horse_bronze_barding_mount'"
+#tag "animal horse"
+#theme "bronze"
+#theme "heavy"
+#theme terrestrial
+#tag "minprot 14"
+#basechance 1.5
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "kelpie_land"
 #gameid -1
 #sprite /graphics/mounts/standard/kelpie_land.png
 #offsetx 0
@@ -40,25 +189,140 @@
 #needs overlay kelpie_land_overlay
 #armor
 #define "#mountmnr 'kelpie_land_mount'"
+#define "#amphibian"
 #tag "animal kelpie"
 #tag "minprot 6"
 #tag "maxprot 18"
-#define "#amphibian"
+#basechance 10
 #enditem
 
 #newitem
-#id "kelpie_armored"
+#id "kelpie_land_sharkskin_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/kelpie_armored_land.png
+#sprite /graphics/mounts/standard/kelpie_land.png
 #offsetx 0
 #offsety -13
-#needs overlay kelpie_armored_land_overlay
+#needs overlay kelpie_land_overlay
 #armor
-#define "#mountmnr 'kelpie_land_armored_mount'"
+#define "#mountmnr 'kelpie_land_sharkskin_barding_mount'"
+#define "#amphibian"
+#theme "sharkskin"
 #tag "animal kelpie"
-#theme "heavy"
-#tag "minprot 14"
+#tag "minprot 6"
+#tag "maxprot 18"
+#basechance 9
+#chanceinc prot 10 *2
 #enditem
+
+#newitem
+#id "kelpie_land_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/kelpie_land.png
+#offsetx 0
+#offsety -13
+#needs overlay kelpie_land_overlay
+#armor
+#define "#mountmnr 'kelpie_land_turtle_shell_barding_mount'"
+#define "#amphibian"
+#theme "shell"
+#tag "animal kelpie"
+#tag "minprot 6"
+#tag "maxprot 18"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "kelpie_land_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/kelpie_land.png
+#offsetx 0
+#offsety -13
+#needs overlay kelpie_land_overlay
+#armor
+#define "#mountmnr 'kelpie_land_light_bronze_barding_mount'"
+#define "#amphibian"
+#theme "bronze"
+#tag "animal kelpie"
+#tag "minprot 6"
+#tag "maxprot 18"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "kelpie_land_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/kelpie_land.png
+#offsetx 0
+#offsety -13
+#needs overlay kelpie_land_overlay
+#armor
+#define "#mountmnr 'kelpie_land_coral_barding_mount'"
+#define "#amphibian"
+#theme "coral"
+#tag "animal kelpie"
+#tag "minprot 6"
+#tag "maxprot 18"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "kelpie_land_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/kelpie_land.png
+#offsetx 0
+#offsety -13
+#needs overlay kelpie_land_overlay
+#armor
+#define "#mountmnr 'kelpie_land_bronze_mail_barding_mount'"
+#define "#amphibian"
+#theme "bronze"
+#tag "animal kelpie"
+#tag "minprot 6"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "kelpie_land_bronze_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/kelpie_land.png
+#offsetx 0
+#offsety -13
+#needs overlay kelpie_land_overlay
+#armor
+#define "#mountmnr 'kelpie_land_bronze_cataphract_barding_mount'"
+#define "#amphibian"
+#theme "bronze"
+#theme "heavy"
+#tag "animal kelpie"
+#tag "minprot 6"
+#tag "maxprot 18"
+#basechance 4
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "kelpie_land_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/kelpie_land.png
+#offsetx 0
+#offsety -13
+#needs overlay kelpie_land_overlay
+#armor
+#define "#mountmnr 'kelpie_land_bronze_barding_mount'"
+#define "#amphibian"
+#theme "bronze"
+#theme "heavy"
+#tag "animal kelpie"
+#tag "minprot 6"
+#basechance 3
+#chanceinc prot 17 *2
+#enditem
+
 
 #newitem
 #id "nightmare"
@@ -69,19 +333,119 @@
 #needs overlay no_overlay
 #armor
 #define "#mountmnr 'nightmare_mount'"
-#tag "animal nightmare"
 #define "#float"
 #description "Leaves a nightmare behind when the rider dies"
-#basechance 0.25
-#tag "minprot 10"
-#sacredextra 0.5
 #theme terrestrial
+#tag "animal nightmare"
+#tag "minprot 10"
+#basechance 2.5
+#sacredextra 0.5
+#enditem
+
+#newitem
+#id "nightmare_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/nightmare.png
+#offsetx 0
+#offsety -15
+#needs overlay no_overlay
+#armor
+#define "#mountmnr 'nightmare_leather_barding_mount'"
+#define "#float"
+#description "Leaves a nightmare behind when the rider dies"
+#theme terrestrial
+#theme "leather"
+#tag "animal nightmare"
+#tag "minprot 10"
+#basechance 2.25
+#sacredextra 0.5
+#enditem
+
+#newitem
+#id "nightmare_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/nightmare.png
+#offsetx 0
+#offsety -15
+#needs overlay no_overlay
+#armor
+#define "#mountmnr 'nightmare_light_bronze_barding_mount'"
+#define "#float"
+#description "Leaves a nightmare behind when the rider dies"
+#theme terrestrial
+#theme "bronze"
+#tag "animal nightmare"
+#tag "minprot 10"
+#basechance 2
+#chanceinc prot 12 *2
+#sacredextra 0.5
+#enditem
+
+#newitem
+#id "nightmare_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/nightmare.png
+#offsetx 0
+#offsety -15
+#needs overlay no_overlay
+#armor
+#define "#mountmnr 'nightmare_bronze_mail_barding_mount'"
+#define "#float"
+#description "Leaves a nightmare behind when the rider dies"
+#theme terrestrial
+#theme "bronze"
+#tag "animal nightmare"
+#tag "minprot 10"
+#basechance 1.75
+#chanceinc prot 13 *2
+#sacredextra 0.5
+#enditem
+
+#newitem
+#id "nightmare_bronze_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/nightmare.png
+#offsetx 0
+#offsety -15
+#needs overlay no_overlay
+#armor
+#define "#mountmnr 'nightmare_bronze_cataphract_barding_mount'"
+#define "#float"
+#description "Leaves a nightmare behind when the rider dies"
+#theme terrestrial
+#theme "bronze"
+#theme "heavy"
+#tag "animal nightmare"
+#tag "minprot 10"
+#basechance 1.5
+#chanceinc prot 15 *2
+#sacredextra 0.5
+#enditem
+
+#newitem
+#id "nightmare_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/nightmare.png
+#offsetx 0
+#offsety -15
+#needs overlay no_overlay
+#armor
+#define "#mountmnr 'nightmare_bronze_barding_mount'"
+#define "#float"
+#description "Leaves a nightmare behind when the rider dies"
+#theme terrestrial
+#theme "bronze"
+#theme "heavy"
+#tag "animal nightmare"
+#tag "minprot 10"
+#basechance 1.25
+#chanceinc prot 17 *2
+#sacredextra 0.5
 #enditem
 
 
 #newitem
 #id "peryton"
-#basechance 0.25
 #gameid -1
 #sprite /graphics/mounts/standard/peryton2.png
 #offsetx 0
@@ -93,12 +457,71 @@
 #define "#mountmnr 'peryton_mount'"
 #theme "flying"
 #tag "animal peryton"
-#basechance 0.25
+#basechance 2.5
 #sacredextra 0.7
 #enditem
 
 #newitem
-#id "giant swan"
+#id "peryton_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/peryton2.png
+#offsetx 0
+#offsety -13
+#needs overlay peryton2_overlay
+#armor
+#offsetx 0
+#offsety -11
+#define "#mountmnr 'peryton_light_bronze_barding_mount'"
+#theme "flying"
+#theme "bronze"
+#tag "animal peryton"
+#basechance 2
+#chanceinc prot 11 *2
+#sacredextra 0.7
+#enditem
+
+#newitem
+#id "peryton_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/peryton2.png
+#offsetx 0
+#offsety -13
+#needs overlay peryton2_overlay
+#armor
+#offsetx 0
+#offsety -11
+#define "#mountmnr 'peryton_bronze_mail_barding_mount'"
+#theme "flying"
+#theme "bronze"
+#tag "animal peryton"
+#basechance 1.5
+#chanceinc prot 13 *2
+#sacredextra 0.7
+#enditem
+
+#newitem
+#id "peryton_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/peryton2.png
+#offsetx 0
+#offsety -13
+#needs overlay peryton2_overlay
+#armor
+#offsetx 0
+#offsety -11
+#define "#mountmnr 'peryton_bronze_barding_mount'"
+#theme "flying"
+#theme "bronze"
+#theme "heavy"
+#tag "animal peryton"
+#basechance 1
+#chanceinc prot 17 *2
+#sacredextra 0.7
+#enditem
+
+
+#newitem
+#id "giant_swan"
 #gameid -1
 #sprite /graphics/sidhe/mounts/giantswan.png
 #needs overlay giantswan_overlay
@@ -108,29 +531,235 @@
 #define "#mountmnr 'giant_swan_mount'"
 #theme "light"
 #tag "animal swan"
-#tag "maxprot 11"
+#tag "maxprot 12"
+#basechance 10
 #enditem
 
 #newitem
-#id "seadog"
+#id "giant_swan_sharkskin_barding"
+#gameid -1
+#sprite /graphics/sidhe/mounts/giantswan.png
+#needs overlay giantswan_overlay
+#armor
+#offsetx -4
+#offsety -3
+#define "#mountmnr 'giant_swan_sharkskin_barding_mount'"
+#theme "light"
+#theme "leather"
+#tag "animal swan"
+#tag "maxprot 14"
+#basechance 9
+#chanceinc prot 9 *2
+#enditem
+
+#newitem
+#id "giant_swan_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/sidhe/mounts/giantswan.png
+#needs overlay giantswan_overlay
+#armor
+#offsetx -4
+#offsety -3
+#define "#mountmnr 'giant_swan_turtle_shell_barding_mount'"
+#theme "light"
+#theme "shell"
+#tag "animal swan"
+#tag "maxprot 14"
+#basechance 8
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "giant_swan_light_bronze_barding"
+#gameid -1
+#sprite /graphics/sidhe/mounts/giantswan.png
+#needs overlay giantswan_overlay
+#armor
+#offsetx -4
+#offsety -3
+#define "#mountmnr 'giant_swan_light_bronze_barding_mount'"
+#theme "light"
+#theme "bronze"
+#tag "animal swan"
+#tag "maxprot 14"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "giant_swan_coral_barding"
+#gameid -1
+#sprite /graphics/sidhe/mounts/giantswan.png
+#needs overlay giantswan_overlay
+#armor
+#offsetx -4
+#offsety -3
+#define "#mountmnr 'giant_swan_coral_barding_mount'"
+#theme "light"
+#theme "coral"
+#tag "animal swan"
+#tag "maxprot 14"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "giant_swan_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/sidhe/mounts/giantswan.png
+#needs overlay giantswan_overlay
+#armor
+#offsetx -4
+#offsety -3
+#define "#mountmnr 'giant_swan_bronze_mail_barding_mount'"
+#theme "bronze"
+#tag "animal swan"
+#tag "maxprot 15"
+#basechance 6
+#chanceinc prot 13 *2
+#enditem
+
+
+#newitem
+#id "sea_dog"
 #gameid -1
 #sprite /graphics/mounts/standard/seadog.png
 #offsetx -4
 #offsety -9
 #armor
+#command "#amphibian"
+#description "The loyal sea dog will continue to fight even if its rider dies."
 #define "#mountmnr 'sea_dog_mount'"
 #define "#swimming"
-#command "#amphibian"
 #theme "light"
 #tag "animal dog"
-#description "The loyal sea dog will continue to fight even if its rider dies."
 #tag "guaranteedprefix dog"
-#tag "minprot 0"
-#tag "maxprot 9"
+#tag "maxprot 12"
+#basechance 10
 #enditem
 
 #newitem
-#id "toad"
+#id "sea_dog_sharkskin_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/seadog.png
+#offsetx -4
+#offsety -9
+#armor
+#command "#amphibian"
+#description "The loyal sea dog will continue to fight even if its rider dies."
+#define "#mountmnr 'sea_dog_sharkskin_barding_mount'"
+#define "#swimming"
+#theme "light"
+#theme "sharkskin"
+#tag "animal dog"
+#tag "guaranteedprefix dog"
+#tag "maxprot 13"
+#basechance 9
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "sea_dog_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/seadog.png
+#offsetx -4
+#offsety -9
+#armor
+#command "#amphibian"
+#description "The loyal sea dog will continue to fight even if its rider dies."
+#define "#mountmnr 'sea_dog_turtle_shell_barding_mount'"
+#define "#swimming"
+#theme "light"
+#theme "shell"
+#tag "animal dog"
+#tag "guaranteedprefix dog"
+#tag "maxprot 14"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "sea_dog_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/seadog.png
+#offsetx -4
+#offsety -9
+#armor
+#command "#amphibian"
+#description "The loyal sea dog will continue to fight even if its rider dies."
+#define "#mountmnr 'sea_dog_light_bronze_barding_mount'"
+#define "#swimming"
+#theme "light"
+#theme "bronze"
+#tag "animal dog"
+#tag "guaranteedprefix dog"
+#tag "maxprot 14"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "sea_dog_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/seadog.png
+#offsetx -4
+#offsety -9
+#armor
+#command "#amphibian"
+#description "The loyal sea dog will continue to fight even if its rider dies."
+#define "#mountmnr 'sea_dog_coral_barding_mount'"
+#define "#swimming"
+#theme "light"
+#theme "coral"
+#tag "animal dog"
+#tag "guaranteedprefix dog"
+#tag "maxprot 14"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "sea_dog_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/seadog.png
+#offsetx -4
+#offsety -9
+#armor
+#command "#amphibian"
+#description "The loyal sea dog will continue to fight even if its rider dies."
+#define "#mountmnr 'sea_dog_bronze_mail_barding_mount'"
+#define "#swimming"
+#theme "bronze"
+#tag "animal dog"
+#tag "guaranteedprefix dog"
+#tag "maxprot 16"
+#basechance 6
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "sea_dog_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/seadog.png
+#offsetx -4
+#offsety -9
+#armor
+#command "#amphibian"
+#description "The loyal sea dog will continue to fight even if its rider dies."
+#define "#mountmnr 'sea_dog_bronze_barding_mount'"
+#define "#swimming"
+#theme "heavy"
+#theme "bronze"
+#tag "animal dog"
+#tag "guaranteedprefix dog"
+#tag "maxprot 18"
+#basechance 3
+#chanceinc prot 17 *2
+#enditem
+
+
+#newitem
+#id "jaguar_toad"
 #gameid -1
 #sprite /graphics/mounts/standard/toad_jaguar.png
 #armor
@@ -144,11 +773,112 @@
 #tag "guaranteedprefix toad"
 #tag "minprot 6"
 #tag "maxprot 14"
-#basechance 0.25
+#basechance 2.5
 #enditem
 
 #newitem
-#id "frog"
+#id "jaguar_toad_sharkskin_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/toad_jaguar.png
+#armor
+#offsetx -1
+#offsety -4
+#define "#mountmnr 'jaguar_toad_sharkskin_barding_mount'"
+#define "#swimming"
+#define "#amphibian"
+#description "The giant toad will fight until the end of the battle should the rider die"
+#theme "sharkskin"
+#tag "animal 'giant toad'"
+#tag "guaranteedprefix toad"
+#tag "minprot 6"
+#tag "maxprot 14"
+#basechance 2.25
+#chanceinc prot 9 *2
+#enditem
+
+#newitem
+#id "jaguar_toad_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/toad_jaguar.png
+#armor
+#offsetx -1
+#offsety -4
+#define "#mountmnr 'jaguar_toad_turtle_shell_barding_mount'"
+#define "#swimming"
+#define "#amphibian"
+#description "The giant toad will fight until the end of the battle should the rider die"
+#theme "shell"
+#tag "animal 'giant toad'"
+#tag "guaranteedprefix toad"
+#tag "minprot 6"
+#tag "maxprot 14"
+#basechance 2
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "jaguar_toad_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/toad_jaguar.png
+#armor
+#offsetx -1
+#offsety -4
+#define "#mountmnr 'jaguar_toad_coral_barding_mount'"
+#define "#swimming"
+#define "#amphibian"
+#description "The giant toad will fight until the end of the battle should the rider die"
+#theme "coral"
+#tag "animal 'giant toad'"
+#tag "guaranteedprefix toad"
+#tag "minprot 6"
+#tag "maxprot 14"
+#basechance 2
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "jaguar_toad_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/toad_jaguar.png
+#armor
+#offsetx -1
+#offsety -4
+#define "#mountmnr 'jaguar_toad_bronze_mail_barding_mount'"
+#define "#swimming"
+#define "#amphibian"
+#description "The giant toad will fight until the end of the battle should the rider die"
+#theme "bronze"
+#tag "animal 'giant toad'"
+#tag "guaranteedprefix toad"
+#tag "minprot 6"
+#tag "maxprot 16"
+#basechance 1.5
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "jaguar_toad_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/toad_jaguar.png
+#armor
+#offsetx -1
+#offsety -4
+#define "#mountmnr 'jaguar_toad_bronze_barding_mount'"
+#define "#swimming"
+#define "#amphibian"
+#description "The giant toad will fight until the end of the battle should the rider die"
+#theme "bronze"
+#tag "animal 'giant toad'"
+#tag "guaranteedprefix toad"
+#tag "minprot 6"
+#tag "maxprot 18"
+#basechance 1
+#chanceinc prot 16 *2
+#enditem
+
+
+#newitem
+#id "sapphire_toad"
 #gameid -1
 #sprite /graphics/mounts/standard/toad_sapphire.png
 #armor
@@ -162,5 +892,105 @@
 #tag "guaranteedprefix frog"
 #tag "minprot 6"
 #tag "maxprot 14"
-#basechance 0.25
+#basechance 2.5
+#enditem
+
+#newitem
+#id "sapphire_toad_sharkskin_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/toad_sapphire.png
+#armor
+#offsetx -1
+#offsety -4
+#define "#mountmnr 'sapphire_toad_sharkskin_barding_mount'"
+#define "#swimming"
+#define "#amphibian"
+#description "The giant frog will fight until the end of the battle should the rider die"
+#theme "sharkskin"
+#tag "animal 'giant frog'"
+#tag "guaranteedprefix frog"
+#tag "minprot 6"
+#tag "maxprot 14"
+#basechance 2.25
+#chanceinc prot 9 *2
+#enditem
+
+#newitem
+#id "sapphire_toad_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/toad_sapphire.png
+#armor
+#offsetx -1
+#offsety -4
+#define "#mountmnr 'sapphire_toad_turtle_shell_barding_mount'"
+#define "#swimming"
+#define "#amphibian"
+#description "The giant frog will fight until the end of the battle should the rider die"
+#theme "shell"
+#tag "animal 'giant frog'"
+#tag "guaranteedprefix frog"
+#tag "minprot 6"
+#tag "maxprot 14"
+#basechance 2
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "sapphire_toad_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/toad_sapphire.png
+#armor
+#offsetx -1
+#offsety -4
+#define "#mountmnr 'sapphire_toad_coral_barding_mount'"
+#define "#swimming"
+#define "#amphibian"
+#description "The giant frog will fight until the end of the battle should the rider die"
+#theme "coral"
+#tag "animal 'giant frog'"
+#tag "guaranteedprefix frog"
+#tag "minprot 6"
+#tag "maxprot 14"
+#basechance 2
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "sapphire_toad_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/toad_sapphire.png
+#armor
+#offsetx -1
+#offsety -4
+#define "#mountmnr 'sapphire_toad_bronze_mail_barding_mount'"
+#define "#swimming"
+#define "#amphibian"
+#description "The giant frog will fight until the end of the battle should the rider die"
+#theme "bronze"
+#tag "animal 'giant frog'"
+#tag "guaranteedprefix frog"
+#tag "minprot 6"
+#tag "maxprot 16"
+#basechance 1.5
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "sapphire_toad_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/toad_sapphire.png
+#armor
+#offsetx -1
+#offsety -4
+#define "#mountmnr 'sapphire_toad_bronze_barding_mount'"
+#define "#swimming"
+#define "#amphibian"
+#description "The giant frog will fight until the end of the battle should the rider die"
+#theme "bronze"
+#tag "animal 'giant frog'"
+#tag "guaranteedprefix frog"
+#tag "minprot 6"
+#tag "maxprot 18"
+#basechance 1
+#chanceinc prot 16 *2
 #enditem

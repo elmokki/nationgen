@@ -1,18 +1,77 @@
---- Base offsets are applied to everything except base and overlay
+------ Base offsets are applied to everything except base and overlay
+
+
 #newitem
-#id "two-lizard chariot"
+#id "two_lizard_light_scale_barding_chariot"
 #gameid -1
 #sprite /graphics/mounts/chariots/twolizard.png
 #recolormask /graphics/mounts/chariots/twolizard_recolormask.png
-#armor
 #needs overlay twolizard_overlay
+#armor
 #offsetx 74
 #offsety -3
-#define "#mountmnr 'two_lizard_chariot'"
+#define "#mountmnr 'two_lizard_light_scale_barding_chariot'"
 #define "#twiceborn 3196"
 #tag "chariot"
-#tag "minprot 10"
-#tag "maxprot 20"
 #tag "animal 'lizard'"
 #tag "noble"
+#tag "minprot 10"
+#basechance 10
+#enditem
+
+#newitem
+#id "two_lizard_iron_mail_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/twolizard.png
+#recolormask /graphics/mounts/chariots/twolizard_recolormask.png
+#needs overlay twolizard_overlay
+#armor
+#offsetx 74
+#offsety -3
+#define "#mountmnr 'two_lizard_iron_mail_barding_chariot'"
+#define "#twiceborn 3196"
+#tag "chariot"
+#tag "animal 'lizard'"
+#tag "noble"
+#tag "minprot 10"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "two_lizard_cataphract_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/twolizard.png
+#recolormask /graphics/mounts/chariots/twolizard_recolormask.png
+#needs overlay twolizard_overlay
+#armor
+#offsetx 74
+#offsety -3
+#define "#mountmnr 'two_lizard_cataphract_barding_chariot'"
+#define "#twiceborn 3196"
+#tag "chariot"
+#tag "animal 'lizard'"
+#tag "noble"
+#tag "minprot 10"
+#basechance 4
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "two_lizard_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/twolizard.png
+#recolormask /graphics/mounts/chariots/twolizard_recolormask.png
+#needs overlay twolizard_overlay
+#armor
+#offsetx 74
+#offsety -3
+#define "#mountmnr 'two_lizard_barding_chariot'"
+#define "#twiceborn 3196"
+#tag "chariot"
+#tag "animal 'lizard'"
+#tag "noble"
+#tag "minprot 10"
+#basechance 2
+#chanceinc prot 18 *2
 #enditem

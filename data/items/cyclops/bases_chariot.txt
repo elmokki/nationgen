@@ -1,6 +1,9 @@
---- Base offsets are applied to everything except base and overlay
+------ Base offsets are applied to everything except base and overlay
+
+---- Horses
+
 #newitem
-#id "two-horse chariot"
+#id "two_horse"
 #gameid -1
 #sprite /graphics/mounts/chariots/twohorse_big.png
 #recolormask /graphics/mounts/chariots/twohorse_big_recolormask.png
@@ -8,9 +11,164 @@
 #needs overlay twohorse_big_overlay
 #offsetx 40
 #offsety -4
-#define "#mountmnr 'two_horse_chariot'"
+#define "#mountmnr 'two_horse_leather_barding_chariot'"
 #tag "chariot"
+#tag "animal 'horse'"
 #tag "minprot 8"
 #tag "maxprot 20"
+#basechance 4
+#enditem
+
+#newitem
+#id "two_horse_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/chariots/twohorse_big.png
+#recolormask /graphics/mounts/chariots/twohorse_big_recolormask.png
+#armor
+#needs overlay twohorse_big_overlay
+#offsetx 40
+#offsety -4
+#define "#mountmnr 'two_horse_leather_barding_chariot'"
+#tag "chariot"
 #tag "animal 'horse'"
+#tag "minprot 8"
+#tag "maxprot 20"
+#basechance 3
+#chanceinc prot 9 *2
+#enditem
+
+#newitem
+#id "two_horse_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/chariots/twohorse_big.png
+#recolormask /graphics/mounts/chariots/twohorse_big_recolormask.png
+#armor
+#needs overlay twohorse_big_overlay
+#offsetx 40
+#offsety -4
+#define "#mountmnr 'two_horse_light_bronze_barding_chariot'"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 8"
+#tag "maxprot 20"
+#basechance 3.5
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "two_horse_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/chariots/twohorse_big.png
+#recolormask /graphics/mounts/chariots/twohorse_big_recolormask.png
+#armor
+#needs overlay twohorse_big_overlay
+#offsetx 40
+#offsety -4
+#define "#mountmnr 'two_horse_light_scale_barding_chariot'"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 8"
+#tag "maxprot 20"
+#basechance 3.5
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "two_horse_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/chariots/twohorse_big.png
+#recolormask /graphics/mounts/chariots/twohorse_big_recolormask.png
+#armor
+#needs overlay twohorse_big_overlay
+#offsetx 40
+#offsety -4
+#define "#mountmnr 'two_horse_bronze_barding_chariot'"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 8"
+#tag "maxprot 20"
+#basechance 2
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "two_horse_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/chariots/twohorse_big.png
+#recolormask /graphics/mounts/chariots/twohorse_big_recolormask.png
+#armor
+#needs overlay twohorse_big_overlay
+#offsetx 40
+#offsety -4
+#define "#mountmnr 'two_horse_plate_barding_chariot'"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 8"
+#tag "maxprot 20"
+#basechance 2
+#chanceinc prot 18 *2
+#enditem
+
+#newitem
+#id "two_horse_golden_barding"
+#gameid -1
+#sprite /graphics/mounts/chariots/twohorse_big.png
+#recolormask /graphics/mounts/chariots/twohorse_big_recolormask.png
+#armor
+#needs overlay twohorse_big_overlay
+#offsetx 40
+#offsety -4
+#define "#mountmnr 'two_horse_golden_barding_chariot'"
+#theme "advanced"
+#theme "elite"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 8"
+#tag "maxprot 20"
+#basechance 2
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "two_horse_gleaming_barding"
+#gameid -1
+#sprite /graphics/mounts/chariots/twohorse_big.png
+#recolormask /graphics/mounts/chariots/twohorse_big_recolormask.png
+#armor
+#needs overlay twohorse_big_overlay
+#offsetx 40
+#offsety -4
+#define "#mountmnr 'two_horse_gleaming_barding_chariot'"
+#theme "advanced"
+#theme "sacred"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 8"
+#tag "maxprot 20"
+#basechance 1
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "two_horse_cyclope_barding"
+#gameid -1
+#sprite /graphics/mounts/chariots/twohorse_big.png
+#recolormask /graphics/mounts/chariots/twohorse_big_recolormask.png
+#armor
+#needs overlay twohorse_big_overlay
+#offsetx 40
+#offsety -4
+#define "#mountmnr 'two_horse_cyclope_barding_chariot'"
+#theme "advanced"
+#theme "sacred"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 8"
+#tag "maxprot 20"
+#basechance 1
+#chanceinc prot 18 *2
 #enditem

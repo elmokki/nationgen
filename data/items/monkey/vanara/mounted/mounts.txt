@@ -1,8 +1,8 @@
---- Base offsets are applied to everything except base and overlay
---- Culturally favored mounts
+------ Base offsets are applied to everything except base and overlay
+
+---- Culturally favored mounts
+
 #newitem
-#basechance 20
-#chanceinc "nationcommand #idealcold above 1 *0.25"
 #id "tiger"
 #gameid -1
 #sprite /graphics/mounts/standard/tiger.png
@@ -10,21 +10,171 @@
 #offsetx -4
 #offsety 4
 #define "#mountmnr 'tiger_mount'"
+#description "The tiger will persist even if the rider dies."
 #theme "specialmount"
 #theme "light"
-#tag "animal tiger"
-#description "The tiger will persist even if the rider dies."
-#tag "guaranteedprefix tiger"
-#tag "minprot 0"
-#tag "maxprot 12"
 #theme "oriental"
 #theme "enlightened"
+#tag "animal tiger"
+#tag "guaranteedprefix tiger"
+#tag "maxprot 14"
+#basechance 20
+#chanceinc "nationcommand #idealcold above 1 *0.25"
+#enditem
+
+#newitem
+#id "tiger_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/tiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'tiger_light_bronze_barding_mount'"
+#description "The tiger will persist even if the rider dies."
+#theme "specialmount"
+#theme "light"
+#theme "oriental"
+#theme "enlightened"
+#theme "bronze"
+#tag "animal tiger"
+#tag "guaranteedprefix tiger"
+#tag "maxprot 15"
+#basechance 18
+#chanceinc prot 11 *2
+#chanceinc "nationcommand #idealcold above 1 *0.25"
+#enditem
+
+#newitem
+#id "tiger_light_scale_barding_mount"
+#gameid -1
+#sprite /graphics/mounts/standard/tiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'tiger_light_scale_barding_mount'"
+#description "The tiger will persist even if the rider dies."
+#theme "specialmount"
+#theme "light"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#tag "animal tiger"
+#tag "guaranteedprefix tiger"
+#tag "maxprot 15"
+#basechance 18
+#chanceinc prot 12 *2
+#chanceinc "nationcommand #idealcold above 1 *0.25"
+#enditem
+
+#newitem
+#id "tiger_bronze_mail_barding_mount"
+#gameid -1
+#sprite /graphics/mounts/standard/tiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'tiger_bronze_mail_barding_mount'"
+#description "The tiger will persist even if the rider dies."
+#theme "specialmount"
+#theme "oriental"
+#theme "enlightened"
+#theme "bronze"
+#tag "animal tiger"
+#tag "guaranteedprefix tiger"
+#tag "maxprot 18"
+#basechance 12
+#chanceinc prot 13 *2
+#chanceinc "nationcommand #idealcold above 1 *0.25"
+#enditem
+
+#newitem
+#id "tiger_iron_mail_barding_mount"
+#gameid -1
+#sprite /graphics/mounts/standard/tiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'tiger_iron_mail_barding_mount'"
+#description "The tiger will persist even if the rider dies."
+#theme "specialmount"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#tag "animal tiger"
+#tag "guaranteedprefix tiger"
+#tag "maxprot 18"
+#basechance 12
+#chanceinc prot 14 *2
+#chanceinc "nationcommand #idealcold above 1 *0.25"
+#enditem
+
+#newitem
+#id "tiger_cataphract_barding_mount"
+#gameid -1
+#sprite /graphics/mounts/standard/tiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'tiger_cataphract_barding_mount'"
+#description "The tiger will persist even if the rider dies."
+#theme "specialmount"
+#theme "heavy"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#tag "animal tiger"
+#tag "guaranteedprefix tiger"
+#basechance 7
+#chanceinc prot 16 *2
+#chanceinc "nationcommand #idealcold above 1 *0.25"
+#enditem
+
+#newitem
+#id "tiger_bronze_barding_mount"
+#gameid -1
+#sprite /graphics/mounts/standard/tiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'tiger_bronze_barding_mount'"
+#description "The tiger will persist even if the rider dies."
+#theme "specialmount"
+#theme "heavy"
+#theme "oriental"
+#theme "enlightened"
+#theme "bronze"
+#theme "advanced"
+#tag "animal tiger"
+#tag "guaranteedprefix tiger"
+#basechance 4
+#chanceinc prot 17 *2
+#chanceinc "nationcommand #idealcold above 1 *0.25"
+#enditem
+
+#newitem
+#id "tiger_plate_barding_mount"
+#gameid -1
+#sprite /graphics/mounts/standard/tiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'tiger_plate_barding_mount'"
+#description "The tiger will persist even if the rider dies."
+#theme "specialmount"
+#theme "heavy"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#theme "advanced"
+#tag "animal tiger"
+#tag "guaranteedprefix tiger"
+#basechance 3
+#chanceinc prot 18 *2
+#chanceinc "nationcommand #idealcold above 1 *0.25"
 #enditem
 
 
 #newitem
-#basechance 20
-#chanceinc "nationcommand #idealcold above 1 *0"
 #id "jaguar"
 #gameid -1
 #sprite /graphics/mounts/standard/jaguar.png
@@ -32,140 +182,1120 @@
 #offsetx -4
 #offsety 7
 #define "#mountmnr 'jaguar_mount'"
+#description "The jaguar will persist even if the rider dies."
 #theme "specialmount"
 #theme "light"
-#tag "animal jaguar"
-#description "The jaguar will persist even if the rider dies."
-#tag "guaranteedprefix jaguar"
-#tag "minprot 0"
-#tag "maxprot 12"
 #theme "occidental"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#tag "maxprot 14"
+#basechance 20
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "jaguar_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -4
+#offsety 7
+#define "#mountmnr 'jaguar_light_bronze_barding_mount'"
+#description "The jaguar will persist even if the rider dies."
+#theme "specialmount"
+#theme "light"
+#theme "occidental"
+#theme "bronze"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#tag "maxprot 15"
+#basechance 16
+#chanceinc prot 11 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "jaguar_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -4
+#offsety 7
+#define "#mountmnr 'jaguar_light_scale_barding_mount'"
+#description "The jaguar will persist even if the rider dies."
+#theme "specialmount"
+#theme "light"
+#theme "occidental"
+#theme "iron"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#tag "maxprot 15"
+#basechance 16
+#chanceinc prot 12 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "jaguar_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -4
+#offsety 7
+#define "#mountmnr 'jaguar_bronze_mail_barding_mount'"
+#description "The jaguar will persist even if the rider dies."
+#theme "specialmount"
+#theme "occidental"
+#theme "bronze"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#tag "maxprot 18"
+#basechance 12
+#chanceinc prot 13 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "jaguar_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -4
+#offsety 7
+#define "#mountmnr 'jaguar_iron_mail_barding_mount'"
+#description "The jaguar will persist even if the rider dies."
+#theme "specialmount"
+#theme "occidental"
+#theme "iron"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#tag "maxprot 18"
+#basechance 12
+#chanceinc prot 14 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "jaguar_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -4
+#offsety 7
+#define "#mountmnr 'jaguar_cataphract_barding_mount'"
+#description "The jaguar will persist even if the rider dies."
+#theme "specialmount"
+#theme "heavy"
+#theme "occidental"
+#theme "iron"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#basechance 6
+#chanceinc prot 16 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "jaguar_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -4
+#offsety 7
+#define "#mountmnr 'jaguar_bronze_barding_mount'"
+#description "The jaguar will persist even if the rider dies."
+#theme "specialmount"
+#theme "heavy"
+#theme "occidental"
+#theme "bronze"
+#theme "advanced"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#basechance 4
+#chanceinc prot 17 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "jaguar_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -4
+#offsety 7
+#define "#mountmnr 'jaguar_plate_barding_mount'"
+#description "The jaguar will persist even if the rider dies."
+#theme "specialmount"
+#theme "heavy"
+#theme "occidental"
+#theme "iron"
+#theme "advanced"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#basechance 3
+#chanceinc prot 18 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
 #enditem
 
 
 #newitem
-#id "dire wolf"
-#basechance 20
+#id "dire_wolf"
 #gameid -1
 #sprite /graphics/mounts/standard/direwolf1.png
 #armor
-#define "#mountmnr 'dire_wolf_mount_1'"
-#tag "animal wolf"
-#theme "light"
-#tag "maxprot 11"
-#tag "guaranteedprefix wolf"
-#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
 #offsety 0
 #offsetx -9
+#define "#mountmnr 'dire_wolf_mount_1'"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#theme "light"
 #theme "imperial"
+#tag "guaranteedprefix wolf"
+#tag "animal wolf"
+#tag "maxprot 12"
+#basechance 20
+#enditem
+
+#newitem
+#id "dire_wolf_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#offsety 0
+#offsetx -9
+#define "#mountmnr 'dire_wolf_light_bronze_barding_mount_1'"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#theme "light"
+#theme "imperial"
+#theme "bronze"
+#tag "guaranteedprefix wolf"
+#tag "animal wolf"
+#tag "maxprot 15"
+#basechance 16
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "dire_wolf_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#offsety 0
+#offsetx -9
+#define "#mountmnr 'dire_wolf_light_scale_barding_mount_1'"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#theme "light"
+#theme "imperial"
+#theme "iron"
+#tag "guaranteedprefix wolf"
+#tag "animal wolf"
+#tag "maxprot 15"
+#basechance 16
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "dire_wolf_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#offsety 0
+#offsetx -9
+#define "#mountmnr 'dire_wolf_bronze_mail_barding_mount_1'"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#theme "imperial"
+#theme "bronze"
+#tag "guaranteedprefix wolf"
+#tag "animal wolf"
+#tag "maxprot 16"
+#basechance 12
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "dire_wolf_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#offsety 0
+#offsetx -9
+#define "#mountmnr 'dire_wolf_iron_mail_barding_mount_1'"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#theme "imperial"
+#theme "iron"
+#tag "guaranteedprefix wolf"
+#tag "animal wolf"
+#tag "maxprot 16"
+#basechance 12
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "dire_wolf_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#offsety 0
+#offsetx -9
+#define "#mountmnr 'dire_wolf_cataphract_barding_mount_1'"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#theme "imperial"
+#theme "iron"
+#theme "heavy"
+#tag "guaranteedprefix wolf"
+#tag "animal wolf"
+#basechance 6
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "dire_wolf_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#offsety 0
+#offsetx -9
+#define "#mountmnr 'dire_wolf_bronze_barding_mount_1'"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#theme "imperial"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "guaranteedprefix wolf"
+#tag "animal wolf"
+#basechance 4
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "dire_wolf_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#offsety 0
+#offsetx -9
+#define "#mountmnr 'dire_wolf_plate_barding_mount_1'"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#theme "imperial"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "guaranteedprefix wolf"
+#tag "animal wolf"
+#basechance 3
+#chanceinc prot 18 *2
 #enditem
 
 
 #newitem
 #id "lion"
-#basechance 20
-#chanceinc "nationcommand #idealcold above 1 *0"
 #gameid -1
 #sprite /graphics/mounts/standard/lion_asian.png
 #armor
-#define "#mountmnr 'lion_mount'"
-#description "If the rider dies, the lion will carry on fighting until the end of the battle."
 #offsety 5
 #offsetx -3
+#define "#mountmnr 'lion_mount'"
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#theme "austral"
 #tag "animal lion"
 #tag "guaranteedprefix lion"
+#basechance 20
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "lion_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/lion_asian.png
+#armor
+#offsety 5
+#offsetx -3
+#define "#mountmnr 'lion_light_bronze_barding_mount'"
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
 #theme "austral"
+#theme "bronze"
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#basechance 16
+#chanceinc prot 11 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "lion_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/lion_asian.png
+#armor
+#offsety 5
+#offsetx -3
+#define "#mountmnr 'lion_light_scale_barding_mount'"
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#theme "austral"
+#theme "iron"
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#basechance 16
+#chanceinc prot 12 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "lion_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/lion_asian.png
+#armor
+#offsety 5
+#offsetx -3
+#define "#mountmnr 'lion_bronze_mail_barding_mount'"
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#theme "austral"
+#theme "bronze"
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#basechance 12
+#chanceinc prot 13 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "lion_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/lion_asian.png
+#armor
+#offsety 5
+#offsetx -3
+#define "#mountmnr 'lion_iron_mail_barding_mount'"
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#theme "austral"
+#theme "iron"
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#basechance 12
+#chanceinc prot 14 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "lion_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/lion_asian.png
+#armor
+#offsety 5
+#offsetx -3
+#define "#mountmnr 'lion_cataphract_barding_mount'"
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#theme "austral"
+#theme "iron"
+#theme "heavy"
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#basechance 6
+#chanceinc prot 16 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "lion_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/lion_asian.png
+#armor
+#offsety 5
+#offsetx -3
+#define "#mountmnr 'lion_bronze_barding_mount'"
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#theme "austral"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#basechance 4
+#chanceinc prot 17 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "lion_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/lion_asian.png
+#armor
+#offsety 5
+#offsetx -3
+#define "#mountmnr 'lion_plate_barding_mount'"
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#theme "austral"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#basechance 3
+#chanceinc prot 18 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
 #enditem
 
 
 #newitem
-#id "serpent 1"
-#chanceinc "nationcommand #idealcold above 0 *0"
+#id "serpent"
 #gameid -1
 #sprite /graphics/mounts/standard/serpent1.png
 #armor
 #offsetx -7
 #offsety 14
 #define "#mountmnr 'serpent_mount'"
-#tag "animal serpent"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
 #theme "light"
+#theme "imperial"
+#theme "enlightened"
+#tag "animal serpent"
 #tag "guaranteedprefix serpent"
-#tag "maxprot 13"
+#tag "maxprot 14"
+#basechance 10
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "serpent_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#define "#mountmnr 'serpent_light_bronze_barding_mount'"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#theme "light"
+#theme "imperial"
+#theme "enlightened"
+#theme "bronze"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 11 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "serpent_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#define "#mountmnr 'serpent_light_scale_barding_mount'"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#theme "light"
+#theme "imperial"
+#theme "enlightened"
+#theme "iron"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 12 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "serpent_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#define "#mountmnr 'serpent_bronze_mail_barding_mount'"
 #description "If the rider dies, the serpent will carry on fighting until the end of the battle."
 #theme "imperial"
 #theme "enlightened"
+#theme "bronze"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 13 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "serpent_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#define "#mountmnr 'serpent_iron_mail_barding_mount'"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#theme "imperial"
+#theme "enlightened"
+#theme "iron"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 14 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "serpent_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#define "#mountmnr 'serpent_cataphract_barding_mount'"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#theme "imperial"
+#theme "enlightened"
+#theme "iron"
+#theme "heavy"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#basechance 3
+#chanceinc prot 16 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "serpent_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#define "#mountmnr 'serpent_bronze_barding_mount'"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#theme "imperial"
+#theme "enlightened"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#basechance 2
+#chanceinc prot 17 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "serpent_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#define "#mountmnr 'serpent_plate_barding_mount'"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#theme "imperial"
+#theme "enlightened"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#basechance 1.5
+#chanceinc prot 18 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
 #enditem
 
 
 #newitem
-#id "serpent 2"
-#chanceinc "nationcommand #idealcold above 0 *0"
+#id "serpent_stupid"
 #gameid -1
 #sprite /graphics/mounts/standard/serpent2.png
 #armor
 #offsetx -5
 #offsety 13
 #define "#mountmnr 'serpent_stupid_mount'"
-#tag "animal serpent"
-#theme "heavy"
-#theme "specialmount"
-#tag "guaranteedprefix serpent"
 #description "If the rider dies, the serpent will carry on fighting until the end of the battle."
-#tag "minprot 14"
+#theme "specialmount"
 #theme "imperial"
 #theme "enlightened"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "minprot 10"
+#basechance 10
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "serpent_stupid_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent2.png
+#armor
+#offsetx -5
+#offsety 13
+#define "#mountmnr 'serpent_stupid_light_bronze_barding_mount'"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#theme "specialmount"
+#theme "imperial"
+#theme "enlightened"
+#theme "bronze"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "minprot 10"
+#basechance 8
+#chanceinc prot 11 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "serpent_stupid_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent2.png
+#armor
+#offsetx -5
+#offsety 13
+#define "#mountmnr 'serpent_stupid_light_scale_barding_mount'"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#theme "specialmount"
+#theme "imperial"
+#theme "enlightened"
+#theme "iron"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "minprot 10"
+#basechance 8
+#chanceinc prot 12 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "serpent_stupid_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent2.png
+#armor
+#offsetx -5
+#offsety 13
+#define "#mountmnr 'serpent_stupid_bronze_mail_barding_mount'"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#theme "specialmount"
+#theme "imperial"
+#theme "enlightened"
+#theme "bronze"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "minprot 10"
+#basechance 6
+#chanceinc prot 13 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "serpent_stupid_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent2.png
+#armor
+#offsetx -5
+#offsety 13
+#define "#mountmnr 'serpent_stupid_iron_mail_barding_mount'"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#theme "specialmount"
+#theme "imperial"
+#theme "enlightened"
+#theme "iron"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "minprot 10"
+#basechance 6
+#chanceinc prot 14 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "serpent_stupid_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent2.png
+#armor
+#offsetx -5
+#offsety 13
+#define "#mountmnr 'serpent_stupid_cataphract_barding_mount'"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#theme "specialmount"
+#theme "imperial"
+#theme "enlightened"
+#theme "iron"
+#theme "heavy"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "minprot 10"
+#basechance 3
+#chanceinc prot 16 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "serpent_stupid_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent2.png
+#armor
+#offsetx -5
+#offsety 13
+#define "#mountmnr 'serpent_stupid_bronze_barding_mount'"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#theme "specialmount"
+#theme "imperial"
+#theme "enlightened"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "minprot 10"
+#basechance 2
+#chanceinc prot 17 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "serpent_stupid_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent2.png
+#armor
+#offsetx -5
+#offsety 13
+#define "#mountmnr 'serpent_stupid_plate_barding_mount'"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#theme "specialmount"
+#theme "imperial"
+#theme "enlightened"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "minprot 10"
+#basechance 1.5
+#chanceinc prot 18 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
 #enditem
 
 
 #newitem
-#basechance 0.5
-#chanceinc "nationcommand #idealcold above 0 *0"
-#id "green lizard"
+#id "green_lizard"
 #gameid -1
 #sprite /graphics/mounts/standard/greenlizard.png
 #armor
 #offsetx -5
 #offsety 3
 #define "#mountmnr 'green_lizard_mount'"
-#tag "animal lizard"
 #theme "light"
 #theme "specialmount"
-#tag "guaranteedprefix lizard"
-#tag "maxprot 15"
 #theme "imperial"
 #theme "enlightened"
 #theme "oriental"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#tag "maxprot 14"
+#basechance 5
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "green_lizard_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#define "#mountmnr 'green_lizard_light_bronze_barding_mount'"
+#theme "light"
+#theme "specialmount"
+#theme "imperial"
+#theme "bronze"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#tag "maxprot 15"
+#basechance 5
+#chanceinc prot 11 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "green_lizard_light_bronze_barding_oriental"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#define "#mountmnr 'green_lizard_light_bronze_barding_mount'"
+#theme "light"
+#theme "specialmount"
+#theme "enlightened"
+#theme "oriental"
+#theme "bronze"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#tag "maxprot 15"
+#basechance 5
+#chanceinc prot 11 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "green_lizard_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#define "#mountmnr 'green_lizard_light_scale_barding_mount'"
+#theme "light"
+#theme "specialmount"
+#theme "imperial"
+#theme "iron"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#tag "maxprot 15"
+#basechance 5
+#chanceinc prot 12 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "green_lizard_light_scale_barding_oriental"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#define "#mountmnr 'green_lizard_light_scale_barding_mount'"
+#theme "light"
+#theme "specialmount"
+#theme "enlightened"
+#theme "oriental"
+#theme "iron"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#tag "maxprot 15"
+#basechance 5
+#chanceinc prot 12 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "green_lizard_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#define "#mountmnr 'green_lizard_bronze_mail_barding_mount'"
+#theme "specialmount"
+#theme "imperial"
+#theme "bronze"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#tag "maxprot 18"
+#basechance 5
+#chanceinc prot 13 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "green_lizard_bronze_mail_barding_oriental"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#define "#mountmnr 'green_lizard_bronze_mail_barding_mount'"
+#theme "specialmount"
+#theme "enlightened"
+#theme "oriental"
+#theme "bronze"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#tag "maxprot 18"
+#basechance 5
+#chanceinc prot 13 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "green_lizard_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#define "#mountmnr 'green_lizard_iron_mail_barding_mount'"
+#theme "specialmount"
+#theme "imperial"
+#theme "iron"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#tag "maxprot 18"
+#basechance 5
+#chanceinc prot 14 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "green_lizard_iron_mail_barding_oriental"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#define "#mountmnr 'green_lizard_iron_mail_barding_mount'"
+#theme "specialmount"
+#theme "enlightened"
+#theme "oriental"
+#theme "iron"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#tag "maxprot 18"
+#basechance 5
+#chanceinc prot 14 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "green_lizard_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#define "#mountmnr 'green_lizard_cataphract_barding_mount'"
+#theme "specialmount"
+#theme "imperial"
+#theme "iron"
+#theme "heavy"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#basechance 5
+#chanceinc prot 16 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "green_lizard_cataphract_barding_oriental"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#define "#mountmnr 'green_lizard_cataphract_barding_mount'"
+#theme "specialmount"
+#theme "enlightened"
+#theme "oriental"
+#theme "iron"
+#theme "heavy"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#basechance 5
+#chanceinc prot 16 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "green_lizard_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#define "#mountmnr 'green_lizard_bronze_barding_mount'"
+#theme "specialmount"
+#theme "imperial"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#basechance 5
+#chanceinc prot 17 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "green_lizard_bronze_barding_oriental"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#define "#mountmnr 'green_lizard_bronze_barding_mount'"
+#theme "specialmount"
+#theme "enlightened"
+#theme "oriental"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#basechance 5
+#chanceinc prot 17 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "green_lizard_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#define "#mountmnr 'green_lizard_plate_barding_mount'"
+#theme "specialmount"
+#theme "imperial"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#basechance 5
+#chanceinc prot 18 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#enditem
+
+#newitem
+#id "green_lizard_plate_barding_oriental"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#define "#mountmnr 'green_lizard_plate_barding_mount'"
+#theme "specialmount"
+#theme "enlightened"
+#theme "oriental"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#basechance 5
+#chanceinc prot 18 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
 #enditem
 
 
 #newitem
-#basechance 0.25
-#chanceinc "nationcommand #idealcold above 0 *0"
-#id "cave drake"
+#id "cave_drake"
 #gameid -1
 #sprite /graphics/mounts/standard/cavedrake.png
 #armor
 #offsetx 8
 #offsety 11
 #define "#mountmnr 'cave_drake_mount'"
-#tag "animal drake"
-#theme "specialmount"
 #description "The cave drake will persist even if the rider dies."
-#tag "guaranteedprefix drake"
-#tag "name commander drakelord"
-#tag "minprot 0"
-#tag "maxprot 100"
-#sacredextra nonholyshape 0.25
+#theme "specialmount"
 #theme "occidental"
 #theme "enlightened"
 #theme "oriental"
+#tag "guaranteedprefix drake"
+#tag "name commander drakelord"
+#tag "animal drake"
+#basechance 2.5
+#chanceinc "nationcommand #idealcold above 0 *0"
+#sacredextra nonholyshape 0.25
 #enditem
 
 
 #newitem
-#basechance 0.5
-#chanceinc "nationcommand #idealcold above 2 *0"
-#id "spider"
+#id "great_spider"
 #gameid -1
 #sprite /graphics/mounts/standard/spider1.png
 #armor
@@ -174,41 +1304,269 @@
 #needs overlay spider_overlay
 #define "#mountmnr 'great_spider_mount'"
 #description "The giant spider will persist even if the rider dies."
+#theme "occidental"
+#theme "enlightened"
 #theme "specialmount"
 #tag "animal spider"
 #tag "guaranteedprefix spider"
-#tag "minprot 0"
 #tag "maxprot 12"
-#theme "occidental"
-#theme "enlightened"
+#basechance 5
+#chanceinc "nationcommand #idealcold above 2 *0"
 #enditem
 
-
 #newitem
-#basechance 0.5
-#chanceinc "nationcommand #idealcold above 2 *0"
-#id "spider heavy"
+#id "great_spider_light_bronze_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/spider1.png
 #armor
 #offsetx 35
 #offsety 7
 #needs overlay spider_overlay
-#define "#mountmnr 'great_spider_mount'"
+#define "#mountmnr 'great_spider_light_bronze_barding_mount'"
 #description "The giant spider will persist even if the rider dies."
-#theme "specialmount"
-#tag "animal spider"
-#tag "guaranteedprefix spider"
-#tag "minprot 13"
-#tag "maxprot 100"
 #theme "occidental"
 #theme "enlightened"
+#theme "specialmount"
+#theme "bronze"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "maxprot 15"
+#basechance 4
+#chanceinc prot 11 *2
+#chanceinc "nationcommand #idealcold above 2 *0"
+#enditem
+
+#newitem
+#id "great_spider_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/spider1.png
+#armor
+#offsetx 35
+#offsety 7
+#needs overlay spider_overlay
+#define "#mountmnr 'great_spider_light_scale_barding_mount'"
+#description "The giant spider will persist even if the rider dies."
+#theme "occidental"
+#theme "enlightened"
+#theme "specialmount"
+#theme "iron"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "maxprot 15"
+#basechance 4
+#chanceinc prot 12 *2
+#chanceinc "nationcommand #idealcold above 2 *0"
+#enditem
+
+#newitem
+#id "great_spider_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/spider1.png
+#armor
+#offsetx 35
+#offsety 7
+#needs overlay spider_overlay
+#define "#mountmnr 'great_spider_bronze_mail_barding_mount'"
+#description "The giant spider will persist even if the rider dies."
+#theme "occidental"
+#theme "enlightened"
+#theme "specialmount"
+#theme "bronze"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "maxprot 18"
+#basechance 3
+#chanceinc prot 13 *2
+#chanceinc "nationcommand #idealcold above 2 *0"
+#enditem
+
+#newitem
+#id "great_spider_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/spider1.png
+#armor
+#offsetx 35
+#offsety 7
+#needs overlay spider_overlay
+#define "#mountmnr 'great_spider_iron_mail_barding_mount'"
+#description "The giant spider will persist even if the rider dies."
+#theme "occidental"
+#theme "enlightened"
+#theme "specialmount"
+#theme "iron"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "maxprot 18"
+#basechance 3
+#chanceinc prot 14 *2
+#chanceinc "nationcommand #idealcold above 2 *0"
+#enditem
+
+#newitem
+#id "great_spider_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/spider1.png
+#armor
+#offsetx 35
+#offsety 7
+#needs overlay spider_overlay
+#define "#mountmnr 'great_spider_cataphract_barding_mount'"
+#description "The giant spider will persist even if the rider dies."
+#theme "occidental"
+#theme "enlightened"
+#theme "specialmount"
+#theme "iron"
+#theme "heavy"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#basechance 1.5
+#chanceinc prot 16 *2
+#chanceinc "nationcommand #idealcold above 2 *0"
 #enditem
 
 
 #newitem
-#id "black jaguar"
-#chanceinc "nationcommand #idealcold above 1 *0"
+#id "hunter_spider"
+#gameid -1
+#sprite /graphics/mounts/standard/bigspider.png
+#armor
+#offsetx 35
+#offsety 58
+#define "#mountmnr 'hunter_spider_mount'"
+#description "The hunter spider will persist even if the rider dies."
+#theme "specialmount"
+#theme "occidental"
+#theme "enlightened"
+#theme "heavy"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "minprot 12"
+#tag "maxprot 20"
+#basechance 1
+#chanceinc "nationcommand #idealcold above 2 *0"
+#sacredextra nonholyshape 0.7
+#enditem
+
+#newitem
+#id "hunter_spider_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bigspider.png
+#armor
+#offsetx 35
+#offsety 58
+#define "#mountmnr 'hunter_spider_light_bronze_barding_mount'"
+#description "The hunter spider will persist even if the rider dies."
+#theme "specialmount"
+#theme "occidental"
+#theme "enlightened"
+#theme "heavy"
+#theme "bronze"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "minprot 12"
+#tag "maxprot 20"
+#basechance 1
+#chanceinc "nationcommand #idealcold above 2 *0"
+#sacredextra nonholyshape 0.7
+#enditem
+
+#newitem
+#id "hunter_spider_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bigspider.png
+#armor
+#offsetx 35
+#offsety 58
+#define "#mountmnr 'hunter_spider_light_scale_barding_mount'"
+#description "The hunter spider will persist even if the rider dies."
+#theme "specialmount"
+#theme "occidental"
+#theme "enlightened"
+#theme "heavy"
+#theme "iron"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "minprot 12"
+#tag "maxprot 20"
+#basechance 1
+#chanceinc "nationcommand #idealcold above 2 *0"
+#sacredextra nonholyshape 0.7
+#enditem
+
+#newitem
+#id "hunter_spider_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bigspider.png
+#armor
+#offsetx 35
+#offsety 58
+#define "#mountmnr 'hunter_spider_bronze_mail_barding_mount'"
+#description "The hunter spider will persist even if the rider dies."
+#theme "specialmount"
+#theme "occidental"
+#theme "enlightened"
+#theme "heavy"
+#theme "bronze"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "minprot 12"
+#tag "maxprot 20"
+#basechance 1
+#chanceinc prot 14 *2
+#chanceinc "nationcommand #idealcold above 2 *0"
+#sacredextra nonholyshape 0.7
+#enditem
+
+#newitem
+#id "hunter_spider_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bigspider.png
+#armor
+#offsetx 35
+#offsety 58
+#define "#mountmnr 'hunter_spider_iron_mail_barding_mount'"
+#description "The hunter spider will persist even if the rider dies."
+#theme "specialmount"
+#theme "occidental"
+#theme "enlightened"
+#theme "heavy"
+#theme "iron"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "minprot 12"
+#tag "maxprot 20"
+#basechance 1
+#chanceinc prot 15 *2
+#chanceinc "nationcommand #idealcold above 2 *0"
+#sacredextra nonholyshape 0.7
+#enditem
+
+#newitem
+#id "hunter_spider_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bigspider.png
+#armor
+#offsetx 35
+#offsety 58
+#define "#mountmnr 'hunter_spider_cataphract_barding_mount'"
+#description "The hunter spider will persist even if the rider dies."
+#theme "specialmount"
+#theme "occidental"
+#theme "enlightened"
+#theme "heavy"
+#theme "iron"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "minprot 12"
+#basechance 1
+#chanceinc prot 18 *2
+#chanceinc "nationcommand #idealcold above 2 *0"
+#sacredextra nonholyshape 0.7
+#enditem
+
+
+#newitem
+#id "black_jaguar"
 #gameid -1
 #sprite /graphics/mounts/standard/blackjaguar.png
 #armor
@@ -219,161 +1577,1209 @@
 #theme "light"
 #tag "animal panther"
 #tag "guaranteedprefix panther"
-#tag "minprot 0"
 #tag "maxprot 12"
 #theme "occidental"
+#basechance 10
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "black_jaguar_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blackjaguar.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_jaguar_light_bronze_barding_mount'"
+#theme "specialmount"
+#theme "light"
+#theme "bronze"
+#tag "animal panther"
+#tag "guaranteedprefix panther"
+#tag "maxprot 15"
+#theme "occidental"
+#basechance 8
+#chanceinc prot 11 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "black_jaguar_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blackjaguar.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_jaguar_light_scale_barding_mount'"
+#theme "specialmount"
+#theme "light"
+#theme "iron"
+#tag "animal panther"
+#tag "guaranteedprefix panther"
+#tag "maxprot 15"
+#theme "occidental"
+#basechance 8
+#chanceinc prot 12 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "black_jaguar_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blackjaguar.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_jaguar_bronze_mail_barding_mount'"
+#theme "specialmount"
+#theme "bronze"
+#tag "animal panther"
+#tag "guaranteedprefix panther"
+#tag "maxprot 18"
+#theme "occidental"
+#basechance 6
+#chanceinc prot 13 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "black_jaguar_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blackjaguar.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_jaguar_iron_mail_barding_mount'"
+#theme "specialmount"
+#theme "iron"
+#tag "animal panther"
+#tag "guaranteedprefix panther"
+#tag "maxprot 18"
+#theme "occidental"
+#basechance 6
+#chanceinc prot 14 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "black_jaguar_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blackjaguar.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_jaguar_cataphract_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "iron"
+#tag "animal panther"
+#tag "guaranteedprefix panther"
+#theme "occidental"
+#basechance 4
+#chanceinc prot 16 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "black_jaguar_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blackjaguar.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_jaguar_bronze_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "bronze"
+#theme "advanced"
+#tag "animal panther"
+#tag "guaranteedprefix panther"
+#theme "occidental"
+#basechance 2
+#chanceinc prot 17 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "black_jaguar_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blackjaguar.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_jaguar_plate_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "iron"
+#theme "advanced"
+#tag "animal panther"
+#tag "guaranteedprefix panther"
+#theme "occidental"
+#basechance 1.5
+#chanceinc prot 18 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "black_jaguar_silver_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blackjaguar.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_jaguar_silver_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "advanced"
+#tag "animal panther"
+#tag "guaranteedprefix panther"
+#theme "occidental"
+#basechance 0.5
+#chanceinc prot 18 *2
+#chanceinc "anymagic glamour *5"
+#chanceinc "nationcommand #idealcold above 1 *0"
 #enditem
 
 
 #newitem
-#id "black tiger"
-#basechance 0.5
-#chanceinc "nationcommand #idealcold above 1 *0"
+#id "black_tiger"
 #gameid -1
 #sprite /graphics/mounts/standard/blacktiger.png
 #armor
 #offsetx -4
 #offsety 4
 #define "#mountmnr 'black_tiger_mount'"
+#theme "oriental"
+#theme "enlightened"
 #theme "specialmount"
 #theme "light"
 #tag "animal tiger"
 #tag "guaranteedprefix black tiger"
-#tag "minprot 0"
-#tag "maxprot 11"
+#tag "maxprot 12"
+#basechance 5
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "black_tiger_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_tiger_light_bronze_barding_mount'"
 #theme "oriental"
 #theme "enlightened"
+#theme "specialmount"
+#theme "light"
+#theme "bronze"
+#tag "animal tiger"
+#tag "guaranteedprefix black tiger"
+#tag "maxprot 15"
+#basechance 4
+#chanceinc prot 11 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "black_tiger_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_tiger_light_scale_barding_mount'"
+#theme "oriental"
+#theme "enlightened"
+#theme "specialmount"
+#theme "light"
+#theme "iron"
+#tag "animal tiger"
+#tag "guaranteedprefix black tiger"
+#tag "maxprot 15"
+#basechance 4
+#chanceinc prot 12 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "black_tiger_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_tiger_bronze_mail_barding_mount'"
+#theme "oriental"
+#theme "enlightened"
+#theme "specialmount"
+#theme "bronze"
+#tag "animal tiger"
+#tag "guaranteedprefix black tiger"
+#tag "maxprot 18"
+#basechance 3
+#chanceinc prot 13 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "black_tiger_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_tiger_iron_mail_barding_mount'"
+#theme "oriental"
+#theme "enlightened"
+#theme "specialmount"
+#theme "iron"
+#tag "animal tiger"
+#tag "guaranteedprefix black tiger"
+#tag "maxprot 18"
+#basechance 3
+#chanceinc prot 14 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "black_tiger_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_tiger_cataphract_barding_mount'"
+#theme "oriental"
+#theme "enlightened"
+#theme "specialmount"
+#theme "iron"
+#theme "heavy"
+#tag "animal tiger"
+#tag "guaranteedprefix black tiger"
+#basechance 1.5
+#chanceinc prot 16 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "black_tiger_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_tiger_bronze_barding_mount'"
+#theme "oriental"
+#theme "enlightened"
+#theme "specialmount"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal tiger"
+#tag "guaranteedprefix black tiger"
+#tag "maxprot 18"
+#basechance 1
+#chanceinc prot 17 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "black_tiger_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_tiger_plate_barding_mount'"
+#theme "oriental"
+#theme "enlightened"
+#theme "specialmount"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal tiger"
+#tag "guaranteedprefix black tiger"
+#basechance 0.75
+#chanceinc prot 18 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
+#id "black_tiger_silver_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_tiger_silver_barding_mount'"
+#theme "oriental"
+#theme "enlightened"
+#theme "specialmount"
+#theme "heavy"
+#theme "advanced"
+#tag "animal tiger"
+#tag "guaranteedprefix black tiger"
+#basechance 0.25
+#chanceinc prot 18 *2
+#chanceinc "anymagic glamour *5"
+#chanceinc "nationcommand #idealcold above 1 *0"
 #enditem
 
 
 #newitem
-#id "white tiger"
-#basechance 0.5
-#chanceinc "nationcommand #idealcold above 1 *40"
-#chanceinc "nationcommand #idealcold below -1 *0"
+#id "white_tiger"
 #gameid -1
 #sprite /graphics/mounts/standard/whitetiger.png
 #armor
 #offsetx -4
 #offsety 4
 #define "#mountmnr 'white_tiger_mount'"
+#theme "oriental"
+#theme "enlightened"
 #theme "specialmount"
 #theme "light"
 #tag "animal tiger"
 #tag "guaranteedprefix white tiger"
-#tag "minprot 0"
-#tag "maxprot 11"
+#tag "maxprot 12"
+#basechance 5
+#chanceinc "nationcommand #idealcold above 1 *10"
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+#newitem
+#id "white_tiger_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/whitetiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'white_tiger_light_bronze_barding_mount'"
 #theme "oriental"
 #theme "enlightened"
+#theme "specialmount"
+#theme "light"
+#theme "bronze"
+#tag "animal tiger"
+#tag "guaranteedprefix white tiger"
+#tag "maxprot 15"
+#basechance 4
+#chanceinc prot 11 *2
+#chanceinc "nationcommand #idealcold above 1 *10"
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+#newitem
+#id "white_tiger_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/whitetiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'white_tiger_light_scale_barding_mount'"
+#theme "oriental"
+#theme "enlightened"
+#theme "specialmount"
+#theme "light"
+#theme "iron"
+#tag "animal tiger"
+#tag "guaranteedprefix white tiger"
+#tag "maxprot 15"
+#basechance 4
+#chanceinc prot 12 *2
+#chanceinc "nationcommand #idealcold above 1 *10"
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+#newitem
+#id "white_tiger_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/whitetiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'white_tiger_bronze_mail_barding_mount'"
+#theme "oriental"
+#theme "enlightened"
+#theme "specialmount"
+#theme "bronze"
+#tag "animal tiger"
+#tag "guaranteedprefix white tiger"
+#tag "maxprot 18"
+#basechance 3
+#chanceinc prot 13 *2
+#chanceinc "nationcommand #idealcold above 1 *10"
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+#newitem
+#id "white_tiger_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/whitetiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'white_tiger_iron_mail_barding_mount'"
+#theme "oriental"
+#theme "enlightened"
+#theme "specialmount"
+#theme "iron"
+#tag "animal tiger"
+#tag "guaranteedprefix white tiger"
+#tag "maxprot 18"
+#basechance 3
+#chanceinc prot 14 *2
+#chanceinc "nationcommand #idealcold above 1 *10"
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+#newitem
+#id "white_tiger_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/whitetiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'white_tiger_cataphract_barding_mount'"
+#theme "oriental"
+#theme "enlightened"
+#theme "specialmount"
+#theme "iron"
+#theme "heavy"
+#tag "animal tiger"
+#tag "guaranteedprefix white tiger"
+#basechance 1.5
+#chanceinc prot 16 *2
+#chanceinc "nationcommand #idealcold above 1 *10"
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+#newitem
+#id "white_tiger_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/whitetiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'white_tiger_bronze_barding_mount'"
+#theme "oriental"
+#theme "enlightened"
+#theme "specialmount"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal tiger"
+#tag "guaranteedprefix white tiger"
+#basechance 1
+#chanceinc prot 17 *2
+#chanceinc "nationcommand #idealcold above 1 *10"
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+#newitem
+#id "white_tiger_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/whitetiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'white_tiger_plate_barding_mount'"
+#theme "oriental"
+#theme "enlightened"
+#theme "specialmount"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal tiger"
+#tag "guaranteedprefix white tiger"
+#basechance 0.75
+#chanceinc prot 18 *2
+#chanceinc "nationcommand #idealcold above 1 *10"
+#chanceinc "nationcommand #idealcold below -1 *0"
 #enditem
 
 
 #newitem
-#id "dire wolf"
+#id "dire_wolf"
 #gameid -1
 #sprite /graphics/mounts/standard/direwolf1.png
 #armor
-#define "#mountmnr 'dire_wolf_mount_1'"
-#define "#gcost +25"
-#tag "animal wolf"
-#theme "light"
-#tag "maxprot 11"
-#tag "guaranteedprefix wolf"
-#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
 #offsety 0
 #offsetx -9
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#define "#mountmnr 'dire_wolf_mount_1'"
+#theme "light"
 #theme "occidental"
 #theme "oriental"
+#tag "animal wolf"
+#tag "guaranteedprefix wolf"
+#tag "maxprot 12"
+#basechance 10
+#enditem
+
+#newitem
+#id "dire_wolf_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#offsety 0
+#offsetx -9
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#define "#mountmnr 'dire_wolf_light_bronze_barding_mount_1'"
+#theme "light"
+#theme "occidental"
+#theme "oriental"
+#theme "bronze"
+#tag "animal wolf"
+#tag "guaranteedprefix wolf"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "dire_wolf_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#offsety 0
+#offsetx -9
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#define "#mountmnr 'dire_wolf_light_scale_barding_mount_1'"
+#theme "light"
+#theme "occidental"
+#theme "oriental"
+#theme "iron"
+#tag "animal wolf"
+#tag "guaranteedprefix wolf"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "dire_wolf_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#offsety 0
+#offsetx -9
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#define "#mountmnr 'dire_wolf_bronze_mail_barding_mount_1'"
+#theme "occidental"
+#theme "oriental"
+#theme "bronze"
+#tag "animal wolf"
+#tag "guaranteedprefix wolf"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "dire_wolf_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#offsety 0
+#offsetx -9
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#define "#mountmnr 'dire_wolf_iron_mail_barding_mount_1'"
+#theme "occidental"
+#theme "oriental"
+#theme "iron"
+#tag "animal wolf"
+#tag "guaranteedprefix wolf"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "dire_wolf_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#offsety 0
+#offsetx -9
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#define "#mountmnr 'dire_wolf_cataphract_barding_mount_1'"
+#theme "occidental"
+#theme "oriental"
+#theme "iron"
+#theme "heavy"
+#tag "animal wolf"
+#tag "guaranteedprefix wolf"
+#basechance 3
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "dire_wolf_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#offsety 0
+#offsetx -9
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#define "#mountmnr 'dire_wolf_bronze_barding_mount_1'"
+#theme "occidental"
+#theme "oriental"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal wolf"
+#tag "guaranteedprefix wolf"
+#basechance 2
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "dire_wolf_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#offsety 0
+#offsetx -9
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#define "#mountmnr 'dire_wolf_plate_barding_mount_1'"
+#theme "occidental"
+#theme "oriental"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal wolf"
+#tag "guaranteedprefix wolf"
+#basechance 1.5
+#chanceinc prot 18 *2
 #enditem
 
 
 #newitem
 #id "lion"
-#basechance 4
-#chanceinc "nationcommand #idealcold above 2 *0"
 #gameid -1
 #sprite /graphics/mounts/standard/lion_asian.png
 #armor
-#define "#mountmnr 'lion_mount'"
-#description "If the rider dies, the lion will carry on fighting until the end of the battle."
 #offsety 5
 #offsetx -3
-#tag "animal lion"
-#tag "guaranteedprefix lion"
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#define "#mountmnr 'lion_mount'"
 #theme "imperial"
 #theme "oriental"
 #theme "enlightened"
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#basechance 40
+#chanceinc "nationcommand #idealcold above 2 *0"
+#enditem
+
+#newitem
+#id "lion_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/lion_asian.png
+#armor
+#offsety 5
+#offsetx -3
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#define "#mountmnr 'lion_light_bronze_barding_mount'"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "bronze"
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#basechance 35
+#chanceinc prot 11 *2
+#chanceinc "nationcommand #idealcold above 2 *0"
+#enditem
+
+#newitem
+#id "lion_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/lion_asian.png
+#armor
+#offsety 5
+#offsetx -3
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#define "#mountmnr 'lion_light_scale_barding_mount'"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#basechance 35
+#chanceinc prot 12 *2
+#chanceinc "nationcommand #idealcold above 2 *0"
+#enditem
+
+#newitem
+#id "lion_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/lion_asian.png
+#armor
+#offsety 5
+#offsetx -3
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#define "#mountmnr 'lion_bronze_mail_barding_mount'"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "bronze"
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#basechance 25
+#chanceinc prot 13 *2
+#chanceinc "nationcommand #idealcold above 2 *0"
+#enditem
+
+#newitem
+#id "lion_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/lion_asian.png
+#armor
+#offsety 5
+#offsetx -3
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#define "#mountmnr 'lion_iron_mail_barding_mount'"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#basechance 25
+#chanceinc prot 14 *2
+#chanceinc "nationcommand #idealcold above 2 *0"
+#enditem
+
+#newitem
+#id "lion_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/lion_asian.png
+#armor
+#offsety 5
+#offsetx -3
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#define "#mountmnr 'lion_cataphract_barding_mount'"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#theme "heavy"
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#basechance 20
+#chanceinc prot 16 *2
+#chanceinc "nationcommand #idealcold above 2 *0"
+#enditem
+
+#newitem
+#id "lion_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/lion_asian.png
+#armor
+#offsety 5
+#offsetx -3
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#define "#mountmnr 'lion_bronze_barding_mount'"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#basechance 10
+#chanceinc prot 17 *2
+#chanceinc "nationcommand #idealcold above 2 *0"
+#enditem
+
+#newitem
+#id "lion_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/lion_asian.png
+#armor
+#offsety 5
+#offsetx -3
+#description "If the rider dies, the lion will carry on fighting until the end of the battle."
+#define "#mountmnr 'lion_plate_barding_mount'"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal lion"
+#tag "guaranteedprefix lion"
+#basechance 5
+#chanceinc prot 18 *2
+#chanceinc "nationcommand #idealcold above 2 *0"
 #enditem
 
 
 #newitem
-#id "winged lion"
-#basechance 0.1
+#id "winged_lion"
 #gameid -1
 #sprite /graphics/mounts/standard/wingedlion.png
 #needs overlay wingedlion_overlay
 #armor
-#define "#mountmnr 'winged_lion_mount'"
-#description "If the rider dies, the winged lion will carry on fighting until the end of the battle."
 #offsety 5
 #offsetx -10
+#description "If the rider dies, the winged lion will carry on fighting until the end of the battle."
+#define "#mountmnr 'winged_lion_mount'"
 #tag "animal 'winged lion'"
 #tag "guaranteedprefix lion"
 #theme "flying"
 #theme "imperial"
 #theme "oriental"
 #theme "enlightened"
+#basechance 10
+#enditem
+
+#newitem
+#id "winged_lion_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/wingedlion.png
+#needs overlay wingedlion_overlay
+#armor
+#offsety 5
+#offsetx -10
+#description "If the rider dies, the winged lion will carry on fighting until the end of the battle."
+#define "#mountmnr 'winged_lion_light_bronze_barding_mount'"
+#tag "animal 'winged lion'"
+#tag "guaranteedprefix lion"
+#theme "flying"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "bronze"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "winged_lion_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/wingedlion.png
+#needs overlay wingedlion_overlay
+#armor
+#offsety 5
+#offsetx -10
+#description "If the rider dies, the winged lion will carry on fighting until the end of the battle."
+#define "#mountmnr 'winged_lion_light_scale_barding_mount'"
+#tag "animal 'winged lion'"
+#tag "guaranteedprefix lion"
+#theme "flying"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "winged_lion_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/wingedlion.png
+#needs overlay wingedlion_overlay
+#armor
+#offsety 5
+#offsetx -10
+#description "If the rider dies, the winged lion will carry on fighting until the end of the battle."
+#define "#mountmnr 'winged_lion_bronze_mail_barding_mount'"
+#tag "animal 'winged lion'"
+#tag "guaranteedprefix lion"
+#theme "flying"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "bronze"
+#basechance 6
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "winged_lion_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/wingedlion.png
+#needs overlay wingedlion_overlay
+#armor
+#offsety 5
+#offsetx -10
+#description "If the rider dies, the winged lion will carry on fighting until the end of the battle."
+#define "#mountmnr 'winged_lion_iron_mail_barding_mount'"
+#tag "animal 'winged lion'"
+#tag "guaranteedprefix lion"
+#theme "flying"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "winged_lion_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/wingedlion.png
+#needs overlay wingedlion_overlay
+#armor
+#offsety 5
+#offsetx -10
+#description "If the rider dies, the winged lion will carry on fighting until the end of the battle."
+#define "#mountmnr 'winged_lion_cataphract_barding_mount'"
+#tag "animal 'winged lion'"
+#tag "guaranteedprefix lion"
+#theme "flying"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#theme "heavy"
+#basechance 3
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "winged_lion_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/wingedlion.png
+#needs overlay wingedlion_overlay
+#armor
+#offsety 5
+#offsetx -10
+#description "If the rider dies, the winged lion will carry on fighting until the end of the battle."
+#define "#mountmnr 'winged_lion_bronze_barding_mount'"
+#tag "animal 'winged lion'"
+#tag "guaranteedprefix lion"
+#theme "flying"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#basechance 2
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "winged_lion_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/wingedlion.png
+#needs overlay wingedlion_overlay
+#armor
+#offsety 5
+#offsetx -10
+#description "If the rider dies, the winged lion will carry on fighting until the end of the battle."
+#define "#mountmnr 'winged_lion_plate_barding_mount'"
+#tag "animal 'winged lion'"
+#tag "guaranteedprefix lion"
+#theme "flying"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#basechance 1.5
+#chanceinc prot 18 *2
 #enditem
 
 
 #newitem
 #id "bear"
 #gameid -1
-#basechance 4
-#chanceinc "nationcommand #idealcold below -1 *0"
 #sprite /graphics/mounts/standard/bear_small.png
 #armor
-#define "#mountmnr 'bear_mount'"
-#description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety 4
 #offsetx -5
-#animal bear
-#tag "name commander beastmaster"
-#tag "guaranteedprefix bear"
-#tag "minprot 8"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#define "#mountmnr 'bear_mount'"
 #theme "imperial"
 #theme "oriental"
 #theme "occidental"
 #theme "enlightened"
+#tag "animal 'bear'"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 8"
+#basechance 40
+#chanceinc "nationcommand #idealcold below -1 *0"
 #enditem
 
-
 #newitem
-#basechance 0.1
-#chanceinc "nationcommand #idealcold above 2 *0"
-#id "bigspider"
+#id "bear_light_bronze_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/bigspider.png
+#sprite /graphics/mounts/standard/bear_small.png
 #armor
-#offsetx 35
-#offsety 58
-#define "#mountmnr 'hunter_spider_mount'"
-#description "The hunter spider will persist even if the rider dies."
-#theme "specialmount"
-#theme "heavy"
-#tag "animal spider"
-#tag "guaranteedprefix spider"
-#tag "minprot 14"
-#tag "maxprot 20"
-#sacredextra nonholyshape 0.7
+#offsety 4
+#offsetx -5
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#define "#mountmnr 'bear_light_bronze_barding_mount'"
+#theme "imperial"
+#theme "oriental"
 #theme "occidental"
 #theme "enlightened"
+#theme "bronze"
+#tag "animal 'bear'"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 8"
+#basechance 32
+#chanceinc prot 11 *2
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+#newitem
+#id "bear_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_small.png
+#armor
+#offsety 4
+#offsetx -5
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#define "#mountmnr 'bear_light_scale_barding_mount'"
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "iron"
+#tag "animal 'bear'"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 8"
+#basechance 32
+#chanceinc prot 12 *2
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+#newitem
+#id "bear_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_small.png
+#armor
+#offsety 4
+#offsetx -5
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#define "#mountmnr 'bear_bronze_mail_barding_mount'"
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "bronze"
+#tag "animal 'bear'"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 8"
+#basechance 24
+#chanceinc prot 13 *2
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+#newitem
+#id "bear_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_small.png
+#armor
+#offsety 4
+#offsetx -5
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#define "#mountmnr 'bear_iron_mail_barding_mount'"
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "iron"
+#tag "animal 'bear'"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 8"
+#basechance 24
+#chanceinc prot 14 *2
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+#newitem
+#id "bear_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_small.png
+#armor
+#offsety 4
+#offsetx -5
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#define "#mountmnr 'bear_cataphract_barding_mount'"
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "iron"
+#theme "heavy"
+#tag "animal 'bear'"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 8"
+#basechance 12
+#chanceinc prot 16 *2
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+#newitem
+#id "bear_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_small.png
+#armor
+#offsety 4
+#offsetx -5
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#define "#mountmnr 'bear_bronze_barding_mount'"
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal 'bear'"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 8"
+#basechance 8
+#chanceinc prot 17 *2
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+#newitem
+#id "bear_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_small.png
+#armor
+#offsety 4
+#offsetx -5
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#define "#mountmnr 'bear_plate_barding_mount'"
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal 'bear'"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 8"
+#basechance 6
+#chanceinc prot 18 *2
+#chanceinc "nationcommand #idealcold below -1 *0"
 #enditem
 
 
 #newitem
-#basechance 0.1
-#chanceinc "nationcommand #idealcold above 2 *0"
 #id "amphiptere"
 #gameid -1
 #sprite /graphics/mounts/standard/amphiptere.png
@@ -381,40 +2787,272 @@
 #offsetx 23
 #offsety 13
 #needs overlay 13
+#description "The amphiptere will fight until the end of the battle should the rider die"
 #define "#mountmnr 'amphiptere_mount'"
 #theme "specialmount"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
 #tag "animal amphiptere"
-#description "The amphiptere will fight until the end of the battle should the rider die"
 #tag "guaranteedprefix amphiptere"
 #tag "name commander beastmaster"
 #tag "minprot 6"
 #tag "maxprot 14"
+#basechance 1
+#chanceinc "nationcommand #idealcold above 2 *0"
 #sacredextra 0.5
+#enditem
+
+#newitem
+#id "amphiptere_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/amphiptere.png
+#armor
+#offsetx 23
+#offsety 13
+#needs overlay 13
+#description "The amphiptere will fight until the end of the battle should the rider die"
+#define "#mountmnr 'amphiptere_light_bronze_barding_mount'"
+#theme "specialmount"
 #theme "imperial"
 #theme "oriental"
 #theme "enlightened"
+#theme "bronze"
+#tag "animal amphiptere"
+#tag "guaranteedprefix amphiptere"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#tag "maxprot 15"
+#basechance 0.8
+#chanceinc "nationcommand #idealcold above 2 *0"
+#sacredextra 0.5
+#enditem
+
+#newitem
+#id "amphiptere_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/amphiptere.png
+#armor
+#offsetx 23
+#offsety 13
+#needs overlay 13
+#description "The amphiptere will fight until the end of the battle should the rider die"
+#define "#mountmnr 'amphiptere_light_scale_barding_mount'"
+#theme "specialmount"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#tag "animal amphiptere"
+#tag "guaranteedprefix amphiptere"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#tag "maxprot 15"
+#basechance 0.8
+#chanceinc "nationcommand #idealcold above 2 *0"
+#sacredextra 0.5
+#enditem
+
+#newitem
+#id "amphiptere_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/amphiptere.png
+#armor
+#offsetx 23
+#offsety 13
+#needs overlay 13
+#description "The amphiptere will fight until the end of the battle should the rider die"
+#define "#mountmnr 'amphiptere_bronze_mail_barding_mount'"
+#theme "specialmount"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "bronze"
+#tag "animal amphiptere"
+#tag "guaranteedprefix amphiptere"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#tag "maxprot 18"
+#basechance 0.6
+#chanceinc "nationcommand #idealcold above 2 *0"
+#sacredextra 0.5
+#enditem
+
+#newitem
+#id "amphiptere_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/amphiptere.png
+#armor
+#offsetx 23
+#offsety 13
+#needs overlay 13
+#description "The amphiptere will fight until the end of the battle should the rider die"
+#define "#mountmnr 'amphiptere_iron_mail_barding_mount'"
+#theme "specialmount"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#tag "animal amphiptere"
+#tag "guaranteedprefix amphiptere"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#tag "maxprot 18"
+#basechance 0.6
+#chanceinc "nationcommand #idealcold above 2 *0"
+#sacredextra 0.5
 #enditem
 
 
 #newitem
-#id "brown horse"
+#id "riding_horse"
 #gameid -1
 #sprite /graphics/mounts/standard/brownhorse.png
 #armor
-#define "#mountmnr 'riding_horse_mount'"
-#tag "animal horse"
-#theme "light"
-#tag "maxprot 11"
-#epicness 0.25
 #offsetx -2
+#define "#mountmnr 'riding_horse_mount'"
+#theme "light"
 #theme "imperial"
 #theme "oriental"
 #theme "enlightened"
+#tag "animal horse"
+#tag "maxprot 12"
+#basechance 10
+#epicness 0.25
+#enditem
+
+#newitem
+#id "riding_horse_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#armor
+#offsetx -2
+#define "#mountmnr 'riding_horse_light_bronze_barding_mount'"
+#theme "light"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "bronze"
+#tag "animal horse"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 11 *2
+#epicness 0.25
+#enditem
+
+#newitem
+#id "riding_horse_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#armor
+#offsetx -2
+#define "#mountmnr 'riding_horse_light_scale_barding_mount'"
+#theme "light"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#tag "animal horse"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 12 *2
+#epicness 0.25
+#enditem
+
+#newitem
+#id "riding_horse_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#armor
+#offsetx -2
+#define "#mountmnr 'riding_horse_bronze_mail_barding_mount'"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "bronze"
+#tag "animal horse"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 13 *2
+#epicness 0.25
+#enditem
+
+#newitem
+#id "riding_horse_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#armor
+#offsetx -2
+#define "#mountmnr 'riding_horse_iron_mail_barding_mount'"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#tag "animal horse"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 14 *2
+#epicness 0.25
+#enditem
+
+#newitem
+#id "riding_horse_bronze_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#armor
+#offsetx -2
+#define "#mountmnr 'riding_horse_bronze_cataphract_barding_mount'"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#theme "heavy"
+#tag "animal horse"
+#basechance 3
+#chanceinc prot 16 *2
+#epicness 0.25
+#enditem
+
+#newitem
+#id "riding_horse_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#armor
+#offsetx -2
+#define "#mountmnr 'riding_horse_bronze_barding_mount'"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal horse"
+#basechance 2
+#chanceinc prot 17 *2
+#epicness 0.25
+#enditem
+
+#newitem
+#id "riding_horse_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#armor
+#offsetx -2
+#define "#mountmnr 'riding_horse_plate_barding_mount'"
+#theme "imperial"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal horse"
+#basechance 1.5
+#chanceinc prot 18 *2
+#epicness 0.25
 #enditem
 
 
 #newitem
-#basechance 0.1
 #id "pegasus"
 #gameid -1
 #sprite /graphics/mounts/standard/pegasus.png
@@ -424,217 +3062,1117 @@
 #needs overlay 8
 #define "#mountmnr 'pegasus_mount'"
 #theme "flying"
+#theme "imperial"
+#theme "enlightened"
 #tag "animal pegasus"
 #tag "name commander windlord"
 #tag "guaranteedprefix pegasus"
+#basechance 1
 #sacredextra 0.7
-#theme "imperial"
-#theme "enlightened"
 #enditem
 
 #newitem
+#id "pegasus_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/pegasus.png
+#armor
+#offsetx 28
+#offsety 64
+#needs overlay 8
+#define "#mountmnr 'pegasus_light_bronze_barding_mount'"
+#theme "flying"
+#theme "imperial"
+#theme "enlightened"
+#theme "bronze"
+#tag "animal pegasus"
+#tag "name commander windlord"
+#tag "guaranteedprefix pegasus"
+#basechance 0.8
+#chanceinc prot 11 *2
+#sacredextra 0.7
+#enditem
+
+#newitem
+#id "pegasus_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/pegasus.png
+#armor
+#offsetx 28
+#offsety 64
+#needs overlay 8
+#define "#mountmnr 'pegasus_light_scale_barding_mount'"
+#theme "flying"
+#theme "imperial"
+#theme "enlightened"
+#theme "iron"
+#tag "animal pegasus"
+#tag "name commander windlord"
+#tag "guaranteedprefix pegasus"
+#basechance 0.8
+#chanceinc prot 12 *2
+#sacredextra 0.7
+#enditem
+
+#newitem
+#id "pegasus_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/pegasus.png
+#armor
+#offsetx 28
+#offsety 64
+#needs overlay 8
+#define "#mountmnr 'pegasus_bronze_mail_barding_mount'"
+#theme "flying"
+#theme "imperial"
+#theme "enlightened"
+#theme "bronze"
+#tag "animal pegasus"
+#tag "name commander windlord"
+#tag "guaranteedprefix pegasus"
+#basechance 0.6
+#chanceinc prot 13 *2
+#sacredextra 0.7
+#enditem
+
+#newitem
+#id "pegasus_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/pegasus.png
+#armor
+#offsetx 28
+#offsety 64
+#needs overlay 8
+#define "#mountmnr 'pegasus_iron_mail_barding_mount'"
+#theme "flying"
+#theme "imperial"
+#theme "enlightened"
+#theme "iron"
+#tag "animal pegasus"
+#tag "name commander windlord"
+#tag "guaranteedprefix pegasus"
+#basechance 0.6
+#chanceinc prot 14 *2
+#sacredextra 0.7
+#enditem
+
+#newitem
+#id "pegasus_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/pegasus.png
+#armor
+#offsetx 28
+#offsety 64
+#needs overlay 8
+#define "#mountmnr 'pegasus_cataphract_barding_mount'"
+#theme "flying"
+#theme "imperial"
+#theme "enlightened"
+#theme "iron"
+#theme "heavy"
+#tag "animal pegasus"
+#tag "name commander windlord"
+#tag "guaranteedprefix pegasus"
+#basechance 0.3
+#chanceinc prot 16 *2
+#sacredextra 0.7
+#enditem
+
+#newitem
+#id "pegasus_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/pegasus.png
+#armor
+#offsetx 28
+#offsety 64
+#needs overlay 8
+#define "#mountmnr 'pegasus_bronze_barding_mount'"
+#theme "flying"
+#theme "imperial"
+#theme "enlightened"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal pegasus"
+#tag "name commander windlord"
+#tag "guaranteedprefix pegasus"
+#basechance 0.2
+#chanceinc prot 17 *2
+#sacredextra 0.7
+#enditem
+
+#newitem
+#id "pegasus_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/pegasus.png
+#armor
+#offsetx 28
+#offsety 64
+#needs overlay 8
+#define "#mountmnr 'pegasus_plate_barding_mount'"
+#theme "flying"
+#theme "imperial"
+#theme "enlightened"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal pegasus"
+#tag "name commander windlord"
+#tag "guaranteedprefix pegasus"
+#basechance 0.15
+#chanceinc prot 18 *2
+#sacredextra 0.7
+#enditem
+
+
+#newitem
 #id "camel"
-#basechance 0.5
-#chanceinc "nationcommand #idealcold above 0 *0"
-#chanceinc "nationcommand #idealcold above -1 *0.5"
-#chanceinc "nationcommand #idealcold below -1 *2"
 #gameid -1
 #sprite /graphics/mounts/standard/camel.png
 #armor
 #offsetx 0
 #offsety 53
 #define "#mountmnr 'camel_mount'"
-#tag "animal camel"
-#tag "maxprot 11"
 #theme "light"
-#epicness 0.25
 #theme "imperial"
 #theme "austral"
 #theme "oriental"
 #theme "enlightened"
-#enditem
-
-#newitem
-#id "barded camel"
-#basechance 0.5
-#chanceinc "nationcommand #idealcold above 0 *0"
-#chanceinc "nationcommand #idealcold above -1 *0.5"
-#chanceinc "nationcommand #idealcold below -1 *2"
-#gameid -1
-#sprite /graphics/mounts/standard/camel_barded.png
-#recolormask /graphics/mounts/standard/camel_barded_recolormask.png
-#armor
-#offsetx 0
-#offsety 53
-#define "#mountmnr 'camel_leather_barding_mount'"
-#define "#supplybonus +1"
-#define "#wastesurvival"
 #tag "animal camel"
-#tag "minprot 8"
 #tag "maxprot 12"
-#epicness 0.25
-#theme "imperial"
-#theme "austral"
-#theme "oriental"
-#theme "enlightened"
-#enditem
-
-#newitem
-#id "armored camel (iron)"
 #basechance 0.5
 #chanceinc "nationcommand #idealcold above 0 *0"
 #chanceinc "nationcommand #idealcold above -1 *0.5"
 #chanceinc "nationcommand #idealcold below -1 *2"
+#epicness 2.5
+#enditem
+
+#newitem
+#id "camel_light_bronze_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/camel_armored_iron.png
-#recolormask /graphics/mounts/standard/camel_armored_recolormask.png
+#sprite /graphics/mounts/standard/camel.png
 #armor
 #offsetx 0
 #offsety 53
-#define "#mountmnr 'camel_mail_barding_mount'"
-#tag "animal camel"
-#theme "heavy"
-#theme "iron"
+#define "#mountmnr 'camel_light_bronze_barding_mount'"
+#theme "light"
 #theme "imperial"
 #theme "austral"
 #theme "oriental"
 #theme "enlightened"
-#tag "minprot 12"
-#tag "maxprot 16"
-#enditem
-
-#newitem
-#id "armored camel (bronze)"
-#basechance 0.5
+#theme "bronze"
+#tag "animal camel"
+#tag "maxprot 15"
+#basechance 2.25
+#chanceinc prot 11 *2
 #chanceinc "nationcommand #idealcold above 0 *0"
 #chanceinc "nationcommand #idealcold above -1 *0.5"
 #chanceinc "nationcommand #idealcold below -1 *2"
+#epicness 2.5
+#enditem
+
+#newitem
+#id "camel_light_scale_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/camel_armored_bronze.png
-#recolormask /graphics/mounts/standard/camel_armored_recolormask.png
+#sprite /graphics/mounts/standard/camel.png
+#armor
+#offsetx 0
+#offsety 53
+#define "#mountmnr 'camel_light_scale_barding_mount'"
+#theme "light"
+#theme "imperial"
+#theme "austral"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#tag "animal camel"
+#tag "maxprot 15"
+#basechance 2.25
+#chanceinc prot 12 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#epicness 2.5
+#enditem
+
+#newitem
+#id "camel_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/camel.png
 #armor
 #offsetx 0
 #offsety 53
 #define "#mountmnr 'camel_bronze_mail_barding_mount'"
-#tag "animal camel"
-#theme "heavy"
-#theme "bronze"
 #theme "imperial"
 #theme "austral"
 #theme "oriental"
 #theme "enlightened"
-#tag "minprot 12"
-#tag "maxprot 16"
+#theme "bronze"
+#tag "animal camel"
+#tag "maxprot 18"
+#basechance 2
+#chanceinc prot 13 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#epicness 2.5
 #enditem
 
 #newitem
-#basechance 0.1
+#id "camel_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/camel.png
+#armor
+#offsetx 0
+#offsety 53
+#define "#mountmnr 'camel_iron_mail_barding_mount'"
+#theme "imperial"
+#theme "austral"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#tag "animal camel"
+#tag "maxprot 18"
+#basechance 2
+#chanceinc prot 14 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#epicness 2.5
+#enditem
+
+#newitem
+#id "camel_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/camel.png
+#armor
+#offsetx 0
+#offsety 53
+#define "#mountmnr 'camel_cataphract_barding_mount'"
+#theme "imperial"
+#theme "austral"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#theme "heavy"
+#tag "animal camel"
+#basechance 1.5
+#chanceinc prot 16 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#epicness 2.5
+#enditem
+
+#newitem
+#id "camel_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/camel.png
+#armor
+#offsetx 0
+#offsety 53
+#define "#mountmnr 'camel_bronze_barding_mount'"
+#theme "imperial"
+#theme "austral"
+#theme "oriental"
+#theme "enlightened"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal camel"
+#basechance 1
+#chanceinc prot 17 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#epicness 2.5
+#enditem
+
+#newitem
+#id "camel_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/camel.png
+#armor
+#offsetx 0
+#offsety 53
+#define "#mountmnr 'camel_plate_barding_mount'"
+#theme "imperial"
+#theme "austral"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal camel"
+#basechance 0.75
+#chanceinc prot 18 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#epicness 2.5
+#enditem
+
+
+#newitem
 #id "unicorn"
 #gameid -1
 #sprite /graphics/mounts/standard/unicorn.png
 #armor
 #offsety 1
+#offsetx -2
 #define "#mountmnr 'unicorn_mount'"
 #define "#gcost +5"
-#theme "heavy"
-#tag "minprot 12"
-#tag "maxprot 16"
-#tag "animal unicorn"
-#tag "guaranteedprefix unicorn"
-#offsetx -2
+#theme "light"
 #theme "oriental"
 #theme "enlightened"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 1
 #enditem
 
-
 #newitem
-#basechance 0.1
-#id "unicorn"
+#id "unicorn_light_bronze_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/unicorn.png
 #armor
 #offsety 1
-#define "#mountmnr 'unicorn_mount'"
-#define "#gcost +5"
-#theme "heavy"
-#tag "minprot 8"
-#tag "maxprot 15"
-#tag "animal unicorn"
-#tag "guaranteedprefix unicorn"
 #offsetx -2
+#define "#mountmnr 'unicorn_light_bronze_barding_mount'"
+#define "#gcost +5"
+#theme "light"
 #theme "oriental"
 #theme "enlightened"
+#theme "bronze"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 0.8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "unicorn_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#offsety 1
+#offsetx -2
+#define "#mountmnr 'unicorn_light_scale_barding_mount'"
+#define "#gcost +5"
+#theme "light"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 0.8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "unicorn_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#offsety 1
+#offsetx -2
+#define "#mountmnr 'unicorn_bronze_mail_barding_mount'"
+#define "#gcost +5"
+#theme "oriental"
+#theme "enlightened"
+#theme "bronze"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 0.6
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "unicorn_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#offsety 1
+#offsetx -2
+#define "#mountmnr 'unicorn_iron_mail_barding_mount'"
+#define "#gcost +5"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 0.6
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "unicorn_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#offsety 1
+#offsetx -2
+#define "#mountmnr 'unicorn_cataphract_barding_mount'"
+#define "#gcost +5"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#theme "heavy"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#tag "minprot 10"
+#basechance 0.3
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "unicorn_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#offsety 1
+#offsetx -2
+#define "#mountmnr 'unicorn_bronze_barding_mount'"
+#define "#gcost +5"
+#theme "oriental"
+#theme "enlightened"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#tag "minprot 10"
+#basechance 0.2
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "unicorn_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#offsety 1
+#offsetx -2
+#define "#mountmnr 'unicorn_plate_barding_mount'"
+#define "#gcost +5"
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#tag "minprot 10"
+#basechance 0.15
+#chanceinc prot 18 *2
+#enditem
+
+#newitem
+#id "unicorn_silver_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#offsety 1
+#offsetx -2
+#define "#mountmnr 'unicorn_silver_barding_mount'"
+#define "#gcost +5"
+#theme "oriental"
+#theme "enlightened"
+#theme "heavy"
+#theme "advanced"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#tag "minprot 10"
+#basechance 0.1
+#chanceinc prot 18 *2
+#chanceinc "anymagic glamour *5"
 #enditem
 
 
 #newitem
 #id "wyvern"
-#basechance 0.1
-#chanceinc "nationcommand #idealcold above 2 *0"
 #gameid -1
 #sprite /graphics/mounts/standard/wyvern.png
 #armor
 #offsetx 28
 #offsety 69
 #needs overlay 14
+#description "Leaves a wyvern behind when the rider dies"
 #define "#mountmnr 'wyvern_mount'"
 #theme "flying"
-#theme "heavy"
-#tag "animal wyvern"
-#tag "minprot 10"
-#tag "maxprot 16"
-#tag "guaranteedprefix wyvern"
-#tag "name commander beastmaster"
-#description "Leaves a wyvern behind when the rider dies"
-#sacredextra nonholyshape 0.25
 #theme "imperial"
 #theme "oriental"
 #theme "occidental"
 #theme "enlightened"
+#tag "animal wyvern"
+#tag "guaranteedprefix wyvern"
+#tag "name commander beastmaster"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 1
+#chanceinc "nationcommand #idealcold above 2 *0"
+#sacredextra nonholyshape 0.25
+#enditem
+
+#newitem
+#id "wyvern_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/wyvern.png
+#armor
+#offsetx 28
+#offsety 69
+#needs overlay 14
+#description "Leaves a wyvern behind when the rider dies"
+#define "#mountmnr 'wyvern_light_bronze_barding_mount'"
+#theme "flying"
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "bronze"
+#tag "animal wyvern"
+#tag "guaranteedprefix wyvern"
+#tag "name commander beastmaster"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 0.8
+#chanceinc prot 11 *2
+#chanceinc "nationcommand #idealcold above 2 *0"
+#sacredextra nonholyshape 0.25
+#enditem
+
+#newitem
+#id "wyvern_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/wyvern.png
+#armor
+#offsetx 28
+#offsety 69
+#needs overlay 14
+#description "Leaves a wyvern behind when the rider dies"
+#define "#mountmnr 'wyvern_light_scale_barding_mount'"
+#theme "flying"
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "iron"
+#tag "animal wyvern"
+#tag "guaranteedprefix wyvern"
+#tag "name commander beastmaster"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 0.8
+#chanceinc prot 12 *2
+#chanceinc "nationcommand #idealcold above 2 *0"
+#sacredextra nonholyshape 0.25
+#enditem
+
+#newitem
+#id "wyvern_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/wyvern.png
+#armor
+#offsetx 28
+#offsety 69
+#needs overlay 14
+#description "Leaves a wyvern behind when the rider dies"
+#define "#mountmnr 'wyvern_bronze_mail_barding_mount'"
+#theme "flying"
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "bronze"
+#tag "animal wyvern"
+#tag "guaranteedprefix wyvern"
+#tag "name commander beastmaster"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 0.6
+#chanceinc prot 13 *2
+#chanceinc "nationcommand #idealcold above 2 *0"
+#sacredextra nonholyshape 0.25
+#enditem
+
+#newitem
+#id "wyvern_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/wyvern.png
+#armor
+#offsetx 28
+#offsety 69
+#needs overlay 14
+#description "Leaves a wyvern behind when the rider dies"
+#define "#mountmnr 'wyvern_iron_mail_barding_mount'"
+#theme "flying"
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "iron"
+#tag "animal wyvern"
+#tag "guaranteedprefix wyvern"
+#tag "name commander beastmaster"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 0.6
+#chanceinc prot 14 *2
+#chanceinc "nationcommand #idealcold above 2 *0"
+#sacredextra nonholyshape 0.25
+#enditem
+
+#newitem
+#id "wyvern_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/wyvern.png
+#armor
+#offsetx 28
+#offsety 69
+#needs overlay 14
+#description "Leaves a wyvern behind when the rider dies"
+#define "#mountmnr 'wyvern_cataphract_barding_mount'"
+#theme "flying"
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "iron"
+#theme "heavy"
+#tag "animal wyvern"
+#tag "guaranteedprefix wyvern"
+#tag "name commander beastmaster"
+#tag "minprot 10"
+#basechance 0.3
+#chanceinc prot 16 *2
+#chanceinc "nationcommand #idealcold above 2 *0"
+#sacredextra nonholyshape 0.25
+#enditem
+
+#newitem
+#id "wyvern_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/wyvern.png
+#armor
+#offsetx 28
+#offsety 69
+#needs overlay 14
+#description "Leaves a wyvern behind when the rider dies"
+#define "#mountmnr 'wyvern_bronze_barding_mount'"
+#theme "flying"
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal wyvern"
+#tag "guaranteedprefix wyvern"
+#tag "name commander beastmaster"
+#tag "minprot 10"
+#basechance 0.2
+#chanceinc prot 17 *2
+#chanceinc "nationcommand #idealcold above 2 *0"
+#sacredextra nonholyshape 0.25
+#enditem
+
+#newitem
+#id "wyvern_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/wyvern.png
+#armor
+#offsetx 28
+#offsety 69
+#needs overlay 14
+#description "Leaves a wyvern behind when the rider dies"
+#define "#mountmnr 'wyvern_plate_barding_mount'"
+#theme "flying"
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal wyvern"
+#tag "guaranteedprefix wyvern"
+#tag "name commander beastmaster"
+#tag "minprot 10"
+#basechance 0.15
+#chanceinc prot 18 *2
+#chanceinc "nationcommand #idealcold above 2 *0"
+#sacredextra nonholyshape 0.25
 #enditem
 
 
 #newitem
-#basechance 0.1
-#id "scorpion"
-#chanceinc "nationcommand #idealcold above 0 *0"
+#id "scorpion_beast"
 #gameid -1
 #sprite /graphics/abysian/mounts/scorpion.png
 #armor
 #offsetx 20
 #offsety 6
 #needs overlay scorpion_overlay
-#define "#mountmnr 'scorpion_beast_mount'"
-#define "#gcost +50"
-#tag "animal scorpion"
-#theme "heavy"
 #description "Leaves a giant scorpion behind when the rider dies"
+#define "#mountmnr 'scorpion_beast_mount'"
+#tag "animal scorpion"
 #tag "guaranteedprefix scorpion"
-#tag "minprot 10"
-#tag "maxprot 100"
-#chanceinc primaryrace abysian *100
-#chanceinc primaryrace zotz *100
 #theme "imperial"
 #theme "oriental"
 #theme "occidental"
 #theme "enlightened"
+#theme "heavy"
+#basechance 1
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc primaryrace abysian *50
+#chanceinc primaryrace zotz *50
+#enditem
+
+#newitem
+#id "scorpion_beast_light_bronze_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 20
+#offsety 6
+#needs overlay scorpion_overlay
+#description "Leaves a giant scorpion behind when the rider dies"
+#define "#mountmnr 'scorpion_beast_light_bronze_barding_mount'"
+#tag "animal scorpion"
+#tag "guaranteedprefix scorpion"
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "heavy"
+#theme "bronze"
+#basechance 1
+#chanceinc prot 11 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc primaryrace abysian *50
+#chanceinc primaryrace zotz *50
+#enditem
+
+#newitem
+#id "scorpion_beast_light_scale_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 20
+#offsety 6
+#needs overlay scorpion_overlay
+#description "Leaves a giant scorpion behind when the rider dies"
+#define "#mountmnr 'scorpion_beast_light_scale_barding_mount'"
+#tag "animal scorpion"
+#tag "guaranteedprefix scorpion"
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "heavy"
+#theme "iron"
+#basechance 1
+#chanceinc prot 12 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc primaryrace abysian *50
+#chanceinc primaryrace zotz *50
+#enditem
+
+#newitem
+#id "scorpion_beast_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 20
+#offsety 6
+#needs overlay scorpion_overlay
+#description "Leaves a giant scorpion behind when the rider dies"
+#define "#mountmnr 'scorpion_beast_bronze_mail_barding_mount'"
+#tag "animal scorpion"
+#tag "guaranteedprefix scorpion"
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "heavy"
+#theme "bronze"
+#basechance 1
+#chanceinc prot 13 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc primaryrace abysian *50
+#chanceinc primaryrace zotz *50
+#enditem
+
+#newitem
+#id "scorpion_beast_iron_mail_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 20
+#offsety 6
+#needs overlay scorpion_overlay
+#description "Leaves a giant scorpion behind when the rider dies"
+#define "#mountmnr 'scorpion_beast_iron_mail_barding_mount'"
+#tag "animal scorpion"
+#tag "guaranteedprefix scorpion"
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "heavy"
+#theme "iron"
+#basechance 1
+#chanceinc prot 14 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc primaryrace abysian *50
+#chanceinc primaryrace zotz *50
+#enditem
+
+#newitem
+#id "scorpion_beast_cataphract_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 20
+#offsety 6
+#needs overlay scorpion_overlay
+#description "Leaves a giant scorpion behind when the rider dies"
+#define "#mountmnr 'scorpion_beast_cataphract_barding_mount'"
+#tag "animal scorpion"
+#tag "guaranteedprefix scorpion"
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "heavy"
+#theme "iron"
+#basechance 1
+#chanceinc prot 16 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc primaryrace abysian *50
+#chanceinc primaryrace zotz *50
+#enditem
+
+#newitem
+#id "scorpion_beast_bronze_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 20
+#offsety 6
+#needs overlay scorpion_overlay
+#description "Leaves a giant scorpion behind when the rider dies"
+#define "#mountmnr 'scorpion_beast_bronze_barding_mount'"
+#tag "animal scorpion"
+#tag "guaranteedprefix scorpion"
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "heavy"
+#theme "bronze"
+#basechance 1
+#chanceinc prot 17 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc primaryrace abysian *50
+#chanceinc primaryrace zotz *50
+#enditem
+
+#newitem
+#id "scorpion_beast_plate_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 20
+#offsety 6
+#needs overlay scorpion_overlay
+#description "Leaves a giant scorpion behind when the rider dies"
+#define "#mountmnr 'scorpion_beast_plate_barding_mount'"
+#tag "animal scorpion"
+#tag "guaranteedprefix scorpion"
+#theme "imperial"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "heavy"
+#theme "iron"
+#theme "advanced"
+#basechance 1
+#chanceinc prot 18 *2
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc primaryrace abysian *50
+#chanceinc primaryrace zotz *50
 #enditem
 
 
 #newitem
-#id "cavecow"
+#id "cave_cow"
 #gameid -1
-#basechance 0.1
 #sprite /graphics/mounts/standard/cavecow.png
 #armor
-#define "#mountmnr 'cave_cow_mount'"
-#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
 #offsetx -8
 #offsety 6
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#define "#mountmnr 'cave_cow_mount'"
 #tag "animal 'cave cow'"
 #tag "guaranteedprefix 'cave cow'"
-#chanceinc primaryrace "Pale One" *100
 #theme "oriental"
 #theme "occidental"
 #theme "enlightened"
+#basechance 1
+#chanceinc primaryrace "Pale One" *50
+#enditem
+
+#newitem
+#id "cave_cow_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavecow.png
+#armor
+#offsetx -8
+#offsety 6
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#define "#mountmnr 'cave_cow_light_bronze_barding_mount'"
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "bronze"
+#basechance 0.8
+#chanceinc prot 11 *2
+#chanceinc primaryrace "Pale One" *50
+#enditem
+
+#newitem
+#id "cave_cow_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavecow.png
+#armor
+#offsetx -8
+#offsety 6
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#define "#mountmnr 'cave_cow_light_scale_barding_mount'"
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "iron"
+#basechance 0.8
+#chanceinc prot 12 *2
+#chanceinc primaryrace "Pale One" *50
+#enditem
+
+#newitem
+#id "cave_cow_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavecow.png
+#armor
+#offsetx -8
+#offsety 6
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#define "#mountmnr 'cave_cow_bronze_mail_barding_mount'"
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "bronze"
+#basechance 0.6
+#chanceinc prot 13 *2
+#chanceinc primaryrace "Pale One" *50
+#enditem
+
+#newitem
+#id "cave_cow_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavecow.png
+#armor
+#offsetx -8
+#offsety 6
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#define "#mountmnr 'cave_cow_iron_mail_barding_mount'"
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "iron"
+#basechance 0.6
+#chanceinc prot 14 *2
+#chanceinc primaryrace "Pale One" *50
+#enditem
+
+#newitem
+#id "cave_cow_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavecow.png
+#armor
+#offsetx -8
+#offsety 6
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#define "#mountmnr 'cave_cow_cataphract_barding_mount'"
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "iron"
+#theme "heavy"
+#basechance 0.3
+#chanceinc prot 16 *2
+#chanceinc primaryrace "Pale One" *50
+#enditem
+
+#newitem
+#id "cave_cow_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavecow.png
+#armor
+#offsetx -8
+#offsety 6
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#define "#mountmnr 'cave_cow_bronze_barding_mount'"
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#basechance 0.2
+#chanceinc prot 17 *2
+#chanceinc primaryrace "Pale One" *50
+#enditem
+
+#newitem
+#id "cave_cow_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavecow.png
+#armor
+#offsetx -8
+#offsety 6
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#define "#mountmnr 'cave_cow_plate_barding_mount'"
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#theme "oriental"
+#theme "occidental"
+#theme "enlightened"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#basechance 0.15
+#chanceinc prot 18 *2
+#chanceinc primaryrace "Pale One" *50
 #enditem
