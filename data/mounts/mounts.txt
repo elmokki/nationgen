@@ -8226,7 +8226,7 @@
 #end
 
 #new secondshape
-#id "war_horse_bronze_scale_barding_mount"
+#id "war_horse_light_bronze_barding_mount"
 #command "#copystats 3515"
 #command "#copyspr 3515"
 #command "#magicboost 53 -5"
@@ -8674,7 +8674,7 @@
 #end
 
 #new secondshape
-#id "fay_horse_bronze_iron_mail_barding_mount"
+#id "fay_horse_bronze_mail_barding_mount"
 #command "#copystats 3933"
 #command "#copyspr 3933"
 #command "#magicboost 53 -5"
@@ -9683,7 +9683,7 @@
 #end
 
 #new secondshape
-#id "longdead_horse_mail_barding_chariot"
+#id "longdead_horse_bronze_mail_barding_chariot"
 #command "#copystats 3569"
 #command "#spr1 ./graphics/mounts/chariots/horse_longdead.png"
 #command "#spr2 shift"
@@ -9726,7 +9726,7 @@
 #end
 
 #new secondshape
-#id "longdead_lizard_mail_barding_chariot"
+#id "longdead_lizard_bronze_mail_barding_chariot"
 #command "#copystats 3569"
 #command "#spr1 ./graphics/mounts/chariots/lizard_longdead.png"
 #command "#spr2 shift"
@@ -10736,6 +10736,96 @@
 #end
 
 #new secondshape
+#id "lizard_light_bronze_barding_oriental_chariot"
+#command "#copystats 3568"
+#command "#spr1 ./graphics/mounts/chariots/lizard_oriental.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#coldblood"
+#command "#armor 264"
+#command "#gcost 25"
+#command "#rcost 14"
+#mount
+#end
+
+#new secondshape
+#id "lizard_light_scale_barding_oriental_chariot"
+#command "#copystats 3568"
+#command "#spr1 ./graphics/mounts/chariots/lizard_oriental.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#coldblood"
+#command "#armor 252"
+#command "#gcost 25"
+#command "#rcost 14"
+#mount
+#end
+
+#new secondshape
+#id "lizard_mail_barding_oriental_chariot"
+#command "#copystats 3568"
+#command "#spr1 ./graphics/mounts/chariots/lizard_oriental.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#coldblood"
+#command "#armor 172"
+#command "#gcost 25"
+#command "#rcost 14"
+#mount
+#end
+
+#new secondshape
+#id "lizard_cataphract_barding_oriental_chariot"
+#command "#copystats 3568"
+#command "#spr1 ./graphics/mounts/chariots/lizard_oriental.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#coldblood"
+#command "#armor 253"
+#command "#gcost 25"
+#command "#rcost 14"
+#mount
+#end
+
+#new secondshape
+#id "lizard_bronze_barding_oriental_chariot"
+#command "#copystats 3568"
+#command "#spr1 ./graphics/mounts/chariots/lizard_oriental.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#coldblood"
+#command "#armor 263"
+#command "#gcost 25"
+#command "#rcost 14"
+#mount
+#end
+
+#new secondshape
+#id "lizard_plate_barding_oriental_chariot"
+#command "#copystats 3568"
+#command "#spr1 ./graphics/mounts/chariots/lizard_oriental.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#coldblood"
+#command "#armor 264"
+#command "#gcost 25"
+#command "#rcost 14"
+#mount
+#end
+
+#new secondshape
+#id "lizard_barding_oriental_chariot"
+#command "#copystats 3568"
+#command "#spr1 ./graphics/mounts/chariots/lizard_oriental.png"
+#command "#spr2 shift"
+#command "#nomovepen"
+#command "#coldblood"
+#command "#gcost 25"
+#command "#rcost 14"
+#mount
+#end
+
+#new secondshape
 #id "two_lizard_light_scale_barding_chariot"
 #command "#copystats 3568"
 #command "#spr1 ./graphics/mounts/chariots/twolizard.png"
@@ -11381,96 +11471,6 @@
 #command "#armor 277"
 #command "#gcost 30"
 #command "#rcost 4"
-#mount
-#end
-
-#new secondshape
-#id "lizard_light_bronze_barding_oriental_chariot"
-#command "#copystats 3568"
-#command "#spr1 ./graphics/mounts/chariots/lizard_oriental.png"
-#command "#spr2 shift"
-#command "#nomovepen"
-#command "#coldblood"
-#command "#armor 264"
-#command "#gcost 25"
-#command "#rcost 14"
-#mount
-#end
-
-#new secondshape
-#id "lizard_light_scale_barding_oriental_chariot"
-#command "#copystats 3568"
-#command "#spr1 ./graphics/mounts/chariots/lizard_oriental.png"
-#command "#spr2 shift"
-#command "#nomovepen"
-#command "#coldblood"
-#command "#armor 252"
-#command "#gcost 25"
-#command "#rcost 14"
-#mount
-#end
-
-#new secondshape
-#id "lizard_mail_barding_oriental_chariot"
-#command "#copystats 3568"
-#command "#spr1 ./graphics/mounts/chariots/lizard_oriental.png"
-#command "#spr2 shift"
-#command "#nomovepen"
-#command "#coldblood"
-#command "#armor 172"
-#command "#gcost 25"
-#command "#rcost 14"
-#mount
-#end
-
-#new secondshape
-#id "lizard_cataphract_barding_oriental_chariot"
-#command "#copystats 3568"
-#command "#spr1 ./graphics/mounts/chariots/lizard_oriental.png"
-#command "#spr2 shift"
-#command "#nomovepen"
-#command "#coldblood"
-#command "#armor 253"
-#command "#gcost 25"
-#command "#rcost 14"
-#mount
-#end
-
-#new secondshape
-#id "lizard_bronze_barding_oriental_chariot"
-#command "#copystats 3568"
-#command "#spr1 ./graphics/mounts/chariots/lizard_oriental.png"
-#command "#spr2 shift"
-#command "#nomovepen"
-#command "#coldblood"
-#command "#armor 263"
-#command "#gcost 25"
-#command "#rcost 14"
-#mount
-#end
-
-#new secondshape
-#id "lizard_plate_barding_oriental_chariot"
-#command "#copystats 3568"
-#command "#spr1 ./graphics/mounts/chariots/lizard_oriental.png"
-#command "#spr2 shift"
-#command "#nomovepen"
-#command "#coldblood"
-#command "#armor 264"
-#command "#gcost 25"
-#command "#rcost 14"
-#mount
-#end
-
-#new secondshape
-#id "lizard_barding_oriental_chariot"
-#command "#copystats 3568"
-#command "#spr1 ./graphics/mounts/chariots/lizard_oriental.png"
-#command "#spr2 shift"
-#command "#nomovepen"
-#command "#coldblood"
-#command "#gcost 25"
-#command "#rcost 14"
 #mount
 #end
 
