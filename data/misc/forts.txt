@@ -184,3 +184,38 @@
 #command "#buildfort 27"
 #command "#homefort 28"
 #end
+
+
+-- Wooden forts
+#new
+#name "0: Wooden forts for early era"
+#type "era 1"
+#basechance 0.25
+#chanceinc anytheme tribal *4
+#chanceinc anytheme primitive *4
+#command "#fortera 0"
+#command "#buildfort 28"
+#command "#homefort 28"
+#end
+
+#new
+#name "1: Wooden forts for middle era"
+#type "era 2"
+#basechance 0.1
+#chanceinc anytheme tribal *4
+#chanceinc anytheme primitive *2
+#command "#fortera 1"
+#command "#buildfort 28"
+#command "#homefort 28"
+#end
+
+#new
+#name "2: Wooden forts for late era"
+#type "era 3"
+#basechance 0.05
+#chanceinc anytheme tribal *2
+#chanceinc anytheme primitive *2
+#command "#fortera 2"
+#command "#buildfort 28"
+#command "#homefort 28"
+#end
