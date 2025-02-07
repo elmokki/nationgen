@@ -2499,3 +2499,108 @@
 #prev "shapeshift start"
 #uniquedescription
 #end
+
+#new
+#name "larger desc"
+#set "wondrous"
+#prev "wondrous desc"
+#bridge "wondrous bridge"
+#synonym "enormous size"
+#synonym "prodigious size and strength"
+#synonym "great stature"
+#end
+
+#new
+#name "blind desc"
+#description "Blind"
+#set "senses"
+#prev "senses desc"
+#synonym "uncanny senses"
+#synonym "blindsense"
+#extendeddescription "allowing %pronoun_obj% to fight without use of vision"
+#end
+
+#new
+#name "falconer desc"
+#set "skill"
+#prev "skill desc"
+#synonym "falconry"
+#synonym "training birds of prey"
+#extendeddescription "and %pronoun% carry trained falcons"
+#end
+
+#new
+#name "spiritsight desc"
+#description "Sees the true nature of things"
+#set "senses"
+#prev "senses desc"
+#synonym "the ability to see the unseen"
+#synonym "supernatural vision"
+#extendeddescription "and %pronoun_pos% magic sight cannot be fooled by darkness or illusion"
+#end
+
+#new
+#name "magicbeing desc"
+#description ""
+#set "lineage"
+#prev "lineage desc"
+#synonym "magical creatures"
+#synonym "otherworldly beings"
+#extendeddescription "and %pronoun_pos% supernatural nature affords %pronoun_obj% great resistance to magic, but %pronoun% %tobe% ill understood by mundane mortals"
+#end
+
+#new
+#name "jinnblood desc"
+#description "Jinnblooded"
+#set "lineage"
+#prev "lineage desc"
+#synonym "iron-fearing creatures"
+#synonym "magically blooded beings"
+#extendeddescription "and %pronoun_pos% supernatural nature affords %pronoun_obj% great resistance to magic and fire, but a weakness to cold and iron"
+#end
+
+#new
+#name "demonblood desc"
+#description "Demon blood"
+#set "lineage"
+#prev "lineage desc"
+#synonym "demons"
+#synonym "devils"
+#extendeddescription "and %pronoun_pos% infernal heritage gives %pronoun_obj% great power"
+#end
+
+#new
+#name "dragonblood desc"
+#set "lineage"
+#prev "lineage desc"
+#synonym "the dragons of old"
+#synonym "fire-breathing dragons"
+#extendeddescription "and can annihilate enemies with %pronoun_pos% fiery breath"
+#end
+
+#new
+#name "serpentblood desc"
+#set "lineage"
+#prev "lineage desc"
+#synonym "an ancient reptilian race"
+#synonym "a race of venomous lizards"
+#extendeddescription "and %pronoun% retain %pronoun_pos% deadly fangs"
+#end
+
+#new 
+#name "lesserhorror desc"
+#description "unleashes its true form of a horror on death"
+#set "death"
+#prev "start"
+#synonym "%tohave% a pact with the horrors of the void and will summon %pronoun_obj% to this world upon death"
+#synonym "%tobe% possessed by void horrors and will reveal %pronoun_pos% true form upon death"
+#end
+
+#new
+#name "ghost desc"
+#description "is able to grasp into mortal life on death, being able to avenge its own death as a ghost"
+#set "death"
+#prev "start"
+#synonym "%tohave% mastered %pronoun_pos% own mortality and can avenge %pronoun_pos% own death as a ghost"
+#synonym "can briefly remain on this world as a ghost after dying"
+#end
