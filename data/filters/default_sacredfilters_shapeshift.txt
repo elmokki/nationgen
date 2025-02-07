@@ -403,3 +403,32 @@
 #theme "totemanimal"
 #filterdesc "spider shift desc"
 #end
+
+#new 
+#type "shapeshift"
+#name "ghost"
+#basechance 0.025
+#chanceinc "magic death 0.25"
+#chanceinc "magic blood 0.1"
+#chanceinc "magic nature *0.25"
+#chanceinc "personalcommand #size above 5 *0"
+#chanceinc "personalcommand undead *0"
+#command "#secondtmpshape ghost"
+#command "#gcost *1.3"
+#power 4
+#filterdesc "ghost desc"
+#end
+
+#new 
+#type "shapeshift"
+#name "lesserhorror"
+#basechance 0.01
+#chanceinc "magic astral 0.01"
+#chanceinc "magic blood 0.05"
+#chanceinc "magic astral blood 0.5"
+#command "#secondtmpshape lesserhorror"
+#command "#horrormark"
+#command "#gcost *1.3"
+#power 3
+#filterdesc "lesserhorror desc"
+#end

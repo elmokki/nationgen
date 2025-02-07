@@ -452,37 +452,37 @@ public class SacredGenerator extends TroopGenerator {
   ) {
     List<Pose> possibleposes = new ArrayList<>();
 
-    // Note that the first sacred of a nation should only be ranged if no others are available
+		// Note that the first sacred of a nation should very rarely be ranged if any others are available
     ChanceDistribution<String> roles = new ChanceDistribution<>();
     String toGet = "sacred";
     if (race.hasSpecialRole("infantry", sacred)) {
       roles.setChance(
         "infantry",
-        race.tags.getDouble(toGet + "infantrychance").orElse(1.0)
+        race.tags.getDouble(toGet + "infantrychance").orElse(1.0) + power * 0.1
       );
     }
     if (race.hasSpecialRole("mounted", sacred)) {
       roles.setChance(
         "mounted",
-        race.tags.getDouble(toGet + "mountedchance").orElse(0.25)
+        race.tags.getDouble(toGet + "mountedchance").orElse(0.25) + power * 0.15
       );
     }
     if (race.hasSpecialRole("chariot", sacred)) {
       roles.setChance(
         "chariot",
-        race.tags.getDouble(toGet + "chariotchance").orElse(0.05)
+        race.tags.getDouble(toGet + "chariotchance").orElse(0.05) + power * 0.1
       );
     }
     if (race.hasSpecialRole("ranged", sacred) && !isFirstSacred) {
       roles.setChance(
         "ranged",
-        race.tags.getDouble(toGet + "rangedchance").orElse(0.125)
+        race.tags.getDouble(toGet + "rangedchance").orElse(0.125) + power * 0.05
       );
     } else if (race.hasSpecialRole("ranged", sacred)) {
-      roles.setChance("ranged", 0.0001);
+      roles.setChance("ranged", 0.05);
     }
 
-    while (roles.hasPossible()) {
+    while (roles.hasPossible() && possibleposes.isEmpty()) {
       String role = roles.getRandom(this.random);
       roles.eliminate(role);
 
@@ -510,8 +510,6 @@ public class SacredGenerator extends TroopGenerator {
           possibleposes.add(p);
         }
       }
-      //if(possibleposes.size() > 0)
-      //break;
     }
 
     if (possibleposes.isEmpty()) {
