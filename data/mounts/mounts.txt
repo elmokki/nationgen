@@ -5710,7 +5710,8 @@
 #new secondshape
 #id "great_bear_mount"
 #command "#copystats 694"
-#command "#copyspr 694"
+#command "#spr1 ./graphics/mounts/standard/bear.png"
+#command "#spr2 shift"
 #command "#magicboost 53 -1"
 #command "#itemslots 786432"
 #command "#transformation 0"
@@ -5721,7 +5722,8 @@
 #new secondshape
 #id "great_bear_turtle_shell_barding_mount"
 #command "#copystats 694"
-#command "#copyspr 694"
+#command "#spr1 ./graphics/mounts/standard/bear_armored_turtleshell.png"
+#command "#spr2 shift"
 #command "#magicboost 53 -1"
 #command "#itemslots 786432"
 #command "#transformation 0"
@@ -5733,7 +5735,8 @@
 #new secondshape
 #id "great_bear_light_bronze_barding_mount"
 #command "#copystats 694"
-#command "#copyspr 694"
+#command "#spr1 ./graphics/mounts/standard/bear_armored_lightbronze.png"
+#command "#spr2 shift"
 #command "#magicboost 53 -1"
 #command "#itemslots 786432"
 #command "#transformation 0"
@@ -5745,7 +5748,8 @@
 #new secondshape
 #id "great_bear_light_scale_barding_mount"
 #command "#copystats 694"
-#command "#copyspr 694"
+#command "#spr1 ./graphics/mounts/standard/bear_armored_lightscale.png"
+#command "#spr2 shift"
 #command "#magicboost 53 -1"
 #command "#itemslots 786432"
 #command "#transformation 0"
@@ -5757,7 +5761,8 @@
 #new secondshape
 #id "great_bear_coral_barding_mount"
 #command "#copystats 694"
-#command "#copyspr 694"
+#command "#spr1 ./graphics/mounts/standard/bear_armored_coral.png"
+#command "#spr2 shift"
 #command "#magicboost 53 -1"
 #command "#itemslots 786432"
 #command "#transformation 0"
@@ -5769,7 +5774,8 @@
 #new secondshape
 #id "great_bear_bronze_mail_barding_mount"
 #command "#copystats 694"
-#command "#copyspr 694"
+#command "#spr1 ./graphics/mounts/standard/bear_armored_bronzemail.png"
+#command "#spr2 shift"
 #command "#magicboost 53 -1"
 #command "#itemslots 786432"
 #command "#transformation 0"
@@ -5781,7 +5787,8 @@
 #new secondshape
 #id "great_bear_iron_mail_barding_mount"
 #command "#copystats 694"
-#command "#copyspr 694"
+#command "#spr1 ./graphics/mounts/standard/bear_armored_cataphract.png"
+#command "#spr2 shift"
 #command "#magicboost 53 -1"
 #command "#itemslots 786432"
 #command "#transformation 0"
@@ -5793,7 +5800,8 @@
 #new secondshape
 #id "great_bear_cataphract_barding_mount"
 #command "#copystats 694"
-#command "#copyspr 694"
+#command "#spr1 ./graphics/mounts/standard/bear_armored_cataphract.png"
+#command "#spr2 shift"
 #command "#magicboost 53 -1"
 #command "#itemslots 786432"
 #command "#transformation 0"
@@ -5805,7 +5813,8 @@
 #new secondshape
 #id "great_bear_bronze_barding_mount"
 #command "#copystats 694"
-#command "#copyspr 694"
+#command "#spr1 ./graphics/mounts/standard/bear_armored_bronze.png"
+#command "#spr2 shift"
 #command "#magicboost 53 -1"
 #command "#itemslots 786432"
 #command "#transformation 0"
@@ -5817,7 +5826,8 @@
 #new secondshape
 #id "great_bear_plate_barding_mount"
 #command "#copystats 694"
-#command "#copyspr 694"
+#command "#spr1 ./graphics/mounts/standard/bear_armored_plate.png"
+#command "#spr2 shift"
 #command "#magicboost 53 -1"
 #command "#itemslots 786432"
 #command "#transformation 0"
@@ -5829,7 +5839,8 @@
 #new secondshape
 #id "great_bear_golden_barding_mount"
 #command "#copystats 694"
-#command "#copyspr 694"
+#command "#spr1 ./graphics/mounts/standard/bear_armored_gold.png"
+#command "#spr2 shift"
 #command "#magicboost 53 -1"
 #command "#itemslots 786432"
 #command "#transformation 0"
@@ -5871,7 +5882,7 @@
 
 #new secondshape
 #id "polar_bear_light_bronze_barding_mount"
-#command "#spr1 ./graphics/mounts/standard/bear_polar_half_armored.png"
+#command "#spr1 ./graphics/mounts/standard/bear_polar_armored_lightbronze.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#name 'Ice Bear'"
@@ -5903,7 +5914,7 @@
 
 #new secondshape
 #id "polar_bear_light_scale_barding_mount"
-#command "#spr1 ./graphics/mounts/standard/bear_polar_half_armored.png"
+#command "#spr1 ./graphics/mounts/standard/bear_polar_armored_lightscale.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#name 'Ice Bear'"
@@ -5935,7 +5946,7 @@
 
 #new secondshape
 #id "polar_bear_turtle_shell_barding_mount"
-#command "#spr1 ./graphics/mounts/standard/bear_polar_half_armored.png"
+#command "#spr1 ./graphics/mounts/standard/bear_polar_armored_turtleshell.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#name 'Ice Bear'"
@@ -5967,7 +5978,7 @@
 
 #new secondshape
 #id "polar_bear_coral_barding_mount"
-#command "#spr1 ./graphics/mounts/standard/bear_polar_half_armored.png"
+#command "#spr1 ./graphics/mounts/standard/bear_polar_armored_coral.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#name 'Ice Bear'"
@@ -5999,7 +6010,7 @@
 
 #new secondshape
 #id "polar_bear_bronze_mail_barding_mount"
-#command "#spr1 ./graphics/mounts/standard/bear_polar_half_armored.png"
+#command "#spr1 ./graphics/mounts/standard/bear_polar_armored_bronzemail.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#name 'Ice Bear'"
@@ -6031,7 +6042,7 @@
 
 #new secondshape
 #id "polar_bear_iron_mail_barding_mount"
-#command "#spr1 ./graphics/mounts/standard/bear_polar_half_armored.png"
+#command "#spr1 ./graphics/mounts/standard/bear_polar_armored_cataphract.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#name 'Ice Bear'"
@@ -6063,7 +6074,7 @@
 
 #new secondshape
 #id "polar_bear_cataphract_barding_mount"
-#command "#spr1 ./graphics/mounts/standard/bear_polar_half_armored.png"
+#command "#spr1 ./graphics/mounts/standard/bear_polar_armored_cataphract.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#name 'Ice Bear'"
@@ -6095,7 +6106,7 @@
 
 #new secondshape
 #id "polar_bear_bronze_barding_mount"
-#command "#spr1 ./graphics/mounts/standard/bear_polar_half_armored.png"
+#command "#spr1 ./graphics/mounts/standard/bear_polar_armored_bronze.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#name 'Ice Bear'"
@@ -6127,7 +6138,7 @@
 
 #new secondshape
 #id "polar_bear_plate_barding_mount"
-#command "#spr1 ./graphics/mounts/standard/bear_polar_half_armored.png"
+#command "#spr1 ./graphics/mounts/standard/bear_polar_armored_plate.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#name 'Ice Bear'"
@@ -6159,7 +6170,7 @@
 
 #new secondshape
 #id "polar_bear_ice_barding_mount"
-#command "#spr1 ./graphics/mounts/standard/bear_polar_armored.png"
+#command "#spr1 ./graphics/mounts/standard/bear_polar_armored_ice.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#name 'Ice Bear'"
@@ -6191,7 +6202,7 @@
 
 #new secondshape
 #id "polar_bear_meteorite_barding_mount"
-#command "#spr1 ./graphics/mounts/standard/bear_polar_armored.png"
+#command "#spr1 ./graphics/mounts/standard/bear_polar_armored_meteorite.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#name 'Ice Bear'"
