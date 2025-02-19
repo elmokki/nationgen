@@ -15,6 +15,7 @@ import nationGen.misc.Arg;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
+import nationGen.misc.Utils;
 import nationGen.nation.Nation;
 import nationGen.rostergeneration.montagtemplates.SacredMontagTemplate;
 import nationGen.rostergeneration.powermanagers.StatUpgradeManager;
@@ -65,34 +66,48 @@ public class SacredGenerator extends TroopGenerator {
     // Roll a magic weapon and discount its cost from power.
     // Note this is not guaranteed; the roll might fail.
     if (unitPower.powerLeft > 0) {
-      unitPower.powerLeft -= rollMagicWeapon(unit, isSacred, unitPower.powerLeft, 0.15);
+      unitPower.powerLeft -=
+      rollMagicWeapon(unit, isSacred, unitPower.powerLeft, 0.15);
     }
 
     // If we still have power, determine how much of it will be used in stat upgrades
     if (unitPower.powerLeft > 0) {
       // Allocate from 0 up to power - 1 into stat upgrades instead
       int powerToStatUpgrades = random.nextInt(unitPower.powerLeft);
-      unitPower.shiftPowerToStatUpgradeBudget(-powerToStatUpgrades, powerToStatUpgrades);
+      unitPower.shiftPowerToStatUpgradeBudget(
+        -powerToStatUpgrades,
+        powerToStatUpgrades
+      );
     }
-    
+
     // Get a list of all the valid filters that this unit can get added
     List<Filter> extraFilterOptions = getValidFilterOptions(unit, isSacred);
 
-    // Add up to 5 filters, depending on the amount of power left
-    int maxExtraFilters = 5;
-    int extraFiltersAdded = 0;
+    // Add up to 15 power worth of filters (arbitrary, but that's 5 filters of power 3).
+    // Most of the time there won't be anywhere near enough sacredpower for this, but
+    // this could easily happen with the Batshit Insane sacred power setting.
+    int maxFilterPowerTotal = 15;
+    int filterPowerAdded = 0;
     int loopSafety = 0;
 
-    // While we still have power budget and we haven't reached the maximum filters...
-    while (unitPower.powerLeft > 0 && extraFiltersAdded <= maxExtraFilters) {
+    // While we still have power budget and we haven't reached the maximum filter power...
+    while (unitPower.powerLeft > 0 && filterPowerAdded < maxFilterPowerTotal) {
       loopSafety++;
       if (loopSafety > 50) {
         break;
       }
 
-      // Select a valid filter for this unit with a power close to the amount left.
-      // This prioritizes high power filters based on the budget.
-      Filter filterToAdd = selectValidRandomFilterWithPower(unit, extraFilterOptions, unitPower.powerLeft);
+      // No more options left to use for this sacred, break early
+      if (extraFilterOptions.size() == 0) {
+        break;
+      }
+
+      // Select a valid filter for this unit with a power up to however much we have left to spend
+      Filter filterToAdd = selectValidRandomFilter(
+        unit,
+        extraFilterOptions,
+        unitPower.powerLeft
+      );
 
       // If we found a valid filter...
       if (filterToAdd != null) {
@@ -106,11 +121,15 @@ public class SacredGenerator extends TroopGenerator {
         // ...pay the filter cost with the current power budget. Note that if the filter
         // is a negative one (i.e. extra supply cost), this actually increases our budget.
         unitPower.powerLeft -= filterToAdd.power;
+        filterPowerAdded += filterToAdd.power;
       }
     }
 
     // Add remaining unspent power to stat upgrade budget
-    unitPower.shiftPowerToStatUpgradeBudget(-unitPower.powerLeft, unitPower.powerLeft);
+    unitPower.shiftPowerToStatUpgradeBudget(
+      -unitPower.powerLeft,
+      unitPower.powerLeft
+    );
 
     // Scale stat upgrade budget to a more suitable size for stat prices
     unitPower.scaleStatUpgradeBudget(3);
@@ -138,9 +157,7 @@ public class SacredGenerator extends TroopGenerator {
         unit.pose,
         unit.race
       );
-    }
-    
-    else {
+    } else {
       String[] defaults = {
         "default_elitefilters",
         "default_elitefilters_shapeshift",
@@ -181,7 +198,10 @@ public class SacredGenerator extends TroopGenerator {
 
     // 50% of power + 50% of 0 to power + 2
     int moraleBonus = (int) Math.round(
-      Math.min(0.5 * (double) power + 0.5 * (double) random.nextInt(power + 1) + 2, maxMoraleBonus)
+      Math.min(
+        0.5 * (double) power + 0.5 * (double) random.nextInt(power + 1) + 2,
+        maxMoraleBonus
+      )
     );
 
     // At 18 morale, 0% chance
@@ -198,7 +218,8 @@ public class SacredGenerator extends TroopGenerator {
 
     // Morale above 16 gets halved, ie 18 -> 17, 20 -> 18 and so on.
     if (baseMorale + moraleBonus > diminishingReturnsMoraleThreshold) {
-      moraleBonus -= (baseMorale + moraleBonus - diminishingReturnsMoraleThreshold) / 2;
+      moraleBonus -=
+      (baseMorale + moraleBonus - diminishingReturnsMoraleThreshold) / 2;
     }
 
     // Add morale bonus
@@ -206,18 +227,27 @@ public class SacredGenerator extends TroopGenerator {
   }
 
   // Roll a chance to see if this unit will get a magic weapon added to it
-  private int rollMagicWeapon(Unit unit, boolean isSacred, int power, double baseChance) {
+  private int rollMagicWeapon(
+    Unit unit,
+    boolean isSacred,
+    int power,
+    double baseChance
+  ) {
     double roll = random.nextDouble();
     double magicWeaponChance = baseChance + power * 0.03;
 
     // Cost is 1 to 6. This is the power that the magic weapon will have as well
     int cost = 1 + random.nextInt(Math.min(6, power));
-    
+
     // If unit is sacred and rand is < 0.2 + 0.03 of power (i.e. 44% for power 8)
     boolean rolledMagicWeapon = isSacred && roll < magicWeaponChance;
 
     // Find any weapon, bonusweapon or offhand in this unit that is guaranteed magic
-    boolean hasGuaranteedMagicWeapon = Stream.of("weapon", "bonusweapon", "offhand")
+    boolean hasGuaranteedMagicWeapon = Stream.of(
+      "weapon",
+      "bonusweapon",
+      "offhand"
+    )
       .map(unit::getSlot)
       .filter(Objects::nonNull)
       .filter(i -> !i.armor)
@@ -229,35 +259,48 @@ public class SacredGenerator extends TroopGenerator {
       // Magic weapon is added later since no weapons exist when this is run
       unit.tags.add("NEEDSMAGICWEAPON", cost);
       return cost;
-    }
-
-    else return 0;
+    } else return 0;
   }
 
   // Select a single filter close to a given power for this unit and return it
-  private Filter selectValidRandomFilterWithPower(Unit unit, List<Filter> filterChoices, int power) {
+  private Filter selectValidRandomFilter(
+    Unit unit,
+    List<Filter> filterChoices,
+    int upToPower
+  ) {
     List<Filter> choices;
 
+    if (filterChoices.size() == 0) {
+      return null;
+    }
+
     // Find the filter with the highest power in the list above
-    int highestFilterPower = (int) filterChoices
+    Optional<Filter> possibleHighestPowerFilter = filterChoices
       .stream()
-      .max(Comparator.comparing(Filter::getPower))
-      .get().power;
+      .max(Comparator.comparing(Filter::getPower));
 
-    // If we're unlucky (5%), force a negative filter onto this unit
+    // No filter found after the comparison
+    if (possibleHighestPowerFilter.isPresent() == false) {
+      return null;
+    }
+
+    int highestFilterPower = (int) possibleHighestPowerFilter.get().power;
+    int powerCap = Math.min(highestFilterPower, upToPower);
+    int powerToSelect = random.nextInt(powerCap + 1);
+
+    // If we're unlucky (5%), force a negative filter onto this unit instead
     if (random.nextDouble() < 0.05) {
-      choices = ChanceIncHandler.getFiltersWithPower(-100, -1, filterChoices);
-    }
-
-    // If the current power left is highest than any of the filter powers,
-    // just select all filters with the highest power to pick one at random
-    else if (power > highestFilterPower) {
-      choices = ChanceIncHandler.getFiltersWithPower(highestFilterPower, highestFilterPower, filterChoices);
-    }
-
-    // Otherwise select all filters with the same power as the current power left
-    else {
-      choices = ChanceIncHandler.getFiltersWithPower(power, power, filterChoices);
+      choices = ChanceIncHandler.getFiltersWithPower(
+        Integer.MIN_VALUE,
+        -1,
+        filterChoices
+      );
+    } else {
+      choices = ChanceIncHandler.getFiltersWithPower(
+        powerToSelect,
+        powerToSelect,
+        filterChoices
+      );
     }
 
     // Boil down choices to valid ones for this unit
@@ -265,7 +308,9 @@ public class SacredGenerator extends TroopGenerator {
 
     if (choices.size() > 0) {
       // Select one filter at random from the list of choices created above
-      Filter chosenFilter = chandler.handleChanceIncs(unit, choices).getRandom(random);
+      Filter chosenFilter = chandler
+        .handleChanceIncs(unit, choices)
+        .getRandom(random);
 
       if (chosenFilter != null && ChanceIncHandler.canAdd(unit, chosenFilter)) {
         return chosenFilter;
@@ -274,10 +319,15 @@ public class SacredGenerator extends TroopGenerator {
 
     return null;
   }
-  
+
   // Spend all the budget for stat upgrades for this unit
   private void spendStatUpgradeBudget(Unit unit, int budget) {
-    StatUpgradeManager statUpgradeManager = new StatUpgradeManager(nationGen, unit, budget, random);
+    StatUpgradeManager statUpgradeManager = new StatUpgradeManager(
+      nationGen,
+      unit,
+      budget,
+      random
+    );
 
     // While there's budget left for stat increases, keep buying stat upgrades
     while (statUpgradeManager.cannotAffordMoreUpgrades == false) {
@@ -412,7 +462,8 @@ public class SacredGenerator extends TroopGenerator {
       unitGen.handleMontagUnits(u, template, "montagsacreds");
       u.caponly = true;
     } else {
-      calculatePower(u, power);
+      addSacredCostMultipliers(u, power);
+      determineIfCapOnly(u, isFirstSacred);
     }
     return u;
   }
@@ -450,29 +501,33 @@ public class SacredGenerator extends TroopGenerator {
     Race race,
     boolean isFirstSacred
   ) {
-    List<Pose> possibleposes = new ArrayList<>();
+    ChanceDistribution<String> poseChances = new ChanceDistribution<>();
 
-		// Note that the first sacred of a nation should very rarely be ranged if any others are available
     ChanceDistribution<String> roles = new ChanceDistribution<>();
     String toGet = "sacred";
+
     if (race.hasSpecialRole("infantry", sacred)) {
       roles.setChance(
         "infantry",
         race.tags.getDouble(toGet + "infantrychance").orElse(1.0) + power * 0.1
       );
     }
+
     if (race.hasSpecialRole("mounted", sacred)) {
       roles.setChance(
         "mounted",
         race.tags.getDouble(toGet + "mountedchance").orElse(0.25) + power * 0.15
       );
     }
+
     if (race.hasSpecialRole("chariot", sacred)) {
       roles.setChance(
         "chariot",
         race.tags.getDouble(toGet + "chariotchance").orElse(0.05) + power * 0.1
       );
     }
+
+    // Note that the first sacred of a nation should very rarely be ranged if any others are available
     if (race.hasSpecialRole("ranged", sacred) && !isFirstSacred) {
       roles.setChance(
         "ranged",
@@ -482,12 +537,16 @@ public class SacredGenerator extends TroopGenerator {
       roles.setChance("ranged", 0.05);
     }
 
-    while (roles.hasPossible() && possibleposes.isEmpty()) {
+    while (roles.hasPossible()) {
       String role = roles.getRandom(this.random);
+      double roleChance = roles.getChance(role);
       roles.eliminate(role);
 
       for (Pose p : race.poses) {
         boolean isSacred = false;
+        String poseId = Integer.toString(p.hashCode());
+        double poseChance = p.basechance + roleChance;
+
         for (String trole : p.roles) if (
           (trole.contains("sacred") && sacred) ||
           (p.tags.containsName("sacred") && sacred) ||
@@ -501,18 +560,18 @@ public class SacredGenerator extends TroopGenerator {
             (!sacred && p.roles.contains("elite " + role)) ||
             p.roles.contains(role))
         ) {
-          possibleposes.add(p);
+          poseChances.setChance(poseId, poseChance);
         } else if (
           ((race.tags.containsName("all_troops_sacred") && sacred) ||
             ((race.tags.containsName("all_troops_elite") && !sacred))) &&
           p.roles.contains(role)
         ) {
-          possibleposes.add(p);
+          poseChances.setChance(poseId, poseChance);
         }
       }
     }
 
-    if (possibleposes.isEmpty()) {
+    if (poseChances.isEmpty()) {
       throw new IllegalStateException(
         "No " +
         (sacred ? "sacred" : "elite") +
@@ -522,10 +581,13 @@ public class SacredGenerator extends TroopGenerator {
       );
     }
 
-    Pose pose = chandler
-      .handleChanceIncs(race, possibleposes)
-      .getRandom(random);
-    if (pose == null) {
+    String chosenPoseHashCode = poseChances.getRandom(this.random);
+    Optional<Pose> chosenPose = race.poses
+      .stream()
+      .filter(p -> (Integer.toString(p.hashCode())).equals(chosenPoseHashCode))
+      .findFirst();
+
+    if (chosenPose.isPresent() == false) {
       throw new IllegalStateException(
         "After chanceincs were handled, no " +
         (sacred ? "sacred" : "elite") +
@@ -534,67 +596,197 @@ public class SacredGenerator extends TroopGenerator {
         ". Consider adding #all_troops_sacred or #all_troops_elite to race file to use normal poses."
       );
     }
-    return pose;
+
+    return chosenPose.get();
+  }
+
+  public void addSacredCostMultipliers(Unit u, int power) {
+    double total = 1;
+    List<Double> multipliers = Generic.getAllUnitTags(u).getAllDoubles(
+      "sacredcostmulti"
+    );
+
+    for (Double multi : multipliers) {
+      total *= multi;
+    }
+
+    u.commands.add(Command.args("#gcost", "*" + total));
   }
 
   /**
-   * Adds some cost and caponlyness if unit is badass enough
+   * Determine whether this unit will become caponly or not
    * @param u
    * @param power
    */
-  public void calculatePower(Unit u, int power) {
-    // Calculate some loose power rating
-    double rating = 0;
-    for (Filter f : u.appliedFilters) rating += Math.pow(2, f.power) / 2;
+  public void determineIfCapOnly(Unit u, boolean isFirstSacred) {
+    double unitRating = calculateUnitRating(u);
 
-    // Rating should theoretically range from 0 to 4ish at this point
+    // If this is not the nation's first sacred, the chances that
+    // it's cap only will be lower by this factor
+    double additionalSacredBonus = (isFirstSacred == false) ? 0.75 : 1;
 
-    if (
-      u.pose.roles.contains("ranged") ||
-      u.pose.roles.contains("elite ranged") ||
-      u.pose.roles.contains("sacred ranged")
-    ) {
-      if (u.getTotalProt() < 5) rating *= 2;
-      else if (u.getTotalProt() < 8) rating *= 1.75;
-      else if (u.getTotalProt() < 12) rating *= 1.5;
-    } else {
-      if (u.getTotalProt() < 5) rating *= 0.25;
-      else if (u.getTotalProt() < 8) rating *= 0.5;
-      else if (u.getTotalProt() < 12) rating *= 0.8;
-    }
-
-    double total = 1;
-    for (Double multi : Generic.getAllUnitTags(u).getAllDoubles(
-      "sacredratingmulti"
-    )) {
-      total *= multi;
-    }
-    rating *= total;
-
-    total = 1;
-    for (Double multi : Generic.getAllUnitTags(u).getAllDoubles(
-      "sacredcostmulti"
-    )) {
-      total *= multi;
-    }
-    u.commands.add(Command.args("#gcost", "*" + total));
-
-    // The highest caponlychance for the unit will apply if one is defined, unless the default formula is higher
-    double highestcaponlychance = Generic.getAllUnitTags(u)
+    // The highest capOnlyChance for the unit will apply if one is defined
+    double highestCapOnlyChance = Generic.getAllUnitTags(u)
       .streamAllValues("caponlychance")
       .map(Arg::getDouble)
       .max(Double::compareTo)
       .orElse(0D);
 
-    if (
-      highestcaponlychance < ((power + rating) / 10 + 0.3)
-    ) highestcaponlychance = (power + rating) / 10 + 0.3;
+    double survivability = calculateSurvivability(u);
 
-    if (random.nextDouble() < highestcaponlychance) u.caponly = true;
-    else {
-      if (u.getGoldCost() <= 50) u.commands.add(Command.args("#gcost", "+10"));
-      else u.commands.add(Command.args("#gcost", "*1.2"));
+    // Weigh survivability of the unit higher than its filter power rating for rec-everywhere chances
+    double ratingAndSurvivabilityAverage =
+      ((unitRating * 0.75) + (survivability * 1.25)) / 2;
+    double adjustedCapOnlyChance =
+      ratingAndSurvivabilityAverage * additionalSacredBonus;
+    u.capOnlyChance = Math.max(
+      highestCapOnlyChance,
+      Math.min(0.99, adjustedCapOnlyChance)
+    );
+
+    if (random.nextDouble() < u.capOnlyChance) {
+      u.caponly = true;
     }
+  }
+
+  /**
+   * Calculates a loose measure of a unit's power in relation
+   * to the filters that have been applied to it.
+   * @param u
+   * @param power
+   * @return the unit's rating
+   */
+  public double calculateUnitRating(Unit unit) {
+    double unitRating = 0;
+    List<Double> sacredRatingMultiplierTags = Generic.getAllUnitTags(
+      unit
+    ).getAllDoubles("sacredratingmulti");
+
+    for (Filter f : unit.appliedFilters) {
+      double filterRating = Math.pow(2, f.power) / 2;
+
+      if (f.power < 0) {
+        unitRating -= filterRating;
+      } else {
+        unitRating += filterRating;
+      }
+    }
+
+    if (unit.isRanged() == false) {
+      if (unit.getTotalProt() < 5) {
+        unitRating *= 0.25;
+      } else if (unit.getTotalProt() < 8) {
+        unitRating *= 0.5;
+      } else if (unit.getTotalProt() < 12) {
+        unitRating *= 0.8;
+      }
+    }
+
+    for (Double multi : sacredRatingMultiplierTags) {
+      unitRating *= multi;
+    }
+
+    // Normalize the rating from 0 to 1. We're considering the maximum rating to be 10,
+    // but in reality many units will be generated above that. The distinction is just
+    // not relevant for the purposes of using the rating to calculate cap only chances.
+    float normalizedRating = Utils.normalize(unitRating, 0, 10);
+    return normalizedRating;
+  }
+
+  /**
+   * Calculates a survivability score from 0 to 1. There is no "maximum" survivability;
+   * when units reach a certain score they'll always get normalized to 1.
+   * @param u
+   */
+  public float calculateSurvivability(Unit u) {
+    // Unit's survivability stats
+    int hp = u.getCommandValue("#hp", 10);
+    int def = u.getTotalDef();
+    float finalProt = u.getTotalProt();
+    int size = u.getCommandValue("#size", 3);
+
+    // Least survivable values taken from a base pygmy template.
+    // If you have these, your survivability is basically 0.
+    int leastSurvivableHp = 4;
+    int leastSurvivableDef = 7;
+    int leastSurvivableProt = 0;
+    int leastSurvivableSize = 2;
+
+    // Most survivable values taken from several units.
+    // If you have these, your survivability is 1, towards the top.
+    int mostSurvivableHp = 69;
+    int mostSurvivableDef = 16;
+    int mostSurvivableProt = 22;
+    int mostSurvivableSize = 9;
+
+    // Normalize the above scores to a range of 0 to 1
+    float normalizedHp = Utils.normalize(
+      hp,
+      leastSurvivableHp,
+      mostSurvivableHp
+    );
+    float normalizedDef = Utils.normalize(
+      def,
+      leastSurvivableDef,
+      mostSurvivableDef
+    );
+    float normalizedProt = Utils.normalize(
+      finalProt,
+      leastSurvivableProt,
+      mostSurvivableProt
+    );
+    float normalizedSize = Utils.normalize(
+      size,
+      leastSurvivableSize,
+      mostSurvivableSize
+    );
+
+    // Average survivability score from 0 to 1 across all defensive stats
+    float averageSurvivability =
+      (normalizedHp + normalizedDef + normalizedProt + normalizedSize) / 4;
+    float survivability = averageSurvivability;
+
+    for (Filter f : u.appliedFilters) {
+      for (Command c : f.getCommands()) {
+        if (c.command.equals("#regen")) {
+          survivability += 0.05 * Math.ceil(hp * 0.1);
+        }
+
+        if (c.command.equals("#awe") || c.command.equals("#sunawe")) {
+          survivability += 0.1;
+        }
+
+        if (c.command.equals("#invuln")) {
+          survivability += 0.1;
+        }
+
+        if (c.command.equals("#illusion")) {
+          survivability += 0.1;
+        }
+
+        if (c.command.equals("#ethereal")) {
+          survivability += 0.15;
+        }
+
+        if (c.command.equals("#glamour")) {
+          survivability += 0.15;
+        }
+
+        if (c.command.equals("#entangle")) {
+          survivability += 0.15;
+        }
+
+        if (c.command.equals("#secondshape")) {
+          survivability += 0.05;
+        }
+
+        if (c.command.equals("#firstshape")) {
+          survivability += 0.05;
+        }
+      }
+    }
+
+    return Math.max(0, Math.min(survivability, 1));
   }
 
   public Unit getSacredUnit(

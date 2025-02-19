@@ -265,6 +265,7 @@ public class Nation {
 
     // Sacred
     for (int i = 0; i < sacredcount; i++) {
+      boolean isFirstSacred = i == 0;
       double sacredPowerModifier = this.nationGen.settings.get(SettingsType.sacredpower);
       
       // Scale base unit power by the sacredpower setting chosen
@@ -310,11 +311,8 @@ public class Nation {
         }
       }
 
-      Unit sacred = sacGen.generateUnit(raceHasSacreds, power, (i == 0));
+      Unit sacred = sacGen.generateUnit(raceHasSacreds, power, isFirstSacred);
       if (sacred != null) {
-        if (i > 0 && random.nextDouble() < 0.5) {
-          sacred.caponly = true;
-        }
         sacreds.add(sacred);
       }
     }
