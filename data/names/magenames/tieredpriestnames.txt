@@ -329,3 +329,261 @@
 #racevariant "Primate" guru
 #commandvariant #female "high priestess"
 #end
+
+-- AI generated
+
+#new
+#name cenobite
+#rank 1
+#basechance 1
+#commandvariant #female recluse
+#end
+
+#new
+#name anchorite
+#rank 1
+#basechance 0.5
+#commandvariant #female sequestress
+#end
+
+#new
+#name mendicant
+#rank 1
+#basechance 1
+#commandvariant #female sister
+#end
+
+#new
+#name adjutant
+#rank 1
+#basechance 0
+#end
+
+#new
+#name supplicant
+#rank 1
+#basechance 1
+#commandvariant #female handmaiden
+#end
+
+#new
+#name servus
+#rank 1
+#basechance 1
+#end
+
+#new
+#name devotee
+#rank 1
+#basechance 1
+#end
+
+#new
+#name aspirant
+#rank 1
+#basechance 1
+#end
+
+#new
+#name postulant
+#rank 1
+#basechance 1
+#end
+
+#new
+#name tyro
+#rank 1
+#basechance 1
+#end
+
+#new
+#name evangelist
+#rank 1
+#basechance 1
+#end
+
+#new
+#name peregrine
+#rank 1
+#basechance 1
+#end
+
+#new
+#name hierodeacon
+#rank 1
+#basechance 1
+#end
+
+#new
+#name catechumen
+#rank 1
+#basechance 1
+#end
+
+#new
+#name zealot
+#rank 1
+#basechance 1
+#end
+
+#new
+#name oblatus
+#rank 1
+#basechance 1
+#end
+
+#new
+#name diaconus
+#rank 1
+#basechance 1
+#commandvariant #female diaconissa
+#end
+
+#new
+#name presbyter
+#rank 2
+#basechance 1
+#commandvariant #female presbytera
+#end
+
+#new
+#name thaumaturge
+#rank 2
+#basechance 1
+#commandvariant #female thaumaturgist
+#end
+
+#new
+#name hierophant
+#rank 2
+#basechance 1
+#end
+
+#new
+#name adept
+#rank 2
+#basechance 1
+#end
+
+#new
+#name provost
+#rank 2
+#basechance 1
+#end
+
+#new
+#name "mystic celebrant"
+#rank 2
+#basechance 1
+#chanceinc "personalcommand #female *0"
+#commandvariant #female sacerdotessa
+#end
+
+#new
+#name sacristan
+#rank 2
+#basechance 0.5
+#end
+
+#new
+#name curate
+#rank 2
+#basechance 1
+#end
+
+#new
+#name hierodeacon
+#rank 2
+#basechance 1
+#end
+
+#new
+#name metochion
+#rank 2
+#basechance 1
+#end
+
+#new
+#name abbot-general
+#rank 2
+#basechance 1
+#commandvariant #female abbess-general
+#end
+
+#new
+#name priorate
+#rank 2
+#basechance 1
+#commandvariant #female prioress
+#end
+
+#new
+#name archimandrite
+#rank 2
+#basechance 1
+#end
+
+#new
+#name illumined
+#rank 2
+#basechance 1
+#end
+
+#new
+#name "templar chaplain"
+#rank 2
+#basechance 0
+#chanceinc "posetag #warriormage 1"
+#end
+
+#new
+#name archpriest
+#rank 3
+#basechance 1
+#end
+
+#new
+#name pontifex
+#rank 3
+#basechance 1
+#end
+
+#new
+#name prelate
+#rank 3
+#basechance 1
+#end
+
+#new
+#name "high hierarch"
+#rank 3
+#basechance 1
+#end
+
+#new
+#name "supreme hierophant"
+#rank 3
+#basechance 1
+#commandvariant #female "supreme hierophantess"
+#end
+
+#new
+#name archprimate
+#rank 3
+#basechance 0.5
+#end
+
+#new
+#name benefactor
+#rank 3
+#basechance 0.5
+#commandvariant #female benefactress
+#end
+
+#new
+#name "grand hierarch"
+#rank 3
+#basechance 0
+#chanceinc "posetag #warriormage 1"
+#commandvariant #female "grand matriarch"
+#end

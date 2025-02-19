@@ -1198,3 +1198,1851 @@
 #chanceinc "itemtheme animaltotem 0.5"
 #tag "notsuffix"
 #end
+
+
+---- AI generated
+
+-- Generic
+
+#new
+#name "sanctuary"
+#tag "notsuffix"
+#basechance 1
+#end
+
+#new
+#name "hallowed"
+#tag "notsuffix"
+#basechance 0.5
+#end
+
+#new
+#name "blessed"
+#tag "notsuffix"
+#basechance 0.5
+#end
+
+#new
+#name "sacrosanct"
+#tag "notsuffix"
+#basechance 0.5
+#end
+
+#new
+#name "celestial"
+#tag "notsuffix"
+#basechance 1
+#end
+
+#new
+#name "virtuous"
+#tag "notsuffix"
+#basechance 0.5
+#end
+
+#new
+#name "retributive"
+#tag "notsuffix"
+#basechance 1
+#end
+
+#new
+#name "devout"
+#tag "notsuffix"
+#basechance 0.25
+#end
+
+#new
+#name "transcendent"
+#tag "notsuffix"
+#basechance 0.25
+#end
+
+#new
+#name "steadfast"
+#tag "notsuffix"
+#basechance 0.1
+#end
+
+#new
+#name "indomitable"
+#tag "notsuffix"
+#basechance 0.1
+#end
+
+#new
+#name "resolute"
+#tag "notsuffix"
+#basechance 0.1
+#end
+
+#new
+#name "impervious"
+#tag "notsuffix"
+#basechance 0.1
+#end
+
+#new
+#name "eternal"
+#tag "notsuffix"
+#basechance 0.1
+#end
+
+-- Fire
+
+#new
+#name "embersoul"
+#basechance 0
+#chanceinc "magic fire 0.25"
+#chanceinc "taggedmagic fire 1"
+#chanceinc "personalcommand #firepower 10"
+#chanceinc "personalcommand #heat 10"
+#end
+
+#new
+#name "pyrekin"
+#basechance 0
+#chanceinc "magic fire 0.25"
+#chanceinc "taggedmagic fire 1"
+#chanceinc "personalcommand #firepower 10"
+#chanceinc "personalcommand #heat 10"
+#end
+
+#new
+#name "magmaheart"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic fire 0.5"
+#chanceinc "taggedmagic fire 2"
+#end
+
+#new
+#name "crimsonflare"
+#basechance 0
+#chanceinc "magic fire 0.5"
+#chanceinc "taggedmagic fire 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "smoldering"
+#basechance 0
+#chanceinc "magic fire 0.5"
+#chanceinc "taggedmagic fire 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Infernalbrand"
+#basechance 0
+#chanceinc "magic fire 0.25"
+#chanceinc "taggedmagic fire 1"
+#chanceinc "personalcommand #firepower 10"
+#chanceinc "personalcommand #heat 10"
+#end
+
+#new
+#name "Emberwake"
+#basechance 0
+#chanceinc "magic fire 0.25"
+#chanceinc "taggedmagic fire 1"
+#chanceinc "personalcommand #firepower 10"
+#chanceinc "personalcommand #heat 10"
+#end
+
+#new
+#name "Pyroclasm"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic fire 0.5"
+#chanceinc "taggedmagic fire 2"
+#end
+
+#new
+#name "Searingheart"
+#basechance 0
+#chanceinc "magic fire 0.5"
+#chanceinc "taggedmagic fire 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Ashenborn"
+#basechance 0
+#chanceinc "magic fire 0.5"
+#chanceinc "taggedmagic fire 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Everburning Phoenix Ash"
+#basechance 0
+#chanceinc "magic fire 0.25"
+#chanceinc "taggedmagic fire 1"
+#chanceinc "personalcommand #firepower 10"
+#chanceinc "personalcommand #heat 10"
+#end
+
+#new
+#name "Crimson Pyre Song"
+#basechance 0
+#chanceinc "magic fire 0.25"
+#chanceinc "taggedmagic fire 1"
+#chanceinc "personalcommand #firepower 10"
+#chanceinc "personalcommand #heat 10"
+#end
+
+#new
+#name "Molten Titan Heart"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic fire 0.5"
+#chanceinc "taggedmagic fire 2"
+#end
+
+- Air
+
+#new
+#name "stormcall"
+#basechance 0
+#chanceinc "magic air 0.25"
+#chanceinc "taggedmagic air 1"
+#chanceinc "personalcommand #stormpower 10"
+#end
+
+#new
+#name "tempestuous"
+#basechance 0
+#chanceinc "magic air 0.25"
+#chanceinc "taggedmagic air 1"
+#tag "notsuffix"
+#chanceinc "personalcommand #stormpower 10"
+#end
+
+#new
+#name "arcflash"
+#basechance 0
+#chanceinc "magic air 0.5"
+#chanceinc "taggedmagic air 2"
+#tag "notprefix"
+#chanceinc "personalcommand #stormpower 10"
+#end
+
+#new
+#name "veilborn"
+#basechance 0
+#chanceinc "magic air 0.5"
+#chanceinc "taggedmagic air 2"
+#chanceinc "personalcommand #glamour 10"
+#end
+
+#new
+#name "Thunderborn"
+#basechance 0
+#chanceinc "magic air 0.25"
+#chanceinc "taggedmagic air 1"
+#chanceinc "personalcommand #stormpower 10"
+#end
+
+#new
+#name "Skybreaker"
+#basechance 0
+#chanceinc "magic air 0.25"
+#chanceinc "taggedmagic air 1"
+#tag "notsuffix"
+#chanceinc "personalcommand #stormpower 10"
+#end
+
+#new
+#name "Stormrender"
+#basechance 0
+#chanceinc "magic air 0.5"
+#chanceinc "taggedmagic air 2"
+#tag "notprefix"
+#chanceinc "personalcommand #stormpower 10"
+#end
+
+#new
+#name "Zephyrveil"
+#basechance 0
+#chanceinc "magic air 0.5"
+#chanceinc "taggedmagic air 2"
+#chanceinc "personalcommand #glamour 10"
+#end
+
+#new
+#name "Stormforged Thunder Howl"
+#basechance 0
+#chanceinc "magic air 0.25"
+#chanceinc "taggedmagic air 1"
+#chanceinc "personalcommand #stormpower 10"
+#end
+
+#new
+#name "Skyborne Tempest Veil"
+#basechance 0
+#chanceinc "magic air 0.25"
+#chanceinc "taggedmagic air 1"
+#tag "notsuffix"
+#chanceinc "personalcommand #stormpower 10"
+#end
+
+- Glamour
+#new
+#name "mirage"
+#basechance 0
+#chanceinc "magic glamour 0.25"
+#chanceinc "taggedmagic glamour 1"
+#tag "notsuffix"
+#chanceinc "personalcommand #glamour 10"
+#end
+
+#new
+#name "illusionist"
+#basechance 0
+#chanceinc "magic glamour 0.25"
+#chanceinc "taggedmagic glamour 1"
+#tag "notprefix"
+#chanceinc "personalcommand #glamour 10"
+#end
+
+#new
+#name "Moonwoven"
+#basechance 0
+#chanceinc "magic glamour 0.25"
+#chanceinc "taggedmagic glamour 1"
+#tag "notsuffix"
+#chanceinc "personalcommand #glamour 10"
+#end
+
+#new
+#name "Gildenshadow"
+#basechance 0
+#chanceinc "magic glamour 0.25"
+#chanceinc "taggedmagic glamour 1"
+#tag "notprefix"
+#chanceinc "personalcommand #glamour 10"
+#end
+
+- Water
+
+#new
+#name "rimebound"
+#basechance 0
+#chanceinc "magic water 0.5"
+#chanceinc "taggedmagic water 2"
+#chanceinc "personalcommand #coldpower 10"
+#chanceinc "personalcommand #cold 10"
+#end
+
+#new
+#name "glacier"
+#basechance 0
+#chanceinc "magic water 0.5"
+#chanceinc "taggedmagic water 2"
+#chanceinc "personalcommand #coldpower 10"
+#chanceinc "personalcommand #cold 10"
+#end
+
+#new
+#name "deepcurrent"
+#basechance 0
+#chanceinc "magic water 0.5"
+#chanceinc "taggedmagic water 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Rimeshroud"
+#basechance 0
+#chanceinc "magic water 0.5"
+#chanceinc "taggedmagic water 2"
+#chanceinc "personalcommand #coldpower 10"
+#chanceinc "personalcommand #cold 10"
+#end
+
+#new
+#name "Glacierreaver"
+#basechance 0
+#chanceinc "magic water 0.5"
+#chanceinc "taggedmagic water 2"
+#chanceinc "personalcommand #coldpower 10"
+#chanceinc "personalcommand #cold 10"
+#end
+
+#new
+#name "Tidalborne"
+#basechance 0
+#chanceinc "magic water 0.5"
+#chanceinc "taggedmagic water 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Frozen Moon Shard"
+#basechance 0
+#chanceinc "magic water 0.5"
+#chanceinc "taggedmagic water 2"
+#chanceinc "personalcommand #coldpower 10"
+#chanceinc "personalcommand #cold 10"
+#end
+
+#new
+#name "Eternal Ice Bloom"
+#basechance 0
+#chanceinc "magic water 0.5"
+#chanceinc "taggedmagic water 2"
+#tag "notsuffix"
+#end
+
+- Earth
+
+#new
+#name "adamant"
+#basechance 0
+#chanceinc "magic earth 0.1"
+#chanceinc "taggedmagic earth 0.66"
+#chanceinc "personalshape metalman 20"
+#end
+
+#new
+#name "obsidian"
+#basechance 0
+#chanceinc "magic earth 0.1"
+#chanceinc "taggedmagic earth 0.66"
+#chanceinc "personalshape metalman 20"
+#end
+
+#new
+#name "goldforged"
+#basechance 0
+#chanceinc "magic earth 0.1"
+#chanceinc "taggedmagic earth 0.66"
+#tag "notsuffix"
+#end
+
+#new
+#name "Titanforged"
+#basechance 0
+#chanceinc "magic earth 0.1"
+#chanceinc "taggedmagic earth 0.66"
+#chanceinc "personalshape metalman 20"
+#end
+
+#new
+#name "Runestone"
+#basechance 0
+#chanceinc "magic earth 0.1"
+#chanceinc "taggedmagic earth 0.66"
+#chanceinc "personalshape metalman 20"
+#end
+
+#new
+#name "Orichalcum"
+#basechance 0
+#chanceinc "magic earth 0.1"
+#chanceinc "taggedmagic earth 0.66"
+#tag "notsuffix"
+#end
+
+#new
+#name "Titanborn Iron Vein"
+#basechance 0
+#chanceinc "magic earth 0.1"
+#chanceinc "taggedmagic earth 0.66"
+#chanceinc "personalshape metalman 20"
+#end
+
+#new
+#name "Obsidian Blood Stone"
+#basechance 0
+#chanceinc "magic earth 0.1"
+#chanceinc "taggedmagic earth 0.66"
+#tag "notsuffix"
+#end
+
+- Astral
+
+#new
+#name "cosmic"
+#basechance 0
+#chanceinc "magic astral 0.5"
+#chanceinc "taggedmagic astral 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "voidtouched"
+#basechance 0
+#chanceinc "magic astral 0.5"
+#chanceinc "taggedmagic astral 2"
+#chanceinc "personalcommand #ethereal 10"
+#tag "notsuffix"
+#end
+
+#new
+#name "Stellarveil"
+#basechance 0
+#chanceinc "magic astral 0.5"
+#chanceinc "taggedmagic astral 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Voidborne"
+#basechance 0
+#chanceinc "magic astral 0.5"
+#chanceinc "taggedmagic astral 2"
+#chanceinc "personalcommand #ethereal 10"
+#tag "notsuffix"
+#end
+
+#new
+#name "Celestial Astral Glow"
+#basechance 0
+#chanceinc "magic astral 0.5"
+#chanceinc "taggedmagic astral 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Void Walker's Step"
+#basechance 0
+#chanceinc "magic astral 0.5"
+#chanceinc "taggedmagic astral 2"
+#chanceinc "personalcommand #ethereal 10"
+#tag "notsuffix"
+#end
+
+- Death
+
+#new
+#name "nightshade"
+#basechance 0
+#chanceinc "magic death 0.5"
+#chanceinc "taggedmagic death 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "graveborn"
+#basechance 0
+#chanceinc "magic death 0.5"
+#chanceinc "taggedmagic death 2"
+#end
+
+#new
+#name "Ebongrave"
+#basechance 0
+#chanceinc "magic death 0.5"
+#chanceinc "taggedmagic death 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Lichborn"
+#basechance 0
+#chanceinc "magic death 0.5"
+#chanceinc "taggedmagic death 2"
+#end
+
+#new
+#name "Death Whispered Night"
+#basechance 0
+#chanceinc "magic death 0.5"
+#chanceinc "taggedmagic death 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Gravebound Shadow Pact"
+#basechance 0
+#chanceinc "magic death 0.5"
+#chanceinc "taggedmagic death 2"
+#end
+
+- Nature
+
+#new
+#name "thornbound"
+#basechance 0
+#chanceinc "magic nature 0.5"
+#chanceinc "taggedmagic nature 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "wildbloom"
+#basechance 0
+#chanceinc "magic nature 0.5"
+#chanceinc "taggedmagic nature 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Verdant Elder Roots"
+#basechance 0
+#chanceinc "magic nature 0.5"
+#chanceinc "taggedmagic nature 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Ancient Wild Bloom"
+#basechance 0
+#chanceinc "magic nature 0.5"
+#chanceinc "taggedmagic nature 2"
+#tag "notsuffix"
+#end
+
+- Blood
+#new
+#name "crimsonveil"
+#basechance 0
+#chanceinc "magic blood 0.5"
+#chanceinc "taggedmagic blood 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "sanguine"
+#basechance 0
+#chanceinc "magic blood 0.5"
+#chanceinc "taggedmagic blood 2"
+#end
+
+#new
+#name "Hemovore"
+#basechance 0
+#chanceinc "magic blood 0.5"
+#chanceinc "taggedmagic blood 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Sanguisurge"
+#basechance 0
+#chanceinc "magic blood 0.5"
+#chanceinc "taggedmagic blood 2"
+#end
+
+#new
+#name "Sanguine Dark Pact"
+#basechance 0
+#chanceinc "magic blood 0.5"
+#chanceinc "taggedmagic blood 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Crimson Devourer's Maw"
+#basechance 0
+#chanceinc "magic blood 0.5"
+#chanceinc "taggedmagic blood 2"
+#end
+
+-- Crosspaths
+
+#new
+#name "pyre"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic blood fire 3"
+#chanceinc "taggedmagic blood fire 15"
+#end
+
+#new
+#name "mist"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic fire air 3"
+#chanceinc "taggedmagic fire air 15"
+#end
+
+#new
+#name "venom"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic fire water 3"
+#chanceinc "taggedmagic fire water 15"
+#end
+
+#new
+#name "silt"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic earth water 3"
+#chanceinc "taggedmagic earth water 15"
+#end
+
+#new
+#name "ash"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic earth death 3"
+#chanceinc "taggedmagic earth death 15"
+#end
+
+#new
+#name "ruin"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic blood fire 3"
+#chanceinc "taggedmagic blood fire 15"
+#end
+
+#new
+#name "lumen"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic fire astral 3"
+#chanceinc "taggedmagic fire astral 15"
+#chanceinc "personalcommand #awe 15"
+#end
+
+#new
+#name "maw"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic earth nature 3"
+#chanceinc "taggedmagic earth nature 15"
+#end
+
+#new
+#name "primal"
+#basechance 0
+#chanceinc "magic nature blood 3"
+#chanceinc "taggedmagic nature blood 15"
+#tag "notsuffix"
+#end
+
+#new
+#name "rank"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic blood nature 3"
+#chanceinc "taggedmagic blood nature 15"
+#end
+
+#new
+#name "vice"
+#basechance 0
+#chanceinc "magic blood nature 3"
+#chanceinc "taggedmagic blood nature 15"
+#end
+
+#new
+#name "elder"
+#basechance 0
+#chanceinc "magic nature blood 3"
+#chanceinc "taggedmagic nature blood 15"
+#tag "notsuffix"
+#end
+
+#new
+#name "wildflame"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic blood fire 3"
+#chanceinc "taggedmagic blood fire 15"
+#end
+
+#new
+#name "gale"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic fire air 3"
+#chanceinc "taggedmagic fire air 15"
+#end
+
+#new
+#name "tox"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic fire water 3"
+#chanceinc "taggedmagic fire water 15"
+#end
+
+#new
+#name "bog"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic earth water 3"
+#chanceinc "taggedmagic earth water 15"
+#end
+
+#new
+#name "cinder"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic earth death 3"
+#chanceinc "taggedmagic earth death 15"
+#end
+
+#new
+#name "doomspire"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic blood fire 3"
+#chanceinc "taggedmagic blood fire 15"
+#end
+
+#new
+#name "aether"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic fire astral 3"
+#chanceinc "taggedmagic fire astral 15"
+#chanceinc "personalcommand #awe 15"
+#end
+
+#new
+#name "voidmaw"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic earth nature 3"
+#chanceinc "taggedmagic earth nature 15"
+#end
+
+#new
+#name "primarch"
+#basechance 0
+#chanceinc "magic nature blood 3"
+#chanceinc "taggedmagic nature blood 15"
+#tag "notsuffix"
+#end
+
+#new
+#name "bane"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic blood nature 3"
+#chanceinc "taggedmagic blood nature 15"
+#end
+
+#new
+#name "vicebane"
+#basechance 0
+#chanceinc "magic blood nature 3"
+#chanceinc "taggedmagic blood nature 15"
+#end
+
+#new
+#name "archaic"
+#basechance 0
+#chanceinc "magic nature blood 3"
+#chanceinc "taggedmagic nature blood 15"
+#tag "notsuffix"
+#end
+
+-- Others
+
+#new
+#name "solstice"
+#basechance 0
+#chanceinc "personalcommand #summerpower 20"
+#end
+
+#new
+#name "verdant"
+#basechance 0
+#chanceinc "personalcommand #springpower 20"
+#end
+
+#new
+#name "harvest"
+#basechance 0
+#chanceinc "personalcommand #fallpower 20"
+#end
+
+#new
+#name "frost"
+#basechance 0
+#chanceinc "personalcommand #winterpower 20"
+#end
+
+#new
+#name "gloam"
+#basechance 0
+#chanceinc "personalcommand #stealthy 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "duskwraith"
+#basechance 0
+#chanceinc "personalcommand #stealthy 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "shroud"
+#basechance 0
+#chanceinc "personalcommand #stealthy 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "spectral"
+#basechance 0
+#chanceinc "personalcommand #ethereal 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "wraith"
+#basechance 0
+#chanceinc "personalcommand #ethereal 5"
+#tag "notsuffix"
+#end
+
+#new
+#name "phantasm"
+#basechance 0
+#chanceinc "personalcommand #ethereal 5"
+#tag "notsuffix"
+#end
+
+#new
+#name "mirage"
+#basechance 0
+#chanceinc "personalcommand #ethereal 5"
+#tag "notsuffix"
+#end
+
+#new
+#name "veil"
+#basechance 0
+#chanceinc "personalcommand #ethereal 5"
+#tag "notsuffix"
+#end
+
+#new
+#name "haze"
+#basechance 0
+#chanceinc "personalcommand #glamour 5"
+#chanceinc "race vanir *0.2"
+#chanceinc "race sidhe *0.2"
+#tag "notsuffix"
+#end
+
+#new
+#name "myst"
+#basechance 0
+#chanceinc "personalcommand #glamour 5"
+#chanceinc "race vanir *0.2"
+#chanceinc "race sidhe *0.2"
+#tag "notsuffix"
+#end
+
+#new
+#name "glint"
+#basechance 0
+#chanceinc "personalcommand #glamour 5"
+#chanceinc "race vanir *0.1"
+#chanceinc "race sidhe *2"
+#tag "notsuffix"
+#end
+
+#new
+#name "whisper"
+#basechance 0
+#chanceinc "personalcommand #glamour 5"
+#chanceinc "race vanir *0.2"
+#chanceinc "race sidhe *0.2"
+#tag "notsuffix"
+#end
+
+#new
+#name "esoteric"
+#basechance 0
+#chanceinc "personalcommand #glamour 5"
+#chanceinc "race vanir *0.2"
+#chanceinc "race sidhe *0.2"
+#tag "notsuffix"
+#end
+
+#new
+#name "titanic"
+#basechance 0
+#chanceinc "filter resistances 30"
+#chanceinc "filter minofelemental 40"
+#chanceinc "filter minoaelemental 40"
+#chanceinc "filter minowelemental 40"
+#chanceinc "filter minoeelemental 40"
+#tag "notsuffix"
+#end
+
+#new
+#name "primeval"
+#basechance 0
+#chanceinc "filter resistances 20"
+#tag "notprefix"
+#end
+
+#new
+#name "luminous"
+#basechance 0
+#chanceinc "personalcommand #awe 10"
+#tag "notsuffix"
+#end
+
+#new
+#name "feral"
+#basechance 0
+#chanceinc "filter werewolf 5"
+#tag "notsuffix"
+#end
+
+#new
+#name "forsaken"
+#basechance 0
+#chanceinc "filter ghoul 5"
+#tag "notsuffix"
+#end
+
+#new
+#name "venomous"
+#basechance 0
+#chanceinc "personalcommand #poisoncloud 15"
+#tag "notsuffix"
+#end
+
+#new
+#name "wrathful"
+#basechance 0
+#chanceinc "personalcommand #berserk 10"
+#tag "notsuffix"
+#end
+
+#new
+#name "savage"
+#basechance 0
+#chanceinc "personalcommand #berserk 10"
+#tag "notsuffix"
+#end
+
+#new
+#name "ferocious"
+#basechance 0
+#chanceinc "personalcommand #berserk 10"
+#tag "notsuffix"
+#end
+
+#new
+#name "scorch"
+#basechance 0
+#chanceinc "personalcommand #summerpower 20"
+#end
+
+#new
+#name "blossom"
+#basechance 0
+#chanceinc "personalcommand #springpower 20"
+#end
+
+#new
+#name "emberfall"
+#basechance 0
+#chanceinc "personalcommand #fallpower 20"
+#end
+
+#new
+#name "permafrost"
+#basechance 0
+#chanceinc "personalcommand #winterpower 20"
+#end
+
+#new
+#name "obscura"
+#basechance 0
+#chanceinc "personalcommand #stealthy 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "umbra"
+#basechance 0
+#chanceinc "personalcommand #stealthy 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "wisp"
+#basechance 0
+#chanceinc "personalcommand #stealthy 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "ecliptic"
+#basechance 0
+#chanceinc "personalcommand #ethereal 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "whimsy"
+#basechance 0
+#chanceinc "personalcommand #ethereal 5"
+#tag "notsuffix"
+#end
+
+#new
+#name "eldritch"
+#basechance 0
+#chanceinc "personalcommand #ethereal 5"
+#tag "notsuffix"
+#end
+
+#new
+#name "loreweave"
+#basechance 0
+#chanceinc "personalcommand #ethereal 5"
+#tag "notsuffix"
+#end
+
+#new
+#name "glister"
+#basechance 0
+#chanceinc "personalcommand #ethereal 5"
+#tag "notsuffix"
+#end
+
+#new
+#name "mistral"
+#basechance 0
+#chanceinc "personalcommand #glamour 5"
+#chanceinc "race vanir *0.2"
+#chanceinc "race sidhe *0.2"
+#tag "notsuffix"
+#end
+
+#new
+#name "radiance"
+#basechance 0
+#chanceinc "personalcommand #glamour 5"
+#chanceinc "race vanir *0.2"
+#chanceinc "race sidhe *0.2"
+#tag "notsuffix"
+#end
+
+#new
+#name "prismatic"
+#basechance 0
+#chanceinc "personalcommand #glamour 5"
+#chanceinc "race vanir *0.1"
+#chanceinc "race sidhe *2"
+#tag "notsuffix"
+#end
+
+#new
+#name "veilstorm"
+#basechance 0
+#chanceinc "personalcommand #glamour 5"
+#chanceinc "race vanir *0.2"
+#chanceinc "race sidhe *0.2"
+#tag "notsuffix"
+#end
+
+#new
+#name "arcaneveil"
+#basechance 0
+#chanceinc "personalcommand #glamour 5"
+#chanceinc "race vanir *0.2"
+#chanceinc "race sidhe *0.2"
+#tag "notsuffix"
+#end
+
+#new
+#name "monolith"
+#basechance 0
+#chanceinc "filter resistances 30"
+#chanceinc "filter minofelemental 40"
+#chanceinc "filter minoaelemental 40"
+#chanceinc "filter minowelemental 40"
+#chanceinc "filter minoeelemental 40"
+#tag "notsuffix"
+#end
+
+#new
+#name "aetherborn"
+#basechance 0
+#chanceinc "filter resistances 20"
+#tag "notprefix"
+#end
+
+#new
+#name "aureate"
+#basechance 0
+#chanceinc "personalcommand #awe 10"
+#tag "notsuffix"
+#end
+
+#new
+#name "howler"
+#basechance 0
+#chanceinc "filter werewolf 5"
+#tag "notsuffix"
+#end
+
+#new
+#name "unhallowed"
+#basechance 0
+#chanceinc "filter ghoul 5"
+#tag "notsuffix"
+#end
+
+#new
+#name "toxalis"
+#basechance 0
+#chanceinc "personalcommand #poisoncloud 15"
+#tag "notsuffix"
+#end
+
+#new
+#name "tempestuous"
+#basechance 0
+#chanceinc "personalcommand #berserk 10"
+#tag "notsuffix"
+#end
+
+#new
+#name "ravenous"
+#basechance 0
+#chanceinc "personalcommand #berserk 10"
+#tag "notsuffix"
+#end
+
+#new
+#name "ferox"
+#basechance 0
+#chanceinc "personalcommand #berserk 10"
+#tag "notsuffix"
+#end
+
+-- Totems
+
+#new
+#name "shadow panther"
+#basechance 0
+#chanceinc "itemtheme jaguartotem 20"
+#chanceinc "personalshape jaguar 20"
+#chanceinc "personalshape werejaguar 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "golden mane"
+#basechance 0
+#chanceinc "itemtheme liontotem 20"
+#chanceinc "personalshape lion 20"
+#chanceinc "personalshape werelion 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "silver fang"
+#basechance 0
+#chanceinc "itemtheme wolftotem 20"
+#chanceinc "personalshape wolf 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "iron claw"
+#basechance 0
+#chanceinc "itemtheme beartotem 20"
+#chanceinc "personalshape bear 20"
+#chanceinc "personalshape werebear 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "ember fox"
+#basechance 0
+#chanceinc "itemtheme foxtotem 20"
+#chanceinc "personalshape fox 20"
+#chanceinc "personalshape werefox 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "laughing scourge"
+#basechance 0
+#chanceinc "itemtheme hyenatotem 20"
+#chanceinc "personalshape hyena 20"
+#chanceinc "personalshape werehyena 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "plague gnawer"
+#basechance 0
+#chanceinc "itemtheme rattotem 20"
+#chanceinc "personalshape rat 20"
+#chanceinc "personalshape wererat 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "iron tusk"
+#basechance 0
+#chanceinc "itemtheme boartotem 20"
+#chanceinc "personalshape greatboar 20"
+#chanceinc "personalshape wereboar 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "storm serpent"
+#basechance 0
+#chanceinc "itemtheme snaketotem 10"
+#chanceinc "personalshape hornedserpent 10"
+#tag "notsuffix"
+#end
+
+#new
+#name "sky talon"
+#basechance 0
+#chanceinc "itemtheme hawktotem 20"
+#chanceinc "personalshape hawk 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "widow's fang"
+#basechance 0
+#chanceinc "itemtheme spidertotem 20"
+#chanceinc "personalshape spider 20"
+#chanceinc "personalshape werespider 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "midnight hunter"
+#basechance 0
+#chanceinc "itemtheme battotem 20"
+#chanceinc "personalshape bat 20"
+#chanceinc "personalshape werebat 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "thunder paw"
+#basechance 0
+#chanceinc "itemtheme tigertotem 20"
+#chanceinc "personalshape tiger 20"
+#chanceinc "personalshape weretiger 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "storm beak"
+#basechance 0
+#chanceinc "itemtheme eagletotem 20"
+#chanceinc "personalshape eagle 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "crimson tide"
+#basechance 0
+#chanceinc "itemtheme sharktotem 20"
+#chanceinc "personalshape shark 20"
+#chanceinc "personalshape wereshark 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "duskrunner"
+#basechance 0
+#chanceinc "itemtheme jaguartotem 20"
+#chanceinc "personalshape jaguar 20"
+#chanceinc "personalshape werejaguar 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "sunfang"
+#basechance 0
+#chanceinc "itemtheme liontotem 20"
+#chanceinc "personalshape lion 20"
+#chanceinc "personalshape werelion 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "ashen howl"
+#basechance 0
+#chanceinc "itemtheme wolftotem 20"
+#chanceinc "personalshape wolf 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "thunderhide"
+#basechance 0
+#chanceinc "itemtheme beartotem 20"
+#chanceinc "personalshape bear 20"
+#chanceinc "personalshape werebear 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "emberwhisper"
+#basechance 0
+#chanceinc "itemtheme foxtotem 20"
+#chanceinc "personalshape fox 20"
+#chanceinc "personalshape werefox 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "scorchmane"
+#basechance 0
+#chanceinc "itemtheme hyenatotem 20"
+#chanceinc "personalshape hyena 20"
+#chanceinc "personalshape werehyena 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "shadowgnaw"
+#basechance 0
+#chanceinc "itemtheme rattotem 20"
+#chanceinc "personalshape rat 20"
+#chanceinc "personalshape wererat 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "brambletusk"
+#basechance 0
+#chanceinc "itemtheme boartotem 20"
+#chanceinc "personalshape greatboar 20"
+#chanceinc "personalshape wereboar 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "tempestcoil"
+#basechance 0
+#chanceinc "itemtheme snaketotem 10"
+#chanceinc "personalshape hornedserpent 10"
+#tag "notsuffix"
+#end
+
+#new
+#name "galeclaw"
+#basechance 0
+#chanceinc "itemtheme hawktotem 20"
+#chanceinc "personalshape hawk 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "silkfang"
+#basechance 0
+#chanceinc "itemtheme spidertotem 20"
+#chanceinc "personalshape spider 20"
+#chanceinc "personalshape werespider 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "moonstalker"
+#basechance 0
+#chanceinc "itemtheme battotem 20"
+#chanceinc "personalshape bat 20"
+#chanceinc "personalshape werebat 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "emberstripe"
+#basechance 0
+#chanceinc "itemtheme tigertotem 20"
+#chanceinc "personalshape tiger 20"
+#chanceinc "personalshape weretiger 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "skyrazor"
+#basechance 0
+#chanceinc "itemtheme eagletotem 20"
+#chanceinc "personalshape eagle 20"
+#tag "notsuffix"
+#end
+
+#new
+#name "tidemauler"
+#basechance 0
+#chanceinc "itemtheme sharktotem 20"
+#chanceinc "personalshape shark 20"
+#chanceinc "personalshape wereshark 20"
+#tag "notsuffix"
+#end
+
+-- Three-words
+
+#new
+#name "Everburning Ash"
+#basechance 0
+#chanceinc "magic fire 0.25"
+#chanceinc "taggedmagic fire 1"
+#chanceinc "personalcommand #firepower 10"
+#chanceinc "personalcommand #heat 10"
+#end
+
+#new
+#name "Everburning Phoenix"
+#basechance 0
+#chanceinc "magic fire 0.25"
+#chanceinc "taggedmagic fire 1"
+#chanceinc "personalcommand #firepower 10"
+#chanceinc "personalcommand #heat 10"
+#end
+
+#new
+#name "Crimson Pyre"
+#basechance 0
+#chanceinc "magic fire 0.25"
+#chanceinc "taggedmagic fire 1"
+#chanceinc "personalcommand #firepower 10"
+#chanceinc "personalcommand #heat 10"
+#end
+
+#new
+#name "Crimson Song"
+#basechance 0
+#chanceinc "magic fire 0.25"
+#chanceinc "taggedmagic fire 1"
+#chanceinc "personalcommand #firepower 10"
+#chanceinc "personalcommand #heat 10"
+#end
+
+#new
+#name "Pyre Song"
+#basechance 0
+#chanceinc "magic fire 0.25"
+#chanceinc "taggedmagic fire 1"
+#chanceinc "personalcommand #firepower 10"
+#chanceinc "personalcommand #heat 10"
+#end
+
+#new
+#name "Molten Heart"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic fire 0.5"
+#chanceinc "taggedmagic fire 2"
+#end
+
+#new
+#name "Molten Titan"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic fire 0.5"
+#chanceinc "taggedmagic fire 2"
+#end
+
+#new
+#name "Titan Heart"
+#basechance 0
+#tag "notsuffix"
+#chanceinc "magic earth 0.5"
+#chanceinc "taggedmagic earth 2"
+#chanceinc "personalcommand #size above 5"
+#end
+
+#new
+#name "Stormforged Howl"
+#basechance 0
+#chanceinc "magic air 0.25"
+#chanceinc "taggedmagic air 1"
+#chanceinc "personalcommand #stormpower 10"
+#end
+
+#new
+#name "Thunder Howl"
+#basechance 0
+#chanceinc "magic air 0.25"
+#chanceinc "taggedmagic air 1"
+#chanceinc "personalcommand #stormpower 10"
+#end
+
+#new
+#name "Stormforged Thunder"
+#basechance 0
+#chanceinc "magic air 0.25"
+#chanceinc "taggedmagic air 1"
+#chanceinc "personalcommand #stormpower 10"
+#end
+
+#new
+#name "Tempest Veil"
+#basechance 0
+#chanceinc "magic air 0.25"
+#chanceinc "taggedmagic air 1"
+#tag "notsuffix"
+#chanceinc "personalcommand #stormpower 10"
+#end
+
+#new
+#name "Skyborne Veil"
+#basechance 0
+#chanceinc "magic air 0.25"
+#chanceinc "taggedmagic air 1"
+#tag "notsuffix"
+#chanceinc "personalcommand #stormpower 10"
+#end
+
+#new
+#name "Skyborne Tempest"
+#basechance 0
+#chanceinc "magic air 0.25"
+#chanceinc "taggedmagic air 1"
+#tag "notsuffix"
+#chanceinc "personalcommand #stormpower 10"
+#end
+
+#new
+#name "Frozen Shard"
+#basechance 0
+#chanceinc "magic water 0.5"
+#chanceinc "taggedmagic water 2"
+#chanceinc "personalcommand #coldpower 10"
+#chanceinc "personalcommand #cold 10"
+#end
+
+#new
+#name "Moon Shard"
+#basechance 0
+#chanceinc "magic water astral 0.5"
+#chanceinc "taggedmagic water astral 2"
+#chanceinc "personalcommand #coldpower 10"
+#chanceinc "personalcommand #cold 10"
+#end
+
+#new
+#name "Frozen Moon"
+#basechance 0
+#chanceinc "magic water 0.5"
+#chanceinc "taggedmagic water 2"
+#chanceinc "personalcommand #coldpower 10"
+#chanceinc "personalcommand #cold 10"
+#end
+
+#new
+#name "Eternal Bloom"
+#basechance 0
+#chanceinc "magic nature water 0.5"
+#chanceinc "taggedmagic nature water 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Ice Bloom"
+#basechance 0
+#chanceinc "magic water water 0.5"
+#chanceinc "taggedmagic water water 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Eternal Ice"
+#basechance 0
+#chanceinc "magic water 0.5"
+#chanceinc "taggedmagic water 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Titanborn"
+#basechance 0
+#chanceinc "magic earth 0.1"
+#chanceinc "taggedmagic earth 0.66"
+#chanceinc "personalshape metalman 20"
+#end
+
+#new
+#name "Iron Vein"
+#basechance 0
+#chanceinc "magic earth 0.1"
+#chanceinc "taggedmagic earth 0.66"
+#chanceinc "personalshape metalman 20"
+#end
+
+#new
+#name "Ironborn"
+#basechance 0
+#chanceinc "magic earth 0.1"
+#chanceinc "taggedmagic earth 0.66"
+#chanceinc "personalshape metalman 20"
+#end
+
+#new
+#name "Obsidian Blood"
+#basechance 0
+#chanceinc "magic earth blood 0.1"
+#chanceinc "taggedmagic earth blood 0.66"
+#tag "notsuffix"
+#end
+
+#new
+#name "Blood Stone"
+#basechance 0
+#chanceinc "magic earth blood 0.1"
+#chanceinc "taggedmagic earth blood 0.66"
+#tag "notsuffix"
+#end
+
+#new
+#name "Celestial Glow"
+#basechance 0
+#chanceinc "magic astral 0.5"
+#chanceinc "taggedmagic astral 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Astral Glow"
+#basechance 0
+#chanceinc "magic astral 0.5"
+#chanceinc "taggedmagic astral 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Void Walker"
+#basechance 0
+#chanceinc "magic astral 0.5"
+#chanceinc "taggedmagic astral 2"
+#chanceinc "personalcommand #ethereal 10"
+#tag "notsuffix"
+#end
+
+#new
+#name "Void Step"
+#basechance 0
+#chanceinc "magic astral 0.5"
+#chanceinc "taggedmagic astral 2"
+#chanceinc "personalcommand #ethereal 10"
+#tag "notsuffix"
+#end
+
+#new
+#name "Death Night"
+#basechance 0
+#chanceinc "magic death 0.5"
+#chanceinc "taggedmagic death 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Whispered Death"
+#basechance 0
+#chanceinc "magic death 0.5"
+#chanceinc "taggedmagic death 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Whispered Night"
+#basechance 0
+#chanceinc "magic death 0.5"
+#chanceinc "taggedmagic death 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Gravebound Pact"
+#basechance 0
+#chanceinc "magic death earth 0.5"
+#chanceinc "taggedmagic death earth 2"
+#end
+
+#new
+#name "Gravebound Shadow"
+#basechance 0
+#chanceinc "magic death earth 0.5"
+#chanceinc "taggedmagic death earth 2"
+#end
+
+#new
+#name "Shadow Pact"
+#basechance 0
+#chanceinc "magic death 0.5"
+#chanceinc "taggedmagic death 2"
+#end
+
+#new
+#name "Verdant Roots"
+#basechance 0
+#chanceinc "magic nature 0.5"
+#chanceinc "taggedmagic nature 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Elder Roots"
+#basechance 0
+#chanceinc "magic nature 0.5"
+#chanceinc "taggedmagic nature 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Ancient Bloom"
+#basechance 0
+#chanceinc "magic nature earth 0.5"
+#chanceinc "taggedmagic nature earth 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Wild Bloom"
+#basechance 0
+#chanceinc "magic nature 0.5"
+#chanceinc "taggedmagic nature 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Sanguine Pact"
+#basechance 0
+#chanceinc "magic blood 0.5"
+#chanceinc "taggedmagic blood 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Dark Pact"
+#basechance 0
+#chanceinc "magic blood death 0.5"
+#chanceinc "taggedmagic blood death 2"
+#tag "notsuffix"
+#end
+
+#new
+#name "Crimson Maw"
+#basechance 0
+#chanceinc "magic blood 0.5"
+#chanceinc "taggedmagic blood 2"
+#end
+
+#new
+#name "Devourer's Maw"
+#basechance 0
+#chanceinc "magic blood nature 0.5"
+#chanceinc "taggedmagic blood nature 2"
+#end
+
+#new
+#name "Crimson Devourer"
+#basechance 0
+#chanceinc "magic blood nature 0.5"
+#chanceinc "taggedmagic blood nature 2"
+#end

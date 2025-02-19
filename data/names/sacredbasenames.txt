@@ -30,7 +30,6 @@
 --- filter <name> <chance change>
 --- If filter named <name> was applied to the unit, this triggers.
 
-
 #new 
 #name "guard"
 #basechance 2
@@ -385,3 +384,412 @@
 #end
 
 
+---- AI generated
+
+#new 
+#name "Aurelian"
+#basechance 2
+#chanceinc "personalcommand #bodyguard 3"
+#chanceinc "personalcommand #castledef 3"
+#chanceinc "personalcommand #patrolbonus 1"
+#end
+
+#new 
+#name "Dreadwulf"
+#basechance 1
+#chanceinc "personalcommand #berserk 2"
+#chanceinc "magic death blood 2"
+#end
+
+#new 
+#name "Vaelborn"
+#basechance 1
+#chanceinc "personalcommand #glamour 2"
+#chanceinc "magic air astral 1"
+#end
+
+#new 
+#name "Ferratus"
+#basechance 1
+#chanceinc "personalcommand #castledef 2"
+#chanceinc "personalcommand #formationfighter 1"
+#end
+
+#new 
+#name "Gravemarch"
+#basechance 1
+#chanceinc "personalcommand #undead 2"
+#chanceinc "taggedmagic death 1"
+#end
+
+#new 
+#name "Havocspawn"
+#basechance 1
+#chanceinc "personalcommand #berserk 3"
+#chanceinc "taggedmagic fire 1"
+#end
+
+#new 
+#name "Stormbrand"
+#basechance 1
+#chanceinc "personalcommand #shockres 2"
+#chanceinc "taggedmagic air 1"
+#end
+
+#new 
+#name "Lunaris"
+#basechance 1
+#chanceinc "personalcommand #stealthy 2"
+#chanceinc "magic astral nature 1"
+#end
+
+#new 
+#name "Pyreclad"
+#basechance 1
+#chanceinc "personalcommand #fireres 3"
+#chanceinc "taggedmagic fire 1"
+#end
+
+#new 
+#name "Gladius"
+#basechance 1
+#chanceinc "personalcommand #formationfighter 2"
+#chanceinc "personalcommand #castledef 1"
+#end
+
+#new 
+#name "Ashenborn"
+#basechance 1
+#chanceinc "personalcommand #ethereal 2"
+#chanceinc "magic death fire 1"
+#end
+
+#new 
+#name "Hallowfang"
+#basechance 1
+#chanceinc "personalcommand #stealthy 3"
+#chanceinc "personalcommand #glamour 2"
+#end
+
+#new 
+#name "Cinderhelm"
+#basechance 1
+#chanceinc "personalcommand #fireres 3"
+#chanceinc "personalcommand #castledef 1"
+#end
+
+#new 
+#name "Skyforged"
+#basechance 1
+#chanceinc "personalcommand #shockres 2"
+#chanceinc "magic air earth 1"
+#end
+
+#new 
+#name "Tundraguard"
+#basechance 1
+#chanceinc "personalcommand #coldres 3"
+#chanceinc "taggedmagic water 1"
+#end
+
+#new 
+#name "Frostfang"
+#basechance 1
+#chanceinc "personalcommand #coldres 3"
+#chanceinc "personalcommand #berserk 1"
+#end
+
+#new 
+#name "Necroblade"
+#basechance 1
+#chanceinc "personalcommand #undead 3"
+#chanceinc "taggedmagic death 2"
+#end
+
+#new 
+#name "Gildedscale"
+#basechance 1
+#chanceinc "personalcommand #formationfighter 1"
+#chanceinc "personalcommand #glamour 1"
+#end
+
+#new 
+#name "Drakeshadow"
+#basechance 1
+#chanceinc "personalcommand #firebreath 2"
+#chanceinc "taggedmagic fire 1"
+#end
+
+#new 
+#name "Veilborn"
+#basechance 1
+#chanceinc "personalcommand #stealthy 3"
+#chanceinc "personalcommand #glamour 2"
+#end
+
+#new 
+#name "Bloodmantle"
+#basechance 1
+#chanceinc "personalcommand #berserk 3"
+#chanceinc "taggedmagic blood 1"
+#end
+
+#new 
+#name "Vortexclad"
+#basechance 1
+#chanceinc "personalcommand #shockres 3"
+#chanceinc "taggedmagic air 2"
+#end
+
+#new 
+#name "Pale Ward"
+#basechance 1
+#chanceinc "personalcommand #undead 3"
+#chanceinc "taggedmagic astral 1"
+#end
+
+#new 
+#name "Blackthorn"
+#basechance 1
+#chanceinc "personalcommand #stealthy 3"
+#chanceinc "magic nature death 1"
+#end
+
+#new 
+#name "Stonefang"
+#basechance 1
+#chanceinc "personalcommand #poisonres 3"
+#chanceinc "taggedmagic earth 2"
+#end
+
+#new 
+#name "Crimsonbrand"
+#basechance 1
+#chanceinc "personalcommand #berserk 2"
+#chanceinc "magic blood fire 1"
+#end
+
+#new 
+#name "Mirescale"
+#basechance 1
+#chanceinc "personalcommand #poisonres 3"
+#chanceinc "taggedmagic water 1"
+#end
+
+#new 
+#name "Sableclaw"
+#basechance 1
+#chanceinc "personalcommand #stealthy 3"
+#chanceinc "magic astral nature 1"
+#end
+
+#new 
+#name "Ebonfang"
+#basechance 1
+#chanceinc "personalcommand #stealthy 3"
+#chanceinc "magic blood death 1"
+#end
+
+#new 
+#name "Solmancer"
+#basechance 2
+#chanceinc "personalcommand #bodyguard 3"
+#chanceinc "personalcommand #castledef 3"
+#chanceinc "personalcommand #patrolbonus 1"
+#end
+
+#new 
+#name "Gloomshroud"
+#basechance 1
+#chanceinc "personalcommand #berserk 2"
+#chanceinc "magic death blood 2"
+#end
+
+#new 
+#name "Eldspire"
+#basechance 1
+#chanceinc "personalcommand #glamour 2"
+#chanceinc "magic air astral 1"
+#end
+
+#new 
+#name "Varkul"
+#basechance 1
+#chanceinc "personalcommand #castledef 2"
+#chanceinc "personalcommand #formationfighter 1"
+#end
+
+#new 
+#name "Duskmourn"
+#basechance 1
+#chanceinc "personalcommand #undead 2"
+#chanceinc "taggedmagic death 1"
+#end
+
+#new 
+#name "Havenspike"
+#basechance 1
+#chanceinc "personalcommand #berserk 3"
+#chanceinc "taggedmagic fire 1"
+#end
+
+#new 
+#name "Skyfury"
+#basechance 1
+#chanceinc "personalcommand #shockres 2"
+#chanceinc "taggedmagic air 1"
+#end
+
+#new 
+#name "Seraphis"
+#basechance 1
+#chanceinc "personalcommand #stealthy 2"
+#chanceinc "magic astral nature 1"
+#end
+
+#new 
+#name "Ignivis"
+#basechance 1
+#chanceinc "personalcommand #fireres 3"
+#chanceinc "taggedmagic fire 1"
+#end
+
+#new 
+#name "Vextris"
+#basechance 1
+#chanceinc "personalcommand #formationfighter 2"
+#chanceinc "personalcommand #castledef 1"
+#end
+
+#new 
+#name "Hallowthorn"
+#basechance 1
+#chanceinc "personalcommand #ethereal 2"
+#chanceinc "magic death fire 1"
+#end
+
+#new 
+#name "Daggerwake"
+#basechance 1
+#chanceinc "personalcommand #stealthy 3"
+#chanceinc "personalcommand #glamour 2"
+#end
+
+#new 
+#name "Brimcaster"
+#basechance 1
+#chanceinc "personalcommand #fireres 3"
+#chanceinc "personalcommand #castledef 1"
+#end
+
+#new 
+#name "Galehowler"
+#basechance 1
+#chanceinc "personalcommand #shockres 2"
+#chanceinc "magic air earth 1"
+#end
+
+#new 
+#name "Chillbrand"
+#basechance 1
+#chanceinc "personalcommand #coldres 3"
+#chanceinc "taggedmagic water 1"
+#end
+
+#new 
+#name "Snowpiercer"
+#basechance 1
+#chanceinc "personalcommand #coldres 3"
+#chanceinc "personalcommand #berserk 1"
+#end
+
+#new 
+#name "Dirgefang"
+#basechance 1
+#chanceinc "personalcommand #undead 3"
+#chanceinc "taggedmagic death 2"
+#end
+
+#new 
+#name "Opalguard"
+#basechance 1
+#chanceinc "personalcommand #formationfighter 1"
+#chanceinc "personalcommand #glamour 1"
+#end
+
+#new 
+#name "Flarestorm"
+#basechance 1
+#chanceinc "personalcommand #firebreath 2"
+#chanceinc "taggedmagic fire 1"
+#end
+
+#new 
+#name "Twiltrance"
+#basechance 1
+#chanceinc "personalcommand #stealthy 3"
+#chanceinc "personalcommand #glamour 2"
+#end
+
+#new 
+#name "Howlgrim"
+#basechance 1
+#chanceinc "personalcommand #berserk 3"
+#chanceinc "taggedmagic blood 1"
+#end
+
+#new 
+#name "Stormpyre"
+#basechance 1
+#chanceinc "personalcommand #shockres 3"
+#chanceinc "taggedmagic air 2"
+#end
+
+#new 
+#name "Ivoryshade"
+#basechance 1
+#chanceinc "personalcommand #undead 3"
+#chanceinc "taggedmagic astral 1"
+#end
+
+#new 
+#name "Brackenfang"
+#basechance 1
+#chanceinc "personalcommand #stealthy 3"
+#chanceinc "magic nature death 1"
+#end
+
+#new 
+#name "Flintblade"
+#basechance 1
+#chanceinc "personalcommand #poisonres 3"
+#chanceinc "taggedmagic earth 2"
+#end
+
+#new 
+#name "Ruinforge"
+#basechance 1
+#chanceinc "personalcommand #berserk 2"
+#chanceinc "magic blood fire 1"
+#end
+
+#new 
+#name "Fenbringer"
+#basechance 1
+#chanceinc "personalcommand #poisonres 3"
+#chanceinc "taggedmagic water 1"
+#end
+
+#new 
+#name "Sableweaver"
+#basechance 1
+#chanceinc "personalcommand #stealthy 3"
+#chanceinc "magic astral nature 1"
+#end
+
+#new 
+#name "Embersting"
+#basechance 1
+#chanceinc "personalcommand #stealthy 3"
+#chanceinc "magic blood death 1"
+#end

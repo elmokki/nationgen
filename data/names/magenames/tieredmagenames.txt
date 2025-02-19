@@ -222,3 +222,679 @@
 #basechance 0.5
 #commandvariant #female bride
 #end
+
+-- AI generated
+
+#new
+#name acolyte
+#rank 1
+#basechance 1
+#end
+
+#new
+#name thrall
+#rank 1
+#basechance 0.125
+#chanceinc "personalmagic astral 1 0.375"
+#chanceinc "personalmagic death 1 0.375"
+#chanceinc "personalmagic blood 1 0.875"
+#end
+
+#new
+#name aspirant
+#rank 1
+#basechance 1
+#end
+
+#new
+#name tyro
+#rank 1
+#basechance 1
+#end
+
+#new
+#name adherent
+#rank 1
+#basechance 1
+#end
+
+#new
+#name supplicant
+#rank 1
+#basechance 1
+#end
+
+#new
+#name shade
+#rank 1
+#basechance 0.5
+#chanceinc "filter spy 0.5"
+#chanceinc "filter assassin 1.5"
+#end
+
+#new
+#name whisper
+#rank 2
+#basechance 0.25
+#chanceinc "filter spy 0.75"
+#chanceinc "filter assassin 1.75"
+#end
+
+#new
+#name infiltrator
+#rank 2
+#basechance 0.25
+#chanceinc "filter spy 0.75"
+#chanceinc "filter assassin 1.75"
+#end
+
+#new
+#name magus
+#rank 2
+#basechance 1
+#end
+
+#new
+#name warlock
+#rank 2
+#basechance 1
+#commandvariant #female witch
+#end
+
+#new
+#name dominus
+#rank 2
+#basechance 1
+#commandvariant #female domina
+#end
+
+#new
+#name vassal
+#rank 2
+#basechance 1
+#commandvariant #female consort
+#end
+
+#new
+#name acendant
+#rank 2
+#basechance 1
+#end
+
+#new
+#name votary
+#rank 2
+#basechance 1
+#end
+
+#new
+#name progeny
+#rank 2
+#basechance 1
+#end
+
+#new
+#name adept
+#rank 2
+#basechance 1
+#end
+
+#new
+#name compeer
+#rank 2
+#basechance 0.5
+#chanceinc "personalcommand #female *0"
+#commandvariant #female consocia
+#end
+
+#new
+#name confederate
+#rank 2
+#basechance 0.5
+#end
+
+#new
+#name hierarch
+#rank 3
+#basechance 1
+#end
+
+#new
+#name sovereign
+#rank 3
+#basechance 1
+#commandvariant #female regina
+#end
+
+#new
+#name custodian
+#rank 3
+#basechance 1
+#end
+
+#new
+#name magnate
+#rank 3
+#basechance 1
+#commandvariant #female magnatrix
+#end
+
+#new
+#name grandmaster
+#rank 3
+#basechance 1
+#commandvariant #female grandmistress
+#end
+
+#new
+#name herald
+#rank 3
+#basechance 1
+#end
+
+#new
+#name omen
+#rank 3
+#basechance 1
+#end
+
+#new
+#name overlord
+#rank 3
+#basechance 1
+#commandvariant #female overlady
+#end
+
+#new
+#name luminary
+#rank 3
+#basechance 1
+#end
+
+#new
+#name primarch
+#rank 3
+#basechance 1
+#commandvariant #female matriarch
+#end
+
+#new
+#name progenitor
+#rank 3
+#basechance 1
+#commandvariant #female creatrix
+#end
+
+#new
+#name weaver
+#rank 3
+#basechance 1
+#end
+
+#new
+#name conjuror
+#rank 3
+#basechance 1
+#end
+
+#new
+#name conduit
+#rank 3
+#basechance 1
+#end
+
+#new
+#name consort
+#rank 3
+#basechance 0.5
+#commandvariant #female consocia
+#end
+#new
+#name emberborn
+#rank 1
+#basechance 1
+#end
+
+#new
+#name duskthrall
+#rank 1
+#basechance 0.125
+#chanceinc "personalmagic astral 1 0.375"
+#chanceinc "personalmagic death 1 0.375"
+#chanceinc "personalmagic blood 1 0.875"
+#end
+
+#new
+#name verdant
+#rank 1
+#basechance 1
+#end
+
+#new
+#name starforged
+#rank 1
+#basechance 1
+#end
+
+#new
+#name oathbound
+#rank 1
+#basechance 1
+#end
+
+#new
+#name zealot
+#rank 1
+#basechance 1
+#end
+
+#new
+#name veilborn
+#rank 1
+#basechance 0.5
+#chanceinc "filter spy 0.5"
+#chanceinc "filter assassin 1.5"
+#end
+
+#new
+#name phantom
+#rank 2
+#basechance 0.25
+#chanceinc "filter spy 0.75"
+#chanceinc "filter assassin 1.75"
+#end
+
+#new
+#name shadecaller
+#rank 2
+#basechance 0.25
+#chanceinc "filter spy 0.75"
+#chanceinc "filter assassin 1.75"
+#end
+
+#new
+#name mystic
+#rank 2
+#basechance 1
+#end
+
+#new
+#name spellbinder
+#rank 2
+#basechance 1
+#commandvariant #female enchantress
+#end
+
+#new
+#name sovereign
+#rank 2
+#basechance 1
+#commandvariant #female empress
+#end
+
+#new
+#name duskwarden
+#rank 2
+#basechance 1
+#commandvariant #female shadowguard
+#end
+
+#new
+#name ascendant
+#rank 2
+#basechance 1
+#end
+
+#new
+#name seer
+#rank 2
+#basechance 1
+#end
+
+#new
+#name wayfinder
+#rank 2
+#basechance 1
+#end
+
+#new
+#name spellwright
+#rank 2
+#basechance 1
+#end
+
+#new
+#name twilightkin
+#rank 2
+#basechance 0.5
+#chanceinc "personalcommand #female *0"
+#commandvariant #female nightborn
+#end
+
+#new
+#name augur
+#rank 2
+#basechance 0.5
+#end
+
+#new
+#name oracle
+#rank 3
+#basechance 1
+#end
+
+#new
+#name warbringer
+#rank 3
+#basechance 1
+#commandvariant #female battlequeen
+#end
+
+#new
+#name sentinel
+#rank 3
+#basechance 1
+#end
+
+#new
+#name runeforger
+#rank 3
+#basechance 1
+#commandvariant #female runeweaver
+#end
+
+#new
+#name grand sage
+#rank 3
+#basechance 1
+#commandvariant #female high seer
+#end
+
+#new
+#name stormcaller
+#rank 3
+#basechance 1
+#end
+
+#new
+#name omenbearer
+#rank 3
+#basechance 1
+#end
+
+#new
+#name dusklord
+#rank 3
+#basechance 1
+#commandvariant #female nightlady
+#end
+
+#new
+#name luminarch
+#rank 3
+#basechance 1
+#end
+
+#new
+#name elderwright
+#rank 3
+#basechance 1
+#commandvariant #female matron
+#end
+
+#new
+#name progenitor
+#rank 3
+#basechance 1
+#commandvariant #female lifebinder
+#end
+
+#new
+#name threadweaver
+#rank 3
+#basechance 1
+#end
+
+#new
+#name glyphbinder
+#rank 3
+#basechance 1
+#end
+
+#new
+#name conduit
+#rank 3
+#basechance 1
+#end
+
+#new
+#name consort
+#rank 3
+#basechance 0.5
+#commandvariant #female shadowbride
+#end
+
+#new
+#name Ember Seer
+#rank 1
+#basechance 1
+#end
+
+#new
+#name Dusk Servant
+#rank 1
+#basechance 0.125
+#chanceinc "personalmagic astral 1 0.375"
+#chanceinc "personalmagic death 1 0.375"
+#chanceinc "personalmagic blood 1 0.875"
+#end
+
+#new
+#name Verdant Acolyte
+#rank 1
+#basechance 1
+#end
+
+#new
+#name Star Initiate
+#rank 1
+#basechance 1
+#end
+
+#new
+#name Oath Keeper
+#rank 1
+#basechance 1
+#end
+
+#new
+#name Zeal Watcher
+#rank 1
+#basechance 1
+#end
+
+#new
+#name Veil Walker
+#rank 1
+#basechance 0.5
+#chanceinc "filter spy 0.5"
+#chanceinc "filter assassin 1.5"
+#end
+
+#new
+#name Phantom Whisper
+#rank 2
+#basechance 0.25
+#chanceinc "filter spy 0.75"
+#chanceinc "filter assassin 1.75"
+#end
+
+#new
+#name Shadow Binder
+#rank 2
+#basechance 0.25
+#chanceinc "filter spy 0.75"
+#chanceinc "filter assassin 1.75"
+#end
+
+#new
+#name Mystic Hand
+#rank 2
+#basechance 1
+#end
+
+#new
+#name Spell Weaver
+#rank 2
+#basechance 1
+#commandvariant #female Enchantress
+#end
+
+#new
+#name Arcane Sovereign
+#rank 2
+#basechance 1
+#commandvariant #female Empress
+#end
+
+#new
+#name Dusk Warden
+#rank 2
+#basechance 1
+#commandvariant #female Shadow Guard
+#end
+
+#new
+#name Astral Seeker
+#rank 2
+#basechance 1
+#end
+
+#new
+#name Fate Watcher
+#rank 2
+#basechance 1
+#end
+
+#new
+#name Way Finder
+#rank 2
+#basechance 1
+#end
+
+#new
+#name Rune Scribe
+#rank 2
+#basechance 1
+#end
+
+#new
+#name Twilight Sage
+#rank 2
+#basechance 0.5
+#chanceinc "personalcommand #female *0"
+#commandvariant #female Night Born
+#end
+
+#new
+#name Augury Caller
+#rank 2
+#basechance 0.5
+#end
+
+#new
+#name Oracle Keeper
+#rank 3
+#basechance 1
+#end
+
+#new
+#name War Herald
+#rank 3
+#basechance 1
+#commandvariant #female Battle Queen
+#end
+
+#new
+#name Silent Sentinel
+#rank 3
+#basechance 1
+#end
+
+#new
+#name Rune Forger
+#rank 3
+#basechance 1
+#commandvariant #female Rune Weaver
+#end
+
+#new
+#name Grand Sage
+#rank 3
+#basechance 1
+#commandvariant #female High Seer
+#end
+
+#new
+#name Storm Bringer
+#rank 3
+#basechance 1
+#end
+
+#new
+#name Omen Bearer
+#rank 3
+#basechance 1
+#end
+
+#new
+#name Dusk Lord
+#rank 3
+#basechance 1
+#commandvariant #female Night Lady
+#end
+
+#new
+#name Lumin Arch
+#rank 3
+#basechance 1
+#end
+
+#new
+#name Elder Warden
+#rank 3
+#basechance 1
+#commandvariant #female Matron
+#end
+
+#new
+#name Prime Walker
+#rank 3
+#basechance 1
+#commandvariant #female Life Binder
+#end
+
+#new
+#name Thread Weaver
+#rank 3
+#basechance 1
+#end
+
+#new
+#name Glyph Binder
+#rank 3
+#basechance 1
+#end
+
+#new
+#name Soul Conduit
+#rank 3
+#basechance 1
+#end
+
+#new
+#name Shadow Consort
+#rank 3
+#basechance 0.5
+#commandvariant #female Night Bride
+#end
