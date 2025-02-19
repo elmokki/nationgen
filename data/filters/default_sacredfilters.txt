@@ -1111,15 +1111,28 @@
 #filterdesc "ethereal desc"
 #end
 
-
 #new
 #id "cultist"
 #basechance 0.1
 #chanceinc "magic blood astral 1"
 #primarycommand "#horrormark"
-#command "#horrormark"
+#command "#horrormark 2"
 #command "#startaff +20"
 #filterdesc "cultist desc"
+#power -1
+#end
+
+#new
+#id "cultist-stealthy"
+#basechance 0.1
+#chanceinc "magic blood astral 1"
+#primarycommand "#horrormark"
+#primarycommand "#stealthy"
+#command "#horrormark 2"
+#command "#startaff +20"
+#command "#stealthy +0"
+#filterdesc "cultist desc"
+#power 2
 #end
 
 #new
