@@ -1,12 +1,12 @@
 #newitem
-#name "ancient olmspawn basesprite"
+#id "ancient olmspawn basesprite"
 #gameid -1
 #sprite /graphics/agarthan/big/basesprite_olmspawn.png
 
 #command "#gcost 60"
 #command "#rpcost 60000"
 #command "#hp 65"
-#command "#size 5"
+#command "#size 7"
 #command "#prot 6"
 #command "#mr 16"
 #command "#mor 15"
@@ -19,11 +19,12 @@
 #command "#coldres 5"
 #command "#poisonres 15"
 #command "#holy"
+#command "#holycost 2"
 #command "#siegebonus 5"
 #define "#startage 600"
 #command "#maxage 1000"
 #command "#magiccommand +50"
-#command "#itemslots 13446"
+#command "#itemslots 860678"
 #define "#twiceborn 3189"
 
 #enditem

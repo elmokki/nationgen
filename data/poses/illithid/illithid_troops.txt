@@ -1,14 +1,14 @@
 -- Illithid soldiers - elite infantry that's size 3 but eat like size 4, and are formation fighters
 
 #newpose
-#name "soldier"
+#id "soldier"
 #role "elite infantry"
 #role "sacred infantry"
 
 #command "#gcost 50"
 #command "#rpcost 50000"
 #command "#hp 28"
-#command "#size 4"
+#command "#size 6"
 #command "#prot 5"
 #command "#mr 15"
 #command "#mor 10"
@@ -27,7 +27,7 @@
 #command "#bluntres"
 #command "#magicbeing"
 #command "#amphibian"
-#command "#itemslots 13446"
+#command "#itemslots 860678"
 #command "#descr 'Illithids are pink masses of writhing tentacles, said to be from a distant star.'"
 #tag "noble"
 
@@ -60,7 +60,7 @@
 -- Illithid "artillery"
 
 #newpose
-#name "mindflayer"
+#id "mindflayer"
 #role "ranged"
 
 #basechance 2
@@ -68,7 +68,7 @@
 #command "#gcost 50"
 #command "#rpcost 50000"
 #command "#hp 28"
-#command "#size 4"
+#command "#size 6"
 #command "#prot 5"
 #command "#mr 15"
 #command "#mor 10"
@@ -85,7 +85,7 @@
 #command "#bluntres"
 #command "#magicbeing"
 #command "#amphibian"
-#command "#itemslots 13446"
+#command "#itemslots 860678"
 #command "#descr 'Illithids are pink masses of writhing tentacles, said to be from a distant star.'"
 #tag "noble"
 

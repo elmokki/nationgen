@@ -3,18 +3,12 @@
 
 #newitem
 #basechance 2
-#name "brown horse"
+#id "brown horse"
 #gameid -1
 #sprite /graphics/mounts/standard/brownhorse.png
 #armor
 #needs overlay 1
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 24"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
-#define "#enc 2"
+#define "#mountmnr 'riding-horse'"
 #define "#gcost +15"
 #tag "animal horse"
 #theme "light"
@@ -23,20 +17,13 @@
 #enditem
 
 #newitem
-#name "armored horse"
+#id "armored horse"
 #basechance 2
 #gameid -1
 #sprite /graphics/mounts/standard/armoredhorse1.png
 #armor
 #needs overlay 2
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 20"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
-#define "#enc 3"
-#define "#rcost +5"
+#define "#mountmnr 'armored-horse'"
 #tag "animal horse"
 #theme "heavy"
 #theme "iron"
@@ -49,20 +36,12 @@
 
 #newitem
 #basechance 3
-#name "ghoul horse"
+#id "ghoul horse"
 #gameid -1
 #sprite /graphics/mounts/standard/ghoulhorse.png
 #armor
 #needs overlay ghoulhorse_overlay
-#define "#size 3"
-#define "#hp +4"
-#define "#mr -2"
-#define "#mapmove 22"
-#define "#ap 24"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#ressize 2"
-#define "#enc 0"
+#define "#mountmnr 'ghoul-horse'"
 #define "#gcost +15"
 #tag "animal horse"
 #theme "light"
@@ -70,46 +49,30 @@
 #enditem
 
 #newitem
-#name "armored ghoul horse"
+#id "armored ghoul horse"
 #basechance 3
 #gameid -1
 #sprite /graphics/mounts/standard/ghoulhorse_armored.png
 #armor
 #needs overlay ghoulhorse_armored_overlay
-#define "#size 3"
-#define "#hp +6"
-#define "#mr -2"
-#define "#mapmove 22"
-#define "#ap 20"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
-#define "#enc 0"
+#define "#mountmnr 'armored-ghoul-horse'"
+#define "#gcost +25"
 #define "#rcost +5"
 #tag "animal horse"
 #theme "heavy"
 #theme "iron"
 #tag "minprot 14"
-#define "#gcost +25"
 #enditem
 
 #newitem
-#name " longdead horse"
+#id " longdead horse"
 #gameid -1
 #offsetx 0
 #offsety 2
 #sprite /graphics/amazon/mounts/nightmare_equine.png
 #armor
 #needs overlay longdead_overlay
-#define "#size 3"
-#define "#mr -3"
-#define "#mapmove 22"
-#define "#ap 26"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
-#define "#enc 0"
+#define "#mountmnr 'skeletal-horse'"
 #define "#gcost +15"
 #basechance 0.5
 #tag "animal horse"
@@ -118,23 +81,14 @@
 #enditem
 
 #newitem
-#name "armored longdead horse"
+#id "armored longdead horse"
 #gameid -1
 #offsetx 0
 #offsety 2
 #sprite /graphics/amazon/mounts/nightmare_equine_fullbarded2.png
 #armor
 #needs overlay longdead_armored_overlay
-#define "#size 3"
-#define "#hp +2"
-#define "#mr -3"
-#define "#mapmove 22"
-#define "#ap 25"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
-#define "#rcost +5"
-#define "#enc 0"
+#define "#mountmnr 'nightmare_barded'"
 #define "#gcost +25"
 #basechance 0.25
 #tag "animal horse"
@@ -144,21 +98,13 @@
 #enditem
 
 #newitem
-#name "nightmare"
+#id "nightmare"
 #gameid -1
 #sprite /graphics/mounts/standard/nightmare.png
 #armor
 #offsety 1
-#define "#size 3"
-#define "#mapmove 26"
-#define "#ap 25"
-#define "#mounted"
-#define "#weapon 615 --- Heavy Hoof"
-#define "#secondtmpshape nightmare"
+#define "#mountmnr 'nightmare'"
 #define "#gcost +40"
-#define "#ressize 2"
-#define "#enc 3"
-#define "#float"
 #tag "animal nightmare"
 #description "Leaves a nightmare behind when the rider dies"
 #basechance 0.25
@@ -167,21 +113,12 @@
 #enditem
 
 #newitem
-#name "great bear"
+#id "great bear"
 #gameid -1
 #sprite /graphics/mounts/standard/bear.png
 #armor
-#define "#size 4"
-#define "#mapmove 18"
-#define "#ap 16"
-#define "#mounted"
-#define "#weapon 237 --- Bite"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape bearmount"
+#define "#mountmnr 'greatbear'"
 #define "#gcost +40"
-#define "#ressize 2"
-#define "#enc 3"
-#description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety -2
 #offsetx -1
 #tag "animal bear"
@@ -191,19 +128,12 @@
 #enditem
 
 #newitem
-#name "bear"
+#id "bear"
 #gameid -1
 #sprite /graphics/mounts/standard/bear_small.png
 #armor
-#define "#size 3"
-#define "#mapmove 18"
-#define "#ap 14"
-#define "#mounted"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape smallbearmount"
+#define "#mountmnr 'smallbearmount'"
 #define "#gcost +30"
-#define "#ressize 2"
-#define "#enc 3"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety 6
 #offsetx -1
@@ -215,24 +145,14 @@
 
 #newitem
 #basechance 0.1
-#name "scorpion"
+#id "scorpion"
 #gameid -1
 #sprite /graphics/abysian/mounts/scorpion.png
 #armor
 #offsetx 23
 #offsety 6
-#define "#size 5"
-#define "#mapmove 8"
-#define "#ap 8"
-#define "#mounted"
-#define "#weapon nostr_pincer"
-#define "#weapon nostr_scorpiontail"
-#define "#secondshape scorpionmount"
+#define "#mountmnr 'scorpionmount'"
 #define "#gcost +50"
-#define "#ressize 2"
-#define "#enc 2"
-#define "#rcost +5"
-#define "#nomovepen"
 #tag "animal scorpion"
 #theme "heavy"
 #description "Leaves a giant scorpion behind when the rider dies"
@@ -244,25 +164,15 @@
 
 #newitem
 #basechance 0.1
-#name "fossil"
+#id "fossil"
 #gameid -1
 #sprite /graphics/abysian/mounts/fossil.png
 #armor
 #needs overlay fossil_overlay
 #offsetx 34
 #offsety 31
-#define "#size 4"
-#define "#mapmove 16"
-#define "#ap 8"
-#define "#mounted"
-#define "#prot 5"
-#define "#okundeadleader"
-#define "#weapon nostr_fossilsword"
-#define "#secondshape fossilmount"
+#define "#mountmnr 'fossilmount'"
 #define "#gcost +50"
-#define "#ressize 2"
-#define "#enc 0"
-#define "#rcost +5"
 #tag "animal fossil"
 #theme "heavy"
 #description "Leaves a fossilized giant behind when the rider dies"
@@ -272,20 +182,13 @@
 #enditem
 
 #newitem
-#name "dire wolf"
+#id "dire wolf"
 #gameid -1
 #sprite /graphics/mounts/standard/direwolf1.png
 #armor
 #needs overlay direwolf1_overlay
-#define "#size 3"
-#define "#mapmove 18"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon 237 --- bite"
-#define "#secondtmpshape direwolf1mount"
+#define "#mountmnr direwolf1mount"
 #define "#gcost +25"
-#define "#ressize 2"
-#define "#enc 3"
 #tag "animal wolf"
 #theme "light"
 #tag "maxprot 11"

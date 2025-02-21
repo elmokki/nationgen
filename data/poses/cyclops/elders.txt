@@ -1,6 +1,6 @@
 -------- Line infantry (exceedingly rare and not possible as secondary race troops)
 #newpose
-#name "elder cyclops hoplite"
+#id "elder cyclops hoplite"
 #role "infantry"
 #basechance 0.001
 #chanceinc era 2 *0.3
@@ -36,7 +36,7 @@
 -------- Elite Troop
 
 #newpose
-#name "elite elder cyclopses"
+#id "elite elder cyclopses"
 #role "elite infantry"
 #basechance 0.125
 #chanceinc era 2 *0.6
@@ -74,7 +74,7 @@
 -------- Sacred Troop
 
 #newpose
-#name "sacred elder cyclopses"
+#id "sacred elder cyclopses"
 #role "sacred infantry"
 #basechance 0.25
 #chanceinc era 2 *0.4
@@ -113,7 +113,7 @@
 -------- Elite Troop (hoplite)
 
 #newpose
-#name "elite elder cyclops hoplite"
+#id "elite elder cyclops hoplite"
 #role "elite infantry"
 #basechance 0.125
 #chanceinc era 2 *0.6
@@ -150,7 +150,7 @@
 -------- Sacred Troop (hoplite)
 
 #newpose
-#name "sacred elder cyclops hoplite"
+#id "sacred elder cyclops hoplite"
 #role "sacred infantry"
 #basechance 0.25
 #chanceinc era 2 *0.4
@@ -189,7 +189,7 @@
 -------- Warrior-Mage
 
 #newpose
-#name "elder cyclopses warrior-mages"
+#id "elder cyclopses warrior-mages"
 #role "mage"
 #basechance 1
 #chanceinc era 1 *2
@@ -235,7 +235,7 @@
 -------- Ceremonial caster (mostly priests)
 
 #newpose
-#name "elder cyclopses priests"
+#id "elder cyclopses priests"
 #role "mage"
 #role "priest"
 #basechance 0.25
@@ -280,7 +280,7 @@
 -------- Smiths
 
 #newpose
-#name "elder cyclopses smiths"
+#id "elder cyclopses smiths"
 #role "mage"
 #basechance 2
 #chanceinc moduleid herogen *4

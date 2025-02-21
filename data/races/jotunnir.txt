@@ -1,5 +1,5 @@
 #newrace
-#name "Jotun"
+#id "Jotun"
 #basechance 0.2
 #all_troops_sacred
 #all_troops_elite
@@ -21,7 +21,9 @@
 #sacredrangerchance 0.1
 
 #nationcommand "#idealcold +2"
-#gods europegods
+#nationcommand "#moreheat -1"
+#gods europe_gods
+#additionalgods gods_without_realm
 #forts giant_forts
 
 #nationcommand "#likespop 66"
@@ -49,6 +51,6 @@
 #theme boreal
 #boreal
 #giant
-#size4
+#size6
 
 #endrace

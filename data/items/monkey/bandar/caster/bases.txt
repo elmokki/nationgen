@@ -1,5 +1,5 @@
 #newitem
-#name "bandar mage basesprite"
+#id "bandar mage basesprite"
 #gameid -1
 #sprite /graphics/monkey/bandar_base_mage.png
 #needs hands bandar_hands
@@ -12,7 +12,7 @@
 #command "#def 9"
 #command "#att 11"
 #command "#str 15"
-#command "#size 3"
+#command "#size 4"
 #command "#mapmove 14"
 #command "#animal"
 #command "#forestsurvival"
@@ -23,7 +23,7 @@
 #enditem
 
 #newitem
-#name "winged bandar mage basesprite"
+#id "winged bandar mage basesprite"
 #gameid -1
 #sprite /graphics/monkey/bandar_base_mage.png
 #needs hands bandar_hands
@@ -37,7 +37,7 @@
 #command "#def 9"
 #command "#att 11"
 #command "#str 14"
-#command "#size 3"
+#command "#size 4"
 #command "#mapmove 21"
 #command "#maxage +5"
 #command "#flying"
@@ -50,7 +50,7 @@
 #enditem
 
 #newitem
-#name "bandarbred mage basesprite"
+#id "bandarbred mage basesprite"
 #gameid -1
 #sprite /graphics/monkey/bandar_base_bandarbred_mage.png
 #needs hands bandarbred_hands
@@ -63,7 +63,7 @@
 #command "#def 8"
 #command "#att 11"
 #command "#str 16"
-#command "#size 3"
+#command "#size 4"
 #command "#mapmove 14"
 #command "#maxage *0.8"
 #command "#wastesurvival"
@@ -75,7 +75,7 @@
 #enditem
 
 #newitem
-#name "alpine bandar mage basesprite"
+#id "alpine bandar mage basesprite"
 #gameid -1
 #sprite /graphics/monkey/bandar_base_alpine_mage.png
 #needs hands bandar_hands
@@ -88,7 +88,7 @@
 #command "#def 9"
 #command "#att 11"
 #command "#str 15"
-#command "#size 3"
+#command "#size 4"
 #command "#mapmove 14"
 #command "#animal"
 #command "#mountainsurvival"

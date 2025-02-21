@@ -1,5 +1,5 @@
 #newitem
-#name "predator"
+#id "predator"
 #basechance 1
 #chanceinc "secondaryracetheme herbivore *0"
 #gameid -1
@@ -7,7 +7,7 @@
 #command "#gcost 13"
 #command "#rpcost 14000"
 #command "#hp 13"
-#command "#size 2"
+#command "#size 3"
 #command "#mr 11"
 #command "#prot 3"
 #command "#mor 50"
@@ -25,7 +25,7 @@
 #enditem
 
 #newitem
-#name "herbivore"
+#id "herbivore"
 #basechance 0.1
 #chanceinc "secondaryracetheme predator *0"
 #chanceinc "secondaryracetheme sobek *0"
@@ -35,7 +35,7 @@
 #command "#gcost 10"
 #command "#rpcost 10000"
 #command "#hp 11"
-#command "#size 2"
+#command "#size 3"
 #command "#mr 12"
 #command "#prot 5"
 #command "#mor 50"

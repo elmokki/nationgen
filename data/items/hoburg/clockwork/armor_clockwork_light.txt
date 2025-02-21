@@ -2,7 +2,7 @@
 -- Light clockwork armor
 
 #newitem -- light clockwork armor
-#name "light clockwork armor"
+#id "light clockwork armor"
 #gameid 14
 #sprite /graphics/hoburg/bodyarmor/clockwork_armor_light.png
 #armor
@@ -10,7 +10,7 @@
 
 #define "#gcost +15"
 #define "#rcost +10"
-#define "#size 1"
+#define "#size 2"
 #define "#ressize 1"
 #define "#hp +2"
 #define "#enc 2"
@@ -25,7 +25,8 @@
 #description "Their armor is driven by complex clockwork mechanisms that increase their strength and speed, but run down and need rewound"
 #define "#nomovepen"
 #define "#humanoid"
-#define "#itemslots 12422"
+-- add 2 hands, 1 bow, 1 head and 2 misc slots to base slots
+#define "#itemslots 795142"
 
 #tag "guaranteedprefix clockwork"
 #enditem

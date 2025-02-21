@@ -1,5 +1,5 @@
 #newrace
-#name "Tengu"
+#id "Tengu"
 #basechance 0.1
 
 #theme oriental
@@ -12,11 +12,12 @@
 #shortsyllables /data/names/nations/oriental/shortsyllables.txt
 #suffixes /data/names/nations/oriental/suffixes.txt
 
-#gods easterngods
+#gods eastern_gods
+#additionalgods gods_without_realm
 
 #unitcommand "#gcost 25"
 #unitcommand "#rpcost 15000"
-#unitcommand "#size 3"
+#unitcommand "#size 4"
 #unitcommand "#ressize 2"
 #unitcommand "#hp 12"
 #unitcommand "#str 11"

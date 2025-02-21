@@ -1,66 +1,42 @@
 #newitem
-#name "firedrake 1"
+#id "firedrake 1"
 #gameid -1
 #sprite /graphics/abysian/mounts/firedrake.png
 #armor
 #needs overlay firedrake_overlay
 #offsetx -7
 #offsety 16
-#define "#size 3"
-#define "#mapmove 8"
-#define "#ap 9"
-#define "#mounted"
-#define "#weapon 567 --- Drake Fire"
-#define "#weapon 20 -- Bite"
+#define "#mountmnr 'firedrake'"
 #define "#gcost +55"
-#define "#ressize 2"
-#define "#enc 5"
-#define "#nomovepen"
+
 #tag "animal drake"
 #tag "minprot 10"
 #tag "maxprot 100"
 #enditem
 
 #newitem
-#name "salamander 1"
+#id "salamander 1"
 #gameid -1
 #sprite /graphics/abysian/mounts/salamander.png
 #armor
 #offsetx -7
 #offsety 14
-#define "#size 3"
-#define "#mapmove 12"
-#define "#ap 10"
-#define "#mounted"
-#define "#weapon 48 --- Fire Flare"
+#define "#mountmnr 'salamander'"
 #define "#gcost +45"
-#define "#heat 6"
-#define "#ressize 2"
-#define "#enc 20"
 #tag "animal salamander"
 #tag "maxprot 100"
 #enditem
 
 #newitem
-#name "scorpion"
+#id "scorpion"
 #gameid -1
 #sprite /graphics/abysian/mounts/scorpion.png
 #armor
 #offsetx 23
 #offsety 6
 #needs overlay scorpion_overlay
-#define "#size 5"
-#define "#mapmove 8"
-#define "#ap 8"
-#define "#mounted"
-#define "#weapon nostr_pincer"
-#define "#weapon nostr_scorpiontail"
-#define "#secondshape scorpionmount"
+#define "#mountmnr 'scorpionmount'"
 #define "#gcost +50"
-#define "#ressize 2"
-#define "#enc 3"
-#define "#rcost +5"
-#define "#nomovepen"
 #tag "animal scorpion"
 #theme "heavy"
 #description "Leaves a giant scorpion behind when the rider dies"
@@ -72,25 +48,15 @@
 
 
 #newitem
-#name "fossil"
+#id "fossil"
 #gameid -1
 #sprite /graphics/abysian/mounts/fossil.png
 #armor
 #needs overlay fossil_overlay
 #offsetx 34
 #offsety 31
-#define "#size 4"
-#define "#mapmove 16"
-#define "#ap 8"
-#define "#mounted"
-#define "#prot 5"
-#define "#okundeadleader"
-#define "#weapon nostr_fossilsword"
-#define "#secondshape fossilmount"
+#define "#mountmnr 'fossilmount'"
 #define "#gcost +50"
-#define "#ressize 2"
-#define "#enc 5"
-#define "#rcost +5"
 #tag "animal fossil"
 #theme "heavy"
 #description "Leaves a fossilized giant behind when the rider dies"
@@ -100,21 +66,14 @@
 #enditem
 
 #newitem
-#name "gloso"
+#id "gloso"
 #gameid -1
 #sprite /graphics/mounts/standard/gloso.png
 #armor
 #offsetx -2
 #offsety 2
-#define "#size 3"
-#define "#mapmove 18"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon nostr_poisongore"
-#define "#secondtmpshape gloso"
+#define "#mountmnr 'gloso'"
 #define "#gcost +40"
-#define "#ressize 2"
-#define "#enc 3"
 #tag "animal gloso"
 #description "Leaves a burning black sow behind when the rider dies"
 #basechance 0.5
@@ -123,21 +82,14 @@
 #enditem
 
 #newitem
-#name "nightmare"
+#id "nightmare"
 #gameid -1
 #sprite /graphics/mounts/standard/nightmare.png
 #armor
 #offsety -2
-#define "#size 3"
-#define "#mapmove 26"
-#define "#ap 25"
-#define "#mounted"
-#define "#weapon 615 --- Heavy Hoof"
-#define "#secondtmpshape nightmare"
+#define "#size 5"
+#define "#mountmnr 'nightmare'"
 #define "#gcost +40"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#float"
 #tag "animal nightmare"
 #description "Leaves a nightmare behind when the rider dies"
 #basechance 0.25

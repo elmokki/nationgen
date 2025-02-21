@@ -1,9 +1,9 @@
 #new
-#name "drilled"
+#id "drilled"
 #basechance 0.15
 #maxvarieties 2
 #command "#gcost *1.1"
-#command "#formationfighter 1"
+#command "#formationfighter 2"
 #set "army role"
 #prev "army role start"
 #bridge "army role bridge"
@@ -14,7 +14,7 @@
 #end
 
 #new
-#name "Patroller"
+#id "Patroller"
 #chance 0.015
 #maxvarieties 1
 #command "#patrolbonus +2"
@@ -34,7 +34,7 @@
 
 #new
 #basechance 0.015
-#name "pillager"
+#id "pillager"
 #command "#pillagebonus +1"
 #theme irregular
 #themeinc "thisarmorprot below 13 *3"
@@ -53,7 +53,7 @@
 
 #new
 #basechance 0.015
-#name "skirmisher"
+#id "skirmisher"
 #command "#skirmisher +1"
 #theme irregular
 #themeinc "thisarmorprot below 11 *3"
@@ -72,7 +72,7 @@
 -- Slow militia
 #new
 #basechance 0.5
-#name "militia"
+#id "militia"
 #maxvarieties 1
 #chanceinc "pose mounted *0"
 #chanceinc "pose chariot *0"
@@ -105,7 +105,7 @@
 -- Undisciplined militia
 #new
 #basechance 0.5
-#name "militia"
+#id "militia"
 #maxvarieties 1
 #chanceinc "pose mounted *0"
 #chanceinc "pose chariot *0"
@@ -136,7 +136,7 @@
 -- Normal militia
 #new
 #basechance 0.5
-#name "militia"
+#id "militia"
 #maxvarieties 1
 #chanceinc "pose mounted *0"
 #chanceinc "pose chariot *0"
@@ -165,7 +165,7 @@
 
 #new
 #basechance 0.25
-#name "elite +1"
+#id "elite +1"
 #type elite
 #maxvarieties 1
 #command "#def +1"
@@ -192,7 +192,7 @@
 
 #new
 #basechance 0.125
-#name "elite +2"
+#id "elite +2"
 #type elite
 #maxvarieties 1
 #command "#def +2"
@@ -219,7 +219,7 @@
 
 #new
 #basechance 0.5
-#name "mountainunit"
+#id "mountainunit"
 #chanceinc pose mounted *0
 #chanceinc pose chariot *0
 #command "#mountainsurvival"
@@ -244,7 +244,7 @@
 
 #new
 #basechance 0.5
-#name "forestunit"
+#id "forestunit"
 #chanceinc pose mounted *0
 #chanceinc pose chariot *0
 #command "#forestsurvival"
@@ -273,7 +273,7 @@
 #chanceinc pose mounted *0
 #chanceinc pose chariot *0
 #chanceinc pose ranged *0
-#name "berserker"
+#id "berserker"
 #command "#berserk +2"
 #theme primitive
 #tag "dwchance 0.5"

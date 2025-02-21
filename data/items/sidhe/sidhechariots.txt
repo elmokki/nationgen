@@ -1,23 +1,15 @@
 --- Base offsets are applied to everything except base and overlay
 #newitem
-#name "horse chariot"
+#id "horse chariot"
 #gameid -1
 #sprite /graphics/sidhe/mounts/chariot_horse.png
 #armor
 #needs overlay 11
 #offsetx 55
 #offsety -8
-#define "#trample"
-#define "#mounted"
-#define "#size 4"
-#define "#prot 5"
-#define "#mapmove 24"
-#define "#ap 18"
-#define "#ressize 2"
+#define "#mountmnr 'fay-chariot'"
 #define "#gcost +50"
 #define "#rcost +10"
-#define "#enc 4"
-#define "#nomovepen"
 #tag "chariot"
 #tag "minprot 10"
 #tag "maxprot 15"
@@ -25,27 +17,15 @@
 #enditem
 
 #newitem
-#name "unicorn chariot"
+#id "unicorn chariot"
 #gameid -1
 #sprite /graphics/sidhe/mounts/chariot_unicorn.png
 #armor
 #needs overlay 11
 #offsetx 55
 #offsety -8
-#define "#trample"
-#define "#mounted"
-#define "#weapon 330 --- Alicorn"
-#define "#size 4"
-#define "#prot 5"
-#define "#mapmove 24"
-#define "#ap 18"
-#define "#ressize 2"
+#define "#mountmnr 'unicorn-chariot'"
 #define "#gcost +70"
-#define "#rcost +10"
-#define "#enc 4"
-#define "#heal"
-#define "#unsurr 1"
-#define "#nomovepen"
 #tag "chariot"
 #tag "minprot 10"
 #tag "maxprot 15"
@@ -53,26 +33,14 @@
 #enditem
 
 #newitem
-#name "cusidhe chariot"
+#id "cusidhe chariot"
 #gameid -1
 #sprite /graphics/sidhe/mounts/chariot_cusidhe.png
 #armor
 #needs overlay 11
 #offsetx 55
 #offsety -8
-#define "#trample"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#size 4"
-#define "#prot 5"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#ressize 2"
-#define "#gcost +60"
-#define "#rcost +10"
-#define "#enc 4"
-#define "#unsurr 1"
-#define "#nomovepen"
+#define "#mountmnr 'cusidhe-chariot'"
 #tag "chariot"
 #tag "minprot 10"
 #tag "maxprot 14"
@@ -80,28 +48,16 @@
 #enditem
 
 #newitem
-#name "swan chariot"
+#id "swan chariot"
 #gameid -1
 #sprite /graphics/sidhe/mounts/chariot_swan.png
 #armor
 #needs overlay chariot_swan_overlay
 #offsetx 55
 #offsety -8
-#define "#trample"
-#define "#mounted"
-#define "#sailing 4 4"
-#define "#weapon nostr_bill_10"
-#define "#size 4"
-#define "#prot 5"
-#define "#mapmove 14"
-#define "#ap 10"
-#define "#ressize 2"
+#define "#mountmnr 'giant_chariot_swan'"
 #define "#gcost +60"
 #define "#rcost +10"
-#define "#enc 4"
-#define "#swimming"
-#define "#unsurr 1"
-#define "#nomovepen"
 #tag "chariot"
 #tag "minprot 6"
 #tag "maxprot 12"

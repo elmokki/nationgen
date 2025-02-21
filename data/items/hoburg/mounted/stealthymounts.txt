@@ -2,18 +2,12 @@
 
 
 #newitem
-#name "wolf"
+#id "wolf"
 #gameid -1
 #sprite /graphics/hoburg/mounts/wolf.png
 #armor
-#define "#size 2"
-#define "#mapmove 22"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon nostr_bite_10 --- Bite"
+#define "#mountmnr 'wolfmount'"
 #define "#gcost +17"
-#define "#ressize 1"
-#define "#enc 3"
 #define "#rcost +4"
 #tag "animal wolf"
 #theme "primitive"
@@ -36,20 +30,13 @@
 #enditem
 
 #newitem
-#name "hawk"
+#id "hawk"
 #gameid -1
 #sprite /graphics/hoburg/mounts/hawk.png
 #armor
 #needs overlay hawkoverlay
-#define "#size 2"
-#define "#mapmove 22"
-#define "#ap 6"
-#define "#flying"
-#define "#mounted"
-#define "#weapon 236 --- claw"
+#define "#mountmnr 'hawk'"
 #define "#gcost +27"
-#define "#ressize 1"
-#define "#enc 4"
 #define "#rcost +4"
 #tag "animal hawk"
 #tag "maxprot 16"
@@ -72,21 +59,14 @@
 #enditem
 
 #newitem
-#name "pigasus"
+#id "pigasus"
 #gameid -1
 #sprite /graphics/hoburg/mounts/pigasus.png
 #armor
 #needs overlay pigasus_overlay
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 14"
-#define "#flying"
-#define "#mounted"
-#define "#weapon 352 --- Gore"
+#define "#mountmnr 'pigasus'"
 #define "#gcost +30"
-#define "#ressize 1"
 #define "#rcost +4"
-#define "#enc 4"
 #tag "animal pigasus"
 #tag "guaranteedprefix pigasus"
 #theme "boar"
@@ -102,26 +82,16 @@
 #enditem
 
 #newitem
-#name "ozelotl"
+#id "ozelotl"
 #gameid -1
 #sprite /graphics/hoburg/mounts/ozelotl.png
 #armor
 #offsety 32
 #offsetx 30
 #needs overlay ozelotl_overlay
-#define "#size 3"
-#define "#mapmove 28"
-#define "#ap 10"
-#define "#flying"
-#define "#mounted"
-#define "#weapon 19"
-#define "#weapon 236"
+#define "#mountmnr 'ozelotl'"
 #define "#gcost +45"
-#define "#hp +2"
-#define "#ressize 1"
 #define "#rcost +4"
-#define "#enc 3"
-#define "#secondtmpshape ozelotl"
 #tag "animal ozelotl"
 #description "The ozelotl will fight until the end of the battle if the rider perishes"
 #tag "maxprot 14"
@@ -135,28 +105,17 @@
 #enditem
 
 #newitem
-#name "hellspawn"
+#id "hellspawn"
 #gameid -1
 #sprite /graphics/hoburg/mounts/hellspawn.png
 #armor
 #offsety 31
 #offsetx 31
 #needs overlay hellspawn_overlay
-#define "#size 4"
-#define "#mapmove 22"
-#define "#ap 8"
-#define "#flying"
-#define "#mounted"
-#define "#weapon 48"
-#define "#weapon 19"
+#define "#mountmnr 'hellspawn'"
 #define "#gcost +60"
-#define "#hp +2"
-#define "#ressize 1"
 #define "#rcost +4"
 #define "#enc 15"
-#define "#fireres +5"
-#define "#heat +6"
-#define "#secondtmpshape hellspawn"
 #tag "animal hellspawn"
 #description "The hellspawn will fight until the end of the battle if the rider perishes"
 #tag "maxprot 16"
@@ -166,7 +125,7 @@
 #enditem
 
 #newitem
-#name "giant bat"
+#id "giant bat"
 #gameid -1
 #sprite /graphics/hoburg/mounts/giant_bat.png
 #armor
@@ -174,18 +133,9 @@
 #offsetx 30
 #needs overlay giant_bat_overlay
 #needs legs pants2
-#define "#size 2"
-#define "#mapmove 26"
-#define "#ap 10"
-#define "#flying"
-#define "#mounted"
-#define "#weapon 19 -- Bite"
+#define "#mountmnr 'beastbat_nerfed'"
 #define "#gcost +35"
-#define "#hp +2"
-#define "#secondtmpshape beastbat_nerfed"
-#define "#ressize 1"
 #define "#rcost +4"
-#define "#enc 3"
 #tag "animal bat"
 #tag "maxprot 16"
 #tag "guaranteedprefix giant bat"
@@ -207,18 +157,12 @@
 #enditem
 
 #newitem
-#name "deer"
+#id "deer"
 #gameid -1
 #sprite /graphics/hoburg/mounts/deer.png
 #armor
-#define "#size 2"
-#define "#mapmove 20"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon 354 --- antlers"
+#define "#mountmnr 'deer'"
 #define "#gcost +15"
-#define "#ressize 1"
-#define "#enc 3"
 #define "#rcost +4"
 #tag "animal deer"
 #tag "maxprot 14"
@@ -240,22 +184,14 @@
 #enditem
 
 #newitem
-#name "unicorn"
+#id "unicorn"
 #gameid -1
 #sprite /graphics/mounts/standard/unicorn.png
 #offsety -22
 #offsetx 6
 #armor
-#define "#size 3"
-#define "#mapmove 28"
-#define "#ap 28"
-#define "#mounted"
-#define "#weapon 330 --- Alicorn"
-#define "#weapon 56 --- Hoof"
+#define "#mountmnr 'unicorn'"
 #define "#gcost +30"
-#define "#ressize 1"
-#define "#enc 3"
-#define "#heal"
 #tag "minprot 8"
 #tag "animal unicorn"
 #tag "guaranteedprefix unicorn"
@@ -269,21 +205,14 @@
 #enditem
 
 #newitem
-#name "cu sidhe"
+#id "cu sidhe"
 #gameid -1
 #sprite /graphics/sidhe/mounts/cusidhe.png
 #offsety -22
 #offsetx -3
 #armor
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 28"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
+#define "#mountmnr 'cusidhemount'"
 #define "#gcost +20"
-#define "#ressize 1"
-#define "#patrolbonus 1"
-#define "#enc 3"
 #tag "animal dog"
 #tag "minprot 7"
 #theme "fae"
@@ -297,21 +226,14 @@
 #enditem
 
 #newitem
-#name "barghest"
+#id "barghest"
 #gameid -1
 #sprite /graphics/hoburg/mounts/barghest.png
 #offsety -22
 #offsetx -3
 #armor
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 26"
-#define "#mounted"
-#define "#weapon 447 --- Venomous Bite"
+#define "#mountmnr 'barghestmount'"
 #define "#gcost +20"
-#define "#ressize 1"
-#define "#darkpower 1"
-#define "#enc 3"
 #tag "animal dog"
 #tag "guaranteedprefix barghest"
 #tag "minprot 7"
@@ -327,20 +249,14 @@
 #enditem
 
 #newitem
-#name "black dog"
+#id "black dog"
 #gameid -1
 #sprite /graphics/hoburg/mounts/blackdog.png
 #offsety -11
 #offsetx -3
 #armor
-#define "#size 2"
-#define "#mapmove 18"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
+#define "#mountmnr 'blackdogmount'"
 #define "#gcost +15"
-#define "#ressize 1"
-#define "#enc 3"
 #tag "animal dog"
 #tag "minprot 5"
 #tag "maxprot 14"
@@ -357,20 +273,12 @@
 #enditem
 
 #newitem
-#name "demonbred hog"
+#id "demonbred hog"
 #gameid -1
 #sprite /graphics/hoburg/mounts/demonbred_hog.png
 #armor
-#define "#size 2"
-#define "#mapmove 16"
-#define "#ap 16"
-#define "#mounted"
-#define "#weapon nostr_poisongore"
-#define "#gcost +17"
-#define "#ressize 1"
+#define "#mountmnr 'demonbred_hog'"
 #define "#rcost +6"
-#define "#enc 3"
-#define "#supplybonus -1"
 #tag "animal boar"
 #tag "guaranteedprefix hog"
 #theme "boar"
@@ -380,19 +288,13 @@
 #enditem
 
 #newitem
-#name "red ant"
+#id "red ant"
 #gameid -1
 #sprite /graphics/mounts/standard/redant.png
 #needs overlay redant_overlay
 #armor
-#define "#size 2"
-#define "#mapmove 14"
-#define "#ap 8"
-#define "#mounted"
-#define "#weapon nostr_smallsting"
+#define "#mountmnr 'redantmount'"
 #define "#gcost +8"
-#define "#ressize 1"
-#define "#enc 2"
 #tag "animal ant"
 #theme "ant"
 #theme "anttotem"
@@ -404,7 +306,6 @@
 #theme "civilized"
 #tag "maxprot 12"
 #tag "guaranteedprefix ant"
-#define "#secondtmpshape redantmount"
 #description "If the rider dies, the ant will carry on fighting until the end of the battle."
 #offsetx 1
 #offsety -4
@@ -412,24 +313,14 @@
 #enditem
 
 #newitem
-#name "swan"
+#id "swan"
 #gameid -1
 #basechance 0
 #sprite /graphics/mounts/standard/swan.png
 #needs overlay swan_overlay
 #armor
-#define "#size 2"
-#define "#mapmove 22"
-#define "#ap 5"
-#define "#mounted"
-#define "#sailing 2 2"
-#define "#flying"
-#define "#weapon nostr_bill_3"
-#define "#weapon nostr_wingbuff_3"
+#define "#mountmnr 'swanmount'"
 #define "#gcost +10"
-#define "#ressize 1"
-#define "#enc 4"
-#define "#swimming"
 #tag "animal swan"
 #theme "swan"
 #theme "swantotem"
@@ -445,7 +336,6 @@
 #theme "civilized"
 #tag "maxprot 8"
 #tag "guaranteedprefix swan"
-#define "#secondtmpshape swanmount"
 #description "If the rider dies, the swan will carry on fighting until the end of the battle."
 #tag "animal swan"
 #offsetx 0
@@ -454,23 +344,13 @@
 #enditem
 
 #newitem
-#name "black swan"
+#id "black swan"
 #gameid -1
 #sprite /graphics/mounts/standard/swan_black.png
 #needs overlay swan_black_overlay
 #armor
-#define "#size 2"
-#define "#mapmove 22"
-#define "#ap 5"
-#define "#mounted"
-#define "#sailing 2 2"
-#define "#flying"
-#define "#weapon nostr_bill_3"
-#define "#weapon nostr_wingbuff_3"
+#define "#mountmnr 'swanmount_black'"
 #define "#gcost +7"
-#define "#ressize 1"
-#define "#enc 4"
-#define "#swimming"
 #tag "animal swan"
 #theme "swan"
 #theme "swantotem"
@@ -487,20 +367,12 @@
 #enditem
 
 #newitem
-#name "giant rat"
+#id "giant rat"
 #gameid -1
 #sprite /graphics/mounts/standard/giantrat.png
 #armor
-#define "#size 2"
-#define "#mapmove 18"
-#define "#ap 12"
-#define "#mounted"
-#define "#weapon nostr_diseasebite_12"
+#define "#mountmnr 'ratmount'"
 #define "#gcost +15"
-#define "#diseaseres +10"
-#define "#ressize 1"
-#define "#enc 3"
-#define "#swimming"
 #tag "animal rat"
 #theme "rat"
 #theme "rattotem"
@@ -513,7 +385,6 @@
 #theme "oriental"
 #theme "abysian"
 #tag "guaranteedprefix rat"
-#define "#secondtmpshape ratmount"
 #description "If the rider dies, the rat will carry on fighting until the end of the battle."
 #basechance 1
 #offsetx 4
@@ -522,23 +393,14 @@
 #enditem
 
 #newitem
-#name "dwarf elephant"
+#id "dwarf elephant"
 #gameid -1
 #sprite /graphics/mounts/standard/elephant_dwarf.png
 #needs overlay elephant_dwarf_overlay
 #armor
-#define "#size 2"
-#define "#mapmove 14"
-#define "#ap 14"
-#define "#mounted"
-#define "#trample"
-#define "#weapon nostr_tusk_10"
+#define "#mountmnr 'dwarfelephantmount'"
 #define "#gcost +20"
-#define "#hp +3"
-#define "#prot 4"
-#define "#ressize 1"
 #define "#rcost +4"
-#define "#enc 3"
 #tag "animal elephant"
 #tag "guaranteedprefix elephant"
 #theme "elephant"

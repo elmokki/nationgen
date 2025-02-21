@@ -2,7 +2,7 @@
 -- Medium clockwork armor
 
 #newitem 
-#name "medium clockwork armor"
+#id "medium clockwork armor"
 #gameid 19
 #sprite /graphics/hoburg/bodyarmor/clockwork_armor_medium.png
 #armor
@@ -10,7 +10,7 @@
 
 #define "#gcost +25"
 #define "#rcost +10"
-#define "#size 2"
+#define "#size 3"
 #define "#ressize 2"
 #define "#enc 2"
 #define "#reinvigoration -1"
@@ -28,10 +28,11 @@
 #define "#slashres"
 #define "#woundfend +2"
 #define "#mounted"
-#description "Their heavy armor is driven by complex clockwork mechanisms that increase their strength and speed, but gradually run down and need rewound"
 #define "#nomovepen"
 #define "#humanoid"
+-- add 2 hands and bow
+#define "#itemslots +518"
+#description "Their heavy armor is driven by complex clockwork mechanisms that increase their strength and speed, but gradually run down and need rewound"
 
 #tag "guaranteedprefix clockwork"
 #enditem
-

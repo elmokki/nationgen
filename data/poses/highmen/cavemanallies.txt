@@ -6,7 +6,7 @@
 -- Hoburg chanceincs for standard troop poses operate at ~100x "normal"
 #basechance 50
 
-#name "caveman auxilliary"
+#id "caveman auxilliary"
 #role "infantry"
 #role "sacred infantry"
 #role "elite infantry"
@@ -16,7 +16,7 @@
 
 #command "#gcost 25"
 #unitcommand "#rpcost 19995"
-#command "#size 3"
+#command "#size 4"
 #command "#hp 23"
 #command "#prot 2"
 #command "#str 17"
@@ -58,7 +58,7 @@
 
 #basechance 0.5
 
-#name "caveman shaman"
+#id "caveman shaman"
 #role "mage"
 #role "priest"
 
@@ -70,7 +70,7 @@
 #notfortier 3
 
 #command "#gcost 25"
-#command "#size 3"
+#command "#size 4"
 #command "#hp 23"
 #command "#prot 2"
 #command "#str 17"

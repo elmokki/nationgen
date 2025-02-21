@@ -1,18 +1,12 @@
 #newitem
-#name "fayhorse"
+#id "fayhorse"
 #gameid -1
 #sprite /graphics/mounts/standard/fayhorse.png
 #needs overlay no_overlay
 #armor
 #offsety 1
-#define "#size 3"
-#define "#mapmove 28"
-#define "#ap 28"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
+#define "#mountmnr 'fay-horse'"
 #define "#gcost +20"
-#define "#ressize 2"
-#define "#enc 3"
 #tag "animal horse"
 #tag "minprot 6"
 #tag "maxprot 16"
@@ -20,22 +14,15 @@
 
 
 #newitem
-#name "cu sidhe"
+#id "cu sidhe"
 #gameid -1
 #sprite /graphics/sidhe/mounts/cusidhe.png
 #needs overlay no_overlay
 #armor
 #offsetx -5
 #offsety 1
-#define "#size 3"
-#define "#mapmove 18"
-#define "#ap 28"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
+#define "#mountmnr 'cusidhemount'"
 #define "#gcost +20"
-#define "#ressize 2"
-#define "#patrolbonus 1"
-#define "#enc 3"
 #tag "animal dog"
 #tag "minprot 5"
 #tag "maxprot 15"
@@ -43,7 +30,7 @@
 
 
 #newitem
-#name "pegasus"
+#id "pegasus"
 #gameid -1
 #sprite /graphics/mounts/standard/pegasus.png
 #needs overlay no_overlay
@@ -51,15 +38,8 @@
 #offsetx 28
 #offsety 64
 #needs overlay 8
-#define "#size 4"
-#define "#mapmove 28"
-#define "#ap 22"
-#define "#mounted"
-#define "#flying"
-#define "#weapon 56 --- Hoof"
+#define "#mountmnr 'pegasus'"
 #define "#gcost +50"
-#define "#ressize 2"
-#define "#enc 4"
 #theme "flying"
 #tag "animal pegasus"
 #tag "name commander windlord"
@@ -68,7 +48,7 @@
 #enditem
 
 #newitem
-#name "peryton"
+#id "peryton"
 #basechance 0.25
 #gameid -1
 #sprite /graphics/mounts/standard/peryton2.png
@@ -76,15 +56,8 @@
 #armor
 #offsetx -2
 #offsety 2
-#define "#size 4"
-#define "#mapmove 28"
-#define "#ap 18"
-#define "#mounted"
-#define "#flying"
-#define "#weapon 354 --- Antlers"
+#define "#mountmnr 'peryton2'"
 #define "#gcost +50"
-#define "#ressize 2"
-#define "#enc 4"
 #theme "flying"
 #tag "animal peryton"
 #tag "name commander windlord"
@@ -93,22 +66,14 @@
 #enditem
 
 #newitem
-#name "unicorn"
+#id "unicorn"
 #gameid -1
 #sprite /graphics/mounts/standard/unicorn.png
 #needs overlay no_overlay
 #armor
 #offsety 1
-#define "#size 3"
-#define "#mapmove 28"
-#define "#ap 28"
-#define "#mounted"
-#define "#weapon 330 --- Alicorn"
-#define "#weapon 56 --- Hoof"
+#define "#mountmnr 'unicorn'"
 #define "#gcost +30"
-#define "#ressize 2"
-#define "#enc 3"
-#define "#heal"
 #tag "minprot 6"
 #tag "maxprot 16"
 #tag "animal unicorn"
@@ -118,7 +83,7 @@
 
 
 #newitem
-#name "wyvern"
+#id "wyvern"
 #basechance 0.5
 #gameid -1
 #sprite /graphics/mounts/standard/wyvern.png
@@ -126,18 +91,8 @@
 #offsetx 28
 #offsety 69
 #needs overlay 14
-#define "#size 4"
-#define "#mapmove 22"
-#define "#ap 22"
-#define "#mounted"
-#define "#flying"
-#define "#weapon 237"
-#define "#weapon nostr_barbedtail"
+#define "#mountmnr 'wyvern'"
 #define "#gcost +75"
-#define "#ressize 2"
-#define "#rcost +4"
-#define "#enc 4"
-#define "#secondshape wyvern"
 #theme "flying"
 #theme "heavy"
 #tag "animal wyvern"
@@ -151,7 +106,7 @@
 
 
 #newitem
-#name "moose"
+#id "moose"
 #basechance 0.5
 #gameid -1
 #sprite /graphics/mounts/standard/moose.png
@@ -159,18 +114,8 @@
 #armor
 #offsetx 30
 #offsety 45
-#define "#size 4"
-#define "#mapmove 22"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 353"
-#define "#weapon 354"
+#define "#mountmnr 'moose'"
 #define "#gcost +25"
-#define "#ressize 2"
-#define "#rcost +4"
-#define "#enc 4"
-#define "#swimming"
-#define "#secondtmpshape moose"
 #tag "animal moose"
 #tag "minprot 0"
 #tag "maxprot 16"
@@ -179,7 +124,7 @@
 #enditem
 
 #newitem
-#name "elk"
+#id "elk"
 #basechance 0.5
 #gameid -1
 #sprite /graphics/mounts/standard/elk.png
@@ -187,16 +132,9 @@
 #armor
 #offsetx -2
 #offsety 2
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 354"
+#define "#mountmnr 'elk'"
 #define "#gcost +20"
-#define "#ressize 2"
 #define "#rcost +4"
-#define "#enc 4"
-#define "#secondtmpshape elk"
 #tag "animal elk"
 #tag "minprot 0"
 #tag "maxprot 14"
@@ -205,18 +143,16 @@
 #enditem
 
 #newitem
-#name "nightmare"
+#id "nightmare"
 #gameid -1
 #sprite /graphics/mounts/standard/nightmare.png
 #needs overlay no_overlay
 #armor
 #offsety 1
-#define "#size 3"
+#define "#size 5"
 #define "#mapmove 26"
 #define "#ap 25"
-#define "#mounted"
-#define "#weapon 615 --- Heavy Hoof"
-#define "#secondtmpshape nightmare"
+#define "#mountmnr 'nightmare'"
 #define "#gcost +40"
 #define "#ressize 2"
 #define "#enc 4"
@@ -229,20 +165,12 @@
 #enditem
 
 #newitem
-#name "great bear"
+#id "great bear"
 #gameid -1
 #sprite /graphics/mounts/standard/bear.png
 #armor
-#define "#size 4"
-#define "#mapmove 20"
-#define "#ap 16"
-#define "#mounted"
-#define "#weapon 237 --- Bite"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape bearmount"
+#define "#mountmnr 'greatbear'"
 #define "#gcost +40"
-#define "#ressize 2"
-#define "#enc 4"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety -2
 #offsetx -5
@@ -253,19 +181,12 @@
 #enditem
 
 #newitem
-#name "bear"
+#id "bear"
 #gameid -1
 #sprite /graphics/mounts/standard/bear_small.png
 #armor
-#define "#size 3"
-#define "#mapmove 18"
-#define "#ap 14"
-#define "#mounted"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape smallbearmount"
+#define "#mountmnr 'smallbearmount'"
 #define "#gcost +30"
-#define "#ressize 2"
-#define "#enc 4"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsety 4
 #offsetx -5
@@ -277,24 +198,15 @@
 
 
 #newitem
-#name "giant swan"
+#id "giant swan"
 #gameid -1
 #sprite /graphics/sidhe/mounts/giantswan.png
 #needs overlay giantswan_overlay
 #armor
 #offsetx -2
 #offsety 12
-#define "#size 3"
-#define "#mapmove 26"
-#define "#ap 8"
-#define "#mounted"
-#define "#flying"
-#define "#sailing 3 3"
-#define "#weapon nostr_bill_10"
+#define "#mountmnr 'giantswanmount'"
 #define "#gcost +50"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#swimming"
 #theme "light"
 #tag "animal swan"
 #tag "maxprot 12"

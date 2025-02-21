@@ -1,12 +1,12 @@
 #newitem
-#name "ettinling"
+#id "ettinling"
 #gameid -1
 #sprite /graphics/ogre/base_ettinling.png
 #needs overlay ettinling
 #command "#gcost 23"
 #command "#rpcost 23000"
 #command "#hp 20"
-#command "#size 3"
+#command "#size 5"
 #command "#prot 5"
 #command "#mr 14"
 #command "#mor 13"
@@ -26,6 +26,7 @@
 #command "#eyes 4"
 #command "#unsurr 1"
 #baseitemslot hand 3
+#baseitemslot bow 1
 #baseitemslot head 2
 #baseitemslot misc 1
 #needs hands ettinling

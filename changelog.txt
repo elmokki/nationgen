@@ -1,4 +1,167 @@
-﻿0.7.0-RC13 (Date goes here)
+
+0.11.0 (31st October 2024)
+----------------------------------------------------------
+Content
+-----------------------------------------------------------
+- Seeds with this version will differ from previous versions
+- Fixed misspelled #female tag on several Amazon templates
+- Removed #nowayback command on mounts
+- Fixed amazon nightmare lizard and flayed serpent templates
+- Cleaned up mounts file
+- Added all realmless gods (mostly nation-specific ones like Risen Oracle)
+- Nations with heat/cold preferences of 2 or higher now get temp scale shifts
+- Added a bunch more national spells, many new from Dominions 6
+
+Code
+----------------------------------------------------------
+- Removed nowayback processing from MountUnit
+- Global replace of #name to #id
+- Added and ran prettier to unify format of all java files
+- Added npm script to parse through data files and compile id lists
+- Reworked #additionalgods GodGen logic
+- Fixed incorrect reference to tags when getting Unit's #itemslot (fixes Foulspawn template slots)
+- Updated README file with a to-do list and a template ideas list
+- Fixed spells that require a vanilla site (Barathrus and Rhuax Pact)
+- Updated mage costs to Dom6 standards (about 40% more expensive)
+
+
+0.10.1 (13th October 2024)
+----------------------------------------------------------
+Code
+----------------------------------------------------------
+- Fix to clockwork templates
+
+0.10.0 (13th October 2024)
+----------------------------------------------------------
+Content
+-----------------------------------------------------------
+- Seeds with this version will differ from previous versions
+
+Code
+----------------------------------------------------------
+- Update to account for changes to Dominions 6 folder structure
+- Fix #sizeX requirements which were still using Dominions 5 values
+- Fix ettins not getting helmets on their other head
+- Sacreds of size 7 and above now cost 2 holy points, as they do in Dominions 6
+- Update clockwork templates for Dominions 6
+
+0.9.0 (9th October 2024)
+----------------------------------------------------------
+Content
+-----------------------------------------------------------
+- Seeds with this version will differ from previous versions
+
+Code
+----------------------------------------------------------
+- Fixed some intrinsic weapons issues
+- Adjusted gemgen temple values and fixed gems generated 
+- Fixed elemental secondtmpshapes so they don't shrink into random units 
+- Switched overcharged10 and 20 to 2 and 4 
+- Aesir/Asynja changed from size 6 to size 7 to match their hp pool
+- Fixed incorrect itemslots of armor_clockwork_heavy resulting in 3 hands 
+- Fixed several mounts missing a Dominions #name command; showing broken
+- Stat fixes for tigers
+
+
+0.8.6 (1st September 2024)
+----------------------------------------------------------
+
+Code
+----------------------------------------------------------
+- Fixed mounted units effectively doubling up their gcost like a woundedshape
+- Fixed multiple mounts having non-intrinsic versions of claws/bites
+- More itemslots fixes to dom6 equivalents
+- Fix Pegasus being sacred on non-sacred units
+- Other misc fixes
+
+
+Content
+-----------------------------------------------------------
+
+
+0.8.5 (1st September 2024)
+----------------------------------------------------------
+
+Code
+----------------------------------------------------------
+- Fixed incorrect hardcoded commander paths
+- Fixed dom5 copystarts/copyspr ids to their dom6 equivalents
+- Updated itemslots to dom6 equivalents
+
+
+Content
+-----------------------------------------------------------
+
+0.8.4 (1st September 2024)
+----------------------------------------------------------
+
+Code
+----------------------------------------------------------
+- Fix to a typo with some nightmare mounts causing sprite errors
+
+
+Content
+-----------------------------------------------------------
+
+0.8.3 (31 August 2024)
+----------------------------------------------------------
+
+Code
+----------------------------------------------------------
+- Fixes a typo which caused nations to fail generate sometimes
+
+
+Content
+-----------------------------------------------------------
+
+
+0.8.2 (19th August 2024)-RC1
+----------------------------------------------------------
+
+Code
+----------------------------------------------------------
+- Fixes to the mounted code
+- Change itemslots bitmasks to work with Dominions 6
+
+Content
+-----------------------------------------------------------
+- Fully functional version for Dominions 6 - there are visual issues that need to be resolved
+- Created mounts for all mounted units 
+-Issues: sacred mounts and dismounted riders still need to be added
+
+
+0.8.1 (9th August 2024)
+----------------------------------------------------------
+
+Code
+----------------------------------------------------------
+- Add code to create mounted units for the mounted system to work (based on the secondshape system)
+- Add code to create mounted units for the mounted system to work (based on the secondshape system)
+
+Content
+-----------------------------------------------------------
+- Adjust sizes to be in line for Dominions 6 (there might be errors)
+
+
+
+0.8.0 (22nd June 2024)
+----------------------------------------------------------
+
+Code
+----------------------------------------------------------
+- Fix spell names which changed in Dominions 6
+- Aded Glamour Magic handling to the code
+- Fix spell names which changed in Dominions 6
+- Aded Glamour Magic handling to the code
+
+Content
+-----------------------------------------------------------
+- Fix IDs to work with Dominions 6
+- Add support for Glamour Magic
+- Change the #illusion tag to #glamour for glamour units
+
+
+0.7.0-RC13 (Date goes here)
 ----------------------------------------------------------
 
 Code

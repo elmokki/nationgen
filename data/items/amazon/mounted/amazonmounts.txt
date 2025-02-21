@@ -2,24 +2,15 @@
 
 
 #newitem
-#name "gryphon"
+#id "gryphon"
 #gameid -1
 #sprite /graphics/amazon/mounts/gryphon.png
 #armor
 #offsetx 23
 #offsety 64
 #needs overlay gryphon_overlay
-#define "#size 5"
-#define "#mapmove 22"
-#define "#ap 15"
-#define "#mounted"
-#define "#flying"
-#define "#weapon 236 -- Claw"
-#define "#weapon 237 -- Bite"
-#define "#secondtmpshape gryphonmount"
+#define "#mountmnr 'gryphonmount'"
 #define "#gcost +100"
-#define "#ressize 2"
-#define "#enc 4"
 #description "If the rider dies, the gryphon will carry on fighting until the end of the battle."
 #theme "flying"
 #theme "specialmount"
@@ -31,20 +22,12 @@
 #enditem
 
 #newitem
-#name "leogryph"
+#id "leogryph"
 #gameid -1
 #sprite /graphics/amazon/mounts/leogryph.png
 #armor
-#define "#size 4"
-#define "#mapmove 16"
-#define "#ap 20"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape leogryphmount"
+#define "#mountmnr 'leogryphmount'"
 #define "#gcost +40"
-#define "#ressize 2"
-#define "#enc 4"
 #description "If the rider dies, the leogryph will carry on fighting until the end of the battle."
 #basechance 0.25
 #offsety 6
@@ -56,21 +39,15 @@
 #enditem
 
 #newitem
-#name "eq_nmare"
+#id "eq_nmare"
 #gameid -1
 #offsetx 0
 #offsety 2
 #sprite /graphics/amazon/mounts/nightmare_equine.png
 #armor
 #needs overlay equine_nightmare_overlay
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 25"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
+#define "#mountmnr 'nightmare'"
 #define "#enc 15"
-#define "#fear 5"
 #define "#gcost +50"
 #tag "guaranteedprefix nightmare"
 #sacredextra 0.75
@@ -87,7 +64,7 @@
 #enditem
 
 #newitem
-#name "eq_nmare_caparison"
+#id "eq_nmare_caparison"
 #gameid -1
 #offsetx 0
 #offsety 2
@@ -95,15 +72,8 @@
 #recolormask /graphics/amazon/mounts/nightmare_equine_caparison_recolormask.png
 #armor
 #needs overlay equine_caparison_overlay
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 25"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
-#define "#rcost +5"
+#define "#mountmnr 'nightmare_equine_caparison'"
 #define "#enc 15"
-#define "#fear 5"
 #define "#gcost +50"
 #tag "guaranteedprefix nightmare"
 #sacredextra 0.75
@@ -116,21 +86,15 @@
 #enditem
 
 #newitem
-#name "eq_nmare_half-barded"
+#id "eq_nmare_half-barded"
 #gameid -1
 #offsetx 0
 #offsety 2
 #sprite /graphics/amazon/mounts/nightmare_equine_halfbarded.png
 #armor
 #needs overlay equine_halfbarded_overlay
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 25"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
+#define "#mountmnr 'nightmare_equine_halfbarded'"
 #define "#enc 15"
-#define "#fear 5"
 #define "#gcost +50"
 #tag "guaranteedprefix nightmare"
 #sacredextra 0.75
@@ -146,22 +110,16 @@
 
 
 #newitem
-#name "eq_nmare_scale1"
+#id "eq_nmare_scale1"
 #gameid -1
 #offsetx 0
 #offsety 2
 #sprite /graphics/amazon/mounts/nightmare_equine_scalebarded1.png
 #armor
 #needs overlay equine_scalebarded1_overlay
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 25"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
-#define "#rcost +5"
+#define "#mountmnr 'nightmare_equine_scalebarded'"
 #define "#enc 15"
-#define "#fear 5"
+#define "#rcost +5"
 #define "#gcost +50"
 #tag "guaranteedprefix nightmare"
 #sacredextra 0.75
@@ -176,22 +134,16 @@
 
 
 #newitem
-#name "eq_nmare_scale2"
+#id "eq_nmare_scale2"
 #gameid -1
 #offsetx 0
 #offsety 2
 #sprite /graphics/amazon/mounts/nightmare_equine_scalebarded2.png
 #armor
 #needs overlay equine_scalebarded2_overlay
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 25"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
-#define "#rcost +5"
+#define "#mountmnr 'nightmare_equine_scalebarded2'"
 #define "#enc 15"
-#define "#fear 5"
+#define "#rcost +5"
 #define "#gcost +50"
 #tag "guaranteedprefix nightmare"
 #sacredextra 0.75
@@ -204,22 +156,16 @@
 #enditem
 
 #newitem
-#name "eq_nmare_barded1"
+#id "eq_nmare_barded1"
 #gameid -1
 #offsetx 0
 #offsety 2
 #sprite /graphics/amazon/mounts/nightmare_equine_fullbarded1.png
 #armor
 #needs overlay equine_fullbarded1_overlay
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 25"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
-#define "#rcost +5"
+#define "#mountmnr 'nightmare_equine_fullbarded1'"
 #define "#enc 15"
-#define "#fear 5"
+#define "#rcost +5"
 #define "#gcost +50"
 #tag "guaranteedprefix nightmare"
 #sacredextra 0.75
@@ -232,22 +178,16 @@
 #enditem
 
 #newitem
-#name "eq_nmare_barded2"
+#id "eq_nmare_barded2"
 #gameid -1
 #offsetx 0
 #offsety 2
 #sprite /graphics/amazon/mounts/nightmare_equine_fullbarded2.png
 #armor
 #needs overlay equine_fullbarded2_overlay
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 25"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
-#define "#rcost +5"
+#define "#mountmnr 'nightmare_equine_fullbarded2'"
 #define "#enc 15"
-#define "#fear 5"
+#define "#rcost +5"
 #define "#gcost +50"
 #tag "guaranteedprefix nightmare"
 #sacredextra 0.75
@@ -260,21 +200,17 @@
 #enditem
 
 #newitem
-#name "feline_nightmare"
+#id "feline_nightmare"
 #gameid -1
 #offsetx -4
 #offsety 6
 #sprite /graphics/amazon/mounts/nightmare_feline.png
 #armor
-#define "#size 3"
+#define "#size 4"
 #define "#mapmove 20"
 #define "#ap 18"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#weapon 236 -- Claw"
-#define "#ressize 2"
+#define "#mountmnr 'nightmare_feline'"
 #define "#enc 15"
-#define "#fear 5"
 #define "#gcost +55"
 #tag "guaranteedprefix nightmare"
 #sacredextra 1
@@ -287,21 +223,14 @@
 #enditem
 
 #newitem
-#name "leogryph_nightmare"
+#id "leogryph_nightmare"
 #gameid -1
 #offsetx -4
 #offsety 6
 #sprite /graphics/amazon/mounts/nightmare_leogryph.png
 #armor
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#weapon 236 -- Claw"
-#define "#ressize 2"
+#define "#mountmnr 'nightmare_leogryphmount'"
 #define "#enc 15"
-#define "#fear 5"
 #define "#gcost +55"
 #tag "guaranteedprefix nightmare"
 #sacredextra 1

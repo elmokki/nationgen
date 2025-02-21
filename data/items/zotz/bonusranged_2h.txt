@@ -1,26 +1,26 @@
 #newitem
-#name "javelin 1"
+#id "javelin 1"
 #gameid 21
 #sprite /graphics/weapon/standard/javelin1.png
 #tag "name infantry 'Javelineer'"
 #enditem
 
 #newitem
-#name "javelin 2"
+#id "javelin 2"
 #gameid 21
 #sprite /graphics/weapon/standard/javelin2.png
 #tag "name infantry 'Javelineer'"
 #enditem
 
 #newitem -- Throwing axe
-#name "throwing axe"
+#id "throwing axe"
 #gameid 260
 #theme "primitive"
 #tag "name infantry 'Axe Thrower'"
 #enditem
 
 #newitem
-#name "obsidian darts"
+#id "obsidian darts"
 #basechance 3
 #gameid 619
 #theme "primitive"
@@ -29,7 +29,7 @@
 
 #newitem -- 2h Chakram Throwers do not render a chakram graphic
 #basechance 0.5
-#name "chakram"
+#id "chakram"
 #gameid 362
 #tag "name infantry 'Chakram Thrower'"
 #tag "tierunique"
@@ -39,7 +39,7 @@
 
 #newitem
 #basechance 6
-#name "sticksandstones"
+#id "sticksandstones"
 #gameid 360
 #basechance 0.5
 #theme "primitive"
@@ -48,7 +48,7 @@
 #enditem
 
 #newitem
-#name "harpoon"
+#id "harpoon"
 #gameid 452
 #sprite /graphics/weapon/standard/javelin1.png
 #tag "name infantry 'Harponeer'"

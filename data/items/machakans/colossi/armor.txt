@@ -1,7 +1,7 @@
 --- Primitive Pelts
 
 #newitem
-#name "bear furs"
+#id "bear furs"
 #gameid 44
 #define "#hp +4"
 #sprite /graphics/highmen/armor/furs_bear.png
@@ -15,7 +15,7 @@
 #enditem
 
 #newitem
-#name "lion furs"
+#id "lion furs"
 #gameid 44
 #define "#att +2"
 #sprite /graphics/highmen/armor/furs_lion.png
@@ -29,7 +29,7 @@
 #enditem
 
 #newitem
-#name "wolf furs"
+#id "wolf furs"
 #gameid 44
 #define "#enc -1"
 #sprite /graphics/highmen/armor/furs_wolf.png
@@ -43,7 +43,7 @@
 #enditem
 
 #newitem
-#name "boar furs"
+#id "boar furs"
 #gameid 44
 #define "#str +2"
 #sprite /graphics/highmen/armor/furs_boar.png
@@ -57,7 +57,7 @@
 #enditem
 
 #newitem
-#name "firedrake pelt"
+#id "firedrake pelt"
 #gameid 44
 #command "#fireres +10"
 #sprite /graphics/highmen/armor/furs_firedrake.png
@@ -71,7 +71,7 @@
 #enditem
 
 #newitem
-#name "icedrake pelt"
+#id "icedrake pelt"
 #gameid 44
 #command "#coldres +10"
 #sprite /graphics/highmen/armor/furs_icedrake.png
@@ -85,7 +85,7 @@
 #enditem
 
 #newitem
-#name "swampdrake pelt"
+#id "swampdrake pelt"
 #gameid 44
 #command "#poisonres +10"
 #sprite /graphics/highmen/armor/furs_swampdrake.png
@@ -99,7 +99,7 @@
 #enditem
 
 #newitem
-#name "cavedrake pelt"
+#id "cavedrake pelt"
 #gameid 44
 #command "#shockres +10"
 #sprite /graphics/highmen/armor/furs_cavedrake.png
@@ -117,7 +117,7 @@
 --- Reinforced Pelts
 
 #newitem
-#name "reinforced bear furs"
+#id "reinforced bear furs"
 #gameid 7
 #define "#hp +4"
 #sprite /graphics/highmen/armor/furs_bear.png
@@ -130,7 +130,7 @@
 #enditem
 
 #newitem
-#name "reinforced lion furs"
+#id "reinforced lion furs"
 #gameid 7
 #define "#att +2"
 #sprite /graphics/highmen/armor/furs_lion.png
@@ -143,7 +143,7 @@
 #enditem
 
 #newitem
-#name "reinforced wolf furs"
+#id "reinforced wolf furs"
 #gameid 7
 #define "#enc -1"
 #sprite /graphics/highmen/armor/furs_wolf.png
@@ -156,7 +156,7 @@
 #enditem
 
 #newitem
-#name "reinforced boar furs"
+#id "reinforced boar furs"
 #gameid 7
 #define "#str +2"
 #sprite /graphics/highmen/armor/furs_boar.png
@@ -169,7 +169,7 @@
 #enditem
 
 #newitem
-#name "reinforced firedrake pelt"
+#id "reinforced firedrake pelt"
 #gameid 7
 #command "#fireres +10"
 #sprite /graphics/highmen/armor/furs_firedrake.png
@@ -182,7 +182,7 @@
 #enditem
 
 #newitem
-#name "reinforced icedrake pelt"
+#id "reinforced icedrake pelt"
 #gameid 7
 #command "#coldres +10"
 #sprite /graphics/highmen/armor/furs_icedrake.png
@@ -195,7 +195,7 @@
 #enditem
 
 #newitem
-#name "reinforced swampdrake pelt"
+#id "reinforced swampdrake pelt"
 #gameid 7
 #command "#poisonres +10"
 #sprite /graphics/highmen/armor/furs_swampdrake.png
@@ -208,7 +208,7 @@
 #enditem
 
 #newitem
-#name "reinforced cavedrake pelt"
+#id "reinforced cavedrake pelt"
 #gameid 7
 #command "#shockres +10"
 #sprite /graphics/highmen/armor/furs_cavedrake.png
@@ -225,7 +225,7 @@
 --- Advanced Pelts
 
 #newitem
-#name "plated bear furs"
+#id "plated bear furs"
 #gameid 9
 #define "#hp +4"
 #sprite /graphics/highmen/armor/furs_bear.png
@@ -239,7 +239,7 @@
 #enditem
 
 #newitem
-#name "plated lion furs"
+#id "plated lion furs"
 #gameid 9
 #define "#att +2"
 #sprite /graphics/highmen/armor/furs_lion.png
@@ -253,7 +253,7 @@
 #enditem
 
 #newitem
-#name "plated wolf furs"
+#id "plated wolf furs"
 #gameid 9
 #define "#enc -1"
 #sprite /graphics/highmen/armor/furs_wolf.png
@@ -267,7 +267,7 @@
 #enditem
 
 #newitem
-#name "plated boar furs"
+#id "plated boar furs"
 #gameid 9
 #define "#str +2"
 #sprite /graphics/highmen/armor/furs_boar.png
@@ -281,7 +281,7 @@
 #enditem
 
 #newitem
-#name "plated firedrake pelt"
+#id "plated firedrake pelt"
 #gameid 9
 #command "#fireres +10"
 #sprite /graphics/highmen/armor/furs_firedrake.png
@@ -295,7 +295,7 @@
 #enditem
 
 #newitem
-#name "plated icedrake pelt"
+#id "plated icedrake pelt"
 #gameid 9
 #command "#coldres +10"
 #sprite /graphics/highmen/armor/furs_icedrake.png
@@ -309,7 +309,7 @@
 #enditem
 
 #newitem
-#name "plated swampdrake pelt"
+#id "plated swampdrake pelt"
 #gameid 9
 #command "#poisonres +10"
 #sprite /graphics/highmen/armor/furs_swampdrake.png
@@ -323,7 +323,7 @@
 #enditem
 
 #newitem
-#name "plated cavedrake pelt"
+#id "plated cavedrake pelt"
 #gameid 9
 #command "#shockres +10"
 #sprite /graphics/highmen/armor/furs_cavedrake.png

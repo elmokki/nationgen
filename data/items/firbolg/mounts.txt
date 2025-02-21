@@ -1,19 +1,13 @@
 #newitem
 #basechance 3
-#name "brown horse"
+#id "brown horse"
 #basechance 2
 #gameid -1
 #sprite /graphics/mounts/standard/brownhorse.png
 #armor
 #offsety 1
 #needs overlay 1
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 24"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
-#define "#enc 3"
+#define "#mountmnr 'riding-horse'"
 #define "#gcost +15"
 #tag "animal horse"
 #theme "light"
@@ -22,20 +16,13 @@
 #enditem
 
 #newitem
-#name "armored horse"
+#id "armored horse"
 #basechance 0.5
 #gameid -1
 #sprite /graphics/mounts/standard/armoredhorse1.png
 #armor
 #needs overlay 2
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 20"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#rcost +5"
+#define "#mountmnr 'armored-horse'"
 #tag "animal horse"
 #theme "heavy"
 #theme "iron"
@@ -47,19 +34,13 @@
 #enditem
 
 #newitem
-#name "armored horse bronze"
+#id "armored horse bronze"
 #basechance 0.5
 #gameid -1
 #sprite /graphics/mounts/standard/armoredhorse1a.png
 #armor
 #needs overlay armoredhorse1aoverlay
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 20"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
-#define "#enc 4"
+#define "#mountmnr 'armoredhorse1a'"
 #define "#rcost +5"
 #tag "animal horse"
 #theme "heavy"
@@ -72,20 +53,13 @@
 #enditem
 
 #newitem
-#name "armored horse 2"
+#id "armored horse 2"
 #basechance 1
 #gameid -1
 #sprite /graphics/mounts/standard/armoredhorse2.png
 #armor
 #needs overlay armoredhorse2overlay
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 20"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#rcost +5"
+#define "#mountmnr 'war-horse'"
 #tag "animal horse"
 #theme "heavy"
 #theme "bronze"
@@ -98,19 +72,13 @@
 #enditem
 
 #newitem
-#name "armored horse 2a"
+#id "armored horse 2a"
 #basechance 1
 #gameid -1
 #sprite /graphics/mounts/standard/armoredhorse2a.png
 #armor
 #needs overlay armoredhorse2overlay
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 20"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
-#define "#enc 4"
+#define "#mountmnr 'light-cataphracted-horse'"
 #define "#rcost +5"
 #tag "animal horse"
 #theme "heavy"
@@ -124,18 +92,12 @@
 #enditem
 
 #newitem
-#name "fayhorse"
+#id "fayhorse"
 #gameid -1
 #sprite /graphics/mounts/standard/fayhorse.png
 #armor
-#define "#size 3"
-#define "#mapmove 28"
-#define "#ap 28"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
+#define "#mountmnr 'fay-horse'"
 #define "#gcost +20"
-#define "#ressize 2"
-#define "#enc 3"
 #tag "animal horse"
 #tag "minprot 6"
 #tag "maxprot 16"
@@ -144,22 +106,15 @@
 #enditem
 
 #newitem
-#name "pegasus"
+#id "pegasus"
 #gameid -1
 #sprite /graphics/mounts/standard/pegasus.png
 #armor
 #offsetx 28
 #offsety 64
 #needs overlay 8
-#define "#size 4"
-#define "#mapmove 28"
-#define "#ap 22"
-#define "#mounted"
-#define "#flying"
-#define "#weapon 56 --- Hoof"
+#define "#mountmnr 'pegasus'"
 #define "#gcost +50"
-#define "#ressize 2"
-#define "#enc 4"
 #theme "flying"
 #tag "animal pegasus"
 #tag "guaranteedprefix pegasus"
@@ -169,7 +124,7 @@
 #enditem
 
 #newitem
-#name "peryton"
+#id "peryton"
 #basechance 0.25
 #gameid -1
 #sprite /graphics/mounts/standard/peryton2.png
@@ -177,15 +132,8 @@
 #armor
 #offsetx -2
 #offsety 2
-#define "#size 4"
-#define "#mapmove 28"
-#define "#ap 18"
-#define "#mounted"
-#define "#flying"
-#define "#weapon 354 --- Antlers"
+#define "#mountmnr 'peryton2'"
 #define "#gcost +50"
-#define "#ressize 2"
-#define "#enc 4"
 #theme "flying"
 #tag "animal peryton"
 #tag "name commander windlord"
@@ -194,20 +142,12 @@
 #enditem
 
 #newitem
-#name "unicorn"
+#id "unicorn"
 #gameid -1
 #sprite /graphics/mounts/standard/unicorn.png
 #armor
-#define "#size 3"
-#define "#mapmove 28"
-#define "#ap 28"
-#define "#mounted"
-#define "#weapon 330 --- Alicorn"
-#define "#weapon 56 --- Hoof"
+#define "#mountmnr 'unicorn'"
 #define "#gcost +30"
-#define "#ressize 2"
-#define "#enc 3"
-#define "#heal"
 #tag "minprot 6"
 #tag "maxprot 16"
 #tag "animal unicorn"
@@ -217,21 +157,14 @@
 #enditem
 
 #newitem
-#name "cu sidhe"
+#id "cu sidhe"
 #gameid -1
 #sprite /graphics/sidhe/mounts/cusidhe.png
 #armor
 #offsetx -5
 #offsety 2
-#define "#size 3"
-#define "#mapmove 18"
-#define "#ap 28"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
+#define "#mountmnr 'cusidhemount'"
 #define "#gcost +20"
-#define "#ressize 2"
-#define "#patrolbonus 1"
-#define "#enc 3"
 #tag "animal dog"
 #tag "guaranteedprefix 'cu sidhe'"
 #tag "maxprot 5"
@@ -241,21 +174,14 @@
 #enditem
 
 #newitem
-#name "barghest"
+#id "barghest"
 #gameid -1
 #sprite /graphics/hoburg/mounts/barghest.png
 #armor
 #offsetx -5
 #offsety 2
-#define "#size 3"
-#define "#mapmove 18"
-#define "#ap 26"
-#define "#mounted"
-#define "#weapon 447 --- Venomous Bite"
+#define "#mountmnr 'barghestmount'"
 #define "#gcost +20"
-#define "#ressize 2"
-#define "#darkpower 1"
-#define "#enc 3"
 #tag "animal dog"
 #tag "guaranteedprefix barghest"
 #tag "maxprot 5"
@@ -265,7 +191,7 @@
 #enditem
 
 #newitem
-#name "elk"
+#id "elk"
 #basechance 0.5
 #gameid -1
 #sprite /graphics/mounts/standard/elk.png
@@ -273,16 +199,9 @@
 #armor
 #offsetx -2
 #offsety 2
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 354"
+#define "#mountmnr 'elk'"
 #define "#gcost +20"
-#define "#ressize 2"
 #define "#rcost +4"
-#define "#enc 4"
-#define "#secondtmpshape elk"
 #tag "animal elk"
 #tag "minprot 0"
 #tag "maxprot 14"

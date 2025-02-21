@@ -1,5 +1,5 @@
 #newrace
-#name "Gigante"
+#id "Gigante"
 #basechance 0.1
 
 #racethemes gigante_themes
@@ -17,7 +17,7 @@
 
 #unitcommand "#gcost 35"
 #unitcommand "#rpcost 30000"
-#unitcommand "#size 4"
+#unitcommand "#size 6"
 #unitcommand "#hp 28"
 #unitcommand "#prot 3"
 #unitcommand "#str 19"
@@ -30,13 +30,14 @@
 #unitcommand "#ap 16"
 #unitcommand "#mapmove 20"
 #unitcommand "#maxage 250"
-#unitcommand "#formationfighter 2"
+#unitcommand "#formationfighter 3"
 #unitcommand "#nametype 162"
 #unitcommand "#twiceborn 3450"
 
 #extrapdmulti 0.5
 
-#gods imperialgods
+#gods imperial_gods
+#additionalgods gods_without_realm
 #forts giant_forts
 
 #mapmovepenaltyenc 7
@@ -51,6 +52,6 @@
 #theme central
 #central
 #giant
-#size4
+#size6
 
 #endrace

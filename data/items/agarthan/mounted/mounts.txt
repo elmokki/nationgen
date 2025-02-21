@@ -1,49 +1,31 @@
 
 #newitem
-#name cavegrub
+#id cavegrub
 #gameid -1
 #sprite graphics/mounts/standard/cavegrub.png
 #armor
 #offsetx 33
 #offsety -4
-#define "#size 5"
-#define "#mapmove 8"
-#define "#ap 5"
-#define "#mounted"
-#define "#weapon 603"
+#define "#mountmnr 'cavegrubmount'"
 #define "#gcost +20"
 #define "#rcost +3"
-#define "#ressize 3"
-#define "#enc 3"
-#define "#nomovepen"
 #animal 'cave grub'
 #guaranteedprefix grub
 #tag "#name commander beastmaster"
 #minprot 7
 #maxprot 20
 #sacredextra 0.5
-#define "#secondtmpshape cavegrubmount"
 #description "The cave grub will fight until the end of the battle should the rider die"
 #enditem
 
 #newitem
-#name "cavecow"
+#id "cavecow"
 #gameid -1
 #basechance 0.1
 #sprite /graphics/mounts/standard/cavecow.png
 #armor
-#define "#size 5"
-#define "#mapmove 8"
-#define "#ap 8"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#weapon 599 -- Corrosive bite"
-#define "#secondtmpshape cavecowmount"
+#define "#mountmnr 'cavecowmount'"
 #define "#gcost +30"
-#define "#prot +2"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#nomovepen"
 #description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
 #offsetx -6
 #offsety -10
@@ -54,23 +36,14 @@
 
 
 #newitem
-#name "cave drake"
+#id "cave drake"
 #gameid -1
 #sprite /graphics/mounts/standard/cavedrake.png
 #armor
 #offsety -6
 #offsetx 9
-#define "#size 5"
-#define "#mapmove 8"
-#define "#ap 7"
-#define "#mounted"
-#define "#weapon 417 --- Bite"
-#define "#secondshape cavedrake"
+#define "#mountmnr 'cavedrake'"
 #define "#gcost +70"
-#define "#ressize 2"
-#define "#rcost +5"
-#define "#enc 4"
-#define "#nomovepen"
 #tag "animal drake"
 #theme "specialmount"
 #description "The cave drake will persist even if the rider dies."

@@ -1,6 +1,6 @@
 
 #newrace
-#name "Pale One"
+#id "Pale One"
 #basechance 0.3
 
 #racethemes agarthan_themes
@@ -14,7 +14,7 @@
 
 #subterranean
 #amphibian
-#size3
+#size6
 
 #all_troops_elite
 
@@ -40,7 +40,7 @@
 #unitcommand "#siegebonus 2"
 #unitcommand "#darkvision 100"
 #unitcommand "#eyes 1"
-#unitcommand "#size 3"
+#unitcommand "#size 4"
 #unitcommand "#startage 75"
 #unitcommand "#maxage 400"
 #unitcommand "#nametype 100"
@@ -55,7 +55,8 @@
 #nationcommand "#uwbuild 1"
 #nationcommand "#riverstart"
 
-#gods agarthagods
+#gods agartha_gods
+#additionalgods gods_without_realm
 
 #secondaryracecommand_conditional "#darkvision +50"
 

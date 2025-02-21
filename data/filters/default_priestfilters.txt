@@ -1,5 +1,5 @@
 #new magefilter
-#name "awe"
+#id "awe"
 #basechance 0.1
 #command "#awe +1"
 #chanceinc "personalmagic astral 0.5"
@@ -10,7 +10,7 @@
 #end
 
 #new magefilter
-#name "stealthy"
+#id "stealthy"
 #basechance 0.2
 #command "#stealthy +10"
 #command "#gcost +20"
@@ -20,7 +20,7 @@
 #end
 
 #new magefilter
-#name "divineins researcher 3"
+#id "divineins researcher 3"
 #type "divineins"
 #basechance 0.25
 #command "#divineins"
@@ -29,7 +29,7 @@
 #end
 
 #new magefilter
-#name "divineins researcher 5"
+#id "divineins researcher 5"
 #type "divineins"
 #basechance 0.5
 #command "#divineins"
@@ -39,7 +39,7 @@
 #end
 
 #new magefilter
-#name "divineins researcher sloth 1-1"
+#id "divineins researcher sloth 1-1"
 #type "divineins"
 #basechance 0.5
 #command "#divineins"
@@ -50,7 +50,7 @@
 
 
 #new magefilter
-#name "spy"
+#id "spy"
 #basechance 0.25
 #command "#stealthy +10"
 #command "#spy"
@@ -63,7 +63,7 @@
 #end
 
 #new magefilter
-#name "sailing"
+#id "sailing"
 #basechance 0.25
 #command "#sailing"
 #chanceinc "personalmagic air 0.35"
@@ -72,7 +72,7 @@
 #end
 
 #new magefilter
-#name "nobadevents 20"
+#id "nobadevents 20"
 #type badevents
 #basechance 0.25
 #command "#nobadevents +20"
@@ -83,7 +83,7 @@
 #end
 
 #new magefilter
-#name "nobadevents 10"
+#id "nobadevents 10"
 #type badevents
 #basechance 0.25
 #command "#nobadevents +10"
@@ -93,7 +93,7 @@
 #end
 
 #new magefilter
-#name "nobadevents 5"
+#id "nobadevents 5"
 #type badevents
 #basechance 0.5
 #command "#nobadevents +5"
@@ -101,7 +101,7 @@
 #end
 
 #new magefilter
-#name "inquisitor"
+#id "inquisitor"
 #type inquisitor
 #basechance 0.5
 #command "#inquisitor"
@@ -110,7 +110,7 @@
 #end
 
 #new
-#name "autodishealer 1"
+#id "autodishealer 1"
 #basechance 0.05
 #type "healer"
 #command "#autodishealer 1"
@@ -119,7 +119,7 @@
 #end
 
 #new
-#name "autodishealer 3"
+#id "autodishealer 3"
 #basechance 0.0125
 #type "healer"
 #command "#autodishealer 3"
@@ -129,7 +129,7 @@
 #end
 
 #new magefilter
-#name "elegist 1"
+#id "elegist 1"
 #basechance 0
 #chanceinc "personalmagic nature 0.15"
 #chanceinc "personalmagic holy 0.8"
@@ -140,7 +140,7 @@
 #end
 
 #new magefilter
-#name "elegist 2"
+#id "elegist 2"
 #basechance 0
 #chanceinc "personalmagic nature 0.15"
 #chanceinc "personalmagic holy 0.8"
@@ -150,7 +150,7 @@
 #end
 
 #new magefilter
-#name "elegist 3"
+#id "elegist 3"
 #basechance 0
 #chanceinc "personalmagic nature 0.15"
 #chanceinc "personalmagic holy 0.8"
@@ -162,7 +162,7 @@
 #end
 
 #new magefilter
-#name "healer 1"
+#id "healer 1"
 #basechance 0.1
 #chanceinc "personalmagic nature 0.15"
 #chanceinc "personalmagic holy 0.15"
@@ -174,7 +174,7 @@
 #end
 
 #new magefilter
-#name "healer 2"
+#id "healer 2"
 #basechance 0.1
 #chanceinc "personalmagic nature 0.15"
 #chanceinc "personalmagic holy 0.15"
@@ -187,7 +187,7 @@
 #end
 
 #new magefilter
-#name "healer 3"
+#id "healer 3"
 #basechance 0.05
 #chanceinc "personalmagic holy 0.05"
 #chanceinc "personalmagic nature 0.05"
@@ -200,7 +200,7 @@
 #end
 
 #new
-#name "comslave"
+#id "comslave"
 #command "#comslave"
 #command "#gcost +15"
 #unitname "Communicant"
@@ -217,7 +217,7 @@
 #end
 
 #new magefilter
-#name "reanimator"
+#id "reanimator"
 #basechance 0
 #command "#reanimpriest 1"
 #command "#gcost +40"
@@ -230,7 +230,7 @@
 #end
 
 #new magefilter
-#name "demagogue 30"
+#id "demagogue 30"
 #type "leadership"
 #basechance 0
 #chanceinc "personalcommand #poorleader 0.1"
@@ -239,7 +239,7 @@
 #end
 
 #new magefilter
-#name "demagogue 40-1"
+#id "demagogue 40-1"
 #type "leadership"
 #basechance 0
 #chanceinc "personalcommand #okleader 0.05"
@@ -252,7 +252,7 @@
 #end
 
 #new magefilter
-#name "demagogue 40"
+#id "demagogue 40"
 #type "leadership"
 #basechance 0
 #chanceinc "personalcommand #okleader 0.1"
@@ -265,7 +265,7 @@
 #end
 
 #new magefilter
-#name "demagogue 40+1"
+#id "demagogue 40+1"
 #type "leadership"
 #basechance 0
 #chanceinc "personalcommand #okleader 0.05"
@@ -280,7 +280,7 @@
 #end
 
 #new magefilter
-#name "demagogue 80"
+#id "demagogue 80"
 #type "leadership"
 #basechance 0
 #chanceinc "personalcommand #okleader 0.05"
@@ -293,7 +293,7 @@
 #end
 
 #new magefilter
-#name "charismatic 1"
+#id "charismatic 1"
 #type "leadership"
 #basechance 0
 #chanceinc "personalcommand #poorleader 0.1"
@@ -307,7 +307,7 @@
 #end
 
 #new magefilter
-#name "charismatic 2"
+#id "charismatic 2"
 #type "leadership"
 #basechance 0
 #chanceinc "personalcommand #poorleader 0.05"

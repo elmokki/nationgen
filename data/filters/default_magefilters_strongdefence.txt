@@ -1,6 +1,6 @@
 
 #new magefilter
-#name "invulnerable10"
+#id "invulnerable10"
 #basechance 0.25
 #command "#invulnerable 10"
 #power 2
@@ -8,7 +8,7 @@
 #end
 
 #new magefilter
-#name "invulnerable20"
+#id "invulnerable20"
 #basechance 0.125
 #command "#invulnerable 20"
 #power 3
@@ -16,7 +16,7 @@
 #end
 
 #new magefilter
-#name "majorfireres"
+#id "majorfireres"
 #basechance 0.1
 #command "#fireres +10"
 #chanceinc "personalmagic fire 0.75"
@@ -25,7 +25,7 @@
 #end
 
 #new magefilter
-#name "majorpoisonres"
+#id "majorpoisonres"
 #basechance 0.1
 #command "#poisonres +10"
 #chanceinc "personalmagic nature 0.75"
@@ -33,7 +33,7 @@
 #end
 
 #new magefilter
-#name "majorshockres"
+#id "majorshockres"
 #basechance 0.1
 #command "#shockres +10"
 #chanceinc "personalmagic air 0.75"
@@ -41,7 +41,7 @@
 #end
 
 #new magefilter
-#name "majorcoldres"
+#id "majorcoldres"
 #basechance 0.1
 #command "#coldres +10"
 #chanceinc "personalmagic water 0.75"
@@ -50,21 +50,21 @@
 #end
 
 #new magefilter
-#name "illusion"
+#id "glamour"
 #basechance 0.0
-#command "#illusion"
+#command "#glamour"
 #command "#stealthy +0"
 #command "#gcost *1.05"
-#primarycommand #illusion
+#primarycommand #glamour
 #chanceinc "personalmagic air 2"
 #power 2
 #tag "personalmagic air"
 #chanceinc "race vanir -20"
-#filterdesc "illusion desc"
+#filterdesc "glamour desc"
 #end
 
 #new magefilter
-#name "ethereal"
+#id "ethereal"
 #basechance 0.1
 #command "#ethereal"
 #command "#gcost +20"
@@ -76,7 +76,7 @@
 #end
 
 #new magefilter
-#name "ethereal2"
+#id "ethereal2"
 #basechance 0.33
 #command "#ethereal"
 #command "#gcost +20"
@@ -90,7 +90,7 @@
 #end
 
 #new magefilter
-#name "awe"
+#id "awe"
 #basechance 0.4
 #command "#awe +1"
 #chanceinc "personalmagic astral 0.4"
@@ -102,7 +102,7 @@
 #end
 
 #new magefilter
-#name "sun awe"
+#id "sun awe"
 #basechance 0.1
 #command "#sunawe +1"
 #chanceinc personalmagic astral OR personalmagic fire 0.4
@@ -116,7 +116,7 @@
 #end
 
 #new magefilter
-#name "fear"
+#id "fear"
 #basechance 0.2
 #command "#fear +5"
 #chanceinc "personalmagic death 0.8"
@@ -126,7 +126,7 @@
 #end
 
 #new magefilter
-#name "regeneration"
+#id "regeneration"
 #basechance 0.1
 #command "#regeneration 10"
 #chanceinc "personalmagic nature 1"

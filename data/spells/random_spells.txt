@@ -1,11 +1,11 @@
 #new
 #basechance 1
-#name "No spells"
+#id "No spells"
 #end
 
 -------- Blood
 #new
-#name "Orgy"
+#id "Orgy"
 #spell "Orgy"
 #basechance 0.0
 #chanceinc anymagic nature 0.125
@@ -17,14 +17,14 @@
 #end
 
 #new
-#name "Bind Harlequin"
+#id "Bind Harlequin"
 #spell "Bind Harlequin"
 #basechance 0.25
 #chanceinc anymagic not blood *0
 #end
 
 #new
-#name "Sanguine Heritage"
+#id "Sanguine Heritage"
 #spell "Sanguine Heritage"
 #basechance 0
 #chanceinc magic blood 0.025
@@ -35,7 +35,7 @@
 #end
 
 #new
-#name "Reascendance"
+#id "Reascendance"
 #spell "Reascendance"
 #basechance 0
 #chanceinc anymagic blood 0.025
@@ -46,7 +46,7 @@
 
 -------- Death
 #new
-#name "Ancestors"
+#id "Ancestors"
 #spell "Wrath of the Ancestors"
 #spell "Call Ancestor"
 #basechance 0.125
@@ -58,7 +58,7 @@
 #end
 
 #new
-#name "Evil Dogs"
+#id "Evil Dogs"
 #spell "Summon Black Dogs"
 #spell "Summon Barghests"
 #basechance 0
@@ -70,7 +70,7 @@
 #end
 
 #new
-#name "Morrigans"
+#id "Morrigans"
 #spell "Summon Morrigan"
 #spell "Dance of the Morrigans"
 #basechance 0
@@ -88,7 +88,7 @@
 -------- Earth
 
 #new
-#name "Contact Scorpion Man"
+#id "Contact Scorpion Man"
 #spell "Contact Scorpion Man"
 #basechance 0.1
 #chanceinc anymagic fire *2
@@ -99,7 +99,7 @@
 
 
 #new
-#name "Reawaken Fossil"
+#id "Reawaken Fossil"
 #spell "Reawaken Fossil"
 #basechance 0.05
 #chanceinc magic earth *2
@@ -110,7 +110,7 @@
 
 #new
 #basechance 0
-#name "Iron Blizzard"
+#id "Iron Blizzard"
 #spell "Iron Darts"
 #spell "Iron Blizzard"
 #chanceinc magewithpaths earth holy 0.05
@@ -127,7 +127,7 @@
 -------- Sounder of Boars is specified by number to avoid the unresearchable combat summon effect earlier in the spell list
 -------- This bugs. Removing sounder.
 #new
-#name "Monster Boar"
+#id "Monster Boar"
 #spell "Monster Boar"
 #basechance 0.5
 #chanceinc hasthemetheme boreal *2
@@ -136,7 +136,7 @@
 #end
 
 #new
-#name "Herd of Elephants"
+#id "Herd of Elephants"
 #spell "Herd of Elephants"
 #basechance 0.05
 #chanceinc magic nature *10
@@ -146,7 +146,7 @@
 #end
 
 #new
-#name "Ambush of Tigers"
+#id "Ambush of Tigers"
 #spell "Ambush of Tigers"
 #basechance 0.05
 #chanceinc magic nature *10
@@ -159,7 +159,7 @@
 
 --- Fire
 #new
-#name "Holy Pyre"
+#id "Holy Pyre"
 #spell "Holy Pyre"
 #basechance 0.05
 #chanceinc magic fire *5
@@ -171,7 +171,7 @@
 
 --- Astral
 #new
-#name "Heavenly Wrath"
+#id "Heavenly Wrath"
 #spell "Heavenly Wrath"
 #basechance 0.025
 #chanceinc magic fire *2
@@ -181,7 +181,7 @@
 #end
 
 #new
-#name "Pile of Angels"
+#id "Pile of Angels"
 #spell "Angelic Host"
 #spell "Contact Harbinger"
 #spell "Heavenly Choir"
@@ -195,7 +195,7 @@
 
 --- Water
 #new
-#name "Living Mercury"
+#id "Living Mercury"
 #spell "Living Mercury"
 #basechance 0.025
 #chanceinc magic water *2
@@ -207,7 +207,7 @@
 
 --- Holy
 #new
-#name "LA Ctis holy stuff"
+#id "LA Ctis holy stuff"
 #spell "Power of the Grave"
 #spell "Protection of the Grave"
 #spell "Royal Power"
@@ -223,7 +223,7 @@
 --- Custom spells
 #new
 #basechance 0
-#name "Earth Communion"
+#id "Earth Communion"
 #spell "Reader of Earth"
 #spell "Supplicant of Earth"
 #chanceinc primaryrace "Pale One" 0.125
@@ -235,7 +235,7 @@
 
 #new
 #basechance 0
-#name "Accelerated Breeding"
+#id "Accelerated Breeding"
 #spell "Accelerated Breeding"
 #spell "Improved Accelerated Breeding"
 #chanceinc primaryrace "Foulspawn" 0.5

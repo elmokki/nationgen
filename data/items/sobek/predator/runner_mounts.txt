@@ -1,22 +1,12 @@
 
 
 #newitem
-#name "crocodile"
+#id "crocodile"
 #gameid -1
 #sprite /graphics/mounts/standard/crocodile_mount.png
 #armor
-#define "#size 3"
-#define "#mapmove 1"
-#define "#ap 8"
-#define "#sailing 3 3"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#weapon tailswipe_nostr"
+#define "#mountmnr 'crocodilemount'"
 #define "#gcost +10"
-#define "#ressize 2"
-#define "#enc 3"
-#define "#swampsurvival"
-#define "#secondtmpshape crocodilemount"
 #description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
 #tag "animal crocodile"
 #theme "light"
@@ -27,25 +17,14 @@
 #enditem
 
 #newitem
-#name "armored crocodile"
+#id "armored crocodile"
 #gameid -1
 #basechance 0.25
 #sprite /graphics/mounts/standard/crocodile_mount_armored.png
 #recolormask /graphics/mounts/standard/crocodile_mount_armored_recolormask.png
 #armor
-#define "#size 3"
-#define "#mapmove 1"
-#define "#ap 7"
-#define "#sailing 3 3"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#weapon tailswipe_nostr"
+#define "#mountmnr 'crocodilemount2'"
 #define "#gcost +10"
-#define "#rcost +13" -- Mail barding
-#define "#ressize 2"
-#define "#enc 3"
-#define "#swampsurvival"
-#define "#secondtmpshape crocodilemount2"
 #description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
 #tag "animal crocodile"
 #theme "heavy"

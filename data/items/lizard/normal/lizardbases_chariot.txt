@@ -1,29 +1,22 @@
 --- Base offsets are applied to everything except base and overlay
 #newitem
-#name "horse"
+#id "horse"
 #gameid -1
 #sprite /graphics/mounts/chariots/horse.png
 #armor
 #needs overlay 10
 #offsetx 51
 #offsety -7
-#define "#trample"
-#define "#size 4"
-#define "#prot +4"
-#define "#mounted"
-#define "#mapmove 20"
-#define "#ap 18"
+#define "#mountmnr 'horse-chariot'"
 #define "#gcost +20"
 #define "#rcost +10"
-#define "#ressize 2"
-#define "#nomovepen"
 #tag "animal 'horse'"
 #basechance 0.25
 #tag chariot
 #enditem
 
 #newitem
-#name "bronze horse"
+#id "bronze horse"
 #gameid -1
 #sprite /graphics/mounts/chariots/horse_bronze.png
 #armor
@@ -31,23 +24,16 @@
 #needs overlay 11
 #offsetx 52
 #offsety -6
-#define "#trample"
-#define "#size 4"
-#define "#prot +4"
-#define "#mounted"
-#define "#mapmove 20"
-#define "#ap 18"
+#define "#mountmnr 'horse-chariot'"
 #define "#gcost +20"
 #define "#rcost +10"
-#define "#ressize 2"
-#define "#nomovepen"
 #tag "animal 'horse'"
 #basechance 0.25
 #tag chariot
 #enditem
 
 #newitem
-#name "camel chariot (iron)"
+#id "camel chariot (iron)"
 #basechance 0.75
 #gameid -1
 #sprite /graphics/mounts/chariots/camel.png
@@ -55,28 +41,16 @@
 #needs overlay chariot_camel_iron
 #offsetx 63
 #offsety -7
-#define "#trample"
-#define "#mounted"
-#define "#weapon nostr_kick_12"
-#define "#size 4"
-#define "#prot 5"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#ressize 2"
+#define "#mountmnr 'chariot_camel_iron'"
 #define "#gcost +25"
 #define "#rcost +10"
-#define "#enc 4"
-#define "#unsurr 1"
-#define "#nomovepen"
-#define "#supplybonus +1"
-#define "#wastesurvival"
 #tag "chariot"
 #tag "animal 'camel'"
 #theme "iron"
 #enditem
 
 #newitem
-#name "camel chariot (bronze)"
+#id "camel chariot (bronze)"
 #basechance 0.75
 #gameid -1
 #sprite /graphics/mounts/chariots/camel.png
@@ -84,43 +58,23 @@
 #needs overlay chariot_camel_bronze
 #offsetx 63
 #offsety -7
-#define "#trample"
-#define "#mounted"
-#define "#weapon nostr_kick_12"
-#define "#size 4"
-#define "#prot 5"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#ressize 2"
+#define "#mountmnr 'chariot_camel_iron'"
 #define "#gcost +25"
 #define "#rcost +10"
-#define "#enc 4"
-#define "#unsurr 1"
-#define "#nomovepen"
-#define "#supplybonus +1"
-#define "#wastesurvival"
 #tag "chariot"
 #tag "animal 'camel'"
 #theme "bronze"
 #enditem
 
 #newitem
-#name "lizard"
+#id "lizard"
 #gameid -1
 #sprite /graphics/mounts/chariots/lizard.png
 #armor
 #needs overlay 12
 #offsetx 53
 #offsety -7
-#define "#trample"
-#define "#size 4"
-#define "#prot +4"
-#define "#weapon nostr_bite_10" -- Bite
-#define "#mapmove 20"
-#define "#mounted"
-#define "#ap 16"
-#define "#unsurr 1"
-#define "#nomovepen"
+#define "#mountmnr 'chariot_lizard'"
 #define "#gcost +20"
 #define "#rcost +10"
 #tag "animal 'lizard'"
@@ -130,23 +84,16 @@
 
 
 #newitem
-#name "boar chariot"
+#id "boar chariot"
 #gameid -1
 #sprite /graphics/mounts/chariots/boar.png
 #armor
 #needs overlay 10
 #offsetx 51
 #offsety -7
-#define "#trample"
-#define "#size 4"
-#define "#prot +4"
-#define "#mapmove 20"
-#define "#mounted"
-#define "#ap 18"
+#define "#mountmnr 'chariot_boar'"
 #define "#gcost +20"
 #define "#rcost +10"
-#define "#unsurr 1"
-#define "#nomovepen"
 #tag "animal 'boar'"
 #basechance 0.05
 #tag chariot

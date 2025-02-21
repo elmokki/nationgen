@@ -1,6 +1,6 @@
 -- Generic theme with high diversity and low cohesion
 #newtheme
-#name default
+#id default
 #basechance 4
 #endtheme
 
@@ -9,7 +9,7 @@
 -- Weights: EA 1.5, MA 0.5, LA 0.25
 #newtheme
 #type techlevel
-#name feral
+#id feral
 #basechance 0.5
 #chanceinc era 3 -0.25
 #chanceinc era 1 +1
@@ -46,7 +46,7 @@
 -- Weights: EA 1, MA 1, LA 0.5
 #newtheme
 #type techlevel
-#name agrarian
+#id agrarian
 #basechance 1
 #chanceinc era 3 -0.5
 #chanceinc primaryrace 'Advanced human' *0.5
@@ -79,7 +79,7 @@
 -- Weights: EA 0.10, MA 1, LA 2
 #newtheme
 #type techlevel
-#name traditional
+#id traditional
 #basechance 0.10
 #chanceinc era 3 1.9
 #chanceinc era 2 0.9
@@ -106,7 +106,7 @@
 -- Weights: EA 0.025, MA 0.3, LA 1
 #newtheme
 #type techlevel
-#name industrial
+#id industrial
 #basechance 0.025
 #chanceinc era 3 *40
 #chanceinc era 2 *12
@@ -145,7 +145,7 @@
 -- Weights: feral 1, agrarian 4, traditional 4, industrial 4
 #newtheme
 #type cultural
-#name boreal
+#id boreal
 #theme boreal
 #basechance 4
 #chanceinc racetheme feral *0.25
@@ -160,7 +160,7 @@
 #themeinc theme primitive *1
 #themeinc theme boreal *1000
 #racedefinition "#nationcommand '#idealcold +1'"
-#racedefinition "#gods europegods"
+#racedefinition "#gods europe_gods"
 #racedefinition "#boreal"
 #endtheme
 
@@ -168,7 +168,7 @@
 -- Weights: feral 0.5, agrarian 1, traditional 2, industrial 4
 #newtheme
 #type cultural
-#name oriental
+#id oriental
 #theme oriental
 #basechance 1
 #chanceinc racetheme feral *0.5
@@ -191,7 +191,7 @@
 #racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 134'"
-#racedefinition "#gods easterngods"
+#racedefinition "#gods eastern_gods"
 #racedefinition "#oriental"
 #racedefinition "#forts default_forts"
 #racedefinition "#forts city_forts"
@@ -201,7 +201,7 @@
 -- Weights: feral 4, agrarian 2, traditional 0.5, industrial 0.25
 #newtheme
 #type cultural
-#name occidental
+#id occidental
 #theme occidental
 #basechance 1
 #chanceinc racetheme feral *4
@@ -225,7 +225,7 @@
 #racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 123'"
 #racedefinition "#nationcommand '#idealcold -1'"
-#racedefinition "#gods westerngods"
+#racedefinition "#gods western_gods"
 #racedefinition "#nationcommand '#likespop 82'"
 #racedefinition "#bonussacreds 2"
 #racedefinition "#occidental"
@@ -237,7 +237,7 @@
 -- Weights: feral 1, agrarian 3, traditional 3, industrial 1
 #newtheme
 #type cultural
-#name austral
+#id austral
 #theme austral
 #basechance 1
 #chanceinc racetheme feral *1
@@ -263,7 +263,7 @@
 #racedefinition "#pose hoburgcolossi"
 #racedefinition "#unitcommand '#nametype 126'"
 #racedefinition "#nationcommand '#idealcold -1'"
-#racedefinition "#gods southerngods"
+#racedefinition "#gods southern_gods"
 #racedefinition "#nationcommand '#likespop 80'"
 #racedefinition "#austral"
 #racedefinition "#forts default_forts"
@@ -274,7 +274,7 @@
 -- Weights: feral 0.25, agrarian 4, traditional 2, industrial 0.25
 #newtheme
 #type cultural
-#name central
+#id central
 #theme central
 #basechance 1
 #chanceinc racetheme feral *0.25
@@ -299,7 +299,7 @@
 #racedefinition "#longsyllables /data/names/nations/amazon/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/amazon/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 107'"
-#racedefinition "#gods imperialgods"
+#racedefinition "#gods imperial_gods"
 #racedefinition "#central"
 #endtheme
 
@@ -307,7 +307,7 @@
 -- Weights: feral 0.25, agrarian 3, traditional 3, industrial 0.25
 #newtheme
 #type cultural
-#name imperial
+#id imperial
 #theme imperial
 #basechance 1
 #chanceinc racetheme feral *0.25
@@ -332,7 +332,7 @@
 #racedefinition "#longsyllables /data/names/nations/romance/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/romance/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 106'"
-#racedefinition "#gods imperialgods"
+#racedefinition "#gods imperial_gods"
 #racedefinition "#tag 'preferredmount wolf'"
 #racedefinition "#imperial"
 #racedefinition "#extrapdmulti 5"
@@ -342,7 +342,7 @@
 -- Weights: feral 0.25, agrarian 6, traditional 2, industrial 0.25
 #newtheme
 #type cultural
-#name civilized
+#id civilized
 #theme civilized
 #basechance 1
 #chanceinc racetheme feral *0.25
@@ -371,8 +371,9 @@
 #racedefinition "#shortsyllables /data/names/nations/avvite/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 149'"
 #racedefinition "#nationcommand '#idealcold -2'"
+#racedefinition "#nationcommand '#moreheat 1'"
 #racedefinition "#generateitem 1 beard"
-#racedefinition "#gods levantinegods"
+#racedefinition "#gods levantine_gods"
 #racedefinition "#generationchance chariot 0.5"
 #racedefinition "#generationchance mounted 0.05"
 #racedefinition "#civilized"
@@ -382,7 +383,7 @@
 -- Weights: feral 0.5, agrarian 1, traditional 2, industrial 2
 #newtheme
 #type cultural
-#name abysian
+#id abysian
 #theme abysian
 #basechance 1
 #chanceinc racetheme feral *0.5
@@ -403,6 +404,7 @@
 #racedefinition "#shortsyllables /data/names/nations/abysian/shortsyllables.txt"
 #racedefinition "#unitcommand '#nametype 101'"
 #racedefinition "#nationcommand '#idealcold -2'"
+#racedefinition "#nationcommand '#moreheat 1'"
 #racedefinition "#nationcommand '#likespop 94'"
 #racedefinition "#magicpriority nature 1"
 #racedefinition "#magicpriority water 0.1"
@@ -416,7 +418,7 @@
 -- Weights: feral 1, agrarian 1, traditional 0.25, industrial 0.05
 #newtheme
 #type social
-#name cavemen_allies
+#id cavemen_allies
 #basechance 0.5
 #chanceinc racetheme feral *2
 #chanceinc racetheme agrarian *2
@@ -429,7 +431,7 @@
 -- Weights: feral 1, agrarian 0.5, traditional 0.0625, industrial 0.025
 #newtheme
 #type social
-#name fae
+#id fae
 #basechance 0.25
 #chanceinc racetheme feral *4
 #chanceinc racetheme agrarian *2
@@ -461,7 +463,7 @@
 #racedefinition "#unitcommand '#maxage *2'"
 #racedefinition "#unitcommand '#darkvision 50'"
 #racedefinition "#unitcommand '#forestsurvival'"
-#racedefinition "#unitcommand '#illusion'"
+#racedefinition "#unitcommand '#glamour'"
 #racedefinition "#unitcommand '#ironvul 1'"
 #racedefinition "#unitcommand '#spellsinger'"
 #racedefinition "#unitcommand '#nametype 142'"
@@ -470,7 +472,7 @@
 -- Weights: feral 0.01, agrarian 0.2, traditional 0.2, industrial 0.4
 #newtheme
 #type social
-#name lesser_golem_cult
+#id lesser_golem_cult
 #basechance 0.1
 #chanceinc racetheme primitive *0.1
 #chanceinc racetheme agrarian *2
@@ -484,7 +486,7 @@
 -- Weights: feral 0.005, agrarian 0.1, traditional 0.1, industrial 0.2
 #newtheme
 #type social
-#name greater_golem_cult
+#id greater_golem_cult
 #basechance 0.05
 #chanceinc racetheme primitive *0.1
 #chanceinc racetheme agrarian *2
@@ -498,7 +500,7 @@
 -- Weights: feral 0.01, agrarian 0.01, traditional 0.05, industrial 0.1
 #newtheme
 #type social
-#name slaver
+#id slaver
 #basechance 0.01
 #chanceinc racetheme traditional *5
 #chanceinc racetheme industrial *10
@@ -526,7 +528,7 @@
 -- Weights: feral 0.25, agrarian 0.5, traditional 0, industrial 0
 #newtheme
 #type social
-#name podslaver
+#id podslaver
 ---- #basechance 0.25
 #basechance 0.001
 #chanceinc racetheme agrarian *2
@@ -563,7 +565,7 @@
 -- Weights: feral 0.5, agrarian 0.5, traditional 0, industrial 0
 #newtheme
 #type social
-#name vinegrower
+#id vinegrower
 ---- #basechance 0.5
 #basechance 0.001
 #chanceinc racetheme traditional *0

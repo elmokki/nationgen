@@ -1,6 +1,6 @@
 -- Generic theme with high diversity and low cohesion
 #newtheme
-#name default
+#id default
 #basechance 4
 #endtheme
 
@@ -9,7 +9,7 @@
 -- Weights: EA 1, MA 1, LA 0.5
 #newtheme
 #type techlevel
-#name primitive
+#id primitive
 #basechance 1
 #chanceinc era 3 -0.5
 #themeinc theme advanced *0.05
@@ -24,7 +24,7 @@
 -- Weights: EA 2, MA 1, LA 0.5
 #newtheme
 #type techlevel
-#name bronze
+#id bronze
 #basechance 2
 #chanceinc era 2 -1
 #chanceinc era 3 -1.5
@@ -41,7 +41,7 @@
 -- Weights: EA 0.5, MA 2, LA 1
 #newtheme
 #type techlevel
-#name iron
+#id iron
 #basechance 1
 #chanceinc era 1 -0.5
 #chanceinc era 2 +1.5
@@ -57,7 +57,7 @@
 -- Weights: EA 0.25, MA 1, LA 2
 #newtheme
 #type techlevel
-#name advanced
+#id advanced
 #basechance 0.25
 #chanceinc era 3 1.75
 #chanceinc era 2 0.75
@@ -76,7 +76,7 @@
 -- Demographic themes
 #newtheme
 #type demographic
-#name matriarchal
+#id matriarchal
 #basechance 2.5
 #racedefinition "#raceprefix amazon"
 #racedefinition "#pose amazoninfantry"
@@ -108,7 +108,7 @@
 
 #newtheme
 #type demographic
-#name lamia
+#id lamia
 -- #basechance 0.125
 #basechance 0.5
 #racedefinition "#visiblename Lamia"
@@ -128,7 +128,7 @@
 -- Weights: EA 0.5, MA 1, LA 3
 #newtheme
 #type tribal
-#name non-tribal
+#id non-tribal
 #basechance 2
 #chanceinc era 1 -1.5
 #chanceinc era 2 -1
@@ -147,7 +147,7 @@
 -- Weights: EA 2, MA 1, LA 0.5
 #newtheme
 #type tribal
-#name crystal
+#id crystal
 #basechance 2
 #chanceinc era 2 -1
 #chanceinc era 3 -1.5
@@ -172,7 +172,7 @@
 -- Weights: EA 2, MA 1, LA 0.5
 #newtheme
 #type tribal
-#name garnet
+#id garnet
 #basechance 2
 #chanceinc era 2 -1
 #chanceinc era 3 -1.5
@@ -203,7 +203,7 @@
 -- Weights: EA 2, MA 1, LA 0.5
 #newtheme
 #type tribal
-#name jade
+#id jade
 #basechance 2
 #chanceinc era 2 -1
 #chanceinc era 3 -1.5
@@ -227,7 +227,7 @@
 -- Weights: EA 2, MA 1, LA 0.5
 #newtheme
 #type tribal
-#name onyx
+#id onyx
 #basechance 2
 #chanceinc era 2 -1
 #chanceinc era 3 -1.5
@@ -251,7 +251,7 @@
 -- Weights: EA 1, MA 0.25, LA 0.125
 #newtheme
 #type tribal
-#name deer
+#id deer
 #basechance 1
 #chanceinc era 2 -0.75
 #chanceinc era 3 -0.875
@@ -282,7 +282,7 @@
 -- Weights: EA 1, MA 0.25, LA 0.125
 #newtheme
 #type tribal
-#name bear
+#id bear
 #basechance 1
 #chanceinc era 2 -0.75
 #chanceinc era 3 -0.875
@@ -313,7 +313,7 @@
 -- Weights: EA 1, MA 0.25, LA 0.125
 #newtheme
 #type tribal
-#name wolf
+#id wolf
 #basechance 1
 #chanceinc era 2 -0.75
 #chanceinc era 3 -0.875
@@ -344,7 +344,7 @@
 -- Weights: EA 1, MA 0.25, LA 0.125
 #newtheme
 #type tribal
-#name lion
+#id lion
 #basechance 1
 #chanceinc era 2 -0.75
 #chanceinc era 3 -0.875
@@ -380,7 +380,7 @@
 -- Weights: EA 0.5, MA 0.5, LA 0.5
 #newtheme
 #type social
-#name slaver
+#id slaver
 #basechance 0.5
 #themeinc theme advanced *1
 #themeinc theme iron *1

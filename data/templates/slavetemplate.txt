@@ -1,6 +1,6 @@
 
 #new
-#name "slave"
+#id "slave"
 #type slave
 #command "#slave"
 #command "#gcost *0.9"
@@ -11,7 +11,7 @@
 #end
 
 #new
-#name "serf"
+#id "serf"
 #type serf
 #command "#gcost *0.8"
 #command "#mor -2"
@@ -24,7 +24,7 @@
 #end
 
 #new
-#name "podslave"
+#id "podslave"
 #type podslave
 #basechance 0.001
 #command "#gcost *0.75"
@@ -46,7 +46,7 @@
 #end
 
 #new
-#name "lobo"
+#id "lobo"
 #type lobo
 #basechance 0.001
 #command "#gcost *0.5"
@@ -67,7 +67,7 @@
 #end
 
 #new
-#name "lobo_large"
+#id "lobo_large"
 #type lobo_large
 #basechance 0.001
 #chanceinc "personalcommand size below 3 *0"

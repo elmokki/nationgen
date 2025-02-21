@@ -1,13 +1,13 @@
 -- Generic theme with high diversity and low cohesion
 #newtheme
-#name default
+#id default
 #basechance 4
 #endtheme
 
 -- Weights: EA 1, MA 1, LA 0.5
 #newtheme
 #type techlevel
-#name primitive
+#id primitive
 #basechance 1
 #chanceinc era 3 -0.5
 #themeinc theme advanced *0.05
@@ -22,7 +22,7 @@
 -- Weights: EA 0.25, MA 1, LA 2
 #newtheme
 #type techlevel
-#name advanced
+#id advanced
 #basechance 0.25
 #chanceinc era 3 1.75
 #chanceinc era 2 0.75
@@ -40,7 +40,7 @@
 -- Weights for all are uniform across eras
 #newtheme
 #type demographic
-#name fishmen
+#id fishmen
 #basechance 12
 #racedefinition "#pose ichtyidtroops"
 #racedefinition "#pose ichtyidmages"
@@ -51,7 +51,7 @@
 
 #newtheme
 #type demographic
-#name cavefishmen
+#id cavefishmen
 #basechance 1
 #racedefinition "#pose cavefishtroops"
 #racedefinition "#pose cavefishmages"
@@ -62,7 +62,7 @@
 
 #newtheme
 #type demographic
-#name carpmen
+#id carpmen
 #basechance 1
 #racedefinition "#pose carpmentroops"
 #racedefinition "#pose carpmenmages"
@@ -71,12 +71,12 @@
 
 #newtheme
 #type demographic
-#name koimen
+#id koimen
 #basechance 1
 #racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/oriental/suffixes.txt"
-#racedefinition "#gods easterngods"
+#racedefinition "#gods eastern_gods"
 #racedefinition "#oriental"
 #racedefinition "#pose koitroops"
 #racedefinition "#pose koimages"
@@ -85,7 +85,7 @@
 
 #newtheme
 #type demographic
-#name clownfishmen
+#id clownfishmen
 #basechance 1
 #racedefinition "#pose amphiprionidtroops"
 #racedefinition "#pose amphiprionidmages"
@@ -98,13 +98,13 @@
 
 #newtheme
 #type demographic
-#name piranhamen
+#id piranhamen
 #theme occidental
 #basechance 1
 #racedefinition "#longsyllables /data/names/nations/nahuatl/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/nahuatl/suffixes.txt"
-#racedefinition "#gods westerngods"
+#racedefinition "#gods western_gods"
 #racedefinition "#bonussacreds 1"
 #racedefinition "#occidental"
 #racedefinition "#nationcommand '#idealcold -1'"
@@ -115,7 +115,7 @@
 
 #newtheme
 #type demographic
-#name sharkmen
+#id sharkmen
 #basechance 1
 #racedefinition "#pose selachidtroops"
 #racedefinition "#pose selachidmages"
@@ -128,7 +128,7 @@
 
 #newtheme
 #type demographic
-#name greenlandsharkmen
+#id greenlandsharkmen
 #basechance 0.25
 #longsyllables /data/names/nations/nordic/longsyllables.txt
 #shortsyllables /data/names/nations/nordic/shortsyllables.txt
@@ -137,7 +137,8 @@
 #racedefinition "#pose somniosidmages"
 #racedefinition "#boreal"
 #racedefinition "#nationcommand '#idealcold 2'"
-#racedefinition "#gods europegods"
+#racedefinition "#nationcommand '#moreheat -1'"
+#racedefinition "#gods europe_gods"
 #racedefinition "#magicpriority death 2"
 #themeinc theme inland *0.01
 #themeinc theme coral *0.001
@@ -150,7 +151,7 @@
 
 #newtheme
 #type demographic
-#name pikemen
+#id pikemen
 #basechance 1
 #racedefinition "#pose esoxidtroops"
 #racedefinition "#pose esoxidmages"
@@ -160,7 +161,7 @@
 
 #newtheme
 #type demographic
-#name perchmen
+#id perchmen
 #basechance 1
 #racedefinition "#pose percidtroops"
 #racedefinition "#pose percidmages"
@@ -169,13 +170,13 @@
 
 #newtheme
 #type demographic
-#name catfishmen_oriental
+#id catfishmen_oriental
 #basechance 0.5
 #theme oriental
 #racedefinition "#longsyllables /data/names/nations/oriental/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/oriental/suffixes.txt"
-#racedefinition "#gods easterngods"
+#racedefinition "#gods eastern_gods"
 #racedefinition "#oriental"
 #racedefinition "#pose siluriformidtroops"
 #racedefinition "#pose siluriformidmages"
@@ -186,13 +187,13 @@
 
 #newtheme
 #type demographic
-#name catfishmen_occidental
+#id catfishmen_occidental
 #basechance 0.5
 #theme occidental
 #racedefinition "#longsyllables /data/names/nations/nahuatl/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/nahuatl/suffixes.txt"
-#racedefinition "#gods westerngods"
+#racedefinition "#gods western_gods"
 #racedefinition "#bonussacreds 1"
 #racedefinition "#occidental"
 #racedefinition "#pose siluriformidtroops"
@@ -204,7 +205,7 @@
 
 #newtheme
 #type demographic
-#name anglerfishmen
+#id anglerfishmen
 #basechance 1
 #racedefinition "#pose lophiiformidtroops"
 #racedefinition "#pose lophiiformidmages"
@@ -215,7 +216,7 @@
 
 #newtheme
 #type demographic
-#name flyingfishmen
+#id flyingfishmen
 #basechance 1
 #racedefinition "#pose flyingtroops"
 #racedefinition "#pose flyingmages"
@@ -225,7 +226,7 @@
 
 #newtheme
 #type demographic
-#name tunamen
+#id tunamen
 #basechance 1
 #racedefinition "#pose thunninidtroops"
 #racedefinition "#pose thunninidmages"
@@ -237,7 +238,7 @@
 
 #newtheme
 #type demographic
-#name sailfishmen
+#id sailfishmen
 #basechance 1
 #racedefinition "#pose istiophoridtroops"
 #racedefinition "#pose istiophoridmages"
@@ -247,7 +248,7 @@
 
 #newtheme
 #type demographic
-#name swordfishmen
+#id swordfishmen
 #basechance 1
 #racedefinition "#pose xiphiidtroops"
 #racedefinition "#pose xiphiidmages"
@@ -261,35 +262,35 @@
 
 #newtheme
 #type coloration
-#name common_pigment
+#id common_pigment
 #basechance 4
 #themeinc theme common_pigment *1000
 #endtheme
 
 #newtheme
 #type coloration
-#name faint_pigment
+#id faint_pigment
 #basechance 1
 #themeinc theme faint_pigment *1000
 #endtheme
 
 #newtheme
 #type coloration
-#name light_pigment
+#id light_pigment
 #basechance 1
 #themeinc theme light_pigment *1000
 #endtheme
 
 #newtheme
 #type coloration
-#name dark_pigment
+#id dark_pigment
 #basechance 2
 #themeinc theme dark_pigment *1000
 #endtheme
 
 #newtheme
 #type coloration
-#name faint_pigment_red
+#id faint_pigment_red
 #themeinc theme faint_pigment_red *1000
 #racedefinition "#magicpriority fire 2"
 #racedefinition "#magicpriority blood 2"
@@ -297,21 +298,21 @@
 
 #newtheme
 #type coloration
-#name faint_pigment_blue
+#id faint_pigment_blue
 #themeinc theme faint_pigment_blue *1000
 #racedefinition "#magicpriority water 8"
 #endtheme
 
 #newtheme
 #type coloration
-#name faint_pigment_green
+#id faint_pigment_green
 #themeinc theme faint_pigment_green *1000
 #racedefinition "#magicpriority nature 6"
 #endtheme
 
 #newtheme
 #type coloration
-#name faint_pigment_black
+#id faint_pigment_black
 #themeinc theme faint_pigment_black *1000
 #racedefinition "#magicpriority earth 2"
 #racedefinition "#magicpriority death 2"
@@ -319,7 +320,7 @@
 
 #newtheme
 #type coloration
-#name faint_pigment_cyan
+#id faint_pigment_cyan
 #themeinc theme faint_pigment_cyan *1000
 #racedefinition "#magicpriority water 8"
 #racedefinition "#magicpriority air 4"
@@ -327,14 +328,14 @@
 
 #newtheme
 #type coloration
-#name faint_pigment_gold
+#id faint_pigment_gold
 #themeinc theme faint_pigment_gold *1000
 #racedefinition "#magicpriority earth 4"
 #endtheme
 
 #newtheme
 #type coloration
-#name faint_pigment_orange
+#id faint_pigment_orange
 #themeinc theme faint_pigment_orange *1000
 #racedefinition "#magicpriority fire 2"
 #racedefinition "#magicpriority earth 2"
@@ -342,14 +343,14 @@
 
 #newtheme
 #type coloration
-#name faint_pigment_purple
+#id faint_pigment_purple
 #themeinc theme faint_pigment_purple *1000
 #racedefinition "#magicpriority death 4"
 #endtheme
 
 #newtheme
 #type coloration
-#name faint_pigment_white
+#id faint_pigment_white
 #themeinc theme faint_pigment_white *1000
 #racedefinition "#magicpriority astral 2"
 #racedefinition "#magicpriority air 2"
@@ -357,7 +358,7 @@
 
 #newtheme
 #type coloration
-#name light_pigment_red
+#id light_pigment_red
 #themeinc theme light_pigment_red *1000
 #racedefinition "#magicpriority fire 4"
 #racedefinition "#magicpriority blood 4"
@@ -365,21 +366,21 @@
 
 #newtheme
 #type coloration
-#name light_pigment_blue
+#id light_pigment_blue
 #themeinc theme light_pigment_blue *1000
 #racedefinition "#magicpriority water 8"
 #endtheme
 
 #newtheme
 #type coloration
-#name light_pigment_green
+#id light_pigment_green
 #themeinc theme light_pigment_green *1000
 #racedefinition "#magicpriority nature 8"
 #endtheme
 
 #newtheme
 #type coloration
-#name light_pigment_black
+#id light_pigment_black
 #themeinc theme light_pigment_black *1000
 #racedefinition "#magicpriority earth 4"
 #racedefinition "#magicpriority death 4"
@@ -387,7 +388,7 @@
 
 #newtheme
 #type coloration
-#name light_pigment_cyan
+#id light_pigment_cyan
 #themeinc theme light_pigment_cyan *1000
 #racedefinition "#magicpriority water 8"
 #racedefinition "#magicpriority air 6"
@@ -395,14 +396,14 @@
 
 #newtheme
 #type coloration
-#name light_pigment_gold
+#id light_pigment_gold
 #themeinc theme light_pigment_gold *1000
 #racedefinition "#magicpriority earth 6"
 #endtheme
 
 #newtheme
 #type coloration
-#name light_pigment_orange
+#id light_pigment_orange
 #themeinc theme light_pigment_orange *1000
 #racedefinition "#magicpriority fire 4"
 #racedefinition "#magicpriority earth 4"
@@ -410,14 +411,14 @@
 
 #newtheme
 #type coloration
-#name light_pigment_purple
+#id light_pigment_purple
 #themeinc theme light_pigment_purple *1000
 #racedefinition "#magicpriority death 6"
 #endtheme
 
 #newtheme
 #type coloration
-#name light_pigment_white
+#id light_pigment_white
 #themeinc theme light_pigment_white *1000
 #racedefinition "#magicpriority astral 4"
 #racedefinition "#magicpriority air 4"
@@ -425,7 +426,7 @@
 
 #newtheme
 #type coloration
-#name dark_pigment_red
+#id dark_pigment_red
 #themeinc theme dark_pigment_red *1000
 #racedefinition "#magicpriority fire 6"
 #racedefinition "#magicpriority blood 6"
@@ -433,21 +434,21 @@
 
 #newtheme
 #type coloration
-#name dark_pigment_blue
+#id dark_pigment_blue
 #themeinc theme dark_pigment_blue *1000
 #racedefinition "#magicpriority water 8"
 #endtheme
 
 #newtheme
 #type coloration
-#name dark_pigment_green
+#id dark_pigment_green
 #themeinc theme dark_pigment_green *1000
 #racedefinition "#magicpriority nature 8"
 #endtheme
 
 #newtheme
 #type coloration
-#name dark_pigment_black
+#id dark_pigment_black
 #themeinc theme dark_pigment_black *1000
 #racedefinition "#magicpriority earth 6"
 #racedefinition "#magicpriority death 6"
@@ -455,7 +456,7 @@
 
 #newtheme
 #type coloration
-#name dark_pigment_cyan
+#id dark_pigment_cyan
 #themeinc theme dark_pigment_cyan *1000
 #racedefinition "#magicpriority water 8"
 #racedefinition "#magicpriority air 8"
@@ -463,14 +464,14 @@
 
 #newtheme
 #type coloration
-#name dark_pigment_gold
+#id dark_pigment_gold
 #themeinc theme dark_pigment_gold *1000
 #racedefinition "#magicpriority earth 8"
 #endtheme
 
 #newtheme
 #type coloration
-#name dark_pigment_orange
+#id dark_pigment_orange
 #themeinc theme dark_pigment_orange *1000
 #racedefinition "#magicpriority fire 6"
 #racedefinition "#magicpriority earth 6"
@@ -478,14 +479,14 @@
 
 #newtheme
 #type coloration
-#name dark_pigment_purple
+#id dark_pigment_purple
 #themeinc theme dark_pigment_purple *1000
 #racedefinition "#magicpriority death 8"
 #endtheme
 
 #newtheme
 #type coloration
-#name dark_pigment_white
+#id dark_pigment_white
 #themeinc theme dark_pigment_white *1000
 #racedefinition "#magicpriority astral 6"
 #racedefinition "#magicpriority air 6"
@@ -496,7 +497,7 @@
 -- Weights: EA 0.5, MA 0.5, LA 0.5
 #newtheme
 #type social
-#name slaver
+#id slaver
 #basechance 0.05
 #themeinc theme advanced *1
 #themeinc theme iron *1

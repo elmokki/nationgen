@@ -3,7 +3,7 @@
 
 #newitem
 #basechance 9
-#name "draft horse"
+#id "draft horse"
 #gameid -1
 #sprite /graphics/mounts/standard/drafthorse.png
 #recolormask /graphics/mounts/standard/drafthorse_recolormask.png
@@ -11,13 +11,7 @@
 #offsetx 1
 #offsety 8
 #needs overlay drafthorse_overlay
-#define "#size 4"
-#define "#mapmove 18"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 615 --- Heavy Hoof"
-#define "#ressize 3"
-#define "#enc 5"
+#define "#mountmnr 'draft-horse'"
 #define "#gcost +15"
 #tag "animal horse"
 #theme "light"
@@ -26,24 +20,15 @@
 #enditem
 
 #newitem
-#name "camel"
+#id "camel"
 #basechance 3
 #gameid -1
 #sprite /graphics/mounts/standard/camel.png
 #armor
 #offsetx 3
 #offsety 63
-#define "#size 4"
-#define "#mapmove 18"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon nostr_kick_12"
-#define "#gcost +15"
-#define "#att +1"  --- Elevation
-#define "#prec -1"  --- Wobbling gait
-#define "#ressize 3"
-#define "#enc 4"
-#define "#supplybonus +1"
+#define "#mountmnr 'camel'"
+#define "#gcost +20"
 #tag "animal camel"
 #tag "maxprot 12"
 #theme "light"
@@ -51,7 +36,7 @@
 #enditem
 
 #newitem
-#name "barded camel"
+#id "barded camel"
 #basechance 3
 #gameid -1
 #sprite /graphics/mounts/standard/camel_barded.png
@@ -59,17 +44,8 @@
 #armor
 #offsetx 3
 #offsety 63
-#define "#size 4"
-#define "#mapmove 18"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon nostr_kick_12"
+#define "#mountmnr 'armored_camel_barded'"
 #define "#gcost +15"
-#define "#att +1"  --- Elevation
-#define "#prec -1"  --- Wobbling gait
-#define "#ressize 3"
-#define "#enc 4"
-#define "#supplybonus +1"
 #tag "animal camel"
 #tag "minprot 8"
 #tag "maxprot 12"
@@ -77,7 +53,7 @@
 #enditem
 
 #newitem
-#name "armored camel (iron)"
+#id "armored camel (iron)"
 #basechance 1
 #gameid -1
 #sprite /graphics/mounts/standard/camel_armored_iron.png
@@ -85,16 +61,8 @@
 #armor
 #offsetx 3
 #offsety 63
-#define "#size 4"
-#define "#mapmove 18"
-#define "#ap 16"
-#define "#mounted"
-#define "#weapon nostr_kick_12"
+#define "#mountmnr 'armored_camel'"
 #define "#gcost +25"
-#define "#att +1"  --- Elevation
-#define "#prec -1"  --- Wobbling gait
-#define "#ressize 3"
-#define "#enc 5"
 #tag "animal camel"
 #theme "heavy"
 #theme "iron"
@@ -104,23 +72,14 @@
 
 #newitem
 #basechance 3
-#name "moose"
+#id "moose"
 #gameid -1
 #sprite /graphics/mounts/standard/moose.png
 #armor
 #offsetx 30
 #offsety 57
-#define "#size 4"
-#define "#mapmove 22"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 353"
-#define "#weapon 354"
+#define "#mountmnr 'moose'"
 #define "#gcost +25"
-#define "#ressize 3"
-#define "#rcost +4"
-#define "#enc 4"
-#define "#secondtmpshape moose"
 #tag "animal moose"
 #tag "minprot 0"
 #tag "maxprot 16"
@@ -130,20 +89,12 @@
 
 #newitem
 #basechance 6
-#name "bear"
+#id "bear"
 #gameid -1
 #sprite /graphics/mounts/standard/bear.png
 #armor
-#define "#size 4"
-#define "#mapmove 18"
-#define "#ap 16"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape bearmount"
+#define "#mountmnr 'greatbear'"
 #define "#gcost +35"
-#define "#ressize 3"
-#define "#enc 4"
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #offsetx 1
 #offsety 8
@@ -154,23 +105,15 @@
 #enditem
 
 #newitem
-#name "hippo"
+#id "hippo"
 #basechance 0.25
 #gameid -1
 #sprite /graphics/mounts/standard/hippo.png
 #armor
 #offsetx 35
 #offsety 62
-#define "#size 5"
-#define "#mapmove 12"
-#define "#ap 16"
-#define "#mounted"
-#define "#weapon 417"
-#define "#weapon nostr_kick_20"
-#define "#secondtmpshape hippomount"
+#define "#mountmnr 'hippomount'"
 #define "#gcost +75"
-#define "#ressize 3"
-#define "#enc 4"
 #define "#swampsurvival"
 #description "If the rider dies, the hippopotamus will rampage through its companion's slayers before lumbering off the battlefield."
 #tag "animal hippo"

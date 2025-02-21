@@ -2,7 +2,7 @@
 
 #newitem
 #basechance 3
-#name "naked"
+#id "naked"
 #gameid -1
 #armor
 #theme "enlightened"
@@ -15,7 +15,7 @@
 
 #newitem
 #basechance 3
-#name "imperial tunic"
+#id "imperial tunic"
 #gameid -1
 #sprite /graphics/monkey/armor/vanara/tunic_imperial.png
 #recolormask /graphics/monkey/armor/vanara/tunic_imperial_recolormask.png
@@ -25,7 +25,7 @@
 #enditem
 
 #newitem
-#name "ronin armor"
+#id "ronin armor"
 #gameid 158
 #sprite /graphics/monkey/armor/vanara/ronin.png
 #armor
@@ -36,7 +36,7 @@
 
 #newitem
 #basechance 3
-#name "furs"
+#id "furs"
 #gameid 44
 #sprite /graphics/monkey/armor/vanara/furs.png
 #armor
@@ -49,7 +49,7 @@
 
 -- Imperial
 #newitem
-#name "imperial leather"
+#id "imperial leather"
 #basechance 6
 #gameid 10
 #sprite /graphics/monkey/armor/vanara/leatherhauberk_imperial.png
@@ -60,7 +60,7 @@
 #enditem
 
 #newitem
-#name "imperial ring"
+#id "imperial ring"
 #basechance 4
 #gameid 11
 #sprite /graphics/monkey/armor/vanara/ringhauberk_imperial.png
@@ -72,7 +72,7 @@
 #enditem
 
 #newitem
-#name "lorica hamata"
+#id "lorica hamata"
 #basechance 2
 #gameid 116
 #sprite /graphics/monkey/armor/vanara/lorica_hamata.png
@@ -86,7 +86,7 @@
 
 -- Oriental
 #newitem
-#name "oriental leather cuirass"
+#id "oriental leather cuirass"
 #basechance 6
 #gameid 5
 #sprite /graphics/monkey/armor/vanara/leathercuirass_oriental.png
@@ -96,7 +96,7 @@
 #enditem
 
 #newitem
-#name "oriental leather hauberk"
+#id "oriental leather hauberk"
 #basechance 4
 #gameid 10
 #sprite /graphics/monkey/armor/vanara/leatherhauberk_oriental.png
@@ -111,7 +111,7 @@
 #newitem
 #basechance 0.05
 #chanceinc unittheme not oriental *0
-#name "ninja-none"
+#id "ninja-none"
 #gameid -1
 #armor
 #sprite /graphics/monkey/armor/vanara/shirt_dark.png
@@ -127,7 +127,7 @@
 #newitem
 #basechance 0.1
 #chanceinc unittheme not oriental *0
-#name "ninja-leathercuirass"
+#id "ninja-leathercuirass"
 #gameid 5
 #armor
 #sprite /graphics/monkey/armor/vanara/shirt_dark.png
@@ -143,7 +143,7 @@
 #newitem
 #basechance 0.05
 #chanceinc unittheme not oriental *0
-#name "ninja-leatherhauberk"
+#id "ninja-leatherhauberk"
 #gameid 10
 #armor
 #sprite /graphics/monkey/armor/vanara/shirt_dark.png
@@ -159,7 +159,7 @@
 #newitem
 #basechance 0.1
 #chanceinc unittheme not oriental *0
-#name "ninja-ringcuirass"
+#id "ninja-ringcuirass"
 #gameid 6
 #armor
 #sprite /graphics/monkey/armor/vanara/shirt_dark.png
@@ -175,7 +175,7 @@
 #newitem
 #basechance 0.05
 #chanceinc unittheme not oriental *0
-#name "ninja-ringhauberk"
+#id "ninja-ringhauberk"
 #gameid 11
 #armor
 #sprite /graphics/monkey/armor/vanara/shirt_dark.png
@@ -191,7 +191,7 @@
 #newitem
 #basechance 0.1
 #chanceinc unittheme not oriental *0
-#name "ninja-scalecuirass"
+#id "ninja-scalecuirass"
 #gameid 7
 #armor
 #sprite /graphics/monkey/armor/vanara/shirt_dark.png
@@ -207,7 +207,7 @@
 #newitem
 #basechance 0.1
 #chanceinc unittheme not oriental *0
-#name "ninja-chaincuirass"
+#id "ninja-chaincuirass"
 #gameid 8
 #armor
 #sprite /graphics/monkey/armor/vanara/shirt_dark.png

@@ -1,19 +1,13 @@
 #newitem
 #basechance 3
-#name "brown horse"
+#id "brown horse"
 #gameid -1
 #sprite /graphics/mounts/standard/brownhorse.png
 #offsetx 0
 #offsety -13
 #armor
 #needs overlay 1
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 26"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
-#define "#enc 3"
+#define "#mountmnr 'riding-horse'"
 #define "#gcost +15"
 #tag "animal horse"
 #theme "light"
@@ -22,7 +16,7 @@
 #enditem
 
 #newitem
-#name "armored horse bronze"
+#id "armored horse bronze"
 #basechance 3
 #gameid -1
 #sprite /graphics/mounts/standard/armoredhorse1a.png
@@ -30,13 +24,7 @@
 #offsety -13
 #armor
 #needs overlay armoredhorse1aoverlay
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
-#define "#enc 4"
+#define "#mountmnr 'armoredhorse1a'"
 #define "#rcost +5"
 #tag "animal horse"
 #theme "heavy"
@@ -47,22 +35,15 @@
 #enditem
 
 #newitem
-#name "kelpie"
+#id "kelpie"
 #gameid -1
 #sprite /graphics/mounts/standard/kelpie_land.png
 #offsetx 0
 #offsety -13
 #needs overlay kelpie_land_overlay
 #armor
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 30"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
+#define "#mountmnr 'kelpie-land'"
 #define "#gcost +20"
-#define "#ressize 2"
-#define "#enc 5"
-#define "#amphibian"
 #tag "animal kelpie"
 #tag "minprot 6"
 #tag "maxprot 18"
@@ -70,45 +51,31 @@
 #enditem
 
 #newitem
-#name "kelpie_armored"
+#id "kelpie_armored"
 #gameid -1
 #sprite /graphics/mounts/standard/kelpie_armored_land.png
 #offsetx 0
 #offsety -13
 #needs overlay kelpie_armored_land_overlay
 #armor
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 26"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
+#define "#mountmnr 'kelpie-land-armored'"
 #define "#gcost +25"
 #define "#rcost +5"
-#define "#ressize 2"
-#define "#enc 5"
-#define "#amphibian"
 #tag "animal kelpie"
 #theme "heavy"
 #tag "minprot 14"
 #enditem
 
 #newitem
-#name "nightmare"
+#id "nightmare"
 #gameid -1
 #sprite /graphics/mounts/standard/nightmare.png
 #offsetx 0
 #offsety -15
 #needs overlay no_overlay
 #armor
-#define "#size 3"
-#define "#mapmove 26"
-#define "#ap 25"
-#define "#mounted"
-#define "#weapon 615 --- Heavy Hoof"
-#define "#secondtmpshape nightmare"
+#define "#mountmnr 'nightmare'"
 #define "#gcost +40"
-#define "#ressize 2"
-#define "#enc 4"
 #tag "animal nightmare"
 #define "#float"
 #description "Leaves a nightmare behind when the rider dies"
@@ -120,7 +87,7 @@
 
 
 #newitem
-#name "peryton"
+#id "peryton"
 #basechance 0.25
 #gameid -1
 #sprite /graphics/mounts/standard/peryton2.png
@@ -130,15 +97,8 @@
 #armor
 #offsetx 0
 #offsety -11
-#define "#size 4"
-#define "#mapmove 28"
-#define "#ap 18"
-#define "#mounted"
-#define "#flying"
-#define "#weapon 354 --- Antlers"
+#define "#mountmnr 'peryton2'"
 #define "#gcost +50"
-#define "#ressize 2"
-#define "#enc 4"
 #theme "flying"
 #tag "animal peryton"
 #basechance 0.25
@@ -146,46 +106,30 @@
 #enditem
 
 #newitem
-#name "giant swan"
+#id "giant swan"
 #gameid -1
 #sprite /graphics/sidhe/mounts/giantswan.png
 #needs overlay giantswan_overlay
 #armor
 #offsetx -4
 #offsety -3
-#define "#size 3"
-#define "#mapmove 26"
-#define "#ap 8"
-#define "#mounted"
-#define "#flying"
-#define "#sailing 3 3"
-#define "#weapon nostr_bill_10"
+#define "#mountmnr 'giantswanmount'"
 #define "#gcost +50"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#swimming"
 #theme "light"
 #tag "animal swan"
 #tag "maxprot 11"
 #enditem
 
 #newitem
-#name "seadog"
+#id "seadog"
 #gameid -1
 #sprite /graphics/mounts/standard/seadog.png
 #offsetx -4
 #offsety -9
 #armor
-#define "#size 3"
-#define "#mapmove 14"
-#define "#ap 10"
-#define "#mounted"
-#define "#weapon nostr_bite_10"
-#define "#secondshape seadogmount"
+#define "#mountmnr 'seadogmount'"
 #define "#gcost +15"
 #define "#rcost +2"
-#define "#ressize 2"
-#define "#enc 4"
 #define "#swimming"
 #command "#amphibian"
 #theme "light"
@@ -197,23 +141,17 @@
 #enditem
 
 #newitem
-#name "toad"
+#id "toad"
 #gameid -1
 #sprite /graphics/mounts/standard/toad_jaguar.png
 #armor
 #offsetx -1
 #offsety -4
-#define "#size 3"
-#define "#mapmove 2"
-#define "#ap 6"
-#define "#mounted"
-#define "#weapon nostr_poisonspit"
+#define "#mountmnr 'toad_jaguar_mount'"
 #define "#gcost +30"
 #define "#rcost +3"
-#define "#ressize 2"
-#define "#enc 3"
 #define "#swimming"
-#define "#secondtmpshape toad_jaguar_mount"
+#define "#amphibian"
 #description "The giant toad will fight until the end of the battle should the rider die"
 #tag "animal 'giant toad'"
 #tag "guaranteedprefix toad"
@@ -223,24 +161,17 @@
 #enditem
 
 #newitem
-#name "frog"
+#id "frog"
 #gameid -1
 #sprite /graphics/mounts/standard/toad_sapphire.png
 #armor
 #offsetx -1
 #offsety -4
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 9"
-#define "#mounted"
-#define "#weapon 236"
+#define "#mountmnr 'toad_sapphire_mount'"
 #define "#gcost +30"
 #define "#rcost +3"
-#define "#ressize 2"
-#define "#enc 3"
 #define "#swimming"
-#command "#amphibian"
-#define "#secondtmpshape toad_sapphire_mount"
+#define "#amphibian"
 #description "The giant frog will fight until the end of the battle should the rider die"
 #tag "animal 'giant frog'"
 #tag "guaranteedprefix frog"

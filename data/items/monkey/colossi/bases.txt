@@ -1,11 +1,11 @@
 #newitem
-#name "colossi basesprite"
+#id "colossi basesprite"
 #gameid -1
 #sprite /graphics/monkey/giant/colossi_base.png
 #command "#gcost 30"
 #command "#rpcost 30000"
 #command "#hp 36"
-#command "#size 4"
+#command "#size 6"
 #command "#prot 8"
 #command "#mr 10"
 #command "#mor 14"
@@ -26,14 +26,14 @@
 #enditem
 
 #newitem
-#name "winged colossi basesprite"
+#id "winged colossi basesprite"
 #gameid -1
 #sprite /graphics/monkey/giant/colossi_base.png
 #needs wings winged
 #command "#gcost 45"
 #command "#rpcost 45000"
 #command "#hp 34"
-#command "#size 4"
+#command "#size 6"
 #command "#prot 8"
 #command "#mr 12"
 #command "#mor 12"

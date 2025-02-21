@@ -1,5 +1,5 @@
 #newitem
-#name "sacred bandar basesprite"
+#id "sacred bandar basesprite"
 #gameid -1
 #sprite /graphics/monkey/bandar_base_sacred.png
 #needs hands bandar_hands_sacred
@@ -13,7 +13,7 @@
 #command "#def 10"
 #command "#att 11"
 #command "#str 16"
-#command "#size 3"
+#command "#size 4"
 #command "#mapmove 14"
 #command "#animal"
 #command "#forestsurvival"
@@ -24,7 +24,7 @@
 #enditem
 
 #newitem
-#name "sacred winged bandar basesprite"
+#id "sacred winged bandar basesprite"
 #gameid -1
 #sprite /graphics/monkey/bandar_base_sacred.png
 #needs wings winged
@@ -39,7 +39,7 @@
 #command "#def 10"
 #command "#att 11"
 #command "#str 15"
-#command "#size 3"
+#command "#size 4"
 #command "#mapmove 21"
 #command "#maxage +5"
 #command "#flying"
@@ -52,7 +52,7 @@
 #enditem
 
 #newitem
-#name "sacred bandarbred basesprite"
+#id "sacred bandarbred basesprite"
 #gameid -1
 #sprite /graphics/monkey/bandar_base_bandarbred_sacred.png
 #needs hands bandarbred_hands
@@ -66,7 +66,7 @@
 #command "#def 9"
 #command "#att 11"
 #command "#str 17"
-#command "#size 3"
+#command "#size 4"
 #command "#mapmove 14"
 #command "#maxage *0.8"
 #command "#wastesurvival"
@@ -78,7 +78,7 @@
 #enditem
 
 #newitem
-#name "sacred alpine bandar basesprite"
+#id "sacred alpine bandar basesprite"
 #gameid -1
 #sprite /graphics/monkey/bandar_base_alpine_sacred.png
 #needs hands bandar_hands
@@ -92,7 +92,7 @@
 #command "#def 10"
 #command "#att 11"
 #command "#str 16"
-#command "#size 3"
+#command "#size 4"
 #command "#mapmove 14"
 #command "#animal"
 #command "#mountainsurvival"

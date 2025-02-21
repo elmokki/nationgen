@@ -1,7 +1,7 @@
 --- Fixed color cloaks selected based on unit attributes
 
 #newitem
-#name "fire cloak"
+#id "fire cloak"
 #basechance 0
 #chanceinc "personalmagic fire 2 1"
 #chanceinc "personalcommand #firepower 1"
@@ -14,10 +14,10 @@
 #enditem
 
 #newitem
-#name "air cloak"
+#id "air cloak"
 #basechance 0
 #chanceinc "personalmagic air 2 1"
-#chanceinc "personalcommand #illusion 1"
+#chanceinc "personalcommand #glamour 1"
 #chanceinc "personalcommand #stormpower 1"
 #chanceinc "personalcommand #springpower 1"
 #gameid -1
@@ -26,7 +26,7 @@
 #enditem
 
 #newitem
-#name "water cloak"
+#id "water cloak"
 #basechance 0
 #chanceinc "personalmagic water 2 1"
 #chanceinc "personalcommand #waterbreathing 1"
@@ -38,7 +38,7 @@
 #enditem
 
 #newitem
-#name "earth cloak"
+#id "earth cloak"
 #basechance 0
 #chanceinc "personalmagic earth 2 1"
 #chanceinc "personalcommand #reinvigoration 1"
@@ -50,7 +50,7 @@
 #enditem
 
 #newitem
-#name "blood cloak"
+#id "blood cloak"
 #basechance 0
 #chanceinc "personalmagic blood 2 1"
 #chanceinc "personalcommand #berserk 1"
@@ -61,7 +61,7 @@
 #enditem
 
 #newitem
-#name "shadow cloak"
+#id "shadow cloak"
 #basechance 0
 #chanceinc "personalmagic death 2 1"
 #chanceinc "personalcommand #ethereal 1"
@@ -74,7 +74,7 @@
 #enditem
 
 #newitem
-#name "leaf cloak"
+#id "leaf cloak"
 #basechance 0
 #chanceinc "personalmagic nature 2 1"
 #chanceinc "personalcommand #supplybonus 1"
@@ -87,7 +87,7 @@
 #enditem
 
 #newitem
-#name "sand cloak"
+#id "sand cloak"
 #basechance 0
 #chanceinc "unittheme waste 5"
 #chanceinc "personalcommand #wastesurvival 2"
@@ -98,7 +98,7 @@
 #enditem
 
 #newitem
-#name "stone cloak"
+#id "stone cloak"
 #basechance 0
 #chanceinc "unittheme mountain 5"
 #chanceinc "personalcommand #mountainsurvival 2"
@@ -111,7 +111,7 @@
 #enditem
 
 #newitem
-#name "frost cloak"
+#id "frost cloak"
 #basechance 0
 #chanceinc "unittheme waste 5"
 #chanceinc "personalcommand #wastesurvival 2"

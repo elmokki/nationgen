@@ -1,23 +1,15 @@
 --- Base offsets are applied to everything except base and overlay
 #newitem
 #basechance 0.1
-#name "serpent 1"
+#id "serpent 1"
 #gameid -1
 #sprite /graphics/mounts/standard/serpent1.png
 #armor
 #offsetx -7
 #offsety 14
 #needs overlay 6
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#secondtmpshape serpent1"
- -- 1179
+#define "#mountmnr 'serpent1'"
 #define "#gcost +30"
-#define "#ressize 2"
-#define "#enc 3"
 #tag "animal serpent"
 #theme "light"
 #tag "guaranteedprefix serpent"
@@ -27,23 +19,16 @@
 
 #newitem
 #basechance 0.1
-#name "serpent 2"
+#id "serpent 2"
 #gameid -1
 #sprite /graphics/mounts/standard/serpent2.png
 #armor
 #offsetx -5
 #offsety 13
 #needs overlay 7
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 16"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#secondtmpshape serpent2"
+#define "#mountmnr 'serpent2'"
 #define "#gcost +30"
-#define "#ressize 2"
 #define "#rcost +5"
-#define "#enc 4"
 #tag "animal serpent"
 #theme "heavy"
 #theme "specialmount"
@@ -54,21 +39,15 @@
 
 #newitem
 #basechance 0.5
-#name "green lizard"
+#id "green lizard"
 #gameid -1
 #sprite /graphics/mounts/standard/greenlizard.png
 #armor
 #offsetx -5
 #offsety 3
 #needs overlay 3
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
+#define "#mountmnr 'greenlizard'"
 #define "#gcost +20"
-#define "#ressize 2"
-#define "#enc 3"
 #tag "animal lizard"
 #theme "light"
 #theme "specialmount"
@@ -78,24 +57,15 @@
 
 #newitem
 #basechance 0.5
-#name "cave drake"
+#id "cave drake"
 #gameid -1
 #sprite /graphics/mounts/standard/cavedrake.png
 #armor
 #offsetx 8
 #offsety 11
-#define "#size 4"
-#define "#mapmove 8"
-#define "#ap 7"
-#define "#mounted"
-#define "#weapon 417 --- Bite"
-#define "#secondshape cavedrake"
--- 522
+#define "#mountmnr 'cavedrake'"
 #define "#gcost +70"
-#define "#ressize 2"
 #define "#rcost +5"
-#define "#enc 4"
-#define "#nomovepen"
 #tag "animal drake"
 #theme "specialmount"
 #description "The cave drake will persist even if the rider dies."
@@ -109,24 +79,16 @@
 
 #newitem
 #basechance 6
-#name "spider"
+#id "spider"
 #gameid -1
 #sprite /graphics/mounts/standard/spider1.png
 #armor
 #offsetx 35
 #offsety 7
 #needs overlay spider_overlay
-#define "#size 5"
-#define "#mapmove 18"
-#define "#ap 13"
-#define "#mounted"
-#define "#weapon 262"
-#define "#weapon 313"
-#define "#secondshape spider"
+#define "#mountmnr 'spider'"
 #description "The giant spider will persist even if the rider dies."
 #define "#gcost +30"
-#define "#ressize 2"
-#define "#enc 4"
 #theme "specialmount"
 #tag "animal spider"
 #tag "guaranteedprefix spider"
@@ -136,23 +98,15 @@
 
 #newitem
 #basechance 6
-#name "spider heavy"
+#id "spider heavy"
 #gameid -1
 #sprite /graphics/mounts/standard/spider1.png
 #armor
 #offsetx 35
 #offsety 7
 #needs overlay spider_overlay
-#define "#size 5"
-#define "#mapmove 18"
-#define "#ap 13"
-#define "#mounted"
-#define "#weapon 262 --- Web Spit"
-#define "#weapon 313 --- Spider Fangs"
-#define "#secondshape spider"
+#define "#mountmnr 'spider'"
 #define "#gcost +40"
-#define "#ressize 2"
-#define "#enc 4"
 #define "#rcost +5"
 #description "The giant spider will persist even if the rider dies."
 #theme "specialmount"
@@ -165,20 +119,14 @@
 
 #newitem
 #basechance 0.25
-#name "boar"
+#id "boar"
 #gameid -1
 #sprite /graphics/mounts/standard/boarcavalry.png
 #armor
 #offsetx -4
 #offsety 4
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 352 --- Nostr Gore"
+#define "#mountmnr 'great-boar-mount'"
 #define "#gcost +20"
-#define "#ressize 2"
-#define "#enc 3"
 #theme "specialmount"
 #tag "animal boar"
 #tag "guaranteedprefix boar"
@@ -189,20 +137,14 @@
 
 #newitem
 #basechance 0.25
-#name "boar heavy"
+#id "boar heavy"
 #gameid -1
 #sprite /graphics/mounts/standard/boarcavalry.png
 #armor
 #offsetx -4
 #offsety 4
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 352 --- Nostr Gore"
+#define "#mountmnr 'great-boar-mount'"
 #define "#gcost +25"
-#define "#ressize 2"
-#define "#enc 3"
 #define "#rcost +5"
 #theme "specialmount"
 #tag "animal boar"
@@ -215,23 +157,15 @@
 
 #newitem
 #basechance 0.1
-#name "tiger"
+#id "tiger"
 #gameid -1
 #sprite /graphics/mounts/standard/tiger.png
 #armor
 #offsetx -4
 #offsety 4
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 236"
-#define "#weapon 237"
-#define "#secondshape tiger"
+#define "#mountmnr 'tiger'"
 #define "#gcost +40"
 #define "#rcost +6"
-#define "#ressize 2"
-#define "#enc 3"
 #theme "specialmount"
 #theme "light"
 #tag "animal tiger"
@@ -244,23 +178,15 @@
 
 #newitem
 #basechance 0.1
-#name "jaguar"
+#id "jaguar"
 #gameid -1
 #sprite /graphics/mounts/standard/jaguar.png
 #armor
 #offsetx -4
 #offsety 7
-#define "#size 3"
-#define "#mapmove 18"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 236"
-#define "#weapon 237"
-#define "#secondshape jaguarmount"
+#define "#mountmnr 'jaguarmount'"
 #define "#gcost +35"
 #define "#rcost +5"
-#define "#ressize 2"
-#define "#enc 3"
 #theme "specialmount"
 #theme "light"
 #tag "animal jaguar"
@@ -272,22 +198,15 @@
 
 #newitem
 #basechance 0.05
-#name "black tiger"
+#id "black tiger"
 #gameid -1
 #sprite /graphics/mounts/standard/blacktiger.png
 #armor
 #offsetx -4
 #offsety 4
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 236"
-#define "#weapon 237"
+#define "#mountmnr 'blacktiger'"
 #define "#gcost +25"
 #define "#rcost +5"
-#define "#ressize 2"
-#define "#enc 3"
 #theme "specialmount"
 #theme "light"
 #tag "animal tiger"
@@ -300,21 +219,14 @@
 
 #newitem
 #basechance 4
-#name "bigspider"
+#id "bigspider"
 #gameid -1
 #sprite /graphics/mounts/standard/bigspider.png
 #armor
 #offsetx 35
 #offsety 58
-#define "#size 6"
-#define "#mapmove 20"
-#define "#ap 14"
-#define "#mounted"
-#define "#weapon 313 --- Spider Fangs"
-#define "#secondshape hunterspider"
+#define "#mountmnr 'hunterspider'"
 #define "#gcost +70"
-#define "#ressize 2"
-#define "#enc 4"
 #description "The hunter spider will persist even if the rider dies."
 #theme "specialmount"
 #theme "heavy"
@@ -326,7 +238,7 @@
 #enditem
 
 #newitem
-#name "scorpion"
+#id "scorpion"
 #gameid -1
 #chanceinc "nationcommand #idealcold above 0 *0"
 #sprite /graphics/abysian/mounts/scorpion.png
@@ -334,13 +246,10 @@
 #offsetx 23
 #offsety 6
 #needs overlay scorpion_overlay
-#define "#size 5"
+#define "#size 6"
 #define "#mapmove 8"
 #define "#ap 8"
-#define "#mounted"
-#define "#weapon nostr_pincer"
-#define "#weapon nostr_scorpiontail"
-#define "#secondshape scorpionmount"
+#define "#mountmnr 'scorpionmount'"
 #define "#gcost +50"
 #define "#ressize 2"
 #define "#enc 3"
@@ -357,25 +266,16 @@
 
 #newitem
 #basechance 1
-#name "amphiptere"
+#id "amphiptere"
 #gameid -1
 #sprite /graphics/mounts/standard/amphiptere.png
 #armor
 #offsetx 23
 #offsety 13
 #needs overlay 13
-#define "#size 4"
-#define "#mapmove 28"
-#define "#flying"
-#define "#ap 10"
-#define "#mounted"
-#define "#weapon nostr_venfangs"
-#define "#weapon nostr_spraypoison"
-#define "#secondtmpshape amphiptere"
+#define "#mountmnr 'amphiptere'"
 #define "#gcost +50"
 #define "#rcost +6"
-#define "#ressize 2"
-#define "#enc 3"
 #theme "specialmount"
 #tag "animal amphiptere"
 #description "The amphiptere will fight until the end of the battle should the rider die"
@@ -388,22 +288,15 @@
 
 
 #newitem
-#name "cavegrub"
+#id "cavegrub"
 #gameid -1
 #sprite /graphics/mounts/standard/cavegrub.png
 #armor
 #offsetx 29
 #offsety 14
-#define "#size 4"
-#define "#mapmove 1"
-#define "#ap 5"
-#define "#mounted"
-#define "#weapon 603"
+#define "#mountmnr 'cavegrubmount'"
 #define "#gcost +20"
 #define "#rcost +3"
-#define "#ressize 2"
-#define "#enc 3"
-#define "#nomovepen"
 #tag "animal 'cave grub'"
 #tag "guaranteedprefix grub"
 #tag "name commander beastmaster"

@@ -1,19 +1,13 @@
 --- Base offsets are applied to everything except base and overlay
 
 #newitem
-#name "brown horse"
+#id "brown horse"
 #gameid -1
 #sprite /graphics/mounts/standard/brownhorse.png
 #offsety -20
 #armor
 #needs overlay 1
-#define "#size 3"
-#define "#mapmove 22"
-#define "#ap 24"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
-#define "#enc 3"
+#define "#mountmnr 'riding-horse'"
 #define "#gcost +15"
 #tag "animal horse"
 #theme "light"
@@ -22,7 +16,7 @@
 #enditem
 
 #newitem
-#name "camel"
+#id "camel"
 #chanceinc "nationcommand #idealcold above 0 *0"
 #chanceinc "nationcommand #idealcold above -1 *0.5"
 #chanceinc "nationcommand #idealcold below -1 *2"
@@ -31,19 +25,8 @@
 #armor
 #offsetx 5
 #offsety 35
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 24"
-#define "#mounted"
-#define "#weapon nostr_kick_12"
-#define "#gcost +15"
-#define "#att +2"  --- Elevation
-#define "#def -1"  --- Wobbling gait
-#define "#prec -1"  --- Wobbling gait
-#define "#ressize 2"
-#define "#enc 3"
-#define "#supplybonus +1"
-#define "#wastesurvival"
+#define "#mountmnr 'camel'"
+#define "#gcost +20"
 #tag "animal camel"
 #tag "maxprot 11"
 #theme "light"
@@ -51,24 +34,14 @@
 #enditem
 
 #newitem
-#name "cavecow"
+#id "cavecow"
 #gameid -1
 #sprite /graphics/mounts/standard/cavecow.png
 #offsetx -0
 #offsety -12
 #armor
-#define "#size 4"
-#define "#mapmove 8"
-#define "#ap 8"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#weapon 599 -- Corrosive bite"
-#define "#secondtmpshape cavecowmount"
+#define "#mountmnr 'cavecowmount'"
 #define "#gcost +30"
-#define "#prot +2"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#nomovepen"
 #description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
 #tag "animal 'cave cow'"
 #tag "guaranteedprefix 'cave cow'"
@@ -76,22 +49,15 @@
 #enditem
 
 #newitem
-#name "serpent 1"
+#id "serpent 1"
 #gameid -1
 #sprite /graphics/mounts/standard/serpent1.png
 #armor
 #offsetx -0
 #offsety -5
 #needs overlay 6
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 494 --- Poisonous Bite"
-#define "#secondtmpshape serpent1"  -- 1179
+#define "#mountmnr 'serpent1'"
 #define "#gcost +30"
-#define "#ressize 2"
-#define "#enc 3"
 #tag "animal serpent"
 #theme "light"
 #tag "guaranteedprefix serpent"
@@ -100,26 +66,17 @@
 #enditem
 
 #newitem
-#name "giant rat"
+#id "giant rat"
 #gameid -1
 #sprite /graphics/mounts/standard/giantrat.png
 #armor
-#define "#size 3"
-#define "#mapmove 18"
-#define "#ap 10"
-#define "#mounted"
-#define "#weapon nostr_diseasebite_12"
+#define "#mountmnr 'ratmount'"
 #define "#gcost +20"
-#define "#diseaseres +10"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#swimming"
 #tag "animal rat"
 #theme "rat"
 #theme "rattotem"
 #theme "totemanimal"
 #tag "guaranteedprefix rat"
-#define "#secondtmpshape ratmount"
 #description "If the rider dies, the rat will carry on fighting until the end of the battle."
 #basechance 1
 #offsetx 0
@@ -127,21 +84,14 @@
 #enditem
 
 #newitem
-#name "seadog"
+#id "seadog"
 #gameid -1
 #sprite /graphics/mounts/standard/seadog.png
 #armor
 #offsety -13
-#define "#size 3"
-#define "#mapmove 14"
-#define "#ap 10"
-#define "#mounted"
-#define "#weapon nostr_bite_10"
-#define "#secondshape seadogmount"
+#define "#mountmnr 'seadogmount'"
 #define "#gcost +15"
 #define "#rcost +2"
-#define "#ressize 2"
-#define "#enc 4"
 #define "#swimming"
 #command "#amphibian"
 #theme "light"
@@ -153,23 +103,15 @@
 #enditem
 
 #newitem
-#name "toad"
+#id "toad"
 #gameid -1
 #sprite /graphics/mounts/standard/toad_jaguar.png
 #armor
 #offsetx 0
 #offsety -13
-#define "#size 3"
-#define "#mapmove 2"
-#define "#ap 6"
-#define "#mounted"
-#define "#weapon nostr_poisonspit"
+#define "#mountmnr 'toad_jaguar_mount'"
 #define "#gcost +30"
 #define "#rcost +3"
-#define "#ressize 2"
-#define "#enc 3"
-#define "#swimming"
-#define "#secondtmpshape toad_jaguar_mount"
 #description "The giant toad will fight until the end of the battle should the rider die"
 #tag "animal 'giant toad'"
 #tag "guaranteedprefix toad"
@@ -178,24 +120,16 @@
 #enditem
 
 #newitem
-#name "frog"
+#id "frog"
 #gameid -1
 #sprite /graphics/mounts/standard/toad_sapphire.png
 #armor
 #offsetx 0
 #offsety -13
-#define "#size 3"
-#define "#mapmove 20"
-#define "#ap 9"
-#define "#mounted"
-#define "#weapon 236"
+#define "#mountmnr 'toad_sapphire_mount'"
 #define "#gcost +30"
 #define "#rcost +3"
-#define "#ressize 2"
-#define "#enc 3"
 #define "#swimming"
-#command "#amphibian"
-#define "#secondtmpshape toad_sapphire_mount"
 #description "The giant frog will fight until the end of the battle should the rider die"
 #tag "animal 'giant frog'"
 #tag "guaranteedprefix frog"

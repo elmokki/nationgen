@@ -1,6 +1,6 @@
 
 #newrace
-#name "Olm"
+#id "Olm"
 #basechance 0.1
 
 #chanceinc racetag subterranean *5
@@ -15,7 +15,7 @@
 
 #unitcommand "#gcost 50"
 #unitcommand "#rpcost 50000"
-#unitcommand "#size 3"
+#unitcommand "#size 4"
 #unitcommand "#hp 23"
 #unitcommand "#prot 5"
 #unitcommand "#mr 14"
@@ -44,6 +44,8 @@
 
 #nationcommand "#uwbuild 1"
 #nationcommand "#riverstart"
+
+#additionalgods gods_without_realm
 
 #description "Since time immemorial pale amphibians with external gills have lived in the watery caverns of the deeper earth. Olms communicate wordlessly and can project images and emotions to other sentient beings. This power can also be used to overwhelm and harm an enemy."
 

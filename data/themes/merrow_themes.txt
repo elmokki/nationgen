@@ -1,6 +1,6 @@
 -- Generic "blank" theme to make sure merrow aren't always slavers
 #newtheme
-#name default
+#id default
 #basechance 4
 #endtheme
 
@@ -8,7 +8,7 @@
 -- Weights: EA 2, MA 1, LA 0.5
 #newtheme
 #type techlevel
-#name shell
+#id shell
 #basechance 1
 #chanceinc era 1 1
 #chanceinc era 3 -0.5
@@ -26,7 +26,7 @@
 -- Weights: EA 2, MA 1, LA 0.5
 #newtheme
 #type techlevel
-#name coral
+#id coral
 #basechance 1
 #chanceinc era 1 1
 #chanceinc era 3 -0.5
@@ -43,7 +43,7 @@
 -- Weights: EA 1, MA 2, LA 4
 #newtheme
 #type techlevel
-#name bronze
+#id bronze
 #basechance 2
 #chanceinc era 3 2
 #chanceinc era 1 -1
@@ -63,7 +63,7 @@
 -- Habitat (terrestrial, marine)
 #newtheme
 #type habitat
-#name terrestrial
+#id terrestrial
 #basechance 1
 #chanceinc racetheme coral *0.5
 #themeinc theme sharkskin *0
@@ -75,7 +75,7 @@
 
 #newtheme
 #type habitat
-#name marine
+#id marine
 #basechance 1
 #chanceinc racetheme shell *2
 #chanceinc racetheme coral *5
@@ -87,7 +87,7 @@
 -- Weights: EA 0.5, MA 0.5, LA 0.5
 #newtheme
 #type social
-#name slaver
+#id slaver
 #basechance 0.05
 #themeinc theme advanced *1
 #themeinc theme iron *1

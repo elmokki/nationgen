@@ -2,7 +2,7 @@
 ------- For small infantry
 
 #new
-#name "Hybrid infantry: heavy"
+#id "Hybrid infantry: heavy"
 #type infantry
 #themeinc thisarmorprot 10 *4
 #themeinc thisarmorprot 12 *4
@@ -15,7 +15,7 @@
 #end
 
 #new
-#name "Hybrid infantry: light"
+#id "Hybrid infantry: light"
 #type infantry
 #themeinc thisarmorprot 10 *0.25
 #themeinc thisarmorprot 12 *0.25
@@ -28,7 +28,7 @@
 #end
 
 #new
-#name "Hybrid infantry: any"
+#id "Hybrid infantry: any"
 #type infantry
 #themeinc thisitemtag any_infantry_title 1
 #chanceinc anyunitfilter "Hybrid infantry: any" *0

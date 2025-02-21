@@ -2,18 +2,18 @@
 
 
 #newrace
-#name "Caveman"
+#id "Caveman"
 #basechance 0.1
 #pose cavemantroops
 #pose cavemanmages
 
 #subterranean
 #primitive
-#size3
+#size6
 
 #unitcommand "#gcost 20"
 #unitcommand "#rpcost 19995"
-#unitcommand "#size 3"
+#unitcommand "#size 4"
 #unitcommand "#hp 23"
 #unitcommand "#prot 2"
 #unitcommand "#str 17"
@@ -32,6 +32,7 @@
 #unitcommand "#twiceborn 3178"
 
 #nationcommand "#likespop 84"
+#additionalgods gods_without_realm
 
 #mapmovepenaltyenc 6
 #mapmovepenaltyprot 15

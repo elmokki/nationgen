@@ -1,6 +1,6 @@
 -- Generic theme with high diversity and low cohesion
 #newtheme
-#name default
+#id default
 #type techlevel
 #basechance 4
 #themeinc theme iron *1
@@ -13,7 +13,7 @@
 -- Weights: EA 1, MA 1, LA 0.5
 #newtheme
 #type techlevel
-#name primitive
+#id primitive
 #basechance 1
 #chanceinc era 3 -0.5
 #themeinc theme advanced *0.05
@@ -28,7 +28,7 @@
 -- Weights: EA 2, MA 1, LA 0.25
 #newtheme
 #type techlevel
-#name bronze
+#id bronze
 #basechance 2
 #chanceinc era 2 -1
 #chanceinc era 3 -1.5
@@ -43,7 +43,7 @@
 
 -- Weights: EA 1, MA 2, LA 3
 #newtheme
-#name iron
+#id iron
 #type techlevel
 #basechance 2
 #chanceinc era 1 -1
@@ -60,7 +60,7 @@
 -- Weights: EA 0.25, MA 1, LA 2
 #newtheme
 #type techlevel
-#name advanced
+#id advanced
 #basechance 0.25
 #chanceinc era 3 1.75
 #chanceinc era 2 0.75
@@ -79,18 +79,19 @@
 -- Weights: EA 1.5, MA 1.5, LA 1.5
 #newtheme
 #type demographic
-#name lowland
+#id lowland
 #basechance 2
 #themeinc theme lowland *100000
 #racedefinition "#generationchance mounted 0.125"
 #racedefinition "#monsterchance 0.3"
 #racedefinition "#nationcommand '#idealcold -2'"
+#racedefinition "#nationcommand '#moreheat 1'"
 #endtheme
 
 -- Weights: EA 0.5, MA 0.25, LA 0.125
 #newtheme
 #type demographic
-#name winged
+#id winged
 #basechance 0.25
 #chanceinc era 1 *2
 #chanceinc era 3 *0.5
@@ -103,7 +104,7 @@
 -- Weights: EA 0.125, MA 0.25, LA 0.5
 #newtheme
 #type demographic
-#name abysian
+#id abysian
 #basechance 0.25
 #chanceinc era 3 *2
 #chanceinc era 1 *0.5
@@ -112,6 +113,7 @@
 #themeinc theme bronze *0.1
 #racedefinition "#monsterchance 0"
 #racedefinition "#nationcommand '#idealcold -2'"
+#racedefinition "#nationcommand '#moreheat 1'"
 #racedefinition "#nationcommand '#magicpriority fire 4'"
 #racedefinition "#nationcommand '#magicpriority blood 4'"
 #racedefinition "#tag 'abysian'"
@@ -120,12 +122,14 @@
 -- Weights: EA 0.25, MA 0.25, LA 0.25
 #newtheme
 #type demographic
-#name alpine
+#id alpine
 #basechance 0.25
 #themeinc theme alpine *100000
 #racedefinition "#pose yeti"
 #racedefinition "#monsterchance 0"
 #racedefinition "#nationcommand '#idealcold 2'"
+#racedefinition "#nationcommand '#moreheat -1'"
+#racedefinition "#nationcommand '#moreheat -1'"
 #racedefinition "#nationcommand '#magicpriority air 4'"
 #racedefinition "#nationcommand '#magicpriority water 4'"
 #racedefinition "#forts default_forts"
@@ -140,7 +144,7 @@
 -- Weights: EA 4, MA 4, LA 4
 #newtheme
 #type cultural
-#name enlightened
+#id enlightened
 #theme enlightened
 #basechance 4
 #themeinc theme enlightened *1000
@@ -160,7 +164,7 @@
 #racedefinition "#pose vanaraelites"
 #racedefinition "#pose vanaramages"
 #racedefinition "#pose vanaraelders"
-#racedefinition "#gods monkeygods"
+#racedefinition "#gods monkey_gods"
 #racedefinition "#unitcommand '#nametype 129'"
 #racedefinition "#longsyllables /data/names/nations/monkey/longsyllables.txt"
 #racedefinition "#shortsyllables /data/names/nations/monkey/shortsyllables.txt"
@@ -175,7 +179,7 @@
 -- Weights: EA 2, MA 2, LA 2
 #newtheme
 #type cultural
-#name oriental
+#id oriental
 #theme oriental
 #basechance 2
 #themeinc theme oriental *1000
@@ -201,7 +205,7 @@
 #racedefinition "#shortsyllables /data/names/nations/oriental/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/oriental/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 134'"
-#racedefinition "#gods easterngods"
+#racedefinition "#gods eastern_gods"
 #racedefinition "#forts default_forts"
 #racedefinition "#forts city_forts"
 #racedefinition "#tag 'oriental'"
@@ -212,7 +216,7 @@
 -- Weights: EA 2, MA 2, LA 2
 #newtheme
 #type cultural
-#name occidental
+#id occidental
 #theme occidental
 -- #basechance 2
 #basechance 0
@@ -234,7 +238,7 @@
 #racedefinition "#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/nahuatl/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 123'"
-#racedefinition "#gods westerngods"
+#racedefinition "#gods western_gods"
 #racedefinition "#forts default_forts"
 #racedefinition "#forts city_forts"
 #racedefinition "#nationcommand '#likespop 82'"
@@ -248,7 +252,7 @@
 -- Weights: EA 2, MA 2, LA 2
 #newtheme
 #type cultural
-#name austral
+#id austral
 #theme austral
 #basechance 2
 #themeinc theme austral *1000
@@ -269,7 +273,7 @@
 #racedefinition "#shortsyllables /data/names/nations/machakan/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/machakan/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 126'"
-#racedefinition "#gods southerngods"
+#racedefinition "#gods southern_gods"
 #racedefinition "#forts default_forts"
 #racedefinition "#forts giant_forts"
 #racedefinition "#nationcommand '#likespop 80'"
@@ -282,7 +286,7 @@
 -- Weights: EA 0.5, MA 1, LA 1.5
 #newtheme
 #type cultural
-#name imperial
+#id imperial
 #theme imperial
 #basechance 1
 #chanceinc era 1 -0.5
@@ -306,7 +310,7 @@
 #racedefinition "#shortsyllables /data/names/nations/romance/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/romance/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 106'"
-#racedefinition "#gods imperialgods"
+#racedefinition "#gods imperial_gods"
 #racedefinition "#tag 'preferredmount wolf'"
 #racedefinition "#sacredmountedchance 2.5"
 #racedefinition "#sacredinfantrychance 2.5"
@@ -319,7 +323,7 @@
 -- Weights: EA 0.5, MA 1, LA 1.5
 #newtheme
 #type cultural
-#name imperial
+#id imperial
 #theme imperial
 #basechance 1
 #chanceinc era 1 -0.5
@@ -343,7 +347,7 @@
 #racedefinition "#shortsyllables /data/names/nations/romance/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/romance/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 106'"
-#racedefinition "#gods imperialgods"
+#racedefinition "#gods imperial_gods"
 #racedefinition "#sacredinfantrychance 5"
 #racedefinition "#tag 'imperial'"
 #raceprefix bandar

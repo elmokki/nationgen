@@ -1,11 +1,11 @@
 #newitem
-#name "normal pygmy caster"
+#id "normal pygmy caster"
 #basechance 0.001
 #gameid -1
 #sprite /graphics/machakans/basepygmy.png
 
 #define "#gcost 5"
-#define "#size 1"
+#define "#size 2"
 #define "#ap 7"
 #define "#mapmove 16"
 #define "#mor 8"
@@ -19,13 +19,13 @@
 
 
 #newitem
-#name "elite pygmy caster"
+#id "elite pygmy caster"
 #gameid -1
 #sprite /graphics/machakans/basepygmy.png
 #theme pygmy_elites
 
 #define "#gcost 7"
-#define "#size 1"
+#define "#size 2"
 #define "#ap 8"
 #define "#mapmove 16"
 #define "#mor 9"

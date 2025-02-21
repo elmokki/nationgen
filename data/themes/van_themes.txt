@@ -1,6 +1,6 @@
 -- Generic theme with high diversity and low cohesion
 #newtheme
-#name default
+#id default
 #basechance 4
 #endtheme
 
@@ -9,7 +9,7 @@
 -- Weights: EA 1, MA 1, LA 0.5
 #newtheme
 #type techlevel
-#name primitive
+#id primitive
 #basechance 1
 #chanceinc era 3 -0.5
 #themeinc theme advanced *0.05
@@ -24,7 +24,7 @@
 -- Weights: EA 0.25, MA 1, LA 2
 #newtheme
 #type techlevel
-#name advanced
+#id advanced
 #basechance 0.25
 #chanceinc era 3 1.75
 #chanceinc era 2 0.75
@@ -40,7 +40,7 @@
 -- Demographic themes - tier-2 casters and elites can always be opposite gender
 #newtheme
 #type demographic
-#name patriarchal
+#id patriarchal
 #basechance 6
 #themeinc theme female *0.001
 #themeinc theme male_elite +4
@@ -48,14 +48,14 @@
 
 #newtheme
 #type demographic
-#name mixed
+#id mixed
 #basechance 3
 #themeinc theme male +1
 #endtheme
 
 #newtheme
 #type demographic
-#name matriarchal
+#id matriarchal
 #basechance 1
 #themeinc theme male *0.001
 #themeinc theme female_elite +4
@@ -65,7 +65,7 @@
 -- Serf warriors if not a secondary race and doesn't have slaves
 #newtheme
 #type social
-#name serfs
+#id serfs
 #basechance 4
 #chanceinc primaryrace not van *0
 #racedefinition "#pose borealserfs"
@@ -74,7 +74,7 @@
 -- Weights: EA 0, MA 2, LA 4
 #newtheme
 #type social
-#name slaver
+#id slaver
 #basechance 0
 #chanceinc era 2 2
 #chanceinc era 3 4

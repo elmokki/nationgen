@@ -18,7 +18,7 @@
 -- Extra tip: Special commanders get #poorleader or #noleader if nothing is specified
 
 #new
-#name "administrator"
+#id "administrator"
 #command "#taxcollector"
 #command "#incprovdef"
 #command "#gcost +10"
@@ -42,7 +42,7 @@
 
 #new
 #basechance 0.1
-#name "bringer of fortune"
+#id "bringer of fortune"
 #command "#gold 5"
 #command "#nobadevents 5"
 #unitname "Oracle"
@@ -67,7 +67,7 @@
 #end
 
 #new
-#name "lawman"
+#id "lawman"
 #command "#patrolbonus 20"
 #command "#incunrest -20"
 #command "#gcost +40"
@@ -90,7 +90,7 @@
 #end
 
 #new
-#name "siege engineer"
+#id "siege engineer"
 #command "#siegebonus 30"
 #command "#castledef 30"
 #unitname "Siege Engineer"
@@ -107,7 +107,7 @@
 #end
 
 #new
-#name "mason"
+#id "mason"
 #basechance 0
 #chanceinc racetheme advanced 1
 #command "#siegebonus 20"
@@ -127,7 +127,7 @@
 #end
 
 #new
-#name "heretic"
+#id "heretic"
 #command "#heretic +1"
 #command "#stealthy +0"
 #command "#gcost +30"
@@ -150,7 +150,7 @@
 #end
 
 #new
-#name "reanimator"
+#id "reanimator"
 #command "#reanimator 5"
 #command "#gcost +30"
 #unitname "Reanimator"
@@ -167,7 +167,7 @@
 #end
 
 #new
-#name "Librarian"
+#id "Librarian"
 #command "#inspiringres 1"
 #command "#gcost +10"
 #unitname "Librarian"
@@ -190,7 +190,7 @@
 #end
 
 #new
-#name "comslave"
+#id "comslave"
 #command "#comslave"
 #command "#gcost +10"
 #unitname "Communicant"
@@ -207,7 +207,7 @@
 
 
 #new
-#name "comslave blood"
+#id "comslave blood"
 #command "#comslave"
 #command "#gcost +10"
 #unitname "Sabbath Slave"
@@ -223,7 +223,7 @@
 #end
 
 #new
-#name "comslave-troop-1"
+#id "comslave-troop-1"
 #command "#comslave"
 #command "#gcost +40"
 #command "#reclimit 1"
@@ -241,7 +241,7 @@
 #end
 
 #new
-#name "comslave-troop-blood-1"
+#id "comslave-troop-blood-1"
 #command "#comslave"
 #command "#gcost +40"
 #command "#reclimit 1"
@@ -259,7 +259,7 @@
 #end
 
 #new
-#name "comslave-troop-3"
+#id "comslave-troop-3"
 #command "#comslave"
 #command "#gcost +40"
 #command "#reclimit 3"
@@ -276,7 +276,7 @@
 #end
 
 #new
-#name "comslave-troop-blood-3"
+#id "comslave-troop-blood-3"
 #command "#comslave"
 #command "#gcost +40"
 #command "#reclimit 3"
@@ -293,7 +293,7 @@
 #end
 
 #new
-#name "comslave-troop-5"
+#id "comslave-troop-5"
 #command "#comslave"
 #command "#gcost +40"
 #command "#reclimit 1"
@@ -310,7 +310,7 @@
 #end
 
 #new
-#name "comslave-troop-blood-5"
+#id "comslave-troop-blood-5"
 #command "#comslave"
 #command "#gcost +40"
 #command "#reclimit 1"
@@ -328,9 +328,9 @@
 
  
 #new
-#name "dowser"
+#id "dowser"
 #command "#douse 1"
-#command "#magicskill 7 1"
+#command "#magicskill 8 1"
 #command "#masterrit -1"
 #command "#researchbonus -6"
 #command "#mastersmith -1"

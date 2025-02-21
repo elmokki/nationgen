@@ -1,5 +1,5 @@
 #newitem
-#name "markata base"
+#id "markata base"
 #gameid -1
 #sprite /graphics/monkey/markata_base.png
 #command "#gcost 5"
@@ -17,7 +17,7 @@
 #command "#mapmove 16"
 #command "#ap 14"
 #command "#enc 2"
-#command "#size 1"
+#command "#size 2"
 #command "#twiceborn 3447"
 #define "#minsizeleader 0"
 #subrace markata
@@ -26,7 +26,7 @@
 #enditem
 
 #newitem
-#name "winged markata base"
+#id "winged markata base"
 #gameid -1
 #sprite /graphics/monkey/markata_base.png
 #needs wings winged
@@ -42,7 +42,7 @@
 #command "#mapmove 24"
 #command "#ap 14"
 #command "#enc 2"
-#command "#size 1"
+#command "#size 2"
 #command "#maxage +5"
 #command "#flying"
 #command "#animal"
@@ -56,7 +56,7 @@
 #enditem
 
 #newitem
-#name "markatabred base"
+#id "markatabred base"
 #gameid -1
 #sprite /graphics/monkey/markata_base_markatabred.png
 #command "#gcost 6"
@@ -71,7 +71,7 @@
 #command "#mapmove 16"
 #command "#ap 11"
 #command "#enc 2"
-#command "#size 1"
+#command "#size 2"
 #command "#wastesurvival"
 #command "#undisciplined"
 #command "#fireres 15"
@@ -84,7 +84,7 @@
 #enditem
 
 #newitem
-#name "alpine markata base"
+#id "alpine markata base"
 #gameid -1
 #sprite /graphics/monkey/markata_base_alpine.png
 #command "#gcost 6"
@@ -102,7 +102,7 @@
 #command "#mapmove 16"
 #command "#ap 14"
 #command "#enc 2"
-#command "#size 1"
+#command "#size 2"
 #command "#coldres 15"
 #command "#maxage *1.2"
 #command "#twiceborn 3448"

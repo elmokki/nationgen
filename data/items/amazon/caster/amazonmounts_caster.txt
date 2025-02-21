@@ -2,18 +2,12 @@
 
 #newitem
 #basechance 3
-#name "brown horse"
+#id "brown horse"
 #gameid -1
 #sprite /graphics/mounts/standard/brownhorse.png
 #armor
 #needs overlay 1
-#define "#size 3"
-#define "#mapmove 3"
-#define "#ap 24"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
-#define "#ressize 2"
-#define "#enc 3"
+#define "#mountmnr 'riding-horse'"
 #define "#gcost +15"
 #tag "animal horse"
 #theme "light"
@@ -23,21 +17,14 @@
 
 #newitem
 #basechance 3
-#name "catapract horse"
+#id "catapract horse"
 #gameid -1
 #sprite /graphics/mounts/standard/catapracthorse1.png
 #armor
 #offsetx -3
 #needs overlay 4
-#define "#size 3"
-#define "#mapmove 2"
-#define "#ap 22"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
+#define "#mountmnr 'cataphracted-horse'"
 #define "#gcost +25"
-#define "#ressize 2"
-#define "#enc 4"
-#define "#rcost +5"
 #tag "animal horse"
 #theme "heavy"
 #tag "minprot 12"
@@ -48,20 +35,14 @@
 
 #newitem
 #basechance 3
-#name "light catapract horse"
+#id "light catapract horse"
 #gameid -1
 #sprite /graphics/mounts/standard/lightcatapract1.png
 #armor
 #offsetx -3
 #needs overlay 5
-#define "#size 3"
-#define "#mapmove 3"
-#define "#ap 24"
-#define "#mounted"
-#define "#weapon 56 --- Hoof"
+#define "#mountmnr 'light-cataphracted-horse'"
 #define "#gcost +20"
-#define "#ressize 2"
-#define "#enc 3"
 #tag "animal horse"
 #tag "minprot 10"
 #tag "maxprot 14"
@@ -71,22 +52,15 @@
 #enditem
 
 #newitem
-#name "pegasus"
+#id "pegasus"
 #gameid -1
 #sprite /graphics/mounts/standard/pegasus.png
 #armor
 #offsetx 28
 #offsety 64
 #needs overlay 8
-#define "#size 4"
-#define "#mapmove 3"
-#define "#ap 22"
-#define "#mounted"
-#define "#flying"
-#define "#weapon 56 --- Hoof"
+#define "#mountmnr 'pegasus'"
 #define "#gcost +50"
-#define "#ressize 2"
-#define "#enc 4"
 #theme "flying"
 #tag "animal pegasus"
 #tag "name commander windlord"
@@ -95,24 +69,15 @@
 #enditem
 
 #newitem
-#name "gryphon"
+#id "gryphon"
 #gameid -1
 #sprite /graphics/amazon/mounts/gryphon.png
 #armor
 #offsetx 23
 #offsety 64
 #needs overlay gryphon_overlay
-#define "#size 5"
-#define "#mapmove 2"
-#define "#ap 15"
-#define "#mounted"
-#define "#flying"
-#define "#weapon 236 -- Claw"
-#define "#weapon 237 -- Bite"
-#define "#secondtmpshape gryphonmount"
+#define "#mountmnr 'gryphonmount'"
 #define "#gcost +100"
-#define "#ressize 2"
-#define "#enc 4"
 #description "If the rider dies, the gryphon will carry on fighting until the end of the battle."
 #theme "flying"
 #theme "specialmount"
@@ -122,20 +87,12 @@
 #enditem
 
 #newitem
-#name "leogryph"
+#id "leogryph"
 #gameid -1
 #sprite /graphics/amazon/mounts/leogryph.png
 #armor
-#define "#size 4"
-#define "#mapmove 2"
-#define "#ap 20"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
-#define "#weapon 236 -- Claw"
-#define "#secondtmpshape leogryphmount"
+#define "#mountmnr 'leogryphmount'"
 #define "#gcost +40"
-#define "#ressize 2"
-#define "#enc 4"
 #description "If the rider dies, the leogryph will carry on fighting until the end of the battle."
 #offsety 5
 #offsetx -3
@@ -146,23 +103,15 @@
 
 
 #newitem
-#name "serpent"
+#id "serpent"
 #gameid -1
 #sprite /graphics/mounts/standard/serpent1.png
 #armor
 #offsetx -7
 #offsety 14
 #needs overlay 6
-#define "#size 3"
-#define "#mapmove 2"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 494 --- Poisonous Bite"
-#define "#secondtmpshape serpent1"
- -- 1179
+#define "#mountmnr 'serpent1'"
 #define "#gcost +30"
-#define "#ressize 2"
-#define "#enc 3"
 #tag "animal serpent"
 #theme "light"
 #tag "guaranteedprefix serpent"
@@ -171,21 +120,15 @@
 #enditem
 
 #newitem
-#name "green lizard"
+#id "green lizard"
 #gameid -1
 #sprite /graphics/mounts/standard/greenlizard.png
 #armor
 #offsetx -5
 #offsety 3
 #needs overlay 3
-#define "#size 3"
-#define "#mapmove 2"
-#define "#ap 18"
-#define "#mounted"
-#define "#weapon 19 --- Bite"
+#define "#mountmnr 'greenlizard'"
 #define "#gcost +20"
-#define "#ressize 2"
-#define "#enc 3"
 #tag "animal lizard"
 #theme "light"
 #theme "specialmount"

@@ -1,5 +1,5 @@
 #newitem
-#name "brown_savage"
+#id "brown_savage"
 #basechance 1
 #chanceinc hastheme not brown *0.01
 #gameid -1
@@ -7,7 +7,7 @@
 #define "#gcost 35"
 #define "#rpcost 30000"
 #define "#hp 24"
-#define "#size 3"
+#define "#size 5"
 #define "#prot 4"
 #define "#mr 12"
 #define "#mor 13"
@@ -37,7 +37,7 @@
 #enditem
 
 #newitem
-#name "brown_civilized"
+#id "brown_civilized"
 #basechance 1
 #chanceinc hastheme not brown *0.01
 #gameid -1
@@ -45,7 +45,7 @@
 #define "#gcost 30"
 #define "#rpcost 25000"
 #define "#hp 22"
-#define "#size 3"
+#define "#size 5"
 #define "#prot 4"
 #define "#mr 11"
 #define "#mor 13"
@@ -75,7 +75,7 @@
 
 
 #newitem
-#name "black_savage"
+#id "black_savage"
 #basechance 0
 #chanceinc hastheme black 1
 #gameid -1
@@ -83,7 +83,7 @@
 #define "#gcost 40"
 #define "#rpcost 30000"
 #define "#hp 26"
-#define "#size 3"
+#define "#size 5"
 #define "#prot 4"
 #define "#mr 12"
 #define "#mor 13"
@@ -113,7 +113,7 @@
 #enditem
 
 #newitem
-#name "black_civilized"
+#id "black_civilized"
 #basechance 0
 #chanceinc hastheme black *0.5
 #gameid -1
@@ -121,7 +121,7 @@
 #define "#gcost 35"
 #define "#rpcost 30000"
 #define "#hp 24"
-#define "#size 3"
+#define "#size 5"
 #define "#prot 4"
 #define "#mr 11"
 #define "#mor 13"
@@ -151,7 +151,7 @@
 #enditem
 
 #newitem
-#name "white_savage"
+#id "white_savage"
 #basechance 0
 #chanceinc hastheme white 1
 #gameid -1
@@ -159,7 +159,7 @@
 #define "#gcost 35"
 #define "#rpcost 30000"
 #define "#hp 24"
-#define "#size 3"
+#define "#size 5"
 #define "#prot 4"
 #define "#mr 13"
 #define "#mor 14"
@@ -189,7 +189,7 @@
 #enditem
 
 #newitem
-#name "white_civilized"
+#id "white_civilized"
 #basechance 0
 #chanceinc hastheme white *0.5
 #gameid -1
@@ -197,7 +197,7 @@
 #define "#gcost 30"
 #define "#rpcost 25000"
 #define "#hp 22"
-#define "#size 3"
+#define "#size 5"
 #define "#prot 4"
 #define "#mr 12"
 #define "#mor 14"

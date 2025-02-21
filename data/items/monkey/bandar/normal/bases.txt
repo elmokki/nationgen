@@ -1,5 +1,5 @@
 #newitem
-#name "bandar basesprite"
+#id "bandar basesprite"
 #gameid -1
 #sprite /graphics/monkey/bandar_base.png
 #needs hands bandar_hands
@@ -13,7 +13,7 @@
 #command "#def 9"
 #command "#att 11"
 #command "#str 15"
-#command "#size 3"
+#command "#size 4"
 #command "#mapmove 14"
 #command "#animal"
 #command "#forestsurvival"
@@ -24,7 +24,7 @@
 #enditem
 
 #newitem
-#name "winged bandar basesprite"
+#id "winged bandar basesprite"
 #gameid -1
 #sprite /graphics/monkey/bandar_base.png
 #needs hands bandar_hands
@@ -39,7 +39,7 @@
 #command "#def 9"
 #command "#att 11"
 #command "#str 14"
-#command "#size 3"
+#command "#size 4"
 #command "#mapmove 21"
 #command "#maxage +5"
 #command "#flying"
@@ -52,7 +52,7 @@
 #enditem
 
 #newitem
-#name "bandarbred basesprite"
+#id "bandarbred basesprite"
 #gameid -1
 #sprite /graphics/monkey/bandar_base_bandarbred.png
 #needs hands bandarbred_hands
@@ -66,7 +66,7 @@
 #command "#def 8"
 #command "#att 11"
 #command "#str 16"
-#command "#size 3"
+#command "#size 4"
 #command "#mapmove 14"
 #command "#maxage *0.8"
 #command "#wastesurvival"
@@ -78,7 +78,7 @@
 #enditem
 
 #newitem
-#name "alpine bandar basesprite"
+#id "alpine bandar basesprite"
 #gameid -1
 #sprite /graphics/monkey/bandar_base_alpine.png
 #needs hands bandar_hands
@@ -92,7 +92,7 @@
 #command "#def 9"
 #command "#att 11"
 #command "#str 15"
-#command "#size 3"
+#command "#size 4"
 #command "#mapmove 14"
 #command "#animal"
 #command "#mountainsurvival"

@@ -1,11 +1,11 @@
 #newitem
-#name "none"
+#id "none"
 #gameid -1
 #armor
 #enditem
 
 #newitem
-#name "simplecultistrobe"
+#id "simplecultistrobe"
 #gameid 158
 #sprite /graphics/agarthan/magearmor/body/cultistrobe_plain.png
 #recolormask self
@@ -13,7 +13,7 @@
 #enditem
 
 #newitem
-#name "plaintunic"
+#id "plaintunic"
 #gameid 158
 #sprite /graphics/agarthan/magearmor/body/olmspawntunic_plain.png
 #recolormask self
@@ -21,21 +21,21 @@
 #enditem
 
 #newitem
-#name "bronze cuirass"
+#id "bronze cuirass"
 #gameid 100
 #sprite /graphics/agarthan/armor/bronzearmor_light.png
 #armor
 #enditem
 
 #newitem
-#name "bronze scale cuirass"
+#id "bronze scale cuirass"
 #gameid 142
 #sprite /graphics/agarthan/armor/bronzearmor_light.png
 #armor
 #enditem
 
 #newitem
-#name "bronze hauberk"
+#id "bronze hauberk"
 #gameid 101
 #sprite /graphics/agarthan/armor/bronzearmor_heavy.png
 #needs legs bronzepants
@@ -43,7 +43,7 @@
 #enditem
 
 #newitem
-#name "bronze scale hauberk"
+#id "bronze scale hauberk"
 #gameid 136
 #sprite /graphics/agarthan/armor/bronzearmor_heavy.png
 #needs legs bronzepants

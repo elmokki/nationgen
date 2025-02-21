@@ -1,6 +1,6 @@
 --- Base offsets are applied to everything except base and overlay
 #newitem
-#name "two-lizard chariot"
+#id "two-lizard chariot"
 #gameid -1
 #sprite /graphics/mounts/chariots/twolizard.png
 #recolormask /graphics/mounts/chariots/twolizard_recolormask.png
@@ -8,20 +8,9 @@
 #needs overlay twolizard_overlay
 #offsetx 74
 #offsety -3
-#define "#trample"
-#define "#mounted"
-#define "#size 5"
-#define "#prot +2"
-#define "#weapon nostr_bite_10" -- Bite
-#define "#weapon nostr_bite_10" -- Bite
-#define "#mapmove 18"
-#define "#ap 15"
-#define "#ressize 3"
+#define "#mountmnr 'chariot_two_lizard'"
 #define "#gcost +50"
 #define "#rcost +30"
-#define "#enc 5"
-#define "#unsurr 2"
-#define "#nomovepen"
 #define "#twiceborn 3196"
 #tag "chariot"
 #tag "minprot 10"

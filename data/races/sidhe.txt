@@ -1,5 +1,5 @@
 #newrace
-#name "Sidhe"
+#id "Sidhe"
 #basechance 0.05
 
 #chanceinc era 1 *3
@@ -48,7 +48,8 @@
 #chanceinc "primaryrace 'Feudal human' *2"
 #chanceinc "primaryrace firbolg *2"
 
-#gods europegods
+#gods europe_gods
+#additionalgods gods_without_realm
 
 #monsterchance 0.1
 

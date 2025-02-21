@@ -2,7 +2,7 @@
 ------ Mage priest
 
 #newpose
-#name young_caster
+#id young_caster
 #role "mage"
 #role "priest"
 
@@ -31,7 +31,7 @@
 ------ Mage priest - big
 
 #newpose
-#name ancient_caster
+#id ancient_caster
 #role "mage"
 #role "priest"
 #warriormage
@@ -62,7 +62,7 @@
 ------ Mage priest - biggest (hero only)
 
 #newpose
-#name ageless_caster
+#id ageless_caster
 #role "mage"
 #role "priest"
 #warriormage
@@ -95,7 +95,7 @@
 --------  Warrior-mage (Olmspawn)
 
 #newpose
-#name olmspawn_warriormage
+#id olmspawn_warriormage
 #basechance 0.1
 #chanceinc moduleid herogen *2
 #chanceinc secondaryrace olm *4
@@ -129,7 +129,7 @@
 --------  Mage/priest (Olmspawn)
 
 #newpose
-#name olmspawn_caster
+#id olmspawn_caster
 #basechance 0.2
 #chanceinc moduleid herogen *2
 #chanceinc secondaryrace olm *3
@@ -162,7 +162,7 @@
 --------  Ancient Olmspawn caster
 
 #newpose
-#name ancient_olmspawn_caster
+#id ancient_olmspawn_caster
 #basechance 0.01
 #chanceinc moduleid herogen *2
 #chanceinc secondaryrace olm *25

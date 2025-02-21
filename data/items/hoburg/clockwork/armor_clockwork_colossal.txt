@@ -2,7 +2,7 @@
 -- Giant clockwork armor
 
 #newitem 
-#name "giant clockwork armor"
+#id "giant clockwork armor"
 #gameid 14
 #sprite /graphics/hoburg/giant/clockwork/colossus_iron.png
 #armor
@@ -10,7 +10,7 @@
 
 #define "#gcost +90"
 #define "#rcost +75"
-#define "#size 5"
+#define "#size 8"
 #define "#ressize 5"
 #adjustmentcommand "#enc 0"
 #define "#hp +36"
@@ -34,7 +34,8 @@
 #define "#trample"
 #define "#nomovepen"
 #define "#humanoid"
-#define "#itemslots +61446"
+-- add 2 hands, 1 bow, 4 miscs slots to base slots
+#define "#itemslots +3932678"
 
 #description "Their colossal armor is driven by complex clockwork mechanisms that vastly increase their strength and can run almost indefinitely"
 

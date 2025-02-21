@@ -1,5 +1,5 @@
 #newrace
-#name "Vaetti"
+#id "Vaetti"
 #basechance 0.1
 #all_troops_sacred
 #all_troops_elite
@@ -20,7 +20,7 @@
 #unitcommand "#gcost 7"
 #unitcommand "#rpcost 6996"
 #unitcommand "#rcost 1"
-#unitcommand "#size 1"
+#unitcommand "#size 2"
 #unitcommand "#hp 8"
 #unitcommand "#mr 12"
 #unitcommand "#mor 9"
@@ -39,7 +39,9 @@
 #unitcommand "#twiceborn 3448"
 
 #nationcommand "#idealcold +2"
-#gods europegods
+#nationcommand "#moreheat -1"
+#gods europe_gods
+#additionalgods gods_without_realm
 
 #nationcommand "#likespop 61"
 #nationcommand "#likespop 66"
@@ -67,6 +69,6 @@
 #specialcommanderfilters default_specialcommanderfilters
 #specialcommanderfilters specialcommanderfilters_extended
 
-#size1
+#size2
 
 #endrace

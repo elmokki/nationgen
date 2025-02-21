@@ -1,5 +1,5 @@
 #newrace
-#name "Avvite"
+#id "Avvite"
 #basechance 0.2
 
 #all_troops_sacred
@@ -12,7 +12,7 @@
 #unitcommand "#gcost 25"
 #unitcommand "#rpcost 25000"
 #unitcommand "#rcost 1"
-#unitcommand "#size 3"
+#unitcommand "#size 4"
 #unitcommand "#ressize 3"
 #unitcommand "#hp 24"
 #unitcommand "#prot 1"
@@ -34,7 +34,9 @@
 #mapmovepenaltyprot 16
 
 #nationcommand "#idealcold -2"
-#gods levantinegods
+#nationcommand "#moreheat 1"
+#gods levantine_gods
+#additionalgods gods_without_realm
 
 #pose avviteinfantry
 #pose avvitecavalry
@@ -58,7 +60,7 @@
 
 #monsterchance 0.1
 
-#gods agarthagods
+#gods agartha_gods
 #forts city_forts
 #forts giant_forts
 
@@ -68,7 +70,7 @@
 
 #giant
 #civilized
-#size3
+#size6
 
 #theme civilized
 

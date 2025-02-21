@@ -2,7 +2,7 @@
 -------- Hafted 2h weapons for savage minotaurs
 
 #newpose
-#name "2h long"
+#id "2h long"
 #role "infantry"
 #role "scout"
 
@@ -31,7 +31,7 @@
 -------- Dual-Wielding savage minotaurs
 
 #newpose
-#name "DW"
+#id "DW"
 #role "infantry"
 #role "scout"
 
@@ -63,7 +63,7 @@
 -------- Great Swords or Clubs (low-probability pose for either cultured or savage)
 
 #newpose
-#name "2h short"
+#id "2h short"
 #role "infantry"
 
 #basechance 3
@@ -90,7 +90,7 @@
 
 -------- Peltasts and other lower-discipline soldiers
 #newpose
-#name "soldiers"
+#id "soldiers"
 #role "infantry"
 #role "scout"
 
@@ -125,7 +125,7 @@
 
 -------- Hoplites
 #newpose
-#name "hoplites"
+#id "hoplites"
 #role "infantry"
 
 #renderorder "shadow bonusweapon weapon cloakb basesprite mount shirt legs armor cloakf quiver offhandw hands hair helmet offhanda overlay"
@@ -134,7 +134,7 @@
 #theme "cultured"
 #theme "minotaur"
 
-#command "#formationfighter +3"
+#command "#formationfighter +4"
 #command "#mor +1"
 
 #load basesprite /data/items/halfmen/minotaur/bases.txt
@@ -160,7 +160,7 @@
 -------- Minocentaur warriors  (available when minotaurs and centaurs are the primary + secondary races)
 
 #newpose
-#name "minocentaur warriors"
+#id "minocentaur warriors"
 #role "elite infantry"
 #role "sacred infantry"
 
@@ -193,7 +193,7 @@
 
 -------- Minocentaur cataphracts (available when minotaurs and centaurs are the primary + secondary races)
 #newpose
-#name "minocentaur cataphracts"
+#id "minocentaur cataphracts"
 #role "elite infantry"
 #role "sacred infantry"
 

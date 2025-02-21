@@ -1,7 +1,7 @@
 --- Non-robes (shendyts, mostly)
 
 #newitem
-#name shendyt_short_light
+#id shendyt_short_light
 #sprite /graphics/dynastichuman/armor/robes/shendyt_short2.png
 #recolormask /graphics/dynastichuman/armor/robes/shendyt_short2_recolormask.png
 #eliteversion "shendyt_short_white"
@@ -12,7 +12,7 @@
 #enditem
 
 #newitem
-#name shendyt_short_white
+#id shendyt_short_white
 #sprite /graphics/dynastichuman/armor/robes/shendyt_short2.png
 #recolormask /graphics/dynastichuman/armor/robes/shendyt_short_recolormask2.png
 #gameid -1
@@ -23,7 +23,7 @@
 #enditem
 
 #newitem
-#name shendyt_short_dark
+#id shendyt_short_dark
 #sprite /graphics/dynastichuman/armor/robes/shendyt_short1.png
 #recolormask /graphics/dynastichuman/armor/robes/shendyt_short1_recolormask.png
 #eliteversion "shendyt_short_black"
@@ -34,7 +34,7 @@
 #enditem
 
 #newitem
-#name shendyt_short_black
+#id shendyt_short_black
 #sprite /graphics/dynastichuman/armor/robes/shendyt_short1.png
 #recolormask /graphics/dynastichuman/armor/robes/shendyt_short_recolormask2.png
 #gameid -1
@@ -45,7 +45,7 @@
 #enditem
 
 #newitem
-#name shendyt_grey
+#id shendyt_grey
 #sprite /graphics/dynastichuman/armor/robes/shendyt_long_simple_bright.png
 #eliteversion "shendyt_pale"
 #eliteversion "shendyt_usekh_grey"
@@ -55,7 +55,7 @@
 #enditem
 
 #newitem
-#name shendyt_black
+#id shendyt_black
 #sprite /graphics/dynastichuman/armor/robes/shendyt_long_simple_dark.png
 #eliteversion "shendyt_dull"
 #eliteversion "shendyt_usekh_black"
@@ -65,7 +65,7 @@
 #enditem
 
 #newitem
-#name shendyt_pale
+#id shendyt_pale
 #sprite /graphics/dynastichuman/armor/robes/shendyt_long_simple_bright.png
 #recolormask /graphics/dynastichuman/armor/robes/shendyt_long_simple_dull_recolormask.png
 #eliteversion "shendyt_bright"
@@ -77,7 +77,7 @@
 #enditem
 
 #newitem
-#name shendyt_dull
+#id shendyt_dull
 #sprite /graphics/dynastichuman/armor/robes/shendyt_long_simple_dark.png
 #recolormask /graphics/dynastichuman/armor/robes/shendyt_long_simple_dull_recolormask.png
 #eliteversion "shendyt_dark"
@@ -89,7 +89,7 @@
 #enditem
 
 #newitem
-#name shendyt_bright
+#id shendyt_bright
 #sprite /graphics/dynastichuman/armor/robes/shendyt_long_simple_bright.png
 #recolormask /graphics/dynastichuman/armor/robes/shendyt_long_simple_bright_recolormask.png
 #eliteversion "shendyt_usekh_bright"
@@ -100,7 +100,7 @@
 #enditem
 
 #newitem
-#name shendyt_dark
+#id shendyt_dark
 #sprite /graphics/dynastichuman/armor/robes/shendyt_long_simple_dark.png
 #recolormask /graphics/dynastichuman/armor/robes/shendyt_long_simple_dark_recolormask.png
 #eliteversion "shendyt_usekh_dark"
@@ -111,7 +111,7 @@
 #enditem
 
 #newitem
-#name shendyt_usekh_grey
+#id shendyt_usekh_grey
 #sprite /graphics/dynastichuman/armor/robes/shendyt_long_usekh1.png
 #recolormask /graphics/dynastichuman/armor/robes/shendyt_long_usekh_recolormask.png
 #needs overlay shendyt_usekh
@@ -122,7 +122,7 @@
 #enditem
 
 #newitem
-#name shendyt_usekh_black
+#id shendyt_usekh_black
 #sprite /graphics/dynastichuman/armor/robes/shendyt_long_usekh2.png
 #recolormask /graphics/dynastichuman/armor/robes/shendyt_long_usekh_recolormask.png
 #needs overlay shendyt_usekh
@@ -133,7 +133,7 @@
 #enditem
 
 #newitem
-#name shendyt_usekh_bright
+#id shendyt_usekh_bright
 #sprite /graphics/dynastichuman/armor/robes/shendyt_long_usekh1.png
 #recolormask /graphics/dynastichuman/armor/robes/shendyt_long_usekh1_recolormask.png
 #needs overlay shendyt_usekh
@@ -143,7 +143,7 @@
 #enditem
 
 #newitem
-#name shendyt_usekh_dark
+#id shendyt_usekh_dark
 #sprite /graphics/dynastichuman/armor/robes/shendyt_long_usekh2.png
 #recolormask /graphics/dynastichuman/armor/robes/shendyt_long_usekh2_recolormask.png
 #needs overlay shendyt_usekh
@@ -153,7 +153,7 @@
 #enditem
 
 #newitem
-#name halfrobe_plain_white
+#id halfrobe_plain_white
 #sprite /graphics/dynastichuman/armor/robes/robes_graveconsort3.png
 #recolormask /graphics/dynastichuman/armor/robes/robes_graveconsort3_recolormask1.png
 #eliteversion "halfrobe_plain_light"
@@ -164,7 +164,7 @@
 #enditem
 
 #newitem
-#name halfrobe_plain_light
+#id halfrobe_plain_light
 #sprite /graphics/dynastichuman/armor/robes/robes_graveconsort3.png
 #recolormask /graphics/dynastichuman/armor/robes/robes_graveconsort3_recolormask2.png
 #eliteversion "halfrobe_usekh_light"
@@ -175,7 +175,7 @@
 #enditem
 
 #newitem
-#name halfrobe_usekh_white
+#id halfrobe_usekh_white
 #sprite /graphics/dynastichuman/armor/robes/robes_graveconsort2.png
 #recolormask /graphics/dynastichuman/armor/robes/robes_graveconsort_recolormask1.png
 #needs overlay graveconsort_usekh1-3
@@ -187,7 +187,7 @@
 #enditem
 
 #newitem
-#name halfrobe_usekh_light
+#id halfrobe_usekh_light
 #sprite /graphics/dynastichuman/armor/robes/robes_graveconsort2.png
 #recolormask /graphics/dynastichuman/armor/robes/robes_graveconsort_recolormask3.png
 #needs overlay graveconsort_usekh1-3
@@ -198,7 +198,7 @@
 #enditem
 
 #newitem
-#name halfrobe_cultist_plain
+#id halfrobe_cultist_plain
 #sprite /graphics/dynastichuman/armor/robes/robes_halfcultist_plain.png
 #recolormask /graphics/dynastichuman/armor/robes/robes_halfcultist_plain_recolormask.png
 #eliteversion "halfrobe_cultist_fancy"
@@ -208,7 +208,7 @@
 #enditem
 
 #newitem
-#name halfrobe_cultist_fancy
+#id halfrobe_cultist_fancy
 #sprite /graphics/dynastichuman/armor/robes/robes_halfcultist_fancy.png
 #recolormask /graphics/dynastichuman/armor/robes/robes_halfcultist_recolormask.png
 #eliteversion "halfrobe_cultist_ornate"
@@ -218,7 +218,7 @@
 #enditem
 
 #newitem
-#name halfrobe_cultist_ornate
+#id halfrobe_cultist_ornate
 #sprite /graphics/dynastichuman/armor/robes/robes_halfcultist_ornate.png
 #recolormask /graphics/dynastichuman/armor/robes/robes_halfcultist_recolormask.png
 #needs overlay halfcultist_necklace
@@ -229,7 +229,7 @@
 #enditem
 
 #newitem
-#name halfrobe_dhoti_plain
+#id halfrobe_dhoti_plain
 #sprite /graphics/dynastichuman/legs/dhoti_plain.png
 #recolormask /graphics/dynastichuman/legs/dhoti_plain_recolormask.png
 #eliteversion "halfrobe_dhoti_fancy"
@@ -239,7 +239,7 @@
 #enditem
 
 #newitem
-#name halfrobe_dhoti_fancy
+#id halfrobe_dhoti_fancy
 #sprite /graphics/dynastichuman/legs/dhoti_fancy.png
 #recolormask /graphics/dynastichuman/legs/dhoti_fancy_recolormask.png
 #eliteversion "halfrobe_dhoti_ornate"
@@ -249,7 +249,7 @@
 #enditem
 
 #newitem
-#name halfrobe_dhoti_ornate
+#id halfrobe_dhoti_ornate
 #sprite /graphics/dynastichuman/legs/dhoti_ornate.png
 #recolormask /graphics/dynastichuman/legs/dhoti_ornate_recolormask.png
 #needs overlay ind_necklace
@@ -265,7 +265,7 @@
 --- Robes
 
 #newitem
-#name robes_cultist_plain
+#id robes_cultist_plain
 #sprite /graphics/dynastichuman/armor/robes/robes_cultist_plain.png
 #recolormask self
 #eliteversion "robes_cultist_fancy"
@@ -275,7 +275,7 @@
 #enditem
 
 #newitem
-#name robes_cultist_fancy
+#id robes_cultist_fancy
 #sprite /graphics/dynastichuman/armor/robes/robes_cultist_fancy.png
 #recolormask self
 #eliteversion "robes_cultist_ornate"
@@ -285,7 +285,7 @@
 #enditem
 
 #newitem
-#name robes_cultist_ornate
+#id robes_cultist_ornate
 #sprite /graphics/dynastichuman/armor/robes/robes_cultist_ornate.png
 #recolormask /graphics/dynastichuman/armor/robes/robes_cultist_ornate_recolormask.png
 #needs overlay cultist_necklace

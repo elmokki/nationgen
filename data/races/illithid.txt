@@ -1,5 +1,5 @@
 #newrace
-#name "Illithid"
+#id "Illithid"
 #basechance 0.1
 
 #chanceinc era 1 *0.5
@@ -31,6 +31,8 @@
 #nationcommand "#coastnation"
 #nationcommand "#riverstart"
 #unitcommand "#nametype 117"
+
+#additionalgods gods_without_realm
 
 #magicpriority astral 8
 #magicpriority water 2

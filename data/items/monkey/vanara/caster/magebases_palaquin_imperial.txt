@@ -1,20 +1,16 @@
 #newitem
-#name "vanara basesprite small palaquin"
+#id "vanara basesprite small palaquin"
 #gameid -1
 #sprite /graphics/monkey/vanara_base_old_imperial.png
 #recolormask /graphics/monkey/vanara_base_old_imperial_recolormask.png
 #command "#gcost 18"
-#command "#hp 15"
 #command "#mr 9"
 #command "#animal"
-#command "#prot 1"
-#command "#mor 9"
-#command "#enc 4"
-#command "#mapmove 16"
-#command "#ap 8"
-#command "#mounted"
+#command "#mountmnr 'vanara_bearer'"
+#command "#nofmounts 4"
 #command "#bonusspells 1"
-#command "#itemslots 62592"
+-- 1 head, 1 body, 4 miscs
+#command "#itemslots 4005888"
 #subrace vanara
 #theme lowland
 #subraceprefix vanara

@@ -1,6 +1,6 @@
 --- No armor
 #new
-#name naked
+#id naked
 #gameid -1
 #basechance 0.5
 #armor
@@ -9,7 +9,7 @@
 #end
 
 #new
-#name furs
+#id furs
 #gameid 44
 #basechance 2
 #sprite /graphics/cyclops/armor/furs.png
@@ -20,7 +20,7 @@
 
 --- Leather
 #newitem
-#name "simple leather cuirass"
+#id "simple leather cuirass"
 #gameid 5
 #sprite /graphics/cyclops/armor/cuirass_leather_simple.png
 #armor
@@ -28,7 +28,7 @@
 #enditem
 
 #newitem
-#name "leather cuirass"
+#id "leather cuirass"
 #gameid 5
 #sprite /graphics/cyclops/armor/cuirass_leather.png
 #recolormask /graphics/cyclops/armor/plate_recolormask.png
@@ -38,7 +38,7 @@
 #enditem
 
 #newitem
-#name "leather hauberk"
+#id "leather hauberk"
 #gameid 10
 #sprite /graphics/cyclops/armor/hauberk_leather.png
 #recolormask /graphics/cyclops/armor/plate_recolormask.png
@@ -50,7 +50,7 @@
 
 --- Scale
 #newitem
-#name "bronze scale cuirass"
+#id "bronze scale cuirass"
 #gameid 142
 #sprite /graphics/cyclops/armor/scale_cuirass_bronze.png
 #armor
@@ -59,7 +59,7 @@
 #enditem
 
 #newitem
-#name "bronze scale hauberk"
+#id "bronze scale hauberk"
 #gameid 136
 #sprite /graphics/cyclops/armor/scale_hauberk_bronze.png
 #armor
@@ -68,7 +68,7 @@
 #enditem
 
 #newitem -- full scale
-#name "bronze full scale"
+#id "bronze full scale"
 #gameid bronzescale_full
 #sprite /graphics/cyclops/armor/scale_full_bronze.png
 #armor
@@ -80,7 +80,7 @@
 #enditem
 
 #newitem
-#name "iron scale cuirass"
+#id "iron scale cuirass"
 #gameid 7
 #sprite /graphics/cyclops/armor/scale_cuirass_iron.png
 #armor
@@ -89,7 +89,7 @@
 #enditem
 
 #newitem
-#name "iron scale hauberk"
+#id "iron scale hauberk"
 #gameid 12
 #sprite /graphics/cyclops/armor/scale_hauberk_iron.png
 #armor
@@ -98,7 +98,7 @@
 #enditem
 
 #newitem -- full scale
-#name "iron full scale"
+#id "iron full scale"
 #gameid 17
 #sprite /graphics/cyclops/armor/scale_full_iron.png
 #armor
@@ -110,7 +110,7 @@
 #enditem
 
 #newitem
-#name "gold scale cuirass bronze"
+#id "gold scale cuirass bronze"
 #gameid 142
 #sprite /graphics/cyclops/armor/scale_cuirass_gold.png
 #armor
@@ -118,7 +118,7 @@
 #enditem
 
 #newitem
-#name "gold scale hauberk bronze"
+#id "gold scale hauberk bronze"
 #gameid 136
 #sprite /graphics/cyclops/armor/scale_hauberk_gold.png
 #armor
@@ -126,7 +126,7 @@
 #enditem
 
 #newitem -- full scale
-#name "gold full scale bronze"
+#id "gold full scale bronze"
 #gameid bronzescale_full
 #sprite /graphics/cyclops/armor/scale_full_gold.png
 #armor
@@ -137,7 +137,7 @@
 #enditem
 
 #newitem
-#name "iron scale cuirass"
+#id "iron scale cuirass"
 #gameid 7
 #sprite /graphics/cyclops/armor/scale_cuirass_gold.png
 #armor
@@ -145,7 +145,7 @@
 #enditem
 
 #newitem
-#name "gold scale hauberk iron"
+#id "gold scale hauberk iron"
 #gameid 12
 #sprite /graphics/cyclops/armor/scale_hauberk_gold.png
 #armor
@@ -153,7 +153,7 @@
 #enditem
 
 #newitem -- full scale
-#name "gold full scale iron"
+#id "gold full scale iron"
 #gameid 17
 #sprite /graphics/cyclops/armor/scale_full_gold.png
 #armor
@@ -164,7 +164,7 @@
 #enditem
 
 #newitem -- full scale
-#name goldscalemail
+#id goldscalemail
 #gameid 196
 #sprite /graphics/cyclops/armor/scale_full_gold.png
 #armor
@@ -176,7 +176,7 @@
 
 -- Plate
 #newitem
-#name "simple bronze cuirass"
+#id "simple bronze cuirass"
 #gameid 100
 #sprite /graphics/cyclops/armor/cuirass_simple_bronze.png
 #armor
@@ -184,7 +184,7 @@
 #enditem
 
 #newitem
-#name "bronze cuirass"
+#id "bronze cuirass"
 #gameid 100
 #sprite /graphics/cyclops/armor/plate_cuirass_bronze.png
 #recolormask /graphics/cyclops/armor/plate_recolormask.png
@@ -195,7 +195,7 @@
 #enditem
 
 #newitem
-#name "bronze hauberk"
+#id "bronze hauberk"
 #gameid 101
 #sprite /graphics/cyclops/armor/plate_hauberk_bronze.png
 #recolormask /graphics/cyclops/armor/plate_recolormask.png
@@ -206,7 +206,7 @@
 #enditem
 
 #newitem
-#name "simple iron cuirass"
+#id "simple iron cuirass"
 #gameid 7
 #sprite /graphics/cyclops/armor/cuirass_simple_iron.png
 #armor
@@ -214,7 +214,7 @@
 #enditem
 
 #newitem
-#name "iron cuirass"
+#id "iron cuirass"
 #gameid 7
 #sprite /graphics/cyclops/armor/plate_cuirass_iron.png
 #recolormask /graphics/cyclops/armor/plate_recolormask.png
@@ -225,7 +225,7 @@
 #enditem
 
 #newitem
-#name "iron hauberk"
+#id "iron hauberk"
 #gameid 12
 #sprite /graphics/cyclops/armor/plate_hauberk_iron.png
 #recolormask /graphics/cyclops/armor/plate_recolormask.png
@@ -236,7 +236,7 @@
 #enditem
 
 #newitem
-#name "gold cuirass bronze"
+#id "gold cuirass bronze"
 #gameid 100
 #sprite /graphics/cyclops/armor/plate_cuirass_gold.png
 #recolormask /graphics/cyclops/armor/plate_recolormask.png
@@ -248,7 +248,7 @@
 #enditem
 
 #newitem
-#name "gold hauberk bronze"
+#id "gold hauberk bronze"
 #gameid 136
 #sprite /graphics/cyclops/armor/plate_hauberk_gold.png
 #recolormask /graphics/cyclops/armor/plate_recolormask.png
@@ -260,7 +260,7 @@
 #enditem
 
 #newitem
-#name "gold cuirass iron"
+#id "gold cuirass iron"
 #gameid 7
 #sprite /graphics/cyclops/armor/plate_cuirass_gold.png
 #recolormask /graphics/cyclops/armor/plate_recolormask.png
@@ -272,7 +272,7 @@
 #enditem
 
 #newitem
-#name "gold hauberk iron"
+#id "gold hauberk iron"
 #gameid 12
 #sprite /graphics/cyclops/armor/plate_hauberk_gold.png
 #recolormask /graphics/cyclops/armor/plate_recolormask.png
@@ -284,7 +284,7 @@
 #enditem
 
 #newitem
-#name cyclopecuirass
+#id cyclopecuirass
 #gameid 245
 #sprite /graphics/cyclops/armor/plate_cuirass_iron.png
 #recolormask /graphics/cyclops/armor/plate_recolormask.png
@@ -296,7 +296,7 @@
 #enditem
 
 #newitem
-#name cyclopehauberk
+#id cyclopehauberk
 #gameid 246
 #sprite /graphics/cyclops/armor/plate_hauberk_iron.png
 #recolormask /graphics/cyclops/armor/plate_recolormask.png
@@ -307,7 +307,7 @@
 #enditem
 
 #newitem
-#name gleamingcuirass
+#id gleamingcuirass
 #gameid 236
 #sprite /graphics/cyclops/armor/plate_cuirass_gold.png
 #recolormask /graphics/cyclops/armor/plate_recolormask.png
@@ -319,7 +319,7 @@
 #enditem
 
 #newitem
-#name gleaminghauberk
+#id gleaminghauberk
 #gameid 237
 #sprite /graphics/cyclops/armor/plate_hauberk_gold.png
 #recolormask /graphics/cyclops/armor/plate_recolormask.png

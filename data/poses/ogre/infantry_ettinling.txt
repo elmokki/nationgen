@@ -1,5 +1,5 @@
 #newpose
-#name "ettinling infantry"
+#id "ettinling infantry"
 #role "infantry"
 #role "elite infantry"
 #role "sacred infantry"
@@ -14,6 +14,7 @@
 #load cloakb /data/items/ogre/cloakb_ogre.txt
 #load armor /data/items/ogre/armor_ettinling.txt
 #load helmet /data/items/ogre/helmet_ettinling.txt
+#load otherhelmet /data/items/ogre/otherhelmet_ettinling.txt
 
 #load weapon /data/items/ogre/weapon_ettinling.txt
 #load offhand /data/items/ogre/offhand_ettinling.txt
@@ -33,7 +34,7 @@
 -------- Scout
 
 #newpose
-#name "ettinling scout"
+#id "ettinling scout"
 #role "scout"
 
 #renderorder "shadow cloakb bonusweapon basesprite shirt armor weapon offhandw hands cloakf overlay hair helmet offhanda"
@@ -46,6 +47,7 @@
 #load cloakb /data/items/ogre/cloakb_ogre.txt
 #load armor /data/items/ogre/armor_ettinling.txt
 #load helmet /data/items/ogre/helmet_scout_ettinling.txt
+#load otherhelmet /data/items/ogre/otherhelmet_scout_ettinling.txt
 
 #load weapon /data/items/ogre/weapon_ettinling.txt
 #load offhand /data/items/ogre/offhand_ettinling.txt
@@ -55,4 +57,3 @@
 #load overlay /data/items/ogre/overlay_ettinling.txt
 
 #endpose
-

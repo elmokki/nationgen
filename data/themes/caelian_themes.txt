@@ -1,6 +1,6 @@
 -- Generic theme with high diversity and low cohesion
 #newtheme
-#name default
+#id default
 #basechance 4
 #endtheme
 
@@ -9,7 +9,7 @@
 -- Weights: EA 1, MA 1, LA 0.5
 #newtheme
 #type techlevel
-#name primitive
+#id primitive
 #basechance 1
 #chanceinc era 3 -0.5
 #themeinc theme advanced *0.5
@@ -26,7 +26,7 @@
 -- Weights: EA 2, MA 1, LA 0.5
 #newtheme
 #type techlevel
-#name bronze
+#id bronze
 #basechance 2
 #chanceinc era 2 -1
 #chanceinc era 3 -1.5
@@ -45,7 +45,7 @@
 -- Weights: EA 0.25, MA 1, LA 2
 #newtheme
 #type techlevel
-#name iron
+#id iron
 #basechance 0.25
 #chanceinc era 3 1.75
 #chanceinc era 2 0.75
@@ -65,7 +65,7 @@
 -- Weights: EA 0.25, MA 0.05, LA 0.01
 #newtheme
 #type demographic
-#name yazata
+#id yazata
 #basechance 0.25
 #chanceinc era 2 *0.2
 #chanceinc era 3 *0.04
@@ -92,6 +92,7 @@
 #racedefinition "#magicpriority blood 0.1"
 #racedefinition "#magicpriority death 0.1"
 #racedefinition "#nationcommand '#idealcold +2'"
+#racedefinition "#nationcommand '#moreheat -1'"
 #racedefinition "#secondaryracetroopmod 100"
 #racedefinition "#secondaryracemagemod -100"
 #raceprefix yazata
@@ -103,7 +104,7 @@
 -- Weights: EA 0.25, MA 0.05, LA 0.01
 #newtheme
 #type demographic
-#name daeva
+#id daeva
 #basechance 0.25
 #chanceinc era 2 *0.2
 #chanceinc era 3 *0.04
@@ -134,6 +135,7 @@
 #racedefinition "#magicpriority nature 0.1"
 #racedefinition "#nationcommand '#likespop 34'"
 #racedefinition "#nationcommand '#idealcold -2'"
+#racedefinition "#nationcommand '#moreheat 1'"
 #racedefinition "#secondaryracetroopmod 100"
 #racedefinition "#secondaryracemagemod -100"
 #raceprefix daeva
@@ -142,7 +144,7 @@
 -- Weights: EA 1, MA 0.5, LA 0.1
 #newtheme
 #type demographic
-#name airya
+#id airya
 #basechance 1
 #chanceinc era 2 *0.5
 #chanceinc era 3 *0.1
@@ -172,6 +174,7 @@
 #racedefinition "#magicpriority blood 0.1"
 #racedefinition "#magicpriority death 0.1"
 #racedefinition "#nationcommand '#idealcold +3'"
+#racedefinition "#nationcommand '#moreheat -2'"
 #raceprefix airya
 #racedefinition "#forts default_forts"
 #racedefinition "#forts ice_forts"
@@ -180,7 +183,7 @@
 -- Weights: EA 1, MA 0.5, LA 0.1
 #newtheme
 #type demographic
-#name mairya
+#id mairya
 #basechance 1
 #chanceinc era 2 *0.5
 #chanceinc era 3 *0.1
@@ -217,7 +220,7 @@
 -- Weights: EA 2, MA 2, LA 2
 #newtheme
 #type demographic
-#name spirehorn
+#id spirehorn
 #basechance 2
 #themeinc theme advanced *0.5
 #themeinc theme iron *0.5
@@ -255,7 +258,7 @@
 -- Weights: EA 2, MA 2, LA 2
 #newtheme
 #type demographic
-#name raptor
+#id raptor
 #basechance 2
 #themeinc theme advanced *0.5
 #themeinc theme iron *2.5
@@ -292,7 +295,7 @@
 -- Weights: EA 1, MA 2, LA 3
 #newtheme
 #type demographic
-#name diverse
+#id diverse
 #basechance 1
 #chanceinc era 2 *2
 #chanceinc era 3 *3
@@ -341,7 +344,7 @@
 -- Weights: EA 0.1, MA 1, LA 2
 #newtheme
 #type demographic
-#name diluted
+#id diluted
 #basechance 0.1
 #chanceinc era 2 *10
 #chanceinc era 3 *20
@@ -382,7 +385,7 @@
 -- Weights: EA 0.01, MA 0.1, LA 1
 #newtheme
 #type demographic
-#name degenerate
+#id degenerate
 #basechance 0.1
 #chanceinc era 1 *0.01
 #chanceinc era 3 *10
@@ -422,7 +425,7 @@
 -- Weights: EA 0.01, MA 0.01, LA 0.01
 #newtheme
 #type social
-#name slaver
+#id slaver
 #basechance 0.01
 #themeinc theme advanced *1
 #themeinc theme iron *1

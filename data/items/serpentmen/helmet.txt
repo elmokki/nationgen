@@ -1,6 +1,6 @@
 -- No helm
 #newitem
-#name "nothing_terrestrial"
+#id "nothing_terrestrial"
 #basechance 0.5
 #gameid -1
 #armor
@@ -15,7 +15,7 @@
 #enditem
 
 #newitem
-#name "nothing_marine"
+#id "nothing_marine"
 #basechance 2
 #gameid -1
 #armor
@@ -30,7 +30,7 @@
 
 -- Iron helms
 #newitem
-#name "ironcap"
+#id "ironcap"
 #gameid 20
 #sprite /graphics/serpentmen/head/ironcap.png
 #eliteversion ironcap-elite
@@ -42,7 +42,7 @@
 #enditem
 
 #newitem
-#name "ironcap-elite"
+#id "ironcap-elite"
 #gameid 20
 #sprite /graphics/serpentmen/head/ironcap2.png
 #recolormask /graphics/serpentmen/head/ironcap2_recolormask.png
@@ -55,7 +55,7 @@
 #enditem
 
 #newitem
-#name "halfhelm"
+#id "halfhelm"
 #gameid 118
 #sprite /graphics/serpentmen/head/halfhelm1.png
 #eliteversion halfhelm-elite
@@ -67,7 +67,7 @@
 #enditem
 
 #newitem
-#name "halfhelm-elite"
+#id "halfhelm-elite"
 #gameid 118
 #sprite /graphics/serpentmen/head/halfhelm2.png
 #recolormask /graphics/serpentmen/head/ironcap2_recolormask.png
@@ -80,7 +80,7 @@
 #enditem
 
 #newitem
-#name "fullhelm"
+#id "fullhelm"
 #gameid 21
 #sprite /graphics/serpentmen/head/fullhelm1.png
 #eliteversion fullhelm-elite
@@ -93,7 +93,7 @@
 #enditem
 
 #newitem
-#name "fullhelm-elite"
+#id "fullhelm-elite"
 #gameid 21
 #sprite /graphics/serpentmen/head/fullhelm2.png
 #recolormask /graphics/serpentmen/head/ironcap2_recolormask.png
@@ -109,7 +109,7 @@
 
 -- Bronze helms
 #newitem
-#name "bronzecap"
+#id "bronzecap"
 #gameid 135
 #sprite /graphics/serpentmen/head/bronzecap1.png
 #eliteversion bronzecap-elite
@@ -122,7 +122,7 @@
 #enditem
 
 #newitem
-#name "bronzecap-elite"
+#id "bronzecap-elite"
 #gameid 20
 #sprite /graphics/serpentmen/head/bronzecap2.png
 #recolormask /graphics/serpentmen/head/ironcap2_recolormask.png
@@ -135,7 +135,7 @@
 #enditem
 
 #newitem
-#name "bronze halfhelm"
+#id "bronze halfhelm"
 #gameid bronzehalfhelmet
 #sprite /graphics/serpentmen/head/bronzehelm1.png
 #eliteversion "bronze halfhelm-elite"
@@ -148,7 +148,7 @@
 #enditem
 
 #newitem
-#name "bronze halfhelm-elite"
+#id "bronze halfhelm-elite"
 #gameid bronzehalfhelmet
 #sprite /graphics/serpentmen/head/bronzehelm2.png
 #recolormask /graphics/serpentmen/head/ironcap2_recolormask.png
@@ -161,7 +161,7 @@
 #enditem
 
 #newitem
-#name "bronze fullhelm"
+#id "bronze fullhelm"
 #gameid 123
 #sprite /graphics/serpentmen/head/hoplitehelm1.png
 #eliteversion "bronze fullhelm-elite"
@@ -175,7 +175,7 @@
 #enditem
 
 #newitem
-#name "bronze fullhelm-elite"
+#id "bronze fullhelm-elite"
 #gameid 123
 #sprite /graphics/serpentmen/head/hoplitehelm2.png
 #recolormask /graphics/serpentmen/head/ironcap2_recolormask.png
@@ -190,7 +190,7 @@
 
 -- Occidental/austral feathered helms
 #newitem
-#name "leathercap_feathered"
+#id "leathercap_feathered"
 #gameid 120
 #sprite /graphics/serpentmen/head/magefeathert1-1.png
 #recolormask self
@@ -203,7 +203,7 @@
 #enditem
 
 #newitem
-#name "leathercap_feathered-elite"
+#id "leathercap_feathered-elite"
 #gameid 120
 #sprite /graphics/serpentmen/head/magefeather2.png
 #recolormask /graphics/serpentmen/head/magefeather2_recolormask.png
@@ -216,7 +216,7 @@
 #enditem
 
 #newitem
-#name "reinforcedcap_feathered"
+#id "reinforcedcap_feathered"
 #gameid 119
 #sprite /graphics/serpentmen/head/magefeathert1-1.png
 #recolormask self
@@ -229,7 +229,7 @@
 #enditem
 
 #newitem
-#name "reinforcedcap_feathered-elite"
+#id "reinforcedcap_feathered-elite"
 #gameid 119
 #sprite /graphics/serpentmen/head/magefeather2.png
 #recolormask /graphics/serpentmen/head/magefeather2_recolormask.png
@@ -242,7 +242,7 @@
 #enditem
 
 #newitem
-#name "bronzecap_feathered"
+#id "bronzecap_feathered"
 #gameid 135
 #sprite /graphics/serpentmen/head/magefeathert1-1.png
 #recolormask self
@@ -256,7 +256,7 @@
 #enditem
 
 #newitem
-#name "bronzecap_feathered-elite"
+#id "bronzecap_feathered-elite"
 #gameid 135
 #sprite /graphics/serpentmen/head/magefeather2.png
 #recolormask /graphics/serpentmen/head/magefeather2_recolormask.png
@@ -270,7 +270,7 @@
 #enditem
 
 #newitem
-#name "ironcap_feathered"
+#id "ironcap_feathered"
 #gameid 20
 #sprite /graphics/serpentmen/head/magefeathert1-1.png
 #recolormask self
@@ -284,7 +284,7 @@
 #enditem
 
 #newitem
-#name "ironcap_feathered-elite"
+#id "ironcap_feathered-elite"
 #gameid 20
 #sprite /graphics/serpentmen/head/magefeather2.png
 #recolormask /graphics/serpentmen/head/magefeather2_recolormask.png
@@ -300,7 +300,7 @@
 
 -- Oriental helms
 #newitem
-#name "leathercap_oriental"
+#id "leathercap_oriental"
 #gameid 120
 #sprite /graphics/serpentmen/head/leathercap_oriental.png
 #eliteversion leathercap_oriental-elite
@@ -312,7 +312,7 @@
 #enditem
 
 #newitem
-#name "leathercap_oriental-elite"
+#id "leathercap_oriental-elite"
 #gameid 120
 #sprite /graphics/serpentmen/head/leathercap_oriental_elite.png
 #recolormask /graphics/serpentmen/head/cap_oriental_elite_recolormask.png
@@ -324,7 +324,7 @@
 #enditem
 
 #newitem
-#name "ironcap_oriental"
+#id "ironcap_oriental"
 #gameid 20
 #sprite /graphics/serpentmen/head/ironcap_oriental.png
 #eliteversion ironcap_oriental-elite
@@ -335,7 +335,7 @@
 #enditem
 
 #newitem
-#name "ironcap_oriental-elite"
+#id "ironcap_oriental-elite"
 #gameid 20
 #sprite /graphics/serpentmen/head/ironcap_oriental_elite.png
 #recolormask /graphics/serpentmen/head/cap_oriental_elite_recolormask.png
@@ -347,7 +347,7 @@
 #enditem
 
 #newitem
-#name "jingasa1"
+#id "jingasa1"
 #gameid 131
 #sprite /graphics/serpentmen/head/jingasa.png
 #recolormask /graphics/serpentmen/head/jingasa_recolormask.png
@@ -359,7 +359,7 @@
 #enditem
 
 #newitem
-#name "jingasa1"
+#id "jingasa1"
 #gameid 131
 #sprite /graphics/serpentmen/head/jingasa.png
 #recolormask /graphics/serpentmen/head/jingasa_recolormask2.png
@@ -371,7 +371,7 @@
 #enditem
 
 #newitem
-#name "kabuto"
+#id "kabuto"
 #gameid 132
 #sprite /graphics/serpentmen/head/kabuto.png
 #eliteversion kabuto-elite
@@ -382,7 +382,7 @@
 #enditem
 
 #newitem
-#name "kabuto-elite"
+#id "kabuto-elite"
 #gameid 132
 #sprite /graphics/serpentmen/head/kabuto_elite.png
 #armor
@@ -395,7 +395,7 @@
 
 -- Ice helms
 #newitem
-#name "icecap"
+#id "icecap"
 #gameid 29
 #basechance 0.01
 #sprite /graphics/serpentmen/head/icecap.png
@@ -413,7 +413,7 @@
 #enditem
 
 #newitem
-#name "ice halfhelm"
+#id "ice halfhelm"
 #gameid 124
 #basechance 0.01
 #sprite /graphics/serpentmen/head/icehelmet.png
@@ -431,7 +431,7 @@
 #enditem
 
 #newitem
-#name "ice fullhelm"
+#id "ice fullhelm"
 #gameid icehelmet_full
 #basechance 0.01
 #sprite /graphics/serpentmen/head/icefullhelm.png
@@ -449,7 +449,7 @@
 #enditem
 
 #newitem
-#name "icecap_oriental"
+#id "icecap_oriental"
 #gameid 29
 #basechance 0.01
 #sprite /graphics/serpentmen/head/icecap_oriental.png
@@ -465,7 +465,7 @@
 #enditem
 
 #newitem
-#name "ice halfhelm_oriental"
+#id "ice halfhelm_oriental"
 #gameid 124
 #basechance 0.01
 #sprite /graphics/serpentmen/head/icehelm_oriental.png
@@ -482,7 +482,7 @@
 #enditem
 
 #newitem
-#name "elite ice halfhelm_oriental"
+#id "elite ice halfhelm_oriental"
 #gameid icehelmet_full
 #basechance 0.01
 #sprite /graphics/serpentmen/head/icehelm_oriental_elite.png
@@ -500,7 +500,7 @@
 
 -- Marine caps
 #newitem
-#name "shellcap"
+#id "shellcap"
 #gameid 224
 #sprite /graphics/serpentmen/head/shellcap.png
 #armor
@@ -513,7 +513,7 @@
 #enditem
 
 #newitem
-#name "coralcap"
+#id "coralcap"
 #gameid 24
 #sprite /graphics/serpentmen/head/coralcap.png
 #armor
@@ -527,7 +527,7 @@
 #enditem
 
 #newitem
-#name "sharkskincap"
+#id "sharkskincap"
 #gameid 152
 #sprite /graphics/serpentmen/head/sharkskincap.png
 #armor

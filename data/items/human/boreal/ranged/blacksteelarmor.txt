@@ -1,6 +1,6 @@
 --- Normal Chain Mail (so primitive nations will be less likely to put BS on archers)
 #newitem
-#name "chain cuirass"
+#id "chain cuirass"
 #gameid 8
 #sprite /graphics/boreal/ranged/armor/chain_cuirass.png
 #armor
@@ -8,7 +8,7 @@
 #enditem
 
 #newitem
-#name "chain hauberk"
+#id "chain hauberk"
 #gameid 13
 #sprite /graphics/boreal/ranged/armor/chain_hauberk2.png
 #armor
@@ -17,7 +17,7 @@
 #enditem
 
 #newitem -- full chain
-#name "full chain"
+#id "full chain"
 #gameid 18
 #sprite /graphics/boreal/ranged/armor/chain_full2.png
 #armor
@@ -28,7 +28,7 @@
 
 --- Chain Mail
 #newitem
-#name "black chain cuirass"
+#id "black chain cuirass"
 #gameid blackmail_cuirass
 #sprite /graphics/boreal/ranged/armor/blackmail_cuirass.png
 #armor
@@ -36,7 +36,7 @@
 #enditem
 
 #newitem
-#name "black chain hauberk"
+#id "black chain hauberk"
 #gameid blackmail_hauberk
 #basechance 0.75
 #sprite /graphics/boreal/ranged/armor/blackmail_hauberk.png
@@ -46,7 +46,7 @@
 #enditem
 
 #newitem
-#name "black full chain"
+#id "black full chain"
 #gameid blackmail_full
 #basechance 0.375
 #sprite /graphics/boreal/ranged/armor/blackmail_full.png
@@ -58,7 +58,7 @@
 
 --- Plate
 #newitem
-#name "black plate cuirass"
+#id "black plate cuirass"
 #gameid blackplate_cuirass
 #sprite /graphics/boreal/ranged/armor/blackplate_cuirass.png
 #armor
@@ -67,7 +67,7 @@
 #enditem
 
 #newitem
-#name "black plate hauberk"
+#id "black plate hauberk"
 #gameid blackplate_hauberk
 #basechance 0.25
 #sprite /graphics/boreal/ranged/armor/blackplate_hauberk.png
@@ -77,7 +77,7 @@
 #enditem
 
 #newitem -- full plate
-#name "black full plate"
+#id "black full plate"
 #gameid blackplate_full
 #basechance 0.125
 #sprite /graphics/boreal/ranged/armor/blackplate_full.png

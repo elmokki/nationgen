@@ -1,5 +1,5 @@
 #newitem
-#name "javelin"
+#id "javelin"
 #gameid 21
 #sprite /graphics/avvim/weapon/javelin.png
 #tag "name infantry 'Javelineer'"
@@ -7,7 +7,7 @@
 #enditem
 
 #newitem -- Throwing axe
-#name "throwing axe"
+#id "throwing axe"
 #gameid 260
 #theme "primitive"
 #tag "name infantry 'Axe Thrower'"
@@ -16,7 +16,7 @@
 #enditem
 
 #newitem
-#name "chakram"
+#id "chakram"
 #gameid 362
 #tag "name infantry 'Chakram Thrower'"
 #tag "tierunique"
@@ -24,7 +24,7 @@
 #enditem
 
 #newitem
-#name "sticksandstones"
+#id "sticksandstones"
 #gameid 360
 #basechance 0.25
 #theme "primitive"
@@ -34,7 +34,7 @@
 
 
 #newitem
-#name "net"
+#id "net"
 #gameid 263
 #sprite /graphics/avvim/offhand/net.png
 #tag "maxprot 12"
@@ -47,7 +47,7 @@
 #enditem
 
 #newitem
-#name "heavy sling"
+#id "heavy sling"
 #gameid heavy_sling
 #tag "name infantry 'Slinger'"
 #tag "maxprot 12"
