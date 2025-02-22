@@ -1,0 +1,41 @@
+
+-- Parasitic vine armor
+
+#newitem 
+#id "parasitic vine armor"
+#gameid -1
+#sprite /graphics/hoburg/bodyarmor/vine_parasite.png
+#armor
+#theme "primitive"
+
+#define "#gcost +16"
+#define "#rcost +5"
+#define "#rpcost -15"
+#define "#size 3"
+#define "#ressize 2"
+#define "#enc 1"
+#define "#hp +25"
+#define "#hp *0.75"
+#define "#prot +8"
+#define "#str +7"
+#define "#def -5"
+#define "#mor 50"
+#adjustmentcommand "#mor 50"
+#define "#mapmove 3"
+#define "#prec *0.5"
+#define "#supplybonus *0"
+#define "#poisonres +15"
+#define "#woundfend +2"
+#define "#mounted"
+#define "#forestsurvival"
+#define "#neednoteat"
+#define "#mind"
+#define "#magicbeing"
+#define "#maxage *0.5"
+#description "These hoburgs have been infested with parasitic vines that sap their will but grant them strength and protection. "
+
+#needs hands parasite_hands
+#needs helmet invasive_vines
+
+#enditem
+

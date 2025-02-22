@@ -1,0 +1,122 @@
+-- Clockwork armor can only have one special modification, just to keep things from getting too crazy
+
+-- Special integrated weapons
+
+
+
+-- Special integrated armor
+
+
+
+-- "Miscellaneous" modifications
+
+#newitem
+#id superior_bark
+#basechance 1
+#gameid -1
+#armor
+#theme "primitive"
+#define "#prot +6"
+#define "#hp +4"
+#define "#ap -2"
+#define "#rcost +15"
+#description "Hardened vines surround their wearer, if at a cost of more sluggish movement."
+#enditem
+
+#newitem
+#id strong_vines
+#basechance 1
+#gameid -1
+#armor
+#theme "primitive"
+#define "#str +3"
+#define "#hp +6"
+#define "#gcost +2"
+#description "Superior vines bunch together to strengthen their wearer."
+#enditem
+
+#newitem
+#id superior_sap
+#basechance 1
+#gameid -1
+#armor
+#theme "primitive"
+#define "#regeneration 10"
+#define "#heal"
+#define "#gcost +5"
+#description "Especially fecund vines provide healing sap to the wearer, rapidly regenerating any wounds."
+#enditem
+
+#newitem
+#id sleep_vines
+#basechance 1
+#gameid -1
+#armor
+#theme "ivy"
+#needs specialweapon sleepvine
+#define "#gcost +1"
+#define "#rcost +5"
+#description "Restless vines lash out at anyone nearby with a soporific venom."
+#enditem
+
+#newitem
+#id carrion_vines
+#basechance 1
+#gameid -1
+#armor
+#theme "ivy"
+#needs specialweapon carrionvine
+#define "#gcost +1"
+#define "#rcost +5"
+#description "Restless vines lash out at anyone nearby with a rotting poison that will reanimate their victims."
+#enditem
+
+#newitem
+#id sleep_sap
+#basechance 1
+#gameid -1
+#armor
+#sprite /graphics/hoburg/vine/sleep_sap.png
+#offsetx 0
+#offsety -22
+#theme "primitive"
+#define "#sleepaura 1"
+#define "#gcost +5"
+#define "#rcost +5"
+#description "Sweet smelling vines lull enemies and allies into slumber."
+#enditem
+
+#newitem
+#id scary_vines
+#basechance 1
+#gameid -1
+#armor
+#theme "primitive"
+#define "#animalawe 1"
+#define "#gcost +1"
+#description "Pheromones emerge from the vines that repel animals, keeping them at bay."
+#enditem
+
+#newitem
+#id slimy_sap
+#basechance 1
+#gameid -1
+#armor
+#theme "ivy"
+#define "#slimer 1"
+#define "#prot -2"
+#define "#gcost +5"
+#define "#rcost +10"
+#description "Slimy sap drips from the vines, coating nearby attackers."
+#enditem
+
+#newitem
+#id spiked_vine
+#basechance 1
+#gameid -1
+#armor
+#theme "ivy"
+#define "#spikes 10"
+#define "#rcost +5"
+#description "Spikes emerge from the vines, making it unwise to touch the wearer."
+#enditem

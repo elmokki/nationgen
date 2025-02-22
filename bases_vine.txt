@@ -1,0 +1,41 @@
+#newitem
+#id "vine basesprite"
+#gameid -1
+#sprite /graphics/hoburg/basehoburg_clockwork_medium.png
+#offsety 3
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#theme "oriental"
+#basechance 1
+#chanceinc racetheme austral *0
+#chanceinc racetheme abysian *0
+#enditem
+
+#newitem
+#id "austral vine basesprite"
+#gameid -1
+#sprite /graphics/hoburg/basehoburg_clockwork_medium_austral.png
+#offsety 3
+#theme "austral"
+#basechance 1
+#chanceinc racetheme not austral *0
+#enditem
+
+#newitem
+#id "hoburgbred vine basesprite"
+#gameid -1
+#sprite /graphics/hoburg/basehoburg_clockwork_medium_hoburgbred.png
+#offsety 3
+#theme "abysian"
+#chanceinc racetheme not abysian *0
+#basechance 1
+#define "#gcost +3"
+#define "#hp +2"
+#define "#str +2"
+#define "#def -2"
+#define "#prec -2"
+#define "#ap +2"
+#define "#fireres 15"
+#define "#maxage *0.8"
+#enditem
