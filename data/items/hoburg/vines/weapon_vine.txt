@@ -1,8 +1,58 @@
 #newitem
-#id lance
-#basechance 2
-#gameid 357
-#sprite /graphics/hoburg/weapon/clockwork_lance.png
-#tag "name infantry lancer"
-#needs handslots one_hand
+#id vinewhip
+#basechance 0.05
+#gameid 136
+#sprite /graphics/hoburg/vine/vinewhip.png
+#offsetx 1
+#offsety -7
+#theme "elite"
+#command "#gcost +2"
+#command "#rcost +5"
+#needs specialweapon sleepvine
+#enditem
+
+#newitem
+#id thornspear
+#basechance 0.05
+#gameid 79
+#sprite /graphics/weapon/mage/staff_branch.png
+#offsety -7
+#command "#gcost +2"
+#command "#rcost +5"
+#theme "elite"
+#theme "wood"
+#enditem
+
+#newitem
+#id club
+#gameid 252
+#sprite /graphics/firbolg/weapon/club.png
+#offsetx -1
+#offsety -3
+#theme "wood"
+#enditem
+
+#newitem
+#id club_spiked
+#gameid 265
+#sprite /graphics/firbolg/weapon/club_spiked.png
+#offsetx -1
+#offsety -3
+#theme "wood"
+#enditem
+
+#newitem
+#id tentacle
+#theme "primitive"
+#gameid 85
+#needs offhand carrionvine
+#enditem
+
+#newitem
+#id tentacle_strangle
+#theme "primitive"
+#basechance 0.05
+#theme "elite"
+#needs offhand sleepvine
+#gameid 116
 #enditem
