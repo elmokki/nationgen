@@ -1,0 +1,55 @@
+#newitem
+#id coralspear
+#gameid 31
+#sprite /graphics/atlantian/weapon/coralspear.png
+#tag "name cavalry spearman"
+#tag "eliteversion coralspear-elite"
+#theme formationfighter
+#enditem
+
+#newitem
+#id coralspear-elite
+#gameid 31
+#sprite /graphics/atlantian/weapon/coralspear-elite.png
+#recolormask /graphics/atlantian/weapon/coralspear-elite_recolormask.png
+#tag "name cavalry spearman"
+#theme "elite"
+#theme formationfighter
+#enditem
+
+#newitem
+#id corallongspear
+#gameid corallongspear
+#sprite /graphics/atlantian/weapon/longspear.png
+#tag "name cavalry phalanx"
+#tag "eliteversion longspear-elite"
+#tag "advanced"
+#theme formationfighter
+#enditem
+
+#newitem
+#id corallongspear-elite
+#gameid corallongspear
+#sprite /graphics/atlantian/weapon/longspear-elite.png
+#recolormask /graphics/atlantian/weapon/longspear-elite_recolormask.png
+#tag "name cavalry hoplite"
+#theme "elite"
+#theme formationfighter
+#enditem
+
+#newitem
+#id coralshortsword
+#gameid coralshortsword
+#sprite /graphics/atlantian/weapon/shortsword.png
+#basechance 0.5
+#tag "name cavalry swordmen"
+#enditem
+
+#newitem
+#id coralbroadsword
+#gameid coralbroadsword
+#sprite /graphics/atlantian/weapon/broadsword.png
+#basechance 0.75
+#tag "name cavalry swordmen"
+#enditem
+

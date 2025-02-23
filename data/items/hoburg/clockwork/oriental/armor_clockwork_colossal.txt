@@ -10,6 +10,8 @@
 
 #define "#gcost +90"
 #define "#rcost +75"
+-- Flat 50g/month maintenance cost
+#define "#gold -50"
 #define "#size 8"
 #define "#ressize 5"
 #adjustmentcommand "#enc 0"
@@ -19,9 +21,10 @@
 #define "#att -2"
 #define "#def -7"
 #define "#prec +2"
-#adjustmentcommand "#mor 30"
+#define "#mor +2"
 #define "#mapmove 20"
 #define "#ap +4"
+#define "#reclimit 1"
 #define "#fireres +15"
 #define "#coldres +15"
 #define "#shockres +15"
@@ -30,6 +33,7 @@
 #define "#pierceres"
 #define "#woundfend +4"
 #define "#inspirational +1"
+#define "#reinvigoration -1"
 #define "#mounted"
 #define "#trample"
 #define "#nomovepen"

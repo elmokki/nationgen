@@ -74,74 +74,6 @@
 
 #endpose
 
-
--------- Cavalry
-#newpose
-#id "normal cavalry"
-#basechance 0.25
-#role "mounted"
-#role "sacred"
-
-#baseitemslot feet 0
-
-#load basesprite /data/items/atlantian/atlantianbases.txt
-#load mount /data/items/atlantian/mounts.txt
-#load armor /data/items/atlantian/armor_mounted.txt
-#load helmet /data/items/atlantian/helmet.txt
-#load legs /data/items/atlantian/legs_mounted.txt
-#load weapon /data/items/atlantian/weapon.txt
-#load offhand /data/items/atlantian/shield.txt
-#load bonusweapon /data/items/atlantian/bonusrangedweapon.txt
-
-#load overlay /data/items/human/human_mounted/mountedoverlay.txt
-
-#endpose
-
-
-#newpose
-#id "ice cavalry"
-#basechance 0.25
-#role "mounted"
-#role "sacred"
-#sacred
-
-#baseitemslot feet 0
-
-#load basesprite /data/items/atlantian/atlantianbases.txt
-#load mount /data/items/atlantian/mounts.txt
-#load armor /data/items/atlantian/icearmor_mounted.txt
-#load helmet /data/items/atlantian/icehelmet.txt
-#load legs /data/items/atlantian/legs_mounted.txt
-#load weapon /data/items/atlantian/iceweapon.txt
-#load offhand /data/items/atlantian/iceshield.txt
-#load offhand /data/items/atlantian/shield.txt
-
-#load overlay /data/items/human/human_mounted/mountedoverlay.txt
-
-#endpose
-
-
-#newpose
-#id "meteor armor cavalry"
-#basechance 0.25
-#role "mounted"
-#role "sacred"
-#sacred
-
-#baseitemslot feet 0
-
-#load basesprite /data/items/atlantian/atlantianbases.txt
-#load mount /data/items/atlantian/mounts.txt
-#load armor /data/items/atlantian/meteorarmor_mounted.txt
-#load helmet /data/items/atlantian/helmet.txt
-#load legs /data/items/atlantian/legs_mounted.txt
-#load weapon /data/items/atlantian/meteorweapon.txt
-
-#load overlay /data/items/human/human_mounted/mountedoverlay.txt
-
-#endpose
-
-
 -------- shambler
 #newpose
 #id "shambler infantry"
@@ -199,6 +131,7 @@
 ------- Archer
 
 #newpose
+#id "atlantian archer"
 #role "ranged"
 #role "sacred"
 
@@ -220,6 +153,7 @@
 -------- scout
 
 #newpose
+#id "atlantian scout"
 #role "scout"
 #load basesprite /data/items/atlantian/atlantianbases.txt
 #load shadow /data/items/atlantian/shadow.txt

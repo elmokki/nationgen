@@ -1,0 +1,78 @@
+#newitem
+#id axe
+#gameid 675
+#sprite /graphics/weapon/bronze/hatchet.png
+#theme "primitive"
+#tag "name infantry axeman"
+#offsetx -1
+#offsety -2
+#enditem
+
+#newitem
+#id broadsword
+#gameid bronzebroadsword
+#sprite /graphics/weapon/bronze/broadsword.png
+#tag "name infantry swordsman"
+#enditem
+
+#newitem
+#id cavalry_axe
+#gameid cavalry_axe
+#sprite /graphics/weapon/bronze/greataxe.png
+#theme "primitive"
+#tag "name infantry axeman"
+#troopweapon
+#enditem
+
+#newitem
+#id longspear
+#gameid 644
+#sprite /graphics/weapon/bronze/longspear.png
+#tag "name infantry longspearman"
+#lightlance
+#enditem
+
+#newitem
+#id shortsword
+#gameid 645
+#sprite /graphics/weapon/bronze/shortsword.png
+#enditem
+
+#newitem
+#id spear
+#gameid 643
+#sprite /graphics/weapon/bronze/spear.png
+#tag "name infantry spearman"
+#lightlance
+#enditem
+
+#newitem
+#id cavalry_trident
+#gameid cavalry_trident
+#sprite /graphics/weapon/bronze/trident.png
+#tag "prefix trident"
+#basechance 0.25
+#lightlance
+#enditem
+
+#newitem
+#id goldenspear
+#gameid 473
+#sprite /graphics/weapon/sacred/goldenspear.png
+#theme "elite"
+#lightlance
+#enditem
+
+#newitem
+#id goldensword
+#gameid 474
+#sprite /graphics/weapon/sacred/goldenshortsword.png
+#theme "elite"
+#enditem
+
+#newitem
+#id goldenaxe
+#gameid goldenaxe
+#sprite /graphics/sidhe/weapon/goldenaxe.png
+#theme "elite"
+#enditem
