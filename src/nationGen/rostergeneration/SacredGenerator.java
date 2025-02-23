@@ -783,6 +783,11 @@ public class SacredGenerator extends TroopGenerator {
         if (c.command.equals("#firstshape")) {
           survivability += 0.05;
         }
+
+        if (c.command.equals("#overcharged")) {
+          Integer overchargedAmnt = Integer.parseInt(c.args.get(0).get());
+          survivability += overchargedAmnt * 0.05;
+        }
       }
     }
 
