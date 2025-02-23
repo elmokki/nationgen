@@ -44,22 +44,66 @@
 #tag "animal horse"
 #theme "light"
 #tag "maxprot 11"
-#basechance 30
+#basechance 20
 #enditem
 
 #newitem
-#id "ghoul_horse_armored"
+#id "ghoul_horse_light_scale_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/ghoulhorse_armored.png
 #armor
 #needs overlay ghoulhorse_armored_overlay
-#define "#mountmnr 'ghoul_horse_armored_mount'"
+#define "#mountmnr 'ghoul_horse_light_scale_barding_mount'"
+#tag "animal horse"
+#theme "light"
+#theme "iron"
+#tag "minprot 11"
+#basechance 24
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "ghoul_horse_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/ghoulhorse_armored.png
+#armor
+#needs overlay ghoulhorse_armored_overlay
+#define "#mountmnr 'ghoul_horse_iron_mail_barding_mount'"
+#tag "animal horse"
+#theme "iron"
+#tag "minprot 12"
+#basechance 18
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "ghoul_horse_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/ghoulhorse_armored.png
+#armor
+#needs overlay ghoulhorse_armored_overlay
+#define "#mountmnr 'ghoul_horse_cataphract_barding_mount'"
 #tag "animal horse"
 #theme "heavy"
 #theme "iron"
 #tag "minprot 14"
-#basechance 30
+#basechance 16
 #chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "ghoul_horse_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/ghoulhorse_armored.png
+#armor
+#needs overlay ghoulhorse_armored_overlay
+#define "#mountmnr 'ghoul_horse_plate_barding_mount'"
+#tag "animal horse"
+#theme "heavy"
+#theme "iron"
+#tag "minprot 14"
+#basechance 14
+#chanceinc prot 15 *2
 #enditem
 
 #newitem
