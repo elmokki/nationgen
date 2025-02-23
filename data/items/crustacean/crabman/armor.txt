@@ -3,12 +3,21 @@
 #newitem
 #id "sharkskin_armor"
 #gameid 151
+#basechance 2
 #sprite /graphics/crustacean/crabman/armor/sharkskin.png
 #recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
 #armor
 #theme "primitive"
 #enditem
 
+--- "Naked"
+
+#newitem
+#name "unarmoured"
+#armor
+#basechance 4
+#theme "primitive"
+#enditem
 
 --- Bronze Scale
 
@@ -75,7 +84,7 @@
 #newitem
 #id "bronze_plate_cuirass"
 #gameid 100
-#basechance 0.5
+#basechance 2
 #sprite /graphics/crustacean/crabman/armor/bronzeplate_cuirass.png
 #recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
 #armor
@@ -85,7 +94,7 @@
 #newitem
 #id "bronze_plate_hauberk"
 #gameid 101
-#basechance 0.5
+#basechance 2
 #sprite /graphics/crustacean/crabman/armor/bronzeplate_hauberk.png
 #recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
 #armor
@@ -103,6 +112,7 @@
 #armor
 #theme "bronze"
 #theme "elite"
+#basechance 0.1
 #enditem
 
 #newitem
@@ -113,6 +123,7 @@
 #armor
 #theme "bronze"
 #theme "elite"
+#basechance 0.1
 #enditem
 
 
@@ -126,6 +137,7 @@
 #armor
 #theme "advanced"
 #theme "elite"
+#basechance 0.1
 #enditem
 
 #newitem
@@ -136,4 +148,5 @@
 #armor
 #theme "advanced"
 #theme "elite"
+#basechance 0.1
 #enditem
