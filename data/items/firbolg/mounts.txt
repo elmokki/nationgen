@@ -1,109 +1,260 @@
+---- Horses
+
 #newitem
-#basechance 3
-#id "brown horse"
-#basechance 2
+#id "riding_horse"
 #gameid -1
 #sprite /graphics/mounts/standard/brownhorse.png
 #armor
 #offsety 1
 #needs overlay 1
-#define "#mountmnr 'riding-horse'"
-#define "#gcost +15"
-#tag "animal horse"
+#define "#mountmnr 'riding_horse_mount'"
 #theme "light"
+#tag "animal horse"
 #tag "maxprot 11"
 #epicness 0.25
+#basechance 12
 #enditem
 
 #newitem
-#id "armored horse"
-#basechance 0.5
+#id "riding_horse_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#armor
+#offsety 1
+#needs overlay 1
+#define "#mountmnr 'riding_horse_leather_barding_mount'"
+#theme "light"
+#theme "leather"
+#theme "primitive"
+#tag "animal horse"
+#tag "maxprot 11"
+#epicness 0.25
+#basechance 10
+#enditem
+
+#newitem
+#id "riding_horse_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#armor
+#offsety 1
+#needs overlay 1
+#define "#mountmnr 'riding_horse_light_bronze_barding_mount'"
+#theme "light"
+#theme "bronze"
+#tag "animal horse"
+#tag "maxprot 11"
+#epicness 0.25
+#basechance 10
+#enditem
+
+#newitem
+#id "riding_horse_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#armor
+#offsety 1
+#needs overlay 1
+#define "#mountmnr 'riding_horse_light_scale_barding_mount'"
+#theme "light"
+#theme "iron"
+#tag "animal horse"
+#tag "maxprot 11"
+#epicness 0.25
+#basechance 10
+#enditem
+
+#newitem
+#id "riding_horse_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#armor
+#offsety 1
+#needs overlay 1
+#define "#mountmnr 'riding_horse_bronze_mail_barding_mount'"
+#theme "bronze"
+#tag "animal horse"
+#epicness 0.25
+#basechance 8
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "riding_horse_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#armor
+#offsety 1
+#needs overlay 1
+#define "#mountmnr 'riding_horse_iron_mail_barding_mount'"
+#theme "iron"
+#tag "animal horse"
+#epicness 0.25
+#basechance 8
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "destrier_plate_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/armoredhorse1.png
 #armor
 #needs overlay 2
-#define "#mountmnr 'armored-horse'"
-#tag "animal horse"
+#define "#mountmnr 'destrier_plate_barding_mount'"
 #theme "heavy"
 #theme "iron"
-#tag "minprot 14"
-#define "#gcost +25"
-#epicness 0.25
-#tag "name commander 'knight'"
-#tag "name mounted knight"
-#enditem
-
-#newitem
-#id "armored horse bronze"
-#basechance 0.5
-#gameid -1
-#sprite /graphics/mounts/standard/armoredhorse1a.png
-#armor
-#needs overlay armoredhorse1aoverlay
-#define "#mountmnr 'armoredhorse1a'"
-#define "#rcost +5"
 #tag "animal horse"
-#theme "heavy"
-#theme "bronze"
-#tag "minprot 14"
-#define "#gcost +25"
-#epicness 0.25
 #tag "name commander 'knight'"
 #tag "name mounted knight"
+#tag "minprot 14"
+#epicness 0.25
+#basechance 5
+#chanceinc prot 17 *2
 #enditem
 
+
 #newitem
-#id "armored horse 2"
-#basechance 1
+#id "war_horse_leather_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/armoredhorse2.png
 #armor
 #needs overlay armoredhorse2overlay
-#define "#mountmnr 'war-horse'"
+#define "#mountmnr 'war_horse_leather_barding_mount'"
+#theme "light"
+#theme "leather"
+#theme "primitive"
 #tag "animal horse"
-#theme "heavy"
-#theme "bronze"
-#tag "minprot 12"
-#tag "maxprot 16"
-#define "#gcost +20"
-#epicness 0.25
 #tag "name commander 'knight'"
 #tag "name mounted knight"
+#tag "minprot 12"
+#tag "maxprot 16"
+#epicness 0.25
+#basechance 10
 #enditem
 
 #newitem
-#id "armored horse 2a"
-#basechance 1
+#id "war_horse_light_scale_barding_2"
+#gameid -1
+#sprite /graphics/mounts/standard/armoredhorse1a.png
+#armor
+#needs overlay armoredhorse1aoverlay
+#define "#mountmnr 'war_horse_light_scale_barding_mount_2'"
+#theme "bronze"
+#tag "animal horse"
+#tag "name commander 'knight'"
+#tag "name mounted knight"
+#tag "minprot 14"
+#epicness 0.25
+#basechance 5
+#enditem
+
+#newitem
+#id "war_horse_light_scale_barding_1"
 #gameid -1
 #sprite /graphics/mounts/standard/armoredhorse2a.png
 #armor
 #needs overlay armoredhorse2overlay
-#define "#mountmnr 'light-cataphracted-horse'"
-#define "#rcost +5"
-#tag "animal horse"
-#theme "heavy"
+#define "#mountmnr 'war_horse_light_scale_barding_mount_1'"
 #theme "iron"
-#tag "minprot 12"
-#tag "maxprot 16"
-#define "#gcost +20"
-#epicness 0.25
+#tag "animal horse"
 #tag "name commander 'knight'"
 #tag "name mounted knight"
+#tag "minprot 12"
+#tag "maxprot 16"
+#epicness 0.25
+#basechance 5
 #enditem
 
 #newitem
-#id "fayhorse"
+#id "war_horse_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/armoredhorse2a.png
+#armor
+#needs overlay armoredhorse2overlay
+#define "#mountmnr 'war_horse_iron_mail_barding_mount'"
+#theme "heavy"
+#theme "bronze"
+#tag "animal horse"
+#tag "name commander 'knight'"
+#tag "name mounted knight"
+#tag "minprot 12"
+#tag "maxprot 16"
+#epicness 0.25
+#basechance 2.5
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "war_horse_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/armoredhorse2a.png
+#armor
+#needs overlay armoredhorse2overlay
+#define "#mountmnr 'war_horse_iron_mail_barding_mount'"
+#theme "heavy"
+#theme "iron"
+#tag "animal horse"
+#tag "name commander 'knight'"
+#tag "name mounted knight"
+#tag "minprot 12"
+#tag "maxprot 16"
+#epicness 0.25
+#basechance 2.5
+#chanceinc prot 14 *2
+#enditem
+
+
+---- Fae Horses
+
+#newitem
+#id "fay_horse"
 #gameid -1
 #sprite /graphics/mounts/standard/fayhorse.png
 #armor
-#define "#mountmnr 'fay-horse'"
-#define "#gcost +20"
+#define "#mountmnr 'fay_horse_mount'"
 #tag "animal horse"
 #tag "minprot 6"
 #tag "maxprot 16"
-#basechance 0.1
-#chanceinc racetag "fae" *50
+#basechance 1
+#chanceinc anytheme "fae" *50
 #enditem
+
+#newitem
+#id "fay_steed"
+#gameid -1
+#sprite /graphics/mounts/standard/fayhorse.png
+#armor
+#define "#mountmnr 'fay_steed_mount'"
+#theme "heavy"
+#tag "animal horse"
+#tag "minprot 12"
+#epicness 0.25
+#basechance 0.5
+#sacredextra 0.7
+#chanceinc prot 18 *2
+#chanceinc anytheme "fae" *40
+#enditem
+
+#newitem
+#id "unseelie_steed"
+#gameid -1
+#sprite /graphics/mounts/standard/fayhorse.png
+#armor
+#define "#mountmnr 'unseelie_steed_mount'"
+#theme "heavy"
+#tag "animal horse"
+#tag "minprot 12"
+#epicness 0.25
+#sacredextra 0.7
+#basechance 0.25
+#chanceinc prot 18 *2
+#chanceinc anytheme "fae" *20
+#chanceinc "nationcommand #idealcold above 1 *20"
+#chanceinc "nationcommand #idealcold below -1 *0"
+#enditem
+
+
+---- Winged
 
 #newitem
 #id "pegasus"
@@ -113,65 +264,370 @@
 #offsetx 28
 #offsety 64
 #needs overlay 8
-#define "#mountmnr 'pegasus'"
-#define "#gcost +50"
+#define "#mountmnr 'pegasus_mount'"
 #theme "flying"
 #tag "animal pegasus"
 #tag "guaranteedprefix pegasus"
 #sacredextra 0.7
-#basechance 0.1
-#chanceinc racetag "fae" *50
+#basechance 0.5
+#chanceinc anytheme "fae" *50
 #enditem
 
 #newitem
-#id "peryton"
+#id "pegasus_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/pegasus.png
+#armor
+#offsetx 28
+#offsety 64
+#needs overlay 8
+#define "#mountmnr 'pegasus_light_bronze_barding_mount'"
+#theme "flying"
+#theme "bronze"
+#tag "animal pegasus"
+#tag "guaranteedprefix pegasus"
+#sacredextra 0.7
+#basechance 0.4
+#chanceinc prot 11 *2
+#chanceinc anytheme "fae" *50
+#enditem
+
+#newitem
+#id "pegasus_light_scale_barding_mount"
+#gameid -1
+#sprite /graphics/mounts/standard/pegasus.png
+#armor
+#offsetx 28
+#offsety 64
+#needs overlay 8
+#define "#mountmnr 'pegasus_light_scale_barding_mount'"
+#theme "flying"
+#theme "iron"
+#tag "animal pegasus"
+#tag "guaranteedprefix pegasus"
+#sacredextra 0.7
+#basechance 0.4
+#chanceinc prot 11 *2
+#chanceinc anytheme "fae" *50
+#enditem
+
+#newitem
+#id "pegasus_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/pegasus.png
+#armor
+#offsetx 28
+#offsety 64
+#needs overlay 8
+#define "#mountmnr 'pegasus_iron_mail_barding_mount'"
+#theme "flying"
+#theme "iron"
+#tag "animal pegasus"
+#tag "guaranteedprefix pegasus"
+#sacredextra 0.7
 #basechance 0.25
+#chanceinc prot 14 *2
+#chanceinc anytheme "fae" *50
+#enditem
+
+#newitem
+#id "pegasus_silver_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/pegasus.png
+#armor
+#offsetx 28
+#offsety 64
+#needs overlay 8
+#define "#mountmnr 'pegasus_silver_barding_mount'"
+#theme "flying"
+#theme "heavy"
+#tag "animal pegasus"
+#tag "guaranteedprefix pegasus"
+#sacredextra 0.7
+#basechance 0.1
+#chanceinc prot 18 *2
+#chanceinc anytheme "fae" *50
+#enditem
+
+
+#newitem
+#id "peryton"
 #gameid -1
 #sprite /graphics/mounts/standard/peryton2.png
 #needs overlay peryton2_overlay
 #armor
 #offsetx -2
 #offsety 2
-#define "#mountmnr 'peryton2'"
-#define "#gcost +50"
+#define "#mountmnr 'peryton_mount'"
 #theme "flying"
 #tag "animal peryton"
 #tag "name commander windlord"
 #tag "guaranteedprefix peryton"
 #sacredextra 0.7
+#basechance 1.25
 #enditem
+
+#newitem
+#id "peryton_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/peryton2.png
+#needs overlay peryton2_overlay
+#armor
+#offsetx -2
+#offsety 2
+#define "#mountmnr 'peryton_light_bronze_barding_mount'"
+#theme "flying"
+#theme "bronze"
+#tag "animal peryton"
+#tag "name commander windlord"
+#tag "guaranteedprefix peryton"
+#sacredextra 0.7
+#basechance 1
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "peryton_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/peryton2.png
+#needs overlay peryton2_overlay
+#armor
+#offsetx -2
+#offsety 2
+#define "#mountmnr 'peryton_light_scale_barding_mount'"
+#theme "flying"
+#theme "iron"
+#tag "animal peryton"
+#tag "name commander windlord"
+#tag "guaranteedprefix peryton"
+#sacredextra 0.7
+#basechance 1
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "peryton_gossamer_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/peryton2.png
+#needs overlay peryton2_overlay
+#armor
+#offsetx -2
+#offsety 2
+#define "#mountmnr 'peryton_gossamer_barding_mount'"
+#theme "flying"
+#tag "animal peryton"
+#tag "name commander windlord"
+#tag "guaranteedprefix peryton"
+#sacredextra 0.7
+#basechance 0.25
+#chanceinc prot 13 *2
+#chanceinc anytheme "fae" *20
+#enditem
+
+
+---- Unicorns
 
 #newitem
 #id "unicorn"
 #gameid -1
 #sprite /graphics/mounts/standard/unicorn.png
 #armor
-#define "#mountmnr 'unicorn'"
-#define "#gcost +30"
-#tag "minprot 6"
-#tag "maxprot 16"
+#define "#mountmnr 'unicorn_mount'"
 #tag "animal unicorn"
 #tag "guaranteedprefix unicorn"
-#basechance 0.1
-#chanceinc racetag "fae" *50
+#tag "minprot 6"
+#tag "maxprot 16"
+#basechance 0.5
+#chanceinc anytheme "fae" *50
 #enditem
 
 #newitem
-#id "cu sidhe"
+#id "unicorn_gossamer_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#define "#mountmnr 'unicorn_gossamer_barding_mount'"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#tag "minprot 6"
+#tag "maxprot 18"
+#basechance 0.35
+#chanceinc prot 13 *2
+#chanceinc anytheme "fae" *50
+#enditem
+
+#newitem
+#id "unicorn_silver_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#armor
+#define "#mountmnr 'unicorn_silver_barding_mount'"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#tag "minprot 6"
+#basechance 0.15
+#chanceinc prot 18 *2
+#chanceinc anytheme "fae" *50
+#enditem
+
+
+#newitem
+#id "black_unicorn"
+#gameid -1
+#sprite /graphics/mounts/standard/black_unicorn.png
+#armor
+#offsetx 27
+#offsety 60
+#define "#mountmnr 'black_unicorn_mount'"
+#tag "animal 'black unicorn'"
+#tag "guaranteedprefix 'black unicorn'"
+#tag "minprot 6"
+#tag "maxprot 16"
+#basechance 0.5
+#chanceinc anytheme "fae" *20
+#chanceinc anymagic "death" *30
+#enditem
+
+#newitem
+#id "black_unicorn_gossamer_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/black_unicorn.png
+#armor
+#offsetx 27
+#offsety 60
+#define "#mountmnr 'black_unicorn_gossamer_barding_mount'"
+#tag "animal 'black unicorn'"
+#tag "guaranteedprefix 'black unicorn'"
+#tag "minprot 6"
+#tag "maxprot 18"
+#basechance 0.35
+#chanceinc prot 13 *2
+#chanceinc anytheme "fae" *20
+#chanceinc anymagic "death" *30
+#enditem
+
+#newitem
+#id "black_unicorn_silver_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/black_unicorn.png
+#armor
+#offsetx 27
+#offsety 60
+#define "#mountmnr 'black_unicorn_silver_barding_mount'"
+#tag "animal 'black unicorn'"
+#tag "guaranteedprefix 'black unicorn'"
+#tag "minprot 6"
+#basechance 0.15
+#chanceinc prot 18 *2
+#chanceinc anytheme "fae" *20
+#chanceinc anymagic "death" *30
+#enditem
+
+
+---- Fae Dogs
+
+#newitem
+#id "cu_sidhe"
 #gameid -1
 #sprite /graphics/sidhe/mounts/cusidhe.png
 #armor
 #offsetx -5
 #offsety 2
-#define "#mountmnr 'cusidhemount'"
-#define "#gcost +20"
+#define "#mountmnr 'cu_sidhe_mount'"
+#tag "animal dog"
+#tag "guaranteedprefix 'cu sidhe'"
+#tag "minprot 5"
+#tag "maxprot 12"
+#basechance 1
+#chanceinc anytheme "fae" *20
+#enditem
+
+#newitem
+#id "cu_sidhe_light_bronze_barding"
+#gameid -1
+#sprite /graphics/sidhe/mounts/cusidhe.png
+#armor
+#offsetx -5
+#offsety 2
+#define "#mountmnr 'cu_sidhe_light_bronze_barding_mount'"
+#theme "bronze"
+#tag "animal dog"
+#tag "guaranteedprefix 'cu sidhe'"
+#tag "minprot 5"
+#tag "maxprot 14"
+#basechance 0.8
+#chanceinc prot 10 *2
+#chanceinc anytheme "fae" *20
+#enditem
+
+#newitem
+#id "cu_sidhe_light_scale_barding"
+#gameid -1
+#sprite /graphics/sidhe/mounts/cusidhe.png
+#armor
+#offsetx -5
+#offsety 2
+#define "#mountmnr 'cu_sidhe_light_scale_barding_mount'"
+#theme "iron"
+#tag "animal dog"
+#tag "guaranteedprefix 'cu sidhe'"
+#tag "minprot 5"
+#tag "maxprot 14"
+#basechance 0.8
+#chanceinc prot 10 *2
+#chanceinc anytheme "fae" *20
+#enditem
+
+#newitem
+#id "cu_sidhe_bronze_mail_barding_mount"
+#gameid -1
+#sprite /graphics/sidhe/mounts/cusidhe.png
+#armor
+#offsetx -5
+#offsety 2
+#define "#mountmnr 'cu_sidhe_mail_barding_mount'"
+#theme "bronze"
+#tag "animal dog"
+#tag "guaranteedprefix 'cu sidhe'"
+#tag "minprot 5"
+#basechance 0.6
+#chanceinc prot 14 *2
+#chanceinc anytheme "fae" *20
+#enditem
+
+#newitem
+#id "cu_sidhe_iron_mail_barding"
+#gameid -1
+#sprite /graphics/sidhe/mounts/cusidhe.png
+#armor
+#offsetx -5
+#offsety 2
+#define "#mountmnr 'cu_sidhe_mail_barding_mount'"
+#theme "iron"
 #tag "animal dog"
 #tag "guaranteedprefix 'cu sidhe'"
 #tag "maxprot 5"
-#tag "maxprot 12"
-#basechance 0.25
-#chanceinc racetag "fae" *20
+#basechance 0.6
+#chanceinc prot 14 *2
+#chanceinc anytheme "fae" *20
 #enditem
+
+#newitem
+#id "cu_sidhe_gossamer_barding"
+#gameid -1
+#sprite /graphics/sidhe/mounts/cusidhe.png
+#armor
+#offsetx -5
+#offsety 2
+#define "#mountmnr 'cu_sidhe_gossamer_barding_mount'"
+#tag "animal dog"
+#tag "guaranteedprefix 'cu sidhe'"
+#tag "minprot 5"
+#basechance 0.25
+#chanceinc prot 14 *2
+#chanceinc anytheme "fae" *20
+#enditem
+
 
 #newitem
 #id "barghest"
@@ -180,31 +636,210 @@
 #armor
 #offsetx -5
 #offsety 2
-#define "#mountmnr 'barghestmount'"
-#define "#gcost +20"
+#define "#mountmnr 'barghest_mount'"
 #tag "animal dog"
 #tag "guaranteedprefix barghest"
-#tag "maxprot 5"
+#tag "minprot 5"
 #tag "maxprot 12"
-#basechance 0.25
-#chanceinc racetag "fae" *10
+#basechance 1
+#chanceinc anytheme "fae" *10
 #enditem
 
 #newitem
+#id "barghest_light_bronze_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/barghest.png
+#armor
+#offsetx -5
+#offsety 2
+#define "#mountmnr 'barghest_light_bronze_barding_mount'"
+#theme "bronze"
+#tag "animal dog"
+#tag "guaranteedprefix barghest"
+#tag "minprot 5"
+#tag "maxprot 14"
+#basechance 0.8
+#chanceinc prot 10 *2
+#chanceinc anytheme "fae" *10
+#enditem
+
+#newitem
+#id "barghest_light_scale_barding_mount"
+#gameid -1
+#sprite /graphics/hoburg/mounts/barghest.png
+#armor
+#offsetx -5
+#offsety 2
+#define "#mountmnr 'barghest_light_scale_barding_mount'"
+#theme "iron"
+#tag "animal dog"
+#tag "guaranteedprefix barghest"
+#tag "minprot 5"
+#tag "maxprot 14"
+#basechance 0.8
+#chanceinc prot 10 *2
+#chanceinc anytheme "fae" *10
+#enditem
+
+#newitem
+#id "barghest_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/barghest.png
+#armor
+#offsetx -5
+#offsety 2
+#define "#mountmnr 'barghest_mail_barding_mount'"
+#theme "bronze"
+#tag "animal dog"
+#tag "guaranteedprefix barghest"
+#tag "minprot 5"
+#basechance 0.6
+#chanceinc prot 14 *2
+#chanceinc anytheme "fae" *10
+#enditem
+
+#newitem
+#id "barghest_iron_mail_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/barghest.png
+#armor
+#offsetx -5
+#offsety 2
+#define "#mountmnr 'barghest_mail_barding_mount'"
+#theme "iron"
+#tag "animal dog"
+#tag "guaranteedprefix barghest"
+#tag "minprot 5"
+#basechance 0.6
+#chanceinc prot 14 *2
+#chanceinc anytheme "fae" *10
+#enditem
+
+#newitem
+#id "barghest_gossamer_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/barghest.png
+#armor
+#offsetx -5
+#offsety 2
+#define "#mountmnr 'barghest_gossamer_barding_mount'"
+#theme "iron"
+#tag "animal dog"
+#tag "guaranteedprefix barghest"
+#tag "minprot 5"
+#basechance 0.25
+#chanceinc prot 14 *2
+#chanceinc anytheme "fae" *10
+#enditem
+
+
+---- Elk
+
+#newitem
 #id "elk"
-#basechance 0.5
 #gameid -1
 #sprite /graphics/mounts/standard/elk.png
 #needs overlay elk_overlay
 #armor
 #offsetx -2
 #offsety 2
-#define "#mountmnr 'elk'"
-#define "#gcost +20"
-#define "#rcost +4"
+#define "#mountmnr 'elk_mount'"
+#description "Leaves an elk behind when the rider dies"
 #tag "animal elk"
+#tag "guaranteedprefix elk"
 #tag "minprot 0"
 #tag "maxprot 14"
-#tag "guaranteedprefix elk"
+#basechance 2
+#enditem
+
+#newitem
+#id "elk_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/elk.png
+#needs overlay elk_overlay
+#armor
+#offsetx -2
+#offsety 2
+#define "#mountmnr 'elk_light_bronze_barding_mount'"
 #description "Leaves an elk behind when the rider dies"
+#theme "bronze"
+#tag "animal elk"
+#tag "guaranteedprefix elk"
+#tag "minprot 0"
+#tag "maxprot 14"
+#basechance 1.6
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "elk_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/elk.png
+#needs overlay elk_overlay
+#armor
+#offsetx -2
+#offsety 2
+#define "#mountmnr 'elk_light_scale_barding_mount'"
+#description "Leaves an elk behind when the rider dies"
+#theme "iron"
+#tag "animal elk"
+#tag "guaranteedprefix elk"
+#tag "minprot 0"
+#tag "maxprot 14"
+#basechance 1.6
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "elk_bronze_mail_barding_mount"
+#gameid -1
+#sprite /graphics/mounts/standard/elk.png
+#needs overlay elk_overlay
+#armor
+#offsetx -2
+#offsety 2
+#define "#mountmnr 'elk_iron_mail_barding_mount'"
+#description "Leaves an elk behind when the rider dies"
+#theme "bronze"
+#tag "animal elk"
+#tag "guaranteedprefix elk"
+#tag "minprot 0"
+#basechance 1.2
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "elk_iron_mail_barding_mount"
+#gameid -1
+#sprite /graphics/mounts/standard/elk.png
+#needs overlay elk_overlay
+#armor
+#offsetx -2
+#offsety 2
+#define "#mountmnr 'elk_iron_mail_barding'"
+#description "Leaves an elk behind when the rider dies"
+#theme "iron"
+#tag "animal elk"
+#tag "guaranteedprefix elk"
+#tag "minprot 0"
+#basechance 1.2
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "elk_gossamer_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/elk.png
+#needs overlay elk_overlay
+#armor
+#offsetx -2
+#offsety 2
+#define "#mountmnr 'elk_gossamer_barding_mount'"
+#description "Leaves an elk behind when the rider dies"
+#tag "animal elk"
+#tag "guaranteedprefix elk"
+#tag "minprot 0"
+#basechance 0.5
+#chanceinc anytheme "fae" *10
+#chanceinc prot 14 *2
 #enditem

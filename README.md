@@ -8,10 +8,6 @@ Dominions 6 procedural content generation program.
 
 	Should be done in `data/gods/individual/gods-without-realm.txt`. They are mostly nation-specific gods, like the Risen Oracle. Some of them should be fleshed out with more detailed `#chanceinc`, like additional race checks, or theme checks (i.e. cold nations, heat nations, etc).
 
-- **Fix national spells that require sites**
-
-	Some national spells like Pact of Rhuax require certain national sites to be cast. These should either get programmatically assigned to the nation (modding them to not give the other site's advantages?) or modding the spell itself to not require the site.
-
 - **Add mount templates with varying armour types**
 
 	A lot of cavalry is worthless because the mount templates don't have armoured alternatives. These could be done programmatically, but the simplest way would be to copy/paste existing armourless mounts and give them increasing tiers of armour. An example of this is the ettin's helmets, see `data/items/ogre/helmet_ettinling.txt`, the heavier ones with lower and lower `#basechances`.

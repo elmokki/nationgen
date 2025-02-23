@@ -46,7 +46,7 @@
 #name "cavalier"
 #basechance 0
 #chanceinc "pose mounted 2"
-#chanceinc slottagvalue mount animal 'camel' *0
+#chanceinc slottagvalue mount animal 'camel_mount' *0
 #theme advanced
 #end
 
@@ -62,7 +62,7 @@
 #name "cavalry"
 #basechance 0
 #chanceinc "pose mounted 1"
-#chanceinc slottagvalue mount animal 'camel' *0
+#chanceinc slottagvalue mount animal 'camel_mount' *0
 #end
 
 #new 
@@ -82,20 +82,20 @@
 #new 
 #name "camelry"
 #basechance 0
-#chanceinc slottagvalue mount animal 'camel' 1
+#chanceinc slottagvalue mount animal 'camel_mount' 1
 #end
 
 #new 
 #name "camelier"
 #basechance 0
-#chanceinc slottagvalue mount animal 'camel' 2
+#chanceinc slottagvalue mount animal 'camel_mount' 2
 #theme advanced
 #end
 
 #new 
 #name "dromedarii"
 #basechance 0
-#chanceinc slottagvalue mount animal 'camel' 4
+#chanceinc slottagvalue mount animal 'camel_mount' 4
 #chanceinc racetheme not imperial *0
 #end
 

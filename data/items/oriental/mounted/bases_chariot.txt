@@ -1,176 +1,451 @@
---- Base offsets are applied to everything except base and overlay
+------ Base offsets are applied to everything except base and overlay
+
 #newitem
-#id "horse chariot"
+#id "horse_light_scale_barding_oriental"
 #gameid -1
 #sprite /graphics/mounts/chariots/horse_oriental.png
 #armor
 #needs overlay oriental_chariot
 #offsetx 51
 #offsety -10
-#define "#mountmnr 'chariot-oriental'"
-#define "#gcost +25"
-#define "#rcost +12"
+#define "#mountmnr 'horse_light_scale_barding_oriental_chariot'"
+#theme "iron"
 #tag "chariot"
+#tag "animal 'horse'"
 #tag "minprot 10"
 #tag "maxprot 15"
-#tag "animal 'horse'"
+#basechance 10
+#chanceinc prot 12 *2
 #enditem
 
 #newitem
-#id "camel chariot"
-#basechance 0.75
-#chanceinc "nationcommand #idealcold above -1 *0"
-#chanceinc "nationcommand #idealcold below -1 *2"
+#id "horse_mail_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse_oriental.png
+#armor
+#needs overlay oriental_chariot
+#offsetx 51
+#offsety -10
+#define "#mountmnr 'horse_mail_barding_oriental_chariot'"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 8
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "horse_cataphract_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse_oriental.png
+#armor
+#needs overlay oriental_chariot
+#offsetx 51
+#offsety -10
+#define "#mountmnr 'horse_cataphract_barding_oriental_chariot'"
+#theme "iron"
+#theme "heavy"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#basechance 6
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "horse_plate_barding_oriental"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse_oriental.png
+#armor
+#needs overlay oriental_chariot
+#offsetx 51
+#offsety -10
+#define "#mountmnr 'horse_plate_barding_oriental_chariot'"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#basechance 0
+#chanceinc racetheme advanced 0.5
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "camel_oriental_chariot"
 #gameid -1
 #sprite /graphics/mounts/chariots/camel_oriental.png
 #armor
-#needs overlay chariot_camel_oriental
 #offsetx 67
 #offsety -8
-#define "#mountmnr 'chariot_camel_oriental'"
-#define "#gcost +25"
-#define "#rcost +10"
+#needs overlay chariot_camel_oriental
+#define "#mountmnr 'camel_oriental_chariot'"
+#define "#gcost -5"
 #tag "chariot"
+#tag "animal 'camel'"
 #tag "minprot 10"
 #tag "maxprot 15"
-#tag "animal 'camel'"
+#basechance 7.5
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
 #enditem
 
 #newitem
-#id "lizard chariot"
+#id "camel_light_scale_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel_oriental.png
+#armor
+#offsetx 67
+#offsety -8
+#needs overlay chariot_camel_oriental
+#define "#mountmnr 'camel_light_scale_barding_oriental_chariot'"
+#define "#gcost -5"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'camel'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 6.5
+#chanceinc prot 12 *2
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#enditem
+
+#newitem
+#id "camel_mail_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel_oriental.png
+#armor
+#offsetx 67
+#offsety -8
+#needs overlay chariot_camel_oriental
+#define "#mountmnr 'camel_mail_barding_oriental_chariot'"
+#define "#gcost -5"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'camel'"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 5
+#chanceinc prot 14 *2
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#enditem
+
+#newitem
+#id "camel_cataphract_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel_oriental.png
+#armor
+#offsetx 67
+#offsety -8
+#needs overlay chariot_camel_oriental
+#define "#mountmnr 'camel_cataphract_barding_oriental_chariot'"
+#define "#gcost -5"
+#theme "iron"
+#theme "heavy"
+#tag "chariot"
+#tag "animal 'camel'"
+#tag "minprot 10"
+#basechance 3
+#chanceinc prot 16 *2
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#enditem
+
+#newitem
+#id "camel_plate_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel_oriental.png
+#armor
+#offsetx 67
+#offsety -8
+#needs overlay chariot_camel_oriental
+#define "#mountmnr 'camel_plate_barding_oriental_chariot'"
+#define "#gcost -5"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "chariot"
+#tag "animal 'camel'"
+#tag "minprot 10"
+#basechance 0
+#chanceinc racetheme advanced 0.5
+#chanceinc prot 18 *2
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#enditem
+
+
+#newitem
+#id "lizard_light_scale_barding_chariot"
 #gameid -1
 #sprite /graphics/mounts/chariots/lizard_oriental.png
 #recolormask /graphics/mounts/chariots/lizard_oriental_recolormask.png
 #armor
-#needs overlay oriental_chariot
 #offsetx 51
 #offsety -10
-#define "#mountmnr 'chariot_lizard_oriental'"
-#define "#gcost +25"
-#define "#rcost +10"
+#needs overlay oriental_chariot
+#define "#mountmnr 'lizard_light_scale_barding_chariot'"
+#theme "iron"
 #tag "chariot"
-#tag "minprot 10"
-#tag "maxprot 15"
 #tag "animal 'lizard'"
-#basechance 0.25
-#enditem
-
-#newitem
-#id "boar chariot"
-#gameid -1
-#sprite /graphics/mounts/chariots/boar_oriental.png
-#armor
-#needs overlay oriental_chariot
-#offsetx 51
-#offsety -10
-#define "#mountmnr 'chariot_boar_oriental'"
-#define "#gcost +25"
-#define "#rcost +10"
-#tag "chariot"
 #tag "minprot 10"
 #tag "maxprot 15"
-#tag "animal 'boar'"
+#basechance 2.5
 #enditem
 
 #newitem
-#id "tiger chariot"
-#gameid -1
-#sprite /graphics/mounts/chariots/tiger_oriental.png
-#armor
-#needs overlay oriental_chariot
-#offsetx 51
-#offsety -10
-#define "#mountmnr 'chariot_tiger_oriental'"
-#define "#gcost +25"
-#define "#rcost +10"
-#tag "chariot"
-#tag "minprot 10"
-#tag "maxprot 15"
-#tag "animal 'tiger'"
-#enditem
-
-
---- High gcost versions
-#newitem
-#id "horse chariot he"
-#gameid -1
-#sprite /graphics/mounts/chariots/horse_oriental.png
-#armor
-#needs overlay oriental_chariot
-#offsetx 51
-#offsety -10
-#define "#mountmnr 'chariot-oriental'"
-#define "#gcost +40"
-#define "#rcost +16"
-#tag "chariot"
-#tag "minprot 16"
-#tag "animal 'horse'"
-#enditem
-
-#newitem
-#id "camel chariot he"
-#basechance 0.75
-#chanceinc "nationcommand #idealcold above -1 *0"
-#chanceinc "nationcommand #idealcold below -1 *2"
-#gameid -1
-#sprite /graphics/mounts/chariots/camel_oriental.png
-#armor
-#needs overlay chariot_camel_oriental
-#offsetx 67
-#offsety -8
-#define "#mountmnr 'chariot_camel_oriental'"
-#define "#gcost +40"
-#define "#rcost +15"
-#tag "minprot 16"
-#tag "chariot"
-#tag "animal 'camel'"
-#enditem
-
-#newitem
-#id "lizard chariot he"
+#id "lizard_iron_mail_barding_chariot"
 #gameid -1
 #sprite /graphics/mounts/chariots/lizard_oriental.png
+#recolormask /graphics/mounts/chariots/lizard_oriental_recolormask.png
 #armor
-#needs overlay oriental_chariot
 #offsetx 51
 #offsety -10
-#define "#mountmnr 'chariot_lizard_oriental'"
-#define "#gcost +40"
-#define "#rcost +15"
+#needs overlay oriental_chariot
+#define "#mountmnr 'lizard_iron_mail_barding_chariot'"
+#theme "iron"
 #tag "chariot"
-#tag "minprot 16"
 #tag "animal 'lizard'"
-#basechance 0.25
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 2
+#chanceinc prot 14 *2
 #enditem
 
 #newitem
-#id "boar chariot he"
+#id "lizard_cataphract_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/lizard_oriental.png
+#recolormask /graphics/mounts/chariots/lizard_oriental_recolormask.png
+#armor
+#offsetx 51
+#offsety -10
+#needs overlay oriental_chariot
+#define "#mountmnr 'lizard_cataphract_barding_chariot'"
+#theme "iron"
+#theme "heavy"
+#tag "chariot"
+#tag "animal 'lizard'"
+#tag "minprot 10"
+#basechance 1
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "lizard_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/lizard_oriental.png
+#recolormask /graphics/mounts/chariots/lizard_oriental_recolormask.png
+#armor
+#offsetx 51
+#offsety -10
+#needs overlay oriental_chariot
+#define "#mountmnr 'lizard_barding_chariot'"
+#theme "iron"
+#theme "heavy"
+#tag "chariot"
+#tag "animal 'lizard'"
+#tag "minprot 10"
+#basechance 0.5
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "boar_oriental_chariot"
 #gameid -1
 #sprite /graphics/mounts/chariots/boar_oriental.png
 #armor
 #needs overlay oriental_chariot
 #offsetx 51
 #offsety -10
-#define "#mountmnr 'chariot_boar_oriental'"
-#define "#gcost +40"
-#define "#rcost +15"
+#define "#mountmnr 'boar_oriental_chariot'"
+#define "#gcost -5"
 #tag "chariot"
-#tag "minprot 16"
 #tag "animal 'boar'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 10
 #enditem
 
 #newitem
-#id "tiger chariot he"
+#id "boar_light_scale_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar_oriental.png
+#armor
+#needs overlay oriental_chariot
+#offsetx 51
+#offsety -10
+#define "#mountmnr 'boar_light_scale_barding_oriental_chariot'"
+#define "#gcost -5"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'boar'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "boar_mail_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar_oriental.png
+#armor
+#needs overlay oriental_chariot
+#offsetx 51
+#offsety -10
+#define "#mountmnr 'boar_mail_barding_oriental_chariot'"
+#define "#gcost -5"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'boar'"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "boar_cataphract_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar_oriental.png
+#armor
+#needs overlay oriental_chariot
+#offsetx 51
+#offsety -10
+#define "#mountmnr 'boar_cataphract_barding_oriental_chariot'"
+#define "#gcost -5"
+#theme "iron"
+#theme "heavy"
+#tag "chariot"
+#tag "animal 'boar'"
+#tag "minprot 10"
+#basechance 4
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "boar_plate_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar_oriental.png
+#armor
+#needs overlay oriental_chariot
+#offsetx 51
+#offsety -10
+#define "#mountmnr 'boar_plate_barding_oriental_chariot'"
+#define "#gcost -5"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "chariot"
+#tag "animal 'boar'"
+#tag "minprot 10"
+#basechance 0
+#chanceinc racetheme advanced 0.5
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "tiger_oriental_chariot"
 #gameid -1
 #sprite /graphics/mounts/chariots/tiger_oriental.png
 #armor
 #needs overlay oriental_chariot
 #offsetx 51
 #offsety -10
-#define "#mountmnr 'chariot_tiger_oriental'"
-#define "#gcost +40"
-#define "#rcost +15"
+#define "#mountmnr 'tiger_oriental_chariot'"
+#define "#gcost -5"
 #tag "chariot"
-#tag "minprot 16"
 #tag "animal 'tiger'"
+#tag "minprot 10"
+#tag "maxprot 14"
+#basechance 10
+#enditem
+
+#newitem
+#id "tiger_light_scale_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/tiger_oriental.png
+#armor
+#needs overlay oriental_chariot
+#offsetx 51
+#offsety -10
+#define "#mountmnr 'tiger_light_scale_barding_oriental_chariot'"
+#define "#gcost -5"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'tiger'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 10
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "tiger_mail_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/tiger_oriental.png
+#armor
+#needs overlay oriental_chariot
+#offsetx 51
+#offsety -10
+#define "#mountmnr 'tiger_mail_barding_oriental_chariot'"
+#define "#gcost -5"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'tiger'"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 10
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "tiger_cataphract_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/tiger_oriental.png
+#armor
+#needs overlay oriental_chariot
+#offsetx 51
+#offsety -10
+#define "#mountmnr 'tiger_cataphract_barding_oriental_chariot'"
+#define "#gcost -5"
+#theme "iron"
+#theme "heavy"
+#tag "chariot"
+#tag "animal 'tiger'"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 10
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "tiger_plate_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/tiger_oriental.png
+#armor
+#needs overlay oriental_chariot
+#offsetx 51
+#offsety -10
+#define "#mountmnr 'tiger_plate_barding_oriental_chariot'"
+#define "#gcost -5"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "chariot"
+#tag "animal 'tiger'"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 0
+#chanceinc racetheme advanced 0.5
+#chanceinc prot 18 *2
 #enditem

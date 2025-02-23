@@ -3,6 +3,11 @@
 #name "troop description generic"
 #set "troop description generic"
 #synonym "%nation%'s %unitname_plural%"
+#synonym "%unitname_plural% of %nation%"
+#synonym "The warriors of %nation%"
+#synonym "The proud %unitname_plural% of %nation%"
+#synonym "Fearsome %unitname_plural% from %nation%"
+#synonym "The elite %unitname_plural% serving %nation%"
 #end
 
 #new
@@ -10,18 +15,24 @@
 #set "troop"
 #prev "troop description generic"
 #description "are %armortypes% %role% wielding %weapons_plural%"
+#synonym "are %armortypes% %role% who fight with %weapons_plural%"
+#synonym "are %role% outfitted with %armortypes% armor and %weapons_plural%"
 #basechance 0.25
 #end
 
------ Footmen
+---- Footmen
+
 #new
 #name "troop description infantry"
 #set "troop description infantry"
 #synonym "The %role% of %nation%"
 #synonym "%nation%'s %role%"
 #synonym "The %role% in %nation%"
-#synonym "The %role% of %nation%"
-#synonym "%nation%'s %role%"
+#synonym "%nation%'s elite %role%"
+#synonym "The steadfast %role% of %nation%"
+#synonym "Brave %role% in service to %nation%"
+#synonym "%nation%'s disciplined %role%"
+#synonym "The iron-willed %role% from %nation%"
 #uniquedescription
 #nopose mounted
 #nopose chariot
@@ -36,6 +47,9 @@
 #synonym "carry %weapons_plural% and are armored with %armortypes% armor"
 #synonym "are clad in %armortypes% armor and fight with %weapons%"
 #synonym "are outfitted with %weapons% and %armortypes% armor"
+#synonym "march into battle wearing %armortypes% armor and wielding %weapons_plural%"
+#synonym "stand strong in their %armortypes% armor, ready to strike with %weapons_plural%"
+#synonym "are disciplined soldiers clad in %armortypes% armor, brandishing %weapons%"
 #uniquedescription
 #nopose mounted
 #nopose chariot
@@ -48,6 +62,10 @@
 #set "troop description chariot"
 #synonym "Charioteers"
 #synonym "%nation%'s troops"
+#synonym "The swift charioteers of %nation%"
+#synonym "The elite chariot corps of %nation%"
+#synonym "The thunderous charge of %nation%"
+#synonym "%nation%'s proud war chariots"
 #uniquedescription
 #nopose infantry
 #nopose mounted
@@ -60,6 +78,8 @@
 #prev "troop description chariot"
 #synonym "ride their chariots pulled by %mount_plural% and fight with %weapons_plural%"
 #synonym "use %armortypes% %mount%-drawn chariots to overrun their foes"
+#synonym "thunder into battle atop chariots pulled by %mount_plural%, striking with %weapons_plural%"
+#synonym "crash into enemy lines, their %mount%-drawn chariots and %weapons% bringing destruction"
 #uniquedescription
 #nopose infantry
 #nopose mounted
@@ -73,6 +93,10 @@
 #set "troop description archer"
 #synonym "The archers of %nation%"
 #synonym "%unitname_plural%"
+#synonym "The skilled bowmen of %nation%"
+#synonym "%nation%'s deadliest marksmen"
+#synonym "The silent hunters of %nation%"
+#synonym "%nation%'s sharpshooters"
 #uniquedescription
 #nopose infantry
 #nopose mounted
@@ -85,6 +109,8 @@
 #prev "troop description archer"
 #synonym "are armored with %armortypes% armor and shoot their enemies with %weapons%"
 #synonym "support the armies of %nation% with their %weapons%"
+#synonym "rain death upon their foes with %weapons% while clad in %armortypes% armor"
+#synonym "pick off enemies from a distance, wielding %weapons% and protected by %armortypes% armor"
 #uniquedescription
 #nopose infantry
 #nopose mounted
@@ -100,12 +126,15 @@
 #synonym "%nation%'s cavalry troops"
 #synonym "The %unitname_plural% of %nation%"
 #synonym "%unitname_plural%"
+#synonym "The fearsome horsemen of %nation%"
+#synonym "The gallant knights of %nation%"
+#synonym "The swift riders of %nation%"
+#synonym "%nation%'s thunderous cavalry charge"
 #uniquedescription
 #nopose infantry
 #nopose ranged
 #nopose chariot
 #end
-
 
 #new
 #name "troop cavalry"
@@ -115,6 +144,8 @@
 #synonym "are armored with %armortypes% armor. The %unitname_plural% are mounted on %mount_plural%"
 #synonym "ride into battle clad in %armortypes% armor astride %mount_plural%"
 #synonym "ride down the foes of %nation% atop war-trained %armortypes% %mount_plural%"
+#synonym "sweep across the battlefield on their %mount_plural%, their %armortypes% armor gleaming"
+#synonym "charge into battle as %nation%'s vanguard, clad in %armortypes% armor and mounted on %mount_plural%"
 #uniquedescription
 #nopose infantry
 #nopose ranged

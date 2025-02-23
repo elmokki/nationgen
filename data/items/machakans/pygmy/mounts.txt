@@ -1,80 +1,355 @@
---- Base offsets are applied to everything except base and overlay
+------ Base offsets are applied to everything except base and overlay
 
 #newitem
 #id "hyena"
 #gameid -1
 #sprite /graphics/mounts/standard/hyena.png
 #armor
-#define "#mountmnr 'hyenamount'"
-#define "#gcost +15"
-#define "#rcost +4"
-#tag "animal hyena"
-#tag "maxprot 14"
-#tag "guaranteedprefix hyena"
-#description "If the rider dies, the hyena will carry on fighting until the end of the battle."
 #offsetx -3
 #offsety -20
+#define "#mountmnr 'hyena_mount'"
+#description "If the rider dies, the hyena will carry on fighting until the end of the battle."
+#tag "animal hyena"
+#tag "guaranteedprefix hyena"
+#tag "maxprot 14"
+#basechance 10
 #enditem
 
 #newitem
-#id "grey parrot"
+#id "hyena_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/hyena.png
+#armor
+#offsetx -3
+#offsety -20
+#define "#mountmnr 'hyena_leather_barding_mount'"
+#description "If the rider dies, the hyena will carry on fighting until the end of the battle."
+#theme "leather"
+#tag "animal hyena"
+#tag "guaranteedprefix hyena"
+#tag "maxprot 14"
+#basechance 9
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "hyena_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/hyena.png
+#armor
+#offsetx -3
+#offsety -20
+#define "#mountmnr 'hyena_light_scale_barding_mount'"
+#description "If the rider dies, the hyena will carry on fighting until the end of the battle."
+#tag "animal hyena"
+#tag "guaranteedprefix hyena"
+#tag "maxprot 16"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "hyena_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/hyena.png
+#armor
+#offsetx -3
+#offsety -20
+#define "#mountmnr 'hyena_iron_mail_barding_mount'"
+#description "If the rider dies, the hyena will carry on fighting until the end of the battle."
+#tag "animal hyena"
+#tag "guaranteedprefix hyena"
+#basechance 5
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "hyena_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/hyena.png
+#armor
+#offsetx -3
+#offsety -20
+#define "#mountmnr 'hyena_plate_barding_mount'"
+#description "If the rider dies, the hyena will carry on fighting until the end of the battle."
+#theme "heavy"
+#theme "advanced"
+#tag "animal hyena"
+#tag "guaranteedprefix hyena"
+#basechance 1.5
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "giant_parrot"
 #gameid -1
 #sprite /graphics/machakans/mounts/giant_parrot.png
 #needs overlay giant_parrot_overlay
 #armor
-#define "#mountmnr 'grey_parrot'"
-#define "#gcost +15"
-#define "#rcost +4"
-#tag "animal parrot"
+#offsetx -3
+#offsety -28
+#define "#mountmnr 'giant_parrot_mount'"
+#define "#gcost -10"
 #theme "parrot"
 #theme "parrottotem"
 #theme "totemanimal"
-#tag "maxprot 16"
+#tag "animal parrot"
 #tag "guaranteedprefix parrot"
-#basechance 0.6
-#offsetx -3
-#offsety -28
+#tag "maxprot 16"
+#basechance 6
 #enditem
 
 #newitem
-#id "colorful parrot"
+#id "giant_parrot_leather_barding"
+#gameid -1
+#sprite /graphics/machakans/mounts/giant_parrot.png
+#needs overlay giant_parrot_overlay
+#armor
+#offsetx -3
+#offsety -28
+#define "#mountmnr 'giant_parrot_leather_barding_mount'"
+#define "#gcost -10"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#theme "leather"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 16"
+#basechance 5
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "giant_parrot_light_scale_barding"
+#gameid -1
+#sprite /graphics/machakans/mounts/giant_parrot.png
+#needs overlay giant_parrot_overlay
+#armor
+#offsetx -3
+#offsety -28
+#define "#mountmnr 'giant_parrot_light_scale_barding_mount'"
+#define "#gcost -10"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 16"
+#basechance 4
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "giant_parrot_iron_mail_barding"
+#gameid -1
+#sprite /graphics/machakans/mounts/giant_parrot.png
+#needs overlay giant_parrot_overlay
+#armor
+#offsetx -3
+#offsety -28
+#define "#mountmnr 'giant_parrot_iron_mail_barding_mount'"
+#define "#gcost -10"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#theme "heavy"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 16"
+#basechance 2
+#chanceinc prot 15 *2
+#enditem
+
+
+#newitem
+#id "colorful_giant_parrot"
 #gameid -1
 #sprite /graphics/machakans/mounts/giant_parrot.png
 #recolormask /graphics/machakans/mounts/giant_parrot_recolormask.png
 #needs overlay giant_parrot_overlay
 #armor
-#define "#mountmnr 'grey_parrot'"
-#define "#gcost +15"
-#define "#rcost +4"
-#tag "animal parrot"
+#offsetx -3
+#offsety -28
+#define "#mountmnr 'colorful_giant_parrot_mount'"
+#define "#gcost -10"
 #theme "parrot"
 #theme "parrottotem"
 #theme "totemanimal"
-#tag "maxprot 16"
+#tag "animal parrot"
 #tag "guaranteedprefix parrot"
-#basechance 0.4
-#offsetx -3
-#offsety -28
+#tag "maxprot 16"
+#basechance 4
 #enditem
 
 #newitem
-#id "red ant"
+#id "colorful_giant_parrot_leather_barding"
+#gameid -1
+#sprite /graphics/machakans/mounts/giant_parrot.png
+#recolormask /graphics/machakans/mounts/giant_parrot_recolormask.png
+#needs overlay giant_parrot_overlay
+#armor
+#offsetx -3
+#offsety -28
+#define "#mountmnr 'colorful_giant_parrot_leather_barding_mount'"
+#define "#gcost -10"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#theme "leather"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 16"
+#basechance 3.5
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "colorful_giant_parrot_light_scale_barding"
+#gameid -1
+#sprite /graphics/machakans/mounts/giant_parrot.png
+#recolormask /graphics/machakans/mounts/giant_parrot_recolormask.png
+#needs overlay giant_parrot_overlay
+#armor
+#offsetx -3
+#offsety -28
+#define "#mountmnr 'colorful_giant_parrot_light_scale_barding_mount'"
+#define "#gcost -10"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 16"
+#basechance 3
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "colorful_giant_parrot_iron_mail_barding"
+#gameid -1
+#sprite /graphics/machakans/mounts/giant_parrot.png
+#recolormask /graphics/machakans/mounts/giant_parrot_recolormask.png
+#needs overlay giant_parrot_overlay
+#armor
+#offsetx -3
+#offsety -28
+#define "#mountmnr 'colorful_giant_parrot_iron_mail_barding_mount'"
+#define "#gcost -10"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#theme "heavy"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 16"
+#basechance 1.5
+#chanceinc prot 15 *2
+#enditem
+
+
+#newitem
+#id "red_ant"
 #gameid -1
 #sprite /graphics/mounts/standard/redant.png
 #needs overlay redant_overlay
 #armor
-#define "#mountmnr 'redantmount'"
-#define "#gcost +5"
-#tag "animal ant"
+#offsetx 0
+#offsety -7
+#define "#mountmnr 'red_ant_mount'"
+#description "If the rider dies, the ant will carry on fighting until the end of the battle."
 #theme "ant"
 #theme "anttotem"
 #theme "totemanimal"
-#tag "maxprot 16"
+#tag "animal ant"
 #tag "guaranteedprefix ant"
-#description "If the rider dies, the ant will carry on fighting until the end of the battle."
+#tag "maxprot 16"
+#basechance 10
+#enditem
+
+#newitem
+#id "red_ant_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/redant.png
+#needs overlay redant_overlay
+#armor
 #offsetx 0
 #offsety -7
+#define "#mountmnr 'red_ant_leather_barding_mount'"
+#description "If the rider dies, the ant will carry on fighting until the end of the battle."
+#theme "ant"
+#theme "anttotem"
+#theme "totemanimal"
+#tag "animal ant"
+#tag "guaranteedprefix ant"
+#tag "maxprot 16"
+#basechance 9
+#chanceinc prot 10 *2
 #enditem
+
+#newitem
+#id "red_ant_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/redant.png
+#needs overlay redant_overlay
+#armor
+#offsetx 0
+#offsety -7
+#define "#mountmnr 'red_ant_light_scale_barding_mount'"
+#description "If the rider dies, the ant will carry on fighting until the end of the battle."
+#theme "ant"
+#theme "anttotem"
+#theme "totemanimal"
+#tag "animal ant"
+#tag "guaranteedprefix ant"
+#tag "maxprot 16"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "red_ant_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/redant.png
+#needs overlay redant_overlay
+#armor
+#offsetx 0
+#offsety -7
+#define "#mountmnr 'red_ant_iron_mail_barding_mount'"
+#description "If the rider dies, the ant will carry on fighting until the end of the battle."
+#theme "ant"
+#theme "anttotem"
+#theme "totemanimal"
+#tag "animal ant"
+#tag "guaranteedprefix ant"
+#tag "maxprot 16"
+#basechance 5
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "red_ant_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/redant.png
+#needs overlay redant_overlay
+#armor
+#offsetx 0
+#offsety -7
+#define "#mountmnr 'red_ant_plate_barding_mount'"
+#description "If the rider dies, the ant will carry on fighting until the end of the battle."
+#theme "ant"
+#theme "anttotem"
+#theme "totemanimal"
+#theme "heavy"
+#theme "advanced"
+#tag "animal ant"
+#tag "guaranteedprefix ant"
+#tag "maxprot 16"
+#basechance 3
+#chanceinc prot 16 *2
+#enditem
+
 
 #newitem
 #id "dog"
@@ -83,35 +358,186 @@
 #offsety -7
 #offsetx -1
 #armor
-#define "#mountmnr 'dogmount'"
+#define "#mountmnr 'dog_mount'"
 #description "The dog is fiercely loyal and will follow the army even if its rider dies."
-#define "#gcost +10"
-#tag "animal dog"
-#tag "minprot 0"
-#tag "maxprot 14"
 #theme "dog"
 #theme "light"
+#tag "animal dog"
+#tag "maxprot 14"
+#basechance 10
 #enditem
 
 #newitem
-#id "forest spider"
+#id "dog_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/dog.png
+#offsety -7
+#offsetx -1
+#armor
+#define "#mountmnr 'dog_leather_barding_mount'"
+#description "The dog is fiercely loyal and will follow the army even if its rider dies."
+#theme "dog"
+#theme "light"
+#theme "leather"
+#tag "animal dog"
+#tag "maxprot 14"
+#basechance 9
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "dog_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/dog.png
+#offsety -7
+#offsetx -1
+#armor
+#define "#mountmnr 'dog_light_scale_barding_mount'"
+#description "The dog is fiercely loyal and will follow the army even if its rider dies."
+#theme "dog"
+#theme "light"
+#tag "animal dog"
+#tag "maxprot 14"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "dog_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/dog.png
+#offsety -7
+#offsetx -1
+#armor
+#define "#mountmnr 'dog_iron_mail_barding_mount'"
+#description "The dog is fiercely loyal and will follow the army even if its rider dies."
+#theme "dog"
+#tag "animal dog"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "dog_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/dog.png
+#offsety -7
+#offsetx -1
+#armor
+#define "#mountmnr 'dog_plate_barding_mount'"
+#description "The dog is fiercely loyal and will follow the army even if its rider dies."
+#theme "dog"
+#theme "heavy"
+#theme "advanced"
+#tag "animal dog"
+#basechance 4
+#chanceinc prot 16 *2
+#enditem
+
+
+#newitem
+#id "forest_spider"
 #gameid -1
 #sprite /graphics/mounts/standard/spider2.png
 #armor
 #offsetx 3
 #offsety -2
 #needs overlay spider2_overlay
-#define "#mountmnr 'forestspider'"
+#define "#mountmnr 'forest_spider_mount'"
 #description "If the rider dies, the spider will carry on fighting until the end of the battle."
-#define "#gcost +15"
-#define "#rcost +4"
-#tag "animal spider"
+#define "#gcost -5"
 #theme "spider"
 #theme "spidertotem"
 #theme "totemanimal"
+#tag "animal spider"
 #tag "guaranteedprefix spider"
 #tag "maxprot 14"
+#basechance 10
 #enditem
+
+#newitem
+#id "forest_spider_leather_barding_spider"
+#gameid -1
+#sprite /graphics/mounts/standard/spider2.png
+#armor
+#offsetx 3
+#offsety -2
+#needs overlay spider2_overlay
+#define "#mountmnr 'forest_spider_leather_barding_spider_mount'"
+#description "If the rider dies, the spider will carry on fighting until the end of the battle."
+#define "#gcost -5"
+#theme "spider"
+#theme "spidertotem"
+#theme "totemanimal"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "maxprot 14"
+#basechance 9
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "forest_spider_light_scale_spider"
+#gameid -1
+#sprite /graphics/mounts/standard/spider2.png
+#armor
+#offsetx 3
+#offsety -2
+#needs overlay spider2_overlay
+#define "#mountmnr 'forest_spider_light_scale_spider_mount'"
+#description "If the rider dies, the spider will carry on fighting until the end of the battle."
+#define "#gcost -5"
+#theme "spider"
+#theme "spidertotem"
+#theme "totemanimal"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "maxprot 16"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "forest_spider_iron_mail_barding_spider"
+#gameid -1
+#sprite /graphics/mounts/standard/spider2.png
+#armor
+#offsetx 3
+#offsety -2
+#needs overlay spider2_overlay
+#define "#mountmnr 'forest_spider_iron_mail_barding_spider_mount'"
+#description "If the rider dies, the spider will carry on fighting until the end of the battle."
+#define "#gcost -5"
+#theme "spider"
+#theme "spidertotem"
+#theme "totemanimal"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "forest_spider_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/spider2.png
+#armor
+#offsetx 3
+#offsety -2
+#needs overlay spider2_overlay
+#define "#mountmnr 'forest_spider_plate_barding_mount'"
+#description "If the rider dies, the spider will carry on fighting until the end of the battle."
+#define "#gcost -5"
+#theme "spider"
+#theme "spidertotem"
+#theme "totemanimal"
+#theme "advanced"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#basechance 1.5
+#chanceinc prot 18 *2
+#enditem
+
 
 #newitem
 #id "crocodile"
@@ -120,102 +546,204 @@
 #offsetx 22
 #offsety -7
 #armor
-#define "#mountmnr 'crocodilemount'"
-#define "#gcost +15"
+#define "#mountmnr 'crocodile_mount'"
 #description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
-#tag "animal crocodile"
-#theme "heavy"
 #theme "specialmount"
-#tag "guaranteedprefix crocodile"
 #theme "primitive"
 #theme "crocodile"
 #theme "crocodiletotem"
 #theme "totemanimal"
+#tag "animal crocodile"
+#tag "guaranteedprefix crocodile"
+#basechance 10
 #enditem
 
 #newitem
-#id "flying fish"
+#id "crocodile_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/crocodile_mount.png
+#offsetx 22
+#offsety -7
+#armor
+#define "#mountmnr 'crocodile_light_scale_barding_mount'"
+#description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
+#theme "specialmount"
+#theme "crocodile"
+#theme "crocodiletotem"
+#theme "totemanimal"
+#tag "animal crocodile"
+#tag "guaranteedprefix crocodile"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "crocodile_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/crocodile_mount.png
+#offsetx 22
+#offsety -7
+#armor
+#define "#mountmnr 'crocodile_iron_mail_barding_mount'"
+#description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
+#theme "specialmount"
+#theme "crocodile"
+#theme "crocodiletotem"
+#theme "totemanimal"
+#tag "animal crocodile"
+#tag "guaranteedprefix crocodile"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "crocodile_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/crocodile_mount.png
+#offsetx 22
+#offsety -7
+#armor
+#define "#mountmnr 'crocodile_plate_barding_mount'"
+#description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
+#theme "specialmount"
+#theme "advanced"
+#theme "crocodile"
+#theme "crocodiletotem"
+#theme "totemanimal"
+#tag "animal crocodile"
+#tag "guaranteedprefix crocodile"
+#basechance 1.5
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "flying_fish"
 #gameid -1
 #sprite /graphics/machakans/mounts/flyingfish.png
 #needs overlay flyingfish_overlay
 #armor
-#define "#mountmnr 'flying_fish'"
-#define "#gcost +5"
-#tag "animal fish"
+#offsetx -3
+#offsety -28
+#define "#mountmnr 'flying_fish_mount'"
 #theme "fish"
 #theme "fishtotem"
 #theme "totemanimal"
-#tag "maxprot 8"
+#tag "animal fish"
 #tag "guaranteedprefix fish"
-#basechance 1
+#tag "maxprot 8"
+#basechance 10
 #chanceinc "personalcommand #swampsurvival 0.5"
 #chanceinc "personalcommand #pooramphibian *10"
 #chanceinc "personalcommand #amphibian *10"
-#offsetx -3
-#offsety -28
 #enditem
 
 #newitem
-#id "giant snail"
+#id "flying_fish_leather_barding"
+#gameid -1
+#sprite /graphics/machakans/mounts/flyingfish.png
+#needs overlay flyingfish_overlay
+#armor
+#offsetx -3
+#offsety -28
+#define "#mountmnr 'flying_fish_leather_barding_mount'"
+#theme "fish"
+#theme "fishtotem"
+#theme "totemanimal"
+#theme "leather"
+#tag "animal fish"
+#tag "guaranteedprefix fish"
+#tag "maxprot 12"
+#basechance 8
+#chanceinc prot 10 *2
+#chanceinc "personalcommand #swampsurvival 0.5"
+#chanceinc "personalcommand #pooramphibian *10"
+#chanceinc "personalcommand #amphibian *10"
+#enditem
+
+#newitem
+#id "flying_fish_light_scale_barding"
+#gameid -1
+#sprite /graphics/machakans/mounts/flyingfish.png
+#needs overlay flyingfish_overlay
+#armor
+#offsetx -3
+#offsety -28
+#define "#mountmnr 'flying_fish_light_scale_barding_mount'"
+#theme "fish"
+#theme "fishtotem"
+#theme "totemanimal"
+#tag "animal fish"
+#tag "guaranteedprefix fish"
+#tag "maxprot 14"
+#basechance 6
+#chanceinc prot 12 *2
+#chanceinc "personalcommand #swampsurvival 0.5"
+#chanceinc "personalcommand #pooramphibian *10"
+#chanceinc "personalcommand #amphibian *10"
+#enditem
+
+
+#newitem
+#id "snail"
 #gameid -1
 #sprite /graphics/machakans/mounts/snail.png
 #armor
-#define "#mountmnr 'snailmount'"
-#define "#gcost +10"
-#tag "animal snail"
+#offsetx -2
+#offsety -6
+#define "#mountmnr 'snail_mount'"
 #theme "snail"
 #theme "snailtotem"
 #theme "totemanimal"
-#tag "maxprot 16"
+#tag "animal snail"
 #tag "guaranteedprefix snail"
-#basechance 1
+#tag "maxprot 16"
+#basechance 10
 #chanceinc "personalcommand #swampsurvival 0.5"
 #chanceinc "personalcommand #pooramphibian *10"
 #chanceinc "personalcommand #amphibian *10"
-#offsetx -2
-#offsety -6
 #enditem
 
+
 #newitem
-#id "huge locust"
+#id "huge_locust"
 #gameid -1
 #sprite /graphics/mounts/standard/hugelocust.png
 #needs overlay hugelocust_overlay
 #armor
-#define "#mountmnr 'huge_locust'"
-#define "#gcost +20"
-#tag "animal locust"
+#offsetx -3
+#offsety -16
+#define "#mountmnr 'huge_locust_mount'"
 #theme "locust"
 #theme "locusttotem"
 #theme "totemanimal"
-#tag "maxprot 12"
+#tag "animal locust"
 #tag "guaranteedprefix locust"
-#basechance 1
+#tag "maxprot 12"
+#basechance 10
 #chanceinc "personalcommand #pillagebonus 1"
-#offsetx -3
-#offsety -16
 #enditem
 
+
 #newitem
-#id "huge mantis"
+#id "huge_mantis"
 #gameid -1
 #sprite /graphics/mounts/standard/hugemantis.png
 #armor
-#define "#mountmnr 'hugemantismount'"
-#define "#gcost +20"
-#tag "animal mantis"
+#offsetx -1
+#offsety -12
+#description "If the rider dies, the mantis will carry on fighting until the end of the battle."
+#define "#mountmnr 'huge_mantis_mount'"
+#define "#wastesurvival"
+#define "#secondtmpshape hugemantismount"
 #theme "mantis"
 #theme "locusttotem"
 #theme "totemanimal"
-#tag "maxprot 12"
-#tag "guaranteedprefix mantis"
-#define "#wastesurvival"
-#define "#secondtmpshape hugemantismount"
-#description "If the rider dies, the mantis will carry on fighting until the end of the battle."
 #tag "animal mantis"
-#basechance 1
-#offsetx -1
-#offsety -12
+#tag "guaranteedprefix mantis"
+#tag "animal mantis"
+#tag "maxprot 12"
+#basechance 10
 #enditem
 
 #newitem
@@ -224,101 +752,378 @@
 #sprite /graphics/mounts/standard/swan.png
 #needs overlay swan_overlay
 #armor
-#define "#mountmnr 'swanmount'"
-#define "#gcost +10"
-#tag "animal swan"
+#offsetx 2
+#offsety -5
+#description "If the rider dies, the swan will carry on fighting until the end of the battle."
+#define "#mountmnr 'swan_mount'"
 #theme "swan"
 #theme "swantotem"
 #theme "birdtotem"
 #theme "totemanimal"
-#tag "maxprot 8"
-#tag "guaranteedprefix swan"
-#description "If the rider dies, the swan will carry on fighting until the end of the battle."
 #tag "animal swan"
-#basechance 1
-#offsetx 2
-#offsety -5
+#tag "guaranteedprefix swan"
+#tag "animal swan"
+#tag "maxprot 10"
+#basechance 10
 #enditem
 
 #newitem
-#id "swan chariot"
+#id "swan_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/swan.png
+#needs overlay swan_overlay
+#armor
+#offsetx 2
+#offsety -5
+#description "If the rider dies, the swan will carry on fighting until the end of the battle."
+#define "#mountmnr 'swan_leather_barding_mount'"
+#theme "swan"
+#theme "swantotem"
+#theme "birdtotem"
+#theme "totemanimal"
+#theme "leather"
+#tag "animal swan"
+#tag "guaranteedprefix swan"
+#tag "animal swan"
+#tag "maxprot 12"
+#basechance 8
+#enditem
+
+#newitem
+#id "swan_light_scale_barding_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/swan.png
+#needs overlay swan_overlay
+#armor
+#offsetx 2
+#offsety -5
+#description "If the rider dies, the swan will carry on fighting until the end of the battle."
+#define "#mountmnr 'swan_light_scale_barding_barding_mount'"
+#theme "swan"
+#theme "swantotem"
+#theme "birdtotem"
+#theme "totemanimal"
+#tag "animal swan"
+#tag "guaranteedprefix swan"
+#tag "animal swan"
+#tag "maxprot 14"
+#basechance 6
+#enditem
+
+
+#newitem
+#id "swan_chariot"
 #gameid -1
 #sprite /graphics/mounts/chariots/small_swan_bronze.png
 #needs overlay chariot_swan_bronze_overlay
 #armor
-#define "#mountmnr 'chariot_swan'"
-#define "#gcost +10"
-#define "#rcost +5"
-#tag "animal swan"
-#tag "chariot"
+#offsetx 15
+#offsety -7
+#define "#mountmnr 'swan_chariot'"
 #theme "swan"
 #theme "swantotem"
 #theme "birdtotem"
 #theme "totemanimal"
-#tag "maxprot 8"
+#tag "animal swan"
+#tag "chariot"
 #tag "guaranteedprefix swan"
 #tag "animal swan"
-#basechance 1
-#offsetx 15
-#offsety -7
+#tag "maxprot 10"
+#basechance 10
 #enditem
 
 #newitem
-#id "giant rat"
+#id "swan_leather_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/small_swan_bronze.png
+#needs overlay chariot_swan_bronze_overlay
+#armor
+#offsetx 15
+#offsety -7
+#define "#mountmnr 'swan_leather_barding_chariot'"
+#theme "swan"
+#theme "swantotem"
+#theme "birdtotem"
+#theme "totemanimal"
+#theme "leather"
+#tag "animal swan"
+#tag "chariot"
+#tag "guaranteedprefix swan"
+#tag "animal swan"
+#tag "maxprot 12"
+#basechance 8
+#enditem
+
+#newitem
+#id "swan_light_scale_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/small_swan_bronze.png
+#needs overlay chariot_swan_bronze_overlay
+#armor
+#offsetx 15
+#offsety -7
+#define "#mountmnr 'swan_light_scale_barding_chariot'"
+#theme "swan"
+#theme "swantotem"
+#theme "birdtotem"
+#theme "totemanimal"
+#tag "animal swan"
+#tag "chariot"
+#tag "guaranteedprefix swan"
+#tag "animal swan"
+#tag "maxprot 14"
+#basechance 6
+#enditem
+
+#newitem
+#id "swan_iron_mail_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/small_swan_bronze.png
+#needs overlay chariot_swan_bronze_overlay
+#armor
+#offsetx 15
+#offsety -7
+#define "#mountmnr 'swan_iron_mail_barding_chariot'"
+#theme "swan"
+#theme "swantotem"
+#theme "birdtotem"
+#theme "totemanimal"
+#tag "animal swan"
+#tag "chariot"
+#tag "guaranteedprefix swan"
+#tag "animal swan"
+#tag "maxprot 16"
+#basechance 6
+#enditem
+
+
+#newitem
+#id "giant_rat"
 #gameid -1
 #sprite /graphics/mounts/standard/giantrat.png
 #armor
-#define "#mountmnr 'ratmount'"
-#define "#gcost +15"
-#tag "animal rat"
+#offsetx 1
+#offsety -11
+#define "#mountmnr 'giant_rat_mount'"
+#description "If the rider dies, the rat will carry on fighting until the end of the battle."
 #theme "rat"
 #theme "rattotem"
 #theme "totemanimal"
+#tag "animal rat"
 #tag "guaranteedprefix rat"
-#description "If the rider dies, the rat will carry on fighting until the end of the battle."
-#basechance 1
-#offsetx 1
-#offsety -11
+#basechance 10
 #enditem
 
 #newitem
-#id "giant rat chariot"
+#id "giant_rat_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/giantrat.png
+#armor
+#offsetx 1
+#offsety -11
+#define "#mountmnr 'giant_rat_leather_barding_mount'"
+#description "If the rider dies, the rat will carry on fighting until the end of the battle."
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#theme "leather"
+#tag "animal rat"
+#tag "guaranteedprefix rat"
+#basechance 8
+#enditem
+
+#newitem
+#id "giant_rat_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/giantrat.png
+#armor
+#offsetx 1
+#offsety -11
+#define "#mountmnr 'giant_rat_light_scale_barding_mount'"
+#description "If the rider dies, the rat will carry on fighting until the end of the battle."
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#tag "animal rat"
+#tag "guaranteedprefix rat"
+#basechance 6
+#enditem
+
+#newitem
+#id "giant_rat_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/giantrat.png
+#armor
+#offsetx 1
+#offsety -11
+#define "#mountmnr 'giant_rat_iron_mail_barding_mount'"
+#description "If the rider dies, the rat will carry on fighting until the end of the battle."
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#tag "animal rat"
+#tag "guaranteedprefix rat"
+#basechance 4
+#enditem
+
+
+#newitem
+#id "giant_rat_chariot"
 #gameid -1
 #sprite /graphics/mounts/chariots/small_rat_iron.png
 #needs overlay chariot_small_iron_overlay
 #armor
-#define "#mountmnr 'ratchariot'"
-#define "#gcost +20"
-#define "#rcost +10"
-#tag "animal rat"
-#tag "chariot"
+#offsetx 21
+#offsety -8
+#define "#mountmnr 'giant_rat_chariot'"
 #theme "rat"
 #theme "rattotem"
 #theme "totemanimal"
-#tag "maxprot 14"
+#tag "animal rat"
+#tag "chariot"
 #tag "guaranteedprefix rat"
 #tag "animal rat"
-#offsetx 21
-#offsety -8
+#tag "maxprot 14"
+#basechance 10
 #enditem
 
 #newitem
-#id "dwarf elephant"
+#id "giant_rat_leather_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/small_rat_iron.png
+#needs overlay chariot_small_iron_overlay
+#armor
+#offsetx 21
+#offsety -8
+#define "#mountmnr 'giant_rat_leather_barding_chariot'"
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#theme "leather"
+#tag "animal rat"
+#tag "chariot"
+#tag "guaranteedprefix rat"
+#tag "animal rat"
+#tag "maxprot 14"
+#basechance 8
+#enditem
+
+#newitem
+#id "giant_rat_light_scale_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/small_rat_iron.png
+#needs overlay chariot_small_iron_overlay
+#armor
+#offsetx 21
+#offsety -8
+#define "#mountmnr 'giant_rat_light_scale_barding_chariot'"
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#tag "animal rat"
+#tag "chariot"
+#tag "guaranteedprefix rat"
+#tag "animal rat"
+#tag "maxprot 14"
+#basechance 8
+#enditem
+
+#newitem
+#id "giant_rat_iron_mail_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/small_rat_iron.png
+#needs overlay chariot_small_iron_overlay
+#armor
+#offsetx 21
+#offsety -8
+#define "#mountmnr 'giant_rat_iron_mail_barding_chariot'"
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#tag "animal rat"
+#tag "chariot"
+#tag "guaranteedprefix rat"
+#tag "animal rat"
+#basechance 6
+#enditem
+
+
+#newitem
+#id "dwarf_elephant"
 #gameid -1
 #sprite /graphics/mounts/standard/elephant_dwarf.png
 #needs overlay dwarf_elephant_overlay
 #armor
-#define "#mountmnr 'dwarfelephantmount'"
-#define "#gcost +15"
-#define "#rcost +4"
-#tag "animal elephant"
+#offsetx -1
+#offsety -15
+#define "#mountmnr 'dwarf_elephant_mount'"
+#define "#gcost -5"
+#description "If the rider dies, the loyal elephant will fight on, and should it survive, another rider will be found."
 #theme "elephant"
 #theme "elephanttotem"
 #theme "totemanimal"
+#tag "animal elephant"
 #tag "guaranteedprefix elephant"
-#define "#secondshape dwarfelephantremount"
-#description "If the rider dies, the loyal elephant will fight on, and should it survive, another rider will be found."
-#basechance 1
+#basechance 10
+#enditem
+
+#newitem
+#id "dwarf_elephant_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/elephant_dwarf.png
+#needs overlay dwarf_elephant_overlay
+#armor
 #offsetx -1
 #offsety -15
+#define "#mountmnr 'dwarf_elephant_barding_mount'"
+#define "#gcost -5"
+#description "If the rider dies, the loyal elephant will fight on, and should it survive, another rider will be found."
+#theme "elephant"
+#theme "elephanttotem"
+#theme "totemanimal"
+#tag "animal elephant"
+#tag "guaranteedprefix elephant"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "dwarf_elephant_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/elephant_dwarf.png
+#needs overlay dwarf_elephant_overlay
+#armor
+#offsetx -1
+#offsety -15
+#define "#mountmnr 'dwarf_elephant_iron_mail_barding_mount'"
+#define "#gcost -5"
+#description "If the rider dies, the loyal elephant will fight on, and should it survive, another rider will be found."
+#theme "elephant"
+#theme "elephanttotem"
+#theme "totemanimal"
+#tag "animal elephant"
+#tag "guaranteedprefix elephant"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "dwarf_elephant_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/elephant_dwarf.png
+#needs overlay dwarf_elephant_overlay
+#armor
+#offsetx -1
+#offsety -15
+#define "#mountmnr 'dwarf_elephant_plate_barding_mount'"
+#define "#gcost -5"
+#description "If the rider dies, the loyal elephant will fight on, and should it survive, another rider will be found."
+#theme "elephant"
+#theme "elephanttotem"
+#theme "totemanimal"
+#theme "advanced"
+#tag "animal elephant"
+#tag "guaranteedprefix elephant"
+#basechance 1.5
+#chanceinc prot 18 *2
 #enditem

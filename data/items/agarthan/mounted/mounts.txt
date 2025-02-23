@@ -1,49 +1,255 @@
+---- Grubs
 
 #newitem
-#id cavegrub
+#id "cave_grub"
 #gameid -1
 #sprite graphics/mounts/standard/cavegrub.png
 #armor
 #offsetx 33
 #offsety -4
-#define "#mountmnr 'cavegrubmount'"
-#define "#gcost +20"
-#define "#rcost +3"
+#define "#mountmnr 'cave_grub_mount'"
+#define "#gcost -10"
 #animal 'cave grub'
 #guaranteedprefix grub
 #tag "#name commander beastmaster"
 #minprot 7
 #maxprot 20
+#basechance 5
 #sacredextra 0.5
 #description "The cave grub will fight until the end of the battle should the rider die"
 #enditem
 
 #newitem
-#id "cavecow"
+#id "cave_grub_light_bronze_barding"
 #gameid -1
-#basechance 0.1
+#sprite graphics/mounts/standard/cavegrub.png
+#armor
+#offsetx 33
+#offsety -4
+#define "#mountmnr 'cave_grub_light_bronze_barding_mount'"
+#define "#gcost -10"
+#theme "bronze"
+#animal 'cave grub'
+#guaranteedprefix grub
+#tag "#name commander beastmaster"
+#minprot 7
+#maxprot 20
+#basechance 3
+#chanceinc prot 10 *2
+#sacredextra 0.5
+#description "The cave grub will fight until the end of the battle should the rider die"
+#enditem
+
+#newitem
+#id "cave_grub_bronze_mail_barding"
+#gameid -1
+#sprite graphics/mounts/standard/cavegrub.png
+#armor
+#offsetx 33
+#offsety -4
+#define "#mountmnr 'cave_grub_bronze_mail_barding_mount'"
+#define "#gcost -10"
+#theme "bronze"
+#animal 'cave grub'
+#guaranteedprefix grub
+#tag "#name commander beastmaster"
+#minprot 7
+#maxprot 20
+#basechance 2
+#chanceinc prot 14 *2
+#sacredextra 0.5
+#description "The cave grub will fight until the end of the battle should the rider die"
+#enditem
+
+#newitem
+#id "cave_grub_bronze_barding"
+#gameid -1
+#sprite graphics/mounts/standard/cavegrub.png
+#armor
+#offsetx 33
+#offsety -4
+#define "#mountmnr 'cave_grub_bronze_barding_mount'"
+#define "#gcost -10"
+#theme "bronze"
+#theme "heavy"
+#animal 'cave grub'
+#guaranteedprefix grub
+#tag "#name commander beastmaster"
+#minprot 7
+#maxprot 100
+#basechance 1
+#chanceinc prot 17 *2
+#sacredextra 0.5
+#description "The cave grub will fight until the end of the battle should the rider die"
+#enditem
+
+#newitem
+#id "cave_grub_light_scale_barding"
+#gameid -1
+#sprite graphics/mounts/standard/cavegrub.png
+#armor
+#offsetx 33
+#offsety -4
+#define "#mountmnr 'cave_grub_light_scale_barding_mount'"
+#define "#gcost -10"
+#theme "iron"
+#animal 'cave grub'
+#guaranteedprefix grub
+#tag "#name commander beastmaster"
+#minprot 7
+#maxprot 20
+#basechance 3
+#chanceinc prot 10 *2
+#sacredextra 0.5
+#description "The cave grub will fight until the end of the battle should the rider die"
+#enditem
+
+#newitem
+#id "cave_grub_iron_mail_barding"
+#gameid -1
+#sprite graphics/mounts/standard/cavegrub.png
+#armor
+#offsetx 33
+#offsety -4
+#define "#mountmnr 'cave_grub_iron_mail_barding_mount'"
+#define "#gcost -10"
+#theme "iron"
+#animal 'cave grub'
+#guaranteedprefix grub
+#tag "#name commander beastmaster"
+#minprot 7
+#maxprot 20
+#basechance 2
+#chanceinc prot 14 *2
+#sacredextra 0.5
+#description "The cave grub will fight until the end of the battle should the rider die"
+#enditem
+
+#newitem
+#id "cave_grub_plate_barding"
+#gameid -1
+#sprite graphics/mounts/standard/cavegrub.png
+#armor
+#offsetx 33
+#offsety -4
+#define "#mountmnr 'cave_grub_plate_barding_mount'"
+#define "#gcost -10"
+#theme "iron"
+#theme "heavy"
+#animal 'cave grub'
+#guaranteedprefix grub
+#tag "#name commander beastmaster"
+#minprot 7
+#maxprot 100
+#basechance 1
+#chanceinc prot 17 *2
+#sacredextra 0.5
+#description "The cave grub will fight until the end of the battle should the rider die"
+#enditem
+
+
+---- Cave cows
+
+#newitem
+#id "cave_cow"
+#gameid -1
 #sprite /graphics/mounts/standard/cavecow.png
 #armor
-#define "#mountmnr 'cavecowmount'"
-#define "#gcost +30"
+#define "#mountmnr 'cave_cow_mount'"
+#define "#gcost -5"
 #description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
 #offsetx -6
 #offsety -10
 #tag "animal 'cave cow'"
 #tag "guaranteedprefix 'cave cow'"
+#basechance 0.5
+#enditem
+
+#newitem
+#id "cave_cow_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavecow.png
+#armor
+#define "#mountmnr 'cave_cow_light_bronze_barding_mount'"
+#define "#gcost -5"
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#offsetx -6
+#offsety -10
+#theme "bronze"
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#minprot 7
+#basechance 0.3
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "cave_cow_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavecow.png
+#armor
+#define "#mountmnr 'cave_cow_bronze_barding_mount'"
+#define "#gcost -5"
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#offsetx -6
+#offsety -10
+#theme "bronze"
+#theme "heavy"
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#minprot 7
+#basechance 0.2
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "cave_cow_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavecow.png
+#armor
+#define "#mountmnr 'cave_cow_light_scale_barding_mount'"
+#define "#gcost -5"
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#offsetx -6
+#offsety -10
+#theme "iron"
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#minprot 7
+#basechance 0.3
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "cave_cow_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavecow.png
+#armor
+#define "#mountmnr 'cave_cow_plate_barding_mount'"
+#define "#gcost -5"
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#offsetx -6
+#offsety -10
+#theme "iron"
+#theme "heavy"
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#minprot 7
+#basechance 0.2
+#chanceinc prot 17 *2
 #enditem
 
 
+---- Cave drakes
 
 #newitem
-#id "cave drake"
+#id "cave_drake"
 #gameid -1
 #sprite /graphics/mounts/standard/cavedrake.png
 #armor
 #offsety -6
 #offsetx 9
-#define "#mountmnr 'cavedrake'"
-#define "#gcost +70"
+#define "#mountmnr 'cave_drake_mount'"
 #tag "animal drake"
 #theme "specialmount"
 #description "The cave drake will persist even if the rider dies."
@@ -51,5 +257,6 @@
 #tag "name commander drakelord"
 #tag "minprot 0"
 #tag "maxprot 100"
+#basechance 10
 #sacredextra nonholyshape 0.25
 #enditem

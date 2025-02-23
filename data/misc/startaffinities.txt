@@ -3,7 +3,6 @@
 #name "none"
 #end
 
-
 #new
 #basechance 0
 #name "forest"
@@ -22,10 +21,9 @@
 #chanceinc percentageofcommand #flying 0.5 0.1
 #chanceinc percentageofcommand #flying 0.75 0.25
 #chanceinc percentageofcommand #flying 0.9 1
-#command "#likesterr +16"
+#chanceinc primaryrace "Bakemono" 10
+#command "#likesterr +32"
 #end
-
-
 
 #new
 #basechance 0
@@ -35,7 +33,6 @@
 #chanceinc percentageofcommand #wastesurvival 0.9 4
 #command "#likesterr +64"
 #end
-
 
 #new
 #basechance 0
@@ -55,13 +52,11 @@
 #command "#likesterr +256"
 #end
 
-
 #new
 #basechance 0.1
 #name "plain"
 #command "#likesterr +0"
 #end
-
 
 #new
 #basechance 0.05
@@ -76,7 +71,6 @@
 #chanceinc nationcommand #tradecoast 0.5
 #command  "#coastnation"
 #end
-
 
 #new
 #basechance 0
@@ -93,7 +87,3 @@
 #chanceinc percentageofrace zotz 0.5 0.5
 #command "#likesterr +4096"
 #end
-
-
-
-

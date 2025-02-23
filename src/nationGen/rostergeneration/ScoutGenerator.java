@@ -30,8 +30,8 @@ public class ScoutGenerator extends TroopGenerator {
 
     // Select whether it is a spy, scout or assassin
     double scoutchance = race.tags.getDouble("scoutchance").orElse(0.5);
-    double spychance = race.tags.getDouble("spychance").orElse(0.25);
-    double assassinchance = race.tags.getDouble("assassinchance").orElse(0.25);
+    double spychance = race.tags.getDouble("spychance").orElse(0.15);
+    double assassinchance = race.tags.getDouble("assassinchance").orElse(0.1);
 
     double all = scoutchance + spychance + assassinchance;
     double roll = r.nextDouble() * all;

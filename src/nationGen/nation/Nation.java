@@ -265,8 +265,21 @@ public class Nation {
 
     // Sacred
     for (int i = 0; i < sacredcount; i++) {
-      int power = 1;
+      boolean isFirstSacred = i == 0;
+      double sacredPowerModifier = this.nationGen.settings.get(SettingsType.sacredpower);
+      
+      // Scale base unit power by the sacredpower setting chosen
+      int power = (int)((3 + sacredPowerModifier) * sacredPowerModifier);
 
+      /**
+       * Power ranges by Sacred Power setting and below randomization:
+       * 
+       * Normal:          4 - 11
+       * High:            10 - 17
+       * Batshit Insane:  18 - 25
+       */
+
+      // Roll multiple times. If lucky, this sacred will have more power than normal
       if (random.nextDouble() < 0.9) {
         power++;
         if (random.nextDouble() < 0.8) {
@@ -298,11 +311,8 @@ public class Nation {
         }
       }
 
-      Unit sacred = sacGen.generateUnit(raceHasSacreds, power, (i == 0));
+      Unit sacred = sacGen.generateUnit(raceHasSacreds, power, isFirstSacred);
       if (sacred != null) {
-        if (i > 0 && random.nextDouble() < 0.5) {
-          sacred.caponly = true;
-        }
         sacreds.add(sacred);
       }
     }

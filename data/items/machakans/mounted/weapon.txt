@@ -29,8 +29,8 @@
 #enditem
 
 #newitem
-#id greataxe
-#gameid 18
+#id cavalry_axe
+#gameid cavalry_axe
 #sprite /graphics/weapon/standard/greataxe.png
 #theme "primitive"
 #tag "name infantry axeman"
@@ -38,28 +38,20 @@
 #tag "name commander warchief"
 #enditem
 
-
 #newitem
-#id hammer
-#gameid 13
-#sprite /graphics/weapon/standard/hammer.png
-#basechance 0.25
-#enditem
-
-
-#newitem
-#id mace
-#gameid 12
+#id cavalry_mace
+#gameid cavalry_mace
 #sprite /graphics/weapon/standard/mace.png
 #theme "primitive"
 #tag "name infantry maceman"
-#maxprot 15
 #enditem
 
 #newitem
-#id maul
-#gameid 14
-#sprite /graphics/weapon/standard/maul.png
+#id cavalry_hardwood_club
+#gameid cavalry_hardwood_club
+#sprite /graphics/monkey/weapon/markata/club.png
+#theme "primitive"
+#tag "name infantry maceman"
 #enditem
 
 #newitem
@@ -98,30 +90,11 @@
 #enditem
 
 #newitem
-#id short_trident
-#gameid 679
+#id cavalry_trident
+#gameid cavalry_trident
 #sprite /graphics/weapon/standard/trident.png
 #tag "prefix trident"
-#basechance 0.0125
-#lightlance
-#enditem
-
-#newitem
-#id trident
-#gameid 3
-#sprite /graphics/weapon/standard/trident.png
-#tag "prefix trident"
-#basechance 0.0125
-#lightlance
-#enditem
-
-
-#newitem
-#id quarterstaff
-#gameid 7
-#sprite /graphics/weapon/standard/quarterstaff.png
-#basechance 0.05
-#maxprot 10
+#basechance 0.25
 #lightlance
 #enditem
 
@@ -136,7 +109,6 @@
 #basechance 6
 #lightlance
 #enditem
-
 
 #newitem
 #basechance 6

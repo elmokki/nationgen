@@ -1,24 +1,13 @@
-#newitem
-#id bamboo_rod
-#gameid 501
-#sprite /graphics/hoburg/weapon/stick.png
-#eliteversion staff
-#theme "primitive"
-#theme "wood"
-#tag "maxprot 9"
-#tag "notepic"
-#lightlance
-#light
-#enditem
 
 #newitem
-#id staff
-#gameid 7
-#sprite /graphics/hoburg/weapon/stick.png
-#theme "elite"
+#id stone_lance
+#gameid 708
+#sprite /graphics/hoburg/weapon/spear.png
+#tag "name lancer"
+#offsetx -3
+#offsety -3
 #theme "primitive"
-#theme "wood"
-#tag "maxprot 9"
+#theme "stone"
 #lightlance
 #enditem
 
@@ -29,6 +18,7 @@
 #tag "name lancer"
 #offsetx -3
 #offsety -3
+#theme "primitive"
 #theme "wood"
 #lightlance
 #enditem
@@ -43,7 +33,7 @@
 
 #newitem
 #id naginata
-#gameid 380
+#gameid cavalry_glaive
 #sprite  /graphics/hoburg/weapon/naginata.png
 #theme "iron"
 #lightlance
@@ -58,6 +48,14 @@
 #enditem
 
 #newitem
+#id cavalry_yari
+#gameid cavalry_yari
+#sprite  /graphics/weapon/standard/trident.png
+#theme "iron"
+#lightlance
+#enditem
+
+#newitem
 #id falchion
 #gameid 10
 #sprite /graphics/weapon/standard/falchion.png
@@ -67,8 +65,8 @@
 #enditem
 
 #newitem
-#id katana
-#gameid 378
+#id cavalry_katana
+#gameid cavalry_katana
 #sprite /graphics/hoburg/weapon/katana.png
 #theme "iron"
 #theme "advanced"

@@ -1,5 +1,6 @@
---- Base offsets are applied to everything except base and overlay
+------ Base offsets are applied to everything except base and overlay
 
+---- Gryphons
 
 #newitem
 #id "gryphon"
@@ -9,25 +10,175 @@
 #offsetx 23
 #offsety 64
 #needs overlay gryphon_overlay
-#define "#mountmnr 'gryphonmount'"
-#define "#gcost +100"
+#define "#mountmnr 'gryphon_mount'"
 #description "If the rider dies, the gryphon will carry on fighting until the end of the battle."
 #theme "flying"
 #theme "specialmount"
 #tag "animal gryphon"
 #tag "guaranteedprefix gryphon"
-#basechance 0.2
+#basechance 0.7
 #chanceinc primaryrace "Amazon human" *5
 #sacredextra 0.8
 #enditem
+
+#newitem
+#id "gryphon_leather_barding"
+#gameid -1
+#sprite /graphics/amazon/mounts/gryphon.png
+#armor
+#offsetx 23
+#offsety 64
+#needs overlay gryphon_overlay
+#define "#mountmnr 'gryphon_leather_barding_mount'"
+#description "If the rider dies, the gryphon will carry on fighting until the end of the battle."
+#theme "flying"
+#theme "specialmount"
+#tag "animal gryphon"
+#tag "guaranteedprefix gryphon"
+#basechance 0.5
+#chanceinc prot 8 *2
+#chanceinc primaryrace "Amazon human" *5
+#sacredextra 0.8
+#enditem
+
+#newitem
+#id "gryphon_light_scale_barding"
+#gameid -1
+#sprite /graphics/amazon/mounts/gryphon.png
+#armor
+#offsetx 23
+#offsety 64
+#needs overlay gryphon_overlay
+#define "#mountmnr 'gryphon_light_scale_barding_mount'"
+#description "If the rider dies, the gryphon will carry on fighting until the end of the battle."
+#theme "flying"
+#theme "specialmount"
+#tag "animal gryphon"
+#tag "guaranteedprefix gryphon"
+#basechance 0.4
+#chanceinc prot 10 *2
+#chanceinc primaryrace "Amazon human" *5
+#sacredextra 0.8
+#enditem
+
+#newitem
+#id "gryphon_light_bronze_barding"
+#gameid -1
+#sprite /graphics/amazon/mounts/gryphon.png
+#armor
+#offsetx 23
+#offsety 64
+#needs overlay gryphon_overlay
+#define "#mountmnr 'gryphon_light_bronze_barding_mount'"
+#description "If the rider dies, the gryphon will carry on fighting until the end of the battle."
+#theme "flying"
+#theme "specialmount"
+#theme "bronze"
+#tag "animal gryphon"
+#tag "guaranteedprefix gryphon"
+#basechance 0.4
+#chanceinc prot 10 *2
+#chanceinc primaryrace "Amazon human" *5
+#sacredextra 0.8
+#enditem
+
+#newitem
+#id "gryphon_iron_mail_barding"
+#gameid -1
+#sprite /graphics/amazon/mounts/gryphon.png
+#armor
+#offsetx 23
+#offsety 64
+#needs overlay gryphon_overlay
+#define "#mountmnr 'gryphon_iron_mail_barding_mount'"
+#description "If the rider dies, the gryphon will carry on fighting until the end of the battle."
+#theme "flying"
+#theme "specialmount"
+#theme "heavy"
+#theme "iron"
+#tag "animal gryphon"
+#tag "guaranteedprefix gryphon"
+#basechance 0.25
+#chanceinc prot 14 *2
+#chanceinc primaryrace "Amazon human" *5
+#sacredextra 0.8
+#enditem
+
+#newitem
+#id "gryphon_cataphract_barding"
+#gameid -1
+#sprite /graphics/amazon/mounts/gryphon.png
+#armor
+#offsetx 23
+#offsety 64
+#needs overlay gryphon_overlay
+#define "#mountmnr 'gryphon_cataphract_barding_mount'"
+#description "If the rider dies, the gryphon will carry on fighting until the end of the battle."
+#theme "flying"
+#theme "specialmount"
+#theme "heavy"
+#theme "iron"
+#tag "animal gryphon"
+#tag "guaranteedprefix gryphon"
+#basechance 0.1
+#chanceinc prot 14 *2
+#chanceinc primaryrace "Amazon human" *5
+#sacredextra 0.8
+#enditem
+
+#newitem
+#id "gryphon_bronze_barding"
+#gameid -1
+#sprite /graphics/amazon/mounts/gryphon.png
+#armor
+#offsetx 23
+#offsety 64
+#needs overlay gryphon_overlay
+#define "#mountmnr 'gryphon_bronze_barding_mount'"
+#description "If the rider dies, the gryphon will carry on fighting until the end of the battle."
+#theme "flying"
+#theme "specialmount"
+#theme "heavy"
+#theme "bronze"
+#tag "animal gryphon"
+#tag "guaranteedprefix gryphon"
+#basechance 0.05
+#chanceinc prot 17 *2
+#chanceinc primaryrace "Amazon human" *5
+#sacredextra 0.8
+#enditem
+
+#newitem
+#id "gryphon_plate_barding"
+#gameid -1
+#sprite /graphics/amazon/mounts/gryphon.png
+#armor
+#offsetx 23
+#offsety 64
+#needs overlay gryphon_overlay
+#define "#mountmnr 'gryphon_plate_barding_mount'"
+#description "If the rider dies, the gryphon will carry on fighting until the end of the battle."
+#theme "flying"
+#theme "specialmount"
+#theme "heavy"
+#theme "iron"
+#tag "animal gryphon"
+#tag "guaranteedprefix gryphon"
+#basechance 0.05
+#chanceinc prot 18 *2
+#chanceinc primaryrace "Amazon human" *5
+#sacredextra 0.8
+#enditem
+
+
+---- Leogryphs
 
 #newitem
 #id "leogryph"
 #gameid -1
 #sprite /graphics/amazon/mounts/leogryph.png
 #armor
-#define "#mountmnr 'leogryphmount'"
-#define "#gcost +40"
+#define "#mountmnr 'leogryph_mount'"
 #description "If the rider dies, the leogryph will carry on fighting until the end of the battle."
 #basechance 0.25
 #offsety 6
@@ -35,36 +186,212 @@
 #theme "specialmount"
 #tag "animal leogryph"
 #tag "guaranteedprefix leogryph"
+#basechance 0.8
 #chanceinc primaryrace "Amazon human" *5
 #enditem
 
 #newitem
-#id "eq_nmare"
+#id "leogryph_leather_barding"
+#gameid -1
+#sprite /graphics/amazon/mounts/leogryph.png
+#armor
+#define "#mountmnr 'leogryph_leather_barding_mount'"
+#description "If the rider dies, the leogryph will carry on fighting until the end of the battle."
+#offsety 6
+#offsetx -3
+#theme "specialmount"
+#tag "animal leogryph"
+#tag "guaranteedprefix leogryph"
+#basechance 0.6
+#chanceinc prot 8 *2
+#chanceinc primaryrace "Amazon human" *5
+#enditem
+
+#newitem
+#id "leogryph_light_bronze_barding"
+#gameid -1
+#sprite /graphics/amazon/mounts/leogryph.png
+#armor
+#define "#mountmnr 'leogryph_light_bronze_barding_mount'"
+#description "If the rider dies, the leogryph will carry on fighting until the end of the battle."
+#offsety 6
+#offsetx -3
+#theme "specialmount"
+#theme "bronze"
+#tag "animal leogryph"
+#tag "guaranteedprefix leogryph"
+#basechance 0.5
+#chanceinc prot 10 *2
+#chanceinc primaryrace "Amazon human" *5
+#enditem
+
+#newitem
+#id "leogryph_light_scale_barding"
+#gameid -1
+#sprite /graphics/amazon/mounts/leogryph.png
+#armor
+#define "#mountmnr 'leogryph_light_scale_barding_mount'"
+#description "If the rider dies, the leogryph will carry on fighting until the end of the battle."
+#offsety 6
+#offsetx -3
+#theme "specialmount"
+#tag "animal leogryph"
+#tag "guaranteedprefix leogryph"
+#basechance 0.5
+#chanceinc prot 10 *2
+#chanceinc primaryrace "Amazon human" *5
+#enditem
+
+#newitem
+#id "leogryph_iron_mail_barding"
+#gameid -1
+#sprite /graphics/amazon/mounts/leogryph.png
+#armor
+#define "#mountmnr 'leogryph_iron_mail_barding_mount'"
+#description "If the rider dies, the leogryph will carry on fighting until the end of the battle."
+#offsety 6
+#offsetx -3
+#theme "specialmount"
+#theme "iron"
+#theme "heavy"
+#tag "animal leogryph"
+#tag "guaranteedprefix leogryph"
+#basechance 0.35
+#chanceinc prot 14 *2
+#chanceinc primaryrace "Amazon human" *5
+#enditem
+
+#newitem
+#id "leogryph_cataphract_barding"
+#gameid -1
+#sprite /graphics/amazon/mounts/leogryph.png
+#armor
+#define "#mountmnr 'leogryph_cataphract_barding_mount'"
+#description "If the rider dies, the leogryph will carry on fighting until the end of the battle."
+#offsety 6
+#offsetx -3
+#theme "specialmount"
+#theme "iron"
+#theme "heavy"
+#tag "animal leogryph"
+#tag "guaranteedprefix leogryph"
+#basechance 0.125
+#chanceinc prot 17 *2
+#chanceinc primaryrace "Amazon human" *5
+#enditem
+
+#newitem
+#id "leogryph_bronze_barding"
+#gameid -1
+#sprite /graphics/amazon/mounts/leogryph.png
+#armor
+#define "#mountmnr 'leogryph_bronze_barding_mount'"
+#description "If the rider dies, the leogryph will carry on fighting until the end of the battle."
+#offsety 6
+#offsetx -3
+#theme "specialmount"
+#theme "bronze"
+#theme "heavy"
+#tag "animal leogryph"
+#tag "guaranteedprefix leogryph"
+#basechance 0.08
+#chanceinc prot 18 *2
+#chanceinc primaryrace "Amazon human" *5
+#enditem
+
+#newitem
+#id "leogryph_plate_barding"
+#gameid -1
+#sprite /graphics/amazon/mounts/leogryph.png
+#armor
+#define "#mountmnr 'leogryph_plate_barding_mount'"
+#description "If the rider dies, the leogryph will carry on fighting until the end of the battle."
+#offsety 6
+#offsetx -3
+#theme "specialmount"
+#theme "iron"
+#theme "heavy"
+#tag "animal leogryph"
+#tag "guaranteedprefix leogryph"
+#basechance 0.08
+#chanceinc prot 18 *2
+#chanceinc primaryrace "Amazon human" *5
+#enditem
+
+
+---- Nightmares
+
+#newitem
+#id "nightmare"
 #gameid -1
 #offsetx 0
 #offsety 2
 #sprite /graphics/amazon/mounts/nightmare_equine.png
 #armor
 #needs overlay equine_nightmare_overlay
-#define "#mountmnr 'nightmare'"
+#define "#mountmnr 'nightmare_mount'"
 #define "#enc 15"
-#define "#gcost +50"
 #tag "guaranteedprefix nightmare"
 #sacredextra 0.75
 #theme "specialmount"
 #tag "animal nightmare"
 #description "The riders animate their undead horses with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
-#basechance 0.5
 #tag "eliteversion equine_nightmare_caparison"
 #tag "eliteversion equine_nightmare_half-barded"
 #tag "eliteversion equine_nightmare_full-barded1"
 #tag "eliteversion equine_nightmare_scale-barded1"
 #tag "minprot 10"
+#basechance 6
 #chanceinc primaryrace "Amazon human" *5
 #enditem
 
 #newitem
-#id "eq_nmare_caparison"
+#id "nightmare_light_bronze_barding"
+#gameid -1
+#offsetx 0
+#offsety 2
+#sprite /graphics/amazon/mounts/nightmare_equine_halfbarded.png
+#armor
+#needs overlay equine_halfbarded_overlay
+#define "#mountmnr 'nightmare_light_bronze_barding_mount'"
+#define "#enc 15"
+#tag "guaranteedprefix nightmare"
+#sacredextra 0.75
+#theme "specialmount"
+#theme "bronze"
+#tag "animal nightmare"
+#description "The riders animate their undead horses with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#tag "eliteversion equine_nightmare_full-barded1"
+#tag "eliteversion equine_nightmare_full-barded2"
+#basechance 5.5
+#chanceinc prot 10 *2
+#chanceinc primaryrace "Amazon human" *5
+#enditem
+
+#newitem
+#id "nightmare_light_scale_barding"
+#gameid -1
+#offsetx 0
+#offsety 2
+#sprite /graphics/amazon/mounts/nightmare_equine_halfbarded.png
+#armor
+#needs overlay equine_halfbarded_overlay
+#define "#mountmnr 'nightmare_light_scale_barding_mount'"
+#define "#enc 15"
+#tag "guaranteedprefix nightmare"
+#sacredextra 0.75
+#theme "specialmount"
+#tag "animal nightmare"
+#description "The riders animate their undead horses with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#tag "eliteversion equine_nightmare_full-barded1"
+#tag "eliteversion equine_nightmare_full-barded2"
+#basechance 5.5
+#chanceinc prot 10 *2
+#chanceinc primaryrace "Amazon human" *5
+#enditem
+
+#newitem
+#id "nightmare_cataphract_barding"
 #gameid -1
 #offsetx 0
 #offsety 2
@@ -72,132 +399,144 @@
 #recolormask /graphics/amazon/mounts/nightmare_equine_caparison_recolormask.png
 #armor
 #needs overlay equine_caparison_overlay
-#define "#mountmnr 'nightmare_equine_caparison'"
+#define "#mountmnr 'nightmare_cataphract_barding_mount_2'"
 #define "#enc 15"
-#define "#gcost +50"
 #tag "guaranteedprefix nightmare"
 #sacredextra 0.75
 #theme "specialmount"
 #tag "animal nightmare"
 #description "The riders animate their undead horses with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
-#basechance 0.5
-#tag "minprot 12"
-#chanceinc primaryrace "Amazon human" *5
-#enditem
-
-#newitem
-#id "eq_nmare_half-barded"
-#gameid -1
-#offsetx 0
-#offsety 2
-#sprite /graphics/amazon/mounts/nightmare_equine_halfbarded.png
-#armor
-#needs overlay equine_halfbarded_overlay
-#define "#mountmnr 'nightmare_equine_halfbarded'"
-#define "#enc 15"
-#define "#gcost +50"
-#tag "guaranteedprefix nightmare"
-#sacredextra 0.75
-#theme "specialmount"
-#tag "animal nightmare"
-#description "The riders animate their undead horses with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
-#basechance 0.5
-#tag "eliteversion equine_nightmare_full-barded1"
-#tag "eliteversion equine_nightmare_full-barded2"
 #tag "minprot 10"
+#basechance 3.5
+#chanceinc prot 16 *2
 #chanceinc primaryrace "Amazon human" *5
 #enditem
 
-
 #newitem
-#id "eq_nmare_scale1"
+#id "nightmare_cataphract_barding"
 #gameid -1
 #offsetx 0
 #offsety 2
 #sprite /graphics/amazon/mounts/nightmare_equine_scalebarded1.png
 #armor
 #needs overlay equine_scalebarded1_overlay
-#define "#mountmnr 'nightmare_equine_scalebarded'"
+#define "#mountmnr 'nightmare_cataphract_barding_mount_1'"
 #define "#enc 15"
-#define "#rcost +5"
-#define "#gcost +50"
 #tag "guaranteedprefix nightmare"
 #sacredextra 0.75
 #theme "specialmount"
 #tag "animal nightmare"
 #description "The riders animate their undead horses with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
-#basechance 0.25
 #tag "eliteversion equine_nightmare_scale-barded2"
-#tag "minprot 12"
+#basechance 3
+#chanceinc prot 16 *2
 #chanceinc primaryrace amazon *5
 #enditem
 
-
 #newitem
-#id "eq_nmare_scale2"
+#id "nightmare_rusty_cataphract_1"
 #gameid -1
 #offsetx 0
 #offsety 2
 #sprite /graphics/amazon/mounts/nightmare_equine_scalebarded2.png
 #armor
 #needs overlay equine_scalebarded2_overlay
-#define "#mountmnr 'nightmare_equine_scalebarded2'"
+#define "#mountmnr 'nightmare_rusty_cataphract_barding_mount_1'"
 #define "#enc 15"
-#define "#rcost +5"
-#define "#gcost +50"
 #tag "guaranteedprefix nightmare"
 #sacredextra 0.75
 #theme "specialmount"
 #tag "animal nightmare"
 #description "The riders animate their undead horses with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
-#basechance 0.25
-#tag "minprot 12"
+#basechance 3
+#chanceinc prot 16 *2
 #chanceinc primaryrace "Amazon human" *5
 #enditem
 
 #newitem
-#id "eq_nmare_barded1"
+#id "nightmare_rusty_cataphract_barding_2"
 #gameid -1
 #offsetx 0
 #offsety 2
 #sprite /graphics/amazon/mounts/nightmare_equine_fullbarded1.png
 #armor
 #needs overlay equine_fullbarded1_overlay
-#define "#mountmnr 'nightmare_equine_fullbarded1'"
+#define "#mountmnr 'nightmare_rusty_cataphract_barding_mount_2'"
 #define "#enc 15"
-#define "#rcost +5"
-#define "#gcost +50"
 #tag "guaranteedprefix nightmare"
 #sacredextra 0.75
 #theme "specialmount"
 #tag "animal nightmare"
 #description "The riders animate their undead horses with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
-#basechance 0.25
-#tag "minprot 14"
+#basechance 3
+#chanceinc prot 16 *2
 #chanceinc primaryrace amazon *5
 #enditem
 
 #newitem
-#id "eq_nmare_barded2"
+#id "nightmare_rusty_cataphract_barding_3"
 #gameid -1
 #offsetx 0
 #offsety 2
 #sprite /graphics/amazon/mounts/nightmare_equine_fullbarded2.png
 #armor
 #needs overlay equine_fullbarded2_overlay
-#define "#mountmnr 'nightmare_equine_fullbarded2'"
+#define "#mountmnr 'nightmare_rusty_cataphract_barding_mount_3'"
 #define "#enc 15"
-#define "#rcost +5"
-#define "#gcost +50"
 #tag "guaranteedprefix nightmare"
 #sacredextra 0.75
 #theme "specialmount"
 #tag "animal nightmare"
 #description "The riders animate their undead horses with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
-#basechance 0.25
-#tag "minprot 14"
+#basechance 3
+#chanceinc prot 16 *2
 #chanceinc primaryrace "Amazon human" *5
 #enditem
+
+#newitem
+#id "nightmare_bronze_barding"
+#gameid -1
+#offsetx 0
+#offsety 2
+#sprite /graphics/amazon/mounts/nightmare_equine_fullbarded2.png
+#armor
+#needs overlay equine_fullbarded2_overlay
+#define "#mountmnr 'nightmare_bronze_barding_mount'"
+#define "#enc 15"
+#tag "guaranteedprefix nightmare"
+#sacredextra 0.75
+#theme "specialmount"
+#theme "bronze"
+#theme "heavy"
+#tag "animal nightmare"
+#description "The riders animate their undead horses with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 1.5
+#chanceinc prot 17 *2
+#chanceinc primaryrace "Amazon human" *5
+#enditem
+
+#newitem
+#id "nightmare_plate_barding"
+#gameid -1
+#offsetx 0
+#offsety 2
+#sprite /graphics/amazon/mounts/nightmare_equine_fullbarded2.png
+#armor
+#needs overlay equine_fullbarded2_overlay
+#define "#mountmnr 'nightmare_plate_barding_mount'"
+#define "#enc 15"
+#tag "guaranteedprefix nightmare"
+#sacredextra 0.75
+#theme "specialmount"
+#theme "iron"
+#theme "heavy"
+#tag "animal nightmare"
+#description "The riders animate their undead horses with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 1.5
+#chanceinc prot 17 *2
+#chanceinc primaryrace "Amazon human" *5
+#enditem
+
 
 #newitem
 #id "feline_nightmare"
@@ -209,18 +548,106 @@
 #define "#size 4"
 #define "#mapmove 20"
 #define "#ap 18"
-#define "#mountmnr 'nightmare_feline'"
+#define "#mountmnr 'feline_nightmare_mount'"
 #define "#enc 15"
-#define "#gcost +55"
+#tag "guaranteedprefix nightmare"
+#sacredextra 1
+#theme "specialmount"
+#tag "animal nightmare"
+#description "The riders animate their undead lions with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 0.9
+#chanceinc primaryrace "Amazon human" *5
+#enditem
+
+#newitem
+#id "feline_nightmare_leather_barding"
+#gameid -1
+#offsetx -4
+#offsety 6
+#sprite /graphics/amazon/mounts/nightmare_feline.png
+#armor
+#define "#size 4"
+#define "#mapmove 20"
+#define "#ap 18"
+#define "#mountmnr 'feline_nightmare_leather_barding_mount'"
+#define "#enc 15"
+#tag "guaranteedprefix nightmare"
+#sacredextra 1
+#theme "specialmount"
+#tag "animal nightmare"
+#description "The riders animate their undead lions with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 0.6
+#chanceinc prot 8 *2
+#chanceinc primaryrace "Amazon human" *5
+#enditem
+
+#newitem
+#id "feline_nightmare_light_bronze_barding"
+#gameid -1
+#offsetx -4
+#offsety 6
+#sprite /graphics/amazon/mounts/nightmare_feline.png
+#armor
+#define "#size 4"
+#define "#mapmove 20"
+#define "#ap 18"
+#define "#mountmnr 'feline_nightmare_light_bronze_barding_mount'"
+#define "#enc 15"
+#tag "guaranteedprefix nightmare"
+#sacredextra 1
+#theme "specialmount"
+#theme "bronze"
+#tag "animal nightmare"
+#description "The riders animate their undead lions with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 0.3
+#chanceinc prot 10 *2
+#chanceinc primaryrace "Amazon human" *5
+#enditem
+
+#newitem
+#id "feline_nightmare_light_scale_barding"
+#gameid -1
+#offsetx -4
+#offsety 6
+#sprite /graphics/amazon/mounts/nightmare_feline.png
+#armor
+#define "#size 4"
+#define "#mapmove 20"
+#define "#ap 18"
+#define "#mountmnr 'feline_nightmare_light_scale_barding_mount'"
+#define "#enc 15"
+#tag "guaranteedprefix nightmare"
+#sacredextra 1
+#theme "specialmount"
+#tag "animal nightmare"
+#description "The riders animate their undead lions with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 0.3
+#chanceinc prot 10 *2
+#chanceinc primaryrace "Amazon human" *5
+#enditem
+
+#newitem
+#id "feline_nightmare_mail_barding"
+#gameid -1
+#offsetx -4
+#offsety 6
+#sprite /graphics/amazon/mounts/nightmare_feline.png
+#armor
+#define "#size 4"
+#define "#mapmove 20"
+#define "#ap 18"
+#define "#mountmnr 'feline_nightmare_mail_barding_mount'"
+#define "#enc 15"
 #tag "guaranteedprefix nightmare"
 #sacredextra 1
 #theme "specialmount"
 #tag "animal nightmare"
 #description "The riders animate their undead lions with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
 #basechance 0.2
-#tag "minprot 10"
+#chanceinc prot 14 *2
 #chanceinc primaryrace "Amazon human" *5
 #enditem
+
 
 #newitem
 #id "leogryph_nightmare"
@@ -229,15 +656,147 @@
 #offsety 6
 #sprite /graphics/amazon/mounts/nightmare_leogryph.png
 #armor
-#define "#mountmnr 'nightmare_leogryphmount'"
+#define "#mountmnr 'leogryph_nightmare_mount'"
 #define "#enc 15"
-#define "#gcost +55"
+#tag "guaranteedprefix nightmare"
+#sacredextra 1
+#theme "specialmount"
+#tag "animal nightmare"
+#description "The riders animate their undead leogryphs with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 0.8
+#chanceinc primaryrace "Amazon human" *5
+#enditem
+
+#newitem
+#id "leogryph_nightmare_leather_barding"
+#gameid -1
+#offsetx -4
+#offsety 6
+#sprite /graphics/amazon/mounts/nightmare_leogryph.png
+#armor
+#define "#mountmnr 'leogryph_nightmare_leather_barding_mount'"
+#define "#enc 15"
+#tag "guaranteedprefix nightmare"
+#sacredextra 1
+#theme "specialmount"
+#tag "animal nightmare"
+#description "The riders animate their undead leogryphs with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 0.6
+#chanceinc primaryrace "Amazon human" *5
+#enditem
+
+#newitem
+#id "leogryph_nightmare_light_bronze_barding"
+#gameid -1
+#offsetx -4
+#offsety 6
+#sprite /graphics/amazon/mounts/nightmare_leogryph.png
+#armor
+#define "#mountmnr 'leogryph_nightmare_light_bronze_barding_mount'"
+#define "#enc 15"
+#tag "guaranteedprefix nightmare"
+#sacredextra 1
+#theme "specialmount"
+#theme "bronze"
+#tag "animal nightmare"
+#description "The riders animate their undead leogryphs with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 0.5
+#chanceinc prot 10 *2
+#chanceinc primaryrace "Amazon human" *5
+#enditem
+
+#newitem
+#id "leogryph_nightmare_light_scale_barding"
+#gameid -1
+#offsetx -4
+#offsety 6
+#sprite /graphics/amazon/mounts/nightmare_leogryph.png
+#armor
+#define "#mountmnr 'leogryph_nightmare_light_scale_barding_mount'"
+#define "#enc 15"
+#tag "guaranteedprefix nightmare"
+#sacredextra 1
+#theme "specialmount"
+#tag "animal nightmare"
+#description "The riders animate their undead leogryphs with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 0.5
+#chanceinc prot 8 *2
+#chanceinc primaryrace "Amazon human" *5
+#enditem
+
+#newitem
+#id "leogryph_nightmare_mail_barding"
+#gameid -1
+#offsetx -4
+#offsety 6
+#sprite /graphics/amazon/mounts/nightmare_leogryph.png
+#armor
+#define "#mountmnr 'leogryph_nightmare_mail_barding_mount'"
+#define "#enc 15"
 #tag "guaranteedprefix nightmare"
 #sacredextra 1
 #theme "specialmount"
 #tag "animal nightmare"
 #description "The riders animate their undead leogryphs with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
 #basechance 0.2
-#tag "minprot 10"
+#chanceinc prot 12 *2
+#chanceinc primaryrace "Amazon human" *5
+#enditem
+
+#newitem
+#id "leogryph_nightmare_cataphract_barding"
+#gameid -1
+#offsetx -4
+#offsety 6
+#sprite /graphics/amazon/mounts/nightmare_leogryph.png
+#armor
+#define "#mountmnr 'leogryph_nightmare_cataphract_barding_mount'"
+#define "#enc 15"
+#tag "guaranteedprefix nightmare"
+#sacredextra 1
+#theme "specialmount"
+#tag "animal nightmare"
+#description "The riders animate their undead leogryphs with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 0.1
+#chanceinc prot 15 *2
+#chanceinc primaryrace "Amazon human" *5
+#enditem
+
+#newitem
+#id "leogryph_nightmare_bronze_barding"
+#gameid -1
+#offsetx -4
+#offsety 6
+#sprite /graphics/amazon/mounts/nightmare_leogryph.png
+#armor
+#define "#mountmnr 'leogryph_nightmare_bronze_barding_mount'"
+#define "#enc 15"
+#tag "guaranteedprefix nightmare"
+#sacredextra 1
+#theme "specialmount"
+#theme "bronze"
+#tag "animal nightmare"
+#description "The riders animate their undead leogryphs with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 0.05
+#chanceinc prot 16 *2
+#chanceinc primaryrace "Amazon human" *5
+#enditem
+
+#newitem
+#id "leogryph_nightmare_plate_barding"
+#gameid -1
+#offsetx -4
+#offsety 6
+#sprite /graphics/amazon/mounts/nightmare_leogryph.png
+#armor
+#define "#mountmnr 'leogryph_nightmare_plate_barding_mount'"
+#define "#enc 15"
+#tag "guaranteedprefix nightmare"
+#sacredextra 1
+#theme "specialmount"
+#tag "animal nightmare"
+#description "The riders animate their undead leogryphs with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 0.05
+#chanceinc prot 16 *2
 #chanceinc primaryrace "Amazon human" *5
 #enditem

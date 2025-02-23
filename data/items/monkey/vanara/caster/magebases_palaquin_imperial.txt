@@ -1,9 +1,8 @@
 #newitem
-#id "vanara basesprite small palaquin"
+#id "vanara_bearer_palanquin"
 #gameid -1
 #sprite /graphics/monkey/vanara_base_old_imperial.png
 #recolormask /graphics/monkey/vanara_base_old_imperial_recolormask.png
-#command "#gcost 18"
 #command "#mr 9"
 #command "#animal"
 #command "#mountmnr 'vanara_bearer'"
@@ -11,7 +10,170 @@
 #command "#bonusspells 1"
 -- 1 head, 1 body, 4 miscs
 #command "#itemslots 4005888"
+#command "#gcost +10"
 #subrace vanara
-#theme lowland
 #subraceprefix vanara
+#theme lowland
+#basechance 10
+#enditem
+
+#newitem
+#id "vanara_lorica_segmentata_bearer_palanquin"
+#gameid -1
+#sprite /graphics/monkey/vanara_base_old_imperial.png
+#recolormask /graphics/monkey/vanara_base_old_imperial_recolormask.png
+#command "#mr 9"
+#command "#animal"
+#command "#mountmnr 'vanara_lorica_segmentata_bearer'"
+#command "#nofmounts 4"
+#command "#bonusspells 1"
+-- 1 head, 1 body, 4 miscs
+#command "#itemslots 4005888"
+#command "#gcost +10"
+#eliteversion "vanara_gold_lorica_segmentata_bearer_palanquin"
+#subrace vanara
+#subraceprefix vanara
+#theme "imperial"
+#theme "iron"
+#tier 1
+#notfortier 2
+#basechance 8
+#enditem
+
+#newitem
+#id "vanara_gold_lorica_segmentata_bearer_palanquin"
+#gameid -1
+#sprite /graphics/monkey/vanara_base_old_imperial.png
+#recolormask /graphics/monkey/vanara_base_old_imperial_recolormask.png
+#command "#mr 9"
+#command "#animal"
+#command "#mountmnr 'vanara_gold_lorica_segmentata_bearer'"
+#command "#nofmounts 4"
+#command "#bonusspells 1"
+-- 1 head, 1 body, 4 miscs
+#command "#itemslots 4005888"
+#command "#gcost +10"
+#subrace vanara
+#subraceprefix vanara
+#theme "imperial"
+#theme "iron"
+#tier 2
+#notfortier 1
+#basechance 4
+#enditem
+
+#newitem
+#id "vanara_imperial_plate_bearer_palanquin"
+#gameid -1
+#sprite /graphics/monkey/vanara_base_old_imperial.png
+#recolormask /graphics/monkey/vanara_base_old_imperial_recolormask.png
+#command "#mr 9"
+#command "#animal"
+#command "#mountmnr 'vanara_imperial_plate_bearer'"
+#command "#nofmounts 4"
+#command "#bonusspells 1"
+-- 1 head, 1 body, 4 miscs
+#command "#itemslots 4005888"
+#command "#gcost +10"
+#eliteversion "vanara_gold_imperial_plate_bearer_palanquin"
+#subrace vanara
+#subraceprefix vanara
+#theme "imperial"
+#theme "iron"
+#tier 1
+#notfortier 2
+#basechance 6
+#enditem
+
+#newitem
+#id "vanara_gold_imperial_plate_bearer_palanquin"
+#gameid -1
+#sprite /graphics/monkey/vanara_base_old_imperial.png
+#recolormask /graphics/monkey/vanara_base_old_imperial_recolormask.png
+#command "#mr 9"
+#command "#animal"
+#command "#mountmnr 'vanara_gold_imperial_plate_bearer'"
+#command "#nofmounts 4"
+#command "#bonusspells 1"
+-- 1 head, 1 body, 4 miscs
+#command "#itemslots 4005888"
+#command "#gcost +10"
+#subrace vanara
+#subraceprefix vanara
+#theme "imperial"
+#theme "iron"
+#tier 2
+#notfortier 1
+#basechance 3
+#enditem
+
+#newitem
+#id "vanara_samurai_armor_bearer_palanquin"
+#gameid -1
+#sprite /graphics/monkey/vanara_base_old_imperial.png
+#recolormask /graphics/monkey/vanara_base_old_imperial_recolormask.png
+#command "#mr 9"
+#command "#animal"
+#command "#mountmnr 'vanara_samurai_armor_bearer'"
+#command "#nofmounts 4"
+#command "#bonusspells 1"
+-- 1 head, 1 body, 4 miscs
+#command "#itemslots 4005888"
+#command "#gcost +10"
+#subrace vanara
+#subraceprefix vanara
+#theme "oriental"
+#theme "iron"
+#tier 1
+#notfortier 2
+#basechance 7
+#enditem
+
+#newitem
+#id "vanara_ancestor_cuirass_bearer_palanquin"
+#gameid -1
+#sprite /graphics/monkey/vanara_base_old_imperial.png
+#recolormask /graphics/monkey/vanara_base_old_imperial_recolormask.png
+#command "#mr 9"
+#command "#animal"
+#command "#mountmnr 'vanara_ancestor_cuirass_bearer'"
+#command "#nofmounts 4"
+#command "#bonusspells 1"
+-- 1 head, 1 body, 4 miscs
+#command "#itemslots 4005888"
+#command "#gcost +10"
+#eliteversion "vanara_ancestor_armor_bearer_palanquin"
+#subrace vanara
+#subraceprefix vanara
+#theme "oriental"
+#theme "iron"
+#theme "death"
+#tier 1
+#notfortier 2
+#basechance 0
+#chanceinc "personalmagic death 2"
+#enditem
+
+#newitem
+#id "vanara_ancestor_armor_bearer_palanquin"
+#gameid -1
+#sprite /graphics/monkey/vanara_base_old_imperial.png
+#recolormask /graphics/monkey/vanara_base_old_imperial_recolormask.png
+#command "#mr 9"
+#command "#animal"
+#command "#mountmnr 'vanara_ancestor_armor_bearer'"
+#command "#nofmounts 4"
+#command "#bonusspells 1"
+-- 1 head, 1 body, 4 miscs
+#command "#itemslots 4005888"
+#command "#gcost +10"
+#subrace vanara
+#subraceprefix vanara
+#theme "oriental"
+#theme "iron"
+#theme "death"
+#tier 2
+#notfortier 1
+#basechance 0
+#chanceinc "personalmagic death 1"
 #enditem

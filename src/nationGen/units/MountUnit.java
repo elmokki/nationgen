@@ -74,11 +74,11 @@ public class MountUnit extends Unit {
         );
       }
 
-      if (!c.command.startsWith("#spr")) sf.commands.add(c);
-      if (
-        c.command.equals("#gcost") &&
-        mountForm.tags.containsName("specifiedgcost")
-      ) {
+      if (!c.command.startsWith("#spr")) {
+        sf.commands.add(c);
+      }
+
+      if (c.command.equals("#gcost")) {
         //System.out.println(c.args.get(0) + " ADDED " + " / " + otherForm.getGoldCost_DEBUG());
         sf.commands.add(c);
         gcost = c.args.get(0).getInt();
@@ -88,7 +88,6 @@ public class MountUnit extends Unit {
     // ...and other Form
     if (otherForm != null) {
       // Inherit nametype and maxage
-
       boolean maxagefound = false;
       for (Command c : otherForm.getCommands()) if (
         c.command.equals("#maxage") || c.command.equals("#nametype")
@@ -168,7 +167,7 @@ public class MountUnit extends Unit {
     }
 
     if (sf.commands.size() > 0) {
-      appliedFilters.add(sf);
+      this.appliedFilters.add(sf);
     }
   }
 
