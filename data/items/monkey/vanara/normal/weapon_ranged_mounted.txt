@@ -1,0 +1,115 @@
+#newitem
+#id "javelin 1"
+#gameid 21
+#sprite /graphics/weapon/standard/javelin1.png
+#tag "name infantry 'Javelineer'"
+#define "#mobilearcher 1"
+#enditem
+
+#newitem
+#id "javelin 2"
+#gameid 21
+#sprite /graphics/weapon/standard/javelin2.png
+#tag "name infantry 'Javelineer'"
+#define "#mobilearcher 1"
+#enditem
+
+#newitem -- Throwing axe
+#id "throwing axe"
+#gameid 260
+#theme "primitive"
+#theme "iron"
+#define "#mobilearcher 1"
+#enditem
+
+#newitem -- Throwing axe
+#id "bronze throwing axe"
+#gameid throwinghatchet
+#theme "primitive"
+#theme "bronze"
+#define "#mobilearcher 1"
+#enditem
+
+
+#newitem
+#basechance 6
+#id "chakram"
+#gameid 362
+#sprite /graphics/weapon/standard/chakram.png
+#renderprio 7
+#renderslot "weapon"
+#tag "name infantry 'Chakram Thrower'"
+#tag "tierunique"
+#define "#mobilearcher 1"
+#offsetx -1
+#offsety 16
+#enditem
+
+#newitem
+#basechance 6
+#id "chakram"
+#gameid bronzechakram
+#sprite /graphics/weapon/standard/chakram_bronze.png
+#renderprio 7
+#renderslot "weapon"
+#tag "tierunique"
+#define "#mobilearcher 1"
+#offsetx -1
+#offsety 16
+#enditem
+
+#newitem
+#basechance 6
+#id "sticksandstones"
+#gameid 360
+#basechance 0.5
+#theme "primitive"
+#define "#mobilearcher 1"
+#tag "maxprot 8"
+#tag "notepic"
+#enditem
+
+#newitem
+#id "harpoon"
+#gameid 452
+#sprite /graphics/weapon/standard/javelin1.png
+#tag "name infantry 'Harponeer'"
+#tag "maxprot 12"
+#tag "tierunique"
+#basechance 0.5
+#define "#mobilearcher 1"
+#enditem
+
+#newitem
+#id "short bow"
+#gameid 23
+#sprite /graphics/weapon/bowman/shortbow.png
+#needs quiver quiver
+offsetx 5
+offsety 4
+#tag "name Raider"
+#define "#mobilearcher 1"
+#enditem
+
+#newitem
+#id "long bow"
+#gameid 24
+#sprite /graphics/weapon/bowman/longbow.png
+#needs quiver quiver
+offsetx 5
+offsety 4
+#tag "name Raider"
+#basechance 0.5
+#define "#mobilearcher 1"
+#enditem
+
+#newitem
+#id "composite bow"
+#gameid 264
+#sprite /graphics/weapon/bowman/compositebow.png
+#needs quiver quiver
+offsetx 5
+offsety 4
+#tag "name Raider"
+#define "#mobilearcher 1"
+#enditem

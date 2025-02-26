@@ -1,9 +1,11 @@
 ------- Mounted
 
 #newpose
+#id "mounted vaettir"
 #role "mounted"
 #sacred
 #basechance 0.25
+#define "#skilledrider 2"
 
 #baseitemslot feet 0
 
@@ -22,11 +24,12 @@
 #load legs /data/items/vaettir/mounted/legs.txt
 
 #load weapon /data/items/vaettir/mounted/weapons.txt
-#load bonusweapon /data/items/vaettir/normal/bonusranged.txt
+#load bonusweapon /data/items/vaettir/normal/weapon_ranged_mounted.txt
 
 #load offhand /data/items/vaettir/normal/shields.txt
 
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
 #load overlay /data/items/hoburg/mounted/overlay.txt
 
+#generateitem 0.5 bonusweapon
 #endpose

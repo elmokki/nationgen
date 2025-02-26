@@ -208,9 +208,10 @@
 
 #newpose
 #id "rimvaettir cav"
-#role "mounted"
+#role "mounted rimvaettir"
 #sacred
 #basechance 0.25
+#define "#skilledrider 2"
 
 #baseitemslot feet 0
 
@@ -229,11 +230,12 @@
 #load legs /data/items/vaettir/rimvaettir_mounted/legs.txt
 
 #load weapon /data/items/vaettir/mounted/weapons.txt
-#load bonusweapon /data/items/vaettir/rimvaettir/bonusranged.txt
+#load bonusweapon /data/items/vaettir/rimvaettir/weapon_ranged_mounted.txt
 
 #load offhand /data/items/vaettir/rimvaettir/shields.txt
 
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
 #load overlay /data/items/hoburg/mounted/overlay.txt
 
+#generateitem 0.5 bonusweapon
 #endpose
