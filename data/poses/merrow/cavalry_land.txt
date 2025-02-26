@@ -16,13 +16,14 @@
 
 #load armor /data/items/merrow/armor_mounted.txt
 #load helmet /data/items/merrow/helmet.txt 0 -1
-#load weapon /data/items/merrow/weapon.txt 0 -1
 #load weapon /data/items/merrow/weapon_mounted.txt 0 -1
 #load lanceslot /data/items/merrow/bonusweapon.txt 0 -1
 #load offhand /data/items/merrow/shields.txt 0 -1
 
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
 #load overlay /data/items/merrow/mounts_overlay.txt
+
+#generateitem 1 lanceslot
 
 #writeslot lanceslot
 #endpose

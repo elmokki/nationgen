@@ -2652,6 +2652,30 @@
 #end
 
 #new customweapon
+#id "cavalry_glaive_bronze"
+#command "#rcost 3"
+#command "#dmg 7"
+#command "#def 1"
+#command "#len 3"
+#command "#nratt 1"
+#command "#slash"
+#command "#name 'Bronze Cavalry Glaive'"
+#end
+
+#new customweapon
+#id "cavalry_glaive_coral"
+#command "#rcost 3"
+#command "#dmg 7"
+#command "#def 1"
+#command "#len 3"
+#command "#nratt 1"
+#command "#slash"
+#command "#ironweapon"
+#command "#secondaryeffect 50"
+#command "#name 'Coral Cavalry Glaive'"
+#end
+
+#new customweapon
 #id "cavalry_glaive_ice"
 #command "#rcost 6"
 #command "#dmg 7"
