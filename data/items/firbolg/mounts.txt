@@ -791,7 +791,7 @@
 #enditem
 
 #newitem
-#id "elk_bronze_mail_barding_mount"
+#id "elk_bronze_mail_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/elk.png
 #needs overlay elk_overlay
@@ -809,14 +809,14 @@
 #enditem
 
 #newitem
-#id "elk_iron_mail_barding_mount"
+#id "elk_iron_mail_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/elk.png
 #needs overlay elk_overlay
 #armor
 #offsetx -2
 #offsety 2
-#define "#mountmnr 'elk_iron_mail_barding'"
+#define "#mountmnr 'elk_iron_mail_barding_mount'"
 #description "Leaves an elk behind when the rider dies"
 #theme "iron"
 #tag "animal elk"
