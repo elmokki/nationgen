@@ -8,13 +8,14 @@
 #armor
 #theme "primitive"
 
-#define "#gcost +15"
+#define "#gcost +11"
 #define "#rcost +5"
+#define "#rpcost -15"
 #define "#size 3"
 #define "#ressize 2"
 #define "#enc 1"
 #define "#hp +17"
-#define "#hp *0.5"
+#define "#hp *0.75"
 #define "#prot +10"
 #define "#str +5"
 #define "#def -7"
@@ -32,7 +33,7 @@
 #define "#maxage *2"
 #description "These hoburgs have been grafted into a symbiotic vineman that grants them strength and protection. "
 
-#needs hands parasite_hands
+#needs hands symbiote_hands
 
 #enditem
 

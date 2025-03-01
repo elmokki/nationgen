@@ -529,8 +529,8 @@
 #newtheme
 #type social
 #id podslaver
----- #basechance 0.25
-#basechance 0.001
+#basechance 0.25
+---- #basechance 0.001
 #chanceinc racetheme agrarian *2
 #chanceinc racetheme traditional *0
 #chanceinc racetheme industrial *0
@@ -559,15 +559,15 @@
 #racedefinition "#magicpriority blood 4"
 #racedefinition "#descr 'These hoburgs have mastered vile horticultural techniques allowing them to graft parasitic mind-controlling vines into unwilling victims. '"
 #racedefinition "#monsterchance 0.25"
----- #racedefinition "#pose vinetroops"
+#racedefinition "#pose vinetroops"
 #endtheme
 
 -- Weights: feral 0.5, agrarian 0.5, traditional 0, industrial 0
 #newtheme
 #type social
 #id vinegrower
----- #basechance 0.5
-#basechance 0.001
+#basechance 0.5
+---- #basechance 0.001
 #chanceinc racetheme traditional *0
 #chanceinc racetheme industrial *0
 #chanceinc racetheme abysian *0.1
@@ -584,5 +584,5 @@
 #racedefinition "#magicpriority nature 10"
 #racedefinition "#descr 'These hoburgs live in symbiotic harmony with vinemen. '"
 #racedefinition "#monsterchance 0.5"
----- #racedefinition "#pose vinetroops"
+#racedefinition "#pose vinetroops"
 #endtheme
