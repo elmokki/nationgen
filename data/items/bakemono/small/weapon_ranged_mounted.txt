@@ -1,0 +1,85 @@
+#newitem
+#id "javelin 1"
+#gameid 21
+#sprite /graphics/weapon/standard/javelin1.png
+#offsetx -1
+#offsety 9
+#tag "name infantry 'Javelineer'"
+#define "#mobilearcher 1"
+#enditem
+
+#newitem
+#id "javelin 2"
+#gameid 21
+#sprite /graphics/weapon/standard/javelin2.png
+#offsetx -1
+#offsety 8
+#tag "name infantry 'Javelineer'"
+#define "#mobilearcher 1"
+#enditem
+
+#newitem -- Throwing axe
+#id "throwing axe"
+#gameid 260
+#theme "primitive"
+#tag "name infantry 'Axe Thrower'"
+#define "#mobilearcher 1"
+#enditem
+
+#newitem
+#id "bonus shortbow"
+#gameid 23
+#sprite /graphics/weapon/standard/bonusshortbow.png
+#offsetx -1
+#offsety 8
+#basechance 0.5
+#define "#mobilearcher 1"
+#enditem
+
+#newitem
+#id "chakram"
+#gameid 362
+#tag "name infantry 'Chakram Thrower'"
+#tag "tierunique"
+#define "#mobilearcher 1"
+#enditem
+
+#newitem
+#id "sticksandstones"
+#gameid 360
+#basechance 0.5
+#theme "primitive"
+#tag "maxprot 8"
+#tag "notepic"
+#define "#mobilearcher 1"
+#enditem
+
+#newitem
+#id "harpoon"
+#gameid 452
+#sprite /graphics/weapon/standard/javelin1.png
+#offsetx -1
+#offsety 9
+#tag "name infantry 'Harponeer'"
+#tag "maxprot 12"
+#tag "tierunique"
+#basechance 0.5
+#define "#mobilearcher 1"
+#enditem
+
+#newitem
+#id "blowpipe"
+#gameid 34
+#tag "name infantry 'Poisoner'"
+#tag "maxprot 10"
+#tag "tierunique"
+#basechance 0.45
+#define "#mobilearcher 1"
+#enditem
+
+#newitem
+#id "poison darts"
+#basechance 0
+#gameid 620
+#define "#mobilearcher 1"
+#enditem

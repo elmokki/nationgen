@@ -196,3 +196,36 @@
 #generateitem 1 bonusweapon
 
 #endpose
+
+
+------- Mounted
+
+#newpose
+#id "bakemono sho cavalry"
+#role "mounted bakemono sho"
+#basechance 0.25
+#define "#skilledrider 2"
+
+#baseitemslot feet 0
+
+#renderorder "shadow cloakb mount basesprite shirt legs armor offhandw cloakf bonusweapon weapon hands hair helmet offhanda overlay"
+
+#load basesprite /data/items/bakemono/small/bases_1h_advanced.txt
+#load mount /data/items/bakemono/small/mounts.txt
+
+#load hands /data/items/bakemono/small/hands.txt
+
+#load armor /data/items/bakemono/small/armor_mounted.txt
+#load helmet /data/items/bakemono/small/helmet.txt
+#load legs /data/items/bakemono/small/legs_mounted.txt
+
+#load weapon /data/items/bakemono/small/weapons_mounted.txt
+#load bonusweapon /data/items/bakemono/small/weapon_ranged_mounted.txt
+
+#load offhand /data/items/vaettir/normal/shields.txt
+
+#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+#load overlay /data/items/hoburg/mounted/overlay.txt
+
+#generateitem 0.5 bonusweapon
+#endpose

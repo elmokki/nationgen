@@ -1,0 +1,68 @@
+#newitem
+#id lightlance
+#gameid 357
+#sprite /graphics/vaettir/weapon/lance.png
+#renderprio 7
+#renderslot "offhandw"
+#tag "name lancer"
+#basechance 2
+#lightlance
+#enditem
+
+#newitem
+#id spear
+#gameid 1
+#sprite /graphics/vaettir/weapon/spear.png
+#renderprio 7
+#renderslot "offhandw"
+#basechance 2
+#lightlance
+#enditem
+
+#newitem
+#id hatchet
+#gameid 253
+#sprite /graphics/vaettir/weapon/hatchet.png
+#enditem
+
+#newitem
+#id morningstar
+#gameid 15
+#sprite /graphics/vaettir/weapon/morningstar.png
+#theme "advanced"
+#enditem
+
+#newitem
+#id wakizashi
+#gameid 6
+#sprite /graphics/hoburg/weapon/wakizashi.png
+#enditem
+
+#newitem
+#id axe
+#gameid 66
+#sprite /graphics/vaettir/weapon/greataxe.png
+#tag "eliteversion greataxe"
+#needs offhand no_offhand
+#enditem
+
+#newitem
+#id cavalry_axe
+#gameid cavalry_axe
+#sprite /graphics/vaettir/weapon/greataxe.png
+#needs offhand no_offhand
+#basechance 0.5
+#enditem
+
+#newitem
+#id tachi
+#gameid tachi
+#sprite /graphics/bakemono/small/weapon/katana2.png
+#enditem
+
+#newitem
+#id cavalry_nodachi
+#gameid cavalry_nodachi
+#sprite /graphics/bakemono/small/weapon/nodachi2.png
+#theme medium-sho
+#enditem
