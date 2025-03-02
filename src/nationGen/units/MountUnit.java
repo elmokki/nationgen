@@ -23,7 +23,6 @@ public class MountUnit extends Unit {
   public Unit otherForm;
   public Mount mountForm;
   boolean sacred = false;
-  public String shiftcommand = "#mountmnr";
   private int gcost = 0;
   private NationGenAssets assets;
 
@@ -56,7 +55,6 @@ public class MountUnit extends Unit {
         } else if (
           c.command.equals("#holy") && mountForm.tags.containsName("mount")
         ) {
-          //if(otherForm.tags.containsName("sacredmount"))
           sacred = true;
         }
       }
@@ -79,7 +77,6 @@ public class MountUnit extends Unit {
       }
 
       if (c.command.equals("#gcost")) {
-        //System.out.println(c.args.get(0) + " ADDED " + " / " + otherForm.getGoldCost_DEBUG());
         sf.commands.add(c);
         gcost = c.args.get(0).getInt();
       }
@@ -113,7 +110,6 @@ public class MountUnit extends Unit {
       for (Command c : clist) {
         if (assets.secondShapeRacePoseCommands.contains(c.command)) {
           sf.commands.add(c);
-          //handleCommand(commands, c);
         }
       }
 
@@ -141,29 +137,9 @@ public class MountUnit extends Unit {
             mountForm.tags.containsName("mount")
           ) {
             sf.commands.add(c);
-            //handleCommand(commands, c);
           }
         }
       }
-      /*
-			// Add filters
-			for(Command c : f.commands)
-			{
-		
-				if(n.secondShapeNonMountCommands.contains(c.command) && !thisForm.tags.contains("mount"))
-				{	
-					handleCommand(commands, c, nation);
-				}
-				
-				if(n.secondShapeMountCommands.contains(c.command) && thisForm.tags.contains("mount"))
-				{
-					//System.out.println(f.name + " -> " + c.command + " " + c.argument);
-					handleCommand(commands, c, nation);
-				}
-		
-			}
-				*/
-
     }
 
     if (sf.commands.size() > 0) {
@@ -250,48 +226,30 @@ public class MountUnit extends Unit {
     lines.add("#newmonster " + id);
 
     List<Command> commands = getCommands();
-
-    boolean hasDescriptionSpecified = false;
     boolean hasItemSlots = false;
 
     // Own non-gcost commands first due to #copystats
     for (Command c : commands) {
       if (c.command.equals("#gcost")) {
-        // Do nothing
+        continue;
       } else if (c.command.equals("#itemslots")) {
         hasItemSlots = true;
       } else {
         lines.add(c.toModLine());
       }
-
-      if (
-        c.command.equals("#descr") &&
-        mountForm.tags.containsName("specifieddescr")
-      ) {
-        hasDescriptionSpecified = true;
-      }
     }
+
     if (mountForm.commands.stream().anyMatch(c -> c.command.equals("#spr1"))) {
       lines.add("#spr1 \"" + spritedir + "/mount_" + id + "_a.tga" + "\"");
     }
+  
     if (mountForm.commands.stream().anyMatch(c -> c.command.equals("#spr2"))) {
       lines.add("#spr2 \"" + spritedir + "/mount_" + id + "_b.tga" + "\"");
     }
 
-    /*
-	if(!hasDescriptionSpecified)
-	{
-		lines.add("#descr \"No description\"");
-	}
-	*/
-
     if (mountForm.keepname && otherForm != null) lines.add(
       "#name \"" + otherForm.name + "\""
     );
-
-    if (!shiftcommand.equals("") && otherForm != null) {
-      lines.add(shiftcommand + " " + otherForm.id);
-    }
     
     if (sacred) lines.add("#holy");
 
