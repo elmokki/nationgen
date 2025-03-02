@@ -636,7 +636,7 @@ public class SacredGenerator extends TroopGenerator {
 
     // Weigh survivability of the unit higher than its filter power rating for rec-everywhere chances
     double ratingAndSurvivabilityAverage =
-      ((unitRating * 0.75) + (survivability * 1.25)) / 2;
+      ((unitRating * 0.9) + (survivability * 1.25)) / 2;
     double adjustedCapOnlyChance =
       ratingAndSurvivabilityAverage * additionalSacredBonus;
     u.capOnlyChance = Math.max(
@@ -787,6 +787,11 @@ public class SacredGenerator extends TroopGenerator {
         if (c.command.equals("#overcharged")) {
           Integer overchargedAmnt = Integer.parseInt(c.args.get(0).get());
           survivability += overchargedAmnt * 0.05;
+        }
+
+        if (c.command.equals("#unsurr")) {
+          Integer unsurroundableAmnt = Integer.parseInt(c.args.get(0).get());
+          survivability += unsurroundableAmnt * 0.015;
         }
       }
     }
