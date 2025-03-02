@@ -1,0 +1,96 @@
+
+-- Temporary, until-FS-monsters-are-added FS-only uglies
+#new
+#id "Foul Spawn"
+#basechance 0
+#chanceinc primaryrace foulspawn 2
+#command "#copystats 530"
+#command "#copyspr 530"
+#command "#gcost 100"
+#command "#rpcost 50"
+#command "#rcost 1"
+#caponlychance 0.8
+#specifiedgcost
+#end
+
+#new
+#id "Foul Beast"
+#basechance 0
+#chanceinc primaryrace foulspawn 2
+#command "#copystats 467"
+#command "#copyspr 467"
+#command "#gcost 80"
+#command "#rpcost 40"
+#command "#rcost 1"
+#caponlychance 0.8
+#specifiedgcost
+#end
+
+#new
+#id "Ettin"
+#basechance 0
+#chanceinc primaryrace foulspawn 2
+#command "#copystats 488"
+#command "#copyspr 488"
+#command "#gcost 100"
+#command "#rpcost 50"
+#command "#rcost 1"
+#caponlychance 0.5
+#specifiedgcost
+#end
+
+#new
+#id "Draco Lion"
+#basechance 0
+#chanceinc primaryrace foulspawn 0.5
+#command "#copystats 637"
+#command "#copyspr 637"
+#command "#gcost 150"
+#command "#rpcost 75"
+#command "#rcost 1"
+#command "#slow_to_recruit"
+#caponlychance 1
+#specifiedgcost
+#end
+
+#new
+#id "Chimera"
+#basechance 0
+#chanceinc primaryrace foulspawn 0.5
+#command "#copystats 487"
+#command "#copyspr 487"
+#command "#gcost 150"
+#command "#rpcost 75"
+#command "#rcost 1"
+#command "#slow_to_recruit"
+#caponlychance 1
+#specifiedgcost
+#end
+
+#new
+#id "Grotesque"
+#basechance 0
+#chanceinc primaryrace foulspawn 0.5
+#command "#copystats 659"
+#command "#copyspr 659"
+#command "#gcost 150"
+#command "#rpcost 75"
+#command "#rcost 1"
+#command "#slow_to_recruit"
+#caponlychance 1
+#specifiedgcost
+#end
+
+#new
+#id "Serpent Fiend"
+#basechance 0
+#chanceinc primaryrace foulspawn 0.5
+#command "#copystats 526"
+#command "#copyspr 526"
+#command "#gcost 50"
+#command "#rpcost 25"
+#command "#rcost 1"
+#command "#slow_to_recruit"
+#caponlychance 1
+#specifiedgcost
+#end
