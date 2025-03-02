@@ -7001,7 +7001,7 @@
 #command "#magicboost 53 -5"
 #command "#itemslots 786432"
 #command "#transformation 0"
-#command "#armor 263"
+#command "#armor 80"
 #command "#gcost 75"
 #command "#rcost 4"
 #mount
@@ -7015,7 +7015,20 @@
 #command "#itemslots 786432"
 #command "#transformation 0"
 #command "#armor 254"
-#command "#gcost 75"
+#command "#gcost 80"
+#command "#rcost 4"
+#mount
+#end
+
+#new secondshape
+#id "wyvern_golden_barding_mount"
+#command "#copystats 520"
+#command "#copyspr 520"
+#command "#magicboost 53 -5"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#armor 277"
+#command "#gcost 85"
 #command "#rcost 4"
 #mount
 #end
