@@ -948,18 +948,11 @@ public class NationGen {
   }
 
   private void handleMount(Command c, Unit u) {
-    Mount mount = assets.mounts
-      .stream()
-      .filter(s -> s.name.equals(c.args.get(0).get()))
-      .findFirst()
-      .orElseThrow(() ->
-        new IllegalArgumentException(
-          "Mount named " + c.args.get(0) + " could not be found."
-        )
-      );
-
+    Mount mount = u.mountItem;
     MountUnit mu = new MountUnit(this, assets, u.race, u.pose, u, mount);
 
+    // Maps the mount item id (i.e. #mountmnr 'bear_mail_barding')
+    // to a custom monster id (i.e. 5001) which will be written into the mod
     mu.id = idHandler.nextUnitId();
     c.args.set(0, new Arg(mu.id));
     mounts.add(mu);

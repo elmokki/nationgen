@@ -42,6 +42,7 @@ public class Unit {
   public Name name = new Name();
   public Race race;
   public Pose pose;
+  public Mount mountItem;
   public final SlotMap slotmap = new SlotMap();
 
   public static class SlotMap {
@@ -135,6 +136,7 @@ public class Unit {
     unit.tags.addAll(tags);
     unit.commands.addAll(commands);
     unit.appliedFilters.addAll(appliedFilters);
+    unit.mountItem = mountItem;
     return unit;
   }
 
@@ -550,11 +552,42 @@ public class Unit {
     if (oldItem != null) {
       handleRemoveThemeinc(oldItem);
       handleRemoveDependency(oldItem);
+
+      // Remove cached mountItem if the item containing the mount is unequipped
+      // This assumes that any given Unit will only ever had a single mount
+      if (oldItem.containsMount()) {
+        this.mountItem = null;
+      }
     }
 
     if (newItem != null) {
       handleDependency(slotName, false);
       handleAddThemeinc(newItem);
+
+      if (newItem.containsMount()) {
+        resolveMountItem(newItem);
+      }
+    }
+  }
+
+  private void resolveMountItem(Item mountItem) {
+    if (mountItem != null) {
+      Optional<Command> possibleMountmnr = mountItem.commands
+        .stream()
+        .filter(c -> c.command.equals("#mountmnr"))
+        .findAny();
+
+      if (possibleMountmnr.isPresent()) {
+        Command mountmnr = possibleMountmnr.get();
+        Optional<Mount> mount = nationGen.getAssets().mounts
+          .stream()
+          .filter(s -> s.name.equals(mountmnr.args.get(0).get()))
+          .findFirst();
+
+        if (mount.isPresent()) {
+          this.mountItem = mount.get();
+        }
+      }
     }
   }
 
@@ -587,6 +620,29 @@ public class Unit {
     } else {
       return cost;
     }
+  }
+
+  public int getMountGoldCost() {
+    if (this.mountItem == null) {
+      return 0;
+    }
+
+    Optional<Command> gcost = this.mountItem.commands
+      .stream()
+      .filter(c -> c.command.equals("#gcost"))
+      .findFirst();
+
+    if (!gcost.isPresent()) {
+      return 0;
+    }
+
+    if (gcost.get().args.size() == 0) {
+      throw new IllegalArgumentException(
+        "Mount item " + mountItem.name + "'s #gcost does not have an argument!"
+      );
+    }
+
+    return Integer.parseInt(gcost.get().args.get(0).get());
   }
 
   public String getName() {
@@ -1047,6 +1103,12 @@ public class Unit {
           nu.polish();
           res += nu.getResCost(true);
           gold += nu.getGoldCost();
+
+          // Add gold of this unit's equipped mount. This is normally done automatically by
+          // Dominions with the defined #gcost of the mount monster, but this is a montag
+          // unit that transforms into different units when recruited, and the base unit
+          // will not have a mount nor include any mount gold costs, so they need to get added here.
+          gold += nu.getMountGoldCost();
           n++;
         }
       }
