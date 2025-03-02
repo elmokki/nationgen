@@ -622,7 +622,6 @@ public class Nation {
       if (random.nextDouble() < 0.02 * extraPDMulti) PDRanks = 4;
       else PDRanks = 3;
     }
-    // finalizeUnits();
   }
 
   private void addNationThemes() {
