@@ -312,11 +312,16 @@ public class Nation {
       }
 
       Unit sacred = sacGen.generateUnit(raceHasSacreds, power, isFirstSacred);
+      
       if (sacred != null) {
         sacreds.add(sacred);
       }
     }
-    if (sacreds.size() > 0) unitlists.put("sacreds", sacreds);
+
+    if (sacreds.size() > 0) {
+      unitlists.put("sacreds", sacreds);
+    }
+    
     sacGen = null;
     System.gc();
   }
@@ -1353,7 +1358,9 @@ public class Nation {
     return map
       .entrySet()
       .stream()
-      .filter(e -> e.getKey().startsWith(prefix))
+      .filter(e -> 
+        e.getKey().startsWith(prefix)
+      )
       .map(Entry::getValue)
       .flatMap(Collection::stream);
   }

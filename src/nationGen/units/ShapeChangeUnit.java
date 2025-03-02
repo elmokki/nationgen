@@ -149,25 +149,6 @@ public class ShapeChangeUnit extends Unit {
           }
         }
       }
-      /*
-			// Add filters
-			for(Command c : f.commands)
-			{
-		
-				if(n.secondShapeNonMountCommands.contains(c.command) && !thisForm.tags.contains("mount"))
-				{	
-					handleCommand(commands, c, nation);
-				}
-				
-				if(n.secondShapeMountCommands.contains(c.command) && thisForm.tags.contains("mount"))
-				{
-					//System.out.println(f.name + " -> " + c.command + " " + c.argument);
-					handleCommand(commands, c, nation);
-				}
-		
-			}
-				*/
-
     }
 
     if (sf.commands.size() > 0) {
