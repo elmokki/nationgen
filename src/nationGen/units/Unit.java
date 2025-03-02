@@ -1438,10 +1438,6 @@ public class Unit {
 
     lines.add("#newmonster " + id);
 
-    if (!this.name.toString(this).equals("UNNAMED")) {
-      lines.add("#name \"" + name.toString(this) + "\"");
-    }
-
     if (this.getSlot("basesprite") != null) {
       lines.add("#spr1 \"" + (spritedir + "/unit_" + this.id + "_a.tga\""));
       lines.add("#spr2 \"" + (spritedir + "/unit_" + this.id + "_b.tga\""));
@@ -1456,6 +1452,10 @@ public class Unit {
       .items()
       .filter(i -> Integer.parseInt(i.id) > 0)
       .forEach(i -> lines.add(writeSlotLine(i)));
+
+    if (!this.name.toString(this).equals("UNNAMED")) {
+      lines.add("#name \"" + name.toString(this) + "\"");
+    }
 
     lines.add("#end");
     lines.add("");
