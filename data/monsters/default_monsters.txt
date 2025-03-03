@@ -345,32 +345,6 @@
 #end
 
 #new
-#id "pygmy_mammoth_vaetti"
-#basechance 0
-#chanceinc "primaryrace vaetti 10"
-#chanceinc "racetheme rimvaettir_only *0"
-#chanceinc "nationcommand idealcold below 2 *0.5"
-#chanceinc "nationcommand idealcold below 1 *0.2"
-#chanceinc "nationcommand idealcold below 0 *0.2"
-#chanceinc "nationcommand idealcold below -1 *0.25"
-#command "#copystats 419"
-#command "#spr1 ./graphics/monsters/mammoth_pygmy_vaetti.png"
-#command "#spr2 shift"
-#command "#name 'Pygmy Mammoth'"
-#command "#gcost 50"
-#command "#rcost 15"
-#command "#hp 36"
-#command "#size 5"
-#command "#prot 10"
-#command "#str 16"
-#command "#def 6"
-#command "#ap 16"
-#command "#weapon 397" -- Kick
-#command "#weapon bonus_shortbow"
-#specifiedgcost
-#end
-
-#new
 #id "vine men"
 #basechance 0
 #chanceinc racetheme vinegrower 10
