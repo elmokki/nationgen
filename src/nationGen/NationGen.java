@@ -419,7 +419,7 @@ public class NationGen {
         spell = new Spell(this);
         spell.name = spellName;
         spell.commands.add(Command.args("#copyspell", spellName));
-        spell.commands.add(Command.args("#name", spellName));
+        spell.commands.add(Command.args("#name", spellName + " "));
       }
 
       spell.nationids.add(id);
