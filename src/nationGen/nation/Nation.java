@@ -801,7 +801,10 @@ public class Nation {
       // TODO: is this supposed to check pose roles instead of tags??
       if (
         u.tags.containsName("elite") || u.tags.containsName("sacred")
-      ) u.commands.addAll(u.race.specialcommands);
+      ) {
+        u.commands.addAll(u.race.specialcommands);
+      }
+
       giveSecondaryRaceSpecialCommands(u, conditional);
       u.polish();
     }

@@ -1422,9 +1422,12 @@ public class Unit {
 
     for (String slot : slotmap.getSlots()) {
       if (getSlot(slot) != null && !getSlot(slot).id.equals("-1")) {
-        if (getSlot(slot).armor) eqdef +=
-        armordb.GetInteger(getSlot(slot).id, "def", 0);
-        else eqdef += weapondb.GetInteger(getSlot(slot).id, "def", 0);
+        if (getSlot(slot).armor) {
+          eqdef += armordb.GetInteger(getSlot(slot).id, "def", 0);
+        }
+        else {
+          eqdef += weapondb.GetInteger(getSlot(slot).id, "def", 0);
+        }
       }
     }
 
