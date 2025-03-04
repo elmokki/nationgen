@@ -1,0 +1,37 @@
+-- Themes: primitive, civilized, advanced, monkey
+
+-- Bows
+
+#newitem
+#id "bow_short"
+#gameid 23
+#sprite /graphics/cynocephalian/weapon/bow_short.png
+--#tag "name archer bowdog"
+#enditem
+
+#newitem
+#id "bow_long"
+#gameid 24
+#sprite /graphics/cynocephalian/weapon/bow_long.png
+--#tag "name archer bowdog"
+#theme "monkey"
+#enditem
+
+#newitem
+#id "bow_composite"
+#gameid 264
+#sprite /graphics/cynocephalian/weapon/bow_composite.png
+--#tag "name archer bowdog"
+#theme "advanced"
+#enditem
+
+-- Crossbows
+
+#newitem
+#id "crossbow"
+#gameid 25
+#sprite /graphics/cynocephalian/weapon/crossbow.png
+--#tag "name archer crossbowdog"
+#theme "civilized"
+#enditem
+

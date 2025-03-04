@@ -1,27 +1,188 @@
-#newitem
-#id "loincloth"
-#gameid -1
-#armor
-#theme "naked"
-#theme "primitive"
-#theme "militia"
-#enditem
+-- themes primitive, civilized, elite
+-- Furs and Linen
 
 #newitem
-#id "furs"
+#id "furs_male"
 #gameid 44
-#sprite /graphics/cynocephalian/armor/furs.png
+#sprite /graphics/cynocephalian/armor/furs_male.png
+#recolormask /graphics/cynocephalian/armor/furs_male_colormask.png
 #armor
-#basechance 2
-#theme "furs"
+#theme "primitive"
 #enditem
 
 #newitem
-#id "linen cuirass"
-#gameid 183
-#sprite /graphics/cynocephalian/armor/linen.png
-#armor
+#id "furs_female_light"
+#gameid 44
 #basechance 0.5
-#theme "advanced"
+#sprite /graphics/cynocephalian/armor/furs_female_light.png
+#recolormask /graphics/cynocephalian/armor/furs_female_colormask.png
+#armor
+#command "#female"
+#theme "primitive"
+#enditem
+
+#newitem
+#id "furs_female_dark"
+#gameid 44
+#basechance 0.5
+#sprite /graphics/cynocephalian/armor/furs_female_dark.png
+#recolormask /graphics/cynocephalian/armor/furs_female_colormask.png
+#armor
+#command "#female"
+#theme "primitive"
+#enditem
+
+#newitem
+#id "cuirass_linen_primitive_male"
+#gameid 183
+#sprite /graphics/cynocephalian/armor/cuirass_linen_primitive_male.png
+#recolormask /graphics/cynocephalian/armor/cuirass_linen_primitive_male_colormask.png
+#armor
+#theme "primitive"
+#enditem
+
+#newitem
+#id "cuirass_linen_primitive_female"
+#gameid 183
+#sprite /graphics/cynocephalian/armor/cuirass_linen_primitive_female.png
+#recolormask /graphics/cynocephalian/armor/cuirass_linen_primitive_female_colormask.png
+#armor
+#command "#female"
+#theme "primitive"
+#enditem
+
+#newitem
+#id "cuirass_linen_yellow"
+#gameid 183
+#sprite /graphics/cynocephalian/armor/cuirass_linen_yellow.png
+#recolormask /graphics/cynocephalian/armor/cuirass_linen_yellow_colormask.png
+#armor
+#theme "civilized"
+#enditem
+
+-- Monkey
+
+#newitem
+#id "cuirass_bronze_monkey"
+#gameid 142
+#sprite /graphics/cynocephalian/armor/cuirass_bronze_monkey.png
+#recolormask /graphics/cynocephalian/armor/cuirass_bronze_monkey_colormask.png
+#armor
+#theme "bronze"
+#enditem
+
+-- Leather and Ringmail
+
+#newitem
+#id "leather_armor_full"
+#gameid 15
+#sprite /graphics/cynocephalian/armor/leather_armor_full.png
+#recolormask /graphics/cynocephalian/armor/leather_armor_full_colormask.png
+#armor
+#enditem
+
+#newitem
+#id "cuirass_ringmail"
+#gameid 6
+#sprite /graphics/cynocephalian/armor/cuirass_ringmail.png
+#recolormask /graphics/cynocephalian/armor/cuirass_ringmail_colormask.png
+#armor
+#theme "civilized"
+#enditem
+
+-- Scale
+
+#newitem
+#id "cuirass_scale_tribal"
+#gameid 7
+#sprite /graphics/cynocephalian/armor/cuirass_scale_tribal.png
+#recolormask /graphics/cynocephalian/armor/cuirass_scale_tribal_colormask.png
+#armor
+#theme "primitive"
+#theme "iron"
+#chanceinc "racetheme civilized *0"
+#enditem
+
+#newitem
+#id "cuirass_scale_tribal_elite"
+#gameid 7
+#sprite /graphics/cynocephalian/armor/cuirass_scale_tribal_elite.png
+#recolormask /graphics/cynocephalian/armor/cuirass_scale_tribal_elite_colormask.png
+#armor
+#theme "primitive"
+#theme "iron"
 #theme "elite"
+#chanceinc "racetheme civilized *0"
+#enditem
+
+#newitem
+#id "cuirass_scale_tribal_elite_cloak"
+#gameid 7
+#sprite /graphics/cynocephalian/armor/cuirass_scale_tribal_elite_cloak.png
+#recolormask /graphics/cynocephalian/armor/cuirass_elite_cloak_colormask.png
+#armor
+#theme "primitive"
+#theme "iron"
+#theme "elite"
+#chanceinc "racetheme civilized *0"
+#enditem
+
+-- Plate
+
+#newitem
+#id "cuirass_plate"
+#gameid 9
+#sprite /graphics/cynocephalian/armor/cuirass_plate.png
+#recolormask /graphics/cynocephalian/armor/cuirass_plate_colormask.png
+#armor
+#theme "civilized"
+#theme "iron"
+#chanceinc "racetheme tribal *0"
+#enditem
+
+#newitem
+#id "cuirass_plate_fancy"
+#gameid 9
+#sprite /graphics/cynocephalian/armor/cuirass_plate_fancy.png
+#recolormask /graphics/cynocephalian/armor/cuirass_plate_colormask.png
+#armor
+#theme "civilized"
+#theme "iron"
+#chanceinc "racetheme tribal *0"
+#enditem
+
+#newitem
+#id "cuirass_plate_fancy_cloak"
+#gameid 9
+#sprite /graphics/cynocephalian/armor/cuirass_plate_fancy_cloak.png
+#recolormask /graphics/cynocephalian/armor/cuirass_elite_cloak_colormask.png
+#armor
+#theme "civilized"
+#theme "iron"
+#theme "elite"
+#chanceinc "racetheme tribal *0"
+#enditem
+
+#newitem
+#id "cuirass_plate_elite"
+#gameid 9
+#sprite /graphics/cynocephalian/armor/cuirass_plate_elite.png
+#recolormask /graphics/cynocephalian/armor/cuirass_plate_elite_colormask.png
+#armor
+#theme "civilized"
+#theme "iron"
+#theme "elite"
+#chanceinc "racetheme tribal *0"
+#enditem
+
+#newitem
+#id "cuirass_plate_elite_cloak"
+#gameid 9
+#sprite /graphics/cynocephalian/armor/cuirass_plate_elite_cloak.png
+#recolormask /graphics/cynocephalian/armor/cuirass_elite_cloak_colormask.png
+#armor
+#theme "civilized"
+#theme "iron"
+#theme "elite"
+#chanceinc "racetheme tribal *0"
 #enditem

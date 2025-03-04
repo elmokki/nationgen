@@ -1,0 +1,353 @@
+------ Civilized
+
+#newpose
+#id "dog infantry"
+#role "infantry"
+
+#basechance 0
+#chanceinc "racetheme civilized 1"
+
+#renderorder "shadow bonusranged basesprite armor head helmet weapon hands offhand"
+
+#load shadow /data/items/cynocephalian/shadow.txt
+#load basesprite /data/items/cynocephalian/bases.txt
+#load hands /data/items/cynocephalian/hands.txt
+#load head /data/items/cynocephalian/head.txt
+
+#load armor /data/items/cynocephalian/armor.txt
+#load helmet /data/items/cynocephalian/helmet.txt
+
+#load weapon /data/items/cynocephalian/weapon.txt
+#load offhand /data/items/cynocephalian/offhand.txt
+#load offhand /data/items/cynocephalian/shield.txt
+
+#generateitem 1 head
+
+#maxunits 5
+
+#endpose
+
+---- Elite / Sacred dogs
+
+#newpose
+#id "dog elites"
+#role "elite infantry"
+#role "sacred infantry"
+#role "sacred"
+
+#basechance 0
+#chanceinc "racetheme civilized 1"
+
+#renderorder "shadow bonusranged basesprite armor head helmet weapon hands offhand"
+
+#load shadow /data/items/cynocephalian/shadow.txt
+#load basesprite /data/items/cynocephalian/bases.txt
+#load hands /data/items/cynocephalian/hands.txt
+#load head /data/items/cynocephalian/head.txt
+
+#load armor /data/items/cynocephalian/armor.txt
+#load helmet /data/items/cynocephalian/helmet.txt
+
+#load weapon /data/items/cynocephalian/weapon.txt
+#load offhand /data/items/cynocephalian/offhand.txt
+#load offhand /data/items/cynocephalian/shield.txt
+
+#generateitem 1 head
+
+#maxunits 2
+
+#endpose
+
+---- Dog skirmishers
+
+#newpose
+#id "dog skirmishers"
+#role "infantry"
+#role "sacred"
+
+#basechance 0
+#chanceinc "racetheme civilized 0.2"
+
+#renderorder "shadow bonusranged basesprite armor head helmet weapon hands offhand"
+
+#load shadow /data/items/cynocephalian/shadow.txt
+#load basesprite /data/items/cynocephalian/bases.txt
+#load hands /data/items/cynocephalian/hands.txt
+#load head /data/items/cynocephalian/head.txt
+
+#load armor /data/items/cynocephalian/armor.txt
+#load helmet /data/items/cynocephalian/helmet.txt
+
+#load weapon /data/items/cynocephalian/weapon.txt
+#load offhand /data/items/cynocephalian/offhand.txt
+#load offhand /data/items/cynocephalian/shield.txt
+
+#load bonusranged /data/items/cynocephalian/bonusranged.txt
+
+#generateitem 1 head
+#generateitem 1 bonusranged
+
+#maxunits 2
+
+#endpose
+
+
+---- Elite archerdogs / sacreds
+
+#newpose
+#id "dog elite archers"
+#role "elite ranged"
+#role "sacred ranged"
+#role "sacred"
+
+#basechance 0
+#chanceinc "racetheme civilized 0.5"
+
+#renderorder "shadow basesprite armor head helmet archerweapon weapon hands "
+
+#load shadow /data/items/cynocephalian/shadow.txt
+#load basesprite /data/items/cynocephalian/bases.txt
+#load hands /data/items/cynocephalian/hands.txt
+#load head /data/items/cynocephalian/head.txt
+
+#load armor /data/items/cynocephalian/armor.txt
+#load helmet /data/items/cynocephalian/helmet.txt
+
+#load archerweapon /data/items/cynocephalian/bow.txt
+#load weapon /data/items/cynocephalian/weapon_archer.txt
+
+#generateitem 1 head
+#generateitem 1 archerweapon
+
+#maxunits 1
+
+#endpose
+
+---- Archer Dogs
+
+#newpose
+#id "dog archers"
+#role "ranged"
+
+#basechance 0
+#chanceinc "racetheme civilized 1"
+
+#renderorder "shadow basesprite armor head helmet archerweapon weapon hands "
+
+#load shadow /data/items/cynocephalian/shadow.txt
+#load basesprite /data/items/cynocephalian/bases.txt
+#load hands /data/items/cynocephalian/hands.txt
+#load head /data/items/cynocephalian/head.txt
+
+#load armor /data/items/cynocephalian/armor.txt
+#load helmet /data/items/cynocephalian/helmet.txt
+
+#load archerweapon /data/items/cynocephalian/bow.txt
+#load weapon /data/items/cynocephalian/weapon_archer.txt
+
+#generateitem 1 head
+#generateitem 1 archerweapon
+
+#maxunits 2
+
+#endpose
+
+
+----- Tribal
+
+-- undisciplined infantry
+
+#newpose
+#id "dog tribals"
+#role "infantry"
+
+#basechance 0
+#chanceinc "racetheme tribal 1"
+
+#command "#undisciplined"
+#command "#pillagebonus +2"
+
+#renderorder "shadow bonusranged basesprite armor head helmet weapon hands offhand"
+
+#load shadow /data/items/cynocephalian/shadow.txt
+#load basesprite /data/items/cynocephalian/bases.txt
+#load hands /data/items/cynocephalian/hands.txt
+#load head /data/items/cynocephalian/head.txt
+
+#load armor /data/items/cynocephalian/armor.txt
+#load helmet /data/items/cynocephalian/helmet.txt
+
+#load weapon /data/items/cynocephalian/weapon.txt
+#load offhand /data/items/cynocephalian/offhand.txt
+#load offhand /data/items/cynocephalian/shield.txt
+
+#load bonusranged /data/items/cynocephalian/bonusranged.txt
+
+#generateitem 1 head
+#generateitem 0.2 bonusranged
+
+#maxunits 5
+
+#endpose
+
+---- Elite Reavers / Sacred Reavers
+
+#newpose
+#id "dog reavers"
+#role "elite infantry"
+#role "sacred infantry"
+#role "sacred"
+
+#basechance 0
+#chanceinc "racetheme tribal 0.5"
+
+#dwchancebonus 0.2
+#cannot_be_pd
+
+#command "#berserk +2"
+#command "#pillagebonus +2"
+
+#renderorder "shadow bonusranged basesprite armor head helmet weapon hands offhand"
+
+#load shadow /data/items/cynocephalian/shadow.txt
+#load basesprite /data/items/cynocephalian/bases.txt
+#load hands /data/items/cynocephalian/hands.txt
+#load head /data/items/cynocephalian/head.txt
+
+#load armor /data/items/cynocephalian/armor.txt
+#load helmet /data/items/cynocephalian/helmet.txt
+
+#load weapon /data/items/cynocephalian/weapon.txt
+#load offhand /data/items/cynocephalian/offhand.txt
+#load offhand /data/items/cynocephalian/shield.txt
+
+#load bonusranged /data/items/cynocephalian/bonusranged.txt
+
+#generateitem 1 head
+#generateitem 0.2 bonusranged
+
+#maxunits 2
+
+#endpose
+
+---- Dog skirmishers
+
+#newpose
+#id "dog tribal skirmishers"
+#role "infantry"
+#role "sacred"
+
+#basechance 0
+#chanceinc "racetheme tribal 1"
+
+#command "#pillagebonus +2"
+
+#renderorder "shadow bonusranged basesprite armor head helmet weapon hands offhand"
+
+#load shadow /data/items/cynocephalian/shadow.txt
+#load basesprite /data/items/cynocephalian/bases.txt
+#load hands /data/items/cynocephalian/hands.txt
+#load head /data/items/cynocephalian/head.txt
+
+#load armor /data/items/cynocephalian/armor.txt
+#load helmet /data/items/cynocephalian/helmet.txt
+
+#load weapon /data/items/cynocephalian/weapon.txt
+#load offhand /data/items/cynocephalian/offhand.txt
+#load offhand /data/items/cynocephalian/shield.txt
+
+#load bonusranged /data/items/cynocephalian/bonusranged.txt
+
+#generateitem 1 head
+#generateitem 0.5 bonusranged
+
+#maxunits 3
+
+#endpose
+
+---- Archer Dogs
+
+#newpose
+#id "dog tribal archers"
+#role "ranged"
+
+#basechance 0
+#chanceinc "racetheme tribal 1"
+
+#command "#pillagebonus +2"
+
+#renderorder "shadow basesprite armor head helmet archerweapon weapon hands "
+
+#load shadow /data/items/cynocephalian/shadow.txt
+#load basesprite /data/items/cynocephalian/bases.txt
+#load hands /data/items/cynocephalian/hands.txt
+#load head /data/items/cynocephalian/head.txt
+
+#load armor /data/items/cynocephalian/armor.txt
+#load helmet /data/items/cynocephalian/helmet.txt
+
+#load archerweapon /data/items/cynocephalian/bow.txt
+#load weapon /data/items/cynocephalian/weapon_archer.txt
+
+#generateitem 1 head
+#generateitem 1 archerweapon
+
+#maxunits 2
+
+#endpose
+
+---- Elite archerdogs / sacreds
+
+#newpose
+#id "dog elite archers"
+#role "elite ranged"
+#role "sacred ranged"
+#role "sacred"
+
+#basechance 0
+#chanceinc "racetheme tribal 0.2"
+
+#renderorder "shadow basesprite armor head helmet archerweapon weapon hands "
+
+#load shadow /data/items/cynocephalian/shadow.txt
+#load basesprite /data/items/cynocephalian/bases.txt
+#load hands /data/items/cynocephalian/hands.txt
+#load head /data/items/cynocephalian/head.txt
+
+#load armor /data/items/cynocephalian/armor.txt
+#load helmet /data/items/cynocephalian/helmet.txt
+
+#load archerweapon /data/items/cynocephalian/bow.txt
+#load weapon /data/items/cynocephalian/weapon_archer.txt
+
+#generateitem 1 head
+#generateitem 1 archerweapon
+
+#maxunits 1
+
+#endpose
+
+
+------ Shared
+
+----Scout
+#newpose
+#id "dog scout"
+#role "scout"
+
+#renderorder "shadow basesprite armor head helmet archerweapon weapon hands "
+
+#load shadow /data/items/cynocephalian/shadow.txt
+#load basesprite /data/items/cynocephalian/bases.txt
+#load hands /data/items/cynocephalian/hands.txt
+#load head /data/items/cynocephalian/head.txt
+
+#load armor /data/items/cynocephalian/armor.txt
+#load helmet /data/items/cynocephalian/helmet.txt
+
+#load archerweapon /data/items/cynocephalian/bow.txt
+#load weapon /data/items/cynocephalian/weapon_archer.txt
+
+#generateitem 1 head
+#generateitem 1 archerweapon
+#endpose

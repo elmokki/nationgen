@@ -1,120 +1,153 @@
--- primitive weapons
+---- Basic
 
-#newitem
-#id club
-#gameid 252
-#sprite /graphics/cynocephalian/weapons/club.png
-#offsetx -2
-#offsety 3
-#theme "primitive"
-#basechance 1
+#newitem --nothing
+#id "nothing"
+#gameid -1
+#basechance 0.2
+#chanceinc "prot not below 10 *0"
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem --scales
+#id "nothing"
+#gameid -1
+#basechance 0.2
+#sprite /graphics/cynocephalian/weapon/scales.png
+#chanceinc "personalmagic holy 1 2"
+#chanceinc "personalmagic holy 2 2"
+#chanceinc "personalmagic holy 3 2"
+#chanceinc "prot not below 10 *0"
+--#tier 1
+--#notfortier 2
+--#notfortier 3
 #enditem
 
 #newitem
-#id spiked_club
-#gameid 593
-#sprite /graphics/cynocephalian/weapons/spikedclub.png
-#offsetx -2
-#offsety 3
-#theme "primitive"
-#basechance 1
+#id "dagger"
+#gameid 9
+#basechance 0.5
+#sprite /graphics/cynocephalian/weapon/dagger_iron.png
+#chanceinc "racetheme tribal 0.5"
+#chanceinc "prot not below 10 *0"
+#tier 1
+#tier 2
+#notfortier 3
 #enditem
 
-#newitem
-#id great_club
-#gameid 165
-#sprite /graphics/cynocephalian/weapons/greatclub.png
-#offsetx 0
-#offsety 3
-#needs hands hands_2h
-#theme "primitive"
-#basechance 1
-#troopweapon
-#enditem
 
-#newitem
-#id stone_club
-#gameid 429
-#sprite /graphics/cynocephalian/weapons/greatclub_stone.png
-#offsetx 0
-#offsety 3
-#needs hands hands_2h
-#theme "primitive"
-#basechance 1
-#troopweapon
-#enditem
+---- Mage
 
-#newitem
-#id stone_spear
-#gameid 373
-#sprite /graphics/cynocephalian/weapons/spear.png
-#offsetx -2
-#offsety 2
-#needs hands hands_2h
-#theme "primitive"
-#basechance 1
-#troopweapon
-#enditem
-
-#newitem
-#id stone_hatchet
-#gameid 253
-#sprite /graphics/cynocephalian/weapons/axe.png
-#offsetx -3
-#offsety 3
-#theme "primitive"
-#basechance 1
-#enditem
-
-#newitem
-#id rocks
-#gameid 553
-#sprite /graphics/cynocephalian/weapons/rock.png
-#offsetx -1
-#offsety 0
-#theme "primitive"
-#theme "earth"
-#basechance 1
-#tag "notepic"
-#enditem
-
-#newitem
-#id quarterstaff
+#newitem --basic qstaff
+#id "staff_quarter"
 #gameid 7
-#sprite /graphics/cynocephalian/weapons/quarterstaff.png
-#offsetx -2
-#offsety 2
-#needs hands hands_2h
-#basechance 1
-#troopweapon
+#chanceinc "prot not below 10 *0"
+#sprite /graphics/cynocephalian/weapon/staff_quarter.png
+#tier 1
+#notfortier 2
+#notfortier 3
+#enditem
+
+#newitem --staff crook
+#id "staff_mage_crook"
+#gameid 7
+#chanceinc "prot not below 10 *0"
+#sprite /graphics/cynocephalian/weapon/staff_mage_crook.png
+#tier 2
+#notfortier 1
+#notfortier 3
+#enditem
+
+#newitem --staff baton
+#id "staff_mage_baton"
+#gameid 7
+#chanceinc "prot not below 10 *0"
+#sprite /graphics/cynocephalian/weapon/staff_mage_baton.png
+#tier 2
+#notfortier 1
+#notfortier 3
+#enditem
+
+#newitem --staff mage crystal
+#id "staff_mage_crystals"
+#gameid 7
+#basechance 2
+#chanceinc "prot not below 10 *0"
+#sprite /graphics/cynocephalian/weapon/staff_mage_crystals.png
+#tier 3
+#notfortier 1
+#notfortier 2
+#enditem
+
+#newitem --staff mage branch
+#id "staff_mage_branch"
+#gameid 7
+#basechance 0
+#chanceinc "personalmagic astral 1 1"
+#chanceinc "personalmagic death 1 1"
+#chanceinc "personalmagic glamour 1 1"
+#chanceinc "personalmagic blood 1 1"
+#chanceinc "prot not below 10 *0"
+#sprite /graphics/cynocephalian/weapon/staff_mage_branch.png
+#tier 3
+#notfortier 1
+#notfortier 2
+#enditem
+
+#newitem --staff mage fire
+#id "staff_mage_cool"
+#gameid 7
+#basechance 0
+#chanceinc "personalmagic fire 1 2"
+#chanceinc "personalmagic earth 1 1"
+#chanceinc "personalmagic air 1 1"
+#chanceinc "personalmagic water 1 1"
+#chanceinc "prot not below 10 *0"
+#sprite /graphics/cynocephalian/weapon/staff_mage_cool.png
+#tier 3
+#notfortier 1
+#notfortier 2
+#enditem
+
+---- Martial weapons
+
+#newitem
+#id "broadsword"
+#gameid 8
+#basechance 10
+#chanceinc "prot below 10 *0"
+#sprite /graphics/cynocephalian/weapon/broadsword.png
+#theme "iron"
 #enditem
 
 #newitem
-#id skull_staff
-#gameid 7
-#sprite /graphics/cynocephalian/weapons/caster/staff_skull.png
-#renderprio 2
-#renderslot "bonusweapon"
-#tag "tier 3"
-#basechance 1
+#id "falchion"
+#gameid 10
+#basechance 10
+#chanceinc "prot below 10 *0"
+#sprite /graphics/cynocephalian/weapon/falchion.png
+#theme "monkey"
+#theme "iron"
 #enditem
 
 #newitem
-#id trinket_staff
-#gameid 7
-#sprite /graphics/cynocephalian/weapons/caster/staff_trinkets.png
-#renderprio 2
-#renderslot "bonusweapon"
-#tag "tier 3"
-#basechance 1
+#id "greatsword"
+#gameid 11
+#basechance 10
+#chanceinc "prot below 10 *0"
+#sprite /graphics/cynocephalian/weapon/greatsword.png
+#theme "iron"
+#theme "advanced"
 #enditem
 
 #newitem
-#id bone_staff
-#gameid 7
-#sprite /graphics/cynocephalian/weapons/caster/staff_bones.png
-#renderprio 2
-#renderslot "bonusweapon"
-#tag "tier 3"
-#basechance 1
+#id "glaive"
+#gameid 308
+#basechance 10
+#chanceinc "prot below 10 *0"
+#sprite /graphics/cynocephalian/weapon/glaive.png
+#theme "civilized"
+#theme "iron"
+#theme "advanced"
 #enditem
