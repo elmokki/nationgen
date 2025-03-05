@@ -3,12 +3,13 @@
 #gameid -1
 #sprite /graphics/crustacean/crabman/basecrabman_priest.png
 #define "#gcost 25"
+#define "#rcost +5"
 #define "#rpcost 25010"
 #define "#size 5"
 #define "#hp 25"
-#define "#prot 15"
+#define "#prot 10"
 #define "#mr 9"
-#define "#mor 13"
+#define "#mor 11"
 #define "#str 15"
 #define "#att 10"
 #define "#def 8"
@@ -18,6 +19,8 @@
 #define "#ap 10"
 #define "#maxage 50"
 #define "#amphibian"
+#define "#troglodyte"
+#define "#itemslots -8192" -- Remove head slot
 #define "#darkvision 100"
 #define "#voidsanity 10"
 #define "#weapon 273"

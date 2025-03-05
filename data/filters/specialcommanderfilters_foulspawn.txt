@@ -1,0 +1,212 @@
+--- Usable special stuff that may be badly documented
+--
+-- #pose role/name <thing>
+-- Uses poses of <thing> name or role
+--
+-- #requiredposetag <tag>
+-- #requiredposetheme <theme>
+-- Excludes poses without this tag/theme
+--
+-- #equipmenttargettag <tag>
+-- Equipment will have to have this tag when it is available. 
+-- This is for "tier 1-3" for mage/priest type poses, but themeincs work well as well.
+--
+-- #troop
+-- This is a troop instead of commander (I'm looking at you, communion slave)
+--
+-- Extra tip: #generateitem works here like it should in all filters/equipment
+-- Extra tip: Special commanders get #poorleader or #noleader if nothing is specified
+
+#new
+#id "corpse-grafter"
+#command "#reanimator -12"
+#command "#holy"
+#command "#okleader"
+#command "#poormagicleader"
+#command "#gcost +40"
+#command "#rpcost 1"
+#caponlychance 0
+#unitname "Grafter"
+#description "grafts corpses together to create the foulest of creatures."
+#pose role priest
+#equipmenttargettag light
+#generateitem 1 cloakb
+#filterdesc "grafter desc"
+#theme reanimating_corruption
+#basechance 1
+#end
+
+#new
+#id "divine-corruptor"
+#command "#domsummon -12"
+#command "#holy"
+#command "#magicskill 9 2"
+#command "#okleader"
+#command "#poormagicleader"
+#command "#gcost +70"
+#command "#rpcost 2"
+#caponlychance 0.5
+#unitname "Divine Corruptor"
+#description "corrupts its god's domain with uncountable foulspawn."
+#pose role priest
+#equipmenttargettag light
+#generateitem 1 cloakb
+#filterdesc "divine-corruptor desc"
+#basechance 0.3
+#theme divine_corruption
+#end
+
+#new
+#id "divine-corruptor-half"
+#command "#domsummon2 -12"
+#command "#holy"
+#command "#magicskill 9 1"
+#command "#okleader"
+#command "#poormagicleader"
+#command "#gcost +50"
+#command "#rpcost 1"
+#caponlychance 0
+#unitname "Divine Corruptor"
+#description "corrupts its god's domain with many foulspawn."
+#pose role priest
+#equipmenttargettag light
+#generateitem 1 cloakb
+#filterdesc "divine-corruptor desc"
+#basechance 0.5
+#theme divine_corruption
+#end
+
+#new
+#id "divine-corruptor-rare"
+#command "#raredomsummon -10"
+#command "#holy"
+#command "#magicskill 9 2"
+#command "#okleader"
+#command "#poormagicleader"
+#command "#gcost +70"
+#command "#rpcost 2"
+#caponlychance 0.25
+#unitname "Divine Corruptor"
+#description "absorbs the energy of its god's domain to spawn huge aberrations."
+#pose role priest
+#equipmenttargettag light
+#generateitem 1 cloakb
+#filterdesc "divine-corruptor desc"
+#basechance 0.3
+#theme divine_corruption
+#end
+
+#new
+#id "temple-corruptor"
+#command "#templetrainer -10"
+#command "#holy"
+#command "#magicskill 9 1"
+#command "#okleader"
+#command "#poormagicleader"
+#command "#gcost +20"
+#command "#rpcost 1"
+#caponlychance 0.25
+#unitname "Temple Corruptor"
+#description "corrupts worshipers within the sacred temples of their god, turning them into aberrations."
+#pose role priest
+#equipmenttargettag light
+#generateitem 1 cloakb
+#filterdesc "temple-corruptor desc"
+#basechance 1
+#theme temple_corruption
+#end
+
+#new
+#id "foul-craftsman"
+#command "#makemonsters5 -12"
+#command "#holy"
+#command "#okleader"
+#command "#poormagicleader"
+#command "#gcost +40"
+#command "#rpcost 1"
+#caponlychance 0.25
+#unitname "Foul Craftsman"
+#description "is a savvy craftsman who dedicates their skill to the vilest of arts - crossbreeding."
+#pose role priest
+#equipmenttargettag light
+#generateitem 1 cloakb
+#filterdesc "foul-craftsman desc"
+#basechance 1
+#theme crafted_corruption
+#end
+
+#new
+#id "corrupted-occultist-3"
+#command "#summon3 -12"
+#command "#holy"
+#command "#okleader"
+#command "#poormagicleader"
+#command "#gcost +30"
+#command "#rpcost 1"
+#caponlychance 0
+#unitname "Corrupted Occultist"
+#description "uses their knowledge of the occult to call forth aberrant creatures."
+#pose role priest
+#equipmenttargettag light
+#generateitem 1 cloakb
+#filterdesc "corrupted-occultist desc"
+#theme occult_corruption
+#basechance 0.5
+#end
+
+#new
+#id "corrupted-occultist-5"
+#command "#summon5 -12"
+#command "#holy"
+#command "#okleader"
+#command "#poormagicleader"
+#command "#gcost +40"
+#command "#rpcost 1"
+#caponlychance 0.5
+#unitname "Corrupted Occultist"
+#description "uses their superior knowledge of the occult to call forth many aberrant creatures."
+#pose role priest
+#equipmenttargettag light
+#generateitem 1 cloakb
+#filterdesc "corrupted-occultist desc"
+#basechance 0.3
+#theme occult_corruption
+#end
+
+#new
+#id "eldritch-caller-many"
+#command "#batstartsum2d6 -12"
+#command "#holy"
+#command "#goodleader"
+#command "#okmagicleader"
+#command "#gcost +40"
+#command "#rpcost 2"
+#caponlychance 0
+#unitname "Eldritch Caller"
+#description "distorts reality around itself, momentarily bringing forth all sorts of foul beings to assist in battle."
+#pose role priest
+#equipmenttargettag light
+#generateitem 1 cloakb
+#filterdesc "eldritch-caller desc"
+#basechance 0.5
+#theme eldritch_corruption
+#end
+
+#new
+#id "eldritch-caller-good"
+#command "#batstartsum1 -10"
+#command "#holy"
+#command "#goodleader"
+#command "#okmagicleader"
+#command "#gcost +40"
+#command "#rpcost 2"
+#caponlychance 0
+#unitname "Eldritch Caller"
+#description "distorts reality around itself, momentarily bringing forth a huge, aberrant bodyguard in battle."
+#pose role priest
+#equipmenttargettag light
+#generateitem 1 cloakb
+#filterdesc "eldritch-caller desc"
+#basechance 0.3
+#theme eldritch_corruption
+#end

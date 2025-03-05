@@ -42,6 +42,7 @@
 #role "mounted"
 #sacred
 #basechance 0.25
+#define "#skilledrider 3"
 
 #baseitemslot feet 0
 
@@ -71,4 +72,5 @@
 #load overlay /data/items/human/human_mounted/mountedoverlay.txt
 #load overlay /data/items/hoburg/mounted/overlay.txt
 
+#generateitem 0.5 bonusweapon
 #endpose

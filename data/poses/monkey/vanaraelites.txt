@@ -102,10 +102,11 @@
 #theme "abysian"
 #theme "alpine"
 #basechance 0.5
+#define "#skilledrider 3"
 
 #baseitemslot feet 0
 
-#renderorder "shadow wings cloakb mount basesprite shirt legs bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
+#renderorder "shadow quiver wings cloakb mount basesprite shirt legs bonusweapon armor cloakf weapon offhandw hands hair helmet offhanda overlay"
 
 #load basesprite /data/items/monkey/vanara/mounted/sacredbases.txt
 
@@ -118,8 +119,9 @@
 #load shirt /data/items/monkey/vanara/mounted/shirt.txt
 #load helmet /data/items/monkey/vanara/normal/helmet.txt
 
-#load weapon /data/items/monkey/vanara/normal/weapon.txt
-#load bonusweapon /data/items/monkey/vanara/normal/bonusranged.txt 0 1
+#load weapon /data/items/monkey/vanara/normal/weapon_mounted.txt
+#load bonusweapon /data/items/monkey/vanara/normal/weapon_ranged_mounted.txt 1 2
+#load quiver /data/items/human/archer/humanbonusranged.txt 4 1
 
 #load offhand /data/items/monkey/vanara/mounted/shields.txt
 #load offhand /data/items/monkey/vanara/normal/offhand.txt
@@ -130,6 +132,7 @@
 #load wings /data/items/monkey/vanara/mounted/wings.txt
 
 #generateitem 1 shirt
+#generateitem 0.5 bonusweapon
 #command "#maxage 60"
 #endpose
 

@@ -1,101 +1,420 @@
---- Base offsets are applied to everything except base and overlay
-
+------ Base offsets are applied to everything except base and overlay
 
 #newitem
-#id "scorpion"
+#id "scorpion_beast"
 #gameid -1
 #sprite /graphics/abysian/mounts/scorpion.png
 #armor
 #offsetx 37
 #offsety 20
 #needs overlay scorpion_overlay
-#define "#mountmnr 'scorpionmount'"
-#define "#gcost +50"
-#tag "animal scorpion"
-#theme "heavy"
 #description "Leaves a giant scorpion behind when the rider dies"
+#define "#mountmnr 'scorpion_beast_mount'"
+#theme "heavy"
+#tag "animal scorpion"
 #tag "guaranteedprefix scorpion"
-
 #tag "minprot 10"
-#tag "maxprot 100"
+#basechance 10
 #enditem
 
+#newitem
+#id "scorpion_beast_leather_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 37
+#offsety 20
+#needs overlay scorpion_overlay
+#description "Leaves a giant scorpion behind when the rider dies"
+#define "#mountmnr 'scorpion_beast_leather_barding_mount'"
+#theme "heavy"
+#theme "leather"
+#tag "animal scorpion"
+#tag "guaranteedprefix scorpion"
+#tag "minprot 10"
+#basechance 8
+#enditem
+
+#newitem
+#id "scorpion_beast_light_scale_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 37
+#offsety 20
+#needs overlay scorpion_overlay
+#description "Leaves a giant scorpion behind when the rider dies"
+#define "#mountmnr 'scorpion_beast_light_scale_barding_mount'"
+#theme "heavy"
+#theme "iron"
+#tag "animal scorpion"
+#tag "guaranteedprefix scorpion"
+#tag "minprot 10"
+#basechance 6
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "scorpion_beast_cataphract_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 37
+#offsety 20
+#needs overlay scorpion_overlay
+#description "Leaves a giant scorpion behind when the rider dies"
+#define "#mountmnr 'scorpion_beast_cataphract_barding_mount'"
+#theme "heavy"
+#theme "iron"
+#tag "animal scorpion"
+#tag "guaranteedprefix scorpion"
+#tag "minprot 10"
+#basechance 2
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "scorpion_beast_obsidian_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 37
+#offsety 20
+#needs overlay scorpion_overlay
+#description "Leaves a giant scorpion behind when the rider dies"
+#define "#mountmnr 'scorpion_beast_obsidian_barding_mount'"
+#theme "heavy"
+#theme "advanced"
+#tag "animal scorpion"
+#tag "guaranteedprefix scorpion"
+#tag "minprot 10"
+#basechance 1
+#chanceinc prot 16 *2
+#enditem
+
+
 #newitem -- jaguars remain stealthy with zotz riders
-#id "jaguar"
+#id "jaguar_stealthy"
 #gameid -1
 #sprite /graphics/mounts/standard/jaguar.png
 #armor
 #offsetx 6
 #offsety 18
-#define "#mountmnr 'jaguarmount-stealthy'"
-#define "#gcost +35"
-#define "#rcost +5"
+#description "The jaguar will persist even if the rider dies."
+#define "#mountmnr 'jaguar_mount'"
+#define "#stealthy '+40'"
+#define "#gcost +10"
 #theme "specialmount"
 #theme "light"
 #tag "animal jaguar"
-#description "The jaguar will persist even if the rider dies."
 #tag "guaranteedprefix jaguar"
-#tag "minprot 0"
 #tag "maxprot 12"
+#basechance 10
 #enditem
 
+#newitem -- jaguars remain stealthy with zotz riders
+#id "jaguar_leather_barding_stealthy"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx 6
+#offsety 18
+#description "The jaguar will persist even if the rider dies."
+#define "#mountmnr 'jaguar_leather_barding_mount'"
+#define "#stealthy '+40'"
+#define "#gcost +10"
+#theme "specialmount"
+#theme "light"
+#theme "leather"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#tag "maxprot 14"
+#basechance 9
+#chanceinc prot 10 *2
+#enditem
+
+#newitem -- jaguars remain stealthy with zotz riders
+#id "jaguar_light_scale_barding_stealthy"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx 6
+#offsety 18
+#description "The jaguar will persist even if the rider dies."
+#define "#mountmnr 'jaguar_light_scale_barding_mount'"
+#define "#stealthy '+40'"
+#define "#gcost +10"
+#theme "specialmount"
+#theme "light"
+#theme "iron"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#tag "maxprot 14"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem -- jaguars remain stealthy with zotz riders
+#id "jaguar_obsidian_barding_stealthy"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx 6
+#offsety 18
+#description "The jaguar will persist even if the rider dies."
+#define "#mountmnr 'jaguar_obsidian_barding_mount'"
+#define "#stealthy '+40'"
+#define "#gcost +10"
+#theme "specialmount"
+#theme "heavy"
+#theme "advanced"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#tag "maxprot 16"
+#basechance 4
+#chanceinc prot 16 *2
+#enditem
+
+
 #newitem
-#basechance 0.5
-#id "cavegrub"
+#id "cave_grub"
 #gameid -1
 #sprite /graphics/mounts/standard/cavegrub.png
 #armor
 #offsetx 48
 #offsety 25
-#define "#mountmnr 'cavegrubmount'"
-#define "#gcost +20"
-#define "#rcost +3"
+#define "#mountmnr 'cave_grub_mount'"
+#define "#gcost -10"
 #tag "animal 'cave grub'"
 #tag "guaranteedprefix grub"
 #tag "name commander beastmaster"
 #tag "minprot 6"
 #tag "maxprot 14"
+#basechance 5
+#sacredextra 0.5
+#enditem
+
+#newitem
+#id "cave_grub_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavegrub.png
+#armor
+#offsetx 48
+#offsety 25
+#define "#mountmnr 'cave_grub_leather_barding_mount'"
+#define "#gcost -10"
+#theme "leather"
+#tag "animal 'cave grub'"
+#tag "guaranteedprefix grub"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#tag "maxprot 14"
+#basechance 4
+#chanceinc prot 10 *2
+#sacredextra 0.5
+#enditem
+
+#newitem
+#id "cave_grub_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavegrub.png
+#armor
+#offsetx 48
+#offsety 25
+#define "#mountmnr 'cave_grub_light_scale_barding_mount'"
+#define "#gcost -10"
+#theme "iron"
+#tag "animal 'cave grub'"
+#tag "guaranteedprefix grub"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#tag "maxprot 15"
+#basechance 3
+#chanceinc prot 12 *2
+#sacredextra 0.5
+#enditem
+
+#newitem
+#id "cave_grub_obsidian_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavegrub.png
+#armor
+#offsetx 48
+#offsety 25
+#define "#mountmnr 'cave_grub_obsidian_barding_mount'"
+#define "#gcost -10"
+#theme "heavy"
+#theme "advanced"
+#tag "animal 'cave grub'"
+#tag "guaranteedprefix grub"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#tag "maxprot 16"
+#basechance 1.5
+#chanceinc prot 16 *2
 #sacredextra 0.5
 #enditem
 
 
 #newitem
-#basechance 0.5
-#id "cave spider"
+#id "cave_spider"
 #gameid -1
 #sprite /graphics/mounts/standard/spider1.png
 #armor
 #offsetx 47
 #offsety 20
 #needs overlay spider_overlay
-#define "#mountmnr 'cavespider'"
-#define "#gcost +40"
-#define "#rcost +5"
 #description "The giant spider will persist even if the rider dies."
+#define "#mountmnr 'cave_spider_mount'"
 #theme "specialmount"
 #tag "animal spider"
 #tag "guaranteedprefix spider"
 #tag "minprot 6"
-#tag "maxprot 100"
+#basechance 5
 #enditem
 
+#newitem
+#id "cave_spider_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/spider1.png
+#armor
+#offsetx 47
+#offsety 20
+#needs overlay spider_overlay
+#description "The giant spider will persist even if the rider dies."
+#define "#mountmnr 'cave_spider_leather_barding_mount'"
+#theme "specialmount"
+#theme "leather"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "minprot 6"
+#basechance 4
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "cave_spider_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/spider1.png
+#armor
+#offsetx 47
+#offsety 20
+#needs overlay spider_overlay
+#description "The giant spider will persist even if the rider dies."
+#define "#mountmnr 'cave_spider_light_scale_barding_mount'"
+#theme "specialmount"
+#theme "iron"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "minprot 6"
+#basechance 3
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "cave_spider_obsidian_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/spider1.png
+#armor
+#offsetx 47
+#offsety 20
+#needs overlay spider_overlay
+#description "The giant spider will persist even if the rider dies."
+#define "#mountmnr 'cave_spider_obsidian_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "advanced"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "minprot 6"
+#basechance 1.5
+#chanceinc prot 16 *2
+#enditem
+
+
 #newitem -- giant rats remain stealthy with zotz riders
-#id "giant rat"
+#id "giant_rat_stealthy"
 #gameid -1
 #sprite /graphics/mounts/standard/giantrat.png
 #armor
-#define "#mountmnr 'ratmount'"
-#define "#gcost +15"
-#tag "animal rat"
+#offsetx 15
+#offsety 22
+#description "If the rider dies, the rat will carry on fighting until the end of the battle."
+#define "#mountmnr 'giant_rat_mount'"
+#define "#stealthy '+40'"
+#define "#gcost +5"
 #theme "rat"
 #theme "rattotem"
 #theme "totemanimal"
+#tag "animal rat"
 #tag "guaranteedprefix rat"
-#description "If the rider dies, the rat will carry on fighting until the end of the battle."
-#basechance 1
 #tag "minprot 6"
-#offsetx 15
-#offsety 22
+#basechance 10
 #enditem
 
+#newitem -- giant rats remain stealthy with zotz riders
+#id "giant_rat_leather_barding_stealthy"
+#gameid -1
+#sprite /graphics/mounts/standard/giantrat.png
+#armor
+#offsetx 15
+#offsety 22
+#description "If the rider dies, the rat will carry on fighting until the end of the battle."
+#define "#mountmnr 'giant_rat_leather_barding_mount'"
+#define "#stealthy '+40'"
+#define "#gcost +5"
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#theme "leather"
+#tag "animal rat"
+#tag "guaranteedprefix rat"
+#tag "minprot 6"
+#basechance 9
+#chanceinc prot 10 *2
+#enditem
 
+#newitem -- giant rats remain stealthy with zotz riders
+#id "giant_rat_light_scale_barding_stealthy"
+#gameid -1
+#sprite /graphics/mounts/standard/giantrat.png
+#armor
+#offsetx 15
+#offsety 22
+#description "If the rider dies, the rat will carry on fighting until the end of the battle."
+#define "#mountmnr 'giant_rat_light_scale_barding_mount'"
+#define "#stealthy '+40'"
+#define "#gcost +5"
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#theme "iron"
+#tag "animal rat"
+#tag "guaranteedprefix rat"
+#tag "minprot 6"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem -- giant rats remain stealthy with zotz riders
+#id "giant_rat_obsidian_barding_stealthy"
+#gameid -1
+#sprite /graphics/mounts/standard/giantrat.png
+#armor
+#offsetx 15
+#offsety 22
+#description "If the rider dies, the rat will carry on fighting until the end of the battle."
+#define "#mountmnr 'giant_rat_obsidian_barding_mount'"
+#define "#stealthy '+40'"
+#define "#gcost +5"
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#theme "heavy"
+#theme "advanced"
+#tag "animal rat"
+#tag "guaranteedprefix rat"
+#tag "minprot 6"
+#basechance 3
+#chanceinc prot 16 *2
+#enditem

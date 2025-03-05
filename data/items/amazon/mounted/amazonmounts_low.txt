@@ -9,16 +9,115 @@
 #needs overlay lizard_nightmare_overlay
 #define "#mountmnr 'lizard_nightmare_mount'"
 #define "#enc 15"
-#define "#gcost +50"
 #tag "guaranteedprefix nightmare"
-#sacredextra 0.75
 #theme "specialmount"
 #tag "animal nightmare"
 #description "The riders animate their undead lizards with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
-#basechance 0.5
-#tag "minprot 10"
+#basechance 1.5
 #chanceinc primaryrace "Amazon human" *5
+#sacredextra 0.75
 #enditem
+
+#newitem
+#id "lizard_nightmare_leather_barding"
+#gameid -1
+#offsetx -5
+#offsety 3
+#sprite /graphics/amazon/mounts/nightmare_lizard.png
+#armor
+#needs overlay lizard_nightmare_overlay
+#define "#mountmnr 'lizard_nightmare_leather_barding_mount'"
+#define "#enc 15"
+#tag "guaranteedprefix nightmare"
+#theme "specialmount"
+#tag "animal nightmare"
+#description "The riders animate their undead lizards with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 1.25
+#chanceinc prot 8 *2
+#chanceinc primaryrace "Amazon human" *5
+#sacredextra 0.75
+#enditem
+
+#newitem
+#id "lizard_nightmare_light_scale_barding"
+#gameid -1
+#offsetx -5
+#offsety 3
+#sprite /graphics/amazon/mounts/nightmare_lizard.png
+#armor
+#needs overlay lizard_nightmare_overlay
+#define "#mountmnr 'lizard_nightmare_light_scale_barding_mount'"
+#define "#enc 15"
+#tag "guaranteedprefix nightmare"
+#theme "specialmount"
+#tag "animal nightmare"
+#description "The riders animate their undead lizards with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 1.15
+#chanceinc prot 10 *2
+#chanceinc primaryrace "Amazon human" *5
+#sacredextra 0.75
+#enditem
+
+#newitem
+#id "lizard_nightmare_mail_barding"
+#gameid -1
+#offsetx -5
+#offsety 3
+#sprite /graphics/amazon/mounts/nightmare_lizard.png
+#armor
+#needs overlay lizard_nightmare_overlay
+#define "#mountmnr 'lizard_nightmare_mail_barding_mount'"
+#define "#enc 15"
+#tag "guaranteedprefix nightmare"
+#theme "specialmount"
+#tag "animal nightmare"
+#description "The riders animate their undead lizards with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 0.75
+#chanceinc prot 13 *2
+#chanceinc primaryrace "Amazon human" *5
+#sacredextra 0.75
+#enditem
+
+#newitem
+#id "lizard_nightmare_cataphract_barding"
+#gameid -1
+#offsetx -5
+#offsety 3
+#sprite /graphics/amazon/mounts/nightmare_lizard.png
+#armor
+#needs overlay lizard_nightmare_overlay
+#define "#mountmnr 'lizard_nightmare_cataphract_barding_mount'"
+#define "#enc 15"
+#tag "guaranteedprefix nightmare"
+#theme "specialmount"
+#tag "animal nightmare"
+#description "The riders animate their undead lizards with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 0.25
+#chanceinc prot 16 *2
+#chanceinc primaryrace "Amazon human" *5
+#sacredextra 0.75
+#enditem
+
+#newitem
+#id "lizard_nightmare_plate_barding"
+#gameid -1
+#offsetx -5
+#offsety 3
+#sprite /graphics/amazon/mounts/nightmare_lizard.png
+#armor
+#needs overlay lizard_nightmare_overlay
+#define "#mountmnr 'lizard_nightmare_plate_barding_mount'"
+#define "#enc 15"
+#tag "guaranteedprefix nightmare"
+#theme "specialmount"
+#tag "animal nightmare"
+#description "The riders animate their undead lizards with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#basechance 0.1
+#chanceinc prot 17 *2
+#chanceinc primaryrace "Amazon human" *5
+#sacredextra 0.75
+#enditem
+
 
 #newitem
 #id "flayed_serpent"
@@ -30,14 +129,117 @@
 #define "#mountmnr 'flayed_serpent_mount'"
 #needs overlay flayed_serpent_overlay
 #define "#enc 15"
-#define "#gcost +60"
 #tag "guaranteedprefix flayed"
-#sacredextra 1
 #theme "specialmount"
 #tag "animal 'flayed serpent'"
 #theme "heavy"
 #description "The riders animate their undead serpents with their own life force; this is exhausting, but the nightmares cause fear in their enemies. Since the serpent's flesh has not yet rotted away, its bite remains venomous, and it is stable enough for a friendly necromancer to compel to fight on briefly after its rider dies."
-#basechance 0.2
-#tag "minprot 10"
+#basechance 0.7
 #chanceinc primaryrace "Amazon human" *5
+#sacredextra 1
+#enditem
+
+#newitem
+#id "flayed_serpent_leather_barding"
+#gameid -1
+#offsetx -4
+#offsety 15
+#sprite /graphics/amazon/mounts/flayed_serpent.png
+#armor
+#define "#mountmnr 'flayed_serpent_leather_barding_mount'"
+#needs overlay flayed_serpent_overlay
+#define "#enc 15"
+#tag "guaranteedprefix flayed"
+#theme "specialmount"
+#tag "animal 'flayed serpent'"
+#theme "heavy"
+#description "The riders animate their undead serpents with their own life force; this is exhausting, but the nightmares cause fear in their enemies. Since the serpent's flesh has not yet rotted away, its bite remains venomous, and it is stable enough for a friendly necromancer to compel to fight on briefly after its rider dies."
+#basechance 0.45
+#chanceinc prot 8 *2
+#chanceinc primaryrace "Amazon human" *5
+#sacredextra 1
+#enditem
+
+#newitem
+#id "flayed_serpent_light_scale_barding"
+#gameid -1
+#offsetx -4
+#offsety 15
+#sprite /graphics/amazon/mounts/flayed_serpent.png
+#armor
+#define "#mountmnr 'flayed_serpent_light_scale_barding_mount'"
+#needs overlay flayed_serpent_overlay
+#define "#enc 15"
+#tag "guaranteedprefix flayed"
+#theme "specialmount"
+#tag "animal 'flayed serpent'"
+#theme "heavy"
+#description "The riders animate their undead serpents with their own life force; this is exhausting, but the nightmares cause fear in their enemies. Since the serpent's flesh has not yet rotted away, its bite remains venomous, and it is stable enough for a friendly necromancer to compel to fight on briefly after its rider dies."
+#basechance 0.35
+#chanceinc prot 10 *2
+#chanceinc primaryrace "Amazon human" *5
+#sacredextra 1
+#enditem
+
+#newitem
+#id "flayed_serpent_mail_barding"
+#gameid -1
+#offsetx -4
+#offsety 15
+#sprite /graphics/amazon/mounts/flayed_serpent.png
+#armor
+#define "#mountmnr 'flayed_serpent_mail_barding_mount'"
+#needs overlay flayed_serpent_overlay
+#define "#enc 15"
+#tag "guaranteedprefix flayed"
+#theme "specialmount"
+#tag "animal 'flayed serpent'"
+#theme "heavy"
+#description "The riders animate their undead serpents with their own life force; this is exhausting, but the nightmares cause fear in their enemies. Since the serpent's flesh has not yet rotted away, its bite remains venomous, and it is stable enough for a friendly necromancer to compel to fight on briefly after its rider dies."
+#basechance 0.25
+#chanceinc prot 14 *2
+#chanceinc primaryrace "Amazon human" *5
+#sacredextra 1
+#enditem
+
+#newitem
+#id "flayed_serpent_cataphract_barding"
+#gameid -1
+#offsetx -4
+#offsety 15
+#sprite /graphics/amazon/mounts/flayed_serpent.png
+#armor
+#define "#mountmnr 'flayed_serpent_cataphract_barding_mount'"
+#needs overlay flayed_serpent_overlay
+#define "#enc 15"
+#tag "guaranteedprefix flayed"
+#theme "specialmount"
+#tag "animal 'flayed serpent'"
+#theme "heavy"
+#description "The riders animate their undead serpents with their own life force; this is exhausting, but the nightmares cause fear in their enemies. Since the serpent's flesh has not yet rotted away, its bite remains venomous, and it is stable enough for a friendly necromancer to compel to fight on briefly after its rider dies."
+#basechance 0.15
+#chanceinc prot 16 *2
+#chanceinc primaryrace "Amazon human" *5
+#sacredextra 1
+#enditem
+
+#newitem
+#id "flayed_serpent_plate_barding"
+#gameid -1
+#offsetx -4
+#offsety 15
+#sprite /graphics/amazon/mounts/flayed_serpent.png
+#armor
+#define "#mountmnr 'flayed_serpent_plate_barding_mount'"
+#needs overlay flayed_serpent_overlay
+#define "#enc 15"
+#tag "guaranteedprefix flayed"
+#theme "specialmount"
+#tag "animal 'flayed serpent'"
+#theme "heavy"
+#description "The riders animate their undead serpents with their own life force; this is exhausting, but the nightmares cause fear in their enemies. Since the serpent's flesh has not yet rotted away, its bite remains venomous, and it is stable enough for a friendly necromancer to compel to fight on briefly after its rider dies."
+#basechance 0.1
+#chanceinc prot 17 *2
+#chanceinc primaryrace "Amazon human" *5
+#sacredextra 1
 #enditem

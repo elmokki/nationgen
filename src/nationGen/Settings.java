@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import nationGen.misc.FileUtil;
+import nationGen.rostergeneration.statupgradepatterns.StatUpgradePatternEnum;
 
 public class Settings {
 
@@ -19,6 +20,7 @@ public class Settings {
     maxrestrictedperspell,
     era,
     sacredpower,
+    statUpgradePattern,
     militiaMultiplier,
     resUpperTreshold,
     resUpperTresholdChange,
@@ -75,14 +77,23 @@ public class Settings {
     exportvalues.add(new SettingEntry(SettingsType.era, 1.0));
     // 2: Late era
     exportvalues.add(new SettingEntry(SettingsType.era, 3.0));
+
     // 4: Powerful sacreds
     exportvalues.add(new SettingEntry(SettingsType.sacredpower, 2.0));
     // 8: Batshit insane sacreds
     exportvalues.add(new SettingEntry(SettingsType.sacredpower, 3.0));
 
+    // 16: Balanced stat upgrade pattern
+    exportvalues.add(new SettingEntry(SettingsType.statUpgradePattern, (double)StatUpgradePatternEnum.BalancedStatUpgradePattern.getNumVal()));
+    // 32: Random stat priority upgrade pattern
+    exportvalues.add(new SettingEntry(SettingsType.statUpgradePattern, (double)StatUpgradePatternEnum.RandomStatUpgradePattern.getNumVal()));
+    // 64: Stat upgrade pattern selected at random for each unit
+    exportvalues.add(new SettingEntry(SettingsType.statUpgradePattern, (double)StatUpgradePatternEnum.AnyStatUpgradePattern.getNumVal()));
+
     // Defaults
     defaultvalues.add(new SettingEntry(SettingsType.era, 2.0));
     defaultvalues.add(new SettingEntry(SettingsType.sacredpower, 1.0));
+    defaultvalues.add(new SettingEntry(SettingsType.statUpgradePattern, (double)StatUpgradePatternEnum.LowerFirstStatUpgradePattern.getNumVal()));
   }
 
   /**
@@ -93,6 +104,9 @@ public class Settings {
    * 2: Late era
    * 4: High sacred power
    * 8: Batshit insane sacred power
+   * 16: Any Stat upgrade pattern
+   * 32: Balanced stat upgrade pattern
+   * 64: Random stat upgrade pattern
    *
    * @return
    */
@@ -147,6 +161,9 @@ public class Settings {
     // POWER (ranges from 1 to 3, integers only)
     settings.put(SettingsType.sacredpower, 1.0);
 
+    // Distribution of extra stat points (ranges from 1 to 4, integers only)
+    settings.put(SettingsType.statUpgradePattern, 1.0);
+
     settings.put(SettingsType.drawPreview, 0.0);
 
     settings.put(SettingsType.era, 2.0);
@@ -189,7 +206,7 @@ public class Settings {
       ) {
         lines.set(lineNum, key + " " + settings.get(key).toString());
         changes = true;
-      }
+      } 
 
       lineNum++;
     }

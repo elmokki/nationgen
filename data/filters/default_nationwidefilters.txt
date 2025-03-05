@@ -426,3 +426,14 @@
 #trooponly
 #filterdesc "minsizeleader desc"
 #end
+
+#new
+#id "cannibal"
+#chance 0.025
+#primarycommand "#corpseeater"
+#command "#corpseeater 2"
+#command "#deadhp 1"
+#command "#maxdeadhp 6"
+#command "#gcost +4"
+#filterdesc "cannibal desc"
+#end

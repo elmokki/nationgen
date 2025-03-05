@@ -303,18 +303,6 @@
 #end
 
 #new
-#id "fireshield2"
-#type "fireshield"
-#basechance 0.0
-#command "#fireshield 2"
-#command "#speciallook 1"
-#chanceinc "command #fireshield +2"
-#chanceinc "magic fire 1"
-#power 1
-#filterdesc "fireshield desc"
-#end
-
-#new
 #id "fireshield4"
 #type "fireshield"
 #basechance 0.0
@@ -340,17 +328,6 @@
 #chanceinc "prot 15 *0"
 #power 3
 #filterdesc "fireshield desc"
-#end
-
-#new
-#id "airshield20"
-#type "airshield"
-#basechance 0.0
-#command "#airshield +20"
-#chanceinc "command #airshield 2"
-#chanceinc "magic air 2"
-#chanceinc "personalcommand #glamour *2"
-#filterdesc "airshield desc"
 #end
 
 #new
@@ -424,9 +401,8 @@
 #chanceinc "command #glamour 10"
 #command "#glamour"
 #command "#stealthy +0"
-#command "#gcost *1.2"
 #command "#gcost +23"
-#price_per_command #hp 1 10
+#price_per_command #hp 0.8 10
 #tag "path air"
 #chanceinc "personalcommand #glamour -20"
 #chanceinc "race van -20"
@@ -571,10 +547,10 @@
 #id "stormpower"
 #type "stormpower"
 #basechance 0.0
-#chanceinc "magic air 1"
+#chanceinc "magic air 0.5"
 #chanceinc "command #shockres 0.3"
 #chanceinc "command #flying 0.2"
-#chanceinc "personalcommand #flying 3"
+#chanceinc "personalcommand #flying 1.5"
 #command "#stormpower +2"
 #command "#gcost +5"
 #tag "path air"
@@ -585,10 +561,10 @@
 #id "stormpower"
 #type "stormpower"
 #basechance 0.0
-#chanceinc "magic air 1"
-#chanceinc "command #shockres 0.3"
-#chanceinc "command #flying 0.2"
-#chanceinc "personalcommand #flying 3"
+#chanceinc "magic air 0.25"
+#chanceinc "command #shockres 0.2"
+#chanceinc "command #flying 0.1"
+#chanceinc "personalcommand #flying 1"
 #command "#stormpower +4"
 #command "#gcost +10"
 #power 2
@@ -788,14 +764,29 @@
 
 #new
 #type "strong defensive"
-#id "awe"
+#id "awe-1"
 #basechance 0.1
 #chanceinc "magic astral 0.1"
 #chanceinc "command #awe +1"
 #command "#awe +1"
 #command "#gcost +15"
-#command "#gcost *1.2"
-#price_per_command #hp 1 10
+#price_per_command #hp 0.5 10
+#themeinc thisarmorprot 18 *0.125
+#themeinc thisarmorprot 15 *0.125
+#themeinc thisarmorprot 12 *0.125
+#power 2
+#filterdesc "awe desc"
+#end
+
+#new
+#type "strong defensive"
+#id "awe-2"
+#basechance 0.05
+#chanceinc "magic astral 0.1"
+#chanceinc "command #awe +2"
+#command "#awe +2"
+#command "#gcost +30"
+#price_per_command #hp 0.75 10
 #themeinc thisarmorprot 18 *0.125
 #themeinc thisarmorprot 15 *0.125
 #themeinc thisarmorprot 12 *0.125
@@ -804,15 +795,28 @@
 #end
 
 #new magefilter
-#id "sun awe"
+#id "sun-awe-1"
 #basechance 0.1
 #chanceinc magic astral OR magic fire 0.1
 #chanceinc magic astral fire 0.1
-#chanceinc "command #sunawe +1"
 #command "#sunawe +1"
-#command "#gcost +15"
-#command "#gcost *1.2"
-#price_per_command #hp 1 10
+#command "#gcost +10"
+#price_per_command #hp 0.5 10
+#themeinc thisarmorprot 18 *0.125
+#themeinc thisarmorprot 15 *0.125
+#themeinc thisarmorprot 12 *0.125
+#power 2
+#filterdesc "sun awe desc"
+#end
+
+#new magefilter
+#id "sun-awe-2"
+#basechance 0.05
+#chanceinc magic astral OR magic fire 0.1
+#chanceinc magic astral fire 0.1
+#command "#sunawe +2"
+#command "#gcost +20"
+#price_per_command #hp 0.75 10
 #themeinc thisarmorprot 18 *0.125
 #themeinc thisarmorprot 15 *0.125
 #themeinc thisarmorprot 12 *0.125
@@ -1095,7 +1099,7 @@
 #primarycommand "#ethereal"
 #command "#ethereal"
 #command "#gcost +25"
-#price_per_command #hp 1 10
+#price_per_command #hp 0.8 10
 #basechance 0.05
 #chanceinc "magic astral 0.95"
 #chanceinc "pose mounted *0.25"
@@ -1107,13 +1111,205 @@
 #filterdesc "ethereal desc"
 #end
 
-
 #new
 #id "cultist"
-#chance 0.1
+#basechance 0.1
 #chanceinc "magic blood astral 1"
 #primarycommand "#horrormark"
-#command "#horrormark"
+#command "#horrormark 2"
 #command "#startaff +20"
 #filterdesc "cultist desc"
+#power -1
+#end
+
+#new
+#id "cultist-stealthy"
+#basechance 0.1
+#chanceinc "magic blood astral 1"
+#primarycommand "#horrormark"
+#primarycommand "#stealthy"
+#command "#horrormark 2"
+#command "#startaff +20"
+#command "#stealthy +0"
+#filterdesc "cultist desc"
+#power 2
+#end
+
+#new
+#name "larger"
+#basechance 0.15
+#chanceinc "magic nature 0.5"
+#chanceinc "magic earth 0.25"
+#chanceinc "personalcommand size above 9 *0"
+#chanceinc "pose ranged *0.25"
+#tag "nopose mounted"
+#tag "nopose chariot"
+#command "#size +1"
+#command "#hp *1.3"
+#command "#str +3"
+#command "#def -1"
+#command "#mapmove +2"
+#command "#drawsize 30"
+#command "#gcost *1.25"
+#power 3
+#filterdesc "larger desc"
+#end
+
+#new
+#name "magicbeing"
+#basechance 0.15
+#chanceinc magic nature 0.25
+#chanceinc magic astral 0.25
+#chanceinc "personalcommand #illusion 0.25"
+#primarycommand "#magicbeing"
+#command "#magicbeing"
+#command "#mr +1"
+#command "#att +1"
+#command "#def +1"
+#price_per_command #size 1 0
+#filterdesc "magicbeing desc"
+#end
+
+#new
+#name "jinnblood"
+#basechance 0.15
+#chanceinc magic glamour 0.25
+#chanceinc magic fire 0.25
+#chanceinc magic air 0.25
+#chanceinc "personalcommand #illusion 0.25"
+#chanceinc "personalcommand #undead *0"
+#primarycommand "#magicbeing"
+#primarycommand "#spiritsight"
+#command "#magicbeing"
+#command "#mr +1"
+#command "#fireres +5"
+#command "#coldres -5"
+#command "#ironvul 3"
+#command "#magicpower +1"
+#command "#spiritsight"
+#command "#gcost *1.1"
+#command "#gcost +5"
+#filterdesc "jinnblood desc"
+#end
+
+#new
+#name "demonblood"
+#basechance 0.15
+#chanceinc magic blood 0.5
+#chanceinc magic fire 0.25
+#chanceinc magic astral 0.25
+#chanceinc "personalcommand #fireres 0.025"
+#chanceinc "personalcommand #undead *0"
+#primarycommand "#demon"
+#command "#demon"
+#command "#mr +1"
+#command "#str +2"
+#command "#hp +1"
+#command "#gcost +4"
+#price_per_command #size 1 3
+#filterdesc "demonblood desc"
+#end
+
+#new
+#name "thickskin"
+#basechance 0.25
+#chanceinc magic earth 0.5
+#chanceinc magic nature 0.5
+#chanceinc pose ranged *0.25
+#chanceinc "personalcommand #prot above 13 0"
+#command "#prot +2"
+#command "#gcost +2"
+#price_per_command #prot 2 10
+#filterdesc "thickskin desc"
+#end
+
+#new
+#name "golem"
+#basechance 0.15
+#chanceinc magic earth 0.25
+#chanceinc magic astral 0.25
+#chanceinc magic earth astral 0.25
+#chanceinc pose ranged *0.25
+#chanceinc "personalcommand #prot above 13 0"
+#primarycommand "#stonebeing"
+#command "#stonebeing"
+#command "#ap -4"
+#command "#prot +4"
+#command "#gcost +2"
+#price_per_command #prot 2 10
+#filterdesc "golem desc"
+#power 3
+#end
+
+#new
+#name "blind"
+#basechance 0.25
+#primarycommand "#blind"
+#command "#blind"
+#command "#spiritsight"
+#command "#att +1"
+#command "#def +1"
+#command "#gcost +5"
+#filterdesc "blind desc"
+#end
+
+#new
+#name "falconer"
+#basechance 0.15
+#chanceinc magic air 0.5
+#chanceinc personalcommand mountainsurvival 0.25
+#chanceinc personalcommand forestsurvival 0.25
+#chanceinc personalcommand wastesurvival 0.25
+#chanceinc personalcommand stealthy 0.25
+#chanceinc personalcommand patrolbonus 0.25
+#primarycommand "#batstartsum1"
+#command "#gcost +8"
+#command "#batstartsum1 3371"
+#filterdesc "falconer desc"
+#power 3
+#end
+
+#new
+#name "serpentblood"
+#basechance 0.1
+#chanceinc magic nature 0.25
+#chanceinc race Ophidian 0
+#chanceinc race lizard 0
+#chanceinc race naga 0
+#chanceinc race sobek 0
+#chanceinc "personalcommand #poisonres 0.25"
+#chanceinc "nationcommand #idealcold above 0 -2"
+#chanceinc "nationcommand #idealheat above 0 0.0125"
+#chanceinc "personalcommand #size above 3 -0.1"
+#chanceinc pose ranged *0.1
+#command "#coldblood"
+#command "#prot +2"
+#command "#swimming"
+#command "#weapon 239"
+#command "#poisonres 10"
+#command "#gcost +8"
+#price_per_command #size 1 3
+#power 3
+#filterdesc "serpentblood desc"
+#end
+
+#new
+#name "dragonblood"
+#basechance 0.025
+#chanceinc magic fire 0.1
+#chanceinc race Ophidian 0.1
+#chanceinc race abysian 0.1
+#chanceinc race lizard 0.1
+#chanceinc "personalcommand #fireres 0.1"
+#chanceinc "nationcommand #idealheat above 1 0.1"
+#chanceinc pose ranged *0.1
+#command "#weapon 676"
+#command "#fireres +10"
+#command "#hp +3"
+#command "#str +1"
+#command "#prot +2"
+#command "#gcost *1.25"
+#command "#rpcost +20"
+#power 4
+#filterdesc "dragonblood desc"
 #end

@@ -1,4 +1,85 @@
 
+0.12.0 (4th March 2025)
+----------------------------------------------------------
+Content
+-----------------------------------------------------------
+-	Added Glamour Communion spells
+-	Added barded variations of most mounts for most races (only some sprites have been updated, however).
+	Some of these are aimed at giving certain nations an edge; i.e. Merrows can get higher quality fae barding.
+
+-	Added some new custom mounts and/or bardings for certain races (black unicorns!).
+-	Fixed sacredpower sliders to actually affect how much sacredpower elites can spend
+-	Reworked the algorithm that spends sacredpower currency to be more consistent and documented:
+
+		The number of filters a sacred can roll into is not capped by a number of filters,
+		but rather a number of power, allowing for more possible outcomes (i.e. units with more filters,
+		but lower power ones).
+
+		Strength increases can now also be purchased with sacredpower (like hp, def, morale, enc before).
+
+- 	Implemented a new setting slider, Stat Upgrade Distribution, which changes the algorithm used to spend
+	sacredpower into buying more stat points:
+
+		"Lower First" is how it used to be done; the spending prioritizes the cheapest/lowest stat increases.
+		"Random Stats" picks a stat completely at random to upgrade, even if it's more expensive than others.
+		This means that units have a chance to end up much more specialized than others.
+		"Balanced" is a combination of the above, where it will give a better chance to upgrade cheaper stats,
+		but the weighing is not a guarantee.
+		"Random setting" will pick one of the above three algorithms at random every time it spends a unit's sacredpower.
+
+-	Some new filters, some courtesy of geepope
+-	Balance tweaks and content additions to some specific nations:
+
+		Agarthan Cavernwights got a price increase and MR decrease.
+
+		Dustwalkers got their upkeep doubled to be more akin to Nazca; powerful undead but hard to maintain.
+
+		Ghoul nations got an MR increase, 5% regen, corpse eater, and cost increases to account for this. Should make them much more interesting.
+
+		Crabmen's natural protection lowered for non-elites, also got chances to generate with lighter armor.
+
+		Merrow cavalry should *always* generate with a charge-bonus, one-hit lance on top of other weapons.
+
+		Foulspawn got multiple flavours of "corruptors". These are special commanders that can spawn crossbred units in different ways.
+		For example, some are temple trainers, some are domsummoners, some are corpse reanimators, etc. They also got higher chances
+		to include a special monster in their recruitment roster.
+
+		Small bakemono got a cavalry template based on vaetti cavalry, and better chances to generate special commanders.
+
+
+-	Non-chariot cavalry got their weapon lists reworked to not include 2-handed weapons, since these incur a -2 attack penalty
+	in Dominions 6 which makes them mostly unuseable. Most of the removed weapons got replaced with custom cavalry versions.
+	Chariots still need to have these replaced, since they also get the penalty.
+
+-	Added Skilled Rider and Mobile Archer tags. The former following vanilla guidelines. The latter was given to amazons,
+	vanaras, vaettis.
+
+-	Added new name and description variations. Most of this content was AI-generated and curated.
+
+-	Reworked the cap-only/rec-everywhere calculations completely. Some of this started through geepope's own survivability
+	calculations that aimed to give some sacreds a better edge. Now these units have a survivability score from 0 to 1 assigned,
+	as well as a unit rating calculated based on how many extra filters they rolled into, and both of these numbers are used to
+	determine what chance the unit has to be cap-only. Both their survivability rating and the cap-only chance is now written into
+	the mod file under each unit's header, for transparency.
+
+-	Temporarily removed multiple rider monsters such as the Pygmy Mammoths. These need a broader rework of the codebase to properly
+	generate them and support them after all the changes that Dominions 6 introduced to mounted units.
+
+-	Hoburg vinemen are now functional, courtesy of oldmidgetwillow.
+
+- 	Stat fixes
+
+Code
+----------------------------------------------------------
+-	Reformatted data/mounts/mounts.txt file to be consistent.
+-	Multiple template fixes (fire/poisonspewers on colossus clockwork, missing tags, etc.).
+-	Fixed Foulspawn cavalry not accounting for mount costs.
+-	Bakemono-sho now have names.
+-	Fixed Ettin helmets (they only need 1 helmet equipped with how Dominions works, but both sprites are rendered).
+	The #armor tag has a hardcoded limit of 3, so the Ettins with two #armor helmets were losing their shield as a result.
+-	Fixed spells getting duplicated when assigned to nations (https://github.com/elmokki/nationgen/issues/1221)
+
+
 0.11.0 (31st October 2024)
 ----------------------------------------------------------
 Content

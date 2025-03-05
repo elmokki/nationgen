@@ -42,6 +42,7 @@ public class Unit {
   public Name name = new Name();
   public Race race;
   public Pose pose;
+  public Mount mountItem;
   public final SlotMap slotmap = new SlotMap();
 
   public static class SlotMap {
@@ -94,6 +95,8 @@ public class Unit {
   public List<Command> commands = new ArrayList<>();
   public NationGen nationGen;
   public boolean caponly = false;
+  public double capOnlyChance;
+  public double survivability;
   public Tags tags = new Tags();
   public List<Filter> appliedFilters = new ArrayList<>();
   public boolean polished = false;
@@ -134,6 +137,7 @@ public class Unit {
     unit.tags.addAll(tags);
     unit.commands.addAll(commands);
     unit.appliedFilters.addAll(appliedFilters);
+    unit.mountItem = mountItem;
     return unit;
   }
 
@@ -438,9 +442,8 @@ public class Unit {
       String target = d.target;
       String slot = d.slot;
 
-      if (
-        !d.type
-      ) { // Handle needs and setslot
+      if (!d.type) {
+        // Handle needs and setslot
         String command = lagged ? "#forceslot" : "#needs";
 
         if (pose.getItems(slot) == null) {
@@ -462,6 +465,7 @@ public class Unit {
             ")"
           );
         }
+
         Item item = pose.getItems(slot).getItemWithName(target, slot);
 
         if (item == null) {
@@ -484,9 +488,7 @@ public class Unit {
           );
         }
         setSlot(slot, item);
-      } else if (
-        chandler != null
-      ) { // Handle needstype and setslottype
+      } else if (chandler != null) { // Handle needstype and setslottype
         String command = lagged ? "#forceslottype" : "#needstype";
 
         if (pose.getItems(slot) == null) {
@@ -551,11 +553,42 @@ public class Unit {
     if (oldItem != null) {
       handleRemoveThemeinc(oldItem);
       handleRemoveDependency(oldItem);
+
+      // Remove cached mountItem if the item containing the mount is unequipped
+      // This assumes that any given Unit will only ever had a single mount
+      if (oldItem.containsMount()) {
+        this.mountItem = null;
+      }
     }
 
     if (newItem != null) {
       handleDependency(slotName, false);
       handleAddThemeinc(newItem);
+
+      if (newItem.containsMount()) {
+        resolveMountItem(newItem);
+      }
+    }
+  }
+
+  private void resolveMountItem(Item mountItem) {
+    if (mountItem != null) {
+      Optional<Command> possibleMountmnr = mountItem.commands
+        .stream()
+        .filter(c -> c.command.equals("#mountmnr"))
+        .findAny();
+
+      if (possibleMountmnr.isPresent()) {
+        Command mountmnr = possibleMountmnr.get();
+        Optional<Mount> mount = nationGen.getAssets().mounts
+          .stream()
+          .filter(s -> s.name.equals(mountmnr.args.get(0).get()))
+          .findFirst();
+
+        if (mount.isPresent()) {
+          this.mountItem = mount.get();
+        }
+      }
     }
   }
 
@@ -576,7 +609,9 @@ public class Unit {
     int stats = this.getCopyStats();
     if (stats > -1) {
       cost = this.nationGen.units.GetInteger("" + stats, "basecost");
-      if (cost >= 10000) cost -= 10000;
+      if (cost >= 10000) {
+        cost -= 10000;
+      }
 
       return cost;
     }
@@ -586,6 +621,29 @@ public class Unit {
     } else {
       return cost;
     }
+  }
+
+  public int getMountGoldCost() {
+    if (this.mountItem == null) {
+      return 0;
+    }
+
+    Optional<Command> gcost = this.mountItem.commands
+      .stream()
+      .filter(c -> c.command.equals("#gcost"))
+      .findFirst();
+
+    if (!gcost.isPresent()) {
+      return 0;
+    }
+
+    if (gcost.get().args.size() == 0) {
+      throw new IllegalArgumentException(
+        "Mount item " + mountItem.name + "'s #gcost does not have an argument!"
+      );
+    }
+
+    return Integer.parseInt(gcost.get().args.get(0).get());
   }
 
   public String getName() {
@@ -933,7 +991,7 @@ public class Unit {
               Args.of(new Arg(92)),
               "Fist given to units that could otherwise only kick."
             )
-          );
+        );
       }
     }
 
@@ -954,8 +1012,11 @@ public class Unit {
 
         int total = (int) Math.round((double) value * cost);
 
-        if (total > 0) commands.add(Command.args("#gcost", "+" + total));
-        else commands.add(Command.args("#gcost", "" + total));
+        if (total > 0) {
+          commands.add(Command.args("#gcost", "+" + total));
+        } else {
+          commands.add(Command.args("#gcost", "" + total));
+        }
       }
     }
 
@@ -1043,6 +1104,12 @@ public class Unit {
           nu.polish();
           res += nu.getResCost(true);
           gold += nu.getGoldCost();
+
+          // Add gold of this unit's equipped mount. This is normally done automatically by
+          // Dominions with the defined #gcost of the mount monster, but this is a montag
+          // unit that transforms into different units when recruited, and the base unit
+          // will not have a mount nor include any mount gold costs, so they need to get added here.
+          gold += nu.getMountGoldCost();
           n++;
         }
       }
@@ -1340,6 +1407,36 @@ public class Unit {
     return (int) prot;
   }
 
+  public int getTotalDef() {
+    int eqdef = 0;
+    int natural = 0;
+
+    for (Command c : this.getCommands()) {
+      if (c.command.equals("#def")) {
+        natural += c.args.get(0).getInt();
+      }
+      if (c.command.equals("#mounted")) eqdef += 3;
+    }
+
+    Dom3DB armordb = nationGen.armordb;
+    Dom3DB weapondb = nationGen.weapondb;
+
+    for (String slot : slotmap.getSlots()) {
+      if (getSlot(slot) != null && !getSlot(slot).id.equals("-1")) {
+        if (getSlot(slot).armor) {
+          eqdef += armordb.GetInteger(getSlot(slot).id, "def", 0);
+        }
+        else {
+          eqdef += weapondb.GetInteger(getSlot(slot).id, "def", 0);
+        }
+      }
+    }
+
+    double def = eqdef + natural;
+
+    return (int) def;
+  }
+
   public List<String> writeLines(String spritedir) {
     List<String> lines = new ArrayList<>();
 
@@ -1398,11 +1495,21 @@ public class Unit {
         .collect(Collectors.joining(", "))
     );
 
-    lines.add("#newmonster " + id);
-
-    if (!this.name.toString(this).equals("UNNAMED")) {
-      lines.add("#name \"" + name.toString(this) + "\"");
+    if (this.survivability != 0.0) {
+      lines.add("--- Unit has a " +
+        String.format("%.2f", this.survivability) +
+        " survivability rating."
+      );
     }
+
+    if (this.capOnlyChance != 0.0) {
+      lines.add("--- Unit had a " +
+        String.format("%.2f", this.capOnlyChance * 100) +
+        "% chance of being cap-only."
+      );
+    }
+
+    lines.add("#newmonster " + id);
 
     if (this.getSlot("basesprite") != null) {
       lines.add("#spr1 \"" + (spritedir + "/unit_" + this.id + "_a.tga\""));
@@ -1418,6 +1525,10 @@ public class Unit {
       .items()
       .filter(i -> Integer.parseInt(i.id) > 0)
       .forEach(i -> lines.add(writeSlotLine(i)));
+
+    if (!this.name.toString(this).equals("UNNAMED")) {
+      lines.add("#name \"" + name.toString(this) + "\"");
+    }
 
     lines.add("#end");
     lines.add("");

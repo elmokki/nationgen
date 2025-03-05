@@ -1,4 +1,52 @@
---- Base offsets are applied to everything except base and overlay
+------ Base offsets are applied to everything except base and overlay
+
+---- Animals
+
+#newitem
+#id "black_dog"
+#gameid -1
+#sprite /graphics/hoburg/mounts/blackdog.png
+#offsety -11
+#offsetx -3
+#armor
+#define "#mountmnr 'black_dog_mount'"
+#eliteversion barghest
+#theme "fae"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#theme "oriental"
+#theme "light"
+#tag "animal dog"
+#tag "minprot 5"
+#tag "maxprot 14"
+#basechance 3
+#enditem
+
+#newitem
+#id "black_dog_leather_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/blackdog.png
+#offsety -11
+#offsetx -3
+#armor
+#define "#mountmnr 'black_dog_leather_barding_mount'"
+#eliteversion barghest
+#theme "fae"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#theme "oriental"
+#theme "light"
+#tag "animal dog"
+#tag "minprot 5"
+#tag "maxprot 14"
+#basechance 2
+#enditem
 
 
 #newitem
@@ -6,18 +54,13 @@
 #gameid -1
 #sprite /graphics/hoburg/mounts/wolf.png
 #armor
-#define "#mountmnr 'wolfmount'"
-#define "#gcost +17"
-#define "#rcost +4"
-#tag "animal wolf"
+#define "#mountmnr 'wolf_mount'"
+#offsety -8
+#offsetx -2
 #theme "primitive"
 #theme "wolf"
 #theme "wolftotem"
 #theme "totemanimal"
-#tag "maxprot 14"
-#tag "guaranteedprefix wolf"
-#offsety -8
-#offsetx -2
 #theme "austral"
 #theme "boreal"
 #theme "central"
@@ -26,28 +69,54 @@
 #theme "oriental"
 #theme "abysian"
 #theme "civilized"
-#light
+#theme "light"
+#tag "animal wolf"
+#tag "guaranteedprefix wolf"
+#tag "maxprot 14"
+#basechance 6
 #enditem
 
 #newitem
-#id "hawk"
+#id "wolf_leather_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/wolf.png
+#armor
+#define "#mountmnr 'wolf_leather_barding_mount'"
+#offsety -8
+#offsetx -2
+#theme "primitive"
+#theme "wolf"
+#theme "wolftotem"
+#theme "totemanimal"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#theme "oriental"
+#theme "abysian"
+#theme "civilized"
+#theme "light"
+#tag "animal wolf"
+#tag "guaranteedprefix wolf"
+#tag "maxprot 14"
+#basechance 4
+#enditem
+
+
+#newitem
+#id "great_hawk"
 #gameid -1
 #sprite /graphics/hoburg/mounts/hawk.png
 #armor
 #needs overlay hawkoverlay
-#define "#mountmnr 'hawk'"
-#define "#gcost +27"
-#define "#rcost +4"
-#tag "animal hawk"
-#tag "maxprot 16"
-#tag "guaranteedprefix hawk"
+#define "#mountmnr 'great_hawk_mount'"
+#offsety 30
+#offsetx 26
 #theme "primitive"
 #theme "hawk"
 #theme "hawktotem"
 #theme "totemanimal"
-#basechance 0.5
-#offsety 30
-#offsetx 26
 #theme "austral"
 #theme "boreal"
 #theme "central"
@@ -55,77 +124,43 @@
 #theme "occidental"
 #theme "oriental"
 #theme "civilized"
-#light
+#theme "light"
+#tag "animal hawk"
+#tag "guaranteedprefix hawk"
+#tag "maxprot 16"
+#basechance 3
 #enditem
 
 #newitem
-#id "pigasus"
+#id "great_hawk_leather_barding"
 #gameid -1
-#sprite /graphics/hoburg/mounts/pigasus.png
+#sprite /graphics/hoburg/mounts/hawk.png
 #armor
-#needs overlay pigasus_overlay
-#define "#mountmnr 'pigasus'"
-#define "#gcost +30"
-#define "#rcost +4"
-#tag "animal pigasus"
-#tag "guaranteedprefix pigasus"
-#theme "boar"
-#tag "maxprot 14"
-#basechance 0.33
-#offsety -12
-#offsetx 1
+#needs overlay hawkoverlay
+#define "#mountmnr 'great_hawk_leather_barding_mount'"
+#offsety 30
+#offsetx 26
+#theme "primitive"
+#theme "hawk"
+#theme "hawktotem"
+#theme "totemanimal"
 #theme "austral"
+#theme "boreal"
 #theme "central"
 #theme "imperial"
-#theme "civilized"
-#light
-#enditem
-
-#newitem
-#id "ozelotl"
-#gameid -1
-#sprite /graphics/hoburg/mounts/ozelotl.png
-#armor
-#offsety 32
-#offsetx 30
-#needs overlay ozelotl_overlay
-#define "#mountmnr 'ozelotl'"
-#define "#gcost +45"
-#define "#rcost +4"
-#tag "animal ozelotl"
-#description "The ozelotl will fight until the end of the battle if the rider perishes"
-#tag "maxprot 14"
-#tag "guaranteedprefix ozelotl"
-#basechance 0.33
-#theme "primitive"
 #theme "occidental"
-#theme "jaguar"
-#theme "jaguartotem"
-#theme "totemanimal"
-#enditem
-
-#newitem
-#id "hellspawn"
-#gameid -1
-#sprite /graphics/hoburg/mounts/hellspawn.png
-#armor
-#offsety 31
-#offsetx 31
-#needs overlay hellspawn_overlay
-#define "#mountmnr 'hellspawn'"
-#define "#gcost +60"
-#define "#rcost +4"
-#define "#enc 15"
-#tag "animal hellspawn"
-#description "The hellspawn will fight until the end of the battle if the rider perishes"
+#theme "oriental"
+#theme "civilized"
+#theme "light"
+#tag "animal hawk"
+#tag "guaranteedprefix hawk"
 #tag "maxprot 16"
-#tag "guaranteedprefix hellspawn"
-#basechance 0.33
-#theme "abysian"
+#basechance 2
 #enditem
 
+
 #newitem
-#id "giant bat"
+#id "beast_bat_nerfed"
 #gameid -1
 #sprite /graphics/hoburg/mounts/giant_bat.png
 #armor
@@ -133,14 +168,8 @@
 #offsetx 30
 #needs overlay giant_bat_overlay
 #needs legs pants2
-#define "#mountmnr 'beastbat_nerfed'"
-#define "#gcost +35"
-#define "#rcost +4"
-#tag "animal bat"
-#tag "maxprot 16"
-#tag "guaranteedprefix giant bat"
+#define "#mountmnr 'beast_bat_nerfed_mount'"
 #description "The giant bat fight until the end of the battle if the rider perishes"
-#basechance 0.5
 #theme "primitive"
 #theme "occidental"
 #theme "bat"
@@ -154,19 +183,49 @@
 #theme "oriental"
 #theme "abysian"
 #theme "civilized"
+#tag "animal bat"
+#tag "guaranteedprefix giant bat"
+#tag "maxprot 16"
+#basechance 3
 #enditem
+
+#newitem
+#id "beast_bat_nerfed_leather_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/giant_bat.png
+#armor
+#offsety 34
+#offsetx 30
+#needs overlay giant_bat_overlay
+#needs legs pants2
+#define "#mountmnr 'beast_bat_nerfed_leather_barding_mount'"
+#description "The giant bat fight until the end of the battle if the rider perishes"
+#theme "primitive"
+#theme "occidental"
+#theme "bat"
+#theme "battotem"
+#theme "totemanimal"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#theme "oriental"
+#theme "abysian"
+#theme "civilized"
+#tag "animal bat"
+#tag "guaranteedprefix giant bat"
+#tag "maxprot 16"
+#basechance 2
+#enditem
+
 
 #newitem
 #id "deer"
 #gameid -1
 #sprite /graphics/hoburg/mounts/deer.png
 #armor
-#define "#mountmnr 'deer'"
-#define "#gcost +15"
-#define "#rcost +4"
-#tag "animal deer"
-#tag "maxprot 14"
-#tag "guaranteedprefix deer"
+#define "#mountmnr 'deer_mount'"
 #offsety -14
 #offsetx 0
 #theme "primitive"
@@ -180,122 +239,50 @@
 #theme "occidental"
 #theme "oriental"
 #theme "civilized"
-#light
-#enditem
-
-#newitem
-#id "unicorn"
-#gameid -1
-#sprite /graphics/mounts/standard/unicorn.png
-#offsety -22
-#offsetx 6
-#armor
-#define "#mountmnr 'unicorn'"
-#define "#gcost +30"
-#tag "minprot 8"
-#tag "animal unicorn"
-#tag "guaranteedprefix unicorn"
-#theme "fae"
-#theme "elite"
-#basechance 0
-#theme "boreal"
-#theme "central"
-#theme "imperial"
-#theme "oriental"
-#enditem
-
-#newitem
-#id "cu sidhe"
-#gameid -1
-#sprite /graphics/sidhe/mounts/cusidhe.png
-#offsety -22
-#offsetx -3
-#armor
-#define "#mountmnr 'cusidhemount'"
-#define "#gcost +20"
-#tag "animal dog"
-#tag "minprot 7"
-#theme "fae"
-#basechance 0
-#theme "austral"
-#theme "boreal"
-#theme "central"
-#theme "imperial"
-#theme "occidental"
-#theme "oriental"
-#enditem
-
-#newitem
-#id "barghest"
-#gameid -1
-#sprite /graphics/hoburg/mounts/barghest.png
-#offsety -22
-#offsetx -3
-#armor
-#define "#mountmnr 'barghestmount'"
-#define "#gcost +20"
-#tag "animal dog"
-#tag "guaranteedprefix barghest"
-#tag "minprot 7"
-#theme "fae"
-#theme "elite"
-#basechance 0
-#theme "austral"
-#theme "boreal"
-#theme "central"
-#theme "imperial"
-#theme "occidental"
-#theme "oriental"
-#enditem
-
-#newitem
-#id "black dog"
-#gameid -1
-#sprite /graphics/hoburg/mounts/blackdog.png
-#offsety -11
-#offsetx -3
-#armor
-#define "#mountmnr 'blackdogmount'"
-#define "#gcost +15"
-#tag "animal dog"
-#tag "minprot 5"
+#theme "light"
+#tag "animal deer"
+#tag "guaranteedprefix deer"
 #tag "maxprot 14"
-#theme "fae"
-#eliteversion barghest
-#basechance 0
+#basechance 6
+#enditem
+
+#newitem
+#id "deer_leather_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/deer.png
+#armor
+#define "#mountmnr 'deer_leather_barding_mount'"
+#offsety -14
+#offsetx 0
+#theme "primitive"
+#theme "deer"
+#theme "deertotem"
+#theme "totemanimal"
 #theme "austral"
 #theme "boreal"
 #theme "central"
 #theme "imperial"
 #theme "occidental"
 #theme "oriental"
-#light
+#theme "civilized"
+#theme "light"
+#tag "animal deer"
+#tag "guaranteedprefix deer"
+#tag "maxprot 14"
+#basechance 4
 #enditem
 
-#newitem
-#id "demonbred hog"
-#gameid -1
-#sprite /graphics/hoburg/mounts/demonbred_hog.png
-#armor
-#define "#mountmnr 'demonbred_hog'"
-#define "#rcost +6"
-#tag "animal boar"
-#tag "guaranteedprefix hog"
-#theme "boar"
-#offsety -12
-#offsetx 1
-#theme "abysian"
-#enditem
 
 #newitem
-#id "red ant"
+#id "red_ant"
 #gameid -1
 #sprite /graphics/mounts/standard/redant.png
 #needs overlay redant_overlay
 #armor
-#define "#mountmnr 'redantmount'"
-#define "#gcost +8"
-#tag "animal ant"
+#define "#mountmnr 'red_ant_mount'"
+#description "If the rider dies, the ant will carry on fighting until the end of the battle."
+#offsetx 1
+#offsety -4
 #theme "ant"
 #theme "anttotem"
 #theme "totemanimal"
@@ -304,24 +291,49 @@
 #theme "occidental"
 #theme "abysian"
 #theme "civilized"
-#tag "maxprot 12"
+#theme "light"
+#tag "animal ant"
 #tag "guaranteedprefix ant"
+#tag "maxprot 12"
+#basechance 6
+#enditem
+
+#newitem
+#id "red_ant_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/redant.png
+#needs overlay redant_overlay
+#armor
+#define "#mountmnr 'red_ant_leather_barding_mount'"
 #description "If the rider dies, the ant will carry on fighting until the end of the battle."
 #offsetx 1
 #offsety -4
-#light
+#theme "ant"
+#theme "anttotem"
+#theme "totemanimal"
+#theme "primitive"
+#theme "austral"
+#theme "occidental"
+#theme "abysian"
+#theme "civilized"
+#theme "light"
+#tag "animal ant"
+#tag "guaranteedprefix ant"
+#tag "maxprot 12"
+#basechance 4
 #enditem
+
 
 #newitem
 #id "swan"
 #gameid -1
-#basechance 0
 #sprite /graphics/mounts/standard/swan.png
 #needs overlay swan_overlay
 #armor
-#define "#mountmnr 'swanmount'"
-#define "#gcost +10"
-#tag "animal swan"
+#define "#mountmnr 'swan_mount'"
+#description "If the rider dies, the swan will carry on fighting until the end of the battle."
+#offsetx 0
+#offsety -4
 #theme "swan"
 #theme "swantotem"
 #theme "birdtotem"
@@ -334,46 +346,97 @@
 #theme "occidental"
 #theme "oriental"
 #theme "civilized"
-#tag "maxprot 8"
-#tag "guaranteedprefix swan"
-#description "If the rider dies, the swan will carry on fighting until the end of the battle."
+#theme "light"
 #tag "animal swan"
-#offsetx 0
-#offsety -4
-#light
+#tag "guaranteedprefix swan"
+#tag "maxprot 8"
+#basechance 6
 #enditem
 
 #newitem
-#id "black swan"
+#id "swan_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/swan.png
+#needs overlay swan_overlay
+#armor
+#define "#mountmnr 'swan_leather_barding_mount'"
+#description "If the rider dies, the swan will carry on fighting until the end of the battle."
+#offsetx 0
+#offsety -4
+#theme "swan"
+#theme "swantotem"
+#theme "birdtotem"
+#theme "totemanimal"
+#theme "fae"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#theme "oriental"
+#theme "civilized"
+#theme "light"
+#tag "animal swan"
+#tag "guaranteedprefix swan"
+#tag "maxprot 12"
+#basechance 4
+#enditem
+
+
+#newitem
+#id "black_swan"
 #gameid -1
 #sprite /graphics/mounts/standard/swan_black.png
 #needs overlay swan_black_overlay
 #armor
-#define "#mountmnr 'swanmount_black'"
-#define "#gcost +7"
-#tag "animal swan"
+#define "#mountmnr 'black_swan_mount'"
+#offsetx 0
+#offsety -4
 #theme "swan"
 #theme "swantotem"
 #theme "birdtotem"
 #theme "totemanimal"
 #theme "abysian"
-#tag "maxprot 8"
+#theme "light"
+#tag "animal swan"
 #tag "guaranteedprefix swan"
 #tag "animal swan"
-#basechance 1
-#offsetx 0
-#offsety -4
-#light
+#tag "maxprot 8"
+#basechance 6
 #enditem
 
 #newitem
-#id "giant rat"
+#id "black_swan_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/swan_black.png
+#needs overlay swan_black_overlay
+#armor
+#define "#mountmnr 'black_swan_leather_barding_mount'"
+#offsetx 0
+#offsety -4
+#theme "swan"
+#theme "swantotem"
+#theme "birdtotem"
+#theme "totemanimal"
+#theme "abysian"
+#theme "light"
+#tag "animal swan"
+#tag "guaranteedprefix swan"
+#tag "animal swan"
+#tag "maxprot 12"
+#basechance 4
+#enditem
+
+
+#newitem
+#id "giant_rat"
 #gameid -1
 #sprite /graphics/mounts/standard/giantrat.png
 #armor
-#define "#mountmnr 'ratmount'"
-#define "#gcost +15"
-#tag "animal rat"
+#define "#mountmnr 'giant_rat_mount'"
+#description "If the rider dies, the rat will carry on fighting until the end of the battle."
+#offsetx 4
+#offsety -13
 #theme "rat"
 #theme "rattotem"
 #theme "totemanimal"
@@ -384,28 +447,329 @@
 #theme "occidental"
 #theme "oriental"
 #theme "abysian"
+#theme "light"
+#tag "animal rat"
 #tag "guaranteedprefix rat"
-#description "If the rider dies, the rat will carry on fighting until the end of the battle."
-#basechance 1
-#offsetx 4
-#offsety -13
-#light
+#basechance 6
 #enditem
 
 #newitem
-#id "dwarf elephant"
+#id "giant_rat_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/giantrat.png
+#armor
+#define "#mountmnr 'giant_rat_leather_barding_mount'"
+#description "If the rider dies, the rat will carry on fighting until the end of the battle."
+#offsetx 4
+#offsety -13
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#theme "oriental"
+#theme "abysian"
+#theme "light"
+#tag "animal rat"
+#tag "guaranteedprefix rat"
+#basechance 4
+#enditem
+
+
+#newitem
+#id "dwarf_elephant"
 #gameid -1
 #sprite /graphics/mounts/standard/elephant_dwarf.png
 #needs overlay elephant_dwarf_overlay
 #armor
-#define "#mountmnr 'dwarfelephantmount'"
-#define "#gcost +20"
-#define "#rcost +4"
-#tag "animal elephant"
-#tag "guaranteedprefix elephant"
+#define "#mountmnr 'dwarf_elephant_mount'"
 #theme "elephant"
 #theme "primitive"
+#theme "austral"
 #offsety -15
 #offsetx 0
+#tag "animal elephant"
+#tag "guaranteedprefix elephant"
+#basechance 10
+#enditem
+
+
+---- Fae
+
+#newitem
+#id "unicorn"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#offsety -22
+#offsetx 6
+#armor
+#define "#mountmnr 'unicorn_mount'"
+#define "#gcost -5"
+#theme "fae"
+#theme "elite"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#tag "minprot 8"
+#basechance 0.1
+#chanceinc anymagic "glamour" 0.5
+#enditem
+
+#newitem
+#id "unicorn_gossamer_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/unicorn.png
+#offsety -22
+#offsetx 6
+#armor
+#define "#mountmnr 'unicorn_gossamer_barding_mount'"
+#define "#gcost -5"
+#theme "fae"
+#theme "elite"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#tag "minprot 8"
+#basechance 0.1
+#chanceinc anymagic "glamour" 0.5
+#enditem
+
+
+#newitem
+#id "black_unicorn"
+#gameid -1
+#sprite /graphics/mounts/standard/black_unicorn.png
+#offsetx 30
+#offsety 36
+#armor
+#define "#mountmnr 'black_unicorn_mount'"
+#define "#gcost -5"
+#theme "fae"
+#theme "elite"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#tag "minprot 8"
+#basechance 0.1
+#chanceinc anymagic "death" 0.5
+#enditem
+
+#newitem
+#id "black_unicorn_gossamer_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/black_unicorn.png
+#offsetx 30
+#offsety 36
+#armor
+#define "#mountmnr 'black_unicorn_gossamer_barding_mount'"
+#define "#gcost -5"
+#theme "fae"
+#theme "elite"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#tag "animal unicorn"
+#tag "guaranteedprefix unicorn"
+#tag "minprot 8"
+#basechance 0.1
+#chanceinc anymagic "death" 0.5
+#enditem
+
+
+#newitem
+#id "cu_sidhe"
+#gameid -1
+#sprite /graphics/sidhe/mounts/cusidhe.png
+#offsety -22
+#offsetx -3
+#armor
+#define "#mountmnr 'cu_sidhe_mount'"
+#theme "fae"
 #theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#theme "oriental"
+#tag "animal dog"
+#tag "minprot 7"
+#basechance 0
+#enditem
+
+#newitem
+#id "cu_sidhe_gossamer_barding"
+#gameid -1
+#sprite /graphics/sidhe/mounts/cusidhe.png
+#offsety -22
+#offsetx -3
+#armor
+#define "#mountmnr 'cu_sidhe_gossamer_barding_mount'"
+#theme "fae"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#theme "oriental"
+#tag "animal dog"
+#tag "minprot 10"
+#basechance 0
+#enditem
+
+
+#newitem
+#id "barghest"
+#gameid -1
+#sprite /graphics/hoburg/mounts/barghest.png
+#offsety -22
+#offsetx -3
+#armor
+#define "#mountmnr 'barghest_mount'"
+#theme "fae"
+#theme "elite"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#theme "oriental"
+#tag "animal dog"
+#tag "guaranteedprefix barghest"
+#tag "minprot 7"
+#basechance 0
+#enditem
+
+#newitem
+#id "barghest_gossamer_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/barghest.png
+#offsety -22
+#offsetx -3
+#armor
+#define "#mountmnr 'barghest_gossamer_barding_mount'"
+#theme "fae"
+#theme "elite"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#theme "oriental"
+#tag "animal dog"
+#tag "guaranteedprefix barghest"
+#tag "minprot 10"
+#basechance 0
+#enditem
+
+
+#newitem
+#id "pigasus"
+#gameid -1
+#sprite /graphics/hoburg/mounts/pigasus.png
+#armor
+#needs overlay pigasus_overlay
+#define "#mountmnr 'pigasus_mount'"
+#offsety -12
+#offsetx 1
+#theme "boar"
+#theme "austral"
+#theme "central"
+#theme "imperial"
+#theme "civilized"
+#theme "light"
+#tag "animal pigasus"
+#tag "guaranteedprefix pigasus"
+#tag "maxprot 14"
+#basechance 1.8
+#enditem
+
+#newitem
+#id "pigasus_leather_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/pigasus.png
+#armor
+#needs overlay pigasus_overlay
+#define "#mountmnr 'pigasus_leather_barding_mount'"
+#offsety -12
+#offsetx 1
+#theme "boar"
+#theme "austral"
+#theme "central"
+#theme "imperial"
+#theme "civilized"
+#theme "light"
+#tag "animal pigasus"
+#tag "guaranteedprefix pigasus"
+#tag "maxprot 14"
+#basechance 1.5
+#enditem
+
+
+---- Demonic
+
+#newitem
+#id "ozelotl"
+#gameid -1
+#sprite /graphics/hoburg/mounts/ozelotl.png
+#armor
+#offsety 32
+#offsetx 30
+#needs overlay ozelotl_overlay
+#define "#mountmnr 'ozelotl_mount'"
+#description "The ozelotl will fight until the end of the battle if the rider perishes"
+#theme "primitive"
+#theme "occidental"
+#theme "jaguar"
+#theme "jaguartotem"
+#theme "totemanimal"
+#tag "animal ozelotl"
+#tag "guaranteedprefix ozelotl"
+#tag "maxprot 14"
+#basechance 3.3
+#enditem
+
+#newitem
+#id "hellspawn"
+#gameid -1
+#sprite /graphics/hoburg/mounts/hellspawn.png
+#armor
+#offsety 31
+#offsetx 31
+#needs overlay hellspawn_overlay
+#define "#mountmnr 'hellspawn_mount'"
+#define "#enc 15"
+#description "The hellspawn will fight until the end of the battle if the rider perishes"
+#theme "abysian"
+#tag "guaranteedprefix hellspawn"
+#tag "animal hellspawn"
+#tag "maxprot 16"
+#basechance 3.3
+#enditem
+
+#newitem
+#id "gloso"
+#gameid -1
+#sprite /graphics/hoburg/mounts/demonbred_hog.png
+#armor
+#offsety -12
+#offsetx 1
+#define "#mountmnr 'gloso_mount'"
+#theme "abysian"
+#theme "boar"
+#tag "animal boar"
+#tag "guaranteedprefix hog"
+#basechance 10
 #enditem

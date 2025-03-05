@@ -1,19 +1,14 @@
---- Base offsets are applied to everything except base and overlay
+------ Base offsets are applied to everything except base and overlay
 
+---- Boars
 
 #newitem
-#id "hog"
+#id "boar"
 #gameid -1
 #sprite /graphics/hoburg/mounts/boar.png
 #armor
-#define "#mountmnr 'boar'"
-#define "#gcost +17"
-#define "#rcost +4"
-#tag "animal hog"
-#tag "guaranteedprefix hog"
+#define "#mountmnr 'boar_mount'"
 #theme "boar"
-#offsety -12
-#offsetx 1
 #theme "austral"
 #theme "boreal"
 #theme "central"
@@ -21,81 +16,871 @@
 #theme "occidental"
 #theme "oriental"
 #theme "civilized"
-#light
+#theme "light"
+#offsety -12
+#offsetx 1
+#tag "animal hog"
+#tag "guaranteedprefix hog"
+#basechance 4
 #enditem
 
 #newitem
-#id "black hog"
+#id "boar_light_bronze_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/boar.png
+#armor
+#define "#mountmnr 'boar_light_bronze_barding_mount'"
+#theme "boar"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#theme "oriental"
+#theme "civilized"
+#theme "light"
+#theme "bronze"
+#offsety -12
+#offsetx 1
+#tag "animal hog"
+#tag "guaranteedprefix hog"
+#basechance 3.5
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "boar_light_scale_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/boar.png
+#armor
+#define "#mountmnr 'boar_light_scale_barding_mount'"
+#theme "boar"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#theme "oriental"
+#theme "civilized"
+#theme "light"
+#theme "iron"
+#offsety -12
+#offsetx 1
+#tag "animal hog"
+#tag "guaranteedprefix hog"
+#basechance 3.5
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "boar_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/boar.png
+#armor
+#define "#mountmnr 'boar_mail_barding_mount'"
+#theme "boar"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#theme "oriental"
+#theme "civilized"
+#theme "bronze"
+#offsety -12
+#offsetx 1
+#tag "animal hog"
+#tag "guaranteedprefix hog"
+#basechance 2.5
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "boar_iron_mail_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/boar.png
+#armor
+#define "#mountmnr 'boar_mail_barding_mount'"
+#theme "boar"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#theme "oriental"
+#theme "civilized"
+#theme "iron"
+#offsety -12
+#offsetx 1
+#tag "animal hog"
+#tag "guaranteedprefix hog"
+#basechance 2.5
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "boar_cataphract_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/boar.png
+#armor
+#define "#mountmnr 'boar_cataphract_barding_mount'"
+#theme "boar"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#theme "oriental"
+#theme "civilized"
+#theme "iron"
+#theme "heavy"
+#offsety -12
+#offsetx 1
+#tag "animal hog"
+#tag "guaranteedprefix hog"
+#basechance 1.5
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "boar_bronze_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/boar.png
+#armor
+#define "#mountmnr 'boar_bronze_barding_mount'"
+#theme "boar"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#theme "oriental"
+#theme "civilized"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#offsety -12
+#offsetx 1
+#tag "animal hog"
+#tag "guaranteedprefix hog"
+#basechance 1
+#chanceinc prot 18 *2
+#enditem
+
+#newitem
+#id "boar_plate_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/boar.png
+#armor
+#define "#mountmnr 'boar_plate_barding_mount'"
+#theme "boar"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#theme "oriental"
+#theme "civilized"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#offsety -12
+#offsetx 1
+#tag "animal hog"
+#tag "guaranteedprefix hog"
+#basechance 1
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "gloso"
 #gameid -1
 #sprite /graphics/hoburg/mounts/demonbred_hog.png
 #armor
-#define "#mountmnr 'demonbred_hog'"
-#define "#gcost +18"
-#define "#rcost +4"
-#tag "animal hog"
-#tag "guaranteedprefix hog"
+#define "#mountmnr 'gloso_mount'"
+#theme "light"
 #theme "boar"
+#theme "abysian"
 #offsety -12
 #offsetx 1
-#theme "abysian"
-#light
+#tag "animal hog"
+#tag "guaranteedprefix hog"
+#basechance 4
 #enditem
+
+#newitem
+#id "gloso_light_bronze_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/demonbred_hog.png
+#armor
+#define "#mountmnr 'gloso_light_bronze_barding_mount'"
+#theme "light"
+#theme "boar"
+#theme "abysian"
+#theme "bronze"
+#offsety -12
+#offsetx 1
+#tag "animal hog"
+#tag "guaranteedprefix hog"
+#basechance 3.5
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "gloso_light_scale_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/demonbred_hog.png
+#armor
+#define "#mountmnr 'gloso_light_scale_barding_mount'"
+#theme "light"
+#theme "boar"
+#theme "abysian"
+#theme "iron"
+#offsety -12
+#offsetx 1
+#tag "animal hog"
+#tag "guaranteedprefix hog"
+#basechance 3.5
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "gloso_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/demonbred_hog.png
+#armor
+#define "#mountmnr 'gloso_mail_barding_mount'"
+#theme "boar"
+#theme "abysian"
+#theme "bronze"
+#offsety -12
+#offsetx 1
+#tag "animal hog"
+#tag "guaranteedprefix hog"
+#basechance 2.5
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "gloso_iron_mail_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/demonbred_hog.png
+#armor
+#define "#mountmnr 'gloso_mail_barding_mount'"
+#theme "boar"
+#theme "abysian"
+#theme "iron"
+#offsety -12
+#offsetx 1
+#tag "animal hog"
+#tag "guaranteedprefix hog"
+#basechance 2.5
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "gloso_cataphract_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/demonbred_hog.png
+#armor
+#define "#mountmnr 'gloso_cataphract_barding_mount'"
+#theme "boar"
+#theme "abysian"
+#theme "iron"
+#theme "heavy"
+#offsety -12
+#offsetx 1
+#tag "animal hog"
+#tag "guaranteedprefix hog"
+#basechance 1.5
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "gloso_bronze_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/demonbred_hog.png
+#armor
+#define "#mountmnr 'gloso_bronze_barding_mount'"
+#theme "boar"
+#theme "abysian"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#offsety -12
+#offsetx 1
+#tag "animal hog"
+#tag "guaranteedprefix hog"
+#basechance 1
+#chanceinc prot 18 *2
+#enditem
+
+#newitem
+#id "gloso_plate_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/demonbred_hog.png
+#armor
+#define "#mountmnr 'gloso_plate_barding_mount'"
+#theme "boar"
+#theme "abysian"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#offsety -12
+#offsetx 1
+#tag "animal hog"
+#tag "guaranteedprefix hog"
+#basechance 1
+#chanceinc prot 18 *2
+#enditem
+
+
+---- Goats
 
 #newitem
 #id "goat"
 #gameid -1
 #sprite /graphics/hoburg/mounts/goat.png
 #armor
-#define "#mountmnr 'goat'"
-#define "#gcost +12"
-#define "#rcost +4"
-#tag "animal goat"
-#tag "maxprot 12"
-#tag "guaranteedprefix goat"
+#define "#mountmnr 'goat_mount'"
 #theme "goat"
-#offsety -7
-#offsetx 0
-#basechance 0.5
 #theme "austral"
 #theme "boreal"
 #theme "central"
 #theme "imperial"
 #theme "oriental"
 #theme "civilized"
-#light
+#theme "light"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#tag "maxprot 12"
+#offsety -7
+#offsetx 0
+#basechance 2
 #enditem
 
 #newitem
-#id "black goat"
+#id "goat_light_bronze_barding"
 #gameid -1
-#sprite /graphics/hoburg/mounts/goat_black.png
+#sprite /graphics/hoburg/mounts/goat.png
 #armor
-#define "#gcost +13"
-#define "#rcost +4"
-#tag "animal goat"
-#tag "maxprot 12"
-#tag "guaranteedprefix goat"
+#define "#mountmnr 'goat_light_bronze_barding_mount'"
 #theme "goat"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#theme "civilized"
+#theme "light"
+#theme "bronze"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#offsety -7
+#offsetx 0
+#basechance 1.75
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "goat_light_scale_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat.png
+#armor
+#define "#mountmnr 'goat_light_scale_barding_mount'"
+#theme "goat"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#theme "civilized"
+#theme "light"
+#theme "iron"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#offsety -7
+#offsetx 0
+#basechance 1.75
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "goat_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat.png
+#armor
+#define "#mountmnr 'goat_bronze_mail_barding_mount'"
+#theme "goat"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#theme "civilized"
+#theme "bronze"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#offsety -7
+#offsetx 0
+#basechance 1.25
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "goat_iron_mail_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat.png
+#armor
+#define "#mountmnr 'goat_iron_mail_barding_mount'"
+#theme "goat"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#theme "civilized"
+#theme "iron"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#offsety -7
+#offsetx 0
+#basechance 1.25
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "goat_cataphract_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat.png
+#armor
+#define "#mountmnr 'goat_cataphract_barding_mount'"
+#theme "goat"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#theme "civilized"
+#theme "iron"
+#theme "heavy"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#offsety -7
+#offsetx 0
+#basechance 0.75
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "goat_bronze_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat.png
+#armor
+#define "#mountmnr 'goat_bronze_barding_mount'"
+#theme "goat"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#theme "civilized"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
 #offsety -7
 #offsetx 0
 #basechance 0.5
-#theme "abysian"
-#light
+#chanceinc prot 18 *2
 #enditem
 
 #newitem
-#id "giant macaw"
+#id "goat_plate_barding_mount"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat.png
+#armor
+#define "#mountmnr 'goat_plate_barding_mount'"
+#theme "goat"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#theme "civilized"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#offsety -7
+#offsetx 0
+#basechance 0.5
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "black_goat"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat.png
+#armor
+#define "#mountmnr 'black_goat_mount'"
+#theme "goat"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#theme "civilized"
+#theme "light"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#tag "maxprot 12"
+#offsety -7
+#offsetx 0
+#basechance 2
+#enditem
+
+#newitem
+#id "black_goat_light_bronze_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat.png
+#armor
+#define "#mountmnr 'black_goat_light_bronze_barding_mount'"
+#theme "goat"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#theme "civilized"
+#theme "light"
+#theme "bronze"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#offsety -7
+#offsetx 0
+#basechance 1.75
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "black_goat_light_scale_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat.png
+#armor
+#define "#mountmnr 'black_goat_light_scale_barding_mount'"
+#theme "goat"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#theme "civilized"
+#theme "light"
+#theme "iron"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#offsety -7
+#offsetx 0
+#basechance 1.75
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "black_goat_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat.png
+#armor
+#define "#mountmnr 'black_goat_bronze_mail_barding_mount'"
+#theme "goat"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#theme "civilized"
+#theme "bronze"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#offsety -7
+#offsetx 0
+#basechance 1.25
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "black_goat_iron_mail_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat.png
+#armor
+#define "#mountmnr 'black_goat_iron_mail_barding_mount'"
+#theme "goat"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#theme "civilized"
+#theme "iron"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#offsety -7
+#offsetx 0
+#basechance 1.25
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "black_goat_cataphract_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat.png
+#armor
+#define "#mountmnr 'black_goat_cataphract_barding_mount'"
+#theme "goat"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#theme "civilized"
+#theme "iron"
+#theme "heavy"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#offsety -7
+#offsetx 0
+#basechance 0.75
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "black_goat_bronze_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat.png
+#armor
+#define "#mountmnr 'black_goat_bronze_barding_mount'"
+#theme "goat"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#theme "civilized"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#offsety -7
+#offsetx 0
+#basechance 0.5
+#chanceinc prot 18 *2
+#enditem
+
+#newitem
+#id "black_goat_plate_barding_mount"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat.png
+#armor
+#define "#mountmnr 'black_goat_plate_barding_mount'"
+#theme "goat"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#theme "civilized"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#offsety -7
+#offsetx 0
+#basechance 0.5
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "black_pyrenean_goat"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat_black.png
+#armor
+#define "#mountmnr 'black_pyrenean_goat_mount'"
+#define "#gcost +5"
+#define "#rcost +4"
+#theme "abysian"
+#theme "light"
+#theme "goat"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#offsety -7
+#offsetx 0
+#tag "maxprot 12"
+#basechance 2
+#chanceinc anymagic "blood" *10
+#enditem
+
+#newitem
+#id "black_pyrenean_goat_light_bronze_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat_black.png
+#armor
+#define "#mountmnr 'black_pyrenean_goat_light_bronze_barding_mount'"
+#define "#gcost +5"
+#define "#rcost +4"
+#theme "abysian"
+#theme "goat"
+#theme "bronze"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#offsety -7
+#offsetx 0
+#basechance 1.75
+#chanceinc prot 11 *2
+#chanceinc anymagic "blood" *10
+#enditem
+
+#newitem
+#id "black_pyrenean_goat_light_scale_barding_mount"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat_black.png
+#armor
+#define "#mountmnr 'black_pyrenean_goat_light_scale_barding_mount'"
+#define "#gcost +5"
+#define "#rcost +4"
+#theme "abysian"
+#theme "goat"
+#theme "iron"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#offsety -7
+#offsetx 0
+#basechance 1.75
+#chanceinc prot 11 *2
+#chanceinc anymagic "blood" *10
+#enditem
+
+#newitem
+#id "black_pyrenean_goat_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat_black.png
+#armor
+#define "#mountmnr 'black_pyrenean_goat_bronze_mail_barding_mount'"
+#define "#gcost +5"
+#define "#rcost +4"
+#theme "abysian"
+#theme "goat"
+#theme "bronze"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#offsety -7
+#offsetx 0
+#basechance 1.25
+#chanceinc prot 14 *2
+#chanceinc anymagic "blood" *10
+#enditem
+
+#newitem
+#id "black_pyrenean_goat_iron_mail_barding_mount"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat_black.png
+#armor
+#define "#mountmnr 'black_pyrenean_goat_iron_mail_barding_mount'"
+#define "#gcost +5"
+#define "#rcost +4"
+#theme "abysian"
+#theme "goat"
+#theme "iron"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#offsety -7
+#offsetx 0
+#basechance 1.25
+#chanceinc prot 14 *2
+#chanceinc anymagic "blood" *10
+#enditem
+
+#newitem
+#id "black_pyrenean_goat_cataphract_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat_black.png
+#armor
+#define "#mountmnr 'black_pyrenean_goat_cataphract_barding_mount'"
+#define "#gcost +5"
+#define "#rcost +4"
+#theme "abysian"
+#theme "goat"
+#theme "iron"
+#theme "heavy"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#offsety -7
+#offsetx 0
+#basechance 0.75
+#chanceinc prot 16 *2
+#chanceinc anymagic "blood" *10
+#enditem
+
+#newitem
+#id "black_pyrenean_goat_bronze_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat_black.png
+#armor
+#define "#mountmnr 'black_pyrenean_goat_bronze_barding_mount'"
+#define "#gcost +5"
+#define "#rcost +4"
+#theme "abysian"
+#theme "goat"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#offsety -7
+#offsetx 0
+#basechance 0.5
+#chanceinc prot 18 *2
+#chanceinc anymagic "blood" *10
+#enditem
+
+#newitem
+#id "black_pyrenean_goat_plate_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/goat_black.png
+#armor
+#define "#mountmnr 'black_pyrenean_goat_plate_barding_mount'"
+#define "#gcost +5"
+#define "#rcost +4"
+#theme "abysian"
+#theme "goat"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#offsety -7
+#offsetx 0
+#basechance 0.5
+#chanceinc prot 18 *2
+#chanceinc anymagic "blood" *10
+#enditem
+
+
+---- Birds
+
+#newitem
+#id "giant_macaw"
 #gameid -1
 #sprite /graphics/hoburg/mounts/giant_parrot.png
 #needs overlay giant_macaw_overlay
 #armor
-#define "#mountmnr 'giant_macaw'"
-#define "#gcost +25"
-#define "#rcost +4"
-#tag "animal parrot"
-#tag "maxprot 14"
-#tag "guaranteedprefix parrot"
-#basechance 0.22
+#define "#mountmnr 'giant_macaw_mount'"
 #offsetx -1
 #offsety -30
 #theme "primitive"
@@ -103,23 +888,110 @@
 #theme "parrot"
 #theme "parrottotem"
 #theme "totemanimal"
-#light
+#theme "light"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 14"
+#basechance 1
 #enditem
 
 #newitem
-#id "colorful giant macaw"
+#id "giant_macaw_light_bronze_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/giant_parrot.png
+#needs overlay giant_macaw_overlay
+#armor
+#define "#mountmnr 'giant_macaw_light_bronze_barding_mount'"
+#offsetx -1
+#offsety -30
+#theme "occidental"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#theme "light"
+#theme "bronze"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 14"
+#chanceinc prot 10 *2
+#basechance 0.7
+#enditem
+
+#newitem
+#id "giant_macaw_light_scale_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/giant_parrot.png
+#needs overlay giant_macaw_overlay
+#armor
+#define "#mountmnr 'giant_macaw_light_scale_barding_mount'"
+#offsetx -1
+#offsety -30
+#theme "occidental"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#theme "light"
+#theme "iron"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 14"
+#basechance 0.7
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "giant_macaw_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/giant_parrot.png
+#needs overlay giant_macaw_overlay
+#armor
+#define "#mountmnr 'giant_macaw_bronze_mail_barding_mount'"
+#offsetx -1
+#offsety -30
+#theme "occidental"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#theme "bronze"
+#theme "advanced"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 14"
+#basechance 0.4
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "giant_macaw_iron_mail_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/giant_parrot.png
+#needs overlay giant_macaw_overlay
+#armor
+#define "#mountmnr 'giant_macaw_iron_mail_barding_mount'"
+#offsetx -1
+#offsety -30
+#theme "occidental"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#theme "iron"
+#theme "advanced"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 14"
+#basechance 0.4
+#chanceinc prot 13 *2
+#enditem
+
+
+#newitem
+#id "colorful_giant_macaw"
 #gameid -1
 #sprite /graphics/hoburg/mounts/giant_parrot.png
 #recolormask /graphics/hoburg/mounts/giant_parrot_recolormask.png
 #needs overlay colorful_macaw_overlay
 #armor
-#define "#mountmnr 'giant_macaw'"
-#define "#gcost +25"
-#define "#rcost +4"
-#tag "animal parrot"
-#tag "maxprot 14"
-#tag "guaranteedprefix parrot"
-#basechance 0.11
+#define "#mountmnr 'colorful_giant_macaw_mount'"
 #offsetx -1
 #offsety -30
 #theme "primitive"
@@ -127,22 +999,113 @@
 #theme "parrot"
 #theme "parrottotem"
 #theme "totemanimal"
-#light
+#theme "light"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 14"
+#basechance 0.5
 #enditem
 
 #newitem
-#id "grey parrot"
+#id "colorful_giant_macaw_light_bronze_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/giant_parrot.png
+#recolormask /graphics/hoburg/mounts/giant_parrot_recolormask.png
+#needs overlay colorful_macaw_overlay
+#armor
+#define "#mountmnr 'colorful_giant_macaw_light_bronze_barding_mount'"
+#offsetx -1
+#offsety -30
+#theme "occidental"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#theme "light"
+#theme "bronze"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 14"
+#chanceinc prot 10 *2
+#basechance 0.35
+#enditem
+
+#newitem
+#id "colorful_giant_macaw_light_scale_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/giant_parrot.png
+#recolormask /graphics/hoburg/mounts/giant_parrot_recolormask.png
+#needs overlay colorful_macaw_overlay
+#armor
+#define "#mountmnr 'colorful_giant_macaw_light_scale_barding_mount'"
+#offsetx -1
+#offsety -30
+#theme "occidental"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#theme "light"
+#theme "iron"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 14"
+#basechance 0.35
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "colorful_giant_macaw_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/giant_parrot.png
+#recolormask /graphics/hoburg/mounts/giant_parrot_recolormask.png
+#needs overlay colorful_macaw_overlay
+#armor
+#define "#mountmnr 'colorful_giant_macaw_bronze_mail_barding_mount'"
+#offsetx -1
+#offsety -30
+#theme "occidental"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#theme "bronze"
+#theme "advanced"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 14"
+#basechance 0.2
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "colorful_giant_macaw_iron_mail_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/giant_parrot.png
+#recolormask /graphics/hoburg/mounts/giant_parrot_recolormask.png
+#needs overlay colorful_macaw_overlay
+#armor
+#define "#mountmnr 'colorful_giant_macaw_iron_mail_barding_mount'"
+#offsetx -1
+#offsety -30
+#theme "occidental"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#theme "iron"
+#theme "advanced"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 14"
+#basechance 0.2
+#chanceinc prot 13 *2
+#enditem
+
+
+#newitem
+#id "grey_parrot"
 #gameid -1
 #sprite /graphics/machakans/mounts/giant_parrot.png
 #needs overlay giant_parrot_overlay
 #armor
-#define "#mountmnr 'grey_parrot'"
-#define "#gcost +25"
-#define "#rcost +4"
-#tag "animal parrot"
-#tag "maxprot 14"
-#tag "guaranteedprefix parrot"
-#basechance 0.22
+#define "#mountmnr 'giant_parrot_mount'"
 #offsetx -1
 #offsety -30
 #theme "primitive"
@@ -151,23 +1114,114 @@
 #theme "parrot"
 #theme "parrottotem"
 #theme "totemanimal"
-#light
+#theme "light"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 14"
+#basechance 1
 #enditem
 
 #newitem
-#id "colorful grey parrot"
+#id "giant_parrot_light_bronze_barding"
+#gameid -1
+#sprite /graphics/machakans/mounts/giant_parrot.png
+#needs overlay giant_parrot_overlay
+#armor
+#define "#mountmnr 'giant_parrot_light_bronze_barding_mount'"
+#offsetx -1
+#offsety -30
+#theme "austral"
+#theme "central"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#theme "light"
+#theme "bronze"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 14"
+#basechance 0.7
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "giant_parrot_light_scale_barding"
+#gameid -1
+#sprite /graphics/machakans/mounts/giant_parrot.png
+#needs overlay giant_parrot_overlay
+#armor
+#define "#mountmnr 'giant_parrot_light_scale_barding_mount'"
+#offsetx -1
+#offsety -30
+#theme "austral"
+#theme "central"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#theme "light"
+#theme "iron"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 14"
+#basechance 0.7
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "giant_parrot_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/machakans/mounts/giant_parrot.png
+#needs overlay giant_parrot_overlay
+#armor
+#define "#mountmnr 'giant_parrot_bronze_mail_barding_mount'"
+#offsetx -1
+#offsety -30
+#theme "austral"
+#theme "central"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#theme "bronze"
+#theme "advanced"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 14"
+#basechance 0.4
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "giant_parrot_iron_mail_barding"
+#gameid -1
+#sprite /graphics/machakans/mounts/giant_parrot.png
+#needs overlay giant_parrot_overlay
+#armor
+#define "#mountmnr 'giant_parrot_iron_mail_barding_mount'"
+#offsetx -1
+#offsety -30
+#theme "austral"
+#theme "central"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#theme "iron"
+#theme "advanced"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 14"
+#basechance 0.4
+#chanceinc prot 13 *2
+#enditem
+
+
+#newitem
+#id "colorful_parrot"
 #gameid -1
 #sprite /graphics/machakans/mounts/giant_parrot.png
 #recolormask /graphics/machakans/mounts/giant_parrot_recolormask.png
 #needs overlay giant_parrot_overlay
 #armor
-#define "#mountmnr 'grey_parrot'"
-#define "#gcost +25"
-#define "#rcost +4"
-#tag "animal parrot"
-#tag "maxprot 14"
-#tag "guaranteedprefix parrot"
-#basechance 0.11
+#define "#mountmnr 'colorful_giant_parrot_mount'"
 #offsetx -1
 #offsety -30
 #theme "primitive"
@@ -176,24 +1230,120 @@
 #theme "parrot"
 #theme "parrottotem"
 #theme "totemanimal"
-#light
+#theme "light"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 14"
+#basechance 0.5
 #enditem
 
 #newitem
-#id "caveman"
+#id "colorful_giant_parrot_light_bronze_barding"
+#gameid -1
+#sprite /graphics/machakans/mounts/giant_parrot.png
+#recolormask /graphics/machakans/mounts/giant_parrot_recolormask.png
+#needs overlay giant_parrot_overlay
+#armor
+#define "#mountmnr 'colorful_giant_parrot_light_bronze_barding_mount'"
+#offsetx -1
+#offsety -30
+#theme "austral"
+#theme "central"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#theme "light"
+#theme "bronze"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 14"
+#basechance 0.35
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "colorful_giant_parrot_light_scale_barding"
+#gameid -1
+#sprite /graphics/machakans/mounts/giant_parrot.png
+#recolormask /graphics/machakans/mounts/giant_parrot_recolormask.png
+#needs overlay giant_parrot_overlay
+#armor
+#define "#mountmnr 'colorful_giant_parrot_light_scale_barding_mount'"
+#offsetx -1
+#offsety -30
+#theme "austral"
+#theme "central"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#theme "light"
+#theme "iron"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 14"
+#basechance 0.35
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "colorful_giant_parrot_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/machakans/mounts/giant_parrot.png
+#recolormask /graphics/machakans/mounts/giant_parrot_recolormask.png
+#needs overlay giant_parrot_overlay
+#armor
+#define "#mountmnr 'colorful_giant_parrot_bronze_mail_barding_mount'"
+#offsetx -1
+#offsety -30
+#theme "austral"
+#theme "central"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#theme "bronze"
+#theme "advanced"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 14"
+#basechance 0.2
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "colorful_giant_parrot_iron_mail_barding"
+#gameid -1
+#sprite /graphics/machakans/mounts/giant_parrot.png
+#recolormask /graphics/machakans/mounts/giant_parrot_recolormask.png
+#needs overlay giant_parrot_overlay
+#armor
+#define "#mountmnr 'colorful_giant_parrot_iron_mail_barding_mount'"
+#offsetx -1
+#offsety -30
+#theme "austral"
+#theme "central"
+#theme "parrot"
+#theme "parrottotem"
+#theme "totemanimal"
+#theme "iron"
+#theme "advanced"
+#tag "animal parrot"
+#tag "guaranteedprefix parrot"
+#tag "maxprot 14"
+#basechance 0.2
+#chanceinc prot 13 *2
+#enditem
+
+
+---- Cavemen
+
+#newitem
+#id "caveman_fur_armor"
 #gameid -1
 #sprite /graphics/hoburg/mounts/caveman.png
 #armor
-#define "#mountmnr 'caveman'"
-#define "#gcost +45"
-#define "#rcost +8"
+#define "#mountmnr 'caveman_fur_armor_mount'"
 #description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
-#basechance 0.33
 #needs overlay caveman_overlay
-#tag "animal caveman"
-#tag "guaranteedprefix 'caveman'"
-#offsety 29
-#offsetx 6
 #theme "primitive"
 #theme "caveman"
 #theme "austral"
@@ -201,58 +1351,463 @@
 #theme "central"
 #theme "imperial"
 #theme "civilized"
+#tag "animal caveman"
+#tag "guaranteedprefix 'caveman'"
+#offsety 29
+#offsetx 6
+#basechance 1.5
 #enditem
 
 #newitem
-#id "occidental caveman"
+#id "caveman_bronze_scale_armor"
+#gameid -1
+#sprite /graphics/hoburg/mounts/caveman.png
+#armor
+#define "#mountmnr 'caveman_bronze_scale_armor_mount'"
+#description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
+#needs overlay caveman_overlay
+#theme "primitive"
+#theme "caveman"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "civilized"
+#theme "bronze"
+#tag "animal caveman"
+#tag "guaranteedprefix 'caveman'"
+#offsety 29
+#offsetx 6
+#basechance 1.05
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "caveman_scale_armor" 
+#gameid -1
+#sprite /graphics/hoburg/mounts/caveman.png
+#armor
+#define "#mountmnr 'caveman_scale_armor_mount'"
+#description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
+#needs overlay caveman_overlay
+#theme "primitive"
+#theme "caveman"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "civilized"
+#theme "iron"
+#tag "animal caveman"
+#tag "guaranteedprefix 'caveman'"
+#offsety 29
+#offsetx 6
+#basechance 1.05
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "caveman_bronze_mail_armor"
+#gameid -1
+#sprite /graphics/hoburg/mounts/caveman.png
+#armor
+#define "#mountmnr 'caveman_bronze_mail_armor_mount'"
+#description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
+#needs overlay caveman_overlay
+#theme "primitive"
+#theme "caveman"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "civilized"
+#theme "bronze"
+#tag "animal caveman"
+#tag "guaranteedprefix 'caveman'"
+#offsety 29
+#offsetx 6
+#basechance 0.75
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "caveman_iron_mail_armor"
+#gameid -1
+#sprite /graphics/hoburg/mounts/caveman.png
+#armor
+#define "#mountmnr 'caveman_iron_mail_armor_mount'"
+#description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
+#needs overlay caveman_overlay
+#theme "primitive"
+#theme "caveman"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "civilized"
+#theme "iron"
+#tag "animal caveman"
+#tag "guaranteedprefix 'caveman'"
+#offsety 29
+#offsetx 6
+#basechance 0.75
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "caveman_bronze_armor"
+#gameid -1
+#sprite /graphics/hoburg/mounts/caveman.png
+#armor
+#define "#mountmnr 'caveman_bronze_armor_mount'"
+#description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
+#needs overlay caveman_overlay
+#theme "primitive"
+#theme "caveman"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "civilized"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal caveman"
+#tag "guaranteedprefix 'caveman'"
+#offsety 29
+#offsetx 6
+#basechance 0.25
+#chanceinc prot 18 *2
+#enditem
+
+#newitem
+#id "caveman_plate_armor"
+#gameid -1
+#sprite /graphics/hoburg/mounts/caveman.png
+#armor
+#define "#mountmnr 'caveman_plate_armor_mount'"
+#description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
+#needs overlay caveman_overlay
+#theme "primitive"
+#theme "caveman"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "civilized"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal caveman"
+#tag "guaranteedprefix 'caveman'"
+#offsety 29
+#offsetx 6
+#basechance 0.25
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "occidental_caveman_fur_armor"
 #gameid -1
 #sprite /graphics/hoburg/mounts/caveman_occidental.png
 #recolormask /graphics/hoburg/mounts/caveman_occidental_recolormask.png
 #armor
-#define "#mountmnr 'caveman_occidental'"
-#define "#gcost +40"
-#define "#rcost +6"
+#define "#mountmnr 'occidental_caveman_fur_armor_mount'"
 #description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
-#basechance 0.33
 #needs overlay caveman_occidental_overlay
-#tag "animal caveman"
-#tag "guaranteedprefix 'caveman'"
-#offsety 29
-#offsetx 6
 #theme "primitive"
 #theme "caveman"
 #theme "occidental"
-#enditem
-
-#newitem
-#id "hellbred caveman"
-#gameid -1
-#sprite /graphics/hoburg/mounts/horite.png
-#armor
-#define "#mountmnr 'caveman_hellbred'"
-#define "#gcost +40"
-#define "#rcost +6"
-#description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
-#basechance 0.33
-#needs overlay caveman_hellbred_overlay
 #tag "animal caveman"
 #tag "guaranteedprefix 'caveman'"
 #offsety 29
 #offsetx 6
-#theme "primitive"
-#theme "caveman"
-#theme "abysian"
+#basechance 1.5
 #enditem
 
 #newitem
-#id "mechant"
+#id "occidental_caveman_bronze_scale_armor"
+#gameid -1
+#sprite /graphics/hoburg/mounts/caveman_occidental.png
+#recolormask /graphics/hoburg/mounts/caveman_occidental_recolormask.png
+#armor
+#define "#mountmnr 'occidental_caveman_bronze_scale_armor_mount'"
+#description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
+#needs overlay caveman_occidental_overlay
+#theme "primitive"
+#theme "caveman"
+#theme "occidental"
+#theme "bronze"
+#tag "animal caveman"
+#tag "guaranteedprefix 'caveman'"
+#offsety 29
+#offsetx 6
+#basechance 1.05
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "occidental_caveman_scale_armor" 
+#gameid -1
+#sprite /graphics/hoburg/mounts/caveman_occidental.png
+#recolormask /graphics/hoburg/mounts/caveman_occidental_recolormask.png
+#armor
+#define "#mountmnr 'occidental_caveman_scale_armor_mount'"
+#description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
+#needs overlay caveman_occidental_overlay
+#theme "primitive"
+#theme "caveman"
+#theme "occidental"
+#theme "iron"
+#tag "animal caveman"
+#tag "guaranteedprefix 'caveman'"
+#offsety 29
+#offsetx 6
+#basechance 1.05
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "occidental_caveman_bronze_mail_armor"
+#gameid -1
+#sprite /graphics/hoburg/mounts/caveman_occidental.png
+#recolormask /graphics/hoburg/mounts/caveman_occidental_recolormask.png
+#armor
+#define "#mountmnr 'occidental_caveman_bronze_mail_armor_mount'"
+#description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
+#needs overlay caveman_occidental_overlay
+#theme "primitive"
+#theme "caveman"
+#theme "occidental"
+#theme "bronze"
+#tag "animal caveman"
+#tag "guaranteedprefix 'caveman'"
+#offsety 29
+#offsetx 6
+#basechance 0.75
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "occidental_caveman_iron_mail_armor"
+#gameid -1
+#sprite /graphics/hoburg/mounts/caveman_occidental.png
+#recolormask /graphics/hoburg/mounts/caveman_occidental_recolormask.png
+#armor
+#define "#mountmnr 'occidental_caveman_iron_mail_armor_mount'"
+#description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
+#needs overlay caveman_occidental_overlay
+#theme "primitive"
+#theme "caveman"
+#theme "occidental"
+#theme "iron"
+#tag "animal caveman"
+#tag "guaranteedprefix 'caveman'"
+#offsety 29
+#offsetx 6
+#basechance 0.75
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "occidental_caveman_bronze_armor"
+#gameid -1
+#sprite /graphics/hoburg/mounts/caveman_occidental.png
+#recolormask /graphics/hoburg/mounts/caveman_occidental_recolormask.png
+#armor
+#define "#mountmnr 'occidental_caveman_bronze_armor_mount'"
+#description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
+#needs overlay caveman_occidental_overlay
+#theme "primitive"
+#theme "caveman"
+#theme "occidental"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal caveman"
+#tag "guaranteedprefix 'caveman'"
+#offsety 29
+#offsetx 6
+#basechance 0.25
+#chanceinc prot 18 *2
+#enditem
+
+#newitem
+#id "occidental_caveman_plate_armor"
+#gameid -1
+#sprite /graphics/hoburg/mounts/caveman_occidental.png
+#recolormask /graphics/hoburg/mounts/caveman_occidental_recolormask.png
+#armor
+#define "#mountmnr 'occidental_caveman_plate_armor_mount'"
+#description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
+#needs overlay caveman_occidental_overlay
+#theme "primitive"
+#theme "caveman"
+#theme "occidental"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal caveman"
+#tag "guaranteedprefix 'caveman'"
+#offsety 29
+#offsetx 6
+#basechance 0.25
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "hellbred_caveman_fur_armor"
+#gameid -1
+#sprite /graphics/hoburg/mounts/horite.png
+#armor
+#define "#mountmnr 'hellbred_caveman_fur_armor_mount'"
+#description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
+#needs overlay caveman_hellbred_overlay
+#theme "primitive"
+#theme "caveman"
+#theme "abysian"
+#tag "animal caveman"
+#tag "guaranteedprefix 'caveman'"
+#offsety 29
+#offsetx 6
+#basechance 1.5
+#enditem
+
+#newitem
+#id "hellbred_caveman_bronze_scale_armor"
+#gameid -1
+#sprite /graphics/hoburg/mounts/horite.png
+#armor
+#define "#mountmnr 'hellbred_caveman_bronze_scale_armor_mount'"
+#description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
+#needs overlay caveman_hellbred_overlay
+#theme "primitive"
+#theme "caveman"
+#theme "abysian"
+#theme "bronze"
+#tag "animal caveman"
+#tag "guaranteedprefix 'caveman'"
+#offsety 29
+#offsetx 6
+#basechance 1.05
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "hellbred_caveman_scale_armor" 
+#gameid -1
+#sprite /graphics/hoburg/mounts/horite.png
+#armor
+#define "#mountmnr 'hellbred_caveman_scale_armor_mount'"
+#description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
+#needs overlay caveman_hellbred_overlay
+#theme "primitive"
+#theme "caveman"
+#theme "abysian"
+#theme "iron"
+#tag "animal caveman"
+#tag "guaranteedprefix 'caveman'"
+#offsety 29
+#offsetx 6
+#basechance 1.05
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "hellbred_caveman_bronze_mail_armor"
+#gameid -1
+#sprite /graphics/hoburg/mounts/horite.png
+#armor
+#define "#mountmnr 'hellbred_caveman_bronze_mail_armor_mount'"
+#description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
+#needs overlay caveman_hellbred_overlay
+#theme "primitive"
+#theme "caveman"
+#theme "abysian"
+#theme "bronze"
+#tag "animal caveman"
+#tag "guaranteedprefix 'caveman'"
+#offsety 29
+#offsetx 6
+#basechance 0.75
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "hellbred_caveman_iron_mail_armor"
+#gameid -1
+#sprite /graphics/hoburg/mounts/horite.png
+#armor
+#define "#mountmnr 'hellbred_caveman_iron_mail_armor_mount'"
+#description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
+#needs overlay caveman_hellbred_overlay
+#theme "primitive"
+#theme "caveman"
+#theme "abysian"
+#theme "iron"
+#tag "animal caveman"
+#tag "guaranteedprefix 'caveman'"
+#offsety 29
+#offsetx 6
+#basechance 0.75
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "hellbred_caveman_bronze_armor"
+#gameid -1
+#sprite /graphics/hoburg/mounts/horite.png
+#armor
+#define "#mountmnr 'hellbred_caveman_bronze_armor_mount'"
+#description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
+#needs overlay caveman_hellbred_overlay
+#theme "primitive"
+#theme "caveman"
+#theme "abysian"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal caveman"
+#tag "guaranteedprefix 'caveman'"
+#offsety 29
+#offsetx 6
+#basechance 0.25
+#chanceinc prot 18 *2
+#enditem
+
+#newitem
+#id "hellbred_caveman_plate_armor"
+#gameid -1
+#sprite /graphics/hoburg/mounts/horite.png
+#armor
+#define "#mountmnr 'hellbred_caveman_plate_armor_mount'"
+#description "The caveman is fiercely loyal and will follow the hoburg army even if its rider dies"
+#needs overlay caveman_hellbred_overlay
+#theme "primitive"
+#theme "caveman"
+#theme "abysian"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal caveman"
+#tag "guaranteedprefix 'caveman'"
+#offsety 29
+#offsetx 6
+#basechance 0.25
+#chanceinc prot 18 *2
+#enditem
+
+
+---- Clockwork
+
+#newitem
+#id "mech_ant"
 #gameid -1
 #sprite /graphics/hoburg/mounts/mech_ant.png
 #armor
-#define "#mountmnr 'mechant'"
-#define "#gcost +60"
-#define "#rcost +12"
-#basechance 0.33
+#define "#mountmnr 'mech_ant_mount'"
 #tag "animal 'mechanical ant'"
 #tag "guaranteedprefix 'mechanized'"
 #offsety -18
@@ -268,20 +1823,18 @@
 #theme "imperial"
 #theme "oriental"
 #theme "abysian"
+#basechance 3.3
 #enditem
 
 #newitem
-#id "mechspider"
+#id "mech_spider"
 #gameid -1
 #sprite /graphics/hoburg/mounts/mech_spider.png
 #armor
-#basechance 0.33
 #tag "animal 'mechanical spider'"
 #tag "guaranteedprefix 'mechanized'"
 #needs overlay "mechspider_overlay"
-#define "#mountmnr 'mechspider'"
-#define "#gcost +50"
-#define "#rcost +12"
+#define "#mountmnr 'mech_spider_mount'"
 #offsety -5
 #offsetx 5
 #minprot 10
@@ -295,19 +1848,18 @@
 #theme "imperial"
 #theme "oriental"
 #theme "abysian"
+#basechance 3.3
 #enditem
 
 #newitem
-#id "mechmosquito"
+#id "mech_mosquito"
 #gameid -1
 #sprite /graphics/hoburg/mounts/mech_mosquito.png
 #armor
 #tag "animal 'mechanical mosquito'"
 #tag "guaranteedprefix 'mechanized'"
 #needs overlay "mechmosquito_overlay"
-#define "#mountmnr 'mechmosquito'"
-#define "#gcost +40"
-#define "#rcost +12"
+#define "#mountmnr 'mech_mosquito_mount'"
 #offsety -15
 #offsetx -14
 #minprot 10
@@ -321,18 +1873,20 @@
 #theme "imperial"
 #theme "oriental"
 #theme "abysian"
+#basechance 3.3
 #enditem
+
+
+---- Crocodiles
 
 #newitem
 #id "crocodile"
-#basechance 0.33
 #gameid -1
 #sprite /graphics/mounts/standard/crocodile_mount.png
 #offsetx 25
 #offsety -7
 #armor
-#define "#mountmnr 'crocodilemount'"
-#define "#gcost +15"
+#define "#mountmnr 'crocodile_mount'"
 #description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
 #tag "animal crocodile"
 #theme "heavy"
@@ -347,19 +1901,205 @@
 #theme "oriental"
 #theme "abysian"
 #theme "civilized"
+#basechance 1.5
 #enditem
+
+#newitem
+#id "crocodile_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/crocodile_mount.png
+#offsetx 25
+#offsety -7
+#armor
+#define "#mountmnr 'crocodile_light_bronze_barding_mount'"
+#description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
+#tag "animal crocodile"
+#theme "heavy"
+#theme "specialmount"
+#tag "guaranteedprefix crocodile"
+#theme "primitive"
+#theme "crocodile"
+#theme "crocodiletotem"
+#theme "totemanimal"
+#theme "austral"
+#theme "occidental"
+#theme "oriental"
+#theme "abysian"
+#theme "civilized"
+#theme "bronze"
+#basechance 1.05
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "crocodile_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/crocodile_mount.png
+#offsetx 25
+#offsety -7
+#armor
+#define "#mountmnr 'crocodile_light_scale_barding_mount'"
+#description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
+#tag "animal crocodile"
+#theme "heavy"
+#theme "specialmount"
+#tag "guaranteedprefix crocodile"
+#theme "crocodile"
+#theme "crocodiletotem"
+#theme "totemanimal"
+#theme "austral"
+#theme "occidental"
+#theme "oriental"
+#theme "abysian"
+#theme "civilized"
+#theme "iron"
+#basechance 1.05
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "crocodile_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/crocodile_mount.png
+#offsetx 25
+#offsety -7
+#armor
+#define "#mountmnr 'crocodile_bronze_mail_barding_mount'"
+#description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
+#tag "animal crocodile"
+#theme "heavy"
+#theme "specialmount"
+#tag "guaranteedprefix crocodile"
+#theme "crocodile"
+#theme "crocodiletotem"
+#theme "totemanimal"
+#theme "austral"
+#theme "occidental"
+#theme "oriental"
+#theme "abysian"
+#theme "civilized"
+#theme "bronze"
+#basechance 0.75
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "crocodile_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/crocodile_mount.png
+#offsetx 25
+#offsety -7
+#armor
+#define "#mountmnr 'crocodile_iron_mail_barding_mount'"
+#description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
+#tag "animal crocodile"
+#theme "heavy"
+#theme "specialmount"
+#tag "guaranteedprefix crocodile"
+#theme "crocodile"
+#theme "crocodiletotem"
+#theme "totemanimal"
+#theme "austral"
+#theme "occidental"
+#theme "oriental"
+#theme "abysian"
+#theme "civilized"
+#theme "iron"
+#basechance 0.75
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "crocodile_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/crocodile_mount.png
+#offsetx 25
+#offsety -7
+#armor
+#define "#mountmnr 'crocodile_cataphract_barding_mount'"
+#description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
+#tag "animal crocodile"
+#theme "heavy"
+#theme "specialmount"
+#tag "guaranteedprefix crocodile"
+#theme "crocodile"
+#theme "crocodiletotem"
+#theme "totemanimal"
+#theme "austral"
+#theme "occidental"
+#theme "oriental"
+#theme "abysian"
+#theme "civilized"
+#theme "iron"
+#theme "advanced"
+#basechance 0.5
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "crocodile_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/crocodile_mount.png
+#offsetx 25
+#offsety -7
+#armor
+#define "#mountmnr 'crocodile_bronze_barding_mount'"
+#description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
+#tag "animal crocodile"
+#theme "heavy"
+#theme "specialmount"
+#tag "guaranteedprefix crocodile"
+#theme "crocodile"
+#theme "crocodiletotem"
+#theme "totemanimal"
+#theme "austral"
+#theme "occidental"
+#theme "oriental"
+#theme "abysian"
+#theme "civilized"
+#theme "bronze"
+#theme "advanced"
+#basechance 0.25
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "crocodile_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/crocodile_mount.png
+#offsetx 25
+#offsety -7
+#armor
+#define "#mountmnr 'crocodile_plate_barding_mount'"
+#description "If the rider dies, the crocodile will carry on fighting until the end of the battle."
+#tag "animal crocodile"
+#theme "heavy"
+#theme "specialmount"
+#tag "guaranteedprefix crocodile"
+#theme "crocodile"
+#theme "crocodiletotem"
+#theme "totemanimal"
+#theme "austral"
+#theme "occidental"
+#theme "oriental"
+#theme "abysian"
+#theme "civilized"
+#theme "iron"
+#theme "advanced"
+#basechance 0.25
+#chanceinc prot 18 *2
+#enditem
+
+
+---- Hyenas
 
 #newitem
 #id "hyena"
 #gameid -1
-#basechance 0.33
 #sprite /graphics/mounts/standard/hyena.png
 #armor
-#define "#mountmnr 'hyenamount'"
-#define "#gcost +15"
-#define "#rcost +4"
+#define "#mountmnr 'hyena_mount'"
 #tag "animal hyena"
-#tag "maxprot 14"
 #tag "guaranteedprefix hyena"
 #description "If the rider dies, the hyena will carry on fighting until the end of the battle."
 #offsetx -3
@@ -374,21 +2114,123 @@
 #theme "oriental"
 #theme "abysian"
 #theme "civilized"
-#light
+#theme "light"
+#tag "maxprot 14"
+#basechance 1.5
 #enditem
 
 #newitem
-#id "fossil"
+#id "hyena_light_bronze_barding"
 #gameid -1
-#basechance 0.33
+#sprite /graphics/mounts/standard/hyena.png
+#armor
+#define "#mountmnr 'hyena_light_bronze_barding_mount'"
+#tag "animal hyena"
+#tag "guaranteedprefix hyena"
+#description "If the rider dies, the hyena will carry on fighting until the end of the battle."
+#offsetx -3
+#offsety -19
+#theme "hyena"
+#theme "hyenatotem"
+#theme "totemanimal"
+#theme "austral"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#theme "abysian"
+#theme "civilized"
+#theme "light"
+#tag "maxprot 14"
+#basechance 1.25
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "hyena_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/hyena.png
+#armor
+#define "#mountmnr 'hyena_light_scale_barding_mount'"
+#tag "animal hyena"
+#tag "guaranteedprefix hyena"
+#description "If the rider dies, the hyena will carry on fighting until the end of the battle."
+#offsetx -3
+#offsety -19
+#theme "hyena"
+#theme "hyenatotem"
+#theme "totemanimal"
+#theme "austral"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#theme "abysian"
+#theme "civilized"
+#theme "light"
+#tag "maxprot 14"
+#basechance 1.25
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "hyena_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/hyena.png
+#armor
+#define "#mountmnr 'hyena_bronze_mail_barding_mount'"
+#tag "animal hyena"
+#tag "guaranteedprefix hyena"
+#description "If the rider dies, the hyena will carry on fighting until the end of the battle."
+#offsetx -3
+#offsety -19
+#theme "hyena"
+#theme "hyenatotem"
+#theme "totemanimal"
+#theme "austral"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#theme "abysian"
+#theme "civilized"
+#basechance 0.75
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "hyena_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/hyena.png
+#armor
+#define "#mountmnr 'hyena_iron_mail_barding_mount'"
+#tag "animal hyena"
+#tag "guaranteedprefix hyena"
+#description "If the rider dies, the hyena will carry on fighting until the end of the battle."
+#offsetx -3
+#offsety -19
+#theme "hyena"
+#theme "hyenatotem"
+#theme "totemanimal"
+#theme "austral"
+#theme "central"
+#theme "imperial"
+#theme "oriental"
+#theme "abysian"
+#theme "civilized"
+#basechance 0.75
+#chanceinc prot 14 *2
+#enditem
+
+
+---- Fossils
+
+#newitem
+#id "fossil_caveman"
+#gameid -1
 #sprite /graphics/hoburg/mounts/caveman_fossil.png
 #armor
 #needs overlay caveman_fossil_overlay
 #offsetx 5
 #offsety 27
-#define "#mountmnr 'fossil_caveman_mount'"
-#define "#gcost +45"
-#define "#rcost +5"
+#define "#mountmnr 'caveman_fossil_mount'"
 #tag "animal fossil"
 #theme "heavy"
 #theme "caveman"
@@ -397,18 +2239,59 @@
 #tag "guaranteedprefix fossil"
 #tag "minprot 10"
 #tag "maxprot 100"
+#basechance 1.5
 #enditem
 
 #newitem
-#id "swan chariot"
+#id "caveman_fossil_rusty_mail_armor"
 #gameid -1
-#basechance 0
+#sprite /graphics/hoburg/mounts/caveman_fossil.png
+#armor
+#needs overlay caveman_fossil_overlay
+#offsetx 5
+#offsety 27
+#define "#mountmnr 'caveman_fossil_rusty_mail_armor_mount'"
+#tag "animal fossil"
+#theme "heavy"
+#theme "caveman"
+#theme "abysian"
+#description "Leaves a fossilized caveman behind when the rider dies"
+#tag "guaranteedprefix fossil"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 1
+#enditem
+
+#newitem
+#id "caveman_fossil_hauberk"
+#gameid -1
+#sprite /graphics/hoburg/mounts/caveman_fossil.png
+#armor
+#needs overlay caveman_fossil_overlay
+#offsetx 5
+#offsety 27
+#define "#mountmnr 'caveman_fossil_hauberk_mount'"
+#tag "animal fossil"
+#theme "heavy"
+#theme "caveman"
+#theme "abysian"
+#description "Leaves a fossilized caveman behind when the rider dies"
+#tag "guaranteedprefix fossil"
+#tag "minprot 10"
+#tag "maxprot 100"
+#basechance 0.5
+#enditem
+
+
+---- Chariots
+
+#newitem
+#id "swan_chariot"
+#gameid -1
 #sprite /graphics/mounts/chariots/small_swan_bronze.png
 #needs overlay chariot_swan_bronze_overlay
 #armor
-#define "#mountmnr 'chariot_swan'"
-#define "#gcost +10"
-#define "#rcost +5"
+#define "#mountmnr 'swan_chariot'"
 #tag "animal swan"
 #tag "chariot"
 #theme "swan"
@@ -428,17 +2311,79 @@
 #tag "animal swan"
 #offsetx 16
 #offsety -4
+#basechance 1.5
 #enditem
 
 #newitem
-#id "black swan chariot"
+#id "swan_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/chariots/small_swan_bronze.png
+#needs overlay chariot_swan_bronze_overlay
+#armor
+#define "#mountmnr 'swan_light_bronze_barding_chariot'"
+#tag "animal swan"
+#tag "chariot"
+#theme "swan"
+#theme "swantotem"
+#theme "birdtotem"
+#theme "totemanimal"
+#theme "fae"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#theme "oriental"
+#theme "civilized"
+#theme "bronze"
+#tag "maxprot 14"
+#tag "guaranteedprefix swan"
+#tag "animal swan"
+#offsetx 16
+#offsety -4
+#basechance 1
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "swan_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/chariots/small_swan_bronze.png
+#needs overlay chariot_swan_bronze_overlay
+#armor
+#define "#mountmnr 'swan_light_scale_barding_chariot'"
+#tag "animal swan"
+#tag "chariot"
+#theme "swan"
+#theme "swantotem"
+#theme "birdtotem"
+#theme "totemanimal"
+#theme "fae"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "imperial"
+#theme "occidental"
+#theme "oriental"
+#theme "civilized"
+#theme "iron"
+#tag "maxprot 14"
+#tag "guaranteedprefix swan"
+#tag "animal swan"
+#offsetx 16
+#offsety -4
+#basechance 1
+#chanceinc prot 10 *2
+#enditem
+
+
+#newitem
+#id "black_swan"
 #gameid -1
 #sprite /graphics/mounts/chariots/small_blackswan_iron.png
 #needs overlay chariot_swan_iron_overlay
 #armor
-#define "#mountmnr 'chariot_blackswan'"
-#define "#gcost +11"
-#define "#rcost +6"
+#define "#mountmnr 'black_swan_chariot'"
 #tag "animal swan"
 #tag "chariot"
 #theme "swan"
@@ -450,20 +2395,65 @@
 #tag "maxprot 14"
 #tag "guaranteedprefix swan"
 #tag "animal swan"
-#basechance 0.25
+#basechance 1.25
 #offsetx 16
 #offsety -4
 #enditem
 
 #newitem
-#id "giant rat chariot (iron)"
+#id "black_swan_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/chariots/small_blackswan_iron.png
+#needs overlay chariot_swan_iron_overlay
+#armor
+#define "#mountmnr 'black_swan_light_bronze_barding_chariot'"
+#tag "animal swan"
+#tag "chariot"
+#theme "swan"
+#theme "swantotem"
+#theme "birdtotem"
+#theme "totemanimal"
+#theme "abysian"
+#theme "bronze"
+#tag "maxprot 14"
+#tag "guaranteedprefix swan"
+#tag "animal swan"
+#basechance 0.75
+#offsetx 16
+#offsety -4
+#enditem
+
+#newitem
+#id "black_swan_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/chariots/small_blackswan_iron.png
+#needs overlay chariot_swan_iron_overlay
+#armor
+#define "#mountmnr 'black_swan_light_scale_barding_chariot'"
+#tag "animal swan"
+#tag "chariot"
+#theme "swan"
+#theme "swantotem"
+#theme "birdtotem"
+#theme "totemanimal"
+#theme "abysian"
+#theme "iron"
+#tag "maxprot 14"
+#tag "guaranteedprefix swan"
+#tag "animal swan"
+#basechance 0.25
+#offsetx 16
+#offsety -4
+#enditem
+
+
+#newitem
+#id "giant_rat"
 #gameid -1
 #sprite /graphics/mounts/chariots/small_rat_iron.png
 #needs overlay chariot_small_iron_overlay
 #armor
-#define "#mountmnr 'ratchariot'"
-#define "#gcost +20"
-#define "#rcost +10"
+#define "#mountmnr 'giant_rat_chariot'"
 #tag "animal rat"
 #tag "chariot"
 #theme "rat"
@@ -471,67 +2461,179 @@
 #theme "totemanimal"
 #theme "oriental"
 #theme "boreal"
-#tag "maxprot 14"
 #tag "guaranteedprefix rat"
 #tag "animal rat"
-#basechance 0.25
+#tag "maxprot 14"
 #offsetx 19
 #offsety -5
+#basechance 1.25
 #enditem
 
 #newitem
-#id "giant rat chariot (bronze)"
+#id "giant_rat_light_bronze_barding"
 #gameid -1
-#sprite /graphics/mounts/chariots/small_rat_bronze.png
-#needs overlay chariot_small_bronze_overlay
+#sprite /graphics/mounts/chariots/small_rat_iron.png
+#needs overlay chariot_small_iron_overlay
 #armor
-#define "#mountmnr 'ratchariot_bronze'"
-#define "#gcost +20"
-#define "#rcost +10"
+#define "#mountmnr 'giant_rat_light_bronze_barding_chariot'"
 #tag "animal rat"
 #tag "chariot"
 #theme "rat"
 #theme "rattotem"
 #theme "totemanimal"
-#theme "central"
-#tag "maxprot 14"
+#theme "oriental"
+#theme "boreal"
+#theme "iron"
 #tag "guaranteedprefix rat"
 #tag "animal rat"
-#basechance 0.25
+#tag "maxprot 14"
 #offsetx 19
 #offsety -5
+#basechance 1
+#chanceinc prot 10 *2
 #enditem
 
 #newitem
-#id "vine nightmare"
+#id "giant_rat_light_scale_barding"
 #gameid -1
-#basechance 0.33
+#sprite /graphics/mounts/chariots/small_rat_iron.png
+#needs overlay chariot_small_iron_overlay
+#armor
+#define "#mountmnr 'giant_rat_light_scale_barding_chariot'"
+#tag "animal rat"
+#tag "chariot"
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#theme "oriental"
+#theme "boreal"
+#theme "iron"
+#tag "guaranteedprefix rat"
+#tag "animal rat"
+#tag "maxprot 14"
+#offsetx 19
+#offsety -5
+#basechance 1
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "giant_rat_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/chariots/small_rat_iron.png
+#needs overlay chariot_small_iron_overlay
+#armor
+#define "#mountmnr 'giant_rat_bronze_mail_barding_chariot'"
+#tag "animal rat"
+#tag "chariot"
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#theme "oriental"
+#theme "boreal"
+#theme "bronze"
+#tag "guaranteedprefix rat"
+#tag "animal rat"
+#offsetx 19
+#offsety -5
+#basechance 0.5
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "giant_rat_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/chariots/small_rat_iron.png
+#needs overlay chariot_small_iron_overlay
+#armor
+#define "#mountmnr 'giant_rat_iron_mail_barding_chariot'"
+#tag "animal rat"
+#tag "chariot"
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#theme "oriental"
+#theme "boreal"
+#theme "iron"
+#tag "guaranteedprefix rat"
+#tag "animal rat"
+#offsetx 19
+#offsety -5
+#basechance 0.5
+#chanceinc prot 14 *2
+#enditem
+
+
+---- Vine Nightmares
+
+#newitem
+#id "vine_nightmare"
+#gameid -1
 #sprite /graphics/hoburg/mounts/vine_nightmare.png
 #needs overlay vine_nightmare_overlay
 #armor
-#define "#mountmnr 'vine_nightmare'"
+#define "#mountmnr 'vine_nightmare_mount'"
 #define "#enc 15"
-#define "#gcost +40"
+#description "The riders animate their undead hogs with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
 #tag "guaranteedprefix nightmare"
 #theme "specialmount"
 #tag "animal nightmare"
-#description "The riders animate their undead hogs with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
 #theme "primitive"
 #theme "parasitic_vines"
 #offsety -12
 #offsetx 1
 #tag "minprot 10"
+#basechance 1.5
 #enditem
 
 #newitem
-#id "dwarf elephant"
+#id "vine_nightmare_light_bronze_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/vine_nightmare.png
+#needs overlay vine_nightmare_overlay
+#armor
+#define "#mountmnr 'vine_nightmare_light_bronze_barding_mount'"
+#define "#enc 15"
+#description "The riders animate their undead hogs with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#tag "guaranteedprefix nightmare"
+#theme "specialmount"
+#tag "animal nightmare"
+#theme "parasitic_vines"
+#offsety -12
+#offsetx 1
+#tag "minprot 10"
+#basechance 1
+#enditem
+
+#newitem
+#id "vine_nightmare_light_scale_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/vine_nightmare.png
+#needs overlay vine_nightmare_overlay
+#armor
+#define "#mountmnr 'vine_nightmare_light_scale_barding_mount'"
+#define "#enc 15"
+#description "The riders animate their undead hogs with their own life force; this is exhausting, but the nightmares cause fear in their enemies."
+#tag "guaranteedprefix nightmare"
+#theme "specialmount"
+#tag "animal nightmare"
+#theme "parasitic_vines"
+#offsety -12
+#offsetx 1
+#tag "minprot 10"
+#basechance 0.5
+#enditem
+
+
+---- Elephants
+
+#newitem
+#id "dwarf_elephant"
 #gameid -1
 #sprite /graphics/mounts/standard/elephant_dwarf.png
 #needs overlay elephant_dwarf_overlay
 #armor
-#define "#mountmnr 'dwarfelephantmount'"
-#define "#gcost +20"
-#define "#rcost +4"
+#define "#mountmnr 'dwarf_elephant_mount'"
 #tag "animal elephant"
 #tag "guaranteedprefix elephant"
 #theme "elephant"
@@ -543,17 +2645,16 @@
 #theme "imperial"
 #theme "oriental"
 #theme "civilized"
+#basechance 7
 #enditem
 
 #newitem
-#id "armored dwarf elephant"
+#id "dwarf_elephant_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/elephant_dwarf_armored.png
 #needs overlay elephant_dwarf_armored_overlay
 #armor
-#define "#mountmnr 'dwarfelephantmount_armored'"
-#define "#gcost +20"
-#define "#rcost +9"
+#define "#mountmnr 'dwarf_elephant_barding_mount'"
 #tag "animal elephant"
 #tag "guaranteedprefix elephant"
 #theme "elephant"
@@ -566,4 +2667,5 @@
 #theme "imperial"
 #theme "oriental"
 #theme "civilized"
+#basechance 3
 #enditem

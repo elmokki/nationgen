@@ -1,11 +1,4 @@
 #newitem
-#id no_lance
-#basechance 1000
-#chanceinc racetheme bronze *0
-#gameid -1
-#enditem
-
-#newitem
 #id heavylance
 #gameid heavybronzelance
 #sprite /graphics/merrow/weapon/lance_bronze.png
@@ -14,4 +7,26 @@
 #lance
 #theme bronze
 #theme heavy
+#enditem
+
+#newitem
+#id heavygoldenlance
+#gameid heavygoldenlance
+#sprite /graphics/sidhe/weapon/goldenlance.png
+#renderprio 7
+#renderslot "weapon"
+#lance
+#theme heavy
+#basechance 0.25
+#enditem
+
+#newitem
+#id fay_lance
+#gameid 818
+#sprite /graphics/sidhe/weapon/goldenlance.png
+#renderprio 7
+#renderslot "weapon"
+#lance
+#theme heavy
+#basechance 0.25
 #enditem

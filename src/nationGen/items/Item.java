@@ -2,6 +2,8 @@ package nationGen.items;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 import nationGen.NationGen;
 import nationGen.chances.ThemeInc;
 import nationGen.entities.Drawable;
@@ -24,6 +26,21 @@ public class Item extends Drawable {
 
   public Item(NationGen nationGen) {
     super(nationGen);
+  }
+
+  public boolean containsMount() {
+    Optional<Command> possibleMountmnr = this.commands
+      .stream()
+      .filter(c -> c.command.equals("#mountmnr"))
+      .findAny();
+
+    if (possibleMountmnr.isPresent()) {
+      return true;
+    }
+
+    else {
+      return false;
+    }
   }
 
   public CustomItem getCustomItemCopy() {

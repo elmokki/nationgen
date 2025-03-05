@@ -1,4 +1,4 @@
-﻿--- #new initializes both armors and weapons
+--- #new initializes both armors and weapons
 --- #armor will indicate that the item is armor
 --- Use exact syntax you'd use for dom3 except for #newweapon, #newarmor and #end
 --- Remember #type for armor.
@@ -1619,8 +1619,8 @@
 #command "#dmg 1"
 #command "#range -1"
 #command "#ammo 3"
-#command "#rcost 2"
-#command "#nostr"
+#command "#rcost 1"
+#command "#halfstr"
 #command "#flyspr 337 1"
 #command "#secondaryeffect 54"
 #command "#name 'Poison Fish'"
@@ -2337,7 +2337,6 @@
 #command "#natural"
 #end
 
-
 #new customweapon
 #id "crabpincer"
 #command "#dmg 1"
@@ -2486,4 +2485,370 @@
 #command "#name 'Battleaxe'"
 #command "#slash"
 #command "#ironweapon"
+#end
+
+
+---- Thematic Bardings
+
+#new customarmor
+#id "ice_barding"
+#armor
+#command "#name 'Ice Barding'"
+#command "#type 9"
+#command "#prot 17"
+#command "#def -2"
+#command "#enc 2"
+#command "#rcost 22"
+#command "#magicarmor"
+#end
+
+#new customarmor
+#id "meteorite_barding"
+#armor
+#command "#name 'Meteorite Barding'"
+#command "#type 9"
+#command "#prot 23"
+#command "#def -3"
+#command "#enc 5"
+#command "#rcost 30"
+#command "#magicarmor"
+#end
+
+#new customarmor
+#id "gleaming_barding"
+#armor
+#command "#name 'Gleaming Barding'"
+#command "#type 9"
+#command "#prot 18"
+#command "#def -2"
+#command "#enc 4"
+#command "#rcost 22"
+#command "#magicarmor"
+#end
+
+#new customarmor
+#id "cyclope_barding"
+#armor
+#command "#name 'Cyclopean Barding'"
+#command "#type 9"
+#command "#prot 19"
+#command "#def -2"
+#command "#enc 4"
+#command "#rcost 25"
+#command "#magicarmor"
+#end
+
+#new customarmor
+#id "thick_linen_barding"
+#armor
+#command "#name 'Thick Linen Barding'"
+#command "#type 9"
+#command "#prot 8"
+#command "#rcost 2"
+#end
+
+#new customarmor
+#id "sharkskin_barding"
+#armor
+#command "#name 'Sharkskin Barding'"
+#command "#type 9"
+#command "#prot 9"
+#command "#rcost 2"
+#end
+
+#new customarmor
+#id "obsidian_barding"
+#armor
+#command "#name 'Obsidian Barding'"
+#command "#type 9"
+#command "#prot 15"
+#command "#def -1"
+#command "#enc 2"
+#command "#rcost 20"
+#command "#magicarmor"
+#end
+
+---- Cavalry Weapons (mostly to replace two-handed weapons on mounted units,
+---- which get a -2 attack skill in Dominions 6)
+
+#new customweapon
+#id "cavalry_trident"
+#command "#rcost 3"
+#command "#dmg 5"
+#command "#def 1"
+#command "#len 3"
+#command "#nratt 1"
+#command "#pierce"
+#command "#ironweapon"
+#command "#name 'Cavalry Trident'"
+#end
+
+#new customweapon
+#id "cavalry_trident_bronze"
+#command "#rcost 3"
+#command "#dmg 4"
+#command "#def 1"
+#command "#len 3"
+#command "#nratt 1"
+#command "#pierce"
+#command "#name 'Bronze Cavalry Trident'"
+#end
+
+#new customweapon
+#id "cavalry_trident_bone"
+#command "#rcost 3"
+#command "#dmg 3"
+#command "#def 1"
+#command "#len 3"
+#command "#nratt 1"
+#command "#pierce"
+#command "#name 'Bone Cavalry Trident'"
+#end
+
+#new customweapon
+#id "cavalry_axe"
+#command "#rcost 3"
+#command "#dmg 7"
+#command "#att 1"
+#command "#len 2"
+#command "#nratt 1"
+#command "#slash"
+#command "#ironweapon"
+#command "#name 'Cavalry Axe'"
+#end
+
+#new customweapon
+#id "cavalry_axe_bronze"
+#command "#rcost 3"
+#command "#dmg 6"
+#command "#att 1"
+#command "#len 2"
+#command "#nratt 1"
+#command "#slash"
+#command "#name 'Bronze Cavalry Axe'"
+#end
+
+#new customweapon
+#id "cavalry_mace"
+#command "#rcost 2"
+#command "#dmg 6"
+#command "#len 2"
+#command "#nratt 1"
+#command "#blunt"
+#command "#ironweapon"
+#command "#name 'Cavalry Mace'"
+#end
+
+#new customweapon
+#id "cavalry_glaive"
+#command "#rcost 3"
+#command "#dmg 8"
+#command "#def 1"
+#command "#len 3"
+#command "#nratt 1"
+#command "#slash"
+#command "#ironweapon"
+#command "#name 'Cavalry Glaive'"
+#end
+
+#new customweapon
+#id "cavalry_glaive_bronze"
+#command "#rcost 3"
+#command "#dmg 7"
+#command "#def 1"
+#command "#len 3"
+#command "#nratt 1"
+#command "#slash"
+#command "#name 'Bronze Cavalry Glaive'"
+#end
+
+#new customweapon
+#id "cavalry_glaive_coral"
+#command "#rcost 3"
+#command "#dmg 7"
+#command "#def 1"
+#command "#len 3"
+#command "#nratt 1"
+#command "#slash"
+#command "#ironweapon"
+#command "#secondaryeffect 50"
+#command "#name 'Coral Cavalry Glaive'"
+#end
+
+#new customweapon
+#id "cavalry_glaive_ice"
+#command "#rcost 6"
+#command "#dmg 7"
+#command "#def -1"
+#command "#len 3"
+#command "#nratt 1"
+#command "#slash"
+#command "#magic"
+#command "#name 'Cavalry Ice Glaive'"
+#end
+
+#new customweapon
+#id "cavalry_yari"
+#command "#rcost 2"
+#command "#dmg 4"
+#command "#att 1"
+#command "#len 3"
+#command "#nratt 1"
+#command "#pierce"
+#command "#ironweapon"
+#command "#name 'Cavalry Yari'"
+#end
+
+#new customweapon
+#id "cavalry_naginata"
+#command "#rcost 4"
+#command "#dmg 8"
+#command "#att 1"
+#command "#def -1"
+#command "#len 3"
+#command "#nratt 1"
+#command "#slash"
+#command "#ironweapon"
+#command "#name 'Cavalry Naginata'"
+#end
+
+#new customweapon
+#id "tachi"
+#command "#rcost 7"
+#command "#dmg 6"
+#command "#att 3"
+#command "#def 2"
+#command "#len 1"
+#command "#nratt 1"
+#command "#slash"
+#command "#pierce"
+#command "#ironweapon"
+#command "#name 'Tachi'"
+#end
+
+#new customweapon
+#id "cavalry_nodachi"
+#command "#rcost 6"
+#command "#dmg 7"
+#command "#att 2"
+#command "#def 2"
+#command "#len 2"
+#command "#nratt 1"
+#command "#slash"
+#command "#ironweapon"
+#command "#name 'Cavalry Nodachi'"
+#end
+
+#new customweapon
+#id "cavalry_ji"
+#command "#rcost 4"
+#command "#dmg 8"
+#command "#att -1"
+#command "#def 1"
+#command "#len 3"
+#command "#nratt 1"
+#command "#slash"
+#command "#pierce"
+#command "#ironweapon"
+#command "#name 'Cavalry Ji'"
+#end
+
+#new customweapon
+#id "cavalry_great_club"
+#command "#dmg 6"
+#command "#def 1"
+#command "#len 2"
+#command "#nratt 1"
+#command "#blunt"
+#command "#woodenweapon"
+#command "#name 'Cavalry Great Club'"
+#end
+
+#new customweapon
+#id "cavalry_obsidian_clubsword"
+#command "#rcost 2"
+#command "#dmg 5"
+#command "#def 1"
+#command "#len 2"
+#command "#nratt 1"
+#command "#blunt"
+#command "#slash"
+#command "#name 'Cavalry Obsidian Clubsword'"
+#end
+
+#new customweapon
+#id "cavalry_hardwood_club"
+#command "#rcost 8"
+#command "#dmg 5"
+#command "#att 1"
+#command "#def 1"
+#command "#len 1"
+#command "#nratt 1"
+#command "#blunt"
+#command "#magic"
+#command "#name 'Cavalry Hardwood Club'"
+#end
+
+---- Mage Weapons
+
+#new customweapon
+#id "orb"
+#command "#rcost 2"
+#command "#dmg 0"
+#command "#len 0"
+#command "#nratt 1"
+#command "#blunt"
+#command "#magic"
+#command "#name 'Orb'"
+#end
+
+#new customweapon
+#id "orb_obsidian"
+#command "#rcost 3"
+#command "#dmg 0"
+#command "#len 0"
+#command "#nratt 1"
+#command "#blunt"
+#command "#magic"
+#command "#secondaryeffect 64" -- Decay
+#command "#name 'Obsidian Orb'"
+#end
+
+#new customweapon
+#id "orb_gem"
+#command "#rcost 3"
+#command "#dmg 3"
+#command "#len 0"
+#command "#nratt 1"
+#command "#blunt"
+#command "#magic"
+#command "#beam"
+#command "#range0"
+#command "#mrnegates"
+#command "#armornegating"
+#command "#nostr"
+#command "#name 'Gem Orb'"
+#end
+
+#new customweapon
+#id "orb_pearl"
+#command "#rcost 3"
+#command "#dmg 3"
+#command "#len 0"
+#command "#nratt 1"
+#command "#cold"
+#command "#magic"
+#command "#name 'Pearl Orb'"
+#end
+
+#new customweapon
+#id "orb_gold"
+#command "#rcost 3"
+#command "#dmg 0"
+#command "#len 0"
+#command "#nratt 1"
+#command "#fire"
+#command "#armorpiercing"
+#command "#magic"
+#command "#name 'Golden Orb'"
 #end

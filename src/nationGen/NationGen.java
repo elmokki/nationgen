@@ -3,7 +3,6 @@ package nationGen;
 import com.elmokki.Dom3DB;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.ZonedDateTime;
@@ -34,8 +33,8 @@ import nationGen.units.Unit;
 
 public class NationGen {
 
-  public static String version = "0.11.0";
-  public static String date = "31st October 2024";
+  public static String version = "0.12.0";
+  public static String date = "4th March 2025";
 
   private List<NationRestriction> restrictions;
 
@@ -420,7 +419,7 @@ public class NationGen {
         spell = new Spell(this);
         spell.name = spellName;
         spell.commands.add(Command.args("#copyspell", spellName));
-        spell.commands.add(Command.args("#name", spellName));
+        spell.commands.add(Command.args("#name", spellName + " "));
       }
 
       spell.nationids.add(id);
@@ -816,7 +815,10 @@ public class NationGen {
       .forEach(mu -> {
         mu.polish(this, n);
 
-        // Replace command
+        // Look for custom #weapon commands defined in the mount form with a
+        // non-numerical id (i.e. #command "#armor 'meteorite_barding'").
+        // These are defined in customitems.txt, and this code replaces their
+        // NationGen id with the generated Dominions custom id
         mu.mountForm.commands
           .stream()
           .filter(c -> c.command.equals("#weapon"))
@@ -827,6 +829,25 @@ public class NationGen {
               c.args.set(
                 0,
                 new Arg(customItemsHandler.getCustomItemId(weaponId.get()))
+              );
+            }
+          });
+
+        // Look for custom #armor commands defined in the mount form (
+        // like custom bardings) with a non-numerical id (i.e. #command
+        // "#armor 'meteorite_barding'"). These are defined in customitems.txt,
+        // and this code replaces their NationGen id with the generated
+        // Dominions custom id
+        mu.mountForm.commands
+          .stream()
+          .filter(c -> c.command.equals("#armor"))
+          .forEach(c -> {
+            Arg armorId = c.args.get(0);
+
+            if (!armorId.isNumeric()) {
+              c.args.set(
+                0,
+                new Arg(customItemsHandler.getCustomItemId(armorId.get()))
               );
             }
           });
@@ -927,18 +948,11 @@ public class NationGen {
   }
 
   private void handleMount(Command c, Unit u) {
-    Mount mount = assets.mounts
-      .stream()
-      .filter(s -> s.name.equals(c.args.get(0).get()))
-      .findFirst()
-      .orElseThrow(() ->
-        new IllegalArgumentException(
-          "Mount named " + c.args.get(0) + " could not be found."
-        )
-      );
-
+    Mount mount = u.mountItem;
     MountUnit mu = new MountUnit(this, assets, u.race, u.pose, u, mount);
 
+    // Maps the mount item id (i.e. #mountmnr 'bear_mail_barding')
+    // to a custom monster id (i.e. 5001) which will be written into the mod
     mu.id = idHandler.nextUnitId();
     c.args.set(0, new Arg(mu.id));
     mounts.add(mu);

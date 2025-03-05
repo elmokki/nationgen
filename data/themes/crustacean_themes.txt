@@ -1,9 +1,9 @@
 -- Generic theme with high diversity and low cohesion
--- Weights: EA 2, MA 3, LA 4
+-- Weights: EA 1, MA 2, LA 3
 #newtheme
 #type techlevel
-#id default
-#basechance 2
+#name advanced
+#basechance 1
 #chanceinc era 2 +1
 #chanceinc era 3 +2
 #themeinc theme advanced *10
@@ -20,7 +20,19 @@
 #chanceinc era 3 -1.5
 #themeinc theme advanced *0.1
 #themeinc theme bronze *10
-#themeinc theme primitive *5
+#themeinc theme primitive *0.1
+#endtheme
+
+-- Weights: EA 4, MA 3, LA 2.5
+#newtheme
+#type techlevel
+#name primitive
+#basechance 4
+#chanceinc era 2 -1
+#chanceinc era 3 -1.5
+#themeinc theme advanced *0.1
+#themeinc theme bronze *0.1
+#themeinc theme primitive *10
 #endtheme
 
 -- Weights: EA 0.05, MA 0.05, LA 0.05

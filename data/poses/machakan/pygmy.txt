@@ -67,6 +67,8 @@
 #load armor /data/items/machakans/pygmy/armor.txt
 
 #load weapon /data/items/machakans/pygmy/bows.txt
+#load bonusweapon /data/items/machakans/pygmy/weapon.txt
+#generateitem 1 bonusweapon
 
 #maxvarieties 1
 #maxunits 1
@@ -111,6 +113,7 @@
 #id "pygmy cavalry"
 #subrace pygmy
 #subraceprefix pygmy
+#define "#skilledrider 3"
 
 #baseitemslot feet 0
 

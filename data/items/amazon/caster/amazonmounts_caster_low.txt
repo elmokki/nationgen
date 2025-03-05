@@ -1,4 +1,4 @@
---- Base offsets are applied to everything except base and overlay
+------ Base offsets are applied to everything except base and overlay
 
 #newitem
 #id "serpent"
@@ -8,29 +8,395 @@
 #offsetx -7
 #offsety 14
 #needs overlay 6
-#define "#mountmnr 'serpent1'"
-#define "#gcost +30"
-#tag "animal serpent"
-#theme "light"
-#tag "guaranteedprefix serpent"
-#tag "maxprot 13"
 #description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#define "#mountmnr 'serpent_mount'"
+#theme "light"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#basechance 10
+#tag "maxprot 14"
+#enditem
+
+#newitem
+#id "serpent_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#define "#mountmnr 'serpent_leather_barding_mount'"
+#theme "light"
+#theme "leather"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 14"
+#basechance 9
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "serpent_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#define "#mountmnr 'serpent_light_bronze_barding_mount'"
+#theme "light"
+#theme "bronze"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "serpent_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#define "#mountmnr 'serpent_light_scale_barding_mount'"
+#theme "light"
+#theme "iron"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "serpent_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#define "#mountmnr 'serpent_bronze_mail_barding_mount'"
+#theme "bronze"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "serpent_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#define "#mountmnr 'serpent_iron_mail_barding_mount'"
+#theme "iron"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "serpent_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#define "#mountmnr 'serpent_cataphract_barding_mount'"
+#theme "iron"
+#theme "heavy"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#basechance 4
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "serpent_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#define "#mountmnr 'serpent_bronze_barding_mount'"
+#theme "bronze"
+#theme "heavy"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#basechance 3
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "serpent_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#define "#mountmnr 'serpent_plate_barding_mount'"
+#theme "iron"
+#theme "heavy"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#basechance 2.5
+#chanceinc prot 18 *2
+#enditem
+
+#newitem
+#id "serpent_silver_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#define "#mountmnr 'serpent_silver_barding_mount'"
+#theme "heavy"
+#theme "advanced"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#basechance 2
+#chanceinc prot 18 *2
+#enditem
+
+#newitem
+#id "serpent_golden_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#define "#mountmnr 'serpent_golden_barding_mount'"
+#theme "heavy"
+#theme "advanced"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#basechance 1
+#chanceinc prot 18 *2
 #enditem
 
 
 #newitem
-#id "green lizard"
+#id "green_lizard"
 #gameid -1
 #sprite /graphics/mounts/standard/greenlizard.png
 #armor
 #offsetx -5
 #offsety 3
 #needs overlay 3
-#define "#mountmnr 'greenlizard'"
-#define "#gcost +20"
-#tag "animal lizard"
+#define "#mountmnr 'green_lizard_mount'"
 #theme "light"
 #theme "specialmount"
+#tag "animal lizard"
 #tag "guaranteedprefix lizard"
 #tag "maxprot 15"
+#basechance 10
+#enditem
+
+#newitem
+#id "green_lizard_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#mountmnr 'green_lizard_leather_barding_mount'"
+#theme "light"
+#theme "specialmount"
+#theme "leather"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#tag "maxprot 15"
+#basechance 9
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "green_lizard_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#mountmnr 'green_lizard_light_bronze_barding_mount'"
+#theme "light"
+#theme "specialmount"
+#theme "bronze"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "green_lizard_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#mountmnr 'green_lizard_light_scale_barding_mount'"
+#theme "light"
+#theme "specialmount"
+#theme "iron"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "green_lizard_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#mountmnr 'green_lizard_bronze_mail_barding_mount'"
+#theme "specialmount"
+#theme "bronze"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "green_lizard_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#mountmnr 'green_lizard_iron_mail_barding_mount'"
+#theme "specialmount"
+#theme "iron"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#tag "maxprot 18"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "green_lizard_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#mountmnr 'green_lizard_cataphract_barding_mount'"
+#theme "specialmount"
+#theme "iron"
+#theme "heavy"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#basechance 4
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "green_lizard_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#mountmnr 'green_lizard_bronze_barding_mount'"
+#theme "specialmount"
+#theme "bronze"
+#theme "heavy"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#basechance 3
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "green_lizard_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#mountmnr 'green_lizard_plate_barding_mount'"
+#theme "specialmount"
+#theme "iron"
+#theme "heavy"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#basechance 2.5
+#chanceinc prot 18 *2
+#enditem
+
+#newitem
+#id "green_lizard_silver_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#mountmnr 'green_lizard_silver_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "advanced"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#basechance 2
+#chanceinc prot 18 *2
+#enditem
+
+#newitem
+#id "green_lizard_golden_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#mountmnr 'green_lizard_golden_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "advanced"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#basechance 1.5
+#chanceinc prot 18 *2
 #enditem

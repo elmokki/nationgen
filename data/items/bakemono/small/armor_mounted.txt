@@ -1,0 +1,72 @@
+--- Nothing
+
+#newitem
+#id "roninpants"
+#gameid -1
+#sprite /graphics/bakemono/small/armor/roninpants.png
+#theme naked
+#theme elite
+#theme small_elite
+#armor
+#enditem
+
+
+--- Furs
+
+#newitem
+#id "furs"
+#gameid 44
+#sprite /graphics/bakemono/small/armor/furs_katana.png
+#theme naked
+#theme primitive
+#armor
+#enditem
+
+
+--- Ashigaru
+
+#newitem
+#id "ashigaru armor"
+#gameid 128
+#sprite /graphics/bakemono/small/armor/ashigaru_katana.png
+#armor
+#needs legs ashigaru
+#enditem
+
+
+--- Samurai
+
+#newitem
+#id "samurai armor"
+#gameid 129
+#sprite /graphics/bakemono/small/armor/samurai_katana.png
+#eliteversion "heavy samurai armor elite"
+#theme advanced
+#theme small_elite
+#armor
+#needs legs samurai
+#enditem
+
+#newitem
+#id "heavy samurai armor"
+#gameid 130
+#sprite /graphics/bakemono/small/armor/heavysamurai_katana.png
+#eliteversion "heavy samurai armor elite"
+#theme advanced
+#theme elite
+#theme small_elite
+#armor
+#needs legs heavysamurai1
+#enditem
+
+#newitem
+#id "heavy samurai armor elite"
+#gameid 130
+#sprite /graphics/bakemono/small/armor/heavysamurai_katana.png
+#recolormask /graphics/bakemono/small/armor/heavysamurai_katana_recolormask.png
+#theme advanced
+#theme elite
+#theme small_elite
+#armor
+#needs legs heavysamurai2
+#enditem

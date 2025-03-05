@@ -265,8 +265,21 @@ public class Nation {
 
     // Sacred
     for (int i = 0; i < sacredcount; i++) {
-      int power = 1;
+      boolean isFirstSacred = i == 0;
+      double sacredPowerModifier = this.nationGen.settings.get(SettingsType.sacredpower);
+      
+      // Scale base unit power by the sacredpower setting chosen
+      int power = (int)((3 + sacredPowerModifier) * sacredPowerModifier);
 
+      /**
+       * Power ranges by Sacred Power setting and below randomization:
+       * 
+       * Normal:          4 - 11
+       * High:            10 - 17
+       * Batshit Insane:  18 - 25
+       */
+
+      // Roll multiple times. If lucky, this sacred will have more power than normal
       if (random.nextDouble() < 0.9) {
         power++;
         if (random.nextDouble() < 0.8) {
@@ -298,15 +311,17 @@ public class Nation {
         }
       }
 
-      Unit sacred = sacGen.generateUnit(raceHasSacreds, power, (i == 0));
+      Unit sacred = sacGen.generateUnit(raceHasSacreds, power, isFirstSacred);
+      
       if (sacred != null) {
-        if (i > 0 && random.nextDouble() < 0.5) {
-          sacred.caponly = true;
-        }
         sacreds.add(sacred);
       }
     }
-    if (sacreds.size() > 0) unitlists.put("sacreds", sacreds);
+
+    if (sacreds.size() > 0) {
+      unitlists.put("sacreds", sacreds);
+    }
+    
     sacGen = null;
     System.gc();
   }
@@ -607,7 +622,6 @@ public class Nation {
       if (random.nextDouble() < 0.02 * extraPDMulti) PDRanks = 4;
       else PDRanks = 3;
     }
-    // finalizeUnits();
   }
 
   private void addNationThemes() {
@@ -787,7 +801,10 @@ public class Nation {
       // TODO: is this supposed to check pose roles instead of tags??
       if (
         u.tags.containsName("elite") || u.tags.containsName("sacred")
-      ) u.commands.addAll(u.race.specialcommands);
+      ) {
+        u.commands.addAll(u.race.specialcommands);
+      }
+
       giveSecondaryRaceSpecialCommands(u, conditional);
       u.polish();
     }
@@ -1343,7 +1360,9 @@ public class Nation {
     return map
       .entrySet()
       .stream()
-      .filter(e -> e.getKey().startsWith(prefix))
+      .filter(e -> 
+        e.getKey().startsWith(prefix)
+      )
       .map(Entry::getValue)
       .flatMap(Collection::stream);
   }

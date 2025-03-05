@@ -1,24 +1,96 @@
---- Base offsets are applied to everything except base and overlay
+------ Base offsets are applied to everything except base and overlay
+
+
 #newitem
-#basechance 0.1
-#id "serpent 1"
+#id "serpent"
 #gameid -1
 #sprite /graphics/mounts/standard/serpent1.png
 #armor
 #offsetx -7
 #offsety 14
 #needs overlay 6
-#define "#mountmnr 'serpent1'"
-#define "#gcost +30"
-#tag "animal serpent"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#define "#mountmnr 'serpent_mount'"
 #theme "light"
+#tag "animal serpent"
 #tag "guaranteedprefix serpent"
 #tag "maxprot 13"
-#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#basechance 10
 #enditem
 
 #newitem
-#basechance 0.1
+#id "serpent_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#define "#mountmnr 'serpent_leather_barding_mount'"
+#theme "light"
+#theme "leather"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 13"
+#basechance 8
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "serpent_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#define "#mountmnr 'serpent_light_scale_barding_mount'"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 16"
+#basechance 6
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "serpent_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#define "#mountmnr 'serpent_cataphract_barding_mount'"
+#theme "heavy"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#basechance 3
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "serpent_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent1.png
+#armor
+#offsetx -7
+#offsety 14
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#define "#mountmnr 'serpent_plate_barding_mount'"
+#theme "heavy"
+#theme "advanced"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#basechance 1.5
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
 #id "serpent 2"
 #gameid -1
 #sprite /graphics/mounts/standard/serpent2.png
@@ -26,207 +98,279 @@
 #offsetx -5
 #offsety 13
 #needs overlay 7
-#define "#mountmnr 'serpent2'"
-#define "#gcost +30"
-#define "#rcost +5"
-#tag "animal serpent"
-#theme "heavy"
-#theme "specialmount"
-#tag "guaranteedprefix serpent"
 #description "If the rider dies, the serpent will carry on fighting until the end of the battle."
-#tag "minprot 14"
+#define "#mountmnr 'serpent_stupid_mount'"
+#theme "specialmount"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "minprot 8"
+#basechance 1
 #enditem
 
 #newitem
-#basechance 0.5
-#id "green lizard"
+#id "serpent_stupid_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent2.png
+#armor
+#offsetx -5
+#offsety 13
+#needs overlay 7
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#define "#mountmnr 'serpent_stupid_leather_barding_mount'"
+#theme "leather"
+#theme "specialmount"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "minprot 8"
+#basechance 0.9
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "serpent_stupid_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent2.png
+#armor
+#offsetx -5
+#offsety 13
+#needs overlay 7
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#define "#mountmnr 'serpent_stupid_light_scale_barding_mount'"
+#theme "specialmount"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "minprot 8"
+#basechance 0.8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "serpent_stupid_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent2.png
+#armor
+#offsetx -5
+#offsety 13
+#needs overlay 7
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#define "#mountmnr 'serpent_stupid_cataphract_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "minprot 8"
+#basechance 0.3
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "serpent_stupid_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent2.png
+#armor
+#offsetx -5
+#offsety 13
+#needs overlay 7
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#define "#mountmnr 'serpent_stupid_plate_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "advanced"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "minprot 8"
+#basechance 0.15
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "green_lizard"
 #gameid -1
 #sprite /graphics/mounts/standard/greenlizard.png
 #armor
 #offsetx -5
 #offsety 3
 #needs overlay 3
-#define "#mountmnr 'greenlizard'"
-#define "#gcost +20"
-#tag "animal lizard"
-#theme "light"
+#define "#mountmnr 'green_lizard_mount'"
 #theme "specialmount"
+#theme "light"
+#tag "animal lizard"
 #tag "guaranteedprefix lizard"
 #tag "maxprot 15"
+#basechance 5
 #enditem
 
 #newitem
-#basechance 0.5
-#id "cave drake"
+#id "green_lizard_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#mountmnr 'green_lizard_leather_barding_mount'"
+#theme "specialmount"
+#theme "light"
+#theme "leather"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#tag "maxprot 15"
+#basechance 4
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "green_lizard_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#mountmnr 'green_lizard_light_scale_barding_mount'"
+#theme "specialmount"
+#theme "light"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#tag "maxprot 15"
+#basechance 3
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "green_lizard_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#mountmnr 'green_lizard_cataphract_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#basechance 1.5
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "green_lizard_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/greenlizard.png
+#armor
+#offsetx -5
+#offsety 3
+#needs overlay 3
+#define "#mountmnr 'green_lizard_plate_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "advanced"
+#tag "animal lizard"
+#tag "guaranteedprefix lizard"
+#basechance 0.75
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "cave_drake"
 #gameid -1
 #sprite /graphics/mounts/standard/cavedrake.png
 #armor
 #offsetx 8
 #offsety 11
-#define "#mountmnr 'cavedrake'"
-#define "#gcost +70"
-#define "#rcost +5"
-#tag "animal drake"
-#theme "specialmount"
 #description "The cave drake will persist even if the rider dies."
+#define "#mountmnr 'cave_drake_mount'"
+#theme "specialmount"
+#tag "animal drake"
 #tag "guaranteedprefix drake"
 #tag "name commander drakelord"
-#tag "minprot 0"
-#tag "maxprot 100"
+#basechance 5
 #sacredextra nonholyshape 0.25
 #enditem
 
 
 #newitem
-#basechance 6
-#id "spider"
+#id "great_spider"
 #gameid -1
 #sprite /graphics/mounts/standard/spider1.png
 #armor
 #offsetx 35
 #offsety 7
 #needs overlay spider_overlay
-#define "#mountmnr 'spider'"
 #description "The giant spider will persist even if the rider dies."
-#define "#gcost +30"
+#define "#mountmnr 'great_spider_mount'"
 #theme "specialmount"
 #tag "animal spider"
 #tag "guaranteedprefix spider"
-#tag "minprot 0"
 #tag "maxprot 12"
+#basechance 50
 #enditem
 
 #newitem
-#basechance 6
-#id "spider heavy"
+#id "great_spider_leather_barding"
 #gameid -1
 #sprite /graphics/mounts/standard/spider1.png
 #armor
 #offsetx 35
 #offsety 7
 #needs overlay spider_overlay
-#define "#mountmnr 'spider'"
-#define "#gcost +40"
-#define "#rcost +5"
 #description "The giant spider will persist even if the rider dies."
+#define "#mountmnr 'great_spider_leather_barding_mount'"
 #theme "specialmount"
 #tag "animal spider"
 #tag "guaranteedprefix spider"
-#tag "minprot 13"
-#tag "maxprot 100"
-#enditem
-
-
-#newitem
-#basechance 0.25
-#id "boar"
-#gameid -1
-#sprite /graphics/mounts/standard/boarcavalry.png
-#armor
-#offsetx -4
-#offsety 4
-#define "#mountmnr 'great-boar-mount'"
-#define "#gcost +20"
-#theme "specialmount"
-#tag "animal boar"
-#tag "guaranteedprefix boar"
-#tag "name commander boarmaster"
-#tag "minprot 0"
-#tag "maxprot 13"
+#tag "maxprot 14"
+#basechance 45
+#chanceinc prot 10 *2
 #enditem
 
 #newitem
-#basechance 0.25
-#id "boar heavy"
+#id "great_spider_light_scale_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/boarcavalry.png
+#sprite /graphics/mounts/standard/spider1.png
 #armor
-#offsetx -4
-#offsety 4
-#define "#mountmnr 'great-boar-mount'"
-#define "#gcost +25"
-#define "#rcost +5"
-#theme "specialmount"
-#tag "animal boar"
-#tag "guaranteedprefix boar"
-#tag "name commander boarmaster"
-#tag "minprot 14"
-#tag "maxprot 20"
-#enditem
-
-
-#newitem
-#basechance 0.1
-#id "tiger"
-#gameid -1
-#sprite /graphics/mounts/standard/tiger.png
-#armor
-#offsetx -4
-#offsety 4
-#define "#mountmnr 'tiger'"
-#define "#gcost +40"
-#define "#rcost +6"
-#theme "specialmount"
-#theme "light"
-#tag "animal tiger"
-#description "The tiger will persist even if the rider dies."
-#tag "guaranteedprefix tiger"
-#tag "minprot 0"
-#tag "maxprot 12"
-#enditem
-
-
-#newitem
-#basechance 0.1
-#id "jaguar"
-#gameid -1
-#sprite /graphics/mounts/standard/jaguar.png
-#armor
-#offsetx -4
+#offsetx 35
 #offsety 7
-#define "#mountmnr 'jaguarmount'"
-#define "#gcost +35"
-#define "#rcost +5"
+#needs overlay spider_overlay
+#description "The giant spider will persist even if the rider dies."
+#define "#mountmnr 'great_spider_light_scale_barding_mount'"
 #theme "specialmount"
-#theme "light"
-#tag "animal jaguar"
-#description "The jaguar will persist even if the rider dies."
-#tag "guaranteedprefix jaguar"
-#tag "minprot 0"
-#tag "maxprot 12"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "maxprot 16"
+#basechance 40
+#chanceinc prot 12 *2
 #enditem
 
 #newitem
-#basechance 0.05
-#id "black tiger"
+#id "great_spider_cataphract_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/blacktiger.png
+#sprite /graphics/mounts/standard/spider1.png
 #armor
-#offsetx -4
-#offsety 4
-#define "#mountmnr 'blacktiger'"
-#define "#gcost +25"
-#define "#rcost +5"
+#offsetx 35
+#offsety 7
+#needs overlay spider_overlay
+#description "The giant spider will persist even if the rider dies."
+#define "#mountmnr 'great_spider_cataphract_barding_mount'"
 #theme "specialmount"
-#theme "light"
-#tag "animal tiger"
-#theme "sacred"
-#tag "guaranteedprefix black tiger"
-#tag "minprot 0"
-#tag "maxprot 11"
-#basechance 0.5
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#basechance 15
+#chanceinc prot 16 *2
 #enditem
 
+
 #newitem
-#basechance 4
-#id "bigspider"
+#id "hunter_spider"
 #gameid -1
 #sprite /graphics/mounts/standard/bigspider.png
 #armor
 #offsetx 35
 #offsety 58
-#define "#mountmnr 'hunterspider'"
-#define "#gcost +70"
+#define "#mountmnr 'hunter_spider_mount'"
 #description "The hunter spider will persist even if the rider dies."
 #theme "specialmount"
 #theme "heavy"
@@ -234,8 +378,369 @@
 #tag "guaranteedprefix spider"
 #tag "minprot 14"
 #tag "maxprot 20"
+#basechance 30
 #sacredextra nonholyshape 0.7
 #enditem
+
+#newitem
+#id "hunter_spider_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bigspider.png
+#armor
+#offsetx 35
+#offsety 58
+#define "#mountmnr 'hunter_spider_leather_barding_mount'"
+#description "The hunter spider will persist even if the rider dies."
+#theme "specialmount"
+#theme "heavy"
+#theme "leather"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "minprot 14"
+#tag "maxprot 20"
+#basechance 27
+#chanceinc prot 10 *2
+#sacredextra nonholyshape 0.7
+#enditem
+
+#newitem
+#id "hunter_spider_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bigspider.png
+#armor
+#offsetx 35
+#offsety 58
+#define "#mountmnr 'hunter_spider_light_scale_barding_mount'"
+#description "The hunter spider will persist even if the rider dies."
+#theme "specialmount"
+#theme "heavy"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "minprot 14"
+#tag "maxprot 20"
+#basechance 24
+#chanceinc prot 12 *2
+#sacredextra nonholyshape 0.7
+#enditem
+
+#newitem
+#id "hunter_spider_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bigspider.png
+#armor
+#offsetx 35
+#offsety 58
+#define "#mountmnr 'hunter_spider_cataphract_barding_mount'"
+#description "The hunter spider will persist even if the rider dies."
+#theme "specialmount"
+#theme "heavy"
+#tag "animal spider"
+#tag "guaranteedprefix spider"
+#tag "minprot 14"
+#tag "maxprot 20"
+#basechance 9
+#chanceinc prot 18 *2
+#sacredextra nonholyshape 0.7
+#enditem
+
+
+#newitem
+#id "great_boar"
+#gameid -1
+#sprite /graphics/mounts/standard/boarcavalry.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'great_boar_mount'"
+#theme "specialmount"
+#tag "animal boar"
+#tag "guaranteedprefix boar"
+#tag "name commander boarmaster"
+#tag "maxprot 13"
+#basechance 2.5
+#enditem
+
+#newitem
+#id "great_boar_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/boarcavalry.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'great_boar_light_scale_barding_mount'"
+#theme "specialmount"
+#tag "animal boar"
+#tag "guaranteedprefix boar"
+#tag "name commander boarmaster"
+#tag "maxprot 15"
+#basechance 2
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "great_boar_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/boarcavalry.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'great_boar_cataphract_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#tag "animal boar"
+#tag "guaranteedprefix boar"
+#tag "name commander boarmaster"
+#basechance 1
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "great_boar_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/boarcavalry.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'great_boar_plate_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "advanced"
+#tag "animal boar"
+#tag "guaranteedprefix boar"
+#tag "name commander boarmaster"
+#basechance 0.375
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "tiger"
+#gameid -1
+#sprite /graphics/mounts/standard/tiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'tiger_mount'"
+#define "#gcost -5"
+#theme "specialmount"
+#theme "light"
+#tag "animal tiger"
+#tag "guaranteedprefix tiger"
+#tag "maxprot 12"
+#basechance 10
+#enditem
+
+#newitem
+#id "tiger_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/tiger_armored_light.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'tiger_light_scale_barding_mount'"
+#define "#gcost -5"
+#theme "specialmount"
+#theme "light"
+#tag "animal tiger"
+#tag "guaranteedprefix tiger"
+#tag "maxprot 13"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "tiger_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/tiger_armored_scale.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'tiger_cataphract_barding_mount'"
+#define "#gcost -5"
+#theme "specialmount"
+#theme "heavy"
+#tag "animal tiger"
+#tag "guaranteedprefix tiger"
+#basechance 3
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "tiger_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/tiger_armored_plate.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'tiger_plate_barding_mount'"
+#define "#gcost -5"
+#theme "specialmount"
+#theme "heavy"
+#theme "advanced"
+#tag "animal tiger"
+#tag "guaranteedprefix tiger"
+#basechance 1.5
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "black_tiger"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_tiger_mount'"
+#theme "specialmount"
+#theme "light"
+#theme "sacred"
+#tag "animal tiger"
+#tag "guaranteedprefix black tiger"
+#tag "minprot 0"
+#tag "maxprot 11"
+#basechance 5
+#enditem
+
+#newitem
+#id "black_tiger_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger_armored_light.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_tiger_light_scale_barding_mount'"
+#theme "specialmount"
+#theme "light"
+#theme "iron"
+#theme "sacred"
+#tag "animal tiger"
+#tag "guaranteedprefix black tiger"
+#tag "maxprot 13"
+#basechance 4
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "black_tiger_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger_armored_scale.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_tiger_cataphract_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "sacred"
+#tag "animal tiger"
+#tag "guaranteedprefix black tiger"
+#basechance 1.5
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "black_tiger_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger_armored_plate.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_tiger_plate_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "advanced"
+#theme "sacred"
+#tag "animal tiger"
+#tag "guaranteedprefix black tiger"
+#basechance 0.75
+#chanceinc prot 18 *2
+#enditem
+
+#newitem
+#id "black_tiger_silver_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/blacktiger_armored_plate.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_tiger_silver_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "advanced"
+#theme "sacred"
+#tag "animal tiger"
+#tag "guaranteedprefix black tiger"
+#basechance 0.5
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "jaguar"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -4
+#offsety 7
+#define "#mountmnr 'jaguar_mount'"
+#theme "specialmount"
+#theme "light"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#tag "maxprot 12"
+#basechance 10
+#enditem
+
+#newitem
+#id "jaguar_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -4
+#offsety 7
+#define "#mountmnr 'jaguar_light_scale_barding_mount'"
+#theme "specialmount"
+#theme "light"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#tag "maxprot 13"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "jaguar_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -4
+#offsety 7
+#define "#mountmnr 'jaguar_cataphract_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#basechance 3
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "jaguar_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -4
+#offsety 7
+#define "#mountmnr 'jaguar_plate_barding_mount'"
+#theme "specialmount"
+#theme "heavy"
+#theme "advanced"
+#tag "animal jaguar"
+#tag "guaranteedprefix jaguar"
+#basechance 1.5
+#chanceinc prot 18 *2
+#enditem
+
 
 #newitem
 #id "scorpion"
@@ -246,26 +751,94 @@
 #offsetx 23
 #offsety 6
 #needs overlay scorpion_overlay
-#define "#size 6"
-#define "#mapmove 8"
-#define "#ap 8"
-#define "#mountmnr 'scorpionmount'"
-#define "#gcost +50"
-#define "#ressize 2"
-#define "#enc 3"
-#define "#rcost +5"
-#define "#nomovepen"
-#tag "animal scorpion"
-#theme "heavy"
 #description "Leaves a giant scorpion behind when the rider dies"
+#define "#mountmnr 'scorpion_beast_mount'"
+#theme "heavy"
+#tag "animal scorpion"
 #tag "guaranteedprefix scorpion"
 #tag "minprot 10"
-#tag "maxprot 100"
+#basechance 10
+#enditem
+
+#newitem
+#id "scorpion_beast_leather_barding"
+#gameid -1
+#chanceinc "nationcommand #idealcold above 0 *0"
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 23
+#offsety 6
+#needs overlay scorpion_overlay
+#description "Leaves a giant scorpion behind when the rider dies"
+#define "#mountmnr 'scorpion_beast_leather_barding_mount'"
+#theme "heavy"
+#theme "leather"
+#tag "animal scorpion"
+#tag "guaranteedprefix scorpion"
+#tag "minprot 10"
+#basechance 8
+#enditem
+
+#newitem
+#id "scorpion_beast_light_scale_barding"
+#gameid -1
+#chanceinc "nationcommand #idealcold above 0 *0"
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 23
+#offsety 6
+#needs overlay scorpion_overlay
+#description "Leaves a giant scorpion behind when the rider dies"
+#define "#mountmnr 'scorpion_beast_light_scale_barding_mount'"
+#theme "heavy"
+#tag "animal scorpion"
+#tag "guaranteedprefix scorpion"
+#tag "minprot 10"
+#basechance 6
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "scorpion_beast_cataphract_barding"
+#gameid -1
+#chanceinc "nationcommand #idealcold above 0 *0"
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 23
+#offsety 6
+#needs overlay scorpion_overlay
+#description "Leaves a giant scorpion behind when the rider dies"
+#define "#mountmnr 'scorpion_beast_cataphract_barding_mount'"
+#theme "heavy"
+#tag "animal scorpion"
+#tag "guaranteedprefix scorpion"
+#tag "minprot 10"
+#basechance 3
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "scorpion_beast_plate_barding"
+#gameid -1
+#chanceinc "nationcommand #idealcold above 0 *0"
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 23
+#offsety 6
+#needs overlay scorpion_overlay
+#description "Leaves a giant scorpion behind when the rider dies"
+#define "#mountmnr 'scorpion_beast_plate_barding_mount'"
+#theme "heavy"
+#theme "advanced"
+#tag "animal scorpion"
+#tag "guaranteedprefix scorpion"
+#tag "minprot 10"
+#basechance 1.5
+#chanceinc prot 18 *2
 #enditem
 
 
 #newitem
-#basechance 1
 #id "amphiptere"
 #gameid -1
 #sprite /graphics/mounts/standard/amphiptere.png
@@ -273,37 +846,147 @@
 #offsetx 23
 #offsety 13
 #needs overlay 13
-#define "#mountmnr 'amphiptere'"
-#define "#gcost +50"
-#define "#rcost +6"
+#define "#mountmnr 'amphiptere_mount'"
 #theme "specialmount"
 #tag "animal amphiptere"
-#description "The amphiptere will fight until the end of the battle should the rider die"
 #tag "guaranteedprefix amphiptere"
 #tag "name commander beastmaster"
 #tag "minprot 6"
 #tag "maxprot 14"
+#basechance 10
 #sacredextra 0.5
+#enditem
+
+#newitem
+#id "amphiptere_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/amphiptere_armored_leather.png
+#armor
+#offsetx 23
+#offsety 13
+#needs overlay 13
+#define "#mountmnr 'amphiptere_leather_barding_mount'"
+#theme "specialmount"
+#theme "leather"
+#tag "animal amphiptere"
+#tag "guaranteedprefix amphiptere"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#tag "maxprot 14"
+#basechance 8
+#sacredextra 0.5
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "amphiptere_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/amphiptere_armored_lightscale.png
+#armor
+#offsetx 23
+#offsety 13
+#needs overlay 13
+#define "#mountmnr 'amphiptere_light_scale_barding_mount'"
+#theme "specialmount"
+#theme "iron"
+#tag "animal amphiptere"
+#tag "guaranteedprefix amphiptere"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#basechance 6
+#sacredextra 0.5
+#chanceinc prot 13 *2
 #enditem
 
 
 #newitem
-#id "cavegrub"
+#id "cave_grub"
 #gameid -1
 #sprite /graphics/mounts/standard/cavegrub.png
 #armor
 #offsetx 29
 #offsety 14
-#define "#mountmnr 'cavegrubmount'"
-#define "#gcost +20"
-#define "#rcost +3"
+#define "#mountmnr 'cave_grub_mount'"
 #tag "animal 'cave grub'"
 #tag "guaranteedprefix grub"
 #tag "name commander beastmaster"
 #tag "minprot 6"
 #tag "maxprot 14"
+#basechance 10
 #sacredextra 0.5
 #enditem
 
+#newitem
+#id "cave_grub_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavegrub.png
+#armor
+#offsetx 29
+#offsety 14
+#define "#mountmnr 'cave_grub_leather_barding_mount'"
+#theme "leather"
+#tag "animal 'cave grub'"
+#tag "guaranteedprefix grub"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#tag "maxprot 14"
+#basechance 9
+#chanceinc prot 10 *2
+#sacredextra 0.5
+#enditem
 
+#newitem
+#id "cave_grub_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavegrub.png
+#armor
+#offsetx 29
+#offsety 14
+#define "#mountmnr 'cave_grub_light_scale_barding_mount'"
+#tag "animal 'cave grub'"
+#tag "guaranteedprefix grub"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#tag "maxprot 14"
+#basechance 8
+#chanceinc prot 12 *2
+#sacredextra 0.5
+#enditem
 
+#newitem
+#id "cave_grub_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavegrub.png
+#armor
+#offsetx 29
+#offsety 14
+#define "#mountmnr 'cave_grub_cataphract_barding_mount'"
+#theme "iron"
+#theme "heavy"
+#tag "animal 'cave grub'"
+#tag "guaranteedprefix grub"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#basechance 4
+#chanceinc prot 16 *2
+#sacredextra 0.5
+#enditem
+
+#newitem
+#id "cave_grub_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavegrub.png
+#armor
+#offsetx 29
+#offsety 14
+#define "#mountmnr 'cave_grub_plate_barding_mount'"
+#theme "heavy"
+#theme "advanced"
+#tag "animal 'cave grub'"
+#tag "guaranteedprefix grub"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#basechance 1.5
+#chanceinc prot 18 *2
+#sacredextra 0.5
+#enditem

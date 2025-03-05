@@ -2,16 +2,22 @@
 #name "priest start"
 #set "priest start"
 #synonym "The %unitname_plural%"
-#synonym "The %unitname_plural%"
 #synonym "The %unitname_plural% of %nation%"
 #synonym "%nation%'s %unitname_plural%"
+#synonym "The revered %unitname_plural% of %nation%"
+#synonym "%nation%'s devoted %unitname_plural%"
+#synonym "The spiritual %unitname_plural%"
+#synonym "The holy %unitname_plural% of %nation%"
+#synonym "The blessed %unitname_plural% of %nation%"
+#synonym "The enlightened %unitname_plural%"
+#synonym "The anointed %unitname_plural%"
 #next "priest desc"
 #uniquedescription
 #end
 
--- tier 1
+-- Tier 1
 
-#new 
+#new
 #name "priest desc weak"
 #set "priest desc"
 #basechance 0
@@ -29,11 +35,21 @@
 #synonym "hardly more"
 #synonym "almost no more"
 #synonym "barely more"
+#synonym "scarcely more"
+#synonym "just a trace more"
+#synonym "only slightly more"
+#synonym "marginally more"
+#synonym "faintly more"
+#synonym "only a whisper more"
+#synonym "a mere fraction more"
+#synonym "a shadow more"
+#synonym "next to no more"
+#synonym "practically no more"
 #uniquedescription
 #next "priest weak noun"
 #end
 
-#new 
+#new
 #name "priest weak noun"
 #set "priest weak noun"
 #synonym "power"
@@ -47,6 +63,15 @@
 #synonym "dignity"
 #synonym "training"
 #synonym "authority"
+#synonym "recognition"
+#synonym "devotion"
+#synonym "influence"
+#synonym "spiritual presence"
+#synonym "divine favor"
+#synonym "clerical knowledge"
+#synonym "ritual expertise"
+#synonym "reputation"
+#synonym "command"
 #uniquedescription
 #next "priest weak end"
 #end
@@ -55,11 +80,20 @@
 #name "priest weak end"
 #set "priest weak end"
 #synonym "than a %sacredname%"
+#synonym "compared to a %sacredname%"
+#synonym "when judged against a %sacredname%"
+#synonym "in relation to a %sacredname%"
+#synonym "beside a true %sacredname%"
+#synonym "standing next to a %sacredname%"
+#synonym "when measured against a %sacredname%"
+#synonym "in contrast with a %sacredname%"
+#synonym "relative to a %sacredname%"
+#synonym "when considered next to a %sacredname%"
 #end
 
--- tier 1, but as good as it gets
+-- Tier 1, but as good as it gets
 
-#new 
+#new
 #name "priest desc weak max"
 #set "priest desc"
 #basechance 0
@@ -78,6 +112,12 @@
 #synonym "organization in %nation%,"
 #synonym "power in %nation%,"
 #synonym "supremacy in %nation%,"
+#synonym "influence in %nation%,"
+#synonym "spiritual governance in %nation%,"
+#synonym "pious influence in %nation%,"
+#synonym "priestly oversight in %nation%,"
+#synonym "the clerical structure of %nation%,"
+#synonym "the spiritual backbone of %nation%,"
 #next "priest weak max end"
 #end
 
@@ -91,11 +131,16 @@
 #synonym "wary as they are of centralized religious hierarchy"
 #synonym "egalitarians who do not believe in ecclesiastical primacy"
 #synonym "a loose association of local priests"
+#synonym "a culture skeptical of religious institutions"
+#synonym "a nation whose faith is fragmented"
+#synonym "a people who value personal faith over organized dogma"
+#synonym "a country where religion is decentralized"
+#synonym "a region where faith is personal rather than institutional"
 #end
 
--- tier 1 magepriest
+-- Tier 1 Magepriest
 
-#new 
+#new
 #name "priest desc weak mage"
 #set "priest desc"
 #basechance 0
@@ -112,6 +157,10 @@
 #synonym "acknowledged for their"
 #synonym "known for their"
 #synonym "appreciated for their"
+#synonym "revered for their"
+#synonym "esteemed for their"
+#synonym "valued for their"
+#synonym "recognized for their"
 #next "priest weak mage noun"
 #end
 
@@ -122,6 +171,10 @@
 #synonym "studies"
 #synonym "abilities"
 #synonym "intelligence"
+#synonym "knowledge"
+#synonym "command of rituals"
+#synonym "divine insights"
+#synonym "mystical talents"
 #next "priest weak mage end"
 #end
 
@@ -133,11 +186,14 @@
 #synonym "and the people listen to them in matters of faith"
 #synonym "and are sometimes seen as religious authorities"
 #synonym "and are used to conduct minor religious rites"
+#synonym "and are consulted for their wisdom in spiritual matters"
+#synonym "and have a modest role in sacred traditions"
+#synonym "and assist in the administration of divine ceremonies"
 #end
 
--- tier 2
+-- Tier 2
 
-#new 
+#new
 #name "priest desc medium"
 #set "priest desc"
 #basechance 0
@@ -147,7 +203,7 @@
 #next "priest medium noun"
 #end
 
-#new 
+#new
 #name "priest medium noun"
 #set "priest medium noun"
 #synonym "core of %nation%'s"
@@ -157,10 +213,12 @@
 #synonym "foundation of %nation%'s"
 #synonym "body of %nation%'s"
 #synonym "majority of %nation%'s"
+#synonym "pillar of %nation%'s"
+#synonym "spiritual foundation of %nation%'s"
 #next "priest medium group noun"
 #end
 
-#new 
+#new
 #name "priest medium group noun"
 #set "priest medium group noun"
 #synonym "clergy,"
@@ -170,6 +228,8 @@
 #synonym "religion,"
 #synonym "temple,"
 #synonym "cult,"
+#synonym "sacred order,"
+#synonym "divine assembly,"
 #next "priest medium end"
 #end
 
@@ -179,11 +239,15 @@
 #synonym "playing a crucial role in almost all matters of faith"
 #synonym "responsible for administering all but the highest rituals of the church"
 #synonym "responsible for overseeing most of the day to day tasks of the church"
+#synonym "guiding the faith of the people through sermons and rituals"
+#synonym "acting as intermediaries between the divine and the followers"
+#synonym "ensuring the spiritual welfare of the faithful"
+#synonym "performing sacred rites and maintaining holy traditions"
 #end
 
--- tier 2 if it's as high as it gets
+-- Tier 2, but as high as it gets
 
-#new 
+#new
 #name "priest desc medium max"
 #set "priest desc"
 #basechance 0
@@ -199,10 +263,12 @@
 #synonym "leaders of %nation%,"
 #synonym "power in %nation%,"
 #synonym "overseers of %nation%,"
-#synonym "counsellors of %nation%,"
+#synonym "counselors of %nation%,"
 #synonym "chiefs of %nation%,"
 #synonym "superiors of %nation%,"
 #synonym "guides of %nation%,"
+#synonym "spiritual authorities in %nation%,"
+#synonym "pillars of faith in %nation%,"
 #next "priest medium max end"
 #end
 
@@ -214,11 +280,13 @@
 #synonym "interpreting and implementing doctrine for the church"
 #synonym "and they are capable shepherds to their flocks"
 #synonym "overseeing the affairs of the church and its followers"
+#synonym "maintaining religious traditions and ensuring adherence to doctrine"
+#synonym "upholding the sacred teachings and directing worship"
 #end
 
--- tier 2 magepriest
+-- Tier 2 Magepriest
 
-#new 
+#new
 #name "priest desc medium mage"
 #set "priest desc"
 #basechance 0
@@ -236,6 +304,9 @@
 #synonym "listened to for their"
 #synonym "esteemed for their"
 #synonym "admired for their"
+#synonym "recognized for their"
+#synonym "valued for their"
+#synonym "followed for their"
 #next "priest medium mage noun"
 #end
 
@@ -246,6 +317,12 @@
 #synonym "knowledge"
 #synonym "wisdom"
 #synonym "abilities"
+#synonym "command of divine forces"
+#synonym "sacred authority"
+#synonym "mystic enlightenment"
+#synonym "arcane understanding"
+#synonym "insight into the sacred arts"
+#synonym "spiritual wisdom"
 #next "priest medium mage end"
 #end
 
@@ -258,11 +335,13 @@
 #synonym "and they wield some power over %nation%"
 #synonym "and the people follow them in matters of faith"
 #synonym "and are seen as authorities on religious matters"
+#synonym "and they play a crucial role in guiding the spiritual destiny of %nation%"
+#synonym "and they balance the roles of priest and mage with great skill"
 #end
 
--- tier 3
+-- Tier 3
 
-#new 
+#new
 #name "priest desc strong max"
 #set "priest desc"
 #basechance 0
@@ -280,13 +359,19 @@
 #synonym "head"
 #synonym "peak"
 #synonym "summit"
+#synonym "zenith"
+#synonym "apex"
+#synonym "climax"
+#synonym "culmination"
+#synonym "crown"
+#synonym "pinnacle of holiness"
 #next "priest strong max continued"
 #end
 
 #new
 #name "priest strong max continued"
 #set "priest strong max continued"
-#description "of %nation%'s religious heirarchy, the"
+#description "of %nation%'s religious hierarchy, the"
 #next "priest strong max adj"
 #end
 
@@ -299,6 +384,12 @@
 #synonym "most powerful"
 #synonym "most prestigious"
 #synonym "wisest"
+#synonym "supreme"
+#synonym "divinely chosen"
+#synonym "sacred overseers"
+#synonym "revered patriarchs"
+#synonym "high priests of the faith"
+#synonym "guardians of divine will"
 #next "priest strong max end"
 #end
 
@@ -309,11 +400,18 @@
 #synonym "of the faithful"
 #synonym "of the clergy"
 #synonym "of %nation%'s priests"
+#synonym "among those who serve the divine"
+#synonym "among the devoted followers of %nation%"
+#synonym "standing as beacons of spiritual authority"
+#synonym "guiding their people through divine wisdom"
+#synonym "holding the highest sanctified rank"
+#synonym "revered as the voices of the gods"
+#synonym "standing at the helm of religious doctrine"
 #end
 
--- tier 3 magepriest
+-- Tier 3 Magepriest
 
-#new 
+#new
 #name "priest desc strong mage"
 #set "priest desc"
 #basechance 0
@@ -329,6 +427,12 @@
 #synonym "worshipped for their"
 #synonym "revered for their"
 #synonym "honored for their"
+#synonym "idolized for their"
+#synonym "feared for their"
+#synonym "celebrated for their"
+#synonym "followed for their"
+#synonym "renowned for their divine prowess"
+#synonym "respected for their mastery of holy magic"
 #next "priest strong mage noun"
 #end
 
@@ -339,6 +443,12 @@
 #synonym "knowledge"
 #synonym "wisdom"
 #synonym "abilities"
+#synonym "command of divine forces"
+#synonym "sacred authority"
+#synonym "mystic enlightenment"
+#synonym "arcane understanding"
+#synonym "mastery of celestial arts"
+#synonym "blessing of the divine"
 #next "priest strong mage end"
 #end
 
@@ -351,4 +461,8 @@
 #synonym "and they wield supreme power over %nation%"
 #synonym "and the people follow them with religious zeal"
 #synonym "and are regarded as the final authority on religious matters"
+#synonym "and are seen as the bridge between mortals and the divine"
+#synonym "and shape the spiritual destiny of their nation"
+#synonym "and stand as the arbiters of celestial will"
+#synonym "and are entrusted with the highest sacred secrets"
 #end

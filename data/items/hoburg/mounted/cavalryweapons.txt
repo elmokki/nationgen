@@ -30,11 +30,11 @@
 #enditem
 
 #newitem
-#id mace
-#gameid 12
+#id cavalry_mace
+#gameid cavalry_mace
 #sprite /graphics/hoburg/weapon/mace.png
-#theme "primitive"
 #tag "name infantry maceman"
+#theme "primitive"
 #theme "austral"
 #theme "boreal"
 #theme "central"
@@ -134,19 +134,6 @@
 #enditem
 
 #newitem
-#id hammer
-#gameid 13
-#sprite /graphics/weapon/standard/hammer.png
-#offsetx 3
-#offsety 12
-#theme "iron"
-#theme "austral"
-#theme "boreal"
-#theme "abysian"
-#theme "civilized"
-#enditem
-
-#newitem
 #id hatchet_bronze
 #gameid 253
 #sprite /graphics/hoburg/weapon/hatchet_bronze.png
@@ -202,44 +189,8 @@
 #enditem
 
 #newitem
-#id stick
-#gameid 153
-#sprite /graphics/hoburg/weapon/stick.png
-#eliteversion staff
-#theme "primitive"
-#theme "wood"
-#theme "austral"
-#theme "boreal"
-#theme "central"
-#theme "imperial"
-#theme "occidental"
-#theme "civilized"
-#tag "notepic"
-#tag "maxprot 9"
-#lightlance
-#light
-#enditem
-
-#newitem
-#id staff
-#gameid 7
-#sprite /graphics/hoburg/weapon/stick.png
-#theme "elite"
-#theme "primitive"
-#theme "wood"
-#theme "austral"
-#theme "boreal"
-#theme "central"
-#theme "imperial"
-#theme "occidental"
-#theme "civilized"
-#tag "maxprot 9"
-#lightlance
-#enditem
-
-#newitem
-#id greataxe_bronze
-#gameid 698
+#id cavalry_axe_bronze
+#gameid cavalry_axe_bronze
 #sprite /graphics/hoburg/weapon/greataxe_bronze.png
 #theme "primitive"
 #theme "bronze"
@@ -251,8 +202,8 @@
 #enditem
 
 #newitem
-#id greataxe
-#gameid 18
+#id cavalry_axe
+#gameid cavalry_axe
 #sprite /graphics/hoburg/weapon/greataxe.png
 #theme "primitive"
 #theme "iron"

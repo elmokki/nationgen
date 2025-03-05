@@ -37,7 +37,8 @@ public class SacredMontagTemplate extends MontagTemplate {
       handleFilterInheritance(u, newunit);
       newunit = sGen.getSacredUnit(newunit, powernow, sacred, epicchance);
 
-      sGen.calculatePower(u, power);
+      sGen.addSacredCostMultipliers(u, power);
+      sGen.determineIfCapOnly(u, true);
     }
 
     return newunit;
