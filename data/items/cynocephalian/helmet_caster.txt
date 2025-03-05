@@ -1,0 +1,175 @@
+-- Themes: civilized
+
+-- No helmet
+
+#newitem
+#id "nothing"
+#gameid -1
+#armor
+#enditem
+
+-- Bands
+---- leather
+
+#newitem 
+#id "band_leather_green"
+#gameid -1
+#basechance 2
+#sprite /graphics/cynocephalian/helmet/band_leather_green.png
+#tier 1
+#notfortier 2
+#notfortier 3
+#armor
+#enditem
+
+#newitem 
+#id "band_leather_red"
+#gameid -1
+#basechance 0
+#chanceinc "personalmagic fire 1 1"
+#chanceinc "personalmagic earth 1 1"
+#chanceinc "personalmagic air 1 1"
+#chanceinc "personalmagic water 1 1"
+#sprite /graphics/cynocephalian/helmet/band_leather_red.png
+#tier 1
+#notfortier 2
+#notfortier 3
+#armor
+#enditem
+
+#newitem 
+#id "band_leather_blue"
+#gameid -1
+#basechance 0
+#chanceinc "personalmagic astral 1 1"
+#chanceinc "personalmagic death 1 1"
+#chanceinc "personalmagic glamour 1 1"
+#chanceinc "personalmagic blood 1 1"
+#sprite /graphics/cynocephalian/helmet/band_leather_blue.png
+#tier 1
+#notfortier 2
+#notfortier 3
+#armor
+#enditem
+
+---- silver
+
+#newitem 
+#id "band_silver_green"
+#gameid -1
+#basechance 2
+#sprite /graphics/cynocephalian/helmet/band_silver_green.png
+#tier 2
+#notfortier 1
+#notfortier 3
+#armor
+#enditem
+
+#newitem 
+#id "band_silver_red"
+#gameid -1
+#basechance 0
+#chanceinc "personalmagic fire 1 1"
+#chanceinc "personalmagic earth 1 1"
+#chanceinc "personalmagic air 1 1"
+#chanceinc "personalmagic water 1 1"
+#sprite /graphics/cynocephalian/helmet/band_silver_red.png
+#tier 2
+#notfortier 1
+#notfortier 3
+#armor
+#enditem
+
+#newitem 
+#id "band_silver_blue"
+#gameid -1
+#basechance 0
+#chanceinc "personalmagic astral 1 1"
+#chanceinc "personalmagic death 1 1"
+#chanceinc "personalmagic glamour 1 1"
+#chanceinc "personalmagic blood 1 1"
+#sprite /graphics/cynocephalian/helmet/band_silver_blue.png
+#tier 2
+#notfortier 1
+#notfortier 3
+#armor
+#enditem
+
+---- gold
+
+#newitem 
+#id "band_gold_green"
+#gameid -1
+#basechance 2
+#sprite /graphics/cynocephalian/helmet/band_gold_green.png
+#tier 3
+#notfortier 1
+#notfortier 2
+#armor
+#enditem
+
+#newitem 
+#id "band_gold_red"
+#gameid -1
+#basechance 0
+#chanceinc "personalmagic fire 1 1"
+#chanceinc "personalmagic earth 1 1"
+#chanceinc "personalmagic air 1 1"
+#chanceinc "personalmagic water 1 1"
+#sprite /graphics/cynocephalian/helmet/band_gold_red.png
+#tier 3
+#notfortier 1
+#notfortier 2
+#armor
+#enditem
+
+#newitem 
+#id "band_gold_blue"
+#gameid -1
+#basechance 0
+#chanceinc "personalmagic astral 1 1"
+#chanceinc "personalmagic death 1 1"
+#chanceinc "personalmagic glamour 1 1"
+#chanceinc "personalmagic blood 1 1"
+#sprite /graphics/cynocephalian/helmet/band_gold_blue.png
+#tier 3
+#notfortier 1
+#notfortier 2
+#armor
+#enditem
+
+-- Crowns
+
+#newitem
+#id "crown_ind_silver"
+#gameid 148
+#sprite /graphics/cynocephalian/helmet/crown_ind_silver.png
+#basechance 0
+#chanceinc "personalmagic holy 2 5"
+#notfortier 1
+#tier 2
+#notfortier 3
+#armor
+#enditem
+
+#newitem
+#id "crown_ind_gold"
+#gameid 148
+#sprite /graphics/cynocephalian/helmet/crown_ind_gold.png
+#basechance 0
+#chanceinc "personalmagic holy 3 5"
+#notfortier 1
+#notfortier 2
+#tier 3
+#armor
+#enditem
+
+-- Laurel
+
+#newitem 
+#id "laurel"
+#gameid -1
+#sprite /graphics/cynocephalian/helmet/laurel.png
+#theme "civilized"
+#armor
+#enditem

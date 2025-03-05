@@ -1,0 +1,58 @@
+-- Themes: bronze, monkey, primitive, civilized
+
+-- Bucklers
+
+#newitem
+#id "buckler_bronze"
+#gameid 1
+#sprite /graphics/cynocephalian/offhand/buckler_bronze.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id "buckler_leather"
+#gameid 1
+#sprite /graphics/cynocephalian/offhand/buckler_leather.png
+#recolormask /graphics/cynocephalian/offhand/buckler_leather_colormask.png
+#armor
+#theme "primitive"
+#enditem
+
+#newitem
+#id "buckler_monkey"
+#gameid 1
+#sprite /graphics/cynocephalian/offhand/buckler_monkey.png
+#armor
+#theme "monkey"
+#enditem
+
+#newitem
+#id "buckler_iron"
+#gameid 1
+#sprite /graphics/cynocephalian/offhand/buckler_iron.png
+#recolormask /graphics/cynocephalian/offhand/buckler_iron_colormask.png
+#armor
+#theme "iron"
+#enditem
+
+-- Shields
+
+#newitem
+#id "shield"
+#gameid 2
+#sprite /graphics/cynocephalian/offhand/shield.png
+#recolormask /graphics/cynocephalian/offhand/shield_colormask.png
+#armor
+#theme "civilized"
+#chanceinc "racetheme tribal *0"
+#enditem
+
+#newitem
+#id "shield_iron"
+#gameid 208
+#sprite /graphics/cynocephalian/offhand/shield_iron.png
+#armor
+#theme "iron"
+#enditem
+

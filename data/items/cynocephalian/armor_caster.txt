@@ -1,182 +1,513 @@
---- Unarmored
+-- Themes: primitive, civilized, iron, elite
+
+-- Togas
+
+#newitem 
+#id "toga_white"
+#gameid 158
+#sprite /graphics/cynocephalian/armor/caster/robes_toga_white.png
+#recolormask /graphics/cynocephalian/armor/caster/robes_toga_white_colormask.png
+#tier 1
+#notfortier 2
+#notfortier 3
+#armor
+#theme "civilized"
+#chanceinc "racetheme tribal *0"
+#enditem
+
+#newitem 
+#id "toga_yellow"
+#gameid 158
+#sprite /graphics/cynocephalian/armor/caster/robes_toga_yellow.png
+#recolormask /graphics/cynocephalian/armor/caster/robes_toga_yellow_colormask.png
+#tier 1
+#notfortier 2
+#notfortier 3
+#armor
+#theme "civilized"
+#chanceinc "racetheme tribal *0"
+#enditem
+
+#newitem 
+#id "toga_purple"
+#gameid 158
+#sprite /graphics/cynocephalian/armor/caster/robes_toga_purple.png
+#recolormask /graphics/cynocephalian/armor/caster/robes_toga_purple_colormask.png
+#tier 1
+#notfortier 2
+#notfortier 3
+#armor
+#theme "civilized"
+#chanceinc "racetheme tribal *0"
+#enditem
+
+-- Robes
 
 #newitem
-#id "starkers"
-#gameid -1
-#needs shirt noshirt
+#id "robes_mage_brown"
+#gameid 158
+#sprite /graphics/cynocephalian/armor/caster/robes_mage_brown.png
+#recolormask /graphics/cynocephalian/armor/caster/robes_mage_colormask.png
+#basechance 2
 #armor
-#basechance 0.5
+#tier 2
+#notfortier 1
+#notfortier 3
+#theme "civilized"
+#chanceinc "racetheme tribal *0"
+#enditem
+
+#newitem
+#id "robes_mage_blue"
+#gameid 158
+#sprite /graphics/cynocephalian/armor/caster/robes_mage_blue.png
+#recolormask /graphics/cynocephalian/armor/caster/robes_mage_colormask.png
+#basechance 0
+#chanceinc "personalmagic astral 1 1"
+#chanceinc "personalmagic death 1 1"
+#chanceinc "personalmagic glamour 1 1"
+#chanceinc "personalmagic blood 1 1"
+#armor
+#tier 2
+#notfortier 1
+#notfortier 3
+#theme "civilized"
+#chanceinc "racetheme tribal *0"
+#enditem
+
+#newitem
+#id "robes_mage_red"
+#gameid 158
+#sprite /graphics/cynocephalian/armor/caster/robes_mage_red.png
+#recolormask /graphics/cynocephalian/armor/caster/robes_mage_colormask.png
+#basechance 0
+#chanceinc "personalmagic fire 1 1"
+#chanceinc "personalmagic earth 1 1"
+#chanceinc "personalmagic air 1 1"
+#chanceinc "personalmagic water 1 1"
+#armor
+#tier 2
+#notfortier 1
+#notfortier 3
+#theme "civilized"
+#chanceinc "racetheme tribal *0"
+#enditem
+
+#newitem
+#id "robes_magepriest_brown"
+#gameid 158
+#sprite /graphics/cynocephalian/armor/caster/robes_magepriest_brown.png
+#recolormask /graphics/cynocephalian/armor/caster/robes_magepriest_colormask.png
+#basechance 2
+#armor
+#tier 3
+#notfortier 1
+#notfortier 2
+#theme "civilized"
+#chanceinc "racetheme tribal *0"
+#enditem
+
+#newitem
+#id "robes_mage_blue"
+#gameid 158
+#sprite /graphics/cynocephalian/armor/caster/robes_magepriest_blue.png
+#recolormask /graphics/cynocephalian/armor/caster/robes_magepriest_colormask.png
+#basechance 0
+#chanceinc "personalmagic astral 1 1"
+#chanceinc "personalmagic death 1 1"
+#chanceinc "personalmagic glamour 1 1"
+#chanceinc "personalmagic blood 1 1"
+#armor
+#tier 3
+#notfortier 1
+#notfortier 2
+#theme "civilized"
+#chanceinc "racetheme tribal *0"
+#enditem
+
+#newitem
+#id "robes_mage_red"
+#gameid 158
+#sprite /graphics/cynocephalian/armor/caster/robes_magepriest_red.png
+#recolormask /graphics/cynocephalian/armor/caster/robes_magepriest_colormask.png
+#basechance 0
+#chanceinc "personalmagic fire 1 1"
+#chanceinc "personalmagic earth 1 1"
+#chanceinc "personalmagic air 1 1"
+#chanceinc "personalmagic water 1 1"
+#armor
+#tier 3
+#notfortier 1
+#notfortier 2
+#theme "civilized"
+#chanceinc "racetheme tribal *0"
+#enditem
+
+-- Robes female
+
+#newitem
+#id "robes_female_fancy"
+#gameid 158
+#sprite /graphics/cynocephalian/armor/caster/robes_female_fancy.png
+#recolormask /graphics/cynocephalian/armor/caster/robes_female_fancy_colormask.png
+#armor
+#tier 1
+#notfortier 2
+#notfortier 3
+#theme "civilized"
+#chanceinc "racetheme tribal *0"
+#command "#female"
+#enditem
+
+#newitem
+#id "robes_female_fancy_gray"
+#gameid 158
+#sprite /graphics/cynocephalian/armor/caster/robes_female_fancy_gray.png
+#recolormask /graphics/cynocephalian/armor/caster/robes_female_fancy_colormask.png
+#armor
+#basechance 2
+#notfortier 1
+#tier 2
+#notfortier 3
+#theme "civilized"
+#chanceinc "racetheme tribal *0"
+#command "#female"
+#enditem
+
+#newitem
+#id "robes_female_fancy_brown"
+#gameid 158
+#sprite /graphics/cynocephalian/armor/caster/robes_female_fancy_brown.png
+#recolormask /graphics/cynocephalian/armor/caster/robes_female_fancy_colormask.png
+#armor
+#basechance 2
+#notfortier 1
+#tier 2
+#notfortier 3
+#theme "civilized"
+#chanceinc "racetheme tribal *0"
+#command "#female"
+#enditem
+
+#newitem
+#id "robes_female_fancy_red"
+#gameid 158
+#sprite /graphics/cynocephalian/armor/caster/robes_female_fancy_red.png
+#recolormask /graphics/cynocephalian/armor/caster/robes_female_fancy_colormask.png
+#armor
+#basechance 0
+#chanceinc "personalmagic fire 1 1"
+#chanceinc "personalmagic earth 1 1"
+#chanceinc "personalmagic air 1 1"
+#chanceinc "personalmagic water 1 1"
+#notfortier 1
+#tier 2
+#notfortier 3
+#theme "civilized"
+#chanceinc "racetheme tribal *0"
+#command "#female"
+#enditem
+
+#newitem
+#id "robes_female_fancy_blue"
+#gameid 158
+#sprite /graphics/cynocephalian/armor/caster/robes_female_fancy_blue.png
+#recolormask /graphics/cynocephalian/armor/caster/robes_female_fancy_colormask.png
+#armor
+#basechance 0
+#chanceinc "personalmagic astral 1 1"
+#chanceinc "personalmagic death 1 1"
+#chanceinc "personalmagic glamour 1 1"
+#chanceinc "personalmagic blood 1 1"
+#notfortier 1
+#tier 2
+#notfortier 3
+#theme "civilized"
+#chanceinc "racetheme tribal *0"
+#command "#female"
+#enditem
+
+#newitem
+#id "robes_female_fancy_elite_gray"
+#gameid 158
+#sprite /graphics/cynocephalian/armor/caster/robes_female_fancy_elite_gray.png
+#recolormask /graphics/cynocephalian/armor/caster/robes_female_fancy_colormask.png
+#armor
+#basechance 2
+#notfortier 1
+#notfortier 2
+#tier 3
+#theme "civilized"
+#chanceinc "racetheme tribal *0"
+#command "#female"
+#enditem
+
+#newitem
+#id "robes_female_fancy_elite_brown"
+#gameid 158
+#sprite /graphics/cynocephalian/armor/caster/robes_female_fancy_elite_brown.png
+#recolormask /graphics/cynocephalian/armor/caster/robes_female_fancy_colormask.png
+#armor
+#basechance 2
+#notfortier 1
+#notfortier 2
+#tier 3
+#theme "civilized"
+#chanceinc "racetheme tribal *0"
+#command "#female"
+#enditem
+
+#newitem
+#id "robes_female_fancy_elite_red"
+#gameid 158
+#sprite /graphics/cynocephalian/armor/caster/robes_female_fancy_elite_red.png
+#recolormask /graphics/cynocephalian/armor/caster/robes_female_fancy_colormask.png
+#armor
+#basechance 0
+#chanceinc "personalmagic fire 1 1"
+#chanceinc "personalmagic earth 1 1"
+#chanceinc "personalmagic air 1 1"
+#chanceinc "personalmagic water 1 1"
+#notfortier 1
+#notfortier 2
+#tier 3
+#theme "civilized"
+#chanceinc "racetheme tribal *0"
+#command "#female"
+#enditem
+
+#newitem
+#id "robes_female_fancy_elite_blue"
+#gameid 158
+#sprite /graphics/cynocephalian/armor/caster/robes_female_fancy_elite_blue.png
+#recolormask /graphics/cynocephalian/armor/caster/robes_female_fancy_colormask.png
+#armor
+#basechance 0
+#chanceinc "personalmagic astral 1 1"
+#chanceinc "personalmagic death 1 1"
+#chanceinc "personalmagic glamour 1 1"
+#chanceinc "personalmagic blood 1 1"
+#notfortier 1
+#notfortier 2
+#tier 3
+#theme "civilized"
+#chanceinc "racetheme tribal *0"
+#command "#female"
+#enditem
+
+
+-- Furs
+
+#newitem
+#id "furs_male"
+#gameid 44
+#sprite /graphics/cynocephalian/armor/caster/furs_male.png
+#recolormask /graphics/cynocephalian/armor/caster/furs_male_colormask.png
+#armor
+#tier 1
+#notfortier 2
+#notfortier 3
 #theme "primitive"
-#tag "tier 1"
+#chanceinc "racetheme civilized *0"
 #enditem
 
 #newitem
-#id "loincloth"
-#gameid -1
-#needs shirt loincloth
+#id "furs_female_light"
+#gameid 44
+#sprite /graphics/cynocephalian/armor/caster/furs_female_light.png
+#recolormask /graphics/cynocephalian/armor/caster/furs_female_colormask.png
 #armor
-#basechance 1
+#tier 1
+#nottier 2
+#notfortier 3
 #theme "primitive"
-#tag "tier 1"
-#tag "tier 2"
+#command "#female"
 #enditem
 
---- Furs
-
 #newitem
-#id "tight furs"
+#id "furs_female_dark"
 #gameid 44
-#sprite /graphics/cynocephalian/armor/furs.png
-#needs shirt noshirt
+#sprite /graphics/cynocephalian/armor/caster/furs_female_dark.png
+#recolormask /graphics/cynocephalian/armor/caster/furs_female_colormask.png
 #armor
-#basechance 1
+#tier 1
+#notfortier 2
+#notfortier 3
 #theme "primitive"
-#tag "tier 1"
-#tag "tier 2"
+#command "#female"
 #enditem
 
 #newitem
-#id "bulky furs"
+#id "furs_female_fancy"
 #gameid 44
-#sprite /graphics/cynocephalian/armor/furs2.png
-#needs shirt noshirt
+#sprite /graphics/cynocephalian/armor/caster/furs_female_fancy.png
+#recolormask /graphics/cynocephalian/armor/caster/furs_female_fancy_colormask.png
 #armor
-#basechance 1
+#tier 1
+#notfortier 2
+#notfortier 3
+#theme "tribal"
+#chanceinc "racetheme civilized *0"
+#command "#female"
+#enditem
+
+#newitem
+#id "furs_female_fancy_belt"
+#gameid 44
+#sprite /graphics/cynocephalian/armor/caster/furs_female_fancy_belt.png
+#recolormask /graphics/cynocephalian/armor/caster/furs_female_fancy_colormask.png
+#armor
+#notfortier 1
+#tier 2
+#notfortier 3
+#theme "tribal"
+#chanceinc "racetheme civilized *0"
+#command "#female"
+#enditem
+
+#newitem
+#id "furs_female_fancy_gray"
+#gameid 44
+#sprite /graphics/cynocephalian/armor/caster/furs_female_fancy_gray.png
+#recolormask /graphics/cynocephalian/armor/caster/furs_female_fancy_colormask.png
+#armor
+#basechance 2
+#notfortier 1
+#notfortier 2
+#tier 3
+#theme "tribal"
+#chanceinc "racetheme civilized *0"
+#command "#female"
+#enditem
+
+#newitem
+#id "furs_female_fancy_brown"
+#gameid 44
+#sprite /graphics/cynocephalian/armor/caster/furs_female_fancy_brown.png
+#recolormask /graphics/cynocephalian/armor/caster/furs_female_fancy_colormask.png
+#armor
+#basechance 2
+#notfortier 1
+#notfortier 2
+#tier 3
+#theme "tribal"
+#chanceinc "racetheme civilized *0"
+#command "#female"
+#enditem
+
+#newitem
+#id "furs_female_fancy_blue"
+#gameid 44
+#sprite /graphics/cynocephalian/armor/caster/furs_female_fancy_blue.png
+#recolormask /graphics/cynocephalian/armor/caster/furs_female_fancy_colormask.png
+#armor
+#basechance 0
+#chanceinc "personalmagic astral 1 1"
+#chanceinc "personalmagic death 1 1"
+#chanceinc "personalmagic glamour 1 1"
+#chanceinc "personalmagic blood 1 1"
+#notfortier 1
+#notfortier 2
+#tier 3
+#theme "tribal"
+#chanceinc "racetheme civilized *0"
+#command "#female"
+#enditem
+
+#newitem
+#id "furs_female_fancy_red"
+#gameid 44
+#sprite /graphics/cynocephalian/armor/caster/furs_female_fancy_red.png
+#recolormask /graphics/cynocephalian/armor/caster/furs_female_fancy_colormask.png
+#armor
+#basechance 0
+#chanceinc "personalmagic fire 1 1"
+#chanceinc "personalmagic earth 1 1"
+#chanceinc "personalmagic air 1 1"
+#chanceinc "personalmagic water 1 1"
+#notfortier 1
+#notfortier 2
+#tier 3
+#theme "tribal"
+#chanceinc "racetheme civilized *0"
+#command "#female"
+#enditem
+
+
+-- Linen and leather
+
+#newitem
+#id "leather_armor_full"
+#gameid 15
+#sprite /graphics/cynocephalian/armor/caster/leather_armor_full.png
+#recolormask /graphics/cynocephalian/armor/caster/leather_armor_full_colormask.png
+#armor
+#notfortier 1
+#tier 2
+#tier 3
+#maxvarieties 1
 #theme "primitive"
-#tag "tier 1"
-#tag "tier 2"
+#chanceinc "racetheme civilized *0"
 #enditem
 
 #newitem
-#id "fur toga"
-#gameid 44
-#sprite /graphics/cynocephalian/armor/robes/furs_shaman.png
-#tag "eliteversion 'fur toga - bones'"
-#needs shirt noshirt
+#id "cuirass_linen_primitive_male"
+#gameid 183
+#sprite /graphics/cynocephalian/armor/caster/cuirass_linen_primitive_male.png
+#recolormask /graphics/cynocephalian/armor/caster/cuirass_linen_male_colormask.png
 #armor
-#basechance 1
+#tier 1
+#tier 2
+#notfortier 3
 #theme "primitive"
-#tag "tier 2"
-#tag "tier 3"
+#chanceinc "racetheme civilized *0"
 #enditem
 
 #newitem
-#id "fur toga"
-#gameid 44
-#sprite /graphics/cynocephalian/armor/robes/furs_shaman.png
-#tag "eliteversion 'fur toga - beads'"
-#needs shirt noshirt
+#id "cuirass_linen_primitive_female"
+#gameid 183
+#sprite /graphics/cynocephalian/armor/caster/cuirass_linen_primitive_female.png
+#recolormask /graphics/cynocephalian/armor/caster/cuirass_linen_female_colormask.png
 #armor
-#basechance 1
+#tier 1
+#notfortier 2
+#notfortier 3
 #theme "primitive"
-#tag "tier 2"
-#tag "tier 3"
+#chanceinc "racetheme civilized *0"
+#command "#female"
 #enditem
 
+-- Cuirasses
+
 #newitem
-#id "fur toga - bones"
-#gameid 44
-#sprite /graphics/cynocephalian/armor/robes/furs_shaman_bones.png
-#needs shirt noshirt
+#id "cuirass_scale_tribal_fancy_cloak"
+#gameid 7
+#sprite /graphics/cynocephalian/armor/caster/cuirass_scale_tribal_fancy_cloak.png
+#recolormask /graphics/cynocephalian/armor/caster/cloak_commander_colormask.png
 #armor
-#basechance 1
+#tier 1
+#tier 2
+#notfortier 3
+#maxvarieties 1
 #theme "primitive"
-#tag "tier 3"
+#theme "iron"
+#theme "elite"
+#chanceinc "racetheme civilized *0"
 #enditem
 
 #newitem
-#id "fur toga - beads"
-#gameid 44
-#sprite /graphics/cynocephalian/armor/robes/furs_shaman_beads.png
-#recolormask /graphics/cynocephalian/armor/robes/furs_shaman_beads_recolormask.png
-#needs shirt noshirt
+#id "cuirass_plate_elite_cloak"
+#gameid 9
+#sprite /graphics/cynocephalian/armor/caster/cuirass_plate_elite_cloak.png
+#recolormask /graphics/cynocephalian/armor/caster/cuirass_plate_fancy_colormask.png
+#recolormask /graphics/cynocephalian/armor/caster/cloak_commander_colormask.png
 #armor
-#basechance 1
-#theme "primitive"
-#tag "tier 3"
-#enditem
-
-#newitem
-#id "fur robe"
-#gameid 44
-#sprite /graphics/cynocephalian/armor/robes/furs_endiku_plain.png
-#tag "eliteversion 'fur robe - fancy'"
-#needs shirt noshirt
-#armor
-#basechance 1
-#tag "tier 1"
-#tag "tier 2"
-#enditem
-
-#newitem
-#id "fur halfrobe"
-#gameid 44
-#sprite /graphics/cynocephalian/armor/robes/furs_endiku_halfplain.png
-#tag "eliteversion 'fur halfrobe - gaudy'"
-#needs shirt noshirt
-#armor
-#basechance 1
-#tag "tier 1"
-#tag "tier 2"
-#enditem
-
-#newitem
-#id "fur halfrobe - gaudy"
-#gameid 44
-#sprite /graphics/cynocephalian/armor/robes/furs_endiku_halfrobe.png
-#recolormask /graphics/cynocephalian/armor/robes/furs_endiku_recolormask.png
-#needs shirt noshirt
-#armor
-#basechance 1
-#tag "tier 2"
-#tag "tier 3"
-#enditem
-
-#newitem
-#id "fur robe - fancy"
-#gameid 44
-#sprite /graphics/cynocephalian/armor/robes/furs_endiku_fancy.png
-#tag "eliteversion 'fur robe - gaudy'"
-#needs shirt noshirt
-#armor
-#basechance 1
-#tag "tier 2"
-#tag "tier 3"
-#enditem
-
-#newitem
-#id "fur robe - gaudy"
-#gameid 44
-#sprite /graphics/cynocephalian/armor/robes/furs_endiku_robe.png
-#recolormask /graphics/cynocephalian/armor/robes/furs_endiku_recolormask.png
-#needs shirt noshirt
-#armor
-#basechance 1
-#tag "tier 3"
-#enditem
-
--- Advanced armor
-
-#newitem
-#id "leather cuirass"
-#gameid 5
-#sprite /graphics/cynocephalian/armor/leather2_cuirass.png
-#tag "eliteversion 'leather hauberk'"
-#armor
-#basechance 0.2
-#theme "advanced"
-#tag "tier 2"
-#tag "tier 3"
-#enditem
-
-#newitem
-#id "leather hauberk"
-#gameid 10
-#sprite /graphics/cynocephalian/armor/leather2_hauberk3.png
-#needs shirt noshirt
-#armor
-#basechance 0.1
-#theme "advanced"
-#tag "tier 2"
-#tag "tier 3"
+#tier 1
+#tier 2
+#notfortier 3
+#maxvarieties 1
+#theme "civilized"
+#theme "iron"
+#theme "elite"
+#chanceinc "racetheme tribal *0"
 #enditem

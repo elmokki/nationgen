@@ -1215,7 +1215,9 @@
 #basechance 0
 -- chanceincs
 -- If at least 0.6 (60%) of units are "Halfman" race, the chance that it's selected increases
+-- If at least 0.2 (20%) of units are "Cynocephalian" race, the chance that it's selected greatly increases
 #chanceinc percentageofrace "Halfman" 0.6 1
+#chanceinc percentageofrace "Cynocephalian" 0.2 10
 -- themeincs
 -- 
 #end

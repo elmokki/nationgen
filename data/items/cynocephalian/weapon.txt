@@ -1,196 +1,168 @@
--- Primitive weapons
+-- themes: primitive, civilized, advanced, bronze, iron, monkey
+
+-- Clubs and Flails
 
 #newitem
-#id club
-#gameid 252
-#sprite /graphics/cynocephalian/weapons/club.png
-#offsetx -2
-#offsety 3
-#theme "primitive"
-#tag "name infantry clubber"
-#tag "name infantry tribesman"
-#tag "name commander chieftan"
-#tag "name commander champion"
-#basechance 1
-#enditem
-
-#newitem
-#id spiked_club
-#gameid 593
-#sprite /graphics/cynocephalian/weapons/spikedclub.png
-#offsetx -2
-#offsety 3
-#theme "primitive"
-#tag "name infantry clubber"
-#tag "name infantry tribesman"
-#tag "name commander chieftan"
-#tag "name commander champion"
-#basechance 1
-#enditem
-
-#newitem
-#id great_club
+#id "club_2h"
 #gameid 165
-#sprite /graphics/cynocephalian/weapons/greatclub.png
-#offsetx 0
-#offsety 3
-#needs hands hands_2h
+#sprite /graphics/cynocephalian/weapon/club_2h.png
+--#name infantry clubdog
 #theme "primitive"
-#tag "name infantry warrior"
-#tag "name infantry tribesman"
-#tag "name commander chieftan"
-#basechance 1
 #enditem
 
 #newitem
-#id stone_spear
-#gameid 373
-#sprite /graphics/cynocephalian/weapons/spear.png
-#offsetx -2
-#offsety 2
-#needs hands hands_2h
-#theme "primitive"
-#tag "name infantry hunter"
-#tag "name commander chieftan"
-#tag "name commander champion"
-#basechance 1
-#troopweapon
-#enditem
-
-#newitem
-#id stone_hatchet
-#gameid 253
-#sprite /graphics/cynocephalian/weapons/axe.png
-#offsetx -3
-#offsety 3
-#theme "primitive"
-#tag "name infantry warrior"
-#tag "name infantry tribesman"
-#tag "name commander chieftan"
-#tag "name commander champion"
-#basechance 1
-#enditem
-
-#newitem
-#id rocks
-#gameid 553
-#sprite /graphics/cynocephalian/weapons/rock.png
-#offsetx -1
-#offsety 0
-#theme "primitive"
-#tag "name infantry tribesman"
-#tag "notepic"
-#maxprot 7
-#needs offhand thrown_rocks
-#basechance 1
-#enditem
-
--- "Advanced" weapons
-
-#newitem
-#id axe
-#gameid 646
-#sprite /graphics/cynocephalian/weapons/axe_bronze.png
-#offsetx -3
-#offsety 3
-#theme "advanced"
-#theme "bronze"
-#tag "name infantry axeman"
-#tag "name infantry warrior"
-#tag "name commander champion"
-#tag "name commander warchief"
-#basechance 0.1
-#enditem
-
-#newitem
-#id greataxe
-#gameid 698
-#sprite /graphics/cynocephalian/weapons/battleaxe_bronze.png
-#offsetx -2
-#offsety 2
-#needs hands hands_2h
-#theme "advanced"
-#theme "bronze"
-#tag "name infantry axeman"
-#tag "name infantry warrior"
-#tag "name commander champion"
-#tag "name commander warchief"
-#basechance 0.1
-#enditem
-
-#newitem
-#id hammer
-#gameid 13
-#sprite /graphics/cynocephalian/weapons/hammer_bronze.png
-#offsetx -3
-#offsety 3
-#theme "advanced"
-#theme "bronze"
-#tag "name infantry hammerer"
-#tag "name infantry warrior"
-#tag "name commander champion"
-#tag "name commander warchief"
-#basechance 0.1
-#enditem
-
-#newitem
-#id mace
-#gameid 12
-#sprite /graphics/cynocephalian/weapons/mace_bronze.png
-#offsetx -3
-#offsety 3
-#theme "advanced"
-#theme "bronze"
-#tag "name infantry maceman"
-#tag "name infantry warrior"
-#tag "name commander champion"
-#tag "name commander warchief"
-#basechance 0.1
-#enditem
-
-#newitem
-#id maul
+#id "maul"
 #gameid 14
-#sprite /graphics/cynocephalian/weapons/maul.png
-#offsetx -2
-#offsety 2
-#needs hands hands_2h
-#theme "advanced"
-#tag "name infantry hammerer"
-#tag "name infantry warrior"
-#tag "name commander champion"
-#tag "name commander warchief"
-#basechance 0.2
+#sprite /graphics/cynocephalian/weapon/maul.png
+--#name infantry clubdog
+#theme "civilized"
 #enditem
 
 #newitem
-#id spear
-#gameid 643
-#sprite /graphics/cynocephalian/weapons/spear_bronze.png
-#offsetx -2
-#offsety 2
-#needs hands hands_2h
+#id "mace"
+#gameid 12
+#sprite /graphics/cynocephalian/weapon/mace.png
+--#name infantry macedog
+#theme "monkey"
+#enditem
+
+#newitem
+#id "flail_2h"
+#gameid 16
+#sprite /graphics/cynocephalian/weapon/flail_2h.png
+--#name infantry clubdog
 #theme "advanced"
+#theme "iron"
+#enditem
+
+-- Axes and Poleaxes
+
+#newitem
+#id "battleaxe_bronze"
+#gameid 698
+#sprite /graphics/cynocephalian/weapon/battleaxe_bronze.png
+--#name infantry axedog
+#theme "primitive"
 #theme "bronze"
-#tag "name infantry hunter"
-#tag "name commander chieftan"
-#tag "name commander champion"
-#basechance 0.2
-#troopweapon
 #enditem
 
 #newitem
-#id quarterstaff
-#gameid 7
-#sprite /graphics/cynocephalian/weapons/quarterstaff.png
-#offsetx -2
-#offsety 2
-#needs hands hands_2h
+#id "battleaxe_iron"
+#gameid 18
+#sprite /graphics/cynocephalian/weapon/battleaxe_bronze.png
+--#name infantry axedog
+#theme "civilized"
+#theme "iron"
+#enditem
+
+#newitem
+#id "handaxe_bronze"
+#gameid 675
+#sprite /graphics/cynocephalian/weapon/handaxe_bronze.png
+--#name infantry axedog
+#theme "bronze"
+#enditem
+
+#newitem
+#id "handaxe_iron"
+#gameid 17
+#sprite /graphics/cynocephalian/weapon/handaxe_iron.png
+--#name infantry axedog
+#theme "iron"
+#enditem
+
+#newitem
+#id "halberd"
+#gameid 5
+#sprite /graphics/cynocephalian/weapon/halberd.png
+--#name infantry axedog
+#theme "formationfighter"
+#theme "civilized"
+#theme "iron"
 #theme "advanced"
-#tag "name infantry warrior"
-#tag "name commander champion"
-#tag "name commander warchief"
-#basechance 0.2
-#maxprot 10
-#troopweapon
+#enditem
+
+-- Spears and Glaives
+
+#newitem
+#id "spear_stone"
+#gameid 373
+#sprite /graphics/cynocephalian/weapon/spear_stone.png
+--#name infantry speardog
+#theme "formationfighter"
+#theme "primitive"
+#enditem
+
+#newitem
+#id "spear_iron"
+#gameid 1
+#sprite /graphics/cynocephalian/weapon/spear_iron.png
+--#name infantry speardog
+#theme "formationfighter"
+#theme "iron"
+#enditem
+
+#newitem
+#id "pike"
+#gameid 2
+#sprite /graphics/cynocephalian/weapon/pike.png
+--#name infantry pikedog
+#theme "formationfighter"
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#id "glaive"
+#gameid 308
+#sprite /graphics/cynocephalian/weapon/glaive.png
+--#name infantry glaivedog
+#theme "formationfighter"
+#theme "civilized"
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#id "trident_bone"
+#gameid 670
+#sprite /graphics/cynocephalian/weapon/trident_bone.png
+--#name infantry speardog
+#theme "primitive"
+#enditem
+
+-- Swords
+
+#newitem
+#id "shortsword"
+#gameid 6
+#sprite /graphics/cynocephalian/weapon/shortsword.png
+--#name infantry stabdog
+#theme "iron"
+#enditem
+
+#newitem
+#id "broadsword"
+#gameid 8
+#sprite /graphics/cynocephalian/weapon/broadsword.png
+--#name infantry stabdog
+#theme "iron"
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#sprite /graphics/cynocephalian/weapon/falchion.png
+#name infantry slashdog
+#theme "monkey"
+#theme "iron"
+#enditem
+
+#newitem
+#id greatsword
+#gameid 11
+#sprite /graphics/cynocephalian/weapon/greatsword.png
+#name infantry slashdog
+#theme "iron"
+#theme "advanced"
 #enditem

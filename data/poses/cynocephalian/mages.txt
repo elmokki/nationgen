@@ -1,0 +1,21 @@
+---------- Mages and Priests
+
+#newpose
+#role "mage"
+#role "priest"
+
+#renderorder "shadow bonusranged basesprite armor head helmet weapon hands"
+
+#load shadow /data/items/cynocephalian/shadow_caster.txt
+#load basesprite /data/items/cynocephalian/bases_caster.txt
+#load hands /data/items/cynocephalian/hands.txt
+#load head /data/items/cynocephalian/head_caster.txt
+
+#load armor /data/items/cynocephalian/armor_caster.txt
+#load helmet /data/items/cynocephalian/helmet_caster.txt
+
+#load weapon /data/items/cynocephalian/weapon_caster.txt
+
+#chanceinc moduleid herogen *4
+#generateitem 1 head
+#endpose

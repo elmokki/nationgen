@@ -1,0 +1,51 @@
+-- Themes: monkey, iron, advanced, bronze
+
+-- Net
+
+#newitem
+#id "net"
+#gameid 263
+#sprite /graphics/cynocephalian/weapon/net.png
+--#name infantry Netdog
+#basechance 0.2
+#chanceinc "racetheme slave 2.8"
+#enditem
+
+-- Offhand weapons
+
+#newitem
+#id "off_falchion"
+#gameid 10
+#sprite /graphics/cynocephalian/offhand/off_falchion.png
+#theme "iron"
+#theme "monkey"
+#enditem
+
+#newitem
+#id "off_sword_short"
+#gameid 6
+#sprite /graphics/cynocephalian/offhand/off_sword_short.png
+#theme "iron"
+#enditem
+
+#newitem
+#id "off_sword_broad"
+#gameid 8
+#sprite /graphics/cynocephalian/offhand/off_sword_broad.png
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#id "off_handaxe_bronze"
+#gameid 675
+#sprite /graphics/cynocephalian/offhand/off_handaxe_bronze.png
+#theme "bronze"
+#enditem
+
+#newitem
+#id "off_handaxe_iron"
+#gameid 17
+#sprite /graphics/cynocephalian/offhand/off_handaxe_iron.png
+#theme "iron"
+#enditem

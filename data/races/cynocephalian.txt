@@ -1,0 +1,50 @@
+#newrace
+#id "Cynocephalian"
+#visiblename "Cynocephalian"
+#basechance 0.5
+
+#racethemes cynocephalian_themes
+#freetheme techlevel
+#freetheme demographic
+
+--#chanceinc era 1 *0.5
+
+#chanceinc racetag primate *2
+
+-- 50% H1/ 40% H2/ 10% H3 max priest level
+#priest_H1_upgradechance 0.5
+#priest_H2_upgradechance 0.2
+
+#pose cynocephalian_troops
+#pose cynocephalian_mages
+
+
+#longsyllables /data/names/nations/romance/longsyllables.txt
+#shortsyllables /data/names/nations/romance/shortsyllables.txt
+#suffixes /data/names/nations/romance/suffixes.txt
+
+#extrapdmulti 3
+
+#generationchance mounted 0
+#generationchance chariot 0
+
+#sacredrangerchance 0.2
+#sacredchariotchance 0
+#sacredmountedchance 0
+
+#specialcommanderchance 0.1
+#specialcommanderfilters default_specialcommanderfilters
+#specialcommanderfilters specialcommanderfilters_extended
+
+#gods imperial_gods
+#additionalgods gods_without_realm
+
+#magicpatterns defaultprimary
+#magicpatterns defaultsecondary
+#magicpatterns defaulttertiary
+
+#size4
+#theme central
+#central
+
+#endrace

@@ -1,0 +1,115 @@
+---- Generic theme with high diversity and low cohesion -- essentially does nothing atm
+
+#newtheme
+#id default
+#basechance 2
+
+#endtheme
+
+---- Tech level themes
+
+--Primitive - Weights: EA 1.25, MA 1, LA 0.5
+
+#newtheme
+#type techlevel
+#id primitive
+#basechance 1
+#chanceinc era 1 0.25
+#chanceinc era 3 -0.5
+
+#themeinc theme advanced *0.1
+#themeinc theme monkey *0.5
+#themeinc theme iron *0.5
+#themeinc theme bronze *2
+#themeinc theme naked *3
+#themeinc theme primitive *3
+
+#endtheme
+
+--Advanced - Weights: EA 0.25, MA 1, LA 1.5
+
+#newtheme
+#type techlevel
+#id advanced
+#basechance 0.25
+#chanceinc era 3 1.25
+#chanceinc era 2 0.75
+
+#themeinc theme advanced *2
+#themeinc theme iron *2
+#themeinc theme monkey *1.5
+#themeinc theme bronze *0.25
+#themeinc theme naked *0.05
+
+#endtheme
+
+
+---- Demographic themes (mandatory)
+
+--Tribal - Weights: EA 5, MA 3, LA 1
+
+#newtheme
+#type demographic
+#id tribal
+#basechance 3
+#chanceinc era 1 +2
+#chanceinc era 3 -2
+
+#chanceinc racetheme primitive *2
+
+#racedefinition "#magicpriority blood 10"
+#racedefinition "#magicpriority death 5"
+#racedefinition "#magicpriority nature 5"
+
+#endtheme
+
+
+--Civilized - Weights: EA 1, MA 3, LA 5
+
+#newtheme
+#type demographic
+#id civilized
+#basechance 3
+#chanceinc era 1 -2
+#chanceinc era 3 +2
+
+#chanceinc racetheme advanced *2
+#themeinc theme iron *2
+
+#racedefinition "#magicpriority nature 6"
+#racedefinition "#magicpriority astral 4"
+#racedefinition "#magicpriority fire 4"
+#racedefinition "#magicpriority earth 2"
+#racedefinition "#unitcommand '#nametype 114'"
+
+#endtheme
+
+
+---- Slaver theme
+
+-- Slavers - Weights: EA 0.5, MA 0.5, LA 0.5
+
+#newtheme
+#type social
+#id slaver
+#basechance 0.5
+
+#themeinc theme advanced *1
+#themeinc theme iron *1
+#themeinc theme bronze *1
+#themeinc theme naked *1
+#themeinc theme primitive *1
+#themeinc theme slave *20
+#themeinc theme free *0.5
+#themeinc racename primate *6
+#themeinc racename "Austral human" *2
+#themeinc racename "Boreal human" *2
+#themeinc racename "Feudal human" *2
+#themeinc racename caveman *0.5
+#themeinc racename zotz *0.5
+
+#secondaryracedefinition "#freetemplatefilter slavetemplate slave"
+#racedefinition "#secondaryracetroopmod 100"
+#racedefinition "#secondaryracemagemod -100"
+
+#endtheme

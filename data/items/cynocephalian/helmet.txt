@@ -1,0 +1,120 @@
+-- themes civilized, monkey, iron, elite
+
+-- No helmet
+
+#newitem
+#id "nothing"
+#gameid -1
+#armor
+#tag "maxprot 12"
+#enditem
+
+
+-- Caps
+
+#newitem
+#id "cap_leather"
+#gameid 120
+#sprite /graphics/cynocephalian/helmet/cap_leather.png
+#armor
+#enditem
+
+#newitem
+#id "cap_leather_reinforced"
+#gameid 119
+#sprite /graphics/cynocephalian/helmet/cap_leather_reinforced.png
+#armor
+#theme "civilized"
+#enditem
+
+
+#newitem
+#id "cap_bronze"
+#gameid 135
+#sprite /graphics/cynocephalian/helmet/cap_bronze.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id "cap_gilded"
+#gameid 20
+#sprite /graphics/cynocephalian/helmet/cap_gilded.png
+#armor
+#theme "monkey"
+#theme "iron"
+#enditem
+
+#newitem
+#id "cap_gilded_plumed"
+#gameid 20
+#sprite /graphics/cynocephalian/helmet/cap_gilded_plumed.png
+#recolormask /graphics/cynocephalian/helmet/plume_colormask.png
+#armor
+#theme "monkey"
+#theme "iron"
+#theme "elite"
+#enditem
+
+-- Half-helms
+
+#newitem
+#id "helmet_half_gilded"
+#gameid 118
+#sprite /graphics/cynocephalian/helmet/helmet_half_gilded.png
+#armor
+#theme "monkey"
+#theme "iron"
+#enditem
+
+#newitem
+#id "helmet_half_gilded_plumed"
+#gameid 118
+#sprite /graphics/cynocephalian/helmet/helmet_half_gilded_plumed.png
+#recolormask /graphics/cynocephalian/helmet/plume_colormask.png
+#armor
+#theme "monkey"
+#theme "iron"
+#theme "elite"
+#enditem
+
+#newitem
+#id "helmet_half_iron"
+#gameid 118
+#sprite /graphics/cynocephalian/helmet/helmet_half_iron.png
+#armor
+#theme "iron"
+#enditem
+
+#newitem
+#id "helmet_half_iron_plumed"
+#gameid 118
+#sprite /graphics/cynocephalian/helmet/helmet_half_iron_plumed.png
+#recolormask /graphics/cynocephalian/helmet/plume_colormask.png
+#armor
+#theme "iron"
+#theme "elite"
+#enditem
+
+-- Legionary helmets
+
+#newitem
+#id "helmet_legionary"
+#gameid 126
+#sprite /graphics/cynocephalian/helmet/helmet_legionary.png
+#armor
+#theme "civilized"
+#theme "iron"
+#enditem
+
+#newitem
+#id "helmet_legionary_plumed"
+#gameid 126
+#sprite /graphics/cynocephalian/helmet/helmet_legionary_plumed.png
+#recolormask /graphics/cynocephalian/helmet/plume_colormask.png
+#armor
+#theme "civilized"
+#theme "iron"
+#theme "elite"
+#enditem
+
