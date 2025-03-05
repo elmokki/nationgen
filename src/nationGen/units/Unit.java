@@ -96,6 +96,7 @@ public class Unit {
   public NationGen nationGen;
   public boolean caponly = false;
   public double capOnlyChance;
+  public double survivability;
   public Tags tags = new Tags();
   public List<Filter> appliedFilters = new ArrayList<>();
   public boolean polished = false;
@@ -1493,6 +1494,13 @@ public class Unit {
         )
         .collect(Collectors.joining(", "))
     );
+
+    if (this.survivability != 0.0) {
+      lines.add("--- Unit has a " +
+        String.format("%.2f", this.survivability) +
+        " survivability rating."
+      );
+    }
 
     if (this.capOnlyChance != 0.0) {
       lines.add("--- Unit had a " +

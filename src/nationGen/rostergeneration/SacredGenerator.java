@@ -623,7 +623,7 @@ public class SacredGenerator extends TroopGenerator {
 
     // If this is not the nation's first sacred, the chances that
     // it's cap only will be lower by this factor
-    double additionalSacredBonus = (isFirstSacred == false) ? 0.75 : 1;
+    double additionalSacredBonus = (isFirstSacred == false) ? 0.9 : 1;
 
     // The highest capOnlyChance for the unit will apply if one is defined
     double highestCapOnlyChance = Generic.getAllUnitTags(u)
@@ -632,16 +632,15 @@ public class SacredGenerator extends TroopGenerator {
       .max(Double::compareTo)
       .orElse(0D);
 
-    double survivability = calculateSurvivability(u);
+    u.survivability = calculateSurvivability(u);
 
     // Weigh survivability of the unit higher than its filter power rating for rec-everywhere chances
-    double ratingAndSurvivabilityAverage =
-      ((unitRating * 0.9) + (survivability * 1.25)) / 2;
-    double adjustedCapOnlyChance =
-      ratingAndSurvivabilityAverage * additionalSacredBonus;
+    double ratingAndSurvivabilityWeights = unitRating * u.survivability;
+    double adjustedCapOnlyChance = ratingAndSurvivabilityWeights * additionalSacredBonus;
+
     u.capOnlyChance = Math.max(
       highestCapOnlyChance,
-      Math.min(0.99, adjustedCapOnlyChance)
+      Math.min(0.97, adjustedCapOnlyChance)
     );
 
     if (random.nextDouble() < u.capOnlyChance) {
@@ -651,51 +650,56 @@ public class SacredGenerator extends TroopGenerator {
 
   /**
    * Calculates a loose measure of a unit's power in relation
-   * to the filters that have been applied to it.
+   * to the filters that have been applied to it. Note that this
+   * only counts filters that have been added on top, not base unit
+   * properties. A unit that rolled many extra filters has a higher rating.
    * @param u
    * @param power
    * @return the unit's rating
    */
   public double calculateUnitRating(Unit unit) {
-    double unitRating = 0;
+    int amntOfBadFilterPower = 0;
+    int amntOfGoodFilterPower = 0;
+    int numOfBadFilters = 0;
+    int numOfGoodFilters = 0;
+    double badFilterRating = 0;
+    double goodFilterRating = 0;
     List<Double> sacredRatingMultiplierTags = Generic.getAllUnitTags(
       unit
     ).getAllDoubles("sacredratingmulti");
 
     for (Filter f : unit.appliedFilters) {
-      double filterRating = Math.pow(2, f.power) / 2;
-
       if (f.power < 0) {
-        unitRating -= filterRating;
-      } else {
-        unitRating += filterRating;
+        // Every filter after the second starts adding 25% more of its power to the rating
+        amntOfBadFilterPower += f.power + (Math.max(0, numOfBadFilters - 1) * 0.25);
+        numOfBadFilters++;
+      } else if (f.power > 0) {
+        // First filter gets a -1 power discount. This is to offset the guaranteed "X sacred"
+        // filter that sacreds get, which technically does not do anything other than make them holy
+        double filterPower = (numOfGoodFilters == 0) ? f.power - 1 : f.power;
+
+        // Every filter after the second starts adding 25% more of its power to the rating
+        amntOfGoodFilterPower += filterPower + (Math.max(0, numOfGoodFilters - 1) * 0.25);
+        numOfGoodFilters++;
       }
     }
 
-    if (unit.isRanged() == false) {
-      if (unit.getTotalProt() < 5) {
-        unitRating *= 0.25;
-      } else if (unit.getTotalProt() < 8) {
-        unitRating *= 0.5;
-      } else if (unit.getTotalProt() < 12) {
-        unitRating *= 0.8;
-      }
-    }
+    // Divide the accumulated power by number of filters. This broadly means that,
+    // for example, four power 1 filters will result in lower rating than two power 2 filters
+    goodFilterRating = amntOfGoodFilterPower / Math.max(1, numOfGoodFilters - 1);
+    badFilterRating = amntOfBadFilterPower / Math.max(1, numOfBadFilters);
 
     for (Double multi : sacredRatingMultiplierTags) {
-      unitRating *= multi;
+      goodFilterRating *= multi;
     }
 
-    // Normalize the rating from 0 to 1. We're considering the maximum rating to be 10,
-    // but in reality many units will be generated above that. The distinction is just
-    // not relevant for the purposes of using the rating to calculate cap only chances.
-    float normalizedRating = Utils.normalize(unitRating, 0, 10);
-    return normalizedRating;
+    return goodFilterRating - badFilterRating;
   }
 
   /**
-   * Calculates a survivability score from 0 to 1. There is no "maximum" survivability;
-   * when units reach a certain score they'll always get normalized to 1.
+   * Calculates a survivability score where 0 is extremely flimsy (like a pygmy) and anything
+   * close to 1 and beyond one is "best survivability of its class" (i.e. high hp giants, high
+   * defence elves, full plate humans, etc.).
    * @param u
    */
   public float calculateSurvivability(Unit u) {
@@ -703,21 +707,21 @@ public class SacredGenerator extends TroopGenerator {
     int hp = u.getCommandValue("#hp", 10);
     int def = u.getTotalDef();
     float finalProt = u.getTotalProt();
-    int size = u.getCommandValue("#size", 3);
+    int mr = u.getCommandValue("#mr", 10);
 
     // Least survivable values taken from a base pygmy template.
     // If you have these, your survivability is basically 0.
     int leastSurvivableHp = 4;
     int leastSurvivableDef = 7;
     int leastSurvivableProt = 0;
-    int leastSurvivableSize = 2;
+    int leastSurvivableMr = 7;
 
     // Most survivable values taken from several units.
     // If you have these, your survivability is 1, towards the top.
     int mostSurvivableHp = 69;
-    int mostSurvivableDef = 16;
+    int mostSurvivableDef = 18;
     int mostSurvivableProt = 22;
-    int mostSurvivableSize = 9;
+    int mostSurvivableMr = 18;
 
     // Normalize the above scores to a range of 0 to 1
     float normalizedHp = Utils.normalize(
@@ -735,68 +739,90 @@ public class SacredGenerator extends TroopGenerator {
       leastSurvivableProt,
       mostSurvivableProt
     );
-    float normalizedSize = Utils.normalize(
-      size,
-      leastSurvivableSize,
-      mostSurvivableSize
+    float normalizedMr = Utils.normalize(
+      mr,
+      leastSurvivableMr,
+      mostSurvivableMr
     );
+    List<Command> unitCommands = u.getCommands();
+    Boolean isUndeadOrDemon = unitCommands
+      .stream()
+      .filter(c -> c.command.equals("#undead") || c.command.equals("#demon"))
+      .findAny()
+      .isPresent();
 
-    // Average survivability score from 0 to 1 across all defensive stats
-    float averageSurvivability =
-      (normalizedHp + normalizedDef + normalizedProt + normalizedSize) / 4;
+    // Find the best survival stat of this unit
+    float bestStat = Math.max(Math.max(normalizedHp, normalizedDef), normalizedProt);
+
+    // Calculate the sum with the best survival stat getting twice the weight. The logic here is that
+    // a unit generally only needs one of these stats being good to be broadly sturdy (always depends vs. what)
+    float sumWithBestWeight = (bestStat * 2) + (normalizedHp + normalizedDef + normalizedProt - bestStat) / 2;
+
+    // Calculate the weighted average to get a weighted, normalized survivability score between 0 and 1
+    float averageSurvivability = sumWithBestWeight / 3;
+
+    // If undead or demon, recalculate the average taking MR into account
+    if (isUndeadOrDemon == true) {
+      averageSurvivability = ((averageSurvivability * 3) + normalizedMr) / 4;
+    }
+
+    // Now count additional traits that may help survival
     float survivability = averageSurvivability;
 
-    for (Filter f : u.appliedFilters) {
-      for (Command c : f.getCommands()) {
-        if (c.command.equals("#regen")) {
-          survivability += 0.05 * Math.ceil(hp * 0.1);
-        }
+    for (Command c : u.getCommands()) {
+      if (c.command.equals("#regen")) {
+        survivability += 0.05 * Math.ceil(hp * 0.1);
+      }
 
-        if (c.command.equals("#awe") || c.command.equals("#sunawe")) {
-          survivability += 0.1;
-        }
+      if (c.command.equals("#awe") || c.command.equals("#sunawe")) {
+        survivability += 0.1;
+      }
 
-        if (c.command.equals("#invuln")) {
-          survivability += 0.1;
-        }
+      if (c.command.equals("#invuln")) {
+        survivability += 0.1;
+      }
 
-        if (c.command.equals("#illusion")) {
-          survivability += 0.1;
-        }
+      if (c.command.equals("#illusion")) {
+        survivability += 0.1;
+      }
 
-        if (c.command.equals("#ethereal")) {
-          survivability += 0.15;
-        }
+      if (c.command.equals("#ethereal")) {
+        survivability += 0.15;
+      }
 
-        if (c.command.equals("#glamour")) {
-          survivability += 0.15;
-        }
+      if (c.command.equals("#glamour")) {
+        survivability += 0.15;
+      }
 
-        if (c.command.equals("#entangle")) {
-          survivability += 0.15;
-        }
+      if (c.command.equals("#entangle")) {
+        survivability += 0.15;
+      }
 
-        if (c.command.equals("#secondshape")) {
-          survivability += 0.05;
-        }
+      if (c.command.equals("#secondshape")) {
+        survivability += 0.05;
+      }
 
-        if (c.command.equals("#firstshape")) {
-          survivability += 0.05;
-        }
+      if (c.command.equals("#firstshape")) {
+        survivability += 0.05;
+      }
 
-        if (c.command.equals("#overcharged")) {
-          Integer overchargedAmnt = Integer.parseInt(c.args.get(0).get());
-          survivability += overchargedAmnt * 0.05;
-        }
+      if (c.command.equals("#overcharged")) {
+        Integer overchargedAmnt = Integer.parseInt(c.args.get(0).get());
+        survivability += overchargedAmnt * 0.05;
+      }
 
-        if (c.command.equals("#unsurr")) {
-          Integer unsurroundableAmnt = Integer.parseInt(c.args.get(0).get());
-          survivability += unsurroundableAmnt * 0.015;
-        }
+      if (c.command.equals("#unsurr")) {
+        Integer unsurroundableAmnt = Integer.parseInt(c.args.get(0).get());
+        survivability += unsurroundableAmnt * 0.015;
+      }
+
+      if (c.command.equals("#unsurr")) {
+        Integer unsurroundableAmnt = Integer.parseInt(c.args.get(0).get());
+        survivability += unsurroundableAmnt * 0.015;
       }
     }
 
-    return Math.max(0, Math.min(survivability, 1));
+    return survivability;
   }
 
   public Unit getSacredUnit(
