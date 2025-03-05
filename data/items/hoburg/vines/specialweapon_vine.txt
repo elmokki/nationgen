@@ -4,15 +4,17 @@
 #enditem
 
 #newitem
-#id shocklance
+#id sleepvine
 #basechance 0
-#gameid shocklance
-#sprite /graphics/hoburg/weapon/clockwork_shocklance.png
+#gameid 71
+#command "#gcost +1"
+#command "#rcost +5"
 #enditem
 
 #newitem
-#id firelance
+#id carrionvine
 #basechance 0
-#gameid firelance
-#sprite /graphics/hoburg/weapon/clockwork_firelance.png
+#gameid 873
+#command "#gcost +1"
+#command "#rcost +5"
 #enditem
