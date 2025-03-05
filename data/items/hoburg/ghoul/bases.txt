@@ -2,6 +2,7 @@
 #id "ghoul basesprite"
 #gameid -1
 #sprite /graphics/hoburg/basehoburg_ghoul.png
+#define "#gcost +8"
 #define "#hp +4"
 #define "#mor +5"
 #define "#enc 0"
@@ -9,6 +10,10 @@
 #define "#att +1"
 #define "#okundeadleader"
 #define "#maxage 800"
+#define "#undregen 5"
+#define "#corpseeater 2"
+#define "#deadhp 1"
+#define "#maxdeadhp 6"
 #define "#poisonres +25"
 #define "#undead"
 #define "#neednoteat"
