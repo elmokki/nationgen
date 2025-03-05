@@ -16,6 +16,10 @@ Dominions 6 procedural content generation program.
 
 	Temperature protection in forts for nations with `#idealcold`. The modding command for this does not exist yet.
 
+- **New barded cavalry sprites**
+
+	Many don't have proper sprites yet.
+
 
 ## Template ideas
 
@@ -23,8 +27,8 @@ Dominions 6 procedural content generation program.
 
 	For example, carp units that grow bigger and bigger after killing enough units. This should be done programmatically so that different kinds of xpshapes can be applied to different units without having to manually define the templates every time. There are different flavours of `#xpshape` effects that could be done, i.e. growing in size, or getting more of a certain stat, or changing into more mature versions (like dragon hatchlings to dragons), or gaining more military discipline (formation fighter, morale, leadership, etc).
 
-- **Andramania-based nations**
-
-	This would require graphics work, but now that we have dog people in Dominions 6, that opens new possibilities and themes.
-
 - **Generally, work out all the new modding commands added in Dom6 and make something out of them.**
+
+- **Use thematic commands to buff some underpowered nations.**
+
+	For example, pygmies or other tribal/primitive nations. An example of this would be to use the spirit guardian tag, or using montags to give them special allies, or using tattoos.
