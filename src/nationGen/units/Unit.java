@@ -1002,15 +1002,38 @@ public class Unit {
     for (Args args : Generic.getAllUnitTags(this).getAllArgs(
       "price_per_command"
     )) {
-      int value = u.getCommandValue(args.get(0).get(), 0);
+      int commandValue = u.getCommandValue(args.get(0).get(), 0);
       double cost = args.get(1).getDouble();
       int threshold = 0;
       if (args.size() > 2) threshold = args.get(2).getInt();
 
-      if (value > threshold) {
-        value -= threshold;
+      if (commandValue > threshold) {
+        commandValue -= threshold;
 
-        int total = (int) Math.round((double) value * cost);
+        int total = (int) Math.round((double) commandValue * cost);
+
+        if (total > 0) {
+          commands.add(Command.args("#gcost", "+" + total));
+        } else {
+          commands.add(Command.args("#gcost", "" + total));
+        }
+      }
+    }
+
+    // #price_per_applied_filter
+    for (Args args : Generic.getAllUnitTags(this).getAllArgs(
+      "price_per_applied_filter"
+    )) {
+      int filterPower = args.get(0).getInt();
+      long numberOfAppliedFilters = u.appliedFilters.stream().filter(f -> f.power >= filterPower).count();
+      double cost = args.get(1).getDouble();
+      int threshold = 0;
+      if (args.size() > 2) threshold = args.get(2).getInt();
+
+      if (numberOfAppliedFilters > threshold) {
+        numberOfAppliedFilters -= threshold;
+
+        int total = (int) Math.round((double) numberOfAppliedFilters * cost);
 
         if (total > 0) {
           commands.add(Command.args("#gcost", "+" + total));
@@ -1024,7 +1047,7 @@ public class Unit {
     for (Args args : Generic.getAllUnitTags(this).getAllArgs(
       "price_if_command"
     )) {
-      int value = u.getCommandValue(args.get(args.size() - 3).get(), 0);
+      int commandValue = u.getCommandValue(args.get(args.size() - 3).get(), 0);
       int target = args.get(args.size() - 2).getInt();
       String cost = args.get(args.size() - 1).get();
 
@@ -1033,9 +1056,9 @@ public class Unit {
       boolean above = args.contains(new Arg("above"));
 
       if (
-        (value > target && above) ||
-        (value == target && at) ||
-        ((value < target) && below)
+        (commandValue > target && above) ||
+        (commandValue == target && at) ||
+        ((commandValue < target) && below)
       ) {
         commands.add(Command.args("#gcost", cost));
       }
