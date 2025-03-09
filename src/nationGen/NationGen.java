@@ -949,6 +949,17 @@ public class NationGen {
 
   private void handleMount(Command c, Unit u) {
     Mount mount = u.mountItem;
+
+    if (mount == null) {
+      throw new IllegalArgumentException(
+        "Unit with pose " +
+        u.pose.name +
+        " has mount command " +
+        c.toString() +
+        " but mount could not be found!"
+      );
+    }
+
     MountUnit mu = new MountUnit(this, assets, u.race, u.pose, u, mount);
 
     // Maps the mount item id (i.e. #mountmnr 'bear_mail_barding')
