@@ -1460,6 +1460,44 @@ public class Unit {
     return (int) def;
   }
 
+  public int getParry() {
+    int parry = 0;
+    Dom3DB armordb = nationGen.armordb;
+
+    for (String slot : slotmap.getSlots()) {
+      if (getSlot(slot) != null && !getSlot(slot).id.equals("-1")) {
+        if (getSlot(slot).armor) {
+          boolean isShield = armordb.GetInteger(getSlot(slot).id, "type", 0) == 4;
+
+          if (isShield == true) {
+            parry += armordb.GetInteger(getSlot(slot).id, "def", 0);
+          }
+        }
+      }
+    }
+
+    return (int) parry;
+  }
+
+  public int getShieldProt() {
+    int shieldProt = 0;
+    Dom3DB armordb = nationGen.armordb;
+
+    for (String slot : slotmap.getSlots()) {
+      if (getSlot(slot) != null && !getSlot(slot).id.equals("-1")) {
+        if (getSlot(slot).armor) {
+          boolean isShield = armordb.GetInteger(getSlot(slot).id, "type", 0) == 4;
+
+          if (isShield == true) {
+            shieldProt += armordb.GetInteger(getSlot(slot).id, "prot", 0);
+          }
+        }
+      }
+    }
+
+    return (int) shieldProt;
+  }
+
   public List<String> writeLines(String spritedir) {
     List<String> lines = new ArrayList<>();
 

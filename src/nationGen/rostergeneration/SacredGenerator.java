@@ -636,7 +636,9 @@ public class SacredGenerator extends TroopGenerator {
 
     // Weigh survivability of the unit higher than its filter power rating for rec-everywhere chances
     double ratingAndSurvivabilityWeights = unitRating * u.survivability;
-    double adjustedCapOnlyChance = ratingAndSurvivabilityWeights * additionalSacredBonus;
+
+    // TODO: change the constant 0.9 to depend on a setting to modify how common cap-only units will be
+    double adjustedCapOnlyChance = (ratingAndSurvivabilityWeights * additionalSacredBonus) * 0.9;
 
     u.capOnlyChance = Math.max(
       highestCapOnlyChance,
@@ -658,12 +660,12 @@ public class SacredGenerator extends TroopGenerator {
    * @return the unit's rating
    */
   public double calculateUnitRating(Unit unit) {
-    int amntOfBadFilterPower = 0;
-    int amntOfGoodFilterPower = 0;
+    float amntOfBadFilterPower = 0;
+    float amntOfGoodFilterPower = 0;
     int numOfBadFilters = 0;
     int numOfGoodFilters = 0;
-    double badFilterRating = 0;
-    double goodFilterRating = 0;
+    float badFilterRating = 0;
+    float goodFilterRating = 0;
     List<Double> sacredRatingMultiplierTags = Generic.getAllUnitTags(
       unit
     ).getAllDoubles("sacredratingmulti");
@@ -693,7 +695,7 @@ public class SacredGenerator extends TroopGenerator {
       goodFilterRating *= multi;
     }
 
-    return goodFilterRating - badFilterRating;
+    return goodFilterRating - Math.abs(badFilterRating);
   }
 
   /**
@@ -705,7 +707,9 @@ public class SacredGenerator extends TroopGenerator {
   public float calculateSurvivability(Unit u) {
     // Unit's survivability stats
     int hp = u.getCommandValue("#hp", 10);
-    int def = u.getTotalDef();
+    int parry = u.getParry();
+    int def = u.getTotalDef() - parry;
+    int shieldProt = u.getShieldProt();
     float finalProt = u.getTotalProt();
     int mr = u.getCommandValue("#mr", 10);
 
@@ -722,6 +726,10 @@ public class SacredGenerator extends TroopGenerator {
     int mostSurvivableDef = 18;
     int mostSurvivableProt = 22;
     int mostSurvivableMr = 18;
+
+    // Only count a percentage of the shield's parry as defense, depending
+    // on how close its protection is to the best survivable protection
+    def = def + (int)(Math.min(1, (float)shieldProt / (float)mostSurvivableProt) * parry);
 
     // Normalize the above scores to a range of 0 to 1
     float normalizedHp = Utils.normalize(
@@ -809,11 +817,6 @@ public class SacredGenerator extends TroopGenerator {
       if (c.command.equals("#overcharged")) {
         Integer overchargedAmnt = Integer.parseInt(c.args.get(0).get());
         survivability += overchargedAmnt * 0.05;
-      }
-
-      if (c.command.equals("#unsurr")) {
-        Integer unsurroundableAmnt = Integer.parseInt(c.args.get(0).get());
-        survivability += unsurroundableAmnt * 0.015;
       }
 
       if (c.command.equals("#unsurr")) {
