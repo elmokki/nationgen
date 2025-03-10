@@ -346,9 +346,9 @@
 #new magicweapon
 #id "shrink"
 #unitname "prefix diminishing"
-#unitname "suffix of diminuation"
+#unitname "suffix 'of diminuation'"
 #unitname "prefix reducing"
-#unitname "suffix of reduction"
+#unitname "suffix 'of reduction'"
 #unitname "prefix belittling"
 #basechance 0
 #chanceinc "magic nature 0.5"
@@ -374,7 +374,10 @@
 #chanceinc magic water AND magic air *2
 #tag "rcost ranged +2"
 #tag "rcost melee +2"
-#eff 686
+-- This used to be effect 686 in Dominions 5, but
+-- Dominions 6 has no direct replacement for it.
+-- We'll use ao-onis cold effect temporarily.
+#eff 160
 #tag "path water"
 #power 2
 #end
@@ -386,7 +389,7 @@
 #unitname "prefix insatiable"
 #unitname "prefix ravenous"
 #unitname "prefix voracious"
-#unitname "suffix of bloodletting"
+#unitname "suffix 'of bloodletting'"
 #basechance 0.1
 #chanceinc "magic blood 0.9"
 #eff 690

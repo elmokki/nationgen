@@ -6,6 +6,8 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
 import nationGen.entities.Filter;
@@ -47,15 +49,36 @@ public class MountUnit extends Unit {
 
     // Copy sacredness from main form
     if (otherForm != null) {
-      for (Command c : otherForm.getCommands()) {
-        if (
-          c.command.equals("#holy") && !mountForm.tags.containsName("mount")
-        ) {
+      List<Command> mountedFormCommands = otherForm.getCommands();
+
+      for (Command c : mountedFormCommands) {
+        if (c.command.equals("#holy") && !mountForm.tags.containsName("mount")) {
           sacred = true;
-        } else if (
-          c.command.equals("#holy") && mountForm.tags.containsName("mount")
-        ) {
+        }
+        
+        else if (c.command.equals("#holy") && mountForm.tags.containsName("mount")) {
           sacred = true;
+        }
+        
+        // Copy rider's fire resistance if the rider has a heat aura and the mount's resistance is worse
+        else if (c.command.equals("#heat")) {
+          String resistanceTag = "#fireres";
+          int inheritableResistance = getResistanceFromRiderToInherit(mountedFormCommands, resistanceTag);
+          sf.commands.add(Command.parse(resistanceTag + " " + inheritableResistance));
+        }
+        
+        // Copy rider's cold resistance if the rider has a chill aura and the mount's resistance is worse
+        else if (c.command.equals("#cold")) {
+          String resistanceTag = "#coldres";
+          int inheritableResistance = getResistanceFromRiderToInherit(mountedFormCommands, resistanceTag);
+          sf.commands.add(Command.parse(resistanceTag + " " + inheritableResistance));
+        }
+        
+        // Copy rider's poison resistance if the rider has a poison aura and the mount's resistance is worse
+        else if (c.command.equals("#poisoncloud")) {
+          String resistanceTag = "#poisonres";
+          int inheritableResistance = getResistanceFromRiderToInherit(mountedFormCommands, resistanceTag);
+          sf.commands.add(Command.parse(resistanceTag + " " + inheritableResistance));
         }
       }
     }
@@ -144,6 +167,41 @@ public class MountUnit extends Unit {
 
     if (sf.commands.size() > 0) {
       this.appliedFilters.add(sf);
+    }
+  }
+
+  /**
+   * Checks the rider's commands for their related elemental resistance tag and
+   * compares it to the mount's resistance. Then returns the higher resistance.
+   * @param riderCommands
+   * @param resTag
+   * @return higher resistance between rider and mount for mount to inherit
+   */
+  private int getResistanceFromRiderToInherit(List<Command> riderCommands, String resTag) {
+    Optional<Command> potentialResistance = riderCommands
+      .stream()
+      .filter(mfc -> mfc.command.equals(resTag))
+      .findFirst();
+
+    if (potentialResistance.isPresent() == false) {
+      return 0;
+    }
+
+    int riderResistance = potentialResistance.get().args.getInt(0);
+    List<Command> mountCommands = this.mountForm.getCommands();
+    Optional<Command> potentialMountResistance = mountCommands
+      .stream()
+      .filter(mfc -> mfc.command.equals(resTag))
+      .findFirst();
+
+    if (potentialMountResistance.isPresent()) {
+      int mountResistance = potentialMountResistance.get().args.getInt(0);
+      int higherResistance = Math.max(riderResistance, mountResistance);
+      return higherResistance;
+    }
+
+    else {
+      return riderResistance;
     }
   }
 
