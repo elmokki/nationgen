@@ -946,19 +946,6 @@ public class Unit {
       this.commands.add(Command.args("#hp", "+2"));
       this.tags.addArgs("itemslot", "feet", -1);
     }
-    
-    List<String> slotKeys = this.slotmap.slots().collect(Collectors.toList());
-
-    // Handle custom equipment
-    for (String str : slotKeys) {
-      Item i = this.slotmap.get(str);
-      if (i == null) continue;
-
-      if (i.isCustomIdResolved() == false) {
-        Item itemWithResolvedId = Item.resolveId(i);
-        this.setSlot(str, itemWithResolvedId);
-      }
-    }
 
     // Ambidextrous. Should be after custom equipment handling and before command cleanup
     if (this.getSlot("offhand") != null && !this.getSlot("offhand").armor) {
