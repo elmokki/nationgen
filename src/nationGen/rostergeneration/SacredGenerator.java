@@ -664,32 +664,41 @@ public class SacredGenerator extends TroopGenerator {
     float amntOfGoodFilterPower = 0;
     int numOfBadFilters = 0;
     int numOfGoodFilters = 0;
-    float badFilterRating = 0;
-    float goodFilterRating = 0;
+    double badFilterRating = 0;
+    double goodFilterRating = 0;
+    
+    float cumulativeBadFilterScaling = 0.1f;
+    float cumulativeGoodFilterScaling = 0.1f;
+    float extraBadFilterRatingFromAccumulation = 0;
+    float extraGoodFilterRatingFromAccumulation = 0;
+
+    
     List<Double> sacredRatingMultiplierTags = Generic.getAllUnitTags(
       unit
     ).getAllDoubles("sacredratingmulti");
 
     for (Filter f : unit.appliedFilters) {
-      if (f.power < 0) {
-        // Every filter after the second starts adding 25% more of its power to the rating
-        amntOfBadFilterPower += f.power + (Math.max(0, numOfBadFilters - 1) * 0.25);
+      if (f.power <= -1) {
+        // Use the sum of squares of multiple filters
+        amntOfBadFilterPower += Math.pow(f.power, 2);
+        // Every filter after the first starts adding cumulatively more value to the rating
+        extraBadFilterRatingFromAccumulation += numOfBadFilters * cumulativeBadFilterScaling;
         numOfBadFilters++;
-      } else if (f.power > 0) {
-        // First filter gets a -1 power discount. This is to offset the guaranteed "X sacred"
-        // filter that sacreds get, which technically does not do anything other than make them holy
-        double filterPower = (numOfGoodFilters == 0) ? f.power - 1 : f.power;
-
-        // Every filter after the second starts adding 25% more of its power to the rating
-        amntOfGoodFilterPower += filterPower + (Math.max(0, numOfGoodFilters - 1) * 0.25);
+      }
+      
+      else if (f.power >= 1) {
+        // Use the sum of squares of multiple filters
+        amntOfGoodFilterPower += Math.pow(f.power, 2);
+        // Every filter after the first starts adding cumulatively more value to the rating
+        extraGoodFilterRatingFromAccumulation += numOfGoodFilters * cumulativeGoodFilterScaling;
         numOfGoodFilters++;
       }
     }
 
-    // Divide the accumulated power by number of filters. This broadly means that,
-    // for example, four power 1 filters will result in lower rating than two power 2 filters
-    goodFilterRating = amntOfGoodFilterPower / Math.max(1, numOfGoodFilters - 1);
-    badFilterRating = amntOfBadFilterPower / Math.max(1, numOfBadFilters);
+    // Scale down the sum of squares with a root. This makes higher power filters have more weight than lower powers.
+    // Scale them down as well by diving with a constant after the root just to bring it to a better size.
+    goodFilterRating = (Math.cbrt(amntOfGoodFilterPower) / 1.5) + extraGoodFilterRatingFromAccumulation;
+    badFilterRating = (Math.cbrt(amntOfBadFilterPower) / 1.5) + extraBadFilterRatingFromAccumulation;
 
     for (Double multi : sacredRatingMultiplierTags) {
       goodFilterRating *= multi;
@@ -870,6 +879,9 @@ public class SacredGenerator extends TroopGenerator {
 
     // Add a sacred generic filter
     Filter tf = new Filter(nationGen);
+
+    // Don't count this filter towards unit power calculations
+    tf.power = 0;
 
     if (sacred) tf.name = Generic.capitalize(role) + " sacred";
     else tf.name = Generic.capitalize(role) + " elite";
