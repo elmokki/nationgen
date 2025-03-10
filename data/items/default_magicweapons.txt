@@ -374,7 +374,10 @@
 #chanceinc magic water AND magic air *2
 #tag "rcost ranged +2"
 #tag "rcost melee +2"
-#eff 686
+-- This used to be effect 686 in Dominions 5, but
+-- Dominions 6 has no direct replacement for it.
+-- We'll use ao-onis cold effect temporarily.
+#eff 160
 #tag "path water"
 #power 2
 #end
