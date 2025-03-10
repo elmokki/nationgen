@@ -636,7 +636,9 @@ public class SacredGenerator extends TroopGenerator {
 
     // Weigh survivability of the unit higher than its filter power rating for rec-everywhere chances
     double ratingAndSurvivabilityWeights = unitRating * u.survivability;
-    double adjustedCapOnlyChance = ratingAndSurvivabilityWeights * additionalSacredBonus;
+
+    // TODO: change the constant 0.9 to depend on a setting to modify how common cap-only units will be
+    double adjustedCapOnlyChance = (ratingAndSurvivabilityWeights * additionalSacredBonus) * 0.9;
 
     u.capOnlyChance = Math.max(
       highestCapOnlyChance,
@@ -658,42 +660,51 @@ public class SacredGenerator extends TroopGenerator {
    * @return the unit's rating
    */
   public double calculateUnitRating(Unit unit) {
-    int amntOfBadFilterPower = 0;
-    int amntOfGoodFilterPower = 0;
+    float amntOfBadFilterPower = 0;
+    float amntOfGoodFilterPower = 0;
     int numOfBadFilters = 0;
     int numOfGoodFilters = 0;
     double badFilterRating = 0;
     double goodFilterRating = 0;
+    
+    float cumulativeBadFilterScaling = 0.1f;
+    float cumulativeGoodFilterScaling = 0.1f;
+    float extraBadFilterRatingFromAccumulation = 0;
+    float extraGoodFilterRatingFromAccumulation = 0;
+
+    
     List<Double> sacredRatingMultiplierTags = Generic.getAllUnitTags(
       unit
     ).getAllDoubles("sacredratingmulti");
 
     for (Filter f : unit.appliedFilters) {
-      if (f.power < 0) {
-        // Every filter after the second starts adding 25% more of its power to the rating
-        amntOfBadFilterPower += f.power + (Math.max(0, numOfBadFilters - 1) * 0.25);
+      if (f.power <= -1) {
+        // Use the sum of squares of multiple filters
+        amntOfBadFilterPower += Math.pow(f.power, 2);
+        // Every filter after the first starts adding cumulatively more value to the rating
+        extraBadFilterRatingFromAccumulation += numOfBadFilters * cumulativeBadFilterScaling;
         numOfBadFilters++;
-      } else if (f.power > 0) {
-        // First filter gets a -1 power discount. This is to offset the guaranteed "X sacred"
-        // filter that sacreds get, which technically does not do anything other than make them holy
-        double filterPower = (numOfGoodFilters == 0) ? f.power - 1 : f.power;
-
-        // Every filter after the second starts adding 25% more of its power to the rating
-        amntOfGoodFilterPower += filterPower + (Math.max(0, numOfGoodFilters - 1) * 0.25);
+      }
+      
+      else if (f.power >= 1) {
+        // Use the sum of squares of multiple filters
+        amntOfGoodFilterPower += Math.pow(f.power, 2);
+        // Every filter after the first starts adding cumulatively more value to the rating
+        extraGoodFilterRatingFromAccumulation += numOfGoodFilters * cumulativeGoodFilterScaling;
         numOfGoodFilters++;
       }
     }
 
-    // Divide the accumulated power by number of filters. This broadly means that,
-    // for example, four power 1 filters will result in lower rating than two power 2 filters
-    goodFilterRating = amntOfGoodFilterPower / Math.max(1, numOfGoodFilters - 1);
-    badFilterRating = amntOfBadFilterPower / Math.max(1, numOfBadFilters);
+    // Scale down the sum of squares with a root. This makes higher power filters have more weight than lower powers.
+    // Scale them down as well by diving with a constant after the root just to bring it to a better size.
+    goodFilterRating = (Math.cbrt(amntOfGoodFilterPower) / 1.5) + extraGoodFilterRatingFromAccumulation;
+    badFilterRating = (Math.cbrt(amntOfBadFilterPower) / 1.5) + extraBadFilterRatingFromAccumulation;
 
     for (Double multi : sacredRatingMultiplierTags) {
       goodFilterRating *= multi;
     }
 
-    return goodFilterRating - badFilterRating;
+    return goodFilterRating - Math.abs(badFilterRating);
   }
 
   /**
@@ -705,7 +716,9 @@ public class SacredGenerator extends TroopGenerator {
   public float calculateSurvivability(Unit u) {
     // Unit's survivability stats
     int hp = u.getCommandValue("#hp", 10);
-    int def = u.getTotalDef();
+    int parry = u.getParry();
+    int def = u.getTotalDef() - parry;
+    int shieldProt = u.getShieldProt();
     float finalProt = u.getTotalProt();
     int mr = u.getCommandValue("#mr", 10);
 
@@ -722,6 +735,10 @@ public class SacredGenerator extends TroopGenerator {
     int mostSurvivableDef = 18;
     int mostSurvivableProt = 22;
     int mostSurvivableMr = 18;
+
+    // Only count a percentage of the shield's parry as defense, depending
+    // on how close its protection is to the best survivable protection
+    def = def + (int)(Math.min(1, (float)shieldProt / (float)mostSurvivableProt) * parry);
 
     // Normalize the above scores to a range of 0 to 1
     float normalizedHp = Utils.normalize(
@@ -815,11 +832,6 @@ public class SacredGenerator extends TroopGenerator {
         Integer unsurroundableAmnt = Integer.parseInt(c.args.get(0).get());
         survivability += unsurroundableAmnt * 0.015;
       }
-
-      if (c.command.equals("#unsurr")) {
-        Integer unsurroundableAmnt = Integer.parseInt(c.args.get(0).get());
-        survivability += unsurroundableAmnt * 0.015;
-      }
     }
 
     return survivability;
@@ -867,6 +879,9 @@ public class SacredGenerator extends TroopGenerator {
 
     // Add a sacred generic filter
     Filter tf = new Filter(nationGen);
+
+    // Don't count this filter towards unit power calculations
+    tf.power = 0;
 
     if (sacred) tf.name = Generic.capitalize(role) + " sacred";
     else tf.name = Generic.capitalize(role) + " elite";

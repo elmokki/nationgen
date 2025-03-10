@@ -7,7 +7,8 @@ public enum Operator {
   ADD,
   SUBTRACT,
   MULTIPLY,
-  DIVIDE;
+  DIVIDE,
+  SET;
 
   public static Operator fromChar(char c) {
     switch (c) {
@@ -19,6 +20,8 @@ public enum Operator {
         return MULTIPLY;
       case '/':
         return DIVIDE;
+      case '=':
+        return SET;
       default:
         return null;
     }

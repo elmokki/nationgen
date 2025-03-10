@@ -161,6 +161,8 @@ public class Arg {
           return value * getDouble();
         case DIVIDE:
           return value / getDouble();
+        case SET:
+          return getDouble();
         default:
           throw new UnsupportedOperationException(
             "Unknown how to apply mod operator [" + getOperator().get() + "]."

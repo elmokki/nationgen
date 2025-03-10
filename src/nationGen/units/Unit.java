@@ -544,8 +544,11 @@ public class Unit {
   public void setSlot(String slotname, Item newitem) {
     Item olditem = getSlot(slotname);
 
-    slotmap.push(slotname, newitem);
+    if (newitem != null && newitem.isCustomIdResolved() == false) {
+      newitem = Item.resolveId(newitem);
+    }
 
+    slotmap.push(slotname, newitem);
     handleSlotChange(slotname, olditem, newitem);
   }
 
@@ -944,19 +947,6 @@ public class Unit {
       this.tags.addArgs("itemslot", "feet", -1);
     }
 
-    // Handle custom equipment
-    for (String str : this.slotmap.slots().collect(Collectors.toList())) { // copy to avoid concurrent modification (sigh)
-      Item i = this.slotmap.get(str);
-      if (i == null) continue;
-
-      if (!Generic.isNumeric(i.id)) {
-        Item ti = i.getCopy();
-        ti.tags.add("OLDID", i.id);
-        ti.id = nationGen.GetCustomItemsHandler().getCustomItemId(i.id);
-        this.setSlot(str, ti);
-      }
-    }
-
     // Ambidextrous. Should be after custom equipment handling and before command cleanup
     if (this.getSlot("offhand") != null && !this.getSlot("offhand").armor) {
       int len = 0;
@@ -1002,15 +992,38 @@ public class Unit {
     for (Args args : Generic.getAllUnitTags(this).getAllArgs(
       "price_per_command"
     )) {
-      int value = u.getCommandValue(args.get(0).get(), 0);
+      int commandValue = u.getCommandValue(args.get(0).get(), 0);
       double cost = args.get(1).getDouble();
       int threshold = 0;
       if (args.size() > 2) threshold = args.get(2).getInt();
 
-      if (value > threshold) {
-        value -= threshold;
+      if (commandValue > threshold) {
+        commandValue -= threshold;
 
-        int total = (int) Math.round((double) value * cost);
+        int total = (int) Math.round((double) commandValue * cost);
+
+        if (total > 0) {
+          commands.add(Command.args("#gcost", "+" + total));
+        } else {
+          commands.add(Command.args("#gcost", "" + total));
+        }
+      }
+    }
+
+    // #price_per_applied_filter
+    for (Args args : Generic.getAllUnitTags(this).getAllArgs(
+      "price_per_applied_filter"
+    )) {
+      int filterPower = args.get(0).getInt();
+      long numberOfAppliedFilters = u.appliedFilters.stream().filter(f -> f.power >= filterPower).count();
+      double cost = args.get(1).getDouble();
+      int threshold = 0;
+      if (args.size() > 2) threshold = args.get(2).getInt();
+
+      if (numberOfAppliedFilters > threshold) {
+        numberOfAppliedFilters -= threshold;
+
+        int total = (int) Math.round((double) numberOfAppliedFilters * cost);
 
         if (total > 0) {
           commands.add(Command.args("#gcost", "+" + total));
@@ -1024,7 +1037,7 @@ public class Unit {
     for (Args args : Generic.getAllUnitTags(this).getAllArgs(
       "price_if_command"
     )) {
-      int value = u.getCommandValue(args.get(args.size() - 3).get(), 0);
+      int commandValue = u.getCommandValue(args.get(args.size() - 3).get(), 0);
       int target = args.get(args.size() - 2).getInt();
       String cost = args.get(args.size() - 1).get();
 
@@ -1033,9 +1046,9 @@ public class Unit {
       boolean above = args.contains(new Arg("above"));
 
       if (
-        (value > target && above) ||
-        (value == target && at) ||
-        ((value < target) && below)
+        (commandValue > target && above) ||
+        (commandValue == target && at) ||
+        ((commandValue < target) && below)
       ) {
         commands.add(Command.args("#gcost", cost));
       }
@@ -1437,6 +1450,44 @@ public class Unit {
     return (int) def;
   }
 
+  public int getParry() {
+    int parry = 0;
+    Dom3DB armordb = nationGen.armordb;
+
+    for (String slot : slotmap.getSlots()) {
+      if (getSlot(slot) != null && !getSlot(slot).id.equals("-1")) {
+        if (getSlot(slot).armor) {
+          boolean isShield = armordb.GetInteger(getSlot(slot).id, "type", 0) == 4;
+
+          if (isShield == true) {
+            parry += armordb.GetInteger(getSlot(slot).id, "def", 0);
+          }
+        }
+      }
+    }
+
+    return (int) parry;
+  }
+
+  public int getShieldProt() {
+    int shieldProt = 0;
+    Dom3DB armordb = nationGen.armordb;
+
+    for (String slot : slotmap.getSlots()) {
+      if (getSlot(slot) != null && !getSlot(slot).id.equals("-1")) {
+        if (getSlot(slot).armor) {
+          boolean isShield = armordb.GetInteger(getSlot(slot).id, "type", 0) == 4;
+
+          if (isShield == true) {
+            shieldProt += armordb.GetInteger(getSlot(slot).id, "prot", 0);
+          }
+        }
+      }
+    }
+
+    return (int) shieldProt;
+  }
+
   public List<String> writeLines(String spritedir) {
     List<String> lines = new ArrayList<>();
 
@@ -1523,7 +1574,23 @@ public class Unit {
     // Write all instead of just some stuff (14.3.2014)
     slotmap
       .items()
-      .filter(i -> Integer.parseInt(i.id) > 0)
+    .filter(i -> {
+        if (!Generic.isNumeric(i.id)) {
+          throw new IllegalArgumentException(
+            this.name +
+            " unit (pose: " +
+            this.pose.name +
+            ", race: " +
+            this.race.name +
+            ", nation: " +
+            this.nation.name + " with seed " + this.nation.getSeed() +
+            ") has a custom item whose id was not resolved: " +
+            i.id
+          );
+        }
+
+        return Integer.parseInt(i.id) > 0;
+      })
       .forEach(i -> lines.add(writeSlotLine(i)));
 
     if (!this.name.toString(this).equals("UNNAMED")) {

@@ -1,4 +1,13 @@
--- Sharkskin armor
+--- "Naked"
+
+#newitem
+#name "unarmoured"
+#armor
+#basechance 3
+#theme "primitive"
+#enditem
+
+--- Sharkskin armor
 
 #newitem
 #id "sharkskin_armor"
@@ -7,15 +16,6 @@
 #sprite /graphics/crustacean/crabman/armor/sharkskin.png
 #recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
 #armor
-#theme "primitive"
-#enditem
-
---- "Naked"
-
-#newitem
-#name "unarmoured"
-#armor
-#basechance 4
 #theme "primitive"
 #enditem
 
@@ -28,6 +28,7 @@
 #recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
 #armor
 #theme "bronze"
+#command "#rcost +3"
 #enditem
 
 #newitem
@@ -37,6 +38,7 @@
 #recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
 #armor
 #theme "bronze"
+#command "#rcost +3"
 #enditem
 
 #newitem
@@ -46,6 +48,7 @@
 #recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
 #armor 
 #theme "bronze"
+#command "#rcost +5"
 #enditem
 
 
@@ -58,6 +61,7 @@
 #recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
 #armor
 #theme "advanced"
+#command "#rcost +3"
 #enditem
 
 #newitem
@@ -67,6 +71,7 @@
 #recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
 #armor
 #theme "advanced"
+#command "#rcost +3"
 #enditem
 
 #newitem
@@ -76,6 +81,7 @@
 #recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
 #armor
 #theme "advanced"
+#command "#rcost +5"
 #enditem
 
 
@@ -89,6 +95,7 @@
 #recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
 #armor
 #theme "bronze"
+#command "#rcost +3"
 #enditem
 
 #newitem
@@ -99,6 +106,7 @@
 #recolormask /graphics/crustacean/crabman/armor/armor_recolormask.png
 #armor
 #theme "bronze"
+#command "#rcost +5"
 #enditem
 
 
@@ -113,6 +121,7 @@
 #theme "bronze"
 #theme "elite"
 #basechance 0.1
+#command "#rcost +6"
 #enditem
 
 #newitem
@@ -124,6 +133,7 @@
 #theme "bronze"
 #theme "elite"
 #basechance 0.1
+#command "#rcost +6"
 #enditem
 
 
@@ -138,6 +148,7 @@
 #theme "advanced"
 #theme "elite"
 #basechance 0.1
+#command "#rcost +6"
 #enditem
 
 #newitem
@@ -149,4 +160,5 @@
 #theme "advanced"
 #theme "elite"
 #basechance 0.1
+#command "#rcost +6"
 #enditem
