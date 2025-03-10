@@ -9,30 +9,10 @@
 #needs hands hands_staff
 #enditem
 
-#newitem
-#id staff
-#gameid 7
-#sprite /graphics/cyclops/weapon/staff_plain.png
-#theme wood
-#theme primitive
-#needs hands hands_staff
-#troopweapon
-#enditem
-
-#newitem
-#id crook
-#gameid 7
-#sprite /graphics/cyclops/weapon/staff_crook.png
-#theme wood
-#theme peasant
-#needs hands hands_staff
-#troopweapon
-#enditem
-
 -- Moreso forged stuff
 #newitem
-#id greataxe
-#gameid 18
+#id cavalry_axe
+#gameid cavalry_axe
 #sprite /graphics/cyclops/weapon/battleaxe_iron.png
 #theme iron
 #needs hands hands_staff
@@ -40,8 +20,8 @@
 #enditem
 
 #newitem
-#id greataxe_bronze
-#gameid 698
+#id cavalry_axe_bronze
+#gameid cavalry_axe_bronze
 #sprite /graphics/cyclops/weapon/battleaxe_bronze.png
 #theme bronze
 #needs hands hands_staff
@@ -84,7 +64,7 @@
 #needs hands hands_staff
 #enditem
 
----------------------- elite stuff (maybe break this stuff out into seperate files? ...for now, no.)
+---- Elite stuff (maybe break this stuff out into separate files? ...for now, no.)
 
 #newitem
 #id spear_cyclope

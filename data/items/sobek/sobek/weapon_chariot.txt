@@ -58,50 +58,41 @@
 #basechance 0.5
 #enditem
 
--- 2h weapons
+-- Cavalry-specific weapons
 
 #newitem
-#id flail
-#gameid 16
+#id giants_flail
+#gameid giants_flail
 #sprite /graphics/weapon/standard/flail.png
 #offsetx -6
 #enditem
 
 #newitem
-#id greataxe
-#gameid 18
+#id cavalry_axe
+#gameid cavalry_axe
 #sprite /graphics/weapon/standard/greataxe.png
 #offsetx -6
 #theme "primitive"
 #enditem
 
 #newitem
-#id halberd
-#gameid 5
-#sprite /graphics/weapon/standard/halberd.png
-#offsetx -6
-#theme "advanced"
-#minprot 8
-#enditem
-
-#newitem
-#id bardiche
-#gameid bardiche
+#id cavalry_bardiche
+#gameid cavalry_bardiche
 #sprite /graphics/weapon/standard/bardiche.png
 #offsetx -6
 #enditem
 
 #newitem
-#id maul
-#gameid 14
+#id cavalry_mace
+#gameid cavalry_mace
 #sprite /graphics/weapon/standard/maul.png
 #offsetx -6
 #basechance 0.5
 #enditem
 
 #newitem
-#id trident
-#gameid 3
+#id cavalry_trident
+#gameid cavalry_trident
 #sprite /graphics/weapon/standard/trident.png
 #offsetx -6
 #basechance 0.5
