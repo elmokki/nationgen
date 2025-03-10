@@ -2640,6 +2640,52 @@
 #end
 
 #new customweapon
+#id "cavalry_sword"
+#command "#rcost 5"
+#command "#dmg 5"
+#command "#att 1"
+#command "#def 1"
+#command "#len 2"
+#command "#nratt 1"
+#command "#slash"
+#command "#name 'Cavalry Sword'"
+#end
+
+#new customweapon
+#id "cavalry_sword_bronze"
+#command "#rcost 4"
+#command "#dmg 4"
+#command "#att 1"
+#command "#def 1"
+#command "#len 2"
+#command "#nratt 1"
+#command "#slash"
+#command "#name 'Bronze Cavalry Sword'"
+#end
+
+#new customweapon
+#id "cavalry_bardiche"
+#command "#rcost 4"
+#command "#dmg 6"
+#command "#def -1"
+#command "#len 4"
+#command "#nratt 1"
+#command "#slash"
+#command "#name 'Cavalry Bardiche'"
+#end
+
+#new customweapon
+#id "cavalry_bardiche_bronze"
+#command "#rcost 4"
+#command "#dmg 5"
+#command "#def -1"
+#command "#len 4"
+#command "#nratt 1"
+#command "#slash"
+#command "#name 'Bronze Cavalry Bardiche'"
+#end
+
+#new customweapon
 #id "cavalry_glaive"
 #command "#rcost 3"
 #command "#dmg 8"
