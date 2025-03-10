@@ -113,71 +113,74 @@
 #power 1
 #end
 
-#new
-#name "undyinglowest"
-#type "undying"
-#command "#blessdtv +1"
-#basechance 0.1
-#chanceinc "magic death +0.5"
-#chanceinc "magic death nature +0.5"
-#chanceinc "command #undead +1"
-#chanceinc "command #demon +0.5"
-#chanceinc "command #magicbeing +0.2"
-#chanceinc "command #berserk +1"
-#description "can continue to fight despite taking mortal wounds"
-#chanceinc "pose ranged -100"
-#chanceinc "pose mounted -100"
-#tag "nopose ranged"
-#tag "nopose mounted"
-#power 1
-#end
+-- Disable undying since there's no modding command for it currently.
+-- #blessdtv is only to make thrones grant undying, not for units.
+--
+-- #new
+-- #name "undyinglowest"
+-- #type "undying"
+-- #command "#undying +1"
+-- #basechance 0.1
+-- #chanceinc "magic death +0.5"
+-- #chanceinc "magic death nature +0.5"
+-- #chanceinc "command #undead +1"
+-- #chanceinc "command #demon +0.5"
+-- #chanceinc "command #magicbeing +0.2"
+-- #chanceinc "command #berserk +1"
+-- #description "can continue to fight despite taking mortal wounds"
+-- #chanceinc "pose ranged -100"
+-- #chanceinc "pose mounted -100"
+-- #tag "nopose ranged"
+-- #tag "nopose mounted"
+-- #power 1
+-- #end
 
+-- #new
+-- #name "undyinglow"
+-- #type "undying"
+-- #command "#undying +2"
+-- #basechance 0.05
+-- #chanceinc "magic death +0.25"
+-- #chanceinc "magic death nature +0.25"
+-- #chanceinc "command #undead +0.5"
+-- #chanceinc "command #demon +0.25"
+-- #chanceinc "command #magicbeing +0.1"
+-- #chanceinc "command #berserk +0.5"
+-- #description "can continue to fight despite taking mortal wounds"
+-- #chanceinc "pose ranged -100"
+-- #chanceinc "pose mounted -100"
+-- #tag "nopose ranged"
+-- #tag "nopose mounted"
+-- #command "#gcost +5"
+-- #power 2
+-- #end
 
-#new
-#name "undyinglow"
-#type "undying"
-#command "#blessdtv +2"
-#basechance 0.05
-#chanceinc "magic death +0.25"
-#chanceinc "magic death nature +0.25"
-#chanceinc "command #undead +0.5"
-#chanceinc "command #demon +0.25"
-#chanceinc "command #magicbeing +0.1"
-#chanceinc "command #berserk +0.5"
-#description "can continue to fight despite taking mortal wounds"
-#chanceinc "pose ranged -100"
-#chanceinc "pose mounted -100"
-#tag "nopose ranged"
-#tag "nopose mounted"
-#command "#gcost +5"
-#power 2
-#end
-
-#new
-#name "undyinghigh"
-#type "undying"
-#command "#blessdtv +3"
-#basechance 0.01
-#chanceinc "magic death +0.125"
-#chanceinc "magic death nature +0.125"
-#chanceinc "command #undead +0.33"
-#chanceinc "command #demon +0.125"
-#chanceinc "command #magicbeing +0.065"
-#chanceinc "command #berserk +0.33"
-#chanceinc "pose ranged -100"
-#chanceinc "pose mounted -100"
-#description "can continue to fight despite taking mortal wounds"
-#tag "nopose ranged"
-#tag "nopose mounted"
-#command "#gcost +10"
-#power 3
-#end
+-- #new
+-- #name "undyinghigh"
+-- #type "undying"
+-- #command "#undying +3"
+-- #basechance 0.01
+-- #chanceinc "magic death +0.125"
+-- #chanceinc "magic death nature +0.125"
+-- #chanceinc "command #undead +0.33"
+-- #chanceinc "command #demon +0.125"
+-- #chanceinc "command #magicbeing +0.065"
+-- #chanceinc "command #berserk +0.33"
+-- #chanceinc "pose ranged -100"
+-- #chanceinc "pose mounted -100"
+-- #description "can continue to fight despite taking mortal wounds"
+-- #tag "nopose ranged"
+-- #tag "nopose mounted"
+-- #command "#gcost +10"
+-- #power 3
+-- #end
 
 #new
 #id "stealthlow"
 #type "stealth"
 #basechance 0.5
 #command "#stealthy +0"
+#command "#gcost +5"
 #chanceinc "command #stealthy 2"
 #chanceinc "personalcommand #stealthy -10"
 #chanceinc "race vanir -20"
@@ -732,7 +735,7 @@
 #end
 
 #new
-#id "darkpower"
+#id "darkpower2"
 #basechance 0.0
 #chanceinc "command #darkvision 0.05"
 #chanceinc "magic death 1"
@@ -746,7 +749,7 @@
 #end
 
 #new
-#id "darkpower2"
+#id "darkpower4"
 #basechance 0.0
 #chanceinc "command #darkvision 4"
 #chanceinc "magic death 0.5"
@@ -760,7 +763,7 @@
 #end
 
 #new
-#id "darkpower-blind"
+#id "darkpower2-blind"
 #basechance 0.0
 #chanceinc "personalcommand #blind 5"
 #chanceinc "magic death *2"
@@ -772,7 +775,7 @@
 #end
 
 #new
-#id "darkpower2-blind"
+#id "darkpower4-blind"
 #basechance 0.0
 #chanceinc "personalcommand #blind 3"
 #chanceinc "magic death *2"

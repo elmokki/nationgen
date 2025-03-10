@@ -1,4 +1,67 @@
 
+0.12.2 (9th March 2025)
+----------------------------------------------------------
+Fixes
+-----------------------------------------------------------
+-	Boreal and hoburg ghouls updated as per other ghoul changes.
+-	Fixed burningone_offhand weapon ids.
+-	Removed Tusk weapon from elephant monsters that were given to rider.
+-	Fixed missing hashtags in some price_per_command #hp commands.
+-	(oldmidgetwillow) Bakemono cavalry should now properly generate; fixes to their equipment looks.
+-	Fixed abysian nightmare_plate_barding_mount mount id.
+-	Fixed custom glaive_bone_mundane having wrong name.
+-	Fixed polish() pass resolving custom item ids resulting in unresolved ones.
+
+	When resolving the custom equipment of certain units during Unit.polish(), some of the items are marked
+	with dependencies, such as #needstype rarm onehand and needstype offhand polearm.
+	
+	These dependencies are resolved once the id of said item is resolved, but they go on to potentially
+	replace previously equipped items (in fact, they'll replace them even if the item already equipped
+	fulfills that dependency for that slot!).
+	
+	The problem with this is that if those newly equipped items fell in slots that have already been
+	passed over in the custom id equipment loop, their custom id will not be resolved after getting equipped,
+	and the program will throw an exception when writing the unit's .dm lines. Said exception has also been
+	made explicit and has had a clear debugging message added, so that whenever this happens it's easy to
+	figure out which unit of which nation with which seed and which item caused the specific problem.
+
+	As a bonus, the Item id resolution is now encapsulated into a static method of the Item class, which
+	should make it easier for future debugging as well.
+
+-	Replaced chariots' 2h weapons with proper versions.
+
+
+----------------------------------------------------------
+Balance
+-----------------------------------------------------------
+-	Removed #siegebonus +3 from castlemaster filter. Now units might get siege or castle defense,
+	not both in one filter. If a unit generates with both separate filters, it can still have both.
+
+-	Crab armor rcost increases; lowered chance of naked a bit.
+
+-	Tweaked unit rating calculation for cap only chances further.
+
+----------------------------------------------------------
+Code
+-----------------------------------------------------------
+-	Added support for = operator within special commands like #chanceinc.
+
+		For example, #chanceinc "command #demon =1" would overwrite the earlier unit's #basechance to be
+		equal to 1 if the unit is a demon.
+
+		Currently, a #chanceinc with a modifier of 1, without any operator (like + or -) is treated by
+		default like an addition, so a #chanceinc "command #demon 1" means "add 1 to the #basechance if
+		this unit is also a demon", rather than setting its #basechance to 1 as the notation might suggest.
+
+-	Added #power 1 to all sacred and elite filters for clarity (this is their default value).
+
+-	Implemented #price_per_applied_filter.
+
+		This allows to alter gold cost based on the number of filters of a given power already present on the unit. Not tested/used currently.
+
+-	Added More missing pose ids.
+
+
 0.12.1 (4th March 2025)
 ----------------------------------------------------------
 Content

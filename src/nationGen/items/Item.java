@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import com.elmokki.Generic;
+
 import nationGen.NationGen;
 import nationGen.chances.ThemeInc;
 import nationGen.entities.Drawable;
@@ -66,6 +68,35 @@ public class Item extends Drawable {
 
   public Item getCopy() {
     return this.getCustomItemCopy();
+  }
+
+  public boolean isCustomIdResolved() {
+    return Generic.isNumeric(this.id);
+  }
+
+  /**
+   * Returns a copy of this item with its custom id resolved. For example, we have the custom item
+   * with id atl_conchshield, once it's resolved to a Dominions parsable id it'll be a number, such
+   * as 5008. We assign that number here and return the copy. Note that we need to return a copy of
+   * the item with the original customId because we don't want to modify the original, as that is
+   * (probably) an asset instance that gets equipped with the same reference every time.
+   * 
+   * @param item - an item with a custom id, such as "atl_conchshield"
+   * @return a copy of the item with a resolved id, or the same item of the id was already resolved
+   */
+  static public Item resolveId(Item item) {
+    if (item.isCustomIdResolved() == false) {
+      Item copy = item.getCopy();
+      copy.tags.add("OLDID", item.id);
+      copy.id = item.nationGen.GetCustomItemsHandler().getCustomItemId(item.id);
+      return copy;
+    }
+
+    // If the id is already numeric, like 5008, it should have
+    // already been resolved, so we just a copy of the item
+    else {
+      return item;
+    }
   }
 
   @Override

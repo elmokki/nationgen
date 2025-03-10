@@ -8,21 +8,23 @@
 #tag "nopose mounted"
 #tag "nopose chariot"
 #filterdesc "berserk desc"
+#power 1
 #end
 
 #new
 #id "berserklow"
 #type "berserk"
 #basechance 0.5
-#command "#berserk +1"
+#command "#berserk +2"
 #chanceinc "magic nature 1"
 #chanceinc "command #berserk 10"
 #tag "nopose ranged"
 #tag "nopose mounted"
 #tag "nopose chariot"
-#command "#gcost +1"
+#command "#gcost +3"
 #description "can enter berserker rage"
 #filterdesc "berserk desc"
+#power 1
 #end
 
 #new
@@ -37,10 +39,10 @@
 #tag "nopose ranged"
 #tag "nopose mounted"
 #tag "nopose chariot"
-#command "#gcost +2"
-#power 2
+#command "#gcost +5"
 #description "can enter berserker rage"
 #filterdesc "berserk desc"
+#power 2
 #end
 
 #new
@@ -51,6 +53,7 @@
 #power 0
 #description "causes unrest"
 #filterdesc "incunrest desc"
+#power -1
 #end
 
 #new
@@ -60,6 +63,7 @@
 #command "#incunrest 2"
 #power 0
 #filterdesc "incunrest desc"
+#power -1
 #end
 
 
@@ -70,6 +74,7 @@
 #chanceinc "command #chaosrec 100"
 #chanceinc "command #chaospower 100"
 #filterdesc "chaosrec desc"
+#power 1
 #end
 
 
@@ -80,19 +85,21 @@
 #chanceinc "command #chaosrec 25"
 #chanceinc "command #chaospower 25"
 #filterdesc "chaosrec desc"
+#power 1
 #end
 
 #new
 #id "stealthlow"
 #basechance 0.5
 #command "#stealthy +0"
+#command "#gcost +5"
 #chanceinc "command #stealthy 2"
 #chanceinc "personalcommand #stealthy -10"
 #chanceinc "race vanir -20"
 #chanceinc "race sidhe -20"
 #chanceinc "pose mounted *0.25"
-#power 2
 #filterdesc "stealthy desc"
+#power 2
 #end
 
 #new
@@ -105,6 +112,7 @@
 #command "#hp +1"
 #command "#gcost +2"
 #filterdesc "professional desc"
+#power 1
 #end
 
 #new
@@ -116,6 +124,7 @@
 #chanceinc "pose ranged -100"
 #chanceinc "personalcommand #berserk 0.5"
 #filterdesc "extra strong desc"
+#power 1
 #end
 
 #new
@@ -124,11 +133,12 @@
 #command "#addupkeep %cost-30"
 #command "#mor +1"
 #filterdesc "zealous desc"
+#power 1
 #end
 
 #new
 #id "resistances"
-#basechance 0.0
+#basechance 0.05
 #chanceinc "magic air 0.1"
 #chanceinc "magic fire 0.1"
 #chanceinc "magic earth 0.1"
@@ -142,8 +152,8 @@
 #command "#poisonres +3"
 #command "#shockres +3"
 #command "#gcost +5"
-#power 2
 #filterdesc "allres desc"
+#power 2
 #end
 
 
@@ -159,6 +169,7 @@
 #tag "path nature"
 #tag "nopose chariot"
 #filterdesc "regeneration desc"
+#power 1
 #end
 
 #new
@@ -173,9 +184,9 @@
 #command "#gcost *1.25"
 #price_per_command #hp 1 40
 #tag "path nature"
-#power 2
 #tag "nopose chariot"
 #filterdesc "regeneration desc"
+#power 2
 #end
 
 #new
@@ -189,32 +200,34 @@
 #command "#gcost *1.5"
 #price_per_command #hp 2 60
 #tag "path nature"
-#power 3
 #tag "nopose chariot"
 #filterdesc "regeneration desc"
+#power 3
 #end
 
 
 #new
 #id "castlemaster"
-#basechance 2
-#command "#siegebonus 3"
+#basechance 1
 #command "#castledef 3"
 #filterdesc "castle desc"
+#power 1
 #end
 
 #new
 #id "sieger"
-#basechance 2
+#basechance 1
 #command "#siegebonus 5"
 #filterdesc "siege desc"
+#power 1
 #end
 
 #new
 #id "patrol"
-#basechance 2
+#basechance 1
 #command "#patrolbonus 3"
 #filterdesc "patrol desc"
+#power 1
 #end
 
 #new
@@ -227,6 +240,7 @@
 #tag "nopose chariot"
 #tag "nopose mounted"
 #filterdesc "bodyguard desc"
+#power 1
 #end
 
 #new
@@ -239,6 +253,7 @@
 #tag "nopose chariot"
 #tag "nopose mounted"
 #filterdesc "bodyguard desc"
+#power 1
 #end
 
 #new
@@ -246,12 +261,13 @@
 #basechance 1
 #command "#pillagebonus 3"
 #filterdesc "pillage desc"
+#power 1
 #end
 
 #new
 #id "bloodguard-low"
 #type "berserk"
-#basechance 0
+#basechance 0.1
 #chanceinc "magic blood 0.5"
 #chanceinc "anymagic blood 0.125"
 #chanceinc "racetag human *2"
@@ -274,12 +290,13 @@
 #caponlychance 0.5
 #path blood
 #filterdesc "bloodbound desc"
+#power 1
 #end
 
 #new
 #id "bloodguard-high"
 #type "berserk"
-#basechance 0
+#basechance 0.05
 #chanceinc "magic blood 0.125"
 #chanceinc "racetag human *2"
 #chanceinc "personalcommand size above 3 *0.125"
@@ -305,9 +322,9 @@
 #tag "nopose chariot"
 #tag "nopose mounted"
 #caponlychance 1
-#power 2
 #path blood
 #filterdesc "bloodbound desc"
+#power 2
 #end
 
 #new
@@ -317,4 +334,5 @@
 #command "#rpcost +5"
 #caponlychance 1
 #filterdesc "dompower desc"
+#power 1
 #end
