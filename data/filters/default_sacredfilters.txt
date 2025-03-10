@@ -1350,13 +1350,13 @@
 
 #new
 #name "dragonblood"
-#basechance 0.025
-#chanceinc magic fire 0.05
-#chanceinc race Ophidian 0.05
-#chanceinc race abysian 0.05
-#chanceinc race lizard 0.05
-#chanceinc "personalcommand #fireres 0.05"
-#chanceinc "nationcommand #idealheat above 1 0.05"
+#basechance 0.1
+#chanceinc magic fire 0.025
+#chanceinc race Ophidian 0.025
+#chanceinc race abysian 0.025
+#chanceinc race lizard 0.025
+#chanceinc "personalcommand #fireres 0.01"
+#chanceinc "nationcommand #idealheat above 1 0.025"
 #chanceinc pose ranged *0.1
 #command "#weapon 676"
 #command "#fireres +10"

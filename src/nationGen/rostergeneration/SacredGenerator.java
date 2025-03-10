@@ -286,7 +286,6 @@ public class SacredGenerator extends TroopGenerator {
 
     int highestFilterPower = (int) possibleHighestPowerFilter.get().power;
     int powerCap = Math.min(highestFilterPower, upToPower);
-    int powerToSelect = random.nextInt(powerCap + 1);
 
     // If we're unlucky (5%), force a negative filter onto this unit instead
     if (random.nextDouble() < 0.05) {
@@ -297,8 +296,8 @@ public class SacredGenerator extends TroopGenerator {
       );
     } else {
       choices = ChanceIncHandler.getFiltersWithPower(
-        powerToSelect,
-        powerToSelect,
+        0,
+        powerCap,
         filterChoices
       );
     }
