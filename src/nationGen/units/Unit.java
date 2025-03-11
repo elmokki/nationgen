@@ -957,7 +957,7 @@ public class Unit {
       len = len +
       this.nationGen.weapondb.GetInteger(this.getSlot("offhand").id, "lgt");
 
-      this.commands.add(Command.args("#ambidextrous", "+" + len));
+      this.commands.add(Command.args("#ambidextrous", "+" + Math.max(1, len)));
     }
 
     // Fist for things without proper weapons
