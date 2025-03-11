@@ -657,7 +657,7 @@
 #spell "Memories of Stone"
 #spell "Dirge for the Dead"
 #spell "Banquet for the Dead"
-#basechance 0.5
+#basechance 0
 #chanceinc nationtag civilized 1
 #chanceinc hasthemetheme civilized 1
 #chanceinc era 3 AND random 0.66 *0
@@ -696,20 +696,18 @@
 #end
 
 #new
-#id "God-slayers"
-#spell "Blessing of the God-slayer"
-#spell "Gigantomachia"
-#basechance 1
-#end
-
-#new
 #id "Phaeacia"
 #spell "Call Ladon"
 #spell "Dogs of Gold and Silver"
 -- This is needed so the above spell works properly
 #spell "Dog of Gold"
-
-#basechance 1
+#basechance 0
+#chanceinc nationtag central 1
+#chanceinc hasthemetheme central 1
+#chanceinc hasthemetheme imperial 0.5
+#chanceinc anymagic not earth *0.75
+#chanceinc anymagic not nature *0.75
+#chanceinc anymagic not fire *0.75
 #end
 
 #new
@@ -717,9 +715,10 @@
 #spell "Call Ancestor"
 #spell "Wrath of the Ancestors"
 #spell "Daughter of Typhon"
-#basechance 1
-#chanceinc primaryrace not "Amazon human" *0.5
-#chanceinc hasthemetheme amazon *2
+#basechance 0
+#chanceinc hasthemetheme amazon 1
+#chanceinc anymagic not nature *0
+#chanceinc anymagic not death *0
 #end
 
 #new
@@ -728,16 +727,32 @@
 #spell "Gift of the Sacred Swamp"
 #spell "Awaken Hamadryad"
 #spell "Contact Lar"
-#basechance 1
-#chanceinc anymagic not nature *0
+#basechance 0
+#chanceinc nationtag central 1
+#chanceinc hasthemetheme central 1
+#chanceinc hasthemetheme satyr 1
+#chanceinc hasthemetheme feral 0.25
+#chanceinc hasthemetheme amazon 0.25
+#chanceinc hasthemetheme primitive 0.25
+#chanceinc hasthemetheme primal 0.25
+#chanceinc hasthemetheme savage 0.25
+#chanceinc hasthemetheme imperial 0.5
+#chanceinc magic not nature *0
+#chanceinc magic not blood *0
+#chanceinc random 0.25 *0
 #end
 
 #new
 #id "Celtic Spells"
 #spell "Sounder of Boars"
 #spell "Contact Boar of Carnutes"
-#basechance 1
+#basechance 0
+#chanceinc hasthemetheme celtic 1
+#chanceinc hasthemetheme imperial 0.5
+#chanceinc hasthemetheme agrarian 1
+#chanceinc hasthemetheme boar 1
 #chanceinc anymagic not nature *0
+#chanceinc random 0.25 *0
 #end
 
 #new
@@ -756,9 +771,17 @@
 #spell "Contact Mountain Vila"
 #spell "Contact Cloud Vila"
 #spell "Contact Leshiy"
-#basechance 1
-#chanceinc anymagic not nature *0
-#chanceinc hasthemetheme "totemanimal" *1.5
+#basechance 0
+#chanceinc hasthemetheme boreal 0.25
+#chanceinc hasthemetheme "totemanimal" 0.25
+#chanceinc hasthemetheme feudal 0.5
+#chanceinc hasthemetheme serfs 0.5
+#chanceinc hasthemetheme ice 0.25
+#chanceinc anymagic not nature *0.75
+#chanceinc anymagic not air *0.75
+#chanceinc anymagic not astral *0.75
+#chanceinc anymagic not death *0.75
+#chanceinc anymagic not water *0.75
 #end
 
 #new
@@ -767,8 +790,15 @@
 #spell "Summon Ugallu"
 #spell "Call Anzus"
 #spell "Call Apkallu"
-#basechance 1
-#chanceinc anymagic not nature *0
+#basechance 0
+#chanceinc hasthemetheme middle 1
+#chanceinc hasthemetheme ogre 0.5
+#chanceinc nationtag central 1
+#chanceinc hasthemetheme central 1
+#chanceinc anymagic not nature *0.75
+#chanceinc anymagic not earth *0.75
+#chanceinc anymagic not air *0.75
+#chanceinc anymagic not water *0.75
 #end
 
 #new
@@ -776,6 +806,13 @@
 #spell "Send Aatxe"
 #spell "Summon Incubus"
 #spell "Summon Succubus"
-#basechance 1
-#chanceinc anymagic not blood *0
+#basechance 0
+#chanceinc hasthemetheme feudal 0.5
+#chanceinc hasthemetheme tribal 0.5
+#chanceinc hasthemetheme blood 0.5
+#chanceinc hasthemetheme alpine 0.5
+#chanceinc hasthemetheme occidental 1
+#chanceinc anymagic not air *0.75
+#chanceinc anymagic not glamour *0.75
+#chanceinc anymagic not blood *0.75
 #end
