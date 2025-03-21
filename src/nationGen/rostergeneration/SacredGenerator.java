@@ -403,7 +403,9 @@ public class SacredGenerator extends TroopGenerator {
   private void addInitialFilters(Unit u) {
     unitGen.addFreeTemplateFilters(u);
     addTemplateFilter(u, "sacredtemplates", "default_sacredtemplates");
-    if (random.nextDouble() < 0.1) {
+    double nextDouble = random.nextDouble();
+
+    if (nextDouble < 0.1) {
       addTemplateFilter(u, "sacredtemplates", "default_sacredtemplates");
     }
   }
@@ -444,8 +446,13 @@ public class SacredGenerator extends TroopGenerator {
     if (innateSacredPower.isPresent()) {
       power -= innateSacredPower.get();
 
-      if (sacred) power = Math.max(1, power);
-      else power = Math.max(0, power);
+      if (sacred) {
+        power = Math.max(1, power);
+      }
+
+      else {
+        power = Math.max(0, power);
+      }
     }
 
     u = getSacredUnit(u, power, sacred, epicchance);
@@ -460,10 +467,13 @@ public class SacredGenerator extends TroopGenerator {
       template.sacred = sacred;
       unitGen.handleMontagUnits(u, template, "montagsacreds");
       u.caponly = true;
-    } else {
+    }
+    
+    else {
       addSacredCostMultipliers(u, power);
       determineIfCapOnly(u, isFirstSacred);
     }
+
     return u;
   }
 
@@ -851,7 +861,9 @@ public class SacredGenerator extends TroopGenerator {
     this.addInitialFilters(u);
 
     // Add more stat upgrades, magic weapon, traits based on sacred's power
-    if (!unitGen.hasMontagPose(u)) this.addEpicness(u, sacred, power);
+    if (!unitGen.hasMontagPose(u)) {
+      this.addEpicness(u, sacred, power);
+    }
 
     // Equip
     for (String r : u.pose.roles) if (
