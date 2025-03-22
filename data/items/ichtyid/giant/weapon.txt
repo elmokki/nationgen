@@ -1,8 +1,12 @@
+
+---- 1-handers, links to the grab and swallow as offhand
+
 #newitem
 #id bone_spear
 #gameid 373
 #sprite /graphics/ichtyid/giant/weapon/spear_bone.png
 #theme "wood"
+#needs extraweapon grab_and_swallow
 #enditem
 
 #newitem
@@ -10,6 +14,7 @@
 #gameid 643
 #sprite /graphics/ichtyid/giant/weapon/spear_bronze.png
 #theme "bronze"
+#needs extraweapon grab_and_swallow
 #enditem
 
 #newitem
@@ -17,7 +22,20 @@
 #gameid 31
 #sprite /graphics/ichtyid/giant/weapon/spear_coral.png
 #theme "coral"
+#needs extraweapon grab_and_swallow
 #enditem
+
+#newitem
+#id coral_club
+#gameid 45
+#sprite /graphics/ichtyid/giant/weapon/club_coral.png
+#theme "primitive"
+#theme "coral"
+#needs extraweapon grab_and_swallow
+#enditem
+
+
+---- 2-handers, these do not get the grab
 
 #newitem
 #id bone_trident
@@ -34,25 +52,10 @@
 #enditem
 
 #newitem
-#id coral_club
-#gameid 45
-#sprite /graphics/ichtyid/giant/weapon/club_coral.png
-#theme "primitive"
-#theme "coral"
-#enditem
-
-#newitem
 #id great_club
 #gameid 165
 #sprite /graphics/ichtyid/giant/weapon/club.png
 #theme "terrestrial"
 #theme "wood"
 #theme "primitive"
-#enditem
-
-#newitem
-#id fist
-#gameid 92
-#theme "primitive"
-#needs extraweapon grab_and_swallow
 #enditem
