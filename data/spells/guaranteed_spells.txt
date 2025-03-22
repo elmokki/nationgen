@@ -566,23 +566,11 @@
 #end
 
 #new
-#id "Communion Choruses - nature"
-#spell "Chorus Master"
-#spell "Chorus Slave"
-#basechance 0
-#chanceinc command "#spellsinger" 1
-#chanceinc primaryrace "Sidhe" AND random 0.5 OR random 0.5 *0
-#chanceinc anymagic not nature *0
-#chanceinc spells "Communion Choruses - death" *0
-#chanceinc spells "Communion Choruses - glamour" *0
-#end
-
-#new
 #id "Communion Choruses - death"
 #spell "Dirge Master"
 #spell "Dirge Slave"
 #basechance 0
-#chanceinc command "#spellsinger" 1
+#chanceinc command "#spellsinger" 10
 #chanceinc primaryrace "Sidhe" AND random 0.5 OR random 0.5 *0
 #chanceinc anymagic not death *0
 #chanceinc spells "Communion Choruses - nature" *0
@@ -594,10 +582,9 @@
 #spell "Chorus Master"
 #spell "Chorus Slave"
 #basechance 0
-#chanceinc command "#spellsinger" 2
+#chanceinc command "#spellsinger" 10
 #chanceinc anymagic not glamour *0
 #chanceinc spells "Communion Choruses - death" *0
-#chanceinc spells "Communion Choruses - nature" *0
 #end
 
 - Middle Eastern spells
