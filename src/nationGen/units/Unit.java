@@ -1348,6 +1348,17 @@ public class Unit {
     return true;
   }
 
+  public int getArmorProt() {
+    String armorId;
+
+    if (this.isSlotEmpty("armor") == true) {
+      return 0;
+    }
+
+    armorId = this.getSlot("armor").id;
+    return nationGen.armordb.GetInteger(armorId, "prot");
+  }
+
   public int getTotalProt() {
     return getTotalProt(true);
   }
