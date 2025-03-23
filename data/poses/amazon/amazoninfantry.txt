@@ -2,7 +2,7 @@
 -------- Normal Infantry - cannot be sacred or have fancy armor
 
 #newpose
-#id "standard inf"
+#id "amazon infantry"
 #role "infantry"
 
 #command "#female"
@@ -41,6 +41,7 @@
 -------- Elite infantry - can be sacred and has a slightly better chance of being heavy inf via access to fancy chain/plate
 
 #newpose
+#id "amazon elite infantry"
 #basechance 0.5
 #role "infantry"
 #role "elite infantry"
@@ -93,7 +94,7 @@
 
 #newpose
 #basechance 0.2
-#id "2h inf"
+#id "amazon 2h infantry"
 #role "infantry"
 #role "sacred infantry"
 #role "elite infantry"
@@ -136,6 +137,7 @@
 ------------- scout
 
 #newpose
+#id "amazon scouts"
 #role "scout"
 
 #command "#female"

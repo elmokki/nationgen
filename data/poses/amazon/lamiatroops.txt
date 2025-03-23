@@ -1,5 +1,6 @@
 -------- Infantry
 #newpose
+#id "lamia infantry"
 #role "infantry"
 #role "elite infantry"
 #role "sacred infantry"
@@ -45,8 +46,8 @@
 
 -------- 2h infantry
 #newpose
+#id "lamia 2h infantry"
 #basechance 0.2
-#id "2h inf"
 #role "infantry"
 #role "sacred infantry"
 #role "elite infantry"
@@ -85,6 +86,7 @@
 
 ------------- Scout
 #newpose
+#id "lamia scouts"
 #role "scout"
 
 #load basesprite /data/items/amazon/normal/lamiabases.txt
@@ -116,10 +118,10 @@
 
 ------- Archer
 #newpose
+#id "lamia archers"
 #role "ranged"
 #role "elite ranged"
 #role "sacred ranged"
-#id "bow"
 
 #renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -154,10 +156,10 @@
 
 ------- crossbowman
 #newpose
+#id "lamia crossbowwomen"
 #role "ranged"
 #role "elite ranged"
 #role "sacred ranged"
-#id "Xbow"
 
 #basechance 0.8
 

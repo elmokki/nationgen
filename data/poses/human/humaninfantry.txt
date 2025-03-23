@@ -2,7 +2,7 @@
 -------- Normal
 
 #newpose
-#id "standard inf"
+#id "feudal infantry"
 #role "infantry"
 #sacred
 
@@ -44,8 +44,8 @@
 -------- 2h infantry
 
 #newpose
+#id "feudal 2h infantry"
 #basechance 0.2
-#id "2h inf"
 #role "infantry"
 #sacred
 
@@ -78,7 +78,7 @@
 -------- Ghoul infantry
 
 #newpose
-#id "ghoul infantry"
+#id "feudal ghoul infantry"
 #role "infantry"
 #role "elite infantry"
 #role "sacred infantry"
@@ -123,6 +123,7 @@
 ------------- scout
 
 #newpose
+#id "feudal scouts"
 #role "scout"
 #load basesprite /data/items/human/normal/humanbases.txt
 #load shadow /data/items/human/normal/shadow.txt

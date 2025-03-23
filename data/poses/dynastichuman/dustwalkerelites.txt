@@ -2,9 +2,9 @@
 -------- Normal
 
 #newpose
+#id "dustwalker infantry"
 #basechance 100
 #chanceinc moduleid herogen *2
-#id "standard inf"
 #role "elite infantry"
 #role "sacred infantry"
 #mapmovepenaltyenc 10
@@ -38,9 +38,9 @@
 -------- 2h infantry
 
 #newpose
+#id "dustwalker 2h elite infantry"
 #basechance 20
 #chanceinc moduleid herogen *2
-#id "2h inf"
 #role "elite infantry"
 #role "sacred infantry"
 #mapmovepenaltyenc 10
@@ -67,9 +67,9 @@
 -------- Imperial
 
 #newpose
+#id "dustwalker imperial elite infantry"
 #basechance 0.4
 #theme imperial
-#id "imperial inf"
 #role "elite infantry"
 #role "sacred infantry"
 #mapmovepenaltyenc 10
@@ -102,9 +102,9 @@
 -------- 2h Imperial
 
 #newpose
+#id "dustwalker imperial 2h elite infantry"
 #basechance 0.08
 #theme imperial
-#id "2h imperial inf"
 #role "elite infantry"
 #role "sacred infantry"
 #mapmovepenaltyenc 10
@@ -129,7 +129,7 @@
 
 
 #newpose
-#id "dustwalker archer"
+#id "dustwalker elite archers"
 #basechance 100
 #role "elite ranged"
 #role "sacred ranged"
@@ -162,9 +162,9 @@
 ----------- Charioteers (always have some missle)
 
 #newpose
+#id "dustwalker elite chariots"
 #basechance 100
 #chanceinc moduleid herogen *2
-#id "dustwalker chariot"
 #role "chariot"
 #role "elite chariot"
 #role "sacred chariot"
