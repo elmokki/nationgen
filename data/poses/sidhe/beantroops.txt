@@ -1,7 +1,7 @@
 ---- Normal
 
 #newpose
-#id "infantry"
+#id "bean infantry"
 -- #renderorder "shadow cloakb basesprite legs shirt armor cloakf bonusweapon weapon offhandw hair helmet offhanda"
 #role "infantry"
 #role "scout"
@@ -26,7 +26,7 @@
 ---- Cavalry (regular)
 
 #newpose
-#id "cavalry"
+#id "bean cavalry"
 -- #renderorder "cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hair helmet offhanda overlay"
 #role "mounted"
 
@@ -57,7 +57,7 @@
 ---- Cavalry (low)
 
 #newpose
-#id "cavalry (low mount)"
+#id "bean low cavalry"
 -- #renderorder "cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hair helmet offhanda overlay"
 #role "mounted"
 
@@ -88,7 +88,7 @@
 ---- Cavalry (scout)
 
 #newpose
-#id "cavalry (scout)"
+#id "bean scout cavalry"
 -- #renderorder "cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hair helmet offhanda overlay"
 #role "mounted"
 #role "scout"
@@ -121,6 +121,7 @@
 ---- Charioteers
 
 #newpose
+#id "bean chariot"
 #race 0
 #role "chariot"
 #basechance 0.0625
