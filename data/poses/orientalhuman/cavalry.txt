@@ -1,6 +1,7 @@
 ------- Mounted
 
 #newpose
+#id "oriental cavalry"
 #role "mounted"
 #sacred
 #basechance 0.25
@@ -38,8 +39,9 @@
 ------- Low mounted
 
 #newpose
-#basechance 0.125
+#id "oriental low cavalry"
 #role "mounted"
+#basechance 0.125
 #sacred
 #define "#skilledrider 1"
 
@@ -74,6 +76,7 @@
 ----------- Charioteers
 
 #newpose
+#id "oriental chariot"
 #race 0
 #role "chariot"
 #sacred

@@ -2,6 +2,7 @@
 -------- Normal
 
 #newpose
+#id "oriental infantry"
 #role "infantry"
 #role "scout"
 #load basesprite /data/items/human/normal/humanbases.txt
@@ -28,6 +29,7 @@
 -------- 2h
 
 #newpose
+#id "oriental 2h infantry"
 #role "infantry"
 
 #renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver spaulder bonusweapon weapon offhandw hands hair helmet offhanda overlay"
@@ -53,6 +55,7 @@
 -------- ranged
 
 #newpose
+#id "oriental ranged"
 #role "ranged"
 #renderorder "shadow cloakb basesprite mount shirt legs armor quiver cloakf spaulder bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -74,4 +77,3 @@
 #load cloakb /data/items/human/normal/humancloakb.txt
 #generateitem 1 bonusweapon
 #endpose
-
