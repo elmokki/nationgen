@@ -6,6 +6,7 @@ import java.util.stream.Stream;
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
 import nationGen.chances.ChanceDistribution;
+import nationGen.chances.EntityChances;
 import nationGen.chances.ThemeInc;
 import nationGen.entities.*;
 import nationGen.items.CustomItem;
@@ -510,11 +511,17 @@ public class SacredGenerator extends TroopGenerator {
     Race race,
     boolean isFirstSacred
   ) {
+    // Store chances of a pose getting picked over others
     ChanceDistribution<String> poseChances = new ChanceDistribution<>();
 
+    // Store viable poses. This is an aid to be able to run handleChanceIncs() and filter based on those
+    List<Pose> possiblePoses = new ArrayList<>();
+
+    // The different unit roles and their national chances; modified by the unit's power
     ChanceDistribution<String> roles = new ChanceDistribution<>();
     String toGet = "sacred";
 
+    // Calculate a chance for the infantry role based on the racial chance and the power this unit rolled
     if (race.hasSpecialRole("infantry", sacred)) {
       roles.setChance(
         "infantry",
@@ -522,6 +529,7 @@ public class SacredGenerator extends TroopGenerator {
       );
     }
 
+    // Calculate a chance for the mounted role based on the racial chance and the power this unit rolled
     if (race.hasSpecialRole("mounted", sacred)) {
       roles.setChance(
         "mounted",
@@ -529,6 +537,7 @@ public class SacredGenerator extends TroopGenerator {
       );
     }
 
+    // Calculate a chance for the chariot role based on the racial chance and the power this unit rolled
     if (race.hasSpecialRole("chariot", sacred)) {
       roles.setChance(
         "chariot",
@@ -536,6 +545,7 @@ public class SacredGenerator extends TroopGenerator {
       );
     }
 
+    // Calculate a chance for the ranged role based on the racial chance and the power this unit rolled
     // Note that the first sacred of a nation should very rarely be ranged if any others are available
     if (race.hasSpecialRole("ranged", sacred) && !isFirstSacred) {
       roles.setChance(
@@ -546,36 +556,51 @@ public class SacredGenerator extends TroopGenerator {
       roles.setChance("ranged", 0.05);
     }
 
+    // Loop through the roles, eliminating them from the list as we go,
+    // and pick a pose with this role that qualifies as elite or sacred
     while (roles.hasPossible()) {
       String role = roles.getRandom(this.random);
       double roleChance = roles.getChance(role);
       roles.eliminate(role);
 
+      // Iterate through all race poses
       for (Pose p : race.poses) {
         boolean isSacred = false;
         String poseId = Integer.toString(p.hashCode());
-        double poseChance = p.basechance + roleChance;
 
-        for (String trole : p.roles) if (
+        // If the pose contains a role with "sacred", make this a sacred
+        for (String trole : p.roles) {
+          if (
           (trole.contains("sacred") && sacred) ||
           (p.tags.containsName("sacred") && sacred) ||
           (trole.contains("elite") && !sacred) ||
           (p.tags.containsName("elite") && !sacred)
-        ) isSacred = true;
+          ) {
+            isSacred = true;
+          }
+        }
 
+        // If this will be a sacred and the pose contains the role in question,
+        // add it as a suitable pose with the role chance as its weight
         if (
           isSacred &&
           ((sacred && p.roles.contains("sacred " + role)) ||
             (!sacred && p.roles.contains("elite " + role)) ||
             p.roles.contains(role))
         ) {
-          poseChances.setChance(poseId, poseChance);
-        } else if (
+          poseChances.setChance(poseId, roleChance);
+          possiblePoses.add(p);
+        }
+        
+        // If this will be an elite and the pose contains the role in question,
+        // add it as a suitable pose with the role chance as its weight
+        else if (
           ((race.tags.containsName("all_troops_sacred") && sacred) ||
             ((race.tags.containsName("all_troops_elite") && !sacred))) &&
           p.roles.contains(role)
         ) {
-          poseChances.setChance(poseId, poseChance);
+          poseChances.setChance(poseId, roleChance);
+          possiblePoses.add(p);
         }
       }
     }
@@ -590,7 +615,34 @@ public class SacredGenerator extends TroopGenerator {
       );
     }
 
-    String chosenPoseHashCode = poseChances.getRandom(this.random);
+    // Handle the inherent chance definitions for the selected poses.
+    // This is important! I.e. some foulspawn poses are just for montags,
+    // not meant to generate as standalone units of their own. This handles
+    // the #basechance, #chanceinc, #themeinc tags in the pose definitions.
+    EntityChances<Pose> poseChanceIncs = chandler.handleChanceIncs(race, possiblePoses);
+    ChanceDistribution<String> filteredChances = new ChanceDistribution<>();
+
+    // For each of the selected poses...
+    possiblePoses.forEach(p -> {
+      // ...get the role chance and calculated base/chanceinc chances
+      String poseId = Integer.toString(p.hashCode());
+      double poseChance = poseChances.getChance(poseId);
+      double chanceIncModifiedChance = poseChanceIncs.getChance(p);
+
+      // If either of those is 0, don't add the pose. For example, some poses
+      // are not meant to be picked as a unit, and only used to generate heroes
+      if (poseChance > 0 && chanceIncModifiedChance > 0) {
+        // If they should be picked, just average the two chances as the final chance
+        double averageChances = (poseChance + chanceIncModifiedChance) * 0.5;
+        filteredChances.setChance(poseId, averageChances);
+      }
+    });
+
+    // Get a random pose based on the final chances
+    String chosenPoseHashCode = filteredChances.getRandom(this.random);
+
+    // We have to do some yoyo here to get the actual pose object using the pose
+    // hashcode. This is because of having to use two separate data structures
     Optional<Pose> chosenPose = race.poses
       .stream()
       .filter(p -> (Integer.toString(p.hashCode())).equals(chosenPoseHashCode))
