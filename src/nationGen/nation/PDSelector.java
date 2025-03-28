@@ -16,6 +16,22 @@ public class PDSelector {
   private Nation n;
   private Random r;
 
+  // The amount of "points" we get for every 1 militia/starting unit.
+  // This covers both gold and resource cost. If the budget is 20, and
+  // the selected unit costs 10 gold and 10 resources, then we get 1 unit.
+  private static final int BUDGET_PER_MILITIA_UNIT = 25;
+
+  // The multiplier for the above budget. If the budget above is enough for
+  // 1 unit, and this number is 40, then we'll get 40 * 1 = 40 units.
+  // If the militia was more expensive and yielded a ratio of 0.5,
+  // then we'd get 40 * 0.5 = 20 units.
+  private static final int NUMBER_OF_RELATIVE_UNITS = 40;
+
+  // Exponentially increases the budget cost of a unit's resources. More resource
+  // cost means more protection which means much lower attrition when expanding,
+  // so higher resource costs should be priced higher than low resource costs.
+  private static final float RESOURCE_COST_INFLATION = 1.12f;
+
   public PDSelector(Nation n, NationGen ng) {
     this.ng = ng;
     this.n = n;
@@ -396,7 +412,7 @@ public class PDSelector {
       "startarmy_amountmulti"
     )) filtermulti *= multi;
 
-    double amount = militiaAmount(u) * 1.2 * filtermulti;
+    double amount = militiaAmount(u) * filtermulti;
 
     return (int) Math.round(amount);
   }
@@ -471,11 +487,11 @@ public class PDSelector {
     // 20 / (rescost + goldcost) * 10 * militiaMultiplier = amount of specified unit in militia
     // multiplier is 1 by default in settings, but may be increased by commands in generation
 
-    double score = res + gold;
+    double score = gold + Math.pow(res, RESOURCE_COST_INFLATION);
 
-    double multi = 20 / score;
+    double multi = BUDGET_PER_MILITIA_UNIT / score;
 
-    double result = multi * 10;
+    double result = multi * NUMBER_OF_RELATIVE_UNITS;
 
     result = result * ng.settings.get(SettingsType.militiaMultiplier);
 
