@@ -277,6 +277,70 @@ public class PDSelector {
     return best;
   }
 
+  public Unit getGateUnit(boolean montag_chassis_allowed) {
+    List<Unit> units = n.combineTroopsToList("infantry");
+    List<Unit> unsuitable = new ArrayList<>();
+
+    for (Unit u : units) {
+      if (
+        Generic.getAllUnitTags(u).containsName("cannot_be_pd") ||
+        (u.pose.tags.containsName("montagpose") && !montag_chassis_allowed)
+      ) {
+        unsuitable.add(u);
+      }
+    }
+
+    if (units.size() > unsuitable.size()) {
+      units.removeAll(unsuitable);
+    }
+
+    // Try to get unit
+    Unit unit = getGateUnit(units);
+
+    // Failsafe: Just get something
+    if (unit == null) {
+      units = n.combineTroopsToList("infantry");
+      units.addAll(n.combineTroopsToList("mounted"));
+      units.addAll(n.combineTroopsToList("ranged"));
+      if (!montag_chassis_allowed) units.addAll(
+        n.combineTroopsToList("montagtroops")
+      );
+
+      unit = getGateUnit(units);
+    }
+
+    return unit;
+  }
+
+  public Unit getGateUnit(List<Unit> units) {
+    double totalr = 0;
+    double totalg = 0;
+
+    for (Unit u : units) {
+      totalr += u.getResCost(true);
+      totalg += u.getGoldCost();
+    }
+
+    double targetgcost = (totalg / units.size());
+    double targetrcost = (totalr / units.size());
+
+    Unit best = units.get(0);
+    double bestscore = scoreForMilitia(best, targetrcost, targetgcost);
+
+    for (Unit u : units) {
+      double score =
+        scoreForMilitia(u, targetrcost, targetgcost) *
+        ((u.getCommandValue("#castledef", 0) + 1));
+
+      if (bestscore >= score) {
+        bestscore = score;
+        best = u;
+      }
+    }
+
+    return best;
+  }
+
   public Unit getMilitia(int rank, int tier) {
     return getMilitia(rank, tier, true);
   }
@@ -421,11 +485,12 @@ public class PDSelector {
     // Handle filter etc stuff
     double filtermulti = 1;
     Tags tags = Generic.getAllNationTags(n);
-    for (Double multi : tags.getAllDoubles("pd_amountmulti")) filtermulti *=
-    multi;
+
+    for (Double multi : tags.getAllDoubles("pd_amountmulti")) {
+      filtermulti *= multi;
+    }
 
     double amount = militiaAmount(u) * filtermulti;
-
     return (int) Math.round(amount);
   }
 
@@ -496,5 +561,24 @@ public class PDSelector {
     result = result * ng.settings.get(SettingsType.militiaMultiplier);
 
     return result;
+  }
+
+  // Get the mult amount for the #wallmult and #guardmult mod commands
+  public int getCastleDefenderMult(Unit u) {
+    // Handle filter etc stuff
+    double filtermulti = 1;
+    Tags tags = Generic.getAllNationTags(n);
+
+    for (Double multi : tags.getAllDoubles("pd_amountmulti")) {
+      filtermulti *= multi;
+    }
+
+    double amount = castleDefenderMult(u) * filtermulti;
+    return (int) Math.round(amount);
+  }
+
+  private double castleDefenderMult(Unit u) {
+    double amount = militiaAmount(u);
+    return Math.floor(amount * 0.5);
   }
 }

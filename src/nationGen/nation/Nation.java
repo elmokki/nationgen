@@ -1066,10 +1066,15 @@ public class Nation {
     lines.add("");
 
     // Wall units
-
     lines.add("#wallcom " + pds.getIDforPD(pds.getPDCommander(1)));
     lines.add("#wallunit " + pds.getIDforPD(pds.getWallUnit(true)));
-    lines.add("#wallmult " + pds.getMilitiaAmount(pds.getWallUnit(true)));
+    lines.add("#wallmult " + pds.getCastleDefenderMult(pds.getWallUnit(true)));
+
+    // Gate units
+    lines.add("#guardcom " + pds.getIDforPD(pds.getPDCommander(1)));
+    lines.add("#guardunit " + pds.getIDforPD(pds.getGateUnit(true)));
+    lines.add("#guardmult " + pds.getCastleDefenderMult(pds.getGateUnit(true)));
+    lines.add("");
 
     // Start army
     lines.add("#startcom " + pds.getStartArmyCommander().id);
