@@ -1669,14 +1669,19 @@ public class Unit {
         return Integer.parseInt(weapon.id) > 0;
       })
       .forEach(weapon -> {
-        ItemData weaponData = new ItemData(weapon.id, weapon.name, nationGen);
+        ItemData weaponData = new ItemData(weapon);
         weapons.add(weaponData);
       });
 
     // Sort weapons by descending range so that weapons with higher range appear higher.
     // When units with multiple ranged weapons have the shorter range defined first,
     // they will close into battle to fire with the shortest range (i.e. naga archers with a spit).
-    weapons.sort(Comparator.comparing(ItemData::getWeaponRange).reversed());
+    weapons.sort((a, b) -> {
+      int unitStrength = this.getCommandValue("#str", 0);
+      int rangeA = a.getWeaponRange(unitStrength);
+      int rangeB = b.getWeaponRange(unitStrength);
+      return rangeB - rangeA;
+    });
 
     // Get id and name of weapons and add to the list of #weapon lines
     weapons
