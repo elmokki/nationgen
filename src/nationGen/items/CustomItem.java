@@ -80,6 +80,15 @@ public class CustomItem extends Item {
     }
   }
 
+  public Boolean hasDamageBitmask() {
+    return this.values
+      .stream()
+      .filter(c -> {
+        return WeaponNumericalDamageType.isModCommandANumericalDamageType(c);
+      })
+      .count() > 0;
+  }
+
   @Override
   public void handleOwnCommand(Command str) {
     try {
@@ -115,7 +124,6 @@ public class CustomItem extends Item {
 
     for (Command command : values) {
       String str = command.command;
-      String arg = command.args.isEmpty() ? "" : command.args.get(0).get();
 
       switch (str) {
         case "#blunt":
@@ -222,5 +230,32 @@ public class CustomItem extends Item {
     lines.add("");
 
     return lines;
+  }
+
+  public static CustomItem fromItem(Item item, NationGen nationGen) {
+    CustomItem customItem = new CustomItem(nationGen);
+
+    // Minimal valid weapon values. Might get overwritten below if already exist
+    if (item.armor == false) {
+      customItem.setValue("#att", 0);
+      customItem.setValue("#len", 0);
+      customItem.setValue("#dmg", 0);
+    }
+
+    customItem.sprite = item.sprite;
+    customItem.mask = item.mask;
+    customItem.commands.addAll(item.commands);
+    customItem.tags.addAll(item.tags);
+    customItem.dependencies.addAll(item.dependencies);
+    customItem.setOffsetX(item.getOffsetX());
+    customItem.setOffsetY(item.getOffsetY());
+    customItem.slot = item.slot;
+    customItem.basechance = item.basechance;
+    customItem.renderslot = item.renderslot;
+    customItem.renderprio = item.renderprio;
+    customItem.armor = item.armor;
+    customItem.olditem = item;
+
+    return customItem;
   }
 }

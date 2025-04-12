@@ -70,6 +70,20 @@ public class Item extends Drawable {
     return this.getCustomItemCopy();
   }
 
+  public Boolean isNamed() {
+    String name = this.getName();
+    return name != null && name.isBlank() == false;
+  }
+
+  public Boolean isRangedWeapon() {
+    return nationGen.weapondb.GetInteger(this.id, "rng") != 0;
+  }
+
+  public Boolean isLowAmmoWeapon() {
+    int ammo = nationGen.weapondb.GetInteger(this.id, "shots", 100);
+    return ammo < 4;
+  }
+
   public boolean isCustomIdResolved() {
     return Generic.isNumeric(this.id);
   }

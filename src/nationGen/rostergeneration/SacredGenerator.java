@@ -336,7 +336,7 @@ public class SacredGenerator extends TroopGenerator {
   }
 
   private void giveMagicWeapons(Unit u, int power) {
-    CustomItemGen ciGen = new CustomItemGen(nation);
+    CustomItemGen customItemGen = new CustomItemGen(nation);
     List<MagicItem> magicItems = ChanceIncHandler.retrieveFilters(
       "magicitems",
       "defaultprimary",
@@ -345,22 +345,26 @@ public class SacredGenerator extends TroopGenerator {
       u.race
     );
 
-    CustomItem item = null;
+    Optional<CustomItem> possibleWeapon = null;
 
-    if (!u.getSlot("weapon").tags.containsName("notepic")) item =
-      ciGen.getMagicItem(
+    if (!u.getSlot("weapon").tags.containsName("notepic")) {
+      possibleWeapon = customItemGen.generateMagicItem(
         u,
         u.getSlot("weapon"),
         power,
         random.nextDouble(),
         magicItems
       );
+    }
 
-    if (item != null) {
-      u.setSlot("weapon", item);
+    if (possibleWeapon.isPresent()) {
+      CustomItem weapon = possibleWeapon.get();
+      u.setSlot("weapon", weapon);
 
       double loss = 1;
-      if (item.magicItem != null) loss = item.magicItem.power;
+      if (weapon.magicItem != null) {
+        loss = weapon.magicItem.power;
+      }
 
       power -= loss;
     }
@@ -372,14 +376,15 @@ public class SacredGenerator extends TroopGenerator {
         u.getSlot("bonusweapon").tags.containsName("guaranteedmagic") ||
         power >= 2)
     ) {
-      CustomItem item2 = ciGen.getMagicItem(
+      Optional<CustomItem> possibleBonusWeapon = customItemGen.generateMagicItem(
         u,
         u.getSlot("bonusweapon"),
         1,
         random.nextDouble(),
         magicItems
       );
-      if (item2 != null) u.setSlot("bonusweapon", item2);
+
+      possibleBonusWeapon.ifPresent(bonusWeapon -> u.setSlot("bonusweapon", bonusWeapon));
     }
 
     if (
@@ -390,14 +395,15 @@ public class SacredGenerator extends TroopGenerator {
         u.getSlot("offhand").tags.containsName("guaranteedmagic") ||
         power >= 3)
     ) {
-      CustomItem item2 = ciGen.getMagicItem(
+      Optional<CustomItem> possibleOffhandWeapon = customItemGen.generateMagicItem(
         u,
         u.getSlot("offhand"),
         power,
         random.nextDouble(),
         magicItems
       );
-      if (item2 != null) u.setSlot("offhand", item2);
+
+      possibleOffhandWeapon.ifPresent(offhandWeapon -> u.setSlot("offhand", offhandWeapon));
     }
   }
 
