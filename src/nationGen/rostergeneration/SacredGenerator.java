@@ -352,7 +352,8 @@ public class SacredGenerator extends TroopGenerator {
         u,
         u.getSlot("weapon"),
         power,
-        random.nextDouble(),
+        // TODO: tie this powerUpChance to something, rather than being fully random?
+        1 - random.nextDouble(),
         magicItems
       );
     }
@@ -380,7 +381,8 @@ public class SacredGenerator extends TroopGenerator {
         u,
         u.getSlot("bonusweapon"),
         1,
-        random.nextDouble(),
+        // TODO: tie this powerUpChance to something, rather than being fully random?
+        1 - random.nextDouble(),
         magicItems
       );
 
@@ -399,7 +401,8 @@ public class SacredGenerator extends TroopGenerator {
         u,
         u.getSlot("offhand"),
         power,
-        random.nextDouble(),
+        // TODO: tie this powerUpChance to something, rather than being fully random?
+        1 - random.nextDouble(),
         magicItems
       );
 

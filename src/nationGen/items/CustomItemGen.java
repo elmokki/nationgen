@@ -38,7 +38,7 @@ public class CustomItemGen {
     Optional<CustomItem> maybeCustomizableItem = this.copyPropertiesFromItem(olditem);
 
     maybeCustomizableItem.ifPresent(customizableItem -> {
-      customizeItem(unit, olditem, customizableItem, 100, 0, magicItems);
+      customizeItem(unit, olditem, customizableItem, maxPower, powerUpChance, magicItems);
     });
 
     return maybeCustomizableItem;
@@ -60,7 +60,7 @@ public class CustomItemGen {
 
     // Roll chance to grant the item an extra enchantment (decay, curse, poison, etc.)
     // These are typically defined in the default_magicweapons file
-    if (random.nextDouble() > powerUpChance) {
+    if (random.nextDouble() <= powerUpChance) {
       this.grantEnchantment(unit, originalItem, customItem, maxPower, magicItems);
 
       // Roll chance to make the item magic
@@ -96,9 +96,9 @@ public class CustomItemGen {
 
   private int rollPowerUpBudget(double powerUpChance) {
     int powerUpBudget = 1 + random.nextInt(1);
-    if (random.nextDouble() > powerUpChance) powerUpBudget++;
-    if (random.nextDouble() > powerUpChance / 2) powerUpBudget++;
-    if (random.nextDouble() > powerUpChance / 4) powerUpBudget++;
+    if (random.nextDouble() <= powerUpChance) powerUpBudget++;
+    if (random.nextDouble() <= powerUpChance / 2) powerUpBudget++;
+    if (random.nextDouble() <= powerUpChance / 4) powerUpBudget++;
     return powerUpBudget;
   }
 
