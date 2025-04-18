@@ -66,7 +66,7 @@ public class ItemData {
       return range;
     }
     
-    possibleRange = customItem.get().getIntValue("#range");
+    possibleRange = customItem.get().getCustomIntValue("#range");
 
     if (possibleRange.isPresent() == false) {
       return 0;

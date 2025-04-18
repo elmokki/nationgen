@@ -31,14 +31,14 @@ public class CustomItemGen {
   public Optional<CustomItem> generateMagicItem(
     Unit unit,
     Item olditem,
-    int maxpower,
+    int maxPower,
     double powerUpChance,
     List<MagicItem> magicItems
   ) {
     Optional<CustomItem> maybeCustomizableItem = this.copyPropertiesFromItem(olditem);
 
     maybeCustomizableItem.ifPresent(customizableItem -> {
-      customizeItem(unit, olditem, customizableItem, maxpower, powerUpChance, magicItems);
+      customizeItem(unit, olditem, customizableItem, 100, 0, magicItems);
     });
 
     return maybeCustomizableItem;
@@ -48,34 +48,32 @@ public class CustomItemGen {
     Unit unit,
     Item originalItem,
     CustomItem customItem,
-    int maxpower,
+    int maxPower,
     double powerUpChance,
     List<MagicItem> magicItems
   ) {
-    // Roll chance to make the item magic
-    boolean isMagic = rollMagicItemChance(originalItem, customItem);
-
     // Roll number of power ups item will get
-    int powerUpBudget = rollNumberOfPowerUps(powerUpChance);
-
-    // If rolled magic, set the property
-    if (isMagic == true) {
-      customItem.setValue("#magic");
-    }
+    int powerUpBudget = rollPowerUpBudget(powerUpChance);
 
     // Spend the power up budget into item upgrades
     this.spendPowerUpBudget(powerUpBudget, originalItem, customItem);
 
-    // Add cost to unit based on item
-    this.addToUnitCost(unit, powerUpBudget, isMagic);
-
-    // Roll chance to make item even more epic
+    // Roll chance to grant the item an extra enchantment (decay, curse, poison, etc.)
+    // These are typically defined in the default_magicweapons file
     if (random.nextDouble() > powerUpChance) {
-      this.makeEpic(unit, originalItem, customItem, maxpower, magicItems);
+      this.grantEnchantment(unit, originalItem, customItem, maxPower, magicItems);
+
+      // Roll chance to make the item magic
+      if (shouldBeMagic(originalItem, customItem) == true) {
+        customItem.setCustomCommand("#magic");
+      }
     }
-    
+
+    // Add cost to unit based on item
+    this.addToUnitCost(unit, powerUpBudget, customItem.isMagic());
+
     // Name the custom item
-    this.nameCustomItem(originalItem, customItem, isMagic);
+    this.nameCustomItem(originalItem, customItem, customItem.isMagic());
 
     // Add magic item tags
     if (customItem.magicItem != null) {
@@ -88,21 +86,20 @@ public class CustomItemGen {
     n.nationGen.weapondb.addToMap(customItem.id, customItem.getHashMap());
   }
 
-  private Boolean rollMagicItemChance(
+  private Boolean shouldBeMagic(
     Item originalItem,
     CustomItem customItem
   ) {
     return !originalItem.isRangedWeapon() &&
-      customItem.magicItem != null &&
       random.nextDouble() > 0.75;
   }
 
-  private int rollNumberOfPowerUps(double powerUpChance) {
-    int powerUps = 1 + random.nextInt(1);
-    if (random.nextDouble() > powerUpChance) powerUps++;
-    if (random.nextDouble() > powerUpChance / 2) powerUps++;
-    if (random.nextDouble() > powerUpChance / 4) powerUps++;
-    return powerUps;
+  private int rollPowerUpBudget(double powerUpChance) {
+    int powerUpBudget = 1 + random.nextInt(1);
+    if (random.nextDouble() > powerUpChance) powerUpBudget++;
+    if (random.nextDouble() > powerUpChance / 2) powerUpBudget++;
+    if (random.nextDouble() > powerUpChance / 4) powerUpBudget++;
+    return powerUpBudget;
   }
 
   private void spendPowerUpBudget(int powerUpBudget, Item originalItem, CustomItem customItem) {
@@ -116,7 +113,7 @@ public class CustomItemGen {
       powerUpBudget--;
 
       if (chosenPowerUp.isBoolean() == true) {
-        customItem.setValue(chosenPowerUp.getProperty().getModCommand());
+        customItem.setCustomCommand(chosenPowerUp.getProperty().getModCommand());
         powerUps.eliminate(chosenPowerUp);
       }
 
@@ -124,8 +121,8 @@ public class CustomItemGen {
         ItemProperty property = chosenPowerUp.getProperty();
         String modCommand = property.getModCommand();
         int powerUpIncrease = chosenPowerUp.getIncrease();
-        int originalValue = customItem.getIntValue(modCommand).orElseThrow();
-        customItem.setValue(modCommand, originalValue + powerUpIncrease);
+        int originalValue = customItem.getCustomIntValue(modCommand).orElseThrow();
+        customItem.setCustomCommand(modCommand, originalValue + powerUpIncrease);
         powerUps.modifyChance(chosenPowerUp, new Arg("*0.33"));
       }
     }
@@ -183,133 +180,187 @@ public class CustomItemGen {
     unit.commands.add(Command.args("#rcost", "+" + extraUnitResCost));
   }
 
-  private void makeEpic(
+  private void grantEnchantment(
     Unit unit,
     Item originalItem,
     CustomItem customItem,
-    int maxpower,
+    int maxPower,
     List<MagicItem> magicItems
   ) {
-    Boolean isRangedWeapon = originalItem.isRangedWeapon();
-    Boolean isLowAmmoWeapon = originalItem.isLowAmmoWeapon();
-    String type = isRangedWeapon ? isLowAmmoWeapon ? "lowshots" : "ranged" : "melee";
-    List<MagicItem> possibles = new ArrayList<>();
+    ItemType type = originalItem.getItemType();
+    Optional<MagicItem> possibleEffect = this.selectRandomEnchantment(unit, type, maxPower, magicItems);
+
+    if (possibleEffect.isPresent() == false) {
+      return;
+    }
+
+    // Roll an enchantment and apply it
+    MagicItem enchantment = possibleEffect.get();
+    customItem = this.assignSpecialLooks(unit, originalItem, customItem, possibleEffect.get());
+    customItem.applyEnchantment(enchantment);
+
+    // Use the enchantment to create an adjective for the item name
+    String name = n.nationGen.weapondb.GetValue(originalItem.id, "weapon_name");
+    name = this.addEnchantmentAdjectives(name, enchantment);
+    customItem.setCustomCommand("#name", name);
+
+    // Increase item gold cost if enchantment has extra cost for its type
+    for (Args args : enchantment.tags.getAllArgs("gcost")) {
+      String itemTypeWithExtraCost = args.get(0).get();
+      Boolean hasExtraCostForItemType = itemTypeWithExtraCost.equals(type.getId());
+
+      if (hasExtraCostForItemType == true) {
+        Command enchantmentGoldCost = new Command("#gcost", args.get(1));
+        customItem.commands.add(enchantmentGoldCost);
+      }
+    }
+
+    // Increase item resource cost if enchantment has extra cost for its type
+    for (Args args : enchantment.tags.getAllArgs("rcost")) {
+      String itemTypeWithExtraCost = args.get(0).get();
+      Boolean hasExtraCostForItemType = itemTypeWithExtraCost.equals(type.getId());
+
+      if (hasExtraCostForItemType == true) {
+        Command enchantmentResourceCost = new Command("#rcost", args.get(1));
+        customItem.commands.add(enchantmentResourceCost);
+      }
+    }
+
+    customItem.tags.addAll(enchantment.tags);
+  }
+
+  private String addEnchantmentAdjectives(String itemName, MagicItem enchantment) {
+    int numberOfPrefixes = enchantment.namePrefixes.size();
+    int numberOfSuffixes = enchantment.nameSuffixes.size();
+    Boolean hasPrefixes = numberOfPrefixes > 0;
+    Boolean hasSuffixes = numberOfSuffixes > 0;
+    Boolean hasAdjectives = hasPrefixes || hasSuffixes;
+
+    if (hasAdjectives == false) {
+      return itemName;
+    }
+
+    int adjectiveRoll = random.nextInt(numberOfPrefixes +  numberOfSuffixes) + 1;
+
+    if (hasSuffixes == true && adjectiveRoll > numberOfSuffixes) {
+      int suffixRoll = random.nextInt(numberOfSuffixes);
+      String suffix = enchantment.nameSuffixes.get(suffixRoll);
+      itemName = Generic.capitalize(itemName + " " + suffix);
+    }
+    
+    else {
+      int prefixRoll = random.nextInt(numberOfPrefixes);
+      String prefix = enchantment.namePrefixes.get(prefixRoll);
+      itemName = Generic.capitalize(prefix + " " + itemName);
+    }
+
+    return itemName;
+  }
+
+  private Optional<MagicItem> selectRandomEnchantment(
+    Unit unit, ItemType type, int maxPower, List<MagicItem> magicItems
+  ) {
+    List<MagicItem> possibleEffects = new ArrayList<>();
 
     for (MagicItem m : magicItems) {
       // Checks whether each of the items in the magicItems list is
       // compatible with this custom item (lowshots, ranged or melee)
-      boolean typeIsNotRestricted = m.tags
+      boolean isTypeRestricted = !m.tags
         .getAllStrings("no")
         .stream()
-        .noneMatch(type::equals);
+        .noneMatch(type.getId()::equals);
 
-      if (typeIsNotRestricted && m.power <= maxpower) {
-        possibles.add(m);
+      if (isTypeRestricted == false && m.power <= maxPower) {
+        possibleEffects.add(m);
       }
     }
 
-    // No possible epic items, return early
-    if (possibles.size() == 0) {
-      return;
+    // No possible magic effects for this item; return empty
+    if (possibleEffects.size() == 0) {
+      return Optional.empty();
     }
 
     ChanceIncHandler chandler = new ChanceIncHandler(n, "customitemgenerator");
-    MagicItem magicItem = chandler.handleChanceIncs(unit, possibles).getRandom(random);
+    MagicItem magicItem = chandler.handleChanceIncs(unit, possibleEffects).getRandom(random);
+    return Optional.of(magicItem);
+  }
 
-    // Special looks
-    List<Item> pos = new ArrayList<>();
-    for (Args args : magicItem.tags.getAllArgs("weapon")) {
-      if (args.size() > 1 && args.get(0).get().equals(originalItem.id)) {
-        Item temp = unit.pose
+  private CustomItem assignSpecialLooks(Unit unit, Item originalItem, CustomItem customItem, MagicItem effect) {
+    // Check the selected effect for a list of the possible special looks
+    List<Item> possibleLooks = this.getPossibleSpecialLooks(unit, originalItem, effect);
+    Optional<CustomItem> possibleSpecialLook;
+
+    // If none found, just return the custom item as it was
+    if (possibleLooks.isEmpty()) {
+      return customItem;
+    }
+    
+    // If some, select a random one
+    Item selectedMagicItem = EntityChances.baseChances(possibleLooks).getRandom(random);
+    possibleSpecialLook = this.copyPropertiesFromItem(selectedMagicItem);
+
+    if (possibleSpecialLook.isPresent()) {
+      return possibleSpecialLook.get();
+    }
+
+    return customItem;
+  }
+
+  private List<Item> getPossibleSpecialLooks(Unit unit, Item originalItem, MagicItem effect) {
+    List<Item> possibleSpecialLooks = new ArrayList<>();
+    List<Args> possibleWeaponTags = effect.tags.getAllArgs("weapon");
+
+    // Check all the <#tag weapon> of this magic weapon effect
+    for (Args args : possibleWeaponTags) {
+      // TODO: This should be parsed and validated when reading the magic weapons file...
+      if (args.size() <= 1) {
+        throw new IllegalArgumentException(
+          "Magic Weapon Effect " +
+          effect.name +
+          "'s weapon tags are missing arguments. " +
+          "They should have a Dominions weapon id and a NationGen custom id. " +
+          "For example, #tag \"weapon 8 banebroadsword\"."
+        );
+      }
+
+      // Get the Dominions weapon id of the #tag. I.e.
+      String dominionsWeaponId = args.get(0).get();
+
+      // Get the Natgen custom item id that defines the special looks
+      String natgenCustomId = args.get(1).get();
+
+      // If there is one and it's the same as the original item id (same type of weapon)
+      if (args.size() > 1 && dominionsWeaponId.equals(originalItem.id)) {
+        // Then try to find a special look within the pose item options
+        Item specialLooksItem = unit.pose
           .getItems(originalItem.slot)
-          .getItemWithName(args.get(1).get(), originalItem.slot);
-        if (temp != null) pos.add(temp);
+          .getItemWithName(natgenCustomId, originalItem.slot);
+
+        // If one exists, add it as a possibility
+        if (specialLooksItem != null) {
+          possibleSpecialLooks.add(specialLooksItem);
+        }
       }
     }
 
-    if (!pos.isEmpty()) {
-      Optional<CustomItem> customMagicItem =
-        this.copyPropertiesFromItem(EntityChances.baseChances(pos).getRandom(random));
-
-      if (customMagicItem.isPresent()) {
-        customItem = customMagicItem.get();
-      }
-    }
-
-    for (Command c : magicItem.getCommands()) {
-      String key = c.command;
-
-      if (c.args.size() > 0) {
-        Arg value = c.args.get(0);
-
-        Optional<Integer> oldvalue = customItem.getIntValue(key);
-
-        int temp = (int) value.applyModTo(oldvalue.orElseThrow());
-        customItem.setValue(key, temp);
-      } else {
-        customItem.setValue(c.command);
-      }
-    }
-
-    if (!magicItem.effect.equals("-1")) {
-      customItem.setValue("#secondaryeffect", magicItem.effect);
-    }
-
-    String name = n.nationGen.weapondb.GetValue(originalItem.id, "weapon_name");
-
-    if (magicItem.nameSuffixes.size() > 0 || magicItem.namePrefixes.size() > 0) {
-      String part;
-      int rand =
-        random.nextInt(
-          magicItem.nameSuffixes.size() + magicItem.namePrefixes.size()
-        ) +
-        1;
-      if (
-        rand > magicItem.nameSuffixes.size() && magicItem.nameSuffixes.size() > 0
-      ) {
-        part = magicItem.nameSuffixes.get(
-          random.nextInt(magicItem.nameSuffixes.size())
-        );
-        name = Generic.capitalize(name + " " + part);
-      } else {
-        part = magicItem.namePrefixes.get(
-          random.nextInt(magicItem.namePrefixes.size())
-        );
-        name = Generic.capitalize(part + " " + name);
-      }
-
-      customItem.setValue("#name", name);
-    }
-
-    customItem.magicItem = magicItem;
-
-    // Increase gcost
-    for (Args args : magicItem.tags.getAllArgs("gcost")) {
-      if (args.get(0).get().equals(type)) customItem.commands.add(
-        new Command("#gcost", args.get(1))
-      );
-    }
-    for (Args args : magicItem.tags.getAllArgs("rcost")) {
-      if (args.get(0).get().equals(type)) customItem.commands.add(
-        new Command("#rcost", args.get(1))
-      );
-    }
-    customItem.tags.addAll(magicItem.tags);
+    return possibleSpecialLooks;
   }
 
   private void nameCustomItem(Item originalItem, CustomItem customItem, Boolean isMagic) {
     String name = n.nationGen.weapondb.GetValue(originalItem.id, "weapon_name");
 
-    if (!isMagic && (customItem.magicItem == null || !customItem.isNamed())) {
-      customItem.setValue("#name", "Exceptional " + name);
+    // If not a magic item and doesn't already have a custom display name, give it a generic one
+    if (!isMagic && (customItem.magicItem == null || !customItem.hasCustomName())) {
+      customItem.setCustomCommand("#name", "Exceptional " + name);
     }
 
-    else if (isMagic && (customItem.magicItem == null || !customItem.isNamed())) {
-      customItem.setValue("#name", "Enchanted " + name);
+    // If it is a magic item and doesn't already have a custom display name, give it a generic one
+    else if (isMagic && (customItem.magicItem == null || !customItem.hasCustomName())) {
+      customItem.setCustomCommand("#name", "Enchanted " + name);
     }
 
+    // Construct an underlying name id for later use (not a display name)
     String dname = "nation_" + n.nationid + "_customitem_" + (n.customitems.size() + 1);
-
     customItem.id = dname;
     customItem.name = dname;
   }
@@ -349,7 +400,7 @@ public class CustomItemGen {
     }
 
     else {
-      customItem.setValue("#name", weaponName);
+      customItem.setCustomCommand("#name", weaponName);
     }
 
     for (ItemProperty property : ItemProperty.values()) {
@@ -370,19 +421,21 @@ public class CustomItemGen {
 
         // Just add the mod command without a value if the DB has it as 1
         else if (originalValue == "1") {
-          customItem.setValue(modCommand);
+          customItem.setCustomCommand(modCommand);
         }
       }
 
       // Special mod properties that need more than one value are in the below else ifs
       else if (property == ItemProperty.FLYSPRITE) {
         String speed = weaponDb.GetValue(item.id, ItemProperty.ANIM_LENGTH.getDBColumn(), "1");
-        customItem.setValue(modCommand, originalValue, speed);
+        customItem.setCustomCommand(modCommand, originalValue, speed);
       }
 
       // Else just add the value of the item property from the db directly
-      else if (modCommand.isBlank() == false) {
-        customItem.setValue(modCommand, originalValue);
+      // Don't add zero values - the db uses these as placeholder for "empty"
+      // For example all weapons without secondaryeffect have #secondaryeffect 0 in the db
+      else if (modCommand.isBlank() == false && originalValue.equals("0") == false) {
+        customItem.setCustomCommand(modCommand, originalValue);
       }
     }
 
