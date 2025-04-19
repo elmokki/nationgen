@@ -36,9 +36,12 @@ public class SacredGenerator extends TroopGenerator {
   );
 
   private ItemSet usedItems = new ItemSet();
+  private CustomItemGen customItemGen;
 
   public SacredGenerator(NationGen g, Nation n, NationGenAssets assets) {
     super(g, n, assets, "sacgen");
+    customItemGen = new CustomItemGen(nation);
+
     this.nation.selectTroops()
       .forEach(u ->
         SLOTS.forEach(slot -> {
@@ -335,79 +338,91 @@ public class SacredGenerator extends TroopGenerator {
     }
   }
 
-  private void giveMagicWeapons(Unit u, int power) {
-    CustomItemGen customItemGen = new CustomItemGen(nation);
+  private void customizeWeaponry(Unit unit, int power) {
     List<MagicItem> magicItems = ChanceIncHandler.retrieveFilters(
       "magicitems",
       "defaultprimary",
       assets.magicitems,
-      u.pose,
-      u.race
+      unit.pose,
+      unit.race
     );
 
-    Optional<CustomItem> possibleWeapon = null;
+    // Retrieve unit's weapons
+    Item mainWeapon = unit.getSlot("weapon");
+    Item bonusWeapon = unit.getSlot("bonusweapon");
+    Item offhandWeapon = unit.getSlot("offhand");
 
-    if (!u.getSlot("weapon").tags.containsName("notepic")) {
-      possibleWeapon = customItemGen.generateMagicItem(
-        u,
-        u.getSlot("weapon"),
+    // Check if main weapon should get customized
+    if (getsCustomWeapon(unit, mainWeapon, 1, false) == true) {
+      // Customize main weapon and get the cost of it
+      int powerCost = customizeWeapon(unit, "weapon", power, magicItems);
+
+      // Spend the power cost. Only relevant for whether bonus or offhand is also customized
+      power -= powerCost;
+    }
+
+    // Check if bonus weapon should get customized
+    if (getsCustomWeapon(unit, bonusWeapon, 0.25, power > 1) == true) {
+      // Customize bonus weapon and get the cost of it
+      int powerCost = customizeWeapon(unit, "bonusweapon", power, magicItems);
+
+      // Spend the power cost. Only relevant for whether offhand is also customized
+      power -= powerCost;
+    }
+
+    // Only offhand weapons get enhanced for now
+    if (offhandWeapon != null && offhandWeapon.isArmor() == true) {
+      return;
+    }
+
+    // Check if offhand weapon should get customized
+    if (getsCustomWeapon(unit, offhandWeapon, 0.25, power > 1) == true) {
+      // Customize offhand weapon
+      customizeWeapon(unit, "offhand", power, magicItems);
+    }
+  }
+
+  private Boolean getsCustomWeapon(Unit unit, Item weapon, double chance, Boolean isGuaranteed) {
+    if (weapon == null) {
+      return false;
+    }
+
+    Boolean canWeaponBeEpic = weapon.tags.containsName("notepic") == false;
+    Boolean isGuaranteedMagicWeapon = weapon.tags.containsName("guaranteedmagic");
+    double roll = random.nextDouble();
+    return canWeaponBeEpic && (
+      isGuaranteedMagicWeapon ||
+      isGuaranteed ||
+      roll <= chance
+    );
+  }
+
+  private int customizeWeapon(Unit unit, String slot, int power, List<MagicItem> magicItems) {
+    double powerUpChances = 1 - random.nextDouble();
+    Item weapon = unit.getSlot(slot);
+
+    if (weapon == null) {
+      return 0;
+    }
+
+    Optional<CustomItem> possibleWeapon =
+      this.customItemGen.customizeItem(
+        unit,
+        weapon,
         power,
         // TODO: tie this powerUpChance to something, rather than being fully random?
-        1 - random.nextDouble(),
-        magicItems
-      );
-    }
-
-    if (possibleWeapon.isPresent()) {
-      CustomItem weapon = possibleWeapon.get();
-      u.setSlot("weapon", weapon);
-
-      double loss = 1;
-      if (weapon.magicItem != null) {
-        loss = weapon.magicItem.power;
-      }
-
-      power -= loss;
-    }
-
-    if (
-      u.getSlot("bonusweapon") != null &&
-      !u.getSlot("bonusweapon").tags.containsName("notepic") &&
-      (random.nextDouble() > 0.75 ||
-        u.getSlot("bonusweapon").tags.containsName("guaranteedmagic") ||
-        power >= 2)
-    ) {
-      Optional<CustomItem> possibleBonusWeapon = customItemGen.generateMagicItem(
-        u,
-        u.getSlot("bonusweapon"),
-        1,
-        // TODO: tie this powerUpChance to something, rather than being fully random?
-        1 - random.nextDouble(),
+        powerUpChances,
         magicItems
       );
 
-      possibleBonusWeapon.ifPresent(bonusWeapon -> u.setSlot("bonusweapon", bonusWeapon));
+    if (possibleWeapon.isPresent() == false) {
+      return 0;
     }
 
-    if (
-      u.getSlot("offhand") != null &&
-      !u.getSlot("offhand").tags.containsName("notepic") &&
-      !u.getSlot("offhand").armor &&
-      (random.nextDouble() > 0.75 ||
-        u.getSlot("offhand").tags.containsName("guaranteedmagic") ||
-        power >= 3)
-    ) {
-      Optional<CustomItem> possibleOffhandWeapon = customItemGen.generateMagicItem(
-        u,
-        u.getSlot("offhand"),
-        power,
-        // TODO: tie this powerUpChance to something, rather than being fully random?
-        1 - random.nextDouble(),
-        magicItems
-      );
-
-      possibleOffhandWeapon.ifPresent(offhandWeapon -> u.setSlot("offhand", offhandWeapon));
-    }
+    CustomItem customWeapon = possibleWeapon.get();
+    double powerCost = (customWeapon.magicItem != null) ? customWeapon.magicItem.power : 1;
+    unit.setSlot(slot, customWeapon);
+    return (int)powerCost;
   }
 
   private void addInitialFilters(Unit u) {
@@ -1077,7 +1092,7 @@ public class SacredGenerator extends TroopGenerator {
 
       u.tags.remove("NEEDSMAGICWEAPON");
 
-      giveMagicWeapons(u, cost);
+      customizeWeaponry(u, cost);
     }
 
     this.armSpecialSlot(u, null, usedItems);

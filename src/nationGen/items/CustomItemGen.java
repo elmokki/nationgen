@@ -28,7 +28,7 @@ public class CustomItemGen {
     random = new Random(n.random.nextInt());
   }
 
-  public Optional<CustomItem> generateMagicItem(
+  public Optional<CustomItem> customizeItem(
     Unit unit,
     Item olditem,
     int maxPower,
