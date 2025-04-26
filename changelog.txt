@@ -1,3 +1,49 @@
+0.12.6 (26th April 2025)
+----------------------------------------------------------
+Code
+-----------------------------------------------------------
+-	Fixed seed generation problem with StatUpgradeManager. Seeds should work as expected again.
+-	Created separate scout armor list for sidhe/bean scout cavalry.
+-	Renamed/added a lot of pose ids.
+-	Added missing unicorn_golden_barding_mount in mounts.txt.
+-	Refactored armorUnit() code into smaller, more readable chunks.
+-	Better SacredGenerator.java getPose() refactor to fix chanceincs.
+-	Added #themeinc to not generate tier3 comslaves (they were breaking due to their equipment lists).
+-	Reworked #weapon and #armor line writing into mod file:
+
+	Ranged weapons are now written down in descending range order (i.e. longest range first).
+	This is to combat a Dominions bug where if a shorter range weapon appears above, the unit
+	will move all the way in range of that weapon even if it has better/longer range weapons.
+	The most common example of this was Naga archers with their poison spit.
+
+-	Refactored Custom Item Gen code to be more readable and reusable.
+
+----------------------------------------------------------
+Changes/Balance
+-----------------------------------------------------------
+-	Demonblood more common with blood nations
+-	lesserhorror secondshape based on False Horror instead of Lesser Horror
+-	Coral barding adds #poisonarmor 5 to mounts
+-	Nerfed the cost and MR of the smaller Agarthan cavern wights
+-	Buffed giant ichtyids:
+
+	They will now always get the grab and swallow if they are using 1h weapons.
+	Better nat prot, slightly better strength.
+
+-	Tweaks to spellsinger and chorus communion chances:
+
+	If the nation has other spellsingers, the chances of a mage getting spellsinger drastically increase.
+	The Great Sorceress pretender is almost guaranteed to nations with spellsinger.
+	Chorus spells (Glamour and Death) are much more likely if there are spellsingers.
+	Added chorus #comslaves
+
+-	Added #chanceinc to Cynocephalian elite troop poses to allow heroes.
+-	Removed #baseitemslot feet 0 from mounted poses to give commanders feet.
+-	Brought starting armies more in line with dom6 standards.
+-	Nations now also get #guardunit and #guardcom. Rebalanced castle def.
+-	Added shrink filter for sacreds, opposite of the larger filter.
+
+
 0.12.5 (13th March 2025)
 ----------------------------------------------------------
 Fixes
