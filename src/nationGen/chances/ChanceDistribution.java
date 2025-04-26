@@ -76,8 +76,19 @@ public class ChanceDistribution<E> {
       .collect(Collectors.toList());
   }
 
+  public double getTotalChances() {
+    Map<E, Double> positiveChances = positiveChances();
+    double total = 0;
+
+    for (Double chance : positiveChances.values()) {
+      total += chance;
+    }
+
+    return total;
+  }
+
   // TODO: Since all the chances in this distribution could be <= 0, this should really return Optional<E>
-  //  and maybe have a separate method that enforces the thing existing
+  // and maybe have a separate method that enforces the thing existing
   public E getRandom(Random r) {
     if (isEmpty()) {
       return null;
@@ -85,11 +96,7 @@ public class ChanceDistribution<E> {
 
     Map<E, Double> positiveChances = positiveChances();
 
-    double max = 0;
-    for (Double chance : positiveChances.values()) {
-      max += chance;
-    }
-
+    double max = this.getTotalChances();
     double target = r.nextDouble() * max;
     double current = 0;
 

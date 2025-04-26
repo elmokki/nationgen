@@ -75,15 +75,15 @@ public class CustomItemsHandler {
       }
     }
 
-    CustomItem citem = null;
+    CustomItem customItem = null;
     for (CustomItem ci : customItems) {
       if (ci.name.equals(name) && !chosenCustomItems.contains(ci)) {
-        citem = ci.getCopy();
+        customItem = ci.getCopy();
         break;
       }
     }
 
-    if (citem == null) {
+    if (customItem == null) {
       System.out.println(
         "WARNING: No custom item named " + name + " was found!"
       );
@@ -91,41 +91,41 @@ public class CustomItemsHandler {
     }
 
     if (idHandler != null) {
-      if (citem.armor) {
-        citem.id = idHandler.nextArmorId() + "";
+      if (customItem.armor) {
+        customItem.id = idHandler.nextArmorId() + "";
       } else {
-        citem.id = idHandler.nextWeaponId() + "";
+        customItem.id = idHandler.nextWeaponId() + "";
       }
     } else {
       System.out.println("ERROR: idHandler was not initialized!");
-      citem.id = "-1";
+      customItem.id = "-1";
     }
 
-    // -521978361
-    // Check references!
-    for (Command command : citem.values) {
-      if (
-        command.command.equals("#secondaryeffect") ||
-        command.command.equals("#secondaryeffectalways")
-      ) {
-        Arg customItemSecondaryEffect = command.args.get(0);
-        if (!customItemSecondaryEffect.isNumeric()) {
-          String id = getCustomItemId(customItemSecondaryEffect.get());
-          command.args.set(0, new Arg(id));
-        }
-      }
-    }
+    customItem.getCustomCommand("#secondaryeffect")
+      .ifPresent(c -> resolveCustomEffectId(c));
 
-    chosenCustomItems.add(citem);
-    //this.customitems.remove(citem);
+    customItem.getCustomCommand("#secondaryeffectalways")
+      .ifPresent(c -> resolveCustomEffectId(c));
 
-    if (!citem.armor) {
-      weapondb.addToMap(citem.id, citem.getHashMap());
+    chosenCustomItems.add(customItem);
+    //this.customitems.remove(customItem);
+
+    if (!customItem.armor) {
+      weapondb.addToMap(customItem.id, customItem.getHashMap());
     } else {
-      armordb.addToMap(citem.id, citem.getHashMap());
+      armordb.addToMap(customItem.id, customItem.getHashMap());
     }
 
-    return citem.id;
+    return customItem.id;
+  }
+
+  private void resolveCustomEffectId(Command effect) {
+    Arg customEffectId = effect.args.get(0);
+
+    if (!customEffectId.isNumeric()) {
+      String id = getCustomItemId(customEffectId.get());
+      effect.args.set(0, new Arg(id));
+    }
   }
 
   /**

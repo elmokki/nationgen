@@ -234,6 +234,20 @@ public class SpriteGen extends JFrame {
   }
 
   private class UnitSpriteMixer {
+    private Unit unit = null;
+    private boolean attacking = false;
+    private Item dummy;
+    private JColorChooser colorChooser = new JColorChooser(Color.WHITE);
+    private ImageSaverPanel drawpanel = new ImageSaverPanel();
+    private ImageSaverPanel drawPanel2x = new ImageSaverPanel();
+    private JComboBox<Race> racecombo = new JComboBox<>();
+    private JComboBox<Pose> posecombo = new JComboBox<>();
+    private List<SlotControls> slots = new ArrayList<>();
+    private JPanel itempanel = new JPanel();
+
+    public final JPanel content = new JPanel(
+      new TableLayout(1, 2, 8, 8, TableLayout.Alignment.NORTH_WEST)
+    );
 
     private class SlotControls {
 
@@ -307,21 +321,6 @@ public class SpriteGen extends JFrame {
         drawUnit();
       }
     }
-
-    private Unit unit = null;
-    private boolean attacking = false;
-    private Item dummy;
-
-    public final JPanel content = new JPanel(
-      new TableLayout(1, 2, 8, 8, TableLayout.Alignment.NORTH_WEST)
-    );
-    private JColorChooser colorChooser = new JColorChooser(Color.WHITE);
-    private ImageSaverPanel drawpanel = new ImageSaverPanel();
-    private ImageSaverPanel drawPanel2x = new ImageSaverPanel();
-    private JComboBox<Race> racecombo = new JComboBox<>();
-    private JComboBox<Pose> posecombo = new JComboBox<>();
-    private List<SlotControls> slots = new ArrayList<>();
-    private JPanel itempanel = new JPanel();
 
     UnitSpriteMixer() {
       dummy = new Item(nGen);
