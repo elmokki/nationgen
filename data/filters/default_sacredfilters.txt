@@ -1190,8 +1190,9 @@
 #basechance 0.15
 #chanceinc "magic nature 0.5"
 #chanceinc "magic earth 0.25"
-#chanceinc "personalcommand size above 9 *0"
 #chanceinc "pose ranged *0.25"
+#chanceinc "filter smaller *0"
+#chanceinc "personalcommand size above 9 *0"
 #tag "nopose mounted"
 #tag "nopose chariot"
 #command "#size +1"
@@ -1203,6 +1204,28 @@
 #command "#gcost *1.25"
 #filterdesc "larger desc"
 #power 3
+#end
+
+#new
+#name "smaller"
+#basechance 0.15
+#chanceinc "magic glamour 0.25"
+#chanceinc "magic earth 0.25"
+#chanceinc "magic nature 0.25"
+#chanceinc "pose ranged *0.5"
+#chanceinc "filter larger *0"
+#chanceinc "personalcommand size below 2 *0"
+#tag "nopose mounted"
+#tag "nopose chariot"
+#command "#size -1"
+#command "#hp *0.7"
+#command "#str -3"
+#command "#def +1"
+#command "#mapmove -2"
+#command "#drawsize -20"
+#command "#gcost *0.75"
+#filterdesc "smaller desc"
+#power 2
 #end
 
 #new

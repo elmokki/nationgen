@@ -216,6 +216,22 @@
 #filterdesc "comslave desc"
 #end
 
+#new
+#id "comslave chorus"
+#command "#comslave"
+#command "#spellsinger"
+#command "#gcost +15"
+#unitname "Chorus Singer"
+#unitname "Chanter"
+#basechance 0
+#chanceinc magic glamour 0.0375
+#chanceinc "personalmagic glamour -0.0375"
+#description "is able to serve as a chorus slave."
+#notfortier 3
+#notfortier 2
+#filterdesc "comslave desc"
+#end
+
 #new magefilter
 #id "reanimator"
 #basechance 0

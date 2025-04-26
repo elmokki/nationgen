@@ -1,6 +1,7 @@
 
 -------- Normal
 #newpose
+#id "boreal human infantry"
 #role "infantry"
 #role "scout"
 
@@ -37,6 +38,7 @@
 
 --- Mounted
 #newpose
+#id "boreal human cavalry"
 #role "mounted"
 #role "scout"
 #basechance 0.25
@@ -44,7 +46,7 @@
 
 #renderorder "shadow cloakb mount basesprite legs shirt armor cloakf bonusweapon weapon offhandw hands beard hair helmet offhanda overlay extra1 extra2 extra3"
 
-#baseitemslot feet 0
+
 
 #load basesprite /data/items/nordic/normal/bases_human.txt
 
@@ -83,7 +85,7 @@
 
 -------- Archer
 #newpose
-#id "archer"
+#id "boreal human archer"
 #role "ranged"
 #role "scout"
 

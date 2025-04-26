@@ -1,7 +1,7 @@
 -------- Normal
 
 #newpose
-#id "human inf"
+#id "dynastic infantry"
 #role "infantry"
 #role "elite infantry"
 #role "sacred infantry"
@@ -33,8 +33,8 @@
 -------- 2h infantry
 
 #newpose
+#id "dynastic 2h infantry"
 #basechance 0.2
-#id "human 2h inf"
 #role "infantry"
 #role "elite infantry"
 #role "sacred infantry"
@@ -59,9 +59,9 @@
 -------- Legionary
 
 #newpose
+#id "dynastic imperial infantry"
 #basechance 0.005
 #theme imperial
-#id "human legionary inf"
 #role "infantry"
 #role "elite infantry"
 #role "sacred infantry"
@@ -93,9 +93,9 @@
 -------- 2h Legionary
 
 #newpose
+#id "dynastic imperial 2h infantry"
 #basechance 0.001
 #theme imperial
-#id "human legionary 2h inf"
 #role "infantry"
 #role "elite infantry"
 #role "sacred infantry"
@@ -120,9 +120,9 @@
 -------- Auxiliary
 
 #newpose
+#id "dynastic imperial auxiliary infantry"
 #basechance 0.005
 #theme imperial
-#id "human auxiliary inf"
 #role "infantry"
 
 #renderorder "shadow weapon cloakb extra1 mount basesprite shirt legs armor hair bonusweapon cloakf offhandw hands helmet offhanda overlay"
@@ -152,9 +152,9 @@
 -------- 2h Auxiliary
 
 #newpose
+#id "dynastic imperial auxiliary 2h infantry"
 #basechance 0.001
 #theme imperial
-#id "human auxiliary 2h inf"
 #role "infantry"
 
 #load basesprite /data/items/dynastichuman/bases_dynastic_2h.txt
@@ -175,7 +175,7 @@
 
 
 #newpose
-#id "human archer"
+#id "dynastic imperial archers"
 #role "ranged"
 #role "elite ranged"
 #role "sacred ranged"
@@ -205,12 +205,13 @@
 ----------- Charioteers (always have some missle)
 
 #newpose
+#id "dynastic chariots"
 #role "human chariot"
 #role "chariot"
 #role "elite chariot"
 #role "sacred chariot"
 
-#baseitemslot feet 0
+
 
 #renderorder "shadow underlay cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -242,7 +243,7 @@
 ------------- scout
 
 #newpose
-#id "human scout"
+#id "dynastic scouts"
 #role "scout"
 
 #renderorder "shadow cloakb extra1 mount basesprite shirt legs armor hair weapon bonusweapon cloakf helmet offhandw hands offhanda overlay"
@@ -264,4 +265,3 @@
 #load offhand /data/items/dynastichuman/scout/offhand.txt
 
 #endpose
-

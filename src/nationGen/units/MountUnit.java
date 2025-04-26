@@ -290,9 +290,17 @@ public class MountUnit extends Unit {
     for (Command c : commands) {
       if (c.command.equals("#gcost")) {
         continue;
-      } else if (c.command.equals("#itemslots")) {
+      }
+      
+      else if (c.command.equals("#itemslots")) {
         hasItemSlots = true;
-      } else {
+      }
+      
+      else if (
+        // Leave weapons and armors to be handled below
+        !c.command.equals("#weapon") &&
+        !c.command.equals("#armor")
+      ) {
         lines.add(c.toModLine());
       }
     }
@@ -315,6 +323,10 @@ public class MountUnit extends Unit {
 
     // If there's no #copystats or defined body type, define body type (as probably humanoid unless shenanigans have been done)
     writeBodytypeLine().ifPresent(lines::add);
+
+    // Write weapons and armor
+    lines.addAll(writeWeaponLines());
+    lines.addAll(writeArmorLines());
 
     // Write itemslots if they were skipped before
     if (hasItemSlots) lines.add("#itemslots " + this.getItemSlots());

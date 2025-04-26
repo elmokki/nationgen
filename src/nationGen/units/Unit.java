@@ -6,15 +6,11 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Deque;
+import java.util.Comparator;
 import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;
-import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import nationGen.NationGen;
@@ -23,6 +19,7 @@ import nationGen.entities.MagicFilter;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.items.Item;
+import nationGen.items.ItemData;
 import nationGen.items.ItemDependency;
 import nationGen.magic.MageGenerator;
 import nationGen.magic.MagicPath;
@@ -43,53 +40,7 @@ public class Unit {
   public Race race;
   public Pose pose;
   public Mount mountItem;
-  public final SlotMap slotmap = new SlotMap();
-
-  public static class SlotMap {
-
-    private LinkedHashMap<String, Deque<Item>> slotmemory =
-      new LinkedHashMap<>();
-
-    public Set<String> getSlots() {
-      return slotmemory.keySet();
-    }
-
-    public Stream<String> slots() {
-      return slotmemory.keySet().stream();
-    }
-
-    public Stream<Item> items() {
-      return slotmemory
-        .values()
-        .stream()
-        .map(Deque::peek)
-        .filter(Objects::nonNull);
-    }
-
-    Item get(String slot) {
-      Deque<Item> stack = slotmemory.get(slot);
-      return stack == null ? null : stack.peek();
-    }
-
-    void push(String slot, Item item) {
-      getSlotStack(slot).push(item);
-    }
-
-    Item pop(String slot) {
-      return getSlotStack(slot).pollFirst();
-    }
-
-    void addAllFrom(SlotMap source) {
-      source.slotmemory.forEach((slot, stack) ->
-        getSlotStack(slot).addAll(stack)
-      );
-    }
-
-    private Deque<Item> getSlotStack(String slot) {
-      return slotmemory.computeIfAbsent(slot, k -> new LinkedList<>());
-    }
-  }
-
+  public SlotMap slotmap = new SlotMap();
   public Color color = Color.white;
   public int id = -1;
   public List<Command> commands = new ArrayList<>();
@@ -1348,6 +1299,17 @@ public class Unit {
     return true;
   }
 
+  public int getArmorProt() {
+    String armorId;
+
+    if (this.isSlotEmpty("armor") == true) {
+      return 0;
+    }
+
+    armorId = this.getSlot("armor").id;
+    return nationGen.armordb.GetInteger(armorId, "prot");
+  }
+
   public int getTotalProt() {
     return getTotalProt(true);
   }
@@ -1570,28 +1532,8 @@ public class Unit {
 
     // Write commands before weapons/armor so that #clearweapons/#cleararmor (after #copystats) doesn't clear them
     lines.addAll(writeCommandLines());
-
-    // Write all instead of just some stuff (14.3.2014)
-    slotmap
-      .items()
-    .filter(i -> {
-        if (!Generic.isNumeric(i.id)) {
-          throw new IllegalArgumentException(
-            this.name +
-            " unit (pose: " +
-            this.pose.name +
-            ", race: " +
-            this.race.name +
-            ", nation: " +
-            this.nation.name + " with seed " + this.nation.getSeed() +
-            ") has a custom item whose id was not resolved: " +
-            i.id
-          );
-        }
-
-        return Integer.parseInt(i.id) > 0;
-      })
-      .forEach(i -> lines.add(writeSlotLine(i)));
+    lines.addAll(writeWeaponLines());
+    lines.addAll(writeArmorLines());
 
     if (!this.name.toString(this).equals("UNNAMED")) {
       lines.add("#name \"" + name.toString(this) + "\"");
@@ -1667,16 +1609,121 @@ public class Unit {
     List<String> lines = new ArrayList<>();
 
     writeBodytypeLine().ifPresent(lines::add);
-
     writeRecpointsLine().ifPresent(lines::add);
 
     for (Command c : this.commands) {
       if (c.args.size() > 0) {
-        if (!c.command.equals("#itemslots")) lines.add(c.toModLine());
-      } else lines.add(c.command);
+        if (
+          // Item lines will be written later
+          !c.command.equals("#itemslots") &&
+          !c.command.equals("#weapon") &&
+          !c.command.equals("#armor")
+        ) {
+          lines.add(c.toModLine());
+        }
+      }
+      
+      else {
+        lines.add(c.command);
+      }
     }
 
     lines.add("#itemslots " + this.getItemSlots());
+    return lines;
+  }
+
+  public List<String> writeWeaponLines() {
+    List<String> lines = new ArrayList<>();
+    List<ItemData> weapons = new ArrayList<>();
+
+    // Get weapons that were added directly through templates, like
+    // natural weapons from bases (such as nagas)
+    this.commands
+      .stream()
+      .filter(c -> c.command.equals("#weapon") && c.args.getInt(0) > 0)
+      .forEach(c -> {
+        String id = c.args.getString(0);
+        ItemData weaponData = new ItemData(id, "", nationGen);
+        weapons.add(weaponData);
+      });
+
+    // Get weapon items from the unit's slot map, and do a check
+    // to make sure the custom ones are resolved into ids by now
+    this.slotmap
+      .getWeapons()
+      .filter(weapon -> {
+        if (weapon.isCustomIdResolved() == false) {
+          throw new IllegalArgumentException(
+            this.name +
+            " unit (pose: " +
+            this.pose.name +
+            ", race: " +
+            this.race.name +
+            ", nation: " +
+            this.nation.name + " with seed " + this.nation.getSeed() +
+            ") has a custom weapon whose id was not resolved: " +
+            weapon.id
+          );
+        }
+        // Filter out non-weapon ids
+        return Integer.parseInt(weapon.id) > 0;
+      })
+      .forEach(weapon -> {
+        ItemData weaponData = new ItemData(weapon);
+        weapons.add(weaponData);
+      });
+
+    // Sort weapons by descending range so that weapons with higher range appear higher.
+    // When units with multiple ranged weapons have the shorter range defined first,
+    // they will close into battle to fire with the shortest range (i.e. naga archers with a spit).
+    weapons.sort((a, b) -> {
+      int unitStrength = this.getCommandValue("#str", 0);
+      int rangeA = a.getWeaponRange(unitStrength);
+      int rangeB = b.getWeaponRange(unitStrength);
+      return rangeB - rangeA;
+    });
+
+    // Get id and name of weapons and add to the list of #weapon lines
+    weapons
+    .forEach(weapon -> lines.add(
+      "#weapon " +
+      weapon.getId() +
+      " --- " +
+      weapon.getDisplayName("weapon_name") +
+      ((weapon.hasName()) ? " / " + weapon.getName() : "")
+    ));
+
+    return lines;
+  }
+
+  public List<String> writeArmorLines() {
+    List<String> lines = new ArrayList<>();
+
+    this.slotmap.getArmor()
+    .filter(i -> {
+      if (!Generic.isNumeric(i.id)) {
+        throw new IllegalArgumentException(
+          this.name +
+          " unit (pose: " +
+          this.pose.name +
+          ", race: " +
+          this.race.name +
+          ", nation: " +
+          this.nation.name + " with seed " + this.nation.getSeed() +
+          ") has a custom armor whose id was not resolved: " +
+          i.id
+        );
+      }
+      // Only write items with actual ids. -1 ids are usually cosmetics
+      return Integer.parseInt(i.id) > 0;
+    })
+    .forEach(armor -> lines.add(
+      "#armor " +
+      armor.id +
+      " --- " +
+      nationGen.armordb.GetValue(armor.id, "armorname") +
+      ((armor.name != null) ? " / " + armor.name : "")
+    ));
 
     return lines;
   }

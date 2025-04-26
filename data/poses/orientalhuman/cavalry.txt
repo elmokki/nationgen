@@ -1,12 +1,13 @@
 ------- Mounted
 
 #newpose
+#id "oriental cavalry"
 #role "mounted"
 #sacred
 #basechance 0.25
 #define "#skilledrider 1"
 
-#baseitemslot feet 0
+
 
 #renderorder "shadow cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -38,12 +39,13 @@
 ------- Low mounted
 
 #newpose
-#basechance 0.125
+#id "oriental low cavalry"
 #role "mounted"
+#basechance 0.125
 #sacred
 #define "#skilledrider 1"
 
-#baseitemslot feet 0
+
 
 #load basesprite /data/items/human/normal/humanbases.txt 
 #load mount /data/items/human/human_mounted/humanmounts_low.txt 5 -15
@@ -74,6 +76,7 @@
 ----------- Charioteers
 
 #newpose
+#id "oriental chariot"
 #race 0
 #role "chariot"
 #sacred
@@ -81,7 +84,7 @@
 
 #good_leader
 
-#baseitemslot feet 0
+
 
 #load mount /data/items/oriental/mounted/bases_chariot.txt
 

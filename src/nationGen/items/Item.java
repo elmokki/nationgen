@@ -17,6 +17,7 @@ public class Item extends Drawable {
   public String id = "-1";
   public boolean armor = false;
   public Filter filter = null;
+  private ItemType itemType;
 
   public ArrayList<ItemDependency> dependencies = new ArrayList<>();
   //public LinkedHashMap<String, String> dependencies = new LinkedHashMap<>();
@@ -68,6 +69,56 @@ public class Item extends Drawable {
 
   public Item getCopy() {
     return this.getCustomItemCopy();
+  }
+
+  public Boolean isArmor() {
+    return this.armor == true;
+  }
+
+  public Boolean isWeapon() {
+    return this.armor == false;
+  }
+
+  public Boolean isRangedWeapon() {
+    this.attemptToDetermineItemType();
+    return this.itemType == ItemType.RANGED;
+  }
+
+  public Boolean isLowAmmoWeapon() {
+    this.attemptToDetermineItemType();
+    return this.itemType == ItemType.LOW_SHOTS;
+  }
+
+  public Boolean isMeleeWeapon() {
+    this.attemptToDetermineItemType();
+    return this.itemType == ItemType.MELEE;
+  }
+
+  public ItemType getItemType() {
+    this.attemptToDetermineItemType();
+    return this.itemType;
+  }
+
+  private void attemptToDetermineItemType() {
+    if (this.itemType != null) {
+      return;
+    }
+
+    // If it's got a range property, it might be ranged
+    if (nationGen.weapondb.GetInteger(this.id, "rng") != 0) {
+      // If its ammo is less than 4, it's a lowshots weapon
+      if (nationGen.weapondb.GetInteger(this.id, "shots", 100) < 4) {
+        this.itemType = ItemType.LOW_SHOTS;
+      }
+      
+      else {
+        this.itemType = ItemType.RANGED;
+      }
+    }
+
+    else {
+      this.itemType = ItemType.MELEE;
+    } 
   }
 
   public boolean isCustomIdResolved() {

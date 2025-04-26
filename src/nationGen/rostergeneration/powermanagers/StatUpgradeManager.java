@@ -2,10 +2,10 @@ package nationGen.rostergeneration.powermanagers;
 
 import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -129,11 +129,11 @@ public class StatUpgradeManager {
 
     private int extraGoldCostCounter = 0;
 
-    // Stats that can be randomly upgraded. Their defaultValue
-    // determines how expensive the upgrade will be. If the unit's
-    // current stat is already higher than the default, it will
-    // be less likely to be chosen as an upgrade.
-    private HashMap<UpgradableStats, StatUpgradeCalculator> statUpgradeCalculators = new HashMap<>();
+    // Stats that can be randomly upgraded. Their defaultValue determines how expensive the upgrade will be.
+    // If the unit's current stat is already higher than the default, it will be less likely to be chosen as an upgrade.
+    // This should be a data structure that guarantees ordering to not mess with seeds (different order every time would
+    // not result in the same results with the same seed).
+    private LinkedHashMap<UpgradableStats, StatUpgradeCalculator> statUpgradeCalculators = new LinkedHashMap<>();
 
     public StatUpgradeManager(NationGen nationGen, Unit unitToUpgrade, int statUpgradeBudget, Random random) {
         this.nationGen = nationGen;
@@ -250,9 +250,11 @@ public class StatUpgradeManager {
 
             // Increase gcost of unit by 1/3 of the number of stat upgrades we've granted it
             unit.commands.add(Command.args("#gcost", "+" + (int) Math.round(this.extraGoldCostCounter)));
-            //System.out.println("----------------");
             return;
         }
+
+        // Sort the possibleUpgrades list by a deterministic rule every time, so that seeds are not impacted by a different order of items
+        possibleUpgrades.sort(Comparator.comparing(Filter::getName));
 
         // If there are upgradable stats, select one at random based on their weights
         Filter selectedStatUpgrade = EntityChances.baseChances(possibleUpgrades).getRandom(random);

@@ -1,7 +1,7 @@
 ------- Standard Mounted
 
 #newpose
-#id "std mounted"
+#id "amazon cavalry"
 #role "mounted"
 #basechance 0.5
 #define "#skilledrider 2"
@@ -9,7 +9,7 @@
 #command "#female"
 #subraceprefix "amazon"
 
-#baseitemslot feet 0
+
 
 #renderorder "shadow quiver cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -50,6 +50,7 @@
 ------- Elite Mounted
 
 #newpose
+#id "amazon elite cavalry"
 #role "mounted"
 #role "sacred mounted"
 #role "elite mounted"
@@ -60,7 +61,7 @@
 #subraceprefix "amazon"
 #good_leader
 
-#baseitemslot feet 0
+
 
 #renderorder "shadow quiver cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -106,6 +107,7 @@
 ------- Low mounted
 
 #newpose
+#id "amazon low cavalry"
 #role "mounted"
 #role "sacred mounted"
 #role "elite mounted"
@@ -117,7 +119,7 @@
 #subraceprefix "amazon"
 #good_leader
 
-#baseitemslot feet 0
+
 
 #renderorder "shadow quiver cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
@@ -163,7 +165,7 @@
 ----------- Standard Charioteers
 
 #newpose
-#id "chariot"
+#id "amazon chariot"
 #race 0
 #role "chariot"
 #basechance 0.125
@@ -172,7 +174,7 @@
 #subraceprefix "amazon"
 #good_leader
 
-#baseitemslot feet 0
+
 
 #renderorder "shadow underlay cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 

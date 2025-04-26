@@ -235,44 +235,38 @@ public class ShapeChangeUnit extends Unit {
     lines.add("#newmonster " + id);
 
     List<Command> commands = getCommands();
-
-    boolean hasDescriptionSpecified = false;
     boolean hasItemSlots = false;
 
     // Own non-gcost commands first due to #copystats
     for (Command c : commands) {
       if (c.command.equals("#gcost")) {
-        // Do nothing
-      } else if (c.command.equals("#itemslots")) {
+        continue;
+      }
+      
+      else if (c.command.equals("#itemslots")) {
         hasItemSlots = true;
-      } else {
+      }
+      
+      else if (
+        // Leave weapons and armors to be handled below
+        !c.command.equals("#weapon") &&
+        !c.command.equals("#armor")
+      ) {
         lines.add(c.toModLine());
       }
-
-      if (
-        c.command.equals("#descr") &&
-        thisForm.tags.containsName("specifieddescr")
-      ) {
-        hasDescriptionSpecified = true;
-      }
     }
+
     if (thisForm.commands.stream().anyMatch(c -> c.command.equals("#spr1"))) {
       lines.add(
         "#spr1 \"" + spritedir + "/shapechange_" + id + "_a.tga" + "\""
       );
     }
+
     if (thisForm.commands.stream().anyMatch(c -> c.command.equals("#spr2"))) {
       lines.add(
         "#spr2 \"" + spritedir + "/shapechange_" + id + "_b.tga" + "\""
       );
     }
-
-    /*
-		if(!hasDescriptionSpecified)
-		{
-			lines.add("#descr \"No description\"");
-		}
-		*/
 
     if (thisForm.keepname && otherForm != null) lines.add(
       "#name \"" + otherForm.name + "\""
@@ -285,12 +279,16 @@ public class ShapeChangeUnit extends Unit {
     ) {
       lines.add(shiftcommand + " " + otherForm.id);
     }
-    if (sacred) lines.add("#holy");
 
+    if (sacred) lines.add("#holy");
     if (gcost != 0) lines.add("#gcost " + gcost);
 
     // If there's no #copystats or defined body type, define body type (as probably humanoid unless shenanigans have been done)
     writeBodytypeLine().ifPresent(lines::add);
+
+    // Write weapons and armor
+    lines.addAll(writeWeaponLines());
+    lines.addAll(writeArmorLines());
 
     // Write itemslots if they were skipped before
     if (hasItemSlots) lines.add("#itemslots " + this.getItemSlots());

@@ -197,6 +197,7 @@
 #unitname "Supplicant"
 #basechance 0
 #chanceinc magic astral 3
+#themeinc owntag "tier3" *0
 #description "is able to serve as a communion or sabbath slave."
 #pose role mage
 #themeinc thisitemtag "tier 1" *25
@@ -204,7 +205,6 @@
 #themeinc thisitemtag "tier 3" *0
 #filterdesc "comslave desc"
 #end
-
 
 #new
 #id "comslave blood"
@@ -214,7 +214,26 @@
 #unitname "Supplicant"
 #basechance 0
 #chanceinc magic blood 1.5
+#themeinc owntag "tier3" *0
 #description "is able to serve as a communion or sabbath slave."
+#pose role mage
+#themeinc thisitemtag "tier 1" *25
+#themeinc thisitemtag "tier 2" *5
+#themeinc thisitemtag "tier 3" *0
+#filterdesc "comslave desc"
+#end
+
+#new
+#id "comslave chorus"
+#command "#comslave"
+#command "#spellsinger"
+#command "#gcost +10"
+#unitname "Chorus Singer"
+#unitname "Chanter"
+#basechance 0
+#chanceinc magic glamour 2
+#themeinc owntag "tier3" *0
+#description "is able to serve as a chorus slave."
 #pose role mage
 #themeinc thisitemtag "tier 1" *25
 #themeinc thisitemtag "tier 2" *5
@@ -232,6 +251,7 @@
 #unitname "Supplicant"
 #basechance 0
 #chanceinc magic astral 1
+#themeinc owntag "tier3" *0
 #description "is able to serve as a communion or sabbath slave."
 #pose role mage
 #themeinc thisitemtag "tier 1" *25
@@ -250,11 +270,30 @@
 #unitname "Supplicant"
 #basechance 0
 #chanceinc magic blood 0.5
+#themeinc owntag "tier3" *0
 #description "is able to serve as a communion or sabbath slave."
 #pose role mage
 #themeinc thisitemtag "tier 1" *25
 #themeinc thisitemtag "tier 3" *0
 #troop
+#filterdesc "comslave desc"
+#end
+
+#new
+#id "comslave-chorus-1"
+#command "#comslave"
+#command "#spellsinger"
+#command "#gcost +40"
+#command "#reclimit 1"
+#unitname "Chorus Singer"
+#unitname "Chanter"
+#basechance 0
+#chanceinc magic glamour 0.75
+#themeinc owntag "tier3" *0
+#description "is able to serve as a chorus slave."
+#pose role mage
+#themeinc thisitemtag "tier 1" *25
+#themeinc thisitemtag "tier 3" *0
 #filterdesc "comslave desc"
 #end
 
@@ -267,6 +306,7 @@
 #unitname "Supplicant"
 #basechance 0.5
 #chanceinc magic astral 0.25
+#themeinc owntag "tier3" *0
 #description "is able to serve as a communion or sabbath slave."
 #pose role mage
 #themeinc thisitemtag "tier 1" *25
@@ -284,6 +324,7 @@
 #unitname "Supplicant"
 #basechance 0
 #chanceinc magic blood 0.125
+#themeinc owntag "tier3" *0
 #description "is able to serve as a communion or sabbath slave."
 #pose role mage
 #themeinc thisitemtag "tier 1" *25
@@ -293,14 +334,33 @@
 #end
 
 #new
+#id "comslave-chorus-3"
+#command "#comslave"
+#command "#spellsinger"
+#command "#gcost +40"
+#command "#reclimit 3"
+#unitname "Chorus Singer"
+#unitname "Chanter"
+#basechance 0
+#chanceinc magic glamour 0.175
+#themeinc owntag "tier3" *0
+#description "is able to serve as a chorus slave."
+#pose role mage
+#themeinc thisitemtag "tier 1" *25
+#themeinc thisitemtag "tier 3" *0
+#filterdesc "comslave desc"
+#end
+
+#new
 #id "comslave-troop-5"
 #command "#comslave"
-#command "#gcost +40"
+#command "#gcost +50"
 #command "#reclimit 1"
 #unitname "Communicant"
 #unitname "Supplicant"
 #basechance 0
-#chanceinc magic astral 1
+#chanceinc magic astral 0.125
+#themeinc owntag "tier3" *0
 #description "is able to serve as a communion or sabbath slave."
 #pose role mage
 #themeinc thisitemtag "tier 1" *25
@@ -312,17 +372,36 @@
 #new
 #id "comslave-troop-blood-5"
 #command "#comslave"
-#command "#gcost +40"
+#command "#gcost +50"
 #command "#reclimit 1"
 #unitname "Sabbath Slave"
 #unitname "Supplicant"
 #basechance 0
-#chanceinc magic blood 0.5
+#chanceinc magic blood 0.0625
+#themeinc owntag "tier3" *0
 #description "is able to serve as a communion or sabbath slave."
 #pose role mage
 #themeinc thisitemtag "tier 1" *25
 #themeinc thisitemtag "tier 3" *0
 #troop
+#filterdesc "comslave desc"
+#end
+
+#new
+#id "comslave-chorus-5"
+#command "#comslave"
+#command "#spellsinger"
+#command "#gcost +50"
+#command "#reclimit 5"
+#unitname "Chorus Singer"
+#unitname "Chanter"
+#basechance 0
+#chanceinc magic glamour 0.09375
+#themeinc owntag "tier3" *0
+#description "is able to serve as a chorus slave."
+#pose role mage
+#themeinc thisitemtag "tier 1" *25
+#themeinc thisitemtag "tier 3" *0
 #filterdesc "comslave desc"
 #end
 

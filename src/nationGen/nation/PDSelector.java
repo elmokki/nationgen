@@ -16,6 +16,22 @@ public class PDSelector {
   private Nation n;
   private Random r;
 
+  // The amount of "points" we get for every 1 militia/starting unit.
+  // This covers both gold and resource cost. If the budget is 20, and
+  // the selected unit costs 10 gold and 10 resources, then we get 1 unit.
+  private static final int BUDGET_PER_MILITIA_UNIT = 25;
+
+  // The multiplier for the above budget. If the budget above is enough for
+  // 1 unit, and this number is 40, then we'll get 40 * 1 = 40 units.
+  // If the militia was more expensive and yielded a ratio of 0.5,
+  // then we'd get 40 * 0.5 = 20 units.
+  private static final int NUMBER_OF_RELATIVE_UNITS = 40;
+
+  // Exponentially increases the budget cost of a unit's resources. More resource
+  // cost means more protection which means much lower attrition when expanding,
+  // so higher resource costs should be priced higher than low resource costs.
+  private static final float RESOURCE_COST_INFLATION = 1.12f;
+
   public PDSelector(Nation n, NationGen ng) {
     this.ng = ng;
     this.n = n;
@@ -261,6 +277,70 @@ public class PDSelector {
     return best;
   }
 
+  public Unit getGateUnit(boolean montag_chassis_allowed) {
+    List<Unit> units = n.combineTroopsToList("infantry");
+    List<Unit> unsuitable = new ArrayList<>();
+
+    for (Unit u : units) {
+      if (
+        Generic.getAllUnitTags(u).containsName("cannot_be_pd") ||
+        (u.pose.tags.containsName("montagpose") && !montag_chassis_allowed)
+      ) {
+        unsuitable.add(u);
+      }
+    }
+
+    if (units.size() > unsuitable.size()) {
+      units.removeAll(unsuitable);
+    }
+
+    // Try to get unit
+    Unit unit = getGateUnit(units);
+
+    // Failsafe: Just get something
+    if (unit == null) {
+      units = n.combineTroopsToList("infantry");
+      units.addAll(n.combineTroopsToList("mounted"));
+      units.addAll(n.combineTroopsToList("ranged"));
+      if (!montag_chassis_allowed) units.addAll(
+        n.combineTroopsToList("montagtroops")
+      );
+
+      unit = getGateUnit(units);
+    }
+
+    return unit;
+  }
+
+  public Unit getGateUnit(List<Unit> units) {
+    double totalr = 0;
+    double totalg = 0;
+
+    for (Unit u : units) {
+      totalr += u.getResCost(true);
+      totalg += u.getGoldCost();
+    }
+
+    double targetgcost = (totalg / units.size());
+    double targetrcost = (totalr / units.size());
+
+    Unit best = units.get(0);
+    double bestscore = scoreForMilitia(best, targetrcost, targetgcost);
+
+    for (Unit u : units) {
+      double score =
+        scoreForMilitia(u, targetrcost, targetgcost) *
+        ((u.getCommandValue("#castledef", 0) + 1));
+
+      if (bestscore >= score) {
+        bestscore = score;
+        best = u;
+      }
+    }
+
+    return best;
+  }
+
   public Unit getMilitia(int rank, int tier) {
     return getMilitia(rank, tier, true);
   }
@@ -396,7 +476,7 @@ public class PDSelector {
       "startarmy_amountmulti"
     )) filtermulti *= multi;
 
-    double amount = militiaAmount(u) * 1.2 * filtermulti;
+    double amount = militiaAmount(u) * filtermulti;
 
     return (int) Math.round(amount);
   }
@@ -405,11 +485,12 @@ public class PDSelector {
     // Handle filter etc stuff
     double filtermulti = 1;
     Tags tags = Generic.getAllNationTags(n);
-    for (Double multi : tags.getAllDoubles("pd_amountmulti")) filtermulti *=
-    multi;
+
+    for (Double multi : tags.getAllDoubles("pd_amountmulti")) {
+      filtermulti *= multi;
+    }
 
     double amount = militiaAmount(u) * filtermulti;
-
     return (int) Math.round(amount);
   }
 
@@ -471,14 +552,33 @@ public class PDSelector {
     // 20 / (rescost + goldcost) * 10 * militiaMultiplier = amount of specified unit in militia
     // multiplier is 1 by default in settings, but may be increased by commands in generation
 
-    double score = res + gold;
+    double score = gold + Math.pow(res, RESOURCE_COST_INFLATION);
 
-    double multi = 20 / score;
+    double multi = BUDGET_PER_MILITIA_UNIT / score;
 
-    double result = multi * 10;
+    double result = multi * NUMBER_OF_RELATIVE_UNITS;
 
     result = result * ng.settings.get(SettingsType.militiaMultiplier);
 
     return result;
+  }
+
+  // Get the mult amount for the #wallmult and #guardmult mod commands
+  public int getCastleDefenderMult(Unit u) {
+    // Handle filter etc stuff
+    double filtermulti = 1;
+    Tags tags = Generic.getAllNationTags(n);
+
+    for (Double multi : tags.getAllDoubles("pd_amountmulti")) {
+      filtermulti *= multi;
+    }
+
+    double amount = castleDefenderMult(u) * filtermulti;
+    return (int) Math.round(amount);
+  }
+
+  private double castleDefenderMult(Unit u) {
+    double amount = militiaAmount(u);
+    return Math.floor(amount * 0.5);
   }
 }

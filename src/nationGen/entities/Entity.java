@@ -24,11 +24,11 @@ public class Entity {
     Class<E> c
   ) {
     List<E> list = new ArrayList<>();
-
     E instance = null;
-    int line = 0;
+    int lineNumber = 0;
+
     for (String strLine : FileUtil.readLines(file)) {
-      line++;
+      lineNumber++;
       try {
         if (strLine.trim().toLowerCase().startsWith("#new")) {
           if (instance != null) {
@@ -60,7 +60,7 @@ public class Entity {
         }
       } catch (Exception e) {
         throw new IllegalStateException(
-          "Error handling file '" + file + "' line " + line + ": " + strLine,
+          "Error handling file '" + file + "' line " + lineNumber + ": " + strLine,
           e
         );
       }

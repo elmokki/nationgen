@@ -2,6 +2,7 @@
 -------- Normal
 
 #newpose
+#id "humanbred infantry"
 #role "humanbred infantry"
 #role "infantry"
 #role "scout"
@@ -40,6 +41,7 @@
 -------- Elite/sacred
 
 #newpose
+#id "humanbred elite infantry"
 #role "elite humanbred infantry"
 #role "sacred infantry"
 #role "elite infantry"
@@ -87,6 +89,7 @@
 -------- Ranged: normal infantry with a bow or crossbow
 
 #newpose
+#id "humanbred ranged"
 #role "humanbred archers"
 #role "ranged"
 
@@ -135,6 +138,7 @@
 
 
 #newpose
+#id "humanbred cavalry"
 #race 0
 #role "humanbred cavalry"
 #role "mounted"
@@ -146,7 +150,7 @@
 #subrace "humanbred"
 #subraceprefix "humanbred"
 
-#baseitemslot feet 0
+
 
 #load basesprite /data/items/abysian/humanbred/bases.txt 5 -15
 #load mount /data/items/abysian/humanbred/mounts.txt

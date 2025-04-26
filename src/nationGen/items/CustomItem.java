@@ -12,13 +12,13 @@ import nationGen.misc.Command;
 
 public class CustomItem extends Item {
 
-  public List<Command> values = new ArrayList<>();
+  private List<Command> customItemCommands = new ArrayList<>();
   public Item olditem = null;
 
   public CustomItem getCopy() {
     CustomItem item = this.getCustomItemCopy();
     item.olditem = this.olditem;
-    for (Command command : values) item.values.add(command.copy());
+    for (Command command : customItemCommands) item.customItemCommands.add(command.copy());
 
     return item;
   }
@@ -27,57 +27,126 @@ public class CustomItem extends Item {
 
   public CustomItem(NationGen nationGen) {
     super(nationGen);
-    this.values.add(new Command("#rcost", new Arg(0)));
-    this.values.add(new Command("#def", new Arg(0)));
+    this.customItemCommands.add(new Command("#rcost", new Arg(0)));
+    this.customItemCommands.add(new Command("#def", new Arg(0)));
   }
 
-  public Optional<Args> getValue(String commandName) {
-    return this.values.stream()
+  public Optional<Command> getCustomCommand(String commandName) {
+    return this.customItemCommands.stream().filter(c -> c.command.equals(commandName)).findFirst();
+  }
+
+  public Optional<Command> getCustomCommands(String commandName) {
+    return this.customItemCommands.stream().filter(c -> c.command.equals(commandName)).findFirst();
+  }
+
+  public Boolean hasCustomCommand(String commandName) {
+    return this.customItemCommands
+      .stream()
       .filter(c -> c.command.equals(commandName))
       .findFirst()
+      .isPresent();
+  }
+
+  public Optional<Args> getCustomValue(String commandName) {
+    return this.getCustomCommand(commandName)
       .map(c -> c.args);
   }
 
-  public Optional<String> getStringValue(String commandName) {
-    return getValue(commandName).map(l -> l.get(0).get());
+  public Optional<String> getCustomStringValue(String commandName) {
+    return getCustomValue(commandName).map(l -> l.get(0).get());
   }
 
-  public Optional<Integer> getIntValue(String commandName) {
-    return getValue(commandName).map(l -> l.get(0).getInt());
+  public Optional<Integer> getCustomIntValue(String commandName) {
+    return getCustomValue(commandName).map(l -> l.get(0).getInt());
   }
 
-  public void setValue(String commandName) {
-    if (getValue(commandName).isEmpty()) {
-      this.values.add(new Command(commandName));
+  public void setCustomCommand(String commandName) {
+    if (getCustomValue(commandName).isEmpty()) {
+      this.customItemCommands.add(new Command(commandName));
     }
   }
 
-  public void setValue(String commandName, String value) {
-    Optional<Args> args = getValue(commandName);
+  public void setCustomCommand(String commandName, String value) {
+    Optional<Args> args = getCustomValue(commandName);
     if (args.isPresent()) {
       args.get().set(0, new Arg(value));
     } else {
-      this.values.add(Command.args(commandName, value));
+      this.customItemCommands.add(Command.args(commandName, value));
     }
   }
 
-  public void setValue(String commandName, int value) {
-    Optional<Args> args = getValue(commandName);
+  public void setCustomCommand(String commandName, int value) {
+    Optional<Args> args = getCustomValue(commandName);
     if (args.isPresent()) {
       args.get().set(0, new Arg(value));
     } else {
-      this.values.add(new Command(commandName, new Arg(value)));
+      this.customItemCommands.add(new Command(commandName, new Arg(value)));
     }
   }
 
-  public void setValue(String commandName, String value1, String value2) {
-    Optional<Args> args = getValue(commandName);
+  public void setCustomCommand(String commandName, String value1, String value2) {
+    Optional<Args> args = getCustomValue(commandName);
     if (args.isPresent()) {
       args.get().set(0, new Arg(value1));
       args.get().set(1, new Arg(value2));
     } else {
-      this.values.add(Command.args(commandName, value1, value2));
+      this.customItemCommands.add(Command.args(commandName, value1, value2));
     }
+  }
+
+  public void applyEnchantment(MagicItem enchantment) {
+    // Whether enchantment has an on-damage effect
+    Boolean hasSecondaryEffect = !enchantment.effect.equals("-1");
+    List<Command> enchantmentCommands = enchantment.getCommands();
+
+    if (hasSecondaryEffect == true) {
+      this.setCustomCommand("#secondaryeffect", enchantment.effect);
+    }
+
+    // Copy commands from the enchantment over to the item
+    for (Command c : enchantmentCommands) {
+      String key = c.command;
+      Boolean isCommandWithArguments = c.args.size() > 0;
+
+      // This is a command with arguments, like #atk +1
+      if (isCommandWithArguments == true) {
+        // Likely a -X or +X argument
+        Arg value = c.args.get(0);
+
+        // Grab item's original command value
+        Optional<Integer> oldvalue = this.getCustomIntValue(key);
+
+        // Resolve the modifier from the magic effect
+        int modifiedValue = (int) value.applyModTo(oldvalue.orElseThrow());
+
+        // Apply new value
+        this.setCustomCommand(key, modifiedValue);
+      }
+      
+      // If it's a command without a value, just add it
+      else {
+        this.setCustomCommand(c.command);
+      }
+    }
+
+    this.magicItem = enchantment;
+  }
+
+  public Boolean isMagic() {
+    return this.hasCustomCommand("#magic");
+  }
+
+  public Boolean hasCustomName() {
+    return this.getCustomValue("#name").isPresent();
+  }
+
+  public Boolean hasDamageBitmask() {
+    return this.customItemCommands
+      .stream()
+      .filter(c -> {
+        return WeaponNumericalDamageType.isModCommandANumericalDamageType(c);
+      })
+      .count() > 0;
   }
 
   @Override
@@ -89,7 +158,7 @@ public class CustomItem extends Item {
             "#command must have a single arg. Surround the command with quotes if needed."
           );
         }
-        this.values.add(str.args.get(0).getCommand());
+        this.customItemCommands.add(str.args.get(0).getCommand());
       } else {
         super.handleOwnCommand(str);
       }
@@ -113,9 +182,8 @@ public class CustomItem extends Item {
     map.put("dmg", "0");
     map.put("2h", "0");
 
-    for (Command command : values) {
+    for (Command command : customItemCommands) {
       String str = command.command;
-      String arg = command.args.isEmpty() ? "" : command.args.get(0).get();
 
       switch (str) {
         case "#blunt":
@@ -206,21 +274,40 @@ public class CustomItem extends Item {
       lines.add("#newweapon " + id);
     }
 
-    for (Command command : this.values) {
-      if (command.command.equals("#name")) {
-        lines.add(command.toModLine());
-      }
-    }
-
-    for (Command command : this.values) {
-      if (!command.command.equals("#name")) {
-        lines.add(command.toModLine());
-      }
+    for (Command command : this.customItemCommands) {
+      lines.add(command.toModLine());
     }
 
     lines.add("#end");
     lines.add("");
 
     return lines;
+  }
+
+  public static CustomItem fromItem(Item item, NationGen nationGen) {
+    CustomItem customItem = new CustomItem(nationGen);
+
+    // Minimal valid weapon customItemCommands. Might get overwritten below if already exist
+    if (item.armor == false) {
+      customItem.setCustomCommand("#att", 0);
+      customItem.setCustomCommand("#len", 0);
+      customItem.setCustomCommand("#dmg", 0);
+    }
+
+    customItem.sprite = item.sprite;
+    customItem.mask = item.mask;
+    customItem.commands.addAll(item.commands);
+    customItem.tags.addAll(item.tags);
+    customItem.dependencies.addAll(item.dependencies);
+    customItem.setOffsetX(item.getOffsetX());
+    customItem.setOffsetY(item.getOffsetY());
+    customItem.slot = item.slot;
+    customItem.basechance = item.basechance;
+    customItem.renderslot = item.renderslot;
+    customItem.renderprio = item.renderprio;
+    customItem.armor = item.armor;
+    customItem.olditem = item;
+
+    return customItem;
   }
 }

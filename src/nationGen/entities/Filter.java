@@ -36,6 +36,10 @@ public class Filter extends Entity {
     return this.power;
   }
 
+  public String getName() {
+    return this.name;
+  }
+
   @Override
   public void handleOwnCommand(Command command) {
     try {

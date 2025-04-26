@@ -179,259 +179,319 @@ public class UnitGen {
     ItemSet excluded,
     ItemSet poseexclusions,
     Command targettag,
-    boolean mage
+    boolean ignoreChestArmor
   ) {
     // Handles possiblecommands
     this.handlePossibleCommands(u);
 
-    // Failsafe
+    // Ensure ItemSet parameters are defined and not null
     if (included == null) included = new ItemSet();
     if (excluded == null) excluded = new ItemSet();
     if (poseexclusions == null) poseexclusions = new ItemSet();
 
-    boolean ignoreArmor = mage;
-
-    // Armor
+    // Equip armor if armor slot is empty and pose has armors
     if (u.isSlotEmpty("armor") && u.pose.getItems("armor") != null) {
-      ItemSet all = u.pose.getItems("armor");
-      all.removeAll(poseexclusions);
-
-      if (all.size() == 0) all = u.pose.getItems("armor");
-
-      Item armor = getSuitableItem(
-        "armor",
-        u,
-        excluded,
-        included,
-        all,
-        targettag
-      );
-
-      u.setSlot("armor", armor);
+      this.selectArmor(u, included, excluded, poseexclusions, targettag);
     }
 
-    // Mount
+    // Equip mount if mount slot is empty and pose has mounts
     if (
       u.isSlotEmpty("mount") &&
       u.pose.getItems("mount") != null &&
       u.pose.getItems("mount").size() > 0
     ) {
-      int prot = nationGen.armordb.GetInteger(u.getSlot("armor").id, "prot");
-
-      ItemSet possibleMounts = included
-        .filterSlot("mount")
-        .filterForPose(u.pose)
-        .filterMinMaxProt(prot);
-      possibleMounts.addAll(
-        u.pose
-          .getItems("mount")
-          .filterMinMaxProt(prot)
-          .filterKeepSameSprite(
-            included.filterSlot("mount").filterMinMaxProt(prot)
-          )
-      );
-
-      if (
-        chandler.countPossibleFilters(possibleMounts, u) == 0 ||
-        random.nextDouble() > 0.8
-      ) {
-        possibleMounts = u.pose.getItems("mount").filterMinMaxProt(prot);
-        if (possibleMounts.possibleItems() == 0) possibleMounts =
-          u.pose.getItems("mount");
-      }
-
-      // Make sure there is a mount to add in some weirder cases of a very limited mount being already taken
-      ItemSet test = new ItemSet();
-      test.addAll(possibleMounts.filterForPose(u.pose));
-      test.removeAll(excluded.filterForPose(u.pose));
-      if (chandler.countPossibleFilters(test, u) == 0) {
-        excluded.removeAll(possibleMounts.filterForPose(u.pose));
-      }
-
-      ItemSet possibleMounts2 = possibleMounts.filterMinMaxProt(prot);
-      if (
-        chandler.countPossibleFilters(possibleMounts2, u) > 0
-      ) possibleMounts = possibleMounts2;
-
-      if (chandler.countPossibleFilters(possibleMounts, u) > 0) {
-        String pref = null;
-        if (
-          u.race.tags.containsName("preferredmount") &&
-          random.nextDouble() > 0.70
-        ) {
-          pref = u.race.tags.getValue("preferredmount").orElseThrow().get();
-        }
-
-        Item mount = null;
-        if (pref != null) mount = getSuitableItem(
-          "mount",
-          u,
-          excluded,
-          null,
-          possibleMounts,
-          Command.args("animal", pref)
-        );
-        if (mount == null) mount = getSuitableItem(
-          "mount",
-          u,
-          excluded,
-          null,
-          possibleMounts,
-          null
-        );
-
-        u.setSlot("mount", mount);
-        excluded.add(u.getSlot("mount"));
-
-        if (u.getSlot("mount") == null) {
-          System.out.println(
-            "No mount found for " +
-            u.race.name +
-            " with armor prot " +
-            prot +
-            " / " +
-            u.pose.roles +
-            " -- ERROR VERSION 1"
-          );
-          return;
-        }
-      } else {
-        System.out.println(
-          "No mount found for " +
-          u.race.name +
-          " with armor prot " +
-          prot +
-          " / " +
-          u.pose.roles +
-          " -- ERROR VERSION 2"
-        );
-        return;
-      }
+      this.selectMount(u, included, excluded, poseexclusions, targettag);
     }
 
+    // Equip a helmet if offhand slot is empty and pose has helmets
     if (u.isSlotEmpty("helmet") && u.pose.getItems("helmet") != null) {
-      if (!ignoreArmor) {
-        int prot;
-        if (u.getSlot("armor") == null) prot = 0;
-        else prot = nationGen.armordb.GetInteger(u.getSlot("armor").id, "prot");
-
-        ItemSet inchere = included.filterSlot("helmet").filterForPose(u.pose);
-        if (inchere.possibleItems() == 0) inchere = u.pose.getItems("helmet");
-
-        if (u.getSlot("helmet") == null) {
-          // Fancy chanceinc implementation
-          if (
-            chandler
-              .handleChanceIncs(
-                u,
-                inchere.filterProt(nationGen.armordb, prot - 3, prot + 3)
-              )
-              .isEmpty()
-          ) {
-            inchere = u.pose.getItems("helmet");
-          }
-          Item helmet = chandler
-            .handleChanceIncs(u, inchere, generateTargetProtChanceIncs(prot, 8))
-            .getRandom(random);
-
-          if (helmet != null) u.setSlot("helmet", helmet);
-
-          // Traditional implementation
-          /*
-					int range = 1;
-					int amount1 = Math.min(inchere.possibleItems(), 2);
-					int amount2 = Math.min(u.pose.getItems("helmet").possibleItems(), 4);
-		
-					while(chandler.countPossibleFilters(inchere.filterProt(nationGen.armordb,  prot - range, prot + range), u) < amount1 
-							&& u.pose.getItems("helmet").filterProt(nationGen.armordb,  prot - range, prot + range).possibleItems() < amount2)
-					{
-						range = range + 1;
-					}
-					
-					if(inchere.filterProt(nationGen.armordb,  prot - range, prot + range).possibleItems() > 0)
-						u.setSlot("helmet", getSuitableItem("helmet", u, excluded, inchere.filterProt(nationGen.armordb,  prot - range, prot + range), targettag));
-					else if(u.pose.getItems("helmet").filterProt(nationGen.armordb,  prot - range, prot + range).possibleItems() > 0)
-						u.setSlot("helmet", getSuitableItem("helmet", u, excluded, u.pose.getItems("helmet").filterProt(nationGen.armordb,  prot - range, prot + range), targettag));
-					*/
-
-          // Failsafe
-          if (u.getSlot("helmet") == null) {
-            u.setSlot(
-              "helmet",
-              getSuitableItem(
-                "helmet",
-                u,
-                excluded,
-                u.pose.getItems("helmet"),
-                targettag
-              )
-            );
-          }
-        }
-      } else {
-        u.setSlot(
-          "helmet",
-          getSuitableItem("helmet", u, excluded, included, targettag)
-        );
-      }
+      this.selectHelmet(u, included, excluded, poseexclusions, targettag, ignoreChestArmor);
     }
 
+    // Equip an offhand if offhand slot is empty and pose has offhands
     if (u.isSlotEmpty("offhand") && u.pose.getItems("offhand") != null) {
-      if (ignoreArmor) {
+      // If chest armor is to be ignored (mostly for mages), select any offhand
+      // This can be a shield or other offhand items like sutras, orbs, etc.
+      if (ignoreChestArmor) {
         u.setSlot(
           "offhand",
           getSuitableItem("offhand", u, excluded, included, targettag)
         );
+      // Otherwise select a shield that will take into account the armor's protection
       } else {
-        ItemSet all = u.pose.getItems("offhand").filterArmor(true);
-
-        if (all.size() > 0) {
-          all.removeAll(excluded.filterForPose(u.pose));
-          ItemSet newincluded = new ItemSet();
-          newincluded.addAll(included.filterForPose(u.pose));
-
-          double deviance = random.nextDouble();
-          int prot = Math.round(
-            nationGen.armordb.GetInteger(u.getSlot("armor").id, "prot")
-          );
-
-          int operation = 0;
-          // Chance to remove bucklers
-          if (deviance > 0.8 && prot > 12) operation = -1;
-          if (deviance > 0.5 && prot > 15) operation = -1;
-          if (deviance > 0.2 && prot >= 18) operation = -1;
-
-          // chance to remove tower shield and kite shield
-          if (deviance > 0.5 && prot < 10) operation = 1;
-
-          if (operation == -1) {
-            newincluded = newincluded.filterProt(nationGen.armordb, 15, 100);
-          } else if (operation == 1) {
-            newincluded = newincluded.filterProt(
-              nationGen.armordb,
-              0,
-              19,
-              true
-            );
-          }
-
-          if (newincluded.possibleItems() == 0) newincluded = included;
-
-          if (random.nextDouble() < 0.1) newincluded = null;
-
-          Item shield =
-            this.getSuitableItem(
-                "offhand",
-                u,
-                excluded,
-                newincluded,
-                u.pose.getItems("offhand").filterArmor(true),
-                targettag
-              );
-          u.setSlot("offhand", shield);
-        }
+        this.selectShield(u, included, excluded, poseexclusions, targettag);
       }
     }
+  }
+
+  public void selectArmor(
+    Unit u,
+    ItemSet included,
+    ItemSet excluded,
+    ItemSet poseexclusions,
+    Command targettag
+  ) {
+    Item selectedArmor;
+    // Grab all possible pose armor but remove specific pose exclusions
+    ItemSet finalArmorPool = u.pose.getItems("armor");
+    finalArmorPool.removeAll(poseexclusions);
+
+    // Pick one taking into account possible chanceincs
+    selectedArmor = getSuitableItem(
+      "armor",
+      u,
+      excluded,
+      included,
+      finalArmorPool,
+      targettag
+    );
+
+    if (selectedArmor == null) {
+      throw new IllegalArgumentException(
+        "Found no possible armor for Unit (race: " +
+        u.race.toString() +
+        ", pose: " +
+        u.pose.toString() +
+        ") after handling chanceincs"
+      );
+    }
+
+    u.setSlot("armor", selectedArmor);
+  }
+
+  public void selectHelmet(
+    Unit u,
+    ItemSet included,
+    ItemSet excluded,
+    ItemSet poseexclusions,
+    Command targettag,
+    boolean ignoreChestArmor
+  ) {
+    ItemSet finalHelmetPool = new ItemSet();
+    Item selectedHelmet;
+
+    // If we don't care about the chest armor prot (mages, mostly)
+    if (ignoreChestArmor == true) {
+      selectedHelmet = getSuitableItem("helmet", u, excluded, included, targettag);
+    }
+    
+    else {
+      int armorProt = u.getArmorProt();
+
+      // Generate chance weights based on how far each helmet's prot is from the chest armor's prot
+      List<ThemeInc> targetProtChanceIncs = generateTargetProtChanceIncs(armorProt, 8);
+
+      // Filter the included helmets down to those that match our pose
+      finalHelmetPool = included.filterSlot("helmet").filterForPose(u.pose);
+
+      // Filter included helmet pool by protection close to the armor prot
+      ItemSet helmetsFilteredByProt = finalHelmetPool
+        .filterProt(nationGen.armordb, armorProt - 3, armorProt + 3);
+      
+      // If after narrowing down the included helmets and checking their
+      // chanceincs we're down to 0, then just use the full list of pose helmets instead
+      if (chandler.countPossibleFilters(helmetsFilteredByProt, u) == 0) {
+        ItemSet poseHelmets = u.pose.getItems("helmet");
+        finalHelmetPool.clear();
+        finalHelmetPool.addAll(poseHelmets);
+      }
+
+      // Select a random helmet from our final pool after handling their chanceincs
+      selectedHelmet = chandler
+        .handleChanceIncs(u, finalHelmetPool, targetProtChanceIncs)
+        .getRandom(random);
+    }
+
+    if (selectedHelmet == null) {
+      throw new IllegalArgumentException(
+        "Found no possible helmet for Unit (race: " +
+        u.race.toString() +
+        ", pose: '" +
+        u.pose.toString() +
+        "') with ignoreChestArmor = " + ignoreChestArmor +
+        " after handling chanceincs"
+      );
+    }
+    
+    u.setSlot("helmet", selectedHelmet);
+  }
+
+  public void selectShield(
+    Unit u,
+    ItemSet included,
+    ItemSet excluded,
+    ItemSet poseexclusions,
+    Command targettag
+  ) {
+    int armorProt = u.getArmorProt();
+    ItemSet poseShieldPool = u.pose.getItems("offhand").filterArmor(true);
+    ItemSet finalShieldPool = new ItemSet();
+    boolean ignoreIncludedShields = random.nextDouble() < 0.1;
+    Item selectedShield;
+
+    // Small chance to ignore the Set from the included parameter
+    if (ignoreIncludedShields == true) {
+      included.clear();
+    }
+
+    else {
+      // Filter the included set in the parameters by this pose
+      included = included.filterForPose(u.pose);
+    }
+
+    // Start with the pose shield pool as our final pool
+    finalShieldPool.addAll(poseShieldPool);
+
+    // Remove exclusions from pool
+    finalShieldPool.removeAll(excluded.filterForPose(u.pose));
+
+    // No shields available for this pose; return early
+    if (finalShieldPool.size() == 0) {
+      return;
+    }
+
+    double roll = random.nextDouble();
+
+    // Chance to remove tower and kite shields from final shield pool
+    // (since armor protection is low, presumably unit is supposed to be light)
+    if (armorProt < 10 && roll > 0.5) {
+      finalShieldPool = finalShieldPool.filterProt(
+        nationGen.armordb,
+        0,
+        19,
+        true
+      );
+    }
+
+    // Chances to remove bucklers from final shield pool
+    // The higher the armor protection, the higher the chance
+    else if (
+      (armorProt > 18 && roll > 0.2) ||
+      (armorProt > 15 && roll > 0.5) ||
+      (armorProt > 12 && roll > 0.8)
+    ) {
+      finalShieldPool = finalShieldPool.filterProt(nationGen.armordb, 15, 100);
+    }
+
+    // If we removed all possible shields after checking chanceincs, use the full pose set
+    if (chandler.countPossibleFilters(finalShieldPool, u) == 0) {
+      finalShieldPool.clear();
+      finalShieldPool.addAll(poseShieldPool);
+    }
+
+    selectedShield = this.getSuitableItem(
+      "offhand",
+      u,
+      excluded,
+      included,
+      finalShieldPool,
+      targettag
+    );
+
+    u.setSlot("offhand", selectedShield);
+  }
+
+  public void selectMount(
+    Unit u,
+    ItemSet included,
+    ItemSet excluded,
+    ItemSet poseexclusions,
+    Command targettag
+  ) {
+    // Find chest armor protection to apply mounts' minprot and maxprot filters
+    int prot = nationGen.armordb.GetInteger(u.getSlot("armor").id, "prot");
+    ItemSet finalMountPool = new ItemSet();
+    Command racialMountPreference = null;
+    Item selectedMount = null;
+
+    // Filter mounts passed directly into the function for pose
+    ItemSet mountsFilteredByPose = included
+      .filterSlot("mount")
+      .filterForPose(u.pose);
+
+    // Add all pose mounts too
+    mountsFilteredByPose.addAll(u.pose.getItems("mount"));
+
+    if (chandler.countPossibleFilters(mountsFilteredByPose, u) == 0) {
+      throw new IllegalArgumentException(
+        "Found no possible mounts for Unit (race: " +
+        u.race.toString() +
+        ", pose: '" +
+        u.pose.toString() +
+        "') after handling chanceincs"
+      );
+    }
+
+    finalMountPool.addAll(mountsFilteredByPose);
+
+    // Filter by... same sprite to use them as a possible way to determine existing
+    // mount types so that huge varieties of mounts are a bit rarer.
+    ItemSet mountsFilteredBySprite = mountsFilteredByPose
+      .filterKeepSameSprite(
+        included.filterSlot("mount").filterMinMaxProt(prot)
+      );
+
+    // Only use sprite filtering if it doesn't rule out all options
+    if (chandler.countPossibleFilters(mountsFilteredBySprite, u) != 0) {
+      finalMountPool.clear();
+      finalMountPool.addAll(mountsFilteredBySprite);
+    }
+
+    ItemSet mountsFilteredByProt = finalMountPool.filterMinMaxProt(prot);
+
+    // Only use prot filtering if it doesn't rule out all options
+    if (chandler.countPossibleFilters(mountsFilteredByProt, u) != 0) {
+      // Roll a small chance to ignore min/maxprot filters in the mount items
+      double roll = random.nextDouble();
+      double chanceToIgnoreProtFilters = 0.2;
+
+      if (roll > chanceToIgnoreProtFilters) {
+        // Roll failed; only include prot filtered mounts in final pool
+        finalMountPool.clear();
+        finalMountPool.addAll(mountsFilteredByProt);
+      }
+    }
+
+    else {
+      // Helpful console print to inform that the pose should probably have more suitable mount items
+      System.out.println(
+        "Pose '" + u.pose.toString() +
+        "' (race: " +
+        u.race.toString() +
+        ") was left without possible mounts after filtering for min/maxprot and chanceincs; " + 
+        "consider tweaking the mount list numbers or adding more options"
+      );
+    }
+
+    // If the race has a preferred mount and a small chance succeeds, we'll use that preference
+    if (u.race.tags.containsName("preferredmount") && random.nextDouble() > 0.70) {
+      String preferredmount = u.race.tags.getValue("preferredmount").orElseThrow().get();
+      racialMountPreference = Command.args("animal", preferredmount);
+    }
+
+    // Get the suitable mount from the final mount pool that was compiled
+    selectedMount = getSuitableItem(
+      "mount",
+      u,
+      excluded,
+      null,
+      finalMountPool,
+      racialMountPreference
+    );
+
+    if (selectedMount == null) {
+      throw new IllegalArgumentException(
+        "Found no suitable Mount item for Unit (race: " +
+        u.race.toString() +
+        ", pose: " +
+        u.pose.toString() +
+        ") even after all safeties"
+      );
+    }
+
+    // Set the mount slot with the selected mount, and exclude the mount from further picks
+    u.setSlot("mount", selectedMount);
+    excluded.add(u.getSlot("mount"));
   }
 
   public List<ThemeInc> generateTargetProtChanceIncs(int prot, int range) {

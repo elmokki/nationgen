@@ -6,6 +6,7 @@ import java.util.stream.Stream;
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
 import nationGen.chances.ChanceDistribution;
+import nationGen.chances.EntityChances;
 import nationGen.chances.ThemeInc;
 import nationGen.entities.*;
 import nationGen.items.CustomItem;
@@ -35,9 +36,12 @@ public class SacredGenerator extends TroopGenerator {
   );
 
   private ItemSet usedItems = new ItemSet();
+  private CustomItemGen customItemGen;
 
   public SacredGenerator(NationGen g, Nation n, NationGenAssets assets) {
     super(g, n, assets, "sacgen");
+    customItemGen = new CustomItemGen(nation);
+
     this.nation.selectTroops()
       .forEach(u ->
         SLOTS.forEach(slot -> {
@@ -334,76 +338,99 @@ public class SacredGenerator extends TroopGenerator {
     }
   }
 
-  private void giveMagicWeapons(Unit u, int power) {
-    CustomItemGen ciGen = new CustomItemGen(nation);
+  private void customizeWeaponry(Unit unit, int power) {
     List<MagicItem> magicItems = ChanceIncHandler.retrieveFilters(
       "magicitems",
       "defaultprimary",
       assets.magicitems,
-      u.pose,
-      u.race
+      unit.pose,
+      unit.race
     );
 
-    CustomItem item = null;
+    // Retrieve unit's weapons
+    Item mainWeapon = unit.getSlot("weapon");
+    Item bonusWeapon = unit.getSlot("bonusweapon");
+    Item offhandWeapon = unit.getSlot("offhand");
 
-    if (!u.getSlot("weapon").tags.containsName("notepic")) item =
-      ciGen.getMagicItem(
-        u,
-        u.getSlot("weapon"),
+    // Check if main weapon should get customized
+    if (getsCustomWeapon(unit, mainWeapon, 1, false) == true) {
+      // Customize main weapon and get the cost of it
+      int powerCost = customizeWeapon(unit, "weapon", power, magicItems);
+
+      // Spend the power cost. Only relevant for whether bonus or offhand is also customized
+      power -= powerCost;
+    }
+
+    // Check if bonus weapon should get customized
+    if (getsCustomWeapon(unit, bonusWeapon, 0.25, power > 1) == true) {
+      // Customize bonus weapon and get the cost of it
+      int powerCost = customizeWeapon(unit, "bonusweapon", power, magicItems);
+
+      // Spend the power cost. Only relevant for whether offhand is also customized
+      power -= powerCost;
+    }
+
+    // Only offhand weapons get enhanced for now
+    if (offhandWeapon != null && offhandWeapon.isArmor() == true) {
+      return;
+    }
+
+    // Check if offhand weapon should get customized
+    if (getsCustomWeapon(unit, offhandWeapon, 0.25, power > 1) == true) {
+      // Customize offhand weapon
+      customizeWeapon(unit, "offhand", power, magicItems);
+    }
+  }
+
+  private Boolean getsCustomWeapon(Unit unit, Item weapon, double chance, Boolean isGuaranteed) {
+    if (weapon == null) {
+      return false;
+    }
+
+    Boolean canWeaponBeEpic = weapon.tags.containsName("notepic") == false;
+    Boolean isGuaranteedMagicWeapon = weapon.tags.containsName("guaranteedmagic");
+    double roll = random.nextDouble();
+    return canWeaponBeEpic && (
+      isGuaranteedMagicWeapon ||
+      isGuaranteed ||
+      roll <= chance
+    );
+  }
+
+  private int customizeWeapon(Unit unit, String slot, int power, List<MagicItem> magicItems) {
+    double powerUpChances = 1 - random.nextDouble();
+    Item weapon = unit.getSlot(slot);
+
+    if (weapon == null) {
+      return 0;
+    }
+
+    Optional<CustomItem> possibleWeapon =
+      this.customItemGen.customizeItem(
+        unit,
+        weapon,
         power,
-        random.nextDouble(),
+        // TODO: tie this powerUpChance to something, rather than being fully random?
+        powerUpChances,
         magicItems
       );
 
-    if (item != null) {
-      u.setSlot("weapon", item);
-
-      double loss = 1;
-      if (item.magicItem != null) loss = item.magicItem.power;
-
-      power -= loss;
+    if (possibleWeapon.isPresent() == false) {
+      return 0;
     }
 
-    if (
-      u.getSlot("bonusweapon") != null &&
-      !u.getSlot("bonusweapon").tags.containsName("notepic") &&
-      (random.nextDouble() > 0.75 ||
-        u.getSlot("bonusweapon").tags.containsName("guaranteedmagic") ||
-        power >= 2)
-    ) {
-      CustomItem item2 = ciGen.getMagicItem(
-        u,
-        u.getSlot("bonusweapon"),
-        1,
-        random.nextDouble(),
-        magicItems
-      );
-      if (item2 != null) u.setSlot("bonusweapon", item2);
-    }
-
-    if (
-      u.getSlot("offhand") != null &&
-      !u.getSlot("offhand").tags.containsName("notepic") &&
-      !u.getSlot("offhand").armor &&
-      (random.nextDouble() > 0.75 ||
-        u.getSlot("offhand").tags.containsName("guaranteedmagic") ||
-        power >= 3)
-    ) {
-      CustomItem item2 = ciGen.getMagicItem(
-        u,
-        u.getSlot("offhand"),
-        power,
-        random.nextDouble(),
-        magicItems
-      );
-      if (item2 != null) u.setSlot("offhand", item2);
-    }
+    CustomItem customWeapon = possibleWeapon.get();
+    double powerCost = (customWeapon.magicItem != null) ? customWeapon.magicItem.power : 1;
+    unit.setSlot(slot, customWeapon);
+    return (int)powerCost;
   }
 
   private void addInitialFilters(Unit u) {
     unitGen.addFreeTemplateFilters(u);
     addTemplateFilter(u, "sacredtemplates", "default_sacredtemplates");
-    if (random.nextDouble() < 0.1) {
+    double nextDouble = random.nextDouble();
+
+    if (nextDouble < 0.1) {
       addTemplateFilter(u, "sacredtemplates", "default_sacredtemplates");
     }
   }
@@ -444,8 +471,13 @@ public class SacredGenerator extends TroopGenerator {
     if (innateSacredPower.isPresent()) {
       power -= innateSacredPower.get();
 
-      if (sacred) power = Math.max(1, power);
-      else power = Math.max(0, power);
+      if (sacred) {
+        power = Math.max(1, power);
+      }
+
+      else {
+        power = Math.max(0, power);
+      }
     }
 
     u = getSacredUnit(u, power, sacred, epicchance);
@@ -460,10 +492,13 @@ public class SacredGenerator extends TroopGenerator {
       template.sacred = sacred;
       unitGen.handleMontagUnits(u, template, "montagsacreds");
       u.caponly = true;
-    } else {
+    }
+    
+    else {
       addSacredCostMultipliers(u, power);
       determineIfCapOnly(u, isFirstSacred);
     }
+
     return u;
   }
 
@@ -500,11 +535,17 @@ public class SacredGenerator extends TroopGenerator {
     Race race,
     boolean isFirstSacred
   ) {
+    // Store chances of a pose getting picked over others
     ChanceDistribution<String> poseChances = new ChanceDistribution<>();
 
+    // Store viable poses. This is an aid to be able to run handleChanceIncs() and filter based on those
+    List<Pose> possiblePoses = new ArrayList<>();
+
+    // The different unit roles and their national chances; modified by the unit's power
     ChanceDistribution<String> roles = new ChanceDistribution<>();
     String toGet = "sacred";
 
+    // Calculate a chance for the infantry role based on the racial chance and the power this unit rolled
     if (race.hasSpecialRole("infantry", sacred)) {
       roles.setChance(
         "infantry",
@@ -512,6 +553,7 @@ public class SacredGenerator extends TroopGenerator {
       );
     }
 
+    // Calculate a chance for the mounted role based on the racial chance and the power this unit rolled
     if (race.hasSpecialRole("mounted", sacred)) {
       roles.setChance(
         "mounted",
@@ -519,6 +561,7 @@ public class SacredGenerator extends TroopGenerator {
       );
     }
 
+    // Calculate a chance for the chariot role based on the racial chance and the power this unit rolled
     if (race.hasSpecialRole("chariot", sacred)) {
       roles.setChance(
         "chariot",
@@ -526,6 +569,7 @@ public class SacredGenerator extends TroopGenerator {
       );
     }
 
+    // Calculate a chance for the ranged role based on the racial chance and the power this unit rolled
     // Note that the first sacred of a nation should very rarely be ranged if any others are available
     if (race.hasSpecialRole("ranged", sacred) && !isFirstSacred) {
       roles.setChance(
@@ -536,36 +580,51 @@ public class SacredGenerator extends TroopGenerator {
       roles.setChance("ranged", 0.05);
     }
 
+    // Loop through the roles, eliminating them from the list as we go,
+    // and pick a pose with this role that qualifies as elite or sacred
     while (roles.hasPossible()) {
       String role = roles.getRandom(this.random);
       double roleChance = roles.getChance(role);
       roles.eliminate(role);
 
+      // Iterate through all race poses
       for (Pose p : race.poses) {
         boolean isSacred = false;
         String poseId = Integer.toString(p.hashCode());
-        double poseChance = p.basechance + roleChance;
 
-        for (String trole : p.roles) if (
+        // If the pose contains a role with "sacred", make this a sacred
+        for (String trole : p.roles) {
+          if (
           (trole.contains("sacred") && sacred) ||
           (p.tags.containsName("sacred") && sacred) ||
           (trole.contains("elite") && !sacred) ||
           (p.tags.containsName("elite") && !sacred)
-        ) isSacred = true;
+          ) {
+            isSacred = true;
+          }
+        }
 
+        // If this will be a sacred and the pose contains the role in question,
+        // add it as a suitable pose with the role chance as its weight
         if (
           isSacred &&
           ((sacred && p.roles.contains("sacred " + role)) ||
             (!sacred && p.roles.contains("elite " + role)) ||
             p.roles.contains(role))
         ) {
-          poseChances.setChance(poseId, poseChance);
-        } else if (
+          poseChances.setChance(poseId, roleChance);
+          possiblePoses.add(p);
+        }
+        
+        // If this will be an elite and the pose contains the role in question,
+        // add it as a suitable pose with the role chance as its weight
+        else if (
           ((race.tags.containsName("all_troops_sacred") && sacred) ||
             ((race.tags.containsName("all_troops_elite") && !sacred))) &&
           p.roles.contains(role)
         ) {
-          poseChances.setChance(poseId, poseChance);
+          poseChances.setChance(poseId, roleChance);
+          possiblePoses.add(p);
         }
       }
     }
@@ -580,7 +639,34 @@ public class SacredGenerator extends TroopGenerator {
       );
     }
 
-    String chosenPoseHashCode = poseChances.getRandom(this.random);
+    // Handle the inherent chance definitions for the selected poses.
+    // This is important! I.e. some foulspawn poses are just for montags,
+    // not meant to generate as standalone units of their own. This handles
+    // the #basechance, #chanceinc, #themeinc tags in the pose definitions.
+    EntityChances<Pose> poseChanceIncs = chandler.handleChanceIncs(race, possiblePoses);
+    ChanceDistribution<String> filteredChances = new ChanceDistribution<>();
+
+    // For each of the selected poses...
+    possiblePoses.forEach(p -> {
+      // ...get the role chance and calculated base/chanceinc chances
+      String poseId = Integer.toString(p.hashCode());
+      double poseChance = poseChances.getChance(poseId);
+      double chanceIncModifiedChance = poseChanceIncs.getChance(p);
+
+      // If either of those is 0, don't add the pose. For example, some poses
+      // are not meant to be picked as a unit, and only used to generate heroes
+      if (poseChance > 0 && chanceIncModifiedChance > 0) {
+        // If they should be picked, just average the two chances as the final chance
+        double averageChances = (poseChance + chanceIncModifiedChance) * 0.5;
+        filteredChances.setChance(poseId, averageChances);
+      }
+    });
+
+    // Get a random pose based on the final chances
+    String chosenPoseHashCode = filteredChances.getRandom(this.random);
+
+    // We have to do some yoyo here to get the actual pose object using the pose
+    // hashcode. This is because of having to use two separate data structures
     Optional<Pose> chosenPose = race.poses
       .stream()
       .filter(p -> (Integer.toString(p.hashCode())).equals(chosenPoseHashCode))
@@ -851,7 +937,9 @@ public class SacredGenerator extends TroopGenerator {
     this.addInitialFilters(u);
 
     // Add more stat upgrades, magic weapon, traits based on sacred's power
-    if (!unitGen.hasMontagPose(u)) this.addEpicness(u, sacred, power);
+    if (!unitGen.hasMontagPose(u)) {
+      this.addEpicness(u, sacred, power);
+    }
 
     // Equip
     for (String r : u.pose.roles) if (
@@ -1004,7 +1092,7 @@ public class SacredGenerator extends TroopGenerator {
 
       u.tags.remove("NEEDSMAGICWEAPON");
 
-      giveMagicWeapons(u, cost);
+      customizeWeaponry(u, cost);
     }
 
     this.armSpecialSlot(u, null, usedItems);
