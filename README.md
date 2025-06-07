@@ -8,10 +8,6 @@ Dominions 6 procedural content generation program.
 
 	Should be done in `data/gods/individual/gods-without-realm.txt`. They are mostly nation-specific gods, like the Risen Oracle. Some of them should be fleshed out with more detailed `#chanceinc`, like additional race checks, or theme checks (i.e. cold nations, heat nations, etc).
 
-- **Give mounts the resists of their riders**
-
-	This should probably only be done for riders that have heat/chill/poison auras, so that the mount doesn't die under them, but could also be done more rarely in other cases.
-
 - **Temperature protection**
 
 	Temperature protection in forts for nations with `#idealcold`. The modding command for this does not exist yet.
