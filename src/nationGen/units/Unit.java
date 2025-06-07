@@ -1637,7 +1637,7 @@ public class Unit {
 
     // Get weapons that were added directly through templates, like
     // natural weapons from bases (such as nagas)
-    this.commands
+    this.getCommands()
       .stream()
       .filter(c -> c.command.equals("#weapon") && c.args.getInt(0) > 0)
       .forEach(c -> {
@@ -1697,6 +1697,18 @@ public class Unit {
 
   public List<String> writeArmorLines() {
     List<String> lines = new ArrayList<>();
+    List<ItemData> armors = new ArrayList<>();
+
+    // Get armors that were added directly through templates,
+    // like bardings for mounts
+    this.getCommands()
+      .stream()
+      .filter(c -> c.command.equals("#armor") && c.args.getInt(0) > 0)
+      .forEach(c -> {
+        String id = c.args.getString(0);
+        ItemData armorData = new ItemData(id, "", nationGen);
+        armors.add(armorData);
+      });
 
     this.slotmap.getArmor()
     .filter(i -> {
@@ -1716,12 +1728,18 @@ public class Unit {
       // Only write items with actual ids. -1 ids are usually cosmetics
       return Integer.parseInt(i.id) > 0;
     })
+    .forEach(armor -> {
+      ItemData armorData = new ItemData(armor);
+      armors.add(armorData);
+    });
+
+    armors
     .forEach(armor -> lines.add(
       "#armor " +
-      armor.id +
+      armor.getId() +
       " --- " +
-      nationGen.armordb.GetValue(armor.id, "armorname") +
-      ((armor.name != null) ? " / " + armor.name : "")
+      armor.getDisplayName("armorname") +
+      ((armor.hasName()) ? " / " + armor.getName() : "")
     ));
 
     return lines;
