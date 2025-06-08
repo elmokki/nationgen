@@ -415,12 +415,12 @@ public class CustomItemGen {
 
       // If this property is an on or off, like "MR Negates"...
       else if (isBooleanProperty == true) {
-        if (originalValue == "0") {
+        if (originalValue.equals("0")) {
           continue;
         }
 
         // Just add the mod command without a value if the DB has it as 1
-        else if (originalValue == "1") {
+        else if (originalValue.equals("1")) {
           customItem.setCustomCommand(modCommand);
         }
       }
