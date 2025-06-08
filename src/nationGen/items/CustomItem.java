@@ -18,7 +18,10 @@ public class CustomItem extends Item {
   public CustomItem getCopy() {
     CustomItem item = this.getCustomItemCopy();
     item.olditem = this.olditem;
-    for (Command command : customItemCommands) item.customItemCommands.add(command.copy());
+
+    for (Command command : customItemCommands) {
+      item.customItemCommands.add(command.copy());
+    }
 
     return item;
   }
@@ -32,10 +35,6 @@ public class CustomItem extends Item {
   }
 
   public Optional<Command> getCustomCommand(String commandName) {
-    return this.customItemCommands.stream().filter(c -> c.command.equals(commandName)).findFirst();
-  }
-
-  public Optional<Command> getCustomCommands(String commandName) {
     return this.customItemCommands.stream().filter(c -> c.command.equals(commandName)).findFirst();
   }
 
