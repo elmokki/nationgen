@@ -1,18 +1,19 @@
 #newitem
-#id nothing
-#gameid -1
+#id blowpipe
+#gameid 34
+#sprite /graphics/ophidians/weapon/blowpipe.png
+#define "#weapon 576"
+#define "#gcost +6"
+#define "#prec +2"
 #theme occidental
-#theme oriental
 #theme austral
-#theme central
-#theme primitive
-#basechance 3
+#theme terrestrial
 #enditem
 
 #newitem
 #id mace
 #gameid 12
-#sprite /graphics/serpentmen/weapon/mace_oh.png
+#sprite /graphics/ophidians/weapon/mace.png
 #theme occidental
 #theme oriental
 #theme austral
@@ -24,7 +25,7 @@
 #newitem
 #id shortsword
 #gameid 6
-#sprite /graphics/serpentmen/weapon/shortsword_oh.png
+#sprite /graphics/ophidians/weapon/shortsword.png
 #theme austral
 #theme central
 #theme terrestrial
@@ -32,9 +33,20 @@
 #enditem
 
 #newitem
+#id broadsword
+#gameid 8
+#sprite /graphics/ophidians/weapon/broadsword.png
+#theme austral
+#theme central
+#theme terrestrial
+#theme iron
+#theme advanced
+#enditem
+
+#newitem
 #id shortsword_bronze
 #gameid 645
-#sprite /graphics/serpentmen/weapon/shortsword_bronze_oh.png
+#sprite /graphics/ophidians/weapon/shortsword_bronze.png
 #theme occidental
 #theme austral
 #theme central
@@ -44,9 +56,20 @@
 #enditem
 
 #newitem
+#id broadsword_bronze
+#gameid bronzebroadsword
+#sprite /graphics/ophidians/weapon/broadsword_bronze.png
+#theme austral
+#theme central
+#theme terrestrial
+#theme bronze
+#theme advanced
+#enditem
+
+#newitem
 #id falchion
 #gameid 10
-#sprite /graphics/serpentmen/weapon/falchion_oh.png
+#sprite /graphics/ophidians/weapon/falchion.png
 #theme austral
 #theme central
 #theme oriental
@@ -57,7 +80,7 @@
 #newitem
 #id kopesh
 #gameid 513
-#sprite /graphics/serpentmen/weapon/kopesh_oh.png
+#sprite /graphics/ophidians/weapon/kopesh.png
 #theme austral
 #theme central
 #theme occidental
@@ -68,7 +91,7 @@
 #newitem
 #id wakizashi
 #gameid 377
-#sprite /graphics/serpentmen/weapon/wakizashi_oh.png
+#sprite /graphics/ophidians/weapon/wakizashi.png
 #theme oriental
 #theme terrestrial
 #theme iron
@@ -77,7 +100,7 @@
 #newitem
 #id clubsword
 #gameid 451
-#sprite /graphics/serpentmen/weapon/clubsword_oh.png
+#sprite /graphics/ophidians/weapon/clubsword.png
 #theme occidental
 #theme terrestrial
 #enditem
@@ -86,7 +109,7 @@
 #newitem
 #id coralmace
 #gameid 45
-#sprite /graphics/serpentmen/weapon/coralmace_oh.png
+#sprite /graphics/ophidians/weapon/coralmace.png
 #theme occidental
 #theme oriental
 #theme austral
@@ -99,7 +122,7 @@
 #newitem
 #id coralshortsword
 #gameid coralshortsword
-#sprite /graphics/serpentmen/weapon/coralshortsword_oh.png
+#sprite /graphics/ophidians/weapon/coralshortsword.png
 #theme occidental
 #theme oriental
 #theme austral
@@ -113,7 +136,7 @@
 #newitem
 #id icemace
 #gameid 44
-#sprite /graphics/serpentmen/weapon/icemace_oh.png
+#sprite /graphics/ophidians/weapon/icemace.png
 #theme occidental
 #theme oriental
 #theme austral
@@ -125,9 +148,21 @@
 #enditem
 
 #newitem
+#id icesword
+#gameid 612
+#sprite /graphics/ophidians/weapon/icesword.png
+#theme occidental
+#theme austral
+#theme central
+#theme terrestrial
+#theme ice
+#chanceinc "personalcommand below #coldres 5 *0"
+#enditem
+
+#newitem
 #id icewakizashi
 #gameid 35
-#sprite /graphics/serpentmen/weapon/icewakizashi_oh.png
+#sprite /graphics/ophidians/weapon/icewakizashi.png
 #theme oriental
 #theme terrestrial
 #theme ice
@@ -137,7 +172,7 @@
 #newitem
 #id icefalchion
 #gameid 37
-#sprite /graphics/serpentmen/weapon/icefalchion_oh.png
+#sprite /graphics/ophidians/weapon/icefalchion.png
 #theme oriental
 #theme austral
 #theme central

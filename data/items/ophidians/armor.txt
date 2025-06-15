@@ -1,0 +1,596 @@
+-- Nada
+#newitem
+#id "nothing_terrestrial"
+#basechance 1
+#gameid -1
+#armor
+#theme "terrestrial"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#theme naked
+#theme primitive
+#milita
+#enditem
+
+#newitem
+#id "nothing_marine"
+#basechance 2
+#gameid -1
+#armor
+#theme "marine"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#theme naked
+#milita
+#enditem
+
+
+--- Leather
+#newitem
+#id "leather cuirass"
+#gameid 5
+#sprite /graphics/ophidians/armor/leathercuirass.png
+#armor
+#theme "leather"
+#theme "terrestrial"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#id "leather hauberk"
+#gameid 10
+#sprite /graphics/ophidians/armor/leatherhauberk.png
+#armor
+#theme "leather"
+#theme "terrestrial"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#id "sharkskin cuirass"
+#gameid 188
+#sprite /graphics/ophidians/armor/sharkskincuirass.png
+#armor
+#theme "leather"
+#theme "marine"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#id "sharkskin hauberk"
+#gameid 151
+#sprite /graphics/ophidians/armor/sharkskinhauberk.png
+#armor
+#theme "leather"
+#theme "marine"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#enditem
+
+--- Ring
+#newitem
+#id "ring cuirass"
+#gameid 6
+#sprite /graphics/ophidians/armor/ringcuirass.png
+#armor
+#basechance 2
+#theme "leather"
+#theme "iron"
+#theme "terrestrial"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#id "ring hauberk"
+#gameid 11
+#sprite /graphics/ophidians/armor/ringhauberk.png
+#armor
+#theme "leather"
+#theme "iron"
+#theme "terrestrial"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#id "bronze ring cuirass"
+#gameid 6
+#sprite /graphics/ophidians/armor/bronzeringcuirass.png
+#armor
+#basechance 2
+#theme "leather"
+#theme "bronze"
+#theme "terrestrial"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#id "bronze ring hauberk"
+#gameid 11
+#sprite /graphics/ophidians/armor/bronzeringhauberk.png
+#armor
+#theme "leather"
+#theme "bronze"
+#theme "terrestrial"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#id "sharkskin ring cuirass"
+#gameid 6
+#sprite /graphics/ophidians/armor/sharkringcuirass.png
+#armor
+#theme "leather"
+#theme "bronze"
+#theme "marine"
+#theme "advanced"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#id "sharkskin ring hauberk"
+#gameid 11
+#basechance 0.5
+#sprite /graphics/ophidians/armor/sharkringhauberk.png
+#armor
+#theme "leather"
+#theme "bronze"
+#theme "marine"
+#theme "advanced"
+#theme austral
+#theme central
+#enditem
+
+
+--- Scale
+#newitem
+#id "scale cuirass"
+#gameid 7
+#sprite /graphics/ophidians/armor/scalecuirass.png
+#armor
+#theme "iron"
+#theme "terrestrial"
+#theme occidental
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#id "scale hauberk"
+#gameid 12
+#sprite /graphics/ophidians/armor/scalehauberk.png
+#armor
+#basechance 0.5
+#theme "iron"
+#theme "terrestrial"
+#theme occidental
+#theme austral
+#theme central
+#enditem
+
+#newitem -- full scale
+#id "full scale"
+#gameid 17
+#sprite /graphics/ophidians/armor/fullscale.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "terrestrial"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#id "bronze scale cuirass"
+#gameid 142
+#sprite /graphics/ophidians/armor/bronzescalecuirass.png
+#armor
+#theme "bronze"
+#theme "terrestrial"
+#theme "marine"
+#theme occidental
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#id "bronze scale hauberk"
+#gameid 136
+#sprite /graphics/ophidians/armor/bronzescalehauberk.png
+#armor
+#basechance 0.5
+#theme "bronze"
+#theme "terrestrial"
+#theme "marine"
+#theme occidental
+#theme austral
+#theme central
+#enditem
+
+#newitem -- full scale
+#id "bronze full scale"
+#gameid bronzescale_full
+#sprite /graphics/ophidians/armor/fullbronzescale.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "terrestrial"
+#theme "marine"
+#theme austral
+#theme central
+#enditem
+
+
+--- Chain Mail
+#newitem
+#id "chain cuirass"
+#gameid 8
+#sprite /graphics/ophidians/armor/mailcuirass.png
+#armor
+#theme "iron"
+#theme "terrestrial"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#id "chain hauberk"
+#gameid 13
+#sprite /graphics/ophidians/armor/mailhauberk1.png
+#basechance 0.5
+#armor
+#theme "iron"
+#theme "terrestrial"
+#theme austral
+#theme central
+#enditem
+
+
+
+--- Plate
+#newitem
+#id "plate cuirass"
+#gameid 9
+#sprite /graphics/ophidians/armor/platecuirass.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "terrestrial"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#id "plate hauberk"
+#gameid 14
+#sprite /graphics/ophidians/armor/platehauberk.png
+#armor
+#theme "advanced"
+#theme "iron"
+#theme "terrestrial"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#id "bronze plate cuirass"
+#gameid 100
+#sprite /graphics/ophidians/armor/bronzecuirass.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "terrestrial"
+#theme "marine"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#id "bronze plate hauberk"
+#gameid 101
+#sprite /graphics/ophidians/armor/bronzehauberk.png
+#armor
+#theme "advanced"
+#theme "bronze"
+#theme "terrestrial"
+#theme "marine"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#id "shell hauberk"
+#gameid 114
+#sprite /graphics/ophidians/armor/shellhauberk.png
+#armor
+#theme "primitive"
+#theme "marine"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#id "shell armor"
+#gameid 140
+#sprite /graphics/ophidians/armor/shellarmor.png
+#armor
+#theme "marine"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#enditem
+
+
+-- Coral armor
+#newitem
+#id "coral ring cuirass"
+#gameid 6
+#sprite /graphics/ophidians/armor/coralringcuirass.png
+#armor
+#theme "leather"
+#theme "coral"
+#theme "marine"
+#theme "advanced"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#id "coral ring hauberk"
+#gameid 11
+#basechance 0.5
+#sprite /graphics/ophidians/armor/coralringhauberk.png
+#armor
+#theme "leather"
+#theme "coral"
+#theme "marine"
+#theme "advanced"
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#id "coral cuirass"
+#gameid 22
+#sprite /graphics/ophidians/armor/coralcuirass.png
+#armor
+#theme "coral"
+#theme "marine"
+#define "#poisonarmor 5"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#enditem
+
+#newitem
+#id "coral hauberk"
+#gameid 23
+#sprite /graphics/ophidians/armor/coralhauberk.png
+#armor
+#theme "coral"
+#theme "marine"
+#define "#poisonarmor 5"
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#enditem
+
+
+-- Oriental armor
+#newitem
+#id "ashigaru armor"
+#gameid 128
+#basechance 1
+#sprite /graphics/ophidians/armor/ashigaru.png
+#tag "eliteversion 'samurai armor'"
+#theme "iron"
+#theme "terrestrial"
+#theme "oriental"
+#armor
+#militia
+#enditem
+
+#newitem
+#id "samurai armor"
+#gameid 129
+#basechance 1
+#sprite /graphics/ophidians/armor/samurai.png
+#tag "eliteversion 'elite samurai armor'"
+#tag "eliteversion 'heavy samurai armor'"
+#theme "iron"
+#theme "terrestrial"
+#theme "oriental"
+#armor
+#enditem
+
+#newitem
+#id "elite samurai armor"
+#gameid 129
+#basechance 1
+#sprite /graphics/ophidians/armor/samurai2.png
+#tag "eliteversion 'elite heavy samurai armor'"
+#theme "iron"
+#theme "terrestrial"
+#theme "oriental"
+#theme "elite"
+#armor
+#enditem
+
+#newitem
+#id "heavy samurai armor"
+#gameid 130
+#basechance 1
+#sprite /graphics/ophidians/armor/heavysamurai.png
+#tag "eliteversion 'elite heavy samurai armor'"
+#theme "iron"
+#theme "terrestrial"
+#theme "oriental"
+#armor
+#enditem
+
+#newitem
+#id "elite heavy samurai armor"
+#gameid 130
+#basechance 1
+#sprite /graphics/ophidians/armor/heavysamurai2.png
+#theme "iron"
+#theme "terrestrial"
+#theme "oriental"
+#theme "elite"
+#armor
+#enditem
+
+
+-- Ice armor
+#newitem
+#id "ice studded cuirass"
+#gameid icestudded_cuirass
+#sprite /graphics/ophidians/armor/icestuddedcuirass.png
+#armor
+#theme "ice"
+#theme "leather"
+#theme "terrestrial"
+#theme austral
+#theme central
+#define "#iceprot +1"
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
+#enditem
+
+#newitem
+#id "ice studded hauberk"
+#gameid 52
+#sprite /graphics/ophidians/armor/icestuddedhauberk.png
+#armor
+#theme "ice"
+#theme "leather"
+#theme "terrestrial"
+#theme austral
+#theme central
+#define "#iceprot +1"
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
+#enditem
+
+#newitem
+#id "icicle cuirass"
+#gameid icicle_cuirass
+#sprite /graphics/ophidians/armor/iciclecuirass.png
+#armor
+#theme "ice"
+#theme "terrestrial"
+#theme austral
+#theme central
+#define "#iceprot +2"
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
+#enditem
+
+#newitem
+#id "icicle hauberk"
+#gameid 133
+#sprite /graphics/ophidians/armor/iciclehauberk.png
+#armor
+#theme "ice"
+#theme "terrestrial"
+#theme austral
+#theme central
+#define "#iceprot +2"
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
+#enditem
+
+#newitem
+#id "ice cuirass"
+#gameid 26
+#sprite /graphics/ophidians/armor/icecuirass.png
+#armor
+#theme "ice"
+#theme "terrestrial"
+#theme "marine"
+#theme occidental
+#theme austral
+#theme central
+#define "#iceprot +2"
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
+#enditem
+
+#newitem
+#id "ice hauberk"
+#gameid 27
+#sprite /graphics/ophidians/armor/icehauberk.png
+#armor
+#theme "ice"
+#theme "terrestrial"
+#theme "marine"
+#theme occidental
+#theme austral
+#theme central
+#define "#iceprot +2"
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
+#enditem
+
+#newitem
+#id "ice samurai armor"
+#gameid 26
+#basechance 1
+#sprite /graphics/ophidians/armor/icecuirass_oriental.png
+#tag "eliteversion 'ice heavy samurai armor'"
+#armor
+#theme "ice"
+#theme "terrestrial"
+#theme "marine"
+#theme "oriental"
+#define "#iceprot +2"
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
+#enditem
+
+#newitem
+#id "ice heavy samurai armor"
+#gameid 27
+#basechance 1
+#sprite /graphics/ophidians/armor/icehauberk_oriental.png
+#armor
+#theme "ice"
+#theme "terrestrial"
+#theme "marine"
+#theme "oriental"
+#define "#iceprot +2"
+#chanceinc "personalcommand below #coldres 5 *0"
+#chanceinc racetheme jungle_serpent *0.01
+#chanceinc racetheme desert_serpent *0
+#enditem

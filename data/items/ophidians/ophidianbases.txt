@@ -1,0 +1,118 @@
+#newitem
+#id "swamp serpentman"
+#theme swamp_serpent
+#gameid -1
+#sprite /graphics/ophidians/serpentman_swamp_base.png
+#define "#gcost +6"
+#define "#rpcost +6000"
+#define "#poisonres +25"
+#define "#poisoncloud +3"
+#define "#swampsurvival"
+#define "#coldblood"
+#define "#pooramphibian"
+#needs hands swamp
+#enditem
+
+#newitem
+#id "sea serpentman"
+#theme sea_serpent
+#gameid -1
+#sprite /graphics/ophidians/serpentman_sea_base.png
+#define "#prot -4"
+#define "#mapmove -2"
+#define "#ap +4"
+#define "#coldblood"
+#define "#amphibian"
+#needs hands sea
+#enditem
+
+#newitem
+#id "jungle serpentman"
+#theme jungle_serpent
+#gameid -1
+#sprite /graphics/ophidians/serpentman_jungle_base.png
+#define "#heal"
+#define "#forestsurvival"
+#define "#coldblood"
+#define "#swimming"
+#needs hands jungle
+#enditem
+
+#newitem
+#id "mountain serpentman"
+#theme mountain_serpent
+#gameid -1
+#sprite /graphics/ophidians/serpentman_mountain_base.png
+#define "#prot +3"
+#define "#coldres +5"
+#define "#mountainsurvival"
+#define "#swimming"
+#needs hands mountain
+#enditem
+
+#newitem
+#id "deep serpentman"
+#theme deep_serpent
+#gameid -1
+#sprite /graphics/ophidians/serpentman_deep_base.png
+#define "#gcost +1"
+#define "#rpcost +1000"
+#define "#str -1"
+#define "#att -1"
+#define "#def -1"
+#define "#ap -2"
+#define "#stealthy +0"
+#define "#darkpower +2"
+#define "#darkvision 100"
+#define "#coldblood"
+#define "#swimming"
+#needs hands deep
+#enditem
+
+#newitem
+#id "blind serpentman"
+#theme blind_serpent
+#gameid -1
+#sprite /graphics/ophidians/serpentman_blind_base.png
+#define "#gcost +2"
+#define "#rpcost +2000"
+#define "#prot -4"
+#define "#siegebonus +1"
+#define "#blind"
+#define "#amphibian"
+#define "#eyes 0"
+#define "#coldblood"
+#needs hands blind
+#enditem
+
+#newitem
+#id "tundra serpentman"
+#theme tundra_serpent
+#gameid -1
+#sprite /graphics/ophidians/serpentman_frost_base.png
+#define "#gcost +2"
+#define "#rpcost +2000"
+#define "#prot -2"
+#define "#fireres -5"
+#define "#coldres +15"
+#define "#cold +3"
+#define "#coldpower +1"
+#define "#iceprot +1"
+#define "#wastesurvival"
+#needs hands tundra
+#enditem
+
+#newitem
+#id "desert serpentman"
+#theme desert_serpent
+#gameid -1
+#sprite /graphics/ophidians/serpentman_flame_base.png
+#define "#gcost +2"
+#define "#rpcost +2000"
+#define "#fireres +15"
+#define "#heat +3"
+#define "#firepower +1"
+#define "#coldblood"
+#define "#wastesurvival"
+#needs hands desert
+#enditem
