@@ -51,6 +51,9 @@ public class Unit {
   public List<Filter> appliedFilters = new ArrayList<>();
   public boolean polished = false;
   public boolean invariantMonster = false; // Is the unit a monster that must be used as-is instead of copying? (E.g., hydras)
+  
+  static final public int HUMAN_SIZE = 3;
+
   private Nation nation = null;
   private List<Command> percentCostCommands = new ArrayList<>();
 
@@ -657,27 +660,36 @@ public class Unit {
   }
 
   private int getResCost(boolean useSize, List<Command> commands) {
-    int size = 2;
+    int size = Unit.HUMAN_SIZE;
     int ressize = -1;
     int extrares = 0;
 
     Dom3DB weapondb = nationGen.weapondb;
     Dom3DB armordb = nationGen.armordb;
 
-    for (Command c : commands) if (c.command.equals("#rcost")) extrares +=
-    c.args.get(0).getInt();
-    else if (c.command.equals("#size")) size = c.args.get(0).getInt();
-    else if (c.command.equals("#ressize")) ressize = c.args.get(0).getInt();
+    for (Command c : commands) {
+      if (c.command.equals("#rcost")) {
+        extrares += c.args.get(0).getInt();
+      }
+
+      else if (c.command.equals("#size")) {
+        size = c.args.get(0).getInt();
+      }
+
+      else if (c.command.equals("#ressize")) {
+        ressize = c.args.get(0).getInt();
+      }
+    }
 
     int res =
       this.slotmap.items()
-        .filter(i -> !i.id.equals("-1"))
+        .filter(i -> i.isCustomIdResolved())
         .mapToInt(i -> (i.armor ? armordb : weapondb).GetInteger(i.id, "res"))
         .sum();
 
     if (useSize) {
-      if (ressize > 0) res = (ressize * res) / 2;
-      else res = (size * res) / 2;
+      if (ressize > 0) res = (ressize * res) / Unit.HUMAN_SIZE;
+      else res = (size * res) / Unit.HUMAN_SIZE;
     }
 
     // Dom3 minimum res amount is 1.
