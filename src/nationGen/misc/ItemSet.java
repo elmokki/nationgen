@@ -139,7 +139,7 @@ public class ItemSet extends ArrayList<Item> {
     if (i == null) return true;
 
     for (Item item : this) {
-      if (!item.id.equals("-1")) {
+      if (item.isCustomIdResolved()) {
         if (item.id.equals(i.id) && i.armor == item.armor) return true;
       } else if (item.id.equals(i.id) && item.name.equals(i.name)) return true;
     }
@@ -182,7 +182,7 @@ public class ItemSet extends ArrayList<Item> {
         if (!p.roles.contains(role)) continue;
 
         if (p.getItems(i.slot) != null) for (Item i2 : p.getItems(i.slot)) {
-          if (i2.id.equals(i.id) && i.id.equals("-1")) newlist.add(i2);
+          if (i2.id.equals(i.id) && i.isCustomIdResolved() == false) newlist.add(i2);
           else if (i2.id.equals(i.id) && i.name.equals(i2.name)) newlist.add(
             i2
           );
@@ -227,7 +227,7 @@ public class ItemSet extends ArrayList<Item> {
       if (p.getItems(i.slot) != null) for (Item i2 : p.getItems(i.slot)) {
         if (
           i.id.equals(i2.id) &&
-          !i.id.equals("-1") &&
+          i.isCustomIdResolved() &&
           (i.name.equals(i2.name) ||
             i.sprite.equals(i2.name) ||
             i2.tags.contains("replacement", i.name))
@@ -242,7 +242,7 @@ public class ItemSet extends ArrayList<Item> {
     if (newlist.possibleItems() == 0) {
       for (Item i : this) {
         if (p.getItems(i.slot) != null) for (Item i2 : p.getItems(i.slot)) {
-          if (i.id.equals(i2.id) && !i.id.equals("-1")) newlist.add(i2);
+          if (i.id.equals(i2.id) && i.isCustomIdResolved()) newlist.add(i2);
           else if (
             i.id.equals(i2.id) &&
             (i.name.equals(i2.name) || i.sprite.equals(i2.sprite))
@@ -302,7 +302,7 @@ public class ItemSet extends ArrayList<Item> {
 
   public ItemSet filterAbstracts() {
     ItemSet newlist = new ItemSet();
-    for (Item i : this) if (!i.id.equals("-1")) newlist.add(i);
+    for (Item i : this) if (i.isCustomIdResolved()) newlist.add(i);
 
     return newlist;
   }
@@ -329,7 +329,7 @@ public class ItemSet extends ArrayList<Item> {
           i2.armor == i.armor &&
           i2.id.equals(i.id) &&
           i.slot.equals(i2.slot) &&
-          (!i.id.equals("-1") || !i.id.equals("-2"))
+          (i.isCustomIdResolved() || !i.id.equals("-2"))
         ) derps.add(i2);
         else if (i2.name.equals(i.name) && i.slot.equals(i2.slot)) derps.add(
           i2

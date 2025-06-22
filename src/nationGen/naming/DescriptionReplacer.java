@@ -126,7 +126,7 @@ public class DescriptionReplacer {
     for (Unit u : units) {
       for (String str : slots) {
         Item i = u.getSlot(str);
-        if (i != null && !i.armor && !i.id.equals("-1")) {
+        if (i != null && !i.armor && i.isCustomIdResolved()) {
           if (
             !n.nationGen.weapondb.GetValue(i.id, "weapon_name").equals("") &&
             !weapons.contains(
@@ -161,7 +161,7 @@ public class DescriptionReplacer {
       for (Unit u : units) {
         for (String slot : slots) {
           Item i = u.getSlot(slot);
-          if (i != null && !i.armor && !i.id.equals("-1")) {
+          if (i != null && !i.armor && i.isCustomIdResolved()) {
             if (
               !n.nationGen.weapondb.GetValue(i.id, "weapon_name").equals("") &&
               !weapons.contains(
@@ -218,7 +218,7 @@ public class DescriptionReplacer {
 
       int prot = 0;
 
-      if (i != null && i.armor && !i.id.equals("-1")) {
+      if (i != null && i.armor && i.isCustomIdResolved()) {
         prot = n.nationGen.armordb.GetInteger(i.id, "prot", 0);
 
         if (

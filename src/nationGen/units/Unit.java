@@ -929,12 +929,12 @@ public class Unit {
       getClass() != ShapeChangeUnit.class
     ) if (
       this.getSlot("weapon") == null ||
-      this.getSlot("weapon").id.equals("-1") ||
+      this.getSlot("weapon").isCustomIdResolved() == false ||
       nationGen.weapondb.GetInteger(getSlot("weapon").id, "rng") != 0
     ) {
       if (
         this.getSlot("bonusweapon") == null ||
-        this.getSlot("bonusweapon").id.equals("-1") ||
+        this.getSlot("bonusweapon").isCustomIdResolved() == false ||
         nationGen.weapondb.GetInteger(getSlot("bonusweapon").id, "rng") != 0
       ) {
         this.commands.add(
@@ -1352,12 +1352,12 @@ public class Unit {
     if (
       armorprot == 0 &&
       getSlot("armor") != null &&
-      !getSlot("armor").id.equals("-1")
+      getSlot("armor").isCustomIdResolved()
     ) armorprot = 10;
     if (
       helmetprot == 0 &&
       getSlot("helmet") != null &&
-      !getSlot("helmet").id.equals("-1")
+      getSlot("helmet").isCustomIdResolved()
     ) helmetprot = 10;
 
     double prot = (0.2 * (double) helmetprot + 0.8 * (double) armorprot);
@@ -1382,7 +1382,7 @@ public class Unit {
       if (
         getSlot(slot) != null &&
         getSlot(slot).armor &&
-        !getSlot(slot).id.equals("-1")
+        getSlot(slot).isCustomIdResolved()
       ) {
         eqenc += armordb.GetInteger(getSlot(slot).id, "enc", 0);
       }
@@ -1408,7 +1408,7 @@ public class Unit {
     Dom3DB weapondb = nationGen.weapondb;
 
     for (String slot : slotmap.getSlots()) {
-      if (getSlot(slot) != null && !getSlot(slot).id.equals("-1")) {
+      if (getSlot(slot) != null && getSlot(slot).isCustomIdResolved()) {
         if (getSlot(slot).armor) {
           eqdef += armordb.GetInteger(getSlot(slot).id, "def", 0);
         }
@@ -1428,7 +1428,7 @@ public class Unit {
     Dom3DB armordb = nationGen.armordb;
 
     for (String slot : slotmap.getSlots()) {
-      if (getSlot(slot) != null && !getSlot(slot).id.equals("-1")) {
+      if (getSlot(slot) != null && getSlot(slot).isCustomIdResolved()) {
         if (getSlot(slot).armor) {
           boolean isShield = armordb.GetInteger(getSlot(slot).id, "type", 0) == 4;
 
@@ -1447,7 +1447,7 @@ public class Unit {
     Dom3DB armordb = nationGen.armordb;
 
     for (String slot : slotmap.getSlots()) {
-      if (getSlot(slot) != null && !getSlot(slot).id.equals("-1")) {
+      if (getSlot(slot) != null && getSlot(slot).isCustomIdResolved()) {
         if (getSlot(slot).armor) {
           boolean isShield = armordb.GetInteger(getSlot(slot).id, "type", 0) == 4;
 

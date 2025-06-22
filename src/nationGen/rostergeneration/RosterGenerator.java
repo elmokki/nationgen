@@ -420,7 +420,7 @@ public class RosterGenerator {
         if (t.template.pose.roles.contains(role)) {
           pointless.add(t.armor);
           for (Item i : t.template.pose.getItems("armor")) if (
-            i.id.equals(t.armor.id) && !i.id.equals("-1")
+            i.id.equals(t.armor.id) && i.isCustomIdResolved()
           ) pointless.add(i);
         }
       }
