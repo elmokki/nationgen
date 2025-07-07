@@ -609,7 +609,8 @@
 #new secondshape
 #id "goat_light_bronze_barding_mount"
 #command "#copystats 2227"
-#command "#copyspr 2227"
+#command "#spr1 ./graphics/hoburg/mounts/goat_armored_light_bronze.png"
+#command "#spr2 shift"
 #command "#size 3"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
@@ -621,7 +622,8 @@
 #new secondshape
 #id "goat_light_scale_barding_mount"
 #command "#copystats 2227"
-#command "#copyspr 2227"
+#command "#spr1 ./graphics/hoburg/mounts/goat_armored_light_scale.png"
+#command "#spr2 shift"
 #command "#size 3"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
@@ -633,7 +635,8 @@
 #new secondshape
 #id "goat_bronze_mail_barding_mount"
 #command "#copystats 2227"
-#command "#copyspr 2227"
+#command "#spr1 ./graphics/hoburg/mounts/goat_armored_mail_bronze.png"
+#command "#spr2 shift"
 #command "#size 3"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
@@ -645,7 +648,8 @@
 #new secondshape
 #id "goat_iron_mail_barding_mount"
 #command "#copystats 2227"
-#command "#copyspr 2227"
+#command "#spr1 ./graphics/hoburg/mounts/goat_armored_mail.png"
+#command "#spr2 shift"
 #command "#size 3"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
@@ -657,7 +661,8 @@
 #new secondshape
 #id "goat_cataphract_barding_mount"
 #command "#copystats 2227"
-#command "#copyspr 2227"
+#command "#spr1 ./graphics/hoburg/mounts/goat_armored_cataphract.png"
+#command "#spr2 shift"
 #command "#size 3"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
@@ -669,7 +674,8 @@
 #new secondshape
 #id "goat_bronze_barding_mount"
 #command "#copystats 2227"
-#command "#copyspr 2227"
+#command "#spr1 ./graphics/hoburg/mounts/goat_armored_bronze.png"
+#command "#spr2 shift"
 #command "#size 3"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
@@ -681,7 +687,8 @@
 #new secondshape
 #id "goat_plate_barding_mount"
 #command "#copystats 2227"
-#command "#copyspr 2227"
+#command "#spr1 ./graphics/hoburg/mounts/goat_armored_plate.png"
+#command "#spr2 shift"
 #command "#size 3"
 #command "#magicboost 53 -1"
 #command "#transformation 0"
@@ -3115,7 +3122,8 @@
 
 #new secondshape
 #id "beast_bat_nerfed_leather_barding_mount"
-#command "#copyspr 1357"
+#command "#spr1 ./graphics/hoburg/mounts/giant_bat_armored_leather.png"
+#command "#spr2 shift"
 #command "#name 'Beast Bat'"
 #command "#weapon 251"
 #command "#size 3"
@@ -3141,7 +3149,8 @@
 
 #new secondshape
 #id "beast_bat_nerfed_light_scale_barding_mount"
-#command "#copyspr 1357"
+#command "#spr1 ./graphics/hoburg/mounts/giant_bat_armored_light_scale.png"
+#command "#spr2 shift"
 #command "#name 'Beast Bat'"
 #command "#weapon 251"
 #command "#size 3"
@@ -3167,7 +3176,8 @@
 
 #new secondshape
 #id "beast_bat_nerfed_iron_mail_barding_mount"
-#command "#copyspr 1357"
+#command "#spr1 ./graphics/hoburg/mounts/giant_bat_armored_mail.png"
+#command "#spr2 shift"
 #command "#name 'Beast Bat'"
 #command "#weapon 251"
 #command "#size 3"
@@ -6132,7 +6142,7 @@
 
 #new secondshape
 #id "bear_leather_barding_mount"
-#command "#spr1 ./graphics/mounts/standard/bear_half_armored.png"
+#command "#spr1 ./graphics/mounts/standard/bear_small_armored_leather.png"
 #command "#spr2 ./graphics/mounts/standard/bear_small_upright.png"
 #command "#magicboost 53 -5"
 #command "#name Bear"
@@ -12994,7 +13004,7 @@
 #new secondshape
 #id "black_dog_leather_barding_mount"
 #command "#copystats 1560"
-#command "#spr1 ./graphics/hoburg/mounts/blackdog.png"
+#command "#spr1 ./graphics/hoburg/mounts/blackdog_armored_leather.png"
 #command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#transformation 0"
@@ -13279,7 +13289,8 @@
 #new secondshape
 #id "barghest_light_bronze_barding_mount"
 #command "#name 'Barghest'"
-#command "#copyspr 1768"
+#command "#spr1 ./graphics/hoburg/mounts/barghest_light_bronze_barding.png"
+#command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#size 4"
 #command "#mapmove 20"
@@ -13311,7 +13322,8 @@
 #new secondshape
 #id "barghest_light_scale_barding_mount"
 #command "#name 'Barghest'"
-#command "#copyspr 1768"
+#command "#spr1 ./graphics/hoburg/mounts/barghest_light_scale_barding.png"
+#command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#size 4"
 #command "#mapmove 20"
@@ -13343,7 +13355,8 @@
 #new secondshape
 #id "barghest_mail_barding_mount"
 #command "#name 'Barghest'"
-#command "#copyspr 1768"
+#command "#spr1 ./graphics/hoburg/mounts/barghest_mail_barding.png"
+#command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#size 4"
 #command "#mapmove 20"
@@ -13374,7 +13387,8 @@
 #new secondshape
 #id "barghest_gossamer_barding_mount"
 #command "#name 'Barghest'"
-#command "#copyspr 1768"
+#command "#spr1 ./graphics/hoburg/mounts/barghest_gossamer_barding.png"
+#command "#spr2 shift"
 #command "#magicboost 53 -5"
 #command "#size 4"
 #command "#mapmove 20"
