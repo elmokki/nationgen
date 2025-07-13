@@ -160,7 +160,7 @@
 
 
 #newitem
-#id "beast_bat_nerfed"
+#id "giant_bat"
 #gameid -1
 #sprite /graphics/hoburg/mounts/giant_bat.png
 #armor
@@ -168,7 +168,7 @@
 #offsetx 30
 #needs overlay giant_bat_overlay
 #needs legs pants2
-#define "#mountmnr 'beast_bat_nerfed_mount'"
+#define "#mountmnr 'giant_bat_mount'"
 #description "The giant bat fight until the end of the battle if the rider perishes"
 #theme "primitive"
 #theme "occidental"
@@ -190,7 +190,7 @@
 #enditem
 
 #newitem
-#id "beast_bat_nerfed_leather_barding"
+#id "giant_bat_leather_barding"
 #gameid -1
 #sprite /graphics/hoburg/mounts/giant_bat_armored_leather.png
 #armor
@@ -198,7 +198,7 @@
 #offsetx 30
 #needs overlay giant_bat_overlay
 #needs legs pants2
-#define "#mountmnr 'beast_bat_nerfed_leather_barding_mount'"
+#define "#mountmnr 'giant_bat_leather_barding_mount'"
 #description "The giant bat fight until the end of the battle if the rider perishes"
 #theme "primitive"
 #theme "occidental"
@@ -276,8 +276,8 @@
 #newitem
 #id "red_ant"
 #gameid -1
-#sprite /graphics/mounts/standard/redant.png
-#needs overlay redant_overlay
+#sprite /graphics/mounts/standard/red_ant.png
+#needs overlay red_ant_overlay
 #armor
 #define "#mountmnr 'red_ant_mount'"
 #description "If the rider dies, the ant will carry on fighting until the end of the battle."
@@ -301,8 +301,8 @@
 #newitem
 #id "red_ant_leather_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/redant.png
-#needs overlay redant_overlay
+#sprite /graphics/mounts/standard/red_ant.png
+#needs overlay red_ant_overlay
 #armor
 #define "#mountmnr 'red_ant_leather_barding_mount'"
 #description "If the rider dies, the ant will carry on fighting until the end of the battle."
@@ -386,8 +386,8 @@
 #newitem
 #id "black_swan"
 #gameid -1
-#sprite /graphics/mounts/standard/swan_black.png
-#needs overlay swan_black_overlay
+#sprite /graphics/mounts/standard/black_swan.png
+#needs overlay black_swan_overlay
 #armor
 #define "#mountmnr 'black_swan_mount'"
 #offsetx 0
@@ -408,8 +408,8 @@
 #newitem
 #id "black_swan_leather_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/swan_black.png
-#needs overlay swan_black_overlay
+#sprite /graphics/mounts/standard/black_swan_armored_leather.png
+#needs overlay black_swan_overlay
 #armor
 #define "#mountmnr 'black_swan_leather_barding_mount'"
 #offsetx 0
@@ -431,7 +431,7 @@
 #newitem
 #id "giant_rat"
 #gameid -1
-#sprite /graphics/mounts/standard/giantrat.png
+#sprite /graphics/mounts/standard/giant_rat.png
 #armor
 #define "#mountmnr 'giant_rat_mount'"
 #description "If the rider dies, the rat will carry on fighting until the end of the battle."
@@ -456,7 +456,7 @@
 #newitem
 #id "giant_rat_leather_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/giantrat.png
+#sprite /graphics/mounts/standard/giant_rat.png
 #armor
 #define "#mountmnr 'giant_rat_leather_barding_mount'"
 #description "If the rider dies, the rat will carry on fighting until the end of the battle."
@@ -569,7 +569,7 @@
 #newitem
 #id "black_unicorn_gossamer_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/black_unicorn.png
+#sprite /graphics/mounts/standard/black_unicorn_armored_gossamer.png
 #offsetx 30
 #offsety 36
 #armor
