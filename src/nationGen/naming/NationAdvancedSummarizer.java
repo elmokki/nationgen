@@ -324,7 +324,7 @@ public class NationAdvancedSummarizer {
     return u.slotmap
       .items()
       .filter(i -> !i.armor)
-      .filter(i -> !i.id.equals("-1"))
+      .filter(i -> i.isCustomIdResolved())
       .map(i -> weapondb.GetValue(i.id, "weapon_name"))
       .collect(Collectors.toList());
   }
@@ -333,7 +333,7 @@ public class NationAdvancedSummarizer {
     return u.slotmap
       .items()
       .filter(i -> i.armor)
-      .filter(i -> !i.id.equals("-1"))
+      .filter(i -> i.isCustomIdResolved())
       .map(i -> armordb.GetValue(i.id, "armorname"))
       .collect(Collectors.toList());
   }

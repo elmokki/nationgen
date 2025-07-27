@@ -1,0 +1,147 @@
+#newitem
+#id nothing
+#gameid -1
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#theme primitive
+#basechance 3
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/ophidians/weapon/mace_oh.png
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#theme terrestrial
+#theme primitive
+#enditem
+
+#newitem
+#id shortsword
+#gameid 6
+#sprite /graphics/ophidians/weapon/shortsword_oh.png
+#theme austral
+#theme central
+#theme terrestrial
+#theme iron
+#enditem
+
+#newitem
+#id shortsword_bronze
+#gameid 645
+#sprite /graphics/ophidians/weapon/shortsword_bronze_oh.png
+#theme occidental
+#theme austral
+#theme central
+#theme terrestrial
+#theme marine
+#theme bronze
+#enditem
+
+#newitem
+#id falchion
+#gameid 10
+#sprite /graphics/ophidians/weapon/falchion_oh.png
+#theme austral
+#theme central
+#theme oriental
+#theme terrestrial
+#theme iron
+#enditem
+
+#newitem
+#id kopesh
+#gameid 513
+#sprite /graphics/ophidians/weapon/kopesh_oh.png
+#theme austral
+#theme central
+#theme occidental
+#theme terrestrial
+#theme bronze
+#enditem
+
+#newitem
+#id wakizashi
+#gameid 377
+#sprite /graphics/ophidians/weapon/wakizashi_oh.png
+#theme oriental
+#theme terrestrial
+#theme iron
+#enditem
+
+#newitem
+#id clubsword
+#gameid 451
+#sprite /graphics/ophidians/weapon/clubsword_oh.png
+#theme occidental
+#theme terrestrial
+#enditem
+
+-- Coral weapons
+#newitem
+#id coralmace
+#gameid 45
+#sprite /graphics/ophidians/weapon/coralmace_oh.png
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#theme marine
+#theme coral
+#theme primitive
+#enditem
+
+#newitem
+#id coralshortsword
+#gameid coralshortsword
+#sprite /graphics/ophidians/weapon/coralshortsword_oh.png
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#theme marine
+#theme coral
+#enditem
+
+
+-- Ice weapons
+#newitem
+#id icemace
+#gameid 44
+#sprite /graphics/ophidians/weapon/icemace_oh.png
+#theme occidental
+#theme oriental
+#theme austral
+#theme central
+#theme terrestrial
+#theme ice
+#theme primitive
+#chanceinc "personalcommand below #coldres 5 *0"
+#enditem
+
+#newitem
+#id icewakizashi
+#gameid 35
+#sprite /graphics/ophidians/weapon/icewakizashi_oh.png
+#theme oriental
+#theme terrestrial
+#theme ice
+#chanceinc "personalcommand below #coldres 5 *0"
+#enditem
+
+#newitem
+#id icefalchion
+#gameid 37
+#sprite /graphics/ophidians/weapon/icefalchion_oh.png
+#theme oriental
+#theme austral
+#theme central
+#theme terrestrial
+#theme ice
+#chanceinc "personalcommand below #coldres 5 *0"
+#enditem

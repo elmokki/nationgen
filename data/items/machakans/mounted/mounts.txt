@@ -12,7 +12,7 @@
 #define "#mapmove 22"
 #define "#ap 24"
 #define "#mountmnr 'riding_horse_mount'"
-#define "#ressize 2"
+#define "#ressize 4"
 #define "#enc 3"
 #theme "light"
 #tag "animal horse"
@@ -42,7 +42,7 @@
 #newitem
 #id "war_horse_light_scale_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/lightcatapract1.png
+#sprite /graphics/mounts/standard/war_horse_light_scale_barding.png
 #armor
 #offsetx -3
 #needs overlay 5
@@ -76,8 +76,8 @@
 #newitem
 #id "redguard_war_horse_cataphract_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/redguardmount.png
-#recolormask /graphics/mounts/standard/redguardmount_recolormask.png
+#sprite /graphics/mounts/standard/redguard_horse.png
+#recolormask /graphics/mounts/standard/redguard_horse_recolormask.png
 #armor
 #needs overlay redguardoverlay
 #offsety 1
@@ -439,7 +439,7 @@
 #newitem
 #id "black_unicorn_leather_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/black_unicorn.png
+#sprite /graphics/mounts/standard/black_unicorn_armored_leather.png
 #armor
 #offsetx 27
 #offsety 60
@@ -460,7 +460,7 @@
 #newitem
 #id "black_unicorn_light_scale_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/black_unicorn.png
+#sprite /graphics/mounts/standard/black_unicorn_armored_light_scale.png
 #armor
 #offsetx 27
 #offsety 60
@@ -481,7 +481,7 @@
 #newitem
 #id "black_unicorn_cataphract_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/black_unicorn.png
+#sprite /graphics/mounts/standard/black_unicorn_armored_cataphract.png
 #armor
 #offsetx 27
 #offsety 60
@@ -501,7 +501,7 @@
 #newitem
 #id "black_unicorn_plate_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/black_unicorn.png
+#sprite /graphics/mounts/standard/black_unicorn_armored_plate.png
 #armor
 #offsetx 27
 #offsety 60
@@ -1182,8 +1182,8 @@
 #newitem
 #id "winged_lion"
 #gameid -1
-#sprite /graphics/mounts/standard/wingedlion.png
-#needs overlay wingedlion_overlay
+#sprite /graphics/mounts/standard/winged_lion.png
+#needs overlay winged_lion_overlay
 #armor
 #offsety 5
 #offsetx -5
@@ -1198,8 +1198,8 @@
 #newitem
 #id "winged_lion_leather_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/wingedlion.png
-#needs overlay wingedlion_overlay
+#sprite /graphics/mounts/standard/winged_lion.png
+#needs overlay winged_lion_overlay
 #armor
 #offsety 5
 #offsetx -5
@@ -1216,8 +1216,8 @@
 #newitem
 #id "winged_lion_light_scale_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/wingedlion.png
-#needs overlay wingedlion_overlay
+#sprite /graphics/mounts/standard/winged_lion.png
+#needs overlay winged_lion_overlay
 #armor
 #offsety 5
 #offsetx -5
@@ -1233,8 +1233,8 @@
 #newitem
 #id "winged_lion_cataphract_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/wingedlion.png
-#needs overlay wingedlion_overlay
+#sprite /graphics/mounts/standard/winged_lion.png
+#needs overlay winged_lion_overlay
 #armor
 #offsety 5
 #offsetx -5
@@ -1251,8 +1251,8 @@
 #newitem
 #id "winged_lion_plate_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/wingedlion.png
-#needs overlay wingedlion_overlay
+#sprite /graphics/mounts/standard/winged_lion.png
+#needs overlay winged_lion_overlay
 #armor
 #offsety 5
 #offsetx -5

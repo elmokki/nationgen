@@ -592,7 +592,7 @@
 #newitem
 #id "white_tiger"
 #gameid -1
-#sprite /graphics/mounts/standard/whitetiger.png
+#sprite /graphics/mounts/standard/white_tiger.png
 #armor
 #offsetx -3
 #offsety -11
@@ -610,7 +610,7 @@
 #newitem
 #id "white_tiger_turtle_shell_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/whitetiger_armored_turtleshell.png
+#sprite /graphics/mounts/standard/white_tiger_armored_turtleshell.png
 #armor
 #offsetx -3
 #offsety -11
@@ -629,7 +629,7 @@
 #newitem
 #id "white_tiger_coral_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/whitetiger_armored_coral.png
+#sprite /graphics/mounts/standard/white_tiger_armored_coral.png
 #armor
 #offsetx -3
 #offsety -11
@@ -647,7 +647,7 @@
 #newitem
 #id "white_tiger_ice_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/whitetiger_armored_ice.png
+#sprite /graphics/mounts/standard/white_tiger_armored_ice.png
 #armor
 #offsetx -3
 #offsety -11
@@ -664,7 +664,7 @@
 #newitem
 #id "white_tiger_meteorite_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/whitetiger_armored_meteorite.png
+#sprite /graphics/mounts/standard/white_tiger_armored_meteorite.png
 #armor
 #offsetx -3
 #offsety -11
@@ -792,6 +792,62 @@
 #tag "animal jaguar"
 #tag "guaranteedprefix jaguar"
 #basechance 1
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "black_jaguar"
+#gameid -1
+#sprite /graphics/mounts/standard/black_jaguar.png
+#armor
+#offsetx -6
+#offsety -9
+#define "#mountmnr 'black_jaguar_mount'"
+#define "#swimming"
+#description "The black jaguar will persist even if the rider dies."
+#theme "specialmount"
+#theme "light"
+#tag "animal panther"
+#tag "guaranteedprefix panther"
+#tag "minprot 0"
+#tag "maxprot 12"
+#basechance 1.5
+#enditem
+
+#newitem
+#id "black_jaguar_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/black_jaguar_armored_turtle_shell.png
+#armor
+#offsetx -6
+#offsety -9
+#define "#mountmnr 'black_jaguar_turtle_shell_barding_mount'"
+#define "#swimming"
+#description "The black jaguar will persist even if the rider dies."
+#theme "specialmount"
+#theme "light"
+#theme "primitive"
+#tag "animal panther"
+#tag "guaranteedprefix panther"
+#basechance 0.75
+#chanceinc prot 9 *2
+#enditem
+
+#newitem
+#id "black_jaguar_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/black_jaguar_armored_coral.png
+#armor
+#offsetx -6
+#offsety -9
+#define "#mountmnr 'black_jaguar_coral_barding_mount'"
+#define "#swimming"
+#description "The black jaguar will persist even if the rider dies."
+#theme "specialmount"
+#theme "light"
+#tag "animal panther"
+#tag "guaranteedprefix panther"
+#basechance 0.5
 #chanceinc prot 11 *2
 #enditem
 

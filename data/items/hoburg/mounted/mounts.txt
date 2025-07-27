@@ -363,7 +363,7 @@
 #newitem
 #id "goat_light_bronze_barding"
 #gameid -1
-#sprite /graphics/hoburg/mounts/goat.png
+#sprite /graphics/hoburg/mounts/goat_armored_light_bronze.png
 #armor
 #define "#mountmnr 'goat_light_bronze_barding_mount'"
 #theme "goat"
@@ -386,7 +386,7 @@
 #newitem
 #id "goat_light_scale_barding"
 #gameid -1
-#sprite /graphics/hoburg/mounts/goat.png
+#sprite /graphics/hoburg/mounts/goat_armored_light_scale.png
 #armor
 #define "#mountmnr 'goat_light_scale_barding_mount'"
 #theme "goat"
@@ -409,7 +409,7 @@
 #newitem
 #id "goat_bronze_mail_barding"
 #gameid -1
-#sprite /graphics/hoburg/mounts/goat.png
+#sprite /graphics/hoburg/mounts/goat_armored_mail_bronze.png
 #armor
 #define "#mountmnr 'goat_bronze_mail_barding_mount'"
 #theme "goat"
@@ -431,7 +431,7 @@
 #newitem
 #id "goat_iron_mail_barding"
 #gameid -1
-#sprite /graphics/hoburg/mounts/goat.png
+#sprite /graphics/hoburg/mounts/goat_armored_mail.png
 #armor
 #define "#mountmnr 'goat_iron_mail_barding_mount'"
 #theme "goat"
@@ -453,7 +453,7 @@
 #newitem
 #id "goat_cataphract_barding"
 #gameid -1
-#sprite /graphics/hoburg/mounts/goat.png
+#sprite /graphics/hoburg/mounts/goat_armored_cataphract.png
 #armor
 #define "#mountmnr 'goat_cataphract_barding_mount'"
 #theme "goat"
@@ -476,7 +476,7 @@
 #newitem
 #id "goat_bronze_barding"
 #gameid -1
-#sprite /graphics/hoburg/mounts/goat.png
+#sprite /graphics/hoburg/mounts/goat_armored_bronze.png
 #armor
 #define "#mountmnr 'goat_bronze_barding_mount'"
 #theme "goat"
@@ -500,7 +500,7 @@
 #newitem
 #id "goat_plate_barding_mount"
 #gameid -1
-#sprite /graphics/hoburg/mounts/goat.png
+#sprite /graphics/hoburg/mounts/goat_armored_plate.png
 #armor
 #define "#mountmnr 'goat_plate_barding_mount'"
 #theme "goat"
@@ -547,7 +547,7 @@
 #newitem
 #id "black_goat_light_bronze_barding"
 #gameid -1
-#sprite /graphics/hoburg/mounts/goat.png
+#sprite /graphics/hoburg/mounts/black_goat_armored_light_bronze.png
 #armor
 #define "#mountmnr 'black_goat_light_bronze_barding_mount'"
 #theme "goat"
@@ -570,7 +570,7 @@
 #newitem
 #id "black_goat_light_scale_barding"
 #gameid -1
-#sprite /graphics/hoburg/mounts/goat.png
+#sprite /graphics/hoburg/mounts/black_goat_armored_light_scale.png
 #armor
 #define "#mountmnr 'black_goat_light_scale_barding_mount'"
 #theme "goat"
@@ -593,7 +593,7 @@
 #newitem
 #id "black_goat_bronze_mail_barding"
 #gameid -1
-#sprite /graphics/hoburg/mounts/goat.png
+#sprite /graphics/hoburg/mounts/black_goat_armored_mail_bronze.png
 #armor
 #define "#mountmnr 'black_goat_bronze_mail_barding_mount'"
 #theme "goat"
@@ -615,7 +615,7 @@
 #newitem
 #id "black_goat_iron_mail_barding"
 #gameid -1
-#sprite /graphics/hoburg/mounts/goat.png
+#sprite /graphics/hoburg/mounts/black_goat_armored_mail.png
 #armor
 #define "#mountmnr 'black_goat_iron_mail_barding_mount'"
 #theme "goat"
@@ -637,7 +637,7 @@
 #newitem
 #id "black_goat_cataphract_barding"
 #gameid -1
-#sprite /graphics/hoburg/mounts/goat.png
+#sprite /graphics/hoburg/mounts/black_goat_armored_cataphract.png
 #armor
 #define "#mountmnr 'black_goat_cataphract_barding_mount'"
 #theme "goat"
@@ -660,7 +660,7 @@
 #newitem
 #id "black_goat_bronze_barding"
 #gameid -1
-#sprite /graphics/hoburg/mounts/goat.png
+#sprite /graphics/hoburg/mounts/black_goat_armored_bronze.png
 #armor
 #define "#mountmnr 'black_goat_bronze_barding_mount'"
 #theme "goat"
@@ -684,7 +684,7 @@
 #newitem
 #id "black_goat_plate_barding_mount"
 #gameid -1
-#sprite /graphics/hoburg/mounts/goat.png
+#sprite /graphics/hoburg/mounts/black_goat_armored_plate.png
 #armor
 #define "#mountmnr 'black_goat_plate_barding_mount'"
 #theme "goat"
@@ -709,7 +709,7 @@
 #newitem
 #id "black_pyrenean_goat"
 #gameid -1
-#sprite /graphics/hoburg/mounts/goat_black.png
+#sprite /graphics/hoburg/mounts/black_pyrenean_goat.png
 #armor
 #define "#mountmnr 'black_pyrenean_goat_mount'"
 #define "#gcost +5"
@@ -719,8 +719,8 @@
 #theme "goat"
 #tag "animal goat"
 #tag "guaranteedprefix goat"
-#offsety -7
-#offsetx 0
+#offsety -45
+#offsetx -3
 #tag "maxprot 12"
 #basechance 2
 #chanceinc anymagic "blood" *10
@@ -729,7 +729,7 @@
 #newitem
 #id "black_pyrenean_goat_light_bronze_barding"
 #gameid -1
-#sprite /graphics/hoburg/mounts/goat_black.png
+#sprite /graphics/hoburg/mounts/black_pyrenean_goat_armored_light_bronze.png
 #armor
 #define "#mountmnr 'black_pyrenean_goat_light_bronze_barding_mount'"
 #define "#gcost +5"
@@ -739,8 +739,8 @@
 #theme "bronze"
 #tag "animal goat"
 #tag "guaranteedprefix goat"
-#offsety -7
-#offsetx 0
+#offsety -45
+#offsetx -3
 #basechance 1.75
 #chanceinc prot 11 *2
 #chanceinc anymagic "blood" *10
@@ -749,7 +749,7 @@
 #newitem
 #id "black_pyrenean_goat_light_scale_barding_mount"
 #gameid -1
-#sprite /graphics/hoburg/mounts/goat_black.png
+#sprite /graphics/hoburg/mounts/black_pyrenean_goat_armored_light_scale.png
 #armor
 #define "#mountmnr 'black_pyrenean_goat_light_scale_barding_mount'"
 #define "#gcost +5"
@@ -759,8 +759,8 @@
 #theme "iron"
 #tag "animal goat"
 #tag "guaranteedprefix goat"
-#offsety -7
-#offsetx 0
+#offsety -45
+#offsetx -3
 #basechance 1.75
 #chanceinc prot 11 *2
 #chanceinc anymagic "blood" *10
@@ -769,7 +769,7 @@
 #newitem
 #id "black_pyrenean_goat_bronze_mail_barding"
 #gameid -1
-#sprite /graphics/hoburg/mounts/goat_black.png
+#sprite /graphics/hoburg/mounts/black_pyrenean_goat_armored_mail_bronze.png
 #armor
 #define "#mountmnr 'black_pyrenean_goat_bronze_mail_barding_mount'"
 #define "#gcost +5"
@@ -779,9 +779,9 @@
 #theme "bronze"
 #tag "animal goat"
 #tag "guaranteedprefix goat"
-#offsety -7
-#offsetx 0
-#basechance 1.25
+#offsety -45
+#offsetx -3
+#basechance 125
 #chanceinc prot 14 *2
 #chanceinc anymagic "blood" *10
 #enditem
@@ -789,7 +789,7 @@
 #newitem
 #id "black_pyrenean_goat_iron_mail_barding_mount"
 #gameid -1
-#sprite /graphics/hoburg/mounts/goat_black.png
+#sprite /graphics/hoburg/mounts/black_pyrenean_goat_armored_mail.png
 #armor
 #define "#mountmnr 'black_pyrenean_goat_iron_mail_barding_mount'"
 #define "#gcost +5"
@@ -799,9 +799,9 @@
 #theme "iron"
 #tag "animal goat"
 #tag "guaranteedprefix goat"
-#offsety -7
-#offsetx 0
-#basechance 1.25
+#offsety -45
+#offsetx -3
+#basechance 125
 #chanceinc prot 14 *2
 #chanceinc anymagic "blood" *10
 #enditem
@@ -809,7 +809,7 @@
 #newitem
 #id "black_pyrenean_goat_cataphract_barding"
 #gameid -1
-#sprite /graphics/hoburg/mounts/goat_black.png
+#sprite /graphics/hoburg/mounts/black_pyrenean_goat_armored_cataphract.png
 #armor
 #define "#mountmnr 'black_pyrenean_goat_cataphract_barding_mount'"
 #define "#gcost +5"
@@ -820,9 +820,9 @@
 #theme "heavy"
 #tag "animal goat"
 #tag "guaranteedprefix goat"
-#offsety -7
-#offsetx 0
-#basechance 0.75
+#offsety -45
+#offsetx -3
+#basechance 75
 #chanceinc prot 16 *2
 #chanceinc anymagic "blood" *10
 #enditem
@@ -830,7 +830,7 @@
 #newitem
 #id "black_pyrenean_goat_bronze_barding"
 #gameid -1
-#sprite /graphics/hoburg/mounts/goat_black.png
+#sprite /graphics/hoburg/mounts/black_pyrenean_goat_armored_bronze.png
 #armor
 #define "#mountmnr 'black_pyrenean_goat_bronze_barding_mount'"
 #define "#gcost +5"
@@ -842,9 +842,31 @@
 #theme "advanced"
 #tag "animal goat"
 #tag "guaranteedprefix goat"
-#offsety -7
-#offsetx 0
-#basechance 0.5
+#offsety -45
+#offsetx -3
+#basechance 50
+#chanceinc prot 18 *2
+#chanceinc anymagic "blood" *10
+#enditem
+
+#newitem
+#id "black_pyrenean_goat_bronze_gold_trim_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/black_pyrenean_goat_armored_bronze_gold_trim.png
+#armor
+#define "#mountmnr 'black_pyrenean_goat_bronze_barding_mount'"
+#define "#gcost +5"
+#define "#rcost +4"
+#theme "abysian"
+#theme "goat"
+#theme "bronze"
+#theme "heavy"
+#theme "advanced"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#offsety -45
+#offsetx -3
+#basechance 50
 #chanceinc prot 18 *2
 #chanceinc anymagic "blood" *10
 #enditem
@@ -852,7 +874,7 @@
 #newitem
 #id "black_pyrenean_goat_plate_barding"
 #gameid -1
-#sprite /graphics/hoburg/mounts/goat_black.png
+#sprite /graphics/hoburg/mounts/black_pyrenean_goat_armored_plate.png
 #armor
 #define "#mountmnr 'black_pyrenean_goat_plate_barding_mount'"
 #define "#gcost +5"
@@ -864,9 +886,31 @@
 #theme "advanced"
 #tag "animal goat"
 #tag "guaranteedprefix goat"
-#offsety -7
-#offsetx 0
-#basechance 0.5
+#offsety -45
+#offsetx -3
+#basechance 50
+#chanceinc prot 18 *2
+#chanceinc anymagic "blood" *10
+#enditem
+
+#newitem
+#id "black_pyrenean_goat_plate_gold_trim_barding"
+#gameid -1
+#sprite /graphics/hoburg/mounts/black_pyrenean_goat_armored_plate_gold_trim.png
+#armor
+#define "#mountmnr 'black_pyrenean_goat_plate_barding_mount'"
+#define "#gcost +5"
+#define "#rcost +4"
+#theme "abysian"
+#theme "goat"
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal goat"
+#tag "guaranteedprefix goat"
+#offsety -45
+#offsetx -3
+#basechance 50
 #chanceinc prot 18 *2
 #chanceinc anymagic "blood" *10
 #enditem
@@ -2380,7 +2424,7 @@
 #newitem
 #id "black_swan"
 #gameid -1
-#sprite /graphics/mounts/chariots/small_blackswan_iron.png
+#sprite /graphics/mounts/chariots/black_swan_iron.png
 #needs overlay chariot_swan_iron_overlay
 #armor
 #define "#mountmnr 'black_swan_chariot'"
@@ -2403,8 +2447,8 @@
 #newitem
 #id "black_swan_light_bronze_barding"
 #gameid -1
-#sprite /graphics/mounts/chariots/small_blackswan_iron.png
-#needs overlay chariot_swan_iron_overlay
+#sprite /graphics/mounts/chariots/black_swan_chariot_armored_light_bronze.png
+#needs overlay chariot_swan_bronze_overlay
 #armor
 #define "#mountmnr 'black_swan_light_bronze_barding_chariot'"
 #tag "animal swan"
@@ -2426,7 +2470,7 @@
 #newitem
 #id "black_swan_light_scale_barding"
 #gameid -1
-#sprite /graphics/mounts/chariots/small_blackswan_iron.png
+#sprite /graphics/mounts/chariots/black_swan_chariot_armored_light_scale.png
 #needs overlay chariot_swan_iron_overlay
 #armor
 #define "#mountmnr 'black_swan_light_scale_barding_chariot'"

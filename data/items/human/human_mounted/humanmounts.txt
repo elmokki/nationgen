@@ -227,8 +227,8 @@
 #newitem
 #id "war_horse_cataphract_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/redguardmount.png
-#recolormask /graphics/mounts/standard/redguardmount_recolormask.png
+#sprite /graphics/mounts/standard/redguard_horse.png
+#recolormask /graphics/mounts/standard/redguard_horse_recolormask.png
 #armor
 #needs overlay redguardoverlay
 #offsety 1
@@ -869,7 +869,7 @@
 #newitem
 #id "black_unicorn_leather_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/black_unicorn.png
+#sprite /graphics/mounts/standard/black_unicorn_armored_leather.png
 #armor
 #offsetx 27
 #offsety 60
@@ -890,7 +890,7 @@
 #newitem
 #id "black_unicorn_light_scale_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/black_unicorn.png
+#sprite /graphics/mounts/standard/black_unicorn_armored_light_scale.png
 #armor
 #offsetx 27
 #offsety 60
@@ -909,9 +909,31 @@
 #enditem
 
 #newitem
+#id "black_unicorn_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/black_unicorn_armored_mail_bronze.png
+#armor
+#offsetx 27
+#offsety 60
+#define "#mountmnr 'black_unicorn_bronze_mail_barding_mount'"
+#define "#gcost +5"
+#theme "elite"
+#theme "heavy"
+#theme "bronze"
+#tag "animal 'black unicorn'"
+#tag "guaranteedprefix 'black unicorn'"
+#tag "minprot 8"
+#tag "maxprot 16"
+#basechance 2
+#chanceinc prot 11 *2
+#chanceinc anytheme "fae" *20
+#chanceinc anymagic "death" *5
+#enditem
+
+#newitem
 #id "black_unicorn_cataphract_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/black_unicorn.png
+#sprite /graphics/mounts/standard/black_unicorn_armored_cataphract.png
 #armor
 #offsetx 27
 #offsety 60
@@ -931,7 +953,7 @@
 #newitem
 #id "black_unicorn_plate_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/black_unicorn.png
+#sprite /graphics/mounts/standard/black_unicorn_armored_plate.png
 #armor
 #offsetx 27
 #offsety 60

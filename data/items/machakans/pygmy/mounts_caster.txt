@@ -381,14 +381,14 @@
 
 
 #newitem
-#id "beast_bat_nerfed"
+#id "giant_bat"
 #gameid -1
 #sprite /graphics/hoburg/mounts/giant_bat.png
 #armor
 #offsety 32
 #offsetx 31
 #needs overlay giant_bat_overlay
-#define "#mountmnr 'beast_bat_nerfed_mount'"
+#define "#mountmnr 'giant_bat_mount'"
 #description "The giant bat fight until the end of the battle if the rider perishes"
 #theme "primitive"
 #theme "bat"
@@ -401,14 +401,14 @@
 #enditem
 
 #newitem
-#id "beast_bat_nerfed_leather_barding"
+#id "giant_bat_leather_barding"
 #gameid -1
-#sprite /graphics/hoburg/mounts/giant_bat.png
+#sprite /graphics/hoburg/mounts/giant_bat_armored_leather.png
 #armor
 #offsety 32
 #offsetx 31
 #needs overlay giant_bat_overlay
-#define "#mountmnr 'beast_bat_nerfed_leather_barding_mount'"
+#define "#mountmnr 'giant_bat_leather_barding_mount'"
 #description "The giant bat fight until the end of the battle if the rider perishes"
 #theme "primitive"
 #theme "bat"
@@ -422,14 +422,14 @@
 #enditem
 
 #newitem
-#id "beast_bat_nerfed_light_scale_barding"
+#id "giant_bat_light_scale_barding"
 #gameid -1
-#sprite /graphics/hoburg/mounts/giant_bat.png
+#sprite /graphics/hoburg/mounts/giant_bat_armored_light_scale.png
 #armor
 #offsety 32
 #offsetx 31
 #needs overlay giant_bat_overlay
-#define "#mountmnr 'beast_bat_nerfed_light_scale_barding_mount'"
+#define "#mountmnr 'giant_bat_light_scale_barding_mount'"
 #description "The giant bat fight until the end of the battle if the rider perishes"
 #theme "bat"
 #theme "battotem"
@@ -441,14 +441,14 @@
 #enditem
 
 #newitem
-#id "beast_bat_nerfed_iron_mail_barding"
+#id "giant_bat_iron_mail_barding"
 #gameid -1
-#sprite /graphics/hoburg/mounts/giant_bat.png
+#sprite /graphics/hoburg/mounts/giant_bat_armored_mail.png
 #armor
 #offsety 32
 #offsetx 31
 #needs overlay giant_bat_overlay
-#define "#mountmnr 'beast_bat_nerfed_iron_mail_barding_mount'"
+#define "#mountmnr 'giant_bat_iron_mail_barding_mount'"
 #description "The giant bat fight until the end of the battle if the rider perishes"
 #theme "bat"
 #theme "battotem"
@@ -462,8 +462,8 @@
 #newitem
 #id "red_ant"
 #gameid -1
-#sprite /graphics/mounts/standard/redant.png
-#needs overlay redant_overlay
+#sprite /graphics/mounts/standard/red_ant.png
+#needs overlay red_ant_overlay
 #armor
 #offsetx 0
 #offsety -7
@@ -481,8 +481,8 @@
 #newitem
 #id "red_ant_leather_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/redant.png
-#needs overlay redant_overlay
+#sprite /graphics/mounts/standard/red_ant.png
+#needs overlay red_ant_overlay
 #armor
 #offsetx 0
 #offsety -7
@@ -501,8 +501,8 @@
 #newitem
 #id "red_ant_light_scale_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/redant.png
-#needs overlay redant_overlay
+#sprite /graphics/mounts/standard/red_ant.png
+#needs overlay red_ant_overlay
 #armor
 #offsetx 0
 #offsety -7
@@ -521,8 +521,8 @@
 #newitem
 #id "red_ant_iron_mail_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/redant.png
-#needs overlay redant_overlay
+#sprite /graphics/mounts/standard/red_ant.png
+#needs overlay red_ant_overlay
 #armor
 #offsetx 0
 #offsety -7
@@ -541,8 +541,8 @@
 #newitem
 #id "red_ant_plate_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/redant.png
-#needs overlay redant_overlay
+#sprite /graphics/mounts/standard/red_ant.png
+#needs overlay red_ant_overlay
 #armor
 #offsetx 0
 #offsety -7
@@ -918,8 +918,8 @@
 #newitem
 #id "huge_locust"
 #gameid -1
-#sprite /graphics/mounts/standard/hugelocust.png
-#needs overlay hugelocust_overlay
+#sprite /graphics/mounts/standard/huge_locust.png
+#needs overlay huge_locust_overlay
 #armor
 #offsetx -3
 #offsety -16
@@ -938,14 +938,14 @@
 #newitem
 #id "huge_mantis"
 #gameid -1
-#sprite /graphics/mounts/standard/hugemantis.png
+#sprite /graphics/mounts/standard/huge_mantis.png
 #armor
 #offsetx -1
 #offsety -12
 #description "If the rider dies, the mantis will carry on fighting until the end of the battle."
 #define "#mountmnr 'huge_mantis_mount'"
 #define "#wastesurvival"
-#define "#secondtmpshape hugemantismount"
+#define "#secondtmpshape huge_mantismount"
 #theme "mantis"
 #theme "locusttotem"
 #theme "totemanimal"
@@ -1025,8 +1025,8 @@
 #newitem
 #id "black_swan"
 #gameid -1
-#sprite /graphics/mounts/standard/swan_black.png
-#needs overlay swan_black_overlay
+#sprite /graphics/mounts/standard/black_swan.png
+#needs overlay black_swan_overlay
 #armor
 #offsetx 2
 #offsety -5
@@ -1046,8 +1046,8 @@
 #newitem
 #id "black_swan_leather_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/swan_black.png
-#needs overlay swan_black_overlay
+#sprite /graphics/mounts/standard/black_swan_armored_leather.png
+#needs overlay black_swan_overlay
 #armor
 #offsetx 2
 #offsety -5
@@ -1068,8 +1068,8 @@
 #newitem
 #id "black_swan_light_scale_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/swan_black.png
-#needs overlay swan_black_overlay
+#sprite /graphics/mounts/standard/black_swan_armored_light_scale.png
+#needs overlay black_swan_overlay
 #armor
 #offsetx 2
 #offsety -5
@@ -1176,7 +1176,7 @@
 #newitem
 #id "black_swan_leather_barding_chariot"
 #gameid -1
-#sprite /graphics/mounts/chariots/small_blackswan_bronze.png
+#sprite /graphics/mounts/chariots/black_swan_chariot_armored_leather.png
 #needs overlay chariot_swan_bronze_overlay
 #armor
 #offsetx 15
@@ -1198,7 +1198,7 @@
 #newitem
 #id "black_swan_light_bronze_barding_chariot"
 #gameid -1
-#sprite /graphics/mounts/chariots/small_blackswan_bronze.png
+#sprite /graphics/mounts/chariots/black_swan_chariot_armored_light_bronze.png
 #needs overlay chariot_swan_bronze_overlay
 #armor
 #offsetx 15
@@ -1220,7 +1220,7 @@
 #newitem
 #id "black_swan_bronze_mail_barding_chariot"
 #gameid -1
-#sprite /graphics/mounts/chariots/small_blackswan_bronze.png
+#sprite /graphics/mounts/chariots/black_swan_chariot_armored_mail_bronze.png
 #needs overlay chariot_swan_bronze_overlay
 #armor
 #offsetx 15
@@ -1242,7 +1242,7 @@
 #newitem
 #id "giant_rat"
 #gameid -1
-#sprite /graphics/mounts/standard/giantrat.png
+#sprite /graphics/mounts/standard/giant_rat.png
 #armor
 #offsetx 1
 #offsety -11
@@ -1259,7 +1259,7 @@
 #newitem
 #id "giant_rat_leather_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/giantrat.png
+#sprite /graphics/mounts/standard/giant_rat.png
 #armor
 #offsetx 1
 #offsety -11
@@ -1278,7 +1278,7 @@
 #newitem
 #id "giant_rat_light_scale_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/giantrat.png
+#sprite /graphics/mounts/standard/giant_rat.png
 #armor
 #offsetx 1
 #offsety -11
@@ -1296,7 +1296,7 @@
 #newitem
 #id "giant_rat_iron_mail_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/giantrat.png
+#sprite /graphics/mounts/standard/giant_rat.png
 #armor
 #offsetx 1
 #offsety -11
