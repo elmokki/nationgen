@@ -1,6 +1,7 @@
 package nationGen.restrictions;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import nationGen.NationGenAssets;
 import nationGen.entities.Race;
@@ -19,9 +20,10 @@ public class SacredRaceRestriction extends TwoListRestriction<Race> {
     );
     this.assets = assets;
 
-    for (Race r : assets.races) {
-      rmodel.addElement(r);
-    }
+    this.assets.races
+      .stream()
+      .sorted(Comparator.comparing(Race::getName))
+      .forEach(r -> rmodel.addElement(r));
   }
 
   @Override

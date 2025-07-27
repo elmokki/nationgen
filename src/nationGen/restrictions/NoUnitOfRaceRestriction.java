@@ -1,6 +1,7 @@
 package nationGen.restrictions;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import nationGen.NationGenAssets;
 import nationGen.entities.Race;
@@ -18,11 +19,14 @@ public class NoUnitOfRaceRestriction
       "Nation needs to not have any units of a race on the right box",
       "No unit of race"
     );
+
     this.assets = assets;
-
     this.comboboxlabel = "Units to match:";
-    for (Race r : assets.races) rmodel.addElement(r);
-
+    
+    assets.races.stream()
+      .sorted(Comparator.comparing(Race::getName))
+      .forEach(r -> rmodel.addElement(r));
+  
     this.comboboxoptions = new String[] {
       "All",
       "Troops",

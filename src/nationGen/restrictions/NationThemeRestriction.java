@@ -1,9 +1,12 @@
 package nationGen.restrictions;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import nationGen.NationGenAssets;
+import nationGen.entities.Filter;
 import nationGen.entities.Theme;
+import nationGen.magic.MagicPath;
 import nationGen.nation.Nation;
 
 public class NationThemeRestriction extends TwoListRestriction<String> {
@@ -17,11 +20,22 @@ public class NationThemeRestriction extends TwoListRestriction<String> {
       "Nation or primary race needs to have a theme named like one of the themes in the right box",
       "Nation or primary race theme"
     );
+
     this.assets = assets;
 
-    for (String str : assets.themes.keySet()) for (Theme t : assets.themes.get(
-      str
-    )) rmodel.addElement(str + " - " + t.toString());
+    this.assets.themes
+      .keySet()
+      .stream()
+      .sorted()
+      .forEach(themeCategory -> {
+        this.assets.themes
+          .get(themeCategory)
+          .stream()
+          .sorted(Comparator.comparing(Theme::getName))
+          .forEach(t -> {
+            rmodel.addElement(themeCategory + " - " + t);
+        });
+      });
 
     this.extraTextField = true;
     this.textFieldLabel = "Search:";

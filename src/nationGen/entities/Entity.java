@@ -18,6 +18,10 @@ public class Entity {
     this.nationGen = nationGen;
   }
 
+  public String getName() {
+    return this.name;
+  }
+
   public static <E extends Entity> List<E> readFile(
     NationGen nationGen,
     String file,

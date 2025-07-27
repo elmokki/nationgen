@@ -1,7 +1,11 @@
 package nationGen.restrictions;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+
+import javax.swing.text.html.parser.Entity;
+
 import nationGen.NationGenAssets;
 import nationGen.entities.Filter;
 import nationGen.nation.Nation;
@@ -27,12 +31,23 @@ public class UnitFilterRestriction
       "<html>Nation needs to have at least one unit with a filter on the right box.</html>",
       "Unit filter"
     );
-    this.assets = assets;
 
+    this.assets = assets;
     this.comboboxlabel = "Units to match:";
-    for (String str : assets.filters.keySet()) for (Filter f : assets.filters.get(
-      str
-    )) rmodel.addElement(str + ": " + f);
+
+    this.assets.filters
+      .keySet()
+      .stream()
+      .sorted()
+      .forEach(filterCategory -> {
+        this.assets.filters
+          .get(filterCategory)
+          .stream()
+          .sorted(Comparator.comparing(Filter::getName))
+          .forEach(f -> {
+            rmodel.addElement(filterCategory + ": " + f);
+        });
+      });
 
     this.comboboxoptions = ownoptions;
     this.extraTextField = true;
