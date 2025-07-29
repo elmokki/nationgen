@@ -1,6 +1,7 @@
 package nationGen.restrictions;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import nationGen.NationGenAssets;
 import nationGen.entities.Race;
@@ -17,13 +18,16 @@ public class NoPrimaryRaceRestriction extends TwoListRestriction<Race> {
       "Nation needs to not have one of the races in the right box as primary race",
       "No primary race"
     );
+
     this.assets = assets;
 
-    for (Race r : assets.races) {
-      if (!r.tags.containsName("secondary")) {
-        rmodel.addElement(r);
-      }
-    }
+    assets.races.stream()
+      .sorted(Comparator.comparing(Race::getName))
+      .forEach(r -> {
+        if (r.isSecondary() == false) {
+          rmodel.addElement(r);
+        };
+      });
   }
 
   @Override

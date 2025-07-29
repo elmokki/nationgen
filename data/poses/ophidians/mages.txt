@@ -1,0 +1,34 @@
+---- priest
+
+#newpose
+#id "ophidian priest"
+#role "priest"
+
+#renderorder "shadow basesprite armor helmet weapon hands"
+#load basesprite /data/items/ophidians/ophidianbases.txt
+#load hands /data/items/ophidians/hands.txt
+#load shadow /data/items/ophidians/shadow.txt
+#load armor /data/items/ophidians/magerobe.txt
+#load helmet /data/items/ophidians/magehelmet.txt
+#load weapon /data/items/ophidians/mageweapon.txt
+
+#mage_nolowtierhat
+#endpose
+
+
+---- mage 
+
+#newpose
+#id "ophidian mage"
+#role "mage"
+
+#renderorder "shadow basesprite armor helmet weapon hands"
+#load basesprite /data/items/ophidians/ophidianbases.txt
+#load hands /data/items/ophidians/hands.txt
+#load shadow /data/items/ophidians/shadow.txt
+#load armor /data/items/ophidians/magerobe.txt
+#load helmet /data/items/ophidians/magehelmet.txt
+#load weapon /data/items/ophidians/mageweapon.txt
+
+#mage_nolowtierhat
+#endpose

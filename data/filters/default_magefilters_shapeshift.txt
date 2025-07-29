@@ -560,17 +560,17 @@
 
 #new magefilter
 #type "shapeshift"
-#id "hugemantis"
+#id "huge_mantis"
 #basechance 0.05
 #chanceinc "personalmagic nature 0.25"
 #chanceinc "personalcommand mounted *0"
 #chanceinc "personalcommand above size 3 *0"
 #command "#hp -3"
 #command "#gcost +30"
-#command "#secondtmpshape hugemantis"
+#command "#secondtmpshape huge_mantis"
 #tag "notfortier 1"
 #tag "personalmagic nature"
-#filterdesc "hugemantis shift desc"
+#filterdesc "huge_mantis shift desc"
 #end
 
 #new magefilter

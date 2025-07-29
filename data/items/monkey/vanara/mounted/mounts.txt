@@ -973,7 +973,7 @@
 #newitem
 #id "green_lizard"
 #gameid -1
-#sprite /graphics/mounts/standard/greenlizard.png
+#sprite /graphics/mounts/standard/green_lizard.png
 #armor
 #offsetx -5
 #offsety 3
@@ -993,7 +993,7 @@
 #newitem
 #id "green_lizard_light_bronze_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/greenlizard.png
+#sprite /graphics/mounts/standard/green_lizard.png
 #armor
 #offsetx -5
 #offsety 3
@@ -1013,7 +1013,7 @@
 #newitem
 #id "green_lizard_light_bronze_barding_oriental"
 #gameid -1
-#sprite /graphics/mounts/standard/greenlizard.png
+#sprite /graphics/mounts/standard/green_lizard.png
 #armor
 #offsetx -5
 #offsety 3
@@ -1034,7 +1034,7 @@
 #newitem
 #id "green_lizard_light_scale_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/greenlizard.png
+#sprite /graphics/mounts/standard/green_lizard.png
 #armor
 #offsetx -5
 #offsety 3
@@ -1054,7 +1054,7 @@
 #newitem
 #id "green_lizard_light_scale_barding_oriental"
 #gameid -1
-#sprite /graphics/mounts/standard/greenlizard.png
+#sprite /graphics/mounts/standard/green_lizard.png
 #armor
 #offsetx -5
 #offsety 3
@@ -1075,7 +1075,7 @@
 #newitem
 #id "green_lizard_bronze_mail_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/greenlizard.png
+#sprite /graphics/mounts/standard/green_lizard.png
 #armor
 #offsetx -5
 #offsety 3
@@ -1094,7 +1094,7 @@
 #newitem
 #id "green_lizard_bronze_mail_barding_oriental"
 #gameid -1
-#sprite /graphics/mounts/standard/greenlizard.png
+#sprite /graphics/mounts/standard/green_lizard.png
 #armor
 #offsetx -5
 #offsety 3
@@ -1114,7 +1114,7 @@
 #newitem
 #id "green_lizard_iron_mail_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/greenlizard.png
+#sprite /graphics/mounts/standard/green_lizard.png
 #armor
 #offsetx -5
 #offsety 3
@@ -1133,7 +1133,7 @@
 #newitem
 #id "green_lizard_iron_mail_barding_oriental"
 #gameid -1
-#sprite /graphics/mounts/standard/greenlizard.png
+#sprite /graphics/mounts/standard/green_lizard.png
 #armor
 #offsetx -5
 #offsety 3
@@ -1153,7 +1153,7 @@
 #newitem
 #id "green_lizard_cataphract_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/greenlizard.png
+#sprite /graphics/mounts/standard/green_lizard.png
 #armor
 #offsetx -5
 #offsety 3
@@ -1172,7 +1172,7 @@
 #newitem
 #id "green_lizard_cataphract_barding_oriental"
 #gameid -1
-#sprite /graphics/mounts/standard/greenlizard.png
+#sprite /graphics/mounts/standard/green_lizard.png
 #armor
 #offsetx -5
 #offsety 3
@@ -1192,7 +1192,7 @@
 #newitem
 #id "green_lizard_bronze_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/greenlizard.png
+#sprite /graphics/mounts/standard/green_lizard.png
 #armor
 #offsetx -5
 #offsety 3
@@ -1212,7 +1212,7 @@
 #newitem
 #id "green_lizard_bronze_barding_oriental"
 #gameid -1
-#sprite /graphics/mounts/standard/greenlizard.png
+#sprite /graphics/mounts/standard/green_lizard.png
 #armor
 #offsetx -5
 #offsety 3
@@ -1233,7 +1233,7 @@
 #newitem
 #id "green_lizard_plate_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/greenlizard.png
+#sprite /graphics/mounts/standard/green_lizard.png
 #armor
 #offsetx -5
 #offsety 3
@@ -1253,7 +1253,7 @@
 #newitem
 #id "green_lizard_plate_barding_oriental"
 #gameid -1
-#sprite /graphics/mounts/standard/greenlizard.png
+#sprite /graphics/mounts/standard/green_lizard.png
 #armor
 #offsetx -5
 #offsety 3
@@ -1568,7 +1568,7 @@
 #newitem
 #id "black_jaguar"
 #gameid -1
-#sprite /graphics/mounts/standard/blackjaguar.png
+#sprite /graphics/mounts/standard/black_jaguar.png
 #armor
 #offsetx -4
 #offsety 4
@@ -1584,9 +1584,27 @@
 #enditem
 
 #newitem
+#id "black_jaguar_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/black_jaguar_armored_turtle_shell.png
+#armor
+#offsetx -4
+#offsety 4
+#define "#mountmnr 'black_jaguar_turtle_shell_barding_mount'"
+#theme "specialmount"
+#theme "light"
+#tag "animal panther"
+#tag "guaranteedprefix panther"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 11 *2
+#chanceinc "nationcommand #idealcold above 1 *0"
+#enditem
+
+#newitem
 #id "black_jaguar_light_bronze_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/blackjaguar.png
+#sprite /graphics/mounts/standard/black_jaguar_armored_light_bronze.png
 #armor
 #offsetx -4
 #offsety 4
@@ -1606,7 +1624,7 @@
 #newitem
 #id "black_jaguar_light_scale_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/blackjaguar.png
+#sprite /graphics/mounts/standard/black_jaguar_armored_light_scale.png
 #armor
 #offsetx -4
 #offsety 4
@@ -1626,7 +1644,7 @@
 #newitem
 #id "black_jaguar_bronze_mail_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/blackjaguar.png
+#sprite /graphics/mounts/standard/black_jaguar_armored_mail_bronze.png
 #armor
 #offsetx -4
 #offsety 4
@@ -1645,7 +1663,7 @@
 #newitem
 #id "black_jaguar_iron_mail_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/blackjaguar.png
+#sprite /graphics/mounts/standard/black_jaguar_armored_mail.png
 #armor
 #offsetx -4
 #offsety 4
@@ -1664,7 +1682,7 @@
 #newitem
 #id "black_jaguar_cataphract_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/blackjaguar.png
+#sprite /graphics/mounts/standard/black_jaguar_armored_cataphract.png
 #armor
 #offsetx -4
 #offsety 4
@@ -1683,7 +1701,7 @@
 #newitem
 #id "black_jaguar_bronze_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/blackjaguar.png
+#sprite /graphics/mounts/standard/black_jaguar_armored_bronze.png
 #armor
 #offsetx -4
 #offsety 4
@@ -1703,7 +1721,7 @@
 #newitem
 #id "black_jaguar_plate_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/blackjaguar.png
+#sprite /graphics/mounts/standard/black_jaguar_armored_plate.png
 #armor
 #offsetx -4
 #offsety 4
@@ -1723,7 +1741,7 @@
 #newitem
 #id "black_jaguar_silver_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/blackjaguar.png
+#sprite /graphics/mounts/standard/black_jaguar_armored_silver.png
 #armor
 #offsetx -4
 #offsety 4
@@ -1744,7 +1762,7 @@
 #newitem
 #id "black_tiger"
 #gameid -1
-#sprite /graphics/mounts/standard/blacktiger.png
+#sprite /graphics/mounts/standard/black_tiger.png
 #armor
 #offsetx -4
 #offsety 4
@@ -1763,7 +1781,7 @@
 #newitem
 #id "black_tiger_light_bronze_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/blacktiger_armored_lightbronze.png
+#sprite /graphics/mounts/standard/black_tiger_armored_lightbronze.png
 #armor
 #offsetx -4
 #offsety 4
@@ -1784,7 +1802,7 @@
 #newitem
 #id "black_tiger_light_scale_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/blacktiger_armored_light.png
+#sprite /graphics/mounts/standard/black_tiger_armored_light.png
 #armor
 #offsetx -4
 #offsety 4
@@ -1805,7 +1823,7 @@
 #newitem
 #id "black_tiger_bronze_mail_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/blacktiger_armored_bronzescale.png
+#sprite /graphics/mounts/standard/black_tiger_armored_bronzescale.png
 #armor
 #offsetx -4
 #offsety 4
@@ -1825,7 +1843,7 @@
 #newitem
 #id "black_tiger_iron_mail_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/blacktiger_armored_scale.png
+#sprite /graphics/mounts/standard/black_tiger_armored_scale.png
 #armor
 #offsetx -4
 #offsety 4
@@ -1845,7 +1863,7 @@
 #newitem
 #id "black_tiger_cataphract_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/blacktiger_armored_scale.png
+#sprite /graphics/mounts/standard/black_tiger_armored_scale.png
 #armor
 #offsetx -4
 #offsety 4
@@ -1865,7 +1883,7 @@
 #newitem
 #id "black_tiger_bronze_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/blacktiger_armored_bronze.png
+#sprite /graphics/mounts/standard/black_tiger_armored_bronze.png
 #armor
 #offsetx -4
 #offsety 4
@@ -1887,7 +1905,7 @@
 #newitem
 #id "black_tiger_plate_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/blacktiger_armored_plate.png
+#sprite /graphics/mounts/standard/black_tiger_armored_plate.png
 #armor
 #offsetx -4
 #offsety 4
@@ -1908,7 +1926,7 @@
 #newitem
 #id "black_tiger_silver_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/blacktiger_armored_plate.png
+#sprite /graphics/mounts/standard/black_tiger_armored_plate.png
 #armor
 #offsetx -4
 #offsety 4
@@ -1930,7 +1948,7 @@
 #newitem
 #id "white_tiger"
 #gameid -1
-#sprite /graphics/mounts/standard/whitetiger.png
+#sprite /graphics/mounts/standard/white_tiger.png
 #armor
 #offsetx -4
 #offsety 4
@@ -1950,7 +1968,7 @@
 #newitem
 #id "white_tiger_light_bronze_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/whitetiger_armored_lightbronze.png
+#sprite /graphics/mounts/standard/white_tiger_armored_lightbronze.png
 #armor
 #offsetx -4
 #offsety 4
@@ -1972,7 +1990,7 @@
 #newitem
 #id "white_tiger_light_scale_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/whitetiger_armored_light.png
+#sprite /graphics/mounts/standard/white_tiger_armored_light.png
 #armor
 #offsetx -4
 #offsety 4
@@ -1994,7 +2012,7 @@
 #newitem
 #id "white_tiger_bronze_mail_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/whitetiger_armored_bronzescale.png
+#sprite /graphics/mounts/standard/white_tiger_armored_bronzescale.png
 #armor
 #offsetx -4
 #offsety 4
@@ -2015,7 +2033,7 @@
 #newitem
 #id "white_tiger_iron_mail_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/whitetiger_armored_scale.png
+#sprite /graphics/mounts/standard/white_tiger_armored_scale.png
 #armor
 #offsetx -4
 #offsety 4
@@ -2036,7 +2054,7 @@
 #newitem
 #id "white_tiger_cataphract_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/whitetiger_armored_scale.png
+#sprite /graphics/mounts/standard/white_tiger_armored_scale.png
 #armor
 #offsetx -4
 #offsety 4
@@ -2057,7 +2075,7 @@
 #newitem
 #id "white_tiger_bronze_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/whitetiger_armored_bronze.png
+#sprite /graphics/mounts/standard/white_tiger_armored_bronze.png
 #armor
 #offsetx -4
 #offsety 4
@@ -2079,7 +2097,7 @@
 #newitem
 #id "white_tiger_plate_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/whitetiger_armored_plate.png
+#sprite /graphics/mounts/standard/white_tiger_armored_plate.png
 #armor
 #offsetx -4
 #offsety 4
@@ -2422,8 +2440,8 @@
 #newitem
 #id "winged_lion"
 #gameid -1
-#sprite /graphics/mounts/standard/wingedlion.png
-#needs overlay wingedlion_overlay
+#sprite /graphics/mounts/standard/winged_lion.png
+#needs overlay winged_lion_overlay
 #armor
 #offsety 5
 #offsetx -10
@@ -2441,8 +2459,8 @@
 #newitem
 #id "winged_lion_light_bronze_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/wingedlion.png
-#needs overlay wingedlion_overlay
+#sprite /graphics/mounts/standard/winged_lion.png
+#needs overlay winged_lion_overlay
 #armor
 #offsety 5
 #offsetx -10
@@ -2462,8 +2480,8 @@
 #newitem
 #id "winged_lion_light_scale_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/wingedlion.png
-#needs overlay wingedlion_overlay
+#sprite /graphics/mounts/standard/winged_lion.png
+#needs overlay winged_lion_overlay
 #armor
 #offsety 5
 #offsetx -10
@@ -2483,8 +2501,8 @@
 #newitem
 #id "winged_lion_bronze_mail_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/wingedlion.png
-#needs overlay wingedlion_overlay
+#sprite /graphics/mounts/standard/winged_lion.png
+#needs overlay winged_lion_overlay
 #armor
 #offsety 5
 #offsetx -10
@@ -2504,8 +2522,8 @@
 #newitem
 #id "winged_lion_iron_mail_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/wingedlion.png
-#needs overlay wingedlion_overlay
+#sprite /graphics/mounts/standard/winged_lion.png
+#needs overlay winged_lion_overlay
 #armor
 #offsety 5
 #offsetx -10
@@ -2525,8 +2543,8 @@
 #newitem
 #id "winged_lion_cataphract_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/wingedlion.png
-#needs overlay wingedlion_overlay
+#sprite /graphics/mounts/standard/winged_lion.png
+#needs overlay winged_lion_overlay
 #armor
 #offsety 5
 #offsetx -10
@@ -2547,8 +2565,8 @@
 #newitem
 #id "winged_lion_bronze_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/wingedlion.png
-#needs overlay wingedlion_overlay
+#sprite /graphics/mounts/standard/winged_lion.png
+#needs overlay winged_lion_overlay
 #armor
 #offsety 5
 #offsetx -10
@@ -2570,8 +2588,8 @@
 #newitem
 #id "winged_lion_plate_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/wingedlion.png
-#needs overlay wingedlion_overlay
+#sprite /graphics/mounts/standard/winged_lion.png
+#needs overlay winged_lion_overlay
 #armor
 #offsety 5
 #offsetx -10

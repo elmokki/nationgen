@@ -92,6 +92,10 @@ public class Race extends Filter {
     return false;
   }
 
+  public Boolean isSecondary() {
+    return tags.containsName("secondary");
+  }
+
   @Override
   public void handleOwnCommand(Command command) {
     switch (command.command) {

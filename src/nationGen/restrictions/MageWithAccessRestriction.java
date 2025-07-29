@@ -3,8 +3,11 @@ package nationGen.restrictions;
 import com.elmokki.Generic;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import nationGen.entities.Race;
 import nationGen.magic.MagicPath;
 import nationGen.magic.MagicPathLevel;
 import nationGen.nation.Nation;
@@ -26,7 +29,10 @@ public class MageWithAccessRestriction
     this.comboboxlabel = "25% probability randoms allowed";
     this.comboboxoptions = new String[] { "True", "False" };
 
-    for (MagicPath path : MagicPath.NON_HOLY) rmodel.addElement(path.name);
+    MagicPath.NON_HOLY
+      .stream()
+      .sorted(Comparator.comparing(MagicPath::name))
+      .forEach(mPath -> rmodel.addElement(mPath.name));
   }
 
   @Override
