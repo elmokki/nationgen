@@ -10968,7 +10968,7 @@
 
 #new secondshape
 #id "black_swan_chariot"
-#command "#spr1 ./graphics/mounts/chariots/black_swan_iron.png"
+#command "#spr1 ./graphics/mounts/chariots/black_swan_chariot_armored_iron.png"
 #command "#spr2 shift"
 #command "#name 'Black Swan Chariot'"
 #command "#size 3"
@@ -13435,6 +13435,38 @@
 #command "#quadruped"
 #command "#transformation 0"
 #command "#armor 252"
+#command "#gcost 25"
+#command "#rcost 6"
+#mount
+#end
+
+#new secondshape
+#id "barghest_bronze_mail_barding_mount"
+#command "#name 'Barghest'"
+#command "#spr1 ./graphics/hoburg/mounts/barghest_mail_bronze_barding.png"
+#command "#spr2 shift"
+#command "#magicboost 53 -5"
+#command "#size 4"
+#command "#mapmove 20"
+#command "#ap 26"
+#command "#hp 28"
+#command "#str 16"
+#command "#att 13"
+#command "#def 11"
+#command "#prot 6"
+#command "#prec 5"
+#command "#mr 15"
+#command "#mor 14"
+#command "#ironvul"
+#command "#animal"
+#command "#darkpower 3"
+#command "#curseattacker 5"
+#command "#stealthy 60"
+#command "#darkvision 50"
+#command "#weapon 223"
+#command "#enc 2"
+#command "#transformation 0"
+#command "#armor 172"
 #command "#gcost 25"
 #command "#rcost 6"
 #mount
