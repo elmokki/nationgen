@@ -1,6 +1,5 @@
 package nationGen.entities;
 
-import com.elmokki.Generic;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
@@ -31,7 +30,10 @@ public class Pose extends Filter {
   }
 
   public ItemSet getItems(String slot) {
-    if (items.get(slot) == null) return null;
+    if (items.get(slot) == null) {
+      return null;
+    }
+    
     return items.get(slot).getCopy();
   }
 

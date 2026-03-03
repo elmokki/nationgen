@@ -2,9 +2,13 @@ package nationGen.rostergeneration;
 
 import com.elmokki.Generic;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
 import nationGen.chances.EntityChances;
@@ -606,23 +610,12 @@ public class UnitGen {
 
         // 50% chance to not give a twohander if possible and not mage
         if (
-          included
-              .filterNationGenDB("2h", "Yes", false, nationGen.weapondb)
-              .possibleItems() ==
-            0 &&
-          included
-            .filterNationGenDB("2h", "Yes", true, nationGen.weapondb)
-            .possibleItems() !=
-          0 &&
+          included.filterForOneHandedWeapons().possibleItems() == 0 &&
+          included.filterForTwoHandedWeapons().possibleItems() != 0 &&
           random.nextDouble() > 0.5 &&
           !mage
         ) {
-          ItemSet test = all.filterNationGenDB(
-            "2h",
-            "Yes",
-            false,
-            nationGen.weapondb
-          );
+          ItemSet test = all.filterForTwoHandedWeapons();
           if (test.possibleItems() > 0) all = test;
         }
 
@@ -672,7 +665,7 @@ public class UnitGen {
   }
 
   public void armCavalry(
-    Unit u,
+    Unit unit,
     ItemSet included,
     ItemSet excluded,
     Command targettag,
@@ -681,100 +674,97 @@ public class UnitGen {
     if (excluded == null) excluded = new ItemSet();
     if (included == null) included = new ItemSet();
 
-    included = included.filterForPose(u.pose);
+    included = included.filterForPose(unit.pose);
 
-    if (u.isSlotEmpty("weapon")) {
-      if (ignoreArmor) u.setSlot(
-        "weapon",
-        getSuitableItem("weapon", u, excluded, included, targettag)
-      );
-      else {
-        boolean canGetLance = false;
-        if (u.pose.getItems("lanceslot") != null) {
-          int ap = 10;
-          for (Command c : u.getCommands()) if (c.command.equals("#ap")) ap =
-            c.args.get(0).getInt();
-
-          boolean availableLance = false;
-          for (Item i : u.pose.getItems("lanceslot")) if (
-            i.hasSameDominionsId("4") || i.tags.containsName("lance")
-          ) availableLance = true;
-
-          if (10 + random.nextInt(20) > ap && availableLance) canGetLance =
-            true;
-        }
-
-        Item weapon = null;
-        boolean done = false;
-        while (!done) {
-          int choice = random.nextInt(4); // 0-3
-          if (choice <= 1) {
-            ItemSet lances = new ItemSet();
-            if (
-              u.pose.getItems("lanceslot") != null
-            ) for (Item i : u.pose.getItems("lanceslot")) if (
-              i.hasSameDominionsId("4") || i.tags.containsName("lance")
-            ) lances.add(i);
-
-            ItemSet onehand = included
-              .filterSlot("weapon")
-              .filterNationGenDB("2h", "Yes", false, nationGen.weapondb);
-
-            if (chandler.handleChanceIncs(u, onehand).isEmpty()) {
-              onehand = u.pose
-                .getItems("weapon")
-                .filterNationGenDB("2h", "Yes", false, nationGen.weapondb);
-            }
-
-            ItemSet llances = new ItemSet();
-            for (Item i : u.pose.getItems("weapon")) if (
-              i.hasSameDominionsId("357") || i.tags.containsName("lightlance")
-            ) llances.add(i);
-
-            onehand.removeAll(llances);
-
-            if (onehand.possibleItems() > 0) {
-              if (canGetLance) u.setSlot(
-                "lanceslot",
-                chandler.getRandom(lances, u)
-              );
-              weapon = chandler.getRandom(onehand, u);
-
-              done = true;
-            }
-          } else if (choice == 2) {
-            ItemSet lances = new ItemSet();
-            for (Item i : u.pose.getItems("weapon")) if (
-              i.hasSameDominionsId("357") || i.tags.containsName("lightlance")
-            ) lances.add(i);
-
-            if (lances.possibleItems() > 0) {
-              weapon = chandler.getRandom(lances, u);
-              done = true;
-            }
-          } else if (choice == 3) {
-            ItemSet onehand = included
-              .filterSlot("weapon")
-              .filterNationGenDB("2h", "Yes", true, nationGen.weapondb);
-            if (chandler.handleChanceIncs(u, onehand).isEmpty()) onehand =
-              u.pose
-                .getItems("weapon")
-                .filterNationGenDB("2h", "Yes", true, nationGen.weapondb);
-
-            if (onehand.possibleItems() > 0) {
-              weapon = chandler.getRandom(onehand, u);
-
-              done = true;
-            }
-          }
-        }
-
-        if (weapon == null) System.out.println(
-          "NULL WEAPON FOR " + u.race.name + " " + u.pose.name
-        );
-        u.setSlot("weapon", weapon);
-      }
+    // Already armed
+    if (!unit.isSlotEmpty("weapon")) {
+      return;
     }
+
+    if (ignoreArmor) {
+      unit.setSlot("weapon", getSuitableItem("weapon", unit, excluded, included, targettag));
+      return;
+    }
+
+    boolean canGetLance = false;
+    ItemSet poseLances = unit.pose.getItems("lanceslot");
+    ItemSet poseLightLances = unit.pose.getItems("lanceslot");
+
+    if (poseLances == null) {
+      poseLances = new ItemSet();
+    }
+
+    if (poseLightLances == null) {
+      poseLightLances = new ItemSet();
+    }
+
+    poseLances = poseLances.filterForLances();
+    poseLightLances = poseLances.filterForLightLances();
+
+    int ap = unit.getCommandValue("#ap", 10);
+
+    if (10 + random.nextInt(20) > ap && !poseLances.isEmpty()) {
+      canGetLance = true;
+    }
+
+    Item weapon = null;
+    List<Integer> loadoutOptions = Stream.of(0, 1, 2, 3).collect(Collectors.toList());
+    Collections.shuffle(loadoutOptions);
+
+    for (int optionNumber : loadoutOptions) {
+      // lanceslot + one-handed weapon (no light lance in one-handed)
+      if (optionNumber <= 1) {
+        ItemSet lances = new ItemSet(poseLances);
+        ItemSet lightLances = new ItemSet(poseLightLances);
+
+        ItemSet oneHanded = included.filterSlot("weapon").filterForOneHandedWeapons();
+
+        // If not in included, check the entire pose weapon pool
+        if (chandler.handleChanceIncs(unit, oneHanded).isEmpty()) {
+          oneHanded = unit.pose.getItems("weapon").filterForOneHandedWeapons();
+        }
+
+        oneHanded.removeAll(lightLances);
+
+        if (oneHanded.possibleItems() > 0) {
+          if (canGetLance) {
+            unit.setSlot("lanceslot", chandler.getRandom(lances, unit));
+          }
+
+          weapon = chandler.getRandom(oneHanded, unit);
+        }
+      }
+
+      // Light lance in weapon slot
+      else if (optionNumber == 2) {
+        ItemSet lightLances = new ItemSet(poseLightLances);
+
+        if (lightLances.possibleItems() > 0) {
+          weapon = chandler.getRandom(lightLances, unit);
+        }
+      }
+
+      // One-handed in weapon slot
+      else if (optionNumber >= 3) {
+        ItemSet oneHanded = included.filterSlot("weapon").filterForOneHandedWeapons();
+
+        if (chandler.handleChanceIncs(unit, oneHanded).isEmpty()) {
+          oneHanded = unit.pose.getItems("weapon").filterForOneHandedWeapons();
+        }
+
+        if (oneHanded.possibleItems() > 0) {
+          weapon = chandler.getRandom(oneHanded, unit);
+        }
+      }
+    };
+
+    if (weapon == null) {
+      System.out.println(
+        "Expected a weapon to be chosen during armCavalry() for unit (race: " + unit.race.name + ", pose: " + unit.pose.name + ")"
+      );
+    }
+
+    unit.setSlot("weapon", weapon);
   }
 
   public Item getSuitableItem(

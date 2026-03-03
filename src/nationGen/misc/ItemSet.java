@@ -182,7 +182,7 @@ public ItemSet getItemsWithID(String id, String slot) {
     for (Item i : this) {
       String itemValue = i.getValueFromDb(filterProperty, "0");
       Boolean isEqualValue = itemValue.equals(filterValue);
-      Boolean shouldKeepItem = isEqualValue == true && exclude == false;
+      Boolean shouldKeepItem = isEqualValue == exclude;
 
       if (shouldKeepItem) {
         newlist.add(i);
@@ -313,6 +313,66 @@ public ItemSet getItemsWithID(String id, String slot) {
     }
 
     return filtered;
+  }
+
+  public ItemSet filterForOneHandedWeapons() {
+    ItemSet oneHanded = new ItemSet();
+
+    this.forEach(weapon -> {
+        boolean isOneHanded = !weapon.getBooleanFromDb(ItemProperty.IS_2H.toDBColumn());
+
+        if (isOneHanded) {
+          oneHanded.add(weapon);
+        }
+      });
+
+    return oneHanded;
+  }
+
+  public ItemSet filterForTwoHandedWeapons() {
+    ItemSet twoHanded = new ItemSet();
+
+    this.forEach(weapon -> {
+        boolean isTwoHanded = weapon.getBooleanFromDb(ItemProperty.IS_2H.toDBColumn());
+
+        if (isTwoHanded) {
+          twoHanded.add(weapon);
+        }
+      });
+
+    return twoHanded;
+  }
+
+  public ItemSet filterForLances() {
+    ItemSet lances = new ItemSet();
+    int vanillaLanceId = 4;
+
+    this.forEach(l -> {
+        boolean isVanillaLance = l.hasSameDominionsId(vanillaLanceId);
+        boolean hasLanceTag = l.tags.containsName("lance");
+
+        if (isVanillaLance || hasLanceTag) {
+          lances.add(l);
+        }
+      });
+
+    return lances;
+  }
+
+  public ItemSet filterForLightLances() {
+    ItemSet lightLances = new ItemSet();
+    int vanillaLightLanceId = 357;
+
+    this.forEach(l -> {
+        boolean isVanillaLance = l.hasSameDominionsId(vanillaLightLanceId);
+        boolean hasLightLanceTag = l.tags.containsName("lightlance");
+
+        if (isVanillaLance || hasLightLanceTag) {
+          lightLances.add(l);
+        }
+      });
+
+    return lightLances;
   }
 
   public ItemSet getCopy() {
