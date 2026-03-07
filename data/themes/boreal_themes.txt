@@ -3,6 +3,7 @@
 #id default
 #type techlevel
 #basechance 4
+#racedefinition "#nationcommand '#idealcold 1'"
 #endtheme
 
 -- Tech level themes
@@ -20,6 +21,7 @@
 #themeinc theme leather *2
 #themeinc theme naked *2
 #themeinc theme primitive *2
+#racedefinition "#nationcommand '#idealcold 1'"
 #endtheme
 
 -- Weights: EA 0.25, MA 1, LA 2
@@ -36,6 +38,7 @@
 #themeinc theme leather *0.5
 #themeinc theme naked *0.05
 #themeinc theme primitive *0.05
+#racedefinition "#nationcommand '#idealcold 1'"
 #endtheme
 
 -- Demographic themes - tier-2 casters and elites can always be opposite gender
@@ -45,6 +48,7 @@
 #basechance 6
 #themeinc theme female *0.001
 #themeinc theme male_elite +4
+#racedefinition "#nationcommand '#idealcold 1'"
 #endtheme
 
 #newtheme
@@ -52,6 +56,7 @@
 #id mixed
 #basechance 3
 #themeinc theme male +1
+#racedefinition "#nationcommand '#idealcold 1'"
 #endtheme
 
 #newtheme
@@ -60,6 +65,7 @@
 #basechance 1
 #themeinc theme male *0.001
 #themeinc theme female_elite +4
+#racedefinition "#nationcommand '#idealcold 1'"
 #endtheme
 
 -- Social themes
@@ -94,4 +100,5 @@
 #secondaryracedefinition "#freetemplatefilter slavetemplate slave"
 #racedefinition "#secondaryracetroopmod 100"
 #racedefinition "#secondaryracemagemod -100"
+#racedefinition "#nationcommand '#idealcold 1'"
 #endtheme
