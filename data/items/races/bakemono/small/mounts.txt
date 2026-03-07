@@ -92,8 +92,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/boar.png
 #armor
-#offsetx -2
-#offsety -18
+#offsetx 1
+#offsety -11
 #mountmnr "great_boar_mount"
 #define "#gcost -5"
 #theme "boar"
@@ -111,8 +111,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/great_boar.png
 #armor
-#offsetx 1
-#offsety -11
+#offsetx -2
+#offsety -18
 #mountmnr "great_boar_mount"
 #define "#gcost -5"
 #theme "boar"
@@ -175,8 +175,8 @@
 #sprite /graphics/mounts/standard/elk.png
 #needs overlay elk_overlay
 #armor
-#offsety -20
-#offsetx 0
+#offsetx 4
+#offsety -19
 #description "Leaves an elk behind when the rider dies"
 #mountmnr "elk_mount"
 #define "#stealthy +0"
@@ -195,8 +195,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/elk_armored_light_scale.png
 #armor
-#offsety -20
-#offsetx 0
+#offsetx 4
+#offsety -19
 #description "Leaves an elk behind when the rider dies"
 #mountmnr "elk_mount"
 #define "#stealthy +0"
@@ -218,8 +218,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/elk_armored_mail.png
 #armor
-#offsety -20
-#offsetx 0
+#offsetx 4
+#offsety -19
 #description "Leaves an elk behind when the rider dies"
 #mountmnr "elk_mount"
 #define "#stealthy +0"
@@ -395,8 +395,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/bear.png
 #armor
+#offsetx -3
 #offsety -24
-#offsetx -1
 #mountmnr "great_bear_mount"
 #define "#gcost -5"
 #theme "bear"
@@ -414,8 +414,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/bear_armored_lightscale.png
 #armor
+#offsetx -3
 #offsety -24
-#offsetx -1
 #mountmnr "great_bear_mount"
 #define "#gcost -5"
 #barding 252
@@ -435,8 +435,8 @@
 #gameid -1
 #sprite /graphics/mounts/standard/bear_armored_cataphract.png
 #armor
+#offsetx -3
 #offsety -24
-#offsetx -1
 #mountmnr "great_bear_mount"
 #define "#gcost -5"
 #barding 172
@@ -461,8 +461,8 @@
 #description "If the rider dies, the bear will carry on fighting until the end of the battle."
 #mountmnr "bear_mount"
 #define "#gcost -5"
+#offsetx 2
 #offsety -16
-#offsetx -1
 #theme "bear"
 #theme "beartotem"
 #theme "totemanimal"
@@ -482,8 +482,8 @@
 #mountmnr "bear_mount"
 #define "#gcost -5"
 #barding 252
+#offsetx 2
 #offsety -16
-#offsetx -1
 #theme "bear"
 #theme "beartotem"
 #theme "totemanimal"
@@ -505,8 +505,8 @@
 #mountmnr "bear_mount"
 #define "#gcost -5"
 #barding 172
+#offsetx 2
 #offsety -16
-#offsetx -1
 #theme "bear"
 #theme "beartotem"
 #theme "totemanimal"
@@ -587,7 +587,7 @@
 #gameid -1
 #sprite /graphics/mounts/standard/giant_rat.png
 #armor
-#offsetx 3
+#offsetx 7
 #offsety -11
 #mountmnr "giant_rat_mount"
 #define "#gcost -5"
@@ -606,7 +606,7 @@
 #gameid -1
 #sprite /graphics/mounts/standard/giant_rat.png
 #armor
-#offsetx 3
+#offsetx 7
 #offsety -11
 #mountmnr "giant_rat_mount"
 #define "#gcost -5"
@@ -628,7 +628,7 @@
 #gameid -1
 #sprite /graphics/mounts/standard/giant_rat.png
 #armor
-#offsetx 3
+#offsetx 7
 #offsety -11
 #mountmnr "giant_rat_mount"
 #define "#gcost -5"
