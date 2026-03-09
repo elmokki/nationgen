@@ -803,3 +803,15 @@
 #chanceinc anymagic not glamour *0.75
 #chanceinc anymagic not blood *0.75
 #end
+
+#new
+#id "Foulspawn"
+#spell "Accelerated Breeding"
+#spell "Improved Accelerated Breeding"
+#spell "Infernal Breeding"
+#basechance 0
+#chanceinc primaryrace foulspawn 1
+#chanceinc magic not nature *0
+#chanceinc magic not blood *0
+#chanceinc random 0.25 *0
+#end
