@@ -1829,12 +1829,12 @@ public class Unit {
       lines.add("#name \"" + name.toString(this) + "\"");
     }
 
-    if (NationGen.isInDebugMode()) {
+    //if (NationGen.isInDebugMode()) {
       lines.add("");
       lines.add("DEBUG INFORMATION:");
       lines.addAll(writeDebugSlotMapLines(this.slotmap));
       lines.add("");
-    }
+    //}
 
     lines.add("#end");
     lines.add("");
