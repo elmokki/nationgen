@@ -1063,16 +1063,16 @@
 #end
 
 #new
-#id "overcharged2"
+#id "overcharged1"
 #type overcharged
 #basechance 0.1
 #chanceinc "magic air +2"
-#command "#overcharged +2"
+#command "#overcharged +1"
 #tag "path air"
 #command "#gcost +5"
-#price_per_command #hp 0.25 10
-#price_per_command #hp 0.25 19
-#price_per_command #hp 0.5 39
+#price_per_command #hp 0.2 10
+#price_per_command #hp 0.2 19
+#price_per_command #hp 0.4 39
 #price_if_command above #prot 15 +5
 #price_if_command above #prot 20 +5
 #filterdesc "chargedbody desc"
@@ -1080,16 +1080,16 @@
 #end
 
 #new
-#id "overcharged4"
+#id "overcharged2"
 #type overcharged
 #basechance 0.05
 #chanceinc "magic air +1"
-#command "#overcharged +4"
+#command "#overcharged +2"
 #tag "path air"
 #command "#gcost +10"
-#price_per_command #hp 0.35 10
-#price_per_command #hp 0.35 19
-#price_per_command #hp 0.75 39
+#price_per_command #hp 0.3 10
+#price_per_command #hp 0.3 19
+#price_per_command #hp 0.6 39
 #price_if_command above #prot 15 +8
 #price_if_command above #prot 20 +8
 #filterdesc "chargedbody desc"
