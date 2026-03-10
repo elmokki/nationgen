@@ -164,7 +164,7 @@
 #end
 
 #new
-#name "strong desc"
+#name "heavyweight desc"
 #set "physique"
 #prev "physique desc"
 #next "physique end"
@@ -173,18 +173,19 @@
 #synonym "powerful"
 #synonym "mighty"
 #synonym "strong"
+#synonym "burly"
 #end
 
 #new
-#name "weak desc"
+#name "lightweight desc"
 #set "physique"
 #prev "physique desc"
 #next "physique end"
 #bridge "physique bridge"
 #allowsuperlative
-#synonym "weak"
-#synonym "delicate"
-#synonym "frail"
+#synonym "nimble"
+#synonym "agile"
+#synonym "fleetfooted"
 #end
 
 #new
@@ -201,15 +202,15 @@
 #end
 
 #new
-#name "clumsy desc"
-#description "Clumsy"
+#name "brutish desc"
+#description "Brutish"
 #set "physique"
 #prev "physique desc"
 #next "physique end"
 #bridge "physique bridge"
 #allowsuperlative
 #extendeddescription "of great strength but little dexterity"
-#synonym "clumsy"
+#synonym "brutish"
 #synonym "bulky"
 #end
 
@@ -1087,7 +1088,7 @@
 #bridge "wondrous bridge"
 #extendeddescription "and will unleash a blast of lightning when struck"
 #synonym "a protective electric field"
-#synonym "an electrically charge"
+#synonym "an electrical charge"
 #end
 
 #new 
