@@ -433,10 +433,10 @@
 #end
 
 #new magefilter
-#id "Sentinel sculptor"
+#id "sentinel sculptor"
 #type "summoning"
 #basechance 0
-#chanceinc "primaryrace Agarthan AND magic earth AND hasthemetheme not nadir 0.25"
+#chanceinc "primaryrace 'Pale One' AND magic earth AND hasthemetheme not nadir 0.25"
 #chanceinc "hasthemetheme waxing -0.15"
 #chanceinc "nationcommand golemhp above 4 *2"
 #chanceinc "nationcommand golemhp above 9 *2"
@@ -450,4 +450,3 @@
 #theme "golem"
 #filterdesc "statue trainer desc"
 #end
-
