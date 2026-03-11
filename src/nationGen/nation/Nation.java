@@ -572,7 +572,8 @@ public class Nation {
         restrictions,
         RestrictionType.NoPrimaryRace,
         RestrictionType.PrimaryRace,
-        RestrictionType.NationTheme
+        RestrictionType.NationTheme,
+        RestrictionType.NoNationTheme
       )
     ) {
       return;

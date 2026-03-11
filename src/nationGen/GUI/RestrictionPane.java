@@ -52,6 +52,7 @@ public class RestrictionPane
       new NationThemeRestriction(assets),
       new NoPrimaryRaceRestriction(assets),
       new NoUnitOfRaceRestriction(assets),
+      new NoNationThemeRestriction(assets),
       new PrimaryRaceRestriction(assets),
       new RecAnywhereSacredsRestriction(),
       new SacredRaceRestriction(assets), // "Sacred: Race"

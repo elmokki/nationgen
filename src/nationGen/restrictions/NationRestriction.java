@@ -15,6 +15,7 @@ public interface NationRestriction {
     NationTheme,
     NoPrimaryRace,
     NoUnitOfRace,
+    NoNationTheme,
     PrimaryRace,
     RecAnywhereSacreds,
     SacredRace,
