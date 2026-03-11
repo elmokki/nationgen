@@ -131,8 +131,8 @@
 #command "#hp +2"
 #command "#str +1"
 #command "#gcost *1.2"
--- Nations with units with encumbrance 2 or less won't get this
-#chanceinc "command #enc below 3 *0"
+-- Nations with units with encumbrance 1 or less won't get this
+#chanceinc "command #enc below 2 *0"
 #description "Stocky"
 #filterdesc "stocky desc"
 #end
