@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
 import nationGen.items.Item;
 
@@ -91,6 +92,15 @@ public class SlotMap {
     source.slotmemory.forEach((slot, stack) ->
       getSlotStack(slot).addAll(stack)
     );
+  }
+
+  void resolveItems() {
+    this.items()
+      .filter(Item::isDominionsEquipment)
+      .filter(Predicate.not(Item::isDominionsIdAssigned))
+      .forEach(i -> {
+        i = Item.resolveId(i);
+      });
   }
 
   private Deque<Item> getSlotStack(String slot) {

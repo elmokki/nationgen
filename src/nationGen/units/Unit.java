@@ -712,12 +712,6 @@ public class Unit {
   public void setSlot(String slotname, Item newitem) {
     Item olditem = getSlot(slotname);
 
-    // Only items that have a Dominions equipment piece
-    // (like armor or weapon) need to be resolved
-    if (newitem != null && newitem.isDominionsEquipment() && !newitem.dominionsId.isResolved()) {
-      newitem = Item.resolveId(newitem);
-    }
-
     // HIC SUNT DRACONIS
     // Do not pop the slot here. Even if it feels like a new item
     // should replace the previous existing item in the same slot,
@@ -1358,6 +1352,9 @@ public class Unit {
       .flatMap(item -> item.tags.getAllStrings("noslot").stream())
       .collect(Collectors.toSet())
       .forEach(slot -> setSlot(slot, null));
+
+    // Resolve all custom items (i.e. assign proper Dominions ids to them)
+    this.slotmap.resolveItems();
 
     // +2hp to mounted
     if (this.isMounted() != null) {
