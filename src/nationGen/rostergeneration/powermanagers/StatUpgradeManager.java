@@ -61,21 +61,50 @@ enum UpgradableStats {
     }
 }
 
-class StatUpgradeCalculator {
-    public int defaultValue;
-    public int upgradeStepSize;
-    public int upgradeCount = 0;
+class StatUpgradeTracker {
+    public final int defaultValue;
+    public final int upgradeStepSize;
+    public final int maxValue;
+    public final int maxNumberOfUpgrades;
+
+    private int timesUpgraded = 0;
     private boolean isLowerStatBetter = false;
     private StatUpgradePattern statUpgradePattern;
 
-    public StatUpgradeCalculator(int defaultValue, int upgradeStepSize, StatUpgradePattern statUpgradePattern) {
+    public StatUpgradeTracker(int defaultValue, int upgradeStepSize, int maxUpgradeValue, int maxNumberOfUpgrades, StatUpgradePattern statUpgradePattern) {
         this.defaultValue = defaultValue;
         this.upgradeStepSize = upgradeStepSize;
+        this.maxValue = maxUpgradeValue;
+        this.maxNumberOfUpgrades = maxNumberOfUpgrades;
         this.statUpgradePattern = statUpgradePattern;
 
         if (upgradeStepSize < 0) {
             isLowerStatBetter = true;
         }
+    }
+
+    public void addUpgrade() {
+        this.timesUpgraded++;
+    }
+
+    public int getTimesUpgraded() {
+        return this.timesUpgraded;
+    }
+
+    public boolean hasReachedStatUpgradeLimit(int currentUnitValue) {
+        int valueAfterUpgrade = currentUnitValue + this.upgradeStepSize;
+
+        if (this.isLowerStatBetter) {
+            return valueAfterUpgrade < this.maxValue;
+        }
+
+        else {
+            return valueAfterUpgrade > this.maxValue;
+        }
+    }
+    
+    public boolean hasReachedMaxNumberOfUpgrades() {
+        return this.timesUpgraded >= this.maxNumberOfUpgrades;
     }
 
     public double calculateUpgradePrice(int currentValue) {
@@ -133,7 +162,7 @@ public class StatUpgradeManager {
     // If the unit's current stat is already higher than the default, it will be less likely to be chosen as an upgrade.
     // This should be a data structure that guarantees ordering to not mess with seeds (different order every time would
     // not result in the same results with the same seed).
-    private LinkedHashMap<UpgradableStats, StatUpgradeCalculator> statUpgradeCalculators = new LinkedHashMap<>();
+    private LinkedHashMap<UpgradableStats, StatUpgradeTracker> statUpgradeCalculators = new LinkedHashMap<>();
 
     public StatUpgradeManager(NationGen nationGen, Unit unitToUpgrade, int statUpgradeBudget, Random random) {
         this.nationGen = nationGen;
@@ -169,12 +198,12 @@ public class StatUpgradeManager {
         int hpUpgradeAmount = (int) Math.round(Math.max(defaultHpValue * 0.05, 1));
 
         // Create calculators for each stat with their default values
-        StatUpgradeCalculator hpUpgradeCalculator = new StatUpgradeCalculator(defaultHpValue, hpUpgradeAmount, this.statUpgradePattern);
-        StatUpgradeCalculator attackUpgradeCalculator = new StatUpgradeCalculator(10, 1, this.statUpgradePattern);
-        StatUpgradeCalculator defenseUpgradeCalculator = new StatUpgradeCalculator(10, 1, this.statUpgradePattern);
-        StatUpgradeCalculator strengthUpgradeCalculator = new StatUpgradeCalculator(10, 1, this.statUpgradePattern);
-        StatUpgradeCalculator encumbranceUpgradeCalculator = new StatUpgradeCalculator(3, -1, this.statUpgradePattern);
-        StatUpgradeCalculator mrUpgradeCalculator = new StatUpgradeCalculator(10, 1, this.statUpgradePattern);
+        StatUpgradeTracker hpUpgradeCalculator = new StatUpgradeTracker(defaultHpValue, hpUpgradeAmount, 999, 99, this.statUpgradePattern);
+        StatUpgradeTracker attackUpgradeCalculator = new StatUpgradeTracker(10, 1, 99, 99, this.statUpgradePattern);
+        StatUpgradeTracker defenseUpgradeCalculator = new StatUpgradeTracker(10, 1, 99, 99, this.statUpgradePattern);
+        StatUpgradeTracker strengthUpgradeCalculator = new StatUpgradeTracker(10, 1, 99, 99, this.statUpgradePattern);
+        StatUpgradeTracker encumbranceUpgradeCalculator = new StatUpgradeTracker(3, -1, 1, 1, this.statUpgradePattern);
+        StatUpgradeTracker mrUpgradeCalculator = new StatUpgradeTracker(10, 1, 18, 2, this.statUpgradePattern);
 
         // Add to hashmap for ease of access later
         statUpgradeCalculators.put(UpgradableStats.HP, hpUpgradeCalculator);
@@ -186,7 +215,7 @@ public class StatUpgradeManager {
 
         // Only add precision as an upgrade option if unit is ranged
         if (unit.isRanged() == true) {
-            StatUpgradeCalculator precisionUpgradeCalculator = new StatUpgradeCalculator(10, 1, this.statUpgradePattern);
+            StatUpgradeTracker precisionUpgradeCalculator = new StatUpgradeTracker(10, 1, 99, 99, this.statUpgradePattern);
             statUpgradeCalculators.put(UpgradableStats.PRECISION, precisionUpgradeCalculator);
         }
     }
@@ -199,21 +228,26 @@ public class StatUpgradeManager {
         // Calculate price and chance weights for each upgradable stat based on the
         // current stat values of the unit. Stats that are already higher than the default
         // values (usually 10 for most stats, or 3 for encumbrance) will cost more to upgrade
-        statUpgradeCalculators.forEach((statKey, statCalculator) -> {
+        statUpgradeCalculators.forEach((statKey, statTracker) -> {
             int currentUnitValue;
             double upgradePrice;
             double upgradeChance;
             Filter upgradeFilter;
 
             // Find current stat value and calculate its price based on it
-            currentUnitValue = this.unit.getCommandValue(statKey.toString(), statCalculator.defaultValue);
-            upgradePrice = statCalculator.calculateUpgradePrice(currentUnitValue);
+            currentUnitValue = this.unit.getCommandValue(statKey.toString(), statTracker.defaultValue);
+            upgradePrice = statTracker.calculateUpgradePrice(currentUnitValue);
+
+            // Upgrade would push past upgradable limit, set exorbitant price
+            if (statTracker.hasReachedStatUpgradeLimit(currentUnitValue) || statTracker.hasReachedMaxNumberOfUpgrades()) {
+                upgradePrice = 100;
+            }
 
             // Add special encumbrance price modifiers
             if (statKey == UpgradableStats.ENCUMBRANCE) {
                 // If this unit already had encumbrance upgraded at least once, or its
                 // current encumbrance is less than 2, set an exorbitant price
-                if (statCalculator.upgradeCount > 0 || currentUnitValue < 2) {
+                if (statTracker.getTimesUpgraded() > 0 || currentUnitValue < 2) {
                     upgradePrice = 100;
                 }
 
@@ -226,7 +260,7 @@ public class StatUpgradeManager {
             // Strength upgrades should get more and more expensive with each of them.
             // Don't want markatas with 16 strength because it was the cheapest stat.
             else if (statKey == UpgradableStats.STRENGTH) {
-                upgradePrice *= statCalculator.upgradeCount + 1;
+                upgradePrice *= statTracker.getTimesUpgraded() + 1;
             }
 
             // If we can afford the price of this stat upgrade, then make a Filter out of it
@@ -235,7 +269,7 @@ public class StatUpgradeManager {
                 // is based on the price of the upgrade and gets weighed differently
                 // depending on which stat upgrade pattern was selected in the settings
                 // (see StatUpgradePattern.java and the classes that extend it)
-                upgradeChance = statCalculator.calculateUpgradeChance(upgradePrice);
+                upgradeChance = statTracker.calculateUpgradeChance(upgradePrice);
                 upgradeFilter = new Filter(nationGen);
                 upgradeFilter.name = statKey.toString();
                 upgradeFilter.basechance = upgradeChance;
@@ -258,7 +292,7 @@ public class StatUpgradeManager {
 
         // If there are upgradable stats, select one at random based on their weights
         Filter selectedStatUpgrade = EntityChances.baseChances(possibleUpgrades).getRandom(random);
-        StatUpgradeCalculator statUpgradeCalculator = statUpgradeCalculators.get(UpgradableStats.fromString(selectedStatUpgrade.name));
+        StatUpgradeTracker statUpgradeCalculator = statUpgradeCalculators.get(UpgradableStats.fromString(selectedStatUpgrade.name));
         String amountToUpgrade = statUpgradeCalculator.upgradeStepSize + "";
 
         // If the stat is positive (i.e. attack +1), add the + sign so natgen
@@ -270,7 +304,7 @@ public class StatUpgradeManager {
         // Add stat upgrade, spend budget, track number of upgrades for this stat
         unit.commands.add(Command.args(selectedStatUpgrade.name, amountToUpgrade));
         this.budgetLeft -= selectedStatUpgrade.power;
-        statUpgradeCalculator.upgradeCount++;
+        statUpgradeCalculator.addUpgrade();
 
         // Every stat upgrade will make the unit slightly more expensive
         extraGoldCostCounter += 0.33;
