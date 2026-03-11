@@ -150,7 +150,7 @@
 #end
 
 #new
-#id "Myopic"
+#id "myopic"
 #chance 0.3
 #mutuallyexclusive #blind
 #command "#prec -2"
@@ -159,7 +159,7 @@
 #end
 
 #new
-#id "Keen eyed"
+#id "keen eyed"
 #chance 0.3
 #mutuallyexclusive #blind
 #command "#prec +1"
@@ -169,7 +169,7 @@
 #end
 
 #new
-#id "Aggressive"
+#id "aggressive"
 #chance 0.3
 #command "#att +2"
 #command "#def -1"
@@ -177,7 +177,7 @@
 #end
 
 #new
-#id "Gluttonous"
+#id "gluttonous"
 #chance 0.1
 #command "#hp +3"
 #command "#supplybonus -1"
@@ -185,7 +185,7 @@
 #end
 
 #new
-#id "Cowardly"
+#id "cowardly"
 #chance 0.3
 #command "#mor -1"
 #command "#def +1"
@@ -193,7 +193,7 @@
 #end
 
 #new
-#id "Brave"
+#id "brave"
 #chance 0.3
 #command "#mor +1"
 #description "Brave"
@@ -201,14 +201,14 @@
 #end
 
 #new
-#id "Quick"
+#id "quick"
 #chance 0.1
 #command "#ap +4"
 #filterdesc "quick desc"
 #end
 
 #new
-#id "Sickly"
+#id "sickly"
 #chance 0.015
 #mutuallyexclusive "#heal"
 #command "#startaff +10"
@@ -328,7 +328,7 @@
 #end
 
 #new
-#id "Hardy"
+#id "hardy"
 #chance 0.05
 #command "#woundfend +1"
 #command "#gcost *1.1"
@@ -336,7 +336,7 @@
 #end
 
 #new
-#id "Resilient"
+#id "resilient"
 #chance 0.05
 #mutuallyexclusive #demon
 #mutuallyexclusive #undead
@@ -346,7 +346,7 @@
 #end
 
 #new
-#id "Toxic"
+#id "toxic"
 #chance 0.025
 #nocommand #poisonskin
 #command "#poisonskin 20"
