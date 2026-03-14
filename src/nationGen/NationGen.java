@@ -32,8 +32,9 @@ import nationGen.units.Unit;
 
 public class NationGen {
 
-  public static String version = "0.12.9";
-  public static String date = "29th July 2025";
+  public static final String version = "0.12.9";
+  public static final String date = "29th July 2025";
+  public static final String appPropertiesPath = "/app.properties";
 
   private List<NationRestriction> restrictions;
 

@@ -5,11 +5,14 @@ import java.awt.image.BufferedImage;
 import java.io.BufferedOutputStream;
 import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Properties;
+
 import javax.imageio.ImageIO;
 
 /**
@@ -232,6 +235,22 @@ public final class FileUtil {
         "Couldn't write TGA file to '" + file.getPath() + "'."
       );
     }
+  }
+
+  public static Properties readProperties(String propertiesPath) {
+    Path path = FileUtil.getExistingPath(propertiesPath);
+    Properties properties = new Properties();
+
+    try {
+      FileInputStream fileStream = new FileInputStream(path.toString());
+      properties.load(fileStream);
+    }
+
+    catch(IOException e) {
+      throw new IllegalStateException("Error reading Properties at '" + path + "': " + e.getMessage());
+    }
+
+    return properties;
   }
 
   /**
