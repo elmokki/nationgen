@@ -1,3 +1,118 @@
+0.13.0 (14th March 2026)
+-----------------------------------------------------------
+NEW
+-----------------------------------------------------------
+-	More ancestry filters:
+
+	black_dragonblood
+	blue_dragonblood
+	green_dragonblood
+	white_dragonblood
+
+-	Extra Options in the GUI:
+
+	"Match all commands" for the "Unit command" restriction lets the user ensure that a generated nation
+	will contain a unit with all of the commands added to that same list.
+
+	"Check mount commands" for the "Unit command" restriction will allow the restriction to check for the
+	provided commands within the unit's mount's commands as well.
+
+	Added a "No Nation Theme" restriction which is the opposite of the "Nation or primary race theme" restriction.
+	It will allow users to exclude specific nation or race themes from the generation.
+
+-	Foulspawn race new "Grotesque" pose. A bulky, limited-recruitment unit based on vanilla's Grotesque monster.
+	It is a Frankenstein monster style of unit where each bodypart has been randomly selected frfom a sizeable
+	pool. This started as a fun mini-project, but it should give each Foulspawn nation more character. Note that
+	not all Foulspawn nations get one (although most should).
+-	Foulspawn have a high chance of getting their own package of custom spells (Accelerated Breeding, as well as
+	vanilla's Infernal Breeding).
+-	Hellspawn recruitable templates added to Abysian nations courtesy of oldmidgetwillow. These work similarly to
+	recruitable Foulspawn, but are grafted from demon, abysian and salamander bodyparts.
+
+-----------------------------------------------------------
+CONTENT BALANCE/CHANGES
+-----------------------------------------------------------
+-	Updated the vanilla database that is extracted from LarzM's Inspector repository to the latest version. This
+	includes fixes for some incorrect values in vanilla items and units.
+-	Tundra ophidian changed from #iceprot to #icenatprot
+-	Split Lamia poses into elite and non-elite for Lamia nations to actually have Lamua PD / defenders.
+-	Rebalanced Starting Army / PD / Castle Defense generation to more closely match vanilla numbers. Note that due
+	to NationGen's nature, there are still outliers which may get more bang for their buck (and some of this is a
+	deliberate parameter during a nation's generation).
+-	The #darkpower4 filter was much more common than #darkpower2 for units with #darkvision. These are also
+	#mutuallyexclusive to avoid doomstacking.
+-	Winged Ichtyids are now #size 4, following the pattern of winged units getting their size bumped up by 1.
+- 	Winged Clockwork units also get their #size bumped up.
+-	Boreal themes should more commonly be cold (but won't always happen).
+-	The #overcharged filters are now 1 and 2 so as to not be so oppressive (they are also slightly cheaper).
+-	Tweaked all nationwide filters so that there is never one that is purely negative. Unlike sacredfilters, these
+	do not have a #power associated with them, so purely negative ones were just a straight up downside that felt
+	like a nation that could otherwise be cool is now ruined.
+-	Added some cost updates to nationwide filters (most will now add some gold/resources/rps cost to the nation's units).
+-	The #stocky nationwide filter should never (or very rarely) result in non-undead units generating with #enc 0.
+
+-----------------------------------------------------------
+DATA TEMPLATE CHANGES
+-----------------------------------------------------------
+-	Restructured many of the data folders following the ResourceStorage.load() pattern.
+-	Mount items now accept a #barding property which will set the mount's ingame #armor. This enables
+	trimming down the massive, old mounts.txt file to remove all of the barded variants, and to keep
+	the file purely to define the mount without barding.
+
+-	Renamed #primarycommand to #mutuallyexclusive. Now also works to exclude other filters by #id.
+-	Corrected #lowenctreshold to #lowencthreshold
+-	Added #extrapdmulti to various races and themes
+-	The old forbidden_ids.txt file which enabled mod compatibility has been implemented as a Java
+	Properties filed called app.properties in the root directory. Change these ranges to restrict
+	the custom id assignment that NationGen performs on its generated content so that it doesn't
+	overlap with a different mod you'd like to use alongside your generated nation pack.
+
+-----------------------------------------------------------
+FIXES
+-----------------------------------------------------------
+-	Fixed price_per_command and price_per_applied_filter with fractional costs
+-	Added missing pose ids
+-	Foulspawn fixes by oldmidgetwillow:
+
+	Fixed MR for tier 3 casters fixed
+	Fixed non-innate weapons interfering with equipped weapons
+	Language themes should allow foulspawn races to receive national spells
+
+-	Added placeholder vanilla units for wall / gate defense units for nations that end up
+	without a suitable candidate pose.
+-	Fixed descriptions for custom weapons / armors / mounts for Foulspawn recruitable templates.
+-	Mount prices were not accounted for when assessing the cost/amount of units in PD and Start Armies.
+-	Fixed winged vanara mages not getting wings.
+-	Fixed multiple Clockwork unit issues, such as intrinsic hammer/blade weapons and colossus sprites.
+-	Fixed the sentinel_sculptor priest filter never managing to generate a nation.
+-	A host of other miscellaneous fixes.
+
+-----------------------------------------------------------
+SPRITES
+-----------------------------------------------------------
+-	More barded mount sprites courtesy of Integra (list below not exhaustive and not including the barding
+	varieties of each of them - some are fucking incredible):
+
+	Boars
+	Camels
+	Cave Cows
+	Cavemen
+	Cave Grubs
+	Crocodiles
+	Deers
+	Great Spiders
+	Cu Sidhes
+	Dire Wolves
+	Dogs
+	Elephant Dwarves
+	Elks
+
+-----------------------------------------------------------
+CODE
+-----------------------------------------------------------
+-	A lot (a LOT) of code refactoring to better support future changes, content additions and improvements.
+
+
 0.12.9 (29th July 2025)
 ----------------------------------------------------------
 Fixes/Changes
