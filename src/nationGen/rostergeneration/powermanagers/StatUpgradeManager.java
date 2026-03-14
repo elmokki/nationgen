@@ -142,6 +142,12 @@ class StatUpgradeTracker {
     }
 }
 
+/**
+ * The main class to handle the workflow of spending sacredpower on upgrading a unit's stats.
+ * Not the most performant solution - it is currently creating a lot of complex type instances
+ * for every unit in the pack of nations being generated. It would benefit from being rewritten
+ * more as an API or with a State Design Pattern.
+ */
 public class StatUpgradeManager {
     private NationGen nationGen;
     private Unit unit;
