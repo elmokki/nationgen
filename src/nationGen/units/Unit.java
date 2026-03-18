@@ -1048,44 +1048,74 @@ public class Unit {
     return getResCost(useSize, includeMount, this.getCommands());
   }
 
-  private int getResCost(Boolean useSize, Boolean includeMount, List<Command> commands) {
-    int size = Unit.HUMAN_SIZE;
-    int ressize = -1;
-    int extrares = 0;
+  private int getResCost(Boolean useSize, Boolean includeMountCost, List<Command> commands) {
+    int rcost = 0;
+    int size = this.getSize();
+    int ressize = this.getCommandValue("#ressize", -1);
+    int copyStatsTarget = this.getCopyStats();
 
-    NationGenDB weapondb = nationGen.weapondb;
-    NationGenDB armordb = nationGen.armordb;
+    int extraResources = commands.stream()
+      .filter(c -> c.command.equals("#rcost"))
+      .mapToInt(c -> c.args.getInt(0))
+      .sum();
 
-    for (Command c : commands) {
-      if (c.command.equals("#rcost")) {
-        extrares += c.args.get(0).getInt();
-      }
-
-      else if (c.command.equals("#size")) {
-        size = c.args.get(0).getInt();
-      }
-
-      else if (c.command.equals("#ressize")) {
-        ressize = c.args.get(0).getInt();
-      }
-    }
-
-    int res = this.slotmap.items()
+    int equipmentResources = this.slotmap.items()
       .filter(i -> i.isDominionsEquipment() && i.dominionsId.isResolved())
       .mapToInt(i -> i.getIntegerFromDb(ItemProperty.RESOURCE_COST.toDBColumn(), 0))
       .sum();
 
     if (useSize) {
-      if (ressize > 0) res = (ressize * res) / Unit.HUMAN_SIZE;
-      else res = (size * res) / Unit.HUMAN_SIZE;
+      if (ressize > 0) {
+        rcost = (ressize * equipmentResources) / Unit.HUMAN_SIZE;
+      }
+
+      else {
+        rcost = (size * equipmentResources) / Unit.HUMAN_SIZE;
+      }
     }
 
-    if (includeMount) {
-      res += this.getMountResCost();
+    // If Unit has a #copystats command and no pricing tags have modified cost yet,
+    // we start assuming that the cost of the #copystats target should be final
+    Boolean shouldUseCopyStatsFinalCost = copyStatsTarget > -1 && rcost == 0;
+
+    for (Command c : commands) {
+      if (c.command.equals("#rcost")) {
+        shouldUseCopyStatsFinalCost = false;
+        rcost += c.args.get(0).getInt();
+      }
+    }
+
+    // Unit is using #copystats, so figure out the target's cost to account for it
+    if (copyStatsTarget > -1) {
+      int copyStatsResCost = this.nationGen.units.GetInteger(String.valueOf(copyStatsTarget), "rcost");
+      rcost += copyStatsResCost;
+
+      // If the Unit doesn't have #gcost tags but has #copystats, we assume it's a final cost
+      if (shouldUseCopyStatsFinalCost == true) {
+        return copyStatsResCost;
+      }
+    }
+
+    // TODO: if no other cost logic applies to montag template, should move this to an earlier step to break out early
+    if (this.isMontagRecruitableTemplate()) {
+      Boolean shouldUseMontagMeanCost = !this.pose.tags.containsName("no_montag_mean_costs");
+      
+      if (shouldUseMontagMeanCost) {
+        // Find the parent montag id associated with these poses
+        String montagId = this.getStringCommandValue("#firstshape", "");
+        List<Unit> montagChildren = this.nation.getMontagUnits(montagId);
+        UnitCost meanMontagCosts = Unit.calculateMeanCostOfUnits(montagChildren);
+        rcost = meanMontagCosts.resources;
+      }
+    }
+
+    if (includeMountCost) {
+      rcost += this.getMountResCost();
     }
 
     // Dom minimum res amount is 1.
-    return Math.max(res + extrares, 1);
+    rcost = Math.max(rcost + extraResources, 1);
+    return rcost;
   }
 
   public int getMountResCost() {
@@ -1410,16 +1440,26 @@ public class Unit {
       }
     }
 
-    int goldCost = this.getGoldCost(true);
+    /* Cost calculation */
+    int gcost = this.getGoldCost(true);
 
-    if (goldCost > 30) {
-      goldCost = Utils.roundInGroupsOf(goldCost, 5);
+    if (gcost > 30) {
+      gcost = Utils.roundInGroupsOf(gcost, 5);
     }
 
-    Command gcostCommand = Command.args("#gcost", Integer.toString(goldCost));
+    Command gcostCommand = Command.args("#gcost", Integer.toString(gcost));
     handleCommand(commands, gcostCommand);
 
-    // Add all gathered and polished commands to unit's own commands field
+    // Resources are autocalculated ingame. We only need to assign them manually to montag templates
+    // that don't have any equipment in the recruitment screen until they appear into the game
+    if (this.isMontagRecruitableTemplate()) {
+      int rcost = this.getResCost(true, true);
+      Command rcostCommand = Command.args("#rcost", Integer.toString(rcost));
+      handleCommand(commands, rcostCommand);
+    }
+    /* ------------------------------------------------------------------------------------------- */
+
+    // Set all gathered and polished commands to become the unit's own commands now.
     // This is why polish() should ALWAYS be done at the end of generation
     unit.commands = commands;
 
@@ -1606,6 +1646,10 @@ public class Unit {
     if (this.getTotalProt(true) <= 12) return false;
 
     return true;
+  }
+
+  public int getSize() {
+    return this.getCommandValue("#size", Unit.HUMAN_SIZE);
   }
 
   public int getArmorProt() {
