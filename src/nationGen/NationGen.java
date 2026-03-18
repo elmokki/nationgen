@@ -32,7 +32,7 @@ import nationGen.units.Unit;
 
 public class NationGen {
 
-  public static final String version = "0.13.1";
+  public static final String version = "0.13.2";
   public static final String date = "18th March 2026";
   public static final String appPropertiesPath = "/app.properties";
 
