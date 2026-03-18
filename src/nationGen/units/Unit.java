@@ -933,6 +933,16 @@ public class Unit {
   }
 
   public int getGoldCost(Boolean includeMountCost) {
+    if (this.polished) {
+      int polishedCost = this.getCommandValue("#gcost", -1);
+      
+      if (polishedCost == -1) {
+        throw new IllegalStateException("Unit (" + "pose: " + this.pose.name + ", race: " + this.race.name + ") is polished but does not have a #gcost!");
+      }
+
+      return polishedCost;
+    }
+
     List<Command> commands = this.getCommands();
     Tags unitTags = Generic.getAllUnitTags(this);
     int copyStatsTarget = this.getCopyStats();
