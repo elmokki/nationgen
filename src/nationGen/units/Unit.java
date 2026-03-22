@@ -1,6 +1,5 @@
 package nationGen.units;
 
-import com.elmokki.NationGenDB;
 import com.elmokki.Generic;
 import java.awt.*;
 import java.awt.image.BufferedImage;
