@@ -106,14 +106,34 @@ public class MountUnit extends Unit {
   }
 
   public int getGoldCost() {
-    return this.gcost;
+    if (this.polished) {
+      return this.gcost;
+    }
+
+    return this.calculateGoldCost();
   }
 
   public int getResCost() {
     return this.getResCost(false, false);
   }
 
+  public int calculateGoldCost() {
+    int gcost = 0;
+
+    for (Command c : this.mount.getCommands()) {
+      if (c.command.equals("#gcost")) {
+        gcost += c.args.get(0).getInt();
+      }
+    }
+
+    return gcost;
+  }
+
   public void polish(NationGen n, Nation nation) {
+    if (this.polished) {
+      return;
+    }
+
     Filter polishFilter = new Filter(n);
     polishFilter.name = "Mount unit";
 
@@ -160,16 +180,14 @@ public class MountUnit extends Unit {
           null
         );
       }
-
-      // Add extra gcost
-      else if (c.command.equals("#gcost")) {
-        this.gcost = c.args.get(0).getInt();
-      }
     }
 
     if (polishFilter.commands.size() > 0) {
       this.appliedFilters.add(polishFilter);
     }
+
+    this.gcost = this.calculateGoldCost();
+    this.polished = true;
   }
 
   /**
