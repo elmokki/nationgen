@@ -386,6 +386,12 @@ public class Unit {
     }
   }
 
+  public int getHandSlots() {
+    int itemSlotsMask = this.getItemSlots();
+    int handSlots = DominionsItemSlots.getHandSlots(itemSlotsMask);
+    return handSlots;
+  }
+
   public int getItemSlots() {
     int slots = -1;
     for (Command c : this.getCommands()) if (
@@ -636,6 +642,41 @@ public class Unit {
     return this.gatherCommands()
       .stream()
       .anyMatch(Command::isShapeshiftCommand);
+  }
+
+  public int getNumberOfHandsRequiredForWeapons() {
+    int usedHands = this.slotmap.getEquippedWeapons().mapToInt(w -> {
+      boolean isIntrinsic = w.getBooleanFromDb(ItemProperty.INTRINSIC.toDBColumn());
+      boolean isTwoHanded = w.getBooleanFromDb(ItemProperty.IS_2H.toDBColumn());
+      int handsNeeded = isIntrinsic ? 0 : !isTwoHanded ? 1 : 2;
+      return handsNeeded;
+    }).sum();
+
+    // Get weapons that were added directly through templates, like
+    // natural weapons from bases (such as nagas)
+    usedHands += this.getCommands()
+      .stream()
+      .filter(c -> c.command.equals("#weapon") && c.args.getInt(0) > 0)
+      .mapToInt(c -> {
+        String id = c.args.getString(0);
+        boolean isIntrinsic = this.nationGen.weapondb.GetInteger(id, ItemProperty.INTRINSIC.toDBColumn(), 0) == 1;
+        boolean isTwoHanded = this.nationGen.weapondb.GetInteger(id, ItemProperty.IS_2H.toDBColumn(), 0) == 1;
+        int handsNeeded = isIntrinsic ? 0 : !isTwoHanded ? 1 : 2;
+        return handsNeeded;
+      }).sum();
+
+    return usedHands;
+  }
+
+  public int getNumberOfFreeHands() {
+    int usedHands = this.getNumberOfHandsRequiredForWeapons();
+    int totalHandSlots = this.getHandSlots();
+    int freeHandSlots = totalHandSlots - usedHands;
+    return freeHandSlots;
+  }
+
+  public Boolean hasFreeHandSlot() {
+    return this.getNumberOfFreeHands() > 0;
   }
 
   private void handleRemoveDependency(Item i) {
