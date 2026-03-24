@@ -24,6 +24,7 @@ public class MountUnit extends Unit {
   public Mount mount;
   boolean sacred = false;
   private int gcost = 0;
+  private int rcost = 0;
 
   /**
    * A MountUnit instance is the object that connects a cavalry Unit (the rider)
@@ -68,6 +69,7 @@ public class MountUnit extends Unit {
     this.mount = new Mount(mountUnit.mount);
     this.sacred = mountUnit.sacred;
     this.gcost = mountUnit.gcost;
+    this.rcost = mountUnit.rcost;
   }
 
   @Override
@@ -82,18 +84,26 @@ public class MountUnit extends Unit {
       throw new IllegalArgumentException("Expected mountItem to have a #mountmnr command but found none!");
     }
 
-    mountItem.getCommands()
-      .stream()
-      .filter(c -> c.command.equals("#mountmnr"))
-      .findFirst()
-      .ifPresent(mountMnrCommand -> {
-        String mountId = mountMnrCommand.args.get(0).get();
+    for (Command c : mountItem.getCommands()) {
+      if (c.command.equals("#gcost")) {
+        int gold = c.args.getInt(0);
+        this.gcost = gold;
+      }
+      
+      else if (c.command.equals("#rcost")) {
+        int resources = c.args.getInt(0);
+        this.rcost = resources;
+      }
+
+      else if (c.command.equals("#mountmnr")) {
+        String mountId = c.args.get(0).get();
         this.mount = this.nationGen.getAssets().getMount(mountId);
 
         if (mountItem.sprite.isBlank() == false) {
-          this.mount.commands.removeIf(c -> {
-            return c.command.equals("#spr1") || c.command.equals("#spr2") || c.command.equals("#copyspr");
+          this.mount.commands.removeIf(mc -> {
+            return mc.command.equals("#spr1") || mc.command.equals("#spr2") || mc.command.equals("#copyspr");
           });
+
           this.mount.commands.add(Command.args("#spr1", "." + mountItem.sprite));
           this.mount.commands.add(Command.args("#spr2", "shift"));
         }
@@ -102,38 +112,19 @@ public class MountUnit extends Unit {
         if (mountItem.isBarding()) {
           this.mount.commands.add(Command.args("#armor", mountItem.getBardingId()));
         }
-      });
+      }
+    }
   }
 
   public int getGoldCost() {
-    if (this.polished) {
-      return this.gcost;
-    }
-
-    return this.calculateGoldCost();
+    return this.gcost;
   }
 
   public int getResCost() {
-    return this.getResCost(false, false);
-  }
-
-  public int calculateGoldCost() {
-    int gcost = 0;
-
-    for (Command c : this.mount.getCommands()) {
-      if (c.command.equals("#gcost")) {
-        gcost += c.args.get(0).getInt();
-      }
-    }
-
-    return gcost;
+    return this.rcost;
   }
 
   public void polish(NationGen n, Nation nation) {
-    if (this.polished) {
-      return;
-    }
-
     Filter polishFilter = new Filter(n);
     polishFilter.name = "Mount unit";
 
@@ -180,13 +171,22 @@ public class MountUnit extends Unit {
           null
         );
       }
+
+      // Add extra gcost
+      else if (c.command.equals("#gcost")) {
+        this.gcost = c.args.get(0).getInt();
+      }
+
+      // Add extra gcost
+      else if (c.command.equals("#rcost")) {
+        this.rcost = c.args.get(0).getInt();
+      }
     }
 
     if (polishFilter.commands.size() > 0) {
       this.appliedFilters.add(polishFilter);
     }
 
-    this.gcost = this.calculateGoldCost();
     this.polished = true;
   }
 

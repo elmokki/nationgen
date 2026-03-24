@@ -932,16 +932,6 @@ public class Unit {
   }
 
   public int getGoldCost(Boolean includeMountCost) {
-    if (this.polished) {
-      int polishedCost = this.getCommandValue("#gcost", -1);
-      
-      if (polishedCost == -1) {
-        throw new IllegalStateException("Unit (" + "pose: " + this.pose.name + ", race: " + this.race.name + ") is polished but does not have a #gcost!");
-      }
-
-      return polishedCost;
-    }
-
     List<Command> commands = this.getCommands();
     Tags unitTags = Generic.getAllUnitTags(this);
     int copyStatsTarget = this.getCopyStats();
@@ -967,14 +957,18 @@ public class Unit {
       if (c.command.equals("#holy")) {
         shouldUseCopyStatsFinalCost = false;
         sacredMultiplier = this.nationGen.settings.get(SettingsType.goldSacredCostMultiplier);
-        totalCost *= sacredMultiplier;
       }
 
       if (c.command.equals("#slowrec")) {
         shouldUseCopyStatsFinalCost = false;
         slowRecMultiplier = this.nationGen.settings.get(SettingsType.goldSlowRecCostMultiplier);
-        totalCost *= slowRecMultiplier;
       }
+    }
+
+    // Only apply the multipliers if the unit wasn't already polished
+    if (!this.polished) {
+      totalCost *= sacredMultiplier;
+      totalCost *= slowRecMultiplier;
     }
 
     // Unit is using #copystats, so figure out the target's cost to account for it
