@@ -646,7 +646,8 @@ public class Unit {
     // natural weapons from bases (such as nagas)
     usedHands += this.getCommands()
       .stream()
-      .filter(c -> c.command.equals("#weapon") && c.args.getInt(0) > 0)
+      .filter(c -> c.command.equals("#weapon"))
+      .filter(c -> !Generic.isNumeric(c.args.getString(0)) || c.args.getInt(0) > 0)
       .mapToInt(c -> {
         String id = c.args.getString(0);
         boolean isIntrinsic = this.nationGen.weapondb.GetInteger(id, ItemProperty.INTRINSIC.toDBColumn(), 0) == 1;
