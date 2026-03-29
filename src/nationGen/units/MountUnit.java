@@ -7,6 +7,8 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import nationGen.NationGen;
 import nationGen.entities.Filter;
@@ -74,9 +76,19 @@ public class MountUnit extends Unit {
 
   @Override
   public List<Command> getCommands() {
-    List<Command> commands = super.getCommands();
-    commands.addAll(this.mount.getCommands());
-    return commands;
+    List<Command> mountUnitCommands = new ArrayList<>(super.getCommands());
+    mountUnitCommands.addAll(this.mount.getCommands());
+    return mountUnitCommands;
+  }
+
+  @Override
+  public List<Command> gatherCommands() {
+    return Stream.of(
+        this.commands.stream(),
+        this.mount.getCommands().stream()
+      )
+      .flatMap(s -> s)
+      .collect(Collectors.toList());
   }
 
   public void loadMountItemData(Item mountItem) {
@@ -86,13 +98,11 @@ public class MountUnit extends Unit {
 
     for (Command c : mountItem.getCommands()) {
       if (c.command.equals("#gcost")) {
-        int gold = c.args.getInt(0);
-        this.gcost = gold;
+        this.mount.commands.add(c);
       }
       
       else if (c.command.equals("#rcost")) {
-        int resources = c.args.getInt(0);
-        this.rcost = resources;
+        this.mount.commands.add(c);
       }
 
       else if (c.command.equals("#mountmnr")) {
@@ -117,11 +127,29 @@ public class MountUnit extends Unit {
   }
 
   public int getGoldCost() {
-    return this.gcost;
+    List<Command> commands = this.gatherCommands();
+    int total = 0;
+
+    for (Command c : commands) {
+      if (c.command.equals("#gcost")) {
+        total = this.handleModifier(c.args.get(0), total);
+      }
+    }
+
+    return total;
   }
 
   public int getResCost() {
-    return this.rcost;
+    List<Command> commands = this.gatherCommands();
+    int total = 0;
+
+    for (Command c : commands) {
+      if (c.command.equals("#rcost")) {
+        total = this.handleModifier(c.args.get(0), total);
+      }
+    }
+
+    return total;
   }
 
   public void polish(NationGen n, Nation nation) {

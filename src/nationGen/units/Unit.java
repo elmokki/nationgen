@@ -115,6 +115,23 @@ public class Unit {
     return rootId;
   }
 
+  public List<Command> gatherCommands() {
+    // Don't re-check all command sources if Unit is already polished
+    if (this.polished == true) {
+      return this.commands;
+    }
+
+    return Stream.of(
+        this.commands.stream(),
+        this.pose.getCommands().stream(),
+        this.race.unitcommands.stream(),
+        Stream.of(this.appliedFilters.stream()).flatMap(s -> s).flatMap(f -> f.commands.stream()),
+        Stream.of(this.slotmap.items()).flatMap(s -> s).flatMap(i -> i.commands.stream())
+      )
+      .flatMap(s -> s)
+      .collect(Collectors.toList());
+  }
+
   public Boolean hasCommand(String cmd) {
     Command parsed = Command.parse(cmd);
     return this.hasCommand(parsed);
@@ -263,7 +280,7 @@ public class Unit {
     this.id = this.nationGen.getNextUnitId();
   }
 
-  private int handleModifier(Arg mod, int value) {
+  protected int handleModifier(Arg mod, int value) {
     Optional<Operator> operator = mod.getOperator();
     if (
       operator.isPresent() &&
