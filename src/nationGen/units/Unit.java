@@ -635,9 +635,11 @@ public class Unit {
   }
 
   public int getNumberOfHandsRequiredForWeapons() {
-    int usedHands = this.slotmap.getEquippedWeapons().mapToInt(w -> {
-      boolean isIntrinsic = w.getBooleanFromDb(ItemProperty.INTRINSIC.toDBColumn());
-      boolean isTwoHanded = w.getBooleanFromDb(ItemProperty.IS_2H.toDBColumn());
+    int usedHands = Stream.of(this.slotmap.getEquippedWeapons(), this.slotmap.getEquippedShields())
+      .flatMap(s -> s)
+      .mapToInt(i -> {
+      boolean isIntrinsic = i.getBooleanFromDb(ItemProperty.INTRINSIC.toDBColumn());
+      boolean isTwoHanded = i.getBooleanFromDb(ItemProperty.IS_2H.toDBColumn());
       int handsNeeded = isIntrinsic ? 0 : !isTwoHanded ? 1 : 2;
       return handsNeeded;
     }).sum();
@@ -653,6 +655,19 @@ public class Unit {
         boolean isIntrinsic = this.nationGen.weapondb.GetInteger(id, ItemProperty.INTRINSIC.toDBColumn(), 0) == 1;
         boolean isTwoHanded = this.nationGen.weapondb.GetInteger(id, ItemProperty.IS_2H.toDBColumn(), 0) == 1;
         int handsNeeded = isIntrinsic ? 0 : !isTwoHanded ? 1 : 2;
+        return handsNeeded;
+      }).sum();
+
+    // Get shields that were added directly through templates
+    usedHands += this.getCommands()
+      .stream()
+      .filter(c -> c.command.equals("#armor"))
+      .filter(c -> !Generic.isNumeric(c.args.getString(0)) || c.args.getInt(0) > 0)
+      .mapToInt(c -> {
+        String id = c.args.getString(0);
+        boolean isShield = this.nationGen.armordb.GetInteger(id, ItemProperty.TYPE.toDBColumn(), 0) == 4;
+        boolean isIntrinsic = this.nationGen.armordb.GetInteger(id, ItemProperty.INTRINSIC.toDBColumn(), 0) == 1;
+        int handsNeeded = !isShield ? 0 : isIntrinsic ? 0 : 1;
         return handsNeeded;
       }).sum();
 
