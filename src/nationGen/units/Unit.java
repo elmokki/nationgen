@@ -393,113 +393,103 @@ public class Unit {
   }
 
   public int getItemSlots() {
-    int slots = -1;
-    for (Command c : this.getCommands()) if (
-      c.command.equals("#itemslots")
-    ) slots = c.args.get(0).getInt();
+    int itemslots = this.getFirstCommandValue("#itemslots", -1);
 
-    if (slots == -1) {
-      slots = 0;
-
-      Tags unitTags = Generic.getAllUnitTags(this);
-
-      Tags itemTags = new Tags();
-      Item basesprite = this.slotmap.get("basesprite");
-      if (basesprite != null) itemTags.addAll(basesprite.tags);
-
-      this.slotmap.items()
-        .filter(i -> i != basesprite)
-        .forEach(i -> itemTags.addAll(i.tags));
-
-      // itemTags.addAll(this.tags);
-
-      int head = 1;
-      int body = 1;
-      int feet = 1;
-      int hand = 2;
-      int misc = 2;
-      int bow = 1;
-
-      for (Args args : unitTags.getAllArgs("baseitemslot")) {
-        String slot = args.get(0).get();
-        Arg modifier = args.get(1);
-        switch (slot) {
-          case "head":
-            head = handleModifier(modifier, head);
-            break;
-          case "misc":
-            misc = handleModifier(modifier, misc);
-            break;
-          case "body":
-            body = handleModifier(modifier, body);
-            break;
-          case "hand":
-            hand = handleModifier(modifier, hand);
-            break;
-          case "feet":
-            feet = handleModifier(modifier, feet);
-            break;
-          case "bow":
-            bow = handleModifier(modifier, bow);
-            break;
-        }
-      }
-
-      for (Args args : itemTags.getAllArgs("itemslot")) {
-        String slot = args.get(0).get();
-        Arg modifier = args.get(1);
-        switch (slot) {
-          case "head":
-            head = handleModifier(modifier, head);
-            break;
-          case "misc":
-            misc = handleModifier(modifier, misc);
-            break;
-          case "body":
-            body = handleModifier(modifier, body);
-            break;
-          case "hand":
-            hand = handleModifier(modifier, hand);
-            break;
-          case "feet":
-            feet = handleModifier(modifier, feet);
-            break;
-          case "bow":
-            bow = handleModifier(modifier, bow);
-            break;
-        }
-      }
-
-      head = Math.min(head, 2);
-      misc = Math.min(misc, 5);
-      body = Math.min(body, 1);
-      hand = Math.min(hand, 4);
-      feet = Math.min(feet, 1);
-      bow = Math.min(bow, 1);
-
-      head = Math.max(head, 0);
-      misc = Math.max(misc, 0);
-      body = Math.max(body, 0);
-      hand = Math.max(hand, 0);
-      feet = Math.max(feet, 0);
-      bow = Math.max(bow, 0);
-
-      if (hand > 0) for (int i = 0; i < hand; i++) slots +=
-      Math.pow(2, (i + 1));
-      if (head > 0) for (int i = 0; i < head; i++) slots +=
-      Math.pow(2, (i + 13));
-      if (bow > 0) slots += 512;
-      if (body > 0) slots += 65536;
-      if (feet > 0) slots += 131072;
-      if (misc > 0) for (int i = 0; i < misc; i++) slots +=
-      Math.pow(2, (i + 18));
-
-      if (slots == 0) slots = 1;
-
-      return slots;
+    if (itemslots > -1) {
+      return itemslots;
     }
 
-    return slots;
+    // Default slot amounts
+    int head = 1;
+    int body = 1;
+    int feet = 1;
+    int hand = 2;
+    int misc = 2;
+    int bow = 1;
+  
+    Tags itemTags = new Tags();
+    Tags unitTags = Generic.getAllUnitTags(this);
+    Item basesprite = this.slotmap.get("basesprite");
+
+    if (basesprite != null) {
+      itemTags.addAll(basesprite.tags);
+    }
+
+    this.slotmap.items()
+      .filter(i -> i != basesprite)
+      .forEach(i -> itemTags.addAll(i.tags));
+
+    // #baseitemslot tags will override the base amount of slots
+    for (Args args : unitTags.getAllArgs("baseitemslot")) {
+      String slot = args.get(0).get();
+      Arg modifier = args.get(1);
+
+      switch (slot) {
+        case "head":
+          head = handleModifier(modifier, head);
+          break;
+        case "misc":
+          misc = handleModifier(modifier, misc);
+          break;
+        case "body":
+          body = handleModifier(modifier, body);
+          break;
+        case "hand":
+          hand = handleModifier(modifier, hand);
+          break;
+        case "feet":
+          feet = handleModifier(modifier, feet);
+          break;
+        case "bow":
+          bow = handleModifier(modifier, bow);
+          break;
+      }
+    }
+
+    // Seearch for #itemslot tags that modifies each specific slot
+    for (Args args : itemTags.getAllArgs("itemslot")) {
+      String slot = args.get(0).get();
+      Arg modifier = args.get(1);
+
+      switch (slot) {
+        case "head":
+          head = handleModifier(modifier, head);
+          break;
+        case "misc":
+          misc = handleModifier(modifier, misc);
+          break;
+        case "body":
+          body = handleModifier(modifier, body);
+          break;
+        case "hand":
+          hand = handleModifier(modifier, hand);
+          break;
+        case "feet":
+          feet = handleModifier(modifier, feet);
+          break;
+        case "bow":
+          bow = handleModifier(modifier, bow);
+          break;
+      }
+    }
+
+    // Cap the slots to the possible min and max amounts
+    head = Math.min(head, 2);
+    misc = Math.min(misc, 5);
+    body = Math.min(body, 1);
+    hand = Math.min(hand, 6);
+    feet = Math.min(feet, 1);
+    bow = Math.min(bow, 1);
+
+    head = Math.max(head, 0);
+    misc = Math.max(misc, 0);
+    body = Math.max(body, 0);
+    hand = Math.max(hand, 0);
+    feet = Math.max(feet, 0);
+    bow = Math.max(bow, 0);
+
+    itemslots = DominionsItemSlots.encode(hand, bow, head, body, feet, misc);
+    return itemslots;
   }
 
   public List<Unit> getMontagShapes() {
