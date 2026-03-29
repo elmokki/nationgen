@@ -1,8 +1,18 @@
+0.13.3 (29th March 2026)
+-----------------------------------------------------------
+FIXES
+-----------------------------------------------------------
+-	Fixed recursion in Unit.getCommands() causing the program to throw a StackOverflowError.
+-	Fixed mount gold/resource costs not being included or getting duplicated (again).
+-	More code refactoring.
+
+
 0.13.2 (18th March 2026)
 -----------------------------------------------------------
 FIXES
 -----------------------------------------------------------
 -	Fixed gold cost in mod file being inconsistent with the ingame cost.
+
 
 0.13.1 (18th March 2026)
 -----------------------------------------------------------
