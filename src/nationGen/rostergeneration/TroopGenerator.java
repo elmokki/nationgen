@@ -772,9 +772,13 @@ public class TroopGenerator {
   protected void cleanUnit(Unit u) {
     // TODO: Handle more than one hand \:D/
     Item weapon = u.getSlot("weapon");
+    Item offhand = u.getSlot("offhand");
+
+    int freeHands = u.getNumberOfFreeHands();
     boolean isTwoHanded = weapon.getBooleanFromDb(ItemProperty.IS_2H.toDBColumn());
 
-    if (isTwoHanded && !this.isDualWieldEligible(u)) {
+    // Clear the offhand if the unit only needs one more hand to wield a two-hander
+    if (isTwoHanded && !this.isDualWieldEligible(u) && freeHands == -1 && offhand != null) {
       u.setSlot("offhand", null);
     }
   }

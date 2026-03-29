@@ -2117,7 +2117,7 @@ public class MageGenerator extends TroopGenerator {
           }
         }
         
-        else if (weapon.getBooleanFromDb(ItemProperty.IS_2H.toDBColumn())) {
+        else if (weapon.getBooleanFromDb(ItemProperty.IS_2H.toDBColumn()) && unit.getNumberOfFreeHands() == -1) {
           unit.setSlot("offhand", null);
         }
       }
