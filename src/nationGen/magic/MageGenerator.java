@@ -1153,11 +1153,11 @@ public class MageGenerator extends TroopGenerator {
 
             //force slow to recruit for H3s
             if (
-              currentStrength > 2 && u.getCommandValue("#rpcost", 0) == 2
+              currentStrength > 2 && u.getTotalCommandValue("#rpcost", 0) == 2
             ) u.commands.add(Command.args("#rpcost", "+2"));
 
             // Make giants of size 7 and above holy cost 2
-            if (u.getCommandValue("#size", 1) >= 7) {
+            if (u.getTotalCommandValue("#size", 1) >= 7) {
               u.commands.add(new Command("#holycost", new Arg(2)));
             }
           }
@@ -1182,7 +1182,7 @@ public class MageGenerator extends TroopGenerator {
             );
 
             // Make giants of size 7 and above holy cost 2
-            if (u.getCommandValue("#size", 1) >= 7) {
+            if (u.getTotalCommandValue("#size", 1) >= 7) {
               u.commands.add(new Command("#holycost", new Arg(2)));
             }
           }
@@ -1241,7 +1241,7 @@ public class MageGenerator extends TroopGenerator {
         u.commands.add(Command.args("#mr", "+" + (2 + currentStrength)));
 
         // Make giants of size 7 and above holy cost 2
-        if (u.getCommandValue("#size", 1) >= 7) {
+        if (u.getTotalCommandValue("#size", 1) >= 7) {
           u.commands.add(new Command("#holycost", new Arg(2)));
         }
 
@@ -1267,7 +1267,7 @@ public class MageGenerator extends TroopGenerator {
           u.commands.add(new Command("#holy"));
 
           // Make giants of size 7 and above holy cost 2
-          if (u.getCommandValue("#size", 1) >= 7) {
+          if (u.getTotalCommandValue("#size", 1) >= 7) {
             u.commands.add(new Command("#holycost", new Arg(2)));
           }
         }

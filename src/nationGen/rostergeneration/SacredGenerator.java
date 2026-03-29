@@ -182,7 +182,7 @@ public class SacredGenerator extends TroopGenerator {
   }
 
   private void scaleStatsToPower(Unit unit, int power) {
-    int baseMr = unit.getCommandValue("#mr", 10);
+    int baseMr = unit.getTotalCommandValue("#mr", 10);
     int maxMrBonus = 4;
     int maxMoraleBonus = 6;
     int diminishingReturnsMrThreshold = 11;
@@ -199,7 +199,7 @@ public class SacredGenerator extends TroopGenerator {
     unit.commands.add(Command.args("#mr", "+" + mrBonus));
 
     // Determine morale
-    int baseMorale = unit.getCommandValue("#mor", 10);
+    int baseMorale = unit.getTotalCommandValue("#mor", 10);
 
     // 50% of power + 50% of 0 to power + 2
     int moraleBonus = (int) Math.round(
@@ -801,12 +801,12 @@ public class SacredGenerator extends TroopGenerator {
    */
   public float calculateSurvivability(Unit u) {
     // Unit's survivability stats
-    int hp = u.getCommandValue("#hp", 10);
+    int hp = u.getTotalCommandValue("#hp", 10);
     int parry = u.getParry();
     int def = u.getTotalDef() - parry;
     int shieldProt = u.getShieldProt();
     float finalProt = u.getTotalProt();
-    int mr = u.getCommandValue("#mr", 10);
+    int mr = u.getTotalCommandValue("#mr", 10);
 
     // Least survivable values taken from a base pygmy template.
     // If you have these, your survivability is basically 0.
@@ -1005,7 +1005,7 @@ public class SacredGenerator extends TroopGenerator {
       tf.commands.add(new Command("#holy"));
 
       // Make giants of size 7 and above holy cost 2
-      if (u.getCommandValue("#size", 1) >= 7) {
+      if (u.getTotalCommandValue("#size", 1) >= 7) {
         tf.commands.add(new Command("#holycost", new Arg(2)));
       }
     }
@@ -1117,7 +1117,7 @@ public class SacredGenerator extends TroopGenerator {
     }
 
     int cgcost = u.getGoldCost(true);
-    int costThreshold = u.getCommandValue("#size", 2) * 25;
+    int costThreshold = u.getTotalCommandValue("#size", 2) * 25;
 
     cgcost -= costThreshold;
 

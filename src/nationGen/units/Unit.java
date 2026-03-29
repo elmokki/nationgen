@@ -138,7 +138,7 @@ public class Unit {
   }
 
   public Boolean hasCommand(Command cmd) {
-    return this.getCommands()
+    return this.gatherCommands()
       .stream()
       .filter(c -> c.equals(cmd))
       .findAny()
@@ -147,11 +147,59 @@ public class Unit {
 
   public Optional<Command> getCommand(String commandString) {
     Command parsedCommand = Command.parse(commandString);
-    List<Command> allCommands = this.getCommands();
+    List<Command> allCommands = this.gatherCommands();
+
     return allCommands
       .stream()
       .filter(c -> parsedCommand.contains(c))
       .findFirst();
+  }
+
+  public int getFirstCommandValue(String command, int defaultv) {
+    List<Command> commands = this.gatherCommands();
+
+    for (Command c : commands) {
+      if (c.command.equals(command) && c.args.size() > 0) {
+        return c.args.getInt(0);
+      }
+    }
+
+    return defaultv;
+  }
+
+  public int getTotalCommandValue(String command, int defaultv) {
+    List<Command> commands = this.gatherCommands();
+    int total = defaultv;
+    
+    for (Command c : commands) {
+      if (c.command.equals(command) && c.args.size() > 0) {
+        total = this.handleModifier(c.args.get(0), total);
+      }
+    }
+
+    return total;
+  }
+
+  public String getStringCommandValue(String command, String defaultv) {
+    List<Command> commands = this.gatherCommands();
+    String value = defaultv;
+    
+    for (Command c : commands) {
+      if (c.command.equals(command) && c.args.size() > 0) value = c.args
+        .get(0)
+        .get();
+    }
+
+    return value;
+  }
+
+  // 20150522EA : my OOP prof back in undergrad would probably shoot me for this method...
+  public void setCommandValue(String command, String newValue) {
+    for (Command cmd : this.commands) {
+      if (cmd.command.equals(command)) {
+        cmd.args.set(0, new Arg(newValue));
+      }
+    }
   }
 
   public Optional<Command> getOwnCommand(String commandString) {
@@ -585,11 +633,10 @@ public class Unit {
   }
 
   public Boolean isShapeshifter() {
-    return this.getCommands()
+    return this.gatherCommands()
       .stream()
       .anyMatch(Command::isShapeshiftCommand);
   }
-
 
   private void handleRemoveDependency(Item i) {
     if (i == null) return;
@@ -783,7 +830,7 @@ public class Unit {
 
     for (Args args : pricePerCommandArgs) {
       String commandToPrice = args.get(0).get();
-      int commandValue = unit.getCommandValue(commandToPrice, 0);
+      int commandValue = unit.getTotalCommandValue(commandToPrice, 0);
       double costPerCommandPoint = args.get(1).getDouble();
       int commandValueThreshold = 0;
 
@@ -849,7 +896,7 @@ public class Unit {
 
     for (Args args : priceIfCommandArgs) {
       String commandToPrice = args.get(args.size() - 3).get();
-      int commandValue = unit.getCommandValue(commandToPrice, 0);
+      int commandValue = unit.getTotalCommandValue(commandToPrice, 0);
       int target = args.get(args.size() - 2).getInt();
       int costIfValueBeyondTarget = args.get(args.size() - 1).getInt();
 
@@ -1071,7 +1118,7 @@ public class Unit {
   private int getResCost(Boolean useSize, Boolean includeMountCost, List<Command> commands) {
     int rcost = 0;
     int size = this.getSize();
-    int ressize = this.getCommandValue("#ressize", -1);
+    int ressize = this.getTotalCommandValue("#ressize", -1);
     int copyStatsTarget = this.getCopyStats();
 
     int extraResources = commands.stream()
@@ -1146,85 +1193,98 @@ public class Unit {
     return this.mountUnit.getResCost();
   }
 
+  boolean isGetCommandsRunning = false;
+
+  private void preventGetCommandsRecursion() {
+    if (isGetCommandsRunning == true) {
+      throw new IllegalCallerException("Unit.getCommands() is being called recursively for " + this.toString() + "!");
+    }
+  }
+
   public List<Command> getCommands() {
+    this.preventGetCommandsRecursion();
+    isGetCommandsRunning = true;
+
     List<Command> allCommands = new ArrayList<>();
 
-    if (polished) return this.commands;
-    else {
-      // Shapechangeunits aren't really of the race/pose their other form is
-      if (
-        this.getClass() != ShapeChangeUnit.class &&
-        this.getClass() != MountUnit.class
-      ) {
-        allCommands.addAll(race.unitcommands);
-        allCommands.addAll(pose.getCommands());
-      }
+    if (this.polished) {
+      isGetCommandsRunning = false;
+      return this.commands;
+    }
 
-      // Item commands
-      slotmap.items().forEach(item -> allCommands.addAll(item.commands));
+    // Shapechangeunits aren't really of the race/pose their other form is
+    if (
+      this.getClass() != ShapeChangeUnit.class &&
+      this.getClass() != MountUnit.class
+    ) {
+      allCommands.addAll(race.unitcommands);
+      allCommands.addAll(pose.getCommands());
+    }
 
-      // Filters
-      for (Filter f : this.appliedFilters) {
-        for (Command c : f.getCommands()) {
-          Command tc = c;
-          final int tier = tags.getInt("schoolmage").orElse(2);
+    // Item commands
+    slotmap.items().forEach(item -> allCommands.addAll(item.commands));
 
-          if (c.args.size() > 0 && c.args.get(0).get().contains("%value%")) {
-            int multi = f.tags.getInt("valuemulti").orElse(10);
-            int base = f.tags.getInt("basevalue").orElse(-5);
+    // Filters
+    for (Filter f : this.appliedFilters) {
+      for (Command c : f.getCommands()) {
+        Command tc = c;
+        final int tier = tags.getInt("schoolmage").orElse(2);
 
-            int result = base + multi * tier;
+        if (c.args.size() > 0 && c.args.get(0).get().contains("%value%")) {
+          int multi = f.tags.getInt("valuemulti").orElse(10);
+          int base = f.tags.getInt("basevalue").orElse(-5);
 
-            String resstring = "" + result;
-            if (result > 0) {
-              resstring = "+" + resstring;
-            }
+          int result = base + multi * tier;
 
-            if (result != 0) tc = Command.args(c.command, resstring);
+          String resstring = "" + result;
+          if (result > 0) {
+            resstring = "+" + resstring;
           }
 
-          // Shape change units handle #spr1/#spr2 separately
-          if (this.getClass() == ShapeChangeUnit.class) {
-            if (
-              !tc.command.equals("#spr1") && !tc.command.equals("#spr2")
-            ) allCommands.add(tc);
-          } else allCommands.add(tc);
+          if (result != 0) tc = Command.args(c.command, resstring);
         }
+
+        // Shape change units handle #spr1/#spr2 separately
+        if (this.getClass() == ShapeChangeUnit.class) {
+          if (
+            !tc.command.equals("#spr1") && !tc.command.equals("#spr2")
+          ) allCommands.add(tc);
+        } else allCommands.add(tc);
       }
-
-      // Adjustment stuff
-      allCommands.addAll(this.commands);
-
-      // Adjustment commands
-      List<Command> adjustmentcommands = new ArrayList<>();
-      for (Arg str : Generic.getAllUnitTags(this).getAllValues(
-        "adjustmentcommand"
-      )) {
-        adjustmentcommands.add(str.getCommand());
-      }
-
-      // Special case: #fixedrescost
-      Generic.getAllUnitTags(this)
-        .getValue("fixedrescost")
-        .ifPresent(arg -> {
-          // If we have many, we use the first one. The order is Race, pose, filter, theme.
-          // Assumedly these exist mostly in one of these anyway
-          int cost = arg.getInt();
-          int currentcost = getResCost(true, true, allCommands);
-
-          cost -= currentcost;
-
-          if (cost > 0) adjustmentcommands.add(
-            Command.args("#rcost", "+" + cost)
-          );
-          else if (cost < 0) adjustmentcommands.add(
-            Command.args("#rcost", "" + cost)
-          );
-        });
-
-      // Add adjustments
-      allCommands.addAll(adjustmentcommands);
     }
+
+    // Adjustment stuff
+    allCommands.addAll(this.commands);
+
+    // Adjustment commands
+    List<Command> adjustmentcommands = new ArrayList<>();
+    for (Arg str : Generic.getAllUnitTags(this).getAllValues(
+      "adjustmentcommand"
+    )) {
+      adjustmentcommands.add(str.getCommand());
+    }
+
+    // Special case: #fixedrescost
+    Generic.getAllUnitTags(this)
+      .getValue("fixedrescost")
+      .ifPresent(arg -> {
+        // If we have many, we use the first one. The order is Race, pose, filter, theme.
+        // Assumedly these exist mostly in one of these anyway
+        int cost = arg.getInt();
+        int currentcost = getResCost(true, true, allCommands);
+
+        cost -= currentcost;
+
+        if (cost > 0) adjustmentcommands.add(
+          Command.args("#rcost", "+" + cost)
+        );
+        else if (cost < 0) adjustmentcommands.add(
+          Command.args("#rcost", "" + cost)
+        );
+      });
+
+    // Add adjustments
+    allCommands.addAll(adjustmentcommands);
 
     // Move copy and clear commands to the top of the list, with #copystats first:
     List<Command> addToTop = new ArrayList<>();
@@ -1265,6 +1325,7 @@ public class Unit {
       handleCommand(tempCommands, c);
     }
 
+    isGetCommandsRunning = false;
     return tempCommands;
   }
 
@@ -1351,12 +1412,7 @@ public class Unit {
   }
 
   private int getCopyStats() {
-    int stats = -1;
-    for (Command c : this.getCommands()) {
-      if (c.command.equals("#copystats")) stats = c.args.get(0).getInt();
-    }
-
-    return stats;
+    return this.getFirstCommandValue("#copystats", -1);
   }
 
   public String guessRole() {
@@ -1669,7 +1725,7 @@ public class Unit {
   }
 
   public int getSize() {
-    return this.getCommandValue("#size", Unit.HUMAN_SIZE);
+    return this.getTotalCommandValue("#size", Unit.HUMAN_SIZE);
   }
 
   public int getArmorProt() {
@@ -1903,35 +1959,6 @@ public class Unit {
     return lines;
   }
 
-  public int getCommandValue(String command, int defaultv) {
-    int value = defaultv;
-    for (Command c : this.getCommands()) {
-      if (c.command.equals(command) && c.args.size() > 0) value = c.args
-        .get(0)
-        .getInt();
-    }
-    return value;
-  }
-
-  public String getStringCommandValue(String command, String defaultv) {
-    String value = defaultv;
-    for (Command c : this.getCommands()) {
-      if (c.command.equals(command) && c.args.size() > 0) value = c.args
-        .get(0)
-        .get();
-    }
-    return value;
-  }
-
-  // 20150522EA : my OOP prof back in undergrad would probably shoot me for this method...
-  public void setCommandValue(String command, String newValue) {
-    for (Command cmd : this.commands) {
-      if (cmd.command.equals(command)) {
-        cmd.args.set(0, new Arg(newValue));
-      }
-    }
-  }
-
   /**
    * Calculates recruitment point cost as gcost from race+pose+basesprite
    */
@@ -2060,7 +2087,7 @@ public class Unit {
     // When units with multiple ranged weapons have the shorter range defined first,
     // they will close into battle to fire with the shortest range (i.e. naga archers with a spit).
     weaponData.sort((a, b) -> {
-      int unitStrength = this.getCommandValue("#str", 0);
+      int unitStrength = this.getTotalCommandValue("#str", 0);
       int rangeA = a.getWeaponRange(unitStrength);
       int rangeB = b.getWeaponRange(unitStrength);
       return rangeB - rangeA;

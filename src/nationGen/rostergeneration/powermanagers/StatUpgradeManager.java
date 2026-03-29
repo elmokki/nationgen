@@ -192,7 +192,7 @@ public class StatUpgradeManager {
         //System.out.println("Stat Upgrade Pattern for this unit: " + this.statUpgradePattern.toString());
         
         // Determine default hp value based on the unit hp
-        int unitHp = unit.getCommandValue("#hp", 10);
+        int unitHp = unit.getTotalCommandValue("#hp", 10);
         int defaultHpValue = unitHp;
 
         // If less than 10 hp, take lowest of 3 or 10 - hp
@@ -241,7 +241,7 @@ public class StatUpgradeManager {
             Filter upgradeFilter;
 
             // Find current stat value and calculate its price based on it
-            currentUnitValue = this.unit.getCommandValue(statKey.toString(), statTracker.defaultValue);
+            currentUnitValue = this.unit.getTotalCommandValue(statKey.toString(), statTracker.defaultValue);
             upgradePrice = statTracker.calculateUpgradePrice(currentUnitValue);
 
             // Upgrade would push past upgradable limit, set exorbitant price

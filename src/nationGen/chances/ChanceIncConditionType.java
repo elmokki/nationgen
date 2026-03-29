@@ -476,7 +476,7 @@ public enum ChanceIncConditionType {
       return d ->
         d.n
             .selectTroops()
-            .filter(u -> u.getCommandValue("#size", 2) >= size)
+            .filter(u -> u.getTotalCommandValue("#size", 2) >= size)
             .count() >=
           count !=
         not;

@@ -713,7 +713,7 @@ public class Militia {
     for (Unit u : units) {
       double score =
         scoreForMilitia(u, exclusionResCost, exclusionGoldCost) *
-        ((u.getCommandValue("#castledef", 0) + 1));
+        ((u.getTotalCommandValue("#castledef", 0) + 1));
 
       if (bestscore >= score) {
         bestscore = score;

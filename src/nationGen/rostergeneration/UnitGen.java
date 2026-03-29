@@ -701,7 +701,7 @@ public class UnitGen {
     poseLances = poseLances.filterForLances();
     poseLightLances = poseLances.filterForLightLances();
 
-    int ap = unit.getCommandValue("#ap", 10);
+    int ap = unit.getTotalCommandValue("#ap", 10);
 
     if (10 + random.nextInt(20) > ap && !poseLances.isEmpty()) {
       canGetLance = true;
