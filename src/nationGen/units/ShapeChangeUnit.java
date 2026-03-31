@@ -76,11 +76,11 @@ public class ShapeChangeUnit extends Unit {
         );
       }
 
-      if (!c.command.startsWith("#spr")) sf.commands.add(c);
-      if (
-        c.command.equals("#gcost") &&
-        thisForm.tags.containsName("specifiedgcost")
-      ) {
+      if (!c.command.startsWith("#spr")) {
+        sf.commands.add(c);
+      }
+
+      if (c.command.equals("#gcost") && thisForm.tags.containsName("specifiedgcost")) {
         sf.commands.add(c);
         gcost = c.args.get(0).getInt();
       }
@@ -266,7 +266,7 @@ public class ShapeChangeUnit extends Unit {
       );
     }
 
-    if (thisForm.keepname && otherForm != null) lines.add(
+    if (!thisForm.keepname && otherForm != null) lines.add(
       "#name \"" + otherForm.name + "\""
     );
 

@@ -1,7 +1,5 @@
 package nationGen.units;
 
-import java.util.ArrayList;
-import java.util.List;
 import nationGen.NationGen;
 import nationGen.entities.Filter;
 import nationGen.misc.Command;
@@ -12,7 +10,6 @@ public class ShapeShift extends Filter {
     super(nationGen);
   }
 
-  public List<Command> commands = new ArrayList<>();
   boolean nofeedback = false;
   boolean keepname = false;
   boolean nogcost = false;
