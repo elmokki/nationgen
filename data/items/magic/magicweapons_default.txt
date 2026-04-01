@@ -493,16 +493,15 @@
 #new magicweapon
 #id "acid"
 #unitname "prefix Acidic"
-#unitname "suffix of Acid"
+#unitname "suffix 'of Acid'"
 #unitname "prefix Sulphuric"
 #unitname "prefix vitriolic"
 #basechance 0.05
 #chanceinc "magic water fire 0.2"
 #command "#acid"
-#command "#armorpiercing"
-#tag "gcost ranged +4"
-#tag "rcost ranged +4"
-#tag "gcost melee +4"
-#tag "rcost melee +4"
+#tag "gcost ranged +2"
+#tag "rcost ranged +2"
+#tag "gcost melee +2"
+#tag "rcost melee +2"
 #power 2
 #end
