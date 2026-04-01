@@ -94,7 +94,7 @@
 #armor
 #offsetx 1
 #offsety -11
-#mountmnr "great_boar_mount"
+#mountmnr "boar_mount"
 #define "#gcost -5"
 #theme "boar"
 #theme "boartotem"
@@ -128,10 +128,10 @@
 #newitem
 #id "great_boar_light_scale_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/boar_armored_light_scale.png
+#sprite /graphics/mounts/standard/great_boar.png
 #armor
-#offsetx 1
-#offsety -11
+#offsetx -2
+#offsety -18
 #mountmnr "great_boar_mount"
 #define "#gcost -5"
 #barding 252
@@ -150,10 +150,10 @@
 #newitem
 #id "great_boar_iron_mail_barding"
 #gameid -1
-#sprite /graphics/mounts/standard/boar_armored_mail.png
+#sprite /graphics/mounts/standard/great_boar.png
 #armor
-#offsetx 1
-#offsety -11
+#offsetx -2
+#offsety -18
 #mountmnr "great_boar_mount"
 #define "#gcost -5"
 #barding 172
