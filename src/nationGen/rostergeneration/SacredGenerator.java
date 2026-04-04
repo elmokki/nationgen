@@ -1001,14 +1001,13 @@ public class SacredGenerator extends TroopGenerator {
 
     if (!sacred) u.tags.addName("elite");
     if (sacred) {
+      int holyCost = this.calculateHolyCost(u, sacred);
+
       u.tags.addName("sacred");
       tf.commands.add(new Command("#holy"));
-
-      // Make giants of size 7 and above holy cost 2
-      if (u.getTotalCommandValue("#size", 1) >= 7) {
-        tf.commands.add(new Command("#holycost", new Arg(2)));
-      }
+      tf.commands.add(new Command("#holycost", new Arg(holyCost)));
     }
+
     u.appliedFilters.add(tf);
 
     // Equip
@@ -1105,6 +1104,21 @@ public class SacredGenerator extends TroopGenerator {
     adjustGoldCost(u, sacred);
 
     return u;
+  }
+
+  private int calculateHolyCost(Unit unit, boolean isSacred) {
+    if (!isSacred) {
+      return 0;
+    }
+    
+    int holyCost = 1;
+
+    // Make giants of size 7 and above holy cost 2
+    if (unit.getTotalCommandValue("#size", 1) >= 7) {
+      holyCost = Math.max(holyCost, 2);
+    }
+
+    return holyCost;
   }
 
   private void adjustGoldCost(Unit u, boolean sacred) {

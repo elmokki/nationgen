@@ -1580,6 +1580,19 @@ public class Unit {
       Command rcostCommand = Command.args("#rcost", Integer.toString(rcost));
       handleCommand(commands, rcostCommand);
     }
+
+    if (unit.isMounted()) {
+      int unitHolyCost = unit.getFirstCommandValue("#holycost", 0);
+      int mountHolyCost = unit.mountUnit.getFirstCommandValue("#holycost", 0);
+      int holyCost = Math.max(unitHolyCost, mountHolyCost);
+
+      if (unit.mountUnit.getSize() >= 7) {
+        holyCost = Math.max(holyCost, 2);
+      }
+
+      Command holyCostCommand = Command.args("#holycost", Integer.toString(holyCost));
+      handleCommand(commands, holyCostCommand);
+    }
     /* ------------------------------------------------------------------------------------------- */
 
     // Set all gathered and polished commands to become the unit's own commands now.
