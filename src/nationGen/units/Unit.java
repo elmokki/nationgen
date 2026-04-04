@@ -1080,6 +1080,10 @@ public class Unit {
     if (!this.polished) {
       totalCost *= sacredMultiplier;
       totalCost *= slowRecMultiplier;
+
+      if (includeMountCost == true) {
+        totalCost += this.getMountGoldCost();
+      }
     }
 
     // Unit is using #copystats, so figure out the target's cost to account for it
@@ -1110,10 +1114,6 @@ public class Unit {
         UnitCost meanMontagCosts = Unit.calculateMeanCostOfUnits(montagChildren);
         totalCost = meanMontagCosts.gold;
       }
-    }
-
-    if (includeMountCost == true) {
-      totalCost += this.getMountGoldCost();
     }
 
     return totalCost;

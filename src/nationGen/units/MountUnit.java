@@ -27,6 +27,7 @@ public class MountUnit extends Unit {
   boolean sacred = false;
   private int gcost = 0;
   private int rcost = 0;
+  private double bardingGoldMultiplier = 1;
 
   /**
    * A MountUnit instance is the object that connects a cavalry Unit (the rider)
@@ -72,6 +73,7 @@ public class MountUnit extends Unit {
     this.sacred = mountUnit.sacred;
     this.gcost = mountUnit.gcost;
     this.rcost = mountUnit.rcost;
+    this.bardingGoldMultiplier = mountUnit.bardingGoldMultiplier;
   }
 
   @Override
@@ -120,7 +122,11 @@ public class MountUnit extends Unit {
 
         // If the mount item also contains a barding, add it to the mount instance
         if (mountItem.isBarding()) {
-          this.mount.commands.add(Command.args("#armor", mountItem.getBardingId()));
+          String bardingId = mountItem.getBardingId();
+          int bardingProtection = mountItem.getBardingProtection();
+
+          this.bardingGoldMultiplier = this.getBardingGoldModifier(bardingProtection);
+          this.mount.commands.add(Command.args("#armor", bardingId));
         }
       }
     }
@@ -136,7 +142,20 @@ public class MountUnit extends Unit {
       }
     }
 
+    total *= this.bardingGoldMultiplier;
     return total;
+  }
+
+  public double getBardingGoldModifier(int bardingProtection) {
+    double acceleration = 2;
+    double curveHorizontalStretch = 0.0025;
+    double minimumMultiplier = 1;
+    double goldMultiplier = (Math.pow(bardingProtection, acceleration) * curveHorizontalStretch) + minimumMultiplier;
+
+    // Round to 2 decimals
+    goldMultiplier = Math.round(goldMultiplier * 100);
+    goldMultiplier = goldMultiplier / 100;
+    return goldMultiplier;
   }
 
   public int getResCost() {
@@ -199,22 +218,14 @@ public class MountUnit extends Unit {
           null
         );
       }
-
-      // Add extra gcost
-      else if (c.command.equals("#gcost")) {
-        this.gcost = c.args.get(0).getInt();
-      }
-
-      // Add extra gcost
-      else if (c.command.equals("#rcost")) {
-        this.rcost = c.args.get(0).getInt();
-      }
     }
 
     if (polishFilter.commands.size() > 0) {
       this.appliedFilters.add(polishFilter);
     }
 
+    this.gcost = this.getGoldCost();
+    this.rcost = this.getResCost();
     this.polished = true;
   }
 
@@ -332,8 +343,11 @@ public class MountUnit extends Unit {
   public List<String> writeLines(String spritedir) {
     List<String> lines = new ArrayList<>();
     lines.add("--- Mount form for " + rider.getName());
+    lines.add("-- Gold: " + this.gcost + " (included in mounted unit)");
+    lines.add("-- Barding Gold Multiplier: x" + this.bardingGoldMultiplier + " (included above)");
+    
     lines.add("#newmonster " + this.id);
-
+  
     List<Command> commands = this.getCommands();
     boolean hasItemSlots = false;
 
