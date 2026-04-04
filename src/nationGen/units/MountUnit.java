@@ -28,6 +28,7 @@ public class MountUnit extends Unit {
   private int gcost = 0;
   private int rcost = 0;
   private double bardingGoldMultiplier = 1;
+  private int bardingResCost = 0;
 
   /**
    * A MountUnit instance is the object that connects a cavalry Unit (the rider)
@@ -74,6 +75,7 @@ public class MountUnit extends Unit {
     this.gcost = mountUnit.gcost;
     this.rcost = mountUnit.rcost;
     this.bardingGoldMultiplier = mountUnit.bardingGoldMultiplier;
+    this.bardingResCost = mountUnit.bardingResCost;
   }
 
   @Override
@@ -126,6 +128,7 @@ public class MountUnit extends Unit {
           int bardingProtection = mountItem.getBardingProtection();
 
           this.bardingGoldMultiplier = this.getBardingGoldModifier(bardingProtection);
+          this.bardingResCost = this.getBardingResCost(mountItem);
           this.mount.commands.add(Command.args("#armor", bardingId));
         }
       }
@@ -159,8 +162,9 @@ public class MountUnit extends Unit {
   }
 
   public int getResCost() {
+    // Mounts cost 1 resource by default
+    int total = 1;
     List<Command> commands = this.gatherCommands();
-    int total = 0;
 
     for (Command c : commands) {
       if (c.command.equals("#rcost")) {
@@ -168,7 +172,25 @@ public class MountUnit extends Unit {
       }
     }
 
+    total += this.bardingResCost;
     return total;
+  }
+
+  public int getBardingResCost(Item mountItem) {
+    int size = this.getSize();
+    int ressize = this.getTotalCommandValue("#ressize", -1);
+    int baseCost = mountItem.getBardingResCost();
+    int finalCost = baseCost;
+
+    if (ressize > 0) {
+      finalCost = (ressize * baseCost) / Unit.HUMAN_SIZE;
+    }
+
+    else {
+      finalCost = (size * baseCost) / Unit.HUMAN_SIZE;
+    }
+
+    return finalCost;
   }
 
   public void polish(NationGen n, Nation nation) {
@@ -388,10 +410,6 @@ public class MountUnit extends Unit {
     
     if (sacred) {
       lines.add("#holy");
-    }
-
-    if (gcost != 0) {
-      lines.add("#gcost " + gcost);
     }
 
     // If there's no #copystats or defined body type, define body type (as probably humanoid unless shenanigans have been done)

@@ -95,6 +95,11 @@ public class Item extends Drawable {
     return protection;
   }
 
+  public int getBardingResCost() {
+    int rcost = this.nationGen.armordb.GetInteger(this.bardingId, ItemProperty.RESOURCE_COST.toDBColumn(), 0);
+    return rcost;
+  }
+
   public Boolean anyTypesMatchString(String typeStr) {
     return this.itemTypes.stream().anyMatch(t -> t.getId() == typeStr);
   }

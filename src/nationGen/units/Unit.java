@@ -1772,7 +1772,19 @@ public class Unit {
   }
 
   public int getSize() {
-    return this.getTotalCommandValue("#size", Unit.HUMAN_SIZE);
+    int size = this.getTotalCommandValue("#size", -1);
+    int copyStats = this.getCopyStats();
+    int id = (copyStats > 0) ? copyStats : this.getId();
+
+    if (size == -1) {
+      size = this.nationGen.units.GetInteger(String.valueOf(id), "size", -1);
+    }
+
+    if (size == -1) {
+      size = Unit.HUMAN_SIZE;
+    }
+
+    return size;
   }
 
   public int getArmorProt() {
@@ -1913,9 +1925,9 @@ public class Unit {
       getName() +
       " (" +
       race.name +
-      "), Gold: " +
+      "), Gold (mount included): " +
       getGoldCost(true) +
-      ", Resources: " +
+      ", Resources (mount included): " +
       getResCost(true, true) +
       ", Roles: " +
       pose.roles +
