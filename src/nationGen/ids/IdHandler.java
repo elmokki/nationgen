@@ -198,7 +198,7 @@ public class IdHandler {
   }
 
   private void loadConfiguration() {
-    Properties allowedIdsConfiguration = FileUtil.readProperties(NationGen.appPropertiesPath);
+    Properties allowedIdsConfiguration = NationGen.getAppProperties();
 
     lastAssignedArmorId = loadIntProperty(allowedIdsConfiguration, "min.custom.armor.id");
     lastAssignedMonsterId = loadIntProperty(allowedIdsConfiguration, "min.custom.monster.id");

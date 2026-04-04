@@ -10,6 +10,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Properties;
 import java.util.Random;
 import java.util.concurrent.locks.ReentrantLock;
 import nationGen.Settings.SettingsType;
@@ -35,6 +36,7 @@ public class NationGen {
   public static final String version = "0.13.3";
   public static final String date = "29th March 2026";
   public static final String appPropertiesPath = "/app.properties";
+  private static Properties appProperties;
 
   private List<NationRestriction> restrictions;
 
@@ -66,6 +68,7 @@ public class NationGen {
   public NationGen() {
     // For versions of this that don't need pausing, simply create a dummy lock object to be used.
     this(new ReentrantLock(), new Settings(), new ArrayList<>());
+    NationGen.appProperties = FileUtil.readProperties(NationGen.appPropertiesPath);
   }
 
   public NationGen(
@@ -365,6 +368,14 @@ public class NationGen {
       " seconds."
     );
     modname = "";
+  }
+
+  public static Properties getAppProperties() {
+    if (NationGen.appProperties == null) {
+      NationGen.appProperties = FileUtil.readProperties(NationGen.appPropertiesPath);
+    }
+
+    return NationGen.appProperties;
   }
 
   /**
