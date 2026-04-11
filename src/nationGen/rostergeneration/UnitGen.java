@@ -709,7 +709,7 @@ public class UnitGen {
 
     Item weapon = null;
     List<Integer> loadoutOptions = Stream.of(0, 1, 2, 3).collect(Collectors.toList());
-    Collections.shuffle(loadoutOptions);
+    Collections.shuffle(loadoutOptions, this.random);
 
     for (int optionNumber : loadoutOptions) {
       // lanceslot + one-handed weapon (no light lance in one-handed)
