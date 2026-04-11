@@ -1,6 +1,7 @@
 package nationGen.nation.startarmy;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -12,7 +13,6 @@ import nationGen.misc.Command;
 import nationGen.misc.Tags;
 import nationGen.nation.Nation;
 import nationGen.nation.pd.Militia;
-import nationGen.nation.pd.PDUnitType;
 import nationGen.units.LeadershipType;
 import nationGen.units.Unit;
 
@@ -65,7 +65,7 @@ public class StartArmy {
   // accepts 2 different unit types; #startunittype1 and #startunittype2
   private final int NUMBER_OF_START_ARMY_UNIT_TYPES = 2;
 
-  public StartArmy(Nation nation, Militia militia, boolean isMontagAllowed, Settings settings) {
+  public StartArmy(Nation nation, Militia militia, Settings settings) {
       this.nation = nation;
       this.militia = militia;
 
@@ -85,7 +85,7 @@ public class StartArmy {
       this.goldUpperThresholdChangeSetting = settings.get(SettingsType.goldUpperThresholdChange);
       this.goldLowerThresholdChangeSetting = settings.get(SettingsType.goldLowerThresholdChange);
 
-      this.armyUnits.addAll(this.selectStartArmyUnits());
+      this.armyUnits.addAll(this.selectSuitableStartArmyUnits(1, 1));
   }
 
   public Unit getArmyCommander() {
@@ -160,31 +160,201 @@ public class StartArmy {
     return lines;
   }
 
-  private List<Unit> selectStartArmyUnits() {
-    List<PDUnitType> pdUnitTypes = this.militia.getUsedBasicPdTypes().reversed();
-    List<PDUnitType> fortPdUnitTypes = this.militia.getUsedFortPdTypes();
-    List<Unit> selectedUnits = new ArrayList<>();
+  private List<Unit> selectSuitableStartArmyUnits(double goldMultiplier, double resMultiplier) {
+    List<Unit> suitableUnits = new ArrayList<>();
+    
+    // Don't add more than one ranged unit type
+    int maxRangedUnitsAllowed = 1;
+    int rangedUnitsSelected = 0;
 
-    Unit firstArmyUnit;
-    Unit secondArmyUnit;
+    // Create a list of all possible militia units based on the nation's poses
+    List<Unit> possibleUnits = this.nation.combineTroopsToList("infantry");
+    possibleUnits.addAll(nation.combineTroopsToList("mounted"));
+    possibleUnits.addAll(nation.combineTroopsToList("ranged"));
+    possibleUnits.addAll(nation.combineTroopsToList("montagtroops"));
 
-    for (PDUnitType basicType : pdUnitTypes) {
-      firstArmyUnit = this.militia.getMilitiaUnit(basicType);
-      selectedUnits.add(0, firstArmyUnit);
+    // Remove unit poses that may be unfit to be militia
+    removeUnsuitable(possibleUnits);
+    Collections.shuffle(possibleUnits, this.nation.random);
 
-      for (PDUnitType fortType : fortPdUnitTypes) {
-        secondArmyUnit = this.militia.getMilitiaUnit(fortType);
-        selectedUnits.add(1, secondArmyUnit);
+    // Target gold and res cost are the costs with the most chances to get picked.
+    // If a unit has these costs, it will very likely be part of the start army.
+    double targetGoldCost = this.getTargetGoldCost(possibleUnits) * goldMultiplier;
+    double targetResCost = this.getTargetResCost(possibleUnits) * resMultiplier;
 
-        // Try to make both units different from each other, even if sometimes
-        // unforted and forted PD units end up having the same unit selected
-        if (firstArmyUnit.hashCode() != secondArmyUnit.hashCode()) {
-          return selectedUnits;
-        }
+    for (int i = 0; i < possibleUnits.size(); i++) {
+      Unit nextUnit = possibleUnits.get(i);
+
+      // Max ranged units reached; remove the rest from the possible units' list
+      if (nextUnit.isRanged() && rangedUnitsSelected >= maxRangedUnitsAllowed) {
+        continue;
+      }
+
+      // Select unit that best fits the target gold/resources
+      Unit best = selectBestStartArmyUnit(possibleUnits, targetGoldCost, targetResCost);
+
+      // Remove from pool and add to our militia
+      possibleUnits.remove(best);
+      suitableUnits.add(best);
+
+      if (best.isRanged()) {
+        rangedUnitsSelected++;
+      }
+
+      if (suitableUnits.size() == this.NUMBER_OF_START_ARMY_UNIT_TYPES) {
+        break;
       }
     }
 
-    return selectedUnits;
+    if (suitableUnits.isEmpty()) {
+      throw new IllegalStateException(
+        "No single suitable unit pose to start army was found! (race: " +
+        this.nation.races.get(0).name +
+        ", nation seed: " +
+        this.nation.getSeed() +
+        ". Are too many poses tagged with #cannot_be_start_army?"
+      );
+    }
+
+    return suitableUnits;
+  }
+
+  private void removeUnsuitable(List<Unit> units) {
+    List<Unit> unsuitable = new ArrayList<>();
+
+    for (Unit u : units) {
+      if (u.isMontagRecruitableTemplate() == true) {
+        unsuitable.add(u);
+      }
+    }
+
+    // Remove other unsuitable units assuming that there would still be some left to pick
+    if (unsuitable.size() < units.size()) {
+      units.removeAll(unsuitable);
+    }
+
+    // If ALL units were deemed unsuitable, we will make an exception and not remove them,
+    // but this should get resolved by making sure each race has a good number of unit poses
+    else {
+      throw new IllegalStateException(
+        "Nation " +
+        this.nation.nationid +
+        " (primary race: "+
+        this.nation.races.get(0).name +
+        ") does not have any suitable units for their start army."
+      );
+    }
+  }
+
+  private double getTargetGoldCost(List<Unit> possibleUnits) {
+    double totalGold = 0;
+    double targetGoldCost = 0;
+    Tags tags = Generic.getAllNationTags(nation);
+    List<Double> startArmyGoldCostMultipliers = tags.getAllDoubles("startarmy_targetgcostmulti");
+    List<Double> pdGoldCostMultipliers = tags.getAllDoubles("pd_targetgcostmulti");
+    List<Double> effectiveGoldCostMultipliers = new ArrayList<>(startArmyGoldCostMultipliers);
+
+    if (startArmyGoldCostMultipliers.isEmpty()) {
+      effectiveGoldCostMultipliers.addAll(pdGoldCostMultipliers);
+    }
+
+    for (Unit u : possibleUnits) {
+      totalGold += u.getGoldCost(true);
+    }
+
+    // Set a fixed target if neither #startarmy_targetgcost nor #pd_targetgcost exist
+    // on the nation, or just average all suitable unit gold costs.
+    targetGoldCost = tags
+      .getDouble("startarmy_targetgcost")
+      .orElse(
+        tags.getDouble("pd_targetgcost")
+          .orElse(totalGold / possibleUnits.size())
+      );
+
+    // Factor in all cost multipliers
+    for (Double multiplier : effectiveGoldCostMultipliers) {
+      targetGoldCost *= multiplier;
+    }
+
+    return targetGoldCost;
+  }
+
+  private double getTargetResCost(List<Unit> possibleUnits) {
+    double totalRes = 0;
+    double targetResCost = 0;
+    Tags tags = Generic.getAllNationTags(nation);
+    List<Double> startArmyResCostMultipliers = tags.getAllDoubles("startarmy_targetrcostmulti");
+    List<Double> pdResCostMultipliers = tags.getAllDoubles("pd_targetrcostmulti");
+    List<Double> effectiveResCostMultipliers = new ArrayList<>(startArmyResCostMultipliers);
+
+    if (startArmyResCostMultipliers.isEmpty()) {
+      effectiveResCostMultipliers.addAll(pdResCostMultipliers);
+    }
+
+    for (Unit u : possibleUnits) {
+      totalRes += u.getResCost(true, true);
+    }
+
+    // Set a fixed target if neither #startarmy_targetrcost nor #pd_targetrcost exist
+    // on the nation, or just average all suitable unit resource costs.
+    targetResCost = tags
+      .getDouble("startarmy_targetrcost")
+      .orElse(
+        tags.getDouble("pd_targetrcost")
+          .orElse(totalRes / possibleUnits.size())
+      );
+
+    // Factor in all cost multipliers
+    for (Double multiplier : effectiveResCostMultipliers) {
+      targetResCost *= multiplier;
+    }
+
+    return targetResCost;
+  }
+  
+  private Unit selectBestStartArmyUnit(
+    List<Unit> possibleUnits,
+    double targetGoldCost,
+    double targetResCost
+  ) {
+    Unit best = possibleUnits.get(0);
+    double bestscore = calculateScoreForStartArmy(best, targetGoldCost, targetResCost);
+
+    // Iterate through all units, updating the best one if a better one is found
+    for (Unit unit : possibleUnits) {
+      double score = calculateScoreForStartArmy(unit, targetGoldCost, targetResCost);
+
+      if (score > bestscore) {
+        bestscore = score;
+        best = unit;
+      }
+    }
+
+    return best;
+  }
+
+  private double calculateScoreForStartArmy(Unit unit, double targetGoldCost, double targetResCost) {
+    double goldScore = getUnitGoldScoreForStartArmy(unit, targetGoldCost);
+    double resScore = getUnitResScoreForStartArmy(unit, targetResCost);
+
+    // Gold weighs less than resource cost for this purpose
+    return 0.75 * goldScore + resScore;
+  }
+
+  private double getUnitGoldScoreForStartArmy(Unit unit, double targetGoldCost) {
+    double unitGoldCost = unit.getGoldCost(true);
+
+    // Lower score the further away from 0 (a perfect match when target gold and unit gold are the same)
+    double score = -Math.pow(targetGoldCost - unitGoldCost, 2);
+    return score;
+  }
+
+  private double getUnitResScoreForStartArmy(Unit unit, double targetResCost) {
+    double unitResCost = unit.getResCost(true, true);
+
+    // Lower score the further away from 0 (a perfect match when target resources and unit resources are the same)
+    double score = -Math.pow(targetResCost - unitResCost, 2);
+    return score;
   }
 
   private Unit selectArmyCommander() {
