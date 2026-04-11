@@ -7,6 +7,7 @@ import java.util.Random;
 import java.util.TreeMap;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import com.elmokki.Generic;
 
@@ -82,6 +83,8 @@ public class Militia {
   // nations will be entirely made of montag units.
 
   // Default commander to use if no valid one could be found (indie Commander)
+  private final int DEFAULT_PD_COMMANDER_ID = 36;
+  private final int DEFAULT_FORTED_PD_COMMANDER_ID = 44;
   private final int DEFAULT_GATE_COMMANDER_ID = 36;
   private final int DEFAULT_WALL_COMMANDER_ID = 36;
 
@@ -91,7 +94,7 @@ public class Militia {
   // Default wall unit to use if no valid one could be found (Archer)
   private final int DEFAULT_WALL_UNIT_ID = 32;
 
-  public Militia(Nation nation, boolean isMontagAllowed, Settings settings) {
+  public Militia(Nation nation, Settings settings) {
       this.nation = nation;
       this.random = new Random(this.nation.random.nextInt());
 
@@ -116,21 +119,24 @@ public class Militia {
         .getDouble("extrapdmulti")
         .orElse(1D);
 
-      if (this.random.nextDouble() < 0.1 * this.extraPdMultiplier) {
+      if (this.random.nextDouble() < 0.05 * this.extraPdMultiplier) {
         this.increasePdRanks();
-        this.increaseFortPdRanks();
+        
+        if (this.random.nextDouble() < 0.025 * this.extraPdMultiplier) {
+          this.increaseFortPdRanks();
 
-        if (this.random.nextDouble() < 0.02 * this.extraPdMultiplier) {
-          this.increasePdRanks();
+          if (this.random.nextDouble() < 0.01 * this.extraPdMultiplier) {
+            this.increasePdRanks();
+          }
         }
       }
 
       this.pdUnits.putAll(
-        this.selectUnfortedProvinceMilitia(this.pdRanks, isMontagAllowed)
+        this.selectUnfortedProvinceMilitia(this.pdRanks, true)
       );
 
       this.pdUnits.putAll(
-        this.selectFortedProvinceMilitia(this.fortPdRanks, isMontagAllowed)
+        this.selectFortedProvinceMilitia(this.fortPdRanks, true)
       );
   }
 
@@ -177,7 +183,7 @@ public class Militia {
    */
   public int getAmountOfMilitiaUnit(PDUnitType pdUnitType) {
     Unit unit = this.getMilitiaUnit(pdUnitType);
-    return getAmountOfMilitiaUnit(unit);
+    return getAmountOfMilitiaUnit(unit, pdUnitType);
   }
 
   /**
@@ -187,17 +193,19 @@ public class Militia {
    * @param unit
    * @return
    */
-  public int getAmountOfMilitiaUnit(Unit unit) {
+  public int getAmountOfMilitiaUnit(Unit unit, PDUnitType pdUnitType) {
     // Handle filter etc stuff
     double totalMultiplier = 1;
     Tags tags = Generic.getAllNationTags(nation);
+    int pdRankNumber = pdUnitType.pdUnitNumber.getUnitNumber();
+    double pdRankReduction = 1 + (pdRankNumber * 0.25);
     List<Double> pdMultipliers = tags.getAllDoubles("pd_amountmulti");
 
     for (Double multiplier : pdMultipliers) {
       totalMultiplier *= multiplier;
     }
 
-    double amount = calculateMilitiaUnitMultiplier(unit) * totalMultiplier;
+    double amount = (calculateMilitiaUnitMultiplier(unit) * totalMultiplier) / pdRankReduction;
     return (int) Math.round(amount);
   }
 
@@ -219,7 +227,7 @@ public class Militia {
 
   public Unit getWallUnit() {
     if (this.wallUnit == null) {
-      this.wallUnit = this.selectWallUnit(false);
+      this.wallUnit = this.selectWallUnit();
     }
 
     return this.wallUnit;
@@ -235,7 +243,7 @@ public class Militia {
 
   public Unit getGateUnit() {
     if (this.gateUnit == null) {
-      this.gateUnit = this.selectGateUnit(false);
+      this.gateUnit = this.selectGateUnit();
     }
 
     return this.gateUnit;
@@ -280,11 +288,19 @@ public class Militia {
 
   public List<String> writePdLines() {
     List<String> lines = new ArrayList<>();
+    
+    Unit pdCommander = this.getPdCommander();
+    Unit fortPdCommander = this.getFortPdCommander();
 
-    lines.add("#defcom1 " + this.getPdCommander().getRootId());
+    if (pdCommander != null) {
+      lines.add("#defcom1 " + this.getPdCommander().getRootId());
+    }
 
-    this.getUsedBasicPdTypes()
-    .forEach(pdUnitType -> {
+    else {
+      lines.add("#defcom1 " + this.DEFAULT_PD_COMMANDER_ID);
+    }
+
+    this.getUsedBasicPdTypes().forEach(pdUnitType -> {
       lines.add(
         pdUnitType.getModCommand() + " " + this.getMilitiaUnit(pdUnitType).getRootId()
       );
@@ -295,12 +311,18 @@ public class Militia {
     });
 
     lines.add("");
-    lines.add("#defcom2 " + this.getFortPdCommander().getRootId());
+    
+    if (pdCommander != null) {
+      lines.add("#defcom2 " + fortPdCommander.getRootId());
+    }
 
-    this.getUsedFortPdTypes()
-    .forEach(pdUnitType -> {
+    else {
+      lines.add("#defcom1 " + this.DEFAULT_FORTED_PD_COMMANDER_ID);
+    }
+    
+    this.getUsedFortPdTypes().forEach(pdUnitType -> {
       lines.add(
-        pdUnitType.getModCommand() + " " + this.getMilitiaUnit(pdUnitType)
+        pdUnitType.getModCommand() + " " + this.getMilitiaUnit(pdUnitType).getRootId()
       );
       
       lines.add(
@@ -314,20 +336,28 @@ public class Militia {
   public List<String> writeGateDefenseLines() {
     List<String> lines = new ArrayList<>();
     Unit gateCommander = this.getGateCommander();
+    Integer gateCommanderId;
+
     Unit gateUnit = this.getGateUnit();
+    Integer gateUnitId;
+    Integer gateUnitAmount;
 
-    Integer gateCommanderId = gateCommander.getRootId();
-    Integer gateUnitId = gateUnit.getRootId();
+    if (gateCommander != null) {
+      gateCommanderId = gateCommander.getRootId();
+    }
 
-    Integer gateUnitAmount = this.getAmountOfCastleDefenders(gateUnit);
-
-    if (gateCommanderId < 0) {
+    else {
       gateCommanderId = DEFAULT_GATE_COMMANDER_ID;
+    }
+
+    if (gateUnit != null) {
+      gateUnitId = gateUnit.getRootId();
+      gateUnitAmount = this.getAmountOfCastleDefenders(gateUnit);
     }
 
     // If this nation's militia did not succeed in getting a
     // valid gate unit use Heavy Infantry (id: 40) as a default
-    if (gateUnitId < 0) {
+    else {
       gateUnitId = DEFAULT_GATE_UNIT_ID;
       gateUnitAmount = (int) Math.floor(CASTLE_DEFENDERS_MULT * 0.5);
     }
@@ -341,25 +371,34 @@ public class Militia {
 
   public List<String> writeWallDefenseLines() {
     List<String> lines = new ArrayList<>();
+    
     Unit wallCommander = this.getWallCommander();
+    Integer wallCommanderId;
+
     Unit wallUnit = this.getWallUnit();
+    Integer wallUnitId;
+    Integer wallUnitAmount;
 
-    Integer wallCommanderId = wallCommander.getRootId();
-    Integer wallUnitId = wallUnit.getRootId();
-
-    Integer wallUnitAmount = this.getAmountOfCastleDefenders(wallUnit);
+    if (wallCommander != null) {
+      wallCommanderId = wallCommander.getRootId();
+    }
 
     // If this nation's militia did not succeed in getting a
     // valid gate/wall commander use Commander (id: 36) as a default
-    if (wallCommanderId < 0) {
+    else {
       wallCommanderId = DEFAULT_WALL_COMMANDER_ID;
-      wallUnitAmount = CASTLE_DEFENDERS_MULT * 2;
+    }
+
+    if (wallUnit != null) {
+      wallUnitId = wallUnit.getRootId();
+      wallUnitAmount = this.getAmountOfCastleDefenders(wallUnit);
     }
 
     // If this nation's militia did not succeed in getting a
     // valid wall unit, use Archer (32) as a default
-    if (wallUnitId < 0) {
+    else {
       wallUnitId = DEFAULT_WALL_UNIT_ID;
+      wallUnitAmount = CASTLE_DEFENDERS_MULT * 2;
     }
 
     // Gate units
@@ -613,16 +652,19 @@ public class Militia {
    * @param isMontagAllowed
    * @return
    */
-  private Unit selectWallUnit(boolean isMontagAllowed) {
+  private Unit selectWallUnit() {
     List<Unit> candidateUnits = nation.combineTroopsToList("ranged");
-    List<Unit> goodRangedInfantry = nation.combineTroopsToList("infantry")
-      .stream()
+    List<Unit> goodRangedInfantry = Stream.of(
+        nation.combineTroopsToList("infantry").stream(),
+        nation.combineTroopsToList("montagtroops").stream()
+      )
+      .flatMap(s -> s)
       .filter(u -> u.hasSecondaryRangeOfAtLeast(15))
       .collect(Collectors.toList());
 
     // Try first with ranged units and infantry with good ranged bonusweapons
     candidateUnits.addAll(goodRangedInfantry);
-    removeUnsuitable(isMontagAllowed, candidateUnits);
+    removeUnsuitable(false, candidateUnits);
 
     // No options: Any infantry with any ranged
     if (candidateUnits.size() == 0) {
@@ -631,31 +673,17 @@ public class Militia {
       .filter(u -> u.isSecondaryRanged())
       .collect(Collectors.toList());
 
-      removeUnsuitable(isMontagAllowed, candidateUnits);
+      removeUnsuitable(false, candidateUnits);
     }
 
     // No options: Any infantry
     if (candidateUnits.size() == 0) {
       candidateUnits = nation.combineTroopsToList("infantry");
-      removeUnsuitable(isMontagAllowed, candidateUnits);
+      removeUnsuitable(false, candidateUnits);
     }
 
     // Try to get unit
     Unit unit = selectDefenderUnit(candidateUnits);
-
-    // Failsafe: Just get something
-    if (unit == null) {
-      candidateUnits = nation.combineTroopsToList("infantry");
-      candidateUnits.addAll(nation.combineTroopsToList("mounted"));
-      candidateUnits.addAll(nation.combineTroopsToList("ranged"));
-
-      if (isMontagAllowed) {
-        candidateUnits.addAll(nation.combineTroopsToList("montagtroops"));
-      }
-
-      unit = selectDefenderUnit(candidateUnits);
-    }
-
     return unit;
   }
 
@@ -664,25 +692,12 @@ public class Militia {
    * @param isMontagAllowed
    * @return
    */
-  private Unit selectGateUnit(boolean isMontagAllowed) {
+  private Unit selectGateUnit() {
     List<Unit> candidateUnits = nation.combineTroopsToList("infantry");
-    removeUnsuitable(isMontagAllowed, candidateUnits);
+    candidateUnits.addAll(nation.combineTroopsToList("montagtroops"));
+    removeUnsuitable(false, candidateUnits);
 
     Unit unit = selectDefenderUnit(candidateUnits);
-
-    // Failsafe: Just get something
-    if (unit == null) {
-      candidateUnits = nation.combineTroopsToList("infantry");
-      candidateUnits.addAll(nation.combineTroopsToList("mounted"));
-      candidateUnits.addAll(nation.combineTroopsToList("ranged"));
-
-      if (isMontagAllowed) {
-        candidateUnits.addAll(nation.combineTroopsToList("montagtroops"));
-      }
-
-      unit = selectDefenderUnit(candidateUnits);
-    }
-
     return unit;
   }
   
@@ -744,31 +759,15 @@ public class Militia {
         unsuitable.add(u);
       }
 
-      else if (u.isMontag() == true && isMontagAllowed == false) {
+      else if (u.isMontagRecruitableTemplate() == true && isMontagAllowed == false) {
         montags.add(u);
       }
     }
 
-    // Remove whichever montags are unsuitable. Note that things like gate and wall
+    // Remove whichever montag templates are unsuitable. Note that things like gate and wall
     // defenders in Dominions don't accept montags, so we *need* to remove them in those cases.
     units.removeAll(montags);
-
-    // Remove other unsuitable units assuming that there would still be some left to pick
-    if (unsuitable.size() < units.size()) {
-      units.removeAll(unsuitable);
-    }
-
-    // If ALL units were deemed unsuitable, we will make an exception and not remove them,
-    // but this should get resolved by making sure each race has a good number of unit poses
-    else {
-      System.out.println(
-        "Nation " +
-        this.nation.nationid +
-        " (primary race: "+
-        this.nation.races.get(0).name +
-        ") does not have any suitable units for militia. As a fallback, all of its units will be used as candidates, but consider adding suitable unit poses to the race"
-      );
-    }
+    units.removeAll(unsuitable);
   }
 
   /**

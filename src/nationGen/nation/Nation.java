@@ -433,7 +433,7 @@ public class Nation {
   }
 
   private void generateMilitia() {
-    this.militia = new Militia(this, true, this.nationGen.settings);
+    this.militia = new Militia(this, this.nationGen.settings);
   }
 
   private void generateStartArmy() {
@@ -441,7 +441,7 @@ public class Nation {
       this.generateMilitia();
     }
 
-    this.startArmy = new StartArmy(this, this.militia, true, this.nationGen.settings);
+    this.startArmy = new StartArmy(this, this.militia, this.nationGen.settings);
   }
 
   private void generateSpells() {

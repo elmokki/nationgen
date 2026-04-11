@@ -1109,7 +1109,7 @@ public class Unit {
       
       if (shouldUseMontagMeanCost) {
         // Find the parent montag id associated with these poses
-        String montagId = this.getStringCommandValue("#firstshape", "");
+        String montagId = this.getFirstshapeIdForMontag();
         List<Unit> montagChildren = this.nation.getMontagUnits(montagId);
         UnitCost meanMontagCosts = Unit.calculateMeanCostOfUnits(montagChildren);
         totalCost = meanMontagCosts.gold;
@@ -1134,6 +1134,16 @@ public class Unit {
     }
 
     return this.name.toString(this);
+  }
+
+  public String getFirstshapeIdForMontag() {
+    String montagId = this.getStringCommandValue("#firstshape", "");
+
+    if (Generic.isNumeric(montagId) && montagId.startsWith("-")) {
+      montagId = montagId.substring(1);
+    }
+
+    return montagId;
   }
 
   public LeadershipAbility getLeadership(LeadershipType type) {
@@ -1167,6 +1177,10 @@ public class Unit {
     int size = this.getSize();
     int ressize = this.getTotalCommandValue("#ressize", -1);
     int copyStatsTarget = this.getCopyStats();
+
+    if (this.polished && this.isMontagRecruitableTemplate()) {
+      return this.getFirstCommandValue("#rcost", 1);
+    }
 
     int extraResources = commands.stream()
       .filter(c -> c.command.equals("#rcost"))
