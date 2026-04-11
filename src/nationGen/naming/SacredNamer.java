@@ -63,13 +63,13 @@ public class SacredNamer {
   private void name(Unit u, Nation n) {
     // #forcedname
     if (Generic.getAllUnitTags(u).containsName("forcedname")) {
-      u.name.setType(
+      u.name.setForcedName(
         Generic.getAllUnitTags(u).getString("forcedname").orElseThrow()
       );
       getMatchingCom(u, n).ifPresent(com ->
         Generic.getAllUnitTags(com)
           .getString("forcedname")
-          .ifPresent(com.name::setType)
+          .ifPresent(com.name::setForcedName)
       );
     } else {
       u.name = nameSacred(u, n);

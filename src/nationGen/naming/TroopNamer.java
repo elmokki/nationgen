@@ -137,7 +137,7 @@ public class TroopNamer {
     ) forcednames.add(u);
     alltroops.removeAll(forcednames);
     for (Unit u : forcednames) {
-      u.name.setType(
+      u.name.setForcedName(
         Generic.getAllUnitTags(u).getValue("forcedname").orElseThrow().get()
       );
     }

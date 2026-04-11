@@ -14,6 +14,7 @@ public class Name {
   public NamePart prefixprefixprefix;
   public NamePart suffixprefix;
   public NamePart suffix;
+  public NamePart forcedName;
 
   public void setType(String str) {
     this.type = NamePart.newNamePart(str, null);
@@ -43,6 +44,10 @@ public class Name {
     this.suffix = NamePart.newNamePart(str, null);
   }
 
+  public void setForcedName(String str) {
+    this.forcedName = NamePart.newNamePart(str, null);
+  }
+
   public boolean pluralsuffix = false;
   public boolean definitesuffix = false;
 
@@ -68,6 +73,10 @@ public class Name {
 
   public String toString(Unit u) {
     String str = "";
+
+    if (this.forcedName != null) {
+      return this.forcedName.toString();
+    }
 
     if (rankprefix != null) str = str + rankprefix.toString(u) + " ";
     if (prefixprefixprefix != null) str = str +
