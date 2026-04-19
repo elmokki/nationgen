@@ -24,7 +24,7 @@ public class ShapeShift extends Filter {
     ss.nofeedback = nofeedback;
     ss.keepname = keepname;
     ss.nogcost = nogcost;
-    ss.commands.addAll(this.commands);
+    ss.addCommands(this.getCommands());
     return ss;
   }
 
@@ -39,7 +39,7 @@ public class ShapeShift extends Filter {
           "#command or #define must have a single arg. Surround the command with quotes if needed."
         );
       }
-      this.commands.add(command.args.get(0).getCommand());
+      this.addCommands(command.args.get(0).getCommand());
     } else super.handleOwnCommand(command);
   }
 }

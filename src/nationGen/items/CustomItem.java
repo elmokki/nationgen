@@ -298,7 +298,7 @@ public class CustomItem extends Item {
 
     customItem.sprite = item.sprite;
     customItem.mask = item.mask;
-    customItem.commands.addAll(item.commands);
+    customItem.addCommands(item.getCommands());
     customItem.tags.addAll(item.tags);
     customItem.dependencies.addAll(item.dependencies);
     customItem.setOffsetX(item.getOffsetX());

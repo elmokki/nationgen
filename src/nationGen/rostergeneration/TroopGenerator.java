@@ -476,7 +476,7 @@ public class TroopGenerator {
     // Lance
     if (r < 3 && t.pose.getItems("lanceslot") != null) {
       int ap = 0;
-      for (Command c : t.template.getSlot("mount").commands) {
+      for (Command c : t.template.getSlot("mount").getCommands()) {
         if (c.command.equals("#ap")) ap = c.args.get(0).getInt();
       }
 

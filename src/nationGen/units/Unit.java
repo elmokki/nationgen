@@ -120,14 +120,14 @@ public class Unit {
     if (this.polished == true) {
       return this.commands;
     }
+    
+    Stream<Command> unitCommands = this.commands.stream();
+    Stream<Command> poseCommands = this.pose.getCommands().stream();
+    Stream<Command> raceCommands = this.race.unitcommands.stream();
+    Stream<Command> filterCommands = this.appliedFilters.stream().flatMap(f -> f.getCommands().stream());
+    Stream<Command> itemCommands = this.slotmap.items().flatMap(i -> i.getCommands().stream());
 
-    return Stream.of(
-        this.commands.stream(),
-        this.pose.getCommands().stream(),
-        this.race.unitcommands.stream(),
-        Stream.of(this.appliedFilters.stream()).flatMap(s -> s).flatMap(f -> f.commands.stream()),
-        Stream.of(this.slotmap.items()).flatMap(s -> s).flatMap(i -> i.commands.stream())
-      )
+    return Stream.of(unitCommands, poseCommands, raceCommands, filterCommands, itemCommands)
       .flatMap(s -> s)
       .collect(Collectors.toList());
   }
@@ -1272,7 +1272,7 @@ public class Unit {
     }
 
     // Item commands
-    slotmap.items().forEach(item -> allCommands.addAll(item.commands));
+    slotmap.items().forEach(item -> allCommands.addAll(item.getCommands()));
 
     // Filters
     for (Filter f : this.appliedFilters) {
@@ -1769,7 +1769,7 @@ public class Unit {
     for (Command c : u.race.unitcommands) if (c.command.equals("#hp")) hp +=
     c.args.get(0).getInt();
 
-    for (Command c : u.getSlot("basesprite").commands) if (
+    for (Command c : u.getSlot("basesprite").getCommands()) if (
       c.command.equals("#hp")
     ) hp += c.args.get(0).getInt();
 
@@ -2055,7 +2055,7 @@ public class Unit {
     clist.addAll(this.pose.getCommands());
 
     if (this.getSlot("basesprite") != null) {
-      clist.addAll(this.getSlot("basesprite").commands);
+      clist.addAll(this.getSlot("basesprite").getCommands());
     }
 
     for (Command c : clist) {

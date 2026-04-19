@@ -215,7 +215,7 @@ public class CustomItemGen {
 
       if (hasExtraCostForItemType == true) {
         Command enchantmentGoldCost = new Command("#gcost", args.get(1));
-        customItem.commands.add(enchantmentGoldCost);
+        customItem.addCommands(enchantmentGoldCost);
       }
     }
 
@@ -226,7 +226,7 @@ public class CustomItemGen {
 
       if (hasExtraCostForItemType == true) {
         Command enchantmentResourceCost = new Command("#rcost", args.get(1));
-        customItem.commands.add(enchantmentResourceCost);
+        customItem.addCommands(enchantmentResourceCost);
       }
     }
 

@@ -1004,8 +1004,8 @@ public class SacredGenerator extends TroopGenerator {
       int holyCost = this.calculateHolyCost(u, sacred);
 
       u.tags.addName("sacred");
-      tf.commands.add(new Command("#holy"));
-      tf.commands.add(new Command("#holycost", new Arg(holyCost)));
+      tf.addCommands(new Command("#holy"));
+      tf.addCommands(new Command("#holycost", new Arg(holyCost)));
     }
 
     u.appliedFilters.add(tf);

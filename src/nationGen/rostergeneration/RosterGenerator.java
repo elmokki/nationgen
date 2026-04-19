@@ -791,7 +791,7 @@ public class RosterGenerator {
     for (Command c : u.race.unitcommands) if (c.command.equals("#hp")) hp +=
     c.args.get(0).getInt();
 
-    for (Command c : u.getSlot("basesprite").commands) if (
+    for (Command c : u.getSlot("basesprite").getCommands()) if (
       c.command.equals("#hp")
     ) {
       hp += c.args.get(0).getInt();

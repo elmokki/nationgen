@@ -12,7 +12,7 @@ import nationGen.misc.Command;
 
 public class Filter extends Entity {
 
-  public List<Command> commands = new ArrayList<>();
+  private List<Command> commands = new ArrayList<>();
   public List<ChanceInc> chanceincs = new ArrayList<>();
   public List<ThemeInc> themeincs = new ArrayList<>();
   public List<String> types = new ArrayList<>();
@@ -75,7 +75,25 @@ public class Filter extends Entity {
   }
 
   public List<Command> getCommands() {
-    return this.commands;
+    return new ArrayList<>(this.commands);
+  }
+
+  public void addCommands(Command... commands) {
+    this.addCommands(List.of(commands));
+  }
+
+  public void addCommands(List<Command> commands) {
+    for (Command c : commands) {
+      this.commands.add(c);
+    }
+  }
+
+  public boolean removeCommand(Command command) {
+    return this.commands.remove(command);
+  }
+
+  public boolean removeCommand(String command) {
+    return this.commands.remove(Command.parse(command));
   }
 
   public double getPower() {
@@ -150,7 +168,7 @@ public class Filter extends Entity {
               "#command or #define must have a single arg. Surround the command with quotes if needed."
             );
           }
-          this.commands.add(command.args.get(0).getCommand());
+          this.addCommands(command.args.get(0).getCommand());
           break;
         case "#themeinc":
           // Sometimes the definition is in quotes, sometimes it's not... -_-' < sigh

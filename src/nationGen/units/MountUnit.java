@@ -102,11 +102,11 @@ public class MountUnit extends Unit {
 
     for (Command c : mountItem.getCommands()) {
       if (c.command.equals("#gcost")) {
-        this.mount.commands.add(c);
+        this.mount.addCommands(c);
       }
       
       else if (c.command.equals("#rcost")) {
-        this.mount.commands.add(c);
+        this.mount.addCommands(c);
       }
 
       else if (c.command.equals("#mountmnr")) {
@@ -114,12 +114,14 @@ public class MountUnit extends Unit {
         this.mount = this.nationGen.getAssets().getMount(mountId);
 
         if (mountItem.sprite.isBlank() == false) {
-          this.mount.commands.removeIf(mc -> {
-            return mc.command.equals("#spr1") || mc.command.equals("#spr2") || mc.command.equals("#copyspr");
+          this.mount.getCommands().stream().forEach(mc -> {
+            if (mc.equals("#spr1") || mc.equals("#spr2") || mc.equals("#copyspr")) {
+              this.mount.removeCommand(mc);
+            }
           });
 
-          this.mount.commands.add(Command.args("#spr1", "." + mountItem.sprite));
-          this.mount.commands.add(Command.args("#spr2", "shift"));
+          this.mount.addCommands(Command.args("#spr1", "." + mountItem.sprite));
+          this.mount.addCommands(Command.args("#spr2", "shift"));
         }
 
         // If the mount item also contains a barding, add it to the mount instance
@@ -129,7 +131,7 @@ public class MountUnit extends Unit {
 
           this.bardingGoldMultiplier = this.getBardingGoldModifier(bardingProtection);
           this.bardingResCost = this.getBardingResCost(mountItem);
-          this.mount.commands.add(Command.args("#armor", bardingId));
+          this.mount.addCommands(Command.args("#armor", bardingId));
         }
       }
     }
@@ -210,21 +212,21 @@ public class MountUnit extends Unit {
       else if (c.command.equals("#heat")) {
         String resistanceTag = "#fireres";
         int inheritableResistance = getResistanceFromRiderToInherit(mountedRiderCommands, resistanceTag);
-        polishFilter.commands.add(Command.parse(resistanceTag + " " + inheritableResistance));
+        polishFilter.addCommands(Command.parse(resistanceTag + " " + inheritableResistance));
       }
       
       // Copy rider's cold resistance if the rider has a chill aura and the mount's resistance is worse
       else if (c.command.equals("#cold")) {
         String resistanceTag = "#coldres";
         int inheritableResistance = getResistanceFromRiderToInherit(mountedRiderCommands, resistanceTag);
-        polishFilter.commands.add(Command.parse(resistanceTag + " " + inheritableResistance));
+        polishFilter.addCommands(Command.parse(resistanceTag + " " + inheritableResistance));
       }
       
       // Copy rider's poison resistance if the rider has a poison aura and the mount's resistance is worse
       else if (c.command.equals("#poisoncloud")) {
         String resistanceTag = "#poisonres";
         int inheritableResistance = getResistanceFromRiderToInherit(mountedRiderCommands, resistanceTag);
-        polishFilter.commands.add(Command.parse(resistanceTag + " " + inheritableResistance));
+        polishFilter.addCommands(Command.parse(resistanceTag + " " + inheritableResistance));
       }
     }
 
@@ -242,7 +244,7 @@ public class MountUnit extends Unit {
       }
     }
 
-    if (polishFilter.commands.size() > 0) {
+    if (polishFilter.getCommands().size() > 0) {
       this.appliedFilters.add(polishFilter);
     }
 
@@ -321,7 +323,7 @@ public class MountUnit extends Unit {
     // Handle sprites
 
     BufferedImage spr1 = null;
-    for (Command c : this.mount.commands) {
+    for (Command c : this.mount.getCommands()) {
       // First sprite
       if (c.command.equals("#spr1")) {
         if (c.args.get(0).get().equals("greyscale")) {
@@ -339,7 +341,7 @@ public class MountUnit extends Unit {
       }
     }
 
-    for (Command c : this.mount.commands) {
+    for (Command c : this.mount.getCommands()) {
       if (c.command.equals("#spr2")) {
         BufferedImage spr2;
         if (c.args.get(0).get().equals("shift")) {
@@ -396,11 +398,11 @@ public class MountUnit extends Unit {
       }
     }
 
-    if (this.mount.commands.stream().anyMatch(c -> c.command.equals("#spr1"))) {
+    if (this.mount.getCommands().stream().anyMatch(c -> c.command.equals("#spr1"))) {
       lines.add("#spr1 \"" + this.getSpritePath(spritedir, "#spr1") + "\"");
     }
   
-    if (this.mount.commands.stream().anyMatch(c -> c.command.equals("#spr2"))) {
+    if (this.mount.getCommands().stream().anyMatch(c -> c.command.equals("#spr2"))) {
       lines.add("#spr2 \"" + this.getSpritePath(spritedir, "#spr2") + "\"");
     }
 

@@ -419,7 +419,7 @@ public class NationGen {
           if (sf.name.equals(spellName)) {
             spell = new Spell(this);
             spell.name = spellName;
-            spell.commands.addAll(sf.commands);
+            spell.addCommands(sf.getCommands());
             break;
           }
         }
@@ -428,8 +428,8 @@ public class NationGen {
       if (spell == null) {
         spell = new Spell(this);
         spell.name = spellName;
-        spell.commands.add(Command.args("#copyspell", spellName));
-        spell.commands.add(Command.args("#name", spellName + " "));
+        spell.addCommands(Command.args("#copyspell", spellName));
+        spell.addCommands(Command.args("#name", spellName + " "));
       }
 
       spell.nationids.add(id);
@@ -716,7 +716,7 @@ public class NationGen {
       lines.add("--- Spells:");
       for (Spell s : this.spellsToWrite) {
         lines.add("#newspell");
-        for (Command c : s.commands) {
+        for (Command c : s.getCommands()) {
           lines.add(c.toModLine());
         }
         for (int id : s.nationids) {
@@ -776,7 +776,7 @@ public class NationGen {
         su.polish(this, n);
 
         // Replace command
-        su.thisForm.commands
+        su.thisForm.getCommands()
           .stream()
           .filter(c -> c.command.equals("#weapon"))
           .forEach(c -> {
@@ -804,7 +804,7 @@ public class NationGen {
         // non-numerical id (i.e. #command "#armor 'meteorite_barding'").
         // These are defined in customitems.txt, and this code replaces their
         // NationGen id with the generated Dominions custom id
-        mu.mount.commands
+        mu.mount.getCommands()
           .stream()
           .filter(c -> c.command.equals("#weapon"))
           .forEach(c -> {
@@ -823,7 +823,7 @@ public class NationGen {
         // "#armor 'meteorite_barding'"). These are defined in customitems.txt,
         // and this code replaces their NationGen id with the generated
         // Dominions custom id
-        mu.mount.commands
+        mu.mount.getCommands()
           .stream()
           .filter(c -> c.command.equals("#armor"))
           .forEach(c -> {

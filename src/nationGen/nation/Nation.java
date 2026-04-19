@@ -389,7 +389,7 @@ public class Nation {
       possibleForts
     );
     Filter forts = chandler.getRandom(possibleForts);
-    this.commands.addAll(forts.commands);
+    this.commands.addAll(forts.getCommands());
   }
 
   private void generateHeroes() {
@@ -667,7 +667,7 @@ public class Nation {
 
       possibleThemes.remove(t);
       race.handleTheme(t);
-      for (Command c : t.commands) this.handleCommand(commands, c);
+      for (Command c : t.getCommands()) this.handleCommand(commands, c);
       this.nationthemes.add(t);
     }
 
@@ -691,7 +691,7 @@ public class Nation {
         if (t != null) {
           race.handleTheme(t);
           possibleThemes.remove(t);
-          for (Command c : t.commands) {
+          for (Command c : t.getCommands()) {
             this.handleCommand(commands, c);
           }
           this.nationthemes.add(t);

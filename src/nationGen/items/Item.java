@@ -301,7 +301,7 @@ public class Item extends Drawable {
           break;
         case "#mountmnr":
           this.itemTypes.add(ItemType.MOUNT);
-          this.commands.add(command);
+          this.addCommands(command);
           break;
         case "#addthemeinc":
           if (this.filter == null) {
@@ -366,7 +366,7 @@ public class Item extends Drawable {
               "#command or #define must have a single arg. Surround the command with quotes if needed."
             );
           }
-          this.commands.add(command.args.get(0).getCommand());
+          this.addCommands(command.args.get(0).getCommand());
           break;
         default:
           super.handleOwnCommand(command);

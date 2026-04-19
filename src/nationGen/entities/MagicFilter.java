@@ -1,6 +1,5 @@
 package nationGen.entities;
 
-import java.util.ArrayList;
 import java.util.List;
 import nationGen.NationGen;
 import nationGen.magic.MagicPath;
@@ -17,8 +16,9 @@ public class MagicFilter extends Filter {
     this.name = "MAGICPICKS";
   }
 
+  @Override
   public List<Command> getCommands() {
-    List<Command> coms = new ArrayList<>(commands);
+    List<Command> coms = super.getCommands();
 
     // Price
     if (this.name.equals("MAGICPICKS")) coms.add(
@@ -34,7 +34,6 @@ public class MagicFilter extends Filter {
     }
 
     coms.addAll(pattern.getMagicCommands(prio));
-
     return coms;
   }
 }

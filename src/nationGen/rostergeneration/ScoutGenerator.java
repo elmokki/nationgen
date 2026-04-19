@@ -395,36 +395,36 @@ public class ScoutGenerator extends TroopGenerator {
       ThemeInc.parse("thisitemtheme spy *20")
     );
 
-    if (tier > 1) tf.commands.add(Command.args("#stealthy", "+25"));
-    else tf.commands.add(Command.args("#stealthy", "+10"));
+    if (tier > 1) tf.addCommands(Command.args("#stealthy", "+25"));
+    else tf.addCommands(Command.args("#stealthy", "+10"));
 
     if (tier == 3) {
-      tf.commands.add(Command.args("#gcost", "+40"));
-      tf.commands.add(Command.args("#assassin"));
-      tf.commands.add(Command.args("#att", "+3"));
-      tf.commands.add(Command.args("#def", "+3"));
-      tf.commands.add(Command.args("#prec", "+3"));
-      tf.commands.add(Command.args("#mor", "+3"));
-      tf.commands.add(Command.args("#mr", "+1"));
-      tf.commands.add(Command.args("#str", "+1"));
+      tf.addCommands(Command.args("#gcost", "+40"));
+      tf.addCommands(Command.args("#assassin"));
+      tf.addCommands(Command.args("#att", "+3"));
+      tf.addCommands(Command.args("#def", "+3"));
+      tf.addCommands(Command.args("#prec", "+3"));
+      tf.addCommands(Command.args("#mor", "+3"));
+      tf.addCommands(Command.args("#mr", "+1"));
+      tf.addCommands(Command.args("#str", "+1"));
       //NamePart part = new NamePart();
       //part.text = "Assassin";
       //u.name.type = part;
     } else if (tier == 2) {
-      tf.commands.add(Command.args("#gcost", "+40"));
-      tf.commands.add(Command.args("#spy"));
-      tf.commands.add(Command.args("#rpcost", "2"));
+      tf.addCommands(Command.args("#gcost", "+40"));
+      tf.addCommands(Command.args("#spy"));
+      tf.addCommands(Command.args("#rpcost", "2"));
       //NamePart part = new NamePart();
       //part.text = "Spy";
       //u.name.type = part;
     } else {
-      tf.commands.add(Command.args("#gcost", "+20"));
+      tf.addCommands(Command.args("#gcost", "+20"));
       //NamePart part = new NamePart();
       //part.text = "Scout";
       //u.name.type = part;
     }
 
-    tf.commands.add(Command.args("#noleader"));
+    tf.addCommands(Command.args("#noleader"));
     u.appliedFilters.add(tf);
 
     assets.initializeFilters(List.of(tf), "ScoutGenerator");

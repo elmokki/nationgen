@@ -72,7 +72,7 @@ public class Site {
     for (Unit u : coms) lines.add("#homecom " + u.id + " --- " + u.name);
     for (Unit u : troops) lines.add("#homemon " + u.id + " --- " + u.name);
     for (Command str : othercommands) lines.add(str.toModLine());
-    for (Filter f : this.appliedfilters) for (Command str : f.commands) lines.add(
+    for (Filter f : this.appliedfilters) for (Command str : f.getCommands()) lines.add(
       str.toModLine()
     );
 

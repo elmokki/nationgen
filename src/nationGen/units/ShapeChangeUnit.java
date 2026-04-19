@@ -65,7 +65,7 @@ public class ShapeChangeUnit extends Unit {
     }
 
     // Copy commands from this form
-    for (Command c : thisForm.commands) {
+    for (Command c : thisForm.getCommands()) {
       if (c.command.equals("#name") && c.args.size() > 0) {
         c.args.set(0, new Arg(Generic.capitalize(c.args.get(0).get())));
         name = new Name();
@@ -77,11 +77,11 @@ public class ShapeChangeUnit extends Unit {
       }
 
       if (!c.command.startsWith("#spr")) {
-        sf.commands.add(c);
+        sf.addCommands(c);
       }
 
       if (c.command.equals("#gcost") && thisForm.tags.containsName("specifiedgcost")) {
-        sf.commands.add(c);
+        sf.addCommands(c);
         gcost = c.args.get(0).getInt();
       }
     }
@@ -94,12 +94,12 @@ public class ShapeChangeUnit extends Unit {
       for (Command c : otherForm.getCommands()) if (
         c.command.equals("#maxage") || c.command.equals("#nametype")
       ) {
-        sf.commands.add(c);
+        sf.addCommands(c);
         if (c.command.equals("#maxage")) maxagefound = true;
       }
 
       if (!maxagefound) {
-        sf.commands.add(new Command("#maxage", new Arg(50)));
+        sf.addCommands(new Command("#maxage", new Arg(50)));
         otherForm.commands.add(new Command("#maxage", new Arg(50)));
       }
 
@@ -114,7 +114,7 @@ public class ShapeChangeUnit extends Unit {
       );
       for (Command c : clist) {
         if (assets.isRacePoseCommandInheritableByShape(c)) {
-          sf.commands.add(c);
+          sf.addCommands(c);
           //handleCommand(commands, c);
         }
       }
@@ -134,7 +134,7 @@ public class ShapeChangeUnit extends Unit {
             assets.isCommandInheritableByShape(c) &&
             !thisForm.tags.containsName("mount")
           ) {
-            sf.commands.add(c);
+            sf.addCommands(c);
             //handleCommand(commands, c);
           }
 
@@ -142,14 +142,14 @@ public class ShapeChangeUnit extends Unit {
             assets.isCommandInheritableByMount(c) &&
             thisForm.tags.containsName("mount")
           ) {
-            sf.commands.add(c);
+            sf.addCommands(c);
             //handleCommand(commands, c);
           }
         }
       }
     }
 
-    if (sf.commands.size() > 0) {
+    if (sf.getCommands().size() > 0) {
       appliedFilters.add(sf);
     }
   }
@@ -180,7 +180,7 @@ public class ShapeChangeUnit extends Unit {
     // Handle sprites
 
     BufferedImage spr1 = null;
-    for (Command c : thisForm.commands) {
+    for (Command c : thisForm.getCommands()) {
       // First sprite
       if (c.command.equals("#spr1")) {
         if (c.args.get(0).get().equals("greyscale")) {
@@ -198,7 +198,7 @@ public class ShapeChangeUnit extends Unit {
       }
     }
 
-    for (Command c : thisForm.commands) {
+    for (Command c : thisForm.getCommands()) {
       if (c.command.equals("#spr2")) {
         BufferedImage spr2;
         if (c.args.get(0).get().equals("shift")) {
@@ -254,13 +254,13 @@ public class ShapeChangeUnit extends Unit {
       }
     }
 
-    if (thisForm.commands.stream().anyMatch(c -> c.command.equals("#spr1"))) {
+    if (thisForm.getCommands().stream().anyMatch(c -> c.command.equals("#spr1"))) {
       lines.add(
         "#spr1 \"" + spritedir + "/shapechange_" + id + "_a.tga" + "\""
       );
     }
 
-    if (thisForm.commands.stream().anyMatch(c -> c.command.equals("#spr2"))) {
+    if (thisForm.getCommands().stream().anyMatch(c -> c.command.equals("#spr2"))) {
       lines.add(
         "#spr2 \"" + spritedir + "/shapechange_" + id + "_b.tga" + "\""
       );
