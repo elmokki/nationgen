@@ -141,7 +141,7 @@ public class MountUnit extends Unit {
 
     for (Command c : commands) {
       if (c.command.equals("#gcost")) {
-        total = this.handleModifier(c.args.get(0), total);
+        total = Generic.handleModifier(c.args.get(0), total);
       }
     }
 
@@ -168,7 +168,7 @@ public class MountUnit extends Unit {
 
     for (Command c : commands) {
       if (c.command.equals("#rcost")) {
-        total = this.handleModifier(c.args.get(0), total);
+        total = Generic.handleModifier(c.args.get(0), total);
       }
     }
 

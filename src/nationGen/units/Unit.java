@@ -173,7 +173,7 @@ public class Unit {
     
     for (Command c : commands) {
       if (c.command.equals(command) && c.args.size() > 0) {
-        total = this.handleModifier(c.args.get(0), total);
+        total = Generic.handleModifier(c.args.get(0), total);
       }
     }
 
@@ -328,18 +328,6 @@ public class Unit {
     this.id = this.nationGen.getNextUnitId();
   }
 
-  protected int handleModifier(Arg mod, int value) {
-    Optional<Operator> operator = mod.getOperator();
-    if (
-      operator.isPresent() &&
-      (operator.get() == Operator.ADD || operator.get() == Operator.SUBTRACT)
-    ) {
-      value += mod.getInt();
-    } else value = mod.getInt();
-
-    return value;
-  }
-
   // Decides on bodytype tags based on the itemslots of the unit (see #itemslots in modding manual for the bitmask table of values)
   protected Optional<String> writeBodytypeLine() {
     String[] coms = {
@@ -426,22 +414,22 @@ public class Unit {
 
       switch (slot) {
         case "head":
-          head = handleModifier(modifier, head);
+          head = Generic.handleModifier(modifier, head);
           break;
         case "misc":
-          misc = handleModifier(modifier, misc);
+          misc = Generic.handleModifier(modifier, misc);
           break;
         case "body":
-          body = handleModifier(modifier, body);
+          body = Generic.handleModifier(modifier, body);
           break;
         case "hand":
-          hand = handleModifier(modifier, hand);
+          hand = Generic.handleModifier(modifier, hand);
           break;
         case "feet":
-          feet = handleModifier(modifier, feet);
+          feet = Generic.handleModifier(modifier, feet);
           break;
         case "bow":
-          bow = handleModifier(modifier, bow);
+          bow = Generic.handleModifier(modifier, bow);
           break;
       }
     }
@@ -453,22 +441,22 @@ public class Unit {
 
       switch (slot) {
         case "head":
-          head = handleModifier(modifier, head);
+          head = Generic.handleModifier(modifier, head);
           break;
         case "misc":
-          misc = handleModifier(modifier, misc);
+          misc = Generic.handleModifier(modifier, misc);
           break;
         case "body":
-          body = handleModifier(modifier, body);
+          body = Generic.handleModifier(modifier, body);
           break;
         case "hand":
-          hand = handleModifier(modifier, hand);
+          hand = Generic.handleModifier(modifier, hand);
           break;
         case "feet":
-          feet = handleModifier(modifier, feet);
+          feet = Generic.handleModifier(modifier, feet);
           break;
         case "bow":
-          bow = handleModifier(modifier, bow);
+          bow = Generic.handleModifier(modifier, bow);
           break;
       }
     }
