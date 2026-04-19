@@ -2040,31 +2040,32 @@ public class Unit {
    * Calculates recruitment point cost as gcost from race+pose+basesprite
    */
   protected Optional<String> writeRecpointsLine() {
-    if (
-      this.hasCommand("#rpcost") || this.hasCommand("#copystats")
-    ) return Optional.empty();
+    if (this.hasCommand("#rpcost") || this.hasCommand("#copystats")) {
+      return Optional.empty();
+    }
 
-    return Optional.of("#rpcost " + (calculateRp() * 1000));
+    return Optional.of("#rpcost " + this.getAutocalcRps());
   }
 
-  private int calculateRp() {
+  private int getAutocalcRps() {
     int baserp = 0;
 
     List<Command> clist = new ArrayList<>();
     clist.addAll(this.race.unitcommands);
     clist.addAll(this.pose.getCommands());
 
-    if (this.getSlot("basesprite") != null) clist.addAll(
-      this.getSlot("basesprite").commands
-    );
+    if (this.getSlot("basesprite") != null) {
+      clist.addAll(this.getSlot("basesprite").commands);
+    }
 
     for (Command c : clist) {
       if (c.command.equals("#gcost")) {
-        baserp = handleModifier(c.args.get(0), baserp);
+        baserp = Generic.handleModifier(c.args.get(0), baserp);
       }
     }
 
-    return baserp;
+    // Per modding manual, the RP autocalc value should be the unit's gold value * 1000
+    return baserp * 1000;
   }
 
   protected List<ItemData> getEquippedWeapons() {
