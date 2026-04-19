@@ -573,7 +573,8 @@ public class Unit {
     Item weapon = this.getSlot("weapon");
     Item offhand = this.getSlot("offhand");
     Boolean isOffhandMelee = offhand != null && offhand.isMeleeWeapon();
-    return weapon != null && weapon.isMeleeWeapon() && isOffhandMelee;
+    Boolean isOffhandDominionsItem = offhand != null && offhand.isDominionsEquipment();
+    return weapon != null && weapon.isMeleeWeapon() && isOffhandMelee && isOffhandDominionsItem;
   }
 
   public Boolean isRanged() {
@@ -1525,7 +1526,9 @@ public class Unit {
         totalLength += Integer.parseInt(weapon.getValueFromDb(ItemProperty.LENGTH.toDBColumn(), "0"));
       }
 
-      this.commands.add(Command.args("#ambidextrous", "+" + Math.max(1, totalLength)));
+      if (totalLength > 0) {
+        this.commands.add(Command.args("#ambidextrous", "+" + Math.max(1, totalLength)));
+      }
     }
 
     // Fist for things without proper weapons
