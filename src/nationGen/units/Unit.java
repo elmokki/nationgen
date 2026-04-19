@@ -2349,7 +2349,15 @@ public class Unit {
   private void renderSlot(Graphics g, Unit u, String slot, Boolean useoffset) {
     List<Item> possibleitems = slotmap
       .items()
-      .filter(i -> slot.equals(i.renderslot))
+      .filter(i -> {
+        String itemRenderSlot = i.renderslot;
+
+        if (itemRenderSlot.equals("offhanda") || itemRenderSlot.equals("offhandw")) {
+          itemRenderSlot = "offhand";
+        }
+
+        return slot.equals(itemRenderSlot);
+      })
       .collect(Collectors.toList());
 
     for (int i = 10; i >= 1; i--) {
