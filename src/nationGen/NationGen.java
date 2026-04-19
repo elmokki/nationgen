@@ -457,8 +457,8 @@ public class NationGen {
     // will be copied from vanilla, but their benefits will be cleared
     for (String siteId : sitesReqIds) {
       Site siteReq = new Site(siteId, true);
-      siteReq.othercommands.add(new Command("#selectsite", new Arg(siteId)));
-      siteReq.othercommands.add(new Command("#clear"));
+      siteReq.addCommands(new Command("#selectsite", new Arg(siteId)));
+      siteReq.addCommands(new Command("#clear"));
       nation.sites.add(siteReq);
     }
   }
