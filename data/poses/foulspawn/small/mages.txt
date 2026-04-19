@@ -61,22 +61,20 @@
 #load overlay /data/items/races/foulspawn/small/overlay.txt
 
 #generateitem 1 head
-#generateitem 1 larm
-#generateitem 1 rarm
 #generateitem 1 lleg
 #generateitem 1 rleg
 #generateitem 0.1 wings
 #generateitem 1 color
+
+#baseitemslot hand 0
+#baseitemslot head 1
+#baseitemslot misc 2
 
 #tier 1
 #tier 2
 
 #dontvaryhat
 -- #mage_nolowtierhat
-
-#baseitemslot hand 0
-#baseitemslot head 1
-#baseitemslot misc 2
 
 #endpose
 
@@ -117,7 +115,6 @@
 #generateitem 1 head
 #generateitem 1 lleg
 #generateitem 1 rleg
-#generateitem 1 offhand
 
 #baseitemslot hand 0
 #baseitemslot head 1
@@ -162,12 +159,14 @@
 #load overlay /data/items/races/foulspawn/small/overlay.txt
 
 #generateitem 1 head
-#generateitem 1 larm
-#generateitem 1 rarm
 #generateitem 1 lleg
 #generateitem 1 rleg
 #generateitem 0.1 wings
 #generateitem 1 color
+
+#baseitemslot hand 0
+#baseitemslot head 1
+#baseitemslot misc 2
 
 #tier 1
 #tier 2
@@ -175,10 +174,6 @@
 
 #dontvaryhat
 -- #mage_nolowtierhat
-
-#baseitemslot hand 0
-#baseitemslot head 1
-#baseitemslot misc 2
 
 #endpose
 
@@ -220,7 +215,6 @@
 #generateitem 1 head
 #generateitem 1 lleg
 #generateitem 1 rleg
-#generateitem 1 offhand
 
 #baseitemslot hand 0
 #baseitemslot head 1

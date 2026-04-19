@@ -5,6 +5,13 @@
 #needstype larm onehand
 #enditem
 
+#newitem
+#id empty
+#gameid -1
+#nogen
+#needstype larm twohand
+#enditem
+
 -- Natural weapons
 
 #newitem
@@ -13,6 +20,7 @@
 #needstype larm onehand
 #hand
 #degenerate
+#type any
 #theme "primitive"
 #enditem
 
@@ -22,6 +30,7 @@
 #needstype larm claw
 #claw
 #degenerate
+#type any
 #theme "primitive"
 #enditem
 
@@ -32,6 +41,7 @@
 #needstype larm claw
 #claw
 #degenerate
+#type any
 #enditem
 
 #newitem
@@ -41,6 +51,7 @@
 #needstype larm claw
 #claw
 #degenerate
+#type any
 #enditem
 
 #newitem
@@ -50,6 +61,7 @@
 #type "tentacle"
 #tentacle
 #degenerate
+#type any
 #needstype larm tentacle
 #enditem
 
@@ -59,8 +71,9 @@
 #gameid 387
 #tentacle
 #degenerate
+#type any
 #command "#gcost +1"
-#needstype larm tentacle
+#needstype larm tentacle_hand
 #enditem
 
 #newitem
@@ -69,7 +82,8 @@
 #gameid 116
 #tentacle
 #degenerate
-#needstype larm tentacle
+#type any
+#needstype larm tentacle_hand
 #enditem
 
 #newitem
@@ -78,6 +92,7 @@
 #gameid 142
 #tentacle
 #degenerate
+#type any
 #command "#gcost +2"
 #needstype larm tentacle
 #enditem
@@ -88,8 +103,9 @@
 #gameid 282
 #tentacle
 #degenerate
+#type any
 #command "#gcost +1"
-#needstype larm tentacle
+#needstype larm tentacle_hand
 #enditem
 
 #newitem
@@ -98,6 +114,7 @@
 #gameid 355
 #tentacle
 #degenerate
+#type any
 #command "#gcost +1"
 #needstype larm tentacle
 #enditem
@@ -108,6 +125,7 @@
 #gameid 273
 #pincer
 #degenerate
+#type any
 #needstype larm pincer
 #enditem
 
@@ -117,6 +135,7 @@
 #gameid 742
 #mantis
 #degenerate
+#type any
 #needstype larm mantis
 #enditem
 
@@ -128,6 +147,7 @@
 #theme "primitive"
 #onehand
 #degenerate
+#type any
 #theme "wood"
 #needstype larm onehand
 #enditem
@@ -139,6 +159,7 @@
 #theme "primitive"
 #onehand
 #degenerate
+#type any
 #theme "wood"
 #needstype larm onehand
 #enditem
@@ -149,6 +170,7 @@
 #sprite /graphics/ogre/weapon/hatchet_oh.png
 #theme "primitive"
 #onehand
+#type any
 #theme "iron"
 #needstype larm onehand
 #enditem
@@ -158,6 +180,7 @@
 #gameid 15
 #sprite /graphics/ogre/weapon/morningstar_oh.png
 #onehand
+#type any
 #theme "iron"
 #theme "advanced"
 #needstype larm onehand
@@ -168,6 +191,7 @@
 #gameid 13
 #sprite /graphics/ogre/weapon/hammer_oh.png
 #onehand
+#type any
 #theme "iron"
 #theme "advanced"
 #needstype larm onehand
@@ -179,6 +203,7 @@
 #sprite /graphics/ogre/weapon/mace_oh.png
 #theme "primitive"
 #onehand
+#type any
 #degenerate
 #needstype larm onehand
 #enditem
@@ -190,6 +215,7 @@
 #offsetx 4
 #offsety 2
 #onehand
+#type any
 #needstype larm onehand
 #enditem
 
@@ -200,6 +226,7 @@
 #offsetx 4
 #offsety 2
 #onehand
+#type any
 #needstype larm onehand
 #enditem
 
@@ -210,5 +237,6 @@
 #offsetx 4
 #offsety 2
 #onehand
+#type any
 #needstype larm onehand
 #enditem

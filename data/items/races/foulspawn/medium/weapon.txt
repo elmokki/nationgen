@@ -5,6 +5,7 @@
 #id fist
 #gameid 92
 #needstype rarm onehand
+#needstype offhand any
 #hand
 #degenerate
 #enditem
@@ -13,6 +14,7 @@
 #id claw
 #gameid 29
 #needstype rarm claw
+#needstype offhand any
 #claw
 #degenerate
 #enditem
@@ -22,6 +24,7 @@
 #gameid 250
 #command "#gcost +1"
 #needstype rarm claw
+#needstype offhand any
 #claw
 #degenerate
 #enditem
@@ -31,6 +34,7 @@
 #gameid 248
 #command "#gcost +1"
 #needstype rarm claw
+#needstype offhand any
 #claw
 #degenerate
 #enditem
@@ -43,6 +47,7 @@
 #tentacle
 #degenerate
 #needstype rarm tentacle
+#needstype offhand any
 #enditem
 
 #newitem
@@ -54,6 +59,7 @@
 #itemslot hand +1
 #command "#gcost +1"
 #needstype rarm tentacle
+#needstype offhand any
 #enditem
 
 #newitem
@@ -64,6 +70,7 @@
 #degenerate
 #itemslot hand +1
 #needstype rarm tentacle
+#needstype offhand any
 #enditem
 
 #newitem
@@ -74,6 +81,7 @@
 #degenerate
 #command "#gcost +2"
 #needstype rarm tentacle
+#needstype offhand any
 #enditem
 
 #newitem
@@ -85,6 +93,7 @@
 #command "#gcost +1"
 #itemslot hand +1
 #needstype rarm tentacle
+#needstype offhand any
 #enditem
 
 #newitem
@@ -95,6 +104,7 @@
 #degenerate
 #command "#gcost +1"
 #needstype rarm tentacle
+#needstype offhand any
 #enditem
 
 #newitem
@@ -104,6 +114,7 @@
 #pincer
 #degenerate
 #needstype rarm pincer
+#needstype offhand any
 #enditem
 
 #newitem
@@ -113,6 +124,7 @@
 #mantis
 #degenerate
 #needstype rarm mantis
+#needstype offhand any
 #enditem
 
 
@@ -127,6 +139,7 @@
 #degenerate
 #theme "wood"
 #needstype rarm onehand
+#needstype offhand any
 #enditem
 
 #newitem
@@ -139,6 +152,7 @@
 #degenerate
 #theme "wood"
 #needstype rarm onehand
+#needstype offhand any
 #enditem
 
 #newitem
@@ -150,6 +164,7 @@
 #onehand
 #theme "iron"
 #needstype rarm onehand
+#needstype offhand any
 #enditem
 
 #newitem
@@ -161,6 +176,7 @@
 #theme "iron"
 #theme "advanced"
 #needstype rarm onehand
+#needstype offhand any
 #enditem
 
 #newitem
@@ -172,6 +188,7 @@
 #theme "iron"
 #theme "advanced"
 #needstype rarm onehand
+#needstype offhand any
 #enditem
 
 #newitem
@@ -183,6 +200,7 @@
 #onehand
 #degenerate
 #needstype rarm onehand
+#needstype offhand any
 #enditem
 
 #newitem
@@ -194,6 +212,7 @@
 #offsety -1
 #onehand
 #needstype rarm onehand
+#needstype offhand any
 #enditem
 
 #newitem
@@ -205,6 +224,7 @@
 #offsety -1
 #onehand
 #needstype rarm onehand
+#needstype offhand any
 #enditem
 
 #newitem
@@ -216,6 +236,7 @@
 #offsety -1
 #onehand
 #needstype rarm onehand
+#needstype offhand any
 #enditem
 
 
@@ -230,7 +251,7 @@
 #offsetx 1
 #offsety 0
 #needstype rarm onehand
-#needstype larm twohand
+#needs offhand empty
 #twohand
 #enditem
 
@@ -244,7 +265,7 @@
 #offsetx 1
 #offsety 0
 #needstype rarm onehand
-#needstype larm twohand
+#needs offhand empty
 #twohand
 #enditem
 
@@ -258,7 +279,7 @@
 #offsetx 1
 #offsety 0
 #needstype rarm onehand
-#needstype larm twohand
+#needs offhand empty
 #troopweapon
 #twohand
 #enditem
@@ -273,7 +294,7 @@
 #offsetx 1
 #offsety 0
 #needstype rarm onehand
-#needstype larm twohand
+#needs offhand empty
 #theme "primitive"
 #troopweapon
 #twohand
@@ -289,7 +310,7 @@
 #offsetx 1
 #offsety 0
 #needstype rarm onehand
-#needstype larm twohand
+#needs offhand empty
 #theme "primitive"
 #theme "wood"
 #degenerate
@@ -307,7 +328,7 @@
 #theme "primitive"
 #theme "iron"
 #needstype rarm onehand
-#needstype larm twohand
+#needs offhand empty
 #troopweapon
 #degenerate
 #enditem
@@ -323,7 +344,7 @@
 #offsety 0
 #theme "primitive"
 #needstype rarm onehand
-#needstype larm twohand
+#needs offhand empty
 #troopweapon
 #twohand
 #degenerate
@@ -339,7 +360,7 @@
 #offsetx 2
 #offsety 0
 #needstype rarm onehand
-#needstype larm twohand
+#needs offhand empty
 #troopweapon
 #twohand
 #enditem
@@ -354,7 +375,7 @@
 #offsetx 1
 #offsety 0
 #needstype rarm onehand
-#needstype larm twohand
+#needs offhand empty
 #troopweapon
 #twohand
 #enditem
@@ -374,6 +395,7 @@
 #theme "primitive"
 #theme "wood"
 #needstype rarm twohand
+#needstype offhand any
 #ignore_dw_restrictions
 #enditem
 
@@ -388,6 +410,7 @@
 #degenerate
 #theme "primitive"
 #needstype rarm twohand
+#needstype offhand any
 #ignore_dw_restrictions
 #enditem
 
@@ -403,6 +426,7 @@
 #theme "iron"
 #theme "primitive"
 #needstype rarm twohand
+#needstype offhand any
 #ignore_dw_restrictions
 #enditem
 
@@ -416,6 +440,7 @@
 #twohand
 #theme "iron"
 #needstype rarm twohand
+#needstype offhand any
 #ignore_dw_restrictions
 #enditem
 
@@ -429,6 +454,7 @@
 #twohand
 #theme "iron"
 #needstype rarm twohand
+#needstype offhand any
 #ignore_dw_restrictions
 #enditem
 
@@ -443,6 +469,7 @@
 #theme "iron"
 #theme formationfighter
 #needstype rarm twohand
+#needstype offhand any
 #ignore_dw_restrictions
 #enditem
 
@@ -457,6 +484,7 @@
 #theme "iron"
 #theme formationfighter
 #needstype rarm twohand
+#needstype offhand any
 #ignore_dw_restrictions
 #enditem
 
@@ -471,6 +499,7 @@
 #theme "iron"
 #theme formationfighter
 #needstype rarm twohand
+#needstype offhand any
 #ignore_dw_restrictions
 #enditem
 
@@ -486,6 +515,7 @@
 #theme "advanced"
 #minprot 8
 #needstype rarm twohand
+#needstype offhand any
 #ignore_dw_restrictions
 #enditem
 
@@ -501,6 +531,7 @@
 #theme "iron"
 #minprot 8
 #needstype rarm twohand
+#needstype offhand any
 #ignore_dw_restrictions
 #enditem
 
@@ -514,6 +545,7 @@
 #twohand
 #theme "iron"
 #needstype rarm twohand
+#needstype offhand any
 #ignore_dw_restrictions
 #enditem
 
@@ -528,5 +560,6 @@
 #theme "iron"
 #theme formationfighter
 #needstype rarm twohand
+#needstype offhand any
 #ignore_dw_restrictions
 #enditem

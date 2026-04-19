@@ -45,8 +45,7 @@
 #gameid 387
 #tentacle
 #command "#gcost +1"
-#itemslot hand +1
-#needstype larm tentacle
+#needstype larm tentacle_hand
 #enditem
 
 #newitem
@@ -55,8 +54,7 @@
 #gameid 116
 #tentacle
 #command "#gcost +1"
-#itemslot hand +1
-#needstype larm tentacle
+#needstype larm tentacle_hand
 #enditem
 
 #newitem
@@ -73,8 +71,7 @@
 #gameid 116
 #neck
 #command "#gcost +1"
-#needstype larm snake
-#itemslot hand +1
+#needstype larm snake_hand
 #type melee
 #enditem
 

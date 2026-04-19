@@ -97,6 +97,20 @@
 #enditem
 
 #newitem
+#id "tentacle_green_with_slot"
+#gameid -1
+#sprite /graphics/foulspawn/medium/larm/tentacle_green.png
+#command "#gcost +1"
+#command "#hp +3"
+#command "#str -1"
+-- For weapons which require a hand slot, like non-intrinsic tentacle attacks
+#itemslot hand +1
+#type tentacle
+#type tentacle_hand
+#needs lhand tentacle_green
+#enditem
+
+#newitem
 #id "tentacle_pink"
 #gameid -1
 #sprite /graphics/foulspawn/medium/larm/tentacle_pink.png
@@ -104,6 +118,20 @@
 #command "#hp +3"
 #command "#str -1"
 #type tentacle
+#needs lhand tentacle_pink
+#enditem
+
+#newitem
+#id "tentacle_pink_with_slot"
+#gameid -1
+#sprite /graphics/foulspawn/medium/larm/tentacle_pink.png
+#command "#gcost +1"
+#command "#hp +3"
+#command "#str -1"
+-- For weapons which require a hand slot, like non-intrinsic tentacle attacks
+#itemslot hand +1
+#type tentacle
+#type tentacle_hand
 #needs lhand tentacle_pink
 #enditem
 
@@ -121,6 +149,22 @@
 #enditem
 
 #newitem
+#id "tentacles_blue_with_slot"
+#gameid -1
+#sprite /graphics/foulspawn/medium/larm/tentacles_blue.png
+#command "#gcost +5"
+#command "#hp +2"
+#command "#str -2"
+#type tentacle
+#type tentacle_hand
+#needs lhand none
+#needstype bonustentacle2 tentacle
+#itemslot misc +1
+-- For weapons which require a hand slot, like non-intrinsic tentacle attacks
+#itemslot hand +1
+#enditem
+
+#newitem
 #id "tentacles_pink"
 #gameid -1
 #sprite /graphics/foulspawn/medium/larm/tentacles_pink.png
@@ -131,6 +175,22 @@
 #needs lhand none
 #needstype bonustentacle2 tentacle
 #itemslot misc +1
+#enditem
+
+#newitem
+#id "tentacles_pink_with_slot"
+#gameid -1
+#sprite /graphics/foulspawn/medium/larm/tentacles_pink.png
+#command "#gcost +5"
+#command "#hp +2"
+#command "#str -2"
+#type tentacle
+#type tentacle_hand
+#needs lhand none
+#needstype bonustentacle2 tentacle
+#itemslot misc +1
+-- For weapons which require a hand slot, like non-intrinsic tentacle attacks
+#itemslot hand +1
 #enditem
 
 #newitem

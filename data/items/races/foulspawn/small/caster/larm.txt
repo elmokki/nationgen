@@ -6,6 +6,7 @@
 #command "#hp +1"
 #itemslot hand +1
 #type onehand
+#type any
 #enditem
 
 #newitem
@@ -16,6 +17,7 @@
 #itemslot hand +1
 #type onehand
 #type claw
+#type any
 #enditem
 
 #newitem
@@ -27,6 +29,7 @@
 #itemslot hand +1
 #type onehand
 #type claw
+#type any
 #enditem
 
 #newitem
@@ -36,7 +39,8 @@
 #command "#hp +2"
 #command "#str -1"
 #itemslot hand +1
-#type tentacle
+#type tentacle_hand
+#type any
 #enditem
 
 #newitem
@@ -46,7 +50,8 @@
 #command "#hp +2"
 #command "#str -1"
 #itemslot hand +1
-#type tentacle
+#type tentacle_hand
+#type any
 #enditem
 
 #newitem
@@ -56,4 +61,5 @@
 #command "#prot +2"
 #command "#hp +1"
 #type pincer
+#type any
 #enditem
