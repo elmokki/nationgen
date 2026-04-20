@@ -2396,8 +2396,9 @@ public class Unit {
       .items()
       .filter(i -> {
         String itemRenderSlot = i.renderslot;
+        boolean isRenderedOffhand = itemRenderSlot.equals("offhanda") || itemRenderSlot.equals("offhandw");
 
-        if (itemRenderSlot.equals("offhanda") || itemRenderSlot.equals("offhandw")) {
+        if (isRenderedOffhand && slot.equals("offhand")) {
           itemRenderSlot = "offhand";
         }
 
