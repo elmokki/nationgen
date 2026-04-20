@@ -385,7 +385,7 @@ public class Summary {
     boolean secondarydrainimmune = false; // #drainimmune (on units);
     for (Unit u : n.listCommanders("mage")) {
       if (
-        u.getCommands().stream().anyMatch(c -> c.command.equals("#drainimmune"))
+        u.gatherCommands().stream().anyMatch(c -> c.command.equals("#drainimmune"))
       ) {
         if (u.tags.containsName("schoolmage")) {
           primarydrainimmune = true;

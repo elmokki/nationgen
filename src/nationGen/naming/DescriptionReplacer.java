@@ -77,7 +77,7 @@ public class DescriptionReplacer {
     }
 
     if (unit.hasCommand("#fixedname")) {
-      for (Command c : unit.getCommands()) {
+      for (Command c : unit.gatherCommands()) {
         if (c.command.equals("#fixedname")) descs.put(
           "%fixedname%",
           c.args.get(0).get()

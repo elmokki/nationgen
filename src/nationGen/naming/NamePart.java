@@ -37,17 +37,20 @@ public class NamePart extends Filter {
 
     for (Args args : this.tags.getAllArgs("commandvariant")) {
       String command = args.get(0).get();
-      for (Command c : u.getCommands()) if (c.command.equals(command)) {
-        if (
-          !(args.contains(new Arg("negative")) &&
+      for (Command c : u.gatherCommands()) {
+        if (c.command.equals(command)) {
+          if (
+            !(args.contains(new Arg("negative")) &&
             c.args.get(0).getInt() >= 0) &&
-          !(args.contains(new Arg("positive")) && c.args.get(0).getInt() <= 0)
-        ) {
-          str = args.get(args.size() - 1).get();
-          break;
+            !(args.contains(new Arg("positive")) && c.args.get(0).getInt() <= 0)
+          ) {
+            str = args.get(args.size() - 1).get();
+            break;
+          }
         }
       }
     }
+
     for (Args args : this.tags.getAllArgs("posetagvariant")) {
       String command = args.get(0).get();
       if (u.pose.tags.containsName(command)) {
@@ -55,6 +58,7 @@ public class NamePart extends Filter {
         break;
       }
     }
+
     for (Args args : this.tags.getAllArgs("racetagvariant")) {
       String command = args.get(0).get();
       if (u.race.tags.containsName(command)) {

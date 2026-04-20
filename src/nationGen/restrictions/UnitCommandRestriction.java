@@ -77,7 +77,7 @@ public class UnitCommandRestriction extends TextBoxListRestrictionWithCheckboxes
   }
 
   private boolean checkUnit(Unit u) {
-    List<Command> unitCommands = u.getCommands();
+    List<Command> unitCommands = u.gatherCommands();
     List<Command> requiredCommands = commandRestrictions.stream().map(str -> Command.parse(str)).toList();
 
     if (this.shouldCheckMountCommands()) {

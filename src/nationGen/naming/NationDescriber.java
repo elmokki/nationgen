@@ -156,7 +156,7 @@ public class NationDescriber {
       desc.append(
         u.race.tags.getString("description").map(s -> s + " ").orElse("")
       );
-      for (Command c : u.getCommands()) {
+      for (Command c : u.gatherCommands()) {
         if (c.command.equals("#descr")) tmpDesc = c;
       }
 
@@ -353,7 +353,7 @@ public class NationDescriber {
     }
 
     else {
-      u.commands.add(Command.args("#descr", description));
+      u.addCommands(Command.args("#descr", description));
     }
   }
 
@@ -382,7 +382,7 @@ public class NationDescriber {
       );
 
       description = dr.replace(description).trim();
-      su.commands.add(new Command("#descr", new Arg(description)));
+      su.addCommands(new Command("#descr", new Arg(description)));
     }
   }
 

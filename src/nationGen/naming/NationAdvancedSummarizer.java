@@ -20,15 +20,6 @@ import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
 public class NationAdvancedSummarizer {
-
-  private NationGenDB weapondb;
-  private NationGenDB armordb;
-
-  public NationAdvancedSummarizer(NationGenDB armor, NationGenDB weapon) {
-    this.armordb = armor;
-    this.weapondb = weapon;
-  }
-
   private List<String> printUnits(String role, String tag, Nation n) {
     List<String> lines = new ArrayList<>();
     List<Unit> troops = n.listTroops(role);
@@ -389,7 +380,7 @@ public class NationAdvancedSummarizer {
 
     boolean str = false;
     boolean holy = false;
-    for (Command c : u.getCommands()) {
+    for (Command c : u.gatherCommands()) {
       if (c.command.equals("#holy")) holy = true;
       if (c.command.equals("#slowrec")) str = true;
     }
@@ -398,7 +389,7 @@ public class NationAdvancedSummarizer {
 
     if (u.tags.containsName("montagunit")) {
       int shape = -1;
-      for (Command c : u.getCommands()) if (
+      for (Command c : u.gatherCommands()) if (
         c.command.equals("#firstshape")
       ) shape = -1 * c.args.get(0).getInt();
 
@@ -409,7 +400,7 @@ public class NationAdvancedSummarizer {
 
     if (u.tags.containsName("hasmontag")) {
       int shape = -1;
-      for (Command c : u.getCommands()) if (c.command.equals("#montag")) shape =
+      for (Command c : u.gatherCommands()) if (c.command.equals("#montag")) shape =
         c.args.get(0).getInt();
 
       if (shape != -1) stuff.add("Has montag " + shape);

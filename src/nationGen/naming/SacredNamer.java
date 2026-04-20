@@ -27,7 +27,7 @@ public class SacredNamer {
   }
 
   private boolean isSacred(Unit u) {
-    for (Command cmd : u.getCommands()) {
+    for (Command cmd : u.gatherCommands()) {
       if (cmd.command.equals("#holy")) {
         return true;
       }

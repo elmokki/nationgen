@@ -79,8 +79,8 @@ public class MountUnit extends Unit {
   }
 
   @Override
-  public List<Command> getCommands() {
-    List<Command> mountUnitCommands = new ArrayList<>(super.getCommands());
+  public List<Command> getAllHandledCommands() {
+    List<Command> mountUnitCommands = new ArrayList<>(super.getAllHandledCommands());
     mountUnitCommands.addAll(this.mount.getCommands());
     return mountUnitCommands;
   }
@@ -88,7 +88,7 @@ public class MountUnit extends Unit {
   @Override
   public List<Command> gatherCommands() {
     return Stream.of(
-        this.commands.stream(),
+        this.getCommands().stream(),
         this.mount.getCommands().stream()
       )
       .flatMap(s -> s)
@@ -138,7 +138,7 @@ public class MountUnit extends Unit {
   }
 
   public int getGoldCost() {
-    List<Command> commands = this.gatherCommands();
+    List<Command> commands = this.getAllHandledCommands();
     int total = 0;
 
     for (Command c : commands) {
@@ -166,7 +166,7 @@ public class MountUnit extends Unit {
   public int getResCost() {
     // Mounts cost 1 resource by default
     int total = 1;
-    List<Command> commands = this.gatherCommands();
+    List<Command> commands = this.getAllHandledCommands();
 
     for (Command c : commands) {
       if (c.command.equals("#rcost")) {
@@ -200,7 +200,7 @@ public class MountUnit extends Unit {
     polishFilter.name = "Mount unit";
 
     // Copy sacredness from main form
-    List<Command> mountedRiderCommands = rider.getCommands();
+    List<Command> mountedRiderCommands = rider.getAllHandledCommands();
 
     // Inherit relevant commands from rider
     for (Command c : mountedRiderCommands) {
@@ -372,7 +372,7 @@ public class MountUnit extends Unit {
     
     lines.add("#newmonster " + this.id);
   
-    List<Command> commands = this.getCommands();
+    List<Command> commands = this.getAllHandledCommands();
     boolean hasItemSlots = false;
 
     // Own non-gcost commands first due to #copystats

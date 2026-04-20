@@ -789,7 +789,7 @@ public class Nation {
         .collect(Collectors.toList());
 
     for (List<Unit> l : this.comlists.values()) for (Unit u : l) {
-      u.commands.addAll(u.race.specialcommands);
+      u.addCommands(u.race.specialcommands);
       giveSecondaryRaceSpecialCommands(u, conditional);
 
       int priest = u.getMagicPicks().get(MagicPath.HOLY);
@@ -800,7 +800,7 @@ public class Nation {
           .map(Arg::getInt)
           .max(Integer::compareTo)
           .ifPresent(highest ->
-            u.commands.add(
+            u.addCommands(
               new Command("#gcost", new Arg("+" + (highest * priest)))
             )
           );
@@ -813,7 +813,7 @@ public class Nation {
       if (
         u.tags.containsName("elite") || u.tags.containsName("sacred")
       ) {
-        u.commands.addAll(u.race.specialcommands);
+        u.addCommands(u.race.specialcommands);
       }
 
       giveSecondaryRaceSpecialCommands(u, conditional);
@@ -821,7 +821,7 @@ public class Nation {
     }
 
     for (Unit u : heroes) {
-      u.commands.addAll(u.race.specialcommands);
+      u.addCommands(u.race.specialcommands);
       giveSecondaryRaceSpecialCommands(u, conditional);
       u.polish();
     }
@@ -941,7 +941,7 @@ public class Nation {
         }
       }
       if (ok) {
-        u.commands.add(cc);
+        u.addCommands(cc);
       }
     }
   }
@@ -1286,24 +1286,24 @@ public class Nation {
     return coms;
   }
 
-  private void handleCommand(List<Command> commands, Command c) {
+  private void handleCommand(List<Command> targetCommands, Command commandToHandle) {
     // List of commands that may appear more than once per nation
     List<String> uniques = new ArrayList<>();
 
     Command old = null;
     for (Command cmd : commands) {
-      if (cmd.command.equals(c.command)) old = cmd;
+      if (cmd.command.equals(commandToHandle.command)) old = cmd;
     }
 
     if (old != null) {
-      for (int i = 0; i < c.args.size(); i++) {
-        Arg arg = c.args.get(i);
+      for (int i = 0; i < commandToHandle.args.size(); i++) {
+        Arg arg = commandToHandle.args.get(i);
         Arg oldarg = old.args.get(i);
 
         if (arg.getOperator().filter(o -> o == Operator.ADD).isPresent()) {
-          if (!uniques.contains(c.command)) {
+          if (!uniques.contains(commandToHandle.command)) {
             int argint = oldarg.getInt() + arg.getInt();
-            if (c.command.equals("#idealcold")) {
+            if (commandToHandle.command.equals("#idealcold")) {
               argint = Math.min(3, argint);
               argint = Math.max(-3, argint);
             }
@@ -1311,25 +1311,25 @@ public class Nation {
             old.args.set(i, new Arg(argint));
             return;
           } else {
-            commands.add(c);
+            targetCommands.add(commandToHandle);
             return;
           }
         } else {
-          if (!uniques.contains(c.command)) {
+          if (!uniques.contains(commandToHandle.command)) {
             old.args.set(i, arg);
           } else {
-            commands.add(c.copy());
+            targetCommands.add(commandToHandle.copy());
             return;
           }
         }
       }
     } else { // there is no existing copy
-      Command toAdd = c.copy();
+      Command toAdd = commandToHandle.copy();
       if (toAdd.args.size() > 0) {
         // If the command starts with +, remove +.
         toAdd.args.set(0, toAdd.args.get(0).applyModToNothing());
       }
-      commands.add(toAdd);
+      targetCommands.add(toAdd);
     }
   }
 

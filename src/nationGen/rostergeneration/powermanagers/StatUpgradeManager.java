@@ -289,7 +289,7 @@ public class StatUpgradeManager {
             this.cannotAffordMoreUpgrades = true;
 
             // Increase gcost of unit by 1/3 of the number of stat upgrades we've granted it
-            unit.commands.add(Command.args("#gcost", "+" + (int) Math.round(this.extraGoldCostCounter)));
+            unit.addCommands(Command.args("#gcost", "+" + (int) Math.round(this.extraGoldCostCounter)));
             return;
         }
 
@@ -308,7 +308,7 @@ public class StatUpgradeManager {
         }
 
         // Add stat upgrade, spend budget, track number of upgrades for this stat
-        unit.commands.add(Command.args(selectedStatUpgrade.name, amountToUpgrade));
+        unit.addCommands(Command.args(selectedStatUpgrade.name, amountToUpgrade));
         this.budgetLeft -= selectedStatUpgrade.power;
         statUpgradeCalculator.addUpgrade();
 

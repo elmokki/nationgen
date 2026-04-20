@@ -296,7 +296,7 @@ public enum ChanceIncConditionType {
           d.n.selectCommanders("priest")
         )
           .flatMap(s -> s)
-          .flatMap(u -> u.getCommands().stream())
+          .flatMap(u -> u.getAllHandledCommands().stream())
       );
     }
   },
@@ -318,7 +318,7 @@ public enum ChanceIncConditionType {
         int found = 0;
 
         for (Unit u : units) {
-          for (Command c : u.getCommands()) {
+          for (Command c : u.getAllHandledCommands()) {
             if (c.command.equals(command) || c.command.equals("#" + command)) {
               found++;
             }
@@ -516,7 +516,7 @@ public enum ChanceIncConditionType {
   PERSONAL_COMMAND("personalcommand") {
     @Override
     Condition<ChanceIncData> parseConditionArguments(ArgParser args) {
-      return generateCommandChanceInc(args, d -> d.u.getCommands().stream()); // there used to be a null check on d.u returning false, not sure if necessary
+      return generateCommandChanceInc(args, d -> d.u.getAllHandledCommands().stream()); // there used to be a null check on d.u returning false, not sure if necessary
     }
   },
 

@@ -247,7 +247,7 @@ public class TroopNamer {
 
     for (Unit u : n.comlists.get("commanders")) {
       int tier = 0;
-      for (Command c : u.commands) {
+      for (Command c : u.getCommands()) {
         if (c.command.startsWith("#okleader")) tier++;
         else if (c.command.startsWith("#inspirational")) tier++;
         if (c.command.startsWith("#goodleader")) tier++;
@@ -295,7 +295,7 @@ public class TroopNamer {
     // Scouts
     for (Unit u : n.comlists.get("scouts")) {
       int level = 0;
-      for (Command c : u.commands) {
+      for (Command c : u.getCommands()) {
         if (c.command.startsWith("#spy")) level = 1;
         if (c.command.startsWith("#assassin")) level = 2;
 

@@ -182,13 +182,13 @@ public class MageGenerator extends TroopGenerator {
   }
 
   private void applyStats(Unit u) {
-    u.commands.add(Command.args("#att", "-1"));
-    u.commands.add(Command.args("#def", "-1"));
+    u.addCommands(Command.args("#att", "-1"));
+    u.addCommands(Command.args("#def", "-1"));
 
     int mr = 1 + (int) Math.round(u.getMagicAmount(10) + u.getRandoms(1));
 
     int unitmr = 0;
-    for (Command c : u.getCommands()) {
+    for (Command c : u.getAllHandledCommands()) {
       if (c.command.equals("#mr")) {
         unitmr += c.args.get(0).getInt();
       }
@@ -200,7 +200,7 @@ public class MageGenerator extends TroopGenerator {
     mr -= Math.max(0, Math.max(unitmr - 11, unitmr + mr - 18));
 
     if (mr > 0) {
-      u.commands.add(Command.args("#mr", "+" + mr));
+      u.addCommands(Command.args("#mr", "+" + mr));
     }
   }
 
@@ -408,9 +408,9 @@ public class MageGenerator extends TroopGenerator {
       }
 
       if (slowrecrand < slowrecmod && i == 2) {
-        mages.get(i).get(j).commands.add(Command.args("#rpcost", "4"));
+        mages.get(i).get(j).addCommands(Command.args("#rpcost", "4"));
       } else {
-        mages.get(i).get(j).commands.add(Command.args("#rpcost", "2"));
+        mages.get(i).get(j).addCommands(Command.args("#rpcost", "2"));
       }
     }
 
@@ -527,12 +527,12 @@ public class MageGenerator extends TroopGenerator {
         !extramages.get(0).isCapOnly() &&
         this.random.nextDouble() > 0.125 &&
         extramages.get(0).getMagicAmount(0.25) > 3
-      ) extramages.get(0).commands.add(Command.args("#rpcost", "4"));
+      ) extramages.get(0).addCommands(Command.args("#rpcost", "4"));
       else if (
         extramages.get(0).getMagicAmount(0.25) > 5 &&
         this.random.nextDouble() > 0.5
-      ) extramages.get(0).commands.add(Command.args("#rpcost", "4"));
-      else extramages.get(0).commands.add(Command.args("#rpcost", "2"));
+      ) extramages.get(0).addCommands(Command.args("#rpcost", "4"));
+      else extramages.get(0).addCommands(Command.args("#rpcost", "2"));
 
       for (Unit u : extramages) unitGen.handleMontagUnits(
         u,
@@ -1136,7 +1136,7 @@ public class MageGenerator extends TroopGenerator {
       if (magePriests && !doneWithMages) {
         if (compensationMagePriests && currentStrength == maxStrength) {
           for (Unit u : extras) {
-            u.commands.add(new Command("#holy"));
+            u.addCommands(new Command("#holy"));
             u.appliedFilters.add(
               this.getPriestPattern(
                   currentStrength,
@@ -1144,7 +1144,7 @@ public class MageGenerator extends TroopGenerator {
                 )
             );
             u.tags.addName("magepriest");
-            u.commands.add(
+            u.addCommands(
               Command.args(
                 "#gcost",
                 "+" + (14 * currentStrength + currentStrength * priestextracost)
@@ -1154,11 +1154,11 @@ public class MageGenerator extends TroopGenerator {
             //force slow to recruit for H3s
             if (
               currentStrength > 2 && u.getTotalCommandValue("#rpcost", 0) == 2
-            ) u.commands.add(Command.args("#rpcost", "+2"));
+            ) u.addCommands(Command.args("#rpcost", "+2"));
 
             // Make giants of size 7 and above holy cost 2
             if (u.getTotalCommandValue("#size", 1) >= 7) {
-              u.commands.add(new Command("#holycost", new Arg(2)));
+              u.addCommands(new Command("#holycost", new Arg(2)));
             }
           }
           done = true;
@@ -1172,9 +1172,9 @@ public class MageGenerator extends TroopGenerator {
                   currentStrength == maxStrength
                 )
             );
-            u.commands.add(new Command("#holy"));
+            u.addCommands(new Command("#holy"));
             u.tags.addName("magepriest");
-            u.commands.add(
+            u.addCommands(
               Command.args(
                 "#gcost",
                 "+" + (14 * currentStrength + currentStrength * priestextracost)
@@ -1183,7 +1183,7 @@ public class MageGenerator extends TroopGenerator {
 
             // Make giants of size 7 and above holy cost 2
             if (u.getTotalCommandValue("#size", 1) >= 7) {
-              u.commands.add(new Command("#holycost", new Arg(2)));
+              u.addCommands(new Command("#holycost", new Arg(2)));
             }
           }
           done = true;
@@ -1219,7 +1219,7 @@ public class MageGenerator extends TroopGenerator {
 
           u = this.generateBases("priest", prace, 1, str).get(0);
         }
-        u.commands.add(
+        u.addCommands(
           Command.args("#gcost", "+" + (28 * currentStrength - 10))
         );
 
@@ -1227,8 +1227,8 @@ public class MageGenerator extends TroopGenerator {
         u.appliedFilters.add(
           this.getPriestPattern(currentStrength, currentStrength == maxStrength)
         );
-        u.commands.add(new Command("#holy"));
-        u.commands.add(
+        u.addCommands(new Command("#holy"));
+        u.addCommands(
           Command.args(
             "#gcost",
             "+" +
@@ -1238,11 +1238,11 @@ public class MageGenerator extends TroopGenerator {
         );
         u.tags.add("priest", currentStrength);
 
-        u.commands.add(Command.args("#mr", "+" + (2 + currentStrength)));
+        u.addCommands(Command.args("#mr", "+" + (2 + currentStrength)));
 
         // Make giants of size 7 and above holy cost 2
         if (u.getTotalCommandValue("#size", 1) >= 7) {
-          u.commands.add(new Command("#holycost", new Arg(2)));
+          u.addCommands(new Command("#holycost", new Arg(2)));
         }
 
         //List<String> body = new ArrayList<String>();	// Set a temporary null description for priests
@@ -1254,7 +1254,7 @@ public class MageGenerator extends TroopGenerator {
         //body.add();
 
         //body.add("\"No description\"");
-        //u.commands.add(new Command("#descr", body));
+        //u.addCommands(new Command("#descr", body));
 
         priests.add(0, u);
       }
@@ -1264,11 +1264,11 @@ public class MageGenerator extends TroopGenerator {
     if (sacredMageTiers > 0) {
       for (int i = 0; i < 3; i++) {
         for (Unit u : all.get(i)) {
-          u.commands.add(new Command("#holy"));
+          u.addCommands(new Command("#holy"));
 
           // Make giants of size 7 and above holy cost 2
           if (u.getTotalCommandValue("#size", 1) >= 7) {
-            u.commands.add(new Command("#holycost", new Arg(2)));
+            u.addCommands(new Command("#holycost", new Arg(2)));
           }
         }
 
@@ -1332,7 +1332,7 @@ public class MageGenerator extends TroopGenerator {
         Integer.max(currentRP, Integer.min(2, currentStrength)),
         priestminrpcost
       );
-      u.commands.add(new Command("#rpcost", new Arg(currentRP)));
+      u.addCommands(new Command("#rpcost", new Arg(currentRP)));
 
       // Ensure mage/priest have special leadership relevant to them
       ensureSpecialLeadership(u, true);
@@ -1357,7 +1357,7 @@ public class MageGenerator extends TroopGenerator {
             LeadershipQuality nextQuality = quality.getNext();
             LeadershipAbility improvedLeadership = LeadershipAbility.fromTypeAndQuality(leadershipType, nextQuality);
             Command undeadLeadershipCommand = new Command(improvedLeadership.toModCommand());
-            unit.commands.add(undeadLeadershipCommand);
+            unit.addCommands(undeadLeadershipCommand);
           }
           break;
 
@@ -1365,7 +1365,7 @@ public class MageGenerator extends TroopGenerator {
           if (unit.isMagicBeing() && unit.hasLeadership(leadershipType) == false) {
             LeadershipAbility magicBeingLeadership = LeadershipAbility.fromTypeAndQuality(leadershipType, basicLevel.quality);
             Command magicBeingLeadershipCommand = new Command(magicBeingLeadership.toModCommand());
-            unit.commands.add(magicBeingLeadershipCommand);
+            unit.addCommands(magicBeingLeadershipCommand);
           }
           break;
       }
@@ -1431,7 +1431,7 @@ public class MageGenerator extends TroopGenerator {
       boolean montags = true;
       for (Unit u : units) {
         boolean gotit = false;
-        for (Command c : u.getCommands()) if (
+        for (Command c : u.gatherCommands()) if (
           c.command.equals("#montag")
         ) gotit = true;
 
@@ -2527,13 +2527,13 @@ public class MageGenerator extends TroopGenerator {
       if (picks < 4) limit = 0;
 
       if (random < limit && u.getSlot("mount") == null) {
-        u.commands.add(Command.args("#mapmove", "-1"));
+        u.addCommands(Command.args("#mapmove", "-1"));
       } else if (picks > 6) {
-        u.commands.add(Command.args("#older", "-20"));
+        u.addCommands(Command.args("#older", "-20"));
       } else if (picks > 5) {
-        u.commands.add(Command.args("#older", "-15"));
+        u.addCommands(Command.args("#older", "-15"));
       } else if (picks > 4) {
-        u.commands.add(Command.args("#older", "-10"));
+        u.addCommands(Command.args("#older", "-10"));
       }
     }
   }
@@ -2617,18 +2617,18 @@ public class MageGenerator extends TroopGenerator {
     leadership = Math.max(leadership, minimumLeadership);
 
     if (leadership > 80) {
-      unit.commands.add(new Command("#expertleader"));
+      unit.addCommands(new Command("#expertleader"));
       adjustedLeadership = (Math.round(leadership / 5) * 5) - 120;
     } else if (leadership > 60) {
-      unit.commands.add(new Command("#goodleader"));
+      unit.addCommands(new Command("#goodleader"));
       adjustedLeadership = (Math.round(leadership / 5) * 5) - 80;
     } else if (leadership > 10) {
-      unit.commands.add(new Command("#okleader"));
+      unit.addCommands(new Command("#okleader"));
       adjustedLeadership = (Math.round(leadership / 5) * 5) - 40;
     } else if (leadership > 0) {
-      unit.commands.add(new Command("#poorleader"));
+      unit.addCommands(new Command("#poorleader"));
       adjustedLeadership = (Math.round(leadership / 5) * 5) - 10;
-    } else unit.commands.add(new Command("#noleader"));
+    } else unit.addCommands(new Command("#noleader"));
 
     double maximumCost = 50;
     double cost = 0;
@@ -2646,11 +2646,11 @@ public class MageGenerator extends TroopGenerator {
 
     cost = Math.min(cost, maximumCost);
 
-    if (adjustedLeadership != 0) unit.commands.add(
+    if (adjustedLeadership != 0) unit.addCommands(
       Command.args("#command", Double.toString(adjustedLeadership))
     );
 
-    if (cost != 0) unit.commands.add(
+    if (cost != 0) unit.addCommands(
       Command.args("#gcost", "+" + Double.toString(cost))
     );
 

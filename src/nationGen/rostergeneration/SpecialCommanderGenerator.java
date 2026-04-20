@@ -89,7 +89,7 @@ public class SpecialCommanderGenerator {
 
         // leadership
         boolean hasleader = false;
-        for (Command c : u.getCommands()) if (
+        for (Command c : u.gatherCommands()) if (
           c.command.equals("#noleader") ||
           c.command.equals("#poorleader") ||
           c.command.equals("#okleader") ||
@@ -99,8 +99,8 @@ public class SpecialCommanderGenerator {
         ) hasleader = true;
 
         if (!hasleader) {
-          if (r.nextBoolean()) u.commands.add(new Command("#noleader"));
-          else u.commands.add(new Command("#poorleader"));
+          if (r.nextBoolean()) u.addCommands(new Command("#noleader"));
+          else u.addCommands(new Command("#poorleader"));
         }
 
         // cap only
@@ -112,7 +112,7 @@ public class SpecialCommanderGenerator {
         if (f.tags.containsName("troop")) {
           n.unitlists.computeIfAbsent("special", k -> new ArrayList<>()).add(u);
         } else {
-          u.commands.add(Command.args("#gcost", "+30"));
+          u.addCommands(Command.args("#gcost", "+30"));
           n.comlists
             .computeIfAbsent("specialcoms", k -> new ArrayList<>())
             .add(u);

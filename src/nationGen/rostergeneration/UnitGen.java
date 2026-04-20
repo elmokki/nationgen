@@ -929,9 +929,9 @@ public class UnitGen {
       String montag = "montag" + nation.nationid + "_" + nation.mockid--;
       for (Unit nu : list) {
         nu.tags.addName("hasmontag");
-        nu.commands.add(Command.args("#montag", montag));
+        nu.addCommands(Command.args("#montag", montag));
       }
-      u.commands.add(Command.args("#firstshape", montag));
+      u.addCommands(Command.args("#firstshape", montag));
       u.tags.addName("montagunit");
     }
 
@@ -957,7 +957,7 @@ public class UnitGen {
       if (random.nextDouble() < chance) {
         for (Args args2 : tags.getAllArgs("possiblecommand")) {
           if (args2.get(0).get().equals(name)) {
-            u.commands.add(args2.get(1).getCommand());
+            u.addCommands(args2.get(1).getCommand());
           }
         }
       }

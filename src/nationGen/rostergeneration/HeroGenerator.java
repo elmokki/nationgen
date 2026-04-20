@@ -42,7 +42,7 @@ public class HeroGenerator {
 
     // Remove upkeep
     for (Unit u : units) {
-      u.commands.add(Command.args("#gcost", "*0"));
+      u.addCommands(Command.args("#gcost", "*0"));
     }
 
     return units;
@@ -110,7 +110,7 @@ public class HeroGenerator {
     }
 
     hero.name.setType("Hero");
-    if (!multihero) hero.commands.add(new Command("#unique"));
+    if (!multihero) hero.addCommands(new Command("#unique"));
 
     return hero;
   }
@@ -161,7 +161,7 @@ public class HeroGenerator {
     mg.equipBase(hero, tier);
 
     hero.name.setType("Hero");
-    if (!multihero) hero.commands.add(new Command("#unique"));
+    if (!multihero) hero.addCommands(new Command("#unique"));
     return hero;
   }
 

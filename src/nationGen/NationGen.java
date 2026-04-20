@@ -479,10 +479,7 @@ public class NationGen {
   }
 
   private void writeDescriptions(List<Nation> nations, String modDirectory) {
-    NationAdvancedSummarizer nDesc = new NationAdvancedSummarizer(
-      armordb,
-      weapondb
-    );
+    NationAdvancedSummarizer nDesc = new NationAdvancedSummarizer();
     if (settings.get(SettingsType.advancedDescs) == 1.0) {
       nDesc.writeAdvancedDescriptionFile(nations, modDirectory);
     }
@@ -750,7 +747,7 @@ public class NationGen {
     List<Unit> shapeshiftUnits = n.listUnitsAndHeroes();
 
     for (Unit u : shapeshiftUnits) {
-      for (Command c : u.commands) {
+      for (Command c : u.getCommands()) {
         if (
           c.command.contains("shape") &&
           !c.command.equals("#cleanshape") &&

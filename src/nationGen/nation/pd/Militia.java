@@ -632,11 +632,11 @@ public class Militia {
       selectedCommander = commanderCandidates.getFirst();
 
       if (needsUndeadLeadership) {
-        selectedCommander.commands.add(Command.args("#undcommand", "40"));
+        selectedCommander.addCommands(Command.args("#undcommand", "40"));
       }
 
       if (needsMagicLeadership) {
-        selectedCommander.commands.add(Command.args("#magiccommand", "40"));
+        selectedCommander.addCommands(Command.args("#magiccommand", "40"));
       }
     }
     

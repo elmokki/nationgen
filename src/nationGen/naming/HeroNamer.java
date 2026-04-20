@@ -57,7 +57,7 @@ public class HeroNamer extends Namer {
           .collect(Collectors.joining());
       } while (!validateName(str));
 
-      u.commands.add(Command.args("#fixedname", capitalizeFirst(str)));
+      u.addCommands(Command.args("#fixedname", capitalizeFirst(str)));
     }
   }
 

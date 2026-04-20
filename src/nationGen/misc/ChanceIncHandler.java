@@ -182,7 +182,7 @@ public class ChanceIncHandler {
       }
     } 
 
-    List<Command> unitCommands = unit.getCommands();
+    List<Command> unitCommands = unit.gatherCommands();
     boolean isShapeshiftFilter = filter.isShapeshiftFilter();
 
     // Check the rest of the unit commands to see if any is

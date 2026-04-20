@@ -181,8 +181,8 @@ public class CustomItemGen {
     int extraUnitResCost = (int)Math.max(itemResCost, unit.getResCost(true, true) * 0.1);
 
     // Add the costs to the unit
-    unit.commands.add(Command.args("#gcost", "+" + extraUnitGoldCost));
-    unit.commands.add(Command.args("#rcost", "+" + extraUnitResCost));
+    unit.addCommands(Command.args("#gcost", "+" + extraUnitGoldCost));
+    unit.addCommands(Command.args("#rcost", "+" + extraUnitResCost));
   }
 
   private void grantEnchantment(

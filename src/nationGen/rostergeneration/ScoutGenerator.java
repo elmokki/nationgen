@@ -275,7 +275,7 @@ public class ScoutGenerator extends TroopGenerator {
     boolean waste = false;
     boolean swamp = false;
     int survivals = 0;
-    for (Command c : template.getCommands()) {
+    for (Command c : template.gatherCommands()) {
       if (c.command.equals("#mounted")) mounted = true;
       if (c.command.equals("#flying")) flying = true;
       if (c.command.equals("#amphibian")) amphibian = true;
@@ -308,34 +308,34 @@ public class ScoutGenerator extends TroopGenerator {
       survivals <= 2
     ) {
       if (survivals == 0) {
-        template.commands.add(new Command("#mountainsurvival"));
+        template.addCommands(new Command("#mountainsurvival"));
         mountain = true;
-        template.commands.add(new Command("#forestsurvival"));
+        template.addCommands(new Command("#forestsurvival"));
         forest = true;
       }
 
       if (survivals == 1) {
         if (mountain || swamp) {
-          template.commands.add(new Command("#forestsurvival"));
+          template.addCommands(new Command("#forestsurvival"));
           forest = true;
         } else if (forest || waste) {
-          template.commands.add(new Command("#mountainsurvival"));
+          template.addCommands(new Command("#mountainsurvival"));
           mountain = true;
         }
       }
 
       double bonuschance = r.nextDouble();
       if (mountain && forest) {
-        if (bonuschance < 0.2) template.commands.add(
+        if (bonuschance < 0.2) template.addCommands(
           new Command("#wastesurvival")
         );
-        else if (bonuschance < 0.25) template.commands.add(
+        else if (bonuschance < 0.25) template.addCommands(
           new Command("#swampsurvival")
         );
       } else if (!mountain && bonuschance < 0.25) {
-        template.commands.add(new Command("#mountainsurvival"));
+        template.addCommands(new Command("#mountainsurvival"));
       } else if (!forest && bonuschance < 0.25) {
-        template.commands.add(new Command("#forestsurvival"));
+        template.addCommands(new Command("#forestsurvival"));
       }
     }
 

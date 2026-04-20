@@ -47,7 +47,7 @@ public class ShapeChangeUnit extends Unit {
 
     // Copy sacredness and gcost from main form
     if (otherForm != null) {
-      for (Command c : otherForm.getCommands()) {
+      for (Command c : otherForm.getAllHandledCommands()) {
         if (c.command.equals("#holy") && !thisForm.tags.containsName("mount")) {
           sacred = true;
         } else if (
@@ -91,7 +91,7 @@ public class ShapeChangeUnit extends Unit {
       // Inherit nametype and maxage
 
       boolean maxagefound = false;
-      for (Command c : otherForm.getCommands()) if (
+      for (Command c : otherForm.getAllHandledCommands()) if (
         c.command.equals("#maxage") || c.command.equals("#nametype")
       ) {
         sf.addCommands(c);
@@ -100,7 +100,7 @@ public class ShapeChangeUnit extends Unit {
 
       if (!maxagefound) {
         sf.addCommands(new Command("#maxage", new Arg(50)));
-        otherForm.commands.add(new Command("#maxage", new Arg(50)));
+        otherForm.addCommands(new Command("#maxage", new Arg(50)));
       }
 
       // Inherit from race/pose
@@ -232,7 +232,7 @@ public class ShapeChangeUnit extends Unit {
 
     lines.add("#newmonster " + id);
 
-    List<Command> commands = getCommands();
+    List<Command> commands = getAllHandledCommands();
     boolean hasItemSlots = false;
 
     // Own non-gcost commands first due to #copystats

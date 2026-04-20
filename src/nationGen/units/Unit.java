@@ -46,7 +46,7 @@ public class Unit {
   public SlotMap slotmap = new SlotMap();
   public Color color = Color.white;
   public int id = -1;
-  public List<Command> commands = new ArrayList<>();
+  private List<Command> commands = new ArrayList<>();
   public NationGen nationGen;
   private Boolean caponly = false;
   public double capOnlyChance;
@@ -115,10 +115,200 @@ public class Unit {
     return rootId;
   }
 
+  /**
+   * Returns a shallow copy of the Unit.commands field.
+   * @return List<Command>
+   */
+  public List<Command> getCommands() {
+    return new ArrayList<>(this.commands);
+  }
+
+  boolean isGetCommandsRunning = false;
+
+  private void preventGetCommandsRecursion() {
+    if (isGetCommandsRunning == true) {
+      throw new IllegalCallerException("Unit.getCommands() is being called recursively for " + this.toString() + "!");
+    }
+  }
+
+  /**
+   * Gets all of the Unit commands from itself and its associated properties,
+   * such as race, pose, items, etc. These are "handled"; i.e. there is extra
+   * processing done after gathering them all to condense them and calculate all
+   * the command modifiers.
+   * 
+   * Note that after Unit.polish(), all commands end up already handled and condensed
+   * and assigned to the Unit.command list. At that point, this will just return that
+   * Unit.commands list to avoid re-doing work and returning duplicate lists.
+   * @return List<Command>
+   */
+  public List<Command> getAllHandledCommands() {
+    this.preventGetCommandsRecursion();
+    isGetCommandsRunning = true;
+
+    List<Command> allCommands = new ArrayList<>();
+
+    if (this.polished) {
+      isGetCommandsRunning = false;
+      return this.commands;
+    }
+
+    // Shapechangeunits aren't really of the race/pose their other form is
+    if (
+      this.getClass() != ShapeChangeUnit.class &&
+      this.getClass() != MountUnit.class
+    ) {
+      allCommands.addAll(race.unitcommands);
+      allCommands.addAll(pose.getCommands());
+    }
+
+    // Item commands
+    slotmap.items().forEach(item -> allCommands.addAll(item.getCommands()));
+
+    // Filters
+    for (Filter f : this.appliedFilters) {
+      for (Command c : f.getCommands()) {
+        Command tc = c;
+        final int tier = tags.getInt("schoolmage").orElse(2);
+
+        if (c.args.size() > 0 && c.args.get(0).get().contains("%value%")) {
+          int multi = f.tags.getInt("valuemulti").orElse(10);
+          int base = f.tags.getInt("basevalue").orElse(-5);
+
+          int result = base + multi * tier;
+
+          String resstring = "" + result;
+          if (result > 0) {
+            resstring = "+" + resstring;
+          }
+
+          if (result != 0) tc = Command.args(c.command, resstring);
+        }
+
+        // Shape change units handle #spr1/#spr2 separately
+        if (this.getClass() == ShapeChangeUnit.class) {
+          if (
+            !tc.command.equals("#spr1") && !tc.command.equals("#spr2")
+          ) allCommands.add(tc);
+        } else allCommands.add(tc);
+      }
+    }
+
+    // Adjustment stuff
+    allCommands.addAll(this.commands);
+
+    // Adjustment commands
+    List<Command> adjustmentcommands = new ArrayList<>();
+    for (Arg str : Generic.getAllUnitTags(this).getAllValues(
+      "adjustmentcommand"
+    )) {
+      adjustmentcommands.add(str.getCommand());
+    }
+
+    // Special case: #fixedrescost
+    Generic.getAllUnitTags(this)
+      .getValue("fixedrescost")
+      .ifPresent(arg -> {
+        // If we have many, we use the first one. The order is Race, pose, filter, theme.
+        // Assumedly these exist mostly in one of these anyway
+        int cost = arg.getInt();
+        int currentcost = getResCost(true, true, allCommands);
+
+        cost -= currentcost;
+
+        if (cost > 0) adjustmentcommands.add(
+          Command.args("#rcost", "+" + cost)
+        );
+        else if (cost < 0) adjustmentcommands.add(
+          Command.args("#rcost", "" + cost)
+        );
+      });
+
+    // Add adjustments
+    allCommands.addAll(adjustmentcommands);
+
+    // Move copy and clear commands to the top of the list, with #copystats first:
+    List<Command> addToTop = new ArrayList<>();
+    Stream.of(
+      "#copystats",
+      "#clear",
+      "#clearweapons",
+      "#cleararmor",
+      "#clearmagic",
+      "#clearspec"
+    ).forEach(command -> {
+      Iterator<Command> it = allCommands.iterator();
+      while (it.hasNext()) {
+        Command next = it.next();
+        if (next.command.equals(command)) {
+          it.remove();
+          addToTop.add(next);
+        }
+      }
+    });
+    // reverse so the first thing in the list is the last to be added to the top
+    Collections.reverse(addToTop);
+    addToTop.forEach(command -> allCommands.add(0, command));
+
+    // Now handle them!
+    List<Command> multiCommands = new ArrayList<>();
+    List<Command> tempCommands = new ArrayList<>();
+
+    for (Command c : allCommands) if (
+      c.args.size() > 0 &&
+      c.args.get(0).get().startsWith("*") &&
+      c.args.get(0).isNumeric()
+    ) multiCommands.add(c);
+    else handleCommand(tempCommands, c);
+
+    //Percentual cost increases
+    for (Command c : multiCommands) {
+      handleCommand(tempCommands, c);
+    }
+
+    isGetCommandsRunning = false;
+    return tempCommands;
+  }
+
+  public List<Command> getMountCommands() {
+    List<Command> list = new ArrayList<>();
+
+    if (this.isMounted() == false) {
+      return list;
+    }
+
+    return this.mountUnit.gatherCommands();
+  }
+
+  public void addCommands(Command... commands) {
+    this.addCommands(List.of(commands));
+  }
+
+  public void addCommands(List<Command> commands) {
+    for (Command c : commands) {
+      this.commands.add(c);
+    }
+  }
+
+  public boolean removeCommand(Command command) {
+    return this.commands.remove(command);
+  }
+
+  public boolean removeCommand(String command) {
+    return this.commands.remove(Command.parse(command));
+  }
+
+  /**
+   * Gets the commands from the Unit and its associated properties, like
+   * pose, race, filters and items. Note this performs no processing on
+   * them, and so the final list is not suitable for calculations like
+   * adding a total (many commands might be repeated in different sources).
+   * @return List<Comand>
+   */
   public List<Command> gatherCommands() {
     // Don't re-check all command sources if Unit is already polished
     if (this.polished == true) {
-      return this.commands;
+      return new ArrayList<>(this.commands);
     }
     
     Stream<Command> unitCommands = this.commands.stream();
@@ -126,10 +316,11 @@ public class Unit {
     Stream<Command> raceCommands = this.race.unitcommands.stream();
     Stream<Command> filterCommands = this.appliedFilters.stream().flatMap(f -> f.getCommands().stream());
     Stream<Command> itemCommands = this.slotmap.items().flatMap(i -> i.getCommands().stream());
-
-    return Stream.of(unitCommands, poseCommands, raceCommands, filterCommands, itemCommands)
+    List<Command> gatheredCommands = Stream.of(unitCommands, poseCommands, raceCommands, filterCommands, itemCommands)
       .flatMap(s -> s)
       .collect(Collectors.toList());
+
+    return gatheredCommands;
   }
 
   public Boolean hasCommand(String cmd) {
@@ -168,7 +359,7 @@ public class Unit {
   }
 
   public int getTotalCommandValue(String command, int defaultv) {
-    List<Command> commands = this.gatherCommands();
+    List<Command> commands = this.getAllHandledCommands();
     int total = defaultv;
     
     for (Command c : commands) {
@@ -635,7 +826,7 @@ public class Unit {
 
     // Get weapons that were added directly through templates, like
     // natural weapons from bases (such as nagas)
-    usedHands += this.getCommands()
+    usedHands += this.getAllHandledCommands()
       .stream()
       .filter(c -> c.command.equals("#weapon"))
       .filter(c -> !Generic.isNumeric(c.args.getString(0)) || c.args.getInt(0) > 0)
@@ -648,7 +839,7 @@ public class Unit {
       }).sum();
 
     // Get shields that were added directly through templates
-    usedHands += this.getCommands()
+    usedHands += this.getAllHandledCommands()
       .stream()
       .filter(c -> c.command.equals("#armor"))
       .filter(c -> !Generic.isNumeric(c.args.getString(0)) || c.args.getInt(0) > 0)
@@ -1032,7 +1223,7 @@ public class Unit {
   }
 
   public int getGoldCost(Boolean includeMountCost) {
-    List<Command> commands = this.getCommands();
+    List<Command> commands = this.getAllHandledCommands();
     Tags unitTags = Generic.getAllUnitTags(this);
     int copyStatsTarget = this.getCopyStats();
     double sacredMultiplier = 1;
@@ -1136,7 +1327,7 @@ public class Unit {
   }
 
   public LeadershipAbility getLeadership(LeadershipType type) {
-    Command leadershipCommand = this.getCommands()
+    Command leadershipCommand = this.getAllHandledCommands()
       .stream()
       .filter(c -> c.command.endsWith("leader"))
       .findAny()
@@ -1158,7 +1349,7 @@ public class Unit {
   }
 
   public int getResCost(Boolean useSize, Boolean includeMount) {
-    return getResCost(useSize, includeMount, this.getCommands());
+    return getResCost(useSize, includeMount, this.getAllHandledCommands());
   }
 
   private int getResCost(Boolean useSize, Boolean includeMountCost, List<Command> commands) {
@@ -1243,152 +1434,6 @@ public class Unit {
     return this.mountUnit.getResCost();
   }
 
-  boolean isGetCommandsRunning = false;
-
-  private void preventGetCommandsRecursion() {
-    if (isGetCommandsRunning == true) {
-      throw new IllegalCallerException("Unit.getCommands() is being called recursively for " + this.toString() + "!");
-    }
-  }
-
-  public List<Command> getCommands() {
-    this.preventGetCommandsRecursion();
-    isGetCommandsRunning = true;
-
-    List<Command> allCommands = new ArrayList<>();
-
-    if (this.polished) {
-      isGetCommandsRunning = false;
-      return this.commands;
-    }
-
-    // Shapechangeunits aren't really of the race/pose their other form is
-    if (
-      this.getClass() != ShapeChangeUnit.class &&
-      this.getClass() != MountUnit.class
-    ) {
-      allCommands.addAll(race.unitcommands);
-      allCommands.addAll(pose.getCommands());
-    }
-
-    // Item commands
-    slotmap.items().forEach(item -> allCommands.addAll(item.getCommands()));
-
-    // Filters
-    for (Filter f : this.appliedFilters) {
-      for (Command c : f.getCommands()) {
-        Command tc = c;
-        final int tier = tags.getInt("schoolmage").orElse(2);
-
-        if (c.args.size() > 0 && c.args.get(0).get().contains("%value%")) {
-          int multi = f.tags.getInt("valuemulti").orElse(10);
-          int base = f.tags.getInt("basevalue").orElse(-5);
-
-          int result = base + multi * tier;
-
-          String resstring = "" + result;
-          if (result > 0) {
-            resstring = "+" + resstring;
-          }
-
-          if (result != 0) tc = Command.args(c.command, resstring);
-        }
-
-        // Shape change units handle #spr1/#spr2 separately
-        if (this.getClass() == ShapeChangeUnit.class) {
-          if (
-            !tc.command.equals("#spr1") && !tc.command.equals("#spr2")
-          ) allCommands.add(tc);
-        } else allCommands.add(tc);
-      }
-    }
-
-    // Adjustment stuff
-    allCommands.addAll(this.commands);
-
-    // Adjustment commands
-    List<Command> adjustmentcommands = new ArrayList<>();
-    for (Arg str : Generic.getAllUnitTags(this).getAllValues(
-      "adjustmentcommand"
-    )) {
-      adjustmentcommands.add(str.getCommand());
-    }
-
-    // Special case: #fixedrescost
-    Generic.getAllUnitTags(this)
-      .getValue("fixedrescost")
-      .ifPresent(arg -> {
-        // If we have many, we use the first one. The order is Race, pose, filter, theme.
-        // Assumedly these exist mostly in one of these anyway
-        int cost = arg.getInt();
-        int currentcost = getResCost(true, true, allCommands);
-
-        cost -= currentcost;
-
-        if (cost > 0) adjustmentcommands.add(
-          Command.args("#rcost", "+" + cost)
-        );
-        else if (cost < 0) adjustmentcommands.add(
-          Command.args("#rcost", "" + cost)
-        );
-      });
-
-    // Add adjustments
-    allCommands.addAll(adjustmentcommands);
-
-    // Move copy and clear commands to the top of the list, with #copystats first:
-    List<Command> addToTop = new ArrayList<>();
-    Stream.of(
-      "#copystats",
-      "#clear",
-      "#clearweapons",
-      "#cleararmor",
-      "#clearmagic",
-      "#clearspec"
-    ).forEach(command -> {
-      Iterator<Command> it = allCommands.iterator();
-      while (it.hasNext()) {
-        Command next = it.next();
-        if (next.command.equals(command)) {
-          it.remove();
-          addToTop.add(next);
-        }
-      }
-    });
-    // reverse so the first thing in the list is the last to be added to the top
-    Collections.reverse(addToTop);
-    addToTop.forEach(command -> allCommands.add(0, command));
-
-    // Now handle them!
-    List<Command> multiCommands = new ArrayList<>();
-    List<Command> tempCommands = new ArrayList<>();
-
-    for (Command c : allCommands) if (
-      c.args.size() > 0 &&
-      c.args.get(0).get().startsWith("*") &&
-      c.args.get(0).isNumeric()
-    ) multiCommands.add(c);
-    else handleCommand(tempCommands, c);
-
-    //Percentual cost increases
-    for (Command c : multiCommands) {
-      handleCommand(tempCommands, c);
-    }
-
-    isGetCommandsRunning = false;
-    return tempCommands;
-  }
-
-  public List<Command> getMountCommands() {
-    List<Command> list = new ArrayList<>();
-
-    if (this.isMounted() == false) {
-      return list;
-    }
-
-    return this.mountUnit.getCommands();
-  }
-
   public Tags getAllTags() {
     Tags allTags = new Tags();
     allTags.addAll(this.tags);
@@ -1440,7 +1485,7 @@ public class Unit {
     if (enc <= treshold && tags.containsName("lowenccommand")) {
       Command fullCommand = tags.getCommand("lowenccommand").orElseThrow();
       String command = fullCommand.command;
-      for (Command c : this.getCommands()) {
+      for (Command c : this.gatherCommands()) {
         if (command.equals(c.command)) {
           return false;
         }
@@ -1454,7 +1499,7 @@ public class Unit {
 
   private Boolean hasCopyStats() {
     Boolean copystats = false;
-    for (Command c : this.getCommands()) {
+    for (Command c : this.gatherCommands()) {
       if (c.command.equals("#copystats")) copystats = true;
     }
 
@@ -1541,7 +1586,7 @@ public class Unit {
     }
                                                         
     // Clean up commands
-    List<Command> commands = unit.getCommands();
+    List<Command> commands = unit.getAllHandledCommands();
 
     for (Command c : commands) {
       if (!c.hasArgs()) {
@@ -1826,7 +1871,7 @@ public class Unit {
     Item armor = this.getSlot("armor");
     Item helmet = this.getSlot("helmet");
 
-    for (Command c : this.getCommands()) {
+    for (Command c : this.getAllHandledCommands()) {
       if (c.command.equals("#prot")) {
         natural += c.args.get(0).getInt();
       }
@@ -1874,7 +1919,7 @@ public class Unit {
     int equippedEnc = 0;
     int naturalEnc = 0;
 
-    for (Command c : this.getCommands()) {
+    for (Command c : this.getAllHandledCommands()) {
       if (c.command.equals("#enc")) {
         naturalEnc += c.args.get(0).getInt();
       }
@@ -1893,7 +1938,7 @@ public class Unit {
     int equippedDef = 0;
     int naturalDef = 0;
 
-    for (Command c : this.getCommands()) {
+    for (Command c : this.getAllHandledCommands()) {
       if (c.command.equals("#def")) {
         naturalDef += c.args.get(0).getInt();
       }
@@ -2073,7 +2118,7 @@ public class Unit {
 
     // Get weapons that were added directly through templates, like
     // natural weapons from bases (such as nagas)
-    this.getCommands()
+    this.gatherCommands()
       .stream()
       .filter(c -> c.command.equals("#weapon") && c.args.getInt(0) > 0)
       .forEach(c -> {
@@ -2098,7 +2143,7 @@ public class Unit {
     List<ItemData> armors = new ArrayList<>();
 
     // Get armors that were added directly through data templates as comands
-    this.getCommands()
+    this.gatherCommands()
       .stream()
       .filter(c -> c.command.equals("#armor") && c.args.getInt(0) > 0)
       .forEach(c -> {
