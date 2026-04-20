@@ -101,39 +101,35 @@ public class MountUnit extends Unit {
     }
 
     for (Command c : mountItem.getCommands()) {
-      if (c.command.equals("#gcost")) {
-        this.mount.addCommands(c);
-      }
-      
-      else if (c.command.equals("#rcost")) {
-        this.mount.addCommands(c);
+      if (!c.command.equals("#mountmnr")) {
+        continue;
       }
 
-      else if (c.command.equals("#mountmnr")) {
-        String mountId = c.args.get(0).get();
-        this.mount = this.nationGen.getAssets().getMount(mountId);
+      String mountId = c.args.get(0).get();
+      this.mount = this.nationGen.getAssets().getMount(mountId);
 
-        if (mountItem.sprite.isBlank() == false) {
-          this.mount.getCommands().stream().forEach(mc -> {
-            if (mc.equals("#spr1") || mc.equals("#spr2") || mc.equals("#copyspr")) {
-              this.mount.removeCommand(mc);
-            }
-          });
+      if (mountItem.sprite.isBlank() == false) {
+        this.mount.getCommands().stream().forEach(mc -> {
+          if (mc.equals("#spr1") || mc.equals("#spr2") || mc.equals("#copyspr")) {
+            this.mount.removeCommand(mc);
+          }
+        });
 
-          this.mount.addCommands(Command.args("#spr1", "." + mountItem.sprite));
-          this.mount.addCommands(Command.args("#spr2", "shift"));
-        }
-
-        // If the mount item also contains a barding, add it to the mount instance
-        if (mountItem.isBarding()) {
-          String bardingId = mountItem.getBardingId();
-          int bardingProtection = mountItem.getBardingProtection();
-
-          this.bardingGoldMultiplier = this.getBardingGoldModifier(bardingProtection);
-          this.bardingResCost = this.getBardingResCost(mountItem);
-          this.mount.addCommands(Command.args("#armor", bardingId));
-        }
+        this.mount.addCommands(Command.args("#spr1", "." + mountItem.sprite));
+        this.mount.addCommands(Command.args("#spr2", "shift"));
       }
+
+      // If the mount item also contains a barding, add it to the mount instance
+      if (mountItem.isBarding()) {
+        String bardingId = mountItem.getBardingId();
+        int bardingProtection = mountItem.getBardingProtection();
+
+        this.bardingGoldMultiplier = this.getBardingGoldModifier(bardingProtection);
+        this.bardingResCost = this.getBardingResCost(mountItem);
+        this.mount.addCommands(Command.args("#armor", bardingId));
+      }
+
+      break;
     }
   }
 
