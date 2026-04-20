@@ -248,7 +248,7 @@ public enum ChanceIncConditionType {
     @Override
     Condition<ChanceIncData> parseConditionArguments(ArgParser args) {
       return generateCommandChanceInc(args, d -> {
-        List<Command> coms = d.n.getCommands();
+        List<Command> coms = d.n.getHandledCommands();
         coms.addAll(d.n.races.get(0).nationcommands);
         return coms.stream();
       });

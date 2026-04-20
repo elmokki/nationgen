@@ -1,6 +1,5 @@
 package nationGen.naming;
 
-import com.elmokki.NationGenDB;
 import com.elmokki.Generic;
 import java.util.ArrayList;
 import java.util.List;
@@ -81,7 +80,7 @@ public class NationAdvancedSummarizer {
       lines.add("-----------------------------------");
 
       List<String> traits = new ArrayList<>();
-      for (Command c : n.getCommands()) if (c.command.equals("#idealcold")) {
+      for (Command c : n.getHandledCommands()) if (c.command.equals("#idealcold")) {
         traits.add("Ideal cold level " + c.args.get(0));
       } else if (
         c.command.equals("#uwbuild") && c.args.get(0).get().equals("1")

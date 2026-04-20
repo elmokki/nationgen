@@ -320,7 +320,7 @@ public class Summary {
           .append(" auxillaries")
       );
 
-    for (Command c : n.getCommands()) {
+    for (Command c : n.getHandledCommands()) {
       if (c.command.equals("#idealcold")) {
         int cold = c.args.get(0).getInt();
         if (cold < 0) output
@@ -470,7 +470,7 @@ public class Summary {
     int golemcult = 0;
 
     private NationFeatures(Nation n) {
-      for (Command c : n.commands) {
+      for (Command c : n.getCommands()) {
         if (c.command.equals("#nopreach")) nopreach = true;
         if (c.command.equals("#priestreanim")) reanim = true;
         if (c.command.equals("#sacrificedom")) bloodsac = true;

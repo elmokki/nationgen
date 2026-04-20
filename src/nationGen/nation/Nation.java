@@ -52,7 +52,7 @@ public class Nation {
 
   public List<Unit> heroes = new ArrayList<>();
 
-  public List<Command> commands = new ArrayList<>();
+  private List<Command> commands = new ArrayList<>();
   public List<CustomItem> usedcustomitems = new ArrayList<>();
   public List<ShapeChangeUnit> secondshapes = new ArrayList<>();
   public List<CustomItem> customitems = new ArrayList<>();
@@ -97,6 +97,36 @@ public class Nation {
     comlists.put("mages", new ArrayList<>());
 
     generate(restrictions);
+  }
+
+  public List<Command> getCommands() {
+    return new ArrayList<>(this.commands);
+  }
+
+  public List<Command> getHandledCommands() {
+    List<Command> coms = new ArrayList<>();
+    for (Command c : this.commands) {
+      this.handleCommand(coms, c);
+    }
+    return coms;
+  }
+
+  public void addCommands(Command... commands) {
+    this.addCommands(List.of(commands));
+  }
+
+  public void addCommands(List<Command> commands) {
+    for (Command c : commands) {
+      this.commands.add(c);
+    }
+  }
+
+  public boolean removeCommand(Command command) {
+    return this.commands.remove(command);
+  }
+
+  public boolean removeCommand(String command) {
+    return this.commands.remove(Command.parse(command));
   }
 
   public long getSeed() {
@@ -1068,7 +1098,7 @@ public class Nation {
 
     // Custom coms
 
-    for (Command cmd : this.getCommands()) {
+    for (Command cmd : this.getHandledCommands()) {
       lines.add(cmd.toModLine());
     }
 
@@ -1276,14 +1306,6 @@ public class Nation {
       }
     }
     return lines;
-  }
-
-  public List<Command> getCommands() {
-    List<Command> coms = new ArrayList<>();
-    for (Command c : this.commands) {
-      this.handleCommand(coms, c);
-    }
-    return coms;
   }
 
   private void handleCommand(List<Command> targetCommands, Command commandToHandle) {
