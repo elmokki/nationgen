@@ -5,7 +5,6 @@ import java.util.Properties;
 import com.elmokki.Generic;
 
 import nationGen.NationGen;
-import nationGen.misc.FileUtil;
 
 public class IdHandler {
   
