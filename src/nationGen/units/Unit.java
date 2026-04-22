@@ -2085,7 +2085,9 @@ public class Unit {
    * Calculates recruitment point cost as gcost from race+pose+basesprite
    */
   protected Optional<String> writeRecpointsLine() {
-    if (this.hasCommand("#rpcost") || this.hasCommand("#copystats")) {
+    boolean hasRecPoints = this.getFirstCommandValue("#rpcost", -1) >= 0;
+
+    if (hasRecPoints || this.hasCopyStats()) {
       return Optional.empty();
     }
 
