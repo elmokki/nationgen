@@ -110,6 +110,7 @@ public class Command {
 
   public Boolean isShapeshiftCommand() {
     return this.command.equals("#shapechange") ||
+      this.command.equals("#firstshape") ||
       this.command.equals("#secondshape") ||
       this.command.equals("#secondtmpshape");
   }

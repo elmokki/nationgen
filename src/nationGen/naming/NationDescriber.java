@@ -342,7 +342,7 @@ public class NationDescriber {
       if (desc.length() > 0) desc.append("\n\n");
 
       desc.append(
-        "When recruited, one unit of this category will appear instead of the unit shown here."
+        "When recruited, one unit of this category will appear instead of the unit shown here. The stat scores shown here are a mean of all the possible unit spawns."
       );
     }
 

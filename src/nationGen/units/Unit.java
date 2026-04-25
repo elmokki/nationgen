@@ -711,7 +711,7 @@ public class Unit {
     }
 
     String firstshapeId = this.getStringCommandValue("#firstshape", "");
-    return firstshapeId.isBlank() == false;
+    return !firstshapeId.isBlank() && this.tags.containsName("montagunit");
   }
 
   public Boolean isUndead() {
@@ -809,9 +809,15 @@ public class Unit {
   }
 
   public Boolean isShapeshifter() {
-    return this.gatherCommands()
+    boolean hasShapeshiftCommand = this.gatherCommands()
       .stream()
       .anyMatch(Command::isShapeshiftCommand);
+
+    if (!hasShapeshiftCommand) {
+      return false;
+    }
+
+    return hasShapeshiftCommand && !isMontagRecruitableTemplate();
   }
 
   public int getNumberOfHandsRequiredForWeapons() {
@@ -1200,6 +1206,61 @@ public class Unit {
     return new UnitCost(meanGoldCost, meanResourceCost, 0);
   }
 
+  public static List<Command> calculateMeanStatsOfUnits(List<Unit> units) {
+    List<String> stats = List.of("#hp", "#size", "#prot", "#mr", "#mor", "#str", "#att", "#def", "#prec", "#ap", "#mapmove", "#enc");
+    List<List<Integer>> scores = new ArrayList<>();
+    List<Command> means = new ArrayList<>();
+    int unitCount = units.size();
+
+    if (units.isEmpty()) {
+      return means;
+    }
+    
+    for (int i = 0; i < units.size(); i++) {
+      Unit unit = units.get(i);
+      scores.add(new ArrayList<>());
+
+      for (int j = 0; j < stats.size(); j++) {
+        String stat = stats.get(j);
+        Integer statValue = 0;
+
+        if (stat.equals("#prot")) {
+          statValue = unit.getTotalProt(true);
+        }
+
+        else if (stat.equals("#att")) {
+          statValue = unit.getTotalAtt();
+        }
+
+        else if (stat.equals("#def")) {
+          statValue = unit.getTotalDef();
+        }
+        
+        else {
+          statValue = unit.getTotalCommandValue(stat, 0);
+        }
+
+        scores.get(i).add(statValue);
+      }
+    }
+
+    for (int i = 0; i < stats.size(); i++) {
+      String stat = stats.get(i);
+      int totalStatScores = 0;
+      int mean = 0;
+
+      for (int j = 0; j < scores.size(); j++) {
+        int unitScore = scores.get(j).get(i);
+        totalStatScores += unitScore;
+      }
+
+      mean = totalStatScores / unitCount;
+      means.add(Command.parse(stat + " " + mean));
+    }
+
+    return means;
+  }
+
   /**
    * Gathers the tags related to a unit from its race, pose, filters and items.
    * @param unit
@@ -1586,9 +1647,9 @@ public class Unit {
     }
                                                         
     // Clean up commands
-    List<Command> commands = unit.getAllHandledCommands();
+    List<Command> polishedCommands = unit.getAllHandledCommands();
 
-    for (Command c : commands) {
+    for (Command c : polishedCommands) {
       if (!c.hasArgs()) {
         continue;
       }
@@ -1621,14 +1682,20 @@ public class Unit {
     }
 
     Command gcostCommand = Command.args("#gcost", Integer.toString(gcost));
-    handleCommand(commands, gcostCommand);
+    handleCommand(polishedCommands, gcostCommand);
 
     // Resources are autocalculated ingame. We only need to assign them manually to montag templates
     // that don't have any equipment in the recruitment screen until they appear into the game
     if (this.isMontagRecruitableTemplate()) {
       int rcost = this.getResCost(true, true);
       Command rcostCommand = Command.args("#rcost", Integer.toString(rcost));
-      handleCommand(commands, rcostCommand);
+      handleCommand(polishedCommands, rcostCommand);
+
+      String montagId = this.getFirstshapeIdForMontag();
+      List<Unit> montagChildren = this.nation.getMontagUnits(montagId);
+      calculateMeanStatsOfUnits(montagChildren).forEach(meanStatCommand ->
+        handleCommand(polishedCommands, meanStatCommand)
+      );
     }
 
     if (unit.isMounted()) {
@@ -1641,16 +1708,16 @@ public class Unit {
       }
 
       Command holyCostCommand = Command.args("#holycost", Integer.toString(holyCost));
-      handleCommand(commands, holyCostCommand);
+      handleCommand(polishedCommands, holyCostCommand);
     }
     /* ------------------------------------------------------------------------------------------- */
 
     // Set all gathered and polished commands to become the unit's own commands now.
     // This is why polish() should ALWAYS be done at the end of generation
-    unit.commands = commands;
+    unit.commands = polishedCommands;
 
     // Check for morale over 50
-    for (Command c : commands) {
+    for (Command c : polishedCommands) {
       if (c.args.size() == 0) {
         continue;
       }
@@ -1934,9 +2001,22 @@ public class Unit {
     return (int) (equippedEnc + naturalEnc);
   }
 
+  public int getTotalAtt() {
+    int naturalAtt = this.getTotalCommandValue("#att", 0);
+    int equippedAtt = 0;
+
+    for (Item item : this.slotmap.items().toList()) {
+      if (item.isDominionsEquipment()) {
+        equippedAtt += item.getIntegerFromDb(ItemProperty.DEFENCE.toDBColumn(), 0);
+      }
+    }
+
+    return (int) (equippedAtt + naturalAtt);
+  }
+
   public int getTotalDef() {
-    int equippedDef = 0;
     int naturalDef = 0;
+    int equippedDef = 0;
 
     for (Command c : this.getAllHandledCommands()) {
       if (c.command.equals("#def")) {
@@ -1978,6 +2058,7 @@ public class Unit {
 
   public List<String> writeLines(String spritedir) {
     List<String> lines = new ArrayList<>();
+    boolean isMontagTemplate = this.isMontagRecruitableTemplate();
     
     if (this.mountUnit != null) {
       lines.addAll(this.mountUnit.writeLines(spritedir));
@@ -1998,6 +2079,13 @@ public class Unit {
       pose.name +
       ")"
     );
+
+    if (isMontagTemplate) {
+      lines.add("------");
+      lines.addAll(this.writeMontagTemplateHeader());
+    }
+
+    lines.add("------");
     lines.add("--- OFFSET DEBUG: ");
     if (this.getSlot("weapon") != null) {
       lines.add(
@@ -2023,17 +2111,17 @@ public class Unit {
         this.getSlot("offhand").getOffsetY()
       );
     }
+    lines.add("------");
     lines.add("--- Generation tags: " + this.tags);
 
     lines.add(
       "--- Applied filters: " +
       this.appliedFilters.stream()
-        .map(
-          f ->
-            f.name +
-            (f.name.equals("MAGICPICKS")
-                ? " (" + ((MagicFilter) f).pattern.getPrice() + ")"
-                : "")
+        .map(f ->
+          f.name + (f.name.equals("MAGICPICKS") ?
+            " (" + ((MagicFilter) f).pattern.getPrice() + ")":
+            ""
+          )
         )
         .collect(Collectors.joining(", "))
     );
@@ -2051,6 +2139,7 @@ public class Unit {
         "% chance of being cap-only."
       );
     }
+    lines.add("------");
 
     lines.add("#newmonster " + id);
 
@@ -2068,16 +2157,26 @@ public class Unit {
       lines.add("#name \"" + name.toString(this) + "\"");
     }
 
-    //if (NationGen.isInDebugMode()) {
+    if (!isMontagTemplate) {
       lines.add("");
       lines.add("DEBUG INFORMATION:");
       lines.addAll(writeDebugSlotMapLines(this.slotmap));
       lines.add("");
-    //}
+    }
 
     lines.add("#end");
     lines.add("");
 
+    return lines;
+  }
+
+  private List<String> writeMontagTemplateHeader() {
+    List<String> lines = new ArrayList<>();
+    String montagId = this.getFirstshapeIdForMontag();
+    lines.add("--- MONTAG TEMPLATE (" + montagId + ")");
+    lines.add("-- This is a recruitable template that will spawn one of several possible variant creatures once recruited.");
+    lines.add("-- The stats below are a mean of each score of all variants, so as to give an idea of the possible results.");
+    lines.add("-- This template's possible spawns are all of the units with the #montag " + montagId + " command.");
     return lines;
   }
 
@@ -2091,28 +2190,13 @@ public class Unit {
       return Optional.empty();
     }
 
-    return Optional.of("#rpcost " + this.getAutocalcRps());
+    int gcost = this.getGoldCost(true);
+    return Optional.of("#rpcost " + this.getAutocalcRps(gcost));
   }
 
-  private int getAutocalcRps() {
-    int baserp = 0;
-
-    List<Command> clist = new ArrayList<>();
-    clist.addAll(this.race.unitcommands);
-    clist.addAll(this.pose.getCommands());
-
-    if (this.getSlot("basesprite") != null) {
-      clist.addAll(this.getSlot("basesprite").getCommands());
-    }
-
-    for (Command c : clist) {
-      if (c.command.equals("#gcost")) {
-        baserp = Generic.handleModifier(c.args.get(0), baserp);
-      }
-    }
-
+  private int getAutocalcRps(int gcost) {
     // Per modding manual, the RP autocalc value should be the unit's gold value * 1000
-    return baserp * 1000;
+    return gcost * 1000;
   }
 
   protected List<ItemData> getEquippedWeapons() {

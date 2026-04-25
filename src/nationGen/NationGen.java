@@ -746,6 +746,16 @@ public class NationGen {
   private void handleShapeshifts(Nation n) {
     List<Unit> shapeshiftUnits = n.listUnitsAndHeroes();
 
+    // Do montags first
+    for (Unit u : shapeshiftUnits) {
+      for (Command c : u.getCommands()) {
+        if (c.command.equals("#montag")) {
+          handleMontag(c);
+        }
+      }
+    }
+
+    // Do montag templates and shapeshifters next
     for (Unit u : shapeshiftUnits) {
       for (Command c : u.getCommands()) {
         if (
@@ -753,15 +763,13 @@ public class NationGen {
           !c.command.equals("#cleanshape") &&
           !hasShapeShift(c.args.get(0))
         ) {
-          if (
-            c.command.equals("#firstshape") && u.tags.containsName("montagunit")
-          ) {
+          if (c.command.equals("#firstshape") && u.tags.containsName("montagunit")) {
             handleMontag(c);
-          } else {
+          }
+          
+          else {
             handleShapeshift(c, u);
           }
-        } else if (c.command.equals("#montag")) {
-          handleMontag(c);
         }
       }
     }
