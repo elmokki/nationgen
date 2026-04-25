@@ -398,7 +398,7 @@ public class Militia {
     // valid wall unit, use Archer (32) as a default
     else {
       wallUnitId = DEFAULT_WALL_UNIT_ID;
-      wallUnitAmount = CASTLE_DEFENDERS_MULT * 2;
+      wallUnitAmount = (int) Math.floor(CASTLE_DEFENDERS_MULT * 0.5);
     }
 
     // Gate units
