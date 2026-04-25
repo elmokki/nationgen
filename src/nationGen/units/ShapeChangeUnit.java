@@ -86,7 +86,7 @@ public class ShapeChangeUnit extends Unit {
       }
     }
 
-    // ...and other Form
+    // ...and "main" Form
     if (otherForm != null) {
       // Inherit nametype and maxage
 
@@ -266,9 +266,9 @@ public class ShapeChangeUnit extends Unit {
       );
     }
 
-    if (!thisForm.keepname && otherForm != null) lines.add(
-      "#name \"" + otherForm.name + "\""
-    );
+    if (thisForm.keepFirstFormName && otherForm != null) {
+      lines.add("#name \"" + otherForm.name + "\"");
+    }
 
     if (
       !shiftcommand.equals("") &&

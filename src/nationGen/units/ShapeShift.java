@@ -11,7 +11,7 @@ public class ShapeShift extends Filter {
   }
 
   boolean nofeedback = false;
-  boolean keepname = false;
+  boolean keepFirstFormName = false;
   boolean nogcost = false;
 
   public ShapeShift getCopy() {
@@ -22,7 +22,7 @@ public class ShapeShift extends Filter {
     ss.tags.addAll(tags);
     ss.themes.addAll(themes);
     ss.nofeedback = nofeedback;
-    ss.keepname = keepname;
+    ss.keepFirstFormName = keepFirstFormName;
     ss.nogcost = nogcost;
     ss.addCommands(this.getCommands());
     return ss;
@@ -30,8 +30,8 @@ public class ShapeShift extends Filter {
 
   @Override
   public void handleOwnCommand(Command command) {
-    if (command.command.equals("#keepname")) {
-      this.keepname = true;
+    if (command.command.equals("#keepfirstformname")) {
+      this.keepFirstFormName = true;
       // Overrides filter implementation
     } else if (command.command.equals("#command")) {
       if (command.args.size() != 1) {

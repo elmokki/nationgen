@@ -352,7 +352,7 @@
 #command "#copystats 566"
 #command "#spr1 greyscale 20"
 #command "#spr2 shift"
-#keepname
+#keepfirstformname
 #end
 
 #new secondshape
@@ -380,7 +380,7 @@
 #command "#neednoteat"
 #command "#gcost -40"
 #nowayback
-#keepname
+#keepfirstformname
 #end
 
 #new secondshape
@@ -410,43 +410,7 @@
 #command "#supplybonus -1"
 #command "#gcost -40"
 #nowayback
-#keepname
-#end
-
-#new secondshape
-#id "hornedserpent"
-#command "#copystats 403"
-#command "#copyspr 403"
-#command "#itemslots 786432"
-#command "#transformation 0"
-#command "#hp 28"
-#keepname
-#end
-
-#new secondshape
-#id "smallerspider"
-#command "#name 'Giant Spider'"
-#command "#copyspr 782"
-#command "#magicboost 53 -1"
-#command "#weapon 65"
-#command "#size 4"
-#command "#hp 12"
-#command "#prot 8"
-#command "#mor 10"
-#command "#enc 2"
-#command "#str 8"
-#command "#att 12"
-#command "#def 10"
-#command "#prec 5"
-#command "#mapmove 18"
-#command "#ap 14"
-#command "#animal"
-#command "#poisonres 15"
-#command "#forestsurvival"
-#command "#itemslots 786432"
-#command "#transformation 0"
-#command "#eyes 8"
-#keepname
+#keepfirstformname
 #end
 
 #new secondshape
@@ -481,7 +445,7 @@
 #command "#reinvigoration 10"
 #command "#itemslots 786432"
 #nowayback
-#keepname
+#keepfirstformname
 #end
 
 #new secondshape
@@ -515,7 +479,7 @@
 #command "#reinvigoration 10"
 #command "#itemslots 786432"
 #nowayback
-#keepname
+#keepfirstformname
 #end
 
 #new secondshape
@@ -545,7 +509,7 @@
 #command "#reinvigoration 10"
 #command "#itemslots 786432"
 #nowayback
-#keepname
+#keepfirstformname
 #end
 
 #new secondshape
@@ -574,7 +538,7 @@
 #command "#reinvigoration 10"
 #command "#itemslots 786432"
 #nowayback 
-#keepname
+#keepfirstformname
 #end
 
 #new secondshape
@@ -609,7 +573,7 @@
 #command "#reinvigoration 10"
 #command "#itemslots 786432"
 #nowayback
-#keepname
+#keepfirstformname
 #end
 
 #new secondshape
@@ -643,7 +607,7 @@
 #command "#reinvigoration 10"
 #command "#itemslots 786432"
 #nowayback
-#keepname
+#keepfirstformname
 #end
 
 #new secondshape
@@ -679,7 +643,7 @@
 #command "#reinvigoration 10"
 #command "#itemslots 786432"
 #nowayback
-#keepname
+#keepfirstformname
 #end
 
 #new secondshape
@@ -714,7 +678,41 @@
 #command "#reinvigoration 10"
 #command "#itemslots 786432"
 #nowayback
-#keepname
+#keepfirstformname
+#end
+
+#new secondshape
+#id "hornedserpent"
+#command "#copystats 403"
+#command "#copyspr 403"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#hp 28"
+#end
+
+#new secondshape
+#id "smallerspider"
+#command "#name 'Giant Spider'"
+#command "#copyspr 782"
+#command "#magicboost 53 -1"
+#command "#weapon 65"
+#command "#size 4"
+#command "#hp 12"
+#command "#prot 8"
+#command "#mor 10"
+#command "#enc 2"
+#command "#str 8"
+#command "#att 12"
+#command "#def 10"
+#command "#prec 5"
+#command "#mapmove 18"
+#command "#ap 14"
+#command "#animal"
+#command "#poisonres 15"
+#command "#forestsurvival"
+#command "#itemslots 786432"
+#command "#transformation 0"
+#command "#eyes 8"
 #end
 
 #new secondshape
