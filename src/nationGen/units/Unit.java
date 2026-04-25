@@ -359,7 +359,7 @@ public class Unit {
   }
 
   public int getTotalCommandValue(String command, int defaultv) {
-    List<Command> commands = this.getAllHandledCommands();
+    List<Command> commands = this.gatherCommands();
     int total = defaultv;
     
     for (Command c : commands) {
