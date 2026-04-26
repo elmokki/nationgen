@@ -447,24 +447,27 @@ public class RosterGenerator {
 
       pointless.addAll(tgen.exclusions);
 
-      if (r.nextBoolean() && armors.possibleItems() > 0) tgen.unitGen.armorUnit(
-        u,
-        tgen.used,
-        pointless,
-        armors,
-        null,
-        false
-      );
-      else tgen.unitGen.armorUnit(
-        u,
-        null,
-        pointless,
-        u.pose.getItems("armor"),
-        null,
-        false
-      );
-      //unitGen.handleExtraGeneration(u);
+      if (r.nextBoolean() && armors.possibleItems() > 0) {
+        tgen.unitGen.armorUnit(
+          u,
+          tgen.used,
+          pointless,
+          armors,
+          null,
+          false
+        );
+      }
 
+      else {
+        tgen.unitGen.armorUnit(
+          u,
+          null,
+          pointless,
+          u.pose.getItems("armor"),
+          null,
+          false
+        );
+      }
     }
 
     //if(u == null || armor == null) // EA20150529: The only case where this should occur is when #maxunits has been exceeded

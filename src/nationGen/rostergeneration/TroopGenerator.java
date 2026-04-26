@@ -117,7 +117,9 @@ public class TroopGenerator {
     // 3 templates: 25.0%
     // 4 templates: 25.0%
     maxtemplates = 1 + random.nextInt(4); // 1-4
-    if (maxtemplates == 1 && random.nextBoolean()) maxtemplates++;
+    if (maxtemplates == 1 && random.nextBoolean()) {
+      maxtemplates++;
+    }
 
     // Max different templates distribution
     //
@@ -125,9 +127,9 @@ public class TroopGenerator {
     // 2 templates: 50.0%
     // 3 templates: 33.3%
     maxdifferenttemplates = 1 + random.nextInt(3); // 1-3
-    if (
-      maxdifferenttemplates == 1 && random.nextBoolean()
-    ) maxdifferenttemplates++;
+    if (maxdifferenttemplates == 1 && random.nextBoolean()) {
+      maxdifferenttemplates++;
+    }
   }
 
   public TroopGenerator(NationGen g, Nation n, NationGenAssets assets) {
