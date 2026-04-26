@@ -313,10 +313,13 @@ public class TroopNamer {
   ) {
     List<NamePart> selected = new ArrayList<>();
     for (NamePart p : all) {
-      if (p.themes.contains("elite") && elite) selected.add(p);
-      if (
-        p.themes.contains("commander") && commander && !selected.contains(p)
-      ) selected.add(p);
+      if (p.themes.contains("elite") && elite) {
+        selected.add(p);
+      }
+
+      if (p.themes.contains("commander") && commander && !selected.contains(p)) {
+        selected.add(p);
+      }
 
       if (
         !p.themes.contains("elite") &&
@@ -324,7 +327,9 @@ public class TroopNamer {
         !elite &&
         !commander &&
         !selected.contains(p)
-      ) selected.add(p);
+      ) {
+        selected.add(p);
+      }
     }
 
     return selected;
@@ -418,7 +423,7 @@ public class TroopNamer {
   private void setNamePart(Unit u, NamePart part) {
     if (part.tags.containsName("prefix")) u.name.prefix = part;
     else if (part.tags.containsName("prefixprefix")) u.name.prefixprefix = part;
-    else u.name.type = part;
+    else u.name.setType(part);
   }
 
   private void setBaseNames() {

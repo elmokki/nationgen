@@ -3,6 +3,8 @@ package nationGen.naming;
 import com.elmokki.Generic;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import nationGen.units.Unit;
 
 public class Name {
@@ -17,7 +19,11 @@ public class Name {
   public NamePart forcedName;
 
   public void setType(String str) {
-    this.type = NamePart.newNamePart(str, null);
+    this.setType(NamePart.newNamePart(str, null));
+  }
+
+  public void setType(NamePart part) {
+    this.type = part;
   }
 
   public void setRankPrefix(String str) {
@@ -145,13 +151,7 @@ public class Name {
     list.add(suffixprefix);
     list.add(suffix);
 
-    list.remove(null);
-    list.remove(null);
-    list.remove(null);
-    list.remove(null);
-    list.remove(null);
-    list.remove(null);
-    list.remove(null);
+    list = list.stream().filter(p -> p != null).collect(Collectors.toList());
     return list;
   }
 

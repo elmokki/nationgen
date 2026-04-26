@@ -6,7 +6,6 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 import nationGen.entities.Race;
-import nationGen.items.CustomItem;
 import nationGen.items.Item;
 import nationGen.magic.MagicPath;
 import nationGen.magic.MagicPathInts;
@@ -646,10 +645,6 @@ public enum ChanceIncConditionType {
 
         else if (needsWeapon && !item.isWeapon()) {
           return false;
-        }
-
-        else if (!needsArmor && !needsWeapon) {
-          return true;
         }
 
         else if (id.isEmpty()) {

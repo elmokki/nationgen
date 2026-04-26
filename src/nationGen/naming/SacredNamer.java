@@ -78,7 +78,7 @@ public class SacredNamer {
           .handleChanceIncs(u, combases)
           .getRandom(n.random);
         com.name = u.name.getCopy();
-        com.name.type = part.getCopy();
+        com.name.setType(part.getCopy());
       });
     }
   }
@@ -116,7 +116,7 @@ public class SacredNamer {
         num == 0
       ) { // Base
         NamePart part = chandler.handleChanceIncs(u, bases).getRandom(n.random);
-        name.type = part.getCopy();
+        name.setType(part.getCopy());
       }
 
       num--;
