@@ -115,9 +115,9 @@
 #recolormask /graphics/avvim/weapon/caster/staff_orb_plain_recolormask.png
 #offsetx 1
 #tag "tier 3"
-#needs offhand none
 #renderprio 7
 #renderslot "bonusweapon"
+#needstype rarm onehand_twohand
 #needs offhand empty
 #enditem
 
@@ -128,8 +128,8 @@
 #offsetx 2
 #offsety 1
 #tag "tier 2"
-#needs offhand none
 #renderprio 7
 #renderslot "bonusweapon"
-#needs offhand empty
+#needstype rarm onehand
+#needstype offhand any
 #enditem
