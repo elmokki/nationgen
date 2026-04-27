@@ -2,6 +2,35 @@
 -------- Normal
 
 #newpose
+#id "dustwalker militia"
+#role "infantry"
+#basechance 10
+#maxunits 2
+#mapmovepenaltyenc 10
+
+#renderorder "shadow weapon cloakb extra1 mount basesprite shirt legs armor hair bonusweapon cloakf offhandw hands helmet offhanda overlay"
+
+#load basesprite /data/items/races/dynastichuman/bases_dustwalker_militia.txt
+#load shadow /data/items/races/dynastichuman/shadow.txt
+#load hands /data/items/races/dynastichuman/hands.txt
+
+#load cloakf /data/items/races/dynastichuman/cloakf.txt
+#load cloakb /data/items/races/dynastichuman/cloakb.txt
+
+#load armor /data/items/races/dynastichuman/normal/armor_slave.txt
+#load helmet /data/items/races/dynastichuman/normal/helmet.txt
+#load legs /data/items/races/dynastichuman/legs.txt
+
+#load weapon /data/items/races/dynastichuman/normal/weapon.txt
+#load bonusweapon /data/items/races/dynastichuman/normal/bonusranged.txt 
+
+#load offhand /data/items/races/dynastichuman/normal/offhand.txt
+#load offhand /data/items/races/dynastichuman/normal/shields.txt
+
+#endpose
+
+
+#newpose
 #id "dustwalker infantry"
 #role "infantry"
 #role "elite infantry"
