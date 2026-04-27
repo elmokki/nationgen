@@ -1,3 +1,39 @@
+0.13.4 (27th April 2026)
+-----------------------------------------------------------
+FIXES
+-----------------------------------------------------------
+-	Fixed getNumberOfHandsRequiredForWeapons() not taking shields into account.
+-	Fixed serpent mount sprites betraying a barding. Note that a lot of barded mount sprites are still not done.
+-	Fixed name of acid magicweapon and removed its #armorpiercing tag making it simply better than other same #power magicweapons.
+-	Fixed great_boar mount sprites using boar sprites, and some offsets.
+-	Fixed #forcedname getting overwritten by differentiateNames().
+-	Fixed many foulspawn PD and weapon slot issues.
+-	Fixed when a unit gets dual-wielding bonuses.
+-	Fixed some #renderslot offhandw and offhanda instances.
+-	Fixed jotun throwing axes being duplicated.
+-	Fixed mount item gold/res commands being counted twice. This was the cause of certain mounts of certain races being way too cheap,
+	for example, as their unique gcost discount would be applied twice.
+-	Many other minor and not-so-minor code fixes.
+-	Recpoint fixes, especially to foulspawn, who now get auto-calculated recpoints rather than hard-coded ones.
+	This generally makes their recpoints quite low, but foulspawn as a race can benefit from the slight buff.
+-	Foulspawn recruitable templates now display an average of the stats of every possible spawned unit. This makes it much easier to see
+	at a glance the kind of units you will be getting when recruiting that template.
+-	Fixed wall unit amount for default placeholder units being too high.
+-	Fixed unit names not respecting the unit's equipment.
+-	Fixed monkey bases to be the appropriate size when having wings.
+
+
+-----------------------------------------------------------
+CONTENT BALANCE/CHANGES
+-----------------------------------------------------------
+-	Removed unarmored version of nightmare.png mount.
+-	Mount bardings now create a gold cost multiplier based on their protection. In return, raw mount gold costs have been revisited.
+-	Readjusted mount resource cost to be more in-line with vanilla.
+-	Added #holycost calculation for some mounts like gryphons, so that certain mounted sacreds cost 2 holy points.
+-	Raised #reclimit of grotesques to 2. I expect their gold costs will require rebalancing sooner or later.
+-	Added a dustwalker militia pose to make it easier to generate PD.
+
+
 0.13.3 (29th March 2026)
 -----------------------------------------------------------
 FIXES

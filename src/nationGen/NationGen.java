@@ -33,8 +33,8 @@ import nationGen.units.Unit;
 
 public class NationGen {
 
-  public static final String version = "0.13.3";
-  public static final String date = "29th March 2026";
+  public static final String version = "0.13.4";
+  public static final String date = "27th April 2026";
   public static final String appPropertiesPath = "/app.properties";
   private static Properties appProperties;
 
