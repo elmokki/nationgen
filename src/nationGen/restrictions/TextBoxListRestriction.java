@@ -38,6 +38,11 @@ public abstract class TextBoxListRestriction
   private int index = 0;
   public String comboselection = null;
 
+  protected DefaultListModel<String> rmodel = new DefaultListModel<>();
+  protected JButton addButton;
+  protected JButton removeButton;
+  protected JList<String> chosen;
+
   public TextBoxListRestriction(String text, String name) {
     this.name = name;
     this.text = text;
@@ -47,11 +52,6 @@ public abstract class TextBoxListRestriction
   public String toString() {
     return name;
   }
-
-  protected DefaultListModel<String> rmodel = new DefaultListModel<>();
-  protected JButton addButton;
-  protected JButton removeButton;
-  protected JList<String> chosen;
 
   // Extra text field
   protected JTextField textfield = null;
@@ -72,10 +72,10 @@ public abstract class TextBoxListRestriction
       JPanel tpanel2 = new JPanel(new GridLayout(1, 2, 5, 5));
       tpanel2.add(new JLabel(comboboxlabel));
       combobox = new JComboBox<String>(comboboxoptions);
-      tpanel2.add(combobox);
-      top.add(tpanel2);
       combobox.setSelectedIndex(index);
       combobox.addItemListener(this);
+      tpanel2.add(combobox);
+      top.add(tpanel2);
     }
 
     JPanel tpanel = new JPanel(new GridLayout(1, 2, 5, 5));
@@ -127,8 +127,11 @@ public abstract class TextBoxListRestriction
   }
 
   @Override
-  public void itemStateChanged(ItemEvent arg0) {
-    if (arg0.getStateChange() == 1) {
+  public void itemStateChanged(ItemEvent e) {
+    Object source = e.getItemSelectable();
+    int stateChange = e.getStateChange();
+
+    if (source == this.combobox && stateChange == 1) {
       this.comboselection = (String) combobox.getSelectedItem();
       index = combobox.getSelectedIndex();
     }

@@ -1,7 +1,5 @@
 package nationGen.units;
 
-import java.util.ArrayList;
-import java.util.List;
 import nationGen.NationGen;
 import nationGen.entities.Filter;
 import nationGen.misc.Command;
@@ -12,9 +10,8 @@ public class ShapeShift extends Filter {
     super(nationGen);
   }
 
-  public List<Command> commands = new ArrayList<>();
   boolean nofeedback = false;
-  boolean keepname = false;
+  boolean keepFirstFormName = false;
   boolean nogcost = false;
 
   public ShapeShift getCopy() {
@@ -25,16 +22,16 @@ public class ShapeShift extends Filter {
     ss.tags.addAll(tags);
     ss.themes.addAll(themes);
     ss.nofeedback = nofeedback;
-    ss.keepname = keepname;
+    ss.keepFirstFormName = keepFirstFormName;
     ss.nogcost = nogcost;
-    ss.commands.addAll(this.commands);
+    ss.addCommands(this.getCommands());
     return ss;
   }
 
   @Override
   public void handleOwnCommand(Command command) {
-    if (command.command.equals("#keepname")) {
-      this.keepname = true;
+    if (command.command.equals("#keepfirstformname")) {
+      this.keepFirstFormName = true;
       // Overrides filter implementation
     } else if (command.command.equals("#command")) {
       if (command.args.size() != 1) {
@@ -42,7 +39,7 @@ public class ShapeShift extends Filter {
           "#command or #define must have a single arg. Surround the command with quotes if needed."
         );
       }
-      this.commands.add(command.args.get(0).getCommand());
+      this.addCommands(command.args.get(0).getCommand());
     } else super.handleOwnCommand(command);
   }
 }

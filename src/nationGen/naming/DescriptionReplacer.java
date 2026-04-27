@@ -4,19 +4,23 @@ import com.elmokki.Generic;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Optional;
+import java.util.stream.Collectors;
+
+import nationGen.Settings.SettingsType;
 import nationGen.entities.Filter;
 import nationGen.items.Item;
-import nationGen.magic.MagicPath;
-import nationGen.magic.MagicPathInts;
+import nationGen.items.ItemProperty;
 import nationGen.misc.Command;
 import nationGen.nation.Nation;
+import nationGen.units.MountUnit;
 import nationGen.units.Unit;
 
 public class DescriptionReplacer {
 
   public HashMap<String, String> descs = new HashMap<String, String>();
   private Nation n;
+
+  private Integer MAX_ITEMS_NAMED = 3;
 
   public DescriptionReplacer(Nation n) {
     this.n = n;
@@ -51,42 +55,29 @@ public class DescriptionReplacer {
     return line;
   }
 
-  public void calibrate(Unit u) {
-    descs.put("%unitname%", u.name.toString());
-    descs.put("%unitname_plural%", Generic.plural(u.name.toString()));
-    descs.put("%race%", u.race.toString().toLowerCase());
-    descs.put("%race_plural%", Generic.plural(u.race.toString().toLowerCase()));
+  public void calibrate(Unit unit) {
+    this.calibrateMounts(unit);
+    descs.put("%unitname%", unit.name.toString());
+    descs.put("%unitname_plural%", Generic.plural(unit.name.toString()));
+    descs.put("%race%", unit.race.toString().toLowerCase());
+    descs.put("%race_plural%", Generic.plural(unit.race.toString().toLowerCase()));
 
-    if (u.getSlot("mount") != null) {
-      Optional<String> animal = u.getSlot("mount").tags.getString("animal");
-      if (animal.isEmpty() || animal.get().isEmpty()) {
-        throw new IllegalStateException(
-          "Unit " + u + " doesn't have an animal tag specified for its mount!"
-        );
-      }
-      descs.put("%mount%", animal.get());
-      descs.put("%mount_plural%", Generic.plural(animal.get()));
-    } else {
-      descs.put("%mount%", "unspecified mount");
-      descs.put("%mount_plural%", "unspecified mounts");
-    }
-
-    if (u.hasLeaderLevel("")) {
+    if (unit.hasAnyLeadership()) {
       descs.put("%role%", "commanders");
 
-      if (u.hasCommand("#holy")) {
+      if (unit.hasCommand("#holy")) {
         descs.put("%role%", "priests");
       }
     }
 
-    for (Filter f : u.getMagicFilters()) {
+    for (Filter f : unit.getMagicFilters()) {
       if (f.name.equals("MAGICPICKS")) {
         descs.put("%role%", "mages");
       }
     }
 
-    if (u.hasCommand("#fixedname")) {
-      for (Command c : u.getCommands()) {
+    if (unit.hasCommand("#fixedname")) {
+      for (Command c : unit.gatherCommands()) {
         if (c.command.equals("#fixedname")) descs.put(
           "%fixedname%",
           c.args.get(0).get()
@@ -96,7 +87,7 @@ public class DescriptionReplacer {
       descs.put("%tobe%", "is");
       descs.put("%tohave%", "has");
 
-      if (u.hasCommand("#female")) {
+      if (unit.hasCommand("#female")) {
         descs.put("%Pronoun%", "She");
         descs.put("%pronoun%", "she");
         descs.put("%pronoun_obj%", "her");
@@ -114,154 +105,250 @@ public class DescriptionReplacer {
       descs.put("%pronoun_pos%", "their");
       descs.put("%tobe%", "are");
       descs.put("%tohave%", "have");
-      descs.put("%fixedname%", u.name.toString());
+      descs.put("%fixedname%", unit.name.toString());
     }
   }
 
   public void calibrate(List<Unit> units) {
-    List<String> weapons = new ArrayList<String>();
-    List<String> weapons_plural = new ArrayList<String>();
-    String[] slots = { "weapon", "offhand" };
+    this.calibrateWeapons(units);
+    this.calibrateArmors(units);
+  }
 
-    for (Unit u : units) {
-      for (String str : slots) {
-        Item i = u.getSlot(str);
-        if (i != null && !i.armor && i.isCustomIdResolved()) {
-          if (
-            !n.nationGen.weapondb.GetValue(i.id, "weapon_name").equals("") &&
-            !weapons.contains(
-              n.nationGen.weapondb.GetValue(i.id, "weapon_name")
-            )
-          ) {
-            weapons.add(
-              NameGenerator.addPreposition(
-                n.nationGen.weapondb.GetValue(i.id, "weapon_name").toLowerCase()
-              )
-            );
-            weapons_plural.add(
-              NameGenerator.plural(
-                n.nationGen.weapondb.GetValue(i.id, "weapon_name").toLowerCase()
-              )
-            );
-          } else if (
-            !weapons.contains(
-              n.nationGen.weapondb.GetValue(i.id, "weapon_name")
-            )
-          ) {
-            weapons.add("NOT IN WEAPONDB: " + i.name + " in " + i.slot);
-            weapons_plural.add("NOT IN WEAPONDB: " + i.name + " in " + i.slot);
-          }
-        }
-      }
+  public void calibrateWeapons(List<Unit> units) {
+    List<String> slots = List.of("weapon", "offhand");
+    List<Item> weapons = this.getEquipments(units, slots).stream().filter(Item::isWeapon).toList();
+    List<Phrase> weaponDescriptions = this.describeEquipmentList(weapons, "name");
+    List<String> weaponSingulars = weaponDescriptions.stream().map(p -> p.singular).toList();
+    List<String> weaponPlurals = weaponDescriptions.stream().map(p -> p.plural).toList();
+
+    if (weaponDescriptions.size() == 0) {
+      descs.put("%weapons%", "unknown weapons");
+      descs.put("%weapons_plural%", "unknown weapons");
     }
-    if (weapons.size() > 3) {
-      weapons.clear();
-      weapons_plural.clear();
 
-      for (Unit u : units) {
-        for (String slot : slots) {
-          Item i = u.getSlot(slot);
-          if (i != null && !i.armor && i.isCustomIdResolved()) {
-            if (
-              !n.nationGen.weapondb.GetValue(i.id, "weapon_name").equals("") &&
-              !weapons.contains(
-                n.nationGen.weapondb.GetValue(i.id, "weapon_name")
-              )
-            ) {
-              List<String> tmp = new ArrayList<String>();
+    else if (weaponDescriptions.size() <= MAX_ITEMS_NAMED) {
+      String singularDescription = NameGenerator.writeAsList(weaponSingulars, false, "or");
+      String pluralDescription = NameGenerator.writeAsList(weaponPlurals, false);
 
-              if (
-                n.nationGen.weapondb.GetValue(i.id, "dt_blunt").equals("1")
-              ) tmp.add("blunt");
-              if (
-                n.nationGen.weapondb.GetValue(i.id, "dt_slash").equals("1")
-              ) tmp.add("slashing");
-              if (
-                n.nationGen.weapondb.GetValue(i.id, "dt_pierce").equals("1")
-              ) tmp.add("piercing");
+      descs.put("%weapons%", singularDescription);
+      descs.put("%weapons_plural%", pluralDescription);
+    }
 
-              for (String str : tmp) if (
-                !str.equals("") && !weapons.contains(str)
-              ) weapons.add(str);
-            }
-          }
-        }
-      }
+    else {
+      List<String> damageTypes = this.getWeaponDamageTypes(weapons);
+      String damageTypesDescription = NameGenerator.writeAsList(damageTypes, false) + " weapons";
 
-      if (weapons.size() < 3) {
-        descs.put(
-          "%weapons%",
-          NameGenerator.writeAsList(weapons, false) + " weapons"
-        );
-        descs.put(
-          "%weapons_plural%",
-          NameGenerator.writeAsList(weapons, false) + " weapons"
-        );
-      } else {
+      if (damageTypes.size() > MAX_ITEMS_NAMED) {
         descs.put("%weapons%", "various weapons");
         descs.put("%weapons_plural%", "various weapons");
       }
-    } else {
-      descs.put("%weapons%", NameGenerator.writeAsList(weapons, false, "or"));
-      descs.put(
-        "%weapons_plural%",
-        NameGenerator.writeAsList(weapons_plural, false)
-      );
+
+      else {
+        descs.put("%weapons%", damageTypesDescription);
+        descs.put("%weapons_plural%", damageTypesDescription);
+      }
+    }
+  }
+
+  public void calibrateArmors(List<Unit> units) {
+    List<String> armorSlot = List.of("armor");
+    List<String> armorNames = new ArrayList<>();
+    List<Item> armors = this.getEquipments(units, armorSlot).stream().filter(Item::isArmor).toList();
+    
+    int minProt = 100;
+    int maxProt = 0;
+
+    for (Item armor : armors) {
+      int prot = 0;
+      String armorName = armor.getValueFromDb(ItemProperty.NAME.toDBColumn(), "NOT IN ARMORDB: " + armor.name + " in armor slot");
+      prot = armor.getIntegerFromDb(ItemProperty.PROTECTION.toDBColumn(), 0);
+
+      if (armorNames.contains(armorName) == false) {
+        armorNames.add(armorName);
+        minProt = Math.min(minProt, prot);
+        maxProt = Math.max(maxProt, prot);
+      }
     }
 
-    weapons.clear();
-    int minprot = 100;
-    int maxprot = 0;
+    descs.put("%armors%", NameGenerator.writeAsList(armorNames, false));
+    this.calibrateArmorTypes(minProt, maxProt);
+  }
 
-    for (Unit u : units) {
-      Item i = u.getSlot("armor");
+  public void calibrateArmorTypes(Integer minProt, Integer maxProt) {
+    List<String> typeNames = new ArrayList<>();
+    Integer eraModifier = n.nationGen.settings.get(SettingsType.era).intValue();
 
-      int prot = 0;
+    if (minProt <= 11 + eraModifier) {
+      typeNames.add("light");
+    }
 
-      if (i != null && i.armor && i.isCustomIdResolved()) {
-        prot = n.nationGen.armordb.GetInteger(i.id, "prot", 0);
+    if (minProt <= 16 + eraModifier && maxProt > 11 + eraModifier) {
+      typeNames.add("medium");
+    }
 
-        if (
-          !n.nationGen.armordb.GetValue(i.id, "armorname").equals("") &&
-          !weapons.contains(n.nationGen.armordb.GetValue(i.id, "armorname"))
-        ) {
-          weapons.add(n.nationGen.armordb.GetValue(i.id, "armorname"));
-        } else if (
-          !weapons.contains(n.nationGen.armordb.GetValue(i.id, "armorname"))
-        ) {
-          weapons.add("NOT IN ARMORDB: " + i.name + " in " + i.slot);
+    if (maxProt > 16 + eraModifier) {
+      typeNames.add("heavy");
+    }
+
+    if (typeNames.size() >= 3 || typeNames.size() == 0) {
+      typeNames.clear();
+      typeNames.add("all kinds of");
+    }
+
+    descs.put("%armortypes%", NameGenerator.writeAsList(typeNames, false));
+  }
+
+  public void calibrateMounts(Unit unit) {
+    // If unit is a montag template, there may be multiple mounts
+    List<MountUnit> mounts = this.getMounts(List.of(unit));
+    List<Phrase> mountDescriptions = this.describeMountList(mounts);
+    List<String> mountSingulars = mountDescriptions.stream().map(p -> p.singular).toList();
+    List<String> mountPlurals = mountDescriptions.stream().map(p -> p.plural).toList();
+
+    if (mountDescriptions.size() == 0) {
+      descs.put("%mount%", "unknown beasts");
+      descs.put("%mount_plural%", "unknown beasts");
+    }
+
+    else if (mountDescriptions.size() <= MAX_ITEMS_NAMED) {
+      String singularDescription = NameGenerator.writeAsList(mountSingulars, false, "or");
+      String pluralDescription = NameGenerator.writeAsList(mountPlurals, false);
+
+      descs.put("%mount%", singularDescription);
+      descs.put("%mount_plural%", pluralDescription);
+    }
+
+    else {
+      descs.put("%weapons%", "various mounts");
+      descs.put("%weapons_plural%", "various mounts");
+    }
+  }
+
+  public List<Item> getEquipments(List<Unit> units, List<String> slots) {
+    List<Item> equipments = new ArrayList<>();
+
+    for (Unit unit : units) {
+      for (String slotName : slots) {
+        if (unit.isMontagRecruitableTemplate()) {
+          List<Unit> montagUnits = unit.getMontagShapes();
+          List<Item> montagItems = this.getEquipments(montagUnits, slots);
+          equipments.addAll(montagItems);
+        }
+
+        else {
+          Item item = unit.getSlot(slotName);
+          equipments.add(item);
         }
       }
-
-      if (prot < minprot) minprot = prot;
-      if (prot > maxprot) maxprot = prot;
     }
 
-    descs.put("%armors%", NameGenerator.writeAsList(weapons, false));
+    // Filter out non-equipment items
+    equipments = equipments.stream()
+      .filter(i -> i != null)
+      // Mount items all have a gameid = -1, but they are still equipped with #mountmnr
+      .filter(i -> i.isDominionsEquipment() || i.isMountItem())
+      .collect(Collectors.toList());
 
-    weapons.clear();
+    return equipments;
+  }
 
-    int eraModifier = 1;
+  public List<MountUnit> getMounts(List<Unit> units) {
+    List<MountUnit> mounts = new ArrayList<>();
 
-    //late era
-    if ((n.nationGen.settings.getSettingInteger() & 2) == 2) eraModifier += 1;
+    for (Unit unit : units) {
+      if (unit.isMontagRecruitableTemplate()) {
+        List<Unit> montagUnits = unit.getMontagShapes();
+        List<MountUnit> montagMounts = this.getMounts(montagUnits);
+        mounts.addAll(montagMounts);
+      }
 
-    //early era
-    if ((n.nationGen.settings.getSettingInteger() & 1) == 1) eraModifier -= 1;
-
-    if (minprot <= 11 + eraModifier) weapons.add("light");
-
-    if (minprot <= 16 + eraModifier && maxprot > 11 + eraModifier) weapons.add(
-      "medium"
-    );
-
-    if (maxprot > 16 + eraModifier) weapons.add("heavy");
-
-    if (weapons.size() >= 3 || weapons.size() == 0) {
-      weapons.clear();
-      weapons.add("all kinds of");
+      else {
+        MountUnit mount = unit.getMountUnit();
+        mounts.add(mount);
+      }
     }
 
-    descs.put("%armortypes%", NameGenerator.writeAsList(weapons, false));
+    return mounts.stream().filter(mu -> mu != null).toList();
+  }
+
+  public List<Phrase> describeEquipmentList(List<Item> equipments, String itemNameDbColumn) {
+    List<Phrase> descriptions = new ArrayList<>();
+    List<String> addedNames = new ArrayList<>();
+
+    for (Item item : equipments) {
+      String itemName = item.getValueFromDb(itemNameDbColumn);
+      Boolean nameExistsInDb = itemName.isBlank() == false;
+
+      if (nameExistsInDb == false) {
+        String notInDb = "NOT IN DB: " + item.name + " in " + item.slot + " slot";
+        descriptions.add(new Phrase(notInDb, notInDb));
+      }
+
+      else if (!addedNames.contains(itemName)) {
+        String lowerCasedName = itemName.toLowerCase();
+        String nameWithPreposition = NameGenerator.addPreposition(lowerCasedName);
+        String plural = NameGenerator.plural(lowerCasedName);
+
+        descriptions.add(new Phrase(nameWithPreposition, plural));
+        addedNames.add(itemName);
+      }
+    }
+
+    return descriptions;
+  }
+
+  public List<Phrase> describeMountList(List<MountUnit> mountUnitList) {
+    List<Phrase> descriptions = new ArrayList<>();
+    List<String> addedNames = new ArrayList<>();
+    
+    for (MountUnit mountUnit : mountUnitList) {
+      String mountName = mountUnit.mount.getName().toLowerCase();
+      String nameWithPreposition = NameGenerator.addPreposition(mountName);
+      String plural = NameGenerator.plural(mountName);
+
+      if (!addedNames.contains(mountName)) {
+        descriptions.add(new Phrase(nameWithPreposition, plural));
+        addedNames.add(mountName);
+      }
+    }
+
+    return descriptions;
+  }
+
+  public List<String> getWeaponDamageTypes(List<Item> weapons) {
+    List<String> types = new ArrayList<>();
+    List<String> addedNames = new ArrayList<>();
+
+    for (Item weapon : weapons) {
+      List<String> weaponDamageTypes = new ArrayList<String>();
+      Boolean isBlunt = weapon.getValueFromDb("dt_blunt").equals("1");
+      Boolean isSlash = weapon.getValueFromDb("dt_slash").equals("1");
+      Boolean isPierce = weapon.getValueFromDb("dt_pierce").equals("1");
+      String untypedDamage = "crushing";
+
+      if (isBlunt) {
+        weaponDamageTypes.add("blunt");
+      }
+
+      if (isSlash) {
+        weaponDamageTypes.add("slashing");
+      }
+
+      if (isPierce) {
+        weaponDamageTypes.add("piercing");
+      }
+
+      if (weaponDamageTypes.size() == 0) {
+        weaponDamageTypes.add(untypedDamage);
+      }
+
+      for (String damageType : weaponDamageTypes) {
+        if (!damageType.isBlank() && !addedNames.contains(damageType)) {
+          types.add(damageType);
+        }
+      }
+    }
+
+    return types;
   }
 }

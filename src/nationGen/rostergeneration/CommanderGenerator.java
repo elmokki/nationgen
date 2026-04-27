@@ -10,7 +10,7 @@ import nationGen.NationGenAssets;
 import nationGen.chances.EntityChances;
 import nationGen.entities.Filter;
 import nationGen.items.Item;
-import nationGen.magic.MagicPath;
+import nationGen.items.ItemProperty;
 import nationGen.misc.Arg;
 import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
@@ -164,7 +164,7 @@ public class CommanderGenerator extends TroopGenerator {
         hasAnimals = true;
       }
 
-      for (Command c : u.getCommands()) {
+      for (Command c : u.gatherCommands()) {
         if (
           c.command.equals("#magicbeing") &&
           !(u.race.equals(nation.races.get(1)) || secondaryMagicBeings)
@@ -206,11 +206,17 @@ public class CommanderGenerator extends TroopGenerator {
 
     List<Unit> cantbes =
       this.getUnitsWithTag(possibleComs, "cannot_be_commander");
-    if (cantbes.size() < possibleComs.size()) possibleComs.removeAll(cantbes);
+    
+    if (cantbes.size() < possibleComs.size()) {
+      possibleComs.removeAll(cantbes);
+    }
 
     List<Unit> shouldbes =
       this.getUnitsWithTag(possibleComs, "should_be_commander");
-    if (shouldbes.size() > 0) possibleComs = shouldbes;
+
+    if (shouldbes.size() > 0) {
+      possibleComs = shouldbes;
+    }
 
     // Add one random infantry com
     if (
@@ -221,7 +227,7 @@ public class CommanderGenerator extends TroopGenerator {
       possibleComs.remove(com);
 
       if (com != null) {
-        for (Command c : com.getCommands()) {
+        for (Command c : com.gatherCommands()) {
           if (allFeatures.contains(c.command)) {
             features.remove(c.command);
           }
@@ -270,7 +276,7 @@ public class CommanderGenerator extends TroopGenerator {
             }
           }
 
-          for (Command c : u.getCommands()) {
+          for (Command c : u.gatherCommands()) {
             if (allFeatures.contains(c.command)) {
               features.remove(c.command);
             }
@@ -298,38 +304,35 @@ public class CommanderGenerator extends TroopGenerator {
       //NamePart part = new NamePart();
       //part.text = "Commander";
 
-      Unit unit = u.getCopy();
+      Unit unit = new Unit(u);
 
       // Remove montags
       List<Command> toremove = new ArrayList<>();
-      for (Command c : unit.commands) {
-        if (c.command.equals("#montag")) toremove.add(c);
-      }
-      unit.commands.removeAll(toremove);
+      unit.removeCommand("#montag");
 
       // Elitefy
       process(unit);
 
       //unit.name.type = part;
-      //unit.commands.add(new Command("#gcost", "+20"));
+      //unit.addCommands(new Command("#gcost", "+20"));
       coms.add(unit);
 
       // Add stuff to sacreds sometimes
       boolean priest = false;
       boolean stealthy = false;
-      for (Command c : unit.getCommands()) {
+      for (Command c : unit.gatherCommands()) {
         if (c.command.equals("#holy")) priest = true;
         if (c.command.equals("#stealthy")) stealthy = true;
       }
 
-      if (r.nextBoolean() && priest) unit.commands.add(
+      if (r.nextBoolean() && priest) unit.addCommands(
         Command.parse("#magicskill 9 1")
       );
 
       if (priest && stealthy) {
         double rand = r.nextDouble();
         if (rand < 0.03) {
-          unit.commands.add(new Command("#assassin"));
+          unit.addCommands(new Command("#assassin"));
         }
       }
     }
@@ -354,7 +357,7 @@ public class CommanderGenerator extends TroopGenerator {
       boolean good_leader = com.tags.containsName("#good_leader");
       boolean superior_leader = com.tags.containsName("#superior_leader");
 
-      for (Command c : com.getCommands()) {
+      for (Command c : com.gatherCommands()) {
         if (c.command.equals("#magicbeing")) magicbeing = true;
         else if (c.command.equals("#demon")) demon = true;
         else if (
@@ -390,7 +393,7 @@ public class CommanderGenerator extends TroopGenerator {
       if (power > 1 && undisciplined && r.nextDouble() < 0.5) power -= 1;
 
       // Unless we see a reason not to, rec points will be 1
-      com.commands.add(Command.parse("#rpcost 1"));
+      com.addCommands(Command.parse("#rpcost 1"));
 
       // Are we or most of our troops "special" beings, and if so will we get better special leadership and/or worse normal?
       int magicpower = power - (r.nextInt(1));
@@ -432,54 +435,54 @@ public class CommanderGenerator extends TroopGenerator {
       }
 
       if ((i == 0 || r.nextDouble() < 0.2) && hasSlaves) {
-        com.commands.add(Command.args("#taskmaster", "+1"));
-        com.commands.add(Command.args("#gcost", "+5"));
+        com.addCommands(Command.args("#taskmaster", "+1"));
+        com.addCommands(Command.args("#gcost", "+5"));
       }
 
-      if (com.caponly && r.nextDouble() > 0.5) com.caponly = false;
+      if (com.isCapOnly() && r.nextDouble() > 0.5) com.setCapOnly(false);
 
-      com.commands.add(Command.args("#gcost", "+30"));
+      com.addCommands(Command.args("#gcost", "+30"));
 
       // Expertleader
       if (power == 3) {
-        com.commands.add(Command.args("#gcost", "+50"));
-        com.commands.add(Command.args("#expertleader"));
+        com.addCommands(Command.args("#gcost", "+50"));
+        com.addCommands(Command.args("#expertleader"));
 
         if (powerpenalty == 2) {
-          com.commands.add(Command.args("#command", "-80"));
-          com.commands.add(Command.args("#gcost", "-40"));
+          com.addCommands(Command.args("#command", "-80"));
+          com.addCommands(Command.args("#gcost", "-40"));
         } else if (powerpenalty == 1) {
-          com.commands.add(Command.args("#command", "-40"));
-          com.commands.add(Command.args("#gcost", "-20"));
-        } else com.commands.add(Command.args("#rpcost", "2"));
+          com.addCommands(Command.args("#command", "-40"));
+          com.addCommands(Command.args("#gcost", "-20"));
+        } else com.addCommands(Command.args("#rpcost", "2"));
 
         if (r.nextDouble() > 0.5 && !mindless) {
-          com.commands.add(Command.args("#inspirational", "+1"));
-          com.commands.add(Command.args("#gcost", "+10"));
+          com.addCommands(Command.args("#inspirational", "+1"));
+          com.addCommands(Command.args("#gcost", "+10"));
         }
 
         if (r.nextDouble() > 0.75 && !mindless) {
-          com.commands.add(Command.args("#inspirational", "+1"));
-          com.commands.add(Command.args("#gcost", "+10"));
+          com.addCommands(Command.args("#inspirational", "+1"));
+          com.addCommands(Command.args("#gcost", "+10"));
         }
 
         if ((r.nextDouble() < 0.25 && hasSlaves) || (slave && !mindless)) {
           if (slave && !mindless) {
             int amount = Math.min(0, (r.nextInt(4) - 1));
             if (amount > 0) {
-              com.commands.add(Command.args("#taskmaster", "+" + amount));
-              com.commands.add(Command.args("#gcost", "+" + (amount * 5)));
+              com.addCommands(Command.args("#taskmaster", "+" + amount));
+              com.addCommands(Command.args("#gcost", "+" + (amount * 5)));
 
               amount = r.nextInt(amount + 1);
               if (amount > 0) {
-                com.commands.add(Command.args("#inspirational", "-" + amount));
-                com.commands.add(Command.args("#gcost", "-" + (amount * 10)));
+                com.addCommands(Command.args("#inspirational", "-" + amount));
+                com.addCommands(Command.args("#gcost", "-" + (amount * 10)));
               }
             }
           } else {
             int amount = r.nextInt(2);
-            com.commands.add(Command.args("#taskmaster", "+" + (amount + 1)));
-            com.commands.add(Command.args("#gcost", "+" + (amount * 5)));
+            com.addCommands(Command.args("#taskmaster", "+" + (amount + 1)));
+            com.addCommands(Command.args("#gcost", "+" + (amount * 5)));
           }
         }
 
@@ -487,59 +490,59 @@ public class CommanderGenerator extends TroopGenerator {
           if (animal && !mindless) {
             int amount = Math.min(0, (r.nextInt(6) - 2));
             if (amount > 0) {
-              com.commands.add(Command.args("#beastmaster", "+" + amount));
-              com.commands.add(Command.args("#gcost", "+" + (amount * 5)));
+              com.addCommands(Command.args("#beastmaster", "+" + amount));
+              com.addCommands(Command.args("#gcost", "+" + (amount * 5)));
 
               amount = r.nextInt(amount + 1);
 
               if (amount > 0) {
-                com.commands.add(Command.args("#inspirational", "-" + amount));
-                com.commands.add(Command.args("#gcost", "-" + (amount * 10)));
+                com.addCommands(Command.args("#inspirational", "-" + amount));
+                com.addCommands(Command.args("#gcost", "-" + (amount * 10)));
               }
             }
           } else {
             int amount = r.nextInt(2) + 1;
-            com.commands.add(Command.args("#beastmaster", "+" + amount));
-            com.commands.add(Command.args("#gcost", "+" + (amount * 5)));
+            com.addCommands(Command.args("#beastmaster", "+" + amount));
+            com.addCommands(Command.args("#gcost", "+" + (amount * 5)));
           }
         }
       }
       // Goodleader
       else if (power == 2) {
         if (powerpenalty == 2) {
-          com.commands.add(Command.args("#goodleader"));
-          com.commands.add(Command.args("#command", "-70"));
+          com.addCommands(Command.args("#goodleader"));
+          com.addCommands(Command.args("#command", "-70"));
         } else if (powerpenalty == 1) {
-          com.commands.add(Command.args("#goodleader"));
-          com.commands.add(Command.args("#command", "-40"));
-          com.commands.add(Command.args("#gcost", "+10"));
+          com.addCommands(Command.args("#goodleader"));
+          com.addCommands(Command.args("#command", "-40"));
+          com.addCommands(Command.args("#gcost", "+10"));
         } else if ((animal || mindless || slave) && r.nextDouble() > 0.25) {
-          com.commands.add(Command.args("#okleader"));
-          com.commands.add(Command.args("#command", "+40"));
-          com.commands.add(Command.args("#gcost", "+10"));
+          com.addCommands(Command.args("#okleader"));
+          com.addCommands(Command.args("#command", "+40"));
+          com.addCommands(Command.args("#gcost", "+10"));
         } else {
-          com.commands.add(Command.args("#goodleader"));
-          com.commands.add(Command.args("#gcost", "+20"));
+          com.addCommands(Command.args("#goodleader"));
+          com.addCommands(Command.args("#gcost", "+20"));
         }
 
         if (r.nextDouble() > 0.65 && !mindless) {
-          com.commands.add(Command.args("#inspirational", "+1"));
-          com.commands.add(Command.args("#gcost", "+10"));
+          com.addCommands(Command.args("#inspirational", "+1"));
+          com.addCommands(Command.args("#gcost", "+10"));
         }
         if (r.nextDouble() > 0.85) {
-          com.commands.add(Command.args("#inspirational", "+1"));
-          com.commands.add(Command.args("#gcost", "+10"));
+          com.addCommands(Command.args("#inspirational", "+1"));
+          com.addCommands(Command.args("#gcost", "+10"));
         }
 
         if (r.nextDouble() < 0.5 && hasSlaves) {
           int amount = r.nextInt(2) + 1;
-          com.commands.add(Command.args("#taskmaster", "+" + amount));
-          com.commands.add(Command.args("#gcost", "+" + (amount * 5)));
+          com.addCommands(Command.args("#taskmaster", "+" + amount));
+          com.addCommands(Command.args("#gcost", "+" + (amount * 5)));
 
           amount = r.nextInt(amount + 1);
           if (amount > 0) {
-            com.commands.add(Command.args("#inspirational", "-" + amount));
-            com.commands.add(Command.args("#gcost", "-" + (amount * 10)));
+            com.addCommands(Command.args("#inspirational", "-" + amount));
+            com.addCommands(Command.args("#gcost", "-" + (amount * 10)));
           }
         }
 
@@ -547,66 +550,66 @@ public class CommanderGenerator extends TroopGenerator {
           if (animal && !mindless) {
             int amount = Math.min(0, (r.nextInt(4) - 1));
             if (amount > 0) {
-              com.commands.add(Command.args("#beastmaster", "+" + amount));
-              com.commands.add(Command.args("#gcost", "+" + (amount * 5)));
+              com.addCommands(Command.args("#beastmaster", "+" + amount));
+              com.addCommands(Command.args("#gcost", "+" + (amount * 5)));
 
               amount = r.nextInt(amount + 1);
 
               if (amount > 0) {
-                com.commands.add(Command.args("#inspirational", "-" + amount));
-                com.commands.add(Command.args("#gcost", "-" + (amount * 10)));
+                com.addCommands(Command.args("#inspirational", "-" + amount));
+                com.addCommands(Command.args("#gcost", "-" + (amount * 10)));
               }
             }
           } else {
             int amount = r.nextInt(1) + 1;
-            com.commands.add(Command.args("#beastmaster", "+" + amount));
-            com.commands.add(Command.args("#gcost", "+" + (amount * 5)));
+            com.addCommands(Command.args("#beastmaster", "+" + amount));
+            com.addCommands(Command.args("#gcost", "+" + (amount * 5)));
           }
         }
       }
       // Okleader
       else { // if(power == 1)
-        com.commands.add(new Command("#okleader"));
+        com.addCommands(new Command("#okleader"));
 
         if (powerpenalty > 0) {
-          com.commands.add(Command.args("#command", "-30"));
-          com.commands.add(Command.args("#gcost", "-10"));
+          com.addCommands(Command.args("#command", "-30"));
+          com.addCommands(Command.args("#gcost", "-10"));
         }
 
         if (r.nextDouble() > 0.75 && !mindless) {
-          com.commands.add(Command.args("#inspirational", "+1"));
-          com.commands.add(Command.args("#gcost", "+10"));
+          com.addCommands(Command.args("#inspirational", "+1"));
+          com.addCommands(Command.args("#gcost", "+10"));
         }
         if (r.nextDouble() > 0.5) {
-          com.commands.add(Command.args("#command", "+20"));
+          com.addCommands(Command.args("#command", "+20"));
           if (r.nextDouble() > 0.875) {
-            com.commands.add(Command.args("#command", "+20"));
-            com.commands.add(Command.args("#gcost", "+10"));
+            com.addCommands(Command.args("#command", "+20"));
+            com.addCommands(Command.args("#gcost", "+10"));
           }
         }
 
         if (r.nextDouble() < 0.25 && hasSlaves) {
           int amount = r.nextInt(2) + 1;
-          com.commands.add(Command.args("#taskmaster", "+" + amount));
-          com.commands.add(Command.args("#gcost", "+" + (amount * 5)));
+          com.addCommands(Command.args("#taskmaster", "+" + amount));
+          com.addCommands(Command.args("#gcost", "+" + (amount * 5)));
 
           amount = r.nextInt(amount + 1);
           if (amount > 0) {
-            com.commands.add(Command.args("#inspirational", "-" + amount));
-            com.commands.add(Command.args("#gcost", "-" + (amount * 10)));
+            com.addCommands(Command.args("#inspirational", "-" + amount));
+            com.addCommands(Command.args("#gcost", "-" + (amount * 10)));
           }
         }
 
         if ((r.nextDouble() < 0.125 && (hasAnimals || (animal && !mindless)))) {
           int amount = Math.min(0, (r.nextInt(5) - 2));
           if (amount > 0) {
-            com.commands.add(Command.args("#beastmaster", "+" + amount));
-            com.commands.add(Command.args("#gcost", "+" + (amount * 5)));
+            com.addCommands(Command.args("#beastmaster", "+" + amount));
+            com.addCommands(Command.args("#gcost", "+" + (amount * 5)));
 
             amount = r.nextInt(amount + 1);
             if (amount > 0) {
-              com.commands.add(Command.args("#inspirational", "-" + amount));
-              com.commands.add(Command.args("#gcost", "-" + (amount * 10)));
+              com.addCommands(Command.args("#inspirational", "-" + amount));
+              com.addCommands(Command.args("#gcost", "-" + (amount * 10)));
             }
           }
         }
@@ -651,10 +654,10 @@ public class CommanderGenerator extends TroopGenerator {
     if (power < 2 && being) power = Math.min(Math.max(2, power + 1), 4);
     if (power < origpower && being && magicshare > 0.4) power = origpower;
 
-    if (power >= 4) com.commands.add(new Command("#expert" + str + "leader"));
-    if (power >= 3) com.commands.add(new Command("#good" + str + "leader"));
-    else if (power >= 2) com.commands.add(new Command("#ok" + str + "leader"));
-    else if (power >= 1) com.commands.add(
+    if (power >= 4) com.addCommands(new Command("#expert" + str + "leader"));
+    if (power >= 3) com.addCommands(new Command("#good" + str + "leader"));
+    else if (power >= 2) com.addCommands(new Command("#ok" + str + "leader"));
+    else if (power >= 1) com.addCommands(
       new Command("#poor" + str + "leader")
     );
   }
@@ -665,7 +668,7 @@ public class CommanderGenerator extends TroopGenerator {
     for (Unit u : coms) {
       boolean holy = false;
       boolean mounted = false;
-      for (Command c : u.getCommands()) {
+      for (Command c : u.gatherCommands()) {
         if (c.command.equals("#holy")) holy = true;
         if (c.command.equals("#mounted")) mounted = true;
       }
@@ -677,7 +680,7 @@ public class CommanderGenerator extends TroopGenerator {
     for (Unit u : coms) {
       boolean holy = false;
       boolean mounted = false;
-      for (Command c : u.getCommands()) {
+      for (Command c : u.gatherCommands()) {
         if (c.command.equals("#holy")) holy = true;
         if (c.command.equals("#mounted")) mounted = true;
       }
@@ -688,7 +691,7 @@ public class CommanderGenerator extends TroopGenerator {
     templist.clear();
     for (Unit u : coms) {
       boolean holy = u
-        .getCommands()
+        .gatherCommands()
         .stream()
         .anyMatch(c -> c.command.equals("#holy"));
       if (holy) templist.add(u);
@@ -722,7 +725,7 @@ public class CommanderGenerator extends TroopGenerator {
 
   private boolean shouldReRoll(Unit u, List<Unit> list) {
     boolean mounted = u
-      .getCommands()
+      .gatherCommands()
       .stream()
       .anyMatch(c -> c.command.equals("#mounted"));
 
@@ -731,7 +734,7 @@ public class CommanderGenerator extends TroopGenerator {
     for (Unit unit : list) {
       Item unitArmor = unit.getSlot("armor");
       boolean unitMounted = unit
-        .getCommands()
+        .gatherCommands()
         .stream()
         .anyMatch(c -> c.command.equals("#mounted"));
 
@@ -755,7 +758,7 @@ public class CommanderGenerator extends TroopGenerator {
 
     for (Unit u : possibleComs) {
       int count = 0;
-      for (Command c : u.getCommands()) {
+      for (Command c : u.getAllHandledCommands()) {
         for (String feature : features) {
           if (feature.equals(c.command)) count++;
         }
@@ -771,23 +774,23 @@ public class CommanderGenerator extends TroopGenerator {
   }
 
   private void process(Unit u) {
-    u.commands.add(Command.args("#att", "+" + strength));
-    u.commands.add(Command.args("#def", "+" + strength));
-    u.commands.add(Command.args("#mor", "+" + strength));
-    u.commands.add(Command.args("#hp", "+" + strength));
-    u.commands.add(Command.args("#prec", "+" + strength));
+    u.addCommands(Command.args("#att", "+" + strength));
+    u.addCommands(Command.args("#def", "+" + strength));
+    u.addCommands(Command.args("#mor", "+" + strength));
+    u.addCommands(Command.args("#hp", "+" + strength));
+    u.addCommands(Command.args("#prec", "+" + strength));
 
     int racialMapMove = 2;
     for (Command c : u.race.unitcommands) {
       if (c.command.equals("#mapmove")) racialMapMove = c.args.get(0).getInt();
     }
 
-    for (Command c : u.getCommands()) {
+    for (Command c : u.getAllHandledCommands()) {
       if (c.command.equals("#mapmove")) {
         int mapmove = c.args.get(0).getInt();
-        if (mapmove < racialMapMove) u.commands.add(
-          Command.args("#mapmove", "+" + (racialMapMove - mapmove))
-        );
+        if (mapmove < racialMapMove) {
+          u.addCommands(Command.args("#mapmove", "+" + (racialMapMove - mapmove)));
+        }
       }
     }
 
@@ -870,9 +873,11 @@ public class CommanderGenerator extends TroopGenerator {
       try {
         ItemSet helmets = new ItemSet();
 
-        for (Item it : getSuitableCommanderItems(u, slot).filterSlot(slot)) if (
-          it.id.equals(item.id)
-        ) helmets.add(it);
+        for (Item it : getSuitableCommanderItems(u, slot).filterSlot(slot)) {
+          if (it.hasSameCustomItemName(item)) {
+            helmets.add(it);
+          }
+        }
 
         helmet = chandler.getRandom(helmets, u);
       } catch (Exception e) {
@@ -881,9 +886,9 @@ public class CommanderGenerator extends TroopGenerator {
     }
 
     // Try to get an elite armor of some suitable sort
-    if (u.getSlot(slot).armor && helmet == null && !slot.equals("offhand")) {
-      int helmetprot = item.armor
-        ? nationGen.armordb.GetInteger(item.id, "prot")
+    if (u.getSlot(slot).isArmor() && helmet == null && !slot.equals("offhand")) {
+      int helmetprot = item.isArmor()
+        ? item.getIntegerFromDb(ItemProperty.PROTECTION.toDBColumn(), 0)
         : 0;
 
       helmet = chandler.getRandom(
@@ -1102,7 +1107,7 @@ public class CommanderGenerator extends TroopGenerator {
 					+ pickRandomSubstring("foremost,most exalted,greatest,most powerful,most prestigious,wisest", ",") +" of their faith.";
 		}
 		
-		com.commands.add(Command.args("#descr", desc));
+		com.addCommands(Command.args("#descr", desc));
 		*/
   }
 

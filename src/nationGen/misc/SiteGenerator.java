@@ -28,14 +28,14 @@ public class SiteGenerator {
 
     List<Unit> mages = n
       .selectCommanders("mage")
-      .filter(u -> u.caponly)
+      .filter(Unit::isCapOnly)
       .collect(Collectors.toList());
 
     stuff += mages.size();
 
     List<Unit> otherComs = n
       .selectCommanders()
-      .filter(u -> u.caponly)
+      .filter(Unit::isCapOnly)
       .filter(u -> !mages.contains(u))
       .collect(Collectors.toList());
 
@@ -43,7 +43,7 @@ public class SiteGenerator {
 
     List<Unit> otherTroops = n
       .selectTroops()
-      .filter(u -> u.caponly)
+      .filter(Unit::isCapOnly)
       .collect(Collectors.toList());
 
     stuff += otherTroops.size();

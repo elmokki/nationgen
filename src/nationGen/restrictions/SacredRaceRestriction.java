@@ -21,6 +21,7 @@ public class SacredRaceRestriction extends TwoListRestriction<Race> {
     this.assets = assets;
 
     this.assets.races
+      .getAllValues()
       .stream()
       .sorted(Comparator.comparing(Race::getName))
       .forEach(r -> rmodel.addElement(r));

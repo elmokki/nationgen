@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import nationGen.NationGenAssets;
-import nationGen.entities.Filter;
 import nationGen.entities.Theme;
-import nationGen.magic.MagicPath;
 import nationGen.nation.Nation;
 
 public class NationThemeRestriction extends TwoListRestriction<String> {

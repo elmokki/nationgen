@@ -1,0 +1,237 @@
+#newitem
+#id "abysian_legs"
+#gameid -1
+#sprite /graphics/abysian/hellbred/hellbredlegs1a.png
+#offsetx 1
+#offsety 1
+#needs pants platepants
+#needs shadow shadow
+#define "#size 3"
+#define "#hp +8"
+#define "#prot +1"
+#define "#str +1"
+#define "#att +1"
+#define "#def -1"
+#define "#mapmove 14"
+#define "#ap 9"
+#define "#gcost +8"
+#define "#ressize 3"
+#define "#enc 2"
+#define "#rcost +2"
+#define "#fireres +10"
+#define "#heat +3"
+#define "#maxage *0.9"
+#enditem
+
+#newitem
+#id "humanbred_legs"
+#gameid -1
+#sprite /graphics/abysian/hellbred/hellbredlegs1b.png
+#offsetx 1
+#offsety 1
+#needs pants platepants
+#needs shadow shadow
+#define "#size 3"
+#define "#hp +5"
+#define "#str +1"
+#define "#att +1"
+#define "#mapmove 12"
+#define "#ap 10"
+#define "#gcost +6"
+#define "#ressize 3"
+#define "#enc 3"
+#define "#rcost +1"
+#define "#fireres +5"
+#define "#maxage *0.9"
+#enditem
+
+#newitem
+#id "ghoul_legs"
+#gameid -1
+#sprite /graphics/abysian/hellbred/hellbredlegs1c.png
+#offsetx 1
+#offsety 1
+#needs pants platepants
+#needs shadow shadow
+#define "#size 3"
+#define "#hp +4"
+#define "#str +1"
+#define "#mapmove 12"
+#define "#ap 10"
+#define "#gcost +4"
+#define "#ressize 3"
+#define "#enc 0"
+#define "#rcost +2"
+#define "#darkvision 50"
+#define "#poisonres +10"
+#define "#corpseeater 2"
+#define "#deadhp 1"
+#define "#maxdeadhp 6"
+#define "#almostundead"
+#define "#maxage *1.25"
+#enditem
+
+#newitem
+#id "fulldevil_legs"
+#gameid -1
+#sprite /graphics/abysian/hellbred/hellbredlegs2a.png
+#offsetx 1
+#offsety 1
+#needs pants platepants
+#needs shadow shadow2
+#define "#size 3"
+#define "#hp +10"
+#define "#prot +2"
+#define "#str +2"
+#define "#att +1"
+#define "#def +1"
+#define "#mapmove 16"
+#define "#ap 15"
+#define "#gcost +18"
+#define "#ressize 3"
+#define "#enc 2"
+#define "#rcost +4"
+#define "#fireres +10"
+#define "#coldres -5"
+#define "#heat +3"
+#define "#weapon 68"
+#define "#almostundead"
+#define "#maxage *1.1"
+#enditem
+
+#newitem
+#id "halfdevil_legs"
+#gameid -1
+#sprite /graphics/abysian/hellbred/hellbredlegs2b.png
+#offsetx 1
+#offsety 1
+#needs pants platepants
+#needs shadow shadow2
+#define "#size 3"
+#define "#hp +6"
+#define "#prot +1"
+#define "#str +2"
+#define "#att +1"
+#define "#def +1"
+#define "#mapmove 16"
+#define "#ap 15"
+#define "#gcost +8"
+#define "#ressize 3"
+#define "#enc 2"
+#define "#rcost +4"
+#define "#fireres +5"
+#define "#weapon 68"
+#define "#almostundead"
+#define "#maxage *1.1"
+#enditem
+
+#newitem
+#id "spinedevil_legs"
+#gameid -1
+#sprite /graphics/abysian/hellbred/hellbredlegs2c.png
+#offsetx 1
+#offsety 1
+#needs pants platepants
+#needs shadow shadow2
+#define "#size 3"
+#define "#hp +12"
+#define "#prot +3"
+#define "#str +2"
+#define "#att +1"
+#define "#def +1"
+#define "#mapmove 16"
+#define "#ap 15"
+#define "#gcost +10"
+#define "#ressize 3"
+#define "#enc 2"
+#define "#rcost +4"
+#define "#poisonarmor 8"
+#define "#weapon 68"
+#define "#almostundead"
+#define "#maxage *1.2"
+#enditem
+
+#newitem
+#id "salamander_legs"
+#gameid -1
+#sprite /graphics/abysian/hellbred/hellbredlegs3.png
+#offsetx 10
+#offsety -1
+#needs pants nopants
+#needs shadow shadow3
+#define "#size 5"
+#define "#hp +7"
+#define "#prot +3"
+#define "#def -2"
+#define "#mapmove 14"
+#define "#ap 12"
+#define "#gcost +25"
+#define "#ressize 4"
+#define "#enc 3"
+#define "#rcost +4"
+#define "#fireres +20"
+#define "#heat +6"
+#define "#firepower 1"
+#define "#weapon 48"
+#define "#animal"
+#tag "animal worm"
+#define "#maxage *0.75"
+#define "#lanceok"
+#enditem
+
+#newitem
+#id "coils_legs"
+#gameid -1
+#sprite /graphics/abysian/hellbred/hellbredlegs4.png
+#offsetx 1
+#offsety -1
+#needs pants nopants
+#needs shadow shadow4
+#define "#size 5"
+#define "#hp +12"
+#define "#prot +4"
+#define "#str +2"
+#define "#def -2"
+#define "#mapmove 14"
+#define "#ap 7"
+#define "#gcost +20"
+#define "#ressize 4"
+#define "#enc 4"
+#define "#rcost +4"
+#define "#coldblood"
+#define "#amphibian"
+#define "#swimming"
+#define "#poisonres +10"
+#tag "animal worm"
+#define "#maxage *1.1"
+#define "#lanceok"
+#enditem
+
+#newitem
+#id "scorpion_legs"
+#gameid -1
+#sprite /graphics/abysian/hellbred/hellbredlegs5.png
+#offsetx 3
+#offsety 3
+#needs pants nopants
+#needs shadow shadow5
+#define "#size 6"
+#define "#hp +19"
+#define "#prot +7"
+#define "#str +2"
+#define "#def -3"
+#define "#mapmove 8"
+#define "#ap 8"
+#define "#gcost +32"
+#define "#ressize 4"
+#define "#enc 2"
+#define "#rcost +6"
+#define "#wastesurvival"
+#define "#darkvision 100"
+#define "#poisonres +15"
+#define "#weapon 273"
+#define "#weapon 423"
+#tag "animal scorpion"
+#define "#maxage *0.8"
+#define "#lanceok"
+#enditem

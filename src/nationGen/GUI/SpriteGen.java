@@ -368,7 +368,7 @@ public class SpriteGen extends JFrame {
 
       // Race
       raceposepanel.add(new JLabel("Race:"));
-      for (Race r : assets.races) {
+      for (Race r : assets.races.getAllValues()) {
         racecombo.addItem(r);
       }
       racecombo.addItemListener(e -> {

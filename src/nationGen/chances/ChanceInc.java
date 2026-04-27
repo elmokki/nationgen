@@ -13,6 +13,10 @@ public class ChanceInc extends ConditionalModifier<ChanceIncData> {
     super(condition, modificationAmount);
   }
 
+  public ChanceInc(ChanceInc chanceInc) {
+    super(chanceInc);
+  }
+
   public static ChanceInc from(Args args) {
     ArgParser parser = args.parse();
     Arg mod = parser.last("chance modification");

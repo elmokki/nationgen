@@ -1,0 +1,41 @@
+
+#newitem
+#id wing_pair
+#gameid -1
+#needstype left_back_arm wing_pair
+#enditem
+
+#newitem
+#id draconian_wing_shield
+#gameid draconian_wing_shield
+#type draconian
+#needs left_back_arm draconian_wing_left
+#chanceinc slotname right_back_arm draconian_wing_right *0
+#chanceinc slotname right_back_arm angel_wing_right *0
+#armor
+#enditem
+
+#newitem
+#id angel_wing_shield
+#gameid angel_wing_shield
+#type angel
+#command "#airshield 60"
+#needs left_back_arm angel_wing_left
+#chanceinc slotname right_back_arm draconian_wing_right *0
+#chanceinc slotname right_back_arm angel_wing_right *0
+#armor
+#enditem
+
+#newitem
+#id typhon_heads
+#gameid 491
+#type coldblooded
+#needs left_back_arm typhon
+#enditem
+
+#newitem
+#id foulspawn
+#gameid foulspawn_claw
+#type degenerate
+#needs left_back_arm foulspawn
+#enditem

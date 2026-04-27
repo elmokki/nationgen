@@ -1,6 +1,6 @@
 package nationGen.diagnostics;
 
-import com.elmokki.Dom3DB;
+import com.elmokki.NationGenDB;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -30,11 +30,11 @@ public class DataIntegrityTest {
     NationGen ng = new NationGen();
     NationGenAssets assets = ng.getAssets();
 
-    Dom3DB spells = new Dom3DB("/db/spells.csv");
+    NationGenDB spells = new NationGenDB("/db/nationgen/spells.csv");
 
     Set<String> names = new HashSet<>(spells.getColumn("name"));
     names.addAll(
-      assets.customspells.stream().map(f -> f.name).collect(Collectors.toList())
+      assets.customspells.getAllValues().stream().map(f -> f.name).collect(Collectors.toList())
     );
 
     List<String> notFound = assets.spells
@@ -124,7 +124,7 @@ public class DataIntegrityTest {
             if (!"".equals(i.sprite)) {
               String renderslot = "".equals(i.renderslot) ? slot : i.renderslot;
               if ("offhand".equals(renderslot)) {
-                renderslot = i.armor ? "offhanda" : "offhandw";
+                renderslot = i.isArmor() ? "offhanda" : "offhandw";
               }
               spriteRenderSlots.add(renderslot);
             }
@@ -189,6 +189,7 @@ public class DataIntegrityTest {
       for (Pose pose : poseList) {
         // find the first suitable race for the pose
         Optional<Race> race = assets.races
+          .getAllValues()
           .stream()
           .filter(r -> r.poses.contains(pose))
           .findFirst();

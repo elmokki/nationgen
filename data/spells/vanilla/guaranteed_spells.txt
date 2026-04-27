@@ -1,0 +1,817 @@
+--- These spells / spells sets are randomized in following way
+--- 1. handle chanceincs
+--- 2. pick a random set
+--- return to 1
+--- 
+--- Thus all sets that have a positive weight will be chosen, but if you make sets exclude other sets, they will not be picked even if they originally had a positive weight
+--- (No ways to do that as of now)
+---
+--- Some of the stuff here can also be in random spells for stuff that should occasionally be available for nearly any nation.
+--- Random spells is a better place for such stuff since that stuff is on a different quota.
+
+
+---------- Oriental
+#new
+#id "Tengus"
+#spell "Summon Konoha Tengus"
+#spell "Contact Dai Tengu"
+#spell "Summon Karasu Tengus"
+#basechance 0
+#chanceinc nationtag oriental 1
+#chanceinc hasthemetheme oriental 1
+#chanceinc random 0.5 *0
+#chanceinc spells "TC non-death spells" *0
+#end
+
+#new
+#id "TC ancestor spells"
+#spell "Call Ancestor"
+#spell "Wrath of the Ancestors"
+#basechance 0
+#chanceinc nationtag oriental 1
+#chanceinc hasthemetheme oriental 1
+#chanceinc random 0.5 *0
+#end
+
+#new
+#id "TC non-death spells"
+#spell "Call Celestial Soldiers"
+#spell "Celestial Chastisement"
+#spell "Celestial Hounds"
+#spell "Celestial Servant"
+#spell "Contact Huli Jing"
+#spell "Heavenly Fires"
+#spell "Heavenly Rivers"
+#spell "Internal Alchemy"
+#basechance 0
+#chanceinc nationtag oriental 1
+#chanceinc hasthemetheme oriental 1
+#chanceinc random 0.5 *0
+#chanceinc spells "Tengus" *0
+#chanceinc spells "Jomon Spells" *0
+#end
+
+#new
+#id "Yomi Spells"
+#spell "Ghost General"
+#spell "Summon Gozu Mezu"
+#spell "Summon Shikome"
+#spell "Summon Araburu-kami"
+#basechance 0
+#chanceinc nationtag oriental 1
+#chanceinc hasthemetheme oriental 1
+#chanceinc random 0.5 *0
+#end
+
+#new
+#id "Shinuyama Spells"
+#spell "Summon Omukade"
+#spell "Contact Jorogumo"
+#spell "Summon Okami"
+#spell "Contact Bakeneko"
+#spell "Contact Mujina"
+#spell "Contact Tanuki"
+#basechance 0
+#chanceinc nationtag oriental 1
+#chanceinc hasthemetheme oriental 1
+#chanceinc random 0.5 *0
+#end
+
+#new
+#id "Jomon Spells"
+#spell "Contact Kaijin"
+#spell "Contact Nushi"
+#spell "Summon Kappa"
+#spell "Summon Kenzoku"
+#spell "Contact Mori-no-kami"
+#spell "Contact Kitsune"
+#spell "Contact Jigami"
+#spell "Contact Yama-no-kami"
+#spell "Contact Tatsu"
+#spell "Summon Ujigami"
+#spell "Teaching Sign"
+#spell "Fear-not Sign"
+#spell "Welcome Sign"
+#spell "Earth-touching Sign"
+#spell "Meditation Sign"
+#basechance 0
+#chanceinc nationtag oriental 1
+#chanceinc hasthemetheme oriental 1
+#chanceinc random 0.5 *0
+#chanceinc spells "TC non-death spells" *0
+#end
+
+
+-- Low chance for all orientals
+-- High chance for orientals with death magic
+#new
+#id "Oni Summons"
+#spell "Summon Oni General"
+#spell "Summon Dai Oni"
+#spell "Summon Aka-Oni"
+#spell "Summon Ao-Oni"
+#basechance 0
+#chanceinc nationtag oriental 1
+#chanceinc hasthemetheme oriental 1
+#chanceinc random 0.75 *0
+#chanceinc anymagic death 1
+#chanceinc random 0.25 *0
+#chanceinc nationtag not oriental *0
+#chanceinc hasthemetheme not oriental *0
+#end
+
+- Occidental
+----------
+#new
+#id "Mictlan non-blood"
+#spell "Summon Tlaloque"
+#spell "Summon Jade Serpents"
+#spell "Summon Jaguars"
+#spell "Summon Monster Toad"
+#spell "Summon Jaguar Toads"
+#basechance 0
+#chanceinc nationtag occidental 1
+#chanceinc hasthemetheme occidental 1
+#chanceinc random 0.5 *0
+#end
+
+#new
+#id "Mictlan blood"
+#spell "Rain of Jaguars"
+#spell "Contact Onaqui"
+#spell "Bind Tzitzimitl"
+#spell "Contact Civateteo"
+#spell "Contact Tlahuelpuchi"
+#spell "Bind Jaguar Fiends"
+#spell "Bind Beast Bats"
+#basechance 0
+#chanceinc nationtag occidental 1
+#chanceinc hasthemetheme occidental 1
+#chanceinc random 0.5 *0
+#end
+
+#new
+#id "Zotz spells"
+#spell "Summon Balam"
+#spell "Break the Second Soul"
+#spell "Gift of the Second Soul"
+#spell "Break the Fourth Soul"
+#spell "Gift of the Fourth Soul"
+#spell "Break the First Soul"
+#spell "Gift of the First Soul"
+#spell "Break the Third Soul"
+#spell "Gift of the Third Soul"
+#spell "Summon Chaac"
+#basechance 0
+#chanceinc nationtag occidental 1
+#chanceinc hasthemetheme occidental 1
+#chanceinc random 0.5 *0
+#chanceinc primaryrace not zotz *0
+#end
+
+- Central
+------------------------
+
+#new
+#id "Central nature spells"
+#spell "Monster Boar"
+#spell "Awaken Hamadryad"
+#spell "Orgy"
+#spell "Call Ladon"
+#basechance 0
+#chanceinc nationtag central 1
+#chanceinc hasthemetheme central 1
+#chanceinc random 0.25 *0
+#chanceinc anymagic not nature *0
+#chanceinc primaryrace "Halfmen" *0
+#end
+
+#new
+#id "Central death spells"
+#spell "Bind Keres"
+#spell "Curse Tablet"
+#spell "Summon Hound of Twilight"
+#spell "Procession of the Underworld"
+#basechance 0
+#chanceinc nationtag central 1
+#chanceinc hasthemetheme central 1
+#chanceinc random 0.25 *0
+#chanceinc anymagic not death *0
+#chanceinc primaryrace "Halfmen" *0
+#end
+
+#new
+#id "Central earth spells"
+#spell "Sow Dragon Teeth"
+#spell "Craft Keledone"
+#spell "Summon Hound of Twilight"
+#spell "Forge Brass Bull"
+#spell "Dogs of Gold and Silver"
+-- This is needed so the above spell works properly
+#spell "Dog of Gold"
+#basechance 0
+#chanceinc nationtag central 1
+#chanceinc hasthemetheme central 1
+#chanceinc random 0.25 *0
+#chanceinc anymagic not earth *0
+#chanceinc primaryrace "Halfmen" AND hasthemetheme not advanced *0
+#end
+
+#new
+#id "Island spirits"
+#spell "Summon Hekateride"
+#spell "Summon Daktyl"
+#spell "Contact Hesperide"
+#spell "Summon Telkhine"
+#basechance 0
+#chanceinc nationtag central 1
+#chanceinc hasthemetheme central 1
+#chanceinc random 0.75 *0
+#chanceinc magic not earth AND magic not nature AND magic not fire *0
+#end
+
+#new
+#id "Central spellsongs"
+#spell "Rhapsody of the Dead"
+#spell "Rhapsody of Life"
+#basechance 0
+#chanceinc nationtag central 1
+#chanceinc hasthemetheme central 1
+#chanceinc command NOT "#spellsinger" *0
+#chanceinc magic not nature AND magic not death *0
+#end
+
+#new
+#id "Halfmen weak nature spells"
+#spell "Monster Boar"
+#spell "Awaken Hamadryad"
+#spell "Tune of Fear"
+#spell "Tune of Growth"
+#spell "Tune of Dancing Death"
+#basechance 1
+#chanceinc anymagic not nature *0
+#chanceinc primaryrace not "Halfmen" *0
+#end
+
+#new
+#id "Halfmen strong nature spells"
+#spell "Dark Slumber"
+#spell "Grow Fortress"
+#basechance 1
+#chanceinc random 0.5 OR hasthemetheme advanced *0
+#chanceinc magic not nature *0
+#chanceinc primaryrace not "Halfmen" *0
+#end
+
+- Norse
+----------
+
+#new
+#id "Norse spells (Van)"
+#spell "Awaken Draugar"
+#spell "Summon Valkyries"
+#spell "Brood of Garm"
+#spell "Summon Dwarf of the Four Directions"
+#basechance 0
+#chanceinc nationtag boreal 1
+#chanceinc hasthemetheme boreal 1
+#chanceinc primaryrace not "Van" *0
+#chanceinc random 0.25 *0
+#end
+
+#new
+#id "Norse spells (Jotun/Vaetti)"
+#spell "Awaken Jotun Draugar"
+#spell "Brood of Garm"
+#spell "Seith Curse"
+#spell "Illwinter"
+#spell "Summon Rimvaettir"
+#spell "Winter's Call"
+#spell "Summon Dwarf of the Four Directions"
+#basechance 0
+#chanceinc nationtag boreal 1
+#chanceinc hasthemetheme boreal 1
+#chanceinc primaryrace not "Vaetti" AND primaryrace not "Jotun" *0
+#chanceinc random 0.25 *0
+#end
+
+#new
+#id "Norse spells (generic)"
+#spell "Summon Valkyries"
+#spell "Brood of Garm"
+#spell "Summon Glosos"
+#spell "Seith Curse"
+#spell "Summon Dwarf of the Four Directions"
+#basechance 0
+#chanceinc nationtag boreal 1
+#chanceinc hasthemetheme boreal 1
+#chanceinc primaryrace "Van" OR primaryrace "Vaetti" OR primaryrace "Jotun"  *0
+#chanceinc random 0.25 *0
+#end
+
+- Abysian
+-----------
+
+#new
+#id "Abysian spells"
+#spell "Inner Furnace"
+#spell "Summon Spectral Infantry"
+#spell "Infernal Breeding"
+#basechance 0
+#chanceinc nationtag abysian 1
+#chanceinc hasthemetheme abysian 1
+#chanceinc random 0.25 *0
+#end
+
+#new
+#id "LA Abysia spells"
+#spell "Inner Furnace"
+#spell "Summon Abysian Ancestors"
+#spell "Reawaken Fossil"
+#spell "Infernal Breeding"
+#basechance 0
+#chanceinc nationtag abysian 1
+#chanceinc hasthemetheme abysian 1
+#chanceinc hasthemetheme not advanced *0.5
+#chanceinc random 0.25 *0
+#end
+
+- Enlightened
+----------
+
+#new
+#id "Divine Monkey Spells"
+#spell "Contact Yaksha"
+#spell "Contact Yakshini"
+#spell "Summon Gandharvas"
+#spell "Celestial Music"
+#spell "Summon Kinnara"
+#spell "Summon Siddha"
+#spell "Summon Rudra"
+#spell "Summon Devata"
+#spell "Summon Devala"
+#basechance 0
+#chanceinc nationtag enlightened 1 
+#chanceinc hasthemetheme enlightened 1
+#chanceinc random 0.25 *0
+#end
+
+- Caelum spells
+- Both sets are less likely without suitable path access
+--------------------------
+#new
+#id "Caelian death spells"
+#spell "Call Daevas"
+#spell "Call Jahi"
+#spell "Call Yata"
+#spell "Call Greater Daeva"
+#spell "Call of the Drugvant"
+#basechance 1
+#chanceinc anymagic not death -0.5
+#chanceinc random 0.66 -0.5
+#chanceinc random 0.15 *0
+#chanceinc primaryrace not "Caelian" *0
+#end
+
+#new
+#id "Caelian astral spells"
+#spell "Summon Yazatas"
+#spell "Call Amesha Spenta"
+#spell "Call Ahurani"
+#spell "Call Celestial Yazad"
+#spell "Call Fravashi"
+#basechance 1
+#chanceinc anymagic not astral -0.5
+#chanceinc random 0.66 -0.5
+#chanceinc random 0.15 *0
+#chanceinc primaryrace not "Caelian" *0
+#end
+
+- Pale one spells
+--------------------------
+#new
+#id "Pale one statue spells"
+#spell "Attentive Statues"
+#spell "Enliven Sentinel"
+#spell "Enliven Granite Guard"
+#spell "Enliven Marble Oracle"
+#spell "Hall of Statues"
+#basechance 0
+#chanceinc anymagic not earth *0
+#chanceinc random 0.25 *0
+#chanceinc primaryrace not "Pale one" *0
+#end
+
+#new
+#id "Pale one misc spells"
+#spell "Rhuax Pact"
+#spell "Barathrus Pact"
+#spell "Olm Conclave"
+#spell "Living Mercury"
+-- Rhuax and Barathrus Pact require site 110
+#sitereq "Roots of the Earth"
+#basechance 1
+#chanceinc random 0.25 *0
+#chanceinc anymagic not earth *0
+#chanceinc primaryrace not "Pale one" *0
+#end
+
+-- Less likely without easy access to these
+#new
+#id "Pale one death spells"
+#spell "Awaken Shard Wights"
+#spell "Summon Penumbrals"
+#spell "Summon Umbrals"
+#basechance 0.5
+#chanceinc magewithpaths earth death 0.5
+#chanceinc random 0.33 -0.5
+#chanceinc random 0.25 *0
+#chanceinc primaryrace not "Pale one" *0
+#end
+
+- Enlightened blood spells
+- Way more likely with blood access
+----------------------
+#new
+#id "Lanka spells"
+#spell "Summon Rakshasas"
+#spell "Feast of Flesh"
+#spell "Summon Asrapas"
+#spell "Summon Rakshasa Warriors"
+#spell "Summon Sandhyabalas"
+#spell "Summon Dakini"
+#spell "Summon Samanishada"
+#spell "Summon Mandeha"
+#spell "Summon Danavas"
+#spell "Host of Ganas"
+#spell "Summon Vetalas"
+#basechance 0
+#chanceinc nationtag enlightened 1 
+#chanceinc hasthemetheme enlightened 1
+#chanceinc anymagic not blood *0.5
+#chanceinc random 0.5 -0.66
+#chanceinc random 0.33 *0
+#end
+
+- C'tis
+----------------------
+#new
+#id "Lizard spells"
+#spell "Sacred Crocodile"
+#basechance 0
+#chanceinc primaryrace "Lizard" 1
+#chanceinc random 0.25 *0
+#end
+
+#new
+#id "Lizard Death spells"
+#spell "Revive Grave Consort"
+#spell "Revive Tomb Priest"
+#spell "Revive Tomb King"
+#spell "Protection of the Grave"
+#spell "Power of the Grave"
+#spell "Royal Power"
+#spell "Royal Protection"
+#spell "Power of the Reborn King"
+#basechance 0
+#chanceinc primaryrace "Lizard" 1
+#chanceinc random 0.25 *0
+#chanceinc anymagic not death *0
+#end
+
+- Atlantian
+----------------------
+#new
+#id "Send Tupilak"
+#spell "Send Tupilak"
+#basechance 0
+#chanceinc primaryrace "Atlantian" 1
+#chanceinc primaryrace "Ichtyid" 1
+#chanceinc random 0.125 *0
+#chanceinc anymagic not death *0
+#end
+
+#new
+#id "Monster Fish"
+#spell "Summon Monster Fish"
+#basechance 0
+#chanceinc primaryrace "Atlantian" 1
+#chanceinc primaryrace "Ichtyid" 1
+#chanceinc random 0.125 *0
+#chanceinc anymagic not water *0
+#end
+
+- Fae spells
+------------------------
+#new
+#id "Fae spells - Nature"
+#spell "Summon Cu Sidhe"
+#spell "Summon Bean Sidhe"
+#spell "Herd of Unicorns"
+#basechance 0
+#chanceinc primaryrace "Sidhe" 1
+#chanceinc nationtag fae 1
+#chanceinc hasthemetheme fae 1
+#chanceinc random 0.25 *0
+#chanceinc anymagic not nature *0
+#end
+
+#new
+#id "Fae spells - Air"
+#spell "Contact Baobhan Sidhe"
+#spell "Summon Morrigan"
+#spell "Dance of the Morrigans"
+#basechance 0
+#chanceinc primaryrace "Sidhe" 1
+#chanceinc nationtag fae 1
+#chanceinc hasthemetheme fae 1
+#chanceinc random 0.25 *0
+#chanceinc anymagic not air *0
+#chanceinc anymagic not death AND random 0.5 *0
+#end
+
+#new
+#id "Fae spells - Death"
+#spell "Summon Black Dogs"
+#spell "Summon Barghests"
+#spell "Summon Bean Sidhe"
+#basechance 0
+#chanceinc primaryrace "Sidhe" 1
+#chanceinc nationtag fae 1
+#chanceinc hasthemetheme fae 1
+#chanceinc random 0.25 *0
+#chanceinc anymagic not death *0
+#end
+
+#new
+#id "Fae spells - Glamour"
+#spell "Curse of Balor"
+#basechance 0
+#chanceinc primaryrace "Sidhe" 1
+#chanceinc nationtag fae 1
+#chanceinc hasthemetheme fae 1
+#chanceinc random 0.25 *0
+#chanceinc anymagic not glamour *0
+#end
+
+#new
+#id "Fae spells - Water"
+#spell "Herd of Morvarc'h"
+#basechance 0
+#chanceinc primaryrace "Sidhe" 1
+#chanceinc nationtag fae 1
+#chanceinc hasthemetheme fae 1
+#chanceinc random 0.25 *0
+#chanceinc anymagic not water *0
+#end
+
+#new
+#id "Communion Choruses - death"
+#spell "Dirge Master"
+#spell "Dirge Slave"
+#basechance 0
+#chanceinc command "#spellsinger" 10
+#chanceinc primaryrace "Sidhe" AND random 0.5 OR random 0.5 *0
+#chanceinc anymagic not death *0
+#chanceinc spells "Communion Choruses - nature" *0
+#chanceinc spells "Communion Choruses - glamour" *0
+#end
+
+#new
+#id "Communion Choruses - glamour"
+#spell "Chorus Master"
+#spell "Chorus Slave"
+#basechance 0
+#chanceinc command "#spellsinger" 10
+#chanceinc anymagic not glamour *0
+#chanceinc spells "Communion Choruses - death" *0
+#end
+
+- Middle Eastern spells
+------------------------
+#new
+#id "Desert demons - blood"
+#spell "Summon Se'irim"
+#spell "Summon Shedim"
+#spell "Scapegoats"
+#basechance 0
+#chanceinc nationtag civilized 0.5
+#chanceinc hasthemetheme civilized 0.5
+#chanceinc random 0.2 *0
+#chanceinc anymagic not blood *0
+#end
+
+#new
+#id "Desert demons - nature"
+#spell "Summon Mazzikim"
+#spell "Summon Lilot"
+#basechance 0
+#chanceinc nationtag civilized 0.5
+#chanceinc hasthemetheme civilized 0.5
+#chanceinc random 0.2 *0
+#chanceinc anymagic not nature *0
+#end
+
+#new
+#id "Hebrew angels"
+#spell "Call Malakh"
+#spell "Call Hashmal"
+#spell "Call Arel"
+#spell "Call Ophan"
+#spell "Call Merkavah"
+#basechance 0
+#chanceinc nationtag civilized 0.5
+#chanceinc hasthemetheme civilized 0.5
+#chanceinc random 0.2 *0
+#chanceinc anymagic not astral *0
+#end
+
+#new
+#id "Grigori"
+#spell "Call Melqart"
+#spell "Release Lord of Civilization"
+#basechance 0
+#chanceinc nationtag civilized 0.5
+#chanceinc hasthemetheme civilized 0.5
+#chanceinc era 3 AND random 0.66 *0
+#chanceinc era 2 AND random 0.33 *0
+#chanceinc random 0.2 *0
+#chanceinc magic not blood *0
+#end
+
+#new
+#id "Death Hebrew spells"
+#spell "Memories of Stone"
+#spell "Dirge for the Dead"
+#spell "Banquet for the Dead"
+#basechance 0
+#chanceinc nationtag civilized 1
+#chanceinc hasthemetheme civilized 1
+#chanceinc era 3 AND random 0.66 *0
+#chanceinc era 2 AND random 0.33 *0
+#chanceinc random 0.2 *0
+#end
+
+#new
+#id "Strange Fire"
+#spell "Strange Fire"
+#basechance 0.5
+#chanceinc magic not astral *0
+#chanceinc magic not fire *0
+#end
+
+- Various spells
+------------------------
+#new
+#id "African spells"
+#spell "God Brood"
+#spell "Weavers of the Wood"
+-- God Brood requires site 60
+#sitereq "God Forest"
+#basechance 0
+#chanceinc nationtag austral 1
+#chanceinc hasthemetheme "primitive" 1
+#chanceinc hasthemetheme "austral" 1
+#chanceinc hasthemetheme "central" 1
+#chanceinc hasthemetheme "totemanimal" 1
+#chanceinc hasthemetheme "machakan_troops" 1
+#chanceinc hasthemetheme "pygmy_troops" 1
+#chanceinc hasthemetheme "machakan_elites" 1.5
+#chanceinc hasthemetheme "pygmy_elites" 1.5
+#chanceinc hasthemetheme "machakan_mages" 2
+#chanceinc anymagic not nature *0
+#end
+
+#new
+#id "Phaeacia"
+#spell "Call Ladon"
+#spell "Dogs of Gold and Silver"
+-- This is needed so the above spell works properly
+#spell "Dog of Gold"
+#basechance 0
+#chanceinc nationtag central 1
+#chanceinc hasthemetheme central 1
+#chanceinc hasthemetheme imperial 0.5
+#chanceinc anymagic not earth *0.75
+#chanceinc anymagic not nature *0.75
+#chanceinc anymagic not fire *0.75
+#end
+
+#new
+#id "Amazon Ancestors"
+#spell "Call Ancestor"
+#spell "Wrath of the Ancestors"
+#spell "Daughter of Typhon"
+#basechance 0
+#chanceinc hasthemetheme amazon 1
+#chanceinc anymagic not nature *0
+#chanceinc anymagic not death *0
+#end
+
+#new
+#id "Greek Nature"
+#spell "Orgy"
+#spell "Gift of the Sacred Swamp"
+#spell "Awaken Hamadryad"
+#spell "Contact Lar"
+#basechance 0
+#chanceinc nationtag central 1
+#chanceinc hasthemetheme central 1
+#chanceinc hasthemetheme satyr 1
+#chanceinc hasthemetheme feral 0.25
+#chanceinc hasthemetheme amazon 0.25
+#chanceinc hasthemetheme primitive 0.25
+#chanceinc hasthemetheme primal 0.25
+#chanceinc hasthemetheme savage 0.25
+#chanceinc hasthemetheme imperial 0.5
+#chanceinc magic not nature *0
+#chanceinc magic not blood *0
+#chanceinc random 0.25 *0
+#end
+
+#new
+#id "Celtic Spells"
+#spell "Sounder of Boars"
+#spell "Contact Boar of Carnutes"
+#basechance 0
+#chanceinc hasthemetheme celtic 1
+#chanceinc hasthemetheme imperial 0.5
+#chanceinc hasthemetheme agrarian 1
+#chanceinc hasthemetheme boar 1
+#chanceinc anymagic not nature *0
+#chanceinc random 0.25 *0
+#end
+
+#new
+#id "Slavic Spells"
+#spell "Summon Simargl"
+#spell "Summon Firebird"
+#spell "Send Lady Midday"
+#spell "Contact Sirin"
+#spell "Summon Rusalka"
+#spell "Summon Likho"
+#spell "Contact Alkonost"
+#spell "Summon Zmey"
+#spell "Send Bukavac"
+#spell "Contact Gamayun"
+#spell "Contact Beregina"
+#spell "Contact Mountain Vila"
+#spell "Contact Cloud Vila"
+#spell "Contact Leshiy"
+#basechance 0
+#chanceinc hasthemetheme boreal 0.25
+#chanceinc hasthemetheme "totemanimal" 0.25
+#chanceinc hasthemetheme feudal 0.5
+#chanceinc hasthemetheme serfs 0.5
+#chanceinc hasthemetheme ice 0.25
+#chanceinc anymagic not nature *0.75
+#chanceinc anymagic not air *0.75
+#chanceinc anymagic not astral *0.75
+#chanceinc anymagic not death *0.75
+#chanceinc anymagic not water *0.75
+#end
+
+#new
+#id "Mesopotamian Spells"
+#spell "Summon Kusarikkus"
+#spell "Summon Ugallu"
+#spell "Call Anzus"
+#spell "Call Apkallu"
+#basechance 0
+#chanceinc hasthemetheme middle 1
+#chanceinc hasthemetheme ogre 0.5
+#chanceinc nationtag central 1
+#chanceinc hasthemetheme central 1
+#chanceinc anymagic not nature *0.75
+#chanceinc anymagic not earth *0.75
+#chanceinc anymagic not air *0.75
+#chanceinc anymagic not water *0.75
+#end
+
+#new
+#id "Pyrenean Spells"
+#spell "Send Aatxe"
+#spell "Summon Incubus"
+#spell "Summon Succubus"
+#basechance 0
+#chanceinc hasthemetheme feudal 0.5
+#chanceinc hasthemetheme tribal 0.5
+#chanceinc hasthemetheme blood 0.5
+#chanceinc hasthemetheme alpine 0.5
+#chanceinc hasthemetheme occidental 1
+#chanceinc anymagic not air *0.75
+#chanceinc anymagic not glamour *0.75
+#chanceinc anymagic not blood *0.75
+#end
+
+#new
+#id "Foulspawn"
+#spell "Accelerated Breeding"
+#spell "Improved Accelerated Breeding"
+#spell "Infernal Breeding"
+#basechance 0
+#chanceinc primaryrace foulspawn 1
+#chanceinc magic not nature *0
+#chanceinc magic not blood *0
+#chanceinc random 0.25 *0
+#end

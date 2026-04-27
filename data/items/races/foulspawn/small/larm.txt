@@ -1,0 +1,163 @@
+#newitem
+#id "humanoid"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm/humanoid.png
+#command "#hp +1"
+#itemslot hand +1
+#type onehand
+#type any
+#needs lhand humanoid
+#enditem
+
+#newitem
+#id "goblinoid"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm/goblinoid.png
+#command "#hp +1"
+#itemslot hand +1
+#type onehand
+#type claw
+#type any
+#needs lhand goblinoid
+#enditem
+
+#newitem
+#id "canid"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm/canid.png
+#command "#hp +1"
+#command "#str +1"
+#itemslot hand +1
+#type onehand
+#type claw
+#type any
+#needs lhand canid
+#enditem
+
+#newitem
+#id "humanoid_missile"
+#gameid -1
+#nogen
+#sprite /graphics/foulspawn/small/larm/humanoid_missile.png
+#command "#hp +1"
+#itemslot hand +1
+#type missile
+#type any
+#needs lhand humanoid_missile
+#enditem
+
+#newitem
+#id "goblinoid_missile"
+#gameid -1
+#nogen
+#sprite /graphics/foulspawn/small/larm/goblinoid_missile.png
+#command "#hp +1"
+#itemslot hand +1
+#type missile
+#type any
+#needs lhand goblinoid_missile
+#enditem
+
+#newitem
+#id "canid_missile"
+#gameid -1
+#nogen
+#sprite /graphics/foulspawn/small/larm/canid_missile.png
+#command "#hp +1"
+#command "#str +1"
+#itemslot hand +1
+#type missile
+#type any
+#needs lhand canid_missile
+#enditem
+
+#newitem
+#id "tentacloid"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm/tentacle_green.png
+#command "#hp +2"
+#command "#str -1"
+#type tentacle
+#type any
+#needs lhand none
+#enditem
+
+#newitem
+#id "tentacloid_hand"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm/tentacle_green.png
+#command "#hp +2"
+#command "#str -1"
+#itemslot hand +1
+#type tentacle_hand
+#type any
+#needs lhand none
+#enditem
+
+#newitem
+#id "fleshblob"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm/tentacle_pink.png
+#command "#hp +2"
+#command "#str -1"
+#type tentacle
+#type any
+#needs lhand none
+#enditem
+
+#newitem
+#id "fleshblob_hand"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm/tentacle_pink.png
+#command "#hp +2"
+#command "#str -1"
+#itemslot hand +1
+#type tentacle_hand
+#type any
+#needs lhand none
+#enditem
+
+#newitem
+#id "crab"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm/pincer.png
+#command "#prot +2"
+#command "#hp +1"
+#type pincer
+#type any
+#needs lhand none
+#enditem
+
+#newitem
+#id "snake"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm/snake.png
+#command "#unsurr +1"
+#command "#str -1"
+#type snake
+#type any
+#needs lhand none
+#enditem
+
+#newitem
+#id "snake_hand"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm/snake.png
+#command "#unsurr +1"
+#command "#str -1"
+#itemslot hand +1
+#type snake_hand
+#type any
+#needs lhand none
+#enditem
+
+#newitem
+#id "swan"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm/swan.png
+#command "#unsurr +1"
+#command "#str -1"
+#type swan
+#type any
+#needs lhand none
+#enditem

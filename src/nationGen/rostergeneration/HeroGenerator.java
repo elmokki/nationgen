@@ -9,7 +9,6 @@ import nationGen.chances.EntityChances;
 import nationGen.chances.ThemeInc;
 import nationGen.entities.*;
 import nationGen.magic.*;
-import nationGen.misc.Arg;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.nation.Nation;
@@ -43,7 +42,7 @@ public class HeroGenerator {
 
     // Remove upkeep
     for (Unit u : units) {
-      u.commands.add(Command.args("#gcost", "*0"));
+      u.addCommands(Command.args("#gcost", "*0"));
     }
 
     return units;
@@ -111,7 +110,7 @@ public class HeroGenerator {
     }
 
     hero.name.setType("Hero");
-    if (!multihero) hero.commands.add(new Command("#unique"));
+    if (!multihero) hero.addCommands(new Command("#unique"));
 
     return hero;
   }
@@ -162,7 +161,7 @@ public class HeroGenerator {
     mg.equipBase(hero, tier);
 
     hero.name.setType("Hero");
-    if (!multihero) hero.commands.add(new Command("#unique"));
+    if (!multihero) hero.addCommands(new Command("#unique"));
     return hero;
   }
 
@@ -262,7 +261,7 @@ public class HeroGenerator {
     Race r = null;
     while (r == null) {
       if (n.random.nextDouble() < 0.05 && assets.races.size() > 2) {
-        List<Race> races = new ArrayList<>(assets.races);
+        List<Race> races = new ArrayList<>(assets.races.getAllValues());
         races.removeAll(n.races);
         r = chandler.handleChanceIncs(races).getRandom(n.random);
 

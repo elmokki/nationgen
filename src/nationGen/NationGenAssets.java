@@ -3,16 +3,18 @@ package nationGen;
 import com.elmokki.Generic;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
-import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Flag;
 import nationGen.entities.MagicItem;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.entities.Theme;
+import nationGen.items.CustomItem;
 import nationGen.magic.MagicPattern;
 import nationGen.misc.ChanceIncHandler;
+import nationGen.misc.Command;
 import nationGen.misc.FileUtil;
 import nationGen.misc.ResourceStorage;
 import nationGen.naming.NamePart;
@@ -39,7 +41,7 @@ public class NationGenAssets {
   public ResourceStorage<Filter> descriptions = new ResourceStorage<>(
     Filter.class
   );
-  public List<Race> races = new ArrayList<>();
+  public ResourceStorage<Race> races = new ResourceStorage<>(Race.class);
   public ResourceStorage<ShapeShift> monsters = new ResourceStorage<>(
     ShapeShift.class
   );
@@ -47,7 +49,7 @@ public class NationGenAssets {
   public ResourceStorage<Filter> filters = new ResourceStorage<>(Filter.class);
   public ResourceStorage<Theme> themes = new ResourceStorage<>(Theme.class);
   public ResourceStorage<Filter> spells = new ResourceStorage<>(Filter.class);
-  public List<Filter> customspells = new ArrayList<>();
+  public ResourceStorage<Filter> customspells = new ResourceStorage<>(Filter.class);
   public ResourceStorage<NamePart> magenames = new ResourceStorage<>(
     NamePart.class
   );
@@ -57,15 +59,15 @@ public class NationGenAssets {
   public ResourceStorage<Filter> gods = new ResourceStorage<>(Filter.class);
   public ResourceStorage<Filter> miscdef = new ResourceStorage<>(Filter.class);
   public ResourceStorage<Flag> flagparts = new ResourceStorage<>(Flag.class);
-  public ResourceStorage<MagicItem> magicitems = new ResourceStorage<>(
-    MagicItem.class
-  );
+  public ResourceStorage<CustomItem> customitems = new ResourceStorage<>(CustomItem.class);
+  public ResourceStorage<MagicItem> magicitems = new ResourceStorage<>(MagicItem.class);
 
-  public List<ShapeShift> secondshapes = new ArrayList<>();
-  public List<Mount> mounts = new ArrayList<>();
-  public List<String> secondShapeMountCommands = new ArrayList<>();
-  public List<String> secondShapeNonMountCommands = new ArrayList<>();
-  public List<String> secondShapeRacePoseCommands = new ArrayList<>();
+  public ResourceStorage<ShapeShift> secondshapes = new ResourceStorage<>(ShapeShift.class);
+  public ResourceStorage<Mount> mounts = new ResourceStorage<>(Mount.class);
+
+  private List<Command> commandsInheritedByMounts = new ArrayList<>();
+  private List<Command> commandsInheritedBySecondShape = new ArrayList<>();
+  private List<Command> racePoseCommandsInheritedBySecondShape = new ArrayList<>();
 
   public void load(NationGen gen) {
     patterns.load(gen, "/data/magic/magicpatterns.txt");
@@ -75,41 +77,22 @@ public class NationGenAssets {
     poses.load(gen, "/data/poses/poses.txt");
     filters.load(gen, "/data/filters/filters.txt");
     themes.load(gen, "/data/themes/themes.txt");
-    spells.load(gen, "/data/spells/spells.txt");
-    customspells.addAll(
-      Entity.readFile(gen, "/data/spells/custom_spells.txt", Filter.class)
-    ); // ugh why you break pattern?
-
+    spells.load(gen, "/data/spells/vanilla/index.txt");
+    customspells.load(gen, "/data/spells/custom/index.txt");
     magenames.load(gen, "/data/names/magenames/magenames.txt");
     miscnames.load(gen, "/data/names/naming.txt");
     gods.load(gen, "/data/gods/gods.txt");
     miscdef.load(gen, "/data/misc/miscdef.txt");
     flagparts.load(gen, "/data/flags/flagdef.txt");
-    magicitems.load(gen, "/data/items/magicweapons.txt");
+    customitems.load(gen, "./data/items/custom/index.txt");
+    magicitems.load(gen, "/data/items/magic/index.txt");
+    races.load(gen, "./data/races/races.txt");
+    secondshapes.load(gen, "/data/shapes/secondshapes.txt");
+    mounts.load(gen, "/data/mounts/mounts.txt");
 
-    secondshapes = Entity.readFile(
-      gen,
-      "/data/shapes/secondshapes.txt",
-      ShapeShift.class
-    );
-    mounts = Entity.readFile(gen, "/data/mounts/mounts.txt", Mount.class);
+    loadCommandsCanBeInheritedByMounts("/data/mounts/mountinheritance.txt");
     loadSecondShapeInheritance("/data/shapes/secondshapeinheritance.txt");
-    loadRaces(gen, "./data/races/races.txt");
-
     initializeAllFilters();
-  }
-
-  private void loadRaces(NationGen gen, String file) {
-    for (String strLine : FileUtil.readLines(file)) {
-      List<String> args = Generic.parseArgs(strLine);
-      if (args.isEmpty()) {
-        continue;
-      }
-
-      if (args.get(0).equals("#load")) {
-        races.addAll(Entity.readFile(gen, args.get(1), Race.class));
-      }
-    }
   }
 
   /**
@@ -117,48 +100,58 @@ public class NationGenAssets {
    * @param filename
    * @return
    */
-  private int loadSecondShapeInheritance(String filename) {
-    int amount = 0;
-
+  private void loadSecondShapeInheritance(String filename) {
     for (String line : FileUtil.readLines(filename)) {
-      if (line.startsWith("-")) {
+      if (FileUtil.isLineComment(line) || line.isBlank()) {
         continue;
       }
 
+      Command inheritableCommand = Command.parse(line);
       List<String> args = Generic.parseArgs(line);
+
       if (args.isEmpty()) {
         continue;
       }
 
       switch (args.get(0)) {
         case "all":
-          secondShapeMountCommands.add(args.get(1));
-          secondShapeNonMountCommands.add(args.get(1));
-          amount++;
-          break;
-        case "mount":
-          secondShapeMountCommands.add(args.get(1));
-          amount++;
-          break;
-        case "nonmount":
-          secondShapeNonMountCommands.add(args.get(1));
-          amount++;
+          commandsInheritedBySecondShape.add(inheritableCommand);
           break;
         case "racepose":
-          secondShapeRacePoseCommands.add(args.get(1));
-          amount++;
+          racePoseCommandsInheritedBySecondShape.add(inheritableCommand);
           break;
       }
     }
+  }
 
-    return amount;
+  private void loadCommandsCanBeInheritedByMounts(String filename) {
+    for (String line : FileUtil.readLines(filename)) {
+      if (FileUtil.isLineComment(line) || line.isBlank()) {
+        continue;
+      }
+
+      Command inheritableCommand = Command.parse(line);
+      commandsInheritedByMounts.add(inheritableCommand);
+    }
+  }
+
+  public Boolean isCommandInheritableByMount(Command command) {
+    return commandsInheritedByMounts.stream().anyMatch(c -> c.contains(command));
+  }
+
+  public Boolean isCommandInheritableByShape(Command command) {
+    return commandsInheritedByMounts.stream().anyMatch(c -> c.contains(command));
+  }
+
+  public Boolean isRacePoseCommandInheritableByShape(Command command) {
+    return racePoseCommandsInheritedBySecondShape.stream().anyMatch(c -> c.contains(command));
   }
 
   /**
    * Copies any poses from each race's theme's poses into its poses list
    */
   public void addThemePoses() {
-    for (Race race : races) {
+    for (Race race : races.getAllValues()) {
       ChanceIncHandler.retrieveFilters(
         "racethemes",
         "default_racethemes",
@@ -192,9 +185,13 @@ public class NationGenAssets {
     );
 
     for (Filter f : newFilters) {
-      if (f.tags.containsName("filterdesc")) f.description = newDescriptions
+      if (f.tags.containsName("filterdesc")) {
+        f.description = newDescriptions
         .stream()
-        .filter(pf -> pf.name.equals(f.tags.getString("filterdesc").orElse("")))
+        .filter(pf -> {
+          String filterDesc = f.tags.getString("filterdesc").orElse("");
+          return pf.name.equals(filterDesc);
+        })
         .findFirst()
         .orElseThrow(() ->
           new IllegalStateException(
@@ -206,6 +203,7 @@ public class NationGenAssets {
             f.tags.getString("filterdesc").orElse("")
           )
         );
+      }
 
       if (f.tags.containsName("prev")) {
         f.prevDesc = newDescriptions
@@ -266,5 +264,19 @@ public class NationGenAssets {
     for (String s : filters.keySet()) initializeFilters(filters.get(s), s);
 
     for (String s : templates.keySet()) initializeFilters(templates.get(s), s);
+  }
+
+  public Mount getMount(String mountId) {
+    Optional<Mount> mount = this.mounts
+      .getAllValues()
+      .stream()
+      .filter(m -> m.name.equals(mountId))
+      .findFirst();
+
+    if (mount.isPresent() == false) {
+      throw new IllegalArgumentException("Mount id " + mountId + " could not be found. Make sure it's spelled correctly in the data definitions.");
+    }
+
+    return new Mount(mount.get());
   }
 }

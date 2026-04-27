@@ -5,25 +5,25 @@
 #id "oriental infantry"
 #role "infantry"
 #role "scout"
-#load basesprite /data/items/human/normal/humanbases.txt
-#load shadow /data/items/human/normal/shadow.txt
-#load hands /data/items/human/normal/humanhands.txt
-#load legs /data/items/oriental/normal/legs.txt
+#load basesprite /data/items/races/human/normal/humanbases.txt
+#load shadow /data/items/races/human/normal/shadow.txt
+#load hands /data/items/races/human/normal/humanhands.txt
+#load legs /data/items/races/oriental/normal/legs.txt
 
 
-#load armor /data/items/oriental/normal/armor.txt
+#load armor /data/items/races/oriental/normal/armor.txt
 
-#load weapon /data/items/oriental/normal/weapon.txt
-#load offhand /data/items/oriental/normal/shields.txt
-#load offhand /data/items/oriental/normal/offhand.txt
+#load weapon /data/items/races/oriental/normal/weapon.txt
+#load offhand /data/items/races/oriental/normal/shields.txt
+#load offhand /data/items/races/oriental/normal/offhand.txt
 
-#load helmet /data/items/oriental/normal/helmet.txt
+#load helmet /data/items/races/oriental/normal/helmet.txt
 
-#load cloakf /data/items/human/normal/humancloakf.txt
-#load cloakb /data/items/human/normal/humancloakb.txt
+#load cloakf /data/items/races/human/normal/humancloakf.txt
+#load cloakb /data/items/races/human/normal/humancloakb.txt
 
-#load bonusweapon /data/items/human/sacredstuff/sacredbonusweapons.txt
-#load bonusweapon /data/items/human/normal/humanbonusranged.txt
+#load bonusweapon /data/items/races/human/sacredstuff/sacredbonusweapons.txt
+#load bonusweapon /data/items/races/human/normal/humanbonusranged.txt
 #endpose
 
 -------- 2h
@@ -34,20 +34,20 @@
 
 #renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver spaulder bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
-#load basesprite /data/items/human/2h/humanbases.txt
-#load shadow /data/items/human/normal/shadow.txt
-#load hands /data/items/human/2h/humanhands.txt
-#load legs /data/items/oriental/normal/legs.txt
+#load basesprite /data/items/races/human/2h/humanbases.txt
+#load shadow /data/items/races/human/normal/shadow.txt
+#load hands /data/items/races/human/2h/humanhands.txt
+#load legs /data/items/races/oriental/normal/legs.txt
 
-#load armor /data/items/oriental/2h/armor.txt
-#load spaulder /data/items/oriental/2h/spaulder.txt
+#load armor /data/items/races/oriental/2h/armor.txt
+#load spaulder /data/items/races/oriental/2h/spaulder.txt
 
-#load weapon /data/items/oriental/2h/weapon.txt
+#load weapon /data/items/races/oriental/2h/weapon.txt
 
-#load helmet /data/items/oriental/normal/helmet.txt
+#load helmet /data/items/races/oriental/normal/helmet.txt
 
-#load cloakf /data/items/human/normal/humancloakf.txt
-#load cloakb /data/items/human/normal/humancloakb.txt
+#load cloakf /data/items/races/human/normal/humancloakf.txt
+#load cloakb /data/items/races/human/normal/humancloakb.txt
 
 
 #endpose
@@ -59,21 +59,21 @@
 #role "ranged"
 #renderorder "shadow cloakb basesprite mount shirt legs armor quiver cloakf spaulder bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
-#load basesprite /data/items/human/2h/humanbases.txt
-#load shadow /data/items/human/normal/shadow.txt
-#load hands /data/items/human/2h/humanhands.txt
-#load legs /data/items/oriental/normal/legs.txt
+#load basesprite /data/items/races/human/2h/humanbases.txt
+#load shadow /data/items/races/human/normal/shadow.txt
+#load hands /data/items/races/human/2h/humanhands.txt
+#load legs /data/items/races/oriental/normal/legs.txt
 
-#load armor /data/items/oriental/2h/armor.txt
-#load spaulder /data/items/oriental/2h/spaulder.txt
+#load armor /data/items/races/oriental/2h/armor.txt
+#load spaulder /data/items/races/oriental/2h/spaulder.txt
 
-#load weapon /data/items/human/archer/bows.txt 1 -2
-#load quiver /data/items/oriental/archer/quiver.txt
-#load bonusweapon /data/items/oriental/archer/archerweapon.txt
+#load weapon /data/items/races/human/archer/bows.txt 1 -2
+#load quiver /data/items/races/oriental/archer/quiver.txt
+#load bonusweapon /data/items/races/oriental/archer/archerweapon.txt
 
-#load helmet /data/items/oriental/normal/helmet.txt
+#load helmet /data/items/races/oriental/normal/helmet.txt
 
-#load cloakf /data/items/human/normal/humancloakf.txt
-#load cloakb /data/items/human/normal/humancloakb.txt
+#load cloakf /data/items/races/human/normal/humancloakf.txt
+#load cloakb /data/items/races/human/normal/humancloakb.txt
 #generateitem 1 bonusweapon
 #endpose

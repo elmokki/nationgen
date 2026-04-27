@@ -2,6 +2,7 @@
 --- No legs, so do not use this pose for non-robe armors.
 
 #newpose
+#id "vaetti mages and priests"
 #role "mage"
 #role "priest"
 
@@ -12,18 +13,18 @@
 #command "#weapon 543 --- Cursed slap"
 #no_free_fist
 
-#load basesprite /data/items/vaettir/normal/bases.txt
-#load shadow /data/items/vaettir/normal/shadow.txt
+#load basesprite /data/items/races/vaettir/normal/bases.txt
+#load shadow /data/items/races/vaettir/normal/shadow.txt
 
-#load hands /data/items/vaettir/normal/hands.txt
+#load hands /data/items/races/vaettir/normal/hands.txt
 
-#load cloakf /data/items/vaettir/normal/cloakf.txt
-#load cloakb /data/items/vaettir/normal/cloakb.txt
+#load cloakf /data/items/races/vaettir/normal/cloakf.txt
+#load cloakb /data/items/races/vaettir/normal/cloakb.txt
 
-#load armor /data/items/vaettir/caster/robes.txt
-#load weapon /data/items/vaettir/caster/weapon.txt
-#load helmet /data/items/vaettir/caster/helmet.txt
+#load armor /data/items/races/vaettir/caster/robes.txt
+#load weapon /data/items/races/vaettir/caster/weapon.txt
+#load helmet /data/items/races/vaettir/caster/helmet.txt
 
-#load offhand /data/items/human/caster/offhands.txt 0 4
+#load offhand /data/items/races/human/caster/offhands.txt 0 4
 
 #endpose

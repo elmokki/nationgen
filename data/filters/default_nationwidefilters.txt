@@ -1,6 +1,7 @@
 #new
 #id "poisonres5"
 #command "#poisonres +5"
+#command "#gcost *1.2"
 #description "poison resistance"
 #filterdesc "poisonres desc"
 #end
@@ -8,6 +9,7 @@
 #new
 #id "shockres5"
 #command "#shockres +5"
+#command "#gcost *1.2"
 #description "shock resistance"
 #filterdesc "shockres desc"
 #end
@@ -15,6 +17,7 @@
 #new
 #id "fireres5"
 #command "#fireres +5"
+#command "#gcost *1.2"
 #description "fire resistance"
 #filterdesc "fireres desc"
 #end
@@ -23,55 +26,61 @@
 #id "coldres5"
 #description "cold resistance"
 #command "#coldres +5"
+#command "#gcost *1.2"
 #filterdesc "coldres desc"
 #end
 
 #new
 #id "darkvision 50"
-#primarycommand "#darkvision"
-#primarycommand "#blind"
-#primarycommand "#spiritsight"
-#primarycommand "#undead"
-#primarycommand "#demon"
+#mutuallyexclusive "#darkvision"
+#mutuallyexclusive "#blind"
+#mutuallyexclusive "#spiritsight"
+#mutuallyexclusive "#undead"
+#mutuallyexclusive "#demon"
 #description "Dark vision (50)"
 #chance 0.5
 #command "#darkvision +50"
+#command "#gcost *1.1"
 #filterdesc "darkvision desc"
 #end
 
 #new
 #id "forestsurvival"
-#primarycommand "#forestsurvival"
+#mutuallyexclusive "#forestsurvival"
 #description "Forest survival"
 #chance 0.5
 #command "#forestsurvival"
+#command "#gcost *1.1"
 #filterdesc "forestsurvival desc"
 #end
 
 #new
 #id "swampsurvival"
-#primarycommand "#swampsurvival"
+#mutuallyexclusive "#swampsurvival"
 #description "Swamp survival"
 #chance 0.5
 #command "#swampsurvival"
+#command "#gcost *1.1"
 #filterdesc "swampsurvival desc"
 #end
 
 #new
 #id "wastesurvival"
-#primarycommand "#wastesurvival"
+#mutuallyexclusive "#wastesurvival"
 #description "Waste survival"
 #chance 0.5
 #command "#wastesurvival"
+#command "#gcost *1.1"
 #filterdesc "wastesurvival desc"
 #end
 
 #new
 #id "mountainsurvival"
-#primarycommand "#mountainsurvival"
+#mutuallyexclusive "#mountainsurvival"
 #description "Mountain survival"
 #chance 0.5
 #command "#mountainsurvival"
+#command "#gcost *1.1"
 #filterdesc "mountainsurvival desc"
 #end
 
@@ -80,86 +89,103 @@
 #tag "faeblood"
 #description "Fae blood"
 #chance 0.3
-#primarycommand #glamour
+#mutuallyexclusive #glamour
 #command "#mr +1"
 #command "#spellsinger"
+#command "#gcost *1.1"
 #filterdesc "faeblood desc"
+#ancestry_trait
 #end
 
 #new
-#id "strong"
-#tag "strong"
+#id "heavyweight"
+#tag "heavyweight"
 #chance 0.3
-#command "#str +1"
+#command "#hp +2"
+#command "#str +2"
+#command "#def -1"
+#command "#gcost *1.2"
 #description "Strong"
-#filterdesc "strong desc"
+#filterdesc "heavyweight desc"
 #end
 
 #new
-#id "weak"
-#tag "weak"
+#id "lightweight"
+#tag "lightweight"
 #chance 0.15
 #command "#str -1"
-#filterdesc "weak desc"
+#command "#att +1"
+#command "#def +1"
+#command "#ap +4"
+#command "#gcost *1.2"
+#filterdesc "lightweight desc"
 #end
 
 #new
 #id "stocky"
 #tag "stocky"
 #chance 0.3
-#primarycommand #undead
+#mutuallyexclusive #undead
 #command "#mr -1"
 #command "#enc -1"
 #command "#hp +2"
 #command "#str +1"
+#command "#gcost *1.2"
+-- Nations with units with encumbrance 1 or less won't get this
+#chanceinc "command #enc below 2 *0"
 #description "Stocky"
 #filterdesc "stocky desc"
 #end
 
 #new
-#id "clumsy"
-#tag "clumsy"
+#id "brutish"
+#tag "brutish"
 #chance 0.15
 #command "#att -1"
 #command "#def -1"
-#command "#str +1"
-#command "#hp +2"
-#filterdesc "clumsy desc"
+#command "#str +3"
+#command "#hp +3"
+#command "#gcost *1.2"
+#filterdesc "brutish desc"
 #end
 
 #new
-#id "Myopic"
+#id "myopic"
 #chance 0.3
-#primarycommand #blind
-#command "#prec -1"
+#mutuallyexclusive #blind
+#command "#prec -2"
+#command "#mor +2"
 #filterdesc "myopic desc"
 #end
 
 #new
-#id "Keen eyed"
+#id "keen eyed"
 #chance 0.3
-#primarycommand #blind
+#mutuallyexclusive #blind
 #command "#prec +1"
+#command "#patrolbonus +0.5"
+#command "#gcost *1.1"
 #filterdesc "keen eyed desc"
 #end
 
 #new
-#id "Aggressive"
+#id "aggressive"
 #chance 0.3
-#command "#att +1"
+#command "#att +2"
 #command "#def -1"
 #filterdesc "aggressive desc"
 #end
 
 #new
-#id "Gluttonous"
+#id "gluttonous"
 #chance 0.1
+#command "#hp +3"
 #command "#supplybonus -1"
 #filterdesc "gluttonous desc"
 #end
 
 #new
-#id "Cowardly"
+#id "cowardly"
 #chance 0.3
 #command "#mor -1"
 #command "#def +1"
@@ -167,7 +193,7 @@
 #end
 
 #new
-#id "Brave"
+#id "brave"
 #chance 0.3
 #command "#mor +1"
 #description "Brave"
@@ -175,17 +201,18 @@
 #end
 
 #new
-#id "Quick"
+#id "quick"
 #chance 0.1
 #command "#ap +4"
 #filterdesc "quick desc"
 #end
 
 #new
-#id "Sickly"
+#id "sickly"
 #chance 0.015
-#primarycommand "#heal"
+#mutuallyexclusive "#heal"
 #command "#startaff +10"
+#command "#rpcost *0.8"
 #description "Sick"
 #filterdesc "sickly desc"
 #end
@@ -193,8 +220,8 @@
 #new
 #id "coldvuln"
 #chance 0.05
-#command "#coldres -3"
-#command "#fireres +3"
+#command "#coldres -5"
+#command "#fireres +5"
 #chanceinc nationcommand #idealcold below 0 *0
 #filterdesc "coldvuln desc"
 #end
@@ -202,8 +229,8 @@
 #new
 #id "firevuln"
 #chance 0.05
-#command "#coldres +3"
-#command "#fireres -3"
+#command "#coldres +5"
+#command "#fireres -5"
 #chanceinc nationcommand #idealcold above 0 *0
 #filterdesc "firevuln desc"
 #end
@@ -211,7 +238,7 @@
 #new
 #id "blind"
 #chance 0.025
-#primarycommand "#blind"
+#mutuallyexclusive "#blind"
 #command "#blind"
 #filterdesc "blind desc"
 #end
@@ -219,7 +246,7 @@
 #new
 #id "spiritsight"
 #chance 0.025
-#primarycommand "#spiritsight"
+#mutuallyexclusive "#spiritsight"
 #command "#spiritsight"
 #filterdesc "spiritsight desc"
 #end
@@ -227,7 +254,7 @@
 #new
 #id "magicbeing"
 #chance 0.0125
-#primarycommand "#magicbeing"
+#mutuallyexclusive "#magicbeing"
 #command "#magicbeing"
 #command "#mr +2"
 #filterdesc "magicbeing desc"
@@ -236,7 +263,7 @@
 #new
 #id "demonblood"
 #chance 0.0125
-#primarycommand "#demon"
+#mutuallyexclusive "#demon"
 #command "#demon"
 #command "#mr +1"
 #command "#gcost +4"
@@ -244,14 +271,17 @@
 #command "#hp +1"
 #chanceinc anymagic blood *2
 #filterdesc "demonblood desc"
+#ancestry_trait
 #end
 
 #new
 #id "pooramphibian"
 #chance 0.0
 #chanceinc "magic water 0.006125"
-#primarycommand "#pooramphibian"
-#primarycommand "#amphibian"
+#chanceinc "racetheme toadtotem +0.3"
+#chanceinc "racetheme totemanimal +0.1"
+#mutuallyexclusive "#pooramphibian"
+#mutuallyexclusive "#amphibian"
 #command "#pooramphibian"
 #theme "toadtotem"
 #theme "totemanimal"
@@ -262,8 +292,10 @@
 #id "levy"
 #chance 0.0125
 #trooponly
-#command "#gcost *0.9"
+#command "#mor -1"
+#command "#gcost *0.8"
 #command "#rcost +3"
+#command "#rpcost *0.9"
 #filterdesc "levy desc"
 #end
 
@@ -271,7 +303,11 @@
 #id "warriorculture"
 #chance 0.0125
 #trooponly
-#command "#gcost *1.1"
+#command "#mor +1"
+#command "#str +1"
+#command "#att +1"
+#command "#gcost *1.2"
+#command "#rpcost *1.1"
 #command "#rcost -3"
 #filterdesc "warriorculture desc"
 #end
@@ -282,34 +318,39 @@
 #commanderonly
 #command "#gcost *1.2"
 #command "#rcost +4"
+#command "#rpcost +4"
 #command "#mor +1"
 #command "#def +1"
 #command "#att +1"
 #command "#prec +1"
+#command "#mapmove +2"
 #filterdesc "professional desc"
 #end
 
 #new
-#id "Hardy"
+#id "hardy"
 #chance 0.05
 #command "#woundfend +1"
+#command "#gcost *1.1"
 #filterdesc "hardy desc"
 #end
 
 #new
-#id "Resilient"
+#id "resilient"
 #chance 0.05
-#primarycommand #demon
-#primarycommand #undead
-#command "#diseaseres 25"
+#mutuallyexclusive #demon
+#mutuallyexclusive #undead
+#command "#diseaseres 50"
+#command "#gcost *1.1"
 #filterdesc "resilient desc"
 #end
 
 #new
-#id "Toxic"
+#id "toxic"
 #chance 0.025
 #nocommand #poisonskin
 #command "#poisonskin 20"
+#command "#gcost *1.2"
 #description "Toxic flesh"
 #filterdesc "toxic desc"
 #end
@@ -318,6 +359,8 @@
 #id "thickskin"
 #chance 0.025
 #command "#prot +2"
+#command "#gcost *1.2"
+#command "#rpcost *1.2"
 #description "Thick skinned"
 #filterdesc "thickskin desc"
 #end
@@ -325,20 +368,12 @@
 #new
 #id "golem"
 #chance 0.00625
-#primarycommand "#stonebeing"
+#mutuallyexclusive "#stonebeing"
 #command "#stonebeing"
 #command "#ap -4"
-#command "#prot +4"
-#filterdesc "golem desc"
-#end
-
-#new
-#id "golem"
-#chance 0.00625
-#primarycommand "#stonebeing"
-#command "#stonebeing"
-#command "#ap -2"
-#command "#prot +2"
+#command "#prot +3"
+#command "#rcost *1.2"
+#command "#rpcost *1.2"
 #filterdesc "golem desc"
 #end
 
@@ -346,9 +381,9 @@
 #id "maritime"
 #chance 0.05
 #commanderonly
-#primarycommand "#sailing"
+#mutuallyexclusive "#sailing"
 #command "#sailing 999 3"
-#command "#gcost *1.1"
+#command "#gcost *1.2"
 #filterdesc "maritime desc"
 #end
 
@@ -356,40 +391,44 @@
 #id "stealthy"
 #basechance 0.05
 #trooponly
-#primarycommand "#stealthy"
+#mutuallyexclusive "#stealthy"
 #lowenccommand "#stealthy +0"
-#lowenctreshold 2
+#lowencthreshold 2
+#command "#gcost *1.2"
+#command "#rpcost *1.2"
 #filterdesc "stealthy desc"
 #end
 
 #new
-#basechance 0.025
 #id "deathrec10"
+#basechance 0.025
 #command "#deathrec %cost10"
 #chanceinc magic death 0.075
 #filterdesc "deathrec desc"
 #end
 
 #new
-#basechance 0.05
 #id "chaosrec10"
+#basechance 0.05
 #command "#chaosrec %cost10"
 #filterdesc "chaosrec desc"
 #end
 
 #new
+#id "pride-2"
 #basechance 0
 #chanceinc "racetag not size1 0.03"
 #chanceinc "racetag giant *2"
 #chanceinc "racetag demon *2"
 #chanceinc "racetag fae *2"
-#id "pride-2"
 #command "#minsizeleader 2"
+#command "#mor +1"
 #trooponly
 #filterdesc "minsizeleader desc"
 #end
 
 #new
+#id "pride-3"
 #basechance 0
 #chanceinc "racetag size3 0.03"
 #chanceinc "racetag size4 0.03"
@@ -397,33 +436,35 @@
 #chanceinc "racetag giant *2"
 #chanceinc "racetag demon *2"
 #chanceinc "racetag fae *2"
-#id "pride-3"
 #command "#minsizeleader 3"
+#command "#mor +1"
 #trooponly
 #filterdesc "minsizeleader desc"
 #end
 
 #new
+#id "pride-4"
 #basechance 0
 #chanceinc "racetag size4 0.03"
 #chanceinc "racetag size5 0.03"
 #chanceinc "racetag giant *2"
 #chanceinc "racetag demon *2"
 #chanceinc "racetag fae *2"
-#id "pride-4"
 #command "#minsizeleader 4"
+#command "#mor +1"
 #trooponly
 #filterdesc "minsizeleader desc"
 #end
 
 #new
+#id "pride-5"
 #basechance 0
 #chanceinc "racetag size5 0.03"
 #chanceinc "racetag giant *2"
 #chanceinc "racetag demon *2"
 #chanceinc "racetag fae *2"
-#id "pride-5"
 #command "#minsizeleader 5"
+#command "#mor +1"
 #trooponly
 #filterdesc "minsizeleader desc"
 #end
@@ -431,7 +472,7 @@
 #new
 #id "cannibal"
 #chance 0.025
-#primarycommand "#corpseeater"
+#mutuallyexclusive "#corpseeater"
 #command "#corpseeater 2"
 #command "#deadhp 1"
 #command "#maxdeadhp 6"

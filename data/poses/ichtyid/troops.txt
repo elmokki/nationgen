@@ -7,17 +7,17 @@
 #role "elite"
 #renderorder "shadow weapon basesprite scales armor bonusweapon offhandw hands helmet offhanda"
 
-#load basesprite /data/items/ichtyid/bases.txt
-#load shadow /data/items/ichtyid/shadow.txt
-#load hands /data/items/ichtyid/hands.txt
-#load armor /data/items/ichtyid/armor.txt
-#load armor /data/items/ichtyid/naked.txt
-#load scales /data/items/ichtyid/scales.txt
-#load helmet /data/items/ichtyid/helmet.txt
-#load weapon /data/items/ichtyid/weapon.txt
-#load offhand /data/items/ichtyid/offhand.txt
-#load offhand /data/items/ichtyid/shield.txt
-#load bonusweapon /data/items/ichtyid/bonusrangedweapon.txt
+#load basesprite /data/items/races/ichtyid/bases.txt
+#load shadow /data/items/races/ichtyid/shadow.txt
+#load hands /data/items/races/ichtyid/hands.txt
+#load armor /data/items/races/ichtyid/armor.txt
+#load armor /data/items/races/ichtyid/naked.txt
+#load scales /data/items/races/ichtyid/scales.txt
+#load helmet /data/items/races/ichtyid/helmet.txt
+#load weapon /data/items/races/ichtyid/weapon.txt
+#load offhand /data/items/races/ichtyid/offhand.txt
+#load offhand /data/items/races/ichtyid/shield.txt
+#load bonusweapon /data/items/races/ichtyid/bonusrangedweapon.txt
 
 #generateitem 1 scales
 
@@ -27,20 +27,21 @@
 -------- scout
 
 #newpose
+#id "ichtyid scouts"
 #role "scout"
 
 #renderorder "shadow weapon basesprite scales armor bonusweapon offhandw hands helmet offhanda"
 
-#load basesprite /data/items/ichtyid/bases.txt
-#load shadow /data/items/ichtyid/shadow.txt
-#load hands /data/items/ichtyid/hands.txt
-#load armor /data/items/ichtyid/scoutarmor.txt
-#load armor /data/items/ichtyid/naked.txt
-#load scales /data/items/ichtyid/scales.txt
-#load helmet /data/items/ichtyid/scouthelmet.txt
-#load weapon /data/items/ichtyid/scoutweapon.txt
-#load offhand /data/items/ichtyid/scoutoffhand.txt
-#load bonusweapon /data/items/ichtyid/bonusrangedweapon.txt
+#load basesprite /data/items/races/ichtyid/bases.txt
+#load shadow /data/items/races/ichtyid/shadow.txt
+#load hands /data/items/races/ichtyid/hands.txt
+#load armor /data/items/races/ichtyid/scoutarmor.txt
+#load armor /data/items/races/ichtyid/naked.txt
+#load scales /data/items/races/ichtyid/scales.txt
+#load helmet /data/items/races/ichtyid/scouthelmet.txt
+#load weapon /data/items/races/ichtyid/scoutweapon.txt
+#load offhand /data/items/races/ichtyid/scoutoffhand.txt
+#load bonusweapon /data/items/races/ichtyid/bonusrangedweapon.txt
 
 #generateitem 1 scales
 
@@ -59,11 +60,11 @@
 
 #renderorder "shadow basesprite weapon scales armor bonusweapon offhandw hands helmet offhanda"
 
-#load basesprite /data/items/ichtyid/giant/bases.txt
-#load shadow /data/items/ichtyid/giant/shadow.txt
-#load hands /data/items/ichtyid/giant/hands.txt
-#load weapon /data/items/ichtyid/giant/weapon.txt
+#load basesprite /data/items/races/ichtyid/giant/bases.txt
+#load shadow /data/items/races/ichtyid/giant/shadow.txt
+#load hands /data/items/races/ichtyid/giant/hands.txt
+#load weapon /data/items/races/ichtyid/giant/weapon.txt
 
-#load extraweapon /data/items/ichtyid/giant/extraweapon.txt
+#load extraweapon /data/items/races/ichtyid/giant/extraweapon.txt
 
 #endpose

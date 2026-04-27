@@ -16,6 +16,10 @@ public class Args extends ArrayList<Arg> {
     super(args);
   }
 
+  public Args(Args args) {
+    super(args);
+  }
+
   public static Args of(Arg[] args) {
     return new Args(List.of(args));
   }

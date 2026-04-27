@@ -30,7 +30,7 @@ xcopy db "%~dp0%IMAGE%\db\" /i /s /e
 xcopy documentation "%~dp0%IMAGE%\documentation\" /i /s /e
 xcopy graphics "%~dp0%IMAGE%\graphics\" /i /s /e
 xcopy changelog.txt "%~dp0%IMAGE%\"
-xcopy forbidden_ids.txt "%~dp0%IMAGE%\"
+xcopy app.properties "%~dp0%IMAGE%\"
 xcopy settings.txt "%~dp0%IMAGE%\"
 
 goto %3

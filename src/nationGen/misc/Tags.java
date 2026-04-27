@@ -12,6 +12,12 @@ public class Tags {
 
   private HashMap<String, List<Args>> tagValues = new HashMap<>();
 
+  public Tags() {};
+
+  public Tags(Tags tags) {
+    this.tagValues = new HashMap<>(tags.tagValues);
+  }
+
   private List<Args> computeArgsList(String name) {
     return this.tagValues.computeIfAbsent(name, n -> new ArrayList<>());
   }
@@ -93,6 +99,10 @@ public class Tags {
 
   public List<Args> getAllArgs(String name) {
     return this.tagValues.getOrDefault(name, new ArrayList<>());
+  }
+
+  public List<String> getKeys() {
+    return new ArrayList<String>(this.tagValues.keySet());
   }
 
   public Stream<Arg> streamAllValues(String name) {

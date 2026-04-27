@@ -3,30 +3,31 @@
 --- mage priest
 
 #newpose
+#id "caelian mages and priests"
 #role "mage"
 #role "priest"
 
 #renderorder "shadow cloakb wings basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
-#load basesprite /data/items/caelian/normal/bases.txt
-#load shadow /data/items/caelian/normal/shadow.txt
-#load hands /data/items/caelian/normal/hands.txt
-#load wings /data/items/caelian/mage/wings-T1.txt
-#load wings /data/items/caelian/mage/wings-T2.txt
-#load wings /data/items/caelian/mage/wings-T3.txt
-#load overlay /data/items/caelian/normal/overlay.txt
+#load basesprite /data/items/races/caelian/normal/bases.txt
+#load shadow /data/items/races/caelian/normal/shadow.txt
+#load hands /data/items/races/caelian/normal/hands.txt
+#load wings /data/items/races/caelian/mage/wings-T1.txt
+#load wings /data/items/races/caelian/mage/wings-T2.txt
+#load wings /data/items/races/caelian/mage/wings-T3.txt
+#load overlay /data/items/races/caelian/normal/overlay.txt
 
-#load armor /data/items/caelian/mage/armor.txt
+#load armor /data/items/races/caelian/mage/armor.txt
 
-#load hair /data/items/human/caster/hair.txt 0 4
-#load helmet /data/items/human/caster/helmet.txt 0 4
-#load helmet /data/items/human/caster/humanspecific_helmet.txt 0 4
+#load hair /data/items/races/human/caster/hair.txt 0 4
+#load helmet /data/items/races/human/caster/helmet.txt 0 4
+#load helmet /data/items/races/human/caster/humanspecific_helmet.txt 0 4
 
-#load weapon /data/items/human/caster/weapon.txt 2 7
-#load offhand /data/items/human/caster/offhands.txt -3 2
+#load weapon /data/items/races/human/caster/weapon.txt 2 7
+#load offhand /data/items/races/human/caster/offhands.txt -3 2
 
-#load cloakf /data/items/human/normal/humancloakf.txt 0 4
-#load cloakb /data/items/human/normal/humancloakb.txt 0 4
+#load cloakf /data/items/races/human/normal/humancloakf.txt 0 4
+#load cloakb /data/items/races/human/normal/humancloakb.txt 0 4
 
 #generateitem 1 wings
 

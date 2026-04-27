@@ -11,25 +11,25 @@
 
 #renderorder "shadow  weapon cloakb mount basesprite shirt legs armor cloakf bonusweapon offhandw hands hair helmet offhanda overlay"
 
-#load basesprite /data/items/advancedhuman/mounted/bases.txt 1 -4
-#load mount /data/items/human/human_mounted/humanmounts.txt
-#load mount /data/items/human/human_mounted/humanmounts_low.txt
+#load basesprite /data/items/races/advancedhuman/mounted/bases.txt 1 -4
+#load mount /data/items/races/human/human_mounted/humanmounts.txt
+#load mount /data/items/races/human/human_mounted/humanmounts_low.txt
 
-#load cloakf /data/items/advancedhuman/mounted/cloakf.txt 1 -3
-#load cloakb /data/items/advancedhuman/mounted/cloakb.txt 1 -3
-#load hair /data/items/advancedhuman/normal/hair.txt 6 -16
+#load cloakf /data/items/races/advancedhuman/mounted/cloakf.txt 1 -3
+#load cloakb /data/items/races/advancedhuman/mounted/cloakb.txt 1 -3
+#load hair /data/items/races/advancedhuman/normal/hair.txt 6 -16
 
-#load armor /data/items/advancedhuman/mounted/armor.txt 1 -4
-#load helmet /data/items/advancedhuman/normal/helmet.txt 4 -16
+#load armor /data/items/races/advancedhuman/mounted/armor.txt 1 -4
+#load helmet /data/items/races/advancedhuman/normal/helmet.txt 4 -16
 
-#load weapon /data/items/advancedhuman/mounted/weapon.txt 4 -21
-#load weapon /data/items/human/human_mounted/cavalryweapons.txt  5 -13
-#load bonusweapon /data/items/advancedhuman/mounted/bonusranged.txt 4 -16
-#load lanceslot /data/items/human/human_mounted/lance.txt 5 -13
+#load weapon /data/items/races/advancedhuman/mounted/weapon.txt 4 -21
+#load weapon /data/items/races/human/human_mounted/cavalryweapons.txt  5 -13
+#load bonusweapon /data/items/races/advancedhuman/mounted/bonusranged.txt 4 -16
+#load lanceslot /data/items/races/human/human_mounted/lance.txt 5 -13
 
-#load offhand /data/items/advancedhuman/normal/shields.txt -2 -18
+#load offhand /data/items/races/advancedhuman/normal/shields.txt -2 -18
 
-#load overlay /data/items/human/human_mounted/mountedoverlay.txt
+#load overlay /data/items/races/human/human_mounted/mountedoverlay.txt
 
 #writeslot lanceslot
 #endpose

@@ -1,0 +1,76 @@
+#newitem
+#id "pincer"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/right_back_arms/pincer_right_back_arm.png
+#command "#gcost +6"
+#command "#prot +2"
+#command "#hp +2"
+#command "#str +1"
+#type pincer
+#type no_hand
+#needs right_back_hand pincer
+#enditem
+
+#newitem
+#id "draconian_wing_right"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/right_back_arms/draconian_wing_right.png
+#type matching_wing
+#type no_hand
+#type draconian
+#needs right_back_hand none
+#enditem
+
+#newitem
+#id "angel_wing_right"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/right_back_arms/angel_wing_right_back_arm.png
+#type matching_wing
+#type no_hand
+#type angel
+#needs right_back_hand none
+#enditem
+
+#newitem
+#id "hydra"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/right_back_arms/hydra_right_back_arm.png
+#command "#unsurr +1"
+#type coldblooded
+#type no_hand
+#needs right_back_hand none
+#enditem
+
+#newitem
+#id "typhon"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/right_back_arms/typhon_right_back_arm.png
+#command "#unsurr +1"
+#type no_hand
+#needs right_back_hand none
+#enditem
+
+#newitem
+#id "pink_tentacles"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/right_back_arms/pink_tentacles_right_back_arm.png
+#type no_hand
+#needs right_back_hand none
+#type tentacle
+#enditem
+
+#newitem
+#id "pink_prehensile_tentacles"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/right_back_arms/pink_tentacles_right_back_arm.png
+#needs right_back_hand empty
+#type prehensile_tentacle
+#enditem
+
+#newitem
+#id "foulspawn"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/right_back_arms/foulspawn_right_back_arm.png
+#type no_hand
+#needs right_back_hand none
+#enditem

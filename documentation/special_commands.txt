@@ -79,7 +79,7 @@ respectively
 #magicpriority <path> <number>
 Sets the weight of a certain magic path in mage generation. Default for all paths is 1. Works in poses as well. 
 
-#nosacreds
+#nosacreds (to be implemented)
 Races with this command will have elite troops in place of all sacred troops.
 
 #sacred<role>chance <number>
@@ -98,9 +98,9 @@ The amount of prot from equipment (calculated with natural prot 0) before gettin
 #mapmovepenaltyamount <amount>
 Amount of mapmove penalty when over encumberance. Default is 1.
 
-#lowenctreshold <number>
+#lowencthreshold <number>
 #lowenccommand <command>
-If encumberance from equipment is the number set in #lowenctreshold, command set in #lowenccommand will be added to the unit if the unit does not already have an instance of the command.
+If encumberance from equipment is the number set in #lowencthreshold, command set in #lowenccommand will be added to the unit if the unit does not already have an instance of the command.
 
 #secondaryracetroopmod <amount>
 On primary race increases/decreases the roll range of likelihood of secondary race troops (Default is 0.5, which results in 0-0.5)
@@ -206,7 +206,7 @@ Loads sacred filters from given definition set
 Loads elite filters from given definition set
 
 #magicitems <set>
-Loads magici tems (for sacreds etc) from given definition set
+Loads magic items (for sacreds etc) from given definition set
 
 #epithet_era_names <set>
 Loads epithet parts from given definition set
@@ -293,7 +293,7 @@ Loads sacred filters from given definition set
 Loads elite filters from given definition set
 
 #magicitems <set>
-Loads magici tems (for sacreds etc) from given definition set
+Loads magic items (for sacreds etc) from given definition set
 
 
 #magicpriority <path> <number>
@@ -401,8 +401,8 @@ If a montag unit category pose gets this filter, the montag units will not inher
 #type <string>
 Units/nations/whatever can have only one filter of a type.
 
-#primarycommand <command>
-When checking if we're trying to add something that won't change the unit, we only consider commands marked with #primarycommand. For example a filter giving #ethereal and #gcost +15 will trigger on an ethereal unit thanks to the gold cost changing the unit. However, if you set #primarycommand #ethereal, only #ethereal will be considered and thus an ethereal unit won't get the filter in question.
+#mutuallyexclusive <command>
+When checking if we're trying to add something that won't change the unit, we only consider commands marked with #mutuallyexclusive. For example a filter giving #ethereal and #gcost +15 will trigger on an ethereal unit thanks to the gold cost changing the unit. However, if you set #mutuallyexclusive #ethereal, only #ethereal will be considered and thus an ethereal unit won't get the filter in question.
 
 #commanderonly
 #trooponly

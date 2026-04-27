@@ -1,0 +1,65 @@
+
+#newitem
+#id "humanoid"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm_caster/humanoid.png
+#command "#hp +1"
+#itemslot hand +1
+#type onehand
+#type any
+#enditem
+
+#newitem
+#id "goblinoid"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm_caster/goblinoid.png
+#command "#hp +1"
+#itemslot hand +1
+#type onehand
+#type claw
+#type any
+#enditem
+
+#newitem
+#id "canid"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm_caster/canid.png
+#command "#hp +1"
+#command "#str +1"
+#itemslot hand +1
+#type onehand
+#type claw
+#type any
+#enditem
+
+#newitem
+#id "tentacloid"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm_caster/tentacle_green.png
+#command "#hp +2"
+#command "#str -1"
+#itemslot hand +1
+#type tentacle_hand
+#type any
+#enditem
+
+#newitem
+#id "fleshblob"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm_caster/tentacle_pink.png
+#command "#hp +2"
+#command "#str -1"
+#itemslot hand +1
+#type tentacle_hand
+#type any
+#enditem
+
+#newitem
+#id "crab"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm_caster/pincer.png
+#command "#prot +2"
+#command "#hp +1"
+#type pincer
+#type any
+#enditem

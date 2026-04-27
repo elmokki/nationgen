@@ -23,7 +23,7 @@ public class NoUnitOfRaceRestriction
     this.assets = assets;
     this.comboboxlabel = "Units to match:";
     
-    assets.races.stream()
+    assets.races.getAllValues().stream()
       .sorted(Comparator.comparing(Race::getName))
       .forEach(r -> rmodel.addElement(r));
   

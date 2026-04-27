@@ -22,6 +22,8 @@ public class NationRestrictionFactory {
         return new NoPrimaryRaceRestriction(assets);
       case NoUnitOfRace:
         return new NoUnitOfRaceRestriction(assets);
+      case NoNationTheme:
+        return new NoNationThemeRestriction(assets);
       case PrimaryRace:
         return new PrimaryRaceRestriction(assets);
       case RecAnywhereSacreds:

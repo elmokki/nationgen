@@ -1,0 +1,213 @@
+#newitem
+#id "humanoid"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_arms/humanoid_left_arm.png
+#command "#gcost +3"
+#command "#hp +2"
+#command "#str +2"
+#needstype left_hand left_hand_slot
+#type humanoid
+#enditem
+
+#newitem
+#id "niefel"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_arms/niefel_left_arm.png
+#command "#gcost +5"
+#command "#hp +5"
+#command "#str +2"
+#needstype left_hand left_hand_slot
+#type niefel
+#type humanoid
+#theme boreal
+#enditem
+
+#newitem
+#id "giant"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_arms/giant_left_arm.png
+#command "#gcost +10"
+#command "#hp +8"
+#command "#str +4"
+#needs left_hand empty
+#type humanoid
+#enditem
+
+#newitem
+#id "gigante"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_arms/gigante_left_arm.png
+#command "#gcost +10"
+#command "#hp +3"
+#command "#str +5"
+#needs left_hand empty
+#type humanoid
+#enditem
+
+#newitem
+#id "hydra_heads"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_arms/hydra_heads_left_arm.png
+#command "#gcost +15"
+#command "#att +1"
+#command "#regeneration +5"
+#command "#unsurr +1"
+#needs left_hand none
+#type coldblooded
+#enditem
+
+#newitem
+#id "pale_one_boulder"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_arms/pale_one_boulder_left_arm.png
+#command "#gcost +10"
+#command "#str +2"
+#command "#siegebonus +5"
+#needs left_hand none
+#type coldblooded
+#enditem
+
+#newitem
+#id "cyclops"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_arms/cyclops_left_arm.png
+#command "#gcost +10"
+#command "#str +2"
+#command "#fireres +3"
+#needs left_hand empty
+#type humanoid
+#enditem
+
+#newitem
+#id "djinn"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_arms/djinn_left_arm.png
+#command "#gcost +15"
+#command "#str +2"
+#command "#fireres +5"
+#needs left_hand empty
+#type humanoid
+#enditem
+
+#newitem
+#id "carrion"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_arms/carrion_left_arm.png
+#command "#gcost +10"
+#command "#str +1"
+#command "#plant"
+#needs left_hand none
+#type undead
+#enditem
+
+#newitem
+#id "typhon"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_arms/typhon_left_arm.png
+#command "#gcost +20"
+#command "#str +1"
+#command "#att +1"
+#command "#regeneration +3"
+#command "#fireres -3"
+#command "#unsurr +1"
+#needs left_hand none
+#type coldblooded
+#enditem
+
+#newitem
+#id "foulspawn"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_arms/foulspawn_left_arm.png
+#command "#gcost +5"
+#command "#str +2"
+#command "#att +1"
+#needs left_hand none
+#type degenerate
+#enditem
+
+#newitem
+#id "mantis"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_arms/mantis_left_arm.png
+#command "#gcost +10"
+#command "#prot +1"
+#command "#att +2"
+#command "#ap +2"
+#command "#poisonres +3"
+#needs left_hand none
+#type animal
+#enditem
+
+#newitem
+#id "scorpion"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_arms/scorpion_left_arm.png
+#command "#gcost +20"
+#command "#prot +2"
+#command "#att +1"
+#needs left_hand none
+#type animal
+#enditem
+
+#newitem
+#id "shambler"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_arms/shambler_left_arm.png
+#command "#gcost +5"
+#needs left_hand empty
+#type animal
+#enditem
+
+#newitem
+#id "blue_tentacles"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_arms/blue_tentacles_left_arm.png
+#command "#gcost +5"
+#needs left_hand none
+#type tentacle
+#enditem
+
+#newitem
+#id "blue_prehensile_tentacles"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_arms/blue_tentacles_left_arm.png
+#command "#gcost +10"
+#needs left_hand empty
+#type prehensile_tentacle
+#enditem
+
+#newitem
+#id "pink_tentacles"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_arms/pink_tentacles_left_arm.png
+#command "#gcost +5"
+#needs left_hand none
+#type tentacle
+#enditem
+
+#newitem
+#id "pink_prehensile_tentacles"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_arms/pink_tentacles_left_arm.png
+#command "#gcost +10"
+#needs left_hand empty
+#type prehensile_tentacle
+#enditem
+
+#newitem
+#id "pink_tentacle"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_arms/pink_tentacle_left_arm.png
+#command "#gcost +5"
+#needs left_hand none
+#type tentacle
+#enditem
+
+#newitem
+#id "pink_prehensile_tentacle"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_arms/pink_tentacle_left_arm.png
+#command "#gcost +10"
+#needs left_hand empty
+#type prehensile_tentacle
+#enditem

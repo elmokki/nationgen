@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
+
 import nationGen.NationGenAssets;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
@@ -136,7 +137,7 @@ public class TroopNamer {
     ) forcednames.add(u);
     alltroops.removeAll(forcednames);
     for (Unit u : forcednames) {
-      u.name.setType(
+      u.name.setForcedName(
         Generic.getAllUnitTags(u).getValue("forcedname").orElseThrow().get()
       );
     }
@@ -246,7 +247,7 @@ public class TroopNamer {
 
     for (Unit u : n.comlists.get("commanders")) {
       int tier = 0;
-      for (Command c : u.commands) {
+      for (Command c : u.getCommands()) {
         if (c.command.startsWith("#okleader")) tier++;
         else if (c.command.startsWith("#inspirational")) tier++;
         if (c.command.startsWith("#goodleader")) tier++;
@@ -294,7 +295,7 @@ public class TroopNamer {
     // Scouts
     for (Unit u : n.comlists.get("scouts")) {
       int level = 0;
-      for (Command c : u.commands) {
+      for (Command c : u.getCommands()) {
         if (c.command.startsWith("#spy")) level = 1;
         if (c.command.startsWith("#assassin")) level = 2;
 
@@ -312,10 +313,13 @@ public class TroopNamer {
   ) {
     List<NamePart> selected = new ArrayList<>();
     for (NamePart p : all) {
-      if (p.themes.contains("elite") && elite) selected.add(p);
-      if (
-        p.themes.contains("commander") && commander && !selected.contains(p)
-      ) selected.add(p);
+      if (p.themes.contains("elite") && elite) {
+        selected.add(p);
+      }
+
+      if (p.themes.contains("commander") && commander && !selected.contains(p)) {
+        selected.add(p);
+      }
 
       if (
         !p.themes.contains("elite") &&
@@ -323,7 +327,9 @@ public class TroopNamer {
         !elite &&
         !commander &&
         !selected.contains(p)
-      ) selected.add(p);
+      ) {
+        selected.add(p);
+      }
     }
 
     return selected;
@@ -417,7 +423,7 @@ public class TroopNamer {
   private void setNamePart(Unit u, NamePart part) {
     if (part.tags.containsName("prefix")) u.name.prefix = part;
     else if (part.tags.containsName("prefixprefix")) u.name.prefixprefix = part;
-    else u.name.type = part;
+    else u.name.setType(part);
   }
 
   private void setBaseNames() {
@@ -467,60 +473,71 @@ public class TroopNamer {
   }
 
   private void differentiateNames(List<Unit> units, List<NamePart> parts) {
-    for (Unit u : units) {
+    List<NamePart> allPossibleParts = this.getSuitableParts(parts, false, false);
+    List<List<NamePart>> possibleNamePartsPerUnit = new ArrayList<>();
+    units.forEach(u -> {
+      possibleNamePartsPerUnit.add(chandler.getPossibleFilters(allPossibleParts, u));
+    });
+    
+    for (int i = 0; i < units.size(); i++) {
+      Unit unit = units.get(i);
+
       // Get all units with the same name
       List<Unit> matches = new ArrayList<>();
-      for (Unit u2 : units) {
-        if (u.getName().equals(u2.getName())) {
-          matches.add(u);
+      for (Unit otherUnit : units) {
+        if (unit.getName().equals(otherUnit.getName())) {
+          matches.add(unit);
         }
       }
 
       // If we found more than one, we should try changing the names
       if (matches.size() > 1) {
-        List<NamePart> possibleParts =
-          this.getSuitableParts(parts, false, false);
-        possibleParts = chandler.getPossibleFilters(possibleParts, u);
+        List<NamePart> unitPossibleParts = new ArrayList<>(possibleNamePartsPerUnit.get(i));
 
         // Remove all parts that don't help differentiating at all
-        List<NamePart> pointlessParts = getPointlessParts(possibleParts, u);
+        List<NamePart> pointlessParts = getPointlessParts(unitPossibleParts, unit);
 
-        for (NamePart p : possibleParts) {
+        for (NamePart p : unitPossibleParts) {
           int samematches = 1;
           int sames = 1;
-          for (Unit u2 : units) {
-            if (u2 == u) continue;
 
-            List<NamePart> possibleParts2 =
-              this.getSuitableParts(parts, false, false);
-            possibleParts2 = chandler.getPossibleFilters(possibleParts2, u2);
+          for (int j = 0; j < units.size(); j++) {
+            Unit otherUnit = units.get(j);
 
-            if (possibleParts2.contains(p)) {
+            if (otherUnit == unit) {
+              continue;
+            }
+
+            List<NamePart> otherUnitPossibleParts = new ArrayList<>(possibleNamePartsPerUnit.get(j));
+
+            if (otherUnitPossibleParts.contains(p)) {
               sames++;
-              if (matches.contains(u2)) samematches++;
+
+              if (matches.contains(otherUnit)) {
+                samematches++;
+              }
             }
           }
 
-          if (
-            samematches == matches.size() || sames > matches.size() + 2
-          ) pointlessParts.add(p);
+          if (samematches == matches.size() || sames > matches.size() + 2) {
+            pointlessParts.add(p);
+          }
         }
 
-        possibleParts.removeAll(pointlessParts);
-        possibleParts.removeAll(u.name.getAsNamePartList());
+        unitPossibleParts.removeAll(pointlessParts);
+        unitPossibleParts.removeAll(unit.name.getAsNamePartList());
 
         // If we have possible parts, set one.
-        if (possibleParts.size() > 0) {
-          NamePart p = chandler.getRandom(possibleParts, u);
+        if (unitPossibleParts.size() > 0) {
+          NamePart p = chandler.getRandom(unitPossibleParts, unit);
 
-          for (Unit u2 : units) {
-            List<NamePart> possibleParts2 =
-              this.getSuitableParts(parts, false, false);
-            possibleParts2 = chandler.getPossibleFilters(possibleParts2, u2);
-            possibleParts2.removeAll(getPointlessParts(possibleParts2, u2));
+          for (int j = 0; j < units.size(); j++) {
+            Unit otherUnit = units.get(j);
+            List<NamePart> otherUnitPossibleParts = new ArrayList<>(possibleNamePartsPerUnit.get(j));
+            otherUnitPossibleParts.removeAll(getPointlessParts(otherUnitPossibleParts, otherUnit));
 
-            if (possibleParts2.contains(p)) {
-              setNamePart(u2, p);
+            if (otherUnitPossibleParts.contains(p)) {
+              setNamePart(otherUnit, p);
             }
           }
         }

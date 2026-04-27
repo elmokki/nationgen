@@ -3,7 +3,6 @@ package nationGen.restrictions;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import javax.swing.JButton;
@@ -23,7 +22,7 @@ import javax.swing.event.DocumentListener;
  */
 public abstract class TwoListRestrictionWithComboBox<E, F>
   extends TwoListRestriction<E>
-  implements ActionListener, ItemListener {
+  implements ItemListener {
 
   public TwoListRestrictionWithComboBox(String text, String name) {
     super(text, name);

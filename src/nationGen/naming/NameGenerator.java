@@ -1,6 +1,6 @@
 package nationGen.naming;
 
-import com.elmokki.Dom3DB;
+import com.elmokki.NationGenDB;
 import com.elmokki.Generic;
 import java.util.ArrayList;
 import java.util.List;
@@ -93,7 +93,7 @@ public class NameGenerator {
     }
   }
 
-  public void fillSiteBlackList(Dom3DB sites) {
+  public void fillSiteBlackList(NationGenDB sites) {
     siteblacklist = sites.getColumn("name");
   }
 
@@ -295,7 +295,7 @@ public class NameGenerator {
   }
 
   public static String addPreposition(String str) {
-    if (isVowel(str.toLowerCase().charAt(0) + " ")) return "an " + str;
+    if (isVowel(str.toLowerCase().charAt(0) + "")) return "an " + str;
     else return "a " + str;
   }
 
@@ -407,6 +407,8 @@ public class NameGenerator {
       /*do nothing*/
     } else if (line.toLowerCase().endsWith("van")) {
       line = line + "ir";
+    } else if (line.toLowerCase().endsWith("us")) {
+      line = line.substring(0, line.lastIndexOf("us")) + "ii";
     } else line = line + "s";
 
     return line + end;

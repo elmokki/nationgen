@@ -55,7 +55,7 @@
 #command "#glamour"
 #command "#stealthy +0"
 #command "#gcost *1.05"
-#primarycommand #glamour
+#mutuallyexclusive #glamour
 #chanceinc "personalmagic air 2"
 #power 2
 #tag "personalmagic air"
@@ -69,7 +69,7 @@
 #command "#ethereal"
 #command "#gcost +20"
 #chanceinc "personalmagic astral 0.5"
-#primarycommand #ethereal
+#mutuallyexclusive #ethereal
 #tag "personalmagic astral"
 #filterdesc "ethereal desc"
 #power 3
@@ -80,7 +80,7 @@
 #basechance 0.33
 #command "#ethereal"
 #command "#gcost +20"
-#primarycommand #ethereal
+#mutuallyexclusive #ethereal
 #chanceinc "personalmagic astral 1"
 #tag "personalmagic astral"
 #tag "notfortier 2"

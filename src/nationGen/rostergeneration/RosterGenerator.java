@@ -1,12 +1,15 @@
 package nationGen.rostergeneration;
 
 import java.util.*;
+import java.util.stream.Collectors;
+
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
 import nationGen.chances.ChanceDistribution;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.items.Item;
+import nationGen.items.ItemProperty;
 import nationGen.misc.*;
 import nationGen.nation.Nation;
 import nationGen.rostergeneration.montagtemplates.TroopMontagTemplate;
@@ -308,9 +311,11 @@ public class RosterGenerator {
 
     // Choose templates of suitable race and role
     List<TroopTemplate> temptemplates = new ArrayList<>();
-    for (TroopTemplate t : templates) if (
-      !shouldSkipTemplate(t, isPrimaryRace, t.maxvar, race, role)
-    ) temptemplates.add(t);
+    for (TroopTemplate t : templates) {
+      if (!shouldSkipTemplate(t, isPrimaryRace, race, role)) {
+        temptemplates.add(t);
+      }
+    }
 
     // If we don't have templates or skip chance triggers, let's get a new template
 
@@ -340,7 +345,6 @@ public class RosterGenerator {
    * Ugly method for checking whether to skip, but this makes the main code clearer.
    * @param t
    * @param isPrimaryRace
-   * @param maxvarieties
    * @param race
    * @param role
    * @return
@@ -348,14 +352,13 @@ public class RosterGenerator {
   private boolean shouldSkipTemplate(
     TroopTemplate t,
     boolean isPrimaryRace,
-    int maxvarieties,
     Race race,
     String role
   ) {
     int occurances = 0;
     for (TroopTemplate t2 : templates) {
       if (
-        t.armor.id.equals(t2.armor.id) &&
+        t.armor.hasSameCustomItemName(t2.armor) &&
         Math.abs(t.template.getHP() - t2.template.getHP()) < 4 &&
         t.role.equals(t2.role) &&
         t.template.getSlot("mount") == t2.template.getSlot("mount")
@@ -395,7 +398,10 @@ public class RosterGenerator {
     Unit u = null;
     while (u == null) {
       ItemSet armors = new ItemSet();
-      for (TroopTemplate t : templates) armors.add(t.armor);
+
+      for (TroopTemplate t : templates) {
+        armors.add(t.armor);
+      }
 
       List<Pose> poses = new ArrayList<>();
       for (Pose p : getPosesWithoutMaxUnits(race.getPoses(role), race)) {
@@ -411,19 +417,26 @@ public class RosterGenerator {
       if (chandler.handleChanceIncs(race, poses).isEmpty()) {
         return null;
       }
+
       Pose p = chandler.getRandom(poses, race);
-      if (p == null) return null;
+
+      if (p == null) {
+        return null;
+      }
 
       // Remove armors that are on poses of the same type
       ItemSet pointless = new ItemSet();
       for (TroopTemplate t : templates) {
         if (t.template.pose.roles.contains(role)) {
           pointless.add(t.armor);
-          for (Item i : t.template.pose.getItems("armor")) if (
-            i.id.equals(t.armor.id) && i.isCustomIdResolved()
-          ) pointless.add(i);
+          for (Item i : t.template.pose.getItems("armor")) {
+             if (i.isDominionsEquipment() && i.hasSameCustomItemName(t.armor)) {
+              pointless.add(i);
+            }
+          }
         }
       }
+
       armors.removeAll(pointless);
       tgen.used.removeAll(pointless);
 
@@ -434,24 +447,27 @@ public class RosterGenerator {
 
       pointless.addAll(tgen.exclusions);
 
-      if (r.nextBoolean() && armors.possibleItems() > 0) tgen.unitGen.armorUnit(
-        u,
-        tgen.used,
-        pointless,
-        armors,
-        null,
-        false
-      );
-      else tgen.unitGen.armorUnit(
-        u,
-        null,
-        pointless,
-        u.pose.getItems("armor"),
-        null,
-        false
-      );
-      //unitGen.handleExtraGeneration(u);
+      if (r.nextBoolean() && armors.possibleItems() > 0) {
+        tgen.unitGen.armorUnit(
+          u,
+          tgen.used,
+          pointless,
+          armors,
+          null,
+          false
+        );
+      }
 
+      else {
+        tgen.unitGen.armorUnit(
+          u,
+          null,
+          pointless,
+          u.pose.getItems("armor"),
+          null,
+          false
+        );
+      }
     }
 
     //if(u == null || armor == null) // EA20150529: The only case where this should occur is when #maxunits has been exceeded
@@ -473,14 +489,16 @@ public class RosterGenerator {
       if (
         p2.getItems("offhand") != null &&
         u.getSlot("offhand") != null &&
-        u.getSlot("offhand").armor
-      ) for (Item i : p2.getItems("offhand").filterArmor(true)) if (
-        i.id.equals(u.getSlot("offhand").id) &&
-        (!i.sprite.equals(u.getSlot("offhand").sprite) &&
-          !i.name.equals(u.getSlot("offhand").name))
-      ) {
-        if (!tgen.exclusions.contains(i)) {
-          this.tgen.exclusions.add(i);
+        u.getSlot("offhand").isArmor()
+      ) for (Item i : p2.getItems("offhand").filterArmor(true)) {
+        if (
+          i.hasSameCustomItemName(u.getSlot("offhand")) &&
+          !i.sprite.equals(u.getSlot("offhand").sprite) &&
+          !i.name.equals(u.getSlot("offhand").name)
+        ) {
+          if (!tgen.exclusions.contains(i)) {
+            this.tgen.exclusions.add(i);
+          }
         }
       }
     }
@@ -656,11 +674,11 @@ public class RosterGenerator {
   }
 
   private List<List<Unit>> sortToLists(List<Unit> templates) {
-    List<List<Unit>> lists = this.sortToListsByBasesprite(templates);
+    List<List<Unit>> lists = this.chunkByBasesprite(templates);
 
     List<List<Unit>> newlist = new ArrayList<List<Unit>>();
     for (List<Unit> mlist : lists) {
-      newlist.addAll(this.sortByArmor(mlist));
+      newlist.addAll(this.chunkByArmor(mlist));
     }
 
     lists = null;
@@ -674,9 +692,9 @@ public class RosterGenerator {
     templates.remove(0);
 
     while (templates.size() > 0) {
-      int gcost = templates.get(0).getGoldCost();
+      int gcost = templates.get(0).getGoldCost(true);
       for (int i = newlist.size() - 1; i >= 0; i--) {
-        if (gcost > newlist.get(i).getGoldCost()) {
+        if (gcost > newlist.get(i).getGoldCost(true)) {
           newlist.add(templates.get(0));
           templates.remove(0);
           break;
@@ -690,51 +708,48 @@ public class RosterGenerator {
     return newlist;
   }
 
-  private List<List<Unit>> sortByArmor(List<Unit> templates) {
-    List<List<Unit>> finallist = new ArrayList<List<Unit>>();
+  private List<List<Unit>> chunkByArmor(List<Unit> templates) {
+    String protDbColumn = ItemProperty.PROTECTION.toDBColumn();
+    List<List<Unit>> chunkedUnitsByProtection = new ArrayList<List<Unit>>();
+    List<Unit> copiedTemplates = templates
+      .stream()
+      .filter(t -> t.getSlot("armor") != null)
+      .collect(Collectors.toList());
 
-    List<Item> allArmor = new ArrayList<Item>();
-    for (Unit u : templates) if (
-      !allArmor.contains(u.getSlot("armor"))
-    ) allArmor.add(u.getSlot("armor"));
-
-    if (
-      allArmor.size() == 0 || (allArmor.size() == 1 && allArmor.get(0) == null)
-    ) {
-      finallist.add(templates);
-      return finallist;
-    }
-
-    while (templates.size() > 0) {
-      String lowestID = allArmor.get(0).id;
-      int lowestProt = nationGen.armordb.GetInteger("" + lowestID, "body");
-      for (Item armor : allArmor) if (
-        nationGen.armordb.GetInteger(armor.id, "body") < lowestProt
-      ) {
-        lowestID = armor.id;
-        lowestProt = nationGen.armordb.GetInteger("" + lowestID, "body");
+      if (copiedTemplates.isEmpty()) {
+        chunkedUnitsByProtection.add(templates);
+        return chunkedUnitsByProtection;
       }
 
-      List<Item> foobarArmor = new ArrayList<Item>();
-      for (Item armor : allArmor) if (
-        armor.id.equals("" + lowestID)
-      ) foobarArmor.add(armor);
-      allArmor.removeAll(foobarArmor);
 
-      List<Unit> newlist = new ArrayList<Unit>();
-      for (Unit u : templates) if (
-        u.getSlot("armor").id.equals(lowestID)
-      ) newlist.add(u);
+    copiedTemplates.sort((t1, t2) -> {
+      Item armor1 = t1.getSlot("armor");
+      Integer prot1 = armor1.getIntegerFromDb(protDbColumn, 0);
 
-      templates.removeAll(newlist);
-      finallist.add(sortByGcost(newlist));
-      //System.out.println("Removing all units with " + nationGen.armordb.GetValue(lowestID, "armorname") + ", #" + newlist.size() + ". " + templates.size() + " remain.");
+      Item armor2 = t2.getSlot("armor");
+      Integer prot2 = armor2.getIntegerFromDb(protDbColumn, 0);
+
+      return prot1 - prot2;
+    });
+
+    Integer protectionIndex = copiedTemplates.getFirst().getSlot("armor").getIntegerFromDb(protDbColumn, 0);
+    chunkedUnitsByProtection.add(new ArrayList<Unit>());
+
+    for (Unit template : copiedTemplates) {
+      Integer protection = template.getSlot("armor").getIntegerFromDb(protDbColumn, 0);
+
+      if (protection > protectionIndex) {
+        protectionIndex = protection;
+        chunkedUnitsByProtection.add(new ArrayList<Unit>());
+      }
+
+      chunkedUnitsByProtection.getLast().add(template);
     }
 
-    return finallist;
+    return chunkedUnitsByProtection;
   }
 
-  private List<List<Unit>> sortToListsByBasesprite(List<Unit> templates) {
+  private List<List<Unit>> chunkByBasesprite(List<Unit> templates) {
     List<List<Unit>> troops = new ArrayList<List<Unit>>();
 
     // Sort to lists!
@@ -764,7 +779,6 @@ public class RosterGenerator {
 
       templates.removeAll(newlist);
       troops.add(newlist);
-      //System.out.println("Removing all units with " + nationGen.armordb.GetValue(lowestID, "armorname") + ", #" + newlist.size() + ". " + templates.size() + " remain.");
     }
 
     return troops;
@@ -780,7 +794,7 @@ public class RosterGenerator {
     for (Command c : u.race.unitcommands) if (c.command.equals("#hp")) hp +=
     c.args.get(0).getInt();
 
-    for (Command c : u.getSlot("basesprite").commands) if (
+    for (Command c : u.getSlot("basesprite").getCommands()) if (
       c.command.equals("#hp")
     ) {
       hp += c.args.get(0).getInt();

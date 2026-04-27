@@ -1,6 +1,6 @@
 package nationGen;
 
-import com.elmokki.Dom3DB;
+import com.elmokki.NationGenDB;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.time.Duration;
@@ -10,13 +10,14 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Properties;
 import java.util.Random;
 import java.util.concurrent.locks.ReentrantLock;
 import nationGen.Settings.SettingsType;
 import nationGen.entities.Filter;
 import nationGen.entities.Race;
-import nationGen.items.CustomItem;
-import nationGen.items.Item;
+import nationGen.ids.CustomItemsHandler;
+import nationGen.ids.IdHandler;
 import nationGen.magic.MagicPath;
 import nationGen.magic.Spell;
 import nationGen.misc.*;
@@ -25,7 +26,6 @@ import nationGen.naming.NamingHandler;
 import nationGen.naming.NationAdvancedSummarizer;
 import nationGen.nation.Nation;
 import nationGen.restrictions.NationRestriction;
-import nationGen.units.Mount;
 import nationGen.units.MountUnit;
 import nationGen.units.ShapeChangeUnit;
 import nationGen.units.ShapeShift;
@@ -33,35 +33,42 @@ import nationGen.units.Unit;
 
 public class NationGen {
 
-  public static String version = "0.12.9";
-  public static String date = "29th July 2025";
+  public static final String version = "0.13.4";
+  public static final String date = "27th April 2026";
+  public static final String appPropertiesPath = "/app.properties";
+  private static Properties appProperties;
 
   private List<NationRestriction> restrictions;
 
   private NationGenAssets assets;
 
-  public Dom3DB weapondb;
-  public Dom3DB armordb;
-  public Dom3DB units;
-  public Dom3DB sites;
+  public NationGenDB weapondb;
+  public NationGenDB armordb;
+  public NationGenDB units;
+  public NationGenDB sites;
+
+  public long seed = 0;
+  public String modname = "";
+  public boolean manyseeds = false;
 
   public Settings settings;
   private CustomItemsHandler customItemsHandler;
   private IdHandler idHandler;
 
   public List<ShapeChangeUnit> forms = new ArrayList<>();
-  public List<MountUnit> mounts = new ArrayList<>();
   private List<Spell> spellsToWrite = new ArrayList<>();
   private List<Spell> freeSpells = new ArrayList<>();
 
   private ReentrantLock pauseLock;
   private boolean shouldAbort = false;
+  private static boolean isDebug = false;
 
   private Instant start;
 
   public NationGen() {
     // For versions of this that don't need pausing, simply create a dummy lock object to be used.
     this(new ReentrantLock(), new Settings(), new ArrayList<>());
+    NationGen.appProperties = FileUtil.readProperties(NationGen.appPropertiesPath);
   }
 
   public NationGen(
@@ -72,6 +79,7 @@ public class NationGen {
     this.pauseLock = pauseLock;
     this.settings = settings;
     this.restrictions = restrictions;
+    NationGen.isDebug = settings.get(SettingsType.debug) == 1;
 
     //System.out.println("Dominions 4 NationGen version " + version + " (" + date + ")");
     //System.out.println("------------------------------------------------------------------");
@@ -79,14 +87,10 @@ public class NationGen {
     this.start = Instant.now();
 
     System.out.print("Loading Larzm42's Dom6 Mod Inspector database... ");
-    loadDom3DB();
+    loadNationGenDB();
     System.out.println("done!");
     System.out.print("Loading definitions... ");
-    customItemsHandler = new CustomItemsHandler(
-      Item.readFile(this, "./data/items/customitems.txt", CustomItem.class),
-      weapondb,
-      armordb
-    );
+    customItemsHandler = new CustomItemsHandler(this, weapondb, armordb);
     assets = new NationGenAssets();
     assets.load(this);
     //		assets.loadRaces("./data/races/races.txt", this); // ugh.  Looks like *somehow* assets is circularly depended in races.
@@ -97,10 +101,6 @@ public class NationGen {
     System.gc();
     //this.writeDebugInfo();
   }
-
-  public long seed = 0;
-  public String modname = "";
-  public boolean manyseeds = false;
 
   public void generate(int amount) {
     Random random = new Random();
@@ -132,8 +132,6 @@ public class NationGen {
 
     // Start
     idHandler = new IdHandler();
-    idHandler.loadFile("/forbidden_ids.txt");
-
     customItemsHandler.UpdateIDHandler(idHandler);
 
     if (!manyseeds) {
@@ -159,7 +157,6 @@ public class NationGen {
     int count = 0;
     int failedcount = 0;
     int totalfailed = 0;
-    boolean isDebug = settings.get(SettingsType.debug) == 1.0;
 
     while (generatedNations.size() < amount) {
       // Anyhow, a simple way to handle pausing is just to acquire a lock (which will be locked in the UI thread).
@@ -179,7 +176,7 @@ public class NationGen {
         ? seeds.get(generatedNations.size())
         : random.nextLong();
 
-      if (isDebug) {
+      if (NationGen.isInDebugMode()) {
         System.out.print(
           "- Generating nation " +
           (generatedNations.size() + 1) +
@@ -272,12 +269,13 @@ public class NationGen {
     }
 
     System.out.print("Giving ids");
+
     for (Nation n : generatedNations) {
       // units
       for (List<Unit> ul : n.unitlists.values()) {
         for (Unit u : ul) {
           if (!u.invariantMonster) {
-            u.id = idHandler.nextUnitId();
+            u.resolveId();
           }
           // Else the monster's ID was set in MonsterGen
         }
@@ -285,12 +283,12 @@ public class NationGen {
 
       for (List<Unit> ul : n.comlists.values()) {
         for (Unit u : ul) {
-          u.id = idHandler.nextUnitId();
+          u.resolveId();
         }
       }
 
       for (Unit u : n.heroes) {
-        u.id = idHandler.nextUnitId();
+        u.resolveId();
       }
 
       // sites
@@ -372,14 +370,26 @@ public class NationGen {
     modname = "";
   }
 
+  public static Properties getAppProperties() {
+    if (NationGen.appProperties == null) {
+      NationGen.appProperties = FileUtil.readProperties(NationGen.appPropertiesPath);
+    }
+
+    return NationGen.appProperties;
+  }
+
   /**
-   * Loads data from Dom3DB
+   * Loads data from NationGenDB
    */
-  private void loadDom3DB() {
-    units = new Dom3DB("/db/units.csv");
-    armordb = new Dom3DB("/db/armor.csv");
-    weapondb = new Dom3DB("/db/weapon.csv");
-    sites = new Dom3DB("/db/sites.csv");
+  private void loadNationGenDB() {
+    units = new NationGenDB("/db/nationgen/units.csv");
+    armordb = new NationGenDB("/db/nationgen/armors.csv");
+    weapondb = new NationGenDB("/db/nationgen/weapons.csv");
+    sites = new NationGenDB("/db/nationgen/sites.csv");
+  }
+
+  public int getNextUnitId() {
+    return idHandler.nextUnitId();
   }
 
   /**
@@ -405,11 +415,11 @@ public class NationGen {
 
       // check for custom spells first
       if (spell == null) {
-        for (Filter sf : assets.customspells) {
+        for (Filter sf : assets.customspells.getAllValues()) {
           if (sf.name.equals(spellName)) {
             spell = new Spell(this);
             spell.name = spellName;
-            spell.commands.addAll(sf.commands);
+            spell.addCommands(sf.getCommands());
             break;
           }
         }
@@ -418,8 +428,8 @@ public class NationGen {
       if (spell == null) {
         spell = new Spell(this);
         spell.name = spellName;
-        spell.commands.add(Command.args("#copyspell", spellName));
-        spell.commands.add(Command.args("#name", spellName + " "));
+        spell.addCommands(Command.args("#copyspell", spellName));
+        spell.addCommands(Command.args("#name", spellName + " "));
       }
 
       spell.nationids.add(id);
@@ -447,21 +457,21 @@ public class NationGen {
     // will be copied from vanilla, but their benefits will be cleared
     for (String siteId : sitesReqIds) {
       Site siteReq = new Site(siteId, true);
-      siteReq.othercommands.add(new Command("#selectsite", new Arg(siteId)));
-      siteReq.othercommands.add(new Command("#clear"));
+      siteReq.addCommands(new Command("#selectsite", new Arg(siteId)));
+      siteReq.addCommands(new Command("#clear"));
       nation.sites.add(siteReq);
     }
   }
 
   public void writeDebugInfo() {
     double total = 0;
-    for (Race r : assets.races) {
+    for (Race r : assets.races.getAllValues()) {
       if (!r.tags.containsName("secondary")) {
         total += r.basechance;
       }
     }
 
-    for (Race r : assets.races) {
+    for (Race r : assets.races.getAllValues()) {
       if (!r.tags.containsName("secondary")) {
         System.out.println(r.name + ": " + (r.basechance / total));
       }
@@ -469,10 +479,7 @@ public class NationGen {
   }
 
   private void writeDescriptions(List<Nation> nations, String modDirectory) {
-    NationAdvancedSummarizer nDesc = new NationAdvancedSummarizer(
-      armordb,
-      weapondb
-    );
+    NationAdvancedSummarizer nDesc = new NationAdvancedSummarizer();
     if (settings.get(SettingsType.advancedDescs) == 1.0) {
       nDesc.writeAdvancedDescriptionFile(nations, modDirectory);
     }
@@ -706,7 +713,7 @@ public class NationGen {
       lines.add("--- Spells:");
       for (Spell s : this.spellsToWrite) {
         lines.add("#newspell");
-        for (Command c : s.commands) {
+        for (Command c : s.getCommands()) {
           lines.add(c.toModLine());
         }
         for (int id : s.nationids) {
@@ -717,16 +724,6 @@ public class NationGen {
       }
     }
     return lines;
-  }
-
-  public boolean hasMount(Arg id) {
-    if ("".equals(id.get())) {
-      return false;
-    }
-
-    int realid = id.isNumeric() ? id.getInt() : -1;
-
-    return this.mounts.stream().anyMatch(scu -> scu.id == realid);
   }
 
   public boolean hasShapeShift(Arg id) {
@@ -749,22 +746,30 @@ public class NationGen {
   private void handleShapeshifts(Nation n) {
     List<Unit> shapeshiftUnits = n.listUnitsAndHeroes();
 
+    // Do montags first
     for (Unit u : shapeshiftUnits) {
-      for (Command c : u.commands) {
+      for (Command c : u.getCommands()) {
+        if (c.command.equals("#montag")) {
+          handleMontag(c);
+        }
+      }
+    }
+
+    // Do montag templates and shapeshifters next
+    for (Unit u : shapeshiftUnits) {
+      for (Command c : u.getCommands()) {
         if (
           c.command.contains("shape") &&
           !c.command.equals("#cleanshape") &&
           !hasShapeShift(c.args.get(0))
         ) {
-          if (
-            c.command.equals("#firstshape") && u.tags.containsName("montagunit")
-          ) {
+          if (c.command.equals("#firstshape") && u.tags.containsName("montagunit")) {
             handleMontag(c);
-          } else {
+          }
+          
+          else {
             handleShapeshift(c, u);
           }
-        } else if (c.command.equals("#montag")) {
-          handleMontag(c);
         }
       }
     }
@@ -776,7 +781,7 @@ public class NationGen {
         su.polish(this, n);
 
         // Replace command
-        su.thisForm.commands
+        su.thisForm.getCommands()
           .stream()
           .filter(c -> c.command.equals("#weapon"))
           .forEach(c -> {
@@ -792,34 +797,19 @@ public class NationGen {
       });
   }
 
-  private void handleMounts(Nation n) {
-    List<Unit> customMountUnits = n.listUnitsAndHeroes();
+  private void handleMounts(Nation nation) {
+    List<MountUnit> mountUnits = nation.getMountUnits();
 
-    for (Unit u : customMountUnits) {
-      for (Command c : u.commands) {
-        if (
-          c.command.contains("mountmnr") &&
-          !hasMount(c.args.get(0)) &&
-          !c.args.get(0).isNumeric()
-        ) {
-          if (c.command.equals("#mountmnr")) {
-            handleMount(c, u);
-          }
-        }
-      }
-    }
-
-    mounts
+    mountUnits
       .stream()
-      .filter(mu -> customMountUnits.contains(mu.otherForm))
       .forEach(mu -> {
-        mu.polish(this, n);
+        mu.polish(this, nation);
 
         // Look for custom #weapon commands defined in the mount form with a
         // non-numerical id (i.e. #command "#armor 'meteorite_barding'").
         // These are defined in customitems.txt, and this code replaces their
         // NationGen id with the generated Dominions custom id
-        mu.mountForm.commands
+        mu.mount.getCommands()
           .stream()
           .filter(c -> c.command.equals("#weapon"))
           .forEach(c -> {
@@ -838,7 +828,7 @@ public class NationGen {
         // "#armor 'meteorite_barding'"). These are defined in customitems.txt,
         // and this code replaces their NationGen id with the generated
         // Dominions custom id
-        mu.mountForm.commands
+        mu.mount.getCommands()
           .stream()
           .filter(c -> c.command.equals("#armor"))
           .forEach(c -> {
@@ -870,6 +860,7 @@ public class NationGen {
 
   private void handleShapeshift(Command c, Unit u) {
     ShapeShift shift = assets.secondshapes
+      .getAllValues()
       .stream()
       .filter(s -> s.name.equals(c.args.get(0).get()))
       .findFirst()
@@ -888,7 +879,7 @@ public class NationGen {
       shift
     );
 
-    su.id = idHandler.nextUnitId();
+    su.resolveId();
 
     switch (c.command) {
       case "#shapechange":
@@ -947,28 +938,6 @@ public class NationGen {
     forms.add(su);
   }
 
-  private void handleMount(Command c, Unit u) {
-    Mount mount = u.mountItem;
-
-    if (mount == null) {
-      throw new IllegalArgumentException(
-        "Unit with pose " +
-        u.pose.name +
-        " has mount command " +
-        c.toString() +
-        " but mount could not be found!"
-      );
-    }
-
-    MountUnit mu = new MountUnit(this, assets, u.race, u.pose, u, mount);
-
-    // Maps the mount item id (i.e. #mountmnr 'bear_mail_barding')
-    // to a custom monster id (i.e. 5001) which will be written into the mod
-    mu.id = idHandler.nextUnitId();
-    c.args.set(0, new Arg(mu.id));
-    mounts.add(mu);
-  }
-
   public static BufferedImage generateBanner(
     Color c,
     String name,
@@ -1018,5 +987,9 @@ public class NationGen {
    */
   public NationGenAssets getAssets() {
     return assets;
+  }
+
+  public static Boolean isInDebugMode() {
+    return NationGen.isDebug;
   }
 }

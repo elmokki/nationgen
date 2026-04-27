@@ -19,4 +19,10 @@ public class ConditionalModifier<T> {
     this.condition = condition;
     this.modificationAmount = modificationAmount;
   }
+
+  public ConditionalModifier(ConditionalModifier<T> conditionalModifier) {
+    this.condition = conditionalModifier.condition;
+    this.modificationAmount = conditionalModifier.modificationAmount;
+    this.source = conditionalModifier.source;
+  }
 }

@@ -15,21 +15,21 @@
 
 #renderorder "shadow cloakb basesprite armor cloakf bonusweapon weapon offhand hands hair helmet"
 
-#load basesprite /data/items/amazon/caster/amazonbases_caster.txt
-#load shadow /data/items/amazon/normal/shadow.txt
+#load basesprite /data/items/races/amazon/caster/amazonbases_caster.txt
+#load shadow /data/items/races/amazon/normal/shadow.txt
 
-#load hands /data/items/amazon/caster/amazonhands_caster.txt
+#load hands /data/items/races/amazon/caster/amazonhands_caster.txt
 
-#load armor /data/items/amazon/caster/amazonrobes.txt
-#load cloakf /data/items/human/normal/humancloakf.txt
-#load cloakf /data/items/amazon/normal/amazoncloakf.txt
-#load cloakb /data/items/human/normal/humancloakb.txt
-#load cloakb /data/items/amazon/normal/amazoncloakb.txt
+#load armor /data/items/races/amazon/caster/amazonrobes.txt
+#load cloakf /data/items/races/human/normal/humancloakf.txt
+#load cloakf /data/items/races/amazon/normal/amazoncloakf.txt
+#load cloakb /data/items/races/human/normal/humancloakb.txt
+#load cloakb /data/items/races/amazon/normal/amazoncloakb.txt
 
-#load hair /data/items/amazon/caster/amazonhair.txt
-#load weapon /data/items/human/caster/weapon.txt
-#load helmet /data/items/amazon/caster/amazonhat_caster.txt
-#load offhand /data/items/human/caster/offhands.txt
+#load hair /data/items/races/amazon/caster/amazonhair.txt
+#load weapon /data/items/races/human/caster/weapon.txt
+#load helmet /data/items/races/amazon/caster/amazonhat_caster.txt
+#load offhand /data/items/races/human/caster/offhands.txt
 
 #endpose
 
@@ -51,25 +51,25 @@
 #command "#female"
 #subraceprefix "amazon"
 
-#load basesprite /data/items/amazon/caster/amazonbases_caster.txt
-#load shadow /data/items/amazon/normal/shadow.txt
+#load basesprite /data/items/races/amazon/caster/amazonbases_caster.txt
+#load shadow /data/items/races/amazon/normal/shadow.txt
 
-#load hands /data/items/amazon/caster/amazonhands_caster.txt
+#load hands /data/items/races/amazon/caster/amazonhands_caster.txt
 
-#load armor /data/items/amazon/caster/amazonarmor_caster.txt
-#load legs /data/items/amazon/caster/amazonrobes_warrior.txt
-#load cloakf /data/items/human/normal/humancloakf.txt
-#load cloakb /data/items/human/normal/humancloakb.txt
-#load cloakf /data/items/human/normal/themedcloakf.txt
-#load cloakb /data/items/human/normal/themedcloakb.txt
+#load armor /data/items/races/amazon/caster/amazonarmor_caster.txt
+#load legs /data/items/races/amazon/caster/amazonrobes_warrior.txt
+#load cloakf /data/items/races/human/normal/humancloakf.txt
+#load cloakb /data/items/races/human/normal/humancloakb.txt
+#load cloakf /data/items/races/human/normal/themedcloakf.txt
+#load cloakb /data/items/races/human/normal/themedcloakb.txt
 
-#load hair /data/items/human/normal/humanhair.txt offsetx 0 offsety 1
-#load helmet /data/items/amazon/caster/amazonhelmet_caster.txt
-#load weapon /data/items/amazon/caster/amazonweapon_caster.txt
-#load offhand /data/items/amazon/caster/amazonoffhand_caster.txt
-#load weapon /data/items/amazon/caster/amazonweapon_caster_bronze.txt
-#load offhand /data/items/amazon/caster/amazonoffhand_caster_bronze.txt
-#load offhand /data/items/amazon/caster/amazonshield_caster.txt
+#load hair /data/items/races/human/normal/humanhair.txt offsetx 0 offsety 1
+#load helmet /data/items/races/amazon/caster/amazonhelmet_caster.txt
+#load weapon /data/items/races/amazon/caster/amazonweapon_caster.txt
+#load offhand /data/items/races/amazon/caster/amazonoffhand_caster.txt
+#load weapon /data/items/races/amazon/caster/amazonweapon_caster_bronze.txt
+#load offhand /data/items/races/amazon/caster/amazonoffhand_caster_bronze.txt
+#load offhand /data/items/races/amazon/caster/amazonshield_caster.txt
 
 #endpose
 
@@ -96,31 +96,31 @@
 
 #renderorder "shadow quiver cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
-#load basesprite /data/items/amazon/caster/amazonbases_caster.txt
-#load mount /data/items/amazon/caster/amazonmounts_caster.txt 5 -18
+#load basesprite /data/items/races/amazon/caster/amazonbases_caster.txt
+#load mount /data/items/races/amazon/caster/amazonmounts_caster.txt 5 -18
 
-#load hands /data/items/amazon/caster/amazonhands_caster.txt
+#load hands /data/items/races/amazon/caster/amazonhands_caster.txt
 
-#load cloakf /data/items/human/normal/humancloakf.txt
-#load cloakb /data/items/human/normal/humancloakb.txt
-#load hair /data/items/human/normal/humanhair.txt offsetx 0 offsety 1
+#load cloakf /data/items/races/human/normal/humancloakf.txt
+#load cloakb /data/items/races/human/normal/humancloakb.txt
+#load hair /data/items/races/human/normal/humanhair.txt offsetx 0 offsety 1
 
-#load armor /data/items/amazon/caster/amazonarmor_caster.txt
-#load helmet /data/items/amazon/caster/amazonhelmet_caster.txt
-#load legs /data/items/amazon/mounted/amazonlegs_cavalry.txt offsetx -1 offsety 0
+#load armor /data/items/races/amazon/caster/amazonarmor_caster.txt
+#load helmet /data/items/races/amazon/caster/amazonhelmet_caster.txt
+#load legs /data/items/races/amazon/mounted/amazonlegs_cavalry.txt offsetx -1 offsety 0
 
-#load weapon /data/items/human/human_mounted/humanweapon.txt
-#load weapon /data/items/human/human_mounted/humanweapon_bronze.txt
-#load weapon /data/items/human/human_mounted/cavalryweapons.txt
-#load weapon /data/items/human/human_mounted/cavalryweapons_bronze.txt
-#load bonusweapon /data/items/amazon/mounted/amazon_mounted_ranged_weapons.txt offsetx 5 offsety 4
-#load quiver /data/items/human/archer/humanbonusranged.txt 4 1
-#load lanceslot /data/items/human/human_mounted/lance.txt
+#load weapon /data/items/races/human/human_mounted/humanweapon.txt
+#load weapon /data/items/races/human/human_mounted/humanweapon_bronze.txt
+#load weapon /data/items/races/human/human_mounted/cavalryweapons.txt
+#load weapon /data/items/races/human/human_mounted/cavalryweapons_bronze.txt
+#load bonusweapon /data/items/races/amazon/mounted/amazon_mounted_ranged_weapons.txt offsetx 5 offsety 4
+#load quiver /data/items/races/human/archer/humanbonusranged.txt 4 1
+#load lanceslot /data/items/races/human/human_mounted/lance.txt
 
-#load offhand /data/items/amazon/caster/amazonshield_caster.txt
+#load offhand /data/items/races/amazon/caster/amazonshield_caster.txt
 
-#load overlay /data/items/human/human_mounted/mountedoverlay.txt
-#load overlay /data/items/amazon/mounted/amazon_overlays.txt
+#load overlay /data/items/races/human/human_mounted/mountedoverlay.txt
+#load overlay /data/items/races/amazon/mounted/amazon_overlays.txt
 
 #generateitem 0.5 bonusweapon
 
@@ -145,25 +145,25 @@
 #command "#female"
 #subraceprefix "amazon"
 
-#load basesprite /data/items/amazon/caster/amazonbases_caster.txt
-#load shadow /data/items/amazon/normal/shadow.txt
+#load basesprite /data/items/races/amazon/caster/amazonbases_caster.txt
+#load shadow /data/items/races/amazon/normal/shadow.txt
 
-#load hands /data/items/amazon/caster/amazonhands_caster.txt
+#load hands /data/items/races/amazon/caster/amazonhands_caster.txt
 
-#load armor /data/items/amazon/caster/amazonarmor_caster.txt
-#load legs /data/items/amazon/caster/amazonrobes_warrior.txt
-#load cloakf /data/items/human/normal/humancloakf.txt
-#load cloakb /data/items/human/normal/humancloakb.txt
-#load cloakf /data/items/human/normal/themedcloakf.txt
-#load cloakb /data/items/human/normal/themedcloakb.txt
+#load armor /data/items/races/amazon/caster/amazonarmor_caster.txt
+#load legs /data/items/races/amazon/caster/amazonrobes_warrior.txt
+#load cloakf /data/items/races/human/normal/humancloakf.txt
+#load cloakb /data/items/races/human/normal/humancloakb.txt
+#load cloakf /data/items/races/human/normal/themedcloakf.txt
+#load cloakb /data/items/races/human/normal/themedcloakb.txt
 
-#load hair /data/items/human/normal/humanhair.txt offsetx 0 offsety 1
-#load helmet /data/items/amazon/caster/amazonhelmet_caster.txt
-#load weapon /data/items/amazon/caster/amazonweapon_caster.txt
-#load offhand /data/items/amazon/caster/amazonoffhand_caster.txt
-#load weapon /data/items/amazon/caster/amazonweapon_caster_bronze.txt
-#load offhand /data/items/amazon/caster/amazonoffhand_caster_bronze.txt
-#load offhand /data/items/amazon/caster/amazonshield_caster.txt
+#load hair /data/items/races/human/normal/humanhair.txt offsetx 0 offsety 1
+#load helmet /data/items/races/amazon/caster/amazonhelmet_caster.txt
+#load weapon /data/items/races/amazon/caster/amazonweapon_caster.txt
+#load offhand /data/items/races/amazon/caster/amazonoffhand_caster.txt
+#load weapon /data/items/races/amazon/caster/amazonweapon_caster_bronze.txt
+#load offhand /data/items/races/amazon/caster/amazonoffhand_caster_bronze.txt
+#load offhand /data/items/races/amazon/caster/amazonshield_caster.txt
 
 #endpose
 
@@ -190,31 +190,31 @@
 
 #renderorder "shadow quiver cloakb mount basesprite shirt legs armor cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
-#load basesprite /data/items/amazon/caster/amazonbases_caster.txt
-#load mount /data/items/amazon/caster/amazonmounts_caster.txt 5 -18
+#load basesprite /data/items/races/amazon/caster/amazonbases_caster.txt
+#load mount /data/items/races/amazon/caster/amazonmounts_caster.txt 5 -18
 
-#load hands /data/items/amazon/caster/amazonhands_caster.txt
+#load hands /data/items/races/amazon/caster/amazonhands_caster.txt
 
-#load cloakf /data/items/human/normal/humancloakf.txt
-#load cloakb /data/items/human/normal/humancloakb.txt
-#load hair /data/items/human/normal/humanhair.txt offsetx 0 offsety 1
+#load cloakf /data/items/races/human/normal/humancloakf.txt
+#load cloakb /data/items/races/human/normal/humancloakb.txt
+#load hair /data/items/races/human/normal/humanhair.txt offsetx 0 offsety 1
 
-#load armor /data/items/amazon/caster/amazonarmor_caster.txt
-#load helmet /data/items/amazon/caster/amazonhelmet_caster.txt
-#load legs /data/items/amazon/mounted/amazonlegs_cavalry.txt offsetx -1 offsety 0
+#load armor /data/items/races/amazon/caster/amazonarmor_caster.txt
+#load helmet /data/items/races/amazon/caster/amazonhelmet_caster.txt
+#load legs /data/items/races/amazon/mounted/amazonlegs_cavalry.txt offsetx -1 offsety 0
 
-#load weapon /data/items/human/human_mounted/humanweapon.txt
-#load weapon /data/items/human/human_mounted/humanweapon_bronze.txt
-#load weapon /data/items/human/human_mounted/cavalryweapons.txt
-#load weapon /data/items/human/human_mounted/cavalryweapons_bronze.txt
-#load bonusweapon /data/items/amazon/mounted/amazon_mounted_ranged_weapons.txt offsetx 5 offsety 4
-#load quiver /data/items/human/archer/humanbonusranged.txt 4 1
-#load lanceslot /data/items/human/human_mounted/lance.txt
+#load weapon /data/items/races/human/human_mounted/humanweapon.txt
+#load weapon /data/items/races/human/human_mounted/humanweapon_bronze.txt
+#load weapon /data/items/races/human/human_mounted/cavalryweapons.txt
+#load weapon /data/items/races/human/human_mounted/cavalryweapons_bronze.txt
+#load bonusweapon /data/items/races/amazon/mounted/amazon_mounted_ranged_weapons.txt offsetx 5 offsety 4
+#load quiver /data/items/races/human/archer/humanbonusranged.txt 4 1
+#load lanceslot /data/items/races/human/human_mounted/lance.txt
 
-#load offhand /data/items/amazon/caster/amazonshield_caster.txt
+#load offhand /data/items/races/amazon/caster/amazonshield_caster.txt
 
-#load overlay /data/items/human/human_mounted/mountedoverlay.txt
-#load overlay /data/items/amazon/mounted/amazon_overlays.txt
+#load overlay /data/items/races/human/human_mounted/mountedoverlay.txt
+#load overlay /data/items/races/amazon/mounted/amazon_overlays.txt
 
 #generateitem 0.5 bonusweapon
 

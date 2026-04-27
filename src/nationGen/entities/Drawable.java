@@ -21,6 +21,16 @@ public class Drawable extends Filter {
     super(nationGen);
   }
 
+  public Drawable(Drawable drawable) {
+    super(drawable);
+    this.sprite = drawable.sprite;
+    this.mask = drawable.mask;
+    this.offsetx = drawable.offsetx;
+    this.offsety = drawable.offsety;
+    this.renderslot = drawable.renderslot;
+    this.renderprio = drawable.renderprio;
+  }
+
   @Override
   public void handleOwnCommand(Command str) {
     try {

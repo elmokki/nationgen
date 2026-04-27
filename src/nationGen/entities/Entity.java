@@ -18,6 +18,14 @@ public class Entity {
     this.nationGen = nationGen;
   }
 
+  public Entity(Entity entity) {
+    this.nationGen = entity.nationGen;
+    this.name = entity.name;
+    this.basechance = entity.basechance;
+    this.tags = new Tags(entity.tags);
+    this.themes = new ArrayList<>(entity.themes);
+  }
+
   public String getName() {
     return this.name;
   }

@@ -1,9 +1,11 @@
 package nationGen.unrelated;
 
-import com.elmokki.Dom3DB;
+import com.elmokki.NationGenDB;
 import com.elmokki.Generic;
 import java.util.ArrayList;
 import java.util.List;
+
+import nationGen.items.ItemProperty;
 import nationGen.misc.FileUtil;
 
 /**
@@ -16,32 +18,35 @@ public class DatabaseConverter {
 
   public static void main(String[] args) {
     // Weapons
-    Dom3DB previousWeapons = new Dom3DB("/db/weapon.csv");
-    Dom3DB weapons = new Dom3DB("/db_conversion/weapons.csv");
+    NationGenDB previousWeapons = new NationGenDB("/db/nationgen/weapons.csv");
+    NationGenDB inspectorWeapons = new NationGenDB("/db/inspector/weapons.csv");
 
-    addAttributes(weapons, "/db_conversion/attributes_by_weapon.csv");
-    addEffects(weapons);
-    weapons.removeColumn("end");
-    weapons.removeColumn("weapon");
-    weapons.setColumn("flyspr", previousWeapons.getColumnAsMap("flyspr"));
-    weapons.setColumn(
-      "animlength",
-      previousWeapons.getColumnAsMap("animlength")
+    addAttributes(inspectorWeapons, "/db/inspector/attributes_by_weapon.csv");
+    addEffects(inspectorWeapons);
+    inspectorWeapons.removeColumn("end");
+    inspectorWeapons.removeColumn("weapon");
+    inspectorWeapons.setColumn(
+      ItemProperty.FLYSPRITE.toDBColumn(),
+      previousWeapons.getColumnAsMap(ItemProperty.FLYSPRITE.toDBColumn())
     );
-    weapons.setDefinition(previousWeapons.getDefinition());
+    inspectorWeapons.setColumn(
+      ItemProperty.ANIM_LENGTH.toDBColumn(),
+      previousWeapons.getColumnAsMap(ItemProperty.ANIM_LENGTH.toDBColumn())
+    );
+    inspectorWeapons.setDefinition(previousWeapons.getDefinition());
 
-    weapons.saveToFile("/db/weapon.csv");
+    inspectorWeapons.saveToFile("/db/nationgen/weapons.csv");
 
     // Armor
-    Dom3DB previousArmor = new Dom3DB("/db/armor.csv");
-    Dom3DB armor = new Dom3DB("/db_conversion/armors.csv");
+    NationGenDB previousArmor = new NationGenDB("/db/nationgen/armors.csv");
+    NationGenDB armor = new NationGenDB("/db/inspector/armors.csv");
 
-    addAttributes(armor, "/db_conversion/attributes_by_armor.csv");
+    addAttributes(armor, "/db/inspector/attributes_by_armor.csv");
     addArmorProt(armor);
     armor.removeColumn("end");
     armor.setDefinition(previousArmor.getDefinition());
 
-    armor.saveToFile("/db/armor.csv");
+    armor.saveToFile("/db/nationgen/armors.csv");
   }
 
   /**
@@ -52,9 +57,9 @@ public class DatabaseConverter {
    *
    * @param db
    */
-  private static void addArmorProt(Dom3DB db) {
+  private static void addArmorProt(NationGenDB db) {
     List<String> fileLines = FileUtil.readLines(
-      "/db_conversion/protections_by_armor.csv"
+      "/db/inspector/protections_by_armor.csv"
     );
 
     fileLines.remove(0);
@@ -98,7 +103,7 @@ public class DatabaseConverter {
       int tempprot = (zone[2] + (zone[3] + zone[4]) / 2) / 2;
       if (tempprot > 0) prot = tempprot;
 
-      db.setValue(key, prot + "", "prot");
+      db.setValue(key, prot + "", ItemProperty.PROTECTION.toDBColumn());
     }
   }
 
@@ -107,11 +112,11 @@ public class DatabaseConverter {
    * @param db
    * @param fname
    */
-  private static void addAttributes(Dom3DB db, String fname) {
+  private static void addAttributes(NationGenDB db, String fname) {
     for (String key : db.entryMap.keySet()) {
-      db.setValue(key, "0", "ferrous");
-      db.setValue(key, "0", "flammable");
-      db.setValue(key, "0", "mmpenalty");
+      db.setValue(key, "0", ItemProperty.IS_IRON_ARMOR.toDBColumn());
+      db.setValue(key, "0", ItemProperty.IS_WOOD_ARMOR.toDBColumn());
+      db.setValue(key, "0", ItemProperty.MM_PENALTY.toDBColumn());
     }
 
     List<String> lines = FileUtil.readLines(fname);
@@ -130,16 +135,18 @@ public class DatabaseConverter {
         if (attr.equals("266") || attr.equals("267")) db.setValue(
           key,
           "1",
-          "ferrous"
+          ItemProperty.IS_IRON_ARMOR.toDBColumn()
         );
 
         if (attr.equals("268") || attr.equals("269")) db.setValue(
           key,
           "1",
-          "flammable"
+          ItemProperty.IS_WOOD_ARMOR.toDBColumn()
         );
 
-        if (attr.equals("582")) db.setValue(key, line[2], "mmpenalty");
+        if (attr.equals("582")) {
+          db.setValue(key, line[2], ItemProperty.MM_PENALTY.toDBColumn());
+        }
       }
     }
   }
@@ -148,219 +155,223 @@ public class DatabaseConverter {
    * Adds effects for weapons from effects_weapons.csv
    * @param db
    */
-  private static void addEffects(Dom3DB db) {
-    Dom3DB attr = new Dom3DB("/db_conversion/effects_weapons.csv");
+  private static void addEffects(NationGenDB db) {
+    NationGenDB attr = new NationGenDB("/db/inspector/effects_weapons.csv");
 
     for (String key : db.entryMap.keySet()) {
       String attr_id = db.GetValue(key, "effect_record_id");
 
       // Damage
-      db.setValue(key, attr.GetValue(attr_id, "raw_argument"), "dmg");
+      db.setValue(
+        key, attr.GetValue(attr_id, "raw_argument"),
+        ItemProperty.DAMAGE.toDBColumn()
+      );
 
       // Effect numbers
       int effnbr = Integer.parseInt(attr.GetValue(attr_id, "effect_number"));
-      if (effnbr == 2) db.setValue(key, "1", "dt_norm");
-      else db.setValue(key, "0", "dt_norm");
 
-      if (effnbr == 3) db.setValue(key, "1", "dt_stun");
-      else db.setValue(key, "0", "dt_stun");
+      if (effnbr == 2) db.setValue(key, "1", ItemProperty.DT_NORM.toDBColumn());
+      else db.setValue(key, "0", ItemProperty.DT_NORM.toDBColumn());
 
-      if (effnbr == 7) db.setValue(key, "1", "dt_poison");
-      else db.setValue(key, "0", "dt_poison");
+      if (effnbr == 3) db.setValue(key, "1", ItemProperty.DT_STUN.toDBColumn());
+      else db.setValue(key, "0", ItemProperty.DT_STUN.toDBColumn());
 
-      if (effnbr == 24) db.setValue(key, "1", "dt_holy");
-      else db.setValue(key, "0", "dt_holy");
+      if (effnbr == 7) db.setValue(key, "1", ItemProperty.DT_POISON.toDBColumn());
+      else db.setValue(key, "0", ItemProperty.DT_POISON.toDBColumn());
 
-      if (effnbr == 32) db.setValue(key, "1", "dt_large");
-      else db.setValue(key, "0", "dt_large");
+      if (effnbr == 24) db.setValue(key, "1", ItemProperty.DT_HOLY.toDBColumn());
+      else db.setValue(key, "0", ItemProperty.DT_HOLY.toDBColumn());
 
-      if (effnbr == 33) db.setValue(key, "1", "dt_small");
-      else db.setValue(key, "0", "dt_small");
+      if (effnbr == 32) db.setValue(key, "1", ItemProperty.DT_LARGE.toDBColumn());
+      else db.setValue(key, "0", ItemProperty.DT_LARGE.toDBColumn());
 
-      if (effnbr == 66) db.setValue(key, "1", "dt_paralyze");
-      else db.setValue(key, "0", "dt_paralyze");
+      if (effnbr == 33) db.setValue(key, "1", ItemProperty.DT_SMALL.toDBColumn());
+      else db.setValue(key, "0", ItemProperty.DT_SMALL.toDBColumn());
 
-      if (effnbr == 67) db.setValue(key, "1", "dt_weakness");
-      else db.setValue(key, "0", "dt_weakness");
+      if (effnbr == 66) db.setValue(key, "1", ItemProperty.DT_PARALYZE.toDBColumn());
+      else db.setValue(key, "0", ItemProperty.DT_PARALYZE.toDBColumn());
 
-      if (effnbr == 73) db.setValue(key, "1", "dt_magic");
-      else db.setValue(key, "0", "dt_magic");
+      if (effnbr == 67) db.setValue(key, "1", ItemProperty.DT_WEAKNESS.toDBColumn());
+      else db.setValue(key, "0", ItemProperty.DT_WEAKNESS.toDBColumn());
 
-      if (effnbr == 74) db.setValue(key, "1", "dt_raise");
-      else db.setValue(key, "0", "dt_raise");
+      if (effnbr == 73) db.setValue(key, "1", ItemProperty.DT_MAGIC_BEING.toDBColumn());
+      else db.setValue(key, "0", ItemProperty.DT_MAGIC_BEING.toDBColumn());
 
-      if (effnbr == 103) db.setValue(key, "1", "dt_drain");
-      else db.setValue(key, "0", "dt_drain");
+      if (effnbr == 74) db.setValue(key, "1", ItemProperty.DT_RAISE.toDBColumn());
+      else db.setValue(key, "0", ItemProperty.DT_RAISE.toDBColumn());
 
-      if (effnbr == 104) db.setValue(key, "1", "dt_weapondrain");
-      else db.setValue(key, "0", "dt_weapondrain");
+      if (effnbr == 103) db.setValue(key, "1", ItemProperty.DT_DRAIN.toDBColumn());
+      else db.setValue(key, "0", ItemProperty.DT_DRAIN.toDBColumn());
 
-      if (effnbr == 107) db.setValue(key, "1", "dt_demon");
-      else db.setValue(key, "0", "dt_demon");
+      if (effnbr == 104) db.setValue(key, "1", ItemProperty.DT_WEAPON_DRAIN.toDBColumn());
+      else db.setValue(key, "0", ItemProperty.DT_WEAPON_DRAIN.toDBColumn());
 
-      if (effnbr == 109) db.setValue(key, "1", "dt_cap");
-      else db.setValue(key, "0", "dt_cap");
+      if (effnbr == 107) db.setValue(key, "1", ItemProperty.DT_DEMON.toDBColumn());
+      else db.setValue(key, "0", ItemProperty.DT_DEMON.toDBColumn());
+
+      if (effnbr == 109) db.setValue(key, "1", ItemProperty.DT_CAPPED.toDBColumn());
+      else db.setValue(key, "0", ItemProperty.DT_CAPPED.toDBColumn());
 
       // Effect bitmasks
 
       long effbm = Long.parseLong(attr.GetValue(attr_id, "modifiers_mask"));
 
       if (Generic.containsLongBitmask(effbm, 1)) {
-        db.setValue(key, "0", "nostr");
-        db.setValue(key, "0", "bowstr");
+        db.setValue(key, "0", ItemProperty.NO_STR.toDBColumn());
+        db.setValue(key, "0", ItemProperty.BOW_STR.toDBColumn());
       } else {
         if (
           !Generic.containsLongBitmask(effbm, 134217728) &&
           Integer.parseInt(attr.GetValue(attr_id, "range_base", "0")) > 0
         ) {
-          db.setValue(key, "0", "nostr");
-          db.setValue(key, "1", "bowstr");
+          db.setValue(key, "0", ItemProperty.NO_STR.toDBColumn());
+          db.setValue(key, "1", ItemProperty.BOW_STR.toDBColumn());
         } else {
-          db.setValue(key, "1", "nostr");
-          db.setValue(key, "0", "bowstr");
+          db.setValue(key, "1", ItemProperty.NO_STR.toDBColumn());
+          db.setValue(key, "0", ItemProperty.BOW_STR.toDBColumn());
         }
       }
-      if (Generic.containsLongBitmask(effbm, 2)) db.setValue(key, "1", "2h");
-      else db.setValue(key, "0", "2h");
+      if (Generic.containsLongBitmask(effbm, 2)) db.setValue(key, "1", ItemProperty.IS_2H.toDBColumn());
+      else db.setValue(key, "0", ItemProperty.IS_2H.toDBColumn());
 
-      if (Generic.containsLongBitmask(effbm, 4)) db.setValue(key, "1", "flail");
-      else db.setValue(key, "0", "flail");
+      if (Generic.containsLongBitmask(effbm, 4)) db.setValue(key, "1", ItemProperty.IS_FLAIL.toDBColumn());
+      else db.setValue(key, "0", ItemProperty.IS_FLAIL.toDBColumn());
 
       if (Generic.containsLongBitmask(effbm, 8)) db.setValue(
         key,
         "1",
-        "demononly"
+        ItemProperty.DEMON_ONLY.toDBColumn()
       );
-      else db.setValue(key, "0", "demononly");
+      else db.setValue(key, "0", ItemProperty.DEMON_ONLY.toDBColumn());
 
-      if (Generic.containsLongBitmask(effbm, 32)) db.setValue(key, "1", "fire");
-      else db.setValue(key, "0", "fire");
+      if (Generic.containsLongBitmask(effbm, 32)) db.setValue(key, "1", ItemProperty.DT_FIRE.toDBColumn());
+      else db.setValue(key, "0", ItemProperty.DT_FIRE.toDBColumn());
 
-      if (Generic.containsLongBitmask(effbm, 64)) db.setValue(key, "1", "ap");
-      else db.setValue(key, "0", "ap");
+      if (Generic.containsLongBitmask(effbm, 64)) db.setValue(key, "1", ItemProperty.AP.toDBColumn());
+      else db.setValue(key, "0", ItemProperty.AP.toDBColumn());
 
-      if (Generic.containsLongBitmask(effbm, 128)) db.setValue(key, "1", "an");
-      else db.setValue(key, "0", "an");
+      if (Generic.containsLongBitmask(effbm, 128)) db.setValue(key, "1", ItemProperty.AN.toDBColumn());
+      else db.setValue(key, "0", ItemProperty.AN.toDBColumn());
 
       if (Generic.containsLongBitmask(effbm, 512)) db.setValue(
         key,
         "1",
-        "cold"
+        ItemProperty.DT_COLD.toDBColumn()
       );
-      else db.setValue(key, "0", "cold");
+      else db.setValue(key, "0", ItemProperty.DT_COLD.toDBColumn());
 
       if (Generic.containsLongBitmask(effbm, 2048)) db.setValue(
         key,
         "1",
-        "shock"
+        ItemProperty.DT_SHOCK.toDBColumn()
       );
-      else db.setValue(key, "0", "shock");
+      else db.setValue(key, "0", ItemProperty.DT_SHOCK.toDBColumn());
 
       if (Generic.containsLongBitmask(effbm, 4096)) db.setValue(
         key,
         "1",
-        "mrnegates"
+        ItemProperty.MR_NEGATES.toDBColumn()
       );
-      else db.setValue(key, "0", "mrnegates");
+      else db.setValue(key, "0", ItemProperty.MR_NEGATES.toDBColumn());
 
       if (Generic.containsLongBitmask(effbm, 32768)) db.setValue(
         key,
         "1",
-        "sacredonly"
+        ItemProperty.SACRED_ONLY.toDBColumn()
       );
-      else db.setValue(key, "0", "sacredonly");
+      else db.setValue(key, "0", ItemProperty.SACRED_ONLY.toDBColumn());
 
       if (Generic.containsLongBitmask(effbm, 131072)) db.setValue(
         key,
         "1",
-        "mind"
+        ItemProperty.DT_MIND.toDBColumn()
       );
-      else db.setValue(key, "0", "mind");
+      else db.setValue(key, "0", ItemProperty.DT_MIND.toDBColumn());
 
       if (Generic.containsLongBitmask(effbm, 2097152)) db.setValue(
         key,
         "0",
-        "magic"
+        ItemProperty.IS_MAGIC_WEAPON.toDBColumn()
       );
-      else db.setValue(key, "1", "magic");
+      else db.setValue(key, "1", ItemProperty.IS_MAGIC_WEAPON.toDBColumn());
 
       if (Generic.containsLongBitmask(effbm, 134217728)) db.setValue(
         key,
         "1",
-        "bonus"
+        ItemProperty.INTRINSIC.toDBColumn()
       );
-      else db.setValue(key, "0", "bonus");
+      else db.setValue(key, "0", ItemProperty.INTRINSIC.toDBColumn());
 
       if (Generic.containsLongBitmask(effbm, 2147483648L)) db.setValue(
         key,
         "1",
-        "charge"
+        ItemProperty.CHARGE_BONUS.toDBColumn()
       );
-      else db.setValue(key, "0", "charge");
+      else db.setValue(key, "0", ItemProperty.CHARGE_BONUS.toDBColumn());
 
       if (Generic.containsLongBitmask(effbm, 137438953472L)) db.setValue(
         key,
         "1",
-        "norepel"
+        ItemProperty.NO_REPEL.toDBColumn()
       );
-      else db.setValue(key, "0", "norepel");
+      else db.setValue(key, "0", ItemProperty.NO_REPEL.toDBColumn());
 
       if (Generic.containsLongBitmask(effbm, 274877906944L)) db.setValue(
         key,
         "1",
-        "dt_pierce"
+        ItemProperty.DT_PIERCE.toDBColumn()
       );
-      else db.setValue(key, "0", "dt_pierce");
+      else db.setValue(key, "0", ItemProperty.DT_PIERCE.toDBColumn());
 
       if (Generic.containsLongBitmask(effbm, 549755813888L)) db.setValue(
         key,
         "1",
-        "dt_blunt"
+        ItemProperty.DT_BLUNT.toDBColumn()
       );
-      else db.setValue(key, "0", "dt_blunt");
+      else db.setValue(key, "0", ItemProperty.DT_BLUNT.toDBColumn());
 
       if (Generic.containsLongBitmask(effbm, 1099511627776L)) db.setValue(
         key,
         "1",
-        "dt_slash"
+        ItemProperty.DT_SLASH.toDBColumn()
       );
-      else db.setValue(key, "0", "dt_slash");
+      else db.setValue(key, "0", ItemProperty.DT_SLASH.toDBColumn());
 
       if (Generic.containsLongBitmask(effbm, 2199023255552L)) db.setValue(
         key,
         "1",
-        "acid"
+        ItemProperty.DT_ACID.toDBColumn()
       );
-      else db.setValue(key, "0", "acid");
+      else db.setValue(key, "0", ItemProperty.DT_ACID.toDBColumn());
 
       if (Generic.containsLongBitmask(effbm, 4398046511104L)) db.setValue(
         key,
         "1",
-        "sizeresist"
+        ItemProperty.SIZE_RESIST.toDBColumn()
       );
-      else db.setValue(key, "0", "sizeresist");
+      else db.setValue(key, "0", ItemProperty.SIZE_RESIST.toDBColumn());
 
       // Misc
-      db.setValue(key, attr.GetValue(attr_id, "range_base"), "rng");
+      db.setValue(key, attr.GetValue(attr_id, "range_base"), ItemProperty.RANGE.toDBColumn());
 
       if (!attr.GetValue(attr_id, "range_strength_divisor").equals("")) {
         db.setValue(
           key,
           "-" + attr.GetValue(attr_id, "range_strength_divisor"),
-          "rng"
+          ItemProperty.RANGE.toDBColumn()
         );
       }
 
-      db.setValue(key, attr.GetValue(attr_id, "area_base"), "aoe");
+      db.setValue(key, attr.GetValue(attr_id, "area_base"), ItemProperty.AOE.toDBColumn());
       db.setValue(
         key,
         attr.GetValue(attr_id, "flight_sprite_number"),
-        "flyspr"
+        ItemProperty.FLYSPRITE.toDBColumn()
       );
       db.setValue(
         key,
         attr.GetValue(attr_id, "flight_sprite_length"),
-        "animlength"
+        ItemProperty.ANIM_LENGTH.toDBColumn()
       );
 
       if (db.GetValue(key, "ammo").equals("1")) db.setValue(

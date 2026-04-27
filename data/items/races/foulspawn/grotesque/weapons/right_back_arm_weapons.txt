@@ -1,0 +1,99 @@
+
+#newitem
+#id pincer
+#gameid 273
+#type pincer
+#needs right_back_arm pincer
+#enditem
+
+#newitem
+#id draconian_wing_shield
+#gameid draconian_wing_shield
+#type draconian
+#needs right_back_arm draconian_wing_right
+#chanceinc slotname left_back_arm draconian_wing_left *0
+#chanceinc slotname left_back_arm angel_wing_left *0
+#armor
+#enditem
+
+#newitem
+#id angel_wing_shield
+#gameid angel_wing_shield
+#type angel
+#command "#airshield 60"
+#needs right_back_arm angel_wing_right
+#chanceinc slotname left_back_arm draconian_wing_left *0
+#chanceinc slotname left_back_arm angel_wing_left *0
+#armor
+#enditem
+
+#newitem
+#id matching_right_wing
+#gameid -1
+#needstype right_back_arm matching_wing
+#basechance 0
+#enditem
+
+#newitem
+#id hydra
+#gameid 490
+#needs right_back_arm hydra
+#type "coldblooded"
+#enditem
+
+#newitem
+#id typhon_heads
+#gameid 491
+#type coldblooded
+#needs right_back_arm typhon
+#enditem
+
+#newitem
+#id foulspawn
+#gameid foulspawn_claw
+#type degenerate
+#needs right_back_arm foulspawn
+#enditem
+
+#newitem
+#id tentacle
+#gameid 85
+#type tentacle
+#type degenerate
+#needstype right_back_arm tentacle
+#enditem
+
+#newitem
+#id tentacle_strangle
+#gameid 116
+#type tentacle
+#needstype right_back_arm prehensile_tentacle
+#enditem
+
+#newitem
+#id tentacle_sleep
+#gameid 387
+#type tentacle
+#needstype right_back_arm prehensile_tentacle
+#enditem
+
+#newitem
+#id tentacle_disease
+#gameid 142
+#type tentacle
+#needstype right_back_arm tentacle
+#enditem
+
+#newitem
+#id tentacle_weakness
+#gameid 550
+#type tentacle
+#needstype right_back_arm tentacle
+#enditem
+
+#newitem
+#id tentacle_life_drain
+#gameid 271
+#type tentacle
+#needstype right_back_arm tentacle
+#enditem

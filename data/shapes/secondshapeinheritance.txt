@@ -1,8 +1,7 @@
 --- List of commands that secondshapes should inherit
 --- Prefixes:
-- all: both mounts and non-mounts
-- nonmount: only non-mounts
-- mount: only mounts
+- all: inheritable without requirements
+- racepose: inheritable through race
 
 all #coldres
 all #fireres
@@ -10,35 +9,35 @@ all #shockres
 all #poisonres
 all #berserk
 all #nametype
-nonmount #str
-nonmount #hp
-nonmount #att
-nonmount #def
-nonmount #mr
-nonmount #ap
-nonmount #maxage
-nonmount #mapmove
-nonmount #holy
-nonmount #stealthy
-nonmount #glamour
-nonmount #awe
-nonmount #ethereal
-nonmount #darkvision
-nonmount #coldpower
-nonmount #firepower
-nonmount #stormpower
-nonmount #darkpower
-nonmount #summerpower
-nonmount #fallpower
-nonmount #winterpower
-nonmount #springpower
-nonmount #siegebonus
-nonmount #patrolbonus
-nonmount #castledef
-nonmount #pillagebonus
-nonmount #heretic
-nonmount #incunrest
-nonmount #popkill
+all #str
+all #hp
+all #att
+all #def
+all #mr
+all #ap
+all #maxage
+all #mapmove
+all #holy
+all #stealthy
+all #glamour
+all #awe
+all #ethereal
+all #darkvision
+all #coldpower
+all #firepower
+all #stormpower
+all #darkpower
+all #summerpower
+all #fallpower
+all #winterpower
+all #springpower
+all #siegebonus
+all #patrolbonus
+all #castledef
+all #pillagebonus
+all #heretic
+all #incunrest
+all #popkill
 racepose #coldres
 racepose #fireres
 racepose #shockres

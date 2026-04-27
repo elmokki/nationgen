@@ -20,7 +20,7 @@ public class PrimaryRaceRestriction extends TwoListRestriction<Race> {
 
     this.assets = assets;
 
-    assets.races.stream()
+    assets.races.getAllValues().stream()
       .sorted(Comparator.comparing(Race::getName))
       .forEach(r -> {
         if (r.isSecondary() == false) {

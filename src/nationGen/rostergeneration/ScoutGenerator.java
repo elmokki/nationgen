@@ -11,6 +11,7 @@ import nationGen.entities.Filter;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.items.Item;
+import nationGen.items.ItemProperty;
 import nationGen.misc.Command;
 import nationGen.misc.ItemSet;
 import nationGen.nation.Nation;
@@ -55,7 +56,7 @@ public class ScoutGenerator extends TroopGenerator {
     Unit template = unitGen.generateUnit(race, p);
 
     chandler.getRandom(
-      p.getItems("weapon").filterDom3DB("2h", "0", true, nationGen.weapondb),
+      p.getItems("weapon").filterNationGenDB("2h", "0", true, nationGen.weapondb),
       template
     );
     // Select a mainhand weapon
@@ -63,14 +64,14 @@ public class ScoutGenerator extends TroopGenerator {
     if (
       tier != 3
     ) weapon = chandler.getRandom( //  Scout/spy gets whatever non-2h
-      p.getItems("weapon").filterDom3DB("2h", "0", true, nationGen.weapondb),
+      p.getItems("weapon").filterNationGenDB("2h", "0", true, nationGen.weapondb),
       template
     );
     else { // Assassin gets max length 3 weapons
       weapon = chandler.getRandom(
         p
           .getItems("weapon")
-          .filterDom3DBInteger("lgt", 3, true, nationGen.weapondb),
+          .filterNationGenDBInteger("lgt", 3, true, nationGen.weapondb),
         template
       );
     }
@@ -135,10 +136,7 @@ public class ScoutGenerator extends TroopGenerator {
 
     template.setSlot("armor", armor);
 
-    int prot = nationGen.armordb.GetInteger(
-      template.getSlot("armor").id,
-      "prot"
-    );
+    int prot = template.getSlot("armor").getIntegerFromDb(ItemProperty.PROTECTION.toDBColumn(), 0);
 
     if (template.pose.getItems("helmet") != null) {
       ItemSet helms = template.pose.getItems("helmet");
@@ -185,15 +183,15 @@ public class ScoutGenerator extends TroopGenerator {
       p.getItems("offhand") != null &&
       r.nextDouble() < dwchance &&
       p.getItems("offhand").filterArmor(false).size() > 0 &&
-      nationGen.weapondb.GetInteger(template.getSlot("weapon").id, "lgt") < 3 &&
-      nationGen.weapondb.GetInteger(template.getSlot("weapon").id, "2h") == 0
+      template.getSlot("weapon").getIntegerFromDb(ItemProperty.LENGTH.toDBColumn(), null) < 3 &&
+      template.getSlot("weapon").getBooleanFromDb(ItemProperty.IS_2H.toDBColumn()) == false
     ) {
       if (
         r.nextDouble() > 0.25 &&
         p
           .getItems("offhand")
           .filterArmor(false)
-          .getItemWithID(weapon.id, "offhand") !=
+          .getItemWithID(weapon.dominionsId.getNationGenId(), "offhand") !=
         null
       ) {
         template.setSlot(
@@ -202,7 +200,7 @@ public class ScoutGenerator extends TroopGenerator {
             p
               .getItems("offhand")
               .filterArmor(false)
-              .getItemsWithID(weapon.id, "offhand"),
+              .getItemsWithID(weapon.dominionsId.getNationGenId(), "offhand"),
             template
           )
         );
@@ -277,7 +275,7 @@ public class ScoutGenerator extends TroopGenerator {
     boolean waste = false;
     boolean swamp = false;
     int survivals = 0;
-    for (Command c : template.getCommands()) {
+    for (Command c : template.gatherCommands()) {
       if (c.command.equals("#mounted")) mounted = true;
       if (c.command.equals("#flying")) flying = true;
       if (c.command.equals("#amphibian")) amphibian = true;
@@ -310,34 +308,34 @@ public class ScoutGenerator extends TroopGenerator {
       survivals <= 2
     ) {
       if (survivals == 0) {
-        template.commands.add(new Command("#mountainsurvival"));
+        template.addCommands(new Command("#mountainsurvival"));
         mountain = true;
-        template.commands.add(new Command("#forestsurvival"));
+        template.addCommands(new Command("#forestsurvival"));
         forest = true;
       }
 
       if (survivals == 1) {
         if (mountain || swamp) {
-          template.commands.add(new Command("#forestsurvival"));
+          template.addCommands(new Command("#forestsurvival"));
           forest = true;
         } else if (forest || waste) {
-          template.commands.add(new Command("#mountainsurvival"));
+          template.addCommands(new Command("#mountainsurvival"));
           mountain = true;
         }
       }
 
       double bonuschance = r.nextDouble();
       if (mountain && forest) {
-        if (bonuschance < 0.2) template.commands.add(
+        if (bonuschance < 0.2) template.addCommands(
           new Command("#wastesurvival")
         );
-        else if (bonuschance < 0.25) template.commands.add(
+        else if (bonuschance < 0.25) template.addCommands(
           new Command("#swampsurvival")
         );
       } else if (!mountain && bonuschance < 0.25) {
-        template.commands.add(new Command("#mountainsurvival"));
+        template.addCommands(new Command("#mountainsurvival"));
       } else if (!forest && bonuschance < 0.25) {
-        template.commands.add(new Command("#forestsurvival"));
+        template.addCommands(new Command("#forestsurvival"));
       }
     }
 
@@ -397,36 +395,36 @@ public class ScoutGenerator extends TroopGenerator {
       ThemeInc.parse("thisitemtheme spy *20")
     );
 
-    if (tier > 1) tf.commands.add(Command.args("#stealthy", "+25"));
-    else tf.commands.add(Command.args("#stealthy", "+10"));
+    if (tier > 1) tf.addCommands(Command.args("#stealthy", "+25"));
+    else tf.addCommands(Command.args("#stealthy", "+10"));
 
     if (tier == 3) {
-      tf.commands.add(Command.args("#gcost", "+40"));
-      tf.commands.add(Command.args("#assassin"));
-      tf.commands.add(Command.args("#att", "+3"));
-      tf.commands.add(Command.args("#def", "+3"));
-      tf.commands.add(Command.args("#prec", "+3"));
-      tf.commands.add(Command.args("#mor", "+3"));
-      tf.commands.add(Command.args("#mr", "+1"));
-      tf.commands.add(Command.args("#str", "+1"));
+      tf.addCommands(Command.args("#gcost", "+40"));
+      tf.addCommands(Command.args("#assassin"));
+      tf.addCommands(Command.args("#att", "+3"));
+      tf.addCommands(Command.args("#def", "+3"));
+      tf.addCommands(Command.args("#prec", "+3"));
+      tf.addCommands(Command.args("#mor", "+3"));
+      tf.addCommands(Command.args("#mr", "+1"));
+      tf.addCommands(Command.args("#str", "+1"));
       //NamePart part = new NamePart();
       //part.text = "Assassin";
       //u.name.type = part;
     } else if (tier == 2) {
-      tf.commands.add(Command.args("#gcost", "+40"));
-      tf.commands.add(Command.args("#spy"));
-      tf.commands.add(Command.args("#rpcost", "2"));
+      tf.addCommands(Command.args("#gcost", "+40"));
+      tf.addCommands(Command.args("#spy"));
+      tf.addCommands(Command.args("#rpcost", "2"));
       //NamePart part = new NamePart();
       //part.text = "Spy";
       //u.name.type = part;
     } else {
-      tf.commands.add(Command.args("#gcost", "+20"));
+      tf.addCommands(Command.args("#gcost", "+20"));
       //NamePart part = new NamePart();
       //part.text = "Scout";
       //u.name.type = part;
     }
 
-    tf.commands.add(Command.args("#noleader"));
+    tf.addCommands(Command.args("#noleader"));
     u.appliedFilters.add(tf);
 
     assets.initializeFilters(List.of(tf), "ScoutGenerator");

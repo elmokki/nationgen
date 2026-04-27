@@ -3,12 +3,15 @@ package com.elmokki;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 import java.util.Set;
 import java.util.stream.Collectors;
 import nationGen.entities.Entity;
 import nationGen.entities.Filter;
 import nationGen.entities.Theme;
+import nationGen.misc.Arg;
+import nationGen.misc.Operator;
 import nationGen.misc.Tags;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
@@ -251,5 +254,17 @@ public class Generic {
       arg.replaceAll("\\\\", "\\\\").replaceAll("" + quote, "\\" + quote) +
       quote
     );
+  }
+
+  public static int handleModifier(Arg mod, int value) {
+    Optional<Operator> operator = mod.getOperator();
+    if (
+      operator.isPresent() &&
+      (operator.get() == Operator.ADD || operator.get() == Operator.SUBTRACT)
+    ) {
+      value += mod.getInt();
+    } else value = mod.getInt();
+
+    return value;
   }
 }

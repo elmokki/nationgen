@@ -6,8 +6,8 @@
 
 #renderorder "shadow wings head basesprite armor color trim belt rarm weapon rhand larm helmet overlay"
 
-#load basesprite /data/items/foulspawn/small/caster/category_base.txt
-#load armor /data/items/foulspawn/small/caster/category_armor.txt
+#load basesprite /data/items/races/foulspawn/small/caster/category_base.txt
+#load armor /data/items/races/foulspawn/small/caster/category_armor.txt
 
 #montagpose "little foulspawn mages" 2
 #montagpose "big foulspawn mages" 1
@@ -38,45 +38,43 @@
 
 #renderorder "shadow wings head basesprite armor color trim belt rarm weapon rhand larm helmet overlay"
 
-#load basesprite /data/items/foulspawn/small/caster/bases.txt
-#load rarm /data/items/foulspawn/small/caster/rarm.txt
-#load larm /data/items/foulspawn/small/caster/larm.txt
-#load rleg /data/items/foulspawn/small/caster/rleg.txt
-#load lleg /data/items/foulspawn/small/caster/lleg.txt
-#load head /data/items/foulspawn/small/caster/head.txt
-#load shadow /data/items/foulspawn/small/shadow.txt
-#load rhand /data/items/foulspawn/small/caster/rhand.txt
+#load basesprite /data/items/races/foulspawn/small/caster/bases.txt
+#load rarm /data/items/races/foulspawn/small/caster/rarm.txt
+#load larm /data/items/races/foulspawn/small/caster/larm.txt
+#load rleg /data/items/races/foulspawn/small/caster/rleg.txt
+#load lleg /data/items/races/foulspawn/small/caster/lleg.txt
+#load head /data/items/races/foulspawn/small/caster/head.txt
+#load shadow /data/items/races/foulspawn/small/shadow.txt
+#load rhand /data/items/races/foulspawn/small/caster/rhand.txt
 
-#load armor /data/items/foulspawn/small/caster/robes.txt
-#load color /data/items/illithid/starchild/robes_color.txt
-#load trim /data/items/illithid/starchild/robes_trim.txt
-#load belt /data/items/illithid/starchild/robes_belt.txt
+#load armor /data/items/races/foulspawn/small/caster/robes.txt
+#load color /data/items/races/illithid/starchild/robes_color.txt
+#load trim /data/items/races/illithid/starchild/robes_trim.txt
+#load belt /data/items/races/illithid/starchild/robes_belt.txt
 
--- #load helmet /data/items/foulspawn/small/caster/helmet.txt -- No helmets for now
+-- #load helmet /data/items/races/foulspawn/small/caster/helmet.txt -- No helmets for now
 
-#load weapon /data/items/foulspawn/small/caster/weapon.txt
+#load weapon /data/items/races/foulspawn/small/caster/weapon.txt
 
-#load wings /data/items/foulspawn/small/wings.txt
-#load headweapon /data/items/foulspawn/small/headweapon.txt
-#load overlay /data/items/foulspawn/small/overlay.txt
+#load wings /data/items/races/foulspawn/small/wings.txt
+#load headweapon /data/items/races/foulspawn/small/headweapon.txt
+#load overlay /data/items/races/foulspawn/small/overlay.txt
 
 #generateitem 1 head
-#generateitem 1 larm
-#generateitem 1 rarm
 #generateitem 1 lleg
 #generateitem 1 rleg
 #generateitem 0.1 wings
 #generateitem 1 color
+
+#baseitemslot hand 0
+#baseitemslot head 1
+#baseitemslot misc 2
 
 #tier 1
 #tier 2
 
 #dontvaryhat
 -- #mage_nolowtierhat
-
-#baseitemslot hand 0
-#baseitemslot head 1
-#baseitemslot misc 2
 
 #endpose
 
@@ -88,36 +86,35 @@
 
 #no_free_fist
 
-#load basesprite /data/items/foulspawn/medium/bases.txt
-#load rarm /data/items/foulspawn/medium/rarm.txt
-#load larm /data/items/foulspawn/medium/larm.txt
-#load rleg /data/items/foulspawn/medium/rleg_priest.txt
-#load lleg /data/items/foulspawn/medium/lleg_priest.txt
-#load rhand /data/items/foulspawn/medium/rhand.txt
-#load lhand /data/items/foulspawn/medium/lhand.txt
-#load head /data/items/foulspawn/medium/head.txt
-#load shadow /data/items/ogre/shadow.txt
+#load basesprite /data/items/races/foulspawn/medium/bases_caster.txt
+#load rarm /data/items/races/foulspawn/medium/rarm.txt
+#load larm /data/items/races/foulspawn/medium/larm.txt
+#load rleg /data/items/races/foulspawn/medium/rleg_priest.txt
+#load lleg /data/items/races/foulspawn/medium/lleg_priest.txt
+#load rhand /data/items/races/foulspawn/medium/rhand.txt
+#load lhand /data/items/races/foulspawn/medium/lhand.txt
+#load head /data/items/races/foulspawn/medium/head.txt
+#load shadow /data/items/races/ogre/shadow.txt
 
-#load armor /data/items/foulspawn/medium/robes.txt
--- #load helmet /data/items/foulspawn/medium/helmet.txt
+#load armor /data/items/races/foulspawn/medium/robes.txt
+-- #load helmet /data/items/races/foulspawn/medium/helmet.txt
 
-#load weapon /data/items/foulspawn/medium/weapon.txt
-#load weapon /data/items/foulspawn/medium/staves.txt
-#load offhand /data/items/foulspawn/medium/offhand.txt
+#load weapon /data/items/races/foulspawn/medium/weapon.txt
+#load weapon /data/items/races/foulspawn/medium/staves.txt
+#load offhand /data/items/races/foulspawn/medium/offhand.txt
 
-#load lhand_overlay /data/items/foulspawn/medium/lhand_overlay.txt
-#load headweapon /data/items/foulspawn/medium/headweapon.txt
-#load bonusweapon /data/items/foulspawn/medium/bonusweapon.txt
-#load bonustentacle1 /data/items/foulspawn/medium/bonustentacle.txt
-#load bonustentacle2 /data/items/foulspawn/medium/bonustentacle.txt
-#load hair /data/items/foulspawn/medium/hair.txt
-#load shirt /data/items/ogre/shirt.txt
-#load sash /data/items/ogre/sash_ogrecasters.txt
+#load lhand_overlay /data/items/races/foulspawn/medium/lhand_overlay.txt
+#load headweapon /data/items/races/foulspawn/medium/headweapon.txt
+#load bonusweapon /data/items/races/foulspawn/medium/bonusweapon.txt
+#load bonustentacle1 /data/items/races/foulspawn/medium/bonustentacle.txt
+#load bonustentacle2 /data/items/races/foulspawn/medium/bonustentacle.txt
+#load hair /data/items/races/foulspawn/medium/hair.txt
+#load shirt /data/items/races/ogre/shirt.txt
+#load sash /data/items/races/ogre/sash_ogrecasters.txt
 
 #generateitem 1 head
 #generateitem 1 lleg
 #generateitem 1 rleg
-#generateitem 1 offhand
 
 #baseitemslot hand 0
 #baseitemslot head 1
@@ -139,35 +136,37 @@
 
 #renderorder "shadow wings head basesprite armor color trim belt rarm weapon rhand larm helmet overlay"
 
-#load basesprite /data/items/foulspawn/small/caster/bases.txt
-#load rarm /data/items/foulspawn/small/caster/rarm.txt
-#load larm /data/items/foulspawn/small/caster/larm.txt
-#load rleg /data/items/foulspawn/small/caster/rleg.txt
-#load lleg /data/items/foulspawn/small/caster/lleg.txt
-#load head /data/items/foulspawn/small/caster/head.txt
-#load shadow /data/items/foulspawn/small/shadow.txt
-#load rhand /data/items/foulspawn/small/caster/rhand.txt
+#load basesprite /data/items/races/foulspawn/small/caster/bases.txt
+#load rarm /data/items/races/foulspawn/small/caster/rarm.txt
+#load larm /data/items/races/foulspawn/small/caster/larm.txt
+#load rleg /data/items/races/foulspawn/small/caster/rleg.txt
+#load lleg /data/items/races/foulspawn/small/caster/lleg.txt
+#load head /data/items/races/foulspawn/small/caster/head.txt
+#load shadow /data/items/races/foulspawn/small/shadow.txt
+#load rhand /data/items/races/foulspawn/small/caster/rhand.txt
 
-#load armor /data/items/foulspawn/small/caster/robes.txt
-#load color /data/items/illithid/starchild/robes_color.txt
-#load trim /data/items/illithid/starchild/robes_trim.txt
-#load belt /data/items/illithid/starchild/robes_belt.txt
+#load armor /data/items/races/foulspawn/small/caster/robes.txt
+#load color /data/items/races/illithid/starchild/robes_color.txt
+#load trim /data/items/races/illithid/starchild/robes_trim.txt
+#load belt /data/items/races/illithid/starchild/robes_belt.txt
 
--- #load helmet /data/items/foulspawn/small/caster/helmet.txt -- No helmets for now
+-- #load helmet /data/items/races/foulspawn/small/caster/helmet.txt -- No helmets for now
 
-#load weapon /data/items/foulspawn/small/caster/weapon.txt
+#load weapon /data/items/races/foulspawn/small/caster/weapon.txt
 
-#load wings /data/items/foulspawn/small/wings.txt
-#load headweapon /data/items/foulspawn/small/headweapon.txt
-#load overlay /data/items/foulspawn/small/overlay.txt
+#load wings /data/items/races/foulspawn/small/wings.txt
+#load headweapon /data/items/races/foulspawn/small/headweapon.txt
+#load overlay /data/items/races/foulspawn/small/overlay.txt
 
 #generateitem 1 head
-#generateitem 1 larm
-#generateitem 1 rarm
 #generateitem 1 lleg
 #generateitem 1 rleg
 #generateitem 0.1 wings
 #generateitem 1 color
+
+#baseitemslot hand 0
+#baseitemslot head 1
+#baseitemslot misc 2
 
 #tier 1
 #tier 2
@@ -175,10 +174,6 @@
 
 #dontvaryhat
 -- #mage_nolowtierhat
-
-#baseitemslot hand 0
-#baseitemslot head 1
-#baseitemslot misc 2
 
 #endpose
 
@@ -191,36 +186,35 @@
 
 #no_free_fist
 
-#load basesprite /data/items/foulspawn/medium/bases.txt
-#load rarm /data/items/foulspawn/medium/rarm.txt
-#load larm /data/items/foulspawn/medium/larm.txt
-#load rleg /data/items/foulspawn/medium/rleg_priest.txt
-#load lleg /data/items/foulspawn/medium/lleg_priest.txt
-#load rhand /data/items/foulspawn/medium/rhand.txt
-#load lhand /data/items/foulspawn/medium/lhand.txt
-#load head /data/items/foulspawn/medium/head.txt
-#load shadow /data/items/ogre/shadow.txt
+#load basesprite /data/items/races/foulspawn/medium/bases.txt
+#load rarm /data/items/races/foulspawn/medium/rarm.txt
+#load larm /data/items/races/foulspawn/medium/larm.txt
+#load rleg /data/items/races/foulspawn/medium/rleg_priest.txt
+#load lleg /data/items/races/foulspawn/medium/lleg_priest.txt
+#load rhand /data/items/races/foulspawn/medium/rhand.txt
+#load lhand /data/items/races/foulspawn/medium/lhand.txt
+#load head /data/items/races/foulspawn/medium/head.txt
+#load shadow /data/items/races/ogre/shadow.txt
 
-#load armor /data/items/foulspawn/medium/robes.txt
--- #load helmet /data/items/foulspawn/medium/helmet.txt
+#load armor /data/items/races/foulspawn/medium/robes.txt
+-- #load helmet /data/items/races/foulspawn/medium/helmet.txt
 
-#load weapon /data/items/foulspawn/medium/weapon.txt
-#load weapon /data/items/foulspawn/medium/staves.txt
-#load offhand /data/items/foulspawn/medium/offhand.txt
+#load weapon /data/items/races/foulspawn/medium/weapon.txt
+#load weapon /data/items/races/foulspawn/medium/staves.txt
+#load offhand /data/items/races/foulspawn/medium/offhand.txt
 
-#load lhand_overlay /data/items/foulspawn/medium/lhand_overlay.txt
-#load headweapon /data/items/foulspawn/medium/headweapon.txt
-#load bonusweapon /data/items/foulspawn/medium/bonusweapon.txt
-#load bonustentacle1 /data/items/foulspawn/medium/bonustentacle.txt
-#load bonustentacle2 /data/items/foulspawn/medium/bonustentacle.txt
-#load hair /data/items/foulspawn/medium/hair.txt
-#load shirt /data/items/ogre/shirt.txt
-#load sash /data/items/ogre/sash_ogrecasters.txt
+#load lhand_overlay /data/items/races/foulspawn/medium/lhand_overlay.txt
+#load headweapon /data/items/races/foulspawn/medium/headweapon.txt
+#load bonusweapon /data/items/races/foulspawn/medium/bonusweapon.txt
+#load bonustentacle1 /data/items/races/foulspawn/medium/bonustentacle.txt
+#load bonustentacle2 /data/items/races/foulspawn/medium/bonustentacle.txt
+#load hair /data/items/races/foulspawn/medium/hair.txt
+#load shirt /data/items/races/ogre/shirt.txt
+#load sash /data/items/races/ogre/sash_ogrecasters.txt
 
 #generateitem 1 head
 #generateitem 1 lleg
 #generateitem 1 rleg
-#generateitem 1 offhand
 
 #baseitemslot hand 0
 #baseitemslot head 1

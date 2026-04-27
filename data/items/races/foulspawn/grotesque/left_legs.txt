@@ -1,0 +1,90 @@
+#newitem
+#id "none"
+#gameid -1
+#basechance 0
+#enditem
+
+#newitem
+#id "degenerate"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_legs/degenerate_left_leg.png
+#command "#gcost +5"
+#command "#hp +5"
+#command "#mr +1"
+#command "#ap +2"
+#command "#poisonres +5"
+#command "#swampsurvival"
+#type degenerate
+#enditem
+
+#newitem
+#id "tyrant_snake"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_legs/tyrant_snake_left_leg.png
+#command "#gcost +15"
+#command "#ap +1"
+#command "#poisonres +5"
+#command "#unsurr +1"
+#command "#weapon 735"
+#type coldblooded
+#basechance 0.25
+#enditem
+
+#newitem
+#id "giant"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_legs/giant_left_leg.png
+#command "#gcost +10"
+#command "#ap +5"
+#command "#mapmove +2"
+#command "#str +2"
+#command "#mountainsurvival"
+#type humanoid
+#enditem
+
+#newitem
+#id "carrion"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_legs/carrion_left_leg.png
+#command "#gcost +10"
+#command "#ap +3"
+#command "#poisonres +5"
+#command "#forestsurvival"
+#type undead
+#enditem
+
+#newitem
+#id "atlantian"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_legs/atlantian_left_leg.png
+#command "#gcost +10"
+#command "#str +1"
+#command "#ap +4"
+#command "#swimming"
+#type atlantian
+#enditem
+
+#newitem
+#id "earth"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_legs/earth_left_leg.png
+#command "#gcost +15"
+#command "#hp +5"
+#command "#str +3"
+#command "#ap +2"
+#command "#mapmove +2"
+#command "#reinvigoration +1"
+#type humanoid
+#enditem
+
+#newitem
+#id "scorpion"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/left_legs/scorpion_left_leg.png
+#command "#gcost +15"
+#command "#prot +2"
+#command "#ap +6"
+#command "#mapmove +2"
+#command "#wastesurvival"
+#type animal
+#enditem

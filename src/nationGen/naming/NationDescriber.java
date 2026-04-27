@@ -14,7 +14,6 @@ import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
 import nationGen.nation.Nation;
 import nationGen.units.ShapeChangeUnit;
-import nationGen.units.ShapeShift;
 import nationGen.units.Unit;
 
 public class NationDescriber {
@@ -157,7 +156,7 @@ public class NationDescriber {
       desc.append(
         u.race.tags.getString("description").map(s -> s + " ").orElse("")
       );
-      for (Command c : u.getCommands()) {
+      for (Command c : u.gatherCommands()) {
         if (c.command.equals("#descr")) tmpDesc = c;
       }
 
@@ -343,14 +342,19 @@ public class NationDescriber {
       if (desc.length() > 0) desc.append("\n\n");
 
       desc.append(
-        "When recruited, one unit of this category will appear instead of the unit shown here."
+        "When recruited, one unit of this category will appear instead of the unit shown here. The stat scores shown here are a mean of all the possible unit spawns."
       );
     }
 
     String description = dr.replace(desc.toString()).replaceAll("\"", "");
 
-    if (tmpDesc != null) u.setCommandValue("#descr", description);
-    else u.commands.add(Command.args("#descr", description));
+    if (tmpDesc != null) {
+      u.setCommandValue("#descr", description);
+    }
+
+    else {
+      u.addCommands(Command.args("#descr", description));
+    }
   }
 
   private void describeForms() {
@@ -378,7 +382,7 @@ public class NationDescriber {
       );
 
       description = dr.replace(description).trim();
-      su.commands.add(new Command("#descr", new Arg(description)));
+      su.addCommands(new Command("#descr", new Arg(description)));
     }
   }
 

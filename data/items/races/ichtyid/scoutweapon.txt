@@ -1,0 +1,141 @@
+-- 2h
+
+#newitem
+#id spear
+#gameid 373
+#sprite /graphics/weapon/standard/spear.png
+#offsetx -5
+#theme "wood"
+#theme "boreal"
+#enditem
+
+#newitem
+#id coralspear
+#gameid 31
+#sprite /graphics/ichtyid/weapon/coral_spear.png
+#offsetx -5
+#theme "coral"
+#theme "marine"
+#enditem
+
+#newitem
+#id bronzespear
+#gameid 643
+#sprite /graphics/weapon/bronze/spear.png
+#offsetx -5
+#theme "bronze"
+#enditem
+
+#newitem
+#id trident
+#gameid 641
+#sprite /graphics/ichtyid/weapon/bronze_trident.png
+#theme "bronze"
+#enditem
+
+#newitem
+#id quarterstaff
+#gameid 7
+#sprite /graphics/weapon/standard/quarterstaff.png
+#offsetx -2
+#basechance 0.5
+#theme "wood"
+#theme "inland"
+#enditem
+
+-- Bone weapons
+
+#newitem
+#id short_bone_trident
+#gameid shorttrident_bone
+#sprite /graphics/ichtyid/weapon/bone_trident.png
+#tag "prefix trident"
+#basechance 0.75
+#theme "bone"
+#theme "primitive"
+#theme "boreal"
+#theme "formationfighter"
+#enditem
+
+#newitem
+#id bone_trident
+#gameid 670
+#sprite /graphics/ichtyid/weapon/bone_trident.png
+#tag "prefix trident"
+#basechance 0.75
+#theme "bone"
+#theme "primitive"
+#theme "boreal"
+#theme "formationfighter"
+#enditem
+
+#newitem
+#id bone_glaive
+#gameid glaive_bone_mundane
+#sprite /graphics/ichtyid/weapon/bone_glaive.png
+#basechance 0.75
+#theme "bone"
+#theme "primitive"
+#theme "boreal"
+#enditem
+
+-- 1h
+
+#newitem
+#id clubsword
+#gameid 451
+#sprite /graphics/ichtyid/weapon/clubsword.png
+#theme "inland"
+#chanceinc "racetag NOT occidental *0.01"
+#enditem
+
+#newitem
+#id shortsword_bronze
+#gameid 645
+#sprite /graphics/ichtyid/weapon/bronze_shortsword.png
+#theme "advanced"
+#theme "bronze"
+#enditem
+
+#newitem
+#id shortsword_coral
+#gameid coralshortsword
+#sprite /graphics/ichtyid/weapon/coral_shortsword.png
+#theme "coral"
+#theme "marine"
+#enditem
+
+#newitem
+#id dagger
+#gameid 674
+#sprite /graphics/ichtyid/weapon/bronze_dagger.png
+#theme "bronze"
+#enditem
+
+#newitem
+#id dagger_stone
+#gameid 671
+#sprite /graphics/ichtyid/weapon/stone_dagger.png
+#theme "stone"
+#theme "primitive"
+#theme "boreal"
+#enditem
+
+#newitem
+#id dagger_coral
+#gameid 32
+#sprite /graphics/atlantian/weapon/coralknifeleft.png
+#offsetx 0
+#offsety -1
+#theme "coral"
+#theme "marine"
+#enditem
+
+#newitem
+#id club_coral
+#gameid 45
+#sprite /graphics/ichtyid/weapon/coral_club.png
+#theme "coral"
+#theme "marine"
+#enditem
+

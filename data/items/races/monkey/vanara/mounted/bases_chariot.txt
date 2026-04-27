@@ -1,0 +1,1470 @@
+------ Base offsets are applied to everything except base and overlay
+
+#newitem
+#id "horse_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "horse_chariot"
+#theme "imperial"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 10
+#enditem
+
+#newitem
+#id "horse_leather_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "horse_chariot"
+#barding 251
+#theme "imperial"
+#theme "leather"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 9
+#enditem
+
+#newitem
+#id "horse_light_bronze_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "horse_chariot"
+#barding 264
+#theme "imperial"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "horse_light_bronze_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "horse_chariot"
+#barding 264
+#theme "oriental"
+#theme "enlightened"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "horse_light_scale_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "horse_chariot"
+#barding 252
+#theme "imperial"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "horse_light_scale_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "horse_chariot"
+#barding 252
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "horse_bronze_mail_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "horse_chariot"
+#barding 172
+#theme "imperial"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 6
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "horse_iron_mail_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "horse_chariot"
+#barding 172
+#theme "imperial"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "horse_mail_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "horse_chariot"
+#barding 172
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "horse_bronze_cataphract_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "horse_chariot"
+#barding 253
+#theme "imperial"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 3
+#chanceinc prot 15 *2
+#enditem
+
+#newitem
+#id "horse_iron_cataphract_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "horse_chariot"
+#barding 253
+#theme "imperial"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 3
+#chanceinc prot 15 *2
+#enditem
+
+#newitem
+#id "horse_cataphract_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "horse_chariot"
+#barding 253
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 3
+#chanceinc prot 15 *2
+#enditem
+
+#newitem
+#id "horse_bronze_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "horse_chariot"
+#barding 263
+#theme "imperial"
+#theme "bronze"
+#theme "advanced"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#basechance 2
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "horse_bronze_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "horse_chariot"
+#barding 263
+#theme "oriental"
+#theme "enlightened"
+#theme "bronze"
+#theme "advanced"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#basechance 2
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "horse_plate_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "horse_chariot"
+#barding 254
+#theme "imperial"
+#theme "iron"
+#theme "advanced"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#basechance 1.5
+#chanceinc prot 18 *2
+#enditem
+
+#newitem
+#id "horse_plate_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/horse.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "horse_chariot"
+#barding 254
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#theme "advanced"
+#tag "chariot"
+#tag "animal 'horse'"
+#tag "minprot 10"
+#basechance 1.5
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "camel_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel_chariot.png
+#armor
+#needs overlay chariot_camel_iron
+#offsetx 67
+#offsety -8
+#mountmnr "camel_chariot"
+#theme "imperial"
+#tag "chariot"
+#tag "animal 'camel'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 7.5
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#enditem
+
+#newitem
+#id "camel_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel_oriental_chariot.png
+#armor
+#needs overlay chariot_camel_iron
+#offsetx 67
+#offsety -8
+#mountmnr "camel_chariot"
+#theme "imperial"
+#tag "chariot"
+#tag "animal 'camel'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 7.5
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#enditem
+
+#newitem
+#id "camel_leather_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel_chariot_armored_leather.png
+#armor
+#needs overlay chariot_camel_iron
+#offsetx 67
+#offsety -8
+#mountmnr "camel_chariot"
+#barding 251
+#theme "leather"
+#theme "imperial"
+#tag "chariot"
+#tag "animal 'camel'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 7
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#enditem
+
+#newitem
+#id "camel_light_bronze_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel_chariot_armored_light_bronze.png
+#armor
+#needs overlay chariot_camel_iron
+#offsetx 67
+#offsety -8
+#mountmnr "camel_chariot"
+#barding 264
+#theme "bronze"
+#theme "imperial"
+#tag "chariot"
+#tag "animal 'camel'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 7
+#chanceinc prot 11 *2
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#enditem
+
+#newitem
+#id "camel_light_bronze_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel_oriental_chariot_armored_light_bronze.png
+#armor
+#needs overlay chariot_camel_iron
+#offsetx 67
+#offsety -8
+#mountmnr "camel_chariot"
+#barding 264
+#theme "bronze"
+#theme "oriental"
+#theme "enlightened"
+#tag "chariot"
+#tag "animal 'camel'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 7
+#chanceinc prot 11 *2
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#enditem
+
+#newitem
+#id "camel_light_scale_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel_chariot_armored_light_scale.png
+#armor
+#needs overlay chariot_camel_iron
+#offsetx 67
+#offsety -8
+#mountmnr "camel_chariot"
+#barding 252
+#theme "iron"
+#theme "imperial"
+#tag "chariot"
+#tag "animal 'camel'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 7
+#chanceinc prot 12 *2
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#enditem
+
+#newitem
+#id "camel_light_scale_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel_oriental_chariot_armored_light_scale.png
+#armor
+#needs overlay chariot_camel_iron
+#offsetx 67
+#offsety -8
+#mountmnr "camel_chariot"
+#barding 252
+#theme "iron"
+#theme "oriental"
+#theme "enlightened"
+#tag "chariot"
+#tag "animal 'camel'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 7
+#chanceinc prot 12 *2
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#enditem
+
+#newitem
+#id "camel_bronze_mail_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel_chariot_armored_mail_bronze.png
+#armor
+#needs overlay chariot_camel_iron
+#offsetx 67
+#offsety -8
+#mountmnr "camel_chariot"
+#barding 172
+#theme "bronze"
+#theme "imperial"
+#tag "chariot"
+#tag "animal 'camel'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 5
+#chanceinc prot 13 *2
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#enditem
+
+#newitem
+#id "camel_iron_mail_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel_chariot_armored_mail.png
+#armor
+#needs overlay chariot_camel_iron
+#offsetx 67
+#offsety -8
+#mountmnr "camel_chariot"
+#barding 172
+#theme "iron"
+#theme "imperial"
+#tag "chariot"
+#tag "animal 'camel'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 5
+#chanceinc prot 14 *2
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#enditem
+
+#newitem
+#id "camel_bronze_mail_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel_oriental_chariot_armored_mail_bronze.png
+#armor
+#needs overlay chariot_camel_iron
+#offsetx 67
+#offsety -8
+#mountmnr "camel_chariot"
+#barding 172
+#theme "bronze"
+#theme "oriental"
+#theme "enlightened"
+#tag "chariot"
+#tag "animal 'camel'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 5
+#chanceinc prot 14 *2
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#enditem
+
+#newitem
+#id "camel_mail_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel_oriental_chariot_armored_mail.png
+#armor
+#needs overlay chariot_camel_iron
+#offsetx 67
+#offsety -8
+#mountmnr "camel_chariot"
+#barding 172
+#theme "iron"
+#theme "oriental"
+#theme "enlightened"
+#tag "chariot"
+#tag "animal 'camel'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 5
+#chanceinc prot 14 *2
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#enditem
+
+#newitem
+#id "camel_cataphract_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel_chariot_armored_cataphract.png
+#armor
+#needs overlay chariot_camel_iron
+#offsetx 67
+#offsety -8
+#mountmnr "camel_chariot"
+#barding 253
+#theme "iron"
+#theme "imperial"
+#tag "chariot"
+#tag "animal 'camel'"
+#tag "minprot 10"
+#basechance 2.5
+#chanceinc prot 17 *2
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#enditem
+
+#newitem
+#id "camel_cataphract_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel_oriental_chariot_armored_cataphract.png
+#armor
+#needs overlay chariot_camel_iron
+#offsetx 67
+#offsety -8
+#mountmnr "camel_chariot"
+#barding 253
+#theme "iron"
+#theme "oriental"
+#theme "enlightened"
+#tag "chariot"
+#tag "animal 'camel'"
+#tag "minprot 10"
+#basechance 2.5
+#chanceinc prot 17 *2
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#enditem
+
+#newitem
+#id "camel_bronze_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel_chariot_armored_bronze.png
+#armor
+#needs overlay chariot_camel_iron
+#offsetx 67
+#offsety -8
+#mountmnr "camel_chariot"
+#barding 263
+#theme "bronze"
+#theme "imperial"
+#theme "advanced"
+#tag "chariot"
+#tag "animal 'camel'"
+#tag "minprot 10"
+#basechance 1.5
+#chanceinc prot 18 *2
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#enditem
+
+#newitem
+#id "camel_bronze_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel_oriental_chariot_armored_bronze.png
+#armor
+#needs overlay chariot_camel_iron
+#offsetx 67
+#offsety -8
+#mountmnr "camel_chariot"
+#barding 263
+#theme "bronze"
+#theme "oriental"
+#theme "enlightened"
+#theme "advanced"
+#tag "chariot"
+#tag "animal 'camel'"
+#tag "minprot 10"
+#basechance 1.5
+#chanceinc prot 18 *2
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#enditem
+
+#newitem
+#id "camel_plate_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel_chariot_armored_plate.png
+#armor
+#needs overlay chariot_camel_iron
+#offsetx 67
+#offsety -8
+#mountmnr "camel_chariot"
+#barding 254
+#theme "iron"
+#theme "imperial"
+#theme "advanced"
+#tag "chariot"
+#tag "animal 'camel'"
+#tag "minprot 10"
+#basechance 1
+#chanceinc prot 18 *2
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#enditem
+
+#newitem
+#id "camel_plate_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/camel_oriental_chariot_armored_plate.png
+#armor
+#needs overlay chariot_camel_iron
+#offsetx 67
+#offsety -8
+#mountmnr "camel_chariot"
+#barding 254
+#theme "iron"
+#theme "oriental"
+#theme "enlightened"
+#theme "advanced"
+#tag "chariot"
+#tag "animal 'camel'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 1
+#chanceinc prot 18 *2
+#chanceinc "nationcommand #idealcold above -1 *0"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#enditem
+
+
+#newitem
+#id "lizard_leather_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/lizard.png
+#armor
+#needs overlay 12
+#offsetx 51
+#offsety -10
+#mountmnr "lizard_chariot"
+#barding 251
+#theme "imperial"
+#theme "leather"
+#tag "chariot"
+#tag "animal 'lizard'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 2.5
+#enditem
+
+#newitem
+#id "lizard_light_bronze_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/lizard.png
+#armor
+#needs overlay 12
+#offsetx 51
+#offsety -10
+#mountmnr "lizard_chariot"
+#barding 264
+#theme "imperial"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'lizard'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 2.25
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "lizard_light_bronze_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/lizard.png
+#armor
+#needs overlay 12
+#offsetx 51
+#offsety -10
+#mountmnr "lizard_chariot"
+#barding 264
+#theme "oriental"
+#theme "enlightened"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'lizard'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 2.25
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "lizard_light_scale_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/lizard.png
+#armor
+#needs overlay 12
+#offsetx 51
+#offsety -10
+#mountmnr "lizard_chariot"
+#barding 252
+#theme "imperial"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'lizard'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 2.25
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "lizard_light_scale_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/lizard.png
+#armor
+#needs overlay 12
+#offsetx 51
+#offsety -10
+#mountmnr "lizard_chariot"
+#barding 252
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'lizard'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 2.25
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "lizard_bronze_mail_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/lizard.png
+#armor
+#needs overlay 12
+#offsetx 51
+#offsety -10
+#mountmnr "lizard_chariot"
+#barding 172
+#theme "imperial"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'lizard'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 1.5
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "lizard_iron_mail_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/lizard.png
+#armor
+#needs overlay 12
+#offsetx 51
+#offsety -10
+#mountmnr "lizard_chariot"
+#barding 172
+#theme "imperial"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'lizard'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 1.5
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "lizard_mail_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/lizard.png
+#armor
+#needs overlay 12
+#offsetx 51
+#offsety -10
+#mountmnr "lizard_chariot"
+#barding 172
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'lizard'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 1.5
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "lizard_bronze_cataphract_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/lizard.png
+#armor
+#needs overlay 12
+#offsetx 51
+#offsety -10
+#mountmnr "lizard_chariot"
+#barding 253
+#theme "imperial"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'lizard'"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 1.25
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "lizard_cataphract_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/lizard.png
+#armor
+#needs overlay 12
+#offsetx 51
+#offsety -10
+#mountmnr "lizard_chariot"
+#barding 253
+#theme "imperial"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'lizard'"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 1.25
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "lizard_cataphract_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/lizard.png
+#armor
+#needs overlay 12
+#offsetx 51
+#offsety -10
+#mountmnr "lizard_chariot"
+#barding 253
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'lizard'"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 1.25
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "lizard_bronze_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/lizard.png
+#armor
+#needs overlay 12
+#offsetx 51
+#offsety -10
+#mountmnr "lizard_chariot"
+#barding 263
+#theme "imperial"
+#theme "bronze"
+#theme "advanced"
+#tag "chariot"
+#tag "animal 'lizard'"
+#tag "minprot 10"
+#basechance 1
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "lizard_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/lizard.png
+#armor
+#needs overlay 12
+#offsetx 51
+#offsety -10
+#mountmnr "lizard_chariot"
+#barding 289
+#theme "imperial"
+#theme "iron"
+#theme "advanced"
+#tag "chariot"
+#tag "animal 'lizard'"
+#tag "minprot 10"
+#basechance 1
+#chanceinc prot 18 *2
+#enditem
+
+#newitem
+#id "lizard_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/lizard.png
+#armor
+#needs overlay 12
+#offsetx 51
+#offsety -10
+#mountmnr "lizard_chariot"
+#barding 289
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#theme "advanced"
+#tag "chariot"
+#tag "animal 'lizard'"
+#tag "minprot 10"
+#basechance 1
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "boar_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar_chariot.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "boar_chariot"
+#theme "imperial"
+#tag "chariot"
+#tag "animal 'boar'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 10
+#enditem
+
+#newitem
+#id "boar_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar_chariot.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "boar_chariot"
+#theme "oriental"
+#theme "enlightened"
+#tag "chariot"
+#tag "animal 'boar'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 10
+#enditem
+
+#newitem
+#id "boar_light_bronze_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar_chariot_armored_light_bronze.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "boar_chariot"
+#barding 264
+#theme "imperial"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'boar'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "boar_light_bronze_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar_oriental_chariot_armored_light_bronze.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "boar_chariot"
+#barding 264
+#theme "oriental"
+#theme "enlightened"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'boar'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "boar_light_scale_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar_chariot_armored_light_scale.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "boar_chariot"
+#barding 252
+#theme "imperial"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'boar'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "boar_light_scale_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar_oriental_chariot_armored_light_scale.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "boar_chariot"
+#barding 252
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'boar'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "boar_bronze_mail_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar_chariot_armored_mail_bronze.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "boar_chariot"
+#barding 172
+#theme "imperial"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'boar'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 6
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "boar_bronze_mail_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar_oriental_chariot_armored_mail_bronze.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "boar_chariot"
+#barding 172
+#theme "oriental"
+#theme "enlightened"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'boar'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 6
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "boar_iron_mail_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar_chariot_armored_mail.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "boar_chariot"
+#barding 172
+#theme "imperial"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'boar'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 6
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "boar_mail_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar_oriental_chariot_armored_mail.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "boar_chariot"
+#barding 172
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'boar'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 6
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "boar_bronze_cataphract_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar_oriental_chariot_armored_cataphract.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "boar_chariot"
+#barding 253
+#theme "imperial"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'boar'"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 4
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "boar_cataphract_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar_chariot_armored_cataphract.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "boar_chariot"
+#barding 253
+#theme "imperial"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'boar'"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 4
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "boar_cataphract_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar_oriental_chariot_armored_cataphract.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "boar_chariot"
+#barding 253
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'boar'"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 4
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "boar_bronze_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar_chariot_armored_bronze.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "boar_chariot"
+#barding 263
+#theme "imperial"
+#theme "bronze"
+#theme "advanced"
+#tag "chariot"
+#tag "animal 'boar'"
+#tag "minprot 10"
+#basechance 2
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "boar_bronze_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar_oriental_chariot_armored_bronze.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "boar_chariot"
+#barding 263
+#theme "oriental"
+#theme "enlightened"
+#theme "bronze"
+#theme "advanced"
+#tag "chariot"
+#tag "animal 'boar'"
+#tag "minprot 10"
+#basechance 2
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "boar_plate_barding_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar_chariot_armored_plate.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "boar_chariot"
+#barding 254
+#theme "imperial"
+#theme "iron"
+#theme "advanced"
+#tag "chariot"
+#tag "animal 'boar'"
+#tag "minprot 10"
+#basechance 1.5
+#chanceinc prot 18 *2
+#enditem
+
+#newitem
+#id "boar_plate_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/boar_oriental_chariot_armored_plate.png
+#armor
+#needs overlay 10
+#offsetx 55
+#offsety -8
+#mountmnr "boar_chariot"
+#barding 254
+#theme "oriental"
+#theme "enlightened"
+#theme "iron"
+#theme "advanced"
+#tag "chariot"
+#tag "animal 'boar'"
+#tag "minprot 10"
+#basechance 1.5
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "tiger_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/tiger_oriental.png
+#armor
+#needs overlay oriental_chariot_gilt
+#offsetx 51
+#offsety -8
+#mountmnr "tiger_oriental_chariot"
+#theme "enlightened"
+#theme "oriental"
+#tag "chariot"
+#tag "animal 'tiger'"
+#tag "minprot 10"
+#tag "maxprot 15"
+#basechance 10
+#enditem
+
+#newitem
+#id "tiger_light_bronze_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/tiger_oriental.png
+#armor
+#needs overlay oriental_chariot_gilt
+#offsetx 51
+#offsety -8
+#mountmnr "tiger_oriental_chariot"
+#barding 264
+#theme "enlightened"
+#theme "oriental"
+#theme "bronze"
+#tag "chariot"
+#tag "animal 'tiger'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "tiger_light_scale_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/tiger_oriental.png
+#armor
+#needs overlay oriental_chariot_gilt
+#offsetx 51
+#offsety -8
+#mountmnr "tiger_oriental_chariot"
+#barding 252
+#theme "enlightened"
+#theme "oriental"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'tiger'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "tiger_mail_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/tiger_oriental.png
+#armor
+#needs overlay oriental_chariot_gilt
+#offsetx 51
+#offsety -8
+#mountmnr "tiger_oriental_chariot"
+#barding 172
+#theme "enlightened"
+#theme "oriental"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'tiger'"
+#tag "minprot 10"
+#tag "maxprot 16"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "tiger_cataphract_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/tiger_oriental.png
+#armor
+#needs overlay oriental_chariot_gilt
+#offsetx 51
+#offsety -8
+#mountmnr "tiger_oriental_chariot"
+#barding 253
+#theme "enlightened"
+#theme "oriental"
+#theme "iron"
+#tag "chariot"
+#tag "animal 'tiger'"
+#tag "minprot 10"
+#tag "maxprot 18"
+#basechance 3
+#chanceinc prot 16 *2
+#enditem
+
+#newitem
+#id "tiger_bronze_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/tiger_oriental.png
+#armor
+#needs overlay oriental_chariot_gilt
+#offsetx 51
+#offsety -8
+#mountmnr "tiger_oriental_chariot"
+#barding 263
+#theme "enlightened"
+#theme "oriental"
+#theme "bronze"
+#theme "advanced"
+#tag "chariot"
+#tag "animal 'tiger'"
+#tag "minprot 10"
+#basechance 2
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "tiger_plate_barding_oriental_chariot"
+#gameid -1
+#sprite /graphics/mounts/chariots/tiger_oriental.png
+#armor
+#needs overlay oriental_chariot_gilt
+#offsetx 51
+#offsety -8
+#mountmnr "tiger_oriental_chariot"
+#barding 254
+#theme "enlightened"
+#theme "oriental"
+#theme "iron"
+#theme "advanced"
+#tag "chariot"
+#tag "animal 'tiger'"
+#tag "minprot 10"
+#basechance 1.5
+#chanceinc prot 18 *2
+#enditem

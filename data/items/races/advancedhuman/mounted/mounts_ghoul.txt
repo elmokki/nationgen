@@ -1,0 +1,587 @@
+------ Base offsets are applied to everything except base and overlay
+
+---- Horses
+
+#newitem
+#id "riding_horse"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#armor
+#needs overlay 1
+#mountmnr "riding_horse_mount"
+#tag "animal horse"
+#theme "light"
+#tag "maxprot 11"
+#basechance 20
+#epicness 0.25
+#enditem
+
+#newitem
+#id "destrier_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/armoredhorse1.png
+#armor
+#needs overlay 2
+#mountmnr "destrier_mount"
+#barding 254
+#tag "animal horse"
+#theme "heavy"
+#theme "iron"
+#tag "minprot 14"
+#tag "name commander 'knight'"
+#tag "name mounted knight"
+#basechance 20
+#chanceinc prot 17 *2
+#epicness 0.25
+#enditem
+
+#newitem
+#id "ghoul_horse"
+#gameid -1
+#sprite /graphics/mounts/standard/ghoul_horse.png
+#armor
+#needs overlay ghoul_horse_overlay
+#mountmnr "ghoul_horse_mount"
+#tag "animal horse"
+#theme "light"
+#tag "maxprot 11"
+#basechance 20
+#enditem
+
+#newitem
+#id "ghoul_horse_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/ghoul_horse_armored.png
+#armor
+#needs overlay ghoul_horse_armored_overlay
+#mountmnr "ghoul_horse_mount"
+#barding 252
+#tag "animal horse"
+#theme "light"
+#theme "iron"
+#tag "minprot 11"
+#basechance 24
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "ghoul_horse_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/ghoul_horse_armored.png
+#armor
+#needs overlay ghoul_horse_armored_overlay
+#mountmnr "ghoul_horse_mount"
+#barding 172
+#tag "animal horse"
+#theme "iron"
+#tag "minprot 12"
+#basechance 18
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "ghoul_horse_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/ghoul_horse_armored.png
+#armor
+#needs overlay ghoul_horse_armored_overlay
+#mountmnr "ghoul_horse_mount"
+#barding 253
+#tag "animal horse"
+#theme "heavy"
+#theme "iron"
+#tag "minprot 14"
+#basechance 16
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "ghoul_horse_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/ghoul_horse_armored.png
+#armor
+#needs overlay ghoul_horse_armored_overlay
+#mountmnr "ghoul_horse_mount"
+#barding 254
+#tag "animal horse"
+#theme "heavy"
+#theme "iron"
+#tag "minprot 14"
+#basechance 14
+#chanceinc prot 15 *2
+#enditem
+
+#newitem
+#id "skeletal_horse"
+#gameid -1
+#offsetx 0
+#offsety 2
+#sprite /graphics/amazon/mounts/nightmare_equine.png
+#armor
+#needs overlay longdead_overlay
+#mountmnr "skeletal_horse_mount"
+#tag "animal horse"
+#theme "light"
+#tag "maxprot 13"
+#basechance 5
+#enditem
+
+#newitem
+#id "nightmare_plate_barding"
+#gameid -1
+#offsetx 0
+#offsety 2
+#sprite /graphics/amazon/mounts/nightmare_equine_fullbarded2.png
+#armor
+#needs overlay longdead_armored_overlay
+#mountmnr "nightmare_mount"
+#define "#enc 15"
+#barding 254
+#tag "animal horse"
+#theme "heavy"
+#theme "iron"
+#tag "minprot 14"
+#basechance 2.5
+#chanceinc prot 17 *2
+#enditem
+
+
+---- Bears
+
+#newitem
+#id "great_bear"
+#gameid -1
+#sprite /graphics/mounts/standard/bear.png
+#armor
+#mountmnr "great_bear_mount"
+#offsety -2
+#offsetx -1
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#basechance 2.5
+#enditem
+
+#newitem
+#id "great_bear_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_armored_lightscale.png
+#armor
+#mountmnr "great_bear_mount"
+#barding 252
+#offsety -2
+#offsetx -1
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#basechance 2.25
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "great_bear_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_armored_cataphract.png
+#armor
+#mountmnr "great_bear_mount"
+#barding 172
+#offsety -2
+#offsetx -1
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#theme "heavy"
+#basechance 2
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "great_bear_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_armored_cataphract.png
+#armor
+#mountmnr "great_bear_mount"
+#barding 253
+#offsety -2
+#offsetx -1
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#theme "heavy"
+#basechance 1.75
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "great_bear_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_armored_plate.png
+#armor
+#mountmnr "great_bear_mount"
+#barding 254
+#offsety -2
+#offsetx -1
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#theme "heavy"
+#basechance 1.5
+#chanceinc prot 18 *2
+#enditem
+
+#newitem
+#id "bear"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_small.png
+#armor
+#mountmnr "bear_mount"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#offsety 6
+#offsetx -1
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 8"
+#basechance 2.5
+#enditem
+
+#newitem
+#id "bear_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_small_armored_light_scale.png
+#armor
+#mountmnr "bear_mount"
+#barding 252
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#offsety 6
+#offsetx -1
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 8"
+#basechance 2.25
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "bear_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_small_armored_mail.png
+#armor
+#mountmnr "bear_mount"
+#barding 172
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#offsety 6
+#offsetx -1
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 8"
+#theme "heavy"
+#basechance 2
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "bear_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_small_armored_mail.png
+#armor
+#mountmnr "bear_mount"
+#barding 253
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#offsety 6
+#offsetx -1
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 8"
+#theme "heavy"
+#basechance 1.75
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "bear_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_small_armored_plate.png
+#armor
+#mountmnr "bear_mount"
+#barding 254
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#offsety 6
+#offsetx -1
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 8"
+#theme "heavy"
+#basechance 1.5
+#chanceinc prot 18 *2
+#enditem
+
+
+---- Scorpions
+
+#newitem
+#id "scorpion_beast"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 23
+#offsety 6
+#mountmnr "scorpion_beast_mount"
+#tag "animal scorpion"
+#description "Leaves a giant scorpion behind when the rider dies"
+#tag "guaranteedprefix scorpion"
+#tag "minprot 10"
+#tag "maxprot 100"
+#theme "heavy"
+#basechance 0.25
+#chanceinc primaryrace abysian *100
+#enditem
+
+#newitem
+#id "scorpion_beast_light_scale_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 23
+#offsety 6
+#needs overlay scorpion_overlay
+#mountmnr "scorpion_beast_mount"
+#barding 252
+#tag "animal scorpion"
+#description "Leaves a giant scorpion behind when the rider dies"
+#tag "guaranteedprefix scorpion"
+#tag "minprot 10"
+#tag "maxprot 100"
+#theme "heavy"
+#basechance 0.225
+#chanceinc prot 10 *2
+#chanceinc primaryrace abysian *100
+#enditem
+
+#newitem
+#id "scorpion_beast_iron_mail_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 23
+#offsety 6
+#needs overlay scorpion_overlay
+#mountmnr "scorpion_beast_mount"
+#barding 172
+#tag "animal scorpion"
+#description "Leaves a giant scorpion behind when the rider dies"
+#tag "guaranteedprefix scorpion"
+#tag "minprot 10"
+#tag "maxprot 100"
+#theme "heavy"
+#basechance 0.2
+#chanceinc prot 14 *2
+#chanceinc primaryrace abysian *100
+#enditem
+
+#newitem
+#id "scorpion_beast_cataphract_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 23
+#offsety 6
+#needs overlay scorpion_overlay
+#mountmnr "scorpion_beast_mount"
+#barding 253
+#tag "animal scorpion"
+#description "Leaves a giant scorpion behind when the rider dies"
+#tag "guaranteedprefix scorpion"
+#tag "minprot 10"
+#tag "maxprot 100"
+#theme "heavy"
+#basechance 0.175
+#chanceinc prot 17 *2
+#chanceinc primaryrace abysian *100
+#enditem
+
+#newitem
+#id "scorpion_beast_plate_barding"
+#gameid -1
+#sprite /graphics/abysian/mounts/scorpion.png
+#armor
+#offsetx 23
+#offsety 6
+#needs overlay scorpion_overlay
+#mountmnr "scorpion_beast_mount"
+#barding 254
+#tag "animal scorpion"
+#description "Leaves a giant scorpion behind when the rider dies"
+#tag "guaranteedprefix scorpion"
+#tag "minprot 10"
+#tag "maxprot 100"
+#theme "heavy"
+#basechance 0.15
+#chanceinc prot 18 *2
+#chanceinc primaryrace abysian *100
+#enditem
+
+
+---- Fossils
+
+#newitem
+#id "fossil"
+#gameid -1
+#sprite /graphics/abysian/mounts/fossil.png
+#armor
+#needs overlay fossil_overlay
+#offsetx 34
+#offsety 31
+#mountmnr "fossil_mount"
+#barding 31
+#tag "animal fossil"
+#description "Leaves a fossilized giant behind when the rider dies"
+#tag "guaranteedprefix fossil"
+#tag "minprot 10"
+#tag "maxprot 100"
+#theme "heavy"
+#basechance 0.67
+#enditem
+
+#newitem
+#id "fossil_hauberk"
+#gameid -1
+#sprite /graphics/abysian/mounts/fossil.png
+#armor
+#needs overlay fossil_overlay
+#offsetx 34
+#offsety 31
+#mountmnr "fossil_mount"
+#barding 11
+#tag "animal fossil"
+#description "Leaves a fossilized giant behind when the rider dies"
+#tag "guaranteedprefix fossil"
+#tag "minprot 10"
+#tag "maxprot 100"
+#theme "heavy"
+#basechance 0.33
+#chanceinc prot 17 *2
+#enditem
+
+
+---- Dire Wolves
+
+#newitem
+#id "dire_wolf"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1.png
+#armor
+#needs overlay direwolf1_overlay
+#mountmnr "dire_wolf_mount_1"
+#tag "animal wolf"
+#tag "guaranteedprefix wolf"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#offsety 2
+#offsetx -7
+#tag "maxprot 11"
+#theme "light"
+#basechance 2.9
+#enditem
+
+#newitem
+#id "dire_wolf_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1_armored_leather.png
+#armor
+#needs overlay direwolf1_overlay
+#mountmnr "dire_wolf_mount_1"
+#barding 251
+#tag "animal wolf"
+#theme "light"
+#tag "guaranteedprefix wolf"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#offsety 2
+#offsetx -7
+#tag "maxprot 16"
+#basechance 2.4
+#enditem
+
+#newitem
+#id "dire_wolf_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1_armored_light_scale.png
+#armor
+#needs overlay direwolf1_overlay
+#mountmnr "dire_wolf_mount_1"
+#barding 252
+#tag "animal wolf"
+#theme "light"
+#tag "guaranteedprefix wolf"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#offsety 2
+#offsetx -7
+#tag "maxprot 16"
+#basechance 1.9
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "dire_wolf_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1_armored_mail.png
+#armor
+#needs overlay direwolf1_overlay
+#mountmnr "dire_wolf_mount_1"
+#barding 172
+#tag "animal wolf"
+#theme "heavy"
+#tag "guaranteedprefix wolf"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#offsety 2
+#offsetx -7
+#tag "maxprot 100"
+#basechance 1.4
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "dire_wolf_cataphract_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1_armored_cataphract.png
+#armor
+#needs overlay direwolf1_overlay
+#mountmnr "dire_wolf_mount_1"
+#barding 253
+#tag "animal wolf"
+#theme "heavy"
+#tag "guaranteedprefix wolf"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#offsety 2
+#offsetx -7
+#tag "maxprot 100"
+#basechance 0.9
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "dire_wolf_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf1_armored_plate.png
+#armor
+#needs overlay direwolf1_overlay
+#mountmnr "dire_wolf_mount_1"
+#barding 254
+#tag "animal wolf"
+#theme "heavy"
+#tag "guaranteedprefix wolf"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#offsety 2
+#offsetx -7
+#tag "maxprot 100"
+#basechance 0.5
+#chanceinc prot 17 *2
+#enditem

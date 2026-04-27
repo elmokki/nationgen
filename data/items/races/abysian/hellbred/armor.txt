@@ -1,0 +1,107 @@
+--- Nekkid
+
+#newitem
+#id "naked"
+#gameid -1
+-- #sprite /graphics/abysian/naked.png
+#armor
+#theme "naked"
+#type light
+#enditem
+
+--- Chain Mail
+
+#newitem
+#id "chain cuirass"
+#gameid 8
+#sprite /graphics/abysian/armor/chain_cuirass.png
+#armor
+#theme "iron"
+#type light
+#enditem
+
+#newitem
+#id "chain hauberk"
+#gameid 13
+#sprite /graphics/abysian/armor/chain_hauberk.png
+#armor
+#theme "iron"
+#type heavy
+#enditem
+
+#newitem -- full chain
+#id "full chain"
+#gameid 18
+#sprite /graphics/abysian/armor/chain_hauberk.png
+#armor
+#theme "iron"
+#theme "advanced"
+#tag "name mounted knight"
+#type heavy
+#enditem
+
+
+--- Scale
+
+#newitem
+#id "scale cuirass"
+#gameid 7
+#sprite /graphics/abysian/armor/scale_cuirass.png
+#armor
+#theme "iron"
+#type light
+#enditem
+
+#newitem
+#id "scale hauberk"
+#gameid 12
+#sprite /graphics/abysian/armor/scale_hauberk.png
+#armor
+#theme "iron"
+#type heavy
+#enditem
+
+#newitem -- full scale
+#id "full scale"
+#gameid 17
+#sprite /graphics/abysian/armor/scale_hauberk.png
+#armor
+#theme "iron"
+#theme "advanced"
+#type heavy
+#enditem
+
+
+--- Plate
+
+#newitem
+#id "plate cuirass"
+#gameid 9
+#sprite /graphics/abysian/armor/plate_cuirass.png
+#armor
+#theme "iron"
+#theme "advanced"
+#type light
+#enditem
+
+#newitem
+#id "plate hauberk"
+#gameid 14
+#sprite /graphics/abysian/armor/plate_hauberk.png
+#armor
+#theme "iron"
+#theme "advanced"
+#tag "name mounted knight"
+#type heavy
+#enditem
+
+#newitem -- full plate
+#id "full plate"
+#gameid 19
+#sprite /graphics/abysian/armor/plate_hauberk.png
+#armor
+#theme "iron"
+#theme "advanced"
+#tag "name mounted knight"
+#type heavy
+#enditem

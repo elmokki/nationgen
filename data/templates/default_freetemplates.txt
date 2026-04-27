@@ -230,7 +230,7 @@
 #themeinc thisarmorprot below 11 *2
 #maxvarieties 3
 #desc "Mountain survival"
-#primarycommand "#mountainsurvival"
+#mutuallyexclusive "#mountainsurvival"
 #generateitem 0.25 cloakb
 #set "terrain"
 #prev "terrain desc"
@@ -255,7 +255,7 @@
 #themeinc thisarmorprot below 11 *2
 #maxvarieties 3
 #desc "Forest survival"
-#primarycommand "#forestsurvival"
+#mutuallyexclusive "#forestsurvival"
 #generateitem 0.25 cloakb
 #set "terrain"
 #prev "terrain desc"

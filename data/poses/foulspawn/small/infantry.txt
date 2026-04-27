@@ -14,18 +14,18 @@
 -- #montagpose "small centauroid" 1
 
 #chanceinc moduleid herogen *0
-#montagpose_min 8
-#montagpose_max 8
+#montagpose_min 4
+#montagpose_max 4
 
 
-#load basesprite /data/items/foulspawn/small/bases_infantry.txt
+#load basesprite /data/items/races/foulspawn/small/bases_infantry.txt
 
-#load armor /data/items/foulspawn/small/armor_placeholder.txt
-#load helmet /data/items/foulspawn/small/helmet_placeholder.txt
+#load armor /data/items/races/foulspawn/small/armor_placeholder.txt
+#load helmet /data/items/races/foulspawn/small/helmet_placeholder.txt
 
-#load weapon /data/items/foulspawn/small/weapon_placeholder.txt
+#load weapon /data/items/races/foulspawn/small/weapon_placeholder.txt
 
-#maxunits 2
+#maxunits 3
 #endpose
 
 #newpose
@@ -45,15 +45,15 @@
 
 
 
-#load basesprite /data/items/foulspawn/medium/bases_infantry.txt
+#load basesprite /data/items/races/foulspawn/medium/bases_infantry.txt
 
-#load armor /data/items/foulspawn/small/armor_placeholder.txt
-#load helmet /data/items/foulspawn/small/helmet_placeholder.txt
+#load armor /data/items/races/foulspawn/small/armor_placeholder.txt
+#load helmet /data/items/races/foulspawn/small/helmet_placeholder.txt
 
-#load weapon /data/items/foulspawn/small/weapon_placeholder.txt
-#montagpose_min 8
-#montagpose_max 8
-#maxunits 1
+#load weapon /data/items/races/foulspawn/small/weapon_placeholder.txt
+#montagpose_min 4
+#montagpose_max 4
+#maxunits 2
 #endpose
 
 #newpose
@@ -63,7 +63,7 @@
 #role "elite infantry"
 #role "sacred infantry"
 
-#montagpose_min 5
+#montagpose_min 3
 #montagpose_max 5
 
 
@@ -79,14 +79,14 @@
 
 
 
-#load basesprite /data/items/foulspawn/small/bases_infantry.txt
+#load basesprite /data/items/races/foulspawn/small/bases_infantry.txt
 
-#load armor /data/items/foulspawn/small/armor_placeholder.txt
-#load helmet /data/items/foulspawn/small/helmet_placeholder.txt
+#load armor /data/items/races/foulspawn/small/armor_placeholder.txt
+#load helmet /data/items/races/foulspawn/small/helmet_placeholder.txt
 
-#load weapon /data/items/foulspawn/small/weapon_placeholder.txt
+#load weapon /data/items/races/foulspawn/small/weapon_placeholder.txt
 
-#maxunits 2
+#maxunits 3
 #endpose
 
 
@@ -115,30 +115,30 @@
 
 #no_free_fist
 
-#load basesprite /data/items/foulspawn/small/bases.txt
-#load rarm /data/items/foulspawn/small/rarm.txt
-#load larm /data/items/foulspawn/small/larm.txt
-#load rleg /data/items/foulspawn/small/rleg.txt
-#load lleg /data/items/foulspawn/small/lleg.txt
-#load head /data/items/foulspawn/small/head.txt
-#load shadow /data/items/foulspawn/small/shadow.txt
-#load shirt /data/items/foulspawn/small/shirt.txt
-#load pants /data/items/foulspawn/small/pants.txt
-#load rhand /data/items/foulspawn/small/rhand.txt
-#load lhand /data/items/foulspawn/small/lhand.txt
+#load basesprite /data/items/races/foulspawn/small/bases.txt
+#load rarm /data/items/races/foulspawn/small/rarm.txt
+#load larm /data/items/races/foulspawn/small/larm.txt
+#load rleg /data/items/races/foulspawn/small/rleg.txt
+#load lleg /data/items/races/foulspawn/small/lleg.txt
+#load head /data/items/races/foulspawn/small/head.txt
+#load shadow /data/items/races/foulspawn/small/shadow.txt
+#load shirt /data/items/races/foulspawn/small/shirt.txt
+#load pants /data/items/races/foulspawn/small/pants.txt
+#load rhand /data/items/races/foulspawn/small/rhand.txt
+#load lhand /data/items/races/foulspawn/small/lhand.txt
 
-#load armor /data/items/foulspawn/small/armor_placeholder.txt
-#load helmet /data/items/foulspawn/small/helmet_placeholder.txt
+#load armor /data/items/races/foulspawn/small/armor_placeholder.txt
+#load helmet /data/items/races/foulspawn/small/helmet_placeholder.txt
 
-#load weapon /data/items/foulspawn/small/weapon_degenerate.txt
-#load offhand /data/items/foulspawn/small/offhand_degenerate.txt
+#load weapon /data/items/races/foulspawn/small/weapon_degenerate.txt
+#load offhand /data/items/races/foulspawn/small/offhand_degenerate.txt
 
-#load debility /data/items/foulspawn/small/debility.txt
+#load debility /data/items/races/foulspawn/small/debility.txt
 
-#load overlay /data/items/foulspawn/small/overlay.txt
+#load overlay /data/items/races/foulspawn/small/overlay.txt
 
-#load headweapon /data/items/foulspawn/small/headweapon.txt
-#load extraweapon /data/items/foulspawn/small/extraweapon.txt
+#load headweapon /data/items/races/foulspawn/small/headweapon.txt
+#load extraweapon /data/items/races/foulspawn/small/extraweapon.txt
 
 #generateitem 1 pants
 #generateitem 1 shirt
@@ -171,30 +171,30 @@
 
 #chanceinc moduleid herogen 1
 
-#load basesprite /data/items/foulspawn/small/bases.txt
-#load rarm /data/items/foulspawn/small/rarm.txt
-#load larm /data/items/foulspawn/small/larm.txt
-#load rleg /data/items/foulspawn/small/rleg.txt
-#load lleg /data/items/foulspawn/small/lleg.txt
-#load head /data/items/foulspawn/small/head.txt
-#load shadow /data/items/foulspawn/small/shadow.txt
-#load shirt /data/items/foulspawn/small/shirt.txt
-#load pants /data/items/foulspawn/small/pants.txt
-#load rhand /data/items/foulspawn/small/rhand.txt
-#load lhand /data/items/foulspawn/small/lhand.txt
+#load basesprite /data/items/races/foulspawn/small/bases.txt
+#load rarm /data/items/races/foulspawn/small/rarm.txt
+#load larm /data/items/races/foulspawn/small/larm.txt
+#load rleg /data/items/races/foulspawn/small/rleg.txt
+#load lleg /data/items/races/foulspawn/small/lleg.txt
+#load head /data/items/races/foulspawn/small/head.txt
+#load shadow /data/items/races/foulspawn/small/shadow.txt
+#load shirt /data/items/races/foulspawn/small/shirt.txt
+#load pants /data/items/races/foulspawn/small/pants.txt
+#load rhand /data/items/races/foulspawn/small/rhand.txt
+#load lhand /data/items/races/foulspawn/small/lhand.txt
 
-#load armor /data/items/foulspawn/small/armor.txt
-#load helmet /data/items/foulspawn/small/helmet.txt
+#load armor /data/items/races/foulspawn/small/armor.txt
+#load helmet /data/items/races/foulspawn/small/helmet.txt
 
-#load weapon /data/items/foulspawn/small/weapon.txt
-#load offhand /data/items/foulspawn/small/offhand.txt
-#load offhand /data/items/foulspawn/small/shield.txt
-#load bonusweapon /data/items/foulspawn/small/bonusranged.txt
+#load weapon /data/items/races/foulspawn/small/weapon.txt
+#load offhand /data/items/races/foulspawn/small/offhand.txt
+#load offhand /data/items/races/foulspawn/small/shield.txt
+#load bonusweapon /data/items/races/foulspawn/small/bonusranged.txt
 
-#load overlay /data/items/foulspawn/small/overlay.txt
+#load overlay /data/items/races/foulspawn/small/overlay.txt
 
-#load headweapon /data/items/foulspawn/small/headweapon.txt
-#load extraweapon /data/items/foulspawn/small/extraweapon.txt
+#load headweapon /data/items/races/foulspawn/small/headweapon.txt
+#load extraweapon /data/items/races/foulspawn/small/extraweapon.txt
 
 #generateitem 1 pants
 #generateitem 1 shirt
@@ -223,30 +223,30 @@
 #no_free_fist
 #chanceinc moduleid herogen 1
 
-#load basesprite /data/items/foulspawn/mounted/bases.txt
-#load rarm /data/items/foulspawn/small/rarm.txt
-#load larm /data/items/foulspawn/small/larm.txt
-#load rleg /data/items/foulspawn/small/rleg.txt
-#load lleg /data/items/foulspawn/small/lleg.txt
-#load head /data/items/foulspawn/small/head.txt
-#load shadow /data/items/foulspawn/small/shadow.txt
-#load shirt /data/items/foulspawn/small/shirt.txt
-#load pants /data/items/foulspawn/small/pants.txt
-#load rhand /data/items/foulspawn/small/rhand.txt
-#load lhand /data/items/foulspawn/small/lhand.txt
+#load basesprite /data/items/races/foulspawn/mounted/bases.txt
+#load rarm /data/items/races/foulspawn/small/rarm.txt
+#load larm /data/items/races/foulspawn/small/larm.txt
+#load rleg /data/items/races/foulspawn/small/rleg.txt
+#load lleg /data/items/races/foulspawn/small/lleg.txt
+#load head /data/items/races/foulspawn/small/head.txt
+#load shadow /data/items/races/foulspawn/small/shadow.txt
+#load shirt /data/items/races/foulspawn/small/shirt.txt
+#load pants /data/items/races/foulspawn/small/pants.txt
+#load rhand /data/items/races/foulspawn/small/rhand.txt
+#load lhand /data/items/races/foulspawn/small/lhand.txt
 
-#load armor /data/items/foulspawn/mounted/armor.txt
-#load helmet /data/items/foulspawn/small/helmet.txt
+#load armor /data/items/races/foulspawn/mounted/armor.txt
+#load helmet /data/items/races/foulspawn/small/helmet.txt
 
-#load weapon /data/items/foulspawn/mounted/weapon.txt
-#load offhand /data/items/foulspawn/small/offhand.txt
-#load offhand /data/items/foulspawn/small/shield.txt
-#load wings /data/items/foulspawn/small/wings.txt
+#load weapon /data/items/races/foulspawn/mounted/weapon.txt
+#load offhand /data/items/races/foulspawn/small/offhand.txt
+#load offhand /data/items/races/foulspawn/small/shield.txt
+#load wings /data/items/races/foulspawn/small/wings.txt
 
-#load overlay /data/items/foulspawn/small/overlay.txt
+#load overlay /data/items/races/foulspawn/small/overlay.txt
 
-#load headweapon /data/items/foulspawn/small/headweapon.txt
-#load extraweapon /data/items/foulspawn/small/extraweapon.txt
+#load headweapon /data/items/races/foulspawn/small/headweapon.txt
+#load extraweapon /data/items/races/foulspawn/small/extraweapon.txt
 
 #generateitem 1 pants
 #generateitem 1 shirt
@@ -255,7 +255,7 @@
 #generateitem 1 rleg
 #generateitem 1 wings
 
-#maxvarieties 2
+#maxvarieties 3
 
 #baseitemslot hand 0
 #baseitemslot head 1
@@ -294,32 +294,32 @@
 
 #no_free_fist
 
-#load basesprite /data/items/foulspawn/medium/bases.txt
-#load rarm /data/items/foulspawn/medium/rarm.txt
-#load larm /data/items/foulspawn/medium/larm.txt
-#load rleg /data/items/foulspawn/medium/rleg.txt
-#load lleg /data/items/foulspawn/medium/lleg.txt
-#load rhand /data/items/foulspawn/medium/rhand.txt
-#load lhand /data/items/foulspawn/medium/lhand.txt
-#load head /data/items/foulspawn/medium/head.txt
-#load shadow /data/items/foulspawn/medium/shadow.txt
-#load shirt /data/items/foulspawn/medium/shirt.txt
+#load basesprite /data/items/races/foulspawn/medium/bases.txt
+#load rarm /data/items/races/foulspawn/medium/rarm.txt
+#load larm /data/items/races/foulspawn/medium/larm.txt
+#load rleg /data/items/races/foulspawn/medium/rleg.txt
+#load lleg /data/items/races/foulspawn/medium/lleg.txt
+#load rhand /data/items/races/foulspawn/medium/rhand.txt
+#load lhand /data/items/races/foulspawn/medium/lhand.txt
+#load head /data/items/races/foulspawn/medium/head.txt
+#load shadow /data/items/races/foulspawn/medium/shadow.txt
+#load shirt /data/items/races/foulspawn/medium/shirt.txt
 
-#load armor /data/items/foulspawn/medium/armor_placeholder.txt
-#load helmet /data/items/foulspawn/medium/helmet.txt
+#load armor /data/items/races/foulspawn/medium/armor_placeholder.txt
+#load helmet /data/items/races/foulspawn/medium/helmet.txt
 
-#load weapon /data/items/foulspawn/medium/weapon.txt
-#load offhand /data/items/foulspawn/medium/offhand.txt
+#load weapon /data/items/races/foulspawn/medium/weapon.txt
+#load offhand /data/items/races/foulspawn/medium/offhand.txt
 
-#load bonusweapon /data/items/foulspawn/medium/bonusweapon.txt
-#load bonustentacle1 /data/items/foulspawn/medium/bonustentacle.txt
-#load bonustentacle2 /data/items/foulspawn/medium/bonustentacle.txt
+#load bonusweapon /data/items/races/foulspawn/medium/bonusweapon.txt
+#load bonustentacle1 /data/items/races/foulspawn/medium/bonustentacle.txt
+#load bonustentacle2 /data/items/races/foulspawn/medium/bonustentacle.txt
 
-#load debility /data/items/foulspawn/small/debility.txt
+#load debility /data/items/races/foulspawn/small/debility.txt
 
-#load lhand_overlay /data/items/foulspawn/medium/lhand_overlay.txt
-#load headweapon /data/items/foulspawn/medium/headweapon.txt
-#load hair /data/items/foulspawn/medium/hair.txt
+#load lhand_overlay /data/items/races/foulspawn/medium/lhand_overlay.txt
+#load headweapon /data/items/races/foulspawn/medium/headweapon.txt
+#load hair /data/items/races/foulspawn/medium/hair.txt
 
 #generateitem 1 debility
 #generateitem 1 offhand
@@ -350,30 +350,30 @@
 
 #chanceinc moduleid herogen 1
 
-#load basesprite /data/items/foulspawn/medium/bases.txt
-#load rarm /data/items/foulspawn/medium/rarm.txt
-#load larm /data/items/foulspawn/medium/larm.txt
-#load rleg /data/items/foulspawn/medium/rleg.txt
-#load lleg /data/items/foulspawn/medium/lleg.txt
-#load rhand /data/items/foulspawn/medium/rhand.txt
-#load lhand /data/items/foulspawn/medium/lhand.txt
-#load head /data/items/foulspawn/medium/head.txt
-#load shadow /data/items/foulspawn/medium/shadow.txt
-#load shirt /data/items/foulspawn/medium/shirt.txt
+#load basesprite /data/items/races/foulspawn/medium/bases.txt
+#load rarm /data/items/races/foulspawn/medium/rarm.txt
+#load larm /data/items/races/foulspawn/medium/larm.txt
+#load rleg /data/items/races/foulspawn/medium/rleg.txt
+#load lleg /data/items/races/foulspawn/medium/lleg.txt
+#load rhand /data/items/races/foulspawn/medium/rhand.txt
+#load lhand /data/items/races/foulspawn/medium/lhand.txt
+#load head /data/items/races/foulspawn/medium/head.txt
+#load shadow /data/items/races/foulspawn/medium/shadow.txt
+#load shirt /data/items/races/foulspawn/medium/shirt.txt
 
-#load armor /data/items/foulspawn/medium/armor.txt
-#load helmet /data/items/foulspawn/medium/helmet.txt
+#load armor /data/items/races/foulspawn/medium/armor.txt
+#load helmet /data/items/races/foulspawn/medium/helmet.txt
 
-#load weapon /data/items/foulspawn/medium/weapon.txt
-#load offhand /data/items/foulspawn/medium/offhand.txt
-#load offhand /data/items/foulspawn/medium/shield.txt
-#load bonusweapon /data/items/foulspawn/medium/bonusweapon.txt
-#load bonustentacle1 /data/items/foulspawn/medium/bonustentacle.txt
-#load bonustentacle2 /data/items/foulspawn/medium/bonustentacle.txt
+#load weapon /data/items/races/foulspawn/medium/weapon.txt
+#load offhand /data/items/races/foulspawn/medium/offhand.txt
+#load offhand /data/items/races/foulspawn/medium/shield.txt
+#load bonusweapon /data/items/races/foulspawn/medium/bonusweapon.txt
+#load bonustentacle1 /data/items/races/foulspawn/medium/bonustentacle.txt
+#load bonustentacle2 /data/items/races/foulspawn/medium/bonustentacle.txt
 
-#load lhand_overlay /data/items/foulspawn/medium/lhand_overlay.txt
-#load headweapon /data/items/foulspawn/medium/headweapon.txt
-#load hair /data/items/foulspawn/medium/hair.txt
+#load lhand_overlay /data/items/races/foulspawn/medium/lhand_overlay.txt
+#load headweapon /data/items/races/foulspawn/medium/headweapon.txt
+#load hair /data/items/races/foulspawn/medium/hair.txt
 
 #generateitem 1 lleg
 #generateitem 1 rleg
@@ -400,32 +400,32 @@
 
 #no_free_fist
 
-#load basesprite /data/items/foulspawn/small/bases.txt
-#load rarm /data/items/foulspawn/small/rarm.txt
-#load larm /data/items/foulspawn/small/larm.txt
-#load rleg /data/items/foulspawn/small/rleg_scout.txt
-#load lleg /data/items/foulspawn/small/lleg_scout.txt
-#load head /data/items/foulspawn/small/head.txt
-#load shadow /data/items/foulspawn/small/shadow.txt
-#load shirt /data/items/foulspawn/small/shirt.txt
-#load pants /data/items/foulspawn/small/pants.txt
-#load rhand /data/items/foulspawn/small/rhand.txt
-#load lhand /data/items/foulspawn/small/lhand.txt
+#load basesprite /data/items/races/foulspawn/small/bases.txt
+#load rarm /data/items/races/foulspawn/small/rarm.txt
+#load larm /data/items/races/foulspawn/small/larm.txt
+#load rleg /data/items/races/foulspawn/small/rleg_scout.txt
+#load lleg /data/items/races/foulspawn/small/lleg_scout.txt
+#load head /data/items/races/foulspawn/small/head.txt
+#load shadow /data/items/races/foulspawn/small/shadow.txt
+#load shirt /data/items/races/foulspawn/small/shirt.txt
+#load pants /data/items/races/foulspawn/small/pants.txt
+#load rhand /data/items/races/foulspawn/small/rhand.txt
+#load lhand /data/items/races/foulspawn/small/lhand.txt
 
-#load armor /data/items/foulspawn/small/armor.txt
-#load helmet /data/items/foulspawn/small/helmet.txt
+#load armor /data/items/races/foulspawn/small/armor.txt
+#load helmet /data/items/races/foulspawn/small/helmet.txt
 
-#load weapon /data/items/foulspawn/small/weapon_scout.txt
-#load offhand /data/items/foulspawn/small/offhand_scout.txt
-#load bonusweapon /data/items/foulspawn/small/bonusranged.txt
+#load weapon /data/items/races/foulspawn/small/weapon_scout.txt
+#load offhand /data/items/races/foulspawn/small/offhand_scout.txt
+#load bonusweapon /data/items/races/foulspawn/small/bonusranged.txt
 
-#load cloakf /data/items/foulspawn/small/cloakf.txt
-#load cloakb /data/items/foulspawn/small/cloakb.txt
+#load cloakf /data/items/races/foulspawn/small/cloakf.txt
+#load cloakb /data/items/races/foulspawn/small/cloakb.txt
 
-#load overlay /data/items/foulspawn/small/overlay.txt
+#load overlay /data/items/races/foulspawn/small/overlay.txt
 
-#load headweapon /data/items/foulspawn/small/headweapon.txt
-#load extraweapon /data/items/foulspawn/small/extraweapon.txt
+#load headweapon /data/items/races/foulspawn/small/headweapon.txt
+#load extraweapon /data/items/races/foulspawn/small/extraweapon.txt
 
 #generateitem 1 pants
 #generateitem 1 shirt

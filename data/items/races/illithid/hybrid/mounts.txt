@@ -1,0 +1,965 @@
+--- Base offsets are applied to everything except base and overlay
+
+#newitem
+#id "riding_horse"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#offsety -20
+#armor
+#needs overlay 1
+#mountmnr "riding_horse_mount"
+#theme "light"
+#tag "animal horse"
+#tag "maxprot 11"
+#basechance 10
+#epicness 0.25
+#enditem
+
+#newitem
+#id "riding_horse_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#offsety -20
+#armor
+#needs overlay 1
+#mountmnr "riding_horse_mount"
+#barding 251
+#theme "light"
+#theme "leather"
+#tag "animal horse"
+#basechance 9
+#chanceinc prot 10 *2
+#epicness 0.25
+#enditem
+
+#newitem
+#id "riding_horse_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#offsety -20
+#armor
+#needs overlay 1
+#mountmnr "riding_horse_mount"
+#barding 137
+#theme "light"
+#theme "shell"
+#tag "animal horse"
+#basechance 8
+#chanceinc prot 11 *2
+#epicness 0.25
+#enditem
+
+#newitem
+#id "riding_horse_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#offsety -20
+#armor
+#needs overlay 1
+#mountmnr "riding_horse_mount"
+#barding 190
+#theme "light"
+#theme "coral"
+#tag "animal horse"
+#basechance 8
+#chanceinc prot 11 *2
+#epicness 0.25
+#enditem
+
+#newitem
+#id "riding_horse_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#offsety -20
+#armor
+#needs overlay 1
+#mountmnr "riding_horse_mount"
+#barding 264
+#theme "bronze"
+#tag "animal horse"
+#basechance 8
+#chanceinc prot 11 *2
+#epicness 0.25
+#enditem
+
+#newitem
+#id "riding_horse_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#offsety -20
+#armor
+#needs overlay 1
+#mountmnr "riding_horse_mount"
+#barding 252
+#theme "iron"
+#tag "animal horse"
+#basechance 8
+#chanceinc prot 12 *2
+#epicness 0.25
+#enditem
+
+#newitem
+#id "riding_horse_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#offsety -20
+#armor
+#needs overlay 1
+#mountmnr "riding_horse_mount"
+#barding 172
+#theme "bronze"
+#tag "animal horse"
+#basechance 6
+#chanceinc prot 13 *2
+#epicness 0.25
+#enditem
+
+#newitem
+#id "riding_horse_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#offsety -20
+#armor
+#needs overlay 1
+#mountmnr "riding_horse_mount"
+#barding 172
+#theme "iron"
+#tag "animal horse"
+#basechance 6
+#chanceinc prot 14 *2
+#epicness 0.25
+#enditem
+
+#newitem
+#id "riding_horse_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#offsety -20
+#armor
+#needs overlay 1
+#mountmnr "riding_horse_mount"
+#barding 263
+#theme "bronze"
+#theme "heavy"
+#tag "animal horse"
+#basechance 1.5
+#chanceinc prot 17 *2
+#epicness 0.25
+#enditem
+
+#newitem
+#id "riding_horse_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/brownhorse.png
+#offsety -20
+#armor
+#needs overlay 1
+#mountmnr "riding_horse_mount"
+#barding 254
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal horse"
+#basechance 1.5
+#chanceinc prot 18 *2
+#epicness 0.25
+#enditem
+
+
+#newitem
+#id "camel"
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/standard/camel.png
+#armor
+#offsetx 5
+#offsety 35
+#mountmnr "camel_mount"
+#theme "light"
+#tag "animal camel"
+#tag "maxprot 11"
+#basechance 10
+#epicness 0.25
+#enditem
+
+#newitem
+#id "camel_leather_barding"
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/standard/camel_armored_leather.png
+#armor
+#offsetx 5
+#offsety 35
+#mountmnr "camel_mount"
+#barding 251
+#theme "light"
+#theme "leather"
+#tag "animal camel"
+#tag "maxprot 14"
+#basechance 10
+#chanceinc prot 10 *2
+#epicness 0.25
+#enditem
+
+#newitem
+#id "camel_ochre_turtle_shell_barding"
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/standard/camel_armored_turtle_shell_ochre.png
+#armor
+#offsetx 5
+#offsety 35
+#mountmnr "camel_mount"
+#barding 137
+#theme "light"
+#theme "shell"
+#tag "animal camel"
+#tag "maxprot 14"
+#basechance 10
+#chanceinc prot 11 *2
+#epicness 0.25
+#enditem
+
+#newitem
+#id "camel_coral_barding"
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/standard/camel_armored_coral.png
+#armor
+#offsetx 5
+#offsety 35
+#mountmnr "camel_mount"
+#barding 190
+#theme "light"
+#theme "coral"
+#tag "animal camel"
+#tag "maxprot 14"
+#basechance 10
+#chanceinc prot 11 *2
+#epicness 0.25
+#enditem
+
+#newitem
+#id "camel_light_bronze_barding"
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/standard/camel_armored_light_bronze.png
+#armor
+#offsetx 5
+#offsety 35
+#mountmnr "camel_mount"
+#barding 264
+#theme "bronze"
+#tag "animal camel"
+#basechance 10
+#chanceinc prot 11 *2
+#epicness 0.25
+#enditem
+
+#newitem
+#id "camel_light_scale_barding"
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/standard/camel_armored_light_scale.png
+#armor
+#offsetx 5
+#offsety 35
+#mountmnr "camel_mount"
+#barding 252
+#theme "iron"
+#tag "animal camel"
+#basechance 10
+#chanceinc prot 12 *2
+#epicness 0.25
+#enditem
+
+#newitem
+#id "camel_bronze_mail_barding"
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/standard/camel_armored_mail_bronze.png
+#armor
+#offsetx 5
+#offsety 35
+#mountmnr "camel_mount"
+#barding 172
+#theme "bronze"
+#tag "animal camel"
+#basechance 10
+#chanceinc prot 13 *2
+#epicness 0.25
+#enditem
+
+#newitem
+#id "camel_iron_mail_barding"
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/standard/camel_armored_mail.png
+#armor
+#offsetx 5
+#offsety 35
+#mountmnr "camel_mount"
+#barding 172
+#theme "iron"
+#tag "animal camel"
+#basechance 10
+#chanceinc prot 14 *2
+#epicness 0.25
+#enditem
+
+#newitem
+#id "camel_bronze_barding"
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/standard/camel_armored_bronze.png
+#armor
+#offsetx 5
+#offsety 35
+#mountmnr "camel_mount"
+#barding 263
+#theme "bronze"
+#theme "heavy"
+#tag "animal camel"
+#basechance 10
+#chanceinc prot 17 *2
+#epicness 0.25
+#enditem
+
+#newitem
+#id "camel_plate_barding"
+#chanceinc "nationcommand #idealcold above 0 *0"
+#chanceinc "nationcommand #idealcold above -1 *0.5"
+#chanceinc "nationcommand #idealcold below -1 *2"
+#gameid -1
+#sprite /graphics/mounts/standard/camel_armored_plate.png
+#armor
+#offsetx 5
+#offsety 35
+#mountmnr "camel_mount"
+#barding 254
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal camel"
+#basechance 10
+#chanceinc prot 18 *2
+#epicness 0.25
+#enditem
+
+
+#newitem
+#id "cave_cow"
+#gameid -1
+#sprite /graphics/mounts/standard/cavecow.png
+#offsetx -0
+#offsety -12
+#armor
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#mountmnr "cave_cow_mount"
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#basechance 10
+#chanceinc primaryrace "Pale One" *100
+#enditem
+
+#newitem
+#id "cave_cow_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavecow_armored_turtle_shell.png
+#offsetx -0
+#offsety -12
+#armor
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#mountmnr "cave_cow_mount"
+#barding 137
+#theme "shell"
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#basechance 8
+#chanceinc prot 11 *2
+#chanceinc primaryrace "Pale One" *100
+#enditem
+
+#newitem
+#id "cave_cow_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavecow_armored_coral.png
+#offsetx -0
+#offsety -12
+#armor
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#mountmnr "cave_cow_mount"
+#barding 190
+#theme "coral"
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#basechance 8
+#chanceinc prot 11 *2
+#chanceinc primaryrace "Pale One" *100
+#enditem
+
+#newitem
+#id "cave_cow_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavecow_armored_light_bronze.png
+#offsetx -0
+#offsety -12
+#armor
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#mountmnr "cave_cow_mount"
+#barding 264
+#theme "bronze"
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#basechance 8
+#chanceinc prot 11 *2
+#chanceinc primaryrace "Pale One" *100
+#enditem
+
+#newitem
+#id "cave_cow_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavecow_armored_light_scale.png
+#offsetx -0
+#offsety -12
+#armor
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#mountmnr "cave_cow_mount"
+#barding 252
+#theme "iron"
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#basechance 8
+#chanceinc prot 12 *2
+#chanceinc primaryrace "Pale One" *100
+#enditem
+
+#newitem
+#id "cave_cow_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavecow_armored_mail_bronze.png
+#offsetx -0
+#offsety -12
+#armor
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#mountmnr "cave_cow_mount"
+#barding 172
+#theme "bronze"
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#basechance 6
+#chanceinc prot 13 *2
+#chanceinc primaryrace "Pale One" *100
+#enditem
+
+#newitem
+#id "cave_cow_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavecow_armored_mail.png
+#offsetx -0
+#offsety -12
+#armor
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#mountmnr "cave_cow_mount"
+#barding 172
+#theme "iron"
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#basechance 6
+#chanceinc prot 14 *2
+#chanceinc primaryrace "Pale One" *100
+#enditem
+
+#newitem
+#id "cave_cow_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavecow_armored_bronze.png
+#offsetx -0
+#offsety -12
+#armor
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#mountmnr "cave_cow_mount"
+#barding 263
+#theme "bronze"
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#basechance 1.5
+#chanceinc prot 17 *2
+#chanceinc primaryrace "Pale One" *100
+#enditem
+
+#newitem
+#id "cave_cow_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/cavecow_armored_plate.png
+#offsetx -0
+#offsety -12
+#armor
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#mountmnr "cave_cow_mount"
+#barding 254
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#basechance 1.5
+#chanceinc prot 18 *2
+#chanceinc primaryrace "Pale One" *100
+#enditem
+
+
+#newitem
+#id "serpent"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent.png
+#armor
+#offsetx -0
+#offsety -5
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#mountmnr "serpent_mount"
+#theme "light"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 13"
+#basechance 10
+#enditem
+
+#newitem
+#id "serpent_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent.png
+#armor
+#offsetx -0
+#offsety -5
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#mountmnr "serpent_mount"
+#barding 251
+#theme "light"
+#theme "leather"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 13"
+#basechance 9
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "serpent_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent.png
+#armor
+#offsetx -0
+#offsety -5
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#mountmnr "serpent_mount"
+#barding 137
+#theme "light"
+#theme "shell"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 13"
+#basechance 9
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "serpent_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent.png
+#armor
+#offsetx -0
+#offsety -5
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#mountmnr "serpent_mount"
+#barding 190
+#theme "light"
+#theme "coral"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 13"
+#basechance 9
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "serpent_light_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent.png
+#armor
+#offsetx -0
+#offsety -5
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#mountmnr "serpent_mount"
+#barding 264
+#theme "light"
+#theme "bronze"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+#newitem
+#id "serpent_light_scale_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent.png
+#armor
+#offsetx -0
+#offsety -5
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#mountmnr "serpent_mount"
+#barding 252
+#theme "light"
+#theme "iron"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#basechance 8
+#chanceinc prot 12 *2
+#enditem
+
+#newitem
+#id "serpent_bronze_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent.png
+#armor
+#offsetx -0
+#offsety -5
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#mountmnr "serpent_mount"
+#barding 172
+#theme "bronze"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#basechance 6
+#chanceinc prot 13 *2
+#enditem
+
+#newitem
+#id "serpent_iron_mail_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent.png
+#armor
+#offsetx -0
+#offsety -5
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#mountmnr "serpent_mount"
+#barding 172
+#theme "iron"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#basechance 6
+#chanceinc prot 14 *2
+#enditem
+
+#newitem
+#id "serpent_bronze_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent.png
+#armor
+#offsetx -0
+#offsety -5
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#mountmnr "serpent_mount"
+#barding 263
+#theme "bronze"
+#theme "heavy"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#basechance 1.5
+#chanceinc prot 17 *2
+#enditem
+
+#newitem
+#id "serpent_plate_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/serpent.png
+#armor
+#offsetx -0
+#offsety -5
+#needs overlay 6
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#mountmnr "serpent_mount"
+#barding 254
+#theme "iron"
+#theme "heavy"
+#theme "advanced"
+#tag "animal serpent"
+#tag "guaranteedprefix serpent"
+#basechance 1.5
+#chanceinc prot 18 *2
+#enditem
+
+
+#newitem
+#id "giant_rat"
+#gameid -1
+#sprite /graphics/mounts/standard/giant_rat.png
+#armor
+#offsetx 0
+#offsety -5
+#description "If the rider dies, the rat will carry on fighting until the end of the battle."
+#mountmnr "giant_rat_mount"
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#tag "animal rat"
+#tag "guaranteedprefix rat"
+#basechance 10
+#enditem
+
+#newitem
+#id "giant_rat_leather_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/giant_rat.png
+#armor
+#offsetx 0
+#offsety -5
+#description "If the rider dies, the rat will carry on fighting until the end of the battle."
+#mountmnr "giant_rat_mount"
+#barding 251
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#theme "leather"
+#tag "animal rat"
+#tag "guaranteedprefix rat"
+#basechance 9
+#chanceinc prot 9 *2
+#enditem
+
+#newitem
+#id "giant_rat_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/giant_rat.png
+#armor
+#offsetx 0
+#offsety -5
+#description "If the rider dies, the rat will carry on fighting until the end of the battle."
+#mountmnr "giant_rat_mount"
+#barding 137
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#theme "shell"
+#tag "animal rat"
+#tag "guaranteedprefix rat"
+#basechance 8
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "giant_rat_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/giant_rat.png
+#armor
+#offsetx 0
+#offsety -5
+#description "If the rider dies, the rat will carry on fighting until the end of the battle."
+#mountmnr "giant_rat_mount"
+#barding 190
+#theme "rat"
+#theme "rattotem"
+#theme "totemanimal"
+#theme "coral"
+#tag "animal rat"
+#tag "guaranteedprefix rat"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+
+#newitem
+#id "sea_dog"
+#gameid -1
+#sprite /graphics/mounts/standard/seadog.png
+#armor
+#offsety -13
+#description "The loyal sea dog will continue to fight even if its rider dies."
+#mountmnr "sea_dog_mount"
+#define "#swimming"
+#command "#amphibian"
+#theme "light"
+#tag "animal dog"
+#tag "guaranteedprefix dog"
+#tag "maxprot 9"
+#basechance 10
+#enditem
+
+#newitem
+#id "sea_dog_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/seadog.png
+#armor
+#offsety -13
+#description "The loyal sea dog will continue to fight even if its rider dies."
+#mountmnr "sea_dog_mount"
+#define "#swimming"
+#barding 137
+#command "#amphibian"
+#theme "light"
+#theme "shell"
+#tag "animal dog"
+#tag "guaranteedprefix dog"
+#basechance 8
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "sea_dog_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/seadog.png
+#armor
+#offsety -13
+#description "The loyal sea dog will continue to fight even if its rider dies."
+#mountmnr "sea_dog_mount"
+#define "#swimming"
+#barding 190
+#command "#amphibian"
+#theme "light"
+#theme "coral"
+#tag "animal dog"
+#tag "guaranteedprefix dog"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+
+#newitem
+#id "jaguar_toad"
+#gameid -1
+#sprite /graphics/mounts/standard/toad_jaguar.png
+#armor
+#offsetx 0
+#offsety -13
+#mountmnr "jaguar_toad_mount"
+#description "The giant toad will fight until the end of the battle should the rider die"
+#tag "animal 'giant toad'"
+#tag "guaranteedprefix toad"
+#tag "minprot 6"
+#tag "maxprot 14"
+#basechance 10
+#enditem
+
+#newitem
+#id "jaguar_toad_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/toad_jaguar.png
+#armor
+#offsetx 0
+#offsety -13
+#mountmnr "jaguar_toad_mount"
+#barding 137
+#description "The giant toad will fight until the end of the battle should the rider die"
+#theme "shell"
+#tag "animal 'giant toad'"
+#tag "guaranteedprefix toad"
+#tag "minprot 6"
+#tag "maxprot 16"
+#basechance 8
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "jaguar_toad_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/toad_jaguar.png
+#armor
+#offsetx 0
+#offsety -13
+#mountmnr "jaguar_toad_mount"
+#barding 190
+#description "The giant toad will fight until the end of the battle should the rider die"
+#theme "coral"
+#tag "animal 'giant toad'"
+#tag "guaranteedprefix toad"
+#tag "minprot 6"
+#tag "maxprot 16"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem
+
+
+#newitem
+#id "sapphire_toad"
+#gameid -1
+#sprite /graphics/mounts/standard/toad_sapphire.png
+#armor
+#offsetx 0
+#offsety -13
+#mountmnr "sapphire_toad_mount"
+#define "#swimming"
+#description "The giant frog will fight until the end of the battle should the rider die"
+#tag "animal 'giant frog'"
+#tag "guaranteedprefix frog"
+#tag "minprot 6"
+#tag "maxprot 14"
+#basechance 10
+#enditem
+
+#newitem
+#id "sapphire_toad_turtle_shell_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/toad_sapphire.png
+#armor
+#offsetx 0
+#offsety -13
+#mountmnr "sapphire_toad_mount"
+#define "#swimming"
+#barding 137
+#description "The giant frog will fight until the end of the battle should the rider die"
+#theme "shell"
+#tag "animal 'giant frog'"
+#tag "guaranteedprefix frog"
+#tag "minprot 6"
+#tag "maxprot 16"
+#basechance 8
+#chanceinc prot 10 *2
+#enditem
+
+#newitem
+#id "sapphire_toad_coral_barding"
+#gameid -1
+#sprite /graphics/mounts/standard/toad_sapphire.png
+#armor
+#offsetx 0
+#offsety -13
+#mountmnr "sapphire_toad_mount"
+#define "#swimming"
+#barding 190
+#description "The giant frog will fight until the end of the battle should the rider die"
+#theme "coral"
+#tag "animal 'giant frog'"
+#tag "guaranteedprefix frog"
+#tag "minprot 6"
+#tag "maxprot 16"
+#basechance 8
+#chanceinc prot 11 *2
+#enditem

@@ -34,7 +34,7 @@ public enum WeaponNumericalDamageType {
 
   public static Boolean isModCommandANumericalDamageType(String command) {
     for (WeaponNumericalDamageType type : WeaponNumericalDamageType.values()) {
-      if (type.getProperty().getModCommand().equals(command)) {
+      if (type.getProperty().toModCommand().equals(command)) {
         return true;
       }
     }

@@ -1,0 +1,72 @@
+
+-------- Normal
+#newpose
+#basechance 1
+#id "hellbredbase"
+#role "infantry"
+#role "elite infantry"
+#role "sacred infantry"
+
+#forcedname "Hellbred Infantry"
+
+#montagpose "hellbred" 4
+#montagpose "demonbred infantry" 1
+#montagpose "warbred infantry" 1
+
+#chanceinc moduleid herogen *0
+#montagpose_min 4
+#montagpose_max 4
+
+
+#load basesprite /data/items/races/foulspawn/small/bases_infantry.txt
+
+#load armor /data/items/races/foulspawn/small/armor_placeholder.txt
+#load helmet /data/items/races/foulspawn/small/helmet_placeholder.txt
+
+#load weapon /data/items/races/foulspawn/small/weapon_placeholder.txt
+
+#maxunits 2
+#endpose
+
+
+
+#newpose
+#id "hellbred"
+#basechance 0
+#role "infantry"
+
+#no_free_fist
+#dwchancebonus 0.4
+
+#renderorder "shadow basesprite legs armor pants weapon offhandw hands offhanda head helmet overlay"
+
+#load basesprite /data/items/races/abysian/hellbred/bases.txt
+#load legs /data/items/races/abysian/hellbred/legs.txt
+#load head /data/items/races/abysian/hellbred/head.txt
+#load shadow /data/items/races/abysian/hellbred/shadow.txt
+#load pants /data/items/races/abysian/hellbred/pants.txt
+#load hands /data/items/races/abysian/hellbred/hands.txt
+
+#load armor /data/items/races/abysian/hellbred/armor.txt
+
+#load helmet /data/items/races/abysian/humanhelmet_metal.txt
+#load helmet /data/items/races/abysian/hellbred/helmet.txt
+
+#load weapon /data/items/races/abysian/hellbred/weapon.txt
+---#load weapon /data/items/races/abysian/weapon.txt
+
+#load offhand /data/items/races/abysian/hellbred/offhand.txt
+#load offhand /data/items/races/abysian/hellbred/shields.txt
+#load headweapon /data/items/races/abysian/hellbred/headweapon.txt
+
+#load overlay /data/items/races/abysian/hellbred/overlay.txt
+
+#command "startaff 40"
+
+#generateitem 1 head
+
+#baseitemslot hand 0
+#baseitemslot head 0
+#baseitemslot misc 2
+
+#endpose

@@ -3,6 +3,8 @@ package nationGen.naming;
 import com.elmokki.Generic;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import nationGen.units.Unit;
 
 public class Name {
@@ -14,9 +16,14 @@ public class Name {
   public NamePart prefixprefixprefix;
   public NamePart suffixprefix;
   public NamePart suffix;
+  public NamePart forcedName;
 
   public void setType(String str) {
-    this.type = NamePart.newNamePart(str, null);
+    this.setType(NamePart.newNamePart(str, null));
+  }
+
+  public void setType(NamePart part) {
+    this.type = part;
   }
 
   public void setRankPrefix(String str) {
@@ -41,6 +48,10 @@ public class Name {
 
   public void setSuffix(String str) {
     this.suffix = NamePart.newNamePart(str, null);
+  }
+
+  public void setForcedName(String str) {
+    this.forcedName = NamePart.newNamePart(str, null);
   }
 
   public boolean pluralsuffix = false;
@@ -68,6 +79,10 @@ public class Name {
 
   public String toString(Unit u) {
     String str = "";
+
+    if (this.forcedName != null) {
+      return this.forcedName.toString();
+    }
 
     if (rankprefix != null) str = str + rankprefix.toString(u) + " ";
     if (prefixprefixprefix != null) str = str +
@@ -136,13 +151,7 @@ public class Name {
     list.add(suffixprefix);
     list.add(suffix);
 
-    list.remove(null);
-    list.remove(null);
-    list.remove(null);
-    list.remove(null);
-    list.remove(null);
-    list.remove(null);
-    list.remove(null);
+    list = list.stream().filter(p -> p != null).collect(Collectors.toList());
     return list;
   }
 

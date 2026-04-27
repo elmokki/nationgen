@@ -7,7 +7,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import nationGen.entities.Race;
 import nationGen.magic.MagicPath;
 import nationGen.magic.MagicPathLevel;
 import nationGen.nation.Nation;

@@ -21,6 +21,8 @@ import nationGen.magic.MagicPath;
 import nationGen.magic.SpellGen;
 import nationGen.misc.*;
 import nationGen.naming.Summary;
+import nationGen.nation.pd.Militia;
+import nationGen.nation.startarmy.StartArmy;
 import nationGen.restrictions.NationRestriction;
 import nationGen.restrictions.NationRestriction.RestrictionType;
 import nationGen.rostergeneration.*;
@@ -50,7 +52,7 @@ public class Nation {
 
   public List<Unit> heroes = new ArrayList<>();
 
-  public List<Command> commands = new ArrayList<>();
+  private List<Command> commands = new ArrayList<>();
   public List<CustomItem> usedcustomitems = new ArrayList<>();
   public List<ShapeChangeUnit> secondshapes = new ArrayList<>();
   public List<CustomItem> customitems = new ArrayList<>();
@@ -61,6 +63,8 @@ public class Nation {
 
   public Map<String, List<Unit>> unitlists = new LinkedHashMap<>();
   public Map<String, List<Unit>> comlists = new LinkedHashMap<>();
+  public Militia militia;
+  public StartArmy startArmy;
 
   public List<Race> races = new ArrayList<>();
   public String nationalitysuffix;
@@ -95,6 +99,36 @@ public class Nation {
     generate(restrictions);
   }
 
+  public List<Command> getCommands() {
+    return new ArrayList<>(this.commands);
+  }
+
+  public List<Command> getHandledCommands() {
+    List<Command> coms = new ArrayList<>();
+    for (Command c : this.commands) {
+      this.handleCommand(coms, c);
+    }
+    return coms;
+  }
+
+  public void addCommands(Command... commands) {
+    this.addCommands(List.of(commands));
+  }
+
+  public void addCommands(List<Command> commands) {
+    for (Command c : commands) {
+      this.commands.add(c);
+    }
+  }
+
+  public boolean removeCommand(Command command) {
+    return this.commands.remove(command);
+  }
+
+  public boolean removeCommand(String command) {
+    return this.commands.remove(Command.parse(command));
+  }
+
   public long getSeed() {
     return seed;
   }
@@ -123,7 +157,7 @@ public class Nation {
     // choose primary race
     List<Race> allRaces = new ArrayList<>();
 
-    for (Race r : assets.races) {
+    for (Race r : assets.races.getAllValues()) {
       if (!r.tags.containsName("secondary")) {
         allRaces.add(r);
       }
@@ -145,7 +179,7 @@ public class Nation {
 
     // Secondary race after themes since themes may affect it
     allRaces.clear();
-    allRaces.addAll(assets.races);
+    allRaces.addAll(assets.races.getAllValues());
     allRaces.remove(race);
 
     race = chandler.handleChanceIncs(allRaces).getRandom(random);
@@ -385,7 +419,7 @@ public class Nation {
       possibleForts
     );
     Filter forts = chandler.getRandom(possibleForts);
-    this.commands.addAll(forts.commands);
+    this.commands.addAll(forts.getCommands());
   }
 
   private void generateHeroes() {
@@ -426,6 +460,18 @@ public class Nation {
       }
     }
     System.gc();
+  }
+
+  private void generateMilitia() {
+    this.militia = new Militia(this, this.nationGen.settings);
+  }
+
+  private void generateStartArmy() {
+    if (this.militia == null) {
+      this.generateMilitia();
+    }
+
+    this.startArmy = new StartArmy(this, this.militia, this.nationGen.settings);
   }
 
   private void generateSpells() {
@@ -556,7 +602,8 @@ public class Nation {
         restrictions,
         RestrictionType.NoPrimaryRace,
         RestrictionType.PrimaryRace,
-        RestrictionType.NationTheme
+        RestrictionType.NationTheme,
+        RestrictionType.NoNationTheme
       )
     ) {
       return;
@@ -610,18 +657,12 @@ public class Nation {
     }
 
     generateMonsters();
+    generateMilitia();
+    generateStartArmy();
     SiteGenerator.generateSites(this, assets);
     generateSpells();
     generateFlag();
     getStartAffinity();
-
-    double extraPDMulti =
-      this.races.get(0).tags.getDouble("extrapdmulti").orElse(1D);
-
-    if (random.nextDouble() < 0.1 * extraPDMulti) {
-      if (random.nextDouble() < 0.02 * extraPDMulti) PDRanks = 4;
-      else PDRanks = 3;
-    }
   }
 
   private void addNationThemes() {
@@ -656,7 +697,7 @@ public class Nation {
 
       possibleThemes.remove(t);
       race.handleTheme(t);
-      for (Command c : t.commands) this.handleCommand(commands, c);
+      for (Command c : t.getCommands()) this.handleCommand(commands, c);
       this.nationthemes.add(t);
     }
 
@@ -680,7 +721,7 @@ public class Nation {
         if (t != null) {
           race.handleTheme(t);
           possibleThemes.remove(t);
-          for (Command c : t.commands) {
+          for (Command c : t.getCommands()) {
             this.handleCommand(commands, c);
           }
           this.nationthemes.add(t);
@@ -778,7 +819,7 @@ public class Nation {
         .collect(Collectors.toList());
 
     for (List<Unit> l : this.comlists.values()) for (Unit u : l) {
-      u.commands.addAll(u.race.specialcommands);
+      u.addCommands(u.race.specialcommands);
       giveSecondaryRaceSpecialCommands(u, conditional);
 
       int priest = u.getMagicPicks().get(MagicPath.HOLY);
@@ -789,7 +830,7 @@ public class Nation {
           .map(Arg::getInt)
           .max(Integer::compareTo)
           .ifPresent(highest ->
-            u.commands.add(
+            u.addCommands(
               new Command("#gcost", new Arg("+" + (highest * priest)))
             )
           );
@@ -802,7 +843,7 @@ public class Nation {
       if (
         u.tags.containsName("elite") || u.tags.containsName("sacred")
       ) {
-        u.commands.addAll(u.race.specialcommands);
+        u.addCommands(u.race.specialcommands);
       }
 
       giveSecondaryRaceSpecialCommands(u, conditional);
@@ -810,7 +851,7 @@ public class Nation {
     }
 
     for (Unit u : heroes) {
-      u.commands.addAll(u.race.specialcommands);
+      u.addCommands(u.race.specialcommands);
       giveSecondaryRaceSpecialCommands(u, conditional);
       u.polish();
     }
@@ -930,7 +971,7 @@ public class Nation {
         }
       }
       if (ok) {
-        u.commands.add(cc);
+        u.addCommands(cc);
       }
     }
   }
@@ -1040,55 +1081,12 @@ public class Nation {
     lines.addAll(writeRecLines(false, unitlists));
     lines.addAll(writeRecLines(true, comlists));
 
-    // PD
-    PDSelector pds = new PDSelector(this, nationGen);
-
     lines.add("");
-    lines.add("#defcom1 " + pds.getIDforPD(pds.getPDCommander(1)));
-    lines.add("#defunit1 " + pds.getIDforPD(pds.getMilitia(1, 1)));
-    lines.add("#defmult1 " + pds.getMilitiaAmount(pds.getMilitia(1, 1)));
-    lines.add("#defunit1b " + pds.getIDforPD(pds.getMilitia(2, 1)));
-    lines.add("#defmult1b " + pds.getMilitiaAmount(pds.getMilitia(2, 1)));
-    if (PDRanks > 2) {
-      lines.add("#defunit1c " + pds.getIDforPD(pds.getMilitia(3, 1)));
-      lines.add("#defmult1c " + pds.getMilitiaAmount(pds.getMilitia(3, 1)));
-
-      if (PDRanks > 3) {
-        lines.add("#defunit1d " + pds.getIDforPD(pds.getMilitia(4, 1)));
-        lines.add("#defmult1d " + pds.getMilitiaAmount(pds.getMilitia(4, 1)));
-      }
-    }
-    lines.add("#defcom2 " + pds.getIDforPD(pds.getPDCommander(2)));
-    lines.add("#defunit2 " + pds.getIDforPD(pds.getMilitia(1, 2)));
-    lines.add("#defmult2 " + pds.getMilitiaAmount(pds.getMilitia(1, 2)));
-    lines.add("#defunit2b " + pds.getIDforPD(pds.getMilitia(2, 2)));
-    lines.add("#defmult2b " + pds.getMilitiaAmount(pds.getMilitia(2, 2)));
+    lines.addAll(this.militia.writeModLines());
     lines.add("");
 
-    // Wall units
-    lines.add("#wallcom " + pds.getIDforPD(pds.getPDCommander(1)));
-    lines.add("#wallunit " + pds.getIDforPD(pds.getWallUnit(true)));
-    lines.add("#wallmult " + pds.getCastleDefenderMult(pds.getWallUnit(true)));
-
-    // Gate units
-    lines.add("#guardcom " + pds.getIDforPD(pds.getPDCommander(1)));
-    lines.add("#guardunit " + pds.getIDforPD(pds.getGateUnit(true)));
-    lines.add("#guardmult " + pds.getCastleDefenderMult(pds.getGateUnit(true)));
     lines.add("");
-
-    // Start army
-    lines.add("#startcom " + pds.getStartArmyCommander().id);
-    if (comlists.get("scouts").size() > 0) lines.add(
-      "#startscout " + comlists.get("scouts").get(0).id
-    );
-    else lines.add("#startscout " + pds.getPDCommander(2).id);
-
-    lines.add("#startunittype1 " + pds.getMilitia(1, 1, false).id);
-    lines.add("#startunittype2 " + pds.getMilitia(1, 2, false).id);
-    int amount1 = pds.getStartArmyAmount(pds.getMilitia(1, 1, false));
-    lines.add("#startunitnbrs1 " + amount1);
-    int amount2 = pds.getStartArmyAmount(pds.getMilitia(1, 2, false));
-    lines.add("#startunitnbrs2 " + amount2);
+    lines.addAll(this.startArmy.writeModLines());
     lines.add("");
 
     // Heroes
@@ -1100,7 +1098,7 @@ public class Nation {
 
     // Custom coms
 
-    for (Command cmd : this.getCommands()) {
+    for (Command cmd : this.getHandledCommands()) {
       lines.add(cmd.toModLine());
     }
 
@@ -1147,18 +1145,28 @@ public class Nation {
     return sus;
   }
 
+  public List<Unit> getMontagUnits(String targetMontagId) {
+    return this.unitlists.values().stream()
+    .flatMap(List::stream)
+    .filter(u -> {
+      String unitMontagId = u.getStringCommandValue("#montag", "");
+      return unitMontagId.equals(targetMontagId);
+    })
+    .collect(Collectors.toList());
+  }
+
   public List<MountUnit> getMountUnits() {
     List<Unit> units = new ArrayList<>();
     for (List<Unit> list : this.comlists.values()) units.addAll(list);
     for (List<Unit> list : this.unitlists.values()) units.addAll(list);
     units.addAll(heroes);
 
-    List<MountUnit> mus = new ArrayList<>();
-    for (MountUnit mu : nationGen.mounts) {
-      if (units.contains(mu.otherForm)) mus.add(mu);
-    }
+    List<MountUnit> mountUnits = units.stream()
+      .filter(Unit::isMounted)
+      .map(Unit::getMountUnit)
+      .collect(Collectors.toList());
 
-    return mus;
+    return mountUnits;
   }
 
   public void writeSprites(String spritedir) {
@@ -1200,13 +1208,12 @@ public class Nation {
     lines.add("--- Unit definitions for " + this.name);
     lines.add("");
 
+    // Write the lines for the alternate shapes of the nation's troops
     for (ShapeChangeUnit su : getShapeChangeUnits()) {
       lines.addAll(su.writeLines(spritedir));
     }
-    for (MountUnit mu : getMountUnits()) {
-      lines.addAll(mu.writeLines(spritedir));
-    }
 
+    // Write the lines of all the nation's units
     for (List<Unit> list : unitlists.values()) {
       for (Unit u : list) {
         if (!u.invariantMonster) {
@@ -1216,23 +1223,25 @@ public class Nation {
             "--- " +
             u.name +
             " (Unit ID " +
-            u.id +
+            u.getId() +
             "), Gold: " +
-            u.getGoldCost() +
+            u.getGoldCost(true) +
             ", Resources: " +
-            u.getResCost(true) +
+            u.getResCost(true, true) +
             "\n"
           );
         }
       }
     }
 
+    // Write the lines of all the nation's commander troops
     for (List<Unit> list : comlists.values()) {
       for (Unit u : list) {
         lines.addAll(u.writeLines(spritedir));
       }
     }
 
+    // Write the lines of all the nation's heroes
     for (Unit u : heroes) {
       lines.addAll(u.writeLines(spritedir));
     }
@@ -1271,12 +1280,12 @@ public class Nation {
             for (String tag : foreigntags) if (u.tags.containsName(tag)) {
               if (coms) {
                 lines.add(
-                  "#" + tag.substring(0, tag.length() - 3) + "com " + u.id
+                  "#" + tag.substring(0, tag.length() - 3) + "com " + u.getId()
                 );
-              } else lines.add("#" + tag + " " + u.id);
+              } else lines.add("#" + tag + " " + u.getId());
             }
 
-            if (!u.caponly) lines.add(line + " " + u.id);
+            if (!u.isCapOnly()) lines.add(line + " " + u.getId());
           }
 
           listnames.remove((str + "-" + i));
@@ -1287,44 +1296,36 @@ public class Nation {
         if (listname.startsWith(str)) for (Unit u : unitlists.get(listname)) {
           for (String tag : foreigntags) if (u.tags.containsName(tag)) {
             if (coms) lines.add(
-              "#" + tag.substring(0, tag.length() - 3) + "com " + u.id
+              "#" + tag.substring(0, tag.length() - 3) + "com " + u.getId()
             );
-            else lines.add("#" + tag + " " + u.id);
+            else lines.add("#" + tag + " " + u.getId());
           }
 
-          if (!u.caponly) lines.add(line + " " + u.id);
+          if (!u.isCapOnly()) lines.add(line + " " + u.getId());
         }
       }
     }
     return lines;
   }
 
-  public List<Command> getCommands() {
-    List<Command> coms = new ArrayList<>();
-    for (Command c : this.commands) {
-      this.handleCommand(coms, c);
-    }
-    return coms;
-  }
-
-  private void handleCommand(List<Command> commands, Command c) {
+  private void handleCommand(List<Command> targetCommands, Command commandToHandle) {
     // List of commands that may appear more than once per nation
     List<String> uniques = new ArrayList<>();
 
     Command old = null;
     for (Command cmd : commands) {
-      if (cmd.command.equals(c.command)) old = cmd;
+      if (cmd.command.equals(commandToHandle.command)) old = cmd;
     }
 
     if (old != null) {
-      for (int i = 0; i < c.args.size(); i++) {
-        Arg arg = c.args.get(i);
+      for (int i = 0; i < commandToHandle.args.size(); i++) {
+        Arg arg = commandToHandle.args.get(i);
         Arg oldarg = old.args.get(i);
 
         if (arg.getOperator().filter(o -> o == Operator.ADD).isPresent()) {
-          if (!uniques.contains(c.command)) {
+          if (!uniques.contains(commandToHandle.command)) {
             int argint = oldarg.getInt() + arg.getInt();
-            if (c.command.equals("#idealcold")) {
+            if (commandToHandle.command.equals("#idealcold")) {
               argint = Math.min(3, argint);
               argint = Math.max(-3, argint);
             }
@@ -1332,25 +1333,25 @@ public class Nation {
             old.args.set(i, new Arg(argint));
             return;
           } else {
-            commands.add(c);
+            targetCommands.add(commandToHandle);
             return;
           }
         } else {
-          if (!uniques.contains(c.command)) {
+          if (!uniques.contains(commandToHandle.command)) {
             old.args.set(i, arg);
           } else {
-            commands.add(c.copy());
+            targetCommands.add(commandToHandle.copy());
             return;
           }
         }
       }
     } else { // there is no existing copy
-      Command toAdd = c.copy();
+      Command toAdd = commandToHandle.copy();
       if (toAdd.args.size() > 0) {
         // If the command starts with +, remove +.
         toAdd.args.set(0, toAdd.args.get(0).applyModToNothing());
       }
-      commands.add(toAdd);
+      targetCommands.add(toAdd);
     }
   }
 

@@ -1,0 +1,84 @@
+#newitem
+#id "humanoid"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/right_legs/humanoid_right_leg.png
+#command "#gcost +3"
+#command "#hp +5"
+#command "#ap +3"
+#command "#mapmove +2"
+#command "#str +2"
+#enditem
+
+#newitem
+#id "tyrant_snake"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/right_legs/tyrant_snake_right_leg.png
+#command "#gcost +15"
+#command "#ap +1"
+#command "#poisonres +5"
+#command "#unsurr +1"
+#command "#weapon 735"
+#basechance 0.25
+#enditem
+
+#newitem
+#id "giant"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/right_legs/giant_right_leg.png
+#command "#gcost +10"
+#command "#ap +5"
+#command "#mapmove +2"
+#command "#str +2"
+#command "#mountainsurvival"
+#type humanoid
+#enditem
+
+#newitem
+#id "carrion"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/right_legs/carrion_right_leg.png
+#command "#gcost +10"
+#command "#ap +3"
+#command "#poisonres +5"
+#command "#forestsurvival"
+#type undead
+#enditem
+
+#newitem
+#id "atlantian"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/right_legs/atlantian_right_leg.png
+#command "#gcost +10"
+#command "#str +1"
+#command "#ap +4"
+#command "#swimming"
+#type atlantian
+#enditem
+
+#newitem
+#id "hellsnake"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/lower_half/hellsnake_lower_half.png
+#command "#gcost +20"
+#command "#hp +10"
+#command "#ap +2"
+#command "#str +2"
+#command "#fireres +5"
+#command "#poisonres +5"
+#itemslot foot 0
+#type hell
+#needs left_leg none
+#enditem
+
+#newitem
+#id "earth"
+#gameid -1
+#sprite /graphics/foulspawn/grotesque/right_legs/earth_right_leg.png
+#command "#gcost +15"
+#command "#hp +5"
+#command "#str +3"
+#command "#ap +2"
+#command "#mapmove +2"
+#command "#reinvigoration +1"
+#type humanoid
+#enditem

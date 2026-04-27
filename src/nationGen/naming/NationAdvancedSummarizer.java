@@ -1,6 +1,5 @@
 package nationGen.naming;
 
-import com.elmokki.Dom3DB;
 import com.elmokki.Generic;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,84 +8,17 @@ import java.util.stream.Collectors;
 import nationGen.entities.Filter;
 import nationGen.entities.Race;
 import nationGen.entities.Theme;
+import nationGen.items.Item;
+import nationGen.items.ItemProperty;
 import nationGen.magic.MagicPath;
 import nationGen.magic.MagicPathInts;
 import nationGen.misc.Command;
 import nationGen.misc.FileUtil;
 import nationGen.misc.Site;
 import nationGen.nation.Nation;
-import nationGen.nation.PDSelector;
 import nationGen.units.Unit;
 
 public class NationAdvancedSummarizer {
-
-  private Dom3DB weapondb;
-  private Dom3DB armordb;
-
-  public NationAdvancedSummarizer(Dom3DB armor, Dom3DB weapon) {
-    this.armordb = armor;
-    this.weapondb = weapon;
-  }
-
-  private List<String> printPDInfo(Nation n) {
-    PDSelector pds = new PDSelector(n, n.nationGen);
-
-    List<String> lines = new ArrayList<>();
-    lines.add("Province defence:");
-    lines.add("* Commander 1: " + pds.getPDCommander(1).name);
-    lines.add("* Commander 2: " + pds.getPDCommander(2).name);
-
-    lines.add(
-      "* Troop 1a: " +
-      pds.getMilitia(1, 1).name +
-      " - " +
-      pds.getStartArmyAmount(pds.getMilitia(1, 1)) +
-      " per 10 PD"
-    );
-    lines.add(
-      "* Troop 1b: " +
-      pds.getMilitia(2, 1).name +
-      " - " +
-      pds.getStartArmyAmount(pds.getMilitia(2, 1)) +
-      " per 10 PD"
-    );
-    if (n.PDRanks > 2) {
-      lines.add(
-        "* Troop 1c: " +
-        pds.getMilitia(3, 1).name +
-        " - " +
-        pds.getStartArmyAmount(pds.getMilitia(3, 1)) +
-        " per 10 PD"
-      );
-      if (n.PDRanks > 3) {
-        lines.add(
-          "* Troop 1d: " +
-          pds.getMilitia(4, 1).name +
-          " - " +
-          pds.getStartArmyAmount(pds.getMilitia(4, 1)) +
-          " per 10 PD"
-        );
-      }
-    }
-
-    lines.add(
-      "* Troop 2a: " +
-      pds.getMilitia(1, 2).name +
-      " - " +
-      pds.getStartArmyAmount(pds.getMilitia(1, 2)) +
-      " per 10 PD"
-    );
-    lines.add(
-      "* Troop 2b: " +
-      pds.getMilitia(2, 2).name +
-      " - " +
-      pds.getStartArmyAmount(pds.getMilitia(2, 2)) +
-      " per 10 PD"
-    );
-
-    return lines;
-  }
-
   private List<String> printUnits(String role, String tag, Nation n) {
     List<String> lines = new ArrayList<>();
     List<Unit> troops = n.listTroops(role);
@@ -148,7 +80,7 @@ public class NationAdvancedSummarizer {
       lines.add("-----------------------------------");
 
       List<String> traits = new ArrayList<>();
-      for (Command c : n.getCommands()) if (c.command.equals("#idealcold")) {
+      for (Command c : n.getHandledCommands()) if (c.command.equals("#idealcold")) {
         traits.add("Ideal cold level " + c.args.get(0));
       } else if (
         c.command.equals("#uwbuild") && c.args.get(0).get().equals("1")
@@ -276,7 +208,7 @@ public class NationAdvancedSummarizer {
       for (Unit u : n.heroes) lines.addAll(getTroopInfo(u));
       lines.add("");
 
-      lines.addAll(printPDInfo(n));
+      lines.addAll(n.militia.writeDescriptionLines());
       lines.add("");
 
       // Spells
@@ -321,21 +253,25 @@ public class NationAdvancedSummarizer {
   }
 
   private List<String> getWeaponNames(Unit u) {
-    return u.slotmap
+    List<String> weaponNames = u.slotmap
       .items()
-      .filter(i -> !i.armor)
-      .filter(i -> i.isCustomIdResolved())
-      .map(i -> weapondb.GetValue(i.id, "weapon_name"))
+      .filter(Item::isWeapon)
+      .filter(Item::isDominionsEquipment)
+      .map(i -> i.getValueFromDb(ItemProperty.NAME.toDBColumn()))
       .collect(Collectors.toList());
+
+    return weaponNames;
   }
 
   private List<String> getArmorNames(Unit u) {
-    return u.slotmap
+    List<String> armorNames = u.slotmap
       .items()
-      .filter(i -> i.armor)
-      .filter(i -> i.isCustomIdResolved())
-      .map(i -> armordb.GetValue(i.id, "armorname"))
+      .filter(Item::isArmor)
+      .filter(Item::isDominionsEquipment)
+      .map(i -> i.getValueFromDb(ItemProperty.NAME.toDBColumn()))
       .collect(Collectors.toList());
+
+    return armorNames;
   }
 
   private Optional<String> getMountName(Unit u) {
@@ -364,9 +300,9 @@ public class NationAdvancedSummarizer {
     line.append("), ");
 
     line
-      .append(u.getGoldCost())
+      .append(u.getGoldCost(true))
       .append("g, ")
-      .append(u.getResCost(true))
+      .append(u.getResCost(true, true))
       .append("r, ");
 
     List<String> gear = new ArrayList<>();
@@ -439,11 +375,11 @@ public class NationAdvancedSummarizer {
   private List<String> getTroopSpecialFeatures(Unit u) {
     // Filters and item special things
     List<String> stuff = new ArrayList<>();
-    if (u.caponly) stuff.add("Capital only");
+    if (u.isCapOnly()) stuff.add("Capital only");
 
     boolean str = false;
     boolean holy = false;
-    for (Command c : u.getCommands()) {
+    for (Command c : u.gatherCommands()) {
       if (c.command.equals("#holy")) holy = true;
       if (c.command.equals("#slowrec")) str = true;
     }
@@ -452,7 +388,7 @@ public class NationAdvancedSummarizer {
 
     if (u.tags.containsName("montagunit")) {
       int shape = -1;
-      for (Command c : u.getCommands()) if (
+      for (Command c : u.gatherCommands()) if (
         c.command.equals("#firstshape")
       ) shape = -1 * c.args.get(0).getInt();
 
@@ -463,7 +399,7 @@ public class NationAdvancedSummarizer {
 
     if (u.tags.containsName("hasmontag")) {
       int shape = -1;
-      for (Command c : u.getCommands()) if (c.command.equals("#montag")) shape =
+      for (Command c : u.gatherCommands()) if (c.command.equals("#montag")) shape =
         c.args.get(0).getInt();
 
       if (shape != -1) stuff.add("Has montag " + shape);

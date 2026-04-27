@@ -2,45 +2,78 @@
 #newpose
 #id "lamia infantry"
 #role "infantry"
+
+#load basesprite /data/items/races/amazon/normal/lamiabases.txt
+#load shadow /data/items/races/amazon/normal/shadow.txt
+
+#load hands /data/items/races/amazon/normal/amazonhands.txt
+
+#load cloakf /data/items/races/human/normal/humancloakf.txt
+#load cloakb /data/items/races/human/normal/humancloakb.txt
+#load cloakf /data/items/races/human/normal/themedcloakf.txt
+#load cloakb /data/items/races/human/normal/themedcloakb.txt
+#load shirt /data/items/races/amazon/normal/amazonshirt.txt
+#load hair /data/items/races/human/normal/humanhair.txt offsetx 0 offsety 1
+
+#load armor /data/items/races/amazon/normal/amazonarmor.txt
+#load armor /data/items/races/amazon/normal/naked.txt
+#load helmet /data/items/races/amazon/normal/amazonhelmet.txt
+#load helmet /data/items/races/amazon/normal/humanhelmet_amazon.txt offsetx 0 offsety 1
+#load legs /data/items/races/amazon/normal/amazonlegs.txt
+
+#load weapon /data/items/races/human/normal/humanweapon.txt
+#load bonusweapon /data/items/races/human/normal/humanbonusranged.txt offsetx -2 offsety 1
+
+#load offhand /data/items/races/human/normal/humanoffhand.txt offsetx -1 offsety 0
+#load offhand /data/items/races/amazon/normal/amazonshields.txt
+#load offhand /data/items/races/human/normal/shields.txt
+#load offhand /data/items/races/human/normal/towershields.txt
+
+#load weapon /data/items/races/human/normal/humanweapon_bronze.txt
+#load offhand /data/items/races/human/normal/humanoffhand_bronze.txt offsetx -1 offsety 0
+#endpose
+
+
+#newpose
+#id "lamia elite infantry"
 #role "elite infantry"
 #role "sacred infantry"
 
-#load basesprite /data/items/amazon/normal/lamiabases.txt
-#load shadow /data/items/amazon/normal/shadow.txt
+#load basesprite /data/items/races/amazon/normal/lamiabases.txt
+#load shadow /data/items/races/amazon/normal/shadow.txt
 
-#load hands /data/items/amazon/normal/amazonhands.txt
+#load hands /data/items/races/amazon/normal/amazonhands.txt
 
-#load cloakf /data/items/human/normal/humancloakf.txt
-#load cloakb /data/items/human/normal/humancloakb.txt
-#load cloakf /data/items/human/normal/themedcloakf.txt
-#load cloakb /data/items/human/normal/themedcloakb.txt
-#load shirt /data/items/amazon/normal/amazonshirt.txt
-#load hair /data/items/human/normal/humanhair.txt offsetx 0 offsety 1
+#load cloakf /data/items/races/human/normal/humancloakf.txt
+#load cloakb /data/items/races/human/normal/humancloakb.txt
+#load cloakf /data/items/races/human/normal/themedcloakf.txt
+#load cloakb /data/items/races/human/normal/themedcloakb.txt
+#load shirt /data/items/races/amazon/normal/amazonshirt.txt
+#load hair /data/items/races/human/normal/humanhair.txt offsetx 0 offsety 1
 
-#load armor /data/items/amazon/normal/amazonarmor.txt
-#load armor /data/items/amazon/normal/amazonarmorelite.txt
-#load armor /data/items/amazon/normal/naked.txt
-#load helmet /data/items/amazon/normal/amazonhelmet.txt
-#load helmet /data/items/amazon/normal/humanhelmet_amazon.txt offsetx 0 offsety 1
-#load legs /data/items/amazon/normal/amazonlegs.txt
+#load armor /data/items/races/amazon/normal/amazonarmor.txt
+#load armor /data/items/races/amazon/normal/amazonarmorelite.txt
+#load armor /data/items/races/amazon/normal/naked.txt
+#load helmet /data/items/races/amazon/normal/amazonhelmet.txt
+#load helmet /data/items/races/amazon/normal/humanhelmet_amazon.txt offsetx 0 offsety 1
+#load legs /data/items/races/amazon/normal/amazonlegs.txt
 
-#load weapon /data/items/human/normal/humanweapon.txt
-#load bonusweapon /data/items/human/normal/standards.txt
-#load bonusweapon /data/items/human/normal/humanbonusranged.txt offsetx -2 offsety 1
+#load weapon /data/items/races/human/normal/humanweapon.txt
+#load bonusweapon /data/items/races/human/normal/standards.txt
+#load bonusweapon /data/items/races/human/normal/humanbonusranged.txt offsetx -2 offsety 1
 
-#load offhand /data/items/human/normal/humanoffhand.txt offsetx -1 offsety 0
-#load offhand /data/items/amazon/normal/amazonshields.txt
-#load offhand /data/items/human/normal/shields.txt
-#load offhand /data/items/human/normal/towershields.txt
+#load offhand /data/items/races/human/normal/humanoffhand.txt offsetx -1 offsety 0
+#load offhand /data/items/races/amazon/normal/amazonshields.txt
+#load offhand /data/items/races/human/normal/shields.txt
+#load offhand /data/items/races/human/normal/towershields.txt
 
-#load helmet /data/items/human/sacredstuff/humanspecific_sacredhelmet.txt offsetx 0 offsety 1
-#load helmet /data/items/human/sacredstuff/sacredhelmet.txt offsetx 0 offsety 1
+#load helmet /data/items/races/human/sacredstuff/humanspecific_sacredhelmet.txt offsetx 0 offsety 1
+#load helmet /data/items/races/human/sacredstuff/sacredhelmet.txt offsetx 0 offsety 1
 
-#load weapon /data/items/human/normal/humanweapon_bronze.txt
-#load offhand /data/items/human/normal/humanoffhand_bronze.txt offsetx -1 offsety 0
+#load weapon /data/items/races/human/normal/humanweapon_bronze.txt
+#load offhand /data/items/races/human/normal/humanoffhand_bronze.txt offsetx -1 offsety 0
 
 #cannot_be_pd
-
 #endpose
 
 
@@ -49,33 +82,62 @@
 #id "lamia 2h infantry"
 #basechance 0.2
 #role "infantry"
+
+#load basesprite /data/items/races/amazon/2h/lamiabases_2h.txt
+#load shadow /data/items/races/amazon/normal/shadow.txt
+
+#load hands /data/items/races/amazon/2h/amazonhands_2h.txt
+
+#load cloakf /data/items/races/human/normal/humancloakf.txt
+#load cloakb /data/items/races/human/normal/humancloakb.txt
+#load cloakf /data/items/races/human/normal/themedcloakf.txt
+#load cloakb /data/items/races/human/normal/themedcloakb.txt
+#load shirt /data/items/races/amazon/2h/amazonshirt_2h.txt
+#load hair /data/items/races/human/normal/humanhair.txt offsetx 0 offsety 1
+
+#load armor /data/items/races/amazon/2h/amazonarmor_2h.txt
+#load armor /data/items/races/amazon/2h/naked_2h.txt
+#load helmet /data/items/races/amazon/normal/amazonhelmet.txt
+#load helmet /data/items/races/amazon/normal/humanhelmet_amazon.txt offsetx 0 offsety 1
+#load legs /data/items/races/amazon/normal/amazonlegs.txt
+
+#load weapon /data/items/races/human/2h/humanweapon.txt
+#load bonusweapon /data/items/races/human/2h/humanbonusranged.txt offsetx -2 offsety 1
+#maxvarieties 1
+#endpose
+
+
+#newpose
+#id "lamia 2h elite infantry"
+#basechance 0.2
+#role "infantry"
 #role "sacred infantry"
 #role "elite infantry"
 
-#load basesprite /data/items/amazon/2h/lamiabases_2h.txt
-#load shadow /data/items/amazon/normal/shadow.txt
+#load basesprite /data/items/races/amazon/2h/lamiabases_2h.txt
+#load shadow /data/items/races/amazon/normal/shadow.txt
 
-#load hands /data/items/amazon/2h/amazonhands_2h.txt
+#load hands /data/items/races/amazon/2h/amazonhands_2h.txt
 
-#load cloakf /data/items/human/normal/humancloakf.txt
-#load cloakb /data/items/human/normal/humancloakb.txt
-#load cloakf /data/items/human/normal/themedcloakf.txt
-#load cloakb /data/items/human/normal/themedcloakb.txt
-#load shirt /data/items/amazon/2h/amazonshirt_2h.txt
-#load hair /data/items/human/normal/humanhair.txt offsetx 0 offsety 1
+#load cloakf /data/items/races/human/normal/humancloakf.txt
+#load cloakb /data/items/races/human/normal/humancloakb.txt
+#load cloakf /data/items/races/human/normal/themedcloakf.txt
+#load cloakb /data/items/races/human/normal/themedcloakb.txt
+#load shirt /data/items/races/amazon/2h/amazonshirt_2h.txt
+#load hair /data/items/races/human/normal/humanhair.txt offsetx 0 offsety 1
 
-#load armor /data/items/amazon/2h/amazonarmor_2h.txt
-#load armor /data/items/amazon/2h/amazonarmorelite_2h.txt
-#load armor /data/items/amazon/2h/naked_2h.txt
-#load helmet /data/items/amazon/normal/amazonhelmet.txt
-#load helmet /data/items/amazon/normal/humanhelmet_amazon.txt offsetx 0 offsety 1
-#load legs /data/items/amazon/normal/amazonlegs.txt
+#load armor /data/items/races/amazon/2h/amazonarmor_2h.txt
+#load armor /data/items/races/amazon/2h/amazonarmorelite_2h.txt
+#load armor /data/items/races/amazon/2h/naked_2h.txt
+#load helmet /data/items/races/amazon/normal/amazonhelmet.txt
+#load helmet /data/items/races/amazon/normal/humanhelmet_amazon.txt offsetx 0 offsety 1
+#load legs /data/items/races/amazon/normal/amazonlegs.txt
 
-#load weapon /data/items/human/2h/humanweapon.txt
-#load bonusweapon /data/items/human/2h/humanbonusranged.txt offsetx -2 offsety 1
+#load weapon /data/items/races/human/2h/humanweapon.txt
+#load bonusweapon /data/items/races/human/2h/humanbonusranged.txt offsetx -2 offsety 1
 
-#load helmet /data/items/human/sacredstuff/humanspecific_sacredhelmet.txt offsetx 0 offsety 1
-#load helmet /data/items/human/sacredstuff/sacredhelmet.txt offsetx 0 offsety 1
+#load helmet /data/items/races/human/sacredstuff/humanspecific_sacredhelmet.txt offsetx 0 offsety 1
+#load helmet /data/items/races/human/sacredstuff/sacredhelmet.txt offsetx 0 offsety 1
 
 #maxvarieties 1
 
@@ -89,29 +151,29 @@
 #id "lamia scouts"
 #role "scout"
 
-#load basesprite /data/items/amazon/normal/lamiabases.txt
-#load shadow /data/items/amazon/normal/shadow.txt
+#load basesprite /data/items/races/amazon/normal/lamiabases.txt
+#load shadow /data/items/races/amazon/normal/shadow.txt
 
-#load hands /data/items/amazon/normal/amazonhands.txt
+#load hands /data/items/races/amazon/normal/amazonhands.txt
 
-#load cloakf /data/items/human/normal/humancloakf.txt
-#load cloakb /data/items/human/normal/humancloakb.txt
-#load shirt /data/items/amazon/normal/amazonshirt.txt
-#load hair /data/items/human/normal/humanhair.txt offsetx 0 offsety 1
+#load cloakf /data/items/races/human/normal/humancloakf.txt
+#load cloakb /data/items/races/human/normal/humancloakb.txt
+#load shirt /data/items/races/amazon/normal/amazonshirt.txt
+#load hair /data/items/races/human/normal/humanhair.txt offsetx 0 offsety 1
 
-#load armor /data/items/amazon/normal/amazonarmor.txt
-#load armor /data/items/amazon/normal/naked.txt
-#load helmet /data/items/amazon/normal/amazonhelmet.txt
-#load helmet /data/items/amazon/normal/humanhelmet_amazon.txt offsetx 0 offsety 1
-#load legs /data/items/amazon/normal/amazonlegs.txt
+#load armor /data/items/races/amazon/normal/amazonarmor.txt
+#load armor /data/items/races/amazon/normal/naked.txt
+#load helmet /data/items/races/amazon/normal/amazonhelmet.txt
+#load helmet /data/items/races/amazon/normal/humanhelmet_amazon.txt offsetx 0 offsety 1
+#load legs /data/items/races/amazon/normal/amazonlegs.txt
 
-#load weapon /data/items/human/normal/humanweapon.txt
-#load bonusweapon /data/items/human/scout/bonusranged_scout.txt
+#load weapon /data/items/races/human/normal/humanweapon.txt
+#load bonusweapon /data/items/races/human/scout/bonusranged_scout.txt
 
-#load offhand /data/items/human/normal/humanoffhand.txt offsetx -1 offsety 0
+#load offhand /data/items/races/human/normal/humanoffhand.txt offsetx -1 offsety 0
 
-#load weapon /data/items/human/normal/humanweapon_bronze.txt
-#load offhand /data/items/human/normal/humanoffhand_bronze.txt offsetx -1 offsety 0
+#load weapon /data/items/races/human/normal/humanweapon_bronze.txt
+#load offhand /data/items/races/human/normal/humanoffhand_bronze.txt offsetx -1 offsety 0
 
 #endpose
 
@@ -125,30 +187,30 @@
 
 #renderorder "shadow cloakb basesprite mount shirt legs armor cloakf quiver bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
-#load basesprite /data/items/amazon/archer/lamiabases_archer.txt
-#load shadow /data/items/amazon/normal/shadow.txt
+#load basesprite /data/items/races/amazon/archer/lamiabases_archer.txt
+#load shadow /data/items/races/amazon/normal/shadow.txt
 
-#load hands /data/items/amazon/archer/amazonhands_archer.txt
+#load hands /data/items/races/amazon/archer/amazonhands_archer.txt
 
-#load armor /data/items/amazon/archer/amazonarmor_archer.txt
-#load armor /data/items/amazon/archer/amazonnaked_archer.txt
-#load cloakf /data/items/human/normal/humancloakf.txt
-#load cloakb /data/items/human/normal/humancloakb.txt
-#load cloakf /data/items/human/normal/themedcloakf.txt
-#load cloakb /data/items/human/normal/themedcloakb.txt
-#load hair /data/items/human/normal/humanhair.txt  offsetx 0 offsety 1
+#load armor /data/items/races/amazon/archer/amazonarmor_archer.txt
+#load armor /data/items/races/amazon/archer/amazonnaked_archer.txt
+#load cloakf /data/items/races/human/normal/humancloakf.txt
+#load cloakb /data/items/races/human/normal/humancloakb.txt
+#load cloakf /data/items/races/human/normal/themedcloakf.txt
+#load cloakb /data/items/races/human/normal/themedcloakb.txt
+#load hair /data/items/races/human/normal/humanhair.txt  offsetx 0 offsety 1
 
-#load helmet /data/items/amazon/normal/amazonhelmet.txt
-#load helmet /data/items/amazon/normal/humanhelmet_amazon.txt offsetx 0 offsety 1
-#load legs /data/items/amazon/normal/amazonlegs.txt
-#load shirt /data/items/amazon/archer/amazonshirt_archer.txt
-#load weapon /data/items/amazon/archer/lamiabows.txt
+#load helmet /data/items/races/amazon/normal/amazonhelmet.txt
+#load helmet /data/items/races/amazon/normal/humanhelmet_amazon.txt offsetx 0 offsety 1
+#load legs /data/items/races/amazon/normal/amazonlegs.txt
+#load shirt /data/items/races/amazon/archer/amazonshirt_archer.txt
+#load weapon /data/items/races/amazon/archer/lamiabows.txt
 
-#load quiver /data/items/human/archer/humanbonusranged.txt offsetx -2 offsety 1
-#load bonusweapon /data/items/amazon/archer/lamiaweapon.txt 
+#load quiver /data/items/races/human/archer/humanbonusranged.txt offsetx -2 offsety 1
+#load bonusweapon /data/items/races/amazon/archer/lamiaweapon.txt 
 
-#load helmet /data/items/human/sacredstuff/humanspecific_sacredhelmet.txt offsetx 0 offsety 1
-#load helmet /data/items/human/sacredstuff/sacredhelmet.txt offsetx 0 offsety 1
+#load helmet /data/items/races/human/sacredstuff/humanspecific_sacredhelmet.txt offsetx 0 offsety 1
+#load helmet /data/items/races/human/sacredstuff/sacredhelmet.txt offsetx 0 offsety 1
 
 #generateitem 1 bonusweapon
 #endpose
@@ -163,29 +225,29 @@
 
 #basechance 0.8
 
-#load basesprite /data/items/amazon/archer/lamiabases_archer.txt
-#load shadow /data/items/amazon/normal/shadow.txt
+#load basesprite /data/items/races/amazon/archer/lamiabases_archer.txt
+#load shadow /data/items/races/amazon/normal/shadow.txt
 
-#load hands /data/items/amazon/archer/amazonhands_archer.txt
+#load hands /data/items/races/amazon/archer/amazonhands_archer.txt
 
-#load armor /data/items/amazon/archer/amazonarmor_archer.txt
-#load armor /data/items/amazon/archer/amazonnaked_archer.txt
-#load cloakf /data/items/human/normal/humancloakf.txt
-#load cloakb /data/items/human/normal/humancloakb.txt
-#load cloakf /data/items/human/normal/themedcloakf.txt
-#load cloakb /data/items/human/normal/themedcloakb.txt
-#load hair /data/items/human/normal/humanhair.txt  offsetx 0 offsety 1
+#load armor /data/items/races/amazon/archer/amazonarmor_archer.txt
+#load armor /data/items/races/amazon/archer/amazonnaked_archer.txt
+#load cloakf /data/items/races/human/normal/humancloakf.txt
+#load cloakb /data/items/races/human/normal/humancloakb.txt
+#load cloakf /data/items/races/human/normal/themedcloakf.txt
+#load cloakb /data/items/races/human/normal/themedcloakb.txt
+#load hair /data/items/races/human/normal/humanhair.txt  offsetx 0 offsety 1
 
-#load helmet /data/items/amazon/normal/amazonhelmet.txt
-#load helmet /data/items/amazon/normal/humanhelmet_amazon.txt offsetx 0 offsety 1
-#load legs /data/items/amazon/normal/amazonlegs.txt
-#load shirt /data/items/amazon/archer/amazonshirt_archer.txt
-#load weapon /data/items/human/crossbow/crossbows.txt offsetx -4 offsety 4
+#load helmet /data/items/races/amazon/normal/amazonhelmet.txt
+#load helmet /data/items/races/amazon/normal/humanhelmet_amazon.txt offsetx 0 offsety 1
+#load legs /data/items/races/amazon/normal/amazonlegs.txt
+#load shirt /data/items/races/amazon/archer/amazonshirt_archer.txt
+#load weapon /data/items/races/human/crossbow/crossbows.txt offsetx -4 offsety 4
 
-#load bonusweapon /data/items/human/archer/archerweapon.txt
+#load bonusweapon /data/items/races/human/archer/archerweapon.txt
 
-#load helmet /data/items/human/sacredstuff/humanspecific_sacredhelmet.txt offsetx 0 offsety 1
-#load helmet /data/items/human/sacredstuff/sacredhelmet.txt offsetx 0 offsety 1
+#load helmet /data/items/races/human/sacredstuff/humanspecific_sacredhelmet.txt offsetx 0 offsety 1
+#load helmet /data/items/races/human/sacredstuff/sacredhelmet.txt offsetx 0 offsety 1
 
 #generateitem 1 bonusweapon
 #endpose

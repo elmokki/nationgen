@@ -42,7 +42,7 @@ public class MageMontagTemplate extends MontagTemplate {
     mages.add(newunit);
 
     mGen.resolveAge(mages);
-    MageGenerator.determineSpecialLeadership(u, false);
+    MageGenerator.ensureSpecialLeadership(u, false);
 
     return newunit;
   }

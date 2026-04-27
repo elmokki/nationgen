@@ -23,4 +23,11 @@ public class ItemDependency {
     this.lagged = lagged;
     this.type = type;
   }
+
+  public ItemDependency(ItemDependency dependency) {
+    this.lagged = dependency.lagged;
+    this.type = dependency.type;
+    this.slot = dependency.slot;
+    this.target = dependency.target;
+  }
 }

@@ -1,6 +1,6 @@
 package nationGen.unrelated;
 
-import com.elmokki.Dom3DB;
+import com.elmokki.NationGenDB;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,7 +11,7 @@ public class SiteRarity {
     FileWriter fstream = new FileWriter("derp.txt");
     PrintWriter tw = new PrintWriter(fstream);
 
-    Dom3DB sites = new Dom3DB("/sites.csv");
+    NationGenDB sites = new NationGenDB("/sites.csv");
 
     for (int i = 1; i < 1027; i++) {
       if (

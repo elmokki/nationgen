@@ -12,7 +12,7 @@ public class Site {
   public MagicPathInts gemMap = new MagicPathInts();
   public List<Unit> troops = new ArrayList<>();
   public List<Unit> coms = new ArrayList<>();
-  public List<Command> othercommands = new ArrayList<>();
+  private List<Command> commands = new ArrayList<>();
   public List<Filter> appliedfilters = new ArrayList<>();
 
   public int id = -1;
@@ -32,6 +32,28 @@ public class Site {
     this.name = selectId;
     this.selectSiteName = selectId;
     this.shouldClearSite = clearSite;
+  }
+
+  public List<Command> getCommands() {
+    return new ArrayList<>(this.commands);
+  }
+
+  public void addCommands(Command... commands) {
+    this.addCommands(List.of(commands));
+  }
+
+  public void addCommands(List<Command> commands) {
+    for (Command c : commands) {
+      this.commands.add(c);
+    }
+  }
+
+  public boolean removeCommand(Command command) {
+    return this.commands.remove(command);
+  }
+
+  public boolean removeCommand(String command) {
+    return this.commands.remove(Command.parse(command));
   }
 
   public List<String> writeLines() {
@@ -71,8 +93,8 @@ public class Site {
 
     for (Unit u : coms) lines.add("#homecom " + u.id + " --- " + u.name);
     for (Unit u : troops) lines.add("#homemon " + u.id + " --- " + u.name);
-    for (Command str : othercommands) lines.add(str.toModLine());
-    for (Filter f : this.appliedfilters) for (Command str : f.commands) lines.add(
+    for (Command str : this.getCommands()) lines.add(str.toModLine());
+    for (Filter f : this.appliedfilters) for (Command str : f.getCommands()) lines.add(
       str.toModLine()
     );
 

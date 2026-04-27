@@ -187,7 +187,7 @@ public class Race extends Filter {
     r.tags.addAll(this.tags);
     r.visiblename = this.visiblename;
     r.basechance = this.basechance;
-    r.commands.addAll(this.commands);
+    r.addCommands(this.getCommands());
     r.name = this.name;
     r.types.addAll(this.types);
     r.tags.addAllNames(this.types);

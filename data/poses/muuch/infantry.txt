@@ -5,18 +5,18 @@
 #role "infantry"
 #role "sacred"
 
-#load basesprite /data/items/muuch/muuchbases.txt
-#load shadow /data/items/muuch/shadow.txt
-#load hands /data/items/muuch/hands.txt
+#load basesprite /data/items/races/muuch/muuchbases.txt
+#load shadow /data/items/races/muuch/shadow.txt
+#load hands /data/items/races/muuch/hands.txt
 
-#load armor /data/items/muuch/armor.txt
-#load cloakf /data/items/muuch/cloakf.txt
-#load cloakb /data/items/muuch/cloakb.txt
+#load armor /data/items/races/muuch/armor.txt
+#load cloakf /data/items/races/muuch/cloakf.txt
+#load cloakb /data/items/races/muuch/cloakb.txt
 
-#load weapon /data/items/muuch/weapon.txt
-#load offhand /data/items/muuch/offhand.txt
-#load offhand /data/items/muuch/shield.txt
-#load bonusweapon /data/items/muuch/bonusrangedweapon.txt
+#load weapon /data/items/races/muuch/weapon.txt
+#load offhand /data/items/races/muuch/offhand.txt
+#load offhand /data/items/races/muuch/shield.txt
+#load bonusweapon /data/items/races/muuch/bonusrangedweapon.txt
 
 #endpose
 
@@ -34,18 +34,18 @@
 
 #renderorder "shadow weapon cloakb basesprite armor bonusweapon cloakf offhandw hands helmet offhanda overlay"
 
-#load basesprite /data/items/muuch/shamblerbases.txt
-#load shadow /data/items/muuch/shamblershadow.txt
-#load hands /data/items/muuch/shamblerhands.txt
+#load basesprite /data/items/races/muuch/shamblerbases.txt
+#load shadow /data/items/races/muuch/shamblershadow.txt
+#load hands /data/items/races/muuch/shamblerhands.txt
 
-#load armor /data/items/muuch/shamblerarmor.txt
-#load cloakf /data/items/muuch/shamblercloakf.txt
-#load cloakb /data/items/muuch/shamblercloakb.txt
+#load armor /data/items/races/muuch/shamblerarmor.txt
+#load cloakf /data/items/races/muuch/shamblercloakf.txt
+#load cloakb /data/items/races/muuch/shamblercloakb.txt
 
-#load weapon /data/items/muuch/shamblerweapon.txt
-#load offhand /data/items/muuch/offhand.txt 1 -9
-#load offhand /data/items/muuch/shield.txt 2 -6
-#load bonusweapon /data/items/muuch/shamblerbonusrangedweapon.txt
+#load weapon /data/items/races/muuch/shamblerweapon.txt
+#load offhand /data/items/races/muuch/offhand.txt 1 -9
+#load offhand /data/items/races/muuch/shield.txt 2 -6
+#load bonusweapon /data/items/races/muuch/shamblerbonusrangedweapon.txt
 
 #endpose
 
@@ -53,19 +53,20 @@
 ------- Archer
 
 #newpose
+#id "muuch ranged"
 #role "ranged"
 #role "sacred"
 
-#load basesprite /data/items/muuch/muuchbases.txt
-#load shadow /data/items/muuch/shadow.txt
-#load hands /data/items/muuch/hands.txt
+#load basesprite /data/items/races/muuch/muuchbases.txt
+#load shadow /data/items/races/muuch/shadow.txt
+#load hands /data/items/races/muuch/hands.txt
 
-#load armor /data/items/muuch/archerarmor.txt
-#load cloakf /data/items/muuch/cloakf.txt
-#load cloakb /data/items/muuch/cloakb.txt
+#load armor /data/items/races/muuch/archerarmor.txt
+#load cloakf /data/items/races/muuch/cloakf.txt
+#load cloakb /data/items/races/muuch/cloakb.txt
 
-#load weapon /data/items/muuch/ranged.txt
-#load bonusweapon /data/items/muuch/rangedmelee.txt
+#load weapon /data/items/races/muuch/ranged.txt
+#load bonusweapon /data/items/races/muuch/rangedmelee.txt
 
 #generateitem 1 bonusweapon
 
@@ -79,17 +80,18 @@
 -------- scout
 
 #newpose
+#id "muuch scouts"
 #role "scout"
 
-#load basesprite /data/items/muuch/muuchbases.txt
-#load shadow /data/items/muuch/shadow.txt
-#load hands /data/items/muuch/hands.txt
+#load basesprite /data/items/races/muuch/muuchbases.txt
+#load shadow /data/items/races/muuch/shadow.txt
+#load hands /data/items/races/muuch/hands.txt
 
-#load armor /data/items/muuch/scoutarmor.txt
-#load cloakf /data/items/muuch/cloakf.txt
-#load cloakb /data/items/muuch/cloakb.txt
+#load armor /data/items/races/muuch/scoutarmor.txt
+#load cloakf /data/items/races/muuch/cloakf.txt
+#load cloakb /data/items/races/muuch/cloakb.txt
 
-#load weapon /data/items/muuch/scoutweapon.txt
-#load offhand /data/items/muuch/scoutoffhand.txt
+#load weapon /data/items/races/muuch/scoutweapon.txt
+#load offhand /data/items/races/muuch/scoutoffhand.txt
 
 #endpose

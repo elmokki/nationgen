@@ -10,7 +10,7 @@ public class NameGen {
     NationGen ng = new NationGen();
     NameGenerator nameg = new NameGenerator(ng);
 
-    for (Race r : ng.getAssets().races) {
+    for (Race r : ng.getAssets().races.getAllValues()) {
       if (!r.tags.containsName("secondary")) {
         System.out.print(r.visiblename + ": ");
         for (int i = 0; i < 10; i++) {

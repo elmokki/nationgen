@@ -1,3 +1,4 @@
+debug 0
 
 -- Description files
 advancedDescs 1.0
@@ -35,21 +36,29 @@ statUpgradePattern 1.0
 militiaMultiplier 1.0
 
 -- If resource is as threshold or above, change is applied (but value will not be changed such that it would not have triggered the threshold)
-resUpperTreshold 10
-resUpperTresholdChange -6
+resUpperThreshold 10
+resUpperThresholdChange -6
+
 -- Same as above but for gold
-goldUpperTreshold 29
-goldUpperTresholdChange 10
+goldUpperThreshold 29
+goldUpperThresholdChange 10
+
+-- Gold cost multiplier for sacred units
+goldSacredCostMultiplier 1.3
+
+-- Gold cost multiplier for slow-to-recruit units
+goldSlowRecCostMultiplier 0.9
+
 -- Above stuff but for lower bounds
-resLowerTreshold 6
-resLowerTresholdChange 3
-goldLowerTreshold 6
-goldLowerTresholdChange 3
+resLowerThreshold 6
+resLowerThresholdChange 3
+goldLowerThreshold 6
+goldLowerThresholdChange 3
 
 -- Multiplies any resources above threshold by resMulti if rescost is at least at threshold
 -- Done after the additive thresholds above.
-resMultiTreshold 16
-resMulti 0.7
+resMultiplierThreshold 16
+resMultiplier 0.7
 
 
 -------------- Troop rosters

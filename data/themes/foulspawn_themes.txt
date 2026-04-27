@@ -65,6 +65,11 @@
 #racedefinition "#suffixes /data/names/nations/human/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 102'"
 #racedefinition "#gods europe_gods"
+#racedefinition "#boreal"
+#racedefinition "#nationcommand '#idealcold +1'"
+#themeinc theme boreal *1000
+#themeinc theme feudal *1000
+#themeinc theme serfs *1000
 #endtheme
 
 #newtheme
@@ -75,6 +80,8 @@
 #racedefinition "#suffixes /data/names/nations/machakan/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 126'"
 #racedefinition "#gods southern_gods"
+#racedefinition "#austral"
+#themeinc theme austral *1000
 #endtheme
 
 #newtheme
@@ -85,6 +92,9 @@
 #racedefinition "#suffixes /data/names/nations/nahuatl/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 123'"
 #racedefinition "#gods western_gods"
+#racedefinition "#occidental"
+#racedefinition "#bonussacreds 1"
+#themeinc theme occidental *1000
 #endtheme
 
 #newtheme
@@ -95,6 +105,8 @@
 #racedefinition "#suffixes /data/names/nations/oriental/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 121'"
 #racedefinition "#gods eastern_gods"
+#racedefinition "#oriental"
+#themeinc theme oriental *1000
 #endtheme
 
 #newtheme
@@ -105,6 +117,8 @@
 #racedefinition "#suffixes /data/names/nations/amazon/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 107'"
 #racedefinition "#gods imperial_gods"
+#racedefinition "#central"
+#themeinc theme central *1000
 #endtheme
 
 #newtheme
@@ -115,6 +129,8 @@
 #racedefinition "#suffixes /data/names/nations/romance/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 106'"
 #racedefinition "#gods imperial_gods"
+#racedefinition "#imperial"
+#themeinc theme imperial *1000
 #endtheme
 
 #newtheme
@@ -124,6 +140,8 @@
 #racedefinition "#shortsyllables /data/names/nations/hoburg/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/hoburg/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 104'"
+#racedefinition "#fae"
+#themeinc theme fae *1000
 #endtheme
 
 #newtheme
@@ -133,6 +151,8 @@
 #racedefinition "#shortsyllables /data/names/nations/abysian/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/abysian/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 101'"
+#racedefinition "#abysian"
+#themeinc theme abysian *1000
 #endtheme
 
 #newtheme
@@ -143,6 +163,8 @@
 #racedefinition "#suffixes /data/names/nations/lizard/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 113'"
 #racedefinition "#gods lizard_gods"
+#racedefinition "#lizard"
+#themeinc theme slaver *20
 #endtheme
 
 #newtheme
@@ -153,6 +175,9 @@
 #racedefinition "#suffixes /data/names/nations/fomorian/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 142'"
 #racedefinition "#gods europe_gods"
+#themeinc theme boar *1000
+#themeinc theme celtic *1000
+#themeinc theme agrarian *1000
 #endtheme
 
 #newtheme
@@ -162,7 +187,9 @@
 #racedefinition "#shortsyllables /data/names/nations/avvite/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/avvite/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 148'"
-#racedefinition "#gods agartha_gods"
+#racedefinition "#gods levantine_gods"
+#racedefinition "#civilized"
+#themeinc theme civilized *1000
 #endtheme
 
 #newtheme
@@ -173,6 +200,9 @@
 #racedefinition "#suffixes /data/names/nations/agarthan/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 100'"
 #racedefinition "#gods agartha_gods"
+#chanceinc "primaryrace 'Pale One' *10"
+#themeinc theme bronze *5
+#racedefinition "magicpriority earth 4"
 #endtheme
 
 #newtheme
@@ -183,6 +213,9 @@
 #racedefinition "#suffixes /data/names/nations/caelian/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 111'"
 #racedefinition "#gods agartha_gods"
+#chanceinc primaryrace Caelian *10
+#racedefinition "magicpriority air 4"
+#themeinc theme ice *50
 #endtheme
 
 #newtheme
@@ -192,6 +225,9 @@
 #racedefinition "#shortsyllables /data/names/nations/nordic/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/nordic/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 115'"
+#racedefinition "#gods europe_gods"
+#racedefinition "#boreal"
+#themeinc theme boreal *1000
 #endtheme
 
 #newtheme
@@ -202,6 +238,8 @@
 #racedefinition "#suffixes /data/names/nations/monkey/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 129'"
 #racedefinition "#gods monkey_gods"
+#racedefinition "#enlightened"
+#themeinc theme enlightened *1000
 #endtheme
 
 #newtheme
@@ -211,6 +249,9 @@
 #racedefinition "#shortsyllables /data/names/nations/atlantian/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/atlantian/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 117'"
+#chanceinc primaryrace Atlantian *10
+#racedefinition "magicpriority water 4"
+#themeinc theme marine *1000
 #endtheme
 
 #newtheme
@@ -220,6 +261,9 @@
 #racedefinition "#shortsyllables /data/names/nations/sidereal/shortsyllables.txt"
 #racedefinition "#suffixes /data/names/nations/sidereal/suffixes.txt"
 #racedefinition "#unitcommand '#nametype 117'"
+#themeinc theme marine *1000
+#themeinc theme slaver *20
+#racedefinition "magicpriority astral 4"
 #endtheme
 
 

@@ -1,0 +1,53 @@
+The NationGen database relies on LarzM's Inspector's own .csv database files: https://github.com/larzm42/dom6inspector
+
+The src\nationGen\unrelated\DatabaseConverter.java module was written to parse and convert those .csv files into .csv files useable by NationGen.
+
+The db folder in the project contains two separate sub-folders:
+
+- /db/inspector: this folder contains .csv database files directly downloaded from LarzM's Inspector repository: https://github.com/larzm42/dom6inspector
+- /db/nationgen: this folder contains .csv database files that are ready to be used by NationGen itself - most parsed and converted from the /db/inspector/ files, though not all.
+
+To update the databases, download the following files from LarzM's Dom6Inspector GitHub (https://github.com/larzm42/dom6inspector):
+
+- /gamedata/BaseU.csv
+- /gamedata/MagicSites.csv
+- /gamedata/armors.csv
+- /gamedata/attributes_by_armor.csv
+- /gamedata/attributes_by_weapon.csv
+- /gamedata/effects_weapons.csv
+- /gamedata/nations.csv
+- /gamedata/protections_by_armor.csv
+- /gamedata/realms.csv
+- /gamedata/spells.csv
+- /gamedata/weapons.csv
+
+And include them in this project with the following paths and names (note the specific nationgen or inspector folders):
+
+- /db/nationgen/units.csv (renamed from BaseU.csv)
+- /db/nationgen/sites.csv (renamed from MagicSites.csv)
+- /db/inspector/armors.csv
+- /db/inspector/attributes_by_armor.csv
+- /db/inspector/attributes_by_weapon.csv
+- /db/inspector/effects_weapons.csv
+- /db/nationgen/nations.csv
+- /db/inspector/protections_by_armor.csv
+- /db/nationgen/realms.csv
+- /db/nationgen/spells.csv
+- /db/inspector/weapons.csv
+
+
+Then run nationGen.unrelated.DatabaseConverter, which will generate the following using the files in db_conversion:
+
+/db/nationgen/armors.csv
+/db/nationgen/weapons.csv
+
+
+The resulting /db/nationgen/ directory should contain the following files (listed alphabetically for convenience):
+
+- /db/nationgen/armors.csv (generated automatically by the DatabaseConverter)
+- /db/nationgen/nations.csv
+- /db/nationgen/realms.csv
+- /db/nationgen/sites.csv
+- /db/nationgen/spells.csv
+- /db/nationgen/units.csv
+- /db/nationgen/weapons.csv (generated automatically by the DatabaseConverter)

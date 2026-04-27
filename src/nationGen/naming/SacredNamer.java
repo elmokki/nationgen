@@ -27,7 +27,7 @@ public class SacredNamer {
   }
 
   private boolean isSacred(Unit u) {
-    for (Command cmd : u.getCommands()) {
+    for (Command cmd : u.gatherCommands()) {
       if (cmd.command.equals("#holy")) {
         return true;
       }
@@ -63,13 +63,13 @@ public class SacredNamer {
   private void name(Unit u, Nation n) {
     // #forcedname
     if (Generic.getAllUnitTags(u).containsName("forcedname")) {
-      u.name.setType(
+      u.name.setForcedName(
         Generic.getAllUnitTags(u).getString("forcedname").orElseThrow()
       );
       getMatchingCom(u, n).ifPresent(com ->
         Generic.getAllUnitTags(com)
           .getString("forcedname")
-          .ifPresent(com.name::setType)
+          .ifPresent(com.name::setForcedName)
       );
     } else {
       u.name = nameSacred(u, n);
@@ -78,7 +78,7 @@ public class SacredNamer {
           .handleChanceIncs(u, combases)
           .getRandom(n.random);
         com.name = u.name.getCopy();
-        com.name.type = part.getCopy();
+        com.name.setType(part.getCopy());
       });
     }
   }
@@ -88,8 +88,8 @@ public class SacredNamer {
       .selectCommanders("commander")
       .filter(com -> isSacred(u) && isSacred(com)) // holy
       .filter(com -> isElite(u) && isElite(com)) // elite
-      .filter(com -> com.getSlot("weapon").id.equals(u.getSlot("weapon").id))
-      .filter(com -> com.getSlot("armor").id.equals(u.getSlot("armor").id))
+      .filter(com -> com.getSlot("weapon").hasSameCustomItemName(u.getSlot("weapon")))
+      .filter(com -> com.getSlot("armor").hasSameCustomItemName(u.getSlot("armor")))
       .findFirst();
   }
 
@@ -116,7 +116,7 @@ public class SacredNamer {
         num == 0
       ) { // Base
         NamePart part = chandler.handleChanceIncs(u, bases).getRandom(n.random);
-        name.type = part.getCopy();
+        name.setType(part.getCopy());
       }
 
       num--;

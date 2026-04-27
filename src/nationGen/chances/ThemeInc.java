@@ -12,6 +12,10 @@ public class ThemeInc extends ConditionalModifier<ThemeIncData> {
   public ThemeInc(Condition<ThemeIncData> condition, Arg modificationAmount) {
     super(condition, modificationAmount);
   }
+  
+  public ThemeInc(ThemeInc themeInc) {
+    super(themeInc);
+  }
 
   public static ThemeInc from(Args args) {
     ArgParser parser = args.parse();

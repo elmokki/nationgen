@@ -26,7 +26,7 @@ public class GenerationTest {
 
     NameGenerator ngen = new NameGenerator(ng);
 
-    for (Race baseRace : assets.races) {
+    for (Race baseRace : assets.races.getAllValues()) {
       if (!baseRace.tags.containsName("secondary")) {
         List<Theme> possibleThemes = ChanceIncHandler.retrieveFilters(
           "racethemes",

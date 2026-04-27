@@ -11,4 +11,8 @@ public class Utils {
   public static <T extends Number> float normalize(T value, T minValue, T maxValue) {
     return (value.floatValue() - minValue.floatValue()) / (maxValue.floatValue() - minValue.floatValue());
   }
+
+  public static <T extends Number> int roundInGroupsOf(T value, int inGroupsOf) {
+    return (int) Math.round( value.doubleValue() / inGroupsOf ) * inGroupsOf;
+  }
 }

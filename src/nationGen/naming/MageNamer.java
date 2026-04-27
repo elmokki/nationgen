@@ -278,7 +278,7 @@ public class MageNamer extends Namer {
 
         u.name = same;
         u.name.rankprefix = null;
-        u.name.type = ff2.getCopy();
+        u.name.setType(ff2.getCopy());
       }
 
       if (u.name.type == null) {
@@ -300,13 +300,13 @@ public class MageNamer extends Namer {
           ff2 = filters.getRandom(random);
         } while (used.contains(ff2.toString()));
         used.add(ff2.toString());
-        u.name.type = ff2.getCopy();
+        u.name.setType(ff2.getCopy());
         noname = true;
       }
 
       if (to.size() <= from.size()) {
         if (prefixrank && !noname) u.name.rankprefix = ff.getCopy();
-        else if (!prefixrank) u.name.type = ff.getCopy();
+        else if (!prefixrank) u.name.setType(ff.getCopy());
       }
     }
   }
@@ -396,7 +396,7 @@ public class MageNamer extends Namer {
     NamePart ff = filters.getRandom(random);
 
     for (Unit u : primaries) {
-      if (!varyname) u.name.type = ff.getCopy();
+      if (!varyname) u.name.setType(ff.getCopy());
       else {
         if (ff.tags.containsName("nosuffix")) shouldbesuffix = false;
         else if (ff.tags.containsName("noprefix")) shouldbesuffix = true;
@@ -488,7 +488,7 @@ public class MageNamer extends Namer {
       else if (suffixpart.tags.containsName("noprefix")) shouldbesuffix = true;
 
       if (varyname) {
-        u.name.type = suffixpart.getCopy();
+        u.name.setType(suffixpart.getCopy());
       } else if (
         !noun || !shouldbesuffix
       ) { // Is noun or should be prefix -> Nouns for prefix and all kinds of adjectives

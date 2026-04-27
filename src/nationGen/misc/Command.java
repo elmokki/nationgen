@@ -22,9 +22,16 @@ public class Command {
     if (Generic.containsSpace(cmd)) {
       throw new IllegalArgumentException("Command name can't contain a space.");
     }
+
     this.command = cmd;
     this.args = args;
     this.comment = comment;
+  }
+
+  public Command(Command commandToCopy) {
+    this.command = commandToCopy.command;
+    this.args = new Args(commandToCopy.args);
+    this.comment = commandToCopy.comment;
   }
 
   /**
@@ -76,6 +83,11 @@ public class Command {
     return new Command(commandName, args, comment);
   }
 
+  public static String parseValueToAddString(int value) {
+    String operator = (value > 0) ? "+" : "";
+    return operator + value;
+  }
+
   /**
    * Writes a String for how Dominions expects a mod command line to look like, with strings in quotes and comments
    * following dashes.
@@ -96,12 +108,33 @@ public class Command {
     );
   }
 
+  public Boolean isShapeshiftCommand() {
+    return this.command.equals("#shapechange") ||
+      this.command.equals("#firstshape") ||
+      this.command.equals("#secondshape") ||
+      this.command.equals("#secondtmpshape");
+  }
+
+  public Boolean hasArgs() {
+    return !this.args.isEmpty() && !this.args.getString(0).isBlank();
+  }
+
+  public Boolean isBoolean() {
+    return this.args.isEmpty();
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Command command1 = (Command) o;
     return command.equals(command1.command) && args.equals(command1.args);
+  }
+
+  // Tries to match only the base command string, regardless of actual value
+  // i.e. #coldres contains the #coldres 5 command
+  public Boolean contains(Command other) {
+    return this.command.equals(other.command);
   }
 
   @Override

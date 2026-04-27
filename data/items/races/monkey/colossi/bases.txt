@@ -1,0 +1,56 @@
+#newitem
+#id "colossi basesprite"
+#gameid -1
+#sprite /graphics/monkey/giant/colossi_base.png
+#command "#gcost 30"
+#command "#rpcost 30000"
+#command "#hp 36"
+#command "#size 6"
+#command "#prot 8"
+#command "#mr 10"
+#command "#mor 14"
+#command "#str 20"
+#command "#att 13"
+#command "#def 11"
+#command "#prec 10"
+#command "#mapmove 20"
+#command "#ap 14"
+#command "#maxage 90"
+#command "#forestsurvival"
+#command "#twiceborn 3450"
+#noble
+#subraceprefix colossi
+#theme lowland
+#mapmovepenaltyenc 7
+#mapmovepenaltyprot 16
+#enditem
+
+#newitem
+#id "winged colossi basesprite"
+#gameid -1
+#sprite /graphics/monkey/giant/colossi_base.png
+#needs wings winged
+#command "#gcost 45"
+#command "#rpcost 45000"
+#command "#hp 34"
+#command "#size 7"
+#command "#ressize 6"
+#command "#prot 8"
+#command "#mr 12"
+#command "#mor 12"
+#command "#str 18"
+#command "#att 13"
+#command "#def 11"
+#command "#prec 10"
+#command "#mapmove 24"
+#command "#ap 12"
+#command "#maxage 100"
+#command "#flying"
+#command "#forestsurvival"
+#command "#twiceborn 3450"
+#noble
+#subraceprefix colossi
+#subrace "winged colossi"
+#theme winged
+#mapmovepenaltyenc 5
+#enditem

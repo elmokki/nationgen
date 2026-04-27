@@ -3,14 +3,32 @@ package nationGen.units;
 import java.util.Deque;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
 import nationGen.items.Item;
 
 public class SlotMap {
   private LinkedHashMap<String, Deque<Item>> slotmemory =
     new LinkedHashMap<>();
+
+  public SlotMap() {};
+
+  // Deep-copy constructor
+  public SlotMap(SlotMap slotMap) {
+    slotMap.slotmemory.forEach((slotName, itemDeque) -> {
+      Deque<Item> copiedDeque = new LinkedList<>();
+
+      itemDeque.forEach(item -> {
+        Item itemCopy = (item != null) ? new Item(item) : null;
+        copiedDeque.addLast(itemCopy);
+      });
+
+      this.slotmemory.put(slotName, copiedDeque);
+    });
+  }
 
   public Set<String> getSlots() {
     return slotmemory.keySet();
@@ -33,19 +51,33 @@ public class SlotMap {
     return stack == null ? null : stack.peek();
   }
 
-  Stream<Item> getArmor() {
-    return this.items()
-      .filter(i -> i.armor == true);
+  Stream<Item> getDominionsEquipment() {
+    return this.items().filter(Item::isDominionsEquipment);
   }
 
-  Stream<Item> getWeapons() {
+  Stream<Item> getEquippedArmors() {
     return this.items()
-      .filter(i -> i.armor == false);
+      .filter(Item::isArmor)
+      .filter(Item::isDominionsEquipment);
+  }
+
+  Stream<Item> getEquippedShields() {
+    return this.items()
+      .filter(Item::isShield)
+      .filter(Item::isDominionsEquipment);
+  }
+
+  Stream<Item> getEquippedWeapons() {
+    return this.items()
+      .filter(Item::isWeapon)
+      .filter(Item::isDominionsEquipment);
   }
 
   Stream<Item> getResolvedWeapons() {
     return this.items()
-      .filter(i -> i.armor == false && i.isCustomIdResolved());
+      .filter(Item::isWeapon)
+      .filter(Item::isDominionsEquipment)
+      .filter(i -> i.dominionsId.isResolved());
   }
 
   void push(String slot, Item item) {
@@ -62,7 +94,20 @@ public class SlotMap {
     );
   }
 
+  void resolveItems() {
+    this.items()
+      .filter(Item::isDominionsEquipment)
+      .filter(Predicate.not(Item::isDominionsIdAssigned))
+      .forEach(i -> {
+        i = Item.resolveId(i);
+      });
+  }
+
   private Deque<Item> getSlotStack(String slot) {
     return slotmemory.computeIfAbsent(slot, k -> new LinkedList<>());
+  }
+
+  public List<Item> getItemsInSlotStack(String slotName) {
+    return this.getSlotStack(slotName).stream().filter(i -> i != null).toList();
   }
 }

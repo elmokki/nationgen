@@ -1,0 +1,173 @@
+
+#newitem
+#id right_arm_strangulation
+#gameid 116
+#type degenerate
+#needs right_arm degenerate
+#needstype offhand left_arm
+#enditem
+
+#newitem
+#id right_arm_sweeping_fist
+#gameid sweeping_fist
+#type humanoid
+#type right_hand_slot
+#needstype right_arm humanoid
+#needstype offhand left_arm
+#enditem
+
+#newitem
+#id right_arm_boulder
+#gameid boulder
+#type weapon
+#needs right_arm gigante_boulder
+#needstype offhand left_arm
+#enditem
+
+#newitem
+#id right_arm_great_club
+#gameid 165
+#sprite /graphics/foulspawn/grotesque/weapons/great_club_right_arm.png
+#type weapon
+#needs right_arm giant
+#needstype offhand left_hand_slot
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id left_arm_cyclops_maul
+#gameid maul_aoe
+#sprite /graphics/foulspawn/grotesque/weapons/maul_left_arm.png
+#type weapon
+#needs left_arm cyclops
+#needstype offhand right_hand_slot
+#command "#resources +10"
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id right_arm_club
+#gameid 252
+#sprite /graphics/foulspawn/grotesque/weapons/club_right_arm.png
+#type weapon
+#needstype right_arm right_hand_slot
+#needstype offhand left_arm
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id right_arm_spear
+#gameid 1
+#sprite /graphics/foulspawn/grotesque/weapons/spear_right_arm.png
+#type weapon
+#needstype right_arm right_hand_slot
+#needstype offhand left_arm
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id right_arm_broadsword
+#gameid 8
+#sprite /graphics/foulspawn/grotesque/weapons/broadsword_right_arm.png
+#type weapon
+#needs right_arm giant
+#needstype offhand left_arm
+#ignore_dw_restrictions
+#enditem
+
+#newitem
+#id right_arm_sleep_vines
+#gameid 71
+#type undead
+#needs right_arm carrion
+#needstype offhand left_arm
+#enditem
+
+#newitem
+#id right_arm_typhon_heads
+#gameid 491
+#type coldblooded
+#needs right_arm typhon
+#needstype offhand left_arm
+#enditem
+
+#newitem
+#id right_arm_foulspawn_claw
+#gameid foulspawn_claw
+#type degenerate
+#needs right_arm foulspawn
+#needstype offhand left_arm
+#enditem
+
+#newitem
+#id right_arm_mantis_claw
+#gameid mantis_claw
+#type animal
+#needs right_arm mantis
+#needstype offhand left_arm
+#enditem
+
+#newitem
+#id right_arm_scorpion_pincer
+#gameid 273
+#type animal
+#needs right_arm scorpion
+#needstype offhand left_arm
+#enditem
+
+#newitem
+#id right_arm_tentacle
+#gameid 85
+#type tentacle
+#type degenerate
+#needstype right_arm tentacle
+#needstype offhand left_arm
+#enditem
+
+#newitem
+#id right_arm_tentacle_strangle
+#gameid 116
+#type tentacle
+#needstype right_arm prehensile_tentacle
+#needstype offhand left_arm
+#enditem
+
+#newitem
+#id right_arm_tentacle_sleep
+#gameid 387
+#type tentacle
+#needstype right_arm prehensile_tentacle
+#needstype offhand left_arm
+#enditem
+
+#newitem
+#id right_arm_tentacle_disease
+#gameid 142
+#type tentacle
+#needstype right_arm tentacle
+#needstype offhand left_arm
+#enditem
+
+#newitem
+#id right_arm_tentacle_weakness
+#gameid 550
+#type tentacle
+#needstype right_arm tentacle
+#needstype offhand left_arm
+#enditem
+
+#newitem
+#id right_arm_tentacle_life_drain
+#gameid 271
+#type tentacle
+#needstype right_arm tentacle
+#needstype offhand left_arm
+#enditem
+
+#newitem
+#id right_arm_tentacle_flame_sting
+#gameid flame_sting_tentacle
+#type tentacle
+#needstype right_arm tentacle
+#needstype offhand left_arm
+#enditem

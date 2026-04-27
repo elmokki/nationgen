@@ -9,15 +9,24 @@ import nationGen.misc.Command;
 
 public class MagicItem extends Filter {
 
-  public MagicItem(NationGen nationGen) {
-    super(nationGen);
-  }
-
   public List<String> namePrefixes = new ArrayList<>();
   public List<String> nameSuffixes = new ArrayList<>();
   public Item baseitem;
   public String effect = "-1";
   public boolean always = false;
+
+  public MagicItem(NationGen nationGen) {
+    super(nationGen);
+  }
+
+  public MagicItem(MagicItem magicItem) {
+    super(magicItem);
+    this.namePrefixes = new ArrayList<>(magicItem.namePrefixes);
+    this.nameSuffixes = new ArrayList<>(magicItem.nameSuffixes);
+    this.baseitem = (magicItem.baseitem != null) ? new Item(magicItem.baseitem) : null;
+    this.effect = magicItem.effect;
+    this.always = magicItem.always;
+  }
 
   @Override
   public void handleOwnCommand(Command command) {

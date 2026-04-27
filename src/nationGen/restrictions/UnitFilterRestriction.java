@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-import javax.swing.text.html.parser.Entity;
-
 import nationGen.NationGenAssets;
 import nationGen.entities.Filter;
 import nationGen.nation.Nation;

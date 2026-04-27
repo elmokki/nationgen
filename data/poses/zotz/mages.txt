@@ -2,23 +2,24 @@
 -------- Normal
 
 #newpose
+#id "zotz mages and priests"
 #role "mage"
 #role "priest"
 
 #renderorder "shadow wings cloakb mount bag basesprite shirt legs armor strap cloakf bonusweapon weapon offhandw hands hair helmet offhanda overlay"
 
-#load basesprite /data/items/zotz/bases_caster.txt
-#load shadow /data/items/zotz/shadow.txt
-#load hands /data/items/zotz/hands.txt
-#load wings /data/items/zotz/wings.txt
+#load basesprite /data/items/races/zotz/bases_caster.txt
+#load shadow /data/items/races/zotz/shadow.txt
+#load hands /data/items/races/zotz/hands.txt
+#load wings /data/items/races/zotz/wings.txt
 
-#load armor /data/items/zotz/armor_caster.txt
+#load armor /data/items/races/zotz/armor_caster.txt
 
-#load weapon /data/items/zotz/weapon_caster.txt -7 -19
-#load helmet /data/items/zotz/helmet_caster.txt
+#load weapon /data/items/races/zotz/weapon_caster.txt -7 -19
+#load helmet /data/items/races/zotz/helmet_caster.txt
 
-#load cloakf /data/items/zotz/cloakf.txt
-#load cloakb /data/items/zotz/cloakb.txt
+#load cloakf /data/items/races/zotz/cloakf.txt
+#load cloakb /data/items/races/zotz/cloakb.txt
 
 #command "#flying"
 #command "#stealthy +0"

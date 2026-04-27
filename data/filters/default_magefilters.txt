@@ -379,7 +379,7 @@
 #command "#glamour"
 #command "#stealthy +0"
 #command "#gcost *1.05"
-#primarycommand #glamour
+#mutuallyexclusive #glamour
 #chanceinc "personalmagic air 2"
 #power 2
 #tag "personalmagic air"
@@ -391,7 +391,7 @@
 #id "spellsinger"
 #basechance 0.2
 #command "#spellsinger"
-#primarycommand #spellsinger
+#mutuallyexclusive #spellsinger
 #chanceinc "personalmagic astral 0.3"
 #chanceinc "personalmagic death 0.6"
 #chanceinc "personalmagic glamour 0.6"
@@ -405,7 +405,7 @@
 #new magefilter
 #id "holy"
 #basechance 0.2
-#primarycommand "#holy"
+#mutuallyexclusive "#holy"
 #command "#holy"
 #filterdesc "holy desc"
 #end
@@ -435,7 +435,7 @@
 #id "sailing"
 #basechance 0.25
 #command "#sailing 999 3"
-#primarycommand #sailing
+#mutuallyexclusive #sailing
 #chanceinc "personalmagic air 0.35"
 #chanceinc "personalmagic water 0.35"
 #theme sailing
@@ -557,7 +557,7 @@
 #command "#stealthy +25"
 #command "#assassin"
 #command "#gcost +30"
-#primarycommand #assassin
+#mutuallyexclusive #assassin
 #tag "notfortier 3"
 #power 2
 #filterdesc "assassin desc"
@@ -569,7 +569,7 @@
 #command "#ethereal"
 #command "#gcost +20"
 #chanceinc "personalmagic astral 0.5"
-#primarycommand #ethereal
+#mutuallyexclusive #ethereal
 #tag "personalmagic astral"
 #power 3
 #filterdesc "ethereal desc"
@@ -580,7 +580,7 @@
 #basechance 0.33
 #command "#ethereal"
 #command "#gcost +20"
-#primarycommand #ethereal
+#mutuallyexclusive #ethereal
 #chanceinc "personalmagic astral 1"
 #tag "personalmagic astral"
 #tag "notfortier 2"
@@ -668,7 +668,7 @@
 #id "nobadevents1"
 #basechance 0.2
 #command "#nobadevents +5"
-#primarycommand nobadevents
+#mutuallyexclusive nobadevents
 #tag "notfortier 1"
 #chanceinc "personalmagic astral 0.8"
 #filterdesc "nobadevents desc"
@@ -678,7 +678,7 @@
 #id "nobadevents2"
 #basechance 0.2
 #command "#nobadevents +3"
-#primarycommand nobadevents
+#mutuallyexclusive nobadevents
 #tag "notfortier 1"
 #chanceinc "personalmagic astral 0.8"
 #filterdesc "nobadevents desc"
@@ -689,7 +689,7 @@
 #id "nobadevents3"
 #basechance 0.1
 #command "#nobadevents +8"
-#primarycommand nobadevents
+#mutuallyexclusive nobadevents
 #tag "notfortier 2"
 #tag "notfortier 3"
 #chanceinc "personalmagic astral 0.5"
@@ -810,10 +810,10 @@
 #basechance 0.075
 #chanceinc "personalmagic earth 0.15"
 #command "#darkvision +50"
-#primarycommand blind
-#primarycommand demon
-#primarycommand undead
-#primarycommand spiritsight
+#mutuallyexclusive blind
+#mutuallyexclusive demon
+#mutuallyexclusive undead
+#mutuallyexclusive spiritsight
 #filterdesc "darkvision desc"
 #end
 
@@ -823,11 +823,11 @@
 #basechance 0.05
 #chanceinc "personalmagic earth 0.15"
 #command "#darkvision 100"
-#primarycommand blind
-#primarycommand darkvision
-#primarycommand demon
-#primarycommand undead
-#primarycommand spiritsight
+#mutuallyexclusive blind
+#mutuallyexclusive darkvision
+#mutuallyexclusive demon
+#mutuallyexclusive undead
+#mutuallyexclusive spiritsight
 #filterdesc "darkvision desc"
 #end
 

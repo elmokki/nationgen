@@ -193,7 +193,7 @@
 #id "stealthhigh"
 #type "stealth"
 #basechance 0.25
-#primarycommand "#stealthy"
+#mutuallyexclusive "#stealthy"
 #command "#stealthy +20"
 #command "#gcost +10"
 #chanceinc "personalcommand #stealthy -10"
@@ -407,7 +407,7 @@
 #id "glamour"
 #type "strong defensive"
 #type "stealth"
-#primarycommand "#glamour"
+#mutuallyexclusive "#glamour"
 #basechance 0.0
 #chanceinc "magic air 2"
 #chanceinc "command #glamour 10"
@@ -520,7 +520,7 @@
 #new
 #id "recup"
 #basechance 0.0
-#primarycommand "#heal"
+#mutuallyexclusive "#heal"
 #chanceinc "magic nature 1"
 #chanceinc "command #heal 10"
 #command "#heal"
@@ -737,9 +737,10 @@
 #new
 #id "darkpower2"
 #basechance 0.0
-#chanceinc "command #darkvision 0.05"
-#chanceinc "magic death 1"
-#primarycommand "#blind"
+#chanceinc "command #darkvision 4"
+#chanceinc "magic death +1"
+#mutuallyexclusive "#blind"
+#mutuallyexclusive "#darkpower"
 #command "#darkpower +2"
 #command "#darkvision 100"
 #command "#gcost +3"
@@ -751,9 +752,10 @@
 #new
 #id "darkpower4"
 #basechance 0.0
-#chanceinc "command #darkvision 4"
-#chanceinc "magic death 0.5"
-#primarycommand "#blind"
+#chanceinc "command #darkvision 0.05"
+#chanceinc "magic death +0.5"
+#mutuallyexclusive "#blind"
+#mutuallyexclusive "#darkpower"
 #command "#darkpower +4"
 #command "#darkvision 100"
 #command "#gcost +8"
@@ -767,6 +769,7 @@
 #basechance 0.0
 #chanceinc "personalcommand #blind 5"
 #chanceinc "magic death *2"
+#mutuallyexclusive "#darkpower"
 #command "#darkpower +2"
 #command "#gcost +3"
 #tag "path death"
@@ -779,6 +782,7 @@
 #basechance 0.0
 #chanceinc "personalcommand #blind 3"
 #chanceinc "magic death *2"
+#mutuallyexclusive "#darkpower"
 #command "#darkpower +4"
 #command "#gcost +8"
 #tag "path death"
@@ -969,7 +973,7 @@
 #type "resist"
 #id "bluntres"
 #basechance 0.5
-#primarycommand "#bluntres"
+#mutuallyexclusive "#bluntres"
 #command "#bluntres"
 #command "#gcost +5"
 #price_per_command #hp 0.5 20
@@ -981,7 +985,7 @@
 #type "resist"
 #id "pierceres"
 #basechance 0.5
-#primarycommand "#pierceres"
+#mutuallyexclusive "#pierceres"
 #command "#pierceres"
 #command "#gcost +5"
 #price_per_command #hp 0.5 20
@@ -993,7 +997,7 @@
 #type "resist"
 #id "slashres"
 #basechance 0.5
-#primarycommand "#slashres"
+#mutuallyexclusive "#slashres"
 #command "#slashres"
 #command "#gcost +5"
 #price_per_command #hp 0.5 20
@@ -1005,7 +1009,7 @@
 #type "invuln"
 #id "invulnerable (5)"
 #basechance 0.5
-#primarycommand "#prot"
+#mutuallyexclusive "#prot"
 #command "#invulnerable +5"
 #command "#gcost +5"
 #filterdesc "invulnerable desc"
@@ -1016,7 +1020,7 @@
 #type "invuln"
 #id "invulnerable (10)"
 #basechance 0.25
-#primarycommand "#prot"
+#mutuallyexclusive "#prot"
 #command "#invulnerable +10"
 #command "#gcost +10"
 #filterdesc "invulnerable desc"
@@ -1059,16 +1063,16 @@
 #end
 
 #new
-#id "overcharged2"
+#id "overcharged1"
 #type overcharged
 #basechance 0.1
 #chanceinc "magic air +2"
-#command "#overcharged +2"
+#command "#overcharged +1"
 #tag "path air"
 #command "#gcost +5"
-#price_per_command #hp 0.25 10
-#price_per_command #hp 0.25 19
-#price_per_command #hp 0.5 39
+#price_per_command #hp 0.2 10
+#price_per_command #hp 0.2 19
+#price_per_command #hp 0.4 39
 #price_if_command above #prot 15 +5
 #price_if_command above #prot 20 +5
 #filterdesc "chargedbody desc"
@@ -1076,16 +1080,16 @@
 #end
 
 #new
-#id "overcharged4"
+#id "overcharged2"
 #type overcharged
 #basechance 0.05
 #chanceinc "magic air +1"
-#command "#overcharged +4"
+#command "#overcharged +2"
 #tag "path air"
 #command "#gcost +10"
-#price_per_command #hp 0.35 10
-#price_per_command #hp 0.35 19
-#price_per_command #hp 0.75 39
+#price_per_command #hp 0.3 10
+#price_per_command #hp 0.3 19
+#price_per_command #hp 0.6 39
 #price_if_command above #prot 15 +8
 #price_if_command above #prot 20 +8
 #filterdesc "chargedbody desc"
@@ -1146,7 +1150,7 @@
 #new
 #id "ethereal"
 #type "strong defensive"
-#primarycommand "#ethereal"
+#mutuallyexclusive "#ethereal"
 #command "#ethereal"
 #command "#gcost +25"
 #price_per_command #hp 0.8 10
@@ -1165,7 +1169,7 @@
 #id "cultist"
 #basechance 0.1
 #chanceinc "magic blood astral 1"
-#primarycommand "#horrormark"
+#mutuallyexclusive "#horrormark"
 #command "#horrormark 2"
 #command "#startaff +20"
 #filterdesc "cultist desc"
@@ -1176,8 +1180,8 @@
 #id "cultist-stealthy"
 #basechance 0.1
 #chanceinc "magic blood astral 1"
-#primarycommand "#horrormark"
-#primarycommand "#stealthy"
+#mutuallyexclusive "#horrormark"
+#mutuallyexclusive "#stealthy"
 #command "#horrormark 2"
 #command "#startaff +20"
 #command "#stealthy +0"
@@ -1234,55 +1238,13 @@
 #chanceinc magic nature 0.25
 #chanceinc magic astral 0.25
 #chanceinc "personalcommand #illusion 0.25"
-#primarycommand "#magicbeing"
+#mutuallyexclusive "#magicbeing"
 #command "#magicbeing"
 #command "#mr +1"
 #command "#att +1"
 #command "#def +1"
 #price_per_command #size 1 0
 #filterdesc "magicbeing desc"
-#power 1
-#end
-
-#new
-#name "jinnblood"
-#basechance 0.15
-#chanceinc magic glamour 0.25
-#chanceinc magic fire 0.25
-#chanceinc magic air 0.25
-#chanceinc "personalcommand #illusion 0.25"
-#chanceinc "personalcommand #undead *0"
-#primarycommand "#magicbeing"
-#primarycommand "#spiritsight"
-#command "#magicbeing"
-#command "#mr +1"
-#command "#fireres +5"
-#command "#coldres -5"
-#command "#ironvul 3"
-#command "#magicpower +1"
-#command "#spiritsight"
-#command "#gcost *1.1"
-#command "#gcost +5"
-#filterdesc "jinnblood desc"
-#power 1
-#end
-
-#new
-#name "demonblood"
-#basechance 0.15
-#chanceinc magic blood 0.5
-#chanceinc magic fire 0.25
-#chanceinc magic astral 0.25
-#chanceinc "personalcommand #fireres 0.025"
-#chanceinc "personalcommand #undead *0"
-#primarycommand "#demon"
-#command "#demon"
-#command "#mr +1"
-#command "#str +2"
-#command "#hp +1"
-#command "#gcost +4"
-#price_per_command #size 1 3
-#filterdesc "demonblood desc"
 #power 1
 #end
 
@@ -1308,7 +1270,7 @@
 #chanceinc magic earth astral 0.25
 #chanceinc pose ranged *0.25
 #chanceinc "personalcommand #prot above 13 0"
-#primarycommand "#stonebeing"
+#mutuallyexclusive "#stonebeing"
 #command "#stonebeing"
 #command "#ap -4"
 #command "#prot +4"
@@ -1321,7 +1283,7 @@
 #new
 #name "blind"
 #basechance 0.25
-#primarycommand "#blind"
+#mutuallyexclusive "#blind"
 #command "#blind"
 #command "#spiritsight"
 #command "#att +1"
@@ -1340,15 +1302,63 @@
 #chanceinc personalcommand wastesurvival 0.25
 #chanceinc personalcommand stealthy 0.25
 #chanceinc personalcommand patrolbonus 0.25
-#primarycommand "#batstartsum1"
+#mutuallyexclusive "#batstartsum1"
 #command "#gcost +8"
 #command "#batstartsum1 3371"
 #filterdesc "falconer desc"
 #power 3
 #end
 
+
+---- Ancestry filters
+
+#new
+#name "demonblood"
+#category ancestry_trait
+#basechance 0.15
+#chanceinc magic blood 0.5
+#chanceinc magic fire 0.25
+#chanceinc magic astral 0.25
+#chanceinc "personalcommand #fireres 0.025"
+#chanceinc "personalcommand #undead *0"
+#mutuallyexclusive "#demon"
+#command "#demon"
+#command "#mr +1"
+#command "#str +2"
+#command "#hp +1"
+#command "#gcost +4"
+#price_per_command #size 1 3
+#filterdesc "demonblood desc"
+#power 1
+#end
+
+#new
+#name "jinnblood"
+#category ancestry_trait
+#basechance 0.15
+#chanceinc magic glamour 0.25
+#chanceinc magic fire 0.25
+#chanceinc magic air 0.25
+#chanceinc "personalcommand #illusion 0.25"
+#chanceinc "personalcommand #undead *0"
+#mutuallyexclusive "#magicbeing"
+#mutuallyexclusive "#spiritsight"
+#command "#magicbeing"
+#command "#mr +1"
+#command "#fireres +5"
+#command "#coldres -5"
+#command "#ironvul 3"
+#command "#magicpower +1"
+#command "#spiritsight"
+#command "#gcost *1.1"
+#command "#gcost +5"
+#filterdesc "jinnblood desc"
+#power 1
+#end
+
 #new
 #name "serpentblood"
+#category ancestry_trait
 #basechance 0.1
 #chanceinc magic nature 0.25
 #chanceinc race Ophidian 0
@@ -1372,22 +1382,119 @@
 #end
 
 #new
-#name "dragonblood"
-#basechance 0.1
+#name "black_dragonblood"
+#category ancestry_trait
+#basechance 0.033
+#chanceinc magic earth 0.025
+#chanceinc hastheme "deep_serpent" 0.025
+#chanceinc race "Pale One" 0.025
+#chanceinc race Lizard 0.025
+#chanceinc race Muuch 0.025
+#chanceinc race Caveman 0.025
+#chanceinc "personalcommand #acidres 0.01"
+#chanceinc pose ranged *0.1
+#command "#weapon black_dragonblood_breath"
+#command "#acidres +10"
+#command "#hp +3"
+#command "#str +1"
+#command "#prot +2"
+#command "#gcost *1.25"
+#command "#rpcost +20"
+#price_if_command below #size 3 +5
+#filterdesc "dragonblood desc"
+#power 4
+#end
+
+#new
+#name "blue_dragonblood"
+#category ancestry_trait
+#basechance 0.033
+#chanceinc magic water 0.025
+#chanceinc hastheme "tundra_serpent" 0.025
+#chanceinc hastheme "sea_serpent" 0.025
+#chanceinc race Merrow 0.025
+#chanceinc race Atlantian 0.025
+#chanceinc "personalcommand #coldres 0.01"
+#chanceinc "nationcommand #idealcold above 1 0.025"
+#chanceinc pose ranged *0.1
+#command "#weapon blue_dragonblood_breath"
+#command "#coldres +10"
+#command "#hp +3"
+#command "#str +1"
+#command "#prot +2"
+#command "#gcost *1.25"
+#command "#rpcost +20"
+#price_if_command below #size 3 +5
+#filterdesc "dragonblood desc"
+#power 4
+#end
+
+#new
+#name "green_dragonblood"
+#category ancestry_trait
+#basechance 0.033
+#chanceinc magic nature 0.025
+#chanceinc hastheme "jungle_serpent" 0.025
+#chanceinc hastheme "lamia" 0.025
+#chanceinc race Lizard 0.025
+#chanceinc race Muuch 0.025
+#chanceinc race Naga 0.025
+#chanceinc "personalcommand #poisonres 0.01"
+#chanceinc "nationcommand #idealheat above 0 0.025"
+#chanceinc pose ranged *0.1
+#command "#weapon green_dragonblood_breath"
+#command "#poisonres +10"
+#command "#hp +3"
+#command "#str +1"
+#command "#prot +2"
+#command "#gcost *1.25"
+#command "#rpcost +20"
+#price_if_command below #size 3 +5
+#filterdesc "dragonblood desc"
+#power 4
+#end
+
+#new
+#name "red_dragonblood"
+#category ancestry_trait
+#basechance 0.033
 #chanceinc magic fire 0.025
-#chanceinc race Ophidian 0.025
-#chanceinc race abysian 0.025
-#chanceinc race lizard 0.025
+#chanceinc hastheme "desert_serpent" 0.025
+#chanceinc race Abysian 0.025
+#chanceinc race Lizard 0.025
 #chanceinc "personalcommand #fireres 0.01"
 #chanceinc "nationcommand #idealheat above 1 0.025"
 #chanceinc pose ranged *0.1
-#command "#weapon 676"
+#command "#weapon red_dragonblood_breath"
 #command "#fireres +10"
 #command "#hp +3"
 #command "#str +1"
 #command "#prot +2"
 #command "#gcost *1.25"
 #command "#rpcost +20"
+#price_if_command below #size 3 +5
+#filterdesc "dragonblood desc"
+#power 4
+#end
+
+#new
+#name "white_dragonblood"
+#category ancestry_trait
+#basechance 0.033
+#chanceinc magic air 0.025
+#chanceinc race Tengu 0.025
+#chanceinc race Caelian 0.025
+#chanceinc race Asmeg 0.025
+#chanceinc "personalcommand #shockres 0.01"
+#chanceinc pose ranged *0.1
+#command "#weapon white_dragonblood_breath"
+#command "#shockres +10"
+#command "#hp +3"
+#command "#str +1"
+#command "#prot +2"
+#command "#gcost *1.25"
+#command "#rpcost +20"
+#price_if_command below #size 3 +5
 #filterdesc "dragonblood desc"
 #power 4
 #end

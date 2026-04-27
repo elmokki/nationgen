@@ -7,6 +7,8 @@ import java.util.NavigableMap;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
+
+import nationGen.NationGen;
 import nationGen.chances.ChanceInc;
 import nationGen.chances.ChanceIncData;
 import nationGen.chances.EntityChances;
@@ -38,7 +40,9 @@ public class ChanceIncHandler {
   private List<ThemeInc> getRaceThemeIncs(Race r) {
     List<ThemeInc> list = new ArrayList<>();
 
-    for (Theme t : r.themefilters) list.addAll(t.themeincs);
+    for (Theme t : r.themefilters) {
+      list.addAll(t.themeincs);
+    }
 
     return list;
   }
@@ -126,17 +130,19 @@ public class ChanceIncHandler {
 
     List<ThemeInc> miscincs = new ArrayList<>();
 
-    if (extraincs != null) miscincs.addAll(extraincs);
+    if (extraincs != null) {
+      miscincs.addAll(extraincs);
+    }
 
     if (u != null) {
-      for (Filter f : u.appliedFilters) miscincs.addAll(f.themeincs);
+      for (Filter f : u.appliedFilters) {
+        miscincs.addAll(f.themeincs);
+      }
     }
 
     // Actually handle the stuff
     processChanceIncs(chances, u, race);
-
     handleThemeIncs(chances, miscincs, race);
-
     return chances;
   }
 
@@ -157,81 +163,60 @@ public class ChanceIncHandler {
     return true;
   }
 
-  public static boolean canAdd(Unit u, Filter f) {
-    if (!suitableFor(u, f, null)) {
+  public static boolean canAdd(Unit unit, Filter filter) {
+    if (!suitableFor(unit, filter, null)) {
       return false;
     }
 
-    List<String> primaries = f.tags.getAllStrings("primarycommand");
+    List<String> exclusives = filter.tags.getAllStrings("mutuallyexclusive");
 
-    boolean shapeshift = f
-      .getCommands()
-      .stream()
-      .anyMatch(
-        c ->
-          c.command.equals("#shapechange") ||
-          c.command.equals("#secondshape") ||
-          c.command.equals("#secondtmpshape")
-      );
-
-    boolean ok = false;
-    boolean primarycommandfail = false;
-    for (Command c : u.getCommands()) {
-      if (primaries.contains(c.command)) {
-        primarycommandfail = true;
-        ok = false;
-        break;
+    // Check other unit filters to see if any is excluded by a
+    // #mutuallyexclusive tag from the filter we're applying
+    for (Filter otherFilter : unit.appliedFilters) {
+      if (exclusives.contains(otherFilter.name)) {
+        return false;
       }
 
-      if (
-        shapeshift &&
-        (c.command.equals("#shapechange") ||
-          c.command.equals("#secondshape") ||
-          c.command.equals("#secondtmpshape"))
-      ) {
-        ok = false;
-        break;
+      if (filter.sharesTypeWith(otherFilter)) {
+        return false;
+      }
+    } 
+
+    List<Command> unitCommands = unit.gatherCommands();
+    boolean isShapeshiftFilter = filter.isShapeshiftFilter();
+
+    // Check the rest of the unit commands to see if any is
+    // excluded by #mutuallyexclusive, or in case there are
+    // some incompatible ones (i.e. can't mix shapeshifter ones)
+    for (Command c : unitCommands) {
+      if (exclusives.contains(c.command)) {
+        return false;
       }
 
-      if (
-        !shapeshift ||
-        f
-          .getCommands()
-          .stream()
-          .noneMatch(
-            fc ->
-              c.command.equals(fc.command) &&
-              c.args.size() == 0 &&
-              fc.args.size() == 0
-          )
-      ) {
-        ok = true;
+      if (isShapeshiftFilter && c.isShapeshiftCommand()) {
+        return false;
+      }
+
+      // If unit already has the boolean command (i.e. #demon)
+      // that this filter includes, don't apply it
+      if (c.isBoolean() && filter.hasCommand(c)) {
+        return false;
       }
     }
 
-    if (f.getCommands().size() == 0 && !primarycommandfail && ok) {
-      Optional<Integer> threshold = f.tags.getInt("lowenctreshold");
+    // If filter has a #lowencthreshold, check that unit fulfills it
+    if (filter.hasAnyCommand() == false) {
+      Optional<Integer> threshold = filter.tags.getInt("lowencthreshold");
+
       if (threshold.isPresent()) {
-        int enc = 0;
-        if (u.getSlot("armor") != null) enc +=
-        u.nationGen.armordb.GetInteger(u.getSlot("armor").id, "enc");
-        if (u.getSlot("offhand") != null && u.getSlot("offhand").armor) enc +=
-        u.nationGen.armordb.GetInteger(u.getSlot("offhand").id, "enc");
-        if (u.getSlot("helmet") != null) enc +=
-        u.nationGen.armordb.GetInteger(u.getSlot("helmet").id, "enc");
-
-        ok = (enc <= threshold.get());
+        int enc = unit.getTotalEnc();
+        if (enc > threshold.get()) {
+          return false;
+        }
       }
     }
 
-    return ok && canAdd(u.appliedFilters, f);
-  }
-
-  public static <E extends Filter> boolean canAdd(List<E> filters, Filter f) {
-    // Forbid the same type
-    return filters
-      .stream()
-      .noneMatch(f2 -> f.types.stream().anyMatch(s -> f2.types.contains(s)));
+    return true;
   }
 
   public static List<Filter> getFiltersWithPower(
@@ -301,7 +286,7 @@ public class ChanceIncHandler {
   ) {
     return filters
       .stream()
-      .filter(f -> ChanceIncHandler.canAdd(oldfilters, f))
+      .filter(f -> f.sharesTypeWith(oldfilters) == false)
       .collect(Collectors.toList());
   }
 
@@ -433,10 +418,14 @@ public class ChanceIncHandler {
     List<ThemeInc> chanceincs = new ArrayList<>();
 
     // Add race themes if appliceable!
-    if (r != null) chanceincs.addAll(getRaceThemeIncs(r)); // Should never be null.
+    if (r != null) {
+      chanceincs.addAll(getRaceThemeIncs(r)); // Should never be null.
+    }
 
     // Add all nation theme themeincs!
-    for (Theme t : n.nationthemes) chanceincs.addAll(t.themeincs);
+    for (Theme t : n.nationthemes) {
+      chanceincs.addAll(t.themeincs);
+    }
 
     chanceincs.addAll(miscincs);
 
@@ -445,7 +434,14 @@ public class ChanceIncHandler {
 
       for (ThemeInc themeInc : chanceincs) {
         if (themeInc.condition.test(data)) {
+          Boolean wasAboveZero = chances.getChance(f) > 0;
           chances.modifyChance(f, themeInc.modificationAmount);
+
+          if (wasAboveZero == true && chances.getChance(f) <= 0) {
+            if (NationGen.isInDebugMode()) {
+              System.out.println(f + " race filter for " + r.name + " was zeroed by #themeinc " + themeInc.source);
+            }
+          }
         }
       }
     }
@@ -495,7 +491,22 @@ public class ChanceIncHandler {
       for (ChanceInc chanceInc : f.chanceincs) {
         try {
           if (chanceInc.condition.test(data)) {
+            Boolean wasAboveZero = chances.getChance(f) > 0;
             chances.modifyChance(f, chanceInc.modificationAmount);
+
+            if (wasAboveZero == true && chances.getChance(f) <= 0) {
+              if (un != null) {
+                if (NationGen.isInDebugMode()) {
+                  System.out.println(f + " unit filter for " + un.pose.name + " pose of race " + race.name + " was zeroed by #themeinc " + chanceInc.source);
+                }
+              }
+
+              else if (race != null) {
+                if (NationGen.isInDebugMode()) {
+                  System.out.println(f + " race filter for " + race.name + " was zeroed by #chanceinc " + chanceInc.source);
+                }
+              }
+            }
           }
         } catch (Exception e) {
           throw new IllegalStateException(
@@ -532,7 +543,14 @@ public class ChanceIncHandler {
 
       for (T f : chances.getEntities()) {
         if (type ? f.types.contains(value) : f.name.equals(value)) {
+          Boolean wasAboveZero = chances.getChance(f) > 0;
           chances.modifyChance(f, modifier);
+
+          if (wasAboveZero == true && chances.getChance(f) <= 0) {
+            if (NationGen.isInDebugMode()) {
+              System.out.println(f + " filter was zeroed by #filteraffinity " + value + " " + modifier);
+            }
+          }
         }
       }
     }
@@ -583,10 +601,10 @@ public class ChanceIncHandler {
     for (Unit u : troopList) {
       if (
         u.pose.roles.contains("mounted") || u.pose.roles.contains("chariot")
-      ) totalgold += u.getGoldCost() * 0.66;
-      else totalgold += u.getGoldCost();
+      ) totalgold += u.getGoldCost(true) * 0.66;
+      else totalgold += u.getGoldCost(true);
 
-      totalres += u.getResCost(true);
+      totalres += u.getResCost(true, true);
     }
 
     data.avgres = totalres / unitCount;

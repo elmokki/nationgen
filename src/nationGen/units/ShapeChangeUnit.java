@@ -47,7 +47,7 @@ public class ShapeChangeUnit extends Unit {
 
     // Copy sacredness and gcost from main form
     if (otherForm != null) {
-      for (Command c : otherForm.getCommands()) {
+      for (Command c : otherForm.getAllHandledCommands()) {
         if (c.command.equals("#holy") && !thisForm.tags.containsName("mount")) {
           sacred = true;
         } else if (
@@ -59,14 +59,13 @@ public class ShapeChangeUnit extends Unit {
         if (
           c.command.equals("#gcost") && !thisForm.tags.containsName("nogcost")
         ) {
-          //System.out.println(c.args.get(0) + " ADDED " + " / " + otherForm.getGoldCost_DEBUG());
           gcost = c.args.get(0).getInt();
         }
       }
     }
 
     // Copy commands from this form
-    for (Command c : thisForm.commands) {
+    for (Command c : thisForm.getCommands()) {
       if (c.command.equals("#name") && c.args.size() > 0) {
         c.args.set(0, new Arg(Generic.capitalize(c.args.get(0).get())));
         name = new Name();
@@ -77,32 +76,31 @@ public class ShapeChangeUnit extends Unit {
         );
       }
 
-      if (!c.command.startsWith("#spr")) sf.commands.add(c);
-      if (
-        c.command.equals("#gcost") &&
-        thisForm.tags.containsName("specifiedgcost")
-      ) {
-        //System.out.println(c.args.get(0) + " ADDED " + " / " + otherForm.getGoldCost_DEBUG());
-        sf.commands.add(c);
+      if (!c.command.startsWith("#spr")) {
+        sf.addCommands(c);
+      }
+
+      if (c.command.equals("#gcost") && thisForm.tags.containsName("specifiedgcost")) {
+        sf.addCommands(c);
         gcost = c.args.get(0).getInt();
       }
     }
 
-    // ...and other Form
+    // ...and "main" Form
     if (otherForm != null) {
       // Inherit nametype and maxage
 
       boolean maxagefound = false;
-      for (Command c : otherForm.getCommands()) if (
+      for (Command c : otherForm.getAllHandledCommands()) if (
         c.command.equals("#maxage") || c.command.equals("#nametype")
       ) {
-        sf.commands.add(c);
+        sf.addCommands(c);
         if (c.command.equals("#maxage")) maxagefound = true;
       }
 
       if (!maxagefound) {
-        sf.commands.add(new Command("#maxage", new Arg(50)));
-        otherForm.commands.add(new Command("#maxage", new Arg(50)));
+        sf.addCommands(new Command("#maxage", new Arg(50)));
+        otherForm.addCommands(new Command("#maxage", new Arg(50)));
       }
 
       // Inherit from race/pose
@@ -115,8 +113,8 @@ public class ShapeChangeUnit extends Unit {
         otherForm.pose.getCommands()
       );
       for (Command c : clist) {
-        if (assets.secondShapeRacePoseCommands.contains(c.command)) {
-          sf.commands.add(c);
+        if (assets.isRacePoseCommandInheritableByShape(c)) {
+          sf.addCommands(c);
           //handleCommand(commands, c);
         }
       }
@@ -133,25 +131,25 @@ public class ShapeChangeUnit extends Unit {
         // Add filters
         for (Command c : f.getCommands()) {
           if (
-            assets.secondShapeNonMountCommands.contains(c.command) &&
+            assets.isCommandInheritableByShape(c) &&
             !thisForm.tags.containsName("mount")
           ) {
-            sf.commands.add(c);
+            sf.addCommands(c);
             //handleCommand(commands, c);
           }
 
           if (
-            assets.secondShapeMountCommands.contains(c.command) &&
+            assets.isCommandInheritableByMount(c) &&
             thisForm.tags.containsName("mount")
           ) {
-            sf.commands.add(c);
+            sf.addCommands(c);
             //handleCommand(commands, c);
           }
         }
       }
     }
 
-    if (sf.commands.size() > 0) {
+    if (sf.getCommands().size() > 0) {
       appliedFilters.add(sf);
     }
   }
@@ -182,7 +180,7 @@ public class ShapeChangeUnit extends Unit {
     // Handle sprites
 
     BufferedImage spr1 = null;
-    for (Command c : thisForm.commands) {
+    for (Command c : thisForm.getCommands()) {
       // First sprite
       if (c.command.equals("#spr1")) {
         if (c.args.get(0).get().equals("greyscale")) {
@@ -200,7 +198,7 @@ public class ShapeChangeUnit extends Unit {
       }
     }
 
-    for (Command c : thisForm.commands) {
+    for (Command c : thisForm.getCommands()) {
       if (c.command.equals("#spr2")) {
         BufferedImage spr2;
         if (c.args.get(0).get().equals("shift")) {
@@ -234,7 +232,7 @@ public class ShapeChangeUnit extends Unit {
 
     lines.add("#newmonster " + id);
 
-    List<Command> commands = getCommands();
+    List<Command> commands = getAllHandledCommands();
     boolean hasItemSlots = false;
 
     // Own non-gcost commands first due to #copystats
@@ -256,21 +254,21 @@ public class ShapeChangeUnit extends Unit {
       }
     }
 
-    if (thisForm.commands.stream().anyMatch(c -> c.command.equals("#spr1"))) {
+    if (thisForm.getCommands().stream().anyMatch(c -> c.command.equals("#spr1"))) {
       lines.add(
         "#spr1 \"" + spritedir + "/shapechange_" + id + "_a.tga" + "\""
       );
     }
 
-    if (thisForm.commands.stream().anyMatch(c -> c.command.equals("#spr2"))) {
+    if (thisForm.getCommands().stream().anyMatch(c -> c.command.equals("#spr2"))) {
       lines.add(
         "#spr2 \"" + spritedir + "/shapechange_" + id + "_b.tga" + "\""
       );
     }
 
-    if (thisForm.keepname && otherForm != null) lines.add(
-      "#name \"" + otherForm.name + "\""
-    );
+    if (thisForm.keepFirstFormName && otherForm != null) {
+      lines.add("#name \"" + otherForm.name + "\"");
+    }
 
     if (
       !shiftcommand.equals("") &&
@@ -287,8 +285,8 @@ public class ShapeChangeUnit extends Unit {
     writeBodytypeLine().ifPresent(lines::add);
 
     // Write weapons and armor
-    lines.addAll(writeWeaponLines());
-    lines.addAll(writeArmorLines());
+    lines.addAll(super.writeWeaponLines(super.getEquippedWeapons()));
+    lines.addAll(super.writeArmorLines(super.getEquippedArmors()));
 
     // Write itemslots if they were skipped before
     if (hasItemSlots) lines.add("#itemslots " + this.getItemSlots());

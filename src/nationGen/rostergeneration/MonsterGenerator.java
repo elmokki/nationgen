@@ -61,7 +61,7 @@ public class MonsterGenerator {
 
     double chance = p.tags.getDouble("caponlychance").orElse(0.95);
 
-    if (n.random.nextDouble() < chance) u.caponly = true;
+    if (n.random.nextDouble() < chance) u.setCapOnly(true);
 
     p.tags
       .getInt("invariantid")

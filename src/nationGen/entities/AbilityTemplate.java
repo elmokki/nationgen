@@ -38,11 +38,11 @@ public class AbilityTemplate extends Filter {
 
   public void apply(Unit u, Nation n) {
     Filter f = new Filter(nationGen);
-    f.commands.addAll(this.commands);
+    f.addCommands(this.getCommands());
     u.tags.addAll(addTags);
 
     for (Args args : this.tags.getAllArgs("possiblecommand")) {
-      if (n.random.nextDouble() < args.get(1).getDouble()) f.commands.add(
+      if (n.random.nextDouble() < args.get(1).getDouble()) f.addCommands(
         args.get(0).getCommand()
       );
     }
@@ -50,7 +50,7 @@ public class AbilityTemplate extends Filter {
     f.name = "TEMPLATE FILTER: " + this.name;
     f.tags.add("description", desc);
 
-    if (f.commands.size() > 0 || !addTags.isEmpty()) {
+    if (f.getCommands().size() > 0 || !addTags.isEmpty()) {
       u.appliedFilters.add(f);
     }
   }

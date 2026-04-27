@@ -1,0 +1,83 @@
+--- #new initializes both armors and weapons
+--- #armor will indicate that the item is armor
+--- Use exact syntax you'd use for dom6 except for #newweapon, #newarmor and #end
+--- Dominions mod commands are prefixed by #command; i.e. #command "#hp 5"
+
+-- Grotesque
+
+#new customarmor
+#id draconian_wing_shield
+#armor
+#command "#copyarmor 112"
+#command "#def 8"
+#command "#enc 0"
+#command "#name 'Wing Shield'"
+#end
+
+#new customarmor
+#id angel_wing_shield
+#armor
+#command "#copyarmor 112"
+#command "#def 6"
+#command "#enc 0"
+#command "#name 'Wing Shield'"
+#end
+
+#new customweapon
+#id "sweeping_fist"
+#command "#copyweapon 92"
+#command "#aoe 1"
+#command "#charge"
+#command "#norepel"
+#command "#defroll"
+#command "#name 'Sweeping Fist'"
+#end
+
+#new customweapon
+#id "hydra_heads"
+#command "#copyweapon 490"
+#command "#nratt 2"
+#command "#name 'Lesser Hydra Heads'"
+#end
+
+#new customweapon
+#id "boulder"
+#command "#copyweapon 424"
+#command "#range0"
+#end
+
+#new customweapon
+#id "maul_aoe"
+#command "#copyweapon 14"
+#command "#aoe 1"
+#command "#name 'Massive Maul'"
+#end
+
+#new customweapon
+#id "foulspawn_claw"
+#command "#copyweapon 236"
+#command "#armorpiercing"
+#command "#name 'Piercing Claw'"
+#end
+
+#new customweapon
+#id "mantis_claw"
+#command "#copyweapon 742"
+#command "#dmg 2"
+#command "#magic"
+#end
+
+#new customweapon
+#id "shambler_claw"
+#command "#copyweapon 29"
+#command "#aoe 1"
+#command "#charge"
+#command "#defroll"
+#command "#name 'Sweeping Claw'"
+#end
+
+#new customweapon
+#id "flame_sting_tentacle"
+#command "#copyweapon 652"
+#command "#thirdstr"
+#end

@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Optional;
 import nationGen.entities.Race;
 import nationGen.items.Item;
+import nationGen.items.ItemProperty;
 import nationGen.misc.ArgParser;
 import nationGen.misc.Args;
 import nationGen.misc.Command;
@@ -107,11 +108,12 @@ public enum ThemeIncConditionType {
       return d -> {
         if (d.f instanceof Item) {
           Item i = (Item) d.f;
-          boolean ferrous = i.armor
-            ? (d.nationGen.armordb.GetInteger(i.id, "ferrous", 0) == 1)
-            : (d.nationGen.weapondb.GetInteger(i.id, "ironweapon", 0) == 1);
+          boolean ferrous = i.isArmor()
+            ? (i.getBooleanFromDb(ItemProperty.IS_IRON_WEAPON.toDBColumn()))
+            : (i.getBooleanFromDb(ItemProperty.IS_IRON_ARMOR.toDBColumn()));
           return ferrous != not;
         }
+
         return false;
       };
     }
@@ -127,24 +129,25 @@ public enum ThemeIncConditionType {
       return d -> {
         if (d.f instanceof Item) {
           Item i = (Item) d.f;
-          if (!i.armor) {
-            boolean slash =
-              d.nationGen.weapondb.GetInteger(i.id, "dt_slash", 0) == 1;
-            boolean blunt =
-              d.nationGen.weapondb.GetInteger(i.id, "dt_blunt", 0) == 1;
-            boolean pierce =
-              d.nationGen.weapondb.GetInteger(i.id, "dt_pierce", 0) == 1;
-            int lgt = d.nationGen.weapondb.GetInteger(i.id, "lgt", 0);
-
+          if (i.isWeapon()) {
+            boolean slash = i.getBooleanFromDb(ItemProperty.DT_SLASH.toDBColumn());
+            boolean blunt = i.getBooleanFromDb(ItemProperty.DT_BLUNT.toDBColumn());
+            boolean pierce = i.getBooleanFromDb(ItemProperty.DT_PIERCE.toDBColumn());
+            int lgt = i.getIntegerFromDb(ItemProperty.LENGTH.toDBColumn(), 0);
             int penalty = 0;
-            if (!pierce && (blunt || slash)) penalty = lgt;
-            else if (pierce && (blunt || slash)) penalty = (int) Math.round(
-              (double) lgt / 2
-            );
+
+            if (!pierce && (blunt || slash)) {
+              penalty = lgt;
+            }
+
+            else if (pierce && (blunt || slash)) {
+              penalty = (int) Math.round((double) lgt / 2);
+            }
 
             return (penalty >= target) != (not ^ below);
           }
         }
+
         return false;
       };
     }
@@ -161,11 +164,12 @@ public enum ThemeIncConditionType {
         if (d.f instanceof Item) {
           Item i = (Item) d.f;
 
-          if (i.armor && !i.slot.equals("offhand")) {
-            int prot = d.nationGen.armordb.GetInteger(i.id, "prot", 0);
+          if (i.isArmor() && !i.slot.equals("offhand")) {
+            int prot = i.getIntegerFromDb(ItemProperty.PROTECTION.toDBColumn(), 0);
             return (prot >= target) != (not ^ below);
           }
         }
+
         return false;
       };
     }
@@ -182,8 +186,8 @@ public enum ThemeIncConditionType {
         if (d.f instanceof Item) {
           Item i = (Item) d.f;
 
-          if (i.armor && !i.slot.equals("offhand")) {
-            int enc = d.nationGen.armordb.GetInteger(i.id, "enc", 0);
+          if (i.isArmor() && !i.slot.equals("offhand")) {
+            int enc = i.getIntegerFromDb(ItemProperty.ENCUMBRANCE.toDBColumn(), 0);
             return (enc >= target) != (not ^ below);
           }
         }
@@ -204,8 +208,8 @@ public enum ThemeIncConditionType {
         if (d.f instanceof Item) {
           Item i = (Item) d.f;
 
-          if (i.armor) {
-            int value = d.nationGen.armordb.GetInteger(i.id, attribute);
+          if (i.isArmor()) {
+            int value = i.getIntegerFromDb(attribute, 0);
             return (value >= target) != (not ^ below);
           }
         }
@@ -226,8 +230,8 @@ public enum ThemeIncConditionType {
         if (d.f instanceof Item) {
           Item i = (Item) d.f;
 
-          if (!i.armor) {
-            int value = d.nationGen.weapondb.GetInteger(i.id, attribute);
+          if (i.isWeapon()) {
+            int value = i.getIntegerFromDb(attribute, 0);
             return (value >= target) != (not ^ below);
           }
         }

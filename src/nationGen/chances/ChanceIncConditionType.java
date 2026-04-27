@@ -6,7 +6,6 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 import nationGen.entities.Race;
-import nationGen.items.CustomItem;
 import nationGen.items.Item;
 import nationGen.magic.MagicPath;
 import nationGen.magic.MagicPathInts;
@@ -248,7 +247,7 @@ public enum ChanceIncConditionType {
     @Override
     Condition<ChanceIncData> parseConditionArguments(ArgParser args) {
       return generateCommandChanceInc(args, d -> {
-        List<Command> coms = d.n.getCommands();
+        List<Command> coms = d.n.getHandledCommands();
         coms.addAll(d.n.races.get(0).nationcommands);
         return coms.stream();
       });
@@ -296,7 +295,7 @@ public enum ChanceIncConditionType {
           d.n.selectCommanders("priest")
         )
           .flatMap(s -> s)
-          .flatMap(u -> u.getCommands().stream())
+          .flatMap(u -> u.getAllHandledCommands().stream())
       );
     }
   },
@@ -318,7 +317,7 @@ public enum ChanceIncConditionType {
         int found = 0;
 
         for (Unit u : units) {
-          for (Command c : u.getCommands()) {
+          for (Command c : u.getAllHandledCommands()) {
             if (c.command.equals(command) || c.command.equals("#" + command)) {
               found++;
             }
@@ -440,7 +439,7 @@ public enum ChanceIncConditionType {
       int count = args.nextInt();
 
       return d ->
-        d.n.selectTroops().filter(u -> u.getResCost(true) > res).count() >=
+        d.n.selectTroops().filter(u -> u.getResCost(true, true) > res).count() >=
           count !=
         not;
     }
@@ -457,8 +456,8 @@ public enum ChanceIncConditionType {
       return d ->
         d.n
             .selectTroops()
-            .filter(u -> u.caponly)
-            .filter(u -> u.getResCost(true) > res)
+            .filter(Unit::isCapOnly)
+            .filter(u -> u.getResCost(true, true) > res)
             .count() >=
           count !=
         not;
@@ -476,7 +475,7 @@ public enum ChanceIncConditionType {
       return d ->
         d.n
             .selectTroops()
-            .filter(u -> u.getCommandValue("#size", 2) >= size)
+            .filter(u -> u.getTotalCommandValue("#size", 2) >= size)
             .count() >=
           count !=
         not;
@@ -516,7 +515,7 @@ public enum ChanceIncConditionType {
   PERSONAL_COMMAND("personalcommand") {
     @Override
     Condition<ChanceIncData> parseConditionArguments(ArgParser args) {
-      return generateCommandChanceInc(args, d -> d.u.getCommands().stream()); // there used to be a null check on d.u returning false, not sure if necessary
+      return generateCommandChanceInc(args, d -> d.u.getAllHandledCommands().stream()); // there used to be a null check on d.u returning false, not sure if necessary
     }
   },
 
@@ -612,37 +611,55 @@ public enum ChanceIncConditionType {
     }
   },
 
+  /**
+   * slot <slot> [not] [armor/weapon] <id>
+   * Apply chanceinc if a <slot> has a given [armor/weapon] equipped.
+   * Can drop the id to pass with any armor/weapon.
+   * Can drop armor/weapon to pass with any item at all.
+   * Can be negated.
+   */
   SLOT("slot") {
     @Override
     Condition<ChanceIncData> parseConditionArguments(ArgParser args) {
       String slot = args.nextString();
       boolean not = args.nextOptionalFlag("not");
-      boolean armor = args.nextOptionalFlag("armor");
-      boolean weapon = args.nextOptionalFlag("weapon");
+      boolean needsArmor = args.nextOptionalFlag("armor");
+      boolean needsWeapon = args.nextOptionalFlag("weapon");
       Optional<String> id = args.nextIf(a -> true).map(Arg::get);
 
       return d -> {
         if (d.u == null) {
           return false;
         }
-        Item i = d.u.getSlot(slot);
-        if (i != null) {
-          boolean contains = false;
-          if ((!armor || i.armor) && (!weapon || !i.armor)) {
-            if (id.isEmpty() || i.id.equals(id.get())) {
-              contains = true;
-            } else if (i instanceof CustomItem) {
-              CustomItem ci = (CustomItem) i;
-              contains = (ci.olditem != null &&
-                ci.olditem.id != null &&
-                ci.olditem.id.equals(id.get())) ||
-              (Integer.parseInt(i.id) >= (i.armor ? 250 : 800) &&
-                i.tags.getString("OLDID").stream().anyMatch(id.get()::equals));
-            }
-          }
-          return contains != not;
+
+        Item item = d.u.getSlot(slot);
+        Boolean hasExpectedItem = false;
+
+        if (item == null) {
+          return false;
         }
-        return false;
+
+        if (needsArmor && !item.isArmor()) {
+          return false;
+        }
+
+        else if (needsWeapon && !item.isWeapon()) {
+          return false;
+        }
+
+        else if (id.isEmpty()) {
+          return true;
+        }
+
+        else if (item.hasSameDominionsId(id.get())) {
+          return hasExpectedItem = true;
+        }
+
+        else if (item.hasSameCustomItemName(id.get())) {
+          return hasExpectedItem = true;
+        }
+
+        return hasExpectedItem != not;
       };
     }
   },
@@ -663,8 +680,8 @@ public enum ChanceIncConditionType {
         Item i = d.u.getSlot(slot);
         if (i != null) {
           return (
-            ((!armor || i.armor) &&
-              (!weapon || !i.armor) &&
+            ((!armor || i.isArmor()) &&
+              (!weapon || i.isWeapon()) &&
               (name.isEmpty() || i.name.equals(name.get()))) !=
             not
           );

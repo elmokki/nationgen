@@ -13,6 +13,7 @@ import nationGen.entities.Filter;
 import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.items.Item;
+import nationGen.items.ItemProperty;
 import nationGen.misc.*;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
@@ -116,7 +117,9 @@ public class TroopGenerator {
     // 3 templates: 25.0%
     // 4 templates: 25.0%
     maxtemplates = 1 + random.nextInt(4); // 1-4
-    if (maxtemplates == 1 && random.nextBoolean()) maxtemplates++;
+    if (maxtemplates == 1 && random.nextBoolean()) {
+      maxtemplates++;
+    }
 
     // Max different templates distribution
     //
@@ -124,9 +127,9 @@ public class TroopGenerator {
     // 2 templates: 50.0%
     // 3 templates: 33.3%
     maxdifferenttemplates = 1 + random.nextInt(3); // 1-3
-    if (
-      maxdifferenttemplates == 1 && random.nextBoolean()
-    ) maxdifferenttemplates++;
+    if (maxdifferenttemplates == 1 && random.nextBoolean()) {
+      maxdifferenttemplates++;
+    }
   }
 
   public TroopGenerator(NationGen g, Nation n, NationGenAssets assets) {
@@ -150,8 +153,10 @@ public class TroopGenerator {
     // System.out.println(regularok + " - " + i.tags);
     return (
       tags.containsName("ignore_dw_restrictions") ||
-      (nationGen.weapondb.GetInteger(it.id, "lgt") <= dw_maxlength &&
-        nationGen.weapondb.GetInteger(it.id, "2h") != 1)
+      (
+        it.getIntegerFromDb(ItemProperty.LENGTH.toDBColumn(), 0) <= dw_maxlength &&
+        !it.getBooleanFromDb(ItemProperty.IS_2H.toDBColumn())
+      )
     );
   }
 
@@ -178,7 +183,7 @@ public class TroopGenerator {
     ItemSet removethese = new ItemSet();
     tempweps.addAll(p.getItems("weapon"));
     for (Item i : tempweps) {
-      if (i.id.equals("357") || i.tags.containsName("lightlance")) {
+      if (i.hasSameDominionsId("357") || i.tags.containsName("lightlance")) {
         removethese.add(i);
         stuff = 1;
       }
@@ -198,7 +203,7 @@ public class TroopGenerator {
    * @param u
    * @return
    */
-  public Unit equipUnit(Unit u) {
+  public Unit equipMontagUnit(Unit u) {
     Pose pose = u.pose;
     Race race = u.race;
 
@@ -273,7 +278,7 @@ public class TroopGenerator {
       }
 
       // Copy unit
-      unit = t.template.getCopy();
+      unit = new Unit(t.template);
 
       boolean success;
       if (!t.role.equals("mounted")) {
@@ -312,12 +317,19 @@ public class TroopGenerator {
 
   protected boolean armInfantry(Unit unit, TroopTemplate t) {
     ItemSet possibleWeapons = t.template.pose.getItems("weapon");
-    if (possibleWeapons.possibleItems() - t.weapons.size() <= 0) {
+
+    if (possibleWeapons == null) {
       return false;
-    } else {
+    }
+
+    else if (possibleWeapons.possibleItems() - t.weapons.size() <= 0) {
+      return false;
+    }
+    
+    else {
       ItemSet tempweps = new ItemSet();
       for (TroopTemplate t2 : templates) if (
-        t.armor.id.equals(t2.armor.id) &&
+        t.armor.isSameDominionsEquipment(t2.armor) &&
         Math.abs(t.template.getHP() - t2.template.getHP()) < 3 &&
         t.role.equals(t2.role)
       ) {
@@ -333,7 +345,7 @@ public class TroopGenerator {
         t.role.equals("infantry") &&
         unit.pose.getItems("offhand") != null &&
         isDualWieldEligible(unit) &&
-        (unit.getSlot("offhand") == null || unit.getSlot("offhand").armor)
+        (unit.getSlot("offhand") == null || unit.getSlot("offhand").isShield())
       ) {
         double local_dwchance = this.getDualWieldChance(unit, 0.05);
 
@@ -342,6 +354,7 @@ public class TroopGenerator {
         }
       }
     }
+
     return true;
   }
 
@@ -397,7 +410,7 @@ public class TroopGenerator {
     oldweps.addAll(t.weapons);
     ItemSet lances = new ItemSet();
     for (Item i : oldweps) {
-      if (i.id.equals("357") || i.tags.containsName("lightlance")) {
+      if (i.hasSameDominionsId("357") || i.tags.containsName("lightlance")) {
         lances.add(i);
         hasllance = true;
       }
@@ -420,12 +433,12 @@ public class TroopGenerator {
         tempweps.addAll(
           t.pose
             .getItems("weapon")
-            .filterDom3DB("2h", "0", true, nationGen.weapondb)
+            .filterNationGenDB("2h", "0", true, nationGen.weapondb)
         );
         tempweps.removeAll(oldweps);
         for (Item i : t.pose.getItems("weapon")) {
           if (
-            i.id.equals("357") || i.tags.containsName("lightlance")
+            i.hasSameDominionsId("357") || i.tags.containsName("lightlance")
           ) tempweps.remove(i);
         }
         done = true;
@@ -435,12 +448,12 @@ public class TroopGenerator {
         tempweps.addAll(
           t.pose
             .getItems("weapon")
-            .filterDom3DB("2h", "1", true, nationGen.weapondb)
+            .filterNationGenDB("2h", "1", true, nationGen.weapondb)
         );
         tempweps.removeAll(oldweps);
         for (Item i : t.pose.getItems("weapon")) {
           if (
-            i.id.equals("357") || i.tags.containsName("lightlance")
+            i.hasSameDominionsId("357") || i.tags.containsName("lightlance")
           ) tempweps.remove(i);
         }
         done = true;
@@ -448,7 +461,7 @@ public class TroopGenerator {
         (r == 4 || r == 5) && !hasllance
       ) { // lightlance
         for (Item i : t.pose.getItems("weapon")) {
-          if (i.id.equals("357") || i.tags.containsName("lightlance")) {
+          if (i.hasSameDominionsId("357") || i.tags.containsName("lightlance")) {
             tempweps.add(i);
           }
         }
@@ -465,7 +478,7 @@ public class TroopGenerator {
     // Lance
     if (r < 3 && t.pose.getItems("lanceslot") != null) {
       int ap = 0;
-      for (Command c : t.template.getSlot("mount").commands) {
+      for (Command c : t.template.getSlot("mount").getCommands()) {
         if (c.command.equals("#ap")) ap = c.args.get(0).getInt();
       }
 
@@ -477,7 +490,7 @@ public class TroopGenerator {
       if (getsLance && t.pose.getItems("lanceslot").size() > 0) {
         tempweps.clear();
         for (Item i : t.pose.getItems("lanceslot")) {
-          if (!i.id.equals("4") && !i.tags.containsName("lance")) tempweps.add(
+          if (!i.hasSameDominionsId("4") && !i.tags.containsName("lance")) tempweps.add(
             i
           );
         }
@@ -641,7 +654,7 @@ public class TroopGenerator {
           u.pose
             .getItems("offhand")
             .filterArmor(false)
-            .getItemsWithID(u.getSlot("weapon").id, "offhand"),
+            .getItemsWithID(u.getSlot("weapon").getDominionsEquipmentId(), "offhand"),
           u
         );
         if (offhand != null) stuff.add(offhand);
@@ -675,7 +688,15 @@ public class TroopGenerator {
     Race race,
     TroopTemplate t
   ) {
-    if (role.equals("ranged")) return;
+    Item equippedBonusWeapon = u.getSlot("bonusweapon");
+
+    if (role.equals("ranged")) {
+      return;
+    }
+
+    if (equippedBonusWeapon != null && equippedBonusWeapon.isDominionsEquipment()) {
+      return;
+    }
 
     ItemSet bonuses = used.filterSlot("bonusweapon").filterForPose(t.pose);
     if (bonuses.possibleItems() < 1 || random.nextDouble() < 0.5) {
@@ -691,9 +712,8 @@ public class TroopGenerator {
     if (bonusweapon.tags.containsName("tierunique")) {
       for (TroopTemplate t2 : templates) {
         if (
-          t2.bonusweapons.getItemWithID(bonusweapon.id, "bonusweapon") !=
-            null &&
-          t2.armor.id.equals(u.getSlot("armor").id)
+          t2.bonusweapons.getItemWithID(bonusweapon.getDominionsEquipmentId(), "bonusweapon") != null &&
+          t2.armor.isSameDominionsEquipment(u.getSlot("armor"))
         ) {
           return;
         }
@@ -708,35 +728,41 @@ public class TroopGenerator {
     totalprot -= u.race.tags.getInt("zeroarmor").orElse(0);
     totalprot = Math.max(0, totalprot);
 
-    if (totalprot < minprot || totalprot > maxprot) return;
+    if (totalprot < minprot || totalprot > maxprot) {
+      return;
+    }
 
     double local_bwchance = 0.05 + this.getBonusWeaponChance(u);
-
     double chance = bonusrangedness + local_bwchance;
+    double rescost = u.getResCost(false, false);
+    
+    Item weapon = u.getSlot("weapon");
+    Item offhand = u.getSlot("offhand");
 
-    double rescost = u.getResCost(false);
+    Integer weaponResCost = weapon.getIntegerFromDb(ItemProperty.RESOURCE_COST.toDBColumn(), 0);
 
-    rescost += 4 * nationGen.weapondb.GetInteger(u.getSlot("weapon").id, "res");
-    if (
-      nationGen.weapondb.GetValue(u.getSlot("weapon").id, "2h").equals("1")
-    ) rescost +=
-    2 * nationGen.weapondb.GetInteger(u.getSlot("weapon").id, "res");
+    rescost += 4 * weaponResCost;
 
-    if (u.getSlot("offhand") != null && u.getSlot("offhand").armor) rescost +=
-    4 * nationGen.armordb.GetInteger(u.getSlot("offhand").id, "res");
-    else if (u.getSlot("offhand") != null) rescost +=
-    4 * nationGen.weapondb.GetInteger(u.getSlot("offhand").id, "res");
+    if (weapon.getBooleanFromDb(ItemProperty.IS_2H.toDBColumn()) == true) {
+      rescost += 2 * weaponResCost;
+    }
 
-    if (
-      nationGen.weapondb.GetInteger(u.getSlot("weapon").id, "dmg") <= 4
-    ) rescost *= 0.75;
+    if (offhand != null) {
+      Integer offhandResCost = offhand.getIntegerFromDb(ItemProperty.RESOURCE_COST.toDBColumn(), 0);
+      rescost += 4 * offhandResCost;
+    }
 
-    if (
-      role.equals("mounted")
-    ) rescost = rescost * 1.15; // +15% res cost for calculations for cavalry
-    if (
-      u.getSlot("lanceslot") != null
-    ) rescost = rescost * 1.15; // +15% if there already is a lance
+    if (weapon.getIntegerFromDb(ItemProperty.DAMAGE.toDBColumn(), 0) <= 4) {
+      rescost *= 0.75;
+    }
+
+    if (role.equals("mounted")) {
+      rescost = rescost * 1.15; // +15% res cost for calculations for cavalry
+    }
+
+    if (u.getSlot("lanceslot") != null) {
+      rescost = rescost * 1.15; // +15% if there already is a lance
+    }
 
     if ((rescost - 6) / 32 < chance) {
       u.setSlot("bonusweapon", bonusweapon);
@@ -748,9 +774,15 @@ public class TroopGenerator {
   protected void cleanUnit(Unit u) {
     // TODO: Handle more than one hand \:D/
     Item weapon = u.getSlot("weapon");
+    Item offhand = u.getSlot("offhand");
 
-    boolean twohand = nationGen.weapondb.GetValue(weapon.id, "2h").equals("1");
-    if (twohand && !this.isDualWieldEligible(u)) u.setSlot("offhand", null);
+    int freeHands = u.getNumberOfFreeHands();
+    boolean isTwoHanded = weapon.getBooleanFromDb(ItemProperty.IS_2H.toDBColumn());
+
+    // Clear the offhand if the unit only needs one more hand to wield a two-hander
+    if (isTwoHanded && !this.isDualWieldEligible(u) && freeHands == -1 && offhand != null) {
+      u.setSlot("offhand", null);
+    }
   }
 
   public Item getNewItem(
@@ -808,13 +840,13 @@ public class TroopGenerator {
     // Infantry has a high chance of onehanders if available
     if (slot.equals("weapon") && role.equals("infantry")) {
       if (!this.has1H(used) && random.nextDouble() < 0.5) {
-        if (has1H(all)) all = all.filterDom3DB(
+        if (has1H(all)) all = all.filterNationGenDB(
           "2h",
           "0",
           true,
           nationGen.weapondb
         );
-        if (has1H(old)) old = old.filterDom3DB(
+        if (has1H(old)) old = old.filterNationGenDB(
           "2h",
           "0",
           true,
@@ -868,7 +900,11 @@ public class TroopGenerator {
   }
 
   public boolean foundInSet(Item item, ItemSet set) {
-    for (Item i : set) if (i.id.equals(item.id)) return true;
+    for (Item i : set) {
+      if (i.hasSameDominionsId(item)) {
+        return true;
+      }
+    }
 
     return false;
   }
@@ -876,16 +912,16 @@ public class TroopGenerator {
   public boolean has1H(ItemSet used) {
     used = used
       .filterSlot("weapon")
-      .filterDom3DB("rng", "0", true, nationGen.weapondb)
-      .filterDom3DB("2h", "0", true, nationGen.weapondb);
+      .filterNationGenDB("rng", "0", true, nationGen.weapondb)
+      .filterNationGenDB("2h", "0", true, nationGen.weapondb);
     return (used.size() > 0);
   }
 
   public boolean has2H(ItemSet used) {
     used = used
       .filterSlot("weapon")
-      .filterDom3DB("rng", "0", true, nationGen.weapondb)
-      .filterDom3DB("2h", "1", true, nationGen.weapondb);
+      .filterNationGenDB("rng", "0", true, nationGen.weapondb)
+      .filterNationGenDB("2h", "1", true, nationGen.weapondb);
     return (used.size() > 0);
   }
 }

@@ -1,0 +1,115 @@
+#newitem
+#id "abysian_head"
+#gameid -1
+#sprite /graphics/abysian/hellbred/hellbredhead1a.png
+#command "#gcost +1"
+#command "#hp +3"
+#command "#prot +1"
+#command "#mr +0"
+#command "#mor +2"
+#command "#att +0"
+#command "#def +0"
+#command "#prec -2"
+#command "#ap -2"
+#command "#fireres +5"
+#itemslot head +1
+#needs headweapon normal
+#enditem
+
+#newitem
+#id "humanbred_head"
+#gameid -1
+#sprite /graphics/abysian/hellbred/hellbredhead1b.png
+#command "#gcost +0"
+#command "#hp +1"
+#command "#prot +0"
+#command "#mr +0"
+#command "#mor +1"
+#command "#att +0"
+#command "#def +0"
+#command "#prec -1"
+#command "#ap +1"
+#itemslot head +1
+#needs headweapon normal
+#enditem
+
+#newitem
+#id "salamander_head"
+#gameid -1
+#sprite /graphics/abysian/hellbred/hellbredhead2a.png
+#command "#gcost +5"
+#command "#hp +3"
+#command "#prot +1"
+#command "#mr +0"
+#command "#mor +2"
+#command "#att +0"
+#command "#def +0"
+#command "#prec -2"
+#command "#ap +2"
+#command "#fireres +5"
+#command "#heat +3"
+#command "#firepower +1"
+#type barehead
+#needs helmet barehead
+#needstype headweapon fire
+#enditem
+
+#newitem
+#id "halfsalamander_head"
+#gameid -1
+#sprite /graphics/abysian/hellbred/hellbredhead2b.png
+#command "#gcost +0"
+#command "#hp +3"
+#command "#prot +1"
+#command "#mr +0"
+#command "#mor +2"
+#command "#att +0"
+#command "#def +0"
+#command "#prec -2"
+#command "#ap +2"
+#command "#fireres +5"
+#type barehead
+#needs helmet barehead
+#needs headweapon bite
+#enditem
+
+#newitem
+#id "greyserpent_head"
+#gameid -1
+#sprite /graphics/abysian/hellbred/hellbredhead3.png
+#command "#gcost +2"
+#command "#hp +1"
+#command "#prot +2"
+#command "#mr +0"
+#command "#mor +2"
+#command "#att +0"
+#command "#def +0"
+#command "#prec -2"
+#command "#ap +2"
+#command "#poisonres +5"
+#type barehead
+#needs helmet barehead
+#needstype headweapon poison
+#enditem
+
+#newitem
+#id "goldserpent_head"
+#gameid -1
+#sprite /graphics/abysian/hellbred/hellbredhead4.png
+#command "#gcost +5"
+#command "#hp +2"
+#command "#prot +3"
+#command "#mr +1"
+#command "#mor +1"
+#command "#att +0"
+#command "#def +0"
+#command "#prec -2"
+#command "#firepower +1"
+#command "#ap +2"
+#command "#fireres +5"
+#command "#poisonres +5"
+#command "#heat +3"
+#type barehead
+#needs helmet barehead
+#needstype headweapon fire
+#enditem

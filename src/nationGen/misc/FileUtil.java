@@ -5,11 +5,14 @@ import java.awt.image.BufferedImage;
 import java.io.BufferedOutputStream;
 import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Properties;
+
 import javax.imageio.ImageIO;
 
 /**
@@ -234,6 +237,22 @@ public final class FileUtil {
     }
   }
 
+  public static Properties readProperties(String propertiesPath) {
+    Path path = FileUtil.getExistingPath(propertiesPath);
+    Properties properties = new Properties();
+
+    try {
+      FileInputStream fileStream = new FileInputStream(path.toString());
+      properties.load(fileStream);
+    }
+
+    catch(IOException e) {
+      throw new IllegalStateException("Error reading Properties at '" + path + "': " + e.getMessage());
+    }
+
+    return properties;
+  }
+
   /**
    * Reverses the bytes of a short integer.
    * @param signedShort The short data
@@ -242,5 +261,13 @@ public final class FileUtil {
   private static short flipEndian(short signedShort) {
     int input = signedShort & 0xFFFF;
     return (short) ((input << 8) | ((input & 0xFF00) >>> 8));
+  }
+
+  public static Boolean isLineComment(String line) {
+    if (line == null) {
+      throw new IllegalArgumentException("Expected line to be a String; got null instead");
+    }
+
+    return line.startsWith("-");
   }
 }

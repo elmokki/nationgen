@@ -12,6 +12,7 @@ import nationGen.entities.*;
 import nationGen.items.CustomItem;
 import nationGen.items.CustomItemGen;
 import nationGen.items.Item;
+import nationGen.items.ItemProperty;
 import nationGen.misc.Arg;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
@@ -181,7 +182,7 @@ public class SacredGenerator extends TroopGenerator {
   }
 
   private void scaleStatsToPower(Unit unit, int power) {
-    int baseMr = unit.getCommandValue("#mr", 10);
+    int baseMr = unit.getTotalCommandValue("#mr", 10);
     int maxMrBonus = 4;
     int maxMoraleBonus = 6;
     int diminishingReturnsMrThreshold = 11;
@@ -195,10 +196,10 @@ public class SacredGenerator extends TroopGenerator {
       mrBonus -= (baseMr - diminishingReturnsMrThreshold) / 2;
     }
 
-    unit.commands.add(Command.args("#mr", "+" + mrBonus));
+    unit.addCommands(Command.args("#mr", "+" + mrBonus));
 
     // Determine morale
-    int baseMorale = unit.getCommandValue("#mor", 10);
+    int baseMorale = unit.getTotalCommandValue("#mor", 10);
 
     // 50% of power + 50% of 0 to power + 2
     int moraleBonus = (int) Math.round(
@@ -227,7 +228,7 @@ public class SacredGenerator extends TroopGenerator {
     }
 
     // Add morale bonus
-    unit.commands.add(Command.args("#mor", "+" + moraleBonus));
+    unit.addCommands(Command.args("#mor", "+" + moraleBonus));
   }
 
   // Roll a chance to see if this unit will get a magic weapon added to it
@@ -254,7 +255,7 @@ public class SacredGenerator extends TroopGenerator {
     )
       .map(unit::getSlot)
       .filter(Objects::nonNull)
-      .filter(i -> !i.armor)
+      .filter(Item::isWeapon)
       .anyMatch(i -> i.tags.containsName("guaranteedmagic"));
 
     // If unit is meant to get a magic weapon already, or we lucked into it,
@@ -339,9 +340,9 @@ public class SacredGenerator extends TroopGenerator {
   }
 
   private void customizeWeaponry(Unit unit, int power) {
-    List<MagicItem> magicItems = ChanceIncHandler.retrieveFilters(
+    List<MagicItem> weaponEnchantments = ChanceIncHandler.retrieveFilters(
       "magicitems",
-      "defaultprimary",
+      "magicweapons_default",
       assets.magicitems,
       unit.pose,
       unit.race
@@ -355,7 +356,7 @@ public class SacredGenerator extends TroopGenerator {
     // Check if main weapon should get customized
     if (getsCustomWeapon(unit, mainWeapon, 1, false) == true) {
       // Customize main weapon and get the cost of it
-      int powerCost = customizeWeapon(unit, "weapon", power, magicItems);
+      int powerCost = customizeWeapon(unit, "weapon", power, weaponEnchantments);
 
       // Spend the power cost. Only relevant for whether bonus or offhand is also customized
       power -= powerCost;
@@ -364,7 +365,7 @@ public class SacredGenerator extends TroopGenerator {
     // Check if bonus weapon should get customized
     if (getsCustomWeapon(unit, bonusWeapon, 0.25, power > 1) == true) {
       // Customize bonus weapon and get the cost of it
-      int powerCost = customizeWeapon(unit, "bonusweapon", power, magicItems);
+      int powerCost = customizeWeapon(unit, "bonusweapon", power, weaponEnchantments);
 
       // Spend the power cost. Only relevant for whether offhand is also customized
       power -= powerCost;
@@ -378,7 +379,7 @@ public class SacredGenerator extends TroopGenerator {
     // Check if offhand weapon should get customized
     if (getsCustomWeapon(unit, offhandWeapon, 0.25, power > 1) == true) {
       // Customize offhand weapon
-      customizeWeapon(unit, "offhand", power, magicItems);
+      customizeWeapon(unit, "offhand", power, weaponEnchantments);
     }
   }
 
@@ -397,7 +398,7 @@ public class SacredGenerator extends TroopGenerator {
     );
   }
 
-  private int customizeWeapon(Unit unit, String slot, int power, List<MagicItem> magicItems) {
+  private int customizeWeapon(Unit unit, String slot, int power, List<MagicItem> weaponEnchantments) {
     double powerUpChances = 1 - random.nextDouble();
     Item weapon = unit.getSlot(slot);
 
@@ -412,7 +413,7 @@ public class SacredGenerator extends TroopGenerator {
         power,
         // TODO: tie this powerUpChance to something, rather than being fully random?
         powerUpChances,
-        magicItems
+        weaponEnchantments
       );
 
     if (possibleWeapon.isPresent() == false) {
@@ -491,7 +492,7 @@ public class SacredGenerator extends TroopGenerator {
       template.power = power;
       template.sacred = sacred;
       unitGen.handleMontagUnits(u, template, "montagsacreds");
-      u.caponly = true;
+      u.setCapOnly(true);
     }
     
     else {
@@ -695,7 +696,7 @@ public class SacredGenerator extends TroopGenerator {
       total *= multi;
     }
 
-    u.commands.add(Command.args("#gcost", "*" + total));
+    u.addCommands(Command.args("#gcost", "*" + total));
   }
 
   /**
@@ -731,7 +732,7 @@ public class SacredGenerator extends TroopGenerator {
     );
 
     if (random.nextDouble() < u.capOnlyChance) {
-      u.caponly = true;
+      u.setCapOnly(true);
     }
   }
 
@@ -800,12 +801,12 @@ public class SacredGenerator extends TroopGenerator {
    */
   public float calculateSurvivability(Unit u) {
     // Unit's survivability stats
-    int hp = u.getCommandValue("#hp", 10);
+    int hp = u.getTotalCommandValue("#hp", 10);
     int parry = u.getParry();
     int def = u.getTotalDef() - parry;
     int shieldProt = u.getShieldProt();
     float finalProt = u.getTotalProt();
-    int mr = u.getCommandValue("#mr", 10);
+    int mr = u.getTotalCommandValue("#mr", 10);
 
     // Least survivable values taken from a base pygmy template.
     // If you have these, your survivability is basically 0.
@@ -846,7 +847,7 @@ public class SacredGenerator extends TroopGenerator {
       leastSurvivableMr,
       mostSurvivableMr
     );
-    List<Command> unitCommands = u.getCommands();
+    List<Command> unitCommands = u.gatherCommands();
     Boolean isUndeadOrDemon = unitCommands
       .stream()
       .filter(c -> c.command.equals("#undead") || c.command.equals("#demon"))
@@ -871,7 +872,7 @@ public class SacredGenerator extends TroopGenerator {
     // Now count additional traits that may help survival
     float survivability = averageSurvivability;
 
-    for (Command c : u.getCommands()) {
+    for (Command c : u.getAllHandledCommands()) {
       if (c.command.equals("#regen")) {
         survivability += 0.05 * Math.ceil(hp * 0.1);
       }
@@ -1000,14 +1001,13 @@ public class SacredGenerator extends TroopGenerator {
 
     if (!sacred) u.tags.addName("elite");
     if (sacred) {
-      u.tags.addName("sacred");
-      tf.commands.add(new Command("#holy"));
+      int holyCost = this.calculateHolyCost(u, sacred);
 
-      // Make giants of size 7 and above holy cost 2
-      if (u.getCommandValue("#size", 1) >= 7) {
-        tf.commands.add(new Command("#holycost", new Arg(2)));
-      }
+      u.tags.addName("sacred");
+      tf.addCommands(new Command("#holy"));
+      tf.addCommands(new Command("#holycost", new Arg(holyCost)));
     }
+
     u.appliedFilters.add(tf);
 
     // Equip
@@ -1029,7 +1029,7 @@ public class SacredGenerator extends TroopGenerator {
       u.pose.getItems("offhand") != null &&
       u.pose.getItems("offhand").possibleItems() > 0 &&
       isDualWieldEligible(u) &&
-      (u.getSlot("offhand") == null || u.getSlot("offhand").armor)
+      (u.getSlot("offhand") == null || u.getSlot("offhand").isArmor())
     ) {
       ItemSet items = fetchItems(u, "offhand", sacred, epicchance);
       ItemSet weaps = items.filterArmor(false);
@@ -1047,7 +1047,7 @@ public class SacredGenerator extends TroopGenerator {
       u.pose.getItems("bonusweapon") != null &&
       u.pose.getItems("bonusweapon").possibleItems() > 0
     ) {
-      int prot = nationGen.armordb.GetInteger(u.getSlot("armor").id, "prot");
+      int prot = u.getSlot("armor").getIntegerFromDb(ItemProperty.PROTECTION.toDBColumn(), 0);
       double local_bwchance = 0.4 + this.getBonusWeaponChance(u);
       if (random.nextDouble() < local_bwchance - (double) prot * 0.02) {
         Item weapon = chandler.getRandom(
@@ -1106,17 +1106,32 @@ public class SacredGenerator extends TroopGenerator {
     return u;
   }
 
+  private int calculateHolyCost(Unit unit, boolean isSacred) {
+    if (!isSacred) {
+      return 0;
+    }
+    
+    int holyCost = 1;
+
+    // Make giants of size 7 and above holy cost 2
+    if (unit.getTotalCommandValue("#size", 1) >= 7) {
+      holyCost = Math.max(holyCost, 2);
+    }
+
+    return holyCost;
+  }
+
   private void adjustGoldCost(Unit u, boolean sacred) {
     if (
       u.pose.types.contains("ranged") ||
       u.pose.types.contains("elite ranged") ||
       u.pose.types.contains("sacred ranged")
-    ) if (u.getGoldCost() < 15 && u.getResCost(true) < 15) u.commands.add(
-      Command.args("#gcost", "+10")
-    );
+    ) if (u.getGoldCost(true) < 15 && u.getResCost(true, true) < 15) {
+      u.addCommands(Command.args("#gcost", "+10"));
+    }
 
-    int cgcost = u.getGoldCost();
-    int costThreshold = u.getCommandValue("#size", 2) * 25;
+    int cgcost = u.getGoldCost(true);
+    int costThreshold = u.getTotalCommandValue("#size", 2) * 25;
 
     cgcost -= costThreshold;
 
@@ -1130,12 +1145,12 @@ public class SacredGenerator extends TroopGenerator {
     if (
       u.isRanged() &&
       u.getSlot("mount") == null &&
-      u.getGoldCost() - discount > (costThreshold * 0.8)
+      u.getGoldCost(true) - discount > (costThreshold * 0.8)
     ) {
-      discount += (u.getGoldCost() - discount) / 5;
+      discount += (u.getGoldCost(false) - discount) / 5;
     }
 
-    u.commands.add(Command.args("#gcost", "-" + discount));
+    u.addCommands(Command.args("#gcost", "-" + discount));
   }
 
   private ItemSet fetchItems(

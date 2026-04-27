@@ -1,6 +1,5 @@
 package nationGen.entities;
 
-import com.elmokki.Generic;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
@@ -31,7 +30,10 @@ public class Pose extends Filter {
   }
 
   public ItemSet getItems(String slot) {
-    if (items.get(slot) == null) return null;
+    if (items.get(slot) == null) {
+      return null;
+    }
+    
     return items.get(slot).getCopy();
   }
 
@@ -97,7 +99,7 @@ public class Pose extends Filter {
             "#command must have a single arg. Surround the command with quotes if needed."
           );
         }
-        this.commands.add(str.args.get(0).getCommand());
+        this.addCommands(str.args.get(0).getCommand());
         break;
       case "#load":
         ArgParser parser = str.args.parse();
@@ -112,31 +114,31 @@ public class Pose extends Filter {
 
         Set<String> spriteRenderSlots = new HashSet<>();
         for (Item i : set) {
-          if (!Generic.isNumeric(i.id)) {
+          if (i.isDominionsEquipment() && !i.dominionsId.isResolved()) {
             CustomItem citem = nationGen
               .GetCustomItemsHandler()
-              .getCustomItem(i.id)
+              .getCustomItem(i.dominionsId.getNationGenId())
               .orElseThrow(() ->
                 new IllegalArgumentException(
                   String.format(
                     "Custom item named '%s' not found. Verify #gameid for item named '%s' in %s",
-                    i.id,
+                    i.dominionsId.getNationGenId(),
                     i.name,
                     file
                   )
                 )
               );
 
-            if (citem.armor) {
-              nationGen.armordb.addToMap(i.id, citem.getHashMap());
+            if (citem.isArmor()) {
+              nationGen.armordb.addToMap(i.dominionsId.getNationGenId(), citem.getHashMap());
             } else {
-              nationGen.weapondb.addToMap(i.id, citem.getHashMap());
+              nationGen.weapondb.addToMap(i.dominionsId.getNationGenId(), citem.getHashMap());
             }
           }
-          if (!"".equals(i.sprite)) {
-            String renderslot = "".equals(i.renderslot) ? slot : i.renderslot;
+          if (i.sprite.isBlank() == false) {
+            String renderslot = i.renderslot.isBlank() ? slot : i.renderslot;
             if ("offhand".equals(renderslot)) {
-              renderslot = i.armor ? "offhanda" : "offhandw";
+              renderslot = i.isArmor() ? "offhanda" : "offhandw";
             }
             spriteRenderSlots.add(renderslot);
           }

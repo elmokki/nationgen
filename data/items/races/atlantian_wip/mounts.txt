@@ -1,0 +1,241 @@
+--- Base offsets are applied to everything except base and overlay
+
+#newitem
+#id "moose"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/mounts/standard/moose.png
+#armor
+#offsetx 35
+#offsety 33
+#mountmnr "moose_mount"
+#tag "animal moose"
+#tag "minprot 0"
+#tag "maxprot 16"
+#tag "guaranteedprefix moose"
+#description "Leaves a moose behind when the rider dies"
+#enditem
+
+#newitem
+#id "elk"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/mounts/standard/elk.png
+#needs overlay elk_overlay
+#armor
+#offsetx 0
+#offsety -14
+#mountmnr "elk_mount"
+#tag "animal elk"
+#tag "minprot 0"
+#tag "maxprot 14"
+#tag "guaranteedprefix elk"
+#description "Leaves an elk behind when the rider dies"
+#enditem
+
+#newitem
+#id "great bear"
+#gameid -1
+#sprite /graphics/mounts/standard/bear.png
+#offsetx -4
+#offsety -19
+#armor
+#mountmnr "great_bear_mount"
+#define "#gcost -5"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#enditem
+
+#newitem
+#id "polar bear"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_polar.png
+#offsetx -4
+#offsety -19
+#armor
+#mountmnr "polar_bear_mount"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 10"
+#enditem
+
+#newitem
+#id "bear"
+#gameid -1
+#sprite /graphics/mounts/standard/bear_small.png
+#offsetx -3
+#offsety -11
+#armor
+#mountmnr "bear_mount"
+#define "#gcost +30"
+#description "If the rider dies, the bear will carry on fighting until the end of the battle."
+#tag "animal bear"
+#tag "name commander beastmaster"
+#tag "guaranteedprefix bear"
+#tag "minprot 8"
+#enditem
+
+#newitem
+#id "cavecow"
+#gameid -1
+#basechance 0.125
+#sprite /graphics/mounts/standard/cavecow.png
+#offsetx -4
+#offsety -10
+#armor
+#mountmnr "cave_cow_mount"
+#description "If the rider dies, the cave cow will carry on fighting until the end of the battle."
+#tag "animal 'cave cow'"
+#tag "guaranteedprefix 'cave cow'"
+#chanceinc primaryrace "Pale One" *100
+#enditem
+
+#newitem
+#id "dire wolf"
+#basechance 0.75
+#gameid -1
+#sprite /graphics/mounts/standard/direwolf2.png
+#offsetx -4
+#offsety -16
+#armor
+#needs overlay direwolf2_overlay
+#mountmnr "dire_wolf_mount_2"
+#tag "animal wolf"
+#theme "light"
+#tag "maxprot 11"
+#tag "guaranteedprefix wolf"
+#description "If the rider dies, the wolf will carry on fighting until the end of the battle."
+#enditem
+
+#newitem
+#id "serpent 1"
+#basechance 0.125
+#gameid -1
+#sprite /graphics/mounts/standard/serpent.png
+#armor
+#offsetx -3
+#offsety -2
+#needs overlay 6
+#mountmnr "serpent_mount"
+#tag "animal serpent"
+#theme "light"
+#tag "guaranteedprefix serpent"
+#tag "maxprot 13"
+#description "If the rider dies, the serpent will carry on fighting until the end of the battle."
+#enditem
+
+#newitem
+#id "white tiger"
+#basechance 0.5
+#chanceinc "nationcommand #idealcold above 1 *40"
+#chanceinc "nationcommand #idealcold below -1 *0"
+#gameid -1
+#sprite /graphics/mounts/standard/white_tiger.png
+#armor
+#offsetx -3
+#offsety -11
+#mountmnr "white_tiger_mount"
+#theme "specialmount"
+#theme "light"
+#tag "animal tiger"
+#tag "guaranteedprefix white tiger"
+#tag "minprot 0"
+#tag "maxprot 11"
+#enditem
+
+
+#newitem
+#id "seadog"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/mounts/standard/seadog.png
+#armor
+#offsety -10
+#mountmnr "sea_dog_mount"
+#define "#swimming"
+#command "#amphibian"
+#theme "light"
+#tag "animal dog"
+#description "The loyal sea dog will continue to fight even if its rider dies."
+#tag "guaranteedprefix dog"
+#tag "minprot 0"
+#tag "maxprot 9"
+#enditem
+
+#newitem
+#id "jaguar"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/mounts/standard/jaguar.png
+#armor
+#offsetx -6
+#offsety -9
+#mountmnr "jaguar_mount"
+#define "#swimming"
+#theme "specialmount"
+#theme "light"
+#tag "animal jaguar"
+#description "The jaguar will persist even if the rider dies."
+#tag "guaranteedprefix jaguar"
+#tag "minprot 0"
+#tag "maxprot 12"
+#enditem
+
+#newitem
+#id "cavegrub"
+#gameid -1
+#sprite /graphics/mounts/standard/cave_grub.png
+#armor
+#basechance 0.125
+#offsetx 38
+#offsety -2
+#mountmnr "cave_grub_mount"
+#description "The cave grub will fight until the end of the battle should the rider die"
+#tag "animal 'cave grub'"
+#tag "guaranteedprefix grub"
+#tag "name commander beastmaster"
+#tag "minprot 6"
+#tag "maxprot 14"
+#sacredextra 0.5
+#chanceinc primaryrace "Pale One" *80
+#enditem
+
+#newitem
+#id "toad"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/mounts/standard/toad_jaguar.png
+#armor
+#offsetx 2
+#offsety -9
+#mountmnr "jaguar_toad_mount"
+#define "#swimming"
+#description "The giant toad will fight until the end of the battle should the rider die"
+#tag "animal 'giant toad'"
+#tag "guaranteedprefix toad"
+#tag "minprot 6"
+#tag "maxprot 14"
+#enditem
+
+
+#newitem
+#id "frog"
+#basechance 0.5
+#gameid -1
+#sprite /graphics/mounts/standard/toad_sapphire.png
+#armor
+#offsetx 2
+#offsety -9
+#mountmnr "sapphire_toad_mount"
+#define "#swimming"
+#description "The giant frog will fight until the end of the battle should the rider die"
+#tag "animal 'giant frog'"
+#tag "guaranteedprefix frog"
+#tag "minprot 6"
+#tag "maxprot 14"
+#enditem
