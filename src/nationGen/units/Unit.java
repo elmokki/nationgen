@@ -1370,11 +1370,16 @@ public class Unit {
 
   public String getName() {
     int stats = this.getCopyStats();
-    if (stats > -1) {
-      return this.nationGen.units.GetValue("" + stats, "unitname");
+
+    if (!this.name.isUnnamed()) {
+      return this.name.toString(this);
     }
 
-    return this.name.toString(this);
+    else if (stats > -1) {
+      return this.nationGen.units.GetValue("" + stats, "name");
+    }
+
+    return Name.UNNAMED;
   }
 
   public String getFirstshapeIdForMontag() {

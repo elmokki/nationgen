@@ -18,6 +18,8 @@ public class Name {
   public NamePart suffix;
   public NamePart forcedName;
 
+  public static final String UNNAMED = "UNNAMED";
+
   public void setType(String str) {
     this.setType(NamePart.newNamePart(str, null));
   }
@@ -59,7 +61,7 @@ public class Name {
 
   public Name() {
     String temp = new String();
-    temp = "UNNAMED";
+    temp = Name.UNNAMED;
     this.setType(temp);
   }
 
@@ -75,6 +77,10 @@ public class Name {
     name.pluralsuffix = pluralsuffix;
     name.definitesuffix = definitesuffix;
     return (Name) name;
+  }
+
+  public boolean isUnnamed() {
+    return this.toString().equals(Name.UNNAMED);
   }
 
   public String toString(Unit u) {
