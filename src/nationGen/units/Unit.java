@@ -1615,8 +1615,9 @@ public class Unit {
       .collect(Collectors.toSet())
       .forEach(slot -> setSlot(slot, null));
 
-    // Resolve all custom items (i.e. assign proper Dominions ids to them)
-    this.slotmap.resolveItems();
+    // Resolve all custom items that the Unit will have equipped in-game through
+    // #armor and #weapon commands.
+    this.resolveCustomWeaponsAndArmor();
 
     // +2hp to mounted
     if (this.isMounted() != null) {
@@ -1869,6 +1870,29 @@ public class Unit {
 
       commands.add(new Command(c.command, args, c.comment));
     }
+  }
+
+  /**
+   * Assign a Dominions id to all custom nationgen items that are meant to be equipped in-game;
+   * a custom #weapon stronbite will be resolved to #weapon 1001, for example.
+   */
+  public void resolveCustomWeaponsAndArmor() {
+    // Resolve items that are equipped in the Unit's slotmap
+    this.slotmap.resolveItems();
+
+    // Resolve all custom items that may be hard-coded commands (i.e. piranhid's strongbite defined in the pose)
+    this.gatherCommands()
+      .stream()
+      .filter(c -> {
+        return
+          (c.command.equals("#weapon") || c.command.equals("#armor")) &&
+          !Generic.isNumeric(c.args.getString(0));
+      })
+      .forEach(c -> {
+        String id = c.args.getString(0);
+        Integer resolvedId = this.nationGen.GetCustomItemsHandler().getCustomItemId(id);
+        c.args.set(0, new Arg(resolvedId));
+      });
   }
 
   /**
