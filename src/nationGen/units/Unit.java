@@ -1328,7 +1328,7 @@ public class Unit {
     }
 
     // Unit is using #copystats, so figure out the target's cost to account for it
-    if (copyStatsTarget > -1) {
+    if (copyStatsTarget > -1 && shouldUseCopyStatsFinalCost) {
       int copyStatsBasecost = this.nationGen.units.GetInteger("" + copyStatsTarget, "basecost");
 
       if (copyStatsBasecost >= 10000) {
@@ -1336,12 +1336,7 @@ public class Unit {
       }
 
       // If the Unit doesn't have #gcost tags but has #copystats, we assume it's a final cost
-      if (shouldUseCopyStatsFinalCost == true) {
-        return copyStatsBasecost;
-      }
-
-      // Otherwise we just take it as a base cost
-      totalCost += copyStatsBasecost;
+      return copyStatsBasecost;
     }
 
     // TODO: if no other cost logic applies to montag template, should move this to an earlier step to break out early
