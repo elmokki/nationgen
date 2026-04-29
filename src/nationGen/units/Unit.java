@@ -2161,7 +2161,6 @@ public class Unit {
       lines.add("");
       lines.add("DEBUG INFORMATION:");
       lines.addAll(writeDebugSlotMapLines(this.slotmap));
-      lines.add("");
     }
 
     lines.add("#end");
