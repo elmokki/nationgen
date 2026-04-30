@@ -370,10 +370,12 @@ public class MountUnit extends Unit {
   
     List<Command> commands = this.getAllHandledCommands();
     boolean hasItemSlots = false;
+    boolean hasOwnGcost = false;
 
     // Own non-gcost commands first due to #copystats
     for (Command c : commands) {
       if (c.command.equals("#gcost")) {
+        hasOwnGcost = true;
         continue;
       }
 
@@ -392,6 +394,13 @@ public class MountUnit extends Unit {
       ) {
         lines.add(c.toModLine());
       }
+    }
+
+    // The MountUnit gcost is written as part of the rider Unit itself as a total.
+    // If the mount has an explicit gcost, we want to set it to 0. Otherwise,
+    // Dominions will autocalculate the mount cost and inflate it.
+    if (hasOwnGcost) {
+      lines.add("#gcost 0");
     }
 
     if (this.mount.getCommands().stream().anyMatch(c -> c.command.equals("#spr1"))) {
