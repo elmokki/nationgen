@@ -1454,15 +1454,12 @@ public class Unit {
       }
     }
 
-    // Unit is using #copystats, so figure out the target's cost to account for it
-    if (copyStatsTarget > -1) {
+    // Unit is using #copystats, and it doesn't have an explicit #rcost command
+    if (copyStatsTarget > -1 && shouldUseCopyStatsFinalCost) {
       int copyStatsResCost = this.nationGen.units.GetInteger(String.valueOf(copyStatsTarget), "rcost");
-      rcost += copyStatsResCost;
 
-      // If the Unit doesn't have #gcost tags but has #copystats, we assume it's a final cost
-      if (shouldUseCopyStatsFinalCost == true) {
-        return copyStatsResCost;
-      }
+      // Thus we assume it's a final cost
+      return copyStatsResCost;
     }
 
     // TODO: if no other cost logic applies to montag template, should move this to an earlier step to break out early
