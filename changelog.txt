@@ -1,3 +1,16 @@
+0.13.5 (30th April 2026)
+-----------------------------------------------------------
+FIXES
+-----------------------------------------------------------
+-	Fixed #weapon and #armor custom items defined outside slotmap not being resolved.
+	This caused the piranhid sub-race to be ungeneratable, as it would always throw an exception.
+-	Fixed bakemono unit names not appearing in the .dm file unit header.
+-	Fixed units using #copystats and also having explicit #gcost and #rcost tags (like bakemono)
+	counting both the explicit costs and the copystated costs, thus basically doubling their cost.
+-	Fixed mount gcost getting autocalced by Dominions due to the mount definition not having an
+	explicit #gcost tag defined (since gcosts are added together on the rider unit).
+
+
 0.13.4 (27th April 2026)
 -----------------------------------------------------------
 FIXES
