@@ -1328,7 +1328,7 @@ public class Unit {
     }
 
     // Unit is using #copystats, so figure out the target's cost to account for it
-    if (copyStatsTarget > -1) {
+    if (copyStatsTarget > -1 && shouldUseCopyStatsFinalCost) {
       int copyStatsBasecost = this.nationGen.units.GetInteger("" + copyStatsTarget, "basecost");
 
       if (copyStatsBasecost >= 10000) {
@@ -1336,12 +1336,7 @@ public class Unit {
       }
 
       // If the Unit doesn't have #gcost tags but has #copystats, we assume it's a final cost
-      if (shouldUseCopyStatsFinalCost == true) {
-        return copyStatsBasecost;
-      }
-
-      // Otherwise we just take it as a base cost
-      totalCost += copyStatsBasecost;
+      return copyStatsBasecost;
     }
 
     // TODO: if no other cost logic applies to montag template, should move this to an earlier step to break out early
@@ -1370,11 +1365,16 @@ public class Unit {
 
   public String getName() {
     int stats = this.getCopyStats();
-    if (stats > -1) {
-      return this.nationGen.units.GetValue("" + stats, "unitname");
+
+    if (!this.name.isUnnamed()) {
+      return this.name.toString(this);
     }
 
-    return this.name.toString(this);
+    else if (stats > -1) {
+      return this.nationGen.units.GetValue("" + stats, "name");
+    }
+
+    return Name.UNNAMED;
   }
 
   public String getFirstshapeIdForMontag() {
@@ -1454,15 +1454,12 @@ public class Unit {
       }
     }
 
-    // Unit is using #copystats, so figure out the target's cost to account for it
-    if (copyStatsTarget > -1) {
+    // Unit is using #copystats, and it doesn't have an explicit #rcost command
+    if (copyStatsTarget > -1 && shouldUseCopyStatsFinalCost) {
       int copyStatsResCost = this.nationGen.units.GetInteger(String.valueOf(copyStatsTarget), "rcost");
-      rcost += copyStatsResCost;
 
-      // If the Unit doesn't have #gcost tags but has #copystats, we assume it's a final cost
-      if (shouldUseCopyStatsFinalCost == true) {
-        return copyStatsResCost;
-      }
+      // Thus we assume it's a final cost
+      return copyStatsResCost;
     }
 
     // TODO: if no other cost logic applies to montag template, should move this to an earlier step to break out early
@@ -1615,8 +1612,9 @@ public class Unit {
       .collect(Collectors.toSet())
       .forEach(slot -> setSlot(slot, null));
 
-    // Resolve all custom items (i.e. assign proper Dominions ids to them)
-    this.slotmap.resolveItems();
+    // Resolve all custom items that the Unit will have equipped in-game through
+    // #armor and #weapon commands.
+    this.resolveCustomWeaponsAndArmor();
 
     // +2hp to mounted
     if (this.isMounted() != null) {
@@ -1869,6 +1867,29 @@ public class Unit {
 
       commands.add(new Command(c.command, args, c.comment));
     }
+  }
+
+  /**
+   * Assign a Dominions id to all custom nationgen items that are meant to be equipped in-game;
+   * a custom #weapon stronbite will be resolved to #weapon 1001, for example.
+   */
+  public void resolveCustomWeaponsAndArmor() {
+    // Resolve items that are equipped in the Unit's slotmap
+    this.slotmap.resolveItems();
+
+    // Resolve all custom items that may be hard-coded commands (i.e. piranhid's strongbite defined in the pose)
+    this.gatherCommands()
+      .stream()
+      .filter(c -> {
+        return
+          (c.command.equals("#weapon") || c.command.equals("#armor")) &&
+          !Generic.isNumeric(c.args.getString(0));
+      })
+      .forEach(c -> {
+        String id = c.args.getString(0);
+        Integer resolvedId = this.nationGen.GetCustomItemsHandler().getCustomItemId(id);
+        c.args.set(0, new Arg(resolvedId));
+      });
   }
 
   /**
@@ -2161,7 +2182,6 @@ public class Unit {
       lines.add("");
       lines.add("DEBUG INFORMATION:");
       lines.addAll(writeDebugSlotMapLines(this.slotmap));
-      lines.add("");
     }
 
     lines.add("#end");
