@@ -326,6 +326,9 @@ public class SacredGenerator extends TroopGenerator {
 
   // Spend all the budget for stat upgrades for this unit
   private void spendStatUpgradeBudget(Unit unit, int budget) {
+    Filter statUpgradeFilter = new Filter(this.nationGen);
+    statUpgradeFilter.name = "STATUPGRADES";
+
     StatUpgradeManager statUpgradeManager = new StatUpgradeManager(
       nationGen,
       unit,
@@ -335,8 +338,10 @@ public class SacredGenerator extends TroopGenerator {
 
     // While there's budget left for stat increases, keep buying stat upgrades
     while (statUpgradeManager.cannotAffordMoreUpgrades == false) {
-      statUpgradeManager.buyStatUpgrade();
+      statUpgradeManager.buyStatUpgrade(statUpgradeFilter);
     }
+
+    unit.appliedFilters.add(statUpgradeFilter);
   }
 
   private void customizeWeaponry(Unit unit, int power) {

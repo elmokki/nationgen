@@ -222,4 +222,14 @@ public class Arg {
   public String toString() {
     return this.string;
   }
+
+  public static Arg asModifier(int value) {
+    if (value < 0) {
+      return new Arg(value);
+    }
+
+    else {
+      return new Arg("+" + value);
+    }
+  }
 }

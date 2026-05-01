@@ -190,7 +190,11 @@ public class Unit {
           if (
             !tc.command.equals("#spr1") && !tc.command.equals("#spr2")
           ) allCommands.add(tc);
-        } else allCommands.add(tc);
+        }
+        
+        else {
+          allCommands.add(tc);
+        }
       }
     }
 

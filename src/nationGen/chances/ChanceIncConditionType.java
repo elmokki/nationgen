@@ -542,8 +542,11 @@ public enum ChanceIncConditionType {
       boolean not = args.nextOptionalFlag("not");
       String filter = args.nextString();
 
-      return d ->
-        d.u.appliedFilters.stream().anyMatch(f -> f.name.equals(filter)) != not;
+      return d -> {
+        return d.u.appliedFilters.stream().anyMatch(f -> {
+          return f.name.equals(filter);
+        }) != not;
+    };
     }
   },
 
