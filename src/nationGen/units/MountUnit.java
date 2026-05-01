@@ -80,9 +80,10 @@ public class MountUnit extends Unit {
 
   @Override
   public List<Command> getAllHandledCommands() {
+    List<Command> mountCommands = this.mount.getCommands();
     List<Command> mountUnitCommands = new ArrayList<>(super.getAllHandledCommands());
-    mountUnitCommands.addAll(this.mount.getCommands());
-    return mountUnitCommands;
+    mountCommands.addAll(mountUnitCommands);
+    return mountCommands;
   }
 
   @Override
@@ -242,6 +243,7 @@ public class MountUnit extends Unit {
 
     if (polishFilter.getCommands().size() > 0) {
       this.appliedFilters.add(polishFilter);
+      this.addCommands(polishFilter.getCommands());
     }
 
     this.gcost = this.getGoldCost();
@@ -368,12 +370,12 @@ public class MountUnit extends Unit {
     
     lines.add("#newmonster " + this.id);
   
-    List<Command> commands = this.getAllHandledCommands();
+    List<Command> handledCommands = this.getAllHandledCommands();
     boolean hasItemSlots = false;
     boolean hasOwnGcost = false;
 
     // Own non-gcost commands first due to #copystats
-    for (Command c : commands) {
+    for (Command c : handledCommands) {
       if (c.command.equals("#gcost")) {
         hasOwnGcost = true;
         continue;
