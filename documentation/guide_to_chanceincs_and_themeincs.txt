@@ -155,6 +155,8 @@ P. race. cmd:	primaryracecommand <command> [not/above/below] [value]
 		Checks if primary race gives given command at above/below given level. If value is left empty, any argument is fine.
 Any unit cmd:	command <command> [not/above/below] [value]	
 		As above but checks all units of the nation
+Any unit has every given command:	commands "<command_1> [not/above/below] [value]" "<command_2> [not/above/below] [value]" ...
+		As above but checks that at least one unit in the nation has all of the given commands. Useful for nation chanceincs that need to check that a unit with more than one command exists, such as Dirge Master spells.
 % of command:	percentageofcommand <command> <not/below> <value>
 		True if at least value % of units of the nation have given command
 % of race:	percentageofrace <race> <not/below> <value>

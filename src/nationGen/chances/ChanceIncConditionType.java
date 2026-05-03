@@ -79,7 +79,9 @@ public enum ChanceIncConditionType {
       boolean not = args.nextOptionalFlag("not");
       MagicPath path = args.nextMagicPath();
 
-      return d -> d.nonrandom_paths.get(path) > 0 != not;
+      return d -> {
+        return d.nonrandom_paths.get(path) > 0 != not;
+      };
     }
   },
 
@@ -297,6 +299,65 @@ public enum ChanceIncConditionType {
           .flatMap(s -> s)
           .flatMap(u -> u.getAllHandledCommands().stream())
       );
+    }
+  },
+
+  COMMANDS("commands") {
+    @Override
+    Condition<ChanceIncData> parseConditionArguments(ArgParser args) {
+      List<ArgParser> argsPerCommand = new ArrayList<>();
+      int commandConditionsParsed = args.size();
+
+      // Gather the different commands to test, i.e. for
+      // #chanceinc commands "#spellsinger" "#magicskill 5" 10,
+      // the commands are #spellsinger and #magicskill 5.
+      for (int i = 0; i < commandConditionsParsed; i++) {
+        String next = args.nextString();
+        argsPerCommand.add(Args.parse(next));
+      }
+      
+      // Returns a functional interface of Condition to run the .test() method,
+      // defined as a lambda function below
+      return d -> {
+        // Gather the nation's units
+        Stream<Unit> nationUnits = Stream.of(
+            d.n.selectTroops(),
+            d.n.selectCommanders("mage"),
+            d.n.selectCommanders("priest")
+          )
+          .flatMap(s -> s);
+
+        // Check if any unit in the nation fulfills *all* the command tests
+        boolean passedFullTest = nationUnits.anyMatch(unitToTest -> {
+          List<Command> unitCommands = unitToTest.getAllHandledCommands();
+
+          // Test that all commands to test are present in this unit
+          return argsPerCommand.stream().allMatch(commandArgs -> {
+            ArgParser copiedArgs = new ArgParser(commandArgs);
+
+            boolean firstNot = copiedArgs.nextOptionalFlag("not");
+            String commandToFind = copiedArgs.nextString();
+            boolean not = firstNot ^ copiedArgs.nextOptionalFlag("not");
+
+            Comparison comparisonOperator = copiedArgs
+              .nextIfConvertable(a -> Comparison.find(a.get().toUpperCase()))
+              .orElse(Comparison.EQUAL);
+
+            Args remaining = copiedArgs.remaining();
+
+            // Check that each of the test commands are a match to any of the unit's commands
+            boolean foundCommand = unitCommands.stream().anyMatch(c -> {
+                return commandMatches(c, commandToFind, comparisonOperator, remaining);
+              });
+
+            // Ensure the pass takes into account the optional "not" argument for each test command
+            boolean passedCommandTest = not ^ foundCommand;
+            return passedCommandTest;
+          });
+        });
+
+        return passedFullTest;
+      };
     }
   },
 
@@ -542,8 +603,11 @@ public enum ChanceIncConditionType {
       boolean not = args.nextOptionalFlag("not");
       String filter = args.nextString();
 
-      return d ->
-        d.u.appliedFilters.stream().anyMatch(f -> f.name.equals(filter)) != not;
+      return d -> {
+        return d.u.appliedFilters.stream().anyMatch(f -> {
+          return f.name.equals(filter);
+        }) != not;
+    };
     }
   },
 
@@ -967,7 +1031,9 @@ public enum ChanceIncConditionType {
       not ^
       commandsToTest
         .apply(d)
-        .anyMatch(c -> commandMatches(c, command, comp, remaining));
+        .anyMatch(c -> {
+          return commandMatches(c, command, comp, remaining);
+        });
   }
 
   private static boolean commandMatches(

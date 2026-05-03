@@ -190,7 +190,11 @@ public class Unit {
           if (
             !tc.command.equals("#spr1") && !tc.command.equals("#spr2")
           ) allCommands.add(tc);
-        } else allCommands.add(tc);
+        }
+        
+        else {
+          allCommands.add(tc);
+        }
       }
     }
 
@@ -280,12 +284,12 @@ public class Unit {
     return this.mountUnit.gatherCommands();
   }
 
-  public void addCommands(Command... commands) {
-    this.addCommands(List.of(commands));
+  public void addCommands(Command... newCommands) {
+    this.addCommands(List.of(newCommands));
   }
 
-  public void addCommands(List<Command> commands) {
-    for (Command c : commands) {
+  public void addCommands(List<Command> newCommands) {
+    for (Command c : newCommands) {
       this.commands.add(c);
     }
   }
@@ -1555,7 +1559,7 @@ public class Unit {
     return false;
   }
 
-  private Boolean hasCopyStats() {
+  protected Boolean hasCopyStats() {
     Boolean copystats = false;
     for (Command c : this.gatherCommands()) {
       if (c.command.equals("#copystats")) copystats = true;
@@ -1564,7 +1568,7 @@ public class Unit {
     return copystats;
   }
 
-  private int getCopyStats() {
+  protected int getCopyStats() {
     return this.getFirstCommandValue("#copystats", -1);
   }
 

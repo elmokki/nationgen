@@ -570,10 +570,22 @@
 #spell "Dirge Master"
 #spell "Dirge Slave"
 #basechance 0
-#chanceinc command "#spellsinger" 10
+-- Check that at least one unit in the nation has both #spellsinger and death magic
+#chanceinc commands "#spellsinger" "#magicskill 5" 10
 #chanceinc primaryrace "Sidhe" AND random 0.5 OR random 0.5 *0
-#chanceinc anymagic not death *0
+#chanceinc spells "Communion Choruses - glamour" *0
 #chanceinc spells "Communion Choruses - nature" *0
+#end
+
+#new
+#id "Communion Choruses - nature"
+#spell "Elegy Master"
+#spell "Elegy Slave"
+#basechance 0
+-- Check that at least one unit in the nation has both #spellsinger and nature magic
+#chanceinc commands "#spellsinger" "#magicskill 6" 10
+#chanceinc primaryrace "Abysian" AND random 0.5 OR random 0.5 *0
+#chanceinc spells "Communion Choruses - death" *0
 #chanceinc spells "Communion Choruses - glamour" *0
 #end
 
@@ -582,9 +594,10 @@
 #spell "Chorus Master"
 #spell "Chorus Slave"
 #basechance 0
-#chanceinc command "#spellsinger" 10
-#chanceinc anymagic not glamour *0
+-- Check that at least one unit in the nation has both #spellsinger and glamour magic
+#chanceinc commands "#spellsinger" "#magicskill 7" 10
 #chanceinc spells "Communion Choruses - death" *0
+#chanceinc spells "Communion Choruses - nature" *0
 #end
 
 - Middle Eastern spells

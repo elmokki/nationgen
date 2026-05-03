@@ -12,6 +12,10 @@ public class ArgParser extends Parser<Arg> {
     super(args);
   }
 
+  public ArgParser(ArgParser other) {
+    super(other);
+  }
+
   public String nextString() {
     return next("text string").get();
   }
