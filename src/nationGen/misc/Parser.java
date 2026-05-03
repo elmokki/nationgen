@@ -16,6 +16,10 @@ public class Parser<T> {
     this.tokens = new LinkedList<>(tokens);
   }
 
+  public Parser(Parser<T> other) {
+    this.tokens = new LinkedList<>(other.tokens);
+  }
+
   public T next(String description) {
     try {
       return this.tokens.pop();
