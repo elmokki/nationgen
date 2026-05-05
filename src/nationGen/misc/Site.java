@@ -38,12 +38,12 @@ public class Site {
     return new ArrayList<>(this.commands);
   }
 
-  public void addCommands(Command... commands) {
-    this.addCommands(List.of(commands));
+  public void addCommands(Command... commandsToAdd) {
+    this.addCommands(List.of(commandsToAdd));
   }
 
-  public void addCommands(List<Command> commands) {
-    for (Command c : commands) {
+  public void addCommands(List<Command> commandsToAdd) {
+    for (Command c : commandsToAdd) {
       this.commands.add(c);
     }
   }

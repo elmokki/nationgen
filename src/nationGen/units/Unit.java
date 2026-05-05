@@ -284,12 +284,12 @@ public class Unit {
     return this.mountUnit.gatherCommands();
   }
 
-  public void addCommands(Command... newCommands) {
-    this.addCommands(List.of(newCommands));
+  public void addCommands(Command... commandsToAdd) {
+    this.addCommands(List.of(commandsToAdd));
   }
 
-  public void addCommands(List<Command> newCommands) {
-    for (Command c : newCommands) {
+  public void addCommands(List<Command> commandsToAdd) {
+    for (Command c : commandsToAdd) {
       this.commands.add(c);
     }
   }
