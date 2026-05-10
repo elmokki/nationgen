@@ -154,7 +154,7 @@
 #chance 0.3
 #mutuallyexclusive #blind
 #command "#prec -2"
-#command "#mor +2"
+#command "#mor +1"
 #filterdesc "myopic desc"
 #end
 
@@ -303,7 +303,6 @@
 #id "warriorculture"
 #chance 0.0125
 #trooponly
-#command "#mor +1"
 #command "#str +1"
 #command "#att +1"
 #command "#gcost *1.2"
@@ -321,7 +320,6 @@
 #command "#rpcost +4"
 #command "#mor +1"
 #command "#def +1"
-#command "#att +1"
 #command "#prec +1"
 #command "#mapmove +2"
 #filterdesc "professional desc"

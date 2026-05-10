@@ -183,10 +183,10 @@ public class SacredGenerator extends TroopGenerator {
 
   private void scaleStatsToPower(Unit unit, int power) {
     int baseMr = unit.getTotalCommandValue("#mr", 10);
-    int maxMrBonus = 4;
-    int maxMoraleBonus = 6;
+    int maxMrBonus = 2;
+    int maxMoraleBonus = 4;
     int diminishingReturnsMrThreshold = 11;
-    int diminishingReturnsMoraleThreshold = 14;
+    int diminishingReturnsMoraleThreshold = 13;
 
     // Determine magic resistance scaling. Maximum raw addition is 4
     int mrBonus = (int) Math.min(Math.round(power / 2.0), maxMrBonus);

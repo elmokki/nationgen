@@ -3,8 +3,6 @@ package nationGen.rostergeneration.powermanagers;
 import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
 
-import com.elmokki.Generic;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -145,7 +143,7 @@ public class StatUpgradeManager {
         StatUpgradeTracker defenseUpgradeCalculator = new StatUpgradeTracker(unitDef, StatUpgradeManager.DEFAULT_DEF, 1, 99, 99, this.statUpgradePattern);
         StatUpgradeTracker strengthUpgradeCalculator = new StatUpgradeTracker(unitStr, StatUpgradeManager.DEFAULT_STR, 1, 99, 99, this.statUpgradePattern);
         StatUpgradeTracker encumbranceUpgradeCalculator = new StatUpgradeTracker(unitEnc, StatUpgradeManager.DEFAULT_ENC, -1, 1, 1, this.statUpgradePattern);
-        StatUpgradeTracker mrUpgradeCalculator = new StatUpgradeTracker(unitMr, StatUpgradeManager.DEFAULT_MR, 1, 18, 2, this.statUpgradePattern);
+        StatUpgradeTracker mrUpgradeCalculator = new StatUpgradeTracker(unitMr, StatUpgradeManager.DEFAULT_MR, 1, 17, 2, this.statUpgradePattern);
 
         // Add to hashmap for ease of access later
         statUpgradeCalculators.put(UpgradableStats.HP, hpUpgradeCalculator);

@@ -1700,6 +1700,7 @@ public class Unit {
       );
     }
 
+    // Handle mounts that should make the unit have more than #holycost 1
     if (unit.isMounted()) {
       int unitHolyCost = unit.getFirstCommandValue("#holycost", 0);
       int mountHolyCost = unit.mountUnit.getFirstCommandValue("#holycost", 0);
@@ -1712,6 +1713,9 @@ public class Unit {
       Command holyCostCommand = Command.args("#holycost", Integer.toString(holyCost));
       handleCommand(polishedCommands, holyCostCommand);
     }
+
+    // Handle %cost commands such as #chaosrec (these need the full gold cost calculated first)
+    Unit.resolvePercentageCostCommands(this, gcost, polishedCommands);
     /* ------------------------------------------------------------------------------------------- */
 
     // Set all gathered and polished commands to become the unit's own commands now.
