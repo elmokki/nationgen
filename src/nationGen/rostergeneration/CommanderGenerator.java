@@ -307,8 +307,11 @@ public class CommanderGenerator extends TroopGenerator {
       Unit unit = new Unit(u);
 
       // Remove montags
-      List<Command> toremove = new ArrayList<>();
-      unit.removeCommand("#montag");
+      for (Command c : unit.getCommands()) {
+        if (c.command.equals("#montag")) {
+          unit.removeCommand(c);
+        }
+      }
 
       // Elitefy
       process(unit);
