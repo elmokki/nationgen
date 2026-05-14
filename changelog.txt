@@ -1,3 +1,13 @@
+0.13.10 (14th May 2026)
+-----------------------------------------------------------
+CHANGES
+-----------------------------------------------------------
+-	Changed foulspawn corpse grafters - they now reanimate regular undead, since #reanimator does
+	not seem to work with negative numbers, contrary to what the manual states.
+-	Foulspawn specialcommander types should now be properly locked behind the race getting each specific
+	flavour theme (reanimating_corruption, divine_corruption, etc.).
+
+
 0.13.9 (13th May 2026)
 -----------------------------------------------------------
 FIXES

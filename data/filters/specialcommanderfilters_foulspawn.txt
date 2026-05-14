@@ -18,22 +18,63 @@
 -- Extra tip: Special commanders get #poorleader or #noleader if nothing is specified
 
 #new
-#id "corpse-grafter"
-#command "#reanimator -12"
+#id "corpse-grafter-8"
+#command "#reanimator 8"
 #command "#holy"
-#command "#okleader"
-#command "#poormagicleader"
-#command "#gcost +40"
+#command "#poorleader"
+#command "#goodundeadleader"
+#command "#gcost +30"
 #command "#rpcost 1"
 #caponlychance 0
 #unitname "Grafter"
-#description "grafts corpses together to create the foulest of creatures."
+#description "grafts corpses together to reanimate them."
 #pose role priest
 #equipmenttargettag light
 #generateitem 1 cloakb
 #filterdesc "grafter desc"
 #theme reanimating_corruption
-#basechance 1
+#basechance 0
+#chanceinc racetheme reanimating_corruption 1
+#end
+
+#new
+#id "corpse-grafter-9"
+#command "#reanimator 9"
+#command "#holy"
+#command "#poorleader"
+#command "#goodundeadleader"
+#command "#gcost +40"
+#command "#rpcost 1"
+#caponlychance 0
+#unitname "Grafter"
+#description "grafts corpses together to reanimate them."
+#pose role priest
+#equipmenttargettag light
+#generateitem 1 cloakb
+#filterdesc "grafter desc"
+#theme reanimating_corruption
+#basechance 0
+#chanceinc racetheme reanimating_corruption 0.75
+#end
+
+#new
+#id "corpse-grafter-10"
+#command "#reanimator 10"
+#command "#holy"
+#command "#poorleader"
+#command "#goodundeadleader"
+#command "#gcost +50"
+#command "#rpcost 1"
+#caponlychance 0
+#unitname "Grafter"
+#description "grafts corpses together to reanimate them."
+#pose role priest
+#equipmenttargettag light
+#generateitem 1 cloakb
+#filterdesc "grafter desc"
+#theme reanimating_corruption
+#basechance 0
+#chanceinc racetheme reanimating_corruption 0.5
 #end
 
 #new
@@ -52,8 +93,9 @@
 #equipmenttargettag light
 #generateitem 1 cloakb
 #filterdesc "divine-corruptor desc"
-#basechance 0.3
 #theme divine_corruption
+#basechance 0
+#chanceinc racetheme divine_corruption 0.3
 #end
 
 #new
@@ -72,8 +114,9 @@
 #equipmenttargettag light
 #generateitem 1 cloakb
 #filterdesc "divine-corruptor desc"
-#basechance 0.5
 #theme divine_corruption
+#basechance 0
+#chanceinc racetheme divine_corruption 0.5
 #end
 
 #new
@@ -92,8 +135,9 @@
 #equipmenttargettag light
 #generateitem 1 cloakb
 #filterdesc "divine-corruptor desc"
-#basechance 0.3
 #theme divine_corruption
+#basechance 0
+#chanceinc racetheme divine_corruption 0.3
 #end
 
 #new
@@ -112,8 +156,9 @@
 #equipmenttargettag light
 #generateitem 1 cloakb
 #filterdesc "temple-corruptor desc"
-#basechance 1
 #theme temple_corruption
+#basechance 0
+#chanceinc racetheme temple_corruption 1
 #end
 
 #new
@@ -131,8 +176,9 @@
 #equipmenttargettag light
 #generateitem 1 cloakb
 #filterdesc "foul-craftsman desc"
-#basechance 1
 #theme crafted_corruption
+#basechance 0
+#chanceinc racetheme crafted_corruption 1
 #end
 
 #new
@@ -151,7 +197,8 @@
 #generateitem 1 cloakb
 #filterdesc "corrupted-occultist desc"
 #theme occult_corruption
-#basechance 0.5
+#basechance 0
+#chanceinc racetheme occult_corruption 0.5
 #end
 
 #new
@@ -169,8 +216,9 @@
 #equipmenttargettag light
 #generateitem 1 cloakb
 #filterdesc "corrupted-occultist desc"
-#basechance 0.3
 #theme occult_corruption
+#basechance 0
+#chanceinc racetheme occult_corruption 0.3
 #end
 
 #new
@@ -188,8 +236,9 @@
 #equipmenttargettag light
 #generateitem 1 cloakb
 #filterdesc "eldritch-caller desc"
-#basechance 0.5
 #theme eldritch_corruption
+#basechance 0
+#chanceinc racetheme eldritch_corruption 0.5
 #end
 
 #new
@@ -207,6 +256,7 @@
 #equipmenttargettag light
 #generateitem 1 cloakb
 #filterdesc "eldritch-caller desc"
-#basechance 0.3
 #theme eldritch_corruption
+#basechance 0
+#chanceinc racetheme eldritch_corruption 0.3
 #end
