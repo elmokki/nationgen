@@ -247,24 +247,17 @@ public class SacredGenerator extends TroopGenerator {
     // If unit is sacred and rand is < 0.2 + 0.03 of power (i.e. 44% for power 8)
     boolean rolledMagicWeapon = isSacred && roll < magicWeaponChance;
 
-    // Find any weapon, bonusweapon or offhand in this unit that is guaranteed magic
-    boolean hasGuaranteedMagicWeapon = Stream.of(
-      "weapon",
-      "bonusweapon",
-      "offhand"
-    )
-      .map(unit::getSlot)
-      .filter(Objects::nonNull)
-      .filter(Item::isWeapon)
-      .anyMatch(i -> i.tags.containsName("guaranteedmagic"));
-
-    // If unit is meant to get a magic weapon already, or we lucked into it,
-    // make sure it gets one and return its cost so it can be spent from the budget
-    if (hasGuaranteedMagicWeapon == true || rolledMagicWeapon == true) {
+    // If we roll it, tag it so it generates a magic weapon at a later stage
+    // and return its cost so it can be spent from the budget
+    if (rolledMagicWeapon == true) {
       // Magic weapon is added later since no weapons exist when this is run
       unit.tags.add("NEEDSMAGICWEAPON", cost);
       return cost;
-    } else return 0;
+    }
+    
+    else {
+      return 0;
+    }
   }
 
   // Select a single filter close to a given power for this unit and return it
@@ -1090,13 +1083,12 @@ public class SacredGenerator extends TroopGenerator {
 
     // Give magic weapons if they were promised:
     if (
+       u.slotmap.hasGuaranteedMagicWeapon() ||
       u.tags.containsName("NEEDSMAGICWEAPON") ||
       (chandler.identifier.equals("herogen") && random.nextDouble() > 0.15)
     ) {
       int cost = u.tags.getInt("NEEDSMAGICWEAPON").orElse(5);
-
       u.tags.remove("NEEDSMAGICWEAPON");
-
       customizeWeaponry(u, cost);
     }
 

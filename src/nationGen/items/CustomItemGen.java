@@ -19,12 +19,12 @@ import nationGen.units.Unit;
 
 public class CustomItemGen {
 
-  Nation n;
+  Nation nation;
   Random random;
 
-  public CustomItemGen(Nation n) {
-    this.n = n;
-    random = new Random(n.random.nextInt());
+  public CustomItemGen(Nation nation) {
+    this.nation = nation;
+    random = new Random(nation.random.nextInt());
   }
 
   public Optional<CustomItem> customizeItem(
@@ -35,7 +35,6 @@ public class CustomItemGen {
     List<MagicItem> magicItems
   ) {
     Optional<CustomItem> maybeCustomizableItem = this.copyPropertiesFromItem(olditem);
-
     maybeCustomizableItem.ifPresent(customizableItem -> {
       customizeItem(unit, olditem, customizableItem, maxPower, powerUpChance, magicItems);
     });
@@ -86,9 +85,9 @@ public class CustomItemGen {
     }
 
     // Add to custom item lists
-    n.customitems.add(customItem);
-    n.nationGen.GetCustomItemsHandler().AddCustomItem(customItem);
-    n.nationGen.weapondb.addToMap(customItem.dominionsId.getNationGenId(), customItem.getHashMap());
+    nation.customitems.add(customItem);
+    nation.nationGen.GetCustomItemsHandler().AddCustomItem(customItem);
+    nation.nationGen.weapondb.addToMap(customItem.dominionsId.getNationGenId(), customItem.getHashMap());
   }
 
   private Boolean shouldBeMagic(
@@ -284,7 +283,7 @@ public class CustomItemGen {
       return Optional.empty();
     }
 
-    ChanceIncHandler chandler = new ChanceIncHandler(n, "customitemgenerator");
+    ChanceIncHandler chandler = new ChanceIncHandler(nation, "customitemgenerator");
     MagicItem magicItem = chandler.handleChanceIncs(unit, possibleEffects).getRandom(random);
     return Optional.of(magicItem);
   }
@@ -364,7 +363,7 @@ public class CustomItemGen {
     }
 
     // Construct an underlying name id for later use (not a display name)
-    String dname = "nation_" + n.nationid + "_customitem_" + (n.customitems.size() + 1);
+    String dname = "nation_" + nation.nationid + "_customitem_" + (nation.customitems.size() + 1);
     customItem.dominionsId.setNationGenId(dname);
     customItem.name = dname;
   }
@@ -374,7 +373,7 @@ public class CustomItemGen {
       return Optional.empty();
     }
 
-    if (!item.dominionsId.isResolved()) {
+    if (!item.isDominionsEquipment()) {
       return Optional.empty();
     }
 
@@ -390,12 +389,12 @@ public class CustomItemGen {
 
   // TODO: custom armors!
   public Optional<CustomItem> copyPropertiesFromArmor(Item item) {
-    CustomItem customItem = CustomItem.fromItem(item, n.nationGen);
+    CustomItem customItem = CustomItem.fromItem(item, nation.nationGen);
     return Optional.of(customItem);
   }
 
   public Optional<CustomItem> copyPropertiesFromWeapon(Item item) {
-    CustomItem customItem = CustomItem.fromItem(item, n.nationGen);
+    CustomItem customItem = CustomItem.fromItem(item, nation.nationGen);
     String weaponName = item.getValueFromDb(ItemProperty.NAME.toDBColumn());
     
     if (weaponName.isBlank()) {

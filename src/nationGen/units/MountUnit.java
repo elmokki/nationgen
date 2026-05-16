@@ -111,7 +111,7 @@ public class MountUnit extends Unit {
 
       if (mountItem.sprite.isBlank() == false) {
         this.mount.getCommands().stream().forEach(mc -> {
-          if (mc.equals("#spr1") || mc.equals("#spr2") || mc.equals("#copyspr")) {
+          if (mc.command.equals("#spr1") || mc.command.equals("#spr2") || mc.command.equals("#copyspr")) {
             this.mount.removeCommand(mc);
           }
         });

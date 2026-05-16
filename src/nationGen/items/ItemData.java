@@ -73,16 +73,12 @@ public class ItemData {
     // If not a custom item, just use the Dominions database to determine range
     if (customItem.isPresent() == false) {
       range = nationGen.weapondb.GetInteger(id, "rng", 0);
-      return range;
-    }
-    
-    possibleRange = customItem.get().getCustomIntValue("#range");
-
-    if (possibleRange.isPresent() == false) {
-      return 0;
     }
 
-    range = possibleRange.get();
+    else {
+      possibleRange = customItem.get().getCustomIntValue("#range");
+      range = (possibleRange.isPresent()) ? possibleRange.get() : 0;
+    }
 
     if (range >= 0) {
       return range;

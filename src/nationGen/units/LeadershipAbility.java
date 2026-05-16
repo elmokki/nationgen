@@ -52,7 +52,7 @@ public enum LeadershipAbility {
 
   public static Optional<LeadershipAbility> fromModCommand(String modCommand) {
     return Stream.of(LeadershipAbility.values())
-      .filter(l -> modCommand == l.toModCommand())
+      .filter(l -> modCommand.equals(l.toModCommand()))
       .findFirst();
   }
 

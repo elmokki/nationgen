@@ -110,4 +110,18 @@ public class SlotMap {
   public List<Item> getItemsInSlotStack(String slotName) {
     return this.getSlotStack(slotName).stream().filter(i -> i != null).toList();
   }
+
+  public boolean hasGuaranteedMagicWeapon() {
+    Stream<String> weaponSlots = Stream.of(
+      "weapon",
+      "bonusweapon",
+      "offhand"
+    );
+
+    return weaponSlots
+      .map(this::get)
+      .filter(Objects::nonNull)
+      .filter(Item::isWeapon)
+      .anyMatch(i -> i.tags.containsName("guaranteedmagic"));
+  }
 }
