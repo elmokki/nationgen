@@ -19,7 +19,8 @@ public class Tags {
   }
 
   private List<Args> computeArgsList(String name) {
-    return this.tagValues.computeIfAbsent(name, n -> new ArrayList<>());
+    List<Args> argsList = this.tagValues.computeIfAbsent(name, n -> new ArrayList<>());
+    return argsList;
   }
 
   public void add(List<String> tag) {
@@ -68,7 +69,8 @@ public class Tags {
   }
 
   public void addAll(String name, Collection<Args> values) {
-    computeArgsList(name).addAll(values);
+    List<Args> argsList = computeArgsList(name);
+    argsList.addAll(values);
   }
 
   public void addAllNames(List<String> names) {

@@ -109,6 +109,20 @@ public class NationGenDB {
     entryMap.put(id, row);
   }
 
+  public LinkedHashMap<String, String> getItemMap(int id) {
+    return this.getItemMap(String.valueOf(id));
+  }
+
+  public LinkedHashMap<String, String> getItemMap(String id) {
+    LinkedHashMap<String, String> itemMap = new LinkedHashMap<>();
+
+    this.definition.forEach(col -> {
+      itemMap.put(col, this.GetValue(id, col));
+    });
+
+    return itemMap;
+  }
+
   /**
    * Returns specified value for the unit of specified id
    * @param id ID of the unit

@@ -70,6 +70,5 @@ public class EpithetGenerator {
 
     epithet = Generic.capitalize(epithet);
     n.epithet = epithet;
-    //n.commands.add(new Command("#epithet", "\"" + epithet + "\""));
   }
 }

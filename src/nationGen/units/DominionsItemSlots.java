@@ -15,6 +15,34 @@ import nationGen.items.DominionsItemSlot;
  * such a bitmask into resulting unit slots.
  */
 public abstract class DominionsItemSlots {
+    public static final int MIN_HANDS = 0;
+    public static final int MIN_BOWS = 0;
+    public static final int MIN_HEADS = 0;
+    public static final int MIN_BODIES = 0;
+    public static final int MIN_FEET = 0;
+    public static final int MIN_MISC = 0;
+
+    public static final int MAX_HANDS = 6;
+    public static final int MAX_BOWS = 1;
+    public static final int MAX_HEADS = 2;
+    public static final int MAX_BODIES = 1;
+    public static final int MAX_FEET = 1;
+    public static final int MAX_MISC = 5;
+
+    public static HashMap<DominionsItemSlot, Integer> defaultSlots() {
+        HashMap<DominionsItemSlot, Integer> itemslots = new HashMap<>();
+
+        itemslots.put(DominionsItemSlot.HAND, 2);
+        itemslots.put(DominionsItemSlot.BOW, 1);
+        itemslots.put(DominionsItemSlot.HEAD, 1);
+        itemslots.put(DominionsItemSlot.BODY, 1);
+        itemslots.put(DominionsItemSlot.FEET, 1);
+        itemslots.put(DominionsItemSlot.MISC, 2);
+        itemslots.put(DominionsItemSlot.NO_SLOTS, 0);
+
+        return itemslots;
+    }
+
     public static int getHandSlots(int bitmask) {
         return DominionsItemSlots.decode(bitmask, DominionsItemSlot.NO_SLOTS).get(DominionsItemSlot.HAND);
     }
@@ -116,10 +144,10 @@ public abstract class DominionsItemSlots {
             int i = 1;
             int bitmask = 0;
 
-            while (bitmask < itemslots) {
+            while (bitmask < Math.abs(itemslots)) {
                 int nextBitmask = DominionsItemSlots.getBitmaskForAmountOfSlots(slot.bitmask, i);
 
-                if (nextBitmask > itemslots) {
+                if (nextBitmask > Math.abs(itemslots)) {
                     break;
                 }
 
@@ -129,12 +157,13 @@ public abstract class DominionsItemSlots {
                 }
             }
 
-            if (bitmask > itemslots || bitmask == 0) {
+            if (bitmask > Math.abs(itemslots) || bitmask == 0) {
                 continue;
             }
 
-            itemslots -= bitmask;
-            decodedSlots.put(slot, i-1);
+            int sign = (itemslots < 0) ? -1 : 1;
+            itemslots -= sign * bitmask;
+            decodedSlots.put(slot, sign * (i-1));
         }
 
         return decodedSlots;
@@ -142,6 +171,61 @@ public abstract class DominionsItemSlots {
 
     public static HashMap<DominionsItemSlot, Integer> decode(int itemslots) {
         return DominionsItemSlots.decode(itemslots, null);
+    }
+
+    public static void capSlot(HashMap<DominionsItemSlot, Integer> itemslots, DominionsItemSlot slot, int min, int max) {
+        int currentValue = itemslots.get(slot);
+        int newValue = Math.min(Math.max(currentValue, min), max);
+        itemslots.put(slot, newValue);
+    }
+
+    public static void enforceMin(HashMap<DominionsItemSlot, Integer> itemslots) {
+        itemslots.forEach((slot, value) -> {
+            if (value < slot.min) {
+                /*throw new IllegalStateException(
+                    "Unit has less than " +
+                    slot.min +
+                    " " +
+                    slot.toString() +
+                    " slots"
+                );*/
+                itemslots.put(slot, slot.min);
+            }
+        });
+    }
+
+    public static void enforceMax(HashMap<DominionsItemSlot, Integer> itemslots) {
+        itemslots.forEach((slot, value) -> {
+            if (value > slot.max) {
+                /*throw new IllegalStateException(
+                    "Unit has more than " +
+                    slot.max +
+                    " " +
+                    slot.toString() +
+                    " slots"
+                );*/
+                itemslots.put(slot, slot.max);
+            }
+        });
+    }
+
+    /**
+     * Merges the values of multiple HashMap<DominionsItemSlot, Integer> by adding them together. 
+     * @param slotMaps - the maps to merge by addition
+     * @return - the resulting map
+     */
+    public static HashMap<DominionsItemSlot, Integer> add(List<HashMap<DominionsItemSlot, Integer>> slotMaps) {
+        HashMap<DominionsItemSlot, Integer> combined = new HashMap<>();
+
+        for (HashMap<DominionsItemSlot, Integer> map : slotMaps) {
+            map.forEach((slot, value) -> {
+                combined.merge(slot, value, (oldValue, newValue) -> {
+                    return oldValue + newValue;
+                });
+            });
+        }
+
+        return combined;
     }
 
     private static int getBitmaskForAmountOfSlots(int slotBitmask, int amountOfSlots) {

@@ -21,6 +21,7 @@ import nationGen.items.ItemProperty;
 import nationGen.misc.Args;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
+import nationGen.misc.CommandFactory;
 import nationGen.misc.ItemSet;
 import nationGen.misc.Tags;
 import nationGen.nation.Nation;
@@ -471,7 +472,7 @@ public class UnitGen {
     // If the race has a preferred mount and a small chance succeeds, we'll use that preference
     if (u.race.tags.containsName("preferredmount") && random.nextDouble() > 0.70) {
       String preferredmount = u.race.tags.getValue("preferredmount").orElseThrow().get();
-      racialMountPreference = Command.args("animal", preferredmount);
+      racialMountPreference = CommandFactory.create("animal", preferredmount);
     }
 
     // Get the suitable mount from the final mount pool that was compiled
@@ -929,9 +930,9 @@ public class UnitGen {
       String montag = "montag" + nation.nationid + "_" + nation.mockid--;
       for (Unit nu : list) {
         nu.tags.addName("hasmontag");
-        nu.addCommands(Command.args("#montag", montag));
+        nu.addCommands(CommandFactory.create("#montag", montag));
       }
-      u.addCommands(Command.args("#firstshape", montag));
+      u.addCommands(CommandFactory.create("#firstshape", montag));
       u.tags.addName("montagunit");
     }
 

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.function.Predicate;
 
 import nationGen.misc.Command;
+import nationGen.misc.CommandFactory;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
@@ -78,7 +79,7 @@ public class UnitCommandRestriction extends TextBoxListRestrictionWithCheckboxes
 
   private boolean checkUnit(Unit u) {
     List<Command> unitCommands = u.gatherCommands();
-    List<Command> requiredCommands = commandRestrictions.stream().map(str -> Command.parse(str)).toList();
+    List<Command> requiredCommands = commandRestrictions.stream().map(str -> CommandFactory.parse(str)).toList();
 
     if (this.shouldCheckMountCommands()) {
       unitCommands.addAll(u.getMountCommands());

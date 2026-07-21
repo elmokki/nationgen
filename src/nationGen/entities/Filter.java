@@ -9,6 +9,7 @@ import nationGen.NationGen;
 import nationGen.chances.ChanceInc;
 import nationGen.chances.ThemeInc;
 import nationGen.misc.Command;
+import nationGen.misc.CommandFactory;
 
 public class Filter extends Entity {
 
@@ -35,7 +36,7 @@ public class Filter extends Entity {
     super(filter);
     this.commands = new ArrayList<>(filter.commands)
       .stream()
-      .map(c -> new Command(c))
+      .map(c -> CommandFactory.copy(c))
       .collect(Collectors.toList());
 
     this.chanceincs = new ArrayList<>(filter.chanceincs)
@@ -93,7 +94,7 @@ public class Filter extends Entity {
   }
 
   public boolean removeCommand(String command) {
-    return this.commands.remove(Command.parse(command));
+    return this.commands.remove(CommandFactory.parse(command));
   }
 
   public double getPower() {
@@ -168,7 +169,9 @@ public class Filter extends Entity {
               "#command or #define must have a single arg. Surround the command with quotes if needed."
             );
           }
-          this.addCommands(command.args.get(0).getCommand());
+
+          Command parsedModCommand = command.args.get(0).getCommand();
+          this.addCommands(parsedModCommand);
           break;
         case "#themeinc":
           // Sometimes the definition is in quotes, sometimes it's not... -_-' < sigh

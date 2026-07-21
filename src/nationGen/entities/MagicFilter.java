@@ -5,6 +5,7 @@ import nationGen.NationGen;
 import nationGen.magic.MagicPath;
 import nationGen.magic.MagicPattern;
 import nationGen.misc.Command;
+import nationGen.misc.CommandFactory;
 
 public class MagicFilter extends Filter {
 
@@ -22,7 +23,7 @@ public class MagicFilter extends Filter {
 
     // Price
     if (this.name.equals("MAGICPICKS")) coms.add(
-      Command.args("#gcost", "+" + pattern.getPrice())
+      CommandFactory.create("#gcost", "+" + pattern.getPrice())
     );
 
     // Magic

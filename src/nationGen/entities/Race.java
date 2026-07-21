@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import nationGen.NationGen;
 import nationGen.misc.Command;
+import nationGen.misc.CommandFactory;
 import nationGen.misc.ItemSet;
 
 public class Race extends Filter {
@@ -22,19 +23,19 @@ public class Race extends Filter {
 
   public Race(NationGen nationGen) {
     super(nationGen);
-    addCommand(Command.parse("#gcost 10"));
-    addCommand(Command.parse("#ap 12"));
-    addCommand(Command.parse("#mapmove 16"));
-    addCommand(Command.parse("#mor 10"));
-    addCommand(Command.parse("#mr 10"));
-    addCommand(Command.parse("#hp 10"));
-    addCommand(Command.parse("#str 10"));
-    addCommand(Command.parse("#att 10"));
-    addCommand(Command.parse("#def 10"));
-    addCommand(Command.parse("#prec 10"));
-    addCommand(Command.parse("#enc 3"));
-    addCommand(Command.parse("#size 3"));
-    addCommand(Command.parse("#maxage 50"));
+    addCommand(CommandFactory.parse("#gcost 10"));
+    addCommand(CommandFactory.parse("#ap 12"));
+    addCommand(CommandFactory.parse("#mapmove 16"));
+    addCommand(CommandFactory.parse("#mor 10"));
+    addCommand(CommandFactory.parse("#mr 10"));
+    addCommand(CommandFactory.parse("#hp 10"));
+    addCommand(CommandFactory.parse("#str 10"));
+    addCommand(CommandFactory.parse("#att 10"));
+    addCommand(CommandFactory.parse("#def 10"));
+    addCommand(CommandFactory.parse("#prec 10"));
+    addCommand(CommandFactory.parse("#enc 3"));
+    addCommand(CommandFactory.parse("#size 3"));
+    addCommand(CommandFactory.parse("#maxage 50"));
   }
 
   /**

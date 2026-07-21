@@ -57,7 +57,7 @@ public class GodGen extends ChanceIncHandler {
     List<Command> assignedGods = new ArrayList<>(pantheon.getCommands());
 
     // The default #homerealm that most nations have access to in vanilla
-    Command defaultRealm = Command.args("#homerealm", "10");
+    Command defaultRealm = CommandFactory.create("#homerealm", "10");
     assignedGods.add(defaultRealm);
 
     if (additionalgods.size() > 0) {

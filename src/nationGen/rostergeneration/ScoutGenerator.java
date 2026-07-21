@@ -13,6 +13,7 @@ import nationGen.entities.Race;
 import nationGen.items.Item;
 import nationGen.items.ItemProperty;
 import nationGen.misc.Command;
+import nationGen.misc.CommandFactory;
 import nationGen.misc.ItemSet;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
@@ -157,7 +158,7 @@ public class ScoutGenerator extends TroopGenerator {
       Item bweapon = chandler.getRandom(
         nation.usedItems
           .filterSlot("bonusweapon")
-          .filterOutTag(new Command("noelite"))
+          .filterOutTag(CommandFactory.create("noelite"))
           .filterMinMaxProt(template.getTotalProt(false)),
         template
       );
@@ -167,7 +168,7 @@ public class ScoutGenerator extends TroopGenerator {
         bweapon = chandler.getRandom(
           template.pose
             .getItems("bonusweapon")
-            .filterOutTag(new Command("noelite"))
+            .filterOutTag(CommandFactory.create("noelite"))
             .filterMinMaxProt(template.getTotalProt(false)),
           template
         );
@@ -239,7 +240,7 @@ public class ScoutGenerator extends TroopGenerator {
         template.race.tags.containsName("preferredmount") &&
         nation.random.nextDouble() < 0.80
       ) {
-        animal = Command.args(
+        animal = CommandFactory.create(
           "animal",
           template.race.tags.getString("preferredmount").orElseThrow()
         );
@@ -250,7 +251,7 @@ public class ScoutGenerator extends TroopGenerator {
         unitGen.getSuitableItem(
           "mount",
           template,
-          p.getItems("mount").filterOutTag(new Command("heavy")),
+          p.getItems("mount").filterOutTag(CommandFactory.create("heavy")),
           null,
           animal
         )
@@ -308,18 +309,18 @@ public class ScoutGenerator extends TroopGenerator {
       survivals <= 2
     ) {
       if (survivals == 0) {
-        template.addCommands(new Command("#mountainsurvival"));
+        template.addCommands(CommandFactory.create("#mountainsurvival"));
         mountain = true;
-        template.addCommands(new Command("#forestsurvival"));
+        template.addCommands(CommandFactory.create("#forestsurvival"));
         forest = true;
       }
 
       if (survivals == 1) {
         if (mountain || swamp) {
-          template.addCommands(new Command("#forestsurvival"));
+          template.addCommands(CommandFactory.create("#forestsurvival"));
           forest = true;
         } else if (forest || waste) {
-          template.addCommands(new Command("#mountainsurvival"));
+          template.addCommands(CommandFactory.create("#mountainsurvival"));
           mountain = true;
         }
       }
@@ -327,15 +328,15 @@ public class ScoutGenerator extends TroopGenerator {
       double bonuschance = r.nextDouble();
       if (mountain && forest) {
         if (bonuschance < 0.2) template.addCommands(
-          new Command("#wastesurvival")
+          CommandFactory.create("#wastesurvival")
         );
         else if (bonuschance < 0.25) template.addCommands(
-          new Command("#swampsurvival")
+          CommandFactory.create("#swampsurvival")
         );
       } else if (!mountain && bonuschance < 0.25) {
-        template.addCommands(new Command("#mountainsurvival"));
+        template.addCommands(CommandFactory.create("#mountainsurvival"));
       } else if (!forest && bonuschance < 0.25) {
-        template.addCommands(new Command("#forestsurvival"));
+        template.addCommands(CommandFactory.create("#forestsurvival"));
       }
     }
 
@@ -395,36 +396,36 @@ public class ScoutGenerator extends TroopGenerator {
       ThemeInc.parse("thisitemtheme spy *20")
     );
 
-    if (tier > 1) tf.addCommands(Command.args("#stealthy", "+25"));
-    else tf.addCommands(Command.args("#stealthy", "+10"));
+    if (tier > 1) tf.addCommands(CommandFactory.create("#stealthy", "+25"));
+    else tf.addCommands(CommandFactory.create("#stealthy", "+10"));
 
     if (tier == 3) {
-      tf.addCommands(Command.args("#gcost", "+40"));
-      tf.addCommands(Command.args("#assassin"));
-      tf.addCommands(Command.args("#att", "+3"));
-      tf.addCommands(Command.args("#def", "+3"));
-      tf.addCommands(Command.args("#prec", "+3"));
-      tf.addCommands(Command.args("#mor", "+3"));
-      tf.addCommands(Command.args("#mr", "+1"));
-      tf.addCommands(Command.args("#str", "+1"));
+      tf.addCommands(CommandFactory.create("#gcost", "+40"));
+      tf.addCommands(CommandFactory.create("#assassin"));
+      tf.addCommands(CommandFactory.create("#att", "+3"));
+      tf.addCommands(CommandFactory.create("#def", "+3"));
+      tf.addCommands(CommandFactory.create("#prec", "+3"));
+      tf.addCommands(CommandFactory.create("#mor", "+3"));
+      tf.addCommands(CommandFactory.create("#mr", "+1"));
+      tf.addCommands(CommandFactory.create("#str", "+1"));
       //NamePart part = new NamePart();
       //part.text = "Assassin";
       //u.name.type = part;
     } else if (tier == 2) {
-      tf.addCommands(Command.args("#gcost", "+40"));
-      tf.addCommands(Command.args("#spy"));
-      tf.addCommands(Command.args("#rpcost", "2"));
+      tf.addCommands(CommandFactory.create("#gcost", "+40"));
+      tf.addCommands(CommandFactory.create("#spy"));
+      tf.addCommands(CommandFactory.create("#rpcost", "2"));
       //NamePart part = new NamePart();
       //part.text = "Spy";
       //u.name.type = part;
     } else {
-      tf.addCommands(Command.args("#gcost", "+20"));
+      tf.addCommands(CommandFactory.create("#gcost", "+20"));
       //NamePart part = new NamePart();
       //part.text = "Scout";
       //u.name.type = part;
     }
 
-    tf.addCommands(Command.args("#noleader"));
+    tf.addCommands(CommandFactory.create("#noleader"));
     u.appliedFilters.add(tf);
 
     assets.initializeFilters(List.of(tf), "ScoutGenerator");

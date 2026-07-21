@@ -53,7 +53,7 @@ public class Site {
   }
 
   public boolean removeCommand(String command) {
-    return this.commands.remove(Command.parse(command));
+    return this.commands.remove(CommandFactory.parse(command));
   }
 
   public List<String> writeLines() {

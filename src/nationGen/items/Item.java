@@ -43,8 +43,12 @@ public class Item extends Drawable {
     this.set = item.set;
   }
 
+  protected NationGenDB getItemDb() {
+    return this.isArmor() ? this.nationGen.armordb : this.nationGen.weapondb;
+  }
+
   public String getValueFromDb(String dbColumn) {
-    NationGenDB db = this.isArmor() ? this.nationGen.armordb : this.nationGen.weapondb;
+    NationGenDB db = this.getItemDb();
     String itemIdInDb = String.valueOf(this.dominionsId.getIngameId());
     String value = db.GetValue(itemIdInDb, dbColumn);
 

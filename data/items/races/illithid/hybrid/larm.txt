@@ -3,7 +3,6 @@
 #gameid -1
 #sprite /graphics/foulspawn/small/larm/goblinoid.png
 #command "#gcost +1"
-#command "#rpcost +1000"
 #command "#hp +1"
 #command "#str +1"
 -- #command "#prec +0"
@@ -32,11 +31,25 @@
 #gameid -1
 #sprite /graphics/foulspawn/small/larm/tentacle_green.png
 #command "#gcost +1"
-#command "#rpcost +1000"
 #command "#hp +1"
 #command "#str +2"
 #command "#prec -1"
 #type tentacle
+#needs lhand none
+#enditem
+
+#newitem
+#id "tentacloid_heavy_with_slot"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm/tentacle_green.png
+#command "#gcost +1"
+#command "#hp +1"
+#command "#str +2"
+#command "#prec -1"
+-- For weapons which require a hand slot, like non-intrinsic tentacle attacks
+#itemslot hand +1
+#type tentacle
+#type tentacle_hand
 #needs lhand none
 #enditem
 
@@ -53,11 +66,25 @@
 #enditem
 
 #newitem
+#id "tentacloid_agile_with_slot"
+#gameid -1
+#sprite /graphics/foulspawn/small/larm/tentacle_green.png
+-- #command "#gcost +0"
+#command "#hp +1"
+#command "#str -1"
+#command "#prec +1"
+-- For weapons which require a hand slot, like non-intrinsic tentacle attacks
+#itemslot hand +1
+#type tentacle
+#type tentacle_hand
+#needs lhand none
+#enditem
+
+#newitem
 #id "crab"
 #gameid -1
 #sprite /graphics/foulspawn/small/larm/pincer.png
 #command "#gcost +1"
-#command "#rpcost +1000"
 #command "#prot +1"
 #command "#str +1"
 #command "#hp +1"

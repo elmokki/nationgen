@@ -15,6 +15,7 @@ import nationGen.Settings.SettingsType;
 import nationGen.chances.EntityChances;
 import nationGen.misc.Arg;
 import nationGen.misc.Command;
+import nationGen.misc.CommandFactory;
 import nationGen.rostergeneration.statupgradepatterns.BalancedStatUpgradePattern;
 import nationGen.rostergeneration.statupgradepatterns.LowerFirstStatUpgradePattern;
 import nationGen.rostergeneration.statupgradepatterns.RandomStatUpgradePattern;
@@ -224,7 +225,7 @@ public class StatUpgradeManager {
             this.cannotAffordMoreUpgrades = true;
 
             // Increase gcost of unit by 1/3 of the number of stat upgrades we've granted it
-            unit.addCommands(Command.args("#gcost", "+" + (int) Math.round(this.extraGoldCostCounter)));
+            unit.addCommands(CommandFactory.create("#gcost", "+" + (int) Math.round(this.extraGoldCostCounter)));
             return;
         }
 
@@ -235,7 +236,7 @@ public class StatUpgradeManager {
         Filter selectedStatUpgrade = EntityChances.baseChances(possibleUpgrades).getRandom(random);
         StatUpgradeTracker statUpgradeCalculator = statUpgradeCalculators.get(UpgradableStats.fromString(selectedStatUpgrade.name));
         Arg upgradeModifier = Arg.asModifier(statUpgradeCalculator.upgradeStepSize);
-        Command statUpgradeCommand = new Command(selectedStatUpgrade.name, upgradeModifier);
+        Command statUpgradeCommand = CommandFactory.create(selectedStatUpgrade.name, upgradeModifier);
 
         // Spend budget for upgrade
         this.budgetLeft -= selectedStatUpgrade.power;

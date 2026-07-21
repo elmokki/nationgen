@@ -13,21 +13,23 @@ import nationGen.entities.MagicItem;
 import nationGen.misc.Arg;
 import nationGen.misc.Args;
 import nationGen.misc.Command;
+import nationGen.misc.CommandFactory;
 
 public class CustomItem extends Item {
 
   private List<Command> customItemCommands = new ArrayList<>();
   public Item olditem = null;
   public MagicItem magicItem = null;
+  private static final List<String> COPY_COMMANDS = List.of("#copyarmor", "#copyitem", "#copyweapon");
 
   public CustomItem(NationGen nationGen) {
     super(nationGen);
-    this.customItemCommands.add(new Command(
+    this.customItemCommands.add(CommandFactory.create(
       ItemProperty.RESOURCE_COST.toModCommand(),
       new Arg(0)
     ));
 
-    this.customItemCommands.add(new Command(
+    this.customItemCommands.add(CommandFactory.create(
       ItemProperty.DEFENCE.toModCommand(),
       new Arg(0)
     ));
@@ -40,7 +42,7 @@ public class CustomItem extends Item {
       while(it.hasNext()) {
           Map.Entry<String, String> entry = it.next();
           ItemProperty property = ItemProperty.fromDbColumn(entry.getKey());
-          Command command = Command.args(property.toModCommand(), entry.getValue());
+          Command command = CommandFactory.create(property.toModCommand(), entry.getValue());
 
           // The #flyspr mod command expects a second argument; the animation length
           if (property == ItemProperty.FLYSPRITE) {
@@ -61,11 +63,15 @@ public class CustomItem extends Item {
     super(customItem);
     this.customItemCommands = new ArrayList<>(customItem.customItemCommands)
       .stream()
-      .map(c -> new Command(c))
+      .map(c -> CommandFactory.copy(c))
       .collect(Collectors.toList());
 
     this.olditem = (customItem.olditem != null) ? new Item(customItem.olditem) : null;
     this.magicItem = (customItem.magicItem != null) ? new MagicItem(customItem.magicItem) : null;
+  }
+
+  public List<Command> getCustomCommands() {
+    return new ArrayList<>(this.customItemCommands);
   }
 
   public Optional<Command> getCustomCommand(String commandName) {
@@ -95,7 +101,7 @@ public class CustomItem extends Item {
 
   public void setCustomCommand(String commandName) {
     if (getCustomValue(commandName).isEmpty()) {
-      this.customItemCommands.add(new Command(commandName));
+      this.customItemCommands.add(CommandFactory.create(commandName));
     }
   }
 
@@ -104,7 +110,7 @@ public class CustomItem extends Item {
     if (args.isPresent()) {
       args.get().set(0, new Arg(value));
     } else {
-      this.customItemCommands.add(Command.args(commandName, value));
+      this.customItemCommands.add(CommandFactory.create(commandName, value));
     }
   }
 
@@ -113,7 +119,7 @@ public class CustomItem extends Item {
     if (args.isPresent()) {
       args.get().set(0, new Arg(value));
     } else {
-      this.customItemCommands.add(new Command(commandName, new Arg(value)));
+      this.customItemCommands.add(CommandFactory.create(commandName, new Arg(value)));
     }
   }
 
@@ -123,7 +129,7 @@ public class CustomItem extends Item {
       args.get().set(0, new Arg(value1));
       args.get().set(1, new Arg(value2));
     } else {
-      this.customItemCommands.add(Command.args(commandName, value1, value2));
+      this.customItemCommands.add(CommandFactory.create(commandName, value1, value2));
     }
   }
 
@@ -150,7 +156,7 @@ public class CustomItem extends Item {
         Optional<Integer> oldvalue = this.getCustomIntValue(key);
 
         // Resolve the modifier from the magic effect
-        int modifiedValue = (int) value.applyModTo(oldvalue.orElseThrow());
+        int modifiedValue = (int) value.applyOperatorTo(oldvalue.orElseThrow());
 
         // Apply new value
         this.setCustomCommand(key, modifiedValue);
@@ -224,6 +230,31 @@ public class CustomItem extends Item {
     }
   }
 
+  public Boolean hasCopyStats() {
+    for (Command c : this.getCustomCommands()) {
+      if (CustomItem.COPY_COMMANDS.contains(c.command)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  protected int getCopyStatsId() {
+    Optional<Command> copyCommand = this.getCustomCommands()
+      .stream()
+      .filter(c -> {
+        return CustomItem.COPY_COMMANDS.contains(c.command);
+      })
+      .findFirst();
+
+    if (copyCommand.isPresent()) {
+      return copyCommand.get().args.getInt(0);
+    }
+
+    return 0;
+  }
+
   public LinkedHashMap<String, String> getHashMap() {
     LinkedHashMap<String, String> map = new LinkedHashMap<>();
 
@@ -236,14 +267,23 @@ public class CustomItem extends Item {
     map.put(ItemProperty.IS_2H.toDBColumn(), "0");
     map.put(ItemProperty.RESOURCE_COST.toDBColumn(), "0");
 
-    for (Command command : this.customItemCommands) {
+    for (Command command : this.getCustomCommands()) {
       ItemProperty property = ItemProperty.fromCommand(command);
 
-      if (property == null) {
-          continue;
+      // Copy commands from #copyarmor/#copyitem/#copyweapon through the DB so that any
+      // code that relies on in-game item properties can make use of it. For example,
+      // clockwork pose's shock lances copying most stats from vanilla spears (id 1)
+      if (CustomItem.COPY_COMMANDS.contains(command.command)) {
+        int copyId = this.getCopyStatsId();
+        LinkedHashMap<String, String> copyItemProps = this.getItemDb().getItemMap(copyId);
+        map.putAll(copyItemProps);
+      }
+
+      else if (property == null) {
+        continue;
       }
       
-      if (property.isBoolean()) {
+      else if (property.isBoolean()) {
           map.put(property.toDBColumn(), "1");
       }
 

@@ -111,6 +111,10 @@ public class SlotMap {
     return this.getSlotStack(slotName).stream().filter(i -> i != null).toList();
   }
 
+  public List<Item> getItemTrailInSlotStack(String slotName) {
+    return this.getSlotStack(slotName).stream().toList();
+  }
+
   public boolean hasGuaranteedMagicWeapon() {
     Stream<String> weaponSlots = Stream.of(
       "weapon",

@@ -53,7 +53,7 @@ public class Arg {
       throw new NullPointerException("Arg command can't be null");
     }
     this.string = command.toString();
-    this.command = command.copy(); // defensive copy to prevent this object's copy being modified
+    this.command = CommandFactory.copy(command); // defensive copy to prevent this object's copy being modified
   }
 
   public Arg(Args parenthesis) {
@@ -121,9 +121,9 @@ public class Arg {
 
   public Command getCommand() {
     if (this.command == null) {
-      this.command = Command.parse(this.string);
+      this.command = CommandFactory.parse(this.string);
     }
-    return this.command.copy(); // defensive copy to prevent this object's copy being modified
+    return CommandFactory.copy(this.command); // defensive copy to prevent this object's copy being modified
   }
 
   public Args getArgs() {
@@ -151,7 +151,7 @@ public class Arg {
     return this.parenthesis == null ? null : this.parenthesis.copy(); // defensive copy to prevent this object's copy being modified
   }
 
-  public double applyModTo(double value) {
+  public double applyOperatorTo(double value) {
     if (getOperator().isPresent()) {
       switch (getOperator().get()) {
         case ADD:
@@ -173,7 +173,7 @@ public class Arg {
     }
   }
 
-  public Arg applyModToNothing() {
+  public Arg applyOperatorToNothing() {
     Optional<Operator> operator = getOperator();
     if (operator.isPresent()) {
       if (operator.get() == Operator.ADD) {

@@ -211,8 +211,10 @@
 #id "sickly"
 #chance 0.015
 #mutuallyexclusive "#heal"
-#command "#startaff +10"
+#command "#startaff +20"
+-- Note that autocalced RP costs will result in inexact modified RPs, give or take one or two points
 #command "#rpcost *0.8"
+#command "#gcost *0.9"
 #description "Sick"
 #filterdesc "sickly desc"
 #end
@@ -400,6 +402,7 @@
 #new
 #id "deathrec10"
 #basechance 0.025
+#mutuallyexclusive "#chaosrec"
 #command "#deathrec %cost10"
 #chanceinc magic death 0.075
 #filterdesc "deathrec desc"
@@ -408,6 +411,7 @@
 #new
 #id "chaosrec10"
 #basechance 0.05
+#mutuallyexclusive "#deathrec"
 #command "#chaosrec %cost10"
 #filterdesc "chaosrec desc"
 #end

@@ -15,6 +15,7 @@ import nationGen.items.CustomItem;
 import nationGen.magic.MagicPattern;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
+import nationGen.misc.CommandFactory;
 import nationGen.misc.FileUtil;
 import nationGen.misc.ResourceStorage;
 import nationGen.naming.NamePart;
@@ -106,7 +107,7 @@ public class NationGenAssets {
         continue;
       }
 
-      Command inheritableCommand = Command.parse(line);
+      Command inheritableCommand = CommandFactory.parse(line);
       List<String> args = Generic.parseArgs(line);
 
       if (args.isEmpty()) {
@@ -130,7 +131,7 @@ public class NationGenAssets {
         continue;
       }
 
-      Command inheritableCommand = Command.parse(line);
+      Command inheritableCommand = CommandFactory.parse(line);
       commandsInheritedByMounts.add(inheritableCommand);
     }
   }

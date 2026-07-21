@@ -14,6 +14,7 @@ import nationGen.misc.Arg;
 import nationGen.misc.Args;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
+import nationGen.misc.CommandFactory;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
@@ -180,8 +181,8 @@ public class CustomItemGen {
     int extraUnitResCost = (int)Math.max(itemResCost, unit.getResCost(true, true) * 0.1);
 
     // Add the costs to the unit
-    unit.addCommands(Command.args("#gcost", "+" + extraUnitGoldCost));
-    unit.addCommands(Command.args("#rcost", "+" + extraUnitResCost));
+    unit.addCommands(CommandFactory.create("#gcost", "+" + extraUnitGoldCost));
+    unit.addCommands(CommandFactory.create("#rcost", "+" + extraUnitResCost));
   }
 
   private void grantEnchantment(
@@ -213,7 +214,7 @@ public class CustomItemGen {
       Boolean hasExtraCostForItemType = originalItem.anyTypesMatchString(itemTypeWithExtraCost);
 
       if (hasExtraCostForItemType == true) {
-        Command enchantmentGoldCost = new Command("#gcost", args.get(1));
+        Command enchantmentGoldCost = CommandFactory.create("#gcost", args.get(1));
         customItem.addCommands(enchantmentGoldCost);
       }
     }
@@ -224,7 +225,7 @@ public class CustomItemGen {
       Boolean hasExtraCostForItemType = originalItem.anyTypesMatchString(itemTypeWithExtraCost);
 
       if (hasExtraCostForItemType == true) {
-        Command enchantmentResourceCost = new Command("#rcost", args.get(1));
+        Command enchantmentResourceCost = CommandFactory.create("#rcost", args.get(1));
         customItem.addCommands(enchantmentResourceCost);
       }
     }

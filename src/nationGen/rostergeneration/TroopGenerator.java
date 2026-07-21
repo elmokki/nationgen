@@ -779,6 +779,18 @@ public class TroopGenerator {
     int freeHands = u.getNumberOfFreeHands();
     boolean isTwoHanded = weapon.getBooleanFromDb(ItemProperty.IS_2H.toDBColumn());
 
+    // If a unit won't have enough hands even after removing an offhand weapon, it's an error
+    if (freeHands < -1) {
+      throw new IllegalStateException(
+        "Unit (pose: '" +
+        u.pose.getName() +
+        "', race: '" +
+        u.race.getName() +
+        "') needs " +
+        -freeHands +
+        " more hands to use their equipment!");
+    }
+
     // Clear the offhand if the unit only needs one more hand to wield a two-hander
     if (isTwoHanded && !this.isDualWieldEligible(u) && freeHands == -1 && offhand != null) {
       u.setSlot("offhand", null);

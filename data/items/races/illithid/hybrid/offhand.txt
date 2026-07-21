@@ -1,8 +1,9 @@
 #newitem
-#id none
+#id empty
 #gameid -1
 #nogen
 #needstype larm onehand
+#type empty
 #enditem
 
 -- Natural weapons
@@ -13,14 +14,16 @@
 #tentacle
 #needstype larm tentacle
 #type melee
+#type any
 #enditem
 
 #newitem
 #id tentacle_strangle
 #gameid 116
 #tentacle
-#needstype larm tentacle
+#needstype larm tentacle_hand
 #type melee
+#type any
 #enditem
 
 #newitem
@@ -29,6 +32,7 @@
 #pincer
 #needstype larm pincer
 #type melee
+#type any
 #enditem
 
 
@@ -43,6 +47,7 @@
 #theme "coral"
 #theme "amphibious"
 #needstype larm onehand
+#type any
 #enditem
 
 #newitem
@@ -55,6 +60,7 @@
 #theme "iron"
 #theme "terrestrial"
 #type melee
+#type any
 #enditem
 
 #newitem
@@ -66,6 +72,7 @@
 #theme "bronze"
 #theme "amphibious"
 #needstype larm onehand
+#type any
 #enditem
 
 #newitem
@@ -78,6 +85,7 @@
 #theme "primitive"
 #theme "amphibious"
 #needstype larm onehand
+#type any
 #enditem
 
 #newitem
@@ -90,6 +98,7 @@
 #theme "iron"
 #theme "terrestrial"
 #type melee
+#type any
 #enditem
 
 #newitem
@@ -101,6 +110,7 @@
 #theme "coral"
 #theme "amphibious"
 #needstype larm onehand
+#type any
 #enditem
 
 #newitem
@@ -112,6 +122,7 @@
 #theme "bronze"
 #theme "amphibious"
 #needstype larm onehand
+#type any
 #enditem
 
 #newitem
@@ -125,6 +136,7 @@
 #theme "terrestrial"
 #needstype larm onehand
 #type melee
+#type any
 #enditem
 
 #newitem
@@ -136,6 +148,7 @@
 #theme "bronze"
 #theme "terrestrial"
 #needstype larm onehand
+#type any
 #enditem
 
 #newitem
@@ -149,4 +162,5 @@
 #theme "terrestrial"
 #maxprot 15
 #type melee
+#type any
 #enditem

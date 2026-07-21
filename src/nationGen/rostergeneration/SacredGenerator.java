@@ -16,6 +16,7 @@ import nationGen.items.ItemProperty;
 import nationGen.misc.Arg;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
+import nationGen.misc.CommandFactory;
 import nationGen.misc.ItemSet;
 import nationGen.misc.Utils;
 import nationGen.nation.Nation;
@@ -196,7 +197,7 @@ public class SacredGenerator extends TroopGenerator {
       mrBonus -= (baseMr - diminishingReturnsMrThreshold) / 2;
     }
 
-    unit.addCommands(Command.args("#mr", "+" + mrBonus));
+    unit.addCommands(CommandFactory.create("#mr", "+" + mrBonus));
 
     // Determine morale
     int baseMorale = unit.getTotalCommandValue("#mor", 10);
@@ -228,7 +229,7 @@ public class SacredGenerator extends TroopGenerator {
     }
 
     // Add morale bonus
-    unit.addCommands(Command.args("#mor", "+" + moraleBonus));
+    unit.addCommands(CommandFactory.create("#mor", "+" + moraleBonus));
   }
 
   // Roll a chance to see if this unit will get a magic weapon added to it
@@ -353,20 +354,30 @@ public class SacredGenerator extends TroopGenerator {
 
     // Check if main weapon should get customized
     if (getsCustomWeapon(unit, mainWeapon, 1, false) == true) {
-      // Customize main weapon and get the cost of it
-      int powerCost = customizeWeapon(unit, "weapon", power, weaponEnchantments);
+      // Attempt to customize main weapon
+      Optional<CustomItem> customWeapon = customizeWeapon(unit, mainWeapon, power, weaponEnchantments);
 
-      // Spend the power cost. Only relevant for whether bonus or offhand is also customized
-      power -= powerCost;
+      if (customWeapon.isPresent()) {
+        MagicItem enchantment = customWeapon.get().magicItem;
+        int powerCost = (enchantment != null) ? (int)enchantment.power : 1;
+
+        power -= powerCost;
+        unit.setSlot("weapon", mainWeapon);
+      }
     }
 
     // Check if bonus weapon should get customized
-    if (getsCustomWeapon(unit, bonusWeapon, 0.25, power > 1) == true) {
-      // Customize bonus weapon and get the cost of it
-      int powerCost = customizeWeapon(unit, "bonusweapon", power, weaponEnchantments);
+    else if (getsCustomWeapon(unit, bonusWeapon, 0.25, power > 1) == true) {
+      // Attempt to customize bonus weapon
+      Optional<CustomItem> customWeapon = customizeWeapon(unit, bonusWeapon, power, weaponEnchantments);
 
-      // Spend the power cost. Only relevant for whether offhand is also customized
-      power -= powerCost;
+      if (customWeapon.isPresent()) {
+        MagicItem enchantment = customWeapon.get().magicItem;
+        int powerCost = (enchantment != null) ? (int)enchantment.power : 1;
+
+        power -= powerCost;
+        unit.setSlot("bonusweapon", bonusWeapon);
+      }
     }
 
     // Only offhand weapons get enhanced for now
@@ -376,8 +387,16 @@ public class SacredGenerator extends TroopGenerator {
 
     // Check if offhand weapon should get customized
     if (getsCustomWeapon(unit, offhandWeapon, 0.25, power > 1) == true) {
-      // Customize offhand weapon
-      customizeWeapon(unit, "offhand", power, weaponEnchantments);
+      // Attempt to customize offhand weapon
+      Optional<CustomItem> customWeapon = customizeWeapon(unit, offhandWeapon, power, weaponEnchantments);
+
+      if (customWeapon.isPresent()) {
+        MagicItem enchantment = customWeapon.get().magicItem;
+        int powerCost = (enchantment != null) ? (int)enchantment.power : 1;
+
+        power -= powerCost;
+        unit.setSlot("offhand", offhandWeapon);
+      }
     }
   }
 
@@ -396,12 +415,11 @@ public class SacredGenerator extends TroopGenerator {
     );
   }
 
-  private int customizeWeapon(Unit unit, String slot, int power, List<MagicItem> weaponEnchantments) {
+  private Optional<CustomItem> customizeWeapon(Unit unit, Item weapon, int power, List<MagicItem> weaponEnchantments) {
     double powerUpChances = 1 - random.nextDouble();
-    Item weapon = unit.getSlot(slot);
 
     if (weapon == null) {
-      return 0;
+      return Optional.empty();
     }
 
     Optional<CustomItem> possibleWeapon =
@@ -414,14 +432,7 @@ public class SacredGenerator extends TroopGenerator {
         weaponEnchantments
       );
 
-    if (possibleWeapon.isPresent() == false) {
-      return 0;
-    }
-
-    CustomItem customWeapon = possibleWeapon.get();
-    double powerCost = (customWeapon.magicItem != null) ? customWeapon.magicItem.power : 1;
-    unit.setSlot(slot, customWeapon);
-    return (int)powerCost;
+    return possibleWeapon;
   }
 
   private void addInitialFilters(Unit u) {
@@ -694,7 +705,7 @@ public class SacredGenerator extends TroopGenerator {
       total *= multi;
     }
 
-    u.addCommands(Command.args("#gcost", "*" + total));
+    u.addCommands(CommandFactory.create("#gcost", "*" + total));
   }
 
   /**
@@ -1002,8 +1013,8 @@ public class SacredGenerator extends TroopGenerator {
       int holyCost = this.calculateHolyCost(u, sacred);
 
       u.tags.addName("sacred");
-      tf.addCommands(new Command("#holy"));
-      tf.addCommands(new Command("#holycost", new Arg(holyCost)));
+      tf.addCommands(CommandFactory.create("#holy"));
+      tf.addCommands(CommandFactory.create("#holycost", new Arg(holyCost)));
     }
 
     u.appliedFilters.add(tf);
@@ -1070,9 +1081,12 @@ public class SacredGenerator extends TroopGenerator {
 
     if (
       u.pose.roles.contains("ranged") ||
-      (u.pose.roles.contains("sacred ranged") &&
+      (
+        u.pose.roles.contains("sacred ranged") &&
         u.pose.getItems("bonusweapon") != null &&
-        u.pose.getItems("bonusweapon").size() > 0)
+        u.pose.getItems("bonusweapon").size() > 0 &&
+        u.getSlot("bonusweapon") != null
+      )
     ) {
       Item weapon = chandler.getRandom(
         fetchItems(u, "bonusweapon", sacred, epicchance),
@@ -1124,7 +1138,7 @@ public class SacredGenerator extends TroopGenerator {
       u.pose.types.contains("elite ranged") ||
       u.pose.types.contains("sacred ranged")
     ) if (u.getGoldCost(true) < 15 && u.getResCost(true, true) < 15) {
-      u.addCommands(Command.args("#gcost", "+10"));
+      u.addCommands(CommandFactory.create("#gcost", "+10"));
     }
 
     int cgcost = u.getGoldCost(true);
@@ -1147,7 +1161,7 @@ public class SacredGenerator extends TroopGenerator {
       discount += (u.getGoldCost(false) - discount) / 5;
     }
 
-    u.addCommands(Command.args("#gcost", "-" + discount));
+    u.addCommands(CommandFactory.create("#gcost", "-" + discount));
   }
 
   private ItemSet fetchItems(

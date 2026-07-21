@@ -4,7 +4,8 @@
 #gameid 357
 #sprite /graphics/hoburg/weapon/clockwork_lance.png
 #ignore_dw_restrictions
-#needs handslots one_hand
+-- One hand
+#define "#itemslots +2"
 #enditem
 
 #newitem
@@ -14,6 +15,8 @@
 #ignore_dw_restrictions
 #offsetx -2
 #offsety -11
+-- Two hands
+#define "#itemslots +6"
 #enditem
 
 #newitem
@@ -23,6 +26,8 @@
 #ignore_dw_restrictions
 #offsetx -2
 #offsety -11
+-- Two hands
+#define "#itemslots +6"
 #enditem
 
 #newitem
@@ -31,6 +36,8 @@
 #sprite /graphics/weapon/standard/falchion.png
 #offsetx 0
 #offsety -5
+-- One hand
+#define "#itemslots +2"
 #enditem
 
 
@@ -43,6 +50,8 @@
 #offsetx -1
 #offsety -7
 #needs offhand nooffhand
+-- Two hands
+#define "#itemslots +6"
 #enditem
 
 #newitem
@@ -52,6 +61,8 @@
 #offsetx -1
 #offsety -7
 #needs offhand nooffhand
+-- Two hands
+#define "#itemslots +6"
 #enditem
 
 #newitem
@@ -61,6 +72,8 @@
 #offsetx -1
 #offsety -7
 #needs offhand nooffhand
+-- Two hands
+#define "#itemslots +6"
 #enditem
 
 #newitem
@@ -70,4 +83,6 @@
 #offsetx -1
 #offsety -7
 #needs offhand nooffhand
+-- Two hands
+#define "#itemslots +6"
 #enditem

@@ -3,6 +3,7 @@ package nationGen.entities;
 import java.util.*;
 import nationGen.NationGen;
 import nationGen.misc.Command;
+import nationGen.misc.CommandFactory;
 import nationGen.misc.FileUtil;
 import nationGen.misc.Tags;
 
@@ -68,7 +69,7 @@ public class Entity {
           if (instance == null) {
             throw new IllegalStateException("Dangling command detected");
           }
-          instance.handleOwnCommand(Command.parse(strLine));
+          instance.handleOwnCommand(CommandFactory.parse(strLine));
         }
       } catch (Exception e) {
         throw new IllegalStateException(

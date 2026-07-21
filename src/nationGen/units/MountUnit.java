@@ -15,6 +15,7 @@ import nationGen.entities.Filter;
 import nationGen.items.Item;
 import nationGen.misc.Arg;
 import nationGen.misc.Command;
+import nationGen.misc.CommandFactory;
 import nationGen.misc.FileUtil;
 import nationGen.naming.Name;
 import nationGen.naming.NamePart;
@@ -116,8 +117,8 @@ public class MountUnit extends Unit {
           }
         });
 
-        this.mount.addCommands(Command.args("#spr1", "." + mountItem.sprite));
-        this.mount.addCommands(Command.args("#spr2", "shift"));
+        this.mount.addCommands(CommandFactory.create("#spr1", "." + mountItem.sprite));
+        this.mount.addCommands(CommandFactory.create("#spr2", "shift"));
       }
 
       // If the mount item also contains a barding, add it to the mount instance
@@ -127,7 +128,12 @@ public class MountUnit extends Unit {
 
         this.bardingGoldMultiplier = this.getBardingGoldModifier(bardingProtection);
         this.bardingResCost = this.getBardingResCost(mountItem);
-        this.mount.addCommands(Command.args("#armor", bardingId));
+        this.mount.addCommands(CommandFactory.create("#armor", bardingId));
+
+        // Coral barding; add #poisonarmor as it can't be added as an armor property
+        if (bardingId.equals("190")) {
+          this.mount.addCommands(CommandFactory.create("#poisonarmor", "5"));
+        }
       }
 
       break;
@@ -209,21 +215,21 @@ public class MountUnit extends Unit {
       else if (c.command.equals("#heat")) {
         String resistanceTag = "#fireres";
         int inheritableResistance = getResistanceFromRiderToInherit(mountedRiderCommands, resistanceTag);
-        polishFilter.addCommands(Command.parse(resistanceTag + " " + inheritableResistance));
+        polishFilter.addCommands(CommandFactory.parse(resistanceTag + " " + inheritableResistance));
       }
       
       // Copy rider's cold resistance if the rider has a chill aura and the mount's resistance is worse
       else if (c.command.equals("#cold")) {
         String resistanceTag = "#coldres";
         int inheritableResistance = getResistanceFromRiderToInherit(mountedRiderCommands, resistanceTag);
-        polishFilter.addCommands(Command.parse(resistanceTag + " " + inheritableResistance));
+        polishFilter.addCommands(CommandFactory.parse(resistanceTag + " " + inheritableResistance));
       }
       
       // Copy rider's poison resistance if the rider has a poison aura and the mount's resistance is worse
       else if (c.command.equals("#poisoncloud")) {
         String resistanceTag = "#poisonres";
         int inheritableResistance = getResistanceFromRiderToInherit(mountedRiderCommands, resistanceTag);
-        polishFilter.addCommands(Command.parse(resistanceTag + " " + inheritableResistance));
+        polishFilter.addCommands(CommandFactory.parse(resistanceTag + " " + inheritableResistance));
       }
     }
 

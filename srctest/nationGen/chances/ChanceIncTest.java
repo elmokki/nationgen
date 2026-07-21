@@ -93,12 +93,12 @@ public class ChanceIncTest {
   @Test
   public void testModAdd() {
     Assert.assertEquals(
-      ChanceInc.parse("true +3").modificationAmount.applyModTo(4),
+      ChanceInc.parse("true +3").modificationAmount.applyOperatorTo(4),
       7,
       0.0001
     );
     Assert.assertEquals(
-      ChanceInc.parse("true 3").modificationAmount.applyModTo(4),
+      ChanceInc.parse("true 3").modificationAmount.applyOperatorTo(4),
       7,
       0.0001
     );
@@ -107,7 +107,7 @@ public class ChanceIncTest {
   @Test
   public void testModSubtract() {
     Assert.assertEquals(
-      ChanceInc.parse("true -5").modificationAmount.applyModTo(8.2),
+      ChanceInc.parse("true -5").modificationAmount.applyOperatorTo(8.2),
       3.2,
       0.0001
     );
@@ -116,12 +116,12 @@ public class ChanceIncTest {
   @Test
   public void testModMultiply() {
     Assert.assertEquals(
-      ChanceInc.parse("true *1.5").modificationAmount.applyModTo(4),
+      ChanceInc.parse("true *1.5").modificationAmount.applyOperatorTo(4),
       6,
       0.0001
     );
     Assert.assertEquals(
-      ChanceInc.parse("true *0.2").modificationAmount.applyModTo(10.6),
+      ChanceInc.parse("true *0.2").modificationAmount.applyOperatorTo(10.6),
       2.12,
       0.0001
     );
@@ -130,12 +130,12 @@ public class ChanceIncTest {
   @Test
   public void testModDivide() {
     Assert.assertEquals(
-      ChanceInc.parse("true /2").modificationAmount.applyModTo(6),
+      ChanceInc.parse("true /2").modificationAmount.applyOperatorTo(6),
       3,
       0.0001
     );
     Assert.assertEquals(
-      ChanceInc.parse("true /0.4").modificationAmount.applyModTo(2),
+      ChanceInc.parse("true /0.4").modificationAmount.applyOperatorTo(2),
       5,
       0.0001
     );

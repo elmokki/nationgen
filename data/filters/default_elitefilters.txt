@@ -70,6 +70,7 @@
 #new
 #id "chaosrec"
 #basechance 0.1
+#mutuallyexclusive "#deathrec"
 #command "#chaosrec %cost5"
 #chanceinc "command #chaosrec 100"
 #chanceinc "command #chaospower 100"
@@ -81,6 +82,7 @@
 #new
 #id "chaosrec_high"
 #basechance 0.05
+#mutuallyexclusive "#deathrec"
 #command "#chaosrec %cost10"
 #chanceinc "command #chaosrec 25"
 #chanceinc "command #chaospower 25"

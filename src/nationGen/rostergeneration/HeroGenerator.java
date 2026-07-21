@@ -10,7 +10,7 @@ import nationGen.chances.ThemeInc;
 import nationGen.entities.*;
 import nationGen.magic.*;
 import nationGen.misc.ChanceIncHandler;
-import nationGen.misc.Command;
+import nationGen.misc.CommandFactory;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
 
@@ -42,7 +42,7 @@ public class HeroGenerator {
 
     // Remove upkeep
     for (Unit u : units) {
-      u.addCommands(Command.args("#gcost", "*0"));
+      u.addCommands(CommandFactory.create("#gcost", "*0"));
     }
 
     return units;
@@ -110,7 +110,7 @@ public class HeroGenerator {
     }
 
     hero.name.setType("Hero");
-    if (!multihero) hero.addCommands(new Command("#unique"));
+    if (!multihero) hero.addCommands(CommandFactory.create("#unique"));
 
     return hero;
   }
@@ -161,7 +161,7 @@ public class HeroGenerator {
     mg.equipBase(hero, tier);
 
     hero.name.setType("Hero");
-    if (!multihero) hero.addCommands(new Command("#unique"));
+    if (!multihero) hero.addCommands(CommandFactory.create("#unique"));
     return hero;
   }
 

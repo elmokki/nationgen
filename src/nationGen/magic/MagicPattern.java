@@ -8,6 +8,7 @@ import nationGen.NationGen;
 import nationGen.entities.Filter;
 import nationGen.misc.Arg;
 import nationGen.misc.Command;
+import nationGen.misc.CommandFactory;
 
 public class MagicPattern extends Filter {
 
@@ -70,7 +71,7 @@ public class MagicPattern extends Filter {
       for (int j = 0; j < this.getPathsAt(i); j++) {
         if (prio != null) {
           coms.add(
-            new Command("#magicskill", new Arg(prio.get(at).number), new Arg(i))
+            CommandFactory.create("#magicskill", new Arg(prio.get(at).number), new Arg(i))
           );
           at++;
         }
@@ -80,7 +81,7 @@ public class MagicPattern extends Filter {
     for (RandomEntry e : randoms) {
       double d = e.amount;
       coms.add(
-        new Command(
+        CommandFactory.create(
           "#custommagic",
           new Arg(pathsToMask(e.paths, prio)),
           new Arg((int) (d * 100))

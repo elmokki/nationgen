@@ -1,3 +1,44 @@
+0.14.0 (21st July 2026)
+-----------------------------------------------------------
+FIXES
+-----------------------------------------------------------
+-	Coral bardings automatically grant #poisonarmor 5, as vanilla.
+-	Temporarily removed some mount sprite overlays that need to be redone with bardings.
+-	Fixed non-sacred units getting #holycost 2 due to their mount.
+-	Fixed hybrid illithid's bronze axe using the game id of the fiery breath weapon.
+-	Fixed some standards that should be cosmetic and others that should be weapons.
+-	#rpcost commands are now mostly autocalculated following Dominions 6's standard rules.
+	Most units have an #rpcost of Gold cost x 1000, which lets the game's autocalc take over.
+	Some units and items still retain #rpcost modifiers to tweak the autocalc values at the end.
+-	The sickly nationwide filter now reduces #gcost and #rpcost slightly (including 4-point commanders
+	now being 3-point cost), but also has a #startaff chance of 20%.
+-	Fixed lizard wings not bumping the unit's size up by 1 like every other pair of wings.
+-	Refactored the SpellGen module to re-evaluate #chanceincs after every spell picked for the nation.
+	Among other things, this enables the use of #chanceincs that are based on other spells that the nation
+	may have already selected, such as setting the Death spellsinger communion chances to zero if the
+	nation has already rolled into the Glamour version of spellsinger communions.
+-	More foulspawn slot issues fixed.
+-	Added #maxvarieties 1 to Atlantian and Shambler standard bearers to further reduce the number of them.
+	This does not guarantee that two Atlantian or two Shambler standard bearers will generate for a nation,
+	but should reduce the chance of it.
+-	Illithid's hybrid trident weapons weren't getting a free offhand.
+
+-----------------------------------------------------------
+CHANGES
+-----------------------------------------------------------
+-	Spellsinger mage filter chances now include nature magic.
+-	Foulspawn #raredomsummon commander is 1 CP instead of 2.
+-	Foulspawn #templetrainer commander is 2 CP instead of 1.
+-	#deathrec and #chaosrec filters are now mutually exclusive.
+-	Upped Crustacean's #enc to 4 from 3 to compensate for their sheer resilience.
+
+-----------------------------------------------------------
+CODE
+-----------------------------------------------------------
+-	A lot of code refactoring to better support future changes, content additions and improvements.
+
+
+
 0.13.11 (16th May 2026)
 -----------------------------------------------------------
 FIXES

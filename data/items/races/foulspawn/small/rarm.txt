@@ -171,11 +171,37 @@
 #enditem
 
 #newitem
+#id "tentacloid_missile_with_slot"
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm/tentacle_green_missile.png
+#command "#hp +2"
+#command "#str -1"
+-- For weapons which require a hand slot, like non-intrinsic tentacle attacks
+#itemslot hand +1
+#type tentacle_missile
+#type tentacle_missile_hand
+#needs rhand tentacloid_missile
+#enditem
+
+#newitem
 #id "fleshblob_missile"
 #gameid -1
 #sprite /graphics/foulspawn/small/rarm/tentacle_pink_missile.png
 #command "#hp +2"
 #command "#str -1"
 #type tentacle_missile
+#needs rhand fleshblob_missile
+#enditem
+
+#newitem
+#id "fleshblob_missile_with_slot"
+#gameid -1
+#sprite /graphics/foulspawn/small/rarm/tentacle_pink_missile.png
+#command "#hp +2"
+#command "#str -1"
+-- For weapons which require a hand slot, like non-intrinsic tentacle attacks
+#itemslot hand +1
+#type tentacle_missile
+#type tentacle_missile_hand
 #needs rhand fleshblob_missile
 #enditem

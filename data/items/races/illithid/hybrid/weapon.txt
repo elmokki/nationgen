@@ -7,13 +7,15 @@
 #type "tentacle"
 #tentacle
 #needstype rarm tentacle
+#needstype offhand any
 #enditem
 
 #newitem
 #id tentacle_strangle
 #gameid 116
 #tentacle
-#needstype rarm tentacle
+#needstype rarm tentacle_hand
+#needstype offhand any
 #enditem
 
 #newitem
@@ -21,6 +23,7 @@
 #gameid 273
 #pincer
 #needstype rarm pincer
+#needstype offhand any
 #enditem
 
 
@@ -43,7 +46,7 @@
 #theme "iron"
 #theme "terrestrial"
 #needstype rarm onehand
-#needstype offhand polearm
+#needs offhand empty
 #enditem
 
 #newitem
@@ -63,7 +66,7 @@
 #theme "bronze"
 #theme "amphibious"
 #needstype rarm onehand
-#needstype offhand polearm
+#needs offhand empty
 #enditem
 
 #newitem
@@ -93,7 +96,7 @@
 #theme "bone"
 #theme "primitive"
 #needstype rarm onehand
-#needstype offhand polearm
+#needstype offhand empty
 #enditem
 
 
@@ -109,6 +112,7 @@
 #theme "coral"
 #theme "amphibious"
 #needstype rarm onehand
+#needstype offhand any
 #enditem
 
 #newitem
@@ -122,6 +126,7 @@
 #theme "primitive"
 #theme "terrestrial"
 #needstype rarm onehand
+#needstype offhand any
 #enditem
 
 #newitem
@@ -135,6 +140,7 @@
 #theme "primitive"
 #theme "terrestrial"
 #needstype rarm onehand
+#needstype offhand any
 #enditem
 
 #newitem
@@ -147,6 +153,7 @@
 #theme "iron"
 #theme "terrestrial"
 #needstype rarm onehand
+#needstype offhand any
 #enditem
 
 #newitem
@@ -158,6 +165,7 @@
 #theme "bronze"
 #theme "amphibious"
 #needstype rarm onehand
+#needstype offhand any
 #enditem
 
 #newitem
@@ -169,6 +177,7 @@
 #theme "coral"
 #theme "amphibious"
 #needstype rarm onehand
+#needstype offhand any
 #enditem
 
 #newitem
@@ -181,6 +190,7 @@
 #theme "iron"
 #theme "terrestrial"
 #needstype rarm onehand
+#needstype offhand any
 #enditem
 
 #newitem
@@ -193,6 +203,7 @@
 #theme "iron"
 #theme "terrestrial"
 #needstype rarm onehand
+#needstype offhand any
 #enditem
 
 #newitem
@@ -205,17 +216,19 @@
 #theme "iron"
 #theme "terrestrial"
 #needstype rarm onehand
+#needstype offhand any
 #enditem
 
 #newitem
 #id axe_bronze
-#gameid 676
+#gameid 675
 #sprite /graphics/ichtyid/weapon/bronze_axe.png
 #offsetx 3
 #offsety 10
 #theme "bronze"
 #theme "terrestrial"
 #needstype rarm onehand
+#needstype offhand any
 #enditem
 
 #newitem
@@ -229,5 +242,5 @@
 #theme "terrestrial"
 #maxprot 15
 #needstype rarm onehand
+#needstype offhand any
 #enditem
-

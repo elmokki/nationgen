@@ -39,7 +39,12 @@ public class ShapeShift extends Filter {
           "#command or #define must have a single arg. Surround the command with quotes if needed."
         );
       }
-      this.addCommands(command.args.get(0).getCommand());
-    } else super.handleOwnCommand(command);
+      Command parsedModCommand = command.args.get(0).getCommand();
+      this.addCommands(parsedModCommand);
+    }
+    
+    else {
+      super.handleOwnCommand(command);
+    }
   }
 }

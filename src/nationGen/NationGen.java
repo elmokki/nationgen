@@ -33,8 +33,8 @@ import nationGen.units.Unit;
 
 public class NationGen {
 
-  public static final String version = "0.13.11";
-  public static final String date = "16th May 2026";
+  public static final String version = "0.14.0";
+  public static final String date = "21st July 2026";
   public static final String appPropertiesPath = "/app.properties";
   private static Properties appProperties;
 
@@ -428,8 +428,8 @@ public class NationGen {
       if (spell == null) {
         spell = new Spell(this);
         spell.name = spellName;
-        spell.addCommands(Command.args("#copyspell", spellName));
-        spell.addCommands(Command.args("#name", spellName + " "));
+        spell.addCommands(CommandFactory.create("#copyspell", spellName));
+        spell.addCommands(CommandFactory.create("#name", spellName + " "));
       }
 
       spell.nationids.add(id);
@@ -457,8 +457,8 @@ public class NationGen {
     // will be copied from vanilla, but their benefits will be cleared
     for (String siteId : sitesReqIds) {
       Site siteReq = new Site(siteId, true);
-      siteReq.addCommands(new Command("#selectsite", new Arg(siteId)));
-      siteReq.addCommands(new Command("#clear"));
+      siteReq.addCommands(CommandFactory.create("#selectsite", new Arg(siteId)));
+      siteReq.addCommands(CommandFactory.create("#clear"));
       nation.sites.add(siteReq);
     }
   }

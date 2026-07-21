@@ -126,7 +126,7 @@ public class Nation {
   }
 
   public boolean removeCommand(String command) {
-    return this.commands.remove(Command.parse(command));
+    return this.commands.remove(CommandFactory.parse(command));
   }
 
   public long getSeed() {
@@ -550,7 +550,7 @@ public class Nation {
         c.command.substring(1)
       );
       if (!value.equals("")) {
-        old = new Command(c.command, new Arg(value));
+        old = CommandFactory.create(c.command, new Arg(value));
         commands.add(old);
       }
     }
@@ -567,7 +567,7 @@ public class Nation {
 
         if (operator.isPresent()) {
           try {
-            old.args.set(i, new Arg(arg.applyModTo(oldarg.getInt())));
+            old.args.set(i, new Arg(arg.applyOperatorTo(oldarg.getInt())));
           } catch (NumberFormatException e) {
             throw new IllegalStateException(
               "FATAL ERROR: Argument parsing " +
@@ -587,9 +587,9 @@ public class Nation {
     } else {
       Args newArgs = new Args();
       for (Arg arg : c.args) {
-        newArgs.add(arg.applyModToNothing());
+        newArgs.add(arg.applyOperatorToNothing());
       }
-      commands.add(new Command(c.command, newArgs, c.comment));
+      commands.add(CommandFactory.create(c.command, newArgs, c.comment));
     }
   }
 
@@ -831,7 +831,7 @@ public class Nation {
           .max(Integer::compareTo)
           .ifPresent(highest ->
             u.addCommands(
-              new Command("#gcost", new Arg("+" + (highest * priest)))
+              CommandFactory.create("#gcost", new Arg("+" + (highest * priest)))
             )
           );
       }
@@ -1340,16 +1340,16 @@ public class Nation {
           if (!uniques.contains(commandToHandle.command)) {
             old.args.set(i, arg);
           } else {
-            targetCommands.add(commandToHandle.copy());
+            targetCommands.add(CommandFactory.copy(commandToHandle));
             return;
           }
         }
       }
     } else { // there is no existing copy
-      Command toAdd = commandToHandle.copy();
+      Command toAdd = CommandFactory.copy(commandToHandle);
       if (toAdd.args.size() > 0) {
         // If the command starts with +, remove +.
-        toAdd.args.set(0, toAdd.args.get(0).applyModToNothing());
+        toAdd.args.set(0, toAdd.args.get(0).applyOperatorToNothing());
       }
       targetCommands.add(toAdd);
     }

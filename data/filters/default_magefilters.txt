@@ -254,6 +254,7 @@
 #id "chaosrec"
 #type "chaosrec"
 #basechance 0.1
+#mutuallyexclusive "#deathrec"
 #command "#chaosrec %cost5"
 #chanceinc "command #chaosrec 100"
 #chanceinc "command #chaospower 100"
@@ -265,6 +266,7 @@
 #id "chaosrec_high"
 #type "chaosrec"
 #basechance 0.05
+#mutuallyexclusive "#deathrec"
 #power 2
 #command "#chaosrec %cost10"
 #chanceinc "command #chaosrec 25"
@@ -277,6 +279,7 @@
 #id "deathrec"
 #type "deathrec"
 #basechance 0.01
+#mutuallyexclusive "#chaosrec"
 #power 2
 #command "#deathrec %cost10"
 #chanceinc "command #deathrec 100"
@@ -393,7 +396,8 @@
 #command "#spellsinger"
 #mutuallyexclusive #spellsinger
 #chanceinc "personalmagic astral 0.3"
-#chanceinc "personalmagic death 0.6"
+#chanceinc "personalmagic death 0.5"
+#chanceinc "personalmagic nature 0.5"
 #chanceinc "personalmagic glamour 0.6"
 #chanceinc "unittag not mage *0"
 -- If others are spellsingers in the nation, drastically increase chances

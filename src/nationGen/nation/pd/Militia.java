@@ -13,7 +13,7 @@ import com.elmokki.Generic;
 
 import nationGen.Settings;
 import nationGen.Settings.SettingsType;
-import nationGen.misc.Command;
+import nationGen.misc.CommandFactory;
 import nationGen.misc.Tags;
 import nationGen.nation.Nation;
 import nationGen.units.LeadershipType;
@@ -632,11 +632,11 @@ public class Militia {
       selectedCommander = commanderCandidates.getFirst();
 
       if (needsUndeadLeadership) {
-        selectedCommander.addCommands(Command.args("#undcommand", "40"));
+        selectedCommander.addCommands(CommandFactory.create("#undcommand", "40"));
       }
 
       if (needsMagicLeadership) {
-        selectedCommander.addCommands(Command.args("#magiccommand", "40"));
+        selectedCommander.addCommands(CommandFactory.create("#magiccommand", "40"));
       }
     }
     

@@ -12,6 +12,7 @@ import nationGen.entities.Race;
 import nationGen.misc.Args;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
+import nationGen.misc.CommandFactory;
 import nationGen.naming.NamePart;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
@@ -99,8 +100,8 @@ public class SpecialCommanderGenerator {
         ) hasleader = true;
 
         if (!hasleader) {
-          if (r.nextBoolean()) u.addCommands(new Command("#noleader"));
-          else u.addCommands(new Command("#poorleader"));
+          if (r.nextBoolean()) u.addCommands(CommandFactory.create("#noleader"));
+          else u.addCommands(CommandFactory.create("#poorleader"));
         }
 
         // cap only
@@ -112,7 +113,7 @@ public class SpecialCommanderGenerator {
         if (f.tags.containsName("troop")) {
           n.unitlists.computeIfAbsent("special", k -> new ArrayList<>()).add(u);
         } else {
-          u.addCommands(Command.args("#gcost", "+30"));
+          u.addCommands(CommandFactory.create("#gcost", "+30"));
           n.comlists
             .computeIfAbsent("specialcoms", k -> new ArrayList<>())
             .add(u);

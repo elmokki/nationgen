@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.stream.Collectors;
 import nationGen.NationGen;
 import nationGen.NationGenAssets;
-import nationGen.misc.Command;
+import nationGen.misc.CommandFactory;
 import nationGen.misc.FileUtil;
 import nationGen.nation.Nation;
 import nationGen.units.Unit;
@@ -57,7 +57,7 @@ public class HeroNamer extends Namer {
           .collect(Collectors.joining());
       } while (!validateName(str));
 
-      u.addCommands(Command.args("#fixedname", capitalizeFirst(str)));
+      u.addCommands(CommandFactory.create("#fixedname", capitalizeFirst(str)));
     }
   }
 

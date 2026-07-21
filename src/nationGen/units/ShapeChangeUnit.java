@@ -13,6 +13,7 @@ import nationGen.entities.Pose;
 import nationGen.entities.Race;
 import nationGen.misc.Arg;
 import nationGen.misc.Command;
+import nationGen.misc.CommandFactory;
 import nationGen.misc.FileUtil;
 import nationGen.naming.Name;
 import nationGen.naming.NamePart;
@@ -99,8 +100,8 @@ public class ShapeChangeUnit extends Unit {
       }
 
       if (!maxagefound) {
-        sf.addCommands(new Command("#maxage", new Arg(50)));
-        otherForm.addCommands(new Command("#maxage", new Arg(50)));
+        sf.addCommands(CommandFactory.create("#maxage", new Arg(50)));
+        otherForm.addCommands(CommandFactory.create("#maxage", new Arg(50)));
       }
 
       // Inherit from race/pose
@@ -115,7 +116,6 @@ public class ShapeChangeUnit extends Unit {
       for (Command c : clist) {
         if (assets.isRacePoseCommandInheritableByShape(c)) {
           sf.addCommands(c);
-          //handleCommand(commands, c);
         }
       }
 
@@ -135,7 +135,6 @@ public class ShapeChangeUnit extends Unit {
             !thisForm.tags.containsName("mount")
           ) {
             sf.addCommands(c);
-            //handleCommand(commands, c);
           }
 
           if (
@@ -143,7 +142,6 @@ public class ShapeChangeUnit extends Unit {
             thisForm.tags.containsName("mount")
           ) {
             sf.addCommands(c);
-            //handleCommand(commands, c);
           }
         }
       }
@@ -232,11 +230,11 @@ public class ShapeChangeUnit extends Unit {
 
     lines.add("#newmonster " + id);
 
-    List<Command> commands = getAllHandledCommands();
+    List<Command> handledCommands = getAllHandledCommands();
     boolean hasItemSlots = false;
 
     // Own non-gcost commands first due to #copystats
-    for (Command c : commands) {
+    for (Command c : handledCommands) {
       if (c.command.equals("#gcost")) {
         continue;
       }

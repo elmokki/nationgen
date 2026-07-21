@@ -32,7 +32,7 @@ public class TagsTest {
 
   @Test
   public void testContainsCommand() {
-    Command command = Command.args(
+    Command command = CommandFactory.create(
       "tagWithMultipleArgs",
       "one",
       "two",

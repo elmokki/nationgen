@@ -130,8 +130,19 @@ public enum ChanceIncConditionType {
       boolean not = args.nextOptionalFlag("not");
       String name = args.nextString();
 
-      return d ->
-        d.n.spells.stream().anyMatch(s -> s.name.equalsIgnoreCase(name)) != not;
+      return d -> {
+        boolean alreadyHasSpells = d.n.spells.stream().anyMatch(s -> {
+          if (s.name.equalsIgnoreCase(name)) {
+            return true;
+          }
+
+          else {
+            return false;
+          }
+        });
+
+        return alreadyHasSpells != not;
+      };
     }
   },
 

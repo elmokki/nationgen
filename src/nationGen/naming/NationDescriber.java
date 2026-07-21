@@ -12,6 +12,7 @@ import nationGen.entities.Filter;
 import nationGen.misc.Arg;
 import nationGen.misc.ChanceIncHandler;
 import nationGen.misc.Command;
+import nationGen.misc.CommandFactory;
 import nationGen.nation.Nation;
 import nationGen.units.ShapeChangeUnit;
 import nationGen.units.Unit;
@@ -353,7 +354,7 @@ public class NationDescriber {
     }
 
     else {
-      u.addCommands(Command.args("#descr", description));
+      u.addCommands(CommandFactory.create("#descr", description));
     }
   }
 
@@ -382,7 +383,7 @@ public class NationDescriber {
       );
 
       description = dr.replace(description).trim();
-      su.addCommands(new Command("#descr", new Arg(description)));
+      su.addCommands(CommandFactory.create("#descr", new Arg(description)));
     }
   }
 
