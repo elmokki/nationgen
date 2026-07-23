@@ -209,6 +209,14 @@ public class Item extends Drawable {
     }
   }
 
+  public int getHandsRequiredToUse() {
+    boolean isIntrinsic = this.getBooleanFromDb(ItemProperty.INTRINSIC.toDBColumn());
+    boolean isRanged = this.getIntegerFromDb(ItemProperty.RANGE.toDBColumn(), 0) != 0;
+    boolean isTwoHanded = this.getBooleanFromDb(ItemProperty.IS_2H.toDBColumn());
+    int handsNeeded = isIntrinsic || isRanged ? 0 : !isTwoHanded ? 1 : 2;
+    return handsNeeded;
+  }
+
   public Boolean isSameDominionsEquipment(Integer dominionsId) {
     return this.isDominionsEquipment() && this.hasSameDominionsId(dominionsId);
   }

@@ -123,7 +123,7 @@ public class CustomItemsHandler {
 
     chosenCustomItems.add(customItem);
 
-    if (!customItem.isArmor()) {
+    if (customItem.isArmor()) {
       armordb.addToMap(customItem.dominionsId.getNationGenId(), customItem.getHashMap());
     } else {
       weapondb.addToMap(customItem.dominionsId.getNationGenId(), customItem.getHashMap());

@@ -855,13 +855,7 @@ public class Unit {
 
     int handsForEquipment = Stream.of(equippedWeapons, equippedShields)
       .flatMap(s -> s)
-      .mapToInt(i -> {
-        boolean isIntrinsic = i.getBooleanFromDb(ItemProperty.INTRINSIC.toDBColumn());
-        boolean isRanged = i.getIntegerFromDb(ItemProperty.RANGE.toDBColumn(), 0) != 0;
-        boolean isTwoHanded = i.getBooleanFromDb(ItemProperty.IS_2H.toDBColumn());
-        int handsNeeded = isIntrinsic || isRanged ? 0 : !isTwoHanded ? 1 : 2;
-        return handsNeeded;
-      })
+      .mapToInt(Item::getHandsRequiredToUse)
       .sum();
 
     // Get hands needed for weapons that were added directly through templates, like
