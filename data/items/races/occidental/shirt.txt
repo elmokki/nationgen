@@ -1,0 +1,42 @@
+--- Nekkid
+
+#newitem
+#id "nekkid"
+#gameid -1
+#armor
+#theme "primitive"
+#theme "naked"
+#type flying
+#needs pants loincloth
+#enditem
+
+#newitem
+#id "cuirass"
+#gameid -1
+#armor
+#sprite /graphics/occidental/armor/cuirass_leather.png
+#recolormask /graphics/occidental/armor/cuirass_leather_recolormask.png
+#basechance 0
+#type flying
+#needs pants nekkid
+#enditem
+
+#newitem
+#id "hauberk"
+#gameid -1
+#armor
+#sprite /graphics/occidental/armor/hauberk_leather_1h.png
+#recolormask /graphics/occidental/armor/hauberk_leather_1h_recolormask.png
+#basechance 0
+#needs pants loincloth
+#enditem
+
+#newitem
+#id "full_leather"
+#gameid -1
+#armor
+#sprite /graphics/occidental/armor/full_leather_1h.png
+#recolormask /graphics/occidental/armor/full_leather_1h_recolormask.png
+#basechance 0
+#needs pants loincloth
+#enditem

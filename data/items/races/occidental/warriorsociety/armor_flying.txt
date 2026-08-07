@@ -1,0 +1,91 @@
+--- Nekkid
+
+#newitem
+#id "furs"
+#gameid 44
+#armor
+#theme "primitive"
+#theme "naked"
+#needs shirt nekkid
+#enditem
+
+--- Leather
+
+#newitem
+#id "leathercuirass"
+#basechance 2
+#gameid 5
+#needs shirt cuirass
+#armor
+#theme "primitive"
+#enditem
+
+
+--- Bronze 
+
+#newitem
+#id "bronzescalecuirass"
+#gameid 142
+#sprite /graphics/occidental/armor/cuirass_bronze.png
+#armor
+#needs shirt cuirass
+#theme "bronze"
+#enditem
+
+
+--- Iron
+
+#newitem
+#basechance 0.5
+#id "scale cuirass"
+#gameid 7
+#sprite /graphics/occidental/armor/cuirass_iron.png
+#armor
+#needs shirt cuirass
+#theme "iron"
+#theme "advanced"
+#enditem
+
+
+-- Bone
+
+#newitem
+#basechance 0.5
+#id "bone_cuirass"
+#gameid 149
+#sprite /graphics/occidental/armor/cuirass_bone.png
+#armor
+#needs shirt cuirass
+#theme "bone"
+#theme "primitive"
+#theme "elite"
+#enditem
+
+
+
+-- Gold
+
+#newitem
+#basechance 0.5
+#id "zotz_goldcuirass"
+#gameid zotz_goldcuirass
+#sprite /graphics/occidental/armor/cuirass_gold.png
+#armor
+#needs shirt cuirass
+#theme "gold"
+#theme "elite"
+#enditem
+
+
+-- Obsidian
+
+#newitem
+#basechance 0.5
+#id "obsidian_cuirass"
+#gameid 206
+#sprite /graphics/occidental/armor/cuirass_obsidian.png
+#armor
+#needs shirt cuirass
+#theme "obsidian"
+#theme "elite"
+#enditem

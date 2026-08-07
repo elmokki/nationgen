@@ -21,6 +21,7 @@
 #id mace
 #gameid 12
 #sprite /graphics/muuch/offhands/mace.png
+#offsetx 1
 #enditem
 
 #newitem
@@ -34,6 +35,17 @@
 #gameid 451
 #sprite /graphics/muuch/offhands/clubsword_1h.png
 #theme "obsidian"
+#offsetx 1
+#enditem
+
+#newitem
+#id "net"
+#gameid 263
+#sprite /graphics/weapon/standard/net.png
+#tag "maxprot 12"
+#tag "tierunique"
+#basechance 1.5
+#chanceinc unittag irregular 1.5
 #enditem
 
 #newitem
@@ -53,4 +65,12 @@
 #sprite /graphics/muuch/offhands/obsidian_blade.png
 #theme "elite"
 #theme "obsidian"
+#enditem
+
+#newitem
+#id sacred_cestus_oh
+#gameid cestus
+#theme "sacred"
+#basechance 0.005
+#tag "guaranteedmagic"
 #enditem

@@ -1,0 +1,46 @@
+--Warrior Societies
+
+#newitem
+#id "sun"
+#gameid -1
+#define "#attack +1"
+#define "#fireres +5"
+#define "#gcost +1"
+#description "Initiated into the mysteries of the Sun, these warriors have increased skill and resistance to fire."
+#theme "sun"
+#theme "fire"
+#enditem
+
+#newitem
+#id "moon"
+#gameid -1
+#define "#darkvision +50"
+#define "#mr +2"
+#define "#gcost +1"
+#description "Initiated into the mysteries of the Moon, these warriors have increased nightvision and resistance to magic."
+#theme "moon"
+#theme "obsidian"
+#enditem
+
+#newitem
+#id "forest"
+#gameid -1
+#define "#ap +4"
+#define "#mapmove +2"
+#define "#poisonres +5"
+#define "#gcost +1"
+#description "Initiated into the mysteries of the Forest, these warriors have increased movement speed and resistance to poison."
+#theme "forest"
+#theme "poison"
+#enditem
+
+#newitem
+#id "rain"
+#gameid -1
+#define "#def +2"
+#define "#swimming"
+#define "#gcost +1"
+#description "Initiated into the mysteries of the Rain, these warriors have increased defense and the ability to swim."
+#theme "rain"
+#theme "water"
+#enditem

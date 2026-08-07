@@ -1,0 +1,225 @@
+--- Nekkid
+
+#newitem
+#id "condor_hood"
+#gameid 121
+#armor
+#sprite /graphics/occidental/helmet/hood_condor.png
+#needs armor furs
+#needs underlay condor
+#needs overlay condor
+#define "#secondshape condor"
+#define "#gcost +7"
+#description "This warrior wears the feathers and head of a sacred condor; when blessed, he can fly, and when his blood mingles with the feathers, he will merge with it to become a great were-condor."
+#theme "condor"
+#theme "waste"
+#enditem
+
+#newitem
+#id "draconian_hood"
+#gameid 121
+#armor
+#sprite /graphics/occidental/helmet/hood_draconian.png
+#needs armor furs
+#needs underlay draconian
+#needs overlay draconian
+#define "#secondshape draconian"
+#define "#gcost +8"
+#description "This warrior wears the wings and head of a sacred draconian; when blessed, he can fly, and when his blood mingles with the wings, he will merge with it to become a great were-draconian."
+#theme "draconian"
+#theme "dragon"
+#theme "dragontotem"
+#theme "waste"
+#enditem
+
+#newitem
+#id "eagle_hood"
+#gameid 121
+#armor
+#sprite /graphics/occidental/helmet/hood_eagle.png
+#needs armor furs
+#needs underlay eagle
+#needs overlay eagle
+#define "#secondshape eagle"
+#define "#gcost +6"
+#description "This warrior wears the feathers and head of a sacred eagle; when blessed, he can fly, and when his blood mingles with the feathers, he will merge with it to become a great eagle."
+#theme "eagle"
+#theme "forest"
+#enditem
+
+#newitem
+#id "parrot_hood"
+#gameid 121
+#armor
+#sprite /graphics/occidental/helmet/hood_parrot.png
+#needs armor furs
+#needs underlay parrot
+#needs overlay parrot
+#define "#secondshape wereparrot"
+#define "#gcost +6"
+#description "This warrior wears the feathers and head of a sacred parrot; when blessed, he can fly, and when his blood mingles with the feathers, he will merge with it to become a great were-parrot."
+#theme "parrot"
+#theme "jungle"
+#enditem
+
+#newitem
+#id "raven_hood"
+#gameid 121
+#armor
+#sprite /graphics/occidental/helmet/hood_raven.png
+#needs armor furs
+#needs underlay raven
+#needs overlay raven
+#define "#secondshape raven"
+#define "#gcost +7"
+#description "This warrior wears the feathers and head of a sacred raven; when blessed, he can fly, and when his blood mingles with the feathers, he will merge with it to become a great were-raven."
+#theme "raven"
+#theme "night"
+#enditem
+
+#newitem
+#id "bat_hood"
+#gameid 121
+#armor
+#sprite /graphics/occidental/helmet/hood_bat.png
+#needs armor furs
+#needs underlay bat
+#needs overlay bat
+#define "#secondshape bat"
+#define "#gcost +6"
+#description "This warrior wears the furs and head of a sacred bat; when blessed, he can fly, and when his blood mingles with the furs, he will merge with it to become a great were-bat."
+#theme "bat"
+#theme "night"
+#enditem
+
+#newitem
+#id "swan_hood"
+#gameid 121
+#armor
+#sprite /graphics/occidental/helmet/hood_swan.png
+#needs armor furs
+#needs underlay swan
+#needs overlay swan
+#define "#secondshape swan"
+#define "#gcost +5"
+#description "This warrior wears the feathers and head of a sacred swan; when blessed, he can fly, and when his blood mingles with the feathers, he will merge with it to become a great giant swan."
+#theme "swan"
+#theme "coast"
+#enditem
+
+--- Caps
+
+#newitem
+#id "condor"
+#gameid 119
+#armor
+#sprite /graphics/occidental/helmet/cap_condor.png
+#needs underlay condor
+#needs overlay condor
+#description "This sacred warrior wears the feathers of a majestic condor, gaining a measure of its endurance and the ability to fly when blessed, though it does not last long enough to fly between provinces."
+#define "#enc -1"
+#define "#hp +2"
+#define "#diseaseres 5"
+#define "#gcost +3"
+#noshapeshift
+#theme "condor"
+#theme "waste"
+#enditem
+
+#newitem
+#id "draconian"
+#gameid 119
+#armor
+#sprite /graphics/occidental/helmet/cap_draconian.png
+#needs underlay draconian
+#needs overlay draconian
+#description "This sacred warrior wears the wings of a majestic draconian, gaining a measure of its bloodline and the ability to fly when blessed, though it does not last long enough to fly between provinces."
+#define "#prot +2"
+#define "#hp +3"
+#define "#poisonres +5"
+#define "#gcost +4"
+#noshapeshift
+#theme "draconian"
+#theme "dragon"
+#theme "dragontotem"
+#theme "waste"
+#enditem
+
+#newitem
+#id "eagle"
+#gameid 119
+#armor
+#sprite /graphics/occidental/helmet/cap_eagle.png
+#needs underlay eagle
+#needs overlay eagle
+#description "This sacred warrior wears the feathers of a majestic eagle, gaining a measure of its ability to navigate storms and the ability to fly when blessed, though it does not last long enough to fly between provinces."
+#define "#stormimmune"
+#define "#gcost +3"
+#noshapeshift
+#theme "eagle"
+#theme "forest"
+#enditem
+
+#newitem
+#id "parrot"
+#gameid 119
+#armor
+#sprite /graphics/occidental/helmet/cap_parrot.png
+#needs underlay parrot
+#needs overlay parrot
+#description "This sacred warrior wears the feathers of a majestic parrot, gaining a measure of its agility and the ability to fly when blessed, though it does not last long enough to fly between provinces."
+#define "#def +2"
+#define "#gcost +2"
+#noshapeshift
+#theme "parrot"
+#theme "jungle"
+#enditem
+
+#newitem
+#id "raven"
+#gameid 119
+#armor
+#sprite /graphics/occidental/helmet/cap_raven.png
+#needs underlay raven
+#needs overlay raven
+#description "This sacred warrior wears the feathers of a majestic raven, gaining the ability to eat carrion and the ability to fly when blessed, though it does not last long enough to fly between provinces."
+#define "#darkvision +50"
+#define "#corpseeater 2"
+#define "#deadhp 1"
+#define "#maxdeadhp 6"
+#define "#gcost +4"
+#noshapeshift
+#theme "raven"
+#theme "night"
+#enditem
+
+#newitem
+#id "bat"
+#gameid 119
+#armor
+#sprite /graphics/occidental/helmet/cap_bat.png
+#needs underlay bat
+#needs overlay bat
+#description "This sacred warrior wears the feathers of a fearsome bat, gaining the ability to see and hide in the dark and the ability to fly when blessed, though it does not last long enough to fly between provinces."
+#define "#blind"
+#define "#stealthy +0"
+#define "#gcost +4"
+#noshapeshift
+#theme "bat"
+#theme "night"
+#enditem
+
+#newitem
+#id "swan"
+#gameid 119
+#armor
+#sprite /graphics/occidental/helmet/cap_swan.png
+#needs underlay swan
+#needs overlay swan
+#description "This sacred warrior wears the feathers of a majestic swan, gaining a measure of its grace and the ability to fly when blessed, though it does not last long enough to fly between provinces."
+#define "#mr +2"
+#define "#gcost +3"
+#noshapeshift
+#theme "swan"
+#theme "coast"
+#enditem

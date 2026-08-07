@@ -1,0 +1,207 @@
+--- Nekkid
+
+#newitem
+#id "nekkid"
+#gameid 44
+#armor
+#theme "primitive"
+#theme "naked"
+#enditem
+
+#newitem
+#id "shell_armor"
+#gameid 140
+#armor
+#basechance 0
+#enditem
+
+#newitem
+#basechance 0
+#id "shell_hauberk"
+#gameid bone_hauberk
+#armor
+#theme "bone"
+#enditem
+
+#newitem
+#id "bone_armor"
+#gameid bone_full
+#armor
+#theme "bone"
+#theme "advanced"
+#basechance 0
+#enditem
+
+--- Leather
+
+
+#newitem
+#id "leatherhauberk"
+#basechance 1
+#gameid 10
+#armor
+#theme "primitive"
+#enditem
+
+
+#newitem -- reinforced full leather (Mictlan armor)
+#id "full leather"
+#gameid 15
+#armor
+#theme "primitive"
+#enditem
+
+--- Bronze 
+
+#newitem
+#id "bronzescalecuirass"
+#gameid 142
+#sprite /graphics/occidental/armor/cuirass_bronze.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#id "bronzescalehauberk"
+#gameid 136
+#sprite /graphics/occidental/armor/hauberk_bronze.png
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#basechance 0.5
+#id "bronzehauberk"
+#gameid 101
+#sprite /graphics/occidental/armor/full_bronze.png
+#armor
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+
+--- Iron
+
+#newitem
+#basechance 0.5
+#id "scale cuirass"
+#gameid 7
+#sprite /graphics/occidental/armor/cuirass_iron.png
+#armor
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#basechance 0.5
+#id "scale hauberk"
+#gameid 12
+#sprite /graphics/occidental/armor/hauberk_iron.png
+#armor
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#basechance 0.25
+#id "plate hauberk"
+#gameid 14
+#sprite /graphics/occidental/armor/full_iron.png
+#armor
+#theme "iron"
+#theme "advanced"
+#enditem
+
+
+-- Bone
+
+#newitem
+#basechance 0.5
+#id "bone_cuirass"
+#gameid 149
+#sprite /graphics/occidental/armor/cuirass_bone.png
+#armor
+#theme "bone"
+#theme "primitive"
+#enditem
+
+#newitem
+#basechance 0.5
+#id "bone_hauberk"
+#gameid bone_hauberk
+#sprite /graphics/occidental/armor/hauberk_bone.png
+#armor
+#theme "bone"
+#enditem
+
+#newitem
+#basechance 0.25
+#id "bone_full"
+#gameid bone_full
+#sprite /graphics/occidental/armor/full_bone.png
+#armor
+#theme "bone"
+#theme "advanced"
+#enditem
+
+
+-- Gold
+
+#newitem
+#basechance 0.5
+#id "zotz_goldcuirass"
+#gameid zotz_goldcuirass
+#sprite /graphics/occidental/armor/cuirass_gold.png
+#armor
+#theme "gold"
+#enditem
+
+#newitem
+#basechance 0.5
+#id "occidental scale hauberk"
+#gameid 106
+#sprite /graphics/occidental/armor/hauberk_gold.png
+#armor
+#theme "primitive"
+#enditem
+
+#newitem
+#basechance 0.25
+#id "zotz_goldarmor"
+#gameid zotz_goldarmor
+#sprite /graphics/occidental/armor/full_gold.png
+#armor
+#theme "gold"
+#theme "advanced"
+#enditem
+
+
+-- Obsidian
+
+#newitem
+#basechance 0.5
+#id "obsidian_cuirass"
+#gameid 206
+#sprite /graphics/occidental/armor/cuirass_obsidian.png
+#armor
+#theme "obsidian"
+#enditem
+
+#newitem
+#basechance 0.5
+#id "reinforced_leather"
+#gameid zotz_mictlanarmor
+#sprite /graphics/occidental/armor/hauberk_obsidian.png
+#armor
+#theme "primitive"
+#enditem
+
+#newitem
+#basechance 0.25
+#id "zotz_obsarmor"
+#gameid zotz_obsarmor
+#sprite /graphics/occidental/armor/full_bone.png
+#armor
+#theme "obsidian"
+#theme "advanced"
+#enditem

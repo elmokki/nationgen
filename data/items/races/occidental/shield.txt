@@ -1,0 +1,64 @@
+#newitem
+#id hideshield
+#gameid 105
+#sprite /graphics/occidental/offhand/shield1.png
+#recolormask /graphics/occidental/offhand/shield1_recolormask.png
+#offsety 3
+#armor
+#theme "primitive"
+#basechance 3
+#enditem
+
+#newitem
+#id hideshield_austral
+#gameid 105
+#sprite /graphics/occidental/offhand/shield2.png
+#recolormask /graphics/occidental/offhand/shield2_recolormask.png
+#offsety 3
+#armor
+#theme "primitive"
+#basechance 3
+#enditem
+
+#newitem
+#id hideshield_occidental
+#gameid 105
+#sprite /graphics/occidental/offhand/shield3b.png
+#recolormask /graphics/occidental/offhand/shield3b_recolormask.png
+#offsety 3
+#armor
+#theme "primitive"
+#basechance 3
+#enditem
+
+#newitem
+#id hideshield_tinted
+#gameid 105
+#sprite /graphics/occidental/offhand/shield4.png
+#recolormask /graphics/occidental/offhand/shield4_recolormask.png
+#offsety 3
+#armor
+#theme "primitive"
+#basechance 3
+#enditem
+
+#newitem
+#id metalshield
+#gameid 209
+#sprite /graphics/muuch/offhands/bronzeshield.png
+#tag "eliteversion metalshield_tinted"
+#armor
+#theme "bronze"
+#basechance 1.5
+#enditem
+
+#newitem
+#id metalshield_tinted
+#gameid 209
+#sprite /graphics/muuch/offhands/bronzeshield.png
+#recolormask /graphics/muuch/offhands/shield_recolormask.png
+#armor
+#theme "bronze"
+#theme "elite"
+#basechance 1.5
+#enditem

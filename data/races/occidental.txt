@@ -1,0 +1,50 @@
+#newrace
+#id "Occidental"
+#basechance 0.2
+
+#chanceinc era 1 *2
+#chanceinc era 3 *0.5
+
+#racethemes occidental_themes
+#freetheme demographic
+#freetheme techlevel
+
+-- 10% H1/27% H2/63% H3 max priest level
+#priest_H1_upgradechance 0.9
+#priest_H2_upgradechance 0.7
+#magepriestchance 0.8
+
+#longsyllables /data/names/nations/nahuatl/longsyllables.txt
+#shortsyllables /data/names/nations/nahuatl/shortsyllables.txt
+#suffixes /data/names/nations/nahuatl/suffixes.txt
+
+#unitcommand "gcost 9"
+#unitcommand "forestsurvival"
+
+#pose occidentalmages
+#pose warriorsociety
+#pose occidentalinfantry
+
+#nationcommand "#idealcold -1"
+
+#gods western_gods
+#additionalgods gods_without_realm
+#forts default_forts
+#forts city_forts
+
+#bonussacreds 2
+#innate_sacred_power 2
+#theme occidental
+#occidental
+#slaver
+#secondaryracedefinition "#freetemplatefilter slavetemplate slave"
+#secondaryracetroopmod 100
+#secondaryracemagemod -100
+#secondaryracesacredmod 0.1
+#extrapdmulti 6
+
+#specialcommanderfilters default_specialcommanderfilters
+#specialcommanderfilters specialcommanderfilters_extended
+
+
+#endrace

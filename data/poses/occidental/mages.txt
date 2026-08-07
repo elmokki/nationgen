@@ -1,0 +1,30 @@
+------- mage/priest
+#newpose
+#id "occidental mages"
+#role "mage"
+#role "priest"
+
+#tier 1
+#tier 2
+#tier 3
+
+#basechance 5000000.5
+
+#renderorder "shadow cloakb mount basesprite shirt legs bonusweapon quiver armor cloakf weapon offhandw hands helmet offhanda overlay"
+
+#load basesprite /data/items/races/occidental/caster/bases.txt
+#load shadow /data/items/races/occidental/shadow.txt
+#load legs /data/items/races/occidental/caster/legs.txt
+#load hands /data/items/races/occidental/hands.txt
+
+#load cloakf /data/items/races/occidental/caster/cloakf.txt
+#load cloakb /data/items/races/occidental/caster/cloakb.txt
+
+#load armor /data/items/races/occidental/caster/robes.txt
+#load helmet /data/items/races/occidental/caster/helmet.txt
+
+#load weapon /data/items/races/occidental/caster/weapon.txt
+
+
+--#load offhand /data/items/races/occidental/caster/offhands.txt 0 9
+#endpose

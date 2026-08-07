@@ -1,0 +1,236 @@
+--- Nekkid
+
+#newitem
+#id "nekkid"
+#gameid -1
+#armor
+#theme "primitive"
+#theme "naked"
+#needs shirt nekkid
+#enditem
+
+#newitem
+#id "furs"
+#gameid 44
+#armor
+#theme "primitive"
+#theme "naked"
+#needs shirt nekkid
+#basechance 0
+#type flying
+#enditem
+
+--- Leather
+
+#newitem
+#id "leathercuirass"
+#basechance 2
+#gameid 5
+#needs shirt cuirass
+#armor
+#type flying
+#theme "primitive"
+#enditem
+
+#newitem
+#id "leatherhauberk"
+#basechance 1
+#gameid 10
+#needs shirt hauberk
+#armor
+#theme "primitive"
+#enditem
+
+
+#newitem -- reinforced full leather (Mictlan armor)
+#id "full leather"
+#gameid 15
+#needs shirt full_leather
+#armor
+#theme "primitive"
+#enditem
+
+--- Bronze 
+
+#newitem
+#id "bronzescalecuirass"
+#gameid 142
+#sprite /graphics/occidental/armor/cuirass_bronze.png
+#armor
+#type flying
+#needs shirt cuirass
+#theme "bronze"
+#enditem
+
+#newitem
+#id "bronzescalehauberk"
+#gameid 136
+#sprite /graphics/occidental/armor/hauberk_bronze.png
+#needs shirt hauberk
+#armor
+#theme "bronze"
+#enditem
+
+#newitem
+#basechance 0.5
+#id "bronzehauberk"
+#gameid 101
+#sprite /graphics/occidental/armor/full_bronze.png
+#needs shirt full_leather
+#armor
+#theme "bronze"
+#theme "advanced"
+#enditem
+
+
+--- Iron
+
+#newitem
+#basechance 0.5
+#id "scale cuirass"
+#gameid 7
+#sprite /graphics/occidental/armor/cuirass_iron.png
+#armor
+#type flying
+#needs shirt cuirass
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#basechance 0.5
+#id "scale hauberk"
+#gameid 12
+#sprite /graphics/occidental/armor/hauberk_iron.png
+#needs shirt hauberk
+#armor
+#theme "iron"
+#theme "advanced"
+#enditem
+
+#newitem
+#basechance 0.25
+#id "plate hauberk"
+#gameid 14
+#sprite /graphics/occidental/armor/full_iron.png
+#needs shirt full_leather
+#armor
+#theme "iron"
+#theme "advanced"
+#theme "elite"
+#enditem
+
+
+-- Bone
+
+#newitem
+#basechance 0.5
+#id "bone_cuirass"
+#gameid 149
+#sprite /graphics/occidental/armor/cuirass_bone.png
+#armor
+#needs shirt cuirass
+#theme "bone"
+#theme "primitive"
+#theme "elite"
+#type flying
+#enditem
+
+#newitem
+#basechance 0.5
+#id "bone_hauberk"
+#gameid bone_hauberk
+#sprite /graphics/occidental/armor/hauberk_bone.png
+#needs shirt hauberk
+#armor
+#theme "bone"
+#theme "elite"
+#enditem
+
+#newitem
+#basechance 0.25
+#id "bone_full"
+#gameid bone_full
+#sprite /graphics/occidental/armor/full_bone.png
+#needs shirt full_leather
+#armor
+#theme "bone"
+#theme "advanced"
+#theme "elite"
+#enditem
+
+
+-- Gold
+
+#newitem
+#basechance 0.5
+#id "zotz_goldcuirass"
+#gameid zotz_goldcuirass
+#sprite /graphics/occidental/armor/cuirass_gold.png
+#armor
+#needs shirt cuirass
+#type flying
+#theme "gold"
+#theme "elite"
+#enditem
+
+#newitem
+#basechance 0.5
+#id "occidental scale hauberk"
+#gameid 106
+#sprite /graphics/occidental/armor/hauberk_gold.png
+#needs shirt hauberk
+#armor
+#theme "primitive"
+#theme "elite"
+#enditem
+
+#newitem
+#basechance 0.25
+#id "zotz_goldarmor"
+#gameid zotz_goldarmor
+#sprite /graphics/occidental/armor/full_gold.png
+#needs shirt full_leather
+#armor
+#theme "gold"
+#theme "advanced"
+#theme "elite"
+#enditem
+
+
+-- Obsidian
+
+#newitem
+#basechance 0.5
+#id "obsidian_cuirass"
+#gameid 206
+#sprite /graphics/occidental/armor/cuirass_obsidian.png
+#armor
+#needs shirt cuirass
+#theme "obsidian"
+#theme "elite"
+#type flying
+#enditem
+
+#newitem
+#basechance 0.5
+#id "reinforced_leather"
+#gameid zotz_mictlanarmor
+#sprite /graphics/occidental/armor/hauberk_obsidian.png
+#needs shirt hauberk
+#armor
+#theme "primitive"
+#theme "elite"
+#enditem
+
+#newitem
+#basechance 0.25
+#id "zotz_obsarmor"
+#gameid zotz_obsarmor
+#sprite /graphics/occidental/armor/full_bone.png
+#needs shirt full_leather
+#armor
+#theme "obsidian"
+#theme "advanced"
+#theme "elite"
+#enditem

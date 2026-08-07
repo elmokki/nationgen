@@ -1,0 +1,488 @@
+--- Nekkid
+
+#newitem
+#id "aspturtlehood"
+#gameid 121
+#armor
+#sprite /graphics/occidental/helmet/hood_aspturtle.png
+#needs shirt aspturtle
+#needs armor shell_armor
+#define "#secondshape aspturtle"
+#define "#gcost +10"
+#description "This warrior wears the shell and head of a sacred Asp turtle; when his blood mingles with the shell, he will merge with it to become a fearsome were-turtle."
+#theme "aspturtle"
+#theme "coast"
+#enditem
+
+#newitem
+#id "bearhood"
+#gameid 121
+#armor
+#sprite /graphics/occidental/helmet/hood_bear.png
+#needs shirt bear
+#needs armor nekkid
+#define "#secondshape werebear"
+#define "#gcost +12"
+#description "This warrior wears the hide and head of a sacred bear; when his blood mingles with the hide, he will merge with it to become a fearsome were-bear."
+#theme "bear"
+#theme "beartotem"
+#theme "forest"
+#enditem
+
+#newitem
+#id "boarhood"
+#gameid 121
+#armor
+#sprite /graphics/occidental/helmet/hood_boar.png
+#needs shirt boar
+#needs armor nekkid
+#define "#secondshape greatboar"
+#define "#gcost +8"
+#description "This warrior wears the hide and head of a sacred boar; when his blood mingles with the hide, he will merge with it to become a fearsome boar."
+#theme "boar"
+#theme "boartotem"
+#theme "forest"
+#enditem
+
+#newitem
+#id "crocodilehood"
+#gameid 121
+#armor
+#sprite /graphics/occidental/helmet/hood_crocodile.png
+#needs shirt crocodile
+#needs armor nekkid
+#define "#secondshape werecrocodile"
+#define "#gcost +8"
+#description "This warrior wears the scales and head of a sacred crocodile; when his blood mingles with the scales, he will merge with it to become a fearsome were-crocodile."
+#theme "crocodile"
+#theme "jungle"
+#theme "coast"
+#enditem
+
+#newitem
+#id "deerhood"
+#gameid 121
+#armor
+#sprite /graphics/occidental/helmet/hood_deer.png
+#needs shirt deer
+#needs armor nekkid
+#define "#secondshape deer"
+#define "#gcost +6"
+#description "This warrior wears the hide and head of a sacred deer; when his blood mingles with the hide, he will merge with it to become a fearsome were-deer."
+#theme "deer"
+#theme "deertotem"
+#theme "forest"
+#theme "plains"
+#enditem
+
+#newitem
+#id "blackjaguarhood"
+#gameid 121
+#armor
+#sprite /graphics/occidental/helmet/hood_jaguar_black.png
+#needs shirt blackjaguar
+#needs armor nekkid
+#define "#secondshape blackjaguar"
+#define "#gcost +7"
+#description "This warrior wears the hide and head of a sacred black jaguar; when his blood mingles with the hide, he will merge with it to become a fearsome were-jaguar."
+#theme "jaguar"
+#theme "jaguartotem"
+#theme "night"
+#enditem
+
+#newitem
+#id "jaguarhood"
+#gameid 121
+#armor
+#sprite /graphics/occidental/helmet/hood_jaguar.png
+#needs shirt jaguar
+#needs armor nekkid
+#define "#secondshape jaguar"
+#define "#gcost +7"
+#description "This warrior wears the hide and head of a sacred jaguar; when his blood mingles with the hide, he will merge with it to become a fearsome were-jaguar."
+#theme "jaguar"
+#theme "jaguartotem"
+#theme "jungle"
+#enditem
+
+#newitem
+#id "lionhood"
+#gameid 121
+#armor
+#sprite /graphics/occidental/helmet/hood_lion.png
+#needs shirt lion
+#needs armor nekkid
+#define "#secondshape lion"
+#define "#gcost +7"
+#description "This warrior wears the hide and head of a sacred lion; when his blood mingles with the hide, he will merge with it to become a fearsome lion."
+#theme "lion"
+#theme "liontotem"
+#theme "plains"
+#theme "waste"
+#enditem
+
+#newitem
+#id "scorpionhood"
+#gameid 121
+#armor
+#sprite /graphics/occidental/helmet/hood_scorpion.png
+#needs shirt scorpion
+#needs armor shell_armor
+#define "#secondshape werescorpion"
+#define "#gcost +7"
+#description "This warrior wears the carapace and head of a sacred scorpion; when his blood mingles with the carapace, he will merge with it to become a fearsome were-scorpion."
+#theme "scorpion"
+#theme "scorpiontotem"
+#theme "waste"
+#enditem
+
+#newitem
+#id "shark_hood"
+#gameid 121
+#armor
+#sprite /graphics/occidental/helmet/hood_shark.png
+#needs shirt shark
+#needs armor nekkid
+#define "#secondshape shark"
+#define "#gcost +7"
+#description "This warrior wears the skin and head of a sacred shark; when his blood mingles with the skin, he will merge with it to become a fearsome were-shark."
+#theme "shark"
+#theme "sharktotem"
+#theme "coast"
+#enditem
+
+#newitem
+#id "toadhood"
+#gameid 121
+#armor
+#sprite /graphics/occidental/helmet/hood_toad.png
+#needs shirt toad
+#needs armor nekkid
+#define "#secondshape toad"
+#define "#gcost +6"
+#description "This warrior wears the skin and head of a sacred toad; when his blood mingles with the skin, he will merge with it to become a fearsome toad."
+#theme "toad"
+#theme "toadtotem"
+#theme "jungle"
+#enditem
+
+#newitem
+#id "turtlehood"
+#gameid 121
+#armor
+#sprite /graphics/occidental/helmet/hood_turtle.png
+#needs shirt turtle
+#needs armor shell_armor
+#define "#secondshape turtle"
+#define "#gcost +9"
+#description "This warrior wears the shell and head of a sacred turtle; when his blood mingles with the shell, he will merge with it to become a fearsome were-turtle."
+#theme "turtle"
+#theme "turtletotem"
+#theme "coast"
+#theme "waste"
+#enditem
+
+#newitem
+#id "wolfhood"
+#gameid 121
+#armor
+#sprite /graphics/occidental/helmet/hood_wolf.png
+#needs shirt wolf
+#needs armor nekkid
+#define "#secondshape werewolf"
+#define "#gcost +8"
+#description "This warrior wears the hide and head of a sacred wolf; when his blood mingles with the hide, he will merge with it to become a fearsome were-wolf."
+#theme "wolf"
+#theme "wolftotem"
+#theme "night"
+#enditem
+
+
+--Caps--
+
+#newitem
+#id "aspturtle"
+#gameid 122
+#armor
+#sprite /graphics/occidental/helmet/cap_aspturtle.png
+#needs shirt aspturtle
+#needs armor shell_hauberk
+#define "#prot +4"
+#define "#hp +2"
+#define "#ap -4"
+#define "#pooramphibian"
+#define "#gcost +3"
+#description "This warrior wears the carapace of a mighty asp turtle, gaining a measure of its toughness."
+#noshapeshift
+#theme "aspturtle"
+#theme "coast"
+#enditem
+
+#newitem
+#id "bear"
+#gameid 122
+#armor
+#sprite /graphics/occidental/helmet/cap_bear.png
+#needs shirt bear
+#define "#str +1"
+#define "#hp +2"
+#define "#heal"
+#define "#gcost +3"
+#description "This warrior wears the furs of a mighty bear, gaining a measure of its strength and resilience."
+#noshapeshift
+#theme "bear"
+#theme "beartotem"
+#theme "forest"
+#enditem
+
+#newitem
+#id "boar"
+#gameid 122
+#armor
+#sprite /graphics/occidental/helmet/cap_boar.png
+#needs shirt boar
+#define "#berserk +2"
+#define "#blessbers"
+#define "#gcost +3"
+#description "This warrior wears the furs of a mighty boar, gaining a measure of its rage."
+#noshapeshift
+#theme "boar"
+#theme "boartotem"
+#theme "forest"
+#enditem
+
+#newitem
+#id "crocodile"
+#gameid 122
+#armor
+#sprite /graphics/occidental/helmet/cap_crocodile.png
+#needs shirt crocodile
+#define "#hp +2"
+#define "#prot +1"
+#define "#swampsurvival"
+#define "#swimming"
+#define "#pooramphibian"
+#define "#stealthy +10"
+#define "#patience +2"
+#define "#gcost +3"
+#description "This warrior wears the scales of a mighty crocodile, gaining a measure of its toughness and adaptability."
+#noshapeshift
+#theme "crocodile"
+#theme "jungle"
+#theme "coast"
+#enditem
+
+#newitem
+#id "deer"
+#gameid 122
+#armor
+#sprite /graphics/occidental/helmet/cap_deer.png
+#needs shirt deer
+#define "#ap +4"
+#define "#mapmove +4"
+#define "#def +2"
+#define "#gcost +2"
+#description "This warrior wears the furs of a mighty deer, gaining a measure of its speed and agility."
+#noshapeshift
+#theme "deer"
+#theme "deertotem"
+#theme "forest"
+#theme "plains"
+#enditem
+
+#newitem
+#id "blackjaguar"
+#gameid 122
+#armor
+#sprite /graphics/occidental/helmet/cap_jaguar_black.png
+#needs shirt blackjaguar
+#define "#darkvision 100"
+#define "#darkpower +1"
+#define "#stealthy +10"
+#define "#gcost +2"
+#description "This warrior wears the furs of a mighty black jaguar, gaining a measure of its stealth and power in the dark."
+#noshapeshift
+#theme "jaguar"
+#theme "jaguartotem"
+#theme "night"
+#enditem
+
+#newitem
+#id "jaguar"
+#gameid 122
+#armor
+#sprite /graphics/occidental/helmet/cap_jaguar.png
+#needs shirt jaguar
+#define "#darkvision 50"
+#define "#attack +1"
+#define "#stealthy +10"
+#define "#gcost +2"
+#description "This warrior wears the furs of a mighty jaguar, gaining a measure of its skill and stealth."
+#noshapeshift
+#theme "jaguar"
+#theme "jaguartotem"
+#theme "jungle"
+#enditem
+
+#newitem
+#id "lion"
+#gameid 122
+#armor
+#sprite /graphics/occidental/helmet/cap_lion.png
+#needs shirt lion
+#define "#darkvision 50"
+#define "#attack +1"
+#define "#strength +1"
+#define "#gcost +2"
+#description "This warrior wears the furs of a mighty jaguar, gaining a measure of its skill and strength."
+#noshapeshift
+#theme "lion"
+#theme "liontotem"
+#theme "plains"
+#theme "waste"
+#enditem
+
+#newitem
+#id "scorpion"
+#gameid 122
+#armor
+#sprite /graphics/occidental/helmet/cap_scorpion.png
+#needs shirt scorpion
+#needs armor shell_hauberk
+#define "#darkvision 50"
+#define "#protection +2"
+#define "#poisonres +5"
+#define "#gcost +2"
+#description "This warrior wears the carapace of a mighty scorpion, gaining a measure of its toughness and resistance to poison."
+#noshapeshift
+#theme "scorpion"
+#theme "scorpiontotem"
+#theme "waste"
+#enditem
+
+#newitem
+#id "shark"
+#gameid 122
+#armor
+#sprite /graphics/occidental/helmet/cap_shark.png
+#needs shirt shark
+#define "#amphibian"
+#define "#berserk +1"
+#define "#bersbless"
+#define "#gcost +2"
+#description "This warrior wears the skin of a mighty shark, gaining a measure of its rage and its ability to slip beneath the waves"
+#noshapeshift
+#theme "shark"
+#theme "sharktotem"
+#theme "coast"
+#enditem
+
+#newitem
+#id "toad"
+#gameid 122
+#armor
+#sprite /graphics/occidental/helmet/cap_toad.png
+#needs shirt toad
+#define "#poisonres +10"
+#define "#poisonskin +20"
+#define "#gcost +3"
+#description "This warrior wears the skin of a mighty toad, gaining a measure of its poison."
+#noshapeshift
+#theme "toad"
+#theme "toadtotem"
+#theme "jungle"
+#enditem
+
+#newitem
+#id "turtle"
+#gameid 122
+#armor
+#sprite /graphics/occidental/helmet/cap_turtle.png
+#needs shirt turtle
+#needs armor shell_hauberk
+#define "#pooramphibian"
+#define "#prot +3"
+#define "#hp +2"
+#define "#ap -3"
+#define "#gcost +3"
+#description "This warrior wears the shell of a mighty turtle, gaining a measure of its toughness."
+#noshapeshift
+#theme "turtle"
+#theme "turtletotem"
+#theme "coast"
+#enditem
+
+#newitem
+#id "wolf"
+#gameid 122
+#armor
+#sprite /graphics/occidental/helmet/cap_wolf.png
+#needs shirt wolf
+#define "#darkvision 50"
+#define "#enc -1"
+#define "#stealthy +10"
+#define "#gcost +2"
+#description "This warrior wears the furs of a mighty wolf, gaining a measure of its resilience and stealth."
+#noshapeshift
+#theme "wolf"
+#theme "wolftotem"
+#theme "night"
+#enditem
+
+--helms
+
+#newitem
+#id "aspturtlehelm"
+#gameid 150
+#armor
+#sprite /graphics/occidental/helmet/helm_aspturtle.png
+#needs shirt aspturtle
+#needs armor bone_armor
+#define "#prot +3"
+#define "#hp +2"
+#define "#ap -3"
+#define "#pooramphibian"
+#define "#gcost +3"
+#description "This warrior wears the hardened carapace of a mighty asp turtle, gaining a measure of its toughness."
+#noshapeshift
+#theme "aspturtle"
+#theme "coast"
+#enditem
+
+#newitem
+#id "scorpionhelm"
+#gameid 150
+#armor
+#sprite /graphics/occidental/helmet/helm_scorpion.png
+#needs shirt scorpion
+#needs armor bone_armor
+#define "#darkvision 50"
+#define "#prot +1"
+#define "#poisonres +5"
+#define "#gcost +2"
+#description "This warrior wears the hardened carapace of a mighty scorpion, gaining a measure of its toughness and resistance to poison."
+#noshapeshift
+#theme "scorpion"
+#theme "scorpiontotem"
+#theme "waste"
+#enditem
+
+#newitem
+#id "turtlehelm"
+#gameid 150
+#armor
+#sprite /graphics/occidental/helmet/helm_turtle.png
+#needs shirt turtle
+#needs armor bone_armor
+#define "#pooramphibian"
+#define "#prot +2"
+#define "#hp +1"
+#define "#ap -2"
+#define "#gcost +2"
+#description "This warrior wears the hardened shell of a mighty turtle, gaining a measure of its toughness."
+#noshapeshift
+#theme "turtle"
+#theme "turtletotem"
+#theme "coast"
+#theme "waste"
+#enditem
