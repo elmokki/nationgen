@@ -1282,7 +1282,7 @@ public class Unit {
     return tags;
   }
 
-  public int getGoldCost(Boolean includeMountCost) {
+  public int getGoldCost(boolean includeMountCost) {
     List<Command> commands = this.getAllHandledCommands();
     Tags unitTags = Generic.getAllUnitTags(this);
     int copyStatsTarget = this.getCopyStats();
@@ -1320,10 +1320,10 @@ public class Unit {
     if (!this.polished) {
       totalCost *= sacredMultiplier;
       totalCost *= slowRecMultiplier;
+    }
 
-      if (includeMountCost == true) {
-        totalCost += this.getMountGoldCost();
-      }
+    if (includeMountCost == true) {
+      totalCost += this.getMountGoldCost();
     }
 
     // Unit is using #copystats, so figure out the target's cost to account for it
@@ -1352,6 +1352,14 @@ public class Unit {
     }
 
     return totalCost;
+  }
+
+  public static int roundGoldPerDominionsRules(int gcost) {
+    if (gcost > 30) {
+      gcost = Utils.roundInGroupsOf(gcost, 5);
+    }
+
+    return gcost;
   }
 
   public int getMountGoldCost() {
@@ -1776,11 +1784,8 @@ public class Unit {
     }
 
     /* Cost calculation */
-    int gcost = this.getGoldCost(true);
-
-    if (gcost > 30) {
-      gcost = Utils.roundInGroupsOf(gcost, 5);
-    }
+    int gcost = this.getGoldCost(false);
+    gcost = Unit.roundGoldPerDominionsRules(gcost);
 
     Command gcostCommand = CommandFactory.create(CommandType.GCOST.toString(), new Arg(gcost));
     handleCommand(polishedCommands, gcostCommand);
@@ -2150,7 +2155,10 @@ public class Unit {
       " (" +
       race.name +
       "), Gold (mount included): " +
-      getGoldCost(true) +
+      Unit.roundGoldPerDominionsRules(
+        getGoldCost(false) +
+        this.getMountGoldCost()
+      ) +
       ", Resources (mount included): " +
       getResCost(true, true) +
       ", Roles: " +
