@@ -362,7 +362,7 @@ public class SacredGenerator extends TroopGenerator {
         int powerCost = (enchantment != null) ? (int)enchantment.power : 1;
 
         power -= powerCost;
-        unit.setSlot("weapon", mainWeapon);
+        unit.setSlot("weapon", customWeapon.get());
       }
     }
 
@@ -376,7 +376,7 @@ public class SacredGenerator extends TroopGenerator {
         int powerCost = (enchantment != null) ? (int)enchantment.power : 1;
 
         power -= powerCost;
-        unit.setSlot("bonusweapon", bonusWeapon);
+        unit.setSlot("bonusweapon", customWeapon.get());
       }
     }
 
@@ -395,7 +395,7 @@ public class SacredGenerator extends TroopGenerator {
         int powerCost = (enchantment != null) ? (int)enchantment.power : 1;
 
         power -= powerCost;
-        unit.setSlot("offhand", offhandWeapon);
+        unit.setSlot("offhand", customWeapon.get());
       }
     }
   }
