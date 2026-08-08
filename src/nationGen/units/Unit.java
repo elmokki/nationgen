@@ -38,6 +38,7 @@ import nationGen.misc.FileUtil;
 import nationGen.misc.Operator;
 import nationGen.misc.Tags;
 import nationGen.misc.Utils;
+import nationGen.misc.commands.RpCostCommand;
 import nationGen.naming.Name;
 import nationGen.nation.Nation;
 
@@ -281,37 +282,6 @@ public class Unit {
         handleCommand(tempCommands, c);
       }
     }
-
-    // Handle resource cost autocalc - every unit's baseline resource cost is
-    // their gold cost x 1000. Any previously handled #rpcost commands will be
-    // used to modify this autocalc value.
-    tempCommands.stream()
-      .filter(c -> c.command.equals("#gcost"))
-      // Don't use pure modifier gcosts for rpcost autocalc (i.e. -40 gcost)
-      // TODO: These would come from things like ShapeChangeUnit or MountUnit
-      // instances that only end up with modifier gcosts to the main Unit.
-      // They should probably override this method.
-      .filter(c -> !c.hasCombinatoryArgs())
-      .findFirst()
-      .ifPresent(gcostCommand -> {
-        Optional<Command> rpcostCommand = tempCommands.stream()
-          .filter(c -> c.isOfType(CommandType.RPCOST))
-          .findFirst();
-
-        Command autocalcRpCost = CommandFactory.create(
-          CommandType.RPCOST.toString(),
-          String.valueOf(this.getAutocalcRps(gcostCommand))
-        );
-
-        if (rpcostCommand.isPresent()) {
-          Command combined = rpcostCommand.get().combine(autocalcRpCost);
-          handleCommand(tempCommands, combined);
-        }
-
-        else {
-          handleCommand(tempCommands, autocalcRpCost);
-        }
-      });
 
     // Percentual cost increases
     for (Command c : multiCommands) {
@@ -1231,11 +1201,12 @@ public class Unit {
 
     int meanGoldCost = (int) Math.round((double) goldSum / (double) unitCount);
     int meanResourceCost = (int) Math.round((double) resourceSum / (double) unitCount);
-    return new UnitCost(meanGoldCost, meanResourceCost, 0);
+    int meanRecPointCost = Unit.getAutocalcRecPoints(meanGoldCost);
+    return new UnitCost(meanGoldCost, meanResourceCost, meanRecPointCost);
   }
 
   public static List<Command> calculateMeanStatsOfUnits(List<Unit> units) {
-    List<String> stats = List.of("#hp", "#size", "#prot", "#mr", "#mor", "#str", "#att", "#def", "#prec", "#ap", "#mapmove", "#enc");
+    List<String> stats = List.of("#hp", "#size", "#prot", "#mr", "#mor", "#str", "#att", "#def", "#prec", "#ap", "#mapmove", "#enc", "#maxage");
     List<List<Integer>> scores = new ArrayList<>();
     List<Command> means = new ArrayList<>();
     int unitCount = units.size();
@@ -1391,52 +1362,6 @@ public class Unit {
     return this.mountUnit.getGoldCost();
   }
 
-  public String getName() {
-    int stats = this.getCopyStats();
-
-    if (!this.name.isUnnamed()) {
-      return this.name.toString(this);
-    }
-
-    else if (stats > -1) {
-      return this.nationGen.units.GetValue("" + stats, "name");
-    }
-
-    return Name.UNNAMED;
-  }
-
-  public String getFirstshapeIdForMontag() {
-    String montagId = this.getStringCommandValue("#firstshape", "");
-
-    if (Generic.isNumeric(montagId) && montagId.startsWith("-")) {
-      montagId = montagId.substring(1);
-    }
-
-    return montagId;
-  }
-
-  public LeadershipAbility getLeadership(LeadershipType type) {
-    Command leadershipCommand = this.getAllHandledCommands()
-      .stream()
-      .filter(c -> c.command.endsWith("leader"))
-      .findAny()
-      .orElse(null);
-
-    return LeadershipAbility
-      .fromModCommand(leadershipCommand)
-      .orElse(LeadershipAbility.getNoLeadership(type));
-  }
-
-  public Boolean hasLeadership(LeadershipType type) {
-    return this.getLeadership(type)
-      .equals(LeadershipAbility.getNoLeadership(type)) == false;
-  }
-
-  public Boolean hasAnyLeadership() {
-    return List.of(LeadershipType.values())
-      .stream().anyMatch(t -> this.hasLeadership(t) != false);
-  }
-
   public int getResCost(Boolean useSize, Boolean includeMount) {
     return getResCost(useSize, includeMount, this.getAllHandledCommands());
   }
@@ -1518,6 +1443,144 @@ public class Unit {
     }
 
     return this.mountUnit.getResCost();
+  }
+
+  public int getRecPointCost() {
+    return this.getRecPointCost(0);
+  }
+
+  public int getRecPointCost(int gcost) {
+    if (this.hasCopyStats()) {
+      return -1;
+    }
+
+    int totalCost = 0;
+    List<Command> handledCommands = new ArrayList<>();
+    List<Operator> modifierOperators = List.of(Operator.ADD, Operator.SUBTRACT);
+    List<Operator> coefficients = List.of(Operator.MULTIPLY, Operator.DIVIDE);
+    boolean shouldUseMontagMeanCost = this.isMontagRecruitableTemplate() && !this.pose.tags.containsName("no_montag_mean_costs");
+
+    List<Command> rpCostCommands = this.gatherCommands()
+      .stream()
+      .filter(c -> c.isOfType(CommandType.RPCOST))
+      .collect(Collectors.toList());
+
+    List<Command> setRpCostCommands = rpCostCommands
+      .stream()
+      .filter(c -> {
+        Optional<Operator> op = c.args.getFirst().getOperator();
+        return op.isEmpty() || op.equals(Optional.of(Operator.SET));
+      })
+      .collect(Collectors.toList());
+
+    List<Command> rpCostModifiers = rpCostCommands.stream()
+      .filter(c -> c.args.getFirst().hasOperator(modifierOperators))
+      .collect(Collectors.toList());
+
+    List<Command> rpCostCoefficients = rpCostCommands.stream()
+      .filter(c -> c.args.getFirst().hasOperator(coefficients))
+      .collect(Collectors.toList());
+
+    if (shouldUseMontagMeanCost && !this.isCommander()) {
+      int meanRecPoints = getMeanRecPointsOfMontagChildren();
+      Command meanRecPointsCommand = CommandFactory.create(CommandType.RPCOST.toString(), new Arg(meanRecPoints));
+      this.handleCommand(handledCommands, meanRecPointsCommand);
+    }
+
+    else if (gcost > 0) {
+      Command autocalcRpCost = CommandFactory.create(
+        CommandType.RPCOST.toString(),
+        String.valueOf(Unit.getAutocalcRecPoints(gcost))
+      );
+
+      this.handleCommand(handledCommands, autocalcRpCost);
+    }
+
+    // Last of the absolute values is the one that applies
+    if (!setRpCostCommands.isEmpty()) {
+      this.handleCommand(handledCommands, setRpCostCommands.getLast());
+    }
+
+    // Apply additions / subtractions
+    rpCostModifiers.forEach(c -> {
+      this.handleCommand(handledCommands, c);
+    });
+
+    // Apply coefficients (multiplying or diving modifiers) after autocalc has been resolved
+    rpCostCoefficients.forEach(c -> {
+      this.handleCommand(handledCommands, c);
+    });
+
+    // There should only be one, but this allows us to avoid checking for 
+    if (!handledCommands.isEmpty()) {
+      totalCost = handledCommands.getFirst().args.getInt(0);
+    }
+
+    return totalCost;
+  }
+
+  public static int getAutocalcRecPoints(int gcost) {
+    // Per modding manual, the RP autocalc value should be the unit's gold value * 1000
+    return gcost * 1000;
+  }
+
+  public static int getAutocalcRecPoints(Command gcost) {
+    return Unit.getAutocalcRecPoints(gcost.args.getInt(0));
+  }
+
+  public int getMeanRecPointsOfMontagChildren() {
+    // Find the parent montag id associated with these poses
+    String montagId = this.getFirstshapeIdForMontag();
+    List<Unit> montagChildren = this.nation.getMontagUnits(montagId);
+    UnitCost meanMontagCosts = Unit.calculateMeanCostOfUnits(montagChildren);
+    int meanCost = meanMontagCosts.recPoints;
+    return meanCost;
+  }
+
+  public String getName() {
+    int stats = this.getCopyStats();
+
+    if (!this.name.isUnnamed()) {
+      return this.name.toString(this);
+    }
+
+    else if (stats > -1) {
+      return this.nationGen.units.GetValue("" + stats, "name");
+    }
+
+    return Name.UNNAMED;
+  }
+
+  public String getFirstshapeIdForMontag() {
+    String montagId = this.getStringCommandValue("#firstshape", "");
+
+    if (Generic.isNumeric(montagId) && montagId.startsWith("-")) {
+      montagId = montagId.substring(1);
+    }
+
+    return montagId;
+  }
+
+  public LeadershipAbility getLeadership(LeadershipType type) {
+    Command leadershipCommand = this.getAllHandledCommands()
+      .stream()
+      .filter(c -> c.command.endsWith("leader"))
+      .findAny()
+      .orElse(null);
+
+    return LeadershipAbility
+      .fromModCommand(leadershipCommand)
+      .orElse(LeadershipAbility.getNoLeadership(type));
+  }
+
+  public Boolean hasLeadership(LeadershipType type) {
+    return this.getLeadership(type)
+      .equals(LeadershipAbility.getNoLeadership(type)) == false;
+  }
+
+  public Boolean hasAnyLeadership() {
+    return List.of(LeadershipType.values())
+      .stream().anyMatch(t -> this.hasLeadership(t) != false);
   }
 
   public Tags getAllTags() {
@@ -1621,6 +1684,9 @@ public class Unit {
     final Unit unit = this;
     Item weapon = unit.getSlot("weapon");
     Item offhand = unit.getSlot("offhand");
+    List<CommandType> handledCommandTypesToIgnore = List.of(
+      CommandType.RPCOST
+    );
 
     handleLowEncCommandPolish(unit.pose.tags);
     handleLowEncCommandPolish(unit.race.tags);
@@ -1679,6 +1745,11 @@ public class Unit {
     // Clean up commands
     List<Command> polishedCommands = unit.getAllHandledCommands();
 
+    // Some commands have enough edge cases that must be handled later
+    // TODO: streamining command handling logic to account for special
+    // cases is a refactoring target
+    polishedCommands.removeIf(c -> c.isOfType(handledCommandTypesToIgnore));
+
     for (Command c : polishedCommands) {
       if (!c.hasArgs()) {
         continue;
@@ -1711,8 +1782,13 @@ public class Unit {
       gcost = Utils.roundInGroupsOf(gcost, 5);
     }
 
-    Command gcostCommand = CommandFactory.create("#gcost", Integer.toString(gcost));
+    Command gcostCommand = CommandFactory.create(CommandType.GCOST.toString(), new Arg(gcost));
     handleCommand(polishedCommands, gcostCommand);
+
+    // Handle rec points now, since they often require the final gold cost of the unit
+    int rpcost = this.getRecPointCost(gcost);
+    Command rpCostCommand = CommandFactory.create(CommandType.RPCOST.toString(), new Arg(rpcost));
+    handleCommand(polishedCommands, rpCostCommand);
 
     // Resources are autocalculated ingame. We only need to assign them manually to montag templates
     // that don't have any equipment in the recruitment screen until they appear into the game
@@ -2187,54 +2263,20 @@ public class Unit {
    * Calculates recruitment point cost as gcost from race+pose+basesprite
    */
   protected Optional<String> writeRecpointsLine() {
-    int recPointsCost = this.getRecPointsCost();
-
-    if (recPointsCost == -1) {
-      return Optional.empty();
+    Optional<Command> rpCostCommand = this.getCommand(CommandType.RPCOST.toString());
+    
+    if (rpCostCommand.isEmpty()) {
+      throw new IllegalStateException(
+        this.getName() +
+        " (Race: " +
+        this.race.getName() +
+        ", Pose: " +
+        this.pose.getName() +
+        ") has no #rpcost command!"
+      );
     }
 
-    return Optional.of("#rpcost " + recPointsCost);
-  }
-
-  private int getRecPointsCost() {
-    Optional<Command> explicitRpCost = this.getCommand(CommandType.RPCOST.toString());
-
-    if (explicitRpCost.isPresent()) {
-      Command command = explicitRpCost.get();
-      Arg rpcostArg = command.args.getFirst();
-      Operator operator = rpcostArg.getOperator().orElse(Operator.SET);
-      int gcost;
-      int rpcost;
-
-      // If a set amount of RPs exist, such as #rpcost 10000, return that
-      if (operator == Operator.SET) {
-        rpcost = rpcostArg.getInt();
-      }
-
-      else {
-        // If the existing #rpcost command is a modifier, autocalc RPs and apply the modifier to them
-        gcost = this.getGoldCost(true);
-        rpcost = command.combine(this.getAutocalcRps(gcost)).args.getFirst().getInt();
-      }
-
-      return rpcost;
-    }
-
-    else if (this.hasCopyStats()) {
-      return -1;
-    }
-
-    int gcost = this.getGoldCost(true);
-    return this.getAutocalcRps(gcost);
-  }
-
-  private int getAutocalcRps(int gcost) {
-    // Per modding manual, the RP autocalc value should be the unit's gold value * 1000
-    return gcost * 1000;
-  }
-
-  private int getAutocalcRps(Command gcost) {
-    return this.getAutocalcRps(gcost.args.getInt(0));
+    return Optional.of(CommandType.RPCOST.toString() + " " + rpCostCommand.get().args.getInt(0));
   }
 
   protected List<ItemData> getEquippedWeapons() {

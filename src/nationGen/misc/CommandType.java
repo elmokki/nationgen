@@ -4,6 +4,8 @@ public enum CommandType {
     CUSTOMMAGIC("#custommagic", true),
     MAGICBOOST("#magicboost", true),
     MAGICSKILL("#magicskill", true),
+    GCOST("#gcost", false),
+    RCOST("#rcost", false),
     RPCOST("#rpcost", false),
     WEAPON("#weapon", true);
 
