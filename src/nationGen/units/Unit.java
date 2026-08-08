@@ -819,11 +819,11 @@ public class Unit {
   }
 
   public int getNumberOfHandsRequiredForWeapons() {
-    Stream<Item> equippedWeapons = this.slotmap.getEquippedWeapons();
-    Stream<Item> equippedShields = this.slotmap.getEquippedShields();
+    List<Item> equippedWeapons = this.slotmap.getEquippedWeapons().toList();
+    List<Item> equippedShields = this.slotmap.getEquippedShields().toList();
     List<Command> handledCommands = this.getAllHandledCommands();
 
-    int handsForEquipment = Stream.of(equippedWeapons, equippedShields)
+    int handsForEquipment = Stream.of(equippedWeapons.stream(), equippedShields.stream())
       .flatMap(s -> s)
       .mapToInt(Item::getHandsRequiredToUse)
       .sum();
