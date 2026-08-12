@@ -213,24 +213,41 @@ public class DatabaseConverter {
       else db.setValue(key, "0", ItemProperty.DT_CAPPED.toDBColumn());
 
       // Effect bitmasks
-
       long effbm = Long.parseLong(attr.GetValue(attr_id, "modifiers_mask"));
 
-      if (Generic.containsLongBitmask(effbm, 1)) {
+      boolean isMelee = Generic.containsLongBitmask(effbm, 1);
+      boolean isHalfStr = Generic.containsLongBitmask(effbm, 288230376151711744L);
+      boolean isThirdStr = Generic.containsLongBitmask(effbm, 4611686018427387904L);
+      boolean isNoStr = !isHalfStr && !isThirdStr;
+
+      if (isMelee) {
+        db.setValue(key, "1", ItemProperty.FULL_STR.toDBColumn());
         db.setValue(key, "0", ItemProperty.NO_STR.toDBColumn());
-        db.setValue(key, "0", ItemProperty.BOW_STR.toDBColumn());
-      } else {
-        if (
-          !Generic.containsLongBitmask(effbm, 134217728) &&
-          Integer.parseInt(attr.GetValue(attr_id, "range_base", "0")) > 0
-        ) {
-          db.setValue(key, "0", ItemProperty.NO_STR.toDBColumn());
-          db.setValue(key, "1", ItemProperty.BOW_STR.toDBColumn());
-        } else {
-          db.setValue(key, "1", ItemProperty.NO_STR.toDBColumn());
-          db.setValue(key, "0", ItemProperty.BOW_STR.toDBColumn());
-        }
+        db.setValue(key, "0", ItemProperty.THIRD_STR.toDBColumn());
+        db.setValue(key, "0", ItemProperty.HALF_STR.toDBColumn());
       }
+
+      else if (isHalfStr) {
+        db.setValue(key, "1", ItemProperty.HALF_STR.toDBColumn());
+        db.setValue(key, "0", ItemProperty.NO_STR.toDBColumn());
+        db.setValue(key, "0", ItemProperty.THIRD_STR.toDBColumn());
+        db.setValue(key, "0", ItemProperty.FULL_STR.toDBColumn());
+      }
+
+      else if (isThirdStr) {
+        db.setValue(key, "1", ItemProperty.THIRD_STR.toDBColumn());
+        db.setValue(key, "0", ItemProperty.NO_STR.toDBColumn());
+        db.setValue(key, "0", ItemProperty.HALF_STR.toDBColumn());
+        db.setValue(key, "0", ItemProperty.FULL_STR.toDBColumn());
+      }
+
+      else if (isNoStr) {
+        db.setValue(key, "1", ItemProperty.NO_STR.toDBColumn());
+        db.setValue(key, "0", ItemProperty.THIRD_STR.toDBColumn());
+        db.setValue(key, "0", ItemProperty.HALF_STR.toDBColumn());
+        db.setValue(key, "0", ItemProperty.FULL_STR.toDBColumn());
+      }
+
       if (Generic.containsLongBitmask(effbm, 2)) db.setValue(key, "1", ItemProperty.IS_2H.toDBColumn());
       else db.setValue(key, "0", ItemProperty.IS_2H.toDBColumn());
 
