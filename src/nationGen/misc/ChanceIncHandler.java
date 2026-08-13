@@ -168,7 +168,14 @@ public class ChanceIncHandler {
       return false;
     }
 
+    boolean isShapeshiftFilter = filter.isShapeshiftFilter();
+    boolean hasNoShapeshiftTag = unit.getAllTags().containsName("noshapeshift");
     List<String> exclusives = filter.tags.getAllStrings("mutuallyexclusive");
+
+    // If the unit explicitly has the #noshapeshift tag, exclude shapeshift filters
+    if (isShapeshiftFilter && hasNoShapeshiftTag) {
+      return false;
+    }
 
     // Check other unit filters to see if any is excluded by a
     // #mutuallyexclusive tag from the filter we're applying
@@ -183,7 +190,6 @@ public class ChanceIncHandler {
     } 
 
     List<Command> unitCommands = unit.gatherCommands();
-    boolean isShapeshiftFilter = filter.isShapeshiftFilter();
 
     // Check the rest of the unit commands to see if any is
     // excluded by #mutuallyexclusive, or in case there are
@@ -192,7 +198,7 @@ public class ChanceIncHandler {
       if (exclusives.contains(c.command)) {
         return false;
       }
-
+      
       if (isShapeshiftFilter && c.isShapeshiftCommand()) {
         return false;
       }
