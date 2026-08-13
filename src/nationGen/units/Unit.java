@@ -40,6 +40,7 @@ import nationGen.misc.Tags;
 import nationGen.misc.Utils;
 import nationGen.naming.Name;
 import nationGen.nation.Nation;
+import nationGen.rostergeneration.powermanagers.UnitPower;
 
 public class Unit {
 
@@ -55,6 +56,7 @@ public class Unit {
   private Boolean caponly = false;
   public double capOnlyChance;
   public double survivability;
+  private UnitPower power;
   public Tags tags = new Tags();
   public List<Filter> appliedFilters = new ArrayList<>();
   public Boolean polished = false;
@@ -1020,6 +1022,10 @@ public class Unit {
 
   public void setCapOnly(Boolean shouldBeCapOnly) {
     this.caponly = shouldBeCapOnly;
+  }
+
+  public void setPower(UnitPower power) {
+    this.power = power;
   }
 
   private void handleSlotChange(String slotName, Item oldItem, Item newItem) {
@@ -2212,6 +2218,17 @@ public class Unit {
         )
         .collect(Collectors.joining(", "))
     );
+
+    if (this.power != null) {
+      String powerType = (this.isSacred()) ? "a Sacred" : "an Elite";
+
+      lines.add("--- Unit is " +
+        powerType +
+        " with " +
+        this.power.power +
+        " power."
+      );
+    }
 
     if (this.survivability != 0.0) {
       lines.add("--- Unit has a " +
