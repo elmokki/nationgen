@@ -38,7 +38,6 @@ import nationGen.misc.FileUtil;
 import nationGen.misc.Operator;
 import nationGen.misc.Tags;
 import nationGen.misc.Utils;
-import nationGen.misc.commands.RpCostCommand;
 import nationGen.naming.Name;
 import nationGen.nation.Nation;
 
